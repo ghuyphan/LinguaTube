@@ -1,0 +1,306 @@
+[
+  {
+    "id": "en_b1_26",
+    "language": "en",
+    "pattern": "Subordinate goals",
+    "title": "Subordinate goals: to, in order to, so that, so as to",
+    "shortExplanation": "I study hard to pass. She left early so that she could catch the train.",
+    "longExplanation": "to / in order to / so as to + infinitive - goal. In order to and so as to are a little more formal.\nso that + subject + verb - purpose with another subject or with a modal.",
+    "formation": "I study hard to pass. She left early so that she could catch the train.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "She studies hard in order to get a scholarship.",
+        "translation": "She studies hard to get a scholarship."
+      },
+      {
+        "sentence": "He left early so that he could catch the last train.",
+        "translation": "He left early to catch the last train."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_27",
+    "language": "en",
+    "pattern": "Phrasal verbs",
+    "title": "Phrasal verbs - basic",
+    "shortExplanation": "give up, look up, turn off, find out, get on, put off, carry on",
+    "longExplanation": "Phrasal verbs = verb + particle (preposition or adverb). The meaning is often idiomatic.\nThe most frequent:\n• give up = give up, give up\n• find out = find out, find out\n• turn on/off = turn on/off\n• look up = look up (in the dictionary/Internet)\n• look after = take care\n• put off = put off\n• carry on = continue\n• get on/along = to get along (with someone)\n• bring up = to educate; bring up the topic\n• come across = stumble upon",
+    "formation": "give up, look up, turn off, find out, get on, put off, carry on",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I've given up smoking.",
+        "translation": "I quit smoking."
+      },
+      {
+        "sentence": "Can you look after my cat while I'm away?",
+        "translation": "Can you look after my cat while I'm away?"
+      },
+      {
+        "sentence": "We need to find out what happened.",
+        "translation": "We need to find out what happened."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_01",
+    "language": "en",
+    "pattern": "Past Perfect Simple",
+    "title": "Past Perfect Simple: had + V3",
+    "shortExplanation": "By the time she arrived, he had already left.",
+    "longExplanation": "Past Perfect - an action that completed before another moment or event in the past.\nForm: had + V3 for all faces.\nNegation: hadn't + V3\nQuestion: Had + subject + V3?\nTypical conjunctions: before, after, when, by the time, already, just, never",
+    "formation": "By the time she arrived, he had already left.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "When I arrived, she had already left.",
+        "translation": "When I arrived, she had already left."
+      },
+      {
+        "sentence": "He had never seen snow before that winter.",
+        "translation": "He had never seen snow before that winter."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_02",
+    "language": "en",
+    "pattern": "Past Perfect Continuous",
+    "title": "Past Perfect Continuous: had been + V-ing",
+    "shortExplanation": "He had been waiting for two hours when she arrived.",
+    "longExplanation": "Past Perfect Continuous = had been + V-ing\nEmphasis on the duration of an action that occurred before another point in the past.\nOften explains a cause or visible result in the past.",
+    "formation": "He had been waiting for two hours when she arrived.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "She was exhausted — she'd been working all night.",
+        "translation": "She was exhausted - she had worked all night."
+      },
+      {
+        "sentence": "How long had you been waiting before she arrived?",
+        "translation": "How long did you wait before she arrived?"
+      }
+    ]
+  },
+  {
+    "id": "en_b2_03",
+    "language": "en",
+    "pattern": "must have + V3",
+    "title": "must have + V3 - confident conclusion about the past",
+    "shortExplanation": "She must have forgotten. - I'm sure this is the only explanation",
+    "longExplanation": "must have + V3 = I'm sure this happened (the only logical explanation).\nConfidence scale:\n• must have done - almost certainly happened\n• should have done - it was expected to happen\n• may/might have done - it may have happened\n• can't have done - it probably didn't happen",
+    "formation": "She must have forgotten. - I'm sure this is the only explanation",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "You must have been exhausted after that journey.",
+        "translation": "You must be very tired after this trip."
+      },
+      {
+        "sentence": "She must have left early — her coat is gone.",
+        "translation": "She apparently left early - her coat was missing."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_04",
+    "language": "en",
+    "pattern": "can't have + V3",
+    "title": "can't have + V3 - impossibility in the past",
+    "shortExplanation": "She can't have said that! He can't have been there.",
+    "longExplanation": "can't have + V3 = I'm sure this didn't happen (it's impossible).\nThe opposite of must have done.",
+    "formation": "She can't have said that! He can't have been there.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "He can't have seen her — she was abroad.",
+        "translation": "He couldn't see her - she was abroad."
+      },
+      {
+        "sentence": "That can't have been the right address.",
+        "translation": "This could not be the correct address."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_05",
+    "language": "en",
+    "pattern": "should have + V3",
+    "title": "should have + V3 - reproach and regret",
+    "shortExplanation": "I should have called. You shouldn't have said that.",
+    "longExplanation": "should have + V3 = it would have been right to do it, but I didn’t (regret, reproach).\nshouldn't have + V3 = shouldn't have done.\nThis is a very common construction for expressing regret and criticism.",
+    "formation": "I should have called. You shouldn't have said that.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "I should have brought an umbrella.",
+        "translation": "I should have taken an umbrella."
+      },
+      {
+        "sentence": "She shouldn't have told him the secret.",
+        "translation": "She shouldn't have told him the secret."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_06",
+    "language": "en",
+    "pattern": "might / could have + V3",
+    "title": "might / could have + V3 - possibility in the past",
+    "shortExplanation": "She might have forgotten. It could have been worse.",
+    "longExplanation": "might/could have + V3 = this may have happened (we don't know for sure).\nAlso: could have done = could have done (but didn’t): I could have won if I had tried harder.",
+    "formation": "She might have forgotten. It could have been worse.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "She might have forgotten about the meeting.",
+        "translation": "Perhaps she forgot about the meeting."
+      },
+      {
+        "sentence": "He could have left through the back door.",
+        "translation": "He could have gone out the back door."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_07",
+    "language": "en",
+    "pattern": "3rd type of conditional",
+    "title": "3rd type of conditional: If + Past Perfect, would have + V3",
+    "shortExplanation": "If I had studied harder, I would have passed.",
+    "longExplanation": "An unreal situation in the past - we are talking about something that did not happen.\nForm: If + Past Perfect, would have + V3\nBoth elements are unreal:\n• Condition not met\n• There was no result either",
+    "formation": "If I had studied harder, I would have passed.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "If she had taken the medicine, she would have recovered.",
+        "translation": "If she took the medicine, she would get better."
+      },
+      {
+        "sentence": "If he hadn't left early, he would have met her.",
+        "translation": "If he hadn't left early, he would have met her."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_08",
+    "language": "en",
+    "pattern": "Mixed conditionals",
+    "title": "Mixed conditionals",
+    "shortExplanation": "If I had studied, I would be fluent now. (past → present)",
+    "longExplanation": "Mixed conditionals connect different time plans:\n1. Past condition → present result:\nIf + Past Perfect, would + infinitive\nIf I had taken that job, I would be in New York now.\n2. Present condition → past result:\nIf + Past Simple, would have + V3\nIf she were more careful, she wouldn't have broken it.",
+    "formation": "If I had studied, I would be fluent now. (past → present)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "If I had studied medicine, I would be a doctor now.",
+        "translation": "If I had studied to become a doctor, I would be a doctor now."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_09",
+    "language": "en",
+    "pattern": "Future Passive and Passive with modals",
+    "title": "Future Passive and Passive with modals",
+    "shortExplanation": "It will be done. It must be fixed. It should be checked.",
+    "longExplanation": "Modal + Passive: modal + be + V3\n• will be done - will be done\n• must be done - must be done\n• should be done - should be done\n• can be done - can be done",
+    "formation": "It will be done. It must be fixed. It should be checked.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "The report will be published tomorrow.",
+        "translation": "The report will be published tomorrow."
+      },
+      {
+        "sentence": "This mistake must be corrected immediately.",
+        "translation": "This error must be corrected immediately."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_10",
+    "language": "en",
+    "pattern": "Causative have/get",
+    "title": "Causative have/get: have something done",
+    "shortExplanation": "I had my hair cut. She got her car fixed.",
+    "longExplanation": "have/get + object + V3 - you order a service or someone does something for you.\nCompare:\n• I cut my hair. - I cut my hair myself (which is not typical)\n• I had my hair cut. - cut by a hairdresser\nget is a little more conversational, have is a little more formal.",
+    "formation": "I had my hair cut. She got her car fixed.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "I need to have my teeth checked.",
+        "translation": "I need to have my teeth checked by a doctor."
+      },
+      {
+        "sentence": "She had her house painted last spring.",
+        "translation": "Last spring she painted the house (hiring workers)."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_11",
+    "language": "en",
+    "pattern": "Passive reporting verbs",
+    "title": "Passive reporting verbs: It is said that... / He is believed to...",
+    "shortExplanation": "It is thought that prices will rise. She is known to be honest.",
+    "longExplanation": "Two construction options with the verbs say, think, believe, report, know, expect, consider:\n1. It + passive + that + subordinate clause: It is believed that...\n2. Subject + is + V3 + to-infinitive: She is believed to be...\nUsed in news and official texts.",
+    "formation": "It is thought that prices will rise. She is known to be honest.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "It is reported that three people were injured.",
+        "translation": "Three people were reported injured."
+      },
+      {
+        "sentence": "He is thought to have left the country.",
+        "translation": "He is believed to have left the country."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_12",
+    "language": "en",
+    "pattern": "remember / forget + V-ing vs to-inf",
+    "title": "remember / forget + V-ing vs to-inf - difference in meaning",
+    "shortExplanation": "I remember locking it (fact of the past) vs Remember to lock it (task)",
+    "longExplanation": "remember/forget + V-ing - about a past event that we remember/forgot.\nremember/forget + to-inf - about the task: remember to do something in the future.",
+    "formation": "I remember locking it (fact of the past) vs Remember to lock it (task)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "I remember meeting her at a conference. (это было)",
+        "translation": "I remember meeting her at a conference."
+      },
+      {
+        "sentence": "Remember to call your mother! (нужно сделать)",
+        "translation": "Don't forget to call your mom!"
+      },
+      {
+        "sentence": "I forgot to buy milk. (не сделал)",
+        "translation": "I forgot to buy milk."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_13",
+    "language": "en",
+    "pattern": "stop / regret / mean + V-ing vs to-inf",
+    "title": "stop / regret / mean + V-ing vs to-inf",
+    "shortExplanation": "She stopped smoking vs She stopped to smoke",
+    "longExplanation": "stop + V-ing - stop the action.\nstop + to-inf - stop to do something else.\nregret + V-ing - to regret the past.\nregret + to-inf - regret to inform you (formally): I regret to inform you...\nmean + V-ing - mean: This means working harder.\nmean + to-inf - intend: I meant to call you.",
+    "formation": "She stopped smoking vs She stopped to smoke",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "He stopped smoking last year.",
+        "translation": "He quit smoking last year."
+      },
+      {
+        "sentence": "She stopped to look at the view.",
+        "translation": "She stopped to admire the view."
+      }
+    ]
+  }
+]

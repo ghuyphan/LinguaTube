@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_A_2",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A かたわら B (A katawara B)",
+    "shortExplanation": "Expresses 'while also', 'at the same time as'.",
+    "longExplanation": "The ～かたわら grammar point is used when someone is doing B while also doing A. It often implies that both tasks require considerable commitment or skill. It can be translated as 'while also' or 'at the same time as'.",
+    "formation": "Verb-dictionary form + かたわら, Noun + のかたわら",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は仕事をするかたわら、大学に通っている。",
+        "romanization": "Kare wa shigoto o suru katawara, daigaku ni kayotte iru.",
+        "translation": "While working, he also attends university."
+      },
+      {
+        "sentence": "私は学生のかたわら、レストランでアルバイトをしている。",
+        "romanization": "Watashi wa gakusei no katawara, resutoran de arubaito o shite iru.",
+        "translation": "While being a student, I work part-time at a restaurant."
+      },
+      {
+        "sentence": "彼女は医者のかたわら、趣味で絵を描いている。",
+        "romanization": "Kanojo wa isha no katawara, shumi de e o kaite iru.",
+        "translation": "While being a doctor, she paints as a hobby."
+      },
+      {
+        "sentence": "彼は仕事をするかたわら、ボランティア活動にも積極的に参加している。",
+        "romanization": "Kare wa shigoto o suru katawara, borantia katsudou ni mo sekkyokuteki ni sanka shite iru.",
+        "translation": "While doing his job, he also actively participates in volunteer work."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_3",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A かれ B かれ (A kare B kare)",
+    "shortExplanation": "Expresses 'whether A or B'; both situations are included.",
+    "longExplanation": "The grammar point ～AかれBかれ is a somewhat literary/old-fashioned pattern often seen with i-adjectives (e.g., 早かれ遅かれ). It can mean 'whether A or B'. Here it's shown with nouns or verbs, which is also possible in older or set expressions.",
+    "formation": "Commonly i-adjective stems + かれ + i-adjective stems + かれ (e.g. 早かれ遅かれ). Also sometimes Noun + かれ + Noun + かれ in older usage.",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "冬かれ夏かれ、毎日ジョギングする。",
+        "romanization": "Fuyu kare natsu kare, mainichi jogingu suru.",
+        "translation": "Whether it's winter or summer, I jog every day."
+      },
+      {
+        "sentence": "彼が来るかれ来ないかれ、パーティーは始める。",
+        "romanization": "Kare ga kuru kare konai kare, paatii wa hajimeru.",
+        "translation": "Whether he comes or not, the party will start."
+      },
+      {
+        "sentence": "勝つかれ負けるかれ、試合に出ることが大事だ。",
+        "romanization": "Katsu kare makeru kare, shiai ni deru koto ga daiji da.",
+        "translation": "Whether we win or lose, it's important to take part in the match."
+      },
+      {
+        "sentence": "雨かれ雪かれ、犬の散歩は欠かさない。",
+        "romanization": "Ame kare yuki kare, inu no sanpo wa kakasanai.",
+        "translation": "Whether it's raining or snowing, I never skip walking the dog."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_4",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A だの B だの (A dano B dano)",
+    "shortExplanation": "Used to list examples (often with a critical or complaining tone); 'things like A, B, etc.'.",
+    "longExplanation": "The ～だの～だの grammar point is used to list examples, typically in a casual or complaining tone. It can be translated as 'things like... and so on'.",
+    "formation": "Noun/Verb casual + だの + Noun/Verb casual + だの",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼はいつも遅刻だの、仕事を忘れるだので困る。",
+        "romanization": "Kare wa itsumo chikoku dano, shigoto o wasureru dano de komaru.",
+        "translation": "I'm troubled because he's always late, forgets work, and so on."
+      },
+      {
+        "sentence": "彼女は新しい服だの、化粧品だのによくお金を使います。",
+        "romanization": "Kanojo wa atarashii fuku dano, keshouhin dano ni yoku okane o tsukaimasu.",
+        "translation": "She often spends money on new clothes, cosmetics, and so on."
+      },
+      {
+        "sentence": "彼が言うには、音楽だの映画だの本だのが好きらしい。",
+        "romanization": "Kare ga iu ni wa, ongaku dano, eiga dano, hon dano ga suki rashii.",
+        "translation": "He says he likes music, movies, books, and so on."
+      },
+      {
+        "sentence": "子供にはお菓子だの、おもちゃだの、好きなものを限りなく与えてあげたい。",
+        "romanization": "Kodomo ni wa okashi dano, omocha dano, suki na mono o kagirinaku ataete agetai.",
+        "translation": "I want to give children all the things they like, such as sweets and toys, without limit."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_5",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A であれ B であれ (A deare B deare)",
+    "shortExplanation": "Indicates the same statement applies to both A and B; 'whether A or B'.",
+    "longExplanation": "The grammar point A であれ B であれ is used to say a statement applies equally whether it's A or B. Often the nouns/conditions are contrasting pairs, and it's translated as 'whether A or B'.",
+    "formation": "Noun A + であれ + Noun B + であれ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "雨であれ雪であれ、試合は中止にならない。",
+        "romanization": "Ame deare yuki deare, shiai wa chuushi ni naranai.",
+        "translation": "Whether it's rain or snow, the match will not be canceled."
+      },
+      {
+        "sentence": "男であれ女であれ、平等に扱われるべきだ。",
+        "romanization": "Otoko deare onna deare, byoudou ni atsukawareru beki da.",
+        "translation": "Whether man or woman, everyone should be treated equally."
+      },
+      {
+        "sentence": "豊かであれ貧乏であれ、真の幸福は金では買えない。",
+        "romanization": "Yutaka deare binbou deare, shin no shiawase wa kane de wa kaenai.",
+        "translation": "Whether rich or poor, true happiness can't be bought with money."
+      },
+      {
+        "sentence": "経験者であれ初心者であれ、このゲームは楽しめる。",
+        "romanization": "Keikensha deare shoshinsha deare, kono geemu wa tanoshimeru.",
+        "translation": "Whether you're a veteran or a beginner, you can enjoy this game."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_6",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A というか B というか (A to iu ka B to iu ka)",
+    "shortExplanation": "Means 'rather than say A, it's more like B', or 'whether to call it A or B'.",
+    "longExplanation": "The grammar 'A というか B というか' is used when the speaker isn't sure which expression (A or B) describes the situation better. It can be translated as 'rather than A, it's more B' or 'should I call it A or B?'.",
+    "formation": "Phrase A + というか + Phrase B + というか",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は無礼というか、直接的というか、とにかくはっきりしている。",
+        "romanization": "Kare wa burei to iu ka, chokusetsuteki to iu ka, tonikaku hakkiri shite iru.",
+        "translation": "He's rather rude, or maybe just direct; in any case, he is very blunt."
+      },
+      {
+        "sentence": "この映画は面白いというか、変というか、とにかく不思議な雰囲気がある。",
+        "romanization": "Kono eiga wa omoshiroi to iu ka, hen to iu ka, tonikaku fushigi na fun'iki ga aru.",
+        "translation": "This movie is interesting or maybe strange; anyway, it has a mysterious vibe."
+      },
+      {
+        "sentence": "彼の絵は素晴らしいというか、驚くべきというか、本当に見る価値がある。",
+        "romanization": "Kare no e wa subarashii to iu ka, odoroku beki to iu ka, hontou ni miru kachi ga aru.",
+        "translation": "His paintings are wonderful, or perhaps astonishing; they're definitely worth seeing."
+      },
+      {
+        "sentence": "彼女の服はかわいいというか、派手というか、とにかく人目を引く。",
+        "romanization": "Kanojo no fuku wa kawaii to iu ka, hade to iu ka, tonikaku hitome o hiku.",
+        "translation": "Her outfit is cute or maybe flashy; in any case, it grabs people's attention."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_7",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A とも B とも (A tomo B tomo)",
+    "shortExplanation": "Expresses two possibilities; 'either A or B', 'whether A or B'.",
+    "longExplanation": "The 'A とも B とも' grammar pattern indicates two possible scenarios. It can be translated as 'whether A or B' or 'either A or B'.",
+    "formation": "Noun + とも + Noun + とも (or sometimes Verb forms for each A, B)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "決断とも誤りとも、結果は時間が教えてくれるでしょう。",
+        "romanization": "Ketsudan tomo ayamari tomo, kekka wa jikan ga oshiete kureru deshou.",
+        "translation": "Whether it's a wise decision or a mistake, time will show the result."
+      },
+      {
+        "sentence": "彼は父とも兄とも、もう何年も話していない。",
+        "romanization": "Kare wa chichi tomo ani tomo, mou nannen mo hanashite inai.",
+        "translation": "He hasn't spoken to either his father or his brother in years."
+      },
+      {
+        "sentence": "彼女とも友達とも映画を見に行くつもりです。",
+        "romanization": "Kanojo tomo tomodachi tomo eiga o mi ni iku tsumori desu.",
+        "translation": "I plan to go watch a movie either with my girlfriend or a friend."
+      },
+      {
+        "sentence": "このゲームには時間とも努力とも言えないほどの根気が必要です。",
+        "romanization": "Kono geemu ni wa jikan tomo doryoku tomo ienai hodo no konki ga hitsuyou desu.",
+        "translation": "This game requires a kind of persistence beyond just time or effort."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_8",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A にしろ B にしろ (A nishiro B nishiro)",
+    "shortExplanation": "Means 'whether it is A or B'; 'regardless of A or B'.",
+    "longExplanation": "A にしろ B にしろ is used to indicate that even though A and B are different possibilities, the statement or conclusion applies regardless. Often translated as 'whether it’s A or B' or 'regardless of A or B'.",
+    "formation": "Noun A + にしろ + Noun B + にしろ, or Verb-casual A + にしろ + Verb-casual B + にしろ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "暑いにしろ寒いにしろ、毎日運動するべきです。",
+        "romanization": "Atsui ni shiro samui ni shiro, mainichi undou suru beki desu.",
+        "translation": "Whether it's hot or cold, you should exercise every day."
+      },
+      {
+        "sentence": "合格するにしろ不合格になるにしろ、最善を尽くしました。",
+        "romanization": "Goukaku suru ni shiro fukougaku ni naru ni shiro, saizen o tsukushimashita.",
+        "translation": "Whether I pass or fail, I did my best."
+      },
+      {
+        "sentence": "忙しいにしろ暇にしろ、時間を大切にすべきです。",
+        "romanization": "Isogashii ni shiro hima ni shiro, jikan o taisetsu ni subeki desu.",
+        "translation": "Whether you're busy or free, you should value your time."
+      },
+      {
+        "sentence": "大きいにしろ小さいにしろ、その箱は全部ここに運んでください。",
+        "romanization": "Ookii ni shiro chiisai ni shiro, sono hako wa zenbu koko ni hakonde kudasai.",
+        "translation": "Whether they're large or small, please move all those boxes here."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_9",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A にせよ B にせよ (A ni seyo B ni seyo)",
+    "shortExplanation": "Either A or B; Regardless of whether it's A or B.",
+    "longExplanation": "The 〜にせよ 〜にせよ grammar point is used to express two possibilities A and B, indicating that regardless of whether it is A or B, the statement remains valid. It can be translated as 'whether it's A or B.'",
+    "formation": "Noun + にせよ + Noun + にせよ (also works with verbs in dictionary form + にせよ)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "雨にせよ雪にせよ、試合は中止しない。",
+        "romanization": "Ame ni seyo yuki ni seyo, shiai wa chuushi shinai.",
+        "translation": "Whether it's rain or snow, the match won't be cancelled."
+      },
+      {
+        "sentence": "彼にせよ彼女にせよ、誰か一人が行くべきだ。",
+        "romanization": "Kare ni seyo kanojo ni seyo, dareka hitori ga iku beki da.",
+        "translation": "Whether it's him or her, someone should go."
+      },
+      {
+        "sentence": "成果にせよ努力にせよ、どちらも重要だ。",
+        "romanization": "Seika ni seyo doryoku ni seyo, dochira mo juuyou da.",
+        "translation": "Whether it's results or effort, both are important."
+      },
+      {
+        "sentence": "春にせよ秋にせよ、私は花が好きだ。",
+        "romanization": "Haru ni seyo aki ni seyo, watashi wa hana ga suki da.",
+        "translation": "Whether it's spring or fall, I like flowers."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_10",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
+    "shortExplanation": "Expresses 'whether... or...', 'both... and...', 'in either case'.",
+    "longExplanation": "The ～AにつけBにつけ pattern is used to show that some state or action applies in both situation A and situation B. It often pairs contrasting or related conditions and can be translated as 'whether A or B', 'in either case', etc.",
+    "formation": "Phrase A (dictionary/adjective form) + につけ、Phrase B (dictionary/adjective form) + につけ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼には笑うにつけ泣くにつけ、とても魅力的だ。",
+        "romanization": "Kare ni wa warau ni tsuke naku ni tsuke, totemo miryokuteki da.",
+        "translation": "He is very charming whether he’s laughing or crying."
+      },
+      {
+        "sentence": "嬉しいにつけ悲しいにつけ、彼はいつも音楽を聴いている。",
+        "romanization": "Ureshii ni tsuke kanashii ni tsuke, kare wa itsumo ongaku o kiite iru.",
+        "translation": "Whether he's happy or sad, he's always listening to music."
+      },
+      {
+        "sentence": "日中につけ夜間につけ、この景色は美しい。",
+        "romanization": "Nitchuu ni tsuke yakan ni tsuke, kono keishiki wa utsukushii.",
+        "translation": "This view is beautiful whether it's daytime or nighttime."
+      },
+      {
+        "sentence": "喜びにつけ悲しみにつけ、彼女はいつも私を支えてくれる。",
+        "romanization": "Yorokobi ni tsuke kanashimi ni tsuke, kanojo wa itsumo watashi o sasaete kureru.",
+        "translation": "Whether I’m joyful or sorrowful, she always supports me."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_11",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A のやら B のやら (A no yara B no yara)",
+    "shortExplanation": "Used when the speaker is unsure or confused between multiple possibilities.",
+    "longExplanation": "The A のやら B のやら grammar expresses the speaker's confusion or inability to decide between possibility A and B. It can be translated roughly as 'whether it's A or B (I don't know).'",
+    "formation": "Noun1 + のやら + Noun2 + のやら (also works with adjectives and verbs + のやら)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼が怒っているのやら、悲しいのやら、私には分からない。",
+        "romanization": "Kare ga okotte iru no yara, kanashii no yara, watashi ni wa wakaranai.",
+        "translation": "I don't know whether he's angry or sad."
+      },
+      {
+        "sentence": "試験の結果が良いのやら悪いのやら、気になって仕方がない。",
+        "romanization": "Shiken no kekka ga yoi no yara warui no yara, ki ni natte shikata ga nai.",
+        "translation": "I can’t help worrying whether my exam results are good or bad."
+      },
+      {
+        "sentence": "彼女が私を好きなのやら嫌いなのやら、わからない。",
+        "romanization": "Kanojo ga watashi o suki na no yara kirai na no yara, wakaranai.",
+        "translation": "I don’t know whether she likes me or hates me."
+      },
+      {
+        "sentence": "彼が本当に行くのやら行かないのやら、はっきりしない。",
+        "romanization": "Kare ga hontou ni iku no yara ikanai no yara, hakkiri shinai.",
+        "translation": "It’s unclear whether he will really go or not."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun1_12",
+    "language": "ja",
+    "pattern": "Noun1",
+    "title": "Noun1 が Noun1 なら、 Noun2 も Noun2 だ (A ga A nara, B mo B da)",
+    "shortExplanation": "Indicates a parallel or matching situation; 'if Noun1 is (truly) Noun1, then Noun2 is also Noun2'.",
+    "longExplanation": "This structure conveys a comparison: 'If Noun1 is indeed that kind of thing (Noun1), then naturally Noun2 is also that kind of thing (Noun2)'. It’s often used to show parallels or equivalences in a rhetorical way.",
+    "formation": "Noun1 + が + (repeat Noun1) + なら、Noun2 + も + (repeat Noun2) + だ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "鬼が鬼なら、人間も人間だ。",
+        "romanization": "Oni ga oni nara, ningen mo ningen da.",
+        "translation": "If demons are indeed demons, humans are likewise humans."
+      },
+      {
+        "sentence": "彼が社長なら、私も社長だ。",
+        "romanization": "Kare ga shachou nara, watashi mo shachou da.",
+        "translation": "If he is the president, then I'm the president too."
+      },
+      {
+        "sentence": "貴様が戦士なら、俺も戦士だ。",
+        "romanization": "Kisama ga senshi nara, ore mo senshi da.",
+        "translation": "If you're a warrior, then I'm a warrior as well."
+      },
+      {
+        "sentence": "ハムスターがペットなら、猫もペットだ。",
+        "romanization": "Hamusutā ga petto nara, neko mo petto da.",
+        "translation": "If a hamster counts as a pet, then a cat is also a pet."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun1_13",
+    "language": "ja",
+    "pattern": "Noun1",
+    "title": "Noun1 も Noun1 なら、Noun2 も Noun2 だ (A mo A nara, B mo B da)",
+    "shortExplanation": "Highlights two parallel facts or characteristics; 'if it’s said that ~, then it can also be said that ~'.",
+    "longExplanation": "This grammar point sets two items or facts side by side, emphasizing that both follow a similar logic or share a parallel characteristic. Often it can be rendered as 'If you say Noun1 is Noun1, then Noun2 is also Noun2.'",
+    "formation": "Noun1 + も + (repeat Noun1) + なら、Noun2 + も + (repeat Noun2) + だ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "君も君なら、私も私だ。",
+        "romanization": "Kimi mo kimi nara, watashi mo watashi da.",
+        "translation": "If you are you, then I am also me."
+      },
+      {
+        "sentence": "夏も夏なら、冬も冬だ。",
+        "romanization": "Natsu mo natsu nara, fuyu mo fuyu da.",
+        "translation": "If it’s said that summer is summer, then winter is also winter."
+      },
+      {
+        "sentence": "東京も東京なら、大阪も大阪だ。",
+        "romanization": "Toukyou mo toukyou nara, Oosaka mo Oosaka da.",
+        "translation": "If Tokyo is Tokyo, then Osaka is also Osaka (they each have their distinctive qualities)."
+      },
+      {
+        "sentence": "犬も犬なら、猫も猫だ。",
+        "romanization": "Inu mo inu nara, neko mo neko da.",
+        "translation": "If dogs are dogs, then cats are also cats."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_14",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + あっての + Noun (A atte no B)",
+    "shortExplanation": "Expresses 'B cannot exist without A'; 'B only exists because of A'.",
+    "longExplanation": "The 'Noun + あっての + Noun' pattern emphasizes that the second noun (B) exists only thanks to, or on the foundation of, the first noun (A). It's often translated as 'B is nothing without A' or 'B exists only because of A'.",
+    "formation": "Noun1 + あっての + Noun2",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "家族あっての私です。",
+        "romanization": "Kazoku atte no watashi desu.",
+        "translation": "I am who I am thanks to my family."
+      },
+      {
+        "sentence": "お客様あってのビジネスです。",
+        "romanization": "Okyakusama atte no bijinesu desu.",
+        "translation": "A business is nothing without its customers."
+      },
+      {
+        "sentence": "練習あっての成功です。",
+        "romanization": "Renshuu atte no seikou desu.",
+        "translation": "Success is nothing without practice."
+      },
+      {
+        "sentence": "健康あっての仕事です。",
+        "romanization": "Kenkou atte no shigoto desu.",
+        "translation": "Work is nothing without your health."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_15",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun かたがた (Noun kata gata)",
+    "shortExplanation": "Do one thing while also doing another; 'while', 'and at the same time'.",
+    "longExplanation": "「Noun かたがた」 is a somewhat formal expression for doing one thing while also doing another. The first action is often the main purpose, and the second is done simultaneously or incidentally.",
+    "formation": "Noun + かたがた",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "東京へ出張のかたがた、友人に会いに行った。",
+        "romanization": "Toukyou e shucchou no kata gata, yuujin ni ai ni itta.",
+        "translation": "While on a business trip to Tokyo, I also went to see a friend."
+      },
+      {
+        "sentence": "観光のかたがた、お土産を買いました。",
+        "romanization": "Kankou no kata gata, omiyage o kaimashita.",
+        "translation": "While sightseeing, I bought some souvenirs."
+      },
+      {
+        "sentence": "散歩のかたがた、ゴミを拾った。",
+        "romanization": "Sanpo no kata gata, gomi o hirotta.",
+        "translation": "While taking a walk, I also picked up trash."
+      },
+      {
+        "sentence": "学習のかたがた、音楽を聞いた。",
+        "romanization": "Gakushuu no kata gata, ongaku o kiita.",
+        "translation": "While studying, I also listened to music."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_16",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun がてら (Noun gatera)",
+    "shortExplanation": "Means 'while...at the same time', 'on the occasion of', or 'along with'.",
+    "longExplanation": "The suffix ～がてら is used to show doing one activity alongside another, taking advantage of the opportunity. It can often be translated as 'while', 'at the same time', 'along with', or 'on the occasion of'.",
+    "formation": "Noun + がてら",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "散歩がてらに、近くの公園で花を摘みました。",
+        "romanization": "Sanpo gatera ni, chikaku no kouen de hana o tsumimashita.",
+        "translation": "While taking a walk, I picked some flowers in the nearby park."
+      },
+      {
+        "sentence": "買い物がてら、友達に会いに行きました。",
+        "romanization": "Kaimono gatera, tomodachi ni ai ni ikimashita.",
+        "translation": "While I was out shopping, I went to see a friend."
+      },
+      {
+        "sentence": "彼女は旅行がてら、新しい言語を勉強しました。",
+        "romanization": "Kanojo wa ryokou gatera, atarashii gengo o benkyou shimashita.",
+        "translation": "She studied a new language while traveling."
+      },
+      {
+        "sentence": "ドライブがてら、新しいアルバムを聞きました。",
+        "romanization": "Doraibu gatera, atarashii arubamu o kikimashita.",
+        "translation": "I listened to a new album while going for a drive."
+      }
+    ]
+  }
+]

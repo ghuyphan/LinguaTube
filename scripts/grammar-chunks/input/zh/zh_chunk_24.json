@@ -1,0 +1,245 @@
+[
+  {
+    "id": "zh_次_377",
+    "language": "zh",
+    "pattern": "# 次",
+    "title": "# 次 (No. # (bus/train route))",
+    "shortExplanation": "No. # (bus/train route)",
+    "longExplanation": "No. # (bus/train route). Pinyin: # cì",
+    "formation": "# cì",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "502次公交车很快就要到了。",
+        "romanization": "502 cì gōngjiāochē hěn kuài jiùyào dàoliǎo。",
+        "translation": "Bus No. 502 are coming soon."
+      }
+    ]
+  },
+  {
+    "id": "zh_为了V1而V2_378",
+    "language": "zh",
+    "pattern": "为了 V1 而 V2",
+    "title": "为了 V1 而 V2 (V2 in order to V1)",
+    "shortExplanation": "V2 in order to V1",
+    "longExplanation": "V2 in order to V1. Pinyin: wèile V1 ér V2",
+    "formation": "wèile V1 ér V2",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_为了N而V_381",
+    "language": "zh",
+    "pattern": "为了 N 而 V",
+    "title": "为了 N 而 V (V for N)",
+    "shortExplanation": "V for N",
+    "longExplanation": "V for N. Pinyin: wèile N ér V",
+    "formation": "wèile N ér V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "植物会为了阳光、空气和水而竞争。",
+        "romanization": "zhíwù huì wèile yángguāng、 kōngqì hé shuǐ ér jìngzhēng。",
+        "translation": "Plants compete for sunlight, air, and water."
+      }
+    ]
+  },
+  {
+    "id": "zh_仍然VA_382",
+    "language": "zh",
+    "pattern": "仍然 V/A",
+    "title": "仍然 V/A (still V/A)",
+    "shortExplanation": "still V/A",
+    "longExplanation": "still V/A. Pinyin: réngrán V/A",
+    "formation": "réngrán V/A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "就算在几公里深的海底也仍然能看到东西。",
+        "romanization": "jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàn dào dōngxi。",
+        "translation": "Even at a few kilometers deep on the sea floor, you can still see things."
+      }
+    ]
+  },
+  {
+    "id": "zh_是否_383",
+    "language": "zh",
+    "pattern": "是否",
+    "title": "是否 (if, whether)",
+    "shortExplanation": "if, whether",
+    "longExplanation": "if, whether. Pinyin: shìfǒu",
+    "formation": "shìfǒu",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "不过她这么小，这本书我不知道她是否能读懂。",
+        "romanization": "bùguò tā zhème xiǎo， zhè běn shū wǒ bù zhīdào tā shìfǒu néng dúdǒng。",
+        "translation": "But she is so young, I don't know if she can read this book."
+      }
+    ]
+  },
+  {
+    "id": "zh_受不了_384",
+    "language": "zh",
+    "pattern": "受不了",
+    "title": "受不了 (tolerate)",
+    "shortExplanation": "tolerate",
+    "longExplanation": "tolerate. Pinyin: shòubùliǎo",
+    "formation": "shòubùliǎo",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我真的受不了你了，你到底还要逛多久？",
+        "romanization": "wǒ zhēn de shòubùliǎo nǐ le， nǐ dàodǐ hái yào guàng duōjiǔ？",
+        "translation": "I really can't tolerate you, how long do you have to keep shopping?"
+      }
+    ]
+  },
+  {
+    "id": "zh_接着V_385",
+    "language": "zh",
+    "pattern": "接着 V",
+    "title": "接着 V (continue to V)",
+    "shortExplanation": "continue to V",
+    "longExplanation": "continue to V. Pinyin: jiēzhe V",
+    "formation": "jiēzhe V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "你看完这本书以后先不要还，我接着看。",
+        "romanization": "nǐ kàn wán zhè běn shū yǐhòu xiān bùyào hái， wǒ jiēzhe kàn。",
+        "translation": "Don't pay back after reading this book, I will continue to watch."
+      }
+    ]
+  },
+  {
+    "id": "zh_接着_386",
+    "language": "zh",
+    "pattern": "接着",
+    "title": "接着 (then)",
+    "shortExplanation": "then",
+    "longExplanation": "then. Pinyin: jiēzhe",
+    "formation": "jiēzhe",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他毕业后在老家工作了一年，接着又考上了北京大学，读研究生。",
+        "romanization": "tā bìyè hòu zài lǎojiā gōngzuò le yī nián， jiēzhe yòu kǎoshàng le Běijīng Dàxué， dú yánjiūshēng。",
+        "translation": "After graduating, he worked in his hometown for a year. And then he was admitted to Peking University to study for graduate students."
+      }
+    ]
+  },
+  {
+    "id": "zh_除此以外_387",
+    "language": "zh",
+    "pattern": "除此以外",
+    "title": "除此以外 (other than that)",
+    "shortExplanation": "other than that",
+    "longExplanation": "other than that. Pinyin: chú cǐ yǐwài",
+    "formation": "chú cǐ yǐwài",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他和弟弟同一天出生，兄弟俩长得很像，但除此以外几乎再找不到其他共同点。",
+        "romanization": "tā hé dìdi tóngyī tiān chūshēng， xiōngdì liǎ zhǎngde hěn xiàng， dàn chú cǐ yǐwài jīhū zài zhǎobudào qítā gòngtóngdiǎn。",
+        "translation": "He and his brother were born on the same day. The two brothers look very much alike, but other than that they can hardly find other things in common."
+      }
+    ]
+  },
+  {
+    "id": "zh_把N1叫作N2_388",
+    "language": "zh",
+    "pattern": "把 N1 叫作 N2",
+    "title": "把 N1 叫作 N2 (call N1 N2)",
+    "shortExplanation": "call N1 N2",
+    "longExplanation": "call N1 N2. Pinyin: bǎ N1 jiàozuò N2",
+    "formation": "bǎ N1 jiàozuò N2",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "中国人把黄河叫作“母亲河” 。",
+        "romanization": "Zhōngguórén bǎ Huáng Hé jiàozuò“ mǔqīn hé” 。",
+        "translation": "The Chinese call the Yellow River Mother River."
+      }
+    ]
+  },
+  {
+    "id": "zh_无论不管Q都_389",
+    "language": "zh",
+    "pattern": "(无论/不管) Q 都",
+    "title": "(无论/不管) Q 都 (no matter Q)",
+    "shortExplanation": "no matter Q",
+    "longExplanation": "no matter Q. Pinyin: ( wúlùn/ bùguǎn) Q dōu",
+    "formation": "( wúlùn/ bùguǎn) Q dōu",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "没关系，不用道歉，(无论/不管) 谁都有粗心填错的时候。",
+        "romanization": "méiguānxi， bùyòng dàoqiàn，( wúlùn/ bùguǎn) shéi dōu yǒu cūxīn tián cuò de shíhou。",
+        "translation": "It doesn't matter, don't apologize, anyone (lit. no matter who) can make a mistake."
+      }
+    ]
+  },
+  {
+    "id": "zh_V上_390",
+    "language": "zh",
+    "pattern": "V 上",
+    "title": "V 上 (get to V)",
+    "shortExplanation": "get to V",
+    "longExplanation": "get to V. Pinyin: V shàng",
+    "formation": "V shàng",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "看来今天吃不上羊肉饺子了。",
+        "romanization": "kànlai jīntiān chībushàng yángròu jiǎozi le。",
+        "translation": "It seems that I don’t get to eat lamb dumplings today."
+      }
+    ]
+  },
+  {
+    "id": "zh_V出来_391",
+    "language": "zh",
+    "pattern": "V 出来",
+    "title": "V 出来 (V out (an outcome is produced))",
+    "shortExplanation": "V out (an outcome is produced)",
+    "longExplanation": "V out (an outcome is produced). Pinyin: V chūlái",
+    "formation": "V chūlái",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_总的来说_393",
+    "language": "zh",
+    "pattern": "总的来说",
+    "title": "总的来说 (overall)",
+    "shortExplanation": "overall",
+    "longExplanation": "overall. Pinyin: zǒngdeláishuō",
+    "formation": "zǒngdeláishuō",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这个公司总的来说还不错。",
+        "romanization": "zhège gōngsī zǒngdeláishuō hái bùcuò。",
+        "translation": "Overall, this company is good."
+      }
+    ]
+  },
+  {
+    "id": "zh_在于_394",
+    "language": "zh",
+    "pattern": "在于",
+    "title": "在于 (is all about)",
+    "shortExplanation": "is all about",
+    "longExplanation": "is all about. Pinyin: zàiyú",
+    "formation": "zàiyú",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "人们常说“生命在于运动”。",
+        "romanization": "rénmen cháng shuō“ shēngmìngzàiyúyùndòng”。",
+        "translation": "People often say that life is all about moving/exercising.”"
+      }
+    ]
+  }
+]

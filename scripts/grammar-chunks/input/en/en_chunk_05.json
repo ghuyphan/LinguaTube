@@ -1,0 +1,314 @@
+[
+  {
+    "id": "en_b1_11",
+    "language": "en",
+    "pattern": "Type 1 vs Type 2",
+    "title": "Type 1 vs Type 2: real vs unlikely",
+    "shortExplanation": "If I win (1st, really) vs If I won (2nd, unlikely)",
+    "longExplanation": "The choice of type reflectsyour confidencein the reality of the situation.\n• If I see her (1st type) - I expect to see her\n• If I saw her (2nd type) - unlikely or I’m just fantasizing\nThis is not a difference in grammar, but a difference in the attitude of the speaker.",
+    "formation": "If I win (1st, really) vs If I won (2nd, unlikely)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "If it rains tomorrow, I'll take an umbrella. (реально возможно)",
+        "translation": "If it rains tomorrow, I will take an umbrella."
+      },
+      {
+        "sentence": "If it rained every day, I'd move to Spain. (маловероятная фантазия)",
+        "translation": "If it rained every day, I would move to Spain."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_12",
+    "language": "en",
+    "pattern": "Passive Voice - Present Simple",
+    "title": "Passive Voice - Present Simple: is/are + V3",
+    "shortExplanation": "Coffee is grown in Brazil. The car is made in Germany.",
+    "longExplanation": "Passive voice is used when:\n• The action itself is important, not the person who performs it\n• Performer unknown or obvious\nForm Present Simple Passive: am/is/are + V3\nThe performer (if needed) is added with by: The window was broken by the ball.",
+    "formation": "Coffee is grown in Brazil. The car is made in Germany.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "English is spoken in many countries.",
+        "translation": "English is spoken in many countries."
+      },
+      {
+        "sentence": "The letter is written in French.",
+        "translation": "The letter is written in French."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_13",
+    "language": "en",
+    "pattern": "Passive Voice - Past Simple",
+    "title": "Passive Voice - Past Simple: was/were + V3",
+    "shortExplanation": "The bridge was built in 1890. They were arrested.",
+    "longExplanation": "Past Simple Passive: was/were + V3\n• was - units. number\n• were - plural. number\nActive → Passive: Someone stole my car. → My car was stolen.",
+    "formation": "The bridge was built in 1890. They were arrested.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "The Eiffel Tower was built in 1889.",
+        "translation": "The Eiffel Tower was built in 1889."
+      },
+      {
+        "sentence": "Three people were injured in the accident.",
+        "translation": "Three people were injured in the accident."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_14",
+    "language": "en",
+    "pattern": "Passive Voice - Present Perfect",
+    "title": "Passive Voice - Present Perfect: has/have been + V3",
+    "shortExplanation": "The car has been repaired. All invitations have been sent.",
+    "longExplanation": "Present Perfect Passive: has/have been + V3\nUsed when the result in the present is important, and not when exactly it happened.",
+    "formation": "The car has been repaired. All invitations have been sent.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "The project has been completed.",
+        "translation": "The project is completed."
+      },
+      {
+        "sentence": "All the guests have been informed.",
+        "translation": "All guests have been notified."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_15",
+    "language": "en",
+    "pattern": "Reported Speech",
+    "title": "Reported Speech - time shift",
+    "shortExplanation": "\"I'm tired.\" → He said he was tired.",
+    "longExplanation": "When translated into indirect speech, the tenses are “shifted” back:\n• Present Simple → Past Simple: \"I work\" → he said he worked\n• Past Simple → Past Perfect: \"I went\" → she said she had gone\n• Present Perfect → Past Perfect: \"I've seen\" → he said he had seen\n• will → would; can → could; is → was; am going → was going",
+    "formation": "\"I'm tired.\" → He said he was tired.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "She said: 'I am leaving.' → She said she was leaving.",
+        "translation": "She said she was leaving."
+      },
+      {
+        "sentence": "He told me: 'I can't come.' → He told me he couldn't come.",
+        "translation": "He said he couldn't come."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_16",
+    "language": "en",
+    "pattern": "Reported questions",
+    "title": "Reported questions - indirect questions",
+    "shortExplanation": "\"Where do you live?\" → She asked where I lived.",
+    "longExplanation": "In indirect questions:\n1. No inversion (word order as in the statement)\n2. No auxiliary do/did\n3. General questions (Yes/No) → if/whether + subject + verb",
+    "formation": "\"Where do you live?\" → She asked where I lived.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "\"Where do you work?\" → She asked where I worked.",
+        "translation": "She asked where I worked."
+      },
+      {
+        "sentence": "\"Are you married?\" → He wanted to know if I was married.",
+        "translation": "He wanted to know if I was married."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_17",
+    "language": "en",
+    "pattern": "say vs tell in indirect speech",
+    "title": "say vs tell in indirect speech",
+    "shortExplanation": "He said that... / He told me that... - after tell you need a face!",
+    "longExplanation": "say - without the required addition: She said she was tired.\ntell - ALWAYS with an addition (to whom it is told): She told me she was tired.\n❌ He told that he was late. ✓ He said that he was late.",
+    "formation": "He said that... / He told me that... - after tell you need a face!",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "She said she needed help.",
+        "translation": "She said she needed help."
+      },
+      {
+        "sentence": "He told us the meeting was cancelled.",
+        "translation": "He informed us that the meeting was cancelled."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_18",
+    "language": "en",
+    "pattern": "Verbs + gerund (V-ing)",
+    "title": "Verbs + gerund (V-ing)",
+    "shortExplanation": "I enjoy reading. She finished writing. He avoided making mistakes.",
+    "longExplanation": "These verbs require a gerund (V-ing) after them:\nenjoy, finish, avoid, mind, suggest, keep, consider, deny, imagine, miss, practice, risk, admit, delay, dislike, fancy, give up, involve, put off, recommend, resist\nMemorization trick: if you can replace it with “process”, it’s most likely a gerund.",
+    "formation": "I enjoy reading. She finished writing. He avoided making mistakes.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I enjoy swimming in the sea.",
+        "translation": "I like to swim in the sea."
+      },
+      {
+        "sentence": "She's considering moving abroad.",
+        "translation": "She is thinking about moving abroad."
+      },
+      {
+        "sentence": "He avoided making eye contact.",
+        "translation": "He avoided eye contact."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_19",
+    "language": "en",
+    "pattern": "Verbs + infinitive (to + V)",
+    "title": "Verbs + infinitive (to + V)",
+    "shortExplanation": "I want to go. She decided to stay. He managed to finish.",
+    "longExplanation": "These verbs require an infinitive with to:\nwant, decide, hope, plan, manage, agree, promise, refuse, fail, expect, offer, learn, need, afford, arrange, attempt, choose, claim, demand, deserve, help, pretend, tend, threaten",
+    "formation": "I want to go. She decided to stay. He managed to finish.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "She decided to quit her job.",
+        "translation": "She decided to quit."
+      },
+      {
+        "sentence": "I hope to see you soon.",
+        "translation": "Hope to see you soon."
+      },
+      {
+        "sentence": "He failed to answer.",
+        "translation": "He couldn't answer."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_20",
+    "language": "en",
+    "pattern": "Verbs with both (like, love, hate, start, begin)",
+    "title": "Verbs with both (like, love, hate, start, begin)",
+    "shortExplanation": "I like reading = I like to read - slight difference",
+    "longExplanation": "After like/love/hate/prefer both options are possible:\n• V-ing - we talk about the action as a whole: I love cooking. (I generally like to cook)\n• to-inf - we are talking about a specific case: I'd like to cook tonight.\nAfter start/begin/continue/cease there is practically no difference.",
+    "formation": "I like reading = I like to read - slight difference",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I love travelling / to travel.",
+        "translation": "I like to travel."
+      },
+      {
+        "sentence": "She started working / to work here in May.",
+        "translation": "She started working here in May."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_21",
+    "language": "en",
+    "pattern": "used to",
+    "title": "used to - past habits and states",
+    "shortExplanation": "I used to play football. She used to have long hair.",
+    "longExplanation": "used to - regular actions or conditions in the past that have already stopped.\nForm: used to + infinitive\nDenial: didn't use to\nQuestion: Did you use to...?\nDifference from be used to: I am used to waking up early = I'm used to it (now).",
+    "formation": "I used to play football. She used to have long hair.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I used to smoke, but I stopped.",
+        "translation": "I used to smoke, but I quit."
+      },
+      {
+        "sentence": "Did you use to play an instrument?",
+        "translation": "Have you played an instrument before?"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_22",
+    "language": "en",
+    "pattern": "Relative clauses",
+    "title": "Relative clauses: who, which, that, where, whose",
+    "shortExplanation": "The man who called. The book that I read. The place where we met.",
+    "longExplanation": "who - for people: The woman who called is my sister.\nwhich - for objects and animals: The book which I borrowed was great.\nthat - for people and objects (in defining clauses): The car that he bought is new.\nwhere - for places: The café where we met is closed.\nwhose - accessory: The girl whose bag was stolen...\nIn colloquial speech, a pronoun is often omitted if it is an object: The film (that) I saw...",
+    "formation": "The man who called. The book that I read. The place where we met.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "The man who lives next door is very friendly.",
+        "translation": "The man who lives next door is very friendly."
+      },
+      {
+        "sentence": "The hotel where we stayed had a pool.",
+        "translation": "The hotel we stayed in had a swimming pool."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_23",
+    "language": "en",
+    "pattern": "Conjunctions of contrast",
+    "title": "Conjunctions of contrast: although, however, despite, in spite of, whereas",
+    "shortExplanation": "Although it was raining, we went out. Despite the rain, we went.",
+    "longExplanation": "although / even though / though + subordinate clause.\ndespite / in spite of + noun / gerund (NOT subordinate clause!).\nhowever + new sentence (after period or semicolon).\nwhereas is a contrast between two facts.",
+    "formation": "Although it was raining, we went out. Despite the rain, we went.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Although she was tired, she kept working.",
+        "translation": "Although she was tired, she continued to work."
+      },
+      {
+        "sentence": "Despite the rain, he cycled to work.",
+        "translation": "Despite the rain, he rode his bike to work."
+      },
+      {
+        "sentence": "It was expensive. However, it was worth it.",
+        "translation": "It was expensive. Still, it was worth it."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_24",
+    "language": "en",
+    "pattern": "Future Continuous",
+    "title": "Future Continuous: will be + V-ing",
+    "shortExplanation": "I'll be working at 9 tomorrow. She'll be flying over the Atlantic.",
+    "longExplanation": "Future Continuous = will be + V-ing\nValues:\n1. An action that will be in progress at a specific moment in the future: At this time tomorrow, I'll be lying on the beach.\n2. Planned, expected action in the future (natural course of events): I'll be seeing her tomorrow anyway.\n3. Polite questions about plans (no pressure): Will you be coming to the party?",
+    "formation": "I'll be working at 9 tomorrow. She'll be flying over the Atlantic.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Don't call at 8 — I'll be having dinner.",
+        "translation": "Don't call at 8 - I'll have dinner."
+      },
+      {
+        "sentence": "This time next week I'll be sitting on a beach.",
+        "translation": "This time next week I'll be sitting on the beach."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_25",
+    "language": "en",
+    "pattern": "Future Perfect",
+    "title": "Future Perfect: will have + V3",
+    "shortExplanation": "By Friday I will have finished the report. By 2030 they will have built the bridge.",
+    "longExplanation": "Future Perfect = will have + V3\nAn action that will be completed before a certain point in the future.\nOften used with by (the time), before: By the time you arrive, I will have cooked dinner.",
+    "formation": "By Friday I will have finished the report. By 2030 they will have built the bridge.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I'll have finished this book by Sunday.",
+        "translation": "I will finish reading this book by Sunday."
+      },
+      {
+        "sentence": "By 2050, scientists will have found a cure.",
+        "translation": "By 2050, scientists will find a cure."
+      }
+    ]
+  }
+]

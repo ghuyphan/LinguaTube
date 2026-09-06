@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_にわたって_118",
+    "language": "ja",
+    "pattern": "～にわたって",
+    "title": "～にわたって (〜ni watatte)",
+    "shortExplanation": "Indicates a range or extent; 'over', 'throughout', 'across'.",
+    "longExplanation": "The ～にわたって grammar point is used to express a range or extent of a particular action, event, or situation. It can be translated as 'over', 'throughout', or 'across' in English. This structure can be used with various types of words such as time, distance, and quantity.",
+    "formation": "Noun + にわたって",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼女は一年にわたって日本語を勉強しました。",
+        "romanization": "Kanojo wa ichinen ni watatte nihongo wo benkyou shimashita.",
+        "translation": "She studied Japanese for over a year."
+      },
+      {
+        "sentence": "このプロジェクトは50キロにわたって道路を建設します。",
+        "romanization": "Kono purojekuto wa gojukiro ni watatte douro wo kensetsu shimasu.",
+        "translation": "This project will construct roads across 50 kilometers."
+      },
+      {
+        "sentence": "彼の著作は数多くの国にわたって読まれている。",
+        "romanization": "Kare no chosaku wa kazu ooku no kuni ni watatte yomarete iru.",
+        "translation": "His writings are read throughout numerous countries."
+      },
+      {
+        "sentence": "その秘密は世代にわたって保たれ続けた。",
+        "romanization": "Sono himitsu wa sedai ni watatte tamotsu sareta.",
+        "translation": "The secret was kept over generations."
+      }
+    ]
+  },
+  {
+    "id": "ja_に先立ち_119",
+    "language": "ja",
+    "pattern": "～に先立ち",
+    "title": "～に先立ち (〜ni sakidachi)",
+    "shortExplanation": "Express an action or event that occurs before another; 'before', 'prior to', 'preceding'.",
+    "longExplanation": "The ～に先立ち grammar point is used to indicate that a certain action or event occurs before another action or event. It can be translated as 'before', 'prior to', or 'preceding' in English. It is often used with nouns (Noun + に先立ち) or with dictionary-form verbs (Verb-dictionary form + に先立って).",
+    "formation": "Noun + に先立ち / Verb-dictionary form + に先立って",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "会議に先立ち、資料を確認しましょう。",
+        "romanization": "Kaigi ni sakidachi, shiryou wo kakunin shimashou.",
+        "translation": "Before the meeting, let's check the materials."
+      },
+      {
+        "sentence": "出発に先立ち、荷物を整理しました。",
+        "romanization": "Shuppatsu ni sakidachi, nimotsu wo seiri shimashita.",
+        "translation": "Before departure, I organized my luggage."
+      },
+      {
+        "sentence": "就寝に先立ち、歯を磨きます。",
+        "romanization": "Shuushin ni sakidachi, ha wo migakimasu.",
+        "translation": "Before going to bed, I brush my teeth."
+      },
+      {
+        "sentence": "映画の上映に先立ち、予告編が放映されます。",
+        "romanization": "Eiga no jouei ni sakidachi, yokokuhen ga houei saremasu.",
+        "translation": "Before the movie screening, the trailers are shown."
+      }
+    ]
+  },
+  {
+    "id": "ja_に反して_120",
+    "language": "ja",
+    "pattern": "～に反して",
+    "title": "～に反して (〜ni hanshite)",
+    "shortExplanation": "Contrary to, against, in spite of",
+    "longExplanation": "The ～に反して grammar point is used to express that something is contrary to or against an expectation or belief. It can be translated as 'contrary to', 'against', or 'in spite of' in English. It is generally used with nouns.",
+    "formation": "Noun + に反して",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "天気予報に反して、今日は雨が降っている。",
+        "romanization": "Tenki yohou ni hanshite, kyou wa ame ga futte iru.",
+        "translation": "Contrary to the weather forecast, it is raining today."
+      },
+      {
+        "sentence": "彼の予想に反して、試合に勝った。",
+        "romanization": "Kare no yosou ni hanshite, shiai ni katta.",
+        "translation": "We won the match against his prediction."
+      },
+      {
+        "sentence": "両親の意見に反して、彼と結婚した。",
+        "romanization": "Ryoushin no iken ni hanshite, kare to kekkon shita.",
+        "translation": "I married him against my parents' opinion."
+      },
+      {
+        "sentence": "この映画は批評家の評価に反して大ヒットした。",
+        "romanization": "Kono eiga wa hihyouka no hyouka ni hanshite daihitto shita.",
+        "translation": "This movie became a big hit contrary to the critics' ratings."
+      }
+    ]
+  },
+  {
+    "id": "ja_に基づいて_121",
+    "language": "ja",
+    "pattern": "～に基づいて",
+    "title": "～に基づいて (〜ni motozuite)",
+    "shortExplanation": "Based on, according to, depending on",
+    "longExplanation": "The ～に基づいて grammar point is used to express that something is based on, according to, or depending on a certain source or foundation. It can be used with nouns that represent a source, rule, principle, or standard.",
+    "formation": "Noun + に基づいて",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "研究結果に基づいて、新しい治療法が開発されました。",
+        "romanization": "Kenkyuu kekka ni motozuite, atarashii chiryouhou ga kaihatsu saremashita.",
+        "translation": "A new treatment method was developed based on the research results."
+      },
+      {
+        "sentence": "法律に基づいて、犯罪者は逮捕されました。",
+        "romanization": "Houritsu ni motozuite, hanzaisha wa taiho saremashita.",
+        "translation": "The criminal was arrested according to the law."
+      },
+      {
+        "sentence": "そのデータに基づいて、結論を出すことができます。",
+        "romanization": "Sono deeta ni motozuite, ketsuron o dasu koto ga dekimasu.",
+        "translation": "We can draw conclusions based on that data."
+      },
+      {
+        "sentence": "お客様の要望に基づいて、商品の改善が行われます。",
+        "romanization": "Okyakusama no youbou ni motozuite, shouhin no kaizen ga okonawaremasu.",
+        "translation": "Product improvements will be made based on customer requests."
+      }
+    ]
+  },
+  {
+    "id": "ja_に対して_122",
+    "language": "ja",
+    "pattern": "～に対して",
+    "title": "～に対して (〜ni taishite)",
+    "shortExplanation": "Expresses 'toward', 'against', 'in contrast to', or 'in response to'.",
+    "longExplanation": "The ～に対して grammar point is used to indicate a direction or target, showing an action or attitude towards something or someone. It can also be used to show a contrast between two situations or to express 'in response to' an action or situation.",
+    "formation": "Noun + に対して",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "日本の文化に対して尊敬の念を持っています。",
+        "romanization": "Nihon no bunka ni taishite sonkei no nen wo motte imasu.",
+        "translation": "I have a sense of respect towards Japanese culture."
+      },
+      {
+        "sentence": "彼に対して無礼な態度を取らないでください。",
+        "romanization": "Kare ni taishite burei na taido wo toranaide kudasai.",
+        "translation": "Please don't have a rude attitude towards him."
+      },
+      {
+        "sentence": "先生の質問に対して、彼女はすぐに答えました。",
+        "romanization": "Sensei no shitsumon ni taishite, kanojo wa sugu ni kotaemashita.",
+        "translation": "In response to the teacher's question, she answered immediately."
+      },
+      {
+        "sentence": "男性に対して、女性は同じ仕事でも低い給料をもらっている。",
+        "romanization": "Dansei ni taishite, josei wa onaji shigoto demo hikui kyuuryou wo moratte iru.",
+        "translation": "In contrast to men, women receive lower salaries for the same job."
+      }
+    ]
+  },
+  {
+    "id": "ja_に応えて_123",
+    "language": "ja",
+    "pattern": "～に応えて",
+    "title": "～に応えて (〜ni kotaete)",
+    "shortExplanation": "Responding to; living up to; meeting.",
+    "longExplanation": "The ～に応えて grammar point is used to express an action in response to something (an expectation, request, or situation). It can be translated as 'responding to', 'living up to', or 'meeting' in English. This grammar point is generally used with nouns or noun phrases.",
+    "formation": "Noun + に応えて",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "お客様の要望に応えて、新しいメニューを作りました。",
+        "romanization": "Okyaku-sama no youbou ni kotaete, atarashii menyuu o tsukurimashita.",
+        "translation": "Responding to the customers' requests, we created a new menu."
+      },
+      {
+        "sentence": "彼はチームの期待に応えて素晴らしいプレーを見せた。",
+        "romanization": "Kare wa chiimu no kitai ni kotaete, subarashii puree o miseta.",
+        "translation": "He lived up to the team's expectations and showed a great performance."
+      },
+      {
+        "sentence": "政府は国民の声に応えて、新しい法律を制定した。",
+        "romanization": "Seifu wa kokumin no koe ni kotaete, atarashii houritsu o seitei shita.",
+        "translation": "The government enacted a new law in response to the voice of the people."
+      },
+      {
+        "sentence": "企業は環境問題に応えて、環境に優しい製品を開発している。",
+        "romanization": "Kigyou wa kankyou mondai ni kotaete, kankyou ni yasashii seihin o kaihatsu shite iru.",
+        "translation": "Companies are developing environmentally friendly products in response to environmental issues."
+      }
+    ]
+  },
+  {
+    "id": "ja_に応じて_124",
+    "language": "ja",
+    "pattern": "～に応じて",
+    "title": "～に応じて (〜ni oujite)",
+    "shortExplanation": "In accordance with, depending on, in response to.",
+    "longExplanation": "The ～に応じて grammar point is used to express something that varies according to a certain condition or responds to a change. It can be translated as 'in accordance with', 'depending on', or 'in response to' in English. The formation is used with nouns.",
+    "formation": "Noun + に応じて",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "仕事の量に応じて給料が変わります。",
+        "romanization": "Shigoto no ryou ni oujite kyuuryou ga kawarimasu.",
+        "translation": "The salary changes depending on the amount of work."
+      },
+      {
+        "sentence": "季節に応じて服装を選びましょう。",
+        "romanization": "Kisetsu ni oujite fukusou wo erabimashou.",
+        "translation": "Choose your clothes according to the season."
+      },
+      {
+        "sentence": "お客様の希望に応じてプランを提案します。",
+        "romanization": "Okyakusama no kibou ni oujite puran wo teian shimasu.",
+        "translation": "We propose plans according to the customers' wishes."
+      },
+      {
+        "sentence": "年齢に応じて健康診断項目が異なります。",
+        "romanization": "Nenrei ni oujite kenkou shindan koumoku ga kotonarimasu.",
+        "translation": "Health check items vary depending on age."
+      }
+    ]
+  },
+  {
+    "id": "ja_に決まっている_125",
+    "language": "ja",
+    "pattern": "～に決まっている",
+    "title": "～に決まっている (〜ni kimatte iru)",
+    "shortExplanation": "Express certainty; 'it is obvious', 'it must be', 'no doubt'.",
+    "longExplanation": "The ～に決まっている grammar point is used to express certainty or a strong conviction about a situation or event. It can be translated in English as 'it is obvious', 'it must be', or 'no doubt'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + に決まっている, い-Adjective + に決まっている, な-Adjective + だに決まっている, Noun + だに決まっている",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "こんなに暑い日に運動したら、汗をかくに決まっている。",
+        "romanization": "Konna ni atsui hi ni undou shitara, ase wo kaku ni kimatte iru.",
+        "translation": "It's obvious that you'll sweat if you exercise on such a hot day."
+      },
+      {
+        "sentence": "彼が試験に落ちたら、がっかりするに決まっている。",
+        "romanization": "Kare ga shiken ni ochitara, gakkari suru ni kimatte iru.",
+        "translation": "If he fails the exam, it's obvious he will be disappointed."
+      },
+      {
+        "sentence": "彼女はいつも遅れるから、今日も遅れるに決まっている。",
+        "romanization": "Kanojo wa itsumo okureru kara, kyou mo okureru ni kimatte iru.",
+        "translation": "She's always late, so it's obvious she'll be late today too."
+      },
+      {
+        "sentence": "このゲームは楽しいに決まっている。",
+        "romanization": "Kono geemu wa tanoshii ni kimatte iru.",
+        "translation": "It's obvious that this game is fun."
+      }
+    ]
+  },
+  {
+    "id": "ja_に沿って_126",
+    "language": "ja",
+    "pattern": "～に沿って",
+    "title": "～に沿って (〜ni sotte)",
+    "shortExplanation": "Along with; in accordance with; following",
+    "longExplanation": "The ～に沿って grammar point is used to express that something happens or is done along with, in accordance with, or following a particular line, path, or guideline. It is often used in instructions or explanations. The に沿って is attached to the noun representing the line, path or guideline.",
+    "formation": "Noun + に沿って",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "川に沿って歩いていくと、橋が見えてきます。",
+        "romanization": "Kawa ni sotte aruite iku to, hashi ga miete kimasu.",
+        "translation": "If you walk along the river, you will see a bridge."
+      },
+      {
+        "sentence": "このレシピに沿って料理を作れば、間違いありません。",
+        "romanization": "Kono reshipi ni sotte ryouri wo tsukureba, machigai arimasen.",
+        "translation": "If you cook according to this recipe, there will be no mistakes."
+      },
+      {
+        "sentence": "規則に沿って行動しなければなりません。",
+        "romanization": "Kisoku ni sotte koudou shinakereba narimasen.",
+        "translation": "We must act in accordance with the rules."
+      },
+      {
+        "sentence": "山道に沿って進むと、小さな神社があります。",
+        "romanization": "Yamamichi ni sotte susumu to, chiisana jinja ga arimasu.",
+        "translation": "If you follow the mountain path, there is a small shrine."
+      }
+    ]
+  },
+  {
+    "id": "ja_に過ぎない_127",
+    "language": "ja",
+    "pattern": "～に過ぎない",
+    "title": "～に過ぎない (〜ni suginai)",
+    "shortExplanation": "Expresses that something is 'just' or 'nothing more than'; 'merely', 'only', 'simply'.",
+    "longExplanation": "The ～に過ぎない grammar point is used to indicate that something is 'just' or 'nothing more than' the stated quality or condition. It implies that the thing is not as significant or important as it might seem at first glance. This grammar point can be translated as 'merely', 'only', or 'simply' in English. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-casual + に過ぎない, い-Adjective + に過ぎない, な-Adjective + に過ぎない, Noun + に過ぎない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼の失敗はミスに過ぎない。",
+        "romanization": "Kare no shippai wa misu ni suginai.",
+        "translation": "His failure is nothing more than a mistake."
+      },
+      {
+        "sentence": "この試験は簡単な問題に過ぎない。",
+        "romanization": "Kono shiken wa kantan na mondai ni suginai.",
+        "translation": "This test is nothing more than a simple question."
+      },
+      {
+        "sentence": "彼女は友達に過ぎない。",
+        "romanization": "Kanojo wa tomodachi ni suginai.",
+        "translation": "She is nothing more than a friend."
+      },
+      {
+        "sentence": "その発言は冗談に過ぎない。",
+        "romanization": "Sono hatsugen wa joudan ni suginai.",
+        "translation": "That remark is nothing more than a joke."
+      }
+    ]
+  },
+  {
+    "id": "ja_に関わって_128",
+    "language": "ja",
+    "pattern": "～に関わって",
+    "title": "～に関わって (〜ni kakawatte)",
+    "shortExplanation": "Indicates that something is related to or influenced by a certain matter or factor; 'concerning', 'in connection with', 'regarding'.",
+    "longExplanation": "The ～に関わって grammar point is used to express that something is related to, influenced by, or connected with a certain matter or factor. It can be translated as 'concerning', 'in connection with', or 'regarding' in English. The formation depends on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + に関わって, い-Adjective + に関わって, な-Adjective + に関わって, Noun + に関わって",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "試験の内容に関わって、先生に質問があります。",
+        "romanization": "Shiken no naiyou ni kakawatte, sensei ni shitsumon ga arimasu.",
+        "translation": "I have a question for the teacher regarding the content of the exam."
+      },
+      {
+        "sentence": "このプロジェクトに関わって、意見があれば、遠慮なく言ってください。",
+        "romanization": "Kono purojekuto ni kakawatte, iken ga areba, enryo naku itte kudasai.",
+        "translation": "If you have any opinions regarding this project, please feel free to express them."
+      },
+      {
+        "sentence": "健康に関わって、食生活はとても重要です。",
+        "romanization": "Kenkou ni kakawatte, shokuseikatsu wa totemo juuyou desu.",
+        "translation": "Regarding health, dietary habits are very important."
+      },
+      {
+        "sentence": "その事件に関わって、彼も少し疑われています。",
+        "romanization": "Sono jiken ni kakawatte, kare mo sukoshi utagawarete imasu.",
+        "translation": "He is also somewhat suspected in connection with the incident."
+      }
+    ]
+  },
+  {
+    "id": "ja_に限り_129",
+    "language": "ja",
+    "pattern": "～に限り",
+    "title": "～に限り (〜ni kagiri)",
+    "shortExplanation": "Expresses limitation; 'only', 'limited to', 'exclusive to'.",
+    "longExplanation": "The ～に限り grammar point is used to indicate that something is limited or exclusive to a certain condition or situation. It can be translated as 'only', 'limited to', or 'exclusive to' in English. The formation is simple and can be used with nouns.",
+    "formation": "Noun + に限り",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "今日に限り、この商品が半額です。",
+        "romanization": "Kyou ni kagiri, kono shouhin ga hangaku desu.",
+        "translation": "Today only, this product is half price."
+      },
+      {
+        "sentence": "このクーポンはこの店に限り有効です。",
+        "romanization": "Kono kuupon wa kono mise ni kagiri yuukou desu.",
+        "translation": "This coupon is valid only at this store."
+      },
+      {
+        "sentence": "会員に限り、無料でこのサービスを利用できます。",
+        "romanization": "Kaiin ni kagiri, muryou de kono saabisu wo riyou dekimasu.",
+        "translation": "Only members can use this service for free."
+      },
+      {
+        "sentence": "この特典は先着10名に限ります。",
+        "romanization": "Kono tokuten wa senchaku 10-mei ni kagirimasu.",
+        "translation": "This benefit is limited to the first 10 people."
+      }
+    ]
+  },
+  {
+    "id": "ja_に際して_130",
+    "language": "ja",
+    "pattern": "～に際して",
+    "title": "～に際して (〜ni saishite)",
+    "shortExplanation": "Used to express the moment or the occasion of an action; 'at the time of', 'upon', 'when'.",
+    "longExplanation": "The ～に際して grammar point describes an action that occurs during a specific event, occasion, or when something takes place. It can be translated into English as 'at the time of', 'upon', 'when', or 'in the event of'. This grammar is used with nouns to describe the context or situation during which an action takes place.",
+    "formation": "Noun + に際して",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "卒業式に際して、校長先生がスピーチをします。",
+        "romanization": "Sotsugyoushiki ni saishite, kouchou sensei ga supiichi wo shimasu.",
+        "translation": "At the graduation ceremony, the principal gives a speech."
+      },
+      {
+        "sentence": "この仕事に際して、責任感が大切です。",
+        "romanization": "Kono shigoto ni saishite, sekininkan ga taisetsu desu.",
+        "translation": "Responsibility is important when doing this job."
+      },
+      {
+        "sentence": "留学に際して、ビザの手続きが必要です。",
+        "romanization": "Ryuugaku ni saishite, biza no tetsuzuki ga hitsuyou desu.",
+        "translation": "Visa procedures are necessary when studying abroad."
+      },
+      {
+        "sentence": "結婚式に際して、両親に感謝の気持ちを伝えました。",
+        "romanization": "Kekkonshiki ni saishite, ryoushin ni kansha no kimochi wo tsutaemashita.",
+        "translation": "At the time of the wedding ceremony, I conveyed my gratitude to my parents."
+      }
+    ]
+  },
+  {
+    "id": "ja_ねばならない_131",
+    "language": "ja",
+    "pattern": "～ねばならない",
+    "title": "～ねばならない (〜neba naranai)",
+    "shortExplanation": "Expresses obligation or necessity; 'must', 'have to', 'need to'.",
+    "longExplanation": "The ～ねばならない grammar point is used to express obligation or necessity. It can be translated as 'must', 'have to', or 'need to' in English. This grammar point is mainly used with verbs, indicating that the action must be done.",
+    "formation": "Verb-ない form → (remove い) → ね + ばならない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "試験に合格するために、もっと勉強せねばならない。",
+        "romanization": "Shiken ni goukaku suru tame ni, motto benkyou se neba naranai.",
+        "translation": "To pass the exam, I must study more."
+      },
+      {
+        "sentence": "飛行機に間に合うためには、急がねばならない。",
+        "romanization": "Hikouki ni maniau tame ni wa, isoga neba naranai.",
+        "translation": "To catch the flight, I must hurry."
+      },
+      {
+        "sentence": "６時までに帰らねばならない。",
+        "romanization": "Roku ji made ni kaera neba naranai.",
+        "translation": "I have to go home by 6 o'clock."
+      },
+      {
+        "sentence": "この仕事を今日中に終わらせねばならない。",
+        "romanization": "Kono shigoto wo kyoujuu ni owarase neba naranai.",
+        "translation": "I need to finish this work by the end of the day."
+      }
+    ]
+  },
+  {
+    "id": "ja_のみならずも_132",
+    "language": "ja",
+    "pattern": "～のみならず～も",
+    "title": "～のみならず～も (〜nomi narazu 〜mo)",
+    "shortExplanation": "Not only... but also; as well as.",
+    "longExplanation": "The ～のみならず～も grammar point is used to show that something applies not only to one thing, but also to another thing. This can be translated as 'not only... but also', or 'as well as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + のみならず + (も), い-Adjective + のみならず + (も), な-Adjective + のみならず + (も), Noun + のみならず + (も)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は英語のみならず、フランス語も話せます。",
+        "romanization": "Kare wa eigo nomi narazu, furansugo mo hanasemasu.",
+        "translation": "He can speak not only English but also French."
+      },
+      {
+        "sentence": "このレストランは美味しいのみならず、雰囲気も素晴らしいです。",
+        "romanization": "Kono resutoran wa oishii nomi narazu, fun'iki mo subarashii desu.",
+        "translation": "Not only is this restaurant delicious, but the atmosphere is also great."
+      },
+      {
+        "sentence": "このアプリは便利のみならず、安全性も高いです。",
+        "romanization": "Kono apuri wa benri nomi narazu, anzen-sei mo takai desu.",
+        "translation": "This app is not only convenient but also highly secure."
+      },
+      {
+        "sentence": "彼女は頭が良いのみならず、スポーツも得意です。",
+        "romanization": "Kanojo wa atama ga ii nomi narazu, supootsu mo tokui desu.",
+        "translation": "She is not only smart but also good at sports."
+      }
+    ]
+  }
+]

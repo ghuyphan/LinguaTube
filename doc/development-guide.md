@@ -1,6 +1,6 @@
 # Developer & Operations Guide
 
-This guide details how to set up, develop, test, debug, and deploy **LinguaTube**.
+This guide details how to set up, develop, test, debug, and deploy **Voca** (formerly LinguaTube).
 
 ---
 
@@ -19,7 +19,7 @@ node -v  # e.g., v20.18.0
 ### 1.2. Repository Setup
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/ghuyphan/LinguaTube.git
 cd lingua-tube
 
 # Install dependencies
@@ -53,33 +53,40 @@ SUPADATA_API_KEY_3="your_tertiary_key"
 # PocketBase backend instance URL
 POCKETHOST_URL="https://voca.pockethost.io"
 
+# Google OAuth Client ID (for web authentication)
+GOOGLE_CLIENT_ID="your_google_client_id.apps.googleusercontent.com"
+
 # Optional: YouTube cookies for inner-tube client authentication
 YOUTUBE_COOKIE=""
 ```
 
 ### 2.2. Frontend Environment Configuration
 Located in `src/environments/environment.ts`:
-- `turnstileSiteKey`: `1x00000000000000000000AA` (Always-passing test site key for development).
+- `turnstileSiteKey`: Turnstile public site key.
 - `pocketbaseUrl`: `https://voca.pockethost.io`
+- `api`: Centralized dictionary, translation, and transcript endpoint mappings.
 
 ---
 
 ## 3. Running the Application Locally
 
-### 3.1. Standard Local Development (Frontend + Express Mock)
-The most common way to develop is using the dual-server script:
+### 3.1. Standard Local Development (Frontend + Express Server)
+The standard workflow uses the dual-server script:
 ```bash
 npm run dev
 ```
 This concurrently executes:
-1. **Express Local Server** on `http://localhost:3001` (mocking Gladia, MDBG, Naver, and tokenizers).
+1. **Express Local Server** on `http://localhost:3001` (`server/server.js`):
+   - Integrates `youtubei.js` (Innertube) to fetch real YouTube timed-text tracks directly in local dev!
+   - Saves transcripts locally in `server/transcripts_cache/` for instant subsequent replays.
+   - Provides mock/live Gladia AI generation, local dual subtitles, local batch translation, and batch tokenization.
 2. **Angular Development Server** on `http://localhost:4200` with proxy routing via `proxy.conf.json`.
 
 Open your browser at:
 👉 **`http://localhost:4200`**
 
 ### 3.2. Cloudflare Pages Local Preview (`wrangler`)
-To test the actual Cloudflare Pages Functions against D1 and KV locally:
+To test actual Cloudflare Pages Functions against D1 and KV locally:
 ```bash
 # First build functions
 npm run build:functions
@@ -99,11 +106,17 @@ npx wrangler pages dev dist/lingua-tube/browser --compatibility-date=2024-12-20
 | `dev` | `npm run dev` | Runs both `server` and `start` concurrently |
 | `build:functions` | `npm run build:functions` | Bundles `functions-src/` into `functions/` using esbuild |
 | `build` | `npm run build` | Runs `build:functions` and `ng build` for production |
-| `lint` | `npm run lint` | Lints TypeScript and HTML templates with ESLint |
+| `lint` | `npm run lint` | Lints TypeScript and HTML templates with ESLint 9 |
 | `lint:fix` | `npm run lint:fix` | Automatically fixes autofixable ESLint errors |
 | `test:backend` | `npm run test:backend` | Runs backend security & validation tests via `node --test` |
 | `test:ci` | `npm run test:ci` | Runs both backend tests and Angular Karma CI tests |
 | `test` | `npm run test` | Runs Angular unit test suite in Karma |
+
+### 4.1. Data Pipelines (`scripts/`)
+- `node scripts/merge-translations.js [ja|ko|zh|en|all]`:
+  Merges JSON grammar translation chunks from `scripts/grammar-chunks/output/` into TypeScript files in `src/app/data/translations/`.
+- `node scripts/generate-translations.js`:
+  Executes batch translations for grammar definitions across target languages.
 
 ---
 
@@ -115,14 +128,14 @@ npm run test:backend
 ```
 Verifies:
 - Script and title language detection algorithms.
-- Supported language whitelist.
+- Supported language whitelist (`ja`, `ko`, `zh`, `en`).
 - SSRF defense preventing malicious host redirections for Gladia polling.
 
 ### 5.2. Linting
 ```bash
 npm run lint
 ```
-Enforces strict typing, component selector prefixes, and template best practices.
+Enforces strict typing, component selector prefixes, and template accessibility rules.
 
 ---
 
@@ -151,6 +164,7 @@ Under **Settings $\rightarrow$ Environment Variables**:
 - `GLADIA_API_KEY`: Production API key from Gladia.
 - `TURNSTILE_SECRET_KEY`: Production secret key from Cloudflare Turnstile.
 - `SUPADATA_API_KEY`, `SUPADATA_API_KEY_2`, `SUPADATA_API_KEY_3`: Production keys for Supadata.
+- `GOOGLE_CLIENT_ID`: Google OAuth Web Client ID.
 - `POCKETHOST_URL`: `https://voca.pockethost.io`
 
 ---
@@ -158,13 +172,13 @@ Under **Settings $\rightarrow$ Environment Variables**:
 ## 7. Common Troubleshooting & FAQs
 
 ### Q: I edited a backend function, but my changes aren't taking effect in production!
-**Cause**: You may have edited `functions/` directly, or you forgot to run the build script.  
+**Cause**: You may have edited `functions/` directly, or forgot to run the build script.  
 **Fix**: Edit in `functions-src/` and run `npm run build:functions`.
 
 ### Q: AI transcription fails with `CAPTCHA_FAILED` locally.
 **Cause**: The Turnstile widget was not rendered or an invalid secret key is configured.  
-**Fix**: Ensure `TURNSTILE_SECRET_KEY="1x00000000000000000000000000000000BB"` in `.dev.vars` and `turnstileSiteKey="1x00000000000000000000AA"` in `environment.ts`.
+**Fix**: Ensure `TURNSTILE_SECRET_KEY="1x00000000000000000000000000000000BB"` in `.dev.vars`.
 
 ### Q: Japanese Furigana shows no readings for Kanji tokens.
 **Cause**: The Kuromoji IPAdic dictionary failed to load from CDN.  
-**Fix**: Ensure you have an active internet connection so `cdnLoader` can fetch `@aiktb/kuromoji` buffers from `cdn.jsdelivr.net`.
+**Fix**: Ensure you have an active internet connection so `cdnLoader` can fetch `@patdx/kuromoji` buffers from `cdn.jsdelivr.net`.

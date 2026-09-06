@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_以来_410",
+    "language": "zh",
+    "pattern": "以来",
+    "title": "以来 (since)",
+    "shortExplanation": "since",
+    "longExplanation": "since. Pinyin: yǐlái",
+    "formation": "yǐlái",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "改革开放以来，中国发生了巨大的变化。",
+        "romanization": "gǎigékāifàng yǐlái， Zhōngguó fāshēng le jùdà de biànhuà。",
+        "translation": "Since the reform and opening up, China has undergone tremendous changes."
+      }
+    ]
+  },
+  {
+    "id": "zh_临_411",
+    "language": "zh",
+    "pattern": "临",
+    "title": "临 (adjacent to)",
+    "shortExplanation": "adjacent to",
+    "longExplanation": "adjacent to. Pinyin: lín",
+    "formation": "lín",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我想买一套不临街的房子，这样不会太吵。",
+        "romanization": "wǒ xiǎng mǎi yītào bù línjiē de fángzi， zhèyàng bùhuì tài chǎo。",
+        "translation": "I want to buy a house that is not adjacent to a street, so it won't be too noisy."
+      }
+    ]
+  },
+  {
+    "id": "zh_临_412",
+    "language": "zh",
+    "pattern": "临",
+    "title": "临 (just before)",
+    "shortExplanation": "just before",
+    "longExplanation": "just before. Pinyin: lín",
+    "formation": "lín",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "临走那天，父亲从老家赶来送我们。",
+        "romanization": "línzǒu nàtiān， fùqīn cóng lǎojiā gǎnlái sòng wǒmen。",
+        "translation": "On the day (just before) he left, my father came to us from my hometown."
+      }
+    ]
+  },
+  {
+    "id": "zh_立刻_413",
+    "language": "zh",
+    "pattern": "立刻",
+    "title": "立刻 (immediately)",
+    "shortExplanation": "immediately",
+    "longExplanation": "immediately. Pinyin: lìkè",
+    "formation": "lìkè",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我们回来时，立刻感受到了家的温暖。",
+        "romanization": "wǒmen huílai shí， lìkè gǎnshòu dàoliǎo jiāde wēnnuǎn。",
+        "translation": "When we came back, we immediately felt the warmth of home."
+      }
+    ]
+  },
+  {
+    "id": "zh_包括_414",
+    "language": "zh",
+    "pattern": "包括",
+    "title": "包括 (to include)",
+    "shortExplanation": "to include",
+    "longExplanation": "to include. Pinyin: bāokuò",
+    "formation": "bāokuò",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "汉语技能教学包括听、说、读、写四个方面。",
+        "romanization": "Hànyǔ jìnéng jiàoxué bāokuò tīng、 shuō、 dú、 xiě sì gè fāngmiàn。",
+        "translation": "Chinese language skills teaching includes listening, speaking, reading and writing."
+      }
+    ]
+  },
+  {
+    "id": "zh_各自_415",
+    "language": "zh",
+    "pattern": "各自",
+    "title": "各自 (each by themselves)",
+    "shortExplanation": "each by themselves",
+    "longExplanation": "each by themselves. Pinyin: gèzì",
+    "formation": "gèzì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "中场休息时间到了，比赛双方队员各自回场外休息。",
+        "romanization": "zhōngchǎng xiūxi shíjiān dàoliǎo， bǐsài shuāngfāng duìyuán gèzì huí chǎng wài xiūxi。",
+        "translation": "The intermission time has arrived, and the players on both sides of the game (each by themselves) went back out of the court to rest."
+      }
+    ]
+  },
+  {
+    "id": "zh_勿_416",
+    "language": "zh",
+    "pattern": "勿",
+    "title": "勿 (do not)",
+    "shortExplanation": "do not",
+    "longExplanation": "do not. Pinyin: wù",
+    "formation": "wù",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "非工作人员，请勿入内。",
+        "romanization": "fēi gōngzuòrényuán， qǐng wù rù nèi。",
+        "translation": "If you’re not a staff member, please do not enter."
+      }
+    ]
+  },
+  {
+    "id": "zh_时刻_417",
+    "language": "zh",
+    "pattern": "时刻",
+    "title": "时刻 (moment)",
+    "shortExplanation": "moment",
+    "longExplanation": "moment. Pinyin: shíkè",
+    "formation": "shíkè",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "在最后时刻，他为本队踢进了关键一球。",
+        "romanization": "zài zuìhòu shíkè， tā wéi běn duì tī jìn le guānjiàn yī qiú。",
+        "translation": "At the last moment, he scored the key goal for the team."
+      }
+    ]
+  },
+  {
+    "id": "zh_时刻时时刻刻_418",
+    "language": "zh",
+    "pattern": "时刻，时时刻刻",
+    "title": "时刻，时时刻刻 (at all times)",
+    "shortExplanation": "at all times",
+    "longExplanation": "at all times. Pinyin: shíkè， shíshíkèkè",
+    "formation": "shíkè， shíshíkèkè",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "工作中，他时时刻刻提醒自已： 乘客的安全是最重要的。",
+        "romanization": "gōngzuò zhōng， tā shíshíkèkè tíxǐng zì yǐ： chéngkè de ānquán shì zuì zhòngyào de。",
+        "translation": "At work, he reminds himself at all times: The safety of passengers is the most important."
+      }
+    ]
+  },
+  {
+    "id": "zh_至今_419",
+    "language": "zh",
+    "pattern": "至今",
+    "title": "至今 (to this day)",
+    "shortExplanation": "to this day",
+    "longExplanation": "to this day. Pinyin: zhìjīn",
+    "formation": "zhìjīn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我在北京出生、长大，至今还没离开过呢。",
+        "romanization": "wǒ zài Běijīng chūshēng、 zhǎngdà， zhìjīn hái méi líkāi guò ne。",
+        "translation": "I was born and raised in Beijing and have never left to this day."
+      }
+    ]
+  },
+  {
+    "id": "zh_顶_420",
+    "language": "zh",
+    "pattern": "顶",
+    "title": "顶 ((measure word for hats))",
+    "shortExplanation": "(measure word for hats)",
+    "longExplanation": "(measure word for hats). Pinyin: dǐng",
+    "formation": "dǐng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我这顶新帽子怎么样？",
+        "romanization": "wǒ zhè dǐng xīn màozi zěnmeyàng？",
+        "translation": "How [what do you think of] this new hat of mine?"
+      }
+    ]
+  },
+  {
+    "id": "zh_顶_421",
+    "language": "zh",
+    "pattern": "顶",
+    "title": "顶 (the top of)",
+    "shortExplanation": "the top of",
+    "longExplanation": "the top of. Pinyin: dǐng",
+    "formation": "dǐng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "请把手举过头顶。",
+        "romanization": "qǐng bǎshǒu jǔ guòtóu dǐng。",
+        "translation": "Please raise your hand over (the top of) your head."
+      }
+    ]
+  },
+  {
+    "id": "zh_顶_422",
+    "language": "zh",
+    "pattern": "顶",
+    "title": "顶 (to lift)",
+    "shortExplanation": "to lift",
+    "longExplanation": "to lift. Pinyin: dǐng",
+    "formation": "dǐng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他能用头顶起20斤重的东西。",
+        "romanization": "tā néng yòng tóudǐng qǐ20 jīn zhòng de dōngxi。",
+        "translation": "He can use his head to lift 20 pounds."
+      }
+    ]
+  },
+  {
+    "id": "zh_顶着_423",
+    "language": "zh",
+    "pattern": "顶着",
+    "title": "顶着 (against)",
+    "shortExplanation": "against",
+    "longExplanation": "against. Pinyin: dǐng zhe",
+    "formation": "dǐng zhe",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "天气非常寒冷，子路顶着大雪往前走。",
+        "romanization": "tiānqì fēicháng hánlěng， Zǐ Lù dǐng zhe Dàxuě wǎngqián zǒu。",
+        "translation": "The weather is very cold, and Zilu was trudging ahead against heavy snow."
+      }
+    ]
+  },
+  {
+    "id": "zh_得很得不行得不得了_424",
+    "language": "zh",
+    "pattern": "……得很/得不行/得不得了",
+    "title": "……得很/得不行/得不得了 (very/so/extremely)",
+    "shortExplanation": "very/so/extremely",
+    "longExplanation": "very/so/extremely. Pinyin: …… dehěn/ dé bùxíng/ dé bùdéliǎo",
+    "formation": "…… dehěn/ dé bùxíng/ dé bùdéliǎo",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这个地方这么热闹，孩子们高兴得很/得不行/得不得了。",
+        "romanization": "zhège dìfang zhème rènao， háizimen gāoxìng dehěn/ dé bùxíng/ dé bùdéliǎo。",
+        "translation": "The place is so lively, the children are very/so/extremely happy."
+      }
+    ]
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_なんでも_120",
+    "language": "ja",
+    "pattern": "なんでも～",
+    "title": "なんでも～ (nandemo～)",
+    "shortExplanation": "Means 'any', 'anything', 'anyone'.",
+    "longExplanation": "The なんでも grammar point is used to express the concept of 'any', 'anything', or 'anyone' in Japanese. It can be used with verbs, adjectives, and nouns. It is often used in the meaning of 'no matter what' or 'regardless of'.",
+    "formation": "なんでも + Verb / なんでも + Adjective / なんでも + Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "なんでも食べられるから、何を頼んでも大丈夫です。",
+        "romanization": "Nandemo taberareru kara, nani wo tanondemo daijoubu desu.",
+        "translation": "I can eat anything, so it's okay to order whatever you want."
+      },
+      {
+        "sentence": "なんでもよければ、この本をおすすめします。",
+        "romanization": "Nandemo yokereba, kono hon wo osusume shimasu.",
+        "translation": "If you're okay with anything, I recommend this book."
+      },
+      {
+        "sentence": "なんでもできるスタッフを探しています。",
+        "romanization": "Nandemo dekiru sutaffu wo sagashiteimasu.",
+        "translation": "We are looking for a staff member who can do anything."
+      },
+      {
+        "sentence": "この食堂では、なんでも美味しくて安い料理が出されます。",
+        "romanization": "Kono shokudou de wa, nandemo oishikute yasui ryouri ga dasaremasu.",
+        "translation": "In this cafeteria, any dish served is delicious and inexpensive."
+      }
+    ]
+  },
+  {
+    "id": "ja_なんと_121",
+    "language": "ja",
+    "pattern": "～なんと",
+    "title": "～なんと 言いますか。 (〜nan to iimasu ka.)",
+    "shortExplanation": "Asking how something is called or referred to; 'how do you say'",
+    "longExplanation": "The ～なんと言いますか grammar point is used to ask how something is called, expressed, or referred to in a polite manner. It can be translated as 'how do you say' or 'what do you call' in English. The formation is used with a noun or a topic where you would like to know the proper expression or name for something.",
+    "formation": "Noun + は/が + なんと言いますか",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "この花はなんと言いますか。",
+        "romanization": "Kono hana wa nan to iimasu ka.",
+        "translation": "How do you say this flower?"
+      },
+      {
+        "sentence": "この料理はなんと言いますか。",
+        "romanization": "Kono ryouri wa nan to iimasu ka.",
+        "translation": "What do you call this dish?"
+      },
+      {
+        "sentence": "日本でこれはなんと言いますか。",
+        "romanization": "Nihon de kore wa nan to iimasu ka.",
+        "translation": "How do you say this in Japanese?"
+      },
+      {
+        "sentence": "その映画の名前はなんと言いますか。",
+        "romanization": "Sono eiga no namae wa nan to iimasu ka.",
+        "translation": "What is the name of that movie?"
+      }
+    ]
+  },
+  {
+    "id": "ja_に_122",
+    "language": "ja",
+    "pattern": "～に",
+    "title": "～に あげます (〜 ni agemasu)",
+    "shortExplanation": "Used to express giving something to someone; 'give', 'offer'.",
+    "longExplanation": "The ～に あげます grammar point is used when the speaker offers or gives something to someone. It emphasizes that the action is performed for the benefit of the receiver. The formation involves using the particle 'に' after the person receiving the item, followed by the verb あげます.",
+    "formation": "Receiver + に + Object + を + あげます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "私は友達に本をあげました。",
+        "romanization": "Watashi wa tomodachi ni hon wo agemashita.",
+        "translation": "I gave a book to my friend."
+      },
+      {
+        "sentence": "彼にプレゼントをあげましょう。",
+        "romanization": "Kare ni purezento wo agemashou.",
+        "translation": "Let's give him a present."
+      },
+      {
+        "sentence": "先生に花をあげます。",
+        "romanization": "Sensei ni hana wo agemasu.",
+        "translation": "I will give flowers to the teacher."
+      },
+      {
+        "sentence": "お母さんにチョコレートをあげたいです。",
+        "romanization": "Okaasan ni chokoreeto wo agetai desu.",
+        "translation": "I want to give chocolate to my mom."
+      }
+    ]
+  },
+  {
+    "id": "ja_に_123",
+    "language": "ja",
+    "pattern": "～に",
+    "title": "～に もらいます (〜ni moraimasu)",
+    "shortExplanation": "To receive something or some action from someone; 'to get', 'to receive'.",
+    "longExplanation": "The ～に もらいます grammar point is used to express receiving something or some action from someone. It can be translated as 'to get' or 'to receive' in English. The formation involves placing に after the giver and もらいます to show the act of receiving.",
+    "formation": "Giver + に + Verb-te form + もらいます / Giver + に + Object + を + もらいます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "友達にプレゼントをもらいました。",
+        "romanization": "Tomodachi ni purezento wo moraimashita.",
+        "translation": "I received a gift from my friend."
+      },
+      {
+        "sentence": "先生にアドバイスをもらいました。",
+        "romanization": "Sensei ni adobaisu wo moraimashita.",
+        "translation": "I got advice from my teacher."
+      },
+      {
+        "sentence": "おばあさんに手紙を書いてもらいました。",
+        "romanization": "Obaasan ni tegami wo kaite moraimashita.",
+        "translation": "I had my grandmother write a letter for me."
+      },
+      {
+        "sentence": "弟に宿題を手伝ってもらいました。",
+        "romanization": "Otouto ni shukudai wo tetsudatte moraimashita.",
+        "translation": "I got help from my younger brother with my homework."
+      }
+    ]
+  },
+  {
+    "id": "ja_の_124",
+    "language": "ja",
+    "pattern": "～の",
+    "title": "～の (〜no)",
+    "shortExplanation": "Express possession, apposition, or description using 'of' or ''s'.",
+    "longExplanation": "The ～の grammar point is used to express possession, apposition, or description. It functions like 'of' or an apostrophe + 's' (’s) in English. It can be used with nouns, adjectives, and verbs to show relationships between words.",
+    "formation": "Noun1 + の + Noun2, (Adjective/Clause) + の (nominalized), etc.",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "これは私の鞄です。",
+        "romanization": "Kore wa watashi no kaban desu.",
+        "translation": "This is my bag."
+      },
+      {
+        "sentence": "彼女は赤いバッグを持っています。",
+        "romanization": "Kanojo wa akai baggu o motte imasu.",
+        "translation": "She has a red bag."
+      },
+      {
+        "sentence": "彼はきれいな部屋があります。",
+        "romanization": "Kare wa kirei na heya ga arimasu.",
+        "translation": "He has a clean room."
+      },
+      {
+        "sentence": "東京の天気は暑いです。",
+        "romanization": "Toukyou no tenki wa atsui desu.",
+        "translation": "The weather in Tokyo is hot."
+      }
+    ]
+  },
+  {
+    "id": "ja_はたいへんです_125",
+    "language": "ja",
+    "pattern": "～はたいへんです",
+    "title": "～はたいへんです (〜wa taihen desu)",
+    "shortExplanation": "Express that something is difficult or tough.",
+    "longExplanation": "The ～はたいへんです grammar point is used to express that something is difficult or tough to do, handle, or face. It can be translated as 'is difficult' or 'is tough' in English. The formation is used with a noun followed by はたいへんです.",
+    "formation": "Noun + はたいへんです",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "漢字を覚えるのはたいへんです。",
+        "romanization": "Kanji o oboeru no wa taihen desu.",
+        "translation": "It is difficult to remember kanji."
+      },
+      {
+        "sentence": "この仕事はたいへんです。",
+        "romanization": "Kono shigoto wa taihen desu.",
+        "translation": "This job is tough."
+      },
+      {
+        "sentence": "日本の駅のことを理解するのはたいへんです。",
+        "romanization": "Nihon no eki no koto o rikai suru no wa taihen desu.",
+        "translation": "Understanding Japanese train stations is difficult."
+      },
+      {
+        "sentence": "彼女は病気の時、生活はたいへんです。",
+        "romanization": "Kanojo wa byouki no toki, seikatsu wa taihen desu.",
+        "translation": "When she is sick, life is tough."
+      }
+    ]
+  },
+  {
+    "id": "ja_ほとんど_126",
+    "language": "ja",
+    "pattern": "ほとんど〜",
+    "title": "ほとんど〜 (hotondo〜)",
+    "shortExplanation": "Used to express 'almost', 'nearly', or 'most'.",
+    "longExplanation": "The ほとんど〜 grammar point is used to express that something is 'almost', 'nearly', or 'most'. It can appear in both negative contexts (hardly/barely) or positive contexts (almost all). It is typically followed by a verb or used with a noun to describe the quantity or extent of something.",
+    "formation": "ほとんど + Verb / ほとんど + Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼女はほとんど英語を話せません。",
+        "romanization": "Kanojo wa hotondo eigo o hanasemasen.",
+        "translation": "She can hardly speak English."
+      },
+      {
+        "sentence": "ほとんどの人がパーティーに出席しました。",
+        "romanization": "Hotondo no hito ga paatii ni shusseki shimashita.",
+        "translation": "Most people attended the party."
+      },
+      {
+        "sentence": "私たちはほとんど勉強しないでテストに合格しました。",
+        "romanization": "Watashitachi wa hotondo benkyou shinaide tesuto ni goukaku shimashita.",
+        "translation": "We passed the test with hardly any studying."
+      },
+      {
+        "sentence": "この本はほとんど読み終わりました。",
+        "romanization": "Kono hon wa hotondo yomiowarimashita.",
+        "translation": "I have almost finished reading this book."
+      }
+    ]
+  },
+  {
+    "id": "ja_まあまあ_127",
+    "language": "ja",
+    "pattern": "まあまあ～",
+    "title": "まあまあ～ (maa maa～)",
+    "shortExplanation": "Expresses something as 'so-so', 'not bad', or 'average'.",
+    "longExplanation": "The expression まあまあ is used to describe something that is neither particularly good nor bad, but rather average or 'so-so'. It is a neutral term and can be used in various contexts when discussing quality, feelings, or situations.",
+    "formation": "Used as an adverb or short expression with no special grammar structure.",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼の料理の腕前はまあまあです。",
+        "romanization": "Kare no ryouri no udemae wa maa maa desu.",
+        "translation": "His cooking skills are so-so."
+      },
+      {
+        "sentence": "今日の天気はまあまあですね。",
+        "romanization": "Kyou no tenki wa maa maa desu ne.",
+        "translation": "The weather today is not bad, huh?"
+      },
+      {
+        "sentence": "あの映画はまあまあ面白かったです。",
+        "romanization": "Ano eiga wa maa maa omoshirokatta desu.",
+        "translation": "That movie was somewhat interesting."
+      },
+      {
+        "sentence": "彼女の歌はまあまあ上手だと思います。",
+        "romanization": "Kanojo no uta wa maa maa jouzu da to omoimasu.",
+        "translation": "I think her singing is not bad."
+      }
+    ]
+  },
+  {
+    "id": "ja_まだ_128",
+    "language": "ja",
+    "pattern": "まだ〜",
+    "title": "まだ〜 (mada〜)",
+    "shortExplanation": "Indicates something has not yet happened or is still happening; 'still', 'not yet'.",
+    "longExplanation": "The まだ〜 grammar point is used to express that something has not yet occurred or is still in progress. It can be translated as 'still' or 'not yet' in English. Depending on the context or if expressing the negative, まだ can be used with different combinations of verb, adjective, or noun.",
+    "formation": "まだ + Verb (non-past / negative / te-form), まだ + い-adjective, まだ + な-adjective + じゃない/ではない, まだ + Noun + じゃない/ではない",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "昼ご飯はまだ食べていません。",
+        "romanization": "Hirugohan wa mada tabete imasen.",
+        "translation": "I haven't eaten lunch yet."
+      },
+      {
+        "sentence": "山田さんはまだ来ていません。",
+        "romanization": "Yamada-san wa mada kite imasen.",
+        "translation": "Yamada-san has not arrived yet."
+      },
+      {
+        "sentence": "この部屋はまだ暑いです。",
+        "romanization": "Kono heya wa mada atsui desu.",
+        "translation": "This room is still hot."
+      },
+      {
+        "sentence": "彼はまだ学生じゃないです。",
+        "romanization": "Kare wa mada gakusei ja nai desu.",
+        "translation": "He is not a student yet."
+      }
+    ]
+  },
+  {
+    "id": "ja_まだないです_129",
+    "language": "ja",
+    "pattern": "まだ〜ないです",
+    "title": "まだ〜ないです (mada 〜 nai desu)",
+    "shortExplanation": "Expresses that something has not happened or been done yet.",
+    "longExplanation": "The まだ〜ないです grammar point is used to indicate that a certain action or event has not yet happened or been completed. It is used with the negative form of a verb (casual negative + です) and can be translated as 'not yet', 'still', or 'haven't' in English.",
+    "formation": "まだ + Verb-negative + です",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "まだ宿題をしていないです。",
+        "romanization": "Mada shukudai o shite inai desu.",
+        "translation": "I haven't done my homework yet."
+      },
+      {
+        "sentence": "彼はまだ来ないです。",
+        "romanization": "Kare wa mada konai desu.",
+        "translation": "He hasn't come yet."
+      },
+      {
+        "sentence": "映画はまだ始まっていないです。",
+        "romanization": "Eiga wa mada hajimatte inai desu.",
+        "translation": "The movie hasn't started yet."
+      },
+      {
+        "sentence": "私たちはまだ夕食を食べていないです。",
+        "romanization": "Watashitachi wa mada yuushoku o tabete inai desu.",
+        "translation": "We haven't eaten dinner yet."
+      }
+    ]
+  },
+  {
+    "id": "ja_まだません_130",
+    "language": "ja",
+    "pattern": "まだ～ません",
+    "title": "まだ～ません (mada ~masen)",
+    "shortExplanation": "Expresses that something has not happened or been done yet (polite form).",
+    "longExplanation": "The まだ～ません grammar point is used to express that something has not happened or been done yet in a polite register. It is used with the negative ます-form of a verb (～ません). まだ is placed before the verb phrase.",
+    "formation": "まだ + Verb-ます form (negative)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "昼ご飯をまだ食べていません。",
+        "romanization": "Hirugohan o mada tabete imasen.",
+        "translation": "I have not eaten lunch yet."
+      },
+      {
+        "sentence": "宿題がまだ終わっていません。",
+        "romanization": "Shukudai ga mada owatte imasen.",
+        "translation": "I have not finished my homework yet."
+      },
+      {
+        "sentence": "東京にはまだ行ったことがありません。",
+        "romanization": "Toukyou ni wa mada itta koto ga arimasen.",
+        "translation": "I have not been to Tokyo yet."
+      },
+      {
+        "sentence": "彼はまだ来ていません。",
+        "romanization": "Kare wa mada kite imasen.",
+        "translation": "He hasn't come yet."
+      }
+    ]
+  },
+  {
+    "id": "ja_もう_131",
+    "language": "ja",
+    "pattern": "もう～",
+    "title": "もう～ (mou～)",
+    "shortExplanation": "Expresses 'already', 'anymore', or 'soon'.",
+    "longExplanation": "The もう grammar point is used to express the idea of 'already', 'anymore', or 'soon' in English. It indicates that something has already happened, won't happen anymore, or will happen soon. It can be used with verbs, adjectives, or nouns depending on context.",
+    "formation": "もう + Verb / もう + Adjective / もう + Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "もう昼ごはんを食べました。",
+        "romanization": "Mou hirugohan o tabemashita.",
+        "translation": "I already ate lunch."
+      },
+      {
+        "sentence": "もうここでは働かない。",
+        "romanization": "Mou koko de wa hatarakanai.",
+        "translation": "I won't work here anymore."
+      },
+      {
+        "sentence": "もうすぐ夏休みですね。",
+        "romanization": "Mou sugu natsuyasumi desu ne.",
+        "translation": "Summer vacation is coming soon, isn't it?"
+      },
+      {
+        "sentence": "もう十分です。",
+        "romanization": "Mou juubun desu.",
+        "translation": "It's already enough."
+      }
+    ]
+  },
+  {
+    "id": "ja_もうすぐ_132",
+    "language": "ja",
+    "pattern": "もうすぐ〜",
+    "title": "もうすぐ〜 (mou sugu~)",
+    "shortExplanation": "Express an action or event happening soon: 'soon', 'in a short while', 'almost'.",
+    "longExplanation": "The もうすぐ grammar point is used to express that an action or event is going to happen soon or is almost happening. It can be translated as 'soon', 'in a short while', or 'almost' in English. もうすぐ is usually followed by a verb or a noun indicating an event.",
+    "formation": "もうすぐ + Verb (~ます form or 〜る form)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "もうすぐ春が来ます。",
+        "romanization": "Mou sugu haru ga kimasu.",
+        "translation": "Spring is coming soon."
+      },
+      {
+        "sentence": "もうすぐ彼女の誕生日です。",
+        "romanization": "Mou sugu kanojo no tanjoubi desu.",
+        "translation": "Her birthday is coming up soon."
+      },
+      {
+        "sentence": "もうすぐ試験が終わる。",
+        "romanization": "Mou sugu shiken ga owaru.",
+        "translation": "The exam will be over soon."
+      },
+      {
+        "sentence": "もうすぐ雨が止むでしょう。",
+        "romanization": "Mou sugu ame ga yamu deshou.",
+        "translation": "The rain will likely stop soon."
+      }
+    ]
+  },
+  {
+    "id": "ja_もっと_133",
+    "language": "ja",
+    "pattern": "もっと〜",
+    "title": "もっと〜 (motto〜)",
+    "shortExplanation": "Expresses 'more' or 'even more' when describing a quantity, frequency, or degree.",
+    "longExplanation": "The もっと〜 grammar point is used to emphasize the desire or need for something to be 'more' or 'even more' in terms of quantity, frequency, or degree. It is often translated as 'more' or 'even more' in English. もっと can be used with verbs, い-adjectives, or な-adjectives.",
+    "formation": "もっと + Verb / い-Adjective / な-Adjective",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "もっと勉強しなければなりません。",
+        "romanization": "Motto benkyou shinakereba narimasen.",
+        "translation": "I have to study more."
+      },
+      {
+        "sentence": "このかばんをもっと大きいサイズに変えたいです。",
+        "romanization": "Kono kaban o motto ookii saizu ni kaetai desu.",
+        "translation": "I want to change this bag to a larger size."
+      },
+      {
+        "sentence": "もっと静かな場所で働きたいです。",
+        "romanization": "Motto shizuka na basho de hatarakitai desu.",
+        "translation": "I want to work in a quieter place."
+      },
+      {
+        "sentence": "彼女はもっと上手になりたいと思っています。",
+        "romanization": "Kanojo wa motto jouzu ni naritai to omotte imasu.",
+        "translation": "She wants to become even better."
+      }
+    ]
+  },
+  {
+    "id": "ja_よく_134",
+    "language": "ja",
+    "pattern": "よく～",
+    "title": "よく～ (yoku ~)",
+    "shortExplanation": "Often used to express 'doing something well' or 'often'.",
+    "longExplanation": "The よく～ grammar point is used to express that someone does something well, frequently, or often. It is often placed before the verb and can also mean 'well done' or 'good job' when praising someone's action.",
+    "formation": "よく + Verb-casual",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼はよく勉強します。",
+        "romanization": "Kare wa yoku benkyou shimasu.",
+        "translation": "He studies often."
+      },
+      {
+        "sentence": "彼女はよく料理を作ります。",
+        "romanization": "Kanojo wa yoku ryouri o tsukurimasu.",
+        "translation": "She often cooks."
+      },
+      {
+        "sentence": "昔の友達とよく遊んでいました。",
+        "romanization": "Mukashi no tomodachi to yoku asonde imashita.",
+        "translation": "I used to play a lot with my old friends."
+      },
+      {
+        "sentence": "よくできました！",
+        "romanization": "Yoku dekimashita!",
+        "translation": "Well done!"
+      }
+    ]
+  }
+]

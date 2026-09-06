@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_の_85": {
+      "title": "～の～ (〜no 〜)",
+      "shortExplanation": "Dùng để nối hai danh từ, biểu thị sở hữu, thuộc tính, xuất xứ hoặc mối quan hệ giữa chúng; tương đương 'của', 'ở', 'về' trong tiếng Việt.",
+      "longExplanation": "Trợ từ 'の' là một trong những trợ từ cơ bản nhất trong tiếng Nhật, được đặt giữa hai danh từ (Danh từ 1 + の + Danh từ 2) để bổ nghĩa cho danh từ đứng sau. Cấu trúc này dùng để diễn đạt quan hệ sở hữu (ví dụ: 'chiếc ô của tôi'), nơi chốn hoặc xuất xứ (ví dụ: 'điểm du lịch của Tokyo'), tính chất hoặc chuyên môn (ví dụ: 'giáo viên âm nhạc').",
+      "formation": "Danh từ 1 + の + Danh từ 2",
+      "examples": [
+        {
+          "translation": "Đây là chiếc ô của tôi."
+        },
+        {
+          "translation": "Tòa nhà kia là một địa điểm du lịch nổi tiếng của Tokyo."
+        },
+        {
+          "translation": "Anh ấy là thư ký của trưởng phòng."
+        },
+        {
+          "translation": "Cô ấy là giáo viên dạy âm nhạc."
+        }
+      ]
+    },
+    "ja_ばかり_86": {
+      "title": "～ばかり (〜bakari)",
+      "shortExplanation": "Diễn tả sự việc, hành động chỉ toàn một thứ hoặc cứ lặp đi lặp lại liên tục; 'toàn là...', 'suốt ngày chỉ...', thường mang sắc thái phàn nàn, tiêu cực.",
+      "longExplanation": "Trợ từ '～ばかり' dùng để nhấn mạnh rằng một sự vật, đối tượng chiếm phần lớn hoặc duy nhất trong một phạm vi (Danh từ + ばかり: 'toàn là...'), hoặc một hành động cứ diễn ra liên tục, lặp đi lặp lại (Động từ thể て + ばかりいる: 'suốt ngày chỉ toàn...'). Trong đời sống hàng ngày, cấu trúc này thường đi kèm với thái độ chỉ trích, phàn nàn hoặc không hài lòng của người nói.",
+      "formation": "Danh từ + ばかり | Động từ thể て + ばかり(いる)",
+      "examples": [
+        {
+          "translation": "Anh ấy suốt ngày chỉ toàn chơi điện tử."
+        },
+        {
+          "translation": "Căn phòng này toàn là những thứ đẹp đẽ."
+        },
+        {
+          "translation": "Cô ấy lúc nào cũng chỉ cắm đầu vào học, chẳng có thời gian rảnh rỗi để đi chơi."
+        },
+        {
+          "translation": "Lời anh ta nói toàn là dối trá, không thể nào tin nổi."
+        }
+      ]
+    },
+    "ja_ばかりか_87": {
+      "title": "～ばかりか (〜bakarika) ～も (mo)",
+      "shortExplanation": "Diễn tả ý nghĩa 'không chỉ dừng lại ở mức đó mà còn thêm cả...', vế sau thường đi kèm với 'も' hoặc 'まで'; tương đương 'không những... mà còn...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ばかりか' (thường kết hợp với '～も') được dùng để diễn tả rằng sự việc không chỉ dừng lại ở điều đã nêu ở vế trước, mà ở vế sau còn phát sinh thêm một điều nữa với mức độ lớn hơn hoặc bất ngờ hơn ('không chỉ A mà ngay cả B cũng...'). Cả hai vế thường cùng mang tính chất tích cực hoặc cùng là điều tiêu cực.",
+      "formation": "Động từ thể thông thường + ばかりか | Tính từ đuôi い + ばかりか | Tính từ đuôi な + (な/である)ばかりか | Danh từ + (である)ばかりか",
+      "examples": [
+        {
+          "translation": "Cô ấy không những nói được tiếng Anh mà còn nói được cả tiếng Pháp."
+        },
+        {
+          "translation": "Nhà hàng này không chỉ đồ ăn ngon mà dịch vụ cũng vô cùng tuyệt vời."
+        },
+        {
+          "translation": "Bữa tiệc không những rất vui mà các món ăn cũng rất ngon miệng."
+        },
+        {
+          "translation": "Cậu ấy không những thông minh mà chơi thể thao cũng rất cừ."
+        }
+      ]
+    },
+    "ja_はずだ_88": {
+      "title": "～はずだ (〜hazu da)",
+      "shortExplanation": "Diễn tả sự phán đoán chắc chắn của người nói dựa trên một căn cứ, lý do hoặc quy luật tự nhiên có tính xác thực; 'chắc chắn là...', 'lẽ ra phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～はずだ' được dùng khi người nói đưa ra một dự đoán, phán đoán có độ tin cậy rất cao dựa trên các cơ sở khách quan, lý lẽ hợp lý hoặc dữ liệu thực tế ('theo lý thì chắc chắn là như vậy'). Người nói tin tưởng rằng sự việc tất yếu sẽ diễn ra hoặc đã diễn ra đúng như dự tính.",
+      "formation": "Động từ thể thông thường + はずだ | Tính từ đuôi い + はずだ | Tính từ đuôi な + なはずだ | Danh từ + のはずだ",
+      "examples": [
+        {
+          "translation": "Chắc chắn là anh ấy đã đến nơi rồi."
+        },
+        {
+          "translation": "Nếu uống loại thuốc này thì cơn đau chắc chắn sẽ dịu đi."
+        },
+        {
+          "translation": "Ngày mai chắc hẳn là trời sẽ nắng."
+        },
+        {
+          "translation": "Chắc chắn là cô ấy vẫn khỏe mạnh."
+        }
+      ]
+    },
+    "ja_ばのに_89": {
+      "title": "～ば～のに (〜ba 〜noni)",
+      "shortExplanation": "Diễn tả giả định trái ngược với thực tế trong quá khứ hoặc hiện tại để bộc lộ sự tiếc nuối, hối hận hoặc bất mãn; 'giá mà... thì đã... rồi'.",
+      "longExplanation": "Cấu trúc '～ば～のに' kết hợp giữa thể điều kiện giả định '～ば' (nếu) và trợ từ liên kết '～のに' (thế mà/vậy mà), dùng để nêu lên một điều kiện trái ngược với thực tế kèm theo kết quả giả định tốt đẹp, qua đó biểu lộ sự tiếc nuối khôn nguôi, sự ân hận hoặc bất mãn đối với sự việc thực tế đã không diễn ra như ý muốn.",
+      "formation": "Động từ thể ば + ～のに | Tính từ đuôi い (bỏ い) + ければ + ～のに | Tính từ đuôi な + であれば/なら + ～のに | Danh từ + であれば/なら + ～のに",
+      "examples": [
+        {
+          "translation": "Giá mà đến sớm hơn chút nữa thì đã kịp chuyến tàu rồi, tiếc thật."
+        },
+        {
+          "translation": "Nếu chịu khó học nhiều hơn thì mình đã đỗ kỳ thi rồi."
+        },
+        {
+          "translation": "Nếu cô ấy dịu dàng hơn thì mọi chuyện giữa cô ấy với anh ấy đã êm đẹp rồi."
+        },
+        {
+          "translation": "Giá như tiếng Nhật của tôi giỏi thì tôi đã có thể đọc được cuốn sách này rồi."
+        }
+      ]
+    },
+    "ja_ばほど_90": {
+      "title": "～ば～ほど (〜ba 〜hodo)",
+      "shortExplanation": "Diễn tả mối quan hệ tỷ lệ thuận về mức độ giữa hai vế; vế trước biến đổi bao nhiêu thì vế sau cũng thay đổi tương ứng bấy nhiêu; 'càng... càng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ば～ほど' lặp lại cùng một động từ hoặc tính từ ở thể điều kiện '～ば' và dạng nguyên thể đi với '～ほど', dùng để biểu thị sự biến chuyển tương hỗ tỷ lệ thuận giữa hai vế: khi mức độ của hành động hoặc tính chất ở vế trước tăng lên thì kết quả hoặc mức độ ở vế sau cũng gia tăng tương ứng ('càng A thì càng B').",
+      "formation": "Động từ thể ば + Động từ thể từ điển + ほど | Tính từ đuôi い (bỏ い) + ければ + Tính từ đuôi い + ほど | Tính từ đuôi な + であれば/なら + Tính từ đuôi な + なほど",
+      "examples": [
+        {
+          "translation": "Càng dậy sớm thì càng có nhiều thời gian."
+        },
+        {
+          "translation": "Càng luyện tập nhiều thì sẽ càng tiến bộ."
+        },
+        {
+          "translation": "Món ăn càng ngon thì mọi người sẽ càng vui vẻ."
+        },
+        {
+          "translation": "Tiếng Nhật càng giỏi thì cuộc sống ở Nhật Bản sẽ càng thuận tiện, thoải mái hơn."
+        }
+      ]
+    },
+    "ja_はもちろんも_91": {
+      "title": "～はもちろん～も (〜wa mochiron 〜mo)",
+      "shortExplanation": "Đưa ra một điều đương nhiên ở vế trước để nhấn mạnh rằng một điều khác ở vế sau cũng như vậy; 'A là đương nhiên rồi, mà B cũng...', 'không chỉ A mà ngay cả B...'.",
+      "longExplanation": "Cấu trúc '～はもちろん～も' dùng để nêu ra một sự vật hoặc sự việc A như một điều hiển nhiên, dĩ nhiên ai cũng biết, rồi mở rộng thêm đối tượng B ở vế sau để nhấn mạnh rằng B cũng hoàn toàn tương tự như thế. Cấu trúc này thường dùng khi muốn bổ sung thêm thông tin nhằm làm nổi bật quy mô hoặc mức độ bao quát.",
+      "formation": "Danh từ 1 + はもちろん + Danh từ 2 + も",
+      "examples": [
+        {
+          "translation": "Cậu ấy môn Toán thì đương nhiên rồi, mà môn tiếng Anh cũng rất giỏi."
+        },
+        {
+          "translation": "Nhà hàng này món Nhật thì dĩ nhiên rồi, mà các món Tây cũng rất ngon."
+        },
+        {
+          "translation": "Sở thích của tôi thì âm nhạc là đương nhiên, mà tôi cũng rất thích đọc sách nữa."
+        },
+        {
+          "translation": "Tokyo về du lịch thì đương nhiên rồi, mà các hoạt động kinh doanh thương mại cũng rất phát triển."
+        }
+      ]
+    },
+    "ja_ばよかった_92": {
+      "title": "～ばよかった (〜ba yokatta)",
+      "shortExplanation": "Diễn tả sự tiếc nuối, hối hận vì trong quá khứ đã không làm một việc gì đó; 'giá mà...', 'biết thế thì... đã tốt biết mấy'.",
+      "longExplanation": "Cấu trúc '～ばよかった' dùng để thể hiện cảm giác nuối tiếc, ân hận sâu sắc của người nói về một hành động lẽ ra nên làm trong quá khứ nhưng thực tế lại không làm, và nhận ra rằng nếu lúc đó đã làm thì kết quả bây giờ sẽ tốt đẹp hơn rất nhiều.",
+      "formation": "Động từ thể ば + よかった | Tính từ đuôi い (bỏ い) + ければよかった | Tính từ đuôi な + ならよかった",
+      "examples": [
+        {
+          "translation": "Biết thế mình dậy sớm hơn thì tốt biết mấy."
+        },
+        {
+          "translation": "Biết thế hôm qua mình đi dự bữa tiệc thì hay biết bao."
+        },
+        {
+          "translation": "Biết thế mình đã mua món rẻ hơn rồi."
+        },
+        {
+          "translation": "Lúc đó biết thế mình chịu khó học nhiều hơn thì tốt biết mấy."
+        }
+      ]
+    },
+    "ja_ふりをする_93": {
+      "title": "～ふりをする (〜furi wo suru)",
+      "shortExplanation": "Diễn tả hành động giả vờ, làm ra vẻ như thế nào đó để đánh lừa người khác dù sự thật không phải như vậy; 'giả vờ...', 'làm ra vẻ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ふりをする' được sử dụng khi một người cố tình hành động, biểu cảm hoặc tỏ ra một trạng thái nào đó trước mặt người khác nhằm che giấu thực tế vốn hoàn toàn trái ngược ('giả vờ như đang...', 'làm ra vẻ là...').",
+      "formation": "Động từ thể thông thường + ふりをする | Tính từ đuôi い + ふりをする | Tính từ đuôi な + な + ふりをする | Danh từ + の + ふりをする",
+      "examples": [
+        {
+          "translation": "Anh ấy đã giả vờ như không biết."
+        },
+        {
+          "translation": "Cô ấy giả vờ ốm để nghỉ học."
+        },
+        {
+          "translation": "Anh ấy đang làm ra vẻ vui mừng, nhưng thực ra trong lòng lại rất buồn."
+        },
+        {
+          "translation": "Cô ấy làm ra vẻ như một người lãnh đạo rồi dẫn dắt cả đội."
+        }
+      ]
+    },
+    "ja_べきだ_94": {
+      "title": "～べきだ (〜beki da)",
+      "shortExplanation": "Diễn tả điều đương nhiên nên làm hoặc cần phải làm xét theo chuẩn mực đạo đức, trách nhiệm xã hội hoặc lẽ thường; 'nên...', 'phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～べきだ' xuất phát từ trợ động từ cổ 'べし', dùng để nêu lên một phán đoán mang tính đạo đức, nghĩa vụ xã hội hoặc lương tâm rằng một việc nào đó là đương nhiên phải làm ('nên làm/cần phải làm'). Cần lưu ý cấu trúc này biểu đạt nghĩa vụ mang tính luân lý, không dùng để bắt buộc trực tiếp bề trên.",
+      "formation": "Động từ thể từ điển + べきだ (động từ する chuyển thành すべきだ hoặc するべきだ)",
+      "examples": [
+        {
+          "translation": "Bạn nên chăm chỉ học hành."
+        },
+        {
+          "translation": "Nên đi ngủ sớm đi."
+        },
+        {
+          "translation": "Cần phải giữ trật tự."
+        },
+        {
+          "translation": "Cậu nên xin lỗi anh ấy đi."
+        }
+      ]
+    },
+    "ja_ほど_95": {
+      "title": "～ほど～ (〜hodo〜)",
+      "shortExplanation": "Dùng trong mẫu câu phủ định 'AはBほど...ない' để so sánh mức độ, nghĩa là 'A không bằng B', hoặc 'không có gì bằng...'.",
+      "longExplanation": "Mẫu so sánh '～ほど...ない' dùng để lấy đối tượng B làm tiêu chuẩn so sánh cao, nhằm diễn đạt rằng đối tượng A không đạt tới mức độ của B ('A không bằng B', 'A không... như B'). Khi kết hợp với đại từ mang nghĩa tuyệt đối như '〜ほど…はない' thì biểu thị ý nghĩa so sánh bậc nhất: 'không có gì/ở đâu bằng...'.",
+      "formation": "Danh từ + ほど + Tính từ/Động từ thể phủ định (ない)",
+      "examples": [
+        {
+          "translation": "Cô ấy không thể chạy nhanh bằng tôi."
+        },
+        {
+          "translation": "Chiếc bánh này không ngon bằng chiếc bánh kia."
+        },
+        {
+          "translation": "Không có quốc gia nào bốn mùa rõ rệt như ở Nhật Bản."
+        },
+        {
+          "translation": "Tokyo người không đông bằng Osaka."
+        }
+      ]
+    },
+    "ja_ますように_96": {
+      "title": "～ますように (〜masu you ni)",
+      "shortExplanation": "Dùng ở cuối câu để bày tỏ lời cầu nguyện, chúc phúc hoặc mong ước tha thiết cho mình hoặc người khác; 'cầu mong sao...', 'chúc cho...'.",
+      "longExplanation": "Mẫu câu '～ますように' thường được dùng ở cuối câu trong các lời cầu nguyện tại đền chùa, điều ước viết trên thẻ nguyện ước dịp lễ Tanabata, hay lời chúc gửi gắm trong thư từ, thiệp mừng. Cấu trúc này thể hiện nguyện vọng chân thành và tha thiết mong cho một sự việc tốt lành sẽ xảy đến với bản thân hoặc người thân quen.",
+      "formation": "Động từ thể ます + ように",
+      "examples": [
+        {
+          "translation": "Cầu mong sao ngày mai đi thi mình sẽ đạt điểm cao."
+        },
+        {
+          "translation": "Cầu chúc cho anh ấy trở về bình an vô sự."
+        },
+        {
+          "translation": "Cầu chúc cho tất cả mọi người luôn luôn mạnh khỏe."
+        },
+        {
+          "translation": "Cầu chúc cho cô ấy luôn được hạnh phúc."
+        }
+      ]
+    },
+    "ja_まったくない_97": {
+      "title": "まったく～ない (mattaku ~nai)",
+      "shortExplanation": "Dùng phó từ 'まったく' đi với thể phủ định để nhấn mạnh sự phủ định tuyệt đối 100%; 'hoàn toàn không...', 'chẳng... chút nào'.",
+      "longExplanation": "Cấu trúc 'まったく～ない' kết hợp phó từ 'まったく' (hoàn toàn) với các dạng thức phủ định của động từ, tính từ hoặc danh từ nhằm khẳng định một cách tuyệt đối rằng một trạng thái hay hành vi nào đó hoàn toàn không hề tồn tại dù chỉ một chút ('hoàn toàn không', 'tuyệt đối không').",
+      "formation": "まったく + Động từ thể phủ định (ない) | まったく + Tính từ đuôi い (bỏ い) + くない | まったく + Tính từ đuôi な / Danh từ + ではない",
+      "examples": [
+        {
+          "translation": "Anh ấy hoàn toàn không nhớ một chút nào cả."
+        },
+        {
+          "translation": "Căn phòng này chẳng ấm áp một chút nào."
+        },
+        {
+          "translation": "Cô ấy không hề bị muộn một chút nào."
+        },
+        {
+          "translation": "Cái này hoàn toàn chẳng tiện lợi chút nào."
+        }
+      ]
+    },
+    "ja_まで_98": {
+      "title": "～まで (〜made)",
+      "shortExplanation": "Chỉ điểm kết thúc, giới hạn về thời gian, không gian, địa điểm hoặc phạm vi hoạt động; 'đến...', 'cho đến tận...'.",
+      "longExplanation": "Trợ từ '～まで' được dùng để xác định giới hạn cuối cùng, điểm dừng hoặc đích đến của một hành động, trạng thái trong thời gian, không gian hoặc số lượng. Khi đi với động từ thể từ điển, cấu trúc này biểu thị hành động diễn ra liên tục cho tới thời điểm hành động kia bắt đầu hoặc xảy ra.",
+      "formation": "Danh từ (thời gian, địa điểm, phạm vi) + まで | Động từ thể từ điển + まで",
+      "examples": [
+        {
+          "translation": "Tôi làm việc cho đến 10 giờ."
+        },
+        {
+          "translation": "Tôi đi tàu điện đến tận Tokyo."
+        },
+        {
+          "translation": "Anh ấy đã chạy cho đến khi kiệt sức."
+        },
+        {
+          "translation": "Xin vui lòng đọc đến trang 5."
+        }
+      ]
+    },
+    "ja_まま_99": {
+      "title": "～まま (〜mama)",
+      "shortExplanation": "Diễn tả một trạng thái được giữ nguyên không hề thay đổi trong suốt quá trình một hành động khác diễn ra; 'cứ để nguyên...', 'trong trạng thái...'.",
+      "longExplanation": "Mẫu ngữ pháp '～まま' dùng để diễn tả rằng một tình trạng, điều kiện hoặc trạng thái được duy trì nguyên vẹn, không có sự can thiệp hay thay đổi nào, và người nói tiếp tục thực hiện một hành động khác trong chính bối cảnh đó ('giữ nguyên như vậy mà...'). Thường dùng khi việc giữ nguyên trạng thái đó là bất thường hoặc trái với lẽ tự nhiên (ví dụ: mở cửa sổ rồi để nguyên vậy đi ngủ).",
+      "formation": "Động từ thể た / thể ない + まま | Tính từ đuôi い + まま | Tính từ đuôi な + なまま | Danh từ + のまま",
+      "examples": [
+        {
+          "translation": "Tôi đã để nguyên cửa sổ phòng mở mà đi ngủ."
+        },
+        {
+          "translation": "Tôi uống cà phê lúc vẫn còn đang nóng nguyên nên bị bỏng cả lưỡi."
+        },
+        {
+          "translation": "Anh ấy cứ bận rộn suốt như thế, đến cả ngày nghỉ cũng phải làm việc."
+        },
+        {
+          "translation": "Cô ấy vẫn ở lại quê hương mà không đi ra nước ngoài, và đã tìm được việc làm."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_の_85": {
+      "title": "～の～ (〜no 〜)",
+      "shortExplanation": "连接两个名词，表示所属、属性、所在地或两者的关联；相当于汉语的“的”。",
+      "longExplanation": "助词“の”是日语中最基础且核心的格助词之一，置于两个名词之间（名词1 + の + 名词2），以前置名词修饰限定后置名词。常用于表示所属关系（如“我的伞”）、所属机构或产地（如“东京的景点”）、性质内容或专业领域（如“音乐老师”）等。",
+      "formation": "名词1 + の + 名词2",
+      "examples": [
+        {
+          "translation": "这是我的雨伞。"
+        },
+        {
+          "translation": "那座大楼是东京著名的旅游景点。"
+        },
+        {
+          "translation": "他是部长的秘书。"
+        },
+        {
+          "translation": "她是音乐老师。"
+        }
+      ]
+    },
+    "ja_ばかり_86": {
+      "title": "～ばかり (〜bakari)",
+      "shortExplanation": "表示同一事物占绝大多数，或同一动作不断反复发生；“净……”、“尽是……”、“光是……”，常带有不满或责备的语气。",
+      "longExplanation": "句型“～ばかり”用于强调某种事物在数量上极多、占据全部（名词 + ばかり，意为“全都是……”），或者某一动作反复频繁地进行（动词て形 + ばかりいる，意为“净顾着……、总是……”）。在日常表达中，往往带有说话人觉得过多、过分，因而产生不满、责备或遗憾的消极语感。",
+      "formation": "名词 + ばかり | 动词て形 + ばかり(いる)",
+      "examples": [
+        {
+          "translation": "他整天净顾着打游戏。"
+        },
+        {
+          "translation": "这个房间里全都是漂亮的东西。"
+        },
+        {
+          "translation": "她一门心思只顾着学习，根本没有时间去玩。"
+        },
+        {
+          "translation": "他的话里全都是谎言，根本无法相信。"
+        }
+      ]
+    },
+    "ja_ばかりか_87": {
+      "title": "～ばかりか (〜bakarika) ～も (mo)",
+      "shortExplanation": "表示不仅限于前项，更有甚者还包括后项；“不仅……而且……”，“不但……连……也……”，后项常与“も”、“まで”等呼应。",
+      "longExplanation": "句型“～ばかりか”（后半句多与“～も”搭配）用于强调情况并不仅停留在前项所说的事实上，后项还会累加程度更深或范围更广的事物（相当于汉语的“不仅……而且……”）。前后两项通常在感情色彩上保持一致（同为正面评价或同为负面问题）。",
+      "formation": "动词普通形 + ばかりか | い形容词 + ばかりか | な形容词 + (な/である)ばかりか | 名词 + (である)ばかりか",
+      "examples": [
+        {
+          "translation": "她不仅会说英语，连法语也会说。"
+        },
+        {
+          "translation": "这家餐厅不仅味道好，而且服务也非常棒。"
+        },
+        {
+          "translation": "聚会不仅非常开心，而且料理也很美味。"
+        },
+        {
+          "translation": "他不仅头脑聪明，而且体育也很擅长。"
+        }
+      ]
+    },
+    "ja_はずだ_88": {
+      "title": "～はずだ (〜hazu da)",
+      "shortExplanation": "基于某种客观根据、常理或已知事实进行推断，表示理所当然该如此；“按理应该……”、“肯定会……”。",
+      "longExplanation": "句型“～はずだ”用于说话人依据一定的客观事实、确凿理由或自然规律，做出具有高度把握的合情合理的推测与判断（相当于汉语的“按道理应当……”、“想必一定会……”）。说话人深信该事情理应如此发生。",
+      "formation": "动词普通形 + はずだ | い形容词 + はずだ | な形容词 + なはずだ | 名词 + のはずだ",
+      "examples": [
+        {
+          "translation": "他应该已经到了。"
+        },
+        {
+          "translation": "吃了这种药，疼痛应该就会消失。"
+        },
+        {
+          "translation": "明天按理应该是晴天。"
+        },
+        {
+          "translation": "她按理说应该很健康精神。"
+        }
+      ]
+    },
+    "ja_ばのに_89": {
+      "title": "～ば～のに (〜ba 〜noni)",
+      "shortExplanation": "表示与过去或现在事实相反的假定，抒发遗憾、悔恨或不满的心情；“要是……就好了（却没能……）”。",
+      "longExplanation": "句型“～ば～のに”由假定形“～ば”与表示逆接转折的句尾助词“～のに”组合而成。用于设想一种与事实完全相反的假定条件，并说明如果该条件成立本可获得某种理想结果，借此强烈表达说话人内心的懊悔、遗憾或失望之情。",
+      "formation": "动词ば形 + ～のに | い形容词词尾い变ければ + ～のに | な形容词 + であれば/なら + ～のに | 名词 + であれば/なら + ～のに",
+      "examples": [
+        {
+          "translation": "要是早点来的话，就能赶上电车了（真可惜）。"
+        },
+        {
+          "translation": "要是多用功学习的话，就能通过考试了。"
+        },
+        {
+          "translation": "她要是再温柔一点的话，和他就能相处得很融洽了。"
+        },
+        {
+          "translation": "要是日语好的话，就能读懂这本书了。"
+        }
+      ]
+    },
+    "ja_ばほど_90": {
+      "title": "～ば～ほど (〜ba 〜hodo)",
+      "shortExplanation": "表示前后两件事的程度呈正比例变化；“越……越……”、“愈……愈……”。",
+      "longExplanation": "句型“～ば～ほど”通过重复同一个动词或形容词的假定形（ば形）与基本形搭配“ほど”，来表示前后两个分句之间的正比例伴随关系。即前项的动作或状态程度每加深一分，后项的事态也会相应地随之深化或变化（相当于汉语的“越……就越……”）。",
+      "formation": "动词ば形 + 动词辞书形 + ほど | い形容词词尾い变ければ + い形容词 + ほど | な形容词 + であれば/なら + な形容词 + なほど",
+      "examples": [
+        {
+          "translation": "起得越早，时间就越多。"
+        },
+        {
+          "translation": "越是练习，进步就越快。"
+        },
+        {
+          "translation": "料理越美味，大家就越开心。"
+        },
+        {
+          "translation": "日语越好，在日本的生活就会越轻松。"
+        }
+      ]
+    },
+    "ja_はもちろんも_91": {
+      "title": "～はもちろん～も (〜wa mochiron 〜mo)",
+      "shortExplanation": "前项作为理所当然的前提，进一步强调后项也同样如此；“……自不必说，……也……”、“不用说……就连……也……”。",
+      "longExplanation": "句型“～はもちろん～も”用于把前项事物视为众所周知、理所当然的前提先列举出来，紧接着指出后项也同样具备这种特质或状况（相当于汉语的“A是理所当然的，不仅如此B也……”、“A自不必说，连B也……”），用以拓宽范围并起到加重语气的修辞效果。",
+      "formation": "名词1 + はもちろん + 名词2 + も",
+      "examples": [
+        {
+          "translation": "他数学就不用说了，英语也非常擅长。"
+        },
+        {
+          "translation": "这家餐厅日料自不必说，西餐也非常美味。"
+        },
+        {
+          "translation": "我的兴趣爱好里音乐自不用说，阅读我也非常喜欢。"
+        },
+        {
+          "translation": "东京不仅观光旅游业发达，商务往来也十分繁盛。"
+        }
+      ]
+    },
+    "ja_ばよかった_92": {
+      "title": "～ばよかった (〜ba yokatta)",
+      "shortExplanation": "对过去未能做某事感到后悔、懊恼或遗憾；“要是……就好了”、“要是早知道……就好了”。",
+      "longExplanation": "句型“～ばよかった”用于说话人回顾过去时，对当时没有采取某种行动而深感懊悔与惋惜。表示“如果当时做了这件事，结果肯定会比现在好得多”，常用于自我反省或表达由衷的遗憾之情。",
+      "formation": "动词ば形 + よかった | い形容词词尾い变ければ + よかった | な形容词 + ならよかった",
+      "examples": [
+        {
+          "translation": "早点起床就好了。"
+        },
+        {
+          "translation": "昨天要是去参加聚会就好了。"
+        },
+        {
+          "translation": "要是买更便宜一点的就好了。"
+        },
+        {
+          "translation": "那时候要是更加用功学习就好了。"
+        }
+      ]
+    },
+    "ja_ふりをする_93": {
+      "title": "～ふりをする (〜furi wo suru)",
+      "shortExplanation": "表示故意装出某种假象或姿态，以掩盖真实情况；“装作……”、“假装……”、“装出……的样子”。",
+      "longExplanation": "句型“～ふりをする”用于表示某人表面上做出某种动作、态度或神情，让外人误以为是事实，但其内情或真实状态其实截然相反。常用于掩人耳目、敷衍应付或隐藏真实想法的场合。",
+      "formation": "动词普通形 + ふりをする | い形容词 + ふりをする | な形容词 + な + ふりをする | 名词 + の + ふりをする",
+      "examples": [
+        {
+          "translation": "他装作不知道的样子。"
+        },
+        {
+          "translation": "她装病向学校请了假。"
+        },
+        {
+          "translation": "他虽然装出一副高兴的样子，但心里其实很难过。"
+        },
+        {
+          "translation": "她摆出一副领导者的架势，带领着团队。"
+        }
+      ]
+    },
+    "ja_べきだ_94": {
+      "title": "～べきだ (〜beki da)",
+      "shortExplanation": "基于道德观念、社会常识或责任义务，表示理所应当做某事；“应该……”、“应当……”。",
+      "longExplanation": "句型“～べきだ”源于古语助动词“べし”，表示从做人的常理、道德良知、社会责任或公序良俗来看，某件事是理所应当去做、必须去履行的（相当于汉语的“应当”、“应该”）。注意该句型通常不直接用于向长辈或上级提出命令式要求。",
+      "formation": "动词辞书形 + べきだ（动词する变为すべきだ或するべきだ）",
+      "examples": [
+        {
+          "translation": "应该好好学习。"
+        },
+        {
+          "translation": "应该早点睡觉。"
+        },
+        {
+          "translation": "应当保持安静。"
+        },
+        {
+          "translation": "应该向他道歉。"
+        }
+      ]
+    },
+    "ja_ほど_95": {
+      "title": "～ほど～ (〜hodo〜)",
+      "shortExplanation": "常用于否定句“AはBほど……ない”中进行程度对比，表示“A不如B那样……”、“没有比……更……的”。",
+      "longExplanation": "句型“～ほど……ない”通过将后接词置于否定形式，以B作为高标准的基准，表示A在程度上不及B（相当于汉语的“A不如B……”、“A没有B那么……”）。若以“〜ほど…はない”的形式出现，则表示“没有比……更……的了”，具有最高级的强调含义。",
+      "formation": "名词 + ほど + 形容词/动词否定形 (ない)",
+      "examples": [
+        {
+          "translation": "她跑得没有我快。"
+        },
+        {
+          "translation": "这个蛋糕没有那个蛋糕好吃。"
+        },
+        {
+          "translation": "没有哪个国家的四季能像日本这样分明。"
+        },
+        {
+          "translation": "东京的人没有大阪那么多。"
+        }
+      ]
+    },
+    "ja_ますように_96": {
+      "title": "～ますように (〜masu you ni)",
+      "shortExplanation": "置于句末，用于表达对自己或他人的祈愿、祝福或殷切期望；“但愿……”、“祝愿……”、“希望……”。",
+      "longExplanation": "句型“～ますように”常用于神社寺庙参拜祈愿、七夕节许愿短册以及信件、贺卡末尾的祝福语中。它承载着说话人发自内心的虔诚心愿，期望某件美好的事情能够实现或祝福他人平安幸福。",
+      "formation": "动词ます形 + ように",
+      "examples": [
+        {
+          "translation": "但愿明天的考试能考个好成绩。"
+        },
+        {
+          "translation": "希望他能平安无事地归来。"
+        },
+        {
+          "translation": "祈愿大家都能身体健康。"
+        },
+        {
+          "translation": "祝愿她能够获得幸福。"
+        }
+      ]
+    },
+    "ja_まったくない_97": {
+      "title": "まったく～ない (mattaku ~nai)",
+      "shortExplanation": "副词“まったく”与后项的否定形式相呼应，表示彻底、全面的完全否定；“完全不……”、“一点儿也不……”。",
+      "longExplanation": "句型“まったく～ない”通过将副词“まったく”与动词、形容词或名词的否定形式相呼应，达到彻底推翻某种可能性或状态的效果，强调程度上的绝对为零（相当于汉语的“根本不……”、“毫无……”、“完全没有……”）。",
+      "formation": "まったく + 动词否定形 (ない) | まったく + い形容词词尾い变くない | まったく + な形容词 / 名词 + ではない",
+      "examples": [
+        {
+          "translation": "他完全不记得了。"
+        },
+        {
+          "translation": "这个房间一点儿也不暖和。"
+        },
+        {
+          "translation": "她一点儿也没有迟到。"
+        },
+        {
+          "translation": "这个一点儿也不方便。"
+        }
+      ]
+    },
+    "ja_まで_98": {
+      "title": "～まで (〜made)",
+      "shortExplanation": "表示时间、空间、地点或数量范围的终点或界限；“到……为止”、“直到……”。",
+      "longExplanation": "格助词/副助词“～まで”用于指出时间、空间移动、动作持续或数量界限的最终终点（相当于汉语的“到……为止”、“直到……”）。接在动词辞书形之后时，表示前项动作或事态一直持续到该临界点为止。",
+      "formation": "名词（时间、场所、范围） + まで | 动词辞书形 + まで",
+      "examples": [
+        {
+          "translation": "我工作到10点。"
+        },
+        {
+          "translation": "我坐电车一直坐到东京。"
+        },
+        {
+          "translation": "他一直跑到精疲力竭为止。"
+        },
+        {
+          "translation": "请读到第5页。"
+        }
+      ]
+    },
+    "ja_まま_99": {
+      "title": "～まま (〜mama)",
+      "shortExplanation": "表示某种状态保持不变，在维持该状态的情况下进行下一动作；“保持……的样子”、“就那样……”。",
+      "longExplanation": "句型“～まま”用于表示某个动作产生的结果或某种现存的状态未经改变而一直持续着，并在这种状态下继续开展后续的动作或行为（相当于汉语的“在……状态下”、“保持着……不变而……”）。多用于指出原本应该改变或收拾却没有改变的特殊状况（如开着窗户睡觉）。",
+      "formation": "动词た形 / ない形 + まま | い形容词 + まま | な形容词 + なまま | 名词 + のまま",
+      "examples": [
+        {
+          "translation": "我开着房间的窗户就那么睡着了。"
+        },
+        {
+          "translation": "趁热喝了滚烫的咖啡，把舌头烫伤了。"
+        },
+        {
+          "translation": "他一直那么忙碌，连休息日也在工作。"
+        },
+        {
+          "translation": "她留在家乡没有出国，就找到了工作。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_の_85": {
+      "title": "～の～ (〜no 〜)",
+      "shortExplanation": "두 명사를 연결하여 소유, 소속, 속성, 소재지 등의 관계를 나타내며, 한국어의 '~의'에 해당합니다.",
+      "longExplanation": "격조사 'の'는 명사와 명사를 연결(명사1 + の + 명사2)하여 뒤의 명사를 수식하고 한정하는 가장 기본적인 문법 표현입니다. 소유(예: 나의 우산), 소속 및 출신(예: 도쿄의 관광지), 직책 및 전문 분야(예: 음악 선생님) 등 두 명사 사이의 긴밀한 의미적 관계를 나타냅니다.",
+      "formation": "명사1 + の + 명사2",
+      "examples": [
+        {
+          "translation": "이것은 제 우산입니다."
+        },
+        {
+          "translation": "저 빌딩은 도쿄의 유명한 관광 명소입니다."
+        },
+        {
+          "translation": "그는 부장님의 비서입니다."
+        },
+        {
+          "translation": "그녀는 음악 선생님입니다."
+        }
+      ]
+    },
+    "ja_ばかり_86": {
+      "title": "～ばかり (〜bakari)",
+      "shortExplanation": "어떤 대상이 온통 그것뿐이거나 특정 행동만을 계속 반복함을 나타내며, '온통 ~뿐', '늘 ~만 하다'라는 뜻으로 주로 불만이나 비난의 뉘앙스를 띱니다.",
+      "longExplanation": "'～ばかり'는 어떤 장소나 상황에 특정 사물이 너무 많아서 다른 것은 거의 없음을 강조하거나(명사 + ばかり, '온통 ~뿐이다'), 어떤 행동을 지나치게 자주 반복하고 지속함을 나타낼 때(동사 て형 + ばかりいる, '늘 ~만 하고 있다') 사용됩니다. 화자의 불만, 아쉬움, 비판적인 어감이 담기는 경우가 많습니다.",
+      "formation": "명사 + ばかり | 동사 て형 + ばかり(いる)",
+      "examples": [
+        {
+          "translation": "그는 온종일 게임만 하고 있다."
+        },
+        {
+          "translation": "이 방에는 온통 예쁜 것들뿐이다."
+        },
+        {
+          "translation": "그녀는 공부만 하느라 놀 틈이 없다."
+        },
+        {
+          "translation": "그의 말은 온통 거짓말투성이라 믿을 수가 없다."
+        }
+      ]
+    },
+    "ja_ばかりか_87": {
+      "title": "～ばかりか (〜bakarika) ～も (mo)",
+      "shortExplanation": "앞의 내용에 그치지 않고 그 이상의 다른 일까지 더해짐을 나타내며, '~뿐만 아니라 ~도', '~은 물론이고 ~까지'라는 뜻입니다.",
+      "longExplanation": "'～ばかりか'는 앞 절의 사태에 머무르지 않고, 뒤 절에 더 놀랍거나 정도가 심한 사태가 덧붙여질 때 쓰이는 문형입니다. 주로 뒤 절에 조사의 'も'나 '까지'를 동반하여 'A뿐만 아니라 B까지도'라는 의미를 강조합니다. 전후 절은 대체로 긍정적인 내용끼리, 혹은 부정적인 내용끼리 일치합니다.",
+      "formation": "동사 보통형 + ばかりか | い형용사 + ばかりか | な형용사 + (な/である)ばかりか | 명사 + (である)ばかりか",
+      "examples": [
+        {
+          "translation": "그녀는 영어뿐만 아니라 프랑스어도 할 줄 압니다."
+        },
+        {
+          "translation": "이 식당은 맛이 좋을 뿐만 아니라 서비스도 훌륭하다."
+        },
+        {
+          "translation": "파티는 즐거웠을 뿐만 아니라 음식도 맛있었다."
+        },
+        {
+          "translation": "그는 머리가 좋을 뿐만 아니라 운동도 잘한다."
+        }
+      ]
+    },
+    "ja_はずだ_88": {
+      "title": "～はずだ (〜hazu da)",
+      "shortExplanation": "일정한 객관적 근거나 당연한 도리에 근거하여 화자가 확신을 가지고 추측할 때 쓰이며, '틀림없이 ~할 것이다', '~할 터이다'라는 뜻입니다.",
+      "longExplanation": "'～はずだ'는 확실한 이유, 객관적인 데이터, 혹은 상식이나 자연스러운 이치에 근거하여 '당연히 그렇게 될 것이다'라고 강한 확신을 가지고 판단할 때 사용하는 문법입니다. 화자가 마땅히 그러할 것이라고 믿고 있음을 나타냅니다.",
+      "formation": "동사 보통형 + はずだ | い형용사 + はずだ | な형용사 + なはずだ | 명사 + のはずだ",
+      "examples": [
+        {
+          "translation": "그는 벌써 도착했을 것이다."
+        },
+        {
+          "translation": "이 약을 먹으면 통증이 가실 것이다."
+        },
+        {
+          "translation": "내일은 날이 맑을 것이다."
+        },
+        {
+          "translation": "그녀는 분명 건강하게 잘 지낼 것이다."
+        }
+      ]
+    },
+    "ja_ばのに_89": {
+      "title": "～ば～のに (〜ba 〜noni)",
+      "shortExplanation": "과거 또는 현재의 사실과 반대되는 가정을 하여 아쉬움, 후회, 불만 등의 감정을 나타낼 때 쓰이며, '~했더라면 좋았을 텐데'라는 뜻입니다.",
+      "longExplanation": "'～ば～のに'는 가정 표현인 '～ば'와 역접·아쉬움을 나타내는 종조사 '～のに'가 결합한 문형입니다. 실제 상황과 반대되는 가정을 세우고, 그 가정이 실현되었더라면 좋았을 결과가 실현되지 못한 것에 대한 깊은 후회나 미련, 안타까움을 나타냅니다.",
+      "formation": "동사 ば형 + ～のに | い형용사 어미 い 탈락 후 ければ + ～のに | な형용사 + であれば/なら + ～のに | 명사 + であれば/なら + ～のに",
+      "examples": [
+        {
+          "translation": "조금 더 일찍 왔더라면 전철을 탈 수 있었을 텐데 아쉽다."
+        },
+        {
+          "translation": "공부를 더 열심히 했더라면 시험에 합격했을 텐데."
+        },
+        {
+          "translation": "그녀가 좀 더 상냥했더라면 그와 잘 지낼 수 있었을 텐데."
+        },
+        {
+          "translation": "일본어를 잘한다면 이 책을 읽을 수 있을 텐데."
+        }
+      ]
+    },
+    "ja_ばほど_90": {
+      "title": "～ば～ほど (〜ba 〜hodo)",
+      "shortExplanation": "앞의 동작이나 상태의 정도가 변함에 따라 뒤의 내용도 비례하여 변함을 나타내며, '~하면 할수록 더욱 ~하다'라는 뜻입니다.",
+      "longExplanation": "'～ば～ほど'는 동일한 동사나 형용사를 가정형(ば형)과 기본형(ほど 앞)으로 반복하여, 앞 절의 조건이나 정도가 심화됨에 비례하여 뒤 절의 사태 또한 더욱 두드러지게 진행됨을 나타내는 비례 표현입니다.",
+      "formation": "동사 ば형 + 동사 기본형 + ほど | い형용사 어미 い 탈락 후 ければ + い형용사 + ほど | な형용사 + であれば/なら + な형용사 + なほど",
+      "examples": [
+        {
+          "translation": "일찍 일어나면 일어날수록 시간이 많아진다."
+        },
+        {
+          "translation": "연습하면 할수록 실력이 늘어납니다."
+        },
+        {
+          "translation": "요리가 맛있으면 맛있을수록 모두가 기뻐합니다."
+        },
+        {
+          "translation": "일본어를 잘하면 잘할수록 일본 생활이 편해집니다."
+        }
+      ]
+    },
+    "ja_はもちろんも_91": {
+      "title": "～はもちろん～も (〜wa mochiron 〜mo)",
+      "shortExplanation": "앞의 것은 당연하고 뒤의 것까지도 마찬가지임을 나타낼 때 쓰이며, '~은 물론이고 ~도', '~은 말할 것도 없고 ~도'라는 뜻입니다.",
+      "longExplanation": "'～はもちろん～も'는 앞의 대상을 누구나 납득할 만한 당연한 일로 먼저 제시한 뒤, 뒤의 대상 또한 마찬가지로 그러함을 덧붙여 강조하는 문형입니다. 범위나 대상을 넓혀서 상황의 정도를 부각시킬 때 자주 활용됩니다.",
+      "formation": "명사1 + はもちろん + 명사2 + も",
+      "examples": [
+        {
+          "translation": "그는 수학은 물론이고 영어도 잘합니다."
+        },
+        {
+          "translation": "이 식당은 일식은 물론 양식도 맛있습니다."
+        },
+        {
+          "translation": "제 취미는 음악은 물론이고 독서도 정말 좋아합니다."
+        },
+        {
+          "translation": "도쿄는 관광은 물론이고 비즈니스도 활발합니다."
+        }
+      ]
+    },
+    "ja_ばよかった_92": {
+      "title": "～ばよかった (〜ba yokatta)",
+      "shortExplanation": "과거에 어떤 행동을 하지 않은 것에 대해 아쉬움이나 후회를 나타낼 때 쓰이며, '~했더라면 좋았을 텐데', '~할 걸 그랬다'라는 뜻입니다.",
+      "longExplanation": "'～ばよかった'는 과거의 행동이나 선택을 돌아보며, 그렇게 행동하지 않은 것에 대해 깊은 아쉬움과 후회를 드러내는 표현입니다. '그때 그 동작을 실행했더라면 더 좋은 결과가 있었을 텐데'라는 안타까운 감정을 표현합니다.",
+      "formation": "동사 ば형 + よかった | い형용사 어미 い 탈락 후 ければ + よかった | な형용사 + ならよかった",
+      "examples": [
+        {
+          "translation": "조금 더 일찍 일어났으면 좋았을 텐데."
+        },
+        {
+          "translation": "어제 파티에 갔으면 좋았을 텐데."
+        },
+        {
+          "translation": "더 싼 것을 샀더라면 좋았을 텐데."
+        },
+        {
+          "translation": "그때 공부를 더 많이 했더라면 좋았을 텐데."
+        }
+      ]
+    },
+    "ja_ふりをする_93": {
+      "title": "～ふりをする (〜furi wo suru)",
+      "shortExplanation": "실제로는 그렇지 않으면서 겉으로만 그런 태도나 모습을 꾸며 보일 때 쓰이며, '~하는 척하다', '~인 체하다'라는 뜻입니다.",
+      "longExplanation": "'～ふりをする'는 실제 진실이나 본심과는 반대로, 다른 사람의 눈을 속이거나 특정 상황을 모면하기 위해 일부러 어떤 행동이나 상태인 것처럼 가장할 때 쓰입니다.",
+      "formation": "동사 보통형 + ふりをする | い형용사 + ふりをする | な형용사 + な + ふりをする | 명사 + の + ふりをする",
+      "examples": [
+        {
+          "translation": "그는 모르는 척을 했습니다."
+        },
+        {
+          "translation": "그녀는 아픈 척을 하고 학교를 쉬었습니다."
+        },
+        {
+          "translation": "그는 기쁜 척을 하고 있지만 실제로는 슬퍼하고 있습니다."
+        },
+        {
+          "translation": "그녀는 리더인 척을 하며 팀을 이끌었습니다."
+        }
+      ]
+    },
+    "ja_べきだ_94": {
+      "title": "～べきだ (〜beki da)",
+      "shortExplanation": "사회적 상식이나 도덕적 기준, 의무감 등에 비추어 볼 때 마땅히 그렇게 해야 함을 나타내며, '당연히 ~해야 한다', '~하는 것이 마땅하다'라는 뜻입니다.",
+      "longExplanation": "'～べきだ'는 고어 조동사 'べし'에서 유래한 표현으로, 인간으로서의 도리, 사회적 책임, 양심, 혹은 상식적인 판단에 비추어 보았을 때 '그렇게 하는 것이 당연하고 올바르다'고 생각되는 행동을 권고하거나 주장할 때 사용합니다.",
+      "formation": "동사 사전형 + べきだ (동사 する는 すべきだ 또는 するべきだ)",
+      "examples": [
+        {
+          "translation": "공부해야 한다."
+        },
+        {
+          "translation": "일찍 자야 한다."
+        },
+        {
+          "translation": "조용히 해야 한다."
+        },
+        {
+          "translation": "그에게 사과해야 한다."
+        }
+      ]
+    },
+    "ja_ほど_95": {
+      "title": "～ほど～ (〜hodo〜)",
+      "shortExplanation": "부정문 'AはBほど…ない' 형태로 쓰여 정도를 비교할 때 사용되며, 'A는 B만큼 ~하지 않다', '~만큼 …한 것은 없다'라는 뜻입니다.",
+      "longExplanation": "'～ほど…ない'는 B를 기준점으로 삼아 A가 그 정도 수준에 미치지 못함을 나타내는 비교 표현입니다('A는 B만큼 ~하지 않다'). 또한 '명사＋ほど…はない'의 형태는 '그것만큼 뛰어난/심한 것은 없다'는 최상급의 의미를 나타낼 때도 널리 사용됩니다.",
+      "formation": "명사 + ほど + 형용사/동사 부정형 (ない)",
+      "examples": [
+        {
+          "translation": "그녀는 나만큼 빨리 달리지 못한다."
+        },
+        {
+          "translation": "이 케이크는 저 케이크만큼 맛있지 않다."
+        },
+        {
+          "translation": "일본만큼 사계절이 뚜렷한 나라는 없다."
+        },
+        {
+          "translation": "도쿄는 오사카만큼 사람이 많지 않다."
+        }
+      ]
+    },
+    "ja_ますように_96": {
+      "title": "～ますように (〜masu you ni)",
+      "shortExplanation": "문장 끝에 쓰여 자신이나 타인을 향한 간절한 기원, 소원, 축복을 나타내며, '~하기를', '~하기를 바랍니다'라는 뜻입니다.",
+      "longExplanation": "'～ますように'는 신사나 절에서 기도를 드릴 때, 칠석날 소원 종이에 글을 적을 때, 또는 편지나 축하 메시지의 맺음말에서 자신이나 소중한 사람의 행복과 안녕을 간절히 바라는 마음을 담아 사용하는 기원 표현입니다.",
+      "formation": "동사 ます형 + ように",
+      "examples": [
+        {
+          "translation": "내일 시험에서 좋은 점수를 받기를 바랍니다."
+        },
+        {
+          "translation": "그가 무사히 돌아오기를 바랍니다."
+        },
+        {
+          "translation": "모두가 건강하게 지낼 수 있기를 바랍니다."
+        },
+        {
+          "translation": "그녀가 행복해지기를 기원합니다."
+        }
+      ]
+    },
+    "ja_まったくない_97": {
+      "title": "まったく～ない (mattaku ~nai)",
+      "shortExplanation": "부사 'まったく'가 뒤의 부정 표현과 호응하여 어떤 상태나 동작을 전면적으로 부정할 때 쓰이며, '전혀 ~하지 않다', '완전히 ~가 아니다'라는 뜻입니다.",
+      "longExplanation": "'まったく～ない'는 부사 'まったく(전혀, 완전히)' 뒤에 동사, 형용사, 명사의 부정형을 연결하여 어떤 가능성이나 정도가 조금도 존재하지 않음을 단정적으로 100% 완전 부정하는 강조 표현입니다.",
+      "formation": "まったく + 동사 부정형 (ない) | まったく + い형용사 어미 い 탈락 후 くない | まったく + な형용사 / 명사 + ではない",
+      "examples": [
+        {
+          "translation": "그는 전혀 기억하지 못하고 있다."
+        },
+        {
+          "translation": "이 방은 전혀 따뜻하지 않다."
+        },
+        {
+          "translation": "그녀는 전혀 늦지 않았다."
+        },
+        {
+          "translation": "이것은 전혀 편리하지 않다."
+        }
+      ]
+    },
+    "ja_まで_98": {
+      "title": "～まで (〜made)",
+      "shortExplanation": "시간, 공간, 장소, 수량 등의 종료점이나 한계를 나타내며, '~까지', '~에 이르기까지'라는 뜻입니다.",
+      "longExplanation": "격조사/부조사 '～まで'는 어떤 행동이나 상태가 계속되는 시간적 종점, 이동의 목적지, 수량이나 범위의 한계점을 나타낼 때 사용됩니다. 동사의 사전형에 접속할 경우 특정 상태에 이를 때까지 동작이 이어짐을 나타냅니다.",
+      "formation": "명사(시간, 장소, 범위) + まで | 동사 사전형 + まで",
+      "examples": [
+        {
+          "translation": "10시까지 일합니다."
+        },
+        {
+          "translation": "도쿄까지 전철로 갑니다."
+        },
+        {
+          "translation": "그는 지칠 때까지 달렸습니다."
+        },
+        {
+          "translation": "5페이지까지 읽어 주세요."
+        }
+      ]
+    },
+    "ja_まま_99": {
+      "title": "～まま (〜mama)",
+      "shortExplanation": "어떤 상태나 결과가 변하지 않고 그대로 유지되고 있음을 나타내며, '~한 채로', '~인 채로'라는 뜻입니다.",
+      "longExplanation": "'～まま'는 선행하는 동작의 결과나 상태가 아무런 변화나 개입 없이 그대로 존속하는 상태에서 후행 동작을 행함을 나타내는 문형입니다. 통상적으로 뒷정리를 하거나 바꾸어야 할 상태를 방치한 채 다른 행동을 하는 경우(예: 창문을 열어둔 채 자다)에 자주 쓰입니다.",
+      "formation": "동사 た형 / ない형 + まま | い형용사 + まま | な형용사 + なまま | 명사 + のまま",
+      "examples": [
+        {
+          "translation": "방 창문을 열어 둔 채로 잤습니다."
+        },
+        {
+          "translation": "뜨거운 상태 그대로의 커피를 마시다가 혀를 데었습니다."
+        },
+        {
+          "translation": "그는 바쁜 상태 그대로 휴일에도 일을 하고 있습니다."
+        },
+        {
+          "translation": "그녀는 고향에 머무른 채 외국에 가지 않고 일자리를 구했다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_の_85": {
+      "title": "～の～ (〜no 〜)",
+      "shortExplanation": "2つの名詞をつなぎ、所有、所属、性質、所在などの関係を表す表現で、「〜の」という意味を表します。",
+      "longExplanation": "助詞「の」は、名詞と名詞を接続して（名詞1＋の＋名詞2）、前の名詞が後ろの名詞を修飾・限定する最も基本的な文法です。所有（私の傘）、所属・所在（東京のスポット）、性質・分野（音楽の先生）など、事物の多様な関係性を明示します。",
+      "formation": "名詞1 ＋ の ＋ 名詞2",
+      "examples": [
+        {
+          "translation": "これは私の傘です。"
+        },
+        {
+          "translation": "あのビルは東京の有名な観光スポットです。"
+        },
+        {
+          "translation": "彼は部長の秘書です。"
+        },
+        {
+          "translation": "彼女は音楽の先生です。"
+        }
+      ]
+    },
+    "ja_ばかり_86": {
+      "title": "～ばかり (〜bakari)",
+      "shortExplanation": "ある物事が大部分を占めていることや、同じ動作を繰り返してばかりいることを表し、「〜だけ」「〜ばかり」という意味を表します（不満や非難のニュアンスを伴うことが多い）。",
+      "longExplanation": "「～ばかり」は、名詞に接続して「そればかりがたくさんある」（名詞＋ばかり）状態を表したり、動詞て形に接続して「他のことをせずその行為ばかりを繰り返している」（動詞て形＋ばかりいる）様子を表したりする副助詞です。話し手の不満、呆れ、非難などの感情を伴って使われることが多くあります。",
+      "formation": "名詞 ＋ ばかり | 動詞て形 ＋ ばかり（いる）",
+      "examples": [
+        {
+          "translation": "彼はゲームばかりしている。"
+        },
+        {
+          "translation": "この部屋は綺麗なものばかりだ。"
+        },
+        {
+          "translation": "彼女は勉強ばかりしていて、遊んでいる暇がない。"
+        },
+        {
+          "translation": "彼の話は嘘ばかりで、信じることができない。"
+        }
+      ]
+    },
+    "ja_ばかりか_87": {
+      "title": "～ばかりか (〜bakarika) ～も (mo)",
+      "shortExplanation": "前に述べた事柄だけでなく、さらにそれ以上のことが加わることを表し、「〜だけでなく〜も」「〜にとどまらず」という意味を表します。",
+      "longExplanation": "「～ばかりか」（後節には多く「～も」が呼応する）は、「前項の事柄だけに限定されず、さらに後項のような別の事柄や、より程度の高い事態まで付加される」と強調する文型です。前後の節は良いこと同士、あるいは悪いこと同士でそろえて使われるのが一般的です。",
+      "formation": "動詞普通形 ＋ ばかりか | い形容詞 ＋ ばかりか | な形容詞 ＋ (な／である)ばかりか | 名詞 ＋ (である)ばかりか",
+      "examples": [
+        {
+          "translation": "彼女は英語ばかりか、フランス語も話せます。"
+        },
+        {
+          "translation": "このレストランは味が良いばかりか、サービスも素晴らしい。"
+        },
+        {
+          "translation": "パーティは楽しかったばかりか、料理も美味しかった。"
+        },
+        {
+          "translation": "彼は頭がいいばかりか、スポーツも得意だ。"
+        }
+      ]
+    },
+    "ja_はずだ_88": {
+      "title": "～はずだ (〜hazu da)",
+      "shortExplanation": "確かな根拠や道理、既知の事実に基づいて、「当然そうなるはずだ」と高い確信を持って判断・推測する表現で、「〜に違いない」「〜はずだ」という意味を表します。",
+      "longExplanation": "「～はずだ」は、客観的な理由や証拠、自然の摂理、常識などから論理的に考えて「当然そうであるべきだ」「そうなるのが妥当だ」と話し手が強い自信を持って述べる推量・期待の表現です。",
+      "formation": "動詞普通形 ＋ はずだ | い形容詞 ＋ はずだ | な形容詞 ＋ なはずだ | 名詞 ＋ のはずだ",
+      "examples": [
+        {
+          "translation": "彼はもう着いたはずだ。"
+        },
+        {
+          "translation": "この薬を飲むと、痛みがなくなるはずだ。"
+        },
+        {
+          "translation": "明日は晴れるはずだ。"
+        },
+        {
+          "translation": "彼女は元気なはずだ。"
+        }
+      ]
+    },
+    "ja_ばのに_89": {
+      "title": "～ば～のに (〜ba 〜noni)",
+      "shortExplanation": "事実とは異なる反実仮想の条件を述べることで、残念な気持ちや後悔、不満のニュアンスを表し、「〜すればよかったのに」「〜だったらいいのに」という意味を表します。",
+      "longExplanation": "「～ば～のに」は、仮定形「〜ば」と終助詞「〜のに」が結びついた構文です。現実とは逆の状況を仮定して「もしそうしていれば望ましい結果になったはずなのに、実際はそうならず残念だ」と、強い悔恨や心残りの感情を吐露する際に用いられます。",
+      "formation": "動詞ば形 ＋ ～のに | い形容詞語幹 ＋ ければ ＋ ～のに | な形容詞 ＋ であれば／なら ＋ ～のに | 名詞 ＋ であれば／なら ＋ ～のに",
+      "examples": [
+        {
+          "translation": "もっと早く来れば、電車に間に合ったのに。"
+        },
+        {
+          "translation": "もっと勉強すれば、試験に合格したのに。"
+        },
+        {
+          "translation": "彼女がもっと優しければ、彼と上手くいくのに。"
+        },
+        {
+          "translation": "日本語が上手であれば、この本が読めるのに。"
+        }
+      ]
+    },
+    "ja_ばほど_90": {
+      "title": "～ば～ほど (〜ba 〜hodo)",
+      "shortExplanation": "前項の程度が高まるにつれて、それに比例して後項の程度もさらに変化することを表し、「〜すればするほど」「〜であればあるほど」という意味を表します。",
+      "longExplanation": "「～ば～ほど」は、同じ動詞や形容詞を仮定形（ば形）と基本形＋「ほど」の形で重ねて用い、ある事態の進行や程度の上昇に正比例して、後続の結果や影響の度合いも増大していく関係性を表す構文です。",
+      "formation": "動詞ば形 ＋ 動詞辞書形 ＋ ほど | い形容詞語幹 ＋ ければ ＋ い形容詞 ＋ ほど | な形容詞 ＋ であれば／なら ＋ な形容詞 ＋ なほど",
+      "examples": [
+        {
+          "translation": "早く起きれば起きるほど、時間がたくさんある。"
+        },
+        {
+          "translation": "練習すればするほど、上達します。"
+        },
+        {
+          "translation": "料理が美味しければ美味しいほど、皆が喜びます。"
+        },
+        {
+          "translation": "日本語が上手であれば上手なほど、日本の生活が楽になります。"
+        }
+      ]
+    },
+    "ja_はもちろんも_91": {
+      "title": "～はもちろん～も (〜wa mochiron 〜mo)",
+      "shortExplanation": "前項の事柄は当然のこととして前提に置き、さらに後項も同様であると付け加えて強調する表現で、「〜は当然として〜も」「〜はもちろんのこと」という意味を表します。",
+      "longExplanation": "「～はもちろん～も」は、誰もが納得する当然の具体例（前項）をまず挙げておき、「それだけでなく、実は後項の事柄もそうなのだ」と対象を広げて強調する構文です。日常会話からビジネス文書まで幅広く用いられます。",
+      "formation": "名詞1 ＋ はもちろん ＋ 名詞2 ＋ も",
+      "examples": [
+        {
+          "translation": "彼は数学はもちろん、英語も得意です。"
+        },
+        {
+          "translation": "このレストランは和食はもちろん、洋食も美味しいです。"
+        },
+        {
+          "translation": "私の趣味は音楽はもちろん、読書も大好きです。"
+        },
+        {
+          "translation": "東京は観光はもちろん、ビジネスも盛んです。"
+        }
+      ]
+    },
+    "ja_ばよかった_92": {
+      "title": "～ばよかった (〜ba yokatta)",
+      "shortExplanation": "過去にしなかった行動について、「そうすれば望ましい結果が得られたのに」と後悔や心残りを表す表現で、「〜すればよかった」「〜しておけばよかった」という意味を表します。",
+      "longExplanation": "「～ばよかった」は、過去の事態を振り返り、実際には行わなかった行為を取り上げて「あの時そうしていればよかったのに、しなかったことを悔やんでいる」と、後悔や反省、未練の気持ちを吐露する文型です。",
+      "formation": "動詞ば形 ＋ よかった | い形容詞語幹 ＋ ければよかった | な形容詞 ＋ ならよかった",
+      "examples": [
+        {
+          "translation": "もっと早く起きればよかった。"
+        },
+        {
+          "translation": "昨日のパーティーに行けばよかった。"
+        },
+        {
+          "translation": "もっと安いものを買えばよかった。"
+        },
+        {
+          "translation": "あの時、もっと勉強すればよかった。"
+        }
+      ]
+    },
+    "ja_ふりをする_93": {
+      "title": "～ふりをする (〜furi wo suru)",
+      "shortExplanation": "実際はそうではないのに、まるでそうであるかのように見せかける態度をとることを表し、「〜のふりをする」「〜を装う」という意味を表します。",
+      "longExplanation": "「～ふりをする」は、本当の事実や本心とは異なる様子を他人の前で意図的に演じたり、ごまかしたりする行動を指す表現です。外見や仕草を取り繕って「〜のように見せる」というニュアンスを持ちます。",
+      "formation": "動詞普通形 ＋ ふりをする | い形容詞 ＋ ふりをする | な形容詞 ＋ な ＋ ふりをする | 名詞 ＋ の ＋ ふりをする",
+      "examples": [
+        {
+          "translation": "彼は知らないふりをしました。"
+        },
+        {
+          "translation": "彼女は病気のふりをして、学校を休みました。"
+        },
+        {
+          "translation": "彼は嬉しいふりをしていますが、本当は悲しいです。"
+        },
+        {
+          "translation": "彼女はリーダーのふりをして、チームを率いました。"
+        }
+      ]
+    },
+    "ja_べきだ_94": {
+      "title": "～べきだ (〜beki da)",
+      "shortExplanation": "社会的な常識や道徳観、責任、義務などから考えて「そうするのが当然だ」と主張する表現で、「〜するのが当たり前だ」「〜しなければならない」という意味を表します。",
+      "longExplanation": "「～べきだ」は、古語の助動詞「べし」に由来し、人間としての道理、良識、あるいは社会的立場から判断して、「そう行動することが義務であり当然である」と強く確信して述べる表現です。目上の人に対して直接使うのは失礼に当たることがあります。",
+      "formation": "動詞辞書形 ＋ べきだ（「する」は「すべきだ」「するべきだ」）",
+      "examples": [
+        {
+          "translation": "勉強するべきだ。"
+        },
+        {
+          "translation": "早く寝るべきだ。"
+        },
+        {
+          "translation": "静かにするべきだ。"
+        },
+        {
+          "translation": "彼に謝るべきだ。"
+        }
+      ]
+    },
+    "ja_ほど_95": {
+      "title": "～ほど～ (〜hodo〜)",
+      "shortExplanation": "主に「AはBほど…ない」の否定の形で用いられ、程度を比較して「AはBのレベルに及ばない」「〜ほど…なものはない」という意味を表します。",
+      "longExplanation": "「～ほど…ない」は、Bを比較の基準や極限として掲げ、主語であるAがその程度に達していないことを表す比較構文です（「AはBほど〜ではない」）。また「〜ほど…はない」という形にすると、「〜が一番…だ」という最上級の強調表現になります。",
+      "formation": "名詞 ＋ ほど ＋ 形容詞／動詞否定形（ない）",
+      "examples": [
+        {
+          "translation": "彼女は私ほど速く走ることができません。"
+        },
+        {
+          "translation": "このケーキはあのケーキほど美味しくない。"
+        },
+        {
+          "translation": "日本ほど四季がはっきりしている国はない。"
+        },
+        {
+          "translation": "東京は大阪ほど人が多くない。"
+        }
+      ]
+    },
+    "ja_ますように_96": {
+      "title": "～ますように (〜masu you ni)",
+      "shortExplanation": "文末に用いて、自分や他者の幸福、目標の達成などを神仏に祈ったり願ったりする表現で、「〜しますように」「〜でありますように」という意味を表します。",
+      "longExplanation": "「～ますように」は、神社やお寺での祈願、七夕の短冊、あるいは手紙やメッセージの末尾などで、心からの願い事や相手への祝福の気持ちを込めて使われる祈願の文型です。",
+      "formation": "動詞ます形 ＋ ように",
+      "examples": [
+        {
+          "translation": "明日のテストで良い点をとりますように。"
+        },
+        {
+          "translation": "彼が無事に帰ってきますように。"
+        },
+        {
+          "translation": "みんなが健康でいられますように。"
+        },
+        {
+          "translation": "彼女に幸せになりますように。"
+        }
+      ]
+    },
+    "ja_まったくない_97": {
+      "title": "まったく～ない (mattaku ~nai)",
+      "shortExplanation": "副詞「まったく」が後ろの否定表現と呼応して、事態や状態を全面的・徹底的に否定する表現で、「全然〜ない」「少しも〜ない」という意味を表します。",
+      "longExplanation": "「まったく～ない」は、打消しの語（ない、ではない等）を伴って、ある動作や性質がゼロであることを強調する完全否定の呼応構文です。「少しも〜の傾向がない」「完全に否定される」という強いニュアンスを相手に伝えます。",
+      "formation": "まったく ＋ 動詞否定形（ない） | まったく ＋ い形容詞語幹 ＋ くない | まったく ＋ な形容詞／名詞 ＋ ではない",
+      "examples": [
+        {
+          "translation": "彼は、まったく覚えていない。"
+        },
+        {
+          "translation": "この部屋はまったく暖かくない。"
+        },
+        {
+          "translation": "彼女はまったく遅れていない。"
+        },
+        {
+          "translation": "これはまったく便利ではない。"
+        }
+      ]
+    },
+    "ja_まで_98": {
+      "title": "～まで (〜made)",
+      "shortExplanation": "時間、空間、場所、数量などの終点や限界を示し、「〜まで」「〜に至るまで」という意味を表します。",
+      "longExplanation": "助詞「～まで」は、動作や事態の及ぶ時間的・空間的な終着点や限界、範囲の極限を示す文法です。動詞辞書形に接続する場合は、ある状態に達するその時点まで動作が継続することを表します。",
+      "formation": "名詞（時間・場所・数量など） ＋ まで | 動詞辞書形 ＋ まで",
+      "examples": [
+        {
+          "translation": "10時まで働きます。"
+        },
+        {
+          "translation": "東京まで電車で行きます。"
+        },
+        {
+          "translation": "彼は疲れるまで走りました。"
+        },
+        {
+          "translation": "5ページまで読んでください。"
+        }
+      ]
+    },
+    "ja_まま_99": {
+      "title": "～まま (〜mama)",
+      "shortExplanation": "ある状態が変化せずにそのまま保たれている様子を表し、「〜の状態のままで」「〜したままで」という意味を表します。",
+      "longExplanation": "「～まま」は、動作の結果生じた状態や現在の様子が、何の変更や後始末も加えられないまま継続しており、その状態のまま次の動作を行うことを表す表現です。通常とは異なる状態が続いていることへの言及や、そのまま放置されているニュアンスを含むことが多くあります。",
+      "formation": "動詞た形／ない形 ＋ まま | い形容詞 ＋ まま | な形容詞 ＋ なまま | 名詞 ＋ のまま",
+      "examples": [
+        {
+          "translation": "部屋の窓を開けたまま寝ました。"
+        },
+        {
+          "translation": "熱いままのコーヒーを飲んで、舌を焦がしました。"
+        },
+        {
+          "translation": "彼は忙しいなまま、休みの日も仕事をしています。"
+        },
+        {
+          "translation": "彼女は故郷にいるまま、外国に行かないで仕事を見つけた。"
+        }
+      ]
+    }
+  }
+}

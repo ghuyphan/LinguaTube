@@ -57,6 +57,7 @@
             @if (isCJKLanguage()) {
             <button class="control-btn dual-sub-btn" [class.is-active]="showDualSubtitles()"
                 (click)="toggleDualSubs.emit()"
+                (contextmenu)="onDualSubContextMenu($event)"
                 [attr.aria-label]="t()('subtitle.dualSubs') || 'Dual Subtitles'"
                 [title]="t()('subtitle.dualSubs') || 'Dual Subtitles'">
                 <app-icon name="languages" [size]="18" />

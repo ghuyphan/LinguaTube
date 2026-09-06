@@ -1,0 +1,502 @@
+[
+  {
+    "id": "ko_아어도_67",
+    "language": "ko",
+    "pattern": "~아/어도",
+    "title": "~아/어도 [a/eodo] (Even if)",
+    "shortExplanation": "Used to express 'even if' or 'although'.",
+    "longExplanation": "'~아/어도 [a/eodo]' conveys a condition that won’t change the outcome or the speaker's viewpoint. Similar to 'even if' or 'no matter how' in English, it shows that whatever happens in the first clause does not alter the second clause.",
+    "formation": "Verb stem + 아/어도",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "여기 음식은 아무리 비싸도 맛있어서 자주 먹어요.",
+        "romanization": "Yeogi eumsigeun amuri bissado masisseoseo jaju meogeoyo.",
+        "translation": "No matter how expensive the food here is, it's delicious, so I eat it often."
+      },
+      {
+        "sentence": "아무리 빨리 달려도 학교에 늦을 것 같아요.",
+        "romanization": "Amuri ppalli dallyeodo hakgyoe neujeul geot gatayo.",
+        "translation": "Even if I run as fast as I can, I think I'll still be late for school."
+      },
+      {
+        "sentence": "내가 아무리 노력해도 그 프로젝트를 끝내기 힘들 것 같아.",
+        "romanization": "Naega amuri noryeokhaedo geu peurojekteureul kkeutnaegi himdeul geot gata.",
+        "translation": "No matter how much I try, I don’t think I can finish that project."
+      },
+      {
+        "sentence": "운동을 아무리 해도 제 몸에 만족이 안 돼요.",
+        "romanization": "Undongeul amuri haedo je mome manjoki an dwaeyo.",
+        "translation": "No matter how much I exercise, I'm not satisfied with my body."
+      }
+    ]
+  },
+  {
+    "id": "ko_아어서_68",
+    "language": "ko",
+    "pattern": "~아/어서",
+    "title": "~아/어서 [a/eoseo] (Because, so)",
+    "shortExplanation": "Used to express reason or cause: 'because', 'so'.",
+    "longExplanation": "'~아/어서 [a/eoseo]' is a common conjunctive ending indicating that the first clause is the reason or cause for the second clause. It corresponds to 'because' or 'so' in English and is used in everyday speech and writing.",
+    "formation": "Verb stem + 아/어서",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "머리가 아파서 학교에 갈 수 없었어요.",
+        "romanization": "Meoriga apaseo hakgyoe gal su eopseosseoyo.",
+        "translation": "I couldn't go to school because I had a headache."
+      },
+      {
+        "sentence": "오늘 날씨가 좋아서 산책하러 갔어요.",
+        "romanization": "Oneul nalssiga johaseo sanchaekhareo gasseoyo.",
+        "translation": "I went for a walk because the weather was nice today."
+      },
+      {
+        "sentence": "이 영화가 재미있어서 두 번 봤어요.",
+        "romanization": "I yeonghwaga jaemiisseoseo du beon bwasseoyo.",
+        "translation": "I watched this movie twice because it was interesting."
+      },
+      {
+        "sentence": "그녀는 책을 잃어버려서 슬퍼하고 있어요.",
+        "romanization": "Geunyeoneun chaegeul ilheobeoryeoseo seulpeohago isseoyo.",
+        "translation": "She’s sad because she lost her book."
+      }
+    ]
+  },
+  {
+    "id": "ko_았었던_69",
+    "language": "ko",
+    "pattern": "~았/었던",
+    "title": "~았/었던 [ass/eossdeon] (Was)",
+    "shortExplanation": "Used to express a past state or condition: 'was'.",
+    "longExplanation": "The past modifier '~았/었던 [ass/eossdeon]' is used to describe a noun that had a certain state or performed an action in the past. It's similar to saying 'that was...' or 'who was...' in English. The choice of 았/었 depends on the final vowel of the verb stem.",
+    "formation": "Verb + 았/었던 + Noun",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 학교에서 천재였던 학생이었어요. 국어, 수학, 과학, 사회에서 모두 최고 성적을 받았어요.",
+        "romanization": "Jeoneun hakgyoeseo cheonjaeyeossdeon hagsaengieosseoyo. Gugeo, suhag, gwahak, sahoe-eseo modu choego seongjeogeul badasseoyo.",
+        "translation": "I was a genius student at school, receiving top marks in Korean, math, science, and social studies."
+      },
+      {
+        "sentence": "내가 어릴 때 좋아했던 가수는 신화였어요. 그들의 음악은 항상 제 기억에 남아요.",
+        "romanization": "Naega eoril ttae johahaessdeon gasuneun Sinhwayeosseoyo. Geudeurui eumageun hangsang je gieoge namayo.",
+        "translation": "The singer I liked when I was young was Shinhwa; their music always remains in my memory."
+      },
+      {
+        "sentence": "우리 아버지는 어렸을 때 가난했던 사람이었는데, 지금은 잘 살고 있어요.",
+        "romanization": "Uri abeojineun eoryeosseul ttae gananhaessdeon saramieonneunde, jigeumeun jal salgo isseoyo.",
+        "translation": "My father was poor when he was young, but now he is doing well."
+      },
+      {
+        "sentence": "그녀는 학교 시절에는 조용했던 사람이었는데, 지금은 아주 활발해졌어요.",
+        "romanization": "Geunyeoneun hakgyo sijeol-eneun joyonghaessdeon saramieonneunde, jigeumeun aju hwalbalhaejyeosseoyo.",
+        "translation": "She used to be very quiet in school, but now she's become really outgoing."
+      }
+    ]
+  },
+  {
+    "id": "ko_았었어야_70",
+    "language": "ko",
+    "pattern": "~았/었어야",
+    "title": "~았/었어야 했다 [ass/eosseoya haessda] (Should have done)",
+    "shortExplanation": "Used to express regret about something that should have been done in the past but was not.",
+    "longExplanation": "'~았/었어야 했다 [ass/eosseoya haessda]' shows regret for not doing something that one should have done in the past. It translates to 'should have done' in English. It highlights a missed obligation or opportunity.",
+    "formation": "Verb + 았/었어야 했다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 어제 그 일을 했어야 했는데 시간이 없어서 못 했어요. 많이 후회하고 있어요.",
+        "romanization": "Jeoneun eoje geu ireul haesseoya haenneunde sigani eopseoseo mot haesseoyo. Manhi huhoehago isseoyo.",
+        "translation": "I should have done that work yesterday, but I couldn't because I didn’t have time. I really regret it."
+      },
+      {
+        "sentence": "오늘 아침에 운동을 했어야 했지만 게을러서 안 했어요.",
+        "romanization": "Oneul achime undongeul haesseoya haetjiman geeulleoseo an haesseoyo.",
+        "translation": "I should have exercised this morning, but I was too lazy and didn't do it."
+      },
+      {
+        "sentence": "당신은 그런 상황에서 따뜻하게 대했어야 했는데 차갑게 굴더군요.",
+        "romanization": "Dangsineun geureon sanghwangeseo ttatteuthage daehaesseoya haenneunde chagapge guldeogunyo.",
+        "translation": "You should have responded warmly in that situation, but you acted coldly."
+      },
+      {
+        "sentence": "저는 그날 싸움을 어떻게든 피했어야 했는데 결국 못 피했어요.",
+        "romanization": "Jeoneun geunal ssaumeul eotteokedeun pihaesseoya haenneunde gyeolguk mot pihaesseoyo.",
+        "translation": "I should have avoided the fight that day somehow, but I ended up not being able to."
+      }
+    ]
+  },
+  {
+    "id": "ko_았었으면_71",
+    "language": "ko",
+    "pattern": "~았/었으면",
+    "title": "~았/었으면 [ass/eosseumyeon] (I wish it were)",
+    "shortExplanation": "'~았/었으면' is used to express a wish or desire for a situation to be different from what it is now.",
+    "longExplanation": "'~았/었으면 [ass/eosseumyeon]' is a grammar point commonly used to express hypothetical or unreal situations, much like 'I wish...' or 'if only...' in English. It conveys regret or unfulfilled wishes. Formally, it’s the past tense stem plus ‘(으)면’, indicating a desire for something that did not happen.",
+    "formation": "Past verb stem + (으)면",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 어릴 때부터 음악가가 되고 싶었어요. 진짜 음악가가 되었으면 좋겠어요.",
+        "romanization": "Jeoneun eoril ttaebuteo eumakga-ga doego sipeosseoyo. Jinjja eumakgaga doeeosseumyeon jokesseoyo.",
+        "translation": "Since I was young, I wanted to become a musician. I wish I really became a musician."
+      },
+      {
+        "sentence": "날씨가 좋았으면 좋겠어요. 그럼 우리가 함께 산책하러 갈 수 있을 텐데요.",
+        "romanization": "Nalssiga johasseumyeon jokesseoyo. Geureom uriga hamkke sanchaekhareo gal su isseul tende-yo.",
+        "translation": "I wish the weather was good. Then, we could go for a walk together."
+      },
+      {
+        "sentence": "마지막으로 그와 만났을 때 좋은 이야기를 들려줬으면 좋겠어요.",
+        "romanization": "Majimakeuro geuwa mannasseul ttae joheun iyagireul deullyeojwosseumyeon jokesseoyo.",
+        "translation": "I wish I had told him something good when I met him last time."
+      },
+      {
+        "sentence": "약속을 지켰으면 좋겠어요. 그럼 다른 사람들이 저를 더 신뢰할 수 있었을 거예요.",
+        "romanization": "Yagsogeul jikyeosseumyeon jokesseoyo. Geureom dareun saramdeuri jeoreul deo sinroehal su isseosseul geoyeyo.",
+        "translation": "I wish I had kept my promise. Then other people could have trusted me more."
+      }
+    ]
+  },
+  {
+    "id": "ko_았었을_72",
+    "language": "ko",
+    "pattern": "~았/었을",
+    "title": "~았/었을 텐데 [ass/eosseul tende] (I assume it must have been)",
+    "shortExplanation": "Used to express assumption or expectation based on past events.",
+    "longExplanation": "'~았/었을 텐데 [ass/eosseul tende]' expresses the speaker's speculation or presumption about a past situation. It combines the past tense marker '~았/었' with '을 텐데,' which shows the speaker’s expectation or guess about what must have happened.",
+    "formation": "Verb stem + 았/었을 텐데",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "너무 바빴을 텐데 그 일을 다 하지 못했을 것 같아요.",
+        "romanization": "Neomu bappasseul tende geu ireul da haji mothaesseul geot gatayo.",
+        "translation": "You must have been really busy, so I assume you didn't manage to finish all that work."
+      },
+      {
+        "sentence": "당신이 그렇게 많이 공부했을 텐데 문제를 풀 수 있었나요?",
+        "romanization": "Dangsini geureohge manhi gongbuhaesseul tende munjereul pul su isseonnayo?",
+        "translation": "Considering you studied so much, I assume you were able to solve the problems?"
+      },
+      {
+        "sentence": "그녀가 너무 행복했을 텐데 왜 눈물을 흘렸을까요?",
+        "romanization": "Geunyeoga neomu haengbokhaesseul tende wae nunmureul heullyeosseulkkayo?",
+        "translation": "She must have been so happy—why do you think she shed tears?"
+      },
+      {
+        "sentence": "날씨가 화창했을 텐데 여행이 재미있었을 것 같아요.",
+        "romanization": "Nalssiga hwachanghaesseul tende yeohaengi jaemiisseosseul geot gatayo.",
+        "translation": "Given the nice weather, I assume the trip was fun."
+      }
+    ]
+  },
+  {
+    "id": "ko_았었다가_73",
+    "language": "ko",
+    "pattern": "~았/었다가",
+    "title": "~았/었다가 [ass/eossdaga] (Was and then)",
+    "shortExplanation": "Expresses that a past situation happened and then changed or was followed by another occurrence.",
+    "longExplanation": "'~았/었다가 [ass/eossdaga]' denotes a change in state or a sequence of events in the past. It’s often used with action verbs to show one event happened and then a subsequent action followed.",
+    "formation": "Verb + 았/었다가",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 학교에 갔다가 도서관에서 공부하러 갔어요.",
+        "romanization": "Jeoneun hakgyoe gassdaga doseogwaneseo gongbuhareo gasseoyo.",
+        "translation": "I went to school, then I headed to the library to study."
+      },
+      {
+        "sentence": "그는 일을 했다가 집으로 돌아갔어요.",
+        "romanization": "Geuneun ireul haessdaga jibeuro doragasseoyo.",
+        "translation": "He worked, and then he went home."
+      },
+      {
+        "sentence": "나는 친구를 만났다가 영화를 보러 갔어요.",
+        "romanization": "Naneun chingureul mannassdaga yeonghwareul boreo gasseoyo.",
+        "translation": "I met a friend, and then went to see a movie."
+      },
+      {
+        "sentence": "우리는 점심을 먹었다가 공원에서 산책을 했어요.",
+        "romanization": "Urineun jeomsimeul meogeossdaga gongwoneseo sanchaekeul haesseoyo.",
+        "translation": "We ate lunch, and then took a walk in the park."
+      }
+    ]
+  },
+  {
+    "id": "ko_았었다면_74",
+    "language": "ko",
+    "pattern": "~았/었다면",
+    "title": "~았/었다면 [ass/eossdamyeon] (If it had been)",
+    "shortExplanation": "Used for hypothetical past situations: 'If it had been'.",
+    "longExplanation": "'~았/었다면' imagines a different outcome for a past situation. '다면' after the past tense indicates an unreal or counterfactual condition, often expressing regret or speculation about what could have happened.",
+    "formation": "Past tense verb/adjective + 다면",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그때 그의 조언을 들었다면 지금 상황이 달라졌을 거예요.",
+        "romanization": "Geuttae geuui jo-eoneul deureossdamyeon jigeum sanghwangi dallajyeosseul geoyeyo.",
+        "translation": "If I had listened to his advice then, the situation now would be different."
+      },
+      {
+        "sentence": "자기의 실수를 인정했다면 큰 난관에 봉착하지 않았을 텐데.",
+        "romanization": "Jagiui silsureul injeonghaessdamyeon keun nangwane bongchak-haji anhasseul tende.",
+        "translation": "If he had acknowledged his mistake, he wouldn't have ended up facing such a big difficulty."
+      },
+      {
+        "sentence": "어제 비가 왔다면 축구 경기가 취소되었을까요?",
+        "romanization": "Eoje biga watdamyeon chukgu gyeonggiga chwisodoeeosseulkkayo?",
+        "translation": "If it had rained yesterday, would the soccer match have been cancelled?"
+      },
+      {
+        "sentence": "더 빨리 도착했다면 그녀를 만날 수 있었을 텐데.",
+        "romanization": "Deo ppalli dochakhaessdamyeon geunyeoreul mannal su isseosseul tende.",
+        "translation": "If I had arrived earlier, I could've met her."
+      }
+    ]
+  },
+  {
+    "id": "ko_으면_75",
+    "language": "ko",
+    "pattern": "~으면",
+    "title": "~으면 좋겠다 [eumyeon joketda] (I hope, it would be good if)",
+    "shortExplanation": "Expresses a wish or hope for a certain situation or result.",
+    "longExplanation": "'~으면 좋겠다 [eumyeon joketda]' is a common structure for stating what the speaker hopes will happen or would be nice if it happened. It often translates to 'I hope...' or 'It would be good if...' in English.",
+    "formation": "Verb + (으)면 좋겠다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "날씨가 좋으면 좋겠다. 그래야 꽃놀이가 더 즐거울 것 같아.",
+        "romanization": "Nalssiga joeumyeon joketda. Geuraeya kkotnoliga deo jeulgeoul geot gata.",
+        "translation": "I hope the weather is good, so that the flower viewing will be more enjoyable."
+      },
+      {
+        "sentence": "시험을 잘 보면 좋겠다. 그럼 학기가 끝나면 여행을 갈 수 있을 것 같아.",
+        "romanization": "Siheomeul jal bomyeon joketda. Geureom hakgiga kkeutnamyeon yeohaengeul gal su isseul geot gata.",
+        "translation": "I hope I do well on the exam, so I can take a trip when the semester ends."
+      },
+      {
+        "sentence": "아픈 친구가 빨리 나으면 좋겠다. 그럼 같이 놀러 갈 수 있겠지.",
+        "romanization": "Apeun chinguga ppalli naeumyeon joketda. Geureom gachi nolreo gal su igetji.",
+        "translation": "I hope my friend recovers quickly, then we can go out together."
+      },
+      {
+        "sentence": "코로나가 끝나면 좋겠다. 그럼 다시 일상으로 돌아갈 수 있을 것 같아.",
+        "romanization": "Koronaga kkeutnamyeon joketda. Geureom dasi ilsangeuro doragal su isseul geot gata.",
+        "translation": "I hope COVID ends soon, so we can return to normal life."
+      }
+    ]
+  },
+  {
+    "id": "ko_으면서도_76",
+    "language": "ko",
+    "pattern": "~으면서도",
+    "title": "~으면서도 [eumyeonseodo] (While, but still)",
+    "shortExplanation": "Expresses a contradiction: 'while', 'but still', 'even though'.",
+    "longExplanation": "'~으면서도 [eumyeonseodo]' is used to link two contrasting facts. It shows that although the first situation is true, there is another fact that runs counter to it, akin to 'even though' or 'but still' in English.",
+    "formation": "Verb stem + (으)면서도",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그는 건강에 좋지 않으면서도 매일 패스트푸드를 먹어요.",
+        "romanization": "Geuneun geongange jotji anheumyeonseodo maeil paeseuteu-pudeureul meogoyo.",
+        "translation": "He keeps eating fast food every day, while knowing it's not good for his health."
+      },
+      {
+        "sentence": "너무 바쁘면서도 친구들과 시간을 내서 만나곤 해요.",
+        "romanization": "Neomu bappeumyeonseodo chingudeulgwa siganeul naeseo mannagon haeyo.",
+        "translation": "She’s extremely busy, yet she still manages to make time to meet her friends."
+      },
+      {
+        "sentence": "아파트 값이 비싸면서도 계속 오르고 있어요.",
+        "romanization": "Apateu gabs-i bissamyeonseodo gyesok orago isseoyo.",
+        "translation": "Apartment prices keep rising even though they're already expensive."
+      },
+      {
+        "sentence": "인터넷이 느리면서도 필요한 정보는 얻을 수 있어서 잘 이용하고 있어요.",
+        "romanization": "Inteonesi neurimyeonseodo pilyohan jeongboneun eodeul su isseoseo jal iyonghago isseoyo.",
+        "translation": "Even though the internet is slow, I can still get the information I need, so I keep using it."
+      }
+    ]
+  },
+  {
+    "id": "ko_을_77",
+    "language": "ko",
+    "pattern": "~을/ㄹ",
+    "title": "~을/ㄹ 거예요 [eul/l geoyeyo] (Going to, will)",
+    "shortExplanation": "Expresses a future plan or intention—similar to 'going to' or 'will' in English.",
+    "longExplanation": "'~을/ㄹ 거예요 [eul/l geoyeyo]' is used to indicate that something will happen or that the speaker plans or expects something in the future. It can also express the speaker's assumption about the future. If the verb stem ends in a consonant, use '을 거예요'; if it ends in a vowel, use 'ㄹ 거예요.'",
+    "formation": "Verb stem + 을 거예요 (consonant-ending) / ㄹ 거예요 (vowel-ending)",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 이번 주말에 쇼핑을 갈 거예요.",
+        "romanization": "Jeoneun ibeon jumale syopingeul gal geoyeyo.",
+        "translation": "I'm going to go shopping this weekend."
+      },
+      {
+        "sentence": "내일 비가 올 거예요.",
+        "romanization": "Naeil biga ol geoyeyo.",
+        "translation": "It will probably rain tomorrow."
+      },
+      {
+        "sentence": "엄마는 저녁으로 김치찌개를 만들 거예요.",
+        "romanization": "Eommaneun jeonyeogeuro gimchijjigaereul mandeul geoyeyo.",
+        "translation": "Mom will make kimchi stew for dinner."
+      },
+      {
+        "sentence": "우리 팀은 다음 대회에서 반드시 이길 거예요.",
+        "romanization": "Uri timeun daeum daehwoeseo bandeusi igil geoyeyo.",
+        "translation": "Our team will definitely win at the next competition."
+      }
+    ]
+  },
+  {
+    "id": "ko_을게요_78",
+    "language": "ko",
+    "pattern": "~을/ㄹ게요",
+    "title": "~을/ㄹ게요 [eul/l geyo] (I will)",
+    "shortExplanation": "Used to express a future intention, promise, or decision (often more immediate/personal than '~을/ㄹ 거예요').",
+    "longExplanation": "'~을/ㄹ게요 [eul/l geyo]' is a verb ending in Korean that conveys the speaker’s **willingness**, **promise**, or **decision** to do something (often in response to the listener or a situation). Compared to '~을/ㄹ 거예요,' which can simply state a future plan, '~을/ㄹ게요' more strongly implies the speaker’s **own resolve** or reaction to the listener. The form '을게요' is used after stems ending in a **consonant**, and 'ㄹ게요' is used after stems ending in a **vowel**.",
+    "formation": "Verb stem + 을게요 (after consonant) / ㄹ게요 (after vowel)",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 내일 학교에 가서 친구를 만날게요. 오랜만에 보는 친구라 정말 기대돼요.",
+        "romanization": "Jeoneun naeil hakgyoe gaseo chingureul mannalgeyo. Oranmane boneun chingura jeongmal gidadwaeyo.",
+        "translation": "I will go to school tomorrow and meet my friend. I’m really looking forward to seeing them after so long."
+      },
+      {
+        "sentence": "매일 밤 10시에 자러 갈게요. 건강을 위해 더 일찍 자야 할 것 같아요.",
+        "romanization": "Maeil bam yeolshi-si-e jareo galgeyo. Geongangeul wihae deo iljjik jaya hal geot gatayo.",
+        "translation": "I’ll go to bed at 10 p.m. every night. I think I need to sleep earlier for my health."
+      },
+      {
+        "sentence": "주말에는 운동을 할게요. 운동하면 확실히 몸이 좋아지니까요.",
+        "romanization": "Jumalen undongeul halgeyo. Undonghamyeon hwaksilhi momi joajinikayo.",
+        "translation": "I’ll exercise on the weekend. Working out definitely makes my body healthier."
+      },
+      {
+        "sentence": "내일 밥을 사러 갈게요. 집에 먹을 게 별로 없네요.",
+        "romanization": "Naeil babeul sareo galgeyo. Jibe meogeul ge byeollo eopneyo.",
+        "translation": "I’ll go buy some food tomorrow. There’s hardly anything to eat at home."
+      },
+      {
+        "sentence": "음악에 푹 빠져서 피아노 배울게요. 시간이 좀 걸려도 열심히 해 보려고요.",
+        "romanization": "Eumage pook ppajyeoseo piano baeulgeyo. Sigani jom geollyeodo yeolsimhi hae boryeogoyeyo.",
+        "translation": "I’m really into music, so I’ll learn piano. It might take some time, but I plan to work hard at it."
+      },
+      {
+        "sentence": "새로운 언어 공부할게요. 시간이 걸리겠지만 꼭 도전해 보고 싶어요.",
+        "romanization": "Saeroun eoneo gongbuhalgeyo. Sigani geolligetjiman kkok dojeonhae bogo sipeoyo.",
+        "translation": "I’ll study a new language. It might take a while, but I really want to try."
+      },
+      {
+        "sentence": "맛있는 음식을 만들고 싶어서 요리 클래스를 들을게요.",
+        "romanization": "Masinneun eumsigeul mandeulgo sip-eoseo yori keullaeseureul deureulgeyo.",
+        "translation": "I want to make delicious food, so I’ll take a cooking class."
+      },
+      {
+        "sentence": "다음 주 시간 내서 친구들이랑 영화 볼게요.",
+        "romanization": "Da-eum ju sigan naeseo chingudeul-irang yeonghwa bolgeyo.",
+        "translation": "I’ll make time next week to watch a movie with my friends."
+      }
+    ]
+  },
+  {
+    "id": "ko_을까요_79",
+    "language": "ko",
+    "pattern": "~을/ㄹ까요?",
+    "title": "~을/ㄹ까요? [eul/l kkayo?] (Shall we?)",
+    "shortExplanation": "Used to suggest or propose an action to do together or to ask for the listener's opinion.",
+    "longExplanation": "'~을/ㄹ까요? [eul/l kkayo?]' is a Korean ending used to propose an activity (often including the listener) or to ask for the listener's suggestion. It translates roughly as 'Shall we...?' or 'Should we...?' in English. It is typically used in polite, but not extremely formal, conversations.",
+    "formation": "If the verb stem ends in a consonant: Verb stem + 을까요?\nIf the verb stem ends in a vowel: Verb stem + ㄹ까요?",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "함께 저녁을 먹을까요? 맛있는 음식을 파는 식당을 알아요.",
+        "romanization": "Hamkke jeonyeogeul meogeulkkayo? Masinneun eumsigeul paneun sikdangeul arayo.",
+        "translation": "Shall we have dinner together? I know a restaurant that serves delicious food."
+      },
+      {
+        "sentence": "영화를 볼까요? 오늘 좋은 영화가 상영 중이래요.",
+        "romanization": "Yeonghwareul bolkkayo? Oneul joheun yeonghwaga sangyeong jungiraeyo.",
+        "translation": "Shall we watch a movie? A good one is showing today."
+      },
+      {
+        "sentence": "주말에 여행을 갈까요? 분위기 전환이 필요해 보이는데요.",
+        "romanization": "Jumale yeohaengeul galkkayo? Bunwigi jeonhwani piryohae boineundeyo.",
+        "translation": "Shall we go on a trip this weekend? It seems we need a change of scene."
+      },
+      {
+        "sentence": "우리 산책할까요? 날씨가 정말 좋아 보이네요.",
+        "romanization": "Uri sanchaekhalkkayo? Nalssiga jeongmal joa boineyo.",
+        "translation": "Shall we go for a walk? The weather looks really nice."
+      }
+    ]
+  },
+  {
+    "id": "ko_을_80",
+    "language": "ko",
+    "pattern": "~을/ㄹ",
+    "title": "~을/ㄹ 때 [eul/l ttae] (When)",
+    "shortExplanation": "Used to indicate the point in time or occasion when something occurs.",
+    "longExplanation": "'~을/ㄹ 때 [eul/l ttae]' means 'when' in English. You attach it to a verb stem to specify the time or context in which an action happens. '을 때' is used after a consonant-ending stem; 'ㄹ 때' after a vowel-ending stem.",
+    "formation": "Verb stem + 을 때 (if ending in consonant) / Verb stem + ㄹ 때 (if ending in vowel)",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "책을 읽을 때는 조용한 곳에서 읽는 게 좋아요.",
+        "romanization": "Chaekeul ilgeul ttaeneun joyonghan gos-eseo ilgneun ge johayo.",
+        "translation": "When reading a book, I prefer a quiet place."
+      },
+      {
+        "sentence": "친구를 만날 때 항상 많이 웃어요.",
+        "romanization": "Chingureul mannal ttae hangsang manhi useoyo.",
+        "translation": "I always laugh a lot when I meet my friend."
+      },
+      {
+        "sentence": "시험 볼 때 늘 긴장돼요.",
+        "romanization": "Siheom bol ttae neul ginjangdwaeyo.",
+        "translation": "I always get nervous when I take a test."
+      },
+      {
+        "sentence": "비가 올 때는 우산을 꼭 챙기세요.",
+        "romanization": "Biga ol ttaeneun usaneul kkok chaenggiseyo.",
+        "translation": "Take an umbrella when it rains."
+      }
+    ]
+  },
+  {
+    "id": "ko_을_81",
+    "language": "ko",
+    "pattern": "~을/ㄹ",
+    "title": "~을/ㄹ 듯하다 [eul/l deuthada] (Seems like)",
+    "shortExplanation": "Used to express the idea that something appears or feels like something else, or that one is guessing based on observation.",
+    "longExplanation": "'~을/ㄹ 듯하다 [eul/l deuthada]' is used to convey that something seems or feels a certain way, based on the speaker’s inference or impression. It's similar to 'it seems that...' or 'it looks like...' in English.",
+    "formation": "Action/Descriptive verb stem + 을/ㄹ 듯하다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그는 변한 것 같아 보이지만, 사실 옛날 그대로인 듯해요.",
+        "romanization": "Geuneun byeonhan geot gata boijiman, sashil yetnal geudaeroin deuthaeyo.",
+        "translation": "He seems to have changed, but in fact, he appears just the same as before."
+      },
+      {
+        "sentence": "오늘은 겨울인 것처럼 춥네요. 가을이라고 해도 겨울 같은 느낌이 드는 듯해요.",
+        "romanization": "Oneureun gyeoulin geotcheoreom chumneyo. Gaeurirago haedo gyeoul gateun neukkimi deuneun deuthaeyo.",
+        "translation": "It's cold today like winter. Even though it's autumn, it feels like winter."
+      },
+      {
+        "sentence": "그의 표정을 보니 깊은 생각에 잠긴 듯해요.",
+        "romanization": "Geuui pyojeongeul boni gip-eun saenggage jamgin deuthaeyo.",
+        "translation": "Judging by his expression, it seems he’s deep in thought."
+      },
+      {
+        "sentence": "그녀는 웃을 것처럼 보였지만, 뭔가 고민이 있는 듯했어요.",
+        "romanization": "Geunyeoneun useul geotcheoreom boyeotjiman, mwonga gomini inneun deuthaesseoyo.",
+        "translation": "She looked like she was about to smile, but it seemed like something was on her mind."
+      }
+    ]
+  }
+]

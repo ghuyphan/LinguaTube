@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_이가_0",
+    "language": "ko",
+    "pattern": "이/가",
+    "title": "이/가 [i/ga] (Subject markers)",
+    "shortExplanation": "These are subject markers used to identify and emphasize the subject in a sentence.",
+    "longExplanation": "'이/가 [i/ga]' are postpositions used in Korean to mark the subject of a sentence. They are attached right after a noun to indicate that the noun is the subject. The choice between '이' and '가' depends on whether the noun ends in a consonant or a vowel. If the noun ends with a consonant, '이' is used. If the noun ends with a vowel, '가' is used.",
+    "formation": "Noun + 이/가 + rest of the sentence",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "나는 사과를 먹어요, 근데 친구는 오렌지가 좋아요.",
+        "romanization": "Naneun sagwareul meogeoyo, geunde chinguneun orenjiga joayo.",
+        "translation": "I eat apples, but my friend likes oranges."
+      },
+      {
+        "sentence": "저의 강아지가 소파 위에 뛰어요.",
+        "romanization": "Jeoi gangajiga sopa wie ttwieoyo.",
+        "translation": "My dog jumps on the sofa."
+      },
+      {
+        "sentence": "이 책이 제일 재미있어요.",
+        "romanization": "I chaegi jeil jaemiisseoyo.",
+        "translation": "This book is the most fun."
+      },
+      {
+        "sentence": "당신이 좋아하는 음식이 뭔가요?",
+        "romanization": "Dangsini joahaneun eumsigi mwongayo?",
+        "translation": "What is the food that you like?"
+      }
+    ]
+  },
+  {
+    "id": "ko_은는_1",
+    "language": "ko",
+    "pattern": "은/는",
+    "title": "은/는 [eun/neun] (Topic markers)",
+    "shortExplanation": "Used to mark the topic of a sentence or to contrast an idea or subject.",
+    "longExplanation": "'은/는 [eun/neun]' are particle markers in Korean used to introduce or highlight the topic of a sentence. They follow a noun to indicate what the speaker is talking about, drawing attention to it. '은 [eun]' is used after words ending with a consonant, and '는 [neun]' is used after words ending with a vowel. These markers can also be used to contrast an idea, person, or thing with another.",
+    "formation": "Noun + 은/는",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "나는 학생입니다. 나는 한국어를 배우고 있습니다.",
+        "romanization": "Naneun haksaengimnida. Naneun hangugeoreul baeugo itsseumnida.",
+        "translation": "I am a student. I am learning Korean."
+      },
+      {
+        "sentence": "친구는 집에 있고, 저는 학교에 있습니다.",
+        "romanization": "Chinguneun jibe itgo, jeoneun hakgyoe itsseumnida.",
+        "translation": "My friend is at home, and I am at school."
+      },
+      {
+        "sentence": "오늘은 비가 오고, 내일은 맑습니다.",
+        "romanization": "Oneuleun biga ogo, naeireun malgsseumnida.",
+        "translation": "It's raining today, but it will be clear tomorrow."
+      },
+      {
+        "sentence": "이것은 책이고, 저것은 연필입니다.",
+        "romanization": "Igeoseun chaegigo, jeogeoseun yeonpilimnida.",
+        "translation": "This is a book, and that is a pencil."
+      }
+    ]
+  },
+  {
+    "id": "ko_을를_2",
+    "language": "ko",
+    "pattern": "을/를",
+    "title": "을/를 [eul/reul] (Object markers)",
+    "shortExplanation": "Used to mark the object of a sentence in Korean.",
+    "longExplanation": "'을/를 [eul/reul]' are object markers in Korean, indicating the object of an action in a sentence. They are used after a noun which is the object of the verb. They have no meaning on their own, but when attached to a noun, they signify that the noun is the object that the action of the verb is directed at.",
+    "formation": "Noun + 을/를 + Verb",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 매일 아침에 커피를 마셔요.",
+        "romanization": "Jeoneun maeil achime keopireul masyeoyo.",
+        "translation": "I drink coffee every morning."
+      },
+      {
+        "sentence": "저는 이 책을 읽고 있어요.",
+        "romanization": "Jeoneun i chaekeul ilgo isseoyo.",
+        "translation": "I am reading this book."
+      },
+      {
+        "sentence": "영화를 보러 가고 싶어요.",
+        "romanization": "Yeongwareul boreo gago sip-eoyo.",
+        "translation": "I want to go watch a movie."
+      },
+      {
+        "sentence": "우리는 그들을 돕고 싶어요.",
+        "romanization": "Urineun geudeureul dobgo sip-eoyo.",
+        "translation": "We want to help them."
+      }
+    ]
+  },
+  {
+    "id": "ko_아니다_3",
+    "language": "ko",
+    "pattern": "아니다",
+    "title": "아니다 [anida] (To not be)",
+    "shortExplanation": "Used to express negation; 'to not be' or 'is not'.",
+    "longExplanation": "'아니다 [anida]' is a negative verb used in Korean to indicate the non-existence or negation of something. It stands as the negative form of the verb '이다' ('to be'). '아니다' is used when the speaker wants to say a statement is incorrect or a certain condition or state is not present. This verb changes its form depending on formality and tense.",
+    "formation": "Noun + 아니다",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "제 책이 아니에요, 그것은 내 친구의 책입니다.",
+        "romanization": "Je chaeki anieyo, geugeoseun nae chinguui chaegimnida.",
+        "translation": "That's not my book, it's my friend's book."
+      },
+      {
+        "sentence": "우리는 너무 늦지 않았어요, 아직도 충분한 시간이 있어요.",
+        "romanization": "Urineun neomu neutji anasseoyo, ajikdo chungbunhan sigani isseoyo.",
+        "translation": "We are not too late, we still have plenty of time."
+      },
+      {
+        "sentence": "이 아름다운 공원은 자연이 아니에요, 인간이 만든 것입니다.",
+        "romanization": "I areumdaun gongwoneun jayeoni anieyo, ingani mandeun geosimnida.",
+        "translation": "This beautiful park is not natural, it was made by humans."
+      },
+      {
+        "sentence": "그는 나의 친구가 아니에요, 우리는 그저 동료입니다.",
+        "romanization": "Geuneun naui chinguga anieyo, urineun geujeo donglyoimnida.",
+        "translation": "He is not my friend, we are just colleagues."
+      }
+    ]
+  },
+  {
+    "id": "ko_예요이에요_4",
+    "language": "ko",
+    "pattern": "예요/이에요",
+    "title": "예요/이에요 [yeyo/ieyo] (Copula in the present tense)",
+    "shortExplanation": "Used to indicate that something or someone is a certain noun in a polite way (similar to 'is/am/are').",
+    "longExplanation": "'예요/이에요' are polite present-tense forms of the Korean copula '이다,' used after nouns to show identification or classification. Choose '이에요' if the noun ends in a consonant, and '예요' if the noun ends in a vowel.",
+    "formation": "Noun + 이에요 (if ending with a consonant) / 예요 (if ending with a vowel)",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 학생이에요.",
+        "romanization": "Jeoneun haksaeng-ieyo.",
+        "translation": "I am a student."
+      },
+      {
+        "sentence": "이 사람은 제 친구예요.",
+        "romanization": "I sarameun je chingu-yeyo.",
+        "translation": "This person is my friend."
+      },
+      {
+        "sentence": "이것은 제 가방이에요.",
+        "romanization": "Igeoseun je gabang-ieyo.",
+        "translation": "This is my bag."
+      },
+      {
+        "sentence": "제 취미는 독서예요.",
+        "romanization": "Je chwimineun dokseo-yeyo.",
+        "translation": "My hobby is reading."
+      }
+    ]
+  },
+  {
+    "id": "ko_아요어요여요_5",
+    "language": "ko",
+    "pattern": "아요/어요/여요",
+    "title": "아요/어요/여요 [ayo/eoyo/yeoyo] (Verb ending in present tense)",
+    "shortExplanation": "Used as a polite verb ending in the present tense for verbs and adjectives.",
+    "longExplanation": "'아요/어요/여요 [ayo/eoyo/yeoyo]' are endings attached to Korean verbs or adjectives to form the present tense in a polite but not overly formal style. If the stem’s final vowel is '아' or '오', use '아요'. For all other vowels, use '어요'. When a verb ends in '하다', it typically changes to '해요' (the most common contraction of '하여요').",
+    "formation": "Verb/Adjective stem + 아요 (if stem ends in '아' or '오') / 어요 (if stem ends in other vowels) / 해요 (if stem ends with '하다')",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "나는 한국어 공부하고 있어요.",
+        "romanization": "Naneun hangugeo gongbuhago isseoyo.",
+        "translation": "I am studying Korean."
+      },
+      {
+        "sentence": "우리 엄마는 맛있는 음식을 만들어요.",
+        "romanization": "Uri eommaneun masitneun eumsigeul mandeureoyo.",
+        "translation": "My mom makes delicious food."
+      },
+      {
+        "sentence": "선생님은 학생들에게 한국 문화에 대해 가르치고 있어요.",
+        "romanization": "Seonsaengnimeun haksaengdeulege hanguk munhwa-e daehae gareuchigo isseoyo.",
+        "translation": "The teacher is teaching the students about Korean culture."
+      },
+      {
+        "sentence": "그는 점심시간에 가끔 산책하러 가요.",
+        "romanization": "Geuneun jeomsimsigan-e gakkeum sancaekhareo gayo.",
+        "translation": "He sometimes goes for a walk during lunchtime."
+      }
+    ]
+  },
+  {
+    "id": "ko_고_6",
+    "language": "ko",
+    "pattern": "고",
+    "title": "고 [go] (And)",
+    "shortExplanation": "Used to link two or more clauses in a sentence; similar to 'and' in English.",
+    "longExplanation": "'고 [go]' is a conjunction used in Korean to connect two or more clauses in a sentence, similar to the English conjunction 'and'. It can link actions, events, or states. In most cases, you remove '다' from the verb’s dictionary form and then add '고'.",
+    "formation": "Verb stem + 고 + Verb stem",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 오늘 학교에 가고, 공부하고, 친구들과 점심을 먹었어요.",
+        "romanization": "Jeoneun oneul hakgyoe gago, gongbuhago, chingudeulgwa jeomsimeul meogeosseoyo.",
+        "translation": "Today, I went to school, studied, and ate lunch with my friends."
+      },
+      {
+        "sentence": "그는 춤을 추고, 노래를 하고, 재미있게 놀았어요.",
+        "romanization": "Geuneun chumeul chugo, noraereul hago, jaemiissge norasseoyo.",
+        "translation": "He danced, sang, and had fun."
+      },
+      {
+        "sentence": "나는 집에 가서 숙제를 하고 책을 읽었어요.",
+        "romanization": "Naneun jibe gaseo sukjerul hago chaegeul ilgeosseoyo.",
+        "translation": "I went home, did my homework, and read a book."
+      },
+      {
+        "sentence": "우리는 점심을 먹고 영화를 보러 갔어요.",
+        "romanization": "Urineun jeomsimeul meokgo yeonghwareul boreo gasseoyo.",
+        "translation": "We ate lunch and went to watch a movie."
+      }
+    ]
+  },
+  {
+    "id": "ko_하고_7",
+    "language": "ko",
+    "pattern": "하고",
+    "title": "하고 [hago] (And, with)",
+    "shortExplanation": "Used to express 'and' or 'with' when connecting nouns or activities shared with someone.",
+    "longExplanation": "'하고 [hago]' is a conjunction used in Korean to link or associate two or more nouns (similar to 'and'), or to express doing something together with someone (similar to 'with'). It implies a joint action or connection between the listed nouns or people.",
+    "formation": "Noun 1 + 하고 + Noun 2",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 친구하고 영화를 보고 밥을 먹었어요, 그리고 집에 가서 숙제를 했어요.",
+        "romanization": "Jeoneun chinguhago yeongwareul bogo babeul meogeosseoyo, geurigo jibe gaseo sukjereul haesseoyo.",
+        "translation": "I watched a movie and ate with my friend, then went home and did my homework."
+      },
+      {
+        "sentence": "이번 주말에는 가족하고 여행을 가기로 결정했어요.",
+        "romanization": "Ibeon jumaleneun gajokhago yeohaengeul gagiro gyeoljeonghaesseoyo.",
+        "translation": "I decided to go on a trip with my family this weekend."
+      },
+      {
+        "sentence": "피터하고 메리는 함께 학교에 갔어요.",
+        "romanization": "Piteohago Merineun hamkke hakgyoe gasseoyo.",
+        "translation": "Peter and Mary went to school together."
+      },
+      {
+        "sentence": "나는 오늘 아빠하고 쇼핑하러 갈 계획이에요.",
+        "romanization": "Naneun oneul appahago syopinghareo gal gyehoegieyo.",
+        "translation": "I plan to go shopping with my dad today."
+      }
+    ]
+  },
+  {
+    "id": "ko_으세요euseyoImperativeform_8",
+    "language": "ko",
+    "pattern": "(으)세요 [(eu)seyo] (Imperative form)",
+    "title": "(으)세요 [(eu)seyo] (Imperative form)",
+    "shortExplanation": "Used to give orders, instructions, or make polite requests.",
+    "longExplanation": "'(으)세요 [(eu)seyo]' is an imperative form in Korean used to request or command someone to do something politely. It is considered an honorific form, so it is used when speaking to someone older or of higher status, or simply to be polite. Use '세요' if the verb stem ends with a vowel, and '으세요' if the verb stem ends with a consonant.",
+    "formation": "Verb stem + 세요 (if stem’s final syllable is a vowel) / 으세요 (if stem’s final syllable is a consonant)",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "조심해서 건너세요, 사고가 날 수 있어요.",
+        "romanization": "Josimhaeseo geonneoseyo, sagoga nal su isseoyo.",
+        "translation": "Cross carefully, there could be an accident."
+      },
+      {
+        "sentence": "집에 돌아가서 먹어야 할 약을 먹으세요.",
+        "romanization": "Jibe doragaseo meog-eoya hal yag-eul meog-euseyo.",
+        "translation": "Go home and take the medicine you need to take."
+      },
+      {
+        "sentence": "이 메시지를 받으면 답장하세요.",
+        "romanization": "I mesijireul badeumyeon dapjanghaseyo.",
+        "translation": "Reply once you receive this message."
+      },
+      {
+        "sentence": "오늘 저녁에 만나야 할 사람들에게 미리 전화하세요.",
+        "romanization": "Oneul jeonyeog-e manna-ya hal saramdeuregge miri jeonhwahaseyo.",
+        "translation": "Call the people you have to meet this evening in advance."
+      }
+    ]
+  },
+  {
+    "id": "ko_으수있다eulsuitdaCando_9",
+    "language": "ko",
+    "pattern": "(으)ㄹ 수 있다 [(eu)l su itda] (Can do)",
+    "title": "(으)ㄹ 수 있다 [(eu)l su itda] (Can do)",
+    "shortExplanation": "This form indicates the potential ability or possibility to perform something.",
+    "longExplanation": "'(으)ㄹ 수 있다' is a fundamental Korean grammar point that conveys the potential ability to do something. It works like 'can' in English. It indicates that an action is possible or that an event may occur, and also implies that the speaker (or subject) either has the ability or the permission to do the action described by the preceding verb.",
+    "formation": "Verb Stem + (으)ㄹ 수 있다",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "그녀는 한국어를 매우 빠르게 배울 수 있으므로, 한 달 만에 토픽 시험을 볼 수 있을 것입니다.",
+        "romanization": "Geunyeoneun hangugeoreul maeu bbareuge baeul su isseumuro, han dal mane topik siheomeul bol su isseul geosimnida.",
+        "translation": "Because she can learn Korean very quickly, she will be able to take the TOPIK test in a month."
+      },
+      {
+        "sentence": "집이 가까우니까, 열심히 공부하면 한 달 안에 한국어를 유창하게 할 수 있어요.",
+        "romanization": "Jibi gakkaunikka, yeolsimhi gongbuhamyeon han dal ane hangugeoreul yuchanghage hal su isseoyo.",
+        "translation": "Since your house is nearby, if you study hard, you can become fluent in Korean within a month."
+      },
+      {
+        "sentence": "그것에 대해 많이 알고 있어서, 그에 대한 모든 질문에 답할 수 있어요.",
+        "romanization": "Geugeote daehae manhi algo isseoseo, geue daehan modeun jilmune daphal su isseoyo.",
+        "translation": "Since I know a lot about it, I can answer all questions related to it."
+      },
+      {
+        "sentence": "당신이 이해하기 어렵다면, 조금 더 천천히 말할 수 있어요.",
+        "romanization": "Dangsini ihaehagi eoryeopdamyeon, jogeum deo cheoncheonhi malhal su isseoyo.",
+        "translation": "If you find it hard to understand, I can speak a bit more slowly."
+      }
+    ]
+  },
+  {
+    "id": "ko_으려고euryeogoIntentiontodo_10",
+    "language": "ko",
+    "pattern": "(으)려고 [(eu)ryeogo] (Intention to do)",
+    "title": "(으)려고 [(eu)ryeogo] (Intention to do)",
+    "shortExplanation": "Used to express the speaker's intention or plan to do something.",
+    "longExplanation": "The '(으)려고' form is used in Korean to express intention or a plan to do something. It can be translated roughly as 'in order to,' 'intend to,' or 'plan to.' You can use it when talking about your own intentions or other people's intentions that you know of. It often implies a future action or purposeful activity.",
+    "formation": "Verb Stem + (으)려고",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 한국어를 배우려고 한국에 왔어요.",
+        "romanization": "Jeoneun hangugeoreul baeuryeogo hanguk-e wasseoyo.",
+        "translation": "I came to Korea to learn Korean."
+      },
+      {
+        "sentence": "누나는 살을 빼려고 운동하고 있어요.",
+        "romanization": "Nunaneun sal-eul ppaeryeogo undonghago isseoyo.",
+        "translation": "My older sister is exercising in order to lose weight."
+      },
+      {
+        "sentence": "학생들은 시험에 통과하려고 열심히 공부하고 있어요.",
+        "romanization": "Haksaengdeureun siheome tonggwaharyeogo yeolsimhi gongbuhago isseoyo.",
+        "translation": "The students are studying hard in order to pass the exam."
+      },
+      {
+        "sentence": "아빠는 아이들에게 좋은 생활을 제공하려고 매일 일해요.",
+        "romanization": "Appaneun aideurege joeun saenghwareul jegongharyeogo maeil ilhaeyo.",
+        "translation": "Father works every day to provide a good life for his children."
+      }
+    ]
+  },
+  {
+    "id": "ko_으는다eunneundaInformalstatementendings_11",
+    "language": "ko",
+    "pattern": "(으)ㄴ/는다 [(eu)n/neunda] (Informal statement endings)",
+    "title": "(으)ㄴ/는다 [(eu)n/neunda] (Informal statement endings)",
+    "shortExplanation": "Used in informal or plain-style statements to make assertions or descriptions.",
+    "longExplanation": "'(으)ㄴ/는다' are plain-style (informal) statement endings in Korean. They often appear in written narratives, diaries, or casual speech among peers. If the verb stem ends in a vowel, use 'ㄴ다.' If the verb stem ends in a consonant, use '는다.'",
+    "formation": "Verb stem + ㄴ다 (if stem ends with a vowel), Verb stem + 는다 (if stem ends with a consonant)",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "나는 오늘 자정에 집에 돌아온다.",
+        "romanization": "Naneun oneul jajeong-e jibe doraonda.",
+        "translation": "I’m coming back home at midnight today."
+      },
+      {
+        "sentence": "그는 스페인어를 잘 한다.",
+        "romanization": "Geuneun seupeineoreul jal handa.",
+        "translation": "He speaks Spanish well."
+      },
+      {
+        "sentence": "이 커피는 너무 진하다.",
+        "romanization": "I keopineun neomu jinhada.",
+        "translation": "This coffee is too strong."
+      },
+      {
+        "sentence": "우리는 내일 공원에 가서 피크닉을 한다.",
+        "romanization": "Urineun naeil gongwone gaseo piknikeul handa.",
+        "translation": "We’ll go to the park tomorrow and have a picnic."
+      }
+    ]
+  },
+  {
+    "id": "ko_도_12",
+    "language": "ko",
+    "pattern": "도",
+    "title": "도 [do] (Too, also)",
+    "shortExplanation": "Used to indicate addition, similarity, or emphasis ('too', 'also', 'even').",
+    "longExplanation": "'도' is a particle that means 'too,' 'also,' or 'even' depending on context. It can be attached to nouns, pronouns, or other particles, indicating that the mentioned item is in addition to or shares the same property/action as something else.",
+    "formation": "Noun (or pronoun) + 도",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "나는 커피를 좋아하고, 친구도 커피를 좋아해요.",
+        "romanization": "Naneun keopireul joahago, chingudo keopireul joahaeyo.",
+        "translation": "I like coffee, and my friend also likes coffee."
+      },
+      {
+        "sentence": "철수는 축구를 할 수 있어요, 그리고 민희도 축구를 할 수 있어요.",
+        "romanization": "Cheolsuneun chukgureul hal su isseoyo, geurigo Minheedo chukgureul hal su isseoyo.",
+        "translation": "Cheolsu can play soccer, and Minhee can also play soccer."
+      },
+      {
+        "sentence": "이 영화는 재미있어요, 그래서 많은 사람들이 지금까지도 계속 이 영화를 봐요.",
+        "romanization": "I yeonghwaneun jaemiisseoyo, geuraeseo maneun saramdeuri jigeumkkajido gyesok i yeonghwareul bwayo.",
+        "translation": "This movie is fun, so many people still continue to watch it."
+      },
+      {
+        "sentence": "이번 시험은 어려웠어요, 그래서 나도, 친구들도 잘 못 봤어요.",
+        "romanization": "Ibeon siheomeun eoryeowosseoyo, geuraeseo nado, chingudeuldo jal mot bwasseoyo.",
+        "translation": "This test was difficult, so both I and my friends didn’t do well."
+      }
+    ]
+  },
+  {
+    "id": "ko_만_13",
+    "language": "ko",
+    "pattern": "만",
+    "title": "만 [man] (Only)",
+    "shortExplanation": "Used to express the concept of 'only' or 'just' in Korean.",
+    "longExplanation": "'만' is a particle that indicates exclusivity. The noun (or pronoun) before '만' is the only or the sole subject/object in the context, emphasizing that no other people, items, or circumstances apply.",
+    "formation": "Noun + 만",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 커피만 마십니다. 차는 마시지 않아요.",
+        "romanization": "Jeoneun keopiman masimnida. Chaneun masiji anhayo.",
+        "translation": "I only drink coffee. I don’t drink tea."
+      },
+      {
+        "sentence": "제 친구는 한국어만 할 줄 알아요. 다른 언어는 전혀 못 해요.",
+        "romanization": "Je chinguneun hangugeoman hal jul arayo. Dareun eoneoneun jeonhyeo mot haeyo.",
+        "translation": "My friend can only speak Korean. He can’t speak any other language at all."
+      },
+      {
+        "sentence": "저는 데이트를 할 때 영화만 보러 가요. 다른 활동은 잘 안 해요.",
+        "romanization": "Jeoneun deiteureul hal ttae yeonghwaman boreo gayo. Dareun hwaldongeun jal an haeyo.",
+        "translation": "When I go on dates, I only go to the movies. I don’t really do other activities."
+      },
+      {
+        "sentence": "이번 달에는 돈을 아끼려고 교통비만 썼어요. 다른 데에는 안 썼어요.",
+        "romanization": "Ibeon dal-eneun doneul akkiryeogo gyotongbiman sseosseoyo. Dareun de-e-neun an sseosseoyo.",
+        "translation": "This month, to save money, I only spent on transportation. I didn’t spend on anything else."
+      }
+    ]
+  },
+  {
+    "id": "ko_와과_14",
+    "language": "ko",
+    "pattern": "와/과",
+    "title": "와/과 [wa/gwa] (And, with – for nouns)",
+    "shortExplanation": "Used to link two nouns in a similar way to 'and' or 'with' in English.",
+    "longExplanation": "'와/과' is a particle used to connect two nouns in Korean. If the final character of the first noun is a vowel, '와' is used. If it is a consonant, '과' is used. It can mean 'and' or 'with,' depending on context.",
+    "formation": "Noun (ending in vowel) + 와 + Noun / Noun (ending in consonant) + 과 + Noun",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "나는 공원에서 강아지와 뛰어놀았어요.",
+        "romanization": "Naneun gongwon-eseo gangajiwa ttwieonorasseoyo.",
+        "translation": "I played with a puppy in the park."
+      },
+      {
+        "sentence": "나는 빵과 커피를 함께 먹는 것을 좋아해요.",
+        "romanization": "Naneun ppang-gwa keopireul hamkke meokneun geoseul joahaeyo.",
+        "translation": "I like eating bread and coffee together."
+      },
+      {
+        "sentence": "친구와 연필과 함께 공부했어요.",
+        "romanization": "Chinguwa yeonpilgwa hamkke gongbuhaesseoyo.",
+        "translation": "I studied with a friend and a pencil."
+      },
+      {
+        "sentence": "나는 내 가족과 여행을 갔어요.",
+        "romanization": "Naneun nae gajok-gwa yeohaengeul gasseoyo.",
+        "translation": "I went on a trip with my family."
+      }
+    ]
+  }
+]

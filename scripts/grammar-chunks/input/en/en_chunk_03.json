@@ -1,0 +1,318 @@
+[
+  {
+    "id": "en_a2_07",
+    "language": "en",
+    "pattern": "going to",
+    "title": "going to - intentions and obvious predictions",
+    "shortExplanation": "I'm going to visit Paris. Look out - you're going to fall!",
+    "longExplanation": "going to is used for:\n1. Pre-made decisions and intentions: I'm going to start a diet next week.\n2. Predictions with visible signs: Look at those clouds - it's going to rain!\nForm: am/is/are + going to + infinitive",
+    "formation": "I'm going to visit Paris. Look out - you're going to fall!",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I'm going to study medicine.",
+        "translation": "I'm going to study medicine."
+      },
+      {
+        "sentence": "She's going to have a baby.",
+        "translation": "She's expecting a baby."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_08",
+    "language": "en",
+    "pattern": "Present Continuous",
+    "title": "Present Continuous: am/is/are + V-ing",
+    "shortExplanation": "She is reading now. They are playing outside.",
+    "longExplanation": "Present Continuous is an action taking place right now or temporarily during this period.\nForm: am/is/are + verb + -ing\nRules for writing -ing:\n• Most: just + ing → working, playing\n• Ends with -e: remove -e + ing → making, coming\n• Short stressed syllable: double the last consonant → running, sitting",
+    "formation": "She is reading now. They are playing outside.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I am studying English right now.",
+        "translation": "I'm studying English now."
+      },
+      {
+        "sentence": "She's working from home this month.",
+        "translation": "She is working from home this month."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_09",
+    "language": "en",
+    "pattern": "Present Continuous for planned future",
+    "title": "Present Continuous for planned future",
+    "shortExplanation": "I'm meeting Tom tomorrow. We're flying to Rome on Friday.",
+    "longExplanation": "Present Continuous is used for specific agreements in the future - when the time and place have already been determined.\nDifference:\n• I'm meeting Alice tomorrow - the meeting has been agreed (a specific plan)\n• I'll meet Alice tomorrow - intention or proposal",
+    "formation": "I'm meeting Tom tomorrow. We're flying to Rome on Friday.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I'm having dinner with Alex tonight.",
+        "translation": "I'm having dinner with Alex tonight."
+      },
+      {
+        "sentence": "They're getting married in June.",
+        "translation": "They are getting married in June."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_10",
+    "language": "en",
+    "pattern": "Present Simple vs Present Continuous",
+    "title": "Present Simple vs Present Continuous - difference",
+    "shortExplanation": "I drink coffee (habit) vs I am drinking coffee (right now)",
+    "longExplanation": "Present Simple: habits, facts, schedules, general truths.\nPresent Continuous: something that is happening right now or temporarily.\nCompare:\n• She speaks French. - knows the language (always)\n• She is speaking French. - speaks right now",
+    "formation": "I drink coffee (habit) vs I am drinking coffee (right now)",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Water boils at 100°C. (факт)",
+        "translation": "Water boils at 100°C."
+      },
+      {
+        "sentence": "I'm reading a great book this week. (временно)",
+        "translation": "I'm reading a great book this week."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_11",
+    "language": "en",
+    "pattern": "should / shouldn't",
+    "title": "should / shouldn't - advice and recommendation",
+    "shortExplanation": "You should see a doctor. You shouldn't eat so much.",
+    "longExplanation": "should expresses mild advice or personal opinion. Weaker than must.\nAfter should - infinitive without to.\nAlso used for criticism or regret: You should have called (should have called).",
+    "formation": "You should see a doctor. You shouldn't eat so much.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "You should exercise more.",
+        "translation": "You should exercise more."
+      },
+      {
+        "sentence": "She shouldn't work so hard.",
+        "translation": "She shouldn't work so hard."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_12",
+    "language": "en",
+    "pattern": "must / mustn't",
+    "title": "must / mustn't - obligation and strict prohibition",
+    "shortExplanation": "You must wear a seatbelt. You mustn't smoke here.",
+    "longExplanation": "must - a strong obligation (often internal) or a categorical requirement.\nmustn't - a strict prohibition (absolutely impossible!).\n• mustn't = prohibited\n• don't have to = not required, but possible",
+    "formation": "You must wear a seatbelt. You mustn't smoke here.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "You must show your passport.",
+        "translation": "You must present your passport."
+      },
+      {
+        "sentence": "You mustn't smoke here.",
+        "translation": "You can't smoke here."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_13",
+    "language": "en",
+    "pattern": "have to",
+    "title": "have to - external necessity",
+    "shortExplanation": "I have to work late. She doesn't have to come.",
+    "longExplanation": "have to - a necessity due to external rules, circumstances or other people's requirements.\nDifference from must:\n• must - internal necessity: I must call her (I myself consider it necessary)\n• have to - external: I have to wear a uniform (rule)\ndon't have to=optional (not necessary, but allowed).",
+    "formation": "I have to work late. She doesn't have to come.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I have to finish this report by Friday.",
+        "translation": "I have to submit my report by Friday."
+      },
+      {
+        "sentence": "You don't have to come if you don't want to.",
+        "translation": "You don't have to come."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_14",
+    "language": "en",
+    "pattern": "could",
+    "title": "could - past skill and polite requests",
+    "shortExplanation": "She could swim when she was 5. Could you help me?",
+    "longExplanation": "could is the past tense of can. Two main meanings:\n1. Skill in the past: I could read at 4 years old.\n2. Polite requests (more polite than can): Could you pass the salt, please?\nAlso for present possibility: It could be true.",
+    "formation": "She could swim when she was 5. Could you help me?",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "She could play the violin as a child.",
+        "translation": "She knew how to play the violin as a child."
+      },
+      {
+        "sentence": "Could you speak more slowly, please?",
+        "translation": "Could you speak more slowly?"
+      }
+    ]
+  },
+  {
+    "id": "en_a2_15",
+    "language": "en",
+    "pattern": "Comparative degree of adjectives",
+    "title": "Comparative degree of adjectives",
+    "shortExplanation": "bigger, more interesting, better, worse",
+    "longExplanation": "Monosyllabic and disyllabic in -y: + er (fast→faster, happy→happier).\nPolysyllabic: more + adjective.\nWriting rules: -e → + r (nice→nicer); short stressed syllable: double (big→bigger); -y → ier (heavy→heavier).\nIrregular: good→better, bad→worse, far→further/farther, much/many→more\nAfter the comparative - than: She is taller than her sister.",
+    "formation": "bigger, more interesting, better, worse",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "This film is more interesting than that one.",
+        "translation": "This movie is more interesting than that."
+      },
+      {
+        "sentence": "Today is worse than yesterday.",
+        "translation": "Today is worse than yesterday."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_16",
+    "language": "en",
+    "pattern": "Superlative adjectives",
+    "title": "Superlative adjectives",
+    "shortExplanation": "the biggest, the most beautiful, the best",
+    "longExplanation": "Monosyllabic: the + -est. Polysyllabic: the most.\nThe writing rules are the same as for the comparative degree.\nIrregular: good→the best, bad→the worst, far→the furthest, much/many→the most",
+    "formation": "the biggest, the most beautiful, the best",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "This is the most expensive restaurant in the city.",
+        "translation": "This is the most expensive restaurant in the city."
+      },
+      {
+        "sentence": "He is the best player on the team.",
+        "translation": "He is the best player on the team."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_17",
+    "language": "en",
+    "pattern": "some / any",
+    "title": "some / any - indefinite amount",
+    "shortExplanation": "I have some money. Do you have any? I don't have any.",
+    "longExplanation": "some - in affirmative sentences and in offers/requests.\nany - in questions and negations.\nException: some in questions when we expect an affirmative answer or offer something: Would you like some tea? Can I have some water?",
+    "formation": "I have some money. Do you have any? I don't have any.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I bought some bread and some milk.",
+        "translation": "I bought bread and milk."
+      },
+      {
+        "sentence": "Is there any milk in the fridge?",
+        "translation": "Is there milk in the refrigerator?"
+      },
+      {
+        "sentence": "I don't have any cash on me.",
+        "translation": "I don't have cash with me."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_18",
+    "language": "en",
+    "pattern": "much / many / a lot of / a few / a little",
+    "title": "much / many / a lot of / a few / a little",
+    "shortExplanation": "much water (uncountable), many people (countable), a lot of - everywhere",
+    "longExplanation": "much - with uncountables (much water, much time, much money).\nmany - with countables (many people, many books, many times).\na lot of / lots of - with both, conversational style.\na few - a little (countable, neutral/positive).\nfew - few, almost none (countable, negative).\na little - a little (uncountable, neutral).\nlittle - little, almost none (uncountable, negative).",
+    "formation": "much water (uncountable), many people (countable), a lot of - everywhere",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I don't have much time.",
+        "translation": "I don't have much time."
+      },
+      {
+        "sentence": "She has a few friends in London.",
+        "translation": "She has several friends in London."
+      },
+      {
+        "sentence": "There is a little sugar left.",
+        "translation": "There is some sugar left."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_19",
+    "language": "en",
+    "pattern": "Countable and uncountable nouns",
+    "title": "Countable and uncountable nouns",
+    "shortExplanation": "water, information, advice - not allowed: a water, two advices",
+    "longExplanation": "Countable: you can count, there are plural. number: a book, two books.\nUncountable: cannot be counted directly - no plural. numbers, no indefinite article.\nTypical uncountables: water, milk, bread, rice, money, information, advice, news, weather, luggage, furniture, hair, music, work\nTo indicate portions: a glass of water, a piece of advice, a loaf of bread, a bag of rice",
+    "formation": "water, information, advice - not allowed: a water, two advices",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Can I have some information, please?",
+        "translation": "May I know something?"
+      },
+      {
+        "sentence": "She gave me very useful advice.",
+        "translation": "She gave me very useful advice."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_20",
+    "language": "en",
+    "pattern": "Prepositions in / on / at for time",
+    "title": "Prepositions in / on / at for time",
+    "shortExplanation": "in March, in 2024, in winter; on Monday, on June 5; at 3pm, at night",
+    "longExplanation": "at → exact time: at 6 o'clock, at noon, at midnight, at night, at the weekend (BrE)\non → days and dates: on Monday, on 5 March, on my birthday, on New Year's Day\nin → periods: in July, in 2023, in the morning/afternoon/evening, in summer, in the 21st century\nWithout preposition: this/last/next + time: this morning, last week, next year",
+    "formation": "in March, in 2024, in winter; on Monday, on June 5; at 3pm, at night",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "The meeting is at half past three.",
+        "translation": "Meeting at half past four."
+      },
+      {
+        "sentence": "She was born on the 12th of April.",
+        "translation": "She was born on April 12."
+      },
+      {
+        "sentence": "I started this job in October.",
+        "translation": "I started this work in October."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_21",
+    "language": "en",
+    "pattern": "for / since / ago",
+    "title": "for / since / ago - duration and beginning",
+    "shortExplanation": "for three years, since 2020, three years ago",
+    "longExplanation": "for - duration (how long): for two hours, for a week, for years. Used with different tenses.\nsince - initial moment (since): since Monday, since 2019, since I was a child. Used with the Present Perfect.\nago - time ago from now: three days ago, a month ago. Only with Past Simple.",
+    "formation": "for three years, since 2020, three years ago",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I've been here for six months.",
+        "translation": "I've been here for six months now."
+      },
+      {
+        "sentence": "She's worked here since 2020.",
+        "translation": "She has been working here since 2020."
+      },
+      {
+        "sentence": "I saw him two days ago.",
+        "translation": "I saw him two days ago."
+      }
+    ]
+  }
+]

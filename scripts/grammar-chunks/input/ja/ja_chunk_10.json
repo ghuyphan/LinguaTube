@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_場所にがあります_135",
+    "language": "ja",
+    "pattern": "～（場所）に～があります",
+    "title": "～（場所）に～があります (〜basho ni 〜 ga arimasu)",
+    "shortExplanation": "Express the existence or presence of something in a place.",
+    "longExplanation": "The ～（場所）に～があります grammar point is used to express the existence or presence of something in a specific location. In this structure, the place is followed by 'に', then the object, plus が, and finally あります (to exist / there is).",
+    "formation": "Place + に + Object/Thing + が + あります",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "図書館にたくさんの本があります。",
+        "romanization": "Toshokan ni takusan no hon ga arimasu.",
+        "translation": "There are many books in the library."
+      },
+      {
+        "sentence": "公園に池があります。",
+        "romanization": "Kouen ni ike ga arimasu.",
+        "translation": "There is a pond in the park."
+      },
+      {
+        "sentence": "駅の前にコンビニがあります。",
+        "romanization": "Eki no mae ni konbini ga arimasu.",
+        "translation": "There is a convenience store in front of the station."
+      },
+      {
+        "sentence": "山の上に神社があります。",
+        "romanization": "Yama no ue ni jinja ga arimasu.",
+        "translation": "There is a shrine on top of the mountain."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_0",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A とか B とか",
+    "shortExplanation": "Used to express multiple examples or possibilities; 'such as', 'like', 'for example'.",
+    "longExplanation": "The とか grammar point is used to list multiple examples or possibilities. It can be translated as 'such as', 'like', or 'for example' in English. とか is used between the listed items and expresses that the list is not exhaustive.",
+    "formation": "Noun + とか + Noun + とか",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "週末は映画とか買い物とか楽しいことをしたいです。",
+        "romanization": "Shuumatsu wa eiga toka kaimono toka tanoshii koto o shitai desu.",
+        "translation": "I want to do fun things like watching movies and shopping on the weekend."
+      },
+      {
+        "sentence": "彼女は英語とかフランス語とかいろいろな言葉を話せます。",
+        "romanization": "Kanojo wa eigo toka furansugo toka iroirona kotoba o hanasemasu.",
+        "translation": "She can speak various languages, like English and French."
+      },
+      {
+        "sentence": "この店は寿司とか刺身とか日本料理を提供しています。",
+        "romanization": "Kono mise wa sushi toka sashimi toka nihon ryouri o teikyou shiteimasu.",
+        "translation": "This restaurant offers Japanese dishes such as sushi and sashimi."
+      },
+      {
+        "sentence": "$1BOXとか$5BOXとか、異なる価格のランチBOXがあります。",
+        "romanization": "Ichi-doru BOX toka go-doru BOX toka, kotonaru kakaku no ranchi BOX ga arimasu.",
+        "translation": "There are lunch boxes with different prices, like $1 boxes and $5 boxes."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_1",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A は B ほど～ありません (A wa B hodo ～ arimasen)",
+    "shortExplanation": "Express that A is not as much as B; 'not as... as', 'not... to the extent of'.",
+    "longExplanation": "The は B ほど～ありません grammar point is used to express that A is not as much as B or not to the same extent as B, emphasizing the difference. It can be translated as 'not as... as' or 'not... to the extent of' in English.",
+    "formation": "A は B ほど Verb/adjective ありません",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "今日は昨日ほど寒くありません。",
+        "romanization": "Kyou wa kinou hodo samuku arimasen.",
+        "translation": "Today is not as cold as yesterday."
+      },
+      {
+        "sentence": "彼は私ほど上手に英語を話せません。",
+        "romanization": "Kare wa watashi hodo jouzu ni eigo o hanasemasen.",
+        "translation": "He cannot speak English as well as I can."
+      },
+      {
+        "sentence": "このレストランはあのレストランほど高くありません。",
+        "romanization": "Kono resutoran wa ano resutoran hodo takaku arimasen.",
+        "translation": "This restaurant is not as expensive as that restaurant."
+      },
+      {
+        "sentence": "彼女は彼ほど忙しくありません。",
+        "romanization": "Kanojo wa kare hodo isogashiku arimasen.",
+        "translation": "She is not as busy as him."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_2",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A は B ほど～ない (A wa B hodo ~ nai)",
+    "shortExplanation": "Expressing that A is not as ~ as B; 'not as...as'",
+    "longExplanation": "The A は B ほど～ない grammar point is used to express that A is not as ~ as B in some aspect. It can be translated as 'not as...as' in English. This structure is commonly used with い-adjectives (without い) and な-adjective. For verbs, you can use the negative potential form.",
+    "formation": "A は B ほど + い-Adjective stem (without い) + くない, な-Adjective + じゃない, Verb-negative potential form",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "山田さんは鈴木さんほど背が高くない。",
+        "romanization": "Yamada-san wa Suzuki-san hodo se ga takakunai.",
+        "translation": "Yamada is not as tall as Suzuki."
+      },
+      {
+        "sentence": "このリンゴはあのリンゴほど甘くない。",
+        "romanization": "Kono ringo wa ano ringo hodo amakunai.",
+        "translation": "This apple is not as sweet as that apple."
+      },
+      {
+        "sentence": "彼は私ほど勉強ができない。",
+        "romanization": "Kare wa watashi hodo benkyou ga dekinai.",
+        "translation": "He can't study as well as I can."
+      },
+      {
+        "sentence": "このレストランはあのレストランほど静かじゃない。",
+        "romanization": "Kono resutoran wa ano resutoran hodo shizuka janai.",
+        "translation": "This restaurant is not as quiet as that restaurant."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_3",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A より B のほうが〜 (A yori B no hou ga 〜)",
+    "shortExplanation": "Comparing two things; 'B is more ~ than A'.",
+    "longExplanation": "The より and のほうが grammar pattern is used to compare two things by means of an adjective or verb. In this structure, item A is compared to item B, suggesting that item B is more ~ than item A.",
+    "formation": "A + より + B + のほうが + Adjective/Verb",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "田中さんより鈴木さんのほうが背が高いです。",
+        "romanization": "Tanaka-san yori Suzuki-san no hou ga se ga takai desu.",
+        "translation": "Suzuki is taller than Tanaka."
+      },
+      {
+        "sentence": "リンゴよりバナナのほうが甘いです。",
+        "romanization": "Ringo yori banana no hou ga amai desu.",
+        "translation": "Bananas are sweeter than apples."
+      },
+      {
+        "sentence": "冬より夏のほうが暑いです。",
+        "romanization": "Fuyu yori natsu no hou ga atsui desu.",
+        "translation": "Summer is hotter than winter."
+      },
+      {
+        "sentence": "東京より京都のほうが歴史があると思います。",
+        "romanization": "Toukyou yori Kyouto no hou ga rekishi ga aru to omoimasu.",
+        "translation": "I think Kyoto has more history than Tokyo."
+      }
+    ]
+  },
+  {
+    "id": "ja_いAdjective_4",
+    "language": "ja",
+    "pattern": "い-Adjective",
+    "title": "い-Adjective く する/なる (i-Adjective kusuru/naru)",
+    "shortExplanation": "Express a change happening or making something change.",
+    "longExplanation": "The い-Adjective く する/なる grammar point is used to indicate a change happening (naru) or intentionally making something change (suru). When using this grammatical structure, the い-adjective is changed to its く form, and then is followed by either する (to make the change) or なる (the change happens).",
+    "formation": "い-Adjective (remove い) + く + する/なる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "部屋を明るくします。",
+        "romanization": "Heya o akaruku shimasu.",
+        "translation": "I will make the room brighter."
+      },
+      {
+        "sentence": "彼の顔は赤くなりました。",
+        "romanization": "Kare no kao wa akaku narimashita.",
+        "translation": "His face turned red."
+      },
+      {
+        "sentence": "この料理を辛くしてください。",
+        "romanization": "Kono ryouri o karaku shite kudasai.",
+        "translation": "Please make this dish spicy."
+      },
+      {
+        "sentence": "雨が降ると、道が滑りやすくなります。",
+        "romanization": "Ame ga furu to, michi ga suberiyasuku narimasu.",
+        "translation": "When it rains, the road becomes slippery."
+      }
+    ]
+  },
+  {
+    "id": "ja_なadjective_5",
+    "language": "ja",
+    "pattern": "な-adjective",
+    "title": "な-adjective に する/なる",
+    "shortExplanation": "Used to indicate change or decision; 'to become' or 'to make' with na-adjectives.",
+    "longExplanation": "The な-adjective に する/なる grammar point is used to express a change or a decision related to a na-adjective. The なる (naru) form indicates a change that occurs by itself, while the する (suru) form indicates a conscious decision made by someone.",
+    "formation": "な-Adjective + に + する/なる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "部屋をきれいにする。",
+        "romanization": "Heya o kirei ni suru.",
+        "translation": "To make the room clean."
+      },
+      {
+        "sentence": "彼は元気になりました。",
+        "romanization": "Kare wa genki ni narimashita.",
+        "translation": "He became energetic."
+      },
+      {
+        "sentence": "毎日静かにすることが大切です。",
+        "romanization": "Mainichi shizuka ni suru koto ga taisetsu desu.",
+        "translation": "It is important to make it quiet every day."
+      },
+      {
+        "sentence": "日本語の勉強が楽しくなるように努力します。",
+        "romanization": "Nihongo no benkyou ga tanoshiku naru you ni doryoku shimasu.",
+        "translation": "I will try to make studying Japanese become enjoyable."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_6",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun しか～ない (Noun shika~nai)",
+    "shortExplanation": "Expresses 'only', 'nothing but', or 'no other'.",
+    "longExplanation": "The grammar point Noun しか～ない is used to emphasize the small quantity or exclusiveness of something. It can be translated as 'only', 'nothing but', or 'no other' in English. It is used with a negative verb to convey the meaning.",
+    "formation": "Noun + しか + Negative Verb",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "私はリンゴしか食べない。",
+        "romanization": "Watashi wa ringo shika tabenai.",
+        "translation": "I eat only apples."
+      },
+      {
+        "sentence": "電車で行くしかないです。",
+        "romanization": "Densha de iku shika nai desu.",
+        "translation": "There is no other way but to go by train."
+      },
+      {
+        "sentence": "彼は一冊の本しか持っていない。",
+        "romanization": "Kare wa isatsu no hon shika motte inai.",
+        "translation": "He has only one book."
+      },
+      {
+        "sentence": "この店にはビールしかない。",
+        "romanization": "Kono mise ni wa biiru shika nai.",
+        "translation": "There is nothing but beer in this store."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_7",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に する (Noun ni suru)",
+    "shortExplanation": "Used to indicate a choice or decision, 'to decide on' or 'to choose'.",
+    "longExplanation": "The grammar point 'Noun に する' is used to express making a choice or decision, which can be translated as 'to decide on' or 'to choose' in English. It is often used when deciding between different options or making a decision in various situations, such as choosing a menu item, deciding on a plan, or selecting a gift.",
+    "formation": "Noun + に + する",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "メニューからピザにしました。",
+        "romanization": "Menyu kara piza ni shimashita.",
+        "translation": "I decided on pizza from the menu."
+      },
+      {
+        "sentence": "誕生日プレゼントに時計にするつもりです。",
+        "romanization": "Tanjoubi purezento ni tokei ni suru tsumori desu.",
+        "translation": "I plan to choose a watch as a birthday present."
+      },
+      {
+        "sentence": "今日の午後は買い物にすることにしました。",
+        "romanization": "Kyou no gogo wa kaimono ni suru koto ni shimashita.",
+        "translation": "I decided to go shopping this afternoon."
+      },
+      {
+        "sentence": "海外旅行の目的地として、日本にする。",
+        "romanization": "Kaigai ryokou no mokutekichi toshite, Nihon ni suru.",
+        "translation": "I will choose Japan as the destination for my overseas trip."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_8",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に なる (Noun ni naru)",
+    "shortExplanation": "To become; to change into; to turn into.",
+    "longExplanation": "The 'Noun に なる' grammar point is used to show a change or a transformation from one state or form into another. In English, it can be translated as 'to become', 'to change into', or 'to turn into'. It is often used with nouns that indicate profession, status, or condition.",
+    "formation": "Noun + に + なる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は医者になりました。",
+        "romanization": "Kare wa isha ni narimashita.",
+        "translation": "He became a doctor."
+      },
+      {
+        "sentence": "子供の頃、私は先生になりたかったです。",
+        "romanization": "Kodomo no koro, watashi wa sensei ni naritakatta desu.",
+        "translation": "When I was a child, I wanted to become a teacher."
+      },
+      {
+        "sentence": "彼女は緊張して顔が赤くなりました。",
+        "romanization": "Kanojo wa kinchou shite kao ga akaku narimashita.",
+        "translation": "She got nervous, and her face turned red."
+      },
+      {
+        "sentence": "春になると桜が咲きます。",
+        "romanization": "Haru ni naru to sakura ga sakimasu.",
+        "translation": "When it becomes spring, cherry blossoms bloom."
+      }
+    ]
+  },
+  {
+    "id": "ja_のために_9",
+    "language": "ja",
+    "pattern": "のために",
+    "title": "のために (no tame ni)",
+    "shortExplanation": "Used to express purpose or reason; 'for', 'for the sake of', 'in order to'.",
+    "longExplanation": "The のために grammar point is used to express the purpose or reason for doing something, or for the benefit of someone or something. It can be translated as 'for', 'for the sake of', or 'in order to' in English. The formation is straightforward, simply place のために after a noun.",
+    "formation": "Noun + のために",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "勉強のために、図書館で静かな場所を探しています。",
+        "romanization": "Benkyou no tame ni, toshokan de shizukana basho o sagashiteimasu.",
+        "translation": "In order to study, I am looking for a quiet place in the library."
+      },
+      {
+        "sentence": "彼は家族のために、一生懸命働いています。",
+        "romanization": "Kare wa kazoku no tame ni, isshoukenmei hataraiteimasu.",
+        "translation": "He works hard for the sake of his family."
+      },
+      {
+        "sentence": "健康のために、毎日運動をしています。",
+        "romanization": "Kenkou no tame ni, mainichi undou o shiteimasu.",
+        "translation": "I exercise every day for the sake of my health."
+      },
+      {
+        "sentence": "世界平和のために、みんなで協力しましょう。",
+        "romanization": "Sekai heiwa no tame ni, minna de kyouryoku shimashou.",
+        "translation": "Let's all cooperate for the sake of world peace."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_10",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun の 間に (〜no aida ni)",
+    "shortExplanation": "Expresses 'while' or 'during' a specific period or time.",
+    "longExplanation": "The Noun の 間に grammar point is used to indicate a specific period or time during which an action takes place. It is often translated as 'while' or 'during' in English. This grammar point requires a noun to represent the time or period.",
+    "formation": "Noun + の間に",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "昼休みの間に銀行に行きます。",
+        "romanization": "Hiruyasumi no aida ni ginkou ni ikimasu.",
+        "translation": "I will go to the bank during lunch break."
+      },
+      {
+        "sentence": "夏休みの間に海外旅行に行く予定です。",
+        "romanization": "Natsuyasumi no aida ni kaigai ryokou ni iku yotei desu.",
+        "translation": "I plan to go on an overseas trip during the summer vacation."
+      },
+      {
+        "sentence": "子供たちが学校の間に買い物に行きました。",
+        "romanization": "Kodomo-tachi ga gakkou no aida ni kaimono ni ikimashita.",
+        "translation": "I went shopping while the kids were at school."
+      },
+      {
+        "sentence": "母の日にお母さんにプレゼントを送りました。",
+        "romanization": "Haha no hi ni okaasan ni purezento o okurimashita.",
+        "translation": "I sent a gift to my mother on Mother’s Day."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_11",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ばかり (〜bakari)",
+    "shortExplanation": "Expresses 'only', 'nothing but', 'always', or 'just'.",
+    "longExplanation": "The ばかり grammar point is used to express that something is only, nothing but, just, or always. It can be attached to nouns, verbs, or adjectives, and has various meanings based on the context.",
+    "formation": "Noun + ばかり, Verb-casual + ばかり, い-Adjective + ばかり, な-Adjective + だ ばかり",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼はお金の話ばかりする。",
+        "romanization": "Kare wa okane no hanashi bakari suru.",
+        "translation": "He talks about nothing but money."
+      },
+      {
+        "sentence": "彼女は勉強ばかりしている。",
+        "romanization": "Kanojo wa benkyou bakari shiteiru.",
+        "translation": "She is always studying."
+      },
+      {
+        "sentence": "デパートには高い商品ばかりだ。",
+        "romanization": "Depaato ni wa takai shouhin bakari da.",
+        "translation": "There are only expensive items in the department store."
+      },
+      {
+        "sentence": "この部屋は狭いばかりだ。",
+        "romanization": "Kono heya wa semai bakari da.",
+        "translation": "This room is nothing but small."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_12",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を あげる (Noun wo ageru)",
+    "shortExplanation": "To give something to someone; 'give', 'offer', 'present'.",
+    "longExplanation": "The を あげる grammar point is used to express giving something to someone. It can be translated as 'give', 'offer', or 'present' in English. This construction is commonly used with nouns to indicate giving or offering a tangible item, action, or favor to someone else.",
+    "formation": "Noun + を + あげる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "プレゼントをあげる。",
+        "romanization": "Purezento wo ageru.",
+        "translation": "I give a present."
+      },
+      {
+        "sentence": "友達に花をあげた。",
+        "romanization": "Tomodachi ni hana wo ageta.",
+        "translation": "I gave flowers to my friend."
+      },
+      {
+        "sentence": "父に時計をあげます。",
+        "romanization": "Chichi ni tokei wo agemasu.",
+        "translation": "I will give a watch to my father."
+      },
+      {
+        "sentence": "彼女に手紙をあげたい。",
+        "romanization": "Kanojo ni tegami wo agetai.",
+        "translation": "I want to give her a letter."
+      }
+    ]
+  },
+  {
+    "id": "ja_Nounをいただく_13",
+    "language": "ja",
+    "pattern": "Nounをいただく",
+    "title": "Nounをいただく (Noun wo itadaku)",
+    "shortExplanation": "To receive or accept something politely; 'to receive', 'to get', 'to accept'.",
+    "longExplanation": "The Nounをいただく grammar point is used to express the action of receiving or accepting something in a polite or humble manner. The verb 'いただく' is a more respectful version of the verb 'もらう' (to receive), so using 'いただく' shows humility and respect towards the person who is giving you something.",
+    "formation": "Noun + を + いただく",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "プレゼントをいただきありがとうございます。",
+        "romanization": "Purezento wo itadaki arigatou gozaimasu.",
+        "translation": "Thank you for the gift that I received."
+      },
+      {
+        "sentence": "先生からアドバイスをいただきました。",
+        "romanization": "Sensei kara adobaisu wo itadakimashita.",
+        "translation": "I received advice from my teacher."
+      },
+      {
+        "sentence": "このコーヒーをいただいていいですか？",
+        "romanization": "Kono koohii wo itadaite ii desu ka?",
+        "translation": "May I have this coffee?"
+      },
+      {
+        "sentence": "会社の上司に昇進のお知らせをいただきました。",
+        "romanization": "Kaisha no joushi ni shoushin no oshirase wo itadakimashita.",
+        "translation": "I received a promotion notification from my boss at the company."
+      }
+    ]
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_和_32",
+    "language": "zh",
+    "pattern": "和",
+    "title": "和 (and)",
+    "shortExplanation": "and",
+    "longExplanation": "and. Pinyin: hé",
+    "formation": "hé",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "爸爸、妈妈和我",
+        "romanization": "bàba、 māma hé wǒ",
+        "translation": "dad, mom and I"
+      }
+    ]
+  },
+  {
+    "id": "zh_能_33",
+    "language": "zh",
+    "pattern": "能",
+    "title": "能 (can)",
+    "shortExplanation": "can",
+    "longExplanation": "can. Pinyin: néng",
+    "formation": "néng",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我能坐这儿吗?。",
+        "romanization": "wǒ néng zuò zhèr ma?。",
+        "translation": "Can I sit here?"
+      }
+    ]
+  },
+  {
+    "id": "zh_请V_34",
+    "language": "zh",
+    "pattern": "请 V",
+    "title": "请 V (please V)",
+    "shortExplanation": "please V",
+    "longExplanation": "please V. Pinyin: qǐng V",
+    "formation": "qǐng V",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "请坐。",
+        "romanization": "qǐng zuò。",
+        "translation": "Please sit."
+      }
+    ]
+  },
+  {
+    "id": "zh_点分_35",
+    "language": "zh",
+    "pattern": "# 点 # 分",
+    "title": "# 点 # 分 (# hour # minute)",
+    "shortExplanation": "# hour # minute",
+    "longExplanation": "# hour # minute. Pinyin: # diǎn # fēn",
+    "formation": "# diǎn # fēn",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "十一点十分",
+        "romanization": "shí yīdiǎn shífēn",
+        "translation": "11:10"
+      }
+    ]
+  },
+  {
+    "id": "zh_上午下午_36",
+    "language": "zh",
+    "pattern": "上午／下午",
+    "title": "上午／下午 (AM/PM)",
+    "shortExplanation": "AM/PM",
+    "longExplanation": "AM/PM. Pinyin: shàngwǔ／ xiàwǔ",
+    "formation": "shàngwǔ／ xiàwǔ",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "下午三点十分",
+        "romanization": "xiàwǔ sān diǎn shífēn",
+        "translation": "3:10 PM"
+      }
+    ]
+  },
+  {
+    "id": "zh_STIMEV_37",
+    "language": "zh",
+    "pattern": "S TIME V",
+    "title": "S TIME V ((time phrase))",
+    "shortExplanation": "(time phrase)",
+    "longExplanation": "(time phrase). Pinyin: S TIME V",
+    "formation": "S TIME V",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "妈妈六点做饭。",
+        "romanization": "māma liù diǎn zuòfàn。",
+        "translation": "Mom cooks at six."
+      }
+    ]
+  },
+  {
+    "id": "zh_TIMESV_38",
+    "language": "zh",
+    "pattern": "TIME S V",
+    "title": "TIME S V ((time phrase))",
+    "shortExplanation": "(time phrase)",
+    "longExplanation": "(time phrase). Pinyin: TIME S V",
+    "formation": "TIME S V",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "七点我吃饭。",
+        "romanization": "qī diǎn wǒ chīfàn。",
+        "translation": "I eat at seven."
+      }
+    ]
+  },
+  {
+    "id": "zh_TIME前_39",
+    "language": "zh",
+    "pattern": "TIME 前",
+    "title": "TIME 前 (before TIME)",
+    "shortExplanation": "before TIME",
+    "longExplanation": "before TIME. Pinyin: TIME qián",
+    "formation": "TIME qián",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "星期五前",
+        "romanization": "Xīngqīwǔ qián",
+        "translation": "before Friday"
+      }
+    ]
+  },
+  {
+    "id": "zh_DURATION前_40",
+    "language": "zh",
+    "pattern": "DURATION 前",
+    "title": "DURATION 前 (DURATION ago)",
+    "shortExplanation": "DURATION ago",
+    "longExplanation": "DURATION ago. Pinyin: DURATION qián",
+    "formation": "DURATION qián",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "一个星期前",
+        "romanization": "yī gè xīngqī qián",
+        "translation": "a week ago"
+      }
+    ]
+  },
+  {
+    "id": "zh_N怎么样_41",
+    "language": "zh",
+    "pattern": "N 怎么样？",
+    "title": "N 怎么样？ (how is N?)",
+    "shortExplanation": "how is N?",
+    "longExplanation": "how is N?. Pinyin: N zěnmeyàng？",
+    "formation": "N zěnmeyàng？",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "你的汉语怎么样？",
+        "romanization": "nǐ de Hànyǔ zěnmeyàng？",
+        "translation": "How is your Chinese?"
+      }
+    ]
+  },
+  {
+    "id": "zh_的_42",
+    "language": "zh",
+    "pattern": "(的)",
+    "title": "(的) ((omission of 的))",
+    "shortExplanation": "(omission of 的)",
+    "longExplanation": "(omission of 的). Pinyin: ( de)",
+    "formation": "( de)",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我身体不太好。",
+        "romanization": "wǒ shēntǐ bùtàihǎo。",
+        "translation": "My health isn’t very good."
+      }
+    ]
+  },
+  {
+    "id": "zh_太A了_43",
+    "language": "zh",
+    "pattern": "太 A (了)",
+    "title": "太 A (了) (too A)",
+    "shortExplanation": "too A",
+    "longExplanation": "too A. Pinyin: tài A ( le)",
+    "formation": "tài A ( le)",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "天气太冷 (了)。",
+        "romanization": "tiānqì tài lěng ( le)。",
+        "translation": "The weather’s too cold."
+      }
+    ]
+  },
+  {
+    "id": "zh_不太A_44",
+    "language": "zh",
+    "pattern": "(不) 太 A",
+    "title": "(不) 太 A (not too A)",
+    "shortExplanation": "not too A",
+    "longExplanation": "not too A. Pinyin: ( bù) tài A",
+    "formation": "( bù) tài A",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我身体不太好。",
+        "romanization": "wǒ shēntǐ bùtàihǎo。",
+        "translation": "My health is not too good."
+      }
+    ]
+  },
+  {
+    "id": "zh_会V_45",
+    "language": "zh",
+    "pattern": "会 V",
+    "title": "会 V (will V)",
+    "shortExplanation": "will V",
+    "longExplanation": "will V. Pinyin: huì V",
+    "formation": "huì V",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "你会回家吗？",
+        "romanization": "nǐ huì huíjiā ma？",
+        "translation": "Will you come home?"
+      }
+    ]
+  },
+  {
+    "id": "zh_喂_46",
+    "language": "zh",
+    "pattern": "喂",
+    "title": "喂 (hello)",
+    "shortExplanation": "hello",
+    "longExplanation": "hello. Pinyin: wèi",
+    "formation": "wèi",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "喂，李老师在家吗？",
+        "romanization": "wèi， lǐ lǎoshī zài jiā ma？",
+        "translation": "Hello, is Teacher Li home?"
+      }
+    ]
+  }
+]

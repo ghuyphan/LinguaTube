@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_뿐만_5",
+    "language": "ko",
+    "pattern": "~뿐만",
+    "title": "~뿐만 아니라 [ppunman anira] (Not only... but also)",
+    "shortExplanation": "Used to express 'not only... but also' by adding additional, related information.",
+    "longExplanation": "`~뿐만 아니라 [ppunman anira]` is used in Korean to add extra information, indicating that something applies not only in one aspect but also in another. It serves to emphasize that a subject or event encompasses multiple qualities or characteristics.",
+    "formation": "Noun/Adjective/Verb + 뿐만 아니라 + Clause",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그녀는 중국어뿐만 아니라 일본어도 유창하게 할 수 있습니다.",
+        "romanization": "Geunyeoneun junggugppunman anira ilboneodo yuchanghage hal su itsseumnida.",
+        "translation": "She can not only speak Chinese but also speak Japanese fluently."
+      },
+      {
+        "sentence": "나는 공부뿐만 아니라 운동도 좋아해요.",
+        "romanization": "Naneun gongbuppunman anira undongdo joahaeyo.",
+        "translation": "I not only like studying but also enjoy exercising."
+      },
+      {
+        "sentence": "이 상품은 가격이 저렴할 뿐만 아니라 품질도 뛰어나요.",
+        "romanization": "I sangpumeun gakyeogi jeoryeomhal ppunman anira pumjildo ttwieonayo.",
+        "translation": "This product is not only affordable but also of high quality."
+      },
+      {
+        "sentence": "그는 한국어뿐만 아니라 영어도 유창하게 구사해서 통역으로 일하고 있어요.",
+        "romanization": "Geuneun hangugeoppunman anira yeong-eodo yuchanghage gusahaeseo tongyeogeuro ilhago isseoyo.",
+        "translation": "He can not only speak Korean fluently but also speaks fluent English, so he works as an interpreter."
+      }
+    ]
+  },
+  {
+    "id": "ko_더니_6",
+    "language": "ko",
+    "pattern": "~더니",
+    "title": "~더니 [deoni] (After, and then)",
+    "shortExplanation": "Used to connect two clauses, indicating that the second clause follows after the first.",
+    "longExplanation": "`~더니` is a conjunction used in Korean to connect two clauses or actions, showing that the second event or state was realized after experiencing the first. It is often used in narratives or personal experiences to indicate a change or consequence.",
+    "formation": "Verb (in past tense) + 더니",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "저는 이것을 먹었더니 맛이 진짜 변했어요. 그래서 다른 음식을 찾아 마시기로 했어요.",
+        "romanization": "Jeoneun igeoseul meogeosseodeoni, masi jinjja byeonhaesseoyo. Geuraeseo dareun eumsigeul chaja masigi sijakhaesseoyo.",
+        "translation": "After I ate this, the taste really changed. So, I decided to look for another food."
+      },
+      {
+        "sentence": "나는 그녀에게 전화했더니 그녀는 휴가 중이라 전화를 못 받았어요.",
+        "romanization": "Naneun geunyeoege jeonhwahaesseodeoni, geunyeoneun hyuga jungira jeonhwareul mot badasseoyo.",
+        "translation": "After I called her, it turned out she was on vacation and couldn't answer the phone."
+      },
+      {
+        "sentence": "서점에 갔더니 내가 원하는 책은 이미 다 팔렸어요. 그래서 다른 서점에서 찾아야 했어요.",
+        "romanization": "Seojeome gassdeoni, naega wonhaneun chaegeneun imi da pallyeosseoyo. Geuraeseo dareun seojeomeseo chajaya haesseoyo.",
+        "translation": "After I went to the bookstore, the book I wanted was already sold out. So, I had to look in another bookstore."
+      },
+      {
+        "sentence": "피자집에 갔더니 주문하려던 피자는 이미 전부 소진되었어요. 이런 경우는 처음이에요.",
+        "romanization": "Pijajibe gassdeoni, jumunharyeodeon pijaneun imi jeonbu sojindoeeosseoyo. Ireon gyeonguneun cheoeumieyo.",
+        "translation": "After I went to the pizza place, the pizza I intended to order was already completely sold out. This was a first for me."
+      }
+    ]
+  },
+  {
+    "id": "ko_이든지_7",
+    "language": "ko",
+    "pattern": "~이든지",
+    "title": "~이든지 ~든지 [ideunji deunji] (Whether… or)",
+    "shortExplanation": "Used to present multiple alternatives, similar to 'whether... or' in English.",
+    "longExplanation": "`~이든지 ~든지 [ideunji deunji]` is used in Korean to list alternative options or possibilities, conveying indifference about which one is chosen. It is often used in both interrogative sentences and statements to present choices.",
+    "formation": "Clause1 + 이든지 + Clause2 + 든지",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "당신이 커피를 좋아하든지, 차를 좋아하든지, 이 카페에서는 모두를 만족시킬 수 있어요.",
+        "romanization": "Dangsin-i keopi-reul joh-ahadeunji, cha-reul joh-ahadeunji, i kape-eseoneun modu-reul manjogshil su iss-eoyo.",
+        "translation": "Whether you like coffee or tea, this cafe can satisfy everyone."
+      },
+      {
+        "sentence": "아침에 일찍 나가든지, 저녁에 늦게 돌아오든지, 매일 한 시간 동안 만나기로 약속해요.",
+        "romanization": "Achim-e iljjik nagadeunji, jeonyeoge neutge dol-aodeunji, maeil han shigan dong-an mannagiro yaksokhaeyo.",
+        "translation": "Whether you leave early in the morning or come back late in the evening, we promise to meet for an hour every day."
+      },
+      {
+        "sentence": "햄버거를 좋아하든지, 피자를 좋아하든지, 이 식당은 모든 음식을 제공할 수 있어요.",
+        "romanization": "Hambaegoreul joh-ahadeunji, pijareul joh-ahadeunji, i sikdang-eun modeun eumsigeul jegonghal su iss-eoyo.",
+        "translation": "Whether you like hamburgers or pizza, this restaurant can serve all kinds of food."
+      },
+      {
+        "sentence": "당신이 평일에 여행 가든지, 주말에 가든지, 무관하게 편하게 여행을 즐기세요.",
+        "romanization": "Dangsin-i pyeongil-e yeohaeng gadeunji, jumal-e gadeunji, mugwanhage pyeonhage yeohaeng-eul jeulgiseyo.",
+        "translation": "Whether you travel on weekdays or on weekends, enjoy your trip comfortably without any worries."
+      }
+    ]
+  },
+  {
+    "id": "ko_임에_8",
+    "language": "ko",
+    "pattern": "~임에",
+    "title": "~임에 틀림없다 [ime tteollimeopda] (Without a doubt)",
+    "shortExplanation": "Used to express certainty, meaning 'without a doubt' or 'it's certain that...'.",
+    "longExplanation": "`~임에 틀림없다 [ime tteollimeopda]` is used in Korean to express a high degree of certainty about a situation or outcome. It emphasizes that there is no doubt about the assertion and is often used in formal or written contexts.",
+    "formation": "Verb/Adjective (nominalized) + 임에 틀림없다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그의 출연이 성공적이었음에 틀림없지만, 그의 재능은 더욱 뛰어남에 틀림없어요.",
+        "romanization": "Geuui chulyeoni seonggongjeogieosseum-e tteullim-eobsjiman, geuui jaeneung-eun ttwieonam-e tteullim-eobseoyo.",
+        "translation": "While it's too early to say that his performance was successful, there is no doubt that his talent is outstanding."
+      },
+      {
+        "sentence": "우리 팀이 이길 확률이 높으니, 우리가 이겨낼 것임에 틀림없어요.",
+        "romanization": "Uri timi igil hwagru-i nop-euni, uriga igyeonael geosim-e tteullim-eobseoyo.",
+        "translation": "Since our team's chance of winning is high, there's no doubt that we will win."
+      },
+      {
+        "sentence": "그는 비록 다른 사람들에게 비판받더라도, 그의 선택이 옳았음에 틀림없어요.",
+        "romanization": "Geuneun birok dareun saramdeulege bipanbadeudorado, geuui seontaegi olhassum-e tteullim-eobseoyo.",
+        "translation": "Even if he is criticized by others, there's no doubt that his decision was correct."
+      },
+      {
+        "sentence": "관측소의 예보에 따르면, 내일 비가 올 것임에 틀림없어요.",
+        "romanization": "Gwanchukso-ui yebo-e ttareumyeon, naeil biga ol geosim-e tteullim-eobseoyo.",
+        "translation": "According to the weather station's forecast, it will without a doubt rain tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "ko_쩌면_9",
+    "language": "ko",
+    "pattern": "~쩌면",
+    "title": "~쩌면 [jjeomyeon] (Maybe, perhaps)",
+    "shortExplanation": "Used to express possibility or probability; 'maybe', 'perhaps'.",
+    "longExplanation": "'~쩌면 [jjeomyeon]' is an adverb that expresses the speaker's uncertainty about a situation. It is usually placed at the beginning of a sentence to suggest that something might be the case. It can be translated as 'maybe' or 'perhaps' in English.",
+    "formation": "쩌면 + Sentence",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "쩌면 그는 진심으로 당신을 사랑했을지도 몰라요.",
+        "romanization": "Jjeomyeon geuneun jinsimeuro dangsineul saranghaess-euljido mollayo.",
+        "translation": "Perhaps he really loved you."
+      },
+      {
+        "sentence": "쩌면 이 갈등은 해결될 수도 있을 것 같아요.",
+        "romanization": "Jjeomyeon i galdungeun haegyeoldoel sudo isseul geot gatayo.",
+        "translation": "Maybe this conflict could be resolved."
+      },
+      {
+        "sentence": "쩌면 그 계획이 성공할 수 있을지도 모르겠어요.",
+        "romanization": "Jjeomyeon geu gyehoegi seonggonghal su isseuljido mollayo.",
+        "translation": "Perhaps that plan could succeed."
+      },
+      {
+        "sentence": "쩌면 이번 시험은 제일 어려울 수도 있어요.",
+        "romanization": "Jjeomyeon ibeon siheomeun jeil eoryeoul sudo isseoyo.",
+        "translation": "This exam might be the most difficult."
+      }
+    ]
+  },
+  {
+    "id": "ko_치고는_10",
+    "language": "ko",
+    "pattern": "~치고는",
+    "title": "~치고는 [chigoneun] (For, considering)",
+    "shortExplanation": "Expresses the meaning of 'for' or 'considering' when reality is better or worse than expected.",
+    "longExplanation": "'~치고는 [chigoneun]' is a postpositional expression used to compare a situation with expectations. It conveys that, considering the condition or status of something, the outcome is surprising or different from what one might expect.",
+    "formation": "Noun/Verb(-는/ᆫ) + 치고는",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그가 어린애 치고는 너무 많은 책을 읽어서 놀랐어요.",
+        "romanization": "Geuga eorin ae chigoneun neomu manheun chaegeul ilgeoseo nollasseoyo.",
+        "translation": "I was surprised that he, for a young child, reads so many books."
+      },
+      {
+        "sentence": "팀장 치고는 너무 책임감이 없어서 모두가 기분이 나빴어요.",
+        "romanization": "Timjang chigoneun neomu chaegimgami eopseoseo moduga gibuni nappeosseoyo.",
+        "translation": "Everyone was upset because he, for a team leader, lacked responsibility."
+      },
+      {
+        "sentence": "첫날 치고는 너무 많은 고객들이 왔고, 우리는 정말로 바빴어요.",
+        "romanization": "Cheotnal chigoneun neomu manheun gogaekdeuli wassgo, urineun jeongmallo babbeosseoyo.",
+        "translation": "On the first day, too many customers came and we were really busy."
+      },
+      {
+        "sentence": "그녀는 몸이 작은 편인데, 작은 체격 치고는 꽤 힘세다.",
+        "romanization": "Geunyeoneun momi jakgeun pyeoninde, jageun chegyeok chigoneun kkwae himseda.",
+        "translation": "She may be small, but for her small stature, she is quite strong."
+      }
+    ]
+  },
+  {
+    "id": "ko_커녕_11",
+    "language": "ko",
+    "pattern": "~커녕",
+    "title": "~커녕 [keonyeong] (Far from, let alone)",
+    "shortExplanation": "Used to show that the actual reality is far from the expected outcome.",
+    "longExplanation": "'~커녕 [keonyeong]' is used to emphasize that not only did the expected result not occur, but something even less occurred instead. It is similar to saying 'far from' or 'let alone' in English.",
+    "formation": "Noun/Verb stem + 커녕",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "계획은 잘 하겠다고 했는데, 시작하기도 커녕 준비조차 못 했어요.",
+        "romanization": "Gyehoegeun jal hagetdago haessneunde, sijakhagido keonyeong, junbijochado mot haesseoyo.",
+        "translation": "He said he would plan well, but far from even starting, he couldn’t prepare at all."
+      },
+      {
+        "sentence": "약속 시간에 늦지 않을 거라고 생각했는데, 일찍 오기도 커녕 늦게 와버렸어요.",
+        "romanization": "Yaksok sigane neujji anheul georago saenggakhaessneunde, iljjik ogido keonyeong, neutge waboryeosseoyo.",
+        "translation": "I thought he wouldn’t be late, but far from coming early, he arrived late."
+      },
+      {
+        "sentence": "공부하러 도서관에 갔는데, 독서는 커녕 졸다가 하루가 다 갔어요.",
+        "romanization": "Gongbuhareo doseogwan-e gassneunde, dokseoneun keonyeong joldaga haruga da gasseoyo.",
+        "translation": "I came to the library to study, but far from reading, I ended up dozing off and the whole day passed."
+      },
+      {
+        "sentence": "세일에 간다고 기대했지만, 싸게 살 생각은 커녕 더 비싸게 살게 됐어요.",
+        "romanization": "Seire gandago gidaehaetjiman, ssage sal saenggageun keonyeong, deo bissage salge dwaesseoyo.",
+        "translation": "I was expecting a sale, but far from buying cheap, I ended up spending more."
+      }
+    ]
+  },
+  {
+    "id": "ko_판에_12",
+    "language": "ko",
+    "pattern": "~판에",
+    "title": "~판에 [pane] (In the midst of)",
+    "shortExplanation": "~판에 [pane] is used to express that something happens in the midst of a particular situation or event.",
+    "longExplanation": "'판에 [pane]' is a grammatical pattern used to indicate that an action occurs during or in the midst of another event. Although its literal translation might seem odd, it is best understood as 'in the midst of' or 'during' and is often found in formal or written Korean.",
+    "formation": "Verb-는/Noun + 판에",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "학교가 시작된 판에 새로운 학생이 입학하였습니다.",
+        "romanization": "Hakgyoga sijakdoen pane saeroun haksaengi ibhakhaessseubnida.",
+        "translation": "A new student was admitted in the midst of the school term beginning."
+      },
+      {
+        "sentence": "회사가 오늘부터 폐업하게 되는 판에 저는 새로운 직장을 찾고 있습니다.",
+        "romanization": "Hoesaga oneulbuteo pyeop-eophage doeneun pane jeoneun saeroun jikjangeul chatgo issseubnida.",
+        "translation": "I am looking for a new job in the midst of the company closing down starting today."
+      },
+      {
+        "sentence": "주요 사업을 준비하고 있는 판에 회사의 주식이 급등하였습니다.",
+        "romanization": "Juyo saeobeul junbihago issneun pane hoesaui jusigi geupdeunghaessseubnida.",
+        "translation": "In the midst of preparing for a major project, the company's stock skyrocketed."
+      },
+      {
+        "sentence": "시험공부를 하는 판에 친구들이 놀러왔습니다.",
+        "romanization": "Siheomgongbureul haneun pane chingudeuli nolleowassseubnida.",
+        "translation": "My friends came to hang out while I was studying for an exam."
+      }
+    ]
+  },
+  {
+    "id": "ko_하건마는_13",
+    "language": "ko",
+    "pattern": "~하건마는",
+    "title": "~하건마는 [hageonmaneun] (But, however)",
+    "shortExplanation": "Used to express contrast or opposition; 'but', 'however'.",
+    "longExplanation": "'~하건마는 [hageonmaneun]' is a conjunction used to contrast two clauses. It shows that even though one thing is true, another conflicting fact or situation follows.",
+    "formation": "Verb (present tense form) + 건마는",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "난 그래픽 디자인을 공부하건마는 컴퓨터를 잘 못 다뤄서 디자인 프로그램 사용이 어려운 것 같아.",
+        "romanization": "Nan geuraepik dijaineul gongbuhageonmaneun keompyuteoreul jal mot darwoseo dijain peurogeuraem sayongi eoryeoun geot gata.",
+        "translation": "I study graphic design, but I'm not good at handling computers, so I find design programs difficult to use."
+      },
+      {
+        "sentence": "오늘 날씨가 좋아서 산책하려고 했건마는 갑자기 비가 와서 산책할 수 없었어.",
+        "romanization": "Oneul nalssiga johaseo sancaekharyeogo haetgeonmaneun gabjagi biga waseo sancaekhal su eopseosseo.",
+        "translation": "The weather was nice today so I planned to take a walk, but suddenly it rained and I couldn’t go."
+      },
+      {
+        "sentence": "저는 한국어를 잘하고 싶건마는 단어 외우기가 너무 어려워서 매일 공부해도 잘 생각나지 않아요.",
+        "romanization": "Jeoneun hangugeoreul jalhago sipgeonmaneun daneo oewoogiga neomu eoryeowoseo maeil gongbuhadaedo jal saenggaknaji anhayo.",
+        "translation": "I want to be good at Korean, but memorizing words is so difficult that even with daily study, I can’t remember them well."
+      },
+      {
+        "sentence": "친구가 나에게 생일 선물을 주기로 했건마는, 그는 선물을 잊어버려서 아무것도 주지 않았어.",
+        "romanization": "Chinguga naege saengil seonmureul jugiro haetgeonmaneun, geuneun seonmureul ijeobeoryeoseo amugeotdo juji anhasseoyo.",
+        "translation": "My friend promised to give me a birthday present, but he forgot and ended up giving me nothing."
+      }
+    ]
+  },
+  {
+    "id": "ko_하더라도_14",
+    "language": "ko",
+    "pattern": "~하더라도",
+    "title": "~하더라도 [hadeorado] (Even if)",
+    "shortExplanation": "Used to express 'even if', 'even though', or 'despite'.",
+    "longExplanation": "'~하더라도 [hadeorado]' is a grammatical construction used to express a hypothetical or contrastive situation—essentially meaning 'even if' or 'even though'. It is used with all types of verbs to emphasize that the outcome remains unchanged despite the condition.",
+    "formation": "Verb + 더라도",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "비가 오더라도 우산을 가져가지 않을 거예요, 제가 우산을 싫어해서요.",
+        "romanization": "Biga odeorado usaneul gajyeogaji anheul geoyeyo, jaega usaneul silheohaseyo.",
+        "translation": "Even if it rains, I won’t take an umbrella because I don’t like them."
+      },
+      {
+        "sentence": "피곤하더라도 공부를 계속해야 해요, 시험이 곧 있어서요.",
+        "romanization": "Pigonhadeorado, gongbureul gyesokhaeya haeyo, siheomi got itsseoseoyo.",
+        "translation": "Even if I'm tired, I have to keep studying because the exam is soon."
+      },
+      {
+        "sentence": "일찍 일어나야 하더라도 항상 운동을 해야 돼요, 건강을 위해서요.",
+        "romanization": "Ichik ireonaya hadeorado hangsang undongeul hae dwaeyo, geongang-eul wihaseyo.",
+        "translation": "Even if I have to get up early, I always exercise for my health."
+      },
+      {
+        "sentence": "시간이 없더라도 저는 부지런히 한국어를 계속 공부해야 합니다, 한국어에 관심이 많아서요.",
+        "romanization": "Sigani eopseorado jeoneun buzireonhi hangugeoreul gyesok gongbuhaeya hamnida, hangugeo-e gwansimi manh-aseo.",
+        "translation": "Even if I don’t have time, I must continue studying Korean diligently because I’m very interested in it."
+      }
+    ]
+  },
+  {
+    "id": "ko_하든지_15",
+    "language": "ko",
+    "pattern": "~하든지",
+    "title": "~하든지 말든지 [hadeunji maldeunji] (Whether... or not)",
+    "shortExplanation": "Used to convey 'whether... or not'.",
+    "longExplanation": "'~하든지 말든지 [hadeunji maldeunji]' is a compound ending that expresses indifference toward the outcome regardless of which choice is made. It implies that the result remains unchanged.",
+    "formation": "Verb stem + 하든지 말든지",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그 사람이 좋아하든지 말든지 우리는 계획대로 진행하겠어요.",
+        "romanization": "Geu sarami joahadeunji maldeunji urineun gyehoekdaero jinhaenghagesseoyo.",
+        "translation": "Whether that person likes it or not, we will proceed according to plan."
+      },
+      {
+        "sentence": "오늘 비가 오든지 말든지 우리는 계속해서 산책할 계획이에요.",
+        "romanization": "Oneul biga odeunji maldeunji urineun gyesokhaeseo sancaekhal gyeongiraeyo.",
+        "translation": "Whether or not it rains today, we plan to keep taking walks."
+      },
+      {
+        "sentence": "네가 참여하든지 말든지 이 파티는 계속될 거예요.",
+        "romanization": "Nega chamyeohadeunji maldeunji i patineun gyesokdoel geosida.",
+        "translation": "Whether you participate or not, this party will continue."
+      },
+      {
+        "sentence": "그녀가 나를 사랑하든지 말든지 나는 계속해서 그녀를 사랑할 거야.",
+        "romanization": "Geunyeoga naleul salanghadeunji maldeunji naneun gyesoghaeseo geunyeoreul salanghalgeoya.",
+        "translation": "Whether she loves me or not, I will continue to love her."
+      }
+    ]
+  },
+  {
+    "id": "ko_하려니와_16",
+    "language": "ko",
+    "pattern": "~하려니와",
+    "title": "~하려니와 [haryeoniwa] (Trying to, but)",
+    "shortExplanation": "Used to express a situation where one tries to do something but encounters an obstacle.",
+    "longExplanation": "'~하려니와 [haryeoniwa]' is used to show that while one is attempting to do something, an unexpected difficulty or issue prevents it from happening. It can be translated as 'trying to, but' or 'want to, but' in English.",
+    "formation": "Verb stem + 려니와",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "오늘은 친구들과 함께 영화를 보러 가려니와, 갑자기 날씨가 너무 안 좋아져서 계획이 실패했어요.",
+        "romanization": "Oneuleun chingudeulgwa hamkke yeonghwareul boreo garyeoniwa, gapjagi nalssiga neomu an johajyeoseo gyehoegi silpaehaesseoyo.",
+        "translation": "I was trying to go watch a movie with my friends today, but the weather suddenly got so bad that our plan failed."
+      },
+      {
+        "sentence": "좀 더 다양한 맛의 음식을 만들어 보려니와, 요리 실력이 부족해서 잘 되지 않아요.",
+        "romanization": "Jom deo dayanghan matsui eumsigeul mandeureo boryeoniwa, yori silryeogi bujokhaeseo jal doeji anhayo.",
+        "translation": "I tried to make food with a variety of flavors, but it didn’t turn out well because my cooking skills are lacking."
+      },
+      {
+        "sentence": "빨리 잠자려니와, 많은 생각들이 머리를 스쳐 지나가서 잠에 들지 못했어요.",
+        "romanization": "Ppalli jamjaryeoniwa, manheun saenggakdeuli meorireul seuchyeo jinagaseo jame deulji moshaesseoyo.",
+        "translation": "I tried to fall asleep quickly, but I couldn’t because many thoughts kept running through my mind."
+      },
+      {
+        "sentence": "운동을 시작하려니와, 집에 있느라 시간을 못 내어서 아직 시작하지 못했어요.",
+        "romanization": "Undongeul sijakharyeoniwa, jibe issneura siganeul mot naeoseo ajik sijakhaji moshaesseoyo.",
+        "translation": "I tried to start exercising, but I couldn’t find the time because I was stuck at home, so I haven’t started yet."
+      }
+    ]
+  },
+  {
+    "id": "ko_하여간_17",
+    "language": "ko",
+    "pattern": "~하여간",
+    "title": "~하여간 [hayaegane] (Anyway, anyhow)",
+    "shortExplanation": "Used to express that one will proceed regardless of difficulties or obstacles.",
+    "longExplanation": "'~하여간 [hayaegane]' is used in Korean to show a determined resolve or to express that, regardless of any obstacles or factors, one will do something. It is similar in meaning to 'anyway' or 'anyhow' in English.",
+    "formation": "Predicate (Verb/Adjective) + 아/어/여 + 하여간",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "시험을 준비하지 않았지만, 노력하여간 시험을 통과하려고 합니다.",
+        "romanization": "Siheomeul junbihaji anhjiman, noryeoghayaegane siheomeul tonggwaharyeogo hamnida.",
+        "translation": "Although I didn't prepare for the exam, I will try to pass it anyhow."
+      },
+      {
+        "sentence": "비록 경제적으로 어려운 상황이지만, 아끼려하여간 학비를 모아야 합니다.",
+        "romanization": "Birok gyeongjejeogeuro eoryeoun sanghwangijiman, akkyeo sayonghayaegane hakbireul moaya hamnida.",
+        "translation": "Even though the financial situation is difficult, I must save for my tuition fees anyway."
+      },
+      {
+        "sentence": "힘들어도, 꾸준히 하여간 그 목표를 달성할 수 있을 것입니다.",
+        "romanization": "Himdeureodo, kkuduni hayaegane geu mokpyoreul dalssengal su isseul geosimnida.",
+        "translation": "Even if it’s hard, if you persist anyhow, you will be able to achieve that goal."
+      },
+      {
+        "sentence": "많은 자금이 필요하지만, 아껴 사용하여간 꿈을 이뤄낼 수 있을 것입니다.",
+        "romanization": "Manheun jagumi pil-yohajiman, akkyeo sayonghayaegane kkumeul irwonaelsu isseul geosimnida.",
+        "translation": "Though a lot of money is required, by spending frugally anyway, you will be able to fulfill your dream."
+      }
+    ]
+  },
+  {
+    "id": "ko_하여야만_18",
+    "language": "ko",
+    "pattern": "~하여야만",
+    "title": "~하여야만 [hayeoyaman] (Only when)",
+    "shortExplanation": "Indicates that a certain condition must be satisfied for something else to happen.",
+    "longExplanation": "'~하여야만 [hayeoyaman]' is used when a specific condition or criteria must be met for an outcome to occur. It is equivalent to 'only when' in English and stresses that without this condition, the result is unattainable.",
+    "formation": "Verb stem + ~하여야만 + Positive verb",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "일찍 기상하여야만 출근시간에 도착할 수 있어요.",
+        "romanization": "Iljjik gisanghayeoyaman chulgooksigane dochakhal su isseoyo.",
+        "translation": "I can only arrive at work on time if I get up early."
+      },
+      {
+        "sentence": "당신의 사정을 받아들여주신 의사와 상의하여야만 수술 계획을 변경할 수 있습니다.",
+        "romanization": "Dangsineui sajeangeul badadeulyeojusin uisawa sangyihayeoyaman susul gyehoekul byeongyeokhal su isseubnida.",
+        "translation": "Only when you consult with the doctor who understood your circumstances can you change the surgery plan."
+      },
+      {
+        "sentence": "고정적인 수입이 있어야만 주택대출을 받을 수 있습니다.",
+        "romanization": "Gojeongjeogin suipi isseoyaman jutakdaechurul badul su isseubnida.",
+        "translation": "Only when you have a regular income can you get a housing loan."
+      },
+      {
+        "sentence": "훈련을 잘 따라하여야만 시험에 합격할 수 있어요.",
+        "romanization": "Hunryeone jal ttarahayeoyaman siheome hapgyeokhal su isseoyo.",
+        "translation": "Only when you follow the training well can you pass the exam."
+      }
+    ]
+  },
+  {
+    "id": "ko_해야겠다_19",
+    "language": "ko",
+    "pattern": "~해야겠다",
+    "title": "~해야겠다 [haeyagetda] (Should, ought to)",
+    "shortExplanation": "Expresses the speaker's intention or determination to do something in the future.",
+    "longExplanation": "'~해야겠다 [haeyagetda]' is a pattern used to express necessity or determination for a future action. It indicates that the speaker has decided that something should be done.",
+    "formation": "Verb stem + 야겠다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "이제 늦었으니까 집에 가야겠다.",
+        "romanization": "Ije neujeosseunikka jibe gayagetda.",
+        "translation": "Now that it's late, I should go home."
+      },
+      {
+        "sentence": "내일 시험이 있으니까 오늘 밤에 공부해야겠다.",
+        "romanization": "Naeil siheomi isseunikka oneul bame gongbuhaeyagetda.",
+        "translation": "I have an exam tomorrow, so I should study tonight."
+      },
+      {
+        "sentence": "체중이 계속 증가하고 있어서 운동을 시작해야겠다.",
+        "romanization": "Chejungi gyesok jeunggahago isseoseo undongeul sijakhaeyagetda.",
+        "translation": "My weight continues to increase, so I should start exercising."
+      },
+      {
+        "sentence": "오래동안 연락하지 않아서 친구에게 전화해야겠다.",
+        "romanization": "Oraedongan yeollakaji anhaseo chinguege jeonhwahaeyagetda.",
+        "translation": "I haven't been in touch for a long time, so I should call my friend."
+      }
+    ]
+  }
+]

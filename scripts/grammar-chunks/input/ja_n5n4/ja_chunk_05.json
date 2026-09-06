@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Verb_60",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb る 前に (ru mae ni)",
+    "shortExplanation": "Used to express 'before' in a sense of an action must be done before another action or event.",
+    "longExplanation": "The る前に (ru mae ni) grammar point is used to indicate that an action (in the dictionary form) should be completed before another action occurs or before a specific event happens.",
+    "formation": "Verb (dictionary form) + 前に",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "出かける前に、部屋を掃除してください。",
+        "romanization": "Dekakeru mae ni, heya o souji shite kudasai.",
+        "translation": "Please clean the room before leaving."
+      },
+      {
+        "sentence": "寝る前に、歯を磨きます。",
+        "romanization": "Neru mae ni, ha o migakimasu.",
+        "translation": "I brush my teeth before going to bed."
+      },
+      {
+        "sentence": "雨が降る前に、洗濯物を取り込むこと。",
+        "romanization": "Ame ga furu mae ni, sentakumono o torikomu koto.",
+        "translation": "Take in the laundry before it rains."
+      },
+      {
+        "sentence": "会議が始まる前に、資料を準備しましょう。",
+        "romanization": "Kaigi ga hajimaru mae ni, shiryou o junbi shimashou.",
+        "translation": "Let's prepare the documents before the meeting starts."
+      }
+    ]
+  },
+  {
+    "id": "ja_あまりありません_61",
+    "language": "ja",
+    "pattern": "あまり～ありません",
+    "title": "あまり～ありません (amari ~ arimasen)",
+    "shortExplanation": "Express 'not very', 'not much', or 'not really' when describing a negative state or situation.",
+    "longExplanation": "The grammar point あまり～ありません is used to describe a negative state or condition and indicate that it's not very, not much, or not really. It is commonly used with verbs in the negative form and can be used with い-adjectives, な-adjectives, and nouns.",
+    "formation": "あまり + Verb-ないform + ありません / あまり + い-Adjective-く ありません / あまり + な-Adjective・Noun じゃありません",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼はあまり疲れていません。",
+        "romanization": "Kare wa amari tsukareteimasen.",
+        "translation": "He is not really tired."
+      },
+      {
+        "sentence": "彼女はあまり早くないですよ。",
+        "romanization": "Kanojo wa amari hayakunai desu yo.",
+        "translation": "She is not very fast."
+      },
+      {
+        "sentence": "私はあまり勉強しないです。",
+        "romanization": "Watashi wa amari benkyou shinai desu.",
+        "translation": "I don't study very much."
+      },
+      {
+        "sentence": "あまりお金がありません。",
+        "romanization": "Amari okane ga arimasen.",
+        "translation": "I don't have much money."
+      }
+    ]
+  },
+  {
+    "id": "ja_あまりないです_62",
+    "language": "ja",
+    "pattern": "あまり～ないです",
+    "title": "あまり～ないです (amari ~ nai desu)",
+    "shortExplanation": "Express 'not really' or 'not very'; used to soften a negative statement.",
+    "longExplanation": "The あまり～ないです grammar point is used to express that something is 'not really' or 'not very' to a certain extent. It is often used to soften a negative statement. It can be used with verbs, い-adjectives, and な-adjectives in their negative forms.",
+    "formation": "あまり + Verb-ないform + です / あまり + い-Adjective-くない + です / あまり + な-Adjective-じゃない + です",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "あまり食べないです。",
+        "romanization": "Amari tabenai desu.",
+        "translation": "I don't really eat much."
+      },
+      {
+        "sentence": "この映画はあまり面白くないです。",
+        "romanization": "Kono eiga wa amari omoshirokunai desu.",
+        "translation": "This movie is not really interesting."
+      },
+      {
+        "sentence": "彼はあまり親切じゃないです。",
+        "romanization": "Kare wa amari shinsetsu ja nai desu.",
+        "translation": "He is not very kind."
+      },
+      {
+        "sentence": "私はあまり日本語が上手じゃないです。",
+        "romanization": "Watashi wa amari nihongo ga jouzu ja nai desu.",
+        "translation": "I am not very good at Japanese."
+      }
+    ]
+  },
+  {
+    "id": "ja_あります_63",
+    "language": "ja",
+    "pattern": "～あります",
+    "title": "～あります (〜arimasu)",
+    "shortExplanation": "Indicate possession or existence of inanimate objects; 'there is', 'there are'.",
+    "longExplanation": "The あります grammar point is used to indicate the possession or existence of inanimate objects. It can be translated as 'there is' or 'there are' in English. It is different from います, which is used for people and most living creatures. あります is commonly used with particle が to mark the object.",
+    "formation": "Object + が + あります",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "教室に机があります。",
+        "romanization": "Kyoushitsu ni tsukue ga arimasu.",
+        "translation": "There is a desk in the classroom."
+      },
+      {
+        "sentence": "この公園にたくさんの花があります。",
+        "romanization": "Kono kouen ni takusan no hana ga arimasu.",
+        "translation": "There are many flowers in this park."
+      },
+      {
+        "sentence": "駅の近くにコンビニがあります。",
+        "romanization": "Eki no chikaku ni konbini ga arimasu.",
+        "translation": "There is a convenience store near the station."
+      },
+      {
+        "sentence": "家の中に古いテレビがあります。",
+        "romanization": "Ie no naka ni furui terebi ga arimasu.",
+        "translation": "There is an old TV inside the house."
+      }
+    ]
+  },
+  {
+    "id": "ja_いかがですか_64",
+    "language": "ja",
+    "pattern": "～いかがですか。",
+    "title": "～いかがですか。 (〜ikaga desu ka.)",
+    "shortExplanation": "A polite way to ask someone's thoughts, opinions, or preferences; 'how about', 'how is'.",
+    "longExplanation": "The ～いかがですか grammar point is used to politely ask someone's thoughts, opinions, or preferences. It can be translated as 'how about' or 'how is' in English. The formation is quite straightforward when used with verbs or nouns.",
+    "formation": "Noun + は + いかがですか / (Verb-て form + は) いかがですか",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "お茶はいかがですか？",
+        "romanization": "Ocha wa ikaga desu ka?",
+        "translation": "How about some tea?"
+      },
+      {
+        "sentence": "このドレスはいかがですか？",
+        "romanization": "Kono doresu wa ikaga desu ka?",
+        "translation": "How about this dress?"
+      },
+      {
+        "sentence": "ケーキを食べてはいかがですか？",
+        "romanization": "Keeki wo tabete wa ikaga desu ka?",
+        "translation": "How about eating some cake?"
+      },
+      {
+        "sentence": "映画を見てはいかがですか？",
+        "romanization": "Eiga wo mite wa ikaga desu ka?",
+        "translation": "How about watching a movie?"
+      }
+    ]
+  },
+  {
+    "id": "ja_いくつ_65",
+    "language": "ja",
+    "pattern": "いくつ～",
+    "title": "いくつ～ (ikutsu~)",
+    "shortExplanation": "Used to express 'how many' or ask for the number of something.",
+    "longExplanation": "The grammar point いくつ is used when asking or expressing 'how many' of something there are, or to indicate an unspecified number. In English, it can be translated as 'how many' or 'several'.",
+    "formation": "いくつ + Noun (optional)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "リンゴはいくつありますか？",
+        "romanization": "Ringo wa ikutsu arimasu ka?",
+        "translation": "How many apples are there?"
+      },
+      {
+        "sentence": "いくつかの問題を解決しなければなりません。",
+        "romanization": "Ikutsu ka no mondai o kaiketsu shinakereba narimasen.",
+        "translation": "I have to solve several problems."
+      },
+      {
+        "sentence": "あなたはいくつの言語を話せますか？",
+        "romanization": "Anata wa ikutsu no gengo o hanasemasu ka?",
+        "translation": "How many languages can you speak?"
+      },
+      {
+        "sentence": "パーティーにはいくつかの飲み物があります。",
+        "romanization": "Paatii ni wa ikutsu ka no nomimono ga arimasu.",
+        "translation": "There are several drinks at the party."
+      }
+    ]
+  },
+  {
+    "id": "ja_いつか_66",
+    "language": "ja",
+    "pattern": "いつか～",
+    "title": "いつか～ (itsuka～)",
+    "shortExplanation": "Indicates an unspecified point in time; 'someday', 'one day', 'at some point'.",
+    "longExplanation": "The grammar point いつか is used to indicate an unspecified point in time, meaning 'someday', 'one day', or 'at some point' in the future or the past. It can be used in sentences to express hopes, dreams, or possibilities.",
+    "formation": "いつか + sentence",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "いつか日本に行きたいです。",
+        "romanization": "Itsuka Nihon ni ikitai desu.",
+        "translation": "I want to go to Japan someday."
+      },
+      {
+        "sentence": "彼はいつか有名な作家になるでしょう。",
+        "romanization": "Kare wa itsuka yuumei na sakka ni naru deshou.",
+        "translation": "He will become a famous writer someday."
+      },
+      {
+        "sentence": "いつかあの山を登りたいと思っています。",
+        "romanization": "Itsuka ano yama wo noboritai to omotte imasu.",
+        "translation": "I think I want to climb that mountain someday."
+      },
+      {
+        "sentence": "彼女はいつか夢を叶えることができると信じています。",
+        "romanization": "Kanojo wa itsuka yume wo kanaeru koto ga dekiru to shinjiteimasu.",
+        "translation": "I believe she can achieve her dream someday."
+      }
+    ]
+  },
+  {
+    "id": "ja_いつでも_67",
+    "language": "ja",
+    "pattern": "いつでも～",
+    "title": "いつでも～ (itsudemo～)",
+    "shortExplanation": "Expresses 'anytime', 'always', or 'whenever'.",
+    "longExplanation": "The いつでも grammar point is used to express that something occurs, can occur, or is allowed to occur anytime, always, or whenever. It emphasizes the lack of restrictions related to time for a certain action or event.",
+    "formation": "いつでも + (Verb)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "いつでも遊びに来てください。",
+        "romanization": "Itsudemo asobi ni kite kudasai.",
+        "translation": "Please come to play anytime."
+      },
+      {
+        "sentence": "彼女はいつでも笑顔です。",
+        "romanization": "Kanojo wa itsudemo egao desu.",
+        "translation": "She is always smiling."
+      },
+      {
+        "sentence": "いつでも電話で連絡できます。",
+        "romanization": "Itsudemo denwa de renraku dekimasu.",
+        "translation": "You can contact me by phone anytime."
+      },
+      {
+        "sentence": "この店はいつでも混んでいます。",
+        "romanization": "Kono mise wa itsudemo konde imasu.",
+        "translation": "This store is always crowded."
+      }
+    ]
+  },
+  {
+    "id": "ja_いつも_68",
+    "language": "ja",
+    "pattern": "いつも～",
+    "title": "いつも～ (itsumo～)",
+    "shortExplanation": "Expressing 'always' or 'usually' in a sentence.",
+    "longExplanation": "The grammar point いつも (itsumo) is used to express the meaning of 'always' or 'usually' when describing a habitual action or situation. It is often used with the present tense or past tense to show that something is done on a regular basis or has been happening consistently.",
+    "formation": "いつも + Verb / Adjective / Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼はいつも遅刻します。",
+        "romanization": "Kare wa itsumo chikoku shimasu.",
+        "translation": "He is always late."
+      },
+      {
+        "sentence": "私はいつも優しい犬が好きです。",
+        "romanization": "Watashi wa itsumo yasashii inu ga suki desu.",
+        "translation": "I always like gentle dogs."
+      },
+      {
+        "sentence": "彼女はいつも静かな場所で勉強します。",
+        "romanization": "Kanojo wa itsumo shizuka na basho de benkyou shimasu.",
+        "translation": "She always studies in a quiet place."
+      },
+      {
+        "sentence": "いつも朝ご飯を食べます。",
+        "romanization": "Itsumo asagohan wo tabemasu.",
+        "translation": "I always eat breakfast."
+      }
+    ]
+  },
+  {
+    "id": "ja_て_69",
+    "language": "ja",
+    "pattern": "～て",
+    "title": "～て います (～te imasu)",
+    "shortExplanation": "Expresses the present continuous or ongoing action; 'to be doing', 'currently doing'.",
+    "longExplanation": "The ～て います grammar pattern is used to express that an action is currently happening or ongoing. It can be translated as 'to be doing' or 'currently doing' in English. The formation differs depending on whether it is a る-verb, う-verb, or an irregular verb, but all use the verb’s て-form + います.",
+    "formation": "Verb て-form + います",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今、音楽を聞いています。",
+        "romanization": "Ima, ongaku wo kiite imasu.",
+        "translation": "I am listening to music right now."
+      },
+      {
+        "sentence": "父は新聞を読んでいます。",
+        "romanization": "Chichi wa shinbun wo yonde imasu.",
+        "translation": "My father is reading a newspaper."
+      },
+      {
+        "sentence": "彼女は英語を勉強しています。",
+        "romanization": "Kanojo wa eigo wo benkyou shite imasu.",
+        "translation": "She is studying English."
+      },
+      {
+        "sentence": "子供たちは公園で遊んでいます。",
+        "romanization": "Kodomotachi wa kouen de asonde imasu.",
+        "translation": "The children are playing in the park."
+      }
+    ]
+  },
+  {
+    "id": "ja_が_70",
+    "language": "ja",
+    "pattern": "～が",
+    "title": "～が (〜ga)",
+    "shortExplanation": "Particle indicating the subject of a sentence or expressing 'but'.",
+    "longExplanation": "The ～が grammar point is a particle that is used to indicate the subject of a sentence or to express a contrast similar to 'but' in English. It has various functions depending on the context.",
+    "formation": "Noun + が / い-Adjective + が / な-Adjective + が / Verb + が",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "私が学生です。",
+        "romanization": "Watashi ga gakusei desu.",
+        "translation": "I am a student."
+      },
+      {
+        "sentence": "このりんごが美味しい。",
+        "romanization": "Kono ringo ga oishii.",
+        "translation": "This apple is delicious."
+      },
+      {
+        "sentence": "彼は頭がいいが、性格が悪い。",
+        "romanization": "Kare wa atama ga ii ga, seikaku ga warui.",
+        "translation": "He is smart but has a bad personality."
+      },
+      {
+        "sentence": "走りたいが、足が痛い。",
+        "romanization": "Hashiritai ga, ashi ga itai.",
+        "translation": "I want to run, but my leg hurts."
+      }
+    ]
+  },
+  {
+    "id": "ja_が_71",
+    "language": "ja",
+    "pattern": "～が、～",
+    "title": "～が、～ (〜ga, 〜)",
+    "shortExplanation": "Express a contrast between two sentences; 'but', 'however'.",
+    "longExplanation": "The ～が、～ grammar point is used to express a contrast or contradiction between two sentences or clauses. It can be translated as 'but' or 'however' in English. This grammar point is slightly more formal than けど and is used to show a contrast in the situation.",
+    "formation": "Sentence 1 + が、+ Sentence 2",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "デザートは美味しいが、カロリーが高い。",
+        "romanization": "Dezaato wa oishii ga, karorii ga takai.",
+        "translation": "The dessert is delicious, but it is high in calories."
+      },
+      {
+        "sentence": "彼は頭がいいが、少し怠け者だ。",
+        "romanization": "Kare wa atama ga ii ga, sukoshi namakemono da.",
+        "translation": "He is smart, but a bit lazy."
+      },
+      {
+        "sentence": "会社は利益を上げたが、従業員の給与は上がらなかった。",
+        "romanization": "Kaisha wa rieki wo ageta ga, juugyouin no kyuuyo wa agaranakatta.",
+        "translation": "The company made a profit, however, the employees' salaries did not increase."
+      },
+      {
+        "sentence": "外国語を勉強することが楽しいが、時々難しい。",
+        "romanization": "Gaikokugo wo benkyou suru koto ga tanoshii ga, tokidoki muzukashii.",
+        "translation": "Studying foreign languages is fun, but sometimes difficult."
+      }
+    ]
+  },
+  {
+    "id": "ja_から_72",
+    "language": "ja",
+    "pattern": "～から、～",
+    "title": "～から、～ (〜kara、～)",
+    "shortExplanation": "Expresses reason or cause; 'because', 'since', 'so'.",
+    "longExplanation": "The ～から grammar point is used to indicate the reason or cause for something. It can be translated as 'because', 'since', or 'so' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + から / い-Adjective + から / な-Adjective + だから / Noun + だから",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "明日は試験があるから、今晩勉強しなければなりません。",
+        "romanization": "Ashita wa shiken ga aru kara, konban benkyou shinakereba narimasen.",
+        "translation": "Because I have an exam tomorrow, I must study tonight."
+      },
+      {
+        "sentence": "この部屋は狭いから、もっと大きい部屋を探しています。",
+        "romanization": "Kono heya wa semai kara, motto ookii heya wo sagashiteimasu.",
+        "translation": "Since this room is small, I am looking for a bigger one."
+      },
+      {
+        "sentence": "彼は友達だから、手伝ってくれるでしょう。",
+        "romanization": "Kare wa tomodachi dakara, tetsudatte kureru deshou.",
+        "translation": "Since he is my friend, he will probably help me."
+      },
+      {
+        "sentence": "雨が降ったから、外に出られません。",
+        "romanization": "Ame ga futta kara, soto ni deraremasen.",
+        "translation": "Because it rained, I can't go outside."
+      }
+    ]
+  },
+  {
+    "id": "ja_からです_73",
+    "language": "ja",
+    "pattern": "～からです",
+    "title": "～からです (〜kara desu)",
+    "shortExplanation": "Express the reason or cause; 'because', 'since', 'due to'.",
+    "longExplanation": "The ～からです grammar point is used to state the reason or cause of something, often as a short concluding statement. It can be translated as 'because', 'since', or 'due to' in English. The formation can be used with verbs, い-adjectives, な-adjectives, or nouns, but be careful with な-adjectives and nouns: typically, it's [Noun/な-adjective] + だからです.",
+    "formation": "Verb-casual + からです / い-Adjective + からです / な-Adjective + だからです / Noun + だからです",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "寒いからです。コートを着ています。",
+        "romanization": "Samui kara desu. Kooto wo kiteimasu.",
+        "translation": "It’s because it’s cold. That’s why I’m wearing a coat."
+      },
+      {
+        "sentence": "この店は安いからです。よく来ます。",
+        "romanization": "Kono mise wa yasui kara desu. Yoku kimasu.",
+        "translation": "It’s because this store is cheap. That’s why I come often."
+      },
+      {
+        "sentence": "彼は親切だからです。みんなに好かれています。",
+        "romanization": "Kare wa shinsetsu dakara desu. Minna ni suka-rete imasu.",
+        "translation": "It’s because he’s kind. Everyone likes him."
+      },
+      {
+        "sentence": "彼女は学生だからです。図書館で勉強しています。",
+        "romanization": "Kanojo wa gakusei dakara desu. Toshokan de benkyou shiteimasu.",
+        "translation": "It’s because she’s a student. She studies at the library."
+      }
+    ]
+  },
+  {
+    "id": "ja_から_74",
+    "language": "ja",
+    "pattern": "～から",
+    "title": "～から もらいます (〜kara moraimasu)",
+    "shortExplanation": "To receive something or get someone to do something.",
+    "longExplanation": "The ～からもらいます grammar point is used to express receiving something from someone or getting someone to do something for you. In English, it can be translated as 'to receive from' or 'to get someone to do something'.",
+    "formation": "Noun + から + (Verb-て form) + もらいます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "友達からプレゼントをもらいました。",
+        "romanization": "Tomodachi kara purezento wo moraimashita.",
+        "translation": "I received a present from my friend."
+      },
+      {
+        "sentence": "先生に宿題を渡してもらいました。",
+        "romanization": "Sensei ni shukudai wo watashite moraimashita.",
+        "translation": "I had the teacher hand me the homework."
+      },
+      {
+        "sentence": "お母さんに料理を作ってもらいました。",
+        "romanization": "Okaasan ni ryouri wo tsukutte moraimashita.",
+        "translation": "I got my mom to cook for me."
+      },
+      {
+        "sentence": "兄に車を貸してもらいました。",
+        "romanization": "Ani ni kuruma wo kashite moraimashita.",
+        "translation": "I got my older brother to lend me his car."
+      }
+    ]
+  }
+]

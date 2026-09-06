@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_ながらに_212",
+    "language": "ja",
+    "pattern": "～ながらに",
+    "title": "～ながらに (～nagara ni)",
+    "shortExplanation": "Expresses a state or condition continuing just as it is (e.g. 'from birth', 'while crying', 'in the old way').",
+    "longExplanation": "The ～ながらに grammar point is used to indicate a condition that remains unchanged from some starting point or in a certain manner. It appears in set phrases such as 生まれながらに (from birth), 涙ながらに (while crying), 昔ながらに (in the old/original way), 子供ながらに (even though [still] a child), etc.",
+    "formation": "Common set phrases: 生まれながらに, 涙ながらに, 昔ながらに, 子供ながらに, etc.",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女は生まれながらにして優れた音感を持っている。",
+        "romanization": "Kanojo wa umare nagara ni shite sugureta onkan o motte iru.",
+        "translation": "She has had an excellent sense of pitch from birth."
+      },
+      {
+        "sentence": "彼は子供ながらに大人の会話を理解していた。",
+        "romanization": "Kare wa kodomo nagara ni otona no kaiwa o rikaishite ita.",
+        "translation": "Even though he was just a child, he understood adult conversations."
+      },
+      {
+        "sentence": "彼女は涙ながらに真実を訴えた。",
+        "romanization": "Kanojo wa namida nagara ni shinjitsu o uttaeta.",
+        "translation": "She pleaded the truth while in tears."
+      },
+      {
+        "sentence": "私たちは昔ながらに伝わる祭りを大切にしている。",
+        "romanization": "Watashi-tachi wa mukashi nagara ni tsutawaru matsuri o taisetsu ni shite iru.",
+        "translation": "We cherish the traditional festival that has been passed down unchanged from old times."
+      }
+    ]
+  },
+  {
+    "id": "ja_ながらの_213",
+    "language": "ja",
+    "pattern": "～ながらの",
+    "title": "～ながらの Noun (〜nagara no Noun)",
+    "shortExplanation": "Indicates one action or state happening at the same time as the noun in question (e.g. 'dinner while watching TV').",
+    "longExplanation": "The ～ながらの Noun grammar point is used to modify a noun by describing an action happening simultaneously. For example, テレビを見ながらの夕食 means 'dinner while watching TV.' It can be translated as 'while ~ing' or 'during ~.'",
+    "formation": "Verb-ますstem (or plain minus る) + ながら + の + Noun",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "テレビを見ながらの夕食は、子供たちにとって楽しいだろう。",
+        "romanization": "Terebi o mi-nagara no yuushoku wa, kodomotachi ni totte tanoshii darou.",
+        "translation": "Eating dinner while watching TV might be fun for the children."
+      },
+      {
+        "sentence": "地図を読みながらの運転は危険です。",
+        "romanization": "Chizu o yomi-nagara no unten wa kiken desu.",
+        "translation": "Driving while reading a map is dangerous."
+      },
+      {
+        "sentence": "散歩しながらの会話はリラックスできます。",
+        "romanization": "Sanpo shi-nagara no kaiwa wa rirakkusu dekimasu.",
+        "translation": "Talking during a walk can be relaxing."
+      },
+      {
+        "sentence": "音楽を聴きながらの勉強は集中力を高めるかもしれません。",
+        "romanization": "Ongaku o kiki-nagara no benkyou wa shuuchuuryoku o takameru kamoshiremasen.",
+        "translation": "Studying while listening to music might improve concentration."
+      }
+    ]
+  },
+  {
+    "id": "ja_ながらも_214",
+    "language": "ja",
+    "pattern": "～ながらも",
+    "title": "～ながらも (〜nagara mo)",
+    "shortExplanation": "Means 'even though' or 'despite'.",
+    "longExplanation": "The ～ながらも grammar point is used to express contrast, highlighting the difference between what is usually expected from a situation and what actually happens. It can be translated as 'even though' or 'despite.'",
+    "formation": "Verb stem + ながらも, い-Adjective + ながらも, な-Adjective/Noun + ながらも",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は貧しいながらも、幸せな生活を送っている。",
+        "romanization": "Kare wa mazushii nagara mo, shiawase na seikatsu o okutte iru.",
+        "translation": "Despite being poor, he leads a happy life."
+      },
+      {
+        "sentence": "僕は忙しいながらも、毎日運動しています。",
+        "romanization": "Boku wa isogashii nagara mo, mainichi undou shiteimasu.",
+        "translation": "Even though I am busy, I exercise every day."
+      },
+      {
+        "sentence": "病気ながらも、彼は仕事を続けました。",
+        "romanization": "Byouki nagara mo, kare wa shigoto o tsuzukemashita.",
+        "translation": "Despite being sick, he continued working."
+      },
+      {
+        "sentence": "雨が降っているながらも、彼は散歩に出かけた。",
+        "romanization": "Ame ga futte iru nagara mo, kare wa sanpo ni dekaketa.",
+        "translation": "Even though it was raining, he went for a walk."
+      }
+    ]
+  },
+  {
+    "id": "ja_なくはない_215",
+    "language": "ja",
+    "pattern": "～なくはない",
+    "title": "～なくはない (〜naku wa nai)",
+    "shortExplanation": "Expresses the idea 'it's not that it's impossible' or 'it's not that I can't'.",
+    "longExplanation": "The ～なくはない grammar point implies that while something may not be your first choice or not guaranteed, it's not outright impossible. Translates to 'It's not that it's impossible,' 'It's not that I don't/can't ~.'",
+    "formation": "Verb-ないform + なくはない, い-Adjective－い + くはない, な-Adjective + ではなくはない, Noun + ではなくはない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "それを終えるのは難しくなくはない。",
+        "romanization": "Sore o oeru no wa muzukashiku naku wa nai.",
+        "translation": "It's not that it's impossible to finish it."
+      },
+      {
+        "sentence": "彼に話すのは怖くなくはない。",
+        "romanization": "Kare ni hanasu no wa kowaku naku wa nai.",
+        "translation": "It's not that I'm entirely unafraid to talk to him."
+      },
+      {
+        "sentence": "映画を見に行く時間がなくはない。",
+        "romanization": "Eiga o mi ni iku jikan ga naku wa nai.",
+        "translation": "It's not that I don't have time to go see a movie."
+      },
+      {
+        "sentence": "日本語で講演するのは難しくなくはない。",
+        "romanization": "Nihongo de kouen suru no wa muzukashiku naku wa nai.",
+        "translation": "It's not impossible to give a lecture in Japanese, but it won't be easy."
+      }
+    ]
+  },
+  {
+    "id": "ja_なくもない_216",
+    "language": "ja",
+    "pattern": "～なくもない",
+    "title": "～なくもない (〜naku mo nai)",
+    "shortExplanation": "Expresses 'not impossible' or 'might as well'.",
+    "longExplanation": "The ～なくもない grammar point is used to suggest that something is not necessarily preferred or likely, but it's also not out of the question. It can often translate to 'It’s not a bad idea' or 'It might be feasible.'",
+    "formation": "Verb-ないform + なくもない, い-Adjective－い + くもない, な-Adjective + でもない, Noun + でもない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼がもうすぐ戻るなら、待つなくもない。",
+        "romanization": "Kare ga mou sugu modoru nara, matsu naku mo nai.",
+        "translation": "If he’s coming back soon, waiting wouldn’t be a bad idea."
+      },
+      {
+        "sentence": "この本が役に立つなら、買うなくもない。",
+        "romanization": "Kono hon ga yaku ni tatsu nara, kau naku mo nai.",
+        "translation": "If this book is useful, it might not be a bad idea to buy it."
+      },
+      {
+        "sentence": "天気が良ければ、ピクニックに行くなくもない。",
+        "romanization": "Tenki ga yokereba, pikunikku ni iku naku mo nai.",
+        "translation": "If the weather is nice, it wouldn't be impossible for us to go on a picnic."
+      },
+      {
+        "sentence": "そのプロジェクトが成功すれば、プロモーションもあり得なくもない。",
+        "romanization": "Sono purojekuto ga seikou sureba, puromooshon mo arienaku mo nai.",
+        "translation": "If that project succeeds, a promotion might not be out of the question."
+      }
+    ]
+  },
+  {
+    "id": "ja_ならなりに_217",
+    "language": "ja",
+    "pattern": "～なら～なりに",
+    "title": "～なら～なりに",
+    "shortExplanation": "Means 'if it is X, then it's X in its own way', emphasizing unique qualities.",
+    "longExplanation": "The ～なら～なりに grammar point shows that something has its own particular way or style of being, based on that condition. It often conveys a positive acceptance or appreciation of the situation 'in its own way.'",
+    "formation": "Noun/Adjective + なら + (same Noun/Adjective) + なりに",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼はまだ初心者なら初心者なりに頑張っている。",
+        "romanization": "Kare wa mada shoshinsha nara shoshinsha nari ni ganbatteiru.",
+        "translation": "Since he’s still a beginner, he’s doing his best in his own beginner way."
+      },
+      {
+        "sentence": "この料理は辛いなら辛いなりに美味しい。",
+        "romanization": "Kono ryouri wa karai nara karai nari ni oishii.",
+        "translation": "If this dish is spicy, it’s delicious in its own spicy way."
+      },
+      {
+        "sentence": "あの人は変なら変なりに面白い。",
+        "romanization": "Ano hito wa hen nara hen nari ni omoshiroi.",
+        "translation": "If that person is strange, they’re interesting in their own strange way."
+      },
+      {
+        "sentence": "この町は小さいなら小さいなりに楽しい。",
+        "romanization": "Kono machi wa chiisai nara chiisai nari ni tanoshii.",
+        "translation": "If this town is small, it’s fun in its own small way."
+      }
+    ]
+  },
+  {
+    "id": "ja_には及ばない_218",
+    "language": "ja",
+    "pattern": "～には及ばない",
+    "title": "～には及ばない (〜ni wa oyobanai)",
+    "shortExplanation": "Means 'no need to go that far' or 'not necessary'.",
+    "longExplanation": "The ～には及ばない grammar point is used to show that an action or degree of effort is unnecessary or excessive. It often translates to 'there’s no need to...' or 'it doesn’t warrant...' in English.",
+    "formation": "Verb-dictionary form + には及ばない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "ファーストクラスに乗るには及ばない、エコノミーでも十分だ。",
+        "romanization": "Faasuto kurasu ni noru ni wa oyobanai, ekonomii demo juubun da.",
+        "translation": "There’s no need to go as far as flying first class; economy is enough."
+      },
+      {
+        "sentence": "毎回会うたびにギフトを持って行くには及ばない。",
+        "romanization": "Maikai au tabi ni gifuto o motte iku ni wa oyobanai.",
+        "translation": "There’s no need to bring a gift every time you meet her."
+      },
+      {
+        "sentence": "その問題は先生に聞くには及ばない、自分で解決できる。",
+        "romanization": "Sono mondai wa sensei ni kiku ni wa oyobanai, jibun de kaiketsu dekiru.",
+        "translation": "That issue doesn’t warrant asking the teacher; you can solve it yourself."
+      },
+      {
+        "sentence": "小さな失敗のために、あんなに辛辣な言葉を使うには及ばないだろう。",
+        "romanization": "Chiisana shippai no tame ni, anna ni shinratsu na kotoba o tsukau ni wa oyobanai darou.",
+        "translation": "For such a small mistake, there’s no need to use such harsh words."
+      }
+    ]
+  },
+  {
+    "id": "ja_に堪えない_219",
+    "language": "ja",
+    "pattern": "～に堪えない",
+    "title": "～に堪えない (～ni taenai)",
+    "shortExplanation": "Indicates something is unbearable or not worth doing (e.g., 'unbearable to watch', 'unbearable to listen to').",
+    "longExplanation": "The ～に堪えない grammar pattern is used when something is so unpleasant, awful, or painful that one cannot tolerate it. Common verbs include 見るに堪えない, 聞くに堪えない, 読むに堪えない, etc., meaning 'unbearable to see/hear/read.'",
+    "formation": "Verb-dictionary form + に堪えない, Noun + に堪えない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の冗談は聞くに堪えない。",
+        "romanization": "Kare no joudan wa kiku ni taenai.",
+        "translation": "His jokes are unbearable to listen to."
+      },
+      {
+        "sentence": "その映画は見るに堪えないほどひどい出来だ。",
+        "romanization": "Sono eiga wa miru ni taenai hodo hidoi deki da.",
+        "translation": "That movie is so bad that it’s unbearable to watch."
+      },
+      {
+        "sentence": "この小説は読むに堪えないほど退屈だ。",
+        "romanization": "Kono shousetsu wa yomu ni taenai hodo taikutsu da.",
+        "translation": "This novel is so boring that it’s unbearable to read."
+      },
+      {
+        "sentence": "彼の行動は見るに堪えない。",
+        "romanization": "Kare no koudou wa miru ni taenai.",
+        "translation": "His behavior is unbearable to watch."
+      }
+    ]
+  },
+  {
+    "id": "ja_に堪える_220",
+    "language": "ja",
+    "pattern": "～に堪える",
+    "title": "～に堪える (～ni taeru)",
+    "shortExplanation": "Used to say that something is 'worth doing' or 'can stand up to' something (the positive counterpart of ～に堪えない).",
+    "longExplanation": "The ～に堪える grammar point indicates that something is good enough or worthy enough to do (read, see, listen to, etc.). Common examples include 読むに堪える, 見るに堪える, 聞くに堪える, etc., meaning 'worth reading/watching/listening to.'",
+    "formation": "Verb-dictionary form + に堪える, Noun + に堪える",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の歌声は聞くに堪える。",
+        "romanization": "Kare no utagoe wa kiku ni taeru.",
+        "translation": "His singing voice is worth listening to."
+      },
+      {
+        "sentence": "この小説は読むに堪える内容だ。",
+        "romanization": "Kono shousetsu wa yomu ni taeru naiyou da.",
+        "translation": "This novel is worth reading."
+      },
+      {
+        "sentence": "あの映画は見るに堪える名作だ。",
+        "romanization": "Ano eiga wa miru ni taeru meisaku da.",
+        "translation": "That movie is a masterpiece worth watching."
+      },
+      {
+        "sentence": "彼の意見は十分に参考に堪える。",
+        "romanization": "Kare no iken wa juubun ni sankou ni taeru.",
+        "translation": "His opinion is definitely worth considering."
+      }
+    ]
+  },
+  {
+    "id": "ja_に耐える_221",
+    "language": "ja",
+    "pattern": "～に耐える",
+    "title": "～に耐える (～ni taeru)",
+    "shortExplanation": "To endure or withstand something; 'endure', 'withstand', 'tolerate'.",
+    "longExplanation": "The ～に耐える grammar point is used to express the concept of enduring or withstanding something, often involving a degree of difficulty or hardship. It can be translated as 'endure', 'withstand', or 'tolerate' in English. Here we focus on usage with nouns (e.g., a force or a hardship to endure).",
+    "formation": "Noun + に耐える",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は厳しい修行に耐えた。",
+        "romanization": "Kare wa kibishii shugyou ni taeta.",
+        "translation": "He endured the harsh training."
+      },
+      {
+        "sentence": "この橋は強風に耐えられる。",
+        "romanization": "Kono hashi wa kyoufuu ni taerareru.",
+        "translation": "This bridge can withstand strong winds."
+      },
+      {
+        "sentence": "彼女は苦しみに耐えた。",
+        "romanization": "Kanojo wa kurushimi ni taeta.",
+        "translation": "She endured the pain."
+      },
+      {
+        "sentence": "この建物は地震に耐えることができます。",
+        "romanization": "Kono tatemono wa jishin ni taeru koto ga dekimasu.",
+        "translation": "This building can withstand an earthquake."
+      }
+    ]
+  },
+  {
+    "id": "ja_に至った_222",
+    "language": "ja",
+    "pattern": "～に至った",
+    "title": "～に至った (〜ni itatta)",
+    "shortExplanation": "Expresses the outcome or final conclusion of a process; 'reached the point', 'led to'.",
+    "longExplanation": "The ～に至った grammar point is used to express the final outcome or conclusion that has been reached as a result of a process or a series of events. It can be translated as 'reached the point', 'led to', or 'resulted in' in English. It often indicates a significant outcome.",
+    "formation": "Verb-てform + に至った or Noun / Verb-dictionary + に至る (more general).",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は練習を重ねて、ついにプロのギタリストに至った。",
+        "romanization": "Kare wa renshuu o kasanete, tsui ni puro no gitarisuto ni itatta.",
+        "translation": "After repeated practice, he finally became a professional guitarist."
+      },
+      {
+        "sentence": "調査を進めるうちに、驚くべき結論に至った。",
+        "romanization": "Chousa o susumeru uchi ni, odoroku beki ketsuron ni itatta.",
+        "translation": "As the investigation progressed, it led to a surprising conclusion."
+      },
+      {
+        "sentence": "この問題はついに国際的な対立に至った。",
+        "romanization": "Kono mondai wa tsui ni kokusaiteki na tairitsu ni itatta.",
+        "translation": "This issue finally led to an international conflict."
+      },
+      {
+        "sentence": "たくさんの失敗を経て、成功に至った。",
+        "romanization": "Takusan no shippai o hete, seikou ni itatta.",
+        "translation": "After many failures, I finally achieved success."
+      }
+    ]
+  },
+  {
+    "id": "ja_に越したことはない_223",
+    "language": "ja",
+    "pattern": "～に越したことはない",
+    "title": "～に越したことはない (〜ni koshita koto wa nai)",
+    "shortExplanation": "Expresses that something is the best or most desirable course of action; 'nothing better than...'.",
+    "longExplanation": "The ～に越したことはない grammar point indicates that a certain state or action is the most favorable or ideal. It literally conveys the idea that nothing surpasses the stated condition.",
+    "formation": "Verb (dictionary form) + に越したことはない, い-Adjective + に越したことはない, な-Adjective/Noun + である + に越したことはない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "早く準備するに越したことはない。",
+        "romanization": "Hayaku junbi suru ni koshita koto wa nai.",
+        "translation": "It's best to prepare early."
+      },
+      {
+        "sentence": "新鮮な食材を使うに越したことはない。",
+        "romanization": "Shinsen na shokuzai o tsukau ni koshita koto wa nai.",
+        "translation": "There's nothing better than using fresh ingredients."
+      },
+      {
+        "sentence": "安全運転に越したことはない。",
+        "romanization": "Anzen unten ni koshita koto wa nai.",
+        "translation": "Safe driving is always best."
+      },
+      {
+        "sentence": "健康的な生活を送るに越したことはない。",
+        "romanization": "Kenkouteki na seikatsu o okuru ni koshita koto wa nai.",
+        "translation": "There's nothing better than leading a healthy lifestyle."
+      }
+    ]
+  },
+  {
+    "id": "ja_に難くない_224",
+    "language": "ja",
+    "pattern": "～に難くない",
+    "title": "～に難くない (～ni katakunai)",
+    "shortExplanation": "Expresses 'not difficult to ~' in a formal/literary sense; e.g., 'not hard to imagine/understand'.",
+    "longExplanation": "The ～に難くない (～にかたくない) grammar is typically used in formal or literary contexts to indicate that something is not difficult. Common expressions include 想像に難くない ('not hard to imagine'), 理解に難くない ('not difficult to understand'), 察するに難くない, and so on.",
+    "formation": "Verb-dictionary form + に難くない (commonly with 想像する, 理解する, 察する, etc.)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の喜びは想像に難くない。",
+        "romanization": "Kare no yorokobi wa souzou ni katakunai.",
+        "translation": "It's not hard to imagine his delight."
+      },
+      {
+        "sentence": "この結果が彼女を失望させたことは理解に難くない。",
+        "romanization": "Kono kekka ga kanojo o shitsubou saseta koto wa rikai ni katakunai.",
+        "translation": "It's not difficult to understand that this outcome disappointed her."
+      },
+      {
+        "sentence": "彼が怒る気持ちは察するに難くない。",
+        "romanization": "Kare ga okoru kimochi wa sassuru ni katakunai.",
+        "translation": "It's not hard to guess why he is angry."
+      },
+      {
+        "sentence": "このような状況が起こった理由は想像に難くない。",
+        "romanization": "Kono youna joukyou ga okotta riyuu wa souzou ni katakunai.",
+        "translation": "It's not hard to imagine why this situation occurred."
+      }
+    ]
+  },
+  {
+    "id": "ja_のは_225",
+    "language": "ja",
+    "pattern": "～のは",
+    "title": "～のは Noun ぐらいのものだ (〜no wa Noun gurai no mono da)",
+    "shortExplanation": "Conveys that 'only (Noun) is the case' or 'nothing but (Noun)'.",
+    "longExplanation": "The ～のは Noun ぐらいのものだ pattern indicates that something is exclusively or solely that particular Noun, conveying the sense of 'That's the only thing...' or 'There's nothing but...' about a situation.",
+    "formation": "Verb-casual + のは + Noun + ぐらいのものだ, い-Adjective + のは + Noun + ぐらいのものだ, etc.",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この小説を読むのは暇つぶしぐらいのものだ。",
+        "romanization": "Kono shousetsu o yomu no wa hima tsubushi gurai no mono da.",
+        "translation": "Reading this novel is nothing but a way to kill time."
+      },
+      {
+        "sentence": "今日の夕食で良かったのはピザぐらいのものだ。",
+        "romanization": "Kyou no yuushoku de yokatta no wa piza gurai no mono da.",
+        "translation": "About the only good thing at tonight's dinner was the pizza."
+      },
+      {
+        "sentence": "この映画を見るのは時間の無駄ぐらいのものだ。",
+        "romanization": "Kono eiga o miru no wa jikan no muda gurai no mono da.",
+        "translation": "Watching this movie is nothing but a waste of time."
+      },
+      {
+        "sentence": "彼と話すのはストレスぐらいのものだ。",
+        "romanization": "Kare to hanasu no wa sutoresu gurai no mono da.",
+        "translation": "Talking to him is nothing but stressful."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばものを_226",
+    "language": "ja",
+    "pattern": "～ば～ものを",
+    "title": "～ば～ものを (～ba～mono o)",
+    "shortExplanation": "Expresses regret or a missed opportunity: 'if only', 'had I but...'.",
+    "longExplanation": "The ～ば～ものを grammar point shows regret about what could have been, often translated as 'if only...' or 'it would have been better if...'. It can be used with verbs, adjectives, or nouns, usually in a past or conditional form.",
+    "formation": "Verb-ば + Verb-past + ものを, い-Adjective + ければ + ものを, な-Adjective/Noun + であれば + ものを, etc.",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "早く起きれば、遅刻しなかったものを。",
+        "romanization": "Hayaku okireba, chikoku shinakatta mono o.",
+        "translation": "If only I'd woken up early, I wouldn't have been late."
+      },
+      {
+        "sentence": "もっと頑張れば、テストに合格したものを。",
+        "romanization": "Motto ganbareba, tesuto ni goukaku shita mono o.",
+        "translation": "If only I'd tried harder, I would have passed the test."
+      },
+      {
+        "sentence": "お金があれば、新しい車を買ったものを。",
+        "romanization": "Okane ga areba, atarashii kuruma o katta mono o.",
+        "translation": "If only I had the money, I would have bought a new car."
+      },
+      {
+        "sentence": "友達がいれば、一緒に遊んだものを。",
+        "romanization": "Tomodachi ga ireba, issho ni asonda mono o.",
+        "translation": "If only I had a friend, I would have hung out together."
+      }
+    ]
+  }
+]

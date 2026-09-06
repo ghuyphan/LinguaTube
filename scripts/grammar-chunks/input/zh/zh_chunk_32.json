@@ -1,0 +1,251 @@
+[
+  {
+    "id": "zh_非_503",
+    "language": "zh",
+    "pattern": "非",
+    "title": "非 (not, un-)",
+    "shortExplanation": "not, un-",
+    "longExplanation": "not, un-. Pinyin: fēi",
+    "formation": "fēi",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "出现非正常情况时请不要紧张。",
+        "romanization": "chūxiàn fēizhèngcháng qíngkuàng shí qǐng bùyào jǐnzhāng。",
+        "translation": "Please do not be nervous when emergencies (lit. abnormal conditions) occur."
+      }
+    ]
+  },
+  {
+    "id": "zh_并非_504",
+    "language": "zh",
+    "pattern": "并非",
+    "title": "并非 (not)",
+    "shortExplanation": "not",
+    "longExplanation": "not. Pinyin: bìngfēi",
+    "formation": "bìngfēi",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "成功有时候并非想象中那么难。",
+        "romanization": "chénggōng yǒushíhou bìngfēi xiǎngxiàng zhōng nàme nán。",
+        "translation": "Success is sometimes not as difficult as it might seem."
+      }
+    ]
+  },
+  {
+    "id": "zh_以_505",
+    "language": "zh",
+    "pattern": "以",
+    "title": "以 ((see 4.14.2 “以”))",
+    "shortExplanation": "(see 4.14.2 “以”)",
+    "longExplanation": "(see 4.14.2 “以”). Pinyin: yǐ",
+    "formation": "yǐ",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "-",
+        "romanization": "-",
+        "translation": "-"
+      }
+    ]
+  },
+  {
+    "id": "zh_平常_506",
+    "language": "zh",
+    "pattern": "平常",
+    "title": "平常 (ordinary)",
+    "shortExplanation": "ordinary",
+    "longExplanation": "ordinary. Pinyin: píngcháng",
+    "formation": "píngcháng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "对小王来说，今天是一个不平常的日子。",
+        "romanization": "duì xiǎo wáng láishuō， jīntiān shì yī gè bùpíngcháng de rìzi。",
+        "translation": "For Xiao Wang, today is an extraordinary day."
+      }
+    ]
+  },
+  {
+    "id": "zh_平常_507",
+    "language": "zh",
+    "pattern": "平常",
+    "title": "平常 (usually)",
+    "shortExplanation": "usually",
+    "longExplanation": "usually. Pinyin: píngcháng",
+    "formation": "píngcháng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他平常总是来得很早，今天却迟到了。",
+        "romanization": "tā píngcháng zǒngshì lái dehěn zǎo， jīntiān què chí dàoliǎo。",
+        "translation": "He usually comes very early, but he is late today."
+      }
+    ]
+  },
+  {
+    "id": "zh_宁可_508",
+    "language": "zh",
+    "pattern": "宁可",
+    "title": "宁可 (would rather)",
+    "shortExplanation": "would rather",
+    "longExplanation": "would rather. Pinyin: nìngkě",
+    "formation": "nìngkě",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "作为母亲，她宁可自已累一点儿，也不想委屈了孩子。",
+        "romanization": "zuòwéi mǔqīn， tā nìngkě zì yǐ lèi yīdiǎnr， yě bùxiǎng wěiqu le háizi。",
+        "translation": "As a mother, she would rather be tired of herself and would not want to wrong her child."
+      }
+    ]
+  },
+  {
+    "id": "zh_极其_509",
+    "language": "zh",
+    "pattern": "极其",
+    "title": "极其 (extremely)",
+    "shortExplanation": "extremely",
+    "longExplanation": "extremely. Pinyin: jíqí",
+    "formation": "jíqí",
+    "level": "HSK 5",
+    "examples": []
+  },
+  {
+    "id": "zh_其余_511",
+    "language": "zh",
+    "pattern": "其余",
+    "title": "其余 (the rest)",
+    "shortExplanation": "the rest",
+    "longExplanation": "the rest. Pinyin: qíyú",
+    "formation": "qíyú",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "怎么只有你们两个人？其余的同学呢？",
+        "romanization": "zěnme zhǐyǒu nǐmen liǎng gèrén？ qíyú de tóngxué ne？",
+        "translation": "How come you two people? What about the rest of the classmates?"
+      }
+    ]
+  },
+  {
+    "id": "zh_由此可见_512",
+    "language": "zh",
+    "pattern": "(由此) 可见",
+    "title": "(由此) 可见 (This shows that)",
+    "shortExplanation": "This shows that",
+    "longExplanation": "This shows that. Pinyin: ( yóucǐ) kějiàn",
+    "formation": "( yóucǐ) kějiàn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "由此可见，成功是需要努力的。",
+        "romanization": "yóucǐkějiàn， chénggōng shì xūyào nǔlì de。",
+        "translation": "This shows that success requires hard work."
+      }
+    ]
+  },
+  {
+    "id": "zh_N般_513",
+    "language": "zh",
+    "pattern": "N 般",
+    "title": "N 般 (like N)",
+    "shortExplanation": "like N",
+    "longExplanation": "like N. Pinyin: N bān",
+    "formation": "N bān",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "她的脸上露出了阳光般的笑容。",
+        "romanization": "tā de liǎn shàng lùchū le yángguāng bān de xiàoróng。",
+        "translation": "Her face showed a sunny (lit. like sunlight) smile."
+      }
+    ]
+  },
+  {
+    "id": "zh_闻_514",
+    "language": "zh",
+    "pattern": "闻",
+    "title": "闻 (to smell)",
+    "shortExplanation": "to smell",
+    "longExplanation": "to smell. Pinyin: wén",
+    "formation": "wén",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他把壶盖儿打开，闻了闻，原来是酒。",
+        "romanization": "tā bǎ hú gàir dǎkāi， wén le wén， yuánlái shì jiǔ。",
+        "translation": "He opened the lid of the pot and smelled it. It turned out to be alcohol."
+      }
+    ]
+  },
+  {
+    "id": "zh_闻_515",
+    "language": "zh",
+    "pattern": "闻",
+    "title": "闻 (to hear)",
+    "shortExplanation": "to hear",
+    "longExplanation": "to hear. Pinyin: wén",
+    "formation": "wén",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "百闻不如一见。",
+        "romanization": "bǎiwénbùrúyījiàn。",
+        "translation": "Seeing is believing. (Lit. hearing about something 100 times is not as good as seeing it once.)"
+      }
+    ]
+  },
+  {
+    "id": "zh_趁_516",
+    "language": "zh",
+    "pattern": "趁",
+    "title": "趁 (while (an opportunity exists))",
+    "shortExplanation": "while (an opportunity exists)",
+    "longExplanation": "while (an opportunity exists). Pinyin: chèn",
+    "formation": "chèn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "趁电影还没开始，我去买两瓶矿泉水。",
+        "romanization": "chèn diànyǐng hái méi kāishǐ， wǒ qù mǎi liǎng píng kuàngquánshuǐ。",
+        "translation": "The movie hasn’t started, I’ll make use of the opportunity and get two bottles of mineral water."
+      }
+    ]
+  },
+  {
+    "id": "zh_V不起_517",
+    "language": "zh",
+    "pattern": "V 不起",
+    "title": "V 不起 (cannot)",
+    "shortExplanation": "cannot",
+    "longExplanation": "cannot. Pinyin: V bù qǐ",
+    "formation": "V bù qǐ",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他家里很穷，买不起灯，一到晚上就不能读书。",
+        "romanization": "tā jiālǐ hěn qióng， mǎibuqǐ dēng， yī dào wǎnshang jiù bùnéng dúshū。",
+        "translation": "His family is very poor and can't afford a lamp, [so he] can’t read at night."
+      }
+    ]
+  },
+  {
+    "id": "zh_V得起_518",
+    "language": "zh",
+    "pattern": "V 得起",
+    "title": "V 得起 (can stand/tolerate)",
+    "shortExplanation": "can stand/tolerate",
+    "longExplanation": "can stand/tolerate. Pinyin: V dé qǐ",
+    "formation": "V dé qǐ",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "经得起时间考验的朋友才算是真正的朋友。",
+        "romanization": "jīngdeqǐ shíjiān kǎoyàn de péngyou cái suànshì zhēnzhèng de péngyou。",
+        "translation": "A friend who can stand the test of time is a true friend."
+      }
+    ]
+  }
+]

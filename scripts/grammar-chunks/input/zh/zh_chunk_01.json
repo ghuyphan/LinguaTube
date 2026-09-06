@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_什么_1",
+    "language": "zh",
+    "pattern": "什么",
+    "title": "什么 (what)",
+    "shortExplanation": "what",
+    "longExplanation": "what. Pinyin: shénme",
+    "formation": "shénme",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "这是什么?",
+        "romanization": "zhè shì shénme?",
+        "translation": "What is this?"
+      }
+    ]
+  },
+  {
+    "id": "zh_什么N_2",
+    "language": "zh",
+    "pattern": "什么 N",
+    "title": "什么 N (what kind of N)",
+    "shortExplanation": "what kind of N",
+    "longExplanation": "what kind of N. Pinyin: shénme N",
+    "formation": "shénme N",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "那是什么书?",
+        "romanization": "nàshi shénme shū?",
+        "translation": "What book is that?"
+      }
+    ]
+  },
+  {
+    "id": "zh_不是_3",
+    "language": "zh",
+    "pattern": "不是",
+    "title": "不是 (not to be)",
+    "shortExplanation": "not to be",
+    "longExplanation": "not to be. Pinyin: bùshì",
+    "formation": "bùshì",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我不是美国人。",
+        "romanization": "wǒ bùshì Měiguórén。",
+        "translation": "I am not an American."
+      }
+    ]
+  },
+  {
+    "id": "zh_是_4",
+    "language": "zh",
+    "pattern": "是",
+    "title": "是 (to be)",
+    "shortExplanation": "to be",
+    "longExplanation": "to be. Pinyin: shì",
+    "formation": "shì",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "她是老师。",
+        "romanization": "tā shì lǎoshī。",
+        "translation": "She is a teacher."
+      }
+    ]
+  },
+  {
+    "id": "zh_吗_5",
+    "language": "zh",
+    "pattern": "吗?",
+    "title": "吗? (right?)",
+    "shortExplanation": "right?",
+    "longExplanation": "right?. Pinyin: ma?",
+    "formation": "ma?",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "你是老师吗?",
+        "romanization": "nǐ shì lǎoshī ma?",
+        "translation": "You’re a teacher, right?"
+      }
+    ]
+  },
+  {
+    "id": "zh_谁_6",
+    "language": "zh",
+    "pattern": "谁",
+    "title": "谁 (who)",
+    "shortExplanation": "who",
+    "longExplanation": "who. Pinyin: shéi",
+    "formation": "shéi",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "她是谁?",
+        "romanization": "tā shì shéi?",
+        "translation": "Who is she?"
+      }
+    ]
+  },
+  {
+    "id": "zh_哪MN_7",
+    "language": "zh",
+    "pattern": "哪 M N",
+    "title": "哪 M N (which N)",
+    "shortExplanation": "which N",
+    "longExplanation": "which N. Pinyin: nǎ M N",
+    "formation": "nǎ M N",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "哪个人?",
+        "romanization": "nǎ gèrén?",
+        "translation": "Which person?"
+      }
+    ]
+  },
+  {
+    "id": "zh_的_8",
+    "language": "zh",
+    "pattern": "(的)",
+    "title": "(的) (’s)",
+    "shortExplanation": "’s",
+    "longExplanation": "’s. Pinyin: ( de)",
+    "formation": "( de)",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "她是我 (的) 老师。",
+        "romanization": "tā shì wǒ ( de) lǎoshī。",
+        "translation": "She is my teacher."
+      }
+    ]
+  },
+  {
+    "id": "zh_N呢_9",
+    "language": "zh",
+    "pattern": "N 呢?",
+    "title": "N 呢? (what about N?)",
+    "shortExplanation": "what about N?",
+    "longExplanation": "what about N?. Pinyin: N ne?",
+    "formation": "N ne?",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我是中国人，你呢?",
+        "romanization": "wǒ shì Zhōngguórén， nǐ ne?",
+        "translation": "I am Chinese, what about you?"
+      }
+    ]
+  },
+  {
+    "id": "zh_几MN_10",
+    "language": "zh",
+    "pattern": "几 M N",
+    "title": "几 M N (how many N)",
+    "shortExplanation": "how many N",
+    "longExplanation": "how many N. Pinyin: jǐ M N",
+    "formation": "jǐ M N",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "你有几个汉语老师?",
+        "romanization": "nǐ yǒu jǐge Hànyǔ lǎoshī?",
+        "translation": "How many teachers do you have?"
+      }
+    ]
+  },
+  {
+    "id": "zh_一九十九_11",
+    "language": "zh",
+    "pattern": "一～九十九",
+    "title": "一～九十九 (1 ~ 99)",
+    "shortExplanation": "1 ~ 99",
+    "longExplanation": "1 ~ 99. Pinyin: yī～ jiǔ shíjiǔ",
+    "formation": "yī～ jiǔ shíjiǔ",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "九十一",
+        "romanization": "jiǔ shí·yī",
+        "translation": "1 - 99"
+      }
+    ]
+  },
+  {
+    "id": "zh_AGE了_12",
+    "language": "zh",
+    "pattern": "AGE 了",
+    "title": "AGE 了 (became AGE)",
+    "shortExplanation": "became AGE",
+    "longExplanation": "became AGE. Pinyin: AGE le",
+    "formation": "AGE le",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我40岁了。",
+        "romanization": "wǒ40 suì le。",
+        "translation": "I’m 40 years old."
+      }
+    ]
+  },
+  {
+    "id": "zh_多大_13",
+    "language": "zh",
+    "pattern": "多大",
+    "title": "多大 (how old)",
+    "shortExplanation": "how old",
+    "longExplanation": "how old. Pinyin: duōdà",
+    "formation": "duōdà",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "你女儿多大了？",
+        "romanization": "nǐ nǚ'ér duōdà le？",
+        "translation": "How old is your daughter?"
+      }
+    ]
+  },
+  {
+    "id": "zh_会V_14",
+    "language": "zh",
+    "pattern": "会 V",
+    "title": "会 V (know how to V)",
+    "shortExplanation": "know how to V",
+    "longExplanation": "know how to V. Pinyin: huì V",
+    "formation": "huì V",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我会写。",
+        "romanization": "wǒ huì xiě。",
+        "translation": "I know how to write."
+      }
+    ]
+  },
+  {
+    "id": "zh_很_15",
+    "language": "zh",
+    "pattern": "很",
+    "title": "很 (very)",
+    "shortExplanation": "very",
+    "longExplanation": "very. Pinyin: hěn",
+    "formation": "hěn",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我很好",
+        "romanization": "wǒ hěn hǎo",
+        "translation": "I am good."
+      }
+    ]
+  }
+]

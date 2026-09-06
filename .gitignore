@@ -36,6 +36,7 @@ yarn-error.log*
 
 # Cache
 .npm/
+/server/transcripts_cache/
 
 # Lighthouse reports
 lighthouse*.json

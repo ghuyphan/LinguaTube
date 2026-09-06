@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_どこへも_105",
+    "language": "ja",
+    "pattern": "どこへも",
+    "title": "どこへも Verb ないです (doko e mo + Verb + nai desu)",
+    "shortExplanation": "Express that an action doesn't take place anywhere; 'nowhere', 'not anywhere'.",
+    "longExplanation": "The どこへも + Verb ないです grammar point is used to express a situation where an action doesn't occur or isn't applicable anywhere. It emphasizes a strong sense of not performing the action anywhere. Keep in mind that only negative verbs can follow 'どこへも' in this construction.",
+    "formation": "どこへも + Verb in negative form (ないです)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今週末どこへも行かないです。",
+        "romanization": "Konshuumatsu doko e mo ikanai desu.",
+        "translation": "I'm not going anywhere this weekend."
+      },
+      {
+        "sentence": "彼女はどこへも買い物に行きませんでした。",
+        "romanization": "Kanojo wa doko e mo kaimono ni ikimasen deshita.",
+        "translation": "She didn't go shopping anywhere."
+      },
+      {
+        "sentence": "スーパーはどこへも売らないです。",
+        "romanization": "Suupaa wa doko e mo uranai desu.",
+        "translation": "It's not sold at any supermarket."
+      },
+      {
+        "sentence": "私はどこへも行く予定がないです。",
+        "romanization": "Watashi wa doko e mo iku yotei ga nai desu.",
+        "translation": "I have no plans to go anywhere."
+      }
+    ]
+  },
+  {
+    "id": "ja_どこへも_106",
+    "language": "ja",
+    "pattern": "どこへも",
+    "title": "どこへも Verb ません (doko e mo + Verb + masen)",
+    "shortExplanation": "Nowhere; Not to any place",
+    "longExplanation": "The grammar point どこへも is used to express the idea of 'nowhere' or 'not to any place'. It is combined with the negative form of a verb to indicate that the action does not happen to any place or destination.",
+    "formation": "どこへも + Verb-negative",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今日はどこへも行きません。",
+        "romanization": "Kyou wa doko e mo ikimasen.",
+        "translation": "I won't go anywhere today."
+      },
+      {
+        "sentence": "彼はどこへも走りませんでした。",
+        "romanization": "Kare wa doko e mo hashirimasen deshita.",
+        "translation": "He didn't run anywhere."
+      },
+      {
+        "sentence": "どこへも買い物に行きませんでした。",
+        "romanization": "Doko e mo kaimono ni ikimasen deshita.",
+        "translation": "I didn't go shopping anywhere."
+      },
+      {
+        "sentence": "彼女はどこへも連れて行かせません。",
+        "romanization": "Kanojo wa doko e mo tsurete ikasemasen.",
+        "translation": "She won't take me anywhere."
+      }
+    ]
+  },
+  {
+    "id": "ja_どこも_107",
+    "language": "ja",
+    "pattern": "どこも",
+    "title": "どこも Verb ないです (dokomo + Verb + naidesu)",
+    "shortExplanation": "Express that something cannot be found anywhere or in any place; 'nowhere', 'in no place'.",
+    "longExplanation": "The どこも～ないです grammar point is used to express that something cannot be found anywhere or in any place. It can be translated as 'nowhere' or 'in no place' in English. It is used in combination with a negative verb (ないです) to indicate the absence of something.",
+    "formation": "どこも + Verb-negative",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どこもうちわがないです。",
+        "romanization": "Doko mo uchiwa ga nai desu.",
+        "translation": "I can't find fans anywhere."
+      },
+      {
+        "sentence": "この町ではどこも美味しいラーメンがないです。",
+        "romanization": "Kono machi de wa doko mo oishii raamen ga nai desu.",
+        "translation": "There are no delicious ramen shops anywhere in this town."
+      },
+      {
+        "sentence": "どこも駐車場がないです。",
+        "romanization": "Doko mo chuushajou ga nai desu.",
+        "translation": "There is no parking anywhere."
+      },
+      {
+        "sentence": "どこも席がないです。",
+        "romanization": "Doko mo seki ga nai desu.",
+        "translation": "There are no seats available anywhere."
+      }
+    ]
+  },
+  {
+    "id": "ja_どこも_108",
+    "language": "ja",
+    "pattern": "どこも",
+    "title": "どこも Verb ません (dokomo + Verb + masen)",
+    "shortExplanation": "Express that 'nowhere' meets the verb action; 'nowhere does/can'.",
+    "longExplanation": "The どこも + Verb ません grammar point is used to express that nowhere does or can fulfill the verb action. It is a negative statement and can be translated as 'nowhere (+ verb)' in English. Note that the first example below uses an adjective rather than a verb, which still conveys 'nowhere is ...'.",
+    "formation": "どこも + Verb-ます form + ません",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どこも静かじゃありません。",
+        "romanization": "Doko mo shizuka ja arimasen.",
+        "translation": "Nowhere is quiet."
+      },
+      {
+        "sentence": "どこもその本を売っていません。",
+        "romanization": "Doko mo sono hon wo utte imasen.",
+        "translation": "Nowhere sells that book."
+      },
+      {
+        "sentence": "この地域では、どこもインターネットに接続できません。",
+        "romanization": "Kono chiiki de wa, doko mo intaanetto ni setsuzoku dekimasen.",
+        "translation": "In this area, nowhere can connect to the internet."
+      },
+      {
+        "sentence": "どこも彼を知りません。",
+        "romanization": "Doko mo kare wo shirimasen.",
+        "translation": "No place knows him."
+      }
+    ]
+  },
+  {
+    "id": "ja_どちら_109",
+    "language": "ja",
+    "pattern": "どちら～",
+    "title": "どちら～ (dochira～)",
+    "shortExplanation": "Used to ask about two choices or options.",
+    "longExplanation": "The どちら grammar point is used to ask about two choices or options. It translates to 'which of the two' or simply 'which' in English. It is commonly used with question words like どちらが or どちらを and can be combined with verbs, adjectives, and nouns to ask about preferences or to make comparisons.",
+    "formation": "どちら + が/を + verb, どちら + が/を + adjective, どちら + が/を + noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "この二つのリンゴ、どちらが美味しいですか？",
+        "romanization": "Kono futatsu no ringo, dochira ga oishii desu ka?",
+        "translation": "Which of these two apples is delicious?"
+      },
+      {
+        "sentence": "どちらのドレスを着たいですか？",
+        "romanization": "Dochira no doresu wo kitai desu ka?",
+        "translation": "Which dress would you like to wear?"
+      },
+      {
+        "sentence": "この二つの町、どちらに行きたいですか？",
+        "romanization": "Kono futatsu no machi, dochira ni ikitai desu ka?",
+        "translation": "Which of these two towns do you want to go to?"
+      },
+      {
+        "sentence": "どちらの映画が面白いと思いますか？",
+        "romanization": "Dochira no eiga ga omoshiroi to omoimasu ka?",
+        "translation": "Which movie do you think is interesting?"
+      }
+    ]
+  },
+  {
+    "id": "ja_どなた_110",
+    "language": "ja",
+    "pattern": "どなた～",
+    "title": "どなた～ (donata～)",
+    "shortExplanation": "A polite way to ask 'who', used for asking about someone's identity or when seeking information about an unknown person.",
+    "longExplanation": "The word どなた is a polite version of the question word だれ (who). It is used when asking about someone's identity or when seeking information about an unknown person in a polite or formal context. It can be used in questions and sometimes with も to express 'no matter who'.",
+    "formation": "どなた",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "すみません、どなたが山田さんですか？",
+        "romanization": "Sumimasen, donata ga Yamada-san desu ka?",
+        "translation": "Excuse me, who is Mr. Yamada?"
+      },
+      {
+        "sentence": "どなたも知っている有名な俳優です。",
+        "romanization": "Donata mo shitte iru yuumei na haiyuu desu.",
+        "translation": "He is a famous actor whom everyone knows."
+      },
+      {
+        "sentence": "明日のパーティーにはどなたが来ますか？",
+        "romanization": "Ashita no paatii ni wa donata ga kimasu ka?",
+        "translation": "Who is coming to the party tomorrow?"
+      },
+      {
+        "sentence": "どなたか手伝っていただけますか？",
+        "romanization": "Donata ka tetsudatte itadakemasu ka?",
+        "translation": "Could someone please help me?"
+      }
+    ]
+  },
+  {
+    "id": "ja_どの_111",
+    "language": "ja",
+    "pattern": "どの",
+    "title": "どの Noun (dono Noun)",
+    "shortExplanation": "Expresses 'which'; used to ask about specific items within a group.",
+    "longExplanation": "The どの Noun grammar point is used to ask about specific items or objects within a group. It is the combination of the question word ど (which) and the particle の to connect to a noun. In English, it can be translated as 'which' depending on the context.",
+    "formation": "どの + Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どの本が一番面白いですか。",
+        "romanization": "Dono hon ga ichiban omoshiroi desu ka?",
+        "translation": "Which book is the most interesting?"
+      },
+      {
+        "sentence": "どの服を着たいですか。",
+        "romanization": "Dono fuku wo kitai desu ka?",
+        "translation": "Which clothes do you want to wear?"
+      },
+      {
+        "sentence": "どの色が好きですか。",
+        "romanization": "Dono iro ga suki desu ka?",
+        "translation": "Which color do you like?"
+      },
+      {
+        "sentence": "どのレストランに行きたいですか。",
+        "romanization": "Dono resutoran ni ikitai desu ka?",
+        "translation": "Which restaurant do you want to go to?"
+      }
+    ]
+  },
+  {
+    "id": "ja_どれでも_112",
+    "language": "ja",
+    "pattern": "どれでも～",
+    "title": "どれでも～ (dore demo～)",
+    "shortExplanation": "Indicates 'any' or 'whichever' when referring to multiple items.",
+    "longExplanation": "The どれでも grammar point is used to express that any option or element among multiple choices is acceptable. It can be translated as 'any' or 'whichever' in English. It is often used in questions or suggestions and is commonly seen with でも, but it can also be used with だれでも, いつでも, どこでも, etc.",
+    "formation": "どれ + でも",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どれでもいいですか？",
+        "romanization": "Dore demo ii desu ka?",
+        "translation": "Is any choice okay?"
+      },
+      {
+        "sentence": "どれでも選んでください。",
+        "romanization": "Dore demo erande kudasai.",
+        "translation": "Please choose whichever you like."
+      },
+      {
+        "sentence": "どれでもおいしいです。",
+        "romanization": "Dore demo oishii desu.",
+        "translation": "All of them are delicious."
+      },
+      {
+        "sentence": "この中でどれでも好きなものを持って行ってください。",
+        "romanization": "Kono naka de dore demo suki na mono wo motte itte kudasai.",
+        "translation": "Please take whichever you like from these."
+      }
+    ]
+  },
+  {
+    "id": "ja_どんな_113",
+    "language": "ja",
+    "pattern": "どんな",
+    "title": "どんな Noun (donna)",
+    "shortExplanation": "Used to ask or describe 'what kind' or 'what type' of something.",
+    "longExplanation": "The どんな (donna) grammar point is used to ask or describe 'what kind' or 'what type' of something. It is usually followed by a noun. It is similar to the English expression 'What kind of' or 'What type of' when asking about a specific characteristic or attribute.",
+    "formation": "どんな + Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どんな音楽が好きですか？",
+        "romanization": "Donna ongaku ga suki desu ka?",
+        "translation": "What kind of music do you like?"
+      },
+      {
+        "sentence": "彼女はどんな映画が好きだと思う？",
+        "romanization": "Kanojo wa donna eiga ga suki da to omou?",
+        "translation": "What kind of movies do you think she likes?"
+      },
+      {
+        "sentence": "どんな本が一番面白いですか？",
+        "romanization": "Donna hon ga ichiban omoshiroi desu ka?",
+        "translation": "What kind of books are the most interesting?"
+      },
+      {
+        "sentence": "どんな料理が得意ですか？",
+        "romanization": "Donna ryouri ga tokui desu ka?",
+        "translation": "What kind of dishes are you good at making?"
+      }
+    ]
+  },
+  {
+    "id": "ja_なに_114",
+    "language": "ja",
+    "pattern": "なに～",
+    "title": "なに～ (nani~)",
+    "shortExplanation": "Asking about 'what' or 'which' in Japanese",
+    "longExplanation": "The なに～ grammar point is used to ask questions about 'what' or 'which' in Japanese. It can be combined with various parts of speech to create different questions. The formation differs depending on whether it's used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb + なに, い-Adjective + なに, な-Adjective + なに, Noun + なに",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "これはなにですか。",
+        "romanization": "Kore wa nani desu ka?",
+        "translation": "What is this?"
+      },
+      {
+        "sentence": "あの人はなにをしているのですか？",
+        "romanization": "Ano hito wa nani wo shite iru no desu ka?",
+        "translation": "What is that person doing?"
+      },
+      {
+        "sentence": "なにが好きですか？",
+        "romanization": "Nani ga suki desu ka?",
+        "translation": "What do you like?"
+      },
+      {
+        "sentence": "今日の天気はなにですか？",
+        "romanization": "Kyou no tenki wa nani desu ka?",
+        "translation": "What is today's weather?"
+      }
+    ]
+  },
+  {
+    "id": "ja_なにか_115",
+    "language": "ja",
+    "pattern": "なにか～",
+    "title": "なにか～ (nanika～)",
+    "shortExplanation": "Indicates 'something' or 'some kind of'.",
+    "longExplanation": "The なにか grammar point is used to express the idea of 'something' or 'some kind of' in Japanese. It is often used when the speaker is unsure or not specific about the details of the noun being referred to. なにか is used before the noun it modifies.",
+    "formation": "なにか + Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "なにか飲み物を持ってきてください。",
+        "romanization": "Nanika nomimono wo motte kite kudasai.",
+        "translation": "Please bring some kind of drink."
+      },
+      {
+        "sentence": "なにか質問があれば、遠慮なく聞いてください。",
+        "romanization": "Nanika shitsumon ga areba, enryo naku kiite kudasai.",
+        "translation": "If you have any questions, please feel free to ask."
+      },
+      {
+        "sentence": "彼女はなにかプレゼントを持っている。",
+        "romanization": "Kanojo wa nanika purezento wo motte iru.",
+        "translation": "She has some kind of present."
+      },
+      {
+        "sentence": "なにか助けが必要なら、言ってください。",
+        "romanization": "Nanika tasuke ga hitsuyou nara, itte kudasai.",
+        "translation": "If you need any help, please let me know."
+      }
+    ]
+  },
+  {
+    "id": "ja_なにもないです_116",
+    "language": "ja",
+    "pattern": "なにも～ないです",
+    "title": "なにも～ないです (nani mo~nai desu)",
+    "shortExplanation": "Used to express 'not any' or 'nothing' in a negative sentence.",
+    "longExplanation": "The なにも～ないです grammar point is used in negative sentences to express the idea of 'not any', 'not at all', 'nothing', or 'none'. It is commonly used with verbs in the negative form.",
+    "formation": "なにも + Verb-negative",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼はなにも言わなかったです。",
+        "romanization": "Kare wa nani mo iwanakatta desu.",
+        "translation": "He didn't say anything."
+      },
+      {
+        "sentence": "私はなにも食べないです。",
+        "romanization": "Watashi wa nani mo tabenai desu.",
+        "translation": "I don't eat anything."
+      },
+      {
+        "sentence": "彼女はなにも持っていないです。",
+        "romanization": "Kanojo wa nani mo motte inai desu.",
+        "translation": "She doesn't have anything."
+      },
+      {
+        "sentence": "この箱にはなにも入っていないです。",
+        "romanization": "Kono hako ni wa nani mo haitte inai desu.",
+        "translation": "There is nothing in this box."
+      }
+    ]
+  },
+  {
+    "id": "ja_なにもません_117",
+    "language": "ja",
+    "pattern": "なにも～ません",
+    "title": "なにも～ません (nanimo~masen)",
+    "shortExplanation": "Used to express 'not anything', 'nothing'.",
+    "longExplanation": "The grammar point なにも～ません is used to express the idea of 'not anything' or 'nothing' in negative sentences. It is placed before the verb in its negative form (～ません).",
+    "formation": "なにも + Verb-ます form + ません",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "昨日はなにも食べませんでした。",
+        "romanization": "Kinou wa nanimo tabemasen deshita.",
+        "translation": "I didn't eat anything yesterday."
+      },
+      {
+        "sentence": "彼はなにも話しません。",
+        "romanization": "Kare wa nanimo hanashimasen.",
+        "translation": "He doesn't say anything."
+      },
+      {
+        "sentence": "この部屋ではなにも見えません。",
+        "romanization": "Kono heya de wa nanimo miemasen.",
+        "translation": "I cannot see anything in this room."
+      },
+      {
+        "sentence": "彼女はなにも買いませんでした。",
+        "romanization": "Kanojo wa nanimo kaimasen deshita.",
+        "translation": "She didn't buy anything."
+      }
+    ]
+  },
+  {
+    "id": "ja_なん_118",
+    "language": "ja",
+    "pattern": "なん～",
+    "title": "なん～ (nan~)",
+    "shortExplanation": "Used to form interrogative questions and emphasize the question word for 'what', 'how'.",
+    "longExplanation": "The なん～ grammar point is used to form interrogative questions and emphasize the question word for 'what' or 'how'. It is an abbreviation of '何' meaning 'what'. Its usage can vary depending on whether it is used with a counter, verb, or adjective.",
+    "formation": "なん + Counter / なん + Verb / なん + Adjective",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "あなたはなん歳ですか？",
+        "romanization": "Anata wa nan-sai desu ka?",
+        "translation": "How old are you?"
+      },
+      {
+        "sentence": "これはなんですか？",
+        "romanization": "Kore wa nan desu ka?",
+        "translation": "What is this?"
+      },
+      {
+        "sentence": "彼はなんで来ましたか？",
+        "romanization": "Kare wa nan de kimashita ka?",
+        "translation": "Why did he come?"
+      },
+      {
+        "sentence": "あのレストランはなんと言う名前ですか？",
+        "romanization": "Ano resutoran wa nan to iu namae desu ka?",
+        "translation": "What is the name of that restaurant?"
+      }
+    ]
+  },
+  {
+    "id": "ja_なんで_119",
+    "language": "ja",
+    "pattern": "なんで～",
+    "title": "なんで～ (nande～)",
+    "shortExplanation": "Asking the reason or cause; 'why', 'how come'.",
+    "longExplanation": "The なんで grammar point is used to ask the reason or cause behind something. It can be translated as 'why' or 'how come' in English. It is a casual way of asking for an explanation, and it can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "なんで + [phrase or sentence]",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "なんで遅れたの？",
+        "romanization": "Nande okureta no?",
+        "translation": "Why were you late?"
+      },
+      {
+        "sentence": "なんでこの部屋はこんなに汚いの？",
+        "romanization": "Nande kono heya wa konna ni kitanai no?",
+        "translation": "Why is this room so dirty?"
+      },
+      {
+        "sentence": "なんで彼女は怒っているの？",
+        "romanization": "Nande kanojo wa okotte iru no?",
+        "translation": "Why is she angry?"
+      },
+      {
+        "sentence": "なんで今日は休みなの？",
+        "romanization": "Nande kyou wa yasumi na no?",
+        "translation": "Why is today a holiday?"
+      }
+    ]
+  }
+]

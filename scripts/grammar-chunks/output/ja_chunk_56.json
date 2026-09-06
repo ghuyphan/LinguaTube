@@ -1,0 +1,250 @@
+{
+  "vi": {
+    "ja_足りない_242": {
+      "title": "～足りない (～tarinai)",
+      "shortExplanation": "Diễn tả sự thiếu hụt, không đầy đủ về số lượng, mức độ hay năng lực; 'không đủ', 'thiếu...'.",
+      "longExplanation": "Mẫu '～足りない' là thể phủ định của động từ '足りる' (đủ, đáp ứng đủ), dùng để biểu thị số lượng, thời gian, khả năng, chi tiết hoặc yếu tố nào đó chưa đạt tới mức cần thiết, còn thiếu sót hoặc chưa thỏa đáng ('không đủ...', 'thiếu...'). Cấu trúc này thường đi kèm trợ từ 'が' đứng trước hoặc đứng độc lập làm vị ngữ sau chủ ngữ/tân ngữ.",
+      "formation": "Danh từ + (が) 足りない | Động từ thể thông thường + ほど / だけ + (が) 足りない",
+      "examples": [
+        {
+          "translation": "Khả năng tiếng Nhật của tôi vẫn còn non kém, chưa đủ chút nào."
+        },
+        {
+          "translation": "Vì không còn đủ thời gian nữa nên chúng ta phải đi ngay bây giờ thôi."
+        },
+        {
+          "translation": "Trong lời giải thích của anh ấy vẫn còn thiếu các thông tin chi tiết."
+        },
+        {
+          "translation": "Không có đủ nguyên liệu để nấu ăn."
+        }
+      ]
+    },
+    "ja_足る_243": {
+      "title": "～足る + Danh từ (〜taru Noun)",
+      "shortExplanation": "Bổ nghĩa cho danh từ phía sau để diễn tả sự vật, sự việc hoàn toàn xứng đáng hoặc có đủ phẩm chất/giá trị để làm gì; 'đáng để...', 'xứng đáng để...'.",
+      "longExplanation": "Mẫu ngữ pháp cổ mang tính văn viết trang trọng '～に足る + Danh từ' (thường gặp dưới dạng 'Danh từ / Động từ thể từ điển + に足る + Danh từ') biểu thị rằng một đối tượng có đầy đủ tư cách, phẩm chất hoặc giá trị tương xứng để làm điều gì đó hoặc nhận được sự đánh giá đó ('xứng đáng để...', 'đủ giá trị để...'). Cách dùng này mang sắc thái trang trọng, khác với động từ khẩu ngữ thông thường '足りる'. Cụm từ thường gặp gồm '信頼に足る' (đáng tin cậy), '読むに足る' (đáng đọc), '検討に足る' (đáng để xem xét).",
+      "formation": "Danh từ / Động từ thể từ điển + に足る + Danh từ",
+      "examples": [
+        {
+          "translation": "Anh ấy là một nhân vật hoàn toàn xứng đáng để tin cậy."
+        },
+        {
+          "translation": "Cuốn tiểu thuyết này có giá trị rất đáng để đọc."
+        },
+        {
+          "translation": "Đã thu thập đủ lượng dữ liệu đáng để chúng ta tiến hành xem xét, nghiên cứu."
+        },
+        {
+          "translation": "Tôi nghĩ rằng lời giải thích của anh ấy là điều hoàn toàn đáng để tin tưởng."
+        }
+      ]
+    },
+    "ja_限りだ_244": {
+      "title": "～限りだ (〜kagiri da)",
+      "shortExplanation": "Biểu thị cảm xúc, tâm trạng hoặc sự xúc động lên đến tột cùng của người nói; 'vô cùng...', 'hết sức...', 'thật là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～限りだ' (N1) được dùng để diễn tả cảm xúc, tâm trạng chủ quan của người nói đạt đến mức độ cao nhất, tột cùng ('vô cùng...', 'hết sức...', 'không gì bằng'). Cấu trúc này chủ yếu kết hợp với các tính từ hoặc danh từ chỉ cảm xúc, tâm lý (như 嬉しい, 悲しい, 羨ましい, 幸せ, 驚き...) để nhấn mạnh mức độ mãnh liệt của cảm xúc trước một sự việc, hoàn cảnh cụ thể.",
+      "formation": "Tính từ đuôi い + 限りだ | Tính từ đuôi な (+ な / である) + 限りだ | Danh từ + の + 限りだ (hoặc Động từ thể た chỉ cảm xúc + 限りだ)",
+      "examples": [
+        {
+          "translation": "Cô ấy đột ngột nghỉ việc khiến tôi vô cùng kinh ngạc."
+        },
+        {
+          "translation": "Con trai tôi đã thành công rồi. Tôi cảm thấy vô cùng vui mừng."
+        },
+        {
+          "translation": "Được chiêm ngưỡng những bông hoa tuyệt đẹp thế này thật là hạnh phúc khôn xiết."
+        },
+        {
+          "translation": "Đã thi đỗ kỳ thi rồi, tôi cảm thấy nhẹ nhõm vô cùng."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_足りない_242": {
+      "title": "～足りない (～tarinai)",
+      "shortExplanation": "表示数量、时间、能力或程度等不足、不够；“不够……”、“缺乏……”、“不足”。",
+      "longExplanation": "句型“～足りない”是动词“足りる”（足够）的否定形式，用于表示某种事物在数量、时间、能力、详细程度等方面未达到令人满意或必要的标准，处于欠缺、不够充分的状态（“不足”、“不够”、“欠缺”）。常与格助词“が”搭配使用，或直接作谓语。",
+      "formation": "名词 ＋ (が) 足りない | 动词普通形 ＋ ほど / だけ ＋ (が) 足りない",
+      "examples": [
+        {
+          "translation": "我的日语能力还远远不够。"
+        },
+        {
+          "translation": "因为时间不够了，现在必须马上出发。"
+        },
+        {
+          "translation": "他的说明里缺乏具体细节。"
+        },
+        {
+          "translation": "做饭用的食材不够了。"
+        }
+      ]
+    },
+    "ja_足る_243": {
+      "title": "～足る + 名词 (〜taru Noun)",
+      "shortExplanation": "修饰后项名词，表示具有充分的价值或资格；“值得……的”、“足以……的”。",
+      "longExplanation": "文语及书面语句型“～に足る ＋ 名词”接在名词或动词字典形后，用于连体修饰后续的名词，表示某事物具备充分的价值、理由、能力或资格，完全配得上某种评价或足以担当某种行为（“值得……的”、“足以……的”）。与口语动词“足りる”不同，它属于庄重文雅的书面表达，常见搭配有“信頼に足る人物”（值得信赖的人物）、“読むに足る価値”（值得一读的价值）等。",
+      "formation": "名词 / 动词字典形 ＋ に足る ＋ 名词",
+      "examples": [
+        {
+          "translation": "他是一个值得信赖的人物。"
+        },
+        {
+          "translation": "这部小说具备值得一读的价值。"
+        },
+        {
+          "translation": "已经收集到了足以供我们研讨审查的充分数据。"
+        },
+        {
+          "translation": "我认为他的解释是值得令人信服的。"
+        }
+      ]
+    },
+    "ja_限りだ_244": {
+      "title": "～限りだ (〜kagiri da)",
+      "shortExplanation": "表示说话人的感情、心境达到了极点；“极其……”、“无比……”、“非常……”。",
+      "longExplanation": "句型“～限りだ”（N1）用于表达说话人主观的情感或心理感受达到了最高限度或极点（“极其……”、“无比……”、“……之极”）。常与表示喜怒哀乐、羡慕、安心等感情心理的词汇（如“嬉しい”、“悲しい”、“寂しい”、“羨ましい”、“幸せ”、“驚き”等）搭配使用，强调面对某种事态时内心所产生的极其强烈的情感波动。",
+      "formation": "い形容词 ＋ 限りだ | な形容词 ＋ な / である ＋ 限りだ | 名词 ＋ の ＋ 限りだ（亦可接表示情感的 动词た形 ＋ 限りだ）",
+      "examples": [
+        {
+          "translation": "她突然辞职了，我感到无比震惊。"
+        },
+        {
+          "translation": "儿子成功了，我感到高兴之极。"
+        },
+        {
+          "translation": "能够看到如此美丽娇艳的花朵，真感到无比幸福。"
+        },
+        {
+          "translation": "顺利通过了考试，感到心里一块石头落了地，极其欣慰。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_足りない_242": {
+      "title": "～足りない (～tarinai)",
+      "shortExplanation": "수량, 시간, 능력 등이 기준에 미치지 못하거나 부족함을 나타내며, '~이 모자라다', '~이 부족하다'라는 뜻입니다.",
+      "longExplanation": "'～足りない'는 동사 '足りる(충분하다, 족하다)'의 부정형으로, 수량이나 시간, 세부 내용, 능력 등이 필요한 기준에 미치지 못하고 결핍되어 있음을 나타내는 표현입니다('부족하다', '모자라다'). 명사 뒤에 주격 조사 'が'와 함께 쓰이거나 서술어로 직접 활용됩니다.",
+      "formation": "명사 ＋ (가) 足りない | 동사 보통형 ＋ ほど / だけ ＋ (가) 足りない",
+      "examples": [
+        {
+          "translation": "제 일본어 실력은 아직 한참 부족합니다."
+        },
+        {
+          "translation": "시간이 부족하니까 지금 당장 가야 해."
+        },
+        {
+          "translation": "그의 설명에는 세부적인 내용이 부족하다."
+        },
+        {
+          "translation": "요리할 식재료가 부족하다."
+        }
+      ]
+    },
+    "ja_足る_243": {
+      "title": "～足る + 명사 (〜taru Noun)",
+      "shortExplanation": "후속 명사를 수식하여 그럴 만한 가치나 자격이 충분함을 나타내며, '~할 만한', '~하기에 충분한'이라는 뜻입니다.",
+      "longExplanation": "'～に足る + 명사'는 격조 높은 문어체 표현으로, 명사나 동사 기본형(사전형) 뒤에 결합하여 어떤 대상이 충분한 가치, 자격, 이유를 지니고 있어 특정 행위나 평가를 받기에 마땅함을 나타냅니다('~할 만한', '~하기에 족한'). 일상 회화에서 쓰이는 동사 '足りる'와 달리 고풍스럽고 격식 있는 표현이며, '信頼に足る(신뢰할 만한)', '読むに足る(읽을 만한 가치가 있는)' 등의 형태로 자주 쓰입니다.",
+      "formation": "명사 / 동사 사전형 ＋ に足る ＋ 명사",
+      "examples": [
+        {
+          "translation": "그는 믿고 신뢰할 만한 인물이다."
+        },
+        {
+          "translation": "이 소설은 읽어 볼 만한 충분한 가치가 있다."
+        },
+        {
+          "translation": "검토해 볼 만한 가치가 있는 데이터가 충분히 모였다."
+        },
+        {
+          "translation": "그의 설명은 신용할 만한 것이라고 생각한다."
+        }
+      ]
+    },
+    "ja_限りだ_244": {
+      "title": "～限りだ (〜kagiri da)",
+      "shortExplanation": "화자의 감정이나 심경이 극도에 달했음을 나타내며, '더할 나위 없이 ~하다', '너무나도 ~하다', '~하기 짝이 없다'라는 뜻입니다.",
+      "longExplanation": "'～限りだ'(N1)는 화자의 주관적인 감정이나 심리 상태가 최고의 극치에 도달했음을 강조하는 문형입니다('더할 나위 없이 ~하다', '정말이지 ~하기 이를 데 없다'). 주로 기쁨, 슬픔, 부러움, 안도감, 놀라움 등 감정을 나타내는 형용사나 명사(嬉しい, 悲しい, 羨ましい, 幸せ, 驚き 등)와 결합하여 어떤 상황이나 사건에 대한 벅찬 감정을 생생하게 표출할 때 쓰입니다.",
+      "formation": "い형용사 ＋ 限りだ ｜ な형용사 ＋ な / である ＋ 限りだ ｜ 명사 ＋ の ＋ 限りだ (또는 감정을 나타내는 동사 과거형(た형) ＋ 限りだ)",
+      "examples": [
+        {
+          "translation": "그녀가 갑자기 퇴사해 버려서 놀랍기 짝이 없다."
+        },
+        {
+          "translation": "아들이 성공을 거두었다. 더할 나위 없이 기쁘다."
+        },
+        {
+          "translation": "이렇게나 아름다운 꽃을 볼 수 있다니, 더없이 행복하다."
+        },
+        {
+          "translation": "시험에 합격할 수 있어서 마음이 한없이 후련하고 안도감이 든다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_足りない_242": {
+      "title": "～足りない (～tarinai)",
+      "shortExplanation": "数量や時間、能力などが十分でなく、不足していることを表し、「足りていない」「不足している」という意味を表します。",
+      "longExplanation": "「～足りない」は、動詞「足りる（十分にある、満ちている）」の否定形であり、数量、時間、詳細、能力などが基準や必要とされる量に達しておらず、欠けている状態を表します。「まだ足りない」「～が足りない」などの形で、物足りなさや不足を直接的に言い表す際に日常的にも広く使われます。",
+      "formation": "名詞 ＋ (が) 足りない ｜ 動詞普通形 ＋ ほど / だけ ＋ (が) 足りない",
+      "examples": [
+        {
+          "translation": "私の日本語能力はまだまだ不十分で、十分なレベルには達していない。"
+        },
+        {
+          "translation": "時間が不足しているため、今すぐに出発しなければならない。"
+        },
+        {
+          "translation": "彼の説明には詳しい内容や具体性が欠けている。"
+        },
+        {
+          "translation": "料理を作るために必要な食材が不足している。"
+        }
+      ]
+    },
+    "ja_足る_243": {
+      "title": "～足る ＋ 名詞 (〜taru Noun)",
+      "shortExplanation": "後続の名詞を修飾し、それを行うだけの十分な価値や資格・理由があることを表し、「〜するに値する」「〜するのに十分な」という意味を表します。",
+      "longExplanation": "「～に足る＋名詞」は、改まった文語調の表現であり、名詞または動詞の辞書形に接続して後続の名詞を連体修飾します。ある対象がそれにふさわしい価値や資格、根拠を十分に備えており、その評価や行為を行うに値することを表します（「信頼に足る人物」「読むに足る本」など）。日常会話で用いる動詞「足りる」と異なり、格調高い文章語として定着しています。",
+      "formation": "名詞 / 動詞辞書形 ＋ に足る ＋ 名詞",
+      "examples": [
+        {
+          "translation": "彼は心から信頼するに値する人物である。"
+        },
+        {
+          "translation": "この小説は時間をかけてじっくり読む価値が十分にある。"
+        },
+        {
+          "translation": "本格的に検討を進めるに値するデータが十分に集まった。"
+        },
+        {
+          "translation": "彼の説明は十分に信用するに値するものだと思う。"
+        }
+      ]
+    },
+    "ja_限りだ_244": {
+      "title": "～限りだ (〜kagiri da)",
+      "shortExplanation": "話し手の感情や心理状態が最高潮・極限に達していることを表し、「これ以上ないほど〜だ」「非常に〜だと感じる」という意味を表します。",
+      "longExplanation": "「～限りだ」（N1）は、話し手の主観的な感情や気持ちが極限・極致に達していることを強く表す文型です。「嬉しい」「悲しい」「寂しい」「羨ましい」「幸せ」「驚き」など、心情や感情を表す語句と結びつき、「最高に〜だ」「この上なく〜だ」という強い感動や情動を述べるときに用いられます。",
+      "formation": "い形容詞 ＋ 限りだ ｜ な形容詞 ＋ な / である ＋ 限りだ ｜ 名詞 ＋ の ＋ 限りだ（または感情を表す動詞た形 ＋ 限りだ）",
+      "examples": [
+        {
+          "translation": "彼女が何の前触れもなく突然辞めてしまい、これ以上ないほど驚いている。"
+        },
+        {
+          "translation": "息子が立派に成功を収めてくれて、この上なく嬉しい気持ちでいっぱいだ。"
+        },
+        {
+          "translation": "このように見事な美しい花々を眺められるとは、最高の幸せである。"
+        },
+        {
+          "translation": "無事に試験に合格することができ、心からほっとして安心している。"
+        }
+      ]
+    }
+  }
+}

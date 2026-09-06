@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_かける_43",
+    "language": "ja",
+    "pattern": "～かける",
+    "title": "～かける (〜kakeru)",
+    "shortExplanation": "Indicates a process or action is 'in progress' or 'halfway'.",
+    "longExplanation": "The ～かける grammar point is used to describe a process or action that is in progress, halfway, or not yet completed. It can be attached to verbs to imply that the action is still ongoing or something is in a certain state of partial completion.",
+    "formation": "Verb-stem + かける",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼女は食べかけのリンゴを置いて出かけた。",
+        "romanization": "Kanojo wa tabe-kake no ringo o oite dekaketa.",
+        "translation": "She left a partially eaten apple and went out."
+      },
+      {
+        "sentence": "子供たちはやりかけの宿題を机の上に残した。",
+        "romanization": "Kodomotachi wa yari-kake no shukudai o tsukue no ue ni nokoshita.",
+        "translation": "The children left their half-finished homework on the desk."
+      },
+      {
+        "sentence": "読みかけの本を夜になると探す。",
+        "romanization": "Yomi-kake no hon o yoru ni naru to sagasu.",
+        "translation": "I look for the book I started reading once night comes."
+      },
+      {
+        "sentence": "オフィスには、作りかけの書類がたくさんある。",
+        "romanization": "Ofisu ni wa, tsukuri-kake no shorui ga takusan aru.",
+        "translation": "There are a lot of documents in the process of being created in the office."
+      }
+    ]
+  },
+  {
+    "id": "ja_がち_44",
+    "language": "ja",
+    "pattern": "～がち",
+    "title": "～がち (〜gachi)",
+    "shortExplanation": "Expresses that something tends to occur frequently or habitually.",
+    "longExplanation": "The ～がち grammar point is used to express that something has a tendency to occur frequently or habitually. It can be attached to verbs and adjectives to indicate that the action or state tends to occur often.",
+    "formation": "Verb-ます stem + がち / い-Adjective stem + がち / な-Adjective stem + がち",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は風邪を引きがちです。",
+        "romanization": "Kare wa kaze o hiki-gachi desu.",
+        "translation": "He tends to catch colds easily."
+      },
+      {
+        "sentence": "この地域は雨が降りがちです。",
+        "romanization": "Kono chiiki wa ame ga furi-gachi desu.",
+        "translation": "This area tends to get a lot of rain."
+      },
+      {
+        "sentence": "彼女は忘れ物をしがちです。",
+        "romanization": "Kanojo wa wasuremono o shi-gachi desu.",
+        "translation": "She tends to forget things."
+      },
+      {
+        "sentence": "私は遅刻しがちなので、もっと早く起きないといけません。",
+        "romanization": "Watashi wa chikoku shi-gachi na no de, motto hayaku okinai to ikemasen.",
+        "translation": "I tend to be late, so I need to wake up earlier."
+      }
+    ]
+  },
+  {
+    "id": "ja_かないかのうちに_45",
+    "language": "ja",
+    "pattern": "～か～ないかのうちに",
+    "title": "～か～ないかのうちに (〜ka〜naika no uchi ni)",
+    "shortExplanation": "Expresses an action that occurs immediately after another action; 'as soon as', 'no sooner than', 'the moment'.",
+    "longExplanation": "The ～か～ないかのうちに grammar point is used to express that an action occurs immediately after another action. In English, it can be translated as 'as soon as', 'no sooner than', or 'the moment'. This grammar point is used with verbs, showing the verb in both affirmative and negative forms with か and ないか, followed by のうちに.",
+    "formation": "Verb-casual + か + Verb-negative form + かのうちに",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "駅に着くか着かないかのうちに、雨が降り出した。",
+        "romanization": "Eki ni tsuku ka tsukanai ka no uchi ni, ame ga furidashita.",
+        "translation": "No sooner had I arrived at the station than it started raining."
+      },
+      {
+        "sentence": "ケータイを買うか買わないかのうちに、新しいモデルが発売された。",
+        "romanization": "Keitai o kau ka kawanai ka no uchi ni, atarashii moderu ga hatsubai sareta.",
+        "translation": "As soon as I decided to buy the cell phone, a new model was released."
+      },
+      {
+        "sentence": "彼が家を出るか出ないかのうちに、電話が鳴った。",
+        "romanization": "Kare ga ie o deru ka denai ka no uchi ni, denwa ga natta.",
+        "translation": "The moment he left the house, the phone rang."
+      },
+      {
+        "sentence": "パーティーが始まるか始まらないかのうちに、彼女が泣き出した。",
+        "romanization": "Pātī ga hajimaru ka hajimaranai ka no uchi ni, kanojo ga nakidashita.",
+        "translation": "As soon as the party began, she started crying."
+      }
+    ]
+  },
+  {
+    "id": "ja_かねない_46",
+    "language": "ja",
+    "pattern": "～かねない",
+    "title": "～かねない (〜kane nai)",
+    "shortExplanation": "Express the likelihood of a negative outcome or consequence.",
+    "longExplanation": "The ～かねない grammar point is used to express the possibility or likelihood of a negative outcome or consequence, often used when there is concern about the result. It is typically used with verbs in their stem form and can be understood as 'might (have a bad result)'.",
+    "formation": "Verb-stem + かねない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼はあまりにも無責任で、約束を破りかねない。",
+        "romanization": "Kare wa amarini mo musekinin de, yakusoku o yaburi-kane nai.",
+        "translation": "He is so irresponsible that he might break his promise."
+      },
+      {
+        "sentence": "注意しないと、事故を起こしかねない。",
+        "romanization": "Chūi shinai to, jiko o okoshi-kane nai.",
+        "translation": "If you don't pay attention, you might cause an accident."
+      },
+      {
+        "sentence": "このアプリはバグが多いので、クラッシュしかねない。",
+        "romanization": "Kono apuri wa bagu ga ōi no de, kurasshu shi-kane nai.",
+        "translation": "Since this app has many bugs, it might crash."
+      },
+      {
+        "sentence": "彼女は緊張しているので、失敗しかねない。",
+        "romanization": "Kanojo wa kinchō shite iru no de, shippai shi-kane nai.",
+        "translation": "She's so nervous that she might fail."
+      }
+    ]
+  },
+  {
+    "id": "ja_かねる_47",
+    "language": "ja",
+    "pattern": "～かねる",
+    "title": "～かねる (〜kaneru)",
+    "shortExplanation": "Express inability or impossibility of doing an action (often as a polite refusal).",
+    "longExplanation": "The ～かねる grammar point is used to express that someone cannot do an action or that something is impossible to do. It typically has a nuance of reluctance or polite refusal and is formed by adding かねる to the ます-stem of the verb.",
+    "formation": "Verb-ます stem + かねる",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "その問題は難しいので、私には解決しかねます。",
+        "romanization": "Sono mondai wa muzukashii no de, watashi ni wa kaiketsu shi-kanemasu.",
+        "translation": "Since that problem is difficult, I cannot solve it."
+      },
+      {
+        "sentence": "彼の言っていることが真実かどうか判断しかねます。",
+        "romanization": "Kare no itte iru koto ga shinjitsu ka dō ka handan shi-kanemasu.",
+        "translation": "I cannot judge whether what he is saying is true or not."
+      },
+      {
+        "sentence": "彼女が来るかどうか今すぐには分かりかねます。",
+        "romanization": "Kanojo ga kuru ka dō ka ima sugu ni wa wakari-kanemasu.",
+        "translation": "I cannot immediately know whether she will come or not."
+      },
+      {
+        "sentence": "詳しい内容については説明しかねます。",
+        "romanization": "Kuwashii naiyō ni tsuite wa setsumei shi-kanemasu.",
+        "translation": "I cannot explain the details."
+      }
+    ]
+  },
+  {
+    "id": "ja_かのようだ_48",
+    "language": "ja",
+    "pattern": "～かのようだ",
+    "title": "～かのようだ (〜ka no you da)",
+    "shortExplanation": "Express a similarity or comparison; 'as if', 'like', 'as though'.",
+    "longExplanation": "The ～かのようだ grammar point is used to express similarity or comparison between two things or situations. It can be translated as 'as if', 'like', or 'as though' in English. The standard patterns differ depending on whether it’s used with verbs, い-adjectives, な-adjectives, or nouns. For な-adjectives and nouns, we usually insert である before かのようだ.",
+    "formation": "Verb-casual + かのようだ, い-Adjective + かのようだ, な-Adjective + であるかのようだ, Noun + であるかのようだ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は犬が怖いかのようだ。",
+        "romanization": "Kare wa inu ga kowai ka no you da.",
+        "translation": "He seems as if he is scared of dogs."
+      },
+      {
+        "sentence": "この部屋は寒いかのようだ。",
+        "romanization": "Kono heya wa samui ka no you da.",
+        "translation": "This room feels as if it's cold."
+      },
+      {
+        "sentence": "彼女は有名人であるかのようだ。",
+        "romanization": "Kanojo wa yuumeijin de aru ka no you da.",
+        "translation": "She acts as though she is a celebrity."
+      },
+      {
+        "sentence": "彼は子供であるかのようだ。",
+        "romanization": "Kare wa kodomo de aru ka no you da.",
+        "translation": "He acts as if he's a child."
+      }
+    ]
+  },
+  {
+    "id": "ja_かまいか_49",
+    "language": "ja",
+    "pattern": "～か～まいか",
+    "title": "～か～まいか (〜ka 〜maika)",
+    "shortExplanation": "Used to express a dilemma or indecision between two options or actions.",
+    "longExplanation": "The ～か～まいか grammar point expresses uncertainty or indecision, often with a more formal or literary feel. Typically, it is seen with verbs in the volitional form plus まい (the negative volitional). In more academic or stiff writing, い／な-adjectives and nouns plus である can also appear before まいか.",
+    "formation": "Verb-volitional + か + Verb-volitional + まいか, い-Adjective + であるか + い-Adjective + であるまいか, な-Adjective + であるか + な-Adjective + であるまいか, Noun + であるか + Noun + であるまいか",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "このプロジェクトを引き受けようか引き受けまいか、まだ決めていない。",
+        "romanization": "Kono purojekuto o hikiukeyou ka hikiukemai ka, mada kimete inai.",
+        "translation": "I haven't decided whether to take on this project or not."
+      },
+      {
+        "sentence": "彼が成功しようか成功するまいか、今は予測できない。",
+        "romanization": "Kare ga seikou shiyou ka seikou suru maika, ima wa yosoku dekinai.",
+        "translation": "Whether he will succeed or not is unpredictable at the moment."
+      },
+      {
+        "sentence": "この問題は簡単であるか難しいであるまいか、意見が分かれている。",
+        "romanization": "Kono mondai wa kantan de aru ka muzukashii de aru maika, iken ga wakarete iru.",
+        "translation": "Opinions are divided on whether this problem is simple or difficult."
+      },
+      {
+        "sentence": "彼はリーダーであるかフォロワーであるまいか、自分で選ぶべきだ。",
+        "romanization": "Kare wa riidā de aru ka forowā de aru maika, jibun de erabu beki da.",
+        "translation": "He should choose for himself whether he is a leader or a follower."
+      }
+    ]
+  },
+  {
+    "id": "ja_からこそ_50",
+    "language": "ja",
+    "pattern": "～からこそ",
+    "title": "～からこそ (〜kara koso)",
+    "shortExplanation": "Express the emphasis on the reason; 'precisely because', 'it is precisely because'.",
+    "longExplanation": "The ～からこそ grammar point is used to emphasize the reason or cause of a situation, often implying that the effect is especially notable or even surprising. It can be translated as 'precisely because' or 'it is precisely because.'",
+    "formation": "Verb-casual + からこそ, い-Adjective + からこそ, な-Adjective + だからこそ, Noun + だからこそ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "失敗したからこそ、成功の意味がわかる。",
+        "romanization": "Shippai shita kara koso, seikou no imi ga wakaru.",
+        "translation": "It is precisely because I failed that I understand the meaning of success."
+      },
+      {
+        "sentence": "苦しかったからこそ、今日の私がある。",
+        "romanization": "Kurushikatta kara koso, kyou no watashi ga aru.",
+        "translation": "It is precisely because I went through hardships that I am who I am today."
+      },
+      {
+        "sentence": "彼は親切だからこそ、人気がある。",
+        "romanization": "Kare wa shinsetsu da kara koso, ninki ga aru.",
+        "translation": "He is popular precisely because he is kind."
+      },
+      {
+        "sentence": "昔の経験があるからこそ、その問題がよく理解できる。",
+        "romanization": "Mukashi no keiken ga aru kara koso, sono mondai ga yoku rikai dekiru.",
+        "translation": "I can understand that problem well precisely because I have past experience."
+      }
+    ]
+  },
+  {
+    "id": "ja_からして_51",
+    "language": "ja",
+    "pattern": "〜からして",
+    "title": "〜からして (〜kara shite)",
+    "shortExplanation": "Expresses that something is exceptional, unusual, or negative based on a particular aspect or point.",
+    "longExplanation": "The 〜からして grammar point is used when you want to make a conclusion or emphasize that something is exceptional (often negative or surprising) from a certain aspect or starting point. The part before からして serves as the base or clue for the judgment.",
+    "formation": "Noun + からして",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼の顔つきからして、何か悪いことがあったのだろう。",
+        "romanization": "Kare no kaotsuki kara shite, nanika warui koto ga atta no darou.",
+        "translation": "From his facial expression, something bad must have happened."
+      },
+      {
+        "sentence": "この料理の見た目からして、おいしくなさそうだ。",
+        "romanization": "Kono ryouri no mitame kara shite, oishikunasa sou da.",
+        "translation": "Judging from the appearance of this dish, it doesn't look delicious."
+      },
+      {
+        "sentence": "彼女の試験成績からして、合格するのは難しいでしょう。",
+        "romanization": "Kanojo no shiken seiseki kara shite, goukaku suru no wa muzukashii deshou.",
+        "translation": "Considering her test scores, it will be difficult for her to pass."
+      },
+      {
+        "sentence": "その映画のタイトルからして、面白くないと思う。",
+        "romanization": "Sono eiga no taitoru kara shite, omoshirokunai to omou.",
+        "translation": "Judging from the title of the movie, I think it's not interesting."
+      }
+    ]
+  },
+  {
+    "id": "ja_からすると_52",
+    "language": "ja",
+    "pattern": "～からすると",
+    "title": "～からすると (〜kara suru to)",
+    "shortExplanation": "Expresses a judgment or evaluation based on a certain standard; 'from this perspective', 'considering', 'judging from'.",
+    "longExplanation": "The ～からすると grammar point is used to make a judgment or evaluation based on some criterion, perspective, or standard. It can be translated as 'from this perspective', 'considering', or 'judging from' in English.",
+    "formation": "Noun + からすると",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "経験からすると、この仕事は難しいでしょう。",
+        "romanization": "Keiken kara suru to, kono shigoto wa muzukashii deshou.",
+        "translation": "Considering their experience, this job might be difficult."
+      },
+      {
+        "sentence": "評判からすると、あのレストランはとても美味しいです。",
+        "romanization": "Hyouban kara suru to, ano resutoran wa totemo oishii desu.",
+        "translation": "Judging from the reputation, that restaurant is very delicious."
+      },
+      {
+        "sentence": "価格からすると、この商品は高品質のものと思われます。",
+        "romanization": "Kakaku kara suru to, kono shouhin wa kouhinshitsu no mono to omowaremasu.",
+        "translation": "Considering the price, this product seems to be of high quality."
+      },
+      {
+        "sentence": "このエリアですが、交通の便からすると、便利です。",
+        "romanization": "Kono eria desu ga, koutsuu no ben kara suru to, benri desu.",
+        "translation": "As for this area, considering the transportation convenience, it's convenient."
+      }
+    ]
+  },
+  {
+    "id": "ja_からといって_53",
+    "language": "ja",
+    "pattern": "～からといって",
+    "title": "～からといって (〜kara to itte)",
+    "shortExplanation": "Expresses 'just because...doesn't mean' or 'even though...not necessarily'.",
+    "longExplanation": "The ～からといって grammar point is used to convey that even though something is true, it does not necessarily mean a certain result will occur. It can be translated as 'just because...doesn't mean' or 'even though...not necessarily.'",
+    "formation": "Verb-casual + からといって, い-Adjective + からといって, な-Adjective + だからといって, Noun + だからといって",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "雨が降ったからといって、試合が中止になるわけではありません。",
+        "romanization": "Ame ga futta kara to itte, shiai ga chuushi ni naru wake de wa arimasen.",
+        "translation": "Just because it rained doesn't mean the game will be canceled."
+      },
+      {
+        "sentence": "彼が有名だからといって、彼の意見がいつも正しいわけではない。",
+        "romanization": "Kare ga yuumei da kara to itte, kare no iken ga itsumo tadashii wake de wa nai.",
+        "translation": "Just because he is famous doesn't mean his opinions are always correct."
+      },
+      {
+        "sentence": "このスープが辛いからといって、全ての人が辛いと感じるわけではない。",
+        "romanization": "Kono suupu ga karai kara to itte, subete no hito ga karai to kanjiru wake de wa nai.",
+        "translation": "Just because this soup is spicy doesn't mean everyone will find it spicy."
+      },
+      {
+        "sentence": "彼女が泣いているからといって、悲しいわけではないかもしれない。",
+        "romanization": "Kanojo ga naiteiru kara to itte, kanashii wake de wa nai kamoshirenai.",
+        "translation": "Just because she is crying doesn't necessarily mean she's sad."
+      }
+    ]
+  },
+  {
+    "id": "ja_からにかけて_54",
+    "language": "ja",
+    "pattern": "～から～にかけて",
+    "title": "～から～にかけて (〜kara 〜ni kakete)",
+    "shortExplanation": "Expresses a range of time, space, or quantities; 'from...to', 'between...and', 'over'.",
+    "longExplanation": "The ～から～にかけて grammar pattern is used to indicate a range or scope—often in time or space. It can be translated as 'from...to', 'between...and', or 'over' in English.",
+    "formation": "Noun 1 + から + Noun 2 + にかけて",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "午前９時から午後５時にかけて、仕事をしています。",
+        "romanization": "Gozen ku-ji kara gogo go-ji ni kakete, shigoto wo shite imasu.",
+        "translation": "I work from 9 in the morning to 5 in the evening."
+      },
+      {
+        "sentence": "東京から大阪にかけて、新幹線が走っています。",
+        "romanization": "Toukyou kara Oosaka ni kakete, shinkansen ga hashitte imasu.",
+        "translation": "The bullet train runs from Tokyo to Osaka."
+      },
+      {
+        "sentence": "春から夏にかけて、花がたくさん咲いています。",
+        "romanization": "Haru kara natsu ni kakete, hana ga takusan saite imasu.",
+        "translation": "Many flowers bloom between spring and summer."
+      },
+      {
+        "sentence": "２０歳から３０歳にかけて、多くの人が大学を卒業し、仕事に就くことが一般的です。",
+        "romanization": "Hatachi kara sanjuu-sai ni kakete, ooku no hito ga daigaku wo sotsugyou shi, shigoto ni tsuku koto ga ippan-teki desu.",
+        "translation": "It is common for many people to graduate from university and start working between the ages of 20 and 30."
+      }
+    ]
+  },
+  {
+    "id": "ja_からには_55",
+    "language": "ja",
+    "pattern": "～からには",
+    "title": "～からには (〜kara niwa)",
+    "shortExplanation": "Express a sense of responsibility or determination; 'since', 'now that', 'if'.",
+    "longExplanation": "The ～からには grammar point is used to show a sense of responsibility or strong resolve once a certain condition is met. It can be translated as 'since', 'now that', or 'if'.",
+    "formation": "Noun + だ + からには, な-Adjective + だ + からには, い-Adjective + からには, Verb-casual + からには",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "試験に合格したからには、一所懸命働かなければならない。",
+        "romanization": "Shiken ni goukaku shita kara niwa, isshokenmei hatarakanakereba naranai.",
+        "translation": "Since I passed the exam, I have to work hard."
+      },
+      {
+        "sentence": "約束したからには、守らなければなりません。",
+        "romanization": "Yakusoku shita kara niwa, mamoranakereba narimasen.",
+        "translation": "Since I made a promise, I must keep it."
+      },
+      {
+        "sentence": "この映画が面白いからには、友達にも見せたい。",
+        "romanization": "Kono eiga ga omoshiroi kara niwa, tomodachi ni mo misetai.",
+        "translation": "Since this movie is interesting, I want to show it to my friends too."
+      },
+      {
+        "sentence": "彼女が助けを求めたからには、手伝わなければならない。",
+        "romanization": "Kanojo ga tasuke wo motometa kara niwa, tetsudawanakereba naranai.",
+        "translation": "Since she asked for help, I must help her."
+      }
+    ]
+  },
+  {
+    "id": "ja_から見ると_56",
+    "language": "ja",
+    "pattern": "～から見ると",
+    "title": "～から見ると (〜kara miru to)",
+    "shortExplanation": "Express a perspective or point of view; 'from the standpoint of', 'in terms of', 'from the perspective of'.",
+    "longExplanation": "The ～から見ると grammar point is used to express a particular perspective or point of view. In English, it translates to 'from the standpoint of', 'from the perspective of', or 'in terms of'. It is usually used with a noun that indicates the perspective.",
+    "formation": "Noun + から見ると",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "費用から見ると、このプランはお得です。",
+        "romanization": "Hiyou kara miru to, kono puran wa otoku desu.",
+        "translation": "In terms of cost, this plan is a good deal."
+      },
+      {
+        "sentence": "彼女の意見から見ると、社長の決定は理解できる。",
+        "romanization": "Kanojo no iken kara miru to, shachou no kettei wa rikai dekiru.",
+        "translation": "From her perspective, the president's decision is understandable."
+      },
+      {
+        "sentence": "実力から見ると、彼はチームで最も優れている。",
+        "romanization": "Jitsuryoku kara miru to, kare wa chiimu de mottomo sugurete iru.",
+        "translation": "In terms of ability, he is the best in the team."
+      },
+      {
+        "sentence": "健康面から見ると、この食品は良くない。",
+        "romanization": "Kenkoumen kara miru to, kono shokuhin wa yokunai.",
+        "translation": "From the standpoint of health, this food is not good."
+      }
+    ]
+  },
+  {
+    "id": "ja_から言うと_57",
+    "language": "ja",
+    "pattern": "～から言うと",
+    "title": "～から言うと (〜kara iuto)",
+    "shortExplanation": "Express a judgment or opinion based on a specific criterion; 'speaking from', 'in terms of', 'from the viewpoint of'.",
+    "longExplanation": "The ～から言うと grammar point is used to express a judgment or opinion based on a specific criterion or aspect. It can be translated as 'speaking from', 'in terms of', or 'from the viewpoint of' in English. It is most commonly used with nouns, although you may occasionally see other forms (like adjectives).",
+    "formation": "Noun + から言うと (common), [Verb-casual / Adjective + から言って] (less common)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "値段から言うと、この商品が最もお得です。",
+        "romanization": "Nedan kara iuto, kono shouhin ga mottomo otoku desu.",
+        "translation": "Speaking from the viewpoint of price, this product is the best deal."
+      },
+      {
+        "sentence": "味から言って、このレストランはおいしいと思います。",
+        "romanization": "Aji kara itte, kono resutoran wa oishii to omoimasu.",
+        "translation": "In terms of taste, I think this restaurant is delicious."
+      },
+      {
+        "sentence": "便利さから言って、このアパートは最適な場所にあります。",
+        "romanization": "Benrisa kara itte, kono apaato wa saiteki na basho ni arimasu.",
+        "translation": "Speaking from the perspective of convenience, this apartment is in the best location."
+      },
+      {
+        "sentence": "健康から言うと、毎日運動することが大切です。",
+        "romanization": "Kenkou kara iuto, mainichi undou suru koto ga taisetsu desu.",
+        "translation": "From the viewpoint of health, it is important to exercise every day."
+      }
+    ]
+  }
+]

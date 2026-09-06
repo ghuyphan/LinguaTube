@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Noun_77": {
+      "title": "Danh từ + のいかんによっては (Noun no ikan ni yotte wa)",
+      "shortExplanation": "Tùy thuộc vào tình hình/nội dung của danh từ mà có thể...; 'tùy vào... mà có thể', 'tùy thuộc vào...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんによっては' (いかん viết bằng chữ Hán là 如何 - như hà) được dùng để biểu thị rằng tùy thuộc vào tình trạng, mức độ, kết quả hay sự diễn tiến của danh từ đi trước mà sự việc, hành động hoặc kết quả ở vế sau có thể xảy ra hay biến chuyển tương ứng ('tùy thuộc vào... mà có thể...'). Khác với '～のいかんによって' nói chung, đuôi '～によっては' nhấn mạnh vào một khả năng, trường hợp cụ thể có thể xảy ra. Thường dùng trong các văn cảnh trang trọng, văn viết hoặc phát biểu chính thức.",
+      "formation": "Danh từ + のいかんによっては",
+      "examples": [
+        {
+          "translation": "Tùy vào thời tiết thế nào, chúng ta hãy hoãn buổi dã ngoại lại nhé."
+        },
+        {
+          "translation": "Tùy thuộc vào kết quả của kỳ thi mà bạn có thể học lên tiếp."
+        },
+        {
+          "translation": "Tùy theo tình hình thực tế, tôi sẽ cân nhắc việc nghỉ hưu sớm."
+        },
+        {
+          "translation": "Tùy thuộc vào phản ứng của anh ấy, chúng tôi sẽ quyết định hành động tiếp theo."
+        }
+      ]
+    },
+    "ja_Noun_78": {
+      "title": "Danh từ + のいかんによらず (~ no ikan ni yorazu)",
+      "shortExplanation": "Biểu thị ý nghĩa không màng đến, không phụ thuộc vào tình trạng hay kết quả của sự việc; 'bất kể... như thế nào', 'không màng đến...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんによらず' được dùng để diễn đạt rằng một hành động, trạng thái hoặc quy tắc vẫn được áp dụng, không chịu sự chi phối, thay đổi hay phân biệt bởi tình trạng, kết quả hay mức độ của danh từ phía trước ('bất kể... ra sao', 'không phụ thuộc vào việc... thế nào'). Thường kết hợp với các danh từ thể hiện tính biến động, đa dạng hoặc có nhiều kết quả khác nhau như 理由 (lý do), 結果 (kết quả), 天候 (thời tiết), 成否 (thành bại). Thuộc phong cách văn viết trang trọng, có tính tương đồng với '～のいかんに関わらず'.",
+      "formation": "Danh từ + のいかんによらず",
+      "examples": [
+        {
+          "translation": "Bất kể kết quả của kỳ thi ra sao, bạn hãy luôn tiếp tục tin tưởng vào chính mình."
+        },
+        {
+          "translation": "Bất kể thời tiết thế nào, ngày nào tôi cũng đi chạy bộ."
+        },
+        {
+          "translation": "Bất kể tuổi tác ra sao, anh ấy vẫn là người vô cùng giàu kinh nghiệm."
+        },
+        {
+          "translation": "Bất kể quốc tịch nào, ai ai cũng có thể tham gia vào sự kiện."
+        }
+      ]
+    },
+    "ja_Noun_79": {
+      "title": "Danh từ 1 + のごとき + Danh từ 2 (A no gotoki B)",
+      "shortExplanation": "Dùng để so sánh ví von mạnh mẽ; 'B như là A', 'B tựa như A', 'B giống hệt như A'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + のごとき + Danh từ 2' là một cách diễn đạt cổ mang đậm tính văn chương và trang trọng, tương đương với '～のような' trong tiếng Nhật hiện đại. Mẫu câu này dùng để so sánh ví von, nhấn mạnh rằng sự vật, hiện tượng hoặc con người (Danh từ 2) có phẩm chất, dáng vẻ hoặc tính chất giống hệt như sự vật được đem ra làm hình ảnh so sánh (Danh từ 1) ('như...', 'tựa như...'). Dạng bổ nghĩa cho động từ/tính từ là '～のごとく', dạng kết thúc câu là '～のごとし'. Thường xuất hiện trong văn học, thi ca, diễn văn trang trọng hoặc ngạn ngữ.",
+      "formation": "Danh từ 1 + のごとき + Danh từ 2 (hoặc Động từ thể thông thường + ごとき + Danh từ)",
+      "examples": [
+        {
+          "translation": "Anh ấy là một sự tồn tại tựa như thần thánh."
+        },
+        {
+          "translation": "Vẻ đẹp của cô ấy tựa như một đóa hoa."
+        },
+        {
+          "translation": "Hắn ta đã có hành động hệt như một ác quỷ."
+        },
+        {
+          "translation": "Vùng này có khí hậu ôn hòa tựa như mùa xuân."
+        }
+      ]
+    },
+    "ja_Noun_80": {
+      "title": "Danh từ + のことだから (〜no koto dakara)",
+      "shortExplanation": "Đưa ra phán đoán, suy đoán dựa trên tính cách hoặc thói quen đã biết rõ của ai đó; 'chính vì là... nên chắc chắn...', 'ai chứ... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + のことだから' được dùng khi người nói đưa ra một suy đoán, kỳ vọng hoặc nhận định chắc chắn về một sự việc, dựa trên việc đã hiểu rất rõ tính cách, thói quen, bản chất hay năng lực của người/đối tượng được nhắc đến ('chính vì là anh ấy nên...', 'ai chứ người như cô ấy thì chắc chắn...'). Danh từ đi trước chủ yếu là danh từ chỉ người mà người nói quen thuộc, đôi khi cũng có thể là tổ chức, cửa hàng, công ty. Vế sau thường là câu mang tính suy đoán, ước lượng như '～だろう', '～はずだ', '～に違いない'.",
+      "formation": "Danh từ (chỉ người/tổ chức) + のことだから",
+      "examples": [
+        {
+          "translation": "Chính vì là anh ấy, tôi nghĩ chắc chắn sẽ ổn thôi."
+        },
+        {
+          "translation": "Đã là quán ăn này thì món ăn chắc chắn phải ngon rồi."
+        },
+        {
+          "translation": "Ai chứ cô ấy thì chắc là sẽ đến nơi ngay thôi."
+        },
+        {
+          "translation": "Đã là công ty này thì có lẽ sản phẩm mới sẽ sớm được công bố thôi."
+        }
+      ]
+    },
+    "ja_Noun_81": {
+      "title": "Danh từ + の嫌いがある (Noun no kirai ga aru)",
+      "shortExplanation": "Biểu thị sự ghét, ác cảm hoặc không ưa thích đối với một đối tượng cụ thể; 'có ác cảm với...', 'không thích...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + の嫌いがある' (viết bằng chữ Hán là 嫌いがある) mang sắc thái trang trọng hoặc hơi cổ phong, dùng để diễn đạt rằng một người có tính ghét, ác cảm, sợ hãi hoặc khó chịu đối với một sự vật, đối tượng hay hoàn cảnh cụ thể ('không thích...', 'có ác cảm với...', 'ngại...'). Trong giao tiếp thông thường hiện đại, người ta thường dùng trực tiếp '～が嫌いだ'. (Lưu ý: Trong ngữ pháp N1 nói chung, '～きらいがある' cũng rất phổ biến với ý nghĩa chỉ một khuynh hướng, tật xấu không mong muốn, nhưng khi đi kèm danh từ chỉ đối tượng cụ thể như trong cấu trúc này, nó biểu thị sự không thích, ác cảm).",
+      "formation": "Danh từ + の嫌いがある (hoặc のきらいがある)",
+      "examples": [
+        {
+          "translation": "Anh ấy có tính không thích cá nên không ăn sushi."
+        },
+        {
+          "translation": "Cô ấy ngại những chỗ trên cao nên không leo núi."
+        },
+        {
+          "translation": "Bố tôi rất ghét đám đông nên không đến những nơi chen chúc."
+        },
+        {
+          "translation": "Hồi còn nhỏ tôi có tính ghét ăn rau, nhưng giờ thì thích rồi."
+        }
+      ]
+    },
+    "ja_Noun_82": {
+      "title": "Danh từ + の手前 (~no temae)",
+      "shortExplanation": "Diễn tả thời điểm ngay trước khi diễn ra một sự kiện hoặc hành động quan trọng; 'ngay trước...', 'sát thềm...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + の手前' (hoặc 'Động từ thể từ điển + 手前') được dùng để chỉ thời điểm sát nút, ngay trước khi một sự kiện, mốc thời gian hoặc hành động quan trọng diễn ra ('ngay trước thềm...', 'sát giờ...'). Danh từ kết hợp thường là các danh từ chỉ sự kiện, kỳ thi, bầu cử hay hạn chót như 試験 (thi cử), 選挙 (bầu cử), 締め切り (hạn chót). (Lưu ý: Ngoài nghĩa về mặt thời gian này, '～の手前' trong tiếng Nhật N1 còn có nghĩa khác rất phổ biến là 'vì thể diện trước mặt ai đó / do vị thế của bản thân nên buộc phải...').",
+      "formation": "Danh từ + の手前 (hoặc Động từ thể từ điển + 手前)",
+      "examples": [
+        {
+          "translation": "Ngay trước thềm kỳ thi, tốt hơn hết là nên ngừng việc đi chơi bời."
+        },
+        {
+          "translation": "Ngay trước lúc chuẩn bị chia tay cô ấy, tôi đã nghĩ lại."
+        },
+        {
+          "translation": "Sát giờ hạn chót, cuối cùng tôi cũng hoàn thành xong bản báo cáo."
+        },
+        {
+          "translation": "Ngay trước thềm cuộc bầu cử, các cuộc bàn luận về chính trị trở nên nhiều hơn."
+        }
+      ]
+    },
+    "ja_Noun_83": {
+      "title": "Danh từ + の極み (〜no kiwami)",
+      "shortExplanation": "Diễn tả đỉnh cao, tột cùng hoặc mức độ cao nhất của một trạng thái, cảm xúc hay phẩm chất; 'đỉnh cao của...', 'tột cùng của...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + の極み' (chữ Hán là 極み - tột cùng, đỉnh điểm) thuộc phong cách văn viết trang trọng, dùng để diễn đạt trạng thái đạt tới đỉnh điểm tối cao, cùng cực mà không gì có thể vượt qua được ('đỉnh cao của...', 'tột cùng của...', 'cực điểm của...'). Danh từ kết hợp thường chỉ cảm xúc, phẩm chất, vẻ đẹp hoặc giá trị tinh thần trừu tượng như 感動 (cảm động), 美 (cái đẹp), 贅沢 (xa hoa), 痛恨 (đau đớn/tiếc nuối), 疲労 (mệt mỏi). Thường dùng trong văn học, bài phát biểu hoặc đánh giá mang tính trang trọng.",
+      "formation": "Danh từ + の極み",
+      "examples": [
+        {
+          "translation": "Đỉnh cao trong nghệ thuật nấu ăn của anh ấy là điều không ai có thể bắt chước được."
+        },
+        {
+          "translation": "Sự nỗ lực đến tột cùng của cô ấy đã tạo nên thành công này."
+        },
+        {
+          "translation": "Anh ấy không ngừng theo đuổi đỉnh cao tột cùng của âm nhạc."
+        },
+        {
+          "translation": "Phong cảnh nơi đây chính là đỉnh cao của vẻ đẹp."
+        }
+      ]
+    },
+    "ja_Noun_84": {
+      "title": "Danh từ + の至り (~no itari)",
+      "shortExplanation": "Nhấn mạnh cảm xúc hoặc trạng thái tinh thần đạt đến đỉnh điểm tột cùng; 'vô cùng...', 'hết sức...', 'đỉnh điểm của...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + の至り' (chữ Hán là 至り - chỗ tột cùng, kết quả tột bực) là cách diễn đạt cực kỳ trang trọng và khiêm nhường hoặc đầy cảm xúc, dùng để biểu thị tâm trạng, vinh dự hoặc cảm xúc mạnh mẽ đã đạt đến mức cao nhất không gì sánh bằng ('vô cùng...', 'hết sức...', 'tột cùng của...'). Rất hay đi cùng các danh từ mang tính công thức, quán ngữ như 光栄の至り (vô cùng vinh hạnh), 感謝の至り (vô cùng biết ơn), 若気の至り (sự bồng bột tột cùng của tuổi trẻ), 赤面の至り (vô cùng xấu hổ đỏ mặt). Thường gặp trong các bài phát biểu, thư từ lễ nghi chính thức.",
+      "formation": "Danh từ + の至り",
+      "examples": [
+        {
+          "translation": "Trò đùa của anh ấy thực sự khiến tôi kinh ngạc đến tột cùng."
+        },
+        {
+          "translation": "Việc cha tôi trở thành trưởng dự án là một niềm vinh dự tột cùng."
+        },
+        {
+          "translation": "Diễn xuất tuyệt vời của cô ấy khiến tôi vô cùng xúc động."
+        },
+        {
+          "translation": "Thất bại đó thực sự là nỗi xấu hổ tột cùng đối với tôi."
+        }
+      ]
+    },
+    "ja_Noun_85": {
+      "title": "Danh từ + はいざ知らず (~ wa iza shirazu)",
+      "shortExplanation": "Diễn tả sự đối chiếu rằng trường hợp A thì còn hiểu được hoặc không nói làm gì, nhưng trường hợp B thì thật bất ngờ, khó chấp nhận; 'A thì không biết thế nào chứ B thì...', 'A thì còn đỡ chứ B thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + はいざ知らず' (hoặc Động từ thể thông thường + のはいざ知らず) được dùng để so sánh đối chiếu hai sự việc: vế trước là trường hợp có thể thông cảm, chấp nhận được hoặc tạm bỏ qua không bàn tới ('A thì không biết sao chứ/A thì đã đành'), còn vế sau đưa ra một trường hợp gây bất ngờ, khó tin, đáng kinh ngạc hoặc không thể chấp nhận được ('thế nhưng B thì...'). Vế sau thường đi kèm các trợ từ nhấn mạnh sự ngạc nhiên như '〜まで', '〜でも', '〜とは', '〜なんて'.",
+      "formation": "Danh từ + はいざ知らず (hoặc Động từ/Tính từ thể thông thường + のはいざ知らず)",
+      "examples": [
+        {
+          "translation": "Anh ấy đi muộn thì không nói làm gì, nhưng đến cả cô ấy mà cũng đi trễ thì thật bất ngờ."
+        },
+        {
+          "translation": "Mùa hè thì không bàn tới chứ mùa đông mà ăn kem thì chẳng phải quá lạnh hay sao?"
+        },
+        {
+          "translation": "Trẻ con mê mẩn trò chơi điện tử thì còn hiểu được, chứ đến cả người lớn cũng say mê đến mức đó thì tôi không ngờ tới."
+        },
+        {
+          "translation": "Những lúc khó khăn thì không nói làm gì, đằng này ngay cả lúc bình thường cũng nỗ lực đến vậy thì thật tuyệt vời."
+        }
+      ]
+    },
+    "ja_Noun_86": {
+      "title": "Danh từ 1 + はおろか + Danh từ 2 + すら (Noun wa oroka ～sura)",
+      "shortExplanation": "Nhấn mạnh mức độ nghiêm trọng; 'đừng nói đến A, ngay cả B cũng...'; 'A đã đành, đến cả B cũng...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + はおろか + Danh từ 2 + すら' (hoặc '～さえ') được dùng để nhấn mạnh tính chất cực đoan của sự việc: việc A ở mức độ cao hơn là điều đương nhiên không thể đạt được/không có được, mà ngay cả việc B ở mức độ cơ bản hơn, đơn giản hơn cũng chẳng thể thực hiện được ('đừng nói tới A, ngay cả B cũng không...'). Đa số thường dùng trong các câu mang ý nghĩa phủ định hoặc tiêu cực để làm nổi bật mức độ thiếu hụt hoặc yếu kém nghiêm trọng.",
+      "formation": "Danh từ 1 + はおろか + Danh từ 2 + すら (hoặc さえ)",
+      "examples": [
+        {
+          "translation": "Anh ấy đừng nói đến chạy, ngay cả đi bộ nhanh cũng không thể làm được."
+        },
+        {
+          "translation": "Anh ta đừng nói đến tiếng Nhật, ngay cả tiếng Anh cũng không nói được."
+        },
+        {
+          "translation": "Đừng nói đến một bữa ăn, cả ngày anh ấy thậm chí còn chẳng uống lấy một ngụm nước."
+        },
+        {
+          "translation": "Nhà hàng này đừng nói đến hương vị món ăn, ngay cả dịch vụ cũng tệ hại."
+        }
+      ]
+    },
+    "ja_Noun_87": {
+      "title": "Danh từ 1 + はおろか + Danh từ 2 + まで (~wa oroka ~made)",
+      "shortExplanation": "Biểu thị phạm vi không chỉ dừng lại ở A mà mở rộng bất ngờ đến cả B; 'không chỉ A mà đến cả B cũng...', 'A là đương nhiên rồi, ngay cả B cũng...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + はおろか + Danh từ 2 + まで' được dùng khi người nói muốn nhấn mạnh rằng phạm vi, khả năng hoặc tính chất không chỉ dừng lại ở danh từ 1 (vốn đã là điều hiển nhiên hoặc đã rất đáng kể), mà còn mở rộng vượt ra ngoài dự đoán tới tận danh từ 2 ('không chỉ A mà thậm chí đến cả B cũng...'). Trợ từ 'まで' nhấn mạnh sự mở rộng phạm vi một cách bất ngờ đến mức gây ngạc nhiên cho người nghe.",
+      "formation": "Danh từ 1 + はおろか + Danh từ 2 + まで",
+      "examples": [
+        {
+          "translation": "Anh ấy không chỉ lưu loát tiếng Anh, mà đến cả tiếng Nhật cũng nói vanh vách."
+        },
+        {
+          "translation": "Cô ấy không chỉ giỏi môn Toán mà đến cả môn Vật lý cũng rất xuất sắc."
+        },
+        {
+          "translation": "Món ăn này không chỉ bắt mắt về hình thức mà đến cả hương vị cũng tuyệt hảo."
+        },
+        {
+          "translation": "Anh ấy không chỉ hát hay mà đến cả nhảy múa cũng vô cùng cừ khôi."
+        }
+      ]
+    },
+    "ja_Noun_88": {
+      "title": "Danh từ 1 + はおろか + Danh từ 2 + も (Noun wa oroka ～ mo)",
+      "shortExplanation": "Dùng trong câu phủ định để diễn tả việc A ở mức cao hơn thì không thể đã đành, ngay cả B ở mức cơ bản cũng không thể; 'chưa nói đến A, ngay cả B cũng không...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + はおろか + Danh từ 2 + も' thường đi kèm với các vị từ mang tính phủ định hoặc khó khăn ở vế sau, nhằm nhấn mạnh rằng sự việc A ở mức độ cao hơn là điều không thể bàn tới, mà ngay cả sự việc B ở mức độ thấp hơn hoặc cơ bản hơn cũng không làm được ('chưa nói đến A, ngay cả B cũng chẳng...', 'A thì khỏi phải nói, đến B cũng không...'). Tương đương về mặt ý nghĩa với '～はおろか～すら/さえ', nhưng việc dùng trợ từ 'も' mang sắc thái liệt kê và nhấn mạnh tính toàn thể của sự bất lực hay thiếu hụt.",
+      "formation": "Danh từ 1 + はおろか + Danh từ 2 + も",
+      "examples": [
+        {
+          "translation": "Đừng nói tới việc vẽ tranh, ngay cả viết chữ anh ấy còn chẳng viết nổi."
+        },
+        {
+          "translation": "Anh ấy chưa nói đến tiếng Anh, ngay cả tiếng Nhật cũng chẳng hiểu gì."
+        },
+        {
+          "translation": "Cô ấy đừng nói là toán cao cấp, ngay cả số học cơ bản cũng chẳng giỏi."
+        },
+        {
+          "translation": "Anh ấy chưa nói đến việc chạy bộ, ngay cả đi bộ bình thường cũng thấy khó khăn."
+        }
+      ]
+    },
+    "ja_Noun_89": {
+      "title": "Danh từ + はさておき (~ wa sateoki)",
+      "shortExplanation": "Tạm thời gác lại một vấn đề để ưu tiên bàn luận về điều quan trọng hơn; 'tạm gác lại...', 'khoan bàn đến...', 'chưa nói tới...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + はさておき' (chữ Hán là 扨措き - gác lại sang một bên) được dùng khi người nói muốn tạm thời để việc đó sang một bên, chưa bàn sâu tới, nhằm chuyển sự chú ý và trọng tâm thảo luận sang một chủ đề hoặc khía cạnh khác quan trọng, cấp thiết hơn ở vế sau ('khoan hãy bàn đến...', 'tạm gác... sang một bên'). Cũng có thể kết hợp dưới dạng 'Mệnh đề + の/こと + はさておき'. Thuộc phong cách trang trọng nhưng rất phổ biến trong cả hội thoại và văn viết.",
+      "formation": "Danh từ + はさておき (hoặc Thể thông thường + こと/の + はさておき)",
+      "examples": [
+        {
+          "translation": "Tạm gác kết quả thi cử sang một bên, học kỳ này tôi đã học hỏi được rất nhiều điều."
+        },
+        {
+          "translation": "Khoan bàn đến thời tiết thế nào, tôi vẫn rất mong chờ buổi dã ngoại ngày mai."
+        },
+        {
+          "translation": "Tạm gác tính cách của anh ấy sang một bên, ta không thể không công nhận kỹ năng của anh ấy."
+        },
+        {
+          "translation": "Khoan nói đến chuyện anh ấy đến quá muộn, việc mọi người cứ nghĩ anh ấy sẽ đến vốn đã là một vấn đề rồi."
+        }
+      ]
+    },
+    "ja_Noun_90": {
+      "title": "Danh từ + はどうであれ (~ wa dou de are)",
+      "shortExplanation": "Bất kể tình trạng hay kết quả của danh từ có ra sao thì ý chí hoặc sự thật phía sau vẫn không thay đổi; 'bất kể... thế nào đi chăng nữa', 'dù... ra sao thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + はどうであれ' (xuất phát từ dạng liên kết giả định của である) được dùng để biểu thị rằng bất luận tình trạng, nội dung, tính chất hay kết quả của sự việc trước đó có diễn biến như thế nào đi chăng nữa, thì lập trường, quyết định, hành động hoặc hiện thực ở vế sau vẫn kiên định, không hề bị lay chuyển hay phụ thuộc ('cho dù... thế nào đi nữa', 'bất kể... ra sao'). Thuộc phong cách trang trọng, thể hiện ý chí hoặc nhận định kiên quyết của người nói.",
+      "formation": "Danh từ + はどうであれ",
+      "examples": [
+        {
+          "translation": "Dù thời tiết có thế nào đi chăng nữa thì trận đấu vẫn sẽ được tiến hành."
+        },
+        {
+          "translation": "Bất kể kết quả ra sao, chúng ta chỉ có thể dốc hết sức mình mà thôi."
+        },
+        {
+          "translation": "Dù ý kiến của bạn thế nào đi nữa, tôi vẫn tin tưởng anh ấy."
+        },
+        {
+          "translation": "Bất kể kết quả kỳ thi ra sao, đối với bạn thì mọi thứ vẫn không có gì thay đổi cả."
+        }
+      ]
+    },
+    "ja_Noun_91": {
+      "title": "Danh từ + まみれ (~mamire)",
+      "shortExplanation": "Diễn tả trạng thái bề mặt bị bao phủ, dính đầy hoặc vấy bẩn bởi thứ gì đó khó chịu, bẩn thỉu; 'dính đầy...', 'đầy những...', 'bê bết...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + まみれ' (chữ Hán là 塗れ - nhuộm, bôi bẩn) là một hậu tố ghép sau danh từ để biểu thị trạng thái toàn bộ bề mặt của cơ thể, sự vật bị bao phủ, dính đầy hoặc vấy bẩn bởi những chất dơ, bụi bẩn, chất lỏng hoặc những thứ mang tính tiêu cực ('dính đầy...', 'bê bết...', 'ngập tràn tai tiếng'). Thường kết hợp với các danh từ có tính bám dính, dơ bẩn như 泥 (bùn), 血 (máu), 汗 (mồ hôi), 埃 (bụi), 借金 (nợ nần), スキャンダル (scandal/bê bối). Hầu như luôn mang sắc thái tiêu cực, nhơ nhuốc hoặc khó chịu (khác với '～だらけ' vốn dùng rộng rãi cho cả lỗi sai, người đông đúc; và khác với '～ずくめ' thường mang nghĩa tích cực toàn bộ).",
+      "formation": "Danh từ + まみれ",
+      "examples": [
+        {
+          "translation": "Cậu ấy trở về nhà với người dính đầy bùn đất."
+        },
+        {
+          "translation": "Cô ấy vừa giàn giụa nước mắt bê bết khắp mặt vừa tỏ tình."
+        },
+        {
+          "translation": "Sau vụ việc đó, anh ta hoàn toàn bị bủa vây bởi đầy rẫy những vụ bê bối."
+        },
+        {
+          "translation": "Căn phòng này bám đầy bụi bặm."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Noun_77": {
+      "title": "名词 + のいかんによっては (Noun no ikan ni yotte wa)",
+      "shortExplanation": "表示根据前项事态的情况或结果，可能会产生某种应对或后果；“根据……的不同，也可能会……”、“视……而可能……”。",
+      "longExplanation": "句型“名词 + のいかんによっては”（“いかん”汉字写作“如何”）用于表示前项事物的情况、状态或结果将决定后项事态的发展，特别强调在某种特定情况下可能出现特定的结果或采取特定措施（“根据……的不同，有时也可能会……”、“视……的情况而定”）。相较于“～のいかんによって”，“～によっては”更加着眼于可能会发生的个别可能性或具体应对手段。属于正式的书面语及郑重语表达。",
+      "formation": "名词 + のいかんによっては",
+      "examples": [
+        {
+          "translation": "根据天气情况，我们把野餐推迟吧。"
+        },
+        {
+          "translation": "根据考试结果的不同，有可能可以升学。"
+        },
+        {
+          "translation": "视情况的发展，我会考虑提前退休。"
+        },
+        {
+          "translation": "根据他的反应如何，我们将决定接下来的行动。"
+        }
+      ]
+    },
+    "ja_Noun_78": {
+      "title": "名词 + のいかんによらず (~ no ikan ni yorazu)",
+      "shortExplanation": "表示不受前项情况、结果或差异的影响，后项事态依然成立；“不管……如何”、“不论……怎样”。",
+      "longExplanation": "句型“名词 + のいかんによらず”用于表示后项的行为、要求或事态完全不受前项名词所体现的情况、差异、结果或程度的影响（“不论……如何”、“不管……怎样”）。常与含有多种可能或变化的名词（如“理由”、“結果”、“天候”、“成否”等）连用。与“～のいかんに関わらず”含义相近，均属于非常正式的书面语，常出现在规章制度、公文或郑重的书面声明中。",
+      "formation": "名词 + のいかんによらず",
+      "examples": [
+        {
+          "translation": "无论考试结果如何，请继续坚信自己。"
+        },
+        {
+          "translation": "不论天气好坏，我每天都坚持慢跑。"
+        },
+        {
+          "translation": "不管年龄多大，他的经验都非常丰富。"
+        },
+        {
+          "translation": "不论国籍如何，任何人都可以参加此次活动。"
+        }
+      ]
+    },
+    "ja_Noun_79": {
+      "title": "名词1 + のごとき + 名词2 (A no gotoki B)",
+      "shortExplanation": "用于强烈的比喻，修饰后项名词；“如同……般的……”、“像……一样的……”。",
+      "longExplanation": "句型“名词1 + のごとき + 名词2”是古典日语助动词“ごとし”的连体形用法，相当于现代日语中的“～のような”。该句型用于将后项的名词2强烈比喻为前项的名词1，生动地形容其性质、形态或特征非常相似甚至达到极致（“如同……般的……”、“宛如……一样的……”）。副词形式为“～のごとく”，结句形式为“～のごとし”。由于带有浓厚的古风与文语色彩，多见于文学作品、演讲词或书面正式表达中。",
+      "formation": "名词1 + のごとき + 名词2（或 动词普通形 + ごとき + 名词）",
+      "examples": [
+        {
+          "translation": "他是一个如同神明般的存在。"
+        },
+        {
+          "translation": "她的美丽宛如花朵一般。"
+        },
+        {
+          "translation": "他做出了如同恶魔一般的行径。"
+        },
+        {
+          "translation": "这个地区有着如同春天般宜人的气候。"
+        }
+      ]
+    },
+    "ja_Noun_80": {
+      "title": "名词 + のことだから (〜no koto dakara)",
+      "shortExplanation": "基于对某人性格或特点的充分了解而做出推测；“正因为是……（所以肯定……）”、“凭……的为人，想必……”。",
+      "longExplanation": "句型“名词 + のことだから”用于根据说话人对前述人物的性格、习惯、为人或特质的深入了解，对其行为或事态的发展做出合乎常理的推断或预料（“正因为是……，所以肯定……”、“凭……的为人/作风”）。前接名词通常是说话人熟悉的人物，有时也可以是团体、企业或店铺。后项句尾常搭配推测或确信的表达，如“～だろう”、“～はずだ”、“～に違いない”等。",
+      "formation": "名词（通常为人物/团体） + のことだから",
+      "examples": [
+        {
+          "translation": "凭他的为人，我想肯定不会有问题的。"
+        },
+        {
+          "translation": "正因为是这家店，饭菜按理说肯定很美味。"
+        },
+        {
+          "translation": "凭她的性格，应该马上就会到了吧。"
+        },
+        {
+          "translation": "以这家公司的作风，估计很快就会发布新产品了吧。"
+        }
+      ]
+    },
+    "ja_Noun_81": {
+      "title": "名词 + の嫌いがある (Noun no kirai ga aru)",
+      "shortExplanation": "表示对某种事物抱有厌恶、反感或排斥倾向；“讨厌……”、“对……有嫌恶感”。",
+      "longExplanation": "句型“名词 + の嫌いがある”（汉字写作“嫌いがある”）是一种较为郑重或带有旧式色彩的表达方式，用于表示某人对特定的事物、对象或环境怀有反感、厌恶或不喜欢的心理偏好（“对……感到嫌弃/反感”、“讨厌……”）。在现代日常会话中，通常直接使用“～が嫌いだ”。（注：在JLPT N1的普遍考点中，“～きらいがある”多接在动词辞书形后表示“有某种不良倾向”，而本条目体现的是接在名词后表示对该事物本身存有嫌恶倾向的传统用法）。",
+      "formation": "名词 + の嫌いがある（或 のきらいがある）",
+      "examples": [
+        {
+          "translation": "他有些吃不惯鱼，所以不吃寿司。"
+        },
+        {
+          "translation": "她对高处有些恐高反感，因此从不去登山。"
+        },
+        {
+          "translation": "我父亲讨厌拥挤的人群，所以不去人多的地方。"
+        },
+        {
+          "translation": "小时候我对蔬菜有些挑食厌恶，但现在很喜欢吃。"
+        }
+      ]
+    },
+    "ja_Noun_82": {
+      "title": "名词 + の手前 (~no temae)",
+      "shortExplanation": "表示在某项重要事件或行为发生的前夕、临近节点；“就在……之前”、“临近……之际”。",
+      "longExplanation": "句型“名词 + の手前”（或“动词辞书形 + 手前”）用于表达时间上的临近，表示在重大事件、关键节点或特定行为即将发生前的那一刻（“就在……之前”、“临近……前夕”）。常与表示事件、考核、期限的名词连用，如“試験”、“選挙”、“締め切り”等。（注：除此处表示时间“临近前夕”的用法外，“～の手前”在日语N1文法中还常用于表示“出于顾及体面或面子，在某人面前不得不……”之意）。",
+      "formation": "名词 + の手前（或 动词辞书形 + 手前）",
+      "examples": [
+        {
+          "translation": "考试就在眼前了，最好不要再出去玩了。"
+        },
+        {
+          "translation": "就在正要和她分手的关头，我又改变了主意。"
+        },
+        {
+          "translation": "赶在截止时间前夕，终于把报告完成了。"
+        },
+        {
+          "translation": "临近选举之际，有关政治的话题多了起来。"
+        }
+      ]
+    },
+    "ja_Noun_83": {
+      "title": "名词 + の極み (〜no kiwami)",
+      "shortExplanation": "表示某种状态、情感或境界达到了极点或最高峰；“……之极”、“……的顶峰”。",
+      "longExplanation": "句型“名词 + の極み”（汉字写作“極み”）是格调高雅的书面语表达，用于表示某种状态、性质、情感或境界达到了登峰造极、无以复加的极限程度（“……之极”、“……的绝顶”）。常与表示情感、审美、精神状态或抽象特质的名词搭配，如“感動”、“美”、“贅沢”、“痛恨”、“栄誉”等。常用于文学修辞、隆重的致辞或深切的赞叹与感慨中。",
+      "formation": "名词 + の極み",
+      "examples": [
+        {
+          "translation": "他厨艺的绝顶造诣，是任谁也模仿不来的。"
+        },
+        {
+          "translation": "她拼尽全力的极大努力，造就了这次的成功。"
+        },
+        {
+          "translation": "他一直在不断追求音乐的最高境界。"
+        },
+        {
+          "translation": "这处景色堪称美之极致。"
+        }
+      ]
+    },
+    "ja_Noun_84": {
+      "title": "名词 + の至り (~no itari)",
+      "shortExplanation": "强调情感、心境或荣誉达到了无可附加的极点；“极其……”、“至极”、“莫大的……”。",
+      "longExplanation": "句型“名词 + の至り”（汉字写作“至り”）是非常庄重、典雅的郑重表达，用于强调自身的情感、心理状态或所受的待遇达到了无以复加的极限（“……之至”、“莫大的……”、“极其……”）。多与具有固定搭配色彩的名词连用，如“光栄の至り（无上光荣）”、“感激の至り（感激涕零）”、“赤面の至り（羞愧难当）”、“若気の至り（年少轻狂的结果）”等。常用于官方致辞、郑重谢意、自省致歉等庄重社交场合。",
+      "formation": "名词 + の至り",
+      "examples": [
+        {
+          "translation": "听到他的玩笑，我简直惊讶到了极点。"
+        },
+        {
+          "translation": "父亲担任了项目负责人，这真是莫大的光荣。"
+        },
+        {
+          "translation": "她那精湛的演技令人感动至极。"
+        },
+        {
+          "translation": "那次失败对我而言真是奇耻大辱、羞愧之至。"
+        }
+      ]
+    },
+    "ja_Noun_85": {
+      "title": "名词 + はいざ知らず (~ wa iza shirazu)",
+      "shortExplanation": "表示前项尚可理解或姑且不论，但后项的情况却令人意外或难以接受；“……尚且不论，……却……”、“……倒还罢了，但……”。",
+      "longExplanation": "句型“名词 + はいざ知らず”（或“动词普通形 + のはいざ知らず”）用于通过对比两个极端或不同情形，表示前项的情况如果发生还算情有可原、尚可理解或暂且不提，但后项的事态相比之下却令人深感意外、震惊或不可思议（“……的话倒还罢了，但是……”、“……尚且不论，竟然连……”）。后项常伴随表示超出常理或令人惊讶的助词及句尾，如“～まで”、“～とは”、“～なんて”。",
+      "formation": "名词 + はいざ知らず（或 动词/形容词普通形 + のはいざ知らず）",
+      "examples": [
+        {
+          "translation": "他迟到倒还罢了，连她都迟到可真让人意外。"
+        },
+        {
+          "translation": "夏天倒也罢了，冬天吃冰淇淋难道不会太冷了吗？"
+        },
+        {
+          "translation": "小孩子沉迷电子游戏还算情有可原，真没想到连大人都会如此着迷。"
+        },
+        {
+          "translation": "艰难时期努力倒也罢了，平常时期也能如此拼搏真是太了不起了。"
+        }
+      ]
+    },
+    "ja_Noun_86": {
+      "title": "名词1 + はおろか + 名词2 + すら (Noun wa oroka ～sura)",
+      "shortExplanation": "强调事态程度之严重；“别说A了，就连B也……”、“不用说A，连B都……”。",
+      "longExplanation": "句型“名词1 + はおろか + 名词2 + すら”（或“～さえ”）用于强调事态的严重性或极端程度：前项A程度较高或要求更高，自然是无法做到或实现，但令人难以置信的是，连后项B这样更低标准、更基础或更简单的事物也无法做到（“别说A了，就连B也……”、“不用说A，甚至连B都……”）。通常与否定或消极意义的表达呼应，突出整体状况之恶劣或能力之不足。",
+      "formation": "名词1 + はおろか + 名词2 + すら（或 さえ）",
+      "examples": [
+        {
+          "translation": "他别说是跑步了，就连快步走都做不到。"
+        },
+        {
+          "translation": "别说是日语了，他甚至连英语都不会说。"
+        },
+        {
+          "translation": "他别说吃饭了，整整一天连水都没喝一口。"
+        },
+        {
+          "translation": "这家餐厅且不论味道如何，甚至连服务都非常糟糕。"
+        }
+      ]
+    },
+    "ja_Noun_87": {
+      "title": "名词1 + はおろか + 名词2 + まで (~wa oroka ~made)",
+      "shortExplanation": "表示程度或范围不仅包含本属理所应当的A，甚至出人意料地延伸至B；“不仅A，甚至连B也……”、“A自不必说，连B都……”。",
+      "longExplanation": "句型“名词1 + はおろか + 名词2 + まで”用于表示事态的范围或能力并不局限于前项A（前项A通常已被视为理所应当或已非常出色），而是进一步延伸扩展到了令人意想不到的后项B（“不仅A，甚至连B也……”、“A自不用说，竟然连B都……”）。助词“まで”在此起到强调范围超乎寻常、令人惊叹的作用。",
+      "formation": "名词1 + はおろか + 名词2 + まで",
+      "examples": [
+        {
+          "translation": "他不仅英语流利，甚至连日语都说得非常地道。"
+        },
+        {
+          "translation": "她不仅数学好，甚至连物理也很擅长。"
+        },
+        {
+          "translation": "这道菜不仅卖相诱人，甚至连味道也是绝顶棒。"
+        },
+        {
+          "translation": "他不仅歌唱得好，甚至连舞蹈也跳得极其出色。"
+        }
+      ]
+    },
+    "ja_Noun_88": {
+      "title": "名词1 + はおろか + 名词2 + も (Noun wa oroka ～ mo)",
+      "shortExplanation": "常与否定表达连用，表示高层次的A自不必说，连基础的B也无法做到；“别说A了，连B也（不）……”、“A且不论，连B都……”。",
+      "longExplanation": "句型“名词1 + はおろか + 名词2 + も”主要用于消极或否定句中，强调事物程度或能力的全面匮乏：程度较高的前项A自然是不在话下、无法实现，而更糟糕的是，连更简单、更基础的后项B也无法达成或不具备（“别说A了，连B也未曾/不能……”、“A自不用说，连B也做不到”）。与“～はおろか～さえ/すら”语法功能类似，借助助词“も”强调并列包含与连带否定。",
+      "formation": "名词1 + はおろか + 名词2 + も",
+      "examples": [
+        {
+          "translation": "别说画画了，他甚至连字都写不出来。"
+        },
+        {
+          "translation": "别说是英语了，他连日语都不懂。"
+        },
+        {
+          "translation": "她别说是高深的数学了，连基础算术都不擅长。"
+        },
+        {
+          "translation": "别说是跑步了，他连走路都觉得很困难。"
+        }
+      ]
+    },
+    "ja_Noun_89": {
+      "title": "名词 + はさておき (~ wa sateoki)",
+      "shortExplanation": "表示把前项问题暂时搁置一边，优先讨论更重要的事项；“姑且不论……”、“暂且不谈……”、“先抛开……不说”。",
+      "longExplanation": "句型“名词 + はさておき”（汉字写作“扨措き”）用于表示暂时将前项的事情置于一旁、不作为当前讨论的核心，而将焦点和主旨转移到后项更重要、更优先或更值得关注的议题上（“姑且不论……”、“暂且不谈……”、“……先放在一边”）。也可以接在动词/形容词普通形加“こと/の”之后。常用于转换话题、调整讨论重点的会话或书面表达中。",
+      "formation": "名词 + はさておき（或 普通形 + こと/の + はさておき）",
+      "examples": [
+        {
+          "translation": "考试成绩姑且不论，这个学期我学到了很多东西。"
+        },
+        {
+          "translation": "天气情况先放在一边，我很期待明天的野餐。"
+        },
+        {
+          "translation": "姑且不论他的性格如何，他的专业技能是令人不得不认可的。"
+        },
+        {
+          "translation": "且不说他迟到得太离谱，大家理所当然地认为他会来这件事本身就是个问题。"
+        }
+      ]
+    },
+    "ja_Noun_90": {
+      "title": "名词 + はどうであれ (~ wa dou de are)",
+      "shortExplanation": "表示无论前项的情况或结果如何，后项的决心、态度或事态都不受影响；“无论……怎样”、“不管……如何”。",
+      "longExplanation": "句型“名词 + はどうであれ”（“であれ”是文语断定助动词“である”的假定或让步连用形）用于表达强烈的让步：无论前项事物的状态、性质、意见或结果怎样，后项所表示的态度、决心、既定事实或行为都绝不受其动摇或改变（“无论……如何”、“不管……怎样”）。语气坚定果断，多见于郑重的书面语或表达明确意志的场合。",
+      "formation": "名词 + はどうであれ",
+      "examples": [
+        {
+          "translation": "无论天气状况如何，比赛都将照常举行。"
+        },
+        {
+          "translation": "不管结果怎样，我们只要竭尽全力就好。"
+        },
+        {
+          "translation": "不论你的意见如何，我都选择相信他。"
+        },
+        {
+          "translation": "无论考试结果如何，对你而言都不会有任何改变。"
+        }
+      ]
+    },
+    "ja_Noun_91": {
+      "title": "名词 + まみれ (~mamire)",
+      "shortExplanation": "表示人或物体的表面沾满、附着了污秽、液体或不良事物；“沾满……”、“浑身是……”、“布满……”。",
+      "longExplanation": "句型“名词 + まみれ”（汉字写作“塗れ”）作为接尾词，用于表示某人或某物体的表面完全被不干净、令人不适的液体、颗粒或消极事物附着、涂抹或沾满（“浑身是……”、“沾满……”、“陷入……泥潭”）。常与具有粘附性、污浊性的名词连用，如“血（血）”、“泥（泥）”、“汗（汗水）”、“埃（灰尘）”、“借金（债务）”、“スキャンダル（丑闻）”等。几乎全部用于消极、负面或令人不快的语境（与“～だらけ”相比更强调液体、粉末等细碎粘着物在表面附着的狼狈状态）。",
+      "formation": "名词 + まみれ",
+      "examples": [
+        {
+          "translation": "他浑身沾满泥巴回到了家。"
+        },
+        {
+          "translation": "她满脸泪水、抽泣着进行了表白。"
+        },
+        {
+          "translation": "那起事件之后，他彻底陷入了丑闻缠身的泥潭。"
+        },
+        {
+          "translation": "这个房间里到处布满了灰尘。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Noun_77": {
+      "title": "명사 + のいかんによっては (Noun no ikan ni yotte wa)",
+      "shortExplanation": "명사의 상태나 결과 여하에 따라서는 어떤 결과나 대응이 따를 수 있음을 나타내며, '~의 여하에 따라서는', '~여부에 따라서는'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + のいかんによっては'('いかん'은 한자로 '如何')는 앞 명사의 상태, 진행 경과, 결과 등의 여하에 따라서 뒤에 오는 사태나 결정이 달라질 수 있음을 나타내는 표현입니다('~의 여하에 따라서는', '~하기에 따라서는'). 단순히 기준을 제시하는 '～のいかんによって'에 비해, 뒤에 '〜によっては'가 붙어 특정한 가능성이나 대책이 발생할 수 있음을 강조합니다. 격식 있는 문어체나 공적인 담화에서 자주 사용됩니다.",
+      "formation": "명사 + のいかんによっては",
+      "examples": [
+        {
+          "translation": "날씨 여하에 따라서는 소풍을 연기하도록 합시다."
+        },
+        {
+          "translation": "시험 결과의 여하에 따라서는 진학할 수 있습니다."
+        },
+        {
+          "translation": "상황 여하에 따라서는 조기 퇴직을 고려하겠습니다."
+        },
+        {
+          "translation": "그 사람의 반응 여하에 따라 우리의 다음 행동을 결정하겠습니다."
+        }
+      ]
+    },
+    "ja_Noun_78": {
+      "title": "명사 + のいかんによらず (~ no ikan ni yorazu)",
+      "shortExplanation": "명사의 상태나 결과, 사정 등에 좌우되지 않음을 나타내며, '~의 여하에 상관없이', '~여하를 불문하고'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + のいかんによらず'는 앞 명사가 나타내는 상태, 이유, 결과 등의 차이에 구애받지 않고 뒤의 내용이 동일하게 적용되거나 실행됨을 나타내는 표현입니다('~의 여하에 상관없이', '~여하를 막론하고', '~여부에 관계없이'). '理由(이유)', '結果(결과)', '天候(날씨)', '成否(성패)' 등 다양한 변화나 결과를 가질 수 있는 명사와 주로 어울립니다. '～のいかんに関わらず'와 거의 같은 의미로, 공적 문서나 격식 있는 서면에서 널리 쓰이는 문어체 표현입니다.",
+      "formation": "명사 + のいかんによらず",
+      "examples": [
+        {
+          "translation": "시험 결과의 여하에 상관없이 계속 자신을 믿으세요."
+        },
+        {
+          "translation": "날씨 여하를 불문하고 매일 조깅을 합니다."
+        },
+        {
+          "translation": "그의 나이 여하에 관계없이 그는 대단히 경험이 풍부합니다."
+        },
+        {
+          "translation": "국적 여하를 막론하고 누구라도 행사에 참가할 수 있습니다."
+        }
+      ]
+    },
+    "ja_Noun_79": {
+      "title": "명사1 + のごとき + 명사2 (A no gotoki B)",
+      "shortExplanation": "비유적 표현으로 후항 명사를 수식하며, '~와 같은', '~와 흡사한'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + のごとき + 명사2'는 고어 조동사 'ごとし'의 연체형으로, 현대어의 '～のような'에 해당하는 격조 높은 문어적 비유 표현입니다. 명사2가 지닌 성질이나 모습을 명사1에 빗대어 '마치 명사1과 같은' 강렬하고 생생한 유사성을 강조할 때 쓰입니다('~와 같은', '~마냥'). 부사적으로 쓰일 때는 '～のごとく', 문장 끝을 맺을 때는 '～のごとし'의 형태를 취합니다. 문학 작품, 사설, 격식 있는 연설문 등에서 주로 볼 수 있습니다.",
+      "formation": "명사1 + のごとき + 명사2(또는 동사 보통형 + ごとき + 명사)",
+      "examples": [
+        {
+          "translation": "그는 신과 같은 존재이다."
+        },
+        {
+          "translation": "그녀의 아름다움은 꽃과 같다."
+        },
+        {
+          "translation": "그는 악마와 같은 행동을 했다."
+        },
+        {
+          "translation": "이 지방은 봄과 같은 기후이다."
+        }
+      ]
+    },
+    "ja_Noun_80": {
+      "title": "명사 + のことだから (〜no koto dakara)",
+      "shortExplanation": "상대의 성격이나 특성을 잘 알고 있기에 당연히 그럴 것이라고 추측함을 나타내며, '~이니까', '~인 만큼'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + のことだから'는 화자가 앞 명사(주로 사람이나 잘 아는 조직)의 평소 성격, 태도, 습관, 역량 등을 잘 파악하고 있음을 근거로 하여, '그 사람이라면 틀림없이 ~할 것이다'라고 강한 확신을 담아 추측할 때 쓰입니다('~이니까(보나 마나)', '~인 만큼'). 주로 사람 명사가 오며, 문장 끝에는 '～だろう(〜일 것이다)', '～はずだ(〜할 터이다)', '～に違いない(〜임에 틀림없다)'와 같은 추측·판단의 표현이 자주 호응합니다.",
+      "formation": "명사(주로 인물/조직) + のことだから",
+      "examples": [
+        {
+          "translation": "그 사람인 만큼 분명 괜찮을 거라고 생각해요."
+        },
+        {
+          "translation": "이 가게인 만큼 음식은 틀림없이 맛있을 것입니다."
+        },
+        {
+          "translation": "그녀이니까 곧 도착하겠지요."
+        },
+        {
+          "translation": "이 회사인 만큼 조만간 신제품이 발표되겠지요."
+        }
+      ]
+    },
+    "ja_Noun_81": {
+      "title": "명사 + の嫌いがある (Noun no kirai ga aru)",
+      "shortExplanation": "특정 대상이나 상황을 꺼리거나 싫어하는 경향이 있음을 나타내며, '~을 싫어하다', '~을 꺼리는 면이 있다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + の嫌いがある'는 다소 격식 차린 또는 옛스런 표현으로, 주어가 앞 명사로 표현된 특정 사물, 대상, 환경 등에 대해 싫어하거나 꺼림칙하게 여기는 감정이나 성향을 가지고 있음을 나타냅니다('~을 싫어하는 경향이 있다', '~을 꺼리다'). 일상 회화에서는 보통 '～が嫌いだ'를 주로 사용합니다. (참고: JLPT N1에서 '～きらいがある'는 동사 사전형 등 뒤에 붙어 '바람직하지 않은 경향이 있다'는 뜻으로도 자주 쓰이지만, 본 문형은 명사 뒤에 붙어 그 대상을 싫어하거나 꺼리는 고풍스러운 뉘앙스를 나타냅니다).",
+      "formation": "명사 + の嫌いがある(또는 のきらいがある)",
+      "examples": [
+        {
+          "translation": "그는 생선을 꺼려하는 탓에 초밥을 먹지 않습니다."
+        },
+        {
+          "translation": "그녀는 높은 곳을 싫어해서 등산을 하지 않는다."
+        },
+        {
+          "translation": "저희 아버지는 인파를 꺼려하셔서 붐비는 장소에는 가지 않으십니다."
+        },
+        {
+          "translation": "어릴 적에 나는 야채를 싫어하는 편이었지만 지금은 좋아한다."
+        }
+      ]
+    },
+    "ja_Noun_82": {
+      "title": "명사 + の手前 (~no temae)",
+      "shortExplanation": "어떤 중요한 사건이나 행위의 바로 직전임을 나타내며, '~의 바로 직전에', '~을 앞두고'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + の手前'(또는 '동사 사전형 + 手前')는 중요한 일이나 사건, 마감 등이 일어나기 직전의 시간적 분기점에 있음을 나타내는 표현입니다('~의 바로 직전에', '~를 목전에 두고'). 주로 '試験(시험)', '選挙(선거)', '締め切り(마감)' 등 특정 행사나 중요한 시기를 나타내는 명사와 결합합니다. (참고: 시간적 직전을 뜻하는 이 용법 외에도, 일본어 N1 문법에서 '～の手前'는 체면이나 입장을 의식하여 '~한 입장이라서', '~의 앞이라서'라는 뜻으로도 매우 자주 쓰입니다).",
+      "formation": "명사 + の手前(또는 동사 사전형 + 手前)",
+      "examples": [
+        {
+          "translation": "시험을 바로 앞두고 놀러 가는 것은 그만두는 편이 좋다."
+        },
+        {
+          "translation": "그녀와 헤어지기 직전에 마음을 고쳐먹었습니다."
+        },
+        {
+          "translation": "마감 직전에서야 겨우 보고서를 완성했습니다."
+        },
+        {
+          "translation": "선거를 앞두고 정치 이야기가 많아집니다."
+        }
+      ]
+    },
+    "ja_Noun_83": {
+      "title": "명사 + の極み (〜no kiwami)",
+      "shortExplanation": "어떤 상태나 감정, 경지가 최고조나 극치에 달했음을 나타내며, '~의 극치', '~의 극'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + の極み'('極み'는 끝, 절정을 의미)는 감정, 상태, 경지 등이 더할 나위 없이 가장 높은 절정이나 극한의 상태에 이르렀음을 강조하는 격조 높은 문어적 표현입니다('~의 극치', '~의 절정', '더없는 ~'). '感動(감동)', '美(아름다움)', '贅沢(사치)', '痛恨(통한)', '栄誉(영예)' 등 추상적인 가치나 감정, 상태를 나타내는 명사와 자주 결합합니다. 주로 문학적 표현이나 공식 연설, 찬사 등에서 쓰입니다.",
+      "formation": "명사 + の極み",
+      "examples": [
+        {
+          "translation": "그의 요리의 절정은 그 누구도 흉내 낼 수 없다."
+        },
+        {
+          "translation": "그녀의 피나는 노력의 극치가 이러한 성공을 만들어 냈다."
+        },
+        {
+          "translation": "그는 음악의 최고 경지를 끊임없이 추구하고 있다."
+        },
+        {
+          "translation": "이 풍경은 아름다움의 극치이다."
+        }
+      ]
+    },
+    "ja_Noun_84": {
+      "title": "명사 + の至り (~no itari)",
+      "shortExplanation": "감정이나 영예, 심리 상태가 더할 나위 없는 최고조에 달했음을 나타내며, '더없는 ~', '~하기 이를 데 없음', '~의 극치'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + の至り'('至り'는 극한에 이름, 지극함을 의미)는 화자의 감정, 영광, 부끄러움 등의 심리적 상태가 극에 달해 있음을 나타내는 매우 격식 있는 관용적 문어 표현입니다('더없는 ~', '~하기 이를 데 없다', '~의 극치'). 관용적으로 결합하는 명사가 한정되어 있으며, '光栄の至り(더없는 영광)', '感激の至り(더없는 감격)', '若気の至り(젊은 혈기의 소치)', '赤面の至り(부끄럽기 짝이 없음)' 등이 대표적입니다. 공식 석상의 인사말, 감사 편지, 사죄문 등에서 주로 쓰입니다.",
+      "formation": "명사 + の至り",
+      "examples": [
+        {
+          "translation": "그의 농담에는 놀라기 이를 데 없었다."
+        },
+        {
+          "translation": "아버지가 프로젝트의 리더가 되신 것은 더없는 영광입니다."
+        },
+        {
+          "translation": "그녀의 훌륭한 연기에는 감동하기 이를 데 없었다."
+        },
+        {
+          "translation": "그 실패는 부끄럽기 짝이 없는 일이었다."
+        }
+      ]
+    },
+    "ja_Noun_85": {
+      "title": "명사 + はいざ知らず (~ wa iza shirazu)",
+      "shortExplanation": "앞의 경우는 이해할 수 있거나 차치하더라도, 뒤의 경우는 뜻밖이거나 납득하기 어려움을 나타내며, '~은/는 어떨지 몰라도', '~라면 몰라도'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + はいざ知らず'(또는 '동사 보통형 + のはいざ知らず')는 두 대상을 대비하여 '앞의 경우라면 이해할 수도 있고 어쩔 수 없다 치더라도, 뒤의 경우는 전혀 예상 밖이거나 상식 밖이다'라는 놀라움, 의외성, 비판적 심정을 나타내는 표현입니다('~라면 몰라도', '~은/는 어떨지 모르겠으나'). 뒤 문장에는 주로 놀라움이나 의외성을 나타내는 '～まで(〜마저/조차)', '～とは(〜하다니)', '～なんて(〜라니)' 등이 호응하여 쓰입니다.",
+      "formation": "명사 + はいざ知らず(또는 동사/형용사 보통형 + のはいざ知らず)",
+      "examples": [
+        {
+          "translation": "그 사람이 늦는 것이라면 몰라도, 그녀까지 지각하다니 뜻밖이다."
+        },
+        {
+          "translation": "여름이라면 몰라도 겨울에 아이스크림을 먹는 건 너무 춥지 않나요?"
+        },
+        {
+          "translation": "아이가 비디오 게임에 열중하는 것이라면 몰라도, 어른까지 그렇게 빠져들 줄은 몰랐다."
+        },
+        {
+          "translation": "힘든 시절이라면 몰라도 평상시에도 그렇게 노력하다니 정말 대단하다."
+        }
+      ]
+    },
+    "ja_Noun_86": {
+      "title": "명사1 + はおろか + 명사2 + すら (Noun wa oroka ～sura)",
+      "shortExplanation": "A는 당연히 불가능하고 더 기본적인 B조차 할 수 없음을 강조하며, 'A는커녕 B조차', 'A는 고사하고 B마저'라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + はおろか + 명사2 + すら'(또는 '～さえ')는 정도가 더 높은 A는 말할 필요도 없이 당연히 안 되며, 심지어 그보다 훨씬 기본적이고 쉬운 B조차도 충족되지 않음을 강조하는 표현입니다('A는커녕 B조차', 'A는 고사하고 B마저'). 주로 부정적인 문맥이나 극단적인 상황에서 쓰여, 상태의 심각함이나 결핍을 두드러지게 드러냅니다.",
+      "formation": "명사1 + はおろか + 명사2 + すら(또는 さえ)",
+      "examples": [
+        {
+          "translation": "그는 달리기는커녕 빠르게 걷는 것조차 할 수 없다."
+        },
+        {
+          "translation": "일본어는커녕 영어조차 하지 못합니다."
+        },
+        {
+          "translation": "그는 식사는커녕 하루 종일 아무것도 마시지 않았다."
+        },
+        {
+          "translation": "이 식당은 맛은커녕 서비스마저 나쁘다."
+        }
+      ]
+    },
+    "ja_Noun_87": {
+      "title": "명사1 + はおろか + 명사2 + まで (~wa oroka ~made)",
+      "shortExplanation": "A는 물론이고 한 걸음 더 나아가 예상 밖의 B까지 해당함을 나타내며, 'A는 물론 B까지', 'A뿐만 아니라 B까지도'라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + はおろか + 명사2 + まで'는 당연하거나 이미 뛰어난 수준인 명사1에 그치지 않고, 예상 밖으로 범위가 더 확장되어 명사2에까지 미치고 있음을 놀라움과 함께 나타내는 표현입니다('A는 물론 B까지도', 'A는 고사하고 B까지'). 조사 'まで'가 결합하여 통상적인 한계를 넘어 의외의 영역까지 섭렵하거나 충족하고 있음을 강조합니다.",
+      "formation": "명사1 + はおろか + 명사2 + まで",
+      "examples": [
+        {
+          "translation": "그는 영어는 물론이고 일본어까지 유창합니다."
+        },
+        {
+          "translation": "그녀는 수학은 물론이고 물리까지 잘합니다."
+        },
+        {
+          "translation": "이 요리는 겉보기는 물론 맛까지 최고다."
+        },
+        {
+          "translation": "그는 노래는 물론 춤까지 잘 춘다."
+        }
+      ]
+    },
+    "ja_Noun_88": {
+      "title": "명사1 + はおろか + 명사2 + も (Noun wa oroka ～ mo)",
+      "shortExplanation": "주로 부정문과 함께 쓰여 높은 단계의 A는 물론이고 기초적인 B조차 성립하지 않음을 나타내며, 'A는커녕 B도 (않다)', 'A는 고사하고 B도'라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + はおろか + 명사2 + も'는 주로 후항에 부정이나 난색을 나타내는 표현이 이어져, 수준이 더 높은 명사1은 거론할 필요도 없이 불가능하고, 그보다 훨씬 단순하고 쉬운 명사2조차도 제대로 되지 않음을 나타내는 표현입니다('A는커녕 B도 못하다', 'A는 고사하고 B조차도 아니다'). 조사 'も'를 통해 앞뒤 대상 모두 부정적인 상황에 처해 있음을 포괄적으로 드러냅니다.",
+      "formation": "명사1 + はおろか + 명사2 + も",
+      "examples": [
+        {
+          "translation": "그림을 그리는 것은커녕 글자조차 쓰지 못한다."
+        },
+        {
+          "translation": "그는 영어는커녕 일본어도 알아듣지 못한다."
+        },
+        {
+          "translation": "그녀는 수학은커녕 산수도 잘하지 못한다."
+        },
+        {
+          "translation": "그는 달리기는커녕 걷는 것조차 어렵다."
+        }
+      ]
+    },
+    "ja_Noun_89": {
+      "title": "명사 + はさておき (~ wa sateoki)",
+      "shortExplanation": "어떤 문제를 일단 제쳐 두고 더 중요한 다른 사안에 초점을 맞춤을 나타내며, '~은/는 제쳐 두고', '~은/는 접어두고'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + はさておき'는 화자가 앞의 화제나 사안을 일단 논의의 중심에서 벗어나 뒤로 미뤄두고, 후항에 이어지는 더 본질적이거나 중요한 사항에 먼저 집중하고자 할 때 쓰이는 표현입니다('~은/는 제쳐 두고', '~은/는 일단 접어두고', '~은/는 차치하고'). 동사나 형용사의 보통형 뒤에 'こと/の + はさておき'의 형태로도 자주 쓰입니다. 회화와 문어 모두에서 화제를 전환하거나 우선순위를 정할 때 널리 활용됩니다.",
+      "formation": "명사 + はさておき(또는 보통형 + こと/の + はさておき)",
+      "examples": [
+        {
+          "translation": "시험 결과는 제쳐 두고 이번 학기에는 배운 점이 참 많았다."
+        },
+        {
+          "translation": "날씨는 일단 접어두고 내일 소풍을 무척 기대하고 있습니다."
+        },
+        {
+          "translation": "그의 성격은 차치하고 그의 실력은 인정하지 않을 수 없다."
+        },
+        {
+          "translation": "그가 너무 늦게 온 것은 제쳐 두고라도, 그가 올 것이라고 여겨진 것 자체가 문제다."
+        }
+      ]
+    },
+    "ja_Noun_90": {
+      "title": "명사 + はどうであれ (~ wa dou de are)",
+      "shortExplanation": "명사의 상태나 결과가 어떻든 간에 후항의 사실이나 결심이 흔들리지 않음을 나타내며, '~이/가 어떻든 간에', '~이/가 어찌 되었든'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + はどうであれ'('であれ'는 단정의 조동사 である의 가정·양보형)는 앞 명사의 상태, 결과, 내용 등이 어떠한 상황이더라도 그에 전혀 구애받지 않고 뒤에 오는 행동, 결심, 사실 등이 변함없이 관철됨을 단호하게 나타내는 표현입니다('~이/가 어찌 되었든 간에', '~이/가 어떻든 상관없이'). 화자의 확고한 의지나 결단, 혹은 객관적인 불변의 사실을 서술할 때 쓰이는 문어적이고 격식 있는 문형입니다.",
+      "formation": "명사 + はどうであれ",
+      "examples": [
+        {
+          "translation": "날씨가 어떻든 간에 시합은 열립니다."
+        },
+        {
+          "translation": "결과가 어찌 되었든 최선을 다할 뿐입니다."
+        },
+        {
+          "translation": "당신의 의견이 어떻든 간에 저는 그 사람을 믿습니다."
+        },
+        {
+          "translation": "시험 결과가 어떻든 간에 당신에게는 아무것도 변하지 않습니다."
+        }
+      ]
+    },
+    "ja_Noun_91": {
+      "title": "명사 + まみれ (~mamire)",
+      "shortExplanation": "사람이나 사물의 표면에 더럽거나 불쾌한 것이 온통 들러붙어 있는 상태를 나타내며, '~투성이', '~범벅', '~을 온통 뒤집어씀'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + まみれ'(한자로는 塗れ)는 접미사로서, 신체나 사물의 표면 전체에 피, 땀, 먼지, 진흙과 같이 지저분하거나 불쾌한 액체·미립자 또는 부정적인 사물이 끈적끈적하게 달라붙어 뒤덮여 있는 상태를 나타냅니다('~투성이', '~범벅', '~투성이의'). '血(피)', '泥(진흙)', '汗(땀)', '埃(먼지)', '借金(빚)', 'スキャンダル(스캔들)' 등 주로 불쾌하고 부정적인 명사와 결합합니다. (표면 전체에 덕지덕지 묻어 있는 상태를 강조하므로, 단순한 수량이나 오점을 나타내는 '～だらけ'와 구별됩니다).",
+      "formation": "명사 + まみれ",
+      "examples": [
+        {
+          "translation": "그는 흙투성이가 되어 집으로 돌아왔다."
+        },
+        {
+          "translation": "그녀는 눈물범벅이 된 채로 고백했다."
+        },
+        {
+          "translation": "그 사건 이후 그는 온통 스캔들투성이가 되었다."
+        },
+        {
+          "translation": "이 방은 먼지투성이다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Noun_77": {
+      "title": "名詞 ＋ のいかんによっては (Noun no ikan ni yotte wa)",
+      "shortExplanation": "事柄の状態や成り行き次第では、ある結果や対応が生じる可能性があることを表します。「〜のいかんによっては」「〜次第では」。",
+      "longExplanation": "「名詞 ＋ のいかんによっては」（「いかん」は漢字で「如何」）は、前項の名詞が表す事態の状態、結果、推移などのあり方次第で、後項のような結果が生じたり、特定の対応が取られたりする可能性があることを表す文型です。「〜のいかんによって」に比べて「〜によっては」とすることで、特定の事態や可能性が生じ得ることに焦点を当てています。公的な通知やビジネス文書、改まった場面で用いられます。",
+      "formation": "名詞 ＋ のいかんによっては",
+      "examples": [
+        {
+          "translation": "天気のいかんによっては、ピクニックを延期しましょう。"
+        },
+        {
+          "translation": "試験の結果のいかんによっては、進学できます。"
+        },
+        {
+          "translation": "状況のいかんによっては、早期退職を考えます。"
+        },
+        {
+          "translation": "彼の反応のいかんによっては、私たちの次の行動を決めます。"
+        }
+      ]
+    },
+    "ja_Noun_78": {
+      "title": "名詞 ＋ のいかんによらず (~ no ikan ni yorazu)",
+      "shortExplanation": "事態の成り行きや状態のいかんに関係なく、後項が成立することを表します。「〜のいかんに関わらず」「〜がどうであっても」。",
+      "longExplanation": "「名詞 ＋ のいかんによらず」は、前項の名詞が示す状態、結果、理由などがどうであるかに関係なく、後項の事態が実行されたり成り立ったりすることを表す文型です。「〜のいかんに関わらず」とほぼ同義で、多様な変化や可能性を持つ語（「理由」「結果」「天候」「成否」など）に付きます。公的な規則、規約、宣言などの極めて改まった文章や硬い表現として用いられます。",
+      "formation": "名詞 ＋ のいかんによらず",
+      "examples": [
+        {
+          "translation": "試験の結果のいかんによらず、自分を信じ続けてください。"
+        },
+        {
+          "translation": "天気のいかんによらず、毎日、ジョギングをします。"
+        },
+        {
+          "translation": "彼の年齢のいかんによらず、彼は非常に経験豊富です。"
+        },
+        {
+          "translation": "国籍のいかんによらず、誰でもイベントに参加できます。"
+        }
+      ]
+    },
+    "ja_Noun_79": {
+      "title": "名詞1 ＋ のごとき ＋ 名詞2 (A no gotoki B)",
+      "shortExplanation": "強い比喩を表す文語的な表現で、後項の名詞を修飾します。「〜のような」「〜のごとき」。",
+      "longExplanation": "「名詞1 ＋ のごとき ＋ 名詞2」は、古典助動詞「ごとし」の連体形を用いた古風で格調高い文語的表現で、現代語の「〜のような」に相当します。後項の名詞が前項の名詞と極めて似ていること、あるいはそのようであるさまを格調高く比喩的に表現する際に用いられます。連用修飾には「〜のごとく」、文末の断定には「〜のごとし」が用いられます。現代では日常会話ではあまり使われず、文学作品、小説、演説、格言などで用いられます。",
+      "formation": "名詞1 ＋ のごとき ＋ 名詞2（または 動詞普通形 ＋ ごとき ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "彼は神のごとき存在だ。"
+        },
+        {
+          "translation": "彼女の美しさは花のごときものだ。"
+        },
+        {
+          "translation": "彼は悪魔のごとき行動をした。"
+        },
+        {
+          "translation": "この地方は春のごとき気候だ。"
+        }
+      ]
+    },
+    "ja_Noun_80": {
+      "title": "名詞 ＋ のことだから (〜no koto dakara)",
+      "shortExplanation": "その人の性格や特徴をよく知っていることから、高い確信を持って推測することを表します。「〜のことだから」「〜だからきっと」。",
+      "longExplanation": "「名詞 ＋ のことだから」は、話し手が前項の人物（または組織・店など）の普段の性格、行動パターン、特徴などを熟知していることを根拠として、「あの人のことだから、きっと〜だろう」と判断や推測を下す際に用いる文型です。前項には主に話し手がよく知っている人物の名詞が来ます。後項には「〜だろう」「〜はずだ」「〜に違いない」などの推量・判断の文末表現がよく呼応します。",
+      "formation": "名詞（主に人物・組織） ＋ のことだから",
+      "examples": [
+        {
+          "translation": "彼のことだから、きっと大丈夫だと思う。"
+        },
+        {
+          "translation": "この店のことだから、料理は美味しいはずです。"
+        },
+        {
+          "translation": "彼女のことだから、もうすぐ到着するでしょう。"
+        },
+        {
+          "translation": "この会社のことだから、もうすぐ新製品が発表されるでしょう。"
+        }
+      ]
+    },
+    "ja_Noun_81": {
+      "title": "名詞 ＋ の嫌いがある (Noun no kirai ga aru)",
+      "shortExplanation": "特定の物事に対して嫌悪感や苦手意識を持っていることを表します。「〜を嫌う傾向がある」「〜が嫌いである」。",
+      "longExplanation": "「名詞 ＋ の嫌いがある」（嫌いがある）は、やや改まった古風な言い回しで、前項の名詞で示される特定の対象や環境などに対して、嫌悪感や苦手意識、敬遠する傾向があることを表す文型です。日常会話では通常「〜が嫌いだ」「〜が苦手だ」と平易に表現されます。（なお、JLPT N1の文法としては動詞辞書形などに接続して「好ましくない傾向・性質がある」という意味で使われることが多いですが、本項目では名詞に付き特定の対象を嫌う心理的傾向を表す用法を扱っています）。",
+      "formation": "名詞 ＋ の嫌いがある（または のきらいがある）",
+      "examples": [
+        {
+          "translation": "彼は魚の嫌いがあるので、寿司を食べません。"
+        },
+        {
+          "translation": "彼女は高いところの嫌いがあるから、山登りはしない。"
+        },
+        {
+          "translation": "私の父は人ごみの嫌いがあるので、混雑した場所には行かない。"
+        },
+        {
+          "translation": "子供の頃、私は野菜の嫌いがあったが、今は好きだ。"
+        }
+      ]
+    },
+    "ja_Noun_82": {
+      "title": "名詞 ＋ の手前 (~no temae)",
+      "shortExplanation": "ある重要な出来事や行動の直前の時点であることを表します。「〜の直前で」「〜を間近に控えて」。",
+      "longExplanation": "「名詞 ＋ の手前」（または動詞辞書形＋手前）は、重要な出来事、行事、期限などが起こる時間的な直前・直前の段階にあることを表す文型です。「試験の手前」「選挙の手前」「締め切りの手前」のように、重要な節目や行事を表す名詞によく接続します。（なお、「〜手前」には時間的な直前を表す用法のほかに、立場や世間体、相手への配慮から「〜の手前、そうせざるを得ない（面目を保つため）」という意味を表す重要な文法用法もあります）。",
+      "formation": "名詞 ＋ の手前（または 動詞辞書形 ＋ 手前）",
+      "examples": [
+        {
+          "translation": "試験の手前、遊びに行くのはやめた方がいい。"
+        },
+        {
+          "translation": "彼女と別れる手前、思い直しました。"
+        },
+        {
+          "translation": "締め切りの手前で、やっとレポートが完成しました。"
+        },
+        {
+          "translation": "選挙の手前、政治の話が多くなります。"
+        }
+      ]
+    },
+    "ja_Noun_83": {
+      "title": "名詞 ＋ の極み (〜no kiwami)",
+      "shortExplanation": "物事の状態、感情、境地などが最高峰や極限に達していることを表します。「〜の極み」「これ以上ない〜」。",
+      "longExplanation": "「名詞 ＋ の極み」は、感情や状態、技術・美しさなどの度合いが最高潮・極限に達しており、これ以上はない状態であることを表す格調高い文章語表現です。「美の極み」「感動の極み」「贅沢の極み」「痛恨の極み」のように、感情や精神的状態、抽象的な性質を表す名詞に接続します。日常会話よりも、文学作品、スピーチ、論説などで深い感慨や賞賛を述べる際に用いられます。",
+      "formation": "名詞 ＋ の極み",
+      "examples": [
+        {
+          "translation": "彼の料理の極みは、誰もマネできない。"
+        },
+        {
+          "translation": "彼女の努力の極みが、この成功を作り出した。"
+        },
+        {
+          "translation": "彼は音楽の極みを追求し続けている。"
+        },
+        {
+          "translation": "この風景は美の極みだ。"
+        }
+      ]
+    },
+    "ja_Noun_84": {
+      "title": "名詞 ＋ の至り (~no itari)",
+      "shortExplanation": "感情や名誉、心理状態などが最高潮・極限に達していることを表します。「〜の至り」「最高の〜」「この上なく〜」。",
+      "longExplanation": "「名詞 ＋ の至り」（「至り」は極点に達することの意）は、感情や精神状態、名誉や羞恥などの気持ちが極限に達していることを表す、極めて改まった格調高い慣用表現です。「光栄の至り（この上なく光栄だ）」「感激の至り」「若気の至り（若さゆえの無分別な行動）」「赤面の至り」のように、決まった名詞と結びついて用いられることが多いのが特徴です。公式なスピーチや挨拶状、改まった手紙などでよく用いられます。",
+      "formation": "名詞 ＋ の至り",
+      "examples": [
+        {
+          "translation": "彼の冗談には驚きの至りだ。"
+        },
+        {
+          "translation": "父がプロジェクトのリーダーになったのは、光栄の至りです。"
+        },
+        {
+          "translation": "彼女の素晴らしい演技には感動の至りだった。"
+        },
+        {
+          "translation": "その失敗は恥ずかしさの至りだった。"
+        }
+      ]
+    },
+    "ja_Noun_85": {
+      "title": "名詞 ＋ はいざ知らず (~ wa iza shirazu)",
+      "shortExplanation": "前者は理解できる（または別として）、後者の事態は意外で驚きや呆れがあることを表します。「〜ならともかく」「〜はどうか知らないが」。",
+      "longExplanation": "「名詞 ＋ はいざ知らず」（または動詞普通形＋のはいざ知らず）は、対比する2つの事柄を取り上げ、「前の事柄ならまだ理解できるし仕方がないかもしれないが、後の事柄となると意外であり納得がいかない、または驚きだ」という話者の意外感や批判的な感情を表す文型です。「〜ならともかく」「〜は別として」に相当します。後項には「〜まで」「〜とは」「〜なんて」など、驚きや極端さを表す表現がよく続きます。",
+      "formation": "名詞 ＋ はいざ知らず（または 動詞・形容詞普通形 ＋ のはいざ知らず）",
+      "examples": [
+        {
+          "translation": "彼が遅れるのはいざ知らず、彼女まで遅刻するとは意外だ。"
+        },
+        {
+          "translation": "夏はいざ知らず、冬にアイスクリームを食べるのは寒すぎませんか？"
+        },
+        {
+          "translation": "子供がテレビゲームに夢中になるのはいざ知らず、大人までそんなに夢中になるとは思わなかった。"
+        },
+        {
+          "translation": "苦しい時はいざ知らず、平時でもそんなに努力するなんてすばらしい。"
+        }
+      ]
+    },
+    "ja_Noun_86": {
+      "title": "名詞1 ＋ はおろか ＋ 名詞2 ＋ すら (Noun wa oroka ～sura)",
+      "shortExplanation": "Aは当然として、より基本的なBさえも成り立たないことを強調します。「AはおろかBすら」「〜はもちろん、〜さえ」。",
+      "longExplanation": "「名詞1 ＋ はおろか ＋ 名詞2 ＋ すら」（または「〜さえ」）は、より高度・上位であるAができないのは言うまでもなく、それよりも容易で基本的なはずのBですら満たされない・できないという極端な状態を強調する文型です。「〜は言うに及ばず、それより下の〜すら」という意味を表し、多くは否定的な文脈や不十分な状態を際立たせるために用いられます。",
+      "formation": "名詞1 ＋ はおろか ＋ 名詞2 ＋ すら（または さえ）",
+      "examples": [
+        {
+          "translation": "彼は走るはおろか、速く歩くことすらできない。"
+        },
+        {
+          "translation": "日本語はおろか、英語さえ話しません。"
+        },
+        {
+          "translation": "彼は食事はおろか、一日中何も飲まなかった。"
+        },
+        {
+          "translation": "このレストランは味はおろか、サービスさえ悪い。"
+        }
+      ]
+    },
+    "ja_Noun_87": {
+      "title": "名詞1 ＋ はおろか ＋ 名詞2 ＋ まで (~wa oroka ~made)",
+      "shortExplanation": "Aはもちろんのこと、予想を超えてさらにBにまで及んでいることを表します。「AはおろかBまで」「〜はもちろん、〜まで」。",
+      "longExplanation": "「名詞1 ＋ はおろか ＋ 名詞2 ＋ まで」は、当然のことと見なされるAにとどまらず、話者の予想や一般的な範囲を大きく越えて、意外なBにまで事態や能力が及んでいることを感嘆を込めて表す文型です。「まで」が付くことによって、範囲や到達点が極端なところにまで達しているという強調のニュアンスが加わります。",
+      "formation": "名詞1 ＋ はおろか ＋ 名詞2 ＋ まで",
+      "examples": [
+        {
+          "translation": "彼は英語はおろか、日本語までペラペラなんです。"
+        },
+        {
+          "translation": "彼女は数学はおろか、物理まで得意なんです。"
+        },
+        {
+          "translation": "この料理は見た目はおろか、味まで最高だ。"
+        },
+        {
+          "translation": "彼は歌はおろか、ダンスまで上手だ。"
+        }
+      ]
+    },
+    "ja_Noun_88": {
+      "title": "名詞1 ＋ はおろか ＋ 名詞2 ＋ も (Noun wa oroka ～ mo)",
+      "shortExplanation": "上位のAはもちろんのこと、より基礎的なBも成り立たないことを否定的に表します。「AはおろかBも（〜ない）」「〜はもちろん、〜も」。",
+      "longExplanation": "「名詞1 ＋ はおろか ＋ 名詞2 ＋ も」は、主に後項に否定や困難を表す語を伴って用いられ、より高度なAができないのは当然として、より簡単で基本的であるはずのBさえも満たされていないことを強調する文型です。「〜はおろか〜さえ/すら」とほぼ同義ですが、助詞「も」を用いることで、包括的にどちらも成立しないという並列否定のニュアンスを簡潔に表現します。",
+      "formation": "名詞1 ＋ はおろか ＋ 名詞2 ＋ も",
+      "examples": [
+        {
+          "translation": "絵を描くことはおろか、字さえ書けない。"
+        },
+        {
+          "translation": "彼は英語はおろか、日本語もわからない。"
+        },
+        {
+          "translation": "彼女は数学はおろか、算数も得意ではない。"
+        },
+        {
+          "translation": "彼は走ることはおろか、歩くことも難しい。"
+        }
+      ]
+    },
+    "ja_Noun_89": {
+      "title": "名詞 ＋ はさておき (~ wa sateoki)",
+      "shortExplanation": "前項の事柄をひとまず脇に置いて、別の重要な事柄に焦点を当てることを表します。「〜はひとまずおいて」「〜は別にして」。",
+      "longExplanation": "「名詞 ＋ はさておき」は、前項の話題や事柄をひとまず本題や議論の中心から外して横に置き、後項で述べるより重要・本質的なことや優先すべき事項に視点を移す際に用いる文型です。「〜は別にして」「〜はひとまず脇に置いて」という意味を表します。「動詞・形容詞普通形 ＋ こと/の ＋ はさておき」の形でも用いられます。日常会話からビジネスシーンまで、話題を切り替えて優先順位を明確にする際によく用いられます。",
+      "formation": "名詞 ＋ はさておき（または 普通形 ＋ こと/の ＋ はさておき）",
+      "examples": [
+        {
+          "translation": "試験の結果はさておき、この学期はとても学ぶことが多かった。"
+        },
+        {
+          "translation": "天候はさておき、明日のピクニックは楽しみにしています。"
+        },
+        {
+          "translation": "彼の性格はさておき、彼のスキルは認めざるを得ない。"
+        },
+        {
+          "translation": "彼があまりにも遅いことはさておき、彼が来ると思われること自体が問題だ。"
+        }
+      ]
+    },
+    "ja_Noun_90": {
+      "title": "名詞 ＋ はどうであれ (~ wa dou de are)",
+      "shortExplanation": "事態や結果がどのようであっても、後項の事実や決意が変わらないことを表します。「〜がどうであっても」「〜に関係なく」。",
+      "longExplanation": "「名詞 ＋ はどうであれ」（「であれ」は助動詞「である」の古風な仮定・譲歩形）は、前項の名詞が示す状況、結果、意見などの状態がどうであろうとも、それに左右されずに後項の決意、行動、事実が変わらないことを表す文型です。「〜がどうであっても」「〜のいかんに関わらず」と同様に、話者の強い意志や不変の事実を述べる際に用いられ、やや改まった響きを持ちます。",
+      "formation": "名詞 ＋ はどうであれ",
+      "examples": [
+        {
+          "translation": "天候はどうであれ、試合は行われます。"
+        },
+        {
+          "translation": "結果はどうであれ、最善を尽くすだけです。"
+        },
+        {
+          "translation": "あなたの意見はどうであれ、私は彼を信じます。"
+        },
+        {
+          "translation": "試験の結果はどうであれ、あなたには何も変わりません。"
+        }
+      ]
+    },
+    "ja_Noun_91": {
+      "title": "名詞 ＋ まみれ (~mamire)",
+      "shortExplanation": "人や物の表面全体に、汚いものや不快なものがべっとりと付着している状態を表します。「〜まみれ」「〜だらけ」。",
+      "longExplanation": "「名詞 ＋ まみれ」（接尾辞「塗れ」）は、身体や物の表面全体に、泥・血・埃・汗などの汚れて不快な液体や粉末、あるいは借金やスキャンダルといった好ましくないものがべったりと付着・充満している状態を表す文型です。ほぼ常に不快感、汚らしさ、悲惨さなどの否定的なニュアンスを伴います。「〜だらけ」が平面や空間に散らばっている様子全般を表すのに対し、「〜まみれ」は表面全体に付着して一体化しているような状態を表すのが特徴です。",
+      "formation": "名詞 ＋ まみれ",
+      "examples": [
+        {
+          "translation": "彼は泥まみれになって帰ってきた。"
+        },
+        {
+          "translation": "彼女は涙まみれになりながら告白した。"
+        },
+        {
+          "translation": "その事件後、彼はスキャンダルまみれになった。"
+        },
+        {
+          "translation": "この部屋は埃まみれだ。"
+        }
+      ]
+    }
+  }
+}

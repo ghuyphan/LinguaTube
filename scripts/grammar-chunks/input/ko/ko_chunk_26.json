@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_고_7",
+    "language": "ko",
+    "pattern": "~고",
+    "title": "~고 싶다 [go sipda] (Want to)",
+    "shortExplanation": "Used to express a desire or wish to do something.",
+    "longExplanation": "'~고 싶다 [go sipda]' is used to indicate that the speaker (or someone) wants to do something. It can be softened to express one’s own wishes or used to ask politely about someone else’s wishes.",
+    "formation": "Verb stem + 고 싶다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 한국어를 배우고 싶어요. 그래서 매일 공부하고 있어요.",
+        "romanization": "Jeoneun hangugeoreul baeugo sipeoyo. Geuraeseo maeil gongbuhago isseoyo.",
+        "translation": "I want to learn Korean, so I study every day."
+      },
+      {
+        "sentence": "친구가 내일 영화를 보고 싶다고 해서 표를 사려고 해요.",
+        "romanization": "Chinguga naeil yeonghwareul bogo sipdago haeseo pyoreul saryeogo haeyo.",
+        "translation": "My friend said she wants to see a movie tomorrow, so I'm going to buy tickets."
+      },
+      {
+        "sentence": "오늘 밤에는 집에 가고 싶지 않아서 친구 집에서 묵을 거예요.",
+        "romanization": "Oneul bamenen jibe gago sipji anhaseo chingu jibeseo mugeul geoyeyo.",
+        "translation": "I don’t want to go home tonight, so I’m going to stay at my friend’s house."
+      },
+      {
+        "sentence": "요리를 배우고 싶어서 요리 학교에 가고 싶었어요.",
+        "romanization": "Yorireul baeugo sipeoseo yori hakgyoe gago sipeosseoyo.",
+        "translation": "I wanted to learn cooking, so I wanted to go to a cooking school."
+      }
+    ]
+  },
+  {
+    "id": "ko_고_8",
+    "language": "ko",
+    "pattern": "~고",
+    "title": "~고 있다 [go itda] (In the process of doing)",
+    "shortExplanation": "Used to express an ongoing action or a continuing state.",
+    "longExplanation": "'~고 있다 [go itda]' corresponds roughly to the present progressive in English (e.g., 'am doing'), but can also show a continued state (e.g., 'am wearing' something).",
+    "formation": "Verb stem + 고 있다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그녀는 햇빛 아래에서 책을 읽고 있어요.",
+        "romanization": "Geunyeoneun haetbit araeseo chaegeul ilggo isseoyo.",
+        "translation": "She is reading a book under the sunlight."
+      },
+      {
+        "sentence": "꽃들이 바람에 흔들리고 있어요.",
+        "romanization": "Kkotdeuri barame heundeulligo isseoyo.",
+        "translation": "The flowers are swaying in the wind."
+      },
+      {
+        "sentence": "그는 올해 내내 스트레스를 받고 있어요.",
+        "romanization": "Geuneun olhae naenae seuteureseureul batgo isseoyo.",
+        "translation": "He has been under stress all year."
+      },
+      {
+        "sentence": "우리 아버지는 지금 유럽을 여행하고 있어요.",
+        "romanization": "Uri abeoji-neun jigeum yureobeul yeohaenghago isseoyo.",
+        "translation": "My father is currently traveling around Europe."
+      }
+    ]
+  },
+  {
+    "id": "ko_고자_9",
+    "language": "ko",
+    "pattern": "~고자",
+    "title": "~고자 하다 [goja hada] (In order to)",
+    "shortExplanation": "A more formal/official way to express intention or purpose: ‘in order to,’ ‘for the purpose of.’",
+    "longExplanation": "'~고자 하다 [goja hada]' is typically used in more formal contexts to express the speaker’s intention or plan to do something, similar to ‘in order to’ in English. It often appears in written or official discourse.",
+    "formation": "Verb stem + 고자 하다 (often ~고자 + main verb in formal sentences)",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 한국어 실력을 향상시키고자 매일 한국 드라마를 보고 있어요.",
+        "romanization": "Jeoneun hangugeo sillyeogeul hyangsangsikigoja maeil hanguk deuramareul bogo isseoyo.",
+        "translation": "In order to improve my Korean skills, I watch Korean dramas every day."
+      },
+      {
+        "sentence": "당신의 건강을 돌보고자 아침마다 일찍 일어나서 운동을 하고 있어요.",
+        "romanization": "Dangsinui geongangeul dolbogoja achimmada iljjik ireonaseo undongeul hago isseoyo.",
+        "translation": "In order to take care of your health, you should get up early every morning and exercise."
+      },
+      {
+        "sentence": "기업의 환경 보호를 이행하고자 제품의 친환경 포장을 도입했습니다.",
+        "romanization": "Gieobui hwangyeong bohoreul ihaenghagoja jepumui chin-hwangyeong pojangeul doiphaetseumnida.",
+        "translation": "In order to fulfill the company's environmental protection efforts, they introduced eco-friendly packaging."
+      },
+      {
+        "sentence": "그녀는 진정한 행복을 찾고자 먼 나라로 여행을 떠났어요.",
+        "romanization": "Geunyeoneun jinjeonghan haengbokeul chatgoja meon nararo yeohaengeul tteonasseoyo.",
+        "translation": "In order to find true happiness, she traveled to a far-off country."
+      }
+    ]
+  },
+  {
+    "id": "ko_곤_10",
+    "language": "ko",
+    "pattern": "~곤",
+    "title": "~곤 하다 [gon hada] (Often do)",
+    "shortExplanation": "Used to express the repetition or frequency of an action or state.",
+    "longExplanation": "'~곤 하다 [gon hada]' is a pattern used in Korean to convey habitual or repeated actions. It attaches to action verbs to suggest that something happens repeatedly or as a habit. It generally reflects a recurring behavior, often in both the past and present.",
+    "formation": "Verb stem + 곤 하다 (commonly used as '~곤 해요', '~곤 했어요', etc.)",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "나는 마음이 힘들 때 종종 책을 읽곤 해요. 그러면 그리운 마음을 달래곤 해요.",
+        "romanization": "Naneun maeumi himdeul ttae jongjong chaegeul ilkkon haeyo. Geureomyeon geuliun maeumeul dallaegon haeyo.",
+        "translation": "I often read books when I feel down. Doing that often soothes my longing heart."
+      },
+      {
+        "sentence": "아침에 일어나면 항상 창문을 열곤 해요. 신선한 공기를 맞이하곤 해요.",
+        "romanization": "Achime ileonamyeon hangsang changmuneul yeolgon haeyo. Sinseonhan gonggireul majihagon haeyo.",
+        "translation": "When I wake up in the morning, I often open the window. I often greet the fresh air."
+      },
+      {
+        "sentence": "그녀는 새로운 레시피를 발견하면 자주 시도하곤 해요. 그래서 항상 새로운 요리를 만들곤 해요.",
+        "romanization": "Geunyeoneun saeroun resipireul balgyeonhamyeon jaju sidohagon haeyo. Geuraeseo hangsang saeroun yorireul mandeulgon haeyo.",
+        "translation": "Whenever she discovers a new recipe, she often tries it out, so she often ends up cooking new dishes."
+      },
+      {
+        "sentence": "저는 운동 후에 항상 스트레칭을 하곤 해요. 그러면 근육이 뻣뻣해지는 것을 방지하곤 해요.",
+        "romanization": "Jeoneun undong hue hangsang seuteurechingeul hagon haeyo. Geureomyeon geunyugi ppeotppeothaejineun geoseul bangjihagon haeyo.",
+        "translation": "I often do stretching after exercising. That way, I often prevent my muscles from getting stiff."
+      }
+    ]
+  },
+  {
+    "id": "ko_기도_11",
+    "language": "ko",
+    "pattern": "~기도",
+    "title": "~기도 하다 [gido hada] (Sometimes do)",
+    "shortExplanation": "Expresses that an action is done occasionally or sometimes.",
+    "longExplanation": "'~기도 하다 [gido hada]' is used to indicate that someone sometimes (not always) does a certain action. It can also be used to emphasize that there are multiple actions: one does A and sometimes B, too. The '도' particle shows this sense of 'also' or 'too.'",
+    "formation": "Verb stem + 기도 하다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 보통 축구를 보지만, 때때로 야구를 보기도 해요.",
+        "romanization": "Jeoneun botong chuggureul bojiman, ttaettaero yagureul bogido haeyo.",
+        "translation": "I usually watch soccer, but sometimes I also watch baseball."
+      },
+      {
+        "sentence": "그녀는 요리를 잘하지만, 그럼에도 불구하고 배울 것이 많아서 요리 수업에 가기도 해요.",
+        "romanization": "Geunyeoneun yorireul jalhajiman, geureomedo bulguhago baewul geosi manaseo yori sueobe gagido haeyo.",
+        "translation": "Even though she cooks well, she still has a lot to learn, so she sometimes goes to cooking classes."
+      },
+      {
+        "sentence": "우리는 주로 산을 등반하는데, 가끔 강가에서 피크닉을 즐기기도 해요.",
+        "romanization": "Urineun juro saneul deungbanhaneunde, gakkeum ganggaeseo pikeunik-eul jeulgigido haeyo.",
+        "translation": "We usually go hiking in the mountains, but occasionally we enjoy picnics by the river."
+      },
+      {
+        "sentence": "제가 보통 이른 아침에 일어나지만, 때로는 늦잠을 자기도 해요.",
+        "romanization": "Jega botong ireun achime ileonajiman, ttaeroneun neutjameul jagido haeyo.",
+        "translation": "I usually wake up early in the morning, but sometimes I sleep in."
+      }
+    ]
+  },
+  {
+    "id": "ko_기로_12",
+    "language": "ko",
+    "pattern": "~기로",
+    "title": "~기로 [giro] (Decided to)",
+    "shortExplanation": "Indicates a decision or agreement to do something.",
+    "longExplanation": "The '~기로 [giro]' construction is used to express that a decision or promise has been made to do something. It often appears as '~기로 하다', '~기로 결정하다', or '~기로 약속하다' to emphasize that a firm plan or promise is in place.",
+    "formation": "Verb stem + 기로 (often followed by 하다/결정하다/약속하다)",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그녀는 다음 주에 시험을 보기로 결정했어요.",
+        "romanization": "Geunyeoneun daeum jue siheomeul bogiro gyeoljeonghaesseoyo.",
+        "translation": "She decided to take the test next week."
+      },
+      {
+        "sentence": "나는 내일 친구들과 영화를 보기로 약속했어요.",
+        "romanization": "Naneun naeil chingudeulgwa yeonghwareul bogiro yaksokhaesseoyo.",
+        "translation": "I promised to watch a movie with my friends tomorrow."
+      },
+      {
+        "sentence": "우리 부모님은 내년에 새 집으로 이사하기로 결정했어요.",
+        "romanization": "Uri bumonimeun naenyeone sae jib-euro isagiro gyeoljeonghaesseoyo.",
+        "translation": "My parents have decided to move to a new house next year."
+      },
+      {
+        "sentence": "우리는 다음 회의에서 이 문제를 논의하기로 했어요.",
+        "romanization": "Urineun daeum hoeuiese o i munjereul nonuihagiro haesseoyo.",
+        "translation": "We decided to discuss this issue at the next meeting."
+      }
+    ]
+  },
+  {
+    "id": "ko_기로_13",
+    "language": "ko",
+    "pattern": "~기로",
+    "title": "~기로 되다 [giro dweda] (It's decided to)",
+    "shortExplanation": "Expresses that something has been decided or arranged.",
+    "longExplanation": "'~기로 되다 [giro dweda]' is used when you want to indicate that some plan or arrangement has been set, often by an external decision or mutual agreement. It often translates to 'It has been decided that...' or 'It's arranged that...'",
+    "formation": "Verb stem + 기로 되다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "회사에서 월요일에 회의하기로 되었어요.",
+        "romanization": "Hoesaeseo woryoil-e hoeuihagiro doeeosseoyo.",
+        "translation": "It has been decided that we will have a meeting on Monday at the company."
+      },
+      {
+        "sentence": "우리는 내일 오후 3시에 만나기로 되었어요.",
+        "romanization": "Urineun naeil ohu sam si-e mannagiro doeeosseoyo.",
+        "translation": "It's been decided that we will meet at 3 p.m. tomorrow."
+      },
+      {
+        "sentence": "그녀와의 결혼은 내년에 하기로 되었어요.",
+        "romanization": "Geunyeowa-ui gyeolhoneun naenyeon-e hagiro doeeosseoyo.",
+        "translation": "It's been decided that we will get married next year."
+      },
+      {
+        "sentence": "다음 주에 친구들과 여행 가기로 되었어요.",
+        "romanization": "Daeum jue chingudeulgwa yeohaeng gagiro doeeosseoyo.",
+        "translation": "It's been decided that we’ll go on a trip with friends next week."
+      }
+    ]
+  },
+  {
+    "id": "ko_기로_14",
+    "language": "ko",
+    "pattern": "~기로",
+    "title": "~기로 하다 [giro hada] (Decide to)",
+    "shortExplanation": "Used to say that one decides or agrees to do something.",
+    "longExplanation": "'~기로 하다' is a common way to say 'decide to...' in Korean. It highlights that a resolution or plan has been set for some future action. It is also used for promises or mutual agreements (e.g., with friends or family).",
+    "formation": "Verb stem + 기로 하다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "우리는 다음 주에 여행 가기로 했어요. 날씨가 좋으면 바다로 갈까 해요.",
+        "romanization": "Urineun daeum jue yeohaeng gagiro haesseoyo. Nalssiga joeumyeon badaro galkka haeyo.",
+        "translation": "We decided to go on a trip next week. If the weather is good, we might go to the beach."
+      },
+      {
+        "sentence": "나는 내일 헬스장에 가기로 했어요. 운동을 시작해서 건강해지기로 했어요.",
+        "romanization": "Naneun naeil helseujange gagiro haesseoyo. Undongeul sijakhaeseo geonganghaejigiro haesseoyo.",
+        "translation": "I decided to go to the gym tomorrow. I decided to start exercising and become healthier."
+      },
+      {
+        "sentence": "서윤은 미래에 스스로 직장을 갖기로 했습니다.",
+        "romanization": "Seo Yuneun mirae-e seuseuro jigjangeul gatgiro haessseumnida.",
+        "translation": "Seo Yoon decided to have her own job in the future."
+      },
+      {
+        "sentence": "우리 그룹은 사업 확장을 위해 더 많은 직원을 고용하기로 결정했습니다.",
+        "romanization": "Uri geurubeun saeop hwagjangeul wihae deo maneun jigweoneul goyonghagiro gyeoljeonghaessseumnida.",
+        "translation": "Our group decided to hire more employees for business expansion."
+      }
+    ]
+  },
+  {
+    "id": "ko_기_15",
+    "language": "ko",
+    "pattern": "~기",
+    "title": "~기 시작하다 [gi sijakhada] (Begin to)",
+    "shortExplanation": "Used to express the start or beginning of an action.",
+    "longExplanation": "'~기 시작하다 [gi sijakhada]' indicates that an action has just begun (or will soon begin). It is the rough equivalent of 'to start doing' or 'to begin to do' in English.",
+    "formation": "Verb stem + 기 시작하다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그녀는 다섯 살 때 피아노를 치기 시작했어요. 그래서 지금은 피아노를 정말 잘 칩니다.",
+        "romanization": "Geunyeoneun daseot sal ttae pianoreul chigi sijakhaesseoyo. Geuraeseo jigeumeun pianoreul jeongmal jal chimnida.",
+        "translation": "She began to play the piano at the age of five, so now she plays really well."
+      },
+      {
+        "sentence": "나는 아침에 일어나자마자 커피를 마시기 시작했어요. 커피 없이는 하루를 시작할 수 없어요.",
+        "romanization": "Naneun achime ireonajamaja keopireul masigi sijakhaesseoyo. Keopi eopsineun harureul sijakhal su eopseoyo.",
+        "translation": "I begin to drink coffee as soon as I wake up in the morning. I can't start the day without coffee."
+      },
+      {
+        "sentence": "우리는 처음 회의를 시작할 때부터 심각한 문제에 대해 이야기하기 시작했어요.",
+        "romanization": "Urineun cheoeum hoeuireul sijakhal ttaebuteo simgakhan munje-e daehae iyagihagi sijakhaesseoyo.",
+        "translation": "We began to talk about serious issues right from the start of the meeting."
+      },
+      {
+        "sentence": "저는 한국어를 배우기 시작한 지 1년이 지났는데, 아직도 배울 게 많아요.",
+        "romanization": "Jeoneun hangugeoreul baeugi sijakhan ji ilnyeoni jinannende, ajikdo baeul ge manayo.",
+        "translation": "It has been a year since I started learning Korean, and I still have a lot to learn."
+      }
+    ]
+  },
+  {
+    "id": "ko_기_16",
+    "language": "ko",
+    "pattern": "~기",
+    "title": "~기 위해서 [gi wihaeseo] (In order to)",
+    "shortExplanation": "Used to express the purpose or reason for doing something.",
+    "longExplanation": "'~기 위해서 [gi wihaeseo]' means 'in order to' or 'for the purpose of.' When attached to a verb in the '~기' nominal form, it denotes the reason or purpose for taking a particular action. It is common in both spoken and written Korean when describing why someone is doing something (especially future or ongoing actions).",
+    "formation": "Verb stem + 기 위해서",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "영어를 잘하게 되기 위해서 매일 아침에 영어 듣기 연습을 하고 있어요.",
+        "romanization": "Yeongeoreul jalhage doegi wihaeseo maeil achime yeong-eo deudgi yeonseubeul hago isseoyo.",
+        "translation": "In order to become good at English, I practice listening every morning."
+      },
+      {
+        "sentence": "운동선수가 되기 위해서 학교가 끝난 후에 항상 훈련에 참여해요.",
+        "romanization": "Undongseonsuga doegi wihaeseo hakgyoga kkeutnan hue hangsang hunryeone chamyeohaeyo.",
+        "translation": "In order to become an athlete, I always participate in training after school."
+      },
+      {
+        "sentence": "시험에 합격하기 위해서 많은 시간을 공부하는 데 투자했어요.",
+        "romanization": "Siheome hapgyeokhagi wihaeseo manheun siganeul gongbuhaneun de tujahaeosseoyo.",
+        "translation": "I invested a lot of time studying in order to pass the exam."
+      },
+      {
+        "sentence": "행복한 삶을 살기 위해서 자기 자신을 사랑하는 것이 중요해요.",
+        "romanization": "Haengbokhan salmeul salgi wihaeseo jagi jasineul saranghaneun geosi jungyohaeyo.",
+        "translation": "In order to live a happy life, it’s important to love yourself."
+      }
+    ]
+  },
+  {
+    "id": "ko_기는_17",
+    "language": "ko",
+    "pattern": "~기는",
+    "title": "~기는 [gineun] (But)",
+    "shortExplanation": "Used to indicate contrast or an exception; similar to 'but' in English.",
+    "longExplanation": "'~기는 [gineun]' is attached to a verb stem (or sometimes an adjective stem) to imply a contrast with a following clause. It acknowledges or concedes one point, while highlighting a contrasting fact or viewpoint. It is somewhat similar to 'but' or 'although' in English, often used to say something “is true, but…”",
+    "formation": "Verb stem + 기는 (or Adjective stem + 기는)",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 여행하기는 좋아하는데, 비행기를 타는 것이 아직도 두렵습니다.",
+        "romanization": "Jeoneun yeohaenghagineun joahaneunde, bihaenggireul taneun geosi ajikdo duryeopseumnida.",
+        "translation": "I do like traveling, but I’m still scared of flying."
+      },
+      {
+        "sentence": "그 건물은 크기는 큰데, 상태가 너무 안 좋아서 리모델링이 필요해 보여요.",
+        "romanization": "Geu geonmureun keugineun keunde, sangtaega neomu an joahaseo rimodeilling-i piryohae boyeoyo.",
+        "translation": "That building is large, but it seems like it needs remodeling because it’s in bad condition."
+      },
+      {
+        "sentence": "그 친구는 친절하기는 한데, 솔직히 말해서 너무 많이 물어봐서 조금 짜증나요.",
+        "romanization": "Geu chinguneun chinjeolhagineun hande, soljikhage malhaeseo neomu mani mureobwaseo jogeum jjajeungnayo.",
+        "translation": "That friend is kind, but to be honest, I’m a bit annoyed because he asks too many questions."
+      },
+      {
+        "sentence": "이번 계절은 봄이기는 한데, 날씨가 아직도 춥고, 따뜻해지기를 기다리고 있어요.",
+        "romanization": "Ibeon gyejeoreun bomigineun hande, nalssiga ajikdo chupgo, ttatteuthaejigireul gidarigo isseoyo.",
+        "translation": "This season is spring, but the weather is still cold, so I'm waiting for it to warm up."
+      }
+    ]
+  },
+  {
+    "id": "ko_기에는_18",
+    "language": "ko",
+    "pattern": "~기에는",
+    "title": "~기에는 [gieneun] (For doing)",
+    "shortExplanation": "Used to express 'for doing something' or 'in order to'.",
+    "longExplanation": "'~기에는 [gieneun]' typically indicates that something is either suitable or unsuitable for a certain purpose. It can often be translated as 'for (the purpose of) doing X' or 'to do X.' It frequently appears with judgments about time, conditions, or suitability for an action.",
+    "formation": "Verb stem + 기에는 (+ complement)",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "이번 시험을 준비하기에는 시간이 충분하지 않다고 생각합니다.",
+        "romanization": "Ibeon siheomeul junbigieneun sigani chungbunhaji anhdago saenggakhamnida.",
+        "translation": "I think there is not enough time to prepare for this exam."
+      },
+      {
+        "sentence": "운동하기에는 밖이 너무 추워요, 그래서 집에서 운동하려고 합니다.",
+        "romanization": "Undonghagieneun bakki neomu chuwoyo, geuraeseo jib-eseo undongharyeogo hamnida.",
+        "translation": "It is too cold outside to exercise, so I plan to work out at home."
+      },
+      {
+        "sentence": "좋은 성적을 받기에는 진심으로 노력해야 합니다.",
+        "romanization": "Joheun seongjeogeul batgieneun jinsimeuro noryeokhaeya hamnida.",
+        "translation": "You have to make a sincere effort in order to get a good grade."
+      },
+      {
+        "sentence": "축구를 배우기에는 나이가 너무 많다고 생각하는 경우도 있어요.",
+        "romanization": "Chukgureul baeugieneun naiga neomu manhdago saenggakhaneun gyeongudo isseoyo.",
+        "translation": "Sometimes people think they are too old to learn soccer."
+      }
+    ]
+  },
+  {
+    "id": "ko_기_19",
+    "language": "ko",
+    "pattern": "~기",
+    "title": "~기 전에 [gi jeone] (Before doing)",
+    "shortExplanation": "Used to express that one action occurs before another.",
+    "longExplanation": "'~기 전에 [gi jeone]' means 'before doing (something).' It is used to specify an action that takes place prior to another action. The literal translation is 'before V-ing' in English. It is very common when giving a chronological order of steps or instructions.",
+    "formation": "Verb stem + 기 전에",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "운동을 하기 전에 충분히 스트레칭을 해야 해요. 그렇지 않으면 부상을 당할 수 있어요.",
+        "romanization": "Undongeul hagi jeone chungbunhi seuteurechingeul haeya haeyo. Geureohji anheumyeon busangeul danghal su isseoyo.",
+        "translation": "You have to stretch enough before exercising; otherwise, you might get injured."
+      },
+      {
+        "sentence": "집을 나가기 전에 전기를 꺼야 해요. 그렇지 않으면 화재가 발생할 수 있어요.",
+        "romanization": "Jibeul nagagi jeone jeongireul kkeoya haeyo. Geureohji anheumyeon hwajaega balsaenghal su isseoyo.",
+        "translation": "You must turn off the electricity before leaving the house; otherwise, a fire could start."
+      },
+      {
+        "sentence": "수업이 시작하기 전에 숙제를 제출해야 해요. 그렇지 않으면 학점이 깎일 수 있어요.",
+        "romanization": "Sueobi sijakagi jeone sukjereul jechulhaeya haeyo. Geureohji anheumyeon hakjeomi kkakkil su isseoyo.",
+        "translation": "You need to submit your homework before class starts; otherwise, your grade might be lowered."
+      },
+      {
+        "sentence": "먹기 전에 손을 꼭 씻어야 해요. 그렇지 않으면 병균에 감염될 수 있어요.",
+        "romanization": "Meokgi jeone soneul kkok ssiseoya haeyo. Geureohji anheumyeon byeonggyune gamyeomdoel su isseoyo.",
+        "translation": "You must wash your hands before eating; otherwise, you can get infected by germs."
+      }
+    ]
+  },
+  {
+    "id": "ko_나_20",
+    "language": "ko",
+    "pattern": "~나",
+    "title": "~나 보다 [na boda] (Seems like, guess)",
+    "shortExplanation": "Used to express an assumption or supposition (e.g., 'it seems that...').",
+    "longExplanation": "'~나 보다 [na boda]' is used when the speaker draws a guess or conclusion from evidence, often translated as 'it seems...', 'I guess...', or 'looks like...'. It can be used with both verbs and adjectives: '하나 보다' (I guess one does it), '크나 보다' (I guess it's big), etc.",
+    "formation": "Verb or adjective stem + 나 보다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "피곤하나 봐요, 학교에 와서 계속 잤어요.",
+        "romanization": "Pigonhana bwayo, hakgyoe waseo gyesok jasseoyo.",
+        "translation": "I guess he’s tired. He kept sleeping after he arrived at school."
+      },
+      {
+        "sentence": "이 풍경을 보면 행복해지나 봐요. 그림을 그리면서 눈물을 흘렸어요.",
+        "romanization": "I punggyeongeul bomyeon haengbokhaejina bwayo. Geurimeul geurimyeonseo nunmureul heullyeosseoyo.",
+        "translation": "I guess I feel happy when I see this scenery. I even shed tears while painting."
+      },
+      {
+        "sentence": "비가 오나 봐요. 밖에 사람들이 우산을 들고 있어요.",
+        "romanization": "Biga ona bwayo. Bakke saramdeuri usaneul deulgo isseoyo.",
+        "translation": "It seems to be raining. People outside are carrying umbrellas."
+      },
+      {
+        "sentence": "그녀가 감기에 걸렸나 봐요. 계속 헛기침을 하고 있어요.",
+        "romanization": "Geunyeoga gamgie geollyeotna bwayo. Gyesok heotgicheumeul hago isseoyo.",
+        "translation": "I guess she caught a cold. She keeps clearing her throat."
+      }
+    ]
+  },
+  {
+    "id": "ko_나다_21",
+    "language": "ko",
+    "pattern": "~나다",
+    "title": "~나다 [nada] (End up doing, come to do)",
+    "shortExplanation": "Expresses that an action happened unexpectedly or wasn’t originally intended.",
+    "longExplanation": "The verb “나다” can appear in certain compound forms like ‘결정이 나다’ (‘a decision is made’), ‘끝나다’ (‘to end’), or ‘결론이 나다’ (‘a conclusion is reached’). In these contexts, it often carries the nuance of something happening or being completed somewhat beyond one’s direct intention. It can be translated as ‘end up ~ing’ or ‘come to ~.’",
+    "formation": "Commonly in fixed expressions (e.g., 결정이 나다, 끝나다).",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그녀는 고민을 하다가 결국 친구의 조언을 따르기로 결정이 났어요.",
+        "romanization": "Geunyeoneun gomineul hadaga gyeolguk chinguui joeoneul ttarugiro gyeoljeongi natseoyo.",
+        "translation": "After much consideration, she ended up deciding to follow her friend’s advice."
+      },
+      {
+        "sentence": "저는 간단히 쇼핑하러 갔다가 결국 많은 돈을 쓰는 것으로 끝났어요.",
+        "romanization": "Jeoneun gandanhi syopinghareo gatdaga gyeolguk manheun doneul sseuneun geoseuro kkeutnasseoyo.",
+        "translation": "I went out for just a little shopping but ended up spending a lot of money."
+      },
+      {
+        "sentence": "어제 집에 일찍 돌아가려 했지만, 늦게까지 일하다가 결국 늦게 돌아가게 됐어요.",
+        "romanization": "Eoje jibe iljjik doragaryeo haetjiman, neutgekkaji ilhadaga gyeolguk neutge doragage dwaesseoyo.",
+        "translation": "I intended to go home early yesterday, but I kept working until late and ended up going home much later."
+      },
+      {
+        "sentence": "학교에 가려고 했는데, 결국 비가 너무 많이 내려서 집에 있게 됐어요.",
+        "romanization": "Hakgyoe garyeogo haetneunde, gyeolguk biga neomu manhi naeryeoseo jibe itge dwaesseoyo.",
+        "translation": "I intended to go to school, but it rained so much that I ended up staying at home."
+      }
+    ]
+  }
+]

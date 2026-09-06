@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_VOV得A_107": {
+      "title": "Động từ + Tân ngữ + Động từ + 得 + Tính từ (Lặp lại động từ khi có tân ngữ để miêu tả trình độ, kết quả)",
+      "shortExplanation": "Dùng để miêu tả, đánh giá mức độ, trình độ hoặc kết quả của hành động khi động từ có mang tân ngữ; động từ phải được lặp lại trước '得'.",
+      "longExplanation": "Trong tiếng Trung, khi động từ mang tân ngữ và người nói muốn bổ sung bổ ngữ trạng thái/trình độ với '得' để miêu tả, đánh giá xem hành động thực hiện như thế nào (tốt, nhanh, hay...), cấu trúc bắt buộc phải lặp lại động từ theo dạng 'Động từ + Tân ngữ + Động từ + 得 + Tính từ / Cụm tính từ' (ví dụ: 唱歌唱得很好 - hát rất hay). Trong khẩu ngữ, động từ thứ nhất đôi khi có thể được lược bỏ nếu tân ngữ được chuyển thành chủ đề đứng trước động từ.",
+      "formation": "Chủ ngữ + Động từ + Tân ngữ + Động từ + 得 + (Phó từ + ) Tính từ",
+      "examples": [
+        {
+          "translation": "Chị gái tôi hát rất hay."
+        }
+      ]
+    },
+    "zh_VOV得比NA_108": {
+      "title": "Động từ (+ Tân ngữ + Động từ) + 得 + 比 + Danh từ + Tính từ (So sánh về trình độ, trạng thái: đặt cụm '比' sau '得')",
+      "shortExplanation": "Dùng để so sánh trình độ, kết quả hoặc trạng thái của hành động giữa hai đối tượng, trong đó cụm so sánh '比 + Danh từ' được đặt ngay sau '得'.",
+      "longExplanation": "Đây là một trong hai cấu trúc so sánh phổ biến kết hợp với bổ ngữ trạng thái trong tiếng Trung. Trong mẫu câu này, cụm so sánh '比 + Danh từ' (hoặc đại từ) được đặt ở vị trí bổ ngữ, ngay sau trợ từ '得' và trước tính từ miêu tả: 'Chủ ngữ + Động từ (+ Tân ngữ + Động từ) + 得 + 比 + Đối tượng so sánh + Tính từ'. Cấu trúc này nhấn mạnh vào sự chênh lệch về mức độ hoặc kết quả của hành động. Khi có tân ngữ, có thể lặp lại động từ hoặc lược bỏ động từ đầu tiên.",
+      "formation": "Chủ ngữ + Động từ (+ Tân ngữ + Động từ) + 得 + 比 + Danh từ (Đối tượng so sánh) + Tính từ",
+      "examples": [
+        {
+          "translation": "Cậu ấy học (tiếng Trung) nhanh hơn tôi."
+        }
+      ]
+    },
+    "zh_比NVOV得A_109": {
+      "title": "比 + Danh từ + Động từ (+ Tân ngữ + Động từ) + 得 + Tính từ (So sánh về trình độ, trạng thái: đặt cụm '比' trước động từ)",
+      "shortExplanation": "Dùng để so sánh trình độ, kết quả của hành động, trong đó cụm giới từ '比 + Danh từ' được đặt trước động từ vị ngữ để làm trạng ngữ.",
+      "longExplanation": "Đây là dạng thứ hai của câu so sánh chữ '比' kết hợp với bổ ngữ trạng thái trong tiếng Trung. Khác với dạng đặt sau '得', trong cấu trúc này cụm giới từ '比 + Danh từ' (đối tượng so sánh) được đặt ngay sau chủ ngữ và trước động từ chính để làm trạng ngữ: 'Chủ ngữ + 比 + Đối tượng so sánh + Động từ (+ Tân ngữ + Động từ) + 得 + Tính từ'. Cả hai dạng (trước động từ và sau '得') đều biểu thị cùng một ý nghĩa so sánh về trình độ hoặc kết quả của hành động.",
+      "formation": "Chủ ngữ + 比 + Danh từ (Đối tượng so sánh) + Động từ (+ Tân ngữ + Động từ) + 得 + Tính từ",
+      "examples": [
+        {
+          "translation": "Cậu ấy học (tiếng Trung) nhanh hơn tôi."
+        }
+      ]
+    },
+    "zh_V着O_110": {
+      "title": "Động từ + 着 + Tân ngữ (Biểu thị trạng thái đang duy trì: đang...)",
+      "shortExplanation": "Trợ từ động thái '着' đi sau động từ mang tân ngữ để biểu thị trạng thái hoặc động tác đang tiếp diễn, duy trì.",
+      "longExplanation": "'着' (zhe) là trợ từ động thái quan trọng trong tiếng Trung, thường được đặt trực tiếp sau động từ để biểu thị sự duy trì của một trạng thái hoặc hành động (thường là kết quả của hành động trước đó, ví dụ: 穿着 - đang mặc, 拿着 - đang cầm, 戴着 - đang đeo). Khác với '在' nhấn mạnh quá trình hành động đang tiến hành, '着' nhấn mạnh trạng thái tĩnh đang tiếp diễn hoặc duy trì.",
+      "formation": "Chủ ngữ + Động từ + 着 + Tân ngữ",
+      "examples": [
+        {
+          "translation": "Họ đang mặc âu phục."
+        }
+      ]
+    },
+    "zh_没V着O_111": {
+      "title": "没(有) + Động từ + 着 + Tân ngữ (Phủ định của trạng thái duy trì: không...)",
+      "shortExplanation": "Dạng phủ định của cấu trúc trạng thái 'Động từ + 着'; dùng phó từ phủ định '没' hoặc '没有' đặt trước động từ; 'không...'.",
+      "longExplanation": "Để phủ định một trạng thái đang tiếp diễn hoặc duy trì được tạo bởi 'Động từ + 着', tiếng Trung dùng phó từ phủ định '没' hoặc '没有' đặt ngay trước động từ (tuyệt đối không dùng '不'). Cấu trúc 'Chủ ngữ + 没(有) + Động từ + 着 + Tân ngữ' dùng để diễn đạt rằng chủ ngữ hiện tại không ở trong trạng thái đó, chẳng hạn không mang, không mặc, không cầm nắm đồ vật nào đó.",
+      "formation": "Chủ ngữ + 没(有) + Động từ + 着 + Tân ngữ",
+      "examples": [
+        {
+          "translation": "Cậu ấy không cầm bút chì."
+        }
+      ]
+    },
+    "zh_N不是吗_112": {
+      "title": "Danh từ / Đại từ + 不是……吗？ (Chẳng phải là... sao?, Không phải... hay sao?)",
+      "shortExplanation": "Mẫu câu phản vấn dùng để hỏi ngược lại nhằm khẳng định hoặc nhắc nhở đối phương về một sự thật hiển nhiên; 'chẳng phải là... sao?'.",
+      "longExplanation": "'不是……吗？' (bùshì... ma?) là cấu trúc câu phản vấn (nghi vấn tu từ) cực kỳ thông dụng trong tiếng Trung. Người nói dùng cấu trúc này khi muốn khẳng định một sự việc mà mình tin là đúng, hoặc nhắc nhở, chất vấn đối phương về một sự thật hiển nhiên mà đối phương dường như đã quên hoặc hành động trái ngược (ví dụ: 你不是北京人吗？ - Bạn chẳng phải là người Bắc Kinh sao?). Cấu trúc mang hình thức phủ định nhưng truyền tải ý nghĩa khẳng định mạnh mẽ.",
+      "formation": "Chủ ngữ (Danh từ / Đại từ) + 不是 + Thành phần vị ngữ (Danh từ / Cụm động từ) + 吗？",
+      "examples": [
+        {
+          "translation": "Chẳng phải bạn là người Bắc Kinh sao?"
+        }
+      ]
+    },
+    "zh_往DIRECTIONV_113": {
+      "title": "往 + Phương hướng + Động từ (Đi / làm gì về phía, hướng về...)",
+      "shortExplanation": "Giới từ '往' kết hợp với từ chỉ phương hướng hoặc địa điểm, đặt trước động từ để chỉ hướng của hành động; 'về phía...', 'hướng về...'.",
+      "longExplanation": "'往' (wǎng) là giới từ chỉ phương hướng trong tiếng Trung, thường kết hợp với danh từ phương vị hoặc từ chỉ phương hướng (như: 东, 西, 南, 北, 前, 左, 右...) để tạo thành cụm giới từ đóng vai trò trạng ngữ trước động từ hành động ('往 + Phương hướng + Động từ'). Mẫu câu này rất thông dụng khi chỉ đường hoặc miêu tả hướng di chuyển của người và phương tiện.",
+      "formation": "Chủ ngữ + 往 + Từ chỉ phương hướng + Động từ",
+      "examples": [
+        {
+          "translation": "Từ đây đi thẳng về hướng đông."
+        }
+      ]
+    },
+    "zh_V过_114": {
+      "title": "Động từ + 过 (Biểu thị trải nghiệm: Đã từng...)",
+      "shortExplanation": "Trợ từ động thái '过' đứng ngay sau động từ để biểu thị hành động đã từng xảy ra trong quá khứ và là một trải nghiệm; 'đã từng...'.",
+      "longExplanation": "'过' (guo) là trợ từ động thái biểu thị kinh nghiệm hoặc trải nghiệm trong quá khứ. Khi đặt '过' ngay sau động từ ('Động từ + 过'), người nói muốn nhấn mạnh rằng hành động đó đã diễn ra ít nhất một lần trước thời điểm nói và hiện tại không còn tiếp diễn nữa (ví dụ: 去过中国 - từng đi Trung Quốc). Khác với '了' nhấn mạnh sự hoàn thành hoặc xuất hiện tình huống mới, '过' nhấn mạnh việc chủ ngữ đã có kinh nghiệm hoặc trải nghiệm đó.",
+      "formation": "Chủ ngữ + Động từ + 过 (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi từng đi Trung Quốc."
+        }
+      ]
+    },
+    "zh_没有V过_115": {
+      "title": "没(有) + Động từ + 过 (Chưa từng..., chưa bao giờ...)",
+      "shortExplanation": "Dạng phủ định của trợ từ kinh nghiệm '过'; dùng '没' hoặc '没有' đặt trước động từ để biểu thị chưa từng trải qua hành động đó.",
+      "longExplanation": "Để phủ định trải nghiệm kinh nghiệm của 'Động từ + 过', tiếng Trung đặt phó từ phủ định '没' hoặc '没有' ở phía trước động từ ('没(有) + Động từ + 过'). Cấu trúc này có nghĩa là từ trước tới nay chủ ngữ chưa bao giờ thực hiện hoặc trải qua hành động đó (tuyệt đối không dùng '不' để phủ định '过'). Có thể kết hợp với '从来' (cónglái) để nhấn mạnh: '从来没(有) + Động từ + 过' (từ trước tới nay chưa từng...).",
+      "formation": "Chủ ngữ + 没(有) + Động từ + 过 (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Họ chưa từng đến nhà tôi."
+        }
+      ]
+    },
+    "zh_虽然但是_116": {
+      "title": "虽然……但是…… (Tuy... nhưng..., mặc dù... nhưng...)",
+      "shortExplanation": "Cặp liên từ biểu thị mối quan hệ chuyển ngoặt giữa hai phân câu; tương đương với 'tuy rằng... nhưng...', 'mặc dù... nhưng...'.",
+      "longExplanation": "'虽然……但是……' (suīrán... dànshì...) là cặp liên từ biểu thị quan hệ chuyển ngoặt (nghịch tiếp) phổ biến nhất trong tiếng Trung. Phân câu thứ nhất dùng '虽然' để nêu ra một sự thật, tiền đề hoặc sự nhượng bộ; phân câu thứ hai dùng '但是' (hoặc '可是', '但') để đưa ra kết quả hoặc tình huống trái ngược, bất ngờ so với tiền đề đó. '虽然' có thể đứng trước hoặc sau chủ ngữ của phân câu thứ nhất.",
+      "formation": "虽然 + Phân câu 1，但是 + Phân câu 2",
+      "examples": [
+        {
+          "translation": "Mặc dù trời nắng, nhưng vẫn rất lạnh."
+        }
+      ]
+    },
+    "zh_V过次O_117": {
+      "title": "Động từ + 过 + Số từ + 次 + Tân ngữ (Bổ ngữ động lượng với danh từ chỉ vật: Đã từng... bao nhiêu lần)",
+      "shortExplanation": "Bổ ngữ động lượng (Số từ + 次) đứng trước tân ngữ chỉ vật thông thường để biểu thị số lần đã từng thực hiện hành động.",
+      "longExplanation": "Trong tiếng Trung, khi muốn nói về số lần diễn ra của một hành vi trong quá khứ với trợ từ kinh nghiệm '过' và tân ngữ là danh từ chỉ đồ vật/sự việc thông thường, bổ ngữ động lượng ('Số từ + 次 / 遍 / 趟...') thường được đặt ở vị trí giữa trợ từ '过' và tân ngữ danh từ đó: 'Chủ ngữ + Động từ + 过 + Số từ + 次 + Tân ngữ' (ví dụ: 坐过三次飞机 - từng đi máy bay 3 lần, 看过两次电影 - từng xem phim 2 lần).",
+      "formation": "Chủ ngữ + Động từ + 过 + Số từ + 次 + Tân ngữ (Danh từ chỉ vật)",
+      "examples": [
+        {
+          "translation": "Họ đã từng đi máy bay ba lần."
+        }
+      ]
+    },
+    "zh_V过PLACE次_118": {
+      "title": "Động từ + 过 + Nơi chốn + Số từ + 次 / Động từ + 过 + Số từ + 次 + Nơi chốn (Bổ ngữ động lượng với danh từ chỉ nơi chốn: Đã từng đến... bao nhiêu lần)",
+      "shortExplanation": "Khi tân ngữ là từ chỉ nơi chốn, bổ ngữ động lượng (Số từ + 次) có thể đặt sau hoặc đặt trước danh từ chỉ nơi chốn; 'từng đến... mấy lần'.",
+      "longExplanation": "Trong tiếng Trung, khi tân ngữ là danh từ chỉ địa điểm/nơi chốn và kết hợp với bổ ngữ động lượng chỉ số lần, vị trí của tân ngữ rất linh hoạt: có thể đặt danh từ nơi chốn trước bổ ngữ động lượng ('Động từ + 过 + Nơi chốn + Số từ + 次', ví dụ: 去过中国三次) hoặc đặt bổ ngữ động lượng trước danh từ nơi chốn ('Động từ + 过 + Số từ + 次 + Nơi chốn', ví dụ: 来过三次中国). Cả hai trật tự từ này đều hoàn toàn tự nhiên và mang ý nghĩa tương đương.",
+      "formation": "Chủ ngữ + Động từ + 过 + Danh từ nơi chốn + Số từ + 次 (hoặc: Chủ ngữ + Động từ + 过 + Số từ + 次 + Danh từ nơi chốn)",
+      "examples": [
+        {
+          "translation": "Chúng tôi từng đến Trung Quốc ba lần."
+        }
+      ]
+    },
+    "zh_TIME就要V了_119": {
+      "title": "Thời gian + (就)要 + Động từ + 了 (Sắp... vào thời gian tới [có mốc thời gian cụ thể])",
+      "shortExplanation": "Dùng để biểu thị hành động hoặc sự việc sắp sửa diễn ra vào một mốc thời gian cụ thể trong tương lai gần; 'sắp... rồi'.",
+      "longExplanation": "Cấu trúc '(Thời gian + ) (就)要……了' biểu thị một sự việc sắp sửa xảy ra trong tương lai gần. Điểm ngữ pháp rất quan trọng: Khi câu có trạng ngữ chỉ mốc thời gian cụ thể (như 下个星期 - tuần sau, 明天 - ngày mai, 八点 - 8 giờ), tiếng Trung bắt buộc phải dùng '(就)要……了' mà không thể dùng '快要……了' ('快要……了' không kết hợp với mốc thời gian cụ thể). Từ '就' được thêm vào để nhấn mạnh thời điểm diễn ra rất gần và nhanh chóng.",
+      "formation": "(Chủ ngữ + ) Từ chỉ thời gian (+ Chủ ngữ) + (就)要 + Động từ (+ Tân ngữ) + 了",
+      "examples": [
+        {
+          "translation": "Tuần sau chúng tôi sắp thi rồi."
+        }
+      ]
+    },
+    "zh_都TIMEAV了_120": {
+      "title": "都 + Thời gian / Tính từ / Động từ + 了 (Đã... rồi [nhấn mạnh mức độ cao, thời gian muộn, mang ngữ khí thúc giục hoặc phàn nàn])",
+      "shortExplanation": "Cấu trúc '都……了' biểu thị sự việc 'đã... rồi', nhấn mạnh thời gian đã muộn hoặc mức độ đã cao, thường mang sắc thái giục giã hoặc không hài lòng.",
+      "longExplanation": "'都……了' (dōu... le) là cấu trúc nhấn mạnh trong khẩu ngữ tiếng Trung, tương đương với '已经……了' (đã... rồi) nhưng mang sắc thái tình cảm rõ rệt hơn. Cấu trúc này thường đi với từ chỉ thời gian, số lượng, tính từ hoặc động từ để biểu thị thời gian đã muộn, tuổi tác đã lớn, số lượng đã nhiều hoặc việc gì đã hoàn thành từ lâu. Người nói thường dùng mẫu câu này để giục giã, phàn nàn, trách móc hoặc khuyên nhủ (ví dụ: 都8点了，快点儿起床吧 - Đã 8 giờ rồi, mau dậy đi).",
+      "formation": "Chủ ngữ + 都 + Từ chỉ thời gian / Tính từ / Cụm động từ + 了",
+      "examples": [
+        {
+          "translation": "Đã 8 giờ rồi, dậy mau lên đi!"
+        }
+      ]
+    },
+    "zh_V好_121": {
+      "title": "Động từ + 好 (Bổ ngữ kết quả: Làm... xong, làm... chu đáo/hoàn thiện)",
+      "shortExplanation": "'好' làm bổ ngữ kết quả đứng sau động từ biểu thị hành động đã hoàn thành và đạt đến độ hoàn hảo, thỏa đáng, sẵn sàng.",
+      "longExplanation": "Trong tiếng Trung, khi tính từ '好' làm bổ ngữ kết quả đặt trực tiếp sau động từ ('Động từ + 好'), nó không chỉ đơn thuần biểu thị hành động đã kết thúc (như '完') mà còn nhấn mạnh kết quả đạt đến trạng thái hoàn chỉnh, chu đáo, làm người khác hài lòng hoặc đã chuẩn bị sẵn sàng để sử dụng (ví dụ: 饭做好了 - cơm nấu xong rồi, 准备好了 - đã chuẩn bị sẵn sàng, 想好了 - đã suy nghĩ thấu đáo). Dạng phủ định là '没(有) + Động từ + 好' (chưa làm xong/chưa chuẩn bị xong).",
+      "formation": "Chủ ngữ + Động từ + 好 (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Cơm vẫn chưa nấu xong, xin bạn đợi một lát."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_VOV得A_107": {
+      "title": "動詞 ＋ 目的語 ＋ 動詞 ＋ 得 ＋ 形容詞（目的語を伴う動詞の様態補語・動作の評価）",
+      "shortExplanation": "目的語を伴う動詞の動作が「どのように行われるか」という様態や評価・程度を表す際、動詞を繰り返して「得」と形容詞を続けます。",
+      "longExplanation": "中国語では、動詞が目的語を取り、さらに「得」を用いた様態補語（程度補語）で動作の出来栄えや様子を具体的に描写・評価する場合、動詞を「動詞 ＋ 目的語 ＋ 動詞 ＋ 得 ＋ 形容詞」の形で繰り返す必要があります（例：唱歌唱得很好＝歌を歌うのがとても上手だ）。なお、日常会話で目的語が文頭に置かれて話題化される場合などは、1つ目の動詞が省略されることもあります。",
+      "formation": "主語 ＋ 動詞 ＋ 目的語 ＋ 動詞 ＋ 得 ＋ （副詞 ＋ ）形容詞",
+      "examples": [
+        {
+          "translation": "姉は歌を歌うのがとても上手です。"
+        }
+      ]
+    },
+    "zh_VOV得比NA_108": {
+      "title": "動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 比 ＋ 名詞 ＋ 形容詞（様態補語を伴う比較文［「得」の後に比較対象を置く］）",
+      "shortExplanation": "動作の様態や結果の程度を比較する表現で、「得」の直後に「比 ＋ 比較対象」を置き、「〜する程度が…より〜だ」という意味を表します。",
+      "longExplanation": "様態補語（程度補語）を伴う比較文の代表的な形式の一つです。この構文では比較の前置詞句「比 ＋ 名詞（比較対象）」が補語部分（「得」の後ろ）に置かれ、「主語 ＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 比 ＋ 比較対象 ＋ 形容詞」という語順をとります。動作の出来栄えやスピード・程度を相手と比較して優劣を表す際に用いられます。目的語を伴う場合は動詞を繰り返すか、1つ目の動詞を省くことができます。",
+      "formation": "主語 ＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 比 ＋ 名詞（比較対象）＋ 形容詞",
+      "examples": [
+        {
+          "translation": "彼は私よりも（中国語を）覚えるのが早いです。"
+        }
+      ]
+    },
+    "zh_比NVOV得A_109": {
+      "title": "比 ＋ 名詞 ＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 形容詞（様態補語を伴う比較文［動詞の前に「比」を置く］）",
+      "shortExplanation": "動作の程度や結果を比較する表現で、比較の前置詞句「比 ＋ 名詞」を動詞の前に連用修飾語（状語）として置きます。",
+      "longExplanation": "様態補語（程度補語）を伴う比較文のもう一つの代表的な形式です。「主語 ＋ 比 ＋ 比較対象 ＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 形容詞」という語順になり、「比 ＋ 名詞」が動詞の前に置かれて動作全体を修飾します。「得」の後ろに「比」を置く構文と意味上の違いはほとんどなく、どちらも日常会話で自然に用いられます。",
+      "formation": "主語 ＋ 比 ＋ 名詞（比較対象）＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "彼は私よりも（中国語を）覚えるのが早いです。"
+        }
+      ]
+    },
+    "zh_V着O_110": {
+      "title": "動詞 ＋ 着 ＋ 目的語（動作や状態の持続：〜している）",
+      "shortExplanation": "動詞の後ろにアスペクト助詞「着」を置き、動作や状態がそのまま持続・継続していることを表します。",
+      "longExplanation": "アスペクト助詞「着」（zhe）は動詞の直後に付き、その動作や動作に伴う結果の状態が保たれていること（持続態）を表します（例：穿着西服＝スーツを着ている、拿着铅笔＝鉛筆を持っている）。「在 / 正在」が動作の動的な進行そのものを表すのに対し、「着」は衣服の着用や姿勢、物の保持など、動作によって生じた静的な「状態の持続」を表す点に特徴があります。",
+      "formation": "主語 ＋ 動詞 ＋ 着 ＋ 目的語",
+      "examples": [
+        {
+          "translation": "彼らはスーツを着ています。"
+        }
+      ]
+    },
+    "zh_没V着O_111": {
+      "title": "没（有）＋ 動詞 ＋ 着 ＋ 目的語（状態持続の否定：〜していない）",
+      "shortExplanation": "状態の持続を表す「動詞 ＋ 着」の否定形で、動詞の前に「没」または「没有」を置き、「〜していない」という意味を表します。",
+      "longExplanation": "「動詞 ＋ 着」で表される状態の持続を否定する場合、動詞の直前に否定副詞「没」または「没有」を置きます（「不」は用いません）。「主語 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 目的語」の形で、身につけていない、手に持っていないなど、ある状態が現在持続していないことを表します（例：他没拿着铅笔＝彼は鉛筆を持っていません）。",
+      "formation": "主語 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 目的語",
+      "examples": [
+        {
+          "translation": "彼は鉛筆を持っていません。"
+        }
+      ]
+    },
+    "zh_N不是吗_112": {
+      "title": "名詞 / 代名詞 ＋ 不是……吗？（反語表現：〜ではないのですか？・〜じゃありませんでしたっけ？）",
+      "shortExplanation": "相手に確認したり、自明の事実を思い出させたりする反語構文で、「〜ではないのですか？」「〜じゃなかったっけ？」という意味を表します。",
+      "longExplanation": "「不是……吗？」（bùshì... ma?）は反語（修辞的疑問文）の代表的な表現です。話し手が当然そうであるはずだと信じている事実を相手に確認したり、相手がそれを忘れていたり矛盾した行動を取ったりしている際に思い出させ・念押しするために用います。形式上は否定疑問文ですが、強い肯定のニュアンスを含みます（例：你不是北京人吗？＝あなたは北京の人じゃありませんでしたっけ？）。",
+      "formation": "主語（名詞 / 代名詞）＋ 不是 ＋ 述語成分（名詞句 / 動詞句）＋ 吗？",
+      "examples": [
+        {
+          "translation": "あなたは北京の人ではありませんでしたっけ？"
+        }
+      ]
+    },
+    "zh_往DIRECTIONV_113": {
+      "title": "往 ＋ 方向 ＋ 動詞（〜の方向へ・〜に向かって［動作の方向］）",
+      "shortExplanation": "前置詞「往」が方角や方向を表す語を伴って動詞の前に置かれ、動作が向かう方向を示します；「〜へ」「〜に向かって」。",
+      "longExplanation": "前置詞「往」（wǎng）は「〜へ」「〜に向かって」という意味を持ち、方位詞や方向を表す名詞（东、南、西、北、前、左、右など）を導いて連用修飾語（状語）となり、後続の移動動詞の方向を指定します。道を案内したり、人の視線や進行方向を指示したりする際によく使われます（例：往东走＝東へ進む、往前看＝前を見る）。",
+      "formation": "主語 ＋ 往 ＋ 方角・方向詞 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "ここからまっすぐ東へ進んでください。"
+        }
+      ]
+    },
+    "zh_V过_114": {
+      "title": "動詞 ＋ 过（経験アスペクト：〜したことがある）",
+      "shortExplanation": "動詞の後ろにアスペクト助詞「过」を置き、過去にその動作を行った経験があることを表します；「〜したことがある」。",
+      "longExplanation": "アスペクト助詞「过」（guo）は動詞の直後に置かれ、過去に少なくとも一度その動作を経験したことがあること（経験態）を表します（例：去过中国＝中国へ行ったことがある）。その動作は過去に完了し、現在ではすでに終わっているというニュアンスを含みます。動作の完了や変化を表す「了」とは異なり、「过」は個人の体験や経験に焦点を当てる点で日本語の「〜したことがある」に対応します。",
+      "formation": "主語 ＋ 動詞 ＋ 过（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "私は中国へ行ったことがあります。"
+        }
+      ]
+    },
+    "zh_没有V过_115": {
+      "title": "没（有）＋ 動詞 ＋ 过（経験の否定：〜したことがない・一度も〜したことがない）",
+      "shortExplanation": "経験を表す「動詞 ＋ 过」の否定形で、動詞の前に「没」または「没有」を置き、「〜したことがない」という意味を表します。",
+      "longExplanation": "過去の経験「動詞 ＋ 过」を否定する場合、動詞の直前に否定副詞「没」または「没有」を置き、「主語 ＋ 没（有）＋ 動詞 ＋ 过 ＋ 目的語」の形をとります（「不」は使用できません）。これまでに一度もその経験をしたことがないことを表し、「从来」（これまで一度も）と呼応して「从来没（有）〜过」として強調されることも多いです（例：他们没有来过我家＝彼らは私の家に来たことがありません）。",
+      "formation": "主語 ＋ 没（有）＋ 動詞 ＋ 过（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "彼らは私の家に来たことがありません。"
+        }
+      ]
+    },
+    "zh_虽然但是_116": {
+      "title": "虽然……但是……（逆接の接続詞：〜だけれども…・〜だがしかし…）",
+      "shortExplanation": "譲歩と逆接を表す代表的な相関接続詞で、「〜だけれども…」「〜であるが、しかし…」という意味を表します。",
+      "longExplanation": "「虽然……但是……」（suīrán... dànshì...）は、前後の節で逆接関係を構成する接続詞の呼応表現です。前節に「虽然」を用いて事実や譲歩の前提（〜であるけれど）を述べ、後節に「但是」（または「可是」「但」）を用いてそれと対立・矛盾する事実や意外な結果（しかし〜だ）を導きます。「虽然」は第1節の主語の前または後ろのどちらに置いても構いません。",
+      "formation": "虽然 ＋ 節1，但是 ＋ 節2",
+      "examples": [
+        {
+          "translation": "晴れてはいるけれど、やはりとても寒いです。"
+        }
+      ]
+    },
+    "zh_V过次O_117": {
+      "title": "動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 目的語（動量補語：事物目的語の前に回数を置く）",
+      "shortExplanation": "事物を表す一般目的語を伴う場合、動作の回数を表す動量補語（数詞 ＋ 次）を動詞・「过」と目的語の間に挟んで「〜を…回したことがある」と表します。",
+      "longExplanation": "中国語で動作の行われた回数を表す成分を「動量補語」と呼びます。目的語が事物（一般名詞）の場合、回数を表す「数詞 ＋ 次（または遍・趟など）」は通常「过」の直後、すなわち目的語の前に置かれ、「主語 ＋ 動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 目的語」という語順になります（例：坐过三次飞机＝飛行機に3回乗ったことがある、看过两次电影＝映画を2回見たことがある）。",
+      "formation": "主語 ＋ 動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 目的語（事物名詞）",
+      "examples": [
+        {
+          "translation": "彼らは飛行機に3回乗ったことがあります。"
+        }
+      ]
+    },
+    "zh_V过PLACE次_118": {
+      "title": "動詞 ＋ 过 ＋ 場所 ＋ 数詞 ＋ 次（動量補語：場所目的語を伴う動作の回数表現）",
+      "shortExplanation": "目的語が場所名詞の場合、動作の回数を表す動量補語（数詞 ＋ 次）は場所の前にも後ろにも置くことができます；「〜へ…回行ったことがある」。",
+      "longExplanation": "中国語において、目的語が国や都市などの場所・処所を表す名詞（処所目的語）である場合、回数を表す動量補語（数詞 ＋ 次）の位置は柔軟です。「動詞 ＋ 过 ＋ 場所 ＋ 数詞 ＋ 次」（例：去过中国三次）のように場所を補語の前に置くことも、「動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 場所」（例：来过三次中国）のように補語の後に置くこともでき、どちらも文法的に正しく自然に使われます。",
+      "formation": "主語 ＋ 動詞 ＋ 过 ＋ 場所名詞 ＋ 数詞 ＋ 次（または：主語 ＋ 動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 場所名詞）",
+      "examples": [
+        {
+          "translation": "私たちは中国へ3回行ったことがあります。"
+        }
+      ]
+    },
+    "zh_TIME就要V了_119": {
+      "title": "時間 ＋（就）要 ＋ 動詞 ＋ 了（近未来の動作：［指定の時間に］もうすぐ〜する）",
+      "shortExplanation": "具体的な時間詞を伴って、近い将来に動作や事態が差し迫って発生することを表します；「〜にはもうすぐ…する」。",
+      "longExplanation": "「（時間 ＋ ）（就）要……了」は、近い未来に動作や出来事が発生することを表す構文です。非常に重要な文法規則として、文中に「下个星期（来週）」「明天（明日）」「八点（8時）」などの具体的な時間を示す語がある場合、「快要……了」は使えず、必ず「（就）要……了」を用いなければなりません。「就」を補うことで、「その時になればすぐに〜する」という時間的な早さや緊迫感を強調します。",
+      "formation": "（主語 ＋ ）時間詞（＋ 主語）＋（就）要 ＋ 動詞（＋ 目的語）＋ 了",
+      "examples": [
+        {
+          "translation": "来週、私たちはもうすぐ試験があります。"
+        }
+      ]
+    },
+    "zh_都TIMEAV了_120": {
+      "title": "都 ＋ 時間 / 形容詞 / 動詞 ＋ 了（強調・不満・促し：もう〜だ・とうに〜している）",
+      "shortExplanation": "「すでに〜だ」という意味を表し、時間が遅いことや程度・数量の大きさを強調して、促しや不満・愚痴のニュアンスを込めます。",
+      "longExplanation": "「都……了」（dōu... le）は口語で非常によく使われる強調構文です。「已经……了」（すでに〜だ）とほぼ同義ですが、単なる事実の伝達にとどまらず、話し手の主観的な感情（「時間が遅い」「数量が多い」「程度が甚だしい」という不満、咎め、促しなど）が強く込められます。時間詞、形容詞、動詞などを挟んで用いられます（例：都8点了，快点儿起床吧＝もう8時だよ、早く起きなさい）。",
+      "formation": "主語 ＋ 都 ＋ 時間詞 / 形容詞 / 動詞句 ＋ 了",
+      "examples": [
+        {
+          "translation": "もう8時だよ、早く起きなさい。"
+        }
+      ]
+    },
+    "zh_V好_121": {
+      "title": "動詞 ＋ 好（結果補語：〜し終える・ちゃんと〜できる［準備完了・満足な結果］）",
+      "shortExplanation": "動詞の後ろに結果補語として「好」を置き、動作が完了しただけでなく、申し分なく満足のいく状態に仕上がったことや準備が整ったことを表します。",
+      "longExplanation": "中国語の結果補語「好」は動詞の直後に接続し、動作が完了したことに加え、それが「満足のいく状態になった」「準備が整った」という積極的なニュアンスを表します。単に動作が終わったことを表す「完」と異なり、「好」は仕上がりの良さや準備完了に焦点が当てられます（例：做好饭＝ご飯が出来上がる、准备好了＝準備がしっかり整った）。否定形は「没（有）＋ 動詞 ＋ 好」となります。",
+      "formation": "主語 ＋ 動詞 ＋ 好（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "ご飯がまだ出来上がっていませんので、少々お待ちください。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_VOV得A_107": {
+      "title": "동사 + 목적어 + 동사 + 得 + 형용사 (목적어가 있는 동사의 상태보어·동작 평가)",
+      "shortExplanation": "목적어를 수반하는 동사의 동작 상태나 능력, 결과의 정도를 묘사·평가할 때 동사를 중복하여 사용합니다.",
+      "longExplanation": "중국어에서 동사가 목적어를 가지고 있고, '得'를 사용하는 상태보어(정도보어)를 붙여 동작이 '어떠한지'(잘하는지, 빠른지 등) 구체적으로 묘사·평가할 때는 '동사 + 목적어 + 동사 + 得 + 형용사' 형태로 동사를 한 번 더 반복해야 합니다 (예: 唱歌唱得很好 - 노래를 아주 잘 부른다). 구어에서는 목적어가 화제화되어 문장 앞부분으로 나갈 경우 첫 번째 동사를 생략하기도 합니다.",
+      "formation": "주어 + 동사 + 목적어 + 동사 + 得 + (부사 + ) 형용사",
+      "examples": [
+        {
+          "translation": "언니(누나)는 노래를 아주 잘 부릅니다."
+        }
+      ]
+    },
+    "zh_VOV得比NA_108": {
+      "title": "동사(+ 목적어 + 동사) + 得 + 比 + 명사 + 형용사 (상태보어를 수반하는 비교문 ['得' 뒤에 비교 대상 위치])",
+      "shortExplanation": "동작의 양태나 결과의 정도를 비교할 때, '得' 바로 뒤에 비교 구문인 '比 + 명사'를 놓아 '~하는 정도가 …보다 더 ~하다'를 나타냅니다.",
+      "longExplanation": "상태보어(정도보어)가 포함된 비교문 표현 중 하나로, 비교를 나타내는 개사구 '比 + 명사(비교 대상)'가 보어 자리인 '得' 뒤에 위치합니다 ('주어 + 동사(+ 목적어 + 동사) + 得 + 比 + 비교 대상 + 형용사'). 동작을 수행하는 수준이나 속도, 결과 등을 다른 대상과 비교하여 차이를 나타낼 때 자주 사용됩니다. 목적어가 있는 경우 동사를 중복하거나 첫 번째 동사를 생략할 수 있습니다.",
+      "formation": "주어 + 동사(+ 목적어 + 동사) + 得 + 比 + 명사(비교 대상) + 형용사",
+      "examples": [
+        {
+          "translation": "그는 나보다 (중국어를) 배우는 것이 빠릅니다."
+        }
+      ]
+    },
+    "zh_比NVOV得A_109": {
+      "title": "比 + 명사 + 동사(+ 목적어 + 동사) + 得 + 형용사 (상태보어를 수반하는 비교문 [동사 앞에 '比' 위치])",
+      "shortExplanation": "동작의 수준이나 결과를 비교할 때, 비교 개사구인 '比 + 명사'를 동사 앞의 상황어 자리에 놓아 표현합니다.",
+      "longExplanation": "상태보어(정도보어)가 쓰인 비교문의 또 다른 주요 형식입니다. 이 구조에서는 개사구 '比 + 명사(비교 대상)'가 주어 뒤이자 본동사 앞의 부사어(상황어) 자리에 위치합니다 ('주어 + 比 + 비교 대상 + 동사(+ 목적어 + 동사) + 得 + 형용사'). '得' 뒤에 '比'를 두는 형식과 의미상 거의 동일하며, 두 표현 모두 자연스럽게 쓰입니다.",
+      "formation": "주어 + 比 + 명사(비교 대상) + 동사(+ 목적어 + 동사) + 得 + 형용사",
+      "examples": [
+        {
+          "translation": "그는 나보다 (중국어를) 배우는 것이 빠릅니다."
+        }
+      ]
+    },
+    "zh_V着O_110": {
+      "title": "동사 + 着 + 목적어 (동작이나 상태의 지속: ~하고 있다, ~한 채로 있다)",
+      "shortExplanation": "동사 뒤에 동태조사 '着'를 붙여 동작이나 그 동작으로 인한 상태가 계속 유지되고 있음을 나타냅니다.",
+      "longExplanation": "동태조사 '着'(zhe)는 동사 바로 뒤에 쓰여 동작이나 그 동작의 결과로 형성된 상태가 지속되고 있음(지속태)을 나타냅니다 (예: 穿着西服 - 양복을 입고 있다, 拿着铅笔 - 연필을 쥐고 있다). '在 / 正在'가 동작의 동적인 '진행' 자체에 초점을 맞춘다면, '着'는 옷을 입고 있거나 물건을 들고 있는 등 정적인 '상태의 지속'을 나타내는 데 주로 쓰입니다.",
+      "formation": "주어 + 동사 + 着 + 목적어",
+      "examples": [
+        {
+          "translation": "그들은 정장(양복)을 입고 있습니다."
+        }
+      ]
+    },
+    "zh_没V着O_111": {
+      "title": "没(有) + 동사 + 着 + 목적어 (상태 지속의 부정: ~하고 있지 않다)",
+      "shortExplanation": "상태의 지속을 나타내는 '동사 + 着'의 부정형으로, 동사 앞에 '没' 또는 '没有'를 사용하여 '~하고 있지 않다'를 나타냅니다.",
+      "longExplanation": "'동사 + 着'으로 나타내는 동작이나 상태의 지속을 부정할 때는 반드시 부정부사 '没' 또는 '没有'를 동사 앞에 사용합니다 ('不'는 사용 불가). '주어 + 没(有) + 동사 + 着 + 목적어'의 어순으로 특정 옷을 입고 있지 않거나, 물건을 손에 쥐고 있지 않은 등 해당 상태가 유지되고 있지 않음을 나타냅니다 (예: 他没拿着铅笔 - 그는 연필을 쥐고 있지 않다).",
+      "formation": "주어 + 没(有) + 동사 + 着 + 목적어",
+      "examples": [
+        {
+          "translation": "그는 연필을 쥐고 있지 않습니다."
+        }
+      ]
+    },
+    "zh_N不是吗_112": {
+      "title": "명사 / 대명사 + 不是……吗? (반어문: ~가 아닌가요?, ~이지 않나요?)",
+      "shortExplanation": "당연한 사실을 상기시키거나 확인하여 강하게 긍정할 때 쓰는 반어문 구문으로, '~가 아닌가요?', '~이지 않나요?'를 나타냅니다.",
+      "longExplanation": "'不是……吗?'(bùshì... ma?)는 중국어의 대표적인 반어 의문문 구조입니다. 화자가 이미 알고 있거나 당연하다고 여기는 사실을 상대방에게 확인하거나, 상대방이 잊고 있거나 모순된 태도를 보일 때 이를 환기·강조하기 위해 사용됩니다. 겉으로는 부정 형태를 띠고 있지만 실제로는 강한 긍정의 의미를 전달합니다 (예: 你不是北京人吗? - 너 베이징 사람 아니었어?).",
+      "formation": "주어(명사 / 대명사) + 不是 + 술어 성분(명사구 / 동사구) + 吗?",
+      "examples": [
+        {
+          "translation": "당신은 베이징 사람이 아니었나요? (베이징 사람이지 않나요?)"
+        }
+      ]
+    },
+    "zh_往DIRECTIONV_113": {
+      "title": "往 + 방향 + 동사 (~쪽으로, ~방향으로 [동작의 이동 방향])",
+      "shortExplanation": "개사(전치사) '往'이 방위사나 방향 명사와 결합하여 동사 앞에서 동작이 향하는 방향을 나타냅니다; '~쪽으로', '~방향으로'.",
+      "longExplanation": "'往'(wǎng)은 동작이 나아가는 방향을 나타내는 대표적인 이동 방향 개사(전치사)입니다. 방위사나 방향을 나타내는 어휘(东, 南, 西, 北, 前, 左, 右 등)와 결합하여 '往 + 방향 + 동사' 형태로 쓰이며, 뒤따르는 이동 동작의 목표 방향을 지시합니다. 길을 안내하거나 시선·이동의 방향을 말할 때 매우 널리 쓰입니다 (예: 往东走 - 동쪽으로 가다, 往前走 - 앞으로 가다).",
+      "formation": "주어 + 往 + 방향어/방위사 + 동사",
+      "examples": [
+        {
+          "translation": "여기서부터 계속 동쪽으로 걸어가세요."
+        }
+      ]
+    },
+    "zh_V过_114": {
+      "title": "동사 + 过 (경험태: ~한 적이 있다, ~해 보았다)",
+      "shortExplanation": "동사 바로 뒤에 동태조사 '过'를 붙여 과거에 그 동작을 해 본 경험이 있음을 나타냅니다; '~한 적이 있다'.",
+      "longExplanation": "동태조사 '过'(guo)는 동사 뒤에 결합하여 과거에 해당 동작을 최소 한 번 이상 겪어 보았음(경험태)을 나타냅니다 (예: 去过中国 - 중국에 가 본 적이 있다). 동작이 과거에 일어났고 현재는 이미 종료되었음을 전제로 하며, 동작의 단순 완료나 변화를 나타내는 '了'와 달리 주어가 겪은 경험에 초점을 둡니다.",
+      "formation": "주어 + 동사 + 过(+ 목적어)",
+      "examples": [
+        {
+          "translation": "저는 중국에 가 본 적이 있습니다."
+        }
+      ]
+    },
+    "zh_没有V过_115": {
+      "title": "没(有) + 동사 + 过 (경험의 부정: ~한 적이 없다, 해 본 적 없다)",
+      "shortExplanation": "경험태 '동사 + 过'의 부정형으로, 동사 앞에 '没' 또는 '没有'를 사용하여 과거에 한 번도 그 동작을 겪어본 적이 없음을 나타냅니다.",
+      "longExplanation": "과거의 경험을 나타내는 '동사 + 过'를 부정할 때는 반드시 동사 앞에 부정부사 '没' 또는 '没有'를 사용합니다 ('不'는 사용 불가). '주어 + 没(有) + 동사 + 过 + 목적어' 어순으로 '지금껏 ~해 본 적이 없다'는 사실을 전달합니다. 의미를 강조하기 위해 부사 '从来'(여태껏, 이제껏)와 함께 '从来没(有)……过' 형태로 자주 쓰입니다 (예: 他们没有来过我家 - 그들은 우리 집에 온 적이 없다).",
+      "formation": "주어 + 没(有) + 동사 + 过(+ 목적어)",
+      "examples": [
+        {
+          "translation": "그들은 우리 집에 와 본 적이 없습니다."
+        }
+      ]
+    },
+    "zh_虽然但是_116": {
+      "title": "虽然……但是…… (역접 접속사 호응: 비록 ~이지만, 그러나 …하다)",
+      "shortExplanation": "양보와 역접 관계를 나타내는 대표적인 접속사 호응 구문으로, '비록 ~이지만, 하지만 …하다'를 나타냅니다.",
+      "longExplanation": "'虽然……但是……'(suīrán... dànshì...)는 중국어에서 전후 문장의 역접(전환) 관계를 나타낼 때 가장 기본이 되는 접속사 결합입니다. 앞 절에 '虽然'을 써서 어떠한 전제나 양보의 상황을 인정하고, 뒷 절에 '但是'(또는 '可是', '但')를 배치하여 앞의 내용과 상반되거나 예상 밖의 결과를 이끌어냅니다. '虽然'은 앞 절 주어의 앞이나 뒤 모두에 위치할 수 있습니다.",
+      "formation": "虽然 + 절1, 但是 + 절2",
+      "examples": [
+        {
+          "translation": "비록 맑은 날씨이지만, 그래도 여전히 매우 춥습니다."
+        }
+      ]
+    },
+    "zh_V过次O_117": {
+      "title": "동사 + 过 + 수사 + 次 + 목적어 (동량보어: 일반 사물 목적어 앞에 횟수 배치)",
+      "shortExplanation": "일반 사물 목적어를 수반할 때 동작의 횟수를 나타내는 동량보어(수사 + 次)를 '过'와 목적어 사이에 넣어 '~을 몇 번 해 본 적이 있다'를 나타냅니다.",
+      "longExplanation": "중국어에서 동작이 일어난 횟수를 보충하는 성분을 '동량보어'라고 합니다. 목적어가 일반 사물이나 일인 경우, 횟수를 나타내는 '수사 + 次(또는 遍, 趟 등)'는 통상 '过' 바로 뒤이자 목적어 앞자리에 놓입니다 ('주어 + 동사 + 过 + 수사 + 次 + 목적어'). 이를 통해 과거에 해당 동작을 몇 차례 경험했는지를 구체적인 수치로 표현합니다 (예: 坐过三次飞机 - 비행기를 세 번 타 본 적이 있다).",
+      "formation": "주어 + 동사 + 过 + 수사 + 次 + 목적어(사물 명사)",
+      "examples": [
+        {
+          "translation": "그들은 비행기를 세 번 타 본 적이 있습니다."
+        }
+      ]
+    },
+    "zh_V过PLACE次_118": {
+      "title": "동사 + 过 + 장소 + 수사 + 次 (동량보어: 장소 목적어를 수반하는 횟수 표현)",
+      "shortExplanation": "목적어가 장소나 처소 명사일 때, 동작의 횟수를 나타내는 동량보어(수사 + 次)는 장소 목적어의 뒤나 앞 모두에 위치할 수 있습니다.",
+      "longExplanation": "중국어에서 목적어가 국가나 도시 등 장소·처소를 나타내는 명사(처소 목적어)인 경우, 횟수를 나타내는 동량보어의 위치는 매우 유연합니다. '동사 + 过 + 장소 + 수사 + 次'(예: 去过中国三次)처럼 장소 뒤에 동량보어를 둘 수도 있고, '동사 + 过 + 수사 + 次 + 장소'(예: 来过三次中国)처럼 동량보어 뒤에 장소를 둘 수도 있습니다. 두 어순 모두 자연스럽고 널리 사용됩니다.",
+      "formation": "주어 + 동사 + 过 + 장소 명사 + 수사 + 次 (또는: 주어 + 동사 + 过 + 수사 + 次 + 장소 명사)",
+      "examples": [
+        {
+          "translation": "우리는 중국에 세 번 와 본 적이 있습니다."
+        }
+      ]
+    },
+    "zh_TIME就要V了_119": {
+      "title": "시간 + (就)要 + 동사 + 了 (임박태: [특정 시간에] 곧 ~할 것이다)",
+      "shortExplanation": "구체적인 시간 어휘와 함께 쓰여, 가까운 미래의 특정 시점에 어떤 동작이나 사건이 임박하여 발생함을 나타냅니다; '곧 ~할 예정이다'.",
+      "longExplanation": "'(시간 + ) (就)要……了'는 가까운 미래에 어떤 사태가 발생하려 함을 나타내는 임박태(임박 완료) 구문입니다. 여기서 매우 중요한 문법 규칙은, 문장에 '下个星期(다음 주)', '明天(내일)'과 같은 구체적인 시간 부사어가 명시되어 있을 때는 '快要……了'를 쓸 수 없으며, 반드시 '(就)要……了'를 사용해야 한다는 점입니다. '就'를 넣으면 동작이 그 시점에 이르러 신속하게 발생함을 한층 더 강조합니다.",
+      "formation": "(주어 + ) 시간사(+ 주어) + (就)要 + 동사(+ 목적어) + 了",
+      "examples": [
+        {
+          "translation": "다음 주에 우리는 곧 시험을 칩니다."
+        }
+      ]
+    },
+    "zh_都TIMEAV了_120": {
+      "title": "都 + 시간 / 형용사 / 동사 + 了 (강조·재촉·불만: 벌써 ~이다, 이미 ~했다)",
+      "shortExplanation": "'벌써/이미 ~이다'의 뜻으로, 시간이 늦었거나 정도가 심함을 강조하며 재촉이나 가벼운 불만·원망의 어기를 나타냅니다.",
+      "longExplanation": "'都……了'(dōu... le)는 구어에서 감정을 실어 강조할 때 매우 빈번하게 쓰이는 구문입니다. 의미상 '已经……了'(이미 ~했다)와 유사하지만, 단순 사실 전달을 넘어 시간이 너무 늦었거나, 수량이 많거나, 나이가 많다는 등의 상황에 대해 화자의 주관적인 느낌(답답함, 재촉, 불만, 책망)을 강하게 드러냅니다 (예: 都8点了，快点儿起床吧 - 벌써 8시야, 빨리 일어나!).",
+      "formation": "주어 + 都 + 시간사 / 형용사 / 동사구 + 了",
+      "examples": [
+        {
+          "translation": "벌써 8시야, 얼른 일어나!"
+        }
+      ]
+    },
+    "zh_V好_121": {
+      "title": "동사 + 好 (결과보어: ~을 다 끝마치다, 잘 ~해 두다 [완료 및 만족스러운 결과])",
+      "shortExplanation": "동사 뒤에 결과보어로 '好'를 사용하여 동작이 완료되었을 뿐만 아니라 만족스럽고 온전하게 잘 마무리되었거나 준비가 완료되었음을 나타냅니다.",
+      "longExplanation": "중국어에서 '好'가 결과보어로 동사 바로 뒤에 쓰일 때('동사 + 好'), 단순히 동작이 끝났음만을 나타내는 '完'과 달리, 동작의 결과가 만족스럽게 완성되었거나 준비가 완벽하게 갖추어졌음을 나타냅니다 (예: 饭做好了 - 밥이 다 되었다, 准备好了 - 준비가 다 끝났다, 想好了 - 생각을 다 정리했다). 부정형은 '没(有) + 동사 + 好' 형태를 취하여 '아직 다 ~하지 못했다'를 나타냅니다.",
+      "formation": "주어 + 동사 + 好(+ 목적어)",
+      "examples": [
+        {
+          "translation": "밥이 아직 다 되지 않았으니, 잠시만 기다려 주세요."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_VOV得A_107": {
+      "title": "动词 + 宾语 + 动词 + 得 + 形容词（动词带宾语时的状态补语/程度补语）",
+      "shortExplanation": "动词带有宾语时，若要后接由“得”引出的状态补语（程度补语）来评价或描写动作，必须重复动词。",
+      "longExplanation": "在现代汉语中，当动词带有宾语且需要使用结构助词“得”引出状态补语（程度补语）来对动作的水平、状态、结果进行评价或描写时，通常需要重复该动词，构成“动词 + 宾语 + 动词 + 得 + 形容词/形容词短语”的句式（如：唱歌唱得很好）。在实际口语中，若宾语提前作为话题置于动词前，第一个动词也可以省略。",
+      "formation": "主语 + 动词 + 宾语 + 动词 + 得 + （副词 + ）形容词",
+      "examples": [
+        {
+          "translation": "姐姐唱歌唱得很好。"
+        }
+      ]
+    },
+    "zh_VOV得比NA_108": {
+      "title": "动词（+ 宾语 + 动词）+ 得 + 比 + 名词 + 形容词（带状态补语的“比”字句：比较项在“得”后）",
+      "shortExplanation": "表示动作的状态或程度的比较，将介词短语“比 + 名词”置于助词“得”之后，表示动作进行的效果或水平超过比较对象。",
+      "longExplanation": "这是带有状态补语（程度补语）的“比”字句常见格式之一。在此句型中，表示比较的介词短语“比 + 名词/代词”充当补语的一部分，位于结构助词“得”之后、形容词之前（主语 + 动词(+ 宾语 + 动词) + 得 + 比 + 比较对象 + 形容词）。该句式侧重强调动作产生的结果或展现出的水平在比较之下的差距。若动词带宾语，可重复动词，或省略前一个动词。",
+      "formation": "主语 + 动词（+ 宾语 + 动词）+ 得 + 比 + 名词（比较对象）+ 形容词",
+      "examples": [
+        {
+          "translation": "他学（汉语学）得比我快。"
+        }
+      ]
+    },
+    "zh_比NVOV得A_109": {
+      "title": "比 + 名词 + 动词（+ 宾语 + 动词）+ 得 + 形容词（带状态补语的“比”字句：比较项在动词前）",
+      "shortExplanation": "表示动作的状态或程度比较，将介词短语“比 + 名词”置于动词前面作状语。",
+      "longExplanation": "这是带有状态补语（程度补语）的“比”字句的另一种基本语序。介词短语“比 + 名词/代词”作为状语位于主语之后、谓语动词之前，构成“主语 + 比 + 比较对象 + 动词(+ 宾语 + 动词) + 得 + 形容词”。它与将“比”字短语置于“得”之后的句型表达相同的意思，在现代汉语中均广泛使用。",
+      "formation": "主语 + 比 + 名词（比较对象）+ 动词（+ 宾语 + 动词）+ 得 + 形容词",
+      "examples": [
+        {
+          "translation": "他比我学（汉语学）得快。"
+        }
+      ]
+    },
+    "zh_V着O_110": {
+      "title": "动词 + 着 + 宾语（动态助词：表示动作或状态的持续）",
+      "shortExplanation": "动态助词“着”附在动词之后带宾语，表示动作正在进行或某种动作结果所形成的静态持续。",
+      "longExplanation": "“着”（zhe）是表示持续态的动态助词，置于动词之后，表示动作正在进行或某种状态正在持续存在。它常用于表示着装、姿势、携带等动作结果的保持（如：穿着西服、拿着手机、戴着帽子）。与表示动作动态进行的“在/正在”不同，“着”往往侧重于动作完成后的静止状态的延续。",
+      "formation": "主语 + 动词 + 着 + 宾语",
+      "examples": [
+        {
+          "translation": "他们穿着西服。"
+        }
+      ]
+    },
+    "zh_没V着O_111": {
+      "title": "没（有）+ 动词 + 着 + 宾语（持续态的否定形式）",
+      "shortExplanation": "持续态“动词 + 着”的否定形式，在动词前加否定副词“没”或“没有”，表示状态并不存在或未处于某种持续中。",
+      "longExplanation": "否定带有动态助词“着”的持续态句子时，必须在动词前使用否定副词“没”或“没有”，而不能使用“不”。基本格式为“主语 + 没（有）+ 动词 + 着 + 宾语”，用于表明主语目前并未保持某种穿着、携带、拿持等状态（如：他没拿着铅笔、门没开着）。",
+      "formation": "主语 + 没（有）+ 动词 + 着 + 宾语",
+      "examples": [
+        {
+          "translation": "他没拿着铅笔。"
+        }
+      ]
+    },
+    "zh_N不是吗_112": {
+      "title": "名词/代词 + 不是……吗？（反问句：表示提醒、质问或强化肯定）",
+      "shortExplanation": "常用反问句式，用否定疑问的形式表达强烈的肯定，常用于提醒对方已知的事实或提出质问；“难道不是……吗？”。",
+      "longExplanation": "“不是……吗？”是现代汉语中非常普遍的修辞性反问句式。说话人借助该句式来强调自己所确信的事实，或是当对方表现出与该事实不符的举动时，用于提醒、诘问或促使对方确认（如：你不是北京人吗？）。该句式形式上是否定的，但表达的是强烈的肯定语气。",
+      "formation": "主语（名词/代词）+ 不是 + 谓语成分（名词短语/动词短语）+ 吗？",
+      "examples": [
+        {
+          "translation": "你不是北京人吗？"
+        }
+      ]
+    },
+    "zh_往DIRECTIONV_113": {
+      "title": "往 + 方向 + 动词（介词：引出动作的方向或朝向）",
+      "shortExplanation": "介词“往”引出表示方位的词语，置于动词前作状语，用于指示动作行动的方向；相当于“向……”、“朝……”。",
+      "longExplanation": "“往”（wǎng）是常用的表示空间方向的介词，常与方位名词或方向词（如：前、后、左、右、东、南、西、北等）组合构成介宾短语，置于谓语动词之前作状语，指出动作、位移或视线所朝向的方向。常用于问路、指路及描述人体或物体的移动方向（如：往东走、往左拐、往前看）。",
+      "formation": "主语 + 往 + 方位词/方向词 + 动词",
+      "examples": [
+        {
+          "translation": "从这儿一直往东走。"
+        }
+      ]
+    },
+    "zh_V过_114": {
+      "title": "动词 + 过（动态助词：表示曾经有过的经历）",
+      "shortExplanation": "动态助词“过”附在动词之后，表示过去曾经发生过某动作或有过某种体验；相当于“曾经……过”。",
+      "longExplanation": "“过”（guo）是表示经历态的动态助词，紧跟在动词之后，强调主语在过去某一时期曾经体验过某件事，该动作早已结束且目前并不持续（如：去过中国、吃过烤鸭）。与表示动作完成或出现新情况的“了”相比，“过”更侧重于强调动作所留下的“经验与阅历”。",
+      "formation": "主语 + 动词 + 过（+ 宾语）",
+      "examples": [
+        {
+          "translation": "我去过中国。"
+        }
+      ]
+    },
+    "zh_没有V过_115": {
+      "title": "没（有）+ 动词 + 过（经历态的否定形式：表示从未有过某经历）",
+      "shortExplanation": "经历态“动词 + 过”的否定形式，在动词前加否定副词“没”或“没有”，表示过去从未有过某种体验或未曾做过某事。",
+      "longExplanation": "否定表示过去的经历的“动词 + 过”句式时，必须在动词前使用否定副词“没”或“没有”（不能用“不”）。结构为“主语 + 没（有）+ 动词 + 过（+ 宾语）”，表示在此之前完全没有过该项动作或体验。常与时间副词“从来”连用构成“从来没（有）……过”，以加强“从不、从未”的否定语气（如：他们没有来过我家）。",
+      "formation": "主语 + 没（有）+ 动词 + 过（+ 宾语）",
+      "examples": [
+        {
+          "translation": "他们没有来过我家。"
+        }
+      ]
+    },
+    "zh_虽然但是_116": {
+      "title": "虽然……但是……（转折连词：表示让步与转折关系）",
+      "shortExplanation": "关联词语，前句用“虽然”承认某种事实进行让步，后句用“但是”引出转折，表示情况与预期相反。",
+      "longExplanation": "“虽然……但是……”是汉语中表示转折关系最基础且最常用的关联词组合。前一分句用“虽然”先承认某一前提事实（让步），后一分句则用“但是”（也可换用“可是”、“但”）转折，提出与前文相反、相对或出乎意料的实际情况。“虽然”既可以放在第一分句主语前，也可以放在主语后。",
+      "formation": "虽然 + 分句1，但是 + 分句2",
+      "examples": [
+        {
+          "translation": "虽然是晴天，但是还是很冷。"
+        }
+      ]
+    },
+    "zh_V过次O_117": {
+      "title": "动词 + 过 + 数词 + 次 + 宾语（动量补语：事物宾语置于动量补语之后）",
+      "shortExplanation": "表示动作曾经发生过的次数，当宾语为一般事物名词时，动量补语（数词 + 次）通常置于动词“过”与宾语之间。",
+      "longExplanation": "在汉语中，表示动作发生次数的成分称为“动量补语”。当谓语带有经历态助词“过”，且其后的宾语为普通事物名词时，表示次数的动量补语（数词 + 次/遍/趟等）一般直接放在“过”之后、事物宾语之前，形成“动词 + 过 + 数词 + 次 + 宾语”的语序（如：坐过三次飞机、看过两遍这本小说）。",
+      "formation": "主语 + 动词 + 过 + 数词 + 次 + 宾语（事物名词）",
+      "examples": [
+        {
+          "translation": "他们坐过三次飞机。"
+        }
+      ]
+    },
+    "zh_V过PLACE次_118": {
+      "title": "动词 + 过 + 处所 + 数词 + 次（动量补语：处所宾语与动量补语的位置）",
+      "shortExplanation": "当宾语为处所名词时，表示次数的动量补语既可置于处所宾语之后，也可置于处所宾语之前。",
+      "longExplanation": "在汉语语法中，当动量补语与处所宾语同时出现且带有经历助词“过”时，处所宾语的位置比较灵活。既可以说“动词 + 过 + 处所 + 数词 + 次”（如：去过中国三次、去过北京两次），也可以说“动词 + 过 + 数词 + 次 + 处所”（如：来过三次中国、去过两次北京）。两种语序均符合语法规范且日常口语中都非常普遍。",
+      "formation": "主语 + 动词 + 过 + 处所名词 + 数词 + 次（或：主语 + 动词 + 过 + 数词 + 次 + 处所名词）",
+      "examples": [
+        {
+          "translation": "我们来过三次中国。"
+        }
+      ]
+    },
+    "zh_TIME就要V了_119": {
+      "title": "时间 + (就)要 + 动词 + 了（表示动作在指定时间即将发生）",
+      "shortExplanation": "带有具体时间状语，表示动作或事情在不久的将来即将发生；相当于“马上就要……了”。",
+      "longExplanation": "“时间 + (就)要……了”用于表示动作或事件在指定的具体时间即将发生。汉语中有一项非常重要的语法规则：当句中出现具体的时间状语（如“下个星期”、“明天”、“八点”等）时，只能使用“（就）要……了”，而绝不能使用“快要……了”（“快要……了”不能与具体时间状语连用）。句中加上副词“就”，能进一步强调时间的紧迫与即将到来。",
+      "formation": "（主语 + ）时间词（+ 主语）+ (就)要 + 动词（+ 宾语）+ 了",
+      "examples": [
+        {
+          "translation": "下个星期我们(就)要考试了。"
+        }
+      ]
+    },
+    "zh_都TIMEAV了_120": {
+      "title": "都 + 时间/形容词/动词 + 了（副词：表示“已经”，多含催促、抱怨或夸张语气）",
+      "shortExplanation": "相当于“已经……了”，用于强调时间已晚、程度已高或数量已多，常伴有催促、抱怨、批评或感慨的语气。",
+      "longExplanation": "“都……了”是口语中极富感情色彩的强调句式。它的基本含义相当于“已经”，但主观色彩更浓，说话人往往借此强调时间过得快或太晚、年纪大、数量多、程度深，从而带有明显的催促、责怪、抱怨或劝解意味（如：都8点了，快点儿起床吧；都这么大了，还哭）。",
+      "formation": "主语 + 都 + 时间词 / 形容词 / 动词短语 + 了",
+      "examples": [
+        {
+          "translation": "都8点了，快点儿起床吧。"
+        }
+      ]
+    },
+    "zh_V好_121": {
+      "title": "动词 + 好（结果补语：表示动作完成并达到完善、满意的状态）",
+      "shortExplanation": "形容词“好”充当动词的结果补语，表示动作不仅结束，而且结果令人满意、完善或准备就绪。",
+      "longExplanation": "“好”作结果补语紧接在动词之后（如：做好、准备好、买好、想好）。与单纯表示动作结束的“完”不同，“动词 + 好”强调动作已经达到圆满、完善的程度，使人感到满意，或者表示动作已经完成、具备了进行下一步的条件（准备就绪）。其否定形式是在动词前加“没（有）”，表示尚未完成妥当。",
+      "formation": "主语 + 动词 + 好（+ 宾语）",
+      "examples": [
+        {
+          "translation": "饭还没做好，请你等一会儿。"
+        }
+      ]
+    }
+  }
+}

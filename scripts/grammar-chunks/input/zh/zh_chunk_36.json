@@ -1,0 +1,251 @@
+[
+  {
+    "id": "zh_无意中无意地_568",
+    "language": "zh",
+    "pattern": "无意中/无意地",
+    "title": "无意中/无意地 (accidentally)",
+    "shortExplanation": "accidentally",
+    "longExplanation": "accidentally. Pinyin: wúyìzhōng/ wúyì dì",
+    "formation": "wúyìzhōng/ wúyì dì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "她在收拾花园时，无意中/无意地找到了这只耳环。",
+        "romanization": "tā zài shōushi huāyuán shí， wúyìzhōng/ wúyì dì zhǎo dàoliǎo zhè zhǐ ěrhuán。",
+        "translation": "When she was cleaning up the garden, she accidentally found this earring."
+      }
+    ]
+  },
+  {
+    "id": "zh_无意_569",
+    "language": "zh",
+    "pattern": "无意",
+    "title": "无意 (no intention to)",
+    "shortExplanation": "no intention to",
+    "longExplanation": "no intention to. Pinyin: wúyì",
+    "formation": "wúyì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他无意伤害任何人。",
+        "romanization": "tā wúyì shānghài rènhé rén。",
+        "translation": "He has no intention to hurt anyone."
+      }
+    ]
+  },
+  {
+    "id": "zh_有利_570",
+    "language": "zh",
+    "pattern": "有利",
+    "title": "有利 (to be beneficial)",
+    "shortExplanation": "to be beneficial",
+    "longExplanation": "to be beneficial. Pinyin: yǒulì",
+    "formation": "yǒulì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "适度的压力有利于我们保持良好的状态。",
+        "romanization": "shìdù de yālì yǒulì yú wǒmen bǎochí liánghǎo de zhuàngtài。",
+        "translation": "Moderate pressure helps us stay in good shape."
+      }
+    ]
+  },
+  {
+    "id": "zh_的确_571",
+    "language": "zh",
+    "pattern": "的确",
+    "title": "的确 (indeed)",
+    "shortExplanation": "indeed",
+    "longExplanation": "indeed. Pinyin: díquè",
+    "formation": "díquè",
+    "level": "HSK 5",
+    "examples": []
+  },
+  {
+    "id": "zh_嗯_573",
+    "language": "zh",
+    "pattern": "嗯",
+    "title": "嗯 (Yep)",
+    "shortExplanation": "Yep",
+    "longExplanation": "Yep. Pinyin: èn",
+    "formation": "èn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "A：吃了吗？B：嗯，吃了。",
+        "romanization": "A： chī le ma？B： èn， chī le。",
+        "translation": "A: Have you eaten? B: Yep, I did."
+      }
+    ]
+  },
+  {
+    "id": "zh_嗯_574",
+    "language": "zh",
+    "pattern": "嗯？",
+    "title": "嗯？ (Huh?)",
+    "shortExplanation": "Huh?",
+    "longExplanation": "Huh?. Pinyin: èn？",
+    "formation": "èn？",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "嗯？难道是我记错了？",
+        "romanization": "èn？ nándào shì wǒ jì cuò le？",
+        "translation": "Hmm… Is it that I remember correctly?"
+      }
+    ]
+  },
+  {
+    "id": "zh_嗯_575",
+    "language": "zh",
+    "pattern": "嗯！",
+    "title": "嗯！ (Man…!)",
+    "shortExplanation": "Man…!",
+    "longExplanation": "Man…!. Pinyin: èn！",
+    "formation": "èn！",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "嗯！你怎么还没走啊？",
+        "romanization": "èn！ nǐ zěnme hái méi zǒu ā？",
+        "translation": "(Man…) Why haven't you left yet?"
+      }
+    ]
+  },
+  {
+    "id": "zh_轻易地V_576",
+    "language": "zh",
+    "pattern": "轻易地 V",
+    "title": "轻易地 V (easily)",
+    "shortExplanation": "easily",
+    "longExplanation": "easily. Pinyin: qīngyì dì V",
+    "formation": "qīngyì dì V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他学什么都可以很轻易地记住。",
+        "romanization": "tā xué shénme dōu kěyǐ hěn qīngyì dì jìzhu。",
+        "translation": "What he can learn can be easily remembered."
+      }
+    ]
+  },
+  {
+    "id": "zh_轻易V_577",
+    "language": "zh",
+    "pattern": "轻易 V",
+    "title": "轻易 V (frivolously)",
+    "shortExplanation": "frivolously",
+    "longExplanation": "frivolously. Pinyin: qīngyì V",
+    "formation": "qīngyì V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他从不轻易决定，决定了就不轻易转变。",
+        "romanization": "tā cóngbù qīngyì juédìng， juédìng le jiù bù qīngyì zhuǎnbiàn。",
+        "translation": "He never decided easily, and he decided not to change easily."
+      }
+    ]
+  },
+  {
+    "id": "zh_密切_578",
+    "language": "zh",
+    "pattern": "密切",
+    "title": "密切 (closely)",
+    "shortExplanation": "closely",
+    "longExplanation": "closely. Pinyin: mìqiè",
+    "formation": "mìqiè",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "污染和我们的日常生活密切相关。",
+        "romanization": "wūrǎn hé wǒmen de rìcháng shēnghuó mìqièxiāngguān。",
+        "translation": "Pollution is closely related to our daily lives."
+      }
+    ]
+  },
+  {
+    "id": "zh_密切_579",
+    "language": "zh",
+    "pattern": "密切",
+    "title": "密切 (close (in relationship))",
+    "shortExplanation": "close (in relationship)",
+    "longExplanation": "close (in relationship). Pinyin: mìqiè",
+    "formation": "mìqiè",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "从此，两人来往比先前密切了。",
+        "romanization": "cóngcǐ， liǎng rén láiwǎng bǐ xiānqián mìqiè le。",
+        "translation": "Since then, the two have been closer than [ever] before."
+      }
+    ]
+  },
+  {
+    "id": "zh_密切_580",
+    "language": "zh",
+    "pattern": "密切",
+    "title": "密切 (to strengthen)",
+    "shortExplanation": "to strengthen",
+    "longExplanation": "to strengthen. Pinyin: mìqiè",
+    "formation": "mìqiè",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这条铁路大大密切了西南地区与首都的联系。",
+        "romanization": "zhè tiáo tiělù dàdà mìqiè le xīnán dìqū yǔ shǒudū de liánxì。",
+        "translation": "This railway has greatly strengthened the connection between the southwest and the capital."
+      }
+    ]
+  },
+  {
+    "id": "zh_尽量jnling_581",
+    "language": "zh",
+    "pattern": "尽量 (jǐnliàng)",
+    "title": "尽量 (jǐnliàng) (as … as possible)",
+    "shortExplanation": "as … as possible",
+    "longExplanation": "as … as possible. Pinyin: jǐnliàng (jǐnliàng)",
+    "formation": "jǐnliàng (jǐnliàng)",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "尽量多骑自行车，多选择公共交通。",
+        "romanization": "jǐnliàng duō qí zìxíngchē， duō xuǎnzé gōnggòngjiāotōng。",
+        "translation": "Try to cycle as much as possible, and choose [to use] public transportation as much as possible."
+      }
+    ]
+  },
+  {
+    "id": "zh_逐步_582",
+    "language": "zh",
+    "pattern": "逐步",
+    "title": "逐步 (step by step)",
+    "shortExplanation": "step by step",
+    "longExplanation": "step by step. Pinyin: zhúbù",
+    "formation": "zhúbù",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "调整能源消费结构，逐步向可再生能源转变。",
+        "romanization": "tiáozhěng néngyuán xiāofèi jiégòu， zhúbù xiàng kězàishēng néngyuán zhuǎnbiàn。",
+        "translation": "Adjust energy consumption structure and gradually shift to renewable energy."
+      }
+    ]
+  },
+  {
+    "id": "zh_照常_583",
+    "language": "zh",
+    "pattern": "照常",
+    "title": "照常 (as usual)",
+    "shortExplanation": "as usual",
+    "longExplanation": "as usual. Pinyin: zhàocháng",
+    "formation": "zhàocháng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "虽然战争临近，但这里的日常生活，一切照常。",
+        "romanization": "suīrán zhànzhēng línjìn， dàn zhèlǐ de rìcháng shēnghuó， yīqiè zhàocháng。",
+        "translation": "Although the war is approaching, everyday life here is as usual."
+      }
+    ]
+  }
+]

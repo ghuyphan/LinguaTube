@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Verbる_167",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる べからざる Noun (Verb-ru bekara zaru Noun)",
+    "shortExplanation": "Used to express what should not be done; 'must not', 'should not'.",
+    "longExplanation": "The Japanese grammar point Verbる べからざる Noun is used to indicate something that should not be done, or is not allowed to be done. It translates to 'must not' or 'should not' in English. It is often used in formal written Japanese or in formal speeches. It is constructed by using the verb in its dictionary form followed by 'べからざる' and a noun, usually related to behavior or events.",
+    "formation": "Verb-dictionary form + べからざる + Noun",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "人を裏切るべからざる行為だ。",
+        "romanization": "Hito o uragiru bekara zaru koui da.",
+        "translation": "Betraying others is an act that must not be done."
+      },
+      {
+        "sentence": "子供を傷つけるべからざる行動だ。",
+        "romanization": "Kodomo o kizutsukeru bekara zaru koudou da.",
+        "translation": "Hurting a child is a behavior that must not happen."
+      },
+      {
+        "sentence": "公に嘘をつくべからざる行動だ。",
+        "romanization": "Ooyake ni uso o tsuku bekara zaru koudou da.",
+        "translation": "Lying publicly is an act that should not be done."
+      },
+      {
+        "sentence": "他人の財産を侵すべからざる行為だ。",
+        "romanization": "Tanin no zaisan o okasu bekara zaru koui da.",
+        "translation": "Infringing on someone else’s property is an act that must not be performed."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_168",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる べからず (〜ru bekara zu)",
+    "shortExplanation": "Expresses the idea of 'must not do' or 'should not do'.",
+    "longExplanation": "The ～るべからず grammar point is used to express a strong prohibition or firmly established rule. It can be translated as 'must not do' or 'should not do'. It is common in formal or instructive settings (e.g., signs, notices). The formation is straightforward with verbs in dictionary form followed by べからず.",
+    "formation": "Verb-ru + べからず",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "嘘をつくべからず。",
+        "romanization": "Uso o tsuku bekara zu.",
+        "translation": "One must not tell lies."
+      },
+      {
+        "sentence": "彼らの秘密を漏らすべからず。",
+        "romanization": "Karera no himitsu o morasu bekara zu.",
+        "translation": "You must not leak their secrets."
+      },
+      {
+        "sentence": "ルールを破るべからず。",
+        "romanization": "Ruuru o yaburu bekara zu.",
+        "translation": "You must not break the rules."
+      },
+      {
+        "sentence": "勉強を怠るべからず。",
+        "romanization": "Benkyou o okotaru bekara zu.",
+        "translation": "One must not neglect their studies."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_169",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる べく (Verb-ru beku)",
+    "shortExplanation": "Expresses the meaning of 'in order to', 'for the purpose of'.",
+    "longExplanation": "The 'Verbる べく' grammar point is used to indicate a strong intention or purpose of the speaker. It can be translated as 'in order to' or 'for the purpose of' in English. It is more common in written language or formal contexts.",
+    "formation": "Verb-dictionary form + べく",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "成功するべく、日々努力しています。",
+        "romanization": "Seikou suru beku, hibi doryoku shite imasu.",
+        "translation": "In order to succeed, I am working hard every day."
+      },
+      {
+        "sentence": "健康を維持するべく、毎日運動をしています。",
+        "romanization": "Kenkou o iji suru beku, mainichi undou o shite imasu.",
+        "translation": "In order to maintain my health, I exercise every day."
+      },
+      {
+        "sentence": "彼は学位を得るべく、毎日勉強しています。",
+        "romanization": "Kare wa gakui o eru beku, mainichi benkyou shite imasu.",
+        "translation": "He studies every day in order to get a degree."
+      },
+      {
+        "sentence": "早く目的地に到着するべく、タクシーを呼びました。",
+        "romanization": "Hayaku mokutekichi ni touchaku suru beku, takushii o yobimashita.",
+        "translation": "I called a taxi in order to arrive at the destination quickly."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_170",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる べくもない (Verb-ru beku mo nai)",
+    "shortExplanation": "Means 'it's impossible to...' or 'there's no way to...'.",
+    "longExplanation": "This grammar point is used when you want to express that something is impossible or there is no way to do something. The verb before 'べくもない' should be in its dictionary form.",
+    "formation": "Verb-dictionary form + べくもない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "その問題はとても難しく、解くべくもない。",
+        "romanization": "Sono mondai wa totemo muzukashiku, toku beku mo nai.",
+        "translation": "That problem is so difficult that it's impossible to solve."
+      },
+      {
+        "sentence": "彼女はあまりに速く走って、追いつくべくもない。",
+        "romanization": "Kanojo wa amari ni hayaku hashitte, oitsuku beku mo nai.",
+        "translation": "She runs so fast that there's no way to catch up."
+      },
+      {
+        "sentence": "試験の筆記用具を忘れた。書くべくもない。",
+        "romanization": "Shiken no hikki yougu o wasureta. Kaku beku mo nai.",
+        "translation": "I forgot my writing utensils for the test. It's impossible to write."
+      },
+      {
+        "sentence": "彼はとても高く跳ぶ。追い越すべくもない。",
+        "romanization": "Kare wa totemo takaku tobu. Oikosu beku mo nai.",
+        "translation": "He jumps so high that there's no way to surpass him."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_171",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる までもない (〜ru made mo nai)",
+    "shortExplanation": "It's not necessary to the extent of; no need to.",
+    "longExplanation": "The 〜るまでもない grammar point is used to express that something is not necessary to the extent of doing that action. It can be translated as 'no need to' in English.",
+    "formation": "Verb-る + までもない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "そんなに心配するまでもない。",
+        "romanization": "Sonna ni shinpai suru made mo nai.",
+        "translation": "There's no need to worry that much."
+      },
+      {
+        "sentence": "電話するまでもないことだ。",
+        "romanization": "Denwa suru made mo nai koto da.",
+        "translation": "It's not something you need to call about."
+      },
+      {
+        "sentence": "小さな失敗であきらめるまでもない。",
+        "romanization": "Chiisana shippai de akirameru made mo nai.",
+        "translation": "You don't need to give up over a small mistake."
+      },
+      {
+        "sentence": "この問題は、会議で話し合うまでもない。",
+        "romanization": "Kono mondai wa, kaigi de hanashiau made mo nai.",
+        "translation": "This problem doesn't need to be discussed at a meeting."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_172",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる ものとする (〜ru mono to suru)",
+    "shortExplanation": "Assuming or deciding something as...",
+    "longExplanation": "The ～るものとする grammar point is often used in formal or legal contexts to express a decision or assumption. It can be translated as 'it is decided/assumed that...' or 'shall be deemed that...'.",
+    "formation": "Verb-dictionary form + ものとする",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "ここでの話し合いは秘密とするものとします。",
+        "romanization": "Koko de no hanashiai wa himitsu to suru mono to shimasu.",
+        "translation": "The discussions here are to be kept confidential."
+      },
+      {
+        "sentence": "この契約は明日から有効とするものとする。",
+        "romanization": "Kono keiyaku wa ashita kara yuukou to suru mono to suru.",
+        "translation": "This contract shall become effective from tomorrow."
+      },
+      {
+        "sentence": "彼をチームのリーダーとするものとします。",
+        "romanization": "Kare o chiimu no riidaa to suru mono to shimasu.",
+        "translation": "We will designate him as the team leader."
+      },
+      {
+        "sentence": "この件については終了とするものとする。",
+        "romanization": "Kono ken ni tsuite wa shuuryou to suru mono to suru.",
+        "translation": "We will consider this matter closed."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_173",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる や否や (Verb-ru ya ina ya)",
+    "shortExplanation": "Expresses the idea of 'as soon as', 'the moment...'.",
+    "longExplanation": "The grammar point Verbる や否や is used to express something happening immediately after another action or event. It can be translated as 'as soon as...' or 'the moment...'. The verb must be in dictionary form.",
+    "formation": "Verb-dictionary form + や否や",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女が家に帰るや否や、すぐにテレビをつけました。",
+        "romanization": "Kanojo ga ie ni kaeru ya ina ya, sugu ni terebi o tsukemashita.",
+        "translation": "As soon as she returned home, she turned on the TV."
+      },
+      {
+        "sentence": "私が郵便箱を開けるや否や、手紙が落ちました。",
+        "romanization": "Watashi ga yuubinbako o akeru ya ina ya, tegami ga ochimashita.",
+        "translation": "The moment I opened the mailbox, the letters fell out."
+      },
+      {
+        "sentence": "子供たちは学校が終わるや否や、公園に走りました。",
+        "romanization": "Kodomo-tachi wa gakkou ga owaru ya ina ya, kouen ni hashirimashita.",
+        "translation": "As soon as school was over, the children ran to the park."
+      },
+      {
+        "sentence": "父が新聞を読むや否や、何かに震えていました。",
+        "romanization": "Chichi ga shinbun o yomu ya ina ya, nanika ni furuete imashita.",
+        "translation": "The moment my father read the newspaper, he started trembling about something."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_174",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる 始末だ (〜ru shimatsu da)",
+    "shortExplanation": "Indicates a (often unfortunate) result or conclusion of an action.",
+    "longExplanation": "The ～る始末だ grammar point expresses the outcome or conclusion of an action, typically a negative or unfortunate result. It can be translated as 'end up...', 'the result is...', or 'the conclusion is...'.",
+    "formation": "Verb-dictionary form + 始末だ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "忘れてしまって、パスポートを家に置いてくる始末だった。",
+        "romanization": "Wasurete shimatte, pasupooto o ie ni oite-kuru shimatsu datta.",
+        "translation": "I ended up leaving my passport at home because I forgot."
+      },
+      {
+        "sentence": "毎晩遅くまで働いて、倒れる始末だ。",
+        "romanization": "Maiban osoku made hataraite, taoreru shimatsu da.",
+        "translation": "I work until late every night and end up collapsing."
+      },
+      {
+        "sentence": "勉強しなかったので、試験に落ちる始末だ。",
+        "romanization": "Benkyou shinakatta node, shiken ni ochiru shimatsu da.",
+        "translation": "I didn't study, so I ended up failing the exam."
+      },
+      {
+        "sentence": "電車が遅れたため、会議に遅れる始末だ。",
+        "romanization": "Densha ga okureta tame, kaigi ni okureru shimatsu da.",
+        "translation": "Because the train was delayed, I ended up being late for the meeting."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_175",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる 嫌いがある (～ru kirai ga aru)",
+    "shortExplanation": "Tendency to do a negative action; have a bad habit of ~.",
+    "longExplanation": "The ～る嫌いがある grammar point is used to express a negative tendency or habit. It often carries a critical or disapproving tone and points out someone's habitual action.",
+    "formation": "Verb-dictionary form + 嫌いがある",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女は遅刻する嫌いがある。",
+        "romanization": "Kanojo wa chikoku suru kirai ga aru.",
+        "translation": "She has a tendency to be late."
+      },
+      {
+        "sentence": "私の父はお酒を飲み過ぎる嫌いがある。",
+        "romanization": "Watashi no chichi wa osake o nomisugiru kirai ga aru.",
+        "translation": "My father has a habit of drinking too much alcohol."
+      },
+      {
+        "sentence": "彼は物をすぐ忘れる嫌いがある。",
+        "romanization": "Kare wa mono o sugu wasureru kirai ga aru.",
+        "translation": "He tends to forget things quickly."
+      },
+      {
+        "sentence": "彼女は人の話を途中で切る嫌いがある。",
+        "romanization": "Kanojo wa hito no hanashi o tochuu de kiru kirai ga aru.",
+        "translation": "She has a habit of interrupting people while they are speaking."
+      }
+    ]
+  },
+  {
+    "id": "ja_いつまでのやら_176",
+    "language": "ja",
+    "pattern": "いつまで～のやら",
+    "title": "いつまで～のやら (itsumade ~ no yara)",
+    "shortExplanation": "Expresses uncertainty regarding duration; 'don't know when... will end'.",
+    "longExplanation": "The いつまで～のやら grammar point is used to express uncertainty about when something will end or finish. It is often used in situations where the speaker is unsure about when a particular state of affairs or event will conclude.",
+    "formation": "いつまで + Verb (dictionary form) + のやら",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この試験勉強はいつまで続くのやら。",
+        "romanization": "Kono shiken benkyou wa itsumade tsuzuku no yara.",
+        "translation": "I don't know when this exam study will end."
+      },
+      {
+        "sentence": "彼の話がいつ終わるのやら、わからない。",
+        "romanization": "Kare no hanashi ga itsu owaru no yara, wakaranai.",
+        "translation": "I don't know when his talk will finish."
+      },
+      {
+        "sentence": "この雨がいつまで降り続くのやら。",
+        "romanization": "Kono ame ga itsumade furitsuzuku no yara.",
+        "translation": "I don't know when this rain will stop."
+      },
+      {
+        "sentence": "コロナのパンデミックがいつまで続くのやら。",
+        "romanization": "Korona no pandemikku ga itsumade tsuzuku no yara.",
+        "translation": "I don't know when this coronavirus pandemic will end."
+      }
+    ]
+  },
+  {
+    "id": "ja_が_177",
+    "language": "ja",
+    "pattern": "～が",
+    "title": "～が Verb られる (〜ga Verb rareru)",
+    "shortExplanation": "Expresses potential or ability to do something; 'can', 'able to'.",
+    "longExplanation": "The ～が Verb られる grammar pattern generally refers to the potential form of Japanese verbs (i.e., 'can do something'). However, the exact formation depends on the verb group. For most Group 1 (五段) verbs, potential form changes the final -u to -eru (e.g., 書く→書ける). For Group 2 (一段) verbs, you often see ～られる (e.g., 食べる→食べられる). In English, it translates as 'can' or 'able to'.",
+    "formation": "❶ (Group 1) Verb:  書く → 書ける / 飲む → 飲める, etc.\n❷ (Group 2) Verb-ます stem + られる (食べる→食べられる、見る→見られる)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼がこの問題を解けると思いますか？",
+        "romanization": "Kare ga kono mondai o tokeru to omoimasu ka?",
+        "translation": "Do you think he can solve this problem?"
+      },
+      {
+        "sentence": "私がその大きな箱を運べるか？",
+        "romanization": "Watashi ga sono ookina hako o hakoberu ka?",
+        "translation": "Can I carry that big box?"
+      },
+      {
+        "sentence": "彼が早く走れると思います。",
+        "romanization": "Kare ga hayaku hashireru to omoimasu.",
+        "translation": "I think he can run fast."
+      },
+      {
+        "sentence": "彼女は日本語が話せる。",
+        "romanization": "Kanojo wa nihongo ga hanaseru.",
+        "translation": "She can speak Japanese."
+      }
+    ]
+  },
+  {
+    "id": "ja_かと思いきや_178",
+    "language": "ja",
+    "pattern": "～かと思いきや",
+    "title": "～かと思いきや (〜ka to omoikiya)",
+    "shortExplanation": "Expressing unexpected outcomes; 'just when I thought...', 'but...'.",
+    "longExplanation": "The ～かと思いきや grammar point is used when the outcome turns out different from what was initially assumed or expected. It can be translated as 'just when I thought...' or simply 'but (actually)...'. It often highlights that the speaker’s assumption was proven wrong by subsequent events.",
+    "formation": "Sentence + かと思いきや (Verb plain form, i-/na-Adjective, or Noun + だ + かと思いきや)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "明日は晴れるかと思いきや、まさかの雨が降った。",
+        "romanization": "Ashita wa hareru ka to omoikiya, masaka no ame ga futta.",
+        "translation": "I thought it would be sunny tomorrow, but unexpectedly it rained."
+      },
+      {
+        "sentence": "彼が試験に落ちたかと思いきや、合格していた。",
+        "romanization": "Kare ga shiken ni ochita ka to omoikiya, goukaku shite ita.",
+        "translation": "I thought he had failed the test, but he actually passed."
+      },
+      {
+        "sentence": "このケーキは美味しそうだったかと思いきや、全然甘くなかった。",
+        "romanization": "Kono keeki wa oishisou datta ka to omoikiya, zenzen amakunakatta.",
+        "translation": "I thought this cake would be delicious, but it wasn’t sweet at all."
+      },
+      {
+        "sentence": "列車が遅れるかと思いきや、時間通りに到着した。",
+        "romanization": "Ressha ga okureru ka to omoikiya, jikan doori ni touchaku shita.",
+        "translation": "I thought the train would be late, but it arrived on time."
+      }
+    ]
+  },
+  {
+    "id": "ja_がゆえに_179",
+    "language": "ja",
+    "pattern": "～がゆえに",
+    "title": "～がゆえに (～ga yue ni)",
+    "shortExplanation": "Expresses the reason or cause; 'because', 'due to', 'as a result of'.",
+    "longExplanation": "The ～がゆえに grammar point is used to express a reason or cause, often in more formal writing or speech. It roughly corresponds to 'because (of)', 'due to', or 'as a result of' in English.",
+    "formation": "Noun / Verb / Adjective + がゆえに",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "愛情がゆえに、彼は彼女を許した。",
+        "romanization": "Aijou ga yue ni, kare wa kanojo o yurushita.",
+        "translation": "Because of love, he forgave her."
+      },
+      {
+        "sentence": "突然の雨がゆえに、試合は延期された。",
+        "romanization": "Totsuzen no ame ga yue ni, shiai wa enki sareta.",
+        "translation": "Due to the sudden rain, the match was postponed."
+      },
+      {
+        "sentence": "彼の努力がゆえに、彼は成功を収めた。",
+        "romanization": "Kare no doryoku ga yue ni, kare wa seikou o osameta.",
+        "translation": "Because of his efforts, he achieved success."
+      },
+      {
+        "sentence": "彼の死がゆえに、彼の家族は深い悲しみに包まれた。",
+        "romanization": "Kare no shi ga yue ni, kare no kazoku wa fukai kanashimi ni tsutsumareta.",
+        "translation": "Due to his death, his family was enveloped in deep sorrow."
+      }
+    ]
+  },
+  {
+    "id": "ja_がゆえの_180",
+    "language": "ja",
+    "pattern": "～がゆえの",
+    "title": "～がゆえの Noun (〜ga yue no Noun)",
+    "shortExplanation": "Expresses the reason or cause for something; 'because of', 'due to'.",
+    "longExplanation": "The ～がゆえの Noun pattern is used to describe a noun that exists or occurs due to some cause. It is often used in more literary or formal contexts.",
+    "formation": "Noun / Verb-dictionary form + がゆえの + Noun",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "愛がゆえの悲しみ。",
+        "romanization": "Ai ga yue no kanashimi.",
+        "translation": "Sadness due to love."
+      },
+      {
+        "sentence": "健康がゆえの幸せ。",
+        "romanization": "Kenkou ga yue no shiawase.",
+        "translation": "Happiness due to good health."
+      },
+      {
+        "sentence": "悪行がゆえの罰。",
+        "romanization": "Akugyou ga yue no batsu.",
+        "translation": "Punishment due to wrongdoing."
+      },
+      {
+        "sentence": "努力がゆえの成功。",
+        "romanization": "Doryoku ga yue no seikou.",
+        "translation": "Success due to effort."
+      }
+    ]
+  },
+  {
+    "id": "ja_から_181",
+    "language": "ja",
+    "pattern": "～から",
+    "title": "～から Noun に 至る まで (〜kara 〜ni itaru made)",
+    "shortExplanation": "Expressing range from one thing to another; 'from...to', 'ranging from...to'.",
+    "longExplanation": "The ～から〜に至るまで grammar point emphasizes a range or scope extending from one extreme to another. It can be translated as 'from...to...' or 'ranging from...to...' in English. It can apply to people, places, times, objects, and so on.",
+    "formation": "Noun (start) + から + Noun (end) + に至るまで",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "このバンドの曲は、青年から老人に至るまで、人々に愛されています。",
+        "romanization": "Kono bando no kyoku wa, seinen kara roujin ni itaru made, hitobito ni aisarete imasu.",
+        "translation": "The songs of this band are loved by people ranging from the young to the elderly."
+      },
+      {
+        "sentence": "小さい物件から大きな建物に至るまで、全てのプロパティの管理を我々が行います。",
+        "romanization": "Chiisai bukken kara ooki na tatemono ni itaru made, subete no property no kanri o wareware ga okonaimasu.",
+        "translation": "We handle all property management, ranging from small units to large buildings."
+      },
+      {
+        "sentence": "朝のニュース放送から夜のドラマに至るまで、テレビは毎日見ています。",
+        "romanization": "Asa no nyuusu housou kara yoru no dorama ni itaru made, terebi wa mainichi mite imasu.",
+        "translation": "I watch TV every day, from the morning news broadcasts to the night dramas."
+      },
+      {
+        "sentence": "この地域は、春から冬に至るまで旅行者で賑わいます。",
+        "romanization": "Kono chiiki wa, haru kara fuyu ni itaru made ryokousha de nigiwaimasu.",
+        "translation": "This area is bustling with tourists from spring to winter."
+      }
+    ]
+  }
+]

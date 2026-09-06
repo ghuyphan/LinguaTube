@@ -1,101 +1,132 @@
-# LinguaTube 📺 🎌
+# Voca 📺 🎌 🇨🇳 🇰🇷 🇬🇧
 
-**Turn any YouTube video into a powerful language learning lesson.**
+**Turn any YouTube video into an interactive, high-retention language lesson.**
 
-LinguaTube is a modern, immersive web application designed to help you learn **Japanese**, **Chinese**, and **Korean** directly from authentic content. It combines the vast library of YouTube with advanced language tools like interactive subtitles, instant dictionary lookups, and AI-powered transcription.
+Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (PWA) designed to help you master **Japanese**, **Chinese**, **Korean**, and **English** directly from authentic video content. It combines YouTube's massive library with cutting-edge language tools: interactive clickable subtitles, instant multi-source dictionary lookups, grammar pattern detection, an SM-2 spaced repetition system (SRS), and Gladia AI-powered audio transcription.
 
 ![Angular 19](https://img.shields.io/badge/Angular-19-%23DD0031?style=flat-square&logo=angular)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-%233178C6?style=flat-square&logo=typescript)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6-%233178C6?style=flat-square&logo=typescript)
 ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-Serverless-%23F38020?style=flat-square&logo=cloudflare)
+![PWA](https://img.shields.io/badge/PWA-Offline--First-%235A0FC8?style=flat-square)
+
+---
 
 ## ✨ Key Features
 
-### 🎬 Universal Video Support
--   **YouTube Integration**: Paste any YouTube URL to start learning immediately.
--   **Auto-Caption Fetching**: Seamlessly extracts existing subtitles in your target language.
--   **AI Transcription Fallback**: No subtitles? No problem. LinguaTube uses **Gladia AI** to generate accurate, timestamped transcripts on the fly.
+### 🎬 Universal Video Support & Player Controls
+- **YouTube Integration**: Paste any YouTube URL (or click curated playlists) to start learning immediately.
+- **Dual-Engine Captions**: Extracts native YouTube subtitles (via Supadata in production and Innertube in local dev) with automatic language discovery.
+- **Gladia AI Transcription Fallback**: For videos without native subtitles, generate timestamped, highly accurate transcripts using speech-to-text AI.
+- **Sticky Subtitles**: Custom algorithm eliminates flicker between natural speech gaps, keeping cues on screen until the next phrase begins.
+- **Draggable Fullscreen Subtitles**: Reposition subtitles anywhere on screen with smooth pointer-capture drag handles and instant top/bottom snap targets (12% and 82%).
+- **Desktop & Mobile Controls**: Keyboard shortcuts (`Space`, `k`, `j`/`l`, `c`, `f`) and mobile gestures (swipe volume, double-tap seek).
 
-### 🧠 Smart Linguistics
--   **Advanced Tokenization**: Uses server-side morphological analysis (via `Kuromoji` for Japanese, `Jieba` for Chinese) to correctly segment sentences into interactive words.
--   **Instant Dictionary**: Click any word to see detailed definitions, pronunciation, and examples.
--   **Dual-Language Support**: Displays learning subtitles alongside your native language.
--   **Phonetic Guides**: Toggle Furigana (Japanese) or Pinyin (Chinese) to aid reading.
+### 🧠 Smart Linguistics & Interactive Dictionaries
+- **Language-Specific Tokenization**:
+  - **Japanese**: Morphological analysis via `@patdx/kuromoji` with on-demand CDN dictionary loading.
+  - **Chinese**: Word boundary segmentation with `Intl.Segmenter` and `pinyin-pro` tone marks.
+  - **Korean**: `Intl.Segmenter` paired with `hangul-romanization` (Revised Romanization).
+  - **English**: Word and punctuation segmentation via `Intl.Segmenter`.
+- **Reading Display Modes**: Choose between **Native**, **Annotated Ruby** (Furigana/Pinyin), **Reading Only**, **Annotated Romanized**, or **Romanized** (Hepburn Romaji).
+- **Multi-Source Hybrid Dictionary**:
+  - Click any subtitle token for instant definitions, readings, audio pronunciations, and level indicators (JLPT, HSK, TOPIK).
+  - Backed by Jotoba, Mazii, Naver (En/Ko/Vi), MDBG, FreeDictionary, and Glosbe with automatic Google Translate GTX fallback.
+- **Grammar Pattern Recognition**:
+  - Automatically identifies grammatical structures across **Japanese** (JLPT N5–N1), **Korean** (TOPIK I–II), **Chinese** (HSK 1–6), and **English** (CEFR A1–C2).
+  - Includes multi-language explanations (translated into Vietnamese, Chinese, Japanese, Korean, and English) and native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`).
+- **Dual-Language Subtitles**: Display learning subtitles alongside translated subtitles in English, Vietnamese, Japanese, Korean, or Chinese with quick flag switching.
 
-### 📚 Study Tools
--   **Vocabulary Tracking**: Mark words as **New**, **Learning**, or **Known**.
--   **Contextual Review**: Words are saved with the sentence context where you found them.
--   **Smart Playback**: "Sticky" subtitles ensure you never miss a phrase, with auto-pause on hover.
--   **Cloud Sync**: Sync your progress and vocabulary across devices (Preview).
+### 📚 Study & Retention Tools
+- **SM-2 Spaced Repetition Flashcards**: Review saved vocabulary with an optimized SuperMemo-2 algorithm calculating repetition intervals, ease factors, and next review dates.
+- **Contextual Sentence Mining**: Saved words retain the exact sentence context and timestamp from the video where they were encountered.
+- **Gamified Streaks & Freeze Inventory**: Track daily study streaks with streak freeze protections (up to 2 freezes) and milestone rewards.
+- **Playlists & History**: Organize videos into custom playlists, explore curated community playlists, and resume progress automatically.
+- **Offline-First Persistence**: Operates seamlessly offline with IndexedDB (`lingua-tube-cache`) and LocalStorage, with two-way cloud synchronization to PocketBase.
+
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
--   Node.js 18+
--   npm
+- **Node.js**: `v20.11` to `<23.0` (Node 20 or 22 LTS recommended)
+- **npm**: `v10+`
 
 ### Installation
 
-1.  **Clone the repository**
-    ```bash
-    git clone <repository-url>
-    cd lingua-tube
-    ```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ghuyphan/LinguaTube.git
+   cd lingua-tube
+   ```
 
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-3.  **Environment Setup**
-    To use AI transcription features, you need a Gladia API key.
-    -   Set `GLADIA_API_KEY` in your environment or Cloudflare configuration.
+3. **Configure Environment**
+   ```bash
+   cp .dev.vars.example .dev.vars
+   ```
+   Provide your API keys in `.dev.vars` (e.g., `GLADIA_API_KEY`, `SUPADATA_API_KEY`, `TURNSTILE_SECRET_KEY`, `GOOGLE_CLIENT_ID`).
 
-4.  **Run Development Server**
-    ```bash
-    npm run dev
-    ```
-    This command runs both the Angular frontend (at `http://localhost:4200`) and the local API server backend.
+4. **Start Development Environment**
+   ```bash
+   npm run dev
+   ```
+   This concurrently runs the local Express mock server (port 3001) and the Angular dev server (`http://localhost:4200`).
 
-## 📖 Documentation
+---
 
-For detailed architectural diagrams, technology breakdowns, API specifications, and agent design rules, explore our documentation portal:
+## 🛠️ CLI Commands Reference
 
-- **[AI Agent Operating Guide (AGENTS.md)](AGENTS.md)**: Critical invariants, architecture map, workflows, and rules for AI coding assistants.
-- **[Documentation Portal (doc/README.md)](doc/README.md)**: Complete guide index.
-  - [System Architecture & Component Map](doc/map.md)
-  - [Technology Stack & Tooling](doc/tech.md)
-  - [Backend API & Serverless Edge](doc/backend-api.md)
-  - [Frontend Architecture & UI System](doc/frontend-architecture.md)
-  - [Feature Specifications & Deep Dive](doc/features.md)
-  - [Database & Storage Architecture](doc/database-and-storage.md)
-  - [Developer & Operations Guide](doc/development-guide.md)
+| Command | Action |
+|---------|--------|
+| `npm run dev` | Runs Angular dev server (`localhost:4200`) and local backend (`localhost:3001`) |
+| `npm run build:functions` | Bundles Cloudflare Pages Functions from `functions-src/` into `functions/` via esbuild |
+| `npm run build` | Full production build: compiles functions and Angular client into `dist/` |
+| `npm run lint` | Runs ESLint 9 checks across TypeScript and HTML templates |
+| `npm run lint:fix` | Automatically fixes autofixable ESLint issues |
+| `npm run test:backend` | Executes Node.js test runner for security and validator tests |
+| `npm run test` | Executes Angular unit tests with Karma |
+| `npx wrangler pages dev` | Previews Cloudflare Pages Functions against D1 and KV bindings |
 
-## 🛠️ Architecture & Tech Stack
+---
 
-LinguaTube is built as a **Progressive Web App (PWA)** leveraging edge computing for performance.
+## 📖 Complete Documentation Suite
 
--   **Frontend**: Angular 19 (Signals, Standalone Components), RxJS, Lucide Icons.
--   **Backend**: Cloudflare Pages Functions (Serverless).
--   **Tokenization**:
-    -   **Japanese**: `@patdx/kuromoji` (Morphological Analyzer)
-    -   **Chinese**: `Intl.Segmenter` + `pinyin-pro`
-    -   **Korean**: `Intl.Segmenter` + `hangul-romanization`
--   **Data & Caching**: Cloudflare D1 (SQLite), Cloudflare R2 (Transcripts), Cloudflare KV (Rate limits & Caching).
+For complete architectural guides, database schemas, and developer manuals, see the [`doc/`](doc/) directory:
+
+- **[AI Agent Operating Guide (AGENTS.md)](AGENTS.md)**: Critical invariants, architecture map, workflows, Rule 7 auto-update mandate, and checklists.
+- **[Documentation Portal (doc/README.md)](doc/README.md)**: Guide index.
+  - [1. System Architecture & Component Map](doc/map.md)
+  - [2. Technology Stack & Tooling](doc/tech.md)
+  - [3. Backend API & Serverless Edge](doc/backend-api.md)
+  - [4. Frontend Architecture & UI System](doc/frontend-architecture.md)
+  - [5. Feature Specifications & Deep Dive](doc/features.md)
+  - [6. Database & Storage Architecture](doc/database-and-storage.md)
+  - [7. Developer & Operations Guide](doc/development-guide.md)
+
+---
 
 ## ⌨️ Keyboard Shortcuts
 
 | Key | Action |
 |-----|--------|
-| `Space` | Play/Pause |
-| `←` / `→` | Seek -5s / +5s |
-| `Esc` | Close Dictionary Popup |
+| `Space` or `k` | Play / Pause |
+| `←` / `→` | Seek $-5$s / $+5$s |
+| `j` / `l` | Seek $-10$s / $+10$s |
+| `c` | Toggle Subtitles |
+| `f` | Toggle Fullscreen |
+| `m` | Toggle Mute |
+| `Shift` + `<` / `>` | Adjust Playback Speed (0.5x – 2x) |
+| `Esc` | Close Dictionary or Settings Sheets |
 
-## 📄 License
+---
 
-MIT License
+## 📄 License & Acknowledgments
 
-## Acknowledgments
-
--   Inspired by [Language Reactor](https://www.languagereactor.com/) and [LinguaCafe](https://github.com/simjanos-dev/LinguaCafe)
--   Dictionary data from [Jisho.org](https://jisho.org/) and [MDBG](https://www.mdbg.net/)
--   Transcription services by [Gladia](https://gladia.io/)
+- Licensed under the **MIT License**.
+- Inspired by [Language Reactor](https://www.languagereactor.com/) and [LinguaCafe](https://github.com/simjanos-dev/LinguaCafe).
+- Dictionary data provided by [Jotoba](https://jotoba.de/), [Jisho.org](https://jisho.org/), [Mazii](https://mazii.net/), [Naver](https://dict.naver.com/), and [MDBG](https://www.mdbg.net/).
+- Speech AI powered by [Gladia](https://gladia.io/).

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_まるでよう_100": {
+      "title": "まるで～よう (maru de ~ you)",
+      "shortExplanation": "Dùng để so sánh ví von hai sự vật, hiện tượng có tính chất tương đồng cao; mang nghĩa 'hệt như là...', 'giống như là...', 'cứ như thể là...'.",
+      "longExplanation": "Cấu trúc 'まるで～よう' kết hợp phó từ 'まるで' (hoàn toàn, hệt như) với hình thức so sánh ví von '～よう' để nhấn mạnh mức độ tương đồng sâu sắc giữa hai sự vật hoặc trạng thái, dù thực tế chúng không phải là một. Khi bổ nghĩa cho danh từ, cấu trúc biến đổi thành 'まるで～ような + Danh từ', khi bổ nghĩa cho động từ/tính từ thì thành 'まるで～ように', và đứng cuối câu là 'まるで～ようだ'.",
+      "formation": "まるで + Danh từ + のよう(だ/な/に) | まるで + Động từ/Tính từ thể thông thường + よう(だ/な/に)",
+      "examples": [
+        {
+          "translation": "Cô ấy đẹp hệt như một thiên thần."
+        },
+        {
+          "translation": "Anh ấy làm việc cứ như thể là một người máy."
+        },
+        {
+          "translation": "Ngôi nhà kia trông hệt như một tòa lâu đài."
+        },
+        {
+          "translation": "Nơi này là một chốn giống như thiên đường vậy."
+        }
+      ]
+    },
+    "ja_てみる_101": {
+      "title": "～てみる (〜te miru)",
+      "shortExplanation": "Diễn tả hành động làm thử một việc gì đó để xem kết quả ra sao; 'thử làm... xem sao'.",
+      "longExplanation": "Cấu trúc '～てみる' kết hợp động từ thể て với trợ động từ 'みる' (ở đây mang nghĩa thử nghiệm, không phải là dùng mắt nhìn thông thường), biểu thị việc người nói hoặc chủ ngữ thực hiện một hành động mang tính chất thử nghiệm, thăm dò để kiểm tra tính khả thi, mùi vị hoặc kết quả sau đó.",
+      "formation": "Động từ thể て + みる",
+      "examples": [
+        {
+          "translation": "Anh ấy đã chạy thử xem sao nhưng vẫn cảm thấy đau ở đầu gối."
+        },
+        {
+          "translation": "Cô ấy đã thử nấu ăn nhưng cuối cùng lại thất bại."
+        },
+        {
+          "translation": "Trong buổi hẹn hò đầu tiên, anh ấy muốn làm cô ấy bất ngờ nên đã thử hát tặng."
+        },
+        {
+          "translation": "Chiếc bánh này trông ngon quá nên tôi sẽ ăn thử xem sao."
+        }
+      ]
+    },
+    "ja_みたいだ_102": {
+      "title": "～みたいだ (〜mitai da)",
+      "shortExplanation": "Dùng trong văn nói thân mật để phỏng đoán dựa trên cảm nhận trực tiếp hoặc so sánh ví von; 'hình như là...', 'có vẻ như...', 'trông như...'.",
+      "longExplanation": "Cấu trúc '～みたいだ' là dạng khẩu ngữ thường dùng trong giao tiếp đời thường của '～ようだ'. Cấu trúc này dùng để diễn đạt sự suy đoán không chắc chắn dựa trên quan sát trực quan hoặc cảm giác ('có vẻ là/hình như là...'), đồng thời cũng dùng để so sánh sự vật này với sự vật khác ('giống như...'). Khi bổ nghĩa cho danh từ dùng '～みたいな + Danh từ', bổ nghĩa cho vị ngữ dùng '～みたいに'.",
+      "formation": "Động từ thể thông thường + みたいだ | Tính từ đuôi い + みたいだ | Tính từ đuôi な (bỏ だ) + みたいだ | Danh từ + みたいだ",
+      "examples": [
+        {
+          "translation": "Hình như anh ấy đang tức giận."
+        },
+        {
+          "translation": "Tòa nhà đó trông có vẻ đã cũ."
+        },
+        {
+          "translation": "Cô ấy có vẻ như đang mệt mỏi."
+        },
+        {
+          "translation": "Món ăn này có vẻ cay đấy."
+        }
+      ]
+    },
+    "ja_めったにない_103": {
+      "title": "～めったに～ない (〜metta ni 〜nai)",
+      "shortExplanation": "Diễn tả tần suất diễn ra của một hành động hay sự việc là vô cùng hiếm hoi; 'hiếm khi...', 'hầu như không bao giờ...'.",
+      "longExplanation": "Phó từ 'めったに' (hiếm khi, hầu như không) luôn đi kèm với các hình thức phủ định '～ない' ở cuối câu để nhấn mạnh rằng một hành động, sự kiện hay trạng thái nào đó xảy ra với tần suất cực kỳ ít, gần như là không có trong điều kiện bình thường.",
+      "formation": "めったに + Động từ thể ない | めったに + Tính từ đuôi い (bỏ い) + くない | めったに + Tính từ đuôi な + ではない/じゃない",
+      "examples": [
+        {
+          "translation": "Anh ấy hiếm khi đi ăn ở ngoài."
+        },
+        {
+          "translation": "Tôi hiếm khi ăn sushi."
+        },
+        {
+          "translation": "Khu vực này hiếm khi có tuyết rơi."
+        },
+        {
+          "translation": "Cô ấy hiếm khi nổi giận."
+        }
+      ]
+    },
+    "ja_めったにない_104": {
+      "title": "～めったにない (〜metta ni nai)",
+      "shortExplanation": "Biểu thị một sự việc, cơ hội hoặc hiện tượng là rất hiếm thấy, ít khi xảy ra; 'hiếm có...', 'hầu như không có...'.",
+      "longExplanation": "Cụm từ '～めったにない' đóng vai trò là vị ngữ tính từ hoặc bổ nghĩa cho danh từ ('めったにない + Danh từ': cơ hội hiếm có). Khi kết hợp với động từ danh từ hóa dưới dạng '～(こと/の)はめったにない', cấu trúc dùng để nhấn mạnh sự khan hiếm, đặc biệt hoặc khác thường của việc đó.",
+      "formation": "Động từ thể từ điển + (こと/の)はめったにない | Danh từ + はめったにない | めったにない + Danh từ",
+      "examples": [
+        {
+          "translation": "Ở thị trấn này, việc có tuyết rơi là điều hiếm khi xảy ra."
+        },
+        {
+          "translation": "Anh ấy hiếm khi đi ăn ngoài."
+        },
+        {
+          "translation": "Việc bạn bè tới chơi là chuyện hiếm có."
+        },
+        {
+          "translation": "Cô ấy hầu như không bao giờ nổi giận."
+        }
+      ]
+    },
+    "ja_もしかするとかもしれない_105": {
+      "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
+      "shortExplanation": "Diễn tả khả năng xảy ra của một sự việc dù không chắc chắn; 'có lẽ là... cũng không chừng', 'biết đâu lại...'.",
+      "longExplanation": "Phó từ 'もしかすると' (có khả năng là, có khi) đứng đầu mệnh đề đi kèm với kết thúc vị ngữ '～かもしれない' (có lẽ/cũng không biết chừng), làm tăng thêm sắc thái suy đoán dè dặt, không chắc chắn của người nói về một sự tình hoặc diễn biến có thể xảy ra nhưng xác suất không quá cao.",
+      "formation": "もしかすると + Động từ/Tính từ thể thông thường + かもしれない | もしかすると + Tính từ đuôi な/Danh từ (bỏ だ) + かもしれない",
+      "examples": [
+        {
+          "translation": "Biết đâu anh ấy có thể sẽ đến muộn cũng nên."
+        },
+        {
+          "translation": "Có lẽ cô ấy đang cảm thấy mệt mỏi chăng."
+        },
+        {
+          "translation": "Biết đâu trời sẽ đổ mưa cũng nên."
+        },
+        {
+          "translation": "Có khi họ không thích bộ phim đó cũng nên."
+        }
+      ]
+    },
+    "ja_もしたなら_106": {
+      "title": "もし～たなら (moshi ~ tanara)",
+      "shortExplanation": "Nhấn mạnh điều kiện giả định trong trường hợp sự việc xảy ra hoặc đã hoàn tất; 'giả sử nếu...', 'nếu quả thật là...'.",
+      "longExplanation": "Cấu trúc 'もし～たなら' kết hợp phó từ giả định 'もし' với động từ hoặc tính từ ở thể quá khứ (thể た) đi cùng 'なら'. Cấu trúc này dùng để nhấn mạnh điều kiện giả định khi một hành động đã xảy ra xong xuôi hoặc đặt tiền đề cho vế sau đưa ra lời khuyên, đề xuất, yêu cầu hoặc đánh giá.",
+      "formation": "もし + Động từ thể た + なら | もし + Tính từ đuôi い (bỏ い) + かったなら | もし + Tính từ đuôi な / Danh từ + だったなら",
+      "examples": [
+        {
+          "translation": "Nếu trời có mưa thì chúng ta hãy mang theo ô nhé."
+        },
+        {
+          "translation": "Nếu chiếc bánh mà không ngon thì chắc sẽ chẳng ai ăn đâu."
+        },
+        {
+          "translation": "Nếu quả thật anh ấy bị ốm thì xin hãy cho anh ấy đến bệnh viện ngay lập tức."
+        },
+        {
+          "translation": "Nếu cô ấy là học sinh thì ở nhà hàng này chắc sẽ có giảm giá đấy."
+        }
+      ]
+    },
+    "ja_もしても_107": {
+      "title": "もし～ても (moshi ~ temo)",
+      "shortExplanation": "Diễn tả điều kiện nhượng bộ giả định; dù tình huống ở vế trước có xảy ra thì kết quả hay quyết định ở vế sau vẫn không thay đổi; 'cho dù... thì cũng...'.",
+      "longExplanation": "Cấu trúc 'もし～ても' kết hợp phó từ giả định 'もし' với thể điều kiện nhượng bộ '～ても / ～でも'. Cấu trúc này nhấn mạnh rằng dù tình huống giả định ở vế trước có trở thành sự thật đi chăng nữa thì kết quả, hành vi hoặc ý chí ở vế sau vẫn giữ nguyên, không bị ảnh hưởng.",
+      "formation": "もし + Động từ thể て + も | もし + Tính từ đuôi い (bỏ い) + くても | もし + Tính từ đuôi な / Danh từ + でも",
+      "examples": [
+        {
+          "translation": "Dù trời có mưa đi chăng nữa thì chúng tôi vẫn sẽ đi dã ngoại."
+        },
+        {
+          "translation": "Dù anh ấy có xin lỗi thì chắc tôi vẫn sẽ còn giận."
+        },
+        {
+          "translation": "Dù có thi đỗ đi chăng nữa thì tôi vẫn sẽ tiếp tục học tập."
+        },
+        {
+          "translation": "Cho dù cô ấy có đến muộn thì tôi vẫn sẽ đợi."
+        }
+      ]
+    },
+    "ja_もしもなら_108": {
+      "title": "もしも～なら (moshimo ~ nara)",
+      "shortExplanation": "Nhấn mạnh điều kiện giả định có tính bất định, giả thuyết cao hoặc vạn nhất xảy ra; 'nếu như...', 'giả sử như...'.",
+      "longExplanation": "Từ 'もしも' mang sắc thái nhấn mạnh mạnh mẽ hơn so với 'もし', thường dùng khi người nói đưa ra một giả định về tình huống hiếm khi xảy ra, một tình huống ngặt nghèo hoặc giả định tưởng tượng mang tính bất trắc ('vạn nhất nếu như...'). Vế sau thường là nhận định, phán đoán hoặc biện pháp xử lý tương ứng.",
+      "formation": "もしも + Động từ/Tính từ thể thông thường + なら | もしも + Tính từ đuôi な (bỏ だ) + なら | もしも + Danh từ + なら",
+      "examples": [
+        {
+          "translation": "Nếu như ngày mai trời đổ mưa thì tôi sẽ không ra ngoài."
+        },
+        {
+          "translation": "Nếu như anh ấy không đến thì chúng tôi sẽ tự tổ chức bữa tiệc."
+        },
+        {
+          "translation": "Nếu như cô ấy đang mệt thì hãy để cô ấy nghỉ ngơi nhé."
+        },
+        {
+          "translation": "Nếu như đó đúng là sự thật thì chúng ta bắt buộc phải thừa nhận thôi."
+        }
+      ]
+    },
+    "ja_ようとしない_109": {
+      "title": "～ようとしない (〜you to shinai)",
+      "shortExplanation": "Diễn tả việc một người nào đó hoàn toàn không có ý định hoặc từ chối làm một hành động; 'chẳng chịu...', 'không hề có ý định làm...'.",
+      "longExplanation": "Cấu trúc '～ようとしない' kết hợp động từ thể ý chí (thể ý định: ～よう/～おう) với trợ từ 'と' và thể phủ định 'しない'. Mẫu ngữ pháp này dùng để miêu tả hành vi của người thứ ba (không dùng cho chính bản thân người nói), thể hiện rằng đối phương hoàn toàn ngoan cố, không có chút biểu hiện hay mong muốn thực hiện hành động đó, thường hàm ý chê trách, bức xúc hoặc bất lực của người nói.",
+      "formation": "Động từ thể ý chí + としない",
+      "examples": [
+        {
+          "translation": "Cậu ấy chẳng chịu học hành gì cả."
+        },
+        {
+          "translation": "Cô ấy không chịu nhận lỗi hay nói lời xin lỗi."
+        },
+        {
+          "translation": "Con trai tôi chẳng chịu dọn dẹp phòng của mình."
+        },
+        {
+          "translation": "Con chó chẳng chịu đi dạo gì cả."
+        }
+      ]
+    },
+    "ja_ようと思う_110": {
+      "title": "～ようと思う (〜you to omou)",
+      "shortExplanation": "Diễn đạt ý định, kế hoạch hay quyết định làm một việc gì đó của người nói; 'định làm...', 'tính làm...'.",
+      "longExplanation": "Cấu trúc '～ようと思う' kết hợp động từ thể ý chí (thể ý định) với 'と思う' để diễn tả ý định vừa nảy sinh tại thời điểm nói hoặc quyết định của bản thân người nói ('tôi định...'). Khi muốn diễn đạt ý định đã được ấp ủ hoặc lên kế hoạch từ trước đó, người ta thường dùng hình thức tiếp diễn '～ようと思っている'.",
+      "formation": "Động từ thể ý chí + と思う / と思っている",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi định sẽ đi ngủ sớm."
+        },
+        {
+          "translation": "Tôi đang tính ngày mai sẽ đến viện bảo tàng mỹ thuật."
+        },
+        {
+          "translation": "Tôi định mua một chiếc máy ảnh mới."
+        },
+        {
+          "translation": "Tôi dự định tuần tới sẽ đi xem phim cùng bạn bè."
+        }
+      ]
+    },
+    "ja_ように_111": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "Dùng để biểu thị mục đích ('để mà...', 'sao cho...') hoặc dùng để so sánh ví von, biểu thị dáng vẻ ('như...', 'như thể là...').",
+      "longExplanation": "Mẫu ngữ pháp '～ように' có hai cách dùng chính: (1) Biểu thị mục đích hoặc kết quả mong muốn hướng tới của hành động vế sau ('để...', 'sao cho...'), thường đi với động từ thể từ điển, thể khả năng hoặc thể phủ định; (2) Biểu thị sự so sánh, ví von dáng vẻ tương đồng của sự vật, hiện tượng ('giống như...', 'tựa như...').",
+      "formation": "Động từ thể từ điển / thể ない + ように | Tính từ đuôi い + ように | Tính từ đuôi な + なように | Danh từ + のように",
+      "examples": [
+        {
+          "translation": "Để có thể về nhà sớm, tôi đã vội vàng hoàn thành xong công việc."
+        },
+        {
+          "translation": "Cô ấy trông tựa như một bông hoa xinh đẹp."
+        },
+        {
+          "translation": "Chúng ta hãy dọn dẹp để căn phòng này trở nên sạch sẽ nhé."
+        },
+        {
+          "translation": "Anh Yamada tỏ ra như thể mình rất khỏe mạnh, nhưng thực ra có vẻ đang rất mệt mỏi."
+        }
+      ]
+    },
+    "ja_ように_112": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "Biểu thị mục đích hoặc trạng thái mong muốn hướng tới ('để...', 'nhằm mục đích...') và so sánh ví von ('giống như...', 'như...').",
+      "longExplanation": "Cấu trúc '～ように' dùng để kết nối một trạng thái mục tiêu ở mệnh đề trước với hành động nỗ lực thực hiện ở mệnh đề sau ('làm việc B để đạt được trạng thái A'). Vế trước thường đi với các động từ tự nhiên, động từ khả năng hoặc động từ biểu thị sự biến đổi. Bên cạnh đó, khi đi với danh từ ('Danh từ + のように'), cấu trúc biểu đạt sự ví von tương đồng.",
+      "formation": "Động từ thể từ điển / thể khả năng / thể ない + ように | Danh từ + のように",
+      "examples": [
+        {
+          "translation": "Tôi thu dọn nhà cửa để bọn trẻ có thể sinh hoạt một cách an toàn."
+        },
+        {
+          "translation": "Tựa như một bông hoa tươi đẹp, nụ cười của cô ấy thật rạng rỡ."
+        },
+        {
+          "translation": "Tôi luyện tập mỗi ngày để có thể nói tiếng Anh một cách tự nhiên."
+        },
+        {
+          "translation": "Chúng ta hãy lập kế hoạch để có thể đạt được thành công nhé."
+        }
+      ]
+    },
+    "ja_ように_113": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "Biểu thị phương thức, cách thức thực hiện hành động ('sao cho...'), mục đích hướng đến ('để...') hoặc so sánh hình tượng ('như...').",
+      "longExplanation": "Cấu trúc '～ように' dùng để chỉ cách thức hoặc mức độ mong muốn mà hành động cần đạt tới ('hãy giải thích sao cho dễ hiểu'), chỉ mục đích của sự cố gắng rèn luyện ('học để giỏi tiếng Nhật'), hoặc so sánh cách thức hành động với một đối tượng cụ thể ('hát như chim hót').",
+      "formation": "Động từ thể từ điển / thể ない + ように | Tính từ đuôi い + ように | Danh từ + のように",
+      "examples": [
+        {
+          "translation": "Xin hãy giải thích sao cho thật dễ hiểu."
+        },
+        {
+          "translation": "Anh ấy cất tiếng hát hay như một chú chim."
+        },
+        {
+          "translation": "Tôi luôn nỗ lực để hòa đồng, thân thiện với bạn bè."
+        },
+        {
+          "translation": "Tôi đang chăm chỉ học tập để tiếng Nhật trở nên giỏi giang hơn."
+        }
+      ]
+    },
+    "ja_ようにしましょう_114": {
+      "title": "～ようにしましょう (〜you ni shimashou)",
+      "shortExplanation": "Dùng để kêu gọi, rủ rê hoặc đề xuất mọi người cùng nỗ lực thực hiện hoặc duy trì một thói quen tốt; 'chúng ta hãy cố gắng...', 'hãy chú ý luôn...'.",
+      "longExplanation": "Cấu trúc '～ようにしましょう' kết hợp mẫu ngữ pháp '～ようにする' (cố gắng làm gì / nỗ lực tạo thói quen) với đuôi rủ rê lịch sự '～ましょう'. Mẫu câu này dùng để khuyến khích, động viên hoặc kêu gọi người nghe cùng nhau nỗ lực hình thành một thói quen tích cực hoặc chú ý không để xảy ra hành động tiêu cực nào đó trong cuộc sống.",
+      "formation": "Động từ thể từ điển + ようにしましょう | Động từ thể ない + ようにしましょう",
+      "examples": [
+        {
+          "translation": "Chúng ta hãy cố gắng tập thể dục mỗi ngày nhé."
+        },
+        {
+          "translation": "Hãy chú ý đi ngủ sớm nhé."
+        },
+        {
+          "translation": "Chúng ta hãy luôn đối xử tử tế và tốt bụng nhé."
+        },
+        {
+          "translation": "Chúng ta hãy cố gắng đừng lãng phí thời gian nhé."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_まるでよう_100": {
+      "title": "まるで～よう (maru de ~ you)",
+      "shortExplanation": "用于打比方或强调两者极度相似；相当于汉语的“简直就像……一样”、“宛如……”。",
+      "longExplanation": "副词“まるで”（简直、完全）与表示比喻的“～よう”搭配使用，用于生动地描绘某事物与另一事物极其相似，强调夸张或生动的比喻色彩。修饰名词时用“まるで～ような＋名词”，修饰动词或形容词时用“まるで～ように”，结句时用“まるで～ようだ”。",
+      "formation": "まるで + 名词 + のよう(だ/な/に) | まるで + 动词/形容词普通形 + よう(だ/な/に)",
+      "examples": [
+        {
+          "translation": "她美得宛如天使一般。"
+        },
+        {
+          "translation": "他工作起来简直就像个机器人一样。"
+        },
+        {
+          "translation": "那栋房子简直就像一座城堡。"
+        },
+        {
+          "translation": "这里宛如世外乐园一般。"
+        }
+      ]
+    },
+    "ja_てみる_101": {
+      "title": "～てみる (〜te miru)",
+      "shortExplanation": "表示为了了解情况或看结果而尝试做某事；相当于汉语的“试着做……”、“做做看”。",
+      "longExplanation": "句型“～てみる”由动词て形后续补助动词“みる”构成。此时的“みる”失去原有的视觉感知含义，转为表示尝试性的动作，用于通过实际去做某件事来了解体验、效果或结果。",
+      "formation": "动词て形 + みる",
+      "examples": [
+        {
+          "translation": "他试着跑了跑，但还是觉得膝盖疼。"
+        },
+        {
+          "translation": "她试着做了做菜，但做砸了。"
+        },
+        {
+          "translation": "在第一次约会时，他想给她一个惊喜，于是试着唱了一首歌。"
+        },
+        {
+          "translation": "这个蛋糕看起来很好吃，我尝一口试试。"
+        }
+      ]
+    },
+    "ja_みたいだ_102": {
+      "title": "～みたいだ (〜mitai da)",
+      "shortExplanation": "用于口语中表示基于感官直觉的推测或打比方；相当于汉语的“好像……”、“似乎……”、“像……一样”。",
+      "longExplanation": "句型“～みたいだ”是口语中极其高频的助动词表达，相当于“～ようだ”。主要用于两种语境：一是根据直观感受、传闻或征兆对事物做出不确定的推测（“似乎……”）；二是用于比喻某种相似的性质或状态（“像……一样”）。修饰名词时用“～みたいな＋名词”，修饰用言时用“～みたいに”。",
+      "formation": "动词普通形 + みたいだ | い形容词 + みたいだ | な形容词词干 + みたいだ | 名词 + みたいだ",
+      "examples": [
+        {
+          "translation": "他好像在生气。"
+        },
+        {
+          "translation": "那栋大楼看起来似乎挺旧的。"
+        },
+        {
+          "translation": "她看起来好像很累。"
+        },
+        {
+          "translation": "这道菜好像很辣。"
+        }
+      ]
+    },
+    "ja_めったにない_103": {
+      "title": "～めったに～ない (〜metta ni 〜nai)",
+      "shortExplanation": "表示动作、事件发生的频率极低；相当于汉语的“很少……”、“难得……”、“几乎不……”。",
+      "longExplanation": "副词“めったに”（极少、罕有）必须与句尾的否定形式“～ない”呼应使用。用于强调某事发生的概率或频率极低，在日常生活或常规状态下几乎不会出现。",
+      "formation": "めったに + 动词ない形 | めったに + い形容词词尾い变くない | めったに + な形容词 + ではない/じゃない",
+      "examples": [
+        {
+          "translation": "他极少在外面餐馆吃饭。"
+        },
+        {
+          "translation": "我平时很少吃寿司。"
+        },
+        {
+          "translation": "这个地区难得下一次雪。"
+        },
+        {
+          "translation": "她几乎从不发脾气。"
+        }
+      ]
+    },
+    "ja_めったにない_104": {
+      "title": "～めったにない (〜metta ni nai)",
+      "shortExplanation": "表示某种事态、现象或机会极为罕见；相当于汉语的“极少有……”、“极其罕见”、“难得一见”。",
+      "longExplanation": "句型“～めったにない”可以直接作为谓语，或以“めったにない＋名词”的形式作定语（如“难得的机会”）。常与形式名词“こと/の”搭配，以“动词辞书形＋ことは/のはめったにない”的形式，强调某种事态在现实中极少发生、颇为难得。",
+      "formation": "动词辞书形 + (こと/の)はめったにない | 名词 + はめったにない | めったにない + 名词",
+      "examples": [
+        {
+          "translation": "在这个城镇，下雪是极其少见的事。"
+        },
+        {
+          "translation": "他极少在外面吃饭。"
+        },
+        {
+          "translation": "朋友来家里玩是很难得的。"
+        },
+        {
+          "translation": "她几乎从不发脾气。"
+        }
+      ]
+    },
+    "ja_もしかするとかもしれない_105": {
+      "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
+      "shortExplanation": "表示说话人对某种低概率可能性的不确定推测；相当于汉语的“也许……也说不定”、“搞不好会……”。",
+      "longExplanation": "副词“もしかすると”（或许、说不定）置于句首，与句尾表示低概率推测的助动词“かもしれない”（也许）前后呼应。用于表达说话人虽然缺乏确凿根据，但认为存在某种可能性，语气委婉且带有不确定性。",
+      "formation": "もしかすると + 动词/形容词普通形 + かもしれない | もしかすると + な形容词词干/名词 + かもしれない",
+      "examples": [
+        {
+          "translation": "也许他可能会迟到也说不定。"
+        },
+        {
+          "translation": "说不定她感到累了。"
+        },
+        {
+          "translation": "搞不好会下雨。"
+        },
+        {
+          "translation": "也许他们并不喜欢那部电影。"
+        }
+      ]
+    },
+    "ja_もしたなら_106": {
+      "title": "もし～たなら (moshi ~ tanara)",
+      "shortExplanation": "强调假设条件成立或动作已完成的情况；相当于汉语的“要是……的话”、“假使……”。",
+      "longExplanation": "副词“もし”（假使、如果）与用言过去式（た形）加“なら”相搭配，用于强调在假设某一动作已经发生或既成事实成立的前提下，后项提出建议、劝告、要求或推测。语气比普通的假定更为明确和突出。",
+      "formation": "もし + 动词た形 + なら | もし + い形容词词尾い变かったなら | もし + な形容词/名词 + だったなら",
+      "examples": [
+        {
+          "translation": "要是下雨了的话，就带上雨伞去吧。"
+        },
+        {
+          "translation": "如果蛋糕不好吃的话，大概谁也不会去吃吧。"
+        },
+        {
+          "translation": "如果他确实生病了，请立刻送他去医院。"
+        },
+        {
+          "translation": "要是她是学生的话，这家餐厅应该会有优惠吧。"
+        }
+      ]
+    },
+    "ja_もしても_107": {
+      "title": "もし～ても (moshi ~ temo)",
+      "shortExplanation": "表示让步假设，即使前项假设的情况成立，后项结果或决定也不会发生改变；相当于汉语的“即使……也……”、“哪怕……也……”。",
+      "longExplanation": "副词“もし”（假使）与表示逆接让步条件的“～ても / ～でも”呼应使用。强调即使发生了前项假设的极端情况或不利条件，后项的事态、意志或既定结论依然不受其影响，保持不变。",
+      "formation": "もし + 动词て形 + も | もし + い形容词词尾い变くても | もし + な形容词/名词 + でも",
+      "examples": [
+        {
+          "translation": "即使下雨，我们也依然要去野餐。"
+        },
+        {
+          "translation": "就算他道歉了，我大概还是会生气。"
+        },
+        {
+          "translation": "即使考试及格了，我依然会继续学习。"
+        },
+        {
+          "translation": "就算她来迟了，我也会等她。"
+        }
+      ]
+    },
+    "ja_もしもなら_108": {
+      "title": "もしも～なら (moshimo ~ nara)",
+      "shortExplanation": "更加强调假设、揣测或万一发生的情况；相当于汉语的“如果……的话”、“万一……的话”、“假使……”。",
+      "longExplanation": "“もしも”比“もし”具有更强烈的假设和不确定色彩，常用于假设发生概率较低的事态、万一出现的不测情况，或是纯粹的虚拟设想。后项多接续说话人的应对措施、建议或判断。",
+      "formation": "もしも + 动词/形容词普通形 + なら | もしも + な形容词词干 + なら | もしも + 名词 + なら",
+      "examples": [
+        {
+          "translation": "万一明天下了雨，我就不出门了。"
+        },
+        {
+          "translation": "如果他没有来的话，我们就自己办派对。"
+        },
+        {
+          "translation": "要是她觉得累了的话，就请让她好好休息吧。"
+        },
+        {
+          "translation": "假使那是事实的话，我们就必须承认。"
+        }
+      ]
+    },
+    "ja_ようとしない_109": {
+      "title": "～ようとしない (〜you to shinai)",
+      "shortExplanation": "表示第三人称毫无做某事的意愿或态度顽固；相当于汉语的“不想……”、“不肯……”、“毫无做……的打算”。",
+      "longExplanation": "句型“～ようとしない”由动词意志形后续助词“と”以及“しない”构成。该句型专门用于描写第三人称的行为态度，表示对方完全不打算付诸行动、缺乏尝试的意图，说话人往往带有不满、责备或无可奈何的语气。",
+      "formation": "动词意志形 + としない",
+      "examples": [
+        {
+          "translation": "他根本不肯用功学习。"
+        },
+        {
+          "translation": "她丝毫没有道歉的意思。"
+        },
+        {
+          "translation": "儿子根本不想收拾自己的房间。"
+        },
+        {
+          "translation": "小狗怎么也不肯去散步。"
+        }
+      ]
+    },
+    "ja_ようと思う_110": {
+      "title": "～ようと思う (〜you to omou)",
+      "shortExplanation": "表达说话人打算做某事的意志或计划；相当于汉语的“打算……”、“想要……”。",
+      "longExplanation": "句型“～ようと思う”由动词意志形后续“と思う”构成，用于表达说话人当前的打算或刚刚萌生的个人意志。如果表示在此之前就已经持续抱有该计划或打算，通常使用持续体形式“～ようと思っている”。",
+      "formation": "动词意志形 + と思う / と思っている",
+      "examples": [
+        {
+          "translation": "今天我打算早点睡。"
+        },
+        {
+          "translation": "我正计划着明天去美术馆。"
+        },
+        {
+          "translation": "我打算买一部新相机。"
+        },
+        {
+          "translation": "我正打算下周和朋友一起去看电影。"
+        }
+      ]
+    },
+    "ja_ように_111": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "表示动作的目的或期望达到的状态（“为了……”、“以便……”），亦可表示比喻或样态（“像……一样”）。",
+      "longExplanation": "句型“～ように”主要包含两种核心用法：一是表示后项动作的目的与企图，前项多接无意志动词、可能形或否定形，意为“为了达到某种状态/以便……”；二是表示比喻、样态，以前置事物生动描摹后置事物，意为“如同一朵花一样”或“表现得好像很有精神的样子”。",
+      "formation": "动词辞书形/ない形 + ように | い形容词 + ように | な形容词 + なように | 名词 + のように",
+      "examples": [
+        {
+          "translation": "为了能早点回家，我赶紧把工作做完了。"
+        },
+        {
+          "translation": "她看起来如同一朵美丽的花儿一样。"
+        },
+        {
+          "translation": "为了让这个房间变得干净，我们来打扫一下吧。"
+        },
+        {
+          "translation": "山田先生虽然举止显得很有精神，但实际上似乎挺累的。"
+        }
+      ]
+    },
+    "ja_ように_112": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "表示期望实现的目标或状态（“为了能够……”、“以便……”），以及用来作生动的比拟（“如同……一样”）。",
+      "longExplanation": "句型“～ように”用于连接前项的目标状态与后项的努力行为，表示为了实现某种期望的状态而采取后项的对策或行动。前项通常接续可能动词、表示状态变化的动词或无意志性动词（如“過ごせる”、“話せる”等）。此外接续名词时（“名词＋のように”）表示生动的比拟与对照。",
+      "formation": "动词辞书形/可能形/ない形 + ように | 名词 + のように",
+      "examples": [
+        {
+          "translation": "为了让孩子们能够安全地生活，我整理了屋子。"
+        },
+        {
+          "translation": "宛如美丽的花朵一样，她的笑容十分迷人。"
+        },
+        {
+          "translation": "为了能够自然流畅地说英语，我每天都在练习。"
+        },
+        {
+          "translation": "为了能够取得成功，我们来制定计划吧。"
+        }
+      ]
+    },
+    "ja_ように_113": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "表示动作的方式、企图达到的状态（“以便……”、“做到……”），以及形象的比喻（“像……一样”）。",
+      "longExplanation": "句型“～ように”用于规定或引导动作实施的具体方式（如“请解释得让人容易理解”）、后项努力所要达成的目标（如“努力做到和朋友友好相处”、“为了日语进步而学习”），亦可用于形容动作的方式与特征如同某一事物（如“像小鸟一样歌唱”）。",
+      "formation": "动词辞书形/ない形 + ように | い形容词 + ように | 名词 + のように",
+      "examples": [
+        {
+          "translation": "请讲解得浅显易懂一些。"
+        },
+        {
+          "translation": "他唱起歌来像小鸟一样动听。"
+        },
+        {
+          "translation": "我正努力和朋友们处好关系。"
+        },
+        {
+          "translation": "为了提高日语水平，我正在努力学习。"
+        }
+      ]
+    },
+    "ja_ようにしましょう_114": {
+      "title": "～ようにしましょう (〜you ni shimashou)",
+      "shortExplanation": "用于礼貌地号召或提议共同努力养成某种习惯、做到某事；相当于汉语的“让我们努力做到……吧”、“注意要……吧”。",
+      "longExplanation": "句型“～ようにしましょう”是将表示努力促成某种习惯或状态的“～ようにする”转化为礼貌劝诱形“～ましょう”。用于向对方委婉提出建议或大家共同倡议，努力在日常生活中坚持某种良好行为习惯，或是注意避免不良行为。",
+      "formation": "动词辞书形 + ようにしましょう | 动词ない形 + ようにしましょう",
+      "examples": [
+        {
+          "translation": "让我们坚持每天运动吧。"
+        },
+        {
+          "translation": "大家尽量早点睡觉吧。"
+        },
+        {
+          "translation": "让我们待人热情友善吧。"
+        },
+        {
+          "translation": "让我们注意不要浪费时间吧。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_まるでよう_100": {
+      "title": "まるで～よう (maru de ~ you)",
+      "shortExplanation": "두 사물이나 상태의 유사성을 강조하는 비유 표현으로, '마치 ~와 같다', '마치 ~인 것 같다'라는 뜻입니다.",
+      "longExplanation": "부사 'まるで'(마치, 전혀)와 비유를 나타내는 '～よう'가 호응하여, 실제로는 그렇지 않지만 겉보기에 두 대상이 매우 흡사함을 실감 나게 비유할 때 사용합니다. 명사를 수식할 때는 'まるで～ような + 명사', 용언을 수식할 때는 'まるで～ように', 문장 끝에서는 'まるで～ようだ' 형태로 쓰입니다.",
+      "formation": "まるで + 명사 + のよう(だ/な/に) | まるで + 동사/형용사 보통형 + よう(だ/な/に)",
+      "examples": [
+        {
+          "translation": "그녀는 마치 천사처럼 아름답다."
+        },
+        {
+          "translation": "그는 마치 로봇처럼 일하고 있다."
+        },
+        {
+          "translation": "저 집은 마치 성 같다."
+        },
+        {
+          "translation": "이곳은 마치 낙원과 같은 장소입니다."
+        }
+      ]
+    },
+    "ja_てみる_101": {
+      "title": "～てみる (〜te miru)",
+      "shortExplanation": "어떤 일의 결과나 상태를 알아보기 위해 시험 삼아 시도함을 나타내며, '~해 보다'라는 뜻입니다.",
+      "longExplanation": "동사의 て형에 보조동사 'みる'가 결합된 형태로, 실제로 눈으로 보는 것이 아니라 어떠한 행동을 시험 삼아 시도해 보고 그 결과나 감상을 확인하려는 의도를 나타냅니다.",
+      "formation": "동사 て형 + みる",
+      "examples": [
+        {
+          "translation": "그는 달려 보았지만, 여전히 무릎이 아프다고 느꼈다."
+        },
+        {
+          "translation": "그녀는 요리를 만들어 보았지만, 실패하고 말았다."
+        },
+        {
+          "translation": "첫 데이트에서 그는 그녀에게 깜짝 선물을 주려고 노래를 불러 보았다."
+        },
+        {
+          "translation": "이 케이크는 맛있어 보여서 맛보기로 먹어 본다."
+        }
+      ]
+    },
+    "ja_みたいだ_102": {
+      "title": "～みたいだ (〜mitai da)",
+      "shortExplanation": "구어체에서 오감이나 직관에 의한 불확실한 추측이나 비유를 나타내며, '~인 것 같다', '~같다'라는 뜻입니다.",
+      "longExplanation": "일상 회화에서 '～ようだ' 대신 매우 흔하게 쓰이는 표현입니다. 시각이나 청각 등 감각 기관을 통해 포착한 상태나 징후를 바탕으로 추측할 때('~인 모양이다'), 혹은 어떠한 대상과 닮았음을 비유할 때('~와 같다') 사용합니다. 명사를 수식할 때는 '～みたいな + 명사', 용언을 수식할 때는 '～みたいに'로 활용됩니다.",
+      "formation": "동사 보통형 + みたいだ | い형용사 + みたいだ | な형용사 어간 + みたいだ | 명사 + みたいだ",
+      "examples": [
+        {
+          "translation": "그는 화가 난 것 같다."
+        },
+        {
+          "translation": "그 빌딩은 오래된 것 같다."
+        },
+        {
+          "translation": "그녀는 피곤해 보인다."
+        },
+        {
+          "translation": "이 요리는 매운 것 같다."
+        }
+      ]
+    },
+    "ja_めったにない_103": {
+      "title": "～めったに～ない (〜metta ni 〜nai)",
+      "shortExplanation": "어떤 동작이나 현상이 일어나는 빈도가 극히 적음을 나타내며, '거의 ~하지 않다', '좀처럼 ~않다'라는 뜻입니다.",
+      "longExplanation": "부사 'めったに'(좀처럼, 거의)는 반드시 문말의 부정형 표현('～ない')과 호응하여 사용됩니다. 일상적인 상황이나 평소에 해당 동작이나 사건이 발생하는 빈도가 매우 드물고 예외적임을 강조합니다.",
+      "formation": "めったに + 동사 ない형 | めったに + い형용사 어미 い 탈락 후 くない | めったに + な형용사 + ではない/じゃない",
+      "examples": [
+        {
+          "translation": "그는 좀처럼 외식하지 않는다."
+        },
+        {
+          "translation": "저는 거의 초밥을 먹지 않습니다."
+        },
+        {
+          "translation": "이 지역은 좀처럼 눈이 내리지 않는다."
+        },
+        {
+          "translation": "그녀는 웬만해서는 화를 내지 않는다."
+        }
+      ]
+    },
+    "ja_めったにない_104": {
+      "title": "～めったにない (〜metta ni nai)",
+      "shortExplanation": "어떠한 현상이나 사건, 기회가 매우 드물고 희귀함을 나타내며, '좀처럼 없다', '거의 드물다'라는 뜻입니다.",
+      "longExplanation": "서술어 형태로 '～めったにない'를 쓰거나, 명사를 수식하여 'めったにない + 명사'(좀처럼 없는 기회)의 형태로 사용됩니다. 특히 동사의 명사화 형태인 '동사 사전형 + ことは/のはめったにない' 구성으로 쓰여, 어떠한 일이 일어나는 경우가 극히 드물다는 사실을 강조합니다.",
+      "formation": "동사 기본형 + (こと/の)はめったにない | 명사 + はめったにない | めったにない + 명사",
+      "examples": [
+        {
+          "translation": "이 마을에서는 눈이 내리는 일이 거의 없다."
+        },
+        {
+          "translation": "그는 좀처럼 외식하지 않는다."
+        },
+        {
+          "translation": "친구가 놀러 오는 일은 좀처럼 드물다."
+        },
+        {
+          "translation": "그녀는 웬만해서 화내는 법이 없다."
+        }
+      ]
+    },
+    "ja_もしかするとかもしれない_105": {
+      "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
+      "shortExplanation": "확실하지는 않지만 어떤 일이나 상태가 일어날 가능성이 있음을 조심스럽게 추측할 때 쓰이며, '어쩌면 ~일지도 모른다'라는 뜻입니다.",
+      "longExplanation": "문두에 불확실성을 나타내는 부사 'もしかすると'(어쩌면, 혹시)를 쓰고 문말에 추측 조동사 'かもしれない'(~일지도 모른다)를 결합하여 호응시키는 문형입니다. 확증은 없으나 어떤 사태가 발생할 가능성이 있음을 완곡하게 나타냅니다.",
+      "formation": "もしかすると + 동사/형용사 보통형 + かもしれない | もしかすると + な형용사 어간/명사 + かもしれない",
+      "examples": [
+        {
+          "translation": "어쩌면 그는 지각할지도 모른다."
+        },
+        {
+          "translation": "어쩌면 그녀는 피곤한 상태일지도 모른다."
+        },
+        {
+          "translation": "어쩌면 비가 올지도 모른다."
+        },
+        {
+          "translation": "어쩌면 그들은 그 영화를 좋아하지 않을지도 모른다."
+        }
+      ]
+    },
+    "ja_もしたなら_106": {
+      "title": "もし～たなら (moshi ~ tanara)",
+      "shortExplanation": "가정 조건을 강조하여 어떤 사태가 발생하거나 완료되었음을 전제로 할 때 쓰이며, '만약 ~했다면', '만약 ~라면'이라는 뜻입니다.",
+      "longExplanation": "가정을 나타내는 부사 'もし'와 과거형(た형)에 접속하는 가정 조동사 'なら'가 결합된 형태입니다. 어떤 동작이나 상황이 이미 일어났음을 가정의 전제로 명확히 제시하며, 후건에는 조언, 제안, 판단, 요청 등이 주로 따릅니다.",
+      "formation": "もし + 동사 과거형(た형) + なら | もし + い형용사 어미 い 탈락 후 かったなら | もし + な형용사/명사 + だったなら",
+      "examples": [
+        {
+          "translation": "만약 비가 내렸다면 우산을 가지고 갑시다."
+        },
+        {
+          "translation": "만약 케이크가 맛이 없었다면 아무도 먹지 않을 것입니다."
+        },
+        {
+          "translation": "만약 그가 아픈 상태였다면 즉시 병원에 가게 해 주십시오."
+        },
+        {
+          "translation": "만약 그녀가 학생이었다면 이 식당에서 할인이 적용될 것입니다."
+        }
+      ]
+    },
+    "ja_もしても_107": {
+      "title": "もし～ても (moshi ~ temo)",
+      "shortExplanation": "가정적 양보를 나타내어 앞의 상황이 실제로 일어난다 하더라도 뒤의 결과나 결심에 변함이 없음을 뜻하며, '만약 ~하더라도', '비록 ~할지라도'라는 뜻입니다.",
+      "longExplanation": "가정을 나타내는 부사 'もし'와 역접 가정을 나타내는 접속조사 '～ても / ～でも'가 호응하는 문형입니다. 앞 절에서 가정한 조건이 현실화되더라도 그와 상관없이 뒤 절의 사실, 태도, 의지 등이 흔들림 없이 유지됨을 강조합니다.",
+      "formation": "もし + 동사 て형 + も | もし + い형용사 어미 い 탈락 후 くても | もし + な형용사/명사 + でも",
+      "examples": [
+        {
+          "translation": "만약 비가 내리더라도 소풍을 가겠습니다."
+        },
+        {
+          "translation": "만약 그가 사과하더라도 저는 여전히 화가 나 있을 것입니다."
+        },
+        {
+          "translation": "만약 시험에 합격하더라도 여전히 공부를 계속할 것입니다."
+        },
+        {
+          "translation": "만약 그녀가 늦게 오더라도 기다리겠습니다."
+        }
+      ]
+    },
+    "ja_もしもなら_108": {
+      "title": "もしも～なら (moshimo ~ nara)",
+      "shortExplanation": "불확실하거나 만일의 사태를 가정한 표현으로, '만약 ~라면', '만일 ~인 경우라면'이라는 뜻입니다.",
+      "longExplanation": "단순 가정인 'もし'보다 불확실성이나 희박한 가능성, 혹은 만약의 상황을 더욱 실감 나고 강하게 가정할 때 'もしも'를 사용합니다. 비현실적이거나 만에 하나의 경우를 상정하여 그에 따른 대응, 판단, 조치 등을 진술할 때 쓰입니다.",
+      "formation": "もしも + 동사/형용사 보통형 + なら | もしも + な형용사 어간 + なら | もしも + 명사 + なら",
+      "examples": [
+        {
+          "translation": "만일 내일 비가 온다면 외출하지 않겠습니다."
+        },
+        {
+          "translation": "만약 그가 오지 않는다면 우리들끼리 파티를 하겠습니다."
+        },
+        {
+          "translation": "만약 그녀가 피곤해한다면 쉬게 해 주십시오."
+        },
+        {
+          "translation": "만약 그것이 사실이라면 인정해야만 합니다."
+        }
+      ]
+    },
+    "ja_ようとしない_109": {
+      "title": "～ようとしない (〜you to shinai)",
+      "shortExplanation": "제3자가 어떤 행동을 하려는 의지나 태도를 전혀 보이지 않음을 나타내며, '~하려고 하지 않는다', '~하려 들지 않는다'라는 뜻입니다.",
+      "longExplanation": "동사의 의지형에 조사 'と'와 부정형 'しない'가 결합된 문형입니다. 화자 자신이 아닌 제3자를 주어로 하여, 그 사람이 마땅히 해야 할 일에 대해 전혀 하려는 낌새나 의지를 보이지 않고 완고하게 거부함을 나타내며, 대개 화자의 안타까움, 불만, 비난의 뉘앙스가 포함됩니다.",
+      "formation": "동사 의지형 + としない",
+      "examples": [
+        {
+          "translation": "그는 도무지 공부하려고 하지 않는다."
+        },
+        {
+          "translation": "그녀는 사과하려 들지 않는다."
+        },
+        {
+          "translation": "아들은 방을 치우려고 하지 않는다."
+        },
+        {
+          "translation": "개가 산책을 가려고 하지 않는다."
+        }
+      ]
+    },
+    "ja_ようと思う_110": {
+      "title": "～ようと思う (〜you to omou)",
+      "shortExplanation": "화자의 의지나 앞으로의 행동 계획을 나타내며, '~하려고 생각하다', '~해야겠다'라는 뜻입니다.",
+      "longExplanation": "동사의 의지형에 'と思う'가 결합하여 화자가 어떤 행동을 하겠다는 결심이나 의도를 나타냅니다. 말하는 시점에서 막 결심한 일에는 '～ようと思う'를 쓰며, 이전부터 계속 품고 있던 생각이나 계획을 나타낼 때는 진행형인 '～ようと思っている'를 주로 사용합니다.",
+      "formation": "동사 의지형 + と思う / と思っている",
+      "examples": [
+        {
+          "translation": "오늘은 일찍 자려고 합니다."
+        },
+        {
+          "translation": "내일 미술관에 가려고 생각하고 있습니다."
+        },
+        {
+          "translation": "새 카메라를 사려고 합니다."
+        },
+        {
+          "translation": "다음 주에 친구와 영화를 보려고 생각하고 있습니다."
+        }
+      ]
+    },
+    "ja_ように_111": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "동작의 목적이나 목표를 나타내거나('~하도록', '~하기 위해'), 모습이나 상태의 비유('~처럼', '~같이')를 나타냅니다.",
+      "longExplanation": "문형 '～ように'는 크게 두 가지 용법으로 쓰입니다. 첫째는 뒤에 오는 행위의 목적이나 도달하려는 목표를 제시할 때 쓰이며('~할 수 있도록', 무의지 동사 및 가능형, 부정형과 주로 결합), 둘째는 어떤 대상을 다른 것에 빗대어 비유하거나 외형적 양태를 나타낼 때 쓰입니다('꽃처럼', '~인 것처럼').",
+      "formation": "동사 사전형/ない형 + ように | い형용사 + ように | な형용사 + なように | 명사 + のように",
+      "examples": [
+        {
+          "translation": "집에 일찍 돌아갈 수 있도록 일을 서둘러 끝냈습니다."
+        },
+        {
+          "translation": "그녀는 아름다운 꽃처럼 보였습니다."
+        },
+        {
+          "translation": "이 방이 깨끗해지도록 청소를 합시다."
+        },
+        {
+          "translation": "야마다 씨는 건강한 것처럼 행동하고 있었지만, 실제로는 피곤한 것 같습니다."
+        }
+      ]
+    },
+    "ja_ように_112": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "바람직한 상태나 결과를 실현하기 위한 목적('~할 수 있도록', '~하도록') 및 대상을 빗대는 비유('~처럼', '~와 같이')를 나타냅니다.",
+      "longExplanation": "앞 절에 실현하고자 하는 목표나 상태를 두고, 뒤 절에 이를 달성하기 위한 구체적인 노력이나 행동을 기술하는 목적 표현입니다. 앞 절에는 주로 가능형, 상태성 동사, 변화를 나타내는 동사 등이 옵니다. 또한 '명사 + のように' 형태로 결합하여 대상을 비유하는 용법으로도 자연스럽게 쓰입니다.",
+      "formation": "동사 사전형/가능형/ない형 + ように | 명사 + のように",
+      "examples": [
+        {
+          "translation": "아이들이 안전하게 지낼 수 있도록 집 안을 정리합니다."
+        },
+        {
+          "translation": "아름다운 꽃처럼 그녀는 미소가 근사합니다."
+        },
+        {
+          "translation": "자연스럽게 영어를 말할 수 있도록 매일 연습하고 있습니다."
+        },
+        {
+          "translation": "성공할 수 있도록 계획을 세웁시다."
+        }
+      ]
+    },
+    "ja_ように_113": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "행동의 방식이나 요구되는 상태('~하도록', '~하게끔'), 목표 지향점, 혹은 모양의 비유('~처럼')를 나타냅니다.",
+      "longExplanation": "어떤 행동이 이루어져야 하는 구체적인 방식이나 도달해야 할 상태를 나타내거나('알아듣기 쉽게 설명해 달라'), 화자가 노력을 기울이는 지향점을 제시할 때('사이좋게 지내도록 힘쓴다') 사용됩니다. 또한 특정 대상의 특징에 빗대어 동작을 묘사하는 비유('새처럼 노래하다')로도 기능합니다.",
+      "formation": "동사 사전형/ない형 + ように | い형용사 + ように | 명사 + のように",
+      "examples": [
+        {
+          "translation": "알아듣기 쉽도록 설명해 주세요."
+        },
+        {
+          "translation": "그는 새처럼 노래합니다."
+        },
+        {
+          "translation": "친구들과 사이좋게 지내도록 노력하고 있습니다."
+        },
+        {
+          "translation": "일본어를 잘하게 되도록 공부하고 있습니다."
+        }
+      ]
+    },
+    "ja_ようにしましょう_114": {
+      "title": "～ようにしましょう (〜you ni shimashou)",
+      "shortExplanation": "어떤 행동을 습관화하거나 지속해서 실천하도록 정중하게 권유할 때 쓰이며, '~하도록 합시다', '~하기로 해요'라는 뜻입니다.",
+      "longExplanation": "노력이나 습관 형성을 나타내는 '～ようにする'에 정중한 권유·청유형인 '～ましょう'가 결합된 형태입니다. 화자가 청자에게 좋은 습관을 들이거나 규칙을 지키도록 완곡하고 부드럽게 권유하고 촉구할 때 널리 쓰입니다.",
+      "formation": "동사 사전형 + ようにしましょう | 동사 ない형 + ようにしましょう",
+      "examples": [
+        {
+          "translation": "매일 운동하도록 합시다."
+        },
+        {
+          "translation": "일찍 자도록 합시다."
+        },
+        {
+          "translation": "친절하게 대하도록 합시다."
+        },
+        {
+          "translation": "시간을 낭비하지 않도록 합시다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_まるでよう_100": {
+      "title": "まるで～よう (maru de ~ you)",
+      "shortExplanation": "ある事物の様子を別のものに例えて強調する比喩の表現で、「まるで〜のようだ」「あたかも〜のようだ」という意味を表します。",
+      "longExplanation": "副詞「まるで」と比喩を表す「〜よう」が呼応し、実際は異なるものの、極めてよく似ている様子を強調して表現する文型です。名詞を修飾するときは「まるで〜ような＋名詞」、用言を修飾するときは「まるで〜ように」、文末では「まるで〜ようだ」の形をとります。",
+      "formation": "まるで ＋ 名詞 ＋ のよう(だ／な／に) | まるで ＋ 動詞・形容詞普通形 ＋ よう(だ／な／に)",
+      "examples": [
+        {
+          "translation": "彼女はまるで天使のように美しい。"
+        },
+        {
+          "translation": "彼はまるでロボットのように仕事をしている。"
+        },
+        {
+          "translation": "あの家はまるでお城のようだ。"
+        },
+        {
+          "translation": "ここはまるで楽園のような場所です。"
+        }
+      ]
+    },
+    "ja_てみる_101": {
+      "title": "～てみる (〜te miru)",
+      "shortExplanation": "どのような結果になるかを確かめるために、試しにある行動を行うことを表し、「〜してみる」という意味を表します。",
+      "longExplanation": "動詞のて形に補助動詞「みる」が接続し、未知の結果や状態、味などを確かめる目的で、実験的・試行的に動作を行うことを表します。実際に視覚で見るのではなく、「試みにその動作をする」という意味合いになります。",
+      "formation": "動詞て形 ＋ みる",
+      "examples": [
+        {
+          "translation": "彼は走ってみたが、まだ膝が痛いと感じた。"
+        },
+        {
+          "translation": "彼女は料理を作ってみたが、失敗してしまった。"
+        },
+        {
+          "translation": "初めてのデートで、彼は彼女にサプライズをしようと考え、歌ってみた。"
+        },
+        {
+          "translation": "このケーキは美味しそうだから、味見に食べてみる。"
+        }
+      ]
+    },
+    "ja_みたいだ_102": {
+      "title": "～みたいだ (〜mitai da)",
+      "shortExplanation": "五感を通じた直感的な推量や比喩を表すくだけた口語表現で、「〜のようだ」「〜に見える」という意味を表します。",
+      "longExplanation": "「～ようだ」の口語形として日常会話で非常によく使われる表現です。見たり聞いたりした感覚的な根拠をもとに不確実な推量を述べたり（「疲れているみたいだ」）、事物の類似性を例えたり（「子どものみたいだ」）する際に用います。名詞を修飾する場合は「〜みたいな＋名詞」、用言を修飾する場合は「〜みたいに」となります。",
+      "formation": "動詞普通形 ＋ みたいだ | い形容詞 ＋ みたいだ | な形容詞語幹 ＋ みたいだ | 名詞 ＋ みたいだ",
+      "examples": [
+        {
+          "translation": "彼は怒っているみたいだ。"
+        },
+        {
+          "translation": "そのビルは古いみたいだ。"
+        },
+        {
+          "translation": "彼女は疲れているみたいだ。"
+        },
+        {
+          "translation": "この料理は辛いみたいだ。"
+        }
+      ]
+    },
+    "ja_めったにない_103": {
+      "title": "～めったに～ない (〜metta ni 〜nai)",
+      "shortExplanation": "ある動作や出来事が起こる頻度が極めて低いことを表し、「ほとんど〜ない」「めったに〜しない」という意味を表します。",
+      "longExplanation": "副詞「めったに」は常に後続の否定表現「〜ない」と呼応して用いられます。日常的な場面において、ある事柄が発生する頻度が非常に稀であり、滅多なことでは起こらないという状況を強調します。",
+      "formation": "めったに ＋ 動詞ない形 | めったに ＋ い形容詞語幹 ＋ くない | めったに ＋ な形容詞 ＋ ではない／じゃない",
+      "examples": [
+        {
+          "translation": "彼はめったに外食しない。"
+        },
+        {
+          "translation": "私はめったに寿司を食べない。"
+        },
+        {
+          "translation": "この地域はめったに雪が降らない。"
+        },
+        {
+          "translation": "彼女はめったに怒らない。"
+        }
+      ]
+    },
+    "ja_めったにない_104": {
+      "title": "～めったにない (〜metta ni nai)",
+      "shortExplanation": "事態や現象、機会などが極めて稀であり、珍しいことを表し、「めったにない」「めったに見られない」という意味を表します。",
+      "longExplanation": "述語として「〜はめったにない」と用いるほか、「めったにない＋名詞」（めったにないチャンス）のように名詞修飾としても用いられます。動詞の形式名詞化を伴う「動詞辞書形＋ことは／のはめったにない」の形で、その事柄の生起確率が極度に低く希少であることを明示します。",
+      "formation": "動詞辞書形 ＋ (こと／の)はめったにない | 名詞 ＋ はめったにない | めったにない ＋ 名詞",
+      "examples": [
+        {
+          "translation": "この町では雪が降ることはめったにない。"
+        },
+        {
+          "translation": "彼はめったに外食しない。"
+        },
+        {
+          "translation": "友達が遊びに来るのはめったにない。"
+        },
+        {
+          "translation": "彼女はめったに怒らない。"
+        }
+      ]
+    },
+    "ja_もしかするとかもしれない_105": {
+      "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
+      "shortExplanation": "確実ではないものの、ある事態が起こる可能性があることを控えめに推量する表現で、「ひょっとすると〜かもしれない」という意味を表します。",
+      "longExplanation": "文頭の副詞「もしかすると」と文末の推量の助動詞「かもしれない」が呼応し、確たる根拠はないものの、ある可能性を排除できない話し手の不確実な推測を表します。可能性が低いと予想される場合にも控えめに言及する際に適しています。",
+      "formation": "もしかすると ＋ 動詞・形容詞普通形 ＋ かもしれない | もしかすると ＋ な形容詞語幹・名詞 ＋ かもしれない",
+      "examples": [
+        {
+          "translation": "もしかすると彼は遅刻するかもしれない。"
+        },
+        {
+          "translation": "もしかすると彼女は疲れているかもしれない。"
+        },
+        {
+          "translation": "もしかすると雨が降るかもしれない。"
+        },
+        {
+          "translation": "もしかすると彼らはその映画が好きじゃないかもしれない。"
+        }
+      ]
+    },
+    "ja_もしたなら_106": {
+      "title": "もし～たなら (moshi ~ tanara)",
+      "shortExplanation": "事態の発生や完了を仮定の前提として強調する表現で、「もし〜した場合は」「仮に〜だったなら」という意味を表します。",
+      "longExplanation": "仮定を表す副詞「もし」と過去形「〜た」に接続助詞「なら」が呼応し、ある事態が生じたこと、あるいは成立した状態を前提条件として際立たせる文型です。後件には話し手の判断、提案、助言、依頼などが続くことが一般的です。",
+      "formation": "もし ＋ 動詞た形 ＋ なら | もし ＋ い形容詞語幹 ＋ かったなら | もし ＋ な形容詞／名詞 ＋ だったなら",
+      "examples": [
+        {
+          "translation": "もし雨が降ったなら、傘を持って行きましょう。"
+        },
+        {
+          "translation": "もしケーキが美味しくなかったなら、誰も食べないでしょう。"
+        },
+        {
+          "translation": "もし彼が病気だったなら、すぐに病院に行かせてあげてください。"
+        },
+        {
+          "translation": "もし彼女が学生だったなら、このレストランは割引があるでしょう。"
+        }
+      ]
+    },
+    "ja_もしても_107": {
+      "title": "もし～ても (moshi ~ temo)",
+      "shortExplanation": "仮定の逆接条件を表し、前項の事態が起こったとしても後項の結果や意志に変わりがないことを表し、「たとえ〜ても」「仮に〜だとしても」という意味を表します。",
+      "longExplanation": "副詞「もし」と逆接確定・仮定の接続助詞「〜ても／〜でも」が呼応し、前項の条件が成立したとしても、それによって後項の行動や事態が妨げられることはなく、予定や意志が不変であることを強調する表現です。",
+      "formation": "もし ＋ 動詞て形 ＋ も | もし ＋ い形容詞語幹 ＋ くても | もし ＋ な形容詞／名詞 ＋ でも",
+      "examples": [
+        {
+          "translation": "もし雨が降っても、ピクニックに行きます。"
+        },
+        {
+          "translation": "もし彼が謝っても、まだ怒っているでしょう。"
+        },
+        {
+          "translation": "もし試験に合格しても、まだ勉強を続けます。"
+        },
+        {
+          "translation": "もし彼女が遅く来ても、待っています。"
+        }
+      ]
+    },
+    "ja_もしもなら_108": {
+      "title": "もしも～なら (moshimo ~ nara)",
+      "shortExplanation": "不確定な事態や万が一の可能性を強く意識して仮定する表現で、「もしも〜であるならば」「万が一〜なら」という意味を表します。",
+      "longExplanation": "「もし」よりも仮定のニュアンスが強く、起こる可能性が低い事柄や万が一の事態、あるいは架空の状況を想定して述べる文型です。後件には、その事態が起こった場合にとるべき判断や対応、心構えなどが示されます。",
+      "formation": "もしも ＋ 動詞・形容詞普通形 ＋ なら | もしも ＋ な形容詞語幹 ＋ なら | もしも ＋ 名詞 ＋ なら",
+      "examples": [
+        {
+          "translation": "もしも明日雨が降ったなら、出かけません。"
+        },
+        {
+          "translation": "もしも彼が来なかったなら、私たちだけでパーティーをします。"
+        },
+        {
+          "translation": "もしも彼女が疲れているなら、休ませてあげてください。"
+        },
+        {
+          "translation": "もしもそれが真実なら、認めなければなりません。"
+        }
+      ]
+    },
+    "ja_ようとしない_109": {
+      "title": "～ようとしない (〜you to shinai)",
+      "shortExplanation": "第三者がある行動を起こす意志や兆候を全く示さないことを表し、「〜する気がない」「〜しようとしない」という意味を表します。",
+      "longExplanation": "動詞の意向形（意志形）に助詞「と」と否定の「しない」が接続し、第三者がその行為を行う意思を全く見せない様子を表します。本来行うべき行動に対して積極性や意欲が見られないことに対し、話し手の不満、非難、もどかしさなどの感情が込められることが多いです。",
+      "formation": "動詞意向形 ＋ としない",
+      "examples": [
+        {
+          "translation": "彼は勉強しようとしない。"
+        },
+        {
+          "translation": "彼女は謝ろうとしない。"
+        },
+        {
+          "translation": "息子は部屋を片付けようとしない。"
+        },
+        {
+          "translation": "犬は散歩に行こうとしない。"
+        }
+      ]
+    },
+    "ja_ようと思う_110": {
+      "title": "～ようと思う (〜you to omou)",
+      "shortExplanation": "話し手の意志やこれからの計画・予定を表し、「〜しようと考えている」「〜するつもりだ」という意味を表します。",
+      "longExplanation": "動詞の意向形（意志形）に「と思う」が接続し、話し手自身の自発的な意志や計画を表明する表現です。発話の時点で思い立ったことには「〜ようと思う」、以前から継続して考えている計画や予定には「〜ようと思っている」を用いるのが自然です。",
+      "formation": "動詞意向形 ＋ と思う／と思っている",
+      "examples": [
+        {
+          "translation": "今日は早く寝ようと思います。"
+        },
+        {
+          "translation": "明日美術館に行こうと思っています。"
+        },
+        {
+          "translation": "新しいカメラを買おうと思います。"
+        },
+        {
+          "translation": "来週友達と映画を見ようと思っています。"
+        }
+      ]
+    },
+    "ja_ように_111": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "後項の動作が目指す目的や目標を表す用法と、事物の様子を別のものに例える比喩の用法の両方を表し、「〜するために」「〜のように」という意味を表します。",
+      "longExplanation": "「～ように」には主に2つの機能があります。(1) 目的・目標：無意志動詞や可能動詞、否定形などに接続し、ある望ましい状態や結果を実現させるために後項の行動を行うことを示します。(2) 比喩・様態：名詞や用言に接続し、事物の類似性や見かけの様子を表します。",
+      "formation": "動詞辞書形／ない形 ＋ ように | い形容詞 ＋ ように | な形容詞 ＋ なように | 名詞 ＋ のように",
+      "examples": [
+        {
+          "translation": "早く家に帰るように、仕事を急いで終わらせました。"
+        },
+        {
+          "translation": "彼女は美しい花のように見えました。"
+        },
+        {
+          "translation": "この部屋がきれいになるように、掃除をしましょう。"
+        },
+        {
+          "translation": "山田さんは元気なように振る舞っていましたが、実際は疲れているらしいです。"
+        }
+      ]
+    },
+    "ja_ように_112": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "望ましい状態や結果を達成するための目的（「〜できるように」「〜となるように」）や、事物を例える比喩（「〜のように」）を表します。",
+      "longExplanation": "前項に達成したい望ましい状態や目標を掲げ、後項でその実現に向けた準備や努力を行うことを示す目的の表現です。前項には可能動詞や無意志動詞が接続することが多く、実現を目指すニュアンスを表します。また、名詞に接続して比喩的な描写を行うこともできます。",
+      "formation": "動詞辞書形／可能形／ない形 ＋ ように | 名詞 ＋ のように",
+      "examples": [
+        {
+          "translation": "子供が安全に過ごせるように、家の中を整理します。"
+        },
+        {
+          "translation": "美しい花のように、彼女は笑顔が素敵です。"
+        },
+        {
+          "translation": "自然に英語を話せるように、毎日練習しています。"
+        },
+        {
+          "translation": "成功するように、計画を立てましょう。"
+        }
+      ]
+    },
+    "ja_ように_113": {
+      "title": "～ように (〜you ni)",
+      "shortExplanation": "動作が行われる様態や配慮の仕方（「〜となるように」）、努力の目標、あるいは動作の比喩（「〜のように」）を表します。",
+      "longExplanation": "後項の動作を行う際の配慮や様態のあり方を指定したり、日常的な努力や心がけの方向性を示したりする表現です。また、動作が何かに似ている様子を表す比喩としても幅広く用いられます。",
+      "formation": "動詞辞書形／ない形 ＋ ように | い形容詞 ＋ ように | 名詞 ＋ のように",
+      "examples": [
+        {
+          "translation": "分かりやすいように説明してください。"
+        },
+        {
+          "translation": "彼は鳥のように歌います。"
+        },
+        {
+          "translation": "友達と仲良くするように努めています。"
+        },
+        {
+          "translation": "日本語が上手になるように勉強しています。"
+        }
+      ]
+    },
+    "ja_ようにしましょう_114": {
+      "title": "～ようにしましょう (〜you ni shimashou)",
+      "shortExplanation": "ある行動を習慣づけたり努力して実行したりするよう、相手に優しく勧めたり呼びかけたりする表現で、「〜するように努めましょう」「〜することを心がけましょう」という意味を表します。",
+      "longExplanation": "努力や心がけ、習慣化を表す「〜ようにする」に、丁寧な勧誘・呼びかけを表す「〜ましょう」が接続した文型です。望ましい生活習慣の定着や好ましい行動様式について、相手に強制することなく、互いに努力しようと前向きに促す場面で頻繁に使われます。",
+      "formation": "動詞辞書形 ＋ ようにしましょう | 動詞ない形 ＋ ようにしましょう",
+      "examples": [
+        {
+          "translation": "毎日運動するようにしましょう。"
+        },
+        {
+          "translation": "早く寝るようにしましょう。"
+        },
+        {
+          "translation": "親切にするようにしましょう。"
+        },
+        {
+          "translation": "時間を無駄にしないようにしましょう。"
+        }
+      ]
+    }
+  }
+}

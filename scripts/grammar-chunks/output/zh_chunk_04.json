@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_在V呢_47": {
+      "title": "在 + Động từ (+ 呢) (Đang... - Diễn tả hành động đang tiếp diễn)",
+      "shortExplanation": "Phó từ '在' đứng trước động từ (cuối câu thường có trợ từ ngữ khí '呢') để biểu thị hành động đang diễn ra tại thời điểm nói; tương đương với 'đang...' trong tiếng Việt.",
+      "longExplanation": "'在 + Động từ (+ 呢)' (zài... ne) là cấu trúc cơ bản biểu thị thể tiếp diễn trong tiếng Trung. Phó từ '在' đặt trước động từ chỉ rõ hành động đang trong quá trình thực hiện. Trợ từ ngữ khí '呢' đặt ở cuối câu để tăng cường ngữ khí khẳng định hoặc tiếp diễn; '呢' có thể lược bỏ. Thể phủ định của cấu trúc này là '没(有)在 + Động từ'.",
+      "formation": "Chủ ngữ + 在 + Động từ (+ 呢)",
+      "examples": [
+        {
+          "translation": "Tôi đang ngủ."
+        }
+      ]
+    },
+    "zh_没在V呢_48": {
+      "title": "没(有)在 + Động từ (+ 呢) (Không đang... - Phủ định hành động tiếp diễn)",
+      "shortExplanation": "Dạng phủ định của hành động tiếp diễn; đặt '没' hoặc '没有' trước '在' để biểu thị 'không đang làm gì'.",
+      "longExplanation": "Để phủ định hành động đang tiếp diễn trong cấu trúc '在 + Động từ', tiếng Trung dùng phó từ phủ định '没' hoặc '没有' đặt trước '在', tạo thành '没在 + Động từ'. Tuyệt đối không dùng '不' để phủ định cấu trúc tiếp diễn này (không nói '不在看电视'). Cuối câu có thể có trợ từ '呢' để tăng sắc thái giải thích, đính chính.",
+      "formation": "Chủ ngữ + 没(有)在 + Động từ (+ 呢)",
+      "examples": [
+        {
+          "translation": "Họ không đang xem ti vi."
+        }
+      ]
+    },
+    "zh_1yo_49": {
+      "title": "1 đọc là yāo (幺) (Cách đọc số 1 trong số điện thoại, số phòng)",
+      "shortExplanation": "Chữ số 1 khi đọc từng số riêng rẽ trong số điện thoại, số phòng, số xe thường được đọc là 'yāo' thay vì 'yī' để tránh nhầm với số 7 (qī).",
+      "longExplanation": "Trong khẩu ngữ tiếng Trung, khi đọc các chuỗi số liên tiếp như số điện thoại, số phòng, số chuyến bay hoặc biển số xe, chữ số '1' thường được phát âm là 'yāo' (viết là 幺 hoặc chữ số 1) thay vì 'yī'. Quy tắc này nhằm tránh sự nhầm lẫn về âm thanh giữa 'yī' (1) và 'qī' (7) khi nghe qua điện thoại hoặc nơi đông người ồn ào.",
+      "formation": "Số điện thoại / Số phòng có chữ số 1 → đọc là yāo (幺)",
+      "examples": [
+        {
+          "translation": "138-0156-7749 (chữ số 1 đọc là 'yāo')"
+        }
+      ]
+    },
+    "zh_V吧_50": {
+      "title": "Động từ + 吧 (Trợ từ ngữ khí: ...đi, ...nhé [đề nghị, thúc giục, cho phép])",
+      "shortExplanation": "Trợ từ ngữ khí '吧' đặt ở cuối câu để đưa ra đề nghị, rủ rê, khuyên bảo nhẹ nhàng hoặc cho phép ai làm gì; mang nghĩa '...đi', '...nhé'.",
+      "longExplanation": "'吧' (ba) là trợ từ ngữ khí đặt ở cuối câu cầu khiến để biểu thị sự thương lượng, đề nghị, rủ rê, thúc giục nhẹ nhàng hoặc cho phép với thái độ cởi mở, lịch sự (ví dụ: 坐吧 = ngồi đi / mời ngồi tự nhiên, 走吧 = đi thôi). Việc dùng '吧' giúp câu nói trở nên mềm mại, thân thiện và không gây cảm giác áp đặt mệnh lệnh.",
+      "formation": "Động từ (+ Tân ngữ) + 吧",
+      "examples": [
+        {
+          "translation": "Ở đây không có ai, ngồi đi."
+        }
+      ]
+    },
+    "zh_VO了_51": {
+      "title": "Động từ + Tân ngữ + 了 (Trợ từ ngữ khí: Đã... rồi [biểu thị sự việc xảy ra hoặc thay đổi])",
+      "shortExplanation": "Trợ từ ngữ khí '了' đặt ở cuối câu sau tân ngữ để thông báo hành động đã diễn ra hoặc một tình huống mới xuất hiện; '...rồi'.",
+      "longExplanation": "Trong cấu trúc 'Động từ + Tân ngữ + 了' (le), '了' là trợ từ ngữ khí đứng ở cuối câu trần thuật. Nó được dùng để thông báo cho người nghe biết một sự việc, hành động đã hoàn tất hoặc một trạng thái mới đã nảy sinh (ví dụ: 他去学校了 = Anh ấy đã đến trường rồi). Câu phủ định của mẫu câu này dùng '没(有)' trước động từ và bỏ '了' ở cuối câu.",
+      "formation": "Chủ ngữ + Động từ + Tân ngữ + 了",
+      "examples": [
+        {
+          "translation": "Anh ấy đã đến trường rồi."
+        }
+      ]
+    },
+    "zh_V了O_52": {
+      "title": "Động từ + 了 + Tân ngữ (Trợ từ động thái: Đã làm gì [hoàn thành hành động])",
+      "shortExplanation": "Trợ từ động thái '了' đứng ngay sau động từ để nhấn mạnh hành động đã hoàn thành; tân ngữ theo sau thường có số lượng từ hoặc từ định ngữ bổ nghĩa.",
+      "longExplanation": "'了' (le) khi đứng liền sau động từ là trợ từ động thái biểu thị bản thân động tác đó đã hoàn thành hoặc thực hiện xong. Khi '了' nằm giữa động từ và tân ngữ, thông thường tân ngữ phải có các định ngữ tu sức đi kèm như số lượng từ hoặc từ ngữ hạn định (ví dụ: 我买了不少衣服 = Tôi đã mua khá nhiều quần áo, 我喝了一杯水 = Tôi đã uống một cốc nước).",
+      "formation": "Chủ ngữ + Động từ + 了 + Tân ngữ (thường có Số lượng từ / Định ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi đã mua khá nhiều quần áo."
+        }
+      ]
+    },
+    "zh_没VO_53": {
+      "title": "没(有) + Động từ + Tân ngữ (Phủ định hành động trong quá khứ: Chưa / Không làm)",
+      "shortExplanation": "Dùng phó từ phủ định '没' hoặc '没有' đứng trước động từ để diễn đạt việc hành động chưa xảy ra hoặc chưa hoàn thành; không dùng '了' ở cuối câu.",
+      "longExplanation": "Để phủ định một hành động đã không xảy ra trong quá khứ hoặc một trạng thái chưa hoàn thành, tiếng Trung sử dụng '没' hoặc '没有' đặt trước động từ (tương đương với 'chưa' hoặc 'không' trong tiếng Việt). Điểm ngữ pháp cốt lõi: khi đã dùng '没(有)' để phủ định, tuyệt đối không được giữ trợ từ hoàn thành '了' ở cuối câu (nói '她没去商店', không được nói '她没去商店了').",
+      "formation": "Chủ ngữ + 没(有) + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Cô ấy đã không đi đến cửa hàng."
+        }
+      ]
+    },
+    "zh_TIME后_54": {
+      "title": "Mốc thời gian + 后 (Sau mốc thời gian nào đó)",
+      "shortExplanation": "Đặt phương vị từ '后' (hoặc '以后') sau một mốc thời gian cụ thể để chỉ khoảng thời gian xảy ra sau mốc thời gian đó; 'sau...'",
+      "longExplanation": "Trong tiếng Trung, để chỉ thời điểm diễn ra sau một mốc thời gian cụ thể (giờ giấc, buổi trong ngày, ngày cụ thể), ta đặt '后' (hòu) hoặc '以后' (yǐhòu) ngay sau mốc thời gian đó (ví dụ: 五点后 = sau 5 giờ, 星期一以后 = sau thứ Hai). Cụm từ này thường làm trạng ngữ chỉ thời gian đứng ở đầu câu hoặc ngay trước động từ.",
+      "formation": "Mốc thời gian + 后 / 以后",
+      "examples": [
+        {
+          "translation": "Sau 5 giờ"
+        }
+      ]
+    },
+    "zh_DURATION后_55": {
+      "title": "Khoảng thời gian + 后 (Sau một khoảng thời gian: ...nữa, ...sau)",
+      "shortExplanation": "Đặt '后' (hoặc '以后') sau một từ chỉ lượng thời gian (thời lượng) để biểu thị sự việc xảy ra sau một khoảng thời gian nhất định trôi qua.",
+      "longExplanation": "Khi kết hợp với từ chỉ khoảng thời gian (thời lượng như phút, giờ, ngày, tuần, năm), 'Khoảng thời gian + 后' (hòu) mang ý nghĩa 'sau bao lâu nữa' tính từ thời điểm làm mốc (ví dụ: 四十分钟后 = sau 40 phút nữa, 三天后 = ba ngày sau). Mẫu câu này khác với 'Mốc thời gian + 后' ở chỗ danh từ đi trước là một khoảng độ dài thời gian chứ không phải điểm mốc cố định.",
+      "formation": "Khoảng thời gian (Thời lượng) + 后 / 以后",
+      "examples": [
+        {
+          "translation": "Sau 40 phút nữa"
+        }
+      ]
+    },
+    "zh_啊_56": {
+      "title": "...啊 (Trợ từ ngữ khí cảm thán, tán đồng: ...nhé, ...nha, ...thế!)",
+      "shortExplanation": "Trợ từ ngữ khí đặt ở cuối câu để tăng cường sắc thái cảm thán, tán thành nhiệt tình, nhắc nhở thân mật hoặc bày tỏ cảm xúc gần gũi.",
+      "longExplanation": "'啊' (a) là trợ từ ngữ khí khẩu ngữ vô cùng thông dụng trong tiếng Trung. Đặt ở cuối câu, nó giúp câu văn trở nên sinh động, uyển chuyển và bộc lộ cảm xúc rõ ràng; thường dùng để thể hiện sự tán đồng vui vẻ (như: 好啊 = Được thôi!, 是啊 = Đúng vậy đó!), lời nhắc nhở thân thiện hoặc sự ngạc nhiên, khen ngợi. Tùy theo âm đuôi của từ đứng trước, '啊' có thể biến âm trong khẩu ngữ (như đọc thành ya, wa, na).",
+      "formation": "Câu / Từ ngữ + 啊",
+      "examples": [
+        {
+          "translation": "Được thôi! / Đúng vậy!"
+        }
+      ]
+    },
+    "zh_都N_57": {
+      "title": "都 + Vị ngữ (Phó từ phạm vi: Đều, tất cả)",
+      "shortExplanation": "Phó từ '都' đứng sau chủ ngữ số nhiều và đứng trước vị ngữ (thường là '是 + Danh từ') để tổng kết toàn bộ các đối tượng được nhắc tới; 'đều', 'tất cả'.",
+      "longExplanation": "'都' (dōu) là phó từ chỉ phạm vi toàn bộ trong tiếng Trung, tương đương với 'đều', 'tất cả' trong tiếng Việt. '都' luôn đứng sau chủ ngữ số nhiều (hoặc danh từ biểu thị tập thể) và đứng ngay trước vị ngữ (như động từ, tính từ hoặc cụm '是 + Danh từ'). Nó biểu thị rằng mọi cá thể trong nhóm đều mang đặc điểm hoặc thực hiện hành động đó mà không có ngoại lệ (ví dụ: 我们都是中国人 = Chúng tôi đều là người Trung Quốc).",
+      "formation": "Chủ ngữ (số nhiều) + 都 + 是 + Danh từ (hoặc 都 + Vị ngữ)",
+      "examples": [
+        {
+          "translation": "Chúng tôi đều là người Trung Quốc."
+        }
+      ]
+    },
+    "zh_S是MANNERV的_58": {
+      "title": "Chủ ngữ + 是 + Phương thức + Động từ + 的 (Cấu trúc nhấn mạnh cách thức thực hiện hành động)",
+      "shortExplanation": "Cấu trúc '是...的' dùng để nhấn mạnh cách thức, phương tiện hoặc phương pháp mà một hành động đã diễn ra trong quá khứ được thực hiện.",
+      "longExplanation": "Cấu trúc '是...的' (shì... de) được sử dụng khi hành động đã xảy ra trong quá khứ và cả người nói lẫn người nghe đều đã biết về hành động đó; mục đích chính của câu là nhấn mạnh vào chi tiết như cách thức, phương tiện (làm bằng cách nào), thời gian hoặc địa điểm. Trong mẫu câu này, '是' đứng trước từ ngữ chỉ phương thức/phương tiện và '的' đứng ở cuối câu (ví dụ: 我们是开车来的 = Chúng tôi đến đây là bằng cách lái xe). Trong câu khẳng định '是' có thể lược bỏ, nhưng câu phủ định bắt buộc phải dùng '不是...的'.",
+      "formation": "Chủ ngữ + 是 + Phương thức/Cách thức + Động từ + 的",
+      "examples": [
+        {
+          "translation": "Chúng tôi đến đây bằng ô tô."
+        }
+      ]
+    },
+    "zh_年_59": {
+      "title": "Số đếm + 年 (Cách biểu đạt năm trong tiếng Trung)",
+      "shortExplanation": "Để biểu đạt năm trong tiếng Trung, đọc lần lượt từng chữ số của năm từ trái qua phải rồi thêm từ '年' (nián) ở phía sau.",
+      "longExplanation": "Khi nói về năm trong tiếng Trung, các chữ số tạo nên năm được đọc rời từng số một theo thứ tự từ trái sang phải, không đọc theo quy tắc hàng nghìn, hàng trăm; sau đó thêm từ chỉ thời gian '年' (nián) ở cuối cùng (ví dụ: 2017年 đọc là 'èr líng yī qī nián'). Chữ số 0 được đọc là 'líng' (零). Trong cách biểu đạt thời gian hoàn chỉnh, năm luôn đứng ở vị trí đầu tiên trước tháng và ngày.",
+      "formation": "Số đếm (đọc từng chữ số) + 年",
+      "examples": [
+        {
+          "translation": "Năm 2017"
+        }
+      ]
+    },
+    "zh_要_60": {
+      "title": "要 + Động từ (Động từ năng nguyện: Muốn, sẽ, định làm gì)",
+      "shortExplanation": "Động từ năng nguyện biểu thị ý chí, nguyện vọng chủ quan muốn làm gì ('muốn'), hoặc dự định, sắp sửa làm gì trong tương lai ('sẽ', 'định').",
+      "longExplanation": "Động từ năng nguyện '要' (yào) đứng trước động từ có hai nét nghĩa chính: thứ nhất là biểu thị ý muốn, nguyện vọng kiên quyết muốn thực hiện một việc gì đó (sắc thái chủ động và quyết tâm hơn '想'); thứ hai là biểu thị dự định, kế hoạch sẽ làm gì hoặc hành động sắp xảy ra trong tương lai gần (tương đương với 'sẽ', 'định'). Để phủ định ý muốn, thông thường dùng '不想'; dùng '不要' sẽ mang nghĩa cấm đoán ('đừng / không được').",
+      "formation": "Chủ ngữ + 要 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Vương Phương muốn học tiếng Anh."
+        }
+      ]
+    },
+    "zh_最_61": {
+      "title": "最 + Tính từ / Động từ tâm lý (Phó từ mức độ tuyệt đối: Nhất, đứng đầu)",
+      "shortExplanation": "Phó từ chỉ mức độ cao nhất '最', đứng trước tính từ hoặc động từ tâm lý để biểu thị sự so sánh bậc nhất; tương đương với 'nhất' trong tiếng Việt.",
+      "longExplanation": "'最' (zuì) là phó từ chỉ mức độ tuyệt đối (so sánh bậc nhất) trong tiếng Trung. Nó đứng trực tiếp trước tính từ (ví dụ: 最好 = tốt nhất, 最漂亮 = đẹp nhất) hoặc các động từ chỉ cảm xúc, tâm lý (ví dụ: 最喜欢 = thích nhất, 最爱 = yêu nhất) nhằm biểu thị rằng đối tượng được miêu tả đạt mức độ cao nhất hoặc đứng đầu trong số các đối tượng được đem ra so sánh.",
+      "formation": "Chủ ngữ + 最 + Tính từ / Động từ tâm lý",
+      "examples": [
+        {
+          "translation": "Mắt của nó đẹp nhất."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_在V呢_47": {
+      "title": "在 ＋ 動詞（＋ 呢）（〜しているところだ・動作の進行）",
+      "shortExplanation": "動詞の前に副詞「在」を置き（文末に語気助詞「呢」を伴うことも多い）、動作が現在進行中であることを表す「〜しているところだ」「〜している」の表現です。",
+      "longExplanation": "「在 ＋ 動詞（＋ 呢）」（zài... ne）は、動作や行為がまさに進行している最中であることを表す中国語の代表的なアスペクト（進行相）構文です。副詞「在」（または「正在」「正」）が動作の進行を示し、文末の語気助詞「呢」は進行の語気を強めたり確認したりする働きをします。「呢」は省略されることもあります。否定形は「没(有)在 ＋ 動詞」を用います。",
+      "formation": "主語 ＋ 在 ＋ 動詞（＋ 呢）",
+      "examples": [
+        {
+          "translation": "私は寝ているところです。"
+        }
+      ]
+    },
+    "zh_没在V呢_48": {
+      "title": "没(有)在 ＋ 動詞（＋ 呢）（〜していない・動作進行の否定）",
+      "shortExplanation": "動作の進行を表す構文の否定形で、「在」の前に「没」または「没有」を置き、「〜しているところではない」「〜していない」を表します。",
+      "longExplanation": "「没(有)在 ＋ 動詞（＋ 呢）」（méi zài... ne）は、「在 ＋ 動詞」で表される進行態の否定形式です。進行中の動作を否定する場合は副詞「不」ではなく必ず「没（没有）」を用います（「不在＋動詞」とは言いません）。文末に「呢」を伴うことで、「〜しているわけではないよ」という確認や説明の語気が加わります。",
+      "formation": "主語 ＋ 没(有)在 ＋ 動詞（＋ 呢）",
+      "examples": [
+        {
+          "translation": "彼らはテレビを見ていません。"
+        }
+      ]
+    },
+    "zh_1yo_49": {
+      "title": "1（yāo / 幺）（電話番号や部屋番号などでの数字「1」の読み方）",
+      "shortExplanation": "電話番号、部屋番号、便名などの連続した数字で、聞き間違いを防ぐために数字の「1」を「yī」ではなく「yāo」と読む慣習です。",
+      "longExplanation": "中国語では、電話番号、ホテルの部屋番号、ナンバープレート、航空便名などの数字を1桁ずつ読み上げる際、数字の「1」を「yī」ではなく「yāo」（漢字では「幺」と表記することもあります）と発音します。これは電話越しや騒音環境下で「1（yī）」と「7（qī）」が聞き間違えやすいため、誤認を防ぐ目的で定着した習慣です。",
+      "formation": "電話番号・部屋番号等の連続した数字「1」 →「yāo（幺）」と発音",
+      "examples": [
+        {
+          "translation": "138-0156-7749（数字の1は「yāo」と読みます）"
+        }
+      ]
+    },
+    "zh_V吧_50": {
+      "title": "動詞 ＋ 吧（提案・勧誘・促し・許可の語気助詞：〜しましょう・〜してください）",
+      "shortExplanation": "文末に語気助詞「吧」を置き、相手に対して提案、促し、勧誘、または遠慮なく〜してよいという許可・勧めを表します。",
+      "longExplanation": "語気助詞「吧」（ba）は文末に置かれ、提案、誘い、柔らかな命令・催促、あるいは相手への好意的な許可・勧めを表します（例：走吧＝行きましょう、坐吧＝どうぞ座ってください）。単なる命令形と異なり、語気を柔らかくして相手の意向を尊重する親しみやすいニュアンスを含みます。",
+      "formation": "動詞（＋ 目的語） ＋ 吧",
+      "examples": [
+        {
+          "translation": "ここには誰もいません、どうぞ座ってください。"
+        }
+      ]
+    },
+    "zh_VO了_51": {
+      "title": "動詞 ＋ 目的語 ＋ 了（文末語気助詞「了」：動作の実現・事態の完了や変化）",
+      "shortExplanation": "文末（目的語の後）に語気助詞「了」を置き、事態が発生・実現したこと、または新たな変化が生じたことを表します（「〜しました」「〜した」）。",
+      "longExplanation": "「動詞 ＋ 目的語 ＋ 了」（le）構文において、文末に置かれる「了」は語気助詞です。文全体の完了や事実の実現を報告・陳述する機能を持ち、動作が行われて完了したこと、あるいは新しい状況が生じたことを聞き手に伝えます（例：他去学校了＝彼は学校に行きました）。否定文では動詞の前に「没(有)」を置き、文末の「了」は取り除きます。",
+      "formation": "主語 ＋ 動詞 ＋ 目的語 ＋ 了",
+      "examples": [
+        {
+          "translation": "彼は学校に行きました。"
+        }
+      ]
+    },
+    "zh_V了O_52": {
+      "title": "動詞 ＋ 了 ＋ 目的語（動態助詞「了」：動作の完了・実現）",
+      "shortExplanation": "動詞の直後に動態助詞「了」を置き、動作そのものが完了・実現したことを表します。後ろの目的語には数量詞などの修飾語がつくのが一般的です。",
+      "longExplanation": "「動詞 ＋ 了 ＋ 目的語」（le）において、動詞の直後に置かれる「了」は動作の実現・完了を表す動態助詞（アスペクト助詞）です。この構文では、目的語の前に数量詞や限定修飾語（例：不少、一本、很多）を伴うことが多く、具体的な行為が完了したことを明確に示します（例：我买了不少衣服＝服をたくさん買いました）。",
+      "formation": "主語 ＋ 動詞 ＋ 了 ＋ 目的語（通常、数量詞・連体修飾語を伴う）",
+      "examples": [
+        {
+          "translation": "私は服をたくさん買いました。"
+        }
+      ]
+    },
+    "zh_没VO_53": {
+      "title": "没(有) ＋ 動詞 ＋ 目的語（過去・完了の否定：〜しなかった・まだ〜していない）",
+      "shortExplanation": "動詞の前に否定副詞「没」または「没有」を置き、過去の動作が起きなかったこと、または動作がまだ完了していないことを表します。",
+      "longExplanation": "「没(有) ＋ 動詞 ＋ 目的語」（méi...）は、過去における動作の非発生や、動作がまだ完了していないことを否定する構文です（日本語の「〜しなかった」「まだ〜していない」に相当）。重要な文法規則として、否定副詞「没（没有）」を用いる文では、動作の完了を表す助詞「了」を併用することはできません（「她没去商店了」とは言わず、「她没去商店」とします）。",
+      "formation": "主語 ＋ 没(有) ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "彼女は店に行きませんでした。"
+        }
+      ]
+    },
+    "zh_TIME后_54": {
+      "title": "時点 ＋ 后（〜の後・〜以降）",
+      "shortExplanation": "具体的な時点の後に方位詞「后」（または「以后」）を置き、「〜の後」「〜以降」という時間を表します。",
+      "longExplanation": "特定の時刻・曜日・日付などの時点の後ろに「后」（hòu、または「以后」）を続けることで、その時点より後の時間を表す時間詞句を作ります（例：五点后＝5時の後・5時以降）。文頭または主語と動詞の間に置かれて時間状語（連用修飾語）として機能します。",
+      "formation": "時点（時刻・日付） ＋ 后 / 以后",
+      "examples": [
+        {
+          "translation": "5時以降（5時の後）"
+        }
+      ]
+    },
+    "zh_DURATION后_55": {
+      "title": "期間 ＋ 后（〜後・〜が経過した後）",
+      "shortExplanation": "時間の長さ（時量表現）の後に「后」（または「以后」）を置き、その期間が経過した後の時点を表します（「〜後」）。",
+      "longExplanation": "具体的な時間・日数の長さ（時量表現）の後ろに「后」（hòu）または「以后」を接続することで、「〜の期間が経過した後」（例：四十分钟后＝40分後、三天后＝3日後）という意味を表します。ある基準時点からその期間が経過した後に動作が行われることを示す際に用いられます。",
+      "formation": "期間（時量詞） ＋ 后 / 以后",
+      "examples": [
+        {
+          "translation": "40分後"
+        }
+      ]
+    },
+    "zh_啊_56": {
+      "title": "〜啊（語気助詞：感嘆・賛同・念押し・親しみ）",
+      "shortExplanation": "文末に置かれて感嘆、熱意のある賛同、親しみを込めた念押しなどの感情や語気を添える語気助詞です（「〜だよ」「〜ですね」）。",
+      "longExplanation": "「啊」（a）は日常会話で非常によく使われる語気助詞です。文末や呼びかけの後ろに添えることで、感情を豊かに表現したり、相手への親近感を示したり、熱心な同意を表したりします（例：好啊＝いいよ！、是啊＝そうなんだよ！）。直前の単語の母音や末尾の子音に応じて発音が滑らかに連音変化する特徴があります（ya、wa、naなど）。",
+      "formation": "文 / 単語 ＋ 啊",
+      "examples": [
+        {
+          "translation": "いいですよ！ そうですね！"
+        }
+      ]
+    },
+    "zh_都N_57": {
+      "title": "都 ＋ 述語 / 都 ＋ 是 ＋ 名詞（範囲副詞：みんな・すべて・どれも）",
+      "shortExplanation": "主語の前に挙げられた複数の事物や人物をすべて包括し、述語の前に置いて「みんな」「すべて」「いずれも」を表す範囲副詞です。",
+      "longExplanation": "「都」（dōu）は先行する複数要素（または全体を表す語）を総括する範囲副詞です。日本語の「すべて」「みんな」「どれも」に相当し、常に述語（動詞、形容詞、または「是 ＋ 名詞」など）の直前に置かれます（主語の前に置くことはできません）。例：我们都是中国人＝私たちはみな中国人です。",
+      "formation": "主語（複数） ＋ 都 ＋ 是 ＋ 名詞（または 都 ＋ 述語）",
+      "examples": [
+        {
+          "translation": "私たちはみんな中国人です。"
+        }
+      ]
+    },
+    "zh_S是MANNERV的_58": {
+      "title": "主語 ＋ 是 ＋ 手段・様態 ＋ 動詞 ＋ 的（「是……的」強調構文：手段・方法の強調）",
+      "shortExplanation": "すでに発生・完了した過去の行為について、どのような手段・方法で行われたのかを焦点化して強調する「是……的」構文です。",
+      "longExplanation": "「是……的」（shì... de）構文は、すでに行われたことが自明である過去の動作について、その「手段・様態（どのように）」、「時間（いつ）」、「場所（どこで）」などを特に強調して伝える表現です。強調したい手段・様態の直前に「是」を置き、文末（または動詞句末）に「的」を配置します（例：我们是开车来的＝私たちは車を運転して来たのです）。肯定文では「是」を省略することもありますが、否定文では「不是……的」となり「是」の省略はできません。",
+      "formation": "主語 ＋ 是 ＋ 手段・様態 ＋ 動詞 ＋ 的",
+      "examples": [
+        {
+          "translation": "私たちは車を運転して来たのです。"
+        }
+      ]
+    },
+    "zh_年_59": {
+      "title": "数字 ＋ 年（年の言い方・読み方）",
+      "shortExplanation": "西暦などの年を表す際、各桁の数字を1つずつ順番に読み上げた後に「年」（nián）を付けます。",
+      "longExplanation": "中国語で年号・西暦年を表すときは、日本語のように「二千十七年」と位取りで読むのではなく、数字を1桁ずつ順に読み上げた後尾に「年」（nián）を添えます（例：2017年は「èr líng yī qī nián＝二零一七年」）。数字の「0」は「líng（零）」と読みます。年・月・日の順序においては最大の単位として常に先頭に配置されます。",
+      "formation": "数字（各桁を順に読む） ＋ 年",
+      "examples": [
+        {
+          "translation": "2017年"
+        }
+      ]
+    },
+    "zh_要_60": {
+      "title": "要 ＋ 動詞（助動詞：〜したい・〜するつもりだ・〜する予定だ）",
+      "shortExplanation": "動詞の前に置かれ、主体の強い意志や願望（〜したい）、または将来の予定や計画（〜するつもりだ、〜する予定だ）を表す助動詞です。",
+      "longExplanation": "「要」（yào）は動詞の前に置かれる能願動詞（助動詞）で、主に2つの重要な用法を持ちます。1つは主語の明確で強い意志・願望を表す「〜したい」「〜するつもりだ」（「想」よりも実現への意志が強い）で、もう1つは近い将来に予定されている動作を表す「〜する予定である」「〜することになっている」です。願望の否定には通常「不想」を用い、「不要」は「〜してはいけない（禁止）」の意味になる点に注意が必要です。",
+      "formation": "主語 ＋ 要 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "王芳さんは英語を勉強するつもりです。"
+        }
+      ]
+    },
+    "zh_最_61": {
+      "title": "最 ＋ 形容詞 / 心理動詞（程度副詞：もっとも・一番）",
+      "shortExplanation": "形容詞や心理活動を表す動詞の前に置き、比較の中で程度が最高位であることを表す最上級の副詞「最」（もっとも、一番）です。",
+      "longExplanation": "「最」（zuì）は比較の範囲内において程度が極限・最高位に達していることを表す最上級の程度副詞です。日本語の「もっとも」「一番」に相当し、形容詞（例：最好＝一番良い、最漂亮＝一番美しい）や心理動詞（例：最喜欢＝一番好きだ）の直前に置かれて修飾します。",
+      "formation": "主語 ＋ 最 ＋ 形容詞 / 心理動詞",
+      "examples": [
+        {
+          "translation": "その目は一番きれいです。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_在V呢_47": {
+      "title": "在 + 동사 (+ 呢) (~하는 중이다, ~하고 있다 - 동작의 진행)",
+      "shortExplanation": "동사 앞에 부사 '在'를 쓰고 (문장 끝에 어기조사 '呢'를 함께 쓰기도 함), 동작이 현재 진행 중임을 나타내는 '~하고 있다', '~하는 중이다' 표현입니다.",
+      "longExplanation": "'在 + 동사 (+ 呢)'(zài... ne)는 말하는 시점에 어떤 동작이나 행위가 진행되고 있음을 나타내는 대표적인 진행태 구문으로, 한국어의 '~하고 있다', '~하는 중이다'에 해당합니다. 부사 '在'(또는 '正在', '正')가 동사 앞에서 동작의 진행을 나타내며, 문장 끝의 어기조사 '呢'는 진행의 뉘앙스를 보강해 줍니다. '呢'는 생략할 수도 있습니다. 부정형은 '没(有)在 + 동사'를 씁니다.",
+      "formation": "주어 + 在 + 동사 (+ 呢)",
+      "examples": [
+        {
+          "translation": "저는 자고 있습니다."
+        }
+      ]
+    },
+    "zh_没在V呢_48": {
+      "title": "没(有)在 + 동사 (+ 呢) (~하고 있지 않다 - 진행의 부정)",
+      "shortExplanation": "동작 진행 표현의 부정형으로, '在' 앞에 '没' 또는 '没有'를 붙여 '~하고 있지 않다', '~하는 중이 아니다'를 나타냅니다.",
+      "longExplanation": "'没(有)在 + 동사 (+ 呢)'(méi zài... ne)는 동작의 진행을 나타내는 '在 + 동사'의 부정형입니다. 진행 중인 동작을 부정할 때는 '不'를 쓰지 않고 반드시 '没' 또는 '没有'를 사용합니다('不在 + 동사' 형태는 쓰지 않음). 문장 끝에 '呢'를 붙여 상황을 설명하거나 정정하는 뉘앙스를 나타내기도 합니다.",
+      "formation": "주어 + 没(有)在 + 동사 (+ 呢)",
+      "examples": [
+        {
+          "translation": "그들은 텔레비전을 보고 있지 않습니다."
+        }
+      ]
+    },
+    "zh_1yo_49": {
+      "title": "1 (yāo / 幺) (전화번호, 방 번호 등 연속 번호에서 숫자 '1'의 발음)",
+      "shortExplanation": "전화번호, 방 번호, 차량 번호 등을 하나씩 읽을 때 숫자 '1'을 'yī' 대신 혼동을 방지하기 위해 'yāo'로 읽는 용법입니다.",
+      "longExplanation": "중국어에서 전화번호, 호텔 방 번호, 항공편명, 버스 노선 번호 등 일련번호를 한 글자씩 읽을 때, 숫자 '1'을 본래 발음인 'yī' 대신 'yāo'(한자로는 幺)로 발음합니다. 이는 전화 통화 시나 소음 환경에서 '1(yī)'과 '7(qī)'의 발음이 유사하여 발생할 수 있는 혼선을 방지하기 위함입니다.",
+      "formation": "전화번호·방 번호 등의 숫자 '1' → 'yāo(幺)'로 발음",
+      "examples": [
+        {
+          "translation": "138-0156-7749 (숫자 1은 'yāo'로 읽습니다)"
+        }
+      ]
+    },
+    "zh_V吧_50": {
+      "title": "동사 + 吧 (제안·권유·재촉·허락의 어기조사: ~하자, ~하세요)",
+      "shortExplanation": "문장 끝에 어기조사 '吧'를 붙여 제안, 권유, 가벼운 재촉 또는 편하게 ~하라는 허락과 권유를 부드럽게 나타냅니다.",
+      "longExplanation": "어기조사 '吧'(ba)는 문장 끝에 쓰여 제안, 권유, 부드러운 청유나 촉구, 또는 '편하게 ~하세요'라는 허락의 뜻을 전달합니다(예: 走吧 - 갑시다, 坐吧 - 앉으세요). 직설적인 명령 대신 어기를 한결 부드럽고 완곡하게 만들어 상대방에게 친근하고 정중한 느낌을 줍니다.",
+      "formation": "동사 (+ 목적어) + 吧",
+      "examples": [
+        {
+          "translation": "여기 아무도 없으니, 앉으세요."
+        }
+      ]
+    },
+    "zh_VO了_51": {
+      "title": "동사 + 목적어 + 了 (문말 어기조사 '了': 동작의 실현 및 변화)",
+      "shortExplanation": "목적어 뒤 문장 끝에 어기조사 '了'를 붙여 동작이나 사태가 이미 발생·완료되었거나 새로운 변화가 생겼음을 나타냅니다(~했다, ~하게 되었다).",
+      "longExplanation": "'동사 + 목적어 + 了'(le) 구문에서 문장 맨 끝에 놓이는 '了'는 문말 어기조사입니다. 이미 어떤 사건이나 동작이 발생·실현되었음을 서술하거나 보고할 때 쓰이며(예: 他去学校了 - 그는 학교에 갔습니다), 새로운 상황이 생겨났음이나 상태의 변화를 나타내기도 합니다. 부정문에서는 동사 앞에 '没(有)'를 쓰고 문말의 '了'는 삭제합니다.",
+      "formation": "주어 + 동사 + 목적어 + 了",
+      "examples": [
+        {
+          "translation": "그는 학교에 갔습니다."
+        }
+      ]
+    },
+    "zh_V了O_52": {
+      "title": "동사 + 了 + 목적어 (동태조사 '了': 동작의 완료 및 실현)",
+      "shortExplanation": "동사 바로 뒤에 동태조사 '了'를 놓아 동작 자체의 완료나 실현을 나타냅니다. 이때 목적어 앞에는 보통 수량사나 수식어가 붙습니다.",
+      "longExplanation": "'동사 + 了 + 목적어'(le) 구조에서 동사 직후에 붙는 '了'는 동작의 완료나 실현을 나타내는 동태조사(상조사)입니다. 특정 행위가 이미 완수되었음을 강조하며, 뒤따르는 목적어 앞에는 일반적으로 수량사나 한정 수식어(예: 不少, 三本书, 很多)가 함께 쓰입니다(예: 我买了不少衣服 - 옷을 꽤 많이 샀습니다).",
+      "formation": "주어 + 동사 + 了 + 목적어 (보통 수량사·수식어를 동반함)",
+      "examples": [
+        {
+          "translation": "저는 옷을 꽤 많이 샀습니다."
+        }
+      ]
+    },
+    "zh_没VO_53": {
+      "title": "没(有) + 동사 + 목적어 (과거·완료의 부정: ~하지 않았다, 아직 ~하지 않았다)",
+      "shortExplanation": "동사 앞에 부정부사 '没' 또는 '没有'를 써서 과거에 동작이 일어나지 않았거나 아직 완료되지 않았음을 나타냅니다.",
+      "longExplanation": "'没(有) + 동사 + 목적어'(méi...)는 과거에 어떤 동작이 발생하지 않았거나 행위가 완결되지 않았음을 부정할 때 사용합니다(한국어의 '~하지 않았다', '아직 ~하지 않았다'). 매우 중요한 문법 규칙으로, 부정부사 '没(没有)'로 부정한 문장에서는 완료를 나타내는 조사 '了'를 함께 쓸 수 없습니다(예: '她没去商店了'는 비문이며, '她没去商店'가 바른 문장입니다).",
+      "formation": "주어 + 没(有) + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "그녀는 상점에 가지 않았습니다."
+        }
+      ]
+    },
+    "zh_TIME后_54": {
+      "title": "시점 + 后 (~ 이후, ~ 뒤에)",
+      "shortExplanation": "구체적인 시점 뒤에 방위사 '后'(또는 '以后')를 붙여 그 시점 이후의 시간을 나타냅니다(~ 이후, ~ 뒤).",
+      "longExplanation": "특정 시각, 요일, 날짜 등 기준이 되는 시점 뒤에 '后'(hòu) 또는 '以后'(yǐhòu)를 연결하여 '그 시점 이후', '그 시간 뒤'를 나타냅니다(예: 五点后 - 5시 이후). 문장의 맨 앞이나 주어 뒤에 놓여 시간상황어(부사어) 역할을 합니다.",
+      "formation": "시점(시간·날짜) ＋ 后 / 以后",
+      "examples": [
+        {
+          "translation": "5시 이후 (5시 뒤)"
+        }
+      ]
+    },
+    "zh_DURATION后_55": {
+      "title": "기간 + 后 (~ 뒤에, ~ 후에 - 시간 경과)",
+      "shortExplanation": "시간의 길이(시량) 뒤에 '后'(또는 '以后')를 붙여 일정한 시간이 지난 후의 시점을 나타냅니다(~ 지난 후, ~ 뒤에).",
+      "longExplanation": "시간의 길이(분, 시간, 일, 년 등 시량 표현) 뒤에 '后'(hòu)나 '以后'를 붙이면 '해당 기간이 경과한 뒤'(예: 四十分钟后 - 40분 뒤에, 两天后 - 이틀 후에)라는 뜻을 나타냅니다. 기준 시점으로부터 일정한 시간이 흐른 뒤 어떤 동작이 일어남을 표현할 때 쓰입니다.",
+      "formation": "기간(시량) ＋ 后 / 以后",
+      "examples": [
+        {
+          "translation": "40분 뒤에"
+        }
+      ]
+    },
+    "zh_啊_56": {
+      "title": "...啊 (감탄·동의·친근함의 어기조사: ~네!, ~지!, ~하자!)",
+      "shortExplanation": "문장 끝에 쓰여 감탄, 적극적인 동의, 친근한 확인이나 감정을 실어 전달하는 어기조사입니다.",
+      "longExplanation": "'啊'(a)는 중국어 구어에서 감정과 어기를 풍부하게 해 주는 대표적인 어기조사입니다. 문장 끝이나 단어 뒤에 붙어 감탄, 친근한 권유, 적극적인 호응이나 동의를 나타냅니다(예: 好啊 - 좋아!, 是啊 - 그래/맞아!). 앞 글자의 받침이나 모음 환경에 따라 발음이 'ya', 'wa', 'na' 등으로 자연스럽게 연음 변조되는 음운적 특징이 있습니다.",
+      "formation": "문장 / 단어 + 啊",
+      "examples": [
+        {
+          "translation": "좋아요! 맞아요!"
+        }
+      ]
+    },
+    "zh_都N_57": {
+      "title": "都 + 서술어 / 都 + 是 + 명사 (범위부사: 모두, 다)",
+      "shortExplanation": "복수 주어 뒤, 서술어(동사/형용사, 흔히 '是 + 명사') 앞에 위치하여 앞서 언급된 대상 전체를 아우르는 '모두', '다'를 나타내는 부사입니다.",
+      "longExplanation": "'都'(dōu)는 선행하는 복수나 전체 대상을 총괄하는 범위부사로, 한국어의 '모두', '다'에 해당합니다. 반드시 복수 주어(또는 전체를 가리키는 대상) 뒤에 오며, 서술어(동사, 형용사 또는 '是 + 명사')의 바로 앞에 위치합니다(예: 我们都是中国人 - 우리는 모두 중국인입니다). 영어처럼 문장 앞뒤로 자유롭게 이동하지 않고 동사나 형용사 앞자리에 고정됩니다.",
+      "formation": "주어(복수) + 都 + 是 + 명사 (또는 都 + 서술어)",
+      "examples": [
+        {
+          "translation": "우리는 모두 중국인입니다."
+        }
+      ]
+    },
+    "zh_S是MANNERV的_58": {
+      "title": "주어 + 是 + 방식·수단 + 동사 + 的 ('是……的' 강조 구문: 방식 및 수단의 강조)",
+      "shortExplanation": "이미 발생한 과거 동작에 대해 어떤 방식, 수단, 방법으로 이루어졌는지를 특정하여 부각시키는 '是……的' 강조 구문입니다.",
+      "longExplanation": "'是……的'(shì... de) 구문은 화자와 청자 모두 해당 동작이 과거에 이미 일어났음을 알고 있는 상황에서, 그 동작의 '방식(어떻게)', '시간(언제)', '장소(어디서)' 등을 초점화하여 강조할 때 쓰입니다. 강조하고자 하는 수단이나 방식 앞에 '是'를 두고 문장 끝에 '的'를 배치합니다(예: 我们是开车来的 - 우리는 차를 몰고[운전해서] 온 것입니다). 긍정문에서는 '是'를 생략하기도 하지만, 부정형은 반드시 '不是……的' 형태로 써야 합니다.",
+      "formation": "주어 + 是 + 방식·수단 + 동사 + 的",
+      "examples": [
+        {
+          "translation": "우리는 운전해서 왔습니다."
+        }
+      ]
+    },
+    "zh_年_59": {
+      "title": "숫자 + 年 (연도의 표현 및 읽는 법)",
+      "shortExplanation": "연도를 나타낼 때 연도 숫자를 자릿수 단위가 아닌 한 글자씩 차례대로 읽은 뒤 '年'(nián)을 붙입니다.",
+      "longExplanation": "중국어에서 서기 연도를 말할 때는 한국어처럼 '이천십칠 년'과 같이 단위로 묶어 읽지 않고, 각 자릿수의 숫자를 하나씩 낱개로 읽은 다음 끝에 '年'(nián)을 붙입니다(예: 2017년은 'èr líng yī qī nián / 二零一七年'으로 읽음). 숫자 '0'은 'líng(零)'으로 읽습니다. 연·월·일 표현에서 가장 큰 단위로서 항상 맨 앞에 놓입니다.",
+      "formation": "숫자(각 자릿수를 차례대로 읽음) ＋ 年",
+      "examples": [
+        {
+          "translation": "2017년"
+        }
+      ]
+    },
+    "zh_要_60": {
+      "title": "要 + 동사 (조동사: ~하려고 하다, ~할 것이다, ~하고 싶다)",
+      "shortExplanation": "동사 앞에 쓰여 주체의 강한 의지나 소망(~하려고 하다, ~하고 싶다), 또는 미래의 예정이나 계획(~할 것이다)을 나타내는 조동사입니다.",
+      "longExplanation": "조동사(능원동사) '要'(yào)는 동사 앞에 놓여 행위를 하려는 주체의 확고한 의지나 바람('~하려고 하다', '~하고 싶다')을 나타내며, 단순한 바람을 나타내는 '想'보다 실행 의지가 훨씬 강합니다. 또한 가까운 장래에 일어날 계획이나 예정('~할 것이다')을 표현하기도 합니다. '하고 싶지 않다'는 소망의 부정에는 보통 '不想'을 사용하며, '不要'는 금지('~하지 마라')의 뜻이 되므로 주의해야 합니다.",
+      "formation": "주어 + 要 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "왕팡은 영어를 배우려고 합니다."
+        }
+      ]
+    },
+    "zh_最_61": {
+      "title": "最 + 형용사 / 심리동사 (정도부사: 가장, 제일 - 최상급)",
+      "shortExplanation": "형용사나 심리 상태를 나타내는 동사 앞에 쓰여 비교 대상 가운데 정도가 으뜸임을 나타내는 최상급 부사입니다('가장', '제일').",
+      "longExplanation": "'最'(zuì)는 비교 범위 안에서 상태나 성질의 정도가 가장 높은 극한에 이르렀음을 나타내는 최상급 정도부사로, 한국어의 '가장', '제일'에 해당합니다. 형용사(예: 最漂亮 - 제일 예쁘다, 最好 - 가장 좋다) 또는 감정·심리동사(예: 最喜欢 - 가장 좋아하다)의 바로 앞에 놓여 이를 수식합니다.",
+      "formation": "주어 + 最 + 형용사 / 심리동사",
+      "examples": [
+        {
+          "translation": "그것의 눈이 가장 예쁩니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_在V呢_47": {
+      "title": "在 + 动词 (+ 呢)（表示动作正在进行）",
+      "shortExplanation": "副词“在”置于动词前（句尾常带语气助词“呢”），表示动作或行为正在进行，相当于“正在……”。",
+      "longExplanation": "“在 + 动词 (+ 呢)”（zài... ne）是汉语中表示动作进行状态的最基本句式。副词“在”（也可作“正在”或“正”）用在动词前，表示某一动作正在持续进行；句尾的语气助词“呢”起到加强持续与确认语气的作用，在口语中非常常用，“呢”可以省略。其否定形式为“没(有)在 + 动词”。",
+      "formation": "主语 + 在 + 动词 (+ 呢)",
+      "examples": [
+        {
+          "translation": "我正在睡觉。"
+        }
+      ]
+    },
+    "zh_没在V呢_48": {
+      "title": "没(有)在 + 动词 (+ 呢)（进行态的否定形式）",
+      "shortExplanation": "动作进行态的否定形式，在“在”前加否定副词“没”或“没有”，表示“没有在做某事”。",
+      "longExplanation": "“没(有)在 + 动词 (+ 呢)”（méi zài... ne）用于否定正在进行的动作或行为。表示动作进行状态的否定时，必须使用否定词“没”或“没有”，而不能用“不”（不能说“不在看电视”）。句尾带“呢”时常带有向对方说明、澄清情况的口吻。",
+      "formation": "主语 + 没(有)在 + 动词 (+ 呢)",
+      "examples": [
+        {
+          "translation": "他们没有在看电视。"
+        }
+      ]
+    },
+    "zh_1yo_49": {
+      "title": "1读作yāo（幺）（连续数码中数字“1”的读音）",
+      "shortExplanation": "在报读电话号码、门牌号、房间号等数码时，数字“1”通常读作“yāo”（幺），以避免与“7（qī）”混淆。",
+      "longExplanation": "在现代汉语中，按单字连续报读数码（如电话号码、手机号、房间号、公交路线、车牌号或航班号）时，数字“1”通常不读“yī”，而读作“yāo”（记作“幺”或阿拉伯数字“1”）。因为在远距离通话、广播或嘈杂环境中，“1（yī）”与“7（qī）”的韵母和发音极为接近，容易听错，改读为“yāo”能有效避免歧义与听觉混淆。",
+      "formation": "电话号码、房间号等数码中的“1” → 读作“yāo（幺）”",
+      "examples": [
+        {
+          "translation": "138-0156-7749（其中的“1”读作yāo）"
+        }
+      ]
+    },
+    "zh_V吧_50": {
+      "title": "动词 + 吧（语气助词：表示提议、催促、劝告或允许）",
+      "shortExplanation": "句尾语气助词“吧”用于祈使句，表示提议、请求、商量、劝告或客气的允许；语气委婉温和。",
+      "longExplanation": "“吧”（ba）是用在祈使句末尾的语气助词，用来表达提议、劝告、催促或友善的允许（如：走吧、坐吧、吃吧）。它能够缓和祈使句的生硬语气，使说话者的态度显得随和、温和与客气，充分尊重听话人。",
+      "formation": "动词（+ 宾语） + 吧",
+      "examples": [
+        {
+          "translation": "这儿没有人，坐吧。"
+        }
+      ]
+    },
+    "zh_VO了_51": {
+      "title": "动词 + 宾语 + 了（句尾语气助词：表示事态出现或变化）",
+      "shortExplanation": "语气助词“了”置于句末宾语之后，表示某事已经发生、情况出现了新的变化或动作已经实现。",
+      "longExplanation": "在“动词 + 宾语 + 了”（le）句式中，置于句尾的“了”是语气助词。它通常用来陈述一个事件已经发生或动作已经完成，向对方告知某一最新事实（如：他去学校了）；同时，句尾“了”也可以表示某种新情况的出现或状态的改变。否定句中动词前加“没(有)”，句尾的“了”须去掉。",
+      "formation": "主语 + 动词 + 宾语 + 了",
+      "examples": [
+        {
+          "translation": "他去学校了。"
+        }
+      ]
+    },
+    "zh_V了O_52": {
+      "title": "动词 + 了 + 宾语（动态助词：表示动作的完成或实现）",
+      "shortExplanation": "动态助词“了”紧跟在动词之后，表示动作已经完成或实现；后面的宾语通常带有数量词或修饰语。",
+      "longExplanation": "在“动词 + 了 + 宾语”（le）结构中，“了”是附着在动词后的动态助词，用来表示该动作本身已经实现或终结。当“了”位于动词与宾语之间时，宾语前面通常需要带有表示确定数量或特征的定语修饰成分（如数量短语、指示代词或形容词短语，如：不少衣服、两本书等）。",
+      "formation": "主语 + 动词 + 了 + 宾语（宾语前通常有数量词或定语）",
+      "examples": [
+        {
+          "translation": "我买了不少衣服。"
+        }
+      ]
+    },
+    "zh_没VO_53": {
+      "title": "没(有) + 动词 + 宾语（动作发生与完成的否定）",
+      "shortExplanation": "在动词前加否定副词“没”或“没有”，用以否定过去动作的发生或某种行为的完成；句中不能保留“了”。",
+      "longExplanation": "“没(有) + 动词 + 宾语”（méi...）用于否定过去已经发生的事实或某种行为动作的实现与完成，相当于“没有做某事”。核心语法规则：用“没”或“没有”对动词进行否定时，原肯定句中表示动作完成的动态助词“了”必须去掉，不能并用（如只能说“她没去商店”，不能说“她没去商店了”）。",
+      "formation": "主语 + 没(有) + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "她没去商店。"
+        }
+      ]
+    },
+    "zh_TIME后_54": {
+      "title": "时间点 + 后（表示在某一时刻之后）",
+      "shortExplanation": "在具体的时间点后加方位词“后”或“以后”，表示某一时间界限之后的时间；相当于“……之后/以后”。",
+      "longExplanation": "将方位词“后”（hòu）或“以后”置于具体的时间点（如钟点、日期、时刻等）之后，构成表示时间范围的介词或方位短语，指在某一特定时间点之后的时段（例如：五点后 = 五点以后）。在句中常充当时间状语，置于句首或主语之后。",
+      "formation": "时间点（钟点、日期） + 后 / 以后",
+      "examples": [
+        {
+          "translation": "五点之后（五点后）"
+        }
+      ]
+    },
+    "zh_DURATION后_55": {
+      "title": "时间段 + 后（表示经过某段时长之后）",
+      "shortExplanation": "在表示一段时间的词语（时量词）后加“后”或“以后”，表示在该时间段经过之后。",
+      "longExplanation": "将“后”（hòu）或“以后/之后”置于表示时段长短的时量词语之后，表示在经过了该长度的时间段后将要或已经发生某事（例如：四十分钟后、三天后、一年后）。与表示时刻的“时间点 + 后”不同，此处的前置成分为一段延续的时间长度。",
+      "formation": "时间段（时量） + 后 / 以后",
+      "examples": [
+        {
+          "translation": "四十分钟之后"
+        }
+      ]
+    },
+    "zh_啊_56": {
+      "title": "……啊（语气助词：表示感叹、肯定、赞同或亲近）",
+      "shortExplanation": "用于句尾或词尾的语气助词，用来表达赞同、感叹、催促、提醒或加重感情色彩。",
+      "longExplanation": "“啊”（a）是汉语口语中使用频率极高的语气助词。置于句末时，能使语气更加亲切、热情、生动，常用于表达热烈赞同（如：好啊、是啊）、赞美感叹、提醒或催促。在口语连续发音时，“啊”常受前一字字尾音素的影响而发生同化音变（如读作ya、wa、na等）。",
+      "formation": "句子 / 词语 + 啊",
+      "examples": [
+        {
+          "translation": "好啊。是啊。"
+        }
+      ]
+    },
+    "zh_都N_57": {
+      "title": "都 + 是 + 名词 / 都 + 谓语（范围副词：表示总括全部）",
+      "shortExplanation": "范围副词“都”置于主语后、谓语动词或“是”之前，总括前指的所有人或事物；相当于“全”、“皆”、“全部”。",
+      "longExplanation": "“都”（dōu）是汉语中表示总括范围的副词，用于指代前面提到的两个或两个以上的人或事物，概括所有个体均具备某种属性或做出某种动作（如：我们都是中国人）。在语序上，“都”必须放在被总括的复数名词或主语之后、谓语动词或形容词之前，不可置于句首。",
+      "formation": "主语（复数） + 都 + 是 + 名词（或 都 + 谓语）",
+      "examples": [
+        {
+          "translation": "我们都是中国人。"
+        }
+      ]
+    },
+    "zh_S是MANNERV的_58": {
+      "title": "主语 + 是 + 方式 + 动词 + 的（“是……的”强调句：强调方式）",
+      "shortExplanation": "“是……的”结构用于对已发生的动作进行方式、手段或途径的强调与确认。",
+      "longExplanation": "“是……的”（shì... de）句型是汉语中专门用于强调已知已发生的动作之细节特征的结构。当动作的发生已是不争的事实时，说话者通过在表示方式、工具、手段的状语前加“是”，句末加“的”，将全句的信息焦点集中在动作是如何进行的（例如：我们是开车来的）。在肯定句中“是”有时可省略，但在否定句中“不是……的”中的“是”必须保留。",
+      "formation": "主语 + 是 + 方式/方式状语 + 动词 + 的",
+      "examples": [
+        {
+          "translation": "我们是开车来的。"
+        }
+      ]
+    },
+    "zh_年_59": {
+      "title": "数词（逐位念读） + 年（年份的表达方式）",
+      "shortExplanation": "表达年份时，将年份中的数字依次逐位读出，末尾加上“年”（nián）。",
+      "longExplanation": "在汉语中表达公历年份时，不按千、百、十等数位进位朗读，而是将年份中的每一个阿拉伯数字按个位数由左至右逐字念出，最后附上“年”（nián）。例如：2017年读作“二零一七年”（èr líng yī qī nián）。其中的数字“0”读作“líng（零）”。在表达年、月、日等综合时间概念时，年份作为最大的时间单位排在最前。",
+      "formation": "数词（逐位念读） + 年",
+      "examples": [
+        {
+          "translation": "二零一七年"
+        }
+      ]
+    },
+    "zh_要_60": {
+      "title": "要 + 动词（能愿动词：表示意愿或将要发生）",
+      "shortExplanation": "能愿动词“要”用于动词前，表示主体做某事的强烈主观意愿（想要/打算），或表示动作计划在将来发生（将要）。",
+      "longExplanation": "“要”（yào）置于动词前作状语，具有两种主要语法功能：一是表示主体的意愿、打算与决心（相当于“想”、“打算”，但决心与实施意味比“想”更强，如：王芳要学英语）；二是表示动作在不久后将要发生或计划进行（相当于“将要”）。在表达意愿的否定时，通常用“不想”；若用“不要”则多表示制止、劝阻或禁止（相当于“别”）。",
+      "formation": "主语 + 要 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "王芳要学英语。"
+        }
+      ]
+    },
+    "zh_最_61": {
+      "title": "最 + 形容词 / 心理动词（程度副词：表示最高程度/最……）",
+      "shortExplanation": "程度副词“最”置于形容词或心理动词之前，表示在同类比较中程度达到最高等级或位列第一；相当于“最……”。",
+      "longExplanation": "“最”（zuì）是表示最高级比较的程度副词，用于在某一比较范围内指出事物性质、状态或感情倾向达到最高顶点。通常直接修饰性质形容词（如：最漂亮、最高、最好）或表示心理情感活动的动词（如：最喜欢、最想、最爱）。在句子中作状语。",
+      "formation": "主语 + 最 + 形容词 / 心理动词",
+      "examples": [
+        {
+          "translation": "它的眼睛最漂亮。"
+        }
+      ]
+    }
+  }
+}

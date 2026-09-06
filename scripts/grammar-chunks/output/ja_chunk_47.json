@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Noun_107": {
+      "title": "Danh từ + を経て (wo hete)",
+      "shortExplanation": "Diễn tả ý nghĩa 'trải qua', 'kinh qua' (một quá trình, giai đoạn, thời gian) hoặc 'quá cảnh / đi qua' (một địa điểm, không gian).",
+      "longExplanation": "Mẫu ngữ pháp '～を経て' (chữ Hán: 経て - kinh qua) dùng để diễn tả việc trải qua một quá trình, giai đoạn, thời gian gian khổ hoặc quá cảnh qua một địa điểm cụ thể để đạt được kết quả hoặc đi đến một trạng thái nào đó. Mẫu này có thể dịch là 'trải qua...', 'sau khi kinh qua...', hoặc 'quá cảnh qua...', dùng được cho cả nghĩa đen lẫn nghĩa bóng trong văn phong trang trọng.",
+      "formation": "Danh từ + を経て",
+      "examples": [
+        {
+          "translation": "Anh ấy đã đạt được thành công sau khi trải qua nhiều gian khổ."
+        },
+        {
+          "translation": "Cô ấy đã trở về Nhật Bản sau khi quá cảnh qua New York."
+        },
+        {
+          "translation": "Chúng tôi đã đưa ra quyết định sau một quá trình thảo luận kéo dài."
+        },
+        {
+          "translation": "Trải qua nhiều khóa tu luyện rèn luyện, anh ấy đã đạt đến trình độ bậc thầy."
+        }
+      ]
+    },
+    "ja_Noun_108": {
+      "title": "Danh từ + を踏まえて (wo fumaete)",
+      "shortExplanation": "Biểu thị ý nghĩa 'dựa trên...', 'căn cứ vào...', 'xem xét đến...'; lấy điều gì đó làm cơ sở, tiền đề để suy nghĩ, phán đoán hoặc hành động.",
+      "longExplanation": "Mẫu ngữ pháp '～を踏まえて' (bắt nguồn từ động từ 踏まえる - dẫm lên, dựa trên) dùng để diễn tả việc lấy một thực tế, kết quả trong quá khứ, ý kiến hoặc bối cảnh nào đó làm nền tảng, căn cứ để đưa ra quyết định, kế hoạch hay hành động tiếp theo ('dựa trên...', 'trên cơ sở...', 'sau khi đã cân nhắc...'). Đây là cách diễn đạt mang tính trang trọng, logic, thường dùng trong công việc, học thuật và báo cáo.",
+      "formation": "Danh từ + を踏まえて",
+      "examples": [
+        {
+          "translation": "Dựa trên những kết quả trong quá khứ, chúng tôi đã lập ra một kế hoạch mới."
+        },
+        {
+          "translation": "Tôi sẽ chuẩn bị bài thuyết trình trên cơ sở xem xét đến văn hóa bản địa."
+        },
+        {
+          "translation": "Căn cứ vào ý kiến của các giáo viên, chúng tôi đã thay đổi quy định."
+        },
+        {
+          "translation": "Dựa trên kết quả nghiên cứu mới nhất, một loại thuốc mới đã được nghiên cứu và phát triển."
+        }
+      ]
+    },
+    "ja_Noun_109": {
+      "title": "Danh từ + を限りに (wo kagiri ni)",
+      "shortExplanation": "Diễn tả ý nghĩa 'kể từ...', 'hết (mốc thời gian này)...', 'lấy mốc... làm điểm kết thúc'; biểu thị sự kết thúc hoặc chấm dứt của một trạng thái, hành động.",
+      "longExplanation": "Mẫu ngữ pháp '～を限りに' đi sau một danh từ chỉ thời gian (như hôm nay, tháng này, năm học này...) để tuyên bố rằng kể từ thời điểm đó, một thói quen, công việc hay trạng thái đang tiếp diễn sẽ chính thức kết thúc ('kể từ hết hôm nay...', 'hết lần này là dừng...', 'lấy mốc... làm lần cuối cùng'). Thường mang sắc thái dứt khoát hoặc trịnh trọng trong các thông báo, quyết định quan trọng.",
+      "formation": "Danh từ (chỉ thời gian) + を限りに",
+      "examples": [
+        {
+          "translation": "Tôi dự định sẽ kết thúc hoạt động giảng dạy tại trường đại học này kể từ hết năm học này."
+        },
+        {
+          "translation": "Kể từ ngày hôm nay, tôi sẽ bỏ hẳn việc hút thuốc lá."
+        },
+        {
+          "translation": "Tôi sẽ thôi việc tại công ty kể từ ngày 31 tháng 3."
+        },
+        {
+          "translation": "Chương trình truyền hình này sẽ kết thúc phát sóng kể từ tuần sau."
+        }
+      ]
+    },
+    "ja_Noun_110": {
+      "title": "Danh từ + 並み (nami)",
+      "shortExplanation": "Biểu thị mức độ ngang bằng, tương đương với một tiêu chuẩn hoặc đối tượng nào đó; 'ngang tầm...', 'như...', 'tương đương với...'.",
+      "longExplanation": "Mẫu ngữ pháp '～並み' (chữ Hán: 並み - ngang hàng, ngang tầm) đi liền sau một danh từ, mang ý nghĩa trình độ, mức độ, tình trạng hoặc quy mô đạt đến mức tương đương hoặc ngang bằng với đối tượng được so sánh ('ngang hàng với...', 'tầm cỡ như...', 'không thua kém gì...'). Thường dùng trong các cách nói quen thuộc như プロ並み (ngang tầm chuyên nghiệp), 人並み (như người bình thường).",
+      "formation": "Danh từ + 並み (+ の + Danh từ / + だ / + に)",
+      "examples": [
+        {
+          "translation": "Anh ấy sở hữu sức mạnh ngang tầm một võ sĩ quyền anh chuyên nghiệp."
+        },
+        {
+          "translation": "Tay nghề nấu ăn của cô ấy sánh ngang với nhà hàng ẩm thực."
+        },
+        {
+          "translation": "Mùa hè ở khu vực này nóng nực chẳng khác nào sa mạc."
+        },
+        {
+          "translation": "Công việc ngày hôm nay của tôi bận rộn chẳng khác gì một vị giám đốc."
+        }
+      ]
+    },
+    "ja_Noun_111": {
+      "title": "Danh từ / Động từ thể thông thường + 前提で (zentei de)",
+      "shortExplanation": "Biểu thị việc lấy một điều kiện, giả định làm tiền đề để tiến hành hành động; 'với tiền đề là...', 'với điều kiện là...', 'dựa trên giả định là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～前提で' (tiền đề: 前提) diễn tả việc hành động, kế hoạch ở vế sau được thực hiện dựa trên cơ sở ngầm hiểu hoặc điều kiện tiên quyết đã được định sẵn ở vế trước ('với tiền đề là...', 'trên cơ sở giả định là...'). Thường đi với danh từ hoặc mệnh đề bổ nghĩa cho 前提 (ví dụ: 結婚前提で - với tiền đề là tiến tới hôn nhân; 成功する前提で - với tiền đề là sẽ thành công).",
+      "formation": "Danh từ + 前提で | Động từ thể thông thường + 前提で",
+      "examples": [
+        {
+          "translation": "Hãy nhận công việc này với tiền đề là bạn có đủ năng lực tiếng Anh để giải thích."
+        },
+        {
+          "translation": "Tôi đã lên kế hoạch cho chuyến du lịch dựa trên tiền đề là anh ấy sẽ cùng đi."
+        },
+        {
+          "translation": "Chúng tôi đang xúc tiến dự án này với tiền đề là chắc chắn sẽ thành công."
+        },
+        {
+          "translation": "Tôi đã chuẩn bị cho buổi dã ngoại với tiền đề là trời sẽ không mưa."
+        }
+      ]
+    },
+    "ja_Verbる_112": {
+      "title": "Động từ thể từ điển / Danh từ (である) + 限り(は) (kagiri (wa))",
+      "shortExplanation": "Diễn tả ý nghĩa 'chừng nào mà còn...', 'miễn là...', 'trong giới hạn điều kiện đó còn tiếp diễn'.",
+      "longExplanation": "Mẫu ngữ pháp '～限り(は)' dùng để chỉ một giới hạn hoặc điều kiện: chừng nào trạng thái hay điều kiện ở vế trước còn tiếp diễn, thì trạng thái hoặc hành động ở vế sau vẫn sẽ luôn đúng và được duy trì ('chừng nào mà...', 'miễn là...'). Đi với động từ thể từ điển / thể ている, tính từ hoặc danh từ + である.",
+      "formation": "Động từ thể từ điển / thể ている + 限り(は) | Danh từ + である限り(は) | Tính từ đuôi い + 限り(は) | Tính từ đuôi な + である / な限り(は)",
+      "examples": [
+        {
+          "translation": "Chừng nào tôi còn sống, tôi sẽ luôn nâng đỡ và ủng hộ bạn."
+        },
+        {
+          "translation": "Chừng nào bọn trẻ còn đến trường học, chúng tôi sẽ luôn bảo vệ chúng."
+        },
+        {
+          "translation": "Miễn là còn khả năng, tôi sẽ dốc hết sức mình."
+        },
+        {
+          "translation": "Chừng nào bạn còn ở đây thì tôi vẫn luôn cảm thấy an tâm."
+        }
+      ]
+    },
+    "ja_Verb_113": {
+      "title": "Động từ thể ます (bỏ ます) / Danh từ + がてら (gatera)",
+      "shortExplanation": "Diễn tả việc nhân tiện thực hiện một hành động chính thì tiện thể làm thêm một việc khác; 'tiện thể...', 'nhân tiện...'.",
+      "longExplanation": "Mẫu ngữ pháp '～がてら' (chữ Hán: 徒ら) dùng khi người nói thực hiện một hành động chính (thường gắn với sự di chuyển như đi dạo, mua sắm) và nhân tiện việc đó kết hợp làm thêm một hành động khác có cùng hướng đi hoặc tiện công ('tiện thể...', 'nhân tiện làm việc A thì làm luôn việc B'). Khác với ついでに, がてら nhấn mạnh việc một hành động chính bao hàm luôn hành động phụ trên cùng lộ trình.",
+      "formation": "Động từ thể ます (bỏ ます) + がてら(に) | Danh từ + がてら(に)",
+      "examples": [
+        {
+          "translation": "Tôi đã đi đến bưu điện tiện thể lúc đi dạo."
+        },
+        {
+          "translation": "Tôi đã tiện thể ghé thăm bạn bè trong lúc đi mua sắm."
+        },
+        {
+          "translation": "Tôi tiện thể đi mua tờ báo trong lúc chạy bộ buổi sáng."
+        },
+        {
+          "translation": "Tôi đã đọc sách tiện thể trong lúc đi dã ngoại ở công viên."
+        }
+      ]
+    },
+    "ja_Verb_114": {
+      "title": "Động từ thể ます (bỏ ます) / Danh từ + こそすれ (koso sure)",
+      "shortExplanation": "Diễn tả ý nghĩa 'chỉ có làm A chứ tuyệt đối không bao giờ làm B'; vế trước thừa nhận A nhưng vế sau phủ định hoàn toàn B.",
+      "longExplanation": "Mẫu ngữ pháp '～こそすれ' (kết hợp giữa trợ từ nhấn mạnh こそ và thể lửng của する là すれ) thường xuất hiện trong cấu trúc 'Aこそすれ、Bはない/しない', dùng để khẳng định mạnh mẽ rằng hành động hay trạng thái A thì có thể có, nhưng hành động hay tình trạng tiêu cực B thì tuyệt đối không bao giờ xảy ra ('chỉ có... chứ tuyệt đối không...', 'dù có làm A thì quyết không làm B').",
+      "formation": "Động từ thể ます (bỏ ます) + こそすれ | Danh từ + こそすれ",
+      "examples": [
+        {
+          "translation": "Anh ấy chỉ có giúp đỡ bạn bè chứ tuyệt đối không bao giờ tự hạ thấp bản thân."
+        },
+        {
+          "translation": "Cô ấy chỉ có nấu nướng thôi chứ việc dọn dẹp nhà cửa thì hầu như chẳng bao giờ làm."
+        },
+        {
+          "translation": "Anh trai tôi chỉ có cắm đầu học hành chứ hầu như chẳng có thời gian để vui chơi."
+        },
+        {
+          "translation": "Mẹ tôi chỉ có làm việc quần quật chứ hầu như chẳng bao giờ dành thời gian cho riêng mình."
+        }
+      ]
+    },
+    "ja_Verb_115": {
+      "title": "Động từ thể bị động sai khiến (saserareru / sareru)",
+      "shortExplanation": "Biểu thị việc 'bị bắt buộc phải làm...', 'bị ép làm...' một hành động nào đó trái với ý muốn bản thân.",
+      "longExplanation": "Mẫu ngữ pháp '～させられる / ～される' là thể bị động sai khiến (使役受身形) trong tiếng Nhật, được dùng khi người nói hoặc chủ ngữ bị một đối tượng khác ép buộc, sai bảo làm một việc gì đó mà bản thân không muốn hoặc cảm thấy miễn cưỡng, khó chịu ('bị bắt phải...', 'bị ép...'). Động từ nhóm 1 thường có dạng rút gọn là '～される' (trừ đuôi す), nhóm 2 là '～させられる', nhóm 3 là 'させられる / こさせられる'.",
+      "formation": "Động từ nhóm 1: chuyển đuôi sang cột [a] + される (hoặc させられる) | Động từ nhóm 2: bỏ る + させられる | Động từ nhóm 3: する → させられる, くる → こさせられる",
+      "examples": [
+        {
+          "translation": "Tôi đã bị anh ta ép uống rượu một cách cưỡng ép."
+        },
+        {
+          "translation": "Tôi đã bị bố bắt phải học bài."
+        },
+        {
+          "translation": "Bọn trẻ ngày nào cũng bị bắt phải tập đàn piano."
+        },
+        {
+          "translation": "Chúng tôi đã bị bắt buộc phải thức dậy sớm một cách cưỡng chế."
+        }
+      ]
+    },
+    "ja_Verb_116": {
+      "title": "Động từ thể ない (bỏ ない) + ざるを得ない (zaru wo enai)",
+      "shortExplanation": "Diễn tả tình huống không muốn nhưng buộc phải làm một việc gì đó; 'đành phải...', 'buộc phải...', 'không thể không...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ざるを得ない' (chữ Hán: ざるを得ない - không thể không làm) dùng để diễn tả rằng dù chủ ngữ không thực sự mong muốn, nhưng do hoàn cảnh, quy định hoặc áp lực khách quan chi phối nên không còn sự lựa chọn nào khác ngoài việc phải làm hành động đó ('buộc phải...', 'đành phải...', 'không thể không...'). Động từ chia ở thể ない bỏ ない, riêng する chuyển thành せざるを得ない.",
+      "formation": "Động từ thể ない (bỏ ない) + ざるを得ない (Đặc biệt: する → せざるを得ない)",
+      "examples": [
+        {
+          "translation": "Nếu đã ghét công việc này đến mức đó thì chỉ còn nước đành phải nghỉ việc thôi."
+        },
+        {
+          "translation": "Kỳ thi đã đến gần rồi nên tôi đành phải học bài tới tận đêm khuya."
+        },
+        {
+          "translation": "Nước mắt cứ tuôn trào không ngừng. Tôi không thể nào kìm lại được mà phải bật khóc."
+        },
+        {
+          "translation": "Vì là mệnh lệnh của thầy giáo nên tôi buộc phải tuân theo."
+        }
+      ]
+    },
+    "ja_Verb_117": {
+      "title": "Động từ thể ない (bỏ ない) + ずじまい (zu jimai)",
+      "shortExplanation": "Diễn tả sự tiếc nuối khi rốt cuộc đã không thể làm được một việc gì đó dù đã có ý định hoặc cơ hội; 'rốt cuộc không kịp...', 'kết cục chẳng làm được...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ずじまい' (kết hợp giữa dạng phủ định cổ ず và じまい/仕舞い - kết thúc) dùng để diễn tả rằng một dự định, mong muốn hoặc cơ hội rốt cuộc đã kết thúc mà không thực hiện được, để lại nhiều tiếc nuối cho người nói ('kết cục là không...', 'rốt cuộc chẳng thể làm được gì mà đã kết thúc'). Thường đi với ～ずじまいで / ～ずじまいだった.",
+      "formation": "Động từ thể ない (bỏ ない) + ずじまい (Đặc biệt: する → せずじまい)",
+      "examples": [
+        {
+          "translation": "Đã cất công đến Nhật Bản vậy mà tôi đã về nước mà rốt cuộc chẳng ngắm được núi Phú Sĩ lấy một lần."
+        },
+        {
+          "translation": "Vì phải đi công tác nên kết cục là tôi đã chẳng thể gặp được cô ấy."
+        },
+        {
+          "translation": "Hôm qua vì quá mệt mỏi nên rốt cuộc tôi đã không làm xong bài tập về nhà."
+        },
+        {
+          "translation": "Tôi đã mua bộ kimono nhưng rốt cuộc chẳng mặc lấy một lần nào cả."
+        }
+      ]
+    },
+    "ja_Verb_118": {
+      "title": "Động từ thể ない (bỏ ない) + ずとも / ない → なくとも (zu tomo / nakutomo)",
+      "shortExplanation": "Diễn tả ý nghĩa 'dù không làm... thì vẫn...', 'dù không có... thì vẫn ổn'; hành động hay điều kiện ở vế trước dù không thực hiện cũng không ảnh hưởng đến kết quả phía sau.",
+      "longExplanation": "Mẫu ngữ pháp '～ずとも' (tương đương với ～なくても trong văn nói) là một cách diễn đạt trang trọng mang tính văn viết, biểu thị rằng ngay cả khi không thực hiện một hành động nào đó hoặc trong tình trạng không có điều kiện đó, thì mục tiêu hay kết quả ở vế sau vẫn có thể đạt được bình thường ('dù không... thì vẫn...', 'ngay cả khi không cần... thì cũng...'). Động từ nối ở thể ない bỏ ない + ずとも (riêng ない trở thành なくとも, する → せずとも).",
+      "formation": "Động từ thể ない (bỏ ない) + ずとも (Đặc biệt: する → せずとも) | ない → なくとも",
+      "examples": [
+        {
+          "translation": "Dù không ăn bữa sáng thì tôi vẫn có thể làm việc bình thường."
+        },
+        {
+          "translation": "Dù không có ô tô thì bạn vẫn có thể đi đến đó bằng xe buýt."
+        },
+        {
+          "translation": "Ngay cả khi không có nhiều tiền, người ta vẫn có thể sống hạnh phúc."
+        },
+        {
+          "translation": "Dù không có Internet thì vẫn có một vài phương thức để thu thập thông tin."
+        }
+      ]
+    },
+    "ja_Verb_119": {
+      "title": "Động từ thể ない (bỏ ない) + ずにはおかない (zuni wa okanai)",
+      "shortExplanation": "Diễn tả quyết tâm mạnh mẽ hoặc cảm xúc không thể kìm nén; 'nhất định sẽ...', 'chắc chắn phải...', 'không thể nào không làm...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ずにはおかない' (chữ Hán: 置かない - không bỏ mặc, không để yên) dùng để biểu thị: (1) Ý chí hoặc quyết tâm sắt đá của người nói là nhất định phải thực hiện hành động đó, tuyệt đối không thể bỏ qua hay để yên được ('nhất định sẽ...', 'quyết không thể tha/bỏ qua mà không làm...'); (2) Một sự việc hay tác nhân ngoại cảnh tất yếu sẽ gây ra cảm xúc hoặc tác động mạnh mẽ lên người khác ('chắc chắn sẽ làm cho ai đó phải...'). Động từ chia ở thể ない bỏ ない, riêng する chuyển thành せずにはおかない.",
+      "formation": "Động từ thể ない (bỏ ない) + ずにはおかない (Đặc biệt: する → せずにはおかない)",
+      "examples": [
+        {
+          "translation": "Nếu nghe tin anh ấy gặp khó khăn, tôi nhất định sẽ ra tay giúp đỡ chứ tuyệt đối không thể làm ngơ."
+        },
+        {
+          "translation": "Nếu việc chuẩn bị bữa ăn cứ dở dang thế này, có lẽ tôi sẽ chẳng thể ngồi yên mà không vào giúp."
+        },
+        {
+          "translation": "Nếu vấn đề này chưa được giải quyết, tôi nhất định sẽ phải nghĩ ra phương án cải thiện."
+        },
+        {
+          "translation": "Khi nhìn thấy cô ấy đang khóc, tôi không thể nào kìm lòng được mà phải chạy lại an ủi."
+        }
+      ]
+    },
+    "ja_Verb_120": {
+      "title": "Động từ thể ない (bỏ ない) + ずにはすまない (zuni wa sumanai)",
+      "shortExplanation": "Diễn tả việc chiếu theo chuẩn mực đạo đức, trách nhiệm xã hội hoặc tình thế thì bắt buộc phải làm, 'không thể không làm...', 'không làm thì không yên chuyện'.",
+      "longExplanation": "Mẫu ngữ pháp '～ずにはすまない' (chữ Hán: 済まない - không xong, không giải quyết êm đẹp được) dùng khi người nói ý thức rằng dựa trên quy tắc xã hội, đạo lý làm người hoặc trách nhiệm cá nhân, nếu không thực hiện hành động đó thì lương tâm không cho phép hoặc tình hình sẽ không thể êm xuôi được ('không thể không...', 'bắt buộc phải làm, không làm là không được'). Động từ chia ở thể ない bỏ ない, riêng する chuyển thành せずにはすまない.",
+      "formation": "Động từ thể ない (bỏ ない) + ずにはすまない (Đặc biệt: する → せずにはすまない)",
+      "examples": [
+        {
+          "translation": "Nếu không giải quyết vấn đề này thì toàn bộ xã hội sẽ phải gánh chịu ảnh hưởng, vì vậy ta không thể không giải quyết dứt điểm."
+        },
+        {
+          "translation": "Nghĩ về tương lai của các thế hệ trẻ thơ, đây là công cuộc cải cách giáo dục mà ta buộc phải xúc tiến thực hiện."
+        },
+        {
+          "translation": "Về sự việc lần này, tôi không thể nào không nói lời xin lỗi anh ấy được."
+        },
+        {
+          "translation": "Nếu đã đi dự lễ cưới thì không thể nào không gửi tặng món quà chúc mừng."
+        }
+      ]
+    },
+    "ja_Verb_121": {
+      "title": "Động từ thể ます (bỏ ます) + そうにない (sou ni nai)",
+      "shortExplanation": "Diễn tả phán đoán rằng một sự việc hầu như không có khả năng xảy ra; 'khó lòng mà...', 'không có vẻ gì là sẽ...', 'chắc không thể...'.",
+      "longExplanation": "Mẫu ngữ pháp '～そうにない' (dạng phủ định của trợ động từ phán đoán そうだ) gắn vào thân động từ thể ます, dùng để diễn tả nhận định, quan sát mang tính phán đoán của người nói rằng một hành động hay sự việc rất khó hoặc gần như không có khả năng xảy ra ('chắc là khó mà...', 'không có vẻ gì là sẽ...', 'khó lòng...'). Biến thể trang trọng hoặc nhấn mạnh hơn là '～そうにもない' hoặc '～そうもない'.",
+      "formation": "Động từ thể ます (bỏ ます) + そうにない (hoặc そうにもない / そうもない)",
+      "examples": [
+        {
+          "translation": "Anh ấy trông không có vẻ gì là có thể chạy nhanh đến mức như thế."
+        },
+        {
+          "translation": "Chỗ hồ sơ tài liệu này tôi khó lòng mà hoàn thành xong trước ngày mai."
+        },
+        {
+          "translation": "Hôm nay trời có vẻ sẽ không mưa đâu."
+        },
+        {
+          "translation": "Cô ấy trông không có vẻ gì là sẽ mắc phải sai sót."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Noun_107": {
+      "title": "名词 + を経て (wo hete)",
+      "shortExplanation": "表示“经历、经过”（某种阶段、过程、时间）或“途经、经由”（某个地点）。",
+      "longExplanation": "句型“～を経て”（汉字写作“経て”）用于表示经历漫长或曲折的过程、阶段、时间，最终达到某种结果或状态；也可表示空间上的“途经、经由某地”。常译为“经过……”、“经历……”、“经由……”。多用于书面语或郑重表达。",
+      "formation": "名词 + を経て",
+      "examples": [
+        {
+          "translation": "他历经千辛万苦，终于收获了成功。"
+        },
+        {
+          "translation": "她途经纽约回到了日本。"
+        },
+        {
+          "translation": "我们经过长期的深入讨论作出了决定。"
+        },
+        {
+          "translation": "经过无数次的刻苦磨炼，他达到了宗师级的水平。"
+        }
+      ]
+    },
+    "ja_Noun_108": {
+      "title": "名词 + を踏まえて (wo fumaete)",
+      "shortExplanation": "表示“根据……”、“基于……”、“考虑到……”；以某事物为依据、立足点来进行判断或采取行动。",
+      "longExplanation": "句型“～を踏まえて”（动词为“踏まえる”，本义为踩实、以……为立足点）表示以某种经验、过往结果、意见或现状等作为前提和依据，在此基础上进行思考、决策或采取后续行动。常译为“根据……”、“基于……”、“考虑到……”。多用于商务、学术及正式公文等郑重场合。",
+      "formation": "名词 + を踏まえて",
+      "examples": [
+        {
+          "translation": "根据过去的结果，我们制定了全新的规划。"
+        },
+        {
+          "translation": "充分考虑到当地的文化背景，我正在准备演示汇报。"
+        },
+        {
+          "translation": "参考汲取教师们的意见，我们对规章制度进行了修改。"
+        },
+        {
+          "translation": "基于最新的科研成果，研发出了一种新药。"
+        }
+      ]
+    },
+    "ja_Noun_109": {
+      "title": "名词 + を限りに (wo kagiri ni)",
+      "shortExplanation": "表示“以……为界”、“截至……”、“从……起结束”；指出某事以此时间点为最后期限而宣告终结。",
+      "longExplanation": "句型“～を限りに”接在表示时间的名词之后（如今日、本次、今年度等），表示一直持续至今的事情或状态以该时间点为界限而正式终结或发生改变。常译为“截至……”、“以……为最后期限”、“从……起结束”。语气决绝或郑重，常用于发表告别宣言、宣布离职、戒烟或节目停播等场合。",
+      "formation": "名词（时间名词） + を限りに",
+      "examples": [
+        {
+          "translation": "我打算以本学年为界，正式结束在这所大学的教学生涯。"
+        },
+        {
+          "translation": "从今天起，我彻底戒烟了。"
+        },
+        {
+          "translation": "截至3月31日，我将从公司正式离职。"
+        },
+        {
+          "translation": "本节目将于下周正式完结停播。"
+        }
+      ]
+    },
+    "ja_Noun_110": {
+      "title": "名词 + 並み (nami)",
+      "shortExplanation": "表示程度、水平或状态与某事物相当；“与……相当”、“匹敌……”、“像……一样”。",
+      "longExplanation": "句型“～並み”（汉字写作“並み”，表示同等、并列之意）接在名词后，表示某人某物的水平、状态、程度达到了与该名词相同的标准或水平。常译为“与……相当”、“赶得上……”、“不亚于……”。常见搭配如“プロ並み（堪比专业人士）”、“人並み（像常人一样）”等。",
+      "formation": "名词 + 並み（+ の + 名词 / + だ / + に）",
+      "examples": [
+        {
+          "translation": "他拥有堪比职业拳击手的强大力量。"
+        },
+        {
+          "translation": "她的厨艺水平堪比高级餐厅的大厨。"
+        },
+        {
+          "translation": "这个地区夏天的炎热程度宛如沙漠一般。"
+        },
+        {
+          "translation": "今天手头的工作繁重忙碌得堪比大公司社长。"
+        }
+      ]
+    },
+    "ja_Noun_111": {
+      "title": "名词 / 动词普通形 + 前提で (zentei de)",
+      "shortExplanation": "表示以某种条件、假定为前提来进行后续的行动；“以……为前提”、“在……的前提下”。",
+      "longExplanation": "句型“～前提で”用于说明后项的行为或计划是建立在某项既定的假定、条件或预期之上的。常译为“以……为前提”、“在假设……的条件下”。前面的成分可以是名词（如“結婚前提で”），也可以是修饰前提的动词连体形短语。",
+      "formation": "名词 + 前提で | 动词普通形 + 前提で",
+      "examples": [
+        {
+          "translation": "请在具备能够清晰阐述的英语能力这一前提下，承接这份工作。"
+        },
+        {
+          "translation": "以他会一同前往为前提，我制定了旅行计划。"
+        },
+        {
+          "translation": "我们正以必定能够成功为前提，全力推进这个项目。"
+        },
+        {
+          "translation": "在默认绝对不会下雨的前提下，我做好了野餐的各项准备。"
+        }
+      ]
+    },
+    "ja_Verbる_112": {
+      "title": "动词辞书形 / 名词(である) + 限り(は) (kagiri (wa))",
+      "shortExplanation": "表示“只要……就……”、“在……的期间内一直”；只要某种状态或条件持续，后项就会一直保持。",
+      "longExplanation": "句型“～限り（は）”表示只要前项所限定的范围、状态或条件持续存在，后项的情况就一直成立并持续。常译为“只要……就……”、“在……范围内”。接动词连体形（辞书形、ている形等）、形容词连体形或“名词＋である”。",
+      "formation": "动词辞书形／ている形 + 限り(は) | 名词 + である限り(は) | 一类形容词 + 限り(は) | 二类形容词 + である／な限り(は)",
+      "examples": [
+        {
+          "translation": "只要我还活在世上一天，就一定会支持守护你。"
+        },
+        {
+          "translation": "只要孩子们还在学校上学，我们就会竭力保护他们。"
+        },
+        {
+          "translation": "只要能力所及，我定当竭尽全力。"
+        },
+        {
+          "translation": "只要你留在这里，我心中便十分安心。"
+        }
+      ]
+    },
+    "ja_Verb_113": {
+      "title": "动词连用形（去ます） / 名词 + がてら (gatera)",
+      "shortExplanation": "表示借做某主要行动之便，顺便做另一件事；“顺便……”、“借……之便”。",
+      "longExplanation": "句型“～がてら”接在具有移动性质的动词连用形（ます形去掉ます）或动作性名词后，表示在进行该项主要活动的同时，顺带借机完成另一项行动。常译为“顺便……”、“借……之便”。与“～ついでに”相比，“～がてら”更强调两件事在同一移动或行动过程中兼顾进行。",
+      "formation": "动词连用形（去掉ます） + がてら（に） | 名词 + がてら（に）",
+      "examples": [
+        {
+          "translation": "散步的时候，顺便去了趟邮局办点事。"
+        },
+        {
+          "translation": "外出购物的时候，顺便去探望了朋友。"
+        },
+        {
+          "translation": "晨跑的时候，顺道去买了份报纸。"
+        },
+        {
+          "translation": "在公园野餐的同时，顺便静心阅读了书籍。"
+        }
+      ]
+    },
+    "ja_Verb_114": {
+      "title": "动词连用形（去ます） / 名词 + こそすれ (koso sure)",
+      "shortExplanation": "常用于“Aこそすれ、B～ない”结构，表示“只会做A，绝不会做B”；肯定前项而彻底否定后项。",
+      "longExplanation": "句型“～こそすれ”由强调助词“こそ”与“する”的已然形“すれ”构成，通常以“Aこそすれ、B～ない”的形式出现。用于强烈断言：某人某事或许会发生A，但绝不可能发生相反或极端的B（“虽说……但决不会……”、“只会……绝不……”）。后项必定接否定表达。",
+      "formation": "动词连用形（去掉ます） + こそすれ | 名词 + こそすれ",
+      "examples": [
+        {
+          "translation": "他只会尽心帮助朋友，绝不会妄自菲薄贬低自己。"
+        },
+        {
+          "translation": "她虽说偶尔会做做饭，但搞卫生清洁却几乎从不沾手。"
+        },
+        {
+          "translation": "我哥哥只顾着埋头苦读，几乎完全没有休息玩耍的时间。"
+        },
+        {
+          "translation": "母亲只是一味拼命操劳工作，几乎从不把时间花在自己身上。"
+        }
+      ]
+    },
+    "ja_Verb_115": {
+      "title": "动词使役被动形 (saserareru / sareru)",
+      "shortExplanation": "表示“被迫做……”、“被要求做……”；主语在违背自身意愿的情况下被迫进行某动作。",
+      "longExplanation": "句型“～させられる／～される”是日语中的使役被动形式（使役受身形），表示说话人或主语受他人强迫、指使或由于客观环境所迫，不得不进行某项自己本不情愿做的事情。常译为“被迫做……”、“被逼……”、“被弄得……”。一类动词常用缩略形式“～される”（词尾为す的除外），二类动词为“～させられる”，三类动词为“させられる／こさせられる”。",
+      "formation": "一类动词：词尾变あ段 + される（或 させられる） | 二类动词：去る + させられる | 三类动词：する → させられる、くる → こさせられる",
+      "examples": [
+        {
+          "translation": "我被他强行硬逼着灌下了酒。"
+        },
+        {
+          "translation": "我被父亲严厉逼着去学习功课。"
+        },
+        {
+          "translation": "孩子们每天都被逼着练习弹钢琴。"
+        },
+        {
+          "translation": "我们被强制要求每天大清早起床。"
+        }
+      ]
+    },
+    "ja_Verb_116": {
+      "title": "动词未然形 + ざるを得ない (zaru wo enai)",
+      "shortExplanation": "表示出于客观情况或压力，不得不做某事；“不得不……”、“只能……”。",
+      "longExplanation": "句型“～ざるを得ない”（“ざる”为古典否定助动词，“得ない”表示不能）用于表示主观上虽不情愿，但在某种外部客观条件、事态发展或规则压力下，没有其他选择余地，唯有采取该项行动。常译为“不得不……”、“迫不得已只能……”。接动词未然形（去掉ない的形式），特别注意“する”变为“せざるを得ない”。",
+      "formation": "动词未然形（去掉ない） + ざるを得ない（注：する → せざるを得ない）",
+      "examples": [
+        {
+          "translation": "要是这么厌恶这份工作，那如今也就只能辞职了。"
+        },
+        {
+          "translation": "因为考试迫在眉睫，不得不熬夜攻读至深夜。"
+        },
+        {
+          "translation": "眼泪止不住地夺眶而出，让人不得不放声哭泣。"
+        },
+        {
+          "translation": "因为这是老师下达的命令，不得不遵照执行。"
+        }
+      ]
+    },
+    "ja_Verb_117": {
+      "title": "动词未然形 + ずじまい (zu jimai)",
+      "shortExplanation": "表示本有打算或机会，但最终却未能实现而深感遗憾；“终究没能……”、“结果还是没……就结束了”。",
+      "longExplanation": "句型“～ずじまい”（汉字写作“仕舞い”，表示结束）接在动词未然形后，表示原本打算做某事或曾有绝佳机会，但由于种种原因拖延、受阻，最终直到结束也未能做成，带有强烈的遗憾、惋惜之情。常译为“终究没能……”、“结果还是没能……就完了”。“する”变为“せずじまい”。",
+      "formation": "动词未然形（去掉ない） + ずじまい（注：する → せずじまい）",
+      "examples": [
+        {
+          "translation": "难得专程来到日本，结果却一次富士山都没能看成就回国了。"
+        },
+        {
+          "translation": "因为匆忙出差的缘故，结果终究没能和她碰上一面。"
+        },
+        {
+          "translation": "昨天身体实在太疲劳了，结果家庭作业终究没做就睡着了。"
+        },
+        {
+          "translation": "虽然精心买下了和服，但结果一次也没能穿过就一直搁置着。"
+        }
+      ]
+    },
+    "ja_Verb_118": {
+      "title": "动词未然形 + ずとも / なくとも (zu tomo / nakutomo)",
+      "shortExplanation": "表示“即使不做……也……”、“即便没有……也无妨”；相当于书面语的“～なくても”。",
+      "longExplanation": "句型“～ずとも”是文语（书面语）表达，相当于口语中的“～なくても”。表示即使不采取某行动，或者即便处于缺少某种条件的状态下，也完全不影响后项事情的成立或目的的达成。常译为“即使不……也……”、“就算没有……也能……”。动词接未然形（去掉ない的形式），“する”变为“せずとも”，“ない”的形式为“なくとも”。",
+      "formation": "动词未然形（去掉ない） + ずとも（注：する → せずとも） | ない → なくとも",
+      "examples": [
+        {
+          "translation": "即便不吃早饭，我也能照常打起精神工作。"
+        },
+        {
+          "translation": "就算没有私家车，搭乘公交车也一样能够前往。"
+        },
+        {
+          "translation": "即便手头没有很多钱财，人也照样能够收获幸福。"
+        },
+        {
+          "translation": "即便没有互联网，获取所需信息的渠道也依然有好几种。"
+        }
+      ]
+    },
+    "ja_Verb_119": {
+      "title": "动词未然形 + ずにはおかない (zuni wa okanai)",
+      "shortExplanation": "表示“绝不放过……”、“一定要……”、“必然会使……”；表达强烈的决心或必然会引发某种反应。",
+      "longExplanation": "句型“～ずにはおかない”（“おかない”表示放置不管）主要有两种用法：一是指说话人抱有坚定的决心，绝不坐视不管，必定要采取某种行动（“一定要……”、“绝不容许不……”）；二是指某事物必然会自然而然地对他人产生强烈的感染或影响，使其不得不产生某种情感或状态（“必定会令……产生……”）。接动词未然形，“する”变为“せずにはおかない”。",
+      "formation": "动词未然形（去掉ない） + ずにはおかない（注：する → せずにはおかない）",
+      "examples": [
+        {
+          "translation": "要是听说他深陷困境，我绝不会坐视不管，一定要伸出援手帮助他。"
+        },
+        {
+          "translation": "备餐要是再照这样拖延下去，我恐怕绝不可能袖手旁观而不去帮忙。"
+        },
+        {
+          "translation": "这个问题要是得不到解决，我无论如何也一定要构想出改善方案。"
+        },
+        {
+          "translation": "亲眼看到她在伤心哭泣，我无论如何也忍不住要去上前安慰她。"
+        }
+      ]
+    },
+    "ja_Verb_120": {
+      "title": "动词未然形 + ずにはすまない (zuni wa sumanai)",
+      "shortExplanation": "表示从社会常识、道德道义或情理来看，必须做某事；“不……就交代不过去”、“不能不……”、“必须……”。",
+      "longExplanation": "句型“～ずにはすまない”（“すまない”汉字写作“済まない”，意为事情不能了结、过意不去）用于表示从社会道德准则、人情常理、法律规章或当事人的良心来看，如果不采取该项行动，事情就无法妥善解决或内心难以心安理得。常译为“不……就交代不过去”、“必须……”、“不能不……”。接动词未然形，“する”变为“せずにはすまない”。",
+      "formation": "动词未然形（去掉ない） + ずにはすまない（注：する → せずにはすまない）",
+      "examples": [
+        {
+          "translation": "如果不解决这个问题，整个社会都会受到波及影响，因此绝不能不彻底解决它。"
+        },
+        {
+          "translation": "一顾及到孩子们的未来，这项教育改革就是不得不果断推行的重任。"
+        },
+        {
+          "translation": "关于这件事情，我必须要当面向他郑重致歉才行。"
+        },
+        {
+          "translation": "既然出席隆重的婚礼，就绝不能不备上一份贺礼奉上。"
+        }
+      ]
+    },
+    "ja_Verb_121": {
+      "title": "动词连用形（去ます） + そうにない (sou ni nai)",
+      "shortExplanation": "表示根据推测，某事几乎没有发生的可能性；“看起来不太可能……”、“几乎不可能……”。",
+      "longExplanation": "句型“～そうにない”是样态助动词“そうだ”的否定形式之一，接在动词连用形（ます形去掉ます）后，表示说话人根据眼前的迹象或状况推断，认为某事极不可能发生或某动作很难实现。常译为“看起来不大可能……”、“很难……”、“几乎没有……的可能”。也可使用“～そうにもない”或“～そうもない”以进一步加强语气。",
+      "formation": "动词连用形（去掉ます） + そうにない（或 そうにもない／そうもない）",
+      "examples": [
+        {
+          "translation": "他看起来几乎不可能奔跑得那么飞快。"
+        },
+        {
+          "translation": "这份重要文件明天之前恐怕很难顺利整理收尾。"
+        },
+        {
+          "translation": "今天的天空看起来完全没有要下雨的迹象。"
+        },
+        {
+          "translation": "凭她的细心程度，看起来不大可能会出差错。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Noun_107": {
+      "title": "명사 + を経て (wo hete)",
+      "shortExplanation": "어떤 과정이나 단계, 긴 시간을 '거쳐서' 또는 특정 장소를 '경유하여' 어떤 결과나 종착지에 이름 나타냅니다.",
+      "longExplanation": "문형 '～を経て'(한자: 経て)는 어떤 시간적·심리적 과정이나 단계, 시련을 거쳐 어떤 결과에 도달함을 나타내거나, 장소를 '경유하여' 이동함을 나타내는 N1 문형입니다. '~을 거쳐', '~을 통해서', '~을 경유하여' 등으로 번역되며, 주로 격식 있는 문어체에서 사용됩니다.",
+      "formation": "명사 + を経て",
+      "examples": [
+        {
+          "translation": "그는 온갖 고생을 거쳐 마침내 성공을 거머쥐었다."
+        },
+        {
+          "translation": "그녀는 뉴욕을 경유하여 일본으로 귀국했다."
+        },
+        {
+          "translation": "우리는 오랜 논의를 거쳐 최종 결정을 내렸다."
+        },
+        {
+          "translation": "수많은 수련 과정을 거쳐 그는 달인의 경지에 도달했다."
+        }
+      ]
+    },
+    "ja_Noun_108": {
+      "title": "명사 + を踏まえて (wo fumaete)",
+      "shortExplanation": "어떤 사실이나 과거의 결과, 의견 등을 '근거로 삼아', '입각하여', '고려하여' 다음 행동이나 판단을 진행함을 나타냅니다.",
+      "longExplanation": "문형 '～を踏まえて'는 동사 '踏まえる(디디다, 근거로 삼다)'에서 유래한 표현으로, 과거의 경험·결과·조사 내용·의견 등을 바탕이나 전제로 삼아 그에 입각하여 판단을 내리거나 대책을 세움을 나타냅니다('~에 입각하여', '~을 바탕으로', '~을 고려하여'). 비즈니스, 학술, 정책 등 공식적이고 격식 있는 문맥에서 자주 쓰입니다.",
+      "formation": "명사 + を踏まえて",
+      "examples": [
+        {
+          "translation": "과거의 결과를 바탕으로 새로운 계획을 세웠습니다."
+        },
+        {
+          "translation": "현지 문화를 충분히 고려하여 프레젠테이션을 준비하겠습니다."
+        },
+        {
+          "translation": "교사들의 의견을 수렴하여 규칙을 개정했습니다."
+        },
+        {
+          "translation": "최신 연구 결과를 토대로 새로운 치료제가 개발되었습니다."
+        }
+      ]
+    },
+    "ja_Noun_109": {
+      "title": "명사 + を限りに (wo kagiri ni)",
+      "shortExplanation": "특정 시점을 끝으로 하여 지금까지 지속되던 일이나 상태가 '끝남'을 나타내며, '~을 끝으로', '~을 마지막으로'라는 뜻입니다.",
+      "longExplanation": "문형 '～を限りに'는 시간이나 기한을 나타내는 명사 뒤에 붙어, 그 시점을 한계이자 마지막으로 삼아 그때까지 계속되던 행동이나 상태를 완전히 끝내거나 중단함을 선언할 때 사용합니다('~을 끝으로', '~을 마지막으로 하여'). 주로 은퇴, 퇴직, 절연, 금연, 방송 종영 등 무언가를 공식적이고 단호하게 마무리할 때 쓰입니다.",
+      "formation": "명사(시간 명사) + を限りに",
+      "examples": [
+        {
+          "translation": "이번 학년도를 마지막으로 이 대학에서의 교수 활동을 마칠 계획입니다."
+        },
+        {
+          "translation": "오늘을 끝으로 담배를 완전히 끊겠습니다."
+        },
+        {
+          "translation": "3월 31일부로 회사를 정식 퇴직합니다."
+        },
+        {
+          "translation": "다음 주를 마지막으로 이 방송 프로그램은 종영됩니다."
+        }
+      ]
+    },
+    "ja_Noun_110": {
+      "title": "명사 + 並み (nami)",
+      "shortExplanation": "수준, 상태, 정도가 비교 대상과 대등하거나 비슷함을 나타내며, '~수준', '~와 맞먹는', '~정도의'라는 뜻입니다.",
+      "longExplanation": "접미사적 문형 '～並み'(한자: 並み)는 명사 바로 뒤에 붙어, 그 능력이나 상태, 정도가 해당 명사에 필적할 만큼 대등하거나 비슷함을 나타냅니다('~와 맞먹는', '~수준의', '~못지않은'). 보통 'プロ並み(프로 수준)', '人並み(남들만큼)' 등의 관용적인 형태로도 널리 사용됩니다.",
+      "formation": "명사 + 並み (+ の + 명사 / + だ / + に)",
+      "examples": [
+        {
+          "translation": "그는 프로 권투선수와 맞먹는 엄청난 힘을 지니고 있습니다."
+        },
+        {
+          "translation": "그녀의 요리 솜씨는 고급 레스토랑 수준입니다."
+        },
+        {
+          "translation": "이 지역의 여름은 사막 못지않은 극심한 더위입니다."
+        },
+        {
+          "translation": "오늘 업무는 대기업 사장님 수준으로 눈코 뜰 새 없이 바빴다."
+        }
+      ]
+    },
+    "ja_Noun_111": {
+      "title": "명사 / 동사 보통형 + 前提で (zentei de)",
+      "shortExplanation": "어떤 조건이나 가정을 전제로 하여 뒤의 행동이나 계획을 진행함을 나타내며, '~을 전제로', '~라는 전제하에'라는 뜻입니다.",
+      "longExplanation": "문형 '～前提で'는 뒤에 이어지는 일이나 계획이 특정한 조건, 가정, 약속을 전제 조건으로 삼고 있음을 나타냅니다('~을 전제로', '~라는 가정하에'). 명사에 바로 붙거나(예: 結婚前提で - 결혼을 전제로), 동사의 보통형 뒤에 접속하여 조건을 명시합니다.",
+      "formation": "명사 + 前提で | 동사 보통형 + 前提で",
+      "examples": [
+        {
+          "translation": "충분히 설명할 수 있는 영어 실력이 있다는 전제하에 이 업무를 맡아 주십시오."
+        },
+        {
+          "translation": "그가 동행한다는 것을 전제로 여행 일정을 짰습니다."
+        },
+        {
+          "translation": "반드시 성공한다는 전제하에 이 프로젝트를 추진하고 있습니다."
+        },
+        {
+          "translation": "비가 오지 않는다는 것을 전제로 소풍 준비를 마쳤습니다."
+        }
+      ]
+    },
+    "ja_Verbる_112": {
+      "title": "동사 기본형 / 명사(である) + 限り(は) (kagiri (wa))",
+      "shortExplanation": "어떤 조건이나 상태가 지속되는 한 뒤의 상황도 계속 유지됨을 나타내며, '~하는 한', '~인 한'이라는 뜻입니다.",
+      "longExplanation": "문형 '～限り(は)'는 앞의 상태나 조건이 계속 유지되는 한, 뒤에 이어지는 상황이나 결의도 변함없이 지속됨을 나타내는 한정 표현입니다('~하는 한은', '~인 한은'). 동사의 연체형(기본형, ている형 등)이나 '명사 + である' 등에 접속합니다.",
+      "formation": "동사 기본형 / ている형 + 限り(は) | 명사 + である限り(は) | い형용사 + 限り(は) | な형용사 + である / な限り(は)",
+      "examples": [
+        {
+          "translation": "내가 살아 숨 쉬고 있는 한은 당신을 든든하게 받쳐 주겠습니다."
+        },
+        {
+          "translation": "아이들이 학교에 다니고 있는 한 우리는 아이들을 지켜 줄 것입니다."
+        },
+        {
+          "translation": "능력이 허락하는 한 최선의 노력을 다하겠습니다."
+        },
+        {
+          "translation": "당신이 여기에 머물러 있는 한 저는 안심이 됩니다."
+        }
+      ]
+    },
+    "ja_Verb_113": {
+      "title": "동사 ます형 (ます 탈락) / 명사 + がてら (gatera)",
+      "shortExplanation": "주된 행동(주로 이동을 동반하는 일)을 하는 김에 겸사겸사 다른 일도 함께 함을 나타내며, '~하는 김에', '~겸'이라는 뜻입니다.",
+      "longExplanation": "문형 '～가てら'는 주로 이동이나 외출을 동반하는 주된 행동을 하면서, 그 길이나 기회를 이용하여 다른 부수적인 행동을 함께 처리함을 나타냅니다('~하는 길에 겸사겸사', '~할 겸'). 동사 ます형 어간 또는 동작성 명사 뒤에 붙으며, '～ついでに'보다 두 행동이 하나의 이동 과정 속에서 자연스럽게 아우러지는 느낌을 줍니다.",
+      "formation": "동사 ます형 (ます 탈락) + がてら(に) | 명사 + がてら(に)",
+      "examples": [
+        {
+          "translation": "산책하는 길에 겸사겸사 우체국에 들렀다."
+        },
+        {
+          "translation": "장을 보러 나간 김에 친구를 만나러 갔다."
+        },
+        {
+          "translation": "아침 조깅을 하는 길에 신문을 사러 갔다."
+        },
+        {
+          "translation": "공원에서 피크닉을 즐기는 김에 독서를 했다."
+        }
+      ]
+    },
+    "ja_Verb_114": {
+      "title": "동사 ます형 (ます 탈락) / 명사 + こそすれ (koso sure)",
+      "shortExplanation": "주로 'Aこそすれ、B～ない'의 형태로 쓰여 'A를 할망정 결코 B는 하지 않는다', 'A는 할지언정 B는 절대 아니다'라는 뜻을 나타냅니다.",
+      "longExplanation": "문형 '～こそすれ'는 강조의 조사 'こそ'와 'する'의 가정·이연형 'すれ'가 합쳐진 표현으로, 앞의 행동 A는 인정하거나 강조하지만 뒤에 이어지는 부정적인 행동이나 상반된 행동 B는 절대 일어날 리 없음을 강하게 단언할 때 사용합니다('~은/는 할지언정 결코 ~하지 않는다', '~할망정 ~은 결코 없다'). 뒤 문장에는 반드시 강한 부정 표현이 이어집니다.",
+      "formation": "동사 ます형 (ます 탈락) + こそすれ | 명사 + こそすれ",
+      "examples": [
+        {
+          "translation": "그는 친구를 도울망정 스스로를 비하하는 짓은 결코 하지 않습니다."
+        },
+        {
+          "translation": "그녀는 요리는 할지언정 방 청소는 거의 하지 않는다."
+        },
+        {
+          "translation": "우리 형은 공부에 매달릴망정 신나게 놀 시간은 거의 없다."
+        },
+        {
+          "translation": "어머니는 일만 억척스럽게 하실 뿐 자신을 위해 시간을 쓰는 일은 거의 없다."
+        }
+      ]
+    },
+    "ja_Verb_115": {
+      "title": "동사 사역수동형 (saserareru / sareru)",
+      "shortExplanation": "자신의 의지와 상관없이 남의 강요나 지시로 인해 억지로 어떤 행동을 하게 됨을 나타내며, '~을 당하다', '억지로 ~하게 되다'라는 뜻입니다.",
+      "longExplanation": "문형 '～させられる / ～される'는 일본어의 사역수동형(使役受身形)으로, 주어가 타인의 강요나 명령, 혹은 거스를 수 없는 상황 때문에 내키지 않는 행동을 억지로 하게 되었음을 나타냅니다('억지로 ~하게 되다', '~하도록 강요받다'). 1그룹 동사는 주로 축약형인 '～される'(す로 끝나는 동사 제외)로 많이 쓰이며, 2그룹은 '～させられる', 3그룹은 'させられる / こさせられる'가 됩니다.",
+      "formation": "1그룹 동사: 어미를 あ단으로 바꾸고 + される (또는 させられる) | 2그룹 동사: 어미 る 탈락 + させられる | 3그룹 동사: する → させられる, くる → こさせられる",
+      "examples": [
+        {
+          "translation": "그의 강요로 억지로 술을 마셔야만 했다."
+        },
+        {
+          "translation": "나는 아버지에게 억지로 공부를 당했습니다(공부를 강요당했습니다)."
+        },
+        {
+          "translation": "아이들은 매일같이 억지로 피아노를 쳐야만 한다."
+        },
+        {
+          "translation": "우리는 강제적으로 아침 일찍 일어나야만 했습니다."
+        }
+      ]
+    },
+    "ja_Verb_116": {
+      "title": "동사 ない형 (ない 탈락) + ざるを得ない (zaru wo enai)",
+      "shortExplanation": "마음으로는 내키지 않지만 상황이나 사정상 어쩔 수 없이 그렇게 해야 함을 나타내며, '~하지 않을 수 없다', '~할 수밖에 없다'라는 뜻입니다.",
+      "longExplanation": "문형 '～ざるを得ない'는 고어의 부정 조동사 'ざる'와 '得ない(얻을/할 수 없다)'가 결합한 표현으로, 본인의 본의는 아니지만 객관적인 정세나 규칙, 강한 압력 때문에 달리 다른 선택지가 없어 부득이하게 그 행동을 취해야만 함을 나타냅니다('~하지 않을 수 없다', '~할 수밖에 없다'). 동사의 ない형에서 ない를 뺀 형태에 붙으며, 'する'는 불규칙으로 'せざるを得ない'가 됩니다.",
+      "formation": "동사 ない형 (ない 탈락) + ざるを得ない (예외: する → せざるを得ない)",
+      "examples": [
+        {
+          "translation": "이 일이 그토록 싫다면 이제는 그만둘 수밖에 없다."
+        },
+        {
+          "translation": "시험이 코앞으로 다가왔기 때문에 밤늦게까지 공부하지 않을 수 없다."
+        },
+        {
+          "translation": "눈물이 멈추지 않는다. 소리 내어 울지 않을 수가 없다."
+        },
+        {
+          "translation": "선생님의 엄중한 명령이기 때문에 따르지 않을 수 없다."
+        }
+      ]
+    },
+    "ja_Verb_117": {
+      "title": "동사 ない형 (ない 탈락) + ずじまい (zu jimai)",
+      "shortExplanation": "할 생각이나 기회가 있었음에도 결국 하지 못한 채 끝나 버린 아쉬움을 나타내며, '결국 ~하지 못하고 끝남', '끝내 ~하지 않고 맘'이라는 뜻입니다.",
+      "longExplanation": "문형 '～ずじまい'(고어 부정 'ず' + 끝남을 뜻하는 'しまい')는 어떤 일을 하려고 생각했거나 기회가 있었음에도 불구하고 여러 사정으로 인해 결국 끝까지 실행하지 못한 채 마무리가 되어 버렸을 때, 아쉬움과 후회의 감정을 담아 표현하는 문형입니다('결국 ~하지 못하고 끝났다', '끝내 ~하지 못했다'). 동사의 ない형 어간에 접속하며, 'する'는 'せずじまい'가 됩니다.",
+      "formation": "동사 ない형 (ない 탈락) + ずじまい (예외: する → せずじまい)",
+      "examples": [
+        {
+          "translation": "일본에 모처럼 왔는데도 후지산을 한 번도 보지 못한 채 귀국해 버렸다."
+        },
+        {
+          "translation": "갑작스러운 출장 때문에 그녀를 결국 만나지 못하고 말았다."
+        },
+        {
+          "translation": "어제는 피로가 너무 극심해서 숙제를 끝내 하지 못했다."
+        },
+        {
+          "translation": "기모노를 사 두었지만 결국 한 번도 입어 보지 못하고 끝났다."
+        }
+      ]
+    },
+    "ja_Verb_118": {
+      "title": "동사 ない형 (ない 탈락) + ずとも / ない → なくとも (zu tomo / nakutomo)",
+      "shortExplanation": "구어의 '~なくても'에 해당하는 문어적 표현으로, '굳이 ~하지 않아도', '설령 ~이 없더라도' 뒤의 일이 충분히 성립함을 나타냅니다.",
+      "longExplanation": "문형 '～ずとも'는 구어 표현인 '～なくても'의 격식 있는 문어체 표현으로, 굳이 앞의 동작을 하지 않더라도, 혹은 앞의 조건이 갖추어지지 않더라도 뒤의 목적을 달성하거나 상황이 성립하는 데 아무런 지장이 없음을 나타냅니다('~하지 않아도', '~이 없더라도'). 동사의 ない형 어간에 접속하며, 'する'는 'せずとも', 'ない'는 'なくとも'의 형태를 취합니다.",
+      "formation": "동사 ない형 (ない 탈락) + ずとも (예외: する → せずとも) | ない → なくとも",
+      "examples": [
+        {
+          "translation": "아침 식사를 챙겨 먹지 않아도 거뜬히 일을 할 수 있습니다."
+        },
+        {
+          "translation": "자가용이 없더라도 버스를 타고 충분히 갈 수 있습니다."
+        },
+        {
+          "translation": "수중에 돈이 많지 않더라도 사람은 행복해질 수 있다."
+        },
+        {
+          "translation": "인터넷이 없더라도 정보를 입수할 수 있는 방법은 몇 가지 있습니다."
+        }
+      ]
+    },
+    "ja_Verb_119": {
+      "title": "동사 ない형 (ない 탈락) + ずにはおかない (zuni wa okanai)",
+      "shortExplanation": "강한 결의로 '반드시 ~하고야 말겠다'라거나, '가만두지 않고 반드시 ~하게 만들다'라는 뜻을 나타냅니다.",
+      "longExplanation": "문형 '～ずにはおかない'는 크게 두 가지 의미로 쓰입니다. 첫째는 화자가 어떤 상황을 그냥 내버려 둘 수 없어 '반드시 ~하겠다', '~하지 않고는 가만있지 않겠다'라는 강한 결의나 집념을 나타내며, 둘째는 무생물 주어 등이 작용하여 사람들에게 '반드시 ~하게 만들다(감동시키다, 분노하게 하다 등)'라는 필연적 영향을 미침을 나타냅니다. 동사의 ない형 어간에 접속하며, 'する'는 'せずにはおかない'가 됩니다.",
+      "formation": "동사 ない형 (ない 탈락) + ずにはおかない (예외: する → せずにはおかない)",
+      "examples": [
+        {
+          "translation": "그가 곤경에 빠졌다는 이야기를 들으면 결코 외면하지 않고 반드시 도와주고야 만다."
+        },
+        {
+          "translation": "식사 준비가 이대로 지체된다면 도저히 거들지 않고는 못 배길 것이다."
+        },
+        {
+          "translation": "이 문제가 해결되지 않는다면 어떻게든 개선책을 생각해 내고야 말겠다."
+        },
+        {
+          "translation": "그녀가 서럽게 울고 있는 모습을 보면 위로해 주지 않고는 도저히 배길 수가 없다."
+        }
+      ]
+    },
+    "ja_Verb_120": {
+      "title": "동사 ない형 (ない 탈락) + ずにはすまない (zuni wa sumanai)",
+      "shortExplanation": "사회적 상식, 도덕, 규칙상 '그 행동을 하지 않고는 일이 해결되지 않는다', '반드시 ~하지 않고는 안 된다'라는 뜻입니다.",
+      "longExplanation": "문형 '～ずにはすまない'는 '済まない(끝나지 않다, 해결되지 않다)'에서 유래한 표현으로, 사회적 통념, 도의적 책임, 양심상 그 행동을 취하지 않으면 일이 원만하게 마무리될 수 없거나 양심에 걸릴 때 사용합니다('~하지 않고는 배기지 못한다', '~하지 않고는 넘어갈 수 없다', '~하지 않으면 안 된다'). 동사의 ない형 어간에 접속하며, 'する'는 'せずにはすまない'가 됩니다.",
+      "formation": "동사 ない형 (ない 탈락) + ずにはすまない (예외: する → せずにはすまない)",
+      "examples": [
+        {
+          "translation": "이 문제를 해결하지 않으면 사회 전체가 타격을 입기 때문에 반드시 해결하지 않고는 넘어갈 수 없다."
+        },
+        {
+          "translation": "이는 자라나는 아이들의 미래를 생각한다면 교육 개혁을 단행하지 않고는 결코 안 될 일이다."
+        },
+        {
+          "translation": "이번 사안에 대해서는 그에게 진심으로 사과하지 않고는 넘어갈 수 없다."
+        },
+        {
+          "translation": "결혼식에 참석한다면 축하 선물을 건네지 않고는 예의가 아니다."
+        }
+      ]
+    },
+    "ja_Verb_121": {
+      "title": "동사 ます형 (ます 탈락) + そうにない (sou ni nai)",
+      "shortExplanation": "현재 상황이나 징후로 보아 어떤 일이 일어날 가능성이 거의 없음을 나타내며, '~할 것 같지 않다', '~할 성싶지 않다'라는 뜻입니다.",
+      "longExplanation": "문형 '～そうにない'는 양태 조동사 'そうだ(~일 것 같다)'의 부정형 중 하나로, 동사의 ます형 어간 뒤에 붙어 겉으로 보이는 모습이나 상황에 비추어 볼 때 어떤 사건이나 동작이 실현될 가능성이 매우 희박하다고 판단할 때 사용합니다('~할 것 같지 않다', '~하기 힘들 것 같다'). 강조형으로 '～そうにもない'나 '～そうもない'도 자주 쓰입니다.",
+      "formation": "동사 ます형 (ます 탈락) + そうにない (또는 そうにもない / そうもない)",
+      "examples": [
+        {
+          "translation": "그는 그렇게나 빠른 속도로 달릴 수 있을 것 같지 않다."
+        },
+        {
+          "translation": "이 서류 뭉치를 내일까지 도저히 끝낼 수 있을 것 같지 않다."
+        },
+        {
+          "translation": "오늘은 비가 내릴 기미가 전혀 보이지 않는다."
+        },
+        {
+          "translation": "그녀는 실수를 저지를 것 같지 않다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Noun_107": {
+      "title": "名詞 ＋ を経て (wo hete)",
+      "shortExplanation": "ある過程・段階・時間を「通って」「経過して」、またはある場所を「経由して」次の段階や結果に至ることを表します。「〜を通って」「〜を経験して」「〜を経由して」。",
+      "longExplanation": "「～を経て」は、あるプロセス、段階、年月、試練などを通過・経験した上で何らかの結果に至ることや、空間的にある場所を経由して目的地へ向かうことを表す文型です。時間的・抽象的な経過にも、地理的な経由地にも用いることができ、改まった書き言葉やスピーチでよく使われます。",
+      "formation": "名詞 ＋ を経て",
+      "examples": [
+        {
+          "translation": "彼は苦労を経て成功を手に入れた。"
+        },
+        {
+          "translation": "彼女はニューヨークを経て日本に帰国した。"
+        },
+        {
+          "translation": "私たちは長い議論を経て決定を下した。"
+        },
+        {
+          "translation": "多くの修練を経て、彼は達人のレベルになった。"
+        }
+      ]
+    },
+    "ja_Noun_108": {
+      "title": "名詞 ＋ を踏まえて (wo fumaete)",
+      "shortExplanation": "ある事実・経験・過去の結果・意見などを「前提や判断の根拠として考慮に入れて」次の行動や判断を行うことを表します。「〜を前提にして」「〜を考慮して」「〜に立脚して」。",
+      "longExplanation": "「～を踏まえて」は、動詞「踏まえる（しっかりと足元に据える）」から派生した表現で、前項に提示された過去のデータ、反省点、意見、現状などをしっかりと土台・判断材料にして、その上に立った計画や行動を進めることを表します。ビジネスや論文、公式の場などで方針を述べる際によく用いられます。",
+      "formation": "名詞 ＋ を踏まえて",
+      "examples": [
+        {
+          "translation": "過去の結果を踏まえて、新たな計画を立てました。"
+        },
+        {
+          "translation": "現地の文化を踏まえて、プレゼンテーションを準備します。"
+        },
+        {
+          "translation": "教師の意見を踏まえて、規則を変更しました。"
+        },
+        {
+          "translation": "最新の研究結果を踏まえて、新しい薬が開発されました。"
+        }
+      ]
+    },
+    "ja_Noun_109": {
+      "title": "名詞 ＋ を限りに (wo kagiri ni)",
+      "shortExplanation": "ある時・期限を「最後として」「区切りとして」、それまで続いていた状態や行為を完全に終了・停止することを表します。「〜を最後に」「〜をもって」。",
+      "longExplanation": "「～を限りに」は、時間や期限を表す名詞（今日、今年度、今回など）に接続し、その時を最後の限度・区切りとして、継続してきた活動や習慣をきっぱりと終えることを宣言する文型です。「〜を最後に」「〜を境として終わりにする」という意味で、退職、番組の終了、禁煙の決意など、公式な告知や強い決断を表す際によく用いられます。",
+      "formation": "名詞（時を表す言葉） ＋ を限りに",
+      "examples": [
+        {
+          "translation": "今年度を限りに、この大学での教授活動を終えるつもりです。"
+        },
+        {
+          "translation": "今日を限りに、タバコを吸うのをやめます。"
+        },
+        {
+          "translation": "3月31日を限りに、会社を退職します。"
+        },
+        {
+          "translation": "来週を限りに、この番組は終了します。"
+        }
+      ]
+    },
+    "ja_Noun_110": {
+      "title": "名詞 ＋ 並み (nami)",
+      "shortExplanation": "程度・レベル・状態がその名詞と同等、あるいは匹敵することを表します。「〜と同程度」「〜に匹敵する」「〜並の」。",
+      "longExplanation": "「～並み」は、名詞の直後に接続して、能力・程度・状態などがその名詞と同じ基準・レベルに達していることや、匹敵する様子を表す表現です。「〜と同レベルの」「〜に劣らない」という意味で、「プロ並み」「人並み」「世間並み」などの形でも頻繁に使われます。",
+      "formation": "名詞 ＋ 並み（＋ の ＋ 名詞 ／ ＋ だ ／ ＋ に）",
+      "examples": [
+        {
+          "translation": "彼はプロのボクサー並みの力を持っています。"
+        },
+        {
+          "translation": "彼女の料理の腕前はレストラン並みです。"
+        },
+        {
+          "translation": "このエリアの夏は砂漠並みの暑さです。"
+        },
+        {
+          "translation": "今日の仕事は社長並みの忙しさだった。"
+        }
+      ]
+    },
+    "ja_Noun_111": {
+      "title": "名詞 ／ 動詞普通形 ＋ 前提で (zentei de)",
+      "shortExplanation": "ある条件や仮定を「前もって決めた条件・土台」として設定し、それを基準に行動や計画を進めることを表します。「〜を前提として」「〜という条件で」。",
+      "longExplanation": "「～前提で」は、後項の計画や行動が、ある決まった条件や仮定の上に成り立っていることを表す文型です。「〜という前提のもとに」「〜を条件にして」という意味で、名詞に直接接続するか（例：「結婚前提で」）、動詞の普通形に接続して条件を提示します。",
+      "formation": "名詞 ＋ 前提で | 動詞普通形 ＋ 前提で",
+      "examples": [
+        {
+          "translation": "説明できる英語力がある前提で、この仕事を引き受けてください。"
+        },
+        {
+          "translation": "彼が一緒に行く前提で、旅行の計画を立てました。"
+        },
+        {
+          "translation": "成功する前提で、このプロジェクトを進めています。"
+        },
+        {
+          "translation": "雨が降らない前提で、ピクニックの準備をしました。"
+        }
+      ]
+    },
+    "ja_Verbる_112": {
+      "title": "動詞辞書形 ／ 名詞(である) ＋ 限り(は) (kagiri (wa))",
+      "shortExplanation": "ある状態や条件が続いている間はずっと、後項の事態も成立し続けることを表します。「〜である間は」「〜する間はずっと」。",
+      "longExplanation": "「～限り（は）」は、前項で示された条件や状態が継続している限度内において、後項の行動・状態・義務などが常に成立・維持されることを表す文型です。「〜する間は」「〜である以上は」という意味で、動詞辞書形や「ている形」、名詞＋「である」などに接続します。",
+      "formation": "動詞辞書形／ている形 ＋ 限り(は) | 名詞 ＋ である限り(は) | い形容詞 ＋ 限り(は) | な形容詞 ＋ である／な限り(は)",
+      "examples": [
+        {
+          "translation": "私が生きている限りは、あなたを支えます。"
+        },
+        {
+          "translation": "子供が学校に通っている限り、私たちは彼らを守ります。"
+        },
+        {
+          "translation": "能力がある限り、最善を尽くします。"
+        },
+        {
+          "translation": "あなたがここにいる限り、私は安心です。"
+        }
+      ]
+    },
+    "ja_Verb_113": {
+      "title": "動詞ます形（ますを除く） ／ 名詞 ＋ がてら (gatera)",
+      "shortExplanation": "ある主たる行動（主に移動や外出）のついでに、もう一つの行動を合わせて行うことを表します。「〜のついでに」「〜を兼ねて」。",
+      "longExplanation": "「～がてら」は、散歩や買い物、外出など移動を伴う主要な行動を行う際に、その行き帰りや機会を利用して別の用事も一緒に済ませることを表す文型です。「〜のついでに」「〜を兼ねて」という意味で、動詞連用形（ます形語幹）や動作性名詞に接続します。「〜ついでに」に比べて、一つの行動の中に別の目的が自然に組み合わさっているニュアンスを持ちます。",
+      "formation": "動詞ます形（ますを除く） ＋ がてら(に) | 名詞 ＋ がてら(に)",
+      "examples": [
+        {
+          "translation": "散歩がてらに郵便局へ行った。"
+        },
+        {
+          "translation": "買い物がてらに友達に会いに行った。"
+        },
+        {
+          "translation": "ジョギングがてらに新聞を買いに行った。"
+        },
+        {
+          "translation": "公園でピクニックがてら読書をした。"
+        }
+      ]
+    },
+    "ja_Verb_114": {
+      "title": "動詞ます形（ますを除く） ／ 名詞 ＋ こそすれ (koso sure)",
+      "shortExplanation": "「Aこそすれ、B〜ない」の形で、「Aすることはあっても、決してBすることはない」と後項を強く否定して前項を強調します。「〜はしても、決して〜ない」。",
+      "longExplanation": "「～こそすれ」は、強調の助詞「こそ」と動詞「する」の已然形「すれ」が結びついたN1文型です。主に「Aこそすれ、Bはない／しない」という構文で用いられ、「Aすることは確かにあっても、反対の極端な事態Bなどは絶対にあり得ない」と後項を強く否定し、前項の限度・純粋さを際立たせます。",
+      "formation": "動詞ます形（ますを除く） ＋ こそすれ | 名詞 ＋ こそすれ",
+      "examples": [
+        {
+          "translation": "彼は友達を助けこそすれ、自分を卑下することはありません。"
+        },
+        {
+          "translation": "彼女は料理こそすれ、掃除はほとんどしない。"
+        },
+        {
+          "translation": "私の兄は勉強こそすれ、遊ぶ時間がほとんどない。"
+        },
+        {
+          "translation": "母は働きこそすれ、自分のために時間を使うことはほとんどない。"
+        }
+      ]
+    },
+    "ja_Verb_115": {
+      "title": "動詞使役受身形 (saserareru / sareru)",
+      "shortExplanation": "他者からの強制や命令、あるいはやむを得ない状況によって、本人の意志に反して無理に何かをさせられることを表します。「無理やり〜させられる」「〜することを余儀なくされる」。",
+      "longExplanation": "「〜させられる／〜される」は、使役形と受身形が合体した「使役受身形」です。他者からの強制・指示や状況の圧力により、自分の望まない行為を不本意ながら行う（させられる）という迷惑・不満の感情を込めて用いられます。Iグループ（五段）動詞では「〜される」（語尾「す」を除く）という短縮形が日常的に多用され、IIグループ（一段）動詞は「〜させられる」、IIIグループは「させられる／こさせられる」となります。",
+      "formation": "Iグループ動詞：語尾をあ段に変化 ＋ される（または させられる） | IIグループ動詞：語尾の「る」を除く ＋ させられる | IIIグループ動詞：する → させられる、くる → こさせられる",
+      "examples": [
+        {
+          "translation": "彼に無理やり飲ませられた。"
+        },
+        {
+          "translation": "私は父に勉強させられました。"
+        },
+        {
+          "translation": "子供たちは毎日ピアノを弾かせられる。"
+        },
+        {
+          "translation": "私たちは強制的に早起きさせられました。"
+        }
+      ]
+    },
+    "ja_Verb_116": {
+      "title": "動詞未然形 ＋ ざるを得ない (zaru wo enai)",
+      "shortExplanation": "本人の希望や本意ではないが、状況や立場上そうしないわけにはいかず、どうしてもそうするしかないことを表します。「〜しないわけにはいかない」「どうしても〜せざるを得ない」。",
+      "longExplanation": "「～ざるを得ない」は、古語の否定「ざる」に可能否定「得ない」がついた改まった文型です。自身の意志や感情としては消極的であっても、周囲の状況、客観的な情勢、社会的責任や圧力から逃れることができず、「他に選択肢がないため、不本意ながらその行為を行うしかない」という強い必然性を表します。「する」は不規則に「せざるを得ない」となります。",
+      "formation": "動詞未然形（ない形から「ない」を除く） ＋ ざるを得ない（※「する」は「せざるを得ない」）",
+      "examples": [
+        {
+          "translation": "この仕事が嫌ならもう辞めざるを得ない。"
+        },
+        {
+          "translation": "試験が近いので、夜遅くまで勉強せざるを得ない。"
+        },
+        {
+          "translation": "涙が止まらない。泣かざるを得ない。"
+        },
+        {
+          "translation": "先生の命令だから、従わざるを得ない。"
+        }
+      ]
+    },
+    "ja_Verb_117": {
+      "title": "動詞未然形 ＋ ずじまい (zu jimai)",
+      "shortExplanation": "何かをするつもりや機会があったのに、実現できないまま終わってしまったことに対する心残りや残念な気持ちを表します。「結局〜しないで終わった」。",
+      "longExplanation": "「～ずじまい」は、古語の否定「ず」と終わりを意味する「仕舞い」が組み合わさった表現です。前もって予定していたり機会があったりしたにもかかわらず、事情があって実行に移せないまま時間切れや終了となり、「結局〜できずに終わってしまった」という残念さ・後悔のニュアンスを込めて用いられます。「する」は「せずじまい」となります。",
+      "formation": "動詞未然形（ない形から「ない」を除く） ＋ ずじまい（※「する」は「せずじまい」）",
+      "examples": [
+        {
+          "translation": "日本へ来たのに、一度も富士山を見ずじまいで帰国してしまった。"
+        },
+        {
+          "translation": "出張のため、彼女に会わずじまいだった。"
+        },
+        {
+          "translation": "昨日は疲れすぎて、宿題をせずじまいだ。"
+        },
+        {
+          "translation": "着物を買ったが、結局、一度も着ずじまいだ。"
+        }
+      ]
+    },
+    "ja_Verb_118": {
+      "title": "動詞未然形 ＋ ずとも ／ なくとも (zu tomo / nakutomo)",
+      "shortExplanation": "口語の「〜なくても」に相当する硬い文語的表現で、前項の動作や条件を行わなくても後項の成立に支障がないことを表します。「〜しなくても」「〜がなくても」。",
+      "longExplanation": "「～ずとも」は、日常会話の「〜なくても」を改まった文章語として表現した文型です。前項のことをわざわざ行わなかったり、ある条件が存在しなかったりしても、後項の望ましい結果や事態は何ら問題なく成立することを表します。「する」は「せずとも」、「ない」は「なくとも」となります。",
+      "formation": "動詞未然形（ない形から「ない」を除く） ＋ ずとも（※「する」は「せずとも」） | ない → なくとも",
+      "examples": [
+        {
+          "translation": "朝ごはんを食べずとも、働くことができます。"
+        },
+        {
+          "translation": "車がなくとも、バスで行くことができます。"
+        },
+        {
+          "translation": "お金がなくとも、幸せになれる。"
+        },
+        {
+          "translation": "インターネットがなくとも、情報を得る方法はいくつかあります。"
+        }
+      ]
+    },
+    "ja_Verb_119": {
+      "title": "動詞未然形 ＋ ずにはおかない (zuni wa okanai)",
+      "shortExplanation": "話者の強い決意として「必ず〜する」「そのままにしてはおかない」、または状況が「自然と相手に強い感情・反応を起こさせる」ことを表します。「必ず〜する」「〜させずにはいられない」。",
+      "longExplanation": "「～ずにはおかない」は、「そのまま放置せず、必ずその行為をする」という話者の断固たる決意・義務感を表す文型です。また、感情などを表す動詞と結びつき、「その出来事や作品が、人々の心を動かさずにはおかない（必ず感動・共鳴させる）」というように、対象に強い影響を及ぼす必然性を表す用法もあります。「する」は「せずにはおかない」となります。",
+      "formation": "動詞未然形（ない形から「ない」を除く） ＋ ずにはおかない（※「する」は「せずにはおかない」）",
+      "examples": [
+        {
+          "translation": "彼が困っていると聞いたら、助けずにはおかない。"
+        },
+        {
+          "translation": "食事の準備がこのままだと、手伝わずにはおかないだろう。"
+        },
+        {
+          "translation": "この問題が解決しないなら、改善策を考えずにはおかない。"
+        },
+        {
+          "translation": "彼女が泣いているのを見たら、慰めずにはおかない。"
+        }
+      ]
+    },
+    "ja_Verb_120": {
+      "title": "動詞未然形 ＋ ずにはすまない (zuni wa sumanai)",
+      "shortExplanation": "社会的ルール、道義的責任、良識に照らして、「その行為をしないままでは物事が済まない・解決しない」ことを表します。「〜しないでは済まない」「必ず〜しなければならない」。",
+      "longExplanation": "「～ずにはすまない」は、「済む（解決する、落着する）」の否定形を伴い、社会常識・道徳・法律・良心などの観点から見て、その行為を行わずに放置することは絶対に許されない、行わなければ後始末がつかないという強い義務感や必然性を表す文型です。「する」は「せずにはすまない」となります。",
+      "formation": "動詞未然形（ない形から「ない」を除く） ＋ ずにはすまない（※「する」は「せずにはすまない」）",
+      "examples": [
+        {
+          "translation": "この問題を解決しないと、社会全体が影響を受けるので、解決せずにはすまない。"
+        },
+        {
+          "translation": "これは子供たちの未来を思うと、教育改革を行わずにはすまないことだ。"
+        },
+        {
+          "translation": "この件については、彼に謝らずにはすまない。"
+        },
+        {
+          "translation": "結婚式に出席するなら、プレゼントを渡さずにはすまない。"
+        }
+      ]
+    },
+    "ja_Verb_121": {
+      "title": "動詞ます形（ますを除く） ＋ そうにない (sou ni nai)",
+      "shortExplanation": "現在の状況や様子から判断して、ある事態が実現する可能性が極めて低い・見込みがないことを表します。「〜しそうもない」「とても〜とは思えない」。",
+      "longExplanation": "「～そうにない」は、様態の助動詞「そうだ」の否定表現で、動詞連用形（ます形語幹）に接続します。見聞きした様子や客観的条件から判断して、「その動作や変化が起きる可能性・見込みがほとんどない」という否定的な推測を表します。「〜そうにもない」「〜そうもない」とすることで、さらに否定のニュアンスを強めることができます。",
+      "formation": "動詞ます形（ますを除く） ＋ そうにない（または そうにもない／そうもない）",
+      "examples": [
+        {
+          "translation": "彼はそんなに早く走れそうにない。"
+        },
+        {
+          "translation": "この書類を明日までに終わりそうにない。"
+        },
+        {
+          "translation": "今日雨が降りそうにない。"
+        },
+        {
+          "translation": "彼女は間違えそうにない。"
+        }
+      ]
+    }
+  }
+}

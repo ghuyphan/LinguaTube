@@ -67,31 +67,33 @@ export class VideoPageComponent implements OnInit {
     return !!this.playlistService.currentPlaylist() || !!this.activePlaylistId();
   });
 
-  // Playlist navigation helpers
+  // On mobile, only display the in-flow playlist card if the playlist has multiple videos
+  readonly hasMultiplePlaylistVideos = computed(() => {
+    const playlist = this.playlistService.currentPlaylist();
+    return !!playlist && playlist.videos.length > 1;
+  });
+
+  readonly showMobilePlaylistCard = computed(() => {
+    // Temporarily show on mobile even when there's 1 video per user testing request
+    return this.hasPlaylist();
+  });
+
+  // Playlist navigation helpers (disabled when playlist has only 1 video)
   canPlayPrev = computed(() => {
-    if (!this.playlistService.currentPlaylist()) return false;
+    const playlist = this.playlistService.currentPlaylist();
+    if (!playlist || playlist.videos.length <= 1) return false;
     return this.playlistService.currentIndex() > 0 || this.playlistService.isLooping();
   });
   canPlayNext = computed(() => {
     const playlist = this.playlistService.currentPlaylist();
-    if (!playlist) return false;
+    if (!playlist || playlist.videos.length <= 1) return false;
     return this.playlistService.currentIndex() < playlist.videos.length - 1 || this.playlistService.isLooping();
   });
 
   showLearnHome = computed(() => !this.youtube.currentVideo() && !this.youtube.pendingVideoId());
   currentLearningLanguage = computed(() => this.getLanguageName(this.settings.settings().language));
-  featuredPlaylists = computed(() => {
-    const language = this.settings.settings().language;
-    const community = this.playlistService.communityPlaylists();
-    const featured = community.filter(playlist => playlist.language === language && playlist.isFeatured);
-    const fallback = community.filter(playlist => playlist.language === language);
-    const list = featured.length > 0 ? featured : fallback;
-    return list.slice(0, 3);
-  });
-  isFeaturedLoading = computed(() =>
-    (!this.playlistService.hasLoadedCommunity() || this.playlistService.isCommunityLoading()) &&
-    this.featuredPlaylists().length === 0
-  );
+  featuredPlaylists = this.playlistService.recommendedPlaylists;
+  isFeaturedLoading = this.playlistService.isRecommendedLoading;
   currentLangVocabCount = computed(() => {
     const lang = this.settings.settings().language;
     return this.vocab.vocabulary().filter(w => w.language === lang).length;
@@ -119,7 +121,7 @@ export class VideoPageComponent implements OnInit {
   videoMenuOpen = signal(false);
   menuVideoIndex = signal(-1);
   menuVideoId = signal('');
-  mobilePlaylistExpanded = signal(false);
+  mobilePlaylistSheetOpen = signal(false);
   isShareCopied = signal(false);
 
   // Vocab State
@@ -156,9 +158,11 @@ export class VideoPageComponent implements OnInit {
   private skipNextMismatchDialog = false;
 
   constructor() {
-    if (this.playlistService.communityPlaylists().length === 0) {
-      void this.playlistService.loadCommunityPlaylists();
-    }
+    // Automatically fetch server-side recommended playlists when active language changes
+    effect(() => {
+      const currentLang = this.settings.settings().language;
+      void this.playlistService.loadRecommendedPlaylists(currentLang);
+    });
 
     // Watch for language changes and refetch captions when language changes
     effect(() => {
@@ -683,12 +687,20 @@ export class VideoPageComponent implements OnInit {
   }
 
   onPlaylistVideoSelect(_videoId: string): void {
-    // Navigation is handled by effect() reacting to service state change
-    // so we don't need to do anything here other than what the panel component already did (update service)
+    // Automatically close the mobile bottom sheet when a video is chosen
+    this.mobilePlaylistSheetOpen.set(false);
   }
 
   toggleMobilePlaylist(): void {
-    this.mobilePlaylistExpanded.update(v => !v);
+    this.mobilePlaylistSheetOpen.update(v => !v);
+  }
+
+  openMobilePlaylistSheet(): void {
+    this.mobilePlaylistSheetOpen.set(true);
+  }
+
+  closeMobilePlaylistSheet(): void {
+    this.mobilePlaylistSheetOpen.set(false);
   }
 
   async onShareMobile(playlist: PlaylistWithVideos): Promise<void> {
@@ -697,7 +709,7 @@ export class VideoPageComponent implements OnInit {
     const shareUrl = this.playlistService.getShareUrl(playlist.id, videoId);
     const shareData = {
       title: playlist.title,
-      text: `Listen to ${playlist.title} on LinguaTube`,
+      text: `Listen to ${playlist.title} on Voca`,
       url: shareUrl
     };
 

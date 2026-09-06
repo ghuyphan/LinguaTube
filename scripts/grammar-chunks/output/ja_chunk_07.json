@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_だれか_90": {
+      "title": "だれか〜 (dareka〜)",
+      "shortExplanation": "Biểu thị 'ai đó', 'người nào đó' khi chưa xác định được danh tính hoặc danh tính không quan trọng.",
+      "longExplanation": "Đại từ bất định 'だれか' (dareka) dùng để chỉ 'ai đó' hoặc một người nào đó khi người nói không biết rõ danh tính hoặc việc xác định cụ thể người đó là ai không quan trọng. 'だれか' có thể kết hợp với các trợ từ như が, を, に, の hoặc đứng độc lập bổ nghĩa trong câu (trong giao tiếp hàng ngày, trợ từ が và を thường có thể được lược bỏ).",
+      "formation": "だれか (+ Trợ từ が / を / に / の) + Động từ / Tính từ / Danh từ",
+      "examples": [
+        {
+          "translation": "Có ai đó đã gõ cửa."
+        },
+        {
+          "translation": "Ai đó đã lấy trộm ô của tôi."
+        },
+        {
+          "translation": "Ai đó cứu tôi với! / Có ai không, hãy giúp tôi với!"
+        },
+        {
+          "translation": "Tại ai đó mà bị mất điện rồi."
+        }
+      ]
+    },
+    "ja_だれでも_91": {
+      "title": "だれでも～ (dare demo～)",
+      "shortExplanation": "Diễn tả 'bất kỳ ai', 'ai cũng', nhấn mạnh không có ngoại lệ đối với bất kỳ ai.",
+      "longExplanation": "Mẫu ngữ pháp 'だれでも' được tạo thành từ từ để hỏi 'だれ' kết hợp với trợ từ 'でも', mang ý nghĩa 'bất kỳ ai', 'ai cũng', 'bất kể là ai'. Cấu trúc này dùng để khẳng định rằng một hành động, trạng thái, khả năng hoặc quyền lợi nào đó áp dụng bình đẳng cho mọi người mà không có sự phân biệt hay giới hạn.",
+      "formation": "だれでも + Động từ / Tính từ / Danh từ",
+      "examples": [
+        {
+          "translation": "Ai cũng có thể chơi trò chơi này."
+        },
+        {
+          "translation": "Bất cứ ai cũng có lúc cảm thấy mệt mỏi."
+        },
+        {
+          "translation": "Bất kỳ ai cũng có thể tham gia sự kiện này miễn phí."
+        },
+        {
+          "translation": "Bất kể là ai cũng có thể tận hưởng các địa điểm tham quan ở thị trấn này."
+        }
+      ]
+    },
+    "ja_だれもないです_92": {
+      "title": "だれも～ないです (dare mo ~ nai desu)",
+      "shortExplanation": "Diễn tả sự phủ định hoàn toàn ở dạng lịch sự: 'không có ai...', 'chẳng ai...'.",
+      "longExplanation": "Cấu trúc 'だれも～ないです' kết hợp giữa đại từ phủ định toàn bộ 'だれも' (không ai) với dạng phủ định lịch sự '～ないです' (của động từ hoặc tính từ). Mẫu câu này dùng để diễn đạt ý 'không có ai...', 'chẳng một ai...' trong giao tiếp hàng ngày một cách lịch sự, tự nhiên và gần gũi.",
+      "formation": "だれも + Động từ thể ない + です / Tính từ đuôi い (bỏ い) + くないです / Tính từ đuôi な + じゃないです",
+      "examples": [
+        {
+          "translation": "Chẳng có ai biết cả."
+        },
+        {
+          "translation": "Không có ai đến cả."
+        },
+        {
+          "translation": "Cô ấy chẳng thích ai cả."
+        },
+        {
+          "translation": "Ở đây không có một ai cả."
+        }
+      ]
+    },
+    "ja_だれもません_93": {
+      "title": "だれも～ません (daremo ~masen)",
+      "shortExplanation": "Diễn tả sự phủ định hoàn toàn với động từ ở thể lịch sự chuẩn mực: 'không có ai...', 'chẳng ai...'.",
+      "longExplanation": "Cấu trúc 'だれも～ません' kết hợp giữa từ phủ định 'だれも' (không ai) với động từ chia ở thể lịch sự phủ định '～ません' (hoặc thì quá khứ '～ませんでした'). Mẫu câu này dùng để diễn đạt một cách chuẩn mực, trang trọng rằng hoàn toàn không có người nào thực hiện một hành động cụ thể.",
+      "formation": "だれも + Động từ thể ます (bỏ ます) + ません / ませんでした",
+      "examples": [
+        {
+          "translation": "Không một ai biết bí mật đó cả."
+        },
+        {
+          "translation": "Chẳng ai trả lời câu hỏi đó cả."
+        },
+        {
+          "translation": "Không ai chịu giúp đỡ anh ấy cả."
+        },
+        {
+          "translation": "Chẳng ai muốn xem bộ phim đó cả."
+        }
+      ]
+    },
+    "ja_どう_94": {
+      "title": "～どう しますか。 (～dou shimasu ka.)",
+      "shortExplanation": "Dùng để hỏi về ý kiến, quyết định hoặc cách giải quyết: '(sẽ) làm thế nào?', 'tính sao đây?'.",
+      "longExplanation": "Mẫu câu '～どうしますか' được sử dụng khi người nói muốn hỏi ý kiến, dự định, quyết định hoặc phương hướng giải quyết của đối phương trước một tình huống, vấn đề hay điều kiện cụ thể. Thường đi sau một mệnh đề nêu lý do (ので / から), điều kiện (たら) hoặc chủ đề (について).",
+      "formation": "Mệnh đề tình huống / Chủ đề (+ について / は / たら / ので) + どうしますか",
+      "examples": [
+        {
+          "translation": "Trời đang mưa rồi, bạn tính sao đây / bạn sẽ làm thế nào?"
+        },
+        {
+          "translation": "Về vấn đề này, bạn định xử lý thế nào?"
+        },
+        {
+          "translation": "Nếu anh ấy không đến thì bạn sẽ làm thế nào?"
+        },
+        {
+          "translation": "Khi quyết định hướng đi tương lai, bạn sẽ làm như thế nào?"
+        }
+      ]
+    },
+    "ja_どうですか_95": {
+      "title": "～どうですか。 (〜dou desu ka.)",
+      "shortExplanation": "Hỏi ý kiến, cảm nhận ('thấy thế nào?') hoặc đưa ra lời gợi ý, đề xuất ('...thì sao?').",
+      "longExplanation": "Mẫu câu '～どうですか' được dùng phổ biến trong hai trường hợp: (1) Dùng để hỏi cảm nhận, ý kiến, đánh giá của người nghe về một sự vật, sự việc ('...thế nào?'); (2) Dùng để đưa ra lời gợi ý, rủ rê hoặc đề xuất một ý tưởng nào đó một cách lịch sự, nhã nhặn ('...thì sao?', 'hay là...?').",
+      "formation": "Danh từ + は / が + どうですか / Động từ thể thông thường + のは + どうですか / Tính từ / Mệnh đề + どうですか",
+      "examples": [
+        {
+          "translation": "Bộ phim này bạn thấy thế nào?"
+        },
+        {
+          "translation": "Bữa tối ăn sushi thì thế nào / bạn thấy sao?"
+        },
+        {
+          "translation": "Tôi thấy căn phòng này khá rộng rãi, bạn thấy sao?"
+        },
+        {
+          "translation": "Yêu cầu của công ty mới khắt khe thật nhỉ. Anh Suzuki, nếu chuyển việc thì anh thấy thế nào?"
+        }
+      ]
+    },
+    "ja_どうやって_96": {
+      "title": "どうやって～ (douyatte～)",
+      "shortExplanation": "Hỏi về cách thức, phương pháp hoặc quy trình thực hiện: 'làm thế nào để...', 'bằng cách nào?'.",
+      "longExplanation": "Từ để hỏi 'どうやって' (bắt nguồn từ thể て của động từ どうやる - làm thế nào) dùng để hỏi về cách thức, phương pháp, phương tiện di chuyển hoặc các bước thực hiện một công việc nào đó. Cấu trúc này thường đứng trực tiếp trước động từ và mang nghĩa là 'làm cách nào để...', 'bằng phương pháp nào'.",
+      "formation": "どうやって + Động từ",
+      "examples": [
+        {
+          "translation": "Làm món sushi bằng cách nào vậy?"
+        },
+        {
+          "translation": "Bạn đã học tiếng Nhật bằng cách nào?"
+        },
+        {
+          "translation": "Làm thế nào để giải quyết vấn đề này?"
+        },
+        {
+          "translation": "Đi đến nhà ga bằng cách nào / như thế nào?"
+        }
+      ]
+    },
+    "ja_どう_97": {
+      "title": "～どう 言いますか。 (〜dou iimasu ka.)",
+      "shortExplanation": "Hỏi cách diễn đạt một từ, cụm từ trong một ngôn ngữ cụ thể: 'nói như thế nào?', 'nói sao?'.",
+      "longExplanation": "Mẫu câu '～どう言いますか' dùng để hỏi người khác về cách phát âm, cách diễn đạt hoặc từ tương đương trong một ngoại ngữ cụ thể (hoặc cách diễn đạt chuẩn mực). Cấu trúc thường gặp là đặt từ ngữ cần hỏi làm chủ đề với trợ từ 'は' hoặc tân ngữ với trợ từ 'を', tiếp theo là tên ngôn ngữ kèm trợ từ 'で', rồi đến 'どう言いますか'.",
+      "formation": "Từ / Cụm từ + は (hoặc を) + [Tên ngôn ngữ] + で + どう言いますか",
+      "examples": [
+        {
+          "translation": "'Arigatou' trong tiếng Anh nói như thế nào?"
+        },
+        {
+          "translation": "Từ này trong tiếng Nhật nói như thế nào?"
+        },
+        {
+          "translation": "'Sumimasen' trong tiếng Pháp nói như thế nào?"
+        },
+        {
+          "translation": "Cách diễn đạt đó trong tiếng Tây Ban Nha nói như thế nào?"
+        }
+      ]
+    },
+    "ja_とき_98": {
+      "title": "～とき (〜toki)",
+      "shortExplanation": "Chỉ thời điểm hoặc hoàn cảnh diễn ra một hành động, trạng thái: 'khi...', 'lúc...'.",
+      "longExplanation": "Cấu trúc '～とき' (thời/khi) kết hợp với từ loại đứng trước để tạo thành mệnh đề phụ chỉ thời gian, diễn tả thời điểm mà một hành động, sự việc hoặc trạng thái diễn ra. Cách nối phụ thuộc vào từ loại: động từ chia ở thể thông thường (thể từ điển, thể た, thể ない); tính từ đuôi い giữ nguyên; tính từ đuôi な thêm 'な'; danh từ thêm 'の'.",
+      "formation": "Động từ thể thông thường + とき / Tính từ đuôi い + とき / Tính từ đuôi な + なとき / Danh từ + のとき",
+      "examples": [
+        {
+          "translation": "Khi chơi ở công viên, chúng ta hãy đội mũ nhé."
+        },
+        {
+          "translation": "Khi quả táo này đỏ là lúc ăn ngon nhất."
+        },
+        {
+          "translation": "Khi tôi học bài, cả nhà đều giữ yên tĩnh cho tôi."
+        },
+        {
+          "translation": "Hồi còn nhỏ, tôi thường đến nhà bà chơi."
+        }
+      ]
+    },
+    "ja_ときどき_99": {
+      "title": "ときどき～ (tokidoki～)",
+      "shortExplanation": "Phó từ chỉ tần suất: 'thỉnh thoảng', 'đôi khi', 'đôi lúc'.",
+      "longExplanation": "Phó từ 'ときどき' (thời thời) dùng để diễn tả một hành động, sự việc diễn ra không thường xuyên, mang tính gián đoạn hoặc ngẫu nhiên theo từng khoảng thời gian nhất định, tương đương với 'thỉnh thoảng', 'đôi khi' trong tiếng Việt. Thường đứng ở đầu câu hoặc đặt ngay trước động từ/vị ngữ cần bổ nghĩa.",
+      "formation": "ときどき + Động từ / Tính từ / Vị ngữ",
+      "examples": [
+        {
+          "translation": "Anh ấy thỉnh thoảng tự làm bánh ngọt."
+        },
+        {
+          "translation": "Thỉnh thoảng trời có mưa, nên mang theo ô thì tốt hơn."
+        },
+        {
+          "translation": "Tôi thỉnh thoảng mua sắm ở cửa hàng này."
+        },
+        {
+          "translation": "Cô ấy thỉnh thoảng đi muộn."
+        }
+      ]
+    },
+    "ja_どこ_100": {
+      "title": "どこ～ (doko～)",
+      "shortExplanation": "Từ để hỏi về vị trí, địa điểm: 'ở đâu', 'chỗ nào', 'nơi nào'.",
+      "longExplanation": "Đại từ nghi vấn 'どこ' (doko) dùng để hỏi về không gian, địa điểm, vị trí hoặc phương hướng, tương đương với 'ở đâu', 'chỗ nào' trong tiếng Việt. Khi kết hợp với các trợ từ khác nhau sẽ biểu thị các câu hỏi cụ thể: どこですか (hỏi vị trí của sự vật), どこで (hỏi địa điểm diễn ra hành động), どこに (hỏi nơi tồn tại hoặc nơi cư trú), どこへ (hỏi hướng di chuyển/điểm đến).",
+      "formation": "どこ (+ Trợ từ は / で / に / へ / から) + Động từ / ですか",
+      "examples": [
+        {
+          "translation": "Nhà ga ở đâu vậy?"
+        },
+        {
+          "translation": "Bạn đã xem phim ở đâu?"
+        },
+        {
+          "translation": "Bạn đang sống ở đâu?"
+        },
+        {
+          "translation": "Bạn muốn đi đâu?"
+        }
+      ]
+    },
+    "ja_どこか_101": {
+      "title": "どこか～ (dokoka～)",
+      "shortExplanation": "Chỉ địa điểm chưa xác định hoặc người nói không biết rõ: 'đâu đó', 'nơi nào đó'.",
+      "longExplanation": "Đại từ bất định 'どこか' được tạo thành từ từ để hỏi 'どこ' kết hợp với trợ từ bất định 'か', dùng để chỉ một địa điểm, nơi chốn nào đó mà người nói không biết chính xác hoặc không cần nêu cụ thể. 'どこか' có thể kết hợp với các trợ từ chỉ vị trí (で, に, へ) hoặc đứng độc lập bổ nghĩa cho cụm danh từ (như どこか静かな場所 - nơi nào đó yên tĩnh).",
+      "formation": "どこか (+ Trợ từ で / に / へ) + Động từ / Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi đã đánh mất ví ở đâu đó rồi."
+        },
+        {
+          "translation": "Hôm nay tôi muốn đi đâu đó chơi."
+        },
+        {
+          "translation": "Ở đâu đó quanh đây có nhà hàng giá rẻ không nhỉ?"
+        },
+        {
+          "translation": "Tôi muốn học bài ở một nơi nào đó yên tĩnh."
+        }
+      ]
+    },
+    "ja_どこでも_102": {
+      "title": "どこでも～ (dokodemo～)",
+      "shortExplanation": "Diễn tả 'bất kỳ đâu', 'ở đâu cũng...', bao quát toàn bộ không giới hạn địa điểm.",
+      "longExplanation": "Mẫu ngữ pháp 'どこでも' (kết hợp từ nghi vấn どこ với trợ từ でも) mang ý nghĩa 'bất kỳ nơi nào', 'bất cứ đâu', 'ở đâu cũng...'. Cấu trúc này dùng như một phó từ trong câu để khẳng định rằng một hành động, sự việc hoặc trạng thái có thể xảy ra hay tồn tại ở mọi địa điểm mà không bị ràng buộc bởi bất kỳ nơi chốn cụ thể nào.",
+      "formation": "どこでも (+ Trợ từ で / に / へ) + Động từ / Mệnh đề",
+      "examples": [
+        {
+          "translation": "Bạn có thể học bài ở bất kỳ nơi nào bạn thích."
+        },
+        {
+          "translation": "Chiếc máy tính xách tay này rất tiện lợi nên ở đâu cũng có thể dùng internet được."
+        },
+        {
+          "translation": "Anh ấy có thể ngủ ở bất cứ đâu."
+        },
+        {
+          "translation": "Cô ấy rất thích hát ở bất kỳ nơi nào."
+        }
+      ]
+    },
+    "ja_どこにも_103": {
+      "title": "どこにも + Động từ + ないです (doko ni mo ~ nai desu)",
+      "shortExplanation": "Phủ định hoàn toàn về địa điểm ở dạng lịch sự: 'không... ở bất kỳ đâu', 'chẳng nơi nào có...'.",
+      "longExplanation": "Cấu trúc 'どこにも + Động từ thể ない + です' kết hợp cụm từ phủ định địa điểm toàn bộ 'どこにも' (ở bất kỳ đâu cũng không) với thể phủ định lịch sự của động từ '～ないです'. Dùng để nhấn mạnh một cách lịch sự nhưng tự nhiên rằng một sự vật hoàn toàn không tồn tại, không thể tìm thấy hoặc một hành động không thể thực hiện ở bất kỳ địa điểm nào.",
+      "formation": "どこにも + Động từ thể ない + です",
+      "examples": [
+        {
+          "translation": "Chẳng có nơi nào bán ô cả."
+        },
+        {
+          "translation": "Không thể tìm thấy anh ấy ở bất cứ đâu."
+        },
+        {
+          "translation": "Chẳng có nơi nào để học bài cả."
+        },
+        {
+          "translation": "Không có món ăn thuần chay ngon ở bất kỳ nơi nào cả."
+        }
+      ]
+    },
+    "ja_どこにも_104": {
+      "title": "どこにも + Động từ + ません (doko ni mo ~ masen)",
+      "shortExplanation": "Phủ định hoàn toàn về địa điểm với động từ ở thể lịch sự: 'không... ở bất kỳ đâu', 'chẳng có ở đâu...'.",
+      "longExplanation": "Cấu trúc 'どこにも + Động từ thể ます (bỏ ます) + ません' (bao gồm cả dạng thể tiếp diễn '～ていません') kết hợp 'どこにも' với đuôi phủ định trang trọng '～ません'. Dùng để phát biểu một cách lịch sự, chuẩn mực rằng một đối tượng hoàn toàn không tồn tại, không hiện diện hoặc hành động không diễn ra ở bất kỳ địa điểm nào.",
+      "formation": "どこにも + Động từ thể ます (bỏ ます) + ません / thể て + いません",
+      "examples": [
+        {
+          "translation": "Không thấy con mèo đó ở bất kỳ đâu cả."
+        },
+        {
+          "translation": "Tôi không để tiền ở bất kỳ chỗ nào cả."
+        },
+        {
+          "translation": "Ở thị trấn này chẳng có quán mì ramen nào ngon cả."
+        },
+        {
+          "translation": "Không thấy tên cô ấy được viết ở bất cứ chỗ nào."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_だれか_90": {
+      "title": "だれか〜 (dareka〜)",
+      "shortExplanation": "表示“某人”、“有人”，用于指代身份未确定或无需明确指明的人。",
+      "longExplanation": "不定代词“だれか”用于表示“某人”、“有人”，常在说话人不知道具体是谁，或者该人的具体身份并不重要时使用。它可以单独使用，也可以与助词（如 が、を、に、の 等）结合接续动词、形容词或名词。在日常会话中，助词 が 或 を 有时可省略。",
+      "formation": "だれか (+ 助词 が / を / に / の) + 动词 / 形容词 / 名词",
+      "examples": [
+        {
+          "translation": "有人敲了门。"
+        },
+        {
+          "translation": "有人偷了我的雨伞。"
+        },
+        {
+          "translation": "谁来救救我！/ 有人吗，请帮帮我！"
+        },
+        {
+          "translation": "因为某人的缘故，停电了。"
+        }
+      ]
+    },
+    "ja_だれでも_91": {
+      "title": "だれでも～ (dare demo～)",
+      "shortExplanation": "表示“任何人”、“无论谁都”，强调毫无例外地适用于所有人。",
+      "longExplanation": "句型“だれでも”由疑问词“だれ”与助词“でも”复合而成，表示“任何人”、“无论谁”、“大家”。用于强调某种情况、能力、特征或规则毫无例外地适用于所有人，不作任何特定区分。",
+      "formation": "だれでも + 动词 / 形容词 / 名词",
+      "examples": [
+        {
+          "translation": "任何人都可以玩这个游戏。"
+        },
+        {
+          "translation": "任何人都有感到疲倦的时候。"
+        },
+        {
+          "translation": "任何人都可以免费参加这个活动。"
+        },
+        {
+          "translation": "无论是谁都能尽情游览这个小镇的观光景点。"
+        }
+      ]
+    },
+    "ja_だれもないです_92": {
+      "title": "だれも～ないです (dare mo ~ nai desu)",
+      "shortExplanation": "在礼貌否定句中表示全盘否定；“谁也（不）……”、“没有人……”。",
+      "longExplanation": "句型“だれも～ないです”由表示全盘否定的“だれも”（谁也）与动词或形容词的礼貌否定形式“～ないです”搭配使用。用于表达“没有任何人……”、“谁也不……”的意思，语调亲切且礼貌，是日常会话中非常常见的表达方式。",
+      "formation": "だれも + 动词ない形 + です / い形容词词尾い变く + ないです / な形容词 + じゃないです",
+      "examples": [
+        {
+          "translation": "谁都不知道。"
+        },
+        {
+          "translation": "谁也不会来。"
+        },
+        {
+          "translation": "她谁都不喜欢。"
+        },
+        {
+          "translation": "这里一个人也没有。"
+        }
+      ]
+    },
+    "ja_だれもません_93": {
+      "title": "だれも～ません (daremo ~masen)",
+      "shortExplanation": "搭配动词敬体否定形表示全盘否定；“谁也不……”、“没有人……”。",
+      "longExplanation": "句型“だれも～ません”由表示全面否定的“だれも”搭配动词的标准敬体否定形式“～ません”（或过去否定形式“～ませんでした”）构成。用于以规范、庄重的语气说明没有任何人做某件事或进行某种行为。",
+      "formation": "だれも + 动词连用形（ます形去掉ます）+ ません / ませんでした",
+      "examples": [
+        {
+          "translation": "没有人知道这个秘密。"
+        },
+        {
+          "translation": "谁也没有回答那个问题。"
+        },
+        {
+          "translation": "没有人愿意去帮助他。"
+        },
+        {
+          "translation": "谁也不想看那部电影。"
+        }
+      ]
+    },
+    "ja_どう_94": {
+      "title": "～どう しますか。 (～dou shimasu ka.)",
+      "shortExplanation": "用于询问对方的决定、打算或应对办法；“打算怎么办？”、“怎么处理？”。",
+      "longExplanation": "句型“～どうしますか”用于在面对特定情况、问题或假设条件时，询问对方的想法、打算采取的行动或处理方针。常接在陈述原因（ので、から）、假设条件（たら）或话题（について）的句子之后。",
+      "formation": "情况说明 / 话题 (+ について / は / たら / ので) + どうしますか",
+      "examples": [
+        {
+          "translation": "下雨了，你打算怎么办？"
+        },
+        {
+          "translation": "关于这个问题，你打算怎么处理？"
+        },
+        {
+          "translation": "如果他不来的话，你打算怎么办？"
+        },
+        {
+          "translation": "在决定前途去向时，你打算怎么做？"
+        }
+      ]
+    },
+    "ja_どうですか_95": {
+      "title": "～どうですか。 (〜dou desu ka.)",
+      "shortExplanation": "询问对方的看法或感受（“觉得怎么样？”），亦可用于提出建议或劝诱（“……如何？”）。",
+      "longExplanation": "句型“～どうですか”主要有两种常见用法：一是询问对方对某事物的印象、感受、评价或当前状态（相当于“觉得……怎么样？”）；二是委婉地向对方提出建议、方案或劝诱（相当于“……怎么样？要不要……？”）。语气礼貌且自然，适用场合非常广泛。",
+      "formation": "名词 + は / が + どうですか / 动词普通形 + のは + どうですか / 形容词 / 句子 + どうですか",
+      "examples": [
+        {
+          "translation": "这部电影你觉得怎么样？"
+        },
+        {
+          "translation": "晚饭吃寿司怎么样？"
+        },
+        {
+          "translation": "我觉得这个房间挺宽敞的，你觉得呢？"
+        },
+        {
+          "translation": "新公司的条件挺严格的呢。铃木先生，要是换工作的话你觉得怎么样？"
+        }
+      ]
+    },
+    "ja_どうやって_96": {
+      "title": "どうやって～ (douyatte～)",
+      "shortExplanation": "询问做某事的方法、途径或步骤；“怎么……”、“如何……”、“用什么方法……”。",
+      "longExplanation": "疑问词“どうやって”（源自“どうやる”的て形）用于询问完成某项行为或达成某个目标的具体方法、操作步骤、交通方式或途径。通常直接置于动词前，相当于汉语的“怎么做……”、“如何……”、“怎样……”。",
+      "formation": "どうやって + 动词",
+      "examples": [
+        {
+          "translation": "寿司是怎么做的？"
+        },
+        {
+          "translation": "你是怎么学习日语的？"
+        },
+        {
+          "translation": "这个问题要如何解决呢？"
+        },
+        {
+          "translation": "去车站怎么走？"
+        }
+      ]
+    },
+    "ja_どう_97": {
+      "title": "～どう 言いますか。 (〜dou iimasu ka.)",
+      "shortExplanation": "用于请教某个词句在特定语言中该如何表达；“怎么说？”。",
+      "longExplanation": "句型“～どう言いますか”用于向他人请教某个词汇、短语或含义在某种特定语言中应当如何表达。常见的句式结构为：把要问的词语用助词“は”提示为主题（或用助词“を”作宾语），后接语言名称加上表示手段工具的助词“で”，最后接“どう言いますか”。",
+      "formation": "词语 / 表达 + は (或 を) + [语言名称] + で + どう言いますか",
+      "examples": [
+        {
+          "translation": "“谢谢（ありがとう）”用英语怎么说？"
+        },
+        {
+          "translation": "这个词用日语怎么说？"
+        },
+        {
+          "translation": "“对不起（すみません）”用法语怎么说？"
+        },
+        {
+          "translation": "那个表达用西班牙语怎么说？"
+        }
+      ]
+    },
+    "ja_とき_98": {
+      "title": "～とき (〜toki)",
+      "shortExplanation": "表示动作、状态发生的时间或时机；“……的时候”、“当……时”。",
+      "longExplanation": "形式名词“とき”（时）用于引导时间从句，表示某种动作、行为或状态发生的时间、时期或情境，相当于汉语中的“……的时候”。接续方式根据前接词类而定：动词使用普通形（辞书形、た形、ない形）；い形容词保持原形；な形容词加“な”；名词加“の”。",
+      "formation": "动词普通形 + とき / い形容词 + とき / な形容词 + なとき / 名词 + のとき",
+      "examples": [
+        {
+          "translation": "在公园玩耍的时候，戴上帽子吧。"
+        },
+        {
+          "translation": "这个苹果变红的时候，就是最好吃的时候。"
+        },
+        {
+          "translation": "我学习的时候，家人们都会为我保持安静。"
+        },
+        {
+          "translation": "小时候，我经常去奶奶（外婆）家玩。"
+        }
+      ]
+    },
+    "ja_ときどき_99": {
+      "title": "ときどき～ (tokidoki～)",
+      "shortExplanation": "表示频率的副词；“有时”、“偶尔”、“时常”。",
+      "longExplanation": "副词“ときどき”（写成汉字为“時々”）用于表示动作、事件或状态并非持续发生，而是间隔一段时间偶尔出现，相当于汉语中的“有时”、“偶尔”。通常置于句首或动词前面修饰谓语。",
+      "formation": "ときどき + 动词 / 形容词 / 谓语",
+      "examples": [
+        {
+          "translation": "他有时会做蛋糕。"
+        },
+        {
+          "translation": "偶尔会下雨，所以最好带上雨伞。"
+        },
+        {
+          "translation": "我偶尔会在这家店买东西。"
+        },
+        {
+          "translation": "她有时会迟到。"
+        }
+      ]
+    },
+    "ja_どこ_100": {
+      "title": "どこ～ (doko～)",
+      "shortExplanation": "用于询问地点、位置的疑问词；“哪里”、“何处”。",
+      "longExplanation": "疑问代词“どこ”用于询问空间位置、场所或移动方向，相当于汉语中的“哪里”、“哪儿”。常与不同助词搭配构成疑问句：どこですか（询问事物所在位置）、どこで（询问动作发生的场所）、どこに（询问人或物存在的场所或定居点）、どこへ（询问移动的方向或目的地）。",
+      "formation": "どこ (+ 助词 は / で / に / へ / から) + 动词 / ですか",
+      "examples": [
+        {
+          "translation": "车站在哪里？"
+        },
+        {
+          "translation": "你在哪里看了电影？"
+        },
+        {
+          "translation": "你住在哪里？"
+        },
+        {
+          "translation": "你想去哪里？"
+        }
+      ]
+    },
+    "ja_どこか_101": {
+      "title": "どこか～ (dokoka～)",
+      "shortExplanation": "表示不确定的场所；“某个地方”、“某处”、“哪里”。",
+      "longExplanation": "不定代词“どこか”由疑问词“どこ”加上表示不确定的助词“か”构成，用于指代说话人无法确定或无需明确具体位置的“某个地方”、“某处”。它可以直接与助词（如 で、に、へ 等）搭配连接动词，也可以直接置于名词短语前起修饰作用（如“どこか静かな場所”表示“某处安静的地方”）。",
+      "formation": "どこか (+ 助词 で / に / へ) + 动词 / 名词",
+      "examples": [
+        {
+          "translation": "我在某个地方把钱包弄丢了。"
+        },
+        {
+          "translation": "今天我想去某个地方转转。"
+        },
+        {
+          "translation": "这附近哪里有便宜的餐馆吗？"
+        },
+        {
+          "translation": "我想在某个安静的地方学习。"
+        }
+      ]
+    },
+    "ja_どこでも_102": {
+      "title": "どこでも～ (dokodemo～)",
+      "shortExplanation": "表示“任何地方”、“无论哪里”、“到处”，强调没有地点限制。",
+      "longExplanation": "语法“どこでも”由疑问词“どこ”与表示全面的助词“でも”复合而成，表示“任何地方”、“无论何处”、“哪儿都”。在句中作副词使用，强调某项行为、状态或可能性在所有场所都可以成立或进行，不受空间的任何局限。",
+      "formation": "どこでも (+ 助词 で / に / へ) + 动词 / 句子",
+      "examples": [
+        {
+          "translation": "你可以在任何喜欢的地方学习。"
+        },
+        {
+          "translation": "这台笔记本电脑很方便，所以在哪里都能连上网。"
+        },
+        {
+          "translation": "他在任何地方都能睡得着。"
+        },
+        {
+          "translation": "她非常喜欢在任何地方唱歌。"
+        }
+      ]
+    },
+    "ja_どこにも_103": {
+      "title": "どこにも + 动词 + ないです (doko ni mo ~ nai desu)",
+      "shortExplanation": "与动词否定形搭配表示地点的全盘否定；“哪里也（不/没有）……”、“到处都（不）……”。",
+      "longExplanation": "句型“どこにも + 动词ない形 + です”由表示地点全盘否定的“どこにも”（在任何地方也……）与动词的礼貌否定形式“～ないです”组合而成。用于以自然随和且礼貌的语气强调某事物在任何地点都无法找到、不存在，或某动作在任何场所都无法进行。",
+      "formation": "どこにも + 动词ない形 + です",
+      "examples": [
+        {
+          "translation": "到处都没有卖雨伞的。"
+        },
+        {
+          "translation": "在任何地方都找不到他。"
+        },
+        {
+          "translation": "哪儿都没有可以学习的地方。"
+        },
+        {
+          "translation": "任何地方都没有好吃的纯素料理。"
+        }
+      ]
+    },
+    "ja_どこにも_104": {
+      "title": "どこにも + 动词 + ません (doko ni mo ~ masen)",
+      "shortExplanation": "搭配动词敬体否定形表示地点的全盘否定；“在任何地方都（不）……”、“哪里也没有……”。",
+      "longExplanation": "句型“どこにも + 动词连用形 + ません”（也包括持续态否定“～ていません”）结合了表示地点全盘否定的“どこにも”与动词的标准敬体否定形式“～ません”。用于以正式、规范的语气表明某事物在任何地方都不存在、未出现，或某行为在任何地点都未曾发生。",
+      "formation": "どこにも + 动词连用形（ます形去掉ます）+ ません / て形 + いません",
+      "examples": [
+        {
+          "translation": "到处都看不到那只猫。"
+        },
+        {
+          "translation": "我没有把钱放在任何地方。"
+        },
+        {
+          "translation": "这个小镇上哪儿都没有好吃的拉面店。"
+        },
+        {
+          "translation": "任何地方都没有写她的名字。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_だれか_90": {
+      "title": "だれか〜 (dareka〜)",
+      "shortExplanation": "정체가 특정되지 않은 대상을 가리키며, '누군가', '어떤 사람'을 나타냅니다.",
+      "longExplanation": "부정대명사 'だれか'는 구체적으로 누구인지 모르거나 특정할 필요가 없는 사람을 가리킬 때 쓰이며, '누군가', '어떤 사람'이라는 뜻을 나타냅니다. 조사(が, を, に, の 등)와 함께 쓰여 주어나 목적어 역할을 하거나, 단독으로 동사·형용사·명사와 결합합니다. 일상 회화에서는 조사 が나 を가 생략되기도 합니다.",
+      "formation": "だれか (+ 조사 が / を / に / の) + 동사 / 형용사 / 명사",
+      "examples": [
+        {
+          "translation": "누군가가 문을 두드렸습니다."
+        },
+        {
+          "translation": "누군가가 제 우산을 훔쳐갔습니다."
+        },
+        {
+          "translation": "누군가 도와주세요."
+        },
+        {
+          "translation": "누군가의 탓으로 전기가 나갔습니다."
+        }
+      ]
+    },
+    "ja_だれでも_91": {
+      "title": "だれでも～ (dare demo～)",
+      "shortExplanation": "대상을 가리지 않고 모두에게 해당함을 나타내며, '누구라도', '누구나'의 뜻입니다.",
+      "longExplanation": "'だれでも'는 의문사 'だれ'에 조사 'でも'가 결합한 표현으로, '누구라도', '누구나', '누구든지'를 의미합니다. 어떤 능력, 상황, 자격 등이 특정 인물에 국한되지 않고 모든 사람에게 보편적으로 적용됨을 강조할 때 쓰입니다.",
+      "formation": "だれでも + 동사 / 형용사 / 명사",
+      "examples": [
+        {
+          "translation": "누구나 이 게임을 할 수 있습니다."
+        },
+        {
+          "translation": "누구라도 피곤할 때가 있습니다."
+        },
+        {
+          "translation": "누구나 무료로 이 이벤트에 참가할 수 있습니다."
+        },
+        {
+          "translation": "누구라도 이 마을의 관광 명소를 즐길 수 있습니다."
+        }
+      ]
+    },
+    "ja_だれもないです_92": {
+      "title": "だれも～ないです (dare mo ~ nai desu)",
+      "shortExplanation": "정중한 부정문에서 사람을 전면 부정하며, '아무도 ~않습니다/없습니다'의 뜻입니다.",
+      "longExplanation": "'だれも～ないです'는 전면 부정을 나타내는 'だれも'(아무도) 뒤에 동사 또는 형용사의 정중 부정형인 '～ないです'가 이어지는 문형입니다. '아무도 ~하지 않습니다', '누구도 ~이지 않습니다'라는 뜻으로, 격식을 너무 차리지 않으면서도 공손하고 자연스러운 회화 표현입니다.",
+      "formation": "だれも + 동사 ない형 + です / い형용사 어간 + くないです / な형용사 어간 + じゃないです",
+      "examples": [
+        {
+          "translation": "아무도 모릅니다."
+        },
+        {
+          "translation": "아무도 오지 않습니다."
+        },
+        {
+          "translation": "그녀는 아무도 좋아하지 않습니다."
+        },
+        {
+          "translation": "여기에는 아무도 없습니다."
+        }
+      ]
+    },
+    "ja_だれもません_93": {
+      "title": "だれも～ません (daremo ~masen)",
+      "shortExplanation": "동사의 정중 부정형과 결합하여 전면 부정을 나타내며, '아무도 ~하지 않습니다'의 뜻입니다.",
+      "longExplanation": "'だれも～ません'은 'だれも'(아무도) 뒤에 동사의 정중 부정형인 '～ません'(또는 과거형 '～ませんでした')을 연결하는 문형입니다. 어떤 행위를 행하는 사람이 단 한 명도 없음을 공손하고 격식 있는 어조로 표현할 때 사용합니다.",
+      "formation": "だれも + 동사 ます형(ます 탈락) + ません / ませんでした",
+      "examples": [
+        {
+          "translation": "아무도 비밀을 모릅니다."
+        },
+        {
+          "translation": "아무도 그 질문에 대답하지 않았습니다."
+        },
+        {
+          "translation": "아무도 그를 도와주지 않습니다."
+        },
+        {
+          "translation": "아무도 그 영화를 보고 싶어 하지 않습니다."
+        }
+      ]
+    },
+    "ja_どう_94": {
+      "title": "～どう しますか。 (～dou shimasu ka.)",
+      "shortExplanation": "상대방의 결정이나 대처 방안을 물을 때 쓰이며, '어떻게 하시겠습니까?', '어떻게 할래요?'의 뜻입니다.",
+      "longExplanation": "'～どうしますか'는 어떤 상황, 문제 또는 조건에 맞닥뜨렸을 때 상대방이 어떤 조치를 취하거나 결정을 내릴지 물어보는 표현입니다. 이유(ので, から), 가정 조건(たら), 화제(について) 등을 나타내는 절 뒤에 이어져 쓰입니다.",
+      "formation": "상황 설명 / 화제 (+ について / は / たら / ので) + どうしますか",
+      "examples": [
+        {
+          "translation": "비가 내리고 있는데, 어떻게 하시겠습니까?"
+        },
+        {
+          "translation": "이 문제에 대해 어떻게 하시겠습니까?"
+        },
+        {
+          "translation": "그가 오지 않는다면 어떻게 하실 건가요?"
+        },
+        {
+          "translation": "진로를 결정할 때 어떻게 하시겠습니까?"
+        }
+      ]
+    },
+    "ja_どうですか_95": {
+      "title": "～どうですか。 (〜dou desu ka.)",
+      "shortExplanation": "의견이나 감상을 묻거나('어때요?'), 제안 및 권유를 할 때('~하는 건 어때요?') 쓰입니다.",
+      "longExplanation": "'～どうですか'는 크게 두 가지 용도로 쓰입니다. 첫째, 어떤 사물이나 일에 대한 상대방의 의견, 감상, 평가를 묻는 용법('어떻습니까?', '어때요?'). 둘째, 상대방에게 가볍게 의견을 구하며 권유나 제안을 건네는 용법('~하는 것은 어떠세요?')입니다. 정중하면서도 부드러운 일상 표현입니다.",
+      "formation": "명사 + は / が + どうですか / 동사 보통형 + のは + どうですか / 형용사 / 문장 + どうですか",
+      "examples": [
+        {
+          "translation": "이 영화 어때요?"
+        },
+        {
+          "translation": "저녁으로 초밥을 먹는 건 어때요?"
+        },
+        {
+          "translation": "이 방은 넓은 것 같은데, 어떠세요?"
+        },
+        {
+          "translation": "새 회사의 조건이 까다롭네요. 스즈키 씨, 이직하는 건 어떠세요?"
+        }
+      ]
+    },
+    "ja_どうやって_96": {
+      "title": "どうやって～ (douyatte～)",
+      "shortExplanation": "어떤 일을 하는 방법, 수단, 순서를 물을 때 쓰이며, '어떻게', '어떤 방법으로'의 뜻입니다.",
+      "longExplanation": "'どうやって'는 '어떻게 하다'를 뜻하는 'どうやる'의 て형에서 유래한 의문 표현으로, 어떤 작업이나 행위를 실행하는 구체적인 수단, 방법, 이동 경로, 절차 등을 질문할 때 사용합니다. 주로 동사 앞에 놓여 한국어의 '어떻게', '어떤 방법으로'에 해당합니다.",
+      "formation": "どうやって + 동사",
+      "examples": [
+        {
+          "translation": "초밥을 어떻게 만듭니까?"
+        },
+        {
+          "translation": "일본어를 어떻게 공부하셨나요?"
+        },
+        {
+          "translation": "이 문제를 어떻게 해결합니까?"
+        },
+        {
+          "translation": "역까지 어떻게 가나요?"
+        }
+      ]
+    },
+    "ja_どう_97": {
+      "title": "～どう 言いますか。 (〜dou iimasu ka.)",
+      "shortExplanation": "특정 언어로 특정 단어나 표현을 어떻게 말하는지 물을 때 쓰이며, '어떻게 말합니까?'의 뜻입니다.",
+      "longExplanation": "'～どう言いますか'는 특정 단어, 문장, 표현을 어떤 외국어(또는 적절한 어휘)로 어떻게 표현하는지 물어볼 때 쓰는 구문입니다. 일반적으로 묻고자 하는 어구를 조사 'は' 또는 'を'로 제시하고, 언어명 뒤에 수단을 나타내는 조사 'で'를 붙인 후 'どう言いますか'를 연결합니다.",
+      "formation": "단어 / 표현 + は (또는 を) + [언어명] + で + どう言いますか",
+      "examples": [
+        {
+          "translation": "'아리가토'는 영어로 어떻게 말합니까?"
+        },
+        {
+          "translation": "이 단어를 일본어로 어떻게 말하나요?"
+        },
+        {
+          "translation": "'스미마센'은 프랑스어로 어떻게 말합니까?"
+        },
+        {
+          "translation": "그 표현을 스페인어로 어떻게 말하나요?"
+        }
+      ]
+    },
+    "ja_とき_98": {
+      "title": "～とき (〜toki)",
+      "shortExplanation": "동작이나 상태가 일어나는 시점을 나타내며, '~할 때', '~일 때'의 뜻입니다.",
+      "longExplanation": "'～とき'는 명사 'とき'(때)가 앞말의 수식을 받아 시간이나 상황을 나타내는 접속 표현으로, 한국어의 '~할 때', '~때'에 해당합니다. 접속법은 품사에 따라 다음과 같습니다: 동사는 보통형(사전형, た형, ない형 등), い형용사는 기본형 그대로, な형용사는 어간 뒤에 'な', 명사는 뒤에 'の'를 붙여 접속합니다.",
+      "formation": "동사 보통형 + とき / い형용사 + とき / な형용사 어간 + なとき / 명사 + のとき",
+      "examples": [
+        {
+          "translation": "공원에서 놀 때는 모자를 씁시다."
+        },
+        {
+          "translation": "이 사과가 빨갈 때가 제철입니다."
+        },
+        {
+          "translation": "제가 공부할 때 가족들은 조용히 해 줍니다."
+        },
+        {
+          "translation": "어렸을 때 자주 할머니 댁에 놀러 갔습니다."
+        }
+      ]
+    },
+    "ja_ときどき_99": {
+      "title": "ときどき～ (tokidoki～)",
+      "shortExplanation": "빈도를 나타내는 부사로, '때때로', '가끔'의 뜻입니다.",
+      "longExplanation": "'ときどき'(時々)는 어떤 행동이나 사건이 늘 일정하게 일어나는 것이 아니라 간헐적으로 드물게 발생함을 나타내는 빈도 부사입니다. 한국어의 '때때로', '가끔', '이따금'에 해당하며, 문두나 술어(동사 등) 앞에 놓여 문장 전체 또는 동사를 수식합니다.",
+      "formation": "ときどき + 동사 / 형용사 / 술어",
+      "examples": [
+        {
+          "translation": "그는 가끔 케이크를 만듭니다."
+        },
+        {
+          "translation": "때때로 비가 내리므로 우산을 가지고 가는 편이 좋습니다."
+        },
+        {
+          "translation": "저는 가끔 이 가게에서 장을 봅니다."
+        },
+        {
+          "translation": "그녀는 가끔 지각을 합니다."
+        }
+      ]
+    },
+    "ja_どこ_100": {
+      "title": "どこ～ (doko～)",
+      "shortExplanation": "장소나 위치를 묻는 의문사로, '어디', '어느 곳'의 뜻입니다.",
+      "longExplanation": "'どこ'는 장소, 위치, 방향 등을 질문하는 의문대명사로, 한국어의 '어디', '어느 곳'에 해당합니다. 다양한 조사와 결합하여 구체적인 의문문을 구성합니다: どこですか(위치 질문), どこで(행위가 일어나는 장소), どこに(존재 장소나 거주지), どこへ(이동 방향 및 목적지).",
+      "formation": "どこ (+ 조사 は / で / に / へ / から) + 동사 / ですか",
+      "examples": [
+        {
+          "translation": "역은 어디입니까?"
+        },
+        {
+          "translation": "어디에서 영화를 보았습니까?"
+        },
+        {
+          "translation": "어디에 살고 있습니까?"
+        },
+        {
+          "translation": "어디로 가고 싶습니까?"
+        }
+      ]
+    },
+    "ja_どこか_101": {
+      "title": "どこか～ (dokoka～)",
+      "shortExplanation": "특정되지 않은 장소를 나타내며, '어딘가', '어느 곳'의 뜻입니다.",
+      "longExplanation": "'どこか'는 의문사 'どこ'에 불특정을 나타내는 조사 'か'가 결합한 부정대명사로, 구체적인 장소를 정확히 모르거나 특정할 필요가 없을 때 '어딘가', '어느 곳'을 가리킵니다. 조사(で, に, へ)와 함께 동사에 연결되거나, 명사구를 수식하는 형태로 널리 쓰입니다.",
+      "formation": "どこか (+ 조사 で / に / へ) + 동사 / 명사",
+      "examples": [
+        {
+          "translation": "어딘가에서 지갑을 잃어버렸습니다."
+        },
+        {
+          "translation": "오늘은 어딘가에 가고 싶습니다."
+        },
+        {
+          "translation": "어딘가 저렴한 식당이 있습니까?"
+        },
+        {
+          "translation": "어딘가 조용한 곳에서 공부하고 싶다."
+        }
+      ]
+    },
+    "ja_どこでも_102": {
+      "title": "どこでも～ (dokodemo～)",
+      "shortExplanation": "장소를 가리지 않음을 나타내며, '어디서나', '어디든지', '어느 곳이든'의 뜻입니다.",
+      "longExplanation": "'どこでも'는 의문사 'どこ'에 포괄의 뜻을 나타내는 조사 'でも'가 붙은 표현으로, '어디든지', '어디서나', '어느 곳이든'을 의미합니다. 문장 속에서 부사처럼 쓰여 장소의 제한 없이 어떤 행위나 상황이 가능하거나 성립함을 강조합니다.",
+      "formation": "どこでも (+ 조사 で / に / へ) + 동사 / 문장",
+      "examples": [
+        {
+          "translation": "어디든 좋아하는 장소에서 공부할 수 있습니다."
+        },
+        {
+          "translation": "이 노트북은 편리해서 어디서나 인터넷을 이용할 수 있습니다."
+        },
+        {
+          "translation": "그는 어디서든 잠을 잘 수 있습니다."
+        },
+        {
+          "translation": "그녀는 어디서나 노래 부르는 것을 아주 좋아합니다."
+        }
+      ]
+    },
+    "ja_どこにも_103": {
+      "title": "どこにも + 동사 + ないです (doko ni mo ~ nai desu)",
+      "shortExplanation": "동사의 부정형과 결합하여 장소의 전면 부정을 나타내며, '어디에도 ~않습니다/없습니다'의 뜻입니다.",
+      "longExplanation": "'どこにも + 동사 ない형 + です'는 장소의 전면 부정을 나타내는 'どこにも'(어디에도)에 동사의 정중 부정형인 '～ないです'를 결합한 구문입니다. 어떤 장소에서도 대상을 찾을 수 없거나 어떤 행위의 성립이 불가능함을 부드럽고 정중한 어조로 나타낼 때 사용합니다.",
+      "formation": "どこにも + 동사 ない형 + です",
+      "examples": [
+        {
+          "translation": "어디에도 우산을 팔지 않습니다."
+        },
+        {
+          "translation": "그를 어디에서도 찾을 수가 없습니다."
+        },
+        {
+          "translation": "어디에도 공부할 수 있는 장소가 없습니다."
+        },
+        {
+          "translation": "어디에도 맛있는 비건 요리가 없습니다."
+        }
+      ]
+    },
+    "ja_どこにも_104": {
+      "title": "どこにも + 동사 + ません (doko ni mo ~ masen)",
+      "shortExplanation": "동사의 정중 부정형과 결합하여 장소의 전면 부정을 나타내며, '어디에도 ~하지/있지 않습니다'의 뜻입니다.",
+      "longExplanation": "'どこにも + 동사 ます형 + ません'(상태의 지속을 나타내는 '～ていません' 포함)은 장소의 전면 부정을 나타내는 'どこにも'에 격식 있는 정중 부정형 '～ません'을 연결한 문형입니다. 어떤 사물이나 인물이 어느 장소에도 존재하지 않거나 특정 동작이 어디에서도 행해지지 않았음을 공손하고 단정적으로 나타냅니다.",
+      "formation": "どこにも + 동사 ます형(ます 탈락) + ません / て형 + いません",
+      "examples": [
+        {
+          "translation": "어디에도 그 고양이가 없습니다."
+        },
+        {
+          "translation": "어디에도 돈을 두지 않았습니다."
+        },
+        {
+          "translation": "이 마을에는 어디에도 맛있는 라멘집이 없습니다."
+        },
+        {
+          "translation": "어디에도 그녀의 이름이 적혀 있지 않습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_だれか_90": {
+      "title": "だれか〜 (dareka〜)",
+      "shortExplanation": "不特定の人物を指し、「だれか」「ある人」という意味を表します。",
+      "longExplanation": "「だれか」は、人物の特定ができない場合や、具体的に誰であるかを問わない場合に「だれか」「ある人」という意味で用いる不定称の代名詞です。助詞（が・を・に・の等）を伴って主語や修飾語として機能するほか、会話では「が」や「を」が省略されて動詞などに直接接続することもあります。",
+      "formation": "だれか (+ 助詞 が / を / に / の) + 動詞 / 形容詞 / 名詞",
+      "examples": [
+        {
+          "translation": "だれかがドアをノックしました。"
+        },
+        {
+          "translation": "だれかが私の傘を盗みました。"
+        },
+        {
+          "translation": "だれか助けてください。"
+        },
+        {
+          "translation": "だれかのせいで、電気がきれました。"
+        }
+      ]
+    },
+    "ja_だれでも_91": {
+      "title": "だれでも～ (dare demo～)",
+      "shortExplanation": "対象を限定せず全員に当てはまることを表し、「だれでも」「どんな人でも」という意味を表します。",
+      "longExplanation": "「だれでも」は、疑問詞「だれ」に全面的な肯定・包含を表す助詞「でも」が付いた表現です。「どんな人でも」「すべての人」という意味で、条件や能力、権利、性質などが特定の人に限られず、誰にでも等しく当てはまることを強調します。",
+      "formation": "だれでも + 動詞 / 形容詞 / 名詞",
+      "examples": [
+        {
+          "translation": "だれでもこのゲームができます。"
+        },
+        {
+          "translation": "だれでも疲れることがあります。"
+        },
+        {
+          "translation": "だれでも無料でこのイベントに参加できます。"
+        },
+        {
+          "translation": "だれでもこの町の観光スポットを楽しむことができます。"
+        }
+      ]
+    },
+    "ja_だれもないです_92": {
+      "title": "だれも～ないです (dare mo ~ nai desu)",
+      "shortExplanation": "否定の述語を伴って人物を全面否定し、「だれも〜ない」「一人も〜ない」という丁寧な意味を表します。",
+      "longExplanation": "「だれも～ないです」は、不定称「だれ」に助詞「も」が付いた「だれも」に、動詞・形容詞の否定形「〜ないです」を接続して、人を完全に否定する文法表現です。「一人も〜ない」という意味を、丁寧かつ親しみのある口語的な調子で表します。",
+      "formation": "だれも + 動詞 ない形 + です / い形容詞 語幹 + くないです / な形容詞 語幹 + じゃないです",
+      "examples": [
+        {
+          "translation": "だれも知らないです。"
+        },
+        {
+          "translation": "だれも来ないです。"
+        },
+        {
+          "translation": "彼女はだれも好きじゃないです。"
+        },
+        {
+          "translation": "ここにはだれもいないです。"
+        }
+      ]
+    },
+    "ja_だれもません_93": {
+      "title": "だれも～ません (daremo ~masen)",
+      "shortExplanation": "動詞の改まった丁寧否定形を伴い、「だれも〜しません」「一人も〜しません」という意味を表します。",
+      "longExplanation": "「だれも～ません」は、「だれも」に動詞の標準的な丁寧否定形「〜ません」（または過去否定形「〜ませんでした」）を接続し、ある行為を行う人物が皆無であることを改まった丁寧な語調で述べる文法表現です。",
+      "formation": "だれも + 動詞 連用形（ます形語幹）+ ません / ませんでした",
+      "examples": [
+        {
+          "translation": "だれも秘密を知りません。"
+        },
+        {
+          "translation": "だれもその質問に答えませんでした。"
+        },
+        {
+          "translation": "だれも彼を助けてあげません。"
+        },
+        {
+          "translation": "だれもその映画を見たがりません。"
+        }
+      ]
+    },
+    "ja_どう_94": {
+      "title": "～どう しますか。 (～dou shimasu ka.)",
+      "shortExplanation": "相手の意向・判断・対応策を尋ね、「どうしますか」「どう対応しますか」という意味を表します。",
+      "longExplanation": "「～どうしますか」は、特定の状況や課題、想定される条件に対して、相手がどのような判断を下すか、どのような行動をとるかを尋ねる表現です。理由（ので・から）、条件（たら）、話題（について）などを提示した文に続けて用いられます。",
+      "formation": "状況節 / 話題 (+ について / は / たら / ので) + どうしますか",
+      "examples": [
+        {
+          "translation": "雨が降っているので、どうしますか？"
+        },
+        {
+          "translation": "この問題について、どうしますか？"
+        },
+        {
+          "translation": "彼が来なかったら、どうしますか？"
+        },
+        {
+          "translation": "進路を決める時、どうしますか？"
+        }
+      ]
+    },
+    "ja_どうですか_95": {
+      "title": "～どうですか。 (〜dou desu ka.)",
+      "shortExplanation": "相手の感想・意見を尋ねたり（「どう思いますか」）、提案・勧誘を行ったりする（「〜はどうですか」）際に用います。",
+      "longExplanation": "「～どうですか」は、主に2つの場面で用いられます。(1) ある物事や経験について、相手の感想・意見・状態を尋ねる用法（「〜をどう思いますか」）。(2) 相手に提案や勧めを控えめに行う用法（「〜はいかがですか」「〜しませんか」）。改まりすぎず、日常会話で非常に幅広く使われる丁寧な表現です。",
+      "formation": "名詞 + は / が + どうですか / 動詞 普通形 + のは + どうですか / 形容詞・文 + どうですか",
+      "examples": [
+        {
+          "translation": "この映画はどうですか？"
+        },
+        {
+          "translation": "晩ご飯に寿司を食べるのはどうですか？"
+        },
+        {
+          "translation": "この部屋は広いと思いますが、どうですか？"
+        },
+        {
+          "translation": "新しい会社の要件が厳しいですね。鈴木さん、転職するならどうですか？"
+        }
+      ]
+    },
+    "ja_どうやって_96": {
+      "title": "どうやって～ (douyatte～)",
+      "shortExplanation": "手段・方法・手順などを尋ね、「どのようにして」「どういう方法で」という意味を表します。",
+      "longExplanation": "「どうやって」は、「どうやる」のて形に由来する疑問詞的表現で、ある動作や目的を達成するための具体的な手段・方法・交通手段・手順などを尋ねる際に用います。動詞の前に置かれ、「どのようにして〜するか」「どんな方法で〜するか」という意味を表します。",
+      "formation": "どうやって + 動詞",
+      "examples": [
+        {
+          "translation": "どうやってお寿司を作りますか？"
+        },
+        {
+          "translation": "どうやって日本語を勉強しましたか？"
+        },
+        {
+          "translation": "どうやってこの問題を解決しますか？"
+        },
+        {
+          "translation": "どうやって駅に行きますか？"
+        }
+      ]
+    },
+    "ja_どう_97": {
+      "title": "～どう 言いますか。 (〜dou iimasu ka.)",
+      "shortExplanation": "特定の言葉や表現をある言語でどう表現するかを尋ね、「どう言いますか」という意味を表します。",
+      "longExplanation": "「～どう言いますか」は、ある単語やフレーズ、概念を特定の外国語（または適切な表現）でどのように言い表すかを尋ねる表現です。質問対象となる語句を「は」（または「を」）で提示し、言語名の後ろに手段を表す助詞「で」を伴って「〜でどう言いますか」の形で用います。",
+      "formation": "言葉・表現 + は（または を）+［言語名］+ で + どう言いますか",
+      "examples": [
+        {
+          "translation": "「ありがとう」は英語でどう言いますか。"
+        },
+        {
+          "translation": "この言葉を日本語でどう言いますか。"
+        },
+        {
+          "translation": "「すみません」はフランス語でどう言いますか。"
+        },
+        {
+          "translation": "その表現をスペイン語でどう言いますか。"
+        }
+      ]
+    },
+    "ja_とき_98": {
+      "title": "～とき (〜toki)",
+      "shortExplanation": "動作や状態が起こる時点・時期を表し、「〜の時」「〜の際」という意味を表します。",
+      "longExplanation": "「～とき」は、ある行為や状態が生じる時期・時間・場面を表す接続表現です。名詞「とき」が連体修飾を受ける形をとり、前接する品詞によって接続形が異なります（動詞普通形、い形容詞はそのまま、な形容詞は「〜な」、名詞は「〜の」を伴います）。",
+      "formation": "動詞 普通形 + とき / い形容詞 + とき / な形容詞 語幹 + なとき / 名詞 + のとき",
+      "examples": [
+        {
+          "translation": "公園で遊ぶとき、帽子をかぶりましょう。"
+        },
+        {
+          "translation": "このりんごが赤いとき、食べごろです。"
+        },
+        {
+          "translation": "私が勉強するとき、家族は静かにしてくれます。"
+        },
+        {
+          "translation": "子供のとき、よくおばあちゃんの家に遊びに行きました。"
+        }
+      ]
+    },
+    "ja_ときどき_99": {
+      "title": "ときどき～ (tokidoki～)",
+      "shortExplanation": "頻度を表す副詞で、「時々」「たまに」という意味を表します。",
+      "longExplanation": "「ときどき」（時々）は、行為や現象が常時ではなく、間隔をおいて不定期に発生することを表す頻度の副詞です。「たまに」「折節」と同様の意味を持ち、文頭または動詞の直前に置いて述語を修飾します。",
+      "formation": "ときどき + 動詞 / 形容詞 / 述語",
+      "examples": [
+        {
+          "translation": "彼はときどきケーキを作ります。"
+        },
+        {
+          "translation": "ときどき雨が降るので、傘を持って行ったほうがいいです。"
+        },
+        {
+          "translation": "私はときどきこの店で買い物をします。"
+        },
+        {
+          "translation": "彼女はときどき遅刻します。"
+        }
+      ]
+    },
+    "ja_どこ_100": {
+      "title": "どこ～ (doko～)",
+      "shortExplanation": "場所や位置を尋ねる疑問詞で、「どこ」「どの場所」という意味を表します。",
+      "longExplanation": "「どこ」は、場所・位置・方角を尋ねる不定称の指示代名詞（疑問詞）です。助詞と組み合わせて用いられ、「どこですか」（所在の確認）、「どこで」（動作の行われる場所）、「どこに」（存在場所・定住先）、「どこへ」（移動の方向・目的地）などの形で場所を具体的に尋ねます。",
+      "formation": "どこ (+ 助詞 は / で / に / へ / から) + 動詞 / ですか",
+      "examples": [
+        {
+          "translation": "駅はどこですか？"
+        },
+        {
+          "translation": "どこで映画を見ましたか？"
+        },
+        {
+          "translation": "どこに住んでいますか？"
+        },
+        {
+          "translation": "どこへ行きたいですか？"
+        }
+      ]
+    },
+    "ja_どこか_101": {
+      "title": "どこか～ (dokoka～)",
+      "shortExplanation": "不特定の場所を指し、「どこか」「ある場所」という意味を表します。",
+      "longExplanation": "「どこか」は、疑問詞「どこ」に不特定を表す助詞「か」が付いた不定称の代名詞です。具体的な場所が不明であったり、特定する必要がなかったりする場合に「どこか」「ある場所」という意味で用います。助詞（で・に・へ）を伴って動詞に接続したり、名詞修飾表現の中で用いられたりします。",
+      "formation": "どこか (+ 助詞 で / に / へ) + 動詞 / 名詞",
+      "examples": [
+        {
+          "translation": "どこかで財布をなくしました。"
+        },
+        {
+          "translation": "今日はどこかに行きたいです。"
+        },
+        {
+          "translation": "どこか安いレストランがありますか？"
+        },
+        {
+          "translation": "どこか静かな場所で勉強したい。"
+        }
+      ]
+    },
+    "ja_どこでも_102": {
+      "title": "どこでも～ (dokodemo～)",
+      "shortExplanation": "場所を限定せず全体を包括し、「どこでも」「どの場所でも」という意味を表します。",
+      "longExplanation": "「どこでも」は、疑問詞「どこ」に包括・全面肯定を表す助詞「でも」が付いた表現で、「どの場所でも」「すべての場所で」という意味を表します。場所による制限を一切受けず、あらゆる場所である行為や状態が可能・成立することを強調する際に副詞的に用いられます。",
+      "formation": "どこでも (+ 助詞 で / に / へ) + 動詞 / 文",
+      "examples": [
+        {
+          "translation": "どこでも好きな場所で勉強できます。"
+        },
+        {
+          "translation": "このノートパソコンは便利なので、どこでもインターネットが使えます。"
+        },
+        {
+          "translation": "彼はどこでも寝ることができます。"
+        },
+        {
+          "translation": "彼女はどこでも歌うのが大好きです。"
+        }
+      ]
+    },
+    "ja_どこにも_103": {
+      "title": "どこにも + 動詞 + ないです (doko ni mo ~ nai desu)",
+      "shortExplanation": "場所の全面否定を表し、「どこにも〜ない」「どの場所にも〜ない」という丁寧な意味を表します。",
+      "longExplanation": "「どこにも＋動詞ない形＋です」は、場所の完全な否定を表す「どこにも」に動詞の否定形「〜ないです」を接続した構文です。目的の物や人物がどの場所にも一切存在しないことや、いかなる場所でもその動作が成立しないことを、丁寧かつ自然な口語調で強調する際に用います。",
+      "formation": "どこにも + 動詞 ない形 + です",
+      "examples": [
+        {
+          "translation": "どこにも傘が売ってないです。"
+        },
+        {
+          "translation": "彼はどこにも見つけられないです。"
+        },
+        {
+          "translation": "どこにも勉強できる場所がないです。"
+        },
+        {
+          "translation": "どこにも美味しいビーガン料理がないです。"
+        }
+      ]
+    },
+    "ja_どこにも_104": {
+      "title": "どこにも + 動詞 + ません (doko ni mo ~ masen)",
+      "shortExplanation": "動詞の丁寧な否定形を伴って場所を全面否定し、「どこにも〜ません」「どの場所にも〜ません」という意味を表します。",
+      "longExplanation": "「どこにも＋動詞連用形＋ません」（または状態を表す「〜ていません」）は、場所の完全な否定を表す「どこにも」に、動詞の改まった丁寧否定形「〜ません」を続けた表現です。対象がどの場所にも存在しないことや、いかなる場所でもその行為が行われていないことを、改まった調子で明確に示します。",
+      "formation": "どこにも + 動詞 連用形（ます形語幹）+ ません / て形 + いません",
+      "examples": [
+        {
+          "translation": "どこにもあの猫がいません。"
+        },
+        {
+          "translation": "どこにもお金を置いていません。"
+        },
+        {
+          "translation": "この町にはどこにも美味しいラーメン屋がありません。"
+        },
+        {
+          "translation": "どこにも彼女の名前が書いていません。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_にわたって_118": {
+      "title": "～にわたって (〜ni watatte)",
+      "shortExplanation": "Biểu thị một hành động, sự việc hoặc trạng thái kéo dài suốt một khoảng thời gian, hoặc trải rộng trên một phạm vi không gian, quy mô, số lượng lớn; 'suốt...', 'trong suốt...', 'trải dài...', 'trên khắp...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にわたって' (khi bổ nghĩa cho danh từ đi sau sẽ có dạng '～にわたる + Danh từ', và trong văn viết trang trọng có thể dùng '～にわたり') kết hợp với danh từ chỉ thời gian, cự ly, không gian, số lần hoặc quy mô. Mẫu câu dùng để nhấn mạnh sự việc, hiện tượng hoặc hành động diễn ra liên tục, bao trùm hoặc trải rộng trên toàn bộ khoảng thời gian, độ dài không gian hay phạm vi quy mô lớn đó.",
+      "formation": "Danh từ + にわたって (bổ nghĩa cho danh từ: Danh từ + にわたる + Danh từ)",
+      "examples": [
+        {
+          "translation": "Cô ấy đã học tiếng Nhật trong suốt một năm trời."
+        },
+        {
+          "translation": "Dự án này sẽ xây dựng tuyến đường trải dài suốt 50 km."
+        },
+        {
+          "translation": "Tác phẩm của ông ấy được đón đọc tại rất nhiều quốc gia trên thế giới."
+        },
+        {
+          "translation": "Bí mật đó đã được gìn giữ qua nhiều thế hệ."
+        }
+      ]
+    },
+    "ja_に先立ち_119": {
+      "title": "～に先立ち (〜ni sakidachi)",
+      "shortExplanation": "Diễn tả một hành động, sự chuẩn bị được tiến hành trước khi bắt đầu một sự kiện, kế hoạch quan trọng; 'trước khi...', 'trước thềm...', 'chuẩn bị cho...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に先立ち' (dạng liên từ hoặc khẩu ngữ trang trọng là '～に先立って', khi bổ nghĩa cho danh từ có dạng '～に先立つ + Danh từ') kết hợp với danh từ hoặc động từ thể từ điển. Cấu trúc này dùng để diễn tả việc thực hiện một hành động chuẩn bị, sắp xếp trước một sự kiện, hội nghị, chuyến đi hoặc kế hoạch quan trọng mang tính chính thức ('trước khi tiến hành...', 'trước thềm...'). Thường dùng trong văn phong công vụ, hội nghị, báo chí trang trọng.",
+      "formation": "Danh từ + に先立ち / に先立って | Động từ thể từ điển + に先立ち / に先立って (bổ nghĩa cho danh từ: Danh từ / Động từ thể từ điển + に先立つ + Danh từ)",
+      "examples": [
+        {
+          "translation": "Trước khi bắt đầu cuộc họp, chúng ta hãy cùng kiểm tra lại tài liệu nhé."
+        },
+        {
+          "translation": "Trước khi khởi hành, tôi đã sắp xếp hành lý gọn gàng."
+        },
+        {
+          "translation": "Trước khi đi ngủ, tôi luôn đánh răng."
+        },
+        {
+          "translation": "Trước buổi công chiếu bộ phim, các đoạn giới thiệu ngắn sẽ được phát sóng."
+        }
+      ]
+    },
+    "ja_に反して_120": {
+      "title": "～に反して (〜ni hanshite)",
+      "shortExplanation": "Diễn tả kết quả hoặc hành động xảy ra trái ngược hoàn toàn với dự đoán, kỳ vọng, quy tắc hoặc ý muốn ban đầu; 'trái với...', 'ngược lại với...', 'trái ngược với...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に反して' (khi bổ nghĩa cho danh từ có dạng '～に反する + Danh từ', và dạng trang trọng trong văn viết là '～に反し') kết hợp với danh từ chỉ dự báo, kỳ vọng, nguyện vọng, quy tắc hoặc ý kiến (như 予想, 期待, 規則, 意図...). Mẫu câu biểu thị thực tế xảy ra trái ngược hoàn toàn với những gì đã nghĩ, đã mong đợi hoặc đi ngược lại với các chuẩn mực, quy định đã định sẵn.",
+      "formation": "Danh từ + に反して / に反し (bổ nghĩa cho danh từ: Danh từ + に反する + Danh từ)",
+      "examples": [
+        {
+          "translation": "Trái với dự báo thời tiết, hôm nay trời lại đổ mưa."
+        },
+        {
+          "translation": "Ngược lại với dự đoán của anh ấy, chúng tôi đã giành chiến thắng trong trận đấu."
+        },
+        {
+          "translation": "Trái với ý kiến của bố mẹ, tôi đã kết hôn với anh ấy."
+        },
+        {
+          "translation": "Bộ phim này đã gặt hái thành công vang dội, trái ngược hoàn toàn với đánh giá của giới phê bình."
+        }
+      ]
+    },
+    "ja_に基づいて_121": {
+      "title": "～に基づいて (〜ni motozuite)",
+      "shortExplanation": "Diễn tả việc thực hiện một hành động, đưa ra quyết định hay phán đoán dựa trên một cơ sở, tiêu chuẩn, dữ liệu hoặc quy định cụ thể; 'dựa trên...', 'căn cứ vào...', 'dựa vào...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に基づいて' (khi bổ nghĩa cho danh từ có dạng '～に基づく + Danh từ' hoặc '～に基づいた + Danh từ', trong văn viết trang trọng là '～に基づき') đi cùng với các danh từ mang tính nền tảng, cơ sở như dữ liệu, kết quả nghiên cứu, pháp luật, phương châm, nguyên tắc hay ý kiến. Cấu trúc này biểu thị rằng một hành động, quyết định, biện pháp hoặc kết luận được hình thành và tiến hành dựa trên nền tảng, căn cứ xác thực đó.",
+      "formation": "Danh từ + に基づいて / に基づき (bổ nghĩa cho danh từ: Danh từ + に基づく / に基づいた + Danh từ)",
+      "examples": [
+        {
+          "translation": "Dựa trên các kết quả nghiên cứu, một phương pháp điều trị mới đã được phát triển."
+        },
+        {
+          "translation": "Căn cứ theo pháp luật, tên tội phạm đã bị bắt giữ."
+        },
+        {
+          "translation": "Dựa vào số liệu đó, chúng ta có thể đưa ra kết luận."
+        },
+        {
+          "translation": "Việc cải tiến sản phẩm sẽ được tiến hành dựa trên nguyện vọng của quý khách hàng."
+        }
+      ]
+    },
+    "ja_に対して_122": {
+      "title": "～に対して (〜ni taishite)",
+      "shortExplanation": "Chỉ đối tượng mà hành động hoặc thái độ hướng tới ('đối với...', 'về phía...'); hoặc dùng để nêu sự so sánh đối chiếu tương phản giữa hai sự vật, hiện tượng ('trái lại với...', 'ngược lại với...').",
+      "longExplanation": "Mẫu ngữ pháp '～に対して' (khi bổ nghĩa cho danh từ có dạng '～に対する + Danh từ', dạng văn viết là '～に対し') có hai cách dùng chính: (1) Chỉ đối tượng trực tiếp tiếp nhận tình cảm, hành vi, thái độ, phản ứng của chủ thể ('đối với ai đó/vấn đề gì đó'); (2) Dùng để so sánh, đối chiếu sự khác biệt rõ rệt giữa hai đối tượng, hai sự việc mang tính tương phản ('trong khi A thì B ngược lại...').",
+      "formation": "Danh từ + に対して / に対し (bổ nghĩa cho danh từ: Danh từ + に対する + Danh từ) | Thể thông thường (Tính từ đuôi な + な/である | Danh từ + な/である) + のに対して",
+      "examples": [
+        {
+          "translation": "Tôi dành một sự tôn kính sâu sắc đối với nền văn hóa Nhật Bản."
+        },
+        {
+          "translation": "Xin đừng có thái độ bất lịch sự đối với anh ấy."
+        },
+        {
+          "translation": "Trước câu hỏi của thầy giáo, cô ấy đã trả lời ngay lập tức."
+        },
+        {
+          "translation": "Trái ngược với nam giới, phụ nữ lại nhận mức lương thấp hơn dù làm cùng một công việc."
+        }
+      ]
+    },
+    "ja_に応えて_123": {
+      "title": "～に応えて (〜ni kotaete)",
+      "shortExplanation": "Diễn tả hành động được thực hiện nhằm đáp ứng, đền đáp lại mong đợi, yêu cầu, tiếng gọi hoặc sự ủng hộ của ai đó; 'đáp lại...', 'đền đáp...', 'theo yêu cầu của...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に応えて' (khi bổ nghĩa cho danh từ có dạng '～に応える + Danh từ', và dạng trang trọng là '～に応え') kết hợp với danh từ chỉ nguyện vọng, kỳ vọng, yêu cầu, tiếng gọi hay sự cổ vũ (như 期待, 要望, 要請, 声, アンコール...). Cấu trúc này dùng để diễn tả việc chủ thể hành động tích cực nhằm thỏa mãn, làm hài lòng hoặc đáp lại những mong mỏi, đề nghị của đối phương.",
+      "formation": "Danh từ + に応えて / に応え (bổ nghĩa cho danh từ: Danh từ + に応える + Danh từ)",
+      "examples": [
+        {
+          "translation": "Đáp ứng yêu cầu của quý khách hàng, chúng tôi đã tạo ra một thực đơn mới."
+        },
+        {
+          "translation": "Anh ấy đã đền đáp sự kỳ vọng của toàn đội bằng một màn trình diễn xuất sắc."
+        },
+        {
+          "translation": "Chính phủ đã ban hành luật mới để đáp lại tiếng nói và nguyện vọng của người dân."
+        },
+        {
+          "translation": "Các doanh nghiệp đang phát triển các sản phẩm thân thiện với môi trường nhằm ứng phó với các vấn đề môi trường."
+        }
+      ]
+    },
+    "ja_に応じて_124": {
+      "title": "～に応じて (〜ni oujite)",
+      "shortExplanation": "Diễn tả sự việc, hành động thay đổi linh hoạt sao cho tương thích, phù hợp với từng điều kiện, mức độ hoặc hoàn cảnh cụ thể; 'tùy theo...', 'tương ứng với...', 'phù hợp với...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に応じて' (khi bổ nghĩa cho danh từ có dạng '～に応じた + Danh từ', văn viết là '～に応じ') kết hợp với các danh từ có thể phân cấp độ, biến đổi đa dạng hoặc có nhiều trạng thái khác nhau (như tuổi tác, thu nhập, khí hậu, nguyện vọng, năng lực...). Cấu trúc này biểu thị rằng nội dung ở vế sau sẽ thay đổi tương ứng, thích ứng hoặc được điều chỉnh linh hoạt cho phù hợp với mức độ hay điều kiện của danh từ đi trước.",
+      "formation": "Danh từ + に応じて / に応じ (bổ nghĩa cho danh từ: Danh từ + に応じた + Danh từ)",
+      "examples": [
+        {
+          "translation": "Tiền lương sẽ thay đổi tương ứng tùy theo khối lượng công việc."
+        },
+        {
+          "translation": "Hãy lựa chọn trang phục phù hợp tùy theo từng mùa nhé."
+        },
+        {
+          "translation": "Chúng tôi sẽ đề xuất các gói kế hoạch phù hợp với nguyện vọng của từng khách hàng."
+        },
+        {
+          "translation": "Các hạng mục khám sức khỏe sẽ khác nhau tùy theo độ tuổi."
+        }
+      ]
+    },
+    "ja_に決まっている_125": {
+      "title": "～に決まっている (〜ni kimatte iru)",
+      "shortExplanation": "Thể hiện sự phán đoán chủ quan vô cùng chắc chắn và tự tin của người nói; 'chắc chắn là...', 'nhất định là...', 'không thể nào khác được'.",
+      "longExplanation": "Mẫu ngữ pháp '～に決まっている' kết hợp với thể thông thường của động từ, tính từ hoặc danh từ (lưu ý: tính từ đuôi な và danh từ sẽ đi trực tiếp với に決まっている mà không có だ, hoặc trong khẩu ngữ đôi khi kèm だ). Cấu trúc này dùng khi người nói dựa trên cảm nhận, trực giác hoặc kinh nghiệm chủ quan của bản thân để khẳng định một điều gì đó là hiển nhiên đúng, không có mảy may nghi ngờ ('chắc chắn 100% là như vậy').",
+      "formation": "Động từ thể thông thường + に決まっている | Tính từ đuôi い + に決まっている | Tính từ đuôi な (bỏ だ) + に決まっている | Danh từ (bỏ だ) + に決まっている",
+      "examples": [
+        {
+          "translation": "Vận động vào một ngày nắng nóng thế này thì chắc chắn là đổ mồ hôi rồi."
+        },
+        {
+          "translation": "Nếu anh ấy trượt kỳ thi, chắc chắn là sẽ thất vọng lắm."
+        },
+        {
+          "translation": "Cô ấy lúc nào cũng trễ giờ, nên hôm nay chắc chắn cũng sẽ đến muộn thôi."
+        },
+        {
+          "translation": "Trò chơi này chắc chắn là vui rồi."
+        }
+      ]
+    },
+    "ja_に沿って_126": {
+      "title": "～に沿って (〜ni sotte)",
+      "shortExplanation": "Diễn tả hành động đi dọc theo một vật thể trải dài (con đường, dòng sông); hoặc hành động tuân thủ, bám sát theo một quy tắc, kế hoạch, hướng dẫn đã định sẵn; 'dọc theo...', 'men theo...', 'tuân theo...', 'bám sát...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に沿って' (khi bổ nghĩa cho danh từ có dạng '～に沿う + Danh từ' hoặc '～に沿った + Danh từ', trong văn viết có thể dùng '～に沿い') kết hợp với danh từ. Có hai cách dùng: (1) Men theo, đi dọc theo một tuyến đường, bờ sông, bờ biển có hình dáng trải dài; (2) Hành động tuân thủ chặt chẽ, không đi chệch khỏi một khuôn mẫu, tiêu chuẩn, kế hoạch, quy tắc, đường lối hay nguyện vọng của người khác ('làm đúng theo...', 'bám sát...').",
+      "formation": "Danh từ + に沿って / に沿い (bổ nghĩa cho danh từ: Danh từ + に沿う / に沿った + Danh từ)",
+      "examples": [
+        {
+          "translation": "Nếu đi bộ dọc theo dòng sông, bạn sẽ nhìn thấy một cây cầu."
+        },
+        {
+          "translation": "Nếu nấu ăn theo đúng công thức này thì chắc chắn không bị sai sót."
+        },
+        {
+          "translation": "Chúng ta phải hành động tuân theo đúng các quy tắc."
+        },
+        {
+          "translation": "Đi men theo con đường núi, bạn sẽ bắt gặp một ngôi đền nhỏ."
+        }
+      ]
+    },
+    "ja_に過ぎない_127": {
+      "title": "～に過ぎない (〜ni suginai)",
+      "shortExplanation": "Biểu thị mức độ thấp, tầm thường của sự vật hoặc sự việc; 'chỉ là...', 'chẳng qua chỉ là...', 'không hơn không kém'.",
+      "longExplanation": "Mẫu ngữ pháp '～に過ぎない' (chữ Hán: '～に過ぎない') kết hợp với động từ, tính từ hoặc danh từ ở thể thông thường (đối với danh từ và tính từ đuôi な, thường bỏ だ hoặc dùng である). Cấu trúc này dùng để diễn đạt rằng một sự việc, tình trạng không có gì to tát hay ghê gớm, người nói đánh giá mức độ, tính chất hay giá trị của nó chỉ dừng lại ở một mức khiêm tốn hoặc tầm thường ('không vượt quá mức đó', 'chẳng qua cũng chỉ đến thế mà thôi').",
+      "formation": "Động từ thể thông thường + に過ぎない | Tính từ đuôi い + に過ぎない | Tính từ đuôi な (hoặc である) + に過ぎない | Danh từ (hoặc である) + に過ぎない",
+      "examples": [
+        {
+          "translation": "Thất bại của anh ấy chẳng qua chỉ là một sai sót nhỏ mà thôi."
+        },
+        {
+          "translation": "Kỳ thi này chỉ toàn là những câu hỏi đơn giản mà thôi."
+        },
+        {
+          "translation": "Cô ấy chỉ là bạn bè thông thường không hơn không kém."
+        },
+        {
+          "translation": "Phát ngôn đó chẳng qua chỉ là một câu nói đùa."
+        }
+      ]
+    },
+    "ja_に関わって_128": {
+      "title": "～に関わって (〜ni kakawatte)",
+      "shortExplanation": "Chỉ sự việc có liên quan, dính líu hoặc ảnh hưởng sâu sắc đến một vấn đề, đối tượng; 'liên quan đến...', 'dính líu tới...', 'ảnh hưởng đến...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に関わって' (dạng liên kết danh từ là '～に関わる + Danh từ', và dạng trang trọng là '～に関わり') đi cùng với danh từ. Cấu trúc này dùng để diễn tả việc tham gia vào, dính líu tới, liên quan mật thiết hoặc có tác động to lớn đến một sự việc, tính mạng, danh dự, công việc quan trọng nào đó. Trong ngữ cảnh thông thường, nó cũng mang nghĩa tương tự '～に関連して' (liên quan đến vấn đề nào đó).",
+      "formation": "Danh từ + に関わって / に関わり (bổ nghĩa cho danh từ: Danh từ + に関わる + Danh từ)",
+      "examples": [
+        {
+          "translation": "Liên quan đến nội dung kỳ thi, em có một câu hỏi muốn thắc mắc với thầy cô ạ."
+        },
+        {
+          "translation": "Liên quan đến dự án này, nếu anh/chị có ý kiến gì xin hãy cứ thoải mái đóng góp."
+        },
+        {
+          "translation": "Liên quan đến vấn đề sức khỏe thì chế độ ăn uống là vô cùng quan trọng."
+        },
+        {
+          "translation": "Do có dính líu đến vụ án đó nên anh ấy cũng bị nghi ngờ một phần."
+        }
+      ]
+    },
+    "ja_に限り_129": {
+      "title": "～に限り (〜ni kagiri)",
+      "shortExplanation": "Chỉ sự giới hạn đối tượng, thời gian hoặc điều kiện áp dụng duy nhất cho một trường hợp đặc biệt; 'chỉ riêng...', 'chỉ giới hạn trong...', 'chỉ dành cho...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に限り' (khi đứng ở vị trí vị ngữ kết thúc câu thường là '～に限る') kết hợp với danh từ chỉ đối tượng, ngày tháng, thời gian hoặc tư cách. Cấu trúc này dùng trong các thông báo, quy định hoặc quảng cáo chính thức để tuyên bố rằng một đãi ngộ, ưu đãi, quy định hay điều kiện nào đó chỉ được áp dụng duy nhất cho đối tượng được nêu mà không áp dụng cho các trường hợp khác ('chỉ ngoại lệ trong trường hợp này').",
+      "formation": "Danh từ + に限り (dạng vị ngữ kết thúc câu: Danh từ + に限る)",
+      "examples": [
+        {
+          "translation": "Chỉ duy nhất trong ngày hôm nay, sản phẩm này được giảm giá một nửa."
+        },
+        {
+          "translation": "Phiếu giảm giá này chỉ có hiệu lực duy nhất tại cửa hàng này."
+        },
+        {
+          "translation": "Chỉ riêng các hội viên mới có thể sử dụng miễn phí dịch vụ này."
+        },
+        {
+          "translation": "Ưu đãi này chỉ giới hạn cho 10 người đăng ký đầu tiên."
+        }
+      ]
+    },
+    "ja_に際して_130": {
+      "title": "～に際して (〜ni saishite)",
+      "shortExplanation": "Diễn tả thời điểm chuẩn bị bước vào một sự kiện, dịp đặc biệt hoặc khi bắt đầu một việc quan trọng; 'nhân dịp...', 'khi...', 'trước thềm...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に際して' (khi bổ nghĩa cho danh từ có dạng '～に際しての + Danh từ', và dạng liên từ trang trọng là '～に際し') kết hợp với danh từ hoặc động từ thể từ điển. Cấu trúc này dùng để nhấn mạnh một thời điểm mang tính bước ngoặt, một sự kiện trọng đại trong đời hoặc một công việc quan trọng bắt đầu (như tốt nghiệp, kết hôn, du học, ký kết hợp đồng...). Vế sau thường là lời phát biểu, chuẩn bị thủ tục, lời khuyên hoặc tâm thế cần có. Rất phổ biến trong văn phong trang trọng, phát biểu nghi lễ.",
+      "formation": "Danh từ + に際して / に際し | Động từ thể từ điển + に際して / に際し (bổ nghĩa cho danh từ: Danh từ / Động từ thể từ điển + に際しての + Danh từ)",
+      "examples": [
+        {
+          "translation": "Nhân dịp lễ tốt nghiệp, thầy hiệu trưởng sẽ có bài phát biểu."
+        },
+        {
+          "translation": "Khi đảm nhận công việc này, tinh thần trách nhiệm là điều vô cùng quan trọng."
+        },
+        {
+          "translation": "Trước khi đi du học, việc hoàn tất các thủ tục xin thị thực là rất cần thiết."
+        },
+        {
+          "translation": "Nhân dịp lễ kết hôn, tôi đã gửi lời cảm ơn sâu sắc tới cha mẹ mình."
+        }
+      ]
+    },
+    "ja_ねばならない_131": {
+      "title": "～ねばならない (〜neba naranai)",
+      "shortExplanation": "Diễn tả nghĩa vụ, bổn phận hoặc sự cần thiết bắt buộc phải thực hiện một hành động; 'phải...', 'bắt buộc phải...', 'không thể không...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ねばならない' (trong văn viết cũng có thể dùng '～ねばならぬ') là cách diễn đạt cổ điển và trang trọng tương đương với '～なければならない'. Cấu trúc này hình thành bằng cách chia động từ sang thể ない, bỏ 'ない' rồi thêm 'ねばならない' (đặc biệt: động từ 'する' sẽ chuyển thành 'せねばならない'). Thường dùng trong văn viết, diễn văn, châm ngôn hoặc khi người nói muốn thể hiện ý chí quyết tâm, trách nhiệm, bổn phận đạo đức nặng nề hoặc tính cấp bách.",
+      "formation": "Động từ thể ない (bỏ ない) + ねばならない (Lưu ý: する chuyển thành せねばならない)",
+      "examples": [
+        {
+          "translation": "Để đỗ kỳ thi, tôi bắt buộc phải chăm chỉ học tập hơn nữa."
+        },
+        {
+          "translation": "Để kịp chuyến bay, tôi phải nhanh chóng khẩn trương lên mới được."
+        },
+        {
+          "translation": "Tôi phải về nhà trước 6 giờ."
+        },
+        {
+          "translation": "Tôi phải hoàn thành xong công việc này trong ngày hôm nay."
+        }
+      ]
+    },
+    "ja_のみならずも_132": {
+      "title": "～のみならず～も (〜nomi narazu 〜mo)",
+      "shortExplanation": "Diễn tả ý nghĩa không chỉ dừng lại ở phạm vi sự vật hay mức độ phía trước mà còn mở rộng sang cả sự vật khác tương tự; 'không những... mà còn...', 'không chỉ... mà cả...'.",
+      "longExplanation": "Mẫu ngữ pháp '～のみならず～も' kết hợp với thể thông thường của động từ, tính từ hoặc danh từ (với tính từ đuôi な và danh từ, có thể giữ nguyên thể cơ bản hoặc kèm 'である'). Cấu trúc này dùng để nhấn mạnh rằng không chỉ có sự việc hoặc đối tượng A được thỏa mãn hay đề cập, mà phạm vi còn được mở rộng bao gồm cả đối tượng B cùng loại hoặc ở mức độ cao hơn. Đây là lối diễn đạt trang trọng, tương đương với '～だけでなく～も' nhưng mang sắc thái văn viết lịch sự, học thuật hơn.",
+      "formation": "Động từ thể thông thường + のみならず（…も） | Tính từ đuôi い + のみならず（…も） | Tính từ đuôi な (hoặc である) + のみならず（…も） | Danh từ (hoặc である) + のみならず（…も）",
+      "examples": [
+        {
+          "translation": "Anh ấy không những nói được tiếng Anh mà còn nói được cả tiếng Pháp nữa."
+        },
+        {
+          "translation": "Nhà hàng này không chỉ nấu ăn ngon mà bầu không khí cũng vô cùng tuyệt vời."
+        },
+        {
+          "translation": "Ứng dụng này không những tiện lợi mà tính bảo mật an toàn cũng rất cao."
+        },
+        {
+          "translation": "Cô ấy không chỉ thông minh mà còn chơi thể thao rất giỏi nữa."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_にわたって_118": {
+      "title": "～にわたって (〜ni watatte)",
+      "shortExplanation": "表示动作、现象或状态在时间上持续较长，或在空间、地域、范围、数量上涉及面广；“长达……”、“跨越……”、“贯穿……”、“遍及……”。",
+      "longExplanation": "句型“～にわたって”（连体修饰名词时用“～にわたる＋名词”，书面语郑重形式也常用“～にわたり”）接在表示时间、距离、空间、次数或范围的名词之后。用于强调某一动作、事件或状态在整个时间段内持续不断，或者覆盖、涉及了相当广泛的范围、跨度与规模。常用于新闻报道、学术论文及较正式的说明文体中。",
+      "formation": "名词 + にわたって（连体修饰：名词 + にわたる + 名词）",
+      "examples": [
+        {
+          "translation": "她学习日语长达一年之久。"
+        },
+        {
+          "translation": "该项目将修建一条跨度达50公里的道路。"
+        },
+        {
+          "translation": "他的著作在许多国家被广泛阅读。"
+        },
+        {
+          "translation": "那个秘密世代相传，一直被严密保守着。"
+        }
+      ]
+    },
+    "ja_に先立ち_119": {
+      "title": "～に先立ち (〜ni sakidachi)",
+      "shortExplanation": "表示在开始某项重要活动、事件或计划之前预先进行某事；“在……之前”、“在……之先”。",
+      "longExplanation": "句型“～に先立ち”（形式上也常用“～に先立って”，连体修饰名词时为“～に先立つ＋名词”）接在名词或动词辞书形之后，表示在举行某项重大事件、仪式、会议、工程或出发等重要行动之前，预先做好某些准备工作或必要行动。语气较为郑重正式，多用于商务公文、会议主持、新闻公告等正式场合。",
+      "formation": "名词 + に先立ち / に先立って | 动词辞书形 + に先立ち / に先立って（连体修饰：名词 / 动词辞书形 + に先立つ + 名词）",
+      "examples": [
+        {
+          "translation": "会议开始之前，我们先确认一下资料吧。"
+        },
+        {
+          "translation": "在出发前，我把行李整理妥当了。"
+        },
+        {
+          "translation": "在就寝之前，我会先刷牙。"
+        },
+        {
+          "translation": "在电影放映前，会先播出预告片。"
+        }
+      ]
+    },
+    "ja_に反して_120": {
+      "title": "～に反して (〜ni hanshite)",
+      "shortExplanation": "表示实际结果或行动与预想、期待、意愿或规定背道而驰；“与……相反”、“违反……”、“违背……”。",
+      "longExplanation": "句型“～に反して”（连体修饰名词时用“～に反する＋名词”，书面语中也可用“～に反し”）接在表示预测、期待、意图、规定或规则的名词（如予想、期待、意向、規則、法等）之后。表示事态的发展或最终结果完全违背了预先的设想、期待，或者行为违背了公认的原则与规章制度。",
+      "formation": "名词 + に反して / に反し（连体修饰：名词 + に反する + 名词）",
+      "examples": [
+        {
+          "translation": "与天气预报相反，今天下起了雨。"
+        },
+        {
+          "translation": "出乎他的意料，我们赢得了比赛。"
+        },
+        {
+          "translation": "违背父母的意见，我和他结婚了。"
+        },
+        {
+          "translation": "这部电影与影评家的评价大相径庭，获得了巨大的成功。"
+        }
+      ]
+    },
+    "ja_に基づいて_121": {
+      "title": "～に基づいて (〜ni motozuite)",
+      "shortExplanation": "表示以某事物作为根据、基准、原则或出发点来采取行动或得出结论；“基于……”、“根据……”、“依据……”。",
+      "longExplanation": "句型“～に基づいて”（连体修饰名词时用“～に基づく＋名词”或“～に基づいた＋名词”，书面语郑重形式为“～に基づき”）接在表示基准、依据、法律、数据、调查结果、经验或方针的名词之后。表示将该事物作为立足点、客观根据或规范，据此开展某项行动、制定决策或推导出结论。在商务、学术、法律及公文中极其常用。",
+      "formation": "名词 + に基づいて / に基づき（连体修饰：名词 + に基づく / に基づいた + 名词）",
+      "examples": [
+        {
+          "translation": "基于研究结果，开发出了一种新的治疗方法。"
+        },
+        {
+          "translation": "依据法律，犯罪分子被依法逮捕。"
+        },
+        {
+          "translation": "根据该数据，我们可以得出结论。"
+        },
+        {
+          "translation": "我们将根据客户的需求对商品进行改良。"
+        }
+      ]
+    },
+    "ja_に対して_122": {
+      "title": "～に対して (〜ni taishite)",
+      "shortExplanation": "表示动作、态度或情感所指向的对象（“对于……”、“对……”）；亦可表示两种事物或情况的鲜明对照（“与……相对”、“而……”）。",
+      "longExplanation": "句型“～に対して”（连体修饰名词时为“～に対する＋名词”，书面语为“～に対し”）主要有两种用法：第一，表示动作、行为、态度、情感等所针对的人或事物，意为“面对……”、“对……”；第二，用于将两个不同的人、事物或情况进行鲜明的对比，意为“与……相比，……则相反”或“……而……”。",
+      "formation": "名词 + に対して / に対し（连体修饰：名词 + に対する + 名词）| 普通形（二类形容词词干 + な/である | 名词 + な/である）+ のに対して",
+      "examples": [
+        {
+          "translation": "我对日本文化怀有崇高的敬意。"
+        },
+        {
+          "translation": "请不要对他采取无礼的态度。"
+        },
+        {
+          "translation": "面对老师的提问，她立刻做出了回答。"
+        },
+        {
+          "translation": "相比于男性，女性即便是从事同样的工作，拿到的薪水却更低。"
+        }
+      ]
+    },
+    "ja_に応えて_123": {
+      "title": "～に応えて (〜ni kotaete)",
+      "shortExplanation": "表示为了响应、回报或满足对方的期待、要求、呼声等而采取相应行动；“回应……”、“响应……”、“不负……”。",
+      "longExplanation": "句型“～に応えて”（连体修饰名词时用“～に応える＋名词”，书面语为“～に応え”）接在表示期待、希望、要求、呼声、声援等名词（如期待、要望、要求、声、アンコール等）之后。表示当事人主动顺应这些期待或呼吁，为了满足对方的愿望、不负众望而做出积极的努力或采取行动。",
+      "formation": "名词 + に応えて / に応え（连体修饰：名词 + に応える + 名词）",
+      "examples": [
+        {
+          "translation": "响应顾客的要求，我们推出了全新菜单。"
+        },
+        {
+          "translation": "他不负全队的殷切期望，展现了极为精彩的发挥。"
+        },
+        {
+          "translation": "政府顺应民众的呼声，制定了新的法律。"
+        },
+        {
+          "translation": "企业积极应对环境问题，正致力于研发环保产品。"
+        }
+      ]
+    },
+    "ja_に応じて_124": {
+      "title": "～に応じて (〜ni oujite)",
+      "shortExplanation": "表示根据条件、程度、要求或变化而采取相应的对策或做出调整；“根据……”、“按照……”、“随着……而相应调整”。",
+      "longExplanation": "句型“～に応じて”（连体修饰名词时用“～に応じた＋名词”，书面语形式为“～に応じ”）接在具有阶段性、多样性或会发生变化的名词（如年龄、收入、季节、能力、需求等）之后。表示后项的行动、措施或状态会伴随前项条件、程度或情况的不同而做出与之相适应的调整或变动。",
+      "formation": "名词 + に応じて / に応じ（连体修饰：名词 + に応じた + 名词）",
+      "examples": [
+        {
+          "translation": "工资会根据工作量的多少而有所变动。"
+        },
+        {
+          "translation": "让我们根据季节的变化来选择合适的服装吧。"
+        },
+        {
+          "translation": "我们会根据客户的具体意愿提出相应的方案。"
+        },
+        {
+          "translation": "根据年龄段的不同，体检的项目也有所区别。"
+        }
+      ]
+    },
+    "ja_に決まっている_125": {
+      "title": "～に決まっている (〜ni kimatte iru)",
+      "shortExplanation": "表示说话人根据主观直觉、经验或常理做出极为肯定、不容置疑的判断；“一定……”、“肯定是……”、“必然……”。",
+      "longExplanation": "句型“～に決まっている”接在动词、形容词或名词的简体形之后（注意：二类形容词和名词通常直接去掉“だ”接“に決まっている”）。表示说话人凭借个人的主观经验、推断或直觉，十分确信某事必定如此，带着强烈笃定的语气（“想都不用想肯定如此”、“毫无疑问”）。常用于口语交际。",
+      "formation": "动词普通形 + に決まっている | 一类形容词 + に決まっている | 二类形容词词干 + に決まっている | 名词 + に決まっている",
+      "examples": [
+        {
+          "translation": "在这么热的天气里运动，肯定会大汗淋漓的。"
+        },
+        {
+          "translation": "如果他考试不及格，肯定会大失所望的。"
+        },
+        {
+          "translation": "她总是迟到，今天也肯定会迟到的。"
+        },
+        {
+          "translation": "这款游戏肯定非常好玩。"
+        }
+      ]
+    },
+    "ja_に沿って_126": {
+      "title": "～に沿って (〜ni sotte)",
+      "shortExplanation": "表示沿着线状延展的物体行进（“沿着……”、“顺着……”）；或指遵照、顺应既定的规则、方针、计划等行事（“按照……”、“遵循……”）。",
+      "longExplanation": "句型“～に沿って”（连体修饰名词时用“～に沿う＋名词”或“～に沿った＋名词”，书面语为“～に沿い”）接在名词之后。主要有两种用法：第一，沿着河流、道路、海岸线等狭长延展的物理路线移动；第二，抽象用法，表示严格遵循规章制度、教学大纲、既定方针、计划或顾客意愿，不脱离其轨道地推进工作或行动。",
+      "formation": "名词 + に沿って / に沿い（连体修饰：名词 + に沿う / に沿った + 名词）",
+      "examples": [
+        {
+          "translation": "沿着这条河往前走，就能看到一座桥。"
+        },
+        {
+          "translation": "只要按照这个食谱做菜，就绝不会出错。"
+        },
+        {
+          "translation": "我们必须按照规章制度采取行动。"
+        },
+        {
+          "translation": "顺着山间小道前行，有一座小小的神社。"
+        }
+      ]
+    },
+    "ja_に過ぎない_127": {
+      "title": "～に過ぎない (〜ni suginai)",
+      "shortExplanation": "表示程度极低、微不足道，只不过是该程度而已；“只不过是……”、“仅是……”、“无非是……”。",
+      "longExplanation": "句型“～に過ぎない”接在动词、形容词或名词的简体形之后（名词和二类形容词通常省略“だ”直接接续，或接“である”）。说话人借助此句型表达某种事物、情况并不像人们想象的那样重要、严重或了不起，其价值、数量或程度仅仅止步于此，带有轻视、评价不高或就事论事的语气（“充其量不过是……”）。",
+      "formation": "动词普通形 + に過ぎない | 一类形容词 + に過ぎない | 二类形容词词干（或 である）+ に過ぎない | 名词（或 である）+ に過ぎない",
+      "examples": [
+        {
+          "translation": "他的失败不过是一次失误而已。"
+        },
+        {
+          "translation": "这次考试只不过是一些简单的题目罢了。"
+        },
+        {
+          "translation": "她不过是个普通朋友而已。"
+        },
+        {
+          "translation": "那番言论只不过是一句玩笑话。"
+        }
+      ]
+    },
+    "ja_に関わって_128": {
+      "title": "～に関わって (〜ni kakawatte)",
+      "shortExplanation": "表示与某事、某人有关联、有牵连，或关乎重大的影响；“与……有关”、“关于……”、“涉及到……”。",
+      "longExplanation": "句型“～に関わって”（连体修饰名词时用“～に関わる＋名词”，书面语形式为“～に関わり”）接在名词之后。用于表示参与了某项事务、与某件事情有密切关联或牵涉其中；在特定语境下，也可表示对名誉、生命、前途等产生重大关系与影响。日常交流中也常作为“关于……”、“涉及到……”的话题引出表达。",
+      "formation": "名词 + に関わって / に関わり（连体修饰：名词 + に関わる + 名词）",
+      "examples": [
+        {
+          "translation": "关于考试的内容，我想向老师提几个问题。"
+        },
+        {
+          "translation": "关于这个项目，大家如果有意见，请尽管畅所欲言。"
+        },
+        {
+          "translation": "事关身体健康，饮食生活起居是至关重要的。"
+        },
+        {
+          "translation": "因为牵涉到那起案件，他也受到了一定程度的怀疑。"
+        }
+      ]
+    },
+    "ja_に限り_129": {
+      "title": "～に限り (〜ni kagiri)",
+      "shortExplanation": "表示仅限于特定的人员、日期、资格或对象，以此作为例外或特别优惠；“仅限……”、“只限……”。",
+      "longExplanation": "句型“～に限り”（在句尾作结语时多用“～に限る”）接在表示时间、人员资格、特定场所或条件的属性名词之后。主要用于商业广告、官方通知或告示规则之中，明确指出某项特惠待遇、规则或措施仅对该特定对象或时间生效，不适用于其他任何常规情况。",
+      "formation": "名词 + に限り（句尾结句时：名词 + に限る）",
+      "examples": [
+        {
+          "translation": "仅限今日，该商品实行半价优惠。"
+        },
+        {
+          "translation": "该优惠券仅限在本店使用有效。"
+        },
+        {
+          "translation": "仅限会员方可免费使用这项服务。"
+        },
+        {
+          "translation": "此项特惠仅限前10名到场顾客。"
+        }
+      ]
+    },
+    "ja_に際して_130": {
+      "title": "～に際して (〜ni saishite)",
+      "shortExplanation": "表示面临重要时刻、特殊节点或开展重要活动之际；“在……之际”、“当……之时”、“临到……”。",
+      "longExplanation": "句型“～に際して”（修饰名词时用“～に際しての＋名词”，书面语为“～に際し”）接在名词或动词辞书形之后。主要用于面临毕业、结婚、开业、留学、签约等人生大事、重大活动或特殊节点时，引出接下来的演讲、致辞、准备事项或心境态度。属于郑重典雅的正式语体。",
+      "formation": "名词 + に際して / に際し | 动词辞书形 + に際して / に際し（连体修饰：名词 / 动词辞书形 + に際しての + 名词）",
+      "examples": [
+        {
+          "translation": "在毕业典礼之际，校长将发表致辞。"
+        },
+        {
+          "translation": "在从事这项工作之际，责任感至关重要。"
+        },
+        {
+          "translation": "在赴海外留学之际，必须办理签证手续。"
+        },
+        {
+          "translation": "在举行婚礼之际，我向父母表达了由衷的感激之情。"
+        }
+      ]
+    },
+    "ja_ねばならない_131": {
+      "title": "～ねばならない (〜neba naranai)",
+      "shortExplanation": "表示强烈的义务、职责或情势所迫必须做某事；“必须……”、“不得不……”、“务必……”。",
+      "longExplanation": "句型“～ねばならない”（书面语亦常作“～ねばならぬ”）接在动词未然形之后（将动词ない形的“ない”替换为“ねばならない”；特殊变化：“する”变为“せねばならない”）。是“～なければならない”的古典文语残留表达，带有浓厚的书面语与古风色彩。常用于表达强烈的责任感、道德义务、坚定决心或不可避免的客观必要性。",
+      "formation": "动词未然形（ない形去掉ない） + ねばならない（注意：“する”变为“せねばならない”）",
+      "examples": [
+        {
+          "translation": "为了通过考试，我必须更加努力地学习。"
+        },
+        {
+          "translation": "为了赶上飞机，我必须赶快抓紧时间。"
+        },
+        {
+          "translation": "我必须在6点前赶回家。"
+        },
+        {
+          "translation": "我必须在今天之内把这项工作做完。"
+        }
+      ]
+    },
+    "ja_のみならずも_132": {
+      "title": "～のみならず～も (〜nomi narazu 〜mo)",
+      "shortExplanation": "表示不仅前项如此，而且后项同样如此，具有递进扩展的语气；“不仅……而且……”、“不但……也……”。",
+      "longExplanation": "句型“～のみならず～も”接在动词、形容词或名词的普通形之后（二类形容词和名词可以直接接续，亦可使用“である”形式）。用于说明某事物不仅限于前项所列举的范围或优点，而且还同时兼具后项的其他性质或对象，表示范围的进一步扩充。与“～だけでなく”意思相近，但“～のみならず”更具书面语色彩，显得更加郑重典雅。",
+      "formation": "动词普通形 + のみならず（…も） | 一类形容词 + のみならず（…も） | 二类形容词词干（或 である）+ のみならず（…も） | 名词（或 である）+ のみならず（…も）",
+      "examples": [
+        {
+          "translation": "他不仅会说英语，而且还会说法语。"
+        },
+        {
+          "translation": "这家餐厅不仅味道美味，氛围也格外好。"
+        },
+        {
+          "translation": "这款应用程序不仅使用方便，而且安全性也很高。"
+        },
+        {
+          "translation": "她不仅头脑聪明，体育运动也十分拿手。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_にわたって_118": {
+      "title": "～にわたって (〜ni watatte)",
+      "shortExplanation": "어떤 동작이나 현상, 상태가 일정한 시간 동안 계속되거나, 공간·범위·규모 전체에 걸쳐 넓게 미침을 나타내며, '~에 걸쳐', '~에 걸쳐서', '~동안 내내'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～にわたって'(명사를 수식할 때는 '～にわたる + 명사', 정중한 문어체에서는 '～にわたり')는 시간, 기간, 거리, 횟수, 범위 등을 나타내는 명사에 접속합니다. 어떤 일이나 현상이 그 기간 전체에 지속되거나, 지리적·공간적 범위 또는 여러 분야·세대 등 넓은 범위 전체에 걸쳐 광범위하게 일어남을 강조할 때 쓰입니다.",
+      "formation": "명사 + にわたって (명사 수식: 명사 + にわたる + 명사)",
+      "examples": [
+        {
+          "translation": "그녀는 1년에 걸쳐 일본어를 공부했습니다."
+        },
+        {
+          "translation": "이 프로젝트는 50킬로미터에 걸쳐 도로를 건설합니다."
+        },
+        {
+          "translation": "그의 저작은 수많은 국가에 걸쳐 읽히고 있다."
+        },
+        {
+          "translation": "그 비밀은 여러 세대에 걸쳐 계속 지켜졌다."
+        }
+      ]
+    },
+    "ja_に先立ち_119": {
+      "title": "～に先立ち (〜ni sakidachi)",
+      "shortExplanation": "중요한 행사나 계획, 행동을 시작하기에 앞서 어떤 준비나 행동을 미리 행함을 나타내며, '~에 앞서', '~에 앞서서', '~하기 전에'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に先立ち'(또는 '～に先立って', 명사 수식 시에는 '～に先立つ + 명사')는 명사나 동사의 사전형에 접속합니다. 회의, 행사, 출발, 개막 등 공식적이거나 중요한 일에 착수하기 전에 필요한 사전 준비나 관련 조치를 행할 때 사용하는 격식 있는 표현입니다. 주로 비즈니스, 뉴스, 공식 석상 등에서 쓰입니다.",
+      "formation": "명사 + に先立ち / に先立って | 동사 사전형 + に先立ち / に先立って (명사 수식: 명사 / 동사 사전형 + に先立つ + 명사)",
+      "examples": [
+        {
+          "translation": "회의에 앞서 자료를 확인합시다."
+        },
+        {
+          "translation": "출발에 앞서 짐을 정리했습니다."
+        },
+        {
+          "translation": "취침에 앞서 양치질을 합니다."
+        },
+        {
+          "translation": "영화 상영에 앞서 예고편이 상영됩니다."
+        }
+      ]
+    },
+    "ja_に反して_120": {
+      "title": "～に反して (〜ni hanshite)",
+      "shortExplanation": "실제 일어난 결과나 행동이 예상, 기대, 의도, 규칙 등과 정반대되거나 어긋남을 나타내며, '~에 반하여', '~와는 반대로', '~에 어긋나게'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に反して'(명사 수식 시에는 '～に反する + 명사', 문어체에서는 '～に反し')는 예상(予想), 기대(期待), 의도(意図), 규칙(規則), 법(法律) 등의 명사에 접속합니다. 실제 전개된 사태나 결과가 당초의 예상이나 기대와 완전히 딴판으로 어긋나거나, 정해진 원칙이나 규칙에 위배됨을 나타낼 때 사용합니다.",
+      "formation": "명사 + に反して / に反し (명사 수식: 명사 + に反する + 명사)",
+      "examples": [
+        {
+          "translation": "일기 예보와는 달리 오늘은 비가 내리고 있다."
+        },
+        {
+          "translation": "그의 예상에 반하여 시합에서 승리했다."
+        },
+        {
+          "translation": "부모님의 뜻을 거스르고 그와 결혼했다."
+        },
+        {
+          "translation": "이 영화는 평론가들의 평가와는 반대로 대히트를 쳤다."
+        }
+      ]
+    },
+    "ja_に基づいて_121": {
+      "title": "～に基づいて (〜ni motozuite)",
+      "shortExplanation": "어떤 사실이나 자료, 법률, 방침 등을 기초나 근거, 기준으로 삼아 행동하거나 판단함을 나타내며, '~에 바탕을 두고', '~에 근거하여', '~에 의거하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に基づいて'(명사 수식 시에는 '～に基づく + 명사' 또는 '～に基づいた + 명사', 격식체 문어에서는 '～に基づき')는 법률, 규칙, 조사 데이터, 연구 결과, 방침 등 기준이나 근거가 되는 명사에 접속합니다. 그것을 확고한 토대나 근거로 삼아 어떠한 조치를 취하거나 계획을 세우고, 결론을 도출할 때 사용하는 표현입니다.",
+      "formation": "명사 + に基づいて / に基づき (명사 수식: 명사 + に基づく / に基づいた + 명사)",
+      "examples": [
+        {
+          "translation": "연구 결과에 근거하여 새로운 치료법이 개발되었습니다."
+        },
+        {
+          "translation": "법률에 의거하여 범죄자는 체포되었습니다."
+        },
+        {
+          "translation": "그 데이터에 기반하여 결론을 내릴 수 있습니다."
+        },
+        {
+          "translation": "고객의 요청에 바탕을 두고 상품 개선이 이루어집니다."
+        }
+      ]
+    },
+    "ja_に対して_122": {
+      "title": "～に対して (〜ni taishite)",
+      "shortExplanation": "동작, 태도, 감정 등이 향하는 대상을 가리키거나('~에 대하여', '~를 향해'), 두 가지 대상이나 상황의 뚜렷한 대비·대조를 나타냅니다('~에 반해', '~에 비하여').",
+      "longExplanation": "문법 패턴 '～に対して'(명사 수식 시에는 '～に対する + 명사', 문어체에서는 '～に対し')는 크게 두 가지 용법으로 쓰입니다. 첫째는 행위나 태도, 질문, 감정 등의 직접적인 지향 대상을 나타내는 경우이며('~에 대하여', '~에게'), 둘째는 상반되는 두 대상을 서로 비교·대조하여 그 차이를 돋보이게 하는 경우입니다('~에 대해서', '~인 것에 반해').",
+      "formation": "명사 + に対して / に対し (명사 수식: 명사 + に対する + 명사) | 보통형(な형용사 어간 + な/である | 명사 + な/である) + のに対して",
+      "examples": [
+        {
+          "translation": "일본 문화에 대해 존경하는 마음을 가지고 있습니다."
+        },
+        {
+          "translation": "그 사람에게 무례한 태도를 취하지 마세요."
+        },
+        {
+          "translation": "선생님의 질문에 대해 그녀는 곧바로 대답했습니다."
+        },
+        {
+          "translation": "남성에 비해 여성은 같은 일을 하더라도 더 적은 급여를 받고 있다."
+        }
+      ]
+    },
+    "ja_に応えて_123": {
+      "title": "～に応えて (〜ni kotaete)",
+      "shortExplanation": "상대방의 기대, 요망, 요구나 성원 등에 부응하여 그에 걸맞은 행동을 함을 나타내며, '~에 부응하여', '~에 답하여', '~에 호응하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に応えて'(명사 수식 시에는 '～に応える + 명사', 문어체에서는 '～に応え')는 기대(期待), 요망(要望), 요청(要請), 목소리(声), 앙코르(アンコール) 등의 명사에 접속합니다. 타인의 바람이나 기대, 사회적 요구 등에 걸맞게 적극적으로 행동하거나 그에 보답하는 태도를 취할 때 사용합니다.",
+      "formation": "명사 + に応えて / に応え (명사 수식: 명사 + に応える + 명사)",
+      "examples": [
+        {
+          "translation": "고객의 요청에 부응하여 새로운 메뉴를 만들었습니다."
+        },
+        {
+          "translation": "그는 팀의 기대에 부응하여 훌륭한 플레이를 선보였다."
+        },
+        {
+          "translation": "정부는 국민의 목소리에 호응하여 새로운 법률을 제정했다."
+        },
+        {
+          "translation": "기업들은 환경 문제에 발맞추어 친환경 제품을 개발하고 있다."
+        }
+      ]
+    },
+    "ja_に応じて_124": {
+      "title": "～に応じて (〜ni oujite)",
+      "shortExplanation": "조건이나 상황, 수준, 변화에 맞추어 그에 상응하도록 적절히 달라지거나 조절함을 나타내며, '~에 따라', '~에 상응하여', '~에 맞추어'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に応じて'(명사 수식 시에는 '～に応じた + 명사', 문어체에서는 '～に応じ')는 변화하거나 다양성을 지닌 명사(나이, 수입, 계절, 능력, 희망 사항 등)에 접속합니다. 앞의 조건이나 정도에 알맞게 뒷부분의 대응책, 내용, 상태 등을 비례하여 조절하거나 상응하게 변화시킬 때 사용합니다.",
+      "formation": "명사 + に応じて / に応じ (명사 수식: 명사 + に応じた + 명사)",
+      "examples": [
+        {
+          "translation": "업무량에 따라 급여가 달라집니다."
+        },
+        {
+          "translation": "계절에 맞추어 옷차림을 선택합시다."
+        },
+        {
+          "translation": "고객님의 희망에 맞추어 플랜을 제안합니다."
+        },
+        {
+          "translation": "연령에 따라 건강검진 항목이 다릅니다."
+        }
+      ]
+    },
+    "ja_に決まっている_125": {
+      "title": "～に決まっている (〜ni kimatte iru)",
+      "shortExplanation": "화자가 주관적인 확신이나 직관, 상식에 근거하여 틀림없이 그러할 것이라고 단정함을 나타내며, '~임에 틀림없다', '~하기 마련이다', '당연히 ~이다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に決まっている'는 동사, 형용사, 명사의 보통형에 접속합니다(단, な형용사와 명사는 어간에 바로 접속하거나 だ가 생략된 형태로 접속). 화자가 자신의 경험이나 직감, 정황에 비추어 보았을 때 '의심할 여지 없이 뻔하다' 혹은 '틀림없이 그렇게 될 것이다'라고 강하게 단정 지어 말할 때 사용하는 회화적 표현입니다.",
+      "formation": "동사 보통형 + に決まっている | い형용사 + に決まっている | な형용사 어간 + に決まっている | 명사 + に決まっている",
+      "examples": [
+        {
+          "translation": "이렇게 더운 날에 운동을 하면 땀을 흘리는 게 당연하다."
+        },
+        {
+          "translation": "그가 시험에 떨어진다면 실망할 게 뻔하다."
+        },
+        {
+          "translation": "그녀는 항상 늦으니까 오늘도 늦을 게 틀림없다."
+        },
+        {
+          "translation": "이 게임은 재미있을 게 분명하다."
+        }
+      ]
+    },
+    "ja_に沿って_126": {
+      "title": "～に沿って (〜ni sotte)",
+      "shortExplanation": "강이나 도로 등 길게 뻗은 선을 따라 이동함을 나타내거나('~을 따라'), 규칙·방침·계획 등을 벗어나지 않고 준수하여 행동함을 나타냅니다('~에 따라', '~에 맞추어').",
+      "longExplanation": "문법 패턴 '～に沿って'(명사 수식 시에는 '～に沿う + 명사' 또는 '～に沿った + 명사', 문어체에서는 '～に沿い')는 명사에 접속합니다. 물리적으로는 강, 길, 해안선 등을 '따라서' 이동하는 의미로 쓰이며, 추상적으로는 정해진 규칙, 방침, 계획, 매뉴얼, 요망 등을 충실히 따르고 그것에 부합하도록 진행할 때 쓰입니다.",
+      "formation": "명사 + に沿って / に沿い (명사 수식: 명사 + に沿う / に沿った + 명사)",
+      "examples": [
+        {
+          "translation": "강을 따라 걸어가면 다리가 보입니다."
+        },
+        {
+          "translation": "이 조리법에 따라 요리를 만들면 틀림없습니다."
+        },
+        {
+          "translation": "규칙에 따라 행동해야 합니다."
+        },
+        {
+          "translation": "산길을 따라 나아가면 작은 신사가 있습니다."
+        }
+      ]
+    },
+    "ja_に過ぎない_127": {
+      "title": "～に過ぎない (〜ni suginai)",
+      "shortExplanation": "사물의 정도나 가치가 대단치 않으며 단지 그 정도에 머무름을 나타내며, '~에 지나지 않는다', '~에 불과하다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に過ぎない'는 동사, 형용사, 명사의 보통형에 접속합니다(명사와 な형용사는 보통 어간에 바로 접속하거나 である에 접속). 어떠한 사태나 대상이 겉으로 보거나 생각하는 것만큼 대단하거나 중요하지 않고, 그 한도를 넘지 않는 사소하거나 평범한 상태에 불과함을 겸손하게 나타내거나 가볍게 평가절하할 때 사용합니다.",
+      "formation": "동사 보통형 + に過ぎない | い형용사 + に過ぎない | な형용사 어간(또는 である) + に過ぎない | 명사(또는 である) + に過ぎない",
+      "examples": [
+        {
+          "translation": "그의 실패는 단순한 실수에 지나지 않는다."
+        },
+        {
+          "translation": "이 시험은 간단한 문제들에 불과하다."
+        },
+        {
+          "translation": "그녀는 친구에 불과하다."
+        },
+        {
+          "translation": "그 발언은 농담에 지나지 않는다."
+        }
+      ]
+    },
+    "ja_に関わって_128": {
+      "title": "～に関わって (〜ni kakawatte)",
+      "shortExplanation": "어떤 사안이나 사건에 관계되거나 영향을 미침을 나타내며, '~와 관련하여', '~에 관계되어', '~에 관여하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に関わって'(명사 수식 시에는 '～に関わる + 명사', 문어체에서는 '～に関わり')는 명사에 접속합니다. 어떤 프로젝트, 사건, 화제 등에 직접 관계를 맺거나 관여하고 있음을 나타내며, 더 나아가 목숨, 명예, 신용 등 중대한 사안에 직결되거나 영향을 미치는 경우에도 널리 쓰입니다.",
+      "formation": "명사 + に関わって / に関わり (명사 수식: 명사 + に関わる + 명사)",
+      "examples": [
+        {
+          "translation": "시험 내용과 관련하여 선생님께 질문이 있습니다."
+        },
+        {
+          "translation": "이 프로젝트와 관련하여 의견이 있으시면 사양 말고 말씀해 주세요."
+        },
+        {
+          "translation": "건강과 관련해서 식생활은 매우 중요합니다."
+        },
+        {
+          "translation": "그 사건에 연루되어 그 사람도 다소 의심을 받고 있습니다."
+        }
+      ]
+    },
+    "ja_に限り_129": {
+      "title": "～に限り (〜ni kagiri)",
+      "shortExplanation": "특정한 대상, 날짜, 조건에만 한정하여 예외적으로 적용됨을 나타내며, '~에 한해', '~에 한하여', '~만 특별히'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に限り'(문말 서술형으로는 '～に限る')는 명사에 접속합니다. 안내문, 공지 사항, 규칙, 판촉 행사 등에서 특정한 인원, 자격, 날짜, 장소 등에만 혜택이나 조건이 특별히 한정되어 적용됨을 명시할 때 사용하는 공식적이고 엄격한 표현입니다.",
+      "formation": "명사 + に限り (문말 서술형: 명사 + に限る)",
+      "examples": [
+        {
+          "translation": "오늘 하루에 한해 이 상품을 반값에 판매합니다."
+        },
+        {
+          "translation": "이 쿠폰은 이 매장에 한하여 유효합니다."
+        },
+        {
+          "translation": "회원에 한해 무료로 이 서비스를 이용하실 수 있습니다."
+        },
+        {
+          "translation": "이 혜택은 선착순 10명에 한합니다."
+        }
+      ]
+    },
+    "ja_に際して_130": {
+      "title": "～に際して (〜ni saishite)",
+      "shortExplanation": "중요한 일이나 행사, 인생의 특별한 국면을 맞이하는 시점을 나타내며, '~에 즈음하여', '~할 때', '~를 맞이하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～に際して'(명사 수식 시에는 '～に際しての + 명사', 문어체에서는 '～に際し')는 명사나 동사의 사전형에 접속합니다. 졸업, 결혼, 유학, 취임, 계약 등 인생의 특별한 계기나 공식적이고 중대한 일을 시작하거나 맞이할 때 쓰는 격식 있는 표현입니다. 뒤에는 마음가짐, 사전 준비 절차, 축하 인사, 주의 사항 등이 주로 이어집니다.",
+      "formation": "명사 + に際して / に際し | 동사 사전형 + に際して / に際し (명사 수식: 명사 / 동사 사전형 + に際しての + 명사)",
+      "examples": [
+        {
+          "translation": "졸업식에 즈음하여 교장 선생님께서 연설을 하십니다."
+        },
+        {
+          "translation": "이 일에 임함에 있어서 책임감이 매우 중요합니다."
+        },
+        {
+          "translation": "유학에 즈음하여 비자 발급 수속이 필요합니다."
+        },
+        {
+          "translation": "결혼식에 즈음하여 부모님께 감사의 마음을 전했습니다."
+        }
+      ]
+    },
+    "ja_ねばならない_131": {
+      "title": "～ねばならない (〜neba naranai)",
+      "shortExplanation": "의무, 사명감, 긴박한 필요성으로 인해 반드시 어떠한 행동을 해야 함을 나타내며, '~해야 한다', '~하지 않으면 안 된다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ねばならない'(문어체로는 '～ねばならぬ'도 쓰임)는 동사의 미연형(ない형에서 ない를 뗀 어간)에 접속합니다(불규칙 변화: する는 せねばならない). 현대어의 '～なければならない'에 해당하는 고어적·문어적 표현으로, 연설, 공식 문장, 격언 등에서 강한 결의나 사명감, 무거운 도덕적 의무를 나타낼 때 주로 사용됩니다.",
+      "formation": "동사 ない형(ない 탈락) + ねばならない (참고: する는 せねばならない)",
+      "examples": [
+        {
+          "translation": "시험에 합격하기 위해서는 더 열심히 공부해야만 한다."
+        },
+        {
+          "translation": "비행기 시간에 맞추려면 서둘러야 한다."
+        },
+        {
+          "translation": "6시까지는 귀가해야 한다."
+        },
+        {
+          "translation": "이 일을 오늘 안으로 끝내야만 한다."
+        }
+      ]
+    },
+    "ja_のみならずも_132": {
+      "title": "～のみならず～も (〜nomi narazu 〜mo)",
+      "shortExplanation": "앞의 내용뿐만 아니라 뒤의 다른 내용까지도 아울러 포함됨을 나타내며, '~뿐만 아니라 ~도', '~뿐 아니라'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～のみならず～も'는 동사, 형용사, 명사의 보통형에 접속합니다(명사와 な형용사는 보통 어간에 바로 접속하거나 である에 접속). 어떠한 성질이나 범위가 앞서 진술한 것에 그치지 않고, 뒤에 언급되는 또 다른 사항이나 대상에까지 널리 미침을 나타냅니다. 일상 회화에서 자주 쓰이는 '～だけでなく'와 의미는 같으나, '～のみならず'가 한층 격식 있고 정중한 문어체적 뉘앙스를 지닙니다.",
+      "formation": "동사 보통형 + のみならず (…도) | い형용사 + のみならず (…도) | な형용사 어간(또는 である) + のみならず (…도) | 명사(또는 である) + のみならず (…도)",
+      "examples": [
+        {
+          "translation": "그는 영어뿐만 아니라 프랑스어도 할 줄 압니다."
+        },
+        {
+          "translation": "이 레스토랑은 맛있을 뿐만 아니라 분위기도 아주 훌륭합니다."
+        },
+        {
+          "translation": "이 앱은 편리할 뿐만 아니라 보안성도 높습니다."
+        },
+        {
+          "translation": "그녀는 머리가 좋을 뿐만 아니라 운동도 잘합니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_にわたって_118": {
+      "title": "～にわたって (〜ni watatte)",
+      "shortExplanation": "ある行為や現象が時間的な長さ、空間的な広がり、または規模や回数などの広範囲全体に及んでいることを表し、「〜の期間ずっと」「〜の範囲全体に及んで」という意味を表します。",
+      "longExplanation": "「～にわたって」（名詞を修飾するときは「〜にわたる＋名詞」、改まった表現では「〜にわたり」）は、時間・期間、場所・空間、回数、範囲などを表す名詞に接続し、その範囲全体・期間全体に及んで事態が続いていることや広がっていることを強調する文型です。規模や範囲が広大・長期であることを表す場合によく用いられ、ニュースや論説文などの公的な場面でも頻繁に使われます。",
+      "formation": "名詞 ＋ にわたって（連体修飾：名詞 ＋ にわたる ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "彼女は一年にわたって日本語を勉強しました。"
+        },
+        {
+          "translation": "このプロジェクトは50キロにわたって道路を建設します。"
+        },
+        {
+          "translation": "彼の著作は数多くの国にわたって読まれている。"
+        },
+        {
+          "translation": "その秘密は世代にわたって保たれ続けた。"
+        }
+      ]
+    },
+    "ja_に先立ち_119": {
+      "title": "～に先立ち (〜ni sakidachi)",
+      "shortExplanation": "何か重要な行事や行動を始める前に、それに先立って準備や関連する行為を行うことを表し、「〜の前に」「〜に先立って」という意味を表します。",
+      "longExplanation": "「～に先立ち」（「〜に先立って」とも言い、名詞を修飾するときは「〜に先立つ＋名詞」）は、名詞や動詞の辞書形に接続し、重要な事業、会議、出発、式典などを始める前にあらかじめ準備や必要な行為をしておくことを表す改まった表現です。ビジネスの場や公的な行事、公式アナウンスなどで広く使用されます。",
+      "formation": "名詞 ＋ に先立ち／に先立って ｜ 動詞辞書形 ＋ に先立ち／に先立って（連体修飾：名詞／動詞辞書形 ＋ に先立つ ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "会議に先立ち、資料を確認しましょう。"
+        },
+        {
+          "translation": "出発に先立ち、荷物を整理しました。"
+        },
+        {
+          "translation": "就寝に先立ち、歯を磨きます。"
+        },
+        {
+          "translation": "映画の上映に先立ち、予告編が放映されます。"
+        }
+      ]
+    },
+    "ja_に反して_120": {
+      "title": "～に反して (〜ni hanshite)",
+      "shortExplanation": "事態や結果が事前の予想・期待・意図や規則などと食い違っていることを表し、「〜と反対に」「〜に逆らって」という意味を表します。",
+      "longExplanation": "「～に反して」（名詞を修飾するときは「〜に反する＋名詞」、改まった文章語では「〜に反し」）は、「予想」「期待」「意図」「規則」「命令」などの名詞に接続し、実際の結果や行われた行為がそれらの予測や規範と正反対であること、または背いていることを表す文型です。",
+      "formation": "名詞 ＋ に反して／に反し（連体修飾：名詞 ＋ に反する ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "天気予報に反して、今日は雨が降っている。"
+        },
+        {
+          "translation": "彼の予想に反して、試合に勝った。"
+        },
+        {
+          "translation": "両親の意見に反して、彼と結婚した。"
+        },
+        {
+          "translation": "この映画は批評家の評価に反して大ヒットした。"
+        }
+      ]
+    },
+    "ja_に基づいて_121": {
+      "title": "～に基づいて (〜ni motozuite)",
+      "shortExplanation": "ある事柄・基準・データ・法令などを確かな根拠や基礎として行動や判断を行うことを表し、「〜を根拠として」「〜をもとにして」という意味を表します。",
+      "longExplanation": "「～に基づいて」（名詞を修飾するときは「〜に基づく＋名詞」または「〜に基づいた＋名詞」、公的な文章語では「〜に基づき」）は、法律、基本方針、調査結果、データ、事実などの名詞に接続し、それを判断や行動の確かな拠り所・基準として物事を行うことを表す文型です。客観的な根拠や裏付けがあることを示す改まった表現です。",
+      "formation": "名詞 ＋ に基づいて／に基づき（連体修飾：名詞 ＋ に基づく／に基づいた ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "研究結果に基づいて、新しい治療法が開発されました。"
+        },
+        {
+          "translation": "法律に基づいて、犯罪者は逮捕されました。"
+        },
+        {
+          "translation": "そのデータに基づいて、結論を出すことができます。"
+        },
+        {
+          "translation": "お客様の要望に基づいて、商品の改善が行われます。"
+        }
+      ]
+    },
+    "ja_に対して_122": {
+      "title": "～に対して (〜ni taishite)",
+      "shortExplanation": "動作や態度、感情が向けられる対象を表す用法（「〜に向かって」「〜を相手として」）と、二つの物事の対比・対照を表す用法（「〜である一方」「〜と比べて」）があります。",
+      "longExplanation": "「～に対して」（名詞を修飾するときは「〜に対する＋名詞」、文章語では「〜に対し」）には主に二つの用法があります。一つは、人や物事、意見などに向ける態度や働きかけの対象を表す場合（「〜に向けて」「〜を対象として」）です。もう一つは、二つの対照的な事実や状況を並べて比較・対比する場合（「Aであるのに対してBは…」）です。文脈に応じて対象か対比かを判断します。",
+      "formation": "名詞 ＋ に対して／に対し（連体修飾：名詞 ＋ に対する ＋ 名詞）｜ 普通形（な形容詞語幹＋な／である ｜ 名詞＋な／である）＋ のに対して",
+      "examples": [
+        {
+          "translation": "日本の文化に対して尊敬の念を持っています。"
+        },
+        {
+          "translation": "彼に対して無礼な態度を取らないでください。"
+        },
+        {
+          "translation": "先生の質問に対して、彼女はすぐに答えました。"
+        },
+        {
+          "translation": "男性に対して、女性は同じ仕事でも低い給料をもらっている。"
+        }
+      ]
+    },
+    "ja_に応えて_123": {
+      "title": "～に応えて (〜ni kotaete)",
+      "shortExplanation": "相手の期待・要望・要請・声援などに添うように行動することを表し、「〜に報いて」「〜に添って」という意味を表します。",
+      "longExplanation": "「～に応えて」（名詞を修飾するときは「〜に応える＋名詞」、改まった文章語では「〜に応え」）は、「期待」「要望」「要請」「声」「アンコール」などの名詞に接続し、周りからの働きかけや希望を満足させるように、それに応じる行動をとることを表す文型です。相手の望みや社会的な要求に積極的に報いるニュアンスを含みます。",
+      "formation": "名詞 ＋ に応えて／に応え（連体修飾：名詞 ＋ に応える ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "お客様の要望に応えて、新しいメニューを作りました。"
+        },
+        {
+          "translation": "彼はチームの期待に応えて素晴らしいプレーを見せた。"
+        },
+        {
+          "translation": "政府は国民の声に応えて、新しい法律を制定した。"
+        },
+        {
+          "translation": "企業は環境問題に応えて、環境に優しい製品を開発している。"
+        }
+      ]
+    },
+    "ja_に応じて_124": {
+      "title": "～に応じて (〜ni oujite)",
+      "shortExplanation": "前にある条件・変化・段階・希望などに合わせて、それに見合うように対応を変えることを表し、「〜に合わせて」「〜に見合って」という意味を表します。",
+      "longExplanation": "「～に応じて」（名詞を修飾するときは「〜に応じた＋名詞」、改まった文章語では「〜に応じ」）は、変化するものや幅のある名詞（年齢、収入、天候、能力、希望など）に接続し、その条件や状況の変化・差異に合わせて後ろの事柄や対応を相応しく調整・変化させることを表す文型です。",
+      "formation": "名詞 ＋ に応じて／に応じ（連体修飾：名詞 ＋ に応じた ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "仕事の量に応じて給料が変わります。"
+        },
+        {
+          "translation": "季節に応じて服装を選びましょう。"
+        },
+        {
+          "translation": "お客様の希望に応じてプランを提案します。"
+        },
+        {
+          "translation": "年齢に応じて健康診断項目が異なります。"
+        }
+      ]
+    },
+    "ja_に決まっている_125": {
+      "title": "～に決まっている (〜ni kimatte iru)",
+      "shortExplanation": "話し手が主観的な強い確信や直感に基づいて「絶対に〜だ」「〜に違いない」と断定することを表します。",
+      "longExplanation": "「～に決まっている」は、動詞・形容詞・名詞の普通形に接続し（な形容詞や名詞は「だ」をつけずに接続することが多い）、客観的な証拠の有無にかかわらず、話し手の主観や経験から「どう考えても絶対にそうだ」「他にはあり得ない」と強く思い込んで断定する表現です。親しい間柄の日常会話でよく使われます。",
+      "formation": "動詞普通形 ＋ に決まっている ｜ い形容詞 ＋ に決まっている ｜ な形容詞語幹 ＋ に決まっている ｜ 名詞 ＋ に決まっている",
+      "examples": [
+        {
+          "translation": "こんなに暑い日に運動したら、汗をかくに決まっている。"
+        },
+        {
+          "translation": "彼が試験に落ちたら、がっかりするに決まっている。"
+        },
+        {
+          "translation": "彼女はいつも遅れるから、今日も遅れるに決まっている。"
+        },
+        {
+          "translation": "このゲームは楽しいに決まっている。"
+        }
+      ]
+    },
+    "ja_に沿って_126": {
+      "title": "～に沿って (〜ni sotte)",
+      "shortExplanation": "道路や川などの細長い線に並行して進むこと（「〜に沿いながら」）や、基準・方針・規則・計画などから外れないように従うこと（「〜に従って」「〜通りに」）を表します。",
+      "longExplanation": "「～に沿って」（名詞を修飾するときは「〜に沿う＋名詞」または「〜に沿った＋名詞」、改まった文章語では「〜に沿い」）は名詞に接続します。空間的な意味では川や海岸、通りなどの細長い実体に並行して移動することを表し、抽象的な意味では規則、マニュアル、方針、計画、相手の希望などの基準に忠実に従って行動することを表します。",
+      "formation": "名詞 ＋ に沿って／に沿い（連体修飾：名詞 ＋ に沿う／に沿った ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "川に沿って歩いていくと、橋が見えてきます。"
+        },
+        {
+          "translation": "このレシピに沿って料理を作れば、間違いありません。"
+        },
+        {
+          "translation": "規則に沿って行動しなければなりません。"
+        },
+        {
+          "translation": "山道に沿って進むと、小さな神社があります。"
+        }
+      ]
+    },
+    "ja_に過ぎない_127": {
+      "title": "～に過ぎない (〜ni suginai)",
+      "shortExplanation": "程度や価値が高くなく、ただそれだけのことであることを表し、「ただの〜だ」「〜にすぎない」「それ以上のものではない」という意味を表します。",
+      "longExplanation": "「～に過ぎない」は、動詞・形容詞・名詞の普通形に接続し（名詞やな形容詞は「だ」を省いてそのまま、または「である」をつけて接続）、物事の評価や程度が世間で思われているほど大したものではなく、ただその枠内に収まっているにすぎないことを客観的または控えめに述べる文型です。過大評価を否定するニュアンスを持ちます。",
+      "formation": "動詞普通形 ＋ に過ぎない ｜ い形容詞 ＋ に過ぎない ｜ な形容詞語幹（／である）＋ に過ぎない ｜ 名詞（／である）＋ に過ぎない",
+      "examples": [
+        {
+          "translation": "彼の失敗はミスに過ぎない。"
+        },
+        {
+          "translation": "この試験は簡単な問題に過ぎない。"
+        },
+        {
+          "translation": "彼女は友達に過ぎない。"
+        },
+        {
+          "translation": "その発言は冗談に過ぎない。"
+        }
+      ]
+    },
+    "ja_に関わって_128": {
+      "title": "～に関わって (〜ni kakawatte)",
+      "shortExplanation": "ある事柄に関係したり影響を及ぼしたりしていることを表し、「〜に関係して」「〜に携わって」「〜に関係を持って」という意味を表します。",
+      "longExplanation": "「～に関わって」（名詞を修飾するときは「〜に関わる＋名詞」、改まった文章語では「〜に関わり」）は名詞に接続し、その事柄や事件・事業に直接関係していることや参加・関与していることを表す文型です。また、命や名誉、将来など重大な事態に重大な影響や責任が及ぶ文脈でも用いられます。",
+      "formation": "名詞 ＋ に関わって／に関わり（連体修飾：名詞 ＋ に関わる ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "試験の内容に関わって、先生に質問があります。"
+        },
+        {
+          "translation": "このプロジェクトに関わって、意見があれば、遠慮なく言ってください。"
+        },
+        {
+          "translation": "健康に関わって、食生活はとても重要です。"
+        },
+        {
+          "translation": "その事件に関わって、彼も少し疑われています。"
+        }
+      ]
+    },
+    "ja_に限り_129": {
+      "title": "～に限り (〜ni kagiri)",
+      "shortExplanation": "特定の対象・日時・条件だけに限定して例外的に扱うことを表し、「〜だけ特別に」「〜に限定して」という意味を表します。",
+      "longExplanation": "「～に限り」（文末で言い切る形は「〜に限る」）は名詞に接続し、案内文、規則、広告などで、特別な待遇や条件の適用をその対象・資格・期間だけに厳密に限定することを表す改まった表現です。「それ以外には適用されない」という例外性・限定性を明示します。",
+      "formation": "名詞 ＋ に限り（文末表現：名詞 ＋ に限る）",
+      "examples": [
+        {
+          "translation": "今日に限り、この商品が半額です。"
+        },
+        {
+          "translation": "このクーポンはこの店に限り有効です。"
+        },
+        {
+          "translation": "会員に限り、無料でこのサービスを利用できます。"
+        },
+        {
+          "translation": "この特典は先着10名に限ります。"
+        }
+      ]
+    },
+    "ja_に際して_130": {
+      "title": "～に際して (〜ni saishite)",
+      "shortExplanation": "特別な出来事や重要な行事・行為を始めるタイミングを表し、「〜にあたって」「〜の時に」という意味を表します。",
+      "longExplanation": "「～に際して」（名詞を修飾するときは「〜に際しての＋名詞」、改まった文章語では「〜に際し」）は、名詞や動詞の辞書形に接続し、卒業、結婚、留学、契約など、人生の節目や公式な重要行事を迎えるにあたって、挨拶や準備事項、注意事項などを述べる際に用いられる格式の高い表現です。",
+      "formation": "名詞 ＋ に際して／に際し ｜ 動詞辞書形 ＋ に際して／に際し（連体修飾：名詞／動詞辞書形 ＋ に際しての ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "卒業式に際して、校長先生がスピーチをします。"
+        },
+        {
+          "translation": "この仕事に際して、責任感が大切です。"
+        },
+        {
+          "translation": "留学に際して、ビザの手続きが必要です。"
+        },
+        {
+          "translation": "結婚式に際して、両親に感謝の気持ちを伝えました。"
+        }
+      ]
+    },
+    "ja_ねばならない_131": {
+      "title": "～ねばならない (〜neba naranai)",
+      "shortExplanation": "強い義務感や必要性から「どうしても〜しなければならない」という決意や使命感を表します。",
+      "longExplanation": "「～ねばならない」（文語的表現として「〜ねばならぬ」とも言う）は、動詞の未然形（ない形から「ない」を除いた形）に接続し、「〜なければならない」の硬い文語的表現として用いられます（サ変動詞「する」は「せねばならない」となる）。強い使命感、義務、避けられない状況に対する個人の強い決意や主張を述べる際に使われます。",
+      "formation": "動詞ない形（ないを除く） ＋ ねばならない（「する」は「せねばならない」）",
+      "examples": [
+        {
+          "translation": "試験に合格するために、もっと勉強せねばならない。"
+        },
+        {
+          "translation": "飛行機に間に合うためには、急がねばならない。"
+        },
+        {
+          "translation": "６時までに帰らねばならない。"
+        },
+        {
+          "translation": "この仕事を今日中に終わらせねばならない。"
+        }
+      ]
+    },
+    "ja_のみならずも_132": {
+      "title": "～のみならず～も (〜nomi narazu 〜mo)",
+      "shortExplanation": "それだけに留まらず、ほかの同種のものにも当てはまることを表し、「〜だけでなく〜も」「〜にとどまらず」という意味を表します。",
+      "longExplanation": "「～のみならず～も」は、動詞・形容詞・名詞の普通形に接続し（名詞やな形容詞は語幹のまま、または「である」をつけて接続）、「〜だけでなく」の硬い文語的表現として用いられます。前件で述べた事柄や範囲だけに限定されず、さらに後件のような同類やそれ以上の事柄にも当てはまることを強調する表現です。スピーチや論説文などで好まれます。",
+      "formation": "動詞普通形 ＋ のみならず（…も） ｜ い形容詞 ＋ のみならず（…も） ｜ な形容詞語幹（／である）＋ のみならず（…も） ｜ 名詞（／である）＋ のみならず（…も）",
+      "examples": [
+        {
+          "translation": "彼は英語のみならず、フランス語も話せます。"
+        },
+        {
+          "translation": "このレストランは美味しいのみならず、雰囲気も素晴らしいです。"
+        },
+        {
+          "translation": "このアプリは便利のみならず、安全性も高いです。"
+        },
+        {
+          "translation": "彼女は頭が良いのみならず、スポーツも得意です。"
+        }
+      ]
+    }
+  }
+}

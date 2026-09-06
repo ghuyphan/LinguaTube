@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_ついでに_40": {
+      "title": "～ついでに (〜tsuide ni)",
+      "shortExplanation": "Nhân tiện, tiện thể làm việc gì đó nhân cơ hội thực hiện một hành động chính; 'tiện thể', 'nhân tiện'.",
+      "longExplanation": "Mẫu ngữ pháp '～ついでに' dùng để diễn tả việc nhân cơ hội thực hiện một hành động chính có chủ đích từ trước, người nói tiện thể hoặc tranh thủ làm thêm một hành động khác. Vế trước là hành động chính, vế sau là hành động phụ phát sinh thuận tiện làm cùng.",
+      "formation": "Động từ thể từ điển / thể た + ついでに | Danh từ + のついでに",
+      "examples": [
+        {
+          "translation": "Nhân tiện đi mua sắm, chúng ta hãy ghé qua bưu điện gửi thư nhé."
+        },
+        {
+          "translation": "Tiện thể mượn sách ở thư viện, tôi đã gặp một người bạn."
+        },
+        {
+          "translation": "Nhân dịp đến Nhật Bản, tôi muốn đi tham quan các địa điểm du lịch nổi tiếng."
+        },
+        {
+          "translation": "Tiện thể đến rạp chiếu phim, tôi đã xem qua áp phích các bộ phim mới."
+        }
+      ]
+    },
+    "ja_っけ_41": {
+      "title": "～っけ？ (〜kke?)",
+      "shortExplanation": "Trợ từ cuối câu dùng trong văn nói thân mật để nhớ lại hoặc xác nhận lại điều gì mơ hồ; '...phải không nhỉ?', '...gì ấy nhỉ?'.",
+      "longExplanation": "Trợ từ cuối câu '～っけ' dùng trong hội thoại thân mật khi người nói đang cố gắng nhớ lại một thông tin mà bản thân đã quên, hoặc muốn hỏi lại người đối diện để xác nhận một sự việc trong quá khứ hay điều gì chưa chắc chắn ('...ấy nhỉ?', '...phải không nhỉ?').",
+      "formation": "Động từ thể thông thường (thường là thể た) + っけ | Tính từ đuôi い + かったっけ | Tính từ đuôi な / Danh từ + だっけ (lịch sự: でしたっけ)",
+      "examples": [
+        {
+          "translation": "Anh ấy đến lúc mấy giờ ấy nhỉ?"
+        },
+        {
+          "translation": "Bộ phim này có hay không nhỉ?"
+        },
+        {
+          "translation": "Cô ấy là học sinh phải không nhỉ?"
+        },
+        {
+          "translation": "Quán sushi ở đâu ấy nhỉ?"
+        }
+      ]
+    },
+    "ja_っぱい_42": {
+      "title": "～っぱい (〜ppai)",
+      "shortExplanation": "Diễn tả trạng thái đầy ắp, tràn ngập một sự vật hoặc cảm xúc; 'đầy...', 'tràn ngập...' (thường dùng dạng 〜でいっぱい).",
+      "longExplanation": "Cấu trúc '～đầy... với 〜でいっぱい' dùng để diễn đạt một không gian, trạng thái hoặc cảm xúc bị lấp đầy, tràn ngập bởi sự vật, hiện tượng hoặc tâm trạng nào đó ('chất đầy...', 'tràn ngập...'). Thường đi sau danh từ kết hợp với trợ từ 'で'.",
+      "formation": "Danh từ + でいっぱい (hoặc でいっぱいです / でいっぱいだ)",
+      "examples": [
+        {
+          "translation": "Căn phòng chất đầy hành lý."
+        },
+        {
+          "translation": "Nụ cười rạng rỡ ngập tràn trên gương mặt cô ấy."
+        },
+        {
+          "translation": "Anh ấy đang ngập đầu trong công việc."
+        },
+        {
+          "translation": "Công viên tràn ngập các loài hoa."
+        }
+      ]
+    },
+    "ja_っぱなし_43": {
+      "title": "～っぱなし (〜ppanashi)",
+      "shortExplanation": "Chỉ trạng thái cứ để nguyên như vậy mà không làm tiếp hành động cần thiết tiếp theo; 'cứ để nguyên...', 'suốt không...'.",
+      "longExplanation": "Mẫu ngữ pháp '～っぱなし' kết hợp sau thân động từ thể ます để diễn tả một hành động sau khi làm xong thì bị bỏ mặc, giữ nguyên trạng thái đó mà không thực hiện hành động xử lý tiếp theo lẽ thường. Thường mang sắc thái tiêu cực, phàn nàn, phê phán sự bất cẩn. Ngoài ra cũng dùng để chỉ một trạng thái diễn ra liên tục suốt không nghỉ.",
+      "formation": "Động từ thể ます (bỏ ます) + っぱなし (+ にする / になる / だ)",
+      "examples": [
+        {
+          "translation": "Nếu cứ để cửa sổ mở toang như thế thì côn trùng sẽ bay vào đấy."
+        },
+        {
+          "translation": "Tôi phơi quần áo rồi cứ để nguyên đó nên bị ướt mưa mất rồi."
+        },
+        {
+          "translation": "Anh ấy cứ để cửa mở toang như thế rồi đi ra ngoài."
+        },
+        {
+          "translation": "Tôi đã ngủ thiếp đi trong khi vẫn cứ để tivi bật nguyên như vậy."
+        }
+      ]
+    },
+    "ja_つまり_44": {
+      "title": "～つまり (〜tsumari)",
+      "shortExplanation": "Liên từ dùng để tóm tắt, diễn giải lại hoặc làm rõ nội dung câu trước; 'tức là', 'nói cách khác là', 'tóm lại là'.",
+      "longExplanation": "Liên từ 'つまり' dùng để diễn đạt lại nội dung đã trình bày ở trước bằng một cách ngắn gọn, dễ hiểu hơn, hoặc rút ra kết luận logic từ vế trước. Thường tương đương với 'tức là...', 'nói cách khác...', 'tóm lại là...'.",
+      "formation": "Câu 1 + 。つまり、 + Câu 2",
+      "examples": [
+        {
+          "translation": "Ông ấy là giáo sư đại học. Tức là một chuyên gia."
+        },
+        {
+          "translation": "Hôm nay là thứ Bảy. Tức là ngày mai là Chủ nhật."
+        },
+        {
+          "translation": "Chị Yamada là chị gái của bạn tôi. Nói cách khác, chị ấy là người quen của chúng tôi."
+        },
+        {
+          "translation": "Cô ấy đến từ nước Pháp. Tức là cô ấy có thể nói tiếng Pháp."
+        }
+      ]
+    },
+    "ja_つもりでした_45": {
+      "title": "～つもりでした (〜tsumori deshita)",
+      "shortExplanation": "Diễn tả dự định, ý định trong quá khứ nhưng trên thực tế đã không thực hiện được; 'đã định...', 'tính làm... (nhưng lại không làm)'.",
+      "longExplanation": "Mẫu câu '～つもりでした' dùng để nói về một ý định hoặc kế hoạch trong quá khứ, nhưng vì một nguyên nhân hay trở ngại nào đó mà trên thực tế đã không thể thực hiện được hoặc bị thay đổi. Thường mang sắc thái tiếc nuối và hay đi kèm với liên từ 'が' hoặc 'けれど'.",
+      "formation": "Động từ thể từ điển / thể ない + つもりでした",
+      "examples": [
+        {
+          "translation": "Hôm qua tôi đã định đi gặp bạn, nhưng lại bị cảm mất rồi."
+        },
+        {
+          "translation": "Tôi đã định xem phim, nhưng lại không còn thời gian nữa."
+        },
+        {
+          "translation": "Họ đã tính đến đây, nhưng đã gọi điện hủy hẹn."
+        },
+        {
+          "translation": "Tôi đã định đọc cuốn sách này, nhưng hóa ra tôi đã đọc xong rồi."
+        }
+      ]
+    },
+    "ja_てくれと_46": {
+      "title": "～てくれと (〜te kureto)",
+      "shortExplanation": "Dùng để truyền đạt, trích dẫn lại lời yêu cầu hoặc nhờ vả của ai đó; 'bảo hãy làm...', 'nhờ làm...'.",
+      "longExplanation": "Cấu trúc '～てくれと' (thường kết hợp với '言う', '頼む', '頼まれる', '言われる') dùng để trích dẫn gián tiếp một lời yêu cầu, thỉnh cầu hoặc mệnh lệnh từ người khác hướng đến mình hoặc người thứ ba ('ai đó đã nói/nhờ rằng hãy làm...').",
+      "formation": "Động từ thể て + くれと (言われる / 頼まれる / 言う / 頼む)",
+      "examples": [
+        {
+          "translation": "Tôi đã được bảo là hãy gọi điện thoại."
+        },
+        {
+          "translation": "Tôi đã được nhờ chuyển giúp kiện hành lý này."
+        },
+        {
+          "translation": "Tôi đã được thỉnh cầu là hãy đợi cho đến cuối cùng."
+        },
+        {
+          "translation": "Tôi đã được bảo là hãy nghỉ ngơi đi."
+        }
+      ]
+    },
+    "ja_てごらん_47": {
+      "title": "～てごらん (〜te goran)",
+      "shortExplanation": "Lời khuyên nhủ, đề nghị nhẹ nhàng đối phương thử làm một việc gì đó; 'thử làm... xem sao', 'hãy thử... xem'.",
+      "longExplanation": "Mẫu ngữ pháp '～てごらん' (dạng nói tắt của '～てごらんなさい') được người trên hoặc người lớn tuổi dùng để khuyên nhủ, gợi ý nhẹ nhàng cho người dưới, trẻ con hoặc người thân trong gia đình thử làm một việc nào đó ('thử làm... xem sao nhé'). Mang sắc thái dịu dàng, thân mật và khích lệ.",
+      "formation": "Động từ thể て + ごらん (hoặc ごらんなさい)",
+      "examples": [
+        {
+          "translation": "Em hãy chơi thử trò chơi đó xem nào."
+        },
+        {
+          "translation": "Cậu thử nói chuyện với anh ấy xem sao."
+        },
+        {
+          "translation": "Con thử làm theo công thức nấu ăn mới này xem sao."
+        },
+        {
+          "translation": "Em mặc thử chiếc váy đó xem nào."
+        }
+      ]
+    },
+    "ja_ですから_48": {
+      "title": "ですから～ (desu kara)",
+      "shortExplanation": "Liên từ biểu thị nguyên nhân, lý do trong cách nói lịch sự; 'vì thế', 'do đó', 'vì... nên'.",
+      "longExplanation": "Từ nối 'ですから' đứng ở đầu câu thứ hai hoặc đặt giữa câu (sau thể lịch sự です) để nêu rõ nguyên nhân, lý do cho vế tiếp theo trong phong cách lịch sự. Vế sau thường đưa ra lời khuyên, đề nghị, nhận định hoặc yêu cầu ('vì lý do đó nên...').",
+      "formation": "Câu 1 (Nguyên nhân) + ですから、 + Câu 2 (Kết quả / Đề nghị / Phán đoán)",
+      "examples": [
+        {
+          "translation": "Hôm nay trời lạnh nên xin hãy mặc áo khoác vào nhé."
+        },
+        {
+          "translation": "Bộ phim này rất hay nên bạn nhất định hãy xem nhé."
+        },
+        {
+          "translation": "Ngày mai là ngày nghỉ nên xin hãy nghỉ ngơi thật thoải mái."
+        },
+        {
+          "translation": "Anh ấy rất tốt bụng nên chắc chắn sẽ giúp đỡ thôi."
+        }
+      ]
+    },
+    "ja_てはじめて_49": {
+      "title": "～てはじめて (〜te hajimete)",
+      "shortExplanation": "Chỉ sau khi trải qua một việc gì đó thì mới lần đầu tiên nhận ra hoặc mới xảy ra một điều; 'chỉ sau khi... mới...'.",
+      "longExplanation": "Mẫu ngữ pháp '～てはじめて' diễn tả rằng chỉ sau khi một sự việc hoặc hành động ở vế trước xảy ra, người nói mới lần đầu tiên nhận thức được, thấu hiểu được hoặc mới có một trạng thái mới ở vế sau ('chỉ sau khi... thì mới nhận ra...').",
+      "formation": "Động từ thể て + はじめて",
+      "examples": [
+        {
+          "translation": "Chỉ sau khi đi ra nước ngoài, tôi mới nhận ra những nét tuyệt vời của Nhật Bản."
+        },
+        {
+          "translation": "Chỉ sau khi chia tay cô ấy, tôi mới nhận ra sự quan trọng của cô ấy."
+        },
+        {
+          "translation": "Chỉ sau khi tốt nghiệp đại học, tôi mới hiểu được thời sinh viên vui vẻ đến dường nào."
+        },
+        {
+          "translation": "Chỉ sau khi có con, tôi mới thấu hiểu được nỗi lòng của cha mẹ."
+        }
+      ]
+    },
+    "ja_てほしい_50": {
+      "title": "～てほしい (〜te hoshii)",
+      "shortExplanation": "Bày tỏ mong muốn đối phương hoặc người khác thực hiện một hành động nào đó; 'muốn (ai đó) làm gì'.",
+      "longExplanation": "Cấu trúc '～てほしい' gắn vào thể て của động từ để diễn tả mong muốn, nguyện vọng của người nói rằng người khác sẽ thực hiện một hành động cụ thể. Người thực hiện hành động thường được đánh dấu bằng trợ từ 'に'. Dạng phủ định là '～ないでほしい' (muốn ai đó đừng làm gì).",
+      "formation": "Người thực hiện hành động + に + Động từ thể て + ほしい (phủ định: ～ないでほしい)",
+      "examples": [
+        {
+          "translation": "Tôi muốn con mình chăm học hơn."
+        },
+        {
+          "translation": "Tôi muốn anh ấy gọi điện thoại cho tôi."
+        },
+        {
+          "translation": "Tôi muốn bạn bè giúp đỡ mình một tay."
+        },
+        {
+          "translation": "Tôi muốn ngày mai cô ấy đến đây."
+        }
+      ]
+    },
+    "ja_ても_51": {
+      "title": "～ても (〜temo)",
+      "shortExplanation": "Biểu thị điều kiện nhượng bộ nghịch giả định hoặc sự thật; 'cho dù... cũng...', 'ngay cả khi... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ても' (hoặc '～demo') dùng để diễn tả điều kiện nhượng bộ, chỉ ra rằng dù điều kiện giả định hay thực tế ở vế trước có xảy ra đi nữa thì kết quả hay hành động ở vế sau vẫn không bị ảnh hưởng, hoặc diễn ra trái ngược với lẽ thông thường ('cho dù... đi chăng nữa thì vẫn...').",
+      "formation": "Động từ thể て + も | Tính từ đuôi い (bỏ い) + くても | Tính từ đuôi な / Danh từ + でも",
+      "examples": [
+        {
+          "translation": "Dù trời có mưa đi chăng nữa thì đại hội thể thao vẫn được tổ chức."
+        },
+        {
+          "translation": "Dù bận rộn đến mấy, tôi vẫn dành thời gian học bài mỗi ngày."
+        },
+        {
+          "translation": "Cho dù có đắt đi chăng nữa, tôi vẫn sẽ mua món đồ có chất lượng tốt."
+        },
+        {
+          "translation": "Cho dù cô ấy có là người nổi tiếng đi nữa, tôi cũng chẳng biết cô ấy là ai."
+        }
+      ]
+    },
+    "ja_といいなあ_52": {
+      "title": "～といいなあ (〜to ii naa)",
+      "shortExplanation": "Bày tỏ ước muốn, hy vọng một điều tốt đẹp sẽ xảy ra hoặc ở một trạng thái lý tưởng; 'giá mà...', 'ước gì...', 'mong là...'.",
+      "longExplanation": "Mẫu câu '～といいなあ' kết hợp điều kiện 'と' với 'いい' và trợ từ cảm thán 'なあ' trong lối nói thân mật, độc thoại để bộc lộ niềm mong ước, hy vọng điều gì đó thuận lợi hoặc tốt đẹp sẽ đến với bản thân hay người khác ('mong sao...', 'giá mà... thì tốt biết mấy').",
+      "formation": "Động từ thể thông thường + といいなあ | Tính từ đuôi い + といいなあ | Tính từ đuôi な / Danh từ + だといいなあ",
+      "examples": [
+        {
+          "translation": "Ước gì ngày mai trời nắng ráo thì tốt biết mấy."
+        },
+        {
+          "translation": "Mong sao mình sẽ thi đỗ kỳ thi này."
+        },
+        {
+          "translation": "Mong là cô ấy vẫn luôn khỏe mạnh."
+        },
+        {
+          "translation": "Hy vọng rằng anh ấy sẽ tìm được một công việc mới."
+        }
+      ]
+    },
+    "ja_という_53": {
+      "title": "～という (〜to iu)",
+      "shortExplanation": "Dùng để gọi tên, định nghĩa hoặc bổ nghĩa cho danh từ theo sau; 'gọi là...', 'có tên là...', 'nghe nói là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～という' dùng để liên kết tên gọi, nội dung tường thuật, tin đồn hoặc sự định nghĩa với danh từ đứng sau ('danh từ có tên là...', 'nói rằng là...'). Khi kết hợp 'Danh từ 1 + という + Danh từ 2' thì mang nghĩa 'Danh từ 2 có tên gọi là Danh từ 1'. Khi đi sau thể thông thường của động từ hoặc tính từ, nó bổ nghĩa cho danh từ bằng nội dung được truyền tụng, nhận xét hoặc định nghĩa.",
+      "formation": "Danh từ 1 + という + Danh từ 2 | Thể thông thường (Động từ / Tính từ / Danh từ + だ) + という + Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi đã mua một cuốn sách có tên là 'Harry Potter' ở hiệu sách."
+        },
+        {
+          "translation": "Hôm qua, tôi đã ăn loại bánh ngọt mà mọi người khen là rất ngon."
+        },
+        {
+          "translation": "Anh ấy có tiếng là người vô cùng tốt bụng."
+        },
+        {
+          "translation": "Mùa hè năm nay, tôi muốn đến công viên giải trí có tên là 'Disneyland' ở Tokyo."
+        }
+      ]
+    },
+    "ja_ということだ_54": {
+      "title": "～ということだ (〜to iu koto da)",
+      "shortExplanation": "Dùng để truyền đạt lại thông tin nghe được (nghe nói là...) hoặc giải thích ý nghĩa, kết luận một sự việc (nghĩa là...).",
+      "longExplanation": "Mẫu ngữ pháp '～ということだ' có hai cách dùng chính: một là truyền đạt lại thông tin gián tiếp nghe được từ nguồn khác mang tính khách quan, trang trọng ('nghe nói rằng...', 'tin cho hay rằng...'); hai là dùng để tóm tắt, giải thích ý nghĩa hoặc rút ra kết luận từ một sự việc ('điều đó có nghĩa là...').",
+      "formation": "Động từ thể thông thường + ということだ | Tính từ đuôi い + ということだ | Tính từ đuôi な / Danh từ + だということだ",
+      "examples": [
+        {
+          "translation": "Nghe nói tuần sau anh ấy sẽ kết hôn."
+        },
+        {
+          "translation": "Nghe nói kỳ thi này rất khó (Điều đó có nghĩa là kỳ thi này rất khó)."
+        },
+        {
+          "translation": "Nghe nói là cô ấy đã chuyển nhà rồi."
+        },
+        {
+          "translation": "Nghe nói công việc của anh ấy tiến triển không được thuận lợi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_ついでに_40": {
+      "title": "～ついでに (〜tsuide ni)",
+      "shortExplanation": "顺便，借着做某项主要动作的机会附带做另一件事；'顺便'、'顺手'、'趁便'。",
+      "longExplanation": "句型'～ついでに'表示趁着做前项主要动作的契机或机会，顺便、附带着完成另一件相关的后项事情。前项是原计划要做的主动作，后项则是顺道做的事。",
+      "formation": "动词辞书形 / た形 + ついでに | 名词 + のついでに",
+      "examples": [
+        {
+          "translation": "去买东西顺便去邮局寄封信吧。"
+        },
+        {
+          "translation": "在图书馆借书顺便碰到了朋友。"
+        },
+        {
+          "translation": "趁着来日本的机会，我想去游览著名的观光胜地。"
+        },
+        {
+          "translation": "去电影院顺便看了新电影的海报。"
+        }
+      ]
+    },
+    "ja_っけ_41": {
+      "title": "～っけ？ (〜kke?)",
+      "shortExplanation": "句尾终助词，用于口语中回忆、确认记不清或遗忘的事情；'……来着？'、'……是不是啊？'。",
+      "longExplanation": "终助词'～っけ'常用于随意的口语会话中，置于句末。说话人在自言自语回忆自己模糊或淡忘的事情，或者向对方确认某一过去的信息时使用，相当于汉语的'……来着？'、'……是什么来着？'。",
+      "formation": "动词普通形（常用た形） + っけ | い形容词词尾 + かったっけ | な形容词词干 / 名词 + だっけ（敬语为 でしたっけ）",
+      "examples": [
+        {
+          "translation": "他是几点来着？"
+        },
+        {
+          "translation": "这部电影有意思来着吗？"
+        },
+        {
+          "translation": "她是个学生来着吧？"
+        },
+        {
+          "translation": "寿司店在什么地方来着？"
+        }
+      ]
+    },
+    "ja_っぱい_42": {
+      "title": "～っぱい (〜ppai)",
+      "shortExplanation": "表示空间或状态充满了某物或某种情绪；'满是……'、'充满了……'（常作 〜でいっぱい）。",
+      "longExplanation": "表达'～（で）いっぱい'用于表示某个空间、场所被某物占满，或者内心、状态充满某种情绪或事物。通常以'名词 + でいっぱい'的形式出现，意为'满是……'、'挤满/装满了……'。",
+      "formation": "名词 + でいっぱい（或 でいっぱいです / でいっぱいだ）",
+      "examples": [
+        {
+          "translation": "房间里堆满了行李。"
+        },
+        {
+          "translation": "她的脸上洋溢着灿烂的笑容。"
+        },
+        {
+          "translation": "他正忙于工作，分身乏术。"
+        },
+        {
+          "translation": "公园里开满了鲜花。"
+        }
+      ]
+    },
+    "ja_っぱなし_43": {
+      "title": "～っぱなし (〜ppanashi)",
+      "shortExplanation": "表示动作做完后放任不管、保持原样，或某状态一直持续；'放置不管'、'一直……着'。",
+      "longExplanation": "句型'～っぱなし'接在动词连用形（去ます）后，表示某动作完成后理应进行后续处理却未处理，任由其保持原样不变。多带有批评、抱怨、不满或粗心大意的消极语气（如门开着不关、电视开着不关等）。另外也可表示某种状态一直持续不断（如站了一整天）。",
+      "formation": "动词连用形（去ます） + っぱなし (+ にする / になる / だ)",
+      "examples": [
+        {
+          "translation": "要是把窗户一直敞开着，虫子就会飞进来的。"
+        },
+        {
+          "translation": "洗好的衣服一直晾在外面没收，结果被雨淋湿了。"
+        },
+        {
+          "translation": "他把门开着就出门去了。"
+        },
+        {
+          "translation": "电视一直开着，我就这么睡着了。"
+        }
+      ]
+    },
+    "ja_つまり_44": {
+      "title": "～つまり (〜tsumari)",
+      "shortExplanation": "承接连词，用于总结、重新表述或阐明前文内容；'也就是说'、'换言之'、'简而言之'。",
+      "longExplanation": "接续词'つまり'用于对前项所述内容进行概括、换一种更简明易懂的方式重新表达，或者从前文自然推导出结论。常译为'也就是说'、'换句话说'、'换言之'。",
+      "formation": "句子1 + 。つまり、 + 句子2",
+      "examples": [
+        {
+          "translation": "他是大学教授。也就是说，是位专家。"
+        },
+        {
+          "translation": "今天是周六。也就是说，明天是周日。"
+        },
+        {
+          "translation": "山田女士是我朋友的姐姐。也就是说，她是我们的熟人。"
+        },
+        {
+          "translation": "她来自法国。换句话说，她会说法语。"
+        }
+      ]
+    },
+    "ja_つもりでした_45": {
+      "title": "～つもりでした (〜tsumori deshita)",
+      "shortExplanation": "表示过去的打算或计划，但实际上未能实现；'本打算……'、'原本想……（却没成）'。",
+      "longExplanation": "句型'～つもりでした'用于叙述过去本有某种意图或计划，但由于某种原因或意外，最终没能实现或改变了计划。后文通常使用'が'或'けれど'引出与原意图相反的实际情况，常带有遗憾或无可奈何的语气。",
+      "formation": "动词辞书形 / 否定形（ない形） + つもりでした",
+      "examples": [
+        {
+          "translation": "昨天本来打算去见朋友的，但是感冒了。"
+        },
+        {
+          "translation": "本来打算看电影的，结果没有时间了。"
+        },
+        {
+          "translation": "他们原本打算过来的，但打电话取消了。"
+        },
+        {
+          "translation": "我本来打算读这本书的，却发现已经读过了。"
+        }
+      ]
+    },
+    "ja_てくれと_46": {
+      "title": "～てくれと (〜te kureto)",
+      "shortExplanation": "间接转述他人的请求、拜托或指示；'说让（某人）做……'、'拜托说请……'。",
+      "longExplanation": "句型'～てくれと'用于间接引述他人提出的请求、拜托或命令，后常接'言われる'（被说）、'頼まれる'（被拜托）、'お願いされる'（被请求）等动词，表示'某人对我说/拜托我说“请……做某事”'。",
+      "formation": "动词て形 + くれと (言われる / 頼まれる / 言う / 頼む 等)",
+      "examples": [
+        {
+          "translation": "有人叫我打个电话。"
+        },
+        {
+          "translation": "有人拜托我把这个行李搬过去。"
+        },
+        {
+          "translation": "对方恳请我一直等到最后。"
+        },
+        {
+          "translation": "有人对我说让我好好休息。"
+        }
+      ]
+    },
+    "ja_てごらん_47": {
+      "title": "～てごらん (〜te goran)",
+      "shortExplanation": "温和地建议或鼓励对方尝试做某事；'……试试看'、'你试着……看看'。",
+      "longExplanation": "句型'～てごらん'（是'～てごらんなさい'的略语）常用于长辈对晚辈、父母对孩子或亲近的朋友之间，用于亲切、温和地劝诱或建议对方尝试做某事。相当于'～てみて'，但语气更加亲切和蔼。",
+      "formation": "动词て形 + ごらん（或 ごらんなさい）",
+      "examples": [
+        {
+          "translation": "你玩玩看那个游戏吧。"
+        },
+        {
+          "translation": "试着跟他谈谈看吧。"
+        },
+        {
+          "translation": "试着做做新的食谱菜肴看吧。"
+        },
+        {
+          "translation": "试穿一下那件礼服裙看看吧。"
+        }
+      ]
+    },
+    "ja_ですから_48": {
+      "title": "ですから～ (desu kara)",
+      "shortExplanation": "礼貌语接续词，表示前因后果；'因此'、'所以'、'因为……所以……'。",
+      "longExplanation": "接续词'ですから'常用于礼貌或郑重的语境中，用于承接前文的原因、理由，并引出后文的结果、判断、建议或请求。相当于汉语的'因此'、'所以'。",
+      "formation": "句子1（原因） + ですから、 + 句子2（结果 / 建议 / 判断）",
+      "examples": [
+        {
+          "translation": "今天天气冷，请穿上外套。"
+        },
+        {
+          "translation": "这部电影很有趣，请务必看一下。"
+        },
+        {
+          "translation": "明天休息，请好好放松休息一下。"
+        },
+        {
+          "translation": "他为人热心，应该会帮忙的吧。"
+        }
+      ]
+    },
+    "ja_てはじめて_49": {
+      "title": "～てはじめて (〜te hajimete)",
+      "shortExplanation": "表示直到发生了前项动作之后，才第一次意识到或体会到后项；'……之后才（第一次）……'、'只有在……之后才……'。",
+      "longExplanation": "句型'～てはじめて'接在动词て形后，强调只有在亲身经历了前项的事情之后，后项的认识、觉察、感受或新状态才得以出现。常用于表达'直到经历了……才深深体会到/意识到……'。",
+      "formation": "动词て形 + はじめて",
+      "examples": [
+        {
+          "translation": "直到去了国外，我才体会到日本的好处。"
+        },
+        {
+          "translation": "直到和她分手后，我才意识到她的重要。"
+        },
+        {
+          "translation": "直到大学毕业，我才懂得学生时代的快乐。"
+        },
+        {
+          "translation": "有了孩子之后，我才真正理解了父母的心情。"
+        }
+      ]
+    },
+    "ja_てほしい_50": {
+      "title": "～てほしい (〜te hoshii)",
+      "shortExplanation": "表示希望对方或第三者做某事；'希望（某人）做……'、'想让（某人）做……'。",
+      "longExplanation": "句型'～てほしい'接在动词て形后，用于表达说话人希望对方或其他人实施某种行为的愿望。动作的执行者通常用助词'に'表示。其否定形式为'～ないでほしい'（希望不要做某事）。",
+      "formation": "动作主体 + に + 动词て形 + ほしい（否定：～ないでほしい）",
+      "examples": [
+        {
+          "translation": "我希望孩子能更加用功读书。"
+        },
+        {
+          "translation": "我希望他能给我打电话。"
+        },
+        {
+          "translation": "我希望朋友能帮帮我。"
+        },
+        {
+          "translation": "我希望她明天能来这里。"
+        }
+      ]
+    },
+    "ja_ても_51": {
+      "title": "～ても (〜temo)",
+      "shortExplanation": "表示逆接的让步条件；'即使……也……'、'就算……也……'。",
+      "longExplanation": "句型'～ても'（以浊音结尾时为'～でも'）用于连接假定或既定的让步条件，表示即使在前项成立的情况下，后项的动作、状态也不会受到改变或影响，往往得出与通常预期相反的结果。常译为'即使……也……'、'哪怕……也……'。",
+      "formation": "动词て形 + も | い形容词词干（去い） + くても | な形容词词干 / 名词 + でも",
+      "examples": [
+        {
+          "translation": "即使下雨，运动会也会照常举行。"
+        },
+        {
+          "translation": "即使再忙，我也每天抽时间学习。"
+        },
+        {
+          "translation": "哪怕价格昂贵，我也会买品质优良的商品。"
+        },
+        {
+          "translation": "就算她是有名的人，我也并不认识她。"
+        }
+      ]
+    },
+    "ja_といいなあ_52": {
+      "title": "～といいなあ (〜to ii naa)",
+      "shortExplanation": "在随意的口语或自言自语中表达希望、心愿；'要是……就好了啊'、'希望能……啊'。",
+      "longExplanation": "句型'～といいなあ'由条件助词'と'加上'いい'和感叹助词'なあ'构成，用于口语或独白中，向内心或亲近的人表达自己对某种良好情况的期盼、愿望或祝愿。常译为'要是……就好了啊'、'但愿……'。",
+      "formation": "动词普通形 + といいなあ | い形容词 + といいなあ | な形容词词干 / 名词 + だといいなあ",
+      "examples": [
+        {
+          "translation": "要是明天是个晴天就好了啊。"
+        },
+        {
+          "translation": "希望能通过这次考试啊。"
+        },
+        {
+          "translation": "但愿她身体安好。"
+        },
+        {
+          "translation": "要是他能找到新工作就好了啊。"
+        }
+      ]
+    },
+    "ja_という_53": {
+      "title": "～という (〜to iu)",
+      "shortExplanation": "用于提示名称、定义或修饰后面的名词；'叫作……的'、'所谓的……'、'传闻说……的'。",
+      "longExplanation": "句型'～という'用于引出名称、传闻、内容或定义以修饰后续的名词。当以'名词1 + という + 名词2'的形式出现时，表示'名叫名词1的名词2'；接在动词、形容词普通形后修饰名词时，表示'据说是……的'或'关于……的内容'。",
+      "formation": "名词1 + という + 名词2 | 普通形（动词 / 形容词 / 名词+だ） + という + 名词",
+      "examples": [
+        {
+          "translation": "我在书店买了一本名叫《哈利·波特》的书。"
+        },
+        {
+          "translation": "昨天我吃了据说是很美味的蛋糕。"
+        },
+        {
+          "translation": "大家都评价说他为人非常亲切。"
+        },
+        {
+          "translation": "今年夏天，我想去东京一个叫作“迪士尼乐园”的主题公园。"
+        }
+      ]
+    },
+    "ja_ということだ_54": {
+      "title": "～ということだ (〜to iu koto da)",
+      "shortExplanation": "用于转述传闻信息（据说……）或总结说明事情的含义与结论（也就是说……、这意味着……）。",
+      "longExplanation": "句型'～ということだ'主要有两种用法：一是用于客观、郑重地转述从别处听来的传闻或消息，常与'～によると'等搭配，相当于'据说……'、'听说……'；二是用于对某种事态进行解释、总结或下结论，相当于'也就是说……'、'意味着……'。",
+      "formation": "动词普通形 + ということだ | い形容词 + ということだ | な形容词词干 / 名词 + だということだ",
+      "examples": [
+        {
+          "translation": "听说他下周就要结婚了。"
+        },
+        {
+          "translation": "也就是说，这次考试非常难（据说这次考试很难）。"
+        },
+        {
+          "translation": "听说她已经搬家了。"
+        },
+        {
+          "translation": "据说他的工作进展得并不顺利。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_ついでに_40": {
+      "title": "～ついでに (〜tsuide ni)",
+      "shortExplanation": "어떤 본래 행동을 하는 기회에 곁들여 다른 일도 함을 나타내며, '~하는 김에', '~하는 편에'라는 뜻입니다.",
+      "longExplanation": "'～ついでに'는 본래 목적이나 주된 행동을 하러 가는 길이나 그 기회를 이용하여 부수적으로 다른 행동도 함께 할 때 사용하는 문법입니다. 앞선 행위가 원래 하려던 주된 일이고, 뒤따르는 행위는 그에 곁들여 편리하게 처리하는 부차적인 일을 나타냅니다.",
+      "formation": "동사 사전형 / た형 + ついでに | 명사 + のついでに",
+      "examples": [
+        {
+          "translation": "장 보러 가는 김에 우체국에서 편지를 부칩시다."
+        },
+        {
+          "translation": "도서관에서 책을 빌리는 김에 친구를 만났습니다."
+        },
+        {
+          "translation": "일본에 온 김에 유명한 관광지를 방문하고 싶습니다."
+        },
+        {
+          "translation": "영화관에 간 김에 신작 포스터를 보았습니다."
+        }
+      ]
+    },
+    "ja_っけ_41": {
+      "title": "～っけ？ (〜kke?)",
+      "shortExplanation": "구어체에서 기억이 가물가물하거나 잊어버린 사실을 회상하고 확인할 때 쓰이며, '~였더라?', '~였던가?'라는 뜻입니다.",
+      "longExplanation": "'～っけ'는 반말 구어체에서 문장 끝에 붙어, 화자가 기억이 잘 나지 않는 사실을 되살리려 혼잣말을 하거나 상대방에게 다시 확인할 때 사용하는 종조사입니다. 한국어의 '~였더라?', '~였던가?'에 해당합니다.",
+      "formation": "동사 보통형(주로 과거형 た형) + っけ | い형용사 + かったっけ | な형용사 / 명사 + だっけ (정중형: でしたっけ)",
+      "examples": [
+        {
+          "translation": "그는 몇 시에 오기로 했더라?"
+        },
+        {
+          "translation": "이 영화 재미있었던가?"
+        },
+        {
+          "translation": "그녀는 학생이었던가?"
+        },
+        {
+          "translation": "초밥집이 어디에 있었더라?"
+        }
+      ]
+    },
+    "ja_っぱい_42": {
+      "title": "～っぱい (〜ppai)",
+      "shortExplanation": "어떤 공간이나 상태가 사물, 사람 또는 감정으로 가득 차 있음을 나타내며, '~로 가득함', '~로 꽉 참'이라는 뜻입니다 (주로 〜でいっぱい 형태).",
+      "longExplanation": "'～（で）いっぱい'는 물리적 공간에 물건이나 사람이 가득 차 있거나, 마음이나 상태가 어떤 감정·일로 가득 차 있음을 나타내는 표현입니다. 통상 '명사 + でいっぱい'의 형태로 결합하여 '~로 가득하다', '~투성이다/온통 ~이다'의 의미를 가집니다.",
+      "formation": "명사 + でいっぱい (또는 でいっぱいです / でいっぱいだ)",
+      "examples": [
+        {
+          "translation": "방이 짐으로 가득 차 있습니다."
+        },
+        {
+          "translation": "그녀는 미소로 가득 차 있었습니다 (얼굴에 미소가 가득했습니다)."
+        },
+        {
+          "translation": "그는 일로 꽉 차 있습니다 (일이 너무 많아 정신이 없습니다)."
+        },
+        {
+          "translation": "공원은 꽃으로 가득합니다."
+        }
+      ]
+    },
+    "ja_っぱなし_43": {
+      "title": "～っぱなし (〜ppanashi)",
+      "shortExplanation": "어떤 행동을 한 뒤 뒤처리를 하지 않고 방치해 둔 상태나 계속 유지됨을 나타내며, '~한 채로 둠', '~해 놓은 채'라는 뜻입니다.",
+      "longExplanation": "'～っぱなし'는 동사의 ます형 어간에 접속하여, 마땅히 해야 할 후속 조치를 취하지 않고 그대로 방치하거나 내버려 둔 상태를 나타내는 문법입니다. 주로 화자의 부주의, 비난, 불만 등의 뉘앙스가 포함되며, '창문을 열어 둔 채', 'TV를 켜 놓은 채' 등 부정적인 맥락에서 자주 쓰입니다. 또한 상태가 계속 이어짐을 나타내기도 합니다.",
+      "formation": "동사 ます형 (ます 탈락) + っぱなし (+ にする / になる / だ)",
+      "examples": [
+        {
+          "translation": "창문을 열어 놓은 채로 두면 벌레가 들어옵니다."
+        },
+        {
+          "translation": "빨래를 널어 둔 채로 방치했더니 비에 젖었습니다."
+        },
+        {
+          "translation": "그는 문을 열어 둔 채 외출했습니다."
+        },
+        {
+          "translation": "텔레비전을 켜 놓은 채로 잠들어 버렸습니다."
+        }
+      ]
+    },
+    "ja_つまり_44": {
+      "title": "～つまり (〜tsumari)",
+      "shortExplanation": "앞의 내용을 요약하거나 알기 쉽게 바꾸어 표현할 때 쓰이며, '즉', '다시 말해', '말하자면'이라는 뜻입니다.",
+      "longExplanation": "접속사 'つまり'는 앞서 말한 내용을 다른 말로 바꾸어 요약하거나, 더 명확하고 알기 쉽게 부연 설명할 때, 또는 앞선 전제로부터 결론을 이끌어낼 때 사용합니다. 한국어의 '즉', '다시 말해서', '결국'에 해당합니다.",
+      "formation": "문장 1 + 。つまり、 + 문장 2",
+      "examples": [
+        {
+          "translation": "그는 대학교수입니다. 즉, 전문가입니다."
+        },
+        {
+          "translation": "오늘은 토요일이다. 즉, 내일은 일요일이다."
+        },
+        {
+          "translation": "야마다 씨는 친구의 누나입니다. 다시 말해 우리의 지인입니다."
+        },
+        {
+          "translation": "그녀는 프랑스 출신입니다. 즉, 프랑스어를 할 수 있습니다."
+        }
+      ]
+    },
+    "ja_つもりでした_45": {
+      "title": "～つもりでした (〜tsumori deshita)",
+      "shortExplanation": "과거에 가졌던 예정이나 의도였으나 실제로는 실행하지 못했음을 나타내며, '~할 작정이었습니다', '~하려고 했습니다'라는 뜻입니다.",
+      "longExplanation": "'～つもりでした'는 과거 시점에서 품고 있던 계획이나 의도를 나타내지만, 사정이나 방해로 인해 실제로는 그렇게 하지 못했거나 결과가 달라졌을 때 사용합니다. 주로 뒤에 'が'나 'けれど'를 수반하여 실제 일어난 반대 상황이나 아쉬움을 나타냅니다.",
+      "formation": "동사 사전형 / ない형 + つもりでした",
+      "examples": [
+        {
+          "translation": "어제는 친구를 만날 생각이었는데 감기에 걸리고 말았습니다."
+        },
+        {
+          "translation": "영화를 볼 작정이었는데 시간이 없어졌습니다."
+        },
+        {
+          "translation": "그들이 올 예정이었으나 전화로 취소되었습니다."
+        },
+        {
+          "translation": "이 책을 읽으려고 했는데 이미 다 읽은 상태였습니다."
+        }
+      ]
+    },
+    "ja_てくれと_46": {
+      "title": "～てくれと (〜te kureto)",
+      "shortExplanation": "다른 사람이 한 부탁이나 요구를 간접적으로 전달할 때 쓰이며, '~해 달라고', '~해 주라고'라는 뜻입니다.",
+      "longExplanation": "'～てくれと'는 다른 사람의 부탁, 요청, 지시 내용을 간접 인용하여 전달할 때 쓰는 문법입니다. 주로 뒤에 '言われる(말을 듣다)', '頼まれる(부탁받다)', '頼む(부탁하다)' 등의 동사와 함께 쓰여 '~해 달라고 부탁받다/말을 듣다'의 의미로 사용됩니다.",
+      "formation": "동사 て형 + くれと (言われる / 頼まれる / 言う / 頼む 등)",
+      "examples": [
+        {
+          "translation": "전화를 걸어 달라는 말을 들었습니다."
+        },
+        {
+          "translation": "이 짐을 옮겨 달라고 부탁받았습니다."
+        },
+        {
+          "translation": "끝까지 기다려 달라고 간청받았습니다."
+        },
+        {
+          "translation": "쉬어 달라고 (쉬라는) 말을 들었습니다."
+        }
+      ]
+    },
+    "ja_てごらん_47": {
+      "title": "～てごらん (〜te goran)",
+      "shortExplanation": "상대방에게 어떤 행동을 부드럽게 권유하거나 시도해 보라고 할 때 쓰이며, '~해 보렴', '~해 봐'라는 뜻입니다.",
+      "longExplanation": "'～てごらん'은 '～てご라んなさい'가 줄어든 표현으로, 주로 윗사람이 아랫사람이나 어린아이에게, 또는 매우 친한 사이에서 어떤 동작을 한번 시험 삼아 해 보라고 부드럽고 다정하게 권유할 때 사용합니다. '~해 보렴', '한번 ~해 봐'의 뉘앙스를 가집니다.",
+      "formation": "동사 て형 + ごらん (또는 ごらんなさい)",
+      "examples": [
+        {
+          "translation": "그 게임 한번 해 보렴."
+        },
+        {
+          "translation": "그 사람에게 이야기해 보렴."
+        },
+        {
+          "translation": "새로운 레시피로 한번 만들어 보렴."
+        },
+        {
+          "translation": "그 드레스 한번 입어 보렴."
+        }
+      ]
+    },
+    "ja_ですから_48": {
+      "title": "ですから～ (desu kara)",
+      "shortExplanation": "정중한 어조로 원인이나 이유를 나타내며, '그러므로', '따라서', '~이니까'라는 뜻입니다.",
+      "longExplanation": "접속사 'ですから'는 정중체(입니다/합니다 체) 문맥에서 앞 문장의 원인이나 이유를 받아, 뒤 문장의 결과, 제안, 부탁, 판단 등을 자연스럽게 연결할 때 사용합니다. '그러니까', '그러므로', '따라서'에 해당합니다.",
+      "formation": "문장 1 (원인) + ですから、 + 문장 2 (결과 / 제안 / 판단)",
+      "examples": [
+        {
+          "translation": "오늘은 날씨가 추우니까 코트를 입으세요."
+        },
+        {
+          "translation": "이 영화는 재미있으니 꼭 보세요."
+        },
+        {
+          "translation": "내일은 휴일이니까 푹 쉬십시오."
+        },
+        {
+          "translation": "그는 친절하니까 도와줄 것입니다."
+        }
+      ]
+    },
+    "ja_てはじめて_49": {
+      "title": "～てはじめて (〜te hajimete)",
+      "shortExplanation": "앞의 일을 직접 경험하고 나서야 비로소 뒤의 사실을 깨닫거나 알게 됨을 나타내며, '~하고 나서야 비로소', '~하고서야 처음으로'라는 뜻입니다.",
+      "longExplanation": "'～てはじめて'는 동사의 て형에 접속하여, 앞의 동작이나 경험을 겪은 뒤에야 비로소 후속하는 사실을 깨닫거나 그 가치를 실감하게 되었음을 나타내는 문형입니다. '직접 ~해 보고 나서야 비로소 ...을 알게 되었다'는 깊은 깨달음이나 실감의 뉘앙스를 담습니다.",
+      "formation": "동사 て형 + はじめて",
+      "examples": [
+        {
+          "translation": "해외에 가 보고 나서야 비로소 일본의 좋은 점을 알았습니다."
+        },
+        {
+          "translation": "그녀와 헤어지고 나서야 비로소 그녀의 소중함을 깨달았다."
+        },
+        {
+          "translation": "대학을 졸업하고 나서야 비로소 학창 시절의 즐거움을 알았다."
+        },
+        {
+          "translation": "아이가 생기고 나서야 비로소 부모의 마음을 알게 되었다."
+        }
+      ]
+    },
+    "ja_てほしい_50": {
+      "title": "～てほしい (〜te hoshii)",
+      "shortExplanation": "상대방이나 제3자가 어떤 행동을 해 주기를 바라는 화자의 소망을 나타내며, '(남이) ~해 주면 좋겠다', '~해 주길 바란다'라는 뜻입니다.",
+      "longExplanation": "'～てほしい'는 동사의 て형에 접속하여, 화자 자신이 아닌 다른 사람(상대방 또는 제3자)이 어떤 동작을 해 주기를 희망할 때 사용하는 문법입니다. 행동을 하는 주체는 조사 'に'로 나타내며, 부정형은 '～ないでほしい(~하지 말아 줬으면 좋겠다)'입니다.",
+      "formation": "행위자 + に + 동사 て형 + ほしい (부정형: ～ないでほしい)",
+      "examples": [
+        {
+          "translation": "아이가 좀 더 공부를 열심히 했으면 좋겠다."
+        },
+        {
+          "translation": "그가 나에게 전화를 해 주면 좋겠다."
+        },
+        {
+          "translation": "친구가 도와주면 좋겠다."
+        },
+        {
+          "translation": "그녀가 내일 여기에 와 주면 좋겠다."
+        }
+      ]
+    },
+    "ja_ても_51": {
+      "title": "～ても (〜temo)",
+      "shortExplanation": "가정적이거나 기정의 양보 조건을 나타내며, '~해도', '~하더라도', '~일지라도'라는 뜻입니다.",
+      "longExplanation": "'～ても'(탁음 뒤에서는 '～でも')는 양보 조건을 나타내는 접속 표현으로, 앞 문장의 조건이 성립하더라도 그에 좌우되지 않고 뒤 문장의 결과나 행동이 그대로 유지되거나 상식과 반대되는 일이 일어남을 나타냅니다. 한국어의 '~해도', '~할지라도'에 해당합니다.",
+      "formation": "동사 て형 + も | い형용사 어간(い 탈락) + くても | な형용사 / 명사 + でも",
+      "examples": [
+        {
+          "translation": "비가 와도 운동회는 개최됩니다."
+        },
+        {
+          "translation": "바쁘더라도 매일 공부할 시간을 만든다."
+        },
+        {
+          "translation": "비싸더라도 품질이 좋은 물건을 삽니다."
+        },
+        {
+          "translation": "그녀가 유명인이라 해도 나는 그녀를 알지 못한다."
+        }
+      ]
+    },
+    "ja_といいなあ_52": {
+      "title": "～といいなあ (〜to ii naa)",
+      "shortExplanation": "바람이나 소망을 편안한 구어체로 혼잣말하듯 나타내며, '~하면 좋겠다', '~했으면 좋겠네'라는 뜻입니다.",
+      "longExplanation": "'～といいなあ'는 조건의 'と'에 '좋다'라는 뜻의 'いい', 감탄 조사 'なあ'가 결합된 표현입니다. 친한 사이의 대화나 혼잣말에서 자신 또는 타인에게 좋은 일이 일어나기를 바라거나 소망하는 마음을 담아 '~하면 좋겠다', '~면 참 좋겠는데'라고 말할 때 사용합니다.",
+      "formation": "동사 보통형 + といいなあ | い형용사 + といいなあ | な형용사 / 명사 + だといいなあ",
+      "examples": [
+        {
+          "translation": "내일 날씨가 맑으면 좋겠다."
+        },
+        {
+          "translation": "이번 시험에 합격하면 참 좋겠네."
+        },
+        {
+          "translation": "그녀가 건강하게 잘 지내면 좋겠어."
+        },
+        {
+          "translation": "그 사람이 새 직장을 찾으면 좋겠네."
+        }
+      ]
+    },
+    "ja_という_53": {
+      "title": "～という (〜to iu)",
+      "shortExplanation": "명칭을 가리키거나 뒤의 명사를 수식·정의할 때 쓰이며, '~라는', '~라고 하는'이라는 뜻입니다.",
+      "longExplanation": "'～という'는 사물의 명칭, 정의, 소문, 내용 등을 인용하여 뒤에 오는 명사를 수식하는 문법입니다. '명사 1 + という + 명사 2' 형태일 때는 '명사 1이라는 명사 2'의 뜻으로 이름을 지칭하며, 동사나 형용사의 보통형 뒤에 올 때는 '소문에 ~하다고 하는 명사'나 구체적인 내용을 수식합니다.",
+      "formation": "명사 1 + という + 명사 2 | 보통형 (동사 / 형용사 / 명사+だ) + という + 명사",
+      "examples": [
+        {
+          "translation": "서점에서 '해리 포터'라는 책을 샀습니다."
+        },
+        {
+          "translation": "어제 맛있다고 소문난 케이크를 먹었습니다."
+        },
+        {
+          "translation": "그는 매우 친절하다는 평판입니다."
+        },
+        {
+          "translation": "올여름 도쿄에 있는 '디즈니랜드'라는 테마파크에 가고 싶습니다."
+        }
+      ]
+    },
+    "ja_ということだ_54": {
+      "title": "～ということだ (〜to iu koto da)",
+      "shortExplanation": "들은 소문이나 정보를 전달하거나(전언: '~라고 한다'), 사정의 의미나 결론을 설명할 때('~라는 뜻이다') 사용합니다.",
+      "longExplanation": "'～ということだ'는 크게 두 가지 용법으로 쓰입니다. 첫째는 다른 데서 들은 소식이나 정보를 객관적으로 전할 때 쓰는 전언 표현으로, '~에 의하면 ~라고 한다(전해진다)'는 의미를 가집니다. 둘째는 어떤 상황이나 사실을 정리하여 '그것은 즉 ~라는 뜻이다(말이다)'라고 해석이나 결론을 내릴 때 쓰입니다.",
+      "formation": "동사 보통형 + ということだ | い형용사 + ということだ | な형용사 / 명사 + だということだ",
+      "examples": [
+        {
+          "translation": "그는 다음 주에 결혼한다고 합니다."
+        },
+        {
+          "translation": "이 시험은 어렵다는 뜻입니다 (어렵다고 합니다)."
+        },
+        {
+          "translation": "그녀가 이사했다고 합니다."
+        },
+        {
+          "translation": "그는 일이 잘 풀리지 않고 있다는 모양입니다 (풀리지 않는다는 뜻입니다)."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_ついでに_40": {
+      "title": "～ついでに (〜tsuide ni)",
+      "shortExplanation": "ある本来の目的・行動を行う機会を利用して、合わせて別の行動も行うことを表し、「〜のついでに」「〜の機会を利用して」という意味を表します。",
+      "longExplanation": "「～ついでに」は、主たる行動や予定を行うついで・機会を利用して、それに付随して別の行動を合わせて行うときに用いる表現です。前節には本来の目的となる動作が、後節にはその機会を利用して行った動作が来ます。",
+      "formation": "動詞辞書形／た形 ＋ ついでに | 名詞 ＋ のついでに",
+      "examples": [
+        {
+          "translation": "買い物に行くついでに、郵便局で手紙を出しましょう。"
+        },
+        {
+          "translation": "図書館で本を借りたついでに、友達に会いました。"
+        },
+        {
+          "translation": "日本に来たついでに、有名な観光地を訪れたいです。"
+        },
+        {
+          "translation": "映画館に行ったついでに、新作のポスターを見ました。"
+        }
+      ]
+    },
+    "ja_っけ_41": {
+      "title": "～っけ？ (〜kke?)",
+      "shortExplanation": "過去の事実や記憶があいまいな事柄を思い出そうとしたり、相手に確認したりするときに用い、「〜だったっけ？」「〜だっけ？」という意味を表します。",
+      "longExplanation": "「～っけ」は、親しい間柄でのくだけた会話（口語）で文末に用いられる終助詞です。話し手が一度聞いたことや経験したことを思い出そうと独り言を言ったり、あいまいな記憶を相手に問いかけて確認したりするときに使われます。",
+      "formation": "動詞普通形（主にた形） ＋ っけ | い形容詞 ＋ かったっけ | な形容詞／名詞 ＋ だっけ（丁寧：でしたっけ）",
+      "examples": [
+        {
+          "translation": "彼は何時に来るっけ？"
+        },
+        {
+          "translation": "この映画、面白かったっけ？"
+        },
+        {
+          "translation": "彼女は学生だっけ？"
+        },
+        {
+          "translation": "すし屋はどこだっけ？"
+        }
+      ]
+    },
+    "ja_っぱい_42": {
+      "title": "～っぱい (〜ppai)",
+      "shortExplanation": "ある場所や空間、あるいは心が物や感情などで満ちあふれている状態を表し、「〜で満ちている」「〜でいっぱいだ」という意味を表します。",
+      "longExplanation": "「～（で）いっぱい」は、ある空間や時間、または人の心や表情などが、特定の事物や感情、予定などで満たされている状態を表す表現です。主に「名詞 ＋ でいっぱい」の形で用いられ、「〜があふれんばかりにある」ことを表します。",
+      "formation": "名詞 ＋ でいっぱい（または でいっぱいです／でいっぱいだ）",
+      "examples": [
+        {
+          "translation": "部屋が荷物でいっぱいです。"
+        },
+        {
+          "translation": "彼女は笑顔でいっぱいでした。"
+        },
+        {
+          "translation": "彼は仕事でいっぱいです。"
+        },
+        {
+          "translation": "公園は花でいっぱいです。"
+        }
+      ]
+    },
+    "ja_っぱなし_43": {
+      "title": "～っぱなし (〜ppanashi)",
+      "shortExplanation": "本来すべき後始末などをせず、ある動作をしたまま放置している状態や、その状態が継続していることを表し、「〜したまま」という意味を表します。",
+      "longExplanation": "「～っぱなし」は、動詞のます形語幹に接続し、ある行為を行った後、通常行うべき後始末や次の動作を行わずにその状態を放っておくことを表します。多くの場合、不注意や不満、非難などの好ましくないニュアンスを伴います（例：開けっぱなし、つけっぱなし）。また、同じ状態がずっと続くことを表す場合もあります。",
+      "formation": "動詞ます形（ます脱落） ＋ っぱなし（＋ にする／になる／だ）",
+      "examples": [
+        {
+          "translation": "窓を開けっぱなしにすると、虫が入ってくる。"
+        },
+        {
+          "translation": "洗濯物を干しっぱなしで、雨に濡れた。"
+        },
+        {
+          "translation": "彼はドアを開けっぱなしにして出かけた。"
+        },
+        {
+          "translation": "テレビをつけっぱなしにして寝てしまった。"
+        }
+      ]
+    },
+    "ja_つまり_44": {
+      "title": "～つまり (〜tsumari)",
+      "shortExplanation": "前に述べた内容を要約したり、言い換えたり、結論づけたりするときに用い、「つまり」「要するに」「言い換えると」という意味を表します。",
+      "longExplanation": "接続詞「つまり」は、前で述べた事柄を受けて、それをわかりやすく要約して言い直したり、そこから導かれる当然の結論を導いたりするときに使われます。「要するに」「言い換えれば」と同義で、論理的な説明や日常会話で幅広く使われます。",
+      "formation": "文1 ＋ 。つまり、 ＋ 文2",
+      "examples": [
+        {
+          "translation": "彼は大学の教授です。つまり、専門家です。"
+        },
+        {
+          "translation": "今日は土曜日だ。つまり、明日は日曜日だ。"
+        },
+        {
+          "translation": "山田さんは友達のお姉さんです。つまり、私たちの知り合いです。"
+        },
+        {
+          "translation": "彼女はフランス出身です。つまり、フランス語が話せます。"
+        }
+      ]
+    },
+    "ja_つもりでした_45": {
+      "title": "～つもりでした (〜tsumori deshita)",
+      "shortExplanation": "過去に持っていた予定や意図を表しますが、実際には実現しなかったときに用い、「〜する予定でした」「〜するつもりだった」という意味を表します。",
+      "longExplanation": "「～つもりでした」は、過去の時点ではそうする意思や計画があったものの、予期せぬ事情や障害により実際には実行できなかったり変更になったりした事柄を表します。多くの場合、後続に「〜が」「〜けれど」を伴って残念な気持ちや言い訳を表します。",
+      "formation": "動詞辞書形／ない形 ＋ つもりでした",
+      "examples": [
+        {
+          "translation": "昨日は友達に会うつもりでしたが、風邪を引いてしまいました。"
+        },
+        {
+          "translation": "映画を見るつもりでしたが、時間がなくなりました。"
+        },
+        {
+          "translation": "彼らが来るつもりでしたが、電話でキャンセルされました。"
+        },
+        {
+          "translation": "この本を読むつもりでしたが、もう読み終わっていました。"
+        }
+      ]
+    },
+    "ja_てくれと_46": {
+      "title": "～てくれと (〜te kureto)",
+      "shortExplanation": "他者から依頼された内容や頼み事を間接的に引用して伝える表現で、「〜してくれと（頼まれる／言われる）」という意味を表します。",
+      "longExplanation": "「～てくれと」は、他者から受けた依頼・要望・指示などを間接的に引用して述べる表現です。主に「〜てくれと言われる」「〜てくれと頼まれる」「〜てくれとお願いされる」などの形で用いられ、相手から「〜してほしい」と頼まれたことを他人に伝えるときに使われます。",
+      "formation": "動詞て形 ＋ くれと（言われる／頼まれる／言う／頼む など）",
+      "examples": [
+        {
+          "translation": "電話をかけてくれと言われました。"
+        },
+        {
+          "translation": "この荷物を運んでくれと頼まれました。"
+        },
+        {
+          "translation": "最後まで待ってくれとお願いされました。"
+        },
+        {
+          "translation": "休んでくれと言われました。"
+        }
+      ]
+    },
+    "ja_てごらん_47": {
+      "title": "～てごらん (〜te goran)",
+      "shortExplanation": "目下の者や子どもなどに対して、何かの行動を試してみるよう優しく促したり勧めたりする表現で、「〜してみてごらん」「〜してみなさい」という意味を表します。",
+      "longExplanation": "「～てごらん」は「〜てごらんなさい」のくだけた表現で、主に親が子どもに対して、あるいは目上の人が目下の者に対して、親愛の情を込めて「試しにやってみなさい」と促す際に使われます。「〜てみて」よりも優しく促す親身なニュアンスが含まれます。",
+      "formation": "動詞て形 ＋ ごらん（または ごらんなさい）",
+      "examples": [
+        {
+          "translation": "そのゲームをやってごらん。"
+        },
+        {
+          "translation": "彼に話してごらん。"
+        },
+        {
+          "translation": "新しいレシピを作ってごらん。"
+        },
+        {
+          "translation": "そのドレスを着てごらん。"
+        }
+      ]
+    },
+    "ja_ですから_48": {
+      "title": "ですから～ (desu kara)",
+      "shortExplanation": "丁寧な言葉遣いで原因や理由を表し、「ですから」「ですので」「〜ですから」という意味を表します。",
+      "longExplanation": "接続詞「ですから」は、丁寧体（です・ます体）の文脈において前文の理由や原因を受け、後続でそれに基づく結果や判断、勧誘、依頼などを述べる表現です。「したがって」「そういうわけですから」と丁寧に論理をつなぐ役割を果たします。",
+      "formation": "文1（原因・理由） ＋ ですから、 ＋ 文2（結果・判断・依頼など）",
+      "examples": [
+        {
+          "translation": "今日は寒いですから、コートを着てください。"
+        },
+        {
+          "translation": "この映画は面白いですから、ぜひ見てください。"
+        },
+        {
+          "translation": "明日は休みですから、ゆっくり休んでください。"
+        },
+        {
+          "translation": "彼は親切ですから、手伝ってくれるでしょう。"
+        }
+      ]
+    },
+    "ja_てはじめて_49": {
+      "title": "～てはじめて (〜te hajimete)",
+      "shortExplanation": "前項の動作や経験をして初めて、後項の事実を実感したり気づいたりすることを表し、「〜してはじめて」「〜したことによって初めて」という意味を表します。",
+      "longExplanation": "「～てはじめて」は、動詞のて形に接続し、ある出来事や経験を実際に体験して初めて、今まで気づかなかった物事の価値や重要性、気持ちなどを深く認識・実感したということを表す表現です。",
+      "formation": "動詞て形 ＋ はじめて",
+      "examples": [
+        {
+          "translation": "海外に行ってはじめて、日本の良さが分かりました。"
+        },
+        {
+          "translation": "彼女と別れてはじめて、彼女の大切さに気づいた。"
+        },
+        {
+          "translation": "大学を卒業してはじめて、学生時代の楽しさが分かった。"
+        },
+        {
+          "translation": "子供ができてはじめて、親の気持ちが分かった。"
+        }
+      ]
+    },
+    "ja_てほしい_50": {
+      "title": "～てほしい (〜te hoshii)",
+      "shortExplanation": "話し手が他者（相手や第三者）に対して、ある動作をしてくれることを望む気持ちを表し、「〜してほしい」という意味を表します。",
+      "longExplanation": "「～てほしい」は動詞のて形に接続し、話し手自身ではなく相手や他人にその行為をしてほしいという希望・願望を表す文法です。動作の主体は助詞「に」で示されます。否定の形は「〜ないでほしい」（〜しないでほしい）となります。",
+      "formation": "動作主 ＋ に ＋ 動詞て形 ＋ ほしい（否定：～ないでほしい）",
+      "examples": [
+        {
+          "translation": "子供にもっと勉強してほしい。"
+        },
+        {
+          "translation": "彼に私に電話してほしい。"
+        },
+        {
+          "translation": "友達に手伝ってほしい。"
+        },
+        {
+          "translation": "彼女に明日ここに来てほしい。"
+        }
+      ]
+    },
+    "ja_ても_51": {
+      "title": "～ても (〜temo)",
+      "shortExplanation": "仮定または確定の逆接条件を表し、「〜しても」「〜であっても」という意味を表します。",
+      "longExplanation": "「～ても」（濁音の場合は「～でも」）は逆接の譲歩条件を表す文法です。前項で挙げた条件が成立したとしても、後項の事態や判断には影響せず、通常予想される結果とは異なる事態が生じることを表します。",
+      "formation": "動詞て形 ＋ も | い形容詞（い脱落） ＋ くても | な形容詞語幹／名詞 ＋ でも",
+      "examples": [
+        {
+          "translation": "雨が降っても、運動会は開催されます。"
+        },
+        {
+          "translation": "忙しくても、毎日勉強する時間を作る。"
+        },
+        {
+          "translation": "高くても、良い品質のものを買います。"
+        },
+        {
+          "translation": "彼女が有名人でも、私は彼女のことを知らない。"
+        }
+      ]
+    },
+    "ja_といいなあ_52": {
+      "title": "～といいなあ (〜to ii naa)",
+      "shortExplanation": "自分や他者にとって望ましい事態が起きることを願う気持ちを表し、「〜だといいな」「〜であってほしい」という意味を表します。",
+      "longExplanation": "「～といいなあ」は、条件を表す「と」に「いい」と終助詞「なあ」が接続したくだけた口語表現です。独り言や親しい相手に対して、事態が希望どおりに進むことを祈ったり願ったりする気持ちを情感を込めて表します。",
+      "formation": "動詞普通形 ＋ といいなあ | い形容詞 ＋ といいなあ | な形容詞／名詞 ＋ だといいなあ",
+      "examples": [
+        {
+          "translation": "明日晴れるといいなあ。"
+        },
+        {
+          "translation": "この試験に合格するといいなあ。"
+        },
+        {
+          "translation": "彼女が元気だといいなあ。"
+        },
+        {
+          "translation": "彼が新しい仕事が見つかるといいなあ。"
+        }
+      ]
+    },
+    "ja_という_53": {
+      "title": "～という (〜to iu)",
+      "shortExplanation": "名前や名称を示したり、後続の名詞の内容を説明・定義したりするときに用い、「〜という（名前の）」「〜という（内容の）」という意味を表します。",
+      "longExplanation": "「～という」は、物事の名称や具体的な内容、伝聞などを引用して後続の名詞を修飾する表現です。「名詞1 ＋ という ＋ 名詞2」の形で「名詞1という名前の名詞2」と名付けられたものを紹介する際や、普通形に接続して「〜という評判」「〜という噂」のように内容を詳しく説明する際に使われます。",
+      "formation": "名詞1 ＋ という ＋ 名詞2 | 普通形（動詞／形容詞／名詞＋だ） ＋ という ＋ 名詞",
+      "examples": [
+        {
+          "translation": "本屋で「ハリー・ポッター」という本を買いました。"
+        },
+        {
+          "translation": "昨日、美味しいというケーキを食べました。"
+        },
+        {
+          "translation": "彼はとても親切だという評判です。"
+        },
+        {
+          "translation": "今年の夏、東京にある「ディズニーランド」というテーマパークに行きたいです。"
+        }
+      ]
+    },
+    "ja_ということだ_54": {
+      "title": "～ということだ (〜to iu koto da)",
+      "shortExplanation": "他から聞いた情報や噂を伝える「伝聞」（〜とのことだ・〜そうだ）や、事態の意味を説明・結論づける「解釈・意味」（〜という意味だ）を表します。",
+      "longExplanation": "「～ということだ」には主に2つの用法があります。1つはニュースや他者から聞いた情報を改まった形で客観的に伝える「伝聞」の用法（「〜によると…ということだ」）で、「〜だそうだ」「〜と聞いている」に相当します。もう1つは、ある状況を受けて「つまり〜という意味だ」と要約・結論づける用法です。",
+      "formation": "動詞普通形 ＋ ということだ | い形容詞 ＋ ということだ | な形容詞語幹／名詞 ＋ だということだ",
+      "examples": [
+        {
+          "translation": "彼は来週結婚するということだ。"
+        },
+        {
+          "translation": "この試験は難しいということだ。"
+        },
+        {
+          "translation": "彼女が引っ越したということだ。"
+        },
+        {
+          "translation": "彼は仕事がうまくいかないだということだ。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Noun_77",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun のいかんによっては (Noun no ikan ni yotte wa)",
+    "shortExplanation": "Depending on the matter; depending on noun",
+    "longExplanation": "The phrase のいかんによっては (no ikan ni yotte wa) is used to express the concept of 'depending on the matter or situation'. It is used to indicate that the outcome may change based on the condition or quality of the noun (matter) in question.",
+    "formation": "Noun + のいかんによっては",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "天気のいかんによっては、ピクニックを延期しましょう。",
+        "romanization": "Tenki no ikan ni yotte wa, pikunikku o enki shimashou.",
+        "translation": "Depending on the weather, we should postpone the picnic."
+      },
+      {
+        "sentence": "試験の結果のいかんによっては、進学できます。",
+        "romanization": "Shiken no kekka no ikan ni yotte wa, shingaku dekimasu.",
+        "translation": "You can go on to further education, depending on the result of the exam."
+      },
+      {
+        "sentence": "状況のいかんによっては、早期退職を考えます。",
+        "romanization": "Joukyou no ikan ni yotte wa, souki taishoku o kangaemasu.",
+        "translation": "Depending on the situation, I will consider early retirement."
+      },
+      {
+        "sentence": "彼の反応のいかんによっては、私たちの次の行動を決めます。",
+        "romanization": "Kare no hannou no ikan ni yotte wa, watashitachi no tsugi no koudou o kimemasu.",
+        "translation": "Depending on his reaction, we will decide our next move."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_78",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun のいかんによらず (~ no ikan ni yorazu)",
+    "shortExplanation": "Means 'regardless of', 'irrespective of', or 'no matter'",
+    "longExplanation": "The Noun のいかんによらず grammar point is used to express that something is happening, will occur, or is true, regardless of a particular situation or condition. It is often translated as 'irrespective of', 'regardless of', or 'no matter' in English.",
+    "formation": "Noun + のいかんによらず",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "試験の結果のいかんによらず、自分を信じ続けてください。",
+        "romanization": "Shiken no kekka no ikan ni yorazu, jibun o shinji tsudzukete kudasai.",
+        "translation": "Regardless of the test results, keep believing in yourself."
+      },
+      {
+        "sentence": "天気のいかんによらず、毎日、ジョギングをします。",
+        "romanization": "Tenki no ikan ni yorazu, mainichi, jogingu o shimasu.",
+        "translation": "Regardless of the weather, I jog every day."
+      },
+      {
+        "sentence": "彼の年齢のいかんによらず、彼は非常に経験豊富です。",
+        "romanization": "Kare no nenrei no ikan ni yorazu, kare wa hijou ni keikenhoufu desu.",
+        "translation": "Regardless of his age, he is very experienced."
+      },
+      {
+        "sentence": "国籍のいかんによらず、誰でもイベントに参加できます。",
+        "romanization": "Kokuseki no ikan ni yorazu, daredemo ibento ni sanka dekimasu.",
+        "translation": "Regardless of nationality, anyone can participate in the event."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_79",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun のごとき Noun (A no gotoki B)",
+    "shortExplanation": "Expresses 'like' or 'as if'; something/someone resembles something else strongly.",
+    "longExplanation": "The のごとき pattern is used to convey the concept of 'just like' or 'as if'. The comparison here is strong, indicating that the thing/person is very similar to or almost the same as the thing/person compared to. It is a bit archaic and thus is more often found in writings than in everyday conversation.",
+    "formation": "Noun1 + のごとき + Noun2",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は神のごとき存在だ。",
+        "romanization": "Kare wa kami no gotoki sonzai da.",
+        "translation": "He is an existence like a god."
+      },
+      {
+        "sentence": "彼女の美しさは花のごときものだ。",
+        "romanization": "Kanojo no utsukushisa wa hana no gotoki mono da.",
+        "translation": "Her beauty is like a flower."
+      },
+      {
+        "sentence": "彼は悪魔のごとき行動をした。",
+        "romanization": "Kare wa akuma no gotoki koudou o shita.",
+        "translation": "He acted like a devil."
+      },
+      {
+        "sentence": "この地方は春のごとき気候だ。",
+        "romanization": "Kono chiho wa haru no gotoki kiko da.",
+        "translation": "This region has a climate like spring."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_80",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun のことだから (〜no koto dakara)",
+    "shortExplanation": "Because it is about ~, considering it's ~",
+    "longExplanation": "The のことだから grammar point is used to express an expectation or decision that is made specifically because of the person or thing mentioned. Usually it implies that the speaker is familiar with the character or typical behavior of the person or thing being talked about.",
+    "formation": "Noun + のことだから",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼のことだから、きっと大丈夫だと思う。",
+        "romanization": "Kare no koto dakara, kitto daijoubu da to omou.",
+        "translation": "Because it's him, I think it will certainly be fine."
+      },
+      {
+        "sentence": "この店のことだから、料理は美味しいはずです。",
+        "romanization": "Kono mise no koto dakara, ryouri wa oishii hazu desu.",
+        "translation": "Considering it's this restaurant, the food should be delicious."
+      },
+      {
+        "sentence": "彼女のことだから、もうすぐ到着するでしょう。",
+        "romanization": "Kanojo no koto dakara, mou sugu touchaku suru deshou.",
+        "translation": "Since it's her, she will probably arrive soon."
+      },
+      {
+        "sentence": "この会社のことだから、もうすぐ新製品が発表されるでしょう。",
+        "romanization": "Kono kaisha no koto dakara, mou sugu shinseihin ga happyou sareru deshou.",
+        "translation": "Given this company, a new product will probably be announced soon."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_81",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun の 嫌いがある (Noun no kirai ga aru)",
+    "shortExplanation": "Have a dislike for a particular Noun",
+    "longExplanation": "The grammar point 'Nounの嫌いがある' is used to express a dislike for a particular thing, action or situation, indicated by the noun. This structure is somewhat formal or old-fashioned. In casual speech, people more commonly say 'Noun が嫌い'.",
+    "formation": "Noun + の嫌いがある",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は魚の嫌いがあるので、寿司を食べません。",
+        "romanization": "Kare wa sakana no kirai ga aru node, sushi o tabemasen.",
+        "translation": "He has a dislike for fish, so he doesn't eat sushi."
+      },
+      {
+        "sentence": "彼女は高いところの嫌いがあるから、山登りはしない。",
+        "romanization": "Kanojo wa takai tokoro no kirai ga aru kara, yamanobori wa shinai.",
+        "translation": "She has a dislike for high places, so she doesn't go mountain climbing."
+      },
+      {
+        "sentence": "私の父は人ごみの嫌いがあるので、混雑した場所には行かない。",
+        "romanization": "Watashi no chichi wa hitogomi no kirai ga aru node, konzatsu shita basho ni wa ikanai.",
+        "translation": "My father has a dislike for crowds, so he doesn't go to crowded places."
+      },
+      {
+        "sentence": "子供の頃、私は野菜の嫌いがあったが、今は好きだ。",
+        "romanization": "Kodomo no koro, watashi wa yasai no kirai ga atta ga, ima wa suki da.",
+        "translation": "When I was a child, I had a dislike for vegetables, but now I like them."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_82",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun の手前 (~no temae)",
+    "shortExplanation": "Expresses the idea of 'Before doing something; on the verge of'.",
+    "longExplanation": "This grammar point is used to express the idea of being on the verge of doing something, or just before some major action/event. Nouns that are frequently used with this structure often denote an action or event (試験の手前, 選挙の手前, etc.).",
+    "formation": "Noun + の手前",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "試験の手前、遊びに行くのはやめた方がいい。",
+        "romanization": "Shiken no temae, asobi ni iku no wa yameta hou ga ii.",
+        "translation": "Just before the exam, it's better to stop going out to play."
+      },
+      {
+        "sentence": "彼女と別れる手前、思い直しました。",
+        "romanization": "Kanojo to wakareru temae, omoinaoshimashita.",
+        "translation": "Just before breaking up with her, I changed my mind."
+      },
+      {
+        "sentence": "締め切りの手前で、やっとレポートが完成しました。",
+        "romanization": "Shimekiri no temae de, yatto repooto ga kansei shimashita.",
+        "translation": "I finally finished the report just before the deadline."
+      },
+      {
+        "sentence": "選挙の手前、政治の話が多くなります。",
+        "romanization": "Senkyo no temae, seiji no hanashi ga ooku narimasu.",
+        "translation": "Just before the election, there will be a lot of political talk."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_83",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun の極み (〜no kiwami)",
+    "shortExplanation": "Used to express the extreme or utmost point of something.",
+    "longExplanation": "The の極み grammar point is used to express the highest level or the extreme of something. It often describes an extreme state or condition. The noun before の極み usually indicates some situation, state, or quality (e.g., 美の極み, 感動の極み).",
+    "formation": "Noun + の極み",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の料理の極みは、誰もマネできない。",
+        "romanization": "Kare no ryouri no kiwami wa, daremo mane dekinai.",
+        "translation": "The pinnacle of his cooking is something nobody can imitate."
+      },
+      {
+        "sentence": "彼女の努力の極みが、この成功を作り出した。",
+        "romanization": "Kanojo no doryoku no kiwami ga, kono seikou wo tsukuridashita.",
+        "translation": "The extreme of her effort has created this success."
+      },
+      {
+        "sentence": "彼は音楽の極みを追求し続けている。",
+        "romanization": "Kare wa ongaku no kiwami o tsuikyuu shitsuzukete iru.",
+        "translation": "He continues to pursue the pinnacle of music."
+      },
+      {
+        "sentence": "この風景は美の極みだ。",
+        "romanization": "Kono fuukei wa bi no kiwami da.",
+        "translation": "This scenery is the epitome of beauty."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_84",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun の 至り (~no itari)",
+    "shortExplanation": "Expresses 'the height of', 'the extreme of' something.",
+    "longExplanation": "The 'Nounの至り' grammar point is used to emphasize an extreme or the highest level of something, often an emotional state or an honor. Common nouns include 光栄, 若気, 感激, 恥, etc.",
+    "formation": "Noun + の至り",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の冗談には驚きの至りだ。",
+        "romanization": "Kare no joudan ni wa odoroki no itari da.",
+        "translation": "His jokes are the height of surprise."
+      },
+      {
+        "sentence": "父がプロジェクトのリーダーになったのは、光栄の至りです。",
+        "romanization": "Chichi ga purojekuto no riidaa ni natta no wa, kouei no itari desu.",
+        "translation": "It is the height of honor that my father became the project leader."
+      },
+      {
+        "sentence": "彼女の素晴らしい演技には感動の至りだった。",
+        "romanization": "Kanojo no subarashii engi ni wa kandou no itari datta.",
+        "translation": "Her wonderful performance was the height of emotion."
+      },
+      {
+        "sentence": "その失敗は恥ずかしさの至りだった。",
+        "romanization": "Sono shippai wa hazukashisa no itari datta.",
+        "translation": "That failure was the height of embarrassment."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_85",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun はいざ知らず (~ wa iza shirazu)",
+    "shortExplanation": "‘I can understand it for ~, but for …? (surprising)’",
+    "longExplanation": "The はいざ知らず grammar point is used when contrasting two scenarios: the first being understandable, and the second being unexpected or surprising by comparison. It often translates as “Well, for A, I can understand, but for B…?!”",
+    "formation": "Noun + はいざ知らず, Noun + とは/なんて/しかし etc.",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼が遅れるのはいざ知らず、彼女まで遅刻するとは意外だ。",
+        "romanization": "Kare ga okureru no wa iza shirazu, kanojo made chikoku suru to wa igai da.",
+        "translation": "Well, I can understand him being late, but even her...? That's surprising."
+      },
+      {
+        "sentence": "夏はいざ知らず、冬にアイスクリームを食べるのは寒すぎませんか？",
+        "romanization": "Natsu wa iza shirazu, fuyu ni aisukuriimu o taberu no wa samusugimasen ka?",
+        "translation": "I can see eating ice cream in summer, but in winter…isn't it too cold?"
+      },
+      {
+        "sentence": "子供がテレビゲームに夢中になるのはいざ知らず、大人までそんなに夢中になるとは思わなかった。",
+        "romanization": "Kodomo ga terebi geemu ni muchuu ni naru no wa iza shirazu, otona made sonnani muchuu ni naru to wa omowanakatta.",
+        "translation": "I can see why kids get hooked on video games, but I didn't think even adults would get that absorbed."
+      },
+      {
+        "sentence": "苦しい時はいざ知らず、平時でもそんなに努力するなんてすばらしい。",
+        "romanization": "Kurushii toki wa iza shirazu, heiji demo sonnani doryoku suru nante subarashii.",
+        "translation": "Well, I can understand working hard in tough times, but to do so even in normal times is impressive."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_86",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun はおろか～すら (Noun wa oroka ～sura)",
+    "shortExplanation": "Expresses 'not to mention ~, even ~'.",
+    "longExplanation": "The grammar point Noun はおろか～すら is used to emphasize that a particular statement applies not only to the first noun mentioned, but even more so to what comes after すら or さえ. It can be translated as ‘let alone ~, even ~’.",
+    "formation": "Noun1 はおろか, Noun2 すら/さえ ～",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は走るはおろか、速く歩くことすらできない。",
+        "romanization": "Kare wa hashiru wa oroka, hayaku aruku koto sura dekinai.",
+        "translation": "He can't even walk fast, let alone run."
+      },
+      {
+        "sentence": "日本語はおろか、英語さえ話しません。",
+        "romanization": "Nihongo wa oroka, eigo sae hanashimasen.",
+        "translation": "He doesn't even speak English, let alone Japanese."
+      },
+      {
+        "sentence": "彼は食事はおろか、一日中何も飲まなかった。",
+        "romanization": "Kare wa shokuji wa oroka, ichinichijuu nani mo nomanakatta.",
+        "translation": "He didn't even drink anything all day, let alone eat a meal."
+      },
+      {
+        "sentence": "このレストランは味はおろか、サービスさえ悪い。",
+        "romanization": "Kono resutoran wa aji wa oroka, saabisu sae warui.",
+        "translation": "Never mind the taste; even the service is bad."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_87",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun はおろか～まで (~wa oroka ~made)",
+    "shortExplanation": "Means 'not just A, but even B'; 'let alone A, even B'.",
+    "longExplanation": "The phrase 'Noun はおろか' emphasizes something beyond the obvious. It can be translated as 'not only ..., but even ...'. The '～まで' part extends that idea further to show an unexpected or more advanced case.",
+    "formation": "Noun1 + はおろか + Noun2 + まで",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は英語はおろか、日本語までペラペラなんです。",
+        "romanization": "Kare wa eigo wa oroka, nihongo made perapera nan desu.",
+        "translation": "He is not just fluent in English, but even in Japanese."
+      },
+      {
+        "sentence": "彼女は数学はおろか、物理まで得意なんです。",
+        "romanization": "Kanojo wa suugaku wa oroka, butsuri made tokui nan desu.",
+        "translation": "She is not just good at math, but even at physics."
+      },
+      {
+        "sentence": "この料理は見た目はおろか、味まで最高だ。",
+        "romanization": "Kono ryouri wa mitame wa oroka, aji made saikou da.",
+        "translation": "This dish is not only visually appealing, but it even tastes fantastic."
+      },
+      {
+        "sentence": "彼は歌はおろか、ダンスまで上手だ。",
+        "romanization": "Kare wa uta wa oroka, dansu made umai da.",
+        "translation": "He is not just good at singing, but even at dancing."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_88",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun はおろか～も (Noun wa oroka ～ mo)",
+    "shortExplanation": "'Not only...but also', 'not to mention', 'to say nothing of'",
+    "longExplanation": "The 'Noun はおろか～も' grammar point is used to list items with an emphasis on how far the situation extends. It often appears in negative contexts to show that something supposedly more advanced (first part) is out of the question, and even something simpler (second part) is also not possible. It can be translated as 'Needless to say X, (he/she) can't even do Y.'",
+    "formation": "Noun + はおろか + Noun + も",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "絵を描くことはおろか、字さえ書けない。",
+        "romanization": "E wo kaku koto wa oroka, ji sae kakenai.",
+        "translation": "Needless to say drawing pictures, he can’t even write letters."
+      },
+      {
+        "sentence": "彼は英語はおろか、日本語もわからない。",
+        "romanization": "Kare wa eigo wa oroka, nihongo mo wakaranai.",
+        "translation": "Needless to say English, he doesn’t even understand Japanese."
+      },
+      {
+        "sentence": "彼女は数学はおろか、算数も得意ではない。",
+        "romanization": "Kanojo wa suugaku wa oroka, sansuu mo tokui dewa nai.",
+        "translation": "Needless to say mathematics, she isn’t even good at arithmetic."
+      },
+      {
+        "sentence": "彼は走ることはおろか、歩くことも難しい。",
+        "romanization": "Kare wa hashiru koto wa oroka, aruku koto mo muzukashii.",
+        "translation": "Needless to say running, he finds even walking difficult."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_89",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun はさておき (~ wa sateoki)",
+    "shortExplanation": "Means 'putting aside', 'aside from', 'notwithstanding'.",
+    "longExplanation": "The grammar point 'Noun はさておき' is used when highlighting something as an exception from an overall generalization, or when putting aside a particular matter before progressing to another point of discussion. The literal translation would be 'putting Noun aside', 'aside from Noun' or 'notwithstanding Noun.'",
+    "formation": "Noun + はさておき",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "試験の結果はさておき、この学期はとても学ぶことが多かった。",
+        "romanization": "Shiken no kekka wa sateoki, kono gakki wa totemo manabu koto ga ookatta.",
+        "translation": "Aside from the exam results, I learned a lot this semester."
+      },
+      {
+        "sentence": "天候はさておき、明日のピクニックは楽しみにしています。",
+        "romanization": "Tenkou wa sateoki, ashita no pikunikku wa tanoshimi ni shiteimasu.",
+        "translation": "Putting aside the weather, I am looking forward to tomorrow's picnic."
+      },
+      {
+        "sentence": "彼の性格はさておき、彼のスキルは認めざるを得ない。",
+        "romanization": "Kare no seikaku wa sateoki, kare no sukiru wa mitomezaru wo enai.",
+        "translation": "Notwithstanding his personality, his skills are undeniable."
+      },
+      {
+        "sentence": "彼があまりにも遅いことはさておき、彼が来ると思われること自体が問題だ。",
+        "romanization": "Kare ga amari ni mo osoi koto wa sateoki, kare ga kuru to omowareru koto jitai ga mondai da.",
+        "translation": "Aside from him being late, the issue is that he is expected to come at all."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_90",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + はどうであれ (~ wa dou de are)",
+    "shortExplanation": "This phrase means 'regardless of' or 'no matter how…'.",
+    "longExplanation": "It is used to convey indifference about the state or condition of a certain thing or matter. You can think of it as 'no matter what' or 'regardless of' in English. The phrase shows the speaker’s strong intention to do something or an assertion that doesn’t change regardless of the noun’s state or condition.",
+    "formation": "Noun + はどうであれ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "天候はどうであれ、試合は行われます。",
+        "romanization": "Tenkou wa dou de are, shiai wa okonawaremasu.",
+        "translation": "No matter what the weather is, the match will be held."
+      },
+      {
+        "sentence": "結果はどうであれ、最善を尽くすだけです。",
+        "romanization": "Kekka wa dou de are, saizen wo tsukusu dake desu.",
+        "translation": "No matter what the result is, all we can do is try our best."
+      },
+      {
+        "sentence": "あなたの意見はどうであれ、私は彼を信じます。",
+        "romanization": "Anata no iken wa dou de are, watashi wa kare wo shinjimasu.",
+        "translation": "No matter what your opinion is, I believe him."
+      },
+      {
+        "sentence": "試験の結果はどうであれ、あなたには何も変わりません。",
+        "romanization": "Shiken no kekka wa dou de are, anata ni wa nani mo kawarimasen.",
+        "translation": "No matter what the result of the test is, nothing will change for you."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_91",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun まみれ (~mamire)",
+    "shortExplanation": "Expresses a state in which something is entirely covered or filled with something else.",
+    "longExplanation": "The まみれ grammar point is used to express a state where someone or something is completely covered, smeared, or filled with another thing. The noun before まみれ indicates what the person or thing is covered in. This grammar point often has a negative connotation.",
+    "formation": "Noun + まみれ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は泥まみれになって帰ってきた。",
+        "romanization": "Kare wa doro mamire ni natte kaette kita.",
+        "translation": "He returned home covered in mud."
+      },
+      {
+        "sentence": "彼女は涙まみれになりながら告白した。",
+        "romanization": "Kanojo wa namida mamire ni narinagara kokuhaku shita.",
+        "translation": "She confessed while crying her eyes out."
+      },
+      {
+        "sentence": "その事件後、彼はスキャンダルまみれになった。",
+        "romanization": "Sono jiken go, kare wa sukandaru mamire ni natta.",
+        "translation": "After that incident, he was completely embroiled in scandal."
+      },
+      {
+        "sentence": "この部屋は埃まみれだ。",
+        "romanization": "Kono heya wa hokori mamire da.",
+        "translation": "This room is covered in dust."
+      }
+    ]
+  }
+]

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Verb_29": {
+      "title": "～ていく (～te iku)",
+      "shortExplanation": "Diễn tả hành động tiếp tục tiếp diễn hướng tới tương lai hoặc sự biến đổi đang dần diễn ra theo thời gian; '...tiếp', 'dần dần...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ていく kết hợp động từ thể て với trợ động từ いく để biểu thị: (1) Một hành động hoặc trạng thái bắt đầu từ hiện tại và tiếp tục kéo dài, phát triển hướng tới tương lai; (2) Quá trình biến đổi đang diễn ra dần dần theo dòng thời gian (xa dần mốc hiện tại); (3) Sự di chuyển rời xa người nói hoặc vị trí quan sát (làm gì đó rồi đi). Trái ngược với ～てくる (hướng về phía hiện tại/người nói).",
+      "formation": "Động từ thể て + いく",
+      "examples": [
+        {
+          "translation": "Nếu cứ tiếp tục luyện tập như thế này thì chắc chắn sẽ tiến bộ thôi."
+        },
+        {
+          "translation": "Trong quá trình dần trưởng thành, tính tự lập của cậu ấy đã trở nên mạnh mẽ hơn."
+        },
+        {
+          "translation": "Công ty này chắc chắn sẽ tiếp tục đổi mới công nghệ trong tương lai."
+        },
+        {
+          "translation": "Trẻ em sẽ ngày càng tiếp thu và học hỏi được nhiều điều."
+        }
+      ]
+    },
+    "ja_Verb_30": {
+      "title": "～ていただきたい (～te itadakitai)",
+      "shortExplanation": "Bày tỏ nguyện vọng hoặc đề nghị đối phương làm giúp việc gì một cách lịch sự, khiêm nhường; 'rất mong/muốn được... giúp'.",
+      "longExplanation": "Mẫu ngữ pháp ～ていただきたい kết hợp động từ thể て với いただきたい (thể mong muốn của khiêm nhường ngữ いただく - nhận được ơn huệ từ ai đó). Cấu trúc này dùng để diễn đạt mong muốn hoặc lời thỉnh cầu người khác làm gì đó cho mình với thái độ hết sức khiêm nhường và lịch sự. Cấu trúc này trang trọng, khiêm tốn hơn nhiều so với ～てほしい và thường được dùng trong công việc, giao tiếp với cấp trên hoặc đối tác. Trong hội thoại, người ta thường dùng ở dạng ～ていただきたいのですが để giảm bớt tính áp đặt.",
+      "formation": "Động từ thể て + いただきたい (hoặc いただきたいです / いただきたいのですが)",
+      "examples": [
+        {
+          "translation": "Tôi rất mong được nhờ anh/chị photo giúp tập tài liệu này."
+        },
+        {
+          "translation": "Tôi rất mong được anh/chị giúp đỡ công việc này một tay ạ."
+        },
+        {
+          "translation": "Nếu tiện thì tôi rất mong nhận được sự chỉ bảo, hướng dẫn của thầy/anh ạ."
+        },
+        {
+          "translation": "Tôi rất mong được nhờ anh chở giúp ra nhà ga có được không ạ."
+        }
+      ]
+    },
+    "ja_Verb_31": {
+      "title": "～ていただく (～te itadaku)",
+      "shortExplanation": "Biểu thị việc nhận được hành động giúp đỡ, ân huệ từ người có địa vị cao hơn hoặc người ngoài với lòng biết ơn; 'được (ai đó) làm giúp'.",
+      "longExplanation": "Mẫu ngữ pháp ～ていただく là dạng khiêm nhường ngữ của ～てもらう, dùng để diễn tả việc người nói (hoặc người thuộc phe người nói) nhận được một hành động, sự giúp đỡ từ người khác với lòng kính trọng và biết ơn sâu sắc. Đối tượng thực hiện hành động thường là người có địa vị cao hơn, người lớn tuổi hoặc đối tác, khách hàng và được đánh dấu bằng trợ từ に. Dạng lịch sự thường dùng là ～ていただきます hoặc ～ていただきました.",
+      "formation": "Động từ thể て + いただく (lịch sự: ～ていただきます / ～ていただきました)",
+      "examples": [
+        {
+          "translation": "Cảm ơn anh/chị đã gửi email cho tôi."
+        },
+        {
+          "translation": "Nhờ được anh/chị mang giúp hành lý mà tôi đã đỡ vất vả rất nhiều."
+        },
+        {
+          "translation": "Tôi rất mong được anh/chị kiểm tra giúp tập tài liệu này."
+        },
+        {
+          "translation": "Tôi đã được thầy giáo cho lời khuyên quý báu."
+        }
+      ]
+    },
+    "ja_Verb_32": {
+      "title": "～ていただけませんか (～te itadakemasen ka)",
+      "shortExplanation": "Dùng để nhờ vả, yêu cầu ai đó làm giúp việc gì một cách trang trọng, lịch sự; 'anh/chị có thể làm ơn... giúp tôi được không?'.",
+      "longExplanation": "Mẫu câu ～ていただけませんか dùng thể khả năng phủ định lịch sự của khiêm nhường ngữ いただく (nhận lấy), kết hợp với trợ từ nghi vấn か để tạo thành một lời nhờ vả, thỉnh cầu vô cùng nhã nhặn và lịch sự (nghĩa đen: 'Tôi liệu có thể nhận được sự làm giúp... từ bạn không?'). Mẫu này trang trọng và lịch sự hơn nhiều so với ～てください hay ～てくれませんか, thích hợp dùng với người lớn tuổi, cấp trên, khách hàng hoặc người mới gặp lần đầu.",
+      "formation": "Động từ thể て + いただけませんか",
+      "examples": [
+        {
+          "translation": "Anh/chị làm ơn bỏ thư này vào hòm thư giúp tôi được không ạ?"
+        },
+        {
+          "translation": "Anh/chị có thể vui lòng cầm giúp tôi hành lý này một chút được không?"
+        },
+        {
+          "translation": "Anh/chị có thể làm ơn nhắc người ở phòng bên cạnh giữ trật tự giúp tôi được không ạ?"
+        },
+        {
+          "translation": "Anh/chị làm ơn đọc kỹ bản hướng dẫn giúp tôi được không ạ?"
+        }
+      ]
+    },
+    "ja_Verb_33": {
+      "title": "～ている (～te iru)",
+      "shortExplanation": "Diễn tả hành động đang diễn ra trong hiện tại (tiếp diễn) hoặc trạng thái là kết quả của một hành động đã xảy ra trong quá khứ; 'đang...', 'đã...'.",
+      "longExplanation": "Mẫu câu ～ている kết hợp động từ thể て với trợ động từ いる, mang hai ý nghĩa chính tùy thuộc vào bản chất của động từ: (1) Với động từ chỉ hành vi có quá trình (như 読む, 勉強する), nó diễn tả hành động đang diễn ra tại thời điểm nói (thì hiện tại tiếp diễn); (2) Với động từ chỉ sự biến đổi trạng thái (như 入る, 壊れる, 結婚する, なる), nó biểu thị kết quả của hành động đó vẫn còn tồn đọng và tiếp tục duy trì đến hiện tại (trạng thái kết quả). Dạng lịch sự là ～ています.",
+      "formation": "Động từ thể て + いる (lịch sự: ～ています)",
+      "examples": [
+        {
+          "translation": "Bây giờ tôi đang đọc sách."
+        },
+        {
+          "translation": "Anh ấy đang học tiếng Anh."
+        },
+        {
+          "translation": "Bánh kem đang để trong tủ lạnh."
+        },
+        {
+          "translation": "Căn phòng đã trở nên sạch sẽ rồi."
+        }
+      ]
+    },
+    "ja_Verb_34": {
+      "title": "～ているところ (～te iru tokoro)",
+      "shortExplanation": "Nhấn mạnh hành động đang diễn ra đúng vào thời điểm nói; 'đúng lúc đang...', 'đang trong lúc...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ているところ kết hợp động từ dạng ～ている với danh từ hình thức ところ (chỉ thời điểm, tình huống) để nhấn mạnh một hành động đang trong quá trình diễn ra ngay tại thời điểm được nói đến. So với dạng ～ている đơn thuần, cấu trúc này làm nổi bật hơn tính thời điểm tức thời ('đúng lúc đang bận làm việc gì'). Câu thường kết thúc bằng だ hoặc です / でした.",
+      "formation": "Động từ thể て + いる + ところ (だ / です / でした)",
+      "examples": [
+        {
+          "translation": "Anh ấy đang đúng lúc làm bài tập về nhà."
+        },
+        {
+          "translation": "Chúng tôi lúc đó đang dở xem phim."
+        },
+        {
+          "translation": "Lũ trẻ đúng lúc đang chơi đùa ở công viên."
+        },
+        {
+          "translation": "Cô ấy đang dở làm bánh, sẽ tới ngay thôi."
+        }
+      ]
+    },
+    "ja_Verb_35": {
+      "title": "～ている間に (～te iru aida ni)",
+      "shortExplanation": "Diễn tả một sự việc, hành động mang tính khoảnh khắc xảy ra trong suốt khoảng thời gian một hành động khác đang diễn ra; 'trong khi đang...', 'trong lúc đang...'.",
+      "longExplanation": "Mẫu câu ～ている間に diễn tả một hành động hoặc sự kiện mang tính thời điểm, khoảnh khắc (ở vế sau) bất ngờ hoặc có chủ đích xảy ra trong khoảng thời gian mà một hành động, trạng thái kéo dài khác (ở vế trước) đang diễn ra. Khác với ～ている間 (hành động ở vế sau kéo dài xuyên suốt toàn bộ khoảng thời gian của vế trước), trợ từ 'に' trong ～ている間に chỉ ra rằng hành động ở vế sau chỉ diễn ra tại một thời điểm hoặc hoàn thành bên trong khoảng thời gian đó.",
+      "formation": "Động từ thể て + いる + 間に",
+      "examples": [
+        {
+          "translation": "Trong lúc đang xem phim thì anh ấy đã ngủ thiếp đi mất."
+        },
+        {
+          "translation": "Trong lúc bọn trẻ đang chơi đùa, tôi sẽ tranh thủ nấu ăn."
+        },
+        {
+          "translation": "Trong lúc cuộc họp đang diễn ra, trời đã bắt đầu đổ mưa."
+        },
+        {
+          "translation": "Trong khi anh ấy đang làm việc, chúng tôi sẽ tranh thủ đi mua sắm."
+        }
+      ]
+    },
+    "ja_Verb_36": {
+      "title": "～ておく (～te oku)",
+      "shortExplanation": "Làm trước một việc gì đó để chuẩn bị cho tương lai hoặc giữ nguyên hiện trạng; 'làm sẵn', 'làm trước'.",
+      "longExplanation": "Mẫu ngữ pháp ～ておく kết hợp động từ thể て với trợ động từ おく để biểu thị: (1) Chuẩn bị làm sẵn trước một việc gì đó nhằm phục vụ cho mục đích hoặc tình huống dự kiến trong tương lai; (2) Thực hiện biện pháp cần thiết sau khi hoàn thành một việc (như cất đồ về chỗ cũ); (3) Để nguyên trạng thái như vậy không can thiệp thêm. Trong văn nói hàng ngày, ～ておく thường được rút gọn thành ～とく (ví dụ: 買っておく → 買っとく).",
+      "formation": "Động từ thể て + おく (dạng lịch sự: ～ておきます; văn nói rút gọn: ～とく)",
+      "examples": [
+        {
+          "translation": "Chúng ta hãy mua vé trước ở nhà ga nhé."
+        },
+        {
+          "translation": "Để ngày mai dậy sớm được, tối nay tôi sẽ đi ngủ sớm."
+        },
+        {
+          "translation": "Nếu không ôn tập trước kỳ thi thì có thể sẽ thi trượt đấy."
+        },
+        {
+          "translation": "Trước khi anh ấy đến, chúng ta hãy dọn dẹp phòng ốc sạch sẽ sẵn đi nhé."
+        }
+      ]
+    },
+    "ja_Verb_37": {
+      "title": "～てくださいませんか (～te kudasaimasen ka)",
+      "shortExplanation": "Yêu cầu hoặc thỉnh cầu ai đó làm việc gì cho mình với thái độ rất tôn kính và lịch sự; 'xin vui lòng... giúp tôi có được không?'.",
+      "longExplanation": "Mẫu câu ～てくださいませんか là một dạng yêu cầu, nhờ vả mang tính tôn kính và lịch thiệp cao. Cấu trúc này dùng dạng phủ định nghi vấn (くださいませんか) của tôn kính ngữ くださる (ban cho, làm cho). Nhờ dùng câu hỏi phủ định, người nói tạo cơ hội cho người nghe từ chối một cách thoải mái, giúp lời yêu cầu trở nên nhẹ nhàng, tinh tế và trang trọng hơn nhiều so với ～てください. Thích hợp dùng với cấp trên, người lạ hoặc trong môi trường trang trọng.",
+      "formation": "Động từ thể て + くださいませんか",
+      "examples": [
+        {
+          "translation": "Xin vui lòng uống cà phê giúp tôi có được không ạ?"
+        },
+        {
+          "translation": "Xin quý khách vui lòng đóng giúp cửa vào được không ạ?"
+        },
+        {
+          "translation": "Trưa mai anh/chị có thể bớt chút thời gian gặp tôi được không ạ?"
+        },
+        {
+          "translation": "Anh/chị làm ơn gửi giúp tôi tập tài liệu đó có được không ạ?"
+        }
+      ]
+    },
+    "ja_Verb_38": {
+      "title": "～てくださる (～te kudasaru)",
+      "shortExplanation": "Diễn tả việc người có địa vị cao hơn hoặc được tôn kính làm việc gì đó giúp cho người nói (hoặc người phe mình) với lòng biết ơn; '(ai đó) làm giúp cho'.",
+      "longExplanation": "Mẫu ngữ pháp ～てくださる là dạng tôn kính ngữ của ～てくれる, dùng khi một người có địa vị cao hơn, người lớn tuổi hoặc người được tôn trọng thực hiện một hành động, giúp đỡ mang lại lợi ích cho người nói hoặc người trong gia đình/nhóm của người nói. Người thực hiện hành động được đánh dấu bằng trợ từ が hoặc は. Thường xuất hiện ở dạng lịch sự là ～てくださいます hoặc quá khứ ～てくださいました.",
+      "formation": "Động từ thể て + くださる (dạng lịch sự: ～てくださいます / ～てくださいました)",
+      "examples": [
+        {
+          "translation": "Thầy giáo nhiệt tình giúp đỡ tôi."
+        },
+        {
+          "translation": "Mẹ nấu những món ăn ngon cho tôi."
+        },
+        {
+          "translation": "Người bạn ấy tốt bụng chở tôi ra tận nhà ga."
+        },
+        {
+          "translation": "Trưởng phòng lập tức giải đáp các thắc mắc cho tôi."
+        }
+      ]
+    },
+    "ja_Verb_39": {
+      "title": "～てくる (～te kuru)",
+      "shortExplanation": "Diễn tả một hành động hoặc trạng thái bắt đầu từ quá khứ và tiếp diễn đến hiện tại, hoặc một sự biến đổi bắt đầu xuất hiện; 'dần dần...', 'bắt đầu... lên'.",
+      "longExplanation": "Mẫu ngữ pháp ～てくる kết hợp động từ thể て với trợ động từ くる để diễn tả: (1) Một hành động hoặc trạng thái bắt đầu từ một thời điểm trong quá khứ và phát triển, tiếp diễn kéo dài đến mốc hiện tại; (2) Sự xuất hiện hoặc chuyển biến của một hiện tượng, cảm xúc, cảm giác nhận thức (như trời lạnh dần lên, dần hiểu ra); (3) Di chuyển về phía người nói (làm gì đó rồi quay lại). Trái ngược với ～ていく (hướng xa khỏi hiện tại), ～てくる hướng về phía hiện tại và người quan sát.",
+      "formation": "Động từ thể て + くる (quá khứ: ～てきた)",
+      "examples": [
+        {
+          "translation": "Dạo gần đây, tôi đã dần dần hiểu được tiếng Nhật rồi."
+        },
+        {
+          "translation": "Trời đã bắt đầu trở lạnh rồi nên chúng ta mặc áo khoác vào nhé."
+        },
+        {
+          "translation": "Mưa đã bắt đầu tạnh dần rồi."
+        },
+        {
+          "translation": "Anh ấy ngày càng trở nên đáng sợ."
+        }
+      ]
+    },
+    "ja_Verb_40": {
+      "title": "～てくれませんか (～te kuremasen ka)",
+      "shortExplanation": "Dùng để nhờ vả, yêu cầu ai đó làm giúp việc gì một cách lịch sự, thân thiện; 'bạn có thể làm... giúp tôi được không?'.",
+      "longExplanation": "Mẫu câu ～てくれませんか kết hợp động từ thể て với dạng phủ định nghi vấn lịch sự くれませんか của trợ động từ くれる (làm cho mình). Cấu trúc này dùng để đưa ra lời nhờ vả, yêu cầu ai đó làm điều gì có lợi cho mình một cách nhã nhặn, lịch sự. Thường được sử dụng trong các mối quan hệ ngang hàng, đồng nghiệp thân thiết, hoặc người lớn nói với người ít tuổi hơn. Với cấp trên hoặc người cần tôn kính, nên dùng dạng lịch sự hơn là ～ていただけませんか.",
+      "formation": "Động từ thể て + くれませんか",
+      "examples": [
+        {
+          "translation": "Bạn mở giúp tôi cái cửa được không?"
+        },
+        {
+          "translation": "Bạn có thể xem giúp tôi cái này được không?"
+        },
+        {
+          "translation": "Bạn giúp tôi một tay được không?"
+        },
+        {
+          "translation": "Ngày mai bạn có thể đến đón tôi được không?"
+        }
+      ]
+    },
+    "ja_Verb_41": {
+      "title": "～てくれる (～te kureru)",
+      "shortExplanation": "Diễn tả việc người khác làm điều gì đó mang lại lợi ích cho người nói (hoặc người thuộc phe người nói); '(ai đó) làm cho mình'.",
+      "longExplanation": "Mẫu ngữ pháp ～てくれる kết hợp động từ thể て với trợ động từ くれる, dùng để diễn tả việc người khác thực hiện một hành động đem lại lợi ích, sự giúp đỡ cho bản thân người nói hoặc người trong gia đình/phe của người nói. Cấu trúc này luôn hàm chứa thái độ cảm kích, biết ơn đối với người thực hiện hành vi. Chủ ngữ thực hiện hành động thường đi với trợ từ が hoặc は. Dạng lịch sự là ～てくれます / ～てくれました.",
+      "formation": "Động từ thể て + くれる (dạng lịch sự: ～てくれます / ～てくれました)",
+      "examples": [
+        {
+          "translation": "Bạn tôi đã giúp tôi làm bài tập về nhà."
+        },
+        {
+          "translation": "Em trai đã dọn dẹp phòng giúp tôi."
+        },
+        {
+          "translation": "Thầy giáo giải đáp các thắc mắc cho tôi."
+        },
+        {
+          "translation": "Cô ấy viết thư cho tôi."
+        }
+      ]
+    },
+    "ja_Verb_42": {
+      "title": "～てさしあげる (～te sashiageru)",
+      "shortExplanation": "Diễn đạt hành động mình làm điều gì đó giúp đỡ hoặc phục vụ cho người bề trên/người ngoài một cách khiêm nhường; 'làm giúp (cho ai đó)'.",
+      "longExplanation": "Mẫu ngữ pháp ～てさしあげる là dạng khiêm nhường ngữ của ～てあげる. Dùng khi người nói (hoặc người phe mình) thực hiện một hành động mang lại lợi ích cho người có địa vị cao hơn, người lớn tuổi hoặc người ngoài cần tôn kính. Cấu trúc này thể hiện thái độ khiêm nhường đối với hành vi của bản thân. Tuy nhiên, vì vẫn xuất phát từ ý 'ban ơn' (làm ơn cho người khác), nếu dùng trực tiếp với cấp trên có thể gây cảm giác trịch thượng, do đó trong thực tế người ta thường dùng thể khiêm nhường khác như ～（お／ご）…します (ví dụ: お持ちしましょうか) thay cho ～てさしあげましょうか.",
+      "formation": "Động từ thể て + さしあげる (dạng lịch sự: ～てさしあげます / ～てさしあげましょうか)",
+      "examples": [
+        {
+          "translation": "Tôi xin phép được rót trà mời quý khách/bác ạ."
+        },
+        {
+          "translation": "Tôi đã gửi tin nhắn giúp cho anh ấy/cô ấy rồi ạ."
+        },
+        {
+          "translation": "Tôi xách giúp hành lý cho bác nhé?"
+        },
+        {
+          "translation": "Tôi sẽ gọi điện thoại giúp cho bác ạ."
+        }
+      ]
+    },
+    "ja_Verb_43": {
+      "title": "～てしまう (～te shimau)",
+      "shortExplanation": "Diễn tả hành động đã hoàn thành trọn vẹn (xong xuôi) hoặc sự việc lỡ xảy ra ngoài ý muốn gây tiếc nuối; 'lỡ...', 'làm... mất rồi', 'xong xuôi'.",
+      "longExplanation": "Mẫu ngữ pháp ～てしまう kết hợp động từ thể て với trợ động từ しまう mang hai ý nghĩa chính: (1) Diễn tả sự tiếc nuối, hối hận hoặc bất ngờ trước một hành động, sự việc lỡ xảy ra ngoài ý muốn của người nói (nghĩa là 'lỡ làm...', 'trót làm... mất rồi'); (2) Diễn tả việc hoàn thành triệt để, trọn vẹn toàn bộ một hành động (nghĩa là 'làm xong hết', 'ăn sạch hết'). Trong văn nói thân mật hàng ngày, ～てしまう thường được biến âm thành ～ちゃう, và ～でしまう thành ～じゃう.",
+      "formation": "Động từ thể て + しまう (lịch sự: ～てしまいました; văn nói thân mật: ～ちゃう / ～じゃう)",
+      "examples": [
+        {
+          "translation": "Tôi lỡ ăn sạch hết cả chiếc bánh kem mất rồi."
+        },
+        {
+          "translation": "Tôi đã để quên bài tập về nhà mất rồi."
+        },
+        {
+          "translation": "Tôi đã lỡ miệng nói cho anh ấy biết bí mật mất rồi."
+        },
+        {
+          "translation": "Tôi đã lỡ mua chiếc áo đắt tiền mà không hề nhìn bảng giá."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Verb_29": {
+      "title": "～ていく (～te iku)",
+      "shortExplanation": "表示动作向未来持续进行，或状态随着时间不断发展变化；'……下去'、'逐渐……'。",
+      "longExplanation": "句型'～ていく'由动词て形后接补助动词'いく'构成，主要用于表示：①动作以现在为起点，一直向未来持续进行下去（相当于汉语的'……下去'）；②事物的状态或性质随着时间的推移不断推移、发展；③表示动作主体伴随某种动作离开说话人所在的视点（'……去'）。常与'～てくる'形成空间和时间上的对照。",
+      "formation": "动词て形 + いく",
+      "examples": [
+        {
+          "translation": "如果照这样继续练习下去，应该会有进步的吧。"
+        },
+        {
+          "translation": "在他逐渐成长的过程中，自立意识变得越来越强了。"
+        },
+        {
+          "translation": "这家公司今后也将继续进行技术创新吧。"
+        },
+        {
+          "translation": "孩子们在不断地学习成长。"
+        }
+      ]
+    },
+    "ja_Verb_30": {
+      "title": "～ていただきたい (～te itadakitai)",
+      "shortExplanation": "谦逊而客气地表达希望对方为自己做某事；'希望您能……'、'想请您……'。",
+      "longExplanation": "句型'～ていただきたい'由动词て形后接自谦动词'いただく'的愿望形'いただきたい'构成。用于向对方提出请求或表达希望对方为自己做某事的心愿，语气非常客气委婉。相比于'～てほしい'，它具有更强的礼貌和自谦色彩，广泛适用于商务职场、对长辈或对上级的交流。在实际口语中，常以'～ていただきたいのですが'的形式出现，以缓和语气，避免强加于人。",
+      "formation": "动词て形 + いただきたい（/ いただきたいです / いただきたいのですが）",
+      "examples": [
+        {
+          "translation": "我想请您帮忙复印一下这份资料。"
+        },
+        {
+          "translation": "这份工作想请您帮个忙，不知是否方便。"
+        },
+        {
+          "translation": "如果您方便的话，非常希望得到您的指导。"
+        },
+        {
+          "translation": "不知能否麻烦您送我到车站呢。"
+        }
+      ]
+    },
+    "ja_Verb_31": {
+      "title": "～ていただく (～te itadaku)",
+      "shortExplanation": "谦逊地表示得到尊长或他人为自己做某事（得到恩惠）；'请……做'、'蒙受……为自己做'。",
+      "longExplanation": "句型'～ていただく'是补助动词'～てもらう'的自谦语形式。用于表示说话人（或己方人员）得到了尊长、上级或客人的恩惠或帮助，表达感激与敬意。施动者通常用助词'に'表示。敬体形式常用'～ていただきます'或过去式'～ていただきました'。",
+      "formation": "动词て形 + いただく（敬体：～ていただきます / ～ていただきました）",
+      "examples": [
+        {
+          "translation": "感谢您特意发来邮件。"
+        },
+        {
+          "translation": "承蒙您帮我搬运行李，真是帮了大忙。"
+        },
+        {
+          "translation": "我想请您帮忙过目检查一下这份资料。"
+        },
+        {
+          "translation": "老师为我提出了宝贵的建议。"
+        }
+      ]
+    },
+    "ja_Verb_32": {
+      "title": "～ていただけませんか (～te itadakemasen ka)",
+      "shortExplanation": "非常礼貌、委婉地请求对方为自己做某事；'能否请您……'、'可以请您帮我……吗'。",
+      "longExplanation": "句型'～ていただけませんか'是将自谦动词'いただく'变为可能否定形式'いただけない'的礼貌疑问句（～ていただけませんか）。字面意思是'我难道不能得到您为我做……的恩惠吗？'，用于向对方提出非常客气、委婉的请求或恳托。相比于'～てください'或'～てくれませんか'，它的敬意程度更高，十分适合在商务场合、对长辈或对不太熟悉的人使用。",
+      "formation": "动词て形 + いただけませんか",
+      "examples": [
+        {
+          "translation": "能否请您帮我把这封信寄出去呢？"
+        },
+        {
+          "translation": "可以请您帮我拿一下这个行李吗？"
+        },
+        {
+          "translation": "能否请您跟隔壁房间的人说一声，让他们安静一点呢？"
+        },
+        {
+          "translation": "能否请您仔细阅读一下这份说明书呢？"
+        }
+      ]
+    },
+    "ja_Verb_33": {
+      "title": "～ている (～te iru)",
+      "shortExplanation": "表示动作正在进行，或动作完成后结果状态的持续；'正在……'、'……着'。",
+      "longExplanation": "句型'～ている'由动词て形接补助动词'いる'构成，依据动词的性质不同具有两大核心用法：①接持续性动作动词（如読む、勉強する等）时，表示动作正在进行，相当于汉语的'正在做……'；②接瞬间性/结果变化动词（如入る、結婚する、なる等）时，表示该动作完成之后所遗留的结果或状态依然持续存在，相当于汉语的'……着'或'已经……了'。敬体形式为'～ています'。",
+      "formation": "动词て形 + いる（敬体：～ています）",
+      "examples": [
+        {
+          "translation": "我现在正在看书。"
+        },
+        {
+          "translation": "他正在学英语。"
+        },
+        {
+          "translation": "蛋糕放在冰箱里。"
+        },
+        {
+          "translation": "房间变得干干净净的了。"
+        }
+      ]
+    },
+    "ja_Verb_34": {
+      "title": "～ているところ (～te iru tokoro)",
+      "shortExplanation": "强调动作正处于进行的高潮阶段或某一特定时刻；'正处于……之中'、'正在……'。",
+      "longExplanation": "句型'～ているところ'由动词'～ている'连体修饰形式名词'ところ'构成，用来强调某个动作正处于进行的瞬间或具体阶段，相当于汉语的'正当……的时候'、'正在……之中'。与单纯的'～ている'相比，它更侧重于凸显时间点的临场感与进程感。句尾常接'だ'、'です'或过去式'でした'。",
+      "formation": "动词て形 + いる + ところ（だ / です / でした）",
+      "examples": [
+        {
+          "translation": "他正忙着写作业呢。"
+        },
+        {
+          "translation": "我们当时正看着电影呢。"
+        },
+        {
+          "translation": "孩子们正在公园里玩耍。"
+        },
+        {
+          "translation": "她正在做蛋糕，马上就过来。"
+        }
+      ]
+    },
+    "ja_Verb_35": {
+      "title": "～ている間に (～te iru aida ni)",
+      "shortExplanation": "表示在某动作或状态持续进行的期间内，发生了另一项瞬间性或临时性的动作或事件；'在……期间（发生了……）'、'趁着……的时候'。",
+      "longExplanation": "句型'～ている間に'由动词'～ている'连体修饰名词'間'加助词'に'构成。用于表示在某持续性动作或状态展开的整个时间段内的某一个时刻，发生了另一动作或事件。与'～ている間'（表示后项动作在整个时间段内一直持续）不同，加了'に'之后，后项通常是瞬间发生的动作、突发事件或在区间内完成的行为。",
+      "formation": "动词て形 + いる + 間に",
+      "examples": [
+        {
+          "translation": "在看电影的期间，他不知不觉睡着了。"
+        },
+        {
+          "translation": "趁着孩子们玩耍的时候，我来做饭。"
+        },
+        {
+          "translation": "就在开会的时候，外面开始下雨了。"
+        },
+        {
+          "translation": "趁着他正在工作，我们去买东西。"
+        }
+      ]
+    },
+    "ja_Verb_36": {
+      "title": "～ておく (～te oku)",
+      "shortExplanation": "表示为了某种目的或为将来的情况提前做好准备；'事先……'、'预先做好……'。",
+      "longExplanation": "句型'～ておく'由动词て形接补助动词'おく'构成，主要表达：①为了将来的某种需要或目标而预先做好某项准备动作（相当于汉语的'预先做好……'、'事先……'）；②做完某事后采取妥善的处置措施（如收拾东西物归原位）；③保持某种状态不变（听任其保持原状）。在日常口语中，常发生音变缩略为'～とく'（如：買っておく → 買っとく）。",
+      "formation": "动词て形 + おく（口语缩略形：～とく）",
+      "examples": [
+        {
+          "translation": "先在车站把车票买好吧。"
+        },
+        {
+          "translation": "为了明天能早起，今晚我要早点睡。"
+        },
+        {
+          "translation": "考试前如果不提前好好复习，可能会考砸的。"
+        },
+        {
+          "translation": "在他到达之前，我们先把房间打扫干净吧。"
+        }
+      ]
+    },
+    "ja_Verb_37": {
+      "title": "～てくださいませんか (～te kudasaimasen ka)",
+      "shortExplanation": "非常礼貌、客气地请求对方为自己做某事；'能否请您……'、'请您……好吗'。",
+      "longExplanation": "句型'～てくださいませんか'是由尊敬动词'くださる'的否定礼貌疑问形式（くださいませんか）构成的请求表达。采用否定疑问的形式向对方提出恳请，留给对方回绝的余地，显得委婉而克制。相比于直接命令式的'～てください'，它的语气更为恭敬和正式，常用于对长辈、上司、顾客或初次见面的人提出请求。",
+      "formation": "动词て形 + くださいませんか",
+      "examples": [
+        {
+          "translation": "请您喝杯咖啡好吗？"
+        },
+        {
+          "translation": "能否请您把门关上呢？"
+        },
+        {
+          "translation": "明天中午能否请您与我见个面呢？"
+        },
+        {
+          "translation": "能否请您把那份资料发给我呢？"
+        }
+      ]
+    },
+    "ja_Verb_38": {
+      "title": "～てくださる (～te kudasaru)",
+      "shortExplanation": "尊称长辈、上级或他人为自己（或己方人员）做某事，表达敬意与谢意；'（长辈等）为我做……'。",
+      "longExplanation": "句型'～てくださる'是补助动词'～てくれる'的尊敬语形式。用于表示地位高于自己的人、长辈或需要表示敬意的人，为说话人（或己方人员）做某事，带来恩惠或帮助。施动者通常用主格助词'が'或'は'表示。在实际交流中，多使用敬体形式'～てくださいます'或过去式'～てくださいました'。",
+      "formation": "动词て形 + くださる（敬体：～てくださいます / ～てくださいました）",
+      "examples": [
+        {
+          "translation": "老师热心地帮了我的忙。"
+        },
+        {
+          "translation": "母亲为我做美味可口的饭菜。"
+        },
+        {
+          "translation": "朋友好心地送我到了车站。"
+        },
+        {
+          "translation": "部长立刻为我解答了疑问。"
+        }
+      ]
+    },
+    "ja_Verb_39": {
+      "title": "～てくる (～te kuru)",
+      "shortExplanation": "表示动作或状态从过去一直持续发展到现阶段，或某种变化、感觉开始显现；'……起来'、'逐渐……'。",
+      "longExplanation": "句型'～てくる'由动词て形后接补助动词'くる'构成，主要用法包括：①时间推移：表示某动作或状态从过去某一时间点开始，一直持续发展并推进到当前时刻；②状态变化与感觉产生：表示某种自然现象、心理情绪或身体感觉开始产生并显现出来（如变冷了、逐渐明白等）；③空间移动：表示伴随某种动作朝说话人视点靠近，或'做完某事后回来'。与'～ていく'形成时间与空间上的鲜明对照。",
+      "formation": "动词て形 + くる（过去形：～てきた）",
+      "examples": [
+        {
+          "translation": "最近，我渐渐开始能听懂日语了。"
+        },
+        {
+          "translation": "天气渐渐冷起来了，穿上大衣吧。"
+        },
+        {
+          "translation": "雨渐渐停下来了。"
+        },
+        {
+          "translation": "他渐渐变得可怕起来了。"
+        }
+      ]
+    },
+    "ja_Verb_40": {
+      "title": "～てくれませんか (～te kuremasen ka)",
+      "shortExplanation": "礼貌而亲切地请求对方为自己做某事；'能请你帮我……吗'、'可以帮我……吗'。",
+      "longExplanation": "句型'～てくれませんか'由动词て形后接给予动词'くれる'的否定礼貌疑问形式'くれませんか'构成。用于向对方提出请求，希望对方为自己做某事。语气礼貌而亲切，常用于平辈、朋友、同事之间，或者长辈对晚辈提出请求。若对上级、长辈或在正式商务场合中，则应使用敬意更高的'～ていただけませんか'。",
+      "formation": "动词て形 + くれませんか",
+      "examples": [
+        {
+          "translation": "能帮我把门打开吗？"
+        },
+        {
+          "translation": "可以帮我看一下这个吗？"
+        },
+        {
+          "translation": "能帮我一把吗？"
+        },
+        {
+          "translation": "明天可以来接我一下吗？"
+        }
+      ]
+    },
+    "ja_Verb_41": {
+      "title": "～てくれる (～te kureru)",
+      "shortExplanation": "表示他人为说话人（或说话人一方的人）做某事，体现出感激之情；'为我（们）做……'。",
+      "longExplanation": "句型'～てくれる'由动词て形后接给予动词'くれる'构成，专门用于表达他人主动为说话人、或为说话人一方（如家人、同伴）做出某项具有善意、帮助或恩惠性质的行为，蕴含着说话人的感谢之情。实施动作的主体用助词'が'或'は'表示。礼貌体形式为'～てくれます'或过去式'～てくれました'。",
+      "formation": "动词て形 + くれる（敬体：～てくれます / ～てくれました）",
+      "examples": [
+        {
+          "translation": "朋友帮我辅导了作业。"
+        },
+        {
+          "translation": "弟弟帮我把房间打扫干净了。"
+        },
+        {
+          "translation": "老师耐心地为我解答了问题。"
+        },
+        {
+          "translation": "她给我写了一封信。"
+        }
+      ]
+    },
+    "ja_Verb_42": {
+      "title": "～てさしあげる (～te sashiageru)",
+      "shortExplanation": "自谦地表示自己（或己方人员）为尊长、客户等做某事；'为（长辈等）做……'。",
+      "longExplanation": "句型'～てさしあげる'是给予动词'～てあげる'的自谦语形式。用于表达说话人（或己方人员）为地位较高的人、长辈或客人提供某种帮助或做出有益的行为，以此压低自身动作以示谦恭。但需要注意的是，由于它本身仍含有'为他人施加恩惠'的色彩，直接对长辈面谈使用时容易显得傲慢居高临下，现代礼仪中更提倡使用更委婉的自谦句型如'お／ご……します'（例如用'お持ちしましょうか'代替'持ってさしあげましょうか'）。",
+      "formation": "动词て形 + さしあげる（敬体：～てさしあげます / ～てさしあげましょうか）",
+      "examples": [
+        {
+          "translation": "我来为您沏一杯茶。"
+        },
+        {
+          "translation": "我已经帮您把信息发送过去了。"
+        },
+        {
+          "translation": "需要我帮您拿行李吗？"
+        },
+        {
+          "translation": "我来帮您打这个电话吧。"
+        }
+      ]
+    },
+    "ja_Verb_43": {
+      "title": "～てしまう (～te shimau)",
+      "shortExplanation": "表示动作彻底完成，或表达因动作发生而产生的遗憾、悔恨或无可奈何的心情；'……完了'、'不小心……了'。",
+      "longExplanation": "句型'～てしまう'由动词て形后接补助动词'しまう'构成，主要具有两大用法：①表示因发生了非本意或出乎意料的事情而感到遗憾、悔恨或后悔（相当于汉语的'不小心……了'、'搞得……了'）；②表示动作彻底完成、做到底（相当于汉语的'……光了'、'全部……完了'）。在口语随意的表达中，常音变为'～ちゃう'（接浊音て形时为'～じゃう'）。敬体形式为'～てしまいました'。",
+      "formation": "动词て形 + しまう（敬体：～てしまいました；口语形式：～ちゃう / ～じゃう）",
+      "examples": [
+        {
+          "translation": "我把蛋糕全给吃光了。"
+        },
+        {
+          "translation": "我不小心把作业给忘带了。"
+        },
+        {
+          "translation": "我不小心把秘密告诉他了。"
+        },
+        {
+          "translation": "我没看价签，不小心买了一件很贵的衣服。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Verb_29": {
+      "title": "～ていく (～te iku)",
+      "shortExplanation": "동작이 미래를 향해 계속 진행되거나, 시간에 따라 상태가 변화해 감을 나타내며, '~해 가다', '계속 ~하다'의 뜻입니다.",
+      "longExplanation": "'～ていく' 문형은 동사의 て형에 보조동사 'いく'가 결합하여 다음을 나타냅니다: ① 현재를 기점으로 어떤 동작이 미래를 향해 계속 이어져 감; ② 시간의 경과에 따라 상태나 성질이 점점 변화해 감; ③ 어떤 동작을 하면서 기준점(화자)으로부터 멀어져 감. 한국어의 '~해 가다', '계속 ~해 나가다'에 해당하며, 화자에게 다가오는 변화를 나타내는 '～てくる'와 대조를 이룹니다.",
+      "formation": "동사 て형 + いく",
+      "examples": [
+        {
+          "translation": "이대로 계속 연습해 나가면 실력이 향상될 것입니다."
+        },
+        {
+          "translation": "그는 성장해 가면서 자립심이 강해졌다."
+        },
+        {
+          "translation": "이 회사는 앞으로도 계속해서 기술 혁신을 진행해 나갈 것입니다."
+        },
+        {
+          "translation": "아이들은 점점 더 많은 것을 배워 갑니다."
+        }
+      ]
+    },
+    "ja_Verb_30": {
+      "title": "～ていただきたい (～te itadakitai)",
+      "shortExplanation": "상대방이 자신을 위해 어떤 행동을 해 주기를 겸손하고 공손하게 바랄 때 쓰이며, '~해 주셨으면 좋겠습니다', '~해 주시길 바랍니다'의 뜻입니다.",
+      "longExplanation": "'～ていただきたい' 문형은 동사의 て형에 겸양어 'いただく(받다)'의 희망형인 'いただきたい'가 결합된 표현입니다. 상대방이 어떤 행위를 해 주기를 바라는 마음이나 공손한 요청을 나타낼 때 사용합니다. 평서형 희망 표현인 '～てほしい'보다 훨씬 공손하고 예의 바른 표현으로, 상사나 손윗사람, 비즈니스 상황에서 자주 쓰입니다. 회화에서는 말을 부드럽게 맺기 위해 주로 '～ていただきたいのですが' 형태로 자주 쓰입니다.",
+      "formation": "동사 て형 + いただきたい (또는 いただきたいです / いただきたいのですが)",
+      "examples": [
+        {
+          "translation": "자료를 복사해 주셨으면 좋겠습니다."
+        },
+        {
+          "translation": "이 일을 좀 도와주셨으면 하는데요."
+        },
+        {
+          "translation": "괜찮으시다면 지도해 주셨으면 좋겠습니다."
+        },
+        {
+          "translation": "역까지 좀 바래다주셨으면 하는데요."
+        }
+      ]
+    },
+    "ja_Verb_31": {
+      "title": "～ていただく (～te itadaku)",
+      "shortExplanation": "윗사람이나 다른 사람으로부터 어떤 호의나 도움을 받았음을 겸손하게 나타내며, '~해 받다', '~해 주시다'의 뜻입니다.",
+      "longExplanation": "'～ていただく' 문형은 수수동사 표현인 '～てもらう(해 받다)'의 겸양어 표현입니다. 말하는 사람(또는 자신의 측근)이 손윗사람이나 상대방으로부터 어떤 행위의 혜택이나 도움을 받았을 때, 감사의 마음과 경의를 담아 겸손하게 표현합니다. 행위의 주체는 조사 'に'로 나타내며, 정중형으로는 주로 '～ていただきます', '～ていただきました' 형태로 쓰입니다.",
+      "formation": "동사 て형 + いただく (정중형: ～ていただきます / ～ていただきました)",
+      "examples": [
+        {
+          "translation": "메일을 보내 주셔서 대단히 감사합니다."
+        },
+        {
+          "translation": "짐을 날라 주셔서 정말 큰 도움이 되었습니다."
+        },
+        {
+          "translation": "자료를 검토해 주셨으면 좋겠습니다."
+        },
+        {
+          "translation": "선생님께 조언을 받았습니다."
+        }
+      ]
+    },
+    "ja_Verb_32": {
+      "title": "～ていただけませんか (～te itadakemasen ka)",
+      "shortExplanation": "상대방에게 정중하고 조심스럽게 어떤 일을 해 줄 것을 요청할 때 쓰이며, '~해 주시지 않겠습니까?', '~해 주실 수 있나요?'의 뜻입니다.",
+      "longExplanation": "'～ていただけませんか' 문형은 겸양어 'いただく'의 가능형 부정 형태에 의문 조사 'か'가 결합된 표현입니다. 직역하면 '~해 받을 수 없겠습니까?'로, 상대방에게 어떤 행위를 부탁하거나 정중히 의뢰할 때 쓰입니다. '～てください'나 '～てくれませんか'보다 상대방에 대한 배려와 경의가 훨씬 높은 표현으로, 손윗사람이나 비즈니스 상대, 낯선 사람에게 부탁할 때 사용하기 적합합니다.",
+      "formation": "동사 て형 + いただけませんか",
+      "examples": [
+        {
+          "translation": "이 편지를 우체통에 넣어 주시지 않겠습니까?"
+        },
+        {
+          "translation": "이 짐을 좀 들어 주실 수 있겠습니까?"
+        },
+        {
+          "translation": "옆방에 있는 분에게 조용히 해 달라고 말씀해 주시지 않겠습니까?"
+        },
+        {
+          "translation": "설명서를 읽어 주시지 않겠습니까?"
+        }
+      ]
+    },
+    "ja_Verb_33": {
+      "title": "～ている (～te iru)",
+      "shortExplanation": "동작이 현재 진행 중이거나, 동작의 결과로 생긴 상태가 지속되고 있음을 나타내며, '~하고 있다', '~해 있다'의 뜻입니다.",
+      "longExplanation": "'～ている' 문형은 동사의 て형에 보조동사 'いる'가 결합하여 두 가지 핵심적인 의미를 나타냅니다: ① 계속동사(読む, 勉強する 등)와 결합할 때는 현재 동작이 진행 중임을 나타냅니다(한국어의 '~하고 있다'). ② 순간·변화동사(入る, 壊れる, 結婚する 등)와 결합할 때는 동작이 완료된 후 그 결과 상태가 계속 유지되고 있음을 나타냅니다(한국어의 '~해 있다', '~되어 있다'). 정중형은 '～ています'입니다.",
+      "formation": "동사 て형 + いる (정중형: ～ています)",
+      "examples": [
+        {
+          "translation": "지금 책을 읽고 있습니다."
+        },
+        {
+          "translation": "그는 영어를 공부하고 있습니다."
+        },
+        {
+          "translation": "케이크가 냉장고에 들어가 있습니다."
+        },
+        {
+          "translation": "방이 깨끗해져 있습니다."
+        }
+      ]
+    },
+    "ja_Verb_34": {
+      "title": "～ているところ (～te iru tokoro)",
+      "shortExplanation": "어떤 동작이 한창 진행 중인 순간임을 강조하여 나타내며, '한창 ~하고 있는 중이다', '막 ~하던 참이다'의 뜻입니다.",
+      "longExplanation": "'～ているところ' 문형은 '～ている'에 시점이나 국면을 나타내는 형식명사 'ところ'가 결합된 표현입니다. 어떤 동작이 바로 지금 한창 진행되고 있는 과정이나 순간에 있음을 강조할 때 사용합니다. 단순한 '～ている'보다 시점의 현장감과 즉시성을 더 뚜렷하게 드러내며, 문말은 주로 'だ', 'です', 'でした'로 끝납니다.",
+      "formation": "동사 て형 + いる + ところ (だ / です / でした)",
+      "examples": [
+        {
+          "translation": "그는 한창 숙제를 하고 있는 중입니다."
+        },
+        {
+          "translation": "우리는 마침 영화를 보고 있던 참이었습니다."
+        },
+        {
+          "translation": "아이들은 공원에서 한창 놀고 있는 중입니다."
+        },
+        {
+          "translation": "그녀는 케이크를 만들고 있는 중이라 곧 올 겁니다."
+        }
+      ]
+    },
+    "ja_Verb_35": {
+      "title": "～ている間に (～te iru aida ni)",
+      "shortExplanation": "어떤 동작이나 상태가 계속되고 있는 동안에 다른 일이나 순간적인 동작이 일어남을 나타내며, '~하고 있는 동안에', '~하는 사이에'의 뜻입니다.",
+      "longExplanation": "'～ている間に' 문형은 지속적인 동작이나 상태를 나타내는 '～ている' 뒤에 '間に(사이에/동안에)'가 붙은 형태입니다. 앞 문장의 상태나 동작이 지속되고 있는 시간적 구간 안에서, 어느 한 순간에 뒷 문장의 일이나 동작이 발생함을 나타냅니다. 뒷 문장의 동작도 같은 기간 내내 지속되는 '～ている間'와 달리, 조사 'に'가 붙으면 특정 시점에 일어난 일시적·순간적인 사건이나 동작을 가리킵니다.",
+      "formation": "동사 て형 + いる + 間に",
+      "examples": [
+        {
+          "translation": "영화를 보고 있는 사이에 그는 잠들어 버렸다."
+        },
+        {
+          "translation": "아이가 놀고 있는 동안에 나는 요리를 만듭니다."
+        },
+        {
+          "translation": "회의가 진행되는 동안에 비가 내리기 시작했다."
+        },
+        {
+          "translation": "그가 일을 하고 있는 사이에 우리는 쇼핑하러 간다."
+        }
+      ]
+    },
+    "ja_Verb_36": {
+      "title": "～ておく (～te oku)",
+      "shortExplanation": "장래의 일이나 특정 목적에 대비하여 미리 어떤 동작을 해 두거나 상태를 유지함을 나타내며, '~해 두다', '~해 놓다'의 뜻입니다.",
+      "longExplanation": "'～ておく' 문형은 동사의 て형에 보조동사 'おく'가 결합된 표현으로, 다음을 나타냅니다: ① 미래의 어떤 목적이나 상황에 대비하여 미리 어떤 행동을 완료해 둠(사전 준비); ② 다음 사용을 위해 어떤 조치를 취해 둠(사후 조치); ③ 어떠한 상태 그대로 방치해 둠. 한국어의 '~해 두다', '~해 놓다'에 해당합니다. 구어에서는 축약되어 '～とく'(예: 買っておく → 買っとく)로 자주 사용됩니다.",
+      "formation": "동사 て형 + おく (구어 축약형: ～とく)",
+      "examples": [
+        {
+          "translation": "역에서 표를 미리 사 두자."
+        },
+        {
+          "translation": "내일 일찍 일어나기 위해 오늘 밤에는 일찍 자 두겠습니다."
+        },
+        {
+          "translation": "시험 전에 미리 공부해 두지 않으면 실패할지도 모른다."
+        },
+        {
+          "translation": "그가 도착하기 전에 방을 깨끗이 청소해 둡시다."
+        }
+      ]
+    },
+    "ja_Verb_37": {
+      "title": "～てくださいませんか (～te kudasaimasen ka)",
+      "shortExplanation": "상대방에게 정중하고 공손하게 행동을 부탁하거나 권유할 때 쓰이며, '~해 주시지 않겠습니까?', '~해 주시겠어요?'의 뜻입니다.",
+      "longExplanation": "'～てくださいませんか' 문형은 존경 보조동사 'くださる(주시다)'의 정중 부정 의문형입니다. 상대방에게 어떤 행위를 해 달라고 정중하게 부탁할 때 사용합니다. 단순한 지시·의뢰인 '～てください'보다 완곡하고 공손하며, 부정 의문문의 형태를 띰으로써 상대방의 부담을 덜어주는 배려가 담겨 있습니다. 손윗사람, 거래처, 고객 등에게 정중히 부탁할 때 매우 적절합니다.",
+      "formation": "동사 て형 + くださいませんか",
+      "examples": [
+        {
+          "translation": "커피를 드셔 주시지 않겠습니까?"
+        },
+        {
+          "translation": "문을 좀 닫아 주시지 않겠습니까?"
+        },
+        {
+          "translation": "내일 점심때 저를 좀 만나 주시지 않겠습니까?"
+        },
+        {
+          "translation": "그 자료를 보내 주시지 않겠습니까?"
+        }
+      ]
+    },
+    "ja_Verb_38": {
+      "title": "～てくださる (～te kudasaru)",
+      "shortExplanation": "손윗사람이나 존경의 대상이 화자(또는 화자 측)를 위해 어떤 행동을 해 줌을 높여 나타내며, '(윗사람이) ~해 주시다'의 뜻입니다.",
+      "longExplanation": "'～てくださる' 문형은 수수동사 표현인 '～てくれる(해 주다)'의 존경어 표현입니다. 사회적 지위가 높은 사람이나 손윗사람이 화자(또는 화자의 가족·내부 집단)를 위해 호의를 가지고 어떤 행동을 베풀어 줄 때, 경의와 감사를 담아 표현합니다. 주어는 주로 조사 'が'나 'は'로 나타내며, 회화에서는 주로 정중형인 '～てくださいます', '～てくださいました'로 쓰입니다.",
+      "formation": "동사 て형 + くださる (정중형: ～てくださいます / ～てくださいました)",
+      "examples": [
+        {
+          "translation": "선생님께서 도와주십니다."
+        },
+        {
+          "translation": "어머니께서 맛있는 요리를 만들어 주십니다."
+        },
+        {
+          "translation": "친구가 저를 역까지 바래다줍니다."
+        },
+        {
+          "translation": "부장님께서 곧바로 질문에 답해 주십니다."
+        }
+      ]
+    },
+    "ja_Verb_39": {
+      "title": "～てくる (～te kuru)",
+      "shortExplanation": "과거부터 현재까지 동작이나 상태가 이어져 오거나, 어떤 변화나 감각이 서서히 나타남을 나타내며, '~해 오다', '~해지다'의 뜻입니다.",
+      "longExplanation": "'～てくる' 문형은 동사의 て형에 보조동사 'くる'가 결합된 표현으로, 다음을 나타냅니다: ① 시간적 경과: 과거의 한 시점부터 시작된 동작이나 상태가 현재까지 계속 이어져 옴(한국어의 '~해 오다'); ② 상태의 발생과 변화: 어떤 자연 현상, 감각, 심리적 변화가 서서히 나타나기 시작함(한국어의 '~해지기 시작하다', '~해 오다'); ③ 공간적 이동: 화자의 시점을 향해 다가오거나, '어떤 행동을 하고 돌아옴'을 의미. 미래로 향하는 '～ていく'와 짝을 이룹니다.",
+      "formation": "동사 て형 + くる (과거형: ～てきた)",
+      "examples": [
+        {
+          "translation": "최근 일본어를 차츰 이해할 수 있게 되었습니다."
+        },
+        {
+          "translation": "날씨가 쌀쌀해졌으니 코트를 입읍시다."
+        },
+        {
+          "translation": "비가 그쳐 가기 시작했습니다."
+        },
+        {
+          "translation": "그가 점점 무서워지기 시작했다."
+        }
+      ]
+    },
+    "ja_Verb_40": {
+      "title": "～てくれませんか (～te kuremasen ka)",
+      "shortExplanation": "상대방에게 어떤 일을 해 줄 것을 친근하면서도 정중하게 부탁할 때 쓰이며, '~해 주지 않겠습니까?', '~해 줄래요?'의 뜻입니다.",
+      "longExplanation": "'～てくれませんか' 문형은 동사의 て형에 수수동사 'くれる(해 주다)'의 정중 부정 의문형인 'くれませんか'가 결합된 형태입니다. 상대방이 자신을 위해 어떤 호의나 행동을 해 주기를 부탁할 때 사용합니다. 정중하면서도 친근한 어조로, 친한 동료나 친구, 손아랫사람에게 부탁할 때 자주 사용됩니다. 상사나 격식을 차려야 하는 자리에서는 더 정중한 '～ていただけませんか'를 사용하는 것이 적절합니다.",
+      "formation": "동사 て형 + くれませんか",
+      "examples": [
+        {
+          "translation": "문 좀 열어 주지 않겠어요?"
+        },
+        {
+          "translation": "이것 좀 봐 주지 않겠어요?"
+        },
+        {
+          "translation": "좀 도와주지 않겠어요?"
+        },
+        {
+          "translation": "내일 저를 마중 나와 주지 않겠어요?"
+        }
+      ]
+    },
+    "ja_Verb_41": {
+      "title": "～てくれる (～te kureru)",
+      "shortExplanation": "남이 화자(또는 화자의 내부 집단 사람)를 위해 어떤 호의나 도움을 베풀어 줌을 나타내며, '~해 주다'의 뜻입니다.",
+      "longExplanation": "'～てくれる' 문형은 동사의 て형에 수수동사 'くれる(주다)'가 결합된 표현입니다. 다른 사람이 화자나 화자 측근(가족, 같은 편 등)을 위해 호의로 어떤 행동을 해 줄 때 사용하며, 그 행동에 대한 고마움과 감사의 마음이 내포되어 있습니다. 동작을 행하는 주체는 조사 'が'나 'は'로 나타내며, 정중형은 '～てくれます', '～てくれました'입니다.",
+      "formation": "동사 て형 + くれる (정중형: ～てくれます / ～てくれました)",
+      "examples": [
+        {
+          "translation": "친구가 숙제를 도와주었습니다."
+        },
+        {
+          "translation": "남동생이 방을 청소해 주었다."
+        },
+        {
+          "translation": "선생님께서 질문에 답해 주십니다."
+        },
+        {
+          "translation": "그녀가 편지를 써 줍니다."
+        }
+      ]
+    },
+    "ja_Verb_42": {
+      "title": "～てさしあげる (～te sashiageru)",
+      "shortExplanation": "화자(또는 화자 측)가 윗사람이나 대상을 위해 호의로 어떤 행동을 해 드림을 겸손하게 나타내며, '~해 드리다'의 뜻입니다.",
+      "longExplanation": "'～てさしあげる' 문형은 수수동사 표현인 '～てあげる(해 주다)'의 겸양어 표현입니다. 말하는 사람(또는 화자 측)이 손윗사람이나 손님, 경의를 표해야 할 대상을 위해 어떤 호의적인 행동을 할 때 사용하며, 한국어의 '~해 드리다'에 해당합니다. 다만 행동 자체에 여전히 '은혜를 베푼다'는 뉘앙스가 남아 있어, 손윗사람에게 직접 면전에서 사용하면 오만하게 들릴 수 있으므로 실제 비즈니스에서는 'お／ご…합니다'(예: お持ちしましょうか)와 같은 표현이 더 완곡하고 권장됩니다.",
+      "formation": "동사 て형 + さしあげる (정중형: ～てさしあげます / ～てさしあげましょうか)",
+      "examples": [
+        {
+          "translation": "차를 끓여 드리겠습니다."
+        },
+        {
+          "translation": "메시지를 보내 드렸습니다."
+        },
+        {
+          "translation": "짐을 들어 드릴까요?"
+        },
+        {
+          "translation": "전화를 걸어 드리겠습니다."
+        }
+      ]
+    },
+    "ja_Verb_43": {
+      "title": "～てしまう (～te shimau)",
+      "shortExplanation": "동작의 완전한 완료를 나타내거나, 원치 않던 일이 일어나 후회·아쉬움이 남음을 나타내며, '~해 버리다', '다 ~해 버리다'의 뜻입니다.",
+      "longExplanation": "'～てしまう' 문형은 동사의 て형에 보조동사 'しまう'가 결합된 표현으로, 두 가지 주요 의미를 갖습니다: ① 후회와 유감: 의도하지 않았거나 예상치 못한 일이 발생하여 아쉽고 난처한 심정을 나타냄(한국어의 '~해 버리다', '그만 ~하고 말다'); ② 완전한 완료: 어떤 행위가 완전히 끝까지 완료되었음을 강조함(한국어의 '다 ~해 버리다', '끝내 버리다'). 구어체 회화에서는 축약되어 '～ちゃう'(탁음 뒤에서는 '～じゃう') 형태로 널리 쓰입니다.",
+      "formation": "동사 て형 + しまう (정중형: ～てしまいました; 구어 축약형: ～ちゃう / ～じゃう)",
+      "examples": [
+        {
+          "translation": "케이크를 전부 다 먹어 버렸다."
+        },
+        {
+          "translation": "숙제를 깜빡 잊어버리고 말았습니다."
+        },
+        {
+          "translation": "그 사람에게 비밀을 말해 버렸다."
+        },
+        {
+          "translation": "가격표를 보지 않고 비싼 옷을 사 버렸다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Verb_29": {
+      "title": "～ていく (～te iku)",
+      "shortExplanation": "現在の時点から未来に向かって動作が継続することや、時間の経過に伴って状態が変化していくことを表し、「〜していく」という意味を表します。",
+      "longExplanation": "「～ていく」は、動詞のて形に補助動詞「いく」が接続した文法形式で、主に以下の意味を表します。①現在の時点を基準にして、動作や状態が未来に向かって継続・発展していくこと（時間的推移）。②ある状態への変化が徐々に進展していくこと。③話し手や基準となる場所から離れていく動作・移動を表すこと（空間的移動）。未来への継続や離反を表し、「～てくる」と対比して用いられます。",
+      "formation": "動詞て形 ＋ いく",
+      "examples": [
+        {
+          "translation": "このまま練習を続けていくと、上達するでしょう。"
+        },
+        {
+          "translation": "彼は成長していくうちに、自立心が強くなった。"
+        },
+        {
+          "translation": "この会社はこれからも技術革新を行っていくでしょう。"
+        },
+        {
+          "translation": "子供たちはどんどん学んでいく。"
+        }
+      ]
+    },
+    "ja_Verb_30": {
+      "title": "～ていただきたい (～te itadakitai)",
+      "shortExplanation": "相手に何かをしてもらうことを望む気持ちをへりくだって丁寧に表し、「〜してもらいたい」「〜していただきたい」という意味を表します。",
+      "longExplanation": "「～ていただきたい」は、動詞のて形に「もらう」の謙譲語「いただく」の希望形「いただきたい」が接続した表現です。相手に対して自分（または身内）のためにある行為をしてもらいたいという希望や依頼を、敬意を込めて丁寧に伝える際に用います。「～てほしい」に比べて相手に対する敬意が高く、目上の人やビジネスの場面でよく用いられます。会話では語尾を和らげるために「～ていただきたいのですが」の形で用いられることが一般的です。",
+      "formation": "動詞て形 ＋ いただきたい（／いただきたいです／いただきたいのですが）",
+      "examples": [
+        {
+          "translation": "資料をコピーしていただきたいです。"
+        },
+        {
+          "translation": "この仕事を手伝っていただきたいのですが。"
+        },
+        {
+          "translation": "もしよろしければ、指導していただきたいです。"
+        },
+        {
+          "translation": "駅まで送っていただきたいんですが。"
+        }
+      ]
+    },
+    "ja_Verb_31": {
+      "title": "～ていただく (～te itadaku)",
+      "shortExplanation": "目上の人や他者から恩恵や親切な行為を受けることをへりくだって表し、「〜してもらう」の謙譲表現です。",
+      "longExplanation": "「～ていただく」は、「～てもらう」の謙譲語表現です。話し手（または身内）が、目上の人や外部の人からある親切な行為や手助け、恩恵を受けたことを、相手に対する敬意と感謝を込めてへりくだって述べる際に用います。行為を行う相手は助詞「に」で示されます。丁寧な表現として「～ていただきます」「～ていただきました」の形で多用されます。",
+      "formation": "動詞て形 ＋ いただく（丁寧体：～ていただきます／～ていただきました）",
+      "examples": [
+        {
+          "translation": "メールを送っていただいて、ありがとうございます。"
+        },
+        {
+          "translation": "荷物を運んでいただいて、助かりました。"
+        },
+        {
+          "translation": "資料をチェックしていただきたいです。"
+        },
+        {
+          "translation": "先生にアドバイスをしていただきました。"
+        }
+      ]
+    },
+    "ja_Verb_32": {
+      "title": "～ていただけませんか (～te itadakemasen ka)",
+      "shortExplanation": "相手に対して何かをしてくれるよう丁寧に依頼する表現で、「〜していただけますか」「〜してくださいませんか」という意味を表します。",
+      "longExplanation": "「～ていただけませんか」は、謙譲語「いただく」の可能形否定「いただけない」に丁寧の助動詞「ます」と疑問の終助詞「か」がついた丁寧な依頼表現です。相手に何かをしてもらうことをへりくだりつつ、相手の意志や都合を尊重しながら遠回しに依頼するため、非常に丁寧で角が立たない表現です。「～てください」や「～てくれませんか」よりも敬意が高く、目上の人や取引先、初対面の人への依頼に適しています。",
+      "formation": "動詞て形 ＋ いただけませんか",
+      "examples": [
+        {
+          "translation": "この手紙を投函していただけませんか。"
+        },
+        {
+          "translation": "この荷物を持っていただけませんか。"
+        },
+        {
+          "translation": "隣の部屋にいる人に静かにしていただけませんか。"
+        },
+        {
+          "translation": "説明書を読んでいただけませんか。"
+        }
+      ]
+    },
+    "ja_Verb_33": {
+      "title": "～ている (～te iru)",
+      "shortExplanation": "動作が現在進行中であることや、動作が完了した結果の状態が続いていることを表し、「〜している」という意味を表します。",
+      "longExplanation": "「～ている」は、動詞のて形に補助動詞「いる」が接続した基本的な文法形式です。動詞の種類によって大きく2つの用法に分かれます。①継続動詞（「読む」「勉強する」など）に接続する場合：動作が現在進行していること（進行中）を表します。②瞬間動詞・変化動詞（「入る」「壊れる」「結婚する」「なる」など）に接続する場合：動作が完了した後の結果の状態が現在も存続していること（結果の状態）を表します。丁寧形は「～ています」となります。",
+      "formation": "動詞て形 ＋ いる（丁寧体：～ています）",
+      "examples": [
+        {
+          "translation": "今、本を読んでいます。"
+        },
+        {
+          "translation": "彼は英語を勉強しています。"
+        },
+        {
+          "translation": "ケーキが冷蔵庫に入っています。"
+        },
+        {
+          "translation": "部屋がきれいになっています。"
+        }
+      ]
+    },
+    "ja_Verb_34": {
+      "title": "～ているところ (～te iru tokoro)",
+      "shortExplanation": "ある動作がまさに今行われている最中であることを強調し、「ちょうど〜している最中だ」という意味を表します。",
+      "longExplanation": "「～ているところ」は、動詞の「～ている」の連体形に形式名詞「ところ」が接続した構文です。ある動作がまさにその瞬間、進行中の局面にあることを際立たせて表します。単なる進行を表す「～ている」に比べ、時間的な局面（まさに今その真っ最中であること）を強く意識させるニュアンスがあります。文末は「だ」「です」「でした」などが続きます。",
+      "formation": "動詞て形 ＋ いる ＋ ところ（だ／です／でした）",
+      "examples": [
+        {
+          "translation": "彼は宿題をしているところです。"
+        },
+        {
+          "translation": "私たちは映画を見ているところでした。"
+        },
+        {
+          "translation": "子供たちは公園で遊んでいるところです。"
+        },
+        {
+          "translation": "彼女はケーキを作っているところで、すぐ来ます。"
+        }
+      ]
+    },
+    "ja_Verb_35": {
+      "title": "～ている間に (～te iru aida ni)",
+      "shortExplanation": "ある継続的な動作や状態が続いている時間帯の中で、別の動作や出来事がある時点で行われることを表し、「〜している間に」という意味を表します。",
+      "longExplanation": "「～ている間に」は、前項の動作や状態が継続している時間的な幅（期間）の中で、後項の瞬間的・一時的な動作や出来事が発生・完了することを表す文型です。前項の期間全体にわたって後項の動作が継続する「～ている間」とは異なり、助詞「に」があることで、その期間内の「ある一時点」に後項が生起したことが示されます。",
+      "formation": "動詞て形 ＋ いる ＋ 間に",
+      "examples": [
+        {
+          "translation": "映画を見ている間に、彼は寝てしまった。"
+        },
+        {
+          "translation": "子供が遊んでいる間に、私は料理を作ります。"
+        },
+        {
+          "translation": "会議が行われている間に、雨が降り始めた。"
+        },
+        {
+          "translation": "彼が仕事をしている間に、私たちは買い物に行く。"
+        }
+      ]
+    },
+    "ja_Verb_36": {
+      "title": "～ておく (～te oku)",
+      "shortExplanation": "将来の目的や次の事態に備えてあらかじめ準備として動作を行うことを表し、「〜しておく」という意味を表します。",
+      "longExplanation": "「～ておく」は、動詞のて形に補助動詞「おく」が接続した構文で、主に以下の意味を表します。①将来の目的や予定された事態のために、事前に準備として動作を行うこと（事前準備）。②その後の利用のために必要な処置を済ませておくこと（事後処理）。③その状態のまま放置しておくこと。日常会話では「～とく」（例：買っておく→買っとく、しておきます→しときます）と縮約された口語形が頻繁に用いられます。",
+      "formation": "動詞て形 ＋ おく（口語短縮形：～とく）",
+      "examples": [
+        {
+          "translation": "駅で切符を買っておこう。"
+        },
+        {
+          "translation": "明日早く起きるために、今晩早く寝ておきます。"
+        },
+        {
+          "translation": "試験前に勉強しておかないと、失敗するかもしれない。"
+        },
+        {
+          "translation": "彼が到着する前に、部屋をきれいに掃除しておきましょう。"
+        }
+      ]
+    },
+    "ja_Verb_37": {
+      "title": "～てくださいませんか (～te kudasaimasen ka)",
+      "shortExplanation": "相手に対して敬意を込めて丁寧に依頼する表現で、「〜してくれませんか」「〜していただけませんか」という意味を表します。",
+      "longExplanation": "「～てくださいませんか」は、尊敬語「くださる」に丁寧の助動詞「ます」の否定形「ません」と疑問の終助詞「か」が接続した丁寧な依頼表現です。「～てください」よりも相手への配慮が深く、相手の意向を伺いながら依頼するため、より敬意が高く角が立ちません。目上の人やお客様、改まった場面での依頼・お願いとして広く用いられます。",
+      "formation": "動詞て形 ＋ くださいませんか",
+      "examples": [
+        {
+          "translation": "コーヒーを飲んでくださいませんか。"
+        },
+        {
+          "translation": "ドアを閉めてくださいませんか。"
+        },
+        {
+          "translation": "明日お昼に会ってくださいませんか。"
+        },
+        {
+          "translation": "その資料を送ってくださいませんか。"
+        }
+      ]
+    },
+    "ja_Verb_38": {
+      "title": "～てくださる (～te kudasaru)",
+      "shortExplanation": "目上の人などが話し手（または身内）のために親切な行為をしてくれることを敬って表し、「〜してくれる」の尊敬表現です。",
+      "longExplanation": "「～てくださる」は、「～てくれる」の尊敬語表現です。目上の人や敬意を払うべき相手が、話し手やその身内（内グループ）のために恩恵となる行為をしてくれることを敬意と感謝を込めて表します。動作主（相手）は助詞「が」や「は」で示されます。丁寧な表現として「～てくださいます」「～てくださいました」の形で頻繁に用いられます。",
+      "formation": "動詞て形 ＋ くださる（丁寧体：～てくださいます／～てくださいました）",
+      "examples": [
+        {
+          "translation": "先生が手伝ってくださる。"
+        },
+        {
+          "translation": "お母さんが美味しい料理を作ってくださる。"
+        },
+        {
+          "translation": "友達が私を駅まで送ってくださる。"
+        },
+        {
+          "translation": "部長がすぐに質問に答えてくださる。"
+        }
+      ]
+    },
+    "ja_Verb_39": {
+      "title": "～てくる (～te kuru)",
+      "shortExplanation": "過去から現在に向かって動作・状態が継続してきたことや、変化や感覚が生じ始めることを表し、「〜してくる」という意味を表します。",
+      "longExplanation": "「～てくる」は、動詞のて形に補助動詞「くる」が接続した文型で、主に以下の意味を表します。①時間的推移：過去から現在に至るまで動作や状態が継続・発展してきたこと（「ずっと研究を続けてきた」など）。②状態・感覚の出現：自然現象や心理、感覚などの変化が徐々に現れ始めること（「寒くなってきた」「分かってきた」など）。③空間的移動：話し手の視点に向かって近づいてくる動作や、「～してから戻る」こと。未来へ向かう「～ていく」と対比されます。",
+      "formation": "動詞て形 ＋ くる（過去形：～てきた）",
+      "examples": [
+        {
+          "translation": "最近、日本語が分かってくるようになりました。"
+        },
+        {
+          "translation": "寒くなってきたので、コートを着ましょう。"
+        },
+        {
+          "translation": "雨がやんできました。"
+        },
+        {
+          "translation": "彼がだんだん怖くなってきた。"
+        }
+      ]
+    },
+    "ja_Verb_40": {
+      "title": "～てくれませんか (～te kuremasen ka)",
+      "shortExplanation": "相手に対して好意的な行為を依頼・要請する丁寧な表現で、「〜してくれませんか」「〜してくれますか」という意味を表します。",
+      "longExplanation": "「～てくれませんか」は、動詞のて形に補助動詞「くれる」の丁寧否定疑問形「くれませんか」が接続した依頼表現です。相手に自分に対する手助けや行為を丁寧に頼む際に用います。親しい間柄、同僚、友人、あるいは目下の人に対して親愛の情を込めて依頼するのに適しています。目上の人や改まった場面では、より敬意の高い「～ていただけませんか」を用いるのが適切です。",
+      "formation": "動詞て形 ＋ くれませんか",
+      "examples": [
+        {
+          "translation": "ドアを開けてくれませんか。"
+        },
+        {
+          "translation": "これを見てくれませんか。"
+        },
+        {
+          "translation": "手伝ってくれませんか。"
+        },
+        {
+          "translation": "明日、迎えに来てくれませんか。"
+        }
+      ]
+    },
+    "ja_Verb_41": {
+      "title": "～てくれる (～te kureru)",
+      "shortExplanation": "他者が話し手（または身内）のために親切にある行為をしてくれることを感謝の気持ちを込めて表し、「〜してくれる」という意味を表します。",
+      "longExplanation": "「～てくれる」は、動詞のて形に授受の補助動詞「くれる」が接続した文法表現です。他者が話し手自身や話し手の身内（内グループ）に対して、恩恵や利益となる行為を行ってくれることを表します。相手の親切に対する感謝の気持ちが含まれるのが特徴です。行為を行う主体は助詞「が」や「は」で示されます。丁寧な表現は「～てくれます」「～てくれました」となります。",
+      "formation": "動詞て形 ＋ くれる（丁寧体：～てくれます／～てくれました）",
+      "examples": [
+        {
+          "translation": "友達が宿題を手伝ってくれました。"
+        },
+        {
+          "translation": "弟が部屋を掃除してくれた。"
+        },
+        {
+          "translation": "先生が質問に答えてくれます。"
+        },
+        {
+          "translation": "彼女が手紙を書いてくれる。"
+        }
+      ]
+    },
+    "ja_Verb_42": {
+      "title": "～てさしあげる (～te sashiageru)",
+      "shortExplanation": "話し手（または身内）が目上の人などのために親切に何かを行うことをへりくだって表し、「〜してあげる」の謙譲表現です。",
+      "longExplanation": "「～てさしあげる」は、「～てあげる」の謙譲語表現です。話し手（または身内）が、目上の人やお客様など敬意を払うべき相手のために何か親切な行為・手助けをすることを、へりくだって表します。ただし、「恩恵を施す（親切をしてやる）」というニュアンスが含まれるため、相手の面前で直接使うと恩着せがましく聞こえる場合があり、現代の敬語マナーでは「お／ご…する」（例：「お持ちしましょうか」）を用いる方が好まれることも多いです。",
+      "formation": "動詞て形 ＋ さしあげる（丁寧体：～てさしあげます／～てさしあげましょうか）",
+      "examples": [
+        {
+          "translation": "お茶を入れてさしあげます。"
+        },
+        {
+          "translation": "メッセージを送ってさしあげました。"
+        },
+        {
+          "translation": "荷物を持ってさしあげましょうか。"
+        },
+        {
+          "translation": "お電話をかけてさしあげます。"
+        }
+      ]
+    },
+    "ja_Verb_43": {
+      "title": "～てしまう (～te shimau)",
+      "shortExplanation": "動作の完全な完了を表すか、意図しない事態が生じて後悔や残念な気持ちを表し、「すっかり〜してしまう」または「〜してしまった（後悔）」という意味を表します。",
+      "longExplanation": "「～てしまう」は、動詞のて形に補助動詞「しまう」が接続した文法形式です。主に2つの用法があります。①後悔・遺憾：予期しないことや不都合な事態が起こってしまい、残念に思ったり後悔したりする気持ちを表します（「忘れてしまった」「言ってしまった」など）。②完了：動作が完全に最後まで終わること、すっかりその状態になることを表します（「全部食べてしまった」など）。日常会話では「～ちゃう／～じゃう」（例：食べちゃう、読んじゃう）というくだけた口語形がよく用いられます。",
+      "formation": "動詞て形 ＋ しまう（丁寧体：～てしまいました；口語短縮形：～ちゃう／～じゃう）",
+      "examples": [
+        {
+          "translation": "ケーキを全部食べてしまった。"
+        },
+        {
+          "translation": "宿題を忘れてしまいました。"
+        },
+        {
+          "translation": "彼に秘密を言ってしまった。"
+        },
+        {
+          "translation": "値札を見ずに高い服を買ってしまった。"
+        }
+      ]
+    }
+  }
+}

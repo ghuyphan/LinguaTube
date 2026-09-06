@@ -1,0 +1,221 @@
+[
+  {
+    "id": "zh_连O也都V_289",
+    "language": "zh",
+    "pattern": "连 O 也/都 V",
+    "title": "连 O 也/都 V (even V O)",
+    "shortExplanation": "even V O",
+    "longExplanation": "even V O. Pinyin: lián O yě/ dōu V",
+    "formation": "lián O yě/ dōu V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "你太厉害了，连中文报纸都看得懂。",
+        "romanization": "nǐ tài lìhai le， lián Zhōngwén bàozhǐ dōu kàn dé dǒng。",
+        "translation": "You are so awesome/skilled you can even understand Chinese newspapers."
+      }
+    ]
+  },
+  {
+    "id": "zh_连S也都V_290",
+    "language": "zh",
+    "pattern": "连 S 也/都 V",
+    "title": "连 S 也/都 V (even S V)",
+    "shortExplanation": "even S V",
+    "longExplanation": "even S V. Pinyin: lián S yě/ dōu V",
+    "formation": "lián S yě/ dōu V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "如果连你自己都不喜欢自己，又怎么能让别人喜欢你呢？",
+        "romanization": "rúguǒ lián nǐ zìjǐ dōu bù xǐhuan zìjǐ， yòu zěnme néng ràng biéren xǐhuan nǐ ne？",
+        "translation": "If even you don’t like yourself, how can you let others like you?"
+      }
+    ]
+  },
+  {
+    "id": "zh_否则_291",
+    "language": "zh",
+    "pattern": "否则",
+    "title": "否则 (if not, otherwise)",
+    "shortExplanation": "if not, otherwise",
+    "longExplanation": "if not, otherwise. Pinyin: fǒuzé",
+    "formation": "fǒuzé",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他一定有重要的事找你，否则不会打这么多次电话来。",
+        "romanization": "tā yīdìng yǒu zhòngyào de shì zhǎo nǐ， fǒuzé bùhuì dǎ zhème duōcì diànhuà lái。",
+        "translation": "He must have something important to see (lit. look for) you about, otherwise he won't call so many times."
+      }
+    ]
+  },
+  {
+    "id": "zh_无论不管Q都_292",
+    "language": "zh",
+    "pattern": "无论/不管 Q 都",
+    "title": "无论/不管 Q 都 (regardless of Q)",
+    "shortExplanation": "regardless of Q",
+    "longExplanation": "regardless of Q. Pinyin: wúlùn/ bùguǎn Q dōu",
+    "formation": "wúlùn/ bùguǎn Q dōu",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_然而_294",
+    "language": "zh",
+    "pattern": "然而",
+    "title": "然而 (but)",
+    "shortExplanation": "but",
+    "longExplanation": "but. Pinyin: rán'ér",
+    "formation": "rán'ér",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_同时_298",
+    "language": "zh",
+    "pattern": "同时……",
+    "title": "同时…… (at the same time, …)",
+    "shortExplanation": "at the same time, …",
+    "longExplanation": "at the same time, …. Pinyin: tóngshí……",
+    "formation": "tóngshí……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "阅读能丰富你的知识，同时还会丰富你的情感。",
+        "romanization": "yuèdú néng fēngfù nǐ de zhīshi， tóngshí hái huì fēngfù nǐ de qínggǎn。",
+        "translation": "Reading can enrich your knowledge and (at the same time) [it will] enrich your affects."
+      }
+    ]
+  },
+  {
+    "id": "zh_的同时_299",
+    "language": "zh",
+    "pattern": "……的同时",
+    "title": "……的同时 (at the same time when…)",
+    "shortExplanation": "at the same time when…",
+    "longExplanation": "at the same time when…. Pinyin: …… de tóngshí",
+    "formation": "…… de tóngshí",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "在学习汉语的同时，我还了解了中国的文化。",
+        "romanization": "zài xuéxí Hànyǔ de tóngshí， wǒ hái liǎojiě le Zhōngguó de wénhuà。",
+        "translation": "While learning Chinese (at the same time), I also learned about Chinese culture."
+      }
+    ]
+  },
+  {
+    "id": "zh_并并且V_300",
+    "language": "zh",
+    "pattern": "并/并且 V",
+    "title": "并/并且 V (and V)",
+    "shortExplanation": "and V",
+    "longExplanation": "and V. Pinyin: bìng/ bìngqiě V",
+    "formation": "bìng/ bìngqiě V",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_再也_303",
+    "language": "zh",
+    "pattern": "再……也......",
+    "title": "再……也...... (no matter how… still…)",
+    "shortExplanation": "no matter how… still…",
+    "longExplanation": "no matter how… still…. Pinyin: zài…… yě......",
+    "formation": "zài…… yě......",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "事情已经发生了，你再后悔也无法改变，别伤心了。",
+        "romanization": "shìqing yǐjīng fāshēng le， nǐ zài hòuhuǐ yě wúfǎ gǎibiàn， bié shāngxīn le。",
+        "translation": "Things have already happened, no matter how you regret it you (still) won’t be able to change it, don't be sad."
+      }
+    ]
+  },
+  {
+    "id": "zh_对于N_304",
+    "language": "zh",
+    "pattern": "对于 N",
+    "title": "对于 N (regarding N)",
+    "shortExplanation": "regarding N",
+    "longExplanation": "regarding N. Pinyin: duìyú N",
+    "formation": "duìyú N",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_关于N_307",
+    "language": "zh",
+    "pattern": "关于 N",
+    "title": "关于 N (about N)",
+    "shortExplanation": "about N",
+    "longExplanation": "about N. Pinyin: guānyú N",
+    "formation": "guānyú N",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "关于这次调查计划，经理说有很多不清楚的地方。",
+        "romanization": "guānyú zhè cì diàochá jìhuà， jīnglǐ shuō yǒu hěn duō bùqīngchu de dìfang。",
+        "translation": "About the survey plan, the manager said that there are many unclear places."
+      }
+    ]
+  },
+  {
+    "id": "zh_MMN都_308",
+    "language": "zh",
+    "pattern": "M + M + (N) + 都",
+    "title": "M + M + (N) + 都 (every N)",
+    "shortExplanation": "every N",
+    "longExplanation": "every N. Pinyin: M + M + (N) + dōu",
+    "formation": "M + M + (N) + dōu",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "件件小事都应该被看成是一次学习的机会。",
+        "romanization": "jiàn jiàn xiǎoshì dōu yīnggāi bèi kànchéng shì yīcì xuéxí de jīhuì。",
+        "translation": "Each small thing should (all) be seen as an opportunity to learn."
+      }
+    ]
+  },
+  {
+    "id": "zh_相反_309",
+    "language": "zh",
+    "pattern": "相反，……",
+    "title": "相反，…… (on the other hand, …)",
+    "shortExplanation": "on the other hand, …",
+    "longExplanation": "on the other hand, …. Pinyin: xiāngfǎn，……",
+    "formation": "xiāngfǎn，……",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_和跟N相反_314",
+    "language": "zh",
+    "pattern": "和/跟 N 相反",
+    "title": "和/跟 N 相反 (to be the opposite of N)",
+    "shortExplanation": "to be the opposite of N",
+    "longExplanation": "to be the opposite of N. Pinyin: hé/ gēn N xiāngfǎn",
+    "formation": "hé/ gēn N xiāngfǎn",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "调查结果和他们想的几乎完全相反。",
+        "romanization": "diàochájiéguǒ hé tāmen xiǎng de jīhūwánquán xiāngfǎn。",
+        "translation": "The results of the survey are almost completely the opposite of what they thought."
+      }
+    ]
+  },
+  {
+    "id": "zh_大概也许VA_315",
+    "language": "zh",
+    "pattern": "大概/也许 V/A",
+    "title": "大概/也许 V/A (probably/perhaps V/A)",
+    "shortExplanation": "probably/perhaps V/A",
+    "longExplanation": "probably/perhaps V/A. Pinyin: dàgài/ yěxǔ V/A",
+    "formation": "dàgài/ yěxǔ V/A",
+    "level": "HSK 4",
+    "examples": []
+  }
+]

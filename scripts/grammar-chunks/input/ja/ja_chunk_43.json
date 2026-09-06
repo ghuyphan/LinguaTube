@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Noun_47",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun なくして～はない (Noun nakushite ~ wa nai)",
+    "shortExplanation": "Expresses 'without ~, there can't be ~'; 'can't do ~ without first doing ~'.",
+    "longExplanation": "The なくして grammar point is used to indicate that something is indispensable or necessary for something else to occur. 'Without' the first noun, the second part 'cannot exist/occur'. It demonstrates the principle of causality or necessity.",
+    "formation": "Noun + なくして + Sentence ～はない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "努力なくして成功はない。",
+        "romanization": "Doryoku nakushite seikou wa nai.",
+        "translation": "There is no success without effort."
+      },
+      {
+        "sentence": "時間なくして完璧な作品は作れない。",
+        "romanization": "Jikan nakushite kanpeki na sakuhin wa tsukurenai.",
+        "translation": "You cannot create a perfect work without time."
+      },
+      {
+        "sentence": "経験なくして成長はない。",
+        "romanization": "Keiken nakushite seichou wa nai.",
+        "translation": "There is no growth without experience."
+      },
+      {
+        "sentence": "リーダーシップなくしてグループの成功はない。",
+        "romanization": "Riidaashippu nakushite guruupu no seikou wa nai.",
+        "translation": "Without leadership, there can be no success for the group."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_48",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun なしでは～ない (Noun nashi de wa ~nai)",
+    "shortExplanation": "Expresses the necessity of something; 'cannot do without', 'not possible without'.",
+    "longExplanation": "Noun なしでは～ない is used to emphasize that something is indispensable. It can be translated as 'cannot do without' or 'not possible without.'",
+    "formation": "Noun + なしでは～ない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "水なしでは生きられない。",
+        "romanization": "Mizu nashi de wa ikirarenai.",
+        "translation": "We cannot live without water."
+      },
+      {
+        "sentence": "彼の助けなしでは、この問題を解決することはできない。",
+        "romanization": "Kare no tasuke nashi de wa, kono mondai o kaiketsu suru koto wa dekinai.",
+        "translation": "Without his help, I cannot solve this problem."
+      },
+      {
+        "sentence": "コンピュータなしでは、現代のビジネスは成り立たない。",
+        "romanization": "Konpyuuta nashi de wa, gendai no bijinesu wa naritatanai.",
+        "translation": "Modern business cannot function without computers."
+      },
+      {
+        "sentence": "友情なしでは、人生は退屈だろう。",
+        "romanization": "Yuujou nashi de wa, jinsei wa taikutsu darou.",
+        "translation": "Life would be boring without friendship."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_49",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun なしには～ない (Noun nashi ni wa ~nai)",
+    "shortExplanation": "Means 'without', 'cannot do without', 'not possible without'.",
+    "longExplanation": "The なしには～ない grammar point is used to express that without the mentioned noun, something is not possible. It can be translated as 'cannot (do) without ~', or 'not possible without ~'.",
+    "formation": "Noun + なしには + Verb-negative",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "お金なしには生活ができない。",
+        "romanization": "Okane nashi ni wa seikatsu ga dekinai.",
+        "translation": "I cannot get by without money."
+      },
+      {
+        "sentence": "愛情なしには子育てができない。",
+        "romanization": "Aijou nashi ni wa kosodate ga dekinai.",
+        "translation": "You cannot raise a child without love."
+      },
+      {
+        "sentence": "彼なしにはこのプロジェクトを進められない。",
+        "romanization": "Kare nashi ni wa kono purojekuto o susumerarenai.",
+        "translation": "Without him, I cannot move this project forward."
+      },
+      {
+        "sentence": "水なしには生きていけない。",
+        "romanization": "Mizu nashi ni wa ikite ikenai.",
+        "translation": "I cannot live without water."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_50",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ならいざ知らず (~nara izashirazu)",
+    "shortExplanation": "Expresses 'maybe X is possible, but Y is definitely not'. Often 'let alone...'.",
+    "longExplanation": "「Xならいざ知らず、Yは…」 emphasizes that while X might be possible or acceptable, Y is out of the question or even more difficult. It can be translated as 'I could understand X, but Y is impossible' or 'Maybe X, but definitely not Y.'",
+    "formation": "Noun1 + ならいざ知らず + Noun2 (comment)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "数学ならいざ知らず、物理なんて全然わからない。",
+        "romanization": "Suugaku nara iza shirazu, butsuri nante zenzen wakaranai.",
+        "translation": "Math might be manageable, but as for physics, I'm completely clueless."
+      },
+      {
+        "sentence": "5キロならいざ知らず、10キロなんて走れません。",
+        "romanization": "Go kiro nara iza shirazu, juu kiro nante hashiremasen.",
+        "translation": "Maybe I could run 5 kilometers, but 10 kilometers is out of the question."
+      },
+      {
+        "sentence": "日本語ならいざ知らず、中国語なんて話せない。",
+        "romanization": "Nihongo nara iza shirazu, chuugokugo nante hanasenai.",
+        "translation": "I might be able to speak Japanese, but Chinese is impossible for me."
+      },
+      {
+        "sentence": "冷たい水ならいざ知らず、熱い水で泳ぐなんて考えたこともない。",
+        "romanization": "Tsumetai mizu nara iza shirazu, atsui mizu de oyogu nante kangaeta koto mo nai.",
+        "translation": "Maybe cold water, but swimming in hot water never even crossed my mind."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_51",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + ならでは (~nara de wa)",
+    "shortExplanation": "Expresses something unique or characteristic only of that noun; 'only found in', 'only possible with'.",
+    "longExplanation": "The pattern Noun + ならでは highlights something that is unique or distinctive to that noun, suggesting that only this place, person, or thing could possess or create it.",
+    "formation": "Noun + ならでは",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "これは日本ならではの風景ですね。",
+        "romanization": "Kore wa Nihon nara dewa no fuukei desu ne.",
+        "translation": "This is a landscape you can only find in Japan."
+      },
+      {
+        "sentence": "新鮮な魚はこの町ならではの特産品です。",
+        "romanization": "Shinsen na sakana wa kono machi nara dewa no tokusanhin desu.",
+        "translation": "Fresh fish is a specialty unique to this town."
+      },
+      {
+        "sentence": "彼の技術は彼ならではのものだ。",
+        "romanization": "Kare no gijutsu wa kare nara dewa no mono da.",
+        "translation": "His skills are unique to him."
+      },
+      {
+        "sentence": "この手作りの一品は、彼女ならではのものです。",
+        "romanization": "Kono tezukuri no ippin wa, kanojo nara dewa no mono desu.",
+        "translation": "This handmade item is something only she could produce."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_52",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun なり Noun なり (A nari B nari)",
+    "shortExplanation": "Lists alternatives of the same kind; 'either A or B', 'A or B, for example'.",
+    "longExplanation": "The pattern AなりBなり is used to suggest alternatives or options, usually of the same category. It can be translated as 'whether A or B' or 'A or B, for example'.",
+    "formation": "Noun + なり + Noun + なり",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "映画なり、音楽なり、何か趣味はありますか。",
+        "romanization": "Eiga nari, ongaku nari, nanika shumi wa arimasu ka?",
+        "translation": "Do you have any hobbies, such as movies or music?"
+      },
+      {
+        "sentence": "紅茶なり、コーヒーなり、何か飲み物をください。",
+        "romanization": "Koucha nari, koohii nari, nanika nomimono o kudasai.",
+        "translation": "Please give me something to drink, like tea or coffee."
+      },
+      {
+        "sentence": "パンなり、おにぎりなり、何か食べてください。",
+        "romanization": "Pan nari, onigiri nari, nanika tabete kudasai.",
+        "translation": "Please eat something—bread, onigiri, or whatever you’d like."
+      },
+      {
+        "sentence": "タクシーなり、バスなりに乗って来てください。",
+        "romanization": "Takushii nari, basu nari ni notte kite kudasai.",
+        "translation": "Please come by either taxi or bus."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_53",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun なりとも (~nari tomo)",
+    "shortExplanation": "Indicates even a small amount or degree; 'at least', 'even a little'.",
+    "longExplanation": "Noun + なりとも is used to show that even a small amount or degree is valuable or needed. It translates as 'at least' or 'even a little' in English.",
+    "formation": "Noun + なりとも",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "時間が限られているので、一時間なりとも練習すべきだ。",
+        "romanization": "Jikan ga kagirarete iru node, ichi-jikan nari tomo renshuu subeki da.",
+        "translation": "Since time is limited, you should practice for at least an hour."
+      },
+      {
+        "sentence": "彼には一言なりとも謝罪の言葉を聞きたい。",
+        "romanization": "Kare ni wa hitokoto nari tomo shazai no kotoba o kikitai.",
+        "translation": "I’d like to hear at least a word of apology from him."
+      },
+      {
+        "sentence": "このプロジェクトには、一人なりともメンバーが必要だ。",
+        "romanization": "Kono purojekuto ni wa, hitori nari tomo membaa ga hitsuyou da.",
+        "translation": "We need at least one member for this project."
+      },
+      {
+        "sentence": "あなたには、一言なりとも感謝の言葉を述べたい。",
+        "romanization": "Anata ni wa, hitokoto nari tomo kansha no kotoba o nobetai.",
+        "translation": "I want to offer at least a word of gratitude to you."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_54",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に Noun を重ねて (A ni B wo kasanete)",
+    "shortExplanation": "This expression is used to describe repeated actions or states, 'one after another' or 'pile up'.",
+    "longExplanation": "The structure Noun に Noun を重ねて is used to indicate the repetition of actions or states. In English, this could be translated as 'one after another' or 'pile up'. It's typically used to emphasize a great deal of continuation or accumulation of something.",
+    "formation": "Noun に Noun を重ねて",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女は失敗に失敗を重ねて、とうとう会社を辞めた。",
+        "romanization": "Kanojo wa shippai ni shippai wo kasanete, toutou kaisha wo yameta.",
+        "translation": "She piled up failures upon failures and finally quit the company."
+      },
+      {
+        "sentence": "仕事に仕事を重ねて、彼は疲れ果てた。",
+        "romanization": "Shigoto ni shigoto wo kasanete, kare wa tsukarehateta.",
+        "translation": "He piled up work upon work and was completely exhausted."
+      },
+      {
+        "sentence": "彼は試験に不合格になり、失望に失望を重ねていた。",
+        "romanization": "Kare wa shiken ni fugōkaku ni nari, shitsubō ni shitsubō wo kasanete ita.",
+        "translation": "He failed the exam and kept piling up his disappointments."
+      },
+      {
+        "sentence": "彼は問題に問題を重ねて、とうとう退学になった。",
+        "romanization": "Kare wa mondai ni mondai wo kasanete, toutou taigaku ni natta.",
+        "translation": "He kept piling up problems upon problems until he was finally expelled."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_55",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun にあっては (Noun ni atte ha)",
+    "shortExplanation": "Indicates a specific situation or environment in which something happens or is the case.",
+    "longExplanation": "The にあっては grammar point is used after a noun that indicates a specific situation or environment. It expresses the context in which an event takes place, or the circumstances that pertain to the information to be explained or highlighted. It can be translated as 'in', 'at' or 'under' in English.",
+    "formation": "Noun + にあっては",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "戦争時にあっては、すべての人々が困難に直面していました。",
+        "romanization": "Sensouji ni atte wa, subete no hito ga konnan ni chokumen shiteimashita.",
+        "translation": "In wartime, all people were facing difficulties."
+      },
+      {
+        "sentence": "経済危機にあっては、多くの企業が倒産の危機に瀕している。",
+        "romanization": "Keizai kiki ni atte wa, ooku no kigyou ga tousan no kiki ni hinshite iru.",
+        "translation": "In the economic crisis, many companies are on the verge of bankruptcy."
+      },
+      {
+        "sentence": "不況下にあっては、どの企業も経費削減を迫られている。",
+        "romanization": "Fukyouka ni atte wa, dono kigyou mo keihi sakugen o semararete iru.",
+        "translation": "In times of recession, every company is forced to cut costs."
+      },
+      {
+        "sentence": "改革期にあっては、新しいアイデアを大切にする必要がある。",
+        "romanization": "Kaikaku ki ni atte wa, atarashii aidea o taisetsu ni suru hitsuyou ga aru.",
+        "translation": "In a period of reform, it's necessary to value new ideas."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_56",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun にあるまじき Noun (Noun ni aru majiki Noun)",
+    "shortExplanation": "Expresses the idea of 'unfitting', 'unbecoming' or 'inappropriate'.",
+    "longExplanation": "The grammar point Noun にあるまじき Noun is used to express that the noun doesn't fit or is inappropriate in some way for the other noun. It can translate loosely as 'unfitting for', 'unbecoming of' or 'something that must not be for a/ the noun'.",
+    "formation": "Noun1 にあるまじき Noun2",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は教師にあるまじき言動をとった。",
+        "romanization": "Kare wa kyoushi ni aru majiki gendou wo totta.",
+        "translation": "He took actions that are unbecoming of a teacher."
+      },
+      {
+        "sentence": "これは人間にあるまじき行為だ。",
+        "romanization": "Kore wa ningen ni aru majiki koui da.",
+        "translation": "This is an act that is unfitting for a human."
+      },
+      {
+        "sentence": "彼女は社長にあるまじき振る舞いをした。",
+        "romanization": "Kanojo wa shachou ni aru majiki furumai wo shita.",
+        "translation": "She behaved in a way that is unbecoming of a president."
+      },
+      {
+        "sentence": "それは社会人にあるまじき行動だ。",
+        "romanization": "Sore wa shakaijin ni aru majiki koudou da.",
+        "translation": "That is a behaviour that is not suitable for an adult."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_57",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun にして (Noun ni shite)",
+    "shortExplanation": "Expresses the idea 'even for', 'even though', or 'in spite of'.",
+    "longExplanation": "The grammar point Noun にして expresses a sense of surprise, disbelief or unexpectedness in response to a situation or circumstance. Generally, it is used when the speaker wants to convey that something is unexpected even for someone (noun) or in their situation.",
+    "formation": "Noun + にして",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は医者にしてその基本的な知識がないのが信じられない。",
+        "romanization": "Kare wa isha ni shite sono kihonteki na chishiki ga nai no ga shinjirarenai.",
+        "translation": "I can't believe that even as a doctor, he doesn't have that basic knowledge."
+      },
+      {
+        "sentence": "彼は経験豊富な運転手にして、事故を起こした。",
+        "romanization": "Kare wa keiken houfu na untenshu ni shite, jiko wo okoshita.",
+        "translation": "Even as an experienced driver, he had an accident."
+      },
+      {
+        "sentence": "彼は成績優秀な生徒にして、その問題が解けなかった。",
+        "romanization": "Kare wa seiseki yuushuu na seito ni shite, sono mondai ga tokenakatta.",
+        "translation": "Even as an excellent student, he couldn't solve that problem."
+      },
+      {
+        "sentence": "彼は勉強家にして、その問題を理解できなかった。",
+        "romanization": "Kare wa benkyouka ni shite, sono mondai o rikai dekinakatta.",
+        "translation": "Even as a studious person, he could not understand that problem."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_58",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun にして初めて (Noun nishite hajimete)",
+    "shortExplanation": "Expresses 'only when/after... for the first time'.",
+    "longExplanation": "The phrase Noun にして初めて is used to express a sense of realization or experience that only came about or was felt after reaching that particular stage or status. In English, it could be translated as 'only when/after... for the first time'.",
+    "formation": "Noun + にして初めて",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "大人にして初めて、親の苦労が分かった。",
+        "romanization": "Otona ni shite hajimete, oya no kurou ga wakatta.",
+        "translation": "Only when I became an adult did I understand my parents' struggles for the first time."
+      },
+      {
+        "sentence": "彼は40歳にして初めて、海外旅行を経験した。",
+        "romanization": "Kare wa yonjuu-sai ni shite hajimete, kaigai ryokou o keiken shita.",
+        "translation": "Only when he turned 40 did he travel abroad for the first time."
+      },
+      {
+        "sentence": "彼女は親にして初めて、子育ての大変さを理解した。",
+        "romanization": "Kanojo wa oya ni shite hajimete, kosodate no taihensa o rikai shita.",
+        "translation": "It was only after she became a parent that she realized how challenging raising a child can be."
+      },
+      {
+        "sentence": "社長にして初めて、会社全体の重責を痛感した。",
+        "romanization": "Shachou ni shite hajimete, kaisha zentai no juuseki o tsuukan shita.",
+        "translation": "Only when he became president did he feel the full weight of responsibility for the entire company."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_59",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun にすら (〜ni sura)",
+    "shortExplanation": "Expresses the concept of 'even'; 'even in', 'even as', 'even to'.",
+    "longExplanation": "The 〜にすら grammar point is used to show surprise that an action or situation applies even to the noun in question. It can be translated into English as 'even in', 'even as', or 'even to'. It's often used with negative or unexpected statements, emphasizing that 'even' in this particular case something can't or doesn't happen.",
+    "formation": "Noun + にすら",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼にすらその問題は解けなかった。",
+        "romanization": "Kare ni sura sono mondai wa tokenakatta.",
+        "translation": "Even he could not solve that problem."
+      },
+      {
+        "sentence": "彼女はテストにすら合格しなかった。",
+        "romanization": "Kanojo wa tesuto ni sura goukaku shinakatta.",
+        "translation": "She did not even pass the test."
+      },
+      {
+        "sentence": "この犬は自分の名前にすら反応しない。",
+        "romanization": "Kono inu wa jibun no namae ni sura hannou shinai.",
+        "translation": "This dog doesn't even respond to its own name."
+      },
+      {
+        "sentence": "彼にすら話す余裕がなかった。",
+        "romanization": "Kare ni sura hanasu yoyuu ga nakatta.",
+        "translation": "I didn't even have the time to talk to him."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_60",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun にとどまらず～も (~ ni todomarazu ~ mo)",
+    "shortExplanation": "This expresses the idea of 'not only...but also', 'not stopping at...'.",
+    "longExplanation": "This grammar point is used to express that something is not limited to just one thing (the thing before にとどまらず), but also includes other things (the thing after も). It can be translated as 'not only... but also...' or 'not stopping at...'.",
+    "formation": "Noun + にとどまらず + Noun + も",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "このアプリは、日本語にとどまらず、他の言語もサポートしています。",
+        "romanization": "Kono apuri wa, nihongo ni todomarazu, hoka no gengo mo sapooto shite imasu.",
+        "translation": "This app not only supports Japanese, but also other languages."
+      },
+      {
+        "sentence": "彼は、音楽にとどまらず、映画製作にも興味がある。",
+        "romanization": "Kare wa, ongaku ni todomarazu, eiga seisaku ni mo kyoumi ga aru.",
+        "translation": "He is not only interested in music, but also in filmmaking."
+      },
+      {
+        "sentence": "彼の影響は、家族にとどまらず、地域全体にも及んでいます。",
+        "romanization": "Kare no eikyou wa, kazoku ni todomarazu, chiiki zentai ni mo oyonde imasu.",
+        "translation": "His influence extends not only to his family but also to the entire region."
+      },
+      {
+        "sentence": "彼女の才能は、絵画にとどまらず、文学にも及ぶ。",
+        "romanization": "Kanojo no sainou wa, kaiga ni todomarazu, bungaku ni mo oyobu.",
+        "translation": "Her talent extends not only to painting, but also to literature."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_61",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun にひきかえ Noun は (~ni hikikae ~ wa)",
+    "shortExplanation": "Represents 'in contrast to', 'as opposed to'.",
+    "longExplanation": "The grammar point Noun にひきかえ Noun は is used in Japanese to express contrast or opposition between two nouns. It translates to 'as opposed to' or 'in contrast to' in English. The first noun represents what is being contrasted against and the second noun represents the main subject.",
+    "formation": "Noun 1 + にひきかえ + Noun 2 + は",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の親切さにひきかえ、彼女は無感情だ。",
+        "romanization": "Kare no shinsetsusa ni hikikae, kanojo wa mukanjou da.",
+        "translation": "In contrast to his kindness, she is emotionless."
+      },
+      {
+        "sentence": "夏にひきかえ、冬は雪で寒い。",
+        "romanization": "Natsu ni hikikae, fuyu wa yuki de samui.",
+        "translation": "As opposed to summer, winter is cold with snow."
+      },
+      {
+        "sentence": "日本の駅にひきかえ、アメリカの駅は広い。",
+        "romanization": "Nihon no eki ni hikikae, Amerika no eki wa hiroi.",
+        "translation": "As opposed to Japanese stations, American stations are wide."
+      },
+      {
+        "sentence": "昔にひきかえ、現代はテクノロジーが進歩した。",
+        "romanization": "Mukashi ni hikikae, gendai wa tekunorojii ga shinpo shita.",
+        "translation": "As opposed to the old days, modern times have advanced technology."
+      }
+    ]
+  }
+]

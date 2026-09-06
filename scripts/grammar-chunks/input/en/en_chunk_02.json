@@ -1,0 +1,334 @@
+[
+  {
+    "id": "en_a1_16",
+    "language": "en",
+    "pattern": "There is / there are",
+    "title": "There is / there are - existence",
+    "shortExplanation": "There is a park. There are five rooms.",
+    "longExplanation": "The construction there is/are means “exists/exist”, “is”.\n• There is + singular noun. number\n• There are + plural noun. number\nNegation: There isn't / There aren't\nQuestion: Is there...? / Are there...?",
+    "formation": "There is a park. There are five rooms.",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "There is a cinema near here.",
+        "translation": "There is a cinema nearby."
+      },
+      {
+        "sentence": "Are there any shops nearby? — Yes, there are.",
+        "translation": "Are there any shops nearby? - Yes."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_17",
+    "language": "en",
+    "pattern": "Prepositions of place",
+    "title": "Prepositions of place: in, on, at, under, next to, behind, between",
+    "shortExplanation": "in the box, on the table, at the station",
+    "longExplanation": "Three main prepositions:\n• in = inside something: in the box, in the city, in bed\n• on = on the surface: on the table, on the wall, on the left\n• at = at a specific point: at the station, at home, at school\nOthers: under (under), next to/beside (near), behind (behind), in front of (in front), between (between), opposite (opposite)",
+    "formation": "in the box, on the table, at the station",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "The keys are on the table.",
+        "translation": "The keys are on the table."
+      },
+      {
+        "sentence": "She is in the kitchen.",
+        "translation": "She's in the kitchen."
+      },
+      {
+        "sentence": "Meet me at the entrance.",
+        "translation": "Meet me at the entrance."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_18",
+    "language": "en",
+    "pattern": "Imperative",
+    "title": "Imperative",
+    "shortExplanation": "Open your books. Don't run. Please sit down.",
+    "longExplanation": "Imperative = base form of a verb without a subject.\nNegation: Don't + infinitive\nPlease makes the request politer (at the beginning or end).\nTo include the speaker: Let's + infinitive → Let's go! Let's eat!",
+    "formation": "Open your books. Don't run. Please sit down.",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "Turn left at the crossroads.",
+        "translation": "Turn left at the intersection."
+      },
+      {
+        "sentence": "Don't touch that!",
+        "translation": "Don't touch this!"
+      },
+      {
+        "sentence": "Let's have a break.",
+        "translation": "Let's take a break."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_19",
+    "language": "en",
+    "pattern": "can / can't",
+    "title": "can / can't - skill and resolution",
+    "shortExplanation": "I can swim. She can't drive. Can I help you?",
+    "longExplanation": "can is a modal verb, expresses:\n1. Skill/Ability: I can play the guitar\n2. Opportunity: It can be dangerous\n3. Resolution (spoken): Can I use your phone?",
+    "formation": "I can swim. She can't drive. Can I help you?",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "I can speak three languages.",
+        "translation": "I speak three languages."
+      },
+      {
+        "sentence": "She can't come today.",
+        "translation": "She can't come today."
+      },
+      {
+        "sentence": "Can you help me, please?",
+        "translation": "Could you help me?"
+      }
+    ]
+  },
+  {
+    "id": "en_a1_20",
+    "language": "en",
+    "pattern": "Question words",
+    "title": "Question words: what, where, who, when, how, why, which, whose, how much/many",
+    "shortExplanation": "What is this? Where do you live? How old are you?",
+    "longExplanation": "Question words appear at the beginning of the question, followed by an auxiliary verb before the subject.\n• what = what/which\n• where = where/where\n• who = who (question without do: Who lives here?)\n• when = when\n• why = why\n• how = how; how much = how many (uncountable); how many = how many (count); how old = how old; how long = how long",
+    "formation": "What is this? Where do you live? How old are you?",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "Where does she work?",
+        "translation": "Where does she work?"
+      },
+      {
+        "sentence": "What time is it?",
+        "translation": "What time is it?"
+      },
+      {
+        "sentence": "How many brothers do you have?",
+        "translation": "How many brothers do you have?"
+      }
+    ]
+  },
+  {
+    "id": "en_a1_21",
+    "language": "en",
+    "pattern": "Quantitative numerals",
+    "title": "Quantitative numerals: 1–1000",
+    "shortExplanation": "one, two, three... twenty-one, a hundred, a thousand",
+    "longExplanation": "Numerals 1–12: special words (one, two, three... twelve).\n13–19: + -teen (thirteen, fourteen... nineteen; exceptions: thirteen, fifteen, eighteen).\nTens: twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety.\nCompounds: 21 = twenty-one (via hyphen).\n100 = a/one hundred; 1000 = a/one thousand.\nAfter hundred/thousand - and (BrE): two hundred and fifty.",
+    "formation": "one, two, three... twenty-one, a hundred, a thousand",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "She is twenty-three years old.",
+        "translation": "She is twenty-three years old."
+      },
+      {
+        "sentence": "The ticket costs four hundred pounds.",
+        "translation": "The ticket costs four hundred pounds."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_22",
+    "language": "en",
+    "pattern": "Ordinal numbers",
+    "title": "Ordinal numbers: first, second, third...",
+    "shortExplanation": "the first, the second, the third, the fourth... the twenty-first",
+    "longExplanation": "Ordinal numbers are formed by adding -th: fourth, fifth, sixth...\nExceptions: first (1st), second (2nd), third (3rd), fifth (5th), eighth (8th), ninth (9th), twelfth (12th).\nAlways used with the article the: the first day, the third floor.\nFractions: ½ = a half, ⅓ = a third, ¼ = a quarter.",
+    "formation": "the first, the second, the third, the fourth... the twenty-first",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "My office is on the third floor.",
+        "translation": "My office is on the third floor."
+      },
+      {
+        "sentence": "Today is the first of March.",
+        "translation": "Today is the first of March."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_23",
+    "language": "en",
+    "pattern": "Possessive case",
+    "title": "Possessive case: 's and s'",
+    "shortExplanation": "John's car, my sister's friend, the children's toys, the teachers' room",
+    "longExplanation": "In English, belonging is expressed by an apostrophe + s:\n• Singular: Tom's book, the dog's tail\n• Plural with -s: apostrophe only: the teachers' room, my parents' house\n• Irregular plural: 's: the children's playground, men's clothes\n• Names ending with -s: James's / James' - both options are correct",
+    "formation": "John's car, my sister's friend, the children's toys, the teachers' room",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "This is Anna's laptop.",
+        "translation": "This is Anna's laptop."
+      },
+      {
+        "sentence": "The children's toys are in the box.",
+        "translation": "Children's toys in a box."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_24",
+    "language": "en",
+    "pattern": "Prepositions of movement",
+    "title": "Prepositions of movement: to, into, out of, up, down, along, across, through",
+    "shortExplanation": "go to school, walk into the room, run across the street",
+    "longExplanation": "• to = direction to a point: go to work, walk to the park\n• into = movement inward: come into the room, jump into the pool\n• out of = movement outward: get out of the car, take out of the bag\n• up/down = up/down: climb up the hill, walk down the stairs\n• along = along: walk along the river\n• across = across/through: swim across the lake, walk across the road\n• through = through: drive through the tunnel",
+    "formation": "go to school, walk into the room, run across the street",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "She walked into the room.",
+        "translation": "She entered the room."
+      },
+      {
+        "sentence": "He ran across the street.",
+        "translation": "He ran across the street."
+      },
+      {
+        "sentence": "We drove through the forest.",
+        "translation": "We drove through the forest."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_01",
+    "language": "en",
+    "pattern": "Past Simple - regular verbs",
+    "title": "Past Simple - regular verbs: +ed",
+    "shortExplanation": "work→worked, play→played, stop→stopped, study→studied",
+    "longExplanation": "Past Simple - a completed action in the past with or without a specific tense.\nRules for writing the ending -ed:\n• Most verbs: + ed → worked, played\n• End in -e: + d → loved, used\n• Consonant + -y: -y → ied → studied, tried\n• One vowel + one consonant (short stressed syllable): double the consonant → stopped, planned",
+    "formation": "work→worked, play→played, stop→stopped, study→studied",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "She worked all day yesterday.",
+        "translation": "She worked all day yesterday."
+      },
+      {
+        "sentence": "They played tennis last Sunday.",
+        "translation": "They played tennis last Sunday."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_02",
+    "language": "en",
+    "pattern": "Past Simple",
+    "title": "Past Simple - irregular verbs (table)",
+    "shortExplanation": "go→went, see→saw, have→had, come→came, buy→bought",
+    "longExplanation": "About 200 irregular verbs need to be learned by heart. The most frequent 50 cover ~90% of uses.\nGroups by similarity of changes:\n• AAA (do not change): cut, put, hit, set, let\n• ABA (return to the beginning): run→ran→run, come→came→come\n• ABC (all different): go→went→gone, be→was/were→been",
+    "formation": "go→went, see→saw, have→had, come→came, buy→bought",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I went to Paris last summer.",
+        "translation": "I went to Paris last summer."
+      },
+      {
+        "sentence": "She saw a great film.",
+        "translation": "She watched a great movie."
+      },
+      {
+        "sentence": "We had a meeting at 9.",
+        "translation": "We had a meeting at 9."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_03",
+    "language": "en",
+    "pattern": "Past Simple - negation",
+    "title": "Past Simple - negation: didn't + infinitive",
+    "shortExplanation": "She didn't go (not: didn't go). I didn't see him.",
+    "longExplanation": "Negation: didn't (= did not) + infinitive for all persons.",
+    "formation": "She didn't go (not: didn't go). I didn't see him.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I didn't see him yesterday.",
+        "translation": "I didn't see him yesterday."
+      },
+      {
+        "sentence": "She didn't come to work.",
+        "translation": "She didn't show up for work."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_04",
+    "language": "en",
+    "pattern": "Past Simple - questions",
+    "title": "Past Simple - questions: Did you? Where did she go?",
+    "shortExplanation": "Did they arrive? What did he say?",
+    "longExplanation": "Question: Did + subject + infinitive?\nSpecial questions: Where/When/What + did + subject + infinitive?",
+    "formation": "Did they arrive? What did he say?",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Did you enjoy the film?",
+        "translation": "Did you like the movie?"
+      },
+      {
+        "sentence": "Where did they go?",
+        "translation": "Where did they go?"
+      },
+      {
+        "sentence": "Who told you that?",
+        "translation": "Who told you this?"
+      }
+    ]
+  },
+  {
+    "id": "en_a2_05",
+    "language": "en",
+    "pattern": "was / were",
+    "title": "was / were - verb to be in the past",
+    "shortExplanation": "I/he/she/it was. You/we/they were.",
+    "longExplanation": "Past tense of the verb to be:\n• was - with I, he, she, it\n• were - with you, we, they\nNegation: wasn't / weren't\nQuestion: Was she...? Were they...?",
+    "formation": "I/he/she/it was. You/we/they were.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I was very tired last night.",
+        "translation": "I was very tired last night."
+      },
+      {
+        "sentence": "They were at home all day.",
+        "translation": "They were at home all day."
+      },
+      {
+        "sentence": "Was it expensive?",
+        "translation": "Was it expensive?"
+      }
+    ]
+  },
+  {
+    "id": "en_a2_06",
+    "language": "en",
+    "pattern": "will",
+    "title": "will - predictions and spontaneous decisions",
+    "shortExplanation": "I'll call you back. It will rain tomorrow. I'll have the pasta.",
+    "longExplanation": "will is used for:\n1. Spontaneous decisions (made at the time of speech): I'll help you with that.\n2. Predictions without a specific plan: I think it will rain.\n3. Promises: I won't tell anyone.\n4. Requests: Will you open the window?\nAbbreviation: 'll. Negation: won't (= will not).",
+    "formation": "I'll call you back. It will rain tomorrow. I'll have the pasta.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "The phone is ringing. — I'll get it!",
+        "translation": "The phone is ringing. - I will answer!"
+      },
+      {
+        "sentence": "It will be cold tomorrow.",
+        "translation": "It will be cold tomorrow."
+      }
+    ]
+  }
+]

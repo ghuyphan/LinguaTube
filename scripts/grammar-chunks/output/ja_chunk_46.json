@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Noun_92": {
+      "title": "Danh từ 1 + もさることながら + Danh từ 2 + も (A mo saru koto nagara B mo)",
+      "shortExplanation": "Diễn tả ý 'A là đương nhiên rồi, nhưng ngay cả B cũng...', 'không những A mà cả B cũng...'; vế B được nhấn mạnh nhiều hơn.",
+      "longExplanation": "Mẫu ngữ pháp '～もさることながら' (N1) được dùng khi muốn nói rằng sự việc, đối tượng A thì dĩ nhiên, ai cũng công nhận rồi, nhưng điều đáng nói hơn, ấn tượng hơn hoặc được nhấn mạnh hơn nữa lại chính là B phía sau ('A đã đành nhưng B cũng...', 'không chỉ A mà B cũng...'). Cấu trúc này thường dùng để khen ngợi hoặc làm nổi bật thêm một khía cạnh vượt trội của đối tượng.",
+      "formation": "Danh từ 1 + もさることながら + Danh từ 2 + も",
+      "examples": [
+        {
+          "translation": "Khả năng ca hát của anh ấy đã tuyệt vời rồi, nhưng vũ đạo cũng xuất sắc không kém."
+        },
+        {
+          "translation": "Nhà hàng này không chỉ đồ ăn ngon là điều đương nhiên, mà dịch vụ cũng vô cùng tuyệt vời."
+        },
+        {
+          "translation": "Vẻ đẹp của cô ấy là điều hiển nhiên rồi, nhưng sự thông minh, trí tuệ của cô ấy cũng đầy sức cuốn hút."
+        },
+        {
+          "translation": "Bộ phim đó cốt truyện hay đã đành, nhưng phần âm nhạc cũng vô cùng tuyệt vời."
+        }
+      ]
+    },
+    "ja_Noun_93": {
+      "title": "Danh từ + も兼ねて (mo kanete)",
+      "shortExplanation": "Biểu thị việc kết hợp thực hiện thêm một mục đích khác cùng lúc; 'tiện thể...', 'kết hợp cả...', 'đồng thời để...'.",
+      "longExplanation": "Mẫu ngữ pháp '～も兼ねて' (chữ Hán là 兼ねて) được dùng để diễn tả rằng một hành động được thực hiện không chỉ cho mục đích chính mà còn nhằm phục vụ hoặc kết hợp thêm một mục đích hay hoạt động khác được nêu ở danh từ trước 'も兼ねて' ('tiện thể...', 'đồng thời cũng để...', 'kết hợp cả...'). Thường đi với các danh từ chỉ hoạt động, mục đích như 散歩 (đi dạo), 観光 (tham quan), 勉強 (học tập), 挨拶 (chào hỏi).",
+      "formation": "Danh từ + も兼ねて",
+      "examples": [
+        {
+          "translation": "Tôi đã đến công viên, tiện thể đi dạo một chút."
+        },
+        {
+          "translation": "Hôm nay tôi sẽ xem phim Nhật Bản, kết hợp cả việc học tiếng Nhật."
+        },
+        {
+          "translation": "Tôi dự định ra nước ngoài, kết hợp cả việc công tác lẫn chuyến đi."
+        },
+        {
+          "translation": "Tôi đi dự đám cưới của bạn, kết hợp làm một chuyến du lịch luôn."
+        }
+      ]
+    },
+    "ja_Noun_94": {
+      "title": "Danh từ + も相まって (mo aimatte)",
+      "shortExplanation": "Diễn tả nhiều yếu tố kết hợp, tác động qua lại lẫn nhau tạo nên một kết quả nổi bật; 'cùng với...', 'cộng thêm việc...', 'kết hợp với...'.",
+      "longExplanation": "Mẫu ngữ pháp '～も相まって' (chữ Hán là 相まって) diễn tả việc một yếu tố này kết hợp hoặc tương tác cùng với các yếu tố khác (có sẵn) để tạo nên một kết quả hoặc tình trạng cộng hưởng rõ rệt ('cộng thêm với...', 'cùng với sự tác động của...', 'kết hợp lại...'). Thường dùng trong văn viết hoặc diễn đạt trang trọng khi phân tích nguyên nhân tạo nên thành công, sự biến đổi hoặc một đặc điểm đáng chú ý.",
+      "formation": "Danh từ + も相まって",
+      "examples": [
+        {
+          "translation": "Cùng với sự thuận lợi về khí hậu, khu vực này rất thích hợp cho việc phát triển nông nghiệp."
+        },
+        {
+          "translation": "Cộng thêm tài năng thiên bẩm, anh ấy đã được thăng chức một cách nhanh chóng."
+        },
+        {
+          "translation": "Cùng với sự tiến bộ của công nghệ, chúng tôi đã có thể xử lý công việc một cách hiệu quả hơn."
+        },
+        {
+          "translation": "Cùng với sự nỗ lực không ngừng của anh ấy, dự án đã gặt hái được thành công."
+        }
+      ]
+    },
+    "ja_Noun_95": {
+      "title": "Danh từ + をおいて他に + Động từ phủ định (wo oite hoka ni...nai)",
+      "shortExplanation": "Nhấn mạnh đối tượng là duy nhất, không có ai hay điều gì khác có thể thay thế; 'ngoài... ra thì không còn ai/cái gì khác...'.",
+      "longExplanation": "Mẫu ngữ pháp '～をおいて他に～ない' (chữ Hán là 置いて) được dùng để khẳng định mạnh mẽ rằng đối tượng đứng trước là duy nhất, tốt nhất hoặc phù hợp nhất, hoàn toàn không có lựa chọn nào khác có thể thay thế được ('ngoài... ra thì không có ai khác', 'ngoại trừ... thì chẳng còn nơi nào khác'). Mẫu này thường dùng để tán dương, ca ngợi năng lực, phẩm chất hoặc giá trị đặc biệt của một người hay sự vật.",
+      "formation": "Danh từ + をおいて他に + Động từ thể phủ định (thể ない / ありません)",
+      "examples": [
+        {
+          "translation": "Để giao phó công việc này thì ngoài anh ấy ra không còn ai khác thích hợp hơn."
+        },
+        {
+          "translation": "Người có thể giải quyết được vấn đề này ngoài anh ấy ra thì chẳng có ai khác."
+        },
+        {
+          "translation": "Ở khu vực này, quán làm mì ngon thì ngoài tiệm này ra chẳng còn tiệm nào khác."
+        },
+        {
+          "translation": "Ca sĩ có thể vượt qua được giọng hát của cô ấy thì ngoài cô ấy ra chẳng có ai cả."
+        }
+      ]
+    },
+    "ja_Noun_96": {
+      "title": "Danh từ + をもって (wo motte)",
+      "shortExplanation": "Dùng để biểu thị phương tiện, cách thức ('bằng...', 'với...') hoặc chỉ mốc thời điểm kết thúc một sự việc ('kể từ...', 'vào lúc...').",
+      "longExplanation": "Mẫu ngữ pháp '～をもって' (chữ Hán là 以て) là một lối nói trang trọng, có hai ý nghĩa chính:\n1. Biểu thị phương tiện, phương pháp, thái độ hoặc tinh thần thực hiện hành động ('bằng...', 'với tinh thần...').\n2. Biểu thị mốc thời gian hoặc sự kiện kết thúc, chuyển giao một trạng thái hay hoạt động chính thức ('vào thời điểm...', 'hết ngày... thì kết thúc'). Thường xuất hiện trong các thông báo, văn bản mang tính nghi thức hoặc trang trọng.",
+      "formation": "Danh từ + をもって",
+      "examples": [
+        {
+          "translation": "Anh ấy được mọi người tin tưởng nhờ vào sự chân thành của mình."
+        },
+        {
+          "translation": "Bằng giải thưởng này, những nỗ lực của cô ấy đã được công nhận."
+        },
+        {
+          "translation": "Anh ấy đã bắt tay vào giải quyết vấn đề với một quyết tâm cao độ."
+        },
+        {
+          "translation": "Cửa hàng này sẽ chính thức đóng cửa kể từ hết tháng 3."
+        }
+      ]
+    },
+    "ja_Noun_97": {
+      "title": "Danh từ + をものともせずに (wo mono tomo sezu ni)",
+      "shortExplanation": "Diễn tả việc kiên quyết hành động, không hề chùn bước trước khó khăn, nguy hiểm hay trở ngại; 'bất chấp...', 'vượt lên trên...'.",
+      "longExplanation": "Mẫu ngữ pháp '～をものともせずに' được dùng để ca ngợi hoặc miêu tả hành động kiên cường, dũng cảm vượt qua nghịch cảnh của chủ ngữ mà không màng tới hay xem nhẹ những khó khăn, nguy hiểm, bệnh tật, điều kiện khắc nghiệt... ('không hề sợ hãi trước...', 'bất chấp...', 'vượt lên trên khó khăn'). Thường không dùng cho những khó khăn thông thường của bản thân trong đời sống vụn vặt.",
+      "formation": "Danh từ + をものともせずに",
+      "examples": [
+        {
+          "translation": "Cô ấy không hề sợ hãi mà dũng cảm tiến bước vào trong bóng tối."
+        },
+        {
+          "translation": "Bất chấp áp lực của kỳ thi, anh ấy đã trả lời một cách đầy tự tin."
+        },
+        {
+          "translation": "Anh ấy đã leo núi mà không hề nao núng trước gió tuyết khắc nghiệt."
+        },
+        {
+          "translation": "Bất chấp những thất bại, anh ấy vẫn kiên trì tiến về phía trước."
+        }
+      ]
+    },
+    "ja_Noun_98": {
+      "title": "Danh từ + をよそに (wo yoso ni)",
+      "shortExplanation": "Diễn tả việc làm ngơ, phớt lờ sự lo lắng, can ngăn, kỳ vọng của người khác hoặc tình hình xung quanh; 'mặc cho...', 'bất chấp...', 'bỏ ngoài tai...'.",
+      "longExplanation": "Mẫu ngữ pháp '～をよそに' (chữ Hán là 余所に) được dùng khi chủ ngữ hoàn toàn ngó lơ, không bận tâm đến những ý kiến, kỳ vọng, lo lắng của những người xung quanh hoặc hoàn cảnh ngoại cảnh, mà vẫn thản nhiên làm theo ý mình ('bất chấp...', 'mặc cho...', 'bỏ ngoài tai...'). Mẫu này thường mang sắc thái phê phán, ngạc nhiên hoặc trách móc nhẹ trước sự thờ ơ, vô tâm của đối tượng.",
+      "formation": "Danh từ + をよそに",
+      "examples": [
+        {
+          "translation": "Mặc kệ cuộc khủng hoảng kinh tế, anh ấy vẫn thản nhiên tậu một chiếc xe hơi hạng sang."
+        },
+        {
+          "translation": "Mặc cho kỳ thi đã đến rất gần, cậu ấy vẫn mải mê chơi đùa."
+        },
+        {
+          "translation": "Bất chấp sự phản đối kịch liệt từ cha mẹ, cô ấy vẫn kết hôn với anh ta."
+        },
+        {
+          "translation": "Bất chấp tình hình kinh tế ảm đạm của quốc gia đó, nhiều doanh nghiệp vẫn tiếp tục đầu tư mở rộng sang thị trường này."
+        }
+      ]
+    },
+    "ja_Noun_99": {
+      "title": "Danh từ + を余儀なくされる (wo yogi naku sareru)",
+      "shortExplanation": "Diễn tả việc bị rơi vào tình thế ép buộc, không còn sự lựa chọn nào khác ngoài việc phải làm điều đó; 'bị buộc phải...', 'phải miễn cưỡng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を余儀なくされる' (chữ Hán là 余儀なくされる) là một cách diễn đạt trang trọng trong văn viết hoặc thời sự, dùng để chỉ việc chủ ngữ bị hoàn cảnh khách quan éo le, bất khả kháng (như khó khăn kinh tế, thiên tai, thương tích, bệnh tật...) dồn vào đường cùng, buộc phải thực hiện hoặc chấp nhận một sự việc ngoài ý muốn ('bị buộc phải...', 'không thể không...', 'bị ép vào thế...').",
+      "formation": "Danh từ + を余儀なくされる",
+      "examples": [
+        {
+          "translation": "Do hoàn cảnh kinh tế khó khăn, anh ấy đã bị buộc phải thôi học."
+        },
+        {
+          "translation": "Do thời tiết khắc nghiệt, chúng tôi đã buộc phải hủy bỏ chuyến dã ngoại."
+        },
+        {
+          "translation": "Vì vết thương, anh ấy đã buộc phải nhập viện điều trị."
+        },
+        {
+          "translation": "Nỗi lo sợ bị sa thải đã khiến nhiều nhân viên buộc phải chuyển việc."
+        }
+      ]
+    },
+    "ja_Noun_100": {
+      "title": "Danh từ + を前提として (wo zentei toshite)",
+      "shortExplanation": "Diễn tả việc thực hiện một kế hoạch hay hành động dựa trên tiền đề, điều kiện tiên quyết là N; 'với tiền đề là...', 'trên cơ sở...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を前提として' (chữ Hán là 前提として) được dùng để biểu thị rằng danh từ phía trước đóng vai trò là tiền đề, điều kiện căn bản hoặc giả định cốt lõi để kế hoạch, hành động hoặc quyết định phía sau được xúc tiến ('với tiền đề là...', 'dựa trên tiền đề...', 'coi... là điều kiện tiên quyết'). Thường sử dụng trong văn phong trang trọng, kinh doanh hoặc phân tích kế hoạch.",
+      "formation": "Danh từ + を前提として",
+      "examples": [
+        {
+          "translation": "Chúng tôi đã lập kế hoạch kinh doanh dựa trên tiền đề là dự án sẽ thành công."
+        },
+        {
+          "translation": "Chúng tôi đã bắt đầu chuẩn bị bữa tiệc với tiền đề là anh ấy sẽ giành chiến thắng."
+        },
+        {
+          "translation": "Tôi xúc tiến kế hoạch du lịch trên cơ sở có được sự thấu hiểu từ cha mẹ."
+        },
+        {
+          "translation": "Dự án này được xây dựng với tiền đề là các nguồn vốn sẽ được huy động đầy đủ."
+        }
+      ]
+    },
+    "ja_Noun_101": {
+      "title": "Danh từ + を前提にして (wo zentei ni shite)",
+      "shortExplanation": "Diễn tả việc lấy một điều kiện hay giả định làm tiền đề để suy nghĩ, hành động; 'với tiền đề là...', 'dựa trên giả định là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を前提にして' (chữ Hán là 前提にして) có ý nghĩa tương đương với '～を前提として', biểu thị việc tiến hành suy tính, chuẩn bị hay đưa ra quyết định dựa trên điều kiện nền tảng hoặc giả định N ('lấy... làm tiền đề', 'dựa trên cơ sở giả định...'). Dạng '～にして' mang tính động và thường dùng tự nhiên trong cả văn cảnh trao đổi công việc lẫn giao tiếp thường nhật.",
+      "formation": "Danh từ + を前提にして",
+      "examples": [
+        {
+          "translation": "Chúng tôi đã lên kế hoạch dã ngoại cho ngày mai với tiền đề là thời tiết sẽ đẹp."
+        },
+        {
+          "translation": "Chúng tôi đã bắt đầu chuẩn bị tiệc mừng với tiền đề là cô ấy sẽ thi đỗ."
+        },
+        {
+          "translation": "Dự thảo ngân sách đã được xây dựng dựa trên giả định về sự tăng trưởng kinh tế."
+        },
+        {
+          "translation": "Chúng tôi đã ấn định lịch họp dựa trên tiền đề là anh ấy sẽ có mặt tham gia."
+        }
+      ]
+    },
+    "ja_Noun_102": {
+      "title": "Danh từ + を境にして (wo sakai ni shite)",
+      "shortExplanation": "Dùng để biểu thị một mốc thời gian hoặc sự kiện đóng vai trò là ranh giới, bước ngoặt làm thay đổi hoàn toàn cục diện; 'kể từ sau mốc...', 'lấy... làm ranh giới'.",
+      "longExplanation": "Mẫu ngữ pháp '～を境にして' (hoặc '～を境に', chữ Hán là 境にして) được dùng để chỉ ra một mốc thời điểm, sự kiện trọng đại đóng vai trò như một đường ranh giới hoặc bước ngoặt, mà kể từ sau thời điểm đó, một tình trạng, tính cách hay xu hướng đã có sự thay đổi rõ rệt ('kể từ sau khi...', 'lấy... làm mốc bước ngoặt').",
+      "formation": "Danh từ + を境に / を境にして",
+      "examples": [
+        {
+          "translation": "Kể từ sau cái chết của cha, tính cách của anh ấy đã thay đổi hoàn toàn."
+        },
+        {
+          "translation": "Sau khi kỳ thi kết thúc, tôi dự định sẽ nghỉ phép một thời gian."
+        },
+        {
+          "translation": "Lấy mùa xuân làm mốc, tôi dự định sẽ bắt đầu một cuộc sống hoàn toàn mới."
+        },
+        {
+          "translation": "Kể từ khi bước chân vào cổng trường đại học, cô ấy bắt đầu đam mê thời trang."
+        }
+      ]
+    },
+    "ja_Noun_103": {
+      "title": "Danh từ + を機にして (wo ki ni shite)",
+      "shortExplanation": "Diễn tả việc tận dụng một sự kiện, thời cơ nào đó làm cơ hội để bắt đầu hoặc thay đổi một điều gì đó; 'nhân cơ hội...', 'nhân dịp...', 'lấy... làm cơ hội'.",
+      "longExplanation": "Mẫu ngữ pháp '～を機にして' (chữ Hán là 機にして) được dùng để biểu thị việc lấy một sự kiện hoặc biến cố quan trọng trong cuộc đời (như chuyển nhà, kết hôn, đổi việc, thất bại...) làm động lực hoặc cơ hội thuận lợi để bắt tay vào làm một việc mới hay tạo nên một sự thay đổi tích cực ('nhân cơ hội...', 'nhân dịp...'). Tương tự với '～をきっかけに', nhưng '～を機に' mang tính chất chủ động nắm bắt cơ hội hơn.",
+      "formation": "Danh từ + を機に / を機にして",
+      "examples": [
+        {
+          "translation": "Nhân dịp chuyển nhà, tôi đã đổi mới toàn bộ đồ nội thất."
+        },
+        {
+          "translation": "Nhân dịp tốt nghiệp, tôi đã bắt đầu tìm kiếm một công việc mới."
+        },
+        {
+          "translation": "Lấy sự thất bại của dự án này làm bài học cơ hội, chúng tôi quyết định xem xét lại phương thức làm việc của toàn công ty."
+        },
+        {
+          "translation": "Nhân cơ hội kết hôn, chúng tôi đã chuyển đến sinh sống tại một thị trấn mới."
+        }
+      ]
+    },
+    "ja_Noun_104": {
+      "title": "Danh từ + を皮切りに / を皮切りにして (wo kawakiri ni / wo kawakiri ni shite)",
+      "shortExplanation": "Biểu thị một sự việc đóng vai trò là điểm mở đầu, phát pháo hiệu cho một chuỗi các sự kiện cùng loại liên tiếp diễn ra; 'khởi đầu bằng...', 'mở màn với...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を皮切りに / ～を皮切りにして' (xuất phát từ chữ 皮切り - vết châm cứu đầu tiên trên da) được dùng khi một sự việc hoặc hành động diễn ra đóng vai trò là phát pháo lệnh mở màn, tiếp sau đó là hàng loạt các sự kiện, hoạt động cùng loại hoặc cùng quy mô bùng nổ, mở rộng liên tiếp ('khởi đầu bằng...', 'mở màn bằng...', 'bắt đầu từ... rồi liên tiếp'). Mẫu này thường dùng trong các tin tức văn hóa, nghệ thuật, kinh doanh, lưu diễn...",
+      "formation": "Danh từ + を皮切りに / を皮切りにして",
+      "examples": [
+        {
+          "translation": "Bắt đầu với luận văn đó, anh ấy đã liên tiếp triển khai hàng loạt đề tài nghiên cứu."
+        },
+        {
+          "translation": "Khởi đầu từ cuộc thi này, sự nghiệp khiêu vũ của cô ấy đã có bước phát triển vượt bậc."
+        },
+        {
+          "translation": "Mở đầu với bộ phim này, anh ấy đã dần khẳng định vững chắc vị thế của một nam diễn viên được yêu thích."
+        },
+        {
+          "translation": "Mở màn bằng dự án này, công ty đã bắt đầu vạch ra những định hướng phát triển mới."
+        }
+      ]
+    },
+    "ja_Noun_105": {
+      "title": "Danh từ + を皮切りにして (wo kawakiri ni shite)",
+      "shortExplanation": "Biểu thị sự việc mở màn, điểm xuất phát cho một chuỗi các hoạt động kế tiếp nhau; 'bắt đầu với...', 'khởi đầu bằng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を皮切りにして' được dùng để chỉ ra một sự kiện cụ thể đóng vai trò làm điểm khởi đầu, phát súng hiệu để từ đó một chuỗi những hoạt động hoặc tiến trình tiếp theo diễn ra liên tục ('khởi đầu từ...', 'bắt đầu với... rồi tiếp nối'). Cách dùng này nhấn mạnh vào sự khởi sắc, liên tiếp lan rộng của các sự kiện sau mốc xuất phát đó.",
+      "formation": "Danh từ + を皮切りにして (hoặc を皮切りに)",
+      "examples": [
+        {
+          "translation": "Bắt đầu từ ngày hôm đó, ngày nào anh ấy cũng chăm chỉ đến phòng tập thể hình."
+        },
+        {
+          "translation": "Mở màn với bữa tiệc mừng năm mới, năm nay sẽ có rất nhiều sự kiện được tổ chức."
+        },
+        {
+          "translation": "Khởi đầu từ bộ phim này, danh tiếng của anh ấy đã tăng vọt một cách nhanh chóng."
+        },
+        {
+          "translation": "Bắt đầu tại Tokyo, chuỗi triển lãm của anh ấy dự kiến sẽ được tổ chức trên toàn quốc."
+        }
+      ]
+    },
+    "ja_Noun_106": {
+      "title": "Danh từ + を禁じ得ない (wo kinjienai)",
+      "shortExplanation": "Diễn tả cảm xúc, tâm trạng mãnh liệt trào dâng đến mức không thể kiềm chế hay nén lại được; 'không khỏi...', 'không thể kìm nén được...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を禁じ得ない' (chữ Hán là 禁じ得ない) là một cách diễn đạt trang trọng trong văn viết, dùng đi kèm với các danh từ chỉ cảm xúc (như 驚き - kinh ngạc, 怒り - tức giận, 涙 - nước mắt, 疑念 - hoài nghi, 同情 - thương cảm...) để diễn tả một cảm xúc tự nhiên, mãnh liệt trào dâng trong lòng khiến người nói hoàn toàn không thể kìm nén hay ngăn lại được ('không khỏi cảm thấy...', 'không cầm được...', 'không thể kìm nén...').",
+      "formation": "Danh từ (chỉ cảm xúc) + を禁じ得ない",
+      "examples": [
+        {
+          "translation": "Trước kết quả này, tôi không khỏi cảm thấy ngỡ ngàng, kinh ngạc."
+        },
+        {
+          "translation": "Nghe tin tức đó, tôi không thể kìm nén được cảm xúc vui mừng muốn chúc phúc cho thành công của anh ấy."
+        },
+        {
+          "translation": "Trước vẻ đẹp nghiêng nước nghiêng thành của cô ấy, tôi không khỏi xúc động nghẹn ngào."
+        },
+        {
+          "translation": "Nghe câu chuyện của anh ấy, tôi không thể nào nhịn được cười."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Noun_92": {
+      "title": "名词1 + もさることながら + 名词2 + も (A mo saru koto nagara B mo)",
+      "shortExplanation": "表示“A自不必说，B也同样（甚至更甚）”；“不仅A……B也……”，更侧重强调后项B。",
+      "longExplanation": "句型“～もさることながら”用于表示“前项A是理所当然的事实，但后项B同样如此，甚至比前项更值得关注、更令人印象深刻”。常译为“A自不必说，B也……”、“不仅A……连B也……”。说话人在承认A的同时，意在着重强调后项B的程度或价值，常用于赞美或评价。",
+      "formation": "名词1 + もさることながら + 名词2 + も",
+      "examples": [
+        {
+          "translation": "他的唱功自不必说，舞蹈也同样非常精彩。"
+        },
+        {
+          "translation": "这家餐厅的味道自不必说，服务也是极其出色。"
+        },
+        {
+          "translation": "她的美貌自不用多说，而她的才智同样极具魅力。"
+        },
+        {
+          "translation": "那部电影故事情节好自不用说，音乐也格外精彩。"
+        }
+      ]
+    },
+    "ja_Noun_93": {
+      "title": "名词 + も兼ねて (mo kanete)",
+      "shortExplanation": "表示兼顾另一项目的或意图；“兼作……”、“顺便兼顾……”、“同时也为了……”。",
+      "longExplanation": "句型“～も兼ねて”（汉字写作“兼ねて”）用于表示在进行某项主要行动的同时，还附带有另一项目的或意图，两者一同进行。常译为“兼作……”、“顺便兼顾……”、“同时也为了……”。前面的名词通常是具有活动或目的性质的词汇，如散步、观光、学习、问候等。",
+      "formation": "名词 + も兼ねて",
+      "examples": [
+        {
+          "translation": "我去了一趟公园，也顺便兼散散步。"
+        },
+        {
+          "translation": "今天我打算看一部日本电影，同时也兼为了学习日语。"
+        },
+        {
+          "translation": "我计划出国一趟，顺便兼顾工作。"
+        },
+        {
+          "translation": "我去参加朋友的婚礼，同时也当作顺便旅游。"
+        }
+      ]
+    },
+    "ja_Noun_94": {
+      "title": "名词 + も相まって (mo aimatte)",
+      "shortExplanation": "表示多种因素相互结合、共同作用而产生了某种结果；“加上……的影响”、“与……相互作用”。",
+      "longExplanation": "句型“～も相まって”（汉字写作“相まって”）用于表示前述要素与其他已有的条件或因素相互结合、协同作用，从而促成了某种显著的结果或局面。常译为“再加上……的作用”、“与……相互结合”、“伴随着……”。多用于较为正式的书面语中，分析带来成功、发展或显著特性的多重原因。",
+      "formation": "名词 + も相まって",
+      "examples": [
+        {
+          "translation": "加上适宜的气候，这个地区非常适合从事农业。"
+        },
+        {
+          "translation": "再加上他过人的才能，他得到了迅速的晋升。"
+        },
+        {
+          "translation": "再加上技术的进步，我们已经能够更高效地完成工作。"
+        },
+        {
+          "translation": "加上他的不懈努力，项目取得了成功。"
+        }
+      ]
+    },
+    "ja_Noun_95": {
+      "title": "名词 + をおいて他に + 动词否定形 (wo oite hoka ni...nai)",
+      "shortExplanation": "强调该对象是无可替代的最佳人选或唯一选择；“除了……之外别无……”。",
+      "longExplanation": "句型“～をおいて他に～ない”（汉字写作“置いて”）用于强烈表示某人或某物具有无可替代的价值，除了该对象之外，再也没有其他更合适的人选或更好的选择了（“除了……之外没有其他人/物……”、“非……莫属”）。该句型常用于对人或事物给予极高的评价与赞赏。",
+      "formation": "名词 + をおいて他に + 动词否定形式（ない形）",
+      "examples": [
+        {
+          "translation": "要把这份工作托付出去，除了他之外别无他人。"
+        },
+        {
+          "translation": "能够解决这个问题的，除了他之外再无别人。"
+        },
+        {
+          "translation": "在这一带要说能做出美味面条的店铺，除了这家别无其他。"
+        },
+        {
+          "translation": "能够超越她美妙歌喉的歌手，除了她之外再无他人。"
+        }
+      ]
+    },
+    "ja_Noun_96": {
+      "title": "名词 + をもって (wo motte)",
+      "shortExplanation": "表示手段、方法或态度（“以……”、“用……”），亦可表示时间上的终止或转折界限（“到……为止”）。",
+      "longExplanation": "句型“～をもって”（汉字写作“以て”）属于郑重的书面用语，主要有两种用法：\n1. 表示手段、方法、态度或依据，译为“以……”、“用……”、“凭借……”。\n2. 接在表示时间或特定节点的词语后，表示官方活动、业务或期限的结束，译为“截至……”、“到……为止”。常用于正式公告、演讲或商务文书中。",
+      "formation": "名词 + をもって",
+      "examples": [
+        {
+          "translation": "他以诚恳的态度赢得了人们的信任。"
+        },
+        {
+          "translation": "凭借这个奖项，她的努力得到了大家的认可。"
+        },
+        {
+          "translation": "他带着坚定的决心投入到了问题的解决中。"
+        },
+        {
+          "translation": "本店将于3月底正式闭店。"
+        }
+      ]
+    },
+    "ja_Noun_97": {
+      "title": "名词 + をものともせずに (wo mono tomo sezu ni)",
+      "shortExplanation": "表示不畏惧艰难险阻、压力或恶劣条件，依然勇敢行动；“不顾……”、“不畏……”、“勇于克服……”。",
+      "longExplanation": "句型“～をものともせずに”用于称赞或描述某人在面对危险、困难、恶劣环境、病痛或巨大压力时，毫不畏缩退缩，而是勇敢顽强地采取行动（“不畏……”、“毫不介意……”、“战胜困难”）。常用于对他人英勇表现或坚强意志的正面赞颂。",
+      "formation": "名词 + をものともせずに",
+      "examples": [
+        {
+          "translation": "她毫不畏惧，径直向着黑暗深处走去。"
+        },
+        {
+          "translation": "他不惧考试的巨大压力，胸有成竹地作出了回答。"
+        },
+        {
+          "translation": "他不顾暴风雪的侵袭，依然攀登上了高山。"
+        },
+        {
+          "translation": "他毫不气馁于失败，继续坚定地向前迈进。"
+        }
+      ]
+    },
+    "ja_Noun_98": {
+      "title": "名词 + をよそに (wo yoso ni)",
+      "shortExplanation": "表示对周围人的担心、反对、期待或客观情况漠不关心、置之不理而自行其是；“无视……”、“不管……”、“不顾……”。",
+      "longExplanation": "句型“～をよそに”（汉字写作“余所に”）用于表示主体对周围人的担忧、关切、批评、反对或外部客观环境不放在心上，仿佛事不关己一般依旧自顾自地行动。常译为“无视……”、“对……置若罔闻”、“不顾……”。通常伴有说话人感到意外、无奈或略带批评谴责的语气。",
+      "formation": "名词 + をよそに",
+      "examples": [
+        {
+          "translation": "他不顾当前的经济危机，依然买了一辆豪车。"
+        },
+        {
+          "translation": "无视考试迫在眉睫，他依然在一味地玩耍。"
+        },
+        {
+          "translation": "不顾父母的极力反对，她还是和他结婚了。"
+        },
+        {
+          "translation": "无视那个国家的经济状况，许多企业依然在持续进驻开拓市场。"
+        }
+      ]
+    },
+    "ja_Noun_99": {
+      "title": "名词 + を余儀なくされる (wo yogi naku sareru)",
+      "shortExplanation": "表示由于无法抗拒的外部客观原因，被迫落入某种无奈的境地；“不得不……”、“被迫……”。",
+      "longExplanation": "句型“～を余儀なくされる”（汉字写作“余儀なくされる”）属于较为正式的书面用语或新闻报道语言，用于表示因灾难、经济困难、伤病等非自愿的客观原因，导致主体别无选择，只能迫于无奈做出某种决定或承受某种不利结果。常译为“被迫……”、“不得不……”、“别无选择只能……”。",
+      "formation": "名词 + を余儀なくされる",
+      "examples": [
+        {
+          "translation": "由于经济困难，他被迫退学。"
+        },
+        {
+          "translation": "因天气恶劣，我们不得不取消了远足活动。"
+        },
+        {
+          "translation": "因为受伤，他被迫住院接受治疗。"
+        },
+        {
+          "translation": "出于对裁员风潮的恐惧，许多员工不得不选择了跳槽换工作。"
+        }
+      ]
+    },
+    "ja_Noun_100": {
+      "title": "名词 + を前提として (wo zentei toshite)",
+      "shortExplanation": "表示将某事作为前置条件或假定基础来推进后续行动；“以……为前提”、“在……的前提下”。",
+      "longExplanation": "句型“～を前提として”（汉字写作“前提として”）用于表示将前述名词作为开展行动、制定计划或达成协议的预设先决条件与基础。常译为“以……为前提”、“在……的前提假定下”。多用于较为正式的商务、学术、政策讨论等语境中。",
+      "formation": "名词 + を前提として",
+      "examples": [
+        {
+          "translation": "我们以取得成功为前提，制定了商业计划书。"
+        },
+        {
+          "translation": "我们以他能够获胜为前提，开始筹备庆祝聚会。"
+        },
+        {
+          "translation": "我将在取得父母理解的前提下，推进这次旅行计划。"
+        },
+        {
+          "translation": "该项目是以资金全部到位为前提而开展的。"
+        }
+      ]
+    },
+    "ja_Noun_101": {
+      "title": "名词 + を前提にして (wo zentei ni shite)",
+      "shortExplanation": "表示以某种假定或条件作为基础前提来进行准备或安排；“以……为前提”、“在假定……的基础上”。",
+      "longExplanation": "句型“～を前提にして”（汉字写作“前提にして”）与“～を前提として”意义基本相同，表示把前述名词作为思考、计划或决策的出发点与预设前提。常译为“以……为前提”、“在预先设定……的基础上”。用法十分广泛，在商务会议、工作安排和日常生活中均很常见。",
+      "formation": "名词 + を前提にして",
+      "examples": [
+        {
+          "translation": "在假定明天天气晴好的前提下，我们制定了野餐计划。"
+        },
+        {
+          "translation": "我们以她能顺利考上为前提，开始着手准备庆祝宴会。"
+        },
+        {
+          "translation": "预算方案是在假定经济会实现增长的前提下制定的。"
+        },
+        {
+          "translation": "我们以他能够参加为前提，确定了开会日程。"
+        }
+      ]
+    },
+    "ja_Noun_102": {
+      "title": "名词 + を境にして (wo sakai ni shite)",
+      "shortExplanation": "表示以某个特定时间或重大事件为分界线与转折点，自此之后情况发生了明显变化；“以……为界”、“自……起”。",
+      "longExplanation": "句型“～を境にして”（常作“～を境に”，汉字写作“境にして”）用于表示以某一事件、特定时期或时间节点作为前后状态发生根本改变的分界线或转折点。常译为“以……为界”、“自……以来”、“在……之后（彻底改变）”。常用于描述人物性格、生活习惯、社会局势等的显著转变。",
+      "formation": "名词 + を境に / を境にして",
+      "examples": [
+        {
+          "translation": "以父亲的离世为转折点，他的性格彻底变了一个人。"
+        },
+        {
+          "translation": "打算以考试结束为界，好好休个假。"
+        },
+        {
+          "translation": "我打算以春天为起点，开始一段崭新的生活。"
+        },
+        {
+          "translation": "自入学以来，她便开始对时尚打扮产生了浓厚兴趣。"
+        }
+      ]
+    },
+    "ja_Noun_103": {
+      "title": "名词 + を機にして (wo ki ni shite)",
+      "shortExplanation": "表示以某事作为契机或良机，主动开始新的行动或做出改变；“以……为契机”、“借……之机”。",
+      "longExplanation": "句型“～を機にして”（常作“～を機に”，汉字写作“機にして”）用于表示把某次重大的事件、转折或经历（如毕业、结婚、搬家、经历挫折等）作为良好的机会与动力，主动采取新的行动或促成重要改变。常译为“以……为契机”、“趁着……的机会”。相比“～をきっかけに”，更强调有意识地抓住机遇。",
+      "formation": "名词 + を機に / を機にして",
+      "examples": [
+        {
+          "translation": "借着搬家之机，我把家里的家具都换成了新的。"
+        },
+        {
+          "translation": "以毕业为契机，我开始寻找新的工作。"
+        },
+        {
+          "translation": "借着这次项目失败的契机，我们决定重新审视全公司的工作方式。"
+        },
+        {
+          "translation": "以结婚为契机，我们搬到了一个新的城镇生活。"
+        }
+      ]
+    },
+    "ja_Noun_104": {
+      "title": "名词 + を皮切りに / を皮切りにして (wo kawakiri ni / wo kawakiri ni shite)",
+      "shortExplanation": "表示以某事作为打头阵的开端，随后接连开展一系列同类行动或事件；“以……为开端”、“以……打头阵”。",
+      "longExplanation": "句型“～を皮切りに / ～を皮切りにして”（语源为针灸时最初施艾的“皮切り”）用于表示某件事情作为开头的第一炮，随后接二连三地展开了相同性质、同等规模的一系列事件或活动。常译为“以……为开端”、“打头阵”、“揭开……的序幕”。常用于巡回展出、演艺活动、商业推广及学术发布等报道中。",
+      "formation": "名词 + を皮切りに / を皮切りにして",
+      "examples": [
+        {
+          "translation": "以此篇论文为开端，他陆续展开了多项研究课题。"
+        },
+        {
+          "translation": "以这次比赛为起点，她的舞蹈职业生涯取得了飞跃性的发展。"
+        },
+        {
+          "translation": "以这部电影为开端，他确立了作为当红人气演员的地位。"
+        },
+        {
+          "translation": "以该项目为发端，公司开始展现出全新的发展方向。"
+        }
+      ]
+    },
+    "ja_Noun_105": {
+      "title": "名词 + を皮切りにして (wo kawakiri ni shite)",
+      "shortExplanation": "表示以某事作为第一步或起点，其后同类行动或事件接续发生；“以……为起点”、“自……开始”。",
+      "longExplanation": "句型“～を皮切りにして”用于指出某一个特定事件作为引子或先锋，自此拉开序幕，随后同类的一系列活动或发展接踵而至。常译为“以……为起点”、“自……开始陆续开展”。常用于描述巡回活动、连续性事件的开启或个人事业由此迅速展开的局面。",
+      "formation": "名词 + を皮切りにして（或 を皮切りに）",
+      "examples": [
+        {
+          "translation": "自那一天开始，他便每天都去健身房锻炼。"
+        },
+        {
+          "translation": "以新年联欢会为开端，今年将陆续举办多场活动。"
+        },
+        {
+          "translation": "自这部电影问世起，他的人气便一路急剧飙升。"
+        },
+        {
+          "translation": "以东京站为首站起点，他的个人展计划在全国各地巡回展出。"
+        }
+      ]
+    },
+    "ja_Noun_106": {
+      "title": "名词 + を禁じ得ない (wo kinjienai)",
+      "shortExplanation": "表示某种强烈的感情油然而生，无论如何也按捺、压抑不住；“不禁……”、“禁不住……”、“难掩……之情”。",
+      "longExplanation": "句型“～を禁じ得ない”（汉字写作“禁じ得ない”）属于较为郑重的书面用语。通常接在表示情感、情绪的名词（如惊奇、怒火、同情、喜悦、眼泪、疑问等）之后，表示当事人面对某种状况时，内心情感奔涌而出，无法加以抑制与平复。常译为“不禁……”、“难免……”、“无法抑制……之情”。",
+      "formation": "名词（情感类名词） + を禁じ得ない",
+      "examples": [
+        {
+          "translation": "面对这一结果，我由不得感到震惊万分。"
+        },
+        {
+          "translation": "听到那个消息，我不禁油然而生想要为他的成功送上祝福的心情。"
+        },
+        {
+          "translation": "面对她的动人美貌，我禁不住为之深深动容。"
+        },
+        {
+          "translation": "听了他的这番话，我忍不住扑哧笑出声来。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Noun_92": {
+      "title": "명사1 + もさることながら + 명사2 + も (A mo saru koto nagara B mo)",
+      "shortExplanation": "'A도 물론 그렇지만 B 또한 더할 나위 없다', 'A는 물론이고 B도...'라는 뜻으로, 뒤의 명사 B를 더욱 강조합니다.",
+      "longExplanation": "문형 '～もさることながら'는 앞의 명사 A가 그러한 것은 당연하고 인정하지만, 뒤에 이어지는 명사 B는 그 이상으로 훌륭하거나 두드러짐을 강조할 때 사용하는 N1 표현입니다('~도 물론 그렇거니와 ~도', '~은/는 물론이고 ~도'). 주로 칭찬이나 평가에서 두 가지 매력 중 뒤쪽의 요소를 더욱 부각하고자 할 때 자주 쓰입니다.",
+      "formation": "명사1 + もさることながら + 명사2 + も",
+      "examples": [
+        {
+          "translation": "그의 가창력도 물론 대단하지만, 댄스 역시 훌륭하다."
+        },
+        {
+          "translation": "이 식당은 맛도 물론이거니와 서비스 또한 훌륭하다."
+        },
+        {
+          "translation": "그녀의 아름다움도 물론이지만, 그 지성 또한 매력적이다."
+        },
+        {
+          "translation": "그 영화는 스토리도 물론 훌륭했지만, 음악 또한 멋졌다."
+        }
+      ]
+    },
+    "ja_Noun_93": {
+      "title": "명사 + も兼ねて (mo kanete)",
+      "shortExplanation": "어떤 행동을 하면서 다른 목적이나 일도 함께 아우름을 나타내며, '~도 겸해서', '~할 겸해서'라는 뜻입니다.",
+      "longExplanation": "문형 '～も兼ねて'(한자로는 兼ねて)는 주된 행동을 하면서 명사로 제시된 또 다른 목적이나 의도를 동시에 함께 달성하고자 할 때 쓰는 표현입니다('~도 겸하여', '~도 할 겸'). 주로 산책, 여행, 인사, 업무 등 목적성을 띤 명사와 함께 쓰여 하나의 행동으로 두 가지 목적을 충족함을 나타냅니다.",
+      "formation": "명사 + も兼ねて",
+      "examples": [
+        {
+          "translation": "산책도 겸해서 공원에 갔습니다."
+        },
+        {
+          "translation": "오늘은 일본어 공부도 겸해서 일본 영화를 봅니다."
+        },
+        {
+          "translation": "일도 겸해서 해외에 갈 예정입니다."
+        },
+        {
+          "translation": "여행도 겸해서 친구의 결혼식에 참석합니다."
+        }
+      ]
+    },
+    "ja_Noun_94": {
+      "title": "명사 + も相まって (mo aimatte)",
+      "shortExplanation": "여러 요소가 서로 어우러지거나 상승 작용을 일으켜 어떤 결과를 낳았음을 나타내며, '~와/과 맞물려', '~도 겹쳐서', '~와 어우러져'라는 뜻입니다.",
+      "longExplanation": "문형 '～も相まって'(한자로는 相まって)는 제시된 명사 요인이 다른 상황이나 조건과 서로 결합하고 상호작용하여 어떤 두드러진 결과나 상태를 만들어 냈음을 나타내는 격식 있는 문어 표현입니다('~와/과 맞물려', '~도 한몫하여', '~와 어우러져'). 주로 성공 요인이나 특정 현상의 복합적인 원인을 설명할 때 자주 사용됩니다.",
+      "formation": "명사 + も相まって",
+      "examples": [
+        {
+          "translation": "기후 조건과도 맞물려 이 지역은 농업에 매우 적합합니다."
+        },
+        {
+          "translation": "그의 재능까지 맞물려 그는 빠르게 승진했다."
+        },
+        {
+          "translation": "기술의 진보도 맞물려 우리는 더욱 효율적으로 업무를 해낼 수 있게 되었습니다."
+        },
+        {
+          "translation": "그의 노력까지 맞물려 프로젝트는 성공했습니다."
+        }
+      ]
+    },
+    "ja_Noun_95": {
+      "title": "명사 + をおいて他に + 동사 부정형 (wo oite hoka ni...nai)",
+      "shortExplanation": "해당 대상 외에는 대안이 없으며 가장 적합하거나 유일함을 강조하며, '~을/를 제외하고는 달리 ~없다', '~말고는 달리 ~없다'라는 뜻입니다.",
+      "longExplanation": "문형 '～をおいて他に～ない'(한자로는 置いて)는 제시된 명사가 유일무이하거나 가장 뛰어난 대상이어서 그 어떤 것으로도 대체할 수 없음을 강력하게 단언할 때 사용하는 표현입니다('~을 제외하고는 달리 없다', '~말고는 다른 적임자가 없다'). 주로 뛰어난 인재나 사물을 높이 평가하거나 극찬할 때 자주 쓰입니다.",
+      "formation": "명사 + をおいて他に + 동사 부정형(ない형)",
+      "examples": [
+        {
+          "translation": "이 일을 맡길 사람으로는 그를 제외하고는 달리 없다."
+        },
+        {
+          "translation": "이 문제를 해결할 수 있는 사람은 그 사람 말고는 달리 없다."
+        },
+        {
+          "translation": "이 지역에서 맛있는 국수를 만드는 가게는 여기를 제외하고는 달리 없다."
+        },
+        {
+          "translation": "그녀의 가창력을 뛰어넘을 가수는 그녀 말고는 달리 없다."
+        }
+      ]
+    },
+    "ja_Noun_96": {
+      "title": "명사 + をもって (wo motte)",
+      "shortExplanation": "수단이나 방법, 태도를 나타내거나('~으로', '~을 가지고'), 특정한 시간적 종료 시점을 나타냅니다('~을 끝으로', '~부로').",
+      "longExplanation": "문형 '～をもって'(한자로는 以て)는 격식 있는 문어나 공적 발표에서 주로 쓰이는 표현으로, 크게 두 가지 의미가 있습니다.\n1. 수단, 방법, 마음가짐 등을 나타내어 '~을 수단으로', '~을 가지고', '~의 태도로'라는 의미를 나타냅니다.\n2. 공식적인 행사나 영업, 기한 등이 종료되는 기준 시점을 나타내어 '~을 끝으로', '~부로'라는 의미를 나타냅니다.",
+      "formation": "명사 + をもって",
+      "examples": [
+        {
+          "translation": "그는 성실함으로 사람들에게 신뢰를 받고 있습니다."
+        },
+        {
+          "translation": "이 상을 받음으로써 그녀의 노력이 인정을 받았습니다."
+        },
+        {
+          "translation": "그는 강한 결의를 가지고 문제 해결에 임했다."
+        },
+        {
+          "translation": "3월을 끝으로 이 가게는 폐점합니다."
+        }
+      ]
+    },
+    "ja_Noun_97": {
+      "title": "명사 + をものともせずに (wo mono tomo sezu ni)",
+      "shortExplanation": "어려움이나 위험, 악조건 등에 아랑곳하지 않고 꿋꿋하게 행동함을 나타내며, '~을/를 무릅쓰고', '~에 굴하지 않고', '~을 아랑곳하지 않고'라는 뜻입니다.",
+      "longExplanation": "문형 '～をものともせずに'는 위험, 장애, 악천후, 병, 중압감 등 극복하기 힘든 난관에 맞닥뜨렸을 때, 이에 굴하거나 위축되지 않고 용감하게 행동을 관철함을 나타내는 표현입니다('~에 굴하지 않고', '~을 문제 삼지 않고', '~을 무릅쓰고'). 주로 타인의 용기나 강한 의지를 칭찬하고 높이 평가할 때 쓰입니다.",
+      "formation": "명사 + をものともせずに",
+      "examples": [
+        {
+          "translation": "그녀는 공포에 굴하지 않고 어둠 속으로 나아갔다."
+        },
+        {
+          "translation": "시험의 중압감에 굴하지 않고 그는 자신감에 차서 대답했다."
+        },
+        {
+          "translation": "그는 눈보라를 무릅쓰고 산을 올랐다."
+        },
+        {
+          "translation": "그는 실패에 굴하지 않고 계속해서 앞으로 나아갔다."
+        }
+      ]
+    },
+    "ja_Noun_98": {
+      "title": "명사 + をよそに (wo yoso ni)",
+      "shortExplanation": "주변의 걱정이나 반대, 기대, 혹은 처한 상황 등을 아랑곳하지 않고 무시한 채 행동함을 나타내며, '~을 아랑곳하지 않고', '~은/는 아랑곳없이', '~을 무시하고'라는 뜻입니다.",
+      "longExplanation": "문형 '～をよそに'(한자로는 余所に)는 주변 사람들의 충고, 반대, 걱정, 기대 또는 주변의 심각한 정세를 전혀 신경 쓰지 않고 남의 일인 양 행동할 때 쓰는 표현입니다('~을 아랑곳하지 않고', '~을 귓등으로 흘리고'). 말하는 이의 놀람, 어처구니없음, 비판적인 뉘앙스가 포함되는 경우가 많습니다.",
+      "formation": "명사 + をよそに",
+      "examples": [
+        {
+          "translation": "경제 위기는 아랑곳하지 않고 그는 고급 승용차를 구입했다."
+        },
+        {
+          "translation": "시험이 코앞으로 다가온 것은 아랑곳하지 않고 그는 계속 놀기만 하고 있다."
+        },
+        {
+          "translation": "부모님의 반대를 무릅쓰고(아랑곳하지 않고) 그녀는 그와 결혼했습니다."
+        },
+        {
+          "translation": "그 나라의 경제 상황은 아랑곳없이 많은 기업이 계속 진출하고 있다."
+        }
+      ]
+    },
+    "ja_Noun_99": {
+      "title": "명사 + を余儀なくされる (wo yogi naku sareru)",
+      "shortExplanation": "피치 못할 사정이나 외부 상황으로 인해 어쩔 수 없이 그렇게 할 수밖에 없게 되었음을 나타내며, '어쩔 수 없이 ~하게 되다', '불가피하게 ~하게 되다', '~을/를 강요당하다'라는 뜻입니다.",
+      "longExplanation": "문형 '～を余儀なくされる'(한자로는 余儀なくされる)는 경제적 곤란, 재해, 부상, 사회적 상황 등 불가항력적인 외부 원인으로 인하여 다른 선택의 여지 없이 어쩔 수 없이 어떤 행동을 하거나 상태에 놓이게 되었음을 나타내는 격식 있는 문어 표현입니다('어쩔 수 없이 ~하게 되다', '~이 불가피해지다'). 신문 기사나 뉴스 등에서 자주 접할 수 있습니다.",
+      "formation": "명사 + を余儀なくされる",
+      "examples": [
+        {
+          "translation": "그는 경제적 어려움으로 인해 어쩔 수 없이 자퇴를 해야 했다."
+        },
+        {
+          "translation": "궂은 날씨 때문에 우리는 소풍을 취소할 수밖에 없었다."
+        },
+        {
+          "translation": "부상으로 인해 그는 어쩔 수 없이 입원 치료를 받아야 했다."
+        },
+        {
+          "translation": "구조조정에 대한 두려움으로 인해 많은 직원이 어쩔 수 없이 이직을 택했다."
+        }
+      ]
+    },
+    "ja_Noun_100": {
+      "title": "명사 + を前提として (wo zentei toshite)",
+      "shortExplanation": "어떤 일이나 계획을 세울 때 특정 사항을 전제 조건이나 바탕으로 삼음을 나타내며, '~을/를 전제로 (하여)'라는 뜻입니다.",
+      "longExplanation": "문형 '～を前提として'(한자로는 前提として)는 뒤따르는 계획, 판단, 행동 등이 앞의 명사로 제시된 조건을 당연한 전제나 기본 가정으로 삼고 진행됨을 나타내는 표현입니다('~을 전제로 하여', '~을 전제 조건으로 삼고'). 비즈니스, 공적 계획 수립, 조약 및 계약 체결 등 격식 있는 상황에서 자주 쓰입니다.",
+      "formation": "명사 + を前提として",
+      "examples": [
+        {
+          "translation": "성공을 전제로 하여 사업 계획서를 작성했습니다."
+        },
+        {
+          "translation": "그의 승리를 전제로 축하 파티 준비를 시작했습니다."
+        },
+        {
+          "translation": "부모님의 이해를 전제로 여행 계획을 진행하고자 합니다."
+        },
+        {
+          "translation": "이 프로젝트는 자금이 충분히 마련되는 것을 전제로 하고 있습니다."
+        }
+      ]
+    },
+    "ja_Noun_101": {
+      "title": "명사 + を前提にして (wo zentei ni shite)",
+      "shortExplanation": "어떤 가정이나 조건을 기본 전제로 삼고 일을 진행함을 나타내며, '~을/를 전제로 하여', '~을 바탕으로 삼아'라는 뜻입니다.",
+      "longExplanation": "문형 '～を前提にして'(한자로는 前提にして)는 '～を前提として'와 거의 동일한 의미로, 어떤 생각이나 계획, 준비를 진행함에 있어 특정 상황을 당연한 출발점이자 전제 조건으로 삼는다는 뜻을 나타냅니다('~을 전제로 하여', '~을 미리 염두에 두고'). 일상 대화나 실무적인 기획 단계에서 자연스럽게 자주 사용됩니다.",
+      "formation": "명사 + を前提にして",
+      "examples": [
+        {
+          "translation": "날씨가 맑을 것을 전제로 하여 내일 소풍 계획을 세웠습니다."
+        },
+        {
+          "translation": "그녀가 합격할 것을 전제로 하여 축하 파티 준비를 시작했습니다."
+        },
+        {
+          "translation": "경제 성장을 전제로 하여 예산안이 편성되었다."
+        },
+        {
+          "translation": "그가 참석할 것을 전제로 하여 회의 일정을 정했습니다."
+        }
+      ]
+    },
+    "ja_Noun_102": {
+      "title": "명사 + を境にして (wo sakai ni shite)",
+      "shortExplanation": "특정 시점이나 사건을 경계선 또는 전환점으로 삼아 상황이 크게 바뀌었음을 나타내며, '~을/를 기점으로 하여', '~을 경계로', '~을 계기로 하여'라는 뜻입니다.",
+      "longExplanation": "문형 '～を境にして'(또는 '～を境に', 한자로는 境にして)는 어떤 사건이나 시점을 기점으로 전후의 상태나 환경, 성격 등이 현저하게 변화했음을 나타내는 표현입니다('~을 기점으로 하여', '~을 경계로 하여 완전히 달라지다'). 인생의 전환기나 계절의 바뀜, 중요한 사회적 사건을 계기로 큰 변화가 찾아왔을 때 자주 쓰입니다.",
+      "formation": "명사 + を境に / を境にして",
+      "examples": [
+        {
+          "translation": "아버지의 죽음을 기점으로 그의 성격은 완전히 달라졌다."
+        },
+        {
+          "translation": "시험이 끝나는 것을 기점으로 휴가를 낼 계획입니다."
+        },
+        {
+          "translation": "봄을 기점으로 새로운 생활을 시작할 생각이다."
+        },
+        {
+          "translation": "그녀는 입학을 기점으로 패션에 관심을 가지기 시작했다."
+        }
+      ]
+    },
+    "ja_Noun_103": {
+      "title": "명사 + を機にして (wo ki ni shite)",
+      "shortExplanation": "어떤 사건이나 계기를 기회로 삼아 새로운 행동을 시작하거나 변화를 도모함을 나타내며, '~을/를 기회로 하여', '~을 계기로 삼아'라는 뜻입니다.",
+      "longExplanation": "문형 '～を機にして'(또는 '～を機に', 한자로는 機にして)는 이사, 졸업, 결혼, 실패 등 삶의 전환점이 되는 사건을 기회 삼아 새로운 일에 착수하거나 태도 및 방식을 전환할 때 쓰는 표현입니다('~을 기회 삼아', '~을 좋은 계기로 하여'). 단순히 원인을 나타내는 '～をきっかけに'에 비해 좋은 기회로 포착하여 주체적으로 행동한다는 어감이 강합니다.",
+      "formation": "명사 + を機に / を機にして",
+      "examples": [
+        {
+          "translation": "이사를 계기 삼아 가구를 새로 장만했습니다."
+        },
+        {
+          "translation": "졸업을 기회로 삼아 새로운 일자리를 찾기 시작했다."
+        },
+        {
+          "translation": "이번 프로젝트의 실패를 계기로 삼아 회사 전체의 업무 방식을 재검토하기로 했다."
+        },
+        {
+          "translation": "결혼을 계기 삼아 저희는 새로운 동네로 이사를 갔습니다."
+        }
+      ]
+    },
+    "ja_Noun_104": {
+      "title": "명사 + を皮切りに / を皮切りにして (wo kawakiri ni / wo kawakiri ni shite)",
+      "shortExplanation": "어떤 사건을 신호탄이자 첫 출발점으로 삼아 같은 유의 일들이 연이어 확대 전개됨을 나타내며, '~을/를 시작으로 (하여)', '~을 신호탄으로'라는 뜻입니다.",
+      "longExplanation": "문형 '～を皮切りに / ～を皮切りにして'(어원은 뜸을 뜰 때 처음 살갗을 자극하는 것에서 유래)는 한 가지 일이나 행동이 첫 발단이나 신호탄이 되어, 그 이후로 같은 종류의 행사나 행동이 차례차례 줄지어 확대 발전해 나감을 나타내는 표현입니다('~을 시작으로 하여', '~을 발판으로 삼아 연이어'). 전국 투어, 연속 공연, 신제품 출시 등과 같은 소식에서 자주 사용됩니다.",
+      "formation": "명사 + を皮切りに / を皮切りにして",
+      "examples": [
+        {
+          "translation": "그는 그 논문을 시작으로 여러 편의 연구를 연이어 개시했다."
+        },
+        {
+          "translation": "그녀는 이 대회를 신호탄으로 하여 그녀의 댄스 커리어가 비약적으로 성장했다."
+        },
+        {
+          "translation": "이 영화를 시작으로 그는 인기 배우로서의 확고한 입지를 다졌다."
+        },
+        {
+          "translation": "이 프로젝트를 필두로 회사는 새로운 방향성을 제시하기 시작했다."
+        }
+      ]
+    },
+    "ja_Noun_105": {
+      "title": "명사 + を皮切りにして (wo kawakiri ni shite)",
+      "shortExplanation": "어떤 일을 시작점으로 하여 이후에 일련의 활동이나 사건이 잇달아 전개됨을 나타내며, '~을/를 출발점으로 하여', '~을 시작으로'라는 뜻입니다.",
+      "longExplanation": "문형 '～を皮切りにして'는 특정한 일이나 시점을 신호탄 또는 첫 시발점으로 삼아, 이후 다양한 활동이나 연속된 흐름이 차례차례 펼쳐져 나감을 나타낼 때 쓰입니다('~을 첫걸음으로 하여', '~을 시작으로 차례로'). 특히 전국 순회 행사나 어떠한 전환점 이후 지속되는 일련의 흐름을 설명할 때 자주 활용됩니다.",
+      "formation": "명사 + を皮切りにして (또는 を皮切りに)",
+      "examples": [
+        {
+          "translation": "그는 그날을 시작으로 매일 헬스장에 다니기 시작했습니다."
+        },
+        {
+          "translation": "신년회를 시작으로 올해는 수많은 이벤트가 개최될 예정입니다."
+        },
+        {
+          "translation": "이 영화를 시작으로 그의 인기는 급상승했습니다."
+        },
+        {
+          "translation": "도쿄를 시작으로 그의 전시회는 전국에서 열릴 예정입니다."
+        }
+      ]
+    },
+    "ja_Noun_106": {
+      "title": "명사 + を禁じ得ない (wo kinjienai)",
+      "shortExplanation": "어떤 감정이나 마음이 북받쳐 올라 도저히 억누를 수 없음을 나타내며, '~을/를 금할 수 없다', '~을 억누를 수 없다'라는 뜻입니다.",
+      "longExplanation": "문형 '～を禁じ得ない'(한자로는 禁じ得ない)는 격식 있는 문어체 표현으로, 감정이나 심정을 나타내는 명사(놀라움, 분노, 슬픔, 동정, 기쁨 등)에 붙어 그러한 감정이 너무나 강렬하여 스스로 억누르거나 참을 수 없음을 나타냅니다('~을 금치 못하다', '~을 금할 수 없다'). 소설, 수필, 공식 논평 등에서 깊은 감정을 표현할 때 주로 사용됩니다.",
+      "formation": "명사(감정 명사) + を禁じ得ない",
+      "examples": [
+        {
+          "translation": "이러한 결과에는 놀라움을 금할 수 없다."
+        },
+        {
+          "translation": "그 뉴스를 듣고 그의 성공을 축복하는 마음을 금할 수 없다."
+        },
+        {
+          "translation": "그녀의 아름다움에는 깊은 감동을 금할 수 없다."
+        },
+        {
+          "translation": "그의 이야기를 듣고 웃음을 금할 수 없었다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Noun_92": {
+      "title": "名詞1 ＋ もさることながら ＋ 名詞2 ＋ も (A mo saru koto nagara B mo)",
+      "shortExplanation": "Aももちろんそうであるが、それ以上にBもそうであると、後者をより強調して述べます。「AはもちろんのことBも」「AだけでなくBも」。",
+      "longExplanation": "「～もさることながら」は、「前項Aの事実は当然のこととして認めた上で、後項Bはそれ以上に強調すべき特徴・魅力である」という気持ちを表すN1の文型です。「Aももちろん素晴らしいが、Bはさらに〜だ」という文脈で、物事や人物を高く評価・賞賛する際によく用いられます。",
+      "formation": "名詞1 ＋ もさることながら ＋ 名詞2 ＋ も",
+      "examples": [
+        {
+          "translation": "彼の歌唱力もさることながら、ダンスも素晴らしい。"
+        },
+        {
+          "translation": "このレストラン、味もさることながら、サービスもすばらしい。"
+        },
+        {
+          "translation": "彼女の美しさもさることながら、その知性も魅力的だ。"
+        },
+        {
+          "translation": "その映画、ストーリーもさることながら、音楽も素晴らしかった。"
+        }
+      ]
+    },
+    "ja_Noun_93": {
+      "title": "名詞 ＋ も兼ねて (mo kanete)",
+      "shortExplanation": "本来の目的に加えて、別の目的も合わせて同時に行うことを表します。「〜も合わせて」「〜を兼ねて」。",
+      "longExplanation": "「～も兼ねて」は、主たる目的を果たすだけでなく、前項の名詞で示されたもう一つの目的や意図を同時に兼ね合わせて行動を起こすことを表す文型です。「〜の目的も兼ねて」「〜も合わせて」という意味になり、散歩・観光・勉強・挨拶・視察など、目的を表す名詞に接続します。",
+      "formation": "名詞 ＋ も兼ねて",
+      "examples": [
+        {
+          "translation": "散歩も兼ねて、公園に行きました。"
+        },
+        {
+          "translation": "今日は日本語の勉強も兼ねて、日本の映画を見ます。"
+        },
+        {
+          "translation": "仕事も兼ねて、海外に行く予定です。"
+        },
+        {
+          "translation": "旅行も兼ねて、友人の結婚式に出席します。"
+        }
+      ]
+    },
+    "ja_Noun_94": {
+      "title": "名詞 ＋ も相まって (mo aimatte)",
+      "shortExplanation": "いくつかの要素が互いに重なり合い、相乗効果をもたらしてある結果を生み出すことを表します。「〜も重なって」「〜とあいまって」。",
+      "longExplanation": "「～も相まって」は、ある要因が他の要因と結びつき、互いに影響し合ってより際立った結果や状態を生み出すことを表す硬い表現の文型です。「〜も影響して」「〜と互いに重なり合って」という意味を持ち、成功した理由や特徴的な現象の複合要因を述べる際によく使われます。",
+      "formation": "名詞 ＋ も相まって",
+      "examples": [
+        {
+          "translation": "気候も相まって、この地域は農業に適しています。"
+        },
+        {
+          "translation": "彼の才能も相まって、彼は急速に昇進した。"
+        },
+        {
+          "translation": "技術進歩も相まって、私たちはより効率的に仕事をこなすことができるようになりました。"
+        },
+        {
+          "translation": "彼の努力も相まって、プロジェクトは成功しました。"
+        }
+      ]
+    },
+    "ja_Noun_95": {
+      "title": "名詞 ＋ をおいて他に ＋ 動詞否定形 (wo oite hoka ni...nai)",
+      "shortExplanation": "その対象以外にはふさわしいものや代わりになるものが存在しないと強く評価・断定します。「〜のほかには〜ない」。",
+      "longExplanation": "「～をおいて他に～ない」は、提示された名詞が唯一無二の存在であり、それ以上の適任者や最良の選択肢は他に決して存在しないと強い確信をもって称賛・評価する文型です。「〜を除いては他に〜ない」「〜をおいて他にはない」という意味で、人物の能力や物事の価値を高く評価する際に用いられます。",
+      "formation": "名詞 ＋ をおいて他に ＋ 動詞否定形（ない形）",
+      "examples": [
+        {
+          "translation": "この仕事を彼に任せる人をおいて他にいない。"
+        },
+        {
+          "translation": "この問題を解決できるのは彼をおいて他にいない。"
+        },
+        {
+          "translation": "この地域で美味しい麺を作る店をおいて他にない。"
+        },
+        {
+          "translation": "彼女の歌声を超える歌手をおいて他にいない。"
+        }
+      ]
+    },
+    "ja_Noun_96": {
+      "title": "名詞 ＋ をもって (wo motte)",
+      "shortExplanation": "手段・方法・態度を示す（「〜によって」「〜をもちいて」）、または公式な区切りとなる時点を示す（「〜を限りに」「〜で」）硬い表現です。",
+      "longExplanation": "「～をもって」（漢字表記は「以て」）は、公式な通知や改まったスピーチ・文書などで用いられる硬い表現で、主に以下の2つの意味を持ちます。\n1. 手段・方法・態度・根拠などを表し、「〜を用いて」「〜の気持ちで」という意味を表します。\n2. 期日や期限の終了点を示し、「〜を限りに」「〜の時点をもちまして」という意味で公式な終了や区切りを表します。",
+      "formation": "名詞 ＋ をもって",
+      "examples": [
+        {
+          "translation": "彼は誠実さをもって人々に信頼されています。"
+        },
+        {
+          "translation": "この賞をもって、彼女の努力が認められました。"
+        },
+        {
+          "translation": "彼は強い決意をもって問題に取り組んだ。"
+        },
+        {
+          "translation": "3月をもって、この店は閉店します。"
+        }
+      ]
+    },
+    "ja_Noun_97": {
+      "title": "名詞 ＋ をものともせずに (wo mono tomo sezu ni)",
+      "shortExplanation": "困難・危険・悪条件・プレッシャーなどを恐れず、問題にしないで勇敢に行動することを表します。「〜を恐れずに」「〜をものともせず」。",
+      "longExplanation": "「～をものともせずに」は、普通であれば大きな障害や苦難となる事柄（風雪・危険・病気・プレッシャー・失敗など）をものともせず、平気で乗り越えて立ち向かっていく様子を表す文型です。「〜を問題にしないで」「〜に屈することなく」という意味を持ち、勇気や強い意志をもって行動する人物を称賛・描写する際に用いられます。",
+      "formation": "名詞 ＋ をものともせずに",
+      "examples": [
+        {
+          "translation": "彼女は怖さをものともせずに、暗闇の中へ進んで行った。"
+        },
+        {
+          "translation": "試験のプレッシャーをものともせずに、彼は自信満々に答えた。"
+        },
+        {
+          "translation": "彼は風雪をものともせずに山を登った。"
+        },
+        {
+          "translation": "彼は失敗をものともせずに、前に進み続けた。"
+        }
+      ]
+    },
+    "ja_Noun_98": {
+      "title": "名詞 ＋ をよそに (wo yoso ni)",
+      "shortExplanation": "周囲の心配・反対・期待や置かれた状況などを全く気にかけず、平気で行動することを表します。「〜を気にしないで」「〜を無視して」。",
+      "longExplanation": "「～をよそに」（漢字表記は「余所に」）は、自分に関わる周囲の意見・忠告・心配・反対や、世間の状況などを全く関係のないことのように受け流し、配慮することなく行動する様子を表す文型です。「〜を気にかけずに」「〜をよそにして」という意味になり、話し手の呆れや非難、驚きの気持ちが含まれることがよくあります。",
+      "formation": "名詞 ＋ をよそに",
+      "examples": [
+        {
+          "translation": "経済危機をよそに、彼は高級な車を買った。"
+        },
+        {
+          "translation": "試験が迫るをよそに、彼は遊び続けている。"
+        },
+        {
+          "translation": "親の反対をよそに、彼女は彼と結婚しました。"
+        },
+        {
+          "translation": "その国の経済状況をよそに、多くの企業が進出し続けている。"
+        }
+      ]
+    },
+    "ja_Noun_99": {
+      "title": "名詞 ＋ を余儀なくされる (wo yogi naku sareru)",
+      "shortExplanation": "やむを得ない外部の事情により、本人の意志に関わらずその状況に追い込まれることを表します。「〜せざるを得なくなる」「〜を強いられる」。",
+      "longExplanation": "「～を余儀なくされる」（「余儀ない」＝他の方法がない）は、天候・経済難・怪我・社会情勢などの不可抗力な理由により、選択の余地なく望まない行為や状態を強いられることを表す硬い文語的表現です。「〜することを余儀なくされる」「〜を強いられる」という意味になり、ニュースや公的な文書でよく用いられます。",
+      "formation": "名詞 ＋ を余儀なくされる",
+      "examples": [
+        {
+          "translation": "彼は経済的困難により、退学を余儀なくされた。"
+        },
+        {
+          "translation": "厳しい天候によって、私たちは遠足を中止する余儀なくされた。"
+        },
+        {
+          "translation": "怪我のため、彼は入院を余儀なくされた。"
+        },
+        {
+          "translation": "リストラの恐怖により、多くの従業員が転職を余儀なくされた。"
+        }
+      ]
+    },
+    "ja_Noun_100": {
+      "title": "名詞 ＋ を前提として (wo zentei toshite)",
+      "shortExplanation": "ある事柄があらかじめ成り立つ条件・前提であることを基盤にして行動や計画を進めることを表します。「〜を条件として」「〜という仮定のもとで」。",
+      "longExplanation": "「～を前提として」は、後項の計画・決定・行動が成立するための必須条件や根拠となる仮定として、前項の名詞をあらかじめ設定していることを表す文型です。「〜を条件にして」「〜があることをあらかじめ見込んで」という意味を持ち、ビジネスや学術、公式な計画立案などで広く用いられます。",
+      "formation": "名詞 ＋ を前提として",
+      "examples": [
+        {
+          "translation": "成功を前提として、ビジネスプランを作成しました。"
+        },
+        {
+          "translation": "彼の勝利を前提として、パーティーの準備を始めました。"
+        },
+        {
+          "translation": "両親の理解を前提として、旅行計画を進めます。"
+        },
+        {
+          "translation": "このプロジェクトは、資金が揃うことを前提としています。"
+        }
+      ]
+    },
+    "ja_Noun_101": {
+      "title": "名詞 ＋ を前提にして (wo zentei ni shite)",
+      "shortExplanation": "ある条件や状況があらかじめ満たされることを前提・基礎として物事を考えることを表します。「〜を前提として」「〜を見込んで」。",
+      "longExplanation": "「～を前提にして」は、「～を前提として」とほぼ同義で、ある事柄や状況があらかじめ起こる・存在するはずだという仮定を立て、それを土台にして行動や判断を行うことを表す文型です。「〜という前提のもとで」「〜を見込んで」という意味を持ち、日常の段取りからビジネスの打ち合わせまで幅広く用いられます。",
+      "formation": "名詞 ＋ を前提にして",
+      "examples": [
+        {
+          "translation": "好天を前提にして、明日のピクニックの計画を立てました。"
+        },
+        {
+          "translation": "彼女の合格を前提にして、祝いのパーティーの準備を始めました。"
+        },
+        {
+          "translation": "経済成長を前提にして、予算案が作られた。"
+        },
+        {
+          "translation": "彼の参加を前提にして、会議の日程を決めました。"
+        }
+      ]
+    },
+    "ja_Noun_102": {
+      "title": "名詞 ＋ を境にして (wo sakai ni shite)",
+      "shortExplanation": "ある時点や重大な出来事を境界・転換点として、それ以前と以後で状況が大きく変化することを表します。「〜を境に」「〜を契機として大きく変わる」。",
+      "longExplanation": "「～を境にして」（「〜を境に」とも）は、特定の出来事や時期を一つの明確な区切り・境界線として捉え、それを機に状況・状態・性質などが一変したことを表す文型です。「〜を分岐点として」「〜を境にそれ以降」という意味になり、人生の節目や時代の転換期を述べる際によく使われます。",
+      "formation": "名詞 ＋ を境に ｜ 名詞 ＋ を境にして",
+      "examples": [
+        {
+          "translation": "父の死を境にして、彼の性格が一変した。"
+        },
+        {
+          "translation": "試験を境にして、休暇を取る予定です。"
+        },
+        {
+          "translation": "春を境にして、新しい生活を始めるつもりだ。"
+        },
+        {
+          "translation": "彼女は入学を境にして、ファッションに興味を持ち始めた。"
+        }
+      ]
+    },
+    "ja_Noun_103": {
+      "title": "名詞 ＋ を機にして (wo ki ni shite)",
+      "shortExplanation": "ある出来事や節目を絶好の機会・契機と捉えて、新しい行動を起こしたり変化させたりすることを表します。「〜を良い機会として」「〜をきっかけにして」。",
+      "longExplanation": "「～を機にして」（「〜を機に」とも、漢字表記は「機にして」）は、引っ越し・卒業・結婚・事業の節目や失敗などを絶好のチャンス（転機）と捉え、それをきっかけとして新たな行動を開始したり生活や方針を改めたりすることを表す文型です。「〜をきっかけにして」「〜を好機と捉えて」という意味で前向きな行動によく用いられます。",
+      "formation": "名詞 ＋ を機に ｜ 名詞 ＋ を機にして",
+      "examples": [
+        {
+          "translation": "引っ越しを機にして、家具を新しくしました。"
+        },
+        {
+          "translation": "卒業を機にして、新しい仕事を探し始めた。"
+        },
+        {
+          "translation": "このプロジェクトの失敗を機にして、会社全体の仕事のやり方を見直すことにした。"
+        },
+        {
+          "translation": "結婚を機にして、私たちは新しい町へ引っ越しました。"
+        }
+      ]
+    },
+    "ja_Noun_104": {
+      "title": "名詞 ＋ を皮切りに / を皮切りにして (wo kawakiri ni / wo kawakiri ni shite)",
+      "shortExplanation": "ある出来事が最初の突破口・皮切りとなり、それを合図に同種の事柄が次々と連続して起こることを表します。「〜を手始めに」「〜を皮切りとして」。",
+      "longExplanation": "「～を皮切りに / ～を皮切りにして」（お灸を据える際に最初に皮を焼くことに由来）は、ある行動や催しが先陣を切って口火となり、それを合図にして同類の出来事や活動が次々と勢いよく展開・拡大していく様子を表す文型です。「〜を手始めとして」「〜を皮切りに次々と」という意味になり、コンサートの全国ツアー・新店舗の連続開店・一連のプロジェクト展開などのニュースで頻繁に使われます。",
+      "formation": "名詞 ＋ を皮切りに ｜ 名詞 ＋ を皮切りにして",
+      "examples": [
+        {
+          "translation": "彼はその論文を皮切りにして複数の研究を開始した。"
+        },
+        {
+          "translation": "彼女はこのコンペティションを皮切りにして彼女のダンスキャリアが飛躍的に成長した。"
+        },
+        {
+          "translation": "この映画を皮切りに、彼は人気俳優としての立場を確立した。"
+        },
+        {
+          "translation": "このプロジェクトを皮切りにして、会社は新たな方向性を示し始めた。"
+        }
+      ]
+    },
+    "ja_Noun_105": {
+      "title": "名詞 ＋ を皮切りにして (wo kawakiri ni shite)",
+      "shortExplanation": "ある事柄を最初のスタート・合図として、それに続いて一連の活動や出来事が次々と行われることを表します。「〜を始めとして」「〜を皮切りにして」。",
+      "longExplanation": "「～を皮切りにして」は、あるイベントや日付を最初の口火・皮切りとして定め、それを契機に同種の計画や活動が次々と続いていく様子を表す文型です。「〜を最初の合図として」「〜を皮切りにして以降」という意味を持ち、全国巡回イベントの初日や、ある出来事から勢いよく発展していく文脈で用いられます。",
+      "formation": "名詞 ＋ を皮切りにして（または を皮切りに）",
+      "examples": [
+        {
+          "translation": "彼はその日を皮切りにして毎日ジムに通い始めました。"
+        },
+        {
+          "translation": "新年会を皮切りにして、今年はたくさんのイベントが開催されます。"
+        },
+        {
+          "translation": "この映画を皮切りにして彼の人気は急上昇しました。"
+        },
+        {
+          "translation": "東京を皮切りにして、彼の展示会は全国で開かれる予定です。"
+        }
+      ]
+    },
+    "ja_Noun_106": {
+      "title": "名詞 ＋ を禁じ得ない (wo kinjienai)",
+      "shortExplanation": "ある事態に対して生じる強い感情や衝動を、どうしても抑えきることができないことを表します。「〜を抑えられない」「〜の感情を禁じ得ない」。",
+      "longExplanation": "「～を禁じ得ない」（漢字表記は「禁じ得ない」）は、改まった文章や談話で用いられる硬い文型です。感情や心理状態を表す名詞（驚き・怒り・涙・同情・疑念・喜びなど）に接続し、沸き起こる強い感情を理性で抑えようとしてもどうしても抑えることができない様子を表します。「〜を抑えることができない」「〜の念を抱かずにはいられない」という意味になります。",
+      "formation": "名詞（感情・心理を表す名詞） ＋ を禁じ得ない",
+      "examples": [
+        {
+          "translation": "この結果には驚きを禁じ得ない。"
+        },
+        {
+          "translation": "そのニュースを聞いて、彼の成功を祝福する気持ちを禁じ得ない。"
+        },
+        {
+          "translation": "彼女の美しさには感動を禁じ得ない。"
+        },
+        {
+          "translation": "彼の話を聞いて、笑いを禁じ得ない。"
+        }
+      ]
+    }
+  }
+}

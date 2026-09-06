@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_统统_660",
+    "language": "zh",
+    "pattern": "统统",
+    "title": "统统 (all)",
+    "shortExplanation": "all",
+    "longExplanation": "all. Pinyin: tǒngtǒng",
+    "formation": "tǒngtǒng",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "影院、酒吧，统统与他无缘。",
+        "romanization": "yǐngyuàn、 jiǔbā， tǒngtǒng yǔ tā wúyuán。",
+        "translation": "Theaters and bars (all) have nothing to do with him."
+      }
+    ]
+  },
+  {
+    "id": "zh_以A为B_661",
+    "language": "zh",
+    "pattern": "以 A 为 B",
+    "title": "以 A 为 B (regard A as B)",
+    "shortExplanation": "regard A as B",
+    "longExplanation": "regard A as B. Pinyin: yǐ A wéi B",
+    "formation": "yǐ A wéi B",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "高级阶段的汉语学习应以阅读吸收为主，语法学习为辅。",
+        "romanization": "gāojí jiēduàn de Hànyǔ xuéxí yīng yǐ yuèdú xīshōu wéizhǔ， yǔfǎ xuéxí wéi fǔ。",
+        "translation": "At the advanced stage of Chinese learning, [we] should consider reading and input should as the primary, [and] consider grammar learning as secondary."
+      }
+    ]
+  },
+  {
+    "id": "zh_该V就得V_662",
+    "language": "zh",
+    "pattern": "该 V (就)(得) V",
+    "title": "该 V (就)(得) V (if one should V then one must V)",
+    "shortExplanation": "if one should V then one must V",
+    "longExplanation": "if one should V then one must V. Pinyin: gāi V ( jiù)( dé) V",
+    "formation": "gāi V ( jiù)( dé) V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "中国过年过节的时候商店最忙了，根本不放假，该开门就得开门。",
+        "romanization": "Zhōngguó guònián guòjié de shíhou shāngdiàn zuì máng le， gēnběn bù fàngjià， gāi kāimén jiù dé kāimén。",
+        "translation": "When the Chinese New Year is over, the store is the busiest, and there is no holiday at all. We have no choice but to stay open. (Lit. If we should open the door [for business] then we must open the door [for business].)"
+      }
+    ]
+  },
+  {
+    "id": "zh_不妨V_663",
+    "language": "zh",
+    "pattern": "不妨 V",
+    "title": "不妨 V (it won’t hurt to V)",
+    "shortExplanation": "it won’t hurt to V",
+    "longExplanation": "it won’t hurt to V. Pinyin: bùfáng V",
+    "formation": "bùfáng V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "有什么意见，你不妨直说。",
+        "romanization": "yǒu shénme yìjiàn， nǐ bùfáng zhí shuō。",
+        "translation": "If you have any comments, it won’t hurt for you to say it frankly. (You’re welcome to say it frankly. There’s nothing preventing you to say it frankly.)"
+      }
+    ]
+  },
+  {
+    "id": "zh_务必_664",
+    "language": "zh",
+    "pattern": "务必",
+    "title": "务必 (must)",
+    "shortExplanation": "must",
+    "longExplanation": "must. Pinyin: wùbì",
+    "formation": "wùbì",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "飞机起飞前务必系好安全带。",
+        "romanization": "fēijī qǐfēi qián wùbì xì hǎo ānquándài。",
+        "translation": "you must fasten your seatbelt before the plane takes off."
+      }
+    ]
+  },
+  {
+    "id": "zh_鉴于_665",
+    "language": "zh",
+    "pattern": "鉴于",
+    "title": "鉴于 (in view of)",
+    "shortExplanation": "in view of",
+    "longExplanation": "in view of. Pinyin: jiànyú",
+    "formation": "jiànyú",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "鉴于农村教师严重缺乏，他决定大学毕业以后，到农村去当老师。",
+        "romanization": "jiànyú nóngcūn jiàoshī yánzhòng quēfá， tā juédìng dàxué bìyè yǐhòu， dào nóngcūn qù dāng lǎoshī。",
+        "translation": "In view of the serious shortage of rural teachers, he decided to go to the countryside to become a teacher after graduating from college."
+      }
+    ]
+  },
+  {
+    "id": "zh_便于_666",
+    "language": "zh",
+    "pattern": "便于",
+    "title": "便于 (easy to)",
+    "shortExplanation": "easy to",
+    "longExplanation": "easy to. Pinyin: biànyú",
+    "formation": "biànyú",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "科普文章应该写得简明易懂、便于理解。",
+        "romanization": "kēpǔ wénzhāng yīnggāi xiě dé jiǎnmíng yìdǒng、 biànyú lǐjiě。",
+        "translation": "Popular science articles should be written in a concise way, [so it’s] easy to understand."
+      }
+    ]
+  },
+  {
+    "id": "zh_犹如N一般般A_667",
+    "language": "zh",
+    "pattern": "犹如 N (一般/般) A",
+    "title": "犹如 N (一般/般) A (as A as N (metaphorically))",
+    "shortExplanation": "as A as N (metaphorically)",
+    "longExplanation": "as A as N (metaphorically). Pinyin: yóurú N ( yībān/ bān) A",
+    "formation": "yóurú N ( yībān/ bān) A",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "公司的劣质产品气坏了消费者，顾客的愤怒情绪犹如火山爆发(一般/般)难以控制。",
+        "romanization": "gōngsī de lièzhì chǎnpǐn qì huàile xiāofèizhě， gùkè de fènnù qíngxù yóurú huǒshānbàofā( yībān/ bān) nányǐ kòngzhì。",
+        "translation": "The company's inferior products have angered consumers, and their anger is as difficult to control as a volcanic eruption."
+      }
+    ]
+  },
+  {
+    "id": "zh_和相比_668",
+    "language": "zh",
+    "pattern": "和……相比",
+    "title": "和……相比 (compared to…)",
+    "shortExplanation": "compared to…",
+    "longExplanation": "compared to…. Pinyin: hé…… xiāngbǐ",
+    "formation": "hé…… xiāngbǐ",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "和10年前相比，人们要经历更多次的职业选择。",
+        "romanization": "hé10 niánqián xiāngbǐ， rénmen yào jīnglì gèng duōcì de zhíyè xuǎnzé。",
+        "translation": "People have to go through more career choices compared to 10 years ago."
+      }
+    ]
+  },
+  {
+    "id": "zh_一MM_669",
+    "language": "zh",
+    "pattern": "一 + M + M",
+    "title": "一 + M + M (one batch after another)",
+    "shortExplanation": "one batch after another",
+    "longExplanation": "one batch after another. Pinyin: yī + M + M",
+    "formation": "yī + M + M",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "每天都会有一拨拨同行前来考察访问。",
+        "romanization": "měitiān dūhuì yǒu yī bō bō tóngháng qiánlái kǎochá fǎngwèn。",
+        "translation": "Every day, there are group after group of people from the same profession coming to tour [the facilities] and visit."
+      }
+    ]
+  },
+  {
+    "id": "zh_难以V_670",
+    "language": "zh",
+    "pattern": "难以 V",
+    "title": "难以 V (hard to)",
+    "shortExplanation": "hard to",
+    "longExplanation": "hard to. Pinyin: nányǐ V",
+    "formation": "nányǐ V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他能否成功尚难以预料。",
+        "romanization": "tā néngfǒu chénggōng shàng nányǐ yùliào。",
+        "translation": "It’s still hard to predict whether he will be successful."
+      }
+    ]
+  },
+  {
+    "id": "zh_免得_671",
+    "language": "zh",
+    "pattern": "免得",
+    "title": "免得 (lest)",
+    "shortExplanation": "lest",
+    "longExplanation": "lest. Pinyin: miǎnde",
+    "formation": "miǎnde",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "今天大家晚点儿走，把活儿都干完，免得明天再来。",
+        "romanization": "jīntiān dàjiā wǎndiǎn r zǒu， bǎ huór dōu gàn wán， miǎnde míngtiān zài lái。",
+        "translation": "Everyone [please] leave a little later today and finish all the work, lest you [have to] come again tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "zh_时而时而_672",
+    "language": "zh",
+    "pattern": "时而……时而……",
+    "title": "时而……时而…… (sometimes… sometimes…)",
+    "shortExplanation": "sometimes… sometimes…",
+    "longExplanation": "sometimes… sometimes…. Pinyin: shí'ér…… shí'ér……",
+    "formation": "shí'ér…… shí'ér……",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "阳光下，蝴蝶的颜色鲜艳极了，时而金黄，时而翠绿，时而由紫变蓝。",
+        "romanization": "yángguāng xià， húdié de yánsè xiānyàn jíle， shí'ér jīnhuáng， shí'ér cuìlǜ， shí'ér yóu zǐ biàn lán。",
+        "translation": "In the sun, the color of the butterfly is very bright, sometimes golden, sometimes green, sometimes from purple to blue."
+      }
+    ]
+  },
+  {
+    "id": "zh_时而_673",
+    "language": "zh",
+    "pattern": "时而",
+    "title": "时而 (from time to time)",
+    "shortExplanation": "from time to time",
+    "longExplanation": "from time to time. Pinyin: shí'ér",
+    "formation": "shí'ér",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "主人去世以后，那狗没有了往日的精神，时而发出令人伤心的叫声。",
+        "romanization": "zhǔrén qùshì yǐhòu， nà gǒu méiyǒu le wǎngrì de jīngshén， shí'ér fāchū lìngrén shāngxīn de jiàoshēng。",
+        "translation": "After the death of the owner, the dog did not have the spirit like it did in the past, and it sometimes makes a sad call."
+      }
+    ]
+  },
+  {
+    "id": "zh_不禁V_674",
+    "language": "zh",
+    "pattern": "不禁 V",
+    "title": "不禁 V (can’t help but to V)",
+    "shortExplanation": "can’t help but to V",
+    "longExplanation": "can’t help but to V. Pinyin: bùjīn V",
+    "formation": "bùjīn V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "听到这个消息，大家不禁兴奋起来。",
+        "romanization": "tīngdào zhège xiāoxi， dàjiā bùjīn xīngfèn qilai。",
+        "translation": "When you heard the news, everyone couldn't help but get excited."
+      }
+    ]
+  }
+]

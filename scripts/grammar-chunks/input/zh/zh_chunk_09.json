@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_一MN也都不V_122",
+    "language": "zh",
+    "pattern": "一 + M + N + 也／都 + 不 + V",
+    "title": "一 + M + N + 也／都 + 不 + V (not V even one N)",
+    "shortExplanation": "not V even one N",
+    "longExplanation": "not V even one N. Pinyin: yī + M + N + yě／ dōu + bù + V",
+    "formation": "yī + M + N + yě／ dōu + bù + V",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我一个苹果也不吃。",
+        "romanization": "wǒ yī gè píngguǒ yě bù chī。",
+        "translation": "I’m not eating any apples. (Lit. I don’t eat even one apple.)"
+      }
+    ]
+  },
+  {
+    "id": "zh_那_123",
+    "language": "zh",
+    "pattern": "那",
+    "title": "那 (so then)",
+    "shortExplanation": "so then",
+    "longExplanation": "so then. Pinyin: nà",
+    "formation": "nà",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你不去，那我也不去了。",
+        "romanization": "nǐ bù qù， nà wǒ yě bù qù le。",
+        "translation": "[If] you don’t go, then I won’t go either."
+      }
+    ]
+  },
+  {
+    "id": "zh_那也_124",
+    "language": "zh",
+    "pattern": "那也",
+    "title": "那也 (but still)",
+    "shortExplanation": "but still",
+    "longExplanation": "but still. Pinyin: nà yě",
+    "formation": "nà yě",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "A: 我早就复习好了。B: 那也不能一直玩儿啊。",
+        "romanization": "A: wǒ zǎojiù fùxí hǎole。B: nà yě bùnéng yīzhí wánr ā。",
+        "translation": "A: I’ve done my reviewed a long time ago already."
+      }
+    ]
+  },
+  {
+    "id": "zh_V1了就V2_126",
+    "language": "zh",
+    "pattern": "V1了就 V2",
+    "title": "V1了就 V2 (V2 as soon as V1)",
+    "shortExplanation": "V2 as soon as V1",
+    "longExplanation": "V2 as soon as V1. Pinyin: V1 le jiù V2",
+    "formation": "V1 le jiù V2",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "爸爸回来了我们就吃饭。",
+        "romanization": "bàba huílai le wǒmen jiù chīfàn。",
+        "translation": "We’ll eat when dad comes back."
+      }
+    ]
+  },
+  {
+    "id": "zh_V来去_127",
+    "language": "zh",
+    "pattern": "V 来／去",
+    "title": "V 来／去 ((complements of direction))",
+    "shortExplanation": "(complements of direction)",
+    "longExplanation": "(complements of direction). Pinyin: V lái／ qù",
+    "formation": "V lái／ qù",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我们在楼上等你呢，你上来吧。",
+        "romanization": "wǒmen zài lóushàng děng nǐ ne， nǐ shànglái ba。",
+        "translation": "We are upstairs waiting, please come up."
+      }
+    ]
+  },
+  {
+    "id": "zh_Vsomewhere来去_128",
+    "language": "zh",
+    "pattern": "V somewhere 来／去",
+    "title": "V somewhere 来／去 ((complements of direction))",
+    "shortExplanation": "(complements of direction)",
+    "longExplanation": "(complements of direction). Pinyin: V somewhere lái／ qù",
+    "formation": "V somewhere lái／ qù",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "朋友回家去了。",
+        "romanization": "péngyou huíjiā qù le。",
+        "translation": "[My] friend went back home."
+      }
+    ]
+  },
+  {
+    "id": "zh_VO来去_129",
+    "language": "zh",
+    "pattern": "V O 来／去",
+    "title": "V O 来／去 ((complements of direction))",
+    "shortExplanation": "(complements of direction)",
+    "longExplanation": "(complements of direction). Pinyin: V O lái／ qù",
+    "formation": "V O lái／ qù",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "明天要带作业来。",
+        "romanization": "míngtiān yào dài zuòyè lái。",
+        "translation": "You need to bring [your] homework tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "zh_V来去O_130",
+    "language": "zh",
+    "pattern": "V 来／去 O",
+    "title": "V 来／去 O ((complements of direction))",
+    "shortExplanation": "(complements of direction)",
+    "longExplanation": "(complements of direction). Pinyin: V lái／ qù O",
+    "formation": "V lái／ qù O",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "明天要带来作业。",
+        "romanization": "míngtiān yào dàilái zuòyè。",
+        "translation": "Bring [your] homework tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "zh_能吗_131",
+    "language": "zh",
+    "pattern": "能……吗？",
+    "title": "能……吗？ (how can you…?)",
+    "shortExplanation": "how can you…?",
+    "longExplanation": "how can you…?. Pinyin: néng…… ma？",
+    "formation": "néng…… ma？",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你不做作业，也不练习，能学好汉语吗？",
+        "romanization": "nǐ bù zuò zuòyè， yě bù liànxí， néng xuéhǎo Hànyǔ ma？",
+        "translation": "You don't do [your] homework, don't practice, how can you [possibly] learn Chinese well?"
+      }
+    ]
+  },
+  {
+    "id": "zh_N1还是N2_132",
+    "language": "zh",
+    "pattern": "N1 还是 N2 ?",
+    "title": "N1 还是 N2 ? (N1 or N2 ?)",
+    "shortExplanation": "N1 or N2 ?",
+    "longExplanation": "N1 or N2 ?. Pinyin: N1 háishi N2 ?",
+    "formation": "N1 háishi N2 ?",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你要喝咖啡还是喝茶？",
+        "romanization": "nǐ yào hē kāfēi háishi hē chá？",
+        "translation": "Do you want coffee or tea?"
+      }
+    ]
+  },
+  {
+    "id": "zh_N1或者N2_133",
+    "language": "zh",
+    "pattern": "N1 或者 N2",
+    "title": "N1 或者 N2 (either N1 or N21)",
+    "shortExplanation": "either N1 or N21",
+    "longExplanation": "either N1 or N21. Pinyin: N1 huòzhě N2",
+    "formation": "N1 huòzhě N2",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "天冷了或者工作累了的时候，喝杯热茶很舒服。",
+        "romanization": "tiānlěng le huòzhě gōngzuò lèi le de shíhou， hē bēi rèchá hěn shūfu。",
+        "translation": "When the weather is cold or when you’re tired from work, it is very comfortable to drink a cup of hot tea."
+      }
+    ]
+  },
+  {
+    "id": "zh_N1还是N2_134",
+    "language": "zh",
+    "pattern": "N1 还是 N2",
+    "title": "N1 还是 N2 (N1 or N2 (in question-like clauses))",
+    "shortExplanation": "N1 or N2 (in question-like clauses)",
+    "longExplanation": "N1 or N2 (in question-like clauses). Pinyin: N1 háishi N2",
+    "formation": "N1 háishi N2",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我还没想好去爬山还是去看电影。",
+        "romanization": "wǒ hái méi xiǎng hǎoqù páshān háishi qù kàn diànyǐng。",
+        "translation": "I haven't decided whether to go hiking or to go to the movies."
+      }
+    ]
+  },
+  {
+    "id": "zh_PLACEV着N_135",
+    "language": "zh",
+    "pattern": "PLACE + V + 着 + N",
+    "title": "PLACE + V + 着 + N (There is N V’ed in PLACE.)",
+    "shortExplanation": "There is N V’ed in PLACE.",
+    "longExplanation": "There is N V’ed in PLACE.. Pinyin: PLACE + V + zhe + N",
+    "formation": "PLACE + V + zhe + N",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "桌子上放着一杯咖啡。",
+        "romanization": "zhuōzi shàng fàng zhe yī bēi kāfēi。",
+        "translation": "There is a cup of coffee placed on the table."
+      }
+    ]
+  },
+  {
+    "id": "zh_PLACE没V着N_136",
+    "language": "zh",
+    "pattern": "PLACE + 没 + V + 着 + N",
+    "title": "PLACE + 没 + V + 着 + N (There is not N V’ed in PLACE.)",
+    "shortExplanation": "There is not N V’ed in PLACE.",
+    "longExplanation": "There is not N V’ed in PLACE.. Pinyin: PLACE + méi + V + zhe + N",
+    "formation": "PLACE + méi + V + zhe + N",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "桌子上没放着咖啡。",
+        "romanization": "zhuōzi shàng méi fàng zhe kāfēi。",
+        "translation": "There was no coffee placed on the table."
+      }
+    ]
+  },
+  {
+    "id": "zh_会VA的_137",
+    "language": "zh",
+    "pattern": "会 + V / A + (的）",
+    "title": "会 + V / A + (的） (will V, will be A)",
+    "shortExplanation": "will V, will be A",
+    "longExplanation": "will V, will be A. Pinyin: huì + V / A + ( de）",
+    "formation": "huì + V / A + ( de）",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你穿得那么少，会感冒的。",
+        "romanization": "nǐ chuān dé nàme shǎo， huì gǎnmào de。",
+        "translation": "You wear so little, you will catch a cold."
+      }
+    ]
+  }
+]

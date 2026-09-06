@@ -1,0 +1,251 @@
+[
+  {
+    "id": "zh_可Q_360",
+    "language": "zh",
+    "pattern": "可 Q",
+    "title": "可 Q (Q on earth?)",
+    "shortExplanation": "Q on earth?",
+    "longExplanation": "Q on earth?. Pinyin: kě Q",
+    "formation": "kě Q",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "下个星期就要去使馆办签证了，这可怎么办？",
+        "romanization": "xiàgèxīngqī jiùyào qù shǐguǎn bàn qiānzhèng le， zhè kě zěnmebàn？",
+        "translation": "I am going to the embassy to apply for a visa next week, what on earth am I supposed to do?"
+      }
+    ]
+  },
+  {
+    "id": "zh_可V_361",
+    "language": "zh",
+    "pattern": "可 V",
+    "title": "可 V (indeed)",
+    "shortExplanation": "indeed",
+    "longExplanation": "indeed. Pinyin: kě V",
+    "formation": "kě V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这可是个大问题，我也不太清楚。",
+        "romanization": "zhè kěshì gè dà wèntí， wǒ yě bù tài qīngchu。",
+        "translation": "Now this (this indeed) is a big question, and I am not too sure about it."
+      }
+    ]
+  },
+  {
+    "id": "zh_怕害怕_362",
+    "language": "zh",
+    "pattern": "怕/害怕",
+    "title": "怕/害怕 (to be afraid)",
+    "shortExplanation": "to be afraid",
+    "longExplanation": "to be afraid. Pinyin: pà/ hàipà",
+    "formation": "pà/ hàipà",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我的工作经验还比较少，那份工作我怕/害怕完成不了。",
+        "romanization": "wǒ de gōngzuò jīngyàn hái bǐjiào shǎo， nà fèn gōngzuò wǒ pà/ hàipà wánchéng bùliǎo。",
+        "translation": "My work experience is still relatively small, I am afraid the job cannot be completed."
+      }
+    ]
+  },
+  {
+    "id": "zh_恐怕_363",
+    "language": "zh",
+    "pattern": "恐怕……",
+    "title": "恐怕…… (I guess I’m afraid…)",
+    "shortExplanation": "I guess I’m afraid…",
+    "longExplanation": "I guess I’m afraid…. Pinyin: kǒngpà……",
+    "formation": "kǒngpà……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "听完我的回答，恐怕你已经知道我的答案了吧。",
+        "romanization": "tīng wán wǒ de huídá， kǒngpà nǐ yǐjīng zhīdào wǒ de dá'àn le ba。",
+        "translation": "After listening to my response, I guess I’m afraid you already know the answer."
+      }
+    ]
+  },
+  {
+    "id": "zh_怕恐怕V_364",
+    "language": "zh",
+    "pattern": "怕/恐怕 V",
+    "title": "怕/恐怕 V (probably I’m afraid)",
+    "shortExplanation": "probably I’m afraid",
+    "longExplanation": "probably I’m afraid. Pinyin: pà/ kǒngpà V",
+    "formation": "pà/ kǒngpà V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他离开这里怕/恐怕有二十天了。",
+        "romanization": "tā líkāi zhèlǐ pà/ kǒngpà yǒu èrshí tiān le。",
+        "translation": "He left here for probably 20 days (I’m afraid)."
+      }
+    ]
+  },
+  {
+    "id": "zh_到底_365",
+    "language": "zh",
+    "pattern": "到底",
+    "title": "到底 (to the end)",
+    "shortExplanation": "to the end",
+    "longExplanation": "to the end. Pinyin: dàodǐ",
+    "formation": "dàodǐ",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "今天我一定陪你逛街逛到底，保证让你买到合适的衣服。",
+        "romanization": "jīntiān wǒ yīdìng péi nǐ guàngjiē guàng dàodǐ， bǎozhèng ràng nǐ mǎi dào héshì de yīfu。",
+        "translation": "Today I will go shopping with you to the end. [I can] guarantee that you will buy the right clothes."
+      }
+    ]
+  },
+  {
+    "id": "zh_到底Q_366",
+    "language": "zh",
+    "pattern": "到底 Q",
+    "title": "到底 Q (in the world)",
+    "shortExplanation": "in the world",
+    "longExplanation": "in the world. Pinyin: dàodǐ Q",
+    "formation": "dàodǐ Q",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "到底你怎么打算的呀？",
+        "romanization": "dàodǐ nǐ zěnme dǎsuàn de ya？",
+        "translation": "What in the world are you planning?"
+      }
+    ]
+  },
+  {
+    "id": "zh_拿来说_367",
+    "language": "zh",
+    "pattern": "拿……来说",
+    "title": "拿……来说 (take… for example)",
+    "shortExplanation": "take… for example",
+    "longExplanation": "take… for example. Pinyin: ná…… láishuō",
+    "formation": "ná…… láishuō",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "拿我来说，我已经学了十年汉语了。",
+        "romanization": "ná wǒ láishuō， wǒ yǐjīng xué le shí nián Hànyǔ le。",
+        "translation": "Take me, for example, I’ve been learning Chinese for 10 years."
+      }
+    ]
+  },
+  {
+    "id": "zh_敢V_368",
+    "language": "zh",
+    "pattern": "敢 V",
+    "title": "敢 V (to dare to V)",
+    "shortExplanation": "to dare to V",
+    "longExplanation": "to dare to V. Pinyin: gǎn V",
+    "formation": "gǎn V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "谁也不敢说他的坏话。",
+        "romanization": "shéi yě bù gǎn shuō tā de huàihuà。",
+        "translation": "No one dares to say bad things about her."
+      }
+    ]
+  },
+  {
+    "id": "zh_倒_369",
+    "language": "zh",
+    "pattern": "倒",
+    "title": "倒 (to pour)",
+    "shortExplanation": "to pour",
+    "longExplanation": "to pour. Pinyin: dǎo",
+    "formation": "dǎo",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我给你倒杯水吧。",
+        "romanization": "wǒ gěi nǐ dǎo bēi shuǐ ba。",
+        "translation": "I will pour you a glass of water."
+      }
+    ]
+  },
+  {
+    "id": "zh_倒_370",
+    "language": "zh",
+    "pattern": "倒",
+    "title": "倒 (to reverse)",
+    "shortExplanation": "to reverse",
+    "longExplanation": "to reverse. Pinyin: dǎo",
+    "formation": "dǎo",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "“我爱你”，倒过来就是“你爱我”。",
+        "romanization": "“ wǒ ài nǐ”， dǎo guòlái jiùshì“ nǐ ài wǒ”。",
+        "translation": "“I love you” said in reverse is “you love me.”"
+      }
+    ]
+  },
+  {
+    "id": "zh_S倒V_371",
+    "language": "zh",
+    "pattern": "S 倒 V",
+    "title": "S 倒 V (although S V)",
+    "shortExplanation": "although S V",
+    "longExplanation": "although S V. Pinyin: S dǎo V",
+    "formation": "S dǎo V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "你说得倒是容易，做起来可就难了！",
+        "romanization": "nǐ shuō dé dàoshi róngyì， zuò qilai kějiù nán le！",
+        "translation": "Although you say [it as if] it is easy, it’s hard to do it!"
+      }
+    ]
+  },
+  {
+    "id": "zh_干gn_372",
+    "language": "zh",
+    "pattern": "干 (gān)",
+    "title": "干 (gān) (dry)",
+    "shortExplanation": "dry",
+    "longExplanation": "dry. Pinyin: gàn (gān)",
+    "formation": "gàn (gān)",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "把头发擦干。",
+        "romanization": "bǎ tóufa cāgān。",
+        "translation": "Wipe your hair dry."
+      }
+    ]
+  },
+  {
+    "id": "zh_干gn_373",
+    "language": "zh",
+    "pattern": "干 (gàn)",
+    "title": "干 (gàn) (to do)",
+    "shortExplanation": "to do",
+    "longExplanation": "to do. Pinyin: gàn (gàn)",
+    "formation": "gàn (gàn)",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "你在干什么呢？",
+        "romanization": "nǐ zài gànshénme ne？",
+        "translation": "What are you doing?"
+      }
+    ]
+  },
+  {
+    "id": "zh_趟_374",
+    "language": "zh",
+    "pattern": "# 趟",
+    "title": "# 趟 (# times (of trips))",
+    "shortExplanation": "# times (of trips)",
+    "longExplanation": "# times (of trips). Pinyin: # tàng",
+    "formation": "# tàng",
+    "level": "HSK 4",
+    "examples": []
+  }
+]

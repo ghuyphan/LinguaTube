@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_くせに_58",
+    "language": "ja",
+    "pattern": "～くせに",
+    "title": "～くせに (〜kuse ni)",
+    "shortExplanation": "Used to criticize someone for doing something contrary to what one would expect from their nature or situation.",
+    "longExplanation": "The grammar point ～くせに is used to express criticism or disapproval toward someone who does something contradictory to their expected nature, role, or prior statement. It's used in fairly casual or spoken contexts and can sound quite critical or accusing. Note that there's a colloquial variant ～くせして, but ～くせに is the standard form taught in most references.",
+    "formation": "Verb (casual) + くせに / い-Adjective + くせに / な-Adjective + な(or の) + くせに / Noun + の + くせに",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼はいつも遅刻してくるくせに、自分が待たされるのが嫌いだ。",
+        "romanization": "Kare wa itsumo chikoku shite kuru kuse ni, jibun ga matasareru no ga kirai da.",
+        "translation": "He’s always late, yet he hates being kept waiting."
+      },
+      {
+        "sentence": "悪いなと言ってるくせに、また同じことを繰り返している。",
+        "romanization": "Warui na to itteru kuse ni, mata onaji koto o kurikaeshite iru.",
+        "translation": "He says he's sorry, yet he keeps doing the same thing."
+      },
+      {
+        "sentence": "彼は背が高いくせに、バスケが下手だ。",
+        "romanization": "Kare wa se ga takai kuse ni, basuke ga heta da.",
+        "translation": "Despite being tall, he's bad at basketball."
+      },
+      {
+        "sentence": "この店は有名なのくせに、サービスが悪い。",
+        "romanization": "Kono mise wa yuumei na no kuse ni, saabisu ga warui.",
+        "translation": "Despite being famous, this store has poor service."
+      }
+    ]
+  },
+  {
+    "id": "ja_ことから_59",
+    "language": "ja",
+    "pattern": "～ことから",
+    "title": "～ことから (〜koto kara)",
+    "shortExplanation": "Indicates the reason or basis for something; 'because', 'since', 'due to'.",
+    "longExplanation": "The ～ことから grammar point is used to indicate the reason or basis for a conclusion, fact, or premise. It can be translated as 'because', 'since', or 'due to' in English. The same pattern is used whether it’s with verbs, adjectives, or nouns (with the appropriate こと or の).",
+    "formation": "Verb-casual + ことから / い-Adjective + ことから / な-Adjective + なことから / Noun + のことから",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は毎日運動することから、体が丈夫です。",
+        "romanization": "Kare wa mainichi undou suru koto kara, karada ga joubu desu.",
+        "translation": "Because he exercises every day, he is physically strong."
+      },
+      {
+        "sentence": "この店のサービスがいいことから、いつも混んでいます。",
+        "romanization": "Kono mise no saabisu ga ii koto kara, itsumo konde imasu.",
+        "translation": "This store is always crowded because of its good service."
+      },
+      {
+        "sentence": "彼女は親切なことから、みんなに好かれています。",
+        "romanization": "Kanojo wa shinsetsu na koto kara, minna ni sukarete imasu.",
+        "translation": "She’s well-liked by everyone due to her kindness."
+      },
+      {
+        "sentence": "その会社の評判が良いことから、就職先として人気があります。",
+        "romanization": "Sono kaisha no hyouban ga yoi koto kara, shuushoku-saki toshite ninki ga arimasu.",
+        "translation": "Because that company’s reputation is good, it’s popular as a place to work."
+      }
+    ]
+  },
+  {
+    "id": "ja_ことに_60",
+    "language": "ja",
+    "pattern": "～ことに",
+    "title": "～ことに (〜koto ni)",
+    "shortExplanation": "Used to express feelings or emotions about a situation, action, or outcome.",
+    "longExplanation": "The ～ことに grammar point is used to highlight the speaker’s feelings or emotional reaction toward a situation, action, or outcome. It often appears in constructions like 驚いたことに, 残念なことに, 不思議なことに, etc.",
+    "formation": "Verb-casual + ことに / い-Adjective + ことに / な-Adjective + なことに / Noun + のことに",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼が急に帰国することに驚いた。",
+        "romanization": "Kare ga kyuu ni kikoku suru koto ni odoroita.",
+        "translation": "I was surprised that he suddenly returned to his home country."
+      },
+      {
+        "sentence": "彼女が優勝したことに感動した。",
+        "romanization": "Kanojo ga yuushou shita koto ni kandou shita.",
+        "translation": "I was moved by the fact that she won the championship."
+      },
+      {
+        "sentence": "彼がいつも遅刻することに腹が立つ。",
+        "romanization": "Kare ga itsumo chikoku suru koto ni hara ga tatsu.",
+        "translation": "I get angry that he is always late."
+      },
+      {
+        "sentence": "彼女がこんなに美しいことに気がつかなかった。",
+        "romanization": "Kanojo ga konna ni utsukushii koto ni ki ga tsukanakatta.",
+        "translation": "I hadn’t realized how beautiful she was."
+      }
+    ]
+  },
+  {
+    "id": "ja_ことになっている_61",
+    "language": "ja",
+    "pattern": "～ことになっている",
+    "title": "～ことになっている (〜koto ni natte iru)",
+    "shortExplanation": "Expresses that something is supposed to be or has been decided (rule, plan, custom).",
+    "longExplanation": "The ～ことになっている grammar point is used when something has been decided, planned, or there is a rule/custom that everyone follows. It can be translated as 'it is supposed to be,' 'it is decided,' or 'it is customary that.'",
+    "formation": "Verb-plain form + ことになっている / い-Adjective + ことになっている / な-Adjective + だ + ことになっている / Noun + だ + ことになっている",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "日本では、左側を運転することになっています。",
+        "romanization": "Nihon de wa, hidarigawa o unten suru koto ni natte imasu.",
+        "translation": "In Japan, it is decided that people drive on the left side."
+      },
+      {
+        "sentence": "会社の規則では、制服を着ることになっている。",
+        "romanization": "Kaisha no kisoku de wa, seifuku o kiru koto ni natte iru.",
+        "translation": "According to the company rules, we are supposed to wear uniforms."
+      },
+      {
+        "sentence": "彼女は明日結婚することになっています。",
+        "romanization": "Kanojo wa ashita kekkon suru koto ni natte imasu.",
+        "translation": "She is supposed to get married tomorrow."
+      },
+      {
+        "sentence": "この商品は高品質だということになっています。",
+        "romanization": "Kono shouhin wa kouhinshitsu da to iu koto ni natte imasu.",
+        "translation": "It is said (or generally accepted) that this product is of high quality."
+      }
+    ]
+  },
+  {
+    "id": "ja_さえば_62",
+    "language": "ja",
+    "pattern": "～さえ～ば",
+    "title": "～さえ～ば (〜sae ~ba)",
+    "shortExplanation": "Expresses that, as long as a certain condition is met, something else will follow; 'if only', 'provided that'.",
+    "longExplanation": "The ～さえ～ば grammar point is used to indicate that if a certain single condition is fulfilled, everything else will be fine or a certain result will occur. It often translates as 'as long as...' or 'if only...'.",
+    "formation": "Noun + さえ + Verb-conditional / Verb-ますstem + さえすれば / etc. (varies by part of speech)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "お金さえあれば、幸せです。",
+        "romanization": "Okane sae areba, shiawase desu.",
+        "translation": "As long as I have money, I’m happy."
+      },
+      {
+        "sentence": "試験に合格しさえすれば、卒業できます。",
+        "romanization": "Shiken ni goukaku shi sae sureba, sotsugyou dekimasu.",
+        "translation": "If only I pass the exam, I can graduate."
+      },
+      {
+        "sentence": "野菜さえたくさん食べれば、母は喜びます。",
+        "romanization": "Yasai sae takusan tabereba, haha wa yorokobimasu.",
+        "translation": "As long as I eat plenty of vegetables, my mother will be happy."
+      },
+      {
+        "sentence": "交通費さえ支払ってもらえれば、どこへでも行きます。",
+        "romanization": "Koutsuuhi sae shiharatte moraereba, doko e demo ikimasu.",
+        "translation": "As long as my transportation costs are covered, I’ll go anywhere."
+      }
+    ]
+  },
+  {
+    "id": "ja_ざるを得ない_63",
+    "language": "ja",
+    "pattern": "～ざるを得ない",
+    "title": "～ざるを得ない (〜zaru wo enai)",
+    "shortExplanation": "Have no choice but to; cannot help but.",
+    "longExplanation": "The ～ざるを得ない grammar point is used to indicate that one has no choice but to do something or cannot avoid doing it. It is formed from the negative form (ない) but replaces ない with ざる, followed by を得ない. (Note: する → せざるを得ない.)",
+    "formation": "Verb-ない form (drop ない) + ざるを得ない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この仕事は締め切りが近いので、残業せざるを得ない。",
+        "romanization": "Kono shigoto wa shimekiri ga chikai no de, zangyou sezaru wo enai.",
+        "translation": "Since the deadline is near, I have no choice but to work overtime."
+      },
+      {
+        "sentence": "電車が遅れたため、タクシーに乗るざるを得なかった。",
+        "romanization": "Densha ga okureta tame, takushii ni noru zaru wo enakatta.",
+        "translation": "Because the train was delayed, I had no choice but to take a taxi."
+      },
+      {
+        "sentence": "彼女の説明が納得できなかったが、とりあえず信じざるを得ない。",
+        "romanization": "Kanojo no setsumei ga nattoku dekinakatta ga, toriaezu shinjizaru wo enai.",
+        "translation": "I couldn’t really accept her explanation, but for now I have no choice but to believe her."
+      },
+      {
+        "sentence": "この状況では、新しい計画を立て直さざるを得ない。",
+        "romanization": "Kono joukyou de wa, atarashii keikaku wo tatenaosazaru wo enai.",
+        "translation": "In this situation, we have no choice but to revise the new plan."
+      }
+    ]
+  },
+  {
+    "id": "ja_ずにはいられない_64",
+    "language": "ja",
+    "pattern": "～ずにはいられない",
+    "title": "～ずにはいられない (〜zu ni wa irarenai)",
+    "shortExplanation": "Cannot help but; cannot resist doing; an irresistible urge.",
+    "longExplanation": "The ～ずにはいられない grammar point expresses that one cannot resist or help doing something. In other words, there is a strong urge that one cannot suppress. It's formed from the negative stem of a verb plus ずにはいられない. (Note: する → せずにはいられない.)",
+    "formation": "Verb-ない form (drop ない) + ずにはいられない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この曲を聞くと、歌わずにはいられない。",
+        "romanization": "Kono kyoku o kiku to, utawazu ni wa irarenai.",
+        "translation": "When I hear this song, I can’t help but sing."
+      },
+      {
+        "sentence": "彼女が泣いているのを見ると、慰めずにはいられない。",
+        "romanization": "Kanojo ga naite iru no o miru to, nagusamezu ni wa irarenai.",
+        "translation": "When I see her crying, I can’t resist comforting her."
+      },
+      {
+        "sentence": "この小説は面白いので、読まずにはいられない。",
+        "romanization": "Kono shousetsu wa omoshiroi no de, yomazu ni wa irarenai.",
+        "translation": "This novel is so interesting that I can’t help but read it."
+      },
+      {
+        "sentence": "彼はおいしい料理を前にすると、食べずにはいられない。",
+        "romanization": "Kare wa oishii ryouri o mae ni suru to, tabezu ni wa irarenai.",
+        "translation": "When he’s faced with delicious food, he can’t help but eat it."
+      }
+    ]
+  },
+  {
+    "id": "ja_そうにない_65",
+    "language": "ja",
+    "pattern": "～そうにない",
+    "title": "～そうにない (〜sou ni nai)",
+    "shortExplanation": "Express the unlikelihood of something happening; 'not likely', 'doesn't seem'.",
+    "longExplanation": "The ～そうにない grammar point is used to indicate that something does not appear likely to happen. Often translated as 'doesn't seem like' or 'not likely to...'. Attach そうにない to the verb stem or adjective stem.",
+    "formation": "Verb-stem + そうにない / い-Adjective (drop い) + そうにない / な-Adjective + そうにない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この雨は止みそうにない。",
+        "romanization": "Kono ame wa yami sou ni nai.",
+        "translation": "It doesn't seem like this rain will stop."
+      },
+      {
+        "sentence": "彼が試験に合格しそうにない。",
+        "romanization": "Kare ga shiken ni goukaku shi sou ni nai.",
+        "translation": "It doesn't look like he'll pass the exam."
+      },
+      {
+        "sentence": "この料理がおいしそうにない。",
+        "romanization": "Kono ryouri ga oishisou ni nai.",
+        "translation": "This dish doesn't look like it will be tasty."
+      },
+      {
+        "sentence": "この部屋はきれいそうにない。",
+        "romanization": "Kono heya wa kirei sou ni nai.",
+        "translation": "This room doesn't seem likely to be clean."
+      }
+    ]
+  },
+  {
+    "id": "ja_たかと思ったら_66",
+    "language": "ja",
+    "pattern": "～たかと思ったら",
+    "title": "～たかと思ったら (〜ta ka to omottara)",
+    "shortExplanation": "Express a sequence of events happening in quick succession; 'as soon as', 'no sooner than'.",
+    "longExplanation": "The ～たかと思ったら grammar point indicates that one action occurs almost immediately after another, often conveying surprise at how quickly it happens. It is frequently translated as 'as soon as...' or 'no sooner than...'.",
+    "formation": "Verb-た form + かと思ったら",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "電話をかけたかと思ったら、すぐに彼女が出た。",
+        "romanization": "Denwa o kaketa ka to omottara, sugu ni kanojo ga deta.",
+        "translation": "No sooner had I called than she picked up."
+      },
+      {
+        "sentence": "離陸したかと思ったら、飛行機が揺れ始めた。",
+        "romanization": "Ririku shita ka to omottara, hikouki ga yure hajimeta.",
+        "translation": "As soon as we took off, the plane started shaking."
+      },
+      {
+        "sentence": "買い物に行ったかと思ったら、雨が降ってきた。",
+        "romanization": "Kaimono ni itta ka to omottara, ame ga futte kita.",
+        "translation": "No sooner had I gone shopping than it began to rain."
+      },
+      {
+        "sentence": "仕事を終わったかと思ったら、上司が追加の仕事を持ってきた。",
+        "romanization": "Shigoto o owatta ka to omottara, joushi ga tsuika no shigoto o motte kita.",
+        "translation": "As soon as I finished work, my boss brought more tasks."
+      }
+    ]
+  },
+  {
+    "id": "ja_たきり_67",
+    "language": "ja",
+    "pattern": "～たきり",
+    "title": "～たきり (〜takiri)",
+    "shortExplanation": "Express 'since then' or 'after'; used to indicate that an action occurred once and has not been repeated or that a state has continued since a certain event or time.",
+    "longExplanation": "The ～たきり grammar point is used to express that an action occurred once and has not been repeated, or that a situation or state has continued since a certain event or time. It can be translated as 'since then', 'after', or 'one time only' in English.",
+    "formation": "Verb-past + きり",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は会社を辞めたきり、連絡がない。",
+        "romanization": "Kare wa kaisha o yameta kiri, renraku ga nai.",
+        "translation": "Ever since he quit the company, there's been no contact."
+      },
+      {
+        "sentence": "昨日の朝、メールを送ったきり、返事がない。",
+        "romanization": "Kinō no asa, mēru o okutta kiri, henji ga nai.",
+        "translation": "I sent an email yesterday morning, and there's been no reply since then."
+      },
+      {
+        "sentence": "子供のころ海に行ったきりで、もう20年になる。",
+        "romanization": "Kodomo no koro umi ni itta kiri de, mō nijūnen ni naru.",
+        "translation": "It's been 20 years since I last went to the sea as a child."
+      },
+      {
+        "sentence": "彼女と別れたきり、彼女のことを考えなくなった。",
+        "romanization": "Kanojo to wakareta kiri, kanojo no koto o kangaenaku natta.",
+        "translation": "Ever since I broke up with her, I stopped thinking about her."
+      }
+    ]
+  },
+  {
+    "id": "ja_だけあって_68",
+    "language": "ja",
+    "pattern": "～だけあって",
+    "title": "～だけあって (〜dake atte)",
+    "shortExplanation": "Expresses that something is as expected or deserves its reputation.",
+    "longExplanation": "The ～だけあって grammar point is used to indicate that something is as expected or deserves its reputation, based on certain facts or qualities. It can be translated as 'no wonder', 'as expected', or 'it is natural that' in English.",
+    "formation": "Verb-casual + だけあって, い-Adjective + だけあって, な-Adjective + なだけあって, Noun + だけあって",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は日本語が上手だけあって、日本人のように話すことができる。",
+        "romanization": "Kare wa nihongo ga jōzu dake atte, nihonjin no yō ni hanasu koto ga dekiru.",
+        "translation": "As expected from his good Japanese skills, he can speak like a native."
+      },
+      {
+        "sentence": "このレストランは有名だけあって、料理がとても美味しい。",
+        "romanization": "Kono resutoran wa yūmei dake atte, ryōri ga totemo oishii.",
+        "translation": "No wonder this restaurant is famous; the food is very delicious."
+      },
+      {
+        "sentence": "彼女は経験豊富なだけあって、その問題を簡単に解決できた。",
+        "romanization": "Kanojo wa keiken hōfu na dake atte, sono mondai o kantan ni kaiketsu dekita.",
+        "translation": "It's natural that she's experienced; she solved the problem easily."
+      },
+      {
+        "sentence": "彼は優秀な学生だけあって、いつもテストの点数が高い。",
+        "romanization": "Kare wa yūshū na gakusei dake atte, itsumo tesuto no tensū ga takai.",
+        "translation": "As expected of an excellent student, he always scores high on tests."
+      }
+    ]
+  },
+  {
+    "id": "ja_だけましだ_69",
+    "language": "ja",
+    "pattern": "～だけましだ",
+    "title": "～だけましだ (〜dake mashi da)",
+    "shortExplanation": "Expresses that although the situation isn’t ideal, it could be worse; 'it’s not great, but at least...'.",
+    "longExplanation": "The ～だけましだ grammar point is used to compare two undesirable or less-than-ideal situations, saying that one is not good, but still better than the worse alternative. It often translates as 'at least (it’s only...)' or 'it could be worse.'",
+    "formation": "Verb-casual + だけましだ, い-Adjective + だけましだ, な-Adjective + だけましだ, Noun + だけましだ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "失敗するだけましだ。もっと大変なことにならなくてよかった。",
+        "romanization": "Shippai suru dake mashi da. Motto taihen na koto ni naranakute yokatta.",
+        "translation": "At least we only failed—it could’ve been much worse."
+      },
+      {
+        "sentence": "遅れるだけましだ。来られないよりはいい。",
+        "romanization": "Okureru dake mashi da. Korarenai yori wa ii.",
+        "translation": "At least I’m only late. It’s better than not being able to come at all."
+      },
+      {
+        "sentence": "小さな部屋だけましだ。全く部屋がないよりはいい。",
+        "romanization": "Chīsana heya dake mashi da. Mattaku heya ga nai yori wa ii.",
+        "translation": "At least we have a small room; it’s better than having no room at all."
+      },
+      {
+        "sentence": "彼が結婚しないだけましだ。大変なことになるところだったよ。",
+        "romanization": "Kare ga kekkon shinai dake mashi da. Taihen na koto ni naru tokoro datta yo.",
+        "translation": "At least he’s not getting married—things could have gotten complicated."
+      }
+    ]
+  },
+  {
+    "id": "ja_たところ_70",
+    "language": "ja",
+    "pattern": "～たところ",
+    "title": "～たところ (〜ta tokoro)",
+    "shortExplanation": "Used to describe an action that has just been completed, often followed by a result or observation.",
+    "longExplanation": "The ～たところ grammar point is used when an action has just been completed and the speaker wants to describe an observation or result that follows. It can be translated as 'just finished doing something' or 'as soon as (I did something)...'.",
+    "formation": "Verb-past + ところ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "掃除したところ、部屋がずっとキレイになりました。",
+        "romanization": "Sōji shita tokoro, heya ga zutto kirei ni narimashita.",
+        "translation": "I just finished cleaning, and the room is so much cleaner now."
+      },
+      {
+        "sentence": "彼に聞いたところ、その質問の答えは分からないみたいです。",
+        "romanization": "Kare ni kiita tokoro, sono shitsumon no kotae wa wakaranai mitai desu.",
+        "translation": "I just asked him, and it seems he doesn't know the answer."
+      },
+      {
+        "sentence": "宿題を出したところ、先生が間違いを見つけました。",
+        "romanization": "Shukudai o dashita tokoro, sensei ga machigai o mitsukemashita.",
+        "translation": "As soon as I turned in my homework, the teacher found a mistake."
+      },
+      {
+        "sentence": "昼ごはんを食べたところ、気分が良くなりました。",
+        "romanization": "Hirugohan o tabeta tokoro, kibun ga yoku narimashita.",
+        "translation": "Right after eating lunch, I started feeling better."
+      }
+    ]
+  },
+  {
+    "id": "ja_たとたん_71",
+    "language": "ja",
+    "pattern": "～たとたん",
+    "title": "～たとたん (〜ta totan)",
+    "shortExplanation": "Express the moment something happens; 'as soon as', 'just when'.",
+    "longExplanation": "The ～たとたん grammar point is used to express that an action or event occurred at the same moment another action or event happened. It can be translated as 'as soon as' or 'just when.' It requires the past tense of a verb.",
+    "formation": "Verb-past + たとたん",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "ドアを開けたとたん、雨が降り始めた。",
+        "romanization": "Doa o aketa totan, ame ga furi-hajimeta.",
+        "translation": "As soon as I opened the door, it started raining."
+      },
+      {
+        "sentence": "電話をかけたとたん、バッテリーが切れた。",
+        "romanization": "Denwa o kaketa totan, batterī ga kireta.",
+        "translation": "Just when I made the phone call, the battery died."
+      },
+      {
+        "sentence": "彼女に会ったとたん、思い出の歌が流れた。",
+        "romanization": "Kanojo ni atta totan, omoide no uta ga nagareta.",
+        "translation": "No sooner had I met her than a nostalgic song started playing."
+      },
+      {
+        "sentence": "テストが終わったとたん、リラックスできた。",
+        "romanization": "Tesuto ga owatta totan, rirakkusu dekita.",
+        "translation": "The moment the test ended, I was able to relax."
+      }
+    ]
+  },
+  {
+    "id": "ja_だらけ_72",
+    "language": "ja",
+    "pattern": "～だらけ",
+    "title": "～だらけ (〜darake)",
+    "shortExplanation": "Indicates that something is full of or covered with a certain (usually negative) characteristic.",
+    "longExplanation": "The ～だらけ grammar point is used to express that something is full of, covered with, or filled with a certain characteristic. It frequently has a negative or undesirable nuance.",
+    "formation": "Noun + だらけ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼の部屋はゴミだらけだ。",
+        "romanization": "Kare no heya wa gomi darake da.",
+        "translation": "His room is full of trash."
+      },
+      {
+        "sentence": "このビーチは岩だらけで泳ぎにくい。",
+        "romanization": "Kono bīchi wa iwa darake de oyogi nikui.",
+        "translation": "This beach is full of rocks and is difficult to swim at."
+      },
+      {
+        "sentence": "彼の顔はしわだらけだ。",
+        "romanization": "Kare no kao wa shiwa darake da.",
+        "translation": "His face is covered with wrinkles."
+      },
+      {
+        "sentence": "このリンゴは虫食いだらけだ。",
+        "romanization": "Kono ringo wa mushikui darake da.",
+        "translation": "This apple is riddled with wormholes."
+      }
+    ]
+  }
+]

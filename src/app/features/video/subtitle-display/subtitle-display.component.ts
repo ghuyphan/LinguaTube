@@ -113,6 +113,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
     this.toastTimeout = setTimeout(() => {
       this.toastMessage.set(null);
+      this.toastType.set('success');
     }, 3000);
   }
 
@@ -197,9 +198,13 @@ export class SubtitleDisplayComponent implements OnDestroy {
     const vocabChangeTime = this.vocab.lastModified?.() ?? 0;
     const vocabChanged = vocabChangeTime !== this.lastVocabChangeTime;
 
-    // Return cached if same cue and vocab hasn't changed
-    if (this.lastCueId === cue.id && !vocabChanged && this.tokenCache.has(cacheKey)) {
-      return this.tokenCache.get(cacheKey)!;
+    // Return cached if same cue, vocab unchanged, and cache is not stale fallback
+    const hasServerTokens = (cue.tokens?.length ?? 0) > 0;
+    const cachedEntry = this.tokenCache.get(cacheKey);
+    const cacheStale = cachedEntry && hasServerTokens && cachedEntry.length !== cue.tokens!.length;
+
+    if (this.lastCueId === cue.id && !vocabChanged && cachedEntry && !cacheStale) {
+      return cachedEntry;
     }
 
     const tokens = this.subtitles.getTokens(cue, lang as 'ja' | 'zh' | 'ko' | 'en');
@@ -338,6 +343,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
     this.lastLazyLoadedIndex = endIdx;
     this.isLazyLoadPending = true;
     this.isTranslatingDual.set(true);
+    this.subtitles.isDualSubLoading.set(true);
 
     const texts = cuesToTranslate.map(c => c.text);
     const lang = this.effectiveLanguage();
@@ -374,11 +380,19 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
   private clearLoadingState(): void {
     this.isTranslatingDual.set(false);
+    this.subtitles.isDualSubLoading.set(false);
     this.isLazyLoadPending = false;
   }
 
   private lastUserScrollTime = 0;
   private readonly SCROLL_DEBOUNCE_MS = 1500;
+
+  private lastListUserScrollTime = 0;
+  private readonly LIST_SCROLL_DEBOUNCE_MS = 3000;
+
+  onSubtitleListScroll(): void {
+    this.lastListUserScrollTime = Date.now();
+  }
 
   onCurrentSubtitleScroll(): void {
     this.lastUserScrollTime = Date.now();
@@ -518,6 +532,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
         // Set loading state BEFORE cache check so skeleton shows immediately
         if (this.cueTranslations().size === 0) {
           this.isTranslatingDual.set(true);
+          this.subtitles.isDualSubLoading.set(true);
         }
 
         // Use untracked for the subscription to avoid infinite loops
@@ -548,6 +563,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
                     this.cueTranslations.set(newMap);
                     this.isDualCached.set(true);
                     this.isTranslatingDual.set(false);
+                    this.subtitles.isDualSubLoading.set(false);
                     return;
                   }
                 }
@@ -563,6 +579,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
                 this.isDualCached.set(false);
                 this.lastLazyLoadedIndex = -1;
                 this.isTranslatingDual.set(false);
+                this.subtitles.isDualSubLoading.set(false);
                 this.showToast(this.i18n.t('subtitle.translationFailed') || 'Translation failed. Please try again.', 'error');
               }
             });
@@ -575,6 +592,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
         }
         // Clear loading state and reset lazy load tracking when dual subs disabled
         this.isTranslatingDual.set(false);
+        this.subtitles.isDualSubLoading.set(false);
         this.lastLazyLoadedIndex = -1;
       }
     });
@@ -594,6 +612,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
   private scrollToActiveCue(cueId: string): void {
     if (!this.subtitleList?.nativeElement) return;
+    if (Date.now() - this.lastListUserScrollTime < this.LIST_SCROLL_DEBOUNCE_MS) return;
 
     const container = this.subtitleList.nativeElement;
     const activeElement = container.querySelector(`[data-cue-id="${cueId}"]`) as HTMLElement;
@@ -660,11 +679,11 @@ export class SubtitleDisplayComponent implements OnDestroy {
     }
   }
 
-  readonly fontSizes: ('small' | 'medium' | 'large')[] = ['small', 'medium', 'large'];
+  readonly fontSizes: ('small' | 'medium' | 'large' | 'xlarge')[] = ['small', 'medium', 'large', 'xlarge'];
 
   cycleFontSize(): void {
     const current = this.settings.settings().fontSize;
-    const currentIndex = this.fontSizes.indexOf(current as 'small' | 'medium' | 'large');
+    const currentIndex = this.fontSizes.indexOf(current as 'small' | 'medium' | 'large' | 'xlarge');
     const nextIndex = (currentIndex + 1) % this.fontSizes.length;
     this.settings.setFontSize(this.fontSizes[nextIndex]);
   }
@@ -675,6 +694,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
       case 'small': return 'S';
       case 'medium': return 'M';
       case 'large': return 'L';
+      case 'xlarge': return 'XL';
       default: return 'M';
     }
   }
@@ -695,7 +715,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
     return 'Reading';
   });
 
-  setFontSize(size: 'small' | 'medium' | 'large'): void {
+  setFontSize(size: 'small' | 'medium' | 'large' | 'xlarge'): void {
     this.settings.setFontSize(size);
   }
 

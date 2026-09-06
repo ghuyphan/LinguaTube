@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_又又_138",
+    "language": "zh",
+    "pattern": "又……又……",
+    "title": "又……又…… (not only… but also…)",
+    "shortExplanation": "not only… but also…",
+    "longExplanation": "not only… but also…. Pinyin: yòu…… yòu……",
+    "formation": "yòu…… yòu……",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "这个西瓜又大又甜。",
+        "romanization": "zhège xīguā yòu dà yòu tián。",
+        "translation": "This watermelon is big and sweet."
+      }
+    ]
+  },
+  {
+    "id": "zh_V1着V2_139",
+    "language": "zh",
+    "pattern": "V1 + 着 + V2",
+    "title": "V1 + 着 + V2 (V1-ing while V2-ing)",
+    "shortExplanation": "V1-ing while V2-ing",
+    "longExplanation": "V1-ing while V2-ing. Pinyin: V1 + zhe + V2",
+    "formation": "V1 + zhe + V2",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "弟弟吃着苹果写作业。",
+        "romanization": "dìdi chī zhe píngguǒ xiě zuòyè。",
+        "translation": "The younger brother is doing homework while eating [an] apple."
+      }
+    ]
+  },
+  {
+    "id": "zh_A了_140",
+    "language": "zh",
+    "pattern": "A 了",
+    "title": "A 了 (become A)",
+    "shortExplanation": "become A",
+    "longExplanation": "become A. Pinyin: A le",
+    "formation": "A le",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "昨天吃了感冒药，现在好一些了。",
+        "romanization": "zuótiān chī le gǎnmàoyào， xiànzài hǎo yīxiē le。",
+        "translation": "I took flu medicine yesterday, and I’m better now."
+      }
+    ]
+  },
+  {
+    "id": "zh_V了_141",
+    "language": "zh",
+    "pattern": "V 了",
+    "title": "V 了 ((didn’t V but) now V)",
+    "shortExplanation": "(didn’t V but) now V",
+    "longExplanation": "(didn’t V but) now V. Pinyin: V le",
+    "formation": "V le",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "现在我可以穿漂亮的裙子了。",
+        "romanization": "xiànzài wǒ kěyǐ chuān piàoliang de qúnzi le。",
+        "translation": "Now I can wear a beautiful dress."
+      }
+    ]
+  },
+  {
+    "id": "zh_越来越A了_142",
+    "language": "zh",
+    "pattern": "越来越 + A + (了)",
+    "title": "越来越 + A + (了) (more and more A)",
+    "shortExplanation": "more and more A",
+    "longExplanation": "more and more A. Pinyin: yuèláiyuè + A + ( le)",
+    "formation": "yuèláiyuè + A + ( le)",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你最近越来越帅了。",
+        "romanization": "nǐ zuìjìn yuèláiyuè shuài le。",
+        "translation": "You’re more and more handsome these days."
+      }
+    ]
+  },
+  {
+    "id": "zh_V得RESULT_143",
+    "language": "zh",
+    "pattern": "V + 得 + RESULT",
+    "title": "V + 得 + RESULT (can V to RESULT)",
+    "shortExplanation": "can V to RESULT",
+    "longExplanation": "can V to RESULT. Pinyin: V + dé + RESULT",
+    "formation": "V + dé + RESULT",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我看得清楚那个汉字。",
+        "romanization": "wǒ kàn dé qīngchu nàge hànzì。",
+        "translation": "I can see the Chinese character clearly."
+      }
+    ]
+  },
+  {
+    "id": "zh_V得DIRECTION_144",
+    "language": "zh",
+    "pattern": "V + 得 + DIRECTION",
+    "title": "V + 得 + DIRECTION (can V to DIRECTION)",
+    "shortExplanation": "can V to DIRECTION",
+    "longExplanation": "can V to DIRECTION. Pinyin: V + dé + DIRECTION",
+    "formation": "V + dé + DIRECTION",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "楼这么高，你上得来吗？",
+        "romanization": "lóu zhème gāo， nǐ shàng dé lái ma？",
+        "translation": "The building is so high, are you able to come up?"
+      }
+    ]
+  },
+  {
+    "id": "zh_V不result_145",
+    "language": "zh",
+    "pattern": "V + 不 + result",
+    "title": "V + 不 + result (cannot V to RESULT)",
+    "shortExplanation": "cannot V to RESULT",
+    "longExplanation": "cannot V to RESULT. Pinyin: V + bù + result",
+    "formation": "V + bù + result",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我找不到好饭馆。",
+        "romanization": "wǒ zhǎobudào hǎo fànguǎn。",
+        "translation": "I can't seek out a good restaurant."
+      }
+    ]
+  },
+  {
+    "id": "zh_V不direction_146",
+    "language": "zh",
+    "pattern": "V + 不 + direction",
+    "title": "V + 不 + direction (cannot V to DIRECTION)",
+    "shortExplanation": "cannot V to DIRECTION",
+    "longExplanation": "cannot V to DIRECTION. Pinyin: V + bù + direction",
+    "formation": "V + bù + direction",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "楼太高了，我上不去。",
+        "romanization": "lóu tài gāo le， wǒ shàng bù qù。",
+        "translation": "The building is too high, I can't go up."
+      }
+    ]
+  },
+  {
+    "id": "zh_N呢_147",
+    "language": "zh",
+    "pattern": "N 呢?",
+    "title": "N 呢? (where is N?)",
+    "shortExplanation": "where is N?",
+    "longExplanation": "where is N?. Pinyin: N ne?",
+    "formation": "N ne?",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你的书呢？",
+        "romanization": "nǐ de shū ne？",
+        "translation": "Where is your book?"
+      }
+    ]
+  },
+  {
+    "id": "zh_刚V_148",
+    "language": "zh",
+    "pattern": "刚 V",
+    "title": "刚 V (just V)",
+    "shortExplanation": "just V",
+    "longExplanation": "just V. Pinyin: gāng V",
+    "formation": "gāng V",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "儿子刚做完作业。",
+        "romanization": "érzi gāng zuòwán zuòyè。",
+        "translation": "The son just finished his homework."
+      }
+    ]
+  },
+  {
+    "id": "zh_刚才_149",
+    "language": "zh",
+    "pattern": "刚才",
+    "title": "刚才 (moments ago)",
+    "shortExplanation": "moments ago",
+    "longExplanation": "moments ago. Pinyin: gāngcái",
+    "formation": "gāngcái",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "刚才儿子在做作业。",
+        "romanization": "gāngcái érzi zài zuò zuòyè。",
+        "translation": "My son is doing homework moments ago."
+      }
+    ]
+  },
+  {
+    "id": "zh_V了DURATIONO_150",
+    "language": "zh",
+    "pattern": "V + 了 + DURATION + O",
+    "title": "V + 了 + DURATION + O (V’ed O for DURATION)",
+    "shortExplanation": "V’ed O for DURATION",
+    "longExplanation": "V’ed O for DURATION. Pinyin: V + le + DURATION + O",
+    "formation": "V + le + DURATION + O",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我们坐了一个小时公共汽车。",
+        "romanization": "wǒmen zuò le yī gè xiǎoshí gōnggòngqìchē。",
+        "translation": "We took a bus for an hour."
+      }
+    ]
+  },
+  {
+    "id": "zh_V了DURATIONO了_151",
+    "language": "zh",
+    "pattern": "V + 了 + DURATION + O + 了",
+    "title": "V + 了 + DURATION + O + 了 (have been V-ing O for DURATION)",
+    "shortExplanation": "have been V-ing O for DURATION",
+    "longExplanation": "have been V-ing O for DURATION. Pinyin: V + le + DURATION + O + le",
+    "formation": "V + le + DURATION + O + le",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我学习了一年汉语了。",
+        "romanization": "wǒ xuéxí le yī nián Hànyǔ le。",
+        "translation": "I have studied Chinese for a year."
+      }
+    ]
+  },
+  {
+    "id": "zh_对N感兴趣有兴趣_152",
+    "language": "zh",
+    "pattern": "对 N 感兴趣/有兴趣",
+    "title": "对 N 感兴趣/有兴趣 (interested in N)",
+    "shortExplanation": "interested in N",
+    "longExplanation": "interested in N. Pinyin: duì N gǎnxìngqù/ yǒuxìngqù",
+    "formation": "duì N gǎnxìngqù/ yǒuxìngqù",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "他们对中国电影感兴趣。",
+        "romanization": "tāmen duì Zhōngguó diànyǐng gǎnxìngqù。",
+        "translation": "They are interested in Chinese movies."
+      }
+    ]
+  }
+]

@@ -1,0 +1,946 @@
+{
+  "vi": {
+    "en_a1_16": {
+      "title": "There is / There are - Diễn tả sự tồn tại",
+      "shortExplanation": "Dùng để diễn tả sự tồn tại hoặc hiện diện của người hoặc vật ở một nơi nào đó; mang nghĩa là 'có'.",
+      "longExplanation": "Cấu trúc 'There is / There are' được dùng để chỉ sự tồn tại của người hoặc vật (tương đương với 'có' trong tiếng Việt).\n• There is + danh từ số ít hoặc danh từ không đếm được.\n• There are + danh từ số nhiều.\nThể phủ định: There isn't (viết tắt của is not) / There aren't (viết tắt của are not).\nThể nghi vấn: Đảo động từ to be lên trước chủ ngữ: Is there...? / Are there...?",
+      "formation": "Khẳng định: There is + Danh từ số ít / không đếm được | There are + Danh từ số nhiều\nPhủ định: There isn't / There aren't + Danh từ\nNghi vấn: Is there...? / Are there...?",
+      "examples": [
+        {
+          "translation": "Có một rạp chiếu phim ở gần đây."
+        },
+        {
+          "translation": "Gần đây có cửa hàng nào không? — Vâng, có đấy."
+        }
+      ]
+    },
+    "en_a1_17": {
+      "title": "Giới từ chỉ nơi chốn: in, on, at, under, next to, behind, between",
+      "shortExplanation": "Dùng để xác định vị trí của người hoặc đồ vật trong không gian; 'ở trong', 'ở trên', 'ở tại'...",
+      "longExplanation": "Ba giới từ chỉ vị trí phổ biến nhất:\n• in = ở bên trong một không gian khép kín hoặc khu vực: in the box (trong hộp), in the city (trong thành phố), in bed (trên giường)\n• on = ở trên bề mặt tiếp xúc: on the table (trên bàn), on the wall (trên tường), on the left (ở bên trái)\n• at = ở một địa điểm hoặc vị trí cụ thể: at the station (ở nhà ga), at home (ở nhà), at school (ở trường)\nCác giới từ khác: under (ở dưới), next to / beside (bên cạnh), behind (ở đằng sau), in front of (ở phía trước), between (ở giữa hai đối tượng), opposite (đối diện).",
+      "formation": "Giới từ chỉ nơi chốn (in / on / at / under / next to / behind...) + Cụm danh từ / Địa điểm",
+      "examples": [
+        {
+          "translation": "Chùm chìa khóa ở trên bàn."
+        },
+        {
+          "translation": "Cô ấy đang ở trong bếp."
+        },
+        {
+          "translation": "Hãy gặp tôi ở lối vào nhé."
+        }
+      ]
+    },
+    "en_a1_18": {
+      "title": "Câu mệnh lệnh (Imperative)",
+      "shortExplanation": "Dùng để ra lệnh, yêu cầu, chỉ dẫn hoặc rủ rê; 'hãy...', 'đừng...', 'chúng ta hãy...'.",
+      "longExplanation": "Câu mệnh lệnh trong tiếng Anh bắt đầu trực tiếp bằng động từ nguyên mẫu không có chủ ngữ.\n• Khẳng định: Động từ nguyên thể đứng đầu câu (ví dụ: Open your books - Hãy mở sách ra).\n• Phủ định: Don't + động từ nguyên thể (ví dụ: Don't run - Đừng chạy).\n• Thêm 'please' ở đầu hoặc cuối câu để lời đề nghị, yêu cầu thêm phần lịch sự.\n• Câu rủ rê hoặc đề xuất có cả người nói: Let's + động từ nguyên thể (ví dụ: Let's go! - Chúng mình đi thôi!).",
+      "formation": "Khẳng định: Động từ nguyên thể (+ Tân ngữ/Bổ ngữ)\nPhủ định: Don't + Động từ nguyên thể\nLịch sự: Please + Động từ nguyên thể (hoặc thêm please ở cuối câu)\nRủ rê: Let's + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Hãy rẽ trái ở ngã tư."
+        },
+        {
+          "translation": "Đừng chạm vào cái đó!"
+        },
+        {
+          "translation": "Chúng ta hãy nghỉ giải lao một lát nhé."
+        }
+      ]
+    },
+    "en_a1_19": {
+      "title": "can / can't - Khả năng, cơ hội và sự xin phép",
+      "shortExplanation": "Động từ khuyết thiếu dùng để diễn tả năng lực, khả năng xảy ra, hoặc xin phép/yêu cầu; 'có thể' / 'không thể'.",
+      "longExplanation": "'can' là một động từ khuyết thiếu, theo sau luôn là động từ nguyên mẫu không 'to', dùng để diễn đạt:\n1. Khả năng hoặc năng lực: I can swim (Tôi biết bơi).\n2. Khả năng xảy ra hoặc cơ hội: It can be dangerous (Điều đó có thể nguy hiểm).\n3. Xin phép hoặc cho phép (văn nói): Can I use your phone? (Tôi có thể dùng nhờ điện thoại của bạn không?)\nThể phủ định là can't (viết tắt của cannot).",
+      "formation": "Khẳng định: Chủ ngữ + can + Động từ nguyên thể\nPhủ định: Chủ ngữ + can't (cannot) + Động từ nguyên thể\nNghi vấn: Can + Chủ ngữ + Động từ nguyên thể...?",
+      "examples": [
+        {
+          "translation": "Tôi có thể nói được ba thứ tiếng."
+        },
+        {
+          "translation": "Hôm nay cô ấy không thể đến được."
+        },
+        {
+          "translation": "Bạn có thể giúp tôi một chút được không?"
+        }
+      ]
+    },
+    "en_a1_20": {
+      "title": "Từ để hỏi: what, where, who, when, how, why, which, whose, how much/many",
+      "shortExplanation": "Dùng để đặt câu hỏi có từ để hỏi (Wh-questions) nhằm thu thập thông tin cụ thể; 'cái gì', 'ở đâu', 'ai'...",
+      "longExplanation": "Các từ để hỏi thường đứng ở đầu câu, theo sau là trợ động từ hoặc to be rồi đến chủ ngữ.\n• what = cái gì, gì\n• where = ở đâu, đâu\n• who = ai (khi hỏi cho chủ ngữ thì không dùng trợ động từ do/does: Who lives here?)\n• when = khi nào, bao giờ\n• why = tại sao, vì sao\n• which = cái nào, người nào (trong số lựa chọn có hạn)\n• whose = của ai\n• how = thế nào, bằng cách nào; how much = bao nhiêu (với danh từ không đếm được/giá tiền); how many = bao nhiêu (với danh từ đếm được số nhiều); how old = bao nhiêu tuổi; how long = bao lâu.",
+      "formation": "Từ để hỏi (Wh-) + Trợ động từ / to be + Chủ ngữ + Động từ nguyên thể / Bổ ngữ...?",
+      "examples": [
+        {
+          "translation": "Cô ấy làm việc ở đâu?"
+        },
+        {
+          "translation": "Bây giờ là mấy giờ rồi?"
+        },
+        {
+          "translation": "Bạn có bao nhiêu người anh em trai?"
+        }
+      ]
+    },
+    "en_a1_21": {
+      "title": "Số đếm (Cardinal numerals): 1–1000",
+      "shortExplanation": "Dùng để đếm số lượng người hoặc đồ vật; 'một, hai, ba... một trăm, một nghìn'.",
+      "longExplanation": "Quy tắc cấu tạo số đếm trong tiếng Anh từ 1 đến 1000:\n• Từ 1 đến 12: các từ riêng biệt (one, two, three... twelve).\n• Từ 13 đến 19: thêm đuôi '-teen' (thirteen, fourteen... nineteen; lưu ý biến đổi ở thirteen, fifteen, eighteen).\n• Các số hàng chục tròn chục: kết thúc bằng '-ty' (twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety).\n• Số ghép hàng chục và hàng đơn vị: nối bằng dấu gạch nối (ví dụ: 21 = twenty-one).\n• Hàng trăm: 100 = a/one hundred; hàng nghìn: 1000 = a/one thousand.\n• Trong tiếng Anh-Anh, sau hundred thường có 'and' trước hàng chục hoặc đơn vị (ví dụ: two hundred and fifty).",
+      "formation": "Số hàng chục + dấu gạch nối (-) + Số hàng đơn vị (từ 21 đến 99) | Số đếm + hundred / thousand (+ and + số tiếp theo)",
+      "examples": [
+        {
+          "translation": "Cô ấy hai mươi ba tuổi."
+        },
+        {
+          "translation": "Chiếc vé có giá bốn trăm bảng Anh."
+        }
+      ]
+    },
+    "en_a1_22": {
+      "title": "Số thứ tự (Ordinal numbers): first, second, third...",
+      "shortExplanation": "Dùng để chỉ thứ tự, vị trí, ngày tháng hoặc tầng nhà; 'thứ nhất, thứ hai, thứ ba...'.",
+      "longExplanation": "Số thứ tự trong tiếng Anh chủ yếu được tạo thành bằng cách thêm hậu tố '-th' vào sau số đếm: fourth, sixth, seventh...\nCác trường hợp đặc biệt cần ghi nhớ: first (thứ 1), second (thứ 2), third (thứ 3), fifth (thứ 5), eighth (thứ 8), ninth (thứ 9), twelfth (thứ 12).\nQuy tắc: Số thứ tự hầu như luôn đi kèm mạo từ xác định 'the' phía trước (ví dụ: the first day - ngày đầu tiên, the third floor - tầng ba).\nỨng dụng trong phân số: ½ = a half, ⅓ = a third, ¼ = a quarter.",
+      "formation": "the + Số thứ tự (+ Danh từ) | (Ví dụ: the first, the second, the third... the twenty-first)",
+      "examples": [
+        {
+          "translation": "Văn phòng của tôi ở tầng ba."
+        },
+        {
+          "translation": "Hôm nay là ngày mùng một tháng Ba."
+        }
+      ]
+    },
+    "en_a1_23": {
+      "title": "Sở hữu cách: 's và s'",
+      "shortExplanation": "Dùng dấu nháy đơn và chữ 's' để thể hiện quyền sở hữu hoặc mối quan hệ; 'của...'.",
+      "longExplanation": "Trong tiếng Anh, mối quan hệ sở hữu được biểu thị bằng dấu nháy đơn và chữ s ('s hoặc s'):\n• Danh từ số ít: thêm 's (ví dụ: Tom's book - cuốn sách của Tom, the dog's tail - đuôi của chú chó).\n• Danh từ số nhiều kết thúc bằng -s: chỉ thêm dấu nháy đơn ' (ví dụ: the teachers' room - phòng giáo viên, my parents' house - nhà của bố mẹ tôi).\n• Danh từ số nhiều bất quy tắc (không có đuôi -s): vẫn thêm 's (ví dụ: the children's playground - sân chơi của trẻ em, men's clothes - quần áo nam).\n• Tên riêng tận cùng bằng -s: có thể dùng James's hoặc James' đều đúng.",
+      "formation": "Danh từ số ít + 's + Danh từ sở hữu | Danh từ số nhiều có đuôi -s + ' + Danh từ sở hữu",
+      "examples": [
+        {
+          "translation": "Đây là máy tính xách tay của Anna."
+        },
+        {
+          "translation": "Đồ chơi của bọn trẻ ở trong hộp."
+        }
+      ]
+    },
+    "en_a1_24": {
+      "title": "Giới từ chỉ sự chuyển động: to, into, out of, up, down, along, across, through",
+      "shortExplanation": "Dùng để diễn tả hướng đi hoặc quỹ đạo di chuyển của người và vật; 'đến', 'vào trong', 'ra khỏi', 'băng qua'...",
+      "longExplanation": "Các giới từ chỉ phương hướng và chuyển động kết hợp với động từ di chuyển:\n• to = hướng tới một điểm đến: go to work (đi làm), walk to the park (đi bộ đến công viên)\n• into = di chuyển vào bên trong: come into the room (bước vào phòng), jump into the pool (nhảy vào hồ bơi)\n• out of = di chuyển từ trong ra ngoài: get out of the car (bước ra khỏi xe), take out of the bag (lấy ra khỏi túi)\n• up / down = hướng lên trên / xuống dưới: climb up the hill (leo lên đồi), walk down the stairs (đi xuống cầu thang)\n• along = đi dọc theo: walk along the river (đi dọc bờ sông)\n• across = đi ngang qua hoặc băng qua từ bên này sang bên kia: swim across the lake (bơi qua hồ), walk across the road (băng qua đường)\n• through = đi xuyên qua một không gian 3 chiều: drive through the tunnel (lái xe xuyên qua đường hầm).",
+      "formation": "Động từ di chuyển + Giới từ chuyển động (to / into / out of / across / through...) + Danh từ/Địa điểm",
+      "examples": [
+        {
+          "translation": "Cô ấy bước vào trong phòng."
+        },
+        {
+          "translation": "Anh ấy chạy băng qua đường."
+        },
+        {
+          "translation": "Chúng tôi đã lái xe xuyên qua khu rừng."
+        }
+      ]
+    },
+    "en_a2_01": {
+      "title": "Thì quá khứ đơn - Động từ có quy tắc: đuôi -ed",
+      "shortExplanation": "Diễn tả hành động đã hoàn tất trong quá khứ đối với các động từ có quy tắc; kết thúc bằng đuôi '-ed'.",
+      "longExplanation": "Thì quá khứ đơn dùng để diễn tả hành động đã diễn ra và kết thúc trong quá khứ.\nQuy tắc thêm đuôi '-ed' đối với động từ có quy tắc:\n• Hầu hết các động từ: thêm trực tiếp '-ed' (worked, played).\n• Động từ kết thúc bằng đuôi '-e': chỉ cần thêm '-d' (loved, used).\n• Động từ kết thúc bằng phụ âm + 'y': đổi 'y' thành 'i' rồi thêm '-ed' (studied, tried).\n• Động từ một âm tiết gồm một nguyên âm ngắn + một phụ âm: gấp đôi phụ âm cuối rồi thêm '-ed' (stopped, planned).",
+      "formation": "Chủ ngữ + Động từ có quy tắc thêm đuôi -ed (+ Tân ngữ/Trạng từ thời gian)",
+      "examples": [
+        {
+          "translation": "Hôm qua cô ấy đã làm việc cả ngày."
+        },
+        {
+          "translation": "Chủ nhật tuần trước họ đã chơi quần vợt."
+        }
+      ]
+    },
+    "en_a2_02": {
+      "title": "Thì quá khứ đơn - Động từ bất quy tắc",
+      "shortExplanation": "Diễn tả hành động trong quá khứ bằng các động từ có dạng biến đổi riêng, không theo quy tắc thêm '-ed'.",
+      "longExplanation": "Nhiều động từ thông dụng trong tiếng Anh không thêm '-ed' khi chuyển sang thì quá khứ mà biến đổi theo dạng bất quy tắc (khoảng 50 động từ phổ biến nhất chiếm tới 90% tần suất sử dụng).\nCác nhóm biến đổi thường gặp:\n• Dạng AAA (nguyên mẫu, quá khứ, quá khứ phân từ giống nhau): cut, put, hit, set, let.\n• Dạng ABA (dạng quá khứ phân từ quay về giống nguyên mẫu): run→ran→run, come→came→come.\n• Dạng ABC (cả 3 dạng đều khác nhau): go→went→gone, be→was/were→been, see→saw→seen.\n• Dạng ABB (dạng quá khứ và quá khứ phân từ giống nhau): have→had→had, buy→bought→bought.",
+      "formation": "Chủ ngữ + Động từ bất quy tắc ở dạng quá khứ (V2) (+ Tân ngữ/Trạng từ thời gian)",
+      "examples": [
+        {
+          "translation": "Tôi đã đến Paris vào mùa hè năm ngoái."
+        },
+        {
+          "translation": "Cô ấy đã xem một bộ phim rất hay."
+        },
+        {
+          "translation": "Chúng tôi đã có một cuộc họp lúc 9 giờ."
+        }
+      ]
+    },
+    "en_a2_03": {
+      "title": "Thì quá khứ đơn - Thể phủ định: didn't + động từ nguyên thể",
+      "shortExplanation": "Dùng để phủ định một hành động đã không xảy ra trong quá khứ; 'đã không làm gì'.",
+      "longExplanation": "Để tạo thể phủ định trong thì quá khứ đơn đối với động từ thường, ta mượn trợ động từ 'did' thêm 'not' thành 'didn't' (hoặc 'did not') cho tất cả các ngôi chủ ngữ.\nLưu ý quan trọng: Sau 'didn't', động từ chính luôn quay về dạng nguyên mẫu không 'to', tuyệt đối không dùng dạng quá khứ (ví dụ: She didn't go, không được nói She didn't went).",
+      "formation": "Chủ ngữ + didn't (did not) + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Hôm qua tôi đã không gặp anh ấy."
+        },
+        {
+          "translation": "Cô ấy đã không đến chỗ làm."
+        }
+      ]
+    },
+    "en_a2_04": {
+      "title": "Thì quá khứ đơn - Thể nghi vấn: Did you...? Where did she go?",
+      "shortExplanation": "Dùng để đặt câu hỏi Có/Không hoặc câu hỏi có từ để hỏi về hành động trong quá khứ; 'đã làm gì...?'",
+      "longExplanation": "Cách thành lập câu hỏi trong thì quá khứ đơn với động từ thường:\n• Câu hỏi Có/Không: Đảo trợ động từ 'Did' lên đầu câu: Did + Chủ ngữ + Động từ nguyên thể? (Ví dụ: Did you enjoy the film?)\n• Câu hỏi có từ để hỏi: Từ để hỏi (Wh-) + did + Chủ ngữ + Động từ nguyên thể? (Ví dụ: Where did they go?)\n• Lưu ý: Khi từ để hỏi đóng vai trò là chủ ngữ trong câu, không mượn trợ động từ did mà chia trực tiếp động từ ở thì quá khứ (Ví dụ: Who told you that?).",
+      "formation": "Câu hỏi Có/Không: Did + Chủ ngữ + Động từ nguyên thể...?\nCâu hỏi có từ để hỏi: Từ để hỏi (Wh-) + did + Chủ ngữ + Động từ nguyên thể...?",
+      "examples": [
+        {
+          "translation": "Bạn có thích bộ phim đó không?"
+        },
+        {
+          "translation": "Họ đã đi đâu vậy?"
+        },
+        {
+          "translation": "Ai đã nói với bạn điều đó thế?"
+        }
+      ]
+    },
+    "en_a2_05": {
+      "title": "was / were - Động từ 'to be' ở thì quá khứ",
+      "shortExplanation": "Dạng quá khứ của động từ 'to be', dùng để diễn tả trạng thái hoặc đặc điểm trong quá khứ; 'đã là', 'đã ở'.",
+      "longExplanation": "Động từ 'to be' ở thì quá khứ có hai dạng tùy thuộc vào chủ ngữ:\n• was: đi với các chủ ngữ số ít gồm I, he, she, it và danh từ số ít / không đếm được.\n• were: đi với các chủ ngữ you, we, they và danh từ số nhiều.\nThể phủ định: wasn't (= was not) / weren't (= were not).\nThể nghi vấn: Đảo was / were lên trước chủ ngữ: Was she...? / Were they...?",
+      "formation": "Khẳng định: I / He / She / It + was | You / We / They + were\nPhủ định: Chủ ngữ + wasn't / weren't\nNghi vấn: Was / Were + Chủ ngữ...?",
+      "examples": [
+        {
+          "translation": "Tối qua tôi đã rất mệt."
+        },
+        {
+          "translation": "Cả ngày họ đều ở nhà."
+        },
+        {
+          "translation": "Nó có đắt không?"
+        }
+      ]
+    },
+    "en_a2_06": {
+      "title": "will - Dự đoán và quyết định ngay tại thời điểm nói",
+      "shortExplanation": "Dùng để diễn tả quyết định đưa ra ngay lúc nói, lời dự đoán, lời hứa hoặc yêu cầu; 'sẽ'.",
+      "longExplanation": "'will' là một động từ khuyết thiếu dùng để diễn tả tương lai, theo sau là động từ nguyên mẫu không 'to', thường dùng cho:\n1. Quyết định tức thì (được đưa ra ngay tại thời điểm nói): I'll help you with that (Để tôi giúp bạn việc đó nhé).\n2. Dự đoán chủ quan không có căn cứ cụ thể: I think it will rain (Tôi nghĩ trời sẽ mưa).\n3. Lời hứa: I won't tell anyone (Tôi sẽ không nói với ai đâu).\n4. Lời đề nghị, yêu cầu: Will you open the window? (Bạn mở cửa sổ giúp tôi được không?)\nDạng viết tắt: 'll. Thể phủ định: won't (= will not).",
+      "formation": "Khẳng định: Chủ ngữ + will ('ll) + Động từ nguyên thể\nPhủ định: Chủ ngữ + won't (will not) + Động từ nguyên thể\nNghi vấn: Will + Chủ ngữ + Động từ nguyên thể...?",
+      "examples": [
+        {
+          "translation": "Điện thoại đang reo kìa. — Để tôi nghe máy cho!"
+        },
+        {
+          "translation": "Ngày mai trời sẽ lạnh đấy."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "en_a1_16": {
+      "title": "There is / There are - 表示存在",
+      "shortExplanation": "用于表示某处存在某人或某物，相当于汉语的'有……'。",
+      "longExplanation": "'There is / There are'句型用于表示人或事物的存在（相当于汉语中的'有'）。\n• There is 后面接单数可数名词或不可数名词。\n• There are 后面接复数可数名词。\n否定式：There isn't / There aren't。\n疑问式：将be动词提前至句首，即 Is there...? / Are there...?",
+      "formation": "肯定句：There is + 单数名词/不可数名词 | There are + 复数名词\n否定句：There isn't / There aren't + 名词\n疑问句：Is there...? / Are there...?",
+      "examples": [
+        {
+          "translation": "这附近有一家电影院。"
+        },
+        {
+          "translation": "附近有商店吗？——是的，有。"
+        }
+      ]
+    },
+    "en_a1_17": {
+      "title": "地点介词：in, on, at, under, next to, behind, between",
+      "shortExplanation": "用于明确人或事物在空间中的具体位置；'在……里'、'在……上'、'在……处'等。",
+      "longExplanation": "三个最核心的地点介词：\n• in = 在某个空间或范围内部：in the box（盒子里）、in the city（城市里）、in bed（在床上）\n• on = 在表面上：on the table（桌子上）、on the wall（墙上）、on the left（在左边）\n• at = 在某个具体地点或位置点：at the station（在车站）、at home（在家）、at school（在学校）\n其他常用介词：under（在……下方）、next to / beside（在……旁边）、behind（在……后面）、in front of（在……前面）、between（在……两者之间）、opposite（在……对面）。",
+      "formation": "地点介词 (in / on / at / under / next to / behind...) + 名词短语/地点",
+      "examples": [
+        {
+          "translation": "钥匙在桌子上。"
+        },
+        {
+          "translation": "她在厨房里。"
+        },
+        {
+          "translation": "在入口处碰头吧。"
+        }
+      ]
+    },
+    "en_a1_18": {
+      "title": "祈使句（Imperative）",
+      "shortExplanation": "用于发出命令、请求、指示或劝诱建议；'请……'、'不要……'、'让我们……'。",
+      "longExplanation": "祈使句用于表达指示、指令、警告或建议，通常省略主语，直接以动词原形开头。\n• 肯定形式：动词原形开头（例如：Open your books - 打开书本）。\n• 否定形式：Don't + 动词原形（例如：Don't run - 不要跑）。\n• 在句首或句尾加上'please'可以使语气更加礼貌客气。\n• 包含说话人在内的提议或号召：Let's + 动词原形（例如：Let's go! - 我们走吧！）。",
+      "formation": "肯定句：动词原形 (+ 宾语/其他成分)\n否定句：Don't + 动词原形\n礼貌请求：(Please) + 动词原形 + (please)\n提议劝诱：Let's + 动词原形",
+      "examples": [
+        {
+          "translation": "在十字路口向左转。"
+        },
+        {
+          "translation": "不要碰那个！"
+        },
+        {
+          "translation": "我们休息一下吧。"
+        }
+      ]
+    },
+    "en_a1_19": {
+      "title": "can / can't - 能力、可能性与许可",
+      "shortExplanation": "情态动词，用于表示能力、可能性或请求许可；'能'、'会'、'可以' / '不能'。",
+      "longExplanation": "'can'是情态动词，后面接动词原形，常用于表达：\n1. 能力或技能：I can play the guitar（我会弹吉他）。\n2. 可能性或客观情况：It can be dangerous（这可能会很危险）。\n3. 请求或给予许可（常用于口语）：Can I use your phone?（我可以用一下你的手机吗？）\n否定形式为 can't（cannot 的缩写）。",
+      "formation": "肯定句：主语 + can + 动词原形\n否定句：主语 + can't (cannot) + 动词原形\n疑问句：Can + 主语 + 动词原形...?",
+      "examples": [
+        {
+          "translation": "我会说三种语言。"
+        },
+        {
+          "translation": "她今天来不了。"
+        },
+        {
+          "translation": "请问你能帮我一下吗？"
+        }
+      ]
+    },
+    "en_a1_20": {
+      "title": "疑问词：what, where, who, when, how, why, which, whose, how much/many",
+      "shortExplanation": "用于引导特殊疑问句以获取具体信息；'什么'、'哪里'、'谁'、'怎样'等。",
+      "longExplanation": "疑问词通常置于疑问句句首，后接助动词或be动词，再接主语。\n• what = 什么\n• where = 哪里、何处\n• who = 谁（询问主语时不需要助动词do/does：Who lives here?）\n• when = 什么时候\n• why = 为什么\n• which = 哪一个（有特定选择范围）\n• whose = 谁的\n• how = 怎样、如何；how much = 多少（修饰不可数名词/价格）；how many = 多少（修饰可数名词复数）；how old = 多大年纪；how long = 多久/多长。",
+      "formation": "疑问词 + 助动词 / be动词 + 主语 + 动词原形 / 其他成分...?",
+      "examples": [
+        {
+          "translation": "她在哪里工作？"
+        },
+        {
+          "translation": "现在几点了？"
+        },
+        {
+          "translation": "你有几个兄弟？"
+        }
+      ]
+    },
+    "en_a1_21": {
+      "title": "基数词（Cardinal numerals）：1–1000",
+      "shortExplanation": "用于计算人或事物的数量；'一、二、三……一百、一千'。",
+      "longExplanation": "英语中1到1000基数词的构成规律：\n• 1至12：各自有独立单词（one, two, three... twelve）。\n• 13至19：词尾加'-teen'（thirteen, fourteen... nineteen；注意 thirteen, fifteen, eighteen 的拼写变化）。\n• 几十的整数：词尾为'-ty'（twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety）。\n• 几十几的复合数字：用连字符连接（例如：21 = twenty-one）。\n• 百与千：100 = a/one hundred；1000 = a/one thousand。\n• 在英式英语中，hundred之后通常用'and'连接后面的十位或个位（例如：two hundred and fifty）。",
+      "formation": "十位数 + 连字符 (-) + 个位数 (21–99) | 数量词 + hundred / thousand (+ and + 其余数字)",
+      "examples": [
+        {
+          "translation": "她二十三岁。"
+        },
+        {
+          "translation": "这张票价值四百英镑。"
+        }
+      ]
+    },
+    "en_a1_22": {
+      "title": "序数词（Ordinal numbers）：first, second, third...",
+      "shortExplanation": "用于表示顺序、位次、日期或楼层；'第一、第二、第三……'。",
+      "longExplanation": "英语序数词大多数通过在基数词后加'-th'构成：fourth, sixth, seventh...\n特殊变化形式需单独记忆：first（第1）、second（第2）、third（第3）、fifth（第5）、eighth（第8）、ninth（第9）、twelfth（第12）。\n用法要点：序数词前通常必须加定冠词'the'（例如：the first day - 第一天，the third floor - 三楼）。\n分数表达：½ = a half（二分之一），⅓ = a third（三分之一），¼ = a quarter（四分之一）。",
+      "formation": "the + 序数词 (+ 名词) | （例如：the first, the second, the third... the twenty-first）",
+      "examples": [
+        {
+          "translation": "我的办公室在三楼。"
+        },
+        {
+          "translation": "今天是三月一日。"
+        }
+      ]
+    },
+    "en_a1_23": {
+      "title": "名词所有格：'s 与 s'",
+      "shortExplanation": "用撇号与字母's'表示所属关系；'……的'。",
+      "longExplanation": "英语中主要通过撇号和字母s（'s 或 s'）来表示生命体或特定对象的所属关系：\n• 单数名词：在词尾加's（例如：Tom's book - 汤姆的书，the dog's tail - 狗的尾巴）。\n• 以-s结尾的规则复数名词：仅加撇号'（例如：the teachers' room - 教师办公室，my parents' house - 我父母的房子）。\n• 不规则复数名词（不以-s结尾）：加's（例如：the children's playground - 孩子们游乐场，men's clothes - 男士服装）。\n• 以-s结尾的人名专有名词：James's 或 James' 两种拼写均可。",
+      "formation": "单数名词 + 's + 所属名词 | 以-s结尾的复数名词 + ' + 所属名词",
+      "examples": [
+        {
+          "translation": "这是安娜的笔记本电脑。"
+        },
+        {
+          "translation": "孩子们的玩具都在箱子里。"
+        }
+      ]
+    },
+    "en_a1_24": {
+      "title": "方向与动态介词：to, into, out of, up, down, along, across, through",
+      "shortExplanation": "与移动动词搭配，用于表示运动的方向或轨迹；'向'、'进入'、'穿过'等。",
+      "longExplanation": "动态介词常与表示位移的动词连用，表示运动的方向、路径与轨迹：\n• to = 朝着某个目标点移动：go to work（去上班）、walk to the park（步行去公园）\n• into = 向内部移动：come into the room（走进房间）、jump into the pool（跳进泳池）\n• out of = 从内部移向外部：get out of the car（从车里出来）、take out of the bag（从包里拿出来）\n• up / down = 向上 / 向下：climb up the hill（爬上小山）、walk down the stairs（走下楼梯）\n• along = 沿着：walk along the river（沿着河边走）\n• across = 从表面穿过/横穿：swim across the lake（游过湖）、walk across the road（过马路）\n• through = 从立体空间或内部穿过：drive through the tunnel（开车穿过隧道）。",
+      "formation": "移动动词 + 动态介词 (to / into / out of / across / through...) + 名词/地点",
+      "examples": [
+        {
+          "translation": "她走进了房间。"
+        },
+        {
+          "translation": "他跑着穿过了马路。"
+        },
+        {
+          "translation": "我们驱车穿过了森林。"
+        }
+      ]
+    },
+    "en_a2_01": {
+      "title": "一般过去时 - 规则动词：加 -ed",
+      "shortExplanation": "表示在过去已经完成的动作或状态，规则动词在词尾加'-ed'。",
+      "longExplanation": "一般过去时用于描述在过去特定时间发生且已结束的动作。\n规则动词过去式加'-ed'的拼写规则：\n• 大多数动词：直接加'-ed'（worked, played）。\n• 以'-e'结尾的动词：直接加'-d'（loved, used）。\n• 以'辅音字母 + y'结尾的动词：变'y'为'i'再加'-ed'（studied, tried）。\n• 以单个短元音加单个辅音字母结尾的重读音节动词：双写该辅音字母再加'-ed'（stopped, planned）。",
+      "formation": "主语 + 规则动词过去式(-ed) (+ 宾语/时间状语)",
+      "examples": [
+        {
+          "translation": "她昨天工作了一整天。"
+        },
+        {
+          "translation": "他们上周日打了网球。"
+        }
+      ]
+    },
+    "en_a2_02": {
+      "title": "一般过去时 - 不规则动词",
+      "shortExplanation": "用于描述过去的动作，不规则动词不按加'-ed'的规则变化，拥有独特的过去式形式。",
+      "longExplanation": "英语中许多常用动词在变成过去式时不加'-ed'，而是具有独特的不规则变化形态（最核心的50个动词覆盖了约90%的日常使用）。\n按形态变化规律归类：\n• AAA型（原形、过去式、过去分词均相同）：cut, put, hit, set, let。\n• ABA型（过去分词回到原形）：run→ran→run, come→came→come。\n• ABC型（三态各不相同）：go→went→gone, be→was/were→been, see→saw→seen。\n• ABB型（过去式与过去分词相同）：have→had→had, buy→bought→bought。",
+      "formation": "主语 + 不规则动词过去式 (+ 宾语/时间状语)",
+      "examples": [
+        {
+          "translation": "我去年夏天去了巴黎。"
+        },
+        {
+          "translation": "她看了一部非常棒的电影。"
+        },
+        {
+          "translation": "我们上午9点开了一个会。"
+        }
+      ]
+    },
+    "en_a2_03": {
+      "title": "一般过去时 - 否定句：didn't + 动词原形",
+      "shortExplanation": "用于否定过去发生的动作或事件，表示'过去没有做某事'。",
+      "longExplanation": "在一般过去时中，普通动词的否定句统一使用助动词'did'加'not'，通常缩写为'didn't'，适用于所有人称主语。\n关键规则：助动词'didn't'之后，主要动词必须恢复为动词原形，绝对不能再使用过去式（例如：She didn't go，而不能说 She didn't went）。",
+      "formation": "主语 + didn't (did not) + 动词原形",
+      "examples": [
+        {
+          "translation": "我昨天没有见到他。"
+        },
+        {
+          "translation": "她没有去上班。"
+        }
+      ]
+    },
+    "en_a2_04": {
+      "title": "一般过去时 - 疑问句：Did you? Where did she go?",
+      "shortExplanation": "用于询问过去发生的动作或事件；'……了吗？'、'去哪儿了？'等。",
+      "longExplanation": "一般过去时中普通动词疑问句的构成方式：\n• 一般疑问句：将助动词'Did'置于句首，接主语和动词原形：Did + 主语 + 动词原形？（例如：Did they arrive? - 他们到了吗？）。\n• 特殊疑问句：疑问词置于句首，后接 did、主语及动词原形：疑问词 + did + 主语 + 动词原形？（例如：Where did they go? - 他们去哪里了？）。\n• 特殊情况：当疑问词本身作主语时，不使用助动词did，动词直接使用过去式（例如：Who told you that? - 谁告诉你那件事的？）。",
+      "formation": "一般疑问句：Did + 主语 + 动词原形...?\n特殊疑问句：疑问词 + did + 主语 + 动词原形...?",
+      "examples": [
+        {
+          "translation": "你喜欢那部电影吗？"
+        },
+        {
+          "translation": "他们去哪儿了？"
+        },
+        {
+          "translation": "谁告诉你那件事的？"
+        }
+      ]
+    },
+    "en_a2_05": {
+      "title": "was / were - be动词的过去式",
+      "shortExplanation": "be动词的过去时态形式，用于描述过去的状态、身份或特征；'是'、'在'。",
+      "longExplanation": "be动词在一般过去时中有两种形式，根据主语的人称和单复数而定：\n• was：用于第一人称单数和第三人称单数主语（I, he, she, it 以及单数名词/不可数名词）。\n• were：用于第二人称和复数主语（you, we, they 以及复数名词）。\n否定式：wasn't（was not 的缩写）/ weren't（were not 的缩写）。\n疑问式：将 was 或 were 提前至主语之前：Was she...? / Were they...?",
+      "formation": "肯定句：I / He / She / It + was | You / We / They + were\n否定句：主语 + wasn't / weren't\n疑问句：Was / Were + 主语...?",
+      "examples": [
+        {
+          "translation": "我昨晚非常累。"
+        },
+        {
+          "translation": "他们一整天都在家。"
+        },
+        {
+          "translation": "那个东西贵吗？"
+        }
+      ]
+    },
+    "en_a2_06": {
+      "title": "will - 预测与临时即兴决定",
+      "shortExplanation": "情态动词，用于表达说话时即刻做出的决定、主观预测、承诺或请求；'将'、'会'。",
+      "longExplanation": "'will'作为情态助动词后接动词原形，常用于以下情境：\n1. 即时决定（在说话时刻做出的决定）：I'll help you with that（我来帮你做那件事）。\n2. 无明确计划的主观预测：I think it will rain（我觉得天要下雨了）。\n3. 承诺与保证：I won't tell anyone（我不会告诉任何人的）。\n4. 请求与邀请：Will you open the window?（你能打开窗户吗？）。\n缩写形式为'll。否定形式为 won't（will not 的缩写）。",
+      "formation": "肯定句：主语 + will ('ll) + 动词原形\n否定句：主语 + won't (will not) + 动词原形\n疑问句：Will + 主语 + 动词原形...?",
+      "examples": [
+        {
+          "translation": "电话在响。——我去接！"
+        },
+        {
+          "translation": "明天天气会很冷。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "en_a1_16": {
+      "title": "There is / There are - 存在を表す構文",
+      "shortExplanation": "人や物が特定の場所に存在することを表し、「〜がある」「〜がいる」という意味になります。",
+      "longExplanation": "「There is / There are」構文は、新情報として人や物が存在することを表す表現で、日本語の「〜がある」「〜がいる」に相当します。\n• There is ＋ 単数名詞または不可算名詞。\n• There are ＋ 複数名詞。\n否定文：There isn't / There aren't。\n疑問文：be動詞を文頭に出して Is there...? / Are there...?",
+      "formation": "肯定文：There is ＋ 単数名詞/不可算名詞 | There are ＋ 複数名詞\n否定文：There isn't / There aren't ＋ 名詞\n疑問文：Is there...? / Are there...?",
+      "examples": [
+        {
+          "translation": "この近くに映画館があります。"
+        },
+        {
+          "translation": "近くに店はありますか？——はい、あります。"
+        }
+      ]
+    },
+    "en_a1_17": {
+      "title": "場所の前置詞：in, on, at, under, next to, behind, between",
+      "shortExplanation": "人や物が存在する空間的な位置を表し、「〜の中に」「〜の上に」「〜で」などを表します。",
+      "longExplanation": "代表的な3つの場所の前置詞：\n• in ＝ 空間や枠組みの「中」：in the box（箱の中に）、in the city（都市に）、in bed（ベッドの中に）\n• on ＝ 物の「表面・接触面の上」：on the table（机の上に）、on the wall（壁に）、on the left（左側に）\n• at ＝ 地図上の「特定の地点・場所」：at the station（駅で）、at home（家で）、at school（学校で）\nその他の前置詞：under（〜の下に）、next to / beside（〜の隣に）、behind（〜の後ろに）、in front of（〜の前に）、between（〜の間に）、opposite（〜の向かいに）。",
+      "formation": "場所の前置詞（in / on / at / under / next to / behind...） ＋ 名詞句・場所",
+      "examples": [
+        {
+          "translation": "鍵はテーブルの上にあります。"
+        },
+        {
+          "translation": "彼女はキッチンにいます。"
+        },
+        {
+          "translation": "入口で会いましょう。"
+        }
+      ]
+    },
+    "en_a1_18": {
+      "title": "命令文（Imperative）",
+      "shortExplanation": "指示、命令、依頼、勧誘などを表し、「〜しなさい」「〜しないで」「〜しましょう」という意味になります。",
+      "longExplanation": "英語の命令文は、主語を置かずに動詞の原形で文を始めます。\n• 肯定の命令：動詞の原形から始める（例：Open your books - 本を開きなさい）。\n• 否定の命令（禁止）：Don't ＋ 動詞の原形（例：Don't run - 走らないで）。\n• 文頭または文末に「please」を添えると丁寧な依頼になります。\n• 話し手を含む勧誘・提案：「Let's ＋ 動詞の原形」（例：Let's go! - 一緒に行きましょう！）。",
+      "formation": "肯定命令：動詞原形（＋ 目的語など）\n否定命令（禁止）：Don't ＋ 動詞原形\n丁寧な依頼：(Please) ＋ 動詞原形 ＋ (please)\n勧誘：Let's ＋ 動詞原形",
+      "examples": [
+        {
+          "translation": "交差点を左に曲がってください。"
+        },
+        {
+          "translation": "それに触らないで！"
+        },
+        {
+          "translation": "少し休憩しましょう。"
+        }
+      ]
+    },
+    "en_a1_19": {
+      "title": "can / can't - 能力・可能性・許可",
+      "shortExplanation": "能力、可能性、または許可を求める際に用いる助動詞で、「〜できる」「〜してもよい」／「〜できない」を表します。",
+      "longExplanation": "「can」は助動詞で、後ろに動詞の原形を取り、主に以下の意味を表します：\n1. 能力・技能：「〜ができる」（例：I can play the guitar - ギターが弾ける）\n2. 可能性：「〜することがある・あり得る」（例：It can be dangerous - 危険なこともある）\n3. 許可・依頼（口語）：「〜してもいいですか／〜してくれますか」（例：Can I use your phone? - 電話を使ってもいいですか？）\n否定形は can't（cannot の短縮形）です。",
+      "formation": "肯定文：主語 ＋ can ＋ 動詞原形\n否定文：主語 ＋ can't (cannot) ＋ 動詞原形\n疑問文：Can ＋ 主語 ＋ 動詞原形...?",
+      "examples": [
+        {
+          "translation": "私は3つの言語を話すことができます。"
+        },
+        {
+          "translation": "彼女は今日来ることができません。"
+        },
+        {
+          "translation": "手伝っていただけますか？"
+        }
+      ]
+    },
+    "en_a1_20": {
+      "title": "疑問詞：what, where, who, when, how, why, which, whose, how much/many",
+      "shortExplanation": "具体的な情報を尋ねる特殊疑問文（Wh疑問文）をつくる語で、「何」「どこ」「誰」「いつ」などを表します。",
+      "longExplanation": "疑問詞は原則として文頭に置き、その後に「助動詞/be動詞 ＋ 主語」の倒置形が続きます。\n• what ＝ 何\n• where ＝ どこ\n• who ＝ 誰（主語を尋ねる場合はdo/doesを使わず：Who lives here?）\n• when ＝ いつ\n• why ＝ なぜ、どうして\n• which ＝ どちら、どれ（選択肢が限られている場合）\n• whose ＝ 誰のもの\n• how ＝ どのように；how much ＝ いくら・どのくらい（不可算名詞や値段）；how many ＝ いくつ（可算名詞の複数形）；how old ＝ 何歳；how long ＝ どのくらいの長さ/期間。",
+      "formation": "疑問詞 ＋ 助動詞 / be動詞 ＋ 主語 ＋ 動詞原形 / 補語...?",
+      "examples": [
+        {
+          "translation": "彼女はどこで働いていますか？"
+        },
+        {
+          "translation": "今、何時ですか？"
+        },
+        {
+          "translation": "兄弟は何人いますか？"
+        }
+      ]
+    },
+    "en_a1_21": {
+      "title": "基数詞（数詞）：1〜1000",
+      "shortExplanation": "人や物の数量を数えるときに用いる数詞で、「1、2、3……100、1000」を表します。",
+      "longExplanation": "1から1000までの英語の基数詞の構成ルール：\n• 1〜12：固有の単語（one, two, three... twelve）。\n• 13〜19：語尾に「-teen」を付ける（thirteen, fourteen... nineteen；thirteen, fifteen, eighteenの綴りに注意）。\n• 10の倍数（20〜90）：語尾に「-ty」を付ける（twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety）。\n• 2桁の複合数：ハイフンで結ぶ（例：21 ＝ twenty-one）。\n• 100 ＝ a/one hundred、1000 ＝ a/one thousand。\n• イギリス英語では、hundredの後に「and」を補って十の位や一の位を続けます（例：two hundred and fifty）。",
+      "formation": "十の位 ＋ ハイフン（-） ＋ 一の位（21〜99） | 数 ＋ hundred / thousand（＋ and ＋ 数字）",
+      "examples": [
+        {
+          "translation": "彼女は23歳です。"
+        },
+        {
+          "translation": "そのチケットは400ポンドします。"
+        }
+      ]
+    },
+    "en_a1_22": {
+      "title": "序数詞（順序を表す数）：first, second, third...",
+      "shortExplanation": "順序、順番、日付、建物の階数などを表し、「第1の、1番目の」という意味になります。",
+      "longExplanation": "英語の序数詞は、原則として基数詞の末尾に「-th」を付けて作ります（fourth, sixth, seventhなど）。\n例外的な不規則変化：first（第1）、second（第2）、third（第3）、fifth（第5）、eighth（第8）、ninth（第9）、twelfth（第12）。\n重要ルール：順序が特定されるため、通常は定冠詞「the」を伴います（例：the first day - 初日、the third floor - 3階）。\n分数表現にも用いられます：½ ＝ a half（2分の1）、⅓ ＝ a third（3分の1）、¼ ＝ a quarter（4分の1）。",
+      "formation": "the ＋ 序数詞（＋ 名詞） | （例：the first, the second, the third... the twenty-first）",
+      "examples": [
+        {
+          "translation": "私のオフィスは3階にあります。"
+        },
+        {
+          "translation": "今日は3月1日です。"
+        }
+      ]
+    },
+    "en_a1_23": {
+      "title": "名詞の所有格：'s と s'",
+      "shortExplanation": "アポストロフィと「s」を用いて所有・所属関係を表し、「〜の」を意味します。",
+      "longExplanation": "英語では、アポストロフィと「s」（'s または s'）を名詞に付けることで所有関係を表します：\n• 単数名詞：末尾に「's」を付ける（例：Tom's book - トムの本、the dog's tail - 犬のしっぽ）。\n• -sで終わる規則複数名詞：末尾にアポストロフィ「'」のみを付ける（例：the teachers' room - 職員室、my parents' house - 両親の家）。\n• 不規則複数名詞（-sで終わらない複数形）：「's」を付ける（例：the children's playground - 子どもたちの遊び場、men's clothes - 紳士服）。\n• -sで終わる固有名詞（人名など）：James's でも James' でもどちらも正しいです。",
+      "formation": "単数名詞 ＋ 's ＋ 名詞 | -sで終わる複数名詞 ＋ ' ＋ 名詞",
+      "examples": [
+        {
+          "translation": "これはアナのノートパソコンです。"
+        },
+        {
+          "translation": "子どもたちのおもちゃは箱の中にあります。"
+        }
+      ]
+    },
+    "en_a1_24": {
+      "title": "移動・方向の前置詞：to, into, out of, up, down, along, across, through",
+      "shortExplanation": "移動動詞とともに用い、動作の移動方向や経路を表します。「〜へ」「〜の中へ」「〜を横切って」など。",
+      "longExplanation": "移動を表す動詞とともに使われ、動きの方向や軌跡を表す前置詞です：\n• to ＝ ある地点への方向・到達：go to work（仕事に行く）、walk to the park（公園へ歩く）\n• into ＝ 空間の内部への進入：come into the room（部屋に入ってくる）、jump into the pool（プールに飛び込む）\n• out of ＝ 内部から外部への移動：get out of the car（車から降りる）、take out of the bag（バッグから取り出す）\n• up / down ＝ 上方向へ / 下方向へ：climb up the hill（丘を登る）、walk down the stairs（階段を降りる）\n• along ＝ 〜に沿って：walk along the river（川沿いを歩く）\n• across ＝ 平面を横切って・渡って：swim across the lake（湖を泳いで渡る）、walk across the road（道を横断する）\n• through ＝ 立体的な空間・トンネルなどを通り抜けて：drive through the tunnel（トンネルを車で通り抜ける）。",
+      "formation": "移動動詞 ＋ 移動の前置詞（to / into / out of / across / through...） ＋ 名詞・場所",
+      "examples": [
+        {
+          "translation": "彼女は部屋の中へ入って行きました。"
+        },
+        {
+          "translation": "彼は走って通りを横切りました。"
+        },
+        {
+          "translation": "私たちは車で森の中を通り抜けました。"
+        }
+      ]
+    },
+    "en_a2_01": {
+      "title": "過去形（規則動詞）：-ed の付加",
+      "shortExplanation": "過去に完了した動作や状態を表す表現で、規則動詞は語尾に「-ed」を付けます。",
+      "longExplanation": "過去形は、過去の特定の時点で起きてすでに完了した動作や状態を表します。\n規則動詞に「-ed」を付ける際の綴りの規則：\n• 多くの動詞：そのまま「-ed」を付ける（worked, played）。\n• 「-e」で終わる動詞：「-d」のみを付ける（loved, used）。\n• 「子音字 ＋ y」で終わる動詞：「y」を「i」に変えて「-ed」を付ける（studied, tried）。\n• 「短母音 ＋ 1つの子音字」で終わる1音節の動詞：最後の子音字を重ねて「-ed」を付ける（stopped, planned）。",
+      "formation": "主語 ＋ 規則動詞の過去形（-ed） （＋ 目的語・過去を表す副詞句）",
+      "examples": [
+        {
+          "translation": "彼女は昨日、一日中働きました。"
+        },
+        {
+          "translation": "彼らはこの前の日曜日にテニスをしました。"
+        }
+      ]
+    },
+    "en_a2_02": {
+      "title": "過去形（不規則動詞）",
+      "shortExplanation": "「-ed」を付けずに独自の形に変化する不規則動詞を用いて、過去の動作を表します。",
+      "longExplanation": "英語の日常会話で最もよく使われる動詞の多くは、過去形にする際に「-ed」を付ける規則変化ではなく、独自の形に変化する不規則動詞です（最頻出の約50語で全体の約90%をカバーします）。\n変化パターンの分類：\n• AAA型（原形・過去形・過去分詞がすべて同じ）：cut, put, hit, set, let。\n• ABA型（過去分詞が原形と同じ）：run→ran→run, come→came→come。\n• ABC型（3つすべて異なる）：go→went→gone, be→was/were→been, see→saw→seen。\n• ABB型（過去形と過去分詞が同じ）：have→had→had, buy→bought→bought。",
+      "formation": "主語 ＋ 不規則動詞の過去形 （＋ 目的語・過去を表す副詞句）",
+      "examples": [
+        {
+          "translation": "私は去年の夏、パリへ行きました。"
+        },
+        {
+          "translation": "彼女は素晴らしい映画を見ました。"
+        },
+        {
+          "translation": "私たちは9時に会議がありました。"
+        }
+      ]
+    },
+    "en_a2_03": {
+      "title": "過去形（否定文）：didn't ＋ 動詞原形",
+      "shortExplanation": "過去に行われなかった動作や事実を否定し、「〜しなかった」という意味を表します。",
+      "longExplanation": "一般動詞の過去形の否定文は、主語の人称や単複にかかわらず、助動詞「did not」の短縮形「didn't」を用います。\n最重要ポイント：「didn't」の後ろに続く本動詞は必ず「動詞の原形」に戻します。過去形を重ねて使わないように注意してください（例：She didn't go は正しいですが、She didn't went とは言えません）。",
+      "formation": "主語 ＋ didn't (did not) ＋ 動詞原形",
+      "examples": [
+        {
+          "translation": "私は昨日、彼を見かけませんでした。"
+        },
+        {
+          "translation": "彼女は仕事に来ませんでした。"
+        }
+      ]
+    },
+    "en_a2_04": {
+      "title": "過去形（疑問文）：Did you? Where did she go?",
+      "shortExplanation": "過去の出来事について尋ねる疑問文で、「〜しましたか？」「どこへ行きましたか？」などを表します。",
+      "longExplanation": "一般動詞の過去形の疑問文の作り方：\n• Yes/No疑問文：助動詞「Did」を文頭に出し、動詞を原形にします：Did ＋ 主語 ＋ 動詞原形〜？（例：Did they arrive? - 彼らは到着しましたか？）\n• 疑問詞を含む疑問文：文頭に疑問詞を置き、その後に did ＋ 主語 ＋ 動詞原形 を続けます：疑問詞 ＋ did ＋ 主語 ＋ 動詞原形〜？（例：Where did they go? - 彼らはどこへ行きましたか？）\n• 例外：疑問詞自体が主語になる場合は、didを用いずに動詞を過去形のまま置きます（例：Who told you that? - 誰があなたにそれを言いましたか？）。",
+      "formation": "Yes/No疑問文：Did ＋ 主語 ＋ 動詞原形...?\n疑問詞疑問文：疑問詞 ＋ did ＋ 主語 ＋ 動詞原形...?",
+      "examples": [
+        {
+          "translation": "映画は楽しめましたか？"
+        },
+        {
+          "translation": "彼らはどこへ行きましたか？"
+        },
+        {
+          "translation": "誰があなたにそう言ったのですか？"
+        }
+      ]
+    },
+    "en_a2_05": {
+      "title": "was / were - be動詞の過去形",
+      "shortExplanation": "be動詞の過去の形で、過去における状態、所在、身分などを表し、「〜だった」「〜にいた」を意味します。",
+      "longExplanation": "be動詞の過去形には、主語の人称と数に応じて「was」と「were」の2つの形があります：\n• was：主語が I, he, she, it および単数名詞・不可算名詞の場合に使います。\n• were：主語が you, we, they および複数名詞の場合に使います。\n否定文：wasn't（＝ was not） / weren't（＝ were not）。\n疑問文：was または were を主語の前に出します：Was she...? / Were they...?",
+      "formation": "肯定文：I / He / She / It ＋ was | You / We / They ＋ were\n否定文：主語 ＋ wasn't / weren't\n疑問文：Was / Were ＋ 主語...?",
+      "examples": [
+        {
+          "translation": "昨晩、私はとても疲れていました。"
+        },
+        {
+          "translation": "彼らは一日中家にいました。"
+        },
+        {
+          "translation": "それは高かったですか？"
+        }
+      ]
+    },
+    "en_a2_06": {
+      "title": "will - 予測と即座の意思決定",
+      "shortExplanation": "その場で下した決定、未来の予測、約束、依頼などを表す助動詞で、「〜するつもりだ」「〜だろう」を意味します。",
+      "longExplanation": "助動詞「will」は後ろに動詞の原形を取り、主に以下のような未来の事柄を表します：\n1. その場での即座の決定（発話時に決めたこと）：I'll help you with that（それ、手伝うよ）。\n2. 根拠に基づかない主観的な予測：I think it will rain（雨が降ると思います）。\n3. 約束：I won't tell anyone（誰にも言いません）。\n4. 依頼：Will you open the window?（窓を開けてくれませんか？）。\n短縮形は「'll」、否定形は「won't」（＝ will not）です。",
+      "formation": "肯定文：主語 ＋ will ('ll) ＋ 動詞原形\n否定文：主語 ＋ won't (will not) ＋ 動詞原形\n疑問文：Will ＋ 主語 ＋ 動詞原形...?",
+      "examples": [
+        {
+          "translation": "電話が鳴っています。——私が出ます！"
+        },
+        {
+          "translation": "明日は寒くなるでしょう。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "en_a1_16": {
+      "title": "There is / There are - 존재 표현",
+      "shortExplanation": "특정 장소에 사람이나 사물이 존재하는 것을 나타내며, '~이/가 있다'라는 뜻입니다.",
+      "longExplanation": "'There is / There are' 구문은 새로운 정보로서 사람이나 사물의 존재를 나타낼 때 사용하며, 한국어의 '~이/가 있다'에 해당합니다.\n• There is + 단수 명사 또는 셀 수 없는 명사(불가산 명사)\n• There are + 복수 명사\n부정문: There isn't / There aren't\n의문문: be동사를 문두로 보내어 Is there...? / Are there...?",
+      "formation": "긍정문: There is + 단수 명사/불가산 명사 | There are + 복수 명사\n부정문: There isn't / There aren't + 명사\n의문문: Is there...? / Are there...?",
+      "examples": [
+        {
+          "translation": "이 근처에 영화관이 하나 있습니다."
+        },
+        {
+          "translation": "근처에 가게가 있나요? — 네, 있습니다."
+        }
+      ]
+    },
+    "en_a1_17": {
+      "title": "장소의 전치사: in, on, at, under, next to, behind, between",
+      "shortExplanation": "사람이나 사물이 위치한 공간적인 장소를 나타내며, '~ 안에', '~ 위에', '~에(서)' 등을 의미합니다.",
+      "longExplanation": "가장 대표적인 3가지 장소 전치사:\n• in = 공간이나 구역의 '내부': in the box(상자 안에), in the city(도시에서), in bed(침대에)\n• on = 접촉해 있는 '표면 위': on the table(탁자 위에), on the wall(벽에), on the left(왼쪽에)\n• at = 특정 '지점이나 장소': at the station(역에서), at home(집에서), at school(학교에서)\n기타 전치사: under(~ 아래에), next to / beside(~ 옆에), behind(~ 뒤에), in front of(~ 앞에), between(~ 사이에), opposite(~ 맞은편에).",
+      "formation": "장소 전치사 (in / on / at / under / next to / behind...) + 명사구/장소",
+      "examples": [
+        {
+          "translation": "열쇠는 탁자 위에 있습니다."
+        },
+        {
+          "translation": "그녀는 부엌에 있습니다."
+        },
+        {
+          "translation": "입구에서 만나요."
+        }
+      ]
+    },
+    "en_a1_18": {
+      "title": "명령문 (Imperative)",
+      "shortExplanation": "명령, 요청, 지시, 권유를 나타내며, '~해라', '~하지 마라', '~하자'의 뜻입니다.",
+      "longExplanation": "영어의 명령문은 주어를 생략하고 동사 원형으로 문장을 시작합니다.\n• 긍정 명령: 동사 원형으로 시작 (예: Open your books - 책을 펴세요).\n• 부정 명령(금지): Don't + 동사 원형 (예: Don't run - 뛰지 마세요).\n• 문장 앞이나 뒤에 'please'를 붙이면 정중한 요청의 의미가 됩니다.\n• 말하는 사람을 포함하는 제안 및 권유: 'Let's + 동사 원형' (예: Let's go! - 가자!).",
+      "formation": "긍정 명령: 동사 원형 (+ 목적어 등)\n부정 명령(금지): Don't + 동사 원형\n정중한 요청: (Please) + 동사 원형 + (please)\n권유/제안: Let's + 동사 원형",
+      "examples": [
+        {
+          "translation": "교차로에서 좌회전하세요."
+        },
+        {
+          "translation": "그것을 만지지 마세요!"
+        },
+        {
+          "translation": "잠깐 쉬자."
+        }
+      ]
+    },
+    "en_a1_19": {
+      "title": "can / can't - 능력, 가능성, 허가",
+      "shortExplanation": "능력, 가능성, 또는 허가나 요청을 나타내는 조동사로, '~할 수 있다' / '~할 수 없다'의 뜻입니다.",
+      "longExplanation": "'can'은 조동사로서 뒤에 항상 동사 원형이 오며, 다음과 같은 의미를 나타냅니다:\n1. 능력 및 기술: '~할 수 있다', '~할 줄 안다' (예: I can play the guitar - 나는 기타를 칠 수 있다)\n2. 가능성: '~할 수도 있다' (예: It can be dangerous - 위험할 수도 있다)\n3. 허가 및 요청(구어체): '~해도 될까요?', '~해 주실래요?' (예: Can I use your phone? - 전화기 좀 써도 될까요?)\n부정형은 can't(cannot의 축약형)입니다.",
+      "formation": "긍정문: 주어 + can + 동사 원형\n부정문: 주어 + can't (cannot) + 동사 원형\n의문문: Can + 주어 + 동사 원형...?",
+      "examples": [
+        {
+          "translation": "저는 3개 국어를 구사할 수 있습니다."
+        },
+        {
+          "translation": "그녀는 오늘 올 수 없습니다."
+        },
+        {
+          "translation": "저 좀 도와주실 수 있나요?"
+        }
+      ]
+    },
+    "en_a1_20": {
+      "title": "의문사: what, where, who, when, how, why, which, whose, how much/many",
+      "shortExplanation": "구체적인 정보를 묻는 의문문을 만들 때 사용하는 말로, '무엇', '어디', '누구', '언제' 등을 뜻합니다.",
+      "longExplanation": "의문사는 원칙적으로 문장 맨 앞에 위치하며, 뒤에 조동사나 be동사가 주어 앞으로 도치되어 이어집니다.\n• what = 무엇, 무슨\n• where = 어디\n• who = 누구 (주어를 물을 때는 do/does 없이 동사가 바로 옴: Who lives here?)\n• when = 언제\n• why = 왜\n• which = 어느 것, 어떤 (선택 범위가 정해져 있을 때)\n• whose = 누구의 (것)\n• how = 어떻게; how much = 얼마, 얼마나 (셀 수 없는 명사나 가격); how many = 몇 개, 얼마나 (셀 수 있는 복수 명사); how old = 몇 살; how long = 얼마나 오래/길게.",
+      "formation": "의문사 + 조동사 / be동사 + 주어 + 동사 원형 / 보어...?",
+      "examples": [
+        {
+          "translation": "그녀는 어디에서 일하나요?"
+        },
+        {
+          "translation": "지금 몇 시인가요?"
+        },
+        {
+          "translation": "남자 형제가 몇 명 있습니까?"
+        }
+      ]
+    },
+    "en_a1_21": {
+      "title": "기수사 (수사): 1–1000",
+      "shortExplanation": "사람이나 사물의 수량을 셀 때 사용하는 수사로, '하나, 둘, 셋... 백, 천' 등을 나타냅니다.",
+      "longExplanation": "1부터 1000까지의 영어 기수사 구성 규칙:\n• 1~12: 고유 단어 (one, two, three... twelve).\n• 13~19: 어미에 '-teen'을 붙임 (thirteen, fourteen... nineteen; thirteen, fifteen, eighteen 철자 주의).\n• 10단위 정수(20~90): 어미에 '-ty'를 붙임 (twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety).\n• 십 자리와 일 자리의 복합수: 하이픈(-)으로 연결 (예: 21 = twenty-one).\n• 백과 천: 100 = a/one hundred, 1000 = a/one thousand.\n• 영국식 영어에서는 hundred 뒤에 'and'를 넣어 십의 자리나 일의 자리를 잇습니다 (예: two hundred and fifty).",
+      "formation": "십의 자리 + 하이픈(-) + 일의 자리 (21~99) | 숫자 + hundred / thousand (+ and + 나머지 수)",
+      "examples": [
+        {
+          "translation": "그녀는 스물세 살입니다."
+        },
+        {
+          "translation": "그 티켓은 400파운드입니다."
+        }
+      ]
+    },
+    "en_a1_22": {
+      "title": "서수사 (순서 수사): first, second, third...",
+      "shortExplanation": "순서, 등수, 날짜, 건물의 층수 등을 나타내며, '첫 번째, 두 번째, 세 번째...'의 뜻입니다.",
+      "longExplanation": "영어의 서수사는 대부분 기수사 뒤에 '-th'를 붙여 만듭니다 (fourth, sixth, seventh 등).\n반드시 암기해야 할 불규칙 형태: first (첫 번째), second (두 번째), third (세 번째), fifth (다섯 번째), eighth (여덟 번째), ninth (아홉 번째), twelfth (열두 번째).\n핵심 규칙: 특정한 순서를 나타내므로 서수 앞에는 대개 정관사 'the'를 붙입니다 (예: the first day - 첫날, the third floor - 3층).\n분수 표현에도 쓰입니다: ½ = a half (2분의 1), ⅓ = a third (3분의 1), ¼ = a quarter (4분의 1).",
+      "formation": "the + 서수사 (+ 명사) | (예: the first, the second, the third... the twenty-first)",
+      "examples": [
+        {
+          "translation": "제 사무실은 3층에 있습니다."
+        },
+        {
+          "translation": "오늘은 3월 1일입니다."
+        }
+      ]
+    },
+    "en_a1_23": {
+      "title": "명사의 소유격: 's 와 s'",
+      "shortExplanation": "아포스트로피와 's'를 사용하여 소유 관계를 나타내며, '~의'라는 뜻입니다.",
+      "longExplanation": "영어에서는 명사 뒤에 아포스트로피와 s('s 또는 s')를 붙여 소유 관계를 표현합니다:\n• 단수 명사: 뒤에 ''s'를 붙임 (예: Tom's book - 톰의 책, the dog's tail - 개의 꼬리).\n• -s로 끝나는 규칙 복수 명사: 아포스트로피(')만 붙임 (예: the teachers' room - 교무실, my parents' house - 부모님의 집).\n• -s로 끝나지 않는 불규칙 복수 명사: ''s'를 붙임 (예: the children's playground - 아이들의 놀이터, men's clothes - 남성복).\n• -s로 끝나는 고유명사(인명 등): James's 와 James' 모두 맞습니다.",
+      "formation": "단수 명사 + 's + 소유 명사 | -s로 끝나는 복수 명사 + ' + 소유 명사",
+      "examples": [
+        {
+          "translation": "이것은 안나의 노트북입니다."
+        },
+        {
+          "translation": "아이들의 장난감은 상자 안에 있습니다."
+        }
+      ]
+    },
+    "en_a1_24": {
+      "title": "이동과 방향의 전치사: to, into, out of, up, down, along, across, through",
+      "shortExplanation": "이동 동사와 함께 쓰여 동작의 방향이나 이동 경로를 나타내며, '~로', '~ 안으로', '~을 건너' 등을 뜻합니다.",
+      "longExplanation": "이동을 나타내는 동사와 결합하여 움직임의 방향과 경로를 나타내는 전치사들입니다:\n• to = 특정 목적지를 향한 이동: go to work(출근하다), walk to the park(공원으로 걷다)\n• into = 내부로 들어가는 이동: come into the room(방 안으로 들어오다), jump into the pool(수영장으로 뛰어들다)\n• out of = 안에서 밖으로 나오는 이동: get out of the car(차에서 내리다), take out of the bag(가방에서 꺼내다)\n• up / down = 위로 / 아래로: climb up the hill(언덕을 오르다), walk down the stairs(계단을 내려가다)\n• along = ~을 따라: walk along the river(강을 따라 걷다)\n• across = 표면을 가로질러/건너서: swim across the lake(호수를 수영해 건너다), walk across the road(길을 건너다)\n• through = 3차원 공간이나 터널 등을 뚫고 통과하여: drive through the tunnel(터널을 운전해 지나가다).",
+      "formation": "이동 동사 + 이동 전치사 (to / into / out of / across / through...) + 명사/장소",
+      "examples": [
+        {
+          "translation": "그녀는 방 안으로 걸어 들어갔습니다."
+        },
+        {
+          "translation": "그는 길을 가로질러 달렸습니다."
+        },
+        {
+          "translation": "우리는 차를 타고 숲을 통과해 지나갔습니다."
+        }
+      ]
+    },
+    "en_a2_01": {
+      "title": "단순 과거 시제 - 규칙 동사: -ed형",
+      "shortExplanation": "과거에 완료된 동작이나 상태를 나타내며, 규칙 동사의 어미에 '-ed'를 붙입니다.",
+      "longExplanation": "단순 과거 시제는 과거의 특정 시점에 일어나 이미 완료된 동작이나 사실을 나타냅니다.\n규칙 동사에 '-ed'를 붙이는 철자 규칙:\n• 대부분의 동사: 뒤에 '-ed'를 붙임 (worked, played).\n• '-e'로 끝나는 동사: '-d'만 붙임 (loved, used).\n• '자음 + y'로 끝나는 동사: 'y'를 'i'로 바꾸고 '-ed'를 붙임 (studied, tried).\n• '단모음 + 단자음'으로 끝나는 1음절 동사: 마지막 자음을 하나 더 쓰고 '-ed'를 붙임 (stopped, planned).",
+      "formation": "주어 + 규칙 동사 과거형(-ed) (+ 목적어/과거 부사구)",
+      "examples": [
+        {
+          "translation": "그녀는 어제 하루 종일 일했습니다."
+        },
+        {
+          "translation": "그들은 지난주 일요일에 테니스를 쳤습니다."
+        }
+      ]
+    },
+    "en_a2_02": {
+      "title": "단순 과거 시제 - 불규칙 동사",
+      "shortExplanation": "'-ed'를 붙이지 않고 고유한 형태로 변화하는 불규칙 동사를 사용하여 과거의 동작을 나타냅니다.",
+      "longExplanation": "영어의 자주 쓰이는 많은 동사들은 과거형을 만들 때 '-ed'를 붙이지 않고 불규칙하게 형태가 변화합니다 (가장 빈도 높은 약 50개 동사가 일상 사용의 약 90%를 차지함).\n형태 변화에 따른 분류:\n• AAA형 (원형, 과거형, 과거분사형이 모두 동일): cut, put, hit, set, let.\n• ABA형 (과거분사형이 원형과 동일): run→ran→run, come→came→come.\n• ABC형 (세 형태가 모두 다름): go→went→gone, be→was/were→been, see→saw→seen.\n• ABB형 (과거형과 과거분사형이 동일): have→had→had, buy→bought→bought.",
+      "formation": "주어 + 불규칙 동사 과거형 (+ 목적어/과거 부사구)",
+      "examples": [
+        {
+          "translation": "저는 지난여름에 파리에 갔습니다."
+        },
+        {
+          "translation": "그녀는 아주 훌륭한 영화를 보았습니다."
+        },
+        {
+          "translation": "우리는 9시에 회의를 했습니다."
+        }
+      ]
+    },
+    "en_a2_03": {
+      "title": "단순 과거 시제 - 부정문: didn't + 동사 원형",
+      "shortExplanation": "과거에 일어나지 않은 동작이나 사실을 부정하여, '~하지 않았다'라는 뜻을 나타냅니다.",
+      "longExplanation": "일반동사의 단순 과거 시제 부정문은 주어의 인칭이나 수와 관계없이 조동사 'did not'의 축약형인 'didn't'를 사용합니다.\n가장 중요한 규칙: 'didn't' 뒤에 오는 본동사는 반드시 '동사 원형'을 써야 하며, 과거형을 쓰면 안 됩니다 (예: She didn't go 가 맞으며, She didn't went 는 틀림).",
+      "formation": "주어 + didn't (did not) + 동사 원형",
+      "examples": [
+        {
+          "translation": "저는 어제 그를 보지 못했습니다."
+        },
+        {
+          "translation": "그녀는 출근하지 않았습니다."
+        }
+      ]
+    },
+    "en_a2_04": {
+      "title": "단순 과거 시제 - 의문문: Did you? Where did she go?",
+      "shortExplanation": "과거의 일에 대해 묻는 의문문으로, '~했습니까?', '~하셨나요?'의 뜻을 나타냅니다.",
+      "longExplanation": "일반동사의 단순 과거 시제 의문문 만드는 법:\n• Yes/No 의문문: 문장 맨 앞에 조동사 'Did'를 두고 동사 원형을 씁니다: Did + 주어 + 동사 원형...? (예: Did they arrive? - 그들이 도착했나요?)\n• 의문사 의문문: 의문사 뒤에 'did + 주어 + 동사 원형' 어순으로 씁니다: 의문사 + did + 주어 + 동사 원형...? (예: Where did they go? - 그들은 어디로 갔나요?)\n• 예외: 의문사 자체가 주어인 경우에는 조동사 did 없이 동사를 바로 과거형으로 씁니다 (예: Who told you that? - 누가 당신에게 그 말을 했나요?).",
+      "formation": "Yes/No 의문문: Did + 주어 + 동사 원형...?\n의문사 의문문: 의문사 + did + 주어 + 동사 원형...?",
+      "examples": [
+        {
+          "translation": "영화 재미있게 보셨나요?"
+        },
+        {
+          "translation": "그들은 어디로 갔습니까?"
+        },
+        {
+          "translation": "누가 당신에게 그 말을 해주었나요?"
+        }
+      ]
+    },
+    "en_a2_05": {
+      "title": "was / were - be동사의 과거형",
+      "shortExplanation": "be동사의 과거 형태로, 과거의 상태나 위치, 성질을 나타내며 '~이었다', '~에 있었다'의 뜻입니다.",
+      "longExplanation": "be동사의 과거형은 주어의 인칭과 수에 따라 'was'와 'were' 두 가지로 나뉩니다:\n• was: 주어가 I, he, she, it 및 단수 명사/셀 수 없는 명사일 때 사용합니다.\n• were: 주어가 you, we, they 및 복수 명사일 때 사용합니다.\n부정문: wasn't (= was not) / weren't (= were not).\n의문문: was 또는 were를 주어 앞으로 보냅니다: Was she...? / Were they...?",
+      "formation": "긍정문: I / He / She / It + was | You / We / They + were\n부정문: 주어 + wasn't / weren't\n의문문: Was / Were + 주어...?",
+      "examples": [
+        {
+          "translation": "어젯밤에 저는 무척 피곤했습니다."
+        },
+        {
+          "translation": "그들은 하루 종일 집에 있었습니다."
+        },
+        {
+          "translation": "그것은 비쌌나요?"
+        }
+      ]
+    },
+    "en_a2_06": {
+      "title": "will - 미래 예측과 즉각적인 결정",
+      "shortExplanation": "말하는 순간에 내린 즉각적인 결정, 미래 예측, 약속, 요청을 나타내는 조동사로, '~할 것이다', '~하겠다'의 뜻입니다.",
+      "longExplanation": "조동사 'will'은 뒤에 동사 원형이 오며, 주로 다음과 같은 미래의 상황에 쓰입니다:\n1. 즉각적인 결정: I'll help you with that (내가 그거 도와줄게).\n2. 명확한 근거 없는 주관적 예측: I think it will rain (비가 올 것 같다).\n3. 약속: I won't tell anyone (아무에게도 말하지 않을게).\n4. 요청: Will you open the window? (창문 좀 열어 주겠니?).\n축약형은 ''ll'이며, 부정형은 'won't' (= will not)입니다.",
+      "formation": "긍정문: 주어 + will ('ll) + 동사 원형\n부정문: 주어 + won't (will not) + 동사 원형\n의문문: Will + 주어 + 동사 원형...?",
+      "examples": [
+        {
+          "translation": "전화벨이 울리네요. — 제가 받을게요!"
+        },
+        {
+          "translation": "내일은 날씨가 추울 것입니다."
+        }
+      ]
+    }
+  }
+}

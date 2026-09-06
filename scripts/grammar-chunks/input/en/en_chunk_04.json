@@ -1,0 +1,326 @@
+[
+  {
+    "id": "en_a2_22",
+    "language": "en",
+    "pattern": "Tail questions",
+    "title": "Tail questions: ...isn't it? / ...do you? / ...haven't they?",
+    "shortExplanation": "It's cold, isn't it? You like jazz, don't you?",
+    "longExplanation": "Tag questions are used to confirm or clarify.\nRule: affirmative sentence → negative tag, and vice versa.\nAuxiliary verb in the tail = tense of the main sentence.\nIntonation: ↘ (falling) = confirmation; ↗ (rising) = real question.",
+    "formation": "It's cold, isn't it? You like jazz, don't you?",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "It's a nice day, isn't it?",
+        "translation": "Nice day, right?"
+      },
+      {
+        "sentence": "You don't like horror films, do you?",
+        "translation": "You don't like horror films, do you?"
+      },
+      {
+        "sentence": "She can swim, can't she?",
+        "translation": "She can swim, can't she?"
+      }
+    ]
+  },
+  {
+    "id": "en_a2_23",
+    "language": "en",
+    "pattern": "have got",
+    "title": "have got - possession (British version)",
+    "shortExplanation": "I've got a car. Have you got a pen? She hasn't got time.",
+    "longExplanation": "have got is a colloquial British form of possession. Value = have.\n• Affirmation: I have got / I've got a laptop.\n• Denial: I haven't got / I don't have\n• Question: Have you got...? / Do you have...?",
+    "formation": "I've got a car. Have you got a pen? She hasn't got time.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I've got two brothers.",
+        "translation": "I have two brothers."
+      },
+      {
+        "sentence": "Have you got the time?",
+        "translation": "Don't you know what time it is?"
+      },
+      {
+        "sentence": "She hasn't got any cash.",
+        "translation": "She doesn't have cash."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_24",
+    "language": "en",
+    "pattern": "Adverbs of manner",
+    "title": "Adverbs of manner: quickly, carefully, well, hard, fast",
+    "shortExplanation": "She sings beautifully. He works hard. She drives fast.",
+    "longExplanation": "Most adverbs are formed from adjectives + -ly: quick → quickly, careful → carefully, slow → slowly.\nSpecial cases:\n• good → well (not goodly)\n• fast → fast (not fastly)\n• hard → hard (not hardly - this is another word: “barely”)\n• late → late (not lately - this is “lately”)\nPlace: usually after the verb/object: She speaks English well.",
+    "formation": "She sings beautifully. He works hard. She drives fast.",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "He explained it clearly.",
+        "translation": "He explained it clearly."
+      },
+      {
+        "sentence": "She ran fast.",
+        "translation": "She ran fast."
+      },
+      {
+        "sentence": "They worked hard all day.",
+        "translation": "They worked hard all day."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_25",
+    "language": "en",
+    "pattern": "Adverbs of frequency and their place in a sentence",
+    "title": "Adverbs of frequency and their place in a sentence",
+    "shortExplanation": "always, usually, often, sometimes, rarely, never - before the main verb",
+    "longExplanation": "Adverbs of frequency: always, usually, often, sometimes, occasionally, rarely, rarely, never.\nPlace in a sentence:\n• Before the main verb: She always drinks tea.\n• After the verb to be: He is always late.\n• After the auxiliary verb: She has never been to Italy.\nAlso: every day/week, once a week, twice a month - at the end of the sentence.",
+    "formation": "always, usually, often, sometimes, rarely, never - before the main verb",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I usually wake up at 7.",
+        "translation": "I usually wake up at 7."
+      },
+      {
+        "sentence": "She is never late for work.",
+        "translation": "She is never late for work."
+      },
+      {
+        "sentence": "They meet once a week.",
+        "translation": "They meet once a week."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_26",
+    "language": "en",
+    "pattern": "Order of adjectives before nouns",
+    "title": "Order of adjectives before nouns",
+    "shortExplanation": "a lovely small old red Italian leather bag",
+    "longExplanation": "When several adjectives appear before a noun, a strict order is observed: Opinion → Size → Age → Shape → Color → Origin → Material → Purpose\n(Opinion → Size → Age → Shape → Color → Origin → Material → Purpose)\nExample: a small beautiful old square brown French wooden writing desk",
+    "formation": "a lovely small old red Italian leather bag",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "a lovely little old cottage",
+        "translation": "lovely little old cottage"
+      },
+      {
+        "sentence": "a big red Italian sports car",
+        "translation": "big red italian sports car"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_01",
+    "language": "en",
+    "pattern": "Present Perfect",
+    "title": "Present Perfect - form and meaning",
+    "shortExplanation": "I have seen it. She has gone. They have arrived.",
+    "longExplanation": "Present Perfect = have/has + V3 (third form of the verb).\nThree main meanings:\n1. Life Experience (no time specified): I have visited Tokyo.\n2. Result in the present: I have lost my keys. (there are no keys now)\n3. Unfinished action, ongoing now: She has lived here for 5 years.\nV3 regular verbs = Past Simple (worked, played). Incorrect ones need to be known separately.",
+    "formation": "I have seen it. She has gone. They have arrived.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Have you ever eaten sushi?",
+        "translation": "Have you ever eaten sushi?"
+      },
+      {
+        "sentence": "I've just finished my homework.",
+        "translation": "I just finished my homework."
+      },
+      {
+        "sentence": "She hasn't called yet.",
+        "translation": "She hasn't called yet."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_02",
+    "language": "en",
+    "pattern": "ever / never / already / yet / just",
+    "title": "ever / never / already / yet / just - Present Perfect markers",
+    "shortExplanation": "Have you ever...? I've never... I've already... Not yet. I've just...",
+    "longExplanation": "ever - someday (in questions about experience). Location: in front of V3.\nnever - never (negative value). Location: in front of V3.\nalready - already (earlier than expected). Place: before V3 or at the end.\nyet - already/yet. In questions (Have you finished yet?) and negations (I haven't finished yet). Place: end of sentence.\njust - just now. Location: in front of V3.",
+    "formation": "Have you ever...? I've never... I've already... Not yet. I've just...",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Have you ever been to Scotland?",
+        "translation": "Have you been to Scotland?"
+      },
+      {
+        "sentence": "I've never eaten snails.",
+        "translation": "I've never eaten snails."
+      },
+      {
+        "sentence": "I've already seen that film.",
+        "translation": "I've already seen this film."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_03",
+    "language": "en",
+    "pattern": "Present Perfect vs Past Simple",
+    "title": "Present Perfect vs Past Simple - the key difference",
+    "shortExplanation": "I've been to Paris (experience) vs I went to Paris in 2019 (specific time)",
+    "longExplanation": "This is one of the most important differences in English grammar.\nPresent Perfect - connection with the present, time is NOT indicated:\nI've lost my wallet. (no wallet now - this is important)\nPast Simple - completed past, time is indicated or implied:\nI lost my wallet yesterday. (yesterday is a specific time)",
+    "formation": "I've been to Paris (experience) vs I went to Paris in 2019 (specific time)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I've met the new director. (он сейчас здесь, это актуально)",
+        "translation": "I met the new director."
+      },
+      {
+        "sentence": "I met him last Tuesday. (конкретное время)",
+        "translation": "I met him last Tuesday."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_04",
+    "language": "en",
+    "pattern": "Present Perfect with for and since",
+    "title": "Present Perfect with for and since",
+    "shortExplanation": "I've lived here for 5 years / since 2019.",
+    "longExplanation": "for - duration: for two days, for a year, for a long time, for ages\nsince - starting point: since Monday, since I was a child, since 2015\nThe question “How long?” — How long + Present Perfect: How long have you known her?",
+    "formation": "I've lived here for 5 years / since 2019.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "She's worked here for ten years.",
+        "translation": "She's been working here for ten years."
+      },
+      {
+        "sentence": "I've known him since university.",
+        "translation": "I've known him since university."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_05",
+    "language": "en",
+    "pattern": "Present Perfect Continuous",
+    "title": "Present Perfect Continuous: have been + V-ing",
+    "shortExplanation": "I have been waiting for an hour. She has been studying all day.",
+    "longExplanation": "Present Perfect Continuous = have/has been + V-ing\nEmphasis on duration or incompleteness of action. Answers the question “How long?”\nOften explains the visible result in the present: You look tired - have you been running?\nDifference with Present Perfect Simple:\n• I've read 50 pages. - result, completeness\n• I've been reading all evening. - emphasis on the process",
+    "formation": "I have been waiting for an hour. She has been studying all day.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I've been learning English for two years.",
+        "translation": "I've been learning English for two years now."
+      },
+      {
+        "sentence": "Why are your hands dirty? — I've been fixing the car.",
+        "translation": "Why are your hands dirty? — I was repairing the car."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_06",
+    "language": "en",
+    "pattern": "Past Continuous",
+    "title": "Past Continuous: was/were + V-ing",
+    "shortExplanation": "I was reading at 8pm. They were talking all evening.",
+    "longExplanation": "Past Continuous = was/were + V-ing\nValues:\n1. Action in process at a specific moment in the past: At 9pm I was having dinner.\n2. Background activity interrupted by another: I was walking when it started to rain.\n3. Parallel actions: While she was cooking, he was watching TV.",
+    "formation": "I was reading at 8pm. They were talking all evening.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "It was raining when I left home.",
+        "translation": "It was raining when I left the house."
+      },
+      {
+        "sentence": "What were you doing at 7 yesterday?",
+        "translation": "What were you doing yesterday at 7?"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_07",
+    "language": "en",
+    "pattern": "Past Simple vs Past Continuous",
+    "title": "Past Simple vs Past Continuous - background and event",
+    "shortExplanation": "While I was cooking, he called. I was walking when it started to rain.",
+    "longExplanation": "Typical design: long background action (Past Continuous) + short event (Past Simple).\nUnions:\n• when - used with the Past Simple for the event: She was sleeping when the alarm went off.\n• while/as - used with Past Continuous for background: While I was watching TV, the power went out.",
+    "formation": "While I was cooking, he called. I was walking when it started to rain.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "She was having a bath when the phone rang.",
+        "translation": "She was taking a bath when the phone rang."
+      },
+      {
+        "sentence": "While he was giving his speech, someone fell asleep.",
+        "translation": "While he was making his speech, someone fell asleep."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_08",
+    "language": "en",
+    "pattern": "Type 0",
+    "title": "Type 0: If + Present, Present - facts and laws",
+    "shortExplanation": "If you heat water to 100°C, it boils.",
+    "longExplanation": "Type zero - for scientific facts, laws of nature, general truths. Both actions always happen together.\nForm: If + Present Simple, Present Simple\nInstead of if you can use when: When you mix red and blue, you get purple.",
+    "formation": "If you heat water to 100°C, it boils.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "If you heat ice, it melts.",
+        "translation": "If you heat ice, it melts."
+      },
+      {
+        "sentence": "If it rains, the streets get wet.",
+        "translation": "If it rains, the streets get wet."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_09",
+    "language": "en",
+    "pattern": "1st type",
+    "title": "1st type: If + Present Simple, will - real future",
+    "shortExplanation": "If it rains tomorrow, I'll stay home.",
+    "longExplanation": "A real, probable situation in the future.\nForm: If + Present Simple, will + infinitive\nInstead of will in the main part you can: can, may, might, should.\nParts can be changed: I'll stay home if it rains. (without comma)",
+    "formation": "If it rains tomorrow, I'll stay home.",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "If she studies hard, she'll pass the exam.",
+        "translation": "If she studies well, she will pass the exam."
+      },
+      {
+        "sentence": "If you need help, I can come.",
+        "translation": "If you need help, I can come."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_10",
+    "language": "en",
+    "pattern": "Type 2",
+    "title": "Type 2: If + Past Simple, would - unreal present",
+    "shortExplanation": "If I had a car, I would drive to work. If I were you...",
+    "longExplanation": "An unreal or unlikely situation in the present or future.\nForm: If + Past Simple, would + infinitive",
+    "formation": "If I had a car, I would drive to work. If I were you...",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "If I won the lottery, I would travel the world.",
+        "translation": "If I won the lottery, I would travel the world."
+      },
+      {
+        "sentence": "If I were taller, I'd play basketball.",
+        "translation": "If I were taller, I would play basketball."
+      }
+    ]
+  }
+]

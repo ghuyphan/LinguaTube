@@ -1,0 +1,1262 @@
+import json
+import re
+import os
+
+data = {
+  "vi": {
+    "ja_以来_178": {
+      "title": "～以来 (〜irai)",
+      "shortExplanation": "Diễn tả một trạng thái, sự việc bắt đầu từ một mốc thời gian trong quá khứ và vẫn tiếp diễn liên tục cho đến nay; 'kể từ khi...', 'suốt từ sau khi...'.",
+      "longExplanation": "Mẫu ngữ pháp '～以来' kết hợp với danh từ, động từ thể て hoặc động từ thể た để biểu thị một sự việc, hành động hoặc trạng thái bắt đầu nảy sinh kể từ một thời điểm, sự kiện xác định trong quá khứ và liên tục kéo dài không gián đoạn cho tới tận hiện tại ('kể từ khi...', 'suốt từ dạo...'). Vế sau thường miêu tả tình trạng đang tiếp diễn, không dùng cho sự việc chỉ xảy ra một lần trong chớp mắt mà không có tính liên tục.",
+      "formation": "Động từ thể て / thể た + 以来 | Danh từ + 以来",
+      "examples": [
+        {
+          "translation": "Kể từ khi tốt nghiệp, tôi chưa từng gặp lại cô ấy."
+        },
+        {
+          "translation": "Kể từ khi con chào đời, tôi trở nên bận rộn hơn hẳn."
+        },
+        {
+          "translation": "Kể từ khi chuyển đến Tokyo, tôi đã có thêm nhiều bạn bè."
+        },
+        {
+          "translation": "Kể từ khi xem bộ phim đó, cô ấy trở nên nhát gan hơn."
+        }
+      ]
+    },
+    "ja_切る_179": {
+      "title": "～切る (〜kiru)",
+      "shortExplanation": "Diễn tả hành động được thực hiện đến cùng một cách trọn vẹn, triệt để; hoặc trạng thái đạt đến mức tột cùng; 'làm hết...', 'làm đến cùng', 'hoàn toàn...'.",
+      "longExplanation": "Mẫu ngữ pháp '～切る' kết hợp với thân động từ thể ます (bỏ ます) mang hai ý nghĩa chính: (1) Hoàn thành một hành động một cách dứt khoát, triệt để, trọn vẹn từ đầu đến cuối ('làm cho đến cùng', 'nói hết sạch'); (2) Biểu thị một trạng thái tâm lý hoặc thể chất đạt đến mức cực điểm ('vắt kiệt sức', 'mệt rã rời'). Dạng khả năng '～切れる' (có thể làm đến cùng) và phủ định khả năng '～切れない' (không thể xuể, không thể nào hết được) cũng được sử dụng rất phổ biến.",
+      "formation": "Động từ thể ます (bỏ ます) + 切る (thể khả năng: 切れる; phủ định: 切れない)",
+      "examples": [
+        {
+          "translation": "Cậu ấy dự định sẽ nỗ lực ôn thi hết mình cho đến cùng."
+        },
+        {
+          "translation": "Xin đừng về nhà cho đến khi hoàn thành triệt để công việc này."
+        },
+        {
+          "translation": "Cãi nhau với bạn bè khiến tôi chẳng thể nói hết được những điều muốn nói."
+        },
+        {
+          "translation": "Họ đã có thể chơi trọn vẹn và hoàn thành trò chơi đó đến cùng."
+        }
+      ]
+    },
+    "ja_反面_180": {
+      "title": "～反面 (〜hanmen)",
+      "shortExplanation": "Diễn tả hai mặt đối lập, tương phản tồn tại song song trong cùng một sự vật, hiện tượng hoặc con người; 'mặt khác...', 'ngược lại...', 'nhưng bù lại...'.",
+      "longExplanation": "Mẫu ngữ pháp '～反面' (chữ Hán là 反面 - mặt trái, mặt đối lập) được dùng để nêu lên hai khía cạnh trái ngược nhau của cùng một chủ thể hoặc một tình huống ('một mặt thì..., nhưng mặt khác lại...'). Thường dùng khi muốn so sánh giữa ưu điểm và nhược điểm, mặt tích cực và tiêu cực. Có thể sử dụng độc lập đầu câu dưới dạng 'その反面'.",
+      "formation": "Động từ thể thông thường + 反面 | Tính từ đuôi い + 反面 | Tính từ đuôi な + な反面 (hoặc である反面) | Danh từ + である反面",
+      "examples": [
+        {
+          "translation": "Chiếc xe này tuy chạy nhanh nhưng mặt khác lại khá tốn xăng."
+        },
+        {
+          "translation": "Anh ấy tuy thông minh nhưng ngược lại lại chơi thể thao rất kém."
+        },
+        {
+          "translation": "Cô ấy tốt bụng nhưng mặt khác đôi khi lại quan tâm thái quá."
+        },
+        {
+          "translation": "Công việc này lương cao nhưng ngược lại cũng có rất nhiều áp lực."
+        }
+      ]
+    },
+    "ja_向け_181": {
+      "title": "～向け (〜muke)",
+      "shortExplanation": "Biểu thị đối tượng mục tiêu mà sản phẩm, dịch vụ hay sự kiện hướng tới; 'dành cho...', 'hướng tới đối tượng...'.",
+      "longExplanation": "Hậu tố '～向け' kết hợp trực tiếp với danh từ chỉ người, nhóm người hoặc tổ chức để biểu thị rằng sự vật, sản phẩm, thông tin hay hoạt động đó được thiết kế, sáng tạo hoặc sản xuất nhằm phục vụ riêng cho đối tượng mục tiêu đó ('dành riêng cho...', 'hướng đến...'). Cần phân biệt với '～向き' (mang nghĩa tự nhiên phù hợp, thích hợp với).",
+      "formation": "Danh từ + 向け (bổ nghĩa danh từ: 向け + の + Danh từ; làm phó từ: 向けに)",
+      "examples": [
+        {
+          "translation": "Cuốn tạp chí này hướng đến đối tượng là giới trẻ."
+        },
+        {
+          "translation": "Siêu thị đang bán những set thực phẩm dành cho gia đình."
+        },
+        {
+          "translation": "Ứng dụng này được thiết kế dành cho người mới bắt đầu."
+        },
+        {
+          "translation": "Nhà hàng này có thực đơn phong phú dành cho người ăn thuần chay."
+        }
+      ]
+    },
+    "ja_恐れがある_182": {
+      "title": "～恐れがある (〜osore ga aru)",
+      "shortExplanation": "Diễn tả sự lo ngại về một sự việc tiêu cực, rủi ro hay nguy hiểm có khả năng xảy ra; 'e rằng...', 'sợ rằng...', 'có nguy cơ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～恐れがある' (chữ Hán là 恐れ - nỗi sợ hãi, lo âu) kết hợp với động từ thể từ điển, thể phủ định ない hoặc danh từ (đi với の) để cảnh báo hoặc bày tỏ nỗi lo sợ rằng một hậu quả không mong muốn, một tai họa hoặc mối nguy hiểm có thể xảy ra trong tương lai ('e rằng có nguy cơ...', 'có khả năng xảy ra điều xấu'). Mẫu câu này có sắc thái trang trọng, thường xuất hiện trong dự báo thời tiết, bản tin tức thời sự, phân tích rủi ro và các văn bản chỉ dẫn an toàn.",
+      "formation": "Động từ thể từ điển / thể ない + 恐れがある | Danh từ + の恐れがある",
+      "examples": [
+        {
+          "translation": "Vì có nguy cơ xảy ra động đất nên xin hãy di chuyển đến nơi sơ tán."
+        },
+        {
+          "translation": "Anh ấy có nguy cơ gặp tai nạn nên xin hãy lái xe thật cẩn thận."
+        },
+        {
+          "translation": "Nếu uống thuốc này quá liều thì e rằng có nguy cơ gặp tác dụng phụ."
+        },
+        {
+          "translation": "Nếu triển khai dự án này với ngân sách thấp thì e rằng chất lượng sẽ bị giảm sút."
+        }
+      ]
+    },
+    "ja_折には_183": {
+      "title": "～折には (〜ori ni wa)",
+      "shortExplanation": "Cách diễn đạt trang trọng để chỉ thời điểm, cơ hội hoặc dịp nào đó diễn ra một sự việc; 'khi...', 'vào dịp...', 'nhân dịp...'.",
+      "longExplanation": "Mẫu ngữ pháp '～折には' (hoặc '～折に'; chữ Hán là 折 - thời khắc, cơ hội) là cách nói trang trọng, lịch sự tương đương với '～とき', dùng để chỉ một thời điểm hoặc một dịp cụ thể diễn ra một hành động ('khi...', 'vào thời điểm...', 'nhân dịp...'). Cấu trúc này thường xuất hiện trong thư từ kinh doanh, lời chào hỏi trang trọng hoặc những lời dặn dò, mời mọc khách sáo.",
+      "formation": "Động từ thể từ điển / thể た + 折（に / には） | Tính từ đuôi い + 折（に / には） | Tính từ đuôi な + な折（に / には） | Danh từ + の折（に / には）",
+      "examples": [
+        {
+          "translation": "Khi cảm thấy khát nước, xin vui lòng uống nước từ chai nhựa này."
+        },
+        {
+          "translation": "Khi có dịp đến vùng này, nhất định hãy ghé thăm viếng ngôi đền thần đạo này nhé."
+        },
+        {
+          "translation": "Những khi thấy anh ấy không được khỏe khoắn, hãy hỏi xem anh ấy có thấy khó chịu ở đâu không nhé."
+        },
+        {
+          "translation": "Khi cơ hội đến, chúng ta hãy hành động ngay mà đừng ngần ngại."
+        }
+      ]
+    },
+    "ja_末_184": {
+      "title": "～末 (～sue)",
+      "shortExplanation": "Diễn tả kết cục hoặc quyết định đạt được sau một thời gian dài nỗ lực, đắn đo hoặc trải qua nhiều biến cố; 'sau một hồi...', 'sau nhiều...', 'kết quả là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～末' (thường dùng ở dạng '～末に' hoặc bổ nghĩa danh từ là '～末の'; chữ Hán là 末 - ngọn, cuối cùng) kết hợp với danh từ (đi với の) hoặc động từ thể た để biểu thị rằng sau khi trải qua một quá trình dài đầy vất vả, suy nghĩ, tranh luận hoặc nỗ lực thì cuối cùng cũng đi đến một kết quả hay quyết định nhất định ('sau một hồi lâu...', 'sau bao nhiêu cố gắng rốt cuộc...'). Kết quả này có thể mang tính tích cực hoặc tiêu cực.",
+      "formation": "Động từ thể た + 末（に / の） | Danh từ + の末（に / の）",
+      "examples": [
+        {
+          "translation": "Sau một cuộc thảo luận kéo dài, cuối cùng mọi người cũng thống nhất được ý kiến."
+        },
+        {
+          "translation": "Sau một tuần nỗ lực học tập, tôi đã đỗ kỳ thi."
+        },
+        {
+          "translation": "Sau bao lần thất bại, cuối cùng tôi đã giành được thành công."
+        },
+        {
+          "translation": "Sau khi chia tay với anh ấy, tôi đã bắt đầu một cuộc sống mới."
+        }
+      ]
+    },
+    "ja_次第_185": {
+      "title": "～次第 (〜shidai)",
+      "shortExplanation": "Biểu thị ý nghĩa 'ngay sau khi...' (khi đi với động từ) hoặc 'tùy thuộc vào...' (khi đi với danh từ).",
+      "longExplanation": "Mẫu ngữ pháp '～次第' có hai cách dùng căn bản: (1) Kết hợp với thân động từ thể ます (bỏ ます) để biểu thị rằng ngay sau khi hành động trước kết thúc, người nói sẽ lập tức thực hiện hành động tiếp theo một cách có chủ ý ('ngay sau khi... thì sẽ...'); (2) Kết hợp trực tiếp với danh từ để biểu thị sự việc được quyết định hoặc thay đổi tùy theo yếu tố đó ('tùy thuộc vào...', 'do... quyết định').",
+      "formation": "Động từ thể ます (bỏ ます) + 次第 (ngay sau khi) | Danh từ + 次第 (tùy thuộc vào)",
+      "examples": [
+        {
+          "translation": "Ngay sau khi công việc kết thúc, tôi sẽ về ngay."
+        },
+        {
+          "translation": "Chúng tôi sẽ cải thiện dịch vụ tùy thuộc vào ý kiến phản hồi của quý khách."
+        },
+        {
+          "translation": "Tùy thuộc vào câu trả lời của anh ấy mà tôi sẽ quyết định có đi dự tiệc hay không."
+        },
+        {
+          "translation": "Chúng tôi lên kế hoạch đi dã ngoại tùy thuộc vào thời tiết."
+        }
+      ]
+    },
+    "ja_次第で_186": {
+      "title": "～次第で (〜shidai de)",
+      "shortExplanation": "Diễn tả sự việc hay kết quả bị thay đổi, quyết định dựa vào một điều kiện hoặc tình huống cụ thể; 'tùy thuộc vào...', 'tùy theo... mà...'.",
+      "longExplanation": "Mẫu ngữ pháp '～次第で' (trợ từ で biểu thị căn cứ, phương thức) kết hợp với danh từ để chỉ ra rằng kết quả, mức độ hoặc hành động ở vế sau sẽ biến chuyển tương ứng tùy thuộc vào điều kiện, yếu tố ở vế trước ('tùy thuộc vào...', 'căn cứ theo...'). Khi bổ nghĩa cho danh từ phía sau, cấu trúc chuyển thành '～次第での' hoặc '～次第の'.",
+      "formation": "Danh từ + 次第で (bổ nghĩa danh từ: 次第での / 次第の + Danh từ)",
+      "examples": [
+        {
+          "translation": "Tùy thuộc vào thời điểm kết thúc công việc mà thời gian về nhà sẽ thay đổi."
+        },
+        {
+          "translation": "Tùy thuộc vào thời tiết mà chúng tôi dự định sẽ đi dã ngoại."
+        },
+        {
+          "translation": "Việc có tham gia bữa tiệc hay không sẽ được quyết định tùy thuộc vào tâm trạng của anh ấy."
+        },
+        {
+          "translation": "Tùy thuộc vào tiến trình cuộc họp mà quyết định có thể sẽ thay đổi."
+        }
+      ]
+    },
+    "ja_次第です_187": {
+      "title": "～次第です (〜shidai desu)",
+      "shortExplanation": "Diễn tả kết luận lịch sự rằng 'tất cả tùy thuộc vào...' hoặc dùng ở cuối văn bản trang trọng để giãi bày lý do, nguồn cơn; 'tùy thuộc vào...', 'chính là vì lý do đó'.",
+      "longExplanation": "Mẫu ngữ pháp '～次第です' là dạng kết thúc câu trang trọng của '次第'. Cấu trúc này có hai hướng sử dụng: (1) Đi sau danh từ mang nghĩa 'tùy thuộc vào...', 'do... định đoạt' trong các câu phát biểu lịch sự; (2) Đi sau thể thông thường của động từ trong thư từ, báo cáo kinh doanh để giải thích diễn tiến, hoàn cảnh dẫn tới quyết định hiện tại ('sở dĩ sự việc là như vậy chính là vì...', 'vì lý do đó nên tôi xin trình bày...').",
+      "formation": "Danh từ + 次第です (tùy thuộc vào...) | Động từ thể thông thường + 次第です (giải thích nguồn cơn trong văn phong trang trọng)",
+      "examples": [
+        {
+          "translation": "Còn tùy thuộc vào thời tiết nữa, nhưng tôi đang định ngày mai sẽ đi dã ngoại."
+        },
+        {
+          "translation": "Tuy còn phụ thuộc vào kết quả kỳ thi, nhưng tôi đang ấp ủ dự định đi du học."
+        },
+        {
+          "translation": "Chúng tôi dự định sẽ bổ sung thêm món mới tùy thuộc vào ý kiến phản hồi của quý khách."
+        },
+        {
+          "translation": "Vì hộ chiếu sẽ được phát ngay sau khi hoàn tất xét duyệt, nên xong thủ tục là quý vị có thể nhận được ngay."
+        }
+      ]
+    },
+    "ja_気味_188": {
+      "title": "～気味 (〜gimi)",
+      "shortExplanation": "Diễn tả cảm giác, khuynh hướng hoặc triệu chứng hơi có phần ngả sang một trạng thái (thường là tiêu cực); 'hơi có vẻ...', 'có triệu chứng...', 'hơi...'.",
+      "longExplanation": "Hậu tố '～気味' (phát âm là ぎみ - gimi) kết hợp với danh từ hoặc thân động từ thể ます (bỏ ます) để biểu thị việc người nói cảm thấy bản thân hoặc đối tượng có một chút dấu hiệu, khuynh hướng ngả về một trạng thái nào đó ('hơi có vẻ...', 'có cảm giác hơi...'). Mẫu câu này thường dùng cho những tình trạng không tốt hoặc mang chiều hướng tiêu cực nhẹ như cảm mạo (風邪気味), thiếu ngủ (寝不足気味), mệt mỏi, béo lên (太り気味), chậm trễ (遅れ気味).",
+      "formation": "Danh từ + 気味 | Động từ thể ます (bỏ ます) + 気味 (bổ nghĩa danh từ: 気味の + Danh từ; làm phó từ: 気味に)",
+      "examples": [
+        {
+          "translation": "Dạo gần đây tôi hơi thiếu ngủ nên thấy hơi mệt mỏi trong người."
+        },
+        {
+          "translation": "Căn phòng này có vẻ hơi tối tăm, chúng ta hãy lắp đèn sáng hơn nhé."
+        },
+        {
+          "translation": "Cô ấy nói chuyện với vẻ hơi có phần căng thẳng."
+        },
+        {
+          "translation": "Giọng của anh ấy nghe như đang hơi có triệu chứng bị cảm cúm nhỉ."
+        }
+      ]
+    },
+    "ja_限り_189": {
+      "title": "～限り (〜kagiri)",
+      "shortExplanation": "Diễn tả giới hạn hoặc điều kiện duy trì: chừng nào trạng thái phía trước còn tiếp diễn thì vế sau vẫn đúng; 'chừng nào...', 'miễn là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～限り' (chữ Hán là 限 - giới hạn) kết hợp với động từ, tính từ hoặc danh từ (kèm である) để biểu thị rằng trong suốt thời gian mà điều kiện hoặc trạng thái ở vế trước vẫn còn tiếp diễn thì sự việc, hành động ở vế sau vẫn sẽ luôn được duy trì ('chừng nào mà còn...', 'miễn là...'). Ngoài ra, '限り' còn có nghĩa là 'trong phạm vi' hiểu biết hoặc thông tin (ví dụ: 私が知っている限り - theo như tôi được biết).",
+      "formation": "Động từ thể thông thường + 限り | Tính từ đuôi い + 限り | Tính từ đuôi な + な限り (hoặc である限り) | Danh từ + である限り (hoặc の限り)",
+      "examples": [
+        {
+          "translation": "Chừng nào còn khỏe mạnh, tôi sẽ tiếp tục tập luyện thể thao."
+        },
+        {
+          "translation": "Chừng nào còn có tiền, tôi vẫn muốn tận hưởng những chuyến du lịch."
+        },
+        {
+          "translation": "Chừng nào anh ấy còn tiếp tục chia sẻ thì những lợi ích của dự án này sẽ còn được lan tỏa."
+        },
+        {
+          "translation": "Miễn là bạn còn nỗ lực học tập thì cơ hội đỗ kỳ thi sẽ càng tăng cao."
+        }
+      ]
+    },
+    "ja_際に_190": {
+      "title": "～際に (〜sai ni)",
+      "shortExplanation": "Cách diễn đạt trang trọng của 'khi', 'lúc' để chỉ thời điểm một sự việc diễn ra; 'khi...', 'vào lúc...', 'nhân dịp...'.",
+      "longExplanation": "Mẫu ngữ pháp '～際に' (hoặc '～際には'; chữ Hán là 際 - dịp, thời khắc) kết hợp với động từ thể từ điển, động từ thể た hoặc danh từ (đi với の) để chỉ thời điểm, hoàn cảnh cụ thể mà một hành động hay sự kiện xảy ra ('khi...', 'vào lúc...', 'trong dịp...'). Đây là cách diễn đạt mang sắc thái trang trọng hơn nhiều so với '～とき', thường xuất hiện trong các thông báo hướng dẫn, nội quy, giấy tờ hành chính và giao tiếp công sở.",
+      "formation": "Động từ thể từ điển / thể た + 際（に / には） | Danh từ + の際（に / には）",
+      "examples": [
+        {
+          "translation": "Khi xuất phát, xin đừng quên mang theo hộ chiếu."
+        },
+        {
+          "translation": "Khi động đất xảy ra, xin hãy sơ tán ngay lập tức."
+        },
+        {
+          "translation": "Khi sang Nhật Bản, tôi dự định sẽ mua thật nhiều quà lưu niệm."
+        },
+        {
+          "translation": "Khi tham gia phỏng vấn, xin vui lòng mặc âu phục (suit)."
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A うが B うが (A uga B uga)",
+      "shortExplanation": "Diễn tả sự bất biến: dù rơi vào trường hợp A hay trường hợp B đi chăng nữa thì kết quả hay phán đoán ở vế sau vẫn không có gì thay đổi; 'cho dù A hay B', 'dù là... hay... thì cũng...'.",
+      "longExplanation": "Mẫu ngữ pháp JLPT N1 'Aうが Bうが' (hoặc 'Aうと Bうと') kết hợp với dạng ý chí của động từ, dạng '-かろうが' của tính từ đuôi い hoặc 'であろうが' của danh từ/tính từ đuôi な. Cấu trúc này đưa ra hai trường hợp đối lập, tương phản (hoặc hai khả năng khẳng định - phủ định như 'しようがしまいが') để khẳng định mạnh mẽ rằng cho dù rơi vào trường hợp nào đi chăng nữa thì kết quả, trạng thái hoặc thái độ ở vế sau vẫn hoàn toàn không bị chi phối hay thay đổi.",
+      "formation": "Động từ thể ý chí + が + Động từ thể ý chí / thể まい + が | Tính từ đuôi い (-かろう) + が + Tính từ đuôi い (-かろう) + が | Tính từ đuôi な / Danh từ + であろうが",
+      "examples": [
+        {
+          "translation": "Dù là sáng sớm hay đêm muộn thì xe buýt lúc nào cũng đến trễ."
+        },
+        {
+          "translation": "Cho dù tôi có nói hay không nói với anh ta thì kết quả cũng chẳng thay đổi."
+        },
+        {
+          "translation": "Dù có làm hay không làm công việc này thì tiền lương vẫn như nhau cả thôi."
+        },
+        {
+          "translation": "Dù có nói hay không nói với người đó thì tôi cũng không nghĩ họ sẽ thấu hiểu."
+        }
+      ]
+    },
+    "ja_A_1": {
+      "title": "A うと B うと (A uto B uto)",
+      "shortExplanation": "Diễn tả thái độ hoặc kết quả không thay đổi bất kể rơi vào điều kiện A hay điều kiện B; 'dù là A hay B', 'cho dù... hay... đi chăng nữa'.",
+      "longExplanation": "Mẫu ngữ pháp JLPT N1 'Aうと Bうと' (đồng nghĩa với 'Aうが Bうが') dùng để liên kết hai vế đối lập hoặc mang tính giả định tương phản ('dù là A hay là B'). Cấu trúc này nhấn mạnh rằng lập trường, quyết tâm hoặc sự thật ở vế sau hoàn toàn không bị lung lay hay ảnh hưởng bởi việc điều kiện A hay điều kiện B xảy ra. Có thể kết hợp với động từ thể ý chí, tính từ đuôi い ở dạng '-かろうと', hoặc danh từ / tính từ đuôi な ở dạng 'であろうと'.",
+      "formation": "Động từ thể ý chí + と + Động từ thể ý chí / thể まい + と | Tính từ đuôi い (-かろう) + と | Tính từ đuôi な / Danh từ + であろうと",
+      "examples": [
+        {
+          "translation": "Dù trời mưa hay trời nắng, tôi vẫn chạy bộ mỗi ngày."
+        },
+        {
+          "translation": "Dù đề thi khó hay dễ, tôi cũng sẽ chăm chỉ hết sức mình."
+        },
+        {
+          "translation": "Dù anh ấy là sinh viên hay người đã đi làm, tôi vẫn luôn tôn trọng anh ấy."
+        },
+        {
+          "translation": "Dù bộ phim đó mới hay cũ, miễn là hay thì tôi đều xem."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_以来_178": {
+      "title": "～以来 (〜irai)",
+      "shortExplanation": "表示从过去的某个时间点或事件发生之后，某种状态一直持续至今；“自……以来”、“……之后一直”。",
+      "longExplanation": "句型“～以来”接在动词て形、た形或名词之后，表示以过去的某一特定时间节点或某个大事件为起点，其后的某种状态、变化一直持续不断地延续到今天（“自……以来”、“……之后一直……”）。后项通常为表示持续性状态或发展趋势的表达，不能用于叙述未来，也不用于仅发生了一次的短暂动作。",
+      "formation": "动词て形 / た形 + 以来 | 名词 + 以来",
+      "examples": [
+        {
+          "translation": "毕业以来，我一直没有见过她。"
+        },
+        {
+          "translation": "自从孩子出生以来，我变得忙碌起来。"
+        },
+        {
+          "translation": "自从搬到东京以来，我的朋友变多了。"
+        },
+        {
+          "translation": "自从看了那部电影以来，她变得胆小起来。"
+        }
+      ]
+    },
+    "ja_切る_179": {
+      "title": "～切る (〜kiru)",
+      "shortExplanation": "表示把某个动作彻底做完、做到最后，或某种状态达到了极限；“彻底……完”、“……到底”、“极为……”。",
+      "longExplanation": "句型“～切る”接在动词连用形（ます形去掉ます）之后，主要有两个用法：一是表示动作彻底完成、坚决贯彻到底，没有留下任何剩余或余地（“彻底做完”、“完全……”、“……到底”）；二是表示某种身体或心理状态达到了极限（如“疲惫不堪”、“精疲力竭”）。其可能形式“～切れる”与否定形式“～切れない”（如“数え切れない / 数不清”）在日常生活中也极其常用。",
+      "formation": "动词连用形（ます形去掉ます） + 切る（可能形：切れる；否定形：切れない）",
+      "examples": [
+        {
+          "translation": "他打算拼尽全力坚持把备考坚持到底。"
+        },
+        {
+          "translation": "在彻底把这项工作做完之前，请不要回去。"
+        },
+        {
+          "translation": "和朋友吵架了，我一句话也没能彻底说出来。"
+        },
+        {
+          "translation": "他们得以把那个游戏彻底通关到底。"
+        }
+      ]
+    },
+    "ja_反面_180": {
+      "title": "～反面 (〜hanmen)",
+      "shortExplanation": "表示同一事物或人物具有截然相反的两个方面；“一方面……另一方面……”、“但相反……”。",
+      "longExplanation": "句型“～反面”用于叙述同一主体同时具备相互对立、彼此矛盾的两个侧面，通常是一好一坏或一优一劣（“一方面……，但另一方面却……”、“反面则是……”）。强调同一个事物并非单一维度，常用于客观分析事物的利弊得失。亦可以“その反面”的形式单独置于句首连接前后两句。",
+      "formation": "动词普通形 + 反面 | 一类形容词 + 反面 | 二类形容词词干 + な / である + 反面 | 名词 + である + 反面",
+      "examples": [
+        {
+          "translation": "这辆车虽然速度快，但另一方面油耗很高。"
+        },
+        {
+          "translation": "他虽然脑子聪明，但相反却不擅长运动。"
+        },
+        {
+          "translation": "她为人热情善良，但另一方面有时又未免太爱操心了。"
+        },
+        {
+          "translation": "这份工作虽然薪水很高，但另一方面压力也很大。"
+        }
+      ]
+    },
+    "ja_向け_181": {
+      "title": "～向け (〜muke)",
+      "shortExplanation": "表示以特定的人物、群体或对象为目标而专门制定、设计；“面向……”、“专为……而设”。",
+      "longExplanation": "接尾词“～向け”接在表示人、群体或机构的名词之后，表示某种产品、服务、活动或设施是专门针对该特定对象而设计、生产或准备的（“面向……”、“专供……使用”）。修饰名词时使用“～向けの”，修饰动词作状语时使用“～向けに”。注意与表示客观属性上自然“适合”的“～向き”进行区分。",
+      "formation": "名词 + 向け（修饰名词：向けの名词；作状语：向けに）",
+      "examples": [
+        {
+          "translation": "这本杂志是面向年轻人的。"
+        },
+        {
+          "translation": "超市正在售卖面向家庭的食品套餐。"
+        },
+        {
+          "translation": "这款应用是专为初学者制作的。"
+        },
+        {
+          "translation": "这家餐厅面向纯素食者的菜单非常丰富。"
+        }
+      ]
+    },
+    "ja_恐れがある_182": {
+      "title": "～恐れがある (〜osore ga aru)",
+      "shortExplanation": "表示存在发生某种不良后果、危险或负面事态的可能性；“恐怕会……”、“有……的危险/风险”。",
+      "longExplanation": "句型“～恐れがある”接在动词辞书形、ない形或“名词+の”之后，用于表示担忧未来可能发生某种令人不快、危险或具有破坏性的消极事态（“恐怕会有……的危险”、“存在……的可能”）。语气较为郑重严谨，多用于新闻报道、天气预警、医疗健康说明或商业风险评估等正式文体中。",
+      "formation": "动词辞书形 / ない形 + 恐れがある | 名词 + の恐れがある",
+      "examples": [
+        {
+          "translation": "由于有发生地震的危险，请前往避难所避难。"
+        },
+        {
+          "translation": "他有发生事故的危险，所以请小心驾驶。"
+        },
+        {
+          "translation": "过量服用这种药物的话，恐怕会有产生副作用的危险。"
+        },
+        {
+          "translation": "如果以过低的预算推进这个项目，恐怕会有质量下降的风险。"
+        }
+      ]
+    },
+    "ja_折には_183": {
+      "title": "～折には (〜ori ni wa)",
+      "shortExplanation": "表示某个特定时刻、机会或际遇，相当于“～とき”的郑重表达；“……之际”、“……的时候”。",
+      "longExplanation": "句型“～折には”（亦作“～折に”）接在各类词修饰名词的形式之后，是“～とき（……的时候）”的极其郑重、礼貌的说法（“……之际”、“正当……之时”、“……的时候”）。常用于商务书信、正式社交寒暄或致意中，表达在难得的相遇、拜访、出差等特定机会或时机发生某事。",
+      "formation": "动词辞书形 / た形 + 折（に / には） | 一类形容词 + 折（に / には） | 二类形容词词干 + な折（に / には） | 名词 + の折（に / には）",
+      "examples": [
+        {
+          "translation": "口渴的时候，请喝这瓶瓶装水。"
+        },
+        {
+          "translation": "来到这个地区的时候，请务必去参拜这座神社。"
+        },
+        {
+          "translation": "看他无精打采的时候，请问问他是不是身体不舒服。"
+        },
+        {
+          "translation": "每当遇到机会之际，请毫不犹豫地付诸行动。"
+        }
+      ]
+    },
+    "ja_末_184": {
+      "title": "～末 (～sue)",
+      "shortExplanation": "表示经过了长时间的艰辛、思索、争论或努力之后，终于得出了某种结局或决定；“经过……之后终于”、“……的结果”。",
+      "longExplanation": "句型“～末”（常以“～末に”作状语，或以“～末の”修饰名词）接在动词た形或“名词+の”之后，表示历经了长时间的思想斗争、反复商榷、竭力拼搏或艰难波折之后，最终迎来了某种结果或作出了重大决断（“在历经……之后，终于……”、“在……的最后”）。后项引出的结果既可以是令人欣慰的成功，也可以是令人遗憾的结局。",
+      "formation": "动词た形 + 末（に / の） | 名词 + の末（に / の）",
+      "examples": [
+        {
+          "translation": "经过长时间的讨论，大家的意见终于达成了一致。"
+        },
+        {
+          "translation": "经过一周的刻苦学习，我终于通过了考试。"
+        },
+        {
+          "translation": "历经多次失败之后，终于获得了成功。"
+        },
+        {
+          "translation": "与他分手之后，我开启了全新的人生。"
+        }
+      ]
+    },
+    "ja_次第_185": {
+      "title": "～次第 (〜shidai)",
+      "shortExplanation": "接动词表示“一……立刻就……”，接名词表示“取决于……”、“全凭……”。",
+      "longExplanation": "句型“～次第”主要有两种基本用法：一是接在动词连用形（ます形去掉ます）之后，表示前项动作一旦顺利完成，就紧接着立即施行后项有意志的行为（“一……立刻就……”、“办好……就……”）；二是直接接在名词之后，表示事态的走向、结果由前项的条件所决定（“全凭……”、“取决于……”、“视……而定”）。",
+      "formation": "动词连用形（ます形去掉ます） + 次第（一……立刻……） | 名词 + 次第（取决于……、全凭……）",
+      "examples": [
+        {
+          "translation": "工作一结束，我就立刻回家。"
+        },
+        {
+          "translation": "我们将根据顾客的意见来改进服务。"
+        },
+        {
+          "translation": "去不去参加聚会，取决于他的答复。"
+        },
+        {
+          "translation": "我们根据天气的具体情况来安排野餐。"
+        }
+      ]
+    },
+    "ja_次第で_186": {
+      "title": "～次第で (〜shidai de)",
+      "shortExplanation": "表示后项的事态由前项的条件、因素决定或随之改变；“取决于……”、“视……而定”、“根据……不同而……”。",
+      "longExplanation": "句型“～次第で”由表示决定的“次第”加上表示依据、方式的格助词“で”构成，接在名词之后，明确指出后项的结果、程度或选择全凭前项的情况如何而发生变动（“根据……而定”、“随……的不同而有变化”）。若用于修饰后续名词，则使用“～次第での”或“～次第の”。",
+      "formation": "名词 + 次第で（修饰名词：次第での / 次第の + 名词）",
+      "examples": [
+        {
+          "translation": "根据工作结束时间的早晚，回家的时刻也会随之改变。"
+        },
+        {
+          "translation": "视天气情况而定，我们打算去野餐。"
+        },
+        {
+          "translation": "是否参加聚会，全看他的心情而定。"
+        },
+        {
+          "translation": "根据会议的进展情况，最终决定可能会有所改变。"
+        }
+      ]
+    },
+    "ja_次第です_187": {
+      "title": "～次第です (〜shidai desu)",
+      "shortExplanation": "郑重表述“完全取决于……”；或在正式公文中用于句末说明事情的原委与缘由；“全凭……”、“特此说明缘由”。",
+      "longExplanation": "句型“～次第です”是“次第”的礼貌结句形式，主要用于两个方面：一是接在名词后，郑重表示事态的结果全凭该条件决定（“全取决于……”、“视……而定”）；二是接在动词普通形后，常出现于商业书信、正式公文或报告的结语中，向对方正式说明造成当前现状的来龙去脉与具体原委（“缘由如此”、“情况特此报告”）。",
+      "formation": "名词 + 次第です（取决于……） | 动词普通形 + 次第です（公文中阐明原委、经过）",
+      "examples": [
+        {
+          "translation": "虽然还要看天气情况，但我打算明天去野餐。"
+        },
+        {
+          "translation": "虽然取决于考试成绩，但我还是希望能出国留学。"
+        },
+        {
+          "translation": "我们将根据各位客人的宝贵意见，由此决定是否增设新菜单。"
+        },
+        {
+          "translation": "由于只要申请一完成就会立刻发放，所以手续办完之后您就可以领取护照了。"
+        }
+      ]
+    },
+    "ja_気味_188": {
+      "title": "～気味 (〜gimi)",
+      "shortExplanation": "表示身体、心理或状态稍微带有某种令人担忧或消极的倾向与征兆；“有点……倾向”、“略带……样”。",
+      "longExplanation": "接尾词“～気味”（读作ぎみ）接在名词或动词连用形（ます形去掉ます）之后，表示虽然程度不深，但隐隐让人感到存在某种不良的发展趋势、身体症状或心理状态（“稍微有点……”、“略微有些……”、“有……的苗头”）。通常用于描述负面或令人不快的情况，如略微感冒（風邪気味）、睡眠不足（寝不足気味）、略显紧张（緊張気味）、身材微胖（太り気味）等。",
+      "formation": "名词 + 気味 | 动词连用形（ます形去掉ます） + 気味（修饰名词：気味的名词；作状语：気味に）",
+      "examples": [
+        {
+          "translation": "最近有点睡眠不足，感到有些疲惫。"
+        },
+        {
+          "translation": "这个房间稍微有些偏暗，换个更明亮的灯吧。"
+        },
+        {
+          "translation": "她说话时略微显得有些紧张。"
+        },
+        {
+          "translation": "他的声音听起来好像有点感冒了呢。"
+        }
+      ]
+    },
+    "ja_限り_189": {
+      "title": "～限り (〜kagiri)",
+      "shortExplanation": "表示只要前项的条件或状态持续存在，后项的状态就会一直保持；“只要……就……”、“在……的限度内”。",
+      "longExplanation": "句型“～限り”接在用言连体形或“名词+である”之后，表示只要前项设定的条件、范围或时间限度得以维持，后项的事态就同样保持不变或持续有效（“只要还处于……状态，就一直……”）。此外，还可以用于表示个人所知或调查的“范围极限”（如“私が知る限り / 据我所知”）。",
+      "formation": "动词普通形 + 限り | 一类形容词 + 限り | 二类形容词词干 + な / である + 限り | 名词 + である / の + 限り",
+      "examples": [
+        {
+          "translation": "只要身体还硬朗，我就会一直坚持运动。"
+        },
+        {
+          "translation": "只要手头还有钱，我就想尽情享受旅行。"
+        },
+        {
+          "translation": "只要他一直讲下去，这个项目的优势就会传递给大家吧。"
+        },
+        {
+          "translation": "只要你坚持学习，通过考试的可能性就会不断提高。"
+        }
+      ]
+    },
+    "ja_際に_190": {
+      "title": "～際に (〜sai ni)",
+      "shortExplanation": "用于郑重表示某个特定的时间或场合，相当于“～とき”的郑重说法；“在……的时候”、“……之际”。",
+      "longExplanation": "句型“～際に”（亦作“～際には”）接在动词辞书形、动词た形或“名词+の”之后，是“～とき（……的时候）”的书面语及郑重表达，用于说明在某种特定的时间、重要场合或手续流程中需要做某事（“在……之际”、“当……的时候”）。广泛见于各类公共指南、告示、商务信函以及正式的口头说明中。",
+      "formation": "动词辞书形 / た形 + 際（に / には） | 名词 + の際（に / には）",
+      "examples": [
+        {
+          "translation": "出发之际，请不要忘记带护照。"
+        },
+        {
+          "translation": "发生地震的时候，请立即避难。"
+        },
+        {
+          "translation": "来日本之际，我打算买很多伴手礼。"
+        },
+        {
+          "translation": "面试的时候，请务必穿着正装西服。"
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A うが B うが (A uga B uga)",
+      "shortExplanation": "表示无论是处于A还是处于B的情况，后项的结果或态度都毫不动摇；“无论……还是……”、“不管……还是……都……”。",
+      "longExplanation": "JLPT N1句型“Aうが Bうが”接在动词意志形、一类形容词推量形（-かろうが）或“名词/二类形容词词干+であろうが”之后，列举两种互相对立、反差明显的情况（或同一动作的正反两面，如“しようがしまいが”），强调无论处于何种条件或极端境况之下，后项的事实、结论或意志都全然不受影响（“无论A还是B，结果都……”、“不管……还是……”）。",
+      "formation": "动词意志形 + が + 动词意志形 / 动词辞书形 + まい + が | 一类形容词词干 + かろうが | 二类形容词词干 / 名词 + であろうが",
+      "examples": [
+        {
+          "translation": "无论是清晨还是深夜，公交车总是晚点。"
+        },
+        {
+          "translation": "无论跟他说还是不说，结果都不会改变。"
+        },
+        {
+          "translation": "不管做不做这份工作，工资都一样。"
+        },
+        {
+          "translation": "不管跟不跟那个人说，我都不觉得他会理解。"
+        }
+      ]
+    },
+    "ja_A_1": {
+      "title": "A うと B うと (A uto B uto)",
+      "shortExplanation": "表示不论是面临A还是B的状况，说话人的意志、态度或客观事实都一如既往；“无论……还是……”、“不管是……还是……”。",
+      "longExplanation": "JLPT N1句型“Aうと Bうと”与“Aうが Bうが”语义相通，接在动词意志形、一类形容词推量形（-かろうと）或“名词/二类形容词词干+であろうと”之后，并列列举两个相互对立的极端假定或选项，着重强调说话人的态度、行动或客观规律不会因外界处于A还是B的情况而发生任何动摇（“无论A还是B，我都一如既往……”、“不论……还是……结果都一样”）。",
+      "formation": "动词意志形 + と + 动词意志形 / 动词辞书形 + まい + と | 一类形容词词干 + かろうと | 二类形容词词干 / 名词 + であろうと",
+      "examples": [
+        {
+          "translation": "无论是下雨还是天晴，我每天都坚持慢跑。"
+        },
+        {
+          "translation": "不论考试是难还是容易，我都会拼尽全力好好复习。"
+        },
+        {
+          "translation": "不论他是学生还是社会人士，我都十分尊敬他。"
+        },
+        {
+          "translation": "那部电影不论是新片还是老片，只要精彩我就会看。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_以来_178": {
+      "title": "～以来 (〜irai)",
+      "shortExplanation": "과거의 어느 시점이나 사건을 기점으로 지금까지 어떤 상태가 계속 이어지고 있음을 나타내며, '~이래로', '~한 이후로 줄곧'이라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～以来'는 동사의 て형, た형 또는 명사 뒤에 접속하여, 과거의 특정한 시점이나 계기가 된 사건 이후로 현재까지 어떠한 상태나 변화가 끊이지 않고 계속 이어지고 있음을 나타냅니다('~이래', '~한 이후로 줄곧'). 후항에는 지속성을 띠는 상태나 변화를 나타내는 표현이 오며, 일회성으로 끝난 단발적인 동작에는 쓰이지 않습니다.",
+      "formation": "동사 て형 / た형 + 以来 | 명사 + 以来",
+      "examples": [
+        {
+          "translation": "졸업한 이래로 그녀를 만나지 못했다."
+        },
+        {
+          "translation": "아이가 태어난 이래로 바빠졌다."
+        },
+        {
+          "translation": "도쿄로 이사한 이래로 친구가 많아졌다."
+        },
+        {
+          "translation": "그 영화를 본 이래로 그녀는 겁이 많아졌다."
+        }
+      ]
+    },
+    "ja_切る_179": {
+      "title": "～切る (〜kiru)",
+      "shortExplanation": "어떤 동작을 끝까지 완전히 다 해내거나, 어떠한 상태가 극도에 달했음을 나타내며, '완전히 ~하다', '끝까지 ~해내다', '다 ~하다'라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～切る'는 동사의 ます형 어간에 결합하여 두 가지 주요 뉘앙스를 나타냅니다. 첫째는 어떤 동작을 남김없이 완벽하게 끝까지 해치우는 것('완전히 다 ~하다', '끝까지 ~해내다')이며, 둘째는 신체적·심리적 상태가 한계에 다다르는 것('지쳐 쓰러지다' 등)입니다. 가능형인 '～切れる'와 부정형인 '～切れない'(예: '数え切れない/셀 수 없다')의 형태로도 대단히 널리 쓰입니다.",
+      "formation": "동사 ます형 어간 + 切る (가능형: 切れる, 부정형: 切れない)",
+      "examples": [
+        {
+          "translation": "그는 시험공부를 끝까지 온 힘을 다해 해낼 생각이다."
+        },
+        {
+          "translation": "이 일을 완전히 끝마칠 때까지는 돌아가지 마세요."
+        },
+        {
+          "translation": "친구와 다투고 나서 아무 말도 끝까지 다 말하지 못했다."
+        },
+        {
+          "translation": "그들은 그 게임을 끝까지 완벽하게 해낼 수 있었습니다."
+        }
+      ]
+    },
+    "ja_反面_180": {
+      "title": "～反面 (〜hanmen)",
+      "shortExplanation": "동일한 사물이나 인물이 가진 상반된 두 가지 측면을 대비하여 나타내며, '~한 반면', '한편으로는 ~하지만 다른 한편으로는'이라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～反面'은 동일한 대상이나 사태가 지닌 대조적인 두 가지 측면(장점과 단점, 긍정적인 면과 부정적인 면)을 함께 제시할 때 사용됩니다('~한 반면', '한편으로는 ~하지만 다른 한편으로는 ~하다'). 하나의 사실에 공존하는 동전의 양면과 같은 성질을 객관적으로 서술하며, 문장 첫머리에 'その反面(그 반면)'의 형태로 단독 사용되기도 합니다.",
+      "formation": "동사 보통형 + 反面 | い형용사 + 反面 | な형용사 어간 + な / である + 反面 | 명사 + である + 反面",
+      "examples": [
+        {
+          "translation": "이 차는 빠른 반면에 연비가 나쁩니다."
+        },
+        {
+          "translation": "그는 머리가 좋은 반면에 운동을 잘 못합니다."
+        },
+        {
+          "translation": "그녀는 친절한 반면, 지나치게 간섭하며 보살피는 면이 있다."
+        },
+        {
+          "translation": "이 일은 급여가 높은 반면 스트레스가 많습니다."
+        }
+      ]
+    },
+    "ja_向け_181": {
+      "title": "～向け (〜muke)",
+      "shortExplanation": "어떤 제품, 서비스, 행사 등이 특정한 사람이나 집단을 주된 대상으로 기획·제작되었음을 나타내며, '~용', '~을 대상으로 한'이라는 의미입니다.",
+      "longExplanation": "접미사 '～向け'는 인물이나 단체를 나타내는 명사 뒤에 붙어, 사물이나 제도, 시설 등이 그 대상을 목표로 하여 특별히 만들어지거나 배려되었음을 나타냅니다('~용', '~을 겨냥한', '~을 대상으로 한'). 명사를 수식할 때는 '～向けの', 동사를 수식할 때는 '～向けに' 형태로 쓰입니다. 자연스럽게 성향이나 성질에 들어맞음을 뜻하는 '～向き'와 구별하여 사용해야 합니다.",
+      "formation": "명사 + 向け (명사 수식: 向けの + 명사, 부사적: 向けに)",
+      "examples": [
+        {
+          "translation": "이 잡지는 젊은이들을 대상으로 한 것입니다."
+        },
+        {
+          "translation": "슈퍼마켓에서 가족용 식품 세트를 판매하고 있습니다."
+        },
+        {
+          "translation": "이 앱은 초보자를 위해 만들어졌습니다."
+        },
+        {
+          "translation": "이 식당은 비건을 위한 메뉴가 잘 갖추어져 있습니다."
+        }
+      ]
+    },
+    "ja_恐れがある_182": {
+      "title": "～恐れがある (〜osore ga aru)",
+      "shortExplanation": "좋지 않은 일, 위험이나 부정적인 사태가 일어날 가능성이나 염려가 있음을 나타내며, '~할 우려가 있다', '~할 위험이 있다'라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～恐れがある'는 동사의 사전형, ない형 또는 '명사 + の' 뒤에 접속하여, 바람직하지 않은 나쁜 결과나 사고, 위험이 발생할 가능성이 높음을 경고하거나 우려할 때 쓰입니다('~할 우려가 있다', '~할 염려가 있다'). 격식 있고 진중한 뉘앙스를 지니며, 일기예보, 뉴스 보도, 재난 경보, 의학 설명서 등 공식적인 자리나 공공 안내문에서 매우 빈번하게 사용됩니다.",
+      "formation": "동사 사전형 / ない형 + 恐れがある | 명사 + の恐れがある",
+      "examples": [
+        {
+          "translation": "지진이 발생할 우려가 있으므로 피난소로 가 주십시오."
+        },
+        {
+          "translation": "그는 사고를 당할 위험이 있으니 주의해서 운전해 주세요."
+        },
+        {
+          "translation": "이 약을 너무 많이 복용하면 부작용이 생길 우려가 있다."
+        },
+        {
+          "translation": "적은 예산으로 이 프로젝트를 추진하면 품질이 저하될 우려가 있다."
+        }
+      ]
+    },
+    "ja_折には_183": {
+      "title": "～折には (〜ori ni wa)",
+      "shortExplanation": "특정한 시기나 기회, 때를 가리키는 정중한 표현으로, '때에는', '~한 때에', '~할 즈음에'라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～折には'(또는 '～折に')는 '～とき(때)'의 격식 있고 공손한 표현으로, 특정한 시간적 계기나 기회가 주어졌을 때를 가리킵니다('~할 때에는', '~한 기회에', '~할 즈음에'). 비즈니스 서신이나 공식적인 인사말, 초대 등에서 상대방에게 공손하게 특정 상황이나 기회를 언급할 때 자주 사용됩니다.",
+      "formation": "동사 사전형 / た형 + 折（に / には） | い형용사 + 折（に / には） | な형용사 어간 + な折（に / には） | 명사 + の折（に / には）",
+      "examples": [
+        {
+          "translation": "목이 마를 때에는 이 페트병의 물을 마셔 주세요."
+        },
+        {
+          "translation": "이 지역에 오실 때에는 꼭 이 신사에 참배하도록 합시다."
+        },
+        {
+          "translation": "그가 기운이 없어 보일 때에는 몸 상태가 안 좋은지 물어봐 주세요."
+        },
+        {
+          "translation": "기회가 생겼을 때에는 망설이지 말고 행동합시다."
+        }
+      ]
+    },
+    "ja_末_184": {
+      "title": "～末 (～sue)",
+      "shortExplanation": "오랜 시간 동안의 노력, 고민, 갈등이나 번민을 겪은 끝에 어떠한 결과나 결론에 도달했음을 나타내며, '~한 끝에', '~의 결과'라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～末'(부사적으로는 '～末に', 명사 수식형으로는 '～末の')는 동사의 た형이나 '명사 + の'에 결합하여, 장기간에 걸친 치열한 고민, 논의, 시련 또는 지극한 노력의 과정을 거쳐 마침내 어떤 결말이나 중대한 결단에 도달했음을 나타냅니다('오랜 ~ 끝에', '~의 결과'). 후항의 결과는 긍정적인 성과일 수도 있고, 안타까운 결말일 수도 있습니다.",
+      "formation": "동사 た형 + 末（に / の） | 명사 + の末（に / の）",
+      "examples": [
+        {
+          "translation": "오랜 토론 끝에 마침내 의견이 모아졌다."
+        },
+        {
+          "translation": "일주일간의 공부 끝에 시험에 합격했다."
+        },
+        {
+          "translation": "수많은 실패 끝에 마침내 성공을 거머쥐었다."
+        },
+        {
+          "translation": "그와의 이별 끝에 새로운 인생을 시작했다."
+        }
+      ]
+    },
+    "ja_次第_185": {
+      "title": "～次第 (〜shidai)",
+      "shortExplanation": "동사에 붙어 '~하는 대로 바로'를 나타내거나, 명사에 붙어 '~에 따라', '~에 달려 있음'을 나타냅니다.",
+      "longExplanation": "문법 패턴 '～次第'는 두 가지 주요 기능을 가집니다. 첫째는 동사의 ます형 어간에 결합하여 전항의 동작이 완료되는 즉시 후항의 의지적인 행동을 바로 취함을 나타냅니다('~하는 대로 즉시'). 둘째는 명사 뒤에 접속하여 어떤 사태나 결과가 전항의 상황이나 조건에 좌우됨을 나타냅니다('~에 따라', '~에 달려 있음').",
+      "formation": "동사 ます형 어간 + 次第 (~하는 대로, ~하자마자) | 명사 + 次第 (~에 따라, ~에 달려 있음)",
+      "examples": [
+        {
+          "translation": "일이 끝나는 대로 곧장 귀가하겠습니다."
+        },
+        {
+          "translation": "고객님의 의견에 따라 서비스를 개선하겠습니다."
+        },
+        {
+          "translation": "그의 답변에 따라 파티에 갈지 말지를 결정하겠습니다."
+        },
+        {
+          "translation": "날씨 상황에 따라 소풍 일정을 계획하고 있습니다."
+        }
+      ]
+    },
+    "ja_次第で_186": {
+      "title": "～次第で (〜shidai de)",
+      "shortExplanation": "어떤 사태나 결과가 앞의 조건, 상황에 의해 좌우되거나 달라짐을 나타내며, '~에 따라서', '~여하에 따라'라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～次第で'는 명사 뒤에 접속하여, 후항의 행동이나 결과, 상태의 변화가 전항의 조건이나 상황에 전적으로 달려 있음을 나타냅니다('~에 따라서', '~여하에 따라'). 전항의 요인이 어떻게 변하느냐에 따라 뒤따르는 결과도 달라진다는 인과적 의존 관계를 강조하며, 명사를 수식할 때는 '～次第での' 또는 '～次第の' 형태를 띱니다.",
+      "formation": "명사 + 次第で (명사 수식: 次第での / 次第の + 명사)",
+      "examples": [
+        {
+          "translation": "일이 끝나는 상황에 따라 귀가하는 시간이 달라집니다."
+        },
+        {
+          "translation": "날씨에 따라 소풍을 갈 예정입니다."
+        },
+        {
+          "translation": "그의 기분에 따라 파티에 참석할지 여부가 결정됩니다."
+        },
+        {
+          "translation": "회의 진행 상황에 따라 결정이 바뀔지도 모릅니다."
+        }
+      ]
+    },
+    "ja_次第です_187": {
+      "title": "～次第です (〜shidai desu)",
+      "shortExplanation": "격식 있는 표현으로 '~에 달려 있습니다'를 나타내거나, 공적 문서에서 사정이나 경위를 정중히 설명할 때 쓰여 '~한 까닭입니다', '~한 경위입니다'라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～次第です'는 '次第'의 정중한 종결형입니다. (1) 명사 뒤에 접속하여 어떠한 결정이나 상황이 특정 조건에 전적으로 좌우됨을 예의 바르게 진술할 때 쓰이며('~에 달려 있습니다'), (2) 동사의 보통형 뒤에 접속하여 비즈니스 서신이나 공적 보고에서 어떤 결과나 행동에 이르게 된 이유와 경위를 공손하게 마무리 지어 설명할 때 쓰입니다('~한 경위입니다', '~한 까닭입니다').",
+      "formation": "명사 + 次第です (~에 달렸습니다) | 동사 보통형 + 次第です (비즈니스 문서 등에서 경위나 이유를 정중히 설명)",
+      "examples": [
+        {
+          "translation": "날씨에 달려 있긴 하지만, 내일은 소풍을 갈까 생각 중입니다."
+        },
+        {
+          "translation": "시험 결과에 달려 있긴 합니다만, 유학을 가고 싶다고 생각하고 있습니다."
+        },
+        {
+          "translation": "고객님의 의견에 따라 새로운 메뉴를 추가하고자 하는 바입니다."
+        },
+        {
+          "translation": "신청이 완료되는 대로 발급되는 상황이므로, 수속이 끝나면 여권을 수령하실 수 있습니다."
+        }
+      ]
+    },
+    "ja_気味_188": {
+      "title": "～気味 (〜gimi)",
+      "shortExplanation": "약간 그런 기미나 징후, 경향이 있음을 나타내며, '약간 ~한 기운이 있다', '~한 느낌이 들다'라는 의미입니다.",
+      "longExplanation": "접미사 '～気味'(발음: ぎみ)는 명사나 동사의 ます형 어간 뒤에 붙어, 심하지는 않으나 은근히 어떠한 상태나 바람직하지 않은 경향, 증상의 낌새가 느껴질 때 사용됩니다('약간 ~한 기미가 있다', '~한 기운이 돌다'). 주로 가벼운 감기(風邪気味), 수면 부족(寝不足気味), 긴장감(緊張気味), 체중 증가(太り気味) 등 주로 부정적이거나 다소 우려스러운 상태에 쓰입니다.",
+      "formation": "명사 + 気味 | 동사 ます형 어간 + 気味 (명사 수식: 気味の + 명사, 부사적: 気味に)",
+      "examples": [
+        {
+          "translation": "요즘 수면 부족 기운이 있어서 좀 피곤합니다."
+        },
+        {
+          "translation": "이 방은 다소 어두운 기운이 있으니 더 밝은 조명을 답시다."
+        },
+        {
+          "translation": "그녀는 약간 긴장한 기색으로 이야기하고 있었습니다."
+        },
+        {
+          "translation": "그의 목소리는 감기 기운이 있는 것 같았네."
+        }
+      ]
+    },
+    "ja_限り_189": {
+      "title": "～限り (〜kagiri)",
+      "shortExplanation": "앞의 조건이나 상태가 지속되는 한 뒤의 상황도 계속 유지됨을 나타내며, '~하는 한', '~하는 동안은 줄곧'이라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～限り'는 동사, 형용사 또는 '명사 + である'에 접속하여, 전항의 조건이나 상황이 유효하게 성립하고 있는 한도 내에서는 후항의 사태도 지속적으로 변함없이 성립함을 나타냅니다('~하는 한은', '~가 지속되는 동안에는'). 또한 자신이 조사하거나 알고 있는 범위의 한계를 나타낼 때도 자주 쓰입니다(예: '私の知る限り / 내가 아는 한').",
+      "formation": "동사 보통형 + 限り | い형용사 + 限り | な형용사 어간 + な / である + 限り | 명사 + である / の + 限り",
+      "examples": [
+        {
+          "translation": "건강이 허락하는 한 계속해서 운동을 하겠습니다."
+        },
+        {
+          "translation": "돈이 있는 한 여행을 즐기고 싶다."
+        },
+        {
+          "translation": "그가 계속 이야기를 이어가는 한 이 프로젝트의 이점이 잘 전달될 것입니다."
+        },
+        {
+          "translation": "공부하는 한 시험에 합격할 가능성은 높아집니다."
+        }
+      ]
+    },
+    "ja_際に_190": {
+      "title": "～際に (〜sai ni)",
+      "shortExplanation": "특정한 시기나 때를 정중하게 나타내는 표현으로, '때에', '~할 즈음에', '~할 때에는'이라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～際に'(또는 '～際には')는 일상적인 '～とき'보다 격식 있고 정중한 문어체적 표현으로, 특정 동작이나 사건이 행해지는 때와 기회를 가리킵니다('~할 때에', '~할 때에는'). 공공 안내문, 안내 방송, 비즈니스 대화나 격식 있는 설명서에서 절차나 행동 지침을 안내할 때 널리 쓰입니다.",
+      "formation": "동사 사전형 / た형 + 際（に / には） | 명사 + の際（に / には）",
+      "examples": [
+        {
+          "translation": "출발할 때에 여권을 잊지 마세요."
+        },
+        {
+          "translation": "지진이 일어날 때에는 즉시 피난해 주세요."
+        },
+        {
+          "translation": "일본에 올 때 기념품을 많이 살 생각입니다."
+        },
+        {
+          "translation": "면접을 볼 때에는 정장을 착용해 주세요."
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A うが B うが (A uga B uga)",
+      "shortExplanation": "A이든 B이든 어느 쪽에 해당하더라도 후항의 결과나 태도에는 아무런 영향이 없음을 나타내며, '~하든 ~하든', '~이든 ~이든 간에'라는 의미입니다.",
+      "longExplanation": "JLPT N1 문법 패턴 'Aうが Bうが'는 동사의 의지형, い형용사의 추량형(-かろうが), 또는 '명사/な형용사 어간 + であろうが'에 접속하여, 대조적인 두 가지 가능성이나 정반대의 행위(긍정과 부정, 예: 'しようがしまいが')를 늘어놓으며 어떠한 경우든 상관없이 후항의 결론, 상황, 심경이 조금도 흔들리거나 바뀌지 않음을 단호하게 나타냅니다('~하든 ~하든 간에', '~이든 ~이든').",
+      "formation": "동사 의지형 + が + 동사 의지형 / 동사 사전형 + まい + が | い형용사 어간 + かろうが | な형용사 어간 / 명사 + であろうが",
+      "examples": [
+        {
+          "translation": "아침 일찍이든 밤늦게든 항상 버스는 늦게 온다."
+        },
+        {
+          "translation": "그 사람에게 말을 하든 말든 결과는 달라지지 않는다."
+        },
+        {
+          "translation": "이 일을 하든 하지 않든 급여는 똑같다."
+        },
+        {
+          "translation": "그 사람에게 말을 하든 안 하든 이해해 줄 것 같지는 않다."
+        }
+      ]
+    },
+    "ja_A_1": {
+      "title": "A うと B うと (A uto B uto)",
+      "shortExplanation": "A이든 B이든 어느 쪽이 일어나더라도 화자의 행동이나 의지, 사실 관계가 흔들리지 않음을 나타내며, '~하든 ~하든', '~이든 ~이든 간에'라는 의미입니다.",
+      "longExplanation": "JLPT N1 문법 패턴 'Aうと Bうと'는 'Aうが Bうが'와 의미상 거의 동일하며, 동사의 의지형, い형용사의 추량형(-かろうと), 또는 '명사/な형용사 어간 + であろうと' 뒤에 접속합니다. 서로 대조되는 극단적인 두 상황이나 선택지를 나열하여, 어느 쪽의 상태가 되든 관계없이 후항의 의지나 사실, 태도가 일절 영향을 받지 않음을 나타냅니다('~하든 ~하든', '~이든 ~이든 간에').",
+      "formation": "동사 의지형 + と + 동사 의지형 / 동사 사전형 + まい + と | い형용사 어간 + かろうと | な형용사 어간 / 명사 + であろうと",
+      "examples": [
+        {
+          "translation": "비가 내리든 날이 개든 나는 매일 조깅을 합니다."
+        },
+        {
+          "translation": "시험이 어렵든 쉽든 온 힘을 다해 공부하겠습니다."
+        },
+        {
+          "translation": "그가 학생이든 사회인이든 나는 그를 존경합니다."
+        },
+        {
+          "translation": "그 영화가 신작이든 구작이든 재미있기만 하다면 보겠습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_以来_178": {
+      "title": "～以来 (〜irai)",
+      "shortExplanation": "過去のある時点や出来事をきっかけとして、その状態が現在までずっと続いていることを表し、「〜てからずっと」「〜以降」という意味を表します。",
+      "longExplanation": "「～以来」は動詞のて形・た形や名詞に接続し、過去の特定の時点や出来事を出発点として、ある事態や状態が途切れることなく現在まで継続していることを表す文型です（「〜てから今までずっと」）。後件には現在まで続いている状態や傾向を表す文が続き、一回限りの動作や未来の事柄には用いられません。",
+      "formation": "動詞て形／た形 ＋ 以来 ｜ 名詞 ＋ 以来",
+      "examples": [
+        {
+          "translation": "卒業以来、彼女に会っていない。"
+        },
+        {
+          "translation": "子供が生まれて以来、忙しくなった。"
+        },
+        {
+          "translation": "東京に引っ越して以来、友達が増えた。"
+        },
+        {
+          "translation": "あの映画を見た以来、彼女は怖がりになった。"
+        }
+      ]
+    },
+    "ja_切る_179": {
+      "title": "～切る (〜kiru)",
+      "shortExplanation": "ある行為を最後まで完全にやり遂げることや、状態が極限に達していることを表し、「完全に〜する」「最後まで〜し尽くす」という意味を表します。",
+      "longExplanation": "「～切る」は動詞のます形語幹に接続し、主に二つの意味を表します。一つは動作を最後まで徹底的にやり通すこと、あるいは残すところなく完全に終わらせることです（「言い切る」「使い切る」）。もう一つは、疲労や困憊など心身の状態が限界に達していることを表します（「疲れ切る」「困り切る」）。可能形の「～切れる」や、余りにも多くて最後まで処理できないことを表す「～切れない」（「数え切れない」「食べ切れない」）の形も多用されます。",
+      "formation": "動詞ます形語幹 ＋ 切る（可能形：切れる、否定形：切れない）",
+      "examples": [
+        {
+          "translation": "彼は試験勉強をがんばり切るつもりだ。"
+        },
+        {
+          "translation": "この仕事を終わり切るまで、帰らないでください。"
+        },
+        {
+          "translation": "友達と喧嘩して、何も言い切れなかった。"
+        },
+        {
+          "translation": "彼らは、そのゲームをやり切ることができました。"
+        }
+      ]
+    },
+    "ja_反面_180": {
+      "title": "～反面 (〜hanmen)",
+      "shortExplanation": "同一の物事や人物が持つ、対立する二つの側面を対比して述べる表現で、「〜である一方で」「その反面」という意味を表します。",
+      "longExplanation": "「～反面」は、ある一つの事柄や対象が持っている、相反する二つの性質や側面（長所と短所、利益と不利益など）を同時に取り上げて対比する文型です（「〜だが、その一方で…」）。物事を多角的に捉えて客観的に評価する際によく用いられ、文頭で「その反面」として接続詞的に使われることもあります。",
+      "formation": "動詞普通形 ＋ 反面 ｜ い形容詞 ＋ 反面 ｜ な形容詞語幹＋な／である ＋ 反面 ｜ 名詞＋である ＋ 反面",
+      "examples": [
+        {
+          "translation": "この車は速い反面、燃費が悪いです。"
+        },
+        {
+          "translation": "彼は頭がいい反面、運動が苦手です。"
+        },
+        {
+          "translation": "彼女は親切である反面、面倒見が良すぎることがある。"
+        },
+        {
+          "translation": "この仕事は給料が高い反面、ストレスがたくさんあります。"
+        }
+      ]
+    },
+    "ja_向け_181": {
+      "title": "～向け (〜muke)",
+      "shortExplanation": "ある製品やサービス、企画などが特定の対象・人物に向けて作られていることを表し、「〜を対象とした」「〜用」という意味を表します。",
+      "longExplanation": "接尾辞「～向け」は人を表す名詞などに接続し、その物や情報、催しなどが特定の読者層・顧客層・対象者を想定して意図的に作られたものであることを表します（「〜を対象として」「〜のために」）。名詞を修飾するときは「〜向けの名詞」、動詞を修飾するときは「〜向けに」の形をとります。性質として自然と適していることを表す「〜向き」とのニュアンスの違いに留意する必要があります。",
+      "formation": "名詞 ＋ 向け（名詞修飾：向けの名詞、副詞的用法：向けに）",
+      "examples": [
+        {
+          "translation": "この雑誌は若者向けです。"
+        },
+        {
+          "translation": "スーパーで家族向けの食品セットが売っています。"
+        },
+        {
+          "translation": "このアプリは初心者向けに作られています。"
+        },
+        {
+          "translation": "このレストランはビーガン向けのメニューが充実しています。"
+        }
+      ]
+    },
+    "ja_恐れがある_182": {
+      "title": "～恐れがある (〜osore ga aru)",
+      "shortExplanation": "好ましくない事態や危険、被害などが生じる可能性があることを表し、「〜の危険性がある」「〜という心配がある」という意味を表します。",
+      "longExplanation": "「～恐れがある」は動詞の辞書形・ない形や「名詞＋の」に接続し、将来的に望ましくない事態や深刻な被害、危険な出来事が発生する可能性があることを警告・懸念する文型です（「〜の懸念がある」「〜してしまう心配がある」）。改まった硬い表現であり、天気予報や災害情報、ニュース報道、公的な発表文書などで頻繁に用いられます。",
+      "formation": "動詞辞書形／ない形 ＋ 恐れがある ｜ 名詞＋の ＋ 恐れがある",
+      "examples": [
+        {
+          "translation": "地震が来る恐れがあるため、避難所に行ってください。"
+        },
+        {
+          "translation": "彼は事故に遭う恐れがあるので、注意して運転してください。"
+        },
+        {
+          "translation": "この薬を飲みすぎると、副作用の恐れがある。"
+        },
+        {
+          "translation": "低い予算でこのプロジェクトを進めると、品質が低くなる恐れがある。"
+        }
+      ]
+    },
+    "ja_折には_183": {
+      "title": "～折には (〜ori ni wa)",
+      "shortExplanation": "ある特定の時や機会、好機を表す改まった表現で、「〜の時に」「〜の機会に」という意味を表します。",
+      "longExplanation": "「～折には」（「〜折に」とも）は「〜とき」の改まった丁寧な表現で、特別な機会や巡ってきた好機、特定の時期を指して述べる文型です（「〜の折には」「〜の機会に」）。ビジネス文書や手紙、改まった挨拶、接客などの場面において、相手への配慮や敬意を込めて好機や状況を述べる際によく用いられます。",
+      "formation": "動詞辞書形／た形 ＋ 折（に／には） ｜ い形容詞 ＋ 折（に／には） ｜ な形容詞語幹＋な ＋ 折（に／には） ｜ 名詞＋の ＋ 折（に／には）",
+      "examples": [
+        {
+          "translation": "喉が渇く折には、このペットボトルの水を飲んでください。"
+        },
+        {
+          "translation": "この地域に来る折には、この神社に必ずお参りしましょう。"
+        },
+        {
+          "translation": "彼が元気じゃない折には、具合が悪いか尋ねてください。"
+        },
+        {
+          "translation": "チャンスがある折には、躊躇せずに行動しましょう。"
+        }
+      ]
+    },
+    "ja_末_184": {
+      "title": "～末 (～sue)",
+      "shortExplanation": "長い間の苦労や葛藤、議論などを経た最終的な結果を表し、「〜の最後に」「〜した結果」という意味を表します。",
+      "longExplanation": "「～末」（主に「〜末に」「〜末の」の形で用いられる）は、動詞のた形や「名詞＋の」に接続し、長期間にわたる深い思索や議論、苦難、努力のプロセスを経た後に、ようやくある結論や結果に至ったことを表す文型です（「〜した結果、ついに…」「〜の果てに」）。最終的に得られた結果は良いことにも悪いことにも用いられます。",
+      "formation": "動詞た形 ＋ 末（に／の） ｜ 名詞＋の ＋ 末（に／の）",
+      "examples": [
+        {
+          "translation": "長い議論の末、ようやく意見がまとまった。"
+        },
+        {
+          "translation": "一週間の勉強の末、試験に合格した。"
+        },
+        {
+          "translation": "何度も失敗の末、成功を手に入れた。"
+        },
+        {
+          "translation": "彼との別れの末、新しい人生を始めた。"
+        }
+      ]
+    },
+    "ja_次第_185": {
+      "title": "～次第 (〜shidai)",
+      "shortExplanation": "動詞に接続して「〜したらすぐに」を表し、名詞に接続して「〜によって決まる」を表す文型です。",
+      "longExplanation": "「～次第」には大きく分けて二つの用法があります。一つは動詞のます形語幹に接続し、ある行為や事態が完了したら、時間を置かずに直ちに次の意志的な動作を行うことを表します（「〜が終わり次第、ただちに…」）。もう一つは名詞に直接接続し、物事の結果や状況がその条件や相手の意向によって左右されることを表します（「〜によって」「〜次第で」）。",
+      "formation": "動詞ます形語幹 ＋ 次第（〜したらすぐ） ｜ 名詞 ＋ 次第（〜によって決まる）",
+      "examples": [
+        {
+          "translation": "仕事が終わり次第、帰ります。"
+        },
+        {
+          "translation": "お客様のご意見次第で、サービスを改善します。"
+        },
+        {
+          "translation": "彼の返事次第で、パーティーに行くかどうか決めます。"
+        },
+        {
+          "translation": "天気次第で、ピクニックを予定しています。"
+        }
+      ]
+    },
+    "ja_次第で_186": {
+      "title": "～次第で (〜shidai de)",
+      "shortExplanation": "後件の事態や結果が前件の条件や状況によって左右されることを表し、「〜によって」「〜次第で」という意味を表します。",
+      "longExplanation": "「～次第で」は名詞に接続し、その事柄や条件がどのようであるかによって、後に続く結果や選択、対応が異なってくることを表す文型です（「〜によって変わる」「〜のあり方次第で」）。名詞を修飾する場合は「〜次第での名詞」や「〜次第の名詞」の形をとります。",
+      "formation": "名詞 ＋ 次第で（名詞修飾：次第での／次第の ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "仕事の終わり次第で、家に帰る時間が変わります。"
+        },
+        {
+          "translation": "天気次第で、ピクニックに行く予定です。"
+        },
+        {
+          "translation": "彼の気分次第で、パーティーに参加するかどうか決まります。"
+        },
+        {
+          "translation": "会議の進行次第で、決定が変わるかもしれません。"
+        }
+      ]
+    },
+    "ja_次第です_187": {
+      "title": "～次第です (〜shidai desu)",
+      "shortExplanation": "物事が「〜によって決まる」ことを丁寧に述べる表現、またはビジネス文書等で事の成り行きや理由を改まって述べる結びの表現です。",
+      "longExplanation": "「～次第です」は「次第」の丁寧な結びの表現で、主に二つの使われ方をします。（1）名詞に接続して「〜によって決まる」という依存関係を丁寧に述べる用法（「皆様のご協力次第です」など）。（2）動詞普通形に接続し、ビジネス文書や改まった手紙などの結びにおいて、ある事態に至った事情や経緯、行動の理由を丁寧に説明する用法です（「〜という経緯でございます」「〜という次第です」）。",
+      "formation": "名詞 ＋ 次第です（〜によって決まります） ｜ 動詞普通形 ＋ 次第です（改まった文脈での事情・経緯の説明）",
+      "examples": [
+        {
+          "translation": "天気次第ですが、明日はピクニックに行こうと思います。"
+        },
+        {
+          "translation": "試験の結果次第ですが、留学したいと考えています。"
+        },
+        {
+          "translation": "お客様のご意見次第で新メニューを追加する次第です。"
+        },
+        {
+          "translation": "申請が完了次第ですので、手続きが終わったらパスポートを受け取れます。"
+        }
+      ]
+    },
+    "ja_気味_188": {
+      "title": "～気味 (〜gimi)",
+      "shortExplanation": "心身の状態や傾向が少しそのようであること、そうした兆候が感じられることを表し、「少し〜の傾向がある」「〜気味である」という意味を表します。",
+      "longExplanation": "接尾辞「～気味」（ぎみ）は名詞や動詞のます形語幹に接続し、程度はそれほど深刻ではないものの、好ましくない状態や変化の兆候が少し感じられることを表す文型です（「なんとなく〜の傾向がある」「少し〜っぽい」）。主に「風邪気味」「寝不足気味」「緊張気味」「太り気味」「遅れ気味」など、ややマイナスな状態を表す語句とともに用いられます。",
+      "formation": "名詞 ＋ 気味 ｜ 動詞ます形語幹 ＋ 気味（名詞修飾：気味の＋名詞、副詞的用法：気味に）",
+      "examples": [
+        {
+          "translation": "最近寝不足気味で、ちょっと疲れています。"
+        },
+        {
+          "translation": "この部屋は暗い気味だから、もっと明るい照明をつけよう。"
+        },
+        {
+          "translation": "彼女は緊張気味で話していました。"
+        },
+        {
+          "translation": "彼の声は風邪気味だったね。"
+        }
+      ]
+    },
+    "ja_限り_189": {
+      "title": "～限り (〜kagiri)",
+      "shortExplanation": "前件の条件や状態が続いている間は、後件の状態も継続することを表し、「〜である間は」「〜するうちは」という意味を表します。",
+      "longExplanation": "「～限り」は動詞・形容詞の普通形や「名詞＋である」などに接続し、ある状態や条件が成立している限度・期間においては、後件の事態も一貫して変わらず継続することを表す文型です（「〜している間はずっと」「〜である以上は」）。また、「私の知る限り（私の知識の範囲では）」のように、認知や調査の及ぶ「限界・範囲」を表す際にも広く使われます。",
+      "formation": "動詞普通形 ＋ 限り ｜ い形容詞 ＋ 限り ｜ な形容詞語幹＋な／である ＋ 限り ｜ 名詞＋である／の ＋ 限り",
+      "examples": [
+        {
+          "translation": "元気な限り、運動し続けます。"
+        },
+        {
+          "translation": "お金がある限り、旅行を楽しみたい。"
+        },
+        {
+          "translation": "彼が話し続ける限り、このプロジェクトのメリットが伝わるでしょう。"
+        },
+        {
+          "translation": "勉強する限り、試験に合格できる可能性が高まります。"
+        }
+      ]
+    },
+    "ja_際に_190": {
+      "title": "～際に (〜sai ni)",
+      "shortExplanation": "「〜の時」の改まった表現で、特定の行為や状況が生じる時を表し、「〜の際に」「〜の時には」という意味を表します。",
+      "longExplanation": "「～際に」（「〜際には」とも）は「〜とき」の硬い改まった表現で、動詞の辞書形・た形や「名詞＋の」に接続し、ある行為を行ったり事態が発生したりする特定の時や機会を指定する文型です（「〜を行うにあたって」「〜の折に」）。公共の案内表示、ビジネス文書、取り扱い説明書、公式なアナウンスなどで指示や注意事項を述べる際によく用いられます。",
+      "formation": "動詞辞書形／た形 ＋ 際（に／には） ｜ 名詞＋の ＋ 際（に／には）",
+      "examples": [
+        {
+          "translation": "出発の際に、パスポートを忘れないでください。"
+        },
+        {
+          "translation": "地震が起こる際に、すぐに避難してください。"
+        },
+        {
+          "translation": "日本へ来る際に、お土産をたくさん買うつもりです。"
+        },
+        {
+          "translation": "面接の際に、スーツを着用してください。"
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A うが B うが (A uga B uga)",
+      "shortExplanation": "AであってもBであっても、どちらの場合にも関係なく後件の結果や状況が変わらないことを表し、「〜しようが〜しようが」「〜であろうと〜であろうと」という意味を表します。",
+      "longExplanation": "JLPT N1文型「Aうが Bうが」は、動詞の意向形やい形容詞の推量形（〜かろうが）、「名詞／な形容詞語幹＋であろうが」に接続し、対立する二つの条件や肯定・否定の事柄（「しようがしまいが」など）を並列して、「どちらの条件であっても後件の事態や判断には全く影響がない」と強く主張する表現です。いかなる事態に直面しても結果や話し手の意志が左右されないことを表します。",
+      "formation": "動詞意向形 ＋ が ＋ 動詞意向形／動詞辞書形＋まい ＋ が ｜ い形容詞語幹＋かろう ＋ が ｜ な形容詞語幹／名詞＋であろう ＋ が",
+      "examples": [
+        {
+          "translation": "朝早かろうが夜遅かろうが、いつもバスが遅れる。"
+        },
+        {
+          "translation": "彼に話そうが話すまいが、結果は変わらない。"
+        },
+        {
+          "translation": "この仕事をしようがしまいが、給料は同じだ。"
+        },
+        {
+          "translation": "あの人に話そうが話すまいが、理解してくれるとは思えない。"
+        }
+      ]
+    },
+    "ja_A_1": {
+      "title": "A うと B うと (A uto B uto)",
+      "shortExplanation": "AであってもBであっても、そのどちらの場合にも左右されず事態や態度が変わらないことを表し、「〜であろうと〜であろうと」「〜であれ〜であれ」という意味を表します。",
+      "longExplanation": "JLPT N1文型「Aうと Bうと」は「Aうが Bうが」とほぼ同義で、動詞の意向形やい形容詞の推量形（〜かろうと）、「名詞／な形容詞語幹＋であろうと」に接続し、対立・対照的な二つの事態を想定して、どちらの場合であっても話し手の決意や後件の状況が何ら変わることがないことを強調する文型です（「〜であっても〜であっても、やはり…」）。文末には意志、決意、普遍的な事実などを表す文が続きます。",
+      "formation": "動詞意向形 ＋ と ＋ 動詞意向形／動詞辞書形＋まい ＋ と ｜ い形容詞語幹＋かろう ＋ と ｜ な形容詞語幹／名詞＋であろう ＋ と",
+      "examples": [
+        {
+          "translation": "雨が降ろうと晴れようと、私は毎日ジョギングをします。"
+        },
+        {
+          "translation": "試験が難しかろうと易しかろうと、一生懸命勉強します。"
+        },
+        {
+          "translation": "彼が学生であろうと社会人であろうと、私は彼を尊敬しています。"
+        },
+        {
+          "translation": "その映画が新しいであろうと古いであろうと、面白ければ観ます。"
+        }
+      ]
+    }
+  }
+}
+
+input_path = "/Users/huyphan/Downloads/web-app/lingua-tube/scripts/grammar-chunks/input/ja/ja_chunk_39.json"
+output_path = "/Users/huyphan/Downloads/web-app/lingua-tube/scripts/grammar-chunks/output/ja_chunk_39.json"
+
+with open(input_path, 'r', encoding='utf-8') as f:
+    input_data = json.load(f)
+
+input_ids = [item['id'] for item in input_data]
+print(f"Total input patterns: {len(input_ids)}")
+
+expected_langs = ["vi", "zh", "ko", "ja"]
+for lang in expected_langs:
+    if lang not in data:
+        raise ValueError(f"Missing language {lang} in output data")
+    for pid in input_ids:
+        if pid not in data[lang]:
+            raise ValueError(f"Missing pattern {pid} in language {lang}")
+        obj = data[lang][pid]
+        for field in ['title', 'shortExplanation', 'longExplanation', 'formation', 'examples']:
+            if field not in obj or not obj[field]:
+                raise ValueError(f"Empty or missing field '{field}' in {lang}.{pid}")
+        if len(obj['examples']) != 4:
+            raise ValueError(f"Expected 4 examples in {lang}.{pid}, got {len(obj['examples'])}")
+        for i, ex in enumerate(obj['examples']):
+            if 'translation' not in ex or not ex['translation'].strip():
+                raise ValueError(f"Missing translation in {lang}.{pid}.examples[{i}]")
+
+# Check for accidental English words in explanations or formations
+english_words_pattern = re.compile(r'\b(verb|noun|adjective|plain|casual|dictionary|express|indicates|shows|means|ought|should|must|not|have|choice|way|possible|because|since|due|although|contrast|both|and|either|or|things|like|cannot|culprit|evidence)\b', re.IGNORECASE)
+
+warning_count = 0
+for lang in expected_langs:
+    for pid in input_ids:
+        obj = data[lang][pid]
+        for field in ['shortExplanation', 'longExplanation', 'formation']:
+            text = obj[field]
+            matches = english_words_pattern.findall(text)
+            if matches:
+                print(f"WARNING: English words found in {lang}.{pid}.{field}: {matches}")
+                warning_count += 1
+
+if warning_count == 0:
+    print("Zero English words found! Verification passed perfectly.")
+
+with open(output_path, 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print(f"Successfully wrote {output_path}")

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_場所にがあります_135": {
+      "title": "～（場所）に～があります (〜basho ni 〜 ga arimasu)",
+      "shortExplanation": "Diễn tả sự tồn tại, hiện diện của đồ vật, sự vật hoặc thực vật tại một địa điểm cụ thể; 'ở... có...'.",
+      "longExplanation": "Mẫu ngữ pháp ～（場所）に～があります dùng để diễn đạt sự hiện diện hoặc tồn tại của đồ vật vô tri vô giác, sự vật hoặc thực vật tại một vị trí, địa điểm xác định. Trong cấu trúc này, danh từ chỉ nơi chốn đi với trợ từ 'に' để chỉ địa điểm tồn tại, danh từ chỉ sự vật đi với trợ từ 'が' để chỉ đối tượng tồn tại, và kết thúc bằng động từ 'あります' (có / tồn tại). Lưu ý đối với người và động vật thì sử dụng 'います'.",
+      "formation": "Địa điểm/Nơi chốn + に + Đồ vật/Sự vật + が + あります",
+      "examples": [
+        {
+          "translation": "Có rất nhiều sách ở trong thư viện."
+        },
+        {
+          "translation": "Trong công viên có một cái hồ."
+        },
+        {
+          "translation": "Ở trước nhà ga có một cửa hàng tiện lợi."
+        },
+        {
+          "translation": "Trên đỉnh núi có một ngôi đền."
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A とか B とか (A toka B toka)",
+      "shortExplanation": "Dùng để liệt kê không đầy đủ các ví dụ, sự vật, sự việc; 'như là... như là...', 'nào là... nào là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とか～とか' được dùng để nêu ra một vài ví dụ tiêu biểu trong số nhiều sự vật, sự việc hoặc hành động khả dĩ, mang tính chất liệt kê không đầy đủ (vẫn còn những thứ khác ngoài các ví dụ được nêu). Trong văn giao tiếp hàng ngày, nó rất phổ biến và mang sắc thái thân mật, tự nhiên hơn cấu trúc '～や～など'.",
+      "formation": "Danh từ + とか + Danh từ + とか (có thể đi với Động từ thể thông thường + とか)",
+      "examples": [
+        {
+          "translation": "Cuối tuần tôi muốn làm những việc thú vị như xem phim hay đi mua sắm."
+        },
+        {
+          "translation": "Cô ấy có thể nói được nhiều thứ tiếng như tiếng Anh, tiếng Pháp."
+        },
+        {
+          "translation": "Quán này phục vụ các món ăn Nhật Bản như sushi và sashimi."
+        },
+        {
+          "translation": "Có các hộp cơm trưa với nhiều mức giá khác nhau, chẳng hạn như hộp 1 đô-la hay hộp 5 đô-la."
+        }
+      ]
+    },
+    "ja_A_1": {
+      "title": "A は B ほど～ありません (A wa B hodo ～ arimasen)",
+      "shortExplanation": "Dùng trong so sánh kém lịch sự, diễn tả A không bằng B; 'A không... bằng B'.",
+      "longExplanation": "Mẫu câu 'A は B ほど～ありません' dùng để so sánh giữa hai đối tượng A và B, khẳng định rằng A không đạt đến mức độ hoặc tiêu chuẩn như B ở một phương diện nào đó (tính chất, trạng thái, năng lực). Đây là cách nói trang trọng, lịch sự hơn của dạng phủ định ngắn '～ない'. Vị ngữ phía sau luôn ở dạng phủ định lịch sự '～くありません', '～ではありません/じゃありません' hoặc động từ thể phủ định lịch sự.",
+      "formation": "A は + B ほど + Tính từ đuôi い (bỏ い) + くありません / Tính từ đuôi な + ではありません / Động từ thể phủ định lịch sự (〜ません)",
+      "examples": [
+        {
+          "translation": "Hôm nay không lạnh bằng hôm qua."
+        },
+        {
+          "translation": "Anh ấy nói tiếng Anh không giỏi bằng tôi."
+        },
+        {
+          "translation": "Nhà hàng này không đắt bằng nhà hàng đằng kia."
+        },
+        {
+          "translation": "Cô ấy không bận rộn bằng anh ấy."
+        }
+      ]
+    },
+    "ja_A_2": {
+      "title": "A は B ほど～ない (A wa B hodo ~ nai)",
+      "shortExplanation": "Dùng trong so sánh kém ở thể thông thường, diễn tả A không bằng B; 'A không... bằng B'.",
+      "longExplanation": "Mẫu câu 'A は B ほど～ない' dùng để so sánh hai đối tượng ở thể thông thường (ngắn gọn, thân mật), diễn đạt rằng A không đạt đến mức độ như B về một đặc điểm hay tính chất nào đó. Phía sau 'ほど' luôn là hình thức phủ định: tính từ đuôi い đổi thành '～くない', tính từ đuôi な đổi thành '～じゃない / ではない', hoặc động từ thể phủ định (thường là thể khả năng phủ định).",
+      "formation": "A は + B ほど + Tính từ đuôi い (bỏ い) + くない / Tính từ đuôi な + じゃない / Động từ thể phủ định (thường là thể khả năng phủ định ～ない)",
+      "examples": [
+        {
+          "translation": "Anh Yamada không cao bằng anh Suzuki."
+        },
+        {
+          "translation": "Quả táo này không ngọt bằng quả táo đằng kia."
+        },
+        {
+          "translation": "Cậu ấy học không giỏi bằng tôi."
+        },
+        {
+          "translation": "Nhà hàng này không yên tĩnh bằng nhà hàng đằng kia."
+        }
+      ]
+    },
+    "ja_A_3": {
+      "title": "A より B のほうが〜 (A yori B no hou ga 〜)",
+      "shortExplanation": "Dùng để so sánh hơn giữa hai đối tượng; 'so với A thì B... hơn'.",
+      "longExplanation": "Mẫu câu so sánh 'A より B のほうが～' dùng để đối chiếu hai sự vật, hiện tượng hoặc con người (A và B), qua đó khẳng định B có tính chất, mức độ nổi trội hơn so với A. Trợ từ 'より' đi sau đối tượng làm mốc so sánh (A), còn cụm 'のほうが' đứng sau đối tượng được nhấn mạnh về mức độ hơn (B).",
+      "formation": "A + より + B + のほうが + Tính từ / Động từ",
+      "examples": [
+        {
+          "translation": "So với anh Tanaka thì anh Suzuki cao hơn."
+        },
+        {
+          "translation": "Chuối ngọt hơn táo."
+        },
+        {
+          "translation": "Mùa hè nóng hơn mùa đông."
+        },
+        {
+          "translation": "Tôi nghĩ Kyoto có bề dày lịch sử hơn Tokyo."
+        }
+      ]
+    },
+    "ja_いAdjective_4": {
+      "title": "Tính từ đuôi い + くする / くなる (i-keiyoushi kusuru/naru)",
+      "shortExplanation": "Diễn tả sự biến đổi trạng thái tự nhiên (くなる: 'trở nên...') hoặc tác động làm thay đổi trạng thái (くする: 'làm cho...').",
+      "longExplanation": "Cấu trúc 'Tính từ đuôi い + くする / くなる' dùng để diễn tả sự thay đổi về tính chất hoặc trạng thái. Trong đó:\n• '～くなる' diễn tả trạng thái tự nhiên biến đổi hoặc chuyển biến theo thời gian (nghĩa là 'trở nên...', 'trở thành...').\n• '～くする' là ngoại động từ, diễn tả hành động có chủ đích của con người nhằm làm biến đổi trạng thái của đối tượng (nghĩa là 'làm cho...', 'khiến cho...').\nCách chia: Bỏ đuôi 'い' của tính từ rồi thêm 'く', sau đó kết hợp với 'する' hoặc 'なる'.",
+      "formation": "Tính từ đuôi い (bỏ い) + く + する / なる",
+      "examples": [
+        {
+          "translation": "Tôi sẽ làm cho căn phòng sáng sủa hơn."
+        },
+        {
+          "translation": "Mặt anh ấy đã đỏ bừng lên."
+        },
+        {
+          "translation": "Xin hãy làm món này cay một chút."
+        },
+        {
+          "translation": "Hễ trời mưa là đường trở nên dễ trơn trượt."
+        }
+      ]
+    },
+    "ja_なadjective_5": {
+      "title": "Tính từ đuôi な + にする / になる (na-keiyoushi ni suru/naru)",
+      "shortExplanation": "Diễn tả sự biến đổi trạng thái với tính từ đuôi な (になる: 'trở nên...') hoặc tác động làm thay đổi trạng thái (にする: 'làm cho...').",
+      "longExplanation": "Cấu trúc 'Tính từ đuôi な + にする / になる' dùng để diễn tả sự thay đổi trạng thái liên quan đến tính từ đuôi な:\n• '～になる' biểu thị sự biến đổi trạng thái diễn ra một cách tự nhiên hoặc khách quan ('trở nên...', 'trở thành...').\n• '～にする' biểu thị tác động có chủ ý của con người nhằm làm thay đổi trạng thái của sự vật ('làm cho...', 'làm thành...').\nCách kết hợp: Giữ nguyên phần gốc của tính từ đuôi な (bỏ な nếu có), thêm trợ từ 'に' rồi đi kèm 'する' hoặc 'なる'.",
+      "formation": "Tính từ đuôi な (bỏ な) + に + する / なる",
+      "examples": [
+        {
+          "translation": "Dọn dẹp làm cho căn phòng sạch sẽ."
+        },
+        {
+          "translation": "Anh ấy đã khỏe mạnh trở lại."
+        },
+        {
+          "translation": "Mỗi ngày giữ trật tự, yên tĩnh là điều quan trọng."
+        },
+        {
+          "translation": "Tôi sẽ nỗ lực để việc học tiếng Nhật trở nên thú vị."
+        }
+      ]
+    },
+    "ja_Noun_6": {
+      "title": "Danh từ + しか～ない (shika~nai)",
+      "shortExplanation": "Biểu thị sự giới hạn duy nhất, mang sắc thái ít ỏi hoặc không còn sự lựa chọn nào khác; 'chỉ... mà thôi', 'chỉ có...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + しか～ない' dùng để nhấn mạnh tính duy nhất hoặc số lượng ít ỏi của sự vật, sự việc, mang sắc thái tiếc nuối hoặc không còn lựa chọn nào khác ngoài thứ được nhắc đến. Cấu trúc này bắt buộc phải đi kèm với động từ ở thể phủ định (～ない / ～ません), nhưng toàn bộ câu lại mang ý nghĩa khẳng định giới hạn ('chỉ có duy nhất cái đó').",
+      "formation": "Danh từ (hoặc Động từ thể từ điển) + しか + Động từ thể phủ định (～ない / ～ません)",
+      "examples": [
+        {
+          "translation": "Tôi chỉ ăn mỗi táo thôi."
+        },
+        {
+          "translation": "Chỉ còn cách đi bằng tàu điện thôi."
+        },
+        {
+          "translation": "Anh ấy chỉ có duy nhất một cuốn sách."
+        },
+        {
+          "translation": "Quán này chỉ có mỗi bia mà thôi."
+        }
+      ]
+    },
+    "ja_Noun_7": {
+      "title": "Danh từ + にする (ni suru)",
+      "shortExplanation": "Dùng để diễn tả sự lựa chọn hoặc quyết định chọn một sự vật, phương án; 'chọn...', 'quyết định lấy...'.",
+      "longExplanation": "Mẫu cấu trúc 'Danh từ + にする' được sử dụng khi người nói đưa ra lựa chọn hoặc quyết định chọn một đối tượng cụ thể trong số nhiều phương án khác nhau. Cấu trúc này vô cùng phổ biến khi gọi món ăn tại nhà hàng (chọn món), mua sắm (chọn đồ), lên kế hoạch (chọn thời gian, địa điểm).",
+      "formation": "Danh từ + に + する",
+      "examples": [
+        {
+          "translation": "Tôi đã chọn món pizza từ thực đơn."
+        },
+        {
+          "translation": "Tôi dự định sẽ chọn đồng hồ làm quà sinh nhật."
+        },
+        {
+          "translation": "Tôi đã quyết định chiều nay sẽ đi mua sắm."
+        },
+        {
+          "translation": "Tôi sẽ chọn Nhật Bản làm điểm đến cho chuyến du lịch nước ngoài."
+        }
+      ]
+    },
+    "ja_Noun_8": {
+      "title": "Danh từ + になる (ni naru)",
+      "shortExplanation": "Diễn tả sự thay đổi, chuyển hóa trạng thái sang một chức danh, nghề nghiệp, độ tuổi hoặc thời gian mới; 'trở thành...', 'trở nên...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + になる' dùng để diễn tả sự biến đổi trạng thái, biến chuyển tự nhiên của sự vật hoặc sự phát triển của con người từ trạng thái ban đầu sang một trạng thái, thân phận, nghề nghiệp hoặc mốc thời gian mới. Thường gặp khi nói về ước mơ nghề nghiệp, sự thay đổi mùa màng hay tuổi tác.",
+      "formation": "Danh từ + に + なる",
+      "examples": [
+        {
+          "translation": "Anh ấy đã trở thành bác sĩ."
+        },
+        {
+          "translation": "Hồi còn nhỏ, tôi từng muốn trở thành giáo viên."
+        },
+        {
+          "translation": "Cô ấy hồi hộp đến mức mặt đỏ bừng lên."
+        },
+        {
+          "translation": "Hễ sang mùa xuân là hoa anh đào lại nở rộ."
+        }
+      ]
+    },
+    "ja_のために_9": {
+      "title": "Danh từ + のために (no tame ni)",
+      "shortExplanation": "Diễn tả mục đích hành động hoặc vì lợi ích của ai đó/cái gì đó; 'vì...', 'cho...', 'để phục vụ cho...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + のために' dùng để biểu thị mục đích hướng tới của một hành động ('để...', 'nhằm mục đích...') hoặc vì lợi ích của một đối tượng cụ thể nào đó ('vì...', 'cho...'). Khi danh từ đứng trước chỉ người hoặc tập thể, cấu trúc biểu đạt ý nghĩa vì quyền lợi của đối tượng đó; khi danh từ chỉ sự việc, cấu trúc biểu đạt mục đích của hành động.",
+      "formation": "Danh từ + のために",
+      "examples": [
+        {
+          "translation": "Để phục vụ cho việc học tập, tôi đang tìm một chỗ yên tĩnh trong thư viện."
+        },
+        {
+          "translation": "Anh ấy làm việc hết mình vì gia đình."
+        },
+        {
+          "translation": "Vì sức khỏe, tôi tập thể dục mỗi ngày."
+        },
+        {
+          "translation": "Chúng ta hãy cùng nhau hợp tác vì hòa bình thế giới."
+        }
+      ]
+    },
+    "ja_Noun_10": {
+      "title": "Danh từ + の間に (no aida ni)",
+      "shortExplanation": "Diễn tả một hành động hoặc sự việc diễn ra trong suốt hoặc trong một khoảng thời gian cụ thể; 'trong khi...', 'trong khoảng thời gian...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + の間に' dùng để chỉ một hành động mang tính khoảnh khắc hoặc xảy ra trong một khoảng thời gian liên tục do danh từ đứng trước biểu thị (như kì nghỉ, giờ nghỉ, thời gian biểu...). Khác với 'の間に' diễn tả hành động xảy ra vào một thời điểm trong khoảng thời gian đó, 'の間' không có 'に' diễn tả trạng thái kéo dài suốt toàn bộ khoảng thời gian.",
+      "formation": "Danh từ (chỉ khoảng thời gian) + の間に",
+      "examples": [
+        {
+          "translation": "Tôi sẽ tranh thủ đi ngân hàng trong giờ nghỉ trưa."
+        },
+        {
+          "translation": "Tôi dự định sẽ đi du lịch nước ngoài trong kỳ nghỉ hè."
+        },
+        {
+          "translation": "Tôi đã đi mua sắm trong lúc bọn trẻ đang ở trường."
+        },
+        {
+          "translation": "Tôi đã gửi quà cho mẹ vào Ngày của Mẹ."
+        }
+      ]
+    },
+    "ja_Noun_11": {
+      "title": "Danh từ + ばかり (bakari)",
+      "shortExplanation": "Diễn tả sự tập trung vào một việc duy nhất hoặc sự việc diễn ra liên tục, lặp đi lặp lại nhiều lần; 'toàn là...', 'chỉ toàn...'.",
+      "longExplanation": "Trợ từ 'ばかり' dùng để biểu thị ý nghĩa 'toàn là...', 'chỉ toàn...', diễn tả việc một sự vật, hiện tượng hoặc hành động chiếm phần lớn hoặc lặp đi lặp lại áp đảo so với những thứ khác. Cấu trúc này thường mang sắc thái phê phán, phàn nàn hoặc không hài lòng của người nói khi thấy điều gì đó xảy ra quá nhiều. Ngoài danh từ, 'ばかり' còn có thể đi sau động từ thể て (～てばかりいる) hoặc tính từ.",
+      "formation": "Danh từ + ばかり (hoặc Động từ thể て + ばかりいる / Động từ thể thông thường + ばかり / Tính từ đuôi い + ばかり / Tính từ đuôi な + な・である + ばかり)",
+      "examples": [
+        {
+          "translation": "Anh ấy toàn nói chuyện về tiền bạc thôi."
+        },
+        {
+          "translation": "Cô ấy lúc nào cũng chỉ toàn cắm đầu vào học."
+        },
+        {
+          "translation": "Trong trung tâm thương mại toàn là những mặt hàng đắt tiền."
+        },
+        {
+          "translation": "Căn phòng này thì chỉ toàn thấy chật chội thôi."
+        }
+      ]
+    },
+    "ja_Noun_12": {
+      "title": "Danh từ + をあげる (wo ageru)",
+      "shortExplanation": "Dùng để diễn tả hành động cho, tặng ai đó một món đồ gì; 'cho...', 'tặng...'.",
+      "longExplanation": "Mẫu cấu trúc 'Danh từ + をあげる' dùng để diễn tả hành động cho, tặng một đồ vật cụ thể từ phía người nói (hoặc người cùng phe với người nói) cho người khác có vị thế ngang hàng hoặc thấp hơn (bạn bè, người ít tuổi hơn, con cái, thú cưng). Danh từ chỉ vật được trao tặng đi kèm với trợ từ 'を', còn người nhận đi kèm với trợ từ 'に' (Người nhận + に + Vật + をあげる). Chú ý không dùng 'あげる' đối với người bề trên (thầy cô, cấp trên), mà khi đó phải dùng thể khiêm nhường '差し上げる'.",
+      "formation": "(Người nhận + に) + Danh từ (vật) + を + あげる",
+      "examples": [
+        {
+          "translation": "Tôi tặng một món quà."
+        },
+        {
+          "translation": "Tôi đã tặng hoa cho bạn bè."
+        },
+        {
+          "translation": "Tôi sẽ tặng đồng hồ cho bố."
+        },
+        {
+          "translation": "Tôi muốn gửi tặng cô ấy một lá thư."
+        }
+      ]
+    },
+    "ja_Nounをいただく_13": {
+      "title": "Danh từ + をいただく (wo itadaku)",
+      "shortExplanation": "Khiêm nhường ngữ của 'もらう', dùng khi nhận đồ vật, lời khuyên từ người bề trên hoặc dùng lịch sự khi ăn uống; 'xin nhận...', 'nhận được...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + をいただく' là thể khiêm nhường ngữ của động từ nhận 'もらう', biểu thị hành động nhận một đồ vật, sự giúp đỡ, lời khuyên hay ân huệ từ người có địa vị cao hơn hoặc bậc tiền bối với thái độ tôn kính, biết ơn sâu sắc. Người trao tặng thường đi kèm với trợ từ 'から' hoặc 'に'. Ngoài ra, 'いただく' còn là khiêm nhường ngữ của '食べる' (ăn) và '飲む' (uống), dùng khi xin phép dùng đồ ăn thức uống một cách lịch thiệp.",
+      "formation": "(Người trao tặng + から / に) + Danh từ + を + いただく",
+      "examples": [
+        {
+          "translation": "Cảm ơn bạn rất nhiều vì món quà mà tôi đã nhận được."
+        },
+        {
+          "translation": "Tôi đã nhận được lời khuyên quý báu từ thầy giáo."
+        },
+        {
+          "translation": "Tôi có thể xin phép dùng cốc cà phê này được không ạ?"
+        },
+        {
+          "translation": "Tôi đã nhận được thông báo thăng chức từ cấp trên trong công ty."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_場所にがあります_135": {
+      "title": "～（場所）に～があります (〜basho ni 〜 ga arimasu)",
+      "shortExplanation": "表示某处存在某物（无生命物体或植物）；'在……有……'。",
+      "longExplanation": "句型'～（場所）に～があります'用于表达在某个特定场所存在某种非生命物体、事象或植物。在该句型中，场所名词后接助词'に'表示存在的地点，事物名词后接助词'が'表示存在的主体，句尾接动词'あります'（有、存在）。需要注意的是，人或动物等有生命对象需要使用'います'。",
+      "formation": "场所名词 + に + 物品/事物 + が + あります",
+      "examples": [
+        {
+          "translation": "图书馆里有很多书。"
+        },
+        {
+          "translation": "公园里有一个池塘。"
+        },
+        {
+          "translation": "车站前面有一家便利店。"
+        },
+        {
+          "translation": "山顶上有一座神社。"
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A とか B とか (A toka B toka)",
+      "shortExplanation": "用于列举具有代表性的事物或动作（非完全列举）；'……啦……啦'、'比如……或者……等'。",
+      "longExplanation": "句型'～とか～とか'用于列举事物、动作或可能性作为例证。它属于不完全列举，暗示除了列举出的项目之外还有其他同类事物，相当于汉语中的'……啦……啦'、'比如……或者……'。在日常口语中非常常用，语气轻松随意。",
+      "formation": "名词 + とか + 名词 + とか（亦可接动词普通形 + とか）",
+      "examples": [
+        {
+          "translation": "周末我想做一些开心的事情，比如看电影或者逛街购物等。"
+        },
+        {
+          "translation": "她会说英语、法语等多种语言。"
+        },
+        {
+          "translation": "这家店提供寿司、刺身等日本料理。"
+        },
+        {
+          "translation": "有不同价格的便当盒，比如1美元盒装或5美元盒装。"
+        }
+      ]
+    },
+    "ja_A_1": {
+      "title": "A は B ほど～ありません (A wa B hodo ～ arimasen)",
+      "shortExplanation": "表示比较，说明A不如B；'A没有B那么……'（礼貌体）。",
+      "longExplanation": "句型'A は B ほど～ありません'用于两者之间的比较，表示A在某种程度、性质或能力上不及B，相当于汉语中的'A不如B……'或'A没有B那么……'。本句型为敬体（礼貌体）形式，句尾搭配一类形容词否定（～くありません）、二类形容词否定（～ではありません）或动词否定礼貌体（～ません）。",
+      "formation": "A は + B ほど + 一类形容词连用形（词尾变く）＋ ありません / 二类形容词词干 ＋ ではありません / 动词否定形（〜ません）",
+      "examples": [
+        {
+          "translation": "今天没有昨天那么冷。"
+        },
+        {
+          "translation": "他英语说得不如我好。"
+        },
+        {
+          "translation": "这家餐厅没有那家餐厅那么贵。"
+        },
+        {
+          "translation": "她没有他那么忙。"
+        }
+      ]
+    },
+    "ja_A_2": {
+      "title": "A は B ほど～ない (A wa B hodo ~ nai)",
+      "shortExplanation": "表示普通体比较，说明A不如B；'A没有B那么……'、'A不如B……'。",
+      "longExplanation": "句型'A は B ほど～ない'为普通体（简体）形式，用于两者之间的比较，表示A在某种属性、特征或能力上没有达到B的程度。句尾必须使用否定形式：一类形容词接'～くない'，二类形容词接'～じゃない / ではない'，动词则常接可能态的否定形式'～（ら）れない / できない'。",
+      "formation": "A は + B ほど + 一类形容词连用形（词尾变く）＋ ない / 二类形容词词干 ＋ じゃない / 动词否定形（常为可能动词否定形 ～ない）",
+      "examples": [
+        {
+          "translation": "山田先生没有铃木先生个子高。"
+        },
+        {
+          "translation": "这个苹果没有那个苹果甜。"
+        },
+        {
+          "translation": "他念书不如我好。"
+        },
+        {
+          "translation": "这家餐厅没有那家餐厅安静。"
+        }
+      ]
+    },
+    "ja_A_3": {
+      "title": "A より B のほうが〜 (A yori B no hou ga 〜)",
+      "shortExplanation": "用于两者之间的比较，表示比起A，B更加……；'比起A，B更……'。",
+      "longExplanation": "句型'A より B のほうが～'用于比较两个事物或人物，表示在性质、状态或程度上B超过了A，相当于汉语中的'比起A，B更……'或'B比A更……'。其中助词'より'接在作为基准的A后面，'のほうが'接在占优势的B后面，后接形容词或动词。",
+      "formation": "A + より + B + のほうが + 形容词 / 动词",
+      "examples": [
+        {
+          "translation": "比起田中先生，铃木先生个子更高。"
+        },
+        {
+          "translation": "比起苹果，香蕉更甜。"
+        },
+        {
+          "translation": "夏天比冬天更热。"
+        },
+        {
+          "translation": "我觉得比起东京，京都更有历史底蕴。"
+        }
+      ]
+    },
+    "ja_いAdjective_4": {
+      "title": "一类形容词（い形容词）+ くする / くなる (i-keiyoushi kusuru/naru)",
+      "shortExplanation": "表示性质或状态发生变化（くなる表示自然转变'变得……'；くする表示人为改变'使……变得……'）。",
+      "longExplanation": "句型'一类形容词 + くする / くなる'用于表达性质或状态的转变：\n• '～くなる'表示事物自然而然地发生变化，相当于汉语的'变得……'、'变成……'。\n• '～くする'表示人为地、有意识地对对象施加动作使其发生变化，相当于汉语的'使……变得……'、'把……弄得……'。\n接续方法是将一类形容词（い形容词）词尾的'い'变为'く'，再接'する'或'なる'。",
+      "formation": "一类形容词（去掉词尾 い）+ く + する / なる",
+      "examples": [
+        {
+          "translation": "我把房间弄得更亮一些。"
+        },
+        {
+          "translation": "他的脸变红了。"
+        },
+        {
+          "translation": "请把这道菜做得辣一点。"
+        },
+        {
+          "translation": "一下雨，道路就变得容易打滑。"
+        }
+      ]
+    },
+    "ja_なadjective_5": {
+      "title": "二类形容词（な形容词）+ にする / になる (na-keiyoushi ni suru/naru)",
+      "shortExplanation": "表示二类形容词的状态变化（になる表示客观变化'变得……'；にする表示人为改变'使……变得……'）。",
+      "longExplanation": "句型'二类形容词 + にする / になる'用于表达某种性质或状态的转变：\n• '～になる'表示客观自然地转变成某种状态，相当于汉语的'变得……'、'成为……'。\n• '～にする'表示人为地采取行动、使其达到某种状态，相当于汉语的'使……变得……'、'把……弄得……'。\n接续方式为二类形容词（な形容词）词干后接助词'に'，再接动词'する'或'なる'。",
+      "formation": "二类形容词词干（去掉 な）+ に + する / なる",
+      "examples": [
+        {
+          "translation": "把房间打扫干净。"
+        },
+        {
+          "translation": "他恢复了精神（身体好起来了）。"
+        },
+        {
+          "translation": "每天保持安静是很重要的。"
+        },
+        {
+          "translation": "我会努力让日语学习变得有趣起来。"
+        }
+      ]
+    },
+    "ja_Noun_6": {
+      "title": "名词 + しか～ない (shika~nai)",
+      "shortExplanation": "表示唯一的限定，带有数量少或无可奈何的语气；'只……'、'只能……'、'除了……别无他物'。",
+      "longExplanation": "句型'名词 + しか～ない'用于强调事物的单一性、排他性或数量极其稀少，往往带有'仅仅如此、别无他选'的遗憾或无奈语气。虽然助词'しか'必须与后项的否定动词搭配使用，但整体句意表达的是肯定的限定含义，相当于汉语中的'只有……'、'只能……'或'除……之外没有别的'。",
+      "formation": "名词（或动词辞书形）+ しか + 动词否定形（～ない / ～ません）",
+      "examples": [
+        {
+          "translation": "我只吃苹果。"
+        },
+        {
+          "translation": "只能坐电车去了（别无他法）。"
+        },
+        {
+          "translation": "他只有一本书。"
+        },
+        {
+          "translation": "这家店里除了啤酒什么都没有。"
+        }
+      ]
+    },
+    "ja_Noun_7": {
+      "title": "名词 + にする (ni suru)",
+      "shortExplanation": "用于表达在多个选项中做出选择或决定；'决定要……'、'选……'。",
+      "longExplanation": "句型'名词 + にする'用于表示主观上的选择或决定，说明在若干备选项中决定选取某一项。该表达在餐厅点餐（如'これにします'表示'我要这个'）、购物挑选商品、确定旅行目的地或日程安排等日常场景中极其常用。",
+      "formation": "名词 + に + する",
+      "examples": [
+        {
+          "translation": "我从菜单里选了比萨。"
+        },
+        {
+          "translation": "我打算选手表作为生日礼物。"
+        },
+        {
+          "translation": "我决定今天下午去购物。"
+        },
+        {
+          "translation": "我选择日本作为海外旅行的目的地。"
+        }
+      ]
+    },
+    "ja_Noun_8": {
+      "title": "名词 + になる (ni naru)",
+      "shortExplanation": "表示身份、职业、状态或时间的自然转变；'变成……'、'成为……'、'到了（某时间）'。",
+      "longExplanation": "句型'名词 + になる'用于表达从一种状态自然而然地转变为另一种新的状态，相当于汉语中的'成为……'、'变成……'或'到了……（时节/年龄）'。常与表示职业、身份、资格、年龄或季节天气的名词连用。",
+      "formation": "名词 + に + なる",
+      "examples": [
+        {
+          "translation": "他成为了一名医生。"
+        },
+        {
+          "translation": "小时候，我想成为一名老师。"
+        },
+        {
+          "translation": "她因为紧张而脸变红了。"
+        },
+        {
+          "translation": "一到春天，樱花就会盛开。"
+        }
+      ]
+    },
+    "ja_のために_9": {
+      "title": "名词 + のために (no tame ni)",
+      "shortExplanation": "表示动作的目的，或为了某人、某事的利益；'为了……'、'因为……'。",
+      "longExplanation": "句型'名词 + のために'用于表示后续动作的目的，或者为了某个人、集体的利益而做某事，相当于汉语中的'为了……'。当接在人物名词后时，表示'为……着想、为了……的利益'；当接在动作或目标名词后时，表示'为了达到……目的'。",
+      "formation": "名词 + のために",
+      "examples": [
+        {
+          "translation": "为了学习，我正在图书馆里寻找一个安静的地方。"
+        },
+        {
+          "translation": "他为了家人在拼命努力工作。"
+        },
+        {
+          "translation": "为了身体健康，我每天都在做运动。"
+        },
+        {
+          "translation": "为了世界和平，大家一起齐心协力吧。"
+        }
+      ]
+    },
+    "ja_Noun_10": {
+      "title": "名词 + の間に (no aida ni)",
+      "shortExplanation": "表示在某个特定的时间段内发生了某动作或事件；'在……期间'、'在……的时候'。",
+      "longExplanation": "句型'名词 + の間に'用于表示在前项名词所代表的时间段、期间之内，发生了后项的某一动作或事件。后项通常是瞬间动词或在期间内完成的一次性动作。需要注意的是，若不带'に'（即'〜の間'），则表示后项状态或动作持续贯穿于整个时间段。",
+      "formation": "名词（表示时间段）+ の間に",
+      "examples": [
+        {
+          "translation": "我会在午休期间去一趟银行。"
+        },
+        {
+          "translation": "我打算趁着暑假期间去海外旅行。"
+        },
+        {
+          "translation": "我趁孩子们在学校的期间去买了东西。"
+        },
+        {
+          "translation": "我在母亲节那天给妈妈寄送了礼物。"
+        }
+      ]
+    },
+    "ja_Noun_11": {
+      "title": "名词 + ばかり (bakari)",
+      "shortExplanation": "表示净是、光是某种事物或总是做某种动作，常带消极语气；'净是……'、'光是……'、'总是……'。",
+      "longExplanation": "助词'ばかり'接在名词或动词等词后面，用于表示同类事物大量存在，或者某项动作反反复复进行，相当于汉语中的'光是……'、'净是……'、'老是……'。该用法往往带有说话人批判、埋怨、不满或感到无可奈何的语感。",
+      "formation": "名词 + ばかり（动词普通形 / 动词て形 + ばかりいる / 一类形容词 + ばかり / 二类形容词 + な・である + ばかり）",
+      "examples": [
+        {
+          "translation": "他张嘴闭嘴净谈钱的事。"
+        },
+        {
+          "translation": "她总是一味地在学习。"
+        },
+        {
+          "translation": "百货商场里光是昂贵的商品。"
+        },
+        {
+          "translation": "这个房间光剩狭窄了。"
+        }
+      ]
+    },
+    "ja_Noun_12": {
+      "title": "名词 + をあげる (wo ageru)",
+      "shortExplanation": "表示给对方物品、送礼物（授受动词）；'给……'、'送……'。",
+      "longExplanation": "句型'名词 + をあげる'属于授受表现（给予动词），用于说话人（或己方人员）向平辈、晚辈等给予某物品。给予的物品后接宾格助词'を'，接受物品的对象后接助词'に'（即'接收者 + に + 物品 + をあげる'）。注意：对长辈或上级给予物品时，不宜使用'あげる'，而应使用谦逊语'差し上げる'。",
+      "formation": "（接受者 + に）+ 物品名词 + を + あげる",
+      "examples": [
+        {
+          "translation": "送礼物。"
+        },
+        {
+          "translation": "我给朋友送了花。"
+        },
+        {
+          "translation": "我打算送给父亲一块手表。"
+        },
+        {
+          "translation": "我想给她写一封信（送她一封信）。"
+        }
+      ]
+    },
+    "ja_Nounをいただく_13": {
+      "title": "名词 + をいただく (wo itadaku)",
+      "shortExplanation": "'もらう'的谦逊语，表示从长辈或尊长处领受物品、建议或恩惠；'承蒙得到……'、'领受……'。",
+      "longExplanation": "句型'名词 + をいただく'是授受动词'もらう'（得到、接受）的自谦语（谦逊语）。用于说话人从长辈、上级或受尊敬的人那里接受物品、指导、建议或关照，表达对给予者的崇高敬意与由衷谢意。给予者后常接助词'から'或'に'。此外，'いただく'也是动词'食べる'（吃）和'飲む'（喝）的自谦形式，可用于礼貌地表达饮食。",
+      "formation": "（赠予者 + から / に）+ 名词 + を + いただく",
+      "examples": [
+        {
+          "translation": "非常感谢您送给我的礼物。"
+        },
+        {
+          "translation": "我得到了老师的宝贵建议。"
+        },
+        {
+          "translation": "我可以喝这杯咖啡吗？"
+        },
+        {
+          "translation": "我从公司上司那里收到了晋升通知。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_場所にがあります_135": {
+      "title": "～（場所）に～があります (〜basho ni 〜 ga arimasu)",
+      "shortExplanation": "특정 장소에 사물이나 식물 등이 존재함을 나타내며, '~에 ~이/가 있습니다'라는 뜻입니다.",
+      "longExplanation": "'～（場所）に～があります' 문형은 특정 장소나 위치에 무생물(사물), 식물 등이 존재하고 있음을 나타낼 때 사용합니다. 장소를 나타내는 명사 뒤에 조사 'に'를 붙여 존재의 위치를 나타내고, 사물 뒤에 주격 조사 'が', 마지막에 존재를 나타내는 동사 'あります'를 연결합니다. 사람이나 동물 등 유정물에 대해서는 'います'를 사용하는 점에 주의해야 합니다.",
+      "formation": "장소 + に + 사물 + が + あります",
+      "examples": [
+        {
+          "translation": "도서관에 책이 많이 있습니다."
+        },
+        {
+          "translation": "공원에 연못이 있습니다."
+        },
+        {
+          "translation": "역 앞에 편의점이 있습니다."
+        },
+        {
+          "translation": "산 위에 신사가 있습니다."
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A とか B とか (A toka B toka)",
+      "shortExplanation": "여러 가지 예시나 가능성을 나열할 때 쓰이며, '~라든가 ~라든가', '~나 ~등'의 뜻입니다.",
+      "longExplanation": "'～とか～とか' 문형은 여러 사물이나 동작, 가능성 중에서 대표적인 몇 가지를 예로 들어 열거할 때 사용합니다. 전부를 나열하는 것이 아니라 일부를 예시로 드는 불완전 열거를 나타내며, 한국어의 '~라든가 ~라든가', '~든가 ~든가'에 해당합니다. 일상 회화에서 매우 자주 사용되는 구어체 표현입니다.",
+      "formation": "명사 + とか + 명사 + とか (동사 보통형 + とか)",
+      "examples": [
+        {
+          "translation": "주말에는 영화를 본다거나 쇼핑을 하는 등 즐거운 일을 하고 싶습니다."
+        },
+        {
+          "translation": "그녀는 영어라든가 프랑스어라든가 여러 언어를 말할 수 있습니다."
+        },
+        {
+          "translation": "이 가게는 초밥이나 회 같은 일본 요리를 제공하고 있습니다."
+        },
+        {
+          "translation": "1달러 도시락이라든가 5달러 도시락이라든가 가격이 다른 런치 박스가 있습니다."
+        }
+      ]
+    },
+    "ja_A_1": {
+      "title": "A は B ほど～ありません (A wa B hodo ～ arimasen)",
+      "shortExplanation": "A가 B만큼 ~하지 않다는 열등 비교를 공손하게 나타내며, 'A는 B만큼 ~하지 않습니다'의 뜻입니다.",
+      "longExplanation": "'A は B ほど～ありません' 문형은 두 대상을 비교하여 A가 B 정도의 수준이나 상태에 미치지 못함을 나타내는 정중한 비교 표현입니다. 한국어의 'A는 B만큼 ~하지 않습니다'에 해당합니다. 서술어는 반드시 정중한 부정형(형용사의 くありません / ではありません, 동사의 ません)이 연결됩니다.",
+      "formation": "A は + B ほど + 형용사 부정 정중형(くありません / ではありません) / 동사 부정형(〜ません)",
+      "examples": [
+        {
+          "translation": "오늘은 어제만큼 춥지 않습니다."
+        },
+        {
+          "translation": "그는 나만큼 영어를 잘하지 못합니다."
+        },
+        {
+          "translation": "이 레스토랑은 저 레스토랑만큼 비싸지 않습니다."
+        },
+        {
+          "translation": "그녀는 그 사람만큼 바쁘지 않습니다."
+        }
+      ]
+    },
+    "ja_A_2": {
+      "title": "A は B ほど～ない (A wa B hodo ~ nai)",
+      "shortExplanation": "A가 B만큼 ~하지 않다는 비교를 보통형(반말)으로 나타내며, 'A는 B만큼 ~하지 않다'의 뜻입니다.",
+      "longExplanation": "'A は B ほど～ない' 문형은 두 대상을 비교하여 A가 B 정도의 상태나 수준에 미치지 못함을 나타내는 보통형(반말/기본형) 비교 표현입니다. 서술어는 반드시 부정형이 오며, い형용사는 '～くない', な형용사는 '～じゃない / ではない', 동사는 보통 부정형(주로 가능동사 부정형)과 호응합니다.",
+      "formation": "A は + B ほど + い형용사 어간 + くない / な형용사 어간 + じゃない / 동사 부정형(주로 가능동사 부정형)",
+      "examples": [
+        {
+          "translation": "야마다 씨는 스즈키 씨만큼 키가 크지 않다."
+        },
+        {
+          "translation": "이 사과는 저 사과만큼 달지 않다."
+        },
+        {
+          "translation": "그는 나만큼 공부를 잘하지 못한다."
+        },
+        {
+          "translation": "이 레스토랑은 저 레스토랑만큼 조용하지 않다."
+        }
+      ]
+    },
+    "ja_A_3": {
+      "title": "A より B のほうが〜 (A yori B no hou ga 〜)",
+      "shortExplanation": "두 대상을 비교하여 A보다 B쪽이 더 우세함을 나타내며, 'A보다 B 쪽이 더 ~하다'의 뜻입니다.",
+      "longExplanation": "'A より B のほうが～' 문형은 두 사물이나 인물을 비교할 때 사용하며, 기준이 되는 A보다 B 쪽의 정도나 특성이 더 크거나 우위에 있음을 나타냅니다. 한국어의 'A보다 B 쪽이 (더) ~하다'에 해당하며, 뒤에는 형용사나 동사가 이어집니다.",
+      "formation": "A + より + B + のほうが + 형용사 / 동사",
+      "examples": [
+        {
+          "translation": "다나카 씨보다 스즈키 씨 쪽이 키가 큽니다."
+        },
+        {
+          "translation": "사과보다 바나나 쪽이 더 답니다."
+        },
+        {
+          "translation": "겨울보다 여름 쪽이 더 덥습니다."
+        },
+        {
+          "translation": "도쿄보다 교토 쪽이 역사가 깊다고 생각합니다."
+        }
+      ]
+    },
+    "ja_いAdjective_4": {
+      "title": "い형용사 + くする / くなる (i-keiyoushi kusuru/naru)",
+      "shortExplanation": "상태의 자연스러운 변화(くなる: '~해지다')나 인위적인 변화(くする: '~하게 만들다')를 나타냅니다.",
+      "longExplanation": "'い형용사 + くする / くなる' 문형은 사물의 성질이나 상태의 변화를 나타낼 때 사용합니다.\n• '～くなる'는 어떤 상태로 자연스럽게 변화함을 나타내며, 한국어의 '~해지다', '~게 되다'에 해당합니다.\n• '～くする'는 의도적으로 어떤 상태로 변화시키는 행위를 나타내며, 한국어의 '~하게 하다', '~게 만들다'에 해당합니다.\n활용법은 い형용사의 어미 'い'를 'く'로 바꾼 뒤 'する' 또는 'なる'를 접속합니다.",
+      "formation": "い형용사 어간(어미 い 탈락) + く + する / なる",
+      "examples": [
+        {
+          "translation": "방을 밝게 하겠습니다."
+        },
+        {
+          "translation": "그의 얼굴이 붉어졌습니다."
+        },
+        {
+          "translation": "이 요리를 맵게 해 주세요."
+        },
+        {
+          "translation": "비가 내리면 길이 미끄러워지기 쉽습니다."
+        }
+      ]
+    },
+    "ja_なadjective_5": {
+      "title": "な형용사 + にする / になる (na-keiyoushi ni suru/naru)",
+      "shortExplanation": "な형용사의 상태 변화를 나타내며, 자연스러운 변화(になる: '~해지다') 또는 인위적 작용(にする: '~하게 만들다')을 뜻합니다.",
+      "longExplanation": "'な형용사 + にする / になる' 문형은 な형용사(형용동사)가 나타내는 상태로 변화함을 나타냅니다.\n• '～になる'는 어떤 상태로 자연스럽게 변하거나 바뀌는 것을 나타내며, 한국어의 '~해지다', '~하게 되다'에 해당합니다.\n• '～にする'는 의도적으로 어떤 상태로 만드는 행위를 나타내며, 한국어의 '~하게 하다', '~게 만들다'에 해당합니다.\n활용법은 な형용사의 어간 뒤에 조사 'に'를 붙이고 'する' 또는 'なる'를 연결합니다.",
+      "formation": "な형용사 어간 + に + する / なる",
+      "examples": [
+        {
+          "translation": "방을 깨끗하게 청소하다(깨끗하게 하다)."
+        },
+        {
+          "translation": "그는 건강해졌습니다(기운을 차렸습니다)."
+        },
+        {
+          "translation": "매일 조용히 하는 것이 중요합니다."
+        },
+        {
+          "translation": "일본어 공부가 즐거워지도록 노력하겠습니다."
+        }
+      ]
+    },
+    "ja_Noun_6": {
+      "title": "명사 + しか～ない (shika~nai)",
+      "shortExplanation": "유일한 한정을 나타내며, 뒤에 부정어가 호응하여 '오직 ~밖에 (없다/하지 않다)'라는 뜻입니다.",
+      "longExplanation": "'명사 + しか～ない' 문형은 수량이 매우 적거나 다른 선택지가 없음을 강조하는 한정 표현입니다. 한국어의 '~밖에 (없다/안 하다)'에 해당합니다. 반드시 뒤에 부정 형태의 서술어(～ない / ～ません)가 호응하지만, 의미상으로는 '그것만을 유일하게 긍정하는' 뉘앙스를 갖습니다.",
+      "formation": "명사(또는 동사 기본형) + しか + 동사 부정형(～ない / ～ません)",
+      "examples": [
+        {
+          "translation": "저는 사과밖에 안 먹습니다."
+        },
+        {
+          "translation": "전철로 갈 수밖에 없습니다."
+        },
+        {
+          "translation": "그는 책을 한 권밖에 가지고 있지 않습니다."
+        },
+        {
+          "translation": "이 가게에는 맥주밖에 없습니다."
+        }
+      ]
+    },
+    "ja_Noun_7": {
+      "title": "명사 + にする (ni suru)",
+      "shortExplanation": "여러 선택지 중 하나를 선택하거나 결정함을 나타내며, '~로 하다', '~을/를 정하다'의 뜻입니다.",
+      "longExplanation": "'명사 + にする' 문형은 여러 대안이나 선택지 중에서 특정한 하나를 주관적으로 선택하거나 결정할 때 사용합니다. 음식점 등에서 메뉴를 주문할 때('이것으로 하겠습니다'), 상품을 고를 때, 일정이나 장소를 결정할 때 매우 널리 쓰이는 표현입니다.",
+      "formation": "명사 + に + する",
+      "examples": [
+        {
+          "translation": "메뉴에서 피자로 정했습니다(피자를 골랐습니다)."
+        },
+        {
+          "translation": "생일 선물로 시계를 선택할 생각입니다."
+        },
+        {
+          "translation": "오늘 오후는 쇼핑하는 것으로 결정했습니다."
+        },
+        {
+          "translation": "해외여행의 목적지로 일본으로 정한다."
+        }
+      ]
+    },
+    "ja_Noun_8": {
+      "title": "명사 + になる (ni naru)",
+      "shortExplanation": "신분, 직업, 상태, 시간 등이 새로운 상태로 변화함을 나타내며, '~이/가 되다'의 뜻입니다.",
+      "longExplanation": "'명사 + になる' 문형은 어떤 상태나 신분, 자격, 나이, 계절 등이 자연스럽게 또는 결과적으로 변화하는 것을 나타냅니다. 한국어의 '~이/가 되다'에 해당하며, 장래희망(직업), 계절의 변화, 신분의 변화 등을 나타낼 때 자주 사용됩니다.",
+      "formation": "명사 + に + なる",
+      "examples": [
+        {
+          "translation": "그는 의사가 되었습니다."
+        },
+        {
+          "translation": "어릴 적, 저는 선생님이 되고 싶었습니다."
+        },
+        {
+          "translation": "그녀는 긴장해서 얼굴이 빨개졌습니다."
+        },
+        {
+          "translation": "봄이 되면 벚꽃이 핍니다."
+        }
+      ]
+    },
+    "ja_のために_9": {
+      "title": "명사 + のために (no tame ni)",
+      "shortExplanation": "동작의 목적이나 누군가/무언가를 위한 이익을 나타내며, '~을/를 위해(서)'라는 뜻입니다.",
+      "longExplanation": "'명사 + のために' 문형은 어떤 행동을 하는 목적을 나타내거나, 누군가의 이익이나 행복을 위하여 행동함을 나타낼 때 사용합니다. 한국어의 '~을/를 위하여', '~을/를 위해'에 해당하며, 명사 뒤에 'のために'를 바로 연결합니다.",
+      "formation": "명사 + のために",
+      "examples": [
+        {
+          "translation": "공부를 위해서 도서관에서 조용한 장소를 찾고 있습니다."
+        },
+        {
+          "translation": "그는 가족을 위해 열심히 일하고 있습니다."
+        },
+        {
+          "translation": "건강을 위해서 매일 운동을 하고 있습니다."
+        },
+        {
+          "translation": "세계 평화를 위해 다 함께 협력합시다."
+        }
+      ]
+    },
+    "ja_Noun_10": {
+      "title": "명사 + の間に (no aida ni)",
+      "shortExplanation": "특정 기간이나 시간 동안에 어떤 동작이 일어남을 나타내며, '~하는 사이에', '~기간 동안에'의 뜻입니다.",
+      "longExplanation": "'명사 + の間に' 문형은 앞 명사가 나타내는 일정한 기간이나 시간 범위 내에서 어떤 일회성 동작이나 사건이 일어남을 나타냅니다. 한국어의 '~하는 동안에', '~사이에'에 해당합니다. 'に'가 붙음으로써 그 기간 내의 어느 한 시점에 동작이 이루어짐을 나타내는 점이 포인트입니다.",
+      "formation": "명사(시간·기간) + の間に",
+      "examples": [
+        {
+          "translation": "점심시간 동안에 은행에 다녀오겠습니다."
+        },
+        {
+          "translation": "여름방학 기간에 해외여행을 갈 예정입니다."
+        },
+        {
+          "translation": "아이들이 학교에 가 있는 동안에 장을 보러 갔습니다."
+        },
+        {
+          "translation": "어버이날(어머니의 날)에 어머니께 선물을 보냈습니다."
+        }
+      ]
+    },
+    "ja_Noun_11": {
+      "title": "명사 + ばかり (bakari)",
+      "shortExplanation": "어떤 대상이나 동작이 압도적으로 많거나 그것만 계속됨을 나타내며, '온통 ~뿐', '~만'의 뜻입니다.",
+      "longExplanation": "'명사 + ばかり' 문형은 특정 사물이나 행위가 지나치게 많거나 그것만 거듭되고 있음을 나타낼 때 사용합니다. 한국어의 '온통 ~뿐', '~만'에 해당합니다. 화자의 불만, 비판, 아쉬움 등의 부정적인 뉘앙스가 포함되는 경우가 많습니다. 명사 외에도 동사 て형 뒤에 붙어 '〜てばかりいる(계속 ~만 하고 있다)'의 형태로도 자주 쓰입니다.",
+      "formation": "명사 + ばかり (동사 보통형 / 동사 て형 + ばかりいる / い형용사 + ばかり / な형용사 + な・である + ばかり)",
+      "examples": [
+        {
+          "translation": "그는 온통 돈 이야기만 한다."
+        },
+        {
+          "translation": "그녀는 공부만 계속하고 있다."
+        },
+        {
+          "translation": "백화점에는 온통 비싼 상품들뿐이다."
+        },
+        {
+          "translation": "이 방은 좁기만 할 따름이다."
+        }
+      ]
+    },
+    "ja_Noun_12": {
+      "title": "명사 + をあげる (wo ageru)",
+      "shortExplanation": "누군가에게 물건을 주는 행위를 나타내며, '~을/를 주다', '~을/를 선물하다'의 뜻입니다.",
+      "longExplanation": "'명사 + をあげる' 문형은 수수동사(주고받는 동사) 표현으로, 화자(또는 화자 측의 사람)가 동등하거나 아랫사람(친구, 동생, 반려동물 등)에게 무언가를 건네주거나 선물할 때 사용합니다. 받는 대상 뒤에 조사 'に'를 붙이고, 건네는 물건 뒤에 'を'를 붙입니다. 윗사람에게 드릴 때는 'あげる' 대신 겸양어인 '差し上げる'를 사용해야 합니다.",
+      "formation": "(받는 사람 + に) + 명사(물건) + を + あげる",
+      "examples": [
+        {
+          "translation": "선물을 주다."
+        },
+        {
+          "translation": "친구에게 꽃을 주었다."
+        },
+        {
+          "translation": "아버지께 시계를 드립니다."
+        },
+        {
+          "translation": "그녀에게 편지를 주고 싶다."
+        }
+      ]
+    },
+    "ja_Nounをいただく_13": {
+      "title": "명사 + をいただく (wo itadaku)",
+      "shortExplanation": "'もらう(받다)'의 겸양어로, 윗사람으로부터 물건이나 조언 등을 받을 때 정중하게 쓰이며 '받다', '받아 모시다'의 뜻입니다.",
+      "longExplanation": "'명사 + をいただく' 문형은 수수동사 'もらう'의 겸양어 표현입니다. 자신을 낮추고 상대방(선생님, 상사, 손님 등 윗사람)을 높여, 물건이나 조언, 호의 등을 공손하게 받았음을 나타냅니다. 건네주는 사람 뒤에는 조사 'から' 또는 'に'가 붙습니다. 또한 'いただく'는 '食べる(먹다)', '飲む(마시다)'의 겸양어로도 사용되어 음식을 정중하게 먹을 때도 쓰입니다.",
+      "formation": "(주는 사람 + から / に) + 명사 + を + いただく",
+      "examples": [
+        {
+          "translation": "선물을 주셔서(받아서) 진심으로 감사드립니다."
+        },
+        {
+          "translation": "선생님으로부터 조언을 받았습니다."
+        },
+        {
+          "translation": "이 커피를 마셔도(받아도) 되겠습니까?"
+        },
+        {
+          "translation": "회사 상사분께 승진 통지를 받았습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_場所にがあります_135": {
+      "title": "～（場所）に～があります (〜basho ni 〜 ga arimasu)",
+      "shortExplanation": "ある場所に物や植物などが存在することを表し、「〜に〜がある／あります」という意味を表します。",
+      "longExplanation": "「～（場所）に～があります」は、特定の場所や位置に無生物（物）や植物が存在していることを表す基本的な文法です。場所を表す名詞に助詞「に」をつけて存在の所在を示し、存在する対象に助詞「が」をつけ、文末に存在を表す動詞「あります」を続けます。有情物（人や動物）には「います」を用いる点に注意が必要です。",
+      "formation": "場所 ＋ に ＋ 物／対象 ＋ が ＋ あります",
+      "examples": [
+        {
+          "translation": "図書館にたくさんの本があります。"
+        },
+        {
+          "translation": "公園に池があります。"
+        },
+        {
+          "translation": "駅の前にコンビニがあります。"
+        },
+        {
+          "translation": "山の上に神社があります。"
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A とか B とか (A toka B toka)",
+      "shortExplanation": "代表的な例をいくつか並べて挙げる並立・例示の表現で、「〜や〜など」「〜とか〜など」という意味を表します。",
+      "longExplanation": "「～とか～とか」は、同類のものの中からいくつか代表的な例を並べて挙げる不完全列挙の文法表現です。すべてを挙げ尽くすのではなく「他にもある」というニュアンスを含みます。日常会話で非常によく使われる口語的な表現で、名詞だけでなく動詞の普通形などにも接続できます。",
+      "formation": "名詞 ＋ とか ＋ 名詞 ＋ とか（動詞普通形 ＋ とか）",
+      "examples": [
+        {
+          "translation": "週末は映画とか買い物とか楽しいことをしたいです。"
+        },
+        {
+          "translation": "彼女は英語とかフランス語とかいろいろな言葉を話せます。"
+        },
+        {
+          "translation": "この店は寿司とか刺身とか日本料理を提供しています。"
+        },
+        {
+          "translation": "1ドルBOXとか5ドルBOXとか、異なる価格のランチBOXがあります。"
+        }
+      ]
+    },
+    "ja_A_1": {
+      "title": "A は B ほど～ありません (A wa B hodo ～ arimasen)",
+      "shortExplanation": "二つのものを比較して、AがBの程度に及ばないことを丁寧に表し、「AはBほど〜ではない／ありません」という意味を表します。",
+      "longExplanation": "「A は B ほど～ありません」は、二つの事物や人を比較し、Aの度合いが基準となるBに達していないこと（劣等比較）を丁寧に表現する文型です。後続する述語には必ず丁寧な否定形（い形容詞「〜くありません」、な形容詞「〜ではありません」、動詞「〜ません」など）が呼応します。",
+      "formation": "A は ＋ B ほど ＋ 形容詞・動詞の否定丁寧形（〜くありません／〜ではありません／〜ません）",
+      "examples": [
+        {
+          "translation": "今日は昨日ほど寒くありません。"
+        },
+        {
+          "translation": "彼は私ほど上手に英語を話せません。"
+        },
+        {
+          "translation": "このレストランはあのレストランほど高くありません。"
+        },
+        {
+          "translation": "彼女は彼ほど忙しくありません。"
+        }
+      ]
+    },
+    "ja_A_2": {
+      "title": "A は B ほど～ない (A wa B hodo ~ nai)",
+      "shortExplanation": "二つのものを比較し、AがBの程度に達していないことを普通体で表し、「AはBほど〜ではない」という意味を表します。",
+      "longExplanation": "「A は B ほど～ない」は、二者を比較してAが基準となるBの程度・水準に達していないこと（劣等比較）を普通体で述べる文型です。後ろには必ず否定表現が続き、い形容詞は「〜くない」、な形容詞は「〜じゃない／ではない」、動詞は否定形（可能動詞の否定形など）が接続します。",
+      "formation": "A は ＋ B ほど ＋ い形容詞連用形（〜くない）／ な形容詞語幹 ＋ じゃない ／ 動詞否定形（可能否定など）",
+      "examples": [
+        {
+          "translation": "山田さんは鈴木さんほど背が高くない。"
+        },
+        {
+          "translation": "このリンゴはあのリンゴほど甘くない。"
+        },
+        {
+          "translation": "彼は私ほど勉強ができない。"
+        },
+        {
+          "translation": "このレストランはあのレストランほど静かじゃない。"
+        }
+      ]
+    },
+    "ja_A_3": {
+      "title": "A より B のほうが〜 (A yori B no hou ga 〜)",
+      "shortExplanation": "二つのものを比較して、AよりもBのほうがその性質や程度が勝っていることを表し、「AよりBのほうが〜だ」という意味を表します。",
+      "longExplanation": "「A より B のほうが〜」は、二つの事物や人物を比較し、比較の基準となるAに対して、Bのほうが性質・状態・程度において上回っていることを述べる比較構文です。「より」は比較の基準を示し、「のほうが」は取り立てて強調する対象（B）を示します。",
+      "formation": "A ＋ より ＋ B ＋ のほうが ＋ 形容詞／動詞",
+      "examples": [
+        {
+          "translation": "田中さんより鈴木さんのほうが背が高いです。"
+        },
+        {
+          "translation": "リンゴよりバナナのほうが甘いです。"
+        },
+        {
+          "translation": "冬より夏のほうが暑いです。"
+        },
+        {
+          "translation": "東京より京都のほうが歴史があると思います。"
+        }
+      ]
+    },
+    "ja_いAdjective_4": {
+      "title": "い形容詞 ＋ くする／くなる (i-keiyoushi kusuru/naru)",
+      "shortExplanation": "い形容詞の表す状態への変化を表し、「〜くなる（自然な変化）」または「〜くする（人為的な変化）」という意味を表します。",
+      "longExplanation": "「い形容詞 ＋ くする／くなる」は、事物や人物の性質・状態が変化することを表す文型です。\n・「〜くなる」：自然にその状態に変化・移行することを表します（自動詞的表現）。\n・「〜くする」：意図的な働きかけによってその状態に変化させることを表します（他動詞的表現）。\nい形容詞の語尾「い」を「く」に変えた連用形に接続します。",
+      "formation": "い形容詞語尾「い」を除く ＋ く ＋ する／なる",
+      "examples": [
+        {
+          "translation": "部屋を明るくします。"
+        },
+        {
+          "translation": "彼の顔は赤くなりました。"
+        },
+        {
+          "translation": "この料理を辛くしてください。"
+        },
+        {
+          "translation": "雨が降ると、道が滑りやすくなります。"
+        }
+      ]
+    },
+    "ja_なadjective_5": {
+      "title": "な形容詞 ＋ にする／になる (na-keiyoushi ni suru/naru)",
+      "shortExplanation": "な形容詞の表す状態への変化を表し、「〜になる（自然な変化）」または「〜にする（人為的な働きかけ）」という意味を表します。",
+      "longExplanation": "「な形容詞 ＋ にする／になる」は、な形容詞（形容動詞）が表す状態に変化することを表す文型です。\n・「〜になる」：その状態へ自然に変化・移行することを表します（自動词的表現）。\n・「〜にする」：人為的な働きかけや決定によってその状態にすることを表します（他動詞的表現）。\nな形容詞の語幹に助詞「に」を添えて接続します。",
+      "formation": "な形容詞語幹 ＋ に ＋ する／なる",
+      "examples": [
+        {
+          "translation": "部屋をきれいにする。"
+        },
+        {
+          "translation": "彼は元気になりました。"
+        },
+        {
+          "translation": "毎日静かにすることが大切です。"
+        },
+        {
+          "translation": "日本語の勉強が楽しくなるように努力します。"
+        }
+      ]
+    },
+    "ja_Noun_6": {
+      "title": "名詞 ＋ しか～ない (shika~nai)",
+      "shortExplanation": "唯一の限定や数量の少なさを強調し、後続の否定表現と呼応して「〜だけ」「〜のほかにない」という意味を表します。",
+      "longExplanation": "「名詞 ＋ しか～ない」は、それ以外には存在しないこと、または数量が極めて少ないことを強調する限定表現です。後ろには必ず否定の動詞が呼応しますが、文全体の意味は「それだけをする／それだけがある」という限定の肯定的な意味を表します。話し手の「不満」「物足りなさ」「他に選択肢がない」というニュアンスを含みます。",
+      "formation": "名詞（または動詞辞書形）＋ しか ＋ 否定動詞（〜ない／〜ません）",
+      "examples": [
+        {
+          "translation": "私はリンゴしか食べない。"
+        },
+        {
+          "translation": "電車で行くしかないです。"
+        },
+        {
+          "translation": "彼は一冊の本しか持っていない。"
+        },
+        {
+          "translation": "この店にはビールしかない。"
+        }
+      ]
+    },
+    "ja_Noun_7": {
+      "title": "名詞 ＋ にする (ni suru)",
+      "shortExplanation": "複数の選択肢の中からあるものを選び決定することを表し、「〜にする」「〜に決める」という意味を表します。",
+      "longExplanation": "「名詞 ＋ にする」は、話し手（または主語）がいくつかの候補や選択肢の中から自分の意思で特定の物事を選び取る決定を表す表現です。飲食店での注文（「これにします」）、買い物の決定、計画や日時の設定など、日常会話の多様な場面で極めて頻繁に使われます。",
+      "formation": "名詞 ＋ に ＋ する",
+      "examples": [
+        {
+          "translation": "メニューからピザにしました。"
+        },
+        {
+          "translation": "誕生日プレゼントに時計にするつもりです。"
+        },
+        {
+          "translation": "今日の午後は買い物にすることにしました。"
+        },
+        {
+          "translation": "海外旅行の目的地として、日本にする。"
+        }
+      ]
+    },
+    "ja_Noun_8": {
+      "title": "名詞 ＋ になる (ni naru)",
+      "shortExplanation": "身分、職業、状態、時間などが新しい状態へ変化することを表し、「〜になる」という意味を表します。",
+      "longExplanation": "「名詞 ＋ になる」は、人物の身分や職業、事物の状態、年齢や季節などが、自然な推移や結果として別の状態に変化することを表す表現です。自発的・客観的な変化を表し、将来の夢や年齢・季節の推移などを語る際によく用いられます。",
+      "formation": "名詞 ＋ に ＋ なる",
+      "examples": [
+        {
+          "translation": "彼は医者になりました。"
+        },
+        {
+          "translation": "子供の頃、私は先生になりたかったです。"
+        },
+        {
+          "translation": "彼女は緊張して顔が赤くなりました。"
+        },
+        {
+          "translation": "春になると桜が咲きます。"
+        }
+      ]
+    },
+    "ja_のために_9": {
+      "title": "名詞 ＋ のために (no tame ni)",
+      "shortExplanation": "ある行為の目的や、対象の利益・ためになることを表し、「〜のために」「〜を目的に」という意味を表します。",
+      "longExplanation": "「名詞 ＋ のために」は、ある行為を行う明確な目的や目標を表すとともに、特定の人や集団の利益・幸福のために行動することを表す表現です。名詞に助詞「の」を介して「ために」が接続します。口語では「に」が省略されて「〜のため」となることもあります。",
+      "formation": "名詞 ＋ のために",
+      "examples": [
+        {
+          "translation": "勉強のために、図書館で静かな場所を探しています。"
+        },
+        {
+          "translation": "彼は家族のために、一生懸命働いています。"
+        },
+        {
+          "translation": "健康のために、毎日運動をしています。"
+        },
+        {
+          "translation": "世界平和のために、みんなで協力しましょう。"
+        }
+      ]
+    },
+    "ja_Noun_10": {
+      "title": "名詞 ＋ の間に (no aida ni)",
+      "shortExplanation": "ある時間や期間の幅の中で、ある行為や出来事が行われることを表し、「〜の間に」「〜の期間中に」という意味を表します。",
+      "longExplanation": "「名詞 ＋ の間に」は、前項の名詞が表す一定の期間・時間の幅の中で、後項の動作や出来事がその期間内の一時点で行われることを表す文法です。「に」を伴わない「〜の間」が期間全体にわたる継続状態を表すのに対し、「〜の間に」は期間内の瞬間的・一時的な動作を表します。",
+      "formation": "名詞（期間を表す名詞）＋ の間に",
+      "examples": [
+        {
+          "translation": "昼休みの間に銀行に行きます。"
+        },
+        {
+          "translation": "夏休みの間に海外旅行に行く予定です。"
+        },
+        {
+          "translation": "子供たちが学校の間に買い物に行きました。"
+        },
+        {
+          "translation": "母の日にお母さんにプレゼントを送りました。"
+        }
+      ]
+    },
+    "ja_Noun_11": {
+      "title": "名詞 ＋ ばかり (bakari)",
+      "shortExplanation": "同類のものが非常に多いことや、同じ行為を繰り返していることを表し、「〜だけ」「〜ばかり」という意味を表します。",
+      "longExplanation": "「名詞 ＋ ばかり」は、特定の物や出来事、行為が際立って多いことや、そればかりに偏っていることを表す副助詞です。「いつもそればかりしている」「それ以外にほとんどない」というニュアンスを含み、話し手の非難・不満・あきれなどの気持ちを込めて使われることが多くあります。名詞のほか、動詞て形に接続する「〜てばかりいる」も頻出します。",
+      "formation": "名詞 ＋ ばかり（動詞普通形・て形 ＋ ばかり／形容詞 ＋ ばかり）",
+      "examples": [
+        {
+          "translation": "彼はお金の話ばかりする。"
+        },
+        {
+          "translation": "彼女は勉強ばかりしている。"
+        },
+        {
+          "translation": "デパートには高い商品ばかりだ。"
+        },
+        {
+          "translation": "この部屋は狭いばかりだ。"
+        }
+      ]
+    },
+    "ja_Noun_12": {
+      "title": "名詞 ＋ をあげる (wo ageru)",
+      "shortExplanation": "話し手（または身内）が相手に対して物を与える授受表現で、「〜をあげる」「〜を与える」という意味を表します。",
+      "longExplanation": "「名詞 ＋ をあげる」は、話し手または身内の者が、対等な相手や目下の者（友人・後輩・子供・動植物など）に物を与える行為を表す授受動詞表現です。与える対象（相手）には助詞「に」、渡す物には助詞「を」を添えます。目上の人に対して物を与える際には「あげる」ではなく謙譲語の「差し上げる」を用います。",
+      "formation": "（相手 ＋ に）＋ 名詞 ＋ を ＋ あげる",
+      "examples": [
+        {
+          "translation": "プレゼントをあげる。"
+        },
+        {
+          "translation": "友達に花をあげた。"
+        },
+        {
+          "translation": "父に時計をあげます。"
+        },
+        {
+          "translation": "彼女に手紙をあげたい。"
+        }
+      ]
+    },
+    "ja_Nounをいただく_13": {
+      "title": "名詞 ＋ をいただく (wo itadaku)",
+      "shortExplanation": "「もらう」の謙譲語で、目上の人から物やアドバイスなどをいただく行為をへりくだって表し、「お受けする」「頂戴する」という意味を表します。",
+      "longExplanation": "「名詞 ＋ をいただく」は、受取の授受動詞「もらう」の謙譲語表現です。目上の人や社会的地位の高い人から物やアドバイス、恩恵などを受け取る際に、自分を低め相手への敬意や感謝を示すために用います。与え手には助詞「から」または「に」が接続します。また、「食べる」「飲む」の謙譲語としても広く用いられます。",
+      "formation": "（目上の人 ＋ から／に）＋ 名詞 ＋ を ＋ いただく",
+      "examples": [
+        {
+          "translation": "プレゼントをいただきありがとうございます。"
+        },
+        {
+          "translation": "先生からアドバイスをいただきました。"
+        },
+        {
+          "translation": "このコーヒーをいただいていいですか？"
+        },
+        {
+          "translation": "会社の上司に昇進のお知らせをいただきました。"
+        }
+      ]
+    }
+  }
+}

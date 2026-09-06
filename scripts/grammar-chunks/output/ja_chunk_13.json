@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Verb_44": {
+      "title": "～てほしい (～te hoshii)",
+      "shortExplanation": "Diễn tả mong muốn hoặc yêu cầu người khác làm việc gì cho mình hoặc vì lợi ích chung; 'muốn (ai đó) làm gì'.",
+      "longExplanation": "Mẫu ngữ pháp ～てほしい kết hợp động từ thể て với tính từ đuôi い ほしい (mang nghĩa mong muốn). Khác với ～たい (dùng khi bản thân người nói muốn tự làm gì), ～てほしい dùng để diễn đạt mong muốn người khác (ngôi thứ hai hoặc ngôi thứ ba) thực hiện một hành động nào đó. Đối tượng được mong đợi thực hiện hành động thường được đánh dấu bằng trợ từ に (hoặc có thể lược bỏ trong hội thoại thân mật). Dạng phủ định có hai cách nói: ～ないでほしい (mong ai đó đừng làm...) mang tính tự nhiên và phổ biến hơn, hoặc ～てほしくない (không muốn ai đó làm...). Vì thể hiện trực tiếp ý muốn cá nhân nên không nên dùng trực tiếp với người bề trên hoặc đối tác kinh doanh (thay vào đó nên dùng ～ていただきたい hoặc ～ていただけますか).",
+      "formation": "Động từ thể て + ほしい / Phủ định: Động từ thể ない + でほしい (hoặc thể て + ほしくない)",
+      "examples": [
+        {
+          "translation": "Tôi muốn con mình học hành chăm chỉ hơn."
+        },
+        {
+          "translation": "Tôi muốn anh ấy đến sớm hơn."
+        },
+        {
+          "translation": "Tôi muốn bạn tôi đọc cuốn sách đó."
+        },
+        {
+          "translation": "Tôi muốn giáo viên trả lời câu hỏi."
+        }
+      ]
+    },
+    "ja_Verb_45": {
+      "title": "～てみる (～te miru)",
+      "shortExplanation": "Diễn tả hành động làm thử một việc gì đó để xem kết quả, trải nghiệm ra sao; 'thử làm... xem sao'.",
+      "longExplanation": "Mẫu ngữ pháp ～てみる kết hợp động từ thể て với trợ động từ みる (bắt nguồn từ động từ 見る nhưng thường viết bằng chữ hiragana). Cấu trúc này biểu thị việc thực hiện một hành vi với tâm thế thử nghiệm, trải nghiệm lần đầu để xem kết quả ra sao hoặc để thăm dò tình hình. Trợ động từ みる sau đó có thể chia tiếp theo các thì và thể ngữ pháp khác, chẳng hạn như ～てみます (lịch sự), ～てみてください (xin hãy làm thử), ～てみたい (muốn làm thử), ～てみよう (hãy cùng thử làm).",
+      "formation": "Động từ thể て + みる",
+      "examples": [
+        {
+          "translation": "Tôi sẽ thử làm món ăn này xem sao."
+        },
+        {
+          "translation": "Xin hãy mặc thử bộ quần áo đó xem."
+        },
+        {
+          "translation": "Chúng ta cùng thử đến nhà hàng mới xem sao nhé."
+        },
+        {
+          "translation": "Tôi muốn xem thử bộ phim này."
+        }
+      ]
+    },
+    "ja_Verb_46": {
+      "title": "～てもらいたい (～te moraitai)",
+      "shortExplanation": "Bày tỏ nguyện vọng muốn được ai đó làm giúp việc gì cho mình; 'muốn được (ai đó) làm giúp', 'mong nhận được sự giúp đỡ'.",
+      "longExplanation": "Mẫu ngữ pháp ～てもらいたい kết hợp động từ thể て với もらいたい (thể mong muốn của trợ động từ もらう - nhận ơn huệ). Cấu trúc này dùng để diễn đạt mong muốn của người nói (hoặc người phe mình) được người khác thực hiện một hành động mang lại lợi ích cho mình. Người thực hiện hành động được đánh dấu bằng trợ từ に. So với ～てほしい (chỉ đơn thuần là muốn ai làm gì), ～てもらいたい nhấn mạnh hơn vào việc người nói là bên đón nhận ân huệ hay sự trợ giúp. Cấu trúc này thường dùng với bạn bè, đồng nghiệp hoặc người dưới; trong giao tiếp lịch sự với cấp trên hoặc khách hàng, người ta sử dụng thể khiêm nhường ～ていただきたい.",
+      "formation": "Động từ thể て + もらいたい (lịch sự: ～てもらいたいです / ～てもらいたいんですが)",
+      "examples": [
+        {
+          "translation": "Tôi muốn được bạn khiêng giúp hành lý này."
+        },
+        {
+          "translation": "Tôi muốn anh ấy báo tin đó cho tôi."
+        },
+        {
+          "translation": "Tôi muốn bạn dạy tiếng Nhật cho tôi."
+        },
+        {
+          "translation": "Tôi muốn nhân viên hướng dẫn cách làm thủ tục nhận phòng."
+        }
+      ]
+    },
+    "ja_Verb_47": {
+      "title": "～てもらう (～te morau)",
+      "shortExplanation": "Diễn tả việc người nói (hoặc người phe mình) nhận được hành động giúp đỡ, ân huệ từ người khác; 'được (ai đó) làm giúp', 'nhờ (ai đó) làm cho'.",
+      "longExplanation": "Mẫu ngữ pháp ～てもらう kết hợp động từ thể て với trợ động từ chỉ quan hệ cho nhận もらう (nhận). Cấu trúc này diễn tả việc chủ ngữ (thường là người nói hoặc người thuộc phe người nói) đón nhận một hành động mang lại lợi ích từ đối phương với tâm lý biết ơn. Trong câu, người đón nhận lợi ích là chủ ngữ (đi với は hoặc が), còn người thực hiện hành động được đánh dấu bằng trợ từ に. Dạng lịch sự là ～てもらいます / ～てもらいました. Mẫu câu này dùng trong quan hệ bạn bè, người thân hoặc người dưới; khi người làm ơn là bề trên thì chuyển sang dạng khiêm nhường ～ていただく.",
+      "formation": "Động từ thể て + もらう (lịch sự: ～てもらいます / ～てもらいました)",
+      "examples": [
+        {
+          "translation": "Tôi đã nhờ bạn giúp làm bài tập về nhà."
+        },
+        {
+          "translation": "Tôi đã được mẹ dọn phòng giúp."
+        },
+        {
+          "translation": "Tôi muốn nhờ anh ấy xách hành lý giúp."
+        },
+        {
+          "translation": "Thầy cô có thể giải đáp thắc mắc giúp em được không ạ?"
+        }
+      ]
+    },
+    "ja_Verb_48": {
+      "title": "～てもらえませんか (～te moraemasen ka)",
+      "shortExplanation": "Dùng để nhờ vả, yêu cầu ai đó làm giúp việc gì một cách lịch sự, nhã nhặn; 'anh/chị có thể làm ơn... giúp tôi được không?'.",
+      "longExplanation": "Mẫu câu ～てもらえませんか kết hợp động từ thể て với thể khả năng phủ định lịch sự nghi vấn của もらう (là もらえません + か). Nghĩa đen là 'Liệu tôi có thể nhận được hành động làm giúp... từ anh/chị không?'. Cấu trúc này dùng để đưa ra lời thỉnh cầu, nhờ vả một cách gián tiếp và lịch sự, tạo cơ hội cho đối phương dễ dàng từ chối nếu bất tiện. Mẫu này lịch sự hơn ～てください hay ～てくれませんか, thích hợp dùng với đồng nghiệp, người quen hoặc người ngoài. Khi muốn nhờ vả cấp trên hoặc đối tác kinh doanh với mức độ tôn kính cao nhất, người Nhật sẽ dùng ～ていただけませんか hoặc ～ていただけないでしょうか.",
+      "formation": "Động từ thể て + もらえませんか",
+      "examples": [
+        {
+          "translation": "Anh/chị có thể xem giúp tôi lá thư này được không ạ?"
+        },
+        {
+          "translation": "Anh/chị có thể xách giúp tôi hành lý được không ạ?"
+        },
+        {
+          "translation": "Bạn có thể dọn dẹp phòng giúp tôi được không?"
+        },
+        {
+          "translation": "Anh/chị có thể tham gia cuộc họp ngày mai giúp tôi được không ạ?"
+        }
+      ]
+    },
+    "ja_Verb_49": {
+      "title": "～ないことがある (～nai koto ga aru)",
+      "shortExplanation": "Diễn tả rằng thỉnh thoảng, đôi khi có những lúc một hành động hay sự việc không diễn ra; 'có khi không...', 'thỉnh thoảng không...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ないことがある kết hợp động từ thể phủ định (thể ない) với danh từ こと và trợ từ が theo sau bởi động từ ある. Cấu trúc này dùng để diễn đạt tính bất thường hoặc tần suất không tuyệt đối của một sự việc: nhìn chung thì sự việc đó thường xảy ra hoặc theo thói quen là có, nhưng đôi khi, có những trường hợp cá biệt lại không xảy ra. Thường hay đi kèm với các phó từ chỉ tần suất như ときどき (thỉnh thoảng), たまに (hiếm khi, đôi khi). Cần phân biệt với ～たことがない (chưa từng làm gì trong quá khứ).",
+      "formation": "Động từ thể ない + ことがある (lịch sự: ～ないことがあります)",
+      "examples": [
+        {
+          "translation": "Có đôi khi anh ấy không tham dự cuộc họp."
+        },
+        {
+          "translation": "Chuyến tàu này thỉnh thoảng không đến đúng giờ."
+        },
+        {
+          "translation": "Có những bữa sáng tôi không ăn gì."
+        },
+        {
+          "translation": "Thỉnh thoảng cô ấy không nghe điện thoại."
+        }
+      ]
+    },
+    "ja_Verb_50": {
+      "title": "～ないことにする (～nai koto ni suru)",
+      "shortExplanation": "Diễn tả quyết định chủ quan của bản thân là sẽ không làm một việc gì đó; 'quyết định không...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ないことにする kết hợp động từ thể phủ định (thể ない) với danh từ こと, trợ từ に và động từ する (làm). Cấu trúc này diễn tả một sự lựa chọn có ý thức, một quyết định chủ quan của người nói rằng mình sẽ kiềm chế, từ bỏ hoặc không thực hiện hành vi đó. Khi nói về quyết định vừa mới đưa ra, ta dùng ～ないことにする; khi nói về quyết định đã đưa ra trước đó và hiện tại đang tuân theo, ta thường dùng dạng quá khứ ～ないことにした hoặc lịch sự là ～ないことにしました.",
+      "formation": "Động từ thể ない + ことにする (quá khứ / thói quen: ～ないことにした / ～ないことにしました / ～ないことにしている)",
+      "examples": [
+        {
+          "translation": "Tôi quyết định sẽ không đi dự bữa tiệc ngày mai."
+        },
+        {
+          "translation": "Tôi quyết định sẽ không ăn chiếc bánh kem đó."
+        },
+        {
+          "translation": "Hôm nay tôi quyết định không chạy bộ nữa."
+        },
+        {
+          "translation": "Tôi đã quyết định không gặp anh ấy nữa."
+        }
+      ]
+    },
+    "ja_Verb_51": {
+      "title": "～ないことになる (～nai koto ni naru)",
+      "shortExplanation": "Diễn tả một sự việc, quy định hoặc kết quả được ấn định là sẽ không diễn ra do hoàn cảnh khách quan hoặc quyết định của tập thể; 'được quyết định là không...', 'hóa ra là không...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ないことになる kết hợp động từ thể phủ định (thể ない) với danh từ こと, trợ từ に và động từ なる (trở thành). Cấu trúc này diễn tả rằng một hành động sẽ không được thực hiện do ngoại cảnh, quyết định của tổ chức/người khác hoặc như một hệ quả tất yếu từ điều kiện nào đó, không phụ thuộc hoàn toàn vào ý chí cá nhân của người nói. Khi sự việc đã được quyết định hoặc trở thành quy ước, ta dùng ～ないことになった (được quyết định là không...). Khác với ～ないことにする (quyết định chủ quan của bản thân).",
+      "formation": "Động từ thể ない + ことになる (quá khứ / quy định: ～ないことになった / ～ないことになっています)",
+      "examples": [
+        {
+          "translation": "Nếu hôm nay anh ấy không đến thì kế hoạch của chúng tôi sẽ coi như bị hủy bỏ."
+        },
+        {
+          "translation": "Nếu dự án này không được triển khai tiếp thì đồng nghĩa với việc doanh thu sẽ sụt giảm."
+        },
+        {
+          "translation": "Nếu cô ấy không vượt qua kỳ thi thì việc tốt nghiệp sẽ bị hoãn lại."
+        },
+        {
+          "translation": "Nếu trời mưa thì buổi dã ngoại sẽ không được tổ chức."
+        }
+      ]
+    },
+    "ja_Verb_52": {
+      "title": "～ないほうがいい (～nai hou ga ii)",
+      "shortExplanation": "Đưa ra lời khuyên hoặc gợi ý đối phương không nên làm một việc gì đó; 'không nên...', 'tốt hơn là không nên...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ないほうがいい kết hợp động từ thể phủ định ngắn (thể ない) với danh từ ほう (phương hướng, phía) và tính từ いい (tốt). Cấu trúc này dùng để khuyên bảo, khuyến cáo hoặc gợi ý cho đối phương rằng tốt nhất là không nên thực hiện một hành động nào đó vì có thể dẫn đến kết quả bất lợi hoặc không mong muốn. Dạng lịch sự thường dùng là ～ないほうがいいです. Trái ngược với mẫu câu khuyên nên làm gì là ～たほうがいい (động từ thể た + ほうがいい; lưu ý rằng khi khuyên nên làm thì dùng thể た, còn khuyên không nên làm thì dùng thể ない).",
+      "formation": "Động từ thể ない + ほうがいい (lịch sự: ～ないほうがいいです)",
+      "examples": [
+        {
+          "translation": "Bạn không nên uống loại thuốc này."
+        },
+        {
+          "translation": "Khi đang vội thì tốt hơn là không nên chạy."
+        },
+        {
+          "translation": "Nếu không muốn anh ấy biết bí mật thì tốt nhất đừng nói ra."
+        },
+        {
+          "translation": "Vào ngày mưa thì không nên đi ra ngoài."
+        }
+      ]
+    },
+    "ja_Verb_53": {
+      "title": "～ながら (～nagara)",
+      "shortExplanation": "Diễn tả một chủ thể thực hiện đồng thời hai hành động cùng một lúc; 'vừa... vừa...'.",
+      "longExplanation": "Trợ từ liên kết ～ながら gắn vào thân động từ (thể ます bỏ ます) để biểu thị hai hành động diễn ra song song cùng một thời điểm. Quy tắc quan trọng của mẫu câu này gồm: (1) Cả hai hành động phải do cùng một chủ ngữ thực hiện; (2) Hành động đứng sau ながら là hành động chính (trọng tâm), còn hành động đứng trước ながら là hành động phụ, mang tính bổ trợ. Thì của cả câu do động từ chính ở cuối quyết định. Ngoài ra, ながら còn có cách dùng biểu thị ý nghĩa tương phản, nhượng bộ (tuy... nhưng...), nhưng cách dùng đồng thời là phổ biến nhất ở cấp độ sơ trung cấp.",
+      "formation": "Động từ thể ます (bỏ ます) + ながら",
+      "examples": [
+        {
+          "translation": "Tôi vừa xem tivi vừa làm bài tập về nhà."
+        },
+        {
+          "translation": "Tôi vừa nghe nhạc vừa nấu ăn."
+        },
+        {
+          "translation": "Vừa đi bộ vừa nhìn điện thoại thông minh là rất nguy hiểm."
+        },
+        {
+          "translation": "Anh ấy vừa nói chuyện vừa cười."
+        }
+      ]
+    },
+    "ja_Verb_54": {
+      "title": "～なさい (～nasai)",
+      "shortExplanation": "Mẫu câu mệnh lệnh nhẹ nhàng dùng khi người bề trên (cha mẹ, thầy cô) yêu cầu, chỉ thị cho người bề dưới thực hiện hành động; 'hãy...', 'mau... đi'.",
+      "longExplanation": "Đuôi mệnh lệnh ～なさい gắn vào thân động từ (thể ます bỏ ます) để đưa ra mệnh lệnh, yêu cầu hoặc chỉ thị trực tiếp. Về mặt ngữ pháp, nó bắt nguồn từ tôn kính ngữ なさい (dạng mệnh lệnh của なさる), do đó có âm hưởng lịch sự, chuẩn mực nhưng về bản chất vẫn là một mệnh lệnh mang tính áp đặt từ trên xuống dưới. Thường được sử dụng bởi: cha mẹ nhắc nhở con cái, giáo viên chỉ đạo học sinh, hoặc trong các đề thi, bài kiểm tra (hướng dẫn làm bài). Tuyệt đối không dùng đối với người bề trên, người ngang hàng hoặc đối tác.",
+      "formation": "Động từ thể ます (bỏ ます) + なさい",
+      "examples": [
+        {
+          "translation": "Hãy dọn phòng đi!"
+        },
+        {
+          "translation": "Học bài đi!"
+        },
+        {
+          "translation": "Mau dậy sớm đi!"
+        },
+        {
+          "translation": "Làm bài tập về nhà đi!"
+        }
+      ]
+    },
+    "ja_Verb_55": {
+      "title": "～にくい (～nikui)",
+      "shortExplanation": "Gắn vào thân động từ để diễn tả một hành động khó thực hiện hoặc một trạng thái khó xảy ra; 'khó...'.",
+      "longExplanation": "Hậu tố tính từ ～にくい gắn vào thân động từ (thể ます bỏ ます) để tạo thành một tính từ đuôi い phức hợp, mang nghĩa hành động đó khó thực hiện, đòi hỏi nhiều công sức, gây cảm giác bất tiện hoặc khó khăn về mặt vật lý, kỹ thuật hay tâm lý. Cụm từ sau khi kết hợp sẽ được chia như một tính từ đuôi い thông thường (ví dụ: 読みにくかった, 読みにくくない). Khác với ～づらい (thường nhấn mạnh vào cảm giác đau đớn, khó chịu về mặt cảm xúc hoặc cơ thể của người nói), ～にくい mang tính khách quan và phổ biến hơn, dùng cho cả đặc tính vật lý của sự vật lẫn hành vi con người.",
+      "formation": "Động từ thể ます (bỏ ます) + にくい",
+      "examples": [
+        {
+          "translation": "Chữ này rất khó đọc."
+        },
+        {
+          "translation": "Cánh cửa này rất khó mở."
+        },
+        {
+          "translation": "Chữ viết của anh ấy rất khó đọc."
+        },
+        {
+          "translation": "Món ăn này rất khó làm."
+        }
+      ]
+    },
+    "ja_Verb_56": {
+      "title": "～やすい (～yasui)",
+      "shortExplanation": "Gắn vào thân động từ để diễn tả một hành động dễ thực hiện hoặc một sự việc, trạng thái dễ xảy ra; 'dễ...'.",
+      "longExplanation": "Hậu tố tính từ ～やすい gắn vào thân động từ (thể ます bỏ ます) để tạo thành một tính từ đuôi い phức hợp, mang hai ý nghĩa chính: (1) Một hành động nào đó rất dễ dàng, thuận tiện để thực hiện nhờ vào đặc tính tốt của sự vật (ví dụ: sách dễ đọc, áo dễ mặc); (2) Một khuynh hướng, xu hướng dễ xảy ra sự biến đổi hoặc hiện tượng nào đó (thường là xu hướng tiêu cực như dễ bị hỏng, dễ bị cảm cúm). Sau khi kết hợp, từ này được chia như một tính từ đuôi い bình thường (ví dụ: 読みやすかった, 読みやすくない). Là cấu trúc trái nghĩa trực tiếp với ～にくい.",
+      "formation": "Động từ thể ます (bỏ ます) + やすい",
+      "examples": [
+        {
+          "translation": "Cuốn sách này rất dễ đọc."
+        },
+        {
+          "translation": "Chiếc áo sơ mi này mặc rất dễ chịu (dễ mặc)."
+        },
+        {
+          "translation": "Anh ấy là một người rất dễ gần, dễ bắt chuyện."
+        },
+        {
+          "translation": "Món ăn này rất dễ nấu."
+        }
+      ]
+    },
+    "ja_Verb_57": {
+      "title": "～ようと思う (～you to omou)",
+      "shortExplanation": "Bày tỏ ý định, dự định hoặc quyết tâm thực hiện một hành động nào đó trong tương lai; 'tôi định...', 'tôi nghĩ là tôi sẽ...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ようと思う kết hợp thể ý chí (ý hướng hình) của động từ với trợ từ と và động từ suy nghĩ 思う. Cấu trúc này dùng để diễn đạt dự định, ý muốn làm một việc gì đó của người nói. Cần chú ý sự khác biệt giữa hai dạng: (1) ～ようと思う diễn đạt ý định vừa mới nảy sinh tại thời điểm nói hoặc quyết tâm tức thời; (2) ～ようと思っている (dùng thể tiếp diễn) diễn đạt ý định đã được nung nấu từ trước và vẫn đang tiếp tục duy trì đến hiện tại. Dạng này có mức độ chắc chắn thấp hơn ～つもりだ và không dùng để nói về kế hoạch đã được ấn định chính thức (được thể hiện bằng ～予定だ).",
+      "formation": "Động từ thể ý chí (thể ý hướng) + と思う (hoặc と思っている / と思います)",
+      "examples": [
+        {
+          "translation": "Ngày mai tôi định sẽ xem phim."
+        },
+        {
+          "translation": "Cuối tuần này tôi dự định sẽ đi chơi với bạn bè."
+        },
+        {
+          "translation": "Tôi nghĩ mình sẽ cố gắng học hành chăm chỉ hơn."
+        },
+        {
+          "translation": "Năm tới tôi đang dự định đi du lịch nước ngoài."
+        }
+      ]
+    },
+    "ja_Verb_58": {
+      "title": "～ように (～you ni)",
+      "shortExplanation": "Diễn tả mục đích để đạt được một trạng thái mong muốn ('để...', 'để sao cho...') hoặc diễn tả sự so sánh, ví von ('như...', 'giống như...').",
+      "longExplanation": "Mẫu ngữ pháp ～ように là một cấu trúc đa chức năng trong tiếng Nhật với hai cách dùng phổ biến nhất: (1) Biểu thị mục đích (để...): Đứng trước ように thường là động từ không có ý chí (động từ chỉ khả năng, động từ chỉ trạng thái như 見える, 分かる, hoặc động từ thể phủ định ない), diễn tả hành động ở mệnh đề sau nhằm mục đích đạt được hoặc tránh khỏi trạng thái ở mệnh đề trước (khác với ～ために đi kèm động từ có ý chí); (2) Biểu thị sự ví von, so sánh (như..., giống như...): Đi cùng danh từ (Danh từ + のように) hoặc mệnh đề để so sánh đặc điểm, dáng vẻ của đối tượng với một hình ảnh khác. Ngoài ra, cuối câu ～ように(願う/祈る) còn dùng để cầu chúc hoặc diễn đạt mệnh lệnh gián tiếp.",
+      "formation": "Mục đích: Động từ thể từ điển / thể ない + ように | Ví von: Danh từ + のように / Động từ thể thông thường + ように",
+      "examples": [
+        {
+          "translation": "Cô ấy nhảy múa nhẹ nhàng uyển chuyển như một chú chim."
+        },
+        {
+          "translation": "Để không quên những điều đã học, chúng ta hãy ôn tập mỗi ngày nhé."
+        },
+        {
+          "translation": "Để có thể trở thành ca sĩ, tôi luyện hát mỗi ngày."
+        },
+        {
+          "translation": "Khi qua đường, hãy quan sát kỹ để tránh không có xe lao tới."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Verb_44": {
+      "title": "～てほしい (～te hoshii)",
+      "shortExplanation": "表达说话人希望他人做某事，相当于汉语的“希望（某人）做……”、“想让（某人）做……”。",
+      "longExplanation": "句型“～てほしい”由动词て形后接表示愿望的形容词“ほしい”构成。与表达说话人自身想做某事的“～たい”不同，“～てほしい”用于表达说话人希望对方或第三者实施某种动作。动作的执行者通常用格助词“に”表示（日常口语中常被省略）。其否定形式有两种：动词ない形接“でほしい”（希望不要……，口语中更常用）和动词て形接“ほしくない”（不想让……）。由于该句型直接坦率地表达主观愿望，一般用于对晚辈、同辈或家人等亲密关系，不宜直接对长辈、上级或客户使用，在商务及正式场合通常用更客气委婉的“～ていただきたい”或“～ていただけますか”代替。",
+      "formation": "动词て形 + ほしい / 否定形式：动词ない形 + でほしい（或动词て形 + ほしくない）",
+      "examples": [
+        {
+          "translation": "我希望孩子能更加用功读书。"
+        },
+        {
+          "translation": "我希望他能来得更早一些。"
+        },
+        {
+          "translation": "我希望朋友能读一读那本书。"
+        },
+        {
+          "translation": "我希望老师能回答这个问题。"
+        }
+      ]
+    },
+    "ja_Verb_45": {
+      "title": "～てみる (～te miru)",
+      "shortExplanation": "表示试着做某事以观察其结果或获取经验，相当于汉语的“试着……看”、“尝尝看”。",
+      "longExplanation": "句型“～てみる”由动词て形后接补助动词“みる”（源自“見る”，通常用平假名书写）构成。用于表达抱着尝试、体验的心态去做某事，以确认其结果、感受或情况如何。补助动词“みる”在句中可以像普通动词一样进行各种活用，例如接表示敬体的“～てみます”、表示请求的“～てみてください”、表示愿望的“～てみたい”以及表示提议劝诱的“～てみよう”等。",
+      "formation": "动词て形 + みる",
+      "examples": [
+        {
+          "translation": "我打算试着做一下这道菜。"
+        },
+        {
+          "translation": "请试穿一下那件衣服吧。"
+        },
+        {
+          "translation": "我们去那家新开的餐厅试试看吧。"
+        },
+        {
+          "translation": "我想试着看一看这部电影。"
+        }
+      ]
+    },
+    "ja_Verb_46": {
+      "title": "～てもらいたい (～te moraitai)",
+      "shortExplanation": "表达希望获得他人为自己做某事的好意或帮助，相当于汉语的“希望得到……的帮助”、“想请（某人）为我做……”。",
+      "longExplanation": "句型“～てもらいたい”由动词て形后接授受补助动词“もらう”的愿望形“もらいたい”构成。用于表达说话人希望从他人那里获得某种动作恩惠或行为帮助的心愿。动作的实施者通常由补语助词“に”表示。与单纯表示希望对方做某事的“～てほしい”相比，“～てもらいたい”更加突出了说话人作为受益者的视角（希望“领受”对方的好意）。该句型多用于平辈、熟人或晚辈之间；若面对上级、长辈或商务客户时，应改用更具敬意和自谦色彩的“～ていただきたい”。",
+      "formation": "动词て形 + もらいたい（敬体：～てもらいたいです / ～てもらいたいんですが）",
+      "examples": [
+        {
+          "translation": "我想请人帮我把这件行李搬一下。"
+        },
+        {
+          "translation": "我希望他能把那个消息告诉我。"
+        },
+        {
+          "translation": "我想让朋友教我日语。"
+        },
+        {
+          "translation": "我希望工作人员能为我说明一下办理入住的方法。"
+        }
+      ]
+    },
+    "ja_Verb_47": {
+      "title": "～てもらう (～te morau)",
+      "shortExplanation": "表示请他人为自己做某事，或得到他人动作上的恩惠与帮助；相当于汉语的“请（某人）帮忙做……”、“得到……的帮助”。",
+      "longExplanation": "句型“～てもらう”由动词て形后接授受补助动词“もらう”（领受、得到）构成。用于描述主语（通常是说话人或己方人员）接受他人所实施的对自身有益的动作，并带有一种感激之情。在此句式中，承受恩惠的主体作主语（用“は”或“が”表示），而实施具体动作的施事者则用格助词“に”来标示。敬体形式为“～てもらいます”或过去式“～てもらいました”。该句型适用于同辈、朋友或晚辈；若给予帮助者为长辈或上级，则须改用自谦语“～ていただく”。",
+      "formation": "动词て形 + もらう（敬体：～てもらいます / ～てもらいました）",
+      "examples": [
+        {
+          "translation": "我请朋友帮我一起辅导了作业。"
+        },
+        {
+          "translation": "妈妈帮我把房间打扫干净了。"
+        },
+        {
+          "translation": "我想让他帮我拿一下行李。"
+        },
+        {
+          "translation": "老师能帮我解答一下疑问吗？"
+        }
+      ]
+    },
+    "ja_Verb_48": {
+      "title": "～てもらえませんか (～te moraemasen ka)",
+      "shortExplanation": "委婉而礼貌地提出请求，请对方为自己做某事；相当于汉语的“能请您帮我……吗？”、“可以帮我……吗？”。",
+      "longExplanation": "句型“～てもらえませんか”由动词て形后接授受动词“もらう”的可能形否定敬体疑问式（即“もらえません”加疑问终助词“か”）构成。字面含义为“我能否领受到您……的帮助呢？”。通过否定疑问的形式，将选择权交由对方，使请求显得极为委婉含蓄，毫无强加之感。其客气程度高于“～てください”和“～てくれませんか”，广泛适用于向同事、熟人或外部人士提出委托。若面对上级长辈或尊贵客户，则需要进一步升级为自谦语“～ていただけませんか”或“～ていただけないでしょうか”。",
+      "formation": "动词て形 + もらえませんか",
+      "examples": [
+        {
+          "translation": "能请您帮我看一下这封信吗？"
+        },
+        {
+          "translation": "可以帮我拿一下行李吗？"
+        },
+        {
+          "translation": "能帮我打扫一下房间吗？"
+        },
+        {
+          "translation": "您明天能帮我参加一下会议吗？"
+        }
+      ]
+    },
+    "ja_Verb_49": {
+      "title": "～ないことがある (～nai koto ga aru)",
+      "shortExplanation": "表示平时普遍发生的事情，有时或偶尔也会出现不发生的情况；相当于汉语的“有时不……”、“也有不……的时候”。",
+      "longExplanation": "句型“～ないことがある”由动词否定形（ない形）后接形式名词“こと”、主格助词“が”及存在动词“ある”构成。用于说明某种惯常发生或理应如此的状态并非百分之百绝对，偶尔、有时会出现不进行该动作或不发生该现象的情况。句中常与“たまに（偶尔）”、“ときどき（有时）”等表示频率的副词搭配使用。需要注意将其与表示缺乏某种经历的“～たことがない（从未……过）”区分开来。",
+      "formation": "动词ない形 + ことがある（敬体：～ないことがあります）",
+      "examples": [
+        {
+          "translation": "有时他不会出席会议。"
+        },
+        {
+          "translation": "这趟电车有时不会准点到达。"
+        },
+        {
+          "translation": "我有时是不吃早饭的。"
+        },
+        {
+          "translation": "她有时会不接电话。"
+        }
+      ]
+    },
+    "ja_Verb_50": {
+      "title": "～ないことにする (～nai koto ni suru)",
+      "shortExplanation": "表示说话人自身主观决定不做某事；相当于汉语的“决定不……”、“决定不去……”。",
+      "longExplanation": "句型“～ないことにする”由动词否定形（ない形）后接“ことにする”构成。用于表达动作主体经过主观权衡思考后，自主做出了不实施某种行为的明确决断。若表示已经作出了该项决定，常用过去式“～ないことにした”或敬体“～ないことにしました”；若表示将不进行某事作为长期坚持的个人原则或生活习惯，则使用“～ないことにしている”。与表示客观决定或规定结果的“～ないことになる”存在本质区别。",
+      "formation": "动词ない形 + ことにする（过去式：～ないことにした / ～ないことにしました；习惯：～ないことにしている）",
+      "examples": [
+        {
+          "translation": "我决定明天不去参加聚会了。"
+        },
+        {
+          "translation": "我决定不吃那块蛋糕了。"
+        },
+        {
+          "translation": "我决定今天不去慢跑了。"
+        },
+        {
+          "translation": "我决定不再跟他见面了。"
+        }
+      ]
+    },
+    "ja_Verb_51": {
+      "title": "～ないことになる (～nai koto ni naru)",
+      "shortExplanation": "表示因客观环境、外部规章、集体决议或推论结果而导致某事不会发生；相当于汉语的“决定不……”、“结果变成不……”、“意味着不……”。",
+      "longExplanation": "句型“～ないことになる”由动词否定形（ない形）后接“ことになる”构成。用于表达某种行为不被执行或某事不发生，是由客观形势的变化、集体或上级的决定、既定的规则制度所促成的，并非出于说话人个人的主观意志。此外，也常用于根据前项假设推导出的必然逻辑结论（“这就意味着……”）。若表示既定的客观决议或既成事实，常用过去式“～ないことになった”；若表示长期规章制度，则用“～ないことになっている”。",
+      "formation": "动词ない形 + ことになる（既定决议：～ないことになった；固定规则：～ないことになっている）",
+      "examples": [
+        {
+          "translation": "如果今天他不来的话，我们的计划就不得不取消了。"
+        },
+        {
+          "translation": "如果这个项目无法顺利推进的话，收益恐怕就会随之减少。"
+        },
+        {
+          "translation": "如果她没能通过考试的话，毕业就会被推迟。"
+        },
+        {
+          "translation": "要是下雨的话，野餐大概就举行不成了吧。"
+        }
+      ]
+    },
+    "ja_Verb_52": {
+      "title": "～ないほうがいい (～nai hou ga ii)",
+      "shortExplanation": "用于向对方提出劝告或建议，表示最好不要做某事；相当于汉语的“最好不要……”、“还是不……为好”。",
+      "longExplanation": "句型“～ないほうがいい”由动词否定形（ない形）后接形式名词“ほう”及形容词“いい”构成。用于向对方提出忠告、建议或提醒，指出不做某行为是更为明智、妥当的选择，否则可能会引发不良后果或造成麻烦。口语中常接“です”构成礼貌表达“～ないほうがいいです”。与之相对的正面建议句型为“～たほうがいい”（动词た形 + ほうがいい；特别需要注意：肯定建议通常使用た形，而否定建议则必须使用ない形）。",
+      "formation": "动词ない形 + ほうがいい（敬体：～ないほうがいいです）",
+      "examples": [
+        {
+          "translation": "最好不要吃这种药。"
+        },
+        {
+          "translation": "着急的时候，最好还是不要跑。"
+        },
+        {
+          "translation": "如果不想被他知道秘密的话，最好什么都别说。"
+        },
+        {
+          "translation": "下雨天最好不要出门。"
+        }
+      ]
+    },
+    "ja_Verb_53": {
+      "title": "～ながら (～nagara)",
+      "shortExplanation": "表示同一个主体同时进行两个动作，相当于汉语的“一边……一边……”、“边……边……”。",
+      "longExplanation": "接续助词“～ながら”接在动词连用形（即ます形去掉ます）之后，用于表示同一动作主体在同一时间内同时进行两项活动。使用该句型时需要注意两个核心原则：①两个动作的施事主体必须是同一个人；②句子的重心在后项动作，“ながら”前面的动作通常是附带的、次要的伴随动作，后面的动作才是主要的中心动作。整句话的时态由最后的主动词决定。此外，“ながら”在较高级别中还可表示逆接让步转折（相当于“虽然……但是……”），但初中级阶段主要以表示同时进行为主。",
+      "formation": "动词连用形（ます形去ます）+ ながら",
+      "examples": [
+        {
+          "translation": "我一边看电视一边做作业。"
+        },
+        {
+          "translation": "我一边听音乐一边做饭。"
+        },
+        {
+          "translation": "边走路边看手机是很危险的。"
+        },
+        {
+          "translation": "他一边说着话一边在笑。"
+        }
+      ]
+    },
+    "ja_Verb_54": {
+      "title": "～なさい (～nasai)",
+      "shortExplanation": "长辈或权威者对晚辈、下级发出命令、指示或要求，相当于汉语的“请……（命令口气）”、“快……吧”。",
+      "longExplanation": "命令句尾“～なさい”接在动词连用形（即ます形去掉ます）之后，用于向对方发出命令、指示或督促。它起源于尊敬语“なさる”的命令形式，因此听起来措辞端庄、语气规范，但其实质依然属于上对下的强制性指令。常见使用场合包括：父母对子女的叮嘱督促、老师对学生的课堂指令，以及各种试卷上的答题指导（如“写出正确的答案”）。口语亲切交流中常缩略为“～な”（如“聞きな”）。绝对不可用于对长辈、上级或平辈同僚。",
+      "formation": "动词连用形（ます形去ます）+ なさい",
+      "examples": [
+        {
+          "translation": "快去把房间打扫干净！"
+        },
+        {
+          "translation": "快去学习！"
+        },
+        {
+          "translation": "快点起床！"
+        },
+        {
+          "translation": "快做作业！"
+        }
+      ]
+    },
+    "ja_Verb_55": {
+      "title": "～にくい (～nikui)",
+      "shortExplanation": "接在动词连用形后，表示某动作难以进行或某事态不易发生；相当于汉语的“难以……”、“难于……”。",
+      "longExplanation": "接尾词“～にくい”接在动词连用形（即ます形去掉ます）之后，构成复合一类形容词（い形容词），表示某种动作做起来十分困难、费力，或者某种现象不容易出现。结合后的词语完全按照い形容词的规则进行活用（如否定形式“～にくくない”、过去形式“～にくかった”等）。与侧重于生理或心理痛苦不适的“～づらい”相比，“～にくい”多从客观能力、客观属性或事物本身的物理特征出发，表达普遍意义上的“难以实现”。其反义句型为“～やすい（容易……）”。",
+      "formation": "动词连用形（ます形去ます）+ にくい",
+      "examples": [
+        {
+          "translation": "这个字很难读。"
+        },
+        {
+          "translation": "这扇门很难打开。"
+        },
+        {
+          "translation": "他的字迹很难辨认。"
+        },
+        {
+          "translation": "这道菜做起来很麻烦（很难做）。"
+        }
+      ]
+    },
+    "ja_Verb_56": {
+      "title": "～やすい (～yasui)",
+      "shortExplanation": "接在动词连用形后，表示某动作做起来容易，或某事态容易发生；相当于汉语的“容易……”、“好……”。",
+      "longExplanation": "接尾词“～やすい”接在动词连用形（即ます形去掉ます）之后，构成复合一类形容词（い形容词）。主要包含两种核心语意：①某动作做起来十分容易、顺手或方便（如“读起来很容易”、“很耐穿”）；②具有容易发生某种变化或倾向的特性（多用于“容易感冒”、“容易损坏”等消极倾向）。复合后的词语按照普通い形容词的规则进行活用（如“～やすかった”、“～やすくない”等）。此句型与“～にくい（难以……）”形成鲜明的反义对照。",
+      "formation": "动词连用形（ます形去ます）+ やすい",
+      "examples": [
+        {
+          "translation": "这本书很好读（很容易读懂）。"
+        },
+        {
+          "translation": "这件衬衫穿起来很舒服（很好穿）。"
+        },
+        {
+          "translation": "他是一个很好相处（很好说话）的人。"
+        },
+        {
+          "translation": "这道菜做起来很容易。"
+        }
+      ]
+    },
+    "ja_Verb_57": {
+      "title": "～ようと思う (～you to omou)",
+      "shortExplanation": "表达说话人打算或决意要做某事；相当于汉语的“我想……”、“我打算……”、“我正琢磨着……”。",
+      "longExplanation": "句型“～ようと思う”由动词意志形（意向形）后接引用助词“と”及动词“思う”构成。用于向对方陈述自己未来的意图、打算或行动计划。在实际运用中需要区分两种时态表现：①“～ようと思う”通常表示说话人在说话当时刚刚萌生的打算或决意；②而进行时态“～ようと思っている”则表示这一想法由来已久，此前早已考虑并一直持续至今。与表示坚定计划的“～つもりだ”相比，“～ようと思う”语感更为柔和委婉，给听者留有商量或调整的余地；若指已有确定日期的既定日程安排，则使用“～予定だ”。",
+      "formation": "动词意志形（意向形）+ と思う（持续意图：～ようと思っている；敬体：～ようと思います）",
+      "examples": [
+        {
+          "translation": "我想明天去看场电影。"
+        },
+        {
+          "translation": "我打算周末和朋友一起出去玩。"
+        },
+        {
+          "translation": "我觉得自己应该更加努力学习。"
+        },
+        {
+          "translation": "我打算明年去国外旅游。"
+        }
+      ]
+    },
+    "ja_Verb_58": {
+      "title": "～ように (～you ni)",
+      "shortExplanation": "表示为了达到某种预期状态或目的（“为了……”、“以便……”），或用于比喻描绘（“像……一样”）。",
+      "longExplanation": "句型“～ように”是日语中极具实用价值的多功能句型，其核心用法主要体现在以下两个方面：①表示目的（相当于汉语的“为了能……”、“以便……”）：前项多接无意志动词（如可能动词、状态动词“見える、聞こえる、分かる”或动词否定形“ない形”），后项采取积极行动以促成前项状态的实现或避免不良结果，与接意志动词表示直接目的的“～ために”形成互补；②表示比喻或比拟（相当于汉语的“像……一样”）：接在名词（名词 + のように）或修饰从句后，生动形象地比喻某种神态、动作或性质。此外在句末还可用作祈愿祝福或间接指示命令。",
+      "formation": "目的用法：动词字典形（原形）/ ない形 + ように ； 比喻用法：名词 + のように / 动词普通形 + ように",
+      "examples": [
+        {
+          "translation": "她像小鸟一样轻盈地起舞。"
+        },
+        {
+          "translation": "为了不忘掉所学的内容，每天都复习一下吧。"
+        },
+        {
+          "translation": "为了能成为歌手，我每天都在练习唱歌。"
+        },
+        {
+          "translation": "过马路时，请确认一下有没有车开过来。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Verb_44": {
+      "title": "～てほしい (～te hoshii)",
+      "shortExplanation": "말하는 사람이 다른 사람에게 어떤 행동을 해 주기를 바라는 마음을 나타내며, '~해 주면 좋겠다', '~하기를 바란다'의 뜻입니다.",
+      "longExplanation": "'～てほしい' 문형은 동사의 て형에 희망을 나타내는 형용사 'ほしい'가 결합한 형태로, 다른 사람(청자 또는 제3자)이 어떤 동작을 수행해 주기를 바라는 화자의 소망을 나타냅니다. 화자 자신이 직접 무언가를 하고 싶을 때 쓰는 '～たい'와 대조됩니다. 동작을 행하는 주체는 주로 조사 'に'로 나타내며, 친한 사이의 회화에서는 조사가 생략되기도 합니다. 부정형에는 '～ないでほしい(~하지 말아 주면 좋겠다, 보다 일반적)'와 '～てほしくない(~해 주지 않았으면 좋겠다)'의 두 가지가 있습니다. 자신의 직접적인 욕구를 솔직하게 전달하는 표현이므로 손윗사람이나 비즈니스 상대에게 직접 쓰기에는 적절하지 않으며, 그러한 경우에는 '～ていただきたい'나 '～ていただけますか'와 같은 공손한 표현을 사용합니다.",
+      "formation": "동사 て형 + ほしい / 부정형: 동사 ない형 + でほしい (또는 동사 て형 + ほしくない)",
+      "examples": [
+        {
+          "translation": "아이가 공부를 더 열심히 해 주면 좋겠다."
+        },
+        {
+          "translation": "그가 좀 더 일찍 와 주면 좋겠다."
+        },
+        {
+          "translation": "친구가 그 책을 읽어 주었으면 좋겠다."
+        },
+        {
+          "translation": "선생님께서 질문에 대답해 주셨으면 좋겠다."
+        }
+      ]
+    },
+    "ja_Verb_45": {
+      "title": "～てみる (～te miru)",
+      "shortExplanation": "어떤 행동을 시험 삼아 해 보거나 결과를 알아보기 위해 시도함을 나타내며, '~해 보다'의 뜻입니다.",
+      "longExplanation": "'～てみる' 문형은 동사의 て형에 보조동사 'みる'(동사 見る에서 유래하였으나 일반적으로 히라가나로 표기)가 결합한 표현입니다. 어떤 일이나 행위를 시험 삼아 시도해 보거나, 해 본 뒤에 어떤 결과나 느낌이 드는지 알아보고자 할 때 사용합니다. 한국어의 '~해 보다'에 완벽히 대응합니다. 뒤의 'みる'는 일반 2그룹(1단) 동사와 마찬가지로 다양하게 활용되어, 정중한 권유의 '～てみてください(해 보세요)', 희망의 '～てみたい(해 보고 싶다)', 청유의 '～てみよう(해 보자)' 등으로 널리 쓰입니다.",
+      "formation": "동사 て형 + みる",
+      "examples": [
+        {
+          "translation": "이 요리를 한번 만들어 보겠습니다."
+        },
+        {
+          "translation": "그 옷을 한번 입어 보세요."
+        },
+        {
+          "translation": "새로 생긴 식당에 한번 가 보자."
+        },
+        {
+          "translation": "영화를 한번 보고 싶습니다."
+        }
+      ]
+    },
+    "ja_Verb_46": {
+      "title": "～てもらいたい (～te moraitai)",
+      "shortExplanation": "다른 사람으로부터 어떤 호의나 도움의 행위를 받고 싶다는 바람을 나타내며, '~해 주었으면 좋겠다', '~해 줬으면 한다'의 뜻입니다.",
+      "longExplanation": "'～てもらいたい' 문형은 동사의 て형에 수수 보조동사 'もらう(받다)'의 희망형인 'もらいたい'가 결합한 표현입니다. 말하는 사람이 다른 사람으로부터 자신에게 도움이 되는 행위를 받기를 희망할 때 사용합니다. 행동을 해 주는 주체는 조사 'に'로 나타냅니다. 단순히 상대방의 행동을 바라는 '～てほしい'에 비해, 화자가 수혜자로서 은혜나 도움을 '받고 싶다'는 어감이 더 강하게 드러납니다. 친한 사이나 동년배, 아랫사람에게 주로 쓰이며, 상사나 손윗사람, 비즈니스 관계에서는 겸양 표현인 '～ていただきたい'를 사용하는 것이 예의에 맞습니다.",
+      "formation": "동사 て형 + もらいたい (정중형: ～てもらいたいです / ～てもらいたいんですが)",
+      "examples": [
+        {
+          "translation": "이 짐을 좀 옮겨 주셨으면 좋겠습니다."
+        },
+        {
+          "translation": "그가 그 소식을 알려 주었으면 좋겠다."
+        },
+        {
+          "translation": "친구가 일본어를 가르쳐 주었으면 좋겠다."
+        },
+        {
+          "translation": "직원이 체크인 방법을 설명해 주었으면 좋겠습니다."
+        }
+      ]
+    },
+    "ja_Verb_47": {
+      "title": "～てもらう (～te morau)",
+      "shortExplanation": "남에게 부탁하여 어떤 행위를 받거나, 다른 사람의 호의와 도움을 받는 것을 나타내며, '~해 받다', '~가 ~해 주다'의 뜻입니다.",
+      "longExplanation": "'～てもらう' 문형은 동사의 て형에 수수 보조동사 'もらう(받다)'가 결합한 표현입니다. 주어(화자 또는 화자 측 인물)가 상대방에게 어떤 행위를 부탁하거나 상대방의 호의에 의해 유익한 행위를 은혜로서 '받음'을 나타냅니다. 이 구문에서 혜택을 받는 사람(화자)이 주어로 쓰이고, 실제 행위를 해 주는 사람은 격조사 'に'로 표시됩니다. 정중형은 '～てもらいます / ～てもらいました'입니다. 친한 사람, 동년배, 아랫사람의 행위에 대해 사용하며, 행위를 해 주는 사람이 상사나 손윗사람일 때는 겸양어인 '～ていただく'를 써야 합니다.",
+      "formation": "동사 て형 + もらう (정중형: ～てもらいます / ～てもらいました)",
+      "examples": [
+        {
+          "translation": "친구에게 숙제를 도움받았다(친구가 숙제를 도와주었다)."
+        },
+        {
+          "translation": "어머니께서 방을 청소해 주셨습니다."
+        },
+        {
+          "translation": "그가 짐을 들어 주었으면 좋겠다."
+        },
+        {
+          "translation": "선생님께서 질문에 대답해 주실 수 있나요?"
+        }
+      ]
+    },
+    "ja_Verb_48": {
+      "title": "～てもらえませんか (～te moraemasen ka)",
+      "shortExplanation": "상대방에게 어떤 일을 해 달라고 정중하고 완곡하게 부탁할 때 쓰이며, '~해 주실 수 없나요?', '~해 주시겠어요?'의 뜻입니다.",
+      "longExplanation": "'～てもらえませんか' 문형은 동사의 て형에 수수 보조동사 'もらう'의 가능 부정 정중 의문형인 'もらえませんか'가 결합한 표현입니다. 직역하면 '제가 ~해 받음을 받을 수 없을까요?'라는 뜻으로, 상대방에게 부담을 주지 않으면서 완곡하게 호의나 조력을 청하는 공손한 의뢰 표현입니다. '～てください'나 '～てくれませんか'보다 상대방에 대한 배려와 예의가 깃든 표현으로, 직장 동료, 지인, 이웃 등에게 널리 사용됩니다. 상사나 손윗사람 등 각별한 예우가 필요한 상황에서는 겸양 표현인 '～ていただけませんか'나 '～ていただけないでしょうか'를 사용합니다.",
+      "formation": "동사 て형 + もらえませんか",
+      "examples": [
+        {
+          "translation": "이 편지를 좀 봐 주실 수 있나요?"
+        },
+        {
+          "translation": "짐 좀 들어 주실 수 있나요?"
+        },
+        {
+          "translation": "방 청소 좀 해 주실 수 있나요?"
+        },
+        {
+          "translation": "내일 회의에 대신 참석해 주실 수 있나요?"
+        }
+      ]
+    },
+    "ja_Verb_49": {
+      "title": "～ないことがある (～nai koto ga aru)",
+      "shortExplanation": "평소에는 대체로 그러하지만, 때로는 어떤 행동이나 일이 일어나지 않을 때도 있음을 나타내며, '가끔 ~하지 않을 때가 있다'의 뜻입니다.",
+      "longExplanation": "'～ないことがある' 문형은 동사의 부정형(ない형)에 명사 'こと(일, 것)', 주격 조사 'が', 존재동사 'ある(있다)'가 결합한 표현입니다. 통상적으로 일어나는 규칙적인 일이나 습관에 대해, 예외적으로 또는 가끔씩 그 행동을 하지 않거나 상황이 발생하지 않는 경우가 있음을 나타냅니다. 'たまに(가끔)', 'ときどき(때때로)'와 같은 빈도 부사와 함께 자주 쓰입니다. 과거의 경험 유무를 나타내는 '～たことがない(~한 적이 없다)'와 혼동하지 않도록 주의해야 합니다.",
+      "formation": "동사 ない형 + ことがある (정중형: ～ないことがあります)",
+      "examples": [
+        {
+          "translation": "그는 회의에 참석하지 않을 때가 있다."
+        },
+        {
+          "translation": "이 전철은 제시간에 오지 않을 때가 있다."
+        },
+        {
+          "translation": "나는 아침밥을 먹지 않을 때가 있다."
+        },
+        {
+          "translation": "그녀는 전화를 받지 않을 때가 있다."
+        }
+      ]
+    },
+    "ja_Verb_50": {
+      "title": "～ないことにする (～nai koto ni suru)",
+      "shortExplanation": "말하는 사람 자신이 스스로 판단하여 어떤 행동을 하지 않기로 주관적으로 결정함을 나타내며, '~하지 않기로 하다'의 뜻입니다.",
+      "longExplanation": "'～ないことにする' 문형은 동사의 부정형(ない형)에 'ことにする(하기로 하다)'가 결합한 표현입니다. 화자가 자신의 주관적인 의지나 판단에 따라 어떤 행동을 하지 않겠다고 능동적으로 결정했음을 나타냅니다. 이미 결정이 내려진 상태를 나타낼 때는 과거형 '～ないことにした'나 정중형 '～ないことにしました'를 쓰며, 그 결정을 습관이나 규칙처럼 꾸준히 지켜나가는 상태일 때는 '～ないことにしている'을 사용합니다. 외부의 사정이나 규칙에 의해 결정되는 객관적 결과를 나타내는 '～ないことになる'과 명확히 구분됩니다.",
+      "formation": "동사 ない형 + ことにする (과거형: ～ないことにした / ～ないことにしました; 습관: ～ないことにしている)",
+      "examples": [
+        {
+          "translation": "내일 파티에는 가지 않기로 하겠다."
+        },
+        {
+          "translation": "그 케이크는 먹지 않기로 하겠습니다."
+        },
+        {
+          "translation": "오늘은 조깅을 하지 않기로 하겠다."
+        },
+        {
+          "translation": "그 사람과는 만나지 않기로 했습니다."
+        }
+      ]
+    },
+    "ja_Verb_51": {
+      "title": "～ないことになる (～nai koto ni naru)",
+      "shortExplanation": "외부의 상황, 규칙, 타인의 결정 등에 의해 어떤 행동을 하지 않게 되거나 결과적으로 그렇게 되지 않음을 나타내며, '~하지 않게 되다', '~하지 않는 것으로 되다'의 뜻입니다.",
+      "longExplanation": "'～ないことになる' 문형은 동사의 부정형(ない형)에 'ことになる(~하게 되다)'가 결합한 표현입니다. 화자 개인의 주관적인 의지가 아니라, 주위의 객관적 상황, 사회적 규칙, 단체나 타인의 결정 등에 의해 어떤 일을 하지 않는 결론에 도달함을 나타냅니다. 또한 논리적인 전개상 '~하지 않는 결과가 된다'는 의미로도 쓰입니다. 이미 그렇게 결정된 객관적 사실을 전할 때는 '～ないことになった'를 사용하고, 규칙이나 방침으로 정해져 있을 때는 '～ないことになっている'을 사용합니다. 주관적 의지를 나타내는 '～ないことにする'과 구별됩니다.",
+      "formation": "동사 ない형 + ことになる (기정 사실: ～ないことになった / ～ないことになりました; 규칙: ～ないことになっている)",
+      "examples": [
+        {
+          "translation": "오늘 그가 오지 않게 된다면 우리 일정은 취소됩니다."
+        },
+        {
+          "translation": "이 프로젝트가 진행되지 않게 된다면 수익이 줄어들게 될 것입니다."
+        },
+        {
+          "translation": "그녀가 시험에 합격하지 못하게 된다면 졸업이 늦어지게 됩니다."
+        },
+        {
+          "translation": "비가 오면 소풍은 열리지 않게 될 것입니다."
+        }
+      ]
+    },
+    "ja_Verb_52": {
+      "title": "～ないほうがいい (～nai hou ga ii)",
+      "shortExplanation": "상대방에게 어떤 행동을 하지 않는 것이 더 바람직하다고 조언하거나 충고할 때 쓰이며, '~하지 않는 편이 좋다'의 뜻입니다.",
+      "longExplanation": "'～ないほうがいい' 문형은 동사의 부정형(ない형)에 비교의 기준을 나타내는 형식명사 'ほう(편, 쪽)'와 형용사 'いい(좋다)'가 결합한 표현입니다. 상대방에게 어떤 행위를 하지 않는 것이 바람직하며, 만약 행할 경우 좋지 않은 결과가 생길 수 있음을 완곡하게 충고하거나 조언할 때 사용합니다. 정중형은 '～ないほうがいいです'입니다. 긍정적인 행동을 권유하는 표현은 '～たほうがいい(동사 た형 + ほうがいい)'이며, 긍정 권유 시에는 과거형인 た형을 쓰는 반면, 부정 권유 시에는 부정형인 ない형을 사용한다는 점에 주의해야 합니다.",
+      "formation": "동사 ない형 + ほうがいい (정중형: ～ないほうがいいです)",
+      "examples": [
+        {
+          "translation": "이 약은 먹지 않는 편이 좋습니다."
+        },
+        {
+          "translation": "서두를 때는 뛰지 않는 편이 좋다."
+        },
+        {
+          "translation": "그 사람에게 비밀을 들키고 싶지 않다면 말하지 않는 편이 좋다."
+        },
+        {
+          "translation": "비 오는 날에는 외출하지 않는 편이 좋다."
+        }
+      ]
+    },
+    "ja_Verb_53": {
+      "title": "～ながら (～nagara)",
+      "shortExplanation": "동일한 주어가 두 가지 동작을 동시에 병행하여 행함을 나타내며, '~하면서'의 뜻입니다.",
+      "longExplanation": "'～ながら'는 동사의 연용형(ます형 어간)에 접속하는 접속조사로, 한 주체가 두 가지 이상의 동작을 동시에 행하고 있음을 나타냅니다. 한국어의 '~하면서'에 대응합니다. 이 문형에는 중요한 두 가지 규칙이 있습니다: ① 앞뒤 동작의 주어가 반드시 동일 인물이어야 합니다; ② 문장의 중점은 앞부분이 아니라 뒤에 오는 주동사에 있습니다(즉, '～ながら' 앞의 동작은 부차적인 동작이고, 뒤의 동작이 핵심 동작입니다). 전체 문장의 시제는 문말의 주동사에 의해 결정됩니다. 한편, 고급 문법에서는 역접·양보(~임에도 불구하고)의 의미로도 쓰이지만, 초중급에서는 주로 동시 동작을 나타냅니다.",
+      "formation": "동사 ます형 어간(「ます」 탈락) + ながら",
+      "examples": [
+        {
+          "translation": "텔레비전을 보면서 숙제를 했습니다."
+        },
+        {
+          "translation": "음악을 들으면서 요리를 했습니다."
+        },
+        {
+          "translation": "걸어가면서 스마트폰을 보는 것은 위험합니다."
+        },
+        {
+          "translation": "그는 이야기하면서 웃고 있었습니다."
+        }
+      ]
+    },
+    "ja_Verb_54": {
+      "title": "～なさい (～nasai)",
+      "shortExplanation": "손윗사람(부모, 교사 등)이 아랫사람에게 지시나 명령을 내릴 때 사용하며, '~하렴', '~해라'의 뜻입니다.",
+      "longExplanation": "'～なさい'는 동사의 연용형(ます형 어간)에 결합하여 상대방에게 어떤 행동을 하도록 명령하거나 지시하는 표현입니다. 본래 존경어 'なさる'의 명령형에서 유래하였기 때문에 어조 자체는 점잖고 품위가 있으나, 상하 관계를 전제로 한 명백한 지시·명령의 성격을 갖습니다. 주로 부모가 자녀를 훈육하거나 주의를 줄 때, 교사가 학생에게 지시할 때, 또는 시험 문제지의 안내문('정답을 고르시오' 등)에서 널리 사용됩니다. 친근한 구어에서는 줄여서 '～な'의 형태로도 쓰입니다. 손윗사람이나 동등한 위치의 사람에게는 절대로 사용할 수 없습니다.",
+      "formation": "동사 ます형 어간(「ます」 탈락) + なさい",
+      "examples": [
+        {
+          "translation": "방 청소해라."
+        },
+        {
+          "translation": "공부하렴."
+        },
+        {
+          "translation": "일찍 일어나라."
+        },
+        {
+          "translation": "숙제하렴."
+        }
+      ]
+    },
+    "ja_Verb_55": {
+      "title": "～にくい (～nikui)",
+      "shortExplanation": "동사 어간 뒤에 붙어 어떤 동작을 하기가 어렵거나 상태가 발생하기 힘들다는 뜻을 나타내며, '~하기 어렵다', '~하기 힘들다'의 뜻입니다.",
+      "longExplanation": "'～にくい'는 동사의 연용형(ます형 어간)에 접속하는 접미사로, 복합 い형용사를 만들어 어떤 행위를 하기가 객관적으로 곤란하거나 실현하기 어렵다는 의미를 나타냅니다. 결합 후에는 일반 い형용사와 동일하게 활용됩니다(예: 読みにくくない, 読みにくかった 등). 화자의 육체적·심리적 고통이나 부담감에 초점을 맞추는 '～づらい'와 비교하여, '～にくい'는 대상의 물리적 속성이나 객관적인 난이도에 무게를 두는 보다 일반적인 표현입니다. 반의어는 '～やすい(~하기 쉽다)'입니다.",
+      "formation": "동사 ます형 어간(「ます」 탈락) + にくい",
+      "examples": [
+        {
+          "translation": "이 글자는 읽기 어렵습니다."
+        },
+        {
+          "translation": "이 문은 열기가 힘들다."
+        },
+        {
+          "translation": "그의 글씨는 알아보기 어렵다."
+        },
+        {
+          "translation": "이 요리는 만들기 어렵다."
+        }
+      ]
+    },
+    "ja_Verb_56": {
+      "title": "～やすい (～yasui)",
+      "shortExplanation": "동사 어간 뒤에 붙어 어떤 동작을 하기가 수월하거나 상태가 일어나기 쉬움을 나타내며, '~하기 쉽다', '~하기 편하다'의 뜻입니다.",
+      "longExplanation": "'～やすい'는 동사의 연용형(ます형 어간)에 접속하는 접미사로, 복합 い형용사를 만들어 다음 두 가지 의미를 나타냅니다: ① 대상의 구조나 성질 덕분에 어떤 동작을 하기가 쉽고 수월함(예: 읽기 쉽다, 입기 편하다); ② 특정 상태나 변화가 발생하기 쉬운 경향이 있음(예: 감기에 걸리기 쉽다, 깨지기 쉽다). 결합 후에는 일반 い형용사와 똑같이 활용됩니다(예: 読みやすくない, 読みやすかった 등). 난이도가 높거나 실행이 어려움을 나타내는 '～にくい(~하기 어렵다)'와 정확한 반의 관계를 이룹니다.",
+      "formation": "동사 ます형 어간(「ます」 탈락) + やすい",
+      "examples": [
+        {
+          "translation": "이 책은 읽기 쉽습니다."
+        },
+        {
+          "translation": "이 셔츠는 입기 편하다."
+        },
+        {
+          "translation": "그는 이야기하기 편한 사람입니다."
+        },
+        {
+          "translation": "이 요리는 만들기 쉽습니다."
+        }
+      ]
+    },
+    "ja_Verb_57": {
+      "title": "～ようと思う (～you to omou)",
+      "shortExplanation": "미래에 어떤 행동을 하려는 의도나 계획, 결심을 나타내며, '~하려고 생각하다', '~할까 한다'의 뜻입니다.",
+      "longExplanation": "'～ようと思う' 문형은 동사의 의지형(의향형)에 인용 조사 'と'와 동사 '思う(생각하다)'가 결합한 표현으로, 화자가 앞으로 어떤 행동을 하겠다는 의사나 계획을 나타냅니다. 형태에 따라 다음과 같은 뉘앙스 차이가 있습니다: ① '～ようと思う'는 말하는 시점에 문득 떠오른 생각이나 즉각적인 결심을 나타내는 경우가 많습니다; ② 반면 '～ようと思っている'는 이전부터 마음속으로 품어 온 의도가 현재까지 이어지고 있음을 나타냅니다. 단정적이고 확고한 계획을 나타내는 '～つもりだ'에 비해 어조가 훨씬 완곡하고 부드러우며, 공적으로 정해진 스케줄을 나타내는 '～予定だ'와도 차이가 있습니다.",
+      "formation": "동사 의지형(의향형) + と思う (지속적 의도: ～ようと思っている / 정중형: ～ようと思います)",
+      "examples": [
+        {
+          "translation": "내일 영화를 볼까 합니다."
+        },
+        {
+          "translation": "주말에 친구들과 놀려고 생각하고 있습니다."
+        },
+        {
+          "translation": "공부를 좀 더 열심히 해야겠다고 생각한다."
+        },
+        {
+          "translation": "내년에는 해외여행을 가려고 생각하고 있습니다."
+        }
+      ]
+    },
+    "ja_Verb_58": {
+      "title": "～ように (～you ni)",
+      "shortExplanation": "어떤 상태가 실현되도록 하는 목적('~하도록', '~할 수 있도록')을 나타내거나, 모습이나 상태를 빗대는 비유('~처럼', '~같이')를 나타냅니다.",
+      "longExplanation": "'～ように'는 매우 다양한 용법을 가진 복합 접속 표현으로, 주로 다음과 같은 두 가지 대표적인 의미로 쓰입니다: ① 목적(~하도록, ~하게끔): 앞에는 주로 무의지 동사(가능동사, '見える', '分かる' 등의 상태동사)나 동사의 부정형(ない형)이 오며, 앞선 상태가 실현되거나 방지되도록 뒤에서 적극적인 행위를 취함을 나타냅니다(의지동사와 결합하는 '～ために'와 대조됩니다); ② 비유(~처럼, ~같이): 명사 뒤에 'の'를 동반하거나(명사 + のように) 용언 보통형 뒤에 붙어, 어떤 동작이나 양태가 특정 대상과 흡사함을 묘사합니다. 그 밖에도 문말에서 소원이나 기원, 또는 간접적인 지시·요청을 나타낼 때도 활용됩니다.",
+      "formation": "목적: 동사 사전형 / ない형 + ように | 비유: 명사 + のように / 동사 보통형 + ように",
+      "examples": [
+        {
+          "translation": "그녀는 새처럼 가볍게 춤을 춘다."
+        },
+        {
+          "translation": "배운 것을 잊어버리지 않도록 매일 복습합시다."
+        },
+        {
+          "translation": "가수가 될 수 있도록 매일 노래 연습을 하고 있습니다."
+        },
+        {
+          "translation": "길을 건널 때 차가 오지 않도록 확인해 주세요."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Verb_44": {
+      "title": "～てほしい (～te hoshii)",
+      "shortExplanation": "話し手が他者に対してある行為をしてくれることを望む気持ちを表し、「〜してほしい」「〜してほしいと思う」という意味を表します。",
+      "longExplanation": "「～てほしい」は、動詞のて形に希望を表す形容詞「ほしい」が接続した文法表現です。話し手自身が何かをしたいときに用いる「～たい」とは異なり、相手や第三者（聞き手または第三者）にある動作をしてほしいと望む際に用います。動作を行う対象は通常、格助詞「に」で表されますが、くだけた会話では省略されることもあります。否定表現には「～ないでほしい」（〜しないでほしい・より一般的）と「～てほしくない」（〜してほしくない）の2通りがあります。主観的な要求や願望を直接的に伝える表現であるため、目上の人や取引先に対して直接使うのは不作法とされ、改まった場面では「～ていただきたい」「～ていただけますか」などの謙譲・丁寧表現を用います。",
+      "formation": "動詞て形 ＋ ほしい／否定形：動詞ない形 ＋ でほしい（または動詞て形 ＋ ほしくない）",
+      "examples": [
+        {
+          "translation": "子供にもっと勉強してほしい。"
+        },
+        {
+          "translation": "彼にもっと早く来てほしい。"
+        },
+        {
+          "translation": "友達にその本を読んでほしい。"
+        },
+        {
+          "translation": "先生に質問に答えてほしい。"
+        }
+      ]
+    },
+    "ja_Verb_45": {
+      "title": "～てみる (～te miru)",
+      "shortExplanation": "試しにある行為を行って、その結果や様子を確かめることを表し、「試しに〜する」「〜してみる」という意味を表します。",
+      "longExplanation": "「～てみる」は、動詞のて形に補助動詞「みる」（動詞「見る」に由来しますが、通常は平仮名で表記）が接続した文法表現です。どのような結果になるか、どのような感触が得られるかを確かめるために、試しにある動作を行ってみる（試行・挑戦）というニュアンスを表します。補助動詞「みる」は通常の動詞と同様に活用し、丁寧な依頼「～てみてください」、希望「～てみたい」、意志・勧誘「～てみよう」など、文脈に応じて多様な文末表現に接続します。",
+      "formation": "動詞て形 ＋ みる",
+      "examples": [
+        {
+          "translation": "この料理を作ってみます。"
+        },
+        {
+          "translation": "その服を着てみてください。"
+        },
+        {
+          "translation": "新しいレストランに行ってみよう。"
+        },
+        {
+          "translation": "映画を見てみたいです。"
+        }
+      ]
+    },
+    "ja_Verb_46": {
+      "title": "～てもらいたい (～te moraitai)",
+      "shortExplanation": "他者から自分（または身内）のためにある恩恵的な行為を施してもらうことを望む気持ちを表し、「〜してもらいたい」「〜してほしい」という意味を表します。",
+      "longExplanation": "「～てもらいたい」は、動詞のて形に授受の補助動詞「もらう」の希望形「もらいたい」が接続した文法表現です。他者が自分のために行ってくれる行為や助力を恩恵として受け取りたいという願望を表します。動作の主体（恩恵の提供者）は助詞「に」で表されます。他者の動作そのものを望む「～てほしい」とほぼ同義ですが、「～てもらいたい」は話し手が受益者として行為を授かるというニュアンスがやや強く表れます。同僚や友人、目下に対して用いられるのが一般的で、目上の人や取引先に対しては謙譲表現である「～ていただきたい」を用います。",
+      "formation": "動詞て形 ＋ もらいたい（丁寧体：～てもらいたいです／～てもらいたいんですが）",
+      "examples": [
+        {
+          "translation": "この荷物を運んでもらいたいです。"
+        },
+        {
+          "translation": "彼にそのニュースを教えてもらいたい。"
+        },
+        {
+          "translation": "友達に日本語を教えてもらいたい。"
+        },
+        {
+          "translation": "スタッフにチェックインの方法を説明してもらいたい。"
+        }
+      ]
+    },
+    "ja_Verb_47": {
+      "title": "～てもらう (～te morau)",
+      "shortExplanation": "他者に頼んだり依頼したりして、自分（または身内）のためにある有益な行為をしてもらうことを表し、「〜してもらう」という意味を表します。",
+      "longExplanation": "「～てもらう」は、動詞のて形に授受の補助動詞「もらう」が接続した文法表現です。主語（多くは話し手または身内の者）が、他者からある行為や援助を恩恵として受けることを表します。恩恵を受ける人が文の主語（「は」や「が」）になり、実際の動作を行う相手は格助詞「に」で示されます。丁寧体は「～てもらいます／～てもらいました」となります。対等な関係の友人や同僚、または目下に対して用いられます。動作主が目上の人や顧客である場合は、謙譲語の「～ていただく」を用います。",
+      "formation": "動詞て形 ＋ もらう（丁寧体：～てもらいます／～てもらいました）",
+      "examples": [
+        {
+          "translation": "友達に宿題を手伝ってもらった。"
+        },
+        {
+          "translation": "母に部屋を掃除してもらいました。"
+        },
+        {
+          "translation": "彼に荷物を持ってもらいたい。"
+        },
+        {
+          "translation": "先生に質問に答えてもらえますか？"
+        }
+      ]
+    },
+    "ja_Verb_48": {
+      "title": "～てもらえませんか (～te moraemasen ka)",
+      "shortExplanation": "相手に対して何かをしてくれるよう丁寧に依頼・お願いする表現で、「〜してもらえませんか」「〜していただけますか」という意味を表します。",
+      "longExplanation": "「～てもらえませんか」は、動詞のて形に授受の補助動詞「もらう」の可能動詞「もらえる」の否定丁寧疑問形「もらえませんか」が接続した依頼表現です。文字通りには「〜してもらうことができませんか」と相手の可能・意志を否定疑問の形で尋ねることで、相手に断る余地を残し、押しつけがましさを排除した非常に柔らかく丁寧な依頼となります。「～てください」や「～てくれませんか」よりも丁寧で、同僚や知人、近所の人などに対して日常的によく用いられます。なお、上司や目上の人、顧客に対してさらに敬意を払う場合は、謙譲語の「～ていただけませんか」「～ていただけないでしょうか」を用います。",
+      "formation": "動詞て形 ＋ もらえませんか",
+      "examples": [
+        {
+          "translation": "この手紙を見てもらえませんか。"
+        },
+        {
+          "translation": "荷物を持ってもらえませんか。"
+        },
+        {
+          "translation": "部屋を掃除してもらえませんか。"
+        },
+        {
+          "translation": "明日のミーティングに参加してもらえませんか。"
+        }
+      ]
+    },
+    "ja_Verb_49": {
+      "title": "～ないことがある (～nai koto ga aru)",
+      "shortExplanation": "普段は通常行われる動作や発生する事態について、時々そうならない場合もあることを表し、「〜しないことがある」「〜しない場合もある」という意味を表します。",
+      "longExplanation": "「～ないことがある」は、動詞の否定形（ない形）に形式名詞「こと」、格助詞「が」、存在動詞「ある」が接続した文法表現です。普段の習慣や一般的な決まり事として行われていることに対し、例外的にそうしない時があることや、ある事態が発生しない場合が存在することを表します。「ときどき」「たまに」などの頻度を表す副詞とともに用いられることが多くあります。過去の経験の有無を表す「～たことがない（一度も〜したことがない）」とは意味・用法が異なりますので区別が必要です。",
+      "formation": "動詞ない形 ＋ ことがある（丁寧体：～ないことがあります）",
+      "examples": [
+        {
+          "translation": "彼は会議に出席しないことがある。"
+        },
+        {
+          "translation": "この電車は定刻に来ないことがある。"
+        },
+        {
+          "translation": "私は朝食を食べないことがある。"
+        },
+        {
+          "translation": "彼女は電話に出ないことがある。"
+        }
+      ]
+    },
+    "ja_Verb_50": {
+      "title": "～ないことにする (～nai koto ni suru)",
+      "shortExplanation": "話し手自身の主観的な意志や判断によって、ある行為をしないと決めることを表し、「〜しないことにする」「〜しないと決める」という意味を表します。",
+      "longExplanation": "「～ないことにする」は、動詞の否定形（ない形）に形式名詞「こと」、格助詞「に」、動詞「する」が接続した意志決定の文法表現です。話し手が自分自身の主体的な意志に基づいて、その動作を行わないという選択・決断を下したことを表します。すでに決定した事柄を述べる際は過去形の「～ないことにした」「～ないことにしました」、その決定を習慣や個人的なルールとして継続している場合は「～ないことにしている」の形をとります。外部の状況や規則などによって客観的に決まる「～ないことになる」と対比されます。",
+      "formation": "動詞ない形 ＋ ことにする（過去形：～ないことにした／～ないことにしました、継続・習慣：～ないことにしている）",
+      "examples": [
+        {
+          "translation": "明日のパーティーに行かないことにする。"
+        },
+        {
+          "translation": "そのケーキを食べないことにします。"
+        },
+        {
+          "translation": "今日はジョギングをしないことにする。"
+        },
+        {
+          "translation": "彼と会わないことにしました。"
+        }
+      ]
+    },
+    "ja_Verb_51": {
+      "title": "～ないことになる (～nai koto ni naru)",
+      "shortExplanation": "客観的な状況、外部の決定、社会的な決まりなどにより、ある事態が起こらないことに決まることや、結果としてそうならないことを表し、「〜しないことになる」という意味を表します。",
+      "longExplanation": "「～ないことになる」は、動詞の否定形（ない形）に形式名詞「こと」、格助詞「に」、変化を表す動詞「なる」が接続した文法表現です。話し手個人の主観的な意志ではなく、周囲の状況の変化、組織や他者の決定、または論理的な帰結として「その行為を行わない」「その事態が発生しない」という結果に至ることを表します。客観的に決定した事実を報告する際は「～ないことになった」、規則や予定として定まっている場合は「～ないことになっている」を用います。個人の意志決定を表す「～ないことにする」と対比されます。",
+      "formation": "動詞ない形 ＋ ことになる（決定の事実：～ないことになった／～ないことになりました、規則・予定：～ないことになっている）",
+      "examples": [
+        {
+          "translation": "今日彼が来ないことになると、私たちの予定はキャンセルされます。"
+        },
+        {
+          "translation": "このプロジェクトが進まないことになると、収益が減るでしょう。"
+        },
+        {
+          "translation": "彼女は試験に合格しないことになると、卒業が遅れます。"
+        },
+        {
+          "translation": "雨が降ると、ピクニックが行われないことになるでしょう。"
+        }
+      ]
+    },
+    "ja_Verb_52": {
+      "title": "～ないほうがいい (～nai hou ga ii)",
+      "shortExplanation": "相手に対してある動作を行わないことを勧める助言や忠告を表し、「〜しないほうがよい」「〜しないほうがいい」という意味を表します。",
+      "longExplanation": "「～ないほうがいい」は、動詞の否定形（ない形）に形式名詞「ほう」、形容詞「いい」が接続した忠告・助言の文法表現です。ある行為を行うと好ましくない結果を招く恐れがあるため、それをしない選択肢をとることが望ましいと相手にアドバイスする際に用います。丁寧体は「～ないほうがいいです」となります。肯定の行為を勧める「～たほうがいい（動詞た形 ＋ ほうがいい）」と対比されます（肯定では「た形」を用いますが、否定では「ない形」を用いる点に文法上の注意が必要です）。",
+      "formation": "動詞ない形 ＋ ほうがいい（丁寧体：～ないほうがいいです）",
+      "examples": [
+        {
+          "translation": "この薬は飲まないほうがいいです。"
+        },
+        {
+          "translation": "急いでいるときは、走らないほうがいい。"
+        },
+        {
+          "translation": "彼に秘密を知られたくなければ、話さないほうがいい。"
+        },
+        {
+          "translation": "雨の日には、外出しないほうがいい。"
+        }
+      ]
+    },
+    "ja_Verb_53": {
+      "title": "～ながら (～nagara)",
+      "shortExplanation": "同一の主体が二つの動作を同時に並行して行うことを表し、「〜しながら」という意味を表します。",
+      "longExplanation": "接続助詞「～ながら」は、動詞の連用形（ます形語幹）に接続し、同一の動作主が二つの行為を同時に並行して行うこと（同時進行・並行動作）を表します。この文法形式には以下の重要な特徴があります。①前後の動作主は必ず同一人物でなければなりません。②文の主眼（重点）は後ろの主動詞に置かれ、「ながら」の前の動作は付随的・副次的な動作となります。文全体の時制は文末の動詞によって決まります。なお、「ながら」には逆接・譲歩（〜でありながら・〜にもかかわらず）を表す用法もありますが、初中級では主に同時動作の用法として頻繁に用いられます。",
+      "formation": "動詞連用形（ます形語幹）＋ ながら",
+      "examples": [
+        {
+          "translation": "テレビを見ながら宿題をしました。"
+        },
+        {
+          "translation": "音楽を聞きながら料理をしました。"
+        },
+        {
+          "translation": "歩きながらスマホを見るのは危険です。"
+        },
+        {
+          "translation": "彼は話しながら笑っていました。"
+        }
+      ]
+    },
+    "ja_Verb_54": {
+      "title": "～なさい (～nasai)",
+      "shortExplanation": "親や教師など目上の者が目下の者に対して指示や命令を与える際に用いられ、「〜しなさい」という意味を表します。",
+      "longExplanation": "「～なさい」は、動詞の連用形（ます形語幹）に接続する穏やかな命令表現です。もともと敬語動詞「なさる」の命令形に由来するため、言葉遣いとしては丁寧で上品な響きを持ちますが、立場が上の者から下の者へ向けた強制力を伴う命令・指示となります。主に親が子供に対して言い聞かせるとき、教師が生徒に指示を出すとき、あるいはテスト・試験問題の指示文（「答えを書きなさい」など）に用いられます。親しい間柄ではさらに省略されて「～な」（例：「早く食べな」）となることもあります。同等または目上の相手に対して用いることはできません。",
+      "formation": "動詞連用形（ます形語幹）＋ なさい",
+      "examples": [
+        {
+          "translation": "部屋を掃除しなさい。"
+        },
+        {
+          "translation": "勉強しなさい。"
+        },
+        {
+          "translation": "早く起きなさい。"
+        },
+        {
+          "translation": "宿題をやりなさい。"
+        }
+      ]
+    },
+    "ja_Verb_55": {
+      "title": "～にくい (～nikui)",
+      "shortExplanation": "動詞の連用形に接続して、その動作を行うことが困難であることや、その事態が起こりにくいことを表し、「〜しにくい」「〜するのが難しい」という意味を表します。",
+      "longExplanation": "「～にくい」は、動詞の連用形（ます形語幹）に接続して複合形容詞（い形容詞）をつくる接尾辞です。ある行為を実行するのに手間や困難が伴うこと、または対象の性質上その事態が生じにくいことを客観的に表します。接続後は通常のい形容詞と同様に活用します（否定形「～にくくない」、過去形「～にくかった」など）。話し手の肉体的・精神的な苦痛や抵抗感に焦点を当てる「～づらい」に比べ、「～にくい」は対象の客観的な性質や物理的なやりにくさを表す点でより広く一般的に用いられます。対義語は「～やすい」です。",
+      "formation": "動詞連用形（ます形語幹）＋ にくい",
+      "examples": [
+        {
+          "translation": "この字は読みにくいです。"
+        },
+        {
+          "translation": "このドアは開けにくい。"
+        },
+        {
+          "translation": "彼の字は読みにくい。"
+        },
+        {
+          "translation": "この料理は作りにくい。"
+        }
+      ]
+    },
+    "ja_Verb_56": {
+      "title": "～やすい (～yasui)",
+      "shortExplanation": "動詞の連用形に接続して、その動作を行うことが容易であることや、ある事態が生じやすい傾向を表し、「〜しやすい」「〜するのが簡単だ」という意味を表します。",
+      "longExplanation": "「～やすい」は、動詞の連用形（ます形語幹）に接続して複合形容詞（い形容詞）をつくる接尾辞です。主に以下の二つの意味を表します。①対象の扱いやすさや性質により、その動作を容易・快適に行えること（例：読みやすい、着やすい）。②ある好ましくない状態や変化を起こしやすい傾向・性質があること（例：風邪をひきやすい、壊れやすい）。接続後は通常のい形容詞と同様に活用します（否定形「～やすくない」、過去形「～やすかった」など）。実行の困難さを表す「～にくい」の対義表現です。",
+      "formation": "動詞連用形（ます形語幹）＋ やすい",
+      "examples": [
+        {
+          "translation": "この本は読みやすいです。"
+        },
+        {
+          "translation": "このシャツは着やすい。"
+        },
+        {
+          "translation": "彼は話しやすい人です。"
+        },
+        {
+          "translation": "この料理は作りやすい。"
+        }
+      ]
+    },
+    "ja_Verb_57": {
+      "title": "～ようと思う (～you to omou)",
+      "shortExplanation": "話し手が将来ある行為を行おうとする意志や計画、考えを表し、「〜しようと思う」「〜するつもりだ」という意味を表します。",
+      "longExplanation": "「～ようと思う」は、動詞の意向形（意志形）に引用の格助詞「と」、動詞「思う」が接続した意志表現です。これからある行動を実行しようと考えている話し手の意図や計画を表します。時制によって以下の使い分けがあります。①「～ようと思う」は発話の場で生じた即座の意志や思いつきを表す傾向があります。②「～ようと思っている」は、以前から考え続けている継続的な意図・計画を表します。確定的な意志を宣言する「～つもりだ」に比べて響きが柔らかく控えめであり、公に決定した日程を述べる「～予定だ」とも区別されます。",
+      "formation": "動詞意向形（意志形）＋ と思う（継続的な意図：～ようと思っている／丁寧体：～ようと思います）",
+      "examples": [
+        {
+          "translation": "明日、映画を見ようと思います。"
+        },
+        {
+          "translation": "週末に友達と遊ぼうと思っています。"
+        },
+        {
+          "translation": "勉強をもっと頑張ろうと思う。"
+        },
+        {
+          "translation": "来年は海外旅行に行こうと思っている。"
+        }
+      ]
+    },
+    "ja_Verb_58": {
+      "title": "～ように (～you ni)",
+      "shortExplanation": "ある状態や事態が実現することを目標とする目的（「〜するように」「〜できるように」）や、様子を何かに例える比喩（「〜のように」）を表します。",
+      "longExplanation": "「～ように」は多様な意味・機能を持つ文法表現で、主に以下の二大用法で広く用いられます。①目的を表す用法（〜するように・〜なるように）：前節には無意志動詞（可能動詞や「見える」「分かる」などの状態動詞）または動詞の否定形（ない形）が接続し、その望ましい状態が実現するように、あるいは望ましくない事態を回避するように後節の行為を行うことを表します（意志動詞に接続する「～ために」と対比されます）。②比喩・例示を表す用法（〜のように）：名詞（名詞 ＋ のように）や動詞の普通形に接続し、動作や状態が別の事物に酷似している様子を鮮やかに描写します。このほか、文末で願望・祈願（「合格しますように」）や間接的な指示・依頼を表す用法もあります。",
+      "formation": "目的用法：動詞辞書形／ない形 ＋ ように｜比喩用法：名詞 ＋ のように／動詞普通形 ＋ ように",
+      "examples": [
+        {
+          "translation": "彼女は鳥のように軽やかに踊る。"
+        },
+        {
+          "translation": "覚えたことを忘れないように、毎日復習しましょう。"
+        },
+        {
+          "translation": "歌手になるように、毎日歌の練習をしています。"
+        },
+        {
+          "translation": "道を渡る時、車が来ないように確認してください。"
+        }
+      ]
+    }
+  }
+}

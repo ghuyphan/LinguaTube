@@ -27,7 +27,8 @@
         "placeholder": "Dán URL YouTube hoặc ID video...",
         "invalid": "Vui lòng nhập URL YouTube hợp lệ",
         "cancel": "Hủy",
-        "load": "Tải"
+        "load": "Tải",
+        "paste": "Dán"
     },
     "header": {
         "words": "Từ",
@@ -60,6 +61,7 @@
         "closeVideo": "Đóng video",
         "resume": "Tiếp tục",
         "normal": "Chuẩn",
+        "off": "Tắt",
         "hint": "Dán URL YouTube để bắt đầu học. Chúng tôi sẽ tự động lấy phụ đề."
     },
     "subtitle": {
@@ -93,6 +95,7 @@
         "video": "Video",
         "cost": "Chi phí",
         "yourBalance": "Số dư của bạn",
+        "securityCheck": "Xác thực người dùng",
         "generate": "Tạo phụ đề",
         "languageMismatch": "Khác ngôn ngữ học",
         "languageMismatchMessage": "Không có phụ đề {{requested}} cho video này. Đang dùng {{detected}} thay thế.",
@@ -134,7 +137,12 @@
         "nativeCaptionsFree": "Video thông thường có miễn phí không?",
         "nativeCaptionsFreeDesc": "Có! Video đã có sẵn phụ đề YouTube hoàn toàn miễn phí 100% và không bao giờ tốn điểm AI.",
         "allCreditsAvailable": "Đầy đủ điểm",
-        "depletedNotice": "Bạn đã dùng hết 3 điểm AI. Các video có sẵn phụ đề YouTube vẫn xem hoàn toàn miễn phí!"
+        "depletedNotice": "Bạn đã dùng hết 3 điểm AI. Các video có sẵn phụ đề YouTube vẫn xem hoàn toàn miễn phí!",
+        "translationFailed": "Dịch thất bại. Vui lòng thử lại.",
+        "orUseAI": "hoặc dùng AI",
+        "readingHint": "Hiển thị hướng dẫn phát âm phía trên chữ",
+        "grammarHint": "Làm nổi bật cấu trúc và mẫu ngữ pháp",
+        "dualSubsHint": "Hiển thị phụ đề dịch song ngữ"
     },
     "vocab": {
         "title": "Từ vựng",
@@ -174,7 +182,11 @@
         "saved": "Đã lưu",
         "saveWord": "Lưu từ",
         "close": "Đóng",
-        "translateTo": "Dịch sang"
+        "translateTo": "Dịch sang",
+        "translateAll": "Dịch tất cả định nghĩa",
+        "all": "Tất cả",
+        "failed": "Thất bại",
+        "retry": "Thử lại"
     },
     "grammar": {
         "mode": "Ngữ pháp",
@@ -298,7 +310,10 @@
         "onStreak": "Bạn đang đạt chuỗi {{count}} ngày!",
         "howItWorks": "Cách hoạt động",
         "howToExtend": "Luyện tập mỗi ngày để kéo dài chuỗi của bạn. Nếu bạn bỏ lỡ một ngày mà không có bảo vệ, chuỗi sẽ về 0.",
-        "freezeExplanation": "Bảo vệ chuỗi tự động giữ chuỗi của bạn nếu bạn quên học. Bạn còn {{count}} lần bảo vệ."
+        "freezeExplanation": "Bảo vệ chuỗi tự động giữ chuỗi của bạn nếu bạn quên học. Bạn còn {{count}} lần bảo vệ.",
+        "reached": "Bạn đã đạt",
+        "days": "ngày!",
+        "saved": "Chuỗi đã được bảo vệ! ❄️"
     },
     "history": {
         "title": "Lịch sử",
@@ -397,7 +412,9 @@
         "nowPlaying": "Đang phát",
         "continueStudying": "Tiếp tục học",
         "resume": "Tiếp tục",
-        "browseByLanguage": "Duyệt theo ngôn ngữ"
+        "browseByLanguage": "Duyệt theo ngôn ngữ",
+        "loopOn": "Đang bật lặp lại",
+        "shuffleOn": "Đang bật ngẫu nhiên"
     },
     "common": {
         "loading": "Đang tải...",
@@ -406,7 +423,9 @@
         "off": "Tắt",
         "back": "Quay lại",
         "undo": "Hoàn tác",
-        "retry": "Thử lại"
+        "retry": "Thử lại",
+        "close": "Đóng",
+        "clear": "Xóa"
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",

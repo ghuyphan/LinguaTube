@@ -1,0 +1,318 @@
+[
+  {
+    "id": "en_b2_29",
+    "language": "en",
+    "pattern": "Degrees of comparison of adverbs",
+    "title": "Degrees of comparison of adverbs",
+    "shortExplanation": "faster, more carefully, best, worse, further",
+    "longExplanation": "Adverbs form degrees of comparison according to the same rules as adjectives.\n• Monosyllabic: + er/est: fast→faster, hard→harder, early→earlier\n• Most on -ly: more/most: carefully→more carefully→most carefully\n• Incorrect: well→better→best, badly→worse→worst, far→further→furthest, little→less→least, much→more→most",
+    "formation": "faster, more carefully, best, worse, further",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "She spoke more confidently than before.",
+        "translation": "She spoke more confidently than before."
+      },
+      {
+        "sentence": "He works hardest in the team.",
+        "translation": "He works harder than anyone on the team."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_01",
+    "language": "en",
+    "pattern": "Inversion with negative adverbs",
+    "title": "Inversion with negative adverbs",
+    "shortExplanation": "Never have I seen this. Rarely does she complain.",
+    "longExplanation": "For emphasis, the negative adverb/expression is placed at the beginning → auxiliary verb before the subject (word order as in a question).\nWords that trigger inversion: never, rarely, rarely, little, hardly, scarcely, barely, not only, only, no sooner",
+    "formation": "Never have I seen this. Rarely does she complain.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Never have I seen anything so beautiful.",
+        "translation": "I have never seen anything so beautiful."
+      },
+      {
+        "sentence": "Rarely does she make a mistake.",
+        "translation": "She rarely makes mistakes."
+      },
+      {
+        "sentence": "Little did I know what was coming.",
+        "translation": "I had no idea what was waiting for me."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_02",
+    "language": "en",
+    "pattern": "Not only... but also with inversion",
+    "title": "Not only... but also with inversion",
+    "shortExplanation": "Not only did he apologise, but he also offered to help.",
+    "longExplanation": "Not only + inversion in the first part, the second part is the usual order.\nUsed for emphasis: expresses that something went further than expected.",
+    "formation": "Not only did he apologise, but he also offered to help.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Not only is she talented, but she is also very hard-working.",
+        "translation": "She is not only talented, but also very hardworking."
+      },
+      {
+        "sentence": "Not only did they arrive late, but they also forgot the documents.",
+        "translation": "They were not only late, but also forgot their documents."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_03",
+    "language": "en",
+    "pattern": "Hardly / Scarcely / No sooner + inversion",
+    "title": "Hardly / Scarcely / No sooner + inversion",
+    "shortExplanation": "Hardly had I sat down when the phone rang.",
+    "longExplanation": "Immediate sequence constructions:\n• Hardly/Scarcely + had + subject + V3 + when/before + Past Simple\n• No sooner + had + subject + V3 + than + Past Simple",
+    "formation": "Hardly had I sat down when the phone rang.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Hardly had she arrived when it started to rain.",
+        "translation": "She had barely arrived when it started to rain."
+      },
+      {
+        "sentence": "No sooner had I sat down than someone knocked at the door.",
+        "translation": "I had just sat down when someone knocked on the door."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_04",
+    "language": "en",
+    "pattern": "Inversion in conditionals",
+    "title": "Inversion in conditionals: Had / Were / Should",
+    "shortExplanation": "Had I known (= If I had known). Were I you (= If I were you).",
+    "longExplanation": "Formal style - excludes if, uses inversion:\n• Had + subject + V3 = If + Past Perfect (3rd type)\n• Were + subject (+ to + infinitive) = If + Past Simple (2nd type)\n• Should + subject + infinitive = If (unlikely, type 1)",
+    "formation": "Had I known (= If I had known). Were I you (= If I were you).",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Had she told me, I would have helped.",
+        "translation": "If she had told me, I would have helped."
+      },
+      {
+        "sentence": "Were I in your position, I would accept.",
+        "translation": "If I were you, I would agree."
+      },
+      {
+        "sentence": "Should you need assistance, please call us.",
+        "translation": "If you need assistance, call us."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_05",
+    "language": "en",
+    "pattern": "It-cleft",
+    "title": "It-cleft: It was John who called.",
+    "shortExplanation": "To highlight any member of a sentence",
+    "longExplanation": "Structure: It + to be + selected element + who/that/which + rest\nShifts the focus of attention to the highlighted element.\n• For people - who; for things/circumstances - that/which.",
+    "formation": "To highlight any member of a sentence",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "It was the noise that woke me up. (не шум вообще, именно этот)",
+        "translation": "It was the noise that woke me up."
+      },
+      {
+        "sentence": "It is hard work that leads to success.",
+        "translation": "It is hard work that leads to success."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_06",
+    "language": "en",
+    "pattern": "Wh-cleft",
+    "title": "Wh-cleft: What surprised me was the price.",
+    "shortExplanation": "What I need is rest. What she said shocked everyone.",
+    "longExplanation": "Structure: What + subordinate clause + to be + highlighted element\nEmphasizes the importance of the element introduced at the end.",
+    "formation": "What I need is rest. What she said shocked everyone.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "What I love about London is the diversity.",
+        "translation": "What I like most about London is the diversity."
+      },
+      {
+        "sentence": "What he did was completely unexpected.",
+        "translation": "What he did was completely unexpected."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_07",
+    "language": "en",
+    "pattern": "Formal subjunctive after verbs of demand",
+    "title": "Formal subjunctive after verbs of demand",
+    "shortExplanation": "I suggest he leave. It is vital that she be informed.",
+    "longExplanation": "After suggest, recommend, insist, demand, propose, request, require, ask, advise, order + that - the basic form of the verb for all persons (without -s, without was).\nThe British version often uses should instead of the subjunctive: I suggest that he should leave.\nAmerican - often a pure subjunctive.",
+    "formation": "I suggest he leave. It is vital that she be informed.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "I recommend that he see a doctor.",
+        "translation": "I recommend that he see a doctor."
+      },
+      {
+        "sentence": "It is essential that all students attend the meeting.",
+        "translation": "It is essential that all students attend the meeting."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_08",
+    "language": "en",
+    "pattern": "It's high time + Past Simple",
+    "title": "It's high time + Past Simple",
+    "shortExplanation": "It's high time you went to bed. It's time we left.",
+    "longExplanation": "It's (high/about) time + subject + Past Simple\nMeaning: present/future - we are talking about something that should have been done a long time ago.\nhigh time - even stronger: it’s high time!",
+    "formation": "It's high time you went to bed. It's time we left.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "It's time she found a new job.",
+        "translation": "It's high time she found a new job."
+      },
+      {
+        "sentence": "It's high time you apologised.",
+        "translation": "It's high time to apologize."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_09",
+    "language": "en",
+    "pattern": "as if / as though + subjunctive",
+    "title": "as if / as though + subjunctive",
+    "shortExplanation": "She talks as if she knew everything. He looked as though he had seen a ghost.",
+    "longExplanation": "as if / as though + Past Simple is an unrealistic comparison in the present.\nas if / as though + Past Perfect is an unrealistic comparison about the past.",
+    "formation": "She talks as if she knew everything. He looked as though he had seen a ghost.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "He spends money as if he were a millionaire.",
+        "translation": "He spends money like he's a millionaire."
+      },
+      {
+        "sentence": "She spoke as though she had met him before.",
+        "translation": "She spoke as if she had met him before."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_10",
+    "language": "en",
+    "pattern": "So / Neither + auxiliary verb + subject",
+    "title": "So / Neither + auxiliary verb + subject",
+    "shortExplanation": "So do I. Neither does she. So am I.",
+    "longExplanation": "So + auxiliary + subject - agreement with the affirmative.\nNeither/Nor + auxiliary + subject - agreement with the negative.\nThe auxiliary verb must coincide with the tense of the original sentence.",
+    "formation": "So do I. Neither does she. So am I.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "I love jazz. So does she.",
+        "translation": "I love jazz. She too."
+      },
+      {
+        "sentence": "I haven't been to Rome. Neither have I.",
+        "translation": "I haven't been to Rome. Me too."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_11",
+    "language": "en",
+    "pattern": "I think so / I hope so / I'm afraid so",
+    "title": "I think so / I hope so / I'm afraid so",
+    "shortExplanation": "Will it rain? - I think so. / I hope not.",
+    "longExplanation": "so replaces the subordinate clause after: think, hope, suppose, expect, believe, imagine, be afraid.\nNegative form: not (not so not!).",
+    "formation": "Will it rain? - I think so. / I hope not.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Will he come? — I think so. / I don't think so.",
+        "translation": "Will he come? - I think yes. / Don't think."
+      },
+      {
+        "sentence": "Is it expensive? — I'm afraid so.",
+        "translation": "Is it expensive? - I'm afraid so."
+      },
+      {
+        "sentence": "Is it closed? — I hope not.",
+        "translation": "Closed? - I hope not."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_12",
+    "language": "en",
+    "pattern": "Inclusive vs non-inclusive clauses",
+    "title": "Inclusive vs non-inclusive clauses",
+    "shortExplanation": "The man who called is my brother. VS My brother, who called, is a doctor.",
+    "longExplanation": "Defining: specifies who/what we are talking about - without commas. that is possible. The pronoun can be omitted if it is an object.\nNon-defining: adds information - commas required. Only who/which (not that!). The pronoun cannot be omitted.",
+    "formation": "The man who called is my brother. VS My brother, who called, is a doctor.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "The film that won the Oscar was brilliant. (определяет, о каком фильме речь)",
+        "translation": "The film that won the Oscar was great."
+      },
+      {
+        "sentence": "Avatar, which came out in 2009, was a huge hit. (доп. факт о и так известном фильме)",
+        "translation": "Avatar, released in 2009, became a big hit."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_13",
+    "language": "en",
+    "pattern": "Preposition + which/whom in formal style",
+    "title": "Preposition + which/whom in formal style",
+    "shortExplanation": "The company for which I work. The person with whom I spoke.",
+    "longExplanation": "Formal style: preposition + which/whom before a relative pronoun.\nInformal equivalent: preposition at the end of a sentence.\nwhom is the formal object form of who.",
+    "formation": "The company for which I work. The person with whom I spoke.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "The report to which I referred is attached. (формально)",
+        "translation": "The report I mentioned is attached."
+      },
+      {
+        "sentence": "The report which I referred to is attached. (нейтрально)",
+        "translation": ""
+      },
+      {
+        "sentence": "The report I referred to is attached. (разговорно)",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": "en_c1_14",
+    "language": "en",
+    "pattern": "Nominalization",
+    "title": "Nominalization - Basics",
+    "shortExplanation": "decide→decision, discover→discovery, improve→improvement",
+    "longExplanation": "Nominalization is the conversion of verbs/adjectives into nouns. A sign of academic and business style.\nMain suffixes:\n• -tion/-sion: decide→decision, discuss→discussion\n• -ment: improve→improvement, develop→development\n• -ance/-ence: appear→appearance, differ→difference\n• -ity: complex→complexity, able→ability\n• -ness: happy→happiness, aware→awareness",
+    "formation": "decide→decision, discover→discovery, improve→improvement",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "She decided to expand. → Our decision to expand the company...",
+        "translation": "Our decision to expand..."
+      },
+      {
+        "sentence": "He discovered that... → His discovery of the error...",
+        "translation": "His discovery of the error..."
+      }
+    ]
+  }
+]

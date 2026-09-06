@@ -1,0 +1,302 @@
+[
+  {
+    "id": "en_b2_14",
+    "language": "en",
+    "pattern": "wish + Past Simple",
+    "title": "wish + Past Simple - desire to change the present",
+    "shortExplanation": "I wish I knew the answer. I wish I had more time.",
+    "longExplanation": "wish + Past Simple - about an unrealistic desire in the present.\nThe form is the same as in the 2nd type of conditional. For to be - were (formally), although was is also used.",
+    "formation": "I wish I knew the answer. I wish I had more time.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "I wish I spoke better English.",
+        "translation": "It's a pity that I don't speak English better."
+      },
+      {
+        "sentence": "She wishes she lived in a warmer country.",
+        "translation": "She would like to live in a warmer country."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_15",
+    "language": "en",
+    "pattern": "wish + Past Perfect",
+    "title": "wish + Past Perfect - regret about the past",
+    "shortExplanation": "I wish I had studied harder. I wish I hadn't said that.",
+    "longExplanation": "wish + Past Perfect - regret about past events that cannot be changed. The form is as in the 3rd type of conditional.",
+    "formation": "I wish I had studied harder. I wish I hadn't said that.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "I wish I hadn't eaten so much.",
+        "translation": "It's a shame I ate so much."
+      },
+      {
+        "sentence": "She wishes she had taken that job offer.",
+        "translation": "She wishes she had accepted that job offer."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_16",
+    "language": "en",
+    "pattern": "wish + would",
+    "title": "wish + would - desire to change someone else's behavior",
+    "shortExplanation": "I wish you would stop talking. I wish it would warm up.",
+    "longExplanation": "wish + would - irritation due to someone else's behavior or a desire to change the situation.",
+    "formation": "I wish you would stop talking. I wish it would warm up.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "I wish you would listen to me.",
+        "translation": "I wish you would listen to me."
+      },
+      {
+        "sentence": "I wish it would stop raining.",
+        "translation": "I wish the rain would stop."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_17",
+    "language": "en",
+    "pattern": "Defining vs non-defining clauses",
+    "title": "Defining vs non-defining clauses",
+    "shortExplanation": "The man who called (determines which one) vs My brother, who called, (adds info)",
+    "longExplanation": "Defining (defining): without commas - they clarify who/what they are talking about. The pronoun can be replaced with that. It cannot be removed without losing the meaning.\nNon-defining: with commas - add information without changing the meaning. That cannot be used. Can be removed.",
+    "formation": "The man who called (determines which one) vs My brother, who called, (adds info)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "The film that I told you about is on tonight. (какой именно)",
+        "translation": "The movie I told you about is showing tonight."
+      },
+      {
+        "sentence": "My sister, who lives in Paris, is visiting next week. (доп. инфо)",
+        "translation": "My sister, who lives in Paris, will arrive next week."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_18",
+    "language": "en",
+    "pattern": "Prepositions in relative clauses",
+    "title": "Prepositions in relative clauses",
+    "shortExplanation": "the person I work with / the person with whom I work (formally)",
+    "longExplanation": "In colloquial speech, the preposition comes at the end: the house I grew up in.\nIn written/formal speech, the preposition before which/whom: the house in which I grew up.\nAfter the preposition - only which (for things) and whom (for people). Never that!",
+    "formation": "the person I work with / the person with whom I work (formally)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "The project I'm working on is fascinating. (разг.)",
+        "translation": "The project I'm working on is very interesting."
+      },
+      {
+        "sentence": "The project on which I am working is fascinating. (форм.)",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": "en_b2_19",
+    "language": "en",
+    "pattern": "Consequence conjunctions",
+    "title": "Consequence conjunctions: so... that, such... that, therefore, as a result",
+    "shortExplanation": "It was so cold that we stayed inside. She worked hard; therefore, she passed.",
+    "longExplanation": "so + adjective/adverb + that: He spoke so quickly that nobody understood.\nsuch + (a/an) + adjective + noun + that: It was such a long film that I fell asleep.\nConnecting words of result (between sentences): therefore, consequently, as a result, hence, thus.",
+    "formation": "It was so cold that we stayed inside. She worked hard; therefore, she passed.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "It was such a good book that I read it twice.",
+        "translation": "The book was so good that I read it twice."
+      },
+      {
+        "sentence": "She missed the deadline; consequently, she lost the contract.",
+        "translation": "She missed the deadline; As a result, she lost her contract."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_20",
+    "language": "en",
+    "pattern": "be used to / get used to + V-ing",
+    "title": "be used to / get used to + V-ing - habit (real)",
+    "shortExplanation": "I'm used to waking up early. She's getting used to the cold.",
+    "longExplanation": "be used to + V-ing / noun = to be used to (already used to).\nget used to + V-ing / noun = get used to (the process of getting used to).\n• I used to live in Paris. - used to live (no longer)\n• I am used to living in big cities. - used to living in big cities",
+    "formation": "I'm used to waking up early. She's getting used to the cold.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "I'm not used to getting up so early.",
+        "translation": "I'm not used to getting up so early."
+      },
+      {
+        "sentence": "It took time, but she got used to the new system.",
+        "translation": "It took time, but she got used to the new system."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_21",
+    "language": "en",
+    "pattern": "Future in the Past",
+    "title": "Future in the Past: would / was going to",
+    "shortExplanation": "She said she would call. He was going to leave.",
+    "longExplanation": "Future in the Past - constructions that express the future from the point of view of the past. Used in indirect speech and narrative.\n• would + V (from will): She said she would come.\n• was/were going to + V: He was going to call but forgot.\n• was about to + V: She was about to leave when he arrived.",
+    "formation": "She said she would call. He was going to leave.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "She promised she would be there.",
+        "translation": "She promised that she would come."
+      },
+      {
+        "sentence": "He was about to leave when she called.",
+        "translation": "He was about to leave when she called."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_22",
+    "language": "en",
+    "pattern": "be to",
+    "title": "be to - official appointment and order",
+    "shortExplanation": "You are to report by Monday. They were never to meet again.",
+    "longExplanation": "be to + infinitive - official orders, planned events and fate in the narrative.\n1. Legal Instruction: Passengers are to remain seated.\n2. Official plan: The summit is to take place next month.\n3. Fate in the narrative: They were never to meet again.",
+    "formation": "You are to report by Monday. They were never to meet again.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "You are to submit the report by Friday.",
+        "translation": "You must submit your report by Friday."
+      },
+      {
+        "sentence": "She was to become one of the greatest scientists of her time.",
+        "translation": "She was destined to become one of the greatest scientists."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_23",
+    "language": "en",
+    "pattern": "ought to",
+    "title": "ought to - moral duty and logical expectation",
+    "shortExplanation": "You ought to apologise. She ought to have told us.",
+    "longExplanation": "ought to is a moral obligation or logical expectation. Stronger should.\nAlways with to: ought to go (as opposed to should).\nFor the past: ought to have + V3 - reproach or regret.",
+    "formation": "You ought to apologise. She ought to have told us.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "You ought to apologise for what you said.",
+        "translation": "You should apologize for what you said."
+      },
+      {
+        "sentence": "She ought to have told us earlier.",
+        "translation": "She should have told us sooner."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_24",
+    "language": "en",
+    "pattern": "need",
+    "title": "need - modal and regular verb",
+    "shortExplanation": "You needn't worry. / She doesn't need to come.",
+    "longExplanation": "need as a modal (formal, in questions/negations) and as a regular verb.\nModal (without -s, without to):\n• You needn't worry. / Need I explain?\nRegular need + to:\n• She doesn't need to come.",
+    "formation": "You needn't worry. / She doesn't need to come.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "You needn't fill in both forms.",
+        "translation": "You do not need to fill out both forms."
+      },
+      {
+        "sentence": "She doesn't need to attend every meeting.",
+        "translation": "She does not have to attend every meeting."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_25",
+    "language": "en",
+    "pattern": "dare",
+    "title": "dare - courage and challenge",
+    "shortExplanation": "How dare you! I daren't ask. She dared to challenge him.",
+    "longExplanation": "dare - dare, dare. Modal in rhetorical questions and negations.\nModal: How dare you! / I daren't ask. / Dare I say...\nNormal: She didn't dare to look. / He dared to challenge the boss.",
+    "formation": "How dare you! I daren't ask. She dared to challenge him.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "How dare you speak to me like that!",
+        "translation": "How dare you talk to me like that!"
+      },
+      {
+        "sentence": "She dared to express her opinion openly.",
+        "translation": "She dared to openly express her opinion."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_26",
+    "language": "en",
+    "pattern": "Reflexive pronouns",
+    "title": "Reflexive pronouns: myself, yourself, himself...",
+    "shortExplanation": "I hurt myself. She did it herself. They enjoyed themselves.",
+    "longExplanation": "myself, yourself, yourself, yourself, yourself, yourself, yourselves, yourself.\n1. The action is directed towards the subject: He cut himself.\n2. Emphase (by yourself, without help): I did it myself.\nStable: by myself = alone; help yourself = help yourself.",
+    "formation": "I hurt myself. She did it herself. They enjoyed themselves.",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "She taught herself to play the guitar.",
+        "translation": "She taught herself to play the guitar."
+      },
+      {
+        "sentence": "The machine turns itself off automatically.",
+        "translation": "The machine turns off automatically."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_27",
+    "language": "en",
+    "pattern": "Collective nouns",
+    "title": "Collective nouns: team, family, committee...",
+    "shortExplanation": "The team are playing well. (BrE) / The team is playing. (AmE)",
+    "longExplanation": "Collective nouns are a group as a whole.\n• BrE: usually plural. number: The team are playing.\n• AmE: usually units. number: The team is playing.\nFrequent: team, family, government, committee, staff, audience, crew, police, army, public, management",
+    "formation": "The team are playing well. (BrE) / The team is playing. (AmE)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "The government have announced new measures. (BrE)",
+        "translation": "The government announced new measures."
+      },
+      {
+        "sentence": "The audience were on their feet. (BrE)",
+        "translation": "The audience jumped to their feet."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_28",
+    "language": "en",
+    "pattern": "Fractions and mathematics",
+    "title": "Fractions and mathematics",
+    "shortExplanation": "a half, three quarters, 5.7 = five point seven, 25%",
+    "longExplanation": "Fractions:½ = a half; ⅓ = a third; ¼ = a quarter; ¾ = three quarters; ⅔ = two thirds.\nNumerator is quantitative, denominator is ordinal (plural if numerator > 1).\nDecimals: period (not comma): 3.14 = three point one four.\nMathematics: + = plus; - = minus; × = times; ÷ = divided by; = = equals.",
+    "formation": "a half, three quarters, 5.7 = five point seven, 25%",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Three quarters of students passed the exam.",
+        "translation": "Three quarters of the students passed the exam."
+      },
+      {
+        "sentence": "The inflation rate fell to 2.5 percent.",
+        "translation": "The inflation rate dropped to 2.5 percent."
+      }
+    ]
+  }
+]

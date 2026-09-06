@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_差不多A_213",
+    "language": "zh",
+    "pattern": "差不多 A",
+    "title": "差不多 A (about A)",
+    "shortExplanation": "about A",
+    "longExplanation": "about A. Pinyin: chàbuduō A",
+    "formation": "chàbuduō A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "女儿个子跟我差不多一样高。",
+        "romanization": "nǚ'ér gèzi gēn wǒ chàbuduō yīyàng gāo。",
+        "translation": "My daughter is about as tall as me."
+      }
+    ]
+  },
+  {
+    "id": "zh_差不多V_214",
+    "language": "zh",
+    "pattern": "差不多 V",
+    "title": "差不多 V (about V’ed)",
+    "shortExplanation": "about V’ed",
+    "longExplanation": "about V’ed. Pinyin: chàbuduō V",
+    "formation": "chàbuduō V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "工作差不多干完了。",
+        "romanization": "gōngzuò chàbuduō gàn wánle。",
+        "translation": "Work is about finished."
+      }
+    ]
+  },
+  {
+    "id": "zh_几乎_215",
+    "language": "zh",
+    "pattern": "几乎 #",
+    "title": "几乎 # (almost #)",
+    "shortExplanation": "almost #",
+    "longExplanation": "almost #. Pinyin: jīhū #",
+    "formation": "jīhū #",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这台电脑几乎5000块。",
+        "romanization": "zhè tái diànnǎo jīhū5000 kuài。",
+        "translation": "This computer is almost 5,000 yuan."
+      }
+    ]
+  },
+  {
+    "id": "zh_几乎A_216",
+    "language": "zh",
+    "pattern": "几乎 A",
+    "title": "几乎 A (almost)",
+    "shortExplanation": "almost",
+    "longExplanation": "almost. Pinyin: jīhū A",
+    "formation": "jīhū A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "得失几乎相当。",
+        "romanization": "déshī jīhū xiāngdāng。",
+        "translation": "The loss and the gain are almost the same."
+      }
+    ]
+  },
+  {
+    "id": "zh_几乎V_217",
+    "language": "zh",
+    "pattern": "几乎 V",
+    "title": "几乎 V (almost)",
+    "shortExplanation": "almost",
+    "longExplanation": "almost. Pinyin: jīhū V",
+    "formation": "jīhū V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这件事我几乎忘了告诉你了。",
+        "romanization": "zhè jiàn shì wǒ jīhū wàng le gàosu nǐ le。",
+        "translation": "I almost forgot to tell you about this."
+      }
+    ]
+  },
+  {
+    "id": "zh_尽管_218",
+    "language": "zh",
+    "pattern": "尽管",
+    "title": "尽管 (although)",
+    "shortExplanation": "although",
+    "longExplanation": "although. Pinyin: jǐnguǎn",
+    "formation": "jǐnguǎn",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "尽管今天很冷，可是他穿的衣服很少。",
+        "romanization": "jǐnguǎn jīntiān hěn lěng， kěshì tā chuān de yīfu hěn shǎo。",
+        "translation": "Although it is very cold today, he wears very little clothes."
+      }
+    ]
+  },
+  {
+    "id": "zh_虽然尽管却_219",
+    "language": "zh",
+    "pattern": "(虽然/尽管) …… 却",
+    "title": "(虽然/尽管) …… 却 ((although)… but)",
+    "shortExplanation": "(although)… but",
+    "longExplanation": "(although)… but. Pinyin: ( suīrán/ jǐnguǎn) …… què",
+    "formation": "( suīrán/ jǐnguǎn) …… què",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "(虽然/尽管) 工作很忙，她们却每天坚持锻炼。",
+        "romanization": "( suīrán/ jǐnguǎn) gōngzuò hěn máng， tāmen què měitiān jiānchí duànliàn。",
+        "translation": "(Although) they are busy at work, but they insist on exercising every day."
+      }
+    ]
+  },
+  {
+    "id": "zh_而_220",
+    "language": "zh",
+    "pattern": "而",
+    "title": "而 (and/but)",
+    "shortExplanation": "and/but",
+    "longExplanation": "and/but. Pinyin: ér",
+    "formation": "ér",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "听、说能力很重要，而写汉字的能力也重要。",
+        "romanization": "tīng、 shuō nénglì hěn zhòngyào， ér xiě hànzì de nénglì yě zhòngyào。",
+        "translation": "Listening and speaking abilities are very important, and (on the other hand) the ability to write Chinese characters is also important."
+      }
+    ]
+  },
+  {
+    "id": "zh_挺A的_221",
+    "language": "zh",
+    "pattern": "挺 A 的",
+    "title": "挺 A 的 (quite A)",
+    "shortExplanation": "quite A",
+    "longExplanation": "quite A. Pinyin: tǐng A de",
+    "formation": "tǐng A de",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我挺喜欢这个地方的。",
+        "romanization": "wǒ tǐng xǐhuan zhège dìfang de。",
+        "translation": "I quite like this place."
+      }
+    ]
+  },
+  {
+    "id": "zh_本来VA_222",
+    "language": "zh",
+    "pattern": "本来 V/A",
+    "title": "本来 V/A (originally V/A)",
+    "shortExplanation": "originally V/A",
+    "longExplanation": "originally V/A. Pinyin: běnlái V/A",
+    "formation": "běnlái V/A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "她本来想学新闻，但是现在学习法律。",
+        "romanization": "tā běnlái xiǎng xué xīnwén， dànshì xiànzài xuéxí fǎlǜ。",
+        "translation": "She originally wanted to learn the news, but now she is studying law."
+      }
+    ]
+  },
+  {
+    "id": "zh_本来就VA_223",
+    "language": "zh",
+    "pattern": "本来就 V/A",
+    "title": "本来就 V/A (V/A in the first place)",
+    "shortExplanation": "V/A in the first place",
+    "longExplanation": "V/A in the first place. Pinyin: běnlái jiù V/A",
+    "formation": "běnlái jiù V/A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "学生本来就不应该上课迟到。",
+        "romanization": "xuésheng běnlái jiù bù yīnggāi shàngkè chídào。",
+        "translation": "Students should not be late for class in the first place."
+      }
+    ]
+  },
+  {
+    "id": "zh_另另外另外的N_224",
+    "language": "zh",
+    "pattern": "另/另外/另外的 + # + N",
+    "title": "另/另外/另外的 + # + N (another # N)",
+    "shortExplanation": "another # N",
+    "longExplanation": "another # N. Pinyin: lìng/ lìngwài/ lìngwài de + # + N",
+    "formation": "lìng/ lìngwài/ lìngwài de + # + N",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他拿出另/另外/另外的一本书。",
+        "romanization": "tā náchū lìng/ lìngwài/ lìngwài de yī běn shū。",
+        "translation": "He took out another book."
+      }
+    ]
+  },
+  {
+    "id": "zh_另外的其他的别的N_225",
+    "language": "zh",
+    "pattern": "另外的/其他的/别的 N",
+    "title": "另外的/其他的/别的 N (other N)",
+    "shortExplanation": "other N",
+    "longExplanation": "other N. Pinyin: lìngwài de/ qítā de/ biéde N",
+    "formation": "lìngwài de/ qítā de/ biéde N",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "不要看这本书，请看另外的/其他的/别的书。",
+        "romanization": "bùyào kàn zhè běn shū， qǐngkàn lìngwài de/ qítā de/ biéde shū。",
+        "translation": "Don't read this book, please read other books."
+      }
+    ]
+  },
+  {
+    "id": "zh_另另外V_226",
+    "language": "zh",
+    "pattern": "另/另外 V",
+    "title": "另/另外 V (V another)",
+    "shortExplanation": "V another",
+    "longExplanation": "V another. Pinyin: lìng/ lìngwài V",
+    "formation": "lìng/ lìngwài V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他另/另外给了我三十元。",
+        "romanization": "tā lìng/ lìngwài gěi le wǒ sānshí yuán。",
+        "translation": "He gave me another 30 yuan."
+      }
+    ]
+  },
+  {
+    "id": "zh_另外_227",
+    "language": "zh",
+    "pattern": "另外，……",
+    "title": "另外，…… (In addition, …)",
+    "shortExplanation": "In addition, …",
+    "longExplanation": "In addition, …. Pinyin: lìngwài，……",
+    "formation": "lìngwài，……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "多吃水果。另外，还要记得多喝水。",
+        "romanization": "duō chī shuǐguǒ。 lìngwài， hái yào jìde duō hē shuǐ。",
+        "translation": "Eat more fruits. Also, remember to drink more water."
+      }
+    ]
+  }
+]

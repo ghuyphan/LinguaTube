@@ -39,7 +39,7 @@
               class="btn-icon spotlight__clear-btn" 
               (click)="clearInput()" 
               type="button"
-              aria-label="Clear input"
+              [attr.aria-label]="i18n.t('common.clear') || 'Clear input'"
             >
               <app-icon name="x" [size]="14" />
             </button>
@@ -58,8 +58,8 @@
             class="btn-icon spotlight__paste-btn" 
             (click)="pasteFromClipboard()" 
             type="button"
-            aria-label="Paste from clipboard"
-            title="Paste"
+            [attr.aria-label]="i18n.t('commandPalette.paste') || 'Paste from clipboard'"
+            [title]="i18n.t('commandPalette.paste') || 'Paste'"
           >
             <app-icon name="clipboard-check" [size]="15" />
           </button>

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_いAdjective_15": {
+      "title": "Tính từ đuôi い: Thể phủ định lịch sự (～くないです / ～くありません)",
+      "shortExplanation": "Dạng phủ định lịch sự của tính từ đuôi い, bỏ い thêm くないです (hoặc くありません); mang nghĩa 'không...'.",
+      "longExplanation": "Để chuyển tính từ đuôi い sang thể phủ định lịch sự, ta bỏ đuôi い và thêm くないです. Trong các tình huống trang trọng hơn, có thể dùng dạng くありません. Ví dụ: 美味しい (ngon) → 美味しくないです / 美味しくありません (không ngon). Lưu ý trường hợp đặc biệt: いい (tốt) → よくないです / よくありません.",
+      "formation": "Tính từ đuôi い (bỏ い) + くないです / くありません",
+      "examples": [
+        {
+          "translation": "Bánh pizza này không ngon."
+        },
+        {
+          "translation": "Căn phòng này không rộng rãi."
+        },
+        {
+          "translation": "Ý kiến của anh ấy không thú vị."
+        },
+        {
+          "translation": "Bộ phim đó không hay."
+        }
+      ]
+    },
+    "ja_いAdjective_16": {
+      "title": "Tính từ đuôi い: Thể て (～くて)",
+      "shortExplanation": "Dùng để liên kết hai hay nhiều tính từ chỉ đặc điểm, tính chất; mang nghĩa 'vừa... vừa...', 'và', 'vì... nên...'.",
+      "longExplanation": "Thể て của tính từ đuôi い được tạo thành bằng cách bỏ đuôi い và thay bằng くて. Mẫu ngữ pháp này dùng để nối hai hay nhiều tính từ nhằm liệt kê các đặc điểm song song của người hoặc sự vật ('vừa... vừa...'), hoặc diễn tả mối quan hệ nguyên nhân - kết quả ('vì... nên...'). Chú ý trường hợp bất quy tắc: いい (tốt) → よくて.",
+      "formation": "Tính từ đuôi い (bỏ い) + くて + Tính từ / Vế câu",
+      "examples": [
+        {
+          "translation": "Quả táo này vừa ngọt vừa ngon."
+        },
+        {
+          "translation": "Cô ấy vừa dịu dàng vừa dễ thương."
+        },
+        {
+          "translation": "Bộ phim rất thú vị và cảm động."
+        },
+        {
+          "translation": "Căn phòng này vừa rộng vừa sáng sủa."
+        }
+      ]
+    },
+    "ja_なAdjective_17": {
+      "title": "Tính từ đuôi な + に + Động từ (Phó từ hóa)",
+      "shortExplanation": "Bỏ な thêm に vào sau tính từ đuôi な để biến thành phó từ bổ nghĩa cho động từ đi sau; 'một cách...'.",
+      "longExplanation": "Để tính từ đuôi な bổ nghĩa cho động từ, ta bỏ đuôi な và thêm trợ từ に. Cấu trúc này dùng để miêu tả phương thức, trạng thái hoặc cách thức mà một hành động được thực hiện. Ví dụ: 静か（な） → 静かに (nói chuyện một cách yên tĩnh/nhỏ nhẹ), 親切（な） → 親切に (giải thích một cách tận tình).",
+      "formation": "Tính từ đuôi な (bỏ な) + に + Động từ",
+      "examples": [
+        {
+          "translation": "Anh ấy nói chuyện một cách khẽ khàng."
+        },
+        {
+          "translation": "Tôi đã dọn dẹp căn phòng thật sạch sẽ."
+        },
+        {
+          "translation": "Cô ấy đang làm việc rất hăng say."
+        },
+        {
+          "translation": "Thầy giáo giải thích cho tôi rất tận tình."
+        }
+      ]
+    },
+    "ja_なAdjective_18": {
+      "title": "Tính từ đuôi な: Thể で (～で)",
+      "shortExplanation": "Dùng để liên kết tính từ đuôi な với một tính từ, động từ hoặc mệnh đề khác; mang nghĩa 'vừa... vừa...', 'và', 'vì... nên...'.",
+      "longExplanation": "Tính từ đuôi な khi liên kết với từ khác sẽ dùng dạng で (bỏ đuôi な và thay bằng で). Mẫu câu này dùng để liệt kê nhiều đặc điểm, trạng thái song song của người hoặc sự vật ('vừa... vừa...'), hoặc biểu thị nguyên nhân, lý do nhẹ nhàng dẫn đến vế câu phía sau ('vì... nên...').",
+      "formation": "Tính từ đuôi な (bỏ な) + で + Tính từ / Động từ / Mệnh đề",
+      "examples": [
+        {
+          "translation": "Anh ấy thích những người phụ nữ vừa xinh đẹp vừa dịu dàng."
+        },
+        {
+          "translation": "Món ăn này rất lành mạnh, ăn xong thấy tinh thần phấn chấn hẳn lên."
+        },
+        {
+          "translation": "Anh ấy muốn làm việc trong một môi trường yên tĩnh và trầm lắng."
+        },
+        {
+          "translation": "Căn phòng này sạch sẽ nên cảm thấy rất thoải mái, dễ chịu."
+        }
+      ]
+    },
+    "ja_なAdjective_19": {
+      "title": "Tính từ đuôi な + に します (Tác động làm thay đổi / Quyết định)",
+      "shortExplanation": "Diễn tả hành động có chủ ý làm biến đổi trạng thái của đối tượng ('làm cho...'), hoặc đưa ra lựa chọn, quyết định ('chọn...').",
+      "longExplanation": "Cấu trúc 'Tính từ đuôi な + に します' biểu thị ý chí của người nói tác động làm thay đổi trạng thái của sự vật (nghĩa là 'làm cho... trở nên...'). Ngoài ra, mẫu câu này còn được dùng để biểu thị sự lựa chọn hoặc quyết định một phương án cụ thể (nghĩa là 'tôi chọn/quyết định...').",
+      "formation": "Tính từ đuôi な (bỏ な) + に + します",
+      "examples": [
+        {
+          "translation": "Tôi sẽ giữ yên lặng."
+        },
+        {
+          "translation": "Tôi sẽ dọn dẹp cho căn phòng thật sạch sẽ."
+        },
+        {
+          "translation": "Cuộc họp ngày mai tôi sẽ tổ chức thật đơn giản gọn gàng."
+        },
+        {
+          "translation": "Tôi chọn bữa ăn lành mạnh tốt cho sức khỏe."
+        }
+      ]
+    },
+    "ja_なAdjective_20": {
+      "title": "Tính từ đuôi な + に なります (Biến đổi trạng thái tự nhiên)",
+      "shortExplanation": "Diễn tả sự thay đổi hoặc chuyển biến tự nhiên sang một trạng thái mới; 'trở nên...', 'trở thành...'.",
+      "longExplanation": "Mẫu câu 'Tính từ đuôi な + に なります' diễn đạt sự thay đổi tự nhiên về trạng thái, đặc tính của người hoặc sự vật theo thời gian hoặc hoàn cảnh khách quan mà không nhấn mạnh vào sự can thiệp có chủ ý của con người. Tương đương với 'trở nên...', 'trở thành...' trong tiếng Việt.",
+      "formation": "Tính từ đuôi な (bỏ な) + に + なります",
+      "examples": [
+        {
+          "translation": "Căn phòng này trở nên yên tĩnh."
+        },
+        {
+          "translation": "Cô ấy trở nên xinh đẹp."
+        },
+        {
+          "translation": "Anh ấy trở nên khỏe mạnh hoạt bát."
+        },
+        {
+          "translation": "Khu phố trở nên nhộn nhịp, sầm uất."
+        }
+      ]
+    },
+    "ja_Noun_21": {
+      "title": "Danh từ 1 + か + Danh từ 2 (か) (Lựa chọn phương án: hoặc, hay là)",
+      "shortExplanation": "Dùng để đưa ra hai hoặc nhiều phương án lựa chọn thay thế nhau; 'hoặc', 'hay là'.",
+      "longExplanation": "Trợ từ liên kết か đặt giữa các danh từ (hoặc mệnh đề) dùng để liệt kê các phương án lựa chọn loại trừ nhau, tương đương với 'hoặc', 'hay là' trong tiếng Việt. Có thể dùng cấu trúc 'A か B' hoặc lặp lại 'A か B か' để nhấn mạnh sự lựa chọn hay phân vân giữa các phương án.",
+      "formation": "Danh từ 1 + か + Danh từ 2 (+ か)",
+      "examples": [
+        {
+          "translation": "Hôm nay bạn chọn xem phim hay đi dạo bộ?"
+        },
+        {
+          "translation": "Xin hãy chỉ chọn một loại thôi, cà phê hoặc trà."
+        },
+        {
+          "translation": "Tôi dự định đi học bằng tàu điện hoặc xe buýt."
+        },
+        {
+          "translation": "Cuối tuần này tôi vẫn chưa quyết định là sẽ đi leo núi hay đi biển."
+        }
+      ]
+    },
+    "ja_Noun_22": {
+      "title": "Danh từ + が できます (Khả năng, năng lực)",
+      "shortExplanation": "Diễn tả khả năng hoặc năng lực thực hiện một hành động, kỹ năng, ngoại ngữ; 'biết', 'có thể làm'.",
+      "longExplanation": "Mẫu câu 'Danh từ + が できます' dùng để biểu thị việc người nói hoặc chủ ngữ có khả năng, kỹ năng thực hiện một hoạt động nào đó. Danh từ đứng trước trợ từ が thường là danh từ chỉ hành động (như 料理 - nấu ăn, 泳ぎ - bơi lội), ngôn ngữ (như 英語 - tiếng Anh), hoặc nhạc cụ, môn thể thao. Tương đương với 'biết...', 'có thể làm...' trong tiếng Việt.",
+      "formation": "Danh từ + が + できます",
+      "examples": [
+        {
+          "translation": "Tôi có thể nói (biết) tiếng Anh."
+        },
+        {
+          "translation": "Tôi biết nấu ăn."
+        },
+        {
+          "translation": "Anh ấy biết bơi."
+        },
+        {
+          "translation": "Cô ấy biết chơi đàn piano."
+        }
+      ]
+    },
+    "ja_Noun_23": {
+      "title": "Danh từ + が ほしいです (Mong muốn sở hữu đồ vật)",
+      "shortExplanation": "Bày tỏ ước muốn có được hoặc sở hữu một đồ vật, sự vật nào đó; 'muốn có...', 'muốn...'.",
+      "longExplanation": "Mẫu câu 'Danh từ + が ほしいです' dùng để thể hiện mong muốn sở hữu một món đồ hoặc mong muốn có được đối tượng nào đó (như bạn bè, thời gian). Khác với '～たいです' (dùng sau động từ chỉ mong muốn thực hiện hành động), 'ほしい' đi trực tiếp với danh từ chỉ đối tượng mong muốn qua trợ từ が. Cấu trúc này thường dùng cho ngôi thứ nhất. Với ngôi thứ ba, người ta thường dùng '～をほしがっています'.",
+      "formation": "Danh từ + が + ほしいです",
+      "examples": [
+        {
+          "translation": "Tôi muốn có một chiếc ô tô mới."
+        },
+        {
+          "translation": "Tôi muốn có cà phê (cho tôi xin cà phê)."
+        },
+        {
+          "translation": "Cô ấy muốn có hoa."
+        },
+        {
+          "translation": "Tôi muốn có bạn bè."
+        }
+      ]
+    },
+    "ja_Noun_24": {
+      "title": "Danh từ 1 + から + Danh từ 2 + まで (Từ... đến...)",
+      "shortExplanation": "Biểu thị điểm xuất phát và điểm kết thúc của thời gian, không gian hoặc phạm vi; 'từ... đến...'.",
+      "longExplanation": "Mẫu câu '～から ～まで' dùng để xác định phạm vi giữa hai mốc danh từ, trong đó から chỉ điểm bắt đầu (thời gian bắt đầu, nơi xuất phát) và まで chỉ điểm kết thúc (thời gian kết thúc, điểm đến). Tương đương với 'từ... đến...' trong tiếng Việt. Cả hai trợ từ có thể đi cặp với nhau hoặc dùng riêng lẻ.",
+      "formation": "Danh từ 1 (điểm bắt đầu) + から + Danh từ 2 (điểm kết thúc) + まで",
+      "examples": [
+        {
+          "translation": "Tôi làm việc từ 9 giờ sáng đến 5 giờ chiều."
+        },
+        {
+          "translation": "Tôi đi tàu điện từ Tokyo đến Osaka."
+        },
+        {
+          "translation": "Tàu điện ngầm hoạt động từ 6 giờ sáng đến nửa đêm."
+        },
+        {
+          "translation": "Tôi đi học từ thứ Hai đến thứ Sáu."
+        }
+      ]
+    },
+    "ja_Noun_25": {
+      "title": "Danh từ + くらい (Khoảng, chừng, ước lượng)",
+      "shortExplanation": "Đứng sau lượng từ hoặc danh từ để biểu thị sự ước lượng đại khái về số lượng, thời gian, mức độ; 'khoảng', 'chừng'.",
+      "longExplanation": "Trợ từ phó từ くらい đứng sau số từ, lượng từ hoặc danh từ để đưa ra con số ước chừng hoặc mức độ ước lượng đại khái. Tương đương với 'khoảng', 'chừng', 'tầm' trong tiếng Việt. Trong tiếng Nhật hiện đại, くらい và dạng âm đục ぐらい có ý nghĩa tương đương và thường có thể dùng thay thế cho nhau.",
+      "formation": "Danh từ / Lượng từ + くらい",
+      "examples": [
+        {
+          "translation": "Cuốn sách này có khoảng 300 trang."
+        },
+        {
+          "translation": "Đi bộ đến nhà anh ấy mất khoảng 20 phút."
+        },
+        {
+          "translation": "Ngày mai trời sẽ nóng, khoảng 30 độ."
+        },
+        {
+          "translation": "Để nấu món ăn này, cần khoảng 500 yên tiền nguyên liệu."
+        }
+      ]
+    },
+    "ja_Noun_26": {
+      "title": "Danh từ + ぐらい (Khoảng, tầm, chừng)",
+      "shortExplanation": "Đứng sau từ chỉ số lượng hoặc thời gian để chỉ mức độ xấp xỉ; 'khoảng', 'chừng', 'tầm'.",
+      "longExplanation": "Trợ từ ぐらい (dạng âm đục của くらい) đi sau danh từ, từ chỉ số lượng hoặc thời gian nhằm diễn đạt mức độ ước chừng, xấp xỉ. Tương đương với 'khoảng', 'chừng', 'tầm' trong tiếng Việt. Đây là cách nói rất phổ biến và tự nhiên trong giao tiếp hàng ngày.",
+      "formation": "Danh từ / Lượng từ + ぐらい",
+      "examples": [
+        {
+          "translation": "Vì học cả ngày nên tôi đã học khoảng 10 tiếng đồng hồ."
+        },
+        {
+          "translation": "Cuốn sách này có khoảng 100 trang."
+        },
+        {
+          "translation": "Anh ấy đã ăn khoảng 5 quả trái cây."
+        },
+        {
+          "translation": "Từ nhà ga đi bộ về nhà mất khoảng 20 phút."
+        }
+      ]
+    },
+    "ja_Noun_27": {
+      "title": "Danh từ chỉ thời gian + ごろ (Vào khoảng / Tầm mấy giờ)",
+      "shortExplanation": "Đi sau mốc thời gian hoặc độ tuổi để chỉ thời điểm ước chừng; 'vào khoảng', 'tầm'.",
+      "longExplanation": "Trợ từ tiếp vĩ ngữ ごろ (khoảng, tầm) đứng sau các danh từ chỉ mốc thời điểm (giờ giấc, buổi trong ngày) hoặc độ tuổi để diễn tả một mốc thời gian ước lượng đại khái. Cần phân biệt với くらい/ぐらい (chỉ độ dài thời gian hoặc số lượng): ごろ chỉ mốc thời điểm (như 3 giờ chiều), còn くらい/ぐらい chỉ lượng thời gian (như 3 tiếng đồng hồ).",
+      "formation": "Danh từ chỉ thời điểm / Độ tuổi + ごろ (+ に)",
+      "examples": [
+        {
+          "translation": "Xin hãy gọi điện cho tôi vào khoảng buổi trưa."
+        },
+        {
+          "translation": "Anh ấy đã đến Nhật Bản vào khoảng năm 10 tuổi."
+        },
+        {
+          "translation": "Chúng ta hãy gặp nhau vào tầm 3 giờ chiều nhé."
+        },
+        {
+          "translation": "Tối hôm qua tôi đã về nhà vào khoảng 8 giờ."
+        }
+      ]
+    },
+    "ja_Noun_28": {
+      "title": "Danh từ / Động từ + だけ (Chỉ, duy chỉ)",
+      "shortExplanation": "Biểu thị sự giới hạn phạm vi, mang nghĩa 'chỉ', 'chỉ duy nhất'.",
+      "longExplanation": "Trợ từ phó từ だけ dùng để giới hạn phạm vi của sự vật, hành động, biểu thị rằng chỉ có đối tượng đó mà không có cái nào khác. Tương đương với 'chỉ', 'chỉ có', 'chỉ mỗi' trong tiếng Việt. Ngoài danh từ, だけ còn có thể đi sau động từ thể thông thường, tính từ đuôi い hoặc tính từ đuôi な (な + だけ). Cấu trúc '～だけでなく' mang nghĩa 'không chỉ... mà còn...'.",
+      "formation": "Danh từ + だけ / Động từ thể thông thường + だけ / Tính từ đuôi い + だけ / Tính từ đuôi な + な + だけ",
+      "examples": [
+        {
+          "translation": "Tôi chỉ uống cà phê rồi về nhà."
+        },
+        {
+          "translation": "Tôi mới chỉ đọc hai mươi trang của cuốn sách này."
+        },
+        {
+          "translation": "Cô ấy rất nhanh nhẹn, không chỉ chạy nhanh mà suy nghĩ cũng rất nhanh."
+        },
+        {
+          "translation": "Căn phòng này là nơi chỉ để ngủ thôi."
+        }
+      ]
+    },
+    "ja_Nounで_29": {
+      "title": "Danh từ + で (Nơi chốn của hành động / Phương tiện, cách thức)",
+      "shortExplanation": "Chỉ địa điểm diễn ra hành động ('ở, tại'), hoặc phương tiện, công cụ, ngôn ngữ thực hiện hành động ('bằng').",
+      "longExplanation": "Trợ từ で đứng sau danh từ để biểu thị: ① Địa điểm diễn ra hành động (khác với に chỉ nơi tồn tại); ② Phương tiện giao thông, công cụ, ngôn ngữ hoặc cách thức thực hiện hành động. Tùy ngữ cảnh mà dịch là 'ở, tại' (nơi chốn) hoặc 'bằng, với' (phương tiện, công cụ).",
+      "formation": "Danh từ (địa điểm / phương tiện / công cụ / ngôn ngữ) + で",
+      "examples": [
+        {
+          "translation": "Tôi học bài ở thư viện."
+        },
+        {
+          "translation": "Tôi đi đến trường bằng xe buýt."
+        },
+        {
+          "translation": "Tôi đã viết bằng bút chì."
+        },
+        {
+          "translation": "Chúng ta hãy cùng nói chuyện bằng tiếng Anh nhé."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_いAdjective_15": {
+      "title": "い形容词（一类形容词）礼貌否定形（～くないです / ～くありません）",
+      "shortExplanation": "い形容词的礼貌否定形式，词尾い变くないです（或くありません），表示“不……”。",
+      "longExplanation": "表示い形容词（一类形容词）的敬体礼貌否定时，将词尾的“い”去掉，加上“くないです”。在更为正式郑重的场合，也可以使用“くありません”。例如：美味しい → 美味しくないです / 美味しくありません。特别需要注意，特殊词“いい（好）”的否定形式为“よくないです / よくありません”。",
+      "formation": "い形容词词干（去 い） + くないです / くありません",
+      "examples": [
+        {
+          "translation": "这个披萨不好吃。"
+        },
+        {
+          "translation": "这个房间不宽敞。"
+        },
+        {
+          "translation": "他的意见没有意思。"
+        },
+        {
+          "translation": "那部电影不好看（没意思）。"
+        }
+      ]
+    },
+    "ja_いAdjective_16": {
+      "title": "い形容词的て形（～くて）",
+      "shortExplanation": "连接两个或多个形容词或分句，表示并列列举或轻微因果；“又……又……”、“既……又……”。",
+      "longExplanation": "い形容词（一类形容词）的连接形（て形）是将词尾“い”变成“くて”。用于并列列举事物的多个属性或状态（“既……又……”），也可表示轻微的原因理由（“因为……所以……”）。连接的多个形容词在情感色彩上通常保持一致。注意不规则变化：いい（好）→ よくて。",
+      "formation": "い形容词词干（去 い） + くて + 形容词 / 谓语",
+      "examples": [
+        {
+          "translation": "这个苹果又甜又好吃。"
+        },
+        {
+          "translation": "她既温柔又可爱。"
+        },
+        {
+          "translation": "电影很有意思，非常感人。"
+        },
+        {
+          "translation": "这个房间又宽敞又明亮。"
+        }
+      ]
+    },
+    "ja_なAdjective_17": {
+      "title": "な形容词 + に + 动词（副词化用法）",
+      "shortExplanation": "な形容词去词尾な加に修饰后接动词，描写动作进行的方式或状态；“……地（做某事）”。",
+      "longExplanation": "な形容词（二类形容词）修饰动词时，需去掉词尾的“な”并加上助词“に”，使其转化为副词性用法（连用修饰语），用来具体描摹动作进行时的状态、方式或情态。相当于汉语中的“……地”。例如：静か（な） → 静かに（安静地）、きれい（な） → きれいに（干净地、漂亮地）。",
+      "formation": "な形容词词干（去 な） + に + 动词",
+      "examples": [
+        {
+          "translation": "他小声地说话。"
+        },
+        {
+          "translation": "把房间打扫得很干净。"
+        },
+        {
+          "translation": "她充满活力地工作着。"
+        },
+        {
+          "translation": "老师很亲切地为我讲解。"
+        }
+      ]
+    },
+    "ja_なAdjective_18": {
+      "title": "な形容词的中顿形（～で）",
+      "shortExplanation": "な形容词去な加で连接其他形容词、动词或分句，表示并列列举或轻微原因；“既……又……”、“……而且……”。",
+      "longExplanation": "な形容词（二类形容词）的中顿形为去掉词尾“な”加上“で”。主要用于并列列举事物的多个性质特征（相当于“既……又……”），也可作为前后句的连接，表示轻微的因果关系（“因为……所以……”）。",
+      "formation": "な形容词词干（去 な） + で + 形容词 / 动词 / 分句",
+      "examples": [
+        {
+          "translation": "他喜欢既漂亮又温柔的女性。"
+        },
+        {
+          "translation": "这道料理很健康，吃完让人精神振奋。"
+        },
+        {
+          "translation": "他想在安静沉稳的环境中工作。"
+        },
+        {
+          "translation": "这个房间既整洁又让人感觉舒适。"
+        }
+      ]
+    },
+    "ja_なAdjective_19": {
+      "title": "な形容词 + に します（人为使……改变 / 决定、选择）",
+      "shortExplanation": "表示主观人为地使某事物变成某种状态（“弄成……”、“使……变得……”），或表示做出选择与决定（“选择……”）。",
+      "longExplanation": "句型“な形容词词干 + に + します”主要用于表示说话人有意识地施加动作，使对象的状态发生人为的改变（相当于汉语的“把……弄得……”、“使……变……”）。此外，还可以用于表示在多个选项中决定选择某种方案或性质（“选择……”、“决定……”）。",
+      "formation": "な形容词词干（去 な） + に + します",
+      "examples": [
+        {
+          "translation": "我会保持安静。"
+        },
+        {
+          "translation": "我会把房间打扫干净。"
+        },
+        {
+          "translation": "明天的会议我会安排得简单明了。"
+        },
+        {
+          "translation": "我选择健康的饮食。"
+        }
+      ]
+    },
+    "ja_なAdjective_20": {
+      "title": "な形容词 + に なります（状态的自然转变）",
+      "shortExplanation": "表示事物自然而然地发生变化，进入某种新的状态；“变得……”、“变成……”。",
+      "longExplanation": "句型“な形容词词干 + に + なります”用于表示客观事物或人在性质、状态上的自然转变与演变，相当于汉语中的“变得……”或“变成……”。与强调人为作为的“に します”相对，“に なります”侧重于自然形成的变化过程或最终显现的客观结果。",
+      "formation": "な形容词词干（去 な） + に + なります",
+      "examples": [
+        {
+          "translation": "这个房间变得安静了。"
+        },
+        {
+          "translation": "她变得漂亮了。"
+        },
+        {
+          "translation": "他变得很有活力（恢复了精神）。"
+        },
+        {
+          "translation": "小镇变得热闹起来了。"
+        }
+      ]
+    },
+    "ja_Noun_21": {
+      "title": "名词1 + か + 名词2（か）（二选一、列举备选）",
+      "shortExplanation": "用于列举两个或多个备选项供选择；“或者……”、“还是……”。",
+      "longExplanation": "助词“か”接在名词或分句之间，用来提出两个或多个供选择的事物或方案，表示“或者”、“还是”。既可以使用“A か B”的形式，也可以重复使用“A か B か”，用以突出在两者之间进行权衡、抉择或举棋不定的语气。",
+      "formation": "名词1 + か + 名词2 (+ か)",
+      "examples": [
+        {
+          "translation": "今天你是看电影还是散步，选哪一个呢？"
+        },
+        {
+          "translation": "咖啡或红茶，请只选一种。"
+        },
+        {
+          "translation": "我打算坐电车或公交车去学校。"
+        },
+        {
+          "translation": "周末是去爬山还是去海边，我还没决定好。"
+        }
+      ]
+    },
+    "ja_Noun_22": {
+      "title": "名词 + が できます（表示具备某种能力或技能）",
+      "shortExplanation": "表示具备从事某项活动的能力，掌握某种语言或技能；“会……”、“能……”。",
+      "longExplanation": "句型“名词 + が できます”用于表达主语具备从事某项行为的能力或掌握了某门技能。前面的名词通常是具有动作意义的名词（如料理、泳ぎ）、语言（如英語）或乐器、体育项目（如ピアノ）。在汉语中译为“会……”或“能……”。",
+      "formation": "名词 + が + できます",
+      "examples": [
+        {
+          "translation": "我会（懂）英语。"
+        },
+        {
+          "translation": "我会做饭。"
+        },
+        {
+          "translation": "他会游泳。"
+        },
+        {
+          "translation": "她会弹钢琴。"
+        }
+      ]
+    },
+    "ja_Noun_23": {
+      "title": "名词 + が ほしいです（表达想要得到某物的愿望）",
+      "shortExplanation": "用于礼貌地表达希望拥有某种物品或人际关系的愿望；“想要……”。",
+      "longExplanation": "句型“名词 + が ほしいです”用于表达希望获得或拥有某种物品、对象（如朋友、时间等）的愿望。与接在动词后表示想做某事的“～たい”不同，“ほしい”直接修饰想要拥有的名词，并用助词“が”来标示愿望对象。通常用于第一人称表达自己的愿望，若表示第三人称的愿望时，一般使用“～をほしがっています”。",
+      "formation": "名词 + が + ほしいです",
+      "examples": [
+        {
+          "translation": "我想要一辆新车。"
+        },
+        {
+          "translation": "我想喝咖啡（我想要咖啡）。"
+        },
+        {
+          "translation": "她想要花。"
+        },
+        {
+          "translation": "我想要朋友。"
+        }
+      ]
+    },
+    "ja_Noun_24": {
+      "title": "名词1 + から + 名词2 + まで（从……到……）",
+      "shortExplanation": "表示时间、地点或数量范围的起点与终点；“从……到……”。",
+      "longExplanation": "句型“～から ～まで”用于标明时间、空间、距离等范围的起点与终点。其中“から”表示起点（“从……”），“说明”终点（“到……”）。两者既可以成对配合使用以界定完整区间，也可以各自单独使用。",
+      "formation": "名词1（起点） + から + 名词2（终点） + まで",
+      "examples": [
+        {
+          "translation": "我从早上9点工作到下午5点。"
+        },
+        {
+          "translation": "坐电车从东京去大阪。"
+        },
+        {
+          "translation": "地铁从早上6点运营至深夜。"
+        },
+        {
+          "translation": "我从周一到周五上学。"
+        }
+      ]
+    },
+    "ja_Noun_25": {
+      "title": "名词 + くらい（表示大约、大概程度）",
+      "shortExplanation": "接在数量词或名词后，表示对数量、时间或程度的大致估算；“大约……”、“差不多……”。",
+      "longExplanation": "副助词“くらい”接在表示数量、时间或程度的名词之后，表示概略的估计，相当于汉语中的“大约”、“大概”、“左右”。在现代日语中，“くらい”与浊音形式“ぐらい”在表概数时意义完全相同，多数场合下可以互换使用。",
+      "formation": "名词 / 数量词 + くらい",
+      "examples": [
+        {
+          "translation": "这本书大约有300页。"
+        },
+        {
+          "translation": "步行到他家大约需要20分钟。"
+        },
+        {
+          "translation": "明天很热，大概会有30度左右吧。"
+        },
+        {
+          "translation": "做这道菜需要大约500日元的材料费。"
+        }
+      ]
+    },
+    "ja_Noun_26": {
+      "title": "名词 + ぐらい（表示大约、大概数量）",
+      "shortExplanation": "接在数量词或时间名词后，表示大概的数量、时间或程度；“大约……”、“左右”。",
+      "longExplanation": "副助词“ぐらい”（由“くらい”连浊而来）接在数量词、时间词或名词之后，表示大致的数量估算或时间的近似值。相当于汉语中的“大约”、“大概”、“左右”。在口语和书面语中均极为常用。",
+      "formation": "名词 / 数量词 + ぐらい",
+      "examples": [
+        {
+          "translation": "学了一整天，所以大约学了10个小时。"
+        },
+        {
+          "translation": "这本书大约有100页。"
+        },
+        {
+          "translation": "他吃了大约5个水果。"
+        },
+        {
+          "translation": "从车站步行回家大约需要20分钟左右。"
+        }
+      ]
+    },
+    "ja_Noun_27": {
+      "title": "时间名词 + ごろ（在……左右、大约在某时刻）",
+      "shortExplanation": "接在具体的时间点或年龄后，表示大致的时间点；“……左右”、“大约……点”。",
+      "longExplanation": "接尾词“ごろ”接在表示具体时间点（如几点、正午、傍晚等）或年龄的名词之后，表示大约在该时间点，相当于汉语中的“……左右”。需注意与“くらい/ぐらい”的区别：“ごろ”表示的是“时刻点（如3点左右）”，而“くらい/ぐらい”多表示“时间段/时长或数量（如3个小时左右）”。",
+      "formation": "时间点名词 / 年龄 + ごろ (+ に)",
+      "examples": [
+        {
+          "translation": "请在中午左右给我打电话。"
+        },
+        {
+          "translation": "他大约在10岁左右来到了日本。"
+        },
+        {
+          "translation": "我们下午3点左右见面吧。"
+        },
+        {
+          "translation": "昨晚大约8点左右回到了家。"
+        }
+      ]
+    },
+    "ja_Noun_28": {
+      "title": "名词 / 动词 + だけ（表示限定，仅、只）",
+      "shortExplanation": "接在名词、动词等词后，表示限定范围，排斥其他；“只……”、“仅仅……”。",
+      "longExplanation": "副助词“だけ”接在名词、动词普通形、形容词等之后，用于对事物的数量、范围或动作进行明确限定，排除其余部分。相当于汉语中的“只”、“仅仅”、“只有”。例如“走るだけでなく”表示“不仅跑步……，而且……”。",
+      "formation": "名词 + だけ / 动词普通形 + だけ / い形容词 + だけ / な形容词 + な + だけ",
+      "examples": [
+        {
+          "translation": "我只喝了咖啡就回家了。"
+        },
+        {
+          "translation": "这本书我只读了二十页。"
+        },
+        {
+          "translation": "她动作非常敏捷，不仅跑得快，思考也很迅速。"
+        },
+        {
+          "translation": "这个房间只是用来睡觉的地方。"
+        }
+      ]
+    },
+    "ja_Nounで_29": {
+      "title": "名词 + で（动作场所 / 工具、手段、语言）",
+      "shortExplanation": "接在名词后，表示动作发生的场所（“在……”）或使用的工具、交通手段、语言（“用……”、“乘……”）。",
+      "longExplanation": "格助词“で”接在名词后具有多种重要功能：① 接在场所名词后，表示动作、行为发生的地点（“在……”），与表示静态存在场所的“に”形成鲜明对比；② 接在交通工具、工具、手段、语言或原材料名词后，表示进行动作所使用的手段、方式或工具（“用……”、“乘……”）。",
+      "formation": "名词（场所 / 工具 / 交通手段 / 语言） + で",
+      "examples": [
+        {
+          "translation": "在图书馆学习。"
+        },
+        {
+          "translation": "乘公交车去学校。"
+        },
+        {
+          "translation": "用铅笔写了。"
+        },
+        {
+          "translation": "我们用英语交谈吧。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_いAdjective_15": {
+      "title": "い형용사의 정중 부정형 (～くないです / ～くありません)",
+      "shortExplanation": "い형용사의 어미 い를 빼고 ～くないです(또는 ～くありません)를 붙여 정중한 부정을 나타내며, '~하지 않습니다', '~지 않습니다'의 뜻입니다.",
+      "longExplanation": "い형용사를 정중하게 부정할 때는 어미 'い'를 탈락시키고 'くないです'를 접속합니다. 보다 격식 있는 자리에서는 'くありません'을 사용할 수도 있습니다. 예: 美味しい → 美味しくないです / 美味しくありません. 단, 'いい(좋다)'는 'よくないです / よくありません'으로 불규칙 변화하므로 주의해야 합니다.",
+      "formation": "い형용사 어간(い 탈락) + くないです / くありません",
+      "examples": [
+        {
+          "translation": "이 피자는 맛이 없습니다."
+        },
+        {
+          "translation": "이 방은 넓지 않습니다."
+        },
+        {
+          "translation": "그의 의견은 재미없습니다."
+        },
+        {
+          "translation": "그 영화는 재미있지 않습니다."
+        }
+      ]
+    },
+    "ja_いAdjective_16": {
+      "title": "い형용사의 て형 (～くて)",
+      "shortExplanation": "두 개 이상의 형용사나 문장을 연결하여 성질·상태를 나열하거나 이유를 나타내며, '~하고', '~해서'의 뜻입니다.",
+      "longExplanation": "い형용사의 연결형(て형)은 어미 'い'를 'くて'로 바꾸어 만듭니다. 사물이나 사람의 여러 가지 특징을 나열('~하고', '~하며')하거나, 앞 절이 뒤 절의 이유나 원인('~해서')이 됨을 나타낼 때 쓰입니다. 불규칙 어휘인 'いい'는 'よくて'로 바뀝니다.",
+      "formation": "い형용사 어간(い 탈락) + くて + 형용사 / 술어",
+      "examples": [
+        {
+          "translation": "이 사과는 달고 맛있습니다."
+        },
+        {
+          "translation": "그녀는 상냥하고 귀엽습니다."
+        },
+        {
+          "translation": "영화는 재미있고 감동적이었습니다."
+        },
+        {
+          "translation": "이 방은 넓고 밝습니다."
+        }
+      ]
+    },
+    "ja_なAdjective_17": {
+      "title": "な형용사 + に + 동사 (부사적 수식)",
+      "shortExplanation": "な형용사의 어미 な를 빼고 に를 붙여 뒤에 오는 동사를 수식하며, '~하게', '~히'의 뜻을 나타냅니다.",
+      "longExplanation": "な형용사(형용동사)가 뒤에 이어지는 동사를 수식할 때는 어미 'な'를 없애고 조사 'に'를 연결합니다. 이를 통해 부사처럼 기능하며 동작이 행해지는 양태나 상태를 자세히 설명합니다. 예: 静か（な） → 静かに(조용하게), 親切（な） → 親切に(친절하게).",
+      "formation": "な형용사 어간(な 탈락) + に + 동사",
+      "examples": [
+        {
+          "translation": "그는 조용하게 말한다."
+        },
+        {
+          "translation": "방을 깨끗하게 청소했다."
+        },
+        {
+          "translation": "그녀는 활기차게 일하고 있습니다."
+        },
+        {
+          "translation": "선생님께서는 친절하게 설명해 주신다."
+        }
+      ]
+    },
+    "ja_なAdjective_18": {
+      "title": "な형용사의 연결형 (～で)",
+      "shortExplanation": "な형용사의 어간에 で를 붙여 뒤의 형용사나 문장과 연결하며, '~하고', '~해서'의 뜻을 나타냅니다.",
+      "longExplanation": "な형용사(형용동사)를 다른 상태나 동작과 연결할 때는 어미 'な'를 빼고 'で'를 접속합니다. 복수의 성질이나 특징을 나열('~하고', '~이며')하거나, 앞 절이 뒤 절의 이유·원인('~해서')이 됨을 나타낼 때 널리 쓰입니다.",
+      "formation": "な형용사 어간(な 탈락) + で + 형용사 / 동사 / 문장",
+      "examples": [
+        {
+          "translation": "그는 예쁘고 다정한 여성을 좋아합니다."
+        },
+        {
+          "translation": "이 요리는 건강에 좋아서 활력이 솟아납니다."
+        },
+        {
+          "translation": "그는 조용하고 차분한 환경에서 일하고 싶어 합니다."
+        },
+        {
+          "translation": "이 방은 청결해서 기분이 좋습니다."
+        }
+      ]
+    },
+    "ja_なAdjective_19": {
+      "title": "な형용사 + に します (~하게 만들다 / ~로 결정하다)",
+      "shortExplanation": "의도적으로 어떤 상태로 만들거나(~하게 하다), 선택·결정(~로 정하다)함을 나타냅니다.",
+      "longExplanation": "'な형용사 어간 + に します' 문형은 주어의 의도적인 행동을 통해 대상을 특정한 상태로 변화시킴('~하게 만들다', '~하게 하다')을 나타냅니다. 또한 상황이나 문맥에 따라 어떠한 특성을 가진 방안이나 대상을 선택하고 결정함('~로 정하다')을 나타내기도 합니다.",
+      "formation": "な형용사 어간(な 탈락) + に + します",
+      "examples": [
+        {
+          "translation": "조용히 하겠습니다."
+        },
+        {
+          "translation": "방을 깨끗하게 하겠습니다."
+        },
+        {
+          "translation": "내일 회의는 간단하게 하겠습니다."
+        },
+        {
+          "translation": "건강식으로 결정하겠습니다."
+        }
+      ]
+    },
+    "ja_なAdjective_20": {
+      "title": "な형용사 + に なります (~해지다 / ~하게 되다)",
+      "shortExplanation": "사물이나 사람의 상태가 자연스럽게 변화하여 새로운 상태에 도달함을 나타내며, '~해지다', '~하게 되다'의 뜻입니다.",
+      "longExplanation": "'な형용사 어간 + に なります' 문형은 주어의 성질이나 상태가 자연스러운 과정이나 시간의 흐름에 따라 변화하는 것을 나타냅니다. 작위적인 행위를 나타내는 'に します'와 달리, 객관적인 변화의 결과나 추이를 나타내며 한국어의 '~해지다', '~하게 되다'에 해당합니다.",
+      "formation": "な형용사 어간(な 탈락) + に + なります",
+      "examples": [
+        {
+          "translation": "이 방은 조용해집니다."
+        },
+        {
+          "translation": "그녀는 예뻐집니다."
+        },
+        {
+          "translation": "그는 건강해집니다 (원기를 되찾습니다)."
+        },
+        {
+          "translation": "거리는 활기를 띱니다 (번화해집니다)."
+        }
+      ]
+    },
+    "ja_Noun_21": {
+      "title": "명사1 + か + 명사2 (か) (선택 대안 나열)",
+      "shortExplanation": "둘 이상의 대안을 제시하여 선택을 나타내며, '~이(나)', '~든가', '~혹은'의 뜻입니다.",
+      "longExplanation": "조사 'か'를 명사나 절 사이에 두어 둘 이상의 선택지 중 하나를 고르도록 제시할 때 쓰입니다. 한국어의 '~이(나)', '~든가'에 해당하며, 'A か B' 또는 'A か B か' 형태로 양쪽에 붙여 선택의 대상을 나열하고 망설임이나 결정을 강조할 때 쓰입니다.",
+      "formation": "명사1 + か + 명사2 (+ か)",
+      "examples": [
+        {
+          "translation": "오늘 영화를 볼지, 산책을 할지 어느 쪽으로 하시겠습니까?"
+        },
+        {
+          "translation": "커피나 홍차 중 하나만 골라 주세요."
+        },
+        {
+          "translation": "전철이나 버스를 이용해서 학교에 갈 생각입니다."
+        },
+        {
+          "translation": "주말에는 산에 오를지 바다에 갈지 아직 정하지 않았습니다."
+        }
+      ]
+    },
+    "ja_Noun_22": {
+      "title": "명사 + が できます (능력·가능 표현)",
+      "shortExplanation": "언어, 악기, 요리 등 어떤 분야에 대한 기능이나 능력이 있음을 나타내며, '~을/를 할 수 있다', '~을/를 할 줄 알다'의 뜻입니다.",
+      "longExplanation": "'명사 + が できます' 문형은 주어가 특정 활동이나 기술을 해낼 수 있는 역량이나 기능이 있음을 나타냅니다. 조사 'が' 앞에는 동작성 명사(料理, 泳ぎ), 외국어(英語), 악기(ピアノ) 등의 명사가 오며, 한국어의 '~을/를 할 줄 알다', '~을/를 할 수 있다'에 해당합니다.",
+      "formation": "명사 + が + できます",
+      "examples": [
+        {
+          "translation": "영어를 할 줄 압니다 (할 수 있습니다)."
+        },
+        {
+          "translation": "요리를 할 줄 압니다."
+        },
+        {
+          "translation": "그는 수영을 할 줄 압니다."
+        },
+        {
+          "translation": "그녀는 피아노를 칠 줄 압니다."
+        }
+      ]
+    },
+    "ja_Noun_23": {
+      "title": "명사 + が ほしいです (소유 소망 표현)",
+      "shortExplanation": "어떤 물건이나 대상을 갖고 싶다는 소망을 나타내며, '~을/를 원하다', '~을/를 갖고 싶다'의 뜻입니다.",
+      "longExplanation": "'명사 + が ほしいです' 문형은 특정 물건이나 대상(친구, 시간 등)을 소유하고 싶다는 바람을 정중하게 나타냅니다. 동작을 하고 싶을 때 쓰는 '～たい'와 달리 'ほしい'는 소유하고 싶은 대상 명사를 조사 'が'로 취합니다. 주로 1인칭의 욕구를 나타내며, 3인칭의 욕구를 표현할 때는 보통 '～을/를 ほしがっています' 형태를 사용합니다.",
+      "formation": "명사 + が + ほしいです",
+      "examples": [
+        {
+          "translation": "새 차를 갖고 싶습니다."
+        },
+        {
+          "translation": "커피를 마시고 싶습니다 (커피를 원합니다)."
+        },
+        {
+          "translation": "그녀는 꽃을 원합니다."
+        },
+        {
+          "translation": "친구가 있었으면 좋겠습니다 (친구를 원합니다)."
+        }
+      ]
+    },
+    "ja_Noun_24": {
+      "title": "명사1 + から + 명사2 + まで (~부터/에서 ~까지)",
+      "shortExplanation": "시간, 장소, 범위의 시작점과 끝점을 나타내며, '~부터(에서) ~까지'의 뜻입니다.",
+      "longExplanation": "'～から ～まで' 문형은 시간이나 공간, 거리, 범위의 출발점과 도달점을 나타냅니다. 'から'는 시작점이나 출발지('~부터', '~에서')를, '까지'는 종료점이나 목적지('~까지')를 나타내며, 쌍을 이루어 일정한 구간이나 기간을 한정할 때 매우 흔하게 쓰입니다.",
+      "formation": "명사1(시작점) + から + 명사2(끝점) + まで",
+      "examples": [
+        {
+          "translation": "아침 9시부터 오후 5시까지 일합니다."
+        },
+        {
+          "translation": "도쿄에서 오사카까지 전철로 간다."
+        },
+        {
+          "translation": "지하철은 오전 6시부터 심야까지 운행하고 있습니다."
+        },
+        {
+          "translation": "월요일부터 금요일까지 학교에 다닙니다."
+        }
+      ]
+    },
+    "ja_Noun_25": {
+      "title": "명사 + くらい (대략의 수량·정도, 약~, ~쯤)",
+      "shortExplanation": "수량사나 명사 뒤에 붙어 어림잡은 수치나 정도를 나타내며, '약~', '~쯤', '~정도'의 뜻입니다.",
+      "longExplanation": "부조사 'くらい'는 수량이나 시간, 정도를 나타내는 명사 뒤에 붙어 대략적인 수량이나 기준을 어림잡아 표현할 때 쓰입니다. 한국어의 '약~', '~쯤', '~정도'에 해당합니다. 현대 일본어에서 탁음화된 'ぐらい'와 거의 동일한 의미로 쓰입니다.",
+      "formation": "명사 / 수량사 + くらい",
+      "examples": [
+        {
+          "translation": "이 책은 약 300쪽 정도 있습니다."
+        },
+        {
+          "translation": "그의 집까지 걸어서 20분 정도 걸립니다."
+        },
+        {
+          "translation": "내일은 더워서 30도 정도가 될 것입니다."
+        },
+        {
+          "translation": "이 요리를 만드는 데 재료비는 500엔 정도 필요합니다."
+        }
+      ]
+    },
+    "ja_Noun_26": {
+      "title": "명사 + ぐらい (대략의 수량·시간, 약~, ~쯤)",
+      "shortExplanation": "수량사나 시간 표현 뒤에 붙어 어림잡은 수치나 정도를 나타내며, '약~', '~쯤', '~정도'의 뜻입니다.",
+      "longExplanation": "부조사 'ぐらい'(くらい의 연탁형)는 수량사, 시간 표현, 명사 뒤에 붙어 대략적인 수량이나 정도, 시간을 나타낼 때 사용합니다. 한국어의 '약~', '~정도', '~쯤'에 해당하며, 일상 회화에서 널리 쓰이는 매우 자연스러운 표현입니다.",
+      "formation": "명사 / 수량사 + ぐらい",
+      "examples": [
+        {
+          "translation": "하루 종일 공부해서 약 10시간 정도 공부했습니다."
+        },
+        {
+          "translation": "이 책은 100쪽 정도 된다."
+        },
+        {
+          "translation": "그는 과일을 5개 정도 먹었습니다."
+        },
+        {
+          "translation": "역에서 집까지 걸어서 20분 정도 걸립니다."
+        }
+      ]
+    },
+    "ja_Noun_27": {
+      "title": "시간 명사 + ごろ (~경, ~무렵)",
+      "shortExplanation": "특정 시점이나 연령을 나타내는 명사 뒤에 붙어 대략적인 때를 나타내며, '~경', '~무렵', '~쯤'의 뜻입니다.",
+      "longExplanation": "접미사 'ごろ'는 시각이나 시간대를 나타내는 시점 명사(몇 시, 정오, 저녁 등)나 나이 뒤에 붙어 어림잡은 시점을 나타냅니다. 시간의 폭이나 양(몇 시간 동안)을 나타내는 'くらい/ぐらい'와 달리, 'ごろ'는 특정 '시점(몇 시경)'을 가리키는 점이 다릅니다. 한국어의 '~경', '~무렵', '~쯤'에 해당합니다.",
+      "formation": "시점 명사 / 나이 + ごろ (+ に)",
+      "examples": [
+        {
+          "translation": "점심 무렵(점심때쯤)에 전화해 주세요."
+        },
+        {
+          "translation": "그는 10살 무렵에 일본에 왔습니다."
+        },
+        {
+          "translation": "오후 3시경에 만납시다."
+        },
+        {
+          "translation": "어젯밤 8시 무렵에 귀가했습니다."
+        }
+      ]
+    },
+    "ja_Noun_28": {
+      "title": "명사 / 동사 + だけ (한정 표현, ~만, ~뿐)",
+      "shortExplanation": "명사나 동사 등에 붙어 범위를 한정하며, '~만', '~뿐'의 뜻을 나타냅니다.",
+      "longExplanation": "부조사 'だけ'는 명사, 동사 보통형, 형용사 뒤에 붙어 다른 것을 배제하고 해당 범위나 수량에 한정함을 나타냅니다. 한국어의 '~만', '~뿐'에 해당합니다. 일상 회화와 문어에서 폭넓게 쓰이며, '～だけでなく'와 같이 '뿐만 아니라'의 형태로도 자주 쓰입니다.",
+      "formation": "명사 + だけ / 동사 보통형 + だけ / い형용사 + だけ / な형용사 + な + だけ",
+      "examples": [
+        {
+          "translation": "커피만 마시고 돌아갔습니다."
+        },
+        {
+          "translation": "이 책은 스무 쪽만 읽었다."
+        },
+        {
+          "translation": "그녀는 매우 빠릅니다만, 달리는 것뿐만 아니라 생각하는 것도 빠릅니다."
+        },
+        {
+          "translation": "이 방은 잠만 자는 장소입니다."
+        }
+      ]
+    },
+    "ja_Nounで_29": {
+      "title": "명사 + で (동작의 장소 / 수단·도구·언어)",
+      "shortExplanation": "동작이 이루어지는 장소('~에서')나 행위에 사용되는 수단, 도구, 교통수단, 언어('~로/으로')를 나타냅니다.",
+      "longExplanation": "격조사 'で'는 명사 뒤에 붙어 다양한 상황을 한정합니다: ① 장소 명사 뒤에 쓰여 어떤 동작이나 행위가 일어나는 장소('~에서')를 나타내며(존재 장소를 나타내는 に와 구별됨), ② 도구, 교통수단, 재료, 수단, 언어 명사 뒤에 쓰여 행위를 수행하는 수단이나 방법('~로/으로')을 나타냅니다.",
+      "formation": "명사(장소 / 도구 / 교통수단 / 언어) + で",
+      "examples": [
+        {
+          "translation": "도서관에서 공부합니다."
+        },
+        {
+          "translation": "버스로 학교에 갑니다."
+        },
+        {
+          "translation": "연필로 썼습니다."
+        },
+        {
+          "translation": "영어로 이야기합시다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_いAdjective_15": {
+      "title": "い形容詞の丁寧な否定形（～くないです / ～くありません）",
+      "shortExplanation": "い形容詞の語尾「い」を取り、「～くないです」（または改まった「～くありません」）を付けて丁寧な否定を表します。「〜くない」「〜ではありません」。",
+      "longExplanation": "い形容詞を丁寧な否定の形にする場合、語尾の「い」を除いて「くないです」を接続します。より改まった丁寧な表現としては「くありません」も用いられます（例：美味しい → 美味しくないです / 美味しくありません）。なお、「いい（良い）」の否定形は「よくないです / よくありません」となる点に注意が必要です。",
+      "formation": "い形容詞語幹（「い」を除く） + くないです / くありません",
+      "examples": [
+        {
+          "translation": "このピザはおいしくないです。"
+        },
+        {
+          "translation": "この部屋は広くないです。"
+        },
+        {
+          "translation": "彼の意見は面白くないです。"
+        },
+        {
+          "translation": "その映画は楽しくありません。"
+        }
+      ]
+    },
+    "ja_いAdjective_16": {
+      "title": "い形容詞の「て形」（～くて）",
+      "shortExplanation": "い形容詞の語尾「い」を「くて」に変えて複数の形容詞や文をつなぎ、並列や理由を表します。「〜くて、〜」。",
+      "longExplanation": "い形容詞を並列して複数の性質や状態を述べる場合、語尾の「い」を「くて」に活用させます。「〜くて、〜」の形で人や物の特徴を並べる（「〜で、〜」）だけでなく、「〜ので」という原因や理由を表すこともあります。「いい」は「よくて」と活用します。",
+      "formation": "い形容詞語幹（「い」を除く） + くて + 形容詞 / 文",
+      "examples": [
+        {
+          "translation": "このリンゴは甘くておいしいです。"
+        },
+        {
+          "translation": "彼女は優しくてかわいいです。"
+        },
+        {
+          "translation": "映画は面白くて感動的でした。"
+        },
+        {
+          "translation": "この部屋は広くて明るいです。"
+        }
+      ]
+    },
+    "ja_なAdjective_17": {
+      "title": "な形容詞 ＋ に ＋ 動詞（連用修飾・副詞化）",
+      "shortExplanation": "な形容詞の語尾「な」を「に」に変えて、動詞を修飾する連用形にします。「〜に（〜する）」。",
+      "longExplanation": "な形容詞（形容動詞）で動詞を修飾する際、語尾を「に」に変えて接続します。これにより動詞の動作がどのような様子・様態で行われるかを説明する副詞的な役割を果たします。例：静か（な） → 静かに話す、きれい（な） → きれいに掃除する。",
+      "formation": "な形容詞語幹（「な」を除く） + に + 動詞",
+      "examples": [
+        {
+          "translation": "彼は静かに話す。"
+        },
+        {
+          "translation": "部屋をきれいに掃除した。"
+        },
+        {
+          "translation": "彼女は元気に働いています。"
+        },
+        {
+          "translation": "先生は親切に説明してくれる。"
+        }
+      ]
+    },
+    "ja_なAdjective_18": {
+      "title": "な形容詞の「で形」（中止形・並列）",
+      "shortExplanation": "な形容詞の語幹に「で」を付け、後続の形容詞や文と並列・接続します。「〜で、〜」。",
+      "longExplanation": "な形容詞（形容動詞）の語尾「な」を「で」に変えることで、文をいったん中頓（中止）させ、別の性質や状態、動作へとつなぎます。人や物の複数の特徴を並列して挙げる場合や、「〜なので」という理由・原因を表す場合などに用いられます。",
+      "formation": "な形容詞語幹（「な」を除く） + で + 形容詞 / 動詞 / 節",
+      "examples": [
+        {
+          "translation": "彼は綺麗で優しい女性が好きです。"
+        },
+        {
+          "translation": "この料理は健康的で、元気な気分になります。"
+        },
+        {
+          "translation": "彼は静かで落ち着いた環境で仕事をしたい。"
+        },
+        {
+          "translation": "この部屋は清潔で気持ちがいいです。"
+        }
+      ]
+    },
+    "ja_なAdjective_19": {
+      "title": "な形容詞 ＋ に します（人為的変化・決定）",
+      "shortExplanation": "主体の働きかけによってその状態にすること（「〜にする」）や、選択・決定を表します。",
+      "longExplanation": "「な形容詞語幹 ＋ に ＋ します」は、主体の意志的な働きかけによって対象をある状態に変化させること（「〜にする」）を表します。また、文脈によっては、ある性質や方針を選択・決定すること（「〜に決める」）を表す場合もあります。",
+      "formation": "な形容詞語幹（「な」を除く） + に + します",
+      "examples": [
+        {
+          "translation": "静かにします。"
+        },
+        {
+          "translation": "部屋をきれいにします。"
+        },
+        {
+          "translation": "明日の会議は簡単にします。"
+        },
+        {
+          "translation": "健康的な食事にします。"
+        }
+      ]
+    },
+    "ja_なAdjective_20": {
+      "title": "な形容詞 ＋ に なります（自然な状態変化）",
+      "shortExplanation": "状態が自然に変化して、その状態に至ることを表します。「〜になる」。",
+      "longExplanation": "「な形容詞語幹 ＋ に ＋ なります」は、人や物事の性質・状態が時間の経過や環境によって自然に別の状態へ変化することを表す表現です。作為的な働きかけを表す「〜にします」に対して、「〜になります」は自然な成り行きや変化の結果を客観的に述べます。",
+      "formation": "な形容詞語幹（「な」を除く） + に + なります",
+      "examples": [
+        {
+          "translation": "この部屋は静かになります。"
+        },
+        {
+          "translation": "彼女はきれいになります。"
+        },
+        {
+          "translation": "彼は元気になります。"
+        },
+        {
+          "translation": "町はにぎやかになります。"
+        }
+      ]
+    },
+    "ja_Noun_21": {
+      "title": "名詞1 ＋ か ＋ 名詞2（か）（選択の並立）",
+      "shortExplanation": "複数の選択肢を並べて、どちらか一方を選ぶことを表します。「〜か〜」「あるいは」。",
+      "longExplanation": "並立助詞「か」を名詞や節の間に置くことで、複数の選択肢や代替案を提示する文法表現です。「AかB」の形で「AまたはB」を表すほか、「AかBか」と重ねて選択や迷いの対象であることを強調することもあります。",
+      "formation": "名詞1 + か + 名詞2 (+ か)",
+      "examples": [
+        {
+          "translation": "今日、映画を見るか、散歩するかどちらにしますか？"
+        },
+        {
+          "translation": "コーヒーか紅茶か、一つだけ選んでください。"
+        },
+        {
+          "translation": "電車かバスを使って、学校に行くつもりです。"
+        },
+        {
+          "translation": "週末は山に登るか海に行くか、まだ決めていません。"
+        }
+      ]
+    },
+    "ja_Noun_22": {
+      "title": "名詞 ＋ が できます（能力・可能）",
+      "shortExplanation": "ある事柄を行う能力や技能があることを表します。「〜ができる」「〜が得意だ」。",
+      "longExplanation": "「名詞 ＋ が できます」は、主体がその事柄・活動を行う能力や技能を有していることを表す基本的な可能表現です。名詞には、言語（英語など）、スポーツ・運動（泳ぎなど）、楽器（ピアノなど）、動作性名詞（料理など）が入り、それらを行うことができる能力を示します。",
+      "formation": "名詞 + が + できます",
+      "examples": [
+        {
+          "translation": "英語ができます。"
+        },
+        {
+          "translation": "料理ができます。"
+        },
+        {
+          "translation": "彼は泳ぎができます。"
+        },
+        {
+          "translation": "彼女はピアノができます。"
+        }
+      ]
+    },
+    "ja_Noun_23": {
+      "title": "名詞 ＋ が ほしいです（願望・欲しいもの）",
+      "shortExplanation": "ある物や対象を手に入れたい、所有したいという願望を丁寧に表します。「〜がほしい」。",
+      "longExplanation": "「名詞 ＋ が ほしいです」は、主体がその物や対象を欲していることを表す表現です。動作を行いたい願望を表す「〜たい」とは異なり、名詞（手に入れたい物や人間関係など）を助詞「が」で提示します。基本的に話し手（一人称）の願望を表し、三人称の願望を表す場合は通常「〜をほしがっています」を用います。",
+      "formation": "名詞 + が + ほしいです",
+      "examples": [
+        {
+          "translation": "新しい車がほしいです。"
+        },
+        {
+          "translation": "コーヒーがほしいです。"
+        },
+        {
+          "translation": "彼女は花がほしいです。"
+        },
+        {
+          "translation": "友達がほしいです。"
+        }
+      ]
+    },
+    "ja_Noun_24": {
+      "title": "名詞1 ＋ から ＋ 名詞2 ＋ まで（起点と終点・範囲）",
+      "shortExplanation": "時間や場所、数量の範囲の始まり（起点）と終わり（終点・限界）を表します。「〜から〜まで」。",
+      "longExplanation": "「～から ～まで」は、時間・空間・数量などの起点（から）と終点（まで）を対にして表す基本的な文法表現です。「〜から」で出発点や開始時刻を示し、「〜まで」で到着点や終了時刻を示します。一連の行為や状態が継続する範囲を明示します。",
+      "formation": "名詞1（起点） + から + 名詞2（終点） + まで",
+      "examples": [
+        {
+          "translation": "朝9時から午後5時まで働きます。"
+        },
+        {
+          "translation": "東京から大阪まで電車で行く。"
+        },
+        {
+          "translation": "地下鉄は午前6時から深夜まで運行しています。"
+        },
+        {
+          "translation": "月曜日から金曜日まで学校に通います。"
+        }
+      ]
+    },
+    "ja_Noun_25": {
+      "title": "名詞 ＋ くらい（概数・程度）",
+      "shortExplanation": "数量や時間、程度の目安や大体の数値を表します。「約〜」「〜ほど」。",
+      "longExplanation": "副助詞「くらい」は、数量詞や名詞の後ろに付き、大体の数量・時間・程度を見積もって表す表現です。「約〜」「〜ほど」という意味合いになります。現代日本語において濁音の「ぐらい」と意味的な差はほとんどなく、多くの場合互換的に用いられます。",
+      "formation": "名詞 / 数量詞 + くらい",
+      "examples": [
+        {
+          "translation": "この本は三百ページくらいあります。"
+        },
+        {
+          "translation": "彼の家まで歩いて20分くらいかかります。"
+        },
+        {
+          "translation": "明日は暑くて、30度くらいになるでしょう。"
+        },
+        {
+          "translation": "この料理を作るのに、材料は500円くらい必要です。"
+        }
+      ]
+    },
+    "ja_Noun_26": {
+      "title": "名詞 ＋ ぐらい（概数・数量の目安）",
+      "shortExplanation": "数量や時間、程度の見当を表す濁音化された形式です。「約〜」「〜ほど」「〜くらい」。",
+      "longExplanation": "副助詞「ぐらい」（「くらい」の連濁形）は、数量詞や時間詞、名詞の後に接続し、大体の数量や時間、度合いを見積もる表現です。「約〜」「〜程度」という意味を表し、日常の会話や文章で極めて広く用いられます。",
+      "formation": "名詞 / 数量詞 + ぐらい",
+      "examples": [
+        {
+          "translation": "一日中勉強したので、１０時間ぐらい勉強しました。"
+        },
+        {
+          "translation": "この本は１００ページぐらいある。"
+        },
+        {
+          "translation": "彼は果物を５個ぐらい食べました。"
+        },
+        {
+          "translation": "駅から家まで歩いて２０分ぐらいかかります。"
+        }
+      ]
+    },
+    "ja_Noun_27": {
+      "title": "時間名詞 ＋ ごろ（おおよその時点・時期）",
+      "shortExplanation": "特定の時刻や時期、年齢の後ろに付き、おおよその時点を表します。「〜頃」「〜あたり」。",
+      "longExplanation": "接尾辞「ごろ」は、時刻や季節、年代など特定の「時点」を表す名詞に接続し、その前後のおおよその時間帯を示します。期間や時間の長さを表す「くらい／ぐらい」（例：3時間くらい）とは異なり、ピンポイントの時刻・時期の目安（例：3時ごろ）を指す際に用いられます。",
+      "formation": "時点を表す名詞 / 年齢 + ごろ (+ に)",
+      "examples": [
+        {
+          "translation": "昼ごろに電話してください。"
+        },
+        {
+          "translation": "彼は10歳ごろに日本に来ました。"
+        },
+        {
+          "translation": "午後３時ごろに会いましょう。"
+        },
+        {
+          "translation": "昨日の夜8時ごろに帰りました。"
+        }
+      ]
+    },
+    "ja_Noun_28": {
+      "title": "名詞 / 動詞 ＋ だけ（限定）",
+      "shortExplanation": "範囲や数量を限定し、それ以外を排除することを表します。「〜のみ」「〜だけ」。",
+      "longExplanation": "副助詞「だけ」は、名詞や動詞の普通形、形容詞などに接続して、その事柄や数量に限る（限定する）ことを表す文法表現です。他を排してそれだけであることを示し、「〜のみ」に相当します。日常会話から文章語まで幅広く使われ、「〜だけでなく（〜のみならず）」の形でも頻出します。",
+      "formation": "名詞 + だけ / 動詞普通形 + だけ / い形容詞 + だけ / な形容詞 + な + だけ",
+      "examples": [
+        {
+          "translation": "コーヒーだけ飲んで、帰りました。"
+        },
+        {
+          "translation": "この本は二十ページだけ読んだ。"
+        },
+        {
+          "translation": "彼女はとても速いですが、走るだけでなく、考えるのも速いです。"
+        },
+        {
+          "translation": "この部屋は寝るだけの場所です。"
+        }
+      ]
+    },
+    "ja_Nounで_29": {
+      "title": "名詞 ＋ で（動作の場所・手段・道具・言語）",
+      "shortExplanation": "動作や出来事が行われる場所（「〜で」）や、用いる手段・道具・言語（「〜を使って」）を表します。",
+      "longExplanation": "格助詞「で」は、名詞に付いて様々な状況を限定する助詞です。主な用法として、① 動作や行為が行われる場所（「図書館で」など。静的な存在場所を表す「に」と対比）、② 移動の手段・交通機関（「バスで」）、③ 道具・材料・言語（「鉛筆で」「英語で」）など、行為を成立させるための手段や方法を表します。",
+      "formation": "名詞（場所 / 手段 / 道具 / 言語） + で",
+      "examples": [
+        {
+          "translation": "図書館で勉強します。"
+        },
+        {
+          "translation": "バスで学校に行きます。"
+        },
+        {
+          "translation": "鉛筆で書きました。"
+        },
+        {
+          "translation": "英語で話しましょう。"
+        }
+      ]
+    }
+  }
+}

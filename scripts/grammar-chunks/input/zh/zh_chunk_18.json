@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_可能的N_258",
+    "language": "zh",
+    "pattern": "可能的 N",
+    "title": "可能的 N (probable)",
+    "shortExplanation": "probable",
+    "longExplanation": "probable. Pinyin: kěnéng de N",
+    "formation": "kěnéng de N",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他这么多天没来上课，最可能的原因就是他回国了。",
+        "romanization": "tā zhème duō tiān méi lái shàngkè， zuì kěnéng de yuányīn jiùshì tā huíguó le。",
+        "translation": "He did not come to class for so many days. The most probable reason is that he returned to China."
+      }
+    ]
+  },
+  {
+    "id": "zh_来不及_259",
+    "language": "zh",
+    "pattern": "来不及",
+    "title": "来不及 (be too late)",
+    "shortExplanation": "be too late",
+    "longExplanation": "be too late. Pinyin: láibují",
+    "formation": "láibují",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "等你身体出现问题了，后悔就来不及了。",
+        "romanization": "děng nǐ shēntǐ chūxiàn wèntí le， hòuhuǐ jiù láibují le。",
+        "translation": "When you have a problem with your health, it’ll be too late to regret it."
+      }
+    ]
+  },
+  {
+    "id": "zh_VVO_260",
+    "language": "zh",
+    "pattern": "V + V + O",
+    "title": "V + V + O (VO for a bit (reduplication))",
+    "shortExplanation": "VO for a bit (reduplication)",
+    "longExplanation": "VO for a bit (reduplication). Pinyin: V + V + O",
+    "formation": "V + V + O",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "咱们午饭后就去附近的公园散散步吧。",
+        "romanization": "zánmen wǔfàn hòu jiù qù fùjìn de gōngyuán sànsànbù ba。",
+        "translation": "Let's go for a walk in the nearby park after lunch."
+      }
+    ]
+  },
+  {
+    "id": "zh_V了VO_261",
+    "language": "zh",
+    "pattern": "V + 了 + V + O",
+    "title": "V + 了 + V + O (V’ed O for a bit (reduplication))",
+    "shortExplanation": "V’ed O for a bit (reduplication)",
+    "longExplanation": "V’ed O for a bit (reduplication). Pinyin: V + le + V + O",
+    "formation": "V + le + V + O",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "星期天我睡了睡觉，游了游泳，做了做作业。",
+        "romanization": "Xīngqītiān wǒ shuì le shuìjiào， yóu le yóuyǒng， zuò le zuò zuòyè。",
+        "translation": "On Sunday, I slept a bit, did some swimming, [and] did some homework."
+      }
+    ]
+  },
+  {
+    "id": "zh_要是_262",
+    "language": "zh",
+    "pattern": "要是",
+    "title": "要是 (if)",
+    "shortExplanation": "if",
+    "longExplanation": "if. Pinyin: yàoshi",
+    "formation": "yàoshi",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "要是质量好的话，那么价格贵一点儿也没关系。",
+        "romanization": "yàoshi zhìliàng hǎo dehuà， nàme jiàgé guì yīdiǎnr yě méiguānxi。",
+        "translation": "If the quality is good, then it doesn't matter if the price is a little bit expensive."
+      }
+    ]
+  },
+  {
+    "id": "zh_既又也还_263",
+    "language": "zh",
+    "pattern": "既..... 又/也/还……",
+    "title": "既..... 又/也/还…… (not only… but also…)",
+    "shortExplanation": "not only… but also…",
+    "longExplanation": "not only… but also…. Pinyin: jì..... yòu/ yě/ hái……",
+    "formation": "jì..... yòu/ yě/ hái……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "散步既可以活动身体，又可以减肥。",
+        "romanization": "sànbù jì kěyǐ huódòng shēntǐ， yòu kěyǐ jiǎnféi。",
+        "translation": "Walking can [allow you to] both move the body and lose weight."
+      }
+    ]
+  },
+  {
+    "id": "zh_使OAV_264",
+    "language": "zh",
+    "pattern": "使 O A/V",
+    "title": "使 O A/V (make O A/V)",
+    "shortExplanation": "make O A/V",
+    "longExplanation": "make O A/V. Pinyin: shǐ O A/V",
+    "formation": "shǐ O A/V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "怎么样才能使她喜欢我呢？",
+        "romanization": "zěnmeyàng cáinéng shǐ tā xǐhuan wǒ ne？",
+        "translation": "How can I make her like me?"
+      }
+    ]
+  },
+  {
+    "id": "zh_只要就_265",
+    "language": "zh",
+    "pattern": "只要……(就)……",
+    "title": "只要……(就)…… (as long as… (then)…)",
+    "shortExplanation": "as long as… (then)…",
+    "longExplanation": "as long as… (then)…. Pinyin: zhǐyào……( jiù)……",
+    "formation": "zhǐyào……( jiù)……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "只要这次你好好儿准备，(就) 一定能把比赛踢好。",
+        "romanization": "zhǐyào zhè cì nǐhǎo hǎo r zhǔnbèi，( jiù) yīdìng néng bǎ bǐsài tī hǎo。",
+        "translation": "As long as you are ready this time, you will be able to play the match well."
+      }
+    ]
+  },
+  {
+    "id": "zh_可不是_266",
+    "language": "zh",
+    "pattern": "可不是！",
+    "title": "可不是！ (No kidding!)",
+    "shortExplanation": "No kidding!",
+    "longExplanation": "No kidding!. Pinyin: kěbushì！",
+    "formation": "kěbushì！",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "A: 没想到咱们毕业都已经十年了。B: 可不是！时间过得太快了， 真想大家。",
+        "romanization": "A: méixiǎngdào zánmen bìyè dōu yǐjīng shí nián le。B: kěbushì！ shíjiān guòdé tài kuài le， zhēn xiǎng dàjiā。",
+        "translation": "A: I didn't expect that we have graduated for ten years."
+      }
+    ]
+  },
+  {
+    "id": "zh_因此_268",
+    "language": "zh",
+    "pattern": "因此",
+    "title": "因此 (therefore)",
+    "shortExplanation": "therefore",
+    "longExplanation": "therefore. Pinyin: yīncǐ",
+    "formation": "yīncǐ",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我认识他很多年，因此，很了解他的性格。",
+        "romanization": "wǒ rènshi tā hěn duō nián， yīncǐ， hěn liǎojiě tā de xìnggé。",
+        "translation": "I have known him for many years, so I know his character very well."
+      }
+    ]
+  },
+  {
+    "id": "zh_往往_269",
+    "language": "zh",
+    "pattern": "往往",
+    "title": "往往 (usually, often)",
+    "shortExplanation": "usually, often",
+    "longExplanation": "usually, often. Pinyin: wǎngwǎng",
+    "formation": "wǎngwǎng",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "女孩子对衣服颜色的选择往往与她们的性格有关。",
+        "romanization": "nǚháizi duì yīfu yánsè de xuǎnzé wǎngwǎng yǔ tāmen de xìnggé yǒuguān。",
+        "translation": "Girls' choice of clothing color is often related to their personality."
+      }
+    ]
+  },
+  {
+    "id": "zh_经常常_270",
+    "language": "zh",
+    "pattern": "经常/常",
+    "title": "经常/常 (often)",
+    "shortExplanation": "often",
+    "longExplanation": "often. Pinyin: jīngcháng/ cháng",
+    "formation": "jīngcháng/ cháng",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "上大学时我很喜欢运动，经常/常打篮球、踢足球。",
+        "romanization": "shàng dàxué shí wǒ hěn xǐhuan yùndòng， jīngcháng/ cháng dǎ lánqiú、 tī zúqiú。",
+        "translation": "When I was in college, I liked sports very much. I often played basketball and football."
+      }
+    ]
+  },
+  {
+    "id": "zh_难道_271",
+    "language": "zh",
+    "pattern": "难道",
+    "title": "难道 (could it be that)",
+    "shortExplanation": "could it be that",
+    "longExplanation": "could it be that. Pinyin: nándào",
+    "formation": "nándào",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "怎么又买了这么多饼干和巧克力？难道你不减肥了？",
+        "romanization": "zěnme yòu mǎi le zhème duō bǐnggān hé qiǎokèlì？ nándào nǐ bù jiǎnféi le？",
+        "translation": "How did you buy so many cookies and chocolates? Could it be that you’re not dieting any more?"
+      }
+    ]
+  },
+  {
+    "id": "zh_通过_272",
+    "language": "zh",
+    "pattern": "通过",
+    "title": "通过 (through)",
+    "shortExplanation": "through",
+    "longExplanation": "through. Pinyin: tōngguò",
+    "formation": "tōngguò",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "任何成功都要通过努力才能得到。",
+        "romanization": "rènhé chénggōng dōu yào tōngguò nǔlì cáinéng dédào。",
+        "translation": "Any success must be achieved through hard work."
+      }
+    ]
+  },
+  {
+    "id": "zh_经过_273",
+    "language": "zh",
+    "pattern": "经过",
+    "title": "经过 (after having gone through)",
+    "shortExplanation": "after having gone through",
+    "longExplanation": "after having gone through. Pinyin: jīngguò",
+    "formation": "jīngguò",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "经过一次次失败之后，他终于成功了。",
+        "romanization": "jīngguò yīcì cì shībài zhīhòu， tā zhōngyú chénggōng le。",
+        "translation": "Having gone through many failures, he finally succeeded."
+      }
+    ]
+  }
+]

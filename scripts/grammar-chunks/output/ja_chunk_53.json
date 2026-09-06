@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_とされる_197": {
+      "title": "～とされる (〜to sareru)",
+      "shortExplanation": "Diễn tả nhận định, quan niệm chung của xã hội hoặc dư luận; 'được coi là...', 'được xem là...', 'được cho là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とされる' (dạng bị động của 'とする') được dùng để biểu thị một quan điểm, đánh giá hoặc sự thật được xã hội, dư luận hoặc số đông công nhận rộng rãi ('được coi là...', 'được cho là...'). Mẫu câu này thường xuất hiện trong các bài báo, tin tức, văn bản học thuật hoặc văn cảnh trang trọng nhằm đưa ra nhận định mang tính khách quan.",
+      "formation": "Động từ thể thông thường + とされる | Tính từ đuôi い + とされる | Tính từ đuôi な + だとされる | Danh từ + だとされる (thường dùng: ～とされている / とされています)",
+      "examples": [
+        {
+          "translation": "Bóng đá được xem là môn thể thao phổ biến nhất trên thế giới."
+        },
+        {
+          "translation": "Anh ấy được coi là nhà khoa học tài năng nhất."
+        },
+        {
+          "translation": "Tòa nhà này được coi là một công trình mang tính biểu tượng của địa phương."
+        },
+        {
+          "translation": "Ngôi chùa đó được xem là một tác phẩm nghệ thuật cổ đại."
+        }
+      ]
+    },
+    "ja_としたところで_198": {
+      "title": "～としたところで (〜to shita tokoro de)",
+      "shortExplanation": "Diễn tả giả định nhượng bộ mang tính tiêu cực hoặc vô ích; 'dẫu cho...', 'ngay cả khi giả sử... thì (cũng chẳng thay đổi được gì)'.",
+      "longExplanation": "Mẫu ngữ pháp '～としたところで' dùng để đưa ra một giả định nhượng bộ ('dẫu cho có làm thế... chăng nữa', 'ngay cả khi giả định là...'). Cấu trúc này nhấn mạnh rằng ngay cả trong trường hợp điều kiện đó xảy ra thì kết quả hay hiện trạng cũng chẳng có gì thay đổi đáng kể, mang sắc thái bất lực, hoài nghi hoặc vô ích. Vế sau luôn mang ý nghĩa phủ định hoặc tiêu cực.",
+      "formation": "Động từ thể thông thường + としたところで | Tính từ đuôi い + としたところで | Tính từ đuôi な + だとしたところで | Danh từ + だとしたところで",
+      "examples": [
+        {
+          "translation": "Dẫu cho anh ấy có đến đi chăng nữa, thì có lẽ cũng chẳng thay đổi được gì."
+        },
+        {
+          "translation": "Ngay cả khi làm ra món bánh thơm ngon, thì cũng chẳng có gì đảm bảo là sẽ bán chạy."
+        },
+        {
+          "translation": "Dẫu có gọi điện đi nữa, cũng chưa chắc cô ấy đã bắt máy."
+        },
+        {
+          "translation": "Dẫu có dùng những nguyên liệu tuyệt hảo nhất, thì món ăn cũng chưa chắc đã ngon."
+        }
+      ]
+    },
+    "ja_とすると_199": {
+      "title": "～とすると (〜to suru to)",
+      "shortExplanation": "Diễn tả giả định hoặc suy đoán thuần túy; 'giả sử là...', 'nếu xem là...', 'nếu đúng là... thì'.",
+      "longExplanation": "Mẫu ngữ pháp '～とすると' đặt ra một giả thiết, tình huống giả định hoặc một tiền đề suy luận ('nếu giả sử là...', 'nếu tính đến trường hợp...'). Từ tiền đề giả định đó, vế sau sẽ dẫn ra một suy đoán logic, một hệ quả tất yếu hoặc tính toán tiếp theo. Thường dùng trong các suy luận lý tính và giả định thuần túy.",
+      "formation": "Động từ thể thông thường + とすると | Tính từ đuôi い + とすると | Tính từ đuôi な + だとすると | Danh từ + だとすると",
+      "examples": [
+        {
+          "translation": "Nếu anh ấy có đến, thì chắc hẳn lát nữa sẽ tới nơi."
+        },
+        {
+          "translation": "Nếu muốn hoàn thành công việc này, thì chí ít cũng mất 3 ngày."
+        },
+        {
+          "translation": "Nếu chiến tranh nổ ra, sẽ có rất nhiều người phải chịu thương vong."
+        },
+        {
+          "translation": "Nếu anh ấy là người điều hành, thì chắc hẳn sẽ phải gánh vác rất nhiều trách nhiệm."
+        }
+      ]
+    },
+    "ja_とすれば_200": {
+      "title": "～とすれば (～to sureba)",
+      "shortExplanation": "Diễn tả điều kiện giả định; 'nếu giả sử rằng...', 'nếu đúng là... thì'.",
+      "longExplanation": "Mẫu ngữ pháp '～とすれば' dùng để đưa ra một điều kiện giả định hoặc một tiền đề khả dĩ ('nếu cho rằng...', 'nếu quả thực là...'). Dựa trên giả định đó, người nói đưa ra phán đoán, ý chí, câu hỏi hoặc hướng giải quyết ở vế sau. Khác với 'とすると' vốn thiên về quy luật tự nhiên hay hệ quả tất yếu, 'とすれば' có thể đi cùng với ý chí, nguyện vọng hay lời khuyên của người nói.",
+      "formation": "Động từ thể thông thường + とすれば | Tính từ đuôi い + とすれば | Tính từ đuôi な + だとすれば | Danh từ + だとすれば",
+      "examples": [
+        {
+          "translation": "Nếu quả thật anh ta là kẻ dối trá, thì câu chuyện đó không thể tin được."
+        },
+        {
+          "translation": "Nếu bạn cùng đi, thì tôi cũng sẽ đi."
+        },
+        {
+          "translation": "Nếu giả sử anh ấy đang ngoại tình, thì tôi nên làm thế nào đây?"
+        },
+        {
+          "translation": "Nếu loại thuốc đó không có tác dụng, chúng ta nên thử phương pháp khác."
+        }
+      ]
+    },
+    "ja_となったら_201": {
+      "title": "～となったら (〜to nattara)",
+      "shortExplanation": "Diễn tả tình huống nếu quả thực sự việc xảy ra hoặc tiến triển đến mức đó; 'nếu thực sự...', 'một khi đã... thì'.",
+      "longExplanation": "Mẫu ngữ pháp '～となったら' dùng để biểu thị trường hợp một sự việc nào đó thật sự xảy ra, trở thành hiện thực, hoặc chuyển biến đến bước đó ('nếu quả thực bước vào tình huống...', 'nếu xảy ra chuyện...'). Cấu trúc này thường đi kèm với thái độ nghiêm túc, sự lo lắng, bối rối hoặc quyết tâm hành động khi đối mặt với một bước ngoặt cụ thể.",
+      "formation": "Động từ thể thông thường + となったら | Danh từ + となったら",
+      "examples": [
+        {
+          "translation": "Nếu thực sự đi du lịch, thì chúng ta phải thu xếp hành lý thôi."
+        },
+        {
+          "translation": "Nếu mà trượt kỳ thi thật thì mình biết phải làm sao đây."
+        },
+        {
+          "translation": "Nếu thực sự phải chia tay cô ấy, tôi sẽ đau lòng lắm."
+        },
+        {
+          "translation": "Một khi đã tiến tới hôn nhân, cuộc đời hẳn sẽ thay đổi rất nhiều."
+        }
+      ]
+    },
+    "ja_となると_202": {
+      "title": "～となると (〜to naru to)",
+      "shortExplanation": "Nhấn mạnh khi đối mặt với một tình huống hay chủ đề cụ thể; 'hễ nhắc đến...', 'nếu quả thực là... thì (tất yếu dẫn tới)'.",
+      "longExplanation": "Mẫu ngữ pháp '～となると' dùng để nêu bật một tình huống cụ thể, một chủ đề hoặc một sự thay đổi hoàn cảnh ('hễ đến chuyện...', 'nếu quả thực chuyển sang tình trạng...'). Cấu trúc này thường dẫn tới một phản ứng tự nhiên tất yếu, một hệ quả hiển nhiên, hoặc một nhận định tất yếu nảy sinh từ hoàn cảnh đó.",
+      "formation": "Động từ thể thông thường + となると | Tính từ đuôi い + となると | Tính từ đuôi な + だとなると | Danh từ (+ だ) + となると",
+      "examples": [
+        {
+          "translation": "Cứ hễ đến kỳ thi là nhiều học sinh lại trở nên căng thẳng."
+        },
+        {
+          "translation": "Nếu chuyển nhà lên Tokyo thì chi phí sinh hoạt sẽ tăng vọt ngay lập tức."
+        },
+        {
+          "translation": "Hạn chót mà là ngày mai thì có lẽ đêm nay lại phải thức trắng rồi."
+        },
+        {
+          "translation": "Nếu anh ấy trở thành trưởng nhóm, hoạt động của cả đội có thể sẽ được cải thiện đáng kể."
+        }
+      ]
+    },
+    "ja_となれば_203": {
+      "title": "～となれば (〜to nareba)",
+      "shortExplanation": "Diễn tả giả định một khi hoàn cảnh đã chuyển sang tình huống đó; 'nếu quả thật là...', 'nếu sự tình đã đến mức... thì'.",
+      "longExplanation": "Mẫu ngữ pháp '～となれば' đặt ra một tiền đề hoặc điều kiện giả định ('nếu quả đúng như vậy...', 'trong trường hợp chuyển biến thành...'). Từ tình huống đó, người nói đưa ra hành động tương ứng, phán đoán tất yếu, lời đề nghị hoặc quyết tâm phải thực hiện ở vế sau.",
+      "formation": "Động từ thể thông thường + となれば | Tính từ đuôi い + となれば | Tính từ đuôi な + だとなれば | Danh từ + だとなれば",
+      "examples": [
+        {
+          "translation": "Nếu anh ấy mà làm trưởng nhóm, thì dự án ắt sẽ thành công thôi."
+        },
+        {
+          "translation": "Nếu ngày mai trời mưa thật thì chúng ta hãy hủy buổi dã ngoại đi."
+        },
+        {
+          "translation": "Nếu công việc này xong xuôi rồi thì bạn có thể nghỉ phép được đấy."
+        },
+        {
+          "translation": "Nếu bài kiểm tra đó khó đến vậy thì chúng ta càng phải học tập chăm chỉ hơn nữa."
+        }
+      ]
+    },
+    "ja_とのことだ_204": {
+      "title": "～とのことだ (〜to no koto da)",
+      "shortExplanation": "Diễn tả thông tin truyền văn một cách trang trọng, lịch sự; 'nghe nói là...', 'thấy bảo là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とのことだ' (tương đương với '～そうだ' nhưng mang sắc thái lịch sự, trang trọng hơn) dùng để truyền đạt lại thông tin mà người nói đã nghe được, nhận được qua thư từ, thông báo hoặc lời người khác nói ('nghe nói là...', 'được biết là...'). Cấu trúc này rất phổ biến trong giao tiếp công việc, tin tức và văn viết thư từ.",
+      "formation": "Mệnh đề thể thông thường + とのことだ (hoặc とのことです) | Danh từ / Tính từ đuôi な + だとのことだ",
+      "examples": [
+        {
+          "translation": "Nghe nói là cuối tuần này sẽ có một bữa tiệc."
+        },
+        {
+          "translation": "Tôi nghe nói sang năm anh ấy sẽ chuyển đến London."
+        },
+        {
+          "translation": "Nghe nói là cô ấy đã tìm được công việc mới rồi."
+        },
+        {
+          "translation": "Được biết là ngày mai sẽ không có bài thi."
+        }
+      ]
+    },
+    "ja_とはいえ_205": {
+      "title": "～とはいえ (～to wa ie)",
+      "shortExplanation": "Diễn tả sự tương phản mang tính văn viết trang trọng; 'tuy nói là... nhưng...', 'dẫu rằng... nhưng thực tế thì'.",
+      "longExplanation": "Mẫu ngữ pháp '～とはいえ' là cách diễn đạt trang trọng trong văn viết dùng để nối hai vế tương phản. Cấu trúc này thừa nhận sự thật ở vế trước ('dẫu biết là như thế...', 'mặc dù nói là...'), nhưng ở vế sau lại nêu lên một thực tế, hạn chế hoặc một khía cạnh trái ngược với suy nghĩ thông thường ('thế nhưng...').",
+      "formation": "Danh từ + とはいえ | Tính từ đuôi な (+ だ) + とはいえ | Tính từ đuôi い + とはいえ | Động từ thể thông thường + とはいえ",
+      "examples": [
+        {
+          "translation": "Anh ấy tuy thông minh thật đấy, nhưng lại có phần lười biếng."
+        },
+        {
+          "translation": "Nhà hàng này dẫu ngon miệng thật nhưng giá hơi đắt."
+        },
+        {
+          "translation": "Nhật Bản tuy là một quốc gia nhỏ bé, nhưng công nghệ lại thuộc hàng đầu thế giới."
+        },
+        {
+          "translation": "Cô ấy tuy còn trẻ tuổi nhưng kinh nghiệm lại vô cùng phong phú."
+        }
+      ]
+    },
+    "ja_とみえて_206": {
+      "title": "～とみえて (〜to miete)",
+      "shortExplanation": "Diễn tả phán đoán dựa trên quan sát thấy hiện tượng bên ngoài; 'có vẻ như...', 'trông như thể... nên'.",
+      "longExplanation": "Mẫu ngữ pháp '～とみえて' dùng để đưa ra phán đoán hoặc suy đoán của người nói dựa trên những dấu hiệu trực quan hoặc hành động cụ thể đang diễn ra trước mắt ('dường như là...', 'có vẻ như...'). Vế sau thường chỉ hành động hoặc hiện tượng thực tế làm căn cứ cho phán đoán ở vế trước.",
+      "formation": "Động từ thể thông thường + とみえて | Tính từ đuôi い + とみえて | Tính từ đuôi な (+ だ) + とみえて | Danh từ (+ だ) + とみえて",
+      "examples": [
+        {
+          "translation": "Có vẻ như anh ấy rất giỏi thể thao, thấy ngày nào cũng đi tập gym."
+        },
+        {
+          "translation": "Dường như cô ấy rất bận rộn nên mãi mà chẳng gặp được."
+        },
+        {
+          "translation": "Anh Tanaka trông có vẻ mệt mỏi nên đã về sớm."
+        },
+        {
+          "translation": "Cửa tiệm đó có vẻ được ưa chuộng lắm, lúc nào cũng thấy xếp hàng dài."
+        }
+      ]
+    },
+    "ja_とみられる_207": {
+      "title": "～とみられる (～to mirareru)",
+      "shortExplanation": "Diễn tả nhận định, suy đoán khách quan dựa trên tình hình; 'được coi là...', 'được dự đoán là...', 'dường như là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とみられる' (thể bị động của '見る' với nghĩa là đánh giá, nhìn nhận) là cách diễn đạt khách quan, xuất hiện dày đặc trên các bản tin thời sự, báo chí hoặc báo cáo phân tích ('được nhận định là...', 'được dự báo là...'). Cấu trúc này dùng để đưa ra phán đoán hoặc dự báo về một tình hình mà không mang tính khẳng định tuyệt đối cá nhân.",
+      "formation": "Động từ thể thông thường + とみられる | Tính từ đuôi い + とみられる | Tính từ đuôi な (だ) + とみられる | Danh từ (+ だ) + とみられる (thường dùng: ～とみられている)",
+      "examples": [
+        {
+          "translation": "Hành động của anh ta bị xem là vô trách nhiệm."
+        },
+        {
+          "translation": "Bức tranh này được cho là một tác phẩm của Picasso."
+        },
+        {
+          "translation": "Sau trận động đất, thiệt hại được dự đoán là sẽ còn gia tăng hơn nữa."
+        },
+        {
+          "translation": "Dự báo thời tiết cuối tuần sẽ trở nên tốt đẹp hơn."
+        }
+      ]
+    },
+    "ja_とみると_208": {
+      "title": "～とみると (〜to miru to)",
+      "shortExplanation": "Xem xét, nhìn nhận sự vật dưới một góc độ hay tiêu chuẩn nhất định; 'nếu xét từ góc độ...', 'khi nhìn nhận là... thì'.",
+      "longExplanation": "Mẫu ngữ pháp '～とみると' dùng khi người nói đặt sự vật, hiện tượng vào một góc nhìn, lập trường hoặc tiêu chuẩn cụ thể để đánh giá ('nếu xét dưới góc độ là...', 'khi nhìn nhận trên tư cách là...'). Từ góc nhìn đó, một nhận thức mới, kết luận hoặc hành động tương ứng sẽ được mở ra ở vế sau.",
+      "formation": "Động từ thể thông thường + とみると | Tính từ đuôi い + とみると | Tính từ đuôi な + だとみると | Danh từ + だとみると",
+      "examples": [
+        {
+          "translation": "Nếu nhìn nhận vấn đề này dưới góc độ toán học, giải pháp sẽ bắt đầu lộ diện."
+        },
+        {
+          "translation": "Xét thấy cô ấy là một học sinh ưu tú, việc nhận giải thưởng đó là lẽ đương nhiên."
+        },
+        {
+          "translation": "Nếu xét trên tư cách là một nhân viên mới, thì thành quả của anh ấy quả thật rất xuất sắc."
+        },
+        {
+          "translation": "Xét thấy loài gấu trúc này là loài có nguy cơ tuyệt chủng, việc bảo tồn là vô cùng cấp thiết."
+        }
+      ]
+    },
+    "ja_どんなにうが_209": {
+      "title": "どんなに～うが (donna ni ～ u ga)",
+      "shortExplanation": "Diễn tả sự nhượng bộ tột cùng về mức độ; 'dù cho có... đến thế nào đi chăng nữa thì... (vẫn không đổi)'.",
+      "longExplanation": "Mẫu ngữ pháp 'どんなに～うが' (dạng ý chí/suy đoán kết hợp trợ từ が, tương đương với 'どんなに～ても') là cách nói nhượng bộ mang tính quả quyết và văn phong trang trọng hoặc văn viết. Cấu trúc này khẳng định rằng dù mức độ hành động hay trạng thái ở vế trước có cao, nhiều hoặc khắc nghiệt đến đâu thì kết quả hay lập trường ở vế sau cũng không hề bị suy chuyển.",
+      "formation": "どんなに + Động từ thể ý chí + が (ようが / ろうが) | どんなに + Tính từ đuôi い (thay い bằng かろう) + が | どんなに + Tính từ đuôi な / Danh từ + だろうが",
+      "examples": [
+        {
+          "translation": "Dù tôi có cố gắng hết sức đến mấy đi chăng nữa, cũng không thể đuổi kịp tốc độ của anh ấy."
+        },
+        {
+          "translation": "Dù có ăn nhiều đến thế nào, cô ấy cũng chẳng hề tăng cân."
+        },
+        {
+          "translation": "Dù trời có giá rét đến mức nào, anh ấy vẫn chạy bộ mỗi ngày."
+        },
+        {
+          "translation": "Dù trời có nóng nực đến mấy, tôi cũng không dùng máy điều hòa."
+        }
+      ]
+    },
+    "ja_と言わんばかりに_210": {
+      "title": "～と言わんばかりに (〜to iwan bakari ni)",
+      "shortExplanation": "Diễn tả thái độ, hành động rõ rệt như muốn nói ra điều gì dù không thốt nên lời; 'như thể muốn nói rằng...', 'suýt nữa thì nói ra rằng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～と言わんばかりに' (với '言わん' là thể phủ định cổ của 言う) dùng để mô tả thái độ, cử chỉ, biểu cảm của ai đó biểu lộ rõ rệt đến mức như thể đang thốt ra câu nói đó, dù trên thực tế người đó không hề trực tiếp nói bằng lời ('như muốn nói rằng...', 'hệt như thể thốt lên...'). Mẫu câu này đóng vai trò trạng từ bổ nghĩa cho động từ theo sau.",
+      "formation": "Động từ thể thông thường / thể ý chí + と言わんばかりに | Tính từ đuôi い + と言わんばかりに | Tính từ đuôi な + だと言わんばかりに | Danh từ + だと言わんばかりに",
+      "examples": [
+        {
+          "translation": "Cô ấy cười rạng rỡ như thể muốn nói rằng mình đã giành chiến thắng."
+        },
+        {
+          "translation": "Anh ấy lộ rõ vẻ kiệt sức như thể sắp sửa ngã gục đến nơi."
+        },
+        {
+          "translation": "Cô ấy sợ những ngày mưa, nên cứ chăm chú nhìn ra ngoài cửa sổ như thể thầm ước trời mau tạnh."
+        },
+        {
+          "translation": "Hành động của anh ấy như thể muốn nói rằng chẳng còn ai tin tưởng mình nữa."
+        }
+      ]
+    },
+    "ja_と言わんばかりの_211": {
+      "title": "～と言わんばかりの + Danh từ (～to iwan bakari no Noun)",
+      "shortExplanation": "Bổ nghĩa cho danh từ theo sau, diễn tả cử chỉ, ánh mắt, vẻ mặt như muốn nói lên điều gì; 'như muốn nói rằng...', 'như thể thốt lên...'.",
+      "longExplanation": "Mẫu ngữ pháp '～と言わんばかりの + Danh từ' là dạng bổ nghĩa cho danh từ của '～と言わんばかりに'. Nó dùng để miêu tả trực tiếp các danh từ chỉ biểu cảm, ánh mắt, nụ cười hay phong thái (như 笑顔, 視線, 態度, 姿...) toát lên một thông điệp hay cảm xúc mãnh liệt như thể đang muốn thốt lên bằng lời ('nụ cười như muốn reo lên...', 'ánh mắt như muốn nói...').",
+      "formation": "Động từ thể thông thường + と言わんばかりの + Danh từ | Cụm từ thể thông thường + と言わんばかりの + Danh từ",
+      "examples": [
+        {
+          "translation": "Anh Tanaka nở nụ cười rạng rỡ như muốn reo lên vì quá đỗi vui mừng."
+        },
+        {
+          "translation": "Cô ấy hướng về phía tôi một ánh nhìn như thể muốn bắt chuyện."
+        },
+        {
+          "translation": "Cụ già lộ rõ dáng vẻ run rẩy bần bật như muốn nói rằng mình đang lạnh cóng."
+        },
+        {
+          "translation": "Anh ấy toát ra một phong thái căng thẳng tột độ như thể cả cơ thể đang đông cứng lại."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_とされる_197": {
+      "title": "～とされる (〜to sareru)",
+      "shortExplanation": "表示社会普遍认同的看法、评价或共识；“被认为……”、“被视为……”、“被看作是……”。",
+      "longExplanation": "句型“～とされる”是动词“とする（看作、作为）”的被动态形式，常用于新闻报道、论文或正式书面语中。它用于陈述社会普遍的观点、学术共识或大众公认的评价（“被公认为……”、“被看作是……”），避免直接以说话人个人主观视点下定论，体现客观叙述色彩。",
+      "formation": "动词普通形 ＋ とされる ｜ い形容词 ＋ とされる ｜ な形容词 ＋ だとされる ｜ 名词 ＋ だとされる（常用形式：～とされている）",
+      "examples": [
+        {
+          "translation": "足球被公认为是世界上最受欢迎的体育运动。"
+        },
+        {
+          "translation": "他被认为是最有才能的科学家。"
+        },
+        {
+          "translation": "该建筑被视为当地的标志性地标。"
+        },
+        {
+          "translation": "那座寺庙被视为古代艺术珍品。"
+        }
+      ]
+    },
+    "ja_としたところで_198": {
+      "title": "～としたところで (〜to shita tokoro de)",
+      "shortExplanation": "表示假定让步，强调即使退一步假定成立，结果也毫无改变；“即使……也（无济于事）”、“就算……也……”。",
+      "longExplanation": "句型“～としたところで”属于让步假定表达，常带有说话人的无奈、怀疑或消极评价色彩。它表示“即使退一步承认或做到了某事，后续的情况或结果也不会有任何实质性改变”（“即便……也是徒劳”）。后项多伴随否定评价、怀疑推测或消极结果。",
+      "formation": "动词普通形 ＋ としたところで ｜ い形容词 ＋ としたところで ｜ な形容词 ＋ だとしたところで ｜ 名词 ＋ だとしたところで",
+      "examples": [
+        {
+          "translation": "就算他真来了，恐怕也改变不了任何现状吧。"
+        },
+        {
+          "translation": "哪怕做出了美味的点心，也无法保证它一定能畅销。"
+        },
+        {
+          "translation": "即使打通电话过去，她也未必会接听。"
+        },
+        {
+          "translation": "就算使用了最顶级的食材，也未必就能做出绝顶的美味。"
+        }
+      ]
+    },
+    "ja_とすると_199": {
+      "title": "～とすると (〜to suru to)",
+      "shortExplanation": "表示假设或前提推导；“如果假设……”、“假定……的话”、“要是……的话”。",
+      "longExplanation": "句型“～とすると”用于设定一个假设条件或假想前提（“假如说……”、“如果以……为前提的话”），后项据此推导出必然发生的结果、逻辑判断或后续推算。它侧重于纯粹的理论性假定与逻辑推论。",
+      "formation": "动词普通形 ＋ とすると ｜ い形容词 ＋ とすると ｜ な形容词 ＋ だとすると ｜ 名词 ＋ だとすると",
+      "examples": [
+        {
+          "translation": "如果他要来的话，按理说马上就应该到了。"
+        },
+        {
+          "translation": "假定要完成这项工作，起码也得耗费三天时间吧。"
+        },
+        {
+          "translation": "假如爆发战争的话，将会有无数民众沦为牺牲品。"
+        },
+        {
+          "translation": "要是他作为经营者的话，想必将背负极其重大的责任。"
+        }
+      ]
+    },
+    "ja_とすれば_200": {
+      "title": "～とすれば (～to sureba)",
+      "shortExplanation": "提出假定条件或前提；“如果说……”、“要是假设……的话”、“如果属实的话”。",
+      "longExplanation": "句型“～とすれば”用于提出某种假设或视作既定事实的前提（“假若……的话”、“如果真是这样的话”）。后项紧接着表明基于该假设的判断、应对意见、提问或个人意志。相比于“とすると”偏向客观推导，“とすれば”常可接续说话人的意志、愿望、建议或疑问。",
+      "formation": "动词普通形 ＋ とすれば ｜ い形容词 ＋ とすれば ｜ な形容词 ＋ だとすれば ｜ 名词 ＋ だとすれば",
+      "examples": [
+        {
+          "translation": "如果说他是个大骗子，那他的话就完全不可信了。"
+        },
+        {
+          "translation": "要是你一起去的话，我也跟着去。"
+        },
+        {
+          "translation": "如果他真的出轨了，那我该怎么办才好呢？"
+        },
+        {
+          "translation": "假使那种药没有效果，我们就应该尝试别的方法。"
+        }
+      ]
+    },
+    "ja_となったら_201": {
+      "title": "～となったら (〜to nattara)",
+      "shortExplanation": "表示事情一旦真正成为现实或发展到该地步；“要是真的……的话”、“真到了……的地步”。",
+      "longExplanation": "句型“～となったら”用于假设某种情况一旦真正成为事实、或局面真正发展到了那一阶段（“真要是……的话”、“一旦面临……”）。通常带有说话人面对现实转折时的真切感受、担忧困惑或认真应对的心态，后项多伴随情感反应、对策行动或感慨。",
+      "formation": "动词普通形 ＋ となったら ｜ 名词 ＋ となったら",
+      "examples": [
+        {
+          "translation": "要是真决定去旅行的话，就非得抓紧收拾行李不可了。"
+        },
+        {
+          "translation": "要是考试真的落榜了，我该怎么办才好呢。"
+        },
+        {
+          "translation": "真要是到了和她分手的地步，我会感到无比悲伤。"
+        },
+        {
+          "translation": "一旦面临结婚这件事，人生大概会发生翻天覆地的转变吧。"
+        }
+      ]
+    },
+    "ja_となると_202": {
+      "title": "～となると (〜to naru to)",
+      "shortExplanation": "提出特定的话题或局面，表示一旦面临该情况自然会出现的结果；“一提到……”、“一旦涉及……的话”。",
+      "longExplanation": "句型“～となると”用于凸显某种特定的情况、话题或事态转变（“一说到……”、“要是变成……的情况”）。后项通常接续在该特定条件下一贯发生的情感反应、必然呈现的局面或合乎情理的推断。",
+      "formation": "动词普通形 ＋ となると ｜ い形容词 ＋ となると ｜ な形容词 ＋ だとなると ｜ 名词（＋だ） ＋ となると",
+      "examples": [
+        {
+          "translation": "一到考试的时候，许多学生就会不由自主地紧张起来。"
+        },
+        {
+          "translation": "要是搬到东京去住的话，生活成本一下子就会大幅增加。"
+        },
+        {
+          "translation": "要是截止期限真在明天的话，今晚恐怕得彻夜不眠了。"
+        },
+        {
+          "translation": "如果由他来担任队长，团队的各项活动或许会有极大的改观。"
+        }
+      ]
+    },
+    "ja_となれば_203": {
+      "title": "～となれば (〜to nareba)",
+      "shortExplanation": "提出某种既定假设或事态演变；“如果真是……的话”、“要是事情变成……的话”。",
+      "longExplanation": "句型“～となれば”用于设定某种既成事实或局面转变作为前提条件（“既然事已至此……”、“倘若演变成……的话”）。后项往往顺理成章地引出由此引发的必然判断、应对决策、建议或行动意志。",
+      "formation": "动词普通形 ＋ となれば ｜ い形容词 ＋ となれば ｜ な形容词 ＋ だとなれば ｜ 名词 ＋ だとなれば",
+      "examples": [
+        {
+          "translation": "要是真由他来领头，该项目想必一定会取得成功吧。"
+        },
+        {
+          "translation": "倘若明天真要下雨的话，咱们就把野餐取消了吧。"
+        },
+        {
+          "translation": "这项工作既然已经做完了，你就可以申请休假了。"
+        },
+        {
+          "translation": "若是那场测验难度很高的话，我们就必须更加加倍努力学习才行。"
+        }
+      ]
+    },
+    "ja_とのことだ_204": {
+      "title": "～とのことだ (〜to no koto da)",
+      "shortExplanation": "以郑重口吻转述传闻或转告他人的信息；“据说……”、“听说是……”。",
+      "longExplanation": "句型“～とのことだ”（礼貌形为“～とのことです”）用于转述从第三方、书信、通知或报道中获取的消息（“据说……”、“据悉……”）。其含义与“～そうだ”相似，但更显郑重客气，是商务邮件、公文报告及正式交际中极为常用的传闻表达。",
+      "formation": "普通形小句 ＋ とのことだ（或 とのことです） ｜ 名词 / な形容词 ＋ だとのことだ",
+      "examples": [
+        {
+          "translation": "听闻这个周末将会举办一场聚会。"
+        },
+        {
+          "translation": "据说他明年就要搬家去伦敦了。"
+        },
+        {
+          "translation": "据悉她已经顺利入职了新工作。"
+        },
+        {
+          "translation": "听说承蒙通知明天并没有考试安排。"
+        }
+      ]
+    },
+    "ja_とはいえ_205": {
+      "title": "～とはいえ (～to wa ie)",
+      "shortExplanation": "表示转折让步，属于较为正式的书面语；“虽说……”、“话虽如此……但是……”。",
+      "longExplanation": "句型“～とはいえ”属于庄重的书面语逆接表达。它首先承认前项所陈述的事实或前提（“虽说确实如此……”），但后项紧接着指出与该事实引发的常理预想相反的实际情况、限制或事实反差（“可是实际上……”、“但也……”）。",
+      "formation": "名词 ＋ とはいえ ｜ な形容词（＋だ） ＋ とはいえ ｜ い形容词 ＋ とはいえ ｜ 动词普通形 ＋ とはいえ",
+      "examples": [
+        {
+          "translation": "他虽说头脑聪明，但却有点懒散。"
+        },
+        {
+          "translation": "这家餐厅虽说味道确实可口，但价格稍微贵了些。"
+        },
+        {
+          "translation": "日本虽说国土狭小，其科学技术却是世界一流水平。"
+        },
+        {
+          "translation": "她虽说年纪尚轻，经验却十分丰富。"
+        }
+      ]
+    },
+    "ja_とみえて_206": {
+      "title": "～とみえて (〜to miete)",
+      "shortExplanation": "根据观察到的外在迹象或事实做出推测；“看来是……”、“似乎……的样子”。",
+      "longExplanation": "句型“～とみえて”用于说话人根据眼前亲眼所见的情景、对方的表现或外在证据，推导其背后的原因或心理状态（“看来像是……”、“显露出……的样子”）。后项常陈述作为推断依据的客观事实或行为举止。",
+      "formation": "动词普通形 ＋ とみえて ｜ い形容词 ＋ とみえて ｜ な形容词（＋だ） ＋ とみえて ｜ 名词（＋だ） ＋ とみえて",
+      "examples": [
+        {
+          "translation": "他看起来很擅长运动，每天都去健身房锻炼。"
+        },
+        {
+          "translation": "她似乎非常繁忙，总也见不到她的人影。"
+        },
+        {
+          "translation": "田中先生显出疲惫的样子，很早就回家去了。"
+        },
+        {
+          "translation": "那家店铺看来人气很旺，门前总是排着长队。"
+        }
+      ]
+    },
+    "ja_とみられる_207": {
+      "title": "～とみられる (～to mirareru)",
+      "shortExplanation": "基于客观形势做出判断或预测，多见于新闻报道；“被认为……”、“预计……”、“据估计……”。",
+      "longExplanation": "句型“～とみられる”是动词“見る（看待、判断）”的受身形，属于典型的新闻报道与书面语表达。它用于根据当前局势、证据或数据客观地陈述推断或预测（“据分析……”、“预计会……”），使表达显得客观、严谨，避免个人断言。",
+      "formation": "动词普通形 ＋ とみられる ｜ い形容词 ＋ とみられる ｜ な形容词（词干/だ） ＋ とみられる ｜ 名词（词干/だ） ＋ とみられる（常作「～とみられている」）",
+      "examples": [
+        {
+          "translation": "他的这种行为被普遍视为是不负责任的。"
+        },
+        {
+          "translation": "这幅画作据推断是毕加索的真迹作品。"
+        },
+        {
+          "translation": "地震发生后，预计灾害损失还将进一步扩大。"
+        },
+        {
+          "translation": "据气象分析，周末的天气预计将会好转。"
+        }
+      ]
+    },
+    "ja_とみると_208": {
+      "title": "～とみると (〜to miru to)",
+      "shortExplanation": "从某一特定角度、身份或立场出发进行观察与评判；“如果从……来看”、“一视作……的话”。",
+      "longExplanation": "句型“～とみると”表示将某一事物置于特定的视角、立场或标准下来审视（“若以……的眼光来看”、“既然视其为……”）。随着视角的切换，后项常自然引出随之显现的见解、合理的评价或应当采取的举措。",
+      "formation": "动词普通形 ＋ とみると ｜ い形容词 ＋ とみると ｜ な形容词 ＋ だとみると ｜ 名词 ＋ だとみると",
+      "examples": [
+        {
+          "translation": "若从数学的角度来审视这一问题，解决之道便清晰可见了。"
+        },
+        {
+          "translation": "鉴于她是一名极为优秀的学生，荣获该项奖赏也是理所当然的。"
+        },
+        {
+          "translation": "若将他视为刚入职的新员工来看待，这番成果可以说是非常卓越的。"
+        },
+        {
+          "translation": "考虑到这种大熊猫属于濒危物种，对其实施保护是不可或缺的。"
+        }
+      ]
+    },
+    "ja_どんなにうが_209": {
+      "title": "どんなに～うが (donna ni ～ u ga)",
+      "shortExplanation": "表示极端的程度让步，语气坚定；“无论多么……”、“不管怎样……都……”。",
+      "longExplanation": "句型“どんなに～うが”（接意志形/推量形加助词“が”，相当于“どんなに～ても”）属于语气坚决的让步句型。它表示无论前项动作或状态的程度达到何种极致的地步（“无论怎样拼命……”、“不管如何……”），后项的事实、结论或决心都绝不会受到丝毫动摇或改变。",
+      "formation": "どんなに ＋ 动词意志形 ＋ が（ようが / ろうが） ｜ どんなに ＋ い形容词（去い变かろう） ＋ が ｜ どんなに ＋ な形容词 / 名词 ＋ だろうが",
+      "examples": [
+        {
+          "translation": "无论我怎样拼尽全力，也赶不上他那惊人的速度。"
+        },
+        {
+          "translation": "不管吃下多少东西，她也完全不会发胖。"
+        },
+        {
+          "translation": "无论天气多么严寒，他都每天坚持慢跑。"
+        },
+        {
+          "translation": "不管天气多么炎热，我也决不开空调。"
+        }
+      ]
+    },
+    "ja_と言わんばかりに_210": {
+      "title": "～と言わんばかりに (〜to iwan bakari ni)",
+      "shortExplanation": "形容神态或举止极其明显，宛如虽未明说却呼之欲出；“宛如在说……”、“仿佛在示意……一般”。",
+      "longExplanation": "句型“～と言わんばかりに”（其中“言わん”为古日语否定/意志助动词形式）属于生动传神的书面描写表达。它用于描摹人物的神情、目光或举动十分鲜明，虽然并未当场用言语道出，但那副神态举止却强烈传达出某种心声（“就差没亲口说出……”、“宛若在说……似地”）。充当副词修饰后续动词。",
+      "formation": "动词普通形 / 意志形 ＋ と言わんばかりに ｜ い形容词 ＋ と言わんばかりに ｜ な形容词 ＋ だと言わんばかりに ｜ 名词 ＋ だと言わんばかりに",
+      "examples": [
+        {
+          "translation": "她灿烂地笑了起来，那副模样仿佛在宣告自己夺得了冠军一般。"
+        },
+        {
+          "translation": "他满脸倦容，神态疲惫得宛若随时都要当场倒下一样。"
+        },
+        {
+          "translation": "她讨厌阴雨连绵的日子，凝视着窗外，眼神里宛如在企盼着天气快些放晴。"
+        },
+        {
+          "translation": "他的举动宛如在说已经再也没有人肯相信他了一样。"
+        }
+      ]
+    },
+    "ja_と言わんばかりの_211": {
+      "title": "～と言わんばかりの + 名词 (～to iwan bakari no Noun)",
+      "shortExplanation": "作定语修饰后续名词，形容神态、目光或表情呼之欲出；“宛若在说……般的（神态/目光）”。",
+      "longExplanation": "句型“～と言わんばかりの ＋ 名词”是“～と言わんばかりに”的连体修饰形式。它直接修饰后续表示表情、视线、神态、风度等名词（如 笑顔、視線、態度、姿 等），生动传神地刻画出某种即便没有用言语挑明、但神情中却展露无遗的心声与态度（“宛如在示意……似的笑容/眼神”）。",
+      "formation": "动词普通形 ＋ と言わんばかりの ＋ 名词 ｜ 普通形小句 ＋ と言わんばかりの ＋ 名词",
+      "examples": [
+        {
+          "translation": "田中先生露出了喜不自禁、仿佛高兴得要跳起来一般的满面笑容。"
+        },
+        {
+          "translation": "她向我投来了宛如想要搭话一般的热切视线。"
+        },
+        {
+          "translation": "那位老人瑟瑟发抖，流露出一副仿佛在诉说严寒难耐的身影。"
+        },
+        {
+          "translation": "他周身散发出一种宛如因极度紧张而身躯僵硬一般的紧绷气场。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_とされる_197": {
+      "title": "～とされる (〜to sareru)",
+      "shortExplanation": "사회 일반의 통념이나 널리 받아들여지는 견해를 나타내며, '~라고 여겨지다', '~로 간주되다', '~라고 일컬어지다'라는 뜻입니다.",
+      "longExplanation": "'～とされる'는 'とする(하다, 여기다)'의 수동형으로, 뉴스 보도나 논문 등 격식 있는 문어체에서 주로 쓰입니다. 개인의 주관적인 의견이 아니라 사회 일반의 통념이나 대다수의 평가, 일반적인 사실로서 널리 인정받고 있음을 객관적으로 나타낼 때 사용됩니다('~라고 평가받다', '~로 여겨지다').",
+      "formation": "동사 보통형 ＋ とされる ｜ い형용사 ＋ とされる ｜ な형용사 ＋ だとされる ｜ 명사 ＋ だとされる (주로 '～とされている' 형태로 쓰임)",
+      "examples": [
+        {
+          "translation": "축구는 세계에서 가장 인기 있는 스포츠로 여겨지고 있습니다."
+        },
+        {
+          "translation": "그는 가장 유능한 과학자로 평가받는다."
+        },
+        {
+          "translation": "이 건물은 지역의 랜드마크인 것으로 알려져 있습니다."
+        },
+        {
+          "translation": "그 사찰은 고대 미술품으로 여겨지고 있다."
+        }
+      ]
+    },
+    "ja_としたところで_198": {
+      "title": "～としたところで (〜to shita tokoro de)",
+      "shortExplanation": "가정적 양보를 나타내며, 아무리 그 가정이 성립하더라도 결과는 바뀌지 않음을 강조합니다. '설령 ~한다고 한들', '~한다 쳐도'.",
+      "longExplanation": "'～としたところで'는 양보 가정을 나타내는 N1 문형으로, '설령 양보해서 그 조건을 인정하거나 실행한다 쳐도'라는 뜻을 나타냅니다. 어떠한 조건이 충족되더라도 상황이 크게 달라지지 않거나 무의미하다는 회의적이고 부정적인 뉘앙스를 담고 있으며, 후항에는 대개 부정적인 평가나 결과, 불확실한 추측이 따릅니다.",
+      "formation": "동사 보통형 ＋ としたところで ｜ い형용사 ＋ としたところで ｜ な형용사 ＋ だとしたところで ｜ 명사 ＋ だとしたところで",
+      "examples": [
+        {
+          "translation": "설령 그가 온다고 한들, 아무것도 바뀌지 않을 것이다."
+        },
+        {
+          "translation": "아무리 맛있는 과자를 만든다고 쳐도, 그것이 팔린다는 보장은 없다."
+        },
+        {
+          "translation": "전화를 건다고 한들, 그녀가 받는다는 보장은 없다."
+        },
+        {
+          "translation": "최고의 재료를 쓴다고 한들, 반드시 맛있어지리라는 법은 없다."
+        }
+      ]
+    },
+    "ja_とすると_199": {
+      "title": "～とすると (〜to suru to)",
+      "shortExplanation": "가정이나 전제를 나타내며, '만약 ~라고 한다면', '~라고 가정하면'이라는 뜻입니다.",
+      "longExplanation": "'～とすると'는 어떤 가상의 상황이나 전제를 설정할 때 사용하는 문형입니다('만약 ~라고 한다면', '~라고 가정했을 때'). 앞 절에서 세운 가정을 바탕으로 뒤따르는 논리적 귀결, 결과 예측, 계산 등을 이끌어낼 때 주로 쓰입니다.",
+      "formation": "동사 보통형 ＋ とすると ｜ い형용사 ＋ とすると ｜ な형용사 ＋ だとすると ｜ 명사 ＋ だとすると",
+      "examples": [
+        {
+          "translation": "만약 그가 오는 것이라면, 머지않아 도착할 것입니다."
+        },
+        {
+          "translation": "이 일을 끝낸다고 가정하면, 적어도 3일은 걸릴 것입니다."
+        },
+        {
+          "translation": "전쟁이 일어난다고 하면, 많은 사람이 희생될 것입니다."
+        },
+        {
+          "translation": "그가 경영자라고 한다면, 많은 책임을 져야 할 것입니다."
+        }
+      ]
+    },
+    "ja_とすれば_200": {
+      "title": "～とすれば (～to sureba)",
+      "shortExplanation": "가정 조건을 제시하며, '만약 ~라고 한다면', '~라는 가정하에'라는 뜻입니다.",
+      "longExplanation": "'～とすれば'는 특정한 상황을 가정하거나 전제로 삼아('만약 ~라고 한다면', '~라고 가정해 볼 때'), 그에 따른 판단이나 의견, 의지, 의문 등을 나타낼 때 사용됩니다. 'とすると'가 주로 객관적인 필연성이나 추론에 쓰이는 반면, 'とすれば'는 화자의 의지나 권유, 질문 등 주관적인 반응도 뒷문장에 쉽게 이어질 수 있습니다.",
+      "formation": "동사 보통형 ＋ とすれば ｜ い형용사 ＋ とすれば ｜ な형용사 ＋ だとすれば ｜ 명사 ＋ だとすれば",
+      "examples": [
+        {
+          "translation": "만약 그가 거짓말쟁이라고 한다면, 그 이야기는 믿을 수 없다."
+        },
+        {
+          "translation": "당신이 함께 간다고 한다면, 저도 가겠습니다."
+        },
+        {
+          "translation": "만약 그가 바람을 피우고 있는 것이라면, 난 어떻게 해야 하지?"
+        },
+        {
+          "translation": "그 약이 효과가 없다고 한다면, 다른 방법을 시도해 보아야 한다."
+        }
+      ]
+    },
+    "ja_となったら_201": {
+      "title": "～となったら (〜to nattara)",
+      "shortExplanation": "어떤 상황이 실제로 닥치거나 현실이 되었을 때를 가정하며, '막상 ~하게 된다면', '실제로 ~라는 상황이 되면'이라는 뜻입니다.",
+      "longExplanation": "'～となったら'는 어떤 일이 실제로 닥치거나 실현되는 국면에 직면했을 때를 나타내는 문형입니다('막상 ~하게 된다면', '진짜로 ~가 되면'). 단순한 공상이 아니라 현실화되었을 때의 당혹감, 긴장감, 결심, 또는 그에 따른 감정적 반응 등을 표현할 때 자주 쓰입니다.",
+      "formation": "동사 보통형 ＋ となったら ｜ 명사 ＋ となったら",
+      "examples": [
+        {
+          "translation": "막상 여행을 떠나게 된다면, 짐을 꾸려야만 합니다."
+        },
+        {
+          "translation": "시험에 떨어지게 된다면 어떡하지?"
+        },
+        {
+          "translation": "그녀와 헤어지게 된다면 너무나 슬플 것입니다."
+        },
+        {
+          "translation": "결혼을 하게 된다면 인생이 크게 바뀌겠지요."
+        }
+      ]
+    },
+    "ja_となると_202": {
+      "title": "～となると (〜to naru to)",
+      "shortExplanation": "특정 상황이나 화제를 들어, 그 상황에 직면했을 때 자연스럽게 일어나는 반응이나 결과를 나타냅니다. '~하게 되면', '~에 관해서라면'.",
+      "longExplanation": "'～となると'는 특정한 사태나 국면을 화제로 제시하여('막상 ~라는 상황이 되면', '~에 관해서라면'), 그 조건 아래에서 으레 자연스럽게 발생하거나 불가피하게 이어지는 반응, 결과, 판단을 나타냅니다.",
+      "formation": "동사 보통형 ＋ となると ｜ い형용사 ＋ となると ｜ な형용사 ＋ だとなると ｜ 명사(＋だ) ＋ となると",
+      "examples": [
+        {
+          "translation": "시험 때가 되면 많은 학생이 긴장한다."
+        },
+        {
+          "translation": "도쿄로 이사하게 되면 생활비가 단숨에 크게 오른다."
+        },
+        {
+          "translation": "마감이 내일이라고 하면 오늘 밤은 밤샘 작업을 하게 될 것 같다."
+        },
+        {
+          "translation": "그가 리더가 된다면 팀의 활동이 크게 개선될지도 모른다."
+        }
+      ]
+    },
+    "ja_となれば_203": {
+      "title": "～となれば (〜to nareba)",
+      "shortExplanation": "어떤 사태가 현실이 되거나 상황이 그렇게 전개된다면이라는 가정을 나타내며, '~라면', '~라는 상황이 된다면'이라는 뜻입니다.",
+      "longExplanation": "'～となれば'는 특정한 사태가 전개되거나 현실화되는 것을 조건으로 내세워('만약 ~가 된다면', '~라는 국면에 이르면'), 그에 대응하는 당연한 판단, 제안, 결단 등을 이끌어내는 문형입니다.",
+      "formation": "동사 보통형 ＋ となれば ｜ い형용사 ＋ となれば ｜ な형용사 ＋ だとなれば ｜ 명사 ＋ だとなれば",
+      "examples": [
+        {
+          "translation": "그가 리더가 된다면 프로젝트는 성공할 것입니다."
+        },
+        {
+          "translation": "내일 비가 온다고 한다면 피크닉은 취소합시다."
+        },
+        {
+          "translation": "이 일이 끝난 상태라면 휴가를 낼 수 있습니다."
+        },
+        {
+          "translation": "그 시험이 어렵다고 한다면 더 한층 열심히 공부해야만 한다."
+        }
+      ]
+    },
+    "ja_とのことだ_204": {
+      "title": "～とのことだ (〜to no koto da)",
+      "shortExplanation": "격식 있는 문맥에서 전언이나 들은 소식을 전달하며, '~라고 한다', '~라는 소식이다'라는 뜻입니다.",
+      "longExplanation": "'～とのことだ'(정중형은 '～とのことです')는 다른 사람이나 편지, 알림 등으로부터 전해 들은 정보를 공손하고 격식 있게 전달하는 전문(傳聞) 표현입니다. '～そうだ'와 의미는 유사하나 더욱 정중한 뉘앙스를 지니며, 비즈니스 문서나 메일, 공식적인 대화에서 자주 쓰입니다.",
+      "formation": "보통형 문장 ＋ とのことだ(또는 とのことです) ｜ 명사 / な형용사 ＋ だとのことだ",
+      "examples": [
+        {
+          "translation": "주말에 파티가 열린다고 합니다."
+        },
+        {
+          "translation": "그는 내년에 런던으로 이사한다고 합니다."
+        },
+        {
+          "translation": "그녀는 새로운 직장에 취업했다고 합니다."
+        },
+        {
+          "translation": "내일은 시험이 없다는 소식입니다."
+        }
+      ]
+    },
+    "ja_とはいえ_205": {
+      "title": "～とはいえ (～to wa ie)",
+      "shortExplanation": "격식 있는 문맥에서 역접 양보를 나타내며, '~라고는 하지만', '비록 ~일지라도'라는 뜻입니다.",
+      "longExplanation": "'～とはいえ'는 문어체에서 주로 쓰이는 역접 표현입니다. 앞선 사실이나 전제를 일단 인정하면서도('~라고는 하지만', '~라 할지라도'), 그 사실로부터 당연히 연상되는 것과는 상반되는 실제 상황이나 한계, 예외적 사실을 뒷문장에서 진술할 때 사용됩니다.",
+      "formation": "명사 ＋ とはいえ ｜ な형용사(＋だ) ＋ とはいえ ｜ い형용사 ＋ とはいえ ｜ 동사 보통형 ＋ とはいえ",
+      "examples": [
+        {
+          "translation": "그는 머리는 좋다고 하지만, 다소 게으른 면이 있다."
+        },
+        {
+          "translation": "이 식당은 맛있다고는 하지만, 가격이 다소 비싸다."
+        },
+        {
+          "translation": "일본은 비록 작은 나라이긴 하지만 기술력만큼은 세계 최고 수준이다."
+        },
+        {
+          "translation": "그녀는 비록 젊다고는 하지만 경험이 매우 풍부하다."
+        }
+      ]
+    },
+    "ja_とみえて_206": {
+      "title": "～とみえて (〜to miete)",
+      "shortExplanation": "겉으로 드러난 모습이나 상황을 근거로 추측을 나타내며, '~인 듯이', '~인 모양인지'라는 뜻입니다.",
+      "longExplanation": "'～とみえて'는 눈앞에 보이는 정황이나 사실을 토대로 원인이나 상태를 짐작하여 나타내는 문형입니다('~로 보여서인지', '~인 모양으로'). 주로 뒤 절에는 그 추측의 근거가 되는 상대방의 행동이나 객관적인 상황이 이어집니다.",
+      "formation": "동사 보통형 ＋ とみえて ｜ い형용사 ＋ とみえて ｜ な형용사(＋だ) ＋ とみえて ｜ 명사(＋だ) ＋ とみえて",
+      "examples": [
+        {
+          "translation": "그는 운동에 소질이 있는지, 매일 체육관에 가고 있습니다."
+        },
+        {
+          "translation": "그녀는 무척 바쁜 모양인지 좀처럼 만나기가 어렵다."
+        },
+        {
+          "translation": "다나카 씨는 피곤해 보였는지 일찍 귀가했습니다."
+        },
+        {
+          "translation": "그 가게는 인기가 많은 모양인지 언제나 줄이 늘어서 있다."
+        }
+      ]
+    },
+    "ja_とみられる_207": {
+      "title": "～とみられる (～to mirareru)",
+      "shortExplanation": "객관적인 정황이나 데이터를 바탕으로 한 관측이나 판단을 나타내며, '~로 보인다', '~로 추정되다', '~로 전망되다'라는 뜻입니다.",
+      "longExplanation": "'～とみられる'는 '見る(보다, 판단하다)'의 수동형으로, 뉴스 보도나 논문, 시사 해설 등에서 핵심적으로 쓰이는 표현입니다. 객관적인 정황이나 수집된 데이터에 입각하여 사태의 원인, 현재 상태, 또는 향후의 전개 방향을 신중하고 객관적으로 예측·판단할 때 쓰입니다('~로 추정된다', '~로 전망된다').",
+      "formation": "동사 보통형 ＋ とみられる ｜ い형용사 ＋ とみられる ｜ な형용사(だ) ＋ とみられる ｜ 명사(だ) ＋ とみられる (주로 '～とみられている' 형태로 쓰임)",
+      "examples": [
+        {
+          "translation": "그의 행동은 무책임한 것으로 간주된다."
+        },
+        {
+          "translation": "이 그림은 피카소의 작품인 것으로 추정되고 있다."
+        },
+        {
+          "translation": "지진 발생 후 피해는 한층 더 늘어날 것으로 전망된다."
+        },
+        {
+          "translation": "주말에는 날씨가 맑아질 것으로 관측된다."
+        }
+      ]
+    },
+    "ja_とみると_208": {
+      "title": "～とみると (〜to miru to)",
+      "shortExplanation": "특정한 관점이나 기준, 전제에서 바라보아 판단함을 나타내며, '~라고 본다면', '~의 관점에서 보면'이라는 뜻입니다.",
+      "longExplanation": "'～とみると'는 사물이나 상황을 특정한 시각, 입장, 조건에 두고 고찰할 때 쓰는 표현입니다('~의 눈으로 본다면', '~라고 본다면'). 관점을 전환함으로써 비로소 드러나는 새로운 인식, 타당한 결론, 혹은 대응 방안이 뒷문장에 이어집니다.",
+      "formation": "동사 보통형 ＋ とみると ｜ い형용사 ＋ とみると ｜ な형용사 ＋ だとみると ｜ 명사 ＋ だとみると",
+      "examples": [
+        {
+          "translation": "이 문제를 수학의 관점에서 본다면 해결책이 보이기 시작합니다."
+        },
+        {
+          "translation": "그녀가 우수한 학생이라고 본다면 그 상을 받은 것은 당연합니다."
+        },
+        {
+          "translation": "그가 신입 사원이라는 점을 감안해 본다면 그 성과는 훌륭합니다."
+        },
+        {
+          "translation": "이 판다가 멸종 위기종이라고 본다면 보호가 꼭 필요합니다."
+        }
+      ]
+    },
+    "ja_どんなにうが_209": {
+      "title": "どんなに～うが (donna ni ～ u ga)",
+      "shortExplanation": "극단적인 정도의 양보를 나타내며, '아무리 ~하더라도', '얼마나 ~하든 간에'라는 뜻입니다.",
+      "longExplanation": "'どんなに～うが'는 의지형/추량형 어미에 조사 'が'가 결합된 형태로, 'どんなに～ても'보다 단호하고 문어적인 어조를 띱니다. 앞 절의 동작이나 상태의 정도가 아무리 극에 달한다 할지라도('아무리 ~할지라도', '얼마나 ~하든'), 뒤 절의 결과나 결심에는 전혀 영향을 주지 않음을 강조합니다.",
+      "formation": "どんなに ＋ 동사 의지형 ＋ が (ようが / ろうが) ｜ どんなに ＋ い형용사(～かろう) ＋ が ｜ どんなに ＋ な형용사 / 명사 ＋ だろうが",
+      "examples": [
+        {
+          "translation": "아무리 노력한들 그의 속도는 따라잡을 수 없다."
+        },
+        {
+          "translation": "아무리 많이 먹더라도 그녀는 살이 찌지 않는다."
+        },
+        {
+          "translation": "아무리 춥더라도 그는 매일 조깅을 합니다."
+        },
+        {
+          "translation": "아무리 덥더라도 에어컨은 사용하지 않습니다."
+        }
+      ]
+    },
+    "ja_と言わんばかりに_210": {
+      "title": "～と言わんばかりに (〜to iwan bakari ni)",
+      "shortExplanation": "말은 하지 않지만 태도나 표정이 마치 그렇게 말하는 듯함을 나타내며, '마치 ~라는 듯이', '~라고 말하려는 듯이'라는 뜻입니다.",
+      "longExplanation": "'～と言わんばかりに'('言わん'은 '言わない/言おう'의 고어적 표현)는 실제로 말을 꺼내지는 않았지만, 상대방의 몸짓, 눈빛, 태도, 표정이 마치 그렇게 말하고 있는 것처럼 강하게 느껴질 때 사용하는 묘사적 문형입니다('마치 ~라는 듯이'). 뒤이어 오는 동사를 부사적으로 수식합니다.",
+      "formation": "동사 보통형 / 의지형 ＋ と言わんばかりに ｜ い형용사 ＋ と言わんばかりに ｜ な형용사 ＋ だと言わんばかりに ｜ 명사 ＋ だと言わんばかりに",
+      "examples": [
+        {
+          "translation": "그녀는 마치 우승이라도 했다는 듯이 환하게 웃었다."
+        },
+        {
+          "translation": "그는 당장이라도 쓰러질 듯한 극심한 피로감을 풍기고 있었다."
+        },
+        {
+          "translation": "그녀는 비 오는 날을 싫어해서, 제발 날이 개었으면 좋겠다는 듯이 창밖을 응시하고 있었다."
+        },
+        {
+          "translation": "그의 행동은 마치 아무도 자기를 믿어주지 않는다는 듯했다."
+        }
+      ]
+    },
+    "ja_と言わんばかりの_211": {
+      "title": "～と言わんばかりの + 명사 (～to iwan bakari no Noun)",
+      "shortExplanation": "명사를 수식하여, 마치 그렇게 말하려는 듯한 표정이나 태도를 나타냅니다. '마치 ~라는 듯한 (명사)'.",
+      "longExplanation": "'～と言わんばかりの + 명사'는 '～と言わんばかりに'의 연체수식형으로, 뒤따르는 명사(표정, 미소, 시선, 태도, 모습 등)를 직접 수식합니다. 비록 말로 직접 표현하지는 않았지만, 그 표정이나 몸짓에서 전해지는 강렬한 메시지나 감정을 생생하게 묘사할 때 사용됩니다('마치 ~라고 말하는 듯한 미소/눈빛').",
+      "formation": "동사 보통형 ＋ と言わんばかりの ＋ 명사 ｜ 보통형 문장 ＋ と言わんばかりの ＋ 명사",
+      "examples": [
+        {
+          "translation": "다나카 씨는 너무 기뻐서 펄쩍 뛸 것만 같다는 듯한 미소를 지어 보였다."
+        },
+        {
+          "translation": "그녀는 나에게 말을 걸려는 듯한 시선을 보냈다."
+        },
+        {
+          "translation": "그 노인은 추위로 바들바들 떨며 몹시 춥다는 듯한 모습을 보이고 있었다."
+        },
+        {
+          "translation": "그의 몸은 긴장으로 잔뜩 굳어 있다는 듯한 분위기를 풍기고 있다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_とされる_197": {
+      "title": "～とされる (〜to sareru)",
+      "shortExplanation": "世間一般の認識や共通の評価を表し、「〜と考えられている」「〜と見なされている」という意味を表します。",
+      "longExplanation": "「～とされる」は、「とする」の受身形で、ニュース報道や学術論文、公的な文章などで広く用いられる表現です。話者個人の主観ではなく、世間一般の通念や社会的な評価、客観的な事実として「〜と広く認められている」「〜と見なされている」と述べるときに用いられます。",
+      "formation": "動詞普通形 ＋ とされる ｜ い形容詞 ＋ とされる ｜ な形容詞 ＋ だとされる ｜ 名詞 ＋ だとされる（「～とされている」の形も多い）",
+      "examples": [
+        {
+          "translation": "サッカーは世界で最も人気のあるスポーツだと見なされています。"
+        },
+        {
+          "translation": "彼はもっとも有能な科学者だと評価されている。"
+        },
+        {
+          "translation": "この建物は地元を代表するランドマークであると見なされています。"
+        },
+        {
+          "translation": "その寺院は古代の貴重な美術工芸品であると評価されている。"
+        }
+      ]
+    },
+    "ja_としたところで_198": {
+      "title": "～としたところで (〜to shita tokoro de)",
+      "shortExplanation": "仮定の譲歩を表し、たとえそれを仮定・実行したとしても結果は変わらないことを強調します。「たとえ〜としても」「〜としたって」。",
+      "longExplanation": "「～としたところで」は、逆接の仮定条件を表す表現です。「たとえ一歩譲ってそれを想定・実行したとしても、事態や結果に大きな好転や変化はない」という話者のあきらめ、懐疑、または無駄であるという否定的な判断を表します。後続文には否定的な評価や不確実な推量が続きます。",
+      "formation": "動詞普通形 ＋ としたところで ｜ い形容詞 ＋ としたところで ｜ な形容詞 ＋ だとしたところで ｜ 名詞 ＋ だとしたところで",
+      "examples": [
+        {
+          "translation": "たとえ彼が来たとしても、状況は何も変わらないだろう。"
+        },
+        {
+          "translation": "たとえ美味しいお菓子を作れたとしても、それが売れるという保証はない。"
+        },
+        {
+          "translation": "電話をかけてみたところで、彼女が出るとは限らない。"
+        },
+        {
+          "translation": "最高の材料を用いたとしても、必ず美味しく仕上がるとは限らない。"
+        }
+      ]
+    },
+    "ja_とすると_199": {
+      "title": "～とすると (〜to suru to)",
+      "shortExplanation": "仮定や前提を提示し、「もし〜と仮定すれば」「〜だとすれば」という意味を表します。",
+      "longExplanation": "「～とすると」は、ある事柄を仮定の条件や前提として設定する表現です。「もし〜だと仮定した場合には」という条件を受け、その前提から論理的に導き出される帰結、予測、判断、あるいは計算結果などを後続文で述べます。",
+      "formation": "動詞普通形 ＋ とすると ｜ い形容詞 ＋ とすると ｜ な形容詞 ＋ だとすると ｜ 名詞 ＋ だとすると",
+      "examples": [
+        {
+          "translation": "もし彼が来るのだとすれば、もう間もなく到着するはずです。"
+        },
+        {
+          "translation": "この業務を終わらせると仮定すれば、最低でも3日間は要するでしょう。"
+        },
+        {
+          "translation": "万一戦争が勃発すると仮定したら、多くの人々が犠牲になるでしょう。"
+        },
+        {
+          "translation": "彼が経営責任者だと仮定するならば、多大な責任を背負うことになるはずです。"
+        }
+      ]
+    },
+    "ja_とすれば_200": {
+      "title": "～とすれば (～to sureba)",
+      "shortExplanation": "仮定条件を提示し、「もし〜だとすれば」「〜と仮定するならば」という意味を表します。",
+      "longExplanation": "「～とすれば」は、ある状況を仮定の条件や前提として置き（「もし〜だと仮定するならば」）、その前提に立った上での判断、意見、意志、あるいは問いかけを後続文で述べます。客観的帰結に傾きやすい「とすると」に比べ、「とすれば」は話者の意志・希望・働きかけの表現も後続しやすい特徴があります。",
+      "formation": "動詞普通形 ＋ とすれば ｜ い形容詞 ＋ とすれば ｜ な形容詞 ＋ だとすれば ｜ 名詞 ＋ だとすれば",
+      "examples": [
+        {
+          "translation": "もし彼が嘘つきだと仮定するなら、その話は到底信用できない。"
+        },
+        {
+          "translation": "あなたが一緒に行ってくれるのであれば、私も喜んで行きます。"
+        },
+        {
+          "translation": "万一彼が浮気しているとするならば、私はどう対処すべきだろうか。"
+        },
+        {
+          "translation": "その薬が効かないとするならば、別の治療法を試すべきです。"
+        }
+      ]
+    },
+    "ja_となったら_201": {
+      "title": "～となったら (〜to nattara)",
+      "shortExplanation": "事態が実際に現実味を帯びたりその段階に直面したりした場合を想定し、「いざ〜となれば」「実際に〜するとなると」という意味を表します。",
+      "longExplanation": "「～となったら」は、ある事柄が単なる想像を超えて実際に現実のものとなったり、差し迫った局面を迎えたりした場面を想定する表現です。「もし現実にそうなった場合」という切迫感や決意、戸惑い、感情の揺れを伴うことが多く、後続節には具体的な対応や心境が述べられます。",
+      "formation": "動詞普通形 ＋ となったら ｜ 名詞 ＋ となったら",
+      "examples": [
+        {
+          "translation": "実際に旅行へ出かけるとなれば、荷造りを急がなければなりません。"
+        },
+        {
+          "translation": "もし本当に試験に落ちるとなったら、一体どうしたらよいのだろう。"
+        },
+        {
+          "translation": "現実に彼女と別れることになったら、とても耐えられないほど悲しいです。"
+        },
+        {
+          "translation": "いざ結婚するとなれば、人生観も環境も大きく一変することでしょう。"
+        }
+      ]
+    },
+    "ja_となると_202": {
+      "title": "～となると (〜to naru to)",
+      "shortExplanation": "特定の状況や話題を取り上げ、その事態に直面した際に当然生じる事態や反応を表します。「〜ということになると」「〜の段になると」。",
+      "longExplanation": "「～となると」は、ある特定の状況や条件を前提としてクローズアップし、「その状況に立ち至った場合」「いざその段になると」という意味を表します。その事態のもとで自然と引き起こされる必然的な心理的反応、予想される成り行き、または論理的帰結が後続文に述べられます。",
+      "formation": "動詞普通形 ＋ となると ｜ い形容詞 ＋ となると ｜ な形容詞 ＋ だとなると ｜ 名詞（＋だ） ＋ となると",
+      "examples": [
+        {
+          "translation": "いざ試験のこととなると、多くの学生は緊張を覚えるものだ。"
+        },
+        {
+          "translation": "東京へ転居するということになると、生活費が一気に跳ね上がる。"
+        },
+        {
+          "translation": "締め切りが明日となれば、今夜は徹夜作業を免れそうにない。"
+        },
+        {
+          "translation": "彼がリーダーに就任するとなれば、チームの活動状況は大幅に改善されるかもしれない。"
+        }
+      ]
+    },
+    "ja_となれば_203": {
+      "title": "～となれば (〜to nareba)",
+      "shortExplanation": "事態がそのような局面を迎えるとするならばという仮定を表し、「〜ということになれば」「〜という状況なら」という意味を表します。",
+      "longExplanation": "「～となれば」は、ある事態や変化を前提条件として提示し（「もしそのような状況に立ち至るなら」）、その前提を踏まえて必然的に下される判断、対応措置、行動の決意、または働きかけを後続文で述べます。",
+      "formation": "動詞普通形 ＋ となれば ｜ い形容詞 ＋ となれば ｜ な形容詞 ＋ だとなれば ｜ 名詞 ＋ だとなれば",
+      "examples": [
+        {
+          "translation": "もし彼がリーダーを引き受けてくれるのであれば、プロジェクトは必ず成功するでしょう。"
+        },
+        {
+          "translation": "明日は雨天になるという見通しならば、ピクニックは中止にしましょう。"
+        },
+        {
+          "translation": "この仕事がすべて完了したという状況なら、休暇を取得しても構いません。"
+        },
+        {
+          "translation": "その試験が難関だというのであれば、なお一層真剣に勉強しなければならない。"
+        }
+      ]
+    },
+    "ja_とのことだ_204": {
+      "title": "～とのことだ (〜to no koto da)",
+      "shortExplanation": "他者から得た情報や伝言を改まった形で伝え、「〜ということだ」「〜と聞いている」という意味を表します。",
+      "longExplanation": "「～とのことだ」（丁寧形は「～とのことです」）は、人づてに聞いた話や手紙・連絡事項などを他者に伝える伝聞の表現です。「〜そうだ」よりも改まった丁寧な響きを持ち、ビジネスメールや改まった対話、公的な報告の場で頻繁に用いられます。",
+      "formation": "普通形節 ＋ とのことだ（または とのことです） ｜ 名詞 / な形容詞 ＋ だとのことだ",
+      "examples": [
+        {
+          "translation": "今週末にパーティーが催される予定であると伺っております。"
+        },
+        {
+          "translation": "彼は来年ロンドンへ移住されるとのことです。"
+        },
+        {
+          "translation": "彼女は新しい職場に無事就職したと聞いております。"
+        },
+        {
+          "translation": "明日は試験の実施はないとのことです。"
+        }
+      ]
+    },
+    "ja_とはいえ_205": {
+      "title": "～とはいえ (～to wa ie)",
+      "shortExplanation": "前項の事実を認めた上で逆接の事実を述べ、「〜とはいっても」「〜ではあるが」という意味を表します。",
+      "longExplanation": "「～とはいえ」は、改まった文章語で用いられる逆接・譲歩の表現です。前項で述べられた事実や事情をひとまず認めた上で（「確かに〜ではあるが」）、そこから当然予想される期待や評価とは食い違う現実、制限、あるいは例外的な側面を後続文で述べます。",
+      "formation": "名詞 ＋ とはいえ ｜ な形容詞（＋だ） ＋ とはいえ ｜ い形容詞 ＋ とはいえ ｜ 動詞普通形 ＋ とはいえ",
+      "examples": [
+        {
+          "translation": "彼は確かに頭脳明晰ではあるが、少々怠惰なところがある。"
+        },
+        {
+          "translation": "この料理店は美味ではあるものの、少々値が張る。"
+        },
+        {
+          "translation": "日本は小国であるとはいえ、その技術水準は世界最高峰を誇る。"
+        },
+        {
+          "translation": "彼女は年齢こそ若いものの、非常に実務経験が豊富である。"
+        }
+      ]
+    },
+    "ja_とみえて_206": {
+      "title": "～とみえて (〜to miete)",
+      "shortExplanation": "目に見える様子や状況を根拠に推測を述べ、「〜のようで」「〜らしく」という意味を表します。",
+      "longExplanation": "「～とみえて」は、目撃した相手の様子や客観的な状況証拠から、その背景にある事情や心情を推測して述べる表現です（「〜の様子で」「〜と見受けられて」）。後続文には、その推測の裏付けとなる具体的な行動や客観的事実が続きます。",
+      "formation": "動詞普通形 ＋ とみえて ｜ い形容詞 ＋ とみえて ｜ な形容詞（＋だ） ＋ とみえて ｜ 名詞（＋だ） ＋ とみえて",
+      "examples": [
+        {
+          "translation": "彼はスポーツが得意らしく、毎日欠かさずジムに通っている。"
+        },
+        {
+          "translation": "彼女は多忙を極めている様子で、なかなか会うことができない。"
+        },
+        {
+          "translation": "田中さんは疲労困憊している様子で、早く帰宅した。"
+        },
+        {
+          "translation": "その店は評判の人気店らしく、常に長蛇の列ができている。"
+        }
+      ]
+    },
+    "ja_とみられる_207": {
+      "title": "～とみられる (～to mirareru)",
+      "shortExplanation": "客観的な状況や証拠に基づいた判断・予測を表し、「〜と考えられる」「〜と推測される」という意味を表します。",
+      "longExplanation": "「～とみられる」は、「見る（判断・評価する）」の受動態であり、ニュース報道や公的な報告書などで極めて多用される客観的推量の表現です。断定を避けつつ、現状のデータや状況証拠に基づいて「〜と判断される」「〜という見通しである」と述べる際に用いられます。",
+      "formation": "動詞普通形 ＋ とみられる ｜ い形容詞 ＋ とみられる ｜ な形容詞（だ） ＋ とみられる ｜ 名詞（だ） ＋ とみられる（「～とみられている」の形も多い）",
+      "examples": [
+        {
+          "translation": "彼の行動は無責任であると見なされている。"
+        },
+        {
+          "translation": "この絵画はピカソによる作品であると推定されている。"
+        },
+        {
+          "translation": "地震発生後、被害状況はさらに拡大すると見込まれている。"
+        },
+        {
+          "translation": "週末にかけて天候は回復に向かうものと見られています。"
+        }
+      ]
+    },
+    "ja_とみると_208": {
+      "title": "～とみると (〜to miru to)",
+      "shortExplanation": "特定の視点や基準、立場に立って観察・評価し、「〜という観点で見ると」「〜と見なせば」という意味を表します。",
+      "longExplanation": "「～とみると」は、物事や人物を特定の視点、立場、前提条件のもとに置いて捉え直す表現です。「〜という観点から眺めると」「〜であると判断すれば」という意味合いを持ち、視点を定めたことで見えてくる新たな見解や正当な評価、対応の必要性が後続文に述べられます。",
+      "formation": "動詞普通形 ＋ とみると ｜ い形容詞 ＋ とみると ｜ な形容詞 ＋ だとみると ｜ 名詞 ＋ だとみると",
+      "examples": [
+        {
+          "translation": "この問題を数学的な視座から捉え直してみると、打開策がおのずと見えてきます。"
+        },
+        {
+          "translation": "彼女が極めて優秀な学生であると見なせば、その受賞はごく当然の結果です。"
+        },
+        {
+          "translation": "彼が新入社員であるという前提で評価するならば、その成果は誠に目覚ましい。"
+        },
+        {
+          "translation": "このパンダが絶滅危惧種であると見なす以上、手厚い保護が不可欠です。"
+        }
+      ]
+    },
+    "ja_どんなにうが_209": {
+      "title": "どんなに～うが (donna ni ～ u ga)",
+      "shortExplanation": "極端な程度の譲歩を表し、「どんなに〜しても」「たとえどれほど〜であろうと」という意味を表します。",
+      "longExplanation": "「どんなに～うが」は、動詞の意向形や形容詞の推量形（かろう・だろう）に逆接助詞「が」が接続した、語気鋭い譲歩の表現です（「どんなに〜ても」に相当）。前項の動作や状態がどれほど極限まで達しようとも、後続文の事態や話者の決意は一切揺るぎなく変わらないことを強調します。",
+      "formation": "どんなに ＋ 動詞意向形 ＋ が（〜ようが / 〜ろうが） ｜ どんなに ＋ い形容詞（〜かろう） ＋ が ｜ どんなに ＋ な形容詞 / 名詞 ＋ だろうが",
+      "examples": [
+        {
+          "translation": "たとえどれほど全力で努力しようとも、彼の驚異的な速さには追いつけない。"
+        },
+        {
+          "translation": "どれほど大量に食べようとも、彼女は決して太らない体質だ。"
+        },
+        {
+          "translation": "どれほど厳しい寒さであろうとも、彼は毎日欠かさずジョギングを行う。"
+        },
+        {
+          "translation": "どれほど猛暑であろうとも、私はエアコンを使いません。"
+        }
+      ]
+    },
+    "ja_と言わんばかりに_210": {
+      "title": "～と言わんばかりに (〜to iwan bakari ni)",
+      "shortExplanation": "実際には口に出さないものの、態度や様子がまるでそう言っているかのように見える様子を表し、「今にも〜と言いそうに」「まるで〜と言わんばかりに」という意味を表します。",
+      "longExplanation": "「～と言わんばかりに」（「言わん」は文語の否定・意志形）は、実際には言葉を発していないものの、その人物の仕草、表情、態度から、まるでそう口に出して主張しているかのようにありありと感じ取れる様子を描写する表現です。後続の動詞を副詞的に修飾します。",
+      "formation": "動詞普通形 / 意向形 ＋ と言わんばかりに ｜ い形容詞 ＋ と言わんばかりに ｜ な形容詞 ＋ だと言わんばかりに ｜ 名詞 ＋ だと言わんばかりに",
+      "examples": [
+        {
+          "translation": "彼女はまるで自分が優勝したと言いたげに満面の笑みを浮かべた。"
+        },
+        {
+          "translation": "彼は今にも倒れ伏してしまうのではないかと思われるほどの激しい疲労感を漂わせていた。"
+        },
+        {
+          "translation": "彼女は雨の日を嫌がり、早く晴れてほしいと訴えるかのようにじっと窓の外を見つめていた。"
+        },
+        {
+          "translation": "彼の振る舞いは、まるで誰にも信用してもらえないと主張しているかのようであった。"
+        }
+      ]
+    },
+    "ja_と言わんばかりの_211": {
+      "title": "～と言わんばかりの ＋ 名詞 (～to iwan bakari no Noun)",
+      "shortExplanation": "名詞を修飾して、まるでそう言っているかのような表情や態度を表し、「まるで〜と言いたげな（名詞）」という意味を表します。",
+      "longExplanation": "「～と言わんばかりの ＋ 名詞」は、「～と言わんばかりに」の連体修飾形です。直後に続く名詞（笑顔、視線、態度、姿、形相など）を修飾し、本人が言葉にしていないにもかかわらず、その表情や仕草から強烈にメッセージが伝わってくる様子を生き生きと描写します。",
+      "formation": "動詞普通形 ＋ と言わんばかりの ＋ 名詞 ｜ 普通形節 ＋ と言わんばかりの ＋ 名詞",
+      "examples": [
+        {
+          "translation": "田中さんは、嬉しさのあまり飛び上がらんばかりの満面の笑みを浮かべた。"
+        },
+        {
+          "translation": "彼女は、私に何か話しかけたがっていると言わんばかりの熱い視線を送ってきた。"
+        },
+        {
+          "translation": "その老人は、身を切るような寒さに凍えていると訴えるかのような姿を見せていた。"
+        },
+        {
+          "translation": "彼の全身からは、過度の緊張で硬直していると言わんばかりの張り詰めた空気が漂っている。"
+        }
+      ]
+    }
+  }
+}

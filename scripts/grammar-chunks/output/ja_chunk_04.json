@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Verb_45": {
+      "title": "～て (～te)",
+      "shortExplanation": "Dùng để nối các hành động hoặc trạng thái theo trình tự thời gian; 'làm... rồi làm...', 'sau khi làm...'.",
+      "longExplanation": "Thể て của động từ là dạng biến đổi cơ bản và quan trọng nhất trong tiếng Nhật, dùng để liên kết các hành động hoặc trạng thái diễn ra nối tiếp nhau theo thời gian (hành động trước hoàn tất rồi đến hành động sau). Ngoài ra, thể て còn là nền tảng để kết hợp với các trợ động từ tạo nên nhiều mẫu ngữ pháp khác như ～てください (yêu cầu lịch sự), ～ています (thì tiếp diễn/trạng thái). Thời của toàn bộ câu do động từ cuối câu quyết định.",
+      "formation": "Nhóm 1 (Động từ ngũ đoạn): Đổi đuôi sang thể て (く→いて, ぐ→いで, す→して, む/ぶ/ぬ→んで, つ/る/う→って, Ngoại lệ: 行く→行って) | Nhóm 2 (Động từ nhất đoạn): Bỏ る + て | Nhóm 3 (Bất quy tắc): する→して, くる→きて",
+      "examples": [
+        {
+          "translation": "Sau khi uống cà phê xong, tôi sẽ đi ra ngoài."
+        },
+        {
+          "translation": "Đi mua sắm xong rồi chúng ta cùng về nhà nhé."
+        },
+        {
+          "translation": "Làm bài tập về nhà xong tôi sẽ đi ngủ."
+        },
+        {
+          "translation": "Tôi sẽ đợi bạn rồi cùng nhau đi xem phim."
+        }
+      ]
+    },
+    "ja_Verb_46": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "Diễn tả hành động đang diễn ra tại thời điểm nói hoặc trạng thái đang tiếp diễn; 'đang làm...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ています kết hợp động từ thể て với trợ động từ います để diễn tả một hành động đang trong quá trình diễn ra tại thời điểm nói (tương đương thì hiện tại tiếp diễn). Ngoài ra, đối với các động từ chỉ sự biến đổi trạng thái (như 結婚する, 住む, 知る), mẫu câu này diễn tả trạng thái là kết quả của hành động vẫn đang tiếp diễn. Ở dạng lịch sự dùng います, dạng thông thường dùng いる.",
+      "formation": "Động từ thể て + います",
+      "examples": [
+        {
+          "translation": "Bây giờ cô ấy đang chơi đàn piano."
+        },
+        {
+          "translation": "Chúng tôi đang học tiếng Nhật."
+        },
+        {
+          "translation": "Anh ấy đang xem phim."
+        },
+        {
+          "translation": "Bên trong đang có người, xin vui lòng đợi một chút."
+        }
+      ]
+    },
+    "ja_Verb_47": {
+      "title": "～てから (～te kara)",
+      "shortExplanation": "Diễn tả trình tự hành động: sau khi làm xong việc A thì mới làm việc B; 'sau khi...'.",
+      "longExplanation": "Mẫu câu ～てから dùng để nhấn mạnh rằng một hành động hoặc sự việc nào đó chỉ xảy ra sau khi hành động đứng trước đã được hoàn thành. So với việc dùng thể て nối câu thông thường, ～てから làm nổi bật rõ nét thứ tự trước - sau và điều kiện tiên quyết của hai hành động. Thời của toàn câu được quyết định bởi động từ ở cuối câu.",
+      "formation": "Động từ thể て + から",
+      "examples": [
+        {
+          "translation": "Sau khi làm xong bài tập, tôi đã xem ti vi."
+        },
+        {
+          "translation": "Ăn xong rồi chúng ta hãy đánh răng nhé."
+        },
+        {
+          "translation": "Sau khi công việc kết thúc, tôi sẽ đi uống nước với bạn bè."
+        },
+        {
+          "translation": "Sau khi tan học, tôi sẽ học bài ở thư viện."
+        }
+      ]
+    },
+    "ja_Verb_48": {
+      "title": "～てください (～te kudasai)",
+      "shortExplanation": "Dùng để yêu cầu, nhờ vả hoặc đề nghị ai đó làm gì một cách lịch sự; 'xin vui lòng...', 'hãy...'.",
+      "longExplanation": "Mẫu câu ～てください được sử dụng khi người nói muốn đưa ra lời yêu cầu, nhờ vả hoặc hướng dẫn đối phương thực hiện một hành động với thái độ lịch sự, nhã nhặn. Tuy lịch sự trong giao tiếp thông thường, mẫu câu này vẫn thể hiện ý muốn của người nói đối với người nghe, do đó không nên dùng với cấp trên hoặc người có địa vị cao hơn trong bối cảnh trang trọng (khi đó nên dùng kính ngữ như ～ていただけますか).",
+      "formation": "Động từ thể て + ください",
+      "examples": [
+        {
+          "translation": "Xin vui lòng mở cửa giúp tôi."
+        },
+        {
+          "translation": "Xin hãy cho tôi biết số điện thoại của bạn."
+        },
+        {
+          "translation": "Xin vui lòng nói chậm lại một chút."
+        },
+        {
+          "translation": "Làm ơn mang cho tôi một cốc cà phê."
+        }
+      ]
+    },
+    "ja_Verb_49": {
+      "title": "～ないでください (～naide kudasai)",
+      "shortExplanation": "Dùng để yêu cầu, khuyên bảo hoặc nhắc nhở ai đó không làm điều gì một cách lịch sự; 'xin đừng...', 'vui lòng không...'.",
+      "longExplanation": "Mẫu câu ～ないでください được dùng để yêu cầu, nhắc nhở hoặc khuyên đối phương không thực hiện một hành động nào đó với thái độ lịch sự. Cấu trúc được tạo thành bằng cách lấy động từ ở thể phủ định ngắn (thể ない) kết hợp với trợ từ で và ください. Thường xuất hiện trong các biển báo, thông báo công cộng hoặc trong giao tiếp hàng ngày khi cần ngăn cản nhã nhặn.",
+      "formation": "Động từ thể ない + で ください",
+      "examples": [
+        {
+          "translation": "Xin vui lòng không hút thuốc."
+        },
+        {
+          "translation": "Xin đừng chạy ở đây."
+        },
+        {
+          "translation": "Xin vui lòng không nói chuyện to tiếng."
+        },
+        {
+          "translation": "Xin vui lòng không chụp ảnh."
+        }
+      ]
+    },
+    "ja_Noun_50": {
+      "title": "～に戻ります (～ni modorimasu)",
+      "shortExplanation": "Diễn tả hành động quay trở lại trạng thái, vị trí hoặc công việc ban đầu; 'quay lại...', 'trở về...'.",
+      "longExplanation": "Cấu trúc Danh từ + に + 戻ります được dùng để diễn tả sự quay trở về một trạng thái, vị trí, địa điểm hoặc công việc ban đầu sau khi đã trải qua một sự thay đổi hoặc giai đoạn gián đoạn. Động từ 戻る (quay về/trở lại) kết hợp với trợ từ に chỉ hướng đích hoặc kết quả của sự hoàn nguyên.",
+      "formation": "Danh từ + に + 戻ります",
+      "examples": [
+        {
+          "translation": "Khi cho vào tủ lạnh, kem bị tan sẽ trở lại trạng thái thể rắn."
+        },
+        {
+          "translation": "Kỳ nghỉ kết thúc thì tôi sẽ quay lại với công việc."
+        },
+        {
+          "translation": "Sau khi đợt làm việc từ xa kết thúc, chúng tôi sẽ quay lại văn phòng cũ."
+        },
+        {
+          "translation": "Sau khi du học ở nước ngoài, tôi sẽ trở về Nhật Bản."
+        }
+      ]
+    },
+    "ja_Verb_51": {
+      "title": "～に来ます (～ni kimasu)",
+      "shortExplanation": "Diễn tả mục đích của việc đến một địa điểm nào đó; 'đến để làm...'.",
+      "longExplanation": "Mẫu câu Động từ (thân ます) + に + 来ます dùng để biểu thị mục đích di chuyển đến nơi mà người nói đang có mặt. Động từ chỉ hành động bỏ đuôi ます, sau đó kết hợp với trợ từ chỉ mục đích 'に' và động từ di chuyển '来ます' (đến). Thường đi cùng danh từ chỉ nơi chốn kèm trợ từ へ hoặc に (Địa điểm + へ/に + V(bỏ ます) + に来ます).",
+      "formation": "Động từ (thân ます) + に + 来ます",
+      "examples": [
+        {
+          "translation": "Tôi đã đến để gặp bạn bè."
+        },
+        {
+          "translation": "Tôi đến đây để xem phim."
+        },
+        {
+          "translation": "Tôi đến để hỏi thầy cô giáo."
+        },
+        {
+          "translation": "Tôi đến để mua sắm."
+        }
+      ]
+    },
+    "ja_Verb_52": {
+      "title": "～に行きます (～ni ikimasu)",
+      "shortExplanation": "Diễn tả mục đích của việc đi đến một nơi nào đó; 'đi để làm...'.",
+      "longExplanation": "Mẫu câu Động từ (thân ます) + に + 行きます dùng để biểu thị mục đích di chuyển từ vị trí hiện tại đến một địa điểm khác nhằm thực hiện một hành động cụ thể. Động từ chỉ hành động bỏ đuôi ます rồi thêm trợ từ chỉ mục đích 'に', theo sau là động từ di chuyển '行きます' (đi). Thường đi kèm cụm chỉ nơi chốn: Địa điểm + へ/に + V(bỏ ます) + に行きます.",
+      "formation": "Động từ (thân ます) + に + 行きます",
+      "examples": [
+        {
+          "translation": "Tôi đi đến công viên để chơi."
+        },
+        {
+          "translation": "Tôi đi đến thư viện để học bài."
+        },
+        {
+          "translation": "Tôi đi siêu thị để mua sắm."
+        },
+        {
+          "translation": "Tôi đi đến rạp chiếu phim để xem phim."
+        }
+      ]
+    },
+    "ja_Verb_53": {
+      "title": "～ましょう (～mashou)",
+      "shortExplanation": "Dùng để rủ rê, đề nghị cùng làm gì hoặc biểu thị ý chí chủ động; 'chúng ta cùng... nhé', 'hãy cùng... nào'.",
+      "longExplanation": "Mẫu câu ～ましょう gắn vào thân động từ thể ます (bỏ đuôi ます) để rủ rê, kêu gọi người nghe cùng thực hiện một hành vi nào đó với thái độ lịch sự, vui vẻ và tích cực. Ngoài ra, người nói cũng có thể dùng ～ましょう khi muốn tự mình chủ động bắt tay vào làm một việc gì đó. Thường kết hợp với phó từ 一緒に (cùng nhau) để nhấn mạnh tinh thần đồng hành.",
+      "formation": "Động từ (thân ます) + ましょう",
+      "examples": [
+        {
+          "translation": "Chúng ta hãy cùng nhau xem phim nhé."
+        },
+        {
+          "translation": "Chúng ta cùng đi dạo nào."
+        },
+        {
+          "translation": "Tối nay chúng ta cùng đi ăn nhé."
+        },
+        {
+          "translation": "Ngày mai chúng ta hãy học bài nhé."
+        }
+      ]
+    },
+    "ja_Verb_54": {
+      "title": "～ましょうか (～mashou ka)",
+      "shortExplanation": "Dùng để thăm dò ý kiến đối phương về lời rủ rê hoặc ngỏ ý muốn giúp đỡ ai đó; 'chúng ta... nhé?', 'để tôi... giúp bạn nhé?'.",
+      "longExplanation": "Mẫu câu ～ましょうか có hai công dụng chính trong giao tiếp: 1. Đưa ra lời đề nghị hoặc gợi ý cùng làm gì đó và thăm dò ý kiến của đối phương ('Chúng mình cùng làm... nhé?'). 2. Chủ động ngỏ ý muốn giúp đỡ người nghe khi thấy đối phương cần sự trợ giúp ('Để tôi làm... giúp bạn nhé?'). Cấu trúc được tạo thành bằng cách gắn trợ từ nghi vấn か vào sau ～ましょう.",
+      "formation": "Động từ (thân ます) + ましょうか",
+      "examples": [
+        {
+          "translation": "Chúng ta cùng đi xem phim nhé?"
+        },
+        {
+          "translation": "Chúng ta uống thêm một cốc cà phê nữa nhé?"
+        },
+        {
+          "translation": "Để tôi xách hành lý giúp bạn nhé?"
+        },
+        {
+          "translation": "Để tôi mở cửa sổ giúp bạn nhé?"
+        }
+      ]
+    },
+    "ja_Verb_55": {
+      "title": "～ませんか (～masen ka)",
+      "shortExplanation": "Dùng để mời hoặc rủ rê ai đó làm gì một cách rất lịch sự và tế nhị; 'bạn có muốn... cùng tôi không?', 'cùng... nhé?'.",
+      "longExplanation": "Mẫu câu ～ませんか dùng để đưa ra lời mời hoặc lời rủ rê đối phương cùng làm một việc gì đó với thái độ lịch sự, nhã nhặn và rất tôn trọng ý muốn của người nghe. Bằng cách dùng hình thức câu hỏi phủ định, người nói không đặt áp lực lên đối phương, giúp người nghe thoải mái từ chối nếu không thuận tiện. So với ～ましょう, mẫu câu này mang tính thận trọng và lịch sự hơn nhiều.",
+      "formation": "Động từ (thân ます) + ませんか",
+      "examples": [
+        {
+          "translation": "Bạn có muốn cùng đi xem phim với tôi không?"
+        },
+        {
+          "translation": "Bạn có muốn tham gia bữa tiệc ngày mai không?"
+        },
+        {
+          "translation": "Cuối tuần này bạn có muốn đi dã ngoại cùng chúng tôi không?"
+        },
+        {
+          "translation": "Bạn có muốn học cùng nhau không?"
+        }
+      ]
+    },
+    "ja_Verb_56": {
+      "title": "～こと (～koto)",
+      "shortExplanation": "Dùng để danh từ hóa động từ, biến hành động thành một khái niệm hoặc sự việc; 'việc...', 'sự...'.",
+      "longExplanation": "Mẫu ngữ pháp ～こと gắn trực tiếp vào sau động từ thể từ điển (thể nguyên mẫu) để biến toàn bộ hành động đó thành một cụm danh từ. Nhờ quá trình danh từ hóa này, hành động có thể đóng vai trò làm chủ ngữ, vị ngữ hoặc tân ngữ trong câu và kết hợp được với các trợ từ như が, は, を (ví dụ: việc học thì vui, thích việc bơi lội). Thường dùng cho các khái niệm trừu tượng, thói quen hoặc sở thích.",
+      "formation": "Động từ thể từ điển + こと",
+      "examples": [
+        {
+          "translation": "Tôi rất thích việc bơi lội."
+        },
+        {
+          "translation": "Việc học tiếng Nhật rất vui."
+        },
+        {
+          "translation": "Nói chuyện với bạn bè giúp giảm bớt căng thẳng."
+        },
+        {
+          "translation": "Anh ấy rất giỏi việc ca hát."
+        }
+      ]
+    },
+    "ja_Verb_57": {
+      "title": "～ことができます (～koto ga dekimasu)",
+      "shortExplanation": "Diễn tả khả năng, năng lực làm được việc gì hoặc tính khả thi trong một hoàn cảnh; 'có thể làm...'.",
+      "longExplanation": "Mẫu câu Động từ thể từ điển + ことができます là cách thông dụng và chuẩn mực nhất để diễn tả thể khả năng ở dạng lịch sự trong tiếng Nhật. Mẫu câu biểu thị hai trường hợp chính: 1. Năng lực, sở trường hoặc kỹ năng của một người (như biết chơi đàn piano, biết nói ngoại ngữ). 2. Tính khả thi khi điều kiện, hoàn cảnh hoặc quy định cho phép thực hiện hành động. Dạng phủ định là ～ことができません (không thể làm...).",
+      "formation": "Động từ thể từ điển + ことができます",
+      "examples": [
+        {
+          "translation": "Tôi có thể giải quyết được vấn đề này."
+        },
+        {
+          "translation": "Anh ấy có thể nói được tiếng Anh."
+        },
+        {
+          "translation": "Tôi không thể trèo lên những chỗ cao được."
+        },
+        {
+          "translation": "Cô ấy có thể chơi được đàn piano."
+        }
+      ]
+    },
+    "ja_Verb_58": {
+      "title": "～ことができる (～koto ga dekiru)",
+      "shortExplanation": "Dạng thông thường (nguyên thể) diễn tả khả năng, năng lực hoặc tính khả thi; 'có thể làm...'.",
+      "longExplanation": "Mẫu câu Động từ thể từ điển + ることができる là dạng thông thường (thể ngắn/nguyên thể) của ～ことができます. Được sử dụng phổ biến trong văn nói thân mật hàng ngày, trong văn viết học thuật hoặc khi đóng vai trò làm mệnh đề phụ bổ nghĩa cho danh từ hay liên kết vế câu (như ～ことができて, ～ことができる人). Thể hiện năng lực của bản thân hoặc tính khả thi của sự việc.",
+      "formation": "Động từ thể từ điển + ことができる",
+      "examples": [
+        {
+          "translation": "Cậu có thể giải được bài toán này không?"
+        },
+        {
+          "translation": "Anh ấy có thể bơi lội."
+        },
+        {
+          "translation": "Tôi rất vui vì có thể đến Nhật Bản."
+        },
+        {
+          "translation": "Cô ấy có thể chơi đàn piano."
+        }
+      ]
+    },
+    "ja_Verb_59": {
+      "title": "～の (～no)",
+      "shortExplanation": "Dùng trong văn nói thân mật để giải thích lý do, tình huống hoặc danh từ hóa hành động; '...đấy', '...mà'.",
+      "longExplanation": "Trợ từ の đi sau động từ thể từ điển (thể thông thường) trong hội thoại thân mật có hai chức năng ngữ pháp cơ bản: 1. Đặt ở cuối câu để trần thuật, giải thích lý do, hoàn cảnh một cách nhẹ nhàng, gần gũi (dạng rút gọn của のだ/のです). Thường được nữ giới và trẻ em sử dụng nhiều; khi lên giọng ở cuối câu sẽ trở thành câu hỏi lý do thân mật. 2. Đóng vai trò danh từ hóa động từ trong câu tương tự như こと (ví dụ: 走るのが好き - thích việc chạy bộ).",
+      "formation": "Động từ thể từ điển + の (văn nói thân mật)",
+      "examples": [
+        {
+          "translation": "Để đi mua sắm, mình đi rút tiền ở ngân hàng đấy."
+        },
+        {
+          "translation": "Vì sẽ tặng quà cho bạn nên mình nướng bánh kem đấy."
+        },
+        {
+          "translation": "Vì bắt đầu ăn kiêng nên mình đăng ký tập gym đấy."
+        },
+        {
+          "translation": "Vì muốn ăn một bữa nhẹ bụng nên mình làm món salad đấy."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Verb_45": {
+      "title": "～て (～te)",
+      "shortExplanation": "表示动作或状态按时间顺序相继发生；'……然后……'、'做了……之后'。",
+      "longExplanation": "动词て形是日语语法中最核心、最基础的活用形之一，主要用于连接两个或多个按时间先后顺序发生的动作或状态（前项动作完成后紧接着进行后项动作）。此外，て形还是构成许多重要句型的基石，例如表示请求的'～てください'、表示进行或持续状态的'～ています'等。整句话的时态由句末的动词统一决定。",
+      "formation": "一类动词（五段动词）：发生音便（く→いて、ぐ→いで、す→して、む/ぶ/ぬ→んで、つ/る/う→って，特例：行く→行って） | 二类动词（一段动词）：去る + て | 三类动词（不规则动词）：する→して、くる→きて",
+      "examples": [
+        {
+          "translation": "喝完咖啡后，我就出门。"
+        },
+        {
+          "translation": "买了东西之后，咱们回家吧。"
+        },
+        {
+          "translation": "做完作业后就睡觉。"
+        },
+        {
+          "translation": "等朋友到了之后，一起去看电影。"
+        }
+      ]
+    },
+    "ja_Verb_46": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "表示动作正在进行或动作结束后状态的持续；'正在……'、'在……'。",
+      "longExplanation": "句型'～ています'由动词て形后接补助动词'います'构成，主要用于表示当前时刻正在进行的动作（相当于汉语的'正在做……'）。此外，接在表示瞬间变化或结果状态的动词（如結婚する、住む、知る等）之后时，则表示动作完成后所留存状态的持续。礼貌语为'ています'，简体形式为'ている'。",
+      "formation": "动词て形 + います",
+      "examples": [
+        {
+          "translation": "她现在正在弹钢琴。"
+        },
+        {
+          "translation": "我们正在学习日语。"
+        },
+        {
+          "translation": "他正在看电影。"
+        },
+        {
+          "translation": "里面正有人，请稍候。"
+        }
+      ]
+    },
+    "ja_Verb_47": {
+      "title": "～てから (～te kara)",
+      "shortExplanation": "表示动作的先后顺序，强调在前项动作完成之后才进行后项动作；'在……之后'、'……之后才……'。",
+      "longExplanation": "句型'～てから'由动词て形加上接续助词'から'构成，用于明确强调两个动作之间的先后顺序，即前项动作彻底结束之后，后项动作才发生或开始。与单纯使用て形连接相比，'～てから'更加突出前项动作是后项动作的前提或时间起点。句子的最终时态由句尾动词决定。",
+      "formation": "动词て形 + から",
+      "examples": [
+        {
+          "translation": "做完作业后，我看了电视。"
+        },
+        {
+          "translation": "吃完饭后，我们刷牙吧。"
+        },
+        {
+          "translation": "工作结束后，我和朋友去喝酒。"
+        },
+        {
+          "translation": "放学后，我在图书馆学习。"
+        }
+      ]
+    },
+    "ja_Verb_48": {
+      "title": "～てください (～te kudasai)",
+      "shortExplanation": "用于礼貌地请求、指示或要求对方做某事；'请……'、'请做……'。",
+      "longExplanation": "句型'～てください'由动词て形后接'ください'构成，用于向对方提出礼貌的请求、劝告或指示，相当于汉语中的'请……'。虽然在日常交流中属于礼貌表达，但由于其本质仍带有促使对方采取行动的含义，因此在商务场合或面对长辈上司时，通常应换用更为客气的敬语表达（如'～ていただけますか'等）。",
+      "formation": "动词て形 + ください",
+      "examples": [
+        {
+          "translation": "请把门打开。"
+        },
+        {
+          "translation": "请告诉我您的电话号码。"
+        },
+        {
+          "translation": "请慢一点说。"
+        },
+        {
+          "translation": "请给我拿一杯咖啡来。"
+        }
+      ]
+    },
+    "ja_Verb_49": {
+      "title": "～ないでください (～naide kudasai)",
+      "shortExplanation": "用于礼貌地请求或提醒对方不要做某事；'请不要……'、'请别……'。",
+      "longExplanation": "句型'～ないでください'用于向对方提出礼貌的劝阻、要求或提醒，请求对方不要做出某种行为。接续方式为动词的未然形（ない形）加上助词'で'，再接上'ください'。该句型广泛用于公共场所的标语告示、规章提示以及日常生活中的客气劝阻。",
+      "formation": "动词ない形 + で ください",
+      "examples": [
+        {
+          "translation": "请不要吸烟。"
+        },
+        {
+          "translation": "请不要在这里奔跑。"
+        },
+        {
+          "translation": "请不要大声说话。"
+        },
+        {
+          "translation": "请不要拍照。"
+        }
+      ]
+    },
+    "ja_Noun_50": {
+      "title": "～に戻ります (～ni modorimasu)",
+      "shortExplanation": "表示回到原先的状态、地点或工作；'回到……'、'恢复为……'。",
+      "longExplanation": "句型'名词 + に + 戻ります'用于表达事物或人在经历某种改变或中断后，重新恢复、返回到原有的状态、地点、岗位或环境。动词'戻る'本身含有回归原点或回到原本面貌的意思，助词'に'指示返回的目的地或转变后的归宿状态。",
+      "formation": "名词 + に + 戻ります",
+      "examples": [
+        {
+          "translation": "放进冰箱后，融化的冰淇淋会恢复为固体。"
+        },
+        {
+          "translation": "休假结束后，我就回去上班。"
+        },
+        {
+          "translation": "远程办公结束后，我们回到原来的办公室上班。"
+        },
+        {
+          "translation": "在国外留学后，我回到了日本。"
+        }
+      ]
+    },
+    "ja_Verb_51": {
+      "title": "～に来ます (～ni kimasu)",
+      "shortExplanation": "表示来到某处的目的；'来做……'、'为了……而来'。",
+      "longExplanation": "句型'动词ます形连用形（去掉ます） + に + 来ます'用于表达移动到说话人所在场所的具体目的。表示动作的动词去掉'ます'后接表示目的的助词'に'，再接移动动词'来ます'（来）。通常与表示到达场所的名词及助词'へ'或'に'连用（场所 + へ/に + 动词去ます + に来ます）。",
+      "formation": "动词ます形（去ます） + に + 来ます",
+      "examples": [
+        {
+          "translation": "我来这里见朋友。"
+        },
+        {
+          "translation": "我来看电影。"
+        },
+        {
+          "translation": "我来向老师请教问题。"
+        },
+        {
+          "translation": "我来买东西。"
+        }
+      ]
+    },
+    "ja_Verb_52": {
+      "title": "～に行きます (～ni ikimasu)",
+      "shortExplanation": "表示去往某处的目的；'去……做……'、'为了……而去'。",
+      "longExplanation": "句型'动词ます形连用形（去掉ます） + に + 行きます'用于表达离开当前位置前往另一地点进行某动作的目的。动词去掉'ます'后接表示目的的助词'に'，后接移动动词'行きます'（去）。常与表示移动方向的名词组合使用：场所 + へ/に + 动词去ます + に行きます。",
+      "formation": "动词ます形（去ます） + に + 行きます",
+      "examples": [
+        {
+          "translation": "我去公园玩耍。"
+        },
+        {
+          "translation": "我去图书馆学习。"
+        },
+        {
+          "translation": "我去超市买东西。"
+        },
+        {
+          "translation": "我去电影院看电影。"
+        }
+      ]
+    },
+    "ja_Verb_53": {
+      "title": "～ましょう (～mashou)",
+      "shortExplanation": "用于礼貌地提议、号召大家一起做某事，或表达说话人自身的意志；'一起……吧'。",
+      "longExplanation": "句型'～ましょう'接在动词ます形去掉'ます'后的词干之后，用于礼貌地向对方发出邀请或号召，提议共同做某事。此外，也可用于说话人自身下定决心积极主动地采取某项行动。常与副词'一緒に'（一起）搭配使用，营造积极热情的提议氛围。",
+      "formation": "动词ます形（去ます） + ましょう",
+      "examples": [
+        {
+          "translation": "我们一起看电影吧。"
+        },
+        {
+          "translation": "去散散步吧。"
+        },
+        {
+          "translation": "今晚一起去吃饭吧。"
+        },
+        {
+          "translation": "明天一起学习吧。"
+        }
+      ]
+    },
+    "ja_Verb_54": {
+      "title": "～ましょうか (～mashou ka)",
+      "shortExplanation": "用于征求对方意见的提议，或主动提出为对方提供帮助；'要不要一起……呢？'、'我来帮您……吧？'。",
+      "longExplanation": "句型'～ましょうか'主要有两种日常用法：1. 向对方提出共同行动的提议并征求其意愿（'我们一起做……好吗？'）。2. 当察觉到对方遇到困难或需要协助时，主动提出为对方提供帮助（'我来帮您……好吗？'）。由动词ます形词干后接'ましょう'并附加疑问终助词'か'构成。",
+      "formation": "动词ます形（去ます） + ましょうか",
+      "examples": [
+        {
+          "translation": "我们一起去看电影好吗？"
+        },
+        {
+          "translation": "我们再喝一杯咖啡好不好？"
+        },
+        {
+          "translation": "我来帮您拿行李吧？"
+        },
+        {
+          "translation": "我来开窗户好吗？"
+        }
+      ]
+    },
+    "ja_Verb_55": {
+      "title": "～ませんか (～masen ka)",
+      "shortExplanation": "用于礼貌而客气地邀请对方与自己一起做某事；'要不要一起……呢？'、'……好吗？'。",
+      "longExplanation": "句型'～ませんか'是在向对方发出邀请或提议时非常客气、委婉且体贴的表达方式。通过采用否定疑问句的形式，给对方留足了自由选择与委婉拒绝的余地，避免造成强加于人的心理压力。接续方法为将动词ます形的'ます'替换为'ませんか'。相比号召性的'～ましょう'更为尊重对方。",
+      "formation": "动词ます形（去ます） + ませんか",
+      "examples": [
+        {
+          "translation": "要不要和我一起看电影呢？"
+        },
+        {
+          "translation": "要不要参加明天的聚会呢？"
+        },
+        {
+          "translation": "周末一起去野餐好吗？"
+        },
+        {
+          "translation": "要不要一起学习呢？"
+        }
+      ]
+    },
+    "ja_Verb_56": {
+      "title": "～こと (～koto)",
+      "shortExplanation": "用于将动词名词化，把动作或事件转化为名词概念；'……这件事'、'做……'。",
+      "longExplanation": "句型'动词字典形（基本形） + こと'用于实现动词的名词化。通过在动词基本形后接形式体言'こと'，将动作或事件转化为一个名词性成分，从而使之能在句中充当主语、宾语或谓语，并能自由连接助词'が'、'は'、'を'等。常用于表述爱好、特长、抽象概念或一般性事实。",
+      "formation": "动词字典形（基本形） + こと",
+      "examples": [
+        {
+          "translation": "我非常喜欢游泳。"
+        },
+        {
+          "translation": "学习日语是一件很有趣的事。"
+        },
+        {
+          "translation": "和朋友聊天能够缓解压力。"
+        },
+        {
+          "translation": "他很擅长唱歌。"
+        }
+      ]
+    },
+    "ja_Verb_57": {
+      "title": "～ことができます (～koto ga dekimasu)",
+      "shortExplanation": "表达具有某种能力或客观条件允许做某事；'能够……'、'可以……'、'会……'。",
+      "longExplanation": "句型'动词字典形 + ことができます'是日语中表达可能态最标准、最基础的礼貌体句型。主要用于两种语境：1. 表示主语自身具备的某种能力或技能（如会弹钢琴、会讲外语）。2. 表示在特定客观环境、规则允许或物理条件下能够做某事。否定形式为'～ことができません'（不能……、无法……）。",
+      "formation": "动词字典形 + ことができます",
+      "examples": [
+        {
+          "translation": "我能够解开这道题。"
+        },
+        {
+          "translation": "他能够说英语。"
+        },
+        {
+          "translation": "我不能爬到高处去。"
+        },
+        {
+          "translation": "她会弹钢琴。"
+        }
+      ]
+    },
+    "ja_Verb_58": {
+      "title": "～ことができる (～koto ga dekiru)",
+      "shortExplanation": "普通体形式，用于表达能力或客观可能性；'能够……'、'可以……'、'会……'。",
+      "longExplanation": "句型'动词字典形 + ことができる'是'～ことができます'的普通体（简体）表达。广泛应用于亲近朋友间的日常口语、书面学术论述文，或者作为定语从句、分句嵌入到长句中（如'～ことができて、嬉しい'、'～ことができる人'）。同样表示个人具有某项能力或客观上具备做某事的可能性。",
+      "formation": "动词字典形 + ことができる",
+      "examples": [
+        {
+          "translation": "你能解开这道题吗？"
+        },
+        {
+          "translation": "他能够游泳。"
+        },
+        {
+          "translation": "能够去日本，我感到非常高兴。"
+        },
+        {
+          "translation": "她会弹钢琴。"
+        }
+      ]
+    },
+    "ja_Verb_59": {
+      "title": "～の (～no)",
+      "shortExplanation": "口语中用于解释原因、说明背景情况或动词名词化；'……的'、'……呢'。",
+      "longExplanation": "在口语亲昵体中，接在动词字典形（普通体）后面的'の'具有两个主要功能：1. 置于句末作为终助词，相当于'のだ／のです'的简略表达，用于向听话人柔和地说明原因、理由或背景事实（多见于女性和儿童口语；用升调时则构成温和的疑问句）。2. 作为形式体言（准体助词）在句中将动词名词化，作用与'こと'相似（如'走るのが好き'表示喜欢跑步）。",
+      "formation": "动词字典形 + の（口语亲昵体）",
+      "examples": [
+        {
+          "translation": "为了去买东西，所以我在银行取钱呢。"
+        },
+        {
+          "translation": "因为要给朋友送礼物，所以我正在烤蛋糕呢。"
+        },
+        {
+          "translation": "因为要开始节食减肥了，所以去健身房办会员了呢。"
+        },
+        {
+          "translation": "因为想吃清淡一点，所以做了一份沙拉呢。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Verb_45": {
+      "title": "～て (～te)",
+      "shortExplanation": "동작이나 상태의 시간적 순서를 연결하여 나타내며, '~하고', '~해서'의 뜻입니다.",
+      "longExplanation": "동사의 'て형'은 일본어 문법에서 가장 기본적이고 핵심적인 활용형으로, 둘 이상의 동작이나 상태를 시간적인 순서에 따라 나열하고 연결할 때 사용합니다(앞의 동작이 완료된 후 뒤의 동작이 일어남). 또한 상대방에게 공손하게 부탁하는 '～てください', 진행 중인 동작이나 상태를 나타내는 '～ています' 등 수많은 보조동사 구문의 기초가 됩니다. 문장 전체의 시제는 맨 마지막 동사에 의해 결정됩니다.",
+      "formation": "1그룹 동사(5단 동사): 어미에 따라 음편 변화 (く→いて, ぐ→いで, す→して, む/ぶ/ぬ→んで, つ/る/う→って, 예외: 行く→行って) | 2그룹 동사(1단 동사): る 탈락 + て | 3그룹 동사(변격 동사): する→して, くる→きて",
+      "examples": [
+        {
+          "translation": "커피를 마시고 외출합니다."
+        },
+        {
+          "translation": "쇼핑을 하고 집에 돌아갑시다."
+        },
+        {
+          "translation": "숙제를 하고 잡니다."
+        },
+        {
+          "translation": "친구를 기다려서 함께 영화를 보러 갑니다."
+        }
+      ]
+    },
+    "ja_Verb_46": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "현재 진행 중인 동작이나 그 결과로 인한 상태의 지속을 나타내며, '~하고 있습니다'의 뜻입니다.",
+      "longExplanation": "'～ています' 문형은 동사의 て형에 보조동사 'います'가 결합하여 어떤 동작이 현재 진행 중임을 나타내거나(한국어의 '~하고 있다'), 상태 변화를 나타내는 순간동사(결혼하다, 살다, 알다 등)와 결합하여 동작이 완료된 후 그 결과 상태가 계속 이어지고 있음을 나타냅니다. 정중형은 'ています', 반말(보통체)은 'ている'입니다.",
+      "formation": "동사 て형 + います",
+      "examples": [
+        {
+          "translation": "그녀는 지금 피아노를 치고 있습니다."
+        },
+        {
+          "translation": "우리는 일본어를 공부하고 있습니다."
+        },
+        {
+          "translation": "그는 영화를 보고 있습니다."
+        },
+        {
+          "translation": "안에 사람이 있으니 잠시 기다려 주십시오."
+        }
+      ]
+    },
+    "ja_Verb_47": {
+      "title": "～てから (～te kara)",
+      "shortExplanation": "앞의 동작을 끝마친 후에 다음 동작을 함을 명확히 나타내며, '~하고 나서', '~한 후에'의 뜻입니다.",
+      "longExplanation": "'～てから' 문형은 동사의 て형 뒤에 접속조사 'から'가 결합하여, 선행 동작이 완전히 끝난 후에 비로소 후행 동작이 행해짐을 강조할 때 사용합니다. 단순한 て형 연결보다 두 동작 사이의 시간적 전후 관계와 선행 조건의 뉘앙스가 훨씬 명확해집니다. 문장 전체의 시제는 문말의 동사에 의해 결정됩니다.",
+      "formation": "동사 て형 + から",
+      "examples": [
+        {
+          "translation": "숙제를 하고 나서 텔레비전을 보았습니다."
+        },
+        {
+          "translation": "밥을 먹고 나서 이를 닦읍시다."
+        },
+        {
+          "translation": "일이 끝나고 나서 친구와 술을 마시러 갑니다."
+        },
+        {
+          "translation": "학교가 끝나고 나서 도서관에서 공부합니다."
+        }
+      ]
+    },
+    "ja_Verb_48": {
+      "title": "～てください (～te kudasai)",
+      "shortExplanation": "상대방에게 정중하게 행동을 부탁하거나 요청할 때 쓰이며, '~해 주세요', '~하십시오'의 뜻입니다.",
+      "longExplanation": "'～てください' 문형은 상대방에게 어떤 동작을 해 달라고 공손하게 부탁하거나 지시할 때 사용하는 대표적인 의뢰 표현입니다. 동사의 て형에 'ください'를 연결하여 구성합니다. 일상 회화에서 흔히 쓰이는 정중한 부탁이지만 본질적으로 지시의 의미가 담겨 있으므로, 비즈니스 관계나 손윗사람에게는 더욱 격식 있는 경어 표현(예: ～ていただけますか 등)을 사용하는 것이 바람직합니다.",
+      "formation": "동사 て형 + ください",
+      "examples": [
+        {
+          "translation": "문을 열어 주세요."
+        },
+        {
+          "translation": "전화번호를 알려 주세요."
+        },
+        {
+          "translation": "천천히 말씀해 주세요."
+        },
+        {
+          "translation": "커피 한 잔 가져다주세요."
+        }
+      ]
+    },
+    "ja_Verb_49": {
+      "title": "～ないでください (～naide kudasai)",
+      "shortExplanation": "상대방에게 어떤 행동을 하지 말아 달라고 정중하게 요청하며, '~하지 마세요', '~하지 마십시오'의 뜻입니다.",
+      "longExplanation": "'～ないでください' 문형은 상대방에게 특정 행위를 하지 않도록 정중하게 권유하거나 제지, 주의를 줄 때 사용하는 부정 요청 표현입니다. 동사의 부정형(ない형) 뒤에 조사 'で'와 'ください'를 연결하여 만듭니다. 공공장소의 안내 표지판이나 일상생활에서 상대방에게 예의 바르게 금지를 부탁할 때 널리 쓰입니다.",
+      "formation": "동사 ない형 + で ください",
+      "examples": [
+        {
+          "translation": "담배를 피우지 마세요."
+        },
+        {
+          "translation": "여기서 뛰지 마세요."
+        },
+        {
+          "translation": "큰 소리로 말하지 마세요."
+        },
+        {
+          "translation": "사진을 찍지 마세요."
+        }
+      ]
+    },
+    "ja_Noun_50": {
+      "title": "～に戻ります (～ni modorimasu)",
+      "shortExplanation": "원래의 상태, 장소, 업무 등으로 되돌아감을 나타내며, '~로 돌아가다', '~로 복귀하다'의 뜻입니다.",
+      "longExplanation": "'명사 + に + 戻ります' 문형은 어떤 변화나 중단이 있은 후에 이전의 본래 상태나 위치, 직장, 업무 등으로 다시 되돌아갈 때 사용하는 표현입니다. 동사 '戻る'는 원래 있던 자리나 상태로 되돌아감을 의미하며, 격조사 'に'는 귀착점이나 복귀 대상이 되는 상태를 나타냅니다.",
+      "formation": "명사 + に + 戻ります",
+      "examples": [
+        {
+          "translation": "냉장고에 넣으면 녹은 아이스크림이 고체로 돌아갑니다."
+        },
+        {
+          "translation": "휴가가 끝나면 업무에 복귀합니다."
+        },
+        {
+          "translation": "재택근무가 끝난 뒤 원래 사무실로 돌아갑니다."
+        },
+        {
+          "translation": "외국에서 공부한 후 일본으로 돌아갑니다."
+        }
+      ]
+    },
+    "ja_Verb_51": {
+      "title": "～に来ます (～ni kimasu)",
+      "shortExplanation": "어떤 장소로 온 목적을 나타내며, '~하러 옵니다', '~하러 왔습니다'의 뜻입니다.",
+      "longExplanation": "'동사 ます형 어간 + に + 来ます' 문형은 말하는 사람이 위치한 곳으로 이동해 온 구체적인 목적을 나타낼 때 사용합니다. 동작을 나타내는 동사의 ます형에서 'ます'를 뺀 어간에 목적을 나타내는 격조사 'に'를 붙이고 이동 동사인 '来ます(오다)'를 연결합니다. 장소를 나타내는 명사와 조사 'へ' 또는 'に'와 함께 자주 쓰입니다.",
+      "formation": "동사 ます형 어간(「ます」 탈락) + に + 来ます",
+      "examples": [
+        {
+          "translation": "친구를 만나러 왔습니다."
+        },
+        {
+          "translation": "영화를 보러 왔습니다."
+        },
+        {
+          "translation": "선생님께 질문하러 왔습니다."
+        },
+        {
+          "translation": "쇼핑하러 왔습니다."
+        }
+      ]
+    },
+    "ja_Verb_52": {
+      "title": "～に行きます (～ni ikimasu)",
+      "shortExplanation": "어떤 장소로 이동해 가는 목적을 나타내며, '~하러 갑니다'의 뜻입니다.",
+      "longExplanation": "'동사 ます형 어간 + に + 行きます' 문형은 현재 위치를 떠나 다른 장소로 이동하여 특정 동작을 수행하려는 목적을 나타낼 때 사용합니다. 동사의 ます형에서 'ます'를 제거한 어간에 목적의 조사 'に'를 붙이고 이동 동사 '行きます(가다)'를 연결합니다. 보통 이동 목적지 명사와 조사 'へ/に'를 동반하여 '장소 + へ/に + 동사 어간 + に行きます'의 형태로 많이 쓰입니다.",
+      "formation": "동사 ます형 어간(「ます」 탈락) + に + 行きます",
+      "examples": [
+        {
+          "translation": "공원에 놀러 갑니다."
+        },
+        {
+          "translation": "도서관에 공부하러 갑니다."
+        },
+        {
+          "translation": "슈퍼에 장을 보러 갑니다."
+        },
+        {
+          "translation": "영화관에 영화를 보러 갑니다."
+        }
+      ]
+    },
+    "ja_Verb_53": {
+      "title": "～ましょう (～mashou)",
+      "shortExplanation": "상대방에게 함께 무언가를 하자고 정중하게 권유하거나 제안하며, '~합시다', '~해요'의 뜻입니다.",
+      "longExplanation": "'～ましょう' 문형은 동사의 ます형에서 'ます'를 제외한 어간에 결합하여, 상대방에게 어떤 행동을 함께하자고 정중하고 적극적으로 청유(권유)할 때 사용합니다. 또한 말하는 사람 자신이 솔선하여 어떤 행동을 하겠다는 의지를 나타낼 때도 쓰입니다. 친근함과 적극성을 더하기 위해 부사 '一緒に(함께)'와 함께 쓰이는 경우가 많습니다.",
+      "formation": "동사 ます형 어간(「ます」 탈락) + ましょう",
+      "examples": [
+        {
+          "translation": "함께 영화를 봅시다."
+        },
+        {
+          "translation": "산책합시다."
+        },
+        {
+          "translation": "오늘 저녁에 식사하러 갑시다."
+        },
+        {
+          "translation": "내일 공부합시다."
+        }
+      ]
+    },
+    "ja_Verb_54": {
+      "title": "～ましょうか (～mashou ka)",
+      "shortExplanation": "상대방에게 함께할 것을 묻거나 도움을 제안할 때 쓰이며, '~할까요?', '~해 드릴까요?'의 뜻입니다.",
+      "longExplanation": "'～ましょうか' 문형은 두 가지 주요 상황에서 사용됩니다: 1. 상대방의 의향을 물으면서 함께 행동할 것을 제안할 때 ('우리 같이 ~할까요?'). 2. 상대방이 곤란해하거나 도움이 필요해 보일 때 화자가 자발적으로 호의나 조력을 제안할 때 ('제가 ~해 드릴까요?'). 동사의 ます형 어간 뒤에 'ましょう'를 붙이고 의문 종조사 'か'를 연결합니다.",
+      "formation": "동사 ます형 어간(「ます」 탈락) + ましょうか",
+      "examples": [
+        {
+          "translation": "함께 영화를 보러 갈까요?"
+        },
+        {
+          "translation": "커피를 한 잔 더 마실까요?"
+        },
+        {
+          "translation": "짐을 들어 드릴까요?"
+        },
+        {
+          "translation": "창문을 열어 드릴까요?"
+        }
+      ]
+    },
+    "ja_Verb_55": {
+      "title": "～ませんか (～masen ka)",
+      "shortExplanation": "상대방에게 정중하고 조심스럽게 권유하거나 초대할 때 쓰이며, '~하지 않겠습니까?', '~하지 않을래요?'의 뜻입니다.",
+      "longExplanation": "'～ませんか' 문형은 상대방에게 어떤 행위를 같이하자고 권유하거나 초대할 때 사용하는 매우 정중하고 배려 깊은 표현입니다. 부정 의문문의 형식을 취함으로써 상대방에게 부담을 주지 않고 거절할 수 있는 여지를 자연스럽게 남겨 줍니다. 동사의 ます형에서 'ます' 대신 'ませんか'를 연결합니다. 단순한 권유인 '～ましょう'보다 상대방의 입장을 더 존중하는 정중한 어조입니다.",
+      "formation": "동사 ます형 어간(「ます」 탈락) + ませんか",
+      "examples": [
+        {
+          "translation": "함께 영화를 보지 않겠습니까?"
+        },
+        {
+          "translation": "내일 파티에 참가하지 않겠습니까?"
+        },
+        {
+          "translation": "주말에 피크닉(소풍) 가지 않겠습니까?"
+        },
+        {
+          "translation": "함께 공부하지 않겠습니까?"
+        }
+      ]
+    },
+    "ja_Verb_56": {
+      "title": "～こと (～koto)",
+      "shortExplanation": "동사를 명사화하여 어떤 행위나 사실을 나타내며, '~하는 것', '~하기'의 뜻입니다.",
+      "longExplanation": "'동사 사전형(기본형) + こと' 문형은 형식명사 'こと'를 사용하여 동사를 명사구로 변환하는 명사화 용법입니다. 이를 통해 동사로 표현된 동작이나 사실이 문장 내에서 주어, 목적어, 보어의 역할을 수행할 수 있게 되며, 조사 'が', 'は', 'を' 등과 자유롭게 결합할 수 있습니다. 취미, 특기, 추상적인 사실이나 개념을 진술할 때 널리 쓰입니다.",
+      "formation": "동사 사전형(기본형) + こと",
+      "examples": [
+        {
+          "translation": "수영하는 것을 매우 좋아합니다."
+        },
+        {
+          "translation": "일본어를 공부하는 것은 즐겁습니다."
+        },
+        {
+          "translation": "친구와 이야기하는 것이 스트레스를 줄여 줍니다."
+        },
+        {
+          "translation": "그는 노래하는 것을 잘합니다."
+        }
+      ]
+    },
+    "ja_Verb_57": {
+      "title": "～ことができます (～koto ga dekimasu)",
+      "shortExplanation": "어떤 행동을 할 수 있는 능력이나 상황적 가능성을 나타내며, '~할 수 있습니다'의 뜻입니다.",
+      "longExplanation": "'동사 사전형 + ことができます' 문형은 일본어에서 가능을 나타내는 가장 기본적이고 표준적인 정중형 표현입니다. 주로 두 가지 맥락에서 쓰입니다: 1. 주어가 본래 지닌 능력이나 기능(예: 외국어 구사 능력, 악기 연주 등). 2. 주변 환경, 규칙, 상황적 조건상 어떤 행위를 하는 것이 허용되거나 가능한 경우. 부정형은 '～ことができません(~할 수 없습니다)'입니다.",
+      "formation": "동사 사전형(기본형) + ことができます",
+      "examples": [
+        {
+          "translation": "이 문제를 풀 수 있습니다."
+        },
+        {
+          "translation": "그는 영어를 말할 수 있습니다."
+        },
+        {
+          "translation": "저는 높은 곳에 올라갈 수 없습니다."
+        },
+        {
+          "translation": "그녀는 피아노를 칠 수 있습니다."
+        }
+      ]
+    },
+    "ja_Verb_58": {
+      "title": "～ことができる (～koto ga dekiru)",
+      "shortExplanation": "보통체(반말) 형태로 능력이나 객관적 가능성을 나타내며, '~할 수 있다'의 뜻입니다.",
+      "longExplanation": "'동사 사전형 + ことができる' 문형은 '～ことができます'의 보통체(기본형/반말) 표현입니다. 친근한 사이의 일상 대화나 설명문, 논문 등 문어체에서 폭넓게 쓰이며, 문장 중간에서 절로 이어지거나 명사를 수식할 때(예: '～ことができて、嬉しい', '～ことができる人')도 자주 활용됩니다. 개인의 능력이나 상황에 따른 객관적 가능성을 나타냅니다.",
+      "formation": "동사 사전형(기본형) + ことができる",
+      "examples": [
+        {
+          "translation": "이 문제를 풀 수 있어?"
+        },
+        {
+          "translation": "그는 수영할 수 있습니다."
+        },
+        {
+          "translation": "일본에 갈 수 있게 되어서 정말 기쁩니다."
+        },
+        {
+          "translation": "그녀는 피아노를 칠 수 있습니다."
+        }
+      ]
+    },
+    "ja_Verb_59": {
+      "title": "～の (～no)",
+      "shortExplanation": "친근한 구어체에서 이유나 배경을 부드럽게 설명하거나 동사를 명사화하며, '~하는 거야', '~거든'의 뜻입니다.",
+      "longExplanation": "동사의 사전형(보통형) 뒤에 붙는 'の'는 친근한 일상 회화에서 두 가지 주요한 기능을 가집니다: 1. 문장 끝에 쓰여 'のだ／のです'의 부드러운 구어 표현으로서 상대방에게 상황의 이유나 배경을 다정하게 설명할 때 사용합니다(여성이나 어린이가 자주 쓰며, 어조를 올리면 부드러운 의문문이 됨). 2. 'こと'와 마찬가지로 문장 중간에서 동사를 명사화하여 감정이나 판단의 대상을 나타냅니다(예: 走るのが好き - 달리는 것을 좋아함).",
+      "formation": "동사 사전형(기본형) + の (친근한 구어체)",
+      "examples": [
+        {
+          "translation": "쇼핑을 하기 위해 은행에서 돈을 찾는 거야."
+        },
+        {
+          "translation": "친구에게 선물을 줄 거라서 케이크를 굽는 거야."
+        },
+        {
+          "translation": "다이어트를 시작할 거라서 헬스장에 등록하는 거야."
+        },
+        {
+          "translation": "가벼운 식사가 좋아서 샐러드를 만드는 거야."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Verb_45": {
+      "title": "～て (～te)",
+      "shortExplanation": "動作や状態を時間的な順序でつなぎ、「〜して、〜する」「〜してから」という意味を表します。",
+      "longExplanation": "動詞の「て形」は、日本語の文法において最も基本的かつ重要な活用形の一つであり、複数の動作や出来事、状態を時間の流れに沿って順番に接続する際に用いられます（前の動作が完了した後に次の動作を行うことを表します）。さらに、依頼を表す「～てください」や進行・状態を表す「～ています」など、多種多様な補助動詞と結合して豊かな文末表現を作る基礎となります。文全体の時制は文末の動詞によって決まります。",
+      "formation": "1グループ（五段動詞）：語尾に応じて音便変化（く→いて、ぐ→いで、す→して、む/ぶ/ぬ→んで、つ/る/う→って、例外：行く→行って） | 2グループ（一段動詞）：るを取る + て | 3グループ（不規則動詞）：する→して、くる→きて",
+      "examples": [
+        {
+          "translation": "コーヒーを飲んで、出かけます。"
+        },
+        {
+          "translation": "買い物をして、家に帰りましょう。"
+        },
+        {
+          "translation": "宿題をして、寝ます。"
+        },
+        {
+          "translation": "友達を待って、一緒に映画を見に行きます。"
+        }
+      ]
+    },
+    "ja_Verb_46": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "現在進行中の動作や、動作の結果生じた状態の継続を表し、「〜している」「〜しているところだ」という意味を表します。",
+      "longExplanation": "「～ています」は、動詞のて形に補助動詞「います」が接続し、発話の時点において動作が進行中であることを表す文型です（継続動詞の場合）。また、結果が残る瞬間動詞や状態変化動詞（結婚する、住む、知るなど）に接続した場合には、動作が完了した結果の状態が現在もそのまま続いていることを表します。丁寧体は「～ています」、普通体は「～ている」となります。",
+      "formation": "動詞 て形 + います",
+      "examples": [
+        {
+          "translation": "彼女は今ピアノを弾いています。"
+        },
+        {
+          "translation": "私たちは日本語を勉強しています。"
+        },
+        {
+          "translation": "彼は映画を見ています。"
+        },
+        {
+          "translation": "入っていますので、お待ちください。"
+        }
+      ]
+    },
+    "ja_Verb_47": {
+      "title": "～てから (～te kara)",
+      "shortExplanation": "ある動作を完了した後に次の動作を行うことを表し、「〜したあとで」「〜してから」という意味を表します。",
+      "longExplanation": "「～てから」は、動詞のて形に接続助詞「から」が接続した表現で、前項の動作が完全に終わったことを受けて、次の後項の動作に移るという前後の時間的順序関係を明示・強調します。単純に「て」でつなぐ場合と比べて、前項が後項の開始条件や契機であることを際立たせるニュアンスがあります。文全体の時制は文末の動詞によって決定されます。",
+      "formation": "動詞 て形 + から",
+      "examples": [
+        {
+          "translation": "宿題をしてから、テレビを見ました。"
+        },
+        {
+          "translation": "食べてから、歯を磨きましょう。"
+        },
+        {
+          "translation": "仕事が終わってから、友達と飲みに行きます。"
+        },
+        {
+          "translation": "学校が終わってから、図書館で勉強します。"
+        }
+      ]
+    },
+    "ja_Verb_48": {
+      "title": "～てください (～te kudasai)",
+      "shortExplanation": "相手に対して丁寧に依頼・指示・お願いをする表現で、「〜してください」という意味を表します。",
+      "longExplanation": "「～てください」は、相手に何らかの行為を行うよう丁寧にお願いしたり指示したりする際に最も一般的に使われる表現です。動詞のて形に補助動詞「ください」を接続します。日常会話において広く用いられる丁寧な依頼表現ですが、相手に動作を促す性質を持つため、ビジネスシーンや目上の人に対して改まったお願いをする際は、より敬意の高い表現（「～ていただけますか」「～ていただけませんか」など）を用いるのが適切とされます。",
+      "formation": "動詞 て形 + ください",
+      "examples": [
+        {
+          "translation": "ドアを開けてください。"
+        },
+        {
+          "translation": "電話番号を教えてください。"
+        },
+        {
+          "translation": "ゆっくり話してください。"
+        },
+        {
+          "translation": "コーヒーを一つ持ってきてください。"
+        }
+      ]
+    },
+    "ja_Verb_49": {
+      "title": "～ないでください (～naide kudasai)",
+      "shortExplanation": "相手にある行為をしないように丁寧にお願い・制止する表現で、「〜しないでください」という意味を表します。",
+      "longExplanation": "「～ないでください」は、相手にある動作や行為を行わないように丁寧に依頼したり、注意・制止したりする際に用いる文型です。動詞のない形に助詞「で」と「ください」を接続して作ります。公共の場所における注意事項やマナーの呼びかけ、また日常生活の中で相手の行動を柔らかく制止したい場面で幅広く使われます。",
+      "formation": "動詞 ない形 + で ください",
+      "examples": [
+        {
+          "translation": "タバコを吸わないでください。"
+        },
+        {
+          "translation": "ここで走らないでください。"
+        },
+        {
+          "translation": "大きな声で話さないでください。"
+        },
+        {
+          "translation": "写真を撮らないでください。"
+        }
+      ]
+    },
+    "ja_Noun_50": {
+      "title": "～に戻ります (～ni modorimasu)",
+      "shortExplanation": "以前の状態、場所、仕事などに復帰・復元することを表し、「〜に戻る」「〜に復帰する」という意味を表します。",
+      "longExplanation": "「名詞 ＋ に ＋ 戻ります」は、変化や中断を経た後に、以前あった本来の状態や位置、職場、活動などへ再び立ち返ることを表す文型です。動詞「戻る」は元の状態や場所への復帰・復元を意味し、格助詞「に」はその帰着点や結果となる状態を示します。日常会話からビジネスまで幅広く使われます。",
+      "formation": "名詞 + に + 戻ります",
+      "examples": [
+        {
+          "translation": "冷蔵庫に入れると、溶けたアイスクリームは固体に戻ります。"
+        },
+        {
+          "translation": "休暇が終わったら、仕事に戻ります。"
+        },
+        {
+          "translation": "リモートワークが終わった後、元のオフィスに戻ります。"
+        },
+        {
+          "translation": "外国で勉強した後、日本に帰ります。"
+        }
+      ]
+    },
+    "ja_Verb_51": {
+      "title": "～に来ます (～ni kimasu)",
+      "shortExplanation": "ある場所へ来る目的を表し、「〜しに来る」という意味を表します。",
+      "longExplanation": "「動詞（ます形語幹） ＋ に ＋ 来ます」は、話し手がいる場所へ移動して来る目的を表す文法表現です。動作を表す動詞のます形から「ます」を除いた語幹に、目的を示す格助詞「に」を接続し、移動動詞「来ます」を続けます。場所を示す名詞と助詞「へ／に」を伴って用いることも多くあります（例：ここへ友達に会いに来ました）。",
+      "formation": "動詞 ます形（「ます」を除く） + に + 来ます",
+      "examples": [
+        {
+          "translation": "友達に会いに来ました。"
+        },
+        {
+          "translation": "映画を見に来ました。"
+        },
+        {
+          "translation": "先生に質問しに来ました。"
+        },
+        {
+          "translation": "買い物をしに来ました。"
+        }
+      ]
+    },
+    "ja_Verb_52": {
+      "title": "～に行きます (～ni ikimasu)",
+      "shortExplanation": "ある場所へ行く目的を表し、「〜しに行く」という意味を表します。",
+      "longExplanation": "「動詞（ます形語幹） ＋ に ＋ 行きます」は、別の場所へ移動していく目的を表す文型です。動作動詞のます形から「ます」を除いた形に、目的を示す格助詞「に」を接続し、移動動詞「行きます」をつなげます。一般的に「場所 ＋ へ／に」を前に伴い、「〜へ〜しに行く」の形で多用されます。",
+      "formation": "動詞 ます形（「ます」を除く） + に + 行きます",
+      "examples": [
+        {
+          "translation": "公園に遊びに行きます。"
+        },
+        {
+          "translation": "図書館に勉強しに行きます。"
+        },
+        {
+          "translation": "スーパーに買い物に行きます。"
+        },
+        {
+          "translation": "映画館に映画を見に行きます。"
+        }
+      ]
+    },
+    "ja_Verb_53": {
+      "title": "～ましょう (～mashou)",
+      "shortExplanation": "相手に一緒にある行動をしようと丁寧に促したり誘ったりする表現で、「〜しましょう」という意味を表します。",
+      "longExplanation": "「～ましょう」は、動詞のます形から「ます」を除いた語幹に接続し、聞き手を誘って一緒にある動作を行うことを丁寧に提案・勧誘する文法表現です。また、話し手自身が積極的に何かを行おうとする意志を表す場合にも用いられます。親近感と協調性を込めて「一緒に」などの副詞を伴うことがよくあります。",
+      "formation": "動詞 ます形（「ます」を除く） + ましょう",
+      "examples": [
+        {
+          "translation": "一緒に映画を見ましょう。"
+        },
+        {
+          "translation": "散歩しましょう。"
+        },
+        {
+          "translation": "今晩、食事に行きましょう。"
+        },
+        {
+          "translation": "明日勉強しましょう。"
+        }
+      ]
+    },
+    "ja_Verb_54": {
+      "title": "～ましょうか (～mashou ka)",
+      "shortExplanation": "相手の意向を伺いながら勧誘・提案したり、相手に手助けを申し出たりする表現で、「〜しましょうか」「（私が）〜しましょうか」という意味を表します。",
+      "longExplanation": "「～ましょうか」には主に二つの使い方があります。①相手の意向を尋ねつつ「一緒に〜しませんか」と提案・勧誘する場合（例：「映画を見に行きましょうか」）。②相手のために話し手が手助けや援助を進んで申し出る場合（例：「荷物を持ちましょうか」）。動詞のます形語幹に「ましょうか」を接続します。相手への気配りを表す非常に親切な表現です。",
+      "formation": "動詞 ます形（「ます」を除く） + ましょうか",
+      "examples": [
+        {
+          "translation": "一緒に映画を見に行きましょうか。"
+        },
+        {
+          "translation": "コーヒーをもう一杯飲みましょうか。"
+        },
+        {
+          "translation": "あなたの荷物を持ちましょうか。"
+        },
+        {
+          "translation": "窓を開けましょうか。"
+        }
+      ]
+    },
+    "ja_Verb_55": {
+      "title": "～ませんか (～masen ka)",
+      "shortExplanation": "相手に丁寧かつ控えめに勧誘や誘いかけをする表現で、「〜しませんか」「〜しませんか（いかがですか）」という意味を表します。",
+      "longExplanation": "「～ませんか」は、相手を何かの行為に誘う際に用いられる、非常に丁寧で配慮の行き届いた勧誘表現です。動詞の否定形（ます形語幹＋ません）に疑問の終助詞「か」を付けることで、相手に無理強いせず断る余地を残すため、相手への敬意や気遣いを示すことができます。「〜ましょう」よりも控えめで丁寧な響きを持ちます。",
+      "formation": "動詞 ます形（「ます」を除く） + ませんか",
+      "examples": [
+        {
+          "translation": "一緒に映画を見ませんか。"
+        },
+        {
+          "translation": "明日のパーティーに参加しませんか。"
+        },
+        {
+          "translation": "週末にピクニックに行きませんか。"
+        },
+        {
+          "translation": "一緒に勉強しませんか。"
+        }
+      ]
+    },
+    "ja_Verb_56": {
+      "title": "～こと (～koto)",
+      "shortExplanation": "動詞を名詞化し、動作や出来事を一つの事柄・概念として表す表現で、「〜すること」という意味を表します。",
+      "longExplanation": "「～こと」は、動詞の辞書形（基本形）に形式名詞「こと」を後続させることで、その動作や事象を名詞化（名詞句化）する文法機能です。名詞化されることにより、文中で主語、目的語、補語などの位置に置くことが可能になり、助詞「が」「は」「を」などと自由に結びつくことができます。趣味や能力、一般的な事実や抽象的な概念を述べる際によく使われます。",
+      "formation": "動詞 辞書形 + こと",
+      "examples": [
+        {
+          "translation": "泳ぐことが大好きです。"
+        },
+        {
+          "translation": "日本語を勉強することは楽しいです。"
+        },
+        {
+          "translation": "友達と話すことがストレスを軽減します。"
+        },
+        {
+          "translation": "彼は歌うことが得意です。"
+        }
+      ]
+    },
+    "ja_Verb_57": {
+      "title": "～ことができます (～koto ga dekimasu)",
+      "shortExplanation": "能力や状況的な可能性を表し、「〜することができる」「〜することが可能である」という意味を表します。",
+      "longExplanation": "「動詞 辞書形 ＋ ことができます」は、可能を表す最も基本的で丁寧な文型です。主に二つの意味合いで用いられます。①主体の能力や技術（「ピアノが弾ける」「外国語が話せる」など）。②状況・条件・規則などによる客観的な可能性（「ここで写真が撮れる」「予約ができる」など）。否定形は「～ことができません」となります。動詞を「こと」で名詞化した上で「ができます」を接続します。",
+      "formation": "動詞 辞書形 + ことができます",
+      "examples": [
+        {
+          "translation": "この問題を解くことができます。"
+        },
+        {
+          "translation": "彼は英語を話すことができます。"
+        },
+        {
+          "translation": "私は高い所に登ることができません。"
+        },
+        {
+          "translation": "彼女はピアノを弾くことができます。"
+        }
+      ]
+    },
+    "ja_Verb_58": {
+      "title": "～ことができる (～koto ga dekiru)",
+      "shortExplanation": "普通形（常体）で能力や客観的な可能性を表し、「〜できる」「〜することが可能だ」という意味を表します。",
+      "longExplanation": "「動詞 辞書形 ＋ ことができる」は、「～ことができます」の普通形（簡体・常体）です。親しい間柄での日常会話や、論文・記事などの書き言葉で幅広く用いられます。また、「～ことができて、嬉しい」のように文の途中で接続したり、「～ことができる人」のように名詞修飾節を形成したりする際にも頻繁に活用されます。能力や客観的条件による可能性を示します。",
+      "formation": "動詞 辞書形 + ことができる",
+      "examples": [
+        {
+          "translation": "この問題を解くことができる？"
+        },
+        {
+          "translation": "彼は泳ぐことができます。"
+        },
+        {
+          "translation": "日本に行くことができて、とても嬉しいです。"
+        },
+        {
+          "translation": "彼女はピアノを弾くことができます。"
+        }
+      ]
+    },
+    "ja_Verb_59": {
+      "title": "～の (～no)",
+      "shortExplanation": "親しい会話で理由や状況を柔らかく説明したり、動詞を名詞化したりする表現で、「〜のだ」「〜の（説明）」という意味を表します。",
+      "longExplanation": "動詞の辞書形（普通形）に接続する「の」は、日常の親しい会話（タメ口）において主に二つの働きを持ちます。①文末に置いて、理由や事情、背景を相手に柔らかく説明・主張する表現（「のだ／のです」のくだけた口語表現）。特に女性や子どもが多用し、上昇調のイントネーションで疑問文にもなります。②文中で「走るのが好き」のように動詞を名詞化する準体助詞（形式名詞）として機能します。",
+      "formation": "動詞 辞書形 + の（親しい口語）",
+      "examples": [
+        {
+          "translation": "買い物をするために、銀行でお金をおろすの。"
+        },
+        {
+          "translation": "友達にプレゼントをあげるので、ケーキを焼くの。"
+        },
+        {
+          "translation": "ダイエットを始めるので、ジムに入会するの。"
+        },
+        {
+          "translation": "軽い食事がいいので、サラダを作るの。"
+        }
+      ]
+    }
+  }
+}

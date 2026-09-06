@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Noun_32",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun でなくてなんだろう (〜de nakute nandarou)",
+    "shortExplanation": "A strong rhetorical question: 'If not X, then what is it?'",
+    "longExplanation": "「Noun + でなくてなんだろう」expresses the speaker’s strong conviction that something must be that noun—no other possibility. Literally, 'If it isn't Noun, then what is it?'",
+    "formation": "Noun + でなくてなんだろう",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "これが真実でなくてなんだろう。",
+        "romanization": "Kore ga shinjitsu de nakute nandarou.",
+        "translation": "If this isn’t the truth, then what is?"
+      },
+      {
+        "sentence": "彼がリーダーでなくてなんだろう。",
+        "romanization": "Kare ga riidaa de nakute nandarou.",
+        "translation": "If he isn’t the leader, then who is?"
+      },
+      {
+        "sentence": "これが愛でなくてなんだろう。",
+        "romanization": "Kore ga ai de nakute nandarou.",
+        "translation": "If this isn’t love, then what is?"
+      },
+      {
+        "sentence": "これが最高のレストランでなくてなんだろう。",
+        "romanization": "Kore ga saikou no resutoran de nakute nandarou.",
+        "translation": "If this isn’t the best restaurant, then what is?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_33",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ではあるまいし (~dewa aru maishi)",
+    "shortExplanation": "Means 'it’s not as if...', 'it’s not that...', more formal than じゃあるまいし.",
+    "longExplanation": "「Noun + ではあるまいし」indicates that the noun is not the situation or reason being implied. It dismisses a possibility or justification, e.g. 'It’s not as if X, so don’t worry/do that/etc.' This is the more formal counterpart to じゃあるまいし.",
+    "formation": "Noun + ではあるまいし",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女はプロの歌手ではあるまいし、完璧を求めるのは酷だ。",
+        "romanization": "Kanojo wa puro no kashu de wa aru mai shi, kanpeki o motomeru no wa koku da.",
+        "translation": "She’s not a professional singer, so it’s rather harsh to demand perfection."
+      },
+      {
+        "sentence": "彼は子供ではあるまいし、そんなにチョコレートばかり食べるのはどうかと思う。",
+        "romanization": "Kare wa kodomo de wa aru mai shi, sonnani chokoreeto bakari taberu no wa douka to omou.",
+        "translation": "He’s not a child, so I’m not sure about him eating that much chocolate."
+      },
+      {
+        "sentence": "彼は医者ではあるまいし、あなたの健康状態を詮索する必要はない。",
+        "romanization": "Kare wa isha de wa aru mai shi, anata no kenkou joutai o sensaku suru hitsuyou wa nai.",
+        "translation": "He’s not a doctor, so he has no need to pry into your health."
+      },
+      {
+        "sentence": "この指輪は高価なものではあるまいし、落としても大したことはない。",
+        "romanization": "Kono yubiwa wa kouka na mono de wa aru mai shi, otoshite mo taishita koto wa nai.",
+        "translation": "It’s not an expensive ring, so dropping it isn’t a big deal."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_34",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun と Noun を兼ねて (Noun to Noun o kanete)",
+    "shortExplanation": "Used to indicate doing two things at once or fulfilling two roles/purposes.",
+    "longExplanation": "「Noun と Noun を兼ねて」means that one action or thing serves the purpose of both nouns. It can be translated as 'serving as both… and…', or 'for both… and…'.",
+    "formation": "Noun + と + Noun + を兼ねて",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "お父さんは社長と経理部長を兼ねています。",
+        "romanization": "Otousan wa shachou to keiri buchou o kanete imasu.",
+        "translation": "My father serves as both the company president and the head of accounting."
+      },
+      {
+        "sentence": "彼女は音楽教師とピアニストを兼ねています。",
+        "romanization": "Kanojo wa ongaku kyoushi to pianisuto o kanete imasu.",
+        "translation": "She works as both a music teacher and a pianist."
+      },
+      {
+        "sentence": "この部屋は寝室と書斎を兼ねています。",
+        "romanization": "Kono heya wa shinshitsu to shosai o kanete imasu.",
+        "translation": "This room serves as both a bedroom and a study."
+      },
+      {
+        "sentence": "彼は父と母を兼ねて子どもの世話をしている。",
+        "romanization": "Kare wa chichi to haha o kanete kodomo no sewa o shite iru.",
+        "translation": "He looks after his child, taking on both mother and father roles."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_35",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun といい Noun といい (〜to ii〜to ii)",
+    "shortExplanation": "Used to express 'both A and B'; 'whether it's A or B'; 'not to mention A and also B'.",
+    "longExplanation": "This grammar structure is used to provide two examples or two situations to demonstrate a certain characteristic or situation. It's a way of mentioning two items of the same theme to generalize or emphasize something applicable to them both. In English, it can be understood as 'both A and B', 'whether it's A or B', or 'not to mention A and also B'.",
+    "formation": "Noun1 + といい + Noun2 + といい + Comment",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "日本の食べ物といい観光地といい、すべてが素晴らしいです。",
+        "romanization": "Nihon no tabemono to ii kankouchi to ii, subete ga subarashii desu.",
+        "translation": "Both Japanese food and tourist spots are all wonderful."
+      },
+      {
+        "sentence": "彼の優しさといい、体力といい、彼は理想的なパートナーだ。",
+        "romanization": "Kare no yasashisa to ii, tairyoku to ii, kare wa risouteki na paatonaa da.",
+        "translation": "Whether it's his kindness or stamina, he is an ideal partner."
+      },
+      {
+        "sentence": "この町の映画館といい、公園といい、老若男女が楽しめる。",
+        "romanization": "Kono machi no eigakan to ii, kouen to ii, rounyakunan'nyo ga tanoshimeru.",
+        "translation": "Not to mention the movie theaters and parks in this town, they are enjoyable for all ages."
+      },
+      {
+        "sentence": "彼の歌唱力といい、ダンスのスキルといい、完璧だ。",
+        "romanization": "Kare no kashou ryoku to ii, dansu no sukiru to ii, kanpeki da.",
+        "translation": "Both his singing ability and his dance skills are perfect."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_36",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun という Noun (~to iu~)",
+    "shortExplanation": "Used to specify or define one noun with another; 'the noun called', 'the noun that is', or 'a certain'.",
+    "longExplanation": "The Noun という Noun construction is used to specify or define one noun with another. It usually translates as 'the noun called', 'the noun that is' or simply 'a certain'. It is a very common pattern for clarifying what something is named or known as.",
+    "formation": "Noun1 という Noun2",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "宮崎駿という人は有名なアニメーション監督です。",
+        "romanization": "Miyazaki Hayao to iu hito wa yuumei na animation kantoku desu.",
+        "translation": "The person called Hayao Miyazaki is a famous animation director."
+      },
+      {
+        "sentence": "その恋人という女性は彼にとても厳しいです。",
+        "romanization": "Sono koibito to iu josei wa kare ni totemo kibishii desu.",
+        "translation": "The woman called his girlfriend is very strict with him."
+      },
+      {
+        "sentence": "東京という都市は夜も賑やかです。",
+        "romanization": "Tokyo to iu toshi wa yoru mo nigiyaka desu.",
+        "translation": "The city called Tokyo is bustling even at night."
+      },
+      {
+        "sentence": "私は「ハリーポッター」という本が好きです。",
+        "romanization": "Watashi wa 'Harry Potter' to iu hon ga suki desu.",
+        "translation": "I like the book called 'Harry Potter'."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_37",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun というところだ (Noun to iu tokoro da)",
+    "shortExplanation": "Means 'it's approximately...' or 'it's about...'. Used to show approximation or a general assessment.",
+    "longExplanation": "The というところだ grammar point is used to show an approximation or general assessment of something. It is often translated as 'it's approximately...', 'around...', or 'it's about...'.",
+    "formation": "Noun + というところだ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "今回の試験の合格者は半数というところだろう。",
+        "romanization": "Konkai no shiken no goukakusha wa hansuu to iu tokoro darou.",
+        "translation": "The passers in this exam would be approximately half."
+      },
+      {
+        "sentence": "彼の力は80％というところだ。",
+        "romanization": "Kare no chikara wa hachijuu paasento to iu tokoro da.",
+        "translation": "His strength is about 80%."
+      },
+      {
+        "sentence": "このプランに賛成の人は7割というところだ。",
+        "romanization": "Kono puran ni sansei no hito wa nanawari to iu tokoro da.",
+        "translation": "About 70% of people agree with this plan."
+      },
+      {
+        "sentence": "課長の意見には、私としては90％というところでしょう。",
+        "romanization": "Kachou no iken ni wa, watashi toshite wa kyuujuu paasento to iu tokoro deshou.",
+        "translation": "As for the section manager's opinion, I'd say I'm about 90% in agreement."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_38",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + というもの (~ to iu mono)",
+    "shortExplanation": "Used to express a generic concept: 'all ~', 'any ~ of that kind'.",
+    "longExplanation": "The grammar pattern 'Noun + というもの' refers to the entirety or general nature of that noun—often implying 'all of this category' or 'this thing called...'. It can also highlight a universal truth about the noun mentioned.",
+    "formation": "Noun + というもの",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "子供というものは、毎日たくさん遊びます。",
+        "romanization": "Kodomo to iu mono wa, mainichi takusan asobimasu.",
+        "translation": "Children, as a group, play a lot every day."
+      },
+      {
+        "sentence": "大学生というものは研究に時間をたくさんかけます。",
+        "romanization": "Daigakusei to iu mono wa kenkyuu ni jikan o takusan kakemasu.",
+        "translation": "University students spend a lot of time on research."
+      },
+      {
+        "sentence": "日本文化というものは伝統的なものと新しいものが混ざっています。",
+        "romanization": "Nihon bunka to iu mono wa dentouteki na mono to atarashii mono ga mazatte imasu.",
+        "translation": "Japanese culture is a mixture of traditional and new."
+      },
+      {
+        "sentence": "別れというものはいつも悲しいものです。",
+        "romanization": "Wakare to iu mono wa itsumo kanashii mono desu.",
+        "translation": "Goodbyes are always sad."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_39",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun といったところだ (Noun to itta tokoro da)",
+    "shortExplanation": "Expresses 'at most', 'as much as', or 'limited to'.",
+    "longExplanation": "Noun といったところだ describes an upper limit or a maximum extent, often translating to 'at most' or 'around...'. It suggests the speaker doesn’t expect anything beyond that limit.",
+    "formation": "Noun + といったところだ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の英語レベルは初級といったところだ。",
+        "romanization": "Kare no eigo reberu wa shokyuu to itta tokoro da.",
+        "translation": "His English level is at most beginner level."
+      },
+      {
+        "sentence": "私の日本語の語彙は1000語といったところだ。",
+        "romanization": "Watashi no nihongo no goi wa sen go to itta tokoro da.",
+        "translation": "My Japanese vocabulary is limited to about 1000 words."
+      },
+      {
+        "sentence": "彼が毎日ランニングできるのは5キロといったところだ。",
+        "romanization": "Kare ga mainichi ranningu dekiru no wa go kiro to itta tokoro da.",
+        "translation": "He can run as much as 5 kilometers a day at most."
+      },
+      {
+        "sentence": "その会社の従業員は20人といったところだ。",
+        "romanization": "Sono kaisha no juugyouin wa nijuu nin to itta tokoro da.",
+        "translation": "The employees at that company are limited to about 20 people."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_40",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun といわず Noun といわず (A to iwazu B to iwazu)",
+    "shortExplanation": "Expresses 'both A and B' or 'be it A or B'; applies to both without distinction.",
+    "longExplanation": "The grammar pattern AといわずBといわず means 'be it A or B' or 'both A and B.' It emphasizes that something applies widely, without distinguishing between A and B.",
+    "formation": "Noun1 + といわず + Noun2 + といわず + (rest of the sentence)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "冬といわず夏といわず、彼はいつもアイスクリームを食べます。",
+        "romanization": "Fuyu to iwazu natsu to iwazu, kare wa itsumo aisukuriimu o tabemasu.",
+        "translation": "Be it winter or summer, he always eats ice cream."
+      },
+      {
+        "sentence": "老いといわず若きといわず、全ての人がそのイベントを楽しめます。",
+        "romanization": "Oi to iwazu wakaki to iwazu, subete no hito ga sono ibento o tanoshimemasu.",
+        "translation": "Whether old or young, everyone can enjoy that event."
+      },
+      {
+        "sentence": "男といわず女といわず、誰もがこの映画を楽しむでしょう。",
+        "romanization": "Otoko to iwazu onna to iwazu, daremo ga kono eiga o tanoshimu deshou.",
+        "translation": "Be it men or women, everyone will enjoy this movie."
+      },
+      {
+        "sentence": "月といわず火といわず、あの店は毎日混んでいます。",
+        "romanization": "Getsu to iwazu ka to iwazu, ano mise wa mainichi konde imasu.",
+        "translation": "Be it Monday or Tuesday, that shop is busy every day."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_41",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + ときたら (〜tokitara)",
+    "shortExplanation": "Expresses strong feelings about a topic; 'speaking of', 'when it comes to'.",
+    "longExplanation": "Noun + ときたら emphasizes strong feelings—often frustration, admiration, or surprise—about that noun. It can translate as 'when it comes to...', 'speaking of...', or 'honestly, about...'.",
+    "formation": "Noun + ときたら",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "寿司ときたら、彼は何も食べられない。",
+        "romanization": "Sushi tokitara, kare wa nanimo taberarenai.",
+        "translation": "When it comes to sushi, he can't eat anything."
+      },
+      {
+        "sentence": "数学の問題ときたら、彼女はいつも困っている。",
+        "romanization": "Suugaku no mondai tokitara, kanojo wa itsumo komatte iru.",
+        "translation": "When it comes to math problems, she's always struggling."
+      },
+      {
+        "sentence": "あの店のハンバーガーときたら、本当に美味しい。",
+        "romanization": "Ano mise no hanbaagaa tokitara, hontou ni oishii.",
+        "translation": "Speaking of that shop's hamburgers, they're really delicious."
+      },
+      {
+        "sentence": "彼のいつもの態度ときたら、本当に困ったものだ。",
+        "romanization": "Kare no itsumo no taido tokitara, hontou ni komatta mono da.",
+        "translation": "Speaking of his usual attitude, it's truly problematic."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_42",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun とは比べものにならない (~to wa kurabemono ni naranai)",
+    "shortExplanation": "Indicates something is not comparable; 'beyond comparison'.",
+    "longExplanation": "Use とは比べものにならない to emphasize that two things differ so greatly they cannot be compared—one is vastly superior or different in scale, quality, etc.",
+    "formation": "Noun + とは比べものにならない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "新しい車の速さは古い車とは比べものにならない。",
+        "romanization": "Atarashii kuruma no hayasa wa furui kuruma to wa kurabemono ni naranai.",
+        "translation": "The speed of the new car is not comparable to the old one."
+      },
+      {
+        "sentence": "彼の英語のうまさは私とは比べものにならない。",
+        "romanization": "Kare no eigo no umasa wa watashi to wa kurabemono ni naranai.",
+        "translation": "His English skills are beyond comparison with mine."
+      },
+      {
+        "sentence": "日本の技術は他の国とは比べものにならない。",
+        "romanization": "Nihon no gijutsu wa hoka no kuni to wa kurabemono ni naranai.",
+        "translation": "Japan's technology is not comparable to that of other countries."
+      },
+      {
+        "sentence": "今回の地震の被害は前回とは比べものにならない。",
+        "romanization": "Konkai no jishin no higai wa zenkai to wa kurabemono ni naranai.",
+        "translation": "The damage from this earthquake is incomparable to the previous one."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_43",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + ともあろう + Noun (~tomoarou~)",
+    "shortExplanation": "Used to criticize or question unbecoming behavior by someone of a certain status.",
+    "longExplanation": "Noun + ともあろう + Noun is used to express that someone with a certain role or status has done something unbefitting their position. It often carries disapproval or surprise: 'For someone who is supposed to be X, how could they...?'",
+    "formation": "Noun + ともあろう + Noun",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "先生ともあろう者が、そんな間違いをするなんて。",
+        "romanization": "Sensei tomoarou mono ga, sonna machigai o suru nante.",
+        "translation": "For a teacher, it's shocking to make such a mistake."
+      },
+      {
+        "sentence": "大人ともあろう者が子供みたいにふるまってはいけない。",
+        "romanization": "Otona tomoarou mono ga kodomo mitai ni furumatte wa ikenai.",
+        "translation": "It's not right for an adult to behave like a child."
+      },
+      {
+        "sentence": "社長ともあろう人がそんな失礼なことを言うなんて。",
+        "romanization": "Shachou tomoarou hito ga sonna shitsurei na koto o iu nante.",
+        "translation": "It's shocking that someone who is the company president would say such a rude thing."
+      },
+      {
+        "sentence": "プロの選手ともあろう者が、試合に遅刻するなんて。",
+        "romanization": "Puro no senshu tomoarou mono ga, shiai ni chikoku suru nante.",
+        "translation": "For a professional athlete, being late to a match is unthinkable."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_44",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ともなると (〜to mo naru to)",
+    "shortExplanation": "'When it comes to...', emphasizes a change of situation or status.",
+    "longExplanation": "Noun + ともなると indicates a change of state or circumstances once that noun becomes relevant or once one attains that position. It conveys that 'once it’s X, things change' or 'when it comes to X...'.",
+    "formation": "Noun + ともなると",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "クリスマスともなると、街中がきらきらと輝いて見えます。",
+        "romanization": "Kurisumasu to mo naru to, machijuu ga kirakira to kagayaite miemasu.",
+        "translation": "When it comes to Christmas time, the whole city sparkles."
+      },
+      {
+        "sentence": "子供が自分の過ちを認めるともなると、話は別ですね。",
+        "romanization": "Kodomo ga jibun no ayamachi o mitomeru to mo naru to, hanashi wa betsu desu ne.",
+        "translation": "When a child admits their mistake, that’s a different story."
+      },
+      {
+        "sentence": "夏休みともなると、海辺は観光客で溢れかえります。",
+        "romanization": "Natsu yasumi to mo naru to, umibe wa kankoukyaku de afurekaerimasu.",
+        "translation": "When summer vacation comes, the seaside is filled with tourists."
+      },
+      {
+        "sentence": "試験週間ともなると、図書館はいつもより混雑します。",
+        "romanization": "Shiken shuukan to mo naru to, toshokan wa itsumo yori konzatsu shimasu.",
+        "translation": "When exam week arrives, the library gets more crowded than usual."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_45",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ともなれば (〜to mo nareba)",
+    "shortExplanation": "Expresses 'if it comes to', 'when', or 'once'.",
+    "longExplanation": "The grammar point ～ともなれば is used to stress the likelihood of a change or consequence that comes about due to the situation expressed before ともなれば. It can be translated as 'when it comes to', 'once', or 'if it comes to' in English. It's usually used with nouns.",
+    "formation": "Noun + ともなれば",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "試験ともなれば、大抵の人が緊張するものです。",
+        "romanization": "Shiken to mo nareba, taitei no hito ga kinchou suru mono desu.",
+        "translation": "When it comes to exams, most people get nervous."
+      },
+      {
+        "sentence": "彼がリーダーともなれば、チームの性能はさらに向上するでしょう。",
+        "romanization": "Kare ga riidaa to mo nareba, chiimu no seinou wa sara ni koujou suru deshou.",
+        "translation": "If he becomes the leader, the team's performance will improve even more."
+      },
+      {
+        "sentence": "夏休みともなれば、観光地はいつも人であふれている。",
+        "romanization": "Natsuyasumi to mo nareba, kankouchi wa itsumo hito de afurete iru.",
+        "translation": "When it comes to summer vacation, tourist spots are always packed with people."
+      },
+      {
+        "sentence": "結婚ともなれば、ただ二人が愛し合っているだけではすまされない事情も多い。",
+        "romanization": "Kekkon to mo nareba, tada futari ga aishiatte iru dake de wa sumasarenai jijou mo oi.",
+        "translation": "When it comes to marriage, there are often issues that can’t be solved by love alone."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_46",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun と相まって (~ to aimatte)",
+    "shortExplanation": "Used to express 'in combination with', 'together with', 'along with'.",
+    "longExplanation": "The Noun と相まって grammar point is used to indicate that something happens or is the result of two or more factors working together. It can be translated as 'in combination with', 'together with' or 'along with' in English. It is used with nouns.",
+    "formation": "Noun + と相まって",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "天気の良さと相まって、ピクニックは大成功でした。",
+        "romanization": "Tenki no yosa to aimatte, pikunikku wa daiseikou deshita.",
+        "translation": "In combination with the good weather, the picnic was a great success."
+      },
+      {
+        "sentence": "努力と運と相まって、彼は試験に合格しました。",
+        "romanization": "Doryoku to un to aimatte, kare wa shiken ni goukaku shimashita.",
+        "translation": "Thanks to both effort and luck, he passed the exam."
+      },
+      {
+        "sentence": "ひまわり油とガーリックと相まって、この料理は美味しいです。",
+        "romanization": "Himawari abura to gaarikku to aimatte, kono ryouri wa oishii desu.",
+        "translation": "Combined with sunflower oil and garlic, this dish is delicious."
+      },
+      {
+        "sentence": "新しい技術と経験と相まって、私たちはこの問題を克服できました。",
+        "romanization": "Atarashii gijutsu to keiken to aimatte, watashitachi wa kono mondai o kokufuku dekimashita.",
+        "translation": "Together with new technology and experience, we were able to overcome this problem."
+      }
+    ]
+  }
+]

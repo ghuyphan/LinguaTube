@@ -10,7 +10,7 @@ import { SubtitleCue } from '../models';
  */
 
 const DB_NAME = 'lingua-tube-cache';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 const STORE_NAME = 'transcripts';
 
 // Cache TTL in milliseconds
@@ -62,11 +62,12 @@ export class TranscriptCacheService {
             request.onupgradeneeded = (event) => {
                 const db = (event.target as IDBOpenDBRequest).result;
 
-                // Create transcripts store with key path
-                if (!db.objectStoreNames.contains(STORE_NAME)) {
-                    const store = db.createObjectStore(STORE_NAME, { keyPath: 'key' });
-                    store.createIndex('expiresAt', 'expiresAt', { unique: false });
+                // Create transcripts store with key path (purge old on upgrade)
+                if (db.objectStoreNames.contains(STORE_NAME)) {
+                    db.deleteObjectStore(STORE_NAME);
                 }
+                const store = db.createObjectStore(STORE_NAME, { keyPath: 'key' });
+                store.createIndex('expiresAt', 'expiresAt', { unique: false });
             };
         });
 
@@ -103,8 +104,24 @@ export class TranscriptCacheService {
                         return;
                     }
 
+                    // Check if entry contains old dev mock subtitles
+                    const isDevMock = result.cues?.some(c =>
+                        c.text?.includes('LinguaTubeへようこそ') ||
+                        c.text?.includes('Vocaへようこそ') ||
+                        c.text?.includes('LinguaTube learning platform') ||
+                        c.text?.includes('Voca learning platform') ||
+                        c.text?.includes('LinguaTube') ||
+                        c.text?.includes('Voca, your')
+                    );
+                    if (isDevMock && videoId !== 'demo' && videoId !== 'test') {
+                        this.delete(videoId, lang);
+                        resolve(null);
+                        return;
+                    }
+
                     resolve(result);
                 };
+
 
                 request.onerror = () => {
                     console.error('[TranscriptCache] Get error:', request.error);

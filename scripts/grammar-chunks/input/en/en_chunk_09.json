@@ -1,0 +1,302 @@
+[
+  {
+    "id": "en_c1_15",
+    "language": "en",
+    "pattern": "Nominalization in academic text",
+    "title": "Nominalization in academic text",
+    "shortExplanation": "The fact that prices increased → The increase in prices...",
+    "longExplanation": "Nominalization allows:\n1. Compress information: There was a significant increase in prices.\n2. Add definitions: The rapid increase in house prices...\n3. Create a formal, impersonal tone.",
+    "formation": "The fact that prices increased → The increase in prices...",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "There has been a significant improvement in air quality.",
+        "translation": "Air quality has improved significantly."
+      },
+      {
+        "sentence": "His refusal to comment surprised everyone.",
+        "translation": "His refusal to comment surprised everyone."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_16",
+    "language": "en",
+    "pattern": "Present participle",
+    "title": "Present participle: V-ing clause",
+    "shortExplanation": "Walking down the street, I saw an old friend. Having no money, he couldn't buy food.",
+    "longExplanation": "The participial phrase with Present Participle (V-ing) replaces the subordinate clause:\n• Simultaneity: Walking home, I noticed something strange. (= While I was walking home)\n• Reason: Knowing the answer, she raised her hand. (= Because she knew)\nError: Walking down the street, the rain started. (the rain did not fall on the street)",
+    "formation": "Walking down the street, I saw an old friend. Having no money, he couldn't buy food.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Arriving at the airport, he realised he had forgotten his passport.",
+        "translation": "Arriving at the airport, he realized that he had forgotten his passport."
+      },
+      {
+        "sentence": "Not knowing what to do, she called her mother.",
+        "translation": "Not knowing what to do, she called her mother."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_17",
+    "language": "en",
+    "pattern": "Past participial phrase",
+    "title": "Past participial phrase: V3 / Having + V3 clause",
+    "shortExplanation": "Written in 1815, the novel... Having finished work, she went home.",
+    "longExplanation": "V3 clause (Past Participle) = passive meaning: Built in 1889, the Eiffel Tower...\nHaving + V3 = action completed before the main one:\nHaving read the report, he called a meeting. (= After he had read...)",
+    "formation": "Written in 1815, the novel... Having finished work, she went home.",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Surprised by the news, she sat down silently.",
+        "translation": "Surprised by the news, she sat down silently."
+      },
+      {
+        "sentence": "Having finished the exam, the students left the room.",
+        "translation": "Having finished the exam, the students left the classroom."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_01",
+    "language": "en",
+    "pattern": "Conditional with unless / provided / as long as / on condition that",
+    "title": "Conditional with unless / provided / as long as / on condition that",
+    "shortExplanation": "Unless you study, you'll fail. As long as you're honest, I'll help.",
+    "longExplanation": "unless = if not (but cannot be used with negation!): Unless you hurry = If you don't hurry\nprovided/providing (that) = if and only if (strict condition)\nas long as = provided that (assumption)\non condition that = on condition that (formally)\nin case = in case",
+    "formation": "Unless you study, you'll fail. As long as you're honest, I'll help.",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "I'll lend you money, as long as you pay me back.",
+        "translation": "I'll lend you money on the condition that you pay it back."
+      },
+      {
+        "sentence": "You can use my laptop, provided you don't download anything.",
+        "translation": "You can use my laptop, as long as you don't download anything."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_02",
+    "language": "en",
+    "pattern": "Suppose / supposing / what if",
+    "title": "Suppose / supposing / what if",
+    "shortExplanation": "Suppose you won the lottery - what would you do?",
+    "longExplanation": "Suppose/Supposing - used as if in hypothetical questions.\nWhat if is an informal analogue.\nWith Past Simple - a situation is unlikely or imaginary.",
+    "formation": "Suppose you won the lottery - what would you do?",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "Supposing you had to choose — which would you pick?",
+        "translation": "Imagine that you had to choose - what would you choose?"
+      },
+      {
+        "sentence": "What if nobody comes? What should we do?",
+        "translation": "What if no one comes? What should we do?"
+      }
+    ]
+  },
+  {
+    "id": "en_c2_03",
+    "language": "en",
+    "pattern": "Only + circumstance + inversion",
+    "title": "Only + circumstance + inversion",
+    "shortExplanation": "Only when I left did I realize. Only then did he understand.",
+    "longExplanation": "Only + when/after/if/then/by/in/on - the entire group is moved to the beginning → inversion.\nThis is one of the most powerful rhetorical devices in writing and public speaking.",
+    "formation": "Only when I left did I realize. Only then did he understand.",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "Only when you experience it can you truly understand.",
+        "translation": "Only by experiencing it can one truly understand."
+      },
+      {
+        "sentence": "Only after years of practice did she master the skill.",
+        "translation": "It was only after years of practice that she mastered the skill."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_04",
+    "language": "en",
+    "pattern": "So + adjective/adverb + inversion",
+    "title": "So + adjective/adverb + inversion",
+    "shortExplanation": "So great was his relief that he wept. Such was her talent...",
+    "longExplanation": "Book and oratorical style.\nSo + adj/adv + be/aux + subject\nSuch + was/were + subject",
+    "formation": "So great was his relief that he wept. Such was her talent...",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "So rapid was the change that nobody could adapt.",
+        "translation": "The changes happened so quickly that no one could adapt."
+      },
+      {
+        "sentence": "Such was her talent that she was offered a scholarship.",
+        "translation": "So great was her talent that she was offered a scholarship."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_05",
+    "language": "en",
+    "pattern": "Hedging",
+    "title": "Hedging: appear to, seem to, tend to, be likely to",
+    "shortExplanation": "Prices appear to be rising. This tends to occur when...",
+    "longExplanation": "Hedging is the deliberate softening of statements to express scientific modesty.\nMain structures:\n• appear/seem to - apparently\n• tend to - as a rule, tend to\n• be likely/unlikely to - likely/unlikely\n• be thought/considered to be - it is believed that",
+    "formation": "Prices appear to be rising. This tends to occur when...",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "The results appear to suggest a correlation.",
+        "translation": "The results appear to indicate a correlation."
+      },
+      {
+        "sentence": "Companies tend to underestimate implementation costs.",
+        "translation": "Companies tend to underestimate implementation costs."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_06",
+    "language": "en",
+    "pattern": "Discourse markers in academic text",
+    "title": "Discourse markers in academic text",
+    "shortExplanation": "Furthermore, Nevertheless, Conversely, In light of, With regard to",
+    "longExplanation": "Markers structure and connect academic text:\n• Addition: Moreover, Furthermore, In addition, Additionally\n• Contrast: However, nevertheless, nevertheless, Conversely, On the other hand\n• Result: Therefore, Consequently, As a result, Hence, Thus\n• Explanation: In other words, That is to say, Namely\n• Concession: Admittedly, While it is true that, Despite this",
+    "formation": "Furthermore, Nevertheless, Conversely, In light of, With regard to",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "The experiment failed. Nevertheless, the findings were instructive.",
+        "translation": "The experiment failed. Still, the results were instructive."
+      },
+      {
+        "sentence": "Furthermore, the data suggests a strong correlation.",
+        "translation": "Moreover, the data suggests a strong correlation."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_07",
+    "language": "en",
+    "pattern": "Speech registers",
+    "title": "Speech registers: formal, neutral, colloquial",
+    "shortExplanation": "I would like to enquire... vs I'd like to ask... vs Can I ask...",
+    "longExplanation": "Register is determined by purpose, audience and context.\nFormal: passive, nominalization, complex conjunctions, full forms, verbs of Latin origin (commence, terminate, assist).\nNeutral: standard grammar, no slang, moderate abbreviations.\nInformal: ellipsis, phrasal verbs (put off = postpone), contractions, colloquial expressions.",
+    "formation": "I would like to enquire... vs I'd like to ask... vs Can I ask...",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "Formal: I wish to draw your attention to a discrepancy.",
+        "translation": ""
+      },
+      {
+        "sentence": "Neutral: I want to point out a mistake.",
+        "translation": ""
+      },
+      {
+        "sentence": "Informal: Just wanted to flag something up.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": "en_c2_08",
+    "language": "en",
+    "pattern": "Connotations of synonyms",
+    "title": "Connotations of synonyms - shades of meaning",
+    "shortExplanation": "thin/slim/slender/skinny/gaunt: positive→neutral→negative",
+    "longExplanation": "Synonyms differ in connotation (emotional coloring) and register.\nExamples of scales:\n• slim (+) → thin (0) → skinny (-) → scrawny/gaunt (--)\n• determined (+) → firm (0) → stubborn/pig-headed (-)\n• thrifty (+) → economical (0) → stingy/tight-fisted (-)\n• confident (+) → assertive (0) → arrogant (-)",
+    "formation": "thin/slim/slender/skinny/gaunt: positive→neutral→negative",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "She is slim. (+) / She is thin. (0) / She is skinny. (-)",
+        "translation": "Same thing, but different attitude."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_09",
+    "language": "en",
+    "pattern": "Rhetorical devices",
+    "title": "Rhetorical devices: anaphora, chiasmus, tricolon",
+    "shortExplanation": "\"We shall fight on the beaches, we shall fight on the landing grounds...\" - anaphora",
+    "longExplanation": "Anaphora: repetition of words at the beginning of successive sentences. \"I have a dream... I have a dream...\"\nChiasmus: AB-BA cross structure. \"Ask not what your country can do for you, but what you can do for your country.\"\nTricolon: three parallel elements. \"Veni, vidi, vici.\" / \"Government of the people, by the people, for the people.\"\nThese techniques are used in oratory, essays and journalism.",
+    "formation": "\"We shall fight on the beaches, we shall fight on the landing grounds...\" - anaphora",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "Friends, Romans, countrymen, lend me your ears. (триколон)",
+        "translation": ""
+      },
+      {
+        "sentence": "The more you learn, the more you earn. (хиазм в народной мудрости)",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": "en_c2_10",
+    "language": "en",
+    "pattern": "Precise collocations in academic text",
+    "title": "Precise collocations in academic text",
+    "shortExplanation": "conduct research, draw conclusions, reach a consensus, address an issue",
+    "longExplanation": "In C2 it is important to use the 'correct' verb with each noun.\nAcademic collocations:\n• conduct/carry out research (not make/do)\n• draw/reach a conclusion\n• raise/address/tackle an issue\n• reach/achieve a consensus\n• make significant progress\n• pose/present a challenge",
+    "formation": "conduct research, draw conclusions, reach a consensus, address an issue",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "Researchers conducted extensive interviews.",
+        "translation": "The researchers conducted extensive interviews."
+      },
+      {
+        "sentence": "The committee failed to reach a consensus.",
+        "translation": "The committee was unable to reach consensus."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_11",
+    "language": "en",
+    "pattern": "Absolute construction with participle",
+    "title": "Absolute construction with participle",
+    "shortExplanation": "Weather permitting, we'll have a picnic. Her eyes filled with tears, she left the room.",
+    "longExplanation": "Absolute construction = noun/pronoun + participle (independent subject).\nUsed in written and formal style - adds a circumstance without a conjunction.\nTypes:\n• Weather permitting = If the weather permits\n• All things considered = If you consider everything\n• Her work finished = When/After her work was finished\n• This done = When/After this was done",
+    "formation": "Weather permitting, we'll have a picnic. Her eyes filled with tears, she left the room.",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "All things considered, it was a successful event.",
+        "translation": "All things considered, it was a successful event."
+      },
+      {
+        "sentence": "The deadline having passed, the project was cancelled.",
+        "translation": "After the deadline passed, the project was cancelled."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_12",
+    "language": "en",
+    "pattern": "Ellipsis and substitution in connected text",
+    "title": "Ellipsis and substitution in connected text",
+    "shortExplanation": "I wanted to go but didn't (want to). She said she'd call and she did.",
+    "longExplanation": "Ellipsis is the omission of already known elements.\nSubstitution - using do/so/one/it instead of repeating.\nEllipse types:\n• A: Are you coming? B: Might (do).\n• She speaks French and he does too / so does he.\n• I wanted to leave, but wasn't allowed to. (leave omitted)\nSubstitution: I thought he'd pass. He did. / The big one? I prefer the small one",
+    "formation": "I wanted to go but didn't (want to). She said she'd call and she did.",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "Can you drive? — I used to (drive).",
+        "translation": "Can you drive? - I used to be able to."
+      },
+      {
+        "sentence": "She said she'd be here and she was.",
+        "translation": "She said she would come, and she came."
+      }
+    ]
+  }
+]

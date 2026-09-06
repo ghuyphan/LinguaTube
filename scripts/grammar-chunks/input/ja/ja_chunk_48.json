@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Verb_122",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb そうもない (〜sou mo nai)",
+    "shortExplanation": "Expresses negative potential; 'it doesn't seem like...', 'it's not likely...'.",
+    "longExplanation": "～そうもない is used to express a low possibility or unlikelihood of something happening. It is typically attached to the ます-stem of a verb, similar to そうにない but with an even stronger sense of improbability in many contexts.",
+    "formation": "Verb-ますstem + そうもない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "今日中に仕事を終えそうもない。",
+        "romanization": "Kyōjū ni shigoto o oesō mo nai.",
+        "translation": "It doesn't seem like I'll finish my work today."
+      },
+      {
+        "sentence": "雨が止みそうもない。",
+        "romanization": "Ame ga yamisō mo nai.",
+        "translation": "It doesn't seem like the rain will stop."
+      },
+      {
+        "sentence": "彼が約束を守りそうもない。",
+        "romanization": "Kare ga yakusoku o mamorisō mo nai.",
+        "translation": "It doesn't seem like he will keep his promise."
+      },
+      {
+        "sentence": "この難しい問題は解決しそうもない。",
+        "romanization": "Kono muzukashii mondai wa kaiketsu shisō mo nai.",
+        "translation": "It doesn't seem like this difficult problem will be solved."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_123",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb そばから (〜soba kara)",
+    "shortExplanation": "Expresses that as soon as one action finishes, another begins immediately.",
+    "longExplanation": "The 〜そばから grammar point is used to indicate that right after a certain action is completed, another action takes place—often suggesting a repetitive or frustrating cycle.",
+    "formation": "Verb-ますstem + そばから",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "掃除をするそばから子供たちが散らかす。",
+        "romanization": "Sōji o suru soba kara kodomo-tachi ga chirakasu.",
+        "translation": "As soon as I clean, the kids mess it up."
+      },
+      {
+        "sentence": "仕事を終えるそばから新たな仕事が舞い込んできた。",
+        "romanization": "Shigoto o oeru soba kara aratana shigoto ga maikonde kita.",
+        "translation": "As soon as I finished my work, a new task came in."
+      },
+      {
+        "sentence": "それを解決するそばからまた別の問題が出てきた。",
+        "romanization": "Sore o kaiketsu suru soba kara mata betsu no mondai ga detekita.",
+        "translation": "As soon as we solve that, another problem arises."
+      },
+      {
+        "sentence": "眠りにつくそばから電話が鳴った。",
+        "romanization": "Nemuri ni tsuku soba kara denwa ga natta.",
+        "translation": "The phone rang as soon as I fell asleep."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_124",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb たが最後 (〜ta ga saigo)",
+    "shortExplanation": "Emphasizes 'once something happens, there is no going back'; 'once', 'as soon as', etc.",
+    "longExplanation": "The 〜たが最後 grammar point indicates that once an action is taken or event occurs, some (often irreversible) consequence follows. In English, it can be translated as 'once', 'as soon as', or 'the moment that...'.",
+    "formation": "Verb-casual, past (た form) + が最後",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼が一度怒ったが最後、誰も彼を止めることはできません。",
+        "romanization": "Kare ga ichido okotta ga saigo, dare mo kare o tomeru koto wa dekimasen.",
+        "translation": "Once he gets angry, no one can stop him."
+      },
+      {
+        "sentence": "このゲームを始めたが最後、一晩中やり続けた。",
+        "romanization": "Kono gēmu o hajimeta ga saigo, hitobanjū yari tsuzuketa.",
+        "translation": "As soon as I started this game, I played it all night."
+      },
+      {
+        "sentence": "彼女が部屋を出たが最後、二度と戻ってこなかった。",
+        "romanization": "Kanojo ga heya o deta ga saigo, nido to modotte konakatta.",
+        "translation": "The moment she left the room, she never came back."
+      },
+      {
+        "sentence": "私がその橋を渡ったが最後、それが最後の別れだった。",
+        "romanization": "Watashi ga sono hashi o watatta ga saigo, sore ga saigo no wakare datta.",
+        "translation": "Once I crossed that bridge, it was our final goodbye."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_125",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb たことにしてください (~ ta koto ni shite kudasai)",
+    "shortExplanation": "Asking someone to pretend or accept that something has already happened or taken a certain state.",
+    "longExplanation": "The grammar point 'Verb たことにしてください' is used to request someone to act as if or pretend that a certain action has already occurred or a certain state exists. It is used in various contexts to express the idea of accepting a hypothetical situation for convenience or to avoid conflicts.",
+    "formation": "Verb (past, casual) + ことにしてください",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "昨日のことは忘れたことにしてください。",
+        "romanization": "Kinou no koto wa wasureta koto ni shite kudasai.",
+        "translation": "Please act as if you have forgotten about yesterday."
+      },
+      {
+        "sentence": "私がここに来たことを誰にも言わないで、秘密にしたことにしてください。",
+        "romanization": "Watashi ga koko ni kita koto o dare ni mo iwanaide, himitsu ni shita koto ni shite kudasai.",
+        "translation": "Please don't tell anyone that I came here; act as if it’s a secret."
+      },
+      {
+        "sentence": "彼が間違えたと思ったことにしてください。",
+        "romanization": "Kare ga machigaeta to omotta koto ni shite kudasai.",
+        "translation": "Please pretend that you think he made a mistake."
+      },
+      {
+        "sentence": "彼女が帰ったことにしてください。",
+        "romanization": "Kanojo ga kaetta koto ni shite kudasai.",
+        "translation": "Let’s pretend that she has gone home."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_126",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb たら Verb たで (~ tara ~ tade)",
+    "shortExplanation": "Conveys that if something happens (or doesn’t happen), there is a particular consequence or situation either way.",
+    "longExplanation": "The pattern VerbたらVerbたで is used for scenarios where doing something creates a certain issue or reaction, and not doing it also creates a different concern. It often shows that no matter which side of the condition you end up on, there’s some related result or trouble.",
+    "formation": "Verb-た form + ら + (same Verb-た form) + で",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "行ったら行ったで大変だし、行かなかったら行かなかったで後悔しそうだ。",
+        "romanization": "Ittara itta de taihen da shi, ikanakattara ikanakatta de kōkai shisō da.",
+        "translation": "If I go, it’s a hassle; if I don’t go, I’ll regret it."
+      },
+      {
+        "sentence": "買ったら買ったでお金がなくなるし、買わなかったら買わなかったで後で欲しくなる。",
+        "romanization": "Kattara katta de okane ga naku naru shi, kawanakattara kawanakatta de ato de hoshiku naru.",
+        "translation": "If I buy it, I’ll run out of money; if I don’t buy it, I’ll want it later."
+      },
+      {
+        "sentence": "作ったら作ったで食べきれないし、作らなかったら作らなかったでお腹が空く。",
+        "romanization": "Tsukuttara tsukutta de tabekirenai shi, tsukuranakattara tsukuranakatta de onaka ga suku.",
+        "translation": "If I cook, I can’t finish it all; if I don’t, I’ll be hungry."
+      },
+      {
+        "sentence": "旅行に出かけたら出かけたで疲れるし、家にいたらいたで退屈する。",
+        "romanization": "Ryokō ni dekaketara dekaketa de tsukareru shi, ie ni itara itada de taikutsu suru.",
+        "translation": "If I go on a trip, I'll get tired, but if I stay home, I'll be bored."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_127",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb たら きりがない (Verb tara kiri ga nai)",
+    "shortExplanation": "Indicates an endless or unending cycle once an action is started; 'if one starts doing something, it will not stop.'",
+    "longExplanation": "The たらきりがない grammar pattern is used when something negative or undesirable continues indefinitely once it begins. The implication is that you should avoid initiating the action because it’ll just go on and on.",
+    "formation": "Verb-た form + ら + きりがない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "このエンジンを修理したら、またすぐ壊れて、直したらきりがない。",
+        "romanization": "Kono enjin o shuuri shitara, mata sugu kowarete, naoshitara kiri ga nai.",
+        "translation": "If I fix this engine, it breaks again, and if I fix it again, it never ends."
+      },
+      {
+        "sentence": "飲み始めたらきりがない。",
+        "romanization": "Nomihajimetara kiri ga nai.",
+        "translation": "Once I start drinking, I never stop."
+      },
+      {
+        "sentence": "彼女にお金を貸したら、きりがない。",
+        "romanization": "Kanojo ni okane o kashitara, kiri ga nai.",
+        "translation": "If I lend her money, there will be no end to it."
+      },
+      {
+        "sentence": "彼の話を聞き始めたらきりがない。",
+        "romanization": "Kare no hanashi o kikihajimetara kiri ga nai.",
+        "translation": "Once you start listening to his stories, it never ends."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_128",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb たら最後 (〜tara saigo)",
+    "shortExplanation": "Expresses that once a certain action happens, the situation changes irreversibly—usually in a negative way.",
+    "longExplanation": "The たら最後 grammar point indicates that once an action (in た-form) occurs, there is no going back and an unpleasant or unavoidable state follows. Often translated as 'once...then it's all over' or 'the moment...there’s no turning back.'",
+    "formation": "Verb-た form + ら最後",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "このゲームを始めたら最後、時間の経つのを忘れてしまいます。",
+        "romanization": "Kono gēmu o hajimetara saigo, jikan no tatsu no o wasurete shimaimasu.",
+        "translation": "Once you start this game, you completely lose track of time."
+      },
+      {
+        "sentence": "彼はビールを一杯飲み始めたら最後、止まらなくなります。",
+        "romanization": "Kare wa bīru o ippai nomihajimetara saigo, tomaranaku narimasu.",
+        "translation": "Once he starts drinking a beer, he can't stop."
+      },
+      {
+        "sentence": "この本を読み始めたら最後、一気に読破してしまいました。",
+        "romanization": "Kono hon o yomihajimetara saigo, ikki ni dokuha shite shimaimashita.",
+        "translation": "Once I started reading this book, I ended up finishing it in one go."
+      },
+      {
+        "sentence": "彼を怒らせたら最後、なかなか許してもらえないよ。",
+        "romanization": "Kare o okorasetara saigo, nakanaka yurushite moraenai yo.",
+        "translation": "Once you make him angry, he won't forgive you so easily."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_129",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb つ Verb つ (Verb tsu Verb tsu)",
+    "shortExplanation": "Expresses two alternating actions happening repeatedly.",
+    "longExplanation": "The 〜つ〜つ pattern is used with two verb ます-stems to express two ongoing, repeated or alternating actions. For example, 'push and pull,' 'go and come back,' 'eat and play,' etc. The same subject is typically implied for both verbs.",
+    "formation": "Verb-ますstem + つ + Verb-ますstem + つ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "朝から晩まで働きつ勉強しつで、疲れてしまった。",
+        "romanization": "Asa kara ban made hataraki tsu benkyō shi tsu de, tsukarete shimatta.",
+        "translation": "I’ve been working and studying from morning till night, and now I’m exhausted."
+      },
+      {
+        "sentence": "彼は話しつ笑いつして楽しんでいた。",
+        "romanization": "Kare wa hanashi tsu warai tsu shite tanoshinde ita.",
+        "translation": "He was talking and laughing, having a good time."
+      },
+      {
+        "sentence": "子供たちは食べつ遊びつしていた。",
+        "romanization": "Kodomo-tachi wa tabe tsu asobi tsu shite ita.",
+        "translation": "The children were eating and playing."
+      },
+      {
+        "sentence": "私は読みつ書きつして過ごした。",
+        "romanization": "Watashi wa yomi tsu kaki tsu shite sugoshita.",
+        "translation": "I spent my time reading and writing."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_130",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てからというもの (Verb te kara to iu mono)",
+    "shortExplanation": "Expresses that ever since a certain event happened, a condition has continued until now.",
+    "longExplanation": "The てからというもの grammar point indicates that from the time a certain action happened, a significant change or condition has persisted continuously. It emphasizes that the new situation contrasts with what came before.",
+    "formation": "Verb-て form + からというもの",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女と別れてからというもの、一人で過ごす時間が増えました。",
+        "romanization": "Kanojo to wakarete kara to iu mono, hitori de sugosu jikan ga fuemashita.",
+        "translation": "Ever since I broke up with her, I've spent more time alone."
+      },
+      {
+        "sentence": "子供が生まれてからというもの、自由な時間がなくなった。",
+        "romanization": "Kodomo ga umarete kara to iu mono, jiyū na jikan ga nakunatta.",
+        "translation": "Since the baby was born, I have had no free time."
+      },
+      {
+        "sentence": "新しい仕事を始めてからというもの、毎日忙しくなりました。",
+        "romanization": "Atarashii shigoto o hajimete kara to iu mono, mainichi isogashiku narimashita.",
+        "translation": "Ever since I started my new job, I've been busy every day."
+      },
+      {
+        "sentence": "大学に入ってからというもの、スポーツをする時間がなくなった。",
+        "romanization": "Daigaku ni haitte kara to iu mono, supōtsu o suru jikan ga nakunatta.",
+        "translation": "I haven’t had time to play sports since I entered university."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_131",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てこそ (Verb te koso)",
+    "shortExplanation": "Emphasizes 'only by doing something, a certain result or realization can occur.'",
+    "longExplanation": "The ～てこそ grammar point is used to highlight that only by performing the verb in て-form can a certain important outcome be achieved or recognized. It often translates as 'only by (doing)' or 'only when (doing).'",
+    "formation": "Verb-て form + こそ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "実際に使ってこそ、その価値を理解できる。",
+        "romanization": "Jissai ni tsukatte koso, sono kachi o rikai dekiru.",
+        "translation": "You can only understand its value by actually using it."
+      },
+      {
+        "sentence": "自分で経験してこそ、大切なことが学べる。",
+        "romanization": "Jibun de keiken shite koso, taisetsu na koto ga manaberu.",
+        "translation": "Only by experiencing it yourself can you learn what’s truly important."
+      },
+      {
+        "sentence": "失敗してこそ、成功の味がわかる。",
+        "romanization": "Shippai shite koso, seikō no aji ga wakaru.",
+        "translation": "Only by failing do you really understand the taste of success."
+      },
+      {
+        "sentence": "努力してこそ、何かを成し遂げることができる。",
+        "romanization": "Doryoku shite koso, nanika o nashitogeru koto ga dekiru.",
+        "translation": "Only through making an effort can you accomplish anything."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_132",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ては (～te wa)",
+    "shortExplanation": "Expresses a repeated pattern or cycle, often implying a frustrating outcome; 'whenever X happens, Y happens again.'",
+    "longExplanation": "The grammar ～ては is used to show that whenever one action or situation occurs, another action or situation repeatedly follows. It can also be used in an alternating pattern: 'do this, then that, then this, then that.'",
+    "formation": "Verb-て form + は",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女に会っては、いつも緊張してしまいます。",
+        "romanization": "Kanojo ni atte wa, itsumo kinchō shite shimaimasu.",
+        "translation": "Whenever I meet her, I get nervous."
+      },
+      {
+        "sentence": "この部屋を掃除しては乱雑になり、片づけては散らかる。",
+        "romanization": "Kono heya o sōji shite wa konzatsu ni nari, katadzukete wa chirakaru.",
+        "translation": "Whenever I clean this room, it gets messy again, and whenever I tidy it, it gets cluttered again."
+      },
+      {
+        "sentence": "運動しては食べ、食べては運動する生活が続いている。",
+        "romanization": "Undō shite wa tabe, tabete wa undō suru seikatsu ga tsudzuite iru.",
+        "translation": "I keep exercising and then eating, and then eating and exercising."
+      },
+      {
+        "sentence": "勉強しては寝て、寝ては勉強する日々です。",
+        "romanization": "Benkyō shite wa nete, nete wa benkyō suru hibi desu.",
+        "translation": "My days are spent studying and then sleeping, and then sleeping and studying."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_133",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ては Verb (~ te wa ~)",
+    "shortExplanation": "Expresses a repeated pattern of action; translates as 'every time', 'whenever', etc.",
+    "longExplanation": "This grammar point is used when you want to express a repeated or cyclical pattern of actions or events. It can be translated as 'every time', 'whenever', or 'if at all'. The typical formation is a verb in the て-form, followed by は, and then another verb (often in the same tense or a continuing action).",
+    "formation": "Verb-て form + は + Verb",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "私が通勤しては、電子書籍を読んでいます。",
+        "romanization": "Watashi ga tsūkin shite wa, denshi shoseki o yonde imasu.",
+        "translation": "Whenever I commute, I read e-books."
+      },
+      {
+        "sentence": "友達が部屋に来ては、ゲームをしています。",
+        "romanization": "Tomodachi ga heya ni kite wa, gēmu o shite imasu.",
+        "translation": "Every time my friend comes to my room, we play games."
+      },
+      {
+        "sentence": "彼が酒を飲んでは、運転を止めさせています。",
+        "romanization": "Kare ga sake o nonde wa, unten o tome sasete imasu.",
+        "translation": "Whenever he drinks alcohol, I make him stop driving."
+      },
+      {
+        "sentence": "私が新しい曲を作っては、すぐに録音します。",
+        "romanization": "Watashi ga atarashii kyoku o tsukutte wa, sugu ni rokuon shimasu.",
+        "translation": "Every time I create a new song, I record it immediately."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_134",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てまでも (~ temademo)",
+    "shortExplanation": "Expresses 'even if it means doing...', 'no matter what it takes'.",
+    "longExplanation": "This grammar point is used when the speaker wants to emphasize the lengths they would go to in order to achieve something. It attaches to the verb's て-form to mean 'even if it means doing X', 'even at the cost of X', or 'no matter what it takes'.",
+    "formation": "Verb-て form + までも",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "試験に合格するために、寝る時間を削ってまでも勉強します。",
+        "romanization": "Shiken ni gōkaku suru tame ni, neru jikan o kezutte mademo benkyō shimasu.",
+        "translation": "I will study to pass the exam, even if it means cutting down on sleep."
+      },
+      {
+        "sentence": "彼女と結婚できるなら、どんな苦労をしてまでもお金を貯めたい。",
+        "romanization": "Kanojo to kekkon dekiru nara, donna kurō o shite mademo okane o tametai.",
+        "translation": "If I can marry her, I'll save money no matter what hardships it takes."
+      },
+      {
+        "sentence": "この会社で働きたいので、長時間かけてまでも通います。",
+        "romanization": "Kono kaisha de hatarakitai node, chōjikan kakete mademo kayoimasu.",
+        "translation": "Because I want to work at this company, I'll commute even if it means spending hours traveling."
+      },
+      {
+        "sentence": "彼の快復のためなら、何をしてまでも支えたい。",
+        "romanization": "Kare no kaifuku no tame nara, nani o shite mademo sasaetai.",
+        "translation": "For his recovery, I'll support him no matter what it takes."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_135",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てみせる (Verb te miseru)",
+    "shortExplanation": "'Show by doing', 'demonstrate', 'prove by action'.",
+    "longExplanation": "The ～てみせる grammar point is used to express the action of demonstrating or proving something by actually doing it. It can be translated as 'show by doing', 'demonstrate', or 'prove by action' in English.",
+    "formation": "Verb-て form + みせる",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼はそのパズルを解いてみせた。",
+        "romanization": "Kare wa sono pazuru o toite miseta.",
+        "translation": "He solved the puzzle to show me."
+      },
+      {
+        "sentence": "私はこの仕事ができることをやってみせます。",
+        "romanization": "Watashi wa kono shigoto ga dekiru koto o yatte misemasu.",
+        "translation": "I will do this job to prove that I can."
+      },
+      {
+        "sentence": "彼女は試験に合格するために一生懸命勉強してみせました。",
+        "romanization": "Kanojo wa shiken ni gōkaku suru tame ni isshōkenmei benkyō shite misemashita.",
+        "translation": "She studied hard to prove she could pass the exam."
+      },
+      {
+        "sentence": "彼は自分が何も恐れていないと跳んでみせた。",
+        "romanization": "Kare wa jibun ga nanimo osorete inai to tonde miseta.",
+        "translation": "He jumped to show he wasn’t afraid of anything."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_136",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てやまない (Verb te yamanai)",
+    "shortExplanation": "Used with certain emotional/mental verbs to show a strong, unceasing emotion: 'can't stop', 'never cease to'.",
+    "longExplanation": "The grammar ～てやまない is typically used with verbs like 願う, 祈る, 愛する, 尊敬する, 期待する, etc., expressing a deep, continuous emotional state (love, respect, hope, prayer). It emphasizes that the feeling 'never ceases.'",
+    "formation": "Verb-て form + やまない (common with certain verbs)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "私は母を思ってやまない。",
+        "romanization": "Watashi wa haha o omotte yamanai.",
+        "translation": "I can't stop thinking of my mother."
+      },
+      {
+        "sentence": "彼は彼女を愛してやまない。",
+        "romanization": "Kare wa kanojo o aishite yamanai.",
+        "translation": "He loves her beyond measure."
+      },
+      {
+        "sentence": "彼は日本の文化を尊敬してやまない。",
+        "romanization": "Kare wa Nihon no bunka o sonkei shite yamanai.",
+        "translation": "He has unceasing respect for Japanese culture."
+      },
+      {
+        "sentence": "彼女の成功を願ってやまない。",
+        "romanization": "Kanojo no seikō o negatte yamanai.",
+        "translation": "I can’t stop hoping for her success."
+      }
+    ]
+  }
+]

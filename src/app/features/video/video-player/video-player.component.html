@@ -7,8 +7,8 @@
       <input type="text" [(ngModel)]="videoUrl" (ngModelChange)="error.set(null)" [placeholder]="i18n.t('player.pasteUrl')" class="spotlight-input"
         (keyup.enter)="loadVideo()" spellcheck="false" autocomplete="off" />
       @if (videoUrl) {
-      <button type="button" class="spotlight-clear-btn" (click)="clearUrl()" aria-label="Clear input">
-        <app-icon name="x" [size]="14" />
+      <button type="button" class="spotlight-clear-btn" (click)="clearUrl()" [attr.aria-label]="i18n.t('common.clear') || 'Clear input'">
+        <app-icon name="x" [size]="16" />
       </button>
       } @else {
       <button type="button" class="spotlight-paste-btn" (click)="pasteFromClipboard()" [title]="i18n.t('player.pasteFromClipboard') || 'Paste from clipboard (⌘V)'">
@@ -135,6 +135,7 @@
       (wordClicked)="onFullscreenComponentWordClick($event)"
       (grammarClicked)="onFsGrammarClick($event.index, $event.event)"
       (positionChanged)="onSubtitlePositionChanged($event)"
+      (positionCommitted)="onSubtitlePositionCommitted($event)"
       (togglePosition)="toggleFullscreenSubtitlePosition()" />
     }
 
@@ -325,6 +326,25 @@
             </div>
           </button>
 
+          <!-- Dual Subtitles -->
+          @if (isCJKLanguage()) {
+          <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('dualSub')">
+            <div class="menu-item-left">
+              <app-icon name="languages" [size]="18" />
+              <span class="menu-item-label">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</span>
+            </div>
+            <div class="menu-item-right">
+              @if (settings.settings().showDualSubtitles) {
+                <img [src]="getTargetLangFlagUrl(settings.settings().dualSubtitleTargetLang || 'en')" class="menu-item-flag" alt="" />
+                <span class="menu-item-value">{{ getTargetLangName(settings.settings().dualSubtitleTargetLang || 'en') }}</span>
+              } @else {
+                <span class="menu-item-value">{{ i18n.t('player.off') || 'Off' }}</span>
+              }
+              <app-icon name="chevron-right" [size]="16" />
+            </div>
+          </button>
+          }
+
           <!-- Add to Playlist -->
           <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); onSaveClick()">
             <div class="menu-item-left">
@@ -352,7 +372,7 @@
 
         @if (playerSettingsView() === 'speed') {
         <div class="sheet-section-header with-back">
-          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" aria-label="Back">
+          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
             <app-icon name="chevron-left" [size]="18" />
           </button>
           <h3 class="sheet-title">{{ i18n.t('player.playbackSpeed') || 'Playback speed' }}</h3>
@@ -372,7 +392,7 @@
 
         @if (playerSettingsView() === 'fontSize') {
         <div class="sheet-section-header with-back">
-          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" aria-label="Back">
+          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
             <app-icon name="chevron-left" [size]="18" />
           </button>
           <h3 class="sheet-title">{{ i18n.t('subtitle.fontSize') || 'Subtitle size' }}</h3>
@@ -383,6 +403,42 @@
             (click)="setFontSizeFromSheet(size)">
             <span class="option-label">{{ getFontSizeName(size) }}</span>
             @if (settings.settings().fontSize === size) {
+            <app-icon name="check" [size]="16" class="option-check" />
+            }
+          </button>
+          }
+        </div>
+        }
+
+        @if (playerSettingsView() === 'dualSub') {
+        <div class="sheet-section-header with-back">
+          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
+            <app-icon name="chevron-left" [size]="18" />
+          </button>
+          <h3 class="sheet-title">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</h3>
+        </div>
+        <div class="settings-options-list">
+          <!-- Off Option -->
+          <button type="button" class="settings-option-row" [class.active]="!settings.settings().showDualSubtitles"
+            (click)="selectDualSubLang(null)">
+            <span class="option-label">{{ i18n.t('player.off') || 'Off' }}</span>
+            @if (!settings.settings().showDualSubtitles) {
+            <app-icon name="check" [size]="16" class="option-check" />
+            }
+          </button>
+
+          <div class="sheet-divider"></div>
+
+          <!-- Supported Languages with circle flags -->
+          @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
+          <button type="button" class="settings-option-row" 
+            [class.active]="settings.settings().showDualSubtitles && (settings.settings().dualSubtitleTargetLang || 'en') === lang.code"
+            (click)="selectDualSubLang(lang.code)">
+            <div class="option-with-icon">
+              <img [src]="lang.flagUrl" class="option-flag" alt="" />
+              <span class="option-label">{{ lang.name }}</span>
+            </div>
+            @if (settings.settings().showDualSubtitles && (settings.settings().dualSubtitleTargetLang || 'en') === lang.code) {
             <app-icon name="check" [size]="16" class="option-check" />
             }
           </button>
@@ -420,11 +476,13 @@
         [duration]="formattedDuration()" [volume]="volume()" [isMuted]="youtube.isMuted()"
         [volumePercent]="volumePercent()" [isFullscreen]="isFullscreen()" [subtitlesVisible]="subtitles.subtitlesVisible()"
         [currentSpeed]="currentSpeed()" [isVolumeSliderVisible]="isVolumeSliderVisible()"
-        [showDualSubtitles]="settings.settings().showDualSubtitles" [isCJKLanguage]="isCJKLanguage()"
+        [showDualSubtitles]="settings.settings().showDualSubtitles" 
+        [isCJKLanguage]="isCJKLanguage()"
         [t]="i18n.t.bind(i18n)"
         (playPauseClicked)="onPlayPauseButtonClick($event)"
         (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSubtitles)="toggleSubtitles()"
         (toggleDualSubs)="toggleDualSubtitles()"
+        (openDualSubMenu)="openDualSubMenu($event)"
         (speedClick)="openSpeedMenu($event)" (openSettings)="openPlayerSettings($event)"
         (toggleFullscreen)="toggleFullscreen()" (showVolumeSlider)="showVolumeSlider()"
         (hideVolumeSlider)="hideVolumeSlider()" />

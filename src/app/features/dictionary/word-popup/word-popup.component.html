@@ -21,19 +21,19 @@
             <!-- Language Target Selector + Translate All -->
             <div class="translation-controls">
                 <button class="lang-select-btn" (click)="langPickerOpen.set(true)">
-                    <span class="lang-flag">{{ getSelectedLangFlag() }}</span>
+                    <img [src]="getSelectedLangFlagUrl()" class="lang-flag-img" alt="" />
                     <app-icon name="chevron-down" [size]="12" />
                 </button>
 
                 @if (entry()?.meanings && entry()!.meanings.length > 1) {
                 <button class="translate-all-btn" (click)="translateAll()" [disabled]="isTranslatingAll()"
-                    title="Translate all definitions">
+                    [title]="i18n.t('popup.translateAll') || 'Translate all definitions'">
                     @if (isTranslatingAll()) {
                     <app-icon name="loader" [size]="12" />
                     } @else {
                     <app-icon name="languages" [size]="12" />
                     }
-                    <span>All</span>
+                    <span>{{ i18n.t('popup.all') || 'All' }}</span>
                 </button>
                 }
             </div>
@@ -101,7 +101,7 @@
                         <!-- Translated Text -->
                         @if (getTranslation($index); as translatedText) {
                         <div class="translation-result">
-                            <span class="translation-flag">{{ getFlag(getTranslationLang($index)) }}</span>
+                            <img [src]="getFlagUrl(getTranslationLang($index))" class="translation-flag-img" alt="" />
                             <span>{{ translatedText }}</span>
                         </div>
                         }
@@ -110,8 +110,8 @@
                         @if (hasTranslationError($index)) {
                         <div class="translation-error">
                             <app-icon name="alert-circle" [size]="12" />
-                            <span>Failed</span>
-                            <button (click)="translateDefinition($index, meaning.definition)">Retry</button>
+                            <span>{{ i18n.t('popup.failed') || 'Failed' }}</span>
+                            <button (click)="translateDefinition($index, meaning.definition)">{{ i18n.t('popup.retry') || i18n.t('common.retry') || 'Retry' }}</button>
                         </div>
                         }
 

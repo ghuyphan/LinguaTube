@@ -1,0 +1,1186 @@
+{
+  "vi": {
+    "ja_かどうか_74": {
+      "title": "～かどうか (〜ka dou ka)",
+      "shortExplanation": "Dùng trong câu hỏi gián tiếp để diễn tả sự phân vân liệu sự việc có xảy ra hay không; 'có... hay không', 'liệu... hay không'.",
+      "longExplanation": "Mẫu ngữ pháp ～かどうか được dùng trong các câu hỏi gián tiếp hoặc mệnh đề phụ để diễn đạt sự không chắc chắn về một sự việc nào đó, tương đương với 'có... hay không' hoặc 'liệu... hay không' trong tiếng Việt. Mẫu câu này thường đi kèm với các động từ như 知りません (không biết), 分かりません (không rõ), 教えてください (xin hãy chỉ cho tôi), 覚えていません (không nhớ). Khi kết hợp với danh từ hoặc tính từ đuôi な, trợ động từ 'だ' thường được lược bỏ trong văn phong chuẩn, nhưng trong khẩu ngữ đôi khi vẫn được giữ lại.",
+      "formation": "Động từ thể thông thường + かどうか / Tính từ đuôi い + かどうか / Tính từ đuôi な (bỏ だ) + かどうか / Danh từ + かどうか",
+      "examples": [
+        {
+          "translation": "Tôi không biết liệu anh ấy có đến hay không."
+        },
+        {
+          "translation": "Xin hãy cho tôi biết cuốn sách này có thú vị hay không."
+        },
+        {
+          "translation": "Tôi không biết liệu cô ấy có xinh đẹp hay không."
+        },
+        {
+          "translation": "Tôi không nhớ anh ấy có phải là giáo viên hay không."
+        }
+      ]
+    },
+    "ja_かなあ_75": {
+      "title": "～かなあ (〜kanaa)",
+      "shortExplanation": "Biểu thị sự băn khoăn, tự hỏi bản thân hoặc hy vọng nhẹ nhàng trong lời độc thoại; 'liệu... không nhỉ', 'không biết là... nhỉ'.",
+      "longExplanation": "Mẫu ngữ pháp ～かなあ là trợ từ kết thúc câu dùng trong văn nói thân mật hoặc khi độc thoại (tự nói với chính mình) để bày tỏ sự phân vân, nghi hoặc hoặc tự hỏi về một sự việc, hiện tượng nào đó. Nó cũng có thể thể hiện một ước muốn hay nguyện vọng nhẹ nhàng. Khi đi với danh từ hoặc tính từ đuôi な, 'だ' thường được lược bỏ hoặc chuyển thành 'なのかなあ'. Lưu ý không dùng mẫu câu này để đặt câu hỏi trực tiếp cho người bề trên vì thiếu lịch sự.",
+      "formation": "Động từ thể thông thường + かなあ / Tính từ đuôi い + かなあ / Tính từ đuôi な (bỏ だ hoặc + なの) + かなあ / Danh từ (+ なの) + かなあ",
+      "examples": [
+        {
+          "translation": "Không biết ngày mai trời có mưa không nhỉ."
+        },
+        {
+          "translation": "Cái bánh này không biết có ngon không nhỉ."
+        },
+        {
+          "translation": "Không biết có phải anh ấy bị ốm rồi không nhỉ."
+        },
+        {
+          "translation": "Cô ấy có phải là học sinh không nhỉ."
+        }
+      ]
+    },
+    "ja_かもしれない_76": {
+      "title": "～かもしれない (〜kamoshirenai)",
+      "shortExplanation": "Diễn tả khả năng, phỏng đoán không chắc chắn về một sự việc; 'có lẽ', 'có thể', 'không chừng'.",
+      "longExplanation": "Mẫu ngữ pháp ～かもしれない diễn tả sự phỏng đoán của người nói về khả năng xảy ra của một sự việc với độ chắc chắn không cao (khoảng 50% hoặc thấp hơn), mang nghĩa 'có lẽ', 'có thể', 'không chừng'. Dạng lịch sự của cấu trúc này là ～かもしれません, còn trong khẩu ngữ thân mật thường được rút gọn thành ～かも. Khi kết hợp với danh từ hoặc tính từ đuôi な, trợ động từ 'だ' thường được lược bỏ trong văn nói tự nhiên.",
+      "formation": "Động từ thể thông thường + かもしれない / Tính từ đuôi い + かもしれない / Tính từ đuôi な (bỏ だ) + かもしれない / Danh từ + かもしれない",
+      "examples": [
+        {
+          "translation": "Ngày mai có thể trời sẽ mưa."
+        },
+        {
+          "translation": "Chiếc bánh này có thể sẽ ngon đấy."
+        },
+        {
+          "translation": "Có lẽ anh ấy bị ốm rồi."
+        },
+        {
+          "translation": "Cô ấy có lẽ là học sinh."
+        }
+      ]
+    },
+    "ja_から_77": {
+      "title": "～から (〜kara)",
+      "shortExplanation": "Diễn tả lý do, nguyên nhân mang tính chủ quan của người nói; 'vì...', 'bởi vì...'.",
+      "longExplanation": "Trợ từ liên kết ～から được dùng để nêu lý do, nguyên nhân dẫn đến kết quả, phán đoán hoặc đề xuất ở mệnh đề phía sau. Khác với ～ので (mang tính khách quan, lịch sự), ～から thường mang tính chủ quan, thể hiện rõ ý chí, quan điểm, đề xuất hoặc mệnh lệnh của người nói. Khi kết hợp với danh từ và tính từ đuôi な ở thể thông thường, bắt buộc phải dùng 'だから'.",
+      "formation": "Động từ thể thông thường + から / Tính từ đuôi い + から / Tính từ đuôi な + だから / Danh từ + だから",
+      "examples": [
+        {
+          "translation": "Vì trời mưa nên bạn hãy mang theo ô nhé."
+        },
+        {
+          "translation": "Vì chiếc bánh này rất ngon nên chắc là mọi người sẽ ăn hết thôi."
+        },
+        {
+          "translation": "Vì bị ốm nên anh ấy nghỉ học."
+        },
+        {
+          "translation": "Vì hôm nay là Chủ nhật nên không có buổi học ở trường."
+        }
+      ]
+    },
+    "ja_けれど_78": {
+      "title": "～けれど (〜keredo)",
+      "shortExplanation": "Nối hai mệnh đề biểu thị quan hệ tương phản nhẹ hoặc mở đầu câu chuyển ý; 'tuy... nhưng...', 'nhưng mà...'.",
+      "longExplanation": "Liên từ liên kết ～けれど được dùng để nối hai vế câu có ý nghĩa đối lập, tương phản nhau hoặc dùng làm tiền đề chuyển ý, mở đầu câu chuyện một cách nhẹ nhàng. Đây là cách nói tương đối thân mật, trong văn phong trang trọng hơn người ta sử dụng ～けれども, ～けれど hoặc trợ từ ～が. Khi đi với danh từ hoặc tính từ đuôi な ở thể thông thường, thường dùng dạng '～だけれど'.",
+      "formation": "Động từ thể thông thường + けれど / Tính từ đuôi い + けれど / Tính từ đuôi な + だけれど / Danh từ + だけれど",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi bận nhưng ngày mai tôi sẽ có nhiều thời gian hơn."
+        },
+        {
+          "translation": "Nhà hàng này đắt nhưng đồ ăn lại rất ngon."
+        },
+        {
+          "translation": "Cậu ấy tuy còn trẻ nhưng lại rất giàu kinh nghiệm."
+        },
+        {
+          "translation": "Cô ấy đang bị ốm nhưng vẫn rất tươi vui và hoạt bát."
+        }
+      ]
+    },
+    "ja_させてください_79": {
+      "title": "～させてください (〜sasete kudasai)",
+      "shortExplanation": "Dùng để thỉnh cầu, xin phép đối phương cho phép mình thực hiện một hành động; 'xin hãy cho phép tôi...'.",
+      "longExplanation": "Cấu trúc ～させてください kết hợp thể sai khiến của động từ với ください, tạo thành một lời thỉnh cầu lịch sự xin phép người nghe cho phép người nói làm một hành động nào đó. Cấu trúc tương đương mang tính trang trọng, cung kính hơn trong môi trường thương mại là ～させていただきます hoặc ～させていただけますでしょうか.",
+      "formation": "Động từ thể sai khiến dạng て (〜させて) + ください",
+      "examples": [
+        {
+          "translation": "Xin hãy để tôi suy nghĩ thêm một chút nữa."
+        },
+        {
+          "translation": "Xin hãy cho phép tôi chụp ảnh."
+        },
+        {
+          "translation": "Xin hãy cho tôi luyện tập thêm một chút nữa."
+        },
+        {
+          "translation": "Xin hãy cho phép tôi đợi ở đây."
+        }
+      ]
+    },
+    "ja_しし_80": {
+      "title": "～し、～し、～ (〜shi, 〜shi, 〜)",
+      "shortExplanation": "Dùng để liệt kê nhiều nguyên nhân, lý do hoặc đặc điểm song song; 'vừa... lại vừa...', 'đã... lại còn...'.",
+      "longExplanation": "Trợ từ liên kết ～し dùng để liệt kê từ hai lý do, nguyên nhân trở lên nhằm củng cố cho phán đoán, kết luận ở vế sau, hoặc dùng để liệt kê nhiều đặc tính, trạng thái cùng chiều của một sự vật, hiện tượng. Mẫu câu này mang hàm ý rằng không chỉ có một lý do duy nhất mà còn nhiều yếu tố khác nữa. Khi đi với danh từ và tính từ đuôi な ở thể thông thường, dùng dạng '～だし'.",
+      "formation": "Động từ thể thông thường + し / Tính từ đuôi い + し / Tính từ đuôi な + だし / Danh từ + だし",
+      "examples": [
+        {
+          "translation": "Cậu ấy vừa trẻ, vừa tràn đầy năng lượng lại thân thiện, nên tôi nghĩ cậu ấy sẽ hòa đồng với mọi người."
+        },
+        {
+          "translation": "Nhà hàng này món ăn ngon, không gian đẹp, giá cả lại phải chăng nên tôi rất khuyên bạn nên đến."
+        },
+        {
+          "translation": "Cô ấy học giỏi, chơi thể thao cũng cừ, tính cách lại tốt nữa."
+        },
+        {
+          "translation": "Hôm nay trời vừa lạnh lại vừa mưa, tốt hơn hết là nên ở nhà nghỉ ngơi thong thả."
+        }
+      ]
+    },
+    "ja_すぎる_81": {
+      "title": "～すぎる (〜sugiru)",
+      "shortExplanation": "Diễn tả hành động, trạng thái vượt quá mức độ bình thường hoặc giới hạn thích hợp; 'quá...'.",
+      "longExplanation": "Động từ phức ～すぎる đi sau thân động từ hoặc tính từ để biểu thị sự thái quá, vượt quá giới hạn thông thường hoặc mong muốn, thường mang hàm ý tiêu cực hoặc bất tiện do mức độ quá cao gây ra. Về mặt ngữ pháp, nó biến đổi như một động từ nhóm hai. Trong văn nói hiện đại của giới trẻ, nó đôi khi cũng được dùng để nhấn mạnh sự cực độ mang nghĩa tích cực.",
+      "formation": "Động từ thể ます (bỏ ます) + すぎる / Tính từ đuôi い (bỏ い) + すぎる / Tính từ đuôi な (bỏ な) + すぎる",
+      "examples": [
+        {
+          "translation": "Căn phòng này nóng quá."
+        },
+        {
+          "translation": "Anh ấy đã đến quá sớm."
+        },
+        {
+          "translation": "Chiếc hộp này nặng quá nên tôi không thể nhấc lên được."
+        },
+        {
+          "translation": "Cô ấy bận rộn nên không thể chơi bời quá đà được."
+        }
+      ]
+    },
+    "ja_ずつ_82": {
+      "title": "～ずつ (〜zutsu)",
+      "shortExplanation": "Biểu thị sự phân chia đồng đều theo từng lượng nhất định hoặc diễn tiến từng chút một; 'từng...', 'mỗi lần...'.",
+      "longExplanation": "Hậu tố trợ từ ～ずつ đi sau từ chỉ số lượng hoặc danh từ định lượng để biểu thị sự phân chia đều đặn (mỗi người/mỗi bên một lượng bằng nhau), hoặc diễn tả quá trình tiến hành từng bước một, từng lượng nhỏ một cách đều đặn theo thời gian.",
+      "formation": "Từ chỉ số lượng / Danh từ + ずつ",
+      "examples": [
+        {
+          "translation": "Tôi sẽ chia cho mỗi người 2 quả táo."
+        },
+        {
+          "translation": "Chúng tôi dọn dẹp vệ sinh mỗi tuần một lần."
+        },
+        {
+          "translation": "Mọi người đã cùng nhau bước từng bước một đi hết quãng đường đó."
+        },
+        {
+          "translation": "Cô ấy đã tặng cho mỗi đứa trẻ một món quà."
+        }
+      ]
+    },
+    "ja_そうだ_83": {
+      "title": "～そうだ (〜sou da)",
+      "shortExplanation": "Diễn tả phán đoán, phỏng đoán về vẻ bề ngoài hoặc dấu hiệu sắp xảy ra dựa trên quan sát thị giác; 'trông có vẻ...', 'sắp...'.",
+      "longExplanation": "Mẫu câu dạng vẻ ～そうだ dùng để miêu tả cảm nhận, suy đoán trực tiếp của người nói khi nhìn thấy dáng vẻ bề ngoài của sự vật, con người hoặc hiện tượng. Đối với động từ, nó diễn tả dấu hiệu một hành động sắp sửa xảy ra ngay trước mắt ('trông như sắp...'). Lưu ý trường hợp ngoại lệ: tính từ いい chuyển thành よさそうだ, ない chuyển thành なさそうだ. Cần phân biệt với ～そうだ truyền văn (nghe nói là), vốn đi với thể thông thường.",
+      "formation": "Động từ thể ます (bỏ ます) + そうだ / Tính từ đuôi い (bỏ い) + そうだ / Tính từ đuôi な (bỏ な) + そうだ",
+      "examples": [
+        {
+          "translation": "Bông hoa đó trông có vẻ rất đẹp."
+        },
+        {
+          "translation": "Trông anh ấy có vẻ mệt mỏi."
+        },
+        {
+          "translation": "Cuốn sách này trông có vẻ thú vị."
+        },
+        {
+          "translation": "Trời trông có vẻ sắp mưa rồi."
+        }
+      ]
+    },
+    "ja_そんな_84": {
+      "title": "そんな (sonna) + Danh từ",
+      "shortExplanation": "Bổ nghĩa cho danh từ đứng sau, chỉ sự vật/sự việc thuộc loại đó (gần người nghe hoặc đã nhắc tới); 'như thế', 'loại đó'.",
+      "longExplanation": "Chỉ từ そんな đứng trực tiếp trước danh từ để chỉ sự vật, tính chất, trạng thái thuộc dạng đó hoặc kiểu đó. Nó thường dùng để chỉ đối tượng ở gần phía người nghe hoặc chỉ sự việc mà đối phương vừa nhắc tới trong cuộc trò chuyện. Trong nhiều ngữ cảnh khẩu ngữ, nó còn mang sắc thái ngạc nhiên, phủ định hoặc coi nhẹ ('chuyện như thế', 'thứ như thế').",
+      "formation": "そんな + Danh từ",
+      "examples": [
+        {
+          "translation": "Câu chuyện như thế thì tôi không thể tin nổi."
+        },
+        {
+          "translation": "Tôi không muốn xem loại phim như thế đâu."
+        }
+      ]
+    },
+    "ja_そんなに_85": {
+      "title": "そんなに～ (sonna ni〜)",
+      "shortExplanation": "Phó từ đi với thể phủ định để diễn tả mức độ không cao đến mức như vậy; 'không... đến thế', 'không... đến mức ấy'.",
+      "longExplanation": "Phó từ chỉ mức độ そんなに thường đi kèm với các hình thức phủ định ở vị ngữ phía sau để chỉ rằng sự việc, tính chất không nghiêm trọng, không nhiều hoặc không đạt tới mức độ cao như người nghe hoặc mọi người đang nghĩ. Mang ý nghĩa 'không... đến mức ấy', 'không... nhiều như thế'.",
+      "formation": "そんなに + Động từ thể phủ định / Tính từ đuôi い thể phủ định / Tính từ đuôi な thể phủ định",
+      "examples": [
+        {
+          "translation": "Bạn không cần phải vội đến thế đâu nhé."
+        },
+        {
+          "translation": "Tôi nghĩ đây là một bài toán không khó đến mức đó đâu."
+        },
+        {
+          "translation": "Cô ấy không cao đến mức đấy đâu."
+        },
+        {
+          "translation": "Tôi nghĩ không cần thiết phải ăn nhiều đến như vậy."
+        }
+      ]
+    },
+    "ja_たらいい_86": {
+      "title": "～たらいい (〜tara ii)",
+      "shortExplanation": "Dùng để đưa ra lời khuyên, gợi ý hoặc bày tỏ mong muốn, hy vọng về một kết quả tốt; 'nên...', 'giá mà... thì tốt'.",
+      "longExplanation": "Mẫu câu ～たらいい kết hợp thể điều kiện ～たら với tính từ いい (tốt), dùng để đưa ra lời khuyên hoặc đề xuất nhẹ nhàng cho đối phương ('bạn nên làm... thì tốt'). Khi dùng ở dạng độc thoại với trợ từ kết thúc câu như ～たらいいな hoặc ～たらいいのに, cấu trúc này diễn tả niềm hy vọng, ước muốn một sự việc tốt lành nào đó sẽ diễn ra.",
+      "formation": "Động từ thể た + らいい (たらいい)",
+      "examples": [
+        {
+          "translation": "Bạn nên học nhiều hơn nữa thì tốt đấy."
+        },
+        {
+          "translation": "Ước gì trời tạnh mưa thì tốt biết mấy."
+        },
+        {
+          "translation": "Mong là bạn sẽ sớm bình phục nhé."
+        },
+        {
+          "translation": "Tôi nghĩ bạn nên liên lạc với anh ấy thì tốt hơn."
+        }
+      ]
+    },
+    "ja_たら_87": {
+      "title": "～たら いかがですか (〜tara ikaga desu ka)",
+      "shortExplanation": "Dùng để đưa ra lời khuyên, gợi ý một cách vô cùng trang trọng và lịch sự; 'nếu... thì thế nào ạ?'",
+      "longExplanation": "Mẫu câu ～たら いかがですか dùng thể điều kiện ～たら kết hợp với cách nói kính ngữ いかがですか (thế nào ạ) để đưa ra lời gợi ý, khuyên nhủ hoặc thăm dò ý kiến của đối phương một cách hết sức lịch sự và tế nhị. Đây là dạng trang trọng hơn của cấu trúc ～たらどうですか, thường dùng trong giao tiếp thương mại, dịch vụ khách hàng hoặc khi nói chuyện với người trên.",
+      "formation": "Động từ thể た + ら いかがですか / Tính từ đuôi い (bỏ い) + かったら いかがですか / Tính từ đuôi な + だったら いかがですか / Danh từ + だったら いかがですか",
+      "examples": [
+        {
+          "translation": "Hay là bạn thử đến thư viện xem sao ạ?"
+        },
+        {
+          "translation": "Nếu thấy lạnh thì bạn mặc thêm một chiếc áo khoác len cardigan xem thế nào ạ?"
+        },
+        {
+          "translation": "Nếu phòng tối thì bạn bật đèn chiếu sáng lên xem thế nào ạ?"
+        },
+        {
+          "translation": "Nếu đó là ý kiến của riêng mình thì bạn thử hỏi ý kiến người khác xem thế nào ạ?"
+        }
+      ]
+    },
+    "ja_たら_88": {
+      "title": "～たら どうですか (〜tara doudesuka)",
+      "shortExplanation": "Dùng để đưa ra lời khuyên, gợi ý hoặc rủ rê một cách lịch sự, nhã nhặn; 'sao bạn không...?', 'hay là... xem sao?'.",
+      "longExplanation": "Mẫu câu ～たら どうですか kết hợp thể điều kiện ～たら của động từ với cụm từ どうですか (như thế nào) để đưa ra lời khuyên bảo, đề xuất hoặc gợi ý một phương án giải quyết cho đối phương một cách lịch sự. Tuy nhiên, vì vẫn là lời khuyên mang tính định hướng hành động nên tránh dùng trực tiếp với cấp trên hoặc người có vị thế cao hơn hẳn (khi đó nên dùng ～たら いかがですか hoặc các hình thức khiêm nhường/kính ngữ khác).",
+      "formation": "Động từ thể た + ら どうですか (たらどうですか)",
+      "examples": [
+        {
+          "translation": "Hay là bạn đi trượt tuyết xem sao?"
+        },
+        {
+          "translation": "Sao bạn không nghỉ ngơi một chút xem sao?"
+        },
+        {
+          "translation": "Sao bạn không đọc thử cuốn sách này xem sao?"
+        },
+        {
+          "translation": "Hay là bạn đi taxi về nhà xem sao?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_かどうか_74": {
+      "title": "～かどうか (〜ka dou ka)",
+      "shortExplanation": "用于间接疑问句，表示不确定的是非选择；“是否……”、“……还是不……”、“……与否”。",
+      "longExplanation": "句型“～かどうか”用于间接引语或疑问从句中，表示某种情况“是否如此”或“是不是”，相当于汉语的“是否……”、“……与否”。它常与“知りません（不知道）”、“分かりません（不清楚）”、“教えてください（请告诉我）”、“覚えていません（不记得）”等词语呼应使用。在标准语法中，名词和二类形容词通常直接接“かどうか”（口语中有时也会保留“だ”）。",
+      "formation": "动词普通形 + かどうか / 一类形容词 + かどうか / 二类形容词词干（或+だ）+ かどうか / 名词（或+だ）+ かどうか",
+      "examples": [
+        {
+          "translation": "我不知道他会不会来。"
+        },
+        {
+          "translation": "请告诉我这本书是否有趣。"
+        },
+        {
+          "translation": "我不知道她漂不漂亮。"
+        },
+        {
+          "translation": "我不记得他是不是老师了。"
+        }
+      ]
+    },
+    "ja_かなあ_75": {
+      "title": "～かなあ (〜kanaa)",
+      "shortExplanation": "终助词，自言自语或对熟人表达不确定的揣测、自问或微弱的期待；“……吧”、“不知道……呢”。",
+      "longExplanation": "终助词“～かなあ”多用于口语中的自言自语，或者对关系亲密的人表达自己的困惑、揣测、犹豫或淡淡的期盼，相当于汉语的“……吧”、“不知道……呢”、“会不会……呢”。当接在名词或二类形容词之后时，通常省略断定助动词“だ”，或者变为“なのかなあ”。因为语气比较随便亲昵，所以不宜直接用于向上级或长辈提问。",
+      "formation": "动词普通形 + かなあ / 一类形容词 + かなあ / 二类形容词词干（或+なのかなあ）+ かなあ / 名词（或+なのかなあ）+ かなあ",
+      "examples": [
+        {
+          "translation": "明天不知道会不会下雨呢。"
+        },
+        {
+          "translation": "这个蛋糕不知道好不好吃呢。"
+        },
+        {
+          "translation": "他不知道是不是生病了。"
+        },
+        {
+          "translation": "她不知道是不是学生呢。"
+        }
+      ]
+    },
+    "ja_かもしれない_76": {
+      "title": "～かもしれない (〜kamoshirenai)",
+      "shortExplanation": "表示说话人对事态不确定的推断或猜测；“也许”、“可能”、“说不定”。",
+      "longExplanation": "句型“～かもしれない”用于表达说话人对某种可能性的推测，确定程度相对较低（大约在百分之五十左右），相当于汉语的“也许……”、“可能……”、“说不定……”。其敬体形式为“～かもしれません”，在日常口语中常简略为“～かも”。接在名词或二类形容词后时，助动词“だ”通常省略。",
+      "formation": "动词普通形 + かもしれない / 一类形容词 + かもしれない / 二类形容词词干（省略だ）+ かもしれない / 名词（省略だ）+ かもしれない",
+      "examples": [
+        {
+          "translation": "明天可能会下雨。"
+        },
+        {
+          "translation": "这个蛋糕可能挺好吃的。"
+        },
+        {
+          "translation": "他也许是生病了。"
+        },
+        {
+          "translation": "她可能是一名学生。"
+        }
+      ]
+    },
+    "ja_から_77": {
+      "title": "～から (〜kara)",
+      "shortExplanation": "接续助词，表示主观的原因、理由或判断依据；“因为……”、“由于……”。",
+      "longExplanation": "接续助词“～から”用于连接前后两句话，前句说明原因、理由，后句说明结果、判断、要求或行动。与偏向客观描述的“～ので”相比，“～から”更带有说话人的主观情绪与个人意志，后续常接意志、命令、推测或提议。名词和二类形容词普通形接“から”时，必须使用“～だから”的形式。",
+      "formation": "动词普通形 + から / 一类形容词 + から / 二类形容词 + だから / 名词 + だから",
+      "examples": [
+        {
+          "translation": "因为下雨，请带上雨伞吧。"
+        },
+        {
+          "translation": "因为这个蛋糕很好吃，大家应该都会吃的吧。"
+        },
+        {
+          "translation": "因为他生病了，所以向学校请了假。"
+        },
+        {
+          "translation": "因为今天是星期日，所以学校没有课。"
+        }
+      ]
+    },
+    "ja_けれど_78": {
+      "title": "～けれど (〜keredo)",
+      "shortExplanation": "接续助词，表示轻微的转折关系或作为话题铺垫的前置引导；“虽然……但是……”、“不过……”。",
+      "longExplanation": "接续助词“～けれど”用于连接具有轻度转折或对比关系的两个分句，也可用于说话开头的客套铺垫或引出下文。语气较为口语化，更为礼貌正式的说法是“～けれども”或助词“～が”。接在名词和二类形容词普通形后时，通常采用“～だけれど”的形式。",
+      "formation": "动词普通形 + けれど / 一类形容词 + けれど / 二类形容词 + だけれど / 名词 + だけれど",
+      "examples": [
+        {
+          "translation": "今天虽然很忙，但明天会有更多时间。"
+        },
+        {
+          "translation": "这家餐厅虽然价格昂贵，但饭菜很可口。"
+        },
+        {
+          "translation": "他虽然年轻，但经验非常丰富。"
+        },
+        {
+          "translation": "她虽然生病了，但依然十分开朗有精神。"
+        }
+      ]
+    },
+    "ja_させてください_79": {
+      "title": "～させてください (〜sasete kudasai)",
+      "shortExplanation": "动词使役态搭配请求表达，礼貌地请求对方允许自己做某事；“请让我……”、“请允许我……”。",
+      "longExplanation": "句型“～させてください”由动词使役态的连用形（て形）接补助动词“ください”构成，用于向对方提出礼貌请求，希望对方准许自己进行某项行为。相当于汉语的“请让我做……”、“请允许我做……”。在更为正式的商务场合，通常使用更为谦逊恭敬的“～させていただきます”或“～させていただけますでしょうか”。",
+      "formation": "动词使役态て形（〜させて）+ ください",
+      "examples": [
+        {
+          "translation": "请让我再考虑一下。"
+        },
+        {
+          "translation": "请让我拍张照片。"
+        },
+        {
+          "translation": "请让我再稍微练习一下。"
+        },
+        {
+          "translation": "请允许我在这里等候。"
+        }
+      ]
+    },
+    "ja_しし_80": {
+      "title": "～し、～し、～ (〜shi, 〜shi, 〜)",
+      "shortExplanation": "列举两项及以上的理由、原因或并列的属性特征；“既……又……”、“又……而且……”。",
+      "longExplanation": "接续助词“～し”用于并列列举两个或以上的理由、原因，用以支持后文的结论或判断；也可用于单纯并列列举事物的多项同类特征。它暗示“除了所列举的之外还有其他因素”。接在名词和二类形容词普通形后时，需使用“～だし”的形式。",
+      "formation": "动词普通形 + し / 一类形容词 + し / 二类形容词 + だし / 名词 + だし",
+      "examples": [
+        {
+          "translation": "他既年轻、有活力，为人又随和，我觉得他能和大家相处融洽。"
+        },
+        {
+          "translation": "这家餐厅菜品美味，环境宜人，价格也十分公道，所以非常推荐。"
+        },
+        {
+          "translation": "她学习优秀，擅长体育，性格也很讨人喜欢。"
+        },
+        {
+          "translation": "今天天气又冷，还下着雨，还是在家里好好休息比较好。"
+        }
+      ]
+    },
+    "ja_すぎる_81": {
+      "title": "～すぎる (〜sugiru)",
+      "shortExplanation": "接在动词或形容词后，表示程度、数量或状态过度超标；“太……”、“过于……”、“……过分”。",
+      "longExplanation": "复合动词“～すぎる”接在动词连用形（去ます）或形容词词干后，表示某种动作、性质或状态超出了适度、合情理的界限，通常含有消极、带来不便或令人困扰的语感。在语法活用上属于二类动词（一段动词）。在现代年轻人口语中，偶尔也用于夸张地表达积极程度。",
+      "formation": "动词连用形（ます形去ます）+ すぎる / 一类形容词词干（去 い）+ すぎる / 二类形容词词干（去 な）+ すぎる",
+      "examples": [
+        {
+          "translation": "这个房间太热了。"
+        },
+        {
+          "translation": "他来得太早了。"
+        },
+        {
+          "translation": "这个箱子太重了，搬不起来。"
+        },
+        {
+          "translation": "她工作太忙，不可能玩得过度。"
+        }
+      ]
+    },
+    "ja_ずつ_82": {
+      "title": "～ずつ (〜zutsu)",
+      "shortExplanation": "副助词，接在数量词等后，表示等量均分或一定分量的循序推进；“各……”、“每……”。",
+      "longExplanation": "副助词“～ずつ”接在数词、量词或表示分量的词语之后，表示同等分量地分配给各个对象（如每人分两个），或者表示动作以固定的份额、分量反复进行或逐步推进（如一步一步、一点一点）。相当于汉语的“每……”、“各……”、“一次……”。",
+      "formation": "数量词 / 名词 + ずつ",
+      "examples": [
+        {
+          "translation": "每人分发两个苹果。"
+        },
+        {
+          "translation": "我们每周打扫一次卫生。"
+        },
+        {
+          "translation": "大家都一步一步地走过了相同的距离。"
+        },
+        {
+          "translation": "她给孩子们每人送了一份礼物。"
+        }
+      ]
+    },
+    "ja_そうだ_83": {
+      "title": "～そうだ (〜sou da)",
+      "shortExplanation": "样态助动词，表示通过视觉直观观察做出的样态推测或前兆；“看起来……”、“好像要……”。",
+      "longExplanation": "样态助动词“～そうだ”用于描述根据眼前直接看到的迹象或神态所做出的直观推测。接在形容词词干后表示“看起来……”；接在动词连用形后表示某种事态即将发生的前兆（“眼看就要……”）。特别注意不规则变化：一类形容词“いい”变为“よさそうだ”，“ない”变为“なさそうだ”。需要与表示传闻的“～そうだ（听说）”严格区分。",
+      "formation": "动词连用形（ます形去ます）+ そうだ / 一类形容词词干（去 い）+ そうだ / 二类形容词词干（去 な）+ そうだ",
+      "examples": [
+        {
+          "translation": "那朵花看起来非常漂亮。"
+        },
+        {
+          "translation": "他看起来很疲惫。"
+        },
+        {
+          "translation": "这本书看起来很有意思。"
+        },
+        {
+          "translation": "眼看着就要下雨了。"
+        }
+      ]
+    },
+    "ja_そんな_84": {
+      "title": "そんな (sonna) + 名词",
+      "shortExplanation": "连体词，修饰名词，表示“那种”、“那样的”（靠近对方或前文所提及的类别事物）。",
+      "longExplanation": "连体词“そんな”直接置于名词之前进行修饰，表示与听话人相关、靠近听话人，或者刚在前文中提及的事物种类或性质，相当于汉语的“那种……”、“那样的……”。在口语中，它常常带有强烈的惊讶、轻蔑、难以置信或全面否定的情感色彩。",
+      "formation": "そんな + 名词",
+      "examples": [
+        {
+          "translation": "那种话，简直令人难以置信。"
+        },
+        {
+          "translation": "我才不想看那种电影呢。"
+        }
+      ]
+    },
+    "ja_そんなに_85": {
+      "title": "そんなに～ (sonna ni〜)",
+      "shortExplanation": "程度副词，多与否定搭配，表示程度并未达到所说的那么高；“并不那么……”、“没有那么……”。",
+      "longExplanation": "程度副词“そんなに”通常与句尾的否定形式呼应使用，表示某事物在数量、程度或状态上并没有外界认为或预期的那样极端或显著，相当于汉语中的“并不那么……”、“没有那么……”。",
+      "formation": "そんなに + 动词否定形 / 一类形容词否定形 / 二类形容词否定形",
+      "examples": [
+        {
+          "translation": "不用那么着急也可以哦。"
+        },
+        {
+          "translation": "我觉得并不是那么难的问题。"
+        },
+        {
+          "translation": "她的个子并没有那么高。"
+        },
+        {
+          "translation": "我认为没有必要吃那么多。"
+        }
+      ]
+    },
+    "ja_たらいい_86": {
+      "title": "～たらいい (〜tara ii)",
+      "shortExplanation": "提出建议或表达期盼、祈愿；“……就好了”、“最好……”。",
+      "longExplanation": "句型“～たらいい”将顺接条件假定“～たら”与形容词“いい（好）”结合，用于温和地给对方提出建议或对策（相当于“如果……的话比较好”）。在自言自语或句尾加上终助词“な”（如～たらいいな）时，则用来表达说话人希望某种事态能够如愿发生的心愿与期盼。",
+      "formation": "动词た形 + らいい（たらいい）",
+      "examples": [
+        {
+          "translation": "再多用功学习一下比较好哦。"
+        },
+        {
+          "translation": "雨要是能停就好了啊。"
+        },
+        {
+          "translation": "要是能早日康复就好了呢。"
+        },
+        {
+          "translation": "我觉得你联系他一下比较好。"
+        }
+      ]
+    },
+    "ja_たら_87": {
+      "title": "～たら いかがですか (〜tara ikaga desu ka)",
+      "shortExplanation": "极为客气礼貌地向对方提出建议、劝告或征求意见；“如果……意下如何呢？”。",
+      "longExplanation": "句型“～たら いかがですか”使用条件假定“～たら”与极为郑重礼貌的敬语疑问表达“いかがですか”相结合，用于向长辈、客户或上级委婉提出建议或探询对方意见。它是“～たらどうですか”的高级敬语形式，表现出对听话人极高的敬意与尊重。",
+      "formation": "动词た形 + ら いかがですか / 一类形容词连用形（词尾变かっ）+ たら いかがですか / 二类形容词 + だったら いかがですか / 名词 + だったら いかがですか",
+      "examples": [
+        {
+          "translation": "去图书馆看一看意下如何呢？"
+        },
+        {
+          "translation": "如果觉得冷的话，穿一件开衫怎么样呢？"
+        },
+        {
+          "translation": "要是房间很暗的话，打开照明怎么样呢？"
+        },
+        {
+          "translation": "如果是自己的想法，试着询问一下他人的看法意下如何呢？"
+        }
+      ]
+    },
+    "ja_たら_88": {
+      "title": "～たら どうですか (〜tara doudesuka)",
+      "shortExplanation": "用于向对方提出温和友善的建议、劝诱或劝告；“……怎么样？”、“要不要……试试？”。",
+      "longExplanation": "句型“～たら どうですか”通过动词た形后续假定接续“たら”，再连接询问语“どうですか”，用于在日常交流中向平辈或晚辈提出亲切、委婉的建议或解决办法。相当于汉语的“……怎么样？”、“要不要……试试看？”。由于仍属于带有指导性的建议，通常不适合直接对长辈或地位明显高于自己的人使用。",
+      "formation": "动词た形 + ら どうですか（たらどうですか）",
+      "examples": [
+        {
+          "translation": "去滑雪怎么样？"
+        },
+        {
+          "translation": "稍微休息一下怎么样？"
+        },
+        {
+          "translation": "读一读这本书怎么样？"
+        },
+        {
+          "translation": "坐出租车回家怎么样？"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_かどうか_74": {
+      "title": "～かどうか (〜ka dou ka)",
+      "shortExplanation": "간접 의문문에서 어떤 사실의 참·거짓이나 여부를 나타내며, '~인지 어떤지', '~인지 아닌지'라는 뜻입니다.",
+      "longExplanation": "'～かどうか' 문형은 간접 의문문이나 명사절에서 어떤 일이나 상태의 성립 여부를 불확실하게 나타낼 때 사용하며, 한국어의 '~인지 어떤지', '~인지 아닌지'에 해당합니다. 뒤에는 주로 '知りません(모릅니다)', '分かりません(모르겠습니다)', '教えてください(알려주세요)', '覚えていません(기억나지 않습니다)' 등의 표현이 호응합니다. 명사나 な형용사는 보통 어간에 바로 접속합니다.",
+      "formation": "동사 보통형 + かどうか / い형용사 + かどうか / な형용사 어간(또는 だ) + かどうか / 명사(또는 だ) + かどうか",
+      "examples": [
+        {
+          "translation": "그가 올지 안 올지 모릅니다."
+        },
+        {
+          "translation": "이 책이 재미있는지 어떤지 알려주세요."
+        },
+        {
+          "translation": "그녀가 예쁜지 어떤지는 모르겠습니다."
+        },
+        {
+          "translation": "그가 선생님인지 아닌지 기억나지 않습니다."
+        }
+      ]
+    },
+    "ja_かなあ_75": {
+      "title": "～かなあ (〜kanaa)",
+      "shortExplanation": "혼잣말이나 친한 사이에서 의문, 불확실함, 소망 등을 부드럽게 나타내며, '~일까', '~려나', '~인가'라는 뜻입니다.",
+      "longExplanation": "'～かなあ'는 구어체에서 혼잣말을 하거나 친한 사람에게 불확실한 생각, 의문, 자문자답, 은근한 소망을 부드럽게 나타내는 종조사입니다. 한국어의 '~일까', '~려나', '~인가 보다'에 해당합니다. 명사나 な형용사 뒤에 올 때는 조동사 'だ'를 생략하거나 'なのかなあ' 형태로 많이 사용됩니다. 손윗사람에게 직접 질문할 때는 결례가 되므로 사용하지 않습니다.",
+      "formation": "동사 보통형 + かなあ / い형용사 + かなあ / な형용사 어간(또는 なの) + かなあ / 명사(또는 なの) + かなあ",
+      "examples": [
+        {
+          "translation": "내일 비가 오려나."
+        },
+        {
+          "translation": "이 케이크는 맛있으려나."
+        },
+        {
+          "translation": "그는 아픈 걸까."
+        },
+        {
+          "translation": "그녀는 학생이려나."
+        }
+      ]
+    },
+    "ja_かもしれない_76": {
+      "title": "～かもしれない (〜kamoshirenai)",
+      "shortExplanation": "어떤 일이 일어날 가능성이 불확실함을 나타내는 추측 표현으로, '어쩌면 ~일지도 모른다'라는 뜻입니다.",
+      "longExplanation": "'～かもしれない' 문형은 화자가 어떤 사실이나 가능성에 대해 확신을 가지지 못하고 불확실하게 추측할 때 쓰이며, 한국어의 '~일지도 모른다', '어쩌면 ~일 수 있다'에 해당합니다. 가능성의 정도는 약 50% 이하로 다소 낮습니다. 정중형은 '～かもしれません'이며, 일상 구어에서는 '～かも'로 줄여 쓰이기도 합니다. 명사와 な형용사 뒤에서는 보통 'だ'가 탈락합니다.",
+      "formation": "동사 보통형 + かもしれない / い형용사 + かもしれない / な형용사 어간(だ 생략) + かもしれない / 명사(だ 생략) + かもしれない",
+      "examples": [
+        {
+          "translation": "내일 비가 올지도 모릅니다."
+        },
+        {
+          "translation": "이 케이크는 맛있을지도 몰라요."
+        },
+        {
+          "translation": "그가 아픈 걸지도 모릅니다."
+        },
+        {
+          "translation": "그녀는 학생일지도 몰라요."
+        }
+      ]
+    },
+    "ja_から_77": {
+      "title": "～から (〜kara)",
+      "shortExplanation": "이유나 원인, 판단의 근거를 주관적으로 나타내며, '~기 때문에', '~니까'라는 뜻입니다.",
+      "longExplanation": "'～から'는 앞 문장이 뒷 문장의 이유나 원인, 판단의 근거임을 나타내는 접속조사입니다. 객관적 사실을 부드럽게 전달하는 '～ので'에 비해 화자의 주관적 생각, 주장, 의지, 명령, 권유 등이 강하게 드러납니다. 명사와 な형용사의 보통형에 접속할 때는 반드시 '～だから'의 형태가 됩니다.",
+      "formation": "동사 보통형 + から / い형용사 + から / な형용사 + だから / 명사 + だから",
+      "examples": [
+        {
+          "translation": "비가 오니까 우산을 가지고 가세요."
+        },
+        {
+          "translation": "이 케이크는 맛있으니까 다들 먹겠죠."
+        },
+        {
+          "translation": "그는 아파서 학교를 결석합니다."
+        },
+        {
+          "translation": "오늘은 일요일이라서 학교 수업이 없습니다."
+        }
+      ]
+    },
+    "ja_けれど_78": {
+      "title": "～けれど (〜keredo)",
+      "shortExplanation": "앞뒤 문장의 부드러운 역접이나 전제 조건을 나타내며, '하지만', '~지만', '~는데'라는 뜻입니다.",
+      "longExplanation": "'～けれど'는 두 문장을 연결하여 앞 문장과 뒷 문장이 서로 대비되거나 반대됨을 가볍게 나타내는 접속조사입니다. 또한 본론으로 들어가기 전의 전제나 도입 표현으로도 자주 사용됩니다. 구어적인 표현으로, 보다 정중한 격식체로는 '～けれども'나 접속조사 '～が'를 사용합니다. 명사와 な형용사 보통형 뒤에서는 보통 '～だけれど'의 형태를 취합니다.",
+      "formation": "동사 보통형 + けれど / い형용사 + けれど / な형용사 + だけれど / 명사 + だけれど",
+      "examples": [
+        {
+          "translation": "오늘은 바쁘지만 내일은 시간이 더 있습니다."
+        },
+        {
+          "translation": "이 레스토랑은 비싸지만 음식이 맛있습니다."
+        },
+        {
+          "translation": "그는 젊지만 경험이 매우 풍부합니다."
+        },
+        {
+          "translation": "그녀는 아프지만 밝고 활기찹니다."
+        }
+      ]
+    },
+    "ja_させてください_79": {
+      "title": "～させてください (〜sasete kudasai)",
+      "shortExplanation": "상대방에게 자신이 어떤 행동을 하도록 허락해 줄 것을 정중하게 부탁할 때 쓰이며, '제가 ~하게 해 주세요'라는 뜻입니다.",
+      "longExplanation": "'～させてください'는 동사의 사역형의 て형에 보조동사 'ください'가 결합된 문형으로, 화자가 상대방에게 특정 동작을 행할 수 있도록 허락해 줄 것을 정중히 요청하는 표현입니다. 한국어의 '제가 ~하게 해 주십시오', '~하도록 허락해 주세요'에 해당합니다. 더욱 격식 있고 공손한 비즈니스 표현으로는 '～させていただきます'나 '～시켜 주시겠습니까(～させていただけますでしょうか)'를 씁니다.",
+      "formation": "동사 사역형 て형(〜させて) + ください",
+      "examples": [
+        {
+          "translation": "조금 더 생각하게 해 주세요."
+        },
+        {
+          "translation": "사진을 찍게 해 주세요."
+        },
+        {
+          "translation": "조금만 더 연습하게 해 주세요."
+        },
+        {
+          "translation": "여기서 기다리게 해 주세요."
+        }
+      ]
+    },
+    "ja_しし_80": {
+      "title": "～し、～し、～ (〜shi, 〜shi, 〜)",
+      "shortExplanation": "여러 가지 이유나 원인, 또는 대등한 특징들을 나열할 때 쓰이며, '~하고 ~해서', '~도 하고 ~도 하고'라는 뜻입니다.",
+      "longExplanation": "'～し'는 뒤따르는 결론이나 판단의 근거가 되는 이유를 둘 이상 병렬하여 제시할 때, 혹은 사물의 여러 속성이나 특징을 대등하게 나열할 때 사용되는 접속조사입니다. 언급된 이유 외에도 다른 요소가 더 있음을 암시하는 뉘앙스를 지닙니다. 명사와 な형용사의 보통형 뒤에서는 '～だし'의 형태가 됩니다.",
+      "formation": "동사 보통형 + し / い형용사 + し / な형용사 + だし / 명사 + だし",
+      "examples": [
+        {
+          "translation": "그는 젊고 활기차며 친절해서 모두와 사이좋게 지낼 수 있을 거라 생각합니다."
+        },
+        {
+          "translation": "이 식당은 음식도 맛있고 분위기도 좋고 가격도 알맞아서 추천합니다."
+        },
+        {
+          "translation": "그녀는 공부도 잘하고 운동도 잘하며 성격도 좋다."
+        },
+        {
+          "translation": "오늘은 춥기도 하고 비도 오고 있으니 집에서 편히 쉬는 편이 좋겠습니다."
+        }
+      ]
+    },
+    "ja_すぎる_81": {
+      "title": "～すぎる (〜sugiru)",
+      "shortExplanation": "동작이나 상태의 정도가 한도나 기준을 초과함을 나타내며, '너무 ~하다', '지나치게 ~하다'라는 뜻입니다.",
+      "longExplanation": "'～すぎる'는 동사의 ます형 어간이나 형용사 어간 뒤에 붙어, 어떤 행위나 상태가 알맞은 정도나 한계를 지나쳐 과도함을 나타내는 복합동사입니다. 통상적으로 그로 인해 부정적이거나 곤란한 결과가 초래됨을 나타냅니다. 활용상으로는 2그룹(1단) 동사에 속합니다. 현대 젊은 층의 구어에서는 긍정적인 극찬 표현으로도 쓰입니다.",
+      "formation": "동사 ます형 어간 + すぎる / い형용사 어간(い 탈락) + すぎる / な형용사 어간(な 탈락) + すぎる",
+      "examples": [
+        {
+          "translation": "이 방은 너무 덥다."
+        },
+        {
+          "translation": "그는 너무 일찍 왔다."
+        },
+        {
+          "translation": "이 상자는 너무 무거워서 들어 올릴 수 없다."
+        },
+        {
+          "translation": "그녀는 바빠서 지나치게 놀지는 않는다."
+        }
+      ]
+    },
+    "ja_ずつ_82": {
+      "title": "～ずつ (〜zutsu)",
+      "shortExplanation": "수량이나 비율 뒤에 붙어 균등한 배분이나 일정량씩의 점진적 진행을 나타내며, '~씩'이라는 뜻입니다.",
+      "longExplanation": "'～ずつ'는 수량사나 분량을 나타내는 명사 뒤에 결합하여 동일한 분량으로 각각에게 균등하게 분배함을 나타내거나, 일정한 분량씩 동작이나 변화가 점진적으로 반복·진행됨을 나타내는 부조사입니다. 한국어의 '~씩'에 해당합니다.",
+      "formation": "수량사 / 명사 + ずつ",
+      "examples": [
+        {
+          "translation": "사과를 2개씩 나누어 줍니다."
+        },
+        {
+          "translation": "우리들은 일주일에 한 번씩 청소를 합니다."
+        },
+        {
+          "translation": "모두 같은 거리를 한 걸음씩 걸었다."
+        },
+        {
+          "translation": "그녀는 아이들에게 한 장씩 선물을 주었습니다."
+        }
+      ]
+    },
+    "ja_そうだ_83": {
+      "title": "～そうだ (〜sou da)",
+      "shortExplanation": "시각적 관찰을 바탕으로 사물의 겉모습이나 곧 일어날 조짐을 추측하여 나타내며, '~해 보인다', '~할 것 같다'라는 뜻입니다.",
+      "longExplanation": "'～そうだ'는 눈으로 직접 본 모습이나 직관적 단서를 바탕으로 사물의 상태를 추측하거나(형용사 접속), 어떤 동작이나 변화가 곧 일어날 것 같은 조짐(동사 접속)을 나타내는 양태의 조동사입니다. 불규칙 변화로 'いい'는 'よさそうだ', 'ない'는 'なさそうだ'로 변합니다. 보통형에 접속하여 전문(남에게 들은 말)을 전달하는 '～そうだ(~라고 한다)'와 구별해야 합니다.",
+      "formation": "동사 ます형 어간 + そうだ / い형용사 어간(い 탈락) + そうだ / な형용사 어간(な 탈락) + そうだ",
+      "examples": [
+        {
+          "translation": "그 꽃은 매우 예뻐 보인다."
+        },
+        {
+          "translation": "그는 피곤해 보인다."
+        },
+        {
+          "translation": "이 책은 재미있어 보인다."
+        },
+        {
+          "translation": "비가 내릴 것 같다."
+        }
+      ]
+    },
+    "ja_そんな_84": {
+      "title": "そんな (sonna) + 명사",
+      "shortExplanation": "명사 앞에서 수식하여 듣는 사람과 관련된 것이나 앞에서 언급된 종류의 사물을 가리키며, '그런', '그런 종류의'라는 뜻입니다.",
+      "longExplanation": "'そんな'는 일본어의 지시어(こ·そ·あ·ど) 체계 중 'そ' 계열의 연체사로, 명사 바로 앞에 위치하여 듣는 이와 관련이 있거나 대화 직전에 언급된 내용과 같은 종류·성질의 대상을 가리킵니다. 한국어의 '그런', '그와 같은'에 해당하며, 구어체에서는 놀람, 부정, 멸시 등의 감정이 섞인 어조로도 자주 사용됩니다.",
+      "formation": "そんな + 명사",
+      "examples": [
+        {
+          "translation": "그런 이야기, 믿을 수가 없어."
+        },
+        {
+          "translation": "그런 영화는 보고 싶지 않아."
+        }
+      ]
+    },
+    "ja_そんなに_85": {
+      "title": "そんなに～ (sonna ni〜)",
+      "shortExplanation": "부사로서 주로 뒤에 부정 표현을 수반하여 정도가 생각만큼 크지 않음을 나타내며, '그렇게', '그다지'라는 뜻입니다.",
+      "longExplanation": "'そんなに'는 주로 문말의 부정형과 호응하여, 사물의 상태나 동작의 정도가 생각하는 것만큼 심하거나 대단하지 않음을 나타내는 정도부사입니다. 한국어의 '그렇게까지는', '그 정도로 ~하지는 않다', '그다지 ~하지 않다'에 해당합니다.",
+      "formation": "そんなに + 동사 부정형 / い형용사 부정형 / な형용사 부정형",
+      "examples": [
+        {
+          "translation": "그렇게 서두르지 않아도 괜찮아요."
+        },
+        {
+          "translation": "그렇게 어렵지 않은 문제라고 생각합니다."
+        },
+        {
+          "translation": "그녀는 그렇게 키가 크지 않습니다."
+        },
+        {
+          "translation": "그렇게 많이 먹을 필요는 없다고 생각한다."
+        }
+      ]
+    },
+    "ja_たらいい_86": {
+      "title": "～たらいい (〜tara ii)",
+      "shortExplanation": "상대방에게 조언이나 권유를 하거나 희망·소망을 나타내며, '~하면 좋다', '~하면 좋겠다'라는 뜻입니다.",
+      "longExplanation": "'～たらいい' 문형은 조건 표현인 '～たら'에 형용사 'いい(좋다)'가 결합되어, 상대방에게 부드럽게 해결책을 조언하거나 권할 때 쓰입니다. 또한 혼잣말로 '～たらいいな' 등의 형태로 쓰여 어떤 좋은 결과나 사태가 일어나기를 바라는 화자의 소망이나 기대를 나타내기도 합니다.",
+      "formation": "동사 た형 + らいい (たらいい)",
+      "examples": [
+        {
+          "translation": "공부를 더 열심히 하면 좋아요."
+        },
+        {
+          "translation": "비가 그치면 좋겠네."
+        },
+        {
+          "translation": "빨리 건강해지시면 좋겠네요."
+        },
+        {
+          "translation": "그 사람에게 연락해 보면 좋을 것 같습니다."
+        }
+      ]
+    },
+    "ja_たら_87": {
+      "title": "～たら いかがですか (〜tara ikaga desu ka)",
+      "shortExplanation": "상대방에게 매우 정중하고 공손한 태도로 조언, 권유를 하거나 의견을 물을 때 쓰이며, '~해 보시는 것은 어떻습니까?'라는 뜻입니다.",
+      "longExplanation": "'～たら いかがですか' 문형은 조건 표현 '～たら'에 정중한 의문 표현 'いかがですか(어떠십니까)'가 연결되어, 손윗사람이나 고객 등에게 대단히 정중하고 완곡하게 제안이나 충고를 하거나 의향을 물을 때 사용합니다. '～たらどうですか'의 높은 경어 표현입니다.",
+      "formation": "동사 た형 + ら いかがですか / い형용사 어간 + かったら いかがですか / な형용사 + だったら いかがですか / 명사 + だったら いかがですか",
+      "examples": [
+        {
+          "translation": "도서관에 가 보시는 건 어떻습니까?"
+        },
+        {
+          "translation": "추우시면 카디건을 입어 보시는 건 어떠십니까?"
+        },
+        {
+          "translation": "방이 어두우시면 조명을 켜시는 건 어떻습니까?"
+        },
+        {
+          "translation": "본인의 의견이라면 다른 사람에게 물어보시는 건 어떻습니까?"
+        }
+      ]
+    },
+    "ja_たら_88": {
+      "title": "～たら どうですか (〜tara doudesuka)",
+      "shortExplanation": "상대방에게 친근하고 부드럽게 조언이나 권유, 제안을 할 때 쓰이며, '~하는 게 어때요?', '~해 보는 건 어때요?'라는 뜻입니다.",
+      "longExplanation": "'～たら どうですか' 문형은 동사의 과거형(た형)에 가정의 'ら'를 붙이고 'どうですか(어때요)'를 연결하여, 상대방에게 가볍게 조언이나 권유, 행동 방안을 제시할 때 사용합니다. 완곡한 제안이지만 기본적으로 행동을 촉구하는 뉘앙스가 있으므로 지위가 높은 상사나 어르신에게는 피하고 '～たら いかがですか' 등의 표현을 쓰는 것이 바람직합니다.",
+      "formation": "동사 た형 + ら どうですか (たらどうですか)",
+      "examples": [
+        {
+          "translation": "스키 타러 가는 건 어때요?"
+        },
+        {
+          "translation": "조금 쉬는 건 어때요?"
+        },
+        {
+          "translation": "이 책을 읽어 보는 건 어때요?"
+        },
+        {
+          "translation": "택시를 타고 돌아가는 건 어때요?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_かどうか_74": {
+      "title": "～かどうか (〜ka dou ka)",
+      "shortExplanation": "間接疑問文などで、ある事柄が成立するか否かを表し、「〜か、それともそうでないか」という意味を表します。",
+      "longExplanation": "「～かどうか」は、間接疑問の節を作り、その事柄の真偽や選択（成立するかどうか）が不確定であることを表す文法表現です。後続節には「知りません」「分かりません」「教えてください」「覚えていません」などの動詞がよく呼応します。名詞やな形容詞に接続する場合は、標準語では「だ」を省いて直接接続するのが一般的ですが、口語では「だかどうか」と言われることもあります。",
+      "formation": "動詞普通形 ＋ かどうか ／ い形容詞 ＋ かどうか ／ な形容詞語幹（または＋だ）＋ かどうか ／ 名詞（または＋だ）＋ かどうか",
+      "examples": [
+        {
+          "translation": "彼が来るかどうか知りません。"
+        },
+        {
+          "translation": "この本が面白いかどうか教えてください。"
+        },
+        {
+          "translation": "彼女が綺麗だかどうかは分かりません。"
+        },
+        {
+          "translation": "彼が先生だかどうか覚えていません。"
+        }
+      ]
+    },
+    "ja_かなあ_75": {
+      "title": "～かなあ (〜kanaa)",
+      "shortExplanation": "独り言や親しい相手に対して、不確実な疑念、自問、または控えめな願望を表し、「〜だろうか」という意味を表します。",
+      "longExplanation": "終助詞「～かなあ」は、主に日常会話の独り言や親しい間柄において、不確かな事柄に対する疑問や迷い、自問自答の気持ち、あるいは控えめな希望を表す表現です。名詞やな形容詞に続く場合、助動詞「だ」は脱落するか「なのかなあ」の形を取ることが一般的です。目上の人に対して直接疑問を投げかける表現としては適していません。",
+      "formation": "動詞普通形 ＋ かなあ ／ い形容詞 ＋ かなあ ／ な形容詞語幹（または＋なの）＋ かなあ ／ 名詞（または＋なの）＋ かなあ",
+      "examples": [
+        {
+          "translation": "明日雨が降るかなあ。"
+        },
+        {
+          "translation": "このケーキは美味しいかなあ。"
+        },
+        {
+          "translation": "彼は病気かなあ。"
+        },
+        {
+          "translation": "彼女は学生かなあ。"
+        }
+      ]
+    },
+    "ja_かもしれない_76": {
+      "title": "～かもしれない (〜kamoshirenai)",
+      "shortExplanation": "ある事柄が起こる可能性や不確実な推量を表し、「もしかすると〜の可能性がある」という意味を表します。",
+      "longExplanation": "「～かもしれない」は、話し手が確信を持てず、可能性が五分五分かそれ以下であると推測するときに用いる表現です。丁寧な形は「～かもしれません」で、親しい会話では「～かも」と短縮されることもよくあります。名詞やな形容詞に接続する場合、助動詞「だ」は通常省かれます。",
+      "formation": "動詞普通形 ＋ かもしれない ／ い形容詞 ＋ かもしれない ／ な形容詞語幹（「だ」は通常省略）＋ かもしれない ／ 名詞（「だ」は通常省略）＋ かもしれない",
+      "examples": [
+        {
+          "translation": "明日雨が降るかもしれない。"
+        },
+        {
+          "translation": "このケーキは美味しいかもしれない。"
+        },
+        {
+          "translation": "彼が病気かもしれない。"
+        },
+        {
+          "translation": "彼女は学生かもしれない。"
+        }
+      ]
+    },
+    "ja_から_77": {
+      "title": "～から (〜kara)",
+      "shortExplanation": "主観的な理由や原因、判断の根拠を表し、「〜ので」「〜という理由で」という意味を表します。",
+      "longExplanation": "接続助詞「～から」は、前節が後節の理由や原因、判断の根拠であることを示します。客観的な事情を述べる「～ので」に比べて、話し手の主観的な意図、主張、命令、勧誘、推量などの感情が強く表れやすい特徴があります。名詞やな形容詞の普通形に接続する場合は「～だから」の形になります。",
+      "formation": "動詞普通形 ＋ から ／ い形容詞 ＋ から ／ な形容詞 ＋ だから ／ 名詞 ＋ だから",
+      "examples": [
+        {
+          "translation": "雨が降るから、傘を持って行ってください。"
+        },
+        {
+          "translation": "このケーキは美味しいから、みんな食べるでしょう。"
+        },
+        {
+          "translation": "彼は病気だから、学校を休みます。"
+        },
+        {
+          "translation": "今日は日曜日だから、学校がありません。"
+        }
+      ]
+    },
+    "ja_けれど_78": {
+      "title": "～けれど (〜keredo)",
+      "shortExplanation": "前後の文を軽い逆接や対比で結んだり、前置きとしてつないだりし、「〜だが」「〜けれども」という意味を表します。",
+      "longExplanation": "接続助詞「～けれど」は、前節と後節が対立・対比する関係にあることを柔らかく表現したり、本題に入る前の前置きとして使われたりします。やや口語的な表現で、より改まった場面では「～けれども」や接続助詞「～が」が用いられます。名詞やな形容詞の普通形に続く場合は「～だけれど」の形をとります。",
+      "formation": "動詞普通形 ＋ けれど ／ い形容詞 ＋ けれど ／ な形容詞 ＋ だけれど ／ 名詞 ＋ だけれど",
+      "examples": [
+        {
+          "translation": "今日は忙しいけれど、明日はもっと時間がある。"
+        },
+        {
+          "translation": "このレストランは高いけれど、料理が美味しい。"
+        },
+        {
+          "translation": "彼は若いけれど、とても経験豊富だ。"
+        },
+        {
+          "translation": "彼女は病気だけれど、明るく元気だ。"
+        }
+      ]
+    },
+    "ja_させてください_79": {
+      "title": "～させてください (〜sasete kudasai)",
+      "shortExplanation": "相手に対して、自分がある行為を行う許可を丁寧に求め、「〜することを許してください」という意味を表します。",
+      "longExplanation": "「～させてください」は、動詞の使役形のて形に補助動詞「ください」がついた形で、話し手が特定の動作を行うことへの許可を相手に丁寧に求める表現です。「私に〜させてください」というニュアンスを持ちます。ビジネスシーンなどの改まった場面では、より敬意の高い「～させていただきます」「～させていただけますでしょうか」が用いられます。",
+      "formation": "動詞使役形て形（〜させて）＋ ください",
+      "examples": [
+        {
+          "translation": "もう少し考えさせてください。"
+        },
+        {
+          "translation": "写真を撮らせてください。"
+        },
+        {
+          "translation": "もうちょっと練習させてください。"
+        },
+        {
+          "translation": "ここで待たせてください。"
+        }
+      ]
+    },
+    "ja_しし_80": {
+      "title": "～し、～し、～ (〜shi, 〜shi, 〜)",
+      "shortExplanation": "複数の理由や根拠、あるいは同等の性質・特徴を並列して挙げ、「〜だし、〜だし」という意味を表します。",
+      "longExplanation": "接続助詞「～し」は、後節の結論や判断に至った理由を二つ以上並べて強調するとき、あるいは同類の事柄や特徴を対等に並列して述べる表現です。「挙げた理由のほかにもまだある」という含みを持たせることができます。名詞やな形容詞の普通形に接続する場合は「～だし」の形になります。",
+      "formation": "動詞普通形 ＋ し ／ い形容詞 ＋ し ／ な形容詞 ＋ だし ／ 名詞 ＋ だし",
+      "examples": [
+        {
+          "translation": "彼は若いし、元気だし、フレンドリーだし、みんなと仲良くなれると思います。"
+        },
+        {
+          "translation": "このレストランは料理が美味しいし、雰囲気がいいし、価格も手頃だからお勧めです。"
+        },
+        {
+          "translation": "彼女は勉強ができるし、スポーツも得意だし、性格もいい。"
+        },
+        {
+          "translation": "今日は寒いし、雨も降っているし、家でゆっくり休んだ方がいいでしょう。"
+        }
+      ]
+    },
+    "ja_すぎる_81": {
+      "title": "～すぎる (〜sugiru)",
+      "shortExplanation": "動作や状態の度合いが適度な限界を超えていることを表し、「度を超えて〜だ」という意味を表します。",
+      "longExplanation": "複合動詞「～すぎる」は、動詞のます形語幹や形容詞の語幹に後続し、行為や状態の度合いが通常許容される水準や好ましい限度を超えていることを示します。多くの場合、不都合や好ましくない結果を伴う否定的な文脈で用いられます。文法上は2グループ（一段）動詞として活用します。現代の若者言葉では過度の強調として肯定的に用いられることもあります。",
+      "formation": "動詞連用形（ます形語幹）＋ すぎる ／ い形容詞語幹（「い」を除く）＋ すぎる ／ な形容詞語幹 ＋ すぎる",
+      "examples": [
+        {
+          "translation": "この部屋は暑すぎる。"
+        },
+        {
+          "translation": "彼は早く来すぎた。"
+        },
+        {
+          "translation": "この箱は重すぎて持ち上げられない。"
+        },
+        {
+          "translation": "彼女は忙しくて遊びすぎはしない。"
+        }
+      ]
+    },
+    "ja_ずつ_82": {
+      "title": "～ずつ (〜zutsu)",
+      "shortExplanation": "数量や分量を表す言葉に付き、等しい割り当てや一定量ずつの反復・進行を表します。",
+      "longExplanation": "副助詞「～ずつ」は、数量詞や分量を表す語について、それぞれに同等に配分すること（例：一人に2個ずつ）や、一定のまとまりや分量で動作や変化が反復・継続して進むこと（例：一歩ずつ）を表します。",
+      "formation": "数量詞／名詞 ＋ ずつ",
+      "examples": [
+        {
+          "translation": "りんごを2つずつ配ります。"
+        },
+        {
+          "translation": "私たちは週に一度ずつ掃除をします。"
+        },
+        {
+          "translation": "みんなは同じ距離を一歩ずつ歩いた。"
+        },
+        {
+          "translation": "彼女は子供たちに一枚ずつプレゼントをくれました。"
+        }
+      ]
+    },
+    "ja_そうだ_83": {
+      "title": "～そうだ (〜sou da)",
+      "shortExplanation": "視覚的な直感に基づいて事物の様子や今にも起こりそうな兆候を推量し、「〜に見える」「今にも〜しそうだ」という意味を表します。",
+      "longExplanation": "様態の助動詞「～そうだ」は、話し手が目で見た様子や直感的な印象から物事の状態を推測したり、今にもある動作や変化が起こりそうな前兆を捉えて表現したりする文型です。例外として「いい」は「よさそうだ」、「ない」は「なさそうだ」となります。普通形に接続して人づてに聞いた内容を伝える伝聞の「～そうだ（〜という話だ）」とは区別されます。",
+      "formation": "動詞連用形（ます形語幹）＋ そうだ ／ い形容詞語幹（「い」を除く）＋ そうだ ／ な形容詞語幹 ＋ そうだ",
+      "examples": [
+        {
+          "translation": "その花はとてもきれいそうだ。"
+        },
+        {
+          "translation": "彼は疲れそうだ。"
+        },
+        {
+          "translation": "この本は面白そうだ。"
+        },
+        {
+          "translation": "雨が降りそうだ。"
+        }
+      ]
+    },
+    "ja_そんな_84": {
+      "title": "そんな (sonna) ＋ 名詞",
+      "shortExplanation": "名詞を修飾して、聞き手に関連する事柄や直前に話題に出た同種の事物を指し、「そのような」という意味を表します。",
+      "longExplanation": "連体詞「そんな」は、「こそあど」指示詞の「そ」系列に属し、名詞の直前に置かれて、聞き手の側にある事物や、会話の中で直前に言及された事柄の性質・状態を指し示します。口語においては、驚きや否定、軽視のニュアンスを込めて用いられることも多くあります。",
+      "formation": "そんな ＋ 名詞",
+      "examples": [
+        {
+          "translation": "そんな話、信じられない。"
+        },
+        {
+          "translation": "そんな映画、見たくない。"
+        }
+      ]
+    },
+    "ja_そんなに_85": {
+      "title": "そんなに～ (sonna ni〜)",
+      "shortExplanation": "主に否定表現を伴い、程度がそれほど著しくないことを表す副詞で、「それほど〜ない」という意味を表します。",
+      "longExplanation": "程度を表す副詞「そんなに」は、文末の否定表現と呼応して、状態や度合いが相手や周囲の予想・印象ほど甚だしくないことを表します。「それほど〜ない」「あまり〜ない」という意味合いになります。",
+      "formation": "そんなに ＋ 動詞否定形 ／ い形容詞否定形 ／ な形容詞否定形",
+      "examples": [
+        {
+          "translation": "そんなに急がなくてもいいですよ。"
+        },
+        {
+          "translation": "そんなに難しくない問題だと思います。"
+        },
+        {
+          "translation": "彼女はそんなに背が高くありません。"
+        },
+        {
+          "translation": "そんなにたくさん食べる必要はないと思う。"
+        }
+      ]
+    },
+    "ja_たらいい_86": {
+      "title": "～たらいい (〜tara ii)",
+      "shortExplanation": "相手に対する助言や勧め、あるいは特定の事態が実現することを望む願望を表し、「〜するとよい」「〜したらいい」という意味を表します。",
+      "longExplanation": "「～たらいい」は、条件を表す「～たら」に形容詞「いい」が結びついた形で、相手に解決策や行動を柔らかく勧めたり助言したりするときに用いられます。また、文末に終助詞「な」などをつけて独り言として使うことで、話し手自身の「〜したらいいな（〜であってほしい）」という願望や希望を表すことができます。",
+      "formation": "動詞た形 ＋ らいい（〜たらいい）",
+      "examples": [
+        {
+          "translation": "もっと勉強したらいいですよ。"
+        },
+        {
+          "translation": "雨が止んだらいいな。"
+        },
+        {
+          "translation": "早く元気になったらいいですね。"
+        },
+        {
+          "translation": "彼に連絡したらいいと思います。"
+        }
+      ]
+    },
+    "ja_たら_87": {
+      "title": "～たら いかがですか (〜tara ikaga desu ka)",
+      "shortExplanation": "相手に対して非常に丁寧・丁重に提案や助言、勧めを行い、「〜なさってはいかがでしょうか」という意味を表します。",
+      "longExplanation": "「～たら いかがですか」は、仮定条件の「～たら」に改まった敬語疑問表現である「いかがですか」を接続した文型です。目上の人や顧客などに対して、失礼のないよう極めて丁寧に提案やアドバイスを行ったり、意向を尋ねたりする際に用いられます。「～たらどうですか」の丁寧な敬語表現に当たります。",
+      "formation": "動詞た形 ＋ ら いかがですか ／ い形容詞語幹 ＋ かったら いかがですか ／ な形容詞 ＋ だったら いかがですか ／ 名詞 ＋ だったら いかがですか",
+      "examples": [
+        {
+          "translation": "図書館に行ったらいかがですか。"
+        },
+        {
+          "translation": "寒かったらカーディガンを着るのはいかがですか。"
+        },
+        {
+          "translation": "部屋が暗かったら照明を付けるのはいかがですか。"
+        },
+        {
+          "translation": "自分の意見だったら他人に聞くのはいかがですか。"
+        }
+      ]
+    },
+    "ja_たら_88": {
+      "title": "～たら どうですか (〜tara doudesuka)",
+      "shortExplanation": "相手に対して柔らかく提案や勧め、助言を行い、「〜してみてはどうですか」という意味を表します。",
+      "longExplanation": "「～たら どうですか」は、動詞のた形に「ら」と「どうですか」を接続し、相手に対して親しみやすく控えめに助言や提案をする表現です。相手に行動を促すニュアンスが含まれるため、基本的には同僚や目下、親しい間柄で用いられ、目上の人に対してはより敬意の高い「～たら いかがですか」などを用いるのが適切です。",
+      "formation": "動詞た形 ＋ ら どうですか（たらどうですか）",
+      "examples": [
+        {
+          "translation": "スキーに行ったらどうですか？"
+        },
+        {
+          "translation": "少し休んだらどうですか？"
+        },
+        {
+          "translation": "この本を読んだらどうですか？"
+        },
+        {
+          "translation": "タクシーで帰ったらどうですか？"
+        }
+      ]
+    }
+  }
+}

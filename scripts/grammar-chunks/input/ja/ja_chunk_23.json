@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_ないと_70",
+    "language": "ja",
+    "pattern": "～ないと",
+    "title": "～ないと (〜nai to)",
+    "shortExplanation": "Express a condition; 'if... not', 'unless', 'must'.",
+    "longExplanation": "The ～ないと grammar point is used to express a condition, focusing on the negative consequences if the action is not performed. It can be translated as 'if... not', 'unless', or 'must' in English. The formation is simply attaching ないと to the negative form of a verb.",
+    "formation": "Verb-negative form + ないと",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "朝食を食べないと、お腹が空く。",
+        "romanization": "Asa gohan wo tabenai to, onaka ga suku.",
+        "translation": "If I don't eat breakfast, I will be hungry."
+      },
+      {
+        "sentence": "宿題をしないと、先生に怒られる。",
+        "romanization": "Shukudai wo shinai to, sensei ni okorareru.",
+        "translation": "If I don't do my homework, the teacher will be angry."
+      },
+      {
+        "sentence": "充電をしないと、電話が使えなくなる。",
+        "romanization": "Juden wo shinai to, denwa ga tsukaenaku naru.",
+        "translation": "If I don't charge it, I won't be able to use the phone."
+      },
+      {
+        "sentence": "この事故を報告しないと、問題が大きくなる。",
+        "romanization": "Kono jiko wo houkoku shinai to, mondai ga ookiku naru.",
+        "translation": "If I don't report this accident, the problem will become bigger."
+      }
+    ]
+  },
+  {
+    "id": "ja_なぜなら_71",
+    "language": "ja",
+    "pattern": "～なぜなら",
+    "title": "～なぜなら (〜nazenara)",
+    "shortExplanation": "Express a reason or explanation; 'because', 'the reason is'.",
+    "longExplanation": "The ～なぜなら grammar point is used to provide a reason or explanation for a preceding statement or situation. It can be translated as 'because' or 'the reason is' in English. It is often followed by から or だから to emphasize the reason or cause.",
+    "formation": "Sentence/Statement + なぜなら + Reason + から/だから",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "このレストランが大好きだ。なぜなら料理が美味しいから。",
+        "romanization": "Kono resutoran ga daisuki da. Nazenara ryouri ga oishii kara.",
+        "translation": "I love this restaurant because the food is delicious."
+      },
+      {
+        "sentence": "彼女は試験に合格しなかった。なぜなら勉強しなかったから。",
+        "romanization": "Kanojo wa shiken ni goukaku shinakatta. Nazenara benkyou shinakatta kara.",
+        "translation": "She didn't pass the exam because she didn't study."
+      },
+      {
+        "sentence": "私は映画を見に行かない。なぜなら今日は忙しいから。",
+        "romanization": "Watashi wa eiga o mi ni ikanai. Nazenara kyou wa isogashii kara.",
+        "translation": "I won't go to see a movie because I am busy today."
+      },
+      {
+        "sentence": "彼はこのプロジェクトを任せられる。なぜなら経験が豊富だから。",
+        "romanization": "Kare wa kono purojekuto wo makaserareru. Nazenara keiken ga houfu dakara.",
+        "translation": "He can be trusted with this project because he has a wealth of experience."
+      }
+    ]
+  },
+  {
+    "id": "ja_など_72",
+    "language": "ja",
+    "pattern": "～など",
+    "title": "～など (〜nado)",
+    "shortExplanation": "Indicates a non-exhaustive list of examples; 'such as', 'things like', 'among others'.",
+    "longExplanation": "The ～など grammar point is used to give a non-exhaustive list of examples, meaning the mentioned items are only some of many possibilities. It can be translated as 'such as', 'things like', or 'among others' in English. This grammar point can be used with nouns.",
+    "formation": "Noun + など",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "魚、果物などを市場で買いました。",
+        "romanization": "Sakana, kudamono nado wo ichiba de kaimashita.",
+        "translation": "I bought fish, fruits, and such at the market."
+      },
+      {
+        "sentence": "彼は日本語、英語、中国語などを話せます。",
+        "romanization": "Kare wa nihongo, eigo, chuugokugo nado wo hanasemasu.",
+        "translation": "He can speak languages such as Japanese, English, and Chinese."
+      },
+      {
+        "sentence": "美術館では絵画、彫刻などの作品を見ました。",
+        "romanization": "Bijutsukan de wa kaiga, choukoku nado no sakuhin wo mimashita.",
+        "translation": "At the art museum, I saw works like paintings, sculptures, and others."
+      },
+      {
+        "sentence": "この店ではパン、ケーキなどのお菓子を売っています。",
+        "romanization": "Kono mise de wa pan, keeki nado no okashi wo utteimasu.",
+        "translation": "This store sells sweets such as bread, cakes, and so on."
+      }
+    ]
+  },
+  {
+    "id": "ja_なんか_73",
+    "language": "ja",
+    "pattern": "～なんか",
+    "title": "～なんか (〜nanka)",
+    "shortExplanation": "Expresses the idea of 'things like' or 'something like', used for listing examples or downplaying something.",
+    "longExplanation": "The ～なんか grammar point is used for listing examples by indicating 'things like' or 'something like'. It can also be used to downplay or devalue something, making it seem less important or less significant than it really is.",
+    "formation": "Noun + なんか, Verb-casual + なんか, い-Adjective + なんか, な-Adjective + なんか",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "お金なんかいらない。",
+        "romanization": "Okane nanka iranai.",
+        "translation": "I don't need money or anything like that."
+      },
+      {
+        "sentence": "彼はピアノなんかも弾けます。",
+        "romanization": "Kare wa piano nanka mo hikemasu.",
+        "translation": "He can play things like the piano."
+      },
+      {
+        "sentence": "忙しいなんかじゃないよ。",
+        "romanization": "Isogashii nanka janai yo.",
+        "translation": "I'm not really busy or anything like that."
+      },
+      {
+        "sentence": "彼女は親切なんかじゃない。",
+        "romanization": "Kanojo wa shinsetsu nanka janai.",
+        "translation": "She's not kind or anything like that."
+      }
+    ]
+  },
+  {
+    "id": "ja_において_74",
+    "language": "ja",
+    "pattern": "～において",
+    "title": "～において (〜ni oite)",
+    "shortExplanation": "Indicates the place, time, or context where an action or situation takes place.",
+    "longExplanation": "The ～において grammar point is used to indicate where an action or situation occurs. It can often be translated as 'in', 'at', or 'on' in English. In some cases, it can also express a specific context or aspect. This grammar point can be used with verbs, adjectives, and nouns.",
+    "formation": "Noun (Place/Time/Context) + において",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "日本において、お盆は家族が集まる大切な行事です。",
+        "romanization": "Nihon ni oite, obon wa kazoku ga atsumaru taisetsu na gyouji desu.",
+        "translation": "In Japan, Obon is an important event where families gather."
+      },
+      {
+        "sentence": "会議において、彼の意見が一番説得力がありました。",
+        "romanization": "Kaigi ni oite, kare no iken ga ichiban settokuryoku ga arimashita.",
+        "translation": "In the meeting, his opinion was the most persuasive."
+      },
+      {
+        "sentence": "科学の分野において、研究が日々進んでいます。",
+        "romanization": "Kagaku no bun'ya ni oite, kenkyuu ga hibi susunde imasu.",
+        "translation": "In the field of science, research is advancing daily."
+      },
+      {
+        "sentence": "幼少期において、子供たちは勢いよく物を覚えます。",
+        "romanization": "Youshouki ni oite, kodomo-tachi wa ikioi yoku mono wo oboemasu.",
+        "translation": "During early childhood, children learn things rapidly."
+      }
+    ]
+  },
+  {
+    "id": "ja_にかわって_75",
+    "language": "ja",
+    "pattern": "～にかわって",
+    "title": "～にかわって (〜ni kawatte)",
+    "shortExplanation": "Expresses 'in place of', 'on behalf of', or 'instead of'.",
+    "longExplanation": "The ～にかわって grammar point is used to express that someone or something is acting in place of, on behalf of, or instead of someone or something else. Typically used with nouns (e.g., 人, 会社, etc.).",
+    "formation": "Noun + にかわって",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼が病気なので、私が会議に出席することになりました。私が彼にかわって会議に出席します。",
+        "romanization": "Kare ga byouki na no de, watashi ga kaigi ni shusseki suru koto ni narimashita. Watashi ga kare ni kawatte kaigi ni shusseki shimasu.",
+        "translation": "He is sick, so I will attend the meeting. I will attend the meeting on his behalf."
+      },
+      {
+        "sentence": "母は忙しいので、私が母にかわって料理を作ります。",
+        "romanization": "Haha wa isogashii no de, watashi ga haha ni kawatte ryouri wo tsukurimasu.",
+        "translation": "My mother is busy, so I will cook the meal instead of her."
+      },
+      {
+        "sentence": "今度の旅行は妹にかわって、私が一緒に行きます。",
+        "romanization": "Kondo no ryokou wa imouto ni kawatte, watashi ga issho ni ikimasu.",
+        "translation": "For this trip, I will go together instead of my younger sister."
+      },
+      {
+        "sentence": "先生が出張中でいないので、助手が先生にかわってクラスを担当します。",
+        "romanization": "Sensei ga shucchou chuu de inai no de, joshu ga sensei ni kawatte kurasu wo tantou shimasu.",
+        "translation": "The teacher is not here because of a business trip, so the assistant will take charge of the class instead of the teacher."
+      }
+    ]
+  },
+  {
+    "id": "ja_にしては_76",
+    "language": "ja",
+    "pattern": "～にしては",
+    "title": "～にしては (〜ni shite wa)",
+    "shortExplanation": "Express 'for' or 'considering' in the sense of being unusual or unexpected.",
+    "longExplanation": "The ～にしては grammar point is used to express that something is unusual or unexpected considering a specific condition or context. It can be translated as 'for' or 'considering' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + にしては, い-Adjective + にしては, な-Adjective + にしては, Noun + にしては",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼女は初心者にしては、上手に水泳ができる。",
+        "romanization": "Kanojo wa shoshinsha ni shite wa, jouzu ni suiei ga dekiru.",
+        "translation": "Considering she is a beginner, she can swim well."
+      },
+      {
+        "sentence": "このお寿司は安いにしては、とても美味しい。",
+        "romanization": "Kono o-sushi wa yasui ni shite wa, totemo oishii.",
+        "translation": "Considering this sushi is cheap, it's very delicious."
+      },
+      {
+        "sentence": "彼は若いにしては、とても落ち着いている。",
+        "romanization": "Kare wa wakai ni shite wa, totemo ochitsuite iru.",
+        "translation": "Considering he is young, he is very calm."
+      },
+      {
+        "sentence": "あの人は外国人にしては、日本語がうまい。",
+        "romanization": "Ano hito wa gaikokujin ni shite wa, nihongo ga umai.",
+        "translation": "For a foreigner, that person is good at Japanese."
+      }
+    ]
+  },
+  {
+    "id": "ja_にしても_77",
+    "language": "ja",
+    "pattern": "～にしても",
+    "title": "～にしても (〜ni shitemo)",
+    "shortExplanation": "Expresses 'even if', 'no matter', 'regardless of'.",
+    "longExplanation": "The ～にしても grammar point is used to express that even if a certain condition is true or a certain situation occurs, the outcome will not change. It can be translated as 'even if', 'no matter', or 'regardless of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + にしても, い-Adjective + にしても, な-Adjective + だにしても, Noun + だにしても",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "雨が降るにしても、学校へ行かなければなりません。",
+        "romanization": "Ame ga furu ni shitemo, gakkou e ikanakereba narimasen.",
+        "translation": "Even if it rains, I have to go to school."
+      },
+      {
+        "sentence": "彼女が怒っているにしても、話し合いは避けられない。",
+        "romanization": "Kanojo ga okotte iru ni shitemo, hanashiai wa sakerarenai.",
+        "translation": "Even if she is angry, we can't avoid talking."
+      },
+      {
+        "sentence": "このレストランが高いにしても、料理の質がよくておすすめです。",
+        "romanization": "Kono resutoran ga takai ni shitemo, ryouri no shitsu ga yokute osusume desu.",
+        "translation": "Even if this restaurant is expensive, I recommend it because the quality of the food is good."
+      },
+      {
+        "sentence": "彼が有名だにしても、彼の私生活について話すのは失礼だ。",
+        "romanization": "Kare ga yuumei da ni shitemo, kare no shiseikatsu ni tsuite hanasu no wa shitsurei da.",
+        "translation": "Even if he is famous, it's rude to talk about his private life."
+      }
+    ]
+  },
+  {
+    "id": "ja_について_78",
+    "language": "ja",
+    "pattern": "～について",
+    "title": "～について (〜ni tsuite)",
+    "shortExplanation": "Expressing 'about', 'concerning', or 'regarding'.",
+    "longExplanation": "The ～について grammar point is used to express 'about', 'concerning', or 'regarding' a certain topic or subject. It is often used in both casual and formal contexts. The formation is simple – just add について after the noun that represents the topic you are discussing.",
+    "formation": "Noun + について",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "日本の文化について学びたいです。",
+        "romanization": "Nihon no bunka ni tsuite manabitai desu.",
+        "translation": "I want to learn about Japanese culture."
+      },
+      {
+        "sentence": "彼の意見について話し合いましょう。",
+        "romanization": "Kare no iken ni tsuite hanashiaimashou.",
+        "translation": "Let's discuss his opinion."
+      },
+      {
+        "sentence": "この問題について詳しく教えてください。",
+        "romanization": "Kono mondai ni tsuite kuwashiku oshiete kudasai.",
+        "translation": "Please explain this issue in detail."
+      },
+      {
+        "sentence": "子供たちの教育について考えなければなりません。",
+        "romanization": "Kodomo-tachi no kyouiku ni tsuite kangaenakereba narimasen.",
+        "translation": "We have to think about the children's education."
+      }
+    ]
+  },
+  {
+    "id": "ja_にとって_79",
+    "language": "ja",
+    "pattern": "～にとって",
+    "title": "～にとって (〜ni totte)",
+    "shortExplanation": "Express the meaning 'for', 'to', 'from the perspective of'.",
+    "longExplanation": "The ～にとって grammar point is used to express the meaning 'for', 'to', or 'from the perspective of' when describing someone or something's point of view, feelings, benefits, or importance. It is used with all types of words, such as verbs, adjectives, and nouns.",
+    "formation": "Noun (person or thing) + にとって + Verb/Adjective/Noun",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "私にとって、健康は一番大切なことです。",
+        "romanization": "Watashi ni totte, kenkou wa ichiban taisetsu na koto desu.",
+        "translation": "For me, health is the most important thing."
+      },
+      {
+        "sentence": "あの会社にとって、このプロジェクトは重要な意味があります。",
+        "romanization": "Ano kaisha ni totte, kono purojekuto wa juuyou na imi ga arimasu.",
+        "translation": "For that company, this project has significant meaning."
+      },
+      {
+        "sentence": "子供たちにとって、おもちゃは楽しいものです。",
+        "romanization": "Kodomotachi ni totte, omocha wa tanoshii mono desu.",
+        "translation": "For children, toys are fun things."
+      },
+      {
+        "sentence": "外国人にとって、日本語は難しい言語の一つです。",
+        "romanization": "Gaikokujin ni totte, nihongo wa muzukashii gengo no hitotsu desu.",
+        "translation": "For foreigners, Japanese is one of the difficult languages."
+      }
+    ]
+  },
+  {
+    "id": "ja_によって_80",
+    "language": "ja",
+    "pattern": "～によって",
+    "title": "～によって (〜ni yotte)",
+    "shortExplanation": "Indicates the reason or cause, difference depending on a factor, or methods used.",
+    "longExplanation": "The ～によって grammar point is used to express the reason or cause of something, to show a difference depending on a certain factor, or to indicate the method or means by which something is done. It can be translated as 'by', 'depending on', 'due to', or 'according to' in English. The formation is the same for verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-casual + によって, い-Adjective + によって, な-Adjective + によって, Noun + によって",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "その事故は悪天候によって引き起こされた。",
+        "romanization": "Sono jiko wa akutenkou ni yotte hikiokosareta.",
+        "translation": "The accident was caused by bad weather."
+      },
+      {
+        "sentence": "生活習慣によって、健康状態が変わります。",
+        "romanization": "Seikatsu shuukan ni yotte, kenkou joutai ga kawarimasu.",
+        "translation": "Health conditions change depending on lifestyle habits."
+      },
+      {
+        "sentence": "彼の成功は努力によって得られたものだ。",
+        "romanization": "Kare no seikou wa doryoku ni yotte erareta mono da.",
+        "translation": "His success was achieved through hard work."
+      },
+      {
+        "sentence": "結果は試験の難易度によって異なります。",
+        "romanization": "Kekka wa shiken no nan'ido ni yotte kotonarimasu.",
+        "translation": "The results vary depending on the difficulty of the exam."
+      }
+    ]
+  },
+  {
+    "id": "ja_によれば_81",
+    "language": "ja",
+    "pattern": "～によれば",
+    "title": "～によれば (〜ni yoreba)",
+    "shortExplanation": "Means 'according to', 'based on' or 'by'.",
+    "longExplanation": "The ～によれば grammar point is used to express information, opinions or a judgement made based on a certain source. It can be translated as 'according to', 'based on', or 'by' in English. This grammar point is typically used with a noun that represents the source of information.",
+    "formation": "Noun + によれば",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "天気予報によれば、明日は晴れるでしょう。",
+        "romanization": "Tenki yohou ni yoreba, ashita wa hareru deshou.",
+        "translation": "According to the weather forecast, it will be sunny tomorrow."
+      },
+      {
+        "sentence": "先生によれば、この問題は簡単だそうです。",
+        "romanization": "Sensei ni yoreba, kono mondai wa kantan da sou desu.",
+        "translation": "According to the teacher, this problem seems to be easy."
+      },
+      {
+        "sentence": "調査によれば、若者の喫煙率が減っているということです。",
+        "romanization": "Chousa ni yoreba, wakamono no kitsuenritsu ga hette iru to iu koto desu.",
+        "translation": "According to the survey, the smoking rate among young people is decreasing."
+      },
+      {
+        "sentence": "新聞記事によれば、その企業は倒産の危機にあるらしい。",
+        "romanization": "Shinbun kiji ni yoreba, sono kigyou wa tousan no kiki ni aru rashii.",
+        "translation": "According to the newspaper article, the company appears to be on the verge of bankruptcy."
+      }
+    ]
+  },
+  {
+    "id": "ja_に対して_82",
+    "language": "ja",
+    "pattern": "～に対して",
+    "title": "～に対して (～ni taishite)",
+    "shortExplanation": "Indicates a target or contrast; 'toward', 'against', 'in contrast to', 'in response to'.",
+    "longExplanation": "The ～に対して grammar point is used to indicate the target or direction of an action, or to show a contrast between two situations or objects. It can be translated as 'toward', 'against', 'in contrast to', or 'in response to' in English. It can be used with verbs, adjectives, and nouns.",
+    "formation": "Verb-casual + に対して, い-Adjective + に対して, な-Adjective + に対して, Noun + に対して",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "子供たちに対して、親は常にやさしくあるべきです。",
+        "romanization": "Kodomotachi ni taishite, oya wa tsune ni yasashiku aru beki desu.",
+        "translation": "Parents should always be kind towards their children."
+      },
+      {
+        "sentence": "彼は質問に対して正直に答えました。",
+        "romanization": "Kare wa shitsumon ni taishite shoujiki ni kotaemashita.",
+        "translation": "He answered the questions honestly."
+      },
+      {
+        "sentence": "田中さんは成功したに対して、佐藤さんは失敗しました。",
+        "romanization": "Tanaka-san wa seikou shita ni taishite, Satou-san wa shippai shimashita.",
+        "translation": "In contrast to Tanaka-san's success, Satou-san failed."
+      },
+      {
+        "sentence": "彼の意見に対して、私は反対の立場を取りました。",
+        "romanization": "Kare no iken ni taishite, watashi wa hantai no tachiba wo torimashita.",
+        "translation": "In response to his opinion, I took an opposing stance."
+      }
+    ]
+  },
+  {
+    "id": "ja_に比べて_83",
+    "language": "ja",
+    "pattern": "～に比べて",
+    "title": "～に比べて (〜ni kurabete)",
+    "shortExplanation": "Comparing to; in comparison with; as opposed to.",
+    "longExplanation": "The ～に比べて grammar point is used to compare two things or situations by highlighting their differences. It can be translated as 'comparing to', 'in comparison with', or 'as opposed to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + に比べて, い-Adjective + に比べて, な-Adjective + だ/である + に比べて, Noun + だ/である + に比べて",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "夏に比べて、冬は寒いです。",
+        "romanization": "Natsu ni kurabete, fuyu wa samui desu.",
+        "translation": "Winter is cold compared to summer."
+      },
+      {
+        "sentence": "このトマトは赤いトマトに比べて美味しくない。",
+        "romanization": "Kono tomato wa akai tomato ni kurabete oishikunai.",
+        "translation": "This tomato is not as delicious compared to the red tomatoes."
+      },
+      {
+        "sentence": "彼は私に比べて英語が上手です。",
+        "romanization": "Kare wa watashi ni kurabete eigo ga jouzu desu.",
+        "translation": "He is better at English compared to me."
+      },
+      {
+        "sentence": "東京に比べて、京都は静かな町です。",
+        "romanization": "Toukyou ni kurabete, Kyouto wa shizukana machi desu.",
+        "translation": "Kyoto is a quieter city compared to Tokyo."
+      }
+    ]
+  },
+  {
+    "id": "ja_に関して_84",
+    "language": "ja",
+    "pattern": "～に関して",
+    "title": "～に関して (〜ni kanshite)",
+    "shortExplanation": "Regarding, concerning, about, with respect to.",
+    "longExplanation": "The ～に関して grammar point is used to express the topic or subject matter one is talking about. It can be translated as 'regarding', 'concerning', 'about', or 'with respect to' in English. The formation is simple and remains the same regardless of it being used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Noun + に関して",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "健康に関して気を付けることが大切です。",
+        "romanization": "Kenkou ni kanshite ki wo tsukeru koto ga taisetsu desu.",
+        "translation": "It is important to be careful regarding health."
+      },
+      {
+        "sentence": "このプロジェクトに関しては、彼がすべての詳細を知っています。",
+        "romanization": "Kono purojekuto ni kanshite wa, kare ga subete no shousai wo shitteimasu.",
+        "translation": "Regarding this project, he knows all the details."
+      },
+      {
+        "sentence": "環境問題に関して、私たちはもっと責任を持たなければなりません。",
+        "romanization": "Kankyou mondai ni kanshite, watashitachi wa motto sekinin wo motanakereba narimasen.",
+        "translation": "Concerning environmental issues, we must take more responsibility."
+      },
+      {
+        "sentence": "この事件に関しての情報はまだ十分ではありません。",
+        "romanization": "Kono jiken ni kanshite no jouhou wa mada juubun de wa arimasen.",
+        "translation": "The information regarding this incident is still insufficient."
+      }
+    ]
+  }
+]

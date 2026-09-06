@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_一MN也都不V_122": {
+      "title": "一 + Lượng từ + Danh từ + 也 / 都 + 不 / 没 + Động từ (Phủ định hoàn toàn: một... cũng không...)",
+      "shortExplanation": "Dùng để biểu thị sự phủ định hoàn toàn; 'ngay cả một... cũng không...', 'chẳng... chút nào'.",
+      "longExplanation": "Trong tiếng Trung, cấu trúc '一 + Lượng từ + Danh từ + 也 / 都 + 不 / 没 + Động từ' được dùng để nhấn mạnh sự phủ định tuyệt đối (hoàn toàn không có ngoại lệ). Người nói sử dụng đơn vị nhỏ nhất là '一 + Lượng từ' kết hợp với phó từ '也' hoặc '都' và từ phủ định '不' (phủ định thói quen, ý chí) hoặc '没' (phủ định hành động chưa xảy ra trong quá khứ hoặc hiện tại) để biểu thị ngay cả một lượng tối thiểu cũng không thực hiện.",
+      "formation": "Chủ ngữ + 一 + Lượng từ + Danh từ + 也 / 都 + 不 / 没 + Động từ",
+      "examples": [
+        {
+          "translation": "Tôi một quả táo cũng không ăn. (Tôi chẳng ăn quả táo nào cả.)"
+        }
+      ]
+    },
+    "zh_那_123": {
+      "title": "那 (Liên từ: Thế thì, vậy thì [dẫn ra kết luận hoặc quyết định])",
+      "shortExplanation": "Liên từ '那' đứng đầu phân câu hoặc trước chủ ngữ, biểu thị căn cứ vào tình huống hoặc lời nói phía trước để đưa ra suy luận, quyết định; 'thế thì', 'vậy thì'.",
+      "longExplanation": "Trong tiếng Trung, '那' (nà - trong khẩu ngữ đôi khi dùng '那么') thường được dùng làm liên từ ở đầu phân câu sau hoặc đứng trước chủ ngữ để biểu thị sự tiếp nối và chuyển ý. Dựa trên điều kiện, tình huống thực tế hoặc ý kiến mà đối phương vừa nêu ở phân câu trước, người nói dùng '那' để đưa ra phán đoán, kết luận hoặc quyết định tương ứng.",
+      "formation": "Phân câu 1，那 + (Chủ ngữ + ) Phân câu 2",
+      "examples": [
+        {
+          "translation": "Bạn không đi, vậy thì tôi cũng không đi nữa."
+        }
+      ]
+    },
+    "zh_那也_124": {
+      "title": "那也 (Dù vậy thì cũng..., thế thì cũng... [nhượng bộ chuyển ngoặt trong khẩu ngữ])",
+      "shortExplanation": "Cụm từ khẩu ngữ dùng để thừa nhận một phần lý do của đối phương nhưng vẫn chuyển hướng nhấn mạnh: 'dù vậy thì cũng không thể...'; 'thế thì cũng...'.",
+      "longExplanation": "'那也' (nà yě) là cách diễn đạt chuyển ngoặt mang tính nhượng bộ thường gặp trong giao tiếp hàng ngày. Người nói dùng '那也' để tiếp nhận lý do, hoàn cảnh hoặc lời giải thích mà đối phương vừa đưa ra, nhưng ngay sau đó chỉ ra rằng điều đó không thể là lý do chính đáng để làm một việc gì đó quá mức hoặc không phù hợp, tương đương với 'cho dù như vậy thì cũng...'.",
+      "formation": "那也 + Phó từ / Động từ năng nguyện + Động từ",
+      "examples": [
+        {
+          "translation": "A: Tôi đã ôn tập xong từ sớm rồi. B: Thế thì (dù vậy) cũng không thể chơi suốt thế được chứ."
+        }
+      ]
+    },
+    "zh_V1了就V2_126": {
+      "title": "Động từ 1 + 了 + 就 + Động từ 2 (Hành động kế tiếp: Vừa... xong là... ngay/liền)",
+      "shortExplanation": "Biểu thị hai hành động diễn ra liên tiếp nhau; hành động thứ hai lập tức bắt đầu ngay sau khi hành động thứ nhất kết thúc.",
+      "longExplanation": "Cấu trúc 'Động từ 1 + 了 + 就 + Động từ 2' dùng để diễn tả sự nối tiếp tức thì của hai hành vi hoặc sự việc. Trợ từ động thái '了' đứng sau động từ thứ nhất biểu thị hành động 1 hoàn thành, và phó từ '就' đứng trước động từ thứ hai biểu thị hành động 2 diễn ra ngay sau đó không chậm trễ. Hai hành động này có thể cùng một chủ ngữ hoặc hai chủ ngữ khác nhau.",
+      "formation": "(Chủ ngữ 1 + ) Động từ 1 + 了 (+ Tân ngữ 1)，(Chủ ngữ 2 + ) 就 + Động từ 2 (+ Tân ngữ 2)",
+      "examples": [
+        {
+          "translation": "Bố về một cái là chúng ta ăn cơm liền."
+        }
+      ]
+    },
+    "zh_V来去_127": {
+      "title": "Động từ + 来 / 去 (Bổ ngữ xu hướng đơn: ... lại đây / ... đi ra)",
+      "shortExplanation": "Bổ ngữ xu hướng đơn giản '来' và '去' đứng sau động từ để biểu thị hướng chuyển động hướng về phía người nói ('来') hoặc rời xa người nói ('去').",
+      "longExplanation": "Trong tiếng Trung, '来' (lái) và '去' (qù) đặt trực tiếp sau động từ hành động để tạo thành bổ ngữ xu hướng đơn giản. '来' biểu thị động tác có xu hướng di chuyển tiến lại gần vị trí của người nói hoặc điểm quy chiếu; ngược lại, '去' biểu thị động tác có xu hướng di chuyển rời xa vị trí của người nói (ví dụ: 上来 là 'lên đây' khi người nói ở trên lầu, 上去 là 'lên đó' khi người nói ở dưới lầu).",
+      "formation": "Chủ ngữ + Động từ + 来 / 去",
+      "examples": [
+        {
+          "translation": "Chúng tôi đang đợi bạn ở trên lầu này, bạn lên đây đi."
+        }
+      ]
+    },
+    "zh_Vsomewhere来去_128": {
+      "title": "Động từ + Nơi chốn + 来 / 去 (Bổ ngữ xu hướng với tân ngữ nơi chốn [Bắt buộc đặt nơi chốn trước 来/去])",
+      "shortExplanation": "Khi động từ có tân ngữ là từ chỉ nơi chốn / địa điểm, tân ngữ BẮT BUỘC phải đứng trước bổ ngữ xu hướng '来' hoặc '去'.",
+      "longExplanation": "Đây là một quy tắc ngữ pháp bắt buộc và quan trọng trong tiếng Trung: Khi động từ mang bổ ngữ xu hướng '来' hoặc '去', nếu tân ngữ là từ chỉ nơi chốn/địa điểm (như 家, 教室, 办公室, 北京...), tân ngữ đó bắt buộc phải được đặt ở vị trí giữa động từ và '来/去' theo trật tự: 'Động từ + Nơi chốn + 来 / 去'. Tuyệt đối không được đặt tân ngữ nơi chốn ở phía sau '来/去'.",
+      "formation": "Chủ ngữ + Động từ + Danh từ nơi chốn + 来 / 去 (+ 了)",
+      "examples": [
+        {
+          "translation": "Bạn tôi đã về nhà rồi (đi về phía nhà)."
+        }
+      ]
+    },
+    "zh_VO来去_129": {
+      "title": "Động từ + Tân ngữ (sự vật) + 来 / 去 (Bổ ngữ xu hướng với tân ngữ chỉ vật: Đặt tân ngữ trước 来/去)",
+      "shortExplanation": "Khi tân ngữ là danh từ chỉ sự vật thông thường, có thể đặt tân ngữ ở giữa động từ và '来/去'; thường dùng khi biểu thị mệnh lệnh, dự định hoặc hành động chưa hoàn thành.",
+      "longExplanation": "Khi động từ mang bổ ngữ xu hướng '来' hoặc '去' và tân ngữ là danh từ chỉ sự vật thông thường (không phải nơi chốn), tiếng Trung có thể đặt tân ngữ chỉ vật ở giữa động từ và bổ ngữ xu hướng: 'Động từ + Tân ngữ + 来 / 去'. Vị trí này rất phổ biến trong các câu cầu khiến, dặn dò, hoặc biểu thị hành động dự định sẽ thực hiện trong tương lai.",
+      "formation": "Chủ ngữ + (Trợ động từ + ) Động từ + Tân ngữ (Danh từ chỉ vật) + 来 / 去",
+      "examples": [
+        {
+          "translation": "Ngày mai phải mang bài tập đến nhé."
+        }
+      ]
+    },
+    "zh_V来去O_130": {
+      "title": "Động từ + 来 / 去 + Tân ngữ (sự vật) (Bổ ngữ xu hướng với tân ngữ chỉ vật: Đặt tân ngữ sau 来/去)",
+      "shortExplanation": "Khi tân ngữ là danh từ chỉ sự vật thông thường, tân ngữ cũng có thể đặt ngay sau '来/去'; động từ và bổ ngữ xu hướng kết hợp chặt chẽ thành một khối.",
+      "longExplanation": "Đây là cách sắp xếp thứ hai khi động từ mang bổ ngữ xu hướng '来' hoặc '去' và tân ngữ là danh từ chỉ sự vật. Ở cấu trúc này, tân ngữ được đặt ở phía sau cụm 'Động từ + 来 / 去' ('Động từ + 来 / 去 + Tân ngữ'). Khi động từ và '来/去' liền kề nhau, chúng tạo thành một khối liên kết chặt chẽ biểu thị phương hướng di chuyển mang theo vật gì. Cả hai cách đặt trước và sau '来/去' đều được sử dụng tự nhiên trong giao tiếp.",
+      "formation": "Chủ ngữ + (Trợ động từ + ) Động từ + 来 / 去 + Tân ngữ (Danh từ chỉ vật)",
+      "examples": [
+        {
+          "translation": "Ngày mai phải mang bài tập đến nhé."
+        }
+      ]
+    },
+    "zh_能吗_131": {
+      "title": "能……吗？ (Câu phản vấn: Có thể... được sao?, Làm sao mà... được chứ?)",
+      "shortExplanation": "Mẫu câu phản vấn dùng động từ năng nguyện '能' để khẳng định mạnh mẽ rằng sự việc không thể nào xảy ra hoặc không hợp lý; 'làm sao mà... được?'.",
+      "longExplanation": "'能……吗？' (néng... ma?) là cấu trúc câu phản vấn (nghi vấn tu từ) rất quen thuộc trong tiếng Trung. Người nói dùng hình thức câu hỏi khẳng định với trợ động từ '能' để truyền tải ý nghĩa phủ định dứt khoát: 'tuyệt đối không thể nào...'. Mẫu câu này thường dùng khi trách móc, phê bình, chất vấn hoặc khuyên bảo đối phương khi nhận thấy hành động của đối phương vô lý hoặc không thể đem lại kết quả tốt.",
+      "formation": "(Chủ ngữ + ) 能 + Cụm động từ / Cụm tính từ + 吗？",
+      "examples": [
+        {
+          "translation": "Cậu không làm bài tập, cũng chẳng chịu luyện tập, thì làm sao học tốt tiếng Trung được chứ?"
+        }
+      ]
+    },
+    "zh_N1还是N2_132": {
+      "title": "Danh từ 1 / Phân câu 1 + 还是 + Danh từ 2 / Phân câu 2？ (Câu hỏi lựa chọn: ... hay là...?)",
+      "shortExplanation": "Dùng liên từ '还是' trong câu nghi vấn để đưa ra hai hoặc nhiều sự lựa chọn nhằm hỏi người đối thoại xem chọn phương án nào.",
+      "longExplanation": "'还是' (háishi) là liên từ dùng trong câu hỏi lựa chọn trong tiếng Trung. Cấu trúc này liên kết hai (hoặc nhiều hơn) danh từ, cụm từ hoặc phân câu mang tính chất loại trừ lẫn nhau, yêu cầu người nghe chọn lấy một trong các phương án đó ('... hay là...?'). Đây là điểm ngữ pháp căn bản và quan trọng nhất cần phân biệt: Trong câu hỏi trực tiếp yêu cầu lựa chọn, bắt buộc dùng '还是', tuyệt đối không được dùng '或者'.",
+      "formation": "(Chủ ngữ + ) Lựa chọn 1 + 还是 + Lựa chọn 2？",
+      "examples": [
+        {
+          "translation": "Bạn muốn uống cà phê hay là uống trà?"
+        }
+      ]
+    },
+    "zh_N1或者N2_133": {
+      "title": "Danh từ 1 / Phân câu 1 + 或者 + Danh từ 2 / Phân câu 2 (Liên từ lựa chọn trong câu trần thuật: Hoặc là, hoặc)",
+      "shortExplanation": "Dùng liên từ '或者' trong câu trần thuật để biểu thị sự lựa chọn giữa các khả năng hoặc phương án; 'hoặc là...', 'hoặc...'.",
+      "longExplanation": "'或者' (huòzhě) là liên từ biểu thị quan hệ lựa chọn được dùng chuyên biệt trong câu trần thuật (miêu tả, khẳng định, giả định). Cấu trúc liên kết các từ, cụm từ hoặc phân câu để chỉ ra rằng bất kỳ phương án nào trong số đó cũng đều có thể xảy ra hoặc được chấp nhận. Khác biệt cốt lõi với '还是': '或者' dùng trong câu trần thuật để liệt kê các khả năng, không dùng trong câu hỏi trực tiếp để bắt người nghe chọn lựa.",
+      "formation": "Lựa chọn 1 + 或者 + Lựa chọn 2",
+      "examples": [
+        {
+          "translation": "Khi trời lạnh hoặc khi làm việc mệt mỏi, uống một tách trà nóng rất dễ chịu."
+        }
+      ]
+    },
+    "zh_N1还是N2_134": {
+      "title": "Phân câu 1 + 还是 + Phân câu 2 (Mệnh đề nghi vấn gián tiếp trong câu trần thuật: ... hay là...)",
+      "shortExplanation": "Dùng '还是' trong mệnh đề phụ mang ý nghĩa phân vân, chưa quyết định hoặc nghi vấn gián tiếp (đứng sau các động từ như '想', '知道', '决定').",
+      "longExplanation": "Mặc dù toàn bộ câu là câu trần thuật (kết thúc bằng dấu chấm), nhưng khi phân câu làm tân ngữ đứng sau các động từ biểu thị nhận thức, suy nghĩ hoặc quyết định (như 还没想好 - chưa nghĩ xong, 不知道 - không biết, 决定不了 - chưa quyết định được, 考虑 - cân nhắc) mang tính chất phân vân giữa các khả năng, tiếng Trung bắt buộc phải dùng '还是' chứ KHÔNG ĐƯỢC dùng '或者'. Cấu trúc này diễn đạt mệnh đề câu hỏi gián tiếp: 'liệu là A hay là B'.",
+      "formation": "Chủ ngữ + Động từ nhận thức/chưa quyết định + Lựa chọn 1 + 还是 + Lựa chọn 2",
+      "examples": [
+        {
+          "translation": "Tôi vẫn chưa nghĩ xong là nên đi leo núi hay là đi xem phim."
+        }
+      ]
+    },
+    "zh_PLACEV着N_135": {
+      "title": "Từ chỉ nơi chốn + Động từ + 着 + Danh từ (Câu tồn hiện: Ở đâu đó đang để/treo/nằm/ngồi... cái gì)",
+      "shortExplanation": "Dùng từ chỉ nơi chốn làm chủ ngữ kết hợp với 'Động từ + 着' để miêu tả trạng thái tĩnh của người hoặc vật đang tồn tại ở một vị trí cụ thể.",
+      "longExplanation": "Đây là cấu trúc câu tồn hiện (câu tồn tại) điển hình trong tiếng Trung. Từ chỉ nơi chốn/địa điểm đứng ở đầu câu làm chủ ngữ, theo sau là động từ vị ngữ kết hợp với trợ từ động thái '着', và cuối cùng là danh từ biểu thị đối tượng tồn tại ('Từ chỉ nơi chốn + Động từ + 着 + Danh từ'). Cấu trúc dùng để miêu tả khách quan một trạng thái tĩnh đang duy trì ở một không gian nào đó (như 放着 - đang để, 挂着 - đang treo, 坐着 - đang ngồi, 躺着 - đang nằm, 停着 - đang đỗ xe). Danh từ phía sau thường là danh từ vô định, đi kèm với số lượng từ.",
+      "formation": "Từ chỉ nơi chốn + Động từ + 着 + (Số từ + Lượng từ + ) Danh từ",
+      "examples": [
+        {
+          "translation": "Trên bàn có để một tách cà phê."
+        }
+      ]
+    },
+    "zh_PLACE没V着N_136": {
+      "title": "Từ chỉ nơi chốn + 没(有) + Động từ + 着 + Danh từ (Phủ định của câu tồn hiện: Ở đâu đó không có để/treo/đặt... cái gì)",
+      "shortExplanation": "Dạng phủ định của câu tồn hiện; dùng phó từ '没' hoặc '没有' đặt trước động từ để biểu thị ở địa điểm nào đó không tồn tại sự vật trong trạng thái đó.",
+      "longExplanation": "Để phủ định câu tồn hiện có chứa trợ từ động thái '着', tiếng Trung đặt phó từ phủ định '没' hoặc '没有' ngay trước động từ (tuyệt đối không dùng '不'). Cấu trúc 'Từ chỉ nơi chốn + 没(有) + Động từ + 着 + Danh từ' dùng để thông báo rằng tại một vị trí cụ thể nào đó không có đồ vật hay người duy trì trạng thái đó. Điểm ngữ pháp rất quan trọng cần lưu ý: Trong thể phủ định của câu tồn hiện, danh từ đứng sau thường không đi kèm với số từ và lượng từ.",
+      "formation": "Từ chỉ nơi chốn + 没(有) + Động từ + 着 + Danh từ",
+      "examples": [
+        {
+          "translation": "Trên bàn không có đặt cà phê."
+        }
+      ]
+    },
+    "zh_会VA的_137": {
+      "title": "会 + Động từ / Tính từ + (的) (Biểu thị khả năng, ước đoán: Sẽ... đấy, nhất định sẽ...)",
+      "shortExplanation": "Động từ năng nguyện '会' kết hợp với trợ từ ngữ khí '的' ở cuối câu để dự đoán sự việc rất có khả năng hoặc chắc chắn sẽ xảy ra; 'sẽ... đấy'.",
+      "longExplanation": "Trong tiếng Trung, động từ năng nguyện '会' (huì) ngoài nghĩa chỉ kỹ năng qua học hỏi còn biểu thị khả năng hoặc sự ước đoán về một sự việc sẽ diễn ra trong tương lai ('sẽ...'). Khi đi kèm với trợ từ ngữ khí '的' ở cuối câu ('会……的'), cấu trúc này làm tăng mạnh ngữ khí khẳng định, đảm bảo hoặc cảnh báo của người nói, nhấn mạnh rằng sự việc hoặc trạng thái đó nhất định sẽ xảy ra.",
+      "formation": "Chủ ngữ + 会 + Động từ / Tính từ (+ Tân ngữ) + (的)",
+      "examples": [
+        {
+          "translation": "Bạn mặc ít như thế, sẽ bị cảm cúm đấy."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_一MN也都不V_122": {
+      "title": "一 ＋ 量詞 ＋ 名詞 ＋ 也 / 都 ＋ 不 / 没 ＋ 動詞（完全否定：一つも〜ない・少しも〜ない）",
+      "shortExplanation": "最小単位の「一 ＋ 量詞」に「也 / 都」と否定語を続け、「一つも〜ない」「何一つ〜しない」という完全否定を表します。",
+      "longExplanation": "中国語において完全否定を強調する代表的な構文です。最小の数量単位である「一 ＋ 量詞 ＋ 名詞」を「也」または「都」の前に置き、後ろに否定副詞「不」（習慣・意志の否定）または「没」（過去・完了の否定）と動詞を続けることで、「たった一つでさえ〜ない」「まったく〜しない」という絶対的な否定のニュアンスを表します（例：我一个苹果也不吃＝私はリンゴを一つも食べません、他一个字也没写＝彼は一文字も書かなかった）。",
+      "formation": "主語 ＋ 一 ＋ 量詞 ＋ 名詞 ＋ 也 / 都 ＋ 不 / 没 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "私はリンゴを一つも食べません。"
+        }
+      ]
+    },
+    "zh_那_123": {
+      "title": "那（接続詞：それなら・では・じゃあ［前述を受けて結論を導く］）",
+      "shortExplanation": "文頭や主語の前に置く接続詞「那」で、前述の状況や相手の発言を受けて「それなら」「では」と結論や判断を導きます。",
+      "longExplanation": "接続詞「那」（nà、話し言葉では「那么」とも言う）は、前の文で述べられた状況や相手の発言・提案を受けて、それを前提とした判断、結論、新たな行動の決定などを後続の文で導く際に用いられます。日本語の「それなら」「じゃあ」「では」に相当し、日常会話の受け答えで極めて頻繁に使われます（例：你不去，那我也不去了＝君が行かないなら、じゃあ私も行かない）。",
+      "formation": "節1，那 ＋ （主語 ＋ ）節2",
+      "examples": [
+        {
+          "translation": "君が行かないなら、じゃあ私も行かないよ。"
+        }
+      ]
+    },
+    "zh_那也_124": {
+      "title": "那也（それにしても・いくらそうだからといって〜［口語の譲歩・反論］）",
+      "shortExplanation": "相手の主張や事実を一応認めた上で、「いくらそうだからといって〜」「それにしても〜」と反論や釘を刺す口語表現です。",
+      "longExplanation": "口語表現「那也」（nà yě）は、相手が提示した言い訳、理由、既定の事実を承諾・譲歩しながらも、「だからといって〜してよい理由にはならない」「それにしてもやはり〜だ」と反駁したり、忠告・苦言を呈したりする際に用いられます（例：A: 我早就复习好了。B: 那也不能一直玩儿啊＝A: とっくに復習は済ませたよ。B: だからってずっと遊んでいていいわけじゃないでしょ）。",
+      "formation": "那也 ＋ 助動詞 / 副詞 ＋ 動詞句",
+      "examples": [
+        {
+          "translation": "A：とっくに復習は終わったよ。 B：だからってずっと遊んでいていいわけじゃないでしょ。"
+        }
+      ]
+    },
+    "zh_V1了就V2_126": {
+      "title": "動詞1 ＋ 了 ＋ 就 ＋ 動詞2（動作の継起：〜したらすぐに…する・〜したあと直ちに…する）",
+      "shortExplanation": "第1の動作が完了した直後に、間を置かず第2の動作が行われることを表す動作の緊密な継起構文です。",
+      "longExplanation": "「動詞1 ＋ 了 ＋ 就 ＋ 動詞2」は、前後の2つの動作が時間的に間を置かず連続して行われることを表す構文です。動詞1の後ろのアスペクト助詞「了」が第1動作の完了を示し、副詞「就」がそれに引き続いて直ちに第2動作が発生することを導きます。前後の主語は同一でも（例：我吃了饭就走＝ご飯を食べたらすぐ行きます）、異なっていても構いません（例：爸爸回来了我们就吃饭＝お父さんが帰ってきたらすぐに食事にしましょう）。",
+      "formation": "（主語1 ＋ ）動詞1 ＋ 了（＋ 目的語1），（主語2 ＋ ）就 ＋ 動詞2（＋ 目的語2）",
+      "examples": [
+        {
+          "translation": "お父さんが帰ってきたらすぐにご飯を食べましょう。"
+        }
+      ]
+    },
+    "zh_V来去_127": {
+      "title": "動詞 ＋ 来 / 去（単純方向補語：〜して来る / 〜して行く）",
+      "shortExplanation": "動詞の直後に「来」または「去」を置き、動作が話し手（または視点）に近づくか（来）、遠ざかるか（去）という移動の方向を表します。",
+      "longExplanation": "「来」と「去」が移動動詞の直後に付くとき、単純方向補語となります。「来」は動作の移動方向が話し手（あるいは話題の視点が存在する場所）へ「近づく」ことを示し、「去」は話し手の場所から「離れて遠ざかる」ことを示します（例：上来＝話し手が上にいて［上がっておいで］、上去＝話し手が下にいて［上がって行きなさい］；进来＝入っておいで、进去＝入って行きなさい）。",
+      "formation": "主語 ＋ 動詞 ＋ 来 / 去",
+      "examples": [
+        {
+          "translation": "私たちは上の階であなたを待っています、上がって来てください。"
+        }
+      ]
+    },
+    "zh_Vsomewhere来去_128": {
+      "title": "動詞 ＋ 場所 ＋ 来 / 去（処所目的語を伴う方向補語［場所は必ず「来 / 去」の前に置く］）",
+      "shortExplanation": "動詞の目的語が場所・処所を表す名詞の場合、目的語は必ず動詞と「来 / 去」の間に挟まなければなりません。",
+      "longExplanation": "中国語の方向補語における極めて重要な鉄則です。動作の目的語が場所や処所を表す名詞（家、学校、教室、北京など）である場合、その目的語は必ず動詞と方向補語「来 / 去」の間に置かなければならず、「動詞 ＋ 場所 ＋ 来 / 去」という語順をとります。場所目的語を「来 / 去」の後ろに置くことは文法上絶対にできません（正：朋友回家去了、誤：*朋友回去了家；正：回国去、誤：*回去国）。",
+      "formation": "主語 ＋ 動詞 ＋ 場所名詞 ＋ 来 / 去（＋ 了）",
+      "examples": [
+        {
+          "translation": "友達は家に帰って行きました。"
+        }
+      ]
+    },
+    "zh_VO来去_129": {
+      "title": "動詞 ＋ 目的語（事物）＋ 来 / 去（事物目的語を伴う方向補語［目的語を「来 / 去」の前に置く］）",
+      "shortExplanation": "目的語が一般の事物を表す名詞の場合、目的語を動詞と「来 / 去」の間に挟んで表すことができます；予定や指示によく用いられます。",
+      "longExplanation": "動詞に単純方向補語「来 / 去」が付き、目的語が事物（物・こと）を表す一般名詞である場合、目的語の語順には2通りの配置が可能です。その1つが目的語を「来 / 去」の前に置き、「動詞 ＋ 目的語 ＋ 来 / 去」とする語順です。この形は命令文、指示、依頼、あるいは未来の予定や意志を表す文で非常によく使われます（例：明天要带作业来＝明日宿題を持って来てください、买点儿水果来＝果物を買ってきて）。",
+      "formation": "主語 ＋ （助動詞 ＋ ）動詞 ＋ 目的語（事物名詞）＋ 来 / 去",
+      "examples": [
+        {
+          "translation": "明日は宿題を持って来なければなりません。"
+        }
+      ]
+    },
+    "zh_V来去O_130": {
+      "title": "動詞 ＋ 来 / 去 ＋ 目的語（事物）（事物目的語を伴う方向補語［目的語を「来 / 去」の後ろに置く］）",
+      "shortExplanation": "目的語が一般の事物を表す名詞の場合、目的語を「来 / 去」の直後に置くこともでき、動詞と方向補語が一体となって強く結びつきます。",
+      "longExplanation": "事物目的語（一般名詞）を伴う単純方向補語のもう一つの語順です。この構文では目的語を「来 / 去」の直後に配置し、「動詞 ＋ 来 / 去 ＋ 目的語」の形をとります。動詞と「来 / 去」が直接連結して1つの複合的な動作単位（例：带来＝持って来る、买来＝買って来る、拿去＝持って行く）を形成し、動作の方向と対象を端的に表現します。動作が完了した文でも非常によく用いられます（例：带来了一本书）。",
+      "formation": "主語 ＋ （助動詞 ＋ ）動詞 ＋ 来 / 去 ＋ 目的語（事物名詞）",
+      "examples": [
+        {
+          "translation": "明日は宿題を持って来てください（持って来なければなりません）。"
+        }
+      ]
+    },
+    "zh_能吗_131": {
+      "title": "能……吗？（反語表現：どうして〜できようか・〜できるはずがない）",
+      "shortExplanation": "助動詞「能」を用いた反語構文で、肯定の疑問文の形で「到底〜できるわけがない」という強い否定を表します。",
+      "longExplanation": "「能……吗？」（néng... ma?）は反語（修辞的疑問文）の代表的な構文です。肯定の疑問形式をとりながら、言外に「そんなことができるはずがない」「不可能なのは当たり前だ」という強い否定の意味を含みます。相手の怠慢や無茶な要求、不合理な行動に対して叱責したり、反論・苦言を呈したりする場面で頻繁に使われます（例：你不做作业，也不练习，能学好汉语吗？＝宿題もしないし練習もしないで、どうして中国語が上達できようか［できるはずがない］）。",
+      "formation": "（主語 ＋ ）能 ＋ 動詞句 / 形容詞句 ＋ 吗？",
+      "examples": [
+        {
+          "translation": "宿題もしないし練習もしないで、どうして中国語が上達できるでしょうか（できるわけがありません）。"
+        }
+      ]
+    },
+    "zh_N1还是N2_132": {
+      "title": "名詞1 / 句1 ＋ 还是 ＋ 名詞2 / 句2？（選択疑問文：〜ですか、それとも…ですか？）",
+      "shortExplanation": "疑問文の中で接続詞「还是」を用いて2つ以上の選択肢を並べ、相手にどちらかを選ばせる選択疑問文を作ります。",
+      "longExplanation": "「还是」（háishi）は疑問文において複数の選択肢を提示し、「Aですか、それともBですか？」と相手に選ばせる際に用いられる代表的な接続詞です。名詞だけでなく動詞句や小節同士を繋ぐこともできます。中国語学習において最も重要な識別ポイントの一つとして、直接的な選択疑問文では必ず「还是」を用い、「或者」を使うことはできません（例：你要喝咖啡还是喝茶？＝コーヒーにしますか、それともお茶にしますか？）。",
+      "formation": "（主語 ＋ ）選択肢1 ＋ 还是 ＋ 選択肢2？",
+      "examples": [
+        {
+          "translation": "コーヒーを飲みますか、それともお茶を飲みますか？"
+        }
+      ]
+    },
+    "zh_N1或者N2_133": {
+      "title": "名詞1 / 句1 ＋ 或者 ＋ 名詞2 / 句2（平叙文の選択接続詞：〜あるいは…・〜または…）",
+      "shortExplanation": "平叙文において接続詞「或者」を用い、「〜あるいは…」「〜または…」と複数の選択肢や可能性を並べて述べます。",
+      "longExplanation": "「或者」（huòzhě）は、平叙文（疑問文ではない文）において複数の事物や事態の選択肢を並列に並べる際に用いられる接続詞です。「どちらか一方、あるいはそのいずれか」という可能性を提示します。「还是」がもっぱら相手に選択を求める疑問文で使われるのに対し、「或者」は状況の説明や陳述で用いられるという明確な使い分けがあります（例：天冷了或者工作累了的时候，喝杯热茶很舒服＝寒い時や仕事で疲れた時、温かいお茶を飲むととても心地よい）。",
+      "formation": "選択肢1 ＋ 或者 ＋ 選択肢2",
+      "examples": [
+        {
+          "translation": "寒い時や仕事で疲れた時、温かいお茶を一杯飲むととても心地よいです。"
+        }
+      ]
+    },
+    "zh_N1还是N2_134": {
+      "title": "節1 ＋ 还是 ＋ 節2（間接疑問小節内の「还是」：〜かそれとも…か［迷い・未決定の選択］）",
+      "shortExplanation": "文末は句点（。）で終わる平叙文であっても、「まだ決めていない」「わからない」等の動詞に続く疑問を含む小節内では「还是」を用います。",
+      "longExplanation": "文全体の形は平叙文（疑問符ではなく句点で終わる文）であっても、思考や判断を表す動詞（想、知道、决定、考虑など）の目的語小節内に迷いや疑問、未決定の選択肢が含まれている場合、「或者」ではなく必ず「还是」を用います。これは間接疑問節を導く用法で、「Aにするか、それともBにするか（わからない／決まっていない）」という内容を表します（例：我还没想好去爬山还是去看电影＝登山に行くか、それとも映画を見に行くか、まだ決めていません）。",
+      "formation": "主語 ＋ 思考・未決定を表す動詞句 ＋ 選択肢1 ＋ 还是 ＋ 選択肢2",
+      "examples": [
+        {
+          "translation": "登山に行くか、それとも映画を見に行くか、まだ決めかねています。"
+        }
+      ]
+    },
+    "zh_PLACEV着N_135": {
+      "title": "場所 ＋ 動詞 ＋ 着 ＋ 名詞（存現文：〜に…が〜してある・〜している［静態の存在］）",
+      "shortExplanation": "場所の語句を文頭に置き、「動詞 ＋ 着」を続けて、特定の場所に物や人がどのような状態で存在しているかを表します。",
+      "longExplanation": "中国語の存現文（存在を表す構文）の最も代表的な形式です。文頭に場所を表す名詞句を置き、述語動詞にアスペクト助詞「着」を付け、その後に存在の主体となる名詞を配置します（「場所 ＋ 動詞 ＋ 着 ＋ 名詞」）。ある場所に物や人が静止した状態で保たれている様子を客観的に描写する際に用いられます（例：放着＝置いてある、挂着＝掛けてある、坐着＝座っている、停着＝停めてある）。後続の名詞は通常「数詞 ＋ 量詞 ＋ 名詞」のような不特定の名詞となります（例：桌子上放着一杯咖啡＝テーブルの上にコーヒーが1杯置いてある）。",
+      "formation": "場所名詞 ＋ 動詞 ＋ 着 ＋ （数詞 ＋ 量詞 ＋ ）名詞",
+      "examples": [
+        {
+          "translation": "テーブルの上にコーヒーが1杯置いてあります。"
+        }
+      ]
+    },
+    "zh_PLACE没V着N_136": {
+      "title": "場所 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 名詞（存現文の否定形：〜に…は〜して［置かれて］いない）",
+      "shortExplanation": "存現文の否定形式で、動詞の前に「没」または「没有」を置き、その場所に物がその状態を保って存在していないことを表します。",
+      "longExplanation": "「場所 ＋ 動詞 ＋ 着 ＋ 名詞」で表される存現文を否定する場合、動詞の直前に否定副詞「没」または「没有」を置きます（「不」は使えません）。「場所 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 名詞」の形となり、その場所に特定の物が置かれていない、掛けられていないといった状態の非存在を表します。文法上の重要ポイントとして、否定文では後ろの名詞の前にある「数詞 ＋ 量詞」（一杯など）は通常取り除かれ、名詞そのものが置かれます（例：桌子上没放着咖啡＝テーブルの上にコーヒーは置いてありません）。",
+      "formation": "場所名詞 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "テーブルの上にコーヒーは置いてありません。"
+        }
+      ]
+    },
+    "zh_会VA的_137": {
+      "title": "会 ＋ 動詞 / 形容詞 ＋ （的）（可能性・推測：きっと〜になる・〜するはずだ・〜するよ）",
+      "shortExplanation": "助動詞「会」と文末の語気助詞「的」が呼応し、将来その事態が起こる可能性が非常に高いことや確信を表します；「〜するよ」「〜になるはずだ」。",
+      "longExplanation": "助動詞「会」（huì）は習得した能力を表すだけでなく、将来の事態に対する「推測・可能性（〜するだろう、〜はずだ）」を表す用法を持ちます。文末に語気助詞「的」を伴う「会……的」の形をとると、話し手の確信や念押し、注意喚起のニュアンスが一段と強まり、「必ずそうなる」「そうなるに決まっている」という強い語気になります（例：你穿得那么少，会感冒的＝そんなに薄着をしていると、風邪を引いちゃいますよ；放心吧，他会来的＝安心して、彼はきっと来るから）。",
+      "formation": "主語 ＋ 会 ＋ 動詞 / 形容詞（＋ 目的語）＋ （的）",
+      "examples": [
+        {
+          "translation": "そんなに薄着をしていると、風邪を引いてしまいますよ。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_一MN也都不V_122": {
+      "title": "一 + 양사 + 명사 + 也 / 都 + 不 / 没 + 동사 (완전 부정: 하나도 ~하지 않다, 조금도 ~않다)",
+      "shortExplanation": "최소 단위인 '一 + 양사' 뒤에 '也 / 都'와 부정사를 결합하여 '하나도 ~하지 않다', '전혀 ~않다'라는 완전 부정을 나타냅니다.",
+      "longExplanation": "중국어에서 완전 부정을 강조할 때 가장 널리 쓰이는 기본 구문입니다. 가장 작은 수량 단위인 '一 + 양사 + 명사'를 '也' 또는 '都' 앞에 배치하고, 그 뒤에 부정부사 '不'(의지나 일반적 습관의 부정) 또는 '没'(과거 사실이나 완료의 부정)과 동사를 연결하여 '단 하나조차도 ~하지 않는다'는 점을 강조합니다 (예: 我一个苹果也不吃 - 나는 사과를 한 개도 먹지 않는다, 他一句话也没说 - 그는 한마디도 하지 않았다).",
+      "formation": "주어 + 一 + 양사 + 명사 + 也 / 都 + 不 / 没 + 동사",
+      "examples": [
+        {
+          "translation": "저는 사과를 한 개도 먹지 않습니다."
+        }
+      ]
+    },
+    "zh_那_123": {
+      "title": "那 (접속사: 그럼, 그렇다면, 그러면 [앞선 상황을 받아 결론 도출])",
+      "shortExplanation": "문두나 주어 앞에 위치하는 접속사 '那'로, 앞서 언급된 상황이나 상대방의 말을 근거로 삼아 '그렇다면', '그럼' 하고 결론이나 결정을 이끌어냅니다.",
+      "longExplanation": "접속사 '那'(nà, 구어에서는 '那么'로도 자주 쓰임)는 뒷 절의 첫머리나 주어 앞에 위치하여 앞 절의 상황, 조건, 상대방의 발언을 이어받습니다. 이를 전제로 하여 자연스럽게 도출되는 판단, 결과, 제안 또는 주어의 결심을 이끌어낼 때 사용하며, 한국어의 '그렇다면', '그럼', '그러면'에 해당합니다 (예: 你不去，那我也不去了 - 네가 안 간다면 그럼 나도 안 갈래).",
+      "formation": "절1, 那 + (주어 + ) 절2",
+      "examples": [
+        {
+          "translation": "네가 안 간다면, 그럼 나도 안 갈래."
+        }
+      ]
+    },
+    "zh_那也_124": {
+      "title": "那也 (그렇다고 해도, 그래도, 그렇다 하더라도 [구어 양보·반론])",
+      "shortExplanation": "상대방의 이유나 주장을 일단 수긍하면서도 '그렇다고 해서 ~해서는 안 된다', '그래도 역시 ~하다'라고 반박하거나 충고하는 구어 표현입니다.",
+      "longExplanation": "'那也'(nà yě)는 일상 구어에서 상대방의 변명이나 이미 끝마친 사정을 인정하면서도, 그것이 지나친 행동의 핑계가 될 수는 없음을 꼬집으며 '그렇다고 하더라도 ~해서는 안 된다', '그래도 그건 아니지'라는 뉘앙스로 반론이나 주의를 줄 때 쓰는 양보·전환 구문입니다 (예: A: 我早就复习好了。B: 那也不能一直玩儿啊 - A: 나 복습 일찌감치 다 끝냈어. B: 그렇다고 계속 놀기만 해서는 안 되지).",
+      "formation": "那也 + 조동사 / 부사 + 동사구",
+      "examples": [
+        {
+          "translation": "A: 나 일찌감치 복습 다 끝냈어. B: 그렇다고 계속 놀기만 해서는 안 되지."
+        }
+      ]
+    },
+    "zh_V1了就V2_126": {
+      "title": "동사1 + 了 + 就 + 동사2 (동작의 긴밀한 계기: ~하고 나면 곧바로 …하다)",
+      "shortExplanation": "제1동작이 완료되자마자 지체 없이 제2동작이 곧바로 이어짐을 나타내는 긴밀한 동작 연쇄 구문입니다.",
+      "longExplanation": "'동사1 + 了 + 就 + 동사2'는 두 가지 동작이나 사건이 시간적으로 매우 긴밀하게 연속해서 발생함을 나타냅니다. 첫 번째 동사 뒤의 동태조사 '了'는 앞선 동작의 완료를 표시하며, 두 번째 동사 앞의 부사 '就'는 앞 동작이 끝나자마자 즉시 다음 동작이 일어남을 나타냅니다. 앞뒤 절의 주어는 동일할 수도 있고, 서로 다를 수도 있습니다 (예: 爸爸回来了我们就吃饭 - 아빠가 돌아오시면 우리는 바로 밥을 먹을 거야).",
+      "formation": "(주어1 + ) 동사1 + 了 (+ 목적어1), (주어2 + ) 就 + 동사2 (+ 목적어2)",
+      "examples": [
+        {
+          "translation": "아빠가 돌아오시면 우리는 바로 밥을 먹을 거예요."
+        }
+      ]
+    },
+    "zh_V来去_127": {
+      "title": "동사 + 来 / 去 (단순방향보어: ~해 오다 / ~해 가다 [동작의 이동 방향])",
+      "shortExplanation": "동사 뒤에 '来' 또는 '去'를 붙여 동작이 화자 쪽으로 다가오는지('来'), 화자에게서 멀어지는지('去')를 나타냅니다.",
+      "longExplanation": "중국어에서 '来'(lái)와 '去'(qù)가 이동을 나타내는 동사 뒤에 결합하면 '단순방향보어'가 됩니다. '来'는 동작이 화자가 위치한 기준점을 향해 '가까워지는' 방향성을 나타내고, '去'는 화자의 위치로부터 '멀어지는' 방향성을 나타냅니다 (예: 上来 - 화자가 위층에 있을 때 '올라오다', 上去 - 화자가 아래층에 있을 때 '올라가다'; 进来 - 들어오다, 进去 - 들어가다).",
+      "formation": "주어 + 동사 + 来 / 去",
+      "examples": [
+        {
+          "translation": "우리는 위층에서 너를 기다리고 있으니, 어서 올라오렴."
+        }
+      ]
+    },
+    "zh_Vsomewhere来去_128": {
+      "title": "동사 + 장소 + 来 / 去 (장소 목적어를 수반하는 방향보어 [장소는 반드시 '来 / 去' 앞에 위치])",
+      "shortExplanation": "동사의 목적어가 장소(처소)를 나타내는 어휘인 경우, 목적어는 반드시 동사와 방향보어 '来 / 去' 사이에 배치해야 합니다.",
+      "longExplanation": "중국어 방향보어의 가장 핵심적이고 엄격한 문법 규칙 중 하나입니다. 동작의 목적어가 장소나 처소를 나타내는 명사(家, 宿舍, 教室, 医院 등)일 때는, 해당 장소 목적어를 반드시 동사와 '来 / 去' 사이에 배치하여 '동사 + 장소 + 来 / 去'의 어순을 지켜야 합니다. 장소 목적어를 '来 / 去' 뒤에 놓는 것은 비문입니다 (옳은 표현: 朋友回家去了, 틀린 표현: *朋友回去了家).",
+      "formation": "주어 + 동사 + 장소 명사 + 来 / 去 (+ 了)",
+      "examples": [
+        {
+          "translation": "친구는 집으로 돌아갔습니다."
+        }
+      ]
+    },
+    "zh_VO来去_129": {
+      "title": "동사 + 목적어(사물) + 来 / 去 (일반 사물 목적어를 수반하는 방향보어 [목적어를 '来 / 去' 앞에 배치])",
+      "shortExplanation": "목적어가 일반 사물 명사일 때, 목적어를 동사와 방향보어('来 / 去') 사이에 놓아 표현할 수 있으며 명령이나 예정된 동작에 자주 쓰입니다.",
+      "longExplanation": "방향보어 '来 / 去'가 일반 사물 목적어(장소가 아닌 물건 등)와 결합할 때 쓸 수 있는 두 가지 어순 중 첫 번째 형식입니다. 목적어를 동사와 방향보어 사이에 배치하여 '동사 + 목적어 + 来 / 去'의 어순을 이룹니다. 이 어순은 아직 동작이 완료되지 않은 상태에서 무언가를 가져오거나 가지고 가도록 지시, 요청, 계획할 때 흔히 사용됩니다.",
+      "formation": "주어 + (조동사 + ) 동사 + 목적어(사물 명사) + 来 / 去",
+      "examples": [
+        {
+          "translation": "내일 숙제를 가져와야 합니다."
+        }
+      ]
+    },
+    "zh_V来去O_130": {
+      "title": "동사 + 来 / 去 + 목적어(사물) (일반 사물 목적어를 수반하는 방향보어 [목적어를 '来 / 去' 뒤에 배치])",
+      "shortExplanation": "목적어가 일반 사물 명사일 때, '来 / 去' 바로 뒤에 목적어를 배치할 수도 있으며 동사와 방향보어가 한 덩어리로 결합합니다.",
+      "longExplanation": "사물 목적어를 수반하는 방향보어의 두 번째 어순 형식입니다. 목적어를 '来 / 去' 뒤에 배치하여 '동사 + 来 / 去 + 목적어' 구조를 만듭니다. 이때 동사와 방향보어가 밀접하게 결합하여 '带来'(가져오다), '拿去'(가져가다), '买来'(사 오다)처럼 하나의 복합적인 동사 단위처럼 기능합니다. 일상 구어에서 목적어를 앞에 두는 방식과 함께 매우 자연스럽고 널리 사용됩니다.",
+      "formation": "주어 + (조동사 + ) 동사 + 来 / 去 + 목적어(사물 명사)",
+      "examples": [
+        {
+          "translation": "내일 숙제를 가져오세요 (가져와야 합니다)."
+        }
+      ]
+    },
+    "zh_能吗_131": {
+      "title": "能……吗? (반어문: 어떻게 ~할 수 있겠는가?, ~할 수 있겠어?)",
+      "shortExplanation": "능원의동사(조동사) '能'을 사용한 반어문으로, 긍정 의문문의 형식을 빌려 '결코 ~할 수 없다'는 강한 부정을 나타냅니다.",
+      "longExplanation": "'能……吗?'(néng... ma?)는 중국어에서 질책, 반박, 훈계의 뉘앙스를 담아 반어적으로 표현할 때 매우 자주 쓰이는 구조입니다. 겉으로는 조동사 '能'을 써서 '가능한가?'라고 묻지만, 실제 의미는 '도저히 그렇게 될 수 없다'는 단호한 부정을 전달합니다. 상대방이 노력도 하지 않으면서 결과를 바라거나 불합리한 행동을 할 때 꼬집어 말하는 표현입니다.",
+      "formation": "(주어 + ) 能 + 동사구 / 형용사구 + 吗?",
+      "examples": [
+        {
+          "translation": "너 숙제도 안 하고 연습도 안 하는데, 어떻게 중국어를 잘 배울 수 있겠니?"
+        }
+      ]
+    },
+    "zh_N1还是N2_132": {
+      "title": "명사1 / 구1 + 还是 + 명사2 / 구2? (선택의문문: ~인가요, 아니면 …인가요?)",
+      "shortExplanation": "의문문에서 접속사 '还是'를 사용하여 둘 이상의 대상을 나열하고, 상대방에게 어느 하나를 선택하도록 묻습니다.",
+      "longExplanation": "'还是'(háishi)는 의문문에서 둘 이상의 선택 항목을 대등하게 연결하여 'A인가요, 아니면 B인가요?'라고 묻는 선택의문문의 대표적인 접속사입니다. 중국어 문법에서 매우 중요한 핵심은, 상대방에게 선택을 요구하는 의문문에서는 반드시 '还是'를 사용해야 하며 '或者'를 사용해서는 안 된다는 점입니다 (예: 你要喝咖啡还是喝茶? - 커피를 마실래요, 아니면 차를 마실래요?).",
+      "formation": "(주어 + ) 선택항목1 + 还是 + 선택항목2?",
+      "examples": [
+        {
+          "translation": "커피를 마실래요, 아니면 차를 마실래요?"
+        }
+      ]
+    },
+    "zh_N1或者N2_133": {
+      "title": "명사1 / 구1 + 或者 + 명사2 / 구2 (평서문의 선택 접속사: ~이거나, 또는, 혹은)",
+      "shortExplanation": "평서문에서 접속사 '或者'를 사용하여 'A이거나 B', 'A 또는 B'처럼 여러 가지 선택 사항이나 가능성을 나열합니다.",
+      "longExplanation": "'或者'(huòzhě)는 주로 평서문에서 둘 이상의 대등한 선택지나 일어날 수 있는 가능성을 연결하는 접속사입니다. 상대방에게 선택을 요구하는 질문에 쓰이는 '还是'와 달리, '或者'는 사실을 서술하거나 조건을 제시할 때 사용된다는 점에서 문법적으로 뚜렷이 구분됩니다 (예: 天冷了或者工作累了的时候，喝杯热茶很舒服 - 날씨가 춥거나 일하느라 피곤할 때, 따뜻한 차 한 잔을 마시면 아주 편안합니다).",
+      "formation": "선택항목1 + 或者 + 선택항목2",
+      "examples": [
+        {
+          "translation": "날씨가 춥거나 일하느라 피곤할 때, 따뜻한 차 한 잔을 마시면 아주 편안합니다."
+        }
+      ]
+    },
+    "zh_N1还是N2_134": {
+      "title": "절1 + 还是 + 절2 (간접의문절 속의 '还是': ~할지 아니면 …할지 [미결정·고민의 선택])",
+      "shortExplanation": "문장 전체는 평서문 종결이라도, '생각 중이다', '모르겠다', '결정 못 했다' 등의 동사 뒤에 오는 의문·미정의 목적어 절에서는 반드시 '还是'를 사용합니다.",
+      "longExplanation": "문장 끝에 물음표가 아닌 마침표가 찍히는 평서문 형태라 하더라도, '想'(생각하다), '知道'(알다), '决定'(결정하다), '考虑'(고려하다) 등의 동사 뒤에 붙는 목적어 절이 'A인지 아니면 B인지'와 같은 의문이나 미결정의 고민을 내포하고 있을 때는 '或者'가 아닌 '还是'를 사용해야 합니다. 이는 간접의문문 역할을 하는 특수 구문입니다 (예: 我还没想好去爬山还是去看电影 - 등산을 갈지 아니면 영화를 보러 갈지 아직 결정하지 못했다).",
+      "formation": "주어 + 인지·미결정 동사구 + 선택지1 + 还是 + 선택지2",
+      "examples": [
+        {
+          "translation": "등산을 갈지 아니면 영화를 보러 갈지 아직 결정하지 못했습니다."
+        }
+      ]
+    },
+    "zh_PLACEV着N_135": {
+      "title": "장소 + 동사 + 着 + 명사 (존현문/존재문: ~에 …이 ~되어 있다 [정적인 존재 상태])",
+      "shortExplanation": "장소 어휘를 문두에 두고 '동사 + 着'를 연결하여 특정 공간에 사물이나 사람이 어떤 상태로 놓여/존재하고 있는지를 묘사합니다.",
+      "longExplanation": "중국어의 대표적인 존현문(존재문) 구문입니다. 공간이나 장소를 나타내는 어휘가 문두에 주어로 쓰이고, 동사 뒤에 지속을 나타내는 동태조사 '着'가 붙은 후 존재의 주체가 되는 명사가 뒤따릅니다 ('장소 + 동사 + 着 + 명사'). 특정 장소에 어떤 사물이나 사람이 지속적이고 정적인 상태로 존재하고 있음을 객관적으로 묘사할 때 사용됩니다 (예: 放着 - 놓여 있다, 挂着 - 걸려 있다). 뒤따르는 명사는 대개 수량사가 붙은 불특정 명사입니다 (예: 桌子上放着一杯咖啡 - 탁자 위에 커피 한 잔이 놓여 있다).",
+      "formation": "장소 명사 + 동사 + 着 + (수사 + 양사 + ) 명사",
+      "examples": [
+        {
+          "translation": "탁자 위에 커피 한 잔이 놓여 있습니다."
+        }
+      ]
+    },
+    "zh_PLACE没V着N_136": {
+      "title": "장소 + 没(有) + 동사 + 着 + 명사 (존현문의 부정형: ~에 …이 ~되어 있지 않다)",
+      "shortExplanation": "존현문(존재문)의 부정 형식으로, 동사 앞에 '没' 또는 '没有'를 배치하여 특정 장소에 해당 사물이 그런 상태로 존재하지 않음을 나타냅니다.",
+      "longExplanation": "지속의 동태조사 '着'를 사용한 존현문을 부정할 때는 동사 앞에 반드시 부정부사 '没' 또는 '没有'를 붙입니다 ('不'는 사용 불가). '장소 + 没(有) + 동사 + 着 + 명사' 어순으로 어떤 장소에 물건이 놓여 있지 않거나 걸려 있지 않음을 객관적으로 나타냅니다. 중요한 문법적 특징으로, 부정문에서는 명사 앞의 수량사(一杯 등)를 생략하고 명사만 단독으로 쓰는 것이 자연스럽습니다 (예: 桌子上没放着咖啡 - 탁자 위에 커피가 놓여 있지 않다).",
+      "formation": "장소 명사 + 没(有) + 동사 + 着 + 명사",
+      "examples": [
+        {
+          "translation": "탁자 위에 커피가 놓여 있지 않습니다."
+        }
+      ]
+    },
+    "zh_会VA的_137": {
+      "title": "会 + 동사 / 형용사 + (的) (가능성·추측의 확신: 분명 ~할 것이다, ~하게 될 것이다)",
+      "shortExplanation": "능원의동사(조동사) '会'와 문장 끝의 어기조사 '的'가 어우러져 미래의 일에 대한 높은 실현 가능성이나 확신을 나타냅니다; '~할 거야', '~하기 마련이다'.",
+      "longExplanation": "능원의동사 '会'(huì)는 학습을 통한 능력을 나타내는 것 외에도, 미래의 일이나 어떤 상황이 일어날 가능성·추측(~할 것이다)을 나타내는 중요한 용법이 있습니다. 문장 끝에 어기조사 '的'를 덧붙인 '会……的' 구조는 화자의 확신, 장담, 또는 경고나 조언의 어기를 한층 강화하여 '틀림없이 그렇게 될 것이다'라는 뉘앙스를 부여합니다 (예: 你穿得那么少，会感冒的 - 옷을 그렇게 얇게 입으면 감기 걸려요).",
+      "formation": "주어 + 会 + 동사 / 형용사 (+ 목적어) + (的)",
+      "examples": [
+        {
+          "translation": "옷을 그렇게 얇게 입으면 감기 걸려요."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_一MN也都不V_122": {
+      "title": "一 + 量词 + 名词 + 也/都 + 不/没 + 动词（表示完全否定：一点儿也不/都没……）",
+      "shortExplanation": "用最小数量单位“一 + 量词”与“也/都”及否定副词连用，表示“连一个也不/都没……”，用于强调完全否定。",
+      "longExplanation": "在现代汉语中，“一 + 量词 + 名词 + 也/都 + 不/没 + 动词”是表示全量否定的典型强调句式。说话人将数量概念中最小的基数“一 + 量词”提到动词前面，借助副词“也”或“都”与否定词“不”（否定意愿或习惯）或“没”（否定发生或完成）呼应，强调事物哪怕连最基本的、极微小的数量都不存在或未发生动作（如：我一个苹果也不吃、他一分钱都没花）。",
+      "formation": "主语 + 一 + 量词 + 名词 + 也/都 + 不/没 + 动词",
+      "examples": [
+        {
+          "translation": "我一个苹果也不吃。"
+        }
+      ]
+    },
+    "zh_那_123": {
+      "title": "那（连词：承接上文引出结论或决定：那么、那就）",
+      "shortExplanation": "连词“那”放在分句句首或主语前，表示承接上一分句所说的情况或对方的话，顺理成章地引出推论、对策或决定；相当于“那么”。",
+      "longExplanation": "在现代汉语口语中，“那”（nà，有时也说成“那么”）常充当承接连词，置于后一分句的开头或主语前面。它的语法功能是在上文陈述的某种前提、事实或对方表态的基础上，顺着其逻辑引出说话人的结论、应对方案或做出的决定（如：你不去，那我也不去了；要是下雨，那我们就不出门了）。",
+      "formation": "分句1，那 + （主语 + ）分句2",
+      "examples": [
+        {
+          "translation": "你不去的话，那我也不去了。"
+        }
+      ]
+    },
+    "zh_那也_124": {
+      "title": "那也（口语让步转折：即使那样也……、那也不能……）",
+      "shortExplanation": "口语紧缩转折表达，承接对方提出的理由或事实，表示让步但随即提出反驳或规劝；“即使如此也……”。",
+      "longExplanation": "“那也”（nà yě）是现代汉语口语中常用的让步转折表达。说话人在听到对方提出的理由、借口或说明后，虽然在一定程度上承认或接受其前提，但随即用“那也”引出反驳、告诫或提出异议，指出即便情况如此，也不应当产生后文的不当行为或过分结果（常与“不能、不行、不可以”等连用，如：那也不能一直玩儿啊、那也不能不讲理）。",
+      "formation": "那也 + 能愿动词 / 副词 + 动词短语",
+      "examples": [
+        {
+          "translation": "A：我早就复习好了。B：那也不能一直玩儿啊。"
+        }
+      ]
+    },
+    "zh_V1了就V2_126": {
+      "title": "动词1 + 了 + 就 + 动词2（表示前后两个动作紧密相连：一完成动作1立即做动作2）",
+      "shortExplanation": "表示两个动作紧密承接；第一个动作一旦完成，紧接着马上发生第二个动作。",
+      "longExplanation": "“动词1 + 了 + 就 + 动词2”是表示前后两个动作时间上紧密相连、相继发生的典型句式。动词1后的动态助词“了”表示前一个动作已经完成或实现，副词“就”则引导第二个动作立刻紧随其后发生，强调时间间隔极短。前后两个分句的主语可以相同（如：我吃了早饭就去上班），也可以不同（如：爸爸回来了我们就吃饭）。",
+      "formation": "（主语1 + ）动词1 + 了（+ 宾语1），（主语2 + ）就 + 动词2（+ 宾语2）",
+      "examples": [
+        {
+          "translation": "爸爸回来了我们就吃饭。"
+        }
+      ]
+    },
+    "zh_V来去_127": {
+      "title": "动词 + 来/去（简单趋向补语：表示动作朝向或背离说话人）",
+      "shortExplanation": "趋向动词“来”或“去”直接放在动词之后充当趋向补语，表示动作位移朝向说话人（来）或离开说话人（去）。",
+      "longExplanation": "在现代汉语中，“来”和“去”置于移动动词之后作简单趋向补语。其选用取决于动作移动的方向与说话人（或叙述基准点）空间位置的关系：动作朝向说话人所在的地点移动时用“来”；动作背离说话人所在的地点、向外移动时用“去”（如：说话人在楼上时说“上来”，在楼下时说“上去”；说话人在屋里时说“进来”，在屋外时说“进去”）。",
+      "formation": "主语 + 动词 + 来/去",
+      "examples": [
+        {
+          "translation": "我们在楼上等你呢，你上来吧。"
+        }
+      ]
+    },
+    "zh_Vsomewhere来去_128": {
+      "title": "动词 + 处所 + 来/去（带处所宾语的趋向补语：处所必须置于“来/去”前）",
+      "shortExplanation": "当动词带表示处所、地点的宾语时，该处所宾语必须放在动词与趋向补语“来/去”之间。",
+      "longExplanation": "这是现代汉语趋向补语句中一条强制性的重要语法规则：当趋向动词带宾语且宾语表示处所、地点时（如：家、学校、北京、办公室等），该宾语必须置于动词和趋向补语“来”或“去”之间，构成“动词 + 处所 + 来/去”的语序，绝对不能置于“来/去”之后（如只能说“回家去”、“进教室来”、“上楼去”，而绝不能说成“*回去了家”、“*进来教室”）。",
+      "formation": "主语 + 动词 + 处所词 + 来/去（+ 了）",
+      "examples": [
+        {
+          "translation": "朋友回家去了。"
+        }
+      ]
+    },
+    "zh_VO来去_129": {
+      "title": "动词 + 宾语（事物）+ 来/去（带事物宾语的趋向补语：宾语置于“来/去”前）",
+      "shortExplanation": "当宾语是表示一般事物的名词时，可以把宾语置于动词和趋向补语“来/去”之间；常用于祈使、要求或未实现的动作。",
+      "longExplanation": "当谓语动词带有简单趋向补语“来/去”，且宾语为表示一般事物的普通名词（非处所词）时，宾语的位置有两种选择。第一种是将事物宾语置于动词和趋向补语之间，构成“动词 + 宾语 + 来/去”。这种语序多见于祈使句、叮嘱、命令，或表示未来尚未完成的动作意图（如：明天要带作业来、顺便买几瓶水来）。",
+      "formation": "主语 + （能愿动词 + ）动词 + 宾语（事物名词）+ 来/去",
+      "examples": [
+        {
+          "translation": "明天要带作业来。"
+        }
+      ]
+    },
+    "zh_V来去O_130": {
+      "title": "动词 + 来/去 + 宾语（事物）（带事物宾语的趋向补语：宾语置于“来/去”后）",
+      "shortExplanation": "当宾语是表示一般事物的普通名词时，宾语也可以直接置于“来/去”之后，动词与趋向补语紧密结合。",
+      "longExplanation": "带事物宾语的简单趋向补语句的第二种常见语序。在此句式中，事物宾语紧随趋向补语之后，构成“动词 + 来/去 + 宾语”。动词与“来/去”紧密相连，形成一个复合的动作意念（如：带来、买来、拿去、寄来），整体指向后文的受事宾语。无论未实现的动作还是已完成的动作（如：买来了一本书），这种语序在现代汉语中都极为普遍。",
+      "formation": "主语 + （能愿动词 + ）动词 + 来/去 + 宾语（事物名词）",
+      "examples": [
+        {
+          "translation": "明天要带来作业。"
+        }
+      ]
+    },
+    "zh_能吗_131": {
+      "title": "能……吗？（反问句：怎么能……呢、不可能……）",
+      "shortExplanation": "用能愿动词“能”构成的反问句式，以肯定的疑问形式表达强烈的否定含义，表示“根本不可能”。",
+      "longExplanation": "“能……吗？”是现代汉语中非常常用的修辞性反问句式。说话人使用肯定的疑问形式，其真实用意在于表达坚决的否定——即“绝不可能做到”或“于理不合”。该句式多带有质问、指责、反诘或警告规劝的感情色彩，常用于指出某人的不当做法必然无法换取积极的结果（如：你不做作业，也不练习，能学好汉语吗？相当于：你这样根本不可能学好汉语）。",
+      "formation": "（主语 + ）能 + 动词短语/形容词短语 + 吗？",
+      "examples": [
+        {
+          "translation": "你不做作业，也不练习，能学好汉语吗？"
+        }
+      ]
+    },
+    "zh_N1还是N2_132": {
+      "title": "名词1/短语1 + 还是 + 名词2/短语2？（选择疑问句：……还是……？）",
+      "shortExplanation": "在疑问句中使用连词“还是”连接两项或多项选择，供对方在其中进行选择；相当于“是……还是……？”。",
+      "longExplanation": "“还是”（háishi）是现代汉语中用于选择疑问句的专用连词。它可以连接词、短语或分句，提出并列的两个或多个备选项目，要求对方在其中挑选其一（如：你要喝咖啡还是喝茶？、你去还是我去？）。需要特别强调的是：在直接提出疑问供对方选择的问句中，必须使用“还是”，绝不能混用“或者”。",
+      "formation": "（主语 + ）选项1 + 还是 + 选项2？",
+      "examples": [
+        {
+          "translation": "你要喝咖啡还是喝茶？"
+        }
+      ]
+    },
+    "zh_N1或者N2_133": {
+      "title": "名词1/短语1 + 或者 + 名词2/短语2（陈述句连词：或者……、或是……）",
+      "shortExplanation": "连词“或者”用于陈述句中连接并列的词语、短语或分句，表示任选其一的可能情况；“……或者……”。",
+      "longExplanation": "“或者”（huòzhě）是现代汉语陈述句中表示选择关系的并列连词。它用于陈述、说明或假定各种可能的情况，表示在所列举的几个选项中任何一个都可以成立（相当于“或是……”、“要么……”）。其核心语法规则是：在非疑问的陈述句中表示选择必须用“或者”，而不能混用用于选择疑问句的“还是”（如：天冷了或者工作累了的时候，喝杯热茶很舒服）。",
+      "formation": "选项1 + 或者 + 选项2",
+      "examples": [
+        {
+          "translation": "天冷了或者工作累了的时候，喝杯热茶很舒服。"
+        }
+      ]
+    },
+    "zh_N1还是N2_134": {
+      "title": "分句1 + 还是 + 分句2（含疑问/未定意义宾语分句中的“还是”：是……还是……）",
+      "shortExplanation": "句尾虽为句号的陈述句，但在“没想好、不知道、决定”等动词后带有疑问色彩的选择分句中，必须用“还是”而非“或者”。",
+      "longExplanation": "全句形式上虽然是以句号结尾的陈述句，但若主句谓语是表达思考、认知或尚未决定的动词（如：想、知道、决定、考虑、商量等），其后所带的宾语分句如果包含在两个选项之间犹疑、不确定或间接疑问的内容时，必须使用“还是”而绝不能使用“或者”。该结构用于表达“究竟是选择A还是选择B”（如：我还没想好去爬山还是去看电影；我不知道他是赞成还是反对）。",
+      "formation": "主语 + 思考/认知动词 + 选项1 + 还是 + 选项2",
+      "examples": [
+        {
+          "translation": "我还没想好去爬山还是去看电影。"
+        }
+      ]
+    },
+    "zh_PLACEV着N_135": {
+      "title": "处所词 + 动词 + 着 + 名词（存现句：某处有某人或某物保持某种静止状态）",
+      "shortExplanation": "处所词作主语置于句首，后接“动词 + 着”，用于客观描写某个空间里存在着某种人或事物。",
+      "longExplanation": "这是现代汉语中描写静态存在的典型存现句句式。句子以表示空间的处所词充当主语，谓语动词后附动态助词“着”，句尾则是表示存在主体的人或事物的名词短语（结构为：处所词 + 动词 + 着 + 名词）。该句式侧重于客观展示静态空间中所呈现的摆放、悬挂、坐立、停放等持续状态（如：桌子上放着一杯咖啡、墙上挂着一张地图、门口站着一个人）。句末的名词通常是非确指的，多带有数量短语修饰。",
+      "formation": "处所词 + 动词 + 着 + （数词 + 量词 + ）名词",
+      "examples": [
+        {
+          "translation": "桌子上放着一杯咖啡。"
+        }
+      ]
+    },
+    "zh_PLACE没V着N_136": {
+      "title": "处所词 + 没（有）+ 动词 + 着 + 名词（存现句的否定形式：某处并未处于某种存在状态）",
+      "shortExplanation": "存现句的否定式，在动词前加否定副词“没”或“没有”，表示某处并没有某种人或事物保持此种静止状态。",
+      "longExplanation": "否定带有动态助词“着”的存现句时，必须在谓语动词前使用否定副词“没”或“没有”，而不能使用“不”。基本格式为“处所词 + 没（有）+ 动词 + 着 + 名词”，用于表明某空间内不存在该动作结果所带来的持续状态（如：桌子上没放着咖啡、黑板上没写着字、墙上没挂着画）。语法要点提示：在存现句的否定形式中，后置的名词前通常不再出现数量词成分（即通常不说“*桌子上没放着一杯咖啡”）。",
+      "formation": "处所词 + 没（有）+ 动词 + 着 + 名词",
+      "examples": [
+        {
+          "translation": "桌子上没放着咖啡。"
+        }
+      ]
+    },
+    "zh_会VA的_137": {
+      "title": "会 + 动词/形容词 + （的）（表示可能性与确信推测：一定会……、必然会……）",
+      "shortExplanation": "能愿动词“会”与句末语气助词“的”搭配，表示对某种未来可能性的预判或推测，语气肯定确凿；“会……的”。",
+      "longExplanation": "在现代汉语中，能愿动词“会”（huì）常用于表示客观规律或逻辑推测下的可能性（即“将要”、“有可能发生”）。当它与句尾的语气助词“的”配合使用构成“会……（的）”时，能显著增强说话人对推断结果的笃定与确信语气，常用于提醒、警告、宽慰或保证（如：你穿得那么少，会感冒的；别担心，他会来的；一切都会好起来的）。",
+      "formation": "主语 + 会 + 动词/形容词（+ 宾语）+ （的）",
+      "examples": [
+        {
+          "translation": "你穿得那么少，会感冒的。"
+        }
+      ]
+    }
+  }
+}

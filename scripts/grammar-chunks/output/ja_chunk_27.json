@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_最中に_130": {
+      "title": "～最中に (～saichuu ni)",
+      "shortExplanation": "Diễn tả một sự việc, hành động bất ngờ xảy ra chen ngang vào đúng lúc một hành động khác đang diễn ra; 'đúng lúc đang...', 'ngay trong lúc...'.",
+      "longExplanation": "Mẫu ngữ pháp '～最中に' (hoặc '～最中だ') được dùng để nhấn mạnh rằng một sự việc bất ngờ hoặc một hành động chen ngang (thường gây cản trở hoặc ngoài dự tính) xảy ra đúng vào lúc một hành động khác đang được thực hiện sôi nổi, cao độ nhất. Thường đi kèm với động từ dạng 〜ている hoặc danh từ chỉ hành động gắn với の (như 会議の最中, 食事の最中). Vế sau thường là sự việc xảy ra trong khoảnh khắc ngắn làm gián đoạn vế trước.",
+      "formation": "Động từ thể て + いる + 最中に | Danh từ + の + 最中に",
+      "examples": [
+        {
+          "translation": "Đúng lúc tôi đang ngủ trưa thì điện thoại reo."
+        },
+        {
+          "translation": "Ngay trong lúc đang nấu ăn thì hỏa hoạn xảy ra."
+        },
+        {
+          "translation": "Ngay giữa cuộc họp, tôi đã phải ra ngoài vì có việc gấp."
+        },
+        {
+          "translation": "Ngay trong lúc đang thi thì động đất xảy ra."
+        }
+      ]
+    },
+    "ja_決してない_131": {
+      "title": "決して～ない (kesshite ~ nai)",
+      "shortExplanation": "Nhấn mạnh sự phủ định tuyệt đối hoặc quyết tâm mạnh mẽ; 'tuyệt đối không...', 'nhất quyết không...', 'không bao giờ...'.",
+      "longExplanation": "Phó từ '決して' kết hợp với vị ngữ ở thể phủ định (〜ない, 〜ません, 〜ないで, v.v.) nhằm nhấn mạnh sự phủ định tuyệt đối một sự việc hoặc biểu thị ý chí, quyết tâm sắt đá không thực hiện hành vi đó trong bất kỳ hoàn cảnh nào. Thường xuất hiện trong lời hứa, lời thề, lời dặn dò khuyên can hoặc phán đoán dứt khoát mang tính nguyên tắc.",
+      "formation": "決して + Động từ thể phủ định (thể ない / ません / ないで) | 決して + Tính từ / Danh từ thể phủ định",
+      "examples": [
+        {
+          "translation": "Anh ấy tuyệt đối không bao giờ đi muộn."
+        },
+        {
+          "translation": "Bí mật này xin tuyệt đối đừng nói cho bất kỳ ai biết."
+        },
+        {
+          "translation": "Nhất quyết đừng từ bỏ, hãy cố gắng đến cùng nhé."
+        },
+        {
+          "translation": "Cô ấy là một người tuyệt đối không bao giờ nói dối."
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A あるいは B (A aruiwa B)",
+      "shortExplanation": "Dùng để liên kết các lựa chọn tương đương mang tính trang trọng; 'hoặc là...', 'hoặc...', 'A hoặc B'.",
+      "longExplanation": "Liên từ 'あるいは' (có thể viết bằng chữ Hán 或いは) dùng để kết nối hai hay nhiều sự vật, phương án hoặc mệnh đề có tính chất ngang bằng, nhằm đưa ra các khả năng lựa chọn tương đương ('A hoặc là B'). Mang sắc thái trang trọng, văn viết và thường được dùng phổ biến trong văn bản hành chính, văn bản học thuật, báo chí cũng như các thông báo chính thức.",
+      "formation": "Cụm từ A / Câu A + あるいは + Cụm từ B / Câu B",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi dự định hoặc là đi xem phim, hoặc là đi mua sắm."
+        },
+        {
+          "translation": "Cô ấy có thể nói chuyện bằng tiếng Anh hoặc tiếng Đức."
+        },
+        {
+          "translation": "Chúng tôi thích uống cà phê hoặc là trà."
+        },
+        {
+          "translation": "Với công việc này, bạn có thể làm việc dưới tư cách là nhân viên chính thức hoặc nhân viên hợp đồng."
+        }
+      ]
+    },
+    "ja_Aおまけに_1": {
+      "title": "A。おまけに B。(~omake ni)",
+      "shortExplanation": "Biểu thị sự bổ sung thêm một thông tin, thường làm tăng thêm mức độ tiêu cực hoặc tích cực; 'đã vậy lại còn...', 'hơn nữa', 'thêm vào đó'.",
+      "longExplanation": "Liên từ 'おまけに' (nguồn gốc từ chữ '御負け' mang nghĩa phần tặng kèm thêm) đứng ở đầu câu thứ hai để bổ sung thêm một sự việc, tình trạng cùng chiều hướng với câu trước. Mặc dù có thể dùng cho cả điều tích cực, cấu trúc này rất hay được dùng để nhấn mạnh sự bất lợi, khó khăn, rắc rối bị dồn dập (theo kiểu 'họa vô đơn chí', 'đã nghèo lại còn mắc cái eo', 'đã... lại còn...').",
+      "formation": "Câu A。 + おまけに + Câu B。",
+      "examples": [
+        {
+          "translation": "Anh ấy đã đến muộn, đã thế lại còn quên cả bài tập về nhà."
+        },
+        {
+          "translation": "Căn hộ này chật chội, hơn nữa tiền thuê nhà lại đắt."
+        },
+        {
+          "translation": "Công việc của cô ấy rất bận rộn, đã vậy con lại còn nhỏ nữa."
+        },
+        {
+          "translation": "Hôm qua trời đã mưa, thêm vào đó gió lại còn thổi rất mạnh."
+        }
+      ]
+    },
+    "ja_Aさて_2": {
+      "title": "A。さて B。(A. Sate B.)",
+      "shortExplanation": "Dùng để chuyển chủ đề hoặc bắt đầu một hành động tiếp theo sau khi đã kết thúc việc trước; 'nào', 'bây giờ thì', 'và sau đây'.",
+      "longExplanation": "Liên từ 'さて' thường đứng ở đầu câu nhằm đánh dấu sự chuyển đổi chủ đề nói chuyện hoặc chuyển hướng hành động sang một giai đoạn mới sau khi giai đoạn trước đã kết thúc, được tạm gác lại ('nào bây giờ...', 'thôi được rồi...'). Thường dùng trong hội thoại, bài phát biểu, dẫn chương trình để thu hút sự chú ý của người nghe vào nội dung chính tiếp theo.",
+      "formation": "Câu A。 + さて、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Công việc hôm nay đã xong rồi. Nào, giờ thì về nhà thôi chứ nhỉ?"
+        },
+        {
+          "translation": "Câu chuyện vừa rồi hơi dài dòng một chút nhỉ. Nào, xin hãy kể thêm cho tôi nghe về cô Kimiko đi."
+        },
+        {
+          "translation": "Xem phim xong vui thật đấy. Nào, giờ chúng ta đi ăn gì đây?"
+        },
+        {
+          "translation": "Cuộc chạy marathon kết thúc rồi! Nào, nghỉ một chút rồi đi tắm vòi sen thôi."
+        }
+      ]
+    },
+    "ja_Aしかも_3": {
+      "title": "A。しかも B。(A. Shikamo B.)",
+      "shortExplanation": "Dùng để bổ sung thêm một đặc điểm, thông tin có mức độ cao hơn vào câu trước; 'hơn nữa', 'đã vậy lại còn...', 'mà lại còn...'.",
+      "longExplanation": "Liên từ 'しかも' dùng để liên kết hai vế câu mang tính độc lập, biểu thị sự bổ sung thêm một thông tin cùng chiều hướng mang tính nhấn mạnh vào vế trước ('hơn thế nữa', 'lại còn...'). Thường dùng để làm nổi bật mức độ ấn tượng của sự vật, sự việc (ví dụ: món ăn ngon mà giá lại còn rẻ, sinh viên vừa học giỏi mà thể thao lại còn xuất sắc).",
+      "formation": "Câu A。 + しかも、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Món ăn này rất ngon. Hơn nữa, giá lại còn rẻ."
+        },
+        {
+          "translation": "Cậu ấy là một học sinh xuất sắc. Đã vậy, cậu ấy lại còn giỏi thể thao nữa."
+        },
+        {
+          "translation": "Cô ấy hát rất hay. Hơn nữa, nhảy múa cũng rất giỏi."
+        },
+        {
+          "translation": "Quán cà phê này có bầu không khí rất tuyệt. Hơn nữa, cà phê cũng ngon."
+        }
+      ]
+    },
+    "ja_Aしたがって_4": {
+      "title": "A。したがって B。(A. Shitagatte B.)",
+      "shortExplanation": "Biểu thị mối quan hệ nhân quả logic mang tính tất yếu và trang trọng; 'do đó', 'vì vậy', 'theo đó'.",
+      "longExplanation": "Liên từ 'したがって' (có thể viết chữ Hán 従って) dùng để liên kết hai câu, trong đó câu A là nguyên nhân, căn cứ hoặc tiền đề lý luận, còn câu B là kết quả, phán đoán hoặc kết luận tất yếu được rút ra một cách logic từ câu A. Mang sắc thái trang trọng, khách quan và văn phong trang nhã, thường được dùng trong các bài thuyết trình, văn bản nghị luận, báo cáo hoặc văn bản pháp lý.",
+      "formation": "Câu A。 + したがって、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Hôm nay trời đang mưa. Vì vậy, chúng ta hãy mang theo ô đi nhé."
+        },
+        {
+          "translation": "Anh ấy đang bận. Do đó, chúng ta đừng liên lạc với anh ấy lúc này."
+        },
+        {
+          "translation": "Nhà hàng đó rất được ưa chuộng. Do đó, nếu không đặt trước thì có thể sẽ không có chỗ."
+        },
+        {
+          "translation": "Kỳ thi đã đến gần rồi. Vì vậy, chúng ta hãy tập trung vào việc học nhé."
+        }
+      ]
+    },
+    "ja_A_5": {
+      "title": "A すなわち B。 (A sunawachi B)",
+      "shortExplanation": "Dùng để giải thích lại, làm rõ ý hoặc nêu ra quan hệ đồng nhất giữa A và B; 'tức là', 'nói cách khác', 'đó chính là'.",
+      "longExplanation": "Liên từ 'すなわち' (có thể viết bằng chữ Hán 即ち) dùng để biểu thị rằng nội dung B là sự diễn đạt lại, làm rõ nghĩa hoặc đồng nhất với nội dung A vừa nêu trước đó ('tức là', 'nói cách khác là'). Từ này mang tính chất diễn giải logic, định nghĩa hoặc tóm tắt bản chất vấn đề, thường xuất hiện trong phong cách văn viết trang trọng, thuyết trình, bài giảng hoặc văn bản học thuật.",
+      "formation": "Cụm từ A / Câu A + すなわち + Cụm từ B / Câu B",
+      "examples": [
+        {
+          "translation": "Tôi muốn tạo ra thành quả xuất sắc, tức là, tôi muốn thành công."
+        },
+        {
+          "translation": "Anh ấy nghẹn lời, nói cách khác là anh ấy chẳng thể nói được gì."
+        },
+        {
+          "translation": "Cô ấy không ngừng nỗ lực hướng tới mục tiêu của mình, tức là cô ấy đang vô cùng cố gắng."
+        },
+        {
+          "translation": "Cửa hàng này coi trọng sự hài lòng của khách hàng nhất, nói cách khác chính là dịch vụ rất tốt."
+        }
+      ]
+    },
+    "ja_Aすると_6": {
+      "title": "A。すると B。(~suruto)",
+      "shortExplanation": "Biểu thị khi hành động A vừa diễn ra thì ngay lập tức xuất hiện hành động hoặc tình huống B; 'thế là', 'vừa làm vậy thì...', 'ngay sau đó'.",
+      "longExplanation": "Mẫu liên từ 'すると' đứng ở đầu câu thứ hai nhằm diễn tả việc sau khi hành động A ở câu trước vừa được thực hiện hoặc hoàn thành, thì sự việc B lập tức diễn ra một cách tự nhiên hoặc ngoài dự kiến như một hệ quả theo sau. Thường dùng trong lời kể để thuật lại diễn biến sự việc xảy ra trong thực tế theo dòng thời gian. Lưu ý: vế B không dùng cho câu thể hiện ý chí, mệnh lệnh hay nhờ vả của người nói.",
+      "formation": "Câu A。 + すると、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Vừa gọi điện thoại thì cô ấy bắt máy ngay."
+        },
+        {
+          "translation": "Nếu nhấn nút này, cánh cửa sẽ mở ra."
+        },
+        {
+          "translation": "Vừa bước vào cửa hàng tiện lợi thì tôi tình cờ gặp một người bạn."
+        },
+        {
+          "translation": "Anh ấy vừa bước ra khỏi nhà thì trời liền bắt đầu đổ mưa."
+        }
+      ]
+    },
+    "ja_Aそういえば_7": {
+      "title": "A。そういえば B。(~souieba)",
+      "shortExplanation": "Dùng khi nhớ ra hoặc liên tưởng đến một điều gì đó liên quan từ nội dung câu trước; 'nhắc mới nhớ', 'nhân tiện', 'nói đến việc đó thì...'.",
+      "longExplanation": "Mẫu liên từ 'そういえば' (phát triển từ 'そう言えば': nếu nói như vậy) đứng ở đầu câu thứ hai, được người nói sử dụng khi nghe thấy hoặc nói ra điều A ở câu trước mà sực nhớ ra, liên tưởng tới một thông tin hoặc câu chuyện liên quan khác ở câu B ('nhắc mới nhớ ra là...', 'tiện đây nói luôn...'). Rất phổ biến trong giao tiếp thường ngày để dẫn dắt câu chuyện sang một chủ đề mới có liên quan.",
+      "formation": "Câu A。 + そういえば、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Phim ảnh à. Nhắc mới nhớ, anh ấy đang làm việc ở rạp chiếu phim đấy."
+        },
+        {
+          "translation": "Chị Yamada à. Nhân tiện nói đến thì cuối tuần này chị ấy đi du lịch đấy."
+        },
+        {
+          "translation": "Nhà hàng đó à. Nhắc mới nhớ, cuối tuần tới có một bữa tiệc ở đó đấy."
+        },
+        {
+          "translation": "Lạnh thật đấy. Nhắc mới nhớ, nghe nói ngày mai tuyết sẽ rơi đấy."
+        }
+      ]
+    },
+    "ja_Aそこで_8": {
+      "title": "A。そこで B。(~sokode)",
+      "shortExplanation": "Diễn tả việc dựa trên tình huống hoặc vấn đề ở câu A mà đưa ra biện pháp, hành động ứng phó ở câu B; 'do vậy', 'chính vì thế', 'bởi vậy nên'.",
+      "longExplanation": "Liên từ 'そこで' đứng ở đầu câu, dùng để liên kết khi câu A nêu ra một hoàn cảnh, vấn đề hoặc lý do thực tế, và câu B trình bày hành động có chủ đích, quyết định hoặc giải pháp mà chủ thể đưa ra để ứng phó với tình hình đó ('chính vì thế nên tôi đã quyết định...', 'do đó mà...'). Khác với 'それで' (thường chỉ kết quả tự nhiên, khách quan), 'そこで' đặc biệt nhấn mạnh vào hành vi có chủ ý và biện pháp giải quyết của người nói.",
+      "formation": "Câu A。 + そこで、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Ngày mai có bài thi. Chính vì vậy, tối nay tôi định sẽ học bài."
+        },
+        {
+          "translation": "Nhà hàng này đông đúc quá. Do đó, chúng ta hãy đi ăn trưa ở một nơi khác nhé."
+        },
+        {
+          "translation": "Cô ấy bị dị ứng. Vì thế, tôi sẽ nấu một món ăn khác riêng cho cô ấy."
+        },
+        {
+          "translation": "Tôi không mang theo ô. Do vậy, tôi sẽ đợi cho đến khi tạnh mưa."
+        }
+      ]
+    },
+    "ja_AそれがB_9": {
+      "title": "A。それがB。(~sorega)",
+      "shortExplanation": "Khẳng định rằng sự việc A chính là định nghĩa, bản chất thực sự của B; 'đó chính là...', 'đó mới là...'.",
+      "longExplanation": "Mẫu câu 'A。それがB。' sử dụng đại từ chỉ thị 'それが' để quy chiếu toàn bộ hành vi, trạng thái hay hiện tượng A được nhắc đến ở câu trước, và đưa ra định nghĩa, đúc kết mang tính bản chất rằng đó chính là hiện thân đích thực của khái niệm B ('đó mới thực sự là B', 'đó chính là cái gọi là B'). Thường đi với các cách nói định nghĩa như '〜というものだ', '〜の魅力だ', '〜の証拠だ'.",
+      "formation": "Câu A。 + それが + Câu / Cụm từ B。",
+      "examples": [
+        {
+          "translation": "Cậu ấy học rất giỏi. Đó chính là cái gọi là thiên tài."
+        },
+        {
+          "translation": "Nấu những món ăn ngon. Đó chính là sở thích của tôi."
+        },
+        {
+          "translation": "Cô ấy luôn sẵn lòng giúp đỡ tôi. Đó mới đích thực là bạn bè."
+        },
+        {
+          "translation": "Một mình thực hiện chuyến hành trình dài. Đó chính là cái gọi là tự do."
+        }
+      ]
+    },
+    "ja_Aそれで_10": {
+      "title": "A。それで B。 (~sore de)",
+      "shortExplanation": "Biểu thị mối quan hệ nhân quả tự nhiên giữa hai sự việc trong lời kể; 'vì vậy', 'thế nên', 'do đó'.",
+      "longExplanation": "Liên từ 'それで' đứng ở đầu câu, liên kết câu A (nguyên nhân, hoàn cảnh thực tế) với câu B (kết quả, hệ quả diễn biến tự nhiên tiếp theo). Đây là liên từ diễn đạt nhân quả rất thông dụng trong đời sống hàng ngày để trần thuật lại lý do và diễn biến của sự việc ('vì chuyện đó mà...'). Lưu ý vế sau thường là sự thật khách quan hoặc điều đã xảy ra, không dùng cho các câu mệnh lệnh, rủ rê hay ý chí can thiệp mạnh.",
+      "formation": "Câu A。 + それで、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Hôm qua trời đã mưa. Vì thế tôi đã không đi công viên."
+        },
+        {
+          "translation": "Tôi đã thi trượt. Do đó tôi phải thi lại."
+        },
+        {
+          "translation": "Căn phòng rất lạnh. Vì thế tôi đã bật máy sưởi."
+        },
+        {
+          "translation": "Hôm nay được nghỉ. Thế nên tôi sẽ đi xem phim."
+        }
+      ]
+    },
+    "ja_Aそれでも_11": {
+      "title": "A。それでも B。(~sore demo)",
+      "shortExplanation": "Biểu thị sự đối lập nhượng bộ; dù có tình huống A ở trước thì hành động, quyết định B ở sau vẫn được thực hiện; 'dù vậy', 'cho dù như thế', 'thế nhưng vẫn...'.",
+      "longExplanation": "Liên từ 'それでも' (nguồn gốc từ それ＋でも: cho dù là như thế) đứng ở đầu câu thứ hai để diễn tả quan hệ tương phản mang tính nhượng bộ. Nó chỉ ra rằng mặc dù thừa nhận thực tế hoặc hoàn cảnh bất lợi, trở ngại được nêu ra ở câu A, nhưng chủ thể vẫn giữ nguyên ý định, tiếp tục thực hiện hành động B, hoặc một sự việc B trái với dự đoán thông thường vẫn xảy ra ('dù vậy nhưng vẫn...').",
+      "formation": "Câu A (hoàn cảnh/trở ngại)。 + それでも、 + Câu B (hành động/kết quả tương phản)。",
+      "examples": [
+        {
+          "translation": "Hôm nay là Chủ nhật. Dù vậy, tôi vẫn phải đi làm."
+        },
+        {
+          "translation": "Cậu ấy còn trẻ tuổi. Dù vậy, kinh nghiệm của cậu ấy lại rất phong phú."
+        },
+        {
+          "translation": "Trời đang mưa. Dù vậy, tôi vẫn muốn đi dạo."
+        },
+        {
+          "translation": "Kết quả bài thi rất tệ. Cho dù thế, tôi vẫn không bỏ cuộc."
+        }
+      ]
+    },
+    "ja_Aそれなのに_12": {
+      "title": "A。それなのに B。(~sorenanoni)",
+      "shortExplanation": "Biểu thị sự bất bình, ngạc nhiên hoặc tiếc nuối khi kết quả trái ngược hoàn toàn với mong đợi từ tiền đề trước; 'vậy mà', 'thế nhưng', 'ấy thế mà'.",
+      "longExplanation": "Liên từ 'それなのに' (kết hợp từ それ + なのに) đứng ở đầu câu thứ hai, dùng để chỉ ra sự mâu thuẫn gay gắt giữa sự việc A và sự việc B. Khi sự việc A xảy ra, thông thường người ta sẽ kỳ vọng một kết quả tương xứng, nhưng trên thực tế sự việc B lại đi ngược lại hoàn toàn, tạo nên cảm giác bất ngờ, khó hiểu, thất vọng hoặc phàn nàn, bất bình ('ấy thế mà...', 'vậy mà...').",
+      "formation": "Câu A。 + それなのに、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Anh ấy rất thông minh. Vậy mà lại thi trượt."
+        },
+        {
+          "translation": "Tôi đã dậy rất sớm. Thế nhưng lại bị trễ xe buýt."
+        },
+        {
+          "translation": "Hôm qua trời nắng ráo. Ấy thế mà anh ấy lại mang theo ô."
+        },
+        {
+          "translation": "Cô ấy không giỏi vận động. Vậy mà cô ấy lại quyết định chạy marathon."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_最中に_130": {
+      "title": "～最中に (～saichuu ni)",
+      "shortExplanation": "表示正当处于某动作或事态的高潮进程中时，突然发生了意想不到的事件；“正……的时候”、“正在……之中”。",
+      "longExplanation": "句型“～最中に”（或“～最中だ”）用于强调某个动作或事件正在高度集中或白热化地进行当中，此时突然发生了某件出乎意料的事情或横生干扰，从而打断了正在进行的进程。通常接在动词“～ている”形式之后，或接在表示动作行为的名词加“の”之后。后项往往是短暂发生的外界突发事件。",
+      "formation": "动词て形 + いる + 最中に | 名词 + の + 最中に",
+      "examples": [
+        {
+          "translation": "正当我午睡的时候，电话响了。"
+        },
+        {
+          "translation": "正在做饭的时候发生了火灾。"
+        },
+        {
+          "translation": "在开会的中途，我因为有急事不得不离席。"
+        },
+        {
+          "translation": "正在考试的时候发生了地震。"
+        }
+      ]
+    },
+    "ja_決してない_131": {
+      "title": "決して～ない (kesshite ~ nai)",
+      "shortExplanation": "与否定形式呼应，表示强烈的否定断定或坚定意志；“决不……”、“绝对不……”、“万万不……”。",
+      "longExplanation": "副词“決して”通常与后项的否定句式（～ない、～ません、～ないで等）相呼应，用于表示坚决的否定意志、庄严的承诺、告诫或断定的判断，意为“绝对不”、“决不”。它排除了任何例外情况，带有强烈的决绝语气，常用于表明决心、保守秘密、忠告他人等语境。",
+      "formation": "決して + 动词否定形（ない形 / ません / ないで） | 決して + 形容词 / 名词否定形",
+      "examples": [
+        {
+          "translation": "他决不迟到。"
+        },
+        {
+          "translation": "这个秘密请绝对不要告诉任何人。"
+        },
+        {
+          "translation": "决不要放弃，坚持努力到最后吧。"
+        },
+        {
+          "translation": "她是一个决不说谎的人。"
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A あるいは B (A aruiwa B)",
+      "shortExplanation": "表示在同类事物或方案中列举对等选择项；“或者”、“或是”、“又或者”。",
+      "longExplanation": "连词“あるいは”（可写作汉字“或いは”）用于并列连接两个或多个性质相当的词语、短语或句子，提示在列举的各项方案中具有可选性（即“A或者B”）。该词属于书面语色彩较浓的郑重表达，广泛应用于公文、商务信函、学术论文、法律条文及新闻报道等正式场合。",
+      "formation": "短语A / 句子A + あるいは + 短语B / 句子B",
+      "examples": [
+        {
+          "translation": "今天我打算去看电影或者去购物。"
+        },
+        {
+          "translation": "她可以用英语或者德语交流。"
+        },
+        {
+          "translation": "我们喜欢喝咖啡或者红茶。"
+        },
+        {
+          "translation": "这份工作可以作为正式员工或者合同工来进行工作。"
+        }
+      ]
+    },
+    "ja_Aおまけに_1": {
+      "title": "A。おまけに B。(~omake ni)",
+      "shortExplanation": "表示在已有情况的基础上进一步递进添加，多用于雪上加霜或锦上添花；“而且”、“加之”、“再加上”。",
+      "longExplanation": "连词“おまけに”（来源于名词“おまけ”，意为附赠品、额外添头）置于句首，用于在句A陈述的基础上追加同方向的另一种情况B。虽然也可用于积极正面的事物，但在实际运用中多用于消极负面语境，突出不良状况的层层加码，带有“屋漏偏逢连夜雨”、“不仅如此，偏偏还……”的感叹语气。",
+      "formation": "句子A。 + おまけに + 句子B。",
+      "examples": [
+        {
+          "translation": "他迟到了。而且还忘了带作业。"
+        },
+        {
+          "translation": "这间公寓很狭窄。再加上房租也很贵。"
+        },
+        {
+          "translation": "她工作很忙。更何况孩子还小。"
+        },
+        {
+          "translation": "昨天下了雨。加之风刮得也很大。"
+        }
+      ]
+    },
+    "ja_Aさて_2": {
+      "title": "A。さて B。(A. Sate B.)",
+      "shortExplanation": "用于转换话题或告一段落后开启新的行动；“那么”、“话说回来”、“接下来”。",
+      "longExplanation": "接续词“さて”常置于句首，表示上一件事情已告一段落，借此打住前文，将话题或行动转向新的内容或下一步计划。在日常会话、会议主持、讲演报告以及节目主持中十分常见，用于集中听众的注意力，并提示进入实质性或新的议题。",
+      "formation": "句子A。 + さて、 + 句子B。",
+      "examples": [
+        {
+          "translation": "今天的工作结束了。那么，接下来准备回家吧。"
+        },
+        {
+          "translation": "话扯得有点长了呢。那么，请再多告诉我一些关于喜美子小姐的事吧。"
+        },
+        {
+          "translation": "看电影很开心。那么，接下来去吃点什么好呢。"
+        },
+        {
+          "translation": "马拉松跑完了！那么，先休息一会儿再去洗澡吧。"
+        }
+      ]
+    },
+    "ja_Aしかも_3": {
+      "title": "A。しかも B。(A. Shikamo B.)",
+      "shortExplanation": "用于补充提供具有递进性质的追加信息；“而且”、“并且”、“况且”。",
+      "longExplanation": "接续词“しかも”位于句首或分句之间，用于连接两个独立的句子或分句。它在句A的基础上追加同方向的评价或事实B，起到进一步加强语气、深化程度的作用（相当于“而且”、“并且”）。常用于陈述事物的多重优点或叠加特征，使叙述更加具有说服力。",
+      "formation": "句子A。 + しかも、 + 句子B。",
+      "examples": [
+        {
+          "translation": "这道菜很好吃。而且，价格很便宜。"
+        },
+        {
+          "translation": "他是一名优秀的学生。而且，还擅长体育运动。"
+        },
+        {
+          "translation": "她歌唱得很好。而且，舞跳得也很棒。"
+        },
+        {
+          "translation": "这家咖啡馆气氛很好。而且，咖啡也很好喝。"
+        }
+      ]
+    },
+    "ja_Aしたがって_4": {
+      "title": "A。したがって B。(A. Shitagatte B.)",
+      "shortExplanation": "表示合乎逻辑的顺接因果关系，引出必然结果或推论；“因此”、“因而”、“所以”。",
+      "longExplanation": "接续词“したがって”（汉字写作“従って”）用于连接具有严密因果逻辑的两个句子，表示句子A是原因、前提或客观依据，句子B是据此顺理成章推导出的必然结论、结果或应对措施。其语体风格非常郑重、客观，极少带有强烈的个人感彩，广泛应用于正式论文、商务报告、公文法规以及学术讲演中。",
+      "formation": "句子A。 + したがって、 + 句子B。",
+      "examples": [
+        {
+          "translation": "今天正在下雨。因此，带上雨伞出门吧。"
+        },
+        {
+          "translation": "他很忙。因此，我们还是不要联系他为好。"
+        },
+        {
+          "translation": "那家餐厅很有人气。因此，如果不提前预约的话可能会没有座位。"
+        },
+        {
+          "translation": "考试临近了。因此，集中精力投入学习吧。"
+        }
+      ]
+    },
+    "ja_A_5": {
+      "title": "A すなわち B。 (A sunawachi B)",
+      "shortExplanation": "用于对前述内容进行换言解释、阐明实质或表明等同关系；“即”、“换言之”、“也就是说”。",
+      "longExplanation": "连词“すなわち”（汉字写作“即ち”）用于表示后项B与前项A具有等价关系，或后项B是对前项A所做的同义转述、本质提炼与补充说明（相当于“也就是”、“换句话说”）。该词属于书面语色彩浓厚的郑重表达，常用于给出学术定义、概括核心结论或清晰阐明论点。",
+      "formation": "短语A / 句子A + すなわち + 短语B / 句子B",
+      "examples": [
+        {
+          "translation": "我想取得出色的成果，换言之，就是想要获得成功。"
+        },
+        {
+          "translation": "他一时语塞，也就是说，什么话也说不出来了。"
+        },
+        {
+          "translation": "她朝着自己的目标不断努力，换句话说，她非常拼搏。"
+        },
+        {
+          "translation": "这家店把顾客的满意放在第一位，也就是说，服务非常周到优质。"
+        }
+      ]
+    },
+    "ja_Aすると_6": {
+      "title": "A。すると B。(~suruto)",
+      "shortExplanation": "表示做了动作A之后，紧接着自然发生或发现了事态B；“于是”、“接着”、“这么一来”。",
+      "longExplanation": "接续词“すると”置于句首，用于连接前后两个句子，表示前句的动作A一经实施或发生，后句的事态B便立刻紧随其后出现或被观察到（相当于“于是”、“接着”、“一……就……”）。常用于叙述客观事实的经过或叙事线索的推移。需要注意的是，后句不能接续表达说话人个人意志、请求或命令的句式。",
+      "formation": "句子A。 + すると、 + 句子B。",
+      "examples": [
+        {
+          "translation": "一拨通电话，她就接听了。"
+        },
+        {
+          "translation": "只要按下这个按钮，门就会打开。"
+        },
+        {
+          "translation": "一去便利店，正巧碰见了朋友。"
+        },
+        {
+          "translation": "他刚走出家门，立刻就下起雨来了。"
+        }
+      ]
+    },
+    "ja_Aそういえば_7": {
+      "title": "A。そういえば B。(~souieba)",
+      "shortExplanation": "由前句的话题联想到相关的事情，用于顺势转换或补充话题；“说起来”、“这么一说”、“提起这事”。",
+      "longExplanation": "连词“そういえば”（字面由“そう言えば”演变而来）置于句首，用于说话人因前句提及的词语或事实A受到启发，突然回忆起或联想到与之相关的某项信息B（相当于“说起来”、“经你这么一说我才想起来”）。这是日常口语会话中极为高频的表达，能够自然流畅地推进交流并展开新的关联话题。",
+      "formation": "句子A。 + そういえば、 + 句子B。",
+      "examples": [
+        {
+          "translation": "电影啊。说起来，他是在电影院工作的呢。"
+        },
+        {
+          "translation": "山田小姐啊。说起来，她这周末要去旅行呢。"
+        },
+        {
+          "translation": "那家餐厅啊。提起这事，下个周末那里要举办聚会呢。"
+        },
+        {
+          "translation": "好冷啊。说起来，听说明天好像要下雪呢。"
+        }
+      ]
+    },
+    "ja_Aそこで_8": {
+      "title": "A。そこで B。(~sokode)",
+      "shortExplanation": "针对前述的情况、问题或背景，采取相应的应对行动或决定；“于是”、“为此”、“正因如此”。",
+      "longExplanation": "接续词“そこで”置于句首，用于连接两个句子。前句A说明某种具体的情况、背景、面临的困难或原由，后句B则叙述针对该情况所采取的主动应对措施、对策或行为决定（相当于“为此”、“于是”）。与侧重于客观自然结果的“それで”不同，“そこで”后项常伴随有意识的主观动作与解决方案。",
+      "formation": "句子A。 + そこで、 + 句子B。",
+      "examples": [
+        {
+          "translation": "明天有考试。因此，我打算今晚好好学习。"
+        },
+        {
+          "translation": "这家餐厅很拥挤。为此，我们去别的地方吃午饭吧。"
+        },
+        {
+          "translation": "她有过敏症。于是，我为她专门做另一道料理。"
+        },
+        {
+          "translation": "我没带雨伞。为此，我准备等雨停了再走。"
+        }
+      ]
+    },
+    "ja_AそれがB_9": {
+      "title": "A。それがB。(~sorega)",
+      "shortExplanation": "指出前述的A恰恰就是B的本质或真正定义；“那就是所谓的……”、“这正是……”。",
+      "longExplanation": "句型“A。それがB。”利用指示代词“それが”承接前句所描述的行为、状态或事实A，并在后句B中指出其本质属性或确立其定义，强调“A正是B的核心所在 / A才称得上是真正的B”。在后句中常与“～というものだ”、“～の醍醐味だ”等表达呼应，带有赞叹、感慨或深刻领悟的语气。",
+      "formation": "句子A。 + それが + 句子B / 短语B。",
+      "examples": [
+        {
+          "translation": "他很会读书。那就是所谓的叫作天才吧。"
+        },
+        {
+          "translation": "烹制美味的料理。那正是我的爱好所在。"
+        },
+        {
+          "translation": "她总会向我伸出援手。这才是所谓的朋友。"
+        },
+        {
+          "translation": "一个人踏上漫长的旅途。这就是所谓的自由。"
+        }
+      ]
+    },
+    "ja_Aそれで_10": {
+      "title": "A。それで B。 (~sore de)",
+      "shortExplanation": "表示客观顺接的因果关系，后项为前项自然引发的结果；“因此”、“所以”、“于是”。",
+      "longExplanation": "接续词“それで”置于句首，用于将前句A（原因、事态或理由）与后句B（随之自然产生的事实或结果）连接起来。它是口语和书面叙事中非常基础且高频的因果连接词，常用于交代事情发生的前因后果（相当于“因此”、“所以”）。需要注意后句一般叙述既成事实或自然发展的客观事态，不能用于祈使、命令或劝诱。",
+      "formation": "句子A。 + それで、 + 句子B。",
+      "examples": [
+        {
+          "translation": "昨天下了雨。所以，我没去公园。"
+        },
+        {
+          "translation": "考试不及格。因此，不得不参加补考。"
+        },
+        {
+          "translation": "房间里很冷。于是，我打开了暖气。"
+        },
+        {
+          "translation": "今天休息。所以，我要去看电影。"
+        }
+      ]
+    },
+    "ja_Aそれでも_11": {
+      "title": "A。それでも B。(~sore demo)",
+      "shortExplanation": "表示让步转折，即使存在前述的不利情况，后述行为或事实依然成立；“尽管如此”、“即便那样”、“仍然”。",
+      "longExplanation": "接续词“それでも”（由指示词“それ”与助词“でも”结合而成）置于句首，用于表示即便承认并接受前句A所描述的困境、阻碍或既成事实，后句B依然采取了不屈服于该状况的行动，或是产生了出乎常理的事态（相当于“尽管如此依然……”、“即便那样还是……”）。常用于展现坚定的意志或形成鲜明的对比。",
+      "formation": "句子A。 + それでも、 + 句子B。",
+      "examples": [
+        {
+          "translation": "今天是周日。尽管如此，我还是不得不去上班。"
+        },
+        {
+          "translation": "他虽然年轻。即便如此，经验却很丰富。"
+        },
+        {
+          "translation": "外面正在下雨。即便那样，我还是想去散步。"
+        },
+        {
+          "translation": "考试成绩很差。尽管如此，我也决不放弃。"
+        }
+      ]
+    },
+    "ja_Aそれなのに_12": {
+      "title": "A。それなのに B。(~sorenanoni)",
+      "shortExplanation": "表示事态的发展与基于前因所产生的合情常理的预期截然相反，含有意外、不满或遗憾的语气；“尽管如此却……”、“然而却……”、“偏偏却……”。",
+      "longExplanation": "接续词“それなのに”（由“それ”与表示转折的“なのに”构成）置于句首，用于强烈表达后句B的事态与从前句A自然预期的结果完全相悖。它不仅表达事实上的逆接转折，而且往往带有说话人感到不可思议、惊讶、失望、委屈或抱怨等浓厚的感情色彩（相当于“明明那样，却偏偏……”、“然而却出人意料地……”）。",
+      "formation": "句子A。 + それなのに、 + 句子B。",
+      "examples": [
+        {
+          "translation": "他很聪明。然而却在考试中落榜了。"
+        },
+        {
+          "translation": "我起得很早。即便如此却还是没赶上公交车。"
+        },
+        {
+          "translation": "昨天天气晴朗。尽管如此他却带了把伞。"
+        },
+        {
+          "translation": "她不擅长运动。然而却决定去跑马拉松。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_最中に_130": {
+      "title": "～最中に (～saichuu ni)",
+      "shortExplanation": "어떤 동작이나 일이 한창 진행 중인 결정적인 순간에 뜻밖의 다른 일이 일어남을 나타내며, '한창 ~하는 중에', '~하는 도중에'라는 뜻입니다.",
+      "longExplanation": "'～最中に'(또는 '～最中だ')는 특정 동작이나 사태가 가장 활발하고 집중적으로 이루어지는 한가운데에 예기치 못한 돌발 상황이나 방해가 발생하여 동작이 끊기거나 영향을 받는 상황을 나타냅니다. 동사의 '〜ている' 형태나 동작성 명사 뒤에 'の'를 동반하여 결합합니다. 뒷문장에는 주로 화자가 예상하지 못했던 순간적인 사건이 옵니다.",
+      "formation": "동사 て형 + いる + 最中に | 명사 + の + 最中に",
+      "examples": [
+        {
+          "translation": "낮잠을 자고 있는 중에 전화가 울렸다."
+        },
+        {
+          "translation": "요리를 만들고 있는 도중에 화재가 발생했다."
+        },
+        {
+          "translation": "회의 도중에 급한 용무가 생겨 나가야만 했다."
+        },
+        {
+          "translation": "시험을 치르는 도중에 지진이 일어났다."
+        }
+      ]
+    },
+    "ja_決してない_131": {
+      "title": "決して～ない (kesshite ~ nai)",
+      "shortExplanation": "뒤에 부정형을 동반하여 강한 부정의 단정이나 결의를 나타내며, '결코 ~않다', '절대로 ~하지 않다'라는 뜻입니다.",
+      "longExplanation": "부사 '決して'는 반드시 뒷부분에 부정 표현(〜ない, 〜ません, 〜ないで 등)과 호응하여, 어떤 상황에서도 예외 없이 그러한 일은 결코 일어나지 않음을 강하게 단언하거나, 결코 하지 않겠다는 단호한 의지나 결심, 주의 환기를 나타냅니다. 맹세, 약속, 확고한 규칙 등을 전달할 때 주로 사용됩니다.",
+      "formation": "決して + 동사 부정형(ない형 / ません / ないで) | 決して + 형용사 / 명사 부정형",
+      "examples": [
+        {
+          "translation": "그는 결코 지각하지 않는다."
+        },
+        {
+          "translation": "이 비밀을 결코 아무에게도 말하지 마세요."
+        },
+        {
+          "translation": "결코 포기하지 말고 끝까지 힘냅시다."
+        },
+        {
+          "translation": "그녀는 결코 거짓말을 하지 않는 사람입니다."
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A あるいは B (A aruiwa B)",
+      "shortExplanation": "대등한 선택 사항을 격식 있게 나열할 때 쓰이는 접속사로, '또는', '혹은', '아니면'이라는 뜻입니다.",
+      "longExplanation": "접속사 'あるいは'(한자 표기: 或いは)는 대등한 자격을 갖춘 둘 이상의 사물, 동작, 제안 등을 나열하여 그중 하나를 선택할 수 있음을 나타내는 격식체 표현입니다('A 또는 B'). 문어적이고 격식 있는 어조를 띠고 있어, 공문서, 비즈니스 문서, 학술 논문, 공식 안내문이나 보도 등에서 널리 활용됩니다.",
+      "formation": "어구 A / 문장 A + あるいは + 어구 B / 문장 B",
+      "examples": [
+        {
+          "translation": "오늘은 영화를 보거나 혹은 쇼핑을 할 예정입니다."
+        },
+        {
+          "translation": "그녀는 영어 또는 독일어로 말할 수 있습니다."
+        },
+        {
+          "translation": "우리들은 커피 혹은 홍차를 마시는 것을 좋아합니다."
+        },
+        {
+          "translation": "이 일은 정규직 또는 계약직으로 일할 수 있습니다."
+        }
+      ]
+    },
+    "ja_Aおまけに_1": {
+      "title": "A。おまけに B。(~omake ni)",
+      "shortExplanation": "앞 문장의 상황에 더해 같은 방향의 상황이 덧붙여짐을 나타내며, '게다가', '더군다나', '거기다가'라는 뜻입니다.",
+      "longExplanation": "접속사 'おまけに'(덤, 추가를 뜻하는 'おまけ'에서 유래)는 문장 머리에 쓰여 앞서 서술한 내용 A에 더해 새로운 사태 B를 덧붙여 강조할 때 사용됩니다. 긍정적인 상황에도 쓰일 수 있으나, 실제로는 안 좋은 상황이나 난처한 문제가 겹치는 '엎친 데 덮친 격'의 뉘앙스로 자주 쓰여 '게다가', '더군다나', '거기에다 또'의 뜻을 나타냅니다.",
+      "formation": "문장 A。 + おまけに + 문장 B。",
+      "examples": [
+        {
+          "translation": "그는 지각했다. 게다가 숙제도 잊어버렸다."
+        },
+        {
+          "translation": "이 아파트는 좁다. 더군다나 집세도 비싸다."
+        },
+        {
+          "translation": "그녀는 일이 바쁘다. 게다가 아이도 아직 어리다."
+        },
+        {
+          "translation": "어제는 비가 내렸다. 거기에다 바람도 강했다."
+        }
+      ]
+    },
+    "ja_Aさて_2": {
+      "title": "A。さて B。(A. Sate B.)",
+      "shortExplanation": "화제를 전환하거나 하던 일을 일단락 짓고 다음 행동으로 넘어갈 때 쓰이며, '자', '그럼', '이제'라는 뜻입니다.",
+      "longExplanation": "접속사 'さて'는 문두에 놓여 이전의 이야기나 상황을 매듭짓고 새로운 화제나 다음 단계의 행동으로 시선을 돌릴 때 쓰는 전환 표현입니다. 대화, 사회 진행, 연설 등에서 청중의 주의를 환기시키고 본론이나 새로운 활동을 시작할 때 두루 쓰이며, 한국어의 '자, 그럼', '이제'에 해당합니다.",
+      "formation": "문장 A。 + さて、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "오늘 일이 끝났다. 자, 이제 돌아가 볼까."
+        },
+        {
+          "translation": "이야기가 좀 길어졌네요. 자, 키미코 씨에 대해 더 말씀해 주세요."
+        },
+        {
+          "translation": "영화를 재미있게 봤다. 자, 무엇을 먹으러 갈까."
+        },
+        {
+          "translation": "마라톤이 끝났다! 자, 조금 쉬었다가 샤워를 하자."
+        }
+      ]
+    },
+    "ja_Aしかも_3": {
+      "title": "A。しかも B。(A. Shikamo B.)",
+      "shortExplanation": "앞 문장에 덧붙여 정도가 더한 새로운 사실을 추가할 때 쓰이며, '게다가', '더욱이', '그것도'라는 뜻입니다.",
+      "longExplanation": "접속사 'しかも'는 앞 문장 A에서 서술한 사실이나 속성에 덧붙여, 같은 방향으로 그 정도를 한층 더 높이거나 부각시키는 추가 정보 B를 연결할 때 쓰입니다. 두 문장이 독립적인 완결성을 띠며, 주로 대상의 복합적인 장점이나 인상적인 특징을 강조하여 설명할 때 널리 쓰입니다.",
+      "formation": "문장 A。 + しかも、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "이 요리는 맛있습니다. 게다가 저렴합니다."
+        },
+        {
+          "translation": "그는 우수한 학생입니다. 게다가 운동도 잘합니다."
+        },
+        {
+          "translation": "그녀는 노래를 잘 부릅니다. 게다가 춤도 잘 춥니다."
+        },
+        {
+          "translation": "이 카페는 분위기가 좋습니다. 게다가 커피도 맛있습니다."
+        }
+      ]
+    },
+    "ja_Aしたがって_4": {
+      "title": "A。したがって B。(A. Shitagatte B.)",
+      "shortExplanation": "논리적이고 객관적인 인과관계를 나타내는 격식 있는 접속사로, '따라서', '그러므로', '그 결과'라는 뜻입니다.",
+      "longExplanation": "접속사 'したがって'(한자 표기: 従って)는 문장 A를 객관적인 이유, 근거, 전제로 삼고, 문장 B에서 그에 따라 논리적으로 귀결되는 필연적인 결과나 판단, 결론을 이끌어낼 때 쓰입니다. 문어적이고 격조 높은 정중한 어조를 띠며, 감정적인 억측보다는 논리적 귀결을 진술하는 학술 논문, 비즈니스 리포트, 뉴스 해설 등 공적인 텍스트에서 주로 사용됩니다.",
+      "formation": "문장 A。 + したがって、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "오늘은 비가 내리고 있습니다. 따라서 우산을 가지고 갑시다."
+        },
+        {
+          "translation": "그는 바쁩니다. 따라서 그에게 연락하는 것은 삼갑시다."
+        },
+        {
+          "translation": "그 식당은 인기가 많습니다. 따라서 예약하지 않으면 자리가 없을지도 모릅니다."
+        },
+        {
+          "translation": "시험이 가깝습니다. 따라서 공부에 집중합시다."
+        }
+      ]
+    },
+    "ja_A_5": {
+      "title": "A すなわち B。 (A sunawachi B)",
+      "shortExplanation": "앞서 말한 내용을 바꾸어 말하거나 그 본질 및 동등한 의미를 밝힐 때 쓰이며, '즉', '다시 말해', '곧'이라는 뜻입니다.",
+      "longExplanation": "접속사 'すなわち'(한자 표기: 即ち)는 앞 문장이나 어구 A를 받아 그 내용을 보다 알기 쉽게 바꾸어 표현하거나, A와 B가 본질적으로 동일한 개념임을 규정할 때 사용되는 표현입니다('즉', '다시 말하면'). 문어적이고 격식 있는 어조를 띠며, 논리적인 해설, 개념의 정의, 혹은 주장의 요점을 압축하여 정리할 때 유용하게 쓰입니다.",
+      "formation": "어구 A / 문장 A + すなわち + 어구 B / 문장 B",
+      "examples": [
+        {
+          "translation": "나는 훌륭한 성과를 내고 싶다. 즉, 성공하고 싶은 것이다."
+        },
+        {
+          "translation": "그는 말문이 막혔다. 즉, 아무 말도 할 수 없었다."
+        },
+        {
+          "translation": "그녀는 자신의 목표를 향해 끊임없이 노력하고 있다. 다시 말해, 그녀는 대단히 분발하고 있는 것이다."
+        },
+        {
+          "translation": "이 가게는 고객의 만족을 가장 소중히 여깁니다. 즉, 서비스가 훌륭하다는 뜻입니다."
+        }
+      ]
+    },
+    "ja_Aすると_6": {
+      "title": "A。すると B。(~suruto)",
+      "shortExplanation": "앞 문장의 동작이나 사태가 일어나자 곧이어 다음 사태가 이어짐을 나타내며, '그러자', '그랬더니', '그러자 곧'이라는 뜻입니다.",
+      "longExplanation": "접속사 'すると'는 앞 문장 A의 동작을 계기로 삼아 바로 뒤이어 새로운 사태 B가 연속적으로 발생하거나 새로운 상황을 발견하게 되었을 때 쓰입니다. 전후 사태의 시간적 계기성이나 자연스러운 인과 흐름을 객관적으로 서술하는 뉘앙스를 지니며, 한국어의 '그러자', '그랬더니'에 해당합니다. 뒷문장에는 의지, 명령, 권유 표현이 오지 않습니다.",
+      "formation": "문장 A。 + すると、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "전화를 걸었더니 그녀가 받았습니다."
+        },
+        {
+          "translation": "이 버튼을 누르면 문이 열립니다."
+        },
+        {
+          "translation": "편의점에 갔더니 마침 친구를 만났습니다."
+        },
+        {
+          "translation": "그가 집을 나서자 곧바로 비가 내리기 시작했습니다."
+        }
+      ]
+    },
+    "ja_Aそういえば_7": {
+      "title": "A。そういえば B。(~souieba)",
+      "shortExplanation": "앞 문장의 화제나 상황을 듣거나 떠올려 연관된 기억을 상기할 때 쓰이며, '그러고 보니', '말이 나온 김에 하는 말인데'라는 뜻입니다.",
+      "longExplanation": "접속사 'そういえば'(문자 그대로 '그렇게 말하면'에서 유래)는 앞서 나온 단어나 이야기 A를 계기로 하여, 머릿속에 잠재되어 있던 연관된 정보나 기억 B가 문득 떠올랐을 때 쓰이는 대화 표현입니다('그러고 보니', '듣고 보니 생각났는데'). 일상 회화에서 자연스럽게 관련 화제를 전환하거나 덧붙일 때 대단히 자주 사용됩니다.",
+      "formation": "문장 A。 + そういえば、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "영화라. 그러고 보니 그는 영화관에서 일하고 있어."
+        },
+        {
+          "translation": "야마다 씨. 그러고 보니 그녀는 이번 주말에 여행을 가요."
+        },
+        {
+          "translation": "그 식당. 그러고 보니 다음 주말에 거기서 파티가 있어."
+        },
+        {
+          "translation": "춥네. 그러고 보니 내일 눈이 온다더라."
+        }
+      ]
+    },
+    "ja_Aそこで_8": {
+      "title": "A。そこで B。(~sokode)",
+      "shortExplanation": "앞 문장의 상황이나 문제를 해결하기 위해 어떤 대책이나 행동을 취함을 나타내며, '그래서', '이에', '그리하여'라는 뜻입니다.",
+      "longExplanation": "접속사 'そこで'는 문장 A에서 제시된 상황, 문제, 배경에 대처하기 위해 주체가 어떠한 행동이나 방안을 결정하고 실행에 옮기는 B를 연결할 때 사용됩니다('이에', '그리하여', '그래서'). 자연스러운 객관적 결과를 기술하는 'それで'와 달리, 'そこで'는 목적을 가지고 의도적으로 취한 대책이나 주체적인 행동을 서술하는 점이 특징입니다.",
+      "formation": "문장 A。 + そこで、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "내일은 시험이 있습니다. 그래서 오늘 밤 공부하려고 합니다."
+        },
+        {
+          "translation": "이 식당은 붐비고 있습니다. 그래서 다른 장소에서 점심을 먹읍시다."
+        },
+        {
+          "translation": "그녀는 알레르기가 있다. 그래서 그녀를 위해 다른 요리를 만듭니다."
+        },
+        {
+          "translation": "우산을 가지고 있지 않다. 그래서 비가 그칠 때까지 기다립니다."
+        }
+      ]
+    },
+    "ja_AそれがB_9": {
+      "title": "A。それがB。(~sorega)",
+      "shortExplanation": "앞 문장의 행위나 상황 A가 바로 B의 본질이자 진정한 정의임을 강조하며, '그것이 바로 ~이다', '그것이야말로 ~이다'라는 뜻입니다.",
+      "longExplanation": "'A。それがB。' 구문은 지시대명사 'それが'를 통해 앞 문장에서 언급된 행위나 상태 A 전체를 가리킨 뒤, 뒷문장 B에서 그것이야말로 개념 B의 본질이자 정수임을 규정하거나 정의할 때 사용됩니다('그것이 바로 B라는 것이다'). 뒷부분에는 흔히 '〜というものだ'(~라는 것이다), '〜의 매력이다' 등의 표현이 호응하여 깊은 감탄이나 깨달음의 어조를 띱니다.",
+      "formation": "문장 A。 + それが + 문장 B / 어구 B。",
+      "examples": [
+        {
+          "translation": "그는 공부를 잘한다. 그것이 바로 천재라는 것이다."
+        },
+        {
+          "translation": "맛있는 요리를 만든다. 그것이 바로 내 취미이다."
+        },
+        {
+          "translation": "그녀는 나를 도와준다. 그것이야말로 친구라는 것이다."
+        },
+        {
+          "translation": "혼자서 긴 여행을 떠난다. 그것이 바로 자유라는 것이다."
+        }
+      ]
+    },
+    "ja_Aそれで_10": {
+      "title": "A。それで B。 (~sore de)",
+      "shortExplanation": "앞 문장의 원인이나 사정에 따라 자연스럽게 발생한 결과를 연결하며, '그래서', '그 때문에', '그리하여'라는 뜻입니다.",
+      "longExplanation": "접속사 'それで'는 문두에서 문장 A를 이유나 배경으로 삼고, 그로 인해 자연스럽게 도출된 사태나 결과 B를 잇는 가장 대표적인 순접 인과 접속사입니다. 일상 대화나 글에서 사건의 경과와 이유를 설명할 때 자주 쓰이며, 한국어의 '그래서', '그 때문에'에 해당합니다. 뒷문장에는 주로 기정사실이나 자연스러운 흐름이 오며 권유나 명령형은 오지 않습니다.",
+      "formation": "문장 A。 + それで、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "어제는 비가 내렸다. 그래서 공원에 가지 않았다."
+        },
+        {
+          "translation": "시험에 떨어졌다. 그래서 재시험을 치러야 한다."
+        },
+        {
+          "translation": "방이 추웠다. 그래서 난방을 틀었다."
+        },
+        {
+          "translation": "오늘은 쉬는 날이다. 그래서 영화를 보러 간다."
+        }
+      ]
+    },
+    "ja_Aそれでも_11": {
+      "title": "A。それでも B。(~sore demo)",
+      "shortExplanation": "앞 문장의 상황이나 장애를 인정하면서도 그에 굴하지 않고 뒷 문장의 행동이나 사태가 이어짐을 나타내며, '그럼에도 불구하고', '그래도'라는 뜻입니다.",
+      "longExplanation": "접속사 'それでも'는 문두에 쓰여, 앞 문장 A에서 제시된 불리한 조건, 어려움, 혹은 전제 상황을 충분히 인정하면서도, 그에 영향을 받지 않고 주체가 꿋꿋이 어떤 행동이나 의지를 관철하거나 예상과 다른 사태 B가 성립함을 나타냅니다('그럼에도 불구하고', '그래도 여전히'). 확고한 결의나 대조적인 사실을 부각시킬 때 자주 쓰입니다.",
+      "formation": "문장 A。 + それでも、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "오늘은 일요일입니다. 그럼에도 불구하고 출근해야 합니다."
+        },
+        {
+          "translation": "그는 젊습니다. 그럼에도 불구하고 경험이 풍부합니다."
+        },
+        {
+          "translation": "비가 내리고 있습니다. 그래도 산책하러 가고 싶습니다."
+        },
+        {
+          "translation": "시험 결과가 나빴습니다. 그래도 포기하지 않습니다."
+        }
+      ]
+    },
+    "ja_Aそれなのに_12": {
+      "title": "A。それなのに B。(~sorenanoni)",
+      "shortExplanation": "앞 문장의 사실에서 당연히 기대되는 결과와 전혀 반대되는 사태가 일어났을 때 놀라움이나 유감, 불만을 나타내며, '그런데도', '그럼에도 불구하고', '그렇건만'이라는 뜻입니다.",
+      "longExplanation": "접속사 'それなのに'(지시대명사 'それ'와 역접 조사 'なのに'의 결합)는 문두에 놓여, 앞 문장 A를 고려했을 때 당연히 그러하리라고 예측되는 상식적인 기대와는 상반되는 엉뚱하거나 모순된 결과 B가 일어났음을 나타내는 역접 표현입니다. 단순한 역접에 그치지 않고, 화자의 놀라움, 의아함, 억울함, 실망감, 혹은 불만의 감정이 짙게 배어 있는 것이 특징입니다.",
+      "formation": "문장 A。 + それなのに、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "그는 머리가 좋다. 그런데도 시험에 떨어졌다."
+        },
+        {
+          "translation": "나는 일찍 일어났다. 그런데도 버스를 놓쳤다."
+        },
+        {
+          "translation": "어제는 맑았다. 그런데도 그는 우산을 들고 있었다."
+        },
+        {
+          "translation": "그녀는 운동을 잘 못한다. 그런데도 마라톤을 뛰기로 했다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_最中に_130": {
+      "title": "～最中に (～saichuu ni)",
+      "shortExplanation": "ある動作や出来事がちょうど盛んに行われている最中に、予期せぬ別の事態が割り込んで起こることを表し、「ちょうど〜している時に」「〜の真っ最中に」という意味を表します。",
+      "longExplanation": "「～最中に」（文末では「～最中だ」）は、ある行為や事態が熱心に行われているそのまっただ中に、予期せぬ出来事や突発的な事故などが起こり、進行中の動作が妨げられたり中断されたりする様子を表します。動詞の「〜ている」形や、動作性の名詞に「の」を添えた形に接続します。後続の文には、話し手の意志による動作ではなく、偶発的・瞬間的に発生した事態が来ることが一般的です。",
+      "formation": "動詞て形 ＋ いる ＋ 最中に ｜ 名詞 ＋ の ＋ 最中に",
+      "examples": [
+        {
+          "translation": "昼寝をしている最中に電話が鳴った。"
+        },
+        {
+          "translation": "料理を作っている最中に火事が起こった。"
+        },
+        {
+          "translation": "会議の最中に急な用事で出なければならなかった。"
+        },
+        {
+          "translation": "試験の最中に地震が起こった。"
+        }
+      ]
+    },
+    "ja_決してない_131": {
+      "title": "決して～ない (kesshite ~ nai)",
+      "shortExplanation": "強い打消しの意志や決意、絶対的な否定の判断を表し、「絶対に〜ない」「どんなことがあっても〜ない」という意味を表します。",
+      "longExplanation": "副詞「決して」は、後続の文末に否定形（〜ない、〜ません、〜ないで等）を伴って呼応し、どんな状況であっても例外なくその事態を認めないという絶対的な否定や、強い意志・決意を表します。約束や誓い、忠告、禁止の強調などに用いられ、妥協を許さない断定的なニュアンスを帯びます。",
+      "formation": "決して ＋ 動詞否定形（ない形／ません／ないで） ｜ 決して ＋ 形容詞・名詞否定形",
+      "examples": [
+        {
+          "translation": "彼は決して遅刻しない。"
+        },
+        {
+          "translation": "この秘密を決して誰にも言わないでください。"
+        },
+        {
+          "translation": "決して諦めないで、最後までがんばりましょう。"
+        },
+        {
+          "translation": "彼女は決して嘘をつかない人です。"
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A あるいは B (A aruiwa B)",
+      "shortExplanation": "同等の選択肢を並列して提示する改まった接続詞で、「または」「もしくは」「あるいは」という意味を表します。",
+      "longExplanation": "接続詞「あるいは」（漢字表記：或いは）は、同等の資格を持つ二つ以上の語句や文を並列し、いずれかを選択可能であることを示す表現です。文語的・改まった響きを持つため、ビジネス文書、公的通知、学術論文、法令文、ニュース報道などの公的な場面で広く用いられます。日常会話での「または」「それとも」に相当するフォーマルな語です。",
+      "formation": "句A／文A ＋ あるいは ＋ 句B／文B",
+      "examples": [
+        {
+          "translation": "今日は映画を見るあるいはショッピングをする予定です。"
+        },
+        {
+          "translation": "彼女は英語あるいはドイツ語で話すことができます。"
+        },
+        {
+          "translation": "僕らはコーヒーあるいは紅茶を飲むのが好きです。"
+        },
+        {
+          "translation": "この仕事は正社員あるいは契約社員として働くことができます。"
+        }
+      ]
+    },
+    "ja_Aおまけに_1": {
+      "title": "A。おまけに B。(~omake ni)",
+      "shortExplanation": "前の文に同方向の事柄をさらに付け加える接続詞で、「それに加えて」「その上」「さらに」という意味を表します。",
+      "longExplanation": "接続詞「おまけに」（「景品」「添え物」を意味する「おまけ」に由来）は、文Aで述べた事柄に、同傾向の新たな事態Bを累加・補足する際に用いられます。良いことが重なる場面でも用いられますが、多くは好ましくない事態や困った状況が重なる「泣き面に蜂」「弱り目に祟り目」といったニュアンスで用いられ、「その上さらに」「余計なことに」といった強い感情の籠もった語感を与えます。",
+      "formation": "文A。 ＋ おまけに ＋ 文B。",
+      "examples": [
+        {
+          "translation": "彼は遅刻した。おまけに宿題も忘れた。"
+        },
+        {
+          "translation": "このアパートは狭い。おまけに家賃が高い。"
+        },
+        {
+          "translation": "彼女は仕事が忙しい。おまけに子供も小さい。"
+        },
+        {
+          "translation": "昨日は雨が降った。おまけに風も強かった。"
+        }
+      ]
+    },
+    "ja_Aさて_2": {
+      "title": "A。さて B。(A. Sate B.)",
+      "shortExplanation": "話題を転換したり、一区切りつけて次の動作・本題へ移る際に用いられ、「それでは」「ところで」「さあ」という意味を表します。",
+      "longExplanation": "接続詞「さて」は、それまでの話題や行動に一区切りをつけ、新しい話題や次の行動へ意識を切り替える際に文頭で用いられます。日常会話のほか、司会進行、スピーチ、文章の段落の変わり目などで聞き手の注意を引きつけ、本題や次の展開へスムーズに誘導する働きを持ちます。",
+      "formation": "文A。 ＋ さて、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "今日の仕事が終わった。さて、これから帰るか。"
+        },
+        {
+          "translation": "話がちょっと長くなったね。さて、もっと喜美子さんのことを教えてください。"
+        },
+        {
+          "translation": "映画を見て楽しかった。さて、何を食べに行こう。"
+        },
+        {
+          "translation": "マラソンが終わった！さて、少し休んでからシャワーを浴びよう。"
+        }
+      ]
+    },
+    "ja_Aしかも_3": {
+      "title": "A。しかも B。(A. Shikamo B.)",
+      "shortExplanation": "前の文で述べた事柄に、さらに同傾向の情報を付け加えて強調する接続詞で、「その上」「さらに」「おまけに」という意味を表します。",
+      "longExplanation": "接続詞「しかも」は、文Aの陳述に対して、その程度をさらに際立たせる新たな属性や事実Bを累積・補足する際に用いられます。前後の文はそれぞれ独立した文構造を持ち、対象の複数の美点や特徴を並列して強調する（「美味しい、しかも安い」など）際によく使われます。",
+      "formation": "文A。 ＋ しかも、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "この料理は美味しいです。しかも、安いです。"
+        },
+        {
+          "translation": "彼は優秀な学生です。しかも、スポーツが得意です。"
+        },
+        {
+          "translation": "彼女は歌が上手です。しかも、ダンスも上手です。"
+        },
+        {
+          "translation": "このカフェは雰囲気がいいです。しかも、コーヒーも美味しいです。"
+        }
+      ]
+    },
+    "ja_Aしたがって_4": {
+      "title": "A。したがって B。(A. Shitagatte B.)",
+      "shortExplanation": "前の文を根拠・理由として、論理的・必然的な結論や結果を導く改まった接続詞で、「それゆえに」「だから」「その結果」という意味を表します。",
+      "longExplanation": "接続詞「したがって」（漢字表記：従って）は、文Aを原因・理由・根拠とし、そこから論理的に導き出される当然の帰結や判断、結論を文Bで述べる際に用いられます。客観的かつ論理的な文章語であり、個人の感情的な主張よりも必然的な因果関係を述べる論文、公用文、ビジネス文書、学術発表などで多用されます。",
+      "formation": "文A。 ＋ したがって、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "今日は雨が降っています。したがって、傘を持って行きましょう。"
+        },
+        {
+          "translation": "彼は忙しいです。したがって、彼に連絡するのはやめましょう。"
+        },
+        {
+          "translation": "そのレストランは人気があります。したがって、予約しないと席がないかもしれません。"
+        },
+        {
+          "translation": "試験が近いです。したがって、勉強に集中しましょう。"
+        }
+      ]
+    },
+    "ja_A_5": {
+      "title": "A すなわち B。 (A sunawachi B)",
+      "shortExplanation": "前の言葉や文を言い換えたり、同等・本質的な意味を要約して説明する改まった接続詞で、「つまり」「言い換えれば」「すなわち」という意味を表します。",
+      "longExplanation": "接続詞「すなわち」（漢字表記：即ち）は、先行する語句や文Aの内容を、別の表現で言い換えたり、その本質・定義を明確に提示したりする（AとBが等価であることを示す）際に用いられます。「つまり」「要するに」よりも改まった文章語であり、学術的な定義付け、論理的な解説、結論の要約などで多用されます。",
+      "formation": "句A／文A ＋ すなわち ＋ 句B／文B",
+      "examples": [
+        {
+          "translation": "私は立派な成果を出したい、すなわち、成功したいのです。"
+        },
+        {
+          "translation": "彼は言葉に詰まった、すなわち、何も言えなかった。"
+        },
+        {
+          "translation": "彼女は自分の目標に向かって努力し続けている、すなわち、彼女は非常に頑張っている。"
+        },
+        {
+          "translation": "この店はお客様の満足を一番大事にしています、すなわち、サービスが良いということです。"
+        }
+      ]
+    },
+    "ja_Aすると_6": {
+      "title": "A。すると B。(~suruto)",
+      "shortExplanation": "前の動作や出来事をきっかけとして、直後に次の事態が展開したり発見されたりすることを表し、「そうすると」「そうしたところ」「その結果」という意味を表します。",
+      "longExplanation": "接続詞「すると」は、文Aの動作や事態が生じた直後に、それに引き続いて文Bの事態が起こる（または新たな状況を発見する）ことを表す順接の接続詞です。出来事の客観的な推移や時間的継起を述べる際に多用されます。後続の文Bには、話し手の意志・命令・依頼などの主観的な表現は来ず、自然な結果や過去の事実が来ます。",
+      "formation": "文A。 ＋ すると、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "電話をかけると、彼女が出ました。"
+        },
+        {
+          "translation": "このボタンを押すと、ドアが開きます。"
+        },
+        {
+          "translation": "コンビニに行くと、たまたま友達に会いました。"
+        },
+        {
+          "translation": "彼が家を出ると、すぐに雨が降り始めました。"
+        }
+      ]
+    },
+    "ja_Aそういえば_7": {
+      "title": "A。そういえば B。(~souieba)",
+      "shortExplanation": "前の話題や出来事をきっかけとして、関連する事柄を思い出した際に用いられ、「そう言われてみれば」「考えてみれば」という意味を表します。",
+      "longExplanation": "接続詞「そういえば」（「そう言えば」から派生）は、直前の発言や状況Aを耳にしたり目にしたことで、それに関連した別の情報や過去の記憶Bがふと脳裏に呼び起こされた際に用いられます。日常の対話において、話題を自然に関連した方向へと展開させたり、聞き手と共通の思い出や情報を共有したりする際に頻繁に使われます。",
+      "formation": "文A。 ＋ そういえば、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "映画。そういえば、彼は映画館で働いているんだ。"
+        },
+        {
+          "translation": "山田さん。そういえば、彼女は今週末旅行しています。"
+        },
+        {
+          "translation": "そのレストラン。そういえば、次の週末そこでパーティーがあるんだ。"
+        },
+        {
+          "translation": "寒い。そういえば、明日雪が降るらしいよ。"
+        }
+      ]
+    },
+    "ja_Aそこで_8": {
+      "title": "A。そこで B。(~sokode)",
+      "shortExplanation": "前の文の状況や問題点を受け、それに対する対策や意志的な行動を起こす接続詞で、「そういうわけで」「それについて」「そこで」という意味を表します。",
+      "longExplanation": "接続詞「そこで」は、文Aで提示された状況・課題・動機を背景として、それに対処・解決するために主体が意図的に取る行動や決定Bを導く順接の表現です。客観的・自然な結果を述べる「それで」と異なり、「そこで」は問題解決のための対策や、話し手の能動的・意図的な働きかけを述べる文によく用いられます。",
+      "formation": "文A。 ＋ そこで、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "明日は試験があります。そこで今晩勉強しようと思います。"
+        },
+        {
+          "translation": "このレストランは混んでいます。そこで別の場所でランチを食べましょう。"
+        },
+        {
+          "translation": "彼女はアレルギーがある。そこで彼女のために別の料理を作ります。"
+        },
+        {
+          "translation": "傘を持っていない。そこで雨が止むまで待ちます。"
+        }
+      ]
+    },
+    "ja_AそれがB_9": {
+      "title": "A。それがB。(~sorega)",
+      "shortExplanation": "前の文で述べた事柄Aこそが、Bの本質や真の定義であることを表し、「それこそが〜だ」「それこそ〜というものだ」という意味を表します。",
+      "longExplanation": "「A。それがB。」の表現は、指示代名詞「それが」を用いて直前の文Aで述べた行為や状態を指し示し、それこそがBの定義や本質的な姿であると断定・強調する文型です。後続の文Bには「〜というものだ」などの表現が頻繁に伴われ、深い実感や感慨を込めて物事の本質を言い表す際に用いられます。",
+      "formation": "文A。 ＋ それが ＋ 文B／句B。",
+      "examples": [
+        {
+          "translation": "彼は勉強ができる。それが天才というものだ。"
+        },
+        {
+          "translation": "美味しい料理を作る。それが私の趣味なんです。"
+        },
+        {
+          "translation": "彼女は私を助けてくれる。それが友達というものだ。"
+        },
+        {
+          "translation": "一人で長い旅をする。それが自由というものだ。"
+        }
+      ]
+    },
+    "ja_Aそれで_10": {
+      "title": "A。それで B。 (~sore de)",
+      "shortExplanation": "前の文を理由・原因として、自然に生じた結果や事態を述べる接続詞で、「だから」「そのために」「そういうわけで」という意味を表します。",
+      "longExplanation": "接続詞「それで」は、文Aで述べた状況や原因から、文Bの事態が自然な成り行きとして生じたことを表す順接の接続詞です。日常会話や出来事の経緯を説明する際に極めて頻繁に用いられます。後続の文Bには客観的な事実や過去の成り行きが述べられることが多く、命令・依頼・意志などの主観的な働きかけには原則として用いられません。",
+      "formation": "文A。 ＋ それで、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "昨日は雨が降っていた。それで公園に行かなかった。"
+        },
+        {
+          "translation": "試験に落ちた。それで再試験を受けなければならない。"
+        },
+        {
+          "translation": "部屋が寒かった。それで暖房をつけた。"
+        },
+        {
+          "translation": "今日は休みだ。それで映画を見に行く。"
+        }
+      ]
+    },
+    "ja_Aそれでも_11": {
+      "title": "A。それでも B。(~sore demo)",
+      "shortExplanation": "前の文の状況や困難を認めた上で、それに屈せず次の行動や事態が成り立つことを表し、「それにもかかわらず」「それでもなお」という意味を表します。",
+      "longExplanation": "接続詞「それでも」は、文Aで述べられた障害・悪条件・前置きの状況を前提として認めつつも、その影響を受けずに文Bの行動や意志を貫く（または常識的な予想に反する事態が起こる）ことを表す逆接・譲歩の接続詞です。困難に負けない強い意志表明や、意外性のある事実を対比的に述べる場面でよく使われます。",
+      "formation": "文A。 ＋ それでも、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "今日は日曜日です。それでも、仕事に行かなければなりません。"
+        },
+        {
+          "translation": "彼は若いです。それでも、経験が豊富です。"
+        },
+        {
+          "translation": "雨が降っています。それでも、散歩に行きたいです。"
+        },
+        {
+          "translation": "試験の結果が悪かったです。それでも、諦めません。"
+        }
+      ]
+    },
+    "ja_Aそれなのに_12": {
+      "title": "A。それなのに B。(~sorenanoni)",
+      "shortExplanation": "前の文の事柄から当然予想されることとは正反対の結果になり、意外感や不満、非難の気持ちを表し、「それにもかかわらず」「それなのに」という意味を表します。",
+      "longExplanation": "接続詞「それなのに」（「それ」＋逆接の確定条件「なのに」）は、文Aの事実から常識的に期待・推測される結果とは著しく矛盾する事態Bが生じた際に用いられます。単なる逆接にとどまらず、「〜であるはずなのに、なぜ」「納得がいかない」という話し手の驚き、不満、失望、理不尽さなどの感情的なニュアンスが強く込められるのが大きな特徴です。",
+      "formation": "文A。 ＋ それなのに、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "彼は頭がいい。それなのに、試験に落ちた。"
+        },
+        {
+          "translation": "私は早く起きた。それなのに、バスに遅れた。"
+        },
+        {
+          "translation": "昨日は晴れていた。それなのに、彼は傘を持っていた。"
+        },
+        {
+          "translation": "彼女は運動が苦手だ。それなのに、マラソンを走ることにした。"
+        }
+      ]
+    }
+  }
+}

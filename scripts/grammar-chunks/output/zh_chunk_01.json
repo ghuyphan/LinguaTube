@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_什么_1": {
+      "title": "什么 (Cái gì, gì)",
+      "shortExplanation": "Đại từ nghi vấn dùng để hỏi về sự vật, sự việc; tương đương với 'cái gì', 'gì' trong tiếng Việt.",
+      "longExplanation": "'什么' (shénme) là đại từ nghi vấn cơ bản trong tiếng Trung, thường đứng ở vị trí tân ngữ hoặc chủ ngữ để hỏi về người, sự vật hoặc sự việc chưa biết. Khác với tiếng Anh (phải đảo từ để hỏi lên đầu câu), trong tiếng Trung trật tự từ của câu hỏi giữ nguyên như câu trần thuật: từ nghi vấn '什么' đặt ngay tại vị trí của thành phần cần hỏi.",
+      "formation": "Chủ ngữ + Động từ + 什么？ (hoặc đứng độc lập làm đại từ)",
+      "examples": [
+        {
+          "translation": "Đây là cái gì?"
+        }
+      ]
+    },
+    "zh_什么N_2": {
+      "title": "什么 + Danh từ (Loại... gì, nào)",
+      "shortExplanation": "Đại từ nghi vấn '什么' đứng trực tiếp trước danh từ làm định ngữ để hỏi về chủng loại, tính chất hoặc tên gọi của sự vật; 'gì', 'nào'.",
+      "longExplanation": "Khi '什么' (shénme) đứng trực tiếp trước một danh từ, nó đóng vai trò là định ngữ tu sức cho danh từ đó, dùng để hỏi về thể loại, tính chất hoặc tên gọi cụ thể của đồ vật, sự việc (ví dụ: 什么书 - sách gì, 什么名字 - tên gì). Giữa '什么' và danh từ thường kết hợp trực tiếp mà không cần thêm lượng từ.",
+      "formation": "什么 + Danh từ",
+      "examples": [
+        {
+          "translation": "Kia là sách gì vậy?"
+        }
+      ]
+    },
+    "zh_不是_3": {
+      "title": "不是 (Không phải, không phải là)",
+      "shortExplanation": "Dạng phủ định của động từ phán đoán '是'; dùng để phủ nhận bản chất, danh tính, quốc tịch hoặc nghề nghiệp; 'không phải là'.",
+      "longExplanation": "'不是' (bù shì) được tạo thành từ phó từ phủ định '不' kết hợp với động từ phán đoán '是'. Mẫu câu này dùng để phủ định danh tính, quan hệ sở hữu, nghề nghiệp, quốc tịch hoặc đặc tính của chủ ngữ (A 不是 B = A không phải là B). Theo quy tắc biến điệu, '不' đọc thành thanh 2 (bú) khi đi trước từ mang thanh 4 như '是' (đọc là bú shì).",
+      "formation": "Chủ ngữ + 不是 + Danh từ / Đoản ngữ danh từ",
+      "examples": [
+        {
+          "translation": "Tôi không phải là người Mỹ."
+        }
+      ]
+    },
+    "zh_是_4": {
+      "title": "是 (Là, thì là)",
+      "shortExplanation": "Động từ phán đoán dùng để khẳng định bản chất, nghề nghiệp, thân phận hoặc mối quan hệ tương đương; 'là'.",
+      "longExplanation": "'是' (shì) là động từ phán đoán (hệ từ) cơ bản trong tiếng Trung, dùng để liên kết chủ ngữ và vị ngữ danh từ trong câu khẳng định (A 是 B = A là B). Cấu trúc này dùng để chỉ ra ai đó làm nghề gì, là người nước nào, hoặc vật này là vật gì. Lưu ý rằng '是' thường không dùng để nối chủ ngữ với tính từ miêu tả đơn thuần (ví dụ: không nói '我是好', mà dùng '我很好').",
+      "formation": "Chủ ngữ + 是 + Danh từ / Đoản ngữ danh từ",
+      "examples": [
+        {
+          "translation": "Cô ấy là giáo viên."
+        }
+      ]
+    },
+    "zh_吗_5": {
+      "title": "...吗？ (Trợ từ nghi vấn: ...phải không?, ...không?)",
+      "shortExplanation": "Trợ từ ngữ khí đặt ở cuối câu trần thuật để biến câu đó thành câu hỏi Có/Không; '...không?', '...phải không?'.",
+      "longExplanation": "'吗' (ma) là trợ từ ngữ khí nghi vấn (đọc thanh nhẹ), được đặt ở cuối một câu trần thuật hoàn chỉnh để tạo thành câu hỏi Có/Không (nghi vấn thị phi). Trật tự từ trong câu hoàn toàn không thay đổi so với câu khẳng định ban đầu. Người nghe có thể trả lời bằng cách nhắc lại động từ/tính từ trong câu để khẳng định hoặc dùng '不/没' + động từ để phủ định.",
+      "formation": "Câu trần thuật + 吗？",
+      "examples": [
+        {
+          "translation": "Bạn là giáo viên phải không?"
+        }
+      ]
+    },
+    "zh_谁_6": {
+      "title": "谁 (Đại từ nghi vấn: Ai)",
+      "shortExplanation": "Đại từ nghi vấn dùng để hỏi về người; tương đương với 'ai' trong tiếng Việt.",
+      "longExplanation": "'谁' (shéi hoặc shuí) là đại từ nghi vấn chỉ người, có thể làm chủ ngữ, tân ngữ hoặc định ngữ trong câu. Khi hỏi, từ '谁' được đặt ngay tại vị trí của danh từ chỉ người cần hỏi mà không cần thay đổi trật tự từ của câu. Khi làm định ngữ biểu thị quan hệ sở hữu, có thể kết hợp với '的' (ví dụ: 这是谁的书？ - Đây là sách của ai?).",
+      "formation": "Chủ ngữ + 是 + 谁？ hoặc 谁 + Vị ngữ？",
+      "examples": [
+        {
+          "translation": "Cô ấy là ai?"
+        }
+      ]
+    },
+    "zh_哪MN_7": {
+      "title": "哪 + Lượng từ + Danh từ (Cái... nào, người... nào)",
+      "shortExplanation": "Đại từ nghi vấn '哪' kết hợp với lượng từ và danh từ để hỏi lựa chọn cụ thể trong một phạm vi xác định; 'nào', 'cái nào'.",
+      "longExplanation": "Cấu trúc '哪 + Lượng từ + Danh từ' (nǎ + lượng từ + danh từ) dùng để yêu cầu người nghe chỉ rõ một đối tượng cụ thể trong số hai hoặc nhiều đối tượng đã biết. Trong tiếng Trung, khi dùng '哪' để hạn định một danh từ đếm được, bắt buộc phải có lượng từ tương ứng đi kèm ở giữa (ví dụ: 哪个人 - người nào, 哪本书 - cuốn sách nào).",
+      "formation": "哪 + Lượng từ + Danh từ",
+      "examples": [
+        {
+          "translation": "Người nào vậy?"
+        }
+      ]
+    },
+    "zh_的_8": {
+      "title": "(的) (Trợ từ kết cấu biểu thị sở hữu: Của)",
+      "shortExplanation": "Trợ từ kết cấu biểu thị mối quan hệ sở hữu hoặc bổ nghĩa; có thể lược bỏ khi nói về quan hệ thân mật, gia đình hoặc tổ chức gắn bó.",
+      "longExplanation": "'的' (de) là trợ từ kết cấu quan trọng bậc nhất trong tiếng Trung, đặt sau định ngữ để chỉ quyền sở hữu (Định ngữ + 的 + Trung tâm ngữ), tương đương với 'của' trong tiếng Việt. Khi định ngữ là đại từ nhân xưng và trung tâm ngữ chỉ quan hệ họ hàng ruột thịt, người thân thiết, thầy cô hoặc đơn vị, trường lớp thì '的' thường có thể được lược bỏ một cách tự nhiên (ví dụ: 我(的)妈妈 - mẹ tôi, 我(的)老师 - thầy/cô tôi).",
+      "formation": "Định ngữ (Đại từ / Danh từ) + (的) + Danh từ trung tâm",
+      "examples": [
+        {
+          "translation": "Cô ấy là giáo viên của tôi."
+        }
+      ]
+    },
+    "zh_N呢_9": {
+      "title": "Danh từ + 呢？ (Thế còn... thì sao?)",
+      "shortExplanation": "Trợ từ ngữ khí '呢' đi sau danh từ hoặc đại từ để hỏi lướt tiếp nối mạch hội thoại; 'thế còn... thì sao?'.",
+      "longExplanation": "'Danh từ / Đại từ + 呢？' (ne) là mẫu câu hỏi tỉnh lược (nghi vấn phản vấn) rất phổ biến trong khẩu ngữ tiếng Trung. Dựa vào ngữ cảnh đã được thiết lập trước đó, người nói dùng '...呢？' để hỏi han đối tượng mới cùng một vấn đề mà không cần lặp lại toàn bộ câu hỏi (ví dụ: 我是中国人，你呢？ - Tôi là người Trung Quốc, thế còn bạn thì sao?). Ngoài ra, khi đứng độc lập không có tiền đề, cấu trúc này còn dùng để hỏi nơi chốn hoặc tung tích của người, vật (ví dụ: 我的书呢？ - Sách của tôi đâu rồi?).",
+      "formation": "Danh từ / Đại từ + 呢？",
+      "examples": [
+        {
+          "translation": "Tôi là người Trung Quốc, thế còn bạn thì sao?"
+        }
+      ]
+    },
+    "zh_几MN_10": {
+      "title": "几 + Lượng từ + Danh từ (Mấy... [hỏi số lượng dưới 10])",
+      "shortExplanation": "Đại từ nghi vấn '几' dùng để hỏi số lượng nhỏ (thường ước lượng dưới 10); bắt buộc đi kèm lượng từ; 'mấy'.",
+      "longExplanation": "'几' (jǐ) là đại từ nghi vấn dùng để hỏi số lượng người hoặc vật khi dự đoán số lượng tương đối ít (thông thường là dưới 10), tương đương với 'mấy' trong tiếng Việt (đối lập với '多少' dùng để hỏi mọi số lượng và không bắt buộc có lượng từ). Theo quy tắc ngữ pháp tiếng Trung, giữa '几' và danh từ đếm được luôn luôn phải có lượng từ tương ứng (cấu trúc: 几 + Lượng từ + Danh từ).",
+      "formation": "几 + Lượng từ + Danh từ",
+      "examples": [
+        {
+          "translation": "Bạn có mấy giáo viên dạy tiếng Trung?"
+        }
+      ]
+    },
+    "zh_一九十九_11": {
+      "title": "一～九十九 (Số đếm từ 1 đến 99)",
+      "shortExplanation": "Quy tắc cấu tạo số đếm từ 1 đến 99 trong tiếng Trung theo hệ thập phân cơ bản.",
+      "longExplanation": "Cách cấu tạo số đếm từ 1 đến 99 trong tiếng Trung tuân theo quy tắc số học thập phân rất rõ ràng và mạch lạc:\n• 1 đến 10: 一 (yī), 二 (èr), 三 (sān), 四 (sì), 五 (wǔ), 六 (liù), 七 (qī), 八 (bā), 九 (jiǔ), 十 (shí).\n• 11 đến 19: '十' ghép với số hàng đơn vị (Ví dụ: 十一 = 11, 十五 = 15).\n• 20 đến 90 (hàng chục tròn): Số hàng chục ghép với '十' (Ví dụ: 二十 = 20, 三十 = 30, 九十 = 90).\n• 21 đến 99: [Số hàng chục] + 十 + [Số hàng đơn vị] (Ví dụ: 九十一 = 91).",
+      "formation": "Số hàng chục (2-9) + 十 + Số hàng đơn vị (1-9)",
+      "examples": [
+        {
+          "translation": "Chín mươi mốt (91)."
+        }
+      ]
+    },
+    "zh_AGE了_12": {
+      "title": "Số tuổi + 了 (Đã... tuổi rồi [biến đổi trạng thái])",
+      "shortExplanation": "Trợ từ ngữ khí '了' đứng ở cuối câu chỉ tuổi tác để diễn tả sự thay đổi hoặc bước sang mốc tuổi mới; 'đã... tuổi rồi'.",
+      "longExplanation": "Trong câu biểu đạt tuổi tác, trợ từ ngữ khí '了' (le) đặt ở cuối câu để biểu thị sự thay đổi trạng thái hoặc đạt đến một cột mốc tuổi tác mới, tương đương với 'đã... tuổi rồi' trong tiếng Việt. Nó nhấn mạnh rằng người nói vừa bước sang độ tuổi đó hoặc tuổi tác đã tăng thêm theo thời gian (ví dụ: 我40岁了 = Tôi đã 40 tuổi rồi).",
+      "formation": "Chủ ngữ + Số từ + 岁 + 了",
+      "examples": [
+        {
+          "translation": "Tôi đã 40 tuổi rồi."
+        }
+      ]
+    },
+    "zh_多大_13": {
+      "title": "多大 (Hỏi tuổi: Bao nhiêu tuổi)",
+      "shortExplanation": "Cụm từ nghi vấn dùng để hỏi tuổi tác của đối phương hoặc người khác; 'bao nhiêu tuổi', 'mấy tuổi'.",
+      "longExplanation": "'多大' (duō dà) được tạo bởi phó từ '多' (biểu thị mức độ) kết hợp với tính từ '大' (lớn), dùng để hỏi tuổi của người bằng vai phải lứa, thanh thiếu niên hoặc người lớn nói chung. Trong câu hỏi tuổi, người ta thường thêm trợ từ '了' ở cuối câu ('……多大了？') để thể hiện tuổi đã đạt đến mức nào. (Lưu ý: Đối với trẻ em dưới 10 tuổi thường dùng '几岁', còn đối với người lớn tuổi/người già thì dùng '多大年纪' hoặc '多大岁数' để thể hiện sự kính trọng).",
+      "formation": "Chủ ngữ + 多大 (了)？",
+      "examples": [
+        {
+          "translation": "Con gái của bạn bao nhiêu tuổi rồi?"
+        }
+      ]
+    },
+    "zh_会V_14": {
+      "title": "会 + Động từ (Động từ năng nguyện: Biết làm gì [qua học tập, rèn luyện])",
+      "shortExplanation": "Động từ năng nguyện '会' biểu thị kỹ năng, khả năng có được thông qua quá trình học hỏi, tập luyện; 'biết làm gì'.",
+      "longExplanation": "'会' (huì) là động từ năng nguyện (trợ động từ) đứng trước động từ chính, dùng để diễn tả năng lực hoặc kỹ năng mà một người nắm vững thông qua quá trình học tập hoặc rèn luyện (ví dụ: 会写 - biết viết, 会游泳 - biết bơi, 会说汉语 - biết nói tiếng Trung). Dạng phủ định của cấu trúc này là '不会 + Động từ' (không biết làm gì).",
+      "formation": "Chủ ngữ + 会 + Động từ",
+      "examples": [
+        {
+          "translation": "Tôi biết viết."
+        }
+      ]
+    },
+    "zh_很_15": {
+      "title": "很 + Tính từ (Phó từ mức độ: Rất / Liên kết vị ngữ tính từ)",
+      "shortExplanation": "Phó từ mức độ đứng trước tính từ để biểu thị mức độ cao ('rất') hoặc làm từ đệm liên kết trong câu vị ngữ tính từ.",
+      "longExplanation": "'很' (hěn) là phó từ chỉ mức độ phổ biến nhất trong tiếng Trung, thường đứng trước tính từ để tạo thành vị ngữ tính từ (Chủ ngữ + 很 + Tính từ). Ngoài nghĩa biểu thị mức độ cao ('rất'), trong câu khẳng định đơn giản '很' thường đóng vai trò như một hư từ liên kết ngữ pháp để câu không bị cộc lốc hoặc mang sắc thái so sánh ngầm. Ví dụ: '我很好' có thể hiểu là 'Tôi rất khỏe' hoặc đơn giản là 'Tôi khỏe'.",
+      "formation": "Chủ ngữ + 很 + Tính từ",
+      "examples": [
+        {
+          "translation": "Tôi rất khỏe (Tôi khỏe)."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_什么_1": {
+      "title": "什么（何・なに）",
+      "shortExplanation": "物事や事柄を尋ねる疑問代名詞で、日本語の「何（なに・なん）」に相当します。",
+      "longExplanation": "「什么」（shénme）は中国語で最も基本的な疑問代名詞で、事物や内容を尋ねるときに用います。英語のように疑問詞を文頭に移動させる必要はなく、平叙文で尋ねたい要素（主語や目的語）がある位置にそのまま「什么」を置きます。",
+      "formation": "主語 ＋ 動詞 ＋ 什么？（または単独で代名詞として使用）",
+      "examples": [
+        {
+          "translation": "これは何ですか？"
+        }
+      ]
+    },
+    "zh_什么N_2": {
+      "title": "什么 ＋ 名詞（どんな〜・何の〜）",
+      "shortExplanation": "疑問代名詞「什么」を名詞の前に直接置き、種類や名前を尋ねる連体修飾用法で、「何の〜」「どんな〜」を表します。",
+      "longExplanation": "「什么」（shénme）が名詞の直前に置かれると、その名詞を修飾する定語（連体修飾語）となり、事物の種類や属性、名前などを尋ねる表現になります（例：什么书＝何の本、什么名字＝どんな名前）。通常、量詞を挟まずに名詞に直接接続します。",
+      "formation": "什么 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "あれは何の本ですか？"
+        }
+      ]
+    },
+    "zh_不是_3": {
+      "title": "不是（〜ではない・〜ではありません）",
+      "shortExplanation": "判断詞「是」の否定形で、主語の身分・国籍・属性などを否定する「〜ではない」「〜ではありません」を表します。",
+      "longExplanation": "「不是」（bù shì）は、否定副詞「不」と判断詞「是」が結びついた形で、「主語 ＋ 不是 ＋ 名詞」の形で「主語は〜ではない」という否定判断を表します。身分、職業、国籍、事物の一致関係などを否定する際に用いられます。なお、第4声の「是」の前では変調により「不」は第2声（bú）として発音されます。",
+      "formation": "主語 ＋ 不是 ＋ 名詞 / 名詞句",
+      "examples": [
+        {
+          "translation": "私はアメリカ人ではありません。"
+        }
+      ]
+    },
+    "zh_是_4": {
+      "title": "是（〜である・〜です）",
+      "shortExplanation": "主語と名詞を結び、身分・性質・等号関係を肯定する判断詞で、日本語の「〜です」「〜である」に相当します。",
+      "longExplanation": "「是」（shì）は中国語の判断詞（繋辞・コピュラ）であり、「A 是 B」（AはBである）の構文を作ります。主語の身分、職業、国籍、所属、同一関係などを表す際に不可欠です。なお、日本語の「〜です」と異なり、形容詞を述語にする場合には「是」を用いず、程度副詞（很 など）を用いて接続します。",
+      "formation": "主語 ＋ 是 ＋ 名詞 / 名詞句",
+      "examples": [
+        {
+          "translation": "彼女は先生です。"
+        }
+      ]
+    },
+    "zh_吗_5": {
+      "title": "〜吗？（疑問助詞：〜ですか）",
+      "shortExplanation": "平叙文の文末に置いてYes/No疑問文を作る語気助詞で、日本語の文末助詞「〜か」に相当します。",
+      "longExplanation": "「吗」（ma）は軽声で発音される疑問語気助詞です。通常の肯定文や否定文の末尾にそのまま付けるだけで、相手に「はい／いいえ」の返答を求める疑問文（是非疑問文）を作ることができます。文中の語順を変更する必要はありません。",
+      "formation": "平叙文 ＋ 吗？",
+      "examples": [
+        {
+          "translation": "あなたは先生ですか？"
+        }
+      ]
+    },
+    "zh_谁_6": {
+      "title": "谁（誰・だれ）",
+      "shortExplanation": "人を尋ねる疑問代名詞で、日本語の「誰（だれ・どなた）」に相当します。",
+      "longExplanation": "「谁」（shéi、または shuí）は人物を尋ねる疑問代名詞です。主語、目的語、定語（修飾語）として自由に使われます。語順を変えることなく、尋ねたい人物の位置にそのまま置きます。定語として所属を尋ねる場合は「谁的〜」（誰の〜）という形でよく用いられます。",
+      "formation": "主語 ＋ 是 ＋ 谁？ または 谁 ＋ 述語？",
+      "examples": [
+        {
+          "translation": "彼女は誰ですか？"
+        }
+      ]
+    },
+    "zh_哪MN_7": {
+      "title": "哪 ＋ 量詞 ＋ 名詞（どの〜・どの人/物）",
+      "shortExplanation": "疑問代名詞「哪」に量詞と名詞を続け、特定のものや人を選択して尋ねる「どの〜」を表します。",
+      "longExplanation": "「哪」（nǎ）は複数の選択肢の中から特定の人や物を限定して尋ねる疑問詞です。中国語では名詞を修飾する際、間に適切な量詞を挟む規則があるため、「哪 ＋ 量詞 ＋ 名詞」という語順をとります（例：哪本书＝どの本、哪个人＝どの人）。",
+      "formation": "哪 ＋ 量詞 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "どの人ですか？"
+        }
+      ]
+    },
+    "zh_的_8": {
+      "title": "（的）（構造助詞：〜の［親族・親称における省略］）",
+      "shortExplanation": "所属や所有関係を表す構造助詞「的」で、親族や親しい関係・所属先を表す場合は省略されることがあります。",
+      "longExplanation": "「的」（de）は修飾語（定語）と被修飾語（名詞）を結びつけ、所有や所属関係を表す構造助詞で、日本語の「〜の」に相当します（例：我的书＝私の本）。ただし、家族、親しい知人、先生など親密な人間関係や所属組織を指す場合、日常会話では「的」を省略することが一般的です（例：我(的)老师、我(的)妈妈）。",
+      "formation": "修飾語（代名詞 / 名詞） ＋ (的) ＋ 名詞",
+      "examples": [
+        {
+          "translation": "彼女は私の先生です。"
+        }
+      ]
+    },
+    "zh_N呢_9": {
+      "title": "名詞 ＋ 呢？（〜は？・〜はどうですか）",
+      "shortExplanation": "名詞や代名詞の後に語気助詞「呢」を置き、文脈を受けて「〜は？」「〜はどうですか？」と反問・省略疑問を表します。",
+      "longExplanation": "「名詞 ＋ 呢？」（ne）は、直前の話題や文脈を踏まえて別の対象について同じ内容を尋ね返す省略疑問文（反問）を作ります。日本語の「〜は？」「〜はどうですか？」に相当し、述語を繰り返す手間を省いて自然な会話を成立させます（例：我是中国人，你呢？＝私は中国人です、あなたは？）。なお、先行文脈がない場合は「〜はどこ？」と所在を尋ねる意味になります。",
+      "formation": "名詞 / 代名詞 ＋ 呢？",
+      "examples": [
+        {
+          "translation": "私は中国人です。あなたはどうですか？"
+        }
+      ]
+    },
+    "zh_几MN_10": {
+      "title": "几 ＋ 量詞 ＋ 名詞（何個・何人の〜［10以下の数量］）",
+      "shortExplanation": "比較的少ない数量（主に10以下）を尋ねる疑問詞「几」に量詞と名詞を続け、「何〜」「いくつ」を表します。",
+      "longExplanation": "「几」（jǐ）は、答えとなる数量が10以下と予想される場合に用いられる疑問数詞で、日本語の「何人」「何冊」「何個」などに相当します（10を超える多数を尋ねる場合は「多少」を用います）。中国語の文法規則として、「几」と名詞の間には必ず対応する量詞を挟む必要があります（構造：几 ＋ 量詞 ＋ 名詞）。",
+      "formation": "几 ＋ 量詞 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "あなたには中国語の先生が何人いますか？"
+        }
+      ]
+    },
+    "zh_一九十九_11": {
+      "title": "一～九十九（1から99までの数詞）",
+      "shortExplanation": "中国語における1から99までの基数詞の構成ルールです。",
+      "longExplanation": "中国語の1から99までの数字は、日本語とほぼ同様の規則的な十進法で構成されます：\n• 1〜10：一、二、三、四、五、六、七、八、九、十。\n• 11〜19：「十」の後ろに1の位の数字を接続（例：十一＝11、十五＝15）。\n• 20〜90の十の倍数：数字の後ろに「十」を接続（例：二十＝20、三十＝30、九十＝90）。\n• 21〜99：「十の位の数字 ＋ 十 ＋ 一の位の数字」（例：九十一＝91）。",
+      "formation": "十の位の数字（2〜9） ＋ 十 ＋ 一の位の数字（1〜9）",
+      "examples": [
+        {
+          "translation": "九十一（91）。"
+        }
+      ]
+    },
+    "zh_AGE了_12": {
+      "title": "年齢 ＋ 了（〜歳になった［変化の了］）",
+      "shortExplanation": "年齢表現の文末に語気助詞「了」を添え、新たな年齢に達した事態の変化を表す「〜歳になった」です。",
+      "longExplanation": "年齢を述べる文の末尾に語気助詞「了」（le）を置くことで、時間が経過してその年齢に達したこと、あるいは新たな年齢の段階に入ったという「事態の変化（変化の了）」を表します。日本語の「〜歳になりました」「もう〜歳です」のニュアンスに対応します。",
+      "formation": "主語 ＋ 数詞 ＋ 岁 ＋ 了",
+      "examples": [
+        {
+          "translation": "私は40歳になりました。"
+        }
+      ]
+    },
+    "zh_多大_13": {
+      "title": "多大（何歳・いくつ）",
+      "shortExplanation": "年齢を尋ねる疑問表現で、主に同世代や年下の人物に対して「何歳ですか」「いくつですか」と質問する際に用います。",
+      "longExplanation": "「多大」（duō dà）は、程度を尋ねる副詞「多」と形容詞「大」が組み合わさった表現で、年齢を質問する際によく使われます。文末に「了」を伴って「……多大了？」という形で用いられることが一般的です（例：你女儿多大了？）。なお、10歳未満の幼児には「几岁」、目上の高齢者には敬意を込めて「多大年纪」や「多大岁数」を使うのが丁寧です。",
+      "formation": "主語 ＋ 多大 (了)？",
+      "examples": [
+        {
+          "translation": "娘さんは何歳になりましたか？"
+        }
+      ]
+    },
+    "zh_会V_14": {
+      "title": "会 ＋ 動詞（助動詞：〜できる・〜する技能がある［学習・習得］）",
+      "shortExplanation": "学習や訓練を通じて獲得した技能や能力を表す助動詞「会」で、「〜できる」「〜のやり方を知っている」を意味します。",
+      "longExplanation": "「会」（huì）は動詞の直前に置かれる助動詞（能願動詞）で、練習や学習を通して身につけた後天的な技能や能力を表します。日本語の「〜することができる」「〜する技術がある」に相当します（例：会开车＝車の運転ができる、会游泳＝泳げる）。否定形は「不会 ＋ 動詞」となります。",
+      "formation": "主語 ＋ 会 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "私は書くことができます（書き方を知っています）。"
+        }
+      ]
+    },
+    "zh_很_15": {
+      "title": "很 ＋ 形容詞（程度副詞：とても・大変［形容詞述語文の接続］）",
+      "shortExplanation": "形容詞の前に置かれ、程度が高いことを表す「とても」という意味や、形容詞述語文のバランスを保つ接続役を果たします。",
+      "longExplanation": "「很」（hěn）は中国語で最も多用される程度副詞で、形容詞の前に置かれます。本来は「とても」「大変」という高い程度を表しますが、中国語では形容詞が単独で述語になると対比のニュアンスが生じるため、通常の叙述文では語調を整えるクッション（標識）として「很」を添えるのが通例です（例：「我很好」は強い強調のない「私は元気です」の意味にもなります）。",
+      "formation": "主語 ＋ 很 ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "私はとても元気です（元気です）。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_什么_1": {
+      "title": "什么 (무엇, 뭐)",
+      "shortExplanation": "사물이나 사실을 물을 때 사용하는 의문대명사로, 한국어의 '무엇', '뭐'에 해당합니다.",
+      "longExplanation": "'什么'(shénme)는 사물이나 내용을 질문할 때 사용하는 가장 기초적인 의문대명사입니다. 중국어 의문문에서는 영어처럼 의문사를 문장 맨 앞으로 도치시키지 않고, 평서문에서 질문하려는 성분(주어나 목적어) 자리에 '什么'를 그대로 둡니다.",
+      "formation": "주어 + 동사 + 什么? (또는 단독으로 대명사로 사용)",
+      "examples": [
+        {
+          "translation": "이것은 무엇입니까?"
+        }
+      ]
+    },
+    "zh_什么N_2": {
+      "title": "什么 + 명사 (무슨 ~, 어떤 ~)",
+      "shortExplanation": "의문대명사 '什么'가 명사 앞에 직접 놓여 관형어로 쓰이며, 사물의 종류나 이름을 물을 때 '무슨 ~', '어떤 ~'을 뜻합니다.",
+      "longExplanation": "'什么'(shénme)가 명사 바로 앞에 놓이면 명사를 수식하는 한정어(관형어) 역할을 하여, 대상의 종류, 성질, 명칭 등을 묻는 표현이 됩니다(예: 什么书 - 무슨 책, 什么名字 - 무슨 이름). 일반적으로 명사 사이에 양사를 넣지 않고 바로 연결합니다.",
+      "formation": "什么 + 명사",
+      "examples": [
+        {
+          "translation": "저것은 무슨 책입니까?"
+        }
+      ]
+    },
+    "zh_不是_3": {
+      "title": "不是 (~이/가 아니다)",
+      "shortExplanation": "판단동사 '是'의 부정형으로, 신분·국적·사물의 속성 등을 부정할 때 쓰는 '~이/가 아니다' 표현입니다.",
+      "longExplanation": "'不是'(bù shì)는 부정부사 '不'와 판단동사 '是'가 결합된 형태로, '주어 + 不是 + 명사'의 구조로 쓰여 '주어는 ~이/가 아니다'라는 부정 판단을 나타냅니다. 신분, 국적, 직업, 소속 등을 부정할 때 널리 쓰입니다. 성조 규칙상 제4성인 '是' 앞에서 '不'는 제2성(bú)으로 변조되어 발음됩니다.",
+      "formation": "주어 + 不是 + 명사 / 명사구",
+      "examples": [
+        {
+          "translation": "저는 미국인이 아닙니다."
+        }
+      ]
+    },
+    "zh_是_4": {
+      "title": "是 (~이다, ~입니다)",
+      "shortExplanation": "주어와 명사를 연결하여 신분, 직업, 속성 등의 동일 관계를 나타내는 판단동사로, 한국어의 '~이다'에 해당합니다.",
+      "longExplanation": "'是'(shì)는 중국어의 대표적인 판단동사(계사)로, 'A 是 B'(A는 B이다)의 형태로 사용되어 주어의 신분, 국적, 직업, 정의 등을 나타냅니다. 단, 한국어나 영어와 달리 단순히 형용사로 서술할 때는 '是'를 쓰지 않고 정도부사(很 등)를 사용합니다.",
+      "formation": "주어 + 是 + 명사 / 명사구",
+      "examples": [
+        {
+          "translation": "그녀는 선생님입니다."
+        }
+      ]
+    },
+    "zh_吗_5": {
+      "title": "...吗? (의문 조사: ~입니까?, ~인가요?)",
+      "shortExplanation": "평서문 끝에 붙어 '예/아니오'로 대답할 수 있는 의문문을 만드는 어기조사로, 한국어의 '~입니까?', '~인가요?'에 해당합니다.",
+      "longExplanation": "'吗'(ma)는 경성으로 발음되는 의문 어기조사입니다. 완전한 평서문의 맨 끝에 덧붙이기만 하면 단번에 진위 여부를 묻는 의문문(시비의문문)이 완성됩니다. 어순을 도치하거나 별도의 조동사를 추가할 필요 없이 평서문 어순을 그대로 유지합니다.",
+      "formation": "평서문 + 吗?",
+      "examples": [
+        {
+          "translation": "당신은 선생님입니까?"
+        }
+      ]
+    },
+    "zh_谁_6": {
+      "title": "谁 (누구)",
+      "shortExplanation": "사람을 물을 때 사용하는 의문대명사로, 한국어의 '누구'에 해당합니다.",
+      "longExplanation": "'谁'(shéi 또는 shuí)는 사람의 신원이나 정체를 질문하는 의문대명사입니다. 주어, 목적어, 관형어 자리에 자유롭게 쓰이며, 어순 도치 없이 질문하려는 인물 자리에 위치합니다. 소유 관계를 물을 때는 '谁的'(누구의) 형태로 쓰입니다.",
+      "formation": "주어 + 是 + 谁? 또는 谁 + 술어?",
+      "examples": [
+        {
+          "translation": "그녀는 누구입니까?"
+        }
+      ]
+    },
+    "zh_哪MN_7": {
+      "title": "哪 + 양사 + 명사 (어느 ~, 어떤 것)",
+      "shortExplanation": "의문대명사 '哪' 뒤에 양사와 명사가 이어져 여러 대상 중 특정한 것을 고를 때 쓰는 '어느 ~' 표현입니다.",
+      "longExplanation": "'哪'(nǎ)는 둘 이상의 범위나 대상 중에서 특정 대상을 지목하여 물어볼 때 쓰는 의문사입니다. 중국어 문법 규칙상 명사를 수식할 때 중간에 알맞은 양사를 반드시 수반해야 하므로 '哪 + 양사 + 명사'의 구조를 이룹니다(예: 哪个人 - 어느 사람, 哪本书 - 어느 책).",
+      "formation": "哪 + 양사 + 명사",
+      "examples": [
+        {
+          "translation": "어느 사람입니까?"
+        }
+      ]
+    },
+    "zh_的_8": {
+      "title": "(的) (구조조사: ~의 [친족·친밀 관계에서의 생략])",
+      "shortExplanation": "소유나 소속을 나타내는 구조조사 '的'로, 가족이나 가까운 인간관계에서는 생략되기도 합니다.",
+      "longExplanation": "'的'(de)는 한정어와 중심어(명사) 사이에 놓여 소유나 소속 관계를 나타내는 대표적인 구조조사로, 한국어의 '~의'에 해당합니다. 하지만 인칭대명사 뒤에 가족, 친척, 친밀한 지인, 선생님 또는 소속 기관이 올 때는 일상 회화에서 '的'를 생략하고 쓰는 경우가 매우 흔합니다(예: 我(的)老师 - 우리 선생님/내 선생님, 我(的)妈妈 - 우리 엄마).",
+      "formation": "한정어 (대명사 / 명사) + (的) + 중심 명사",
+      "examples": [
+        {
+          "translation": "그녀는 저의 선생님입니다."
+        }
+      ]
+    },
+    "zh_N呢_9": {
+      "title": "명사 + 呢? (~은/는요?)",
+      "shortExplanation": "명사나 대명사 뒤에 어기조사 '呢'를 붙여 앞서 언급된 내용에 대해 반문할 때 쓰는 '~은/는요?' 표현입니다.",
+      "longExplanation": "'명사/대명사 + 呢?'(ne)는 앞 문맥에서 언급된 화제를 이어받아 다른 대상에 대해 동일한 질문을 되물을 때 쓰는 생략 의문문입니다. 한국어의 '~은/는요?', '~은/는 어때요?'에 해당하며, 서술어를 반복하지 않고도 자연스럽게 질문을 연결할 수 있습니다(예: 我是中国人，你呢? - 저는 중국인인데, 당신은요?). 전후 문맥이 없을 때는 '내 책은 어디 있지?'처럼 소재를 묻는 표현으로 쓰입니다.",
+      "formation": "명사 / 대명사 + 呢?",
+      "examples": [
+        {
+          "translation": "저는 중국인입니다, 당신은요?"
+        }
+      ]
+    },
+    "zh_几MN_10": {
+      "title": "几 + 양사 + 명사 (몇 ~, 얼마 [10 이하의 수량])",
+      "shortExplanation": "주로 10 이하의 적은 수량을 물을 때 의문사 '几' 뒤에 양사와 명사를 연결하여 '몇 ~'을 나타냅니다.",
+      "longExplanation": "'几'(jǐ)는 예상되는 수량이 대체로 10 이하일 때 사물이나 사람의 수를 묻는 의문사로, 한국어의 '몇'에 해당합니다(10 이상의 수량이거나 제한이 없을 때는 '多少'를 사용합니다). 중국어 어법상 '几'와 명사 사이에는 반드시 알맞은 양사가 들어가야 합니다(구조: 几 + 양사 + 명사).",
+      "formation": "几 + 양사 + 명사",
+      "examples": [
+        {
+          "translation": "당신은 중국어 선생님이 몇 분 계십니까?"
+        }
+      ]
+    },
+    "zh_一九十九_11": {
+      "title": "一～九十九 (1부터 99까지의 숫자)",
+      "shortExplanation": "중국어에서 1부터 99까지의 기수사를 조합하고 표현하는 기본 규칙입니다.",
+      "longExplanation": "중국어의 1부터 99까지의 숫자는 한국어의 한자어 수사 체계와 기본 원리가 동일합니다:\n• 1~10: 一(1), 二(2), 三(3), 四(4), 五(5), 六(6), 七(7), 八(8), 九(9), 十(10).\n• 11~19: '十' 뒤에 1단위 숫자를 연결 (예: 十一 = 11, 十五 = 15).\n• 20~90(십 단위): 숫자 뒤에 '十' 결합 (예: 二十 = 20, 九十 = 90).\n• 21~99: [십의 자리 숫자] + 十 + [일의 자리 숫자] (예: 九十一 = 91).",
+      "formation": "십의 자리 숫자 (2~9) + 十 + 일의 자리 숫자 (1~9)",
+      "examples": [
+        {
+          "translation": "구십일 (91)."
+        }
+      ]
+    },
+    "zh_AGE了_12": {
+      "title": "나이 + 了 (~살이 되었다 [변화의 了])",
+      "shortExplanation": "나이를 나타내는 표현 뒤에 어기조사 '了'를 붙여 새로운 나이에 도달했음을 나타내는 '~살이 되었다', '벌써 ~살이다' 표현입니다.",
+      "longExplanation": "나이를 말할 때 문장 끝에 어기조사 '了'(le)를 붙이면 시간의 경과에 따라 새로운 나이에 이르렀음을 나타내는 '상황의 변화(변화의 了)'를 나타냅니다. 한국어의 '~살이 되었다', '벌써 ~살이다'에 해당하며 특정 나이에 도달했음을 강조합니다.",
+      "formation": "주어 + 수사 + 岁 + 了",
+      "examples": [
+        {
+          "translation": "저는 40살이 되었습니다."
+        }
+      ]
+    },
+    "zh_多大_13": {
+      "title": "多大 (몇 살, 나이가 어떻게 되는지 묻기)",
+      "shortExplanation": "나이를 물을 때 쓰는 의문 표현으로, 동년배나 젊은 사람에게 '몇 살인가요?'라고 물을 때 사용합니다.",
+      "longExplanation": "'多大'(duō dà)는 정도를 묻는 부사 '多'와 형용사 '大'가 결합된 표현으로, 사람의 나이를 질문할 때 널리 사용됩니다. 주로 문말에 어기조사 '了'를 덧붙여 '……多大了?'의 형태로 쓰입니다. 대략 10세 이하의 어린이에게는 '几岁'를, 어르신이나 연장자에게는 정중하게 '多大年纪' 또는 '多大岁数'를 쓰는 것이 예의에 맞습니다.",
+      "formation": "주어 + 多大 (了)?",
+      "examples": [
+        {
+          "translation": "당신의 딸은 몇 살인가요?"
+        }
+      ]
+    },
+    "zh_会V_14": {
+      "title": "会 + 동사 (조동사: ~할 줄 알다, ~할 수 있다 [학습·습득])",
+      "shortExplanation": "학습이나 훈련을 통해 습득한 능력이나 기술을 나타내는 능원동사 '会'로, '~할 줄 알다', '~할 수 있다'를 뜻합니다.",
+      "longExplanation": "'会'(huì)는 본동사 앞에 놓여 배움이나 후천적인 연습을 거쳐 기술·능력을 갖추었음을 나타내는 조동사(능원동사)입니다. 한국어의 '~할 줄 알다', '~할 수 있다'에 해당합니다(예: 会写 - 쓸 줄 알다, 会游泳 - 수영할 줄 알다). 부정형은 동사 앞에 '不会'를 붙여 '不会 + 동사'(~할 줄 모르다)로 표현합니다.",
+      "formation": "주어 + 会 + 동사",
+      "examples": [
+        {
+          "translation": "저는 쓸 줄 압니다."
+        }
+      ]
+    },
+    "zh_很_15": {
+      "title": "很 + 형용사 (정도부사: 매우, 아주 [형용사 술어문])",
+      "shortExplanation": "형용사 앞에 쓰여 높은 정도를 나타내는 '매우', '아주'라는 뜻을 나타내거나, 형용사 술어문에서 문장의 균형을 잡아주는 역할을 합니다.",
+      "longExplanation": "'很'(hěn)은 중국어에서 가장 널리 쓰이는 정도부사로 형용사 앞에 놓입니다. 기본적으로 '매우', '아주'라는 높은 정도를 나타내지만, 중국어에서는 형용사가 부사 없이 홀로 서술어가 되면 다른 대상과의 비교·대조 뉘앙스를 띠게 되므로, 평서문에서는 어조의 균형을 맞추기 위해 '很'을 약하게 넣어 서술합니다(예: '我很好'는 강한 강조 없이 '저는 잘 지냅니다'라는 뜻으로 흔히 쓰입니다).",
+      "formation": "주어 + 很 + 형용사",
+      "examples": [
+        {
+          "translation": "저는 아주 잘 지냅니다 (저는 잘 지냅니다)."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_什么_1": {
+      "title": "什么（疑问代词：询问事物）",
+      "shortExplanation": "表示询问事物或情况的疑问代词，相当于“何物”、“什么事情”。",
+      "longExplanation": "“什么”（shénme）是最基础的疑问代词，用于询问未知的事物、性质或情况。在句中常充当主语或宾语。汉语疑问句通常不需要倒装语序，只需将“什么”置于所要询问成分的相应位置即可。",
+      "formation": "主语 + 谓语动词 + 什么？（或单独作为代词使用）",
+      "examples": [
+        {
+          "translation": "这是什么？"
+        }
+      ]
+    },
+    "zh_什么N_2": {
+      "title": "什么 + 名词（询问人或事物的种类、属性）",
+      "shortExplanation": "疑问代词“什么”直接置于名词前作定语，询问事物的具体种类、名称或属性；相当于“什么……”。",
+      "longExplanation": "“什么”（shénme）直接修饰名词作定语时，用于询问人或事物的名称、类别或特征（如：什么书、什么工作、什么颜色）。这种用法中，“什么”与名词之间通常不需要加量词或结构助词“的”。",
+      "formation": "什么 + 名词",
+      "examples": [
+        {
+          "translation": "那是本什么书？"
+        }
+      ]
+    },
+    "zh_不是_3": {
+      "title": "不是（判断动词的否定形式）",
+      "shortExplanation": "否定副词“不”与判断动词“是”连用，表示对身份、性质或关系的否定；相当于“不是”。",
+      "longExplanation": "“不是”（bù shì）是判断句的否定形式，构成“主语 + 不是 + 宾语”句式，用于否定人或事物的身份、职业、国籍、归属等属性。语音上，因“是”为第四声，前面的否定副词“不”受后字影响发生变调，读作第二声（bú shì）。",
+      "formation": "主语 + 不是 + 名词 / 名词性短语",
+      "examples": [
+        {
+          "translation": "我不是美国人。"
+        }
+      ]
+    },
+    "zh_是_4": {
+      "title": "是（判断动词：是）",
+      "shortExplanation": "联系主语和宾语，表示肯定判断、身份、属性或等同关系；相当于“是”。",
+      "longExplanation": "“是”（shì）是汉语中最基本的判断动词，常用于“A 是 B”句型中，表示主语与宾语之间具有同等关系、归属关系，或用以说明主语的职业、身份、国籍及性质。需要注意的是，汉语中形容词单独作谓语时通常不用“是”，而是直接用程度副词修饰形容词。",
+      "formation": "主语 + 是 + 名词 / 名词性短语",
+      "examples": [
+        {
+          "translation": "她是老师。"
+        }
+      ]
+    },
+    "zh_吗_5": {
+      "title": "……吗？（疑问语气助词）",
+      "shortExplanation": "用于陈述句句末，将句子转化为需要肯定或否定回答的是非疑问句；相当于“……吗？”。",
+      "longExplanation": "“吗”（ma）是表示疑问的语气助词，读轻声。通常置于完整陈述句的末尾，构成是非疑问句，用以向对方核实情况、询问真伪，期待得到“是/否”或肯定/否定的答复。使用“吗”时，句子原本的主谓宾语序保持不变。",
+      "formation": "陈述句 + 吗？",
+      "examples": [
+        {
+          "translation": "你是老师吗？"
+        }
+      ]
+    },
+    "zh_谁_6": {
+      "title": "谁（疑问代词：询问人物）",
+      "shortExplanation": "询问人身份或姓名的疑问代词，相当于“谁”、“何人”。",
+      "longExplanation": "“谁”（shéi，又音 shuí）是用于询问人物的疑问代词，在句中可充当主语、宾语、定语等成分。语序遵循陈述句结构，将“谁”放在需要询问的人物位置即可。用于修饰名词表领属关系时，常构成“谁的 + 名词”结构。",
+      "formation": "主语 + 是 + 谁？ 或 谁 + 谓语？",
+      "examples": [
+        {
+          "translation": "她是谁？"
+        }
+      ]
+    },
+    "zh_哪MN_7": {
+      "title": "哪 + 量词 + 名词（特指疑问：哪个/哪位……）",
+      "shortExplanation": "疑问代词“哪”与量词、名词连用，用于在特定范围内询问并选择具体的人或事物；相当于“哪个/哪位……”。",
+      "longExplanation": "“哪”（nǎ）表示在特定已知范围内的选择性疑问。修饰单数名词时，中间必须搭配相应的量词，构成“哪 + 量词 + 名词”结构（如：哪个人、哪本书、哪种颜色）。如果修饰复数概念，则可搭配量词“些”（如：哪些人）。",
+      "formation": "哪 + 量词 + 名词",
+      "examples": [
+        {
+          "translation": "哪个人？"
+        }
+      ]
+    },
+    "zh_的_8": {
+      "title": "（的）（结构助词：表示领属关系及省略）",
+      "shortExplanation": "表示领属关系的结构助词，当后接亲属、亲密关系称谓或所属集体时常可省略。",
+      "longExplanation": "“的”（de）是汉语中使用频率极高的结构助词，用于定语与中心语之间，表示所属、限定或修饰关系（定语 + 的 + 中心语）。当定语为人称代词，而中心语是表示亲属称谓（如爸爸、妈妈）、亲密人际关系（如老师、朋友）或所属单位/机构时，“的”往往可以省略，使表达更为亲近自然。",
+      "formation": "定语（代词 / 名词） + (的) + 中心名词",
+      "examples": [
+        {
+          "translation": "她是我的老师。"
+        }
+      ]
+    },
+    "zh_N呢_9": {
+      "title": "名词 + 呢？（省略疑问句：……呢？）",
+      "shortExplanation": "语气助词“呢”接在名词或代词后，承接前文语境提出反问；相当于“……呢？”、“……怎么样？”。",
+      "longExplanation": "“名词/代词 + 呢？”（ne）是口语中极常用的省略疑问句式。说话人借助上下文已明确的语境，省略谓语成分，直接询问另一个对象的相关情况，表示“……怎么样？”或“那……又如何？”（例如：我是中国人，你呢？）。如果在没有前置语境的场合单独使用，该句式则用来询问人或事物的处所位置（例如：我的手机呢？即我的手机在哪儿？）。",
+      "formation": "名词 / 代词 + 呢？",
+      "examples": [
+        {
+          "translation": "我是中国人，你呢？"
+        }
+      ]
+    },
+    "zh_几MN_10": {
+      "title": "几 + 量词 + 名词（询问十以内的数量）",
+      "shortExplanation": "疑问代词“几”用于询问数目较少（通常在十以内）的人或事物，后接量词和名词；相当于“几个/几位……”。",
+      "longExplanation": "“几”（jǐ）是询问数量的疑问数词，主要用于预计答案数目较小（一般在十以内）的场合，如询问几个人、几本书、星期几、几点等（与不限数量的“多少”相对）。在修饰可数名词时，“几”和名词之间必须加上相应的量词，构成“几 + 量词 + 名词”结构。",
+      "formation": "几 + 量词 + 名词",
+      "examples": [
+        {
+          "translation": "你有几个汉语老师？"
+        }
+      ]
+    },
+    "zh_一九十九_11": {
+      "title": "一～九十九（数词：1至99的数字构成）",
+      "shortExplanation": "汉语中基数词1至99的十进制规律构成法。",
+      "longExplanation": "汉语中基数词1到99的构成遵循高度规范的十进制组合规律：\n• 1至10：一、二、三、四、五、六、七、八、九、十。\n• 11至19：由“十”加上个位数字组成（如：十一、十五、十九）。\n• 20至90（整十数）：由系数加上“十”组成（如：二十、五十、九十）。\n• 21至99：由“整十数 + 个位数字”组合而成（如：九十一即91，三十二即32）。",
+      "formation": "十位数（2-9） + 十 + 个位数（1-9）",
+      "examples": [
+        {
+          "translation": "九十一（91）。"
+        }
+      ]
+    },
+    "zh_AGE了_12": {
+      "title": "年龄 + 了（表示年龄变化/已满……岁）",
+      "shortExplanation": "语气助词“了”置于年龄后，表示岁数增长、进入新的年龄阶段或达到某一年龄状态。",
+      "longExplanation": "在表达年龄的句子末尾加上语气助词“了”（le），表示状态的变化（即“变化了”），强调时间推移使人增长了一岁或达到了某一具体的年龄界限，相当于“已经……岁了”（例如：我40岁了，表示已满40岁或步入40岁）。",
+      "formation": "主语 + 数词 + 岁 + 了",
+      "examples": [
+        {
+          "translation": "我四十岁了。"
+        }
+      ]
+    },
+    "zh_多大_13": {
+      "title": "多大（询问年龄：多大）",
+      "shortExplanation": "由副词“多”和形容词“大”构成的疑问短语，用于询问人的年龄；相当于“多大年纪”、“几岁”。",
+      "longExplanation": "“多大”（duō dà）是询问年龄的常见疑问表达，主要用于同辈、年轻人或儿童。常与句末语气助词“了”连用，构成“……多大了？”，询问目前已满几岁。在交际习惯中，询问十岁以下幼儿通常用“几岁”；而询问长辈或老年人年龄时，出于礼貌通常使用“多大年纪”、“多大岁数”或“高寿”。",
+      "formation": "主语 + 多大 (了)？",
+      "examples": [
+        {
+          "translation": "你女儿多大了？"
+        }
+      ]
+    },
+    "zh_会V_14": {
+      "title": "会 + 动词（助动词：表示掌握某种技能）",
+      "shortExplanation": "能愿动词（助动词）“会”置于动词前，表示经过学习或训练而具备做某事的能力；相当于“会”、“懂得”。",
+      "longExplanation": "“会”（huì）作能愿动词用在主动词前，专门表示通过后天的学习、练习或模仿而掌握了某项技能或本领（例如：会写、会做饭、会说汉语）。其否定形式为“不会 + 动词”，表示尚未掌握该技能。",
+      "formation": "主语 + 会 + 动词",
+      "examples": [
+        {
+          "translation": "我会写。"
+        }
+      ]
+    },
+    "zh_很_15": {
+      "title": "很 + 形容词（程度副词：表示程度高或用于平衡音节）",
+      "shortExplanation": "最常用的程度副词，修饰形容词表示程度较高（“很”、“非常”），或在形容词谓语句中起连接与平衡音节的作用。",
+      "longExplanation": "“很”（hěn）是现代汉语中最基础的程度副词，通常置于形容词前充当状语。除了表示程度较深（相当于“十分”、“非常”）的基本词义外，在形容词单独作谓语的肯定句中，“很”还常弱化为结构助词般的标记，用于平衡句子节奏、避免产生孤立形容词带来的暗中对比意味（例如：“我很好”在日常问候中常仅表示陈述“我挺好的/我很好”，并不必定强调极高程度）。",
+      "formation": "主语 + 很 + 形容词",
+      "examples": [
+        {
+          "translation": "我很好。"
+        }
+      ]
+    }
+  }
+}

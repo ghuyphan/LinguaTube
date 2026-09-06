@@ -1,0 +1,472 @@
+[
+  {
+    "id": "ja_かどうか_74",
+    "language": "ja",
+    "pattern": "～かどうか",
+    "title": "～かどうか (〜ka dou ka)",
+    "shortExplanation": "Used to express 'whether' or 'if' in indirect questions or statements.",
+    "longExplanation": "The ～かどうか grammar point is used to express 'whether' or 'if' in indirect questions or statements. It is often used to express uncertainty or to inquire about information in a more polite form. ～かどうか can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-casual + かどうか, い-Adjective + かどうか, な-Adjective + (だ)かどうか, Noun + (だ)かどうか",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼が来るかどうか知りません。",
+        "romanization": "Kare ga kuru ka dou ka shirimasen.",
+        "translation": "I don't know if he will come or not."
+      },
+      {
+        "sentence": "この本が面白いかどうか教えてください。",
+        "romanization": "Kono hon ga omoshiroi ka dou ka oshiete kudasai.",
+        "translation": "Please tell me if this book is interesting or not."
+      },
+      {
+        "sentence": "彼女が綺麗だかどうかは分かりません。",
+        "romanization": "Kanojo ga kirei da ka dou ka wa wakarimasen.",
+        "translation": "I don't know whether she is beautiful or not."
+      },
+      {
+        "sentence": "彼が先生だかどうか覚えていません。",
+        "romanization": "Kare ga sensei da ka dou ka oboete imasen.",
+        "translation": "I don't remember if he is a teacher or not."
+      }
+    ]
+  },
+  {
+    "id": "ja_かなあ_75",
+    "language": "ja",
+    "pattern": "～かなあ",
+    "title": "～かなあ (〜kanaa)",
+    "shortExplanation": "Expresses uncertainty or wonder; 'I wonder', 'I'm not sure'.",
+    "longExplanation": "The ～かなあ grammar point is used to express a feeling of uncertainty or wonder about a situation or statement. It can be translated as 'I wonder' or 'I'm not sure' in English. In casual spoken Japanese, when using nouns or な-adjectives before かなあ, the copula だ is often omitted or replaced with の (e.g., 学生かなあ or 学生なのかなあ). This grammar point should not be used when asking questions directly to someone, as it may come off as too direct or impolite.",
+    "formation": "Verb-casual + かなあ, い-Adjective + かなあ, (な-Adjective/Noun) + (だ) + かなあ",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日雨が降るかなあ。",
+        "romanization": "Ashita ame ga furu kanaa.",
+        "translation": "I wonder if it will rain tomorrow."
+      },
+      {
+        "sentence": "このケーキは美味しいかなあ。",
+        "romanization": "Kono keeki wa oishii kanaa.",
+        "translation": "I wonder if this cake is delicious."
+      },
+      {
+        "sentence": "彼は病気かなあ。",
+        "romanization": "Kare wa byouki kanaa.",
+        "translation": "I wonder if he is sick."
+      },
+      {
+        "sentence": "彼女は学生かなあ。",
+        "romanization": "Kanojo wa gakusei kanaa.",
+        "translation": "I wonder if she is a student."
+      }
+    ]
+  },
+  {
+    "id": "ja_かもしれない_76",
+    "language": "ja",
+    "pattern": "～かもしれない",
+    "title": "～かもしれない (〜kamoshirenai)",
+    "shortExplanation": "Express uncertainty; 'maybe', 'might', 'possibly'.",
+    "longExplanation": "The ～かもしれない grammar point is used to express uncertainty or the possibility of something occurring. It can be translated as 'maybe', 'might', or 'possibly' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun. In everyday speech, speakers often omit だ before かもしれない for nouns and な-adjectives.",
+    "formation": "Verb-casual + かもしれない, い-Adjective + かもしれない, な-Adjective + だかもしれない, Noun + だかもしれない",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日雨が降るかもしれない。",
+        "romanization": "Ashita ame ga furu kamoshirenai.",
+        "translation": "It might rain tomorrow."
+      },
+      {
+        "sentence": "このケーキは美味しいかもしれない。",
+        "romanization": "Kono keeki wa oishii kamoshirenai.",
+        "translation": "This cake might be delicious."
+      },
+      {
+        "sentence": "彼が病気かもしれない。",
+        "romanization": "Kare ga byouki kamoshirenai.",
+        "translation": "He might be sick."
+      },
+      {
+        "sentence": "彼女は学生かもしれない。",
+        "romanization": "Kanojo wa gakusei kamoshirenai.",
+        "translation": "She might be a student."
+      }
+    ]
+  },
+  {
+    "id": "ja_から_77",
+    "language": "ja",
+    "pattern": "～から",
+    "title": "～から (〜kara)",
+    "shortExplanation": "Express a reason or cause; 'because', 'since', 'due to'.",
+    "longExplanation": "The ～から grammar point is used to express a reason, cause, or the origin of something. It can be translated as 'because', 'since', or 'due to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + から, い-Adjective + から, な-Adjective + だから, Noun + だから",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "雨が降るから、傘を持って行ってください。",
+        "romanization": "Ame ga furu kara, kasa wo motte itte kudasai.",
+        "translation": "Because it's raining, please bring an umbrella."
+      },
+      {
+        "sentence": "このケーキは美味しいから、みんな食べるでしょう。",
+        "romanization": "Kono keeki wa oishii kara, minna taberu deshou.",
+        "translation": "Because this cake is delicious, everyone will probably eat it."
+      },
+      {
+        "sentence": "彼は病気だから、学校を休みます。",
+        "romanization": "Kare wa byouki dakara, gakkou wo yasumimasu.",
+        "translation": "He will be absent from school because he is sick."
+      },
+      {
+        "sentence": "今日は日曜日だから、学校がありません。",
+        "romanization": "Kyou wa nichiyoubi dakara, gakkou ga arimasen.",
+        "translation": "There is no school today because it is Sunday."
+      }
+    ]
+  },
+  {
+    "id": "ja_けれど_78",
+    "language": "ja",
+    "pattern": "～けれど",
+    "title": "～けれど (〜keredo)",
+    "shortExplanation": "Indicate a soft contrast or contradiction; 'but', 'however'.",
+    "longExplanation": "The ～けれど grammar point is used to express a soft contrast or contradiction between two statements. It can be translated as 'but' or 'however' in English. It is relatively informal and can be replaced by more formal expressions like けれども or が. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + けれど, い-Adjective + けれど, な-Adjective + だけれど, Noun + だけれど",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "今日は忙しいけれど、明日はもっと時間がある。",
+        "romanization": "Kyou wa isogashii keredo, ashita wa motto jikan ga aru.",
+        "translation": "I'm busy today, but I have more time tomorrow."
+      },
+      {
+        "sentence": "このレストランは高いけれど、料理が美味しい。",
+        "romanization": "Kono resutoran wa takai keredo, ryouri ga oishii.",
+        "translation": "This restaurant is expensive, but the food is delicious."
+      },
+      {
+        "sentence": "彼は若いけれど、とても経験豊富だ。",
+        "romanization": "Kare wa wakai keredo, totemo keiken houfu da.",
+        "translation": "He is young, but he is very experienced."
+      },
+      {
+        "sentence": "彼女は病気だけれど、明るく元気だ。",
+        "romanization": "Kanojo wa byouki da keredo, akaruku genki da.",
+        "translation": "She is sick, but she is cheerful and energetic."
+      }
+    ]
+  },
+  {
+    "id": "ja_させてください_79",
+    "language": "ja",
+    "pattern": "～させてください",
+    "title": "～させてください (〜sasete kudasai)",
+    "shortExplanation": "Express a polite request to allow or permit someone to do something.",
+    "longExplanation": "The ～させてください grammar point is used to make a polite request to allow or permit someone to do something. It can be translated as 'please let me' or 'please allow me to' in English. It is formed by taking the causative form of a verb and adding ください.",
+    "formation": "Verb-causative form + ください",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "もう少し考えさせてください。",
+        "romanization": "Mou sukoshi kangaesasete kudasai.",
+        "translation": "Please let me think a little more."
+      },
+      {
+        "sentence": "写真を撮らせてください。",
+        "romanization": "Shashin o torasete kudasai.",
+        "translation": "Please let me take a photo."
+      },
+      {
+        "sentence": "もうちょっと練習させてください。",
+        "romanization": "Mou chotto renshuu sasete kudasai.",
+        "translation": "Please let me practice a little more."
+      },
+      {
+        "sentence": "ここで待たせてください。",
+        "romanization": "Koko de matasete kudasai.",
+        "translation": "Please let me wait here."
+      }
+    ]
+  },
+  {
+    "id": "ja_しし_80",
+    "language": "ja",
+    "pattern": "～し、～し、～",
+    "title": "～し、～し、～ (〜shi, 〜shi, 〜)",
+    "shortExplanation": "Express multiple reasons or characteristics; 'and', 'because', 'since'.",
+    "longExplanation": "The ～し、～し、～ grammar point is used to connect multiple reasons or characteristics that support a conclusion or statement. It can be translated as 'and', 'because', or 'since' in English. This grammar can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-casual + し, い-Adjective + し, な-Adjective + だし, Noun + だし",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は若いし、元気だし、フレンドリーだし、みんなと仲良くなれると思います。",
+        "romanization": "Kare wa wakai shi, genki da shi, furendorī da shi, minna to nakayoku nareru to omoimasu.",
+        "translation": "He is young, energetic, friendly, and I think he can get along with everyone."
+      },
+      {
+        "sentence": "このレストランは料理が美味しいし、雰囲気がいいし、価格も手頃だからお勧めです。",
+        "romanization": "Kono resutoran wa ryouri ga oishii shi, fun'iki ga ii shi, kakaku mo tegoro dakara osusume desu.",
+        "translation": "I recommend this restaurant because the food is delicious, the atmosphere is nice, and the prices are reasonable."
+      },
+      {
+        "sentence": "彼女は勉強ができるし、スポーツも得意だし、性格もいい。",
+        "romanization": "Kanojo wa benkyou ga dekiru shi, supōtsu mo tokui da shi, seikaku mo ii.",
+        "translation": "She is good at studying, good at sports, and has a good personality."
+      },
+      {
+        "sentence": "今日は寒いし、雨も降っているし、家でゆっくり休んだ方がいいでしょう。",
+        "romanization": "Kyou wa samui shi, ame mo futte iru shi, ie de yukkuri yasunda hou ga ii deshou.",
+        "translation": "It's cold today, and it's raining, so it's better to relax at home."
+      }
+    ]
+  },
+  {
+    "id": "ja_すぎる_81",
+    "language": "ja",
+    "pattern": "～すぎる",
+    "title": "～すぎる (〜sugiru)",
+    "shortExplanation": "Expresses that something is excessive or overdone; 'too much', 'too', 'over'.",
+    "longExplanation": "The ～すぎる grammar point is used to express that something is excessive or beyond a certain level. It can be translated as 'too much', 'too', or 'over' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
+    "formation": "Verb-stem + すぎる, い-Adjective (remove い) + すぎる, な-Adjective + すぎる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "この部屋は暑すぎる。",
+        "romanization": "Kono heya wa atsui sugiru.",
+        "translation": "This room is too hot."
+      },
+      {
+        "sentence": "彼は早く来すぎた。",
+        "romanization": "Kare wa hayaku kisugita.",
+        "translation": "He came too early."
+      },
+      {
+        "sentence": "この箱は重すぎて持ち上げられない。",
+        "romanization": "Kono hako wa omosugite mochiagerarenai.",
+        "translation": "This box is too heavy to lift."
+      },
+      {
+        "sentence": "彼女は忙しくて遊びすぎはしない。",
+        "romanization": "Kanojo wa isogashikute asobisugi wa shinai.",
+        "translation": "She's too busy to play too much."
+      }
+    ]
+  },
+  {
+    "id": "ja_ずつ_82",
+    "language": "ja",
+    "pattern": "～ずつ",
+    "title": "～ずつ (〜zutsu)",
+    "shortExplanation": "Indicates equal distribution; 'each', 'per', 'apiece'.",
+    "longExplanation": "The ～ずつ grammar point is used to express an equal distribution of something, whether it is an action, an amount, or an item. It is translated as 'each', 'per', or 'apiece' in English.",
+    "formation": "Noun + ずつ",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "りんごを2つずつ配ります。",
+        "romanization": "Ringo wo futatsu zutsu kubarimasu.",
+        "translation": "I will distribute 2 apples each."
+      },
+      {
+        "sentence": "私たちは週に一度ずつ掃除をします。",
+        "romanization": "Watashitachi wa shuu ni ichido zutsu souji o shimasu.",
+        "translation": "We each clean once per week."
+      },
+      {
+        "sentence": "みんなは同じ距離を一歩ずつ歩いた。",
+        "romanization": "Minna wa onaji kyori o ippo zutsu aruita.",
+        "translation": "Everyone walked the same distance, one step at a time."
+      },
+      {
+        "sentence": "彼女は子供たちに一枚ずつプレゼントをくれました。",
+        "romanization": "Kanojo wa kodomotachi ni ichimai zutsu purezento o kuremashita.",
+        "translation": "She gave one present to each child."
+      }
+    ]
+  },
+  {
+    "id": "ja_そうだ_83",
+    "language": "ja",
+    "pattern": "～そうだ",
+    "title": "～そうだ (〜sou da)",
+    "shortExplanation": "Express the appearance, seeming, or feeling of something; 'looks like', 'seems', 'appears'.",
+    "longExplanation": "The ～そうだ grammar point is used to describe the appearance or feeling of something based on what is observed or inferred. It can be translated as 'looks like', 'seems', or 'appears' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
+    "formation": "Verb-ますstem + そうだ, い-Adjective (without い) + そうだ, な-Adjective + そうだ",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "その花はとてもきれいそうだ。",
+        "romanization": "Sono hana wa totemo kirei sou da.",
+        "translation": "That flower looks very beautiful."
+      },
+      {
+        "sentence": "彼は疲れそうだ。",
+        "romanization": "Kare wa tsukare sou da.",
+        "translation": "He looks tired."
+      },
+      {
+        "sentence": "この本は面白そうだ。",
+        "romanization": "Kono hon wa omoshiro sou da.",
+        "translation": "This book looks interesting."
+      },
+      {
+        "sentence": "雨が降りそうだ。",
+        "romanization": "Ame ga furi sou da.",
+        "translation": "It looks like it's going to rain."
+      }
+    ]
+  },
+  {
+    "id": "ja_そんな_84",
+    "language": "ja",
+    "pattern": "そんな",
+    "title": "そんな (sonna) + Noun",
+    "shortExplanation": "Expresses 'that kind/type of'; referring to something near the listener or previously mentioned.",
+    "longExplanation": "The word 'そんな' is used before a noun to indicate 'that kind of' or 'that type of', typically referring to something near the listener or previously mentioned in the conversation. It specifies the noun based on context or shared understanding between the speaker and the listener.",
+    "formation": "そんな + Noun",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "そんな話、信じられない。",
+        "romanization": "Sonna hanashi, shinjirarenai.",
+        "translation": "I can't believe that kind of story."
+      },
+      {
+        "sentence": "そんな映画、見たくない。",
+        "romanization": "Sonna eiga, mitakunai.",
+        "translation": "I don't want to watch that kind of movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_そんなに_85",
+    "language": "ja",
+    "pattern": "そんなに～",
+    "title": "そんなに～ (sonna ni〜)",
+    "shortExplanation": "Expresses 'not so much', 'not that', or 'not so ~'.",
+    "longExplanation": "The grammar point そんなに is an adverb used to express that something is not as extreme as described or not to that extent. It is often translated as 'not so much', 'not that', or 'not so ~'. It is commonly followed by a negative form of a verb or adjective.",
+    "formation": "そんなに + Verb-negation, そんなに + Adjective-negation",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "そんなに急がなくてもいいですよ。",
+        "romanization": "Sonna ni isoganakutemo ii desu yo.",
+        "translation": "You don't have to hurry that much."
+      },
+      {
+        "sentence": "そんなに難しくない問題だと思います。",
+        "romanization": "Sonna ni muzukashikunai mondai da to omoimasu.",
+        "translation": "I don't think the problem is that difficult."
+      },
+      {
+        "sentence": "彼女はそんなに背が高くありません。",
+        "romanization": "Kanojo wa sonna ni se ga takaku arimasen.",
+        "translation": "She is not that tall."
+      },
+      {
+        "sentence": "そんなにたくさん食べる必要はないと思う。",
+        "romanization": "Sonna ni takusan taberu hitsuyou wa nai to omou.",
+        "translation": "I don't think there's a need to eat so much."
+      }
+    ]
+  },
+  {
+    "id": "ja_たらいい_86",
+    "language": "ja",
+    "pattern": "～たらいい",
+    "title": "～たらいい (〜tara ii)",
+    "shortExplanation": "Expressing a desire or suggestion for a particular outcome; 'it would be good if', 'should', 'I hope'.",
+    "longExplanation": "The ～たらいい grammar point is used to express a desire, suggestion, or hope for a particular outcome. It can be translated as 'it would be good if', 'should', or 'I hope' in English. The formation is simple, and it is used with verbs in their casual past tense form.",
+    "formation": "Verb-casual-past + たらいい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "もっと勉強したらいいですよ。",
+        "romanization": "Motto benkyou shitara ii desu yo.",
+        "translation": "It would be good if you studied more."
+      },
+      {
+        "sentence": "雨が止んだらいいな。",
+        "romanization": "Ame ga yandara ii na.",
+        "translation": "I hope the rain stops."
+      },
+      {
+        "sentence": "早く元気になったらいいですね。",
+        "romanization": "Hayaku genki ni nattara ii desu ne.",
+        "translation": "It would be good if you got well soon."
+      },
+      {
+        "sentence": "彼に連絡したらいいと思います。",
+        "romanization": "Kare ni renraku shitara ii to omoimasu.",
+        "translation": "I think it would be good if you contacted him."
+      }
+    ]
+  },
+  {
+    "id": "ja_たら_87",
+    "language": "ja",
+    "pattern": "～たら",
+    "title": "～たら いかがですか (〜tara ikaga desu ka)",
+    "shortExplanation": "Making polite suggestions; 'how about if', 'what if', 'it would be good if'.",
+    "longExplanation": "The ～たら いかがですか grammar point is used to make polite suggestions, ask for opinions, or imply that something would be good or desirable if the condition is met. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual, past + たら いかがですか, い-Adjective + かったら いかがですか, な-Adjective + だったら いかがですか, Noun + だったら いかがですか",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "図書館に行ったらいかがですか。",
+        "romanization": "Toshokan ni ittara ikaga desu ka.",
+        "translation": "How about going to the library?"
+      },
+      {
+        "sentence": "寒かったらカーディガンを着るのはいかがですか。",
+        "romanization": "Samukattara kaadigan wo kiru no wa ikaga desu ka.",
+        "translation": "How about wearing a cardigan if it's cold?"
+      },
+      {
+        "sentence": "部屋が暗かったら照明を付けるのはいかがですか。",
+        "romanization": "Heya ga kurakattara shoumei wo tsukeru no wa ikaga desu ka.",
+        "translation": "What if you turn on the light if the room is dark?"
+      },
+      {
+        "sentence": "自分の意見だったら他人に聞くのはいかがですか。",
+        "romanization": "Jibun no iken dattara tanin ni kiku no wa ikaga desu ka.",
+        "translation": "How about asking others if it's your own opinion?"
+      }
+    ]
+  },
+  {
+    "id": "ja_たら_88",
+    "language": "ja",
+    "pattern": "～たら",
+    "title": "～たら どうですか (〜tara doudesuka)",
+    "shortExplanation": "Express a suggestion or advice; 'what if', 'how about', 'why don't you'.",
+    "longExplanation": "The ～たら どうですか grammar point is used to make a suggestion or give advice to someone. It can be translated as 'what if', 'how about', or 'why don't you' in English. This structure is used with the た-form of verbs to make a gentle, polite suggestion.",
+    "formation": "Verb-た form + ら どうですか",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "スキーに行ったらどうですか？",
+        "romanization": "Sukii ni ittara doudesuka?",
+        "translation": "How about going skiing?"
+      },
+      {
+        "sentence": "少し休んだらどうですか？",
+        "romanization": "Sukoshi yasundara doudesuka?",
+        "translation": "What if you take a little break?"
+      },
+      {
+        "sentence": "この本を読んだらどうですか？",
+        "romanization": "Kono hon wo yondara doudesuka?",
+        "translation": "Why don't you read this book?"
+      },
+      {
+        "sentence": "タクシーで帰ったらどうですか？",
+        "romanization": "Takushii de kaettara doudesuka?",
+        "translation": "How about going home by taxi?"
+      }
+    ]
+  }
+]

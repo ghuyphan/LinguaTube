@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_在V呢_47",
+    "language": "zh",
+    "pattern": "在 V (呢)",
+    "title": "在 V (呢) (V-ing)",
+    "shortExplanation": "V-ing",
+    "longExplanation": "V-ing. Pinyin: zài V ( ne)",
+    "formation": "zài V ( ne)",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我在睡觉 (呢)。",
+        "romanization": "wǒ zài shuìjiào ( ne)。",
+        "translation": "I’m sleeping."
+      }
+    ]
+  },
+  {
+    "id": "zh_没在V呢_48",
+    "language": "zh",
+    "pattern": "没 在 V (呢)",
+    "title": "没 在 V (呢) (not V-ing)",
+    "shortExplanation": "not V-ing",
+    "longExplanation": "not V-ing. Pinyin: méi zài V ( ne)",
+    "formation": "méi zài V ( ne)",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "他们没在看电视 (呢)。",
+        "romanization": "tāmen méi zài kàn diànshì ( ne)。",
+        "translation": "They’re not watching TV."
+      }
+    ]
+  },
+  {
+    "id": "zh_1yo_49",
+    "language": "zh",
+    "pattern": "1 (yāo)",
+    "title": "1 (yāo) ((1 in telephony))",
+    "shortExplanation": "(1 in telephony)",
+    "longExplanation": "(1 in telephony). Pinyin: 1 (yāo)",
+    "formation": "1 (yāo)",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "138-0156-7749",
+        "romanization": "138-0156-7749",
+        "translation": "1 reads as yāo."
+      }
+    ]
+  },
+  {
+    "id": "zh_V吧_50",
+    "language": "zh",
+    "pattern": "V 吧。",
+    "title": "V 吧。 (feel free to V)",
+    "shortExplanation": "feel free to V",
+    "longExplanation": "feel free to V. Pinyin: V ba。",
+    "formation": "V ba。",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "这儿没有人，坐吧。",
+        "romanization": "zhèr méiyǒu rén， zuò ba。",
+        "translation": "Nobody’s here, (feel free to) sit."
+      }
+    ]
+  },
+  {
+    "id": "zh_VO了_51",
+    "language": "zh",
+    "pattern": "V O 了",
+    "title": "V O 了 (have V’ed O)",
+    "shortExplanation": "have V’ed O",
+    "longExplanation": "have V’ed O. Pinyin: V O le",
+    "formation": "V O le",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "他去学校了。",
+        "romanization": "tā qù xuéxiào le。",
+        "translation": "He went to learn how to drive."
+      }
+    ]
+  },
+  {
+    "id": "zh_V了O_52",
+    "language": "zh",
+    "pattern": "V 了 O",
+    "title": "V 了 O (have V’ed O)",
+    "shortExplanation": "have V’ed O",
+    "longExplanation": "have V’ed O. Pinyin: V le O",
+    "formation": "V le O",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我买了不少衣服。",
+        "romanization": "wǒ mǎi le bùshǎo yīfu。",
+        "translation": "I bought a lot of clothes."
+      }
+    ]
+  },
+  {
+    "id": "zh_没VO_53",
+    "language": "zh",
+    "pattern": "没 V O",
+    "title": "没 V O (have not V’ed O)",
+    "shortExplanation": "have not V’ed O",
+    "longExplanation": "have not V’ed O. Pinyin: méi V O",
+    "formation": "méi V O",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "她没去商店。",
+        "romanization": "tā méi qù shāngdiàn。",
+        "translation": "She didn’t go to the store."
+      }
+    ]
+  },
+  {
+    "id": "zh_TIME后_54",
+    "language": "zh",
+    "pattern": "TIME 后",
+    "title": "TIME 后 (after TIME)",
+    "shortExplanation": "after TIME",
+    "longExplanation": "after TIME. Pinyin: TIME hòu",
+    "formation": "TIME hòu",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "五点后",
+        "romanization": "wǔ diǎn hòu",
+        "translation": "after 5"
+      }
+    ]
+  },
+  {
+    "id": "zh_DURATION后_55",
+    "language": "zh",
+    "pattern": "DURATION 后",
+    "title": "DURATION 后 (after DURATION)",
+    "shortExplanation": "after DURATION",
+    "longExplanation": "after DURATION. Pinyin: DURATION hòu",
+    "formation": "DURATION hòu",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "四十分钟后",
+        "romanization": "sìshí fēnzhōng hòu",
+        "translation": "after 40 minutes"
+      }
+    ]
+  },
+  {
+    "id": "zh_啊_56",
+    "language": "zh",
+    "pattern": "……啊",
+    "title": "……啊 ((exclamation))",
+    "shortExplanation": "(exclamation)",
+    "longExplanation": "(exclamation). Pinyin: …… ā",
+    "formation": "…… ā",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "好啊。是啊。",
+        "romanization": "hǎo ā。 shì ā。",
+        "translation": "Sure! Yeah!"
+      }
+    ]
+  },
+  {
+    "id": "zh_都N_57",
+    "language": "zh",
+    "pattern": "都 N",
+    "title": "都 N (both Ns)",
+    "shortExplanation": "both Ns",
+    "longExplanation": "both Ns. Pinyin: dōu N",
+    "formation": "dōu N",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我们都是中国人。",
+        "romanization": "wǒmen dōu shì Zhōngguórén。",
+        "translation": "We both are Chinese."
+      }
+    ]
+  },
+  {
+    "id": "zh_S是MANNERV的_58",
+    "language": "zh",
+    "pattern": "S 是 MANNER V 的",
+    "title": "S 是 MANNER V 的 (it is MANNER that S V)",
+    "shortExplanation": "it is MANNER that S V",
+    "longExplanation": "it is MANNER that S V. Pinyin: S shì MANNER V de",
+    "formation": "S shì MANNER V de",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我们是开车来的。",
+        "romanization": "wǒmen shì kāichē lái de。",
+        "translation": "We drove here. (Lit. It is [by] driving that we came here.)"
+      }
+    ]
+  },
+  {
+    "id": "zh_年_59",
+    "language": "zh",
+    "pattern": "年",
+    "title": "年 (year)",
+    "shortExplanation": "year",
+    "longExplanation": "year. Pinyin: nián",
+    "formation": "nián",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "二零一七年",
+        "romanization": "èr líng yī qī nián",
+        "translation": "Year 2017"
+      }
+    ]
+  },
+  {
+    "id": "zh_要_60",
+    "language": "zh",
+    "pattern": "要",
+    "title": "要 (want to, will)",
+    "shortExplanation": "want to, will",
+    "longExplanation": "want to, will. Pinyin: yào",
+    "formation": "yào",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "王芳要学英语。",
+        "romanization": "wáng fāng yào xué Yīngyǔ。",
+        "translation": "Wang Fang wants to / will learn English."
+      }
+    ]
+  },
+  {
+    "id": "zh_最_61",
+    "language": "zh",
+    "pattern": "最",
+    "title": "最 (the most)",
+    "shortExplanation": "the most",
+    "longExplanation": "the most. Pinyin: zuì",
+    "formation": "zuì",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "它的眼睛最漂亮。",
+        "romanization": "tā de yǎnjing zuì piàoliang。",
+        "translation": "Its eyes are the prettiest."
+      }
+    ]
+  }
+]

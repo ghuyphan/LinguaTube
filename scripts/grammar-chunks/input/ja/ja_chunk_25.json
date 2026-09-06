@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_まるでよう_100",
+    "language": "ja",
+    "pattern": "まるで～よう",
+    "title": "まるで～よう (maru de ~ you)",
+    "shortExplanation": "Used to express a strong resemblance or similarity; 'as if', 'just like', 'as though'.",
+    "longExplanation": "The まるで～よう grammar point is used to emphasize a strong resemblance or similarity between two things or situations. It can be translated as 'as if', 'just like', or 'as though' in English. The formation is まるで + phrase/sentence + よう.",
+    "formation": "まるで + phrase/sentence + よう",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼女はまるで天使のように美しい。",
+        "romanization": "Kanojo wa maru de tenshi no you ni utsukushii.",
+        "translation": "She is as beautiful as an angel."
+      },
+      {
+        "sentence": "彼はまるでロボットのように仕事をしている。",
+        "romanization": "Kare wa maru de robotto no you ni shigoto wo shite iru.",
+        "translation": "He works as if he is a robot."
+      },
+      {
+        "sentence": "あの家はまるでお城のようだ。",
+        "romanization": "Ano ie wa maru de oshiro no you da.",
+        "translation": "That house is just like a castle."
+      },
+      {
+        "sentence": "ここはまるで楽園のような場所です。",
+        "romanization": "Koko wa maru de rakuen no you na basho desu.",
+        "translation": "This place is as though it's a paradise."
+      }
+    ]
+  },
+  {
+    "id": "ja_てみる_101",
+    "language": "ja",
+    "pattern": "～てみる",
+    "title": "～てみる (〜te miru)",
+    "shortExplanation": "A grammar structure used to express the action of trying or attempting something to see what happens.",
+    "longExplanation": "The 〜てみる grammar point is used with a verb in the 〜て form followed by みる. It emphasizes doing something as a trial or to see the result. It often translates as 'to try doing something' or 'try it out'.",
+    "formation": "Verb-て form + みる",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は走ってみたが、まだ膝が痛いと感じた。",
+        "romanization": "Kare wa hashitte mita ga, mada hiza ga itai to kanjita.",
+        "translation": "He tried running, but he still felt pain in his knee."
+      },
+      {
+        "sentence": "彼女は料理を作ってみたが、失敗してしまった。",
+        "romanization": "Kanojo wa ryouri o tsukutte mita ga, shippai shite shimatta.",
+        "translation": "She tried cooking but ended up failing."
+      },
+      {
+        "sentence": "初めてのデートで、彼は彼女にサプライズをしようと考え、歌ってみた。",
+        "romanization": "Hajimete no deeto de, kare wa kanojo ni sapuraizu o shiyou to kangae, utatte mita.",
+        "translation": "On their first date, he thought of surprising her and tried singing."
+      },
+      {
+        "sentence": "このケーキは美味しそうだから、味見に食べてみる。",
+        "romanization": "Kono keeki wa oishisou dakara, ajimi ni tabete miru.",
+        "translation": "Since this cake looks delicious, I will try tasting it."
+      }
+    ]
+  },
+  {
+    "id": "ja_みたいだ_102",
+    "language": "ja",
+    "pattern": "～みたいだ",
+    "title": "～みたいだ (〜mitai da)",
+    "shortExplanation": "Express similarity or appearance; 'like', 'seems', 'looks'.",
+    "longExplanation": "The ～みたいだ grammar point is used to express similarity, appearance or resemblance to something. It can be translated as 'like', 'seems', or 'looks' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + みたいだ, い-Adjective + みたいだ, な-Adjective + みたいだ, Noun + みたいだ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は怒っているみたいだ。",
+        "romanization": "Kare wa okotte iru mitai da.",
+        "translation": "He seems to be angry."
+      },
+      {
+        "sentence": "そのビルは古いみたいだ。",
+        "romanization": "Sono biru wa furui mitai da.",
+        "translation": "That building looks old."
+      },
+      {
+        "sentence": "彼女は疲れているみたいだ。",
+        "romanization": "Kanojo wa tsukarete iru mitai da.",
+        "translation": "She seems to be tired."
+      },
+      {
+        "sentence": "この料理は辛いみたいだ。",
+        "romanization": "Kono ryouri wa karai mitai da.",
+        "translation": "This dish seems to be spicy."
+      }
+    ]
+  },
+  {
+    "id": "ja_めったにない_103",
+    "language": "ja",
+    "pattern": "～めったに～ない",
+    "title": "～めったに～ない (〜metta ni 〜nai)",
+    "shortExplanation": "Used to express that something rarely, hardly ever or seldom happens.",
+    "longExplanation": "The ～めったに～ない grammar point is used to express that something rarely, hardly ever or seldom happens. It is a negative expression and always needs to be used with ～ない (negative form) at the end.",
+    "formation": "めったに + Verb[ない-form] / めったに + い-Adjective[ない-form] / めったに + な-Adjective[じゃない/ではない-form]",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼はめったに外食しない。",
+        "romanization": "Kare wa metta ni gaishoku shinai.",
+        "translation": "He hardly ever eats out."
+      },
+      {
+        "sentence": "私はめったに寿司を食べない。",
+        "romanization": "Watashi wa metta ni sushi wo tabenai.",
+        "translation": "I seldom eat sushi."
+      },
+      {
+        "sentence": "この地域はめったに雪が降らない。",
+        "romanization": "Kono chiiki wa metta ni yuki ga furanai.",
+        "translation": "It hardly ever snows in this area."
+      },
+      {
+        "sentence": "彼女はめったに怒らない。",
+        "romanization": "Kanojo wa metta ni okoranai.",
+        "translation": "She hardly ever gets angry."
+      }
+    ]
+  },
+  {
+    "id": "ja_めったにない_104",
+    "language": "ja",
+    "pattern": "～めったにない",
+    "title": "～めったにない (〜metta ni nai)",
+    "shortExplanation": "Expresses the rarity of an action, event or state; 'hardly', 'rarely', 'seldom'.",
+    "longExplanation": "The ～めったにない grammar point is used to express that an action, event or state rarely, hardly, or seldom happens. It is usually combined with a negative verb form. Though it can be used with positive verbs, it is uncommon and sounds unnatural.",
+    "formation": "Verb-negative + めったにない, い-Adjective-negative + めったにない, な-Adjective-negative + めったにない, Noun-negative + めったにない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "この町では雪が降ることはめったにない。",
+        "romanization": "Kono machi de wa yuki ga furu koto wa metta ni nai.",
+        "translation": "It hardly ever snows in this town."
+      },
+      {
+        "sentence": "彼はめったに外食しない。",
+        "romanization": "Kare wa metta ni gaishoku shinai.",
+        "translation": "He rarely eats out."
+      },
+      {
+        "sentence": "友達が遊びに来るのはめったにない。",
+        "romanization": "Tomodachi ga asobi ni kuru no wa metta ni nai.",
+        "translation": "Friends seldom come to visit."
+      },
+      {
+        "sentence": "彼女はめったに怒らない。",
+        "romanization": "Kanojo wa metta ni okoranai.",
+        "translation": "She hardly ever gets angry."
+      }
+    ]
+  },
+  {
+    "id": "ja_もしかするとかもしれない_105",
+    "language": "ja",
+    "pattern": "もしかすると〜かもしれない",
+    "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
+    "shortExplanation": "Express the possibility of something; 'maybe', 'perhaps', 'might'.",
+    "longExplanation": "The もしかすると〜かもしれない grammar point is used to indicate that there might be a possibility of a certain situation happening or someone feeling a certain way. This structure is often used to describe uncertain situations and can be translated into English as 'maybe', 'perhaps', or 'might'.",
+    "formation": "もしかすると + Sentence + かもしれない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "もしかすると彼は遅刻するかもしれない。",
+        "romanization": "Moshikasuru to kare wa chikoku suru kamoshirenai.",
+        "translation": "Maybe he might be late."
+      },
+      {
+        "sentence": "もしかすると彼女は疲れているかもしれない。",
+        "romanization": "Moshikasuru to kanojo wa tsukarete iru kamoshirenai.",
+        "translation": "Perhaps she might be tired."
+      },
+      {
+        "sentence": "もしかすると雨が降るかもしれない。",
+        "romanization": "Moshikasuru to ame ga furu kamoshirenai.",
+        "translation": "It might rain, maybe."
+      },
+      {
+        "sentence": "もしかすると彼らはその映画が好きじゃないかもしれない。",
+        "romanization": "Moshikasuru to karera wa sono eiga ga suki janai kamoshirenai.",
+        "translation": "Maybe they might not like that movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_もしたなら_106",
+    "language": "ja",
+    "pattern": "もし～たなら",
+    "title": "もし～たなら (moshi ~ tanara)",
+    "shortExplanation": "Express a hypothetical condition, 'if' or 'in case'.",
+    "longExplanation": "The もし～たなら grammar point is used to express a hypothetical condition or situation in a more polite manner. It emphasizes the conditional part of a sentence and can be translated as 'if' or 'in case' in English. It is mainly used with verbs in the past tense, casual form.",
+    "formation": "もし + Verb-casual past + なら, もし + い-Adjective-casual past + なら, もし + な-Adjective + だったなら, もし + Noun + だったなら",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "もし雨が降ったなら、傘を持って行きましょう。",
+        "romanization": "Moshi ame ga futta nara, kasa wo motte ikimashou.",
+        "translation": "If it rains, let's bring an umbrella."
+      },
+      {
+        "sentence": "もしケーキが美味しくなかったなら、誰も食べないでしょう。",
+        "romanization": "Moshi keeki ga oishikunakatta nara, daremo tabenai deshou.",
+        "translation": "If the cake was not delicious, nobody would eat it."
+      },
+      {
+        "sentence": "もし彼が病気だったなら、すぐに病院に行かせてあげてください。",
+        "romanization": "Moshi kare ga byouki datta nara, sugu ni byouin ni ikasete agete kudasai.",
+        "translation": "If he was sick, please take him to the hospital right away."
+      },
+      {
+        "sentence": "もし彼女が学生だったなら、このレストランは割引があるでしょう。",
+        "romanization": "Moshi kanojo ga gakusei datta nara, kono resutoran wa waribiki ga aru deshou.",
+        "translation": "If she were a student, there would be a discount at this restaurant."
+      }
+    ]
+  },
+  {
+    "id": "ja_もしても_107",
+    "language": "ja",
+    "pattern": "もし～ても",
+    "title": "もし～ても (moshi ~ temo)",
+    "shortExplanation": "Express a hypothetical situation or assumption with the nuance of 'even if'.",
+    "longExplanation": "The もし～ても grammar point is used to describe a situation in which even if the stated condition is true, the result or decision does not change. It can be translated as 'even if', 'no matter if', or 'suppose ~'.",
+    "formation": "もし + Verb-て form + も / もし + い-Adjective(く) + ても / もし + な-Adjective/Noun + でも",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "もし雨が降っても、ピクニックに行きます。",
+        "romanization": "Moshi ame ga futtemo, pikunikku ni ikimasu.",
+        "translation": "Even if it rains, we will go on a picnic."
+      },
+      {
+        "sentence": "もし彼が謝っても、まだ怒っているでしょう。",
+        "romanization": "Moshi kare ga ayamattemo, mada okotteiru deshou.",
+        "translation": "Even if he apologizes, I will still be angry."
+      },
+      {
+        "sentence": "もし試験に合格しても、まだ勉強を続けます。",
+        "romanization": "Moshi shiken ni goukaku shitemo, mada benkyou wo tsuzukemasu.",
+        "translation": "Even if I pass the exam, I will still continue studying."
+      },
+      {
+        "sentence": "もし彼女が遅く来ても、待っています。",
+        "romanization": "Moshi kanojo ga osoku kite mo, matteimasu.",
+        "translation": "Even if she comes late, I will wait."
+      }
+    ]
+  },
+  {
+    "id": "ja_もしもなら_108",
+    "language": "ja",
+    "pattern": "もしも～なら",
+    "title": "もしも～なら (moshimo ~ nara)",
+    "shortExplanation": "Express a hypothetical condition or situation; 'if', 'in case', 'suppose'.",
+    "longExplanation": "The もしも～なら grammar point is used to express a hypothetical condition or situation, often with a sense of uncertainty. It can be translated as 'if', 'in case', or 'suppose'. The formation varies slightly based on whether it is used with a verb, an い-adjective, a な-adjective, or a noun.",
+    "formation": "Verb-casual + なら, い-Adjective + なら, な-Adjective + なら, Noun + なら",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "もしも明日雨が降ったなら、出かけません。",
+        "romanization": "Moshimo ashita ame ga futta nara, dekakemasen.",
+        "translation": "If it rains tomorrow, I won't go out."
+      },
+      {
+        "sentence": "もしも彼が来なかったなら、私たちだけでパーティーをします。",
+        "romanization": "Moshimo kare ga konakatta nara, watashitachi dake de paatii wo shimasu.",
+        "translation": "If he doesn't come, we'll have the party just by ourselves."
+      },
+      {
+        "sentence": "もしも彼女が疲れているなら、休ませてあげてください。",
+        "romanization": "Moshimo kanojo ga tsukarete iru nara, yasumasete agete kudasai.",
+        "translation": "If she is tired, please let her rest."
+      },
+      {
+        "sentence": "もしもそれが真実なら、認めなければなりません。",
+        "romanization": "Moshimo sore ga shinjitsu nara, mitomenakereba narimasen.",
+        "translation": "If that is true, we have to admit it."
+      }
+    ]
+  },
+  {
+    "id": "ja_ようとしない_109",
+    "language": "ja",
+    "pattern": "～ようとしない",
+    "title": "～ようとしない (〜you to shinai)",
+    "shortExplanation": "Not showing any sign or intention to do something.",
+    "longExplanation": "The ～ようとしない grammar point indicates that someone is not showing any sign or intention of doing an action. It is used to express a refusal or unwillingness to do something. It is formed by using the volitional form of a verb followed by としない.",
+    "formation": "Verb-volitional form + としない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は勉強しようとしない。",
+        "romanization": "Kare wa benkyou shiyou to shinai.",
+        "translation": "He doesn't show any sign of trying to study."
+      },
+      {
+        "sentence": "彼女は謝ろうとしない。",
+        "romanization": "Kanojo wa ayamarou to shinai.",
+        "translation": "She doesn't show any intention of apologizing."
+      },
+      {
+        "sentence": "息子は部屋を片付けようとしない。",
+        "romanization": "Musuko wa heya wo katazuke you to shinai.",
+        "translation": "My son doesn't show any intention of cleaning his room."
+      },
+      {
+        "sentence": "犬は散歩に行こうとしない。",
+        "romanization": "Inu wa sanpo ni ikou to shinai.",
+        "translation": "The dog doesn't show any sign of wanting to go for a walk."
+      }
+    ]
+  },
+  {
+    "id": "ja_ようと思う_110",
+    "language": "ja",
+    "pattern": "～ようと思う",
+    "title": "～ようと思う (〜you to omou)",
+    "shortExplanation": "Expresses the speaker's intention or plan to do something.",
+    "longExplanation": "The ～ようと思う grammar point is used to express the speaker's intention or plan to do something in the future. It can be translated as 'I think I will...' or 'I am planning to...' in English. It is formed by taking the volitional form of a verb and adding と思う.",
+    "formation": "Verb-volitional + と思う",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "今日は早く寝ようと思います。",
+        "romanization": "Kyou wa hayaku neyou to omoimasu.",
+        "translation": "I think I will go to bed early today."
+      },
+      {
+        "sentence": "明日美術館に行こうと思っています。",
+        "romanization": "Ashita bijutsukan ni ikou to omotteimasu.",
+        "translation": "I am planning to go to the art museum tomorrow."
+      },
+      {
+        "sentence": "新しいカメラを買おうと思います。",
+        "romanization": "Atarashii kamera wo kaou to omoimasu.",
+        "translation": "I think I will buy a new camera."
+      },
+      {
+        "sentence": "来週友達と映画を見ようと思っています。",
+        "romanization": "Raishuu tomodachi to eiga wo miyou to omotteimasu.",
+        "translation": "I am planning to watch a movie with my friend next week."
+      }
+    ]
+  },
+  {
+    "id": "ja_ように_111",
+    "language": "ja",
+    "pattern": "～ように",
+    "title": "～ように (〜you ni)",
+    "shortExplanation": "Expressing a purpose, a goal or a way of doing something; 'in order to', 'so that', 'like', 'as'",
+    "longExplanation": "The ～ように grammar point is used to express a purpose, a goal, or a way of doing something. It can be translated as 'in order to', 'so that', 'like', or 'as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + ように, い-Adjective + ように, な-Adjective + に, Noun + のように",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "早く家に帰るように、仕事を急いで終わらせました。",
+        "romanization": "Hayaku ie ni kaeru you ni, shigoto wo isoide owarasemashita.",
+        "translation": "In order to get home early, I hurried to finish my work."
+      },
+      {
+        "sentence": "彼女は美しい花のように見えました。",
+        "romanization": "Kanojo wa utsukushii hana no you ni miemashita.",
+        "translation": "She looked like a beautiful flower."
+      },
+      {
+        "sentence": "この部屋がきれいになるように、掃除をしましょう。",
+        "romanization": "Kono heya ga kirei ni naru you ni, souji wo shimashou.",
+        "translation": "Let's clean so that this room becomes clean."
+      },
+      {
+        "sentence": "山田さんは元気なように振る舞っていましたが、実際は疲れているらしいです。",
+        "romanization": "Yamada-san wa genki na you ni furumatte imashita ga, jissai wa tsukarete iru rashii desu.",
+        "translation": "Yamada-san was acting as if he was energetic, but he actually seems to be tired."
+      }
+    ]
+  },
+  {
+    "id": "ja_ように_112",
+    "language": "ja",
+    "pattern": "～ように",
+    "title": "～ように (〜you ni)",
+    "shortExplanation": "Used to express a purpose, a way, or a natural tendency.",
+    "longExplanation": "The ～ように grammar point is used to express a purpose, a way or a method, or a natural tendency. It can be used with verbs, い-adjectives, な-adjectives, or nouns. It is frequently used with the verb する (to do) to express the purpose or method.",
+    "formation": "Verb-casual + ように, い-Adjective + ように, な-Adjective + だように, Noun + のように",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "子供が安全に過ごせるように、家の中を整理します。",
+        "romanization": "Kodomo ga anzen ni sugoseru you ni, ie no naka wo seiri shimasu.",
+        "translation": "I will organize the inside of the house so that the children can spend time safely."
+      },
+      {
+        "sentence": "美しい花のように、彼女は笑顔が素敵です。",
+        "romanization": "Utsukushii hana no you ni, kanojo wa egao ga suteki desu.",
+        "translation": "Like a beautiful flower, her smile is lovely."
+      },
+      {
+        "sentence": "自然に英語を話せるように、毎日練習しています。",
+        "romanization": "Shizen ni eigo wo hanaseru you ni, mainichi renshuu shiteimasu.",
+        "translation": "I practice every day to be able to speak English naturally."
+      },
+      {
+        "sentence": "成功するように、計画を立てましょう。",
+        "romanization": "Seikou suru you ni, keikaku wo tatemashou.",
+        "translation": "Let's make a plan to succeed."
+      }
+    ]
+  },
+  {
+    "id": "ja_ように_113",
+    "language": "ja",
+    "pattern": "～ように",
+    "title": "～ように (〜you ni)",
+    "shortExplanation": "Used to express purpose or how something is done; 'like', 'as if', 'in order to'.",
+    "longExplanation": "The ～ように grammar point is used to express the purpose of an action or the manner in which something is done. It can be translated as 'like', 'as if', or 'in order to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + ように, い-Adjective + ように, な-Adjective + に, Noun + のように",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "分かりやすいように説明してください。",
+        "romanization": "Wakariyasui you ni setsumei shite kudasai.",
+        "translation": "Please explain it in a way that is easy to understand."
+      },
+      {
+        "sentence": "彼は鳥のように歌います。",
+        "romanization": "Kare wa tori no you ni utaimasu.",
+        "translation": "He sings like a bird."
+      },
+      {
+        "sentence": "友達と仲良くするように努めています。",
+        "romanization": "Tomodachi to nakayoku suru you ni tsutometeimasu.",
+        "translation": "I am trying to get along well with my friends."
+      },
+      {
+        "sentence": "日本語が上手になるように勉強しています。",
+        "romanization": "Nihongo ga jouzu ni naru you ni benkyou shiteimasu.",
+        "translation": "I am studying to become better at Japanese."
+      }
+    ]
+  },
+  {
+    "id": "ja_ようにしましょう_114",
+    "language": "ja",
+    "pattern": "～ようにしましょう",
+    "title": "～ようにしましょう (〜you ni shimashou)",
+    "shortExplanation": "A suggestion to make an effort or try to do something; 'let's try to', 'let's make sure to'.",
+    "longExplanation": "The ～ようにしましょう grammar point is used to suggest making an effort or trying to do something. It can be translated as 'let's try to' or 'let's make sure to' in English. Typically, we use the dictionary or negative form of the verb with ようにする/ようにしましょう to show the effort we want to make.",
+    "formation": "Verb-dictionary form + ようにしましょう / Verb-negative form + ようにしましょう",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "毎日運動するようにしましょう。",
+        "romanization": "Mainichi undou suru you ni shimashou.",
+        "translation": "Let's try to exercise every day."
+      },
+      {
+        "sentence": "早く寝るようにしましょう。",
+        "romanization": "Hayaku neru you ni shimashou.",
+        "translation": "Let's make sure to go to bed early."
+      },
+      {
+        "sentence": "親切にするようにしましょう。",
+        "romanization": "Shinsetsu ni suru you ni shimashou.",
+        "translation": "Let's try to be kind."
+      },
+      {
+        "sentence": "時間を無駄にしないようにしましょう。",
+        "romanization": "Jikan wo muda ni shinai you ni shimashou.",
+        "translation": "Let's make sure not to waste time."
+      }
+    ]
+  }
+]

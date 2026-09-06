@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_除非才_600",
+    "language": "zh",
+    "pattern": "(除非)……才……",
+    "title": "(除非)……才…… (unless)",
+    "shortExplanation": "unless",
+    "longExplanation": "unless. Pinyin: ( chúfēi)…… cái……",
+    "formation": "( chúfēi)…… cái……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "(除非)你答应我的条件，我才告诉你。",
+        "romanization": "( chúfēi) nǐ dāying wǒ de tiáojiàn， wǒ cái gàosu nǐ。",
+        "translation": "(Unless) you promise me, I won’t tell you."
+      }
+    ]
+  },
+  {
+    "id": "zh_除非_601",
+    "language": "zh",
+    "pattern": "除非",
+    "title": "除非 (except)",
+    "shortExplanation": "except",
+    "longExplanation": "except. Pinyin: chúfēi",
+    "formation": "chúfēi",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这种机器，除非李阳，没人修得好。",
+        "romanization": "zhèzhǒng jīqì， chúfēi lǐ yáng， méi rén xiū dé hǎo。",
+        "translation": "This kind of machine, except Li Yang, no one can fix."
+      }
+    ]
+  },
+  {
+    "id": "zh_V1得O直V2_602",
+    "language": "zh",
+    "pattern": "V1 得 (O) 直 V2",
+    "title": "V1 得 (O) 直 V2 (V1 O so much that O V2)",
+    "shortExplanation": "V1 O so much that O V2",
+    "longExplanation": "V1 O so much that O V2. Pinyin: V1 dé (O) zhí V2",
+    "formation": "V1 dé (O) zhí V2",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "父亲听说儿子卖了房子，气得(他)直发抖。",
+        "romanization": "fùqīn tīngshuō érzi mài le fángzi， qì dé( tā) zhí fādǒu。",
+        "translation": "The father heard that his son had sold the house. He was so angry that he kept on shivering."
+      }
+    ]
+  },
+  {
+    "id": "zh_直到_603",
+    "language": "zh",
+    "pattern": "直到",
+    "title": "直到 (untill)",
+    "shortExplanation": "untill",
+    "longExplanation": "untill. Pinyin: zhídào",
+    "formation": "zhídào",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "直到今天，我也不明白他当时为什么发那么大脾气。",
+        "romanization": "zhídào jīntiān， wǒ yě bù míngbai tā dāngshí wèishénme fā nàme dà píqi。",
+        "translation": "Until today, I don’t understand why he had such a bad temper at the time."
+      }
+    ]
+  },
+  {
+    "id": "zh_反正_604",
+    "language": "zh",
+    "pattern": "反正",
+    "title": "反正 (anyway)",
+    "shortExplanation": "anyway",
+    "longExplanation": "anyway. Pinyin: fǎnzhèng",
+    "formation": "fǎnzhèng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "不管你们谁去，反正我不会去。",
+        "romanization": "bùguǎn nǐmen shéi qù， fǎnzhèng wǒ bùhuì qù。",
+        "translation": "I don’t care if any of you go. I won’t go anyway."
+      }
+    ]
+  },
+  {
+    "id": "zh_点_605",
+    "language": "zh",
+    "pattern": "# 点 ##",
+    "title": "# 点 ## (# point ##)",
+    "shortExplanation": "# point ##",
+    "longExplanation": "# point ##. Pinyin: # diǎn ##",
+    "formation": "# diǎn ##",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "三点一四",
+        "romanization": "sān diǎn yī sì",
+        "translation": "3.14"
+      }
+    ]
+  },
+  {
+    "id": "zh_1分之2_606",
+    "language": "zh",
+    "pattern": "#1 分之 #2",
+    "title": "#1 分之 #2 (#2 #1-th (fraction))",
+    "shortExplanation": "#2 #1-th (fraction)",
+    "longExplanation": "#2 #1-th (fraction). Pinyin: #1 fēnzhī #2",
+    "formation": "#1 fēnzhī #2",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "五分之一",
+        "romanization": "wǔfēnzhīyī",
+        "translation": "1/5"
+      }
+    ]
+  },
+  {
+    "id": "zh_百分之_607",
+    "language": "zh",
+    "pattern": "百分之 #",
+    "title": "百分之 # (# percent)",
+    "shortExplanation": "# percent",
+    "longExplanation": "# percent. Pinyin: bǎifēnzhī #",
+    "formation": "bǎifēnzhī #",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "百分之九",
+        "romanization": "bǎifēnzhī jiǔ",
+        "translation": "9 percent"
+      }
+    ]
+  },
+  {
+    "id": "zh_甲乙丙丁_608",
+    "language": "zh",
+    "pattern": "甲乙丙丁",
+    "title": "甲乙丙丁 (A, B, C, D (series))",
+    "shortExplanation": "A, B, C, D (series)",
+    "longExplanation": "A, B, C, D (series). Pinyin: jiǎyǐ bǐng dīng",
+    "formation": "jiǎyǐ bǐng dīng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "如果乙方同意，甲方可以可以提前把产品交给乙方。",
+        "romanization": "rúguǒ yǐfāng tóngyì， jiǎfāng kěyǐ kěyǐ tíqián bǎ chǎnpǐn jiāogěi yǐfāng。",
+        "translation": "If Party B agrees, Party A may give the product to Party B in advance."
+      }
+    ]
+  },
+  {
+    "id": "zh_顺着_609",
+    "language": "zh",
+    "pattern": "顺(着)",
+    "title": "顺(着) (along)",
+    "shortExplanation": "along",
+    "longExplanation": "along. Pinyin: shùn( zhe)",
+    "formation": "shùn( zhe)",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "汗水顺着他的脸往下流。",
+        "romanization": "hànshuǐ shùnzhe tā de liǎn wǎng xiàliú。",
+        "translation": "The sweat flowed down (along) his face."
+      }
+    ]
+  },
+  {
+    "id": "zh_自_610",
+    "language": "zh",
+    "pattern": "自",
+    "title": "自 (from)",
+    "shortExplanation": "from",
+    "longExplanation": "from. Pinyin: zì",
+    "formation": "zì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "鸟类能觉察得出地球自北向南磁极的磁力线。",
+        "romanization": "niǎolèi néng juéchá déchū dìqiú zì běi xiàngnán cíjí de cílìxiàn。",
+        "translation": "Birds can perceive the magnetic field lines from the earth’s north magnetic pole to the south magnetic pole."
+      }
+    ]
+  },
+  {
+    "id": "zh_把V着_611",
+    "language": "zh",
+    "pattern": "把……V 着",
+    "title": "把……V 着 ((imperative))",
+    "shortExplanation": "(imperative)",
+    "longExplanation": "(imperative). Pinyin: bǎ……V zhe",
+    "formation": "bǎ……V zhe",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "你把书带着。",
+        "romanization": "nǐ bǎ shū dài zhe。",
+        "translation": "Bring your book."
+      }
+    ]
+  },
+  {
+    "id": "zh_把O给V了_612",
+    "language": "zh",
+    "pattern": "把 O (给) V 了",
+    "title": "把 O (给) V 了 (have V’ed the O)",
+    "shortExplanation": "have V’ed the O",
+    "longExplanation": "have V’ed the O. Pinyin: bǎ O ( gěi) V le",
+    "formation": "bǎ O ( gěi) V le",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我把这事(给)忘了。",
+        "romanization": "wǒ bǎ zhè shì( gěi) wàng le。",
+        "translation": "I forgot about this matter."
+      }
+    ]
+  },
+  {
+    "id": "zh_给_613",
+    "language": "zh",
+    "pattern": "给",
+    "title": "给 ((See 被))",
+    "shortExplanation": "(See 被)",
+    "longExplanation": "(See 被). Pinyin: gěi",
+    "formation": "gěi",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我的手机给小偷偷走了。",
+        "romanization": "wǒ de shǒujī gěi xiǎo tōutōu zǒu le。",
+        "translation": "My mobile phone was stolen by the thief."
+      }
+    ]
+  },
+  {
+    "id": "zh_何不_614",
+    "language": "zh",
+    "pattern": "何不",
+    "title": "何不 (why not)",
+    "shortExplanation": "why not",
+    "longExplanation": "why not. Pinyin: hébù",
+    "formation": "hébù",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "天气这么好，何不出去玩儿玩儿呢？",
+        "romanization": "tiānqì zhème hǎo， hébù chūqù wánr wánr ne？",
+        "translation": "The weather is so good, why not go out and play?"
+      }
+    ]
+  }
+]

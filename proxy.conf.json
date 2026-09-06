@@ -18,18 +18,24 @@
     }
   },
   "/api/transcript": {
-    "target": "https://www.youtube.com",
-    "secure": true,
-    "changeOrigin": true,
-    "pathRewrite": {
-      "^/api/transcript": "/api/timedtext"
-    },
-    "headers": {
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-      "Accept": "*/*",
-      "Accept-Language": "en-US,en;q=0.9",
-      "Referer": "https://www.youtube.com/"
-    }
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/dual-subtitles": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/video-info": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/tokenize-batch": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
   },
   "/youtube": {
     "target": "https://www.youtube.com",

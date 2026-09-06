@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_くせに_10": {
+      "title": "～くせに (〜kuse ni)",
+      "shortExplanation": "Dùng để biểu thị sự chê trách, mỉa mai hoặc bất mãn; 'thế mà lại', 'mặc dù... nhưng lại'.",
+      "longExplanation": "Mẫu ngữ pháp '～くせに' diễn tả sự mỉa mai, trách móc hoặc không hài lòng của người nói về một sự việc, hành động trái ngược với điều đương nhiên hoặc kỳ vọng. Mẫu này chỉ được dùng khi người nói có thái độ chỉ trích, bất mãn với đối phương (thường là ngôi thứ ba hoặc ngôi thứ hai, không dùng cho chính mình).",
+      "formation": "Động từ thể thường + くせに / Tính từ đuôi い + くせに / Tính từ đuôi な + なくせに / Danh từ + のくせに",
+      "examples": [
+        {
+          "translation": "Anh ta giàu có thế mà lại keo kiệt."
+        },
+        {
+          "translation": "Phòng bừa bộn bẩn thỉu thế này mà còn cằn nhằn nỗi gì."
+        },
+        {
+          "translation": "Anh ấy rảnh rỗi thế mà chẳng chịu giúp tôi."
+        },
+        {
+          "translation": "Cô ấy xinh đẹp thế mà các buổi hẹn hò chẳng bao giờ kéo dài được."
+        }
+      ]
+    },
+    "ja_くらい_11": {
+      "title": "～くらい (〜kurai)",
+      "shortExplanation": "Biểu thị số lượng ước chừng hoặc mức độ; 'khoảng', 'chừng', 'đến mức mà'.",
+      "longExplanation": "Mẫu ngữ pháp '～くらい' (hoặc '～ぐらい') được dùng với hai ý nghĩa chính: một là chỉ số lượng hoặc thời gian ước chừng ('khoảng, chừng'); hai là chỉ mức độ, phạm vi của một hành động, tính chất ('đến mức...', 'tới độ...'). Có thể kết hợp linh hoạt với động từ, tính từ hoặc danh từ.",
+      "formation": "Động từ thể thường + くらい / Tính từ đuôi い + くらい / Tính từ đuôi な + なくらい / Danh từ + くらい",
+      "examples": [
+        {
+          "translation": "Chúng ta hãy đợi khoảng 10 phút nhé."
+        },
+        {
+          "translation": "Cô ấy đã xem bộ phim đó khoảng 5 lần."
+        },
+        {
+          "translation": "Quyển sách đó khó đến mức thú vị."
+        },
+        {
+          "translation": "Căn phòng này rộng đến mức khiến người ta thấy thật thoải mái."
+        }
+      ]
+    },
+    "ja_くらいはない_12": {
+      "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
+      "shortExplanation": "Nhấn mạnh yêu cầu hoặc mức độ tối thiểu cần làm; 'ít nhất cũng phải...', 'tối thiểu cũng...'.",
+      "longExplanation": "Cấu trúc '～くらい～は～ない' (thường xuất hiện dưới dạng '～くらいは～ない / ないと') dùng để nhấn mạnh mức độ hoặc kỳ vọng tối thiểu mà một người cần thực hiện trong một tình huống nhất định. Nó truyền tải sắc thái: cho dù những việc khác không làm được thì ít nhất điều này cũng phải làm được.",
+      "formation": "Danh từ / Động từ thể thường + くらい + は + Động từ thể phủ định (～ない / ～ないと) / Tính từ + くらい + は + Tính từ phủ định",
+      "examples": [
+        {
+          "translation": "Ít nhất mỗi tuần một lần cũng phải đến phòng tập thể hình chứ."
+        },
+        {
+          "translation": "Tối thiểu thì ngày nào cũng phải đánh răng chứ."
+        },
+        {
+          "translation": "Ít nhất thì vấn đề này cũng phải giải quyết cho xong."
+        },
+        {
+          "translation": "Cô ấy khóc đến mức đó thì ít nhất mình cũng phải an ủi cô ấy chứ."
+        }
+      ]
+    },
+    "ja_こそ_13": {
+      "title": "～こそ (〜koso)",
+      "shortExplanation": "Trợ từ nhấn mạnh đối tượng, thời điểm hoặc lý do; 'chính là', 'nhất định (hôm nay...)', 'chính vì'.",
+      "longExplanation": "Trợ từ '～こそ' được dùng để nhấn mạnh dứt khoát một đối tượng, thời điểm, hành động hoặc lý do cụ thể, khẳng định đối tượng đó là tiêu biểu, đặc biệt hoặc phù hợp nhất, loại trừ các đối tượng khác. Trong giao tiếp thường dùng để đáp lễ lịch sự (như 'こちらこそ') hoặc biểu thị quyết tâm mạnh mẽ.",
+      "formation": "Danh từ + こそ / Động từ thể て + こそ",
+      "examples": [
+        {
+          "translation": "Chính hôm nay tôi nhất định phải học hành tử tế."
+        },
+        {
+          "translation": "Chính cậu mới thực sự là người bạn thân nhất của mình."
+        },
+        {
+          "translation": "Chẳng phải chính việc không có nhiều tiền lại là bí quyết của hạnh phúc hay sao?"
+        },
+        {
+          "translation": "Chính anh ấy mới đích thực có thể hát hay như một ca sĩ chuyên nghiệp."
+        }
+      ]
+    },
+    "ja_こと_14": {
+      "title": "～こと (〜koto)",
+      "shortExplanation": "Danh từ hóa động từ hoặc mệnh đề; 'việc...', 'chuyện...', 'cái việc...'.",
+      "longExplanation": "Mẫu '～こと' là hình thức danh từ hóa (danh từ trừu tượng hóa), đứng sau dạng thông thường của động từ để biến động từ hoặc một cụm vị ngữ thành một danh từ. Nhờ đó, hành động có thể đóng vai trò làm chủ ngữ, tân ngữ hoặc bổ ngữ trong câu, kết hợp với các trợ từ như が, は, を, に.",
+      "formation": "Động từ thể thông thường + こと",
+      "examples": [
+        {
+          "translation": "Tôi có thể nói được tiếng Nhật."
+        },
+        {
+          "translation": "Việc tập thể dục mỗi ngày rất tốt cho sức khỏe."
+        },
+        {
+          "translation": "Anh ấy rất thích việc chơi đàn piano."
+        },
+        {
+          "translation": "Tôi không muốn tốn thời gian vào việc xem phim."
+        }
+      ]
+    },
+    "ja_ことだ_15": {
+      "title": "～ことだ (〜koto da)",
+      "shortExplanation": "Dùng để đưa ra lời khuyên hoặc chỉ dẫn cần thiết; 'nên...', 'cần phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことだ' dùng khi người nói muốn đưa ra lời khuyên, gợi ý hoặc nhắc nhở đối phương về điều nên làm hoặc không nên làm trong một tình huống cụ thể (tương đương với 'nên...', 'tốt nhất là...'). Thường được dùng từ người có kinh nghiệm hoặc vị trí cao hơn khuyên người dưới, mang tính gián tiếp và chân thành.",
+      "formation": "Động từ thể từ điển / Động từ thể ない + ことだ",
+      "examples": [
+        {
+          "translation": "Cậu nên tập thể dục mỗi ngày."
+        },
+        {
+          "translation": "Vì sức khỏe, bạn nên ăn thật nhiều rau xanh."
+        },
+        {
+          "translation": "Khi học bài, tốt nhất là nên chọn một nơi yên tĩnh."
+        },
+        {
+          "translation": "Bạn nên tra từ điển để ghi nhớ từ mới."
+        }
+      ]
+    },
+    "ja_ことにしている_16": {
+      "title": "～ことにしている (〜koto ni shite iru)",
+      "shortExplanation": "Diễn tả thói quen hoặc quy tắc do bản thân tự đề ra; 'quyết định là luôn...', 'tạo thói quen...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことにしている' dùng để diễn đạt một thói quen, nếp sống hoặc quy tắc do chính người nói tự mình quyết định và kiên trì duy trì thực hiện đều đặn trong đời sống hàng ngày (nghĩa là 'tôi tạo thói quen làm gì' hoặc 'tôi giữ nguyên tắc không làm gì').",
+      "formation": "Động từ thể từ điển / Động từ thể ない + ことにしている",
+      "examples": [
+        {
+          "translation": "Tôi giữ thói quen tập thể dục mỗi ngày."
+        },
+        {
+          "translation": "Tôi đặt ra nguyên tắc là không làm việc quá khuya."
+        },
+        {
+          "translation": "Tôi luôn tạo thói quen đánh răng sau bữa ăn."
+        },
+        {
+          "translation": "Tôi luôn giữ thói quen đến trước giờ họp 10 phút."
+        }
+      ]
+    },
+    "ja_ことになっている_17": {
+      "title": "～ことになっている (〜koto ni natte iru)",
+      "shortExplanation": "Diễn tả quy định, tập quán hoặc kế hoạch đã được ấn định từ trước; 'theo quy định là...', 'được định sẵn là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことになっている' diễn tả các quy định, luật lệ, phong tục tập quán xã hội hoặc những kế hoạch, lịch trình đã được tổ chức hoặc người khác quyết định từ trước mà bản thân phải tuân theo. Khác với 'ことにしている' (do cá nhân tự quyết định), cấu trúc này nhấn mạnh tính khách quan của quy ước.",
+      "formation": "Động từ thể từ điển / Động từ thể ない + ことになっている",
+      "examples": [
+        {
+          "translation": "Ở công ty này, quy định là phải kết thúc công việc trước 20 giờ."
+        },
+        {
+          "translation": "Tại Nhật Bản, người từ đủ 18 tuổi trở lên được quyền bỏ phiếu trong các cuộc bầu cử theo luật định."
+        },
+        {
+          "translation": "Ở trường học, quy định là học sinh phải mặc đồng phục."
+        },
+        {
+          "translation": "Theo sắp xếp thì anh Tanaka sẽ đảm nhận vị trí trưởng dự án lần này."
+        }
+      ]
+    },
+    "ja_ことはが_18": {
+      "title": "～ことは…が (～koto wa... ga)",
+      "shortExplanation": "Thừa nhận một thực tế nhưng theo sau là ý kiến đối lập; 'thì... thật đấy nhưng...', 'tuy có... nhưng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことは…が' dùng để công nhận hoặc thừa nhận một sự thật, tính chất nào đó ở vế trước (thường lặp lại cùng một từ), nhưng ngay sau đó ở vế sau lại đưa ra một nhận xét trái ngược, một điểm hạn chế hoặc không hoàn toàn hài lòng ('đúng là... thật đấy nhưng mà...').",
+      "formation": "Động từ thể thường + ことは + Động từ + が / Tính từ đuôi い + ことは + Tính từ đuôi い + が / Tính từ đuôi な + なことは + Tính từ đuôi な + だが / Danh từ + であることは + Danh từ + だが",
+      "examples": [
+        {
+          "translation": "Bộ phim này hay thì có hay thật đấy, nhưng mà hơi dài quá."
+        },
+        {
+          "translation": "Anh ấy tốt bụng thì có tốt bụng thật, nhưng lại hơi ít nói."
+        },
+        {
+          "translation": "Trò chơi này khó thì đúng là khó thật, nhưng không tài nào dứt ra được."
+        },
+        {
+          "translation": "Cô ấy đẹp thì đúng là đẹp thật đấy, nhưng lại hơi kiêu ngạo."
+        }
+      ]
+    },
+    "ja_ことはない_19": {
+      "title": "～ことはない (〜koto wa nai)",
+      "shortExplanation": "Biểu thị việc gì đó là không cần thiết, không nhất thiết phải làm; 'không cần phải...', 'không việc gì phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことはない' kết hợp chủ yếu với động từ thể từ điển để diễn tả rằng không có lý do hoặc không cần thiết phải thực hiện một hành vi nào đó (tương đương với 'không cần thiết phải làm gì', 'không việc gì phải...'). Mẫu này thường mang tính khuyên nhủ hoặc trấn an đối phương.",
+      "formation": "Động từ thể từ điển + ことはない",
+      "examples": [
+        {
+          "translation": "Vì đã có tiền rồi nên không việc gì phải cố gượng ép tiết kiệm cả."
+        },
+        {
+          "translation": "Quyển sách này dễ nên không cần phải dùng đến từ điển đâu."
+        },
+        {
+          "translation": "Nếu cô ấy không muốn đi du lịch nước ngoài thì không việc gì phải đi."
+        },
+        {
+          "translation": "Nếu không lạnh thì không cần thiết phải mặc áo khoác đâu."
+        }
+      ]
+    },
+    "ja_さ_20": {
+      "title": "～さ (〜sa)",
+      "shortExplanation": "Hậu tố biến đổi tính từ thành danh từ chỉ mức độ hoặc tính chất; 'độ...', 'sự...'.",
+      "longExplanation": "Hậu tố '～さ' được gắn vào sau thân từ của tính từ đuôi い (bỏ い) hoặc tính từ đuôi な để biến chúng thành danh từ trừu tượng biểu thị mức độ, độ lớn hoặc tính chất khách quan có thể đo đếm, so sánh được (như độ cao, độ dài, độ khó, sự tử tế...).",
+      "formation": "Tính từ đuôi い (bỏ い) + さ / Tính từ đuôi な + さ",
+      "examples": [
+        {
+          "translation": "Món ăn này có độ cay rất nồng."
+        },
+        {
+          "translation": "Vẻ đẹp của cô ấy được mọi người hết lời ngưỡng mộ."
+        },
+        {
+          "translation": "Nhờ sự tốt bụng của anh Yamada mà những người gặp khó khăn đã được giúp đỡ."
+        },
+        {
+          "translation": "Tôi nghĩ độ rộng rãi của căn phòng này là hoàn toàn vừa đủ."
+        }
+      ]
+    },
+    "ja_さえ_21": {
+      "title": "～さえ (～sae)",
+      "shortExplanation": "Đưa ra ví dụ cực đoan ('ngay cả...', 'thậm chí...') hoặc điều kiện tối thiểu duy nhất ('chỉ cần... là đủ').",
+      "longExplanation": "Trợ từ '～さえ' có hai công dụng nổi bật: một là đưa ra một ví dụ mang tính cực đoan hoặc tối thiểu để ngụ ý những trường hợp thông thường khác là hiển nhiên ('thậm chí...', 'ngay cả... cũng'); hai là kết hợp với thể giả định (～さえ～ば) để biểu thị điều kiện tiên quyết tối thiểu duy nhất, có nghĩa là 'chỉ cần... là được/đủ'.",
+      "formation": "Danh từ + さえ / Tính từ đuôi な + でさえ / Danh từ + さえ + Động từ thể giả định (～ば)",
+      "examples": [
+        {
+          "translation": "Chỉ cần có tiền là tôi có thể đi du lịch khắp thế giới."
+        },
+        {
+          "translation": "Anh ấy chỉ cần nói được tiếng Anh là có thể làm được công việc đó rồi."
+        },
+        {
+          "translation": "Cô ấy không những thông minh mà còn chơi thể thao rất giỏi. Thậm chí cô ấy còn chơi được cả quần vợt nữa."
+        },
+        {
+          "translation": "Tôi thích đọc sách ở nơi sáng sủa. Thậm chí không cần bật đèn phòng cũng không sao."
+        }
+      ]
+    },
+    "ja_しかない_22": {
+      "title": "～しかない (〜shika nai)",
+      "shortExplanation": "Diễn tả không còn lựa chọn nào khác ngoài cách này; 'chỉ còn cách...', 'chỉ có... mà thôi'.",
+      "longExplanation": "Mẫu ngữ pháp '～しかない' dùng để nhấn mạnh rằng hoàn toàn không có sự lựa chọn, phương pháp hoặc con đường nào khác, bắt buộc chủ ngữ chỉ có thể làm hành động đó hoặc chỉ còn duy nhất một trạng thái đó (tương đương với 'chỉ còn cách...', 'đành phải...', 'chỉ có... mà thôi').",
+      "formation": "Động từ thể từ điển + しかない / Danh từ + しかない",
+      "examples": [
+        {
+          "translation": "Phương pháp để giải quyết vấn đề này chỉ có duy nhất một cách."
+        },
+        {
+          "translation": "Nếu anh ấy bỏ đi thì tôi chỉ còn nước khóc mà thôi."
+        },
+        {
+          "translation": "Cô ấy chỉ còn vỏn vẹn một tháng nữa thôi."
+        },
+        {
+          "translation": "Tôi chẳng còn lựa chọn nào khác ngoài việc tin tưởng vào cậu."
+        }
+      ]
+    },
+    "ja_すこしもない_23": {
+      "title": "すこしも〜ない (sukoshimo~nai)",
+      "shortExplanation": "Đi kèm với vị ngữ phủ định để biểu thị sự phủ định hoàn toàn; 'hoàn toàn không... chút nào', 'một chút cũng không...'.",
+      "longExplanation": "Phó từ 'すこしも' (hoặc '少しも') luôn đi kèm với các vị ngữ ở dạng phủ định (động từ hoặc tính từ phủ định) để nhấn mạnh sự phủ định triệt để, có nghĩa là 'hoàn toàn không...', 'thậm chí một chút cũng không...'. Mẫu câu này dùng để khẳng định chắc nịch rằng trạng thái hoặc sự việc đó hoàn toàn không hề tồn tại.",
+      "formation": "すこしも + Động từ thể phủ định (～ない / ～ません) / すこしも + Tính từ đuôi い (bỏ い) + くない / すこしも + Tính từ đuôi な / Danh từ + ではない",
+      "examples": [
+        {
+          "translation": "Anh ấy trông chẳng có vẻ gì là đau buồn chút nào cả."
+        },
+        {
+          "translation": "Căn phòng này chẳng lạnh một chút nào cả."
+        },
+        {
+          "translation": "Cô ấy hoàn toàn chẳng lo lắng một chút nào."
+        },
+        {
+          "translation": "Nói chuyện với người hoàn toàn không quen biết thật là đáng sợ."
+        }
+      ]
+    },
+    "ja_ずに_24": {
+      "title": "～ずに (〜zu ni)",
+      "shortExplanation": "Diễn tả việc thực hiện một hành động mà không làm một hành động khác; 'mà không...', 'không... mà lại...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ずに' (với 'ずに' gắn vào thân phủ định của động từ, tức thể ない bỏ ない; riêng động từ 'する' chuyển thành 'せずに') dùng để diễn tả việc thực hiện một hành động trong trạng thái không làm một hành động khác đi kèm. Mang ý nghĩa tương tự như '～ないで', nhưng '～ずに' có tính chất văn viết, trang trọng hơn.",
+      "formation": "Động từ thể ない (bỏ ない) + ずに (lưu ý: する chuyển thành せずに)",
+      "examples": [
+        {
+          "translation": "Anh ấy chăm chú lắng nghe câu chuyện mà không hề cười."
+        },
+        {
+          "translation": "Đi ngủ mà không ăn uống gì là không tốt cho sức khỏe đâu."
+        },
+        {
+          "translation": "Tôi đã bắt đầu làm việc mà không uống cà phê."
+        },
+        {
+          "translation": "Tôi đã ra ngoài mà không hề nói với ai."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_くせに_10": {
+      "title": "～くせに (〜kuse ni)",
+      "shortExplanation": "表示责难、不满或讽刺；'明明……却……'、'虽然……可是偏偏……'。",
+      "longExplanation": "句型'～くせに'用于表达说话者的责备、蔑视或强烈不满的语气，表示后项事实与前项本应具备的状态或身份截然相反。通常用于指责第二人称或第三人称，不可用于自身，带有明显的感情色彩和贬义倾向。",
+      "formation": "动词普通形 + くせに / い形容词 + くせに / な形容词 + なくせに / 名词 + のくせに",
+      "examples": [
+        {
+          "translation": "他明明很有钱，却非常小气。"
+        },
+        {
+          "translation": "这房间明明这么脏，你还有脸抱怨。"
+        },
+        {
+          "translation": "他明明很闲，却不肯帮我。"
+        },
+        {
+          "translation": "她长得明明很漂亮，约会却总是维持不下去。"
+        }
+      ]
+    },
+    "ja_くらい_11": {
+      "title": "～くらい (〜kurai)",
+      "shortExplanation": "表示大概的数量或程度；'大约'、'左右'、'到了……的程度'。",
+      "longExplanation": "句型'～くらい'（或'～ぐらい'）主要有两种用法：一是接在数量词或名词后，表示大概的数量、时间或程度，相当于'大约……'、'……左右'；二是接在动词或形容词后，表示程度之深，相当于'到了……的程度'、'甚至……'。",
+      "formation": "动词普通形 + くらい / い形容词 + くらい / な形容词 + なくらい / 名词 + くらい",
+      "examples": [
+        {
+          "translation": "我们等大约10分钟吧。"
+        },
+        {
+          "translation": "那部电影她看了大约5次。"
+        },
+        {
+          "translation": "那本书难到了让人觉得很有趣的程度。"
+        },
+        {
+          "translation": "这个房间宽敞得令人赏心悦目。"
+        }
+      ]
+    },
+    "ja_くらいはない_12": {
+      "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
+      "shortExplanation": "强调最起码的要求或最低限度的底线；'至少也得……'、'起码……'。",
+      "longExplanation": "句型'～くらい～は～ない'（常以'～くらいは～ない / ～ないと'的形式出现）用于强调在某种情境下最起码应该做到的底线或最低期望。表达'就算其他做不到，至少这件事情总得完成'的语气。",
+      "formation": "名词 / 动词普通形 + くらい + は + 动词否定形（～ない / ～ないと） / 形容词 + くらい + は + 形容词否定形",
+      "examples": [
+        {
+          "translation": "至少每周也得去一次健身房啊。"
+        },
+        {
+          "translation": "起码每天都得刷牙吧。"
+        },
+        {
+          "translation": "至少这个问题必须得解决掉。"
+        },
+        {
+          "translation": "她都哭成那样了，起码也得去安慰一下才行。"
+        }
+      ]
+    },
+    "ja_こそ_13": {
+      "title": "～こそ (〜koso)",
+      "shortExplanation": "强调特定的人、事物或时间；'正是'、'唯有'、'偏偏（今天）'。",
+      "longExplanation": "提示助词'～こそ'用于强烈强调特定的人物、事物、时间或理由，带有排他性，强调'除了这个之外没有别的'或'唯有此者才相称'。在日常会话中常用于郑重表达决心，或用于寒暄回礼（如'こちらこそ'）。",
+      "formation": "名词 + こそ / 动词て形 + こそ",
+      "examples": [
+        {
+          "translation": "今天我无论如何一定要好好学习。"
+        },
+        {
+          "translation": "你才真正是我最好的朋友。"
+        },
+        {
+          "translation": "没有钱这件事本身，不正是幸福的秘诀吗？"
+        },
+        {
+          "translation": "正是他，才能唱得宛如真正的专业歌手一般。"
+        }
+      ]
+    },
+    "ja_こと_14": {
+      "title": "～こと (〜koto)",
+      "shortExplanation": "将动词或小句形式名词化；'……这件事'、'……（的行为）'。",
+      "longExplanation": "形式名词'～こと'接在动词普通形之后，用于将动词或动词短语转化为抽象的名词概念，使之能够在句子中充当主语、宾语或补语，与助词'が'、'は'、'を'、'に'等自由结合，表示行为、事实或概念。",
+      "formation": "动词普通形 + こと",
+      "examples": [
+        {
+          "translation": "我能够讲日语。"
+        },
+        {
+          "translation": "每天运动对身体健康很有益处。"
+        },
+        {
+          "translation": "他非常喜欢弹钢琴。"
+        },
+        {
+          "translation": "我不想把时间花费在看电影上。"
+        }
+      ]
+    },
+    "ja_ことだ_15": {
+      "title": "～ことだ (〜koto da)",
+      "shortExplanation": "用于提出忠告、建议或嘱咐；'应该……'、'最好……'、'必须……'。",
+      "longExplanation": "句型'～ことだ'接在动词辞书形或ない形之后，用于向对方提出直接或中肯的建议、劝告，表达'在这种情况最好这样做'或'千万不要这样做'的含义。通常带有长辈或有经验者向晚辈传授经验、忠告的语感。",
+      "formation": "动词辞书形 / 动词ない形 + ことだ",
+      "examples": [
+        {
+          "translation": "应该每天坚持做运动。"
+        },
+        {
+          "translation": "为了健康，应该多吃蔬菜。"
+        },
+        {
+          "translation": "学习的时候，最好选择安静的场所。"
+        },
+        {
+          "translation": "应该多查字典来牢记新单词。"
+        }
+      ]
+    },
+    "ja_ことにしている_16": {
+      "title": "～ことにしている (〜koto ni shite iru)",
+      "shortExplanation": "表示说话人自己定下的习惯或日常坚持的准则；'一直坚持……'、'定好习惯……'。",
+      "longExplanation": "句型'～ことにしている'接在动词辞书形或ない形之后，用于表示由说话人自身的主观意志所决定的习惯、日常规律或个人行为准则，相当于'我规定自己一直……'或'我习惯……'。强调这种习惯是由自己的决心并持续付诸行动的。",
+      "formation": "动词辞书形 / 动词ない形 + ことにしている",
+      "examples": [
+        {
+          "translation": "我坚持每天都做运动。"
+        },
+        {
+          "translation": "我定下规矩，决不工作到深夜。"
+        },
+        {
+          "translation": "我习惯饭后一定刷牙。"
+        },
+        {
+          "translation": "我总是坚持开会提前10分钟到达。"
+        }
+      ]
+    },
+    "ja_ことになっている_17": {
+      "title": "～ことになっている (〜koto ni natte iru)",
+      "shortExplanation": "表示规则、社会风俗或既定的预定与安排；'规定……'、'预定……'、'按规定要……'。",
+      "longExplanation": "句型'～ことになっている'接在动词辞书形或ない形之后，用于表达团体组织制定的规章制度、法律法规、社会公认的习俗惯例，或是已确定好的日程计划。与强调个人决定的'～ことにしている'不同，该句型强调客观的规定或外部安排。",
+      "formation": "动词辞书形 / 动词ない形 + ことになっている",
+      "examples": [
+        {
+          "translation": "在这家公司，规定晚上8点必须结束工作。"
+        },
+        {
+          "translation": "在日本，年满18岁以上的人按规定享有选举投票权。"
+        },
+        {
+          "translation": "学校规定学生必须穿校服。"
+        },
+        {
+          "translation": "按计划预定由田中先生担任这次的项目负责人。"
+        }
+      ]
+    },
+    "ja_ことはが_18": {
+      "title": "～ことは…が (～koto wa... ga)",
+      "shortExplanation": "承认前项事实，但后项紧接着提出转折或消极评价；'……倒是……，可是……'。",
+      "longExplanation": "句型'～ことは…が'通常重复同一个词，用于首先肯定或承认前半句提到的事实或特点，随后在后半句提出与之相对立的看法、保留意见或某些不足之处，相当于汉语的'……倒是……，不过……'、'好是好，可是……'。",
+      "formation": "动词普通形 + ことは + 动词 + が / い形容词 + ことは + い形容词 + が / な形容词 + なことは + な形容词 + だが / 名词 + であることは + 名词 + だが",
+      "examples": [
+        {
+          "translation": "这部电影有趣倒是有趣，但稍微有点太长了。"
+        },
+        {
+          "translation": "他人好倒是挺好，不过话有点少。"
+        },
+        {
+          "translation": "这个游戏难确实是难，但就是停不下来。"
+        },
+        {
+          "translation": "她漂亮倒是漂亮，就是有点高傲自负。"
+        }
+      ]
+    },
+    "ja_ことはない_19": {
+      "title": "～ことはない (〜koto wa nai)",
+      "shortExplanation": "表示没有必要做某事；'用不着……'、'没有必要……'、'不必……'。",
+      "longExplanation": "句型'～ことはない'主要接在动词辞书形之后，用于表示某项行为并没有进行的必要性，相当于汉语的'用不着……'、'不必……'。常用于安慰他人、打消顾虑或提出放轻松的建议。",
+      "formation": "动词辞书形 + ことはない",
+      "examples": [
+        {
+          "translation": "既然有钱，就没必要勉强自己去存钱。"
+        },
+        {
+          "translation": "这本书很简单，用不着查词典。"
+        },
+        {
+          "translation": "她要是并不想去海外旅行，就不必勉强去。"
+        },
+        {
+          "translation": "要是不冷的话，就没必要穿大衣。"
+        }
+      ]
+    },
+    "ja_さ_20": {
+      "title": "～さ (〜sa)",
+      "shortExplanation": "接在形容词后构成表示程度、性质的名词；'……度'、'……的程度'、'……感'。",
+      "longExplanation": "接尾词'～さ'接在い形容词词干（去掉词尾い）或な形容词词干之后，将形容词名词化，用于客观地表示某种性质、状态的程度或分量。常常用来指代可以衡量或客观感受到的属性（如高度、长度、深度、辣度等）。",
+      "formation": "い形容词词干（去掉い） + さ / な形容词词干 + さ",
+      "examples": [
+        {
+          "translation": "这道菜辣度很强。"
+        },
+        {
+          "translation": "她的美丽令所有人倾慕不已。"
+        },
+        {
+          "translation": "山田先生凭借他的热心善良，帮助了许多身处困境的人。"
+        },
+        {
+          "translation": "我认为这个房间的宽敞度已经足够了。"
+        }
+      ]
+    },
+    "ja_さえ_21": {
+      "title": "～さえ (～sae)",
+      "shortExplanation": "提出极端事例表示'甚至连……也……'，或表示最低限度的充要条件'只要……就……'。",
+      "longExplanation": "提示助词'～さえ'主要有两个核心用法：一是举出一个极端的或显而易见的事例，以此类推其他更不用多说，相当于汉语的'连……都/也……'、'甚至……'；二是与假定形呼应构成'～さえ～ば'，表示只要满足了这个最起码的条件，其他都不是问题，相当于'只要……就……'。",
+      "formation": "名词 + さえ / な形容词 + でさえ / 名词 + さえ + 动词假定形（～ば）",
+      "examples": [
+        {
+          "translation": "只要有钱，就能周游全世界。"
+        },
+        {
+          "translation": "他只要会说英语，大概就能胜任那份工作吧。"
+        },
+        {
+          "translation": "她不仅聪明，运动也很在行。甚至连网球都会打。"
+        },
+        {
+          "translation": "我喜欢在明亮的地方看书。甚至连房间的电灯都不用开也没事。"
+        }
+      ]
+    },
+    "ja_しかない_22": {
+      "title": "～しかない (〜shika nai)",
+      "shortExplanation": "表示别无选择，唯有如此；'只能……'、'只得……'、'只有……'。",
+      "longExplanation": "句型'～しかない'接在动词辞书形或名词之后，用于强烈强调除此以外没有其他的选择、方法或退路，只能采取前述的行动或处于该状态，相当于汉语的'只能……'、'只有……'、'别无他法，唯有……'。",
+      "formation": "动词辞书形 + しかない / 名词 + しかない",
+      "examples": [
+        {
+          "translation": "解决这个问题的方法只有一个。"
+        },
+        {
+          "translation": "要是他走掉了，我就只能哭了。"
+        },
+        {
+          "translation": "她只剩下最后这一个月了。"
+        },
+        {
+          "translation": "我除了相信你之外，已经别无选择了。"
+        }
+      ]
+    },
+    "ja_すこしもない_23": {
+      "title": "すこしも〜ない (sukoshimo~nai)",
+      "shortExplanation": "与否定谓语呼应，表示彻底的全盘否定；'一点也不……'、'丝毫没有……'。",
+      "longExplanation": "副词'すこしも'（通常写作'少しも'）必须与否定形式的谓语（动词否定形或形容词否定形）搭配使用，用于极其强烈地否定某种状态或动作的存在，相当于汉语的'一点儿也不……'、'丝毫未曾……'。",
+      "formation": "すこしも + 动词否定形（～ない / ～ません） / すこしも + い形容词词尾变く + ない / すこしも + な形容词 / 名词 + ではない",
+      "examples": [
+        {
+          "translation": "他看起来一点也不伤心。"
+        },
+        {
+          "translation": "这个房间一点儿也不冷。"
+        },
+        {
+          "translation": "她丝毫没有担心。"
+        },
+        {
+          "translation": "和完全不认识的人说话让人感到害怕。"
+        }
+      ]
+    },
+    "ja_ずに_24": {
+      "title": "～ずに (〜zu ni)",
+      "shortExplanation": "表示在不做前项动作的情况下进行后项动作；'不……就……'、'没有做……而……'。",
+      "longExplanation": "句型'～ずに'接在动词ない形词干（去掉ない）之后，其中'する'变为'せずに'，表示伴随状态，即在不进行前项动作的情况下进行后项动作。用法与口语中的'～ないで'基本相同，但'～ずに'书面语色彩更浓厚，语气更为郑重。",
+      "formation": "动词ない形（去掉ない） + ずに（特殊变化：する -> せずに）",
+      "examples": [
+        {
+          "translation": "他没笑，一直静静地听着故事。"
+        },
+        {
+          "translation": "不吃东西就睡觉对身体不好。"
+        },
+        {
+          "translation": "我没喝咖啡就直接开始工作了。"
+        },
+        {
+          "translation": "我没有告诉任何人就出门了。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_くせに_10": {
+      "title": "～くせに (〜kuse ni)",
+      "shortExplanation": "비난이나 불만, 비꼼을 나타내며, '~주제에', '~이면서(도)'라는 뜻입니다.",
+      "longExplanation": "'～くせに' 문형은 앞의 상태나 신분, 조건에 어울리지 않는 행동이나 태도에 대해 말하는 사람의 비난, 불만, 얕봄의 감정을 나타낼 때 사용합니다. '분명히 ~하면서도', '~주제에'라는 뉘앙스로, 주로 상대방이나 제3자를 힐책할 때 쓰이며 자기 자신에게는 쓰지 않습니다.",
+      "formation": "동사 보통형 + くせに / い형용사 + くせに / な형용사 + なくせに / 명사 + のくせに",
+      "examples": [
+        {
+          "translation": "그는 부자이면서 구두쇠입니다."
+        },
+        {
+          "translation": "이 방이 더러운 주제에 불평하지 마라."
+        },
+        {
+          "translation": "그는 한가한 주제에 도와주지 않습니다."
+        },
+        {
+          "translation": "그녀는 미인인데도 데이트가 오래가지 않는다."
+        }
+      ]
+    },
+    "ja_くらい_11": {
+      "title": "～くらい (〜kurai)",
+      "shortExplanation": "대략적인 수량이나 정도를 나타내며, '~정도', '~쯤', '~할 정도로'라는 뜻입니다.",
+      "longExplanation": "'～くらい'(또는 '～ぐらい') 문형은 주로 두 가지 용법으로 쓰입니다. 첫째는 수량이나 시간 뒤에 붙어 대략적인 양이나 시간을 어림잡아 나타내는 용법('약 ~정도', '~쯤')이며, 둘째는 상태나 동작의 극심한 정도를 비유적으로 나타내는 용법('~할 만큼', '~할 정도로')입니다.",
+      "formation": "동사 보통형 + くらい / い형용사 + くらい / な형용사 + なくらい / 명사 + くらい",
+      "examples": [
+        {
+          "translation": "10분 정도 기다립시다."
+        },
+        {
+          "translation": "그녀는 그 영화를 5번 정도 보았습니다."
+        },
+        {
+          "translation": "그 책은 흥미로울 정도로 어렵습니다."
+        },
+        {
+          "translation": "이 방은 감탄이 나올 정도로 넓습니다."
+        }
+      ]
+    },
+    "ja_くらいはない_12": {
+      "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
+      "shortExplanation": "최소한의 요구치나 당연한 기준을 강조하며, '적어도 ~정도는 ~해야 한다'라는 뜻입니다.",
+      "longExplanation": "'～くらい～は～ない'(흔히 '～くらいは～ない / ～ないと' 형태로 쓰임) 문형은 어떤 상황에서 지켜야 할 최소한의 기대치나 당연히 해야 할 하한선을 강조할 때 쓰입니다. '다른 것은 몰라도 적어도 이것만큼은 반드시 해야 한다'라는 뉘앙스를 나타냅니다.",
+      "formation": "명사 / 동사 보통형 + くらい + は + 동사 부정형(～ない / ～ないと) / 형용사 + くらい + は + 형용사 부정형",
+      "examples": [
+        {
+          "translation": "적어도 일주일에 한 번은 헬스장에 가야지."
+        },
+        {
+          "translation": "최소한 매일 양치질 정도는 해야지."
+        },
+        {
+          "translation": "적어도 이 문제만큼은 해결해야 한다."
+        },
+        {
+          "translation": "그녀가 울고 있을 정도라면 적어도 위로는 해 줘야지."
+        }
+      ]
+    },
+    "ja_こそ_13": {
+      "title": "～こそ (〜koso)",
+      "shortExplanation": "특정 대상이나 시기, 이유를 강하게 강조하며, '이야말로', '야말로', '정말로'라는 뜻입니다.",
+      "longExplanation": "강조 조동사적 조사 '～こそ'는 특정 인물, 사물, 시기 또는 조건을 강하게 지목하여 강조할 때 쓰입니다. '다른 것이 아니라 바로 이것'이라는 배타적 강조나 강한 결심을 나타내며, 인사말에 대한 정중한 화답('こちらこそ: 저야말로')이나 조건의 강조에도 널리 쓰입니다.",
+      "formation": "명사 + こそ / 동사 て형 + こそ",
+      "examples": [
+        {
+          "translation": "오늘이야말로 반드시 공부해야 합니다."
+        },
+        {
+          "translation": "당신이야말로 저의 가장 소중한 친구입니다."
+        },
+        {
+          "translation": "돈이 없다는 것 자체가 바로 행복의 비결이 아닐까?"
+        },
+        {
+          "translation": "그 사람이야말로 그야말로 프로 가수처럼 노래할 수 있다."
+        }
+      ]
+    },
+    "ja_こと_14": {
+      "title": "～こと (〜koto)",
+      "shortExplanation": "동사나 절을 명사화하며, '~하는 것', '~하기'라는 뜻입니다.",
+      "longExplanation": "형식명사 '～こと'는 동사의 보통형 뒤에 붙어 동사구나 절 전체를 추상 명사화하는 문법 표현입니다. 이를 통해 어떤 동작이나 행위를 문장의 주어, 목적어, 보어로 활용할 수 있게 하며, 'が', 'は', 'を', 'に' 등의 격조사와 자연스럽게 결합합니다.",
+      "formation": "동사 보통형 + こと",
+      "examples": [
+        {
+          "translation": "일본어를 말할 수 있습니다."
+        },
+        {
+          "translation": "매일 운동하는 것은 건강에 좋습니다."
+        },
+        {
+          "translation": "그는 피아노 치는 것을 아주 좋아합니다."
+        },
+        {
+          "translation": "영화 보는 데에 시간을 쓰고 싶지 않다."
+        }
+      ]
+    },
+    "ja_ことだ_15": {
+      "title": "～ことだ (〜koto da)",
+      "shortExplanation": "조언이나 권고, 충고를 나타내며, '~해야 한다', '~하는 것이 좋다'라는 뜻입니다.",
+      "longExplanation": "'～ことだ' 문형은 동사의 사전형(기본형)이나 ない형에 접속하여, 특정 상황에서 상대방이 취해야 할 가장 바람직한 행동이나 조언을 전달할 때 사용합니다. '그렇게 하는 것이 상책이다', '~하는 것이 좋다'라는 뉘앙스로, 경험자가 상대방에게 부드럽게 충고할 때 자주 쓰입니다.",
+      "formation": "동사 사전형 / 동사 ない형 + ことだ",
+      "examples": [
+        {
+          "translation": "매일 운동을 할 일이다(운동을 하는 것이 좋다)."
+        },
+        {
+          "translation": "건강을 위해 채소를 많이 먹어야 합니다."
+        },
+        {
+          "translation": "공부할 때는 조용한 장소를 선택하는 것이 좋습니다."
+        },
+        {
+          "translation": "사전을 사용하여 새로운 단어를 외우는 것이 좋습니다."
+        }
+      ]
+    },
+    "ja_ことにしている_16": {
+      "title": "～ことにしている (〜koto ni shite iru)",
+      "shortExplanation": "스스로 정한 규칙이나 습관을 나타내며, '~하기로 하고 있다', '~하는 습관을 들이고 있다'라는 뜻입니다.",
+      "longExplanation": "'～ことにしている' 문형은 화자 자신의 능동적인 결정이나 의지로 정한 생활 습관, 개인적인 규칙을 계속해서 지켜나가고 있음을 나타냅니다. '항상 ~하기로 마음먹고 실천하고 있다'라는 지속적인 실천의 뉘앙스를 담고 있습니다.",
+      "formation": "동사 사전형 / 동사 ない형 + ことにしている",
+      "examples": [
+        {
+          "translation": "매일 운동을 하기로 하고 있습니다."
+        },
+        {
+          "translation": "밤늦게까지는 일하지 않기로 하고 있습니다."
+        },
+        {
+          "translation": "식사 후에는 양치질을 하기로 하고 있습니다."
+        },
+        {
+          "translation": "회의에는 반드시 10분 전에 도착하기로 하고 있습니다."
+        }
+      ]
+    },
+    "ja_ことになっている_17": {
+      "title": "～ことになっている (〜koto ni natte iru)",
+      "shortExplanation": "단체의 규칙이나 예정, 사회적 관습을 나타내며, '~하기로 되어 있다', '~하는 규칙이다'라는 뜻입니다.",
+      "longExplanation": "'～ことになっている' 문형은 동사의 사전형(기본형)이나 ない형에 결합하여, 개인의 주관적 의지가 아닌 외부 조직의 규칙, 법률, 사회적 규범, 또는 이미 결정된 예정이나 합의 사항을 객관적으로 서술할 때 쓰입니다.",
+      "formation": "동사 사전형 / 동사 ない형 + ことになっている",
+      "examples": [
+        {
+          "translation": "이 회사에서는 20시에는 업무를 끝내기로 정해져 있습니다."
+        },
+        {
+          "translation": "일본에서는 18세 이상의 사람이 선거에 투표하기로 되어 있습니다."
+        },
+        {
+          "translation": "학교에서는 교복을 입기로 되어 있습니다."
+        },
+        {
+          "translation": "다나카 씨가 이번 프로젝트의 리더를 맡기로 되어 있습니다."
+        }
+      ]
+    },
+    "ja_ことはが_18": {
+      "title": "～ことは…が (～koto wa... ga)",
+      "shortExplanation": "일단 사실을 인정하지만 그에 반하는 평가나 단점을 덧붙이며, '~하기는 하지만', '~하긴 한데'라는 뜻입니다.",
+      "longExplanation": "'～ことは…が' 문형은 동일한 단어를 반복하여 앞의 사실이나 장점을 일단 긍정하여 인정하면서도, 뒤이어 그에 상반되는 반대 의견, 불만족스러운 점, 또는 예외적인 상황을 단서로 덧붙일 때 쓰입니다. 한국어의 '~하기는 하지만 ~하다'에 대응합니다.",
+      "formation": "동사 보통형 + ことは + 동사 + が / い형용사 + ことは + い형용사 + が / な형용사 + なことは + な형용사 + だが / 명사 + であることは + 명사 + だが",
+      "examples": [
+        {
+          "translation": "이 영화는 재미있기는 재미있지만, 조금 너무 길다."
+        },
+        {
+          "translation": "그는 친절하기는 친절하지만, 말이 좀 적다."
+        },
+        {
+          "translation": "이 게임은 어렵기는 어렵지만, 그만둘 수가 없다."
+        },
+        {
+          "translation": "그녀는 아름답기는 아름답지만, 약간 거만하다."
+        }
+      ]
+    },
+    "ja_ことはない_19": {
+      "title": "～ことはない (〜koto wa nai)",
+      "shortExplanation": "어떤 행동을 할 필요가 없음을 나타내며, '~할 필요는 없다', '~하지 않아도 된다'라는 뜻입니다.",
+      "longExplanation": "'～ことはない' 문형은 주로 동사의 사전형(기본형) 뒤에 접속하여, 어떤 일을 굳이 행할 필요성이나 이유가 없음을 나타냅니다. 상대방을 안심시키거나 위로하며 '무리해서 ~할 필요 없다'라는 조언을 건넬 때 자주 쓰입니다.",
+      "formation": "동사 사전형 + ことはない",
+      "examples": [
+        {
+          "translation": "돈이 있으니 억지로 저축할 필요는 없다."
+        },
+        {
+          "translation": "이 책은 간단하니까 사전을 찾아볼 필요는 없다."
+        },
+        {
+          "translation": "그녀는 해외여행에 가고 싶지 않다면 갈 필요가 없다."
+        },
+        {
+          "translation": "춥지 않다면 코트를 입을 필요는 없다."
+        }
+      ]
+    },
+    "ja_さ_20": {
+      "title": "～さ (〜sa)",
+      "shortExplanation": "형용사를 명사화하여 객관적인 정도나 상태를 나타내며, '~함', '~기', '~도'라는 뜻입니다.",
+      "longExplanation": "접미사 '～さ'는 い형용사의 어미 'い'를 탈락시킨 어간 또는 な형용사의 어간에 결합하여, 형용사를 객관적으로 측정하거나 비교할 수 있는 정도·성질을 나타내는 명사로 바꿉니다(예: 높이, 깊이, 밝기, 친절함 등).",
+      "formation": "い형용사 어간(い 탈락) + さ / な형용사 어간 + さ",
+      "examples": [
+        {
+          "translation": "이 요리는 매운맛(매운 정도)이 강하다."
+        },
+        {
+          "translation": "그녀의 아름다움은 모든 사람의 동경을 받는다."
+        },
+        {
+          "translation": "야마다 씨의 친절함 덕분에 곤란을 겪는 사람들을 도와준다."
+        },
+        {
+          "translation": "이 방의 넓이는 충분하다고 생각합니다."
+        }
+      ]
+    },
+    "ja_さえ_21": {
+      "title": "～さえ (～sae)",
+      "shortExplanation": "극단적인 예를 들어 '심지어 ~조차', 또는 최소한의 유일한 조건을 나타내어 '오직 ~만 (하면)'이라는 뜻입니다.",
+      "longExplanation": "제시 조동사적 조사 '～さえ'는 주로 두 가지 용법으로 쓰입니다. 첫째는 극단적인 사례를 들어 다른 것은 말할 것도 없음을 유추하게 하는 용법('~조차', '심지어 ~까지도')이며, 둘째는 가정형과 결합하여(～さえ～ば) 그것만 충족되면 다른 조건은 문제되지 않음을 나타내는 최소 필요조건의 용법('오직 ~만 ~하면')입니다.",
+      "formation": "명사 + さえ / な형용사 + でさえ / 명사 + さえ + 동사 가정형(～ば)",
+      "examples": [
+        {
+          "translation": "돈만 있으면 전 세계를 여행할 수 있다."
+        },
+        {
+          "translation": "그는 영어만 할 줄 안다면 그 일을 할 수 있을 것이다."
+        },
+        {
+          "translation": "그녀는 머리가 좋을 뿐만 아니라 운동도 잘한다. 심지어 테니스까지 칠 줄 안다."
+        },
+        {
+          "translation": "밝은 곳에서 책 읽는 것을 좋아한다. 방의 전등조차 켜지 않아도 괜찮다."
+        }
+      ]
+    },
+    "ja_しかない_22": {
+      "title": "～しかない (〜shika nai)",
+      "shortExplanation": "다른 선택지나 대안이 없음을 나타내며, '~할 수밖에 없다', '~밖에 없다'라는 뜻입니다.",
+      "longExplanation": "'～しかない' 문형은 동사의 사전형(기본형)이나 명사 뒤에 붙어, 다른 방법이나 가능성이 전혀 없어서 오직 그 행동을 취하거나 그 상태를 받아들일 수밖에 없음을 강조할 때 사용합니다. '어쩔 수 없이 ~할 뿐이다', '~외에는 없다'라는 체념이나 단호한 결단의 뉘앙스를 담습니다.",
+      "formation": "동사 사전형 + しかない / 명사 + しかない",
+      "examples": [
+        {
+          "translation": "이 문제를 해결할 방법은 하나밖에 없다."
+        },
+        {
+          "translation": "그가 나가 버린다면 울 수밖에 없다."
+        },
+        {
+          "translation": "그녀에게는 이제 한 달밖에 남지 않았다."
+        },
+        {
+          "translation": "나로서는 너를 믿을 수밖에 없어."
+        }
+      ]
+    },
+    "ja_すこしもない_23": {
+      "title": "すこしも〜ない (sukoshimo~nai)",
+      "shortExplanation": "부정 서술어와 호응하여 전면 부정을 나타내며, '조금도 ~않다', '전혀 ~하지 않다'라는 뜻입니다.",
+      "longExplanation": "부사 'すこしも'(조금도)는 반드시 부정형 서술어와 함께 쓰여, 동작이나 상태가 미량조차도 존재하지 않음을 강하게 나타내는 전면 부정 표현입니다. 한국어의 '조금도 ~하지 않다', '전혀 ~않다'에 해당합니다.",
+      "formation": "すこしも + 동사 부정형(～ない / ～ません) / すこしも + い형용사 어간 + くない / すこしも + な형용사 / 명사 + ではない",
+      "examples": [
+        {
+          "translation": "그는 조금도 슬퍼 보이지 않습니다."
+        },
+        {
+          "translation": "이 방은 조금도 춥지 않다."
+        },
+        {
+          "translation": "그녀는 조금도 걱정하고 있지 않다."
+        },
+        {
+          "translation": "전혀 모르는 사람과 이야기하는 것은 무섭다."
+        }
+      ]
+    },
+    "ja_ずに_24": {
+      "title": "～ずに (〜zu ni)",
+      "shortExplanation": "어떤 동작을 하지 않은 상태로 다른 행동을 함을 나타내며, '~하지 않고', '~하지 않은 채'라는 뜻입니다.",
+      "longExplanation": "'～ずに' 문형은 동사의 ない형 어간(ない 탈락)에 접속하며('する'는 'せずに'로 불규칙 변화), 앞의 동작을 생략하거나 하지 않은 부대상황 속에서 뒤의 동작을 행함을 나타냅니다. 회화체인 '～ないで'와 뜻이 같으나, '～ずに'는 보다 문어적이고 격식 있는 표현입니다.",
+      "formation": "동사 ない형 (ない 탈락) + ずに (예외: する -> せずに)",
+      "examples": [
+        {
+          "translation": "그는 웃지 않고 이야기를 듣고 있었습니다."
+        },
+        {
+          "translation": "먹지 않고 자는 것은 좋지 않습니다."
+        },
+        {
+          "translation": "커피를 마시지 않고 일을 시작했습니다."
+        },
+        {
+          "translation": "아무에게도 말하지 않고 외출했습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_くせに_10": {
+      "title": "～くせに (〜kuse ni)",
+      "shortExplanation": "相手に対する非難や不満、軽蔑の気持ちを表し、「〜のに」「〜のくせに」という意味を表します。",
+      "longExplanation": "「～くせに」は、前項の事実・状態から当然期待されることとは反対の行動をとることに対して、話し手が非難、不満、蔑みなどの否定的な感情を込めて述べる表現です。主に相手や第三者に対して用いられ、自分自身の行為には原則として使いません。",
+      "formation": "動詞普通形 ＋ くせに / い形容詞 ＋ くせに / な形容詞 ＋ なくせに / 名詞 ＋ のくせに",
+      "examples": [
+        {
+          "translation": "彼はお金持ちのくせに、ケチです。"
+        },
+        {
+          "translation": "この部屋が汚いくせに、文句を言うな。"
+        },
+        {
+          "translation": "彼は暇なくせに、手伝ってくれません。"
+        },
+        {
+          "translation": "彼女は美人なくせに、デートが続かない。"
+        }
+      ]
+    },
+    "ja_くらい_11": {
+      "title": "～くらい (〜kurai)",
+      "shortExplanation": "およその数量や時間、または状態・動作の程度を表し、「〜くらい」「〜ほど」「〜するほど」という意味を表します。",
+      "longExplanation": "「～くらい」（「～ぐらい」とも言う）は、数量詞などに接続しておよその数量や時間を示す用法（「約〜」「〜ほど」）と、動詞や形容詞などに接続してある状態や動作の程度・レベルを例示・比喩的に示す用法（「〜するほど」）があります。",
+      "formation": "動詞普通形 ＋ くらい / い形容詞 ＋ くらい / な形容詞 ＋ なくらい / 名詞 ＋ くらい",
+      "examples": [
+        {
+          "translation": "１０分くらい待ちましょう。"
+        },
+        {
+          "translation": "彼女はその映画を５回くらい見ました。"
+        },
+        {
+          "translation": "その本は面白いくらい難しいです。"
+        },
+        {
+          "translation": "この部屋はきれいなくらい広いです。"
+        }
+      ]
+    },
+    "ja_くらいはない_12": {
+      "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
+      "shortExplanation": "最低限の基準や義務を強調し、「せめて〜くらいは〜（ないといけない）」という意味を表します。",
+      "longExplanation": "「～くらい～は～ない」（会話では「～くらいは～ない／ないと」の形で頻出）は、ある状況において満たすべき最低限の条件や期待を強調する表現です。「他のことはともかく、せめてこれくらいはしなければならない」という最低限の要求・義務感を表します。",
+      "formation": "名詞 / 動詞普通形 ＋ くらい ＋ は ＋ 動詞否定形（～ない／～ないと） / 形容詞 ＋ くらい ＋ は ＋ 形容詞否定形",
+      "examples": [
+        {
+          "translation": "週に一度くらいはジムに行かないと。"
+        },
+        {
+          "translation": "毎日くらいは歯を磨かないと。"
+        },
+        {
+          "translation": "この問題くらいは解決しないと。"
+        },
+        {
+          "translation": "彼女が泣いているくらいなら慰めないと。"
+        }
+      ]
+    },
+    "ja_こそ_13": {
+      "title": "～こそ (〜koso)",
+      "shortExplanation": "特定の事柄や人物、時などを強く強調し、「まさに〜」「〜こそが」という意味を表します。",
+      "longExplanation": "「～こそ」は、取り立て助詞の一つで、他のものを排して特定の事物、人物、時、理由などを強く強調する文法表現です。話し手の強い確信や決意を表す場面のほか、「こちらこそ」などの挨拶の返答、また「〜てこそ」の形で必要不可欠な条件を示す際にもよく用いられます。",
+      "formation": "名詞 ＋ こそ / 動詞て形 ＋ こそ",
+      "examples": [
+        {
+          "translation": "今日こそ勉強しなければなりません。"
+        },
+        {
+          "translation": "あなたこそ私の一番の友達です。"
+        },
+        {
+          "translation": "お金がないことこそ幸せの秘訣ではないか。"
+        },
+        {
+          "translation": "彼こそまさにプロの歌手のように歌える。"
+        }
+      ]
+    },
+    "ja_こと_14": {
+      "title": "～こと (〜koto)",
+      "shortExplanation": "動詞や節を名詞化し、「〜すること」「〜という行為・事実」という意味を表します。",
+      "longExplanation": "形式名詞「こと」は、動詞の普通形に接続して動詞や述語節を抽象的な名詞句に変える働きをします。これにより、動作や行為そのものを文の主語、目的語、補語として扱うことが可能になり、助詞「が」「は」「を」「に」などと自由に結びつきます。",
+      "formation": "動詞普通形 ＋ こと",
+      "examples": [
+        {
+          "translation": "日本語を話すことができます。"
+        },
+        {
+          "translation": "毎日運動することは健康に良いです。"
+        },
+        {
+          "translation": "彼はピアノを弾くことが大好きです。"
+        },
+        {
+          "translation": "映画を見ることに時間を使いたくない。"
+        }
+      ]
+    },
+    "ja_ことだ_15": {
+      "title": "～ことだ (〜koto da)",
+      "shortExplanation": "相手に対する忠告や助言を表し、「〜するのがよい」「〜すべきだ」という意味を表します。",
+      "longExplanation": "「～ことだ」は、動詞の辞書形またはない形に接続し、その状況において相手が取るべき望ましい行動やアドバイスを述べる文法表現です。「〜することが大切だ」「〜するのが一番良い」というニュアンスを含み、目上の人や経験者が目下の人に助言する場面などで多く使われます。",
+      "formation": "動詞辞書形 / 動詞ない形 ＋ ことだ",
+      "examples": [
+        {
+          "translation": "毎日運動することだ。"
+        },
+        {
+          "translation": "健康のために、野菜をたくさん食べることだ。"
+        },
+        {
+          "translation": "勉強しているとき、静かな場所を選ぶことだ。"
+        },
+        {
+          "translation": "辞書を使って、新しい言葉を覚えることだ。"
+        }
+      ]
+    },
+    "ja_ことにしている_16": {
+      "title": "～ことにしている (〜koto ni shite iru)",
+      "shortExplanation": "自分の意志で決めた習慣や規則を表し、「いつも〜することに決めている」「〜するようにしている」という意味を表します。",
+      "longExplanation": "「～ことにしている」は、動詞の辞書形またはない形に接続し、話し手自身の自発的な意志や決意によって定めた習慣、生活上のルール、または意識的に続けている行動を表します。「習慣として〜することを自分に課している」というニュアンスを含みます。",
+      "formation": "動詞辞書形 / 動詞ない形 ＋ ことにしている",
+      "examples": [
+        {
+          "translation": "毎日運動することにしている。"
+        },
+        {
+          "translation": "夜遅くまで働かないことにしている。"
+        },
+        {
+          "translation": "食事の後、歯を磨くことにしている。"
+        },
+        {
+          "translation": "会議には必ず10分前に着くことにしている。"
+        }
+      ]
+    },
+    "ja_ことになっている_17": {
+      "title": "～ことになっている (〜koto ni natte iru)",
+      "shortExplanation": "組織の規則や法律、社会的な慣習、または決定された予定を表し、「〜という決まりになっている」「〜する予定だ」という意味を表します。",
+      "longExplanation": "「～ことになっている」は、個人の意志ではなく、組織の規則、法律、社会通念、契約、または他者との間で取り決められた客観的な予定や慣習を表す文法表現です。「個人の意志による習慣」を表す「〜ことにしている」と対比してよく用いられます。",
+      "formation": "動詞辞書形 / 動詞ない形 ＋ ことになっている",
+      "examples": [
+        {
+          "translation": "この会社では、20時には仕事を終えることになっている。"
+        },
+        {
+          "translation": "日本では、18歳以上の人が選挙に投票することになっている。"
+        },
+        {
+          "translation": "学校では、制服を着ることになっている。"
+        },
+        {
+          "translation": "田中さんが今回のプロジェクトリーダーになることになっている。"
+        }
+      ]
+    },
+    "ja_ことはが_18": {
+      "title": "～ことは…が (～koto wa... ga)",
+      "shortExplanation": "前項の事実を一旦認めた上で、それに対立する事柄や不満を述べ、「〜ことは〜だが」「確かに〜が」という意味を表します。",
+      "longExplanation": "「～ことは…が」は、同じ動詞や形容詞などを繰り返して用い、前項で述べられている事実や性質を一応認めた上で、後項でそれに対する制限、不満、対立する評価などを付け加える文法表現です。「確かに〜であるが、しかし〜だ」というニュアンスを表します。",
+      "formation": "動詞普通形 ＋ ことは ＋ 動詞 ＋ が / い形容詞 ＋ ことは ＋ い形容詞 ＋ が / な形容詞 ＋ なことは ＋ な形容詞 ＋ だが / 名詞 ＋ であることは ＋ 名詞 ＋ だが",
+      "examples": [
+        {
+          "translation": "この映画は面白いことは面白いが、ちょっと長すぎる。"
+        },
+        {
+          "translation": "彼は親切なことは親切だが、少し無口だ。"
+        },
+        {
+          "translation": "このゲームは難しいことは難しいが、やめられない。"
+        },
+        {
+          "translation": "彼女は美しいことは美しいが、ちょっと高飛車だ。"
+        }
+      ]
+    },
+    "ja_ことはない_19": {
+      "title": "～ことはない (〜koto wa nai)",
+      "shortExplanation": "その行為をする必要がないことを表し、「〜する必要はない」「〜しなくてもよい」という意味を表します。",
+      "longExplanation": "「～ことはない」は、主に動詞の辞書形に接続し、その行動を行う必然性や理由がないことを述べる文法表現です。相手を励ましたり、安心させたり、過度な心配を解きほぐすために「そこまでする必要はない」と助言する際によく用いられます。",
+      "formation": "動詞辞書形 ＋ ことはない",
+      "examples": [
+        {
+          "translation": "お金があるから、無理に貯金することはない。"
+        },
+        {
+          "translation": "この本は簡単だから、辞書を使うことはない。"
+        },
+        {
+          "translation": "彼女は海外旅行に行きたくなければ、行くことはない。"
+        },
+        {
+          "translation": "寒くなければ、コートを着ることはない。"
+        }
+      ]
+    },
+    "ja_さ_20": {
+      "title": "～さ (〜sa)",
+      "shortExplanation": "形容詞を名詞化し、その性質や状態の客観的な程度・度合いを表します。",
+      "longExplanation": "接尾辞「～さ」は、い形容詞の語幹（語尾の「い」を取った形）や、な形容詞の語幹に接続して、性質や状態を客観的に測定・比較できる度合いや分量を表す名詞を作ります（「高さ」「重さ」「親切さ」など）。客観的な数値や基準で表せる尺度として広く用いられます。",
+      "formation": "い形容詞語幹（「い」を除く） ＋ さ / な形容詞語幹 ＋ さ",
+      "examples": [
+        {
+          "translation": "この料理は辛さが強い。"
+        },
+        {
+          "translation": "彼女の美しさは皆に憧れられる。"
+        },
+        {
+          "translation": "山田さんの親切さで、困っている人を助けてくれる。"
+        },
+        {
+          "translation": "この部屋の広さは十分だと思う。"
+        }
+      ]
+    },
+    "ja_さえ_21": {
+      "title": "～さえ (～sae)",
+      "shortExplanation": "極端な例を挙げて他を類推させたり（「〜でさえ」「〜すら」）、最低限の条件（「〜さえ〜ば」）を表します。",
+      "longExplanation": "「～さえ」は、取り立て助詞の一つで、極端な一例を挙げることで「他は言うまでもない」という意味を表す用法（「〜すら」「〜も」）と、仮定表現と呼応して「その条件一つさえ満たせば他は十分である」という最低限の必要条件を示す用法（「〜さえ〜ば」）を持ちます。",
+      "formation": "名詞 ＋ さえ / な形容詞 ＋ でさえ / 名詞 ＋ さえ ＋ 動詞仮定形（～ば）",
+      "examples": [
+        {
+          "translation": "お金さえあれば、世界中を旅行できる。"
+        },
+        {
+          "translation": "彼は英語さえ話せれば、その仕事ができるだろう。"
+        },
+        {
+          "translation": "彼女は頭がいいだけでなく、運動も上手だ。テニスさえできる。"
+        },
+        {
+          "translation": "明るい場所で本を読むのが好きだ。部屋の電気さえつけなくても大丈夫だ。"
+        }
+      ]
+    },
+    "ja_しかない_22": {
+      "title": "～しかない (〜shika nai)",
+      "shortExplanation": "他に選択肢や手段がないことを表し、「〜するよりほかない」「〜だけしかない」という意味を表します。",
+      "longExplanation": "「～しかない」は、動詞の辞書形や名詞に接続し、他の方法や可能性が排除されており、その行為をする以外に道がないこと、あるいはそれだけしか残されていないことを強調する文法表現です。「他に手段がないため、どうしても〜せざるを得ない」という諦めや強い決意のニュアンスを含みます。",
+      "formation": "動詞辞書形 ＋ しかない / 名詞 ＋ しかない",
+      "examples": [
+        {
+          "translation": "この問題を解決する方法は一つしかない。"
+        },
+        {
+          "translation": "彼が出て行ったら、泣くしかない。"
+        },
+        {
+          "translation": "彼女にはあと一月しかない。"
+        },
+        {
+          "translation": "僕には君を信じるしかない。"
+        }
+      ]
+    },
+    "ja_すこしもない_23": {
+      "title": "すこしも〜ない (sukoshimo~nai)",
+      "shortExplanation": "否定の述語と呼応して完全な否定を表し、「ちっとも〜ない」「まったく〜ない」という意味を表します。",
+      "longExplanation": "副詞「すこしも（少しも）」は、必ず否定の述語（動詞や形容詞の否定形）と呼応して用いられ、ある性質や状態、動作が微塵も存在しないことを強調する全否定の文法表現です。「全く〜ない」「少しも〜ない」という強い否定の気持ちを表します。",
+      "formation": "すこしも ＋ 動詞否定形（～ない / ～ません） / すこしも ＋ い形容詞語幹 ＋ くない / すこしも ＋ な形容詞 / 名詞 ＋ ではない",
+      "examples": [
+        {
+          "translation": "彼はすこしも悲しそうに見えません。"
+        },
+        {
+          "translation": "この部屋はすこしも寒くない。"
+        },
+        {
+          "translation": "彼女はすこしも心配していない。"
+        },
+        {
+          "translation": "まったく知らない人と話すのは怖い。"
+        }
+      ]
+    },
+    "ja_ずに_24": {
+      "title": "～ずに (〜zu ni)",
+      "shortExplanation": "ある動作をしないで別の動作を行うことを表し、「〜しないで」「〜することなく」という意味を表します。",
+      "longExplanation": "「～ずに」は、動詞の未然形（ない形の「ない」を除いた形）に接続し（「する」は「せずに」となる）、前項の行為を行わない状態のまま後項の行為を行うという付帯状況を表す文法表現です。口語の「〜ないで」に相当しますが、「〜ずに」はより硬い文章語的な響きを持ちます。",
+      "formation": "動詞ない形（「ない」を除く） ＋ ずに（不規則：する → せずに）",
+      "examples": [
+        {
+          "translation": "彼は笑わずに話を聞いていました。"
+        },
+        {
+          "translation": "食べずに寝るのは良くないです。"
+        },
+        {
+          "translation": "コーヒーを飲まずに仕事を始めました。"
+        },
+        {
+          "translation": "誰にも言わずに出かけました。"
+        }
+      ]
+    }
+  }
+}

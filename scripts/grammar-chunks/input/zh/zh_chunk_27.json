@@ -1,0 +1,251 @@
+[
+  {
+    "id": "zh_反而_425",
+    "language": "zh",
+    "pattern": "反而",
+    "title": "反而 (actually (opposite to what one expects))",
+    "shortExplanation": "actually (opposite to what one expects)",
+    "longExplanation": "actually (opposite to what one expects). Pinyin: fǎn'ér",
+    "formation": "fǎn'ér",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "大城市的生活虽然很精彩，但一辈子生活在农村的父母反而会不适应。",
+        "romanization": "dàchéngshì de shēnghuó suīrán hěn jīngcǎi， dàn yībèizi shēnghuó zài nóngcūn de fùmǔ fǎn'ér huìbùhuì shìyìng。",
+        "translation": "Although the life in a big city is very exciting, [my] parents who have lived in rural areas for a lifetime will actually (opposite to what one expects) find themselves ill-adapted."
+      }
+    ]
+  },
+  {
+    "id": "zh_从而_426",
+    "language": "zh",
+    "pattern": "从而",
+    "title": "从而 (consequently)",
+    "shortExplanation": "consequently",
+    "longExplanation": "consequently. Pinyin: cóng'ér",
+    "formation": "cóng'ér",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "比赛前做好思想准备可以减少运动员的压力，从而取得比赛的成功。",
+        "romanization": "bǐsài qián zuò hǎo sīxiǎng zhǔnbèi kěyǐ jiǎnshǎo yùndòngyuán de yālì， cóng'ér qǔdé bǐsài de chénggōng。",
+        "translation": "Preparing mentally before the game can reduce the stress on the athletes [and] consequently achieve the success of the game."
+      }
+    ]
+  },
+  {
+    "id": "zh_V于N_427",
+    "language": "zh",
+    "pattern": "V 于 N",
+    "title": "V 于 N (V in N)",
+    "shortExplanation": "V in N",
+    "longExplanation": "V in N. Pinyin: V yú N",
+    "formation": "V yú N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这家公司成立于1997年。",
+        "romanization": "zhè jiā gōngsī chénglì yú1997 nián。",
+        "translation": "This company was founded in 1997."
+      }
+    ]
+  },
+  {
+    "id": "zh_V于N_428",
+    "language": "zh",
+    "pattern": "V 于 N",
+    "title": "V 于 N (V to N)",
+    "shortExplanation": "V to N",
+    "longExplanation": "V to N. Pinyin: V yú N",
+    "formation": "V yú N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "李明没办法，只好求助于当经理的老同学王峰。",
+        "romanization": "lǐ míng méibànfǎ， zhǐhǎo qiúzhù yú dāng jīnglǐ de lǎo tóngxué wáng fēng。",
+        "translation": "Li Ming had no choice but to turn to Wang Feng (for help), the old classmate of the manager."
+      }
+    ]
+  },
+  {
+    "id": "zh_V于N_429",
+    "language": "zh",
+    "pattern": "V 于 N",
+    "title": "V 于 N (V from N)",
+    "shortExplanation": "V from N",
+    "longExplanation": "V from N. Pinyin: V yú N",
+    "formation": "V yú N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他出身于知识分子家庭。",
+        "romanization": "tā chūshēn yú zhīshifènzǐ jiātíng。",
+        "translation": "He came from an intellectual family."
+      }
+    ]
+  },
+  {
+    "id": "zh_A于N_430",
+    "language": "zh",
+    "pattern": "A 于 N",
+    "title": "A 于 N (A to N)",
+    "shortExplanation": "A to N",
+    "longExplanation": "A to N. Pinyin: A yú N",
+    "formation": "A yú N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "运动有助于健康。",
+        "romanization": "yùndòng yǒuzhùyú jiànkāng。",
+        "translation": "Exercise is beneficial to health."
+      }
+    ]
+  },
+  {
+    "id": "zh_A于N_431",
+    "language": "zh",
+    "pattern": "A 于 N",
+    "title": "A 于 N (A from/than N)",
+    "shortExplanation": "A from/than N",
+    "longExplanation": "A from/than N. Pinyin: A yú N",
+    "formation": "A yú N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "水生动物不同于陆地动物。",
+        "romanization": "shuǐshēng dòngwù bùtóng yú lùdì dòngwù。",
+        "translation": "Aquatic creatures are different from terrestrial ones."
+      }
+    ]
+  },
+  {
+    "id": "zh_V为wiN_432",
+    "language": "zh",
+    "pattern": "V 为 (wéi) N",
+    "title": "V 为 (wéi) N (V into N)",
+    "shortExplanation": "V into N",
+    "longExplanation": "V into N. Pinyin: V wéi (wéi) N",
+    "formation": "V wéi (wéi) N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "压力也可以变为动力。",
+        "romanization": "yālì yě kěyǐ biànwéi dònglì。",
+        "translation": "Stress can also be turned into strength."
+      }
+    ]
+  },
+  {
+    "id": "zh_V为wiN_433",
+    "language": "zh",
+    "pattern": "V 为 (wéi) N",
+    "title": "V 为 (wéi) N (V as N)",
+    "shortExplanation": "V as N",
+    "longExplanation": "V as N. Pinyin: V wéi (wéi) N",
+    "formation": "V wéi (wéi) N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "在他看来，没有工作的生活就不能称其为生活。",
+        "romanization": "zài tā kànlai， méiyǒu gōngzuò de shēnghuó jiù bùnéng chēng qí wéi shēnghuó。",
+        "translation": "In his view, life without work cannot be called (as) life."
+      }
+    ]
+  },
+  {
+    "id": "zh_V起来_434",
+    "language": "zh",
+    "pattern": "V 起来",
+    "title": "V 起来 (V up)",
+    "shortExplanation": "V up",
+    "longExplanation": "V up. Pinyin: V qilai",
+    "formation": "V qilai",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "地下水积蓄起来，越积越多。",
+        "romanization": "dìxiàshuǐ jīxù qilai， yuè jī yuè duō。",
+        "translation": "The groundwater is store (up) and accumulates."
+      }
+    ]
+  },
+  {
+    "id": "zh_藏起来躲起来_435",
+    "language": "zh",
+    "pattern": "藏起来/躲起来",
+    "title": "藏起来/躲起来 (V away)",
+    "shortExplanation": "V away",
+    "longExplanation": "V away. Pinyin: cáng qilai/ duǒ qilai",
+    "formation": "cáng qilai/ duǒ qilai",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "刘丽知道自己做得不对，躲起来不敢见我。",
+        "romanization": "Liú lì zhīdào zìjǐ zuò dé bùduì， duǒ qilai bù gǎn jiàn wǒ。",
+        "translation": "Liu Li knows that she is doing something wrong, and she hides [herself] away and does not dare to see me."
+      }
+    ]
+  },
+  {
+    "id": "zh_替_436",
+    "language": "zh",
+    "pattern": "替",
+    "title": "替 (to replace)",
+    "shortExplanation": "to replace",
+    "longExplanation": "to replace. Pinyin: tì",
+    "formation": "tì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "见了外公，请替我向他问好。",
+        "romanization": "jiàn le wàigōng， qǐng tì wǒ xiàng tā wènhǎo。",
+        "translation": "When you see my grandfather, please say hello to him (on my behalf)."
+      }
+    ]
+  },
+  {
+    "id": "zh_替_437",
+    "language": "zh",
+    "pattern": "替",
+    "title": "替 (on behalf of)",
+    "shortExplanation": "on behalf of",
+    "longExplanation": "on behalf of. Pinyin: tì",
+    "formation": "tì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "李阳要去留学了，我们都替他高兴。",
+        "romanization": "lǐ yáng yào qù liúxué le， wǒmen dōu tì tā gāoxìng。",
+        "translation": "Li Yang is going to study abroad, and we are all happy for him."
+      }
+    ]
+  },
+  {
+    "id": "zh_说不定_438",
+    "language": "zh",
+    "pattern": "说不定",
+    "title": "说不定 (uncertain)",
+    "shortExplanation": "uncertain",
+    "longExplanation": "uncertain. Pinyin: shuōbudìng",
+    "formation": "shuōbudìng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这事儿经理已经同意了，只是出发的时间还说不定。",
+        "romanization": "zhè shìr jīnglǐ yǐjīng tóngyì le， zhǐshì chūfā de shíjiān hái shuōbudìng。",
+        "translation": "The manager has already agreed, but the time of departure is still uncertain."
+      }
+    ]
+  },
+  {
+    "id": "zh_说不定_439",
+    "language": "zh",
+    "pattern": "说不定",
+    "title": "说不定 (maybe)",
+    "shortExplanation": "maybe",
+    "longExplanation": "maybe. Pinyin: shuōbudìng",
+    "formation": "shuōbudìng",
+    "level": "HSK 5",
+    "examples": []
+  }
+]

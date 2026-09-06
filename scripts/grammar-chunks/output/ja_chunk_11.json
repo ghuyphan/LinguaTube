@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Nounをくださる_14": {
+      "title": "～をくださる (〜wo kudasaru)",
+      "shortExplanation": "Dạng tôn kính ngữ của 'くれる', diễn tả việc người bề trên hoặc người có địa vị cao hơn tặng, trao cho mình (hoặc người phe mình) một đồ vật hay sự quan tâm; 'kính tặng', 'cho'.",
+      "longExplanation": "Mẫu ngữ pháp '～をくださる' là dạng tôn kính ngữ của động từ 'くれる', dùng khi một người có vai vế cao hơn, người lớn tuổi, thầy cô hoặc cấp trên trao tặng đồ vật hay dành sự chiếu cố, giúp đỡ cho người nói (hoặc người thuộc phe người nói như gia đình). Thể hiện lòng biết ơn và sự kính trọng sâu sắc của người nhận. Trong giao tiếp lịch sự hằng ngày, cấu trúc này thường được dùng ở thể lịch sự là '～をくださいます' hoặc quá khứ '～をくださいました'.",
+      "formation": "Người trao tặng (bề trên) + が + Người nhận (người nói / phe người nói) + に + Danh từ (vật) + を + くださる (thể lịch sự: くださいます / くださいました)",
+      "examples": [
+        {
+          "translation": "Thầy giáo đã cho tôi tài liệu."
+        },
+        {
+          "translation": "Mẹ cho tôi bánh kẹo ăn vặt."
+        },
+        {
+          "translation": "Cấp trên đã cho tôi lời khuyên quý báu."
+        },
+        {
+          "translation": "Bạn tôi đã tặng quà cho tôi."
+        }
+      ]
+    },
+    "ja_Noun_15": {
+      "title": "～をくれる (〜wo kureru)",
+      "shortExplanation": "Diễn tả việc người khác trao tặng, cho người nói (hoặc người thuộc phe người nói) một đồ vật; 'cho (tôi)...', 'tặng (tôi)...'.",
+      "longExplanation": "Mẫu ngữ pháp '～をくれる' là một trong những động từ trao nhận cơ bản trong tiếng Nhật. Cấu trúc được dùng khi chủ thể hành động (người khác) tặng hoặc cho người nói (hoặc người có quan hệ thân thiết, cùng phe với người nói như anh em, con cái) một thứ gì đó. Hướng chuyển giao đồ vật luôn hướng về phía người nói. Trong giao tiếp lịch sự thường dùng ở dạng '～をくれます' hoặc '～をくれました'.",
+      "formation": "Người cho + が + Người nhận (thường là người nói / phe người nói) + に + Danh từ (vật) + を + くれる (lịch sự: くれます / くれました)",
+      "examples": [
+        {
+          "translation": "Bạn tôi đã tặng quà cho tôi."
+        },
+        {
+          "translation": "Anh ấy đã tặng hoa cho tôi."
+        },
+        {
+          "translation": "Thầy giáo đã tặng tôi một cuốn sách."
+        },
+        {
+          "translation": "Mẹ đã cho em trai tôi bánh kẹo."
+        }
+      ]
+    },
+    "ja_Noun_16": {
+      "title": "～をさしあげる (〜wo sashiageru)",
+      "shortExplanation": "Dạng khiêm nhường ngữ của 'あげる', dùng khi người nói tặng, biếu đồ vật cho người có vị thế cao hơn hoặc khách hàng; 'kính tặng', 'biếu'.",
+      "longExplanation": "Mẫu ngữ pháp '～をさしあげる' là dạng khiêm nhường ngữ của động từ 'あげる' (cho, tặng). Cấu trúc này được dùng khi người nói (hoặc người cùng phe) trao tặng một vật gì đó cho người có địa vị cao hơn, người lớn tuổi hơn hoặc khách hàng, đối tác nhằm bày tỏ thái độ khiêm tốn và tôn kính. Trong giao tiếp hàng ngày thường dùng ở thể lịch sự '～をさしあげます'.",
+      "formation": "Người nhận (bề trên / khách hàng) + に + Danh từ (vật) + を + さしあげる (lịch sự: さしあげます)",
+      "examples": [
+        {
+          "translation": "Em xin kính biếu thầy một cuốn sách."
+        },
+        {
+          "translation": "Con muốn tặng hoa cho mẹ."
+        },
+        {
+          "translation": "Để tôi kính mời quý khách dùng trà nhé."
+        },
+        {
+          "translation": "Khi tôi tặng quà cho tiền bối, anh ấy đã rất vui."
+        }
+      ]
+    },
+    "ja_Noun_17": {
+      "title": "～をもらう (〜wo morau)",
+      "shortExplanation": "Diễn tả việc người nói (hoặc phe người nói) nhận được một đồ vật từ ai đó; 'nhận...', 'được cho...'.",
+      "longExplanation": "Mẫu ngữ pháp '～をもらう' dùng để diễn đạt việc người nói (hoặc người thuộc cùng nhóm, gia đình với người nói) là người tiếp nhận đồ vật, quà tặng hoặc lợi ích từ người khác. Người trao tặng thường được biểu thị bằng trợ từ 'に' hoặc 'から'. Thể hiện góc nhìn từ phía người nhận. Trong hoàn cảnh lịch sự, ta dùng '～をもらいます' hoặc quá khứ '～をもらいました'. Nếu nhận từ bề trên thì dùng khiêm nhường ngữ 'いただく'.",
+      "formation": "Người cho + に / から + Danh từ (vật) + を + もらう (lịch sự: もらいます / もらいました)",
+      "examples": [
+        {
+          "translation": "Tôi đã nhận được quà từ bạn bè."
+        },
+        {
+          "translation": "Tôi đã nhận được lời khuyên từ thầy giáo."
+        },
+        {
+          "translation": "Nhận tiền tiêu vặt từ bố."
+        },
+        {
+          "translation": "Tôi đã nhận được một lá thư từ cô ấy."
+        }
+      ]
+    },
+    "ja_Noun_18": {
+      "title": "～中 (〜chuu / 〜jyuu)",
+      "shortExplanation": "Biểu thị trạng thái đang diễn ra của một hành động, sự việc hoặc trải rộng trong suốt một khoảng thời gian, phạm vi; 'đang...', 'trong lúc...'.",
+      "longExplanation": "Hậu tố '～中' gắn trực tiếp sau danh từ để biểu thị: (1) Đang trong quá trình thực hiện một hành động hoặc một sự việc đang tiếp diễn (thường đọc là 'ちゅう', ví dụ: 勉強中, 仕事中, 準備中); (2) Trong suốt toàn bộ phạm vi thời gian hoặc không gian (thường đọc là 'じゅう', ví dụ: 今日中, 一日中, 世界中). Cấu trúc này rất thông dụng cả trong văn viết lẫn giao tiếp hàng ngày.",
+      "formation": "Danh từ + 中 (đọc là ちゅう hoặc じゅう)",
+      "examples": [
+        {
+          "translation": "Anh ấy đang trong giờ làm việc."
+        },
+        {
+          "translation": "Trong giờ thi không được sử dụng điện thoại di động."
+        },
+        {
+          "translation": "Đúng lúc đang xem phim thì anh ấy bật khóc."
+        },
+        {
+          "translation": "Cô ấy hiện đang học bài."
+        }
+      ]
+    },
+    "ja_Verb_19": {
+      "title": "～させられる (〜saserareru)",
+      "shortExplanation": "Thể sai khiến bị động, diễn tả việc bị người khác bắt ép làm một hành động ngoài ý muốn; 'bị bắt làm...', 'bị ép phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～させられる' là thể sai khiến bị động trong tiếng Nhật, kết hợp giữa thể sai khiến (bắt làm) và thể bị động (bị tác động). Cấu trúc này dùng để diễn tả việc người nói (hoặc chủ ngữ) bị một người khác ép buộc, sai bảo phải làm một việc mà bản thân không hề muốn hoặc cảm thấy miễn cưỡng, bất đắc dĩ. Đối với động từ nhóm 1, ngoài dạng đầy đủ '～せられる', trong giao tiếp thường dùng dạng rút gọn là '～される' (trừ các động từ có đuôi す).",
+      "formation": "Động từ nhóm 1: Đổi đuôi hàng [う] sang hàng [あ] + せられる (rút gọn: hàng [あ] + される, trừ đuôi す) | Động từ nhóm 2: Bỏ る + させられる | Động từ nhóm 3: する → させられる / くる → こさせられる",
+      "examples": [
+        {
+          "translation": "Lũ trẻ bị thầy giáo bắt làm bài tập về nhà."
+        },
+        {
+          "translation": "Anh ấy bị công ty bắt làm việc nhiều hơn."
+        },
+        {
+          "translation": "Tôi đã bị bạn bè ép phải nói ra bí mật đó."
+        },
+        {
+          "translation": "Vận động viên bị chấn thương đã bị huấn luyện viên bắt phải nghỉ ngơi."
+        }
+      ]
+    },
+    "ja_Verb_20": {
+      "title": "～させる (〜saseru)",
+      "shortExplanation": "Thể sai khiến, diễn tả hành động bắt ép người khác làm gì hoặc cho phép, để cho người khác làm gì; 'bắt làm...', 'cho phép làm...'.",
+      "longExplanation": "Mẫu ngữ pháp '～させる' là thể sai khiến của động từ. Mẫu câu này được người có vị trí bề trên (cha mẹ, thầy cô, cấp trên) sử dụng để: (1) Sai bảo, yêu cầu hoặc ép buộc người dưới làm một hành động nào đó; (2) Cho phép hoặc nhượng bộ để đối phương tự do làm điều họ muốn (thường đi kèm với '～てあげる / ～てくれる' thành '～させてあげる / ～させてくれる'). Ngoài ra còn dùng khi nói về việc làm phát sinh cảm xúc của người khác.",
+      "formation": "Động từ nhóm 1: Đổi đuôi hàng [う] sang hàng [あ] + せる | Động từ nhóm 2: Bỏ る + させる | Động từ nhóm 3: する → させる / くる → こさせる",
+      "examples": [
+        {
+          "translation": "Thầy giáo đã bắt học sinh làm bài tập về nhà."
+        },
+        {
+          "translation": "Mẹ bắt tôi phải dọn dẹp phòng."
+        },
+        {
+          "translation": "Tôi đã để cho cô ấy chơi đàn piano."
+        },
+        {
+          "translation": "Cấp trên đã giao cho anh ấy viết chương trình đó."
+        }
+      ]
+    },
+    "ja_Verb_21": {
+      "title": "～たことがある (〜ta koto ga aru)",
+      "shortExplanation": "Diễn tả kinh nghiệm từng trải qua hoặc từng làm một việc gì đó trong quá khứ; 'đã từng...', 'từng làm...'.",
+      "longExplanation": "Mẫu ngữ pháp '～たことがある' kết hợp động từ thể た với 'ことがある' để biểu thị rằng chủ ngữ đã từng có kinh nghiệm trải qua một hành động hay sự việc nào đó ít nhất một lần trước đây trong đời. Không dùng để diễn tả những thói quen thường nhật hay những hành động vừa mới xảy ra hôm qua. Thể phủ định là '～たことがない' (chưa từng), câu hỏi là '～たことがありますか' (bạn đã từng... chưa?).",
+      "formation": "Động từ thể た + ことがある (lịch sự: あります / ありません)",
+      "examples": [
+        {
+          "translation": "Tôi từng đi Nhật Bản rồi."
+        },
+        {
+          "translation": "Bạn đã từng ăn món sushi bao giờ chưa?"
+        },
+        {
+          "translation": "Anh ấy đã từng chạy marathon."
+        },
+        {
+          "translation": "Tôi chưa từng nhảy dù bao giờ."
+        }
+      ]
+    },
+    "ja_Verb_22": {
+      "title": "～たときに (〜ta toki ni)",
+      "shortExplanation": "Diễn tả một sự việc, hành động xảy ra sau khi một hành động khác đã hoàn thành trong quá khứ; 'khi đã...', 'sau khi...'.",
+      "longExplanation": "Mẫu câu '～たときに' kết hợp động từ thể た với danh từ chỉ thời gian 'とき' (kèm trợ từ 'に'), diễn tả mốc thời điểm mà tại đó hành động ở mệnh đề trước đã được hoàn thành trước khi hành động hoặc hiện tượng ở mệnh đề sau diễn ra. Khác với 'Động từ nguyên dạng + とき' (khi chuẩn bị làm, trước khi làm), '～たとき' nhấn mạnh hành động phía trước đã kết thúc trọn vẹn rồi thì sự việc phía sau mới xảy ra.",
+      "formation": "Động từ thể た + ときに (hoặc とき)",
+      "examples": [
+        {
+          "translation": "Khi xem bộ phim đó, tôi đã khóc."
+        },
+        {
+          "translation": "Lúc gặp anh ấy lần đầu tiên, tôi đã bị trễ giờ."
+        },
+        {
+          "translation": "Khi đi Nhật Bản, tôi đã chụp rất nhiều ảnh."
+        },
+        {
+          "translation": "Khi bạn đến nhà tôi chơi, chúng tôi đã cùng chơi điện tử."
+        }
+      ]
+    },
+    "ja_Verb_23": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "Diễn tả tình huống vừa mới làm xong một việc gì đó thì phát hiện ra kết quả hoặc có sự việc khác lập tức xảy ra; 'vừa mới... thì...', 'sau khi thử... thì thấy...'.",
+      "longExplanation": "Mẫu ngữ pháp '～たところ' gắn sau động từ thể た để biểu đạt hai sắc thái chính: (1) Ngay vừa lúc một hành động vừa kết thúc thì một hành động khác diễn ra; (2) Sau khi thực hiện một hành động (thường mang tính thử nghiệm, thăm dò hoặc hành động có chủ ý), kết quả hoặc tình huống bất ngờ sau đó được phát hiện ra. Vế sau của câu thường là một sự việc đã xảy ra, không dùng để biểu thị ý chí hay mệnh lệnh của người nói.",
+      "formation": "Động từ thể た + ところ (hoặc ところで)",
+      "examples": [
+        {
+          "translation": "Vừa mở cửa ra thì một chú mèo nhảy vọt ra ngoài."
+        },
+        {
+          "translation": "Vừa mới cúp điện thoại xong thì chuông lại reo lên."
+        },
+        {
+          "translation": "Vừa vặn lúc làm xong bài tập thì có liên lạc từ bạn bè tới."
+        },
+        {
+          "translation": "Sau khi đi mua sắm về nhà, tôi mới phát hiện ra mình đã làm mất ví."
+        }
+      ]
+    },
+    "ja_Verb_24": {
+      "title": "～たほうがいい (〜ta hou ga ii)",
+      "shortExplanation": "Dùng để đưa ra lời khuyên, khuyến nghị hoặc gợi ý người khác nên làm một việc gì đó; 'nên...', 'tốt hơn là nên...'.",
+      "longExplanation": "Mẫu ngữ pháp '～たほうがいい' kết hợp động từ thể た với 'ほうがいい' (tốt hơn) để đưa ra lời khuyên bảo, gợi ý tích cực cho đối phương hoặc tự nhắc nhở bản thân về việc nên làm. Việc sử dụng thể quá khứ 'た' mang hàm ý giả định hành động đó đã được thực hiện thì kết quả sẽ tốt hơn. Dạng phủ định khuyên không nên làm là '～ないほうがいい'. Trong giao tiếp lịch sự, cấu trúc kết thúc bằng '～たほうがいいです'.",
+      "formation": "Động từ thể た + ほうがいい (phủ định: Động từ thể ない + ほうがいい; lịch sự: ほうがいいです)",
+      "examples": [
+        {
+          "translation": "Bạn nên đi ngủ sớm thì hơn."
+        },
+        {
+          "translation": "Bạn nên chăm chỉ học hành nhiều hơn."
+        },
+        {
+          "translation": "Khi bị ốm, tốt nhất là bạn nên uống thuốc."
+        },
+        {
+          "translation": "Tốt hơn là bạn không nên uống cà phê."
+        }
+      ]
+    },
+    "ja_Verb_25": {
+      "title": "～ために (〜tame ni)",
+      "shortExplanation": "Diễn tả mục đích hành động ('để...', 'nhằm...') hoặc chỉ nguyên nhân, lý do khách quan ('vì...', 'do...').",
+      "longExplanation": "Mẫu ngữ pháp '～ために' có hai nhóm ý nghĩa quan trọng tùy vào ngữ cảnh: (1) Biểu thị mục đích: Đứng sau động từ thể nguyên dạng (từ điển) hoặc danh từ + の, diễn tả mục đích mà người nói nỗ lực thực hiện có ý chí (để, nhằm mục đích); (2) Biểu thị nguyên nhân, lý do: Đứng sau thể thông thường của động từ, tính từ hoặc danh từ + の, biểu thị nguyên nhân khách quan dẫn đến kết quả (thường mang tính tiêu cực hoặc nghiêm trọng trong văn viết, văn trang trọng).",
+      "formation": "Mục đích: Động từ thể nguyên dạng / Danh từ + の + ために | Nguyên nhân: Động từ thể thông thường / Tính từ đuôi い / Tính từ đuôi な + な / Danh từ + の + ために",
+      "examples": [
+        {
+          "translation": "Để thi đỗ kỳ thi, mỗi ngày tôi đều chăm chỉ học tập."
+        },
+        {
+          "translation": "Vì sức khỏe, tôi phải vận động thể dục mỗi ngày."
+        },
+        {
+          "translation": "Vì công việc bận rộn nên tôi không có thời gian gặp gỡ bạn bè."
+        },
+        {
+          "translation": "Do trời đổ mưa nên trận đấu đã bị hủy bỏ."
+        }
+      ]
+    },
+    "ja_Verb_26": {
+      "title": "～つもり (〜tsumori)",
+      "shortExplanation": "Diễn tả ý định, dự định hoặc kế hoạch làm một việc gì đó của người nói; 'dự định...', 'tính làm...'.",
+      "longExplanation": "Mẫu ngữ pháp '～つもり' kết hợp với động từ thể thông thường (thể từ điển đối với khẳng định hoặc thể ない đối với phủ định) để diễn đạt ý định, kế hoạch trong tâm trí người nói về một việc sẽ làm trong tương lai. Thường dùng cho ngôi thứ nhất (người nói). Khi phủ định, có thể dùng '～ないつもり' (dự định không làm) hoặc dạng dứt khoát hơn '～つもりはない' (hoàn toàn không có ý định làm). Trong giao tiếp lịch sự, câu kết thúc bằng '～つもりです'.",
+      "formation": "Động từ thể nguyên dạng + つもり (phủ định: Động từ thể ない + つもり / Động từ nguyên dạng + つもりはない; lịch sự: つもりです)",
+      "examples": [
+        {
+          "translation": "Ngày mai tôi dự định sẽ đi gặp bạn bè."
+        },
+        {
+          "translation": "Tối nay tôi tính sẽ tự nấu bữa tối."
+        },
+        {
+          "translation": "Năm sau tôi dự định sẽ đi du học."
+        },
+        {
+          "translation": "Cuối tuần này tôi dự định đi leo núi."
+        }
+      ]
+    },
+    "ja_Verb_27": {
+      "title": "～てあげる (〜te ageru)",
+      "shortExplanation": "Diễn tả việc người nói (hoặc người phe mình) làm một hành động có lợi giúp cho người khác; 'làm... cho (ai)'.",
+      "longExplanation": "Mẫu ngữ pháp '～てあげる' kết hợp động từ thể て với trợ động từ 'あげる', dùng để biểu thị việc người nói (hoặc người cùng phe) chủ động làm một việc gì đó mang lại lợi ích hay sự giúp đỡ cho người khác với thiện chí. Lưu ý quan trọng: Trong văn hóa giao tiếp tiếng Nhật, không nên dùng trực tiếp cấu trúc này đối với người có vai vế cao hơn (thầy cô, cấp trên, khách hàng) vì dễ mang sắc thái kể ơn, trịch thượng; thay vào đó nên dùng khiêm nhường ngữ '～てさしあげる' hoặc cách nói khéo léo khác. Thường dùng với bạn bè, cấp dưới, người trong nhà hoặc động thực vật.",
+      "formation": "Động từ thể て + あげる (lịch sự: あげます / あげました)",
+      "examples": [
+        {
+          "translation": "Vì bạn tôi trông mệt mỏi nên tôi đã xách hành lý giúp bạn."
+        },
+        {
+          "translation": "Vì em trai không hiểu bài tập về nhà nên tôi đã giúp đỡ em."
+        },
+        {
+          "translation": "Thấy cô ấy có vẻ sắp muộn nên tôi đã đi ra ga đón cô ấy."
+        },
+        {
+          "translation": "Thấy chú chó có vẻ khát nước nên tôi đã cho nó uống nước."
+        }
+      ]
+    },
+    "ja_Verb_28": {
+      "title": "～てある (〜te aru)",
+      "shortExplanation": "Diễn tả một hành động có chủ đích đã được ai đó làm sẵn từ trước và trạng thái kết quả của nó vẫn còn đang duy trì; 'đã được làm... sẵn'.",
+      "longExplanation": "Mẫu ngữ pháp '～てある' kết hợp ngoại động từ thể て với trợ động từ 'ある'. Cấu trúc này dùng để diễn tả một trạng thái hiện tại đang tồn tại, vốn là kết quả của một hành động có chủ ý, có mục đích chuẩn bị từ trước của một người nào đó. Trong mẫu câu này, tân ngữ trực tiếp của ngoại động từ thường chuyển sang đi kèm với trợ từ '偏' (ví dụ: 窓が開けてある - cửa sổ đã được mở sẵn). Khác với '～ている' (thường dùng với nội động từ để tả trạng thái khách quan), '～てある' nhấn mạnh có bóng dáng người đã cố ý thực hiện hành động đó.",
+      "formation": "Ngoại động từ thể て + ある (lịch sự: あります)",
+      "examples": [
+        {
+          "translation": "Cửa sổ đang được mở sẵn (ai đó đã chủ ý mở và vẫn để nguyên như vậy)."
+        },
+        {
+          "translation": "Bài tập về nhà đã được hoàn thành sẵn sàng."
+        },
+        {
+          "translation": "Quần áo giặt đã được phơi hết lên rồi."
+        },
+        {
+          "translation": "Căn phòng này đã được quét dọn sạch sẽ sẵn rồi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Nounをくださる_14": {
+      "title": "～をくださる (〜wo kudasaru)",
+      "shortExplanation": "动词'くれる'的敬语形式（尊敬语），表示长辈或地位高的人给予说话人（或其亲友）某物；'赐予'、'给'。",
+      "longExplanation": "句型'～をくださる'是授受动词'くれる'的尊敬语形式。用于长辈、上司、老师等地位较高的人物向说话人（或说话人一方的人）给予物品、恩惠或关照的场合，充分体现出说话人的尊敬与感激之情。在日常礼貌交际中，通常使用礼貌体'くださいます'或过去式'くださいました'。",
+      "formation": "给予者（长辈/上级） + が + 接受者（说话人一方） + に + 名词（物品） + を + くださる（礼貌体：くださいます / くださいました）",
+      "examples": [
+        {
+          "translation": "老师给了我资料。"
+        },
+        {
+          "translation": "妈妈给了我点心。"
+        },
+        {
+          "translation": "领导给了我宝贵的建议。"
+        },
+        {
+          "translation": "朋友送给了我一份礼物。"
+        }
+      ]
+    },
+    "ja_Noun_15": {
+      "title": "～をくれる (〜wo kureru)",
+      "shortExplanation": "表示他人给予说话人（或说话人一方的人）某物；'给（我）……'、'送给（我）……'。",
+      "longExplanation": "句型'～をくれる'用于表达动作给予者（他人）将某物给说话人或说话人一方的人（如家人、亲属等）。物品的移动方向始终是指向说话人一方。接受者通常用助词'に'提示，如果接受者是说话人自己，'私に'通常可以省略。日常礼貌交际中常使用'くれます'或'くれました'。",
+      "formation": "给予者 + が + 接受者（说话人一方） + に + 名词（物品） + を + くれる（礼貌体：くれます / くれました）",
+      "examples": [
+        {
+          "translation": "朋友送了我一份礼物。"
+        },
+        {
+          "translation": "他送了我鲜花。"
+        },
+        {
+          "translation": "老师送给我一本书。"
+        },
+        {
+          "translation": "妈妈给了弟弟点心。"
+        }
+      ]
+    },
+    "ja_Noun_16": {
+      "title": "～をさしあげる (〜wo sashiageru)",
+      "shortExplanation": "动词'あげる'的自谦语形式，用于向长辈、上司或客户赠送、给予某物；'奉送'、'赠予'、'给'。",
+      "longExplanation": "句型'～をさしあげる'是授受动词'あげる'的自谦语表达。当说话人（或说话人一方的人）向长辈、上级、客户等地位较高或需要表示敬意的对象赠送或提供某物时使用。通过放低自己的行为来表示对对方的尊敬。在实际商务交流与礼貌会话中，通常使用礼貌形式'さしあげます'。",
+      "formation": "接受者（长辈/客户） + に + 名词（物品） + を + さしあげる（礼貌体：さしあげます）",
+      "examples": [
+        {
+          "translation": "我送给老师一本书。"
+        },
+        {
+          "translation": "我想给妈妈送花。"
+        },
+        {
+          "translation": "我来给客人奉茶吧。"
+        },
+        {
+          "translation": "我给前辈送了礼物，前辈感到非常高兴。"
+        }
+      ]
+    },
+    "ja_Noun_17": {
+      "title": "～をもらう (〜wo morau)",
+      "shortExplanation": "表示从某人那里得到或接收某物；'得到……'、'收到……'。",
+      "longExplanation": "句型'～をもらう'以接受者（通常是说话人或说话人一方的人）为视角，表示从他人那里收到物品、礼物或关照。提供者后通常接助词'に'或'から'。在需要礼貌表达的场合，通常使用'もらいます'或'もらいました'；如果是从长辈或地位更高的人那里得到物品，则需要使用自谦语'いただく'。",
+      "formation": "给予者 + に / から + 名词（物品） + を + もらう（礼貌体：もらいます / もらいました）",
+      "examples": [
+        {
+          "translation": "我从朋友那里收到了礼物。"
+        },
+        {
+          "translation": "我得到了老师的建议。"
+        },
+        {
+          "translation": "从爸爸那里拿零花钱。"
+        },
+        {
+          "translation": "我收到了她寄来的信。"
+        }
+      ]
+    },
+    "ja_Noun_18": {
+      "title": "～中 (〜chuu / 〜jyuu)",
+      "shortExplanation": "接在名词后，表示动作、状态正在进行中，或表示处于某一时间/空间范围内；'正在……中'、'在……期间'。",
+      "longExplanation": "接尾词'～中'直接附在名词之后，主要有两种用法：①表示某项活动、动作正在进行之中（通常读作'ちゅう'，如：授業中、仕事中、工事中），相当于汉语的'正在……中'；②表示在某一时间段之内或遍及整个范围（通常读作'じゅう'，如：今日中、今年中、世界中）。在日常生活和各类标识语中极为常见。",
+      "formation": "名词 + 中（读作 ちゅう 或 じゅう）",
+      "examples": [
+        {
+          "translation": "他正在工作中。"
+        },
+        {
+          "translation": "考试期间不得使用手机。"
+        },
+        {
+          "translation": "正在看电影的过程中，他开始哭了起来。"
+        },
+        {
+          "translation": "她现在正在学习。"
+        }
+      ]
+    },
+    "ja_Verb_19": {
+      "title": "～させられる (〜saserareru)",
+      "shortExplanation": "使役被动态，表示被迫或无奈做某事；'被迫做……'、'被强迫……'、'不得不……'。",
+      "longExplanation": "句型'～させられる'是动词的使役被动态，由使役形和被动态结合而成。表示主语在非自愿、迫于他人压力或规则要求的情况下，不得不做某事，含有极强的不情愿或困扰感。对于一类动词（五段动词），除词尾为'す'的动词外，口语中广泛使用约音形式'～される'（如：行かされる、飲まされる）。",
+      "formation": "一类动词：词尾う段假名变为あ段假名 + せられる（约音形式：あ段 + される，词尾为す除外） | 二类动词：去掉词尾る + させられる | 三类动词：する → させられる、くる → こさせられる",
+      "examples": [
+        {
+          "translation": "孩子们被老师强迫做作业。"
+        },
+        {
+          "translation": "他被公司强迫多加班工作。"
+        },
+        {
+          "translation": "我被朋友逼着说出了那个秘密。"
+        },
+        {
+          "translation": "受伤的选手被教练强制要求休息。"
+        }
+      ]
+    },
+    "ja_Verb_20": {
+      "title": "～させる (〜saseru)",
+      "shortExplanation": "动词使役态，表示指示、命令某人做某事，或允许、放任某人做某事；'让……做'、'使……做'。",
+      "longExplanation": "句型'～させる'是日语动词的使役态形式。通常由地位较高或有支配权的人（父母、长辈、老师、上司等）向地位较低者使用。主要表意包括：①强制或命令对方做出某种行为（'让某人做某事'）；②容许、许可或放任对方做其想做的事（'允许某人做某事'，常结合授受表现使用，如'～させてあげる'）。此外还可表示诱发某种心理或情感反应（如：安心させる）。",
+      "formation": "一类动词：词尾う段假名变为あ段假名 + せる | 二类动词：去掉词尾る + させる | 三类动词：する → させる、くる → こさせる",
+      "examples": [
+        {
+          "translation": "老师让学生们做作业。"
+        },
+        {
+          "translation": "妈妈让我打扫房间。"
+        },
+        {
+          "translation": "我让她弹了钢琴。"
+        },
+        {
+          "translation": "上司让他编写了那个程序。"
+        }
+      ]
+    },
+    "ja_Verb_21": {
+      "title": "～たことがある (〜ta koto ga aru)",
+      "shortExplanation": "表示过去曾有过的经历或体验；'曾经……过'、'有过……的经验'。",
+      "longExplanation": "句型'～たことがある'将动词た形与'ことがある'相结合，用于叙述说话人或某人在过去曾经经历过某件事或有过某种经验（哪怕只有一次）。它强调的是人生的经历，而不是刚刚发生的事件或日常例行习惯。其否定形式为'～たことがない'（从未做过），疑问句形式为'～たことがありますか'（曾经做过……吗？）。",
+      "formation": "动词た形 + ことがある（礼貌体：あります / ありません）",
+      "examples": [
+        {
+          "translation": "我去过日本。"
+        },
+        {
+          "translation": "你吃过寿司吗？"
+        },
+        {
+          "translation": "他曾跑过马拉松。"
+        },
+        {
+          "translation": "我从没体验过跳伞。"
+        }
+      ]
+    },
+    "ja_Verb_22": {
+      "title": "～たときに (〜ta toki ni)",
+      "shortExplanation": "表示前项动作已经完成或实现的时候发生了后项；'……的时候'、'当……之后'。",
+      "longExplanation": "句型'～たときに'由动词た形后接表示时间的'とき（に）'构成。它强调在前项动作或状态已经完全发生、实现的前提下，发生了后项的动作或事情。与表示动作尚未发生时的'动词辞书形 + とき'形成鲜明对比，'～たとき'明确前项动作在时间轴上优先于后项发生。",
+      "formation": "动词た形 + ときに（或 とき）",
+      "examples": [
+        {
+          "translation": "看那部电影的时候，我哭了。"
+        },
+        {
+          "translation": "第一次见到他的时候，我迟到了。"
+        },
+        {
+          "translation": "去日本的时候，我拍了许多照片。"
+        },
+        {
+          "translation": "朋友来我家的时候，我们一起打了游戏。"
+        }
+      ]
+    },
+    "ja_Verb_23": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "表示刚做完某动作就发生了后面的事，或者做了某动作后发现了某种结果；'刚……就……'、'做了……之后发现……'。",
+      "longExplanation": "句型'～たところ'接在动词た形后，主要有两种用法：①表示某动作刚刚结束的紧接着瞬间，发生了另一件事（'刚……就……'）；②表示做了某种尝试、询问或行动之后，得到了某种结果或发现了某种既定事实（'一……却发现/结果是……'）。需要注意的是，后项多为陈述客观发生的事实，不能接带有说话人意志、命令或希望的表达。",
+      "formation": "动词た形 + ところ（或 ところで）",
+      "examples": [
+        {
+          "translation": "刚一打开门，一只猫就蹿了出来。"
+        },
+        {
+          "translation": "刚把电话挂断，它又响了起来。"
+        },
+        {
+          "translation": "刚把作业做完，朋友就联系我了。"
+        },
+        {
+          "translation": "买完东西回到家后，我才发现钱包丢了。"
+        }
+      ]
+    },
+    "ja_Verb_24": {
+      "title": "～たほうがいい (〜ta hou ga ii)",
+      "shortExplanation": "用于向他人提出建议、劝告或指导；'最好……'、'还是……比较好'。",
+      "longExplanation": "句型'～たほうがいい'将动词た形与表示比较选择的'ほうがいい'结合，用于向听话人提出有益的劝告、建议或指点，相当于汉语的'最好……'、'还是……为好'。这里使用た形含有'假定已经做了该动作，将会产生较好结果'的心理预设。若劝告对方最好不要做某事，则使用否定形式'～ないほうがいい'。礼貌会话中句尾加上'です'。",
+      "formation": "动词た形 + ほうがいい（否定形式：动词ない形 + ほうがいい；礼貌体：ほうがいいです）",
+      "examples": [
+        {
+          "translation": "最好早点睡觉。"
+        },
+        {
+          "translation": "还是多用功学习比较好。"
+        },
+        {
+          "translation": "生病的时候，最好还是吃药。"
+        },
+        {
+          "translation": "最好还是不要喝咖啡。"
+        }
+      ]
+    },
+    "ja_Verb_25": {
+      "title": "～ために (〜tame ni)",
+      "shortExplanation": "表示行动的目的（'为了……'），或表示客观原因、理由（'因为……'、'由于……'）。",
+      "longExplanation": "句型'～ために'具有两个核心用法：①表示目的：接在意志性动词辞书形或'名词 + の'之后，表示为了实现某一目标而采取行动，相当于汉语的'为了……'；②表示原因或理由：接在动词普通形、形容词或'名词 + の'之后，多用于书面语或正式场合，陈述导致某种后果的客观原因，相当于'因为……'、'由于……'。",
+      "formation": "目的：动词辞书形 / 名词 + の + ために | 原因：动词普通形 / い形容词 / な形容词 + な / 名词 + の + ために",
+      "examples": [
+        {
+          "translation": "为了通过考试，我每天都在努力学习。"
+        },
+        {
+          "translation": "为了身体健康，每天都必须坚持锻炼。"
+        },
+        {
+          "translation": "因为工作繁忙，所以没有时间和朋友见面。"
+        },
+        {
+          "translation": "因为下雨，比赛被取消了。"
+        }
+      ]
+    },
+    "ja_Verb_26": {
+      "title": "～つもり (〜tsumori)",
+      "shortExplanation": "表示说话人的打算、意图或计划；'打算……'、'准备……'。",
+      "longExplanation": "句型'～つもり'接在动词普通形后，用于表达说话人内心已经确定的计划、打算或意图。通常用于第一人称的意向。否定表达有两种方式：'～ないつもり'（打算不做某事）以及语气更为坚决的'～つもりはない'（绝无……的打算）。在日常礼貌交际中，通常在句尾加上'です'构成'～つもりです'。",
+      "formation": "动词辞书形 + つもり（否定形式：动词ない形 + つもり / 动词辞书形 + つもりはない；礼貌体：つもりです）",
+      "examples": [
+        {
+          "translation": "我打算明天去见朋友。"
+        },
+        {
+          "translation": "我打算今晚做晚饭。"
+        },
+        {
+          "translation": "我打算明年去留学。"
+        },
+        {
+          "translation": "这个周末我打算去爬山。"
+        }
+      ]
+    },
+    "ja_Verb_27": {
+      "title": "～てあげる (〜te ageru)",
+      "shortExplanation": "表示说话人为他人做某件有益的事或提供帮助；'为……做……'、'帮……做……'。",
+      "longExplanation": "句型'～てあげる'由动词て形后接授受动词'あげる'构成，表示说话人（或说话人一方的人）出于好意为他人做出某种行为或提供协助。需要特别注意的是，由于该句型带有'施惠'的语感，因此在日常交际中不能直接对长辈、上司或客户使用，否则会显得傲慢无礼；对长辈应用自谦语'～てさしあげる'或更为委婉的表达。主要用于平辈、晚辈、家人或动植物。",
+      "formation": "动词て形 + あげる（礼貌体：あげます / あげました）",
+      "examples": [
+        {
+          "translation": "朋友看起来很累，所以我帮他拿了行李。"
+        },
+        {
+          "translation": "弟弟不会做作业，所以我帮了他。"
+        },
+        {
+          "translation": "看她好像快迟到了，我便去车站接了她。"
+        },
+        {
+          "translation": "小狗看起来口渴了，所以我给它喂了水。"
+        }
+      ]
+    },
+    "ja_Verb_28": {
+      "title": "～てある (〜te aru)",
+      "shortExplanation": "表示某人为了某种目的而特意做好的动作，其结果状态至今依然保留；'已经做好……'、'……着'。",
+      "longExplanation": "句型'～てある'将他动词的て形与补助动词'ある'相结合，表示某人出于某种明确的目的事先做好了某事，且该行为所产生的结果状态目前仍然持续留存着。在该句型中，原来他动词的对象宾语通常改用助词'が'来提示（如：窓が開けてある）。与通常搭配自动词表示单纯客观状态的'～ている'不同，'～てある'暗含有人为事先准备、有意识操作的痕迹。",
+      "formation": "他动词て形 + ある（礼貌体：あります）",
+      "examples": [
+        {
+          "translation": "窗户特意开着（有人特意打开且保持现状）。"
+        },
+        {
+          "translation": "作业已经全部做好了。"
+        },
+        {
+          "translation": "洗好的衣物已经全部晾晒好了。"
+        },
+        {
+          "translation": "这个房间已经被打扫得干干净净了。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Nounをくださる_14": {
+      "title": "～をくださる (〜wo kudasaru)",
+      "shortExplanation": "'くれる'의 존경어로, 윗사람이 화자(또는 화자 측 사람)에게 물건이나 호의를 주는 것을 나타내며, '(저에게) 주시다'라는 뜻입니다.",
+      "longExplanation": "'～をくださる' 문형은 수수동사 'くれる'의 존경어 표현으로, 윗사람이나 지위가 높은 사람(선생님, 상사 등)이 화자 또는 화자의 가족에게 물건이나 배려, 호의를 베풀어 줄 때 사용합니다. 주는 주체를 높여 감사와 경의를 나타내며, 일상 정중한 회화에서는 주로 정중형인 'くださいます' 또는 과거형 'くださいました' 형태로 씁니다.",
+      "formation": "주는 사람(윗사람) + が + 받는 사람(화자 측) + に + 명사(물건) + を + くださる (정중형: くださいます / くださいました)",
+      "examples": [
+        {
+          "translation": "선생님께서 자료를 주셨습니다."
+        },
+        {
+          "translation": "어머니께서 간식을 주십니다."
+        },
+        {
+          "translation": "상사께서 조언을 해 주셨습니다."
+        },
+        {
+          "translation": "친구가 선물을 주었습니다."
+        }
+      ]
+    },
+    "ja_Noun_15": {
+      "title": "～をくれる (〜wo kureru)",
+      "shortExplanation": "다른 사람이 화자(또는 화자 측 사람)에게 물건을 주는 것을 나타내며, '(나에게) 주다'라는 뜻입니다.",
+      "longExplanation": "'～をくれる' 문형은 다른 사람(주어)이 화자 또는 화자와 가까운 사람(가족, 같은 집단 사람 등)에게 어떤 물건을 주는 수수 표현입니다. 물건이 타인에게서 화자 쪽으로 이동하는 방향성을 가지며, 정중형으로는 'くれます' 또는 과거형 'くれました'를 씁니다. 받는 사람이 '私に(나에게)'일 경우 문맥에 따라 생략되기도 합니다.",
+      "formation": "주는 사람 + が + 받는 사람(화자 측) + に + 명사(물건) + を + くれる (정중형: くれます / くれました)",
+      "examples": [
+        {
+          "translation": "친구가 나에게 선물을 주었습니다."
+        },
+        {
+          "translation": "그가 나에게 꽃을 주었다."
+        },
+        {
+          "translation": "선생님께서 나에게 책을 주셨습니다."
+        },
+        {
+          "translation": "어머니께서 남동생에게 과자를 주셨습니다."
+        }
+      ]
+    },
+    "ja_Noun_16": {
+      "title": "～をさしあげる (〜wo sashiageru)",
+      "shortExplanation": "'あげる'의 겸양어로, 윗사람이나 손님 등에게 물건을 드리는 것을 공손하게 나타내며, '(물건을) 드리다', '올리다'라는 뜻입니다.",
+      "longExplanation": "'～をさしあげる' 문형은 수수동사 'あげる(주다)'의 겸양어 표현입니다. 화자 또는 화자의 가족이 윗사람, 상사, 손님 등 경의를 표해야 하는 대상에게 물건을 줄 때 사용하며, 자신의 행동을 낮춤으로써 상대방을 높이는 뉘앙스를 지닙니다. 정중한 자리나 비즈니스 상황에서는 주로 'さしあげます'의 형태로 사용됩니다.",
+      "formation": "받는 사람(윗사람/손님) + に + 명사(물건) + を + さしあげる (정중형: さしあげます)",
+      "examples": [
+        {
+          "translation": "선생님께 책을 드립니다."
+        },
+        {
+          "translation": "어머니께 꽃을 드리고 싶습니다."
+        },
+        {
+          "translation": "손님께 차를 대접해 드리겠습니다."
+        },
+        {
+          "translation": "선배님께 선물을 드렸더니 무척 기뻐하셨습니다."
+        }
+      ]
+    },
+    "ja_Noun_17": {
+      "title": "～をもらう (〜wo morau)",
+      "shortExplanation": "다른 사람에게서 물건을 받는 것을 나타내며, '~에게(서) 받다', '얻다'라는 뜻입니다.",
+      "longExplanation": "'～をもらう' 문형은 화자(또는 화자 측 사람)의 관점에서 다른 사람으로부터 물건이나 선물 등을 건네받을 때 사용하는 수수 표현입니다. 물건을 주는 주체 뒤에는 조사 'に'나 'から'를 사용합니다. 일상 정중한 회화에서는 'もらいます' 또는 'もらいました'의 형태로 사용하며, 주는 상대가 윗사람인 경우에는 겸양어인 'いただく'를 씁니다.",
+      "formation": "주는 사람 + に / から + 명사(물건) + を + もらう (정중형: もらいます / もらいました)",
+      "examples": [
+        {
+          "translation": "친구에게 선물을 받았습니다."
+        },
+        {
+          "translation": "선생님께 조언을 받았습니다."
+        },
+        {
+          "translation": "아버지에게서 용돈을 받다."
+        },
+        {
+          "translation": "그녀에게 편지를 받았다."
+        }
+      ]
+    },
+    "ja_Noun_18": {
+      "title": "～中 (〜chuu / 〜jyuu)",
+      "shortExplanation": "명사 뒤에 붙어 어떤 동작이 진행 중이거나 특정 범위 안에 있음을 나타내며, '~ 중', '~ 동안'이라는 뜻입니다.",
+      "longExplanation": "접미사 '～中'은 명사 바로 뒤에 결합하여 두 가지 주된 의미를 나타냅니다. ① 어떤 동작이나 행위가 한창 진행 중임을 나타내는 경우로 보통 'ちゅう'로 발음됩니다(예: 勉強中, 仕事中, 会議中). ② 시간의 전 구간이나 공간 전체에 걸쳐 있음을 나타내는 경우로 보통 'じゅう'로 발음됩니다(예: 今日中, 一日中, 世界中). 일상 대화 및 안내문에서 매우 폭넓게 사용됩니다.",
+      "formation": "명사 + 中 (발음: ちゅう 또는 じゅう)",
+      "examples": [
+        {
+          "translation": "그는 근무(일) 중입니다."
+        },
+        {
+          "translation": "시험 중에는 휴대전화를 사용해서는 안 됩니다."
+        },
+        {
+          "translation": "영화를 보고 있는 와중에 그는 울기 시작했습니다."
+        },
+        {
+          "translation": "그녀는 지금 공부 중입니다."
+        }
+      ]
+    },
+    "ja_Verb_19": {
+      "title": "～させられる (〜saserareru)",
+      "shortExplanation": "사역수동형으로, 다른 사람의 강요나 지시로 인해 내키지 않는 행동을 억지로 하게 됨을 나타내며, '~하게 되다', '~을 억지로 하다'라는 뜻입니다.",
+      "longExplanation": "'～させられる' 문형은 동사의 사역형과 수동형이 결합된 사역수동형입니다. 주어가 타인의 강요나 명령, 사회적 압박 등으로 인해 본인의 의사와는 상관없이 어떤 행동을 비자발적으로 또는 억지로 해야만 하는 상황을 나타냅니다. 1그룹 동사(5단 동사)의 경우 어미가 'す'로 끝나는 것을 제외하고는 구어에서 축약형인 '～される'(예: 行かされる, 待たされる)가 흔히 사용됩니다.",
+      "formation": "1그룹 동사: 어미 [う]단을 [あ]단으로 변경 + せられる (축약형: [あ]단 + される, 'す' 제외) | 2그룹 동사: 어미 る 탈락 + させられる | 3그룹 동사: する → させられる, くる → こさせられる",
+      "examples": [
+        {
+          "translation": "아이들은 선생님에게 숙제를 억지로 하게 되었습니다."
+        },
+        {
+          "translation": "그는 회사로부터 더 일하도록 강요받았다."
+        },
+        {
+          "translation": "나는 친구에게 그 기밀을 말하도록 강요당했습니다."
+        },
+        {
+          "translation": "부상을 입은 선수는 코치에게 휴식을 취하도록 지시받았습니다."
+        }
+      ]
+    },
+    "ja_Verb_20": {
+      "title": "～させる (〜saseru)",
+      "shortExplanation": "사역형으로, 남에게 어떤 동작을 하도록 시키거나 허락하는 것을 나타내며, '~하게 하다', '~하게 시키다'라는 뜻입니다.",
+      "longExplanation": "'～させる' 문형은 동사의 사역형입니다. 윗사람이나 지시권을 가진 사람(부모, 교사, 상사 등)이 아랫사람에게 동작을 지시·명령하여 강제로 시키는 경우(강제)와, 상대방이 하고 싶어 하는 행동을 허락·방임하는 경우(허용)에 사용됩니다. 허용의 의미일 때는 수수 표현과 결합하여 '～시켜주다'나 '～하게 해 주다' 형태로 많이 쓰입니다.",
+      "formation": "1그룹 동사: 어미 [う]단을 [あ]단으로 변경 + せる | 2그룹 동사: 어미 る 탈락 + させる | 3그룹 동사: する → させる, くる → こさせられる -> こさせる",
+      "examples": [
+        {
+          "translation": "선생님이 학생들에게 숙제를 시켰습니다."
+        },
+        {
+          "translation": "어머니께서 나에게 방 청소를 시키셨습니다."
+        },
+        {
+          "translation": "그녀에게 피아노를 치게 해 주었습니다."
+        },
+        {
+          "translation": "상사는 그에게 그 프로그램을 만들게 했습니다."
+        }
+      ]
+    },
+    "ja_Verb_21": {
+      "title": "～たことがある (〜ta koto ga aru)",
+      "shortExplanation": "과거에 어떤 행위나 사건을 겪은 경험이 있음을 나타내며, '~한 적이 있다'라는 뜻입니다.",
+      "longExplanation": "'～たことがある' 문형은 동사의 과거형(た형)에 'ことがある'를 붙여 과거에 적어도 한 번 이상 어떤 일이나 동작을 해 본 경험이 있음을 나타냅니다. 일상적인 반복 습관이나 단순한 어제의 일에는 쓰지 않으며, 살아오면서 겪은 경험을 강조할 때 쓰입니다. 부정형은 '～たことがない(~한 적이 없다)', 의문형은 '～たことがありますか(~한 적이 있습니까?)' 형태로 사용됩니다.",
+      "formation": "동사 た형 + ことがある (정중형: あります / ありません)",
+      "examples": [
+        {
+          "translation": "일본에 가 본 적이 있습니다."
+        },
+        {
+          "translation": "초밥을 먹어 본 적이 있습니까?"
+        },
+        {
+          "translation": "그는 마라톤을 뛰어 본 적이 있습니다."
+        },
+        {
+          "translation": "저는 스카이다이빙을 해 본 적이 없습니다."
+        }
+      ]
+    },
+    "ja_Verb_22": {
+      "title": "～たときに (〜ta toki ni)",
+      "shortExplanation": "앞의 동작이 이미 완료된 시점에 뒤의 동작이나 사건이 일어남을 나타내며, '~했을 때(에)'라는 뜻입니다.",
+      "longExplanation": "'～たときに' 문형은 동사의 과거형(た형) 뒤에 때를 나타내는 'とき(に)'가 연결되어, 앞 문장의 동작이나 사태가 이미 완료된 시점에 뒤 문장의 행위나 상태가 발생했음을 나타냅니다. 아직 동작이 이루어지기 전을 나타내는 '동사 사전형 + とき'와 대비되며, 시간적인 선후 관계에서 앞선 동작의 완료를 명확히 전제합니다.",
+      "formation": "동사 た형 + ときに (또는 とき)",
+      "examples": [
+        {
+          "translation": "영화를 보았을 때 눈물을 흘렸습니다."
+        },
+        {
+          "translation": "그를 처음 만났을 때 저는 지각하고 있었습니다."
+        },
+        {
+          "translation": "일본에 갔을 때 사진을 많이 찍었습니다."
+        },
+        {
+          "translation": "친구가 집에 왔을 때 함께 게임을 했습니다."
+        }
+      ]
+    },
+    "ja_Verb_23": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "어떤 동작을 마친 직후에 다른 사태가 일어나거나, 어떤 행동을 해 보았더니 결과를 알게 됨을 나타내며, '~했더니', '~한 직후에'라는 뜻입니다.",
+      "longExplanation": "'～たところ' 문형은 동사의 과거형(た형) 뒤에 연결되어 다음 두 가지 의미를 나타냅니다. ① 어떤 동작이 막 끝난 직후에 다음 사태가 이어져 일어나는 경우(막 ~한 참). ② 어떤 동작을 실제로 행해 보았더니 뜻밖의 결과나 새로운 사실을 알게 되는 경우(~했더니 ~한 결과가 됨). 후항에는 과거에 실제로 일어난 객관적 사실이 오며, 화자의 의지나 명령 표현은 오지 않습니다.",
+      "formation": "동사 た형 + ところ (또는 ところで)",
+      "examples": [
+        {
+          "translation": "문을 열었더니 고양이가 뛰쳐나왔습니다."
+        },
+        {
+          "translation": "전화를 끊은 직후에 다시 울렸습니다."
+        },
+        {
+          "translation": "숙제를 막 끝마친 참에 친구에게서 연락이 왔습니다."
+        },
+        {
+          "translation": "쇼핑을 하고 돌아와 보니 지갑을 잃어버렸다는 것을 알았습니다."
+        }
+      ]
+    },
+    "ja_Verb_24": {
+      "title": "～たほうがいい (〜ta hou ga ii)",
+      "shortExplanation": "상대방에게 조언이나 권유를 건넬 때 쓰이며, '~하는 편이 좋다', '~하는 것이 낫다'라는 뜻입니다.",
+      "longExplanation": "'～たほうがいい' 문형은 동사의 과거형(た형)에 'ほうがいい(편이 좋다)'를 결합하여 상대방에게 바람직한 행동을 조언하거나 제안할 때 사용합니다. 과거형 'た'를 쓰는 것은 이미 그 행위를 행했다고 가정했을 때 더 좋은 결과를 낳는다는 뉘앙스를 담고 있습니다. 하지 않는 편이 좋다고 조언할 때는 부정형인 '～ないほうがいい'를 쓰며, 정중형은 문말에 'です'를 붙입니다.",
+      "formation": "동사 た형 + ほうがいい (부정형: 동사 ない형 + ほうがいい, 정중형: ほうがいいです)",
+      "examples": [
+        {
+          "translation": "일찍 자는 편이 좋습니다."
+        },
+        {
+          "translation": "공부를 더 하는 편이 좋습니다."
+        },
+        {
+          "translation": "아플 때는 약을 먹는 편이 좋습니다."
+        },
+        {
+          "translation": "커피를 마시지 않는 편이 좋습니다."
+        }
+      ]
+    },
+    "ja_Verb_25": {
+      "title": "～ために (〜tame ni)",
+      "shortExplanation": "어떤 행위의 목적('~하기 위해')이나 객관적인 원인·이유('~ 때문에', '~로 인해')를 나타냅니다.",
+      "longExplanation": "'～ために' 문형은 문맥과 접속 형태에 따라 크게 두 가지 역할을 합니다. ① 목적 표현: 의지동사의 사전형이나 '명사 + の' 뒤에 붙어 어떤 목표나 이익을 이루기 위해 행동함을 나타냅니다('~을 위해'). ② 원인·이유 표현: 동사 보통형, 형용사, '명사 + の' 뒤에 붙어 뒤에 이어지는 사태를 초래한 객관적인 원인을 서술합니다('~ 때문에', '~로 인해'). 문어체나 격식 있는 표현에서 자주 쓰입니다.",
+      "formation": "목적: 동사 사전형 / 명사 + の + ために | 원인: 동사 보통형 / い형용사 / な형용사 + な / 명사 + の + ために",
+      "examples": [
+        {
+          "translation": "시험에 합격하기 위해 매일 공부하고 있습니다."
+        },
+        {
+          "translation": "건강을 위해 매일 운동해야 합니다."
+        },
+        {
+          "translation": "일이 바쁘기 때문에 친구와 만날 시간이 없습니다."
+        },
+        {
+          "translation": "비가 내렸기 때문에 시합이 중지되었습니다."
+        }
+      ]
+    },
+    "ja_Verb_26": {
+      "title": "～つもり (〜tsumori)",
+      "shortExplanation": "화자의 의도나 계획, 작정을 나타내며, '~할 생각이다', '~할 예정이다'라는 뜻입니다.",
+      "longExplanation": "'～つもり' 문형은 동사 사전형이나 부정형(ない형) 뒤에 붙어 화자가 마음속으로 정해 둔 계획이나 의도, 결심을 나타냅니다. 주로 화자 본인(1인칭)의 의도를 표현할 때 쓰입니다. 부정의 의미를 나타낼 때는 '~하지 않을 생각이다'라는 뜻의 '～ないつもり'나, 더 단호하게 '~할 생각은 전혀 없다'를 나타내는 '～つもりはない'를 사용합니다. 정중형은 문말에 'です'를 붙입니다.",
+      "formation": "동사 사전형 + つもり (부정형: 동사 ない형 + つもり / 동사 사전형 + つもりはない, 정중형: つもりです)",
+      "examples": [
+        {
+          "translation": "내일 친구를 만날 생각입니다."
+        },
+        {
+          "translation": "오늘 밤 저녁밥을 만들 생각입니다."
+        },
+        {
+          "translation": "내년에 유학 갈 생각입니다."
+        },
+        {
+          "translation": "이번 주말에 산에 오를 생각입니다."
+        }
+      ]
+    },
+    "ja_Verb_27": {
+      "title": "～てあげる (〜te ageru)",
+      "shortExplanation": "화자(또는 화자 측 사람)가 다른 사람을 위해 호의로 어떤 동작을 해 줌을 나타내며, '~해 주다'라는 뜻입니다.",
+      "longExplanation": "'～てあげる' 문형은 동사의 て형에 'あげる'가 연결되어 화자가 타인에게 호의나 친절로 어떤 행동을 베풀어 줌을 나타내는 수수 표현입니다. 주의할 점은 상대방에게 은혜를 베푼다는 뉘앙스가 포함되어 있으므로, 윗사람(선생님, 상사, 손님 등)에게 직접 사용하면 거만하거나 결례가 됩니다. 윗사람을 위한 행위일 때는 겸양어인 '～てさしあげる'나 다른 완곡한 표현을 써야 하며, 보통 동료, 아랫사람, 가족, 동물 등을 대상으로 사용합니다.",
+      "formation": "동사 て형 + あげる (정중형: あげます / あげました)",
+      "examples": [
+        {
+          "translation": "친구가 피곤해해서 짐을 들어 주었습니다."
+        },
+        {
+          "translation": "남동생이 숙제를 잘 몰라 해서 도와주었습니다."
+        },
+        {
+          "translation": "그녀가 늦을 것 같아서 역까지 마중 나가 주었습니다."
+        },
+        {
+          "translation": "개가 목이 마른 것 같아서 물을 먹여 주었습니다."
+        }
+      ]
+    },
+    "ja_Verb_28": {
+      "title": "～てある (〜te aru)",
+      "shortExplanation": "누군가가 어떤 목적을 가지고 의도적으로 해 놓은 동작의 결과 상태가 그대로 유지되고 있음을 나타내며, '~해 놓여 있다', '~해 두었다'라는 뜻입니다.",
+      "longExplanation": "'～てある' 문형은 타동사의 て형에 보조동사 'ある'가 결합된 형태입니다. 누군가가 특정 목적이나 준비를 위해 의도적으로 행한 동작의 결과가 현재까지 그대로 남아 있음을 나타냅니다. 본래 타동사의 목적어였던 명사는 보통 주격 조사 'が'를 취합니다(예: 窓が開けてある - 창문이 열려 있다). 자동사와 결합하여 단순한 상태를 묘사하는 '～ている'와 달리, '～てある'는 인위적인 의도와 사전 준비의 뉘앙스를 강하게 풍깁니다.",
+      "formation": "타동사 て형 + ある (정중형: あります)",
+      "examples": [
+        {
+          "translation": "창문이 열려 있습니다 (누군가 열어 두어 그 상태가 유지됨)."
+        },
+        {
+          "translation": "숙제가 이미 다 끝나 있습니다."
+        },
+        {
+          "translation": "빨래가 전부 널려 있습니다."
+        },
+        {
+          "translation": "이 방은 깨끗하게 청소되어 있습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Nounをくださる_14": {
+      "title": "～をくださる (〜wo kudasaru)",
+      "shortExplanation": "「くれる」の尊敬語で、目上の人が話し手（または身内）に物や恩恵を与えることを表し、「（私に）くださる／くださいます」という意味を表します。",
+      "longExplanation": "「～をくださる」は、授受動詞「くれる」の尊敬語表現です。先生や上司、目上の人が、話し手やその身内のために物を与えたり、配慮や恩恵を施してくれたりした際に敬意と感謝を込めて用います。日常の丁寧な会話では、丁寧形の「くださいます」や過去形の「くださいました」の形で用いられることが一般的です。",
+      "formation": "相手（目上の人） ＋ が ＋ 話し手側 ＋ に ＋ 名詞（物） ＋ を ＋ くださる（丁寧形：くださいます／くださいました）",
+      "examples": [
+        {
+          "translation": "先生が資料をくださいました。"
+        },
+        {
+          "translation": "お母さんがおやつをくださいます。"
+        },
+        {
+          "translation": "上司がアドバイスをくださいました。"
+        },
+        {
+          "translation": "友達がプレゼントをくださいました。"
+        }
+      ]
+    },
+    "ja_Noun_15": {
+      "title": "～をくれる (〜wo kureru)",
+      "shortExplanation": "他人が話し手（または身内）に物を与えることを表し、「（私に）くれる／くれます」という意味を表します。",
+      "longExplanation": "「～をくれる」は、他人が話し手または話し手の身内（家族など）に物を与える授受動詞の基本表現です。物の移動の方向が常に「他者から自分（身内）へ」向かう点に特徴があります。相手が目上の人の場合は「くださる」を用います。日常会話では丁寧形の「くれます」「くれました」が多く使われます。",
+      "formation": "相手（授与者） ＋ が ＋ 話し手側 ＋ に ＋ 名詞（物） ＋ を ＋ くれる（丁寧形：くれます／くれました）",
+      "examples": [
+        {
+          "translation": "友達が私にプレゼントをくれました。"
+        },
+        {
+          "translation": "彼が私に花をくれた。"
+        },
+        {
+          "translation": "先生が私に本をくれました。"
+        },
+        {
+          "translation": "お母さんが弟にお菓子をくれました。"
+        }
+      ]
+    },
+    "ja_Noun_16": {
+      "title": "～をさしあげる (〜wo sashiageru)",
+      "shortExplanation": "「あげる」の謙譲語で、目上の人や客などに物を差し出すことをへりくだって表し、「（〜に）差し上げる／差し上げます」という意味を表します。",
+      "longExplanation": "「～をさしあげる」は、授受動詞「あげる」の謙譲語表現です。話し手が先生や上司、あるいは顧客などの目上の人に対して物を進呈・提供する際に、自身の行為をへりくだることで相手に敬意を表します。ビジネスや改まった場面で頻繁に使われ、日常会話では丁寧形の「さしあげます」が多く用いられます。",
+      "formation": "相手（目上の人・客など） ＋ に ＋ 名詞（物） ＋ を ＋ さしあげる（丁寧形：さしあげます）",
+      "examples": [
+        {
+          "translation": "先生に本をさしあげます。"
+        },
+        {
+          "translation": "お母さんに花をさしあげたいです。"
+        },
+        {
+          "translation": "お客様にお茶をさしあげましょう。"
+        },
+        {
+          "translation": "先輩にプレゼントをさしあげたら、喜んでいました。"
+        }
+      ]
+    },
+    "ja_Noun_17": {
+      "title": "～をもらう (〜wo morau)",
+      "shortExplanation": "他者から物を受け取ることを表し、「〜から／に（物を）もらう／もらいます」という意味を表します。",
+      "longExplanation": "「～をもらう」は、話し手（または身内）が受益者（受け取る側）の視点に立って、他者から品物や贈り物、アドバイスなどを受け取ることを表す授受動詞です。贈り主（授与者）の後ろには助詞「に」または「から」を置きます。目上の人から受け取る場合は謙譲語の「いただく」を用います。丁寧な場面では「もらいます」「もらいました」の形をとります。",
+      "formation": "相手（授与者） ＋ に／から ＋ 名詞（物） ＋ を ＋ もらう（丁寧形：もらいます／もらいました）",
+      "examples": [
+        {
+          "translation": "友達からプレゼントをもらいました。"
+        },
+        {
+          "translation": "先生にアドバイスをもらいました。"
+        },
+        {
+          "translation": "お父さんからお小遣いをもらう。"
+        },
+        {
+          "translation": "彼女に手紙をもらった。"
+        }
+      ]
+    },
+    "ja_Noun_18": {
+      "title": "～中 (〜chuu / 〜jyuu)",
+      "shortExplanation": "動作や出来事が現在進行中であることや、ある期間・範囲の全体を表し、「〜している最中」「〜の間中」という意味を表します。",
+      "longExplanation": "接尾辞「～中」は名詞に直接接続し、主に二つの意味を表します。①その動作や状態が現在まさに行われている最中であること（主に「ちゅう」と読み、「仕事中」「勉強中」「準備中」など）。②ある期間の全体、または場所・範囲の全体にわたることを表す用法（主に「じゅう」と読み、「今日中」「一日中」「世界中」など）。案内表示や日常会話で幅広く用いられます。",
+      "formation": "名詞 ＋ 中（読み：ちゅう／じゅう）",
+      "examples": [
+        {
+          "translation": "彼は仕事中です。"
+        },
+        {
+          "translation": "試験中、携帯電話を使ってはいけません。"
+        },
+        {
+          "translation": "映画を観ている最中に、彼は泣き始めました。"
+        },
+        {
+          "translation": "彼女は今勉強中です。"
+        }
+      ]
+    },
+    "ja_Verb_19": {
+      "title": "～させられる (〜saserareru)",
+      "shortExplanation": "使役受身形で、他者からの強制や指示によって本人の意志に反してある動作を行わされることを表し、「無理やり〜させられる」「〜することになる」という意味を表します。",
+      "longExplanation": "「～させられる」は、動詞の使役形と受身形が合体した「使役受身形」です。話し手（主語）が相手から強制されたり、嫌々ながら不本意に行動させられたりする心理的負担や迷惑のニュアンスを表します。Ⅰグループ動詞（五段動詞）では、語尾が「す」で終わる動詞を除き、日常会話において「～される」（行かされる、書かされる等）という縮約形が非常によく用いられます。",
+      "formation": "Ⅰグループ動詞：語尾のう段をあ段に変えて ＋ せられる（縮約形：あ段 ＋ される、語尾「す」を除く）／Ⅱグループ動詞：語尾の「る」を取って ＋ させられる／Ⅲグループ動詞：する → させられる、くる → こさせられる",
+      "examples": [
+        {
+          "translation": "子供たちは先生に宿題をやらせられました。"
+        },
+        {
+          "translation": "彼は会社にもっと働かせられた。"
+        },
+        {
+          "translation": "私は友達にその機密を話させられました。"
+        },
+        {
+          "translation": "怪我をした選手は、コーチに休ませられました。"
+        }
+      ]
+    },
+    "ja_Verb_20": {
+      "title": "～させる (〜saseru)",
+      "shortExplanation": "動詞の使役形で、相手に動作を指示・強制したり、あるいは相手がすることを許可・容認したりすることを表し、「〜させる」「〜させるようにする」という意味を表します。",
+      "longExplanation": "「～させる」は動詞の使役形の表現です。親、教師、上司など目上の立場から目下に対して用いられることが多く、主に以下の用法があります。①相手に指示や命令を出してその動作を行わせる「強制」の用法。②相手の望む動作を行うことを認める「許可・容認」の用法（「～させてあげる」「～させてくれる」などの形で多用）。また、感情や生理的反応を引き起こす用法（「驚かせる」「安心させる」など）もあります。",
+      "formation": "Ⅰグループ動詞：語尾のう段をあ段に変えて ＋ せる／Ⅱグループ動詞：語尾の「る」を取って ＋ させる／Ⅲグループ動詞：する → させる、くる → こさせる",
+      "examples": [
+        {
+          "translation": "先生が生徒に宿題をさせました。"
+        },
+        {
+          "translation": "母が私に部屋を掃除させました。"
+        },
+        {
+          "translation": "彼女にピアノを弾かせてあげました。"
+        },
+        {
+          "translation": "上司は彼にそのプログラムを作らせました。"
+        }
+      ]
+    },
+    "ja_Verb_21": {
+      "title": "～たことがある (〜ta koto ga aru)",
+      "shortExplanation": "過去にその動作や事柄を経験したことがあることを表し、「〜した経験がある」という意味を表します。",
+      "longExplanation": "「～たことがある」は、動詞の過去形（た形）に「ことがある」を接続させ、話し手や主語がこれまでに少なくとも一度はその行為を経験した事実があることを表す文法です。日常的な習慣やごく直近の過去の出来事には使わず、これまでの人生における経験・体験を述べる際に用います。否定形は「～たことがない」、疑問形は「～たことがありますか」となります。",
+      "formation": "動詞た形 ＋ ことがある（丁寧形：あります／ありません）",
+      "examples": [
+        {
+          "translation": "日本に行ったことがあります。"
+        },
+        {
+          "translation": "寿司を食べたことがありますか？"
+        },
+        {
+          "translation": "彼はマラソンを走ったことがあります。"
+        },
+        {
+          "translation": "私はスカイダイビングをしたことがありません。"
+        }
+      ]
+    },
+    "ja_Verb_22": {
+      "title": "～たときに (〜ta toki ni)",
+      "shortExplanation": "前項の動作が完了した時点において後項の事態が起こることを表し、「〜した時に」という意味を表します。",
+      "longExplanation": "「～たときに」は、動詞のた形に時を表す名詞「とき（に）」が接続した構文です。前項の動作やすでに成立した状態を前提として、その時点で後項の出来事や行動が生じたことを表します。動作が完了する前を表す「動詞辞書形＋とき」とは異なり、前項の動作が完全に終了した後の時間軸に焦点を当てます。",
+      "formation": "動詞た形 ＋ ときに（または とき）",
+      "examples": [
+        {
+          "translation": "映画を見たときに、泣きました。"
+        },
+        {
+          "translation": "彼に初めて会ったときに、遅刻していました。"
+        },
+        {
+          "translation": "日本へ行ったときに、たくさんの写真を撮りました。"
+        },
+        {
+          "translation": "友達が家に来たときに、ゲームをしました。"
+        }
+      ]
+    },
+    "ja_Verb_23": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "ある動作を行った直後の状況や、ある行為をしてみた結果新しい事実が分かったことを表し、「〜したところ」「〜してみたら」という意味を表します。",
+      "longExplanation": "「～たところ」は、動詞のた形に接続し、主に二つの用法を持ちます。①ある動作が完了した直後に次の事態が発生したことを表す用法（時間的直後）。②ある行為を試みたり働きかけたりした結果、ある状況や事実が判明したことを表す用法（契機・結果の発見）。後項には実際に起こった客観的な事実が述べられ、話し手の意志や働きかけ（命令・勧誘など）の文は続きません。",
+      "formation": "動詞た形 ＋ ところ（または ところで）",
+      "examples": [
+        {
+          "translation": "ドアを開けたところ、猫が飛び出してきた。"
+        },
+        {
+          "translation": "電話を切ったところ、また鳴った。"
+        },
+        {
+          "translation": "宿題を終わらせたところで、友達から連絡が来た。"
+        },
+        {
+          "translation": "買い物をして帰ったところ、財布を失くしたことに気づいた。"
+        }
+      ]
+    },
+    "ja_Verb_24": {
+      "title": "～たほうがいい (〜ta hou ga ii)",
+      "shortExplanation": "相手に助言やアドバイス、勧告を伝える際に用いられ、「〜したほうが良い」「〜するのが望ましい」という意味を表します。",
+      "longExplanation": "「～たほうがいい」は、動詞の過去形（た形）に「ほうがいい」が接続し、相手に対してある行動をとることを勧めたり、忠告や助言を与えたりする文法です。た形を用いることで「すでに行為が完了した状態を選択するほうが良い」というニュアンスを含みます。反対にある動作をしないことを勧める場合は「～ないほうがいい」を用います。丁寧な場面では「～たほうがいいです」と結びます。",
+      "formation": "動詞た形 ＋ ほうがいい（否定：動詞ない形 ＋ ほうがいい、丁寧形：ほうがいいです）",
+      "examples": [
+        {
+          "translation": "早く寝たほうがいいです。"
+        },
+        {
+          "translation": "もっと勉強したほうがいいです。"
+        },
+        {
+          "translation": "病気の時は、薬を飲んだほうがいいです。"
+        },
+        {
+          "translation": "コーヒーを飲まないほうがいいです。"
+        }
+      ]
+    },
+    "ja_Verb_25": {
+      "title": "～ために (〜tame ni)",
+      "shortExplanation": "ある行動の目的を表す用法（「〜のために」）と、事態を引き起こした客観的な原因・理由を表す用法（「〜のために／〜が原因で」）があります。",
+      "longExplanation": "「～ために」は、文脈や接続によって二つの重要な意味を表します。①目的の用法：意志動詞の辞書形や「名詞＋の」に接続し、目標を達成しようとする意図を表します（「〜を目標として」）。②原因・理由の用法：動詞普通形、い形容詞、な形容詞（＋な）、名詞（＋の）に接続し、主に客観的な出来事や不都合な結果を引き起こした原因・理由を改まった口調で述べます（「〜が原因で」）。",
+      "formation": "目的：動詞辞書形／名詞 ＋ の ＋ ために｜原因：動詞普通形／い形容詞／な形容詞 ＋ な／名詞 ＋ の ＋ ために",
+      "examples": [
+        {
+          "translation": "試験に合格するために、毎日勉強しています。"
+        },
+        {
+          "translation": "健康のために、毎日運動しなければなりません。"
+        },
+        {
+          "translation": "仕事が忙しいために、友達と会う時間がありません。"
+        },
+        {
+          "translation": "雨が降ったために、試合が中止されました。"
+        }
+      ]
+    },
+    "ja_Verb_26": {
+      "title": "～つもり (〜tsumori)",
+      "shortExplanation": "話し手の意図や今後の予定、決意を表し、「〜する予定だ」「〜する考えだ」という意味を表します。",
+      "longExplanation": "「～つもり」は、動詞の辞書形（または否定形）に接続し、話し手が前もって心の中で決めている意図や計画を表す文法です。主に話し手自身の意志について述べます。否定形には「〜しない予定だ」を意味する「～ないつもり」と、意志の不在を強く示す「～つもりはない」があります。丁寧な場面では文末に「です」をつけて「～つもりです」の形で用います。",
+      "formation": "動詞辞書形 ＋ つもり（否定：動詞ない形 ＋ つもり／動詞辞書形 ＋ つもりはない、丁寧形：つもりです）",
+      "examples": [
+        {
+          "translation": "明日、友達に会うつもりです。"
+        },
+        {
+          "translation": "今夜、晩ご飯を作るつもりです。"
+        },
+        {
+          "translation": "来年、留学するつもりです。"
+        },
+        {
+          "translation": "この週末、山に登るつもりです。"
+        }
+      ]
+    },
+    "ja_Verb_27": {
+      "title": "～てあげる (〜te ageru)",
+      "shortExplanation": "話し手（または身内）が他者のために親切や好意である行為を行うことを表し、「〜してやる」「〜してあげる」という意味を表します。",
+      "longExplanation": "「～てあげる」は、動詞のて形に授受動詞「あげる」が接続し、話し手（または身内の者）が他者の利益になる行為を進んで行うことを表す表現です。行為の恩恵を与えるニュアンス（恩着せがましさ）を含むため、目上の人に対して直接使うことは失礼とされます。目上の人に対しては「～てさしあげる」やより遠回しな表現を用い、本表現は同僚、目下、身内、動植物などに対して用いるのが一般的です。",
+      "formation": "動詞て形 ＋ あげる（丁寧形：あげます／あげました）",
+      "examples": [
+        {
+          "translation": "友達が疲れていたから、荷物を持ってあげました。"
+        },
+        {
+          "translation": "弟は宿題がわからなかったので、手伝ってあげました。"
+        },
+        {
+          "translation": "彼女が遅れそうだったから、駅まで迎えに行ってあげました。"
+        },
+        {
+          "translation": "犬はのどが渇いたそうだったので、水を飲ませてあげました。"
+        }
+      ]
+    },
+    "ja_Verb_28": {
+      "title": "～てある (〜te aru)",
+      "shortExplanation": "誰かが何らかの目的をもって行った行為の結果が、現在もそのままの状態として残っていることを表し、「〜してある／〜してあります」という意味を表します。",
+      "longExplanation": "「～てある」は、他動詞のて形に補助動詞「ある」が接続した構文です。ある人によって意図的・目的をもって行われた行為の結果状態が、現在も維持されていることを表します。この構文では、通常他動詞の目的語に助詞「が」が用いられます（例：窓が開けてある）。自動詞と結びついて単なる自然な状態を表す「～ている」に対し、「～てある」は何者かによる準備や意図的な行為が存在することを明確に示します。",
+      "formation": "他動詞て形 ＋ ある（丁寧形：あります）",
+      "examples": [
+        {
+          "translation": "窓が開けてあります。"
+        },
+        {
+          "translation": "宿題がもう終わってあります。"
+        },
+        {
+          "translation": "洗濯物が全部干してあります。"
+        },
+        {
+          "translation": "この部屋はきれいに掃除してあります。"
+        }
+      ]
+    }
+  }
+}

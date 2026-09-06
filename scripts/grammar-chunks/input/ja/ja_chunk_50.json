@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Verb_152",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようにも Verb れない (〜you ni mo 〜renai)",
+    "shortExplanation": "Expresses the inability to do something even if one wants/tries.",
+    "longExplanation": "This grammar shows that you want (or try) to do something (volitional form), but cannot due to some obstacle. Often it appears as 'Verb-volitional + にも + Verb (potential negative)' or simply 'Verb-volitional + にも + (reason you can't)'.",
+    "formation": "Verb-volitional form + にも + (potential negative form / reason)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼を信じようにも信じられない証拠がある。",
+        "romanization": "Kare o shinjiyou ni mo shinjirarenai shouko ga aru.",
+        "translation": "Even if I want to believe him, there's evidence that prevents me from doing so."
+      },
+      {
+        "sentence": "早く出発しようにも車が故障してしまった。",
+        "romanization": "Hayaku shuppatsu shiyou ni mo kuruma ga koshou shite shimatta.",
+        "translation": "Even if I want to leave early, my car has broken down."
+      },
+      {
+        "sentence": "彼に電話しようにも電話番号を知らない。",
+        "romanization": "Kare ni denwa shiyou ni mo denwa bangou o shiranai.",
+        "translation": "I want to call him, but I don’t know his phone number."
+      },
+      {
+        "sentence": "もっと勉強しようにも時間がない。",
+        "romanization": "Motto benkyou shiyou ni mo jikan ga nai.",
+        "translation": "I want to study more, but there is no time."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_153",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようもない (~you mo nai)",
+    "shortExplanation": "Expresses 'it's impossible to do something'.",
+    "longExplanation": "～ようもない typically attaches to the verb's ます-stem, adding ようもない to indicate that there is 'no way' or 'no method' to perform the action. It’s the same nuance as 'Verbようがない' in many references.",
+    "formation": "Verb-ます stem + ようもない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この問題は解きようもない。",
+        "romanization": "Kono mondai wa toki you mo nai.",
+        "translation": "It's impossible to solve this problem."
+      },
+      {
+        "sentence": "これ以上我慢しようもない。",
+        "romanization": "Kore ijou gaman shiyou mo nai.",
+        "translation": "It's impossible to endure any further."
+      },
+      {
+        "sentence": "彼には通じようもない。",
+        "romanization": "Kare ni wa tsuujiyou mo nai.",
+        "translation": "There's no way to get through to him."
+      },
+      {
+        "sentence": "その薬は飲みようもない。",
+        "romanization": "Sono kusuri wa nomiyou mo nai.",
+        "translation": "It's impossible to take (swallow) that medicine."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_154",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる がままに (〜ga mama ni)",
+    "shortExplanation": "Expresses 'letting something happen as it is'; 'just as something does'.",
+    "longExplanation": "がままに describes an action happening exactly 'as is,' without intervention or change, often suggesting doing something passively or naturally.",
+    "formation": "Verb-dictionary form + がままに",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "窓を開けるがままにしておいたら、風が部屋に入ってきました。",
+        "romanization": "Mado o akeru ga mama ni shite oitara, kaze ga heya ni haitte kimashita.",
+        "translation": "I left the window open as it was, and the wind came into the room."
+      },
+      {
+        "sentence": "彼女は涙を流すがままに、ただ黙って座っていた。",
+        "romanization": "Kanojo wa namida o nagasu ga mama ni, tada damatte suwatte ita.",
+        "translation": "She just sat quietly, letting her tears flow."
+      },
+      {
+        "sentence": "子供たちは笑うがままに、公園で走り回っていた。",
+        "romanization": "Kodomo-tachi wa warau ga mama ni, kouen de hashirimawatte ita.",
+        "translation": "The children ran around the park, laughing freely as they pleased."
+      },
+      {
+        "sentence": "日が沈むがままに、私たちは海辺で話し続けました。",
+        "romanization": "Hi ga shizumu ga mama ni, watashitachi wa umibe de hanashi tsudzukemashita.",
+        "translation": "We kept talking by the sea, letting the sun set as it would."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_155",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる が早いか (verb-ru ga hayai ka)",
+    "shortExplanation": "Expresses 'as soon as...' or 'the moment when...'.",
+    "longExplanation": "Verbる が早いか indicates that something happens immediately after something else. It's similar to 'as soon as...' or 'no sooner than...'.",
+    "formation": "Verb-dictionary form + が早いか",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "部屋に入るが早いか、彼はテレビをつけた。",
+        "romanization": "Heya ni hairu ga hayai ka, kare wa terebi o tsuketa.",
+        "translation": "No sooner had he entered the room than he turned on the TV."
+      },
+      {
+        "sentence": "電車に乗るが早いか、私はすぐに眠ってしまった。",
+        "romanization": "Densha ni noru ga hayai ka, watashi wa sugu ni nemutte shimatta.",
+        "translation": "As soon as I got on the train, I immediately fell asleep."
+      },
+      {
+        "sentence": "彼女が見るが早いか、すぐに泣き始めた。",
+        "romanization": "Kanojo ga miru ga hayai ka, sugu ni naki hajimeta.",
+        "translation": "The moment she looked, she began to cry."
+      },
+      {
+        "sentence": "給料をもらうが早いか、全て使い果たしてしまった。",
+        "romanization": "Kyuuryou o morau ga hayai ka, subete tsukaihatashite shimatta.",
+        "translation": "No sooner had I received my salary than I spent it all."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_156",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる くらいなら (〜ru kurai nara)",
+    "shortExplanation": "Expresses preference to avoid something: 'rather than...', 'if it comes to doing X, I'd rather...'.",
+    "longExplanation": "This grammar is used when the speaker would rather not do something or chooses another option rather than face the stated action. It’s often translated as 'rather than... I'd prefer...' or 'if it comes down to doing X, I'd rather...'.",
+    "formation": "Verb-dictionary form + くらいなら",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "一人で行くくらいなら、家にいるほうがましです。",
+        "romanization": "Hitori de iku kurai nara, ie ni iru hou ga mashi desu.",
+        "translation": "I'd rather stay at home than go alone."
+      },
+      {
+        "sentence": "負けるくらいなら、試合をしないほうがいい。",
+        "romanization": "Makeru kurai nara, shiai o shinai hou ga ii.",
+        "translation": "Rather than lose, it's better not to compete."
+      },
+      {
+        "sentence": "遅刻するくらいなら、一日休んだほうがいい。",
+        "romanization": "Chikoku suru kurai nara, ichinichi yasunda hou ga ii.",
+        "translation": "It's better to take a day off than to be late."
+      },
+      {
+        "sentence": "痛い目に遭うくらいなら、そのリスクは避けます。",
+        "romanization": "Itai me ni au kurai nara, sono risuku wa sakemasu.",
+        "translation": "I'd rather avoid that risk than suffer the consequences."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_157",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる こと なし に (Verb-ru koto nashi ni)",
+    "shortExplanation": "Used to express 'without doing something'.",
+    "longExplanation": "Verbることなしに indicates doing something else 'without' performing the stated action. It can imply skipping or omitting the verb action entirely.",
+    "formation": "Verb-dictionary form + ことなしに",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "試験を勉強することなしに、合格しました。",
+        "romanization": "Shiken o benkyou suru koto nashi ni, goukaku shimashita.",
+        "translation": "I passed the exam without studying."
+      },
+      {
+        "sentence": "試着することなしに、服を買いました。",
+        "romanization": "Shichaku suru koto nashi ni, fuku o kaimashita.",
+        "translation": "I bought the clothes without trying them on."
+      },
+      {
+        "sentence": "彼は働くことなしに生活しています。",
+        "romanization": "Kare wa hataraku koto nashi ni seikatsu shite imasu.",
+        "translation": "He is living without working."
+      },
+      {
+        "sentence": "手続きをすることなしに、退職しました。",
+        "romanization": "Tetsuzuki o suru koto nashi ni, taishoku shimashita.",
+        "translation": "I retired without going through any procedures."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_158",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる ことのないように (Verb-ru koto no nai you ni)",
+    "shortExplanation": "Expresses the desire or effort to prevent something: 'so as not to...', 'to avoid...'.",
+    "longExplanation": "Verbる ことのないように is used to show that one is trying or intending to prevent some action from happening. It's like 'so that this doesn't happen' or 'in order not to...'.",
+    "formation": "Verb-dictionary form + ことのないように",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "車をなくすことのないように、駐車場で必ずロックしましょう。",
+        "romanization": "Kuruma o nakusu koto no nai you ni, chuushajou de kanarazu rokku shimashou.",
+        "translation": "Lock your car in the parking lot so you don't lose it."
+      },
+      {
+        "sentence": "風邪を引くことのないように、手をよく洗いましょう。",
+        "romanization": "Kaze o hiku koto no nai you ni, te o yoku araimashou.",
+        "translation": "Wash your hands well so you don't catch a cold."
+      },
+      {
+        "sentence": "試験に落ちることのないように、毎日勉強しましょう。",
+        "romanization": "Shiken ni ochiru koto no nai you ni, mainichi benkyou shimashou.",
+        "translation": "Study every day so you don't fail the exam."
+      },
+      {
+        "sentence": "間違いをすることのないように、仕事を慎重に行いましょう。",
+        "romanization": "Machigai o suru koto no nai you ni, shigoto o shinchou ni okonaimashou.",
+        "translation": "Let's work carefully to avoid making mistakes."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_159",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる ときりがない (verb-ru to kiri ga nai)",
+    "shortExplanation": "Used to indicate that something can go on endlessly or without limits.",
+    "longExplanation": "The ～るときりがない grammar point is used to express that once you start doing the verb, there’s no end or limit. The phrase 'きりがない' means 'no end' or 'endless.'",
+    "formation": "Verb-casual + と + きりがない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の悪口を言うときりがない。",
+        "romanization": "Kare no waruguchi o iu to kiri ga nai.",
+        "translation": "If we start talking about his faults, there's no end."
+      },
+      {
+        "sentence": "その問題を考えるときりがない。",
+        "romanization": "Sono mondai o kangaeru to kiri ga nai.",
+        "translation": "If you start thinking about that problem, there's no end."
+      },
+      {
+        "sentence": "彼女の美点を挙げるときりがない。",
+        "romanization": "Kanojo no biten o ageru to kiri ga nai.",
+        "translation": "If you start listing her virtues, there would be no end."
+      },
+      {
+        "sentence": "この世でおいしいものを食べるときりがない。",
+        "romanization": "Kono yo de oishii mono o taberu to kiri ga nai.",
+        "translation": "If you start eating all the delicious things in this world, there's no end."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_160",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる ともなく Verb (Verb-ru tomonaku Verb)",
+    "shortExplanation": "Used to express 'without a particular intention', 'unconsciously', or 'before one knows it'.",
+    "longExplanation": "The phrase VerbるともなくVerb indicates doing something unintentionally or unconsciously— you just find yourself doing it without a clear aim or intention.",
+    "formation": "Verb-dictionary form + ともなく + Verb",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "遠くを見るともなく窓の外を眺めた。",
+        "romanization": "Tooku o miru tomonaku mado no soto o nagameta.",
+        "translation": "I found myself gazing out the window, not really looking at anything in particular."
+      },
+      {
+        "sentence": "知るともなく、彼が去ったことを感じた。",
+        "romanization": "Shiru tomonaku, kare ga satta koto o kanjita.",
+        "translation": "Without really knowing, I felt that he had left."
+      },
+      {
+        "sentence": "本を読むともなく、ページをめくっていた。",
+        "romanization": "Hon o yomu tomonaku, peiji o mekutte ita.",
+        "translation": "Without intending to read, I was just flipping through the pages of the book."
+      },
+      {
+        "sentence": "寝るともなく、ベッドに横になっていた。",
+        "romanization": "Neru tomonaku, beddo ni yoko ni natte ita.",
+        "translation": "I was lying in bed without really intending to sleep."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_161",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる ともなしに Verb (Verb-ru tomonashi ni Verb)",
+    "shortExplanation": "Expresses doing something unintentionally or without conscious thought.",
+    "longExplanation": "VerbるともなしにVerb is used to show that you do some action without particularly intending to. Often you ‘end up doing’ something by habit or casually.",
+    "formation": "Verb-dictionary form + ともなしに + Verb",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "本を読むともなしに眠ってしまった。",
+        "romanization": "Hon o yomu tomonashi ni nemutte shimatta.",
+        "translation": "I ended up falling asleep while reading the book without really meaning to."
+      },
+      {
+        "sentence": "軽い気持ちで手紙を書くともなしに、彼に本心を告白した。",
+        "romanization": "Karui kimochi de tegami o kaku tomonashi ni, kare ni honshin o kokuhaku shita.",
+        "translation": "While writing a letter casually, I ended up confessing my true feelings to him."
+      },
+      {
+        "sentence": "散歩をするともなしに、新しいカフェを見つけた。",
+        "romanization": "Sanpo o suru tomonashi ni, atarashii kafe o mitsuketa.",
+        "translation": "While I was walking with no particular destination, I found a new cafe."
+      },
+      {
+        "sentence": "洋服を整理するともなしに、昔の写真を見つけた。",
+        "romanization": "Youfuku o seiri suru tomonashi ni, mukashi no shashin o mitsuketa.",
+        "translation": "As I was absentmindedly organizing clothes, I came across some old photos."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_162",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる なり (Verb-ru nari)",
+    "shortExplanation": "Expresses 'as soon as' or 'the moment'.",
+    "longExplanation": "Verbるなり indicates that the following action happens immediately after the verb action. It can be translated as 'no sooner than...', 'as soon as...', or 'the moment...'.",
+    "formation": "Verb-dictionary form + なり",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "家に帰るなり、すぐに寝た。",
+        "romanization": "Ie ni kaeru nari, sugu ni neta.",
+        "translation": "As soon as I got home, I went to sleep."
+      },
+      {
+        "sentence": "彼が駅に着くなり、電話をかけてきた。",
+        "romanization": "Kare ga eki ni tsuku nari, denwa o kakete kita.",
+        "translation": "He called me the moment he arrived at the station."
+      },
+      {
+        "sentence": "ドアを開けるなり、犬が吠え始めた。",
+        "romanization": "Doa o akeru nari, inu ga hoe hajimeta.",
+        "translation": "As soon as I opened the door, the dog started barking."
+      },
+      {
+        "sentence": "テストが終わるなり、彼は教室を出て行った。",
+        "romanization": "Tesuto ga owaru nari, kare wa kyoushitsu o dete itta.",
+        "translation": "He left the classroom the moment the test ended."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_163",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
+    "shortExplanation": "Expresses 'not only… but also', 'not limited to…'.",
+    "longExplanation": "にとどまらず is used to indicate that something goes beyond just the stated verb or noun. It can be translated as 'not just… but also…' or 'not limited to…'.",
+    "formation": "Noun / Verb-dictionary form + にとどまらず + も/ほかのこと",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は仕事にとどまらず、ボランティア活動もしている。",
+        "romanization": "Kare wa shigoto ni todomarazu, borantia katsudou mo shite iru.",
+        "translation": "He does not just work; he also does volunteer activities."
+      },
+      {
+        "sentence": "この機能は写真撮影にとどまらず、動画撮影も可能です。",
+        "romanization": "Kono kinou wa shashin satsuei ni todomarazu, douga satsuei mo kanou desu.",
+        "translation": "This function is not limited to taking photos; it can also record videos."
+      },
+      {
+        "sentence": "このレストランは日本料理にとどまらず、中華料理も提供しています。",
+        "romanization": "Kono resutoran wa Nihon ryouri ni todomarazu, Chuuka ryouri mo teikyou shiteimasu.",
+        "translation": "This restaurant not only serves Japanese food, but also Chinese cuisine."
+      },
+      {
+        "sentence": "その企業は製造業にとどまらず、流通業務も手がけている。",
+        "romanization": "Sono kigyou wa seizougyou ni todomarazu, ryuutsuugyou mo tegakete iru.",
+        "translation": "That company’s operations go beyond manufacturing; they also handle distribution."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_164",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる にはあたらない (Verb-ru ni wa ataranai)",
+    "shortExplanation": "Used to say 'there is no need to...', 'it’s not necessary to...'.",
+    "longExplanation": "Verbる にはあたらない expresses that something is not worth the reaction or there is no need to do the verb. It's somewhat formal and often used in writing.",
+    "formation": "Verb-dictionary form + にはあたらない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "パニックに陥るにはあたらない。",
+        "romanization": "Panikku ni ochiiru ni wa ataranai.",
+        "translation": "There’s no need to panic."
+      },
+      {
+        "sentence": "彼に謝るにはあたらない。",
+        "romanization": "Kare ni ayamaru ni wa ataranai.",
+        "translation": "There’s no need to apologize to him."
+      },
+      {
+        "sentence": "そのようなことを心配するにはあたらない。",
+        "romanization": "Sono you na koto o shinpai suru ni wa ataranai.",
+        "translation": "It’s not worth worrying about such things."
+      },
+      {
+        "sentence": "それについて深く考えるにはあたらない。",
+        "romanization": "Sore ni tsuite fukaku kangaeru ni wa ataranai.",
+        "translation": "There’s no need to think too deeply about it."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_165",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる にも (Verb-ru ni mo)",
+    "shortExplanation": "Indicates that doing the verb is impossible or difficult, even if one wants to.",
+    "longExplanation": "Verbる にも is often used with an additional clause explaining why the action can’t be done. It can be translated as 'even if (I) want to do X, I can’t (because...)'.",
+    "formation": "Verb-dictionary form + にも + (reason it can't be done)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "明日雨が降ったとしても、傘を持つにも荷物が多すぎる。",
+        "romanization": "Ashita ame ga futta to shite mo, kasa o motsu ni mo nimotsu ga oosugiru.",
+        "translation": "Even if it rains tomorrow, I have too much luggage to bring an umbrella."
+      },
+      {
+        "sentence": "試験に落ちたが、もう一度受けるにもお金が足りない。",
+        "romanization": "Shiken ni ochita ga, mou ichido ukeru ni mo okane ga tarinai.",
+        "translation": "I failed the exam, but I don’t have the money to take it again even if I wanted to."
+      },
+      {
+        "sentence": "彼に会いたいと思っても、彼に会うにも難しい状況だ。",
+        "romanization": "Kare ni aitai to omotte mo, kare ni au ni mo muzukashii joukyou da.",
+        "translation": "Even if I want to see him, it's a difficult situation to meet him."
+      },
+      {
+        "sentence": "この空港から彼女の家に行くにもタクシーが必要だ。",
+        "romanization": "Kono kuukou kara kanojo no ie ni iku ni mo takushii ga hitsuyou da.",
+        "translation": "I'd need a taxi to get from this airport to her house, even if I wanted to go."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_166",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる にも Verb れない (Verb-ru ni mo Verb-re nai)",
+    "shortExplanation": "Expresses: 'Even if I try/want to do something, I cannot.'",
+    "longExplanation": "This pattern emphasizes that a person wants or attempts to do something (often in volitional form), but is incapable of doing so. It is often used with potential verbs in negative form: 'Even if I try to ~, I can't ~.'",
+    "formation": "Verb-volitional + にも + Verb-potential negative",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼を理解しようにも理解できない。",
+        "romanization": "Kare o rikai shiyou ni mo rikai dekinai.",
+        "translation": "Even if I try to understand him, I can't."
+      },
+      {
+        "sentence": "走ろうにも走れない。",
+        "romanization": "Hashirou ni mo hashirenai.",
+        "translation": "Even if I want to run, I can't."
+      },
+      {
+        "sentence": "泣こうにも泣けない。",
+        "romanization": "Nakou ni mo nakenai.",
+        "translation": "Even if I want to cry, I can't."
+      },
+      {
+        "sentence": "忘れようにも忘れられない。",
+        "romanization": "Wasureyou ni mo wasurerarenai.",
+        "translation": "Even if I try to forget, I just can’t."
+      }
+    ]
+  }
+]

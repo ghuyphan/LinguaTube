@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_以来_178",
+    "language": "ja",
+    "pattern": "～以来",
+    "title": "～以来 (〜irai)",
+    "shortExplanation": "Indicates something happening 'since', 'ever since', or 'after' a particular time.",
+    "longExplanation": "The ～以来 grammar point is used to express a period of time that has continued uninterrupted since a certain point in the past. It can be translated as 'since', 'ever since', or 'after'. The formation differs depending on whether it is used with a verb, an adjective, or a noun.",
+    "formation": "Verb-past + 以来, い-Adjective + 以来, Noun + 以来",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "卒業以来、彼女に会っていない。",
+        "romanization": "Sotsugyou irai, kanojo ni atte inai.",
+        "translation": "I haven't seen her since we graduated."
+      },
+      {
+        "sentence": "子供が生まれて以来、忙しくなった。",
+        "romanization": "Kodomo ga umarete irai, isogashiku natta.",
+        "translation": "I've been busy ever since my child was born."
+      },
+      {
+        "sentence": "東京に引っ越して以来、友達が増えた。",
+        "romanization": "Toukyou ni hikkoshite irai, tomodachi ga fueta.",
+        "translation": "I've made more friends since I moved to Tokyo."
+      },
+      {
+        "sentence": "あの映画を見た以来、彼女は怖がりになった。",
+        "romanization": "Ano eiga wo mita irai, kanojo wa kowagari ni natta.",
+        "translation": "She's been easily frightened ever since she watched that movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_切る_179",
+    "language": "ja",
+    "pattern": "～切る",
+    "title": "～切る (〜kiru)",
+    "shortExplanation": "To do something completely or thoroughly.",
+    "longExplanation": "The ～切る grammar point is added to the verb stem (masu-form) to express doing something completely or thoroughly, often implying a strong sense of finishing or using up everything.",
+    "formation": "Verb-stem + 切る",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は試験勉強をがんばり切るつもりだ。",
+        "romanization": "Kare wa shiken benkyou o ganbari kiru tsumori da.",
+        "translation": "He intends to give his absolute all to exam study."
+      },
+      {
+        "sentence": "この仕事を終わり切るまで、帰らないでください。",
+        "romanization": "Kono shigoto o owari kiru made, kaeranai de kudasai.",
+        "translation": "Please don't go home until you've completely finished this job."
+      },
+      {
+        "sentence": "友達と喧嘩して、何も言い切れなかった。",
+        "romanization": "Tomodachi to kenka shite, nanimo iikirenakatta.",
+        "translation": "I argued with my friend and couldn't say everything I wanted to say."
+      },
+      {
+        "sentence": "彼らは、そのゲームをやり切ることができました。",
+        "romanization": "Karera wa, sono geemu o yarikiru koto ga dekimashita.",
+        "translation": "They were able to complete that game thoroughly."
+      }
+    ]
+  },
+  {
+    "id": "ja_反面_180",
+    "language": "ja",
+    "pattern": "～反面",
+    "title": "～反面 (〜hanmen)",
+    "shortExplanation": "Express contrast between two aspects; 'on the one hand', 'on the other hand'.",
+    "longExplanation": "The ～反面 grammar point is used to show a contrast between two aspects of something. It can be translated as 'on the one hand' or 'on the other hand'.",
+    "formation": "Verb-casual + 反面, い-Adjective + 反面, な-Adjective + である反面, Noun + である反面",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この車は速い反面、燃費が悪いです。",
+        "romanization": "Kono kuruma wa hayai hanmen, nenpi ga warui desu.",
+        "translation": "On the one hand, this car is fast, but on the other hand, it has poor fuel efficiency."
+      },
+      {
+        "sentence": "彼は頭がいい反面、運動が苦手です。",
+        "romanization": "Kare wa atama ga ii hanmen, undou ga nigate desu.",
+        "translation": "On the one hand, he is smart, but on the other hand, he's not good at sports."
+      },
+      {
+        "sentence": "彼女は親切である反面、面倒見が良すぎることがある。",
+        "romanization": "Kanojo wa shinsetsu de aru hanmen, mendoumi ga yoi sugiru koto ga aru.",
+        "translation": "On the one hand, she is kind, but on the other hand, she can be too helpful."
+      },
+      {
+        "sentence": "この仕事は給料が高い反面、ストレスがたくさんあります。",
+        "romanization": "Kono shigoto wa kyuuryou ga takai hanmen, sutoresu ga takusan arimasu.",
+        "translation": "On the one hand, this job pays well, but on the other hand, it's quite stressful."
+      }
+    ]
+  },
+  {
+    "id": "ja_向け_181",
+    "language": "ja",
+    "pattern": "～向け",
+    "title": "～向け (〜muke)",
+    "shortExplanation": "Indicating target or intended audience.",
+    "longExplanation": "The ～向け grammar point is used to indicate the target or intended audience for a product, service, or event. It can be translated as 'for', 'aimed at', or 'intended for'.",
+    "formation": "Noun + 向け",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この雑誌は若者向けです。",
+        "romanization": "Kono zasshi wa wakamono-muke desu.",
+        "translation": "This magazine is aimed at young people."
+      },
+      {
+        "sentence": "スーパーで家族向けの食品セットが売っています。",
+        "romanization": "Suupaa de kazoku-muke no shokuhin setto ga utte imasu.",
+        "translation": "The supermarket sells food sets intended for families."
+      },
+      {
+        "sentence": "このアプリは初心者向けに作られています。",
+        "romanization": "Kono apuri wa shoshinsha-muke ni tsukurarete imasu.",
+        "translation": "This application is designed for beginners."
+      },
+      {
+        "sentence": "このレストランはビーガン向けのメニューが充実しています。",
+        "romanization": "Kono resutoran wa bi-gan-muke no menyu ga juujitsu shite imasu.",
+        "translation": "This restaurant has an extensive menu aimed at vegans."
+      }
+    ]
+  },
+  {
+    "id": "ja_恐れがある_182",
+    "language": "ja",
+    "pattern": "～恐れがある",
+    "title": "～恐れがある (〜osore ga aru)",
+    "shortExplanation": "Express a concern or fear that something undesirable might occur.",
+    "longExplanation": "The ～恐れがある grammar point indicates that there is a concern or fear that something undesirable or negative might happen. It is often used for potential problems or risks, and can be translated as 'there is a risk' or 'there is a possibility'.",
+    "formation": "Verb-dictionary form + 恐れがある",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "地震が来る恐れがあるため、避難所に行ってください。",
+        "romanization": "Jishin ga kuru osore ga aru tame, hinanjo ni itte kudasai.",
+        "translation": "Please go to the evacuation center because there is a risk of an earthquake."
+      },
+      {
+        "sentence": "彼は事故に遭う恐れがあるので、注意して運転してください。",
+        "romanization": "Kare wa jiko ni au osore ga aru node, chuui shite unten shite kudasai.",
+        "translation": "There's a possibility he might have an accident, so please drive carefully."
+      },
+      {
+        "sentence": "この薬を飲みすぎると、副作用の恐れがある。",
+        "romanization": "Kono kusuri wo nomisugiru to, fukusayou no osore ga aru.",
+        "translation": "If you take too much of this medicine, there is a risk of side effects."
+      },
+      {
+        "sentence": "低い予算でこのプロジェクトを進めると、品質が低くなる恐れがある。",
+        "romanization": "Hikui yosan de kono purojekuto wo susumeru to, hinshitsu ga hikuku naru osore ga aru.",
+        "translation": "If we proceed with this project on a low budget, the quality may suffer."
+      }
+    ]
+  },
+  {
+    "id": "ja_折には_183",
+    "language": "ja",
+    "pattern": "～折には",
+    "title": "～折には (〜ori ni wa)",
+    "shortExplanation": "Expresses 'when' or 'in case of' specific situations or timings.",
+    "longExplanation": "The ～折には grammar point is used to emphasize a specific moment or situation (often not very frequent). It can be translated as 'when (the occasion arises)' or 'in case of'.",
+    "formation": "Verb-dictionary form + 折には, Verb-た form + 折には, い-Adjective + 折には, な-Adjective + な折には, Noun + の折には",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "喉が渇く折には、このペットボトルの水を飲んでください。",
+        "romanization": "Nodo ga kawaku ori ni wa, kono pettobotoru no mizu o nonde kudasai.",
+        "translation": "When you get thirsty, please drink water from this bottle."
+      },
+      {
+        "sentence": "この地域に来る折には、この神社に必ずお参りしましょう。",
+        "romanization": "Kono chiiki ni kuru ori ni wa, kono jinja ni kanarazu omairi shimashou.",
+        "translation": "When you visit this area, make sure to go to this shrine."
+      },
+      {
+        "sentence": "彼が元気じゃない折には、具合が悪いか尋ねてください。",
+        "romanization": "Kare ga genki ja nai ori ni wa, guai ga warui ka tazunete kudasai.",
+        "translation": "If he doesn't seem well, please ask if he's feeling sick."
+      },
+      {
+        "sentence": "チャンスがある折には、躊躇せずに行動しましょう。",
+        "romanization": "Chansu ga aru ori ni wa, chuucho sezu ni koudou shimashou.",
+        "translation": "When you have an opportunity, act without hesitation."
+      }
+    ]
+  },
+  {
+    "id": "ja_末_184",
+    "language": "ja",
+    "pattern": "～末",
+    "title": "～末 (～sue)",
+    "shortExplanation": "Express the outcome after a period of time or series of actions; 'after', 'as a result of'.",
+    "longExplanation": "The ～末 grammar point is used to indicate an outcome or result after a period of time, effort, or a series of actions. It can be translated as 'after', 'as a result of', or 'following'. It is typically used with nouns (e.g., '相談の末', '努力の末').",
+    "formation": "Noun + 末",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "長い議論の末、ようやく意見がまとまった。",
+        "romanization": "Nagai giron no sue, youyaku iken ga matomatta.",
+        "translation": "After a long discussion, we finally reached a consensus."
+      },
+      {
+        "sentence": "一週間の勉強の末、試験に合格した。",
+        "romanization": "Isshuukan no benkyou no sue, shiken ni goukaku shita.",
+        "translation": "After a week of studying, I passed the exam."
+      },
+      {
+        "sentence": "何度も失敗の末、成功を手に入れた。",
+        "romanization": "Nando mo shippai no sue, seikou wo te ni ireta.",
+        "translation": "After many failures, I finally achieved success."
+      },
+      {
+        "sentence": "彼との別れの末、新しい人生を始めた。",
+        "romanization": "Kare to no wakare no sue, atarashii jinsei wo hajimeta.",
+        "translation": "After breaking up with him, I started a new life."
+      }
+    ]
+  },
+  {
+    "id": "ja_次第_185",
+    "language": "ja",
+    "pattern": "～次第",
+    "title": "～次第 (〜shidai)",
+    "shortExplanation": "Expresses 'as soon as' (when used with Verb-ますstem) or 'depending on' (when used with a noun).",
+    "longExplanation": "The grammar pattern ～次第 can mean 'as soon as' when used with a verb in its ます-stem, and 'depending on' when used with a noun. For instance, 仕事が終わり次第 (as soon as work finishes) or 天気次第 (depending on the weather).",
+    "formation": "Verb-ますstem + 次第, Noun + 次第",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "仕事が終わり次第、帰ります。",
+        "romanization": "Shigoto ga owari shidai, kaerimasu.",
+        "translation": "I will go home as soon as I finish work."
+      },
+      {
+        "sentence": "お客様のご意見次第で、サービスを改善します。",
+        "romanization": "Okyakusama no goiken shidai de, saabisu wo kaizen shimasu.",
+        "translation": "We will improve our services depending on customer feedback."
+      },
+      {
+        "sentence": "彼の返事次第で、パーティーに行くかどうか決めます。",
+        "romanization": "Kare no henji shidai de, paatii ni iku ka dou ka kimemasu.",
+        "translation": "I will decide whether or not to go to the party depending on his answer."
+      },
+      {
+        "sentence": "天気次第で、ピクニックを予定しています。",
+        "romanization": "Tenki shidai de, pikunikku wo yotei shite imasu.",
+        "translation": "We are planning a picnic depending on the weather."
+      }
+    ]
+  },
+  {
+    "id": "ja_次第で_186",
+    "language": "ja",
+    "pattern": "～次第で",
+    "title": "～次第で (〜shidai de)",
+    "shortExplanation": "Indicates 'depending on; based on' a certain factor or situation.",
+    "longExplanation": "The ～次第で pattern typically follows a noun to show that something is decided or changes 'depending on' that factor. It can be translated as 'based on...' or 'depending on...'.",
+    "formation": "Noun + 次第で",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "仕事の終わり次第で、家に帰る時間が変わります。",
+        "romanization": "Shigoto no owari shidai de, ie ni kaeru jikan ga kawarimasu.",
+        "translation": "Depending on when I finish work, the time I go home may change."
+      },
+      {
+        "sentence": "天気次第で、ピクニックに行く予定です。",
+        "romanization": "Tenki shidai de, pikunikku ni iku yotei desu.",
+        "translation": "We plan to go on a picnic depending on the weather."
+      },
+      {
+        "sentence": "彼の気分次第で、パーティーに参加するかどうか決まります。",
+        "romanization": "Kare no kibun shidai de, paatii ni sanka suru ka dou ka kimarimasu.",
+        "translation": "Whether he participates in the party depends on his mood."
+      },
+      {
+        "sentence": "会議の進行次第で、決定が変わるかもしれません。",
+        "romanization": "Kaigi no shinkou shidai de, kettei ga kawaru kamoshiremasen.",
+        "translation": "The decision may change depending on how the meeting progresses."
+      }
+    ]
+  },
+  {
+    "id": "ja_次第です_187",
+    "language": "ja",
+    "pattern": "～次第です",
+    "title": "～次第です (〜shidai desu)",
+    "shortExplanation": "A polite/formal way to say 'it depends on...' or 'as soon as...', often used in concluding statements.",
+    "longExplanation": "「～次第です」 is frequently used in more formal contexts, either to mean that something depends on certain conditions or to indicate an action will happen as soon as something else is completed. It’s also used as a set phrase to conclude an explanation in writing.",
+    "formation": "Verb-ますstem + 次第です (or Noun + 次第です)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "天気次第ですが、明日はピクニックに行こうと思います。",
+        "romanization": "Tenki shidai desu ga, ashita wa pikunikku ni ikou to omoimasu.",
+        "translation": "It depends on the weather, but I’m thinking of going for a picnic tomorrow."
+      },
+      {
+        "sentence": "試験の結果次第ですが、留学したいと考えています。",
+        "romanization": "Shiken no kekka shidai desu ga, ryuugaku shitai to kangaete imasu.",
+        "translation": "It depends on my exam results, but I'm considering studying abroad."
+      },
+      {
+        "sentence": "お客様のご意見次第で新メニューを追加する次第です。",
+        "romanization": "Okyakusama no goiken shidai de shin menyuu wo tsuika suru shidai desu.",
+        "translation": "We intend to add a new menu item depending on our customers’ feedback."
+      },
+      {
+        "sentence": "申請が完了次第ですので、手続きが終わったらパスポートを受け取れます。",
+        "romanization": "Shinsei ga kanryou shidai desu no de, tetsudzuki ga owattara pasupooto wo uketoremasu.",
+        "translation": "As soon as the application is completed, you'll be able to receive your passport."
+      }
+    ]
+  },
+  {
+    "id": "ja_気味_188",
+    "language": "ja",
+    "pattern": "～気味",
+    "title": "～気味 (〜gimi)",
+    "shortExplanation": "Indicates a slight feeling or tendency toward a particular state.",
+    "longExplanation": "The suffix ～気味 generally attaches to nouns (or nominalized words) to express a slight feeling, tendency, or inclination toward a particular state. It often translates to '-ish' or 'a bit' in English (e.g., 'sleep-deprived-ish', 'nervous-ish').",
+    "formation": "Noun + 気味 (e.g., 風邪気味, 寝不足気味, 緊張気味)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "最近寝不足気味で、ちょっと疲れています。",
+        "romanization": "Saikin nebusoku gimi de, chotto tsukarete imasu.",
+        "translation": "Lately, I'm feeling somewhat sleep-deprived and a bit tired."
+      },
+      {
+        "sentence": "この部屋は暗い気味だから、もっと明るい照明をつけよう。",
+        "romanization": "Kono heya wa kurai gimi dakara, motto akarui shoumei wo tsukeyou.",
+        "translation": "This room is a bit dark, so let's install brighter lighting."
+      },
+      {
+        "sentence": "彼女は緊張気味で話していました。",
+        "romanization": "Kanojo wa kinchou gimi de hanashite imashita.",
+        "translation": "She was speaking somewhat nervously."
+      },
+      {
+        "sentence": "彼の声は風邪気味だったね。",
+        "romanization": "Kare no koe wa kaze gimi datta ne.",
+        "translation": "His voice sounded like he might have a slight cold."
+      }
+    ]
+  },
+  {
+    "id": "ja_限り_189",
+    "language": "ja",
+    "pattern": "～限り",
+    "title": "～限り (〜kagiri)",
+    "shortExplanation": "Expresses 'as long as', 'while', or 'to the extent that' a certain condition holds true.",
+    "longExplanation": "The phrase ～限り is used to indicate that something continues or is true 'as long as' or 'while' a certain condition is met. It can also mean 'to the extent that'.",
+    "formation": "Verb-casual + 限り, い-Adjective + 限り, な-Adjective + な限り, Noun + の限り",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "元気な限り、運動し続けます。",
+        "romanization": "Genki na kagiri, undou shi tsuzukemasu.",
+        "translation": "As long as I'm healthy, I'll keep exercising."
+      },
+      {
+        "sentence": "お金がある限り、旅行を楽しみたい。",
+        "romanization": "Okane ga aru kagiri, ryokou o tanoshimitai.",
+        "translation": "As long as I have money, I'd like to travel."
+      },
+      {
+        "sentence": "彼が話し続ける限り、このプロジェクトのメリットが伝わるでしょう。",
+        "romanization": "Kare ga hanashi tsudzukeru kagiri, kono purojekuto no meritto ga tsutawaru deshou.",
+        "translation": "As long as he keeps talking about it, the benefits of this project will be conveyed."
+      },
+      {
+        "sentence": "勉強する限り、試験に合格できる可能性が高まります。",
+        "romanization": "Benkyou suru kagiri, shiken ni goukaku dekiru kanousei ga takamarimasu.",
+        "translation": "As long as you study, you'll have a higher chance of passing the exam."
+      }
+    ]
+  },
+  {
+    "id": "ja_際に_190",
+    "language": "ja",
+    "pattern": "～際に",
+    "title": "～際に (〜sai ni)",
+    "shortExplanation": "Means 'when', 'while', or 'on the occasion of' a certain event or situation.",
+    "longExplanation": "～際に is used to specify a time or occasion when something happens. It’s more formal than a simple 'とき' and often appears in announcements or polite instructions.",
+    "formation": "Verb-casual + 際に, い-Adjective + 際に, な-Adjective + な際に, Noun + の際に",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "出発の際に、パスポートを忘れないでください。",
+        "romanization": "Shuppatsu no sai ni, pasupooto wo wasurenai de kudasai.",
+        "translation": "When departing, please don't forget your passport."
+      },
+      {
+        "sentence": "地震が起こる際に、すぐに避難してください。",
+        "romanization": "Jishin ga okoru sai ni, sugu ni hinan shite kudasai.",
+        "translation": "When an earthquake occurs, please evacuate immediately."
+      },
+      {
+        "sentence": "日本へ来る際に、お土産をたくさん買うつもりです。",
+        "romanization": "Nihon e kuru sai ni, omiyage wo takusan kau tsumori desu.",
+        "translation": "When I come to Japan, I plan to buy lots of souvenirs."
+      },
+      {
+        "sentence": "面接の際に、スーツを着用してください。",
+        "romanization": "Mensetsu no sai ni, suutsu wo chakuyou shite kudasai.",
+        "translation": "Please wear a suit when attending the interview."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_0",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A うが B うが (A uga B uga)",
+    "shortExplanation": "Expresses the idea of 'no matter how... or', 'even if... or'.",
+    "longExplanation": "The ～うが ～うが grammar pattern is used to express that regardless of the conditions in A and B, the result remains the same. Often you’ll see volitional forms or i-adjective '-かろうが' forms. It can be translated as 'no matter how... or...', 'even if... or...'.",
+    "formation": "Verb-volitional form + うが + Verb-volitional form + うが, or Adjective (-かろう) + が + Adjective (-かろう) + が",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "朝早かろうが夜遅かろうが、いつもバスが遅れる。",
+        "romanization": "Asa hayakarou ga yoru osokarou ga, itsumo basu ga okureru.",
+        "translation": "No matter whether it's early morning or late at night, the bus is always late."
+      },
+      {
+        "sentence": "彼に話そうが話すまいが、結果は変わらない。",
+        "romanization": "Kare ni hanasou ga hanasu maiga, kekka wa kawaranai.",
+        "translation": "Even if I talk to him or don't, the outcome won't change."
+      },
+      {
+        "sentence": "この仕事をしようがしまいが、給料は同じだ。",
+        "romanization": "Kono shigoto o shiyou ga shimai ga, kyuuryou wa onaji da.",
+        "translation": "Whether I do this job or not, the salary is the same."
+      },
+      {
+        "sentence": "あの人に話そうが話すまいが、理解してくれるとは思えない。",
+        "romanization": "Ano hito ni hanasou ga hanasu maiga, rikai shite kureru to wa omoenai.",
+        "translation": "I don't think that person would understand whether I talk to them or not."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_1",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A うと B うと (A uto B uto)",
+    "shortExplanation": "Shows that the speaker is indifferent to both conditions; 'whether A or B'.",
+    "longExplanation": "The うと うと pattern indicates that A and B are both possibilities, yet the speaker's stance or the outcome doesn’t change. It's often translated as 'whether A or B'. For i-adjectives, the '-かろうと' form is used. For nouns or な-adjectives, you’ll see 'Noun/な-adjective + であろうと'.",
+    "formation": "い-adjective (-かろう) + と, な-adjective / Noun + であろうと",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "雨が降ろうと晴れようと、私は毎日ジョギングをします。",
+        "romanization": "Ame ga furou to hareyou to, watashi wa mainichi jogingu o shimasu.",
+        "translation": "Whether it's raining or sunny, I jog every day."
+      },
+      {
+        "sentence": "試験が難しかろうと易しかろうと、一生懸命勉強します。",
+        "romanization": "Shiken ga muzukashikarou to yasashikarou to, isshoukenmei benkyou shimasu.",
+        "translation": "Whether the exam is difficult or easy, I will study hard."
+      },
+      {
+        "sentence": "彼が学生であろうと社会人であろうと、私は彼を尊敬しています。",
+        "romanization": "Kare ga gakusei de arou to shakaijin de arou to, watashi wa kare o sonkei shiteimasu.",
+        "translation": "Whether he's a student or a working adult, I respect him."
+      },
+      {
+        "sentence": "その映画が新しいであろうと古いであろうと、面白ければ観ます。",
+        "romanization": "Sono eiga ga atarashii de arou to furui de arou to, omoshirokereba mimasu.",
+        "translation": "Whether the movie is new or old, if it's interesting, I'll watch it."
+      }
+    ]
+  }
+]

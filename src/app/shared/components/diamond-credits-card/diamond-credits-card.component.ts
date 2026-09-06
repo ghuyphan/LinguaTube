@@ -1,4 +1,4 @@
-import { Component, Input, computed, signal, effect, inject, output, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, signal, effect, inject, input, output, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { I18nService } from '../../../services';
@@ -6,6 +6,7 @@ import { I18nService } from '../../../services';
 @Component({
     selector: 'app-diamond-credits-card',
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [CommonModule, IconComponent],
     templateUrl: './diamond-credits-card.component.html',
     styleUrl: './diamond-credits-card.component.scss'
@@ -13,12 +14,12 @@ import { I18nService } from '../../../services';
 export class DiamondCreditsCardComponent implements OnDestroy {
     readonly i18n = inject(I18nService);
 
-    @Input() diamonds = 3;
-    @Input() maxDiamonds = 3;
-    @Input() nextRegenAt: number | null = null;
-    @Input() regenIntervalMs = 20 * 60 * 1000; // 20 minutes default
-    @Input() variant: 'card' | 'compact' | 'inline' | 'collapsed' = 'card';
-    @Input() showLabel = true;
+    readonly diamonds = input<number>(3);
+    readonly maxDiamonds = input<number>(3);
+    readonly nextRegenAt = input<number | null>(null);
+    readonly regenIntervalMs = input<number>(20 * 60 * 1000); // 20 minutes default
+    readonly variant = input<'card' | 'compact' | 'inline' | 'collapsed'>('card');
+    readonly showLabel = input<boolean>(true);
 
     regenCompleted = output<void>();
 
@@ -29,15 +30,19 @@ export class DiamondCreditsCardComponent implements OnDestroy {
 
     // Array for rendering diamond icons
     readonly diamondArray = computed(() =>
-        Array.from({ length: this.maxDiamonds }, (_, i) => i)
+        Array.from({ length: this.maxDiamonds() }, (_, i) => i)
     );
 
-    readonly isDepleted = computed(() => this.diamonds === 0);
-    readonly isFull = computed(() => this.diamonds === this.maxDiamonds);
+    readonly isDepleted = computed(() => this.diamonds() === 0);
+    readonly isFull = computed(() => this.diamonds() === this.maxDiamonds());
 
     constructor() {
         // Start countdown timer
         effect(() => {
+            const nextRegen = this.nextRegenAt();
+            const currentDiamonds = this.diamonds();
+            const max = this.maxDiamonds();
+
             this.hasEmittedRegen = false;
             this.updateCountdown();
 
@@ -48,7 +53,7 @@ export class DiamondCreditsCardComponent implements OnDestroy {
             }
 
             // Start new interval if we have a regen time
-            if (this.nextRegenAt && this.diamonds < this.maxDiamonds) {
+            if (nextRegen && currentDiamonds < max) {
                 this.intervalId = window.setInterval(() => {
                     this.updateCountdown();
                 }, 1000);
@@ -64,14 +69,15 @@ export class DiamondCreditsCardComponent implements OnDestroy {
     }
 
     private updateCountdown(): void {
-        if (!this.nextRegenAt) {
+        const nextRegen = this.nextRegenAt();
+        if (!nextRegen) {
             this.countdown.set('');
             this.progress.set(0);
             return;
         }
 
         const now = Date.now();
-        const remaining = this.nextRegenAt - now;
+        const remaining = nextRegen - now;
 
         if (remaining <= 0) {
             this.countdown.set('');
@@ -102,7 +108,8 @@ export class DiamondCreditsCardComponent implements OnDestroy {
             this.countdown.set(`+1 in ${m}:${s}`);
         }
 
-        const interval = this.regenIntervalMs > 0 ? this.regenIntervalMs : 20 * 60 * 1000;
+        const intervalSetting = this.regenIntervalMs();
+        const interval = intervalSetting > 0 ? intervalSetting : 20 * 60 * 1000;
         const progressPercent = Math.max(0, Math.min(100, ((interval - remaining) / interval) * 100));
         this.progress.set(progressPercent);
     }

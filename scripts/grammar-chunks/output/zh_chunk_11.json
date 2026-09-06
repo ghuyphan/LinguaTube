@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_对N没兴趣_153": {
+      "title": "对 + Danh từ + 没兴趣 (Không có hứng thú / Không quan tâm đến...)",
+      "shortExplanation": "Dùng giới từ '对' dẫn ra đối tượng kết hợp với '没兴趣' (hoặc '没有兴趣') để biểu thị không có hứng thú, không quan tâm hay say mê đối với sự vật, lĩnh vực nào đó.",
+      "longExplanation": "Cấu trúc '对 + Danh từ + 没兴趣' (dạng đầy đủ là '对……没有兴趣') là dạng phủ định của '对……有兴趣', dùng để biểu đạt sự thiếu quan tâm, thờ ơ hoặc không hề thích thú trước một đối tượng, hoạt động hay lĩnh vực cụ thể. Trong cấu trúc này, '对' là giới từ mang nghĩa 'đối với/với', đi cùng danh từ tạo thành cụm giới từ làm trạng ngữ đứng trước cụm vị ngữ '没兴趣'. Có thể thêm phó từ chỉ mức độ phủ định như '一点儿也/都没兴趣' (hoặc '不太有兴趣') để gia giảm sắc thái nghĩa. Tương đương với 'không có hứng thú với...', 'không thích...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 对 + Danh từ (Đối tượng) + 没兴趣 / 没有兴趣",
+      "examples": [
+        {
+          "translation": "Họ không có hứng thú với phim điện ảnh Trung Quốc."
+        }
+      ]
+    },
+    "zh_半_154": {
+      "title": "Số từ + 点 + 半 (Cách nói giờ rưỡi: ... giờ rưỡi / ... giờ 30 phút)",
+      "shortExplanation": "Từ '半' (bàn - rưỡi, nửa) được đặt sau từ chỉ giờ '点' để biểu thị thời điểm đúng 30 phút (giờ rưỡi).",
+      "longExplanation": "Trong tiếng Trung, khi biểu đạt thời điểm (xem giờ), từ '半' có nghĩa là 'nửa/rưỡi' (tương đương 30 phút). Nó được đặt ngay sau từ chỉ giờ '点' (hoặc '点钟') theo công thức 'Số từ + 点 + 半'. Ví dụ: '七点半' (bảy giờ rưỡi / 7:30), '十二点半' (mười hai giờ rưỡi / 12:30). Lưu ý phân biệt với '半个小时' biểu thị khoảng thời gian (thời lượng nửa tiếng đồng hồ).",
+      "formation": "Số từ + 点 + 半",
+      "examples": [
+        {
+          "translation": "Bây giờ là bảy giờ rưỡi."
+        }
+      ]
+    },
+    "zh_一刻_155": {
+      "title": "Số từ + 点 + 一刻 (Cách nói giờ hơn 15 phút: ... giờ 15 phút / ... giờ một khắc)",
+      "shortExplanation": "Từ '一刻' (yī kè) đặt sau số giờ '点' để biểu thị thời điểm hơn đúng 15 phút (một khắc).",
+      "longExplanation": "Trong cách xem giờ của tiếng Trung, '刻' (khắc) là đơn vị đo thời gian tương đương với 15 phút. '一刻' (một khắc) được dùng ngay sau '点' để biểu thị thời điểm hơn 15 phút (ví dụ: '七点一刻' - bảy giờ 15 phút, '九点一刻' - chín giờ 15 phút). Tiếng Trung không dùng *七点两刻 (thay vào đó phải nói '七点半') và khi nói hơn 45 phút thường nói '差一刻八点' hoặc '七点四十五分' (thay vì *七点三刻 trong khẩu ngữ tiêu chuẩn hiện đại).",
+      "formation": "Số từ + 点 + 一刻",
+      "examples": [
+        {
+          "translation": "Bây giờ là bảy giờ 15 phút."
+        }
+      ]
+    },
+    "zh_一刻钟_156": {
+      "title": "一刻钟 (Thời lượng: 15 phút đồng hồ / một khắc)",
+      "shortExplanation": "Từ '一刻钟' (yī kè zhōng) dùng làm bổ ngữ thời lượng, biểu thị một khoảng thời gian kéo dài đúng 15 phút.",
+      "longExplanation": "Khác với '一刻' thường đi sau '点' để chỉ mốc thời gian (thời điểm 15 phút), '一刻钟' được dùng độc lập làm từ chỉ lượng thời gian (thời đoạn, thời lượng) kéo dài trong 15 phút. Trong câu, '一刻钟' thường đứng sau động từ (kèm '了') để làm bổ ngữ thời lượng, diễn tả hành động hay trạng thái đã duy trì hoặc diễn ra trong 15 phút (ví dụ: '迟到了一刻钟' - đến muộn 15 phút, '等了一刻钟' - đợi suốt 15 phút, '休息一刻钟' - nghỉ ngơi 15 phút). Tương đương với '15 phút', 'một khắc đồng hồ' trong tiếng Việt.",
+      "formation": "Động từ + (了 + ) 一刻钟",
+      "examples": [
+        {
+          "translation": "Bạn đến muộn mất 15 phút rồi."
+        }
+      ]
+    },
+    "zh_差ch_157": {
+      "title": "差 + Số phút / 一刻 + Số giờ + 点 (Cách nói giờ kém: kém ... phút nữa là ... giờ)",
+      "shortExplanation": "Động từ/phó từ '差' (chà - thiếu, kém) đặt trước số phút và số giờ để diễn đạt cách nói giờ kém (còn thiếu bao nhiêu phút nữa thì đến mốc giờ đó).",
+      "longExplanation": "Trong tiếng Trung, '差' (chà) có nghĩa gốc là 'thiếu, kém'. Khi dùng để xem giờ, '差' được đặt ở đầu cụm chỉ thời gian theo công thức '差 + Số phút / 一刻 + Số giờ + 点' để biểu thị mốc giờ kém, tức còn thiếu bao nhiêu phút nữa thì đến giờ tròn tiếp theo. Ví dụ: '差一刻八点' (kém 15 phút nữa là 8 giờ / 7:45), '差五分十点' (kém 5 phút nữa là 10 giờ / 9:55). Cũng có thể đặt số giờ trước: '八点差一刻'. Tương đương với cách nói 'kém ... giờ' trong tiếng Việt.",
+      "formation": "(已经 + ) 差 + Số phút / 一刻 + Số giờ + 点 + (了)",
+      "examples": [
+        {
+          "translation": "Đã là tám giờ kém 15 rồi đấy!"
+        }
+      ]
+    },
+    "zh_再V_158": {
+      "title": "再 + Động từ (Lại, sẽ lại...: hành động lặp lại trong tương lai hoặc chưa xảy ra)",
+      "shortExplanation": "Phó từ '再' đặt trước động từ biểu thị một hành động sẽ lặp lại hoặc tiếp tục diễn ra trong tương lai (hoặc chưa xảy ra); 'lại...', 'sẽ lại...'.",
+      "longExplanation": "Phó từ '再' (zài) được dùng trước động từ để biểu thị sự lặp lại hoặc tiếp diễn của một hành vi, trạng thái trong tương lai (hành động chưa phát sinh hoặc sắp sửa thực hiện lại). Ví dụ: '明天再去' (ngày mai lại đi tiếp), '再见' (gặp lại sau), '请再说一遍' (xin hãy nói lại một lần nữa). Điểm ngữ pháp trọng tâm là phân biệt giữa '再' và '又': '再' biểu thị hành động lặp lại chưa xảy ra (thuộc về tương lai hoặc mệnh lệnh, dự định), trong khi '又' biểu thị hành động lặp lại đã phát sinh trong quá khứ hoặc quy luật tất yếu. Tương đương với 'lại', 'tiếp tục' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Thời gian + / 还 / 要 + ) 再 + Động từ + (Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Ngày mai tôi còn muốn đến xem lại lần nữa."
+        }
+      ]
+    },
+    "zh_又V_159": {
+      "title": "又 + Động từ (Đã lại...: hành động lặp lại đã xảy ra trong quá khứ)",
+      "shortExplanation": "Phó từ '又' đặt trước động từ biểu thị một hành động hoặc tình huống đã lặp lại lần nữa trong quá khứ (thường mang sắc thái than phiền, ngạc nhiên hoặc trách móc).",
+      "longExplanation": "Phó từ '又' (yòu) được đặt trước động từ để biểu thị hành động hoặc trạng thái đã lặp lại một lần nữa trong quá khứ (việc đã xảy ra). Khác với '再' (dùng cho hành động chưa xảy ra trong tương lai), '又' chỉ hành vi đã hoàn thành hoặc tái diễn trên thực tế. Trong câu hỏi nghi vấn với '怎么' (làm sao mà, sao lại...), cấu trúc '怎么又……' thường mang ngữ khí không hài lòng, ngạc nhiên hoặc trách móc nhẹ (ví dụ: '你今天怎么又迟到了?' - Hôm nay sao cậu lại đến muộn nữa rồi?). Tương đương với 'lại...', 'đã lại... rồi' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Thời gian + ) (怎么 + ) 又 + Động từ + (Tân ngữ + 了)",
+      "examples": [
+        {
+          "translation": "Hôm nay sao bạn lại đi muộn nữa thế?"
+        }
+      ]
+    },
+    "zh_SQ1就Q2_160": {
+      "title": "Chủ ngữ + Từ để hỏi 1 + 就 + Từ để hỏi 2 (Đại từ nghi vấn dùng linh hoạt: ... gì thì ... nấy / Thích sao làm vậy)",
+      "shortExplanation": "Cùng một từ để hỏi được dùng lặp lại hai lần trước và sau phó từ '就', biểu thị hành động phía sau hoàn toàn tùy thuộc hoặc tương ứng với điều kiện phía trước; '... gì thì ... nấy'.",
+      "longExplanation": "Cấu trúc 'Chủ ngữ + Từ để hỏi 1 + 就 + Từ để hỏi 2' (hoặc 'Động từ 1 + Từ để hỏi 1 + 就 + Động từ 2 + Từ để hỏi 2') sử dụng cùng một đại từ nghi vấn (như 什么, 哪儿, 谁, 怎么) ở cả hai phân câu trước và sau '就'. Đây là cách dùng phi nghi vấn (phiếm chỉ/linh hoạt) của từ để hỏi: phân câu thứ nhất đưa ra điều kiện hoặc mong muốn, còn phân câu thứ hai biểu thị hành động diễn ra tùy ý, tương ứng hoàn toàn theo điều kiện đó (ví dụ: '想吃什么就吃什么' - muốn ăn gì thì ăn nấy, '想去哪儿就去哪儿' - muốn đi đâu thì đi đó, '怎么好就怎么做' - làm sao tốt thì làm thế ấy). Tương đương với kết cấu '... gì thì ... nấy', '... đâu thì ... đó' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Động từ 1 + ) Từ để hỏi + 就 + (Động từ 2 + ) Từ để hỏi",
+      "examples": [
+        {
+          "translation": "Tôi muốn uống gì thì uống nấy."
+        }
+      ]
+    },
+    "zh_S1QS2就Q_161": {
+      "title": "Chủ ngữ 1 + Từ để hỏi + Chủ ngữ 2 + 就 + Từ để hỏi (Hai chủ ngữ: Người 1 ... gì thì người 2 ... nấy / Theo ý của người 1)",
+      "shortExplanation": "Dùng cùng một từ để hỏi kết hợp với hai chủ ngữ khác nhau nối bởi '就', biểu thị hành động hoặc lựa chọn của chủ ngữ 2 hoàn toàn chiều theo hoặc giống hệt chủ ngữ 1.",
+      "longExplanation": "Đây là biến thể hai chủ ngữ của kết cấu nghi vấn phiếm chỉ: 'Chủ ngữ 1 + (Động từ 1 + ) Từ để hỏi + Chủ ngữ 2 + 就 + (Động từ 2 + ) Từ để hỏi'. Cùng một đại từ nghi vấn (như 什么, 哪儿, 谁, 怎么) xuất hiện ở cả hai mệnh đề. Mệnh đề thứ nhất do Chủ ngữ 1 quyết định, và mệnh đề thứ hai biểu thị Chủ ngữ 2 sẽ hành động hoặc lựa chọn tương ứng hệt như vậy (chủ ngữ 2 thuận theo chủ ngữ 1). Ví dụ: '你喝什么我就喝什么' (Cậu uống gì thì tớ uống nấy), '你去哪儿我就去哪儿' (Cậu đi đâu tớ theo đó), '谁赢了我就支持谁' (Ai thắng thì tôi ủng hộ người đó). Rất phổ biến trong giao tiếp hàng ngày thể hiện sự tùy ý, đồng thuận.",
+      "formation": "Chủ ngữ 1 + (Động từ 1 + ) Từ để hỏi + Chủ ngữ 2 + 就 + (Động từ 2 + ) Từ để hỏi",
+      "examples": [
+        {
+          "translation": "Bạn uống gì thì tôi uống nấy."
+        }
+      ]
+    },
+    "zh_越V1A1越V2A2_162": {
+      "title": "越 + Động từ 1 / Tính từ 1 + 越 + Động từ 2 / Tính từ 2 (Càng... càng...)",
+      "shortExplanation": "Dùng phó từ '越……越……' kết nối hai động từ hoặc tính từ để biểu thị mức độ của hành động hoặc trạng thái thứ hai tăng dần tương ứng theo sự gia tăng của hành động hoặc trạng thái thứ nhất; 'càng... càng...'.",
+      "longExplanation": "Cấu trúc liên từ/phó từ sóng đôi '越……越……' dùng để diễn tả mối quan hệ tỷ lệ thuận lũy tiến giữa hai sự việc: mức độ của hành động/tính chất thứ nhất biến đổi hoặc tăng tiến thì kéo theo mức độ của hành động/tính chất thứ hai cũng biến đổi tăng theo. Đi sau mỗi từ '越' có thể là động từ hoặc tính từ (ví dụ: '越聊越开心' - càng nói chuyện càng vui, '雨越下越大' - mưa càng rơi càng to, '越快越好' - càng nhanh càng tốt, '风越刮越冷' - gió càng thổi càng lạnh). Có thể dùng chung một chủ ngữ hoặc dùng cho hai chủ ngữ khác nhau ('你越说我越糊涂' - cậu càng nói tôi càng lú lẫn). Tương đương với kết cấu 'càng... càng...' trong tiếng Việt.",
+      "formation": "(Chủ ngữ + ) 越 + Động từ 1 / Tính từ 1 + 越 + Động từ 2 / Tính từ 2",
+      "examples": [
+        {
+          "translation": "Chúng tôi càng nói chuyện thì lại càng vui vẻ."
+        }
+      ]
+    },
+    "zh_N1跟N2一样_163": {
+      "title": "Danh từ 1 + 跟 + Danh từ 2 + 一样 (So sánh ngang bằng: ... giống như / giống với ...)",
+      "shortExplanation": "Dùng giới từ '跟' (hoặc '和', '同') kết hợp với '一样' để biểu thị hai đối tượng có tính chất, đặc điểm hoặc diện mạo hoàn toàn tương đồng; 'giống như...', 'giống với...'.",
+      "longExplanation": "Cấu trúc so sánh ngang bằng 'Danh từ 1 + 跟 + Danh từ 2 + 一样' dùng để diễn tả đối tượng thứ nhất (Danh từ 1) có đặc điểm, trạng thái hoặc vẻ ngoài giống hệt hoặc tương tự như đối tượng thứ hai (Danh từ 2). Trong đó, '跟' là giới từ mang nghĩa 'với, cùng' (có thể thay thế bằng '和' hoặc '同'), còn '一样' giữ vai trò là vị ngữ mang nghĩa 'giống nhau'. Ví dụ: '你的眼睛跟大熊猫一样' (Mắt của bạn giống như gấu trúc vậy - thâm quầng), '这本词典跟那本一样' (Cuốn từ điển này giống cuốn kia). Dạng phủ định là '跟……不一样' (không giống). Tương đương với 'giống như', 'như nhau' trong tiếng Việt.",
+      "formation": "Danh từ 1 + 跟 / 和 + Danh từ 2 + 一样",
+      "examples": [
+        {
+          "translation": "Mắt của bạn giống y như mắt gấu trúc vậy."
+        }
+      ]
+    },
+    "zh_N1跟N2一样A_164": {
+      "title": "Danh từ 1 + 跟 + Danh từ 2 + 一样 + Tính từ (So sánh ngang bằng theo tiêu chí: ... bằng ... / ... như ...)",
+      "shortExplanation": "Thêm tính từ vào sau '跟……一样' để so sánh ngang bằng về một tính chất, đặc điểm cụ thể; 'A ... bằng B', 'A ... như B'.",
+      "longExplanation": "Cấu trúc 'Danh từ 1 + 跟 + Danh từ 2 + 一样 + Tính từ' là dạng mở rộng của câu so sánh ngang bằng, dùng để chỉ rõ tiêu chí hoặc phương diện so sánh (chiều cao, độ lớn, sắc đẹp, độ khó...) mà hai đối tượng đạt đến mức độ tương đương nhau. Trong đó, tính từ đặt ở cuối làm vị ngữ chính, còn cụm '跟 + Danh từ 2 + 一样' đóng vai trò là trạng ngữ chỉ mức độ (ví dụ: '儿子跟爸爸一样高' - con trai cao bằng bố, '汉语跟英语一样难' - tiếng Trung khó ngang tiếng Anh, '他跑得跟我一样快' - anh ấy chạy nhanh bằng tôi). Dạng phủ định là '跟……不一样 + Tính từ' hoặc phổ biến hơn là dùng '没有' ('没有……那么/这么 + Tính từ'). Tương đương với '... bằng...', '... như...' trong tiếng Việt.",
+      "formation": "Danh từ 1 + 跟 / 和 + Danh từ 2 + 一样 + Tính từ",
+      "examples": [
+        {
+          "translation": "Con trai cao bằng bố rồi."
+        }
+      ]
+    },
+    "zh_没有N这么那么A_165": {
+      "title": "Danh từ 1 + 没有 + Danh từ 2 + (这么 / 那么 + ) Tính từ (So sánh kém: ... không bằng ... / ... không ... như ...)",
+      "shortExplanation": "Dùng '没有' kết hợp với danh từ chuẩn so sánh và '这么 / 那么' trước tính từ để biểu thị sự so sánh kém; 'A không ... bằng B'.",
+      "longExplanation": "Cấu trúc so sánh kém 'Danh từ 1 + 没有 + Danh từ 2 + (这么/那么) + Tính từ' được sử dụng phổ biến nhất trong tiếng Trung để biểu thị đối tượng 1 không đạt tới mức độ tính chất của đối tượng 2 (tương đương dạng phủ định của câu so sánh '比' hoặc '一样'). Trong đó, '没有' đóng vai trò phủ định so sánh; đại từ chỉ thị '这么' (như thế này - gần người nói) hoặc '那么' (như thế kia - xa người nói) thường được thêm vào trước tính từ để nhấn mạnh mức độ cao của đối tượng làm chuẩn (ví dụ: '我的汉语没有他那么好' - tiếng Trung của tôi không giỏi bằng anh ấy, '今天没有昨天那么冷' - hôm nay không lạnh bằng hôm qua). Tương đương với 'không... bằng...', 'không... như...' trong tiếng Việt.",
+      "formation": "Danh từ 1 + 没有 + Danh từ 2 + (这么 / 那么 + ) Tính từ",
+      "examples": [
+        {
+          "translation": "Tiếng Trung của tôi không giỏi bằng anh ấy."
+        }
+      ]
+    },
+    "zh_A一点儿一些_166": {
+      "title": "Tính từ + 一点儿 / 一些 (Bổ ngữ sai biệt: ... hơn một chút / hơn một ít)",
+      "shortExplanation": "Đặt '一点儿' hoặc ' some' sau tính từ làm bổ ngữ chỉ mức độ sai biệt nhẹ; '... hơn một chút', '... hơn một ít'.",
+      "longExplanation": "Trong tiếng Trung, khi so sánh hai đối tượng, nếu mức độ chênh lệch giữa chúng là rất nhỏ (không đáng kể), người ta đặt cụm lượng từ '一点儿' (yīdiǎnr - một chút) hoặc '一些' (yīxiē - một ít) ngay sau tính từ để làm bổ ngữ sai biệt: 'Tính từ + 一点儿 / 一些'. Cấu trúc này thường xuất hiện trong câu so sánh có từ '比' (ví dụ: '大山比大卫矮一点儿' - Đại Sơn thấp hơn David một chút, '今天比昨天暖和一些' - hôm nay ấm hơn hôm qua một chút) hoặc dùng độc lập trong câu yêu cầu, mong muốn (ví dụ: '便宜一点儿吧' - rẻ hơn một chút đi, '快一点儿' - nhanh hơn một chút). Cần phân biệt với '有一点儿 + Tính từ' (đứng TRƯỚC tính từ, mang sắc thái tiêu cực phàn nàn: hơi...). Tương đương với '... hơn một chút', '... hơn một tí' trong tiếng Việt.",
+      "formation": "(Danh từ 1 + 比 + Danh từ 2 + ) Tính từ + 一点儿 / 一些",
+      "examples": [
+        {
+          "translation": "Đại Sơn thấp hơn David một chút."
+        }
+      ]
+    },
+    "zh_A得多多了_167": {
+      "title": "Tính từ + 得多 / 多了 (Bổ ngữ mức độ/sai biệt lớn: ... hơn nhiều / ... hơn rất nhiều)",
+      "shortExplanation": "Đặt '得多' hoặc '多了' sau tính từ làm bổ ngữ biểu thị mức độ chênh lệch rất lớn giữa hai đối tượng; '... hơn nhiều', '... hơn rất nhiều'.",
+      "longExplanation": "Trong câu so sánh hoặc câu vị ngữ tính từ, cụm từ '得多' (dé duō) hoặc '多了' (duō le) được đặt ngay sau tính từ để làm bổ ngữ mức độ (bổ ngữ sai biệt), biểu thị sự chênh lệch giữa hai đối tượng là rất lớn, vượt trội hoàn toàn. Cấu trúc thường dùng trong câu so sánh '比': 'Danh từ 1 + 比 + Danh từ 2 + Tính từ + 得多 / 多了' (ví dụ: '今天的作业比昨天多得多' - bài tập hôm nay nhiều hơn hôm qua rất nhiều, '他比我高得多' - anh ấy cao hơn tôi rất nhiều, '身体好多了' - sức khỏe đã tốt hơn nhiều rồi). Chú ý: trong câu so sánh có '比', KHÔNG được dùng các phó từ mức độ như '很', '非常', '太' trước tính từ (không nói *比昨天很多), mà bắt buộc phải dùng bổ ngữ '得多/多了' đặt ở sau tính từ. Tương đương với 'hơn nhiều', 'hơn rất nhiều' trong tiếng Việt.",
+      "formation": "(Danh từ 1 + 比 + Danh từ 2 + ) Tính từ + 得多 / 多了",
+      "examples": [
+        {
+          "translation": "Bài tập hôm nay nhiều hơn hôm qua rất nhiều."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_对N没兴趣_153": {
+      "title": "对 ＋ 名詞 ＋ 没兴趣（〜に興味がない・関心がない）",
+      "shortExplanation": "介詞「对」で対象を導き、「没兴趣」を後続させることで、その物事や分野に対して興味や関心がないことを表します。",
+      "longExplanation": "「对 ＋ 名詞 ＋ 没兴趣（または没有兴趣）」は、「对……有兴趣/感兴趣」の否定形式で、ある人・事物・活動・分野に対して関心や好奇心が持てないことを表す表現です。介詞「对」が導く名詞（関心の対象）は連用修飾語（状語）として述語「没兴趣」の前に置かれます。「一点儿也不感兴趣/没兴趣」（少しも興味がない）のように程度を強調することもできます。日本語の「〜に興味がない」「〜に関心がない」に相当します。",
+      "formation": "主語 ＋ 对 ＋ 名詞（対象） ＋ 没兴趣 / 没有兴趣",
+      "examples": [
+        {
+          "translation": "彼らは中国映画に興味がありません。"
+        }
+      ]
+    },
+    "zh_半_154": {
+      "title": "数詞 ＋ 点 ＋ 半（時刻表現：〜時半）",
+      "shortExplanation": "時刻を表す「点」の直後に「半」を置き、ちょうど30分（〜時半）であることを表します。",
+      "longExplanation": "中国語で時刻（時刻の点）を表す際、「半」は「30分（半）」を意味し、時間の単位である「点（時）」の後ろに直接添えて「数詞 ＋ 点 ＋ 半」の形で用います（例：「七点半」＝7時半、「十二点半」＝12時半）。所要時間・期間を表す「半个小时（30分間・半時間）」とは構文上区別されます。日本語の「〜時半」にそのまま対応します。",
+      "formation": "数詞 ＋ 点 ＋ 半",
+      "examples": [
+        {
+          "translation": "今は7時半です。"
+        }
+      ]
+    },
+    "zh_一刻_155": {
+      "title": "数詞 ＋ 点 ＋ 一刻（時刻表現：〜時15分）",
+      "shortExplanation": "時刻を表す「点」の後ろに「一刻」を置き、15分を指す時刻（〜時15分）を表します。",
+      "longExplanation": "中国語の時刻表現において、「刻」は15分を表す単位です。「一刻」は「15分」を意味し、「数詞 ＋ 点 ＋ 一刻」の形で「〜時15分」という特定の時刻を表します（例：「七点一刻」＝7時15分、「九点一刻」＝9時15分）。なお、30分を「*两刻」とは言わず「半」を用い、45分は現代標準中国語では「差一刻……」（〜時15分前）または「四十五分」と表現するのが普通です。",
+      "formation": "数詞 ＋ 点 ＋ 一刻",
+      "examples": [
+        {
+          "translation": "今7時15分です。"
+        }
+      ]
+    },
+    "zh_一刻钟_156": {
+      "title": "一刻钟（時量表現：15分間）",
+      "shortExplanation": "「一刻钟」は継続する時間の長さ（時量）を表し、「15分間」という意味の時量補語などとして用います。",
+      "longExplanation": "時刻の「〜時15分」を表す「一刻」とは異なり、「一刻钟」は「15分間」という時間の長さ（時量）を表す名詞です。文中では主に動詞（＋了）の後ろに置かれ、時量補語として動作や状態が15分間続いたことを表します（例：「迟到了一刻钟」＝15分遅刻した、「等了一刻钟」＝15分待った、「休息一刻钟」＝15分休憩する）。日本語の「15分間」に相当します。",
+      "formation": "動詞 ＋ （了 ＋ ）一刻钟",
+      "examples": [
+        {
+          "translation": "あなたは15分遅刻しました。"
+        }
+      ]
+    },
+    "zh_差ch_157": {
+      "title": "差 ＋ 分数 / 一刻 ＋ 数詞 ＋ 点（時刻表現：〜時…分前・〜時差）",
+      "shortExplanation": "動詞「差（不足している）」を用いて、次の正時まであと何分不足しているかを表す時刻表現（〜時…分前）です。",
+      "longExplanation": "中国語の時刻表現において、「差（chà）」は「足りない・不足している」という意味を持ち、「差 ＋ 分数（または一刻） ＋ 次の正時 ＋ 点」の語順で「〜時…分前」という時刻を表します（例：「差一刻八点」＝8時15分前・7時45分、「差五分十点」＝10時5分前・9時55分）。なお、「八点差一刻」のように正時を先に置く語順も可能です。文末に「了」を伴って「もう〜時何分前だ」と時間を急かす際などによく使われます。",
+      "formation": "（已经 ＋ ）差 ＋ 分数 / 一刻 ＋ 数詞 ＋ 点 ＋ （了）",
+      "examples": [
+        {
+          "translation": "もう8時15分前ですよ！"
+        }
+      ]
+    },
+    "zh_再V_158": {
+      "title": "再 ＋ 動詞（未実現の動作の再開・反復：また〜する・もう一度〜する）",
+      "shortExplanation": "副詞「再」を動詞の前に置き、動作が将来・未実現において再び繰り返されることや継続することを表します。",
+      "longExplanation": "副詞「再」は動詞の前に置かれ、ある動作や状態が将来（未実現の時点）において再び行われることや繰り返されることを表します（例：「明天再去」＝明日また行く、「请再说一次」＝もう一度言ってください）。中国語の重要文法項目である「再」と「又」の使い分けにおいて、「再」は未来・未発生の動作の反復を表すのに対し、「又」は過去・すでに実現した動作の反復を表すという明確な違いがあります。日本語の「また〜する」「もう一度〜する」に相当します。",
+      "formation": "主語 ＋ （時間 ＋ / 还 / 要 ＋ ）再 ＋ 動詞 ＋ （目的語）",
+      "examples": [
+        {
+          "translation": "私は明日また見に行こうと思います。"
+        }
+      ]
+    },
+    "zh_又V_159": {
+      "title": "又 ＋ 動詞（既実現の動作の反復：また〜した・またしても〜した）",
+      "shortExplanation": "副詞「又」を動詞の前に置き、ある動作や事態が過去に再び繰り返されたこと（既実現の反復）を表します。",
+      "longExplanation": "副詞「又」は動詞の前に置かれ、過去にすでに発生した動作や事態の再発・反復を表します。未来の反復を表す「再」とは対照的に、「又」はすでに起きてしまったことに対して使われます。また、「怎么又……了」（どうしてまた〜したのか）の形で疑問詞「怎么」などとともに用いられると、不満・呆れ・驚き・非難といった話者の感情的ニュアンスが強く表出されます（例：「你怎么又迟到了？」＝君はどうして今日もまた遅刻したのか？）。日本語の「また〜した」「またしても〜した」に相当します。",
+      "formation": "主語 ＋ （時間 ＋ ）（怎么 ＋ ）又 ＋ 動詞 ＋ （目的語 ＋ 了）",
+      "examples": [
+        {
+          "translation": "あなたはどうして今日もまた遅刻したのですか？"
+        }
+      ]
+    },
+    "zh_SQ1就Q2_160": {
+      "title": "主語 ＋ 疑問詞1 ＋ 就 ＋ 疑問詞2（任意表現：〜したいものを〜する・〜の通りに〜する）",
+      "shortExplanation": "副詞「就」の前後に同じ疑問詞を呼応させて用い、前節の条件や意志に応じて自由にその通りの動作を行うことを表します。",
+      "longExplanation": "「主語 ＋ 疑問詞 ＋ 就 ＋ 疑問詞」は、同一の疑問代名詞（什么、哪儿、谁、怎么など）を2回繰り返して「就」で結ぶ、疑問詞の柔軟用法（任指・呼応用法）です。前の疑問詞節が条件や希望を示し、後の疑問詞節がそれに合致した動作を行うことを示します（「前の答えがそのまま後ろの答えになる」という関係）。話者の自由な選択や任意の行動を表し、日本語の「〜したいものを何でも〜する」「〜したいように〜する」「〜な通りにする」に相当します（例：「想吃什么就吃什么」＝食べたいものを食べる、「想去哪儿就去哪儿」＝行きたい所へどこへでも行く）。",
+      "formation": "主語 ＋ （動詞1 ＋ ）疑問詞 ＋ 就 ＋ （動詞2 ＋ ）疑問詞",
+      "examples": [
+        {
+          "translation": "私は飲みたいものを何でも飲みます。"
+        }
+      ]
+    },
+    "zh_S1QS2就Q_161": {
+      "title": "主語1 ＋ 疑問詞 ＋ 主語2 ＋ 就 ＋ 疑問詞（呼応表現：主語1が〜するものと同じものを主語2も〜する）",
+      "shortExplanation": "2つの異なる主語を用い、「就」を挟んで同じ疑問詞を呼応させることで、主語2が主語1の選択や行動に完全に合わせることを表します。",
+      "longExplanation": "「主語1 ＋ 疑問詞 ＋ 主語2 ＋ 就 ＋ 疑問詞」は、2つの異なる主語が関わる疑問代名詞の任指・呼応表現です。前節で主語1が選択した内容（什么、哪儿、谁など）に対して、後節で主語2が「就」を介して全く同じ選択や行動をとる（主語1に同調・追従する）ことを表します（例：「你喝什么我就喝什么」＝君が飲むものを僕も飲むよ、「你去哪儿我就去哪儿」＝君が行く所ならどこへでも付いていく）。日本語の「あなたが〜するものと同じものを私も〜する」「あなたに合わせる」という協調・賛同のニュアンスを表します。",
+      "formation": "主語1 ＋ （動詞1 ＋ ）疑問詞 ＋ 主語2 ＋ 就 ＋ （動詞2 ＋ ）疑問詞",
+      "examples": [
+        {
+          "translation": "あなたが飲むものを私も飲みます。"
+        }
+      ]
+    },
+    "zh_越V1A1越V2A2_162": {
+      "title": "越 ＋ 動詞1 / 形容詞1 ＋ 越 ＋ 動詞2 / 形容詞2（比例累加表現：〜すればするほどますます〜）",
+      "shortExplanation": "副詞「越……越……」を用いて、前者の動作や状態の程度が進むにつれて、後者の程度も比例してますます高まることを表します。",
+      "longExplanation": "「越 ＋ 動詞1/形容詞1 ＋ 越 ＋ 動詞2/形容詞2」は、事態の比例的な変化や程度の段階的進展（累加関係）を表す連関構文です。「越」の後ろには動詞または形容詞が置かれ、「前者の度合いが高まれば高まるほど、それに伴って後者の度合いもますます深まる」という関係を表します（例：「越聊越开心」＝話せば話すほど楽しくなる、「雨越下越大」＝雨が降れば降るほど激しくなる、「越快越好」＝早ければ早いほど良い）。同一の主語でも異なる主語でも使用可能です。日本語の「〜すればするほどますます〜だ」に相当します。",
+      "formation": "（主語 ＋ ）越 ＋ 動詞1 / 形容詞1 ＋ 越 ＋ 動詞2 / 形容詞2",
+      "examples": [
+        {
+          "translation": "私たちは話せば話すほど楽しくなりました。"
+        }
+      ]
+    },
+    "zh_N1跟N2一样_163": {
+      "title": "名詞1 ＋ 跟 ＋ 名詞2 ＋ 一样（同等比較：名詞1は名詞2と同じ・〜のようだ）",
+      "shortExplanation": "介詞「跟（または和）」と「一样」を組み合わせて、2つの事物の外見や性質が同一または非常に似ていることを表します。",
+      "longExplanation": "「名詞1 ＋ 跟 ＋ 名詞2 ＋ 一样」は、事物や人物の同等・同一性を表す基本的な比較構文です。介詞「跟」（「和」や「同」に言い換え可能）で比較対象を導き、「一样」が述語となって「名詞1は名詞2と同じである」「〜のようだ」という意味を表します（例：「你的眼睛跟大熊猫一样」＝君の目はパンダそっくりだ、「这件衣服跟我的一样」＝この服は私のと同じだ）。否定する場合は「跟……不一样」（〜と異なる）となります。日本語の「〜と同じだ」「〜にそっくりだ」に相当します。",
+      "formation": "名詞1 ＋ 跟 / 和 ＋ 名詞2 ＋ 一样",
+      "examples": [
+        {
+          "translation": "あなたの目はパンダそっくりですね。"
+        }
+      ]
+    },
+    "zh_N1跟N2一样A_164": {
+      "title": "名詞1 ＋ 跟 ＋ 名詞2 ＋ 一样 ＋ 形容詞（同等比較：名詞1は名詞2と同じくらい〜だ）",
+      "shortExplanation": "「跟……一样」の後ろに形容詞を置き、特定の性質や状態について2つの事物が同等のレベルにあることを表します。",
+      "longExplanation": "「名詞1 ＋ 跟 ＋ 名詞2 ＋ 一样 ＋ 形容詞」は、特定の基準（高さ、大きさ、難しさなど）において、2つの対象の程度が等しいことを表す同等比較構文です。介詞「跟」（「和」も可）で比較基準となる名詞2を導き、「一样」が連用修飾語（状語）となって形容詞を修飾し、「名詞1は名詞2と同じくらい〜だ」という意味を表します（例：「儿子跟爸爸一样高」＝息子は父親と同じくらい背が高い、「这双鞋跟那双一样贵」＝この靴はあの靴と同じくらい高い）。否定の同等比較には通常「没有……那么＋形容詞」が好まれます。日本語の「〜と同じくらい…だ」に相当します。",
+      "formation": "名詞1 ＋ 跟 / 和 ＋ 名詞2 ＋ 一样 ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "息子は父親と同じくらい背が高いです。"
+        }
+      ]
+    },
+    "zh_没有N这么那么A_165": {
+      "title": "名詞1 ＋ 没有 ＋ 名詞2 ＋ （这么 / 那么 ＋ ）形容詞（劣等比較：名詞1は名詞2ほど〜ではない）",
+      "shortExplanation": "「没有」を用いて比較基準の対象を導き、「名詞1は名詞2ほど〜ではない」という劣等比較を表します。",
+      "longExplanation": "「名詞1 ＋ 没有 ＋ 名詞2 ＋ （这么/那么 ＋ ）形容詞」は、中国語における最も代表的な劣等比較（否定の比較）構文です。主語（名詞1）が比較基準となる名詞2の持っている高いレベルや程度に達していないことを表します。形容詞の前には程度を指示する代名詞「那么」（あんなに・それほど）や「这么」（こんなに）が伴われることが多く、基準の程度の高さを強調します（例：「我的汉语没有他那么好」＝私の中国語は彼ほど上手ではない、「今天没有昨天那么冷」＝今日は昨日ほど寒くない）。「比」を用いた否定文（不比……）とはニュアンスが異なり、「没有」は単に「〜には及ばない」という差を客観的に述べます。日本語の「〜は〜ほど…ではない」に相当します。",
+      "formation": "名詞1 ＋ 没有 ＋ 名詞2 ＋ （这么 / 那么 ＋ ）形容詞",
+      "examples": [
+        {
+          "translation": "私の中国語は彼ほど上手ではありません。"
+        }
+      ]
+    },
+    "zh_A一点儿一些_166": {
+      "title": "形容詞 ＋ 一点儿 / 一些（数量補語：少し〜・ほんの少し〜）",
+      "shortExplanation": "形容詞の直後に「一点儿」または「一些」を置き、差異の度合いがごくわずかであること（少し〜・ほんの少し〜）を表す数量補語です。",
+      "longExplanation": "「形容詞 ＋ 一点儿 / 一些」は、事物の性質や程度の差がわずかであることを表す表現です。形容詞の後ろに置かれる「一点儿/一些」は数量補語（差異補語）として機能します。「比」を用いた比較文の中で「名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞 ＋ 一点儿/一些」の形で用いられ、「名詞1は名詞2より少し…だ」というわずかな差を表します（例：「大山比大卫矮一点儿」＝大山はデイビッドより少し背が低い、「今天比昨天好一点儿」＝今日は昨日より少し調子が良い）。また、要望を表す際にも使われます（例：「便宜一点儿」＝もう少し安くして）。形容詞の前に置いて不満を表す「有一点儿 ＋ 形容詞」とは位置と意味が異なるため厳密に区別されます。日本語の「少し〜」「ちょっと〜」に相当します。",
+      "formation": "（名詞1 ＋ 比 ＋ 名詞2 ＋ ）形容詞 ＋ 一点儿 / 一些",
+      "examples": [
+        {
+          "translation": "大山はデイビッドより少し背が低いです。"
+        }
+      ]
+    },
+    "zh_A得多多了_167": {
+      "title": "形容詞 ＋ 得多 / 多了（程度補語・差異補語：ずっと〜だ・はるかに〜だ）",
+      "shortExplanation": "形容詞の直後に「得多」または「多了」を置き、2つの事物の間に非常に大きな程度の差があること（ずっと〜・はるかに〜）を表す補語です。",
+      "longExplanation": "「形容詞 ＋ 得多 / 多了」は、事物間の程度の開きが非常に大きいことを表す構文です。「得多」または「多了」は形容詞の後ろに置かれて程度補語（または差異補語）として機能します。特に「比」を用いた比較文「名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞 ＋ 得多/多了」において頻繁に用いられ、「名詞1は名詞2よりずっと…だ」という意味を表します（例：「今天的作业比昨天多得多」＝今日の宿題は昨日よりずっと多い、「他比我大得多」＝彼は私よりずっと年上だ、「身体好多了」＝体調はずっと良くなった）。中国語の比較文「比」では形容詞の前に「很」や「非常」を置くことができないため、差の大きさを表すには必ず補語として「得多/多了」を形容詞の後に置きます。日本語の「ずっと〜だ」「はるかに〜だ」に相当します。",
+      "formation": "（名詞1 ＋ 比 ＋ 名詞2 ＋ ）形容詞 ＋ 得多 / 多了",
+      "examples": [
+        {
+          "translation": "今日の宿題は昨日よりずっと多いです。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_对N没兴趣_153": {
+      "title": "对 + 명사 + 没兴趣 (~에 관심이 없다, ~에 흥미가 없다)",
+      "shortExplanation": "개사 '对'로 대상을 이끌고 '没兴趣'(또는 '没有兴趣')를 뒤이어 써서, 어떤 대상이나 분야에 관심이나 흥미가 없음을 나타냅니다.",
+      "longExplanation": "‘对 + 명사 + 没兴趣’(또는 ‘没有兴趣’)는 ‘对……有兴趣/感兴趣’의 부정 형식으로, 특정 인물, 사물, 분야, 활동에 대해 전혀 호기심이나 관심이 없음을 나타냅니다. 개사 ‘对’(~에 대해)가 이끄는 명사구가 상황어로 술어인 ‘没兴趣’ 앞에 놓입니다. 정도를 강조할 때는 ‘一点儿也/都没兴趣’(조금도 관심이 없다)처럼 표현하기도 합니다. 한국어의 '~에 관심이 없다', '~에 흥미가 없다'에 해당합니다.",
+      "formation": "주어 + 对 + 명사(대상) + 没兴趣 / 没有兴趣",
+      "examples": [
+        {
+          "translation": "그들은 중국 영화에 관심이 없습니다."
+        }
+      ]
+    },
+    "zh_半_154": {
+      "title": "수사 + 点 + 半 (시각 표현: ~시 반)",
+      "shortExplanation": "시간을 나타내는 단위인 '点' 바로 뒤에 '半'을 붙여, 정각에서 30분이 지난 '몇 시 반'을 나타냅니다.",
+      "longExplanation": "중국어에서 시각을 말할 때 ‘半’은 30분을 뜻하며, 시간 단위인 ‘点(시)’ 뒤에 직접 붙여 ‘수사 + 点 + 半’의 형태로 쓰입니다(예: ‘七点半’ - 7시 반, ‘十二点半’ - 12시 반). 이는 특정 시점(시각)을 나타내는 표현으로, 지속 시간(기간)을 나타내는 ‘半个小时(30분 동안, 반 시간)’과 구별됩니다. 한국어의 '~시 반'에 해당합니다.",
+      "formation": "수사 + 点 + 半",
+      "examples": [
+        {
+          "translation": "지금은 7시 반입니다."
+        }
+      ]
+    },
+    "zh_一刻_155": {
+      "title": "수사 + 点 + 一刻 (시각 표현: ~시 15분)",
+      "shortExplanation": "시간 단위인 '点' 뒤에 '一刻'를 결합하여 15분을 가리키는 시각(~시 15분)을 나타냅니다.",
+      "longExplanation": "중국어 시각 표현에서 ‘刻’은 15분을 단위로 하는 시간 단위입니다. ‘一刻’은 15분을 뜻하므로 ‘수사 + 点 + 一刻’의 형태로 쓰여 ‘몇 시 15분’을 나타냅니다(예: ‘七点一刻’ - 7시 15분, ‘十点一刻’ - 10시 15분). 참고로 30분은 ‘*两刻’라 하지 않고 ‘半’을 쓰며, 45분은 보통 ‘差一刻’(~시 15분 전)이나 ‘四十五分’으로 표현합니다. 한국어의 '~시 15분'에 해당합니다.",
+      "formation": "수사 + 点 + 一刻",
+      "examples": [
+        {
+          "translation": "지금은 7시 15분입니다."
+        }
+      ]
+    },
+    "zh_一刻钟_156": {
+      "title": "一刻钟 (시량 표현: 15분 동안, 15분간)",
+      "shortExplanation": "'一刻钟'은 지속되는 시간의 길이(시량)를 나타내며, '15분 동안'이라는 의미로 동사 뒤에서 시량보어로 쓰입니다.",
+      "longExplanation": "시각의 특정 시점(15분)을 나타내는 ‘一刻’과 달리, ‘一刻钟’은 ‘15분간 / 15분 동안’이라는 지속 시간(시량)을 가리킵니다. 문장에서는 주로 동사(또는 동사 + 了) 뒤에 놓여 시량보어 역할을 하며, 어떤 동작이나 상태가 15분 동안 진행되었음을 표현합니다(예: ‘迟到了一刻钟’ - 15분 지각했다, ‘等了一刻钟’ - 15분 동안 기다렸다, ‘休息一刻钟’ - 15분 쉬다). 한국어의 '15분간', '15분 동안'에 대응합니다.",
+      "formation": "동사 + (了 + ) 一刻钟",
+      "examples": [
+        {
+          "translation": "너 15분이나 지각했어."
+        }
+      ]
+    },
+    "zh_差ch_157": {
+      "title": "差 + 분 / 一刻 + 수사 + 点 (시각 표현: ~시 …분 전)",
+      "shortExplanation": "'부족하다/모자라다'를 뜻하는 '差'를 사용하여 다음 정각까지 몇 분이 남았는지를 나타내는 시각 표현(~시 …분 전)입니다.",
+      "longExplanation": "중국어에서 ‘差(chà)’는 본래 ‘모자라다, 부족하다’라는 뜻으로, 시각 표현에서는 다음 정각까지 남은 분(minute) 수를 나타낼 때 씁니다. 기본 어순은 ‘差 + 분(또는 一刻) + 다음 시각 + 点’으로, ‘몇 시 …분 전’을 뜻합니다(예: ‘差一刻八点’ - 8시 15분 전 / 7시 45분, ‘差五分十点’ - 10시 5분 전 / 9시 55분). ‘八点差一刻’처럼 시각을 앞에 두기도 합니다. 한국어의 '~시 …분 전'에 해당합니다.",
+      "formation": "(已经 + ) 差 + 분 / 一刻 + 수사 + 点 + (了)",
+      "examples": [
+        {
+          "translation": "벌써 8시 15분 전이에요!"
+        }
+      ]
+    },
+    "zh_再V_158": {
+      "title": "再 + 동사 (미래·미실현 동작의 반복: 또 ~하다, 다시 ~하다)",
+      "shortExplanation": "부사 '再'를 동사 앞에 사용하여, 아직 일어나지 않은 동작이나 사건이 미래에 다시 반복되거나 지속됨을 나타냅니다.",
+      "longExplanation": "부사 ‘再’는 동사 바로 앞에 놓여, 동작이나 상태가 앞으로(미래나 미실현의 시점에) 다시 반복되거나 지속해서 행해질 것임을 나타냅니다(예: ‘明天再去’ - 내일 또 가다, ‘请再说一遍’ - 다시 한 번 말씀해 주세요). 핵심 문법 포인트로 ‘再’와 ‘又’의 차이가 중요한데, ‘再’는 아직 발생하지 않은 미래의 반복을 나타내는 반면, ‘又’는 이미 발생한 과거의 반복을 나타냅니다. 한국어의 '다시 ~하다', '(앞으로) 또 ~하다'에 대응합니다.",
+      "formation": "주어 + (시간 + / 还 / 要 + ) 再 + 동사 + (목적어)",
+      "examples": [
+        {
+          "translation": "저는 내일 다시 가서 보려고 합니다."
+        }
+      ]
+    },
+    "zh_又V_159": {
+      "title": "又 + 동사 (과거·기실현 동작의 반복: 또 ~했다, 다시 ~했다)",
+      "shortExplanation": "부사 '又'를 동사 앞에 사용하여, 과거에 어떤 동작이나 사건이 이미 또다시 일어났음(기실현의 반복)을 나타냅니다.",
+      "longExplanation": "부사 ‘又’는 동사 앞에 놓여, 이미 과거에 동작이나 사건이 반복되어 발생했음을 나타냅니다. 아직 일어나지 않은 미래의 반복을 나타내는 ‘再’와 대립되며, 이미 완료되었거나 일어난 일에 쓰입니다. 특히 의문사 ‘怎么’와 결합한 ‘怎么又……了’ 구문에서는 화자의 불만, 어이없음, 안타까움, 질책 등의 감정적 어기가 진하게 드러납니다(예: ‘你今天怎么又迟到了?’ - 너 오늘 왜 또 지각했니?). 한국어의 '(이미) 또 ~했다', '다시 ~했다'에 해당합니다.",
+      "formation": "주어 + (시간 + ) (怎么 + ) 又 + 동사 + (목적어 + 了)",
+      "examples": [
+        {
+          "translation": "너 오늘 왜 또 지각했어?"
+        }
+      ]
+    },
+    "zh_SQ1就Q2_160": {
+      "title": "주어 + 의문사1 + 就 + 의문사2 (임의·자유 표현: ~하는 것은 무엇이든 ~하다, ~하는 대로 ~하다)",
+      "shortExplanation": "부사 '就' 앞뒤에 동일한 의문사를 호응시켜, 앞선 조건이나 뜻에 따라 원하는 대로 자유롭게 행동함을 나타냅니다.",
+      "longExplanation": "‘주어 + 의문사1 + 就 + 의문사2’ 구문은 동일한 의문대명사(什么, 哪儿, 谁, 怎么 등)를 부사 ‘就’의 앞과 뒤에 중복하여 호응시키는 의문사의 비의문(임의 지칭) 용법입니다. 앞 절의 의문사가 임의의 조건이나 소망을 제시하면, 뒤 절의 ‘就 + 의문사’는 그 조건에 상응하여 그대로 실행함을 나타냅니다(예: ‘想吃什么就吃什么’ - 먹고 싶은 것은 무엇이든 먹는다, ‘想去哪儿就去哪儿’ - 가고 싶은 곳이면 어디든 간다, ‘想怎么做就怎么做’ - 하고 싶은 대로 한다). 한국어의 '~하는 것은 무엇이든 ~하다', '~하는 대로 ~하다'에 해당합니다.",
+      "formation": "주어 + (동사1 + ) 의문사 + 就 + (동사2 + ) 의문사",
+      "examples": [
+        {
+          "translation": "저는 마시고 싶은 것은 무엇이든 마십니다."
+        }
+      ]
+    },
+    "zh_S1QS2就Q_161": {
+      "title": "주어1 + 의문사 + 주어2 + 就 + 의문사 (호응 표현: 주어1이 ~하는 것을 주어2도 그대로 ~하다)",
+      "shortExplanation": "서로 다른 두 주어 사이에 같은 의문사를 호응시켜, 주어2가 주어1의 선택이나 행동에 맞춰 그대로 따름을 나타냅니다.",
+      "longExplanation": "‘주어1 + 의문사 + 주어2 + 就 + 의문사’는 두 개의 서로 다른 주어가 등장하는 의문사 임의 지칭 호응 구문입니다. 앞 절에서 주어1이 선택하거나 행동한 내용(什么, 哪儿, 怎么 등)을 기준으로 삼아, 뒤 절의 주어2가 부사 ‘就’를 통해 그와 완전히 동일하게 행동함을 나타냅니다. 즉 주어2가 주어1의 결정에 전적으로 따르고 동조함을 표현합니다(예: ‘你喝什么我就喝什么’ - 네가 마시는 걸 나도 마실게, ‘你去哪儿我就去哪儿’ - 네가 가는 곳이면 나도 갈게). 한국어의 '네가 ~하는 대로 나도 ~하다', '~가 하는 것은 무엇이든 따라서 ~하다'에 해당합니다.",
+      "formation": "주어1 + (동사1 + ) 의문사 + 주어2 + 就 + (동사2 + ) 의문사",
+      "examples": [
+        {
+          "translation": "네가 마시는 걸로 나도 마실게."
+        }
+      ]
+    },
+    "zh_越V1A1越V2A2_162": {
+      "title": "越 + 동사1 / 형용사1 + 越 + 동사2 / 형용사2 (비례 점증 표현: ~할수록 더욱 ~하다)",
+      "shortExplanation": "부사 '越……越……'을 사용하여 앞의 동작이나 상태의 정도가 더해짐에 비례하여 뒤의 정도 역시 갈수록 심화됨을 나타냅니다.",
+      "longExplanation": "‘越……越……’ 구문은 두 사건 간의 비례적 인과 및 점증 관계를 나타내는 복합 부사 호응 구조입니다. ‘越’ 뒤에는 각각 동사나 형용사가 결합하여, ‘앞의 조건이나 행동이 심화되면 될수록 뒤의 결과나 상태 역시 더욱 그러해진다’는 뜻을 전달합니다(예: ‘越聊越开心’ - 이야기할수록 더욱 즐거워지다, ‘雨越下越大’ - 비가 내릴수록 점점 더 거세지다, ‘越快越好’ - 빠르면 빠를수록 좋다). 주어가 하나일 수도 있고 둘일 수도 있습니다. 한국어의 '~하면 할수록 더욱 ~하다'에 대응합니다.",
+      "formation": "(주어 + ) 越 + 동사1 / 형용사1 + 越 + 동사2 / 형용사2",
+      "examples": [
+        {
+          "translation": "우리는 이야기를 나눌수록 더욱 즐거워졌습니다."
+        }
+      ]
+    },
+    "zh_N1跟N2一样_163": {
+      "title": "명사1 + 跟 + 명사2 + 一样 (동등 비교: 명사1은 명사2와 같다, ~와 마찬가지이다)",
+      "shortExplanation": "개사 '跟'(또는 '和')과 '一样'을 결합하여, 두 대상의 성질·모습·상태가 서로 같거나 매우 유사함을 나타냅니다.",
+      "longExplanation": "‘명사1 + 跟 + 명사2 + 一样’은 두 대상 간의 유사성이나 동일성을 나타내는 기본 동등 비교 구문입니다. 개사 ‘跟’(~와/과, ‘和’나 ‘同’으로 대체 가능)이 비교의 기준 대상을 이끌고, ‘一样(같다)’이 술어로 작용하여 ‘명사1은 명사2와 같다/똑같다/마치 ~와 같다’는 뜻을 나타냅니다(예: ‘你的眼睛跟大熊猫一样’ - 너의 눈은 판다와 똑같다/판다 눈 같다, ‘这辆车跟那辆一样’ - 이 차는 저 차와 같다). 부정형은 ‘跟……不一样’(~와 같지 않다/다르다)입니다. 한국어의 '~와/과 같다', '~와 마찬가지이다'에 대응합니다.",
+      "formation": "명사1 + 跟 / 和 + 명사2 + 一样",
+      "examples": [
+        {
+          "translation": "너의 눈은 판다 눈처럼 똑같아."
+        }
+      ]
+    },
+    "zh_N1跟N2一样A_164": {
+      "title": "명사1 + 跟 + 명사2 + 一样 + 형용사 (동등 비교: 명사1은 명사2만큼 ~하다, ~와 똑같이 ~하다)",
+      "shortExplanation": "'跟……一样' 뒤에 형용사를 결합하여, 특정한 성질이나 속성에 있어서 두 대상의 정도가 대등함을 나타냅니다.",
+      "longExplanation": "‘명사1 + 跟 + 명사2 + 一样 + 형용사’는 구체적인 비교 기준(키, 크기, 난이도, 아름다움 등)을 명시하여 두 대상의 정도가 동등함을 나타내는 비교 구문입니다. ‘跟’(~와/과, ‘和’로 대체 가능)이 이끄는 명사구에 ‘一样(마찬가지로)’이 붙어 뒤에 오는 형용사를 수식합니다(예: ‘儿子跟爸爸一样高’ - 아들은 아버지와 키가 똑같이 크다/아버지 만큼 키가 크다, ‘今天跟昨天一样冷’ - 오늘은 어제만큼 춥다). 부정문에서는 통상 ‘没有……那么/这么 + 형용사’가 더 자주 쓰입니다. 한국어의 '~만큼 ~하다', '~와 똑같이 ~하다'에 대응합니다.",
+      "formation": "명사1 + 跟 / 和 + 명사2 + 一样 + 형용사",
+      "examples": [
+        {
+          "translation": "아들은 아버지 만큼 키가 큽니다."
+        }
+      ]
+    },
+    "zh_没有N这么那么A_165": {
+      "title": "명사1 + 没有 + 명사2 + (这么 / 那么 + ) 형용사 (열등 비교: 명사1은 명사2만큼 ~하지 않다)",
+      "shortExplanation": "'没有'를 사용하여 비교 기준을 이끌고, 주어의 정도가 기준 대상의 수준에 미치지 못함을 나타내는 열등 비교 구문입니다.",
+      "longExplanation": "‘명사1 + 没有 + 명사2 + (这么/那么 + ) 형용사’는 중국어에서 가장 보편적으로 쓰이는 열등 비교(부정 비교) 형식입니다. 명사1의 성질이나 상태가 비교 기준인 명사2의 정도에 미치지 못함을 나타냅니다. 형용사 앞에 정도를 가리키는 지시대명사 ‘那么’(그렇게, 그만큼)나 ‘这么’(이렇게, 이만큼)를 자주 덧붙여 기준 대상의 높은 수준을 생생하게 부각합니다(예: ‘我的汉语没有他那么好’ - 내 중국어는 그 사람만큼 그렇게 유창하지 못하다, ‘今天没有昨天那么冷’ - 오늘은 어제만큼 춥지 않다). 한국어의 '~은/는 ~만큼 …하지 않다', '~만 못하다'에 대응합니다.",
+      "formation": "명사1 + 没有 + 명사2 + (这么 / 那么 + ) 형용사",
+      "examples": [
+        {
+          "translation": "제 중국어는 그 사람만큼 그렇게 유창하지 않아요."
+        }
+      ]
+    },
+    "zh_A一点儿一些_166": {
+      "title": "형용사 + 一点儿 / 一些 (수량보어: 조금 더 ~하다, 약간 ~하다)",
+      "shortExplanation": "형용사 뒤에 '一点儿' 또는 '一些'를 붙여 차이가 근소함을 나타내며, '조금 더 ~하다', '약간 더 ~하다'의 의미를 나타내는 차이 수량보어입니다.",
+      "longExplanation": "‘형용사 + 一点儿 / 一些’는 형용사 뒤에 수량 표현을 결합하여 두 대상 간의 정도 차이가 미세함을 나타내는 수량보어(차이보어) 구조입니다. ‘比’자 비교문에서 ‘명사1 + 比 + 명사2 + 형용사 + 一点儿/一些’ 형태로 널리 쓰여 ‘명사1이 명사2보다 약간 더 …하다’는 뜻을 나타냅니다(예: ‘大山比大卫矮一点儿’ - 다산은 데이비드보다 키가 조금 더 작다, ‘这件比那件贵一点儿’ - 이것이 저것보다 약간 더 비싸다). 또한 희망이나 요구를 나타낼 때도 단독으로 쓰입니다(예: ‘便宜一点儿’ - 좀 더 싸게 해주세요). 형용사 앞에 놓여 불만을 나타내는 ‘有一点儿 + 형용사’와는 어순 및 어기가 전혀 다르므로 주의해야 합니다. 한국어의 '조금 더 ~하다', '약간 ~하다'에 대응합니다.",
+      "formation": "(명사1 + 比 + 명사2 + ) 형용사 + 一点儿 / 一些",
+      "examples": [
+        {
+          "translation": "다산은 데이비드보다 키가 조금 더 작습니다."
+        }
+      ]
+    },
+    "zh_A得多多了_167": {
+      "title": "형용사 + 得多 / 多了 (정도보어: 훨씬 더 ~하다, 대단히 ~하다)",
+      "shortExplanation": "형용사 뒤에 '得多' 또는 '多了'를 결합하여, 두 대상 간의 격차나 정도의 차이가 매우 큼을 나타내는 정도보어(차이보어)입니다.",
+      "longExplanation": "‘형용사 + 得多 / 多了’는 두 대상 간의 수준이나 정도의 차이가 현저하게 큼을 나타내는 정도보어 구조입니다. 주로 ‘比’자 비교문에서 ‘명사1 + 比 + 명사2 + 형용사 + 得多/多了’ 형태로 쓰여 ‘명사1이 명사2보다 훨씬 더 …하다’는 뜻을 나타냅니다(예: ‘今天的作业比昨天多得多’ - 오늘의 숙제는 어제보다 훨씬 더 많다, ‘他比我大得多’ - 그는 나보다 나이가 훨씬 많다, ‘病好多了’ - 병이 훨씬 나아졌다). 주의할 점은 ‘比’ 비교문에서는 형용사 앞에 ‘很’, ‘非常’, ‘真’과 같은 정도부사를 사용할 수 없으므로, 격차가 큼을 나타내고자 할 때는 반드시 형용사 뒤에 ‘得多’나 ‘多了’를 보어로 써야 한다는 것입니다. 한국어의 '훨씬 더 ~하다', '비교가 안 될 만큼 ~하다'에 대응합니다.",
+      "formation": "(명사1 + 比 + 명사2 + ) 형용사 + 得多 / 多了",
+      "examples": [
+        {
+          "translation": "오늘 숙제는 어제보다 훨씬 더 많습니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_对N没兴趣_153": {
+      "title": "对 + 名词 + 没兴趣（介词短语作状语：表示对某事物不感兴趣）",
+      "shortExplanation": "介词“对”引出关涉的对象，后接“没兴趣”（或“没有兴趣”），表示对某人、某事物或某项活动缺乏兴趣或热情。",
+      "longExplanation": "“对 + 名词 + 没兴趣”是“对……感兴趣/有兴趣”的否定表达形式，用于说明主语对所提及的事物、领域或活动没有好奇心与热情。介词短语“对 + 名词”在句中作状语，置于谓语动词短语“没兴趣”之前。若要强调完全不感兴趣，可使用“一点儿也/都没兴趣”；若程度较浅，则可用“不太有兴趣”。",
+      "formation": "主语 + 对 + 名词（对象） + 没兴趣 / 没有兴趣",
+      "examples": [
+        {
+          "translation": "他们对中国电影没兴趣。"
+        }
+      ]
+    },
+    "zh_半_154": {
+      "title": "数词 + 点 + 半（时刻表达法：表示几点三十分）",
+      "shortExplanation": "“半”放在表示小时的“点”之后，用于准确认读或表达“几点半”（即几点三十分）。",
+      "longExplanation": "在汉语时刻表达系统中，“半”表示三十分钟（半小时）。置于整点词“点”之后，构成“数词 + 点 + 半”，用于指称某个具体的钟点时刻（如“七点半”即7:30，“两点半”即2:30）。需注意与表示时间段（时量）的“半个小时/半天”区分开来。",
+      "formation": "数词 + 点 + 半",
+      "examples": [
+        {
+          "translation": "现在七点半。"
+        }
+      ]
+    },
+    "zh_一刻_155": {
+      "title": "数词 + 点 + 一刻（时刻表达法：表示几点十五分）",
+      "shortExplanation": "“一刻”表示十五分钟，置于整点“点”之后，用于表达某个具体时刻的十五分（几点一刻）。",
+      "longExplanation": "在汉语钟点认读中，“刻”是传统时间量度单位，一刻相当于十五分钟。“一刻”通常紧跟在“点”后，构成“数词 + 点 + 一刻”（如“七点一刻”即7:15，“十点一刻”即10:15）。在现代汉语中，三十分通常用“半”而不用“*两刻”；四十五分多用“差一刻”或直接读“四十五分”。",
+      "formation": "数词 + 点 + 一刻",
+      "examples": [
+        {
+          "translation": "现在七点一刻。"
+        }
+      ]
+    },
+    "zh_一刻钟_156": {
+      "title": "一刻钟（时量词短语：表示持续十五分钟的时间段）",
+      "shortExplanation": "“一刻钟”表示十五分钟的时长，主要充当时量补语，说明动作或状态持续了十五分钟。",
+      "longExplanation": "“一刻”多用于表示“几点十五分”的特定钟点时刻，而“一刻钟”则明确指代持续“十五分钟”的一段时量（时间长度）。在句中常充当动词谓语的时量补语，表示动作的延续时间或事件发生的时差（如“迟到了一刻钟”、“等了一刻钟”、“休息一刻钟”）。口语中使用非常广泛。",
+      "formation": "动词 + （了 + ）一刻钟",
+      "examples": [
+        {
+          "translation": "你迟到了一刻钟。"
+        }
+      ]
+    },
+    "zh_差ch_157": {
+      "title": "差 + 分数 / 一刻 + 数词 + 点（时刻表达法：表示差几分到几点）",
+      "shortExplanation": "动词“差”用于钟点表达中，表示距离下一个整点还差若干分钟（差……分到……点）。",
+      "longExplanation": "在汉语时刻表达中，“差”（chà）表示欠缺、不足。常用于整点前的时间认读，语序通常为“差 + 分数（或一刻） + 目标整点 + 点”，意为还差几分钟就到某个整点时刻（如“差一刻八点”即7点45分，“差五分十点”即9点55分）。也可以把钟点置于前，说成“八点差一刻”。常与“已经……了”连用，带有提醒或催促的时间语气。",
+      "formation": "（已经 + ）差 + 分数 / 一刻 + 数词 + 点 + （了）",
+      "examples": [
+        {
+          "translation": "已经差一刻八点了！"
+        }
+      ]
+    },
+    "zh_再V_158": {
+      "title": "再 + 动词（副词：表示动作在将来的重复或继续）",
+      "shortExplanation": "副词“再”置于动词前，表示动作尚未发生，将在未来、特定时间或某种条件下再次进行或重复。",
+      "longExplanation": "“再”是表示动作重复的常用时间副词，其显著特点在于所修饰的动作是“尚未实现的、将要发生或期待发生的”（如“明天再去”、“再看一看”、“欢迎下次再来”）。它与副词“又”形成鲜明对比：“又”用于表示动作已经在过去重复发生，而“再”则用于未来、祈使句、假设或未实现的重复情境。常与“要”、“想”、“会”等能愿动词或时间词搭配使用。",
+      "formation": "主语 + （时间 + / 还 / 要 + ）再 + 动词 + （宾语）",
+      "examples": [
+        {
+          "translation": "我明天还要再去看看。"
+        }
+      ]
+    },
+    "zh_又V_159": {
+      "title": "又 + 动词（副词：表示动作在过去的重复发生）",
+      "shortExplanation": "副词“又”置于动词前，表示动作或某种情况已经在过去再次发生或重复出现。",
+      "longExplanation": "“又”是表示动作重复发生的常用副词，其核心特征是表示“已经实现的、过去发生过的动作的重复”。这与用于未来的“再”形成鲜明对比（如“他又来了”、“你怎么又忘了”）。在与疑问代词“怎么”连用构成的“怎么又……”句式中，常带有说话人不耐烦、不满、惊讶或责备的负面情绪色彩（如“你今天怎么又迟到了？”）。句末通常带有动态助词或语气助词“了”。",
+      "formation": "主语 + （时间 + ）（怎么 + ）又 + 动词 + （宾语 + 了）",
+      "examples": [
+        {
+          "translation": "你今天怎么又迟到了?"
+        }
+      ]
+    },
+    "zh_SQ1就Q2_160": {
+      "title": "主语 + 疑问词1 + 就 + 疑问词2（疑问代词任指配合用法：前后指代同一事物）",
+      "shortExplanation": "前后两次使用同一个疑问代词，中间用副词“就”连接，表示后一个动作完全由前一个条件或意愿决定，随心所欲。",
+      "longExplanation": "“主语 + 疑问词1 + 就 + 疑问词2”是疑问代词活用（任指配合用法）的经典句式。同一个疑问代词（如“什么”、“哪儿”、“谁”、“怎么”等）在“就”的前后两次出现，前后指代完全相同的对象。前一个分句提出条件、愿望或假设，后一个分句说明相应的行为决定，表示无条件地依照前面的意向执行（如“想吃什么就吃什么”、“想去哪儿就去哪儿”、“怎么方便就怎么做”）。常用于体现自主选择与任意性。",
+      "formation": "主语 + （动词1 + ）疑问词 + 就 + （动词2 + ）疑问词",
+      "examples": [
+        {
+          "translation": "我想喝什么就喝什么。"
+        }
+      ]
+    },
+    "zh_S1QS2就Q_161": {
+      "title": "主语1 + 疑问词 + 主语2 + 就 + 疑问词（双主语疑问代词配合用法：主语2遵从主语1的决定）",
+      "shortExplanation": "涉及两个不同主语，前后分句配合使用同一个疑问代词，表示主语2的行为完全跟随或遵从主语1的选择。",
+      "longExplanation": "本句型属于疑问代词任指配合用法的双主语结构。句式中前后两个分句的主语不同（如“你”与“我”），但前后均使用同一个疑问代词（如“什么”、“哪儿”、“谁”等）。前一分句中主语1的行为或选择构成基准条件，后一分句中主语2通过副词“就”明确表示采取与主语1完全一致的行动（如“你喝什么我就喝什么”、“你去哪儿我就去哪儿”）。常用于日常交际中表示客气、随和、顺从或赞同对方的决定。",
+      "formation": "主语1 + （动词1 + ）疑问词 + 主语2 + 就 + （动词2 + ）疑问词",
+      "examples": [
+        {
+          "translation": "你喝什么我就喝什么。"
+        }
+      ]
+    },
+    "zh_越V1A1越V2A2_162": {
+      "title": "越 + 动词1 / 形容词1 + 越 + 动词2 / 形容词2（关联结构：表示程度随条件成正比递增）",
+      "shortExplanation": "使用成对副词“越……越……”连接两个谓词性成分，表示后项的程度随着前项的发展或加深而成比例地递增（越……越……）。",
+      "longExplanation": "“越……越……”是汉语中表示程度累进与条件依存的常用紧缩关联句式。两个“越”字后可分别接动词、形容词或谓词性短语。该结构表明后一部分的程度变化以前一部分为转移，具有“条件越深化，结果越显著”的正比例发展关系（如“越聊越开心”、“雨越下越大”、“学得越多懂得越多”、“越快越好”）。既可用于单主语句，也可用于双主语句（如“你越催他他越急”）。",
+      "formation": "（主语 + ）越 + 动词1 / 形容词1 + 越 + 动词2 / 形容词2",
+      "examples": [
+        {
+          "translation": "我们越聊越开心。"
+        }
+      ]
+    },
+    "zh_N1跟N2一样_163": {
+      "title": "名词1 + 跟 + 名词2 + 一样（同等比较句：表示两事物完全相同或极其相似）",
+      "shortExplanation": "使用介词“跟”（或“和”）连接比较的基准对象，后接形容词“一样”作谓语，表示两者的性质、样貌或特征完全相同。",
+      "longExplanation": "“名词1 + 跟 + 名词2 + 一样”是汉语表示同等比较的基本句型。介词“跟”（亦可用“和”、“同”）引出比较的对象，介词短语在句中作状语，“一样”作谓语，意为两件事物在某一方面毫无二致或极为相仿（如“你的眼睛跟大熊猫一样”——形容黑眼圈严重、“这件衣服跟那件一样”）。若表示不同，否定形式为“跟……不一样”。口语中非常基础且高频。",
+      "formation": "名词1 + 跟 / 和 + 名词2 + 一样",
+      "examples": [
+        {
+          "translation": "你的眼睛跟大熊猫一样。"
+        }
+      ]
+    },
+    "zh_N1跟N2一样A_164": {
+      "title": "名词1 + 跟 + 名词2 + 一样 + 形容词（同等比较句：表示两事物在某方面程度相同）",
+      "shortExplanation": "在“跟……一样”后加上形容词，具体指出两件事物在某个性质或属性维度上达到了相同的程度。",
+      "longExplanation": "“名词1 + 跟 + 名词2 + 一样 + 形容词”是精确描述同等程度比较的句式。“跟 + 名词2 + 一样”在句中作状语，修饰后面的形容词谓语，明确指出了两事物在高度、速度、价格、难易等具体属性上的均等性（如“儿子跟爸爸一样高”、“他跑得跟我一样快”、“这件跟那件一样贵”）。若要表达否定（达不到同等程度），口语中一般倾向于使用“没有……（这么/那么）+ 形容词”句式。",
+      "formation": "名词1 + 跟 / 和 + 名词2 + 一样 + 形容词",
+      "examples": [
+        {
+          "translation": "儿子跟爸爸一样高。"
+        }
+      ]
+    },
+    "zh_没有N这么那么A_165": {
+      "title": "名词1 + 没有 + 名词2 + （这么 / 那么 + ）形容词（否定比较句：表示达不到另一事物的程度）",
+      "shortExplanation": "使用“没有”引出比较基准，表示名词1在某性质或程度方面不及名词2（A不如B那样……）。",
+      "longExplanation": "“名词1 + 没有 + 名词2 + （这么/那么 + ）形容词”是汉语中表达劣等比较（即程度不及）的最主要句式，相当于“比”字句或“一样”句的否定形式。该结构表明前者所达到的程度低于后者。形容词前常加上指示代词“这么”（指示近处的程度）或“那么”（指示较远的程度），用以指代并强调基准对象所达到的较高水平（如“我的汉语没有他那么好”、“今天没有昨天那么冷”）。语感客观自然，交际中使用极广。",
+      "formation": "名词1 + 没有 + 名词2 + （这么 / 那么 + ）形容词",
+      "examples": [
+        {
+          "translation": "我的汉语没有他那么好。"
+        }
+      ]
+    },
+    "zh_A一点儿一些_166": {
+      "title": "形容词 + 一点儿 / 一些（数量补语：表示微小的程度差别）",
+      "shortExplanation": "“一点儿”或“一些”置于形容词之后充当数量补语（差别补语），表示程度上的差别细微（稍微……一点）。",
+      "longExplanation": "在汉语比较句及日常表达中，当两个事物的程度差异不大时，通常在形容词谓语之后接“一点儿”或“一些”作数量补语，说明差别的具体幅度极小。常见于“比”字句：“名词1 + 比 + 名词2 + 形容词 + 一点儿/一些”（如“大山比大卫矮一点儿”、“今天比昨天暖和一些”）；也可用于祈使语气表示希望或请求（如“便宜一点儿”、“走快一些”）。必须与置于形容词前表不如意语气的状语“有一点儿 + 形容词”严格区分。",
+      "formation": "（名词1 + 比 + 名词2 + ）形容词 + 一点儿 / 一些",
+      "examples": [
+        {
+          "translation": "大山比大卫矮一点儿。"
+        }
+      ]
+    },
+    "zh_A得多多了_167": {
+      "title": "形容词 + 得多 / 多了（程度补语：表示程度差别很大）",
+      "shortExplanation": "“得多”或“多了”置于形容词之后充当程度补语，表示两事物之间的性状差异非常显著（比……多得多/高得多）。",
+      "longExplanation": "在汉语比较句及形容词谓语句中，“得多”与“多了”位于形容词之后作补语，表示程度或数量上的悬殊差距。最典型用于“比”字句：“名词1 + 比 + 名词2 + 形容词 + 得多/多了”（如“今天的作业比昨天多得多”、“南方比北方暖和得多”）；亦可直接用于说明变化幅度大（如“病好多了”）。必须注意：“比”字句中形容词前不能受“很”、“非常”、“十分”等程度副词修饰（不可说成“*比昨天很多”），若要体现差距大，必须在形容词后使用“得多”或“多了”等补语成分。",
+      "formation": "（名词1 + 比 + 名词2 + ）形容词 + 得多 / 多了",
+      "examples": [
+        {
+          "translation": "今天的作业比昨天多得多。"
+        }
+      ]
+    }
+  }
+}

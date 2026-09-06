@@ -44,9 +44,9 @@
     --bg-card-rgb: 255, 255, 255;
     --border-color-rgb: 229, 231, 235;
 
-    /* Primary button tokens (WCAG AA compliant contrast with white text) */
-    --btn-primary-bg: #dc2626;
-    --btn-primary-hover: #b91c1c;
+    /* Primary button tokens */
+    --btn-primary-bg: var(--accent-primary, #FF6B6B);
+    --btn-primary-hover: var(--accent-primary-hover, #e85555);
     --btn-primary-text: #ffffff;
 
     /* Semantic colors */
@@ -79,6 +79,10 @@
     --level-upper-text: #ff7b00;
     --level-advanced: #ffdfe0;
     --level-advanced-text: #ff4b4b;
+
+    /* Grammar highlight color (harmonious warm amber/gold) */
+    --color-grammar: #f59e0b;
+    --color-grammar-rgb: 245, 158, 11;
 
     /* Spacing scale */
     --space-2xs: 0.25rem;
@@ -231,6 +235,9 @@
     --level-upper-text: #f97316;
     --level-advanced: rgba(255, 75, 75, 0.15);
     --level-advanced-text: #f87171;
+
+    --color-grammar: #fbbf24;
+    --color-grammar-rgb: 251, 191, 36;
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);

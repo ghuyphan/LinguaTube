@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_다면_43",
+    "language": "ko",
+    "pattern": "~다면",
+    "title": "~다면 [damyeon] (If it is the case that)",
+    "shortExplanation": "Expresses a hypothetical condition (similar to 'if' in English).",
+    "longExplanation": "'~다면 [damyeon]' is used to form conditional statements, much like 'if' in English. It introduces a hypothetical scenario or condition, and the result or conclusion follows in the same sentence or after.",
+    "formation": "Verb stem + 다면 / Noun + (이)라면",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "시간이 있다면, 저는 여기서 내일까지 기다릴 수 있어요.",
+        "romanization": "Sigani itdamyeon, jeoneun yeogiseo naeilkkaji gidaril su isseoyo.",
+        "translation": "If I have time, I can wait here until tomorrow."
+      },
+      {
+        "sentence": "네가 여기에 온다면, 저녁 식사를 함께 할 수 있겠어요.",
+        "romanization": "Nega yeogie ondamyeon, jeonyeok siksareul hamkke hal su issgesseoyo.",
+        "translation": "If you come here, we can have dinner together."
+      },
+      {
+        "sentence": "비가 오다면, 우산을 가져오세요.",
+        "romanization": "Biga odamyeon, usaneul gajyeo-oseyo.",
+        "translation": "If it's raining, bring an umbrella."
+      },
+      {
+        "sentence": "그게 실제라면, 정말 놀라운 일이에요.",
+        "romanization": "Geuge siljelamyeon, jeongmal nollaun irieyo.",
+        "translation": "If that’s real, it's truly amazing."
+      }
+    ]
+  },
+  {
+    "id": "ko_더라도_44",
+    "language": "ko",
+    "pattern": "~더라도",
+    "title": "~더라도 [deorado] (Even if)",
+    "shortExplanation": "Used to express 'even if' or 'even though', presenting a hypothetical or contrary-to-fact condition.",
+    "longExplanation": "'~더라도 [deorado]' is a Korean grammar pattern meaning 'even if' or 'even though.' It introduces a hypothetical or imagined scenario that does not prevent a certain action or outcome in the following clause. The overall sense is that the second action/decision remains firm despite the 'even if' condition.",
+    "formation": "Verb/Adjective stem + 더라도",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "비가 오더라도 나는 학교에 갈 거예요, 학습을 계속해야 하니까요.",
+        "romanization": "Biga odeorado naneun hakgyoe gal geoyeyo, hakseubeul gyesokhaeya hanikkayo.",
+        "translation": "Even if it rains, I will go to school, because I have to continue studying."
+      },
+      {
+        "sentence": "시험이 어렵더라도 최선을 다하겠습니다, 실패는 선택이 아니에요.",
+        "romanization": "Siheomi eoryeopdeorado choiseoneul dahagessseumnida, silpaeneun seontaegi anieyo.",
+        "translation": "Even if the test is difficult, I will do my best, because failure is not an option."
+      },
+      {
+        "sentence": "너무 추워지더라도 스키를 탈 거예요, 그것이 제가 즐기는 방법이니까요.",
+        "romanization": "Neomu chuuojideorado seukireul tal geoyeyo, geugeosi jega jeulgineun bangbeom-inikkayo.",
+        "translation": "Even if it gets really cold, I'll still go skiing, because that's how I enjoy myself."
+      },
+      {
+        "sentence": "내일이 휴일이더라도 나는 일찍 일어날 거예요, 그래야 늦지 않을 거니까요.",
+        "romanization": "Naeiri hyuil-ideorado naneun iljjik ireonal geoyeyo, geuraeya neujji anheul geonikkayo.",
+        "translation": "Even if tomorrow is a holiday, I’m going to wake up early so I won’t be late for anything."
+      }
+    ]
+  },
+  {
+    "id": "ko_더라구요_45",
+    "language": "ko",
+    "pattern": "~더라구요",
+    "title": "~더라구요 [deoraguyo] (It seemed, I noticed)",
+    "shortExplanation": "Expresses the speaker's personal observation or realization about a past event.",
+    "longExplanation": "'~더라구요' is a casual, conversational ending in Korean for sharing something you noticed or realized. It indicates the speaker is conveying newly discovered information or a personal impression from experience. It usually attaches to the verb stem in the past or descriptive form.",
+    "formation": "Verb stem + 더라구요",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 어제 큰 할인이 있는 걸 보고 정말 놀랐더라구요, 그래서 바로 쇼핑하러 갔어요.",
+        "romanization": "Jeoneun eoje keun halini issneun geol bogo jeongmal nollatdeoraguyo, geuraeseo baro syoping-hareo gasseoyo.",
+        "translation": "I was really surprised to see a big discount yesterday, so I went shopping right away."
+      },
+      {
+        "sentence": "날씨가 흐려서 산책 가기에 별로라고 느꼈더라구요, 그래서 집에 있었습니다.",
+        "romanization": "Nalssiga heuryeoseo sanchaek gagie byeollorago neukkyeotdeoraguyo, geuraeseo jibe isseotsseumnida.",
+        "translation": "Because the weather was cloudy, I felt it wasn’t a good day for a walk, so I stayed home."
+      },
+      {
+        "sentence": "친구가 점점 몸이 커지는 걸 보니까 임신이구나 싶더라구요, 그래서 축하해 주었습니다.",
+        "romanization": "Chinguga jeomjeom momi keojineun geol bonikka imsin-iguna sipdeoraguyo, geuraeseo chukahae jueotsseumnida.",
+        "translation": "Noticing my friend’s body gradually getting bigger, I realized she was pregnant, so I congratulated her."
+      },
+      {
+        "sentence": "그 영화를 보고 나서 감독이 정말 재능 있구나 싶더라구요, 그래서 더 관심이 생겼어요.",
+        "romanization": "Geu yeonghwareul bogo naseo gamdogi jeongmal jaeneung itguna sipdeoraguyo, geuraeseo deo gwansimi saenggyeosseoyo.",
+        "translation": "After watching that movie, I realized the director is really talented, and I became more interested."
+      }
+    ]
+  },
+  {
+    "id": "ko_던_46",
+    "language": "ko",
+    "pattern": "~던",
+    "title": "~던 [deon] (That used to)",
+    "shortExplanation": "Refers to a past habit or situation that no longer continues.",
+    "longExplanation": "'~던 [deon]' is used to describe a past action or state that used to happen or exist but no longer does. It often carries a nostalgic or retrospective nuance. It modifies a following noun, indicating something like, ‘the cafe I used to go to,’ or ‘the toy he used to play with.’",
+    "formation": "Verb stem + 던 (+ noun)",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 고등학교 때 자주 가던 카페에 오랜만에 왔어요.",
+        "romanization": "Jeoneun godeunghakgyo ttae jaju gadeon kape-e oraenmane wasseoyo.",
+        "translation": "I came back to the cafe I used to visit often in high school, for the first time in a while."
+      },
+      {
+        "sentence": "언니는 옛날에 먹던 초콜릿을 다시 찾으려고 노력 중이에요.",
+        "romanization": "Eonni-neun yetnare meokdeon chokolliteul dasi chajaryeogo noryeok jungieyo.",
+        "translation": "My older sister is trying to find the chocolate she used to eat in the past."
+      },
+      {
+        "sentence": "너는 내가 매일 입던 터틀넥을 기억하니?",
+        "romanization": "Neoneun naega maeil ipdeon teoteulnek-eul gieokhani?",
+        "translation": "Do you remember the turtleneck I used to wear every day?"
+      },
+      {
+        "sentence": "아빠는 예전에 조카와 놀아주던 장난감을 구하러 서점에 갔어요.",
+        "romanization": "Appaneun yejeone jokawa norajudeon jangnangameul guhareo seojeome gasseoyo.",
+        "translation": "Dad went to the bookstore to look for the toy he used to play with when my niece was little."
+      }
+    ]
+  },
+  {
+    "id": "ko_도록_47",
+    "language": "ko",
+    "pattern": "~도록",
+    "title": "~도록 [dorok] (So that, in order to)",
+    "shortExplanation": "Indicates purpose or reason for an action; 'so that', 'in order to'.",
+    "longExplanation": "'~도록 [dorok]' expresses purpose, goal, or extent, similar to 'so that' or 'in order to' in English. It shows the reason or aim behind an action. It can also imply how long or to what degree an action continues.",
+    "formation": "Verb stem + 도록",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 한국어를 잘하게 되도록 매일 한 시간씩 공부하려고 해요.",
+        "romanization": "Jeoneun hangugeo-reul jalhage doedorok maeil han siganssik gongbu-haryeogo haeyo.",
+        "translation": "I try to study an hour every day so that I can become good at Korean."
+      },
+      {
+        "sentence": "건강을 유지하도록, 적절히 운동하고 영양가 있는 식사를 해야 합니다.",
+        "romanization": "Geongangeul yujihadorok, jeokjeolhi undonghago yeongyangga inneun siksareul haeya hamnida.",
+        "translation": "In order to stay healthy, you should exercise appropriately and eat nutritious meals."
+      },
+      {
+        "sentence": "이론을 이해하도록 선생님이 복잡한 개념을 간단하게 설명해 주셨어요.",
+        "romanization": "Iron-eul ihaehadorok seonsaengnimi bokjaphan gaenyeomeul gandanhage seolmyeonghae jusyeosseoyo.",
+        "translation": "The teacher explained the complex concepts simply so that we could understand the theory."
+      },
+      {
+        "sentence": "아이들이 안전하게 놀 수 있도록, 놀이터에는 안전장치가 잘 설치되어 있어요.",
+        "romanization": "Aideuri anjeonhage nol su itdorok, noriteo-eneun anjeon-jangchiga jal seolchidoeeo isseoyo.",
+        "translation": "So that children can play safely, the playground is equipped with proper safety devices."
+      }
+    ]
+  },
+  {
+    "id": "ko_도록_48",
+    "language": "ko",
+    "pattern": "~도록",
+    "title": "~도록 하다 [dorok hada] (Make sure, see to it that)",
+    "shortExplanation": "Used to give instructions or commands to ensure a certain outcome.",
+    "longExplanation": "'~도록 하다' can mean 'make sure to,' 'ensure that,' or 'see to it that.' The speaker is directing someone (or themselves) to do something in order to achieve or maintain a particular result. It often carries a sense of imperative or strong advice.",
+    "formation": "Verb stem + 도록 하다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "당신이 내일 꼭 출석하도록 하세요. 중요한 정보를 공유해야 해요.",
+        "romanization": "Dangsini naeil kkok chulseok-hadorok haseyo. Jungyohan jeongboreul gongyuhaeya haeyo.",
+        "translation": "Make sure you attend tomorrow. We need to share important information."
+      },
+      {
+        "sentence": "식사 후에는 손을 깨끗이 씻도록 하세요.",
+        "romanization": "Siksa hu-eneun soneul kkaekkeushi ssitdorok haseyo.",
+        "translation": "Make sure you wash your hands thoroughly after meals."
+      },
+      {
+        "sentence": "내년까지 모든 프로젝트를 마무리하도록 해야 합니다.",
+        "romanization": "Naenyeonkkaji modeun peurojekteureul mamurihadorok haeya hamnida.",
+        "translation": "You must see to it that all projects are finished by next year."
+      },
+      {
+        "sentence": "학생들이 시험에 잘 대비하도록 준비물을 미리 안내해주세요.",
+        "romanization": "Haksaengdeuri siheome jal daebihadorok junbimureul miri annaehaejuseyo.",
+        "translation": "Please inform the students in advance about what they need, so they can prepare well for the exam."
+      }
+    ]
+  },
+  {
+    "id": "ko_라든지_49",
+    "language": "ko",
+    "pattern": "~라든지",
+    "title": "~라든지 [radeunji] (Or, either)",
+    "shortExplanation": "Lists options or possibilities; means 'or' or 'either'.",
+    "longExplanation": "'~라든지 [radeunji]' is used to present multiple possible options or examples, similar to 'or' in English. You can list items or actions, emphasizing that these are merely examples among many possibilities.",
+    "formation": "Noun/Verb + 라든지 + (Noun/Verb + 라든지)",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그림을 그린다든지, 사진을 찍는다든지, 운동을 한다든지, 취미 활동은 다양해요.",
+        "romanization": "Geurimeul geurindadeunji, sajineul jjikneundadeunji, undongeul handadeunji, chwimi hwaldongeun dayanghaeyo.",
+        "translation": "You can draw pictures, take photos, or exercise—there are many different hobbies."
+      },
+      {
+        "sentence": "빨리 와야 하는 이유가 배가 고프다든지, 해야 할 일이 있다든지, 여러 가지일 수 있겠죠.",
+        "romanization": "Ppalli waya haneun iyuga baega gopeudadeunji, haeya hal iri itdadeunji, yeoreo gajil su itgetjyo.",
+        "translation": "Maybe you need to come quickly because you’re hungry, or you have a task to do—there can be various reasons."
+      },
+      {
+        "sentence": "아이스크림 사러 갈 건데, 바닐라라든지 초콜릿라든지 다른 맛도 많이 있어요.",
+        "romanization": "Aiseukeurim sareo gal geonde, banillaradeunji chokollit-radeunji dareun matdo manhi isseoyo.",
+        "translation": "I’m going to buy ice cream; there’s vanilla, chocolate, or many other flavors."
+      },
+      {
+        "sentence": "책을 좋아하는 사람들은 로맨스 소설이라든지, 자기계발서라든지, 다양한 장르를 즐길 수 있죠.",
+        "romanization": "Chaekeul johahaneun saramdeureun romaenseu sosoliradeunji, jagigyebalseoradeunji, dayanghan janreureul jeulgil su itjyo.",
+        "translation": "People who enjoy reading can read romance novels, self-improvement books, or other various genres."
+      }
+    ]
+  },
+  {
+    "id": "ko_라도_50",
+    "language": "ko",
+    "pattern": "~라도",
+    "title": "~라도 [rado] (Even if, at least)",
+    "shortExplanation": "Indicates a fallback option ('at least') or a concession ('even if').",
+    "longExplanation": "The Korean particle '~라도' often has two core usages: (1) 'even if' (though somewhat less strong than '~더라도'), or (2) selecting the least favorable or minimal option when there is no better choice, translating to 'at least.' It implies partial satisfaction or a fallback stance.",
+    "formation": "1) Noun + (이)라도\n2) Sometimes attached to verbs or adjectives (but often overlaps with '~더라도').",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "숙제를 하지 않더라도, 수업은 꼭 들어야 해요.",
+        "romanization": "Sukjereul haji antdeorado, sueobeun kkok deureoya haeyo.",
+        "translation": "Even if you didn't do your homework, you must attend class."
+      },
+      {
+        "sentence": "그 집이 너무 비싸더라도 돈이 없다면 작은 방이라도 임대해야 해요.",
+        "romanization": "Geu jibi neomu bissadeorado doni eopsdamyeon jageun bang-irado imdaehaeya haeyo.",
+        "translation": "Even if that house is too expensive, if you have no money, you should at least rent a small room."
+      },
+      {
+        "sentence": "취업이 어렵고 힘들더라도 최소한 하루에 한 번은 지원서를 보내야 해요.",
+        "romanization": "Chwieobi eoryeopgo himdeuldeorado choesohan harue han beon-eun jiweonseoreul bonaeya haeyo.",
+        "translation": "Even if job-hunting is hard, you should at least send out one application a day."
+      },
+      {
+        "sentence": "맛집에서 다 주문하지 못한다면, 작은 디저트라도 사 보는 게 어떨까요?",
+        "romanization": "Matjibeseo da jumunhaji mothandamyeon, jageun dijeoteurado sa boneun ge eotteolkayo?",
+        "translation": "If you can’t order everything at the restaurant, how about at least getting a small dessert?"
+      }
+    ]
+  },
+  {
+    "id": "ko_라서_51",
+    "language": "ko",
+    "pattern": "~라서",
+    "title": "~라서 [raseo] (Because [it is Noun], so...)",
+    "shortExplanation": "Used with nouns to express reason or cause, meaning 'because it is...' or 'so...'.",
+    "longExplanation": "'~라서 [raseo]' (or '~이라서') attaches to **nouns**, showing that 'because (it is) X, ... follows.' It’s similar to '(으)라서' usage. For verbs and adjectives, Korean often uses '-아/어/해서.'",
+    "formation": "Noun + (이)라서",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "오늘은 휴일이라서 출근 안 해도 돼요.",
+        "romanization": "Oneureun hyuil-iraseo chulgeun an haedo dwaeyo.",
+        "translation": "Because it's a holiday today, I don’t have to go to work."
+      },
+      {
+        "sentence": "그 식당은 유명한 곳이라서 항상 손님이 많아요.",
+        "romanization": "Geu sikdang-eun yumyeonghan gos-iraseo hangsang sonnimi manhayo.",
+        "translation": "Because that restaurant is a famous place, it always has a lot of customers."
+      },
+      {
+        "sentence": "요즘은 방학이라서 학교에 학생이 거의 없어요.",
+        "romanization": "Yojeumeun banghak-iraseo hakgyoe haksaengi geoui eopseoyo.",
+        "translation": "These days it's vacation (break), so there are hardly any students at school."
+      },
+      {
+        "sentence": "주말이라서 도로가 많이 막히네요.",
+        "romanization": "Jumal-iraseo doroga manhi makhineyo.",
+        "translation": "Because it's the weekend, the roads are really congested."
+      }
+    ]
+  },
+  {
+    "id": "ko_라야_52",
+    "language": "ko",
+    "pattern": "~라야",
+    "title": "~라야 하다 [rayahada] (Must, have to)",
+    "shortExplanation": "A formal/literary way to express obligation or necessity, akin to 'must.'",
+    "longExplanation": "The phrase '~라야 하다' is a somewhat formal expression meaning 'must do X' or 'it’s necessary to do X.' It can appear with nouns (e.g., '학생이라야 한다') or with certain verb forms. In modern Korean, it's less common than '~아/어야 하다.'",
+    "formation": "Noun + (이)라야 하다 / Certain verb forms + 라야 하다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "이 일은 전문가라야 할 수 있을 것 같아요.",
+        "romanization": "I ireun jeonmungagara-ya hal su isseul geot gatayo.",
+        "translation": "It seems only a specialist can do this job (i.e. you must be a specialist)."
+      },
+      {
+        "sentence": "정직한 사람이라야 이 책임을 맡을 수 있어요.",
+        "romanization": "Jeongjikhan saram-iraya i chaegimeul mateul su isseoyo.",
+        "translation": "You must be an honest person to take on this responsibility."
+      },
+      {
+        "sentence": "정말 간절한 열망이라야 그런 노력을 계속할 수 있죠.",
+        "romanization": "Jeongmal ganjeolhan yeolmang-iraya geureon noryeokeul gyesokhal su itjyo.",
+        "translation": "Only a truly earnest desire can drive someone to keep up that effort."
+      },
+      {
+        "sentence": "건강이라야 무엇이든 할 수 있다고 생각해요.",
+        "romanization": "Geongang-iraya mueot-ideun hal su itddago saenggakhaeyo.",
+        "translation": "I believe you have to be healthy if you want to do anything."
+      }
+    ]
+  },
+  {
+    "id": "ko_려고_53",
+    "language": "ko",
+    "pattern": "~려고",
+    "title": "~려고 [ryeogo] (Intending to, planning to)",
+    "shortExplanation": "Used to express intention or plan to do something.",
+    "longExplanation": "'~려고' attaches to the verb stem to show the speaker’s plan or intention, similar to 'I'm going to...' or 'I'm planning to...' in English. It’s often used with future actions the speaker has decided on.",
+    "formation": "Verb stem + 려고",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "내일 친구들과 영화를 보러 가려고 하는데, 아직 어떤 영화를 볼지 못 정했어요.",
+        "romanization": "Naeil chingudeulgwa yeonghwareul boreo garyeogo haneunde, ajik eotteon yeonghwareul bolji mot jeonghaesseoyo.",
+        "translation": "I'm planning to watch a movie with my friends tomorrow, but I haven’t decided which one yet."
+      },
+      {
+        "sentence": "오늘 밤에 책을 읽으려고 했지만 너무 피곤해서 그냥 잤어요.",
+        "romanization": "Oneul bam-e chaekeul ilgeuryeogo haetjiman neomu pigonhaeseo geunyang jasseoyo.",
+        "translation": "I intended to read a book tonight, but I was too tired and just went to sleep."
+      },
+      {
+        "sentence": "부모님 댁에 가려고 했는데 갑자기 일이 생겨서 못 갔어요.",
+        "romanization": "Bumonim daege garyeogo haetneunde gapjagi ili saenggyeoseo mot gasseoyo.",
+        "translation": "I was planning to visit my parents, but something came up and I couldn’t go."
+      },
+      {
+        "sentence": "엄마는 아빠에게 새 지갑을 주려고 했는데, 아빠가 이미 같은 걸 사서 놀랐어요.",
+        "romanization": "Eommaneun appaege sae jigabeul juryeogo haetneunde, appaga imi gateun geol saseo nollasseoyo.",
+        "translation": "Mom intended to give Dad a new wallet, but she was surprised because he’d already bought the same one."
+      }
+    ]
+  },
+  {
+    "id": "ko_려고_54",
+    "language": "ko",
+    "pattern": "~려고",
+    "title": "~려고 하다 [ryeogo hada] (Try to, plan to)",
+    "shortExplanation": "Used to express intention or an attempt to do something; similar to 'try to' or 'plan to' in English.",
+    "longExplanation": "'~려고 하다 [ryeogo hada]' is a commonly used verb construction that indicates the subject's intention or attempt to do something in the near future. It can be translated as 'I’m going to...', 'I plan to...', or 'I’m trying to...' in English.",
+    "formation": "Verb stem + 려고 하다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 내일 친구를 만나려고 하지만, 계획이 바뀔 수도 있어요.",
+        "romanization": "Jeoneun naeil chingureul mannaryeogo hajiman, gyehoegi bakkwil sudo isseoyo.",
+        "translation": "I plan to meet my friend tomorrow, but the plan might change."
+      },
+      {
+        "sentence": "그는 기타를 배우려고 했지만, 시간이 많지 않아서 결국 포기했어요.",
+        "romanization": "Geuneun gitareul baeuryeogo haetjiman, sigani manchi anhaseo gyeolguk pogihaesseoyo.",
+        "translation": "He tried to learn the guitar, but he didn’t have much time, so he gave up."
+      },
+      {
+        "sentence": "우리는 이번 주말에 등산을 가려고 하지만, 날씨가 좋지 않아서 가능성이 적어요.",
+        "romanization": "Urineun ibeon jumare deungsane garyeogo hajiman, nalssiga johji anhaseo ganeungseongi jeogeoyo.",
+        "translation": "We’re planning to go hiking this weekend, but since the weather isn’t good, it’s unlikely."
+      },
+      {
+        "sentence": "제가 이제부터 새로운 기술을 배우려고 합니다. 이는 제 전문성을 높이기 위해서예요.",
+        "romanization": "Jega ijebuteo saeroun gisuleul baeuryeogo hamnida. Ineun je jeonmunseongeul nopigi wihaeseoyeyo.",
+        "translation": "I’m going to learn new skills from now on. This is to improve my professional expertise."
+      }
+    ]
+  },
+  {
+    "id": "ko_려는데_55",
+    "language": "ko",
+    "pattern": "~려는데",
+    "title": "~려는데 [ryeoneunde] (Trying to, want to, but)",
+    "shortExplanation": "Used to express an intention or plan, followed by a difficulty or complication.",
+    "longExplanation": "'~려는데 [ryeoneunde]' indicates that the speaker has an intention or plan (similar to '~려고 하는데'), but something is making it uncertain or difficult. It’s often followed by explanations of why the plan might fail or change.",
+    "formation": "Verb stem + 려는데",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 오늘 조금 일찍 집에 가려는데, 갑자기 긴급 업무가 들어와서 힘들 것 같아요.",
+        "romanization": "Jeoneun oneul jogeum iljjik jibe garyeoneunde, gapjagi gingeup eopmuga deureowaseo himdeul geot gatayo.",
+        "translation": "I was trying to leave work early today, but an urgent task came up, so it looks difficult."
+      },
+      {
+        "sentence": "처음에는 그 프로젝트를 완료하려는데, 여러 가지 문제가 생겨서 완성하지 못했습니다.",
+        "romanization": "Cheoeumeneun geu peurojekteureul wallyoharyeoneunde, yeoreogaji munjega saenggyeoseo wanseonghaji mothaesseumnida.",
+        "translation": "At first, I intended to finish the project, but various problems arose and I couldn’t complete it."
+      },
+      {
+        "sentence": "내일 친구와 영화를 보려는데, 모든 표가 매진된 상태라서 갈 수 있을지 모르겠어요.",
+        "romanization": "Naeil chinguwa yeonghwareul boryeoneunde, modeun pyoga maejindoen sangtaeraseo gal su isseulji moreugesseoyo.",
+        "translation": "I’m planning to watch a movie with my friend tomorrow, but I’m not sure if we can go because it’s sold out."
+      },
+      {
+        "sentence": "여행을 가려는데, 날씨가 좋지 않아서 또 미룰지 고민 중이에요.",
+        "romanization": "Yeohaengeul garyeoneunde, nalssiga johji anaseo tto mirulji gomin jungieyo.",
+        "translation": "I want to go on a trip, but the weather’s bad, so I’m debating whether to postpone again."
+      }
+    ]
+  },
+  {
+    "id": "ko_리가_56",
+    "language": "ko",
+    "pattern": "~리가",
+    "title": "~리가 없다 [riga eopda] (There’s no way that)",
+    "shortExplanation": "Expresses impossibility or disbelief.",
+    "longExplanation": "'~(으)ㄹ 리가 없다' indicates that something is impossible or that there’s no chance it could happen. It conveys strong disbelief about the situation. It can be translated as 'There’s no way that...' or 'It can’t be that...'.",
+    "formation": "Verb (으)ㄹ 리가 없다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그가 저에게 거짓말을 할 리가 없어요. 그는 정말 정직한 사람이에요.",
+        "romanization": "Geuga jeoege geojismareul hal riga eopsoyo. Geuneun jeongmal jeongjikhan saramieyo.",
+        "translation": "There’s no way he would lie to me. He’s very honest."
+      },
+      {
+        "sentence": "너무 많이 먹어서 더 먹을 수 있을 리가 없어요.",
+        "romanization": "Neomu mani meogeoseo deo meogeul su isseul riga eopsoyo.",
+        "translation": "I’ve eaten so much that there’s no way I could eat more."
+      },
+      {
+        "sentence": "가방이 너무 무거워서 더 들 수 있을 리가 없어요.",
+        "romanization": "Gabangi neomu mugeowoseo deo deul su isseul riga eopsoyo.",
+        "translation": "My bag is too heavy, so there’s no way I can carry any more."
+      },
+      {
+        "sentence": "제가 빨간색을 싫어해서, 그 색 옷을 입을 리가 없어요.",
+        "romanization": "Jega ppalgansaeg-eul silheohaeseo, geu saeg oseul ibeul riga eopsoyo.",
+        "translation": "I hate the color red, so there’s no way I’d wear clothes in that color."
+      }
+    ]
+  },
+  {
+    "id": "ko_리요_57",
+    "language": "ko",
+    "pattern": "~리요",
+    "title": "~리요 [riyo] (Likely, probably)",
+    "shortExplanation": "A more formal or older-style ending expressing a prediction or assumption.",
+    "longExplanation": "'~리요' is a somewhat archaic or very formal style verb ending used for predictions or expectations about the future. It implies a relatively firm belief in the likelihood of the event. Modern usage might be rare in casual speech, but it can appear in narratives or historical contexts.",
+    "formation": "Verb stem + 리요",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "내일은 비가 올 리요. 우산을 챙기시지요.",
+        "romanization": "Naeireun biga ol riyo. Usaneul chaenggisijiyo.",
+        "translation": "It is likely to rain tomorrow. Please take an umbrella."
+      },
+      {
+        "sentence": "그분은 맛있는 음식을 좋아할 리요, 요리사이니까요.",
+        "romanization": "Geu-buneun masinneun eumsigeul johahal riyo, yorisainikkayo.",
+        "translation": "He probably likes good food, because he’s a chef."
+      },
+      {
+        "sentence": "이 영화는 대성공할 리요, 유명 배우들이 다 나오니까요.",
+        "romanization": "I yeonghwaneun daeseong-gonghal riyo, yumyeong baudeuriga da naonikkan-yo.",
+        "translation": "This movie is likely to be a huge success because it has all famous actors."
+      },
+      {
+        "sentence": "오늘은 버스가 많이 지연될 리요, 출근 시간 교통이 복잡하거든요.",
+        "romanization": "Oneureun beoseuga manhi jiyeondoel riyo, chulgeun sigan gyotongi bokjaphageodeunyo.",
+        "translation": "Buses will probably be delayed a lot today, because traffic is complicated during rush hour."
+      }
+    ]
+  }
+]

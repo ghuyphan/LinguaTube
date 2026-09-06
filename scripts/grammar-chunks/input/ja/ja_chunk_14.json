@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Verb_59",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようにする (Verb ~you ni suru)",
+    "shortExplanation": "Make an effort to; try to; see to it that; ensure that.",
+    "longExplanation": "The ようにする grammar point is used to express that someone is making an effort, trying, or seeing to it that something happens. It can be translated as 'make sure to', 'try to', or 'ensure that' in English. The formation is simple, involving a verb in the dictionary form followed by ようにする.",
+    "formation": "Verb-dictionary form + ようにする",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "毎日運動するようにしています。",
+        "romanization": "Mainichi undou suru you ni shiteimasu.",
+        "translation": "I try to exercise every day."
+      },
+      {
+        "sentence": "早く寝るようにしてください。",
+        "romanization": "Hayaku neru you ni shite kudasai.",
+        "translation": "Please try to go to bed early."
+      },
+      {
+        "sentence": "約束を守るようにします。",
+        "romanization": "Yakusoku o mamoru you ni shimasu.",
+        "translation": "I will make sure to keep my promise."
+      },
+      {
+        "sentence": "彼に会わないようにする。",
+        "romanization": "Kare ni awanai you ni suru.",
+        "translation": "I will try not to see him."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_60",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようになる (〜you ni naru)",
+    "shortExplanation": "Express a change in ability, situation or state; 'become able to', 'come to', 'begin to'.",
+    "longExplanation": "The ようになる grammar implies a change or development involving new abilities, situations or states. It can be translated into English as 'become able to', 'come to' or 'begin to'. This grammar is often used when talking about a skill that has been acquired or a change in habit or situation over time.",
+    "formation": "Verb-dictionary/potential form + ようになる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "日本語が話せるようになりました。",
+        "romanization": "Nihongo ga hanaseru you ni narimashita.",
+        "translation": "I have become able to speak Japanese."
+      },
+      {
+        "sentence": "最近、早く寝るようになった。",
+        "romanization": "Saikin, hayaku neru you ni natta.",
+        "translation": "Recently, I have come to go to bed early."
+      },
+      {
+        "sentence": "彼はピアノを弾けるようになりました。",
+        "romanization": "Kare wa piano wo hikeru you ni narimashita.",
+        "translation": "He has become able to play the piano."
+      },
+      {
+        "sentence": "この仕事を始めてから、毎日忙しいと感じるようになりました。",
+        "romanization": "Kono shigoto o hajimete kara, mainichi isogashii to kanjiru you ni narimashita.",
+        "translation": "Since I started this job, I've begun to feel busy every day."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_61",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ように言う (Verb-you ni iu)",
+    "shortExplanation": "Tell someone to do something; 'tell to do', 'instruct to do'.",
+    "longExplanation": "The grammar point Verb ように言う is used when someone tells or instructs another person to do something. It can be translated as 'tell to do' or 'instruct to do' in English. The formation is created by adding ように言う to the casual form of a verb.",
+    "formation": "Verb-casual + ように言う",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "先生は私たちに宿題をやるように言いました。",
+        "romanization": "Sensei wa watashitachi ni shukudai o yaru you ni iimashita.",
+        "translation": "The teacher told us to do our homework."
+      },
+      {
+        "sentence": "母は弟に部屋を片付けるように言いました。",
+        "romanization": "Haha wa otouto ni heya wo katazukeru you ni iimashita.",
+        "translation": "My mother told my younger brother to clean his room."
+      },
+      {
+        "sentence": "上司は私に報告書を提出するように言いました。",
+        "romanization": "Joushi wa watashi ni houkokusho wo teishutsu suru you ni iimashita.",
+        "translation": "My boss told me to submit the report."
+      },
+      {
+        "sentence": "友達が私に早く来るように言いました。",
+        "romanization": "Tomodachi ga watashi ni hayaku kuru you ni iimashita.",
+        "translation": "My friend told me to come early."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_62",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb られる (〜rareru)",
+    "shortExplanation": "Expresses passive voice or potential form for verbs.",
+    "longExplanation": "The られる grammar point can be used to express passive voice or potential form for verbs. Passive voice indicates that the action is being done to the subject, while potential form expresses the ability or possibility to do an action. The formation of られる depends on the type of verb (う, る, or irregular verbs).",
+    "formation": "う-verb (passive): Replace the final う with われる / る-verb (passive & potential): Replace る with られる / Irregular: する → される, くる → こられる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は先生に褒められました。",
+        "romanization": "Kare wa sensei ni homeraremashita.",
+        "translation": "He was praised by the teacher."
+      },
+      {
+        "sentence": "彼は友達に笑われました。",
+        "romanization": "Kare wa tomodachi ni warawaremashita.",
+        "translation": "He was laughed at by his friends."
+      },
+      {
+        "sentence": "映画は観られましたか？",
+        "romanization": "Eiga wa miraremashita ka?",
+        "translation": "Were you able to watch the movie?"
+      },
+      {
+        "sentence": "彼女はリーダーに選ばれました。",
+        "romanization": "Kanojo wa riidaa ni erabaremashita.",
+        "translation": "She was chosen as the leader."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_63",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb る ことがある (〜ru koto ga aru)",
+    "shortExplanation": "Used to express that something happens sometimes or has happened before.",
+    "longExplanation": "The grammar point る ことがある is used to express that something occurs sometimes or has occurred in the past. It indicates that the action is not a regular or constant event, but rather something that takes place occasionally or has happened at least once.",
+    "formation": "Verb-dictionary form + ことがある",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は遅刻することがあります。",
+        "romanization": "Kare wa chikoku suru koto ga arimasu.",
+        "translation": "He is sometimes late."
+      },
+      {
+        "sentence": "私は寝坊することがあります。",
+        "romanization": "Watashi wa nebou suru koto ga arimasu.",
+        "translation": "I sometimes oversleep."
+      },
+      {
+        "sentence": "彼女は歌を歌うことがあります。",
+        "romanization": "Kanojo wa uta o utau koto ga arimasu.",
+        "translation": "She sometimes sings songs."
+      },
+      {
+        "sentence": "子供の頃、よく山に登ることがありました。",
+        "romanization": "Kodomo no koro, yoku yama ni noboru koto ga arimashita.",
+        "translation": "When I was a child, I sometimes climbed mountains."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_64",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ることができる (〜ru koto ga dekiru)",
+    "shortExplanation": "Express ability or possibility of doing an action; 'can', 'be able to', 'is possible'.",
+    "longExplanation": "The ～ることができる grammar point is used to express the ability or possibility of doing an action in Japanese. It can be translated as 'can', 'be able to', or 'is possible' in English. The formation is made by adding the phrase 'ことができる' to the verb in its conjugated る-form.",
+    "formation": "Verb-る + ことができる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "私は日本語を話すことができます。",
+        "romanization": "Watashi wa nihongo wo hanasu koto ga dekimasu.",
+        "translation": "I can speak Japanese."
+      },
+      {
+        "sentence": "彼はギターを弾くことができます。",
+        "romanization": "Kare wa gitaa wo hiku koto ga dekimasu.",
+        "translation": "He can play the guitar."
+      },
+      {
+        "sentence": "この問題を解決することができますか？",
+        "romanization": "Kono mondai wo kaiketsu suru koto ga dekimasu ka?",
+        "translation": "Can you solve this problem?"
+      },
+      {
+        "sentence": "彼女は犬を泳がせることができます。",
+        "romanization": "Kanojo wa inu wo oyogaseru koto ga dekimasu.",
+        "translation": "She can make the dog swim."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_65",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ることにする (〜ru koto ni suru)",
+    "shortExplanation": "Decide to do something, make a decision.",
+    "longExplanation": "The ～ることにする grammar point is used to express that someone has made a decision to do something or has decided on a specific course of action. It is formed by attaching ことにする to the verb in its る form.",
+    "formation": "Verb-る + ことにする",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "来週、ジムに行くことにしました。",
+        "romanization": "Raishuu, jimu ni iku koto ni shimashita.",
+        "translation": "I decided to go to the gym next week."
+      },
+      {
+        "sentence": "この靴を買うことにしました。",
+        "romanization": "Kono kutsu wo kau koto ni shimashita.",
+        "translation": "I decided to buy these shoes."
+      },
+      {
+        "sentence": "毎日、散歩をすることにしました。",
+        "romanization": "Mainichi, sanpo wo suru koto ni shimashita.",
+        "translation": "I decided to take a walk every day."
+      },
+      {
+        "sentence": "彼に電話をかけることにします。",
+        "romanization": "Kare ni denwa wo kakeru koto ni shimasu.",
+        "translation": "I’ve decided to call him."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_66",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb る ことになる (〜ru koto ni naru)",
+    "shortExplanation": "Indicates that something has been decided or arranged; 'it has been decided that', 'it turns out that'.",
+    "longExplanation": "The る ことになる grammar point is used to express that something has been decided or arranged. It often indicates a decision made by someone else or due to circumstances. It can be translated as 'it has been decided that' or 'it turns out that' in English. The formation requires a verb in る (dictionary) form.",
+    "formation": "Verb-る + ことになる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "今日は会議がなくなることになりました。",
+        "romanization": "Kyou wa kaigi ga nakunaru koto ni narimashita.",
+        "translation": "It has been decided that there will be no meeting today."
+      },
+      {
+        "sentence": "来週、友達と旅行することになった。",
+        "romanization": "Raishuu, tomodachi to ryokou suru koto ni natta.",
+        "translation": "It has been arranged that I will travel with my friends next week."
+      },
+      {
+        "sentence": "彼女が今度のプロジェクトのリーダーになることになりました。",
+        "romanization": "Kanojo ga kondo no purojekuto no riida ni naru koto ni narimashita.",
+        "translation": "It has been decided that she will be the leader of the next project."
+      },
+      {
+        "sentence": "急に仕事が入ったので、休みを取ることになった。",
+        "romanization": "Kyuu ni shigoto ga haitta node, yasumi wo toru koto ni natta.",
+        "translation": "Due to sudden work, it has been decided that I will take a day off."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_67",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb るときに (〜ru toki ni)",
+    "shortExplanation": "Describes the time when a certain action takes place; 'when', 'at the time'.",
+    "longExplanation": "The ～るときに grammar point is used to indicate the time when a certain action or event happens. It can be translated as 'when' or 'at the time' in English. The formation involves attaching ときに to the verb in its dictionary (る) form.",
+    "formation": "Verb-る + ときに",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "映画を見るときに、ポップコーンを食べます。",
+        "romanization": "Eiga wo miru toki ni, poppukoon wo tabemasu.",
+        "translation": "When I watch a movie, I eat popcorn."
+      },
+      {
+        "sentence": "寝るときに、部屋の電気を消します。",
+        "romanization": "Neru toki ni, heya no denki wo keshimasu.",
+        "translation": "When I go to bed, I turn off the room lights."
+      },
+      {
+        "sentence": "運動するときに、水分補給が大切です。",
+        "romanization": "Undou suru toki ni, suibun hokyuu ga taisetsu desu.",
+        "translation": "When exercising, it's important to stay hydrated."
+      },
+      {
+        "sentence": "旅行するときに、カメラを持っていくことが好きです。",
+        "romanization": "Ryokou suru toki ni, kamera wo motteiku koto ga suki desu.",
+        "translation": "When I travel, I like to bring a camera."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_68",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb る ところ (Verb-ru tokoro)",
+    "shortExplanation": "Expresses the state or moment when an action is about to happen or is happening.",
+    "longExplanation": "The grammar point 'Verb る ところ' is used to express that one is just about to do something, or is in the process of doing it. It can be translated as 'just about to' or 'in the middle of' in English, depending on context.",
+    "formation": "Verb-dictionary form + ところ",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は食べるところです。",
+        "romanization": "Kare wa taberu tokoro desu.",
+        "translation": "He is in the process of eating."
+      },
+      {
+        "sentence": "私は出かけるところです。",
+        "romanization": "Watashi wa dekakeru tokoro desu.",
+        "translation": "I am just about to leave."
+      },
+      {
+        "sentence": "彼女は泣くところでした。",
+        "romanization": "Kanojo wa naku tokoro deshita.",
+        "translation": "She was on the verge of crying."
+      },
+      {
+        "sentence": "私たちは勉強するところです。",
+        "romanization": "Watashitachi wa benkyou suru tokoro desu.",
+        "translation": "We are in the middle of studying."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_69",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb 出す (~dasu)",
+    "shortExplanation": "Express the action of taking something out, starting an action, or emphasizing a verb.",
+    "longExplanation": "The verb 出す (~dasu) is used to express the action of taking something out, starting an action, or emphasizing the verb it is attached to. To form this grammar point, simply attach 出す (~dasu) to the stem of the verb.",
+    "formation": "Verb stem + 出す (~dasu)",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "本を棚から出してください。",
+        "romanization": "Hon o tana kara dashite kudasai.",
+        "translation": "Please take the book out from the shelf."
+      },
+      {
+        "sentence": "彼は部屋から急いで出ました。",
+        "romanization": "Kare wa heya kara isoide demashita.",
+        "translation": "He rushed out of the room."
+      },
+      {
+        "sentence": "授業が始まる前に宿題を出してください。",
+        "romanization": "Jugyou ga hajimaru mae ni shukudai wo dashite kudasai.",
+        "translation": "Submit your homework before class starts."
+      },
+      {
+        "sentence": "彼女は歌い出しました。",
+        "romanization": "Kanojo wa utaidashimashita.",
+        "translation": "She began to sing."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_70",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb 方 (〜hou)",
+    "shortExplanation": "Indicates the way or method of doing something; often read as '～かた' ('how to', 'the way of').",
+    "longExplanation": "The ～方 grammar point is used to express the way or method of doing something, similar to 'how to' or 'the way of' in English. It can be attached to the stem of a verb to form a noun that indicates the method of doing the action. In practice, ～方 is usually read as '～かた' (e.g., 作り方＝つくりかた).",
+    "formation": "Verb-stem + 方 (read as かた)",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "誰かがケーキの作り方を知っていますか？",
+        "romanization": "Dareka ga keeki no tsukurikata o shitteimasu ka?",
+        "translation": "Does anyone know how to make a cake?"
+      },
+      {
+        "sentence": "彼女は英語の話し方を学んでいます。",
+        "romanization": "Kanojo wa eigo no hanashikata o manandeimasu.",
+        "translation": "She is learning how to speak English."
+      },
+      {
+        "sentence": "このパソコンの使い方を教えてください。",
+        "romanization": "Kono pasokon no tsukaikata o oshiete kudasai.",
+        "translation": "Please teach me how to use this computer."
+      },
+      {
+        "sentence": "数学の問題の解き方を覚えるのが難しいです。",
+        "romanization": "Suugaku no mondai no tokikata o oboeru no ga muzukashii desu.",
+        "translation": "It is difficult to remember the way to solve math problems."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_71",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb 終わる (〜owaru)",
+    "shortExplanation": "Verbal action is completed; 'to finish', 'to end'.",
+    "longExplanation": "The verb 終わる (owaru) is used to express that an action has been completed or something has come to an end. Despite ending in る, 終わる is a godan (u-verb), so it does not follow the typical ichidan (る-verb) conjugation. It is translated as 'to finish', 'to end' or 'to be over' in English.",
+    "formation": "終わる (owaru) is a godan (u-verb)",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "映画が終わったら、家に帰ります。",
+        "romanization": "Eiga ga owattara, ie ni kaerimasu.",
+        "translation": "When the movie finishes, I'll go home."
+      },
+      {
+        "sentence": "仕事が終わるまで、待ってください。",
+        "romanization": "Shigoto ga owaru made, matte kudasai.",
+        "translation": "Please wait until the work is finished."
+      },
+      {
+        "sentence": "パーティーはもうすぐ終わります。",
+        "romanization": "Paatii wa mou sugu owarimasu.",
+        "translation": "The party will be over soon."
+      },
+      {
+        "sentence": "試験が終わったら、友達と遊びに行く予定です。",
+        "romanization": "Shiken ga owattara, tomodachi to asobi ni iku yotei desu.",
+        "translation": "Once the exam is over, I plan to go out with my friends."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_72",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb + 続ける (つづける, tsuzukeru)",
+    "shortExplanation": "To continue doing or to keep doing an action.",
+    "longExplanation": "The grammar point 続ける (tsuzukeru) is attached to the masu-stem form of verbs, and it indicates the ongoing continuity of an action. It can be translated as 'to continue doing' or 'to keep doing' in English.",
+    "formation": "Verb-masu-stem + 続ける",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は毎日ジムで運動を続けています。",
+        "romanization": "Kare wa mainichi jimu de undou o tsuzuketeimasu.",
+        "translation": "He continues to exercise at the gym every day."
+      },
+      {
+        "sentence": "彼女は勉強を続けるために図書館に行きました。",
+        "romanization": "Kanojo wa benkyou o tsuzukeru tame ni toshokan ni ikimashita.",
+        "translation": "She went to the library to continue studying."
+      },
+      {
+        "sentence": "私たちは雨にも関わらず散歩を続けました。",
+        "romanization": "Watashitachi wa ame ni mo kakawarazu sanpo o tsuzukemashita.",
+        "translation": "We continued walking despite the rain."
+      },
+      {
+        "sentence": "彼は仕事を続けることに決めた。",
+        "romanization": "Kare wa shigoto o tsuzukeru koto ni kimeta.",
+        "translation": "He decided to continue working."
+      }
+    ]
+  },
+  {
+    "id": "ja_かしら_73",
+    "language": "ja",
+    "pattern": "～かしら",
+    "title": "～かしら (〜kashira)",
+    "shortExplanation": "Indicates uncertainty or doubt; 'I wonder', 'I'm not sure'.",
+    "longExplanation": "The ～かしら grammar point is used to express uncertainty or doubt about a situation. It can be translated as 'I wonder' or 'I'm not sure' in English. It is primarily used by females in casual conversations but can be used by males in some contexts as well. ～かしら is used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-casual + かしら, い-Adjective + かしら, な-Adjective + かしら, Noun + かしら",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "今日は雨が降るかしら？",
+        "romanization": "Kyou wa ame ga furu kashira?",
+        "translation": "I wonder if it will rain today?"
+      },
+      {
+        "sentence": "このケーキは美味しいかしら？",
+        "romanization": "Kono keeki wa oishii kashira?",
+        "translation": "I wonder if this cake is delicious?"
+      },
+      {
+        "sentence": "彼は病気かしら？",
+        "romanization": "Kare wa byouki kashira?",
+        "translation": "I wonder if he is sick?"
+      },
+      {
+        "sentence": "彼女は学生かしら？",
+        "romanization": "Kanojo wa gakusei kashira?",
+        "translation": "I wonder if she is a student?"
+      }
+    ]
+  }
+]

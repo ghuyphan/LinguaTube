@@ -89,7 +89,7 @@ export class PlaylistPanelComponent implements AfterViewInit {
         const shareUrl = this._playlistService.getShareUrl(playlist.id, videoId);
         const shareData = {
             title: playlist.title,
-            text: `Listen to ${playlist.title} on LinguaTube`,
+            text: `Listen to ${playlist.title} on Voca`,
             url: shareUrl
         };
 

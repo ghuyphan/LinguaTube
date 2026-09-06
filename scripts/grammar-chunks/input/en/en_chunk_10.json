@@ -1,0 +1,166 @@
+[
+  {
+    "id": "en_c2_13",
+    "language": "en",
+    "pattern": "Infinitive phrases instead of subordinate clauses",
+    "title": "Infinitive phrases instead of subordinate clauses",
+    "shortExplanation": "I want you to explain. She asked me to help. He doesn't seem to be happy.",
+    "longExplanation": "Complex infinitive (Complex Object) replaces the subordinate clause:\nI want + object + to-infinitive: I want her to stay.\nAfter see, hear, watch, let, make, have - infinitive without to:\nI saw her leave. / She made him cry. / Let me help.\nIn the passive - with to: He was made to pay.\nConstructions with seem, appear, happen, prove + to-inf:\nShe seems to know. / He happened to be there.",
+    "formation": "I want you to explain. She asked me to help. He doesn't seem to be happy.",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "I need you to sign this document.",
+        "translation": "I need you to sign this document."
+      },
+      {
+        "sentence": "She was made to apologise publicly.",
+        "translation": "She was forced to publicly apologize."
+      },
+      {
+        "sentence": "He seemed to have forgotten everything.",
+        "translation": "He seemed to have forgotten everything."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_14",
+    "language": "en",
+    "pattern": "Future Perfect Continuous",
+    "title": "Future Perfect Continuous: will have been + V-ing",
+    "shortExplanation": "By next year, I will have been studying English for five years.",
+    "longExplanation": "Future Perfect Continuous = will have been + V-ing\nEmphasis on the duration of an action that will last until a certain point in the future. Often answers the question “How long by then?”\nOften used with by (the time), for, when: By Monday, she will have been working on this project for three weeks.",
+    "formation": "By next year, I will have been studying English for five years.",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "By next year, I will have been learning English for five years.",
+        "translation": "By next year I will have been studying English for five years."
+      },
+      {
+        "sentence": "When we arrive, she will have been waiting for two hours.",
+        "translation": "When we arrive, she will already have been waiting for two hours."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_15",
+    "language": "en",
+    "pattern": "Coordination of tenses",
+    "title": "Coordination of tenses - sequence of tenses",
+    "shortExplanation": "She said she had been working. He thought it would be difficult.",
+    "longExplanation": "In complex sentences, the verb of the subordinate clause agrees in time with the main one.\nIf the main verb is in the past:\n• Present Simple → Past Simple: he said it was true\n• Past Simple → Past Perfect: she said she had seen it\n• Present Perfect → Past Perfect: he said he had finished\n• will → would; can → could; may → might; is → was",
+    "formation": "She said she had been working. He thought it would be difficult.",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "He told me that he had been living there for years.",
+        "translation": "He told me that he had lived there for many years."
+      },
+      {
+        "sentence": "She said the Earth moves around the Sun. (общая истина — не меняем)",
+        "translation": "She said that the Earth moves around the Sun."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_16",
+    "language": "en",
+    "pattern": "Coordinating conjunctions",
+    "title": "Coordinating conjunctions: and, but, or, nor, for, yet, so",
+    "shortExplanation": "FANBOYS: For, And, Nor, But, Or, Yet, So",
+    "longExplanation": "Coordinating conjunctions connect equivalent parts of a sentence.\nSeven Basic (acronym FANBOYS):\n• for = because (formal): She left, for she was tired.\n• and = and (adding)\n• nor = and not (Neither/Nor... inversion!): She didn't call, nor did she write.\n• but = but (contrast)\n• or = or (alternative)\n• yet = however (contrast, more formal but)\n• so = therefore (consequence)",
+    "formation": "FANBOYS: For, And, Nor, But, Or, Yet, So",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "She was tired, yet she kept working.",
+        "translation": "She was tired, but continued to work."
+      },
+      {
+        "sentence": "He didn't study, nor did he attend class.",
+        "translation": "He didn't study or go to classes."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_17",
+    "language": "en",
+    "pattern": "Subordinating conjunctions",
+    "title": "Subordinating conjunctions: although, whereas, provided, unless...",
+    "shortExplanation": "although, as though, whereas, provided that, unless, given that, in case",
+    "longExplanation": "Subordinating conjunctions introduce subordinate clauses.\nBy value:\n• Time: when, while, as, after, before, until, once, as soon as, whenever\n• Reasons: because, since, as, given that, seeing that\n• Conditions: if, unless, provided, as long as, in case, supposing\n• Goals: so that, in order that, best\n• Concessions: although, even though, whereas, while, however",
+    "formation": "although, as though, whereas, provided that, unless, given that, in case",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "Seeing that the deadline had passed, we cancelled the meeting.",
+        "translation": "Since the deadline passed, we canceled the meeting."
+      },
+      {
+        "sentence": "Lest she forget, he sent her a reminder.",
+        "translation": "So that she wouldn't forget, he sent her a reminder."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_18",
+    "language": "en",
+    "pattern": "Comma, semicolon and colon",
+    "title": "Comma, semicolon and colon",
+    "shortExplanation": "Use a comma before FANBOYS. Use a semicolon to link related clauses.",
+    "longExplanation": "Comma:\n• Before coordinating conjunctions FANBOYS between independent clauses.\n• After introductory words/turns of phrase: However, she decided to stay.\n• In the enumerations (Oxford comma - before the last and): apples, oranges, and bananas.\nSemicolon (;): connects two independent clauses without a conjunction.\nShe was tired; she went to bed\nColon (:): introduces a list, explanation, quotation.",
+    "formation": "Use a comma before FANBOYS. Use a semicolon to link related clauses.",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "However, the results were inconclusive; further research is required.",
+        "translation": "However, the results are mixed; further research is required."
+      },
+      {
+        "sentence": "The company has three priorities: efficiency, innovation, and sustainability.",
+        "translation": "The company has three priorities: efficiency, innovation and sustainability."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_19",
+    "language": "en",
+    "pattern": "Dash, apostrophe and quotation marks",
+    "title": "Dash, apostrophe and quotation marks",
+    "shortExplanation": "Em dash - for emphasis - sets off a phrase. It's vs its. \"Direct speech\"",
+    "longExplanation": "Dash (—): highlights a plug-in construction (stronger than a comma): The solution - though expensive - proven effective.\nApostrophe:\n• Abbreviations: it's = it is; don't; they're\n• Possessive case: John's book; the students' results\n• \nQuotes: AmE - double (\"text\"), BrE - single ('text').",
+    "formation": "Em dash - for emphasis - sets off a phrase. It's vs its. \"Direct speech\"",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "The project — launched in 2020 — exceeded all expectations.",
+        "translation": "The project, launched in 2020, exceeded all expectations."
+      },
+      {
+        "sentence": "It's important to check its settings before use.",
+        "translation": "It is important to check its settings before using it."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_20",
+    "language": "en",
+    "pattern": "Special and indirect questions in academic text",
+    "title": "Special and indirect questions in academic text",
+    "shortExplanation": "The question is whether... / I wonder what the data shows.",
+    "longExplanation": "In academic texts, direct questions are replaced by indirect ones (interrogative clauses).\nAn indirect question is a subordinate clause with the usual word order (without inversion, without do).\nIntroductory words: whether, if (yes/no), what, where, when, how, why, which.\nExample: What does this data show? → The question is what this data shows.",
+    "formation": "The question is whether... / I wonder what the data shows.",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "I wonder whether the hypothesis is correct.",
+        "translation": "I wonder if the hypothesis is true."
+      },
+      {
+        "sentence": "The study examines how social media affects behaviour.",
+        "translation": "The study examines how social media influences behavior."
+      }
+    ]
+  }
+]

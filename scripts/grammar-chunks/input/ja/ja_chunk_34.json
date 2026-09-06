@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_ないではいられない_103",
+    "language": "ja",
+    "pattern": "～ないではいられない",
+    "title": "～ないではいられない (〜nai de wa irarenai)",
+    "shortExplanation": "Cannot help but; cannot avoid; unable to refrain from.",
+    "longExplanation": "The ～ないではいられない grammar point is used to express a strong feeling, urge, or uncontrollable action that someone cannot resist or help doing, even if it may be undesirable. It can be translated as 'cannot help but', 'cannot avoid', or 'unable to refrain from' in English.",
+    "formation": "Verb-ない form + ではいられない or じゃいられない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この映画はとても感動的で、泣かないではいられなかった。",
+        "romanization": "Kono eiga wa totemo kandouteki de, nakanai de wa irarenakatta.",
+        "translation": "This movie was so touching, I couldn't help but cry."
+      },
+      {
+        "sentence": "彼女の笑顔を見ると、笑わないではいられない。",
+        "romanization": "Kanojo no egao wo miru to, warawanai de wa irarenai.",
+        "translation": "When I see her smile, I can't help but laugh."
+      },
+      {
+        "sentence": "この部屋はとても寒いので、震えないではいられない。",
+        "romanization": "Kono heya wa totemo samui node, furuenai de wa irarenai.",
+        "translation": "This room is so cold, I can't help but shiver."
+      },
+      {
+        "sentence": "彼の話はつまらないが、聞かないではいられない。",
+        "romanization": "Kare no hanashi wa tsumaranai ga, kikanai de wa irarenai.",
+        "translation": "His story is boring, but I can't help but listen."
+      }
+    ]
+  },
+  {
+    "id": "ja_ながら_104",
+    "language": "ja",
+    "pattern": "～ながら",
+    "title": "～ながら (〜nagara)",
+    "shortExplanation": "Express doing two things simultaneously or at the same time.",
+    "longExplanation": "The ～ながら grammar point is used to express the concept of doing two things simultaneously or at the same time. In English, it can be translated as 'while', 'as', or 'during'. ～ながら can be attached to the stem of a verb to convey this meaning.",
+    "formation": "Verb-stem + ながら",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "テレビを見ながら宿題をしています。",
+        "romanization": "Terebi wo minagara shukudai wo shiteimasu.",
+        "translation": "I am doing my homework while watching TV."
+      },
+      {
+        "sentence": "彼女は歌いながら料理を作っていました。",
+        "romanization": "Kanojo wa utainagara ryouri wo tsukutte imashita.",
+        "translation": "She was cooking while singing."
+      },
+      {
+        "sentence": "電車の中で立ちながら本を読んでいる人が多いです。",
+        "romanization": "Densha no naka de tachinagara hon wo yonde iru hito ga ooi desu.",
+        "translation": "There are many people who read books while standing on the train."
+      },
+      {
+        "sentence": "僕は歩きながらスマホを使っています。",
+        "romanization": "Boku wa arukinagara sumaho wo tsukatteimasu.",
+        "translation": "I am using my smartphone while walking."
+      }
+    ]
+  },
+  {
+    "id": "ja_にあたり_105",
+    "language": "ja",
+    "pattern": "～にあたり",
+    "title": "～にあたり (〜ni atari)",
+    "shortExplanation": "Expresses the meaning of 'at the time of', 'in', 'on', or 'upon'.",
+    "longExplanation": "The ～にあたり grammar point is used to describe an important event or situation that occurs at a specific moment. It can be translated as 'at the time of', 'in', 'on', or 'upon' in English. The formation is quite simple, as it only requires a noun before it.",
+    "formation": "Noun + にあたり",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "入学にあたり、必要な書類を準備してください。",
+        "romanization": "Nyuugaku ni atari, hitsuyou na shorui wo junbi shite kudasai.",
+        "translation": "Please prepare the necessary documents upon entering the school."
+      },
+      {
+        "sentence": "新年にあたり、抱負を立てる人が多いです。",
+        "romanization": "Shinnen ni atari, houfu wo tateru hito ga ooi desu.",
+        "translation": "Many people set goals at the time of the new year."
+      },
+      {
+        "sentence": "結婚にあたり、両家は大切な儀式を行います。",
+        "romanization": "Kekkon ni atari, ryouke wa taisetsu na gishiki wo okonaimasu.",
+        "translation": "Upon getting married, both families conduct an important ceremony."
+      },
+      {
+        "sentence": "新しい仕事を始めるにあたり、準備が必要です。",
+        "romanization": "Atarashii shigoto wo hajimeru ni atari, junbi ga hitsuyou desu.",
+        "translation": "In starting a new job, preparation is necessary."
+      }
+    ]
+  },
+  {
+    "id": "ja_において_106",
+    "language": "ja",
+    "pattern": "～において",
+    "title": "～において (〜ni oite)",
+    "shortExplanation": "Indicates the place, time, or context where an action or event occurs; 'in', 'at', 'on', 'regarding'.",
+    "longExplanation": "The ～において grammar point is used to show the place, time, or context where an action or event takes place. It can be translated as 'in', 'at', 'on', or 'regarding' in English. It is often used in formal situations and can be replaced by more casual equivalents such as で, に, or は in informal contexts.",
+    "formation": "Noun + において",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この大学において、英語のクラスが一番人気があります。",
+        "romanization": "Kono daigaku ni oite, eigo no kurasu ga ichiban ninki ga arimasu.",
+        "translation": "In this university, English classes are the most popular."
+      },
+      {
+        "sentence": "彼の研究において新しい発見がありました。",
+        "romanization": "Kare no kenkyuu ni oite atarashii hakken ga arimashita.",
+        "translation": "In his research, there were new discoveries."
+      },
+      {
+        "sentence": "運動会において、彼は大活躍しました。",
+        "romanization": "Undoukai ni oite, kare wa daikatsuyaku shimashita.",
+        "translation": "At the sports festival, he performed exceptionally well."
+      },
+      {
+        "sentence": "環境問題においては、みんなが責任を持って行動すべきです。",
+        "romanization": "Kankyou mondai ni oite wa, minna ga sekinin wo motte koudou subeki desu.",
+        "translation": "Regarding environmental issues, everyone should take responsibility and act accordingly."
+      }
+    ]
+  },
+  {
+    "id": "ja_にかかわらず_107",
+    "language": "ja",
+    "pattern": "～にかかわらず",
+    "title": "～にかかわらず (〜ni kakawarazu)",
+    "shortExplanation": "Regardless of; irrespective of; (often used as) 'whether or not'.",
+    "longExplanation": "The ～にかかわらず grammar point is used to express that something happens or is true regardless of a particular fact, condition, or circumstance. It can be translated as 'regardless of', 'irrespective of', or 'whether or not'. It can be used with verbs, い-adjectives, な-adjectives, or nouns.",
+    "formation": "Verb-dictionary form + にかかわらず, い-Adjective + にかかわらず, な-Adjective + にかかわらず, Noun + にかかわらず",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "天気にかかわらず、今日の試合は行われます。",
+        "romanization": "Tenki ni kakawarazu, kyou no shiai wa okonawaremasu.",
+        "translation": "The game today will be held, regardless of the weather."
+      },
+      {
+        "sentence": "彼は年齢にかかわらず、新しいことを学び続けています。",
+        "romanization": "Kare wa nenrei ni kakawarazu, atarashii koto wo manabi tsuzukete imasu.",
+        "translation": "He continues to learn new things, regardless of his age."
+      },
+      {
+        "sentence": "その仕事が難しいかどうかにかかわらず、彼女は努力し続けた。",
+        "romanization": "Sono shigoto ga muzukashii ka dou ka ni kakawarazu, kanojo wa doryoku shi tsuzuketa.",
+        "translation": "Regardless of whether the job is difficult or not, she continued to make an effort."
+      },
+      {
+        "sentence": "経験の有無にかかわらず、このプログラムは誰でも利用できます。",
+        "romanization": "Keiken no umu ni kakawarazu, kono puroguramu wa daredemo riyou dekimasu.",
+        "translation": "Regardless of experience, this program can be used by anyone."
+      }
+    ]
+  },
+  {
+    "id": "ja_にかけては_108",
+    "language": "ja",
+    "pattern": "～にかけては",
+    "title": "～にかけては (〜ni kakete wa)",
+    "shortExplanation": "Indicates a specific area or aspect in which someone or something excels.",
+    "longExplanation": "The grammar point ～にかけては is used to emphasize a particular area or aspect in which someone or something excels or is exceptional. This structure is often used with positive connotations regarding the subject's expertise or outstanding qualities.",
+    "formation": "Noun + にかけては",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "料理の腕前にかけては、彼女は誰にも負けません。",
+        "romanization": "Ryouri no udemae ni kakete wa, kanojo wa dare ni mo makemasen.",
+        "translation": "When it comes to cooking skills, she is second to none."
+      },
+      {
+        "sentence": "この町にかけては、彼の店が一番おいしいラーメンを売っています。",
+        "romanization": "Kono machi ni kakete wa, kare no mise ga ichiban oishii raamen wo utteimasu.",
+        "translation": "As far as this town is concerned, his store sells the most delicious ramen."
+      },
+      {
+        "sentence": "音楽の知識にかけては、彼は私たちの中で一番詳しいです。",
+        "romanization": "Ongaku no chishiki ni kakete wa, kare wa watashitachi no naka de ichiban kuwashii desu.",
+        "translation": "When it comes to music knowledge, he is the most knowledgeable among us."
+      },
+      {
+        "sentence": "スポーツにかけては、彼はどんな競技も得意です。",
+        "romanization": "Supootsu ni kakete wa, kare wa donna kyogi mo tokui desu.",
+        "translation": "When it comes to sports, he excels in any competition."
+      }
+    ]
+  },
+  {
+    "id": "ja_にしたがって_109",
+    "language": "ja",
+    "pattern": "～にしたがって",
+    "title": "～にしたがって (〜ni shitagatte)",
+    "shortExplanation": "Expresses a natural consequence or a change that occurs according to something else; 'as', 'with', 'in accordance with'.",
+    "longExplanation": "The ～にしたがって grammar point is used to express a natural consequence or a change that occurs according to something else. It can be translated as 'as', 'with', or 'in accordance with' in English. This grammar point is used with nouns and can be used to show a change in proportion or in accordance with a rule or principle.",
+    "formation": "Noun + にしたがって",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "成長にしたがって、この植物の葉が大きくなります。",
+        "romanization": "Seichou ni shitagatte, kono shokubutsu no ha ga ookiku narimasu.",
+        "translation": "As it grows, the leaves of this plant become larger."
+      },
+      {
+        "sentence": "説明書にしたがって、家具を組み立ててください。",
+        "romanization": "Setsumeisho ni shitagatte, kagu wo kumitatete kudasai.",
+        "translation": "Please assemble the furniture according to the instructions."
+      },
+      {
+        "sentence": "年齢にしたがって、人の体力は低下します。",
+        "romanization": "Nenrei ni shitagatte, hito no tairyoku wa teika shimasu.",
+        "translation": "As people age, their physical strength declines."
+      },
+      {
+        "sentence": "運動にしたがって、心拍数が増加することが一般的です。",
+        "romanization": "Undou ni shitagatte, shinpakusuu ga zouka suru koto ga ippan teki desu.",
+        "translation": "It is common for the heart rate to increase with exercise."
+      }
+    ]
+  },
+  {
+    "id": "ja_にしたら_110",
+    "language": "ja",
+    "pattern": "～にしたら",
+    "title": "～にしたら (〜ni shitara)",
+    "shortExplanation": "Express a point of view; 'from the perspective of', 'if I were'.",
+    "longExplanation": "The ～にしたら grammar point is used to express a point of view or opinion from someone else's perspective. It can be translated as 'from the perspective of' or 'if I were' in English. The formation differs depending on whether it is used with a noun or a pronoun.",
+    "formation": "Noun + にしたら, Pronoun + にしたら",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼にしたら、早く帰りたいだろう。",
+        "romanization": "Kare ni shitara, hayaku kaeritai darou.",
+        "translation": "From his perspective, he probably wants to go home early."
+      },
+      {
+        "sentence": "子供たちにしたら、この話はつまらないかもしれない。",
+        "romanization": "Kodomo-tachi ni shitara, kono hanashi wa tsumaranai kamoshirenai.",
+        "translation": "If I were the children, this story might be boring."
+      },
+      {
+        "sentence": "私にしたら、そのプレゼントは素晴らしいと思います。",
+        "romanization": "Watashi ni shitara, sono purezento wa subarashii to omoimasu.",
+        "translation": "From my perspective, I think that present is wonderful."
+      },
+      {
+        "sentence": "彼女にしたら、この映画が好きではないでしょう。",
+        "romanization": "Kanojo ni shitara, kono eiga ga suki dewa nai deshou.",
+        "translation": "If I were her, I would not like this movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_にしろにしろ_111",
+    "language": "ja",
+    "pattern": "～にしろ～にしろ",
+    "title": "～にしろ～にしろ (〜ni shiro 〜ni shiro)",
+    "shortExplanation": "Expresses 'either way', 'in any case', 'be it...', used when presenting two alternatives.",
+    "longExplanation": "The ～にしろ～にしろ grammar point is used to present two alternatives and emphasize that regardless of which one is chosen or occurs, the result or conclusion remains the same. It can be translated as 'either way', 'in any case', or 'be it...'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb (dictionary form or negative form) + にしろ, い-Adjective + にしろ, な-Adjective + にしろ, Noun + にしろ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "行くにしろ行かないにしろ、早く決めてください。",
+        "romanization": "Iku ni shiro ikanai ni shiro, hayaku kimete kudasai.",
+        "translation": "Either way, whether you go or not, please decide quickly."
+      },
+      {
+        "sentence": "彼が来るにしろ来ないにしろ、パーティーは始めましょう。",
+        "romanization": "Kare ga kuru ni shiro konai ni shiro, paatii wa hajimemashou.",
+        "translation": "Be it if he comes or not, let's start the party either way."
+      },
+      {
+        "sentence": "雨が降るにしろ降らないにしろ、傘を持って行ったほうがいいです。",
+        "romanization": "Ame ga furu ni shiro furanai ni shiro, kasa wo motte itta hou ga ii desu.",
+        "translation": "Either way, whether it rains or not, it's better to bring an umbrella."
+      },
+      {
+        "sentence": "このレストランが高いにしろ安いにしろ、料理は美味しいです。",
+        "romanization": "Kono resutoran ga takai ni shiro yasui ni shiro, ryouri wa oishii desu.",
+        "translation": "In any case, whether this restaurant is expensive or cheap, the food is delicious."
+      }
+    ]
+  },
+  {
+    "id": "ja_につけにつけ_112",
+    "language": "ja",
+    "pattern": "～につけ～につけ",
+    "title": "～につけ～につけ (〜ni tsuke 〜ni tsuke)",
+    "shortExplanation": "Expresses 'whenever', 'each time', 'whether...or'.",
+    "longExplanation": "The ～につけ～につけ grammar point is used to express that something happens 'each time' or 'whenever' a certain event or situation occurs, and can also mean 'whether...or'. This grammar point indicates that the same event or feeling occurs no matter which of the following situations happen.",
+    "formation": "Verb-casual + につけ, い-Adjective + につけ, な-Adjective + につけ, Noun + につけ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "外国へ行くにつけ、勉強するにつけ、言葉の壁にぶつかる。",
+        "romanization": "Gaikoku e iku ni tsuke, benkyou suru ni tsuke, kotoba no kabe ni butsukaru.",
+        "translation": "Whether I go abroad or study, I always encounter language barriers."
+      },
+      {
+        "sentence": "彼と話すにつけ、彼が考えるにつけ、彼の知識に驚かされる。",
+        "romanization": "Kare to hanasu ni tsuke, kare ga kangaeru ni tsuke, kare no chishiki ni odorokasareru.",
+        "translation": "Whenever I talk to him or hear his thoughts, I'm always amazed by his knowledge."
+      },
+      {
+        "sentence": "この公園で遊ぶにつけ、散歩するにつけ、子供時代を思い出す。",
+        "romanization": "Kono kouen de asobu ni tsuke, sanpo suru ni tsuke, kodomo jidai wo omoidasu.",
+        "translation": "Each time I play or take a walk in this park, it reminds me of my childhood."
+      },
+      {
+        "sentence": "春につけ、秋につけ、彼は母校を訪れる。",
+        "romanization": "Haru ni tsuke, aki ni tsuke, kare wa bokou wo otozureru.",
+        "translation": "Whether in spring or autumn, he visits his alma mater."
+      }
+    ]
+  },
+  {
+    "id": "ja_につれて_113",
+    "language": "ja",
+    "pattern": "～につれて",
+    "title": "～につれて (〜ni tsurete)",
+    "shortExplanation": "Expresses the idea that as one thing changes, so does another; 'as', 'along with', 'while'.",
+    "longExplanation": "The ～につれて grammar point is used to express the idea that as one thing changes or progresses, another thing changes or progresses simultaneously. In English, it can be translated as 'as', 'along with', or 'while'.",
+    "formation": "Verb (dictionary form) + につれて, Noun + につれて",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "年を取るにつれて、健康に気をつけなければなりません。",
+        "romanization": "Toshi wo toru ni tsurete, kenkou ni ki wo tsukenakereba narimasen.",
+        "translation": "As you get older, you have to pay more attention to your health."
+      },
+      {
+        "sentence": "春が近づくにつれて、気温が上がる。",
+        "romanization": "Haru ga chikazuku ni tsurete, kion ga agaru.",
+        "translation": "As spring approaches, the temperature rises."
+      },
+      {
+        "sentence": "勉強するにつれて、だんだん分かるようになる。",
+        "romanization": "Benkyou suru ni tsurete, dandan wakaru you ni naru.",
+        "translation": "As I study, I gradually come to understand."
+      },
+      {
+        "sentence": "経験が増えるにつれて、自信もついてくる。",
+        "romanization": "Keiken ga fueru ni tsurete, jishin mo tsuite kuru.",
+        "translation": "As your experience increases, so does your confidence."
+      }
+    ]
+  },
+  {
+    "id": "ja_にともなって_114",
+    "language": "ja",
+    "pattern": "～にともなって",
+    "title": "～にともなって (〜ni tomonatte)",
+    "shortExplanation": "Expresses 'along with' or 'as a result of'; indicates that one event occurs along with another.",
+    "longExplanation": "The ～にともなって grammar point is used to indicate that one event occurs along with another event, or as a result of another event. It can be translated as 'along with', 'as a result of', or 'in accordance with' in English.",
+    "formation": "Noun (event) + にともなって, Verb-casual + にともなって",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "人口が増えるにともなって、交通渋滞も悪化しています。",
+        "romanization": "Jinkou ga fueru ni tomonatte, koutsuu juutai mo akka shiteimasu.",
+        "translation": "As the population increases, traffic congestion is also getting worse."
+      },
+      {
+        "sentence": "季節の変わり目にともなって、体調を崩しやすくなります。",
+        "romanization": "Kisetsu no kawarime ni tomonatte, taichou wo kuzushi yasuku narimasu.",
+        "translation": "As the seasons change, it's easier to get out of shape."
+      },
+      {
+        "sentence": "経済の成長にともなって、雇用の機会も増えるでしょう。",
+        "romanization": "Keizai no seichou ni tomonatte, koyou no kikai mo fueru deshou.",
+        "translation": "As the economy grows, employment opportunities will also increase."
+      },
+      {
+        "sentence": "彼の昇進にともなって、引っ越しをすることになりました。",
+        "romanization": "Kare no shoushin ni tomonatte, hikkoshi wo suru koto ni narimashita.",
+        "translation": "As a result of his promotion, we decided to move."
+      }
+    ]
+  },
+  {
+    "id": "ja_にほかならない_115",
+    "language": "ja",
+    "pattern": "～にほかならない",
+    "title": "～にほかならない (〜ni hoka naranai)",
+    "shortExplanation": "Express that something is 'nothing but' or 'none other than'.",
+    "longExplanation": "The ～にほかならない grammar point is used to emphasize that something is no more or no less than what is specified. It can be seen as a strong way to say that something is 'nothing but' or 'none other than'.",
+    "formation": "Verb-plain + にほかならない, い-Adjective + にほかならない, な-Adjective + にほかならない, Noun + にほかならない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼の成功は努力にほかならない。",
+        "romanization": "Kare no seikou wa doryoku ni hoka naranai.",
+        "translation": "His success is nothing but hard work."
+      },
+      {
+        "sentence": "この痛みは寒さにほかならない。",
+        "romanization": "Kono itami wa samusa ni hoka naranai.",
+        "translation": "This pain is nothing but the cold."
+      },
+      {
+        "sentence": "彼の失敗の原因は慢心にほかならない。",
+        "romanization": "Kare no shippai no gen'in wa manshin ni hoka naranai.",
+        "translation": "The cause of his failure is nothing but overconfidence."
+      },
+      {
+        "sentence": "彼女の笑顔は明るさにほかならない。",
+        "romanization": "Kanojo no egao wa akarusa ni hoka naranai.",
+        "translation": "Her smile is none other than brightness."
+      }
+    ]
+  },
+  {
+    "id": "ja_にもかかわらず_116",
+    "language": "ja",
+    "pattern": "～にもかかわらず",
+    "title": "～にもかかわらず (〜ni mo kakawarazu)",
+    "shortExplanation": "Expresses 'despite', 'in spite of' or 'even though'.",
+    "longExplanation": "The ～にもかかわらず grammar point is used to express that something occurs, or a situation exists, despite or in spite of a contrasting or unfavorable condition. It can be translated as 'despite', 'in spite of', or 'even though' in English.",
+    "formation": "Verb (any tense/form) + にもかかわらず, い-Adjective + にもかかわらず, な-Adjective (or Noun) + であるにもかかわらず",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "忙しいにもかかわらず、彼は毎日運動しています。",
+        "romanization": "Isogashii ni mo kakawarazu, kare wa mainichi undou shiteimasu.",
+        "translation": "Despite being busy, he exercises every day."
+      },
+      {
+        "sentence": "雨が降っているにもかかわらず、彼女は散歩に行きました。",
+        "romanization": "Ame ga futteiru ni mo kakawarazu, kanojo wa sanpo ni ikimashita.",
+        "translation": "Even though it was raining, she went for a walk."
+      },
+      {
+        "sentence": "車が古いにもかかわらず、まだよく走ります。",
+        "romanization": "Kuruma ga furui ni mo kakawarazu, mada yoku hashirimasu.",
+        "translation": "In spite of the car being old, it still runs well."
+      },
+      {
+        "sentence": "結果が良くないにもかかわらず、彼は頑張り続けました。",
+        "romanization": "Kekka ga yoku nai ni mo kakawarazu, kare wa ganbari tsuzukemashita.",
+        "translation": "Despite the results not being good, he continued to do his best."
+      }
+    ]
+  },
+  {
+    "id": "ja_により_117",
+    "language": "ja",
+    "pattern": "～により",
+    "title": "～により (〜ni yori)",
+    "shortExplanation": "Indicates the reason, method, or means by which something happens; 'by', 'through', 'due to'.",
+    "longExplanation": "The ～により grammar point is used to indicate the reason, method, or means by which something happens or is done. It can be often translated as 'by', 'through', or 'due to' in English. It can be attached directly to nouns or verbs in plain form.",
+    "formation": "Noun + により, Verb + により",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この事故は運転手の不注意により起こりました。",
+        "romanization": "Kono jiko wa untenshu no fuchuui ni yori okorimashita.",
+        "translation": "This accident occurred due to the driver's carelessness."
+      },
+      {
+        "sentence": "その映画は小説により制作されました。",
+        "romanization": "Sono eiga wa shousetsu ni yori seisaku saremashita.",
+        "translation": "The movie was produced based on the novel."
+      },
+      {
+        "sentence": "犯人は警察により逮捕されました。",
+        "romanization": "Hannin wa keisatsu ni yori taiho saremashita.",
+        "translation": "The criminal was arrested by the police."
+      },
+      {
+        "sentence": "会社の成長は従業員の努力により実現しました。",
+        "romanization": "Kaisha no seichou wa juugyouin no doryoku ni yori jitsugen shimashita.",
+        "translation": "The company's growth was achieved through the efforts of its employees."
+      }
+    ]
+  }
+]

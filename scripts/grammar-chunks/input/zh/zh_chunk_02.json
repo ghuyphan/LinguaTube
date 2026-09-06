@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_怎么V_16",
+    "language": "zh",
+    "pattern": "怎么 V",
+    "title": "怎么 V (how to V)",
+    "shortExplanation": "how to V",
+    "longExplanation": "how to V. Pinyin: zěnme V",
+    "formation": "zěnme V",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "这个怎么读?",
+        "romanization": "zhège zěnme dú?",
+        "translation": "How do you read this?"
+      }
+    ]
+  },
+  {
+    "id": "zh_月号日星期_17",
+    "language": "zh",
+    "pattern": "月、号/日、星期",
+    "title": "月、号/日、星期 ((telling dates))",
+    "shortExplanation": "(telling dates)",
+    "longExplanation": "(telling dates). Pinyin: yuè、 hào/ rì、 xīngqī",
+    "formation": "yuè、 hào/ rì、 xīngqī",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "九月二号/日星期四",
+        "romanization": "Jiǔyuè èrhào/ rì Xīngqīsì",
+        "translation": "Thursday September 2"
+      }
+    ]
+  },
+  {
+    "id": "zh_去PLACEV_19",
+    "language": "zh",
+    "pattern": "去 PLACE V",
+    "title": "去 PLACE V (go to PLACE to do V)",
+    "shortExplanation": "go to PLACE to do V",
+    "longExplanation": "go to PLACE to do V. Pinyin: qù PLACE V",
+    "formation": "qù PLACE V",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我去学校学习。",
+        "romanization": "wǒ qù xuéxiào xuéxí。",
+        "translation": "I go to school to study."
+      }
+    ]
+  },
+  {
+    "id": "zh_想_20",
+    "language": "zh",
+    "pattern": "想",
+    "title": "想 (to want)",
+    "shortExplanation": "to want",
+    "longExplanation": "to want. Pinyin: xiǎng",
+    "formation": "xiǎng",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我想看书",
+        "romanization": "wǒ xiǎng kànshū",
+        "translation": "I want to read books."
+      }
+    ]
+  },
+  {
+    "id": "zh_多少N_21",
+    "language": "zh",
+    "pattern": "多少 N",
+    "title": "多少 N (how much N)",
+    "shortExplanation": "how much N",
+    "longExplanation": "how much N. Pinyin: duōshao N",
+    "formation": "duōshao N",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "你有多少汉语老师?",
+        "romanization": "nǐ yǒu duōshao Hànyǔ lǎoshī?",
+        "translation": "How many Chinese teachers do you have?"
+      }
+    ]
+  },
+  {
+    "id": "zh_个_22",
+    "language": "zh",
+    "pattern": "个",
+    "title": "个 ((measure word))",
+    "shortExplanation": "(measure word)",
+    "longExplanation": "(measure word). Pinyin: gè",
+    "formation": "gè",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "五个学生",
+        "romanization": "wǔ gè xuésheng",
+        "translation": "5 students"
+      }
+    ]
+  },
+  {
+    "id": "zh_口_23",
+    "language": "zh",
+    "pattern": "口",
+    "title": "口 ((measure word))",
+    "shortExplanation": "(measure word)",
+    "longExplanation": "(measure word). Pinyin: kǒu",
+    "formation": "kǒu",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我家有五口人。",
+        "romanization": "wǒ jiā yǒu wǔ kǒu rén。",
+        "translation": "There are 5 people in our family."
+      }
+    ]
+  },
+  {
+    "id": "zh_元块_24",
+    "language": "zh",
+    "pattern": "元／块",
+    "title": "元／块 ((currency))",
+    "shortExplanation": "(currency)",
+    "longExplanation": "(currency). Pinyin: yuán／ kuài",
+    "formation": "yuán／ kuài",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "一元／块",
+        "romanization": "yīyuán／ kuài",
+        "translation": "one yuan"
+      }
+    ]
+  },
+  {
+    "id": "zh_在_25",
+    "language": "zh",
+    "pattern": "在",
+    "title": "在 (at)",
+    "shortExplanation": "at",
+    "longExplanation": "at. Pinyin: zài",
+    "formation": "zài",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "他在椅子下面",
+        "romanization": "tā zài yǐzi xiàmian",
+        "translation": "He’s under the chair."
+      }
+    ]
+  },
+  {
+    "id": "zh_哪儿_26",
+    "language": "zh",
+    "pattern": "哪儿？",
+    "title": "哪儿？ (where)",
+    "shortExplanation": "where",
+    "longExplanation": "where. Pinyin: nǎr？",
+    "formation": "nǎr？",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我的杯子在哪儿?",
+        "romanization": "wǒ de bēizi zàinǎr?",
+        "translation": "Where is my cup?"
+      }
+    ]
+  },
+  {
+    "id": "zh_在PLACEV_27",
+    "language": "zh",
+    "pattern": "在 PLACE V",
+    "title": "在 PLACE V (V at PLACE)",
+    "shortExplanation": "V at PLACE",
+    "longExplanation": "V at PLACE. Pinyin: zài PLACE V",
+    "formation": "zài PLACE V",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我在朋友家喝茶。",
+        "romanization": "wǒ zài péngyou jiā hē chá。",
+        "translation": "I am having tea at my friend’s home."
+      }
+    ]
+  },
+  {
+    "id": "zh_Q呢_28",
+    "language": "zh",
+    "pattern": "Q 呢",
+    "title": "Q 呢 (I wonder)",
+    "shortExplanation": "I wonder",
+    "longExplanation": "I wonder. Pinyin: Q ne",
+    "formation": "Q ne",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "他在哪儿呢?",
+        "romanization": "tā zàinǎr ne?",
+        "translation": "Where is he, I wonder?"
+      }
+    ]
+  },
+  {
+    "id": "zh_N呢_29",
+    "language": "zh",
+    "pattern": "N 呢？",
+    "title": "N 呢？ (where is N)",
+    "shortExplanation": "where is N",
+    "longExplanation": "where is N. Pinyin: N ne？",
+    "formation": "N ne？",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "我的杯子呢?",
+        "romanization": "wǒ de bēizi ne?",
+        "translation": "Where is my cup?"
+      }
+    ]
+  },
+  {
+    "id": "zh_PLACE有N_30",
+    "language": "zh",
+    "pattern": "PLACE 有 N",
+    "title": "PLACE 有 N (there is N at PLACE)",
+    "shortExplanation": "there is N at PLACE",
+    "longExplanation": "there is N at PLACE. Pinyin: PLACE yǒu N",
+    "formation": "PLACE yǒu N",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "椅子下面有一只小狗",
+        "romanization": "yǐzi xiàmian yǒu yī zhǐ xiǎogǒu",
+        "translation": "There is a dog under the chair."
+      }
+    ]
+  },
+  {
+    "id": "zh_PLACE没有N_31",
+    "language": "zh",
+    "pattern": "PLACE 没有 N",
+    "title": "PLACE 没有 N (there isn’t N at PLACE)",
+    "shortExplanation": "there isn’t N at PLACE",
+    "longExplanation": "there isn’t N at PLACE. Pinyin: PLACE méiyǒu N",
+    "formation": "PLACE méiyǒu N",
+    "level": "HSK 1",
+    "examples": [
+      {
+        "sentence": "这儿没有人。",
+        "romanization": "zhèr méiyǒu rén。",
+        "translation": "There isn’t anyone here."
+      }
+    ]
+  }
+]

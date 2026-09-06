@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Verb_45",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て～ (Verb + te～)",
+    "shortExplanation": "A verb conjugation that connects actions or states.",
+    "longExplanation": "The ～て form of a verb is used to connect actions or states in a sequence, implying that the first action is completed before the second one starts. The ～て form is frequently used in casual speech, and it can also be used in polite speech when combined with certain auxiliary verbs like ください (kudasai) or いる (iru).",
+    "formation": "Verb (Group 1) - Replace last syllable with 〜て, Verb (Group 2) - Replace 'る' with 〜て, Verb (Group 3) - する becomes して, くる becomes きて",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "コーヒーを飲んで、出かけます。",
+        "romanization": "Koohii o nonde, dekakemasu.",
+        "translation": "After drinking coffee, I will go out."
+      },
+      {
+        "sentence": "買い物をして、家に帰りましょう。",
+        "romanization": "Kaimono o shite, ie ni kaerimashou.",
+        "translation": "Let's go shopping and then go home."
+      },
+      {
+        "sentence": "宿題をして、寝ます。",
+        "romanization": "Shukudai o shite, nemasu.",
+        "translation": "After doing my homework, I will sleep."
+      },
+      {
+        "sentence": "友達を待って、一緒に映画を見に行きます。",
+        "romanization": "Tomodachi o matte, issho ni eiga o mini ikimasu.",
+        "translation": "I will wait for my friend and go watch a movie together."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_46",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て います (Verb te imasu)",
+    "shortExplanation": "Express ongoing action or state; 'is doing', 'is doing (continuous)', 'has been doing'.",
+    "longExplanation": "The て います grammar point is used to express an action that is ongoing, continuous, or has been happening. It is formed by conjugating the verb in its て-form and adding います. It can be translated as 'is doing', 'is doing (continuous)', or 'has been doing' in English.",
+    "formation": "Verb て-form + います",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼女は今ピアノを弾いています。",
+        "romanization": "Kanojo wa ima piano wo hiite imasu.",
+        "translation": "She is playing the piano now."
+      },
+      {
+        "sentence": "私たちは日本語を勉強しています。",
+        "romanization": "Watashitachi wa nihongo wo benkyou shiteimasu.",
+        "translation": "We are studying Japanese."
+      },
+      {
+        "sentence": "彼は映画を見ています。",
+        "romanization": "Kare wa eiga wo miteimasu.",
+        "translation": "He is watching a movie."
+      },
+      {
+        "sentence": "入っていますので、お待ちください。",
+        "romanization": "Haitteimasu node, omachi kudasai.",
+        "translation": "I am in, so please wait."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_47",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てから～ (〜te kara)",
+    "shortExplanation": "Express a sequence of actions or events; 'after', 'since', 'once'.",
+    "longExplanation": "The ～てから grammar point is used to indicate the sequence of actions or events, meaning that one action or event occurs after another. It can be translated as 'after', 'since', or 'once' in English. The て-form indicates the first action and から shows the sequence.",
+    "formation": "Verb-て形 + から",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "宿題をしてから、テレビを見ました。",
+        "romanization": "Shukudai wo shite kara, terebi wo mimashita.",
+        "translation": "I watched TV after doing my homework."
+      },
+      {
+        "sentence": "食べてから、歯を磨きましょう。",
+        "romanization": "Tabete kara, ha wo migakimashou.",
+        "translation": "Let's brush our teeth after eating."
+      },
+      {
+        "sentence": "仕事が終わってから、友達と飲みに行きます。",
+        "romanization": "Shigoto ga owatte kara, tomodachi to nomi ni ikimasu.",
+        "translation": "I will go drinking with my friends after work is done."
+      },
+      {
+        "sentence": "学校が終わってから、図書館で勉強します。",
+        "romanization": "Gakkou ga owatte kara, toshokan de benkyou shimasu.",
+        "translation": "I will study in the library after school is over."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_48",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て ください (Verb-te kudasai)",
+    "shortExplanation": "A request or command; 'please do'.",
+    "longExplanation": "The て ください grammar point is used to make a request or command someone to do something politely. The verb is conjugated into its て-form and followed by ください, which means 'please'. This structure is used when asking someone to do something with a polite and respectful tone.",
+    "formation": "Verb-て form + ください",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "ドアを開けてください。",
+        "romanization": "Doa wo akete kudasai.",
+        "translation": "Please open the door."
+      },
+      {
+        "sentence": "電話番号を教えてください。",
+        "romanization": "Denwa bangou wo oshiete kudasai.",
+        "translation": "Please tell me your phone number."
+      },
+      {
+        "sentence": "ゆっくり話してください。",
+        "romanization": "Yukkuri hanashite kudasai.",
+        "translation": "Please speak slowly."
+      },
+      {
+        "sentence": "コーヒーを一つ持ってきてください。",
+        "romanization": "Koohii wo hitotsu motte kite kudasai.",
+        "translation": "Please bring me a coffee."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_49",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ないで ください (〜naide kudasai)",
+    "shortExplanation": "Used to make a polite request for someone not to do something; 'please don't'.",
+    "longExplanation": "The grammar point Verb ないで ください is used to make a polite request for someone not to do a certain action. In English, it can be translated as 'please don't'. To form this expression, take the verb in its negative form (ない-form) and add で ください.",
+    "formation": "Verb-ない-form + で ください",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "タバコを吸わないでください。",
+        "romanization": "Tabako wo suwanaide kudasai.",
+        "translation": "Please don't smoke."
+      },
+      {
+        "sentence": "ここで走らないでください。",
+        "romanization": "Koko de hashiranaide kudasai.",
+        "translation": "Please don't run here."
+      },
+      {
+        "sentence": "大きな声で話さないでください。",
+        "romanization": "Ookina koe de hanasanaide kudasai.",
+        "translation": "Please don't speak loudly."
+      },
+      {
+        "sentence": "写真を撮らないでください。",
+        "romanization": "Shashin wo toranaide kudasai.",
+        "translation": "Please don't take photos."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_50",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に 戻ります (Noun ni modorimasu)",
+    "shortExplanation": "Expresses the action of returning to a previous state, place, or condition.",
+    "longExplanation": "The Noun に 戻ります grammar point is used to express going back or reverting to a previous state, place, or condition. 戻る (modoru) literally means 'to go back' or 'to revert'. This is often used after a change has occurred, indicating that something is being undone or returned to its original form.",
+    "formation": "Noun + に + 戻ります",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "冷蔵庫に入れると、溶けたアイスクリームは固体に戻ります。",
+        "romanization": "Reizouko ni ireru to, toketa aisukuriimu wa kotai ni modorimasu.",
+        "translation": "When put in the refrigerator, the melted ice cream returns to its solid state."
+      },
+      {
+        "sentence": "休暇が終わったら、仕事に戻ります。",
+        "romanization": "Kyuuka ga owattara, shigoto ni modorimasu.",
+        "translation": "When the vacation ends, I will return to work."
+      },
+      {
+        "sentence": "リモートワークが終わった後、元のオフィスに戻ります。",
+        "romanization": "Rimooto waaku ga owatta ato, moto no ofisu ni modorimasu.",
+        "translation": "After remote work is over, we will return to our original office."
+      },
+      {
+        "sentence": "外国で勉強した後、日本に帰ります。",
+        "romanization": "Gaikoku de benkyou shita ato, Nihon ni kaerimasu.",
+        "translation": "After studying abroad, I will return to Japan."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_51",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb に 来ます (Verb ni kimasu)",
+    "shortExplanation": "Expresses the purpose of coming to a place; 'come to (do something)'.",
+    "longExplanation": "The grammar point Verb に きます is used to express the purpose of coming to a place to perform an action. It can be translated as 'come to (do something)' in English. To form this expression, use the verb's ます-stem (i.e., remove ます) followed by に きます.",
+    "formation": "Verb (ます-stem) + に + 来ます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "友達に会いに来ました。",
+        "romanization": "Tomodachi ni ai ni kimashita.",
+        "translation": "I came to meet my friend."
+      },
+      {
+        "sentence": "映画を見に来ました。",
+        "romanization": "Eiga wo mi ni kimashita.",
+        "translation": "I came to watch a movie."
+      },
+      {
+        "sentence": "先生に質問しに来ました。",
+        "romanization": "Sensei ni shitsumon shi ni kimashita.",
+        "translation": "I came to ask the teacher a question."
+      },
+      {
+        "sentence": "買い物をしに来ました。",
+        "romanization": "Kaimono wo shi ni kimashita.",
+        "translation": "I came to go shopping."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_52",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb に 行きます (Verb ni ikimasu)",
+    "shortExplanation": "To go (somewhere) in order to do an action.",
+    "longExplanation": "The grammar point Verb に 行きます is used when expressing that someone is going to a certain place with the purpose of doing a specific action. Form it by taking the verb's ます-stem (for suru-verbs, remove する and add し) and then adding に 行きます.",
+    "formation": "Verb (ます-stem) + に + 行きます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "公園に遊びに行きます。",
+        "romanization": "Kouen ni asobi ni ikimasu.",
+        "translation": "I will go to the park to play."
+      },
+      {
+        "sentence": "図書館に勉強しに行きます。",
+        "romanization": "Toshokan ni benkyou shi ni ikimasu.",
+        "translation": "I will go to the library to study."
+      },
+      {
+        "sentence": "スーパーに買い物に行きます。",
+        "romanization": "Suupaa ni kaimono ni ikimasu.",
+        "translation": "I will go to the supermarket to do some shopping."
+      },
+      {
+        "sentence": "映画館に映画を見に行きます。",
+        "romanization": "Eigakan ni eiga wo mi ni ikimasu.",
+        "translation": "I will go to the movie theater to watch a movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_53",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ましょう (mashou)",
+    "shortExplanation": "Making a suggestion or invitation; 'let's' or 'shall we'.",
+    "longExplanation": "The ましょう grammar point is used to suggest or invite someone to do something in a polite and friendly way. It can be translated as 'let's' or 'shall we' in English. This grammar point is formed by attaching ましょう to the stem of the verb (i.e. remove ます).",
+    "formation": "Verb (ます-stem) + ましょう",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "一緒に映画を見ましょう。",
+        "romanization": "Issho ni eiga wo mimashou.",
+        "translation": "Let's watch a movie together."
+      },
+      {
+        "sentence": "散歩しましょう。",
+        "romanization": "Sanpo shimashou.",
+        "translation": "Let's take a walk."
+      },
+      {
+        "sentence": "今晩、食事に行きましょう。",
+        "romanization": "Konban, shokuji ni ikimashou.",
+        "translation": "Let's go out for dinner tonight."
+      },
+      {
+        "sentence": "明日勉強しましょう。",
+        "romanization": "Ashita benkyou shimashou.",
+        "translation": "Let's study tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_54",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ましょうか。 (〜mashou ka.)",
+    "shortExplanation": "Used to make a polite suggestion or offer help; 'shall we', 'should we', 'do you want me to'.",
+    "longExplanation": "The ましょうか grammar point is used to make a polite suggestion, propose an action, or offer help. It can be translated as 'shall we', 'should we', or 'do you want me to' in English. This formation is used with verbs in their ます-form, replacing ます with ましょう and adding か.",
+    "formation": "Verb (ます-stem) + ましょうか",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "一緒に映画を見に行きましょうか。",
+        "romanization": "Issho ni eiga wo mi ni ikimashou ka.",
+        "translation": "Shall we go see a movie together?"
+      },
+      {
+        "sentence": "コーヒーをもう一杯飲みましょうか。",
+        "romanization": "Koohii wo mou ippai nomimashou ka.",
+        "translation": "Should we have another cup of coffee?"
+      },
+      {
+        "sentence": "あなたの荷物を持ちましょうか。",
+        "romanization": "Anata no nimotsu wo mochimashou ka.",
+        "translation": "Do you want me to carry your luggage?"
+      },
+      {
+        "sentence": "窓を開けましょうか。",
+        "romanization": "Mado wo akemashou ka.",
+        "translation": "Shall I open the window?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_55",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ませんか。 (Verb-masenka)",
+    "shortExplanation": "An invitation or suggestion; 'won't you', 'why don't you', 'shall we'.",
+    "longExplanation": "The ませんか grammar point is used for making invitations or suggestions in a polite manner. The verb is conjugated to its ます form and replaced with ませんか. This can be translated as 'won't you', 'why don't you', or 'shall we' in English.",
+    "formation": "Verb (ます-form) + ませんか",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "一緒に映画を見ませんか。",
+        "romanization": "Issho ni eiga wo mimasenka.",
+        "translation": "Won't you watch a movie together with me?"
+      },
+      {
+        "sentence": "明日のパーティーに参加しませんか。",
+        "romanization": "Ashita no paatii ni sanka shimasenka.",
+        "translation": "Why don't you join tomorrow's party?"
+      },
+      {
+        "sentence": "週末にピクニックに行きませんか。",
+        "romanization": "Shuumatsu ni pikunikku ni ikimasenka.",
+        "translation": "Shall we go for a picnic on the weekend?"
+      },
+      {
+        "sentence": "一緒に勉強しませんか。",
+        "romanization": "Issho ni benkyou shimasenka.",
+        "translation": "How about studying together?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_56",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ること～ (〜ru koto)",
+    "shortExplanation": "Express an action or event as a noun; 'the act of', 'doing'.",
+    "longExplanation": "The ること grammar point is used to nominalize or turn a verb into a noun, which represents the action or event itself as a concept. It can be translated as 'the act of' or simply 'doing' in English. This formation is used with verbs in the dictionary (ru-)form.",
+    "formation": "Verb (dictionary form) + こと",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "泳ぐことが大好きです。",
+        "romanization": "Oyogu koto ga daisuki desu.",
+        "translation": "I love swimming."
+      },
+      {
+        "sentence": "日本語を勉強することは楽しいです。",
+        "romanization": "Nihongo wo benkyou suru koto wa tanoshii desu.",
+        "translation": "Studying Japanese is fun."
+      },
+      {
+        "sentence": "友達と話すことがストレスを軽減します。",
+        "romanization": "Tomodachi to hanasu koto ga sutoresu wo keigen shimasu.",
+        "translation": "Talking with friends reduces stress."
+      },
+      {
+        "sentence": "彼は歌うことが得意です。",
+        "romanization": "Kare wa utau koto ga tokui desu.",
+        "translation": "He is good at singing."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_57",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb る こと が できます (ru koto ga dekimasu)",
+    "shortExplanation": "Express the potential form, or the ability to do something.",
+    "longExplanation": "The 〜ることができます grammar point is used to express that someone is capable of doing something or that something is possible. It is essentially the potential form of the verb. The formation is made by changing the verb to a noun phrase with こと and then adding ができます.",
+    "formation": "Verb (dictionary form) + ことができます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "この問題を解くことができます。",
+        "romanization": "Kono mondai o toku koto ga dekimasu.",
+        "translation": "I can solve this problem."
+      },
+      {
+        "sentence": "彼は英語を話すことができます。",
+        "romanization": "Kare wa eigo o hanasu koto ga dekimasu.",
+        "translation": "He can speak English."
+      },
+      {
+        "sentence": "私は高い所に登ることができません。",
+        "romanization": "Watashi wa takai tokoro ni noboru koto ga dekimasen.",
+        "translation": "I can't climb to high places."
+      },
+      {
+        "sentence": "彼女はピアノを弾くことができます。",
+        "romanization": "Kanojo wa piano o hiku koto ga dekimasu.",
+        "translation": "She can play the piano."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_58",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb る こと ができる (ru koto ga dekiru)",
+    "shortExplanation": "Expresses the potential form; 'can', 'be able to', 'is possible'.",
+    "longExplanation": "The る こと ができる grammar point is used to express the potential form of a verb, meaning the ability or possibility to do something. It can be translated as 'can', 'be able to', or 'is possible' in English. This grammar is often used with verbs ending in る, but can also apply to other verbs once they are in the dictionary form.",
+    "formation": "Verb (dictionary form) + ことができる",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "この問題を解くことができる？",
+        "romanization": "Kono mondai o toku koto ga dekiru?",
+        "translation": "Can you solve this problem?"
+      },
+      {
+        "sentence": "彼は泳ぐことができます。",
+        "romanization": "Kare wa oyogu koto ga dekimasu.",
+        "translation": "He can swim."
+      },
+      {
+        "sentence": "日本に行くことができて、とても嬉しいです。",
+        "romanization": "Nihon ni iku koto ga dekite, totemo ureshii desu.",
+        "translation": "I'm very happy that I can go to Japan."
+      },
+      {
+        "sentence": "彼女はピアノを弾くことができます。",
+        "romanization": "Kanojo wa piano o hiku koto ga dekimasu.",
+        "translation": "She can play the piano."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_59",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb る の～ (Verb + ru + no~)",
+    "shortExplanation": "Used to express the purpose or reason in casual speech, or nominalize the verb with の.",
+    "longExplanation": "The る の～ grammar point is a casual spoken pattern that can nominalize a verb or explain a purpose/reason by adding の. It's often seen in everyday conversation, and can be used for nuance such as giving an explanation. It's similar to ること, but is more colloquial or explanatory in tone.",
+    "formation": "Verb (dictionary form) + の (casual)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "買い物をするために、銀行でお金をおろすの。",
+        "romanization": "Kaimono o suru tame ni, ginkou de okane o orosu no.",
+        "translation": "I'm withdrawing money at the bank so I can go shopping."
+      },
+      {
+        "sentence": "友達にプレゼントをあげるので、ケーキを焼くの。",
+        "romanization": "Tomodachi ni purezento o ageru node, keeki o yaku no.",
+        "translation": "I'm baking a cake because I'm giving my friend a present."
+      },
+      {
+        "sentence": "ダイエットを始めるので、ジムに入会するの。",
+        "romanization": "Daietto o hajimeru node, jimu ni nyuukai suru no.",
+        "translation": "I’m joining a gym since I'm starting a diet."
+      },
+      {
+        "sentence": "軽い食事がいいので、サラダを作るの。",
+        "romanization": "Karui shokuji ga ii node, sarada o tsukuru no.",
+        "translation": "I'm making a salad because I want a light meal."
+      }
+    ]
+  }
+]

@@ -1,12 +1,12 @@
 # Backend API & Serverless Edge Reference
 
-This document provides a complete technical specification of the backend APIs, serverless edge functions, security middleware, and provider integrations powering **LinguaTube**.
+This document provides a complete technical specification of the backend APIs, serverless edge functions, security middleware, and provider integrations powering **Voca** (formerly LinguaTube).
 
 ---
 
 ## 1. Dual Backend Runtime Model
 
-LinguaTube uses a dual backend model to maximize both developer productivity and production edge performance:
+Voca uses a dual backend model to maximize both developer productivity and production edge performance:
 
 ```
                   ┌────────────────────────────────────────┐
@@ -20,8 +20,14 @@ LinguaTube uses a dual backend model to maximize both developer productivity and
  Location: functions-src/ (compiled to functions/)       Location: server/server.js
  Bundled by: esbuild (scripts/build-functions.js)        Port: http://localhost:3001
  Runtime: Cloudflare Workers V8 Sandbox                  Proxy: Angular CLI (proxy.conf.json)
- Storage: D1 SQLite, R2 Buckets, KV Namespace            Storage: In-Memory / Direct Upstream
+ Storage: D1 SQLite, R2 Buckets, KV Namespace            Storage: Local disk (server/transcripts_cache/)
+ Subtitles: Supadata Native + Gladia AI                  Subtitles: Innertube (youtubei.js) + Gladia
 ```
+
+### Local Dev Server Highlights (`server/server.js`)
+- **Innertube Client**: Uses `youtubei.js` to fetch real YouTube timed-text tracks directly in local development without needing Cloudflare bindings.
+- **Local Disk Cache**: Automatically persists discovered YouTube transcripts to `server/transcripts_cache/{videoId}_{lang}.json` to minimize duplicate network traffic.
+- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/dual-subtitles`, `/api/tokenize-batch/:lang`, `/api/translate`, `/api/diamonds`, and `/api/mdbg`.
 
 ---
 
@@ -44,11 +50,12 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   3. Count has incremented by $\ge 5$ units since last sync.
   4. $\ge 60$ seconds have passed since last sync.
 - **Tiered Quotas**:
-  | Tier | Native Transcripts (/hr) | Dual Subs (/hr) | Dictionary (/hr) | Tokenize (/hr) |
-  | :--- | :--- | :--- | :--- | :--- |
-  | **Anonymous** | 20 | 5 | 100 | 100 |
-  | **Free** | 30 | 10 | 100 | 100 |
-  | **Pro / Premium** | 60 | 50 | 100 | 100 |
+  | Tier | Native Transcripts (/hr) | Dual Subs (/hr) | Dictionary (/hr) | Tokenize (/hr) | Translate Texts (/hr) |
+  | :--- | :--- | :--- | :--- | :--- | :--- |
+  | **Anonymous** | 20 | 5 | 100 | 100 | 2,000 |
+  | **Free** | 30 | 10 | 100 | 100 | 5,000 |
+  | **Pro** | 60 | 50 | 100 | 100 | 25,000 |
+  | **Premium** | 120 | 100 | 100 | 100 | 100,000 |
 
 ### 2.3. PocketBase JWT Authentication (`auth.js`)
 - Validates `Authorization: Bearer <token>` header.
@@ -57,8 +64,8 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 
 ### 2.4. Video Validator (`video-validator.js`)
 - Rejects requests for videos exceeding maximum durations:
-  - Native captions (`innertube`): Max 3 hours (10,800s).
-  - AI transcription (`whisper`): Max 20 minutes (1,200s).
+  - Native captions (`innertube` / `supadata`): Max 3 hours (10,800s).
+  - AI transcription (`gladia`): Max 20 minutes (1,200s).
 - Validates language whitelist: `['ja', 'ko', 'zh', 'en']`.
 - Analyzes video title script using Unicode regex (e.g. rejects Cyrillic/Arabic titles when requesting Asian learning languages).
 
@@ -83,7 +90,7 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   ```
 - **Lifecycle & Fallback Chain**:
   1. **R2 Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If present, returns immediately (`X-Cache: HIT`).
-  2. **Native Captions Fetch (Supadata)**: If `preferAI: false`, queries Supadata native captions. If found, caches to R2 and records in D1 `video_meta`.
+  2. **Native Captions Fetch (Supadata)**: If `preferAI: false`, queries Supadata native captions. If found, caches to R2 and records in D1 `video_meta` and `video_languages`.
   3. **Negative Cache Check**: If previously marked as having no native captions in D1 `no_transcript_cache`, returns `NO_NATIVE` immediately.
   4. **AI Generation (Gladia)**: If `preferAI: true`:
      - Verifies Turnstile token (`verifyTurnstileToken`).
@@ -153,16 +160,47 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 
 ---
 
-### 3.4. Tokenization Endpoints
+### 3.4. Single Text Translation API
+- **Route**: `GET /api/translate/[[path]]`
+- **Source**: `functions-src/api/translate/[[path]].js`
+- **Format**: `/api/translate/{source}/{target}/{text}`
+- **Process**:
+  - Verifies tiered rate limits based on unique translated characters/texts.
+  - Translates text via Lingva instance rotation with Google Translate GTX fallback.
+
+---
+
+### 3.5. Batch Translation API
+- **Route**: `POST /api/translate/batch`
+- **Source**: `functions-src/api/translate/batch.js`
+- **Payload**:
+  ```json
+  {
+    "texts": ["Hello", "World", "Good morning"],
+    "source": "en",
+    "target": "vi"
+  }
+  ```
+- **Max Batch Size**: 50 texts per request.
+- **Process**:
+  - Deduplicates texts before rate-limit unit deduction.
+  - Generates a SHA-256 batch signature hash: `batchKey = trbatch:v1:{source}:{target}:{hash}`.
+  - Checks Cloudflare KV for cached full-batch response.
+  - Translates missing items in bulk via Lingva.
+  - Saves full batch in a single KV write (7-day TTL) to preserve KV write quota.
+
+---
+
+### 3.6. Tokenization Endpoints
 - **Routes**:
   - `POST /api/tokenize/:lang` (Single text block)
-  - `POST /api/tokenize-batch/:lang` (Array of texts with `videoId`)
-- **Source**: `functions-src/api/tokenize/[lang].js`, `tokenize-batch/[lang].js`
+  - `POST /api/tokenize-batch/:lang` (Array of texts for bulk subtitle tokenization)
+- **Source**: `functions-src/api/tokenize/[lang].js`, `functions-src/api/tokenize-batch/[lang].js`
 - **Caching**: 30-day TTL in Cloudflare KV keyed by text hash: `tokens:{lang}:{djb2Hash}`.
 
 ---
 
-### 3.5. Video Info Discovery API
+### 3.7. Video Info Discovery API
 - **Route**: `GET /api/video-info?videoId={videoId}`
 - **Source**: `functions-src/api/video-info.js`
 - **Two-Tier Cache Strategy**:
@@ -173,7 +211,7 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 
 ---
 
-### 3.6. Diamond Credits API
+### 3.8. Diamond Credits API
 - **Route**: `GET /api/diamonds`
 - **Source**: `functions-src/api/diamonds.js`
 - **Response**:
@@ -190,7 +228,21 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 
 ---
 
-### 3.7. Safe Reverse Proxy
+### 3.9. Auth Configuration API
+- **Route**: `GET /api/auth-config`
+- **Source**: `functions-src/api/auth-config.js`
+- **Response**:
+  ```json
+  {
+    "clientId": "your-google-oauth-client-id.apps.googleusercontent.com",
+    "enabled": true
+  }
+  ```
+- **Caching**: `Cache-Control: public, max-age=86400, s-maxage=604800`.
+
+---
+
+### 3.10. Safe Reverse Proxy
 - **Route**: `ALL /proxy/[service]/[[path]]`
 - **Source**: `functions-src/proxy/[service]/[[path]].js`
 - **SSRF Protections**:

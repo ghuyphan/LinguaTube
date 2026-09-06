@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_翻番_630",
+    "language": "zh",
+    "pattern": "翻 (#) 番",
+    "title": "翻 (#) 番 (multiply # times)",
+    "shortExplanation": "multiply # times",
+    "longExplanation": "multiply # times. Pinyin: fān (#) fān",
+    "formation": "fān (#) fān",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "和五年前比，多数人的工资已经翻番了。",
+        "romanization": "hé wǔ niánqián bǐ， duōshù rén de gōngzī yǐjīng fānfān le。",
+        "translation": "Compared to five years ago, most people’s wages have doubled."
+      }
+    ]
+  },
+  {
+    "id": "zh_过于_631",
+    "language": "zh",
+    "pattern": "过于",
+    "title": "过于 (too)",
+    "shortExplanation": "too",
+    "longExplanation": "too. Pinyin: guòyú",
+    "formation": "guòyú",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他出来得过于匆忙，居然忘了带手机。",
+        "romanization": "tā chūlái dé guòyú cōngmáng， jūrán wàng le dài shǒujī。",
+        "translation": "He came out too hurriedly and forgot to bring his mobile phone."
+      }
+    ]
+  },
+  {
+    "id": "zh_着呢_632",
+    "language": "zh",
+    "pattern": "着呢",
+    "title": "着呢 (state + emphasis)",
+    "shortExplanation": "state + emphasis",
+    "longExplanation": "state + emphasis. Pinyin: zhene",
+    "formation": "zhene",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "这儿坐吧，这个位空着呢。",
+        "romanization": "zhèr zuò ba， zhège wèi kōng zhene。",
+        "translation": "Sit here, this seat is vacant (which you perhaps didn’t know)."
+      }
+    ]
+  },
+  {
+    "id": "zh_乘机_633",
+    "language": "zh",
+    "pattern": "乘机",
+    "title": "乘机 (take this opportunity and)",
+    "shortExplanation": "take this opportunity and",
+    "longExplanation": "take this opportunity and. Pinyin: chéngjī",
+    "formation": "chéngjī",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "这次出差去北京，我们可以乘机游览一下长城。",
+        "romanization": "zhè cì chūchāi qù Běijīng， wǒmen kěyǐ chéngjī yóulǎn yīxià Chángchéng。",
+        "translation": "On this business trip to Beijing, we can take the opportunity and take a tour of the Great Wall."
+      }
+    ]
+  },
+  {
+    "id": "zh_不料_634",
+    "language": "zh",
+    "pattern": "不料",
+    "title": "不料 (who would have thought)",
+    "shortExplanation": "who would have thought",
+    "longExplanation": "who would have thought. Pinyin: bùliào",
+    "formation": "bùliào",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "我只想和她开个玩笑，不料她却生气了。",
+        "romanization": "wǒ zhǐ xiǎng hé tā kāi gè wánxiào， bùliào tā què shēngqì le。",
+        "translation": "I just wanted to joke with her, but who would have thought she got angry."
+      }
+    ]
+  },
+  {
+    "id": "zh_未免太A了_635",
+    "language": "zh",
+    "pattern": "未免+太+A+了",
+    "title": "未免+太+A+了 (can’t say it’s not too A)",
+    "shortExplanation": "can’t say it’s not too A",
+    "longExplanation": "can’t say it’s not too A. Pinyin: wèimiǎn+ tài+A+ le",
+    "formation": "wèimiǎn+ tài+A+ le",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "警察赶到时未免太迟了。",
+        "romanization": "jǐngchá gǎn dàoshí wèimiǎn tài chíle。",
+        "translation": "The police arrived rather too late. (Lit. you can’t say they didn’t arrive too late.)"
+      }
+    ]
+  },
+  {
+    "id": "zh_未免有些有点A_636",
+    "language": "zh",
+    "pattern": "未免+有些/有点+A",
+    "title": "未免+有些/有点+A (can’t say it’s not a bit A)",
+    "shortExplanation": "can’t say it’s not a bit A",
+    "longExplanation": "can’t say it’s not a bit A. Pinyin: wèimiǎn+ yǒuxiē/ yǒudiǎn+A",
+    "formation": "wèimiǎn+ yǒuxiē/ yǒudiǎn+A",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "拒绝他的建议未免有些/有点失礼。",
+        "romanization": "jùjué tā de jiànyì wèimiǎn yǒuxiē/ yǒudiǎn shīlǐ。",
+        "translation": "It’s rather a bit rude to reject his suggestions. (Lit. you can’t say it’s not rude.)"
+      }
+    ]
+  },
+  {
+    "id": "zh_仅仅只不过而已_637",
+    "language": "zh",
+    "pattern": "仅仅/只不过……而已",
+    "title": "仅仅/只不过……而已 (only)",
+    "shortExplanation": "only",
+    "longExplanation": "only. Pinyin: jǐnjǐn/ zhǐbuguò…… éryǐ",
+    "formation": "jǐnjǐn/ zhǐbuguò…… éryǐ",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他的工作是警察， 写小说仅仅是他的业余爱好而已。",
+        "romanization": "tā de gōngzuò shì jǐngchá， xiě xiǎoshuō jǐnjǐn shì tā de yèyú àihào éryǐ。",
+        "translation": "His works as a policeman, and writing novels is just his hobby (that’s all)."
+      }
+    ]
+  },
+  {
+    "id": "zh_固然_638",
+    "language": "zh",
+    "pattern": "固然",
+    "title": "固然 (granted)",
+    "shortExplanation": "granted",
+    "longExplanation": "granted. Pinyin: gùrán",
+    "formation": "gùrán",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "考上大学固然好，没考上大学也不是就没有出路了。",
+        "romanization": "kǎoshàng dàxué gùrán hǎo， méi kǎoshàng dàxué yě bùshì jiù méiyǒu chūlù le。",
+        "translation": "Granted, it’s good to go to college, [but even if] you don’t go to college it doesn’t mean you have no way out."
+      }
+    ]
+  },
+  {
+    "id": "zh_无非_639",
+    "language": "zh",
+    "pattern": "无非",
+    "title": "无非 (simply)",
+    "shortExplanation": "simply",
+    "longExplanation": "simply. Pinyin: wúfēi",
+    "formation": "wúfēi",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他这么努力地工作，无非想多挣些钱，让妻子、孩子生活得更舒适。",
+        "romanization": "tā zhème nǔlì dì gōngzuò， wúfēi xiǎng duō zhèng xiē qián， ràng qīzi、 háizi shēnghuó dé gèng shūshì。",
+        "translation": "He works so hard, simply [because] he wants to make more money and make his wife and children live more comfortably."
+      }
+    ]
+  },
+  {
+    "id": "zh_唯独_640",
+    "language": "zh",
+    "pattern": "唯独",
+    "title": "唯独 (only)",
+    "shortExplanation": "only",
+    "longExplanation": "only. Pinyin: wéidú",
+    "formation": "wéidú",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "那次旅行大家都去了，唯独你没有去成。",
+        "romanization": "nà cì lǚxíng dàjiā dōu qù le， wéidú nǐ méiyǒu qù chéng。",
+        "translation": "Everyone went on that trip, only you didn't go."
+      }
+    ]
+  },
+  {
+    "id": "zh_明明_641",
+    "language": "zh",
+    "pattern": "明明",
+    "title": "明明 (obviously)",
+    "shortExplanation": "obviously",
+    "longExplanation": "obviously. Pinyin: míngmíng",
+    "formation": "míngmíng",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "你唱的明明是流行歌曲，哪里是京剧啊？",
+        "romanization": "nǐ chàng de míngmíng shì liúxíng gēqǔ， nǎlǐ shì Jīngjù ā？",
+        "translation": "What you are singing is obviously a pop song, how can you [say] it’s Beijing opera?"
+      }
+    ]
+  },
+  {
+    "id": "zh_大不了_642",
+    "language": "zh",
+    "pattern": "大不了……",
+    "title": "大不了…… (If the worst came to the worst, …)",
+    "shortExplanation": "If the worst came to the worst, …",
+    "longExplanation": "If the worst came to the worst, …. Pinyin: dàbùliǎo……",
+    "formation": "dàbùliǎo……",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "失败了不要紧，大不了从头再来。",
+        "romanization": "shībài le bùyàojǐn， dàbùliǎo cóngtóu zài lái。",
+        "translation": "It doesn't matter if you fail. If the worst came to the worst, you can start from scratch again."
+      }
+    ]
+  },
+  {
+    "id": "zh_大不了的_643",
+    "language": "zh",
+    "pattern": "大不了的",
+    "title": "大不了的 (big deal)",
+    "shortExplanation": "big deal",
+    "longExplanation": "big deal. Pinyin: dàbùliǎo de",
+    "formation": "dàbùliǎo de",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "接个吻有什么大不了的？",
+        "romanization": "jiē gè wěn yǒu shénme dàbùliǎo de？",
+        "translation": "What's the big deal with a kiss?"
+      }
+    ]
+  },
+  {
+    "id": "zh_V于PLACE_644",
+    "language": "zh",
+    "pattern": "V 于 PLACE",
+    "title": "V 于 PLACE (V in PLACE)",
+    "shortExplanation": "V in PLACE",
+    "longExplanation": "V in PLACE. Pinyin: V yú PLACE",
+    "formation": "V yú PLACE",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "著名的西湖龙井茶产于浙江看的西湖一带。",
+        "romanization": "zhùmíng de Xīhú lóngjǐngchá chǎn yú Zhèjiāng kàn de Xīhú yīdài。",
+        "translation": "The famous West Lake Longjing tea is produced in the West Lake area in Zhejiang."
+      }
+    ]
+  }
+]

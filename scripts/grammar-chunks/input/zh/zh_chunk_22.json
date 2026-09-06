@@ -1,0 +1,227 @@
+[
+  {
+    "id": "zh_因此_338",
+    "language": "zh",
+    "pattern": "因此……",
+    "title": "因此…… (therefore…)",
+    "shortExplanation": "therefore…",
+    "longExplanation": "therefore…. Pinyin: yīncǐ……",
+    "formation": "yīncǐ……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "小时候，他经常生病，因此每天都去跑步锻炼身体。",
+        "romanization": "xiǎoshíhou， tā jīngcháng shēngbìng， yīncǐ měitiān dōu qù pǎobù duànliàn shēntǐ。",
+        "translation": "When he was a child, he was often ill, [and] as a result he went to run and exercise every day."
+      }
+    ]
+  },
+  {
+    "id": "zh_什么的_339",
+    "language": "zh",
+    "pattern": "什么的",
+    "title": "什么的 (and stuff like that)",
+    "shortExplanation": "and stuff like that",
+    "longExplanation": "and stuff like that. Pinyin: shénmede",
+    "formation": "shénmede",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "明天出去玩儿，得买点儿饼干、面包什么的。",
+        "romanization": "míngtiān chūqù wánr， dé mǎi diǎnr bǐnggān、 miànbāo shénmede。",
+        "translation": "Go out to play tomorrow, you have to buy some biscuits, bread or things like that."
+      }
+    ]
+  },
+  {
+    "id": "zh_V起来_340",
+    "language": "zh",
+    "pattern": "V 起来",
+    "title": "V 起来 (V up)",
+    "shortExplanation": "V up",
+    "longExplanation": "V up. Pinyin: V qilai",
+    "formation": "V qilai",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_想起来_342",
+    "language": "zh",
+    "pattern": "想起来",
+    "title": "想起来 (remember, call to mind)",
+    "shortExplanation": "remember, call to mind",
+    "longExplanation": "remember, call to mind. Pinyin: xiǎngqilai",
+    "formation": "xiǎngqilai",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_弄AO_344",
+    "language": "zh",
+    "pattern": "弄 A O",
+    "title": "弄 A O (cause O to be A)",
+    "shortExplanation": "cause O to be A",
+    "longExplanation": "cause O to be A. Pinyin: nòng A O",
+    "formation": "nòng A O",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "搬的时候要小心点儿，别弄坏沙发了。",
+        "romanization": "bān de shíhou yào xiǎoxīn diǎnr， bié nònghuài shāfā le。",
+        "translation": "Be careful when moving, don't break the sofa."
+      }
+    ]
+  },
+  {
+    "id": "zh_弄得OCLAUSE_345",
+    "language": "zh",
+    "pattern": "弄得 O CLAUSE",
+    "title": "弄得 O CLAUSE (make O CLAUSE)",
+    "shortExplanation": "make O CLAUSE",
+    "longExplanation": "make O CLAUSE. Pinyin: nòng dé O CLAUSE",
+    "formation": "nòng dé O CLAUSE",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "每天因为这些小事批评她，弄得我俩心情都不好。",
+        "romanization": "měitiān yīnwèi zhèxiē xiǎoshì pīpíng tā， nòng dé wǒ liǎ xīnqíng dōu bùhǎo。",
+        "translation": "Every day I tell her off for these small things, [which] makes the two of us both in a bad mood."
+      }
+    ]
+  },
+  {
+    "id": "zh_千万不能不要别V_346",
+    "language": "zh",
+    "pattern": "千万不能/不要/别 V",
+    "title": "千万不能/不要/别 V (make sure not to V)",
+    "shortExplanation": "make sure not to V",
+    "longExplanation": "make sure not to V. Pinyin: qiānwàn bùnéng/ bùyào/ bié V",
+    "formation": "qiānwàn bùnéng/ bùyào/ bié V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我要等她生日那天再送给她这个礼物，你现在千万别告诉她。",
+        "romanization": "wǒ yào děng tā shēngrì nàtiān zài sònggěi tā zhège lǐwù， nǐ xiànzài qiānwàn bié gàosu tā。",
+        "translation": "I have to give her this gift on her birthday, make sure you don’t tell her now."
+      }
+    ]
+  },
+  {
+    "id": "zh_一定要得VA_347",
+    "language": "zh",
+    "pattern": "一定要/得 V/A",
+    "title": "一定要/得 V/A (must V, must be A)",
+    "shortExplanation": "must V, must be A",
+    "longExplanation": "must V, must be A. Pinyin: yīdìngyào/ dé V/A",
+    "formation": "yīdìngyào/ dé V/A",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_一定会VA_350",
+    "language": "zh",
+    "pattern": "一定(会) V/A",
+    "title": "一定(会) V/A (definitely V/A)",
+    "shortExplanation": "definitely V/A",
+    "longExplanation": "definitely V/A. Pinyin: yīdìng( huì) V/A",
+    "formation": "yīdìng( huì) V/A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "感谢您的支持和鼓励，我一定会继续努力。",
+        "romanization": "gǎnxiè nín de zhīchí hé gǔlì， wǒ yīdìng huì jìxù nǔlì。",
+        "translation": "Thank you for your support and encouragement, I will definitely continue to work hard."
+      }
+    ]
+  },
+  {
+    "id": "zh_不一定_351",
+    "language": "zh",
+    "pattern": "不一定",
+    "title": "不一定 (not necessarily)",
+    "shortExplanation": "not necessarily",
+    "longExplanation": "not necessarily. Pinyin: bùyīdìng",
+    "formation": "bùyīdìng",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "个子高不一定力气大。",
+        "romanization": "gèzi gāo bùyīdìng lìqi dà。",
+        "translation": "If someone is tall he/she is not necessarily strong."
+      }
+    ]
+  },
+  {
+    "id": "zh_一定的_352",
+    "language": "zh",
+    "pattern": "一定的",
+    "title": "一定的 (some, a certain)",
+    "shortExplanation": "some, a certain",
+    "longExplanation": "some, a certain. Pinyin: yīdìng de",
+    "formation": "yīdìng de",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "如果有一定的语言基础，那么出国学习外语是最好的选择。",
+        "romanization": "rúguǒ yǒu yīdìng de yǔyán jīchǔ， nàme chūguó xuéxí wàiyǔ shì zuìhǎo de xuǎnzé。",
+        "translation": "If you have a certain language foundation, then studying a foreign language abroad is the best choice."
+      }
+    ]
+  },
+  {
+    "id": "zh_来V_353",
+    "language": "zh",
+    "pattern": "来 V",
+    "title": "来 V ((verb prefix, indicating the verb hasn’t happened))",
+    "shortExplanation": "(verb prefix, indicating the verb hasn’t happened)",
+    "longExplanation": "(verb prefix, indicating the verb hasn’t happened). Pinyin: lái V",
+    "formation": "lái V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这个沙发这么大，我来帮你们一起抬。",
+        "romanization": "zhège shāfā zhème dà， wǒ lái bāng nǐmen yīqǐ tái。",
+        "translation": "This sofa is so big, I will help you carry it together."
+      }
+    ]
+  },
+  {
+    "id": "zh_通过用N来V_354",
+    "language": "zh",
+    "pattern": "通过/用 N 来 V",
+    "title": "通过/用 N 来 V (V through N)",
+    "shortExplanation": "V through N",
+    "longExplanation": "V through N. Pinyin: tōngguò/ yòng N lái V",
+    "formation": "tōngguò/ yòng N lái V",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_左右_356",
+    "language": "zh",
+    "pattern": "# 左右",
+    "title": "# 左右 (around #)",
+    "shortExplanation": "around #",
+    "longExplanation": "around #. Pinyin: # zuǒyòu",
+    "formation": "# zuǒyòu",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_可VA了_359",
+    "language": "zh",
+    "pattern": "可 V/A 了",
+    "title": "可 V/A 了 (really A/V)",
+    "shortExplanation": "really A/V",
+    "longExplanation": "really A/V. Pinyin: kě V/A le",
+    "formation": "kě V/A le",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "今天天气可热了。",
+        "romanization": "jīntiān tiānqì kě rè le。",
+        "translation": "The weather is really hot today."
+      }
+    ]
+  }
+]

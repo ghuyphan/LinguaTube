@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_もかまわず_148",
+    "language": "ja",
+    "pattern": "～もかまわず",
+    "title": "～もかまわず (〜mo kamawazu)",
+    "shortExplanation": "Express indifference or disregard; 'without hesitating', 'without worrying about'.",
+    "longExplanation": "The ～もかまわず grammar point is used to express indifference or disregard toward possible consequences or external factors. It can be translated as 'without hesitating', 'without worrying about', or 'regardless of'. It attaches to verbs in their dictionary form or nouns.",
+    "formation": "Verb-dictionary form + もかまわず, Noun + もかまわず",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は周りの人もかまわず、大声で話しました。",
+        "romanization": "Kare wa mawari no hito mo kamawazu, oogoe de hanashimashita.",
+        "translation": "Without worrying about the people around him, he spoke loudly."
+      },
+      {
+        "sentence": "彼女は時間もかまわず、ゆっくりと本を読み続けました。",
+        "romanization": "Kanojo wa jikan mo kamawazu, yukkuri to hon o yomitsuzukemashita.",
+        "translation": "She kept reading the book leisurely, without worrying about the time."
+      },
+      {
+        "sentence": "彼は寒さもかまわず、外で運動しました。",
+        "romanization": "Kare wa samusa mo kamawazu, soto de undou shimashita.",
+        "translation": "He exercised outside without worrying about the cold."
+      },
+      {
+        "sentence": "彼女は危険もかまわず、火事の中に飛び込んで助けに行きました。",
+        "romanization": "Kanojo wa kiken mo kamawazu, kaji no naka ni tobikonde tasuke ni ikimashita.",
+        "translation": "She jumped into the fire without fear of danger to help."
+      }
+    ]
+  },
+  {
+    "id": "ja_ものか_149",
+    "language": "ja",
+    "pattern": "～ものか",
+    "title": "～ものか (〜mono ka)",
+    "shortExplanation": "Definitely not; no way; no chance.",
+    "longExplanation": "The ～ものか grammar point is used to express a strong denial, refusal, or astonishment. It often appears with a rhetorical question tone in casual forms, such as Verb (dictionary/volitional/～たい) + ものか, Adjective + ものか, or Noun + ものか, meaning 'No way...', 'As if I'd ever...', etc.",
+    "formation": "Verb-casual + ものか, い-Adjective + ものか, な-Adjective + (な)ものか, Noun + (な)ものか",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "そんなこと、僕がやりたいものか。",
+        "romanization": "Sonna koto, boku ga yaritai mono ka.",
+        "translation": "No way do I want to do such a thing."
+      },
+      {
+        "sentence": "こんな仕事、誰が引き受けようものか。",
+        "romanization": "Konna shigoto, dare ga hikiukeyou mono ka.",
+        "translation": "Who on earth would take on a job like this? (No one would!)"
+      },
+      {
+        "sentence": "誰が彼に助けを求めようものか。",
+        "romanization": "Dare ga kare ni tasuke o motomeyou mono ka.",
+        "translation": "Who would ever ask him for help? (Certainly no one!)"
+      },
+      {
+        "sentence": "この寒い日に外で遊ぶなんて、無理なものか。",
+        "romanization": "Kono samui hi ni soto de asobu nante, muri na mono ka.",
+        "translation": "There's no way we can play outside on a day this cold."
+      }
+    ]
+  },
+  {
+    "id": "ja_ものがある_150",
+    "language": "ja",
+    "pattern": "～ものがある",
+    "title": "～ものがある (〜mono ga aru)",
+    "shortExplanation": "Express a strong impression or feeling; 'there's something about it that...'",
+    "longExplanation": "「～ものがある」 is used to convey that there is a certain intangible quality or strong feeling about something that the speaker cannot ignore. It is often used with verbs (plain form), い-adjectives, or な-adjectives + な, to show that one ‘feels strongly that...’ or ‘there’s something about it that…’.",
+    "formation": "Verb-casual + ものがある, い-Adjective + ものがある, な-Adjective + なものがある",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼のスピーチには心を打たれるものがある。",
+        "romanization": "Kare no supiichi ni wa kokoro o utareru mono ga aru.",
+        "translation": "There's something moving about his speech."
+      },
+      {
+        "sentence": "この映画には考えさせられるものがある。",
+        "romanization": "Kono eiga ni wa kangaesaserareru mono ga aru.",
+        "translation": "There's something about this movie that really makes you think."
+      },
+      {
+        "sentence": "彼の言うことにも一理あるものがある。",
+        "romanization": "Kare no iu koto ni mo ichiri aru mono ga aru.",
+        "translation": "There's a certain point in what he says."
+      },
+      {
+        "sentence": "毎日忙しすぎる生活には少し息苦しいものがある。",
+        "romanization": "Mainichi isogashisugiru seikatsu ni wa sukoshi ikigurushii mono ga aru.",
+        "translation": "There's something a bit suffocating about being so busy every day."
+      }
+    ]
+  },
+  {
+    "id": "ja_ものだ_151",
+    "language": "ja",
+    "pattern": "～ものだ",
+    "title": "～ものだ (〜mono da)",
+    "shortExplanation": "Expresses something natural or expected; 'it is normal that...', 'should', 'ought to'.",
+    "longExplanation": "「～ものだ」 can indicate that something is regarded as a general truth, common sense, or natural behavior. It can also express strong sentiment or emotion. In the past tense (Verb-た form + ものだ), it often shows nostalgia or recollection ('I used to...').",
+    "formation": "Verb-dictionary form + ものだ, な-Adjective + なものだ, (Also: Verb-た form + ものだ for recollections)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "若い時はたくさん遊ぶものだ。",
+        "romanization": "Wakai toki wa takusan asobu mono da.",
+        "translation": "It is natural to have a lot of fun when you are young."
+      },
+      {
+        "sentence": "約束をしたら、守るものだ。",
+        "romanization": "Yakusoku o shitara, mamoru mono da.",
+        "translation": "If you make a promise, you should keep it."
+      },
+      {
+        "sentence": "お客さんが来ると、お茶を出すものだ。",
+        "romanization": "Okyakusan ga kuru to, ocha o dasu mono da.",
+        "translation": "When guests arrive, it's customary to serve tea."
+      },
+      {
+        "sentence": "人生は困難に立ち向かうものだ。",
+        "romanization": "Jinsei wa konnan ni tachimukau mono da.",
+        "translation": "In life, one ought to face hardships."
+      }
+    ]
+  },
+  {
+    "id": "ja_ものだから_152",
+    "language": "ja",
+    "pattern": "～ものだから",
+    "title": "～ものだから (〜mono dakara)",
+    "shortExplanation": "Express the reason or cause for something; 'because', 'since', 'due to'.",
+    "longExplanation": "「～ものだから」 is used to explain a reason or cause from the speaker’s point of view. It can be translated as 'because', 'since', or 'due to'. It often carries the nuance of 'you see, that's why ...'.",
+    "formation": "Verb-plain + ものだから, い-Adjective + ものだから, な-Adjective + なものだから, Noun + なものだから",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "試験が近いものだから、毎日勉強しています。",
+        "romanization": "Shiken ga chikai mono dakara, mainichi benkyou shiteimasu.",
+        "translation": "Because the exam is near, I'm studying every day."
+      },
+      {
+        "sentence": "このレストランはとても人気があるものだから、予約しないと席がないかもしれません。",
+        "romanization": "Kono resutoran wa totemo ninki ga aru mono dakara, yoyaku shinai to seki ga nai kamoshiremasen.",
+        "translation": "Because this restaurant is very popular, there might not be any seats if we don't reserve."
+      },
+      {
+        "sentence": "彼は若いものだから、まだたくさんの経験を積んでいない。",
+        "romanization": "Kare wa wakai mono dakara, mada takusan no keiken wo tsunde inai.",
+        "translation": "Because he is young, he hasn't accumulated much experience yet."
+      },
+      {
+        "sentence": "今日は寒いものだから、手袋を持って行きましょう。",
+        "romanization": "Kyou wa samui mono dakara, tebukuro wo motte ikimashou.",
+        "translation": "Since it's cold today, let's bring gloves."
+      }
+    ]
+  },
+  {
+    "id": "ja_ものではない_153",
+    "language": "ja",
+    "pattern": "～ものではない",
+    "title": "～ものではない (〜mono dewa nai)",
+    "shortExplanation": "Expresses a strong negative suggestion or prohibition: 'should not', 'must not'.",
+    "longExplanation": "「～ものではない」 is used to indicate that something should not or must not be done. It often appears in written or formal contexts, meaning 'it is not proper to...' or 'you shouldn’t...'.",
+    "formation": "Verb-dictionary form + ものではない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "そんなことを言うものではありません。",
+        "romanization": "Sonna koto o iu mono dewa arimasen.",
+        "translation": "You should not say such a thing."
+      },
+      {
+        "sentence": "公共の場で大声を出すものではない。",
+        "romanization": "Koukyou no ba de oogoe o dasu mono dewa nai.",
+        "translation": "You should not raise your voice in public places."
+      },
+      {
+        "sentence": "彼の秘密を他の人に教えるものではありません。",
+        "romanization": "Kare no himitsu o hoka no hito ni oshieru mono dewa arimasen.",
+        "translation": "You must not tell his secret to other people."
+      },
+      {
+        "sentence": "安全な場所では遊んでいいが、危険なところで遊ぶものではない。",
+        "romanization": "Anzen na basho de wa asonde ii ga, kiken na tokoro de asobu mono dewa nai.",
+        "translation": "It's okay to play in safe places, but you should not play somewhere dangerous."
+      }
+    ]
+  },
+  {
+    "id": "ja_ものなら_154",
+    "language": "ja",
+    "pattern": "～ものなら",
+    "title": "～ものなら (〜mono nara)",
+    "shortExplanation": "Expresses a conditional wish or unlikely possibility; 'if only', 'if it were possible'.",
+    "longExplanation": "「～ものなら」 is used when expressing a strong wish under a hypothetical or difficult condition. It often implies that fulfilling this condition is unlikely or very hard, but 'if only it could happen, then...'.",
+    "formation": "Verb-(potential/plain) form + ものなら, etc.",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "帰れるものなら、今すぐ国へ帰りたい。",
+        "romanization": "Kaereru mono nara, ima sugu kuni e kaeritai.",
+        "translation": "If I could possibly go back, I'd return to my country right now."
+      },
+      {
+        "sentence": "できるものなら、世界を一周してみたい。",
+        "romanization": "Dekiru mono nara, sekai o isshuu shite mitai.",
+        "translation": "If it were possible, I'd love to travel around the world."
+      },
+      {
+        "sentence": "やり直せるものなら、子供の頃に戻りたい。",
+        "romanization": "Yarinaoseru mono nara, kodomo no koro ni modoritai.",
+        "translation": "If I could redo my life, I'd go back to my childhood."
+      },
+      {
+        "sentence": "元気になれるものなら、どんな薬でも試したい。",
+        "romanization": "Genki ni nareru mono nara, donna kusuri demo tameshitai.",
+        "translation": "If it could make me healthy, I'd try any medicine."
+      }
+    ]
+  },
+  {
+    "id": "ja_ものの_155",
+    "language": "ja",
+    "pattern": "～ものの、～",
+    "title": "～ものの、～ (〜mono no、～)",
+    "shortExplanation": "Indicates contrast or contradiction between two clauses; 'although', 'but'.",
+    "longExplanation": "「～ものの」 is used to connect two parts of a sentence where the first part is true, yet the second part shows a contrasting or unexpected outcome. It can be translated as 'although', 'even though', or 'but still'.",
+    "formation": "Verb-casual + ものの, い-Adjective + ものの, な-Adjective + なものの, Noun + であるものの",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "早起きしたものの、バスに間に合わなかった。",
+        "romanization": "Hayaoki shita mono no, basu ni maniawanakatta.",
+        "translation": "Even though I got up early, I didn't catch the bus in time."
+      },
+      {
+        "sentence": "この部屋は広いものの、家具が少ない。",
+        "romanization": "Kono heya wa hiroi mono no, kagu ga sukunai.",
+        "translation": "Although this room is spacious, there isn't much furniture."
+      },
+      {
+        "sentence": "彼女は美しいものの、性格が悪い。",
+        "romanization": "Kanojo wa utsukushii mono no, seikaku ga warui.",
+        "translation": "She is beautiful, but her personality is bad."
+      },
+      {
+        "sentence": "彼は有名な歌手であるものの、コンサートにあまり人が来なかった。",
+        "romanization": "Kare wa yuumei na kashu de aru mono no, konsaato ni amari hito ga konakatta.",
+        "translation": "Although he is a famous singer, not many people came to his concert."
+      }
+    ]
+  },
+  {
+    "id": "ja_もばも_156",
+    "language": "ja",
+    "pattern": "～も～ば～も～",
+    "title": "～も～ば～も～ (〜mo〜ba〜mo〜)",
+    "shortExplanation": "Lists multiple attributes or actions applying to the same subject: 'both…and…', 'not only…but also…'.",
+    "longExplanation": "「～も～ば～も～」 is used when describing multiple characteristics or actions. It often appears with the conditional form (ば) plus も, indicating that 'A is true, and also B is true.' For example, 'He can do X, and he can also do Y.' It's different from '～ば～ほど', which means 'the more… the more…'.",
+    "formation": "Noun/Verb/Adjective + も + (Verb/Adjective in ば-form) + も + (Verb/Adjective)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は勉強もできればスポーツもできる。",
+        "romanization": "Kare wa benkyou mo dekireba supootsu mo dekiru.",
+        "translation": "He is good at studying and also at sports."
+      },
+      {
+        "sentence": "このレストランは値段も安ければ味もいい。",
+        "romanization": "Kono resutoran wa nedan mo yasukereba aji mo ii.",
+        "translation": "This restaurant is cheap, and the food is also good."
+      },
+      {
+        "sentence": "彼女はピアノも弾けばギターも弾く。",
+        "romanization": "Kanojo wa piano mo hikeba gitaa mo hiku.",
+        "translation": "She plays both the piano and the guitar."
+      },
+      {
+        "sentence": "人生には楽しい時もあれば辛い時もある。",
+        "romanization": "Jinsei ni wa tanoshii toki mo areba tsurai toki mo aru.",
+        "translation": "In life, there are both fun times and tough times."
+      }
+    ]
+  },
+  {
+    "id": "ja_も同然だ_157",
+    "language": "ja",
+    "pattern": "～も同然だ",
+    "title": "～も同然だ (〜mo douzen da)",
+    "shortExplanation": "Indicates 'as good as', 'virtually', or 'practically' the same as something.",
+    "longExplanation": "「～も同然だ」 means something is practically the same as (X). It emphasizes that although it may not be literally identical, there is hardly any difference in reality.",
+    "formation": "Noun + (も)同然だ, Verb-casual + (も)同然だ, etc.",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼とは長い付き合いだから、家族も同然だ。",
+        "romanization": "Kare to wa nagai tsukiai dakara, kazoku mo douzen da.",
+        "translation": "I've known him for so long that he's practically family."
+      },
+      {
+        "sentence": "毎日遅刻するなんて、来ていないも同然だ。",
+        "romanization": "Mainichi chikoku suru nante, kite inai mo douzen da.",
+        "translation": "Being late every single day is as good as not coming at all."
+      },
+      {
+        "sentence": "彼女と私は幼なじみで、姉妹も同然の仲です。",
+        "romanization": "Kanojo to watashi wa osananajimi de, shimai mo douzen no naka desu.",
+        "translation": "She and I are childhood friends, practically like sisters."
+      },
+      {
+        "sentence": "こんなに少ない給料じゃ、ただ働きも同然だ。",
+        "romanization": "Konna ni sukunai kyuuryou ja, tadabataraki mo douzen da.",
+        "translation": "With such a small salary, it's practically like working for free."
+      }
+    ]
+  },
+  {
+    "id": "ja_やらやら_158",
+    "language": "ja",
+    "pattern": "～やら～やら",
+    "title": "～やら～やら (〜yara〜yara)",
+    "shortExplanation": "Expresses various items or actions, 'things like..., and so on'.",
+    "longExplanation": "「～やら～やら」 is used to list multiple things or actions in a somewhat non-exhaustive way. It can be translated as 'things like A and B' or 'A, B, and so on.' The grammar is often Verb-casual + やら, Noun + やら, い-Adjective + やら, etc.",
+    "formation": "Verb-casual + やら, い-Adjective + やら, な-Adjective + やら, Noun + やら",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "宿題やら掃除やら、やることがたくさんある。",
+        "romanization": "Shukudai yara souji yara, yaru koto ga takusan aru.",
+        "translation": "I have lots of things to do, like homework and cleaning."
+      },
+      {
+        "sentence": "野菜やら果物やら、色々な食べ物を買いました。",
+        "romanization": "Yasai yara kudamono yara, iroiro na tabemono wo kaimashita.",
+        "translation": "I bought all sorts of foods, such as vegetables and fruits."
+      },
+      {
+        "sentence": "彼女は歌がうまいやら踊れるやら、本当に多才だ。",
+        "romanization": "Kanojo wa uta ga umai yara odoreru yara, hontou ni tasai da.",
+        "translation": "She’s really talented—she can sing well, dance, and so on."
+      },
+      {
+        "sentence": "お店にはバッグやら靴やらアクセサリーやらが置いてある。",
+        "romanization": "Omise ni wa baggu yara kutsu yara akusesarii yara ga oite aru.",
+        "translation": "The store has all kinds of items like bags, shoes, accessories, etc."
+      }
+    ]
+  },
+  {
+    "id": "ja_ようがない_159",
+    "language": "ja",
+    "pattern": "～ようがない",
+    "title": "～ようがない (〜you ga nai)",
+    "shortExplanation": "Expresses that there is no way (method) to do something; it's impossible to do.",
+    "longExplanation": "「～ようがない」 is used with the ます-stem of a verb to indicate that there is no means or method to carry out that action. It conveys the sense that it's impossible to do something or that there's absolutely no way to achieve it.",
+    "formation": "Verb-ます stem + ようがない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼の連絡先がわからないので、助けようがない。",
+        "romanization": "Kare no renrakusaki ga wakaranai node, tasukeyou ga nai.",
+        "translation": "I don't know his contact information, so there's no way I can help him."
+      },
+      {
+        "sentence": "ここまで壊れてしまったら、もう直しようがない。",
+        "romanization": "Koko made kowarete shimattara, mou naoshiyou ga nai.",
+        "translation": "Now that it's broken this badly, there's no way to fix it."
+      },
+      {
+        "sentence": "証拠が全くないから、彼が犯人だと証明しようがない。",
+        "romanization": "Shouko ga mattaku nai kara, kare ga hannin da to shoumeishiyou ga nai.",
+        "translation": "There’s no evidence at all, so there’s no way to prove he’s the culprit."
+      },
+      {
+        "sentence": "突然英語で話しかけられて、何と答えればいいか分からず答えようがなかった。",
+        "romanization": "Totsuzen eigo de hanashikakerarete, nan to kotaereba ii ka wakarazu kotaeyou ga nakatta.",
+        "translation": "I was suddenly spoken to in English and didn’t know how to respond, so there was no way for me to reply."
+      }
+    ]
+  },
+  {
+    "id": "ja_よりほかない_160",
+    "language": "ja",
+    "pattern": "～よりほかない",
+    "title": "～よりほかない (〜yori hoka nai)",
+    "shortExplanation": "Express that there is no other choice; 'have no choice but', 'cannot do anything but'.",
+    "longExplanation": "The ～よりほかない grammar point is used to express that there is no other choice or alternative in a given situation. It can be translated as 'have no choice but to...', 'nothing but...', or 'cannot do anything but...'.",
+    "formation": "Verb-dictionary form + よりほかない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "試験が近いので、勉強するよりほかない。",
+        "romanization": "Shiken ga chikai node, benkyou suru yori hoka nai.",
+        "translation": "Since the exam is near, there is no choice but to study."
+      },
+      {
+        "sentence": "風邪がひどいので、早く寝るよりほかない。",
+        "romanization": "Kaze ga hidoi node, hayaku neru yori hoka nai.",
+        "translation": "My cold is severe, so I have no choice but to go to bed early."
+      },
+      {
+        "sentence": "バスが来ないので、歩くよりほかない。",
+        "romanization": "Basu ga konai node, aruku yori hoka nai.",
+        "translation": "Since the bus isn't coming, I have no choice but to walk."
+      },
+      {
+        "sentence": "お金がないので、安いものを買うよりほかない。",
+        "romanization": "Okane ga nai node, yasui mono o kau yori hoka nai.",
+        "translation": "Since I have no money, I have no choice but to buy cheap things."
+      }
+    ]
+  },
+  {
+    "id": "ja_わけがない_161",
+    "language": "ja",
+    "pattern": "～わけがない",
+    "title": "～わけがない (〜wake ga nai)",
+    "shortExplanation": "Expresses 'there’s no way' or 'it’s impossible', indicating a high degree of certainty.",
+    "longExplanation": "The ～わけがない grammar point is used to express that something is highly unlikely or impossible. It can be translated as 'there's no way' or 'it's impossible'.",
+    "formation": "Verb-casual + わけがない, い-Adjective + わけがない, な-Adjective + なわけがない, Noun + のわけがない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼が怪我をしたから、試合に勝てるわけがない。",
+        "romanization": "Kare ga kega wo shita kara, shiai ni kateru wake ga nai.",
+        "translation": "He got injured, so there's no way he can win the match."
+      },
+      {
+        "sentence": "嘘ばかり言っている人を、信じるわけがない。",
+        "romanization": "Uso bakari itte iru hito wo, shinjiru wake ga nai.",
+        "translation": "There's no way I can believe someone who constantly lies."
+      },
+      {
+        "sentence": "彼女は忙しいから、このパーティーに来るわけがない。",
+        "romanization": "Kanojo wa isogashii kara, kono paatii ni kuru wake ga nai.",
+        "translation": "She's busy, so there's no way she can come to this party."
+      },
+      {
+        "sentence": "昨日はずっと寝ていたから、その事件を知るわけがない。",
+        "romanization": "Kinou wa zutto nete ita kara, sono jiken wo shiru wake ga nai.",
+        "translation": "I was asleep all day yesterday, so there's no way I could know about that incident."
+      }
+    ]
+  },
+  {
+    "id": "ja_わけだ_162",
+    "language": "ja",
+    "pattern": "～わけだ",
+    "title": "～わけだ (〜wake da)",
+    "shortExplanation": "Express a logical conclusion or reason; 'it means', 'no wonder', 'the reason is'.",
+    "longExplanation": "The ～わけだ grammar point is used to express a logical conclusion or reason. It can be translated as 'it means...', 'no wonder...', or 'that explains why...'.",
+    "formation": "Verb-casual + わけだ, い-Adjective + わけだ, な-Adjective + なわけだ, Noun + のわけだ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼女が遅れたのは、電車が遅れたわけだ。",
+        "romanization": "Kanojo ga okureta no wa, densha ga okureta wake da.",
+        "translation": "The reason she was late is that the train was delayed."
+      },
+      {
+        "sentence": "授業が面白かったから、みんな熱心に聞いていたわけだ。",
+        "romanization": "Jugyou ga omoshirokatta kara, minna nesshin ni kiiteita wake da.",
+        "translation": "The class was interesting, so that's why everyone was listening intently."
+      },
+      {
+        "sentence": "彼はとても忙しいですから、休みがほとんどないわけだ。",
+        "romanization": "Kare wa totemo isogashii desu kara, yasumi ga hotondo nai wake da.",
+        "translation": "He's really busy, which is why he hardly has any time off."
+      },
+      {
+        "sentence": "この問題が難しいから、全然わからないわけだ。",
+        "romanization": "Kono mondai ga muzukashii kara, zenzen wakaranai wake da.",
+        "translation": "This problem is tough, so no wonder I don't understand it at all."
+      }
+    ]
+  }
+]

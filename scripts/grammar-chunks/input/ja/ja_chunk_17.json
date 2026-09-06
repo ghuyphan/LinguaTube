@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_なくちゃいけない_104",
+    "language": "ja",
+    "pattern": "～なくちゃいけない",
+    "title": "～なくちゃいけない (〜naku cha ikenai)",
+    "shortExplanation": "Express the obligation to do something; 'have to', 'must', 'need to'.",
+    "longExplanation": "The ～なくちゃいけない grammar point is used to express that there is an obligation or necessity to do something. It can be translated as 'have to', 'must', or 'need to' in English. This grammar point is mainly used with verbs.",
+    "formation": "Verb-ない form (-ない ending is dropped) + なくちゃいけない",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "仕事に行かなくちゃいけないので、早起きしなければなりません。",
+        "romanization": "Shigoto ni ikanakucha ikenai node, hayaoki shinakereba narimasen.",
+        "translation": "I have to go to work, so I must wake up early."
+      },
+      {
+        "sentence": "試験があるから、勉強しなくちゃいけません。",
+        "romanization": "Shiken ga aru kara, benkyou shinakucha ikemasen.",
+        "translation": "I have a test, so I must study."
+      },
+      {
+        "sentence": "パスポートを更新しなくちゃいけないので、大使館に行かなければ。",
+        "romanization": "Pasupooto wo koushin shinakucha ikenai node, taishikan ni ikanakereba.",
+        "translation": "I have to renew my passport, so I need to go to the embassy."
+      },
+      {
+        "sentence": "今日はお金を払わなくちゃいけないから、銀行に行かないと。",
+        "romanization": "Kyou wa okane wo harawanakucha ikenai kara, ginkou ni ikanaito.",
+        "translation": "I have to pay money today, so I need to go to the bank."
+      }
+    ]
+  },
+  {
+    "id": "ja_なくてはいけない_105",
+    "language": "ja",
+    "pattern": "～なくてはいけない",
+    "title": "～なくてはいけない (〜nakute wa ikenai)",
+    "shortExplanation": "Expresses the necessity or obligation; 'must', 'have to'.",
+    "longExplanation": "The ～なくてはいけない grammar point is used to express the necessity or obligation to do something. It can be translated as 'must' or 'have to' in English. The formation requires the negative form of a verb and is followed by いけない (cannot go/progress). It indicates that if something is not done, it will be a problem or inappropriate.",
+    "formation": "Verb-negative form + なくてはいけない",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "宿題をしなくてはいけない。",
+        "romanization": "Shukudai o shinakute wa ikenai.",
+        "translation": "I have to do my homework."
+      },
+      {
+        "sentence": "この手紙を明日までに出さなくてはいけない。",
+        "romanization": "Kono tegami o ashita made ni dasanakute wa ikenai.",
+        "translation": "I must send this letter by tomorrow."
+      },
+      {
+        "sentence": "食べ物を無駄にしなくてはいけない。",
+        "romanization": "Tabemono o muda ni shinakute wa ikenai.",
+        "translation": "We must not waste food."
+      },
+      {
+        "sentence": "早退したいが、授業が終わるまで待たなくてはいけない。",
+        "romanization": "Soutai shitai ga, jugyou ga owaru made matanakute wa ikenai.",
+        "translation": "I want to leave early, but I have to wait until the class finishes."
+      }
+    ]
+  },
+  {
+    "id": "ja_なくてもいい_106",
+    "language": "ja",
+    "pattern": "～なくてもいい",
+    "title": "～なくてもいい (〜nakutemo ii)",
+    "shortExplanation": "Expresses that something is not necessary to do; 'it's okay if not', 'don't have to'.",
+    "longExplanation": "The ～なくてもいい grammar point is used to express that an action or situation is not necessary or required, implying that it's okay if it does not occur. It can be translated as 'it's okay if not' or 'don't have to' in English. This grammar is used with verbs.",
+    "formation": "Verb-ない-form + てもいい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "コーヒーは飲まなくてもいいです。",
+        "romanization": "Koohii wa nomanakutemo ii desu.",
+        "translation": "You don't have to drink the coffee."
+      },
+      {
+        "sentence": "宿題を今日しなくてもいいです。",
+        "romanization": "Shukudai wo kyou shinakutemo ii desu.",
+        "translation": "It's okay if you don't do your homework today."
+      },
+      {
+        "sentence": "すぐに返事をしなくてもいいですよ。",
+        "romanization": "Sugu ni henji wo shinakutemo ii desu yo.",
+        "translation": "You don't have to reply immediately."
+      },
+      {
+        "sentence": "全部食べなくてもいいですから、無理しないでください。",
+        "romanization": "Zenbu tabenakutemo ii desu kara, muri shinai de kudasai.",
+        "translation": "You don't have to eat everything, so please don't force yourself."
+      }
+    ]
+  },
+  {
+    "id": "ja_なければ_107",
+    "language": "ja",
+    "pattern": "～なければ",
+    "title": "～なければ ならない (〜nakereba naranai)",
+    "shortExplanation": "Express obligation or necessity; 'must', 'have to', 'need to'.",
+    "longExplanation": "The ～なければ ならない grammar point is used to express obligation or necessity. In English, it can be translated as 'must', 'have to', or 'need to'. The formation differs depending on whether it is used with a verb. It cannot be used with い-adjectives, な-adjectives or nouns.",
+    "formation": "Verb-ない form + なければ ならない",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "宿題をやらなければならない。",
+        "romanization": "Shukudai wo yaranakereba naranai.",
+        "translation": "I have to do my homework."
+      },
+      {
+        "sentence": "明日までにこの本を読まなければならない。",
+        "romanization": "Ashita made ni kono hon wo yomanakereba naranai.",
+        "translation": "I have to read this book by tomorrow."
+      },
+      {
+        "sentence": "授業に遅れないように、早く起きなければならない。",
+        "romanization": "Jugyou ni okurenai you ni, hayaku okinakereba naranai.",
+        "translation": "I have to wake up early so I don't be late for class."
+      },
+      {
+        "sentence": "旅行に行く前に切符を買わなければならない。",
+        "romanization": "Ryokou ni iku mae ni kippu wo kawanakereba naranai.",
+        "translation": "I have to buy a ticket before going on a trip."
+      }
+    ]
+  },
+  {
+    "id": "ja_に_108",
+    "language": "ja",
+    "pattern": "～に",
+    "title": "～に (〜ni)",
+    "shortExplanation": "Indicates direction, destination, purpose, or time.",
+    "longExplanation": "The ～に grammar point is one of the most versatile Japanese particles. It is commonly used to indicate the direction or destination of an action, to show the purpose of an action or item, or to specify a point in time. Depending on the context, it can be translated as 'to', 'at', 'in', 'on', or 'for' in English.",
+    "formation": "Noun + に",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "母は私にケーキを作りました。",
+        "romanization": "Haha wa watashi ni keiki wo tsukurimashita.",
+        "translation": "My mother made a cake for me."
+      },
+      {
+        "sentence": "彼女は東京に引っ越しました。",
+        "romanization": "Kanojo wa Toukyou ni hikkoshimashita.",
+        "translation": "She moved to Tokyo."
+      },
+      {
+        "sentence": "銀行にお金を預けます。",
+        "romanization": "Ginkou ni okane wo azukemasu.",
+        "translation": "I deposit money in the bank."
+      },
+      {
+        "sentence": "私は７時に起きます。",
+        "romanization": "Watashi wa shichi ji ni okimasu.",
+        "translation": "I wake up at 7 o'clock."
+      }
+    ]
+  },
+  {
+    "id": "ja_ので_109",
+    "language": "ja",
+    "pattern": "～ので",
+    "title": "～ので (〜node)",
+    "shortExplanation": "Express a reason or a cause for something; 'because', 'since', 'so'.",
+    "longExplanation": "The ～ので grammar point is used to express reason or cause for something. It can be translated as 'because', 'since', or 'so' in English. It is similar to から but is considered more polite and formal. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + ので, い-Adjective + ので, な-Adjective + なので, Noun + なので",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日試験があるので、今晩勉強します。",
+        "romanization": "Ashita shiken ga aru node, konban benkyou shimasu.",
+        "translation": "I will study tonight because there is a test tomorrow."
+      },
+      {
+        "sentence": "このドレスが高いので、買わないことにします。",
+        "romanization": "Kono doresu ga takai node, kawanai koto ni shimasu.",
+        "translation": "I will not buy this dress because it is expensive."
+      },
+      {
+        "sentence": "田中さんは病気なので、今日は来ません。",
+        "romanization": "Tanaka-san wa byouki na node, kyou wa kimasen.",
+        "translation": "Tanaka-san will not come today since he is sick."
+      },
+      {
+        "sentence": "雨が降っているので、外に出ない方がいいですよ。",
+        "romanization": "Ame ga futte iru node, soto ni denai hou ga ii desu yo.",
+        "translation": "It is better not to go outside because it is raining."
+      }
+    ]
+  },
+  {
+    "id": "ja_のです_110",
+    "language": "ja",
+    "pattern": "～のです",
+    "title": "～のです (〜no desu)",
+    "shortExplanation": "Provides an explanation or gives background information; 'the fact is', 'the reason is', 'actually'.",
+    "longExplanation": "The ～のです grammar point is used to provide an explanation or give background information on a situation, often used when there is a need to justify or clarify one's statement. It can be translated as 'the fact is', 'the reason is', or 'actually' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + のです, い-Adjective + のです, な-Adjective + なのです, Noun + なのです",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "この本は難しいのです。",
+        "romanization": "Kono hon wa muzukashii no desu.",
+        "translation": "This book is difficult, you see."
+      },
+      {
+        "sentence": "明日は忙しいのです。",
+        "romanization": "Ashita wa isogashii no desu.",
+        "translation": "The fact is, I am busy tomorrow."
+      },
+      {
+        "sentence": "彼女は英語の先生なのです。",
+        "romanization": "Kanojo wa eigo no sensei na no desu.",
+        "translation": "The reason is, she is an English teacher."
+      },
+      {
+        "sentence": "私は風邪なのです。",
+        "romanization": "Watashi wa kaze na no desu.",
+        "translation": "Actually, I’ve got a cold."
+      }
+    ]
+  },
+  {
+    "id": "ja_のに_111",
+    "language": "ja",
+    "pattern": "～のに",
+    "title": "～のに (〜no ni)",
+    "shortExplanation": "Used to express contrast between expectation and reality, or to indicate a purpose for doing something",
+    "longExplanation": "The ～のに grammar point has two main usages. The first is to express contrast between an expectation and reality, with translations like 'even though', 'despite' or 'in spite of' in English. The second is to indicate a purpose for doing something, translated as 'in order to' or 'for the purpose of'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + のに, い-Adjective + のに, な-Adjective + なのに, Noun + なのに",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "遅刻したのに、先生は怒らなかった。",
+        "romanization": "Chikoku shita no ni, sensei wa okoranakatta.",
+        "translation": "Even though I was late, the teacher didn't get angry."
+      },
+      {
+        "sentence": "彼は疲れているのに、まだ働いています。",
+        "romanization": "Kare wa tsukarete iru no ni, mada hataraite imasu.",
+        "translation": "Despite being tired, he is still working."
+      },
+      {
+        "sentence": "勉強するのに静かな場所が必要です。",
+        "romanization": "Benkyou suru no ni, shizukana basho ga hitsuyou desu.",
+        "translation": "In order to study, I need a quiet place."
+      },
+      {
+        "sentence": "健康のために毎日運動するのに、うちでヨガをしている。",
+        "romanization": "Kenkou no tame ni mainichi undou suru no ni, uchi de yoga wo shite iru.",
+        "translation": "In order to exercise for my health every day, I do yoga at home."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばいい_112",
+    "language": "ja",
+    "pattern": "～ばいい",
+    "title": "～ばいい (〜ba ii)",
+    "shortExplanation": "Express a suggestion or advice; 'should', 'it would be good if'.",
+    "longExplanation": "The ～ばいい grammar point is used to express a suggestion, recommendation or advice. It can be translated as 'should', or 'it would be good if' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-ば-form + いい, い-Adjective + ければいい, な-Adjective + であればいい, Noun + であればいい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "もっと勉強すればいい。",
+        "romanization": "Motto benkyou sureba ii.",
+        "translation": "You should study more."
+      },
+      {
+        "sentence": "お腹が空いたら、何か食べればいい。",
+        "romanization": "Onaka ga suita ra, nanika tabereba ii.",
+        "translation": "If you're hungry, you should eat something."
+      },
+      {
+        "sentence": "もっと速く走ればいい。",
+        "romanization": "Motto hayaku hashireba ii.",
+        "translation": "You should run faster."
+      },
+      {
+        "sentence": "わからなければ、先生に聞けばいい。",
+        "romanization": "Wakaranakereba, sensei ni kikeba ii.",
+        "translation": "If you don't understand, you should ask the teacher."
+      }
+    ]
+  },
+  {
+    "id": "ja_まで_113",
+    "language": "ja",
+    "pattern": "～まで",
+    "title": "～まで (〜made)",
+    "shortExplanation": "Indicates extent, 'until', 'up to', 'as far as', 'even'.",
+    "longExplanation": "The ～まで grammar point is used to express extent or range in terms of time, distance, or degree. It can be translated as 'until', 'up to', 'as far as', or 'even' in English. It is used with verbs, い-adjectives, な-adjectives, or nouns.",
+    "formation": "Verb + まで, い-Adjective + まで, な-Adjective + まで, Noun + まで",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "仕事が終わるまで待っています。",
+        "romanization": "Shigoto ga owaru made matteimasu.",
+        "translation": "I will wait until work is finished."
+      },
+      {
+        "sentence": "ここから駅まで歩いて10分かかります。",
+        "romanization": "Koko kara eki made aruite juppun kakarimasu.",
+        "translation": "It takes 10 minutes to walk from here to the station."
+      },
+      {
+        "sentence": "私は彼が成功するまで応援します。",
+        "romanization": "Watashi wa kare ga seikou suru made ouen shimasu.",
+        "translation": "I will support him until he succeeds."
+      },
+      {
+        "sentence": "彼女は猫まで好きです。",
+        "romanization": "Kanojo wa neko made suki desu.",
+        "translation": "She likes even cats."
+      }
+    ]
+  },
+  {
+    "id": "ja_までに_114",
+    "language": "ja",
+    "pattern": "～までに",
+    "title": "～までに (〜made ni)",
+    "shortExplanation": "Express 'by' or 'before' a certain time or action.",
+    "longExplanation": "The ～までに grammar point is used to indicate that something must be completed or occurs by a certain time or before a specific action. It can be used with verbs, nouns, and time expressions.",
+    "formation": "Verb-casual + までに, Noun + までに, Time expression + までに",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日の朝８時までに起きてください。",
+        "romanization": "Ashita no asa hachiji made ni okite kudasai.",
+        "translation": "Please wake up by 8 a.m. tomorrow."
+      },
+      {
+        "sentence": "来週の金曜日までにレポートを提出してください。",
+        "romanization": "Raishuu no kinyoubi made ni repooto wo teishutsu shite kudasai.",
+        "translation": "Please submit the report by next Friday."
+      },
+      {
+        "sentence": "彼が帰るまでに料理を終わらせたい。",
+        "romanization": "Kare ga kaeru made ni ryouri wo owarasetai.",
+        "translation": "I want to finish cooking before he comes back."
+      },
+      {
+        "sentence": "３０分までに駅に着く必要があります。",
+        "romanization": "Sanjuppun made ni eki ni tsuku hitsuyou ga arimasu.",
+        "translation": "We need to arrive at the station by 30 minutes (from now)."
+      }
+    ]
+  },
+  {
+    "id": "ja_まま_115",
+    "language": "ja",
+    "pattern": "～まま",
+    "title": "～まま (〜mama)",
+    "shortExplanation": "Express 'as it is', 'while' or 'unchanged state'.",
+    "longExplanation": "The ～まま grammar point is used to express a state or condition that remains unchanged or continues, often translated as 'as it is', 'while', or 'unchanged'. It can be used with verbs and adjectives to show that something remains in a certain state or condition.",
+    "formation": "Verb-てform + いる+ まま, Adjective (い & な) + まま, Noun + のまま",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "ドアを開けたまま出かけてしまった。",
+        "romanization": "Doa o aketa mama dekakete shimatta.",
+        "translation": "I accidentally left with the door open."
+      },
+      {
+        "sentence": "彼は目覚まし時計を止めたまま寝てしまった。",
+        "romanization": "Kare wa mezamashi dokei o tometa mama nete shimatta.",
+        "translation": "He fell asleep with the alarm clock stopped."
+      },
+      {
+        "sentence": "その部屋はきれいなままにしておいてください。",
+        "romanization": "Sono heya wa kirei na mama ni shite oite kudasai.",
+        "translation": "Please keep the room clean."
+      },
+      {
+        "sentence": "彼女は子供のままの心を持っている。",
+        "romanization": "Kanojo wa kodomo no mama no kokoro o motte iru.",
+        "translation": "She has the heart of a child."
+      }
+    ]
+  },
+  {
+    "id": "ja_みたいだ_116",
+    "language": "ja",
+    "pattern": "～みたいだ",
+    "title": "～みたいだ (〜mitai da)",
+    "shortExplanation": "Indicates similarity, resemblance or 'like'; 'it seems', 'appears', 'looks like'.",
+    "longExplanation": "The ～みたいだ grammar point is used to express that something appears, seems or resembles something else. It can be used with nouns, verbs, い-adjectives, and な-adjectives. It can be translated as 'it seems', 'appears', or 'looks like' in English.",
+    "formation": "Verb-casual + みたいだ, い-Adjective + みたいだ, な-Adjective + みたいだ, Noun + みたいだ",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼女が病気のみたいだ。",
+        "romanization": "Kanojo ga byouki no mitai da.",
+        "translation": "She seems to be sick."
+      },
+      {
+        "sentence": "このドレスは高いみたいだ。",
+        "romanization": "Kono doresu wa takai mitai da.",
+        "translation": "This dress seems to be expensive."
+      },
+      {
+        "sentence": "あの人は有名人みたいだ。",
+        "romanization": "Ano hito wa yuumeijin mitai da.",
+        "translation": "That person looks like a celebrity."
+      },
+      {
+        "sentence": "彼は今忙しいみたいだ。",
+        "romanization": "Kare wa ima isogashii mitai da.",
+        "translation": "It seems he is busy right now."
+      }
+    ]
+  },
+  {
+    "id": "ja_も_117",
+    "language": "ja",
+    "pattern": "～も",
+    "title": "～も (〜mo)",
+    "shortExplanation": "Indicates 'also', 'too', or 'as well'.",
+    "longExplanation": "The ～も grammar point is used to express that something is also true, or to add some additional information to the previous statement. It can be translated as 'also', 'too', or 'as well' in English. The grammar point can be used with verbs, adjectives, and nouns.",
+    "formation": "Verb-casual + も, い-Adjective + も, な-Adjective + も, Noun + も",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "私もお寿司が好きです。",
+        "romanization": "Watashi mo osushi ga suki desu.",
+        "translation": "I also like sushi."
+      },
+      {
+        "sentence": "彼女は英語も日本語も話せます。",
+        "romanization": "Kanojo wa eigo mo nihongo mo hanasemasu.",
+        "translation": "She can speak both English and Japanese."
+      },
+      {
+        "sentence": "その映画は面白いし、彼も見たいと言っています。",
+        "romanization": "Sono eiga wa omoshiroi shi, kare mo mitai to itteimasu.",
+        "translation": "That movie is interesting, and he also said he wants to see it."
+      },
+      {
+        "sentence": "今日は寒いです。明日も寒いでしょう。",
+        "romanization": "Kyou wa samui desu. Ashita mo samui deshou.",
+        "translation": "It is cold today. It will probably be cold tomorrow as well."
+      }
+    ]
+  },
+  {
+    "id": "ja_ようだ_118",
+    "language": "ja",
+    "pattern": "～ようだ",
+    "title": "～ようだ (〜you da)",
+    "shortExplanation": "Expresses appearance, similarity or inference; 'it seems', 'it looks like', 'it appears'.",
+    "longExplanation": "The ～ようだ grammar point is used to express appearance, similarity or inference about a situation or action. It can be translated as 'it seems', 'it looks like', or 'it appears' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-て form + ようだ, い-Adjective (drop い) + ようだ, な-Adjective + のようだ, Noun + のようだ",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は元気がないようだ。",
+        "romanization": "Kare wa genki ga nai you da.",
+        "translation": "He seems to be lacking energy."
+      },
+      {
+        "sentence": "この料理は美味しいようだ。",
+        "romanization": "Kono ryouri wa oishii you da.",
+        "translation": "This dish seems to be delicious."
+      },
+      {
+        "sentence": "彼女は有名人のようだ。",
+        "romanization": "Kanojo wa yuumeijin no you da.",
+        "translation": "She seems like a famous person."
+      },
+      {
+        "sentence": "この部屋は図書館のようだ。",
+        "romanization": "Kono heya wa toshokan no you da.",
+        "translation": "This room looks like a library."
+      }
+    ]
+  }
+]

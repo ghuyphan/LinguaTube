@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Noun_92",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun もさることながら Noun も (A mo saru koto nagara B mo)",
+    "shortExplanation": "Means 'not only... but also'; the second noun is especially emphasized.",
+    "longExplanation": "The grammar point 'Noun もさることながら Noun も' is used to express that both Nouns are true, important, or relevant. It can be translated as 'not only... but also' in English. However, among the two nouns, the one coming after もさることながら is more emphasized in comparison to the one before it.",
+    "formation": "Noun1 + もさることながら + Noun2 + も",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の歌唱力もさることながら、ダンスも素晴らしい。",
+        "romanization": "Kare no kashou-ryoku mo saru koto nagara, dansu mo subarashii.",
+        "translation": "Not only his singing ability but also his dancing is wonderful."
+      },
+      {
+        "sentence": "このレストラン、味もさることながら、サービスもすばらしい。",
+        "romanization": "Kono resutoran, aji mo saru koto nagara, saabisu mo subarashii.",
+        "translation": "At this restaurant, not only the taste but also the service is wonderful."
+      },
+      {
+        "sentence": "彼女の美しさもさることながら、その知性も魅力的だ。",
+        "romanization": "Kanojo no utsukushisa mo saru koto nagara, sono chisei mo miryoku-teki da.",
+        "translation": "Not only her beauty but also her intelligence is attractive."
+      },
+      {
+        "sentence": "その映画、ストーリーもさることながら、音楽も素晴らしかった。",
+        "romanization": "Sono eiga, sutoorii mo saru koto nagara, ongaku mo subarashikatta.",
+        "translation": "In that movie, not only the story but also the music was wonderful."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_93",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun も兼ねて (~mo kanete)",
+    "shortExplanation": "Used to express 'as well as', 'also', or 'at the same time'.",
+    "longExplanation": "The も兼ねて grammar point indicates that two actions or purposes are being served simultaneously. The noun before も兼ねて tells what the additional action or purpose is.",
+    "formation": "Noun + も兼ねて",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "散歩も兼ねて、公園に行きました。",
+        "romanization": "Sanpo mo kanete, kouen ni ikimashita.",
+        "translation": "I went to the park, also for a walk."
+      },
+      {
+        "sentence": "今日は日本語の勉強も兼ねて、日本の映画を見ます。",
+        "romanization": "Kyou wa Nihongo no benkyou mo kanete, Nihon no eiga wo mimasu.",
+        "translation": "Today, I will watch a Japanese movie, also to study Japanese."
+      },
+      {
+        "sentence": "仕事も兼ねて、海外に行く予定です。",
+        "romanization": "Shigoto mo kanete, kaigai ni iku yotei desu.",
+        "translation": "I plan to go abroad, also for work."
+      },
+      {
+        "sentence": "旅行も兼ねて、友人の結婚式に出席します。",
+        "romanization": "Ryokou mo kanete, yuujin no kekkonshiki ni shusseki shimasu.",
+        "translation": "I will attend a friend's wedding, also as a trip."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_94",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun も相まって (~mo aimatte)",
+    "shortExplanation": "Used to express that combined with something else, it caused a certain outcome.",
+    "longExplanation": "The grammar point Noun も相まって is used to express the meaning that, combined with something else, it caused a certain result. Literally, it translates to 'also contributes to'. It is generally used with nouns and points out that there are multiple contributing factors.",
+    "formation": "Noun + も相まって",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "気候も相まって、この地域は農業に適しています。",
+        "romanization": "Kikou mo aimatte, kono chiiki wa nougyou ni tekishiteimasu.",
+        "translation": "Combined with the climate, this area is suitable for agriculture."
+      },
+      {
+        "sentence": "彼の才能も相まって、彼は急速に昇進した。",
+        "romanization": "Kare no sainou mo aimatte, kare wa kyuusoku ni shoushin shita.",
+        "translation": "Combined with his talent, he was rapidly promoted."
+      },
+      {
+        "sentence": "技術進歩も相まって、私たちはより効率的に仕事をこなすことができるようになりました。",
+        "romanization": "Gijutsu shinpo mo aimatte, watashitachi wa yori kouritsu-teki ni shigoto wo konasu koto ga dekiru you ni narimashita.",
+        "translation": "Combined with technological progress, we have become able to handle our work more efficiently."
+      },
+      {
+        "sentence": "彼の努力も相まって、プロジェクトは成功しました。",
+        "romanization": "Kare no doryoku mo aimatte, purojekuto wa seikou shimashita.",
+        "translation": "Combined with his efforts, the project was successful."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_95",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を おいて他に Verb ない (〜wo oite hoka ni〜nai)",
+    "shortExplanation": "Means 'apart from ~ there's nothing else,' implying the Noun is the best or most suitable choice.",
+    "longExplanation": "The structure Nounをおいて他に〜ない is used to express that there is no substitute for the Noun, no other choice, or that the Noun is the best or the only one to choose among various options. This form is often used in praising or making strong positive comments about someone or something.",
+    "formation": "Noun + をおいて他に + Verb negative form",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この仕事を彼に任せる人をおいて他にいない。",
+        "romanization": "Kono shigoto wo kare ni makaseru hito wo oite hoka ni inai.",
+        "translation": "Apart from him, there's no one else to entrust this job to."
+      },
+      {
+        "sentence": "この問題を解決できるのは彼をおいて他にいない。",
+        "romanization": "Kono mondai wo kaiketsu dekiru no wa kare o oite hoka ni inai.",
+        "translation": "Apart from him, there's no one else who can solve this problem."
+      },
+      {
+        "sentence": "この地域で美味しい麺を作る店をおいて他にない。",
+        "romanization": "Kono chiiki de oishii men o tsukuru mise o oite hoka ni nai.",
+        "translation": "There is no other restaurant in this area that makes delicious noodles apart from this one."
+      },
+      {
+        "sentence": "彼女の歌声を超える歌手をおいて他にいない。",
+        "romanization": "Kanojo no utagoe o koeru kashu o oite hoka ni inai.",
+        "translation": "There is no other singer who could surpass her singing voice."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_96",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun をもって (~wo motte)",
+    "shortExplanation": "Used to indicate means, methods, or time; 'with', 'by means of', 'at'.",
+    "longExplanation": "The をもって grammar is used to express a means or method to achieve something, or to indicate a point in time. It can be translated as 'with' or 'by means of' when indicating means, and 'at' when indicating a point in time.",
+    "formation": "Noun + をもって",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は誠実さをもって人々に信頼されています。",
+        "romanization": "Kare wa seijitsusa wo motte hitobito ni shinrai sarete imasu.",
+        "translation": "He is trusted by people with his honesty."
+      },
+      {
+        "sentence": "この賞をもって、彼女の努力が認められました。",
+        "romanization": "Kono shou wo motte, kanojo no doryoku ga mitomeraremashita.",
+        "translation": "With this award, her efforts were recognized."
+      },
+      {
+        "sentence": "彼は強い決意をもって問題に取り組んだ。",
+        "romanization": "Kare wa tsuyoi ketsui wo motte mondai ni torikunda.",
+        "translation": "He tackled the problem with strong determination."
+      },
+      {
+        "sentence": "3月をもって、この店は閉店します。",
+        "romanization": "Sangatsu wo motte, kono mise wa heiten shimasu.",
+        "translation": "This store will close at the end of March."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_97",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun をものともせずに (Noun wo mono tomo sezu ni)",
+    "shortExplanation": "Expresses the idea that 'despite something, action was carried out', translating to 'without being fazed by something'.",
+    "longExplanation": "The 'Nounをものともせずに' grammar point indicates that something which could potentially be a hindrance or challenge was not taken into account when carrying out an action. The literal idea is ‘not making something an obstacle’, meaning actions were performed without being fazed or distracted by it.",
+    "formation": "Noun + をものともせずに",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女は怖さをものともせずに、暗闇の中へ進んで行った。",
+        "romanization": "Kanojo wa kowasa wo mono tomo sezu ni, kurayami no naka e susunde itta.",
+        "translation": "Despite her fear, she went ahead into the darkness."
+      },
+      {
+        "sentence": "試験のプレッシャーをものともせずに、彼は自信満々に答えた。",
+        "romanization": "Shiken no puresshaa wo mono tomo sezu ni, kare wa jishin manman ni kotaeta.",
+        "translation": "Unfazed by the pressure of the exam, he answered with full confidence."
+      },
+      {
+        "sentence": "彼は風雪をものともせずに山を登った。",
+        "romanization": "Kare wa fuusetsu wo mono tomo sezu ni, yama wo nobotta.",
+        "translation": "He climbed the mountain unfazed by the wind and snow."
+      },
+      {
+        "sentence": "彼は失敗をものともせずに、前に進み続けた。",
+        "romanization": "Kare wa shippai wo mono tomo sezu ni, mae ni susumi tsuzuketa.",
+        "translation": "He continued to move forward, undeterred by failure."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_98",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun をよそに (~wo yoso ni)",
+    "shortExplanation": "Despite; Notwithstanding; Regardless of",
+    "longExplanation": "The Japanese phrase 'Nounをよそに' is used to express a situation where, despite some circumstance (represented by the noun), a certain action takes place. It can convey a feeling of disregard or nonchalance. In English, it can be translated as 'despite', 'notwithstanding', or 'regardless of'.",
+    "formation": "Noun + をよそに",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "経済危機をよそに、彼は高級な車を買った。",
+        "romanization": "Keizai kiki wo yoso ni, kare wa koukyuu na kuruma wo katta.",
+        "translation": "Despite the economic crisis, he bought a luxury car."
+      },
+      {
+        "sentence": "試験が迫るをよそに、彼は遊び続けている。",
+        "romanization": "Shiken ga semaru wo yoso ni, kare wa asobi tsuzukete iru.",
+        "translation": "Despite the approaching test, he keeps on playing."
+      },
+      {
+        "sentence": "親の反対をよそに、彼女は彼と結婚しました。",
+        "romanization": "Oya no hantai wo yoso ni, kanojo wa kare to kekkon shimashita.",
+        "translation": "Despite her parents' opposition, she married him."
+      },
+      {
+        "sentence": "その国の経済状況をよそに、多くの企業が進出し続けている。",
+        "romanization": "Sono kuni no keizai joukyou wo yoso ni, ooku no kigyou ga shinshutsu shi tsuzukete iru.",
+        "translation": "Despite the country's economic situation, many companies continue to expand."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_99",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を余儀なくされる (Noun wo yogi naku sareru)",
+    "shortExplanation": "Expresses the idea of being forced into a certain situation, 'to be compelled', 'to be obliged'.",
+    "longExplanation": "The grammar pattern 'Noun を余儀なくされる' is used to describe circumstances where a person or party is compelled or obliged to do something due to necessity or unavoidable circumstances. It translates as 'to be forced to', 'to be compelled to', or 'to have no choice but to'. This form is often used in formal or written Japanese.",
+    "formation": "Noun + を + 余儀なくされる",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は経済的困難により、退学を余儀なくされた。",
+        "romanization": "Kare wa keizai-teki konnan ni yori, taigaku wo yogi naku saremashita.",
+        "translation": "Due to financial difficulties, he was forced to drop out of school."
+      },
+      {
+        "sentence": "厳しい天候によって、私たちは遠足を中止する余儀なくされた。",
+        "romanization": "Kibishi tenkou ni yotte, watashitachi wa ensoku wo chushi suru yogi naku sareta.",
+        "translation": "We were forced to cancel the excursion due to the severe weather."
+      },
+      {
+        "sentence": "怪我のため、彼は入院を余儀なくされた。",
+        "romanization": "Kega no tame, kare wa nyuuin wo yogi naku sareta.",
+        "translation": "Due to his injury, he was forced to be hospitalized."
+      },
+      {
+        "sentence": "リストラの恐怖により、多くの従業員が転職を余儀なくされた。",
+        "romanization": "Risutora no kyoufu ni yori, ooku no juugyouin ga tenshoku wo yogi naku sareta.",
+        "translation": "Fear of layoffs forced many employees to change jobs."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_100",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を前提として (Noun wo zentei toshite)",
+    "shortExplanation": "Used to express 'on the assumption of', 'based on'.",
+    "longExplanation": "The grammar point 'Noun を前提として' is used to convey that something is done based on or assuming something else. It indicates a preconceived condition or assumption on which the following action or plan relies.",
+    "formation": "Noun + を前提として",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "成功を前提として、ビジネスプランを作成しました。",
+        "romanization": "Seikou wo zentei toshite, bijinesu puran wo sakusei shimashita.",
+        "translation": "We made a business plan on the assumption of success."
+      },
+      {
+        "sentence": "彼の勝利を前提として、パーティーの準備を始めました。",
+        "romanization": "Kare no shouri wo zentei toshite, paatii no junbi wo hajimemashita.",
+        "translation": "We started preparing for the party assuming his victory."
+      },
+      {
+        "sentence": "両親の理解を前提として、旅行計画を進めます。",
+        "romanization": "Ryoushin no rikai wo zentei toshite, ryokou keikaku wo susumemasu.",
+        "translation": "I will proceed with the travel plan based on my parents’ understanding."
+      },
+      {
+        "sentence": "このプロジェクトは、資金が揃うことを前提としています。",
+        "romanization": "Kono purojekuto wa, shikin ga sorou koto wo zentei toshiteimasu.",
+        "translation": "This project assumes that the funds will be in place."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_101",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を前提にして (Noun wo zentei ni shite)",
+    "shortExplanation": "Assuming; presupposing; on the assumption of.",
+    "longExplanation": "The grammar point 'Noun を前提にして' is used to show that something is done assuming or presupposing the noun that comes before it. In English, it can be translated as 'on the assumption of', 'assuming', or 'presupposing'.",
+    "formation": "Noun + を前提にして",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "好天を前提にして、明日のピクニックの計画を立てました。",
+        "romanization": "Kouten wo zentei ni shite, ashita no pikunikku no keikaku wo tatemashita.",
+        "translation": "We planned tomorrow's picnic assuming fine weather."
+      },
+      {
+        "sentence": "彼女の合格を前提にして、祝いのパーティーの準備を始めました。",
+        "romanization": "Kanojo no goukaku wo zentei ni shite, iwai no paatii no junbi wo hajimemashita.",
+        "translation": "We started preparing for the celebration party assuming she would pass the exam."
+      },
+      {
+        "sentence": "経済成長を前提にして、予算案が作られた。",
+        "romanization": "Keizai seichou wo zentei ni shite, yosan-an ga tsukurareta.",
+        "translation": "The budget was made on the assumption of economic growth."
+      },
+      {
+        "sentence": "彼の参加を前提にして、会議の日程を決めました。",
+        "romanization": "Kare no sanka wo zentei ni shite, kaigi no nittei wo kimemashita.",
+        "translation": "We decided the meeting schedule assuming his participation."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_102",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を境にして (Noun wo sakai ni shite)",
+    "shortExplanation": "Means 'as a turning point', 'since (time)', or 'from (time) on'.",
+    "longExplanation": "The grammar point 'Noun を境にして' is used to indicate a significant change or turning point marked by a specific event or time. It means that after this boundary, some situation changes or a new state begins.",
+    "formation": "Noun + を境に(して)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "父の死を境にして、彼の性格が一変した。",
+        "romanization": "Chichi no shi wo sakai ni shite, kare no seikaku ga ippen shita.",
+        "translation": "His personality changed completely since his father's death."
+      },
+      {
+        "sentence": "試験を境にして、休暇を取る予定です。",
+        "romanization": "Shiken wo sakai ni shite, kyuka wo toru yotei desu.",
+        "translation": "I plan to take a vacation after the exam."
+      },
+      {
+        "sentence": "春を境にして、新しい生活を始めるつもりだ。",
+        "romanization": "Haru wo sakai ni shite, atarashii seikatsu o hajimeru tsumori da.",
+        "translation": "I intend to start a new life from spring onwards."
+      },
+      {
+        "sentence": "彼女は入学を境にして、ファッションに興味を持ち始めた。",
+        "romanization": "Kanojo wa nyuugaku wo sakai ni shite, fasshon ni kyoumi o mochi hajimeta.",
+        "translation": "She began to take an interest in fashion from the time she entered school."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_103",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を機にして (~wo ki ni shite)",
+    "shortExplanation": "To take the opportunity to; taking the occasion to; on the occasion of.",
+    "longExplanation": "The grammar pattern 'Noun を機にして' expresses the idea of using a certain event or situation as an opportunity to do something else. It is often used when some change or new step is taken as a result of a specific event.",
+    "formation": "Noun + を機にして",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "引っ越しを機にして、家具を新しくしました。",
+        "romanization": "Hikkoshi wo ki ni shite, kagu wo atarashiku shimashita.",
+        "translation": "I took the opportunity of moving to get new furniture."
+      },
+      {
+        "sentence": "卒業を機にして、新しい仕事を探し始めた。",
+        "romanization": "Sotsugyou wo ki ni shite, atarashii shigoto wo sagashi hajimeta.",
+        "translation": "I started looking for a new job on the occasion of graduation."
+      },
+      {
+        "sentence": "このプロジェクトの失敗を機にして、会社全体の仕事のやり方を見直すことにした。",
+        "romanization": "Kono purojekuto no shippai wo ki ni shite, kaisha zentai no shigoto no yarikata wo minaosu koto ni shita.",
+        "translation": "We decided to review the way the entire company works, taking this project's failure as an opportunity."
+      },
+      {
+        "sentence": "結婚を機にして、私たちは新しい町へ引っ越しました。",
+        "romanization": "Kekkon wo ki ni shite, watashitachi wa atarashii machi e hikkoshimashita.",
+        "translation": "We moved to a new town on the occasion of our marriage."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_104",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を皮切りに / を皮切りにして (Noun wo kawakiri ni / wo kawakiri ni shite)",
+    "shortExplanation": "Used to indicate the starting point of some series of events or actions; 'starting with', 'beginning with'.",
+    "longExplanation": "The grammar point 'Noun を皮切りに / を皮切りにして' is used to convey the idea of something beginning or starting with a certain event or action. This pattern is often used when the speaker wants to highlight the starting point of a series or string of events.",
+    "formation": "Noun + を皮切りに / を皮切りにして",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼はその論文を皮切りにして複数の研究を開始した。",
+        "romanization": "Kare wa sono ronbun o kawakiri ni shite fukusū no kenkyū o kaishi shita.",
+        "translation": "Starting with that thesis, he started multiple research projects."
+      },
+      {
+        "sentence": "彼女はこのコンペティションを皮切りにして彼女のダンスキャリアが飛躍的に成長した。",
+        "romanization": "Kanojo wa kono konpetishon o kawakiri ni shite kanojo no dansu kyaria ga hiyakuteki ni seichō shita.",
+        "translation": "Starting with this competition, her dance career drastically grew."
+      },
+      {
+        "sentence": "この映画を皮切りに、彼は人気俳優としての立場を確立した。",
+        "romanization": "Kono eiga o kawakiri ni, kare wa ninki haiyū to shite no tachiba o kakuritsu shita.",
+        "translation": "Starting with this movie, he established his position as a popular actor."
+      },
+      {
+        "sentence": "このプロジェクトを皮切りにして、会社は新たな方向性を示し始めた。",
+        "romanization": "Kono purojekuto o kawakiri ni shite, kaisha wa arata na hōkōsei o shimeshi hajimeta.",
+        "translation": "Starting with this project, the company began to show a new direction."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_105",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を皮切りにして (Noun wo kawakiri ni shite)",
+    "shortExplanation": "Used to express 'Starting with', 'Beginning with'",
+    "longExplanation": "'Noun を皮切りにして' is a Japanese grammatical form used when one wants to express that something begins with a certain event or action, then continues on in a sequence. It is the same as saying 'starting with...' or 'beginning with...' in English.",
+    "formation": "Noun + を皮切りに (して)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼はその日を皮切りにして毎日ジムに通い始めました。",
+        "romanization": "Kare wa sono hi o kawakiri ni shite mainichi jimu ni kayoi hajimemashita.",
+        "translation": "Starting from that day, he began to go to the gym every day."
+      },
+      {
+        "sentence": "新年会を皮切りにして、今年はたくさんのイベントが開催されます。",
+        "romanization": "Shinnenkai o kawakiri ni shite, kotoshi wa takusan no ibento ga kaisai saremasu.",
+        "translation": "Starting with the New Year's party, a lot of events will be held this year."
+      },
+      {
+        "sentence": "この映画を皮切りにして彼の人気は急上昇しました。",
+        "romanization": "Kono eiga o kawakiri ni shite kare no ninki wa kyūjōshō shimashita.",
+        "translation": "Beginning with this movie, his popularity skyrocketed."
+      },
+      {
+        "sentence": "東京を皮切りにして、彼の展示会は全国で開かれる予定です。",
+        "romanization": "Tōkyō o kawakiri ni shite, kare no tenjikai wa zenkoku de hirakareru yotei desu.",
+        "translation": "Starting in Tokyo, his exhibitions are set to be held nationwide."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_106",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を禁じ得ない (〜wo kinjienai)",
+    "shortExplanation": "'Cannot help but do', or 'inevitable'",
+    "longExplanation": "The 〜を禁じ得ない (wo kinjienai) grammar point is used to express a situation or emotion that is so strong it can't be helped or is inevitable. It is used with nouns to express an uncontrollable feeling or action.",
+    "formation": "Noun + を禁じ得ない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この結果には驚きを禁じ得ない。",
+        "romanization": "Kono kekka ni wa odoroki o kinjienai.",
+        "translation": "I can't help but be surprised at this result."
+      },
+      {
+        "sentence": "そのニュースを聞いて、彼の成功を祝福する気持ちを禁じ得ない。",
+        "romanization": "Sono nyūsu o kiite, kare no seikō o shukufuku suru kimochi o kinjienai.",
+        "translation": "Hearing that news, I can't help but feel the urge to celebrate his success."
+      },
+      {
+        "sentence": "彼女の美しさには感動を禁じ得ない。",
+        "romanization": "Kanojo no utsukushisa ni wa kandō o kinjienai.",
+        "translation": "I can't help but be moved by her beauty."
+      },
+      {
+        "sentence": "彼の話を聞いて、笑いを禁じ得ない。",
+        "romanization": "Kare no hanashi o kiite, warai o kinjienai.",
+        "translation": "Hearing his story, I can't help but laugh."
+      }
+    ]
+  }
+]

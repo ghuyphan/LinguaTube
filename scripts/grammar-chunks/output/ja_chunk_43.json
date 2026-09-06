@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Noun_47": {
+      "title": "Danh từ + なくして～はない (nakushite ~ wa nai)",
+      "shortExplanation": "Biểu thị ý 'nếu không có... thì không thể có...', nhấn mạnh điều kiện tất yếu, không thể thiếu để đạt được điều gì.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + なくして～はない' (hoặc なくしては～ない) mang tính văn viết trang trọng, nhấn mạnh rằng nếu không có danh từ đi trước thì vế sau tuyệt đối không thể hình thành, tồn tại hay đạt được thành công ('nếu không có... thì không thể có...'). Thường đi kèm với các danh từ trừu tượng chỉ phẩm chất, nỗ lực, điều kiện cốt lõi như 努力 (nỗ lực), 愛 (tình yêu), 信頼 (sự tin tưởng), 協力 (sự hợp tác). Vế sau luôn là câu phủ định triệt để (～はない, ～はあり得ない, ～はできない).",
+      "formation": "Danh từ + なくして(は) + [Câu phủ định: ～はない / ～できない]",
+      "examples": [
+        {
+          "translation": "Không có nỗ lực thì không thể có thành công."
+        },
+        {
+          "translation": "Nếu không có thời gian thì không thể tạo ra một tác phẩm hoàn hảo."
+        },
+        {
+          "translation": "Không có kinh nghiệm thì không thể có sự trưởng thành."
+        },
+        {
+          "translation": "Nếu thiếu đi sự lãnh đạo thì nhóm không thể nào thành công được."
+        }
+      ]
+    },
+    "ja_Noun_48": {
+      "title": "Danh từ + なしでは～ない (nashi de wa ~ nai)",
+      "shortExplanation": "Biểu thị ý 'nếu không có... thì không thể...', nhấn mạnh sự thiết yếu của đối tượng trong hoàn cảnh thông thường.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + なしでは～ない' (hoặc なしには～ない) dùng để diễn đạt ý rằng nếu thiếu đi một người, vật hoặc điều kiện cụ thể nào đó thì không thể tiến hành, hoàn thành hay duy trì một việc gì đó ('nếu không có... thì không...'). Khác với 'なくして', mẫu câu này có thể áp dụng linh hoạt cho cả các sự vật, hiện tượng đời thường (như nước, máy tính, tiền bạc, người hỗ trợ...) lẫn trừu tượng. Vế sau thường là câu phủ định ở thể khả năng.",
+      "formation": "Danh từ + なしでは + [Câu phủ định: ～ない / ～られない / ～成り立たない]",
+      "examples": [
+        {
+          "translation": "Không có nước thì không thể sống được."
+        },
+        {
+          "translation": "Nếu không có sự giúp đỡ của anh ấy, tôi không thể giải quyết được vấn đề này."
+        },
+        {
+          "translation": "Không có máy tính thì kinh doanh thời hiện đại không thể nào duy trì được."
+        },
+        {
+          "translation": "Nếu thiếu đi tình bạn thì cuộc đời này hẳn sẽ rất buồn tẻ."
+        }
+      ]
+    },
+    "ja_Noun_49": {
+      "title": "Danh từ + なしには～ない (nashi ni wa ~ nai)",
+      "shortExplanation": "Biểu thị ý 'nếu không có... thì không thể...', mang sắc thái trang trọng, văn viết hơn 'なしでは'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + なしには～ない' được sử dụng để diễn đạt rằng nếu không có hoặc thiếu đi danh từ được nhắc tới thì một hành động, trạng thái nào đó không thể thực hiện hay duy trì được ('không có... thì không thể...'). Về ý nghĩa, mẫu này tương đồng với '～なしでは～ない', nhưng mang sắc thái văn phong trang trọng, có tính văn viết và nhấn mạnh tính tất yếu hơn. Vế sau luôn đi kèm với động từ chia ở thể phủ định (đặc biệt là thể khả năng phủ định).",
+      "formation": "Danh từ + なしには + [Động từ thể phủ định: ～ない / ～られない]",
+      "examples": [
+        {
+          "translation": "Không có tiền thì không thể sinh sống được."
+        },
+        {
+          "translation": "Không có tình yêu thương thì không thể nuôi dạy con cái nên người."
+        },
+        {
+          "translation": "Không có anh ấy thì không thể xúc tiến dự án này được."
+        },
+        {
+          "translation": "Không có nước thì con người không thể tiếp tục sống."
+        }
+      ]
+    },
+    "ja_Noun_50": {
+      "title": "Danh từ + ならいざ知らず (nara iza shirazu)",
+      "shortExplanation": "Diễn tả ý 'nếu là... thì còn chấp nhận được, đằng này lại...', biểu thị sự ngạc nhiên, bất mãn hoặc bất khả thi ở vế sau.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + ならいざ知らず、Danh từ 2...' (hoặc dạng đầy đủ '～ならいざしらず') dùng để đối chiếu hai mức độ khác nhau: 'Nếu là A thì tôi không nói làm gì / có thể châm chước được, nhưng đối với B thì hoàn toàn không thể / không thể chấp nhận nổi'. Vế sau thường đi kèm với các từ ngữ biểu thị sự phủ định, chê trách, ngạc nhiên hoặc khó khăn cùng cực (như 全然わからない, 走れません, 考えたこともない).",
+      "formation": "Danh từ 1 + ならいざ知らず ＋ Danh từ 2 / Vế câu [Đánh giá / Phủ định]",
+      "examples": [
+        {
+          "translation": "Nếu là môn toán thì còn đỡ, chứ vật lý thì tôi hoàn toàn chẳng hiểu gì cả."
+        },
+        {
+          "translation": "Nếu là 5 cây số thì may ra, chứ 10 cây số thì tôi chịu không thể chạy nổi."
+        },
+        {
+          "translation": "Tiếng Nhật thì không nói làm gì, chứ tiếng Trung thì tôi hoàn toàn không nói được."
+        },
+        {
+          "translation": "Nếu là nước mát thì không sao, chứ bơi trong nước nóng thì tôi chưa từng nghĩ tới bao giờ."
+        }
+      ]
+    },
+    "ja_Noun_51": {
+      "title": "Danh từ + ならでは (nara dewa)",
+      "shortExplanation": "Diễn tả nét đặc sắc, độc đáo chỉ có ở danh từ đó mà nơi khác, người khác không có được; 'chỉ có ở...', 'chỉ riêng... mới có'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + ならでは' dùng để ca ngợi hoặc nhấn mạnh một phẩm chất, nét đặc trưng, lợi thế tuyệt vời mà chỉ riêng người đó, nơi đó hay vật đó mới sở hữu, không ai khác hay nơi nào khác có thể bắt chước được ('chỉ có ở...', 'chỉ riêng... mới có'). Thường xuất hiện dưới dạng bổ nghĩa cho danh từ 'Danh từ 1 + ならではの + Danh từ 2' (ví dụ: 日本ならではの文化 - nét văn hóa chỉ có ở Nhật Bản) hoặc vị ngữ ở cuối câu '～ならではだ / ～ならではのものだ'.",
+      "formation": "Danh từ + ならではの + Danh từ / Danh từ + ならではだ",
+      "examples": [
+        {
+          "translation": "Đây đúng là phong cảnh chỉ có ở Nhật Bản nhỉ."
+        },
+        {
+          "translation": "Cá tươi sống là đặc sản chỉ riêng thị trấn này mới có."
+        },
+        {
+          "translation": "Kỹ thuật của anh ấy là tài nghệ độc nhất vô nhị chỉ riêng anh ấy mới có."
+        },
+        {
+          "translation": "Món đồ thủ công tinh tế này là tác phẩm mà chỉ riêng cô ấy mới có thể làm ra."
+        }
+      ]
+    },
+    "ja_Noun_52": {
+      "title": "Danh từ 1 + なり + Danh từ 2 + なり (nari ~ nari)",
+      "shortExplanation": "Đưa ra hai hoặc nhiều ví dụ tương đương để gợi ý, lựa chọn; 'chẳng hạn như A hoặc B', 'hoặc là A hoặc là B'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + なり + Danh từ 2 + なり' dùng để nêu ra hai ví dụ tiêu biểu thuộc cùng một nhóm chủng loại nhằm đưa ra gợi ý, đề xuất hoặc yêu cầu đối phương lựa chọn bất kỳ phương án nào phù hợp ('chẳng hạn như A hoặc B', 'dù là A hay B gì cũng được'). Vế sau thường là câu đưa ra lời khuyên, đề nghị, sai khiến hoặc chỉ thị (như ～てください, ～たらどうですか).",
+      "formation": "Danh từ 1 + なり + Danh từ 2 + なり (thường đi với trợ từ hoặc vị ngữ)",
+      "examples": [
+        {
+          "translation": "Bạn có sở thích nào đó, chẳng hạn như xem phim hay nghe nhạc không?"
+        },
+        {
+          "translation": "Xin hãy cho tôi chút gì đó để uống, trà hay cà phê đều được."
+        },
+        {
+          "translation": "Hãy ăn chút gì đi, bánh mì hay cơm nắm chẳng hạn."
+        },
+        {
+          "translation": "Hãy đi taxi hoặc xe buýt tới đây nhé."
+        }
+      ]
+    },
+    "ja_Noun_53": {
+      "title": "Danh từ + なりとも (nari tomo)",
+      "shortExplanation": "Biểu thị mức độ tối thiểu dù là nhỏ bé nhất; 'dù chỉ một chút...', 'ít nhất thì cũng...'. Mang sắc thái trang trọng, khiêm nhường.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + なりとも' đi kèm với các từ chỉ số lượng ít, thời gian ngắn hoặc đơn vị tối thiểu (như 一目, 一言, 一時間, 少し) để diễn đạt mong muốn, nguyện vọng hay yêu cầu đạt được mức tối thiểu đó ('dù chỉ một chút...', 'cho dẫu chỉ là...'). Đây là cách nói trang trọng, có tính chất nhún nhường, thường kết hợp với các đuôi câu biểu thị nguyện vọng, mệnh lệnh nhẹ nhàng hoặc nghĩa vụ (như ～たい, ～てほしい, ～べきだ).",
+      "formation": "Danh từ (thường là từ chỉ số lượng tối thiểu) + なりとも",
+      "examples": [
+        {
+          "translation": "Vì thời gian có hạn, nên ít nhất bạn cũng nên luyện tập dù chỉ một tiếng đồng hồ."
+        },
+        {
+          "translation": "Tôi muốn nghe từ anh ấy dù chỉ là một lời xin lỗi."
+        },
+        {
+          "translation": "Dự án này cần thêm thành viên, dù chỉ một người thôi cũng được."
+        },
+        {
+          "translation": "Tôi muốn bày tỏ cùng bạn dù chỉ một lời cảm ơn chân thành."
+        }
+      ]
+    },
+    "ja_Noun_54": {
+      "title": "Danh từ + に + Danh từ + を重ねて (ni ~ o kasanete)",
+      "shortExplanation": "Diễn tả hành động, trạng thái lặp đi lặp lại dồn dập; 'hết lần này đến lần khác', 'chồng chất... lên...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + に + Danh từ + を重ねて' (sử dụng cùng một danh từ ở cả hai vị trí, xuất phát từ động từ 重ねる - chồng chất, tích lũy) dùng để nhấn mạnh sự lặp lại liên tiếp nhiều lần của cùng một hành động, trạng thái hoặc sự việc ('hết... này đến... khác', 'chồng chất... lên...'). Thường đi kèm với các danh từ chỉ sự nỗ lực (như 苦労, 努力, 検討) hoặc những chuyện gian nan, thất bại liên tiếp (như 失敗, 失望, 困難, 問題) để dẫn tới một kết cục rõ rệt ở vế sau.",
+      "formation": "Danh từ (lặp lại) + に + Danh từ + を重ねて (hoặc を重ねる / を重ねた結果)",
+      "examples": [
+        {
+          "translation": "Thất bại hết lần này đến lần khác, cuối cùng cô ấy đã nghỉ việc ở công ty."
+        },
+        {
+          "translation": "Công việc cứ dồn dập chồng chất lên nhau khiến anh ấy kiệt sức hoàn toàn."
+        },
+        {
+          "translation": "Thi trượt, anh ấy lại chìm trong hết thất vọng này đến nỗi thất vọng khác."
+        },
+        {
+          "translation": "Gây ra hết rắc rối này đến rắc rối khác, cuối cùng cậu ta đã bị đuổi học."
+        }
+      ]
+    },
+    "ja_Noun_55": {
+      "title": "Danh từ + にあっては (ni atte wa)",
+      "shortExplanation": "Chỉ một hoàn cảnh, thời điểm hoặc tình huống đặc biệt; 'ở trong hoàn cảnh...', 'trong bối cảnh...'. Mang sắc thái văn viết trang trọng.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + にあっては' (xuất phát từ động từ あたる / ある, dạng trang trọng của においては) được dùng sau danh từ chỉ một thời kỳ, tình thế, cương vị hoặc hoàn cảnh đặc biệt (thường là những thời kỳ biến động, gian khó, khẩn cấp như chiến tranh, khủng hoảng kinh tế, cải cách). Mẫu câu này có nghĩa là 'trong bối cảnh...', 'ở vào hoàn cảnh...', 'đứng trước tình huống...', nhấn mạnh bối cảnh chi phối hành động hoặc trạng thái được miêu tả ở vế sau. Mang sắc thái văn phong văn viết, trang trọng và nghiêm túc.",
+      "formation": "Danh từ (thời kỳ / tình huống / hoàn cảnh) + にあっては",
+      "examples": [
+        {
+          "translation": "Trong thời chiến, tất cả mọi người đều phải đối mặt với vô vàn khó khăn."
+        },
+        {
+          "translation": "Trước cuộc khủng hoảng kinh tế, rất nhiều doanh nghiệp đang đứng bên bờ vực phá sản."
+        },
+        {
+          "translation": "Trong bối cảnh suy thoái kinh tế, bất kỳ doanh nghiệp nào cũng buộc phải cắt giảm chi phí."
+        },
+        {
+          "translation": "Vào thời kỳ cải cách, việc trân trọng những ý tưởng mới là điều vô cùng cần thiết."
+        }
+      ]
+    },
+    "ja_Noun_56": {
+      "title": "Danh từ 1 + にあるまじき + Danh từ 2 (ni aru majiki)",
+      "shortExplanation": "Chỉ hành vi, thái độ hoàn toàn không thể chấp nhận được so với thân phận, cương vị hay chuẩn mực đạo đức; 'không thể chấp nhận được ở một...'. Mang tính văn viết, phê phán gay gắt.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + にあるまじき + Danh từ 2' là một cách diễn đạt mang tính văn viết cổ điển rất trang trọng, dùng để phê phán gay gắt một hành vi, lời nói hay thái độ (Danh từ 2, như 行為, 言動, 振る舞い, 態度) là hoàn toàn sai trái, không thể tha thứ và không được phép có ở một người mang thân phận, nghề nghiệp hoặc tư cách đạo đức đó (Danh từ 1, như 医者, 教師, 政治家, 人間, 社会人). 'あるまじき' là thể liên thể cổ của trợ động từ phủ định 'まじ' (tuyệt đối không nên / không được có).",
+      "formation": "Danh từ 1 (thân phận / chức vị / tư cách) + にあるまじき + Danh từ 2 (hành vi / lời nói / thái độ)",
+      "examples": [
+        {
+          "translation": "Anh ta đã có những lời nói và hành động không thể chấp nhận được ở một người giáo viên."
+        },
+        {
+          "translation": "Đây là một hành vi vô nhân đạo, không thể dung thứ ở một con người."
+        },
+        {
+          "translation": "Cô ấy đã có cách cư xử không xứng đáng với cương vị một giám đốc."
+        },
+        {
+          "translation": "Đó là hành động không thể chấp nhận được đối với một người đã đi làm ngoài xã hội."
+        }
+      ]
+    },
+    "ja_Noun_57": {
+      "title": "Danh từ + にして (ni shite)",
+      "shortExplanation": "Biểu thị sự ngạc nhiên trước một sự việc bất ngờ xảy ra trái với năng lực, tư cách; 'ngay cả người như... mà cũng...', 'dẫu là... mà lại...'. Mang tính văn viết trang trọng.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + にして' trong ngữ cảnh này mang nghĩa tương tự như '～であって／～という高いレベル・立場の人でさえ', dùng để diễn tả sự kinh ngạc, khó tin của người nói khi một sự việc bất thường lại xảy ra đối với chính đối tượng vốn có trình độ cao, giàu kinh nghiệm hoặc điều kiện vượt trội đó ('ngay cả một người như... mà cũng...', 'dẫu là... thế mà lại...'). Thường đi sau các danh từ chỉ người có chuyên môn cao, thành tích xuất sắc, hoặc danh nhân, vế sau là sự việc thất bại hoặc thiếu sót nằm ngoài dự liệu.",
+      "formation": "Danh từ (chỉ người có trình độ / năng lực cao) + にして",
+      "examples": [
+        {
+          "translation": "Ngay cả một bác sĩ như anh ấy mà lại không có kiến thức cơ bản đó thì thật không thể tin nổi."
+        },
+        {
+          "translation": "Dẫu là một tài xế dày dạn kinh nghiệm, anh ấy vẫn để xảy ra tai nạn."
+        },
+        {
+          "translation": "Dù là một học sinh có thành tích xuất sắc, cậu ấy cũng không thể giải được bài toán đó."
+        },
+        {
+          "translation": "Dẫu là một người chăm học như anh ấy mà cũng không thể hiểu nổi vấn đề đó."
+        }
+      ]
+    },
+    "ja_Noun_58": {
+      "title": "Danh từ + にして初めて (ni shite hajimete)",
+      "shortExplanation": "Diễn tả ý 'chỉ khi đạt đến độ tuổi, giai đoạn hay cương vị đó thì mới lần đầu tiên thấm thía/trải nghiệm điều gì'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + にして初めて' dùng sau danh từ chỉ độ tuổi, giai đoạn cuộc đời hoặc cương vị xã hội (như 40歳, 大人, 親, 社長) để diễn tả rằng phải đợi đến tận khi bước sang giai đoạn đó hoặc đạt đến vị trí ấy thì người nói mới lần đầu tiên trải nghiệm, nhận thức sâu sắc hay thấu hiểu được một điều gì đó ('phải đến khi làm... mới lần đầu tiên...', 'chỉ khi thành... thì mới...'). Nhấn mạnh quá trình thời gian kéo dài hoặc bước chuyển lớn về mặt nhận thức.",
+      "formation": "Danh từ (độ tuổi / cương vị / thời điểm) + にして初めて",
+      "examples": [
+        {
+          "translation": "Phải đến khi trở thành người lớn, tôi mới lần đầu tiên thấu hiểu được những nỗi vất vả của cha mẹ."
+        },
+        {
+          "translation": "Phải đến năm 40 tuổi, anh ấy mới lần đầu tiên được trải nghiệm đi du lịch nước ngoài."
+        },
+        {
+          "translation": "Chỉ khi làm cha mẹ, cô ấy mới lần đầu tiên thấu hiểu được sự gian nan của việc nuôi dạy con cái."
+        },
+        {
+          "translation": "Phải đến khi lên làm giám đốc, ông ấy mới lần đầu tiên cảm nhận sâu sắc trọng trách to lớn của toàn bộ công ty."
+        }
+      ]
+    },
+    "ja_Noun_59": {
+      "title": "Danh từ + にすら (ni sura)",
+      "shortExplanation": "Biểu thị ý 'ngay cả... cũng không/chẳng...', là dạng kết hợp giữa trợ từ に và trợ từ nhấn mạnh cực đoan すら. Mang tính văn viết, trang trọng hơn 'にさえ'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + にすら' là sự kết hợp giữa trợ từ 'に' (chỉ đối tượng tiếp nhận, địa điểm, sự việc...) và trợ từ cực đoan 'すら' (ngay cả, đến cả). Mẫu câu này dùng để đưa ra một ví dụ cực đoan, điển hình nhất để ngụ ý rằng 'ngay cả đối tượng đó mà còn (không) như vậy thì những đối tượng khác lại càng không thể' ('ngay cả... cũng không...', 'đến cả... còn chẳng...'). Thường đi kèm với câu phủ định mang sắc thái bất ngờ, thất vọng hoặc nhấn mạnh tính nghiêm trọng. Mang tính văn viết và trang trọng hơn so với '～にさえ'.",
+      "formation": "Danh từ + にすら",
+      "examples": [
+        {
+          "translation": "Ngay cả anh ấy mà cũng không thể giải nổi bài toán đó."
+        },
+        {
+          "translation": "Đến cả kỳ kiểm tra mà cô ấy còn chẳng đỗ nổi."
+        },
+        {
+          "translation": "Chú chó này đến cả tên của chính mình mà cũng chẳng buồn phản ứng."
+        },
+        {
+          "translation": "Đến cả với anh ấy mà tôi còn chẳng có chút thời gian rảnh nào để trò chuyện."
+        }
+      ]
+    },
+    "ja_Noun_60": {
+      "title": "Danh từ 1 + にとどまらず + Danh từ 2 + も (ni todomarazu ~ mo)",
+      "shortExplanation": "Diễn tả ý không chỉ giới hạn dừng lại ở phạm vi đó mà còn lan rộng sang phạm vi lớn hơn; 'không chỉ dừng lại ở... mà còn...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + にとどまらず + Danh từ 2 + も' (xuất phát từ động từ とどまる - dừng lại, kết hợp với thể phủ định ず) dùng để diễn đạt rằng một hiện tượng, ảnh hưởng hoặc phạm vi hoạt động không chỉ dừng lại hay bị bó hẹp trong phạm vi Danh từ 1, mà còn lan rộng, mở rộng sang cả Danh từ 2 có quy mô lớn hơn hoặc lĩnh vực khác ('không chỉ dừng lại ở... mà còn...'). Mang sắc thái trang trọng, khách quan, thường dùng trong văn viết, báo chí và thuyết trình.",
+      "formation": "Danh từ 1 + にとどまらず + Danh từ 2 + も",
+      "examples": [
+        {
+          "translation": "Ứng dụng này không chỉ dừng lại ở tiếng Nhật mà còn hỗ trợ cả các ngôn ngữ khác nữa."
+        },
+        {
+          "translation": "Anh ấy không chỉ giới hạn ở âm nhạc mà còn hứng thú với cả lĩnh vực sản xuất phim ảnh."
+        },
+        {
+          "translation": "Tầm ảnh hưởng của ông ấy không chỉ dừng lại ở gia đình mà còn lan tỏa ra toàn bộ khu vực."
+        },
+        {
+          "translation": "Tài năng của cô ấy không chỉ giới hạn ở hội họa mà còn vươn rộng sang cả văn học."
+        }
+      ]
+    },
+    "ja_Noun_61": {
+      "title": "Danh từ 1 + にひきかえ + Danh từ 2 + は (ni hikikae ~ wa)",
+      "shortExplanation": "Đối chiếu tương phản rõ rệt giữa hai đối tượng; 'trái ngược với...', 'khác hẳn với...'. Mang sắc thái so sánh mạnh mẽ.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + にひきかえ + Danh từ 2 + は' (hoặc dạng mệnh đề là 'Thể thông thường + のにひきかえ') dùng để đối chiếu hai sự vật, hiện tượng hoặc con người có tính chất hoàn toàn trái ngược nhau, nhằm làm nổi bật sự khác biệt cực độ giữa chúng ('trái ngược hẳn với A thì B lại...', 'khác một trời một vực so với A thì B...'). Người nói thường lồng ghép cảm xúc chủ quan như khen ngợi một bên và chê trách bên kia, hoặc bày tỏ sự ngạc nhiên trước sự chênh lệch lớn.",
+      "formation": "Danh từ 1 + にひきかえ + Danh từ 2 + は",
+      "examples": [
+        {
+          "translation": "Trái ngược với sự ân cần tốt bụng của anh ấy, cô ta lại vô cùng vô cảm."
+        },
+        {
+          "translation": "Khác hẳn với mùa hè, mùa đông lại lạnh giá và phủ đầy tuyết trắng."
+        },
+        {
+          "translation": "Khác với các nhà ga ở Nhật Bản, các nhà ga ở Mỹ lại vô cùng rộng lớn."
+        },
+        {
+          "translation": "Khác hẳn với ngày xưa, thời hiện đại công nghệ đã tiến bộ vượt bậc."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Noun_47": {
+      "title": "名词 + なくして～はない (nakushite ~ wa nai)",
+      "shortExplanation": "表示“如果没有……就无法……”，强调某事物是必不可少的先决条件。",
+      "longExplanation": "句型“名词 + なくして～はない”（或 なくしては～ない）是较为庄重的书面语表达，表示“如果缺少了前项的事物，后项就根本不可能实现或成立”，强调前项是不可或缺的前提条件或根本基础。常与“努力”、“愛（爱）”、“信頼（信任）”、“協力（协作）”等表示精神品质、抽象价值或核心要素的名词连用。后半句必须接否定意义的表达，如“～はない”、“～はあり得ない”、“～はできない”。",
+      "formation": "名词 + なくして(は) + ［否定表达：～はない / ～できない］",
+      "examples": [
+        {
+          "translation": "没有努力就没有成功。"
+        },
+        {
+          "translation": "没有时间就做不出完美的作品。"
+        },
+        {
+          "translation": "没有经历就没有成长。"
+        },
+        {
+          "translation": "没有领导力，团队就不可能取得成功。"
+        }
+      ]
+    },
+    "ja_Noun_48": {
+      "title": "名词 + なしでは～ない (nashi de wa ~ nai)",
+      "shortExplanation": "表示“要是没有……就无法……”，强调某事物是不可或缺的。",
+      "longExplanation": "句型“名词 + なしでは～ない”用于表示“如果缺少了该事物，某项行为、状态或结果便无法成立或进行”（“要是没有……就不能/无法……”）。既可用于“水”、“电脑”等具体的生活用品、客观条件，也可用于“帮助”、“友情”等抽象概念。后半句常接可能动词的否定形式或表示不可能的短语，如“～られない”、“～できない”、“～成り立たない”。",
+      "formation": "名词 + なしでは + ［否定表达：～ない / ～られない / ～成り立たない］",
+      "examples": [
+        {
+          "translation": "没有水就无法生存。"
+        },
+        {
+          "translation": "如果没有他的帮助，就无法解决这个问题。"
+        },
+        {
+          "translation": "没有电脑，现代商业就无法运转。"
+        },
+        {
+          "translation": "如果缺少了友情，人生大概会很乏味吧。"
+        }
+      ]
+    },
+    "ja_Noun_49": {
+      "title": "名词 + なしには～ない (nashi ni wa ~ nai)",
+      "shortExplanation": "表示“若无……就无法……”，比“なしでは”更具书面语色彩，强调前提的不可或缺。",
+      "longExplanation": "句型“名词 + なしには～ない”表示“如果缺乏前项的事物，后项的动作或状态就绝不可能实现”（“若没有……就无法……”）。在语义上与“～なしでは～ない”基本相同，但“なしには”更具文雅、庄重的书面语色彩，强调该前提是达成目标不可替代的基础。后半句必须接动词的否定形式（尤其是可能态否定，如“～できない”、“～られない”）。",
+      "formation": "名词 + なしには + ［动词否定形：～ない / ～られない］",
+      "examples": [
+        {
+          "translation": "没有钱就无法生活。"
+        },
+        {
+          "translation": "没有爱就无法抚育孩子。"
+        },
+        {
+          "translation": "没有他，这项企划就无法推进。"
+        },
+        {
+          "translation": "没有水就无法生存下去。"
+        }
+      ]
+    },
+    "ja_Noun_50": {
+      "title": "名词 + ならいざ知らず (nara iza shirazu)",
+      "shortExplanation": "表示“如果是……倒还罢了，但……”，对比两者并对后者表示否定、无奈或不满。",
+      "longExplanation": "句型“名词1 + ならいざ知らず、名词2/句子…”用于通过极端对比来表达说话人的惊讶、不满、批评或无可奈何。其含义为“如果是前项的话尚且可以理解或原谅（暂且不论），但若是后项的话就完全不可能或不可容忍了”（“若是……还情有可原，但……”）。后半句通常带有极度的否定、难以办到或难以置信的评价。",
+      "formation": "名词1 + ならいざ知らず ＋ 名词2 / 分句［评价/否定］",
+      "examples": [
+        {
+          "translation": "数学倒还罢了，物理我可是一点儿都不懂。"
+        },
+        {
+          "translation": "跑5公里倒还可以，10公里我绝对跑不下来。"
+        },
+        {
+          "translation": "要是日语倒还好说，中文我根本不会讲。"
+        },
+        {
+          "translation": "冷水倒也罢了，在热水里游泳我想都没想过。"
+        }
+      ]
+    },
+    "ja_Noun_51": {
+      "title": "名词 + ならでは (nara dewa)",
+      "shortExplanation": "表示“只有……才有的”、“特有的”，强调某人或某地独具的特色与魅力。",
+      "longExplanation": "句型“名词 + ならでは”用于强调某种优点、特色、风味或魅力是只有该人、该地或该事物才独有的，其他任何地方或他人均无法企及（“只有……才有的”、“……特有的”）。多带有强烈的赞赏与积极评价色彩。常以作定语修饰后项名词的形式“名词1 + ならではの + 名词2”（如“日本ならではの文化”）出现，或作为谓语结句“～ならではだ / ならではのものだ”。",
+      "formation": "名词 + ならではの + 名词 / 名词 + ならではだ",
+      "examples": [
+        {
+          "translation": "这真是只有在日本才能见到的风景呢。"
+        },
+        {
+          "translation": "新鲜的鱼是只有在这个小镇才能品尝到的特产。"
+        },
+        {
+          "translation": "他的精湛技术是独属于他一人的绝技。"
+        },
+        {
+          "translation": "这件手工艺精品，只有她才能制作得出来。"
+        }
+      ]
+    },
+    "ja_Noun_52": {
+      "title": "名词1 + なり + 名词2 + なり (nari ~ nari)",
+      "shortExplanation": "列举同类事物作为备选建议；“比如……或者……之类”、“无论……还是……”。",
+      "longExplanation": "句型“名词1 + なり + 名词2 + なり”用于从同类事物中列举出两项代表性事例作为备选方案供对方挑选，表示“无论选择A还是选择B都可以，任选其一均可”（“比如A或者B之类”、“……也好，……也好”）。后半句通常接提议、劝诱、请求或建议对方采取行动的表达，如“～てください”、“～たらどうか”。",
+      "formation": "名词1 + なり + 名词2 + なり（后常接助词或动词）",
+      "examples": [
+        {
+          "translation": "你有什么兴趣爱好吗，比如电影或者音乐之类的？"
+        },
+        {
+          "translation": "请给我拿点喝的，红茶或者咖啡什么的都行。"
+        },
+        {
+          "translation": "吃点东西吧，面包或者饭团什么的。"
+        },
+        {
+          "translation": "请坐出租车或者搭公交车过来吧。"
+        }
+      ]
+    },
+    "ja_Noun_53": {
+      "title": "名词 + なりとも (nari tomo)",
+      "shortExplanation": "表示哪怕数量极少或程度极轻的最低要求；“哪怕只是……也好”、“哪怕稍微……”。",
+      "longExplanation": "句型“名词 + なりとも”常接在表示极少数量、极短时间或极小程度的词语（如“一目”、“一言”、“少し”、“わずか”）之后，表示“即使达不到最高期望，哪怕只有这一点点最低限度也好”（“哪怕只是一点点……”、“哪怕……也好”）。语气庄重、客气而委婉，常与表达说话人愿望、希望或建议的句尾（如“～たい”、“～てほしい”、“～べきだ”）搭配使用。",
+      "formation": "名词（多为表示极小数量的词） + なりとも",
+      "examples": [
+        {
+          "translation": "因为时间有限，哪怕只练习一个小时也好，也应该抓紧练一练。"
+        },
+        {
+          "translation": "哪怕只是一句道歉的话，我也希望能从他嘴里听到。"
+        },
+        {
+          "translation": "这个项目哪怕能增加哪怕一名成员也好，非常需要人手。"
+        },
+        {
+          "translation": "哪怕只是一句话，我也想向您表达我的感谢。"
+        }
+      ]
+    },
+    "ja_Noun_54": {
+      "title": "名词 + に + 名词 + を重ねて (ni ~ o kasanete)",
+      "shortExplanation": "表示同一行为或事态接连不断地重复发生；“屡屡……”、“一再……”、“接连……”。",
+      "longExplanation": "句型“名词 + に + 名词 + を重ねて”（前后使用同一个名词，源于动词“重ねる”，意为层叠、重叠）用于强调某种动作、经历或事态的大量重复与累积（“接连不断地……”、“一次又一次地……”）。既可用于表达坚持不懈的努力或探讨（如“努力に努力を重ねて”），也常用于描述接二连三的挫折、失败或麻烦（如“失敗に失敗を重ねて”），后文多引出由此导致的最终结果。",
+      "formation": "名词（同词重复） + に + 名词 + を重ねて（或 を重ねる / を重ねた結果）",
+      "examples": [
+        {
+          "translation": "经历了一次又一次的失败，她最终还是辞职离开了公司。"
+        },
+        {
+          "translation": "工作一项接着一项压过来，他已经精疲力竭了。"
+        },
+        {
+          "translation": "考试没及格，他陷入了一次又一次的失望之中。"
+        },
+        {
+          "translation": "他接二连三地惹出各种麻烦，最终被学校勒令退学了。"
+        }
+      ]
+    },
+    "ja_Noun_55": {
+      "title": "名词 + にあっては (ni atte wa)",
+      "shortExplanation": "表示处于某种特殊的境地、时期或状况之中；“处于……之中”、“在……的情况下”。硬朗的书面语。",
+      "longExplanation": "句型“名词 + にあっては”（相当于庄重的“～においては”）接在表示特殊时期、非常状况、特定境遇或立场的名词之后，表示“置身于这种特殊的环境或局势之中”（“处于……之下”、“在……时期”）。常与“戦争時（战争时期）”、“危機（危机）”、“不況（萧条）”、“非常時（紧急关头）”等具有严峻性或转折性的背景词搭配使用，强调该背景对后项事件或对策的决定性影响。多用于书面语或政论性文章。",
+      "formation": "名词（时期/局势/境况） + にあっては",
+      "examples": [
+        {
+          "translation": "在战争时期，所有人都面临着重重困难。"
+        },
+        {
+          "translation": "在经济危机之中，许多企业都濒临破产的边缘。"
+        },
+        {
+          "translation": "在萧条萧索的大环境下，任何企业都不得不削减成本。"
+        },
+        {
+          "translation": "在改革时期，必须重视并珍惜新的创意。"
+        }
+      ]
+    },
+    "ja_Noun_56": {
+      "title": "名词1 + にあるまじき + 名词2 (ni aru majiki)",
+      "shortExplanation": "表示出于某种身份、职业或作为人不该有的恶劣行为；“不应有的……”、“决不该有的……”。",
+      "longExplanation": "句型“名词1 + にあるまじき + 名词2”是一种庄重的文语表达，用于对某人的言行举止提出极其强烈的道义谴责。其含义为“从名词1的职业地位、社会身份或作为人的道德底线来看，名词2是绝不应该出现或绝不可容忍的恶劣言行”（“决不该有的……”、“不配为人/教师的……”）。名词1多为具有道德约束力的身份（如“教師”、“医者”、“人間”、“社会人”），名词2多为“言動”、“行為”、“振る舞い”等表示行为的词汇。",
+      "formation": "名词1（身份/职业/地位） + にあるまじき + 名词2（言行/行为/态度）",
+      "examples": [
+        {
+          "translation": "他做出了绝不应该是一个教师所能有的言行。"
+        },
+        {
+          "translation": "这是绝不应有人性的人类所做出的残暴行径。"
+        },
+        {
+          "translation": "她表现出了与社长身份极不相符、绝不应有的失态举止。"
+        },
+        {
+          "translation": "那是作为一个社会人绝不该有的行为。"
+        }
+      ]
+    },
+    "ja_Noun_57": {
+      "title": "名词 + にして (ni shite)",
+      "shortExplanation": "表示“哪怕是像……这样高水准的人也……”，对出乎意料的事态表示惊讶。庄重书面语。",
+      "longExplanation": "句型“名词 + にして”（在此用法中相当于“〜であって／〜ほどの高いレベルの人でさえ”）接在具备高超能力、丰富经验或优越条件的身份名词之后，表示“即便是像……这样优秀/专业的人，竟然也发生了令人意外的情况”，以此表达说话人极度的惊讶、难以置信或叹息（“哪怕是……也……”、“即便贵为……却……”）。后半句往往跟与该身份能力不相符的失败、失误或困惑。",
+      "formation": "名词（具备高水准能力或地位的人） + にして",
+      "examples": [
+        {
+          "translation": "他身为主治医师，竟然连这种基础知识都不具备，真令人难以置信。"
+        },
+        {
+          "translation": "哪怕是像他这样经验丰富的老司机，也还是发生了交通事故。"
+        },
+        {
+          "translation": "哪怕是成绩如此优异的学生，也没能解出那道难题。"
+        },
+        {
+          "translation": "哪怕是像他这样勤奋好学的人，也没能理解那个问题。"
+        }
+      ]
+    },
+    "ja_Noun_58": {
+      "title": "名词 + にして初めて (ni shite hajimete)",
+      "shortExplanation": "表示“直到处于某种年龄、阶段或身份时，才第一次体会/领悟到”；“直到……才初次……”。",
+      "longExplanation": "句型“名词 + にして初めて”接在表示年龄、人生阶段或特定职位身份的名词（如“40歳”、“大人”、“親”、“社長”）之后，表示经过漫长的岁月，直到进入这一阶段或登上这一地位之后，才初次有了某种切身体验或大彻大悟（“直到……才初次……”、“到了……才第一次……”）。强调只有达到该特定状态，才促成了后项深刻领悟或全新经历的产生。",
+      "formation": "名词（年龄/地位/人生阶段） + にして初めて",
+      "examples": [
+        {
+          "translation": "直到长大成人，我才第一次真正体会到父母的辛劳。"
+        },
+        {
+          "translation": "他直到40岁时，才初次体验了海外旅行。"
+        },
+        {
+          "translation": "只有当了父母之后，她才第一次理解了抚养孩子的艰难不易。"
+        },
+        {
+          "translation": "直到当上社长，他才初次痛感到整家公司沉甸甸的重责。"
+        }
+      ]
+    },
+    "ja_Noun_59": {
+      "title": "名词 + にすら (ni sura)",
+      "shortExplanation": "表示“甚至连……都（不）”，由格助词“に”与表示极端事例的提示助词“すら”复合而成。比“にさえ”更为文雅。",
+      "longExplanation": "句型“名词 + にすら”是由表示对象、场所或事态的格助词“に”与提示极端事例的副助词“すら”（相当于“さえ”）组合而成的书面语表达。通过列举最极端、最理所当然的一项，以此反衬其他更不用提（“甚至连……也/都……”）。后半句多与否定形式连用，表达说话人的强烈惊讶、失望、意外或叹息。相比于口语中常用的“～にさえ”，“～にすら”显得更典雅、更具文学色彩。",
+      "formation": "名词 + にすら",
+      "examples": [
+        {
+          "translation": "甚至连他都没能解出那道题。"
+        },
+        {
+          "translation": "她甚至连测试都没能及格。"
+        },
+        {
+          "translation": "这只狗甚至对自己的名字都毫无反应。"
+        },
+        {
+          "translation": "我甚至忙得连跟他说句话的余裕都没有。"
+        }
+      ]
+    },
+    "ja_Noun_60": {
+      "title": "名词1 + にとどまらず + 名词2 + も (ni todomarazu ~ mo)",
+      "shortExplanation": "表示不仅局限于某一范围，更进一步扩展到其他领域；“不仅止于……而且……”。",
+      "longExplanation": "句型“名词1 + にとどまらず + 名词2 + も”源于动词“とどまる（止步、停留）”的否定连用形“ず”，表示某种影响、活动、范围或势头不仅停留在前项这一局部范围之内，更进一步波及或扩展到后项更大的范围或其它领域（“不仅限于……连……也……”、“不止于……甚至……”）。语气严谨庄重，多用于报刊社论、新闻报道及正式论述文。",
+      "formation": "名词1 + にとどまらず + 名词2 + も",
+      "examples": [
+        {
+          "translation": "这款应用程序不仅支持日语，还支持其他多种语言。"
+        },
+        {
+          "translation": "他的兴趣不仅局限于音乐，对电影制作也同样充满热情。"
+        },
+        {
+          "translation": "他的影响力不仅局限在家庭内部，更波及到了整个地区。"
+        },
+        {
+          "translation": "她的才华不仅体现在绘画上，更延伸到了文学领域。"
+        }
+      ]
+    },
+    "ja_Noun_61": {
+      "title": "名词1 + にひきかえ + 名词2 + は (ni hikikae ~ wa)",
+      "shortExplanation": "将两事物进行鲜明对比；“与……相比迥然不同的是……”、“与……形成鲜明对比的是……”。",
+      "longExplanation": "句型“名词1 + にひきかえ + 名词2 + は”源于动词“引き換える（兑换、对照）”，用于将两个事物、人物或状态进行强烈对比，突出两者之间天差地别的悬殊反差（“与……相反”、“与……形成鲜明对照的是……”）。前后项往往在性质上形成极端的对立（如亲切与冷漠、昔日与现代），并往往带有说话人强烈的主观感情色彩，如对其中一方的赞美、同情或对另一方的批评、感叹。",
+      "formation": "名词1 + にひきかえ + 名词2 + は",
+      "examples": [
+        {
+          "translation": "与他的热情体贴形成鲜明对比的是，她显得冷漠无情。"
+        },
+        {
+          "translation": "与夏天截然相反，冬天则被冰雪覆盖，寒冷刺骨。"
+        },
+        {
+          "translation": "与日本的车站不同，美国的车站显得格外宽敞辽阔。"
+        },
+        {
+          "translation": "与过去大不相同的是，现代科技取得了日新月异的进步。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Noun_47": {
+      "title": "명사 + なくして～はない (nakushite ~ wa nai)",
+      "shortExplanation": "'~ 없이는 ~도 없다'라는 뜻으로, 어떤 일이 이루어지기 위해 반드시 필요한 절대적 조건을 나타냅니다.",
+      "longExplanation": "문형 '명사 + なくして～はない'(또는 なくしては～ない)는 격식 있는 문어체 표현으로, 앞의 명사가 없이는 뒤의 일이나 결과가 결코 존재하거나 성립할 수 없음을 강조합니다('~ 없이는 ~도 없다', '~이 없이는 ~할 수 없다'). 주로 '노력(努力)', '사랑(愛)', '신뢰(信頼)', '협력(協力)' 등 추상적인 가치나 필수불가결한 조건을 나타내는 명사와 결합하며, 뒷문장에는 반드시 부정 표현('～はない', '～はあり得ない', '～はできない')이 옵니다.",
+      "formation": "명사 + なくして(は) + ［부정문: ～はない / ～できない］",
+      "examples": [
+        {
+          "translation": "노력 없이는 성공도 없다."
+        },
+        {
+          "translation": "시간 없이는 완벽한 작품을 만들 수 없다."
+        },
+        {
+          "translation": "경험 없이는 성장도 없다."
+        },
+        {
+          "translation": "리더십 없이는 그룹의 성공도 없다."
+        }
+      ]
+    },
+    "ja_Noun_48": {
+      "title": "명사 + なしでは～ない (nashi de wa ~ nai)",
+      "shortExplanation": "'~ 없이는 ~할 수 없다'라는 뜻으로, 어떤 일을 하거나 상태를 유지하는 데 필수적임을 나타냅니다.",
+      "longExplanation": "문형 '명사 + なしでは～ない'는 '만약 그 명사가 없다면 어떤 행위나 상태가 성립할 수 없다'는 의미를 나타냅니다('~ 없이는 ~할 수 없다', '~이/가 없으면 ~하지 못한다'). 물이나 컴퓨터 같은 구체적인 사물부터 도움, 우정 같은 추상적인 개념에 이르기까지 폭넓게 쓰이며, 뒷문장에는 주로 가능동사의 부정형이나 불가능을 나타내는 표현('～られない', '～できない', '～成り立たない')이 연결됩니다.",
+      "formation": "명사 + なしでは + ［부정문: ～ない / ～られない / ～成り立たない］",
+      "examples": [
+        {
+          "translation": "물 없이는 살 수 없다."
+        },
+        {
+          "translation": "그의 도움이 없이는 이 문제를 해결할 수 없다."
+        },
+        {
+          "translation": "컴퓨터 없이는 현대 비즈니스가 성립할 수 없다."
+        },
+        {
+          "translation": "우정 없이는 인생이 지루할 것이다."
+        }
+      ]
+    },
+    "ja_Noun_49": {
+      "title": "명사 + なしには～ない (nashi ni wa ~ nai)",
+      "shortExplanation": "'~ 없이는 ~할 수 없다'라는 뜻으로, 'なしでは'보다 문어적이고 격식 있게 필수 전제 조건을 나타냅니다.",
+      "longExplanation": "문형 '명사 + なしには～ない'는 '그 명사가 전제되지 않는다면 뒷부분의 행위나 상태가 결코 실현될 수 없다'는 뜻을 나타냅니다('~ 없이는 ~할 수 없다', '~이/가 없이는 불가능하다'). '～なしでは～ない'와 의미상 거의 같지만, 'なしには' 쪽이 더 격식 있고 단정한 문어체 느낌을 줍니다. 뒷문장에는 주로 가능동사의 부정형 등 부정 표현('～できない', '～いけない')이 옵니다.",
+      "formation": "명사 + なしには + ［동사 부정형: ～ない / ～られない］",
+      "examples": [
+        {
+          "translation": "돈 없이는 생활할 수 없다."
+        },
+        {
+          "translation": "애정 없이는 아이를 키울 수 없다."
+        },
+        {
+          "translation": "그가 없이는 이 프로젝트를 진행할 수 없다."
+        },
+        {
+          "translation": "물 없이는 살아갈 수 없다."
+        }
+      ]
+    },
+    "ja_Noun_50": {
+      "title": "명사 + ならいざ知らず (nara iza shirazu)",
+      "shortExplanation": "'~라면 또 모를까, ~은 전혀 아니다'라는 뜻으로, 앞의 것은 양보하더라도 뒤의 것은 절대 불가능하거나 납득할 수 없음을 나타냅니다.",
+      "longExplanation": "문형 '명사 + ならいざ知らず'는 '앞의 명사라면 혹시 몰라도/어쩔 수 없다 치더라도, 뒤의 경우는 결코 있을 수 없거나 불가능하다'는 강한 대조와 부정적 평가를 나타냅니다('~라면 몰라도', '~라면 어떨지 모르겠지만'). 'いざ知らず'는 '어떨지 모르겠으나'라는 뜻의 옛 표현에서 유래했으며, 뒷문장에는 납득하기 어렵거나 불가능하다는 화자의 부정적 평가, 당혹감, 비판이 이어집니다.",
+      "formation": "명사1 + ならいざ知らず ＋ 명사2 / 문장［부정적 평가/불가능］",
+      "examples": [
+        {
+          "translation": "수학이라면 몰라도, 물리는 전혀 모르겠다."
+        },
+        {
+          "translation": "5킬로미터라면 몰라도, 10킬로미터는 도저히 달릴 수 없습니다."
+        },
+        {
+          "translation": "일본어라면 몰라도, 중국어는 전혀 할 줄 모른다."
+        },
+        {
+          "translation": "찬물이라면 몰라도, 뜨거운 물에서 수영하는 건 생각해 본 적도 없다."
+        }
+      ]
+    },
+    "ja_Noun_51": {
+      "title": "명사 + ならでは (nara dewa)",
+      "shortExplanation": "'오직 ~만이 가진', '~ 특유의'라는 뜻으로, 다른 곳이나 다른 사람에게는 없는 독특한 매력이나 특징을 찬사할 때 씁니다.",
+      "longExplanation": "문형 '명사 + ならでは'는 '오직 그 대상만이 지니고 있는 독특한 장점, 풍격, 특징'을 강조하며 칭찬이나 찬사를 보낼 때 사용됩니다('오직 ~만이 가능한', '~ 특유의'). 다른 어떤 곳이나 사람에게서는 찾아볼 수 없는 고유성을 나타내며, 주로 명사를 수식하는 형태인 '명사1 + ならではの + 명사2'나 서술형인 '명사 + ならではだ / ならではのものだ'로 쓰입니다.",
+      "formation": "명사 + ならではの + 명사 / 명사 + ならではだ",
+      "examples": [
+        {
+          "translation": "이것은 오직 일본에서만 볼 수 있는 풍경이네요."
+        },
+        {
+          "translation": "신선한 생선은 이 마을 특유의 특산품입니다."
+        },
+        {
+          "translation": "그의 기술은 오직 그만이 해낼 수 있는 독보적인 것이다."
+        },
+        {
+          "translation": "이 수제 명품은 오직 그녀만이 만들어낼 수 있는 작품입니다."
+        }
+      ]
+    },
+    "ja_Noun_52": {
+      "title": "명사1 + なり + 명사2 + なり (nari ~ nari)",
+      "shortExplanation": "'~든가 ~든가', '~이든 ~이든'의 뜻으로, 동류의 예시를 들어 선택이나 제안을 할 때 씁니다.",
+      "longExplanation": "문형 '명사1 + なり + 명사2 + なり'는 같은 종류의 대표적인 사물이나 수단을 두 개 예로 들면서 'A이든 B이든 상관없으니 어느 쪽이든 하나를 선택하라'고 권유하거나 제안할 때 사용됩니다('~든가 ~든가', '~이라든가 ~이라든가'). 뒷문장에는 주로 제안, 권유, 부탁, 희망을 나타내는 표현('～てください', '～たらどうですか')이 이어집니다.",
+      "formation": "명사1 + なり + 명사2 + なり(뒤에 조사나 서술어가 이어짐)",
+      "examples": [
+        {
+          "translation": "영화든 음악이든 무슨 취미가 있으신가요?"
+        },
+        {
+          "translation": "홍차든 커피든 마실 것 좀 주세요."
+        },
+        {
+          "translation": "빵이든 주먹밥이든 뭐라도 좀 드세요."
+        },
+        {
+          "translation": "택시든 버스든 타고 오세요."
+        }
+      ]
+    },
+    "ja_Noun_53": {
+      "title": "명사 + なりとも (nari tomo)",
+      "shortExplanation": "'적어도 ~라도', '조금이라도'라는 뜻으로, 최소한의 수량이나 정도를 제시하여 간절함이나 겸양을 나타냅니다.",
+      "longExplanation": "문형 '명사 + なりとも'는 극히 적은 수량이나 짧은 시간, 최소한의 단위를 나타내는 말(예: 一目, 一言, 少し 등) 뒤에 붙어 '최선이 아니라 할지라도 적어도 이것만큼이라도 실현되기를 바란다'는 간절한 심정이나 조심스러운 요구를 나타냅니다('적어도 ~만이라도', '~나마'). 정중하고 격식 있는 표현으로, 주로 희망, 요청, 당위성을 나타내는 표현('～たい', '～てほしい', '～べきだ')과 호응합니다.",
+      "formation": "명사(주로 최소 수량이나 정도를 나타내는 말) + なりとも",
+      "examples": [
+        {
+          "translation": "시간이 한정되어 있으니 한 시간만이라도 연습해야 한다."
+        },
+        {
+          "translation": "그에게서 단 한마디라도 사과의 말을 듣고 싶다."
+        },
+        {
+          "translation": "이 프로젝트에는 단 한 사람이라도 멤버가 필요하다."
+        },
+        {
+          "translation": "당신에게 단 한마디라도 감사의 말씀을 전하고 싶습니다."
+        }
+      ]
+    },
+    "ja_Noun_54": {
+      "title": "명사 + に + 명사 + を重ねて (ni ~ o kasanete)",
+      "shortExplanation": "'~에 ~를 거듭하여'라는 뜻으로, 같은 행위나 상태가 잇따라 되풀이되고 쌓여감을 나타냅니다.",
+      "longExplanation": "문형 '명사 + に + 명사 + を重ねて'는 동일한 명사를 반복 사용하여('重ねる'는 겹치다, 거듭하다는 뜻), 어떤 행위나 상황이 끊임없이 되풀이되거나 누적됨을 강조하는 표현입니다('~에 ~를 거듭하여', '거듭 ~한 끝에'). '노력에 노력을 거듭하다(努力に努力を重ねて)'와 같이 긍정적인 축적에도 쓰이며, '실패에 실패를 거듭하다(失敗に失敗を重ねて)', '문제에 문제를 거듭하다'처럼 연속된 좌절이나 문제 상황을 나타내어 그로 인한 최종적 귀결을 말할 때도 자주 쓰입니다.",
+      "formation": "명사(동일 명사 반복) + に + 명사 + を重ねて(또는 を重ねる / を重ねた末에)",
+      "examples": [
+        {
+          "translation": "그녀는 실패에 실패를 거듭한 끝에 마침내 회사를 그만두었다."
+        },
+        {
+          "translation": "일에 일이 겹치고 겹쳐서 그는 완전히 녹초가 되었다."
+        },
+        {
+          "translation": "그는 시험에 불합격하여 실망에 실망을 거듭하고 있었다."
+        },
+        {
+          "translation": "그는 문제에 문제를 거듭 일으키더니 결국 퇴학을 당했다."
+        }
+      ]
+    },
+    "ja_Noun_55": {
+      "title": "명사 + にあっては (ni atte wa)",
+      "shortExplanation": "'~에 있어서는', '~라는 특수한 상황에서는'이라는 뜻으로, 비상시나 특별한 시기·상황에 처해 있음을 나타냅니다.",
+      "longExplanation": "문형 '명사 + にあっては'는 '명사라는 특수한 시대, 위기, 상황, 입장에 처하여'라는 뜻을 나타내는 딱딱한 문어체 표현입니다('~의 상황에 있어서는', '~에 처해서는'). 주로 전쟁, 경제 위기, 불황, 변혁기 등과 같은 비상사태나 중대한 국면을 나타내는 명사 뒤에 결합하여, 그러한 특수한 환경 속에서 일어나는 일이나 취해야 할 행동을 강조하여 서술합니다.",
+      "formation": "명사(시기/상황/입장) + にあっては",
+      "examples": [
+        {
+          "translation": "전쟁 시기에 있어서는 모든 사람들이 곤경에 직면해 있었습니다."
+        },
+        {
+          "translation": "경제 위기 상황에서는 수많은 기업이 도산 위기에 처해 있다."
+        },
+        {
+          "translation": "불황기 속에서는 어느 기업이나 경비 삭감을 강요당하고 있다."
+        },
+        {
+          "translation": "개혁기에 있어서는 새로운 아이디어를 소중히 여길 필요가 있다."
+        }
+      ]
+    },
+    "ja_Noun_56": {
+      "title": "명사1 + にあるまじき + 명사2 (ni aru majiki)",
+      "shortExplanation": "'~로서 결코 있어서는 안 될', '~의 신분에 어울리지 않는'이라는 뜻으로, 엄중한 비판과 도덕적 비난을 나타냅니다.",
+      "longExplanation": "문형 '명사1 + にあるまじき + 명사2'는 고전 조동사 'まじ(결코 ~해서는 안 된다)'에서 유래한 문어체 표현으로, 특정 직업이나 신분, 인간으로서의 도리(명사1)에 비추어 볼 때 '절대로 있어서는 안 될 행동이나 태도(명사2)'를 강하게 비판하고 규탄할 때 사용됩니다('~에 있어서는 안 될', '~답지 못한'). 명사1에는 주로 교사, 의사, 정치인, 인간, 사회인 등 높은 도덕성이나 책임이 요구되는 지위가 오고, 명사2에는 '言動(언동)', '行為(행위)', '振る舞い(처신)' 등이 옵니다.",
+      "formation": "명사1(신분/직업/자격) + にあるまじき + 명사2(언동/행위/태도)",
+      "examples": [
+        {
+          "translation": "그는 교사로서 결코 있어서는 안 될 언동을 보였다."
+        },
+        {
+          "translation": "이것은 인간으로서 결코 저질러서는 안 될 행위다."
+        },
+        {
+          "translation": "그녀는 사장이라는 신분에 결코 어울리지 않는 부적절한 처신을 했다."
+        },
+        {
+          "translation": "그것은 어엿한 사회인으로서 결코 해서는 안 될 행동이다."
+        }
+      ]
+    },
+    "ja_Noun_57": {
+      "title": "명사 + にして (ni shite)",
+      "shortExplanation": "'~정도 되는 사람조차', '~임에도 불구하고'라는 뜻으로, 뛰어난 수준의 사람에게 일어난 뜻밖의 결과에 대한 놀라움을 나타냅니다.",
+      "longExplanation": "문형 '명사 + にして'는 뛰어난 능력, 풍부한 경험, 높은 지위를 지닌 명사 뒤에 결합하여 '그 정도 수준의 뛰어난 사람조차도 뜻밖의 실패나 실수를 겪다니 믿기 힘들다'라는 화자의 놀라움, 당혹감, 탄식을 나타내는 격식 있는 문어체 표현입니다('~정도 되는 사람조차', '~이면서도'). 뒷문장에는 해당 자격이나 신분에 어울리지 않는 의외의 부정적 결과나 무능함이 이어집니다.",
+      "formation": "명사(높은 능력이나 자격을 갖춘 사람) + にして",
+      "examples": [
+        {
+          "translation": "그는 의사이면서도 그런 기본적인 지식이 없다는 게 믿기지 않는다."
+        },
+        {
+          "translation": "그는 경험이 풍부한 운전사임에도 불구하고 사고를 냈다."
+        },
+        {
+          "translation": "그는 성적이 매우 우수한 학생임에도 불구하고 그 문제를 풀지 못했다."
+        },
+        {
+          "translation": "그는 소문난 공부벌레임에도 불구하고 그 문제를 이해하지 못했다."
+        }
+      ]
+    },
+    "ja_Noun_58": {
+      "title": "명사 + にして初めて (ni shite hajimete)",
+      "shortExplanation": "'~가 되고 나서야 비로소', '~에 이르러서야 처음으로'라는 뜻으로, 특정 나이나 지위에 이른 뒤에야 깊이 깨닫거나 경험하게 됨을 나타냅니다.",
+      "longExplanation": "문형 '명사 + にして初めて'는 나이, 인생의 단계, 직책이나 신분을 나타내는 명사(예: 40歳, 大人, 親, 社長 등) 뒤에 결합하여 '그 나이나 입장이 되고 나서야 비로소 어떤 사실을 깊이 깨닫거나 처음으로 경험하게 되었다'는 감회를 나타냅니다('~가 되어서야 비로소', '~에 이르러서야 비로소'). 오랜 세월이 걸렸음을 나타내거나, 그 단계에 도달한 것이 큰 계기가 되었음을 강조합니다.",
+      "formation": "명사(나이/신분/단계) + にして初めて",
+      "examples": [
+        {
+          "translation": "어른이 되고 나서야 비로소 부모님의 고생을 알게 되었다."
+        },
+        {
+          "translation": "그는 40세가 되어서야 처음으로 해외여행을 경험했다."
+        },
+        {
+          "translation": "그녀는 부모가 되고 나서야 비로소 육아의 고단함을 이해했다."
+        },
+        {
+          "translation": "사장이 되고 나서야 비로소 회사 전체의 막중한 책임을 통감했다."
+        }
+      ]
+    },
+    "ja_Noun_59": {
+      "title": "명사 + にすら (ni sura)",
+      "shortExplanation": "'~에게조차', '~에조차'라는 뜻으로, 격조사 'に'와 극단적인 예시를 나타내는 조사 'すら'가 결합된 격식 있는 표현입니다.",
+      "longExplanation": "문형 '명사 + にすら'는 대상이나 처소를 나타내는 격조사 'に'에 '조차/마저'를 뜻하는 강조 조사 'すら'가 합쳐진 문어적 표현입니다. 가장 당연하거나 극단적인 사례를 제시함으로써 '이것조차 그러한데 다른 것은 말할 나위도 없다'는 놀라움, 실망, 한탄 등을 강조합니다('~에게조차', '~에마저'). 주로 부정문과 호응하며, 일상 구어에서 쓰이는 '～にさえ'보다 한층 문어적이고 격식 있는 뉘앙스를 지닙니다.",
+      "formation": "명사 + にすら",
+      "examples": [
+        {
+          "translation": "그 사람조차도 그 문제는 풀지 못했다."
+        },
+        {
+          "translation": "그녀는 시험에조차 합격하지 못했다."
+        },
+        {
+          "translation": "이 개는 자신의 이름에조차 반응하지 않는다."
+        },
+        {
+          "translation": "그에게조차 말을 건넬 여유가 없었다."
+        }
+      ]
+    },
+    "ja_Noun_60": {
+      "title": "명사1 + にとどまらず + 명사2 + も (ni todomarazu ~ mo)",
+      "shortExplanation": "'~에 그치지 않고 ~도', '~에 머무르지 않고 ~도'라는 뜻으로, 범위가 한 영역에 국한되지 않고 더 넓게 확장됨을 나타냅니다.",
+      "longExplanation": "문형 '명사1 + にとどまらず + 명사2 + も'는 '머무르다, 그치다'라는 뜻의 동사 'とどまる'의 부정형을 사용하여, 어떤 현상이나 영향력, 관심사가 앞의 좁은 범위에만 머무르지 않고 뒤의 더 넓은 영역이나 다른 분야로까지 확대·파급됨을 나타내는 문어적 표현입니다('~에 그치지 않고 ~도', '~에 머물지 않고 ~까지도'). 보도, 평론, 공식 발표 등 격식 있는 문맥에서 자주 사용됩니다.",
+      "formation": "명사1 + にとどまらず + 명사2 + も",
+      "examples": [
+        {
+          "translation": "이 앱은 일본어에 그치지 않고 다른 언어도 지원하고 있습니다."
+        },
+        {
+          "translation": "그는 음악에 머무르지 않고 영화 제작에도 관심이 있다."
+        },
+        {
+          "translation": "그의 영향력은 가족에 그치지 않고 지역 전체에도 미치고 있습니다."
+        },
+        {
+          "translation": "그녀의 재능은 회화에 그치지 않고 문학에까지 이른다."
+        }
+      ]
+    },
+    "ja_Noun_61": {
+      "title": "명사1 + にひきかえ + 명사2 + は (ni hikikae ~ wa)",
+      "shortExplanation": "'~와는 대조적으로', '~와는 딴판으로'라는 뜻으로, 두 사물이나 상태의 극명한 차이를 대비하여 나타냅니다.",
+      "longExplanation": "문형 '명사1 + にひきかえ + 명사2 + は'는 '맞바꾸다, 대비하다'라는 뜻의 동사 '引き換える'에서 유래하여, 성격이나 상황이 판이하게 다른 두 대상을 맞비교함으로써 그 극명한 차이를 두드러지게 표현할 때 쓰입니다('~에 비해', '~와는 대조적으로', '~와는 딴판으로'). 두 대상 간의 큰 낙차나 반대되는 성질을 강조하며, 화자의 주관적인 평가나 감탄, 비판적인 감정이 짙게 배어 있는 경우가 많습니다.",
+      "formation": "명사1 + にひきかえ + 명사2 + は",
+      "examples": [
+        {
+          "translation": "그의 친절함과는 대조적으로 그녀는 무감정하다."
+        },
+        {
+          "translation": "여름과 달리 겨울은 눈이 내려 춥다."
+        },
+        {
+          "translation": "일본의 기차역과 달리 미국의 기차역은 넓다."
+        },
+        {
+          "translation": "과거와는 딴판으로 현대는 과학기술이 눈부시게 진보했다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Noun_47": {
+      "title": "名詞 ＋ なくして～はない (nakushite ~ wa nai)",
+      "shortExplanation": "「〜がなければ…は成り立たない」と、絶対に不可欠な前提条件であることを表します。「〜なくしては〜ない」。",
+      "longExplanation": "「名詞 ＋ なくして～はない」（または「〜なくしては〜ない」）は、ある物事や結果が成り立つために「その名詞が絶対に必要不可欠である」と強調する硬い文語的な表現です。「〜がなければ…は存在しない／達成できない」という意味を表し、「努力」「愛」「信頼」「協力」などの高い価値を持つ抽象名詞に多く接続します。後続節には「〜はない」「〜はあり得ない」「〜はできない」などの強い否定表現が続きます。",
+      "formation": "名詞 ＋ なくして(は) ＋ ［否定節：〜はない／〜できない］",
+      "examples": [
+        {
+          "translation": "努力なくして成功はない。"
+        },
+        {
+          "translation": "時間なくして完璧な作品は作れない。"
+        },
+        {
+          "translation": "経験なくして成長はない。"
+        },
+        {
+          "translation": "リーダーシップなくしてグループの成功はない。"
+        }
+      ]
+    },
+    "ja_Noun_48": {
+      "title": "名詞 ＋ なしでは～ない (nashi de wa ~ nai)",
+      "shortExplanation": "「〜がなければ…できない」と、物事を行う上で欠かせない存在であることを表します。「〜なしでは…ない」。",
+      "longExplanation": "「名詞 ＋ なしでは～ない」は、「もしその名詞がなかったら、ある行為や状態が成り立たない、実現できない」と不可欠性を表す文型です。「水」「パソコン」などの具体的な生活必需品から、「助け」「友情」などの抽象的な支えまで幅広く用いられます。後続節には「〜生きられない」「〜できない」「〜成り立たない」など、可能動詞の否定形や不可能を表す表現を伴うのが一般的です。",
+      "formation": "名詞 ＋ なしでは ＋ ［否定節：〜ない／〜られない／〜成り立たない］",
+      "examples": [
+        {
+          "translation": "水なしでは生きられない。"
+        },
+        {
+          "translation": "彼の助けなしでは、この問題を解決することはできない。"
+        },
+        {
+          "translation": "コンピュータなしでは、現代のビジネスは成り立たない。"
+        },
+        {
+          "translation": "友情なしでは、人生は退屈だろう。"
+        }
+      ]
+    },
+    "ja_Noun_49": {
+      "title": "名詞 ＋ なしには～ない (nashi ni wa ~ nai)",
+      "shortExplanation": "「〜がなければ…できない」と、前提として欠かせない条件であることを表します。「〜なしでは」よりやや改まった文語的表現。",
+      "longExplanation": "「名詞 ＋ なしには～ない」は、「もしその名詞が欠けていたならば、後続の行為や事態は絶対に実現できない」という不可欠な条件関係を表す文型です。意味合いは「〜なしでは〜ない」とほぼ共通しますが、「なしには」の方がより改まった硬い響き（文語的ニュアンス）を持ちます。後続節には「〜生活ができない」「〜進められない」など、動詞の否定形（特に可能動詞の否定形）が続きます。",
+      "formation": "名詞 ＋ なしには ＋ ［動詞否定形：〜ない／〜られない］",
+      "examples": [
+        {
+          "translation": "お金なしには生活ができない。"
+        },
+        {
+          "translation": "愛情なしには子育てができない。"
+        },
+        {
+          "translation": "彼なしにはこのプロジェクトを進められない。"
+        },
+        {
+          "translation": "水なしには生きていけない。"
+        }
+      ]
+    },
+    "ja_Noun_50": {
+      "title": "名詞 ＋ ならいざ知らず (nara iza shirazu)",
+      "shortExplanation": "「〜ならともかく／〜ならまだしも、…は無理だ」と、一方を例外・許容としつつ他方を強く否定します。「〜ならいざ知らず」。",
+      "longExplanation": "「名詞 ＋ ならいざ知らず」は、「前者の場合ならまだ理解できるし仕方ないかもしれないが、後者の場合は到底あり得ない・認められない」と2つの事柄を対比させて後者を強く否定・非難・驚愕する文型です。「いざ知らず」は古風な表現で「どうだか知らないが」を意味し、現代語の「〜ならまだしも」「〜ならともかく」に相当します。後続節には「全然わからない」「走れません」など、不可能や呆れ、批判を表す文が続きます。",
+      "formation": "名詞1 ＋ ならいざ知らず ＋ 名詞2／後続節［否定・困難・評価］",
+      "examples": [
+        {
+          "translation": "数学ならいざ知らず、物理なんて全然わからない。"
+        },
+        {
+          "translation": "5キロならいざ知らず、10キロなんて走れません。"
+        },
+        {
+          "translation": "日本語ならいざ知らず、中国語なんて話せない。"
+        },
+        {
+          "translation": "冷たい水ならいざ知らず、熱い水で泳ぐなんて考えたこともない。"
+        }
+      ]
+    },
+    "ja_Noun_51": {
+      "title": "名詞 ＋ ならでは (nara dewa)",
+      "shortExplanation": "「〜だけが持つ特別な魅力・特徴だ」と、他にはない固有の素晴らしさを称賛します。「〜ならではの」「〜ならではだ」。",
+      "longExplanation": "「名詞 ＋ ならでは」は、「その人、その場所、その物だけが独自に持っている素晴らしい特長や魅力である」と、他には真似のできない固有性や独自性を高く評価・称賛する文型です。「〜特有の」「〜でなければ味わえない」という意味を表し、名詞を修飾する「名詞1 ＋ ならではの ＋ 名詞2」の形や、文末で結ぶ「〜ならではだ」「〜ならではのものだ」の形で頻繁に用いられます。",
+      "formation": "名詞 ＋ ならではの ＋ 名詞 ／ 名詞 ＋ ならではだ",
+      "examples": [
+        {
+          "translation": "これは日本ならではの風景ですね。"
+        },
+        {
+          "translation": "新鮮な魚はこの町ならではの特産品です。"
+        },
+        {
+          "translation": "彼の技術は彼ならではのものだ。"
+        },
+        {
+          "translation": "この手作りの一品は、彼女ならではのものです。"
+        }
+      ]
+    },
+    "ja_Noun_52": {
+      "title": "名詞1 ＋ なり ＋ 名詞2 ＋ なり (nari ~ nari)",
+      "shortExplanation": "同類の例をいくつか挙げて「〜でも〜でも」と選択肢を提示します。「〜なり〜なり」。",
+      "longExplanation": "「名詞1 ＋ なり ＋ 名詞2 ＋ なり」は、同類の事柄の中から代表的な選択肢を2つ例示して、「AでもBでも、あるいはそれ以外のものでも構わないから、何かしら選んで行動してほしい」と提案・助言・勧誘する文型です。「〜とか〜とか」「〜であれ〜であれ」に相当し、後続節には「〜てください」「〜たらどうですか」などの働きかけを表す文が続くのが一般的です。",
+      "formation": "名詞1 ＋ なり ＋ 名詞2 ＋ なり（＋ 助詞）",
+      "examples": [
+        {
+          "translation": "映画なり、音楽なり、何か趣味はありますか。"
+        },
+        {
+          "translation": "紅茶なり、コーヒーなり、何か飲み物をください。"
+        },
+        {
+          "translation": "パンなり、おにぎりなり、何か食べてください。"
+        },
+        {
+          "translation": "タクシーなり、バスなりに乗って来てください。"
+        }
+      ]
+    },
+    "ja_Noun_53": {
+      "title": "名詞 ＋ なりとも (nari tomo)",
+      "shortExplanation": "「せめて〜だけでも」と、最小限の希望や要求を控えめに表します。「〜なりとも」。「少しでも」「一言でも」。",
+      "longExplanation": "「名詞 ＋ なりとも」は、極めて少ない数量や短い時間、ごくわずかな程度を表す語（「一言」「一目」「少し」「一時間」など）に付き、「十全でなくてもよいから、せめてそれだけでも実現してほしい／役立てたい」と最低限の希望や提案を控えめに示す文型です。「〜だけでも」「〜くらいでも」の意味で、謙虚さや丁寧さを伴う改まった表現です。文末には「〜たい」「〜てほしい」「〜べきだ」などが呼応します。",
+      "formation": "名詞（最小限の数量・程度を表す語） ＋ なりとも",
+      "examples": [
+        {
+          "translation": "時間が限られているので、一時間なりとも練習すべきだ。"
+        },
+        {
+          "translation": "彼には一言なりとも謝罪の言葉を聞きたい。"
+        },
+        {
+          "translation": "このプロジェクトには、一人なりともメンバーが必要だ。"
+        },
+        {
+          "translation": "あなたには、一言なりとも感謝の言葉を述べたい。"
+        }
+      ]
+    },
+    "ja_Noun_54": {
+      "title": "名詞 ＋ に ＋ 名詞 ＋ を重ねて (ni ~ o kasanete)",
+      "shortExplanation": "同じ行為や事態が何度も繰り返され、蓄積することを表します。「〜に〜を重ねて」「〜を繰り返して」。",
+      "longExplanation": "「名詞 ＋ に ＋ 名詞 ＋ を重ねて」（前後に同じ名詞を反復し、動詞「重ねる」を用いる）は、同一の行為、事態、経験が幾度も幾度も積み重なる様子を強調する文型です。「〜を何度も繰り返した結果」という意味を表します。「努力に努力を重ねて」のように肯定的な積み重ねにも用いられますが、「失敗に失敗を重ねて」「失望に失望を重ねて」のように、重なる困難や挫折が最終的な結果へと繋がった状況を表す際にもよく用いられます。",
+      "formation": "名詞（同一名詞） ＋ に ＋ 名詞 ＋ を重ねて（または を重ねる／を重ねた結果）",
+      "examples": [
+        {
+          "translation": "彼女は失敗に失敗を重ねて、とうとう会社を辞めた。"
+        },
+        {
+          "translation": "仕事に仕事を重ねて、彼は疲れ果てた。"
+        },
+        {
+          "translation": "彼は試験に不合格になり、失望に失望を重ねていた。"
+        },
+        {
+          "translation": "彼は問題に問題を重ねて、とうとう退学になった。"
+        }
+      ]
+    },
+    "ja_Noun_55": {
+      "title": "名詞 ＋ にあっては (ni atte wa)",
+      "shortExplanation": "「〜という特別な状況・時代・立場においては」と、特殊な環境下にあることを表します。硬い文語表現。",
+      "longExplanation": "「名詞 ＋ にあっては」は、「〜という特別な状況や立場、非常時、時代に置かれては」という意味を表す硬い書き言葉の文型です。「〜においては」の改まった表現で、戦争、不況、経済危機、変革期といった困難な情勢や重大な転換期を表す名詞に付くことが多く、その特殊な環境・状況が後続の事態や判断に強く影響を及ぼしていることを強調します。",
+      "formation": "名詞（時期・状況・環境など） ＋ にあっては",
+      "examples": [
+        {
+          "translation": "戦争時にあっては、すべての人々が困難に直面していました。"
+        },
+        {
+          "translation": "経済危機にあっては、多くの企業が倒産の危機に瀕している。"
+        },
+        {
+          "translation": "不況下にあっては、どの企業も経費削減を迫られている。"
+        },
+        {
+          "translation": "改革期にあっては、新しいアイデアを大切にする必要がある。"
+        }
+      ]
+    },
+    "ja_Noun_56": {
+      "title": "名詞1 ＋ にあるまじき ＋ 名詞2 (ni aru majiki)",
+      "shortExplanation": "「〜の立場として決してあってはならない」と、身分や資格に反する不適切な言動を強く非難します。「〜にあるまじき」。",
+      "longExplanation": "「名詞1 ＋ にあるまじき ＋ 名詞2」は、古語の打消推量・当然の打消の助動詞「まじ」の連体形に由来する格調高い文語表現です。「名詞1（立場・身分・職業・人倫）にある者として、決してあってはならない・許されない名詞2（行為・言動・態度など）だ」と、道義的・職務的に激しく非難・批判する際に用いられます。名詞1には「教師」「医者」「政治家」「人間」「社会人」などが、名詞2には「行為」「言動」「態度」「振る舞い」などが来ます。",
+      "formation": "名詞1（立場・身分・資格） ＋ にあるまじき ＋ 名詞2（行為・言動など）",
+      "examples": [
+        {
+          "translation": "彼は教師にあるまじき言動をとった。"
+        },
+        {
+          "translation": "これは人間にあるまじき行為だ。"
+        },
+        {
+          "translation": "彼女は社長にあるまじき振る舞いをした。"
+        },
+        {
+          "translation": "それは社会人にあるまじき行動だ。"
+        }
+      ]
+    },
+    "ja_Noun_57": {
+      "title": "名詞 ＋ にして (ni shite)",
+      "shortExplanation": "「〜ほどの高い能力・身分の人であっても」と、意外な結果に対する驚きを表します。硬い文語表現。「〜にして」。",
+      "longExplanation": "「名詞 ＋ にして」は、高い専門性、優れた才能、豊富な経験を持つ人物を表す名詞に付き、「〜という高いレベルや立場にある人でさえ」と意外な事態に対する驚きや信じがたい気持ちを表す文型です。「〜であって」「〜ほどの人物でさえ」を意味し、後続節にはその高い能力や立場からは予想もつかない失敗、不理解、事故などの意外な結果が続きます。",
+      "formation": "名詞（高い能力・資格・経験を持つ人など） ＋ にして",
+      "examples": [
+        {
+          "translation": "彼は医者にしてその基本的な知識がないのが信じられない。"
+        },
+        {
+          "translation": "彼は経験豊富な運転手にして、事故を起こした。"
+        },
+        {
+          "translation": "彼は成績優秀な生徒にして、その問題が解けなかった。"
+        },
+        {
+          "translation": "彼は勉強家にして、その問題を理解できなかった。"
+        }
+      ]
+    },
+    "ja_Noun_58": {
+      "title": "名詞 ＋ にして初めて (ni shite hajimete)",
+      "shortExplanation": "「その年齢・立場・時期になってようやく初めて」と、遅まきながら実感・経験したことを表します。「〜にして初めて」。",
+      "longExplanation": "「名詞 ＋ にして初めて」は、年齢や人生の段階、社会的立場を表す名詞（「40歳」「大人」「親」「社長」など）に付き、「その年齢や境遇に至ってようやく、それまで分からなかったことを痛感したり、初めて経験したりした」と深い感慨を込めて表す文型です。「〜になって初めて」「〜に至ってようやく」という意味を表し、後続節には深い気づきや初体験を表す動詞（「分かった」「痛感した」「経験した」など）が続きます。",
+      "formation": "名詞（年齢・立場・段階など） ＋ にして初めて",
+      "examples": [
+        {
+          "translation": "大人にして初めて、親の苦労が分かった。"
+        },
+        {
+          "translation": "彼は40歳にして初めて、海外旅行を経験した。"
+        },
+        {
+          "translation": "彼女は親にして初めて、子育ての大変さを理解した。"
+        },
+        {
+          "translation": "社長にして初めて、会社全体の重責を痛感した。"
+        }
+      ]
+    },
+    "ja_Noun_59": {
+      "title": "名詞 ＋ にすら (ni sura)",
+      "shortExplanation": "「〜にさえ」と極端な例を挙げて驚きや否定を強調します。格助詞「に」と副助詞「すら」の複合形で、文語的な表現。",
+      "longExplanation": "「名詞 ＋ にすら」は、対象や帰着点を表す格助詞「に」に、極端な例を提示して他を推し量らせる副助詞「すら」（＝さえ）が組み合わさった文型です。「〜という最も確実・基本的な対象にさえ…ない」と、事態の深刻さや意外性、落胆を際立たせるために用いられます。主に否定表現と呼応し、日常会話で多用される「〜にさえ」と比べて改まった響きを持つ文語的・文章語的な表現です。",
+      "formation": "名詞 ＋ にすら",
+      "examples": [
+        {
+          "translation": "彼にすらその問題は解けなかった。"
+        },
+        {
+          "translation": "彼女はテストにすら合格しなかった。"
+        },
+        {
+          "translation": "この犬は自分の名前にすら反応しない。"
+        },
+        {
+          "translation": "彼にすら話す余裕がなかった。"
+        }
+      ]
+    },
+    "ja_Noun_60": {
+      "title": "名詞1 ＋ にとどまらず ＋ 名詞2 ＋ も (ni todomarazu ~ mo)",
+      "shortExplanation": "「〜の範囲内だけに留まらず、さらに広く…も」と、影響や広がりを表します。「〜にとどまらず〜も」。「〜だけでなく」。",
+      "longExplanation": "「名詞1 ＋ にとどまらず ＋ 名詞2 ＋ も」は、動詞「留まる（とどまる）」の打消連用形「ず」に由来し、ある現象や影響力、活動の範囲が前者の枠内だけに留まることなく、さらに広い範囲や別の領域にまで拡大・波及していることを表す文型です。「〜だけに限定されず、さらに〜も」という意味を表し、ニュース報道や論説文、スピーチなどの硬い文章・改まった場面で多用されます。",
+      "formation": "名詞1 ＋ にとどまらず ＋ 名詞2 ＋ も",
+      "examples": [
+        {
+          "translation": "このアプリは、日本語にとどまらず、他の言語もサポートしています。"
+        },
+        {
+          "translation": "彼は、音楽にとどまらず、映画製作にも興味がある。"
+        },
+        {
+          "translation": "彼の影響は、家族にとどまらず、地域全体にも及んでいます。"
+        },
+        {
+          "translation": "彼女の才能は、絵画にとどまらず、文学にも及ぶ。"
+        }
+      ]
+    },
+    "ja_Noun_61": {
+      "title": "名詞1 ＋ にひきかえ ＋ 名詞2 ＋ は (ni hikikae ~ wa)",
+      "shortExplanation": "「〜とは対照的に」「〜とは大きく違って」と、2つの事柄の極端な違いを対比させます。「〜にひきかえ」。",
+      "longExplanation": "「名詞1 ＋ にひきかえ ＋ 名詞2 ＋ は」は、動詞「引き換える」に由来し、性質や状態が正反対または著しく異なる2つの人物や事物を引き合いに出して、その大きな落差や対照性を際立たせる文型です。「〜とはまったく対照的に」「〜とは正反対に」という意味を表し、一方を肯定・賞賛し他方を批判・落胆する場合など、話し手の強い主観的な感情や評価が込められることが多い表現です。",
+      "formation": "名詞1 ＋ にひきかえ ＋ 名詞2 ＋ は",
+      "examples": [
+        {
+          "translation": "彼の親切さにひきかえ、彼女は無感情だ。"
+        },
+        {
+          "translation": "夏にひきかえ、冬は雪で寒い。"
+        },
+        {
+          "translation": "日本の駅にひきかえ、アメリカの駅は広い。"
+        },
+        {
+          "translation": "昔にひきかえ、現代はテクノロジーが進歩した。"
+        }
+      ]
+    }
+  }
+}

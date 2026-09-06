@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_びた_227": {
+      "title": "～びた (～bita)",
+      "shortExplanation": "Hậu tố diễn tả ai đó hoặc sự vật toát lên vẻ, mang vẻ hoặc đượm nét của một tính chất, dáng dấp nào đó; 'mang vẻ...', 'có vẻ...', 'đượm vẻ...'.",
+      "longExplanation": "Hậu tố '～びた' (dạng liên thể bổ nghĩa cho danh từ của động từ '～びる') gắn sau danh từ hoặc gốc tính từ để tạo thành cụm bổ nghĩa cho danh từ phía sau, diễn tả cảm giác một người hay sự vật toát lên vẻ, mang đậm phong thái, sắc thái hoặc tính chất ấy. Các cách kết hợp thông dụng gồm: '大人びた' (ra dáng người lớn, chững chạc), '古びた' (cũ kỹ, đượm màu thời gian), '田舎びた' (đượm vẻ chân quê, mang không khí làng quê).",
+      "formation": "Danh từ / Gốc tính từ ＋ びた ＋ Danh từ (ví dụ: 大人びた人, 古びた建物, 田舎びた町)",
+      "examples": [
+        {
+          "translation": "Đứa trẻ có suy nghĩ chín chắn, ra dáng người lớn."
+        },
+        {
+          "translation": "Tôi không thể vứt bỏ chiếc cặp cũ kỹ nhuốm màu thời gian đó đi được."
+        },
+        {
+          "translation": "Bầu không khí đượm nét thôn quê chính là nét quyến rũ của thị trấn này."
+        },
+        {
+          "translation": "Cô ấy mặc trang phục có phần chững chạc, ra dáng người lớn."
+        }
+      ]
+    },
+    "ja_びる_228": {
+      "title": "～びる (〜biru)",
+      "shortExplanation": "Hậu tố động từ hóa diễn tả việc trở nên giống hoặc mang dáng dấp, tính chất của một sự vật; 'ra dáng...', 'mang vẻ...', 'nhuốm vẻ...'.",
+      "longExplanation": "Hậu tố '～びる' gắn vào danh từ hoặc gốc tính từ để tạo thành động từ nhóm hai, diễn tả sự biến đổi hoặc biểu hiện mang sắc thái, dáng vẻ hay phong cách của danh từ hoặc tính từ đó ('trở nên ra dáng...', 'toát lên phong thái...'). Thường dùng ở dạng '～びている' để diễn tả trạng thái. Điển hình gồm: '大人びる' (trở nên chững chạc, ra dáng người lớn), '古びる' (trở nên cũ kỹ, rêu phong), '田舎びる' (đượm vẻ quê mùa, mộc mạc).",
+      "formation": "Danh từ / Gốc tính từ ＋ びる (chia như động từ nhóm hai: びる, びて, びている, びた)",
+      "examples": [
+        {
+          "translation": "Cô ấy trông chững chạc, ra dáng người lớn hơn so với tuổi thật."
+        },
+        {
+          "translation": "Tòa nhà này đã hoàn toàn trở nên cũ kỹ, nhuốm màu thời gian."
+        },
+        {
+          "translation": "Cậu ấy lớn lên ở thành phố nhưng cách nói chuyện lại có phần đượm vẻ chân quê."
+        },
+        {
+          "translation": "Khi nhìn thấy khoảnh khắc một đứa trẻ bỗng chốc ra dáng người lớn, ai cũng phải ngạc nhiên."
+        }
+      ]
+    },
+    "ja_ぶった_229": {
+      "title": "～ぶった (～butta)",
+      "shortExplanation": "Dạng quá khứ hoặc định ngữ của '～ぶる', diễn tả thái độ ra vẻ, làm bộ làm tịch như thế nào đó; 'tỏ vẻ...', 'ra vẻ...', 'làm bộ...'.",
+      "longExplanation": "'～ぶった' là dạng quá khứ hoặc dạng bổ nghĩa cho danh từ của động từ '～ぶる'. Mẫu câu này mang sắc thái phê phán, mỉa mai một ai đó cố tình làm bộ, tỏ ra vẻ bản thân có phẩm chất, địa vị hay tính cách nào đó trong khi thực chất không phải như vậy. Thường gặp trong các cụm như '偉そうぶった' (tỏ vẻ bề trên, kiêu căng hợm hĩnh), '大人ぶった' (tỏ vẻ người lớn), 'いい子ぶった' (ra vẻ con ngoan trò giỏi, làm bộ thánh thiện).",
+      "formation": "Danh từ / Gốc tính từ ＋ ぶる → ぶった ＋ Danh từ (ví dụ: 偉そうぶった態度, 大人ぶった口調, いい子ぶった顔)",
+      "examples": [
+        {
+          "translation": "Cậu ta tỏ thái độ ra vẻ như thể chuyện gì mình cũng biết tuốt."
+        },
+        {
+          "translation": "Bị người ta dùng giọng điệu tỏ vẻ bề trên, kẻ cả nói chuyện khiến tôi thấy hơi bực mình."
+        },
+        {
+          "translation": "Cô ấy nói chuyện với giọng điệu làm bộ người lớn, nhưng thực ra vẫn chỉ là một học sinh cấp ba."
+        },
+        {
+          "translation": "Cậu không cần phải làm bộ làm tịch ra vẻ đứa trẻ ngoan ngoãn thế đâu."
+        }
+      ]
+    },
+    "ja_ぶって_230": {
+      "title": "～ぶって (〜butte)",
+      "shortExplanation": "Dạng thể て của '～ぶる', diễn tả hành vi giả vờ, làm bộ làm tịch rồi thực hiện hành động khác; 'ra vẻ...', 'tỏ vẻ...'.",
+      "longExplanation": "'～ぶって' là thể て của động từ '～ぶる', dùng để nối tiếp vế câu, miêu tả hành vi làm bộ, giả vờ như thế nào đó rồi thực hiện hành động tiếp theo. Mẫu này thường mang sắc thái chê trách, mỉa mai sự khoe khoang, ngạo mạn hay giả vờ ngây thơ của đối phương. Các cách diễn đạt thường gặp gồm '知ったかぶって' (tỏ vẻ biết tuốt), '偉そうぶって' (tỏ vẻ kẻ cả, hợm hĩnh), '大人ぶって' (ra vẻ người lớn).",
+      "formation": "Danh từ / Gốc tính từ ＋ ぶる → ぶって",
+      "examples": [
+        {
+          "translation": "Cậu ta chuyện gì cũng tỏ vẻ biết tuốt rồi ba hoa nói chuyện."
+        },
+        {
+          "translation": "Cô ấy giả bộ như chẳng biết điều gì, nhưng kỳ thực trong lòng hiểu rất rõ tất cả."
+        },
+        {
+          "translation": "Anh ta lúc nào cũng tỏ vẻ kẻ cả hợm hĩnh rồi lên mặt sai bảo những người xung quanh."
+        },
+        {
+          "translation": "Dù luôn ra vẻ người lớn nhưng cậu ấy vẫn còn những nét rất trẻ con."
+        }
+      ]
+    },
+    "ja_ぶり_231": {
+      "title": "～ぶり (〜buri)",
+      "shortExplanation": "Đi sau từ chỉ thời gian để diễn tả một sự việc lặp lại sau một khoảng thời gian dài gián đoạn; 'sau...', 'suốt... mới lại...'.",
+      "longExplanation": "Hậu tố '～ぶり' gắn trực tiếp sau từ chỉ khoảng thời gian (như năm, tháng, ngày, tuần) để biểu thị rằng đã trải qua một khoảng thời gian dài như thế kể từ lần cuối cùng một hành động hay hiện tượng xảy ra. Thường mang sắc thái nhấn mạnh sự bồi hồi hoặc khoảng cách thời gian gián đoạn ('sau ngần ấy thời gian mới lại làm việc gì đó', 'lần đầu tiên sau...').",
+      "formation": "Từ chỉ thời gian ＋ ぶり (ví dụ: 三年ぶり, 一週間ぶり, 一ヶ月ぶり, 五年ぶり)",
+      "examples": [
+        {
+          "translation": "Sau ba năm xa cách, tôi mới gặp lại anh ấy."
+        },
+        {
+          "translation": "Suốt một tuần liền tôi mới lại đi đến phòng tập thể hình."
+        },
+        {
+          "translation": "Tròn một tháng bặt vô âm tín, tôi mới lại nhận được lá thư từ anh ấy."
+        },
+        {
+          "translation": "Sau suốt 5 năm, tuyết mới lại rơi trở lại."
+        }
+      ]
+    },
+    "ja_ぶる_232": {
+      "title": "～ぶる (〜buru)",
+      "shortExplanation": "Hậu tố động từ mang nghĩa chê bai, diễn tả thái độ làm bộ, ra vẻ có phẩm chất hay vị thế mà thực chất mình không có; 'ra vẻ...', 'làm bộ...', 'tỏ vẻ...'.",
+      "longExplanation": "Hậu tố '～ぶる' gắn sau danh từ hoặc gốc tính từ để tạo thành động từ nhóm một, diễn tả ai đó đang cố tình làm bộ, tỏ ra vẻ bản thân có học thức, phẩm hạnh, phong thái hay địa vị cao sang nào đó trong khi thực chất không phải vậy. Mẫu này luôn mang sắc thái tiêu cực, phê phán sự giả tạo, kênh kiệu hay làm điệu của đối phương ('học đòi làm...', 'làm bộ làm tịch').",
+      "formation": "Danh từ / Gốc tính từ ＋ ぶる (chia như động từ nhóm một: ぶる, ぶらない, ぶった, ぶって)",
+      "examples": [
+        {
+          "translation": "Anh ta làm bộ học giả, cứ như thể bản thân điều gì cũng tường tận vậy."
+        },
+        {
+          "translation": "Hãy thôi làm bộ như diễn viên nổi tiếng đi và sống thật với chính mình đi."
+        },
+        {
+          "translation": "Cô ấy lúc nào cũng ra vẻ tiểu thư đài các."
+        },
+        {
+          "translation": "Nhìn thấy cô ta làm bộ ngây thơ vô tội trong khi tôi đang bị bắt nạt, cơn giận trong tôi bốc hỏa bùng lên."
+        }
+      ]
+    },
+    "ja_までだ_233": {
+      "title": "～までだ (～made da)",
+      "shortExplanation": "Biểu thị giới hạn phạm vi hoặc mức độ tối đa; 'chỉ đến...', 'chỉ dừng lại ở...', 'không hơn'.",
+      "longExplanation": "Mẫu ngữ pháp '～までだ' dùng để giới hạn phạm vi, thời hạn hoặc mức độ của một sự việc, nhấn mạnh rằng sự việc đó chỉ dừng lại ở ranh giới ấy chứ tuyệt đối không vượt quá ('chỉ dừng ở mức...', 'chỉ đến mức đó mà thôi'). Ngoài ra trong các văn cảnh khác, khi đi với động từ, nó còn có nghĩa là 'chỉ còn cách...' hoặc 'chỉ làm thế thôi (không có ý gì khác)', nhưng ở cấu trúc này, nó nhấn mạnh ranh giới giới hạn.",
+      "formation": "Động từ thể từ điển / thể ない ＋ までだ ｜ Tính từ đuôi い ＋ までだ ｜ Danh từ ＋ までだ",
+      "examples": [
+        {
+          "translation": "Giữa tôi với anh ấy chỉ dừng lại ở mức bạn bè, ngoài ra không có mối quan hệ nào hơn thế."
+        },
+        {
+          "translation": "Gói uống thỏa thích chỉ kéo dài đến 9 giờ, sau mốc thời gian đó sẽ phải trả thêm phụ phí."
+        },
+        {
+          "translation": "Thông tin chúng tôi nắm được chỉ dừng lại ở ngày hôm qua, sau đó thì không có bất kỳ cập nhật nào nữa."
+        },
+        {
+          "translation": "Kiến thức của cậu ấy chỉ dừng lại ở trình độ học sinh cấp hai, cao hơn mức đó thì cậu ấy không thể hiểu nổi."
+        }
+      ]
+    },
+    "ja_もなんでもない_234": {
+      "title": "～もなんでもない (〜mo nandemonai)",
+      "shortExplanation": "Bác bỏ hoàn toàn mức độ hoặc tầm quan trọng của một việc; 'chẳng có gì to tát', 'chẳng nghĩa lý gì', 'không là cái gì cả'.",
+      "longExplanation": "Mẫu ngữ pháp '～もなんでもない' dùng để phủ nhận mạnh mẽ giá trị, ý nghĩa hoặc mức độ ảnh hưởng của một sự việc, tính chất hay danh phận nào đó. Người nói biểu thị thái độ xem thường hoặc cho rằng điều đó chẳng có gì đáng để bận tâm, không có gì là ghê gớm hay to tát ('chẳng có gì quan trọng', 'chẳng đáng bận tâm một chút nào').",
+      "formation": "Động từ thể từ điển / thể ない ＋ もなんでもない ｜ Tính từ đuôi い ＋ もなんでもない ｜ Tính từ đuôi な ＋ なもなんでもない (hoặc でもなんでもない) ｜ Danh từ ＋ (だ)もなんでもない",
+      "examples": [
+        {
+          "translation": "Thua mất một triệu yên đối với tôi cũng chẳng có gì to tát cả."
+        },
+        {
+          "translation": "Việc ông ta là giám đốc thì cũng chẳng nghĩa lý gì đối với tôi."
+        },
+        {
+          "translation": "Việc bạn không đến cũng chẳng có gì phải bận tâm hết."
+        },
+        {
+          "translation": "Thứ đó có đẹp hay không thì cũng chẳng có chút ý nghĩa gì sất."
+        }
+      ]
+    },
+    "ja_ものとして_235": {
+      "title": "～ものとして (～mono to shite)",
+      "shortExplanation": "Đặt ra một giả định hoặc tiền đề để tiến hành hành động; 'coi như là...', 'xem như...', 'trên cơ sở giả định là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ものとして' dùng để đưa ra một điều kiện, quy ước hoặc giả định làm căn cứ, tiền đề cho một phán đoán, hành động hay quyết định tiếp theo ('coi như sự việc đó đã hoặc sẽ xảy ra', 'với tiền đề là...'). Người nói thiết lập một giả định tạm thời để xử lý công việc một cách chủ động.",
+      "formation": "Thể thông thường (Động từ / Tính từ đuôi い / Tính từ đuôi な ＋ な / Danh từ ＋ の hoặc である) ＋ ものとして",
+      "examples": [
+        {
+          "translation": "Coi như trời chắc chắn sẽ mưa nên tôi đã chủ động mang theo ô."
+        },
+        {
+          "translation": "Trên cơ sở xem như anh ấy bị ốm, tôi đã đi dự thay cho anh ấy."
+        },
+        {
+          "translation": "Cứ coi như chiếc bánh này rất ngon đi, chúng ta hãy chia đều cho mọi người cùng thưởng thức nào."
+        },
+        {
+          "translation": "Tạm coi như cô ấy là học sinh sinh viên nên tôi đã áp dụng mức giảm giá dành cho học sinh."
+        }
+      ]
+    },
+    "ja_んがために_236": {
+      "title": "～んがために (〜n ga tame ni)",
+      "shortExplanation": "Lối nói trang trọng trong văn viết biểu thị mục đích lớn lao, quyết tâm cao độ; 'để nhằm...', 'với mục đích để...', 'cốt để...'.",
+      "longExplanation": "Mẫu ngữ pháp '～んがために' (hoặc '～んがため') là cách diễn đạt cổ kính, trang trọng mang tính văn viết cao, dùng để nhấn mạnh mục đích hoặc ý chí quyết tâm mạnh mẽ để đạt được một nguyện vọng hay lý tưởng nào đó ('cốt để...', 'chính vì muốn... mà sẵn sàng dốc sức'). Vế sau thường là những hành động có chủ đích và đòi hỏi nhiều nỗ lực to lớn. Động từ chia ở thể phủ định cổ (thể 未然形 ＋ ん, riêng 'する' biến thành 'せん').",
+      "formation": "Động từ thể 未然形 (thể ない bỏ ない) ＋ んがために (Đặc biệt: する → せんがために)",
+      "examples": [
+        {
+          "translation": "Cốt để duy trì và giữ gìn sức khỏe dẻo dai, ngày nào tôi cũng rèn luyện thể dục."
+        },
+        {
+          "translation": "Với quyết tâm thi đỗ bằng được, tôi ra sức học tập vô cùng chăm chỉ."
+        },
+        {
+          "translation": "Nhằm chuẩn bị kỹ càng cho kỳ thi ngày mai, tối nay tôi dự định sẽ đi ngủ sớm."
+        },
+        {
+          "translation": "Chỉ cốt để được nhìn thấy nụ cười rạng rỡ của cô ấy, ngày nào tôi cũng đến gặp nàng."
+        }
+      ]
+    },
+    "ja_んばかりに_237": {
+      "title": "～んばかりに (〜n bakari ni)",
+      "shortExplanation": "Diễn tả trạng thái sống động như thể sắp sửa làm gì hoặc như muốn nói ra điều gì; 'như thể sắp...', 'như muốn nói rằng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～んばかりに' (hoặc '～んばかりの ＋ Danh từ') là cách diễn đạt văn chương giàu hình ảnh, dùng để miêu tả một trạng thái, biểu cảm hoặc cử chỉ mãnh liệt tới mức làm cho người nhìn có cảm tưởng như sự việc đó sắp sửa bùng nổ, hoặc như muốn truyền tải một thông điệp gì đó dù không nói ra thành lời ('như thể chực khóc', 'như muốn nói là...'). Động từ chia ở thể 未然形 (bỏ ない) ＋ ん ＋ ばかりに (riêng 'する' thành 'せんばかりに').",
+      "formation": "Động từ thể 未然形 (thể ない bỏ ない) ＋ んばかりに (Đặc biệt: する → せんばかりに)",
+      "examples": [
+        {
+          "translation": "Anh ta phớt lờ câu hỏi của tôi cứ như thể mình chẳng hề hay biết chút gì."
+        },
+        {
+          "translation": "Đứa trẻ nhăn mặt lại như thể sắp sửa òa khóc đến nơi."
+        },
+        {
+          "translation": "Cô ấy vội lấy tay che miệng lại như thể chực bật cười phá lên."
+        },
+        {
+          "translation": "Cậu ấy thở dài thườn thượt nhiều lần như muốn nói rằng mình đang chán ngắt."
+        }
+      ]
+    },
+    "ja_差し支えない_238": {
+      "title": "～差し支えない (〜sashitsukaenai)",
+      "shortExplanation": "Cách nói lịch sự, trang trọng biểu thị không có trở ngại hay phiền hà gì; 'không có trở ngại gì', 'hoàn toàn ổn', 'không sao cả'.",
+      "longExplanation": "Mẫu ngữ pháp '～差し支えない' (dạng kính ngữ là '～差し支えありません / ～差し支えないです') là cách diễn đạt lịch sự thường dùng trong giao tiếp công việc hoặc bối cảnh trang trọng, biểu thị rằng một việc gì đó được cho phép, không gây ra sự bất tiện, vướng mắc hay cản trở nào ('không có vấn đề gì', 'vẫn ổn thỏa'). Thường kết hợp ở dạng '～ても差し支えない' (dù có... thì cũng không hề gì).",
+      "formation": "Động từ thể て ＋ も差し支えない ｜ Tính từ đuôi い (bỏ い) ＋ くても差し支えない ｜ Tính từ đuôi な / Danh từ ＋ でも差し支えない ｜ Danh từ ＋ が / は差し支えない",
+      "examples": [
+        {
+          "translation": "Cho dù có đến muộn đôi chút thì cũng không có trở ngại gì cả ạ."
+        },
+        {
+          "translation": "Căn phòng có hơi bừa bộn một chút cũng chẳng sao."
+        },
+        {
+          "translation": "Cho dù trời có đổ mưa thì cũng không hề gây trở ngại gì."
+        },
+        {
+          "translation": "Việc anh ấy có mặt ở đây thì có gây bất tiện hay trở ngại gì cho bạn không?"
+        }
+      ]
+    },
+    "ja_折に_239": {
+      "title": "～折に (〜ori ni)",
+      "shortExplanation": "Cách nói trang trọng biểu thị thời điểm hoặc cơ hội diễn ra một sự việc; 'vào dịp...', 'nhân dịp...', 'khi...'.",
+      "longExplanation": "Mẫu ngữ pháp '～折に' (hoặc '～折には / ～折の') là cách diễn đạt trang trọng, lịch thiệp trong thư tín hoặc văn viết, tương đương với '～ときに' (khi, vào lúc). Mẫu này dùng để chỉ một thời điểm, giai đoạn hoặc cơ hội mà một sự việc nào đó xảy ra ('vào dịp...', 'nhân cơ hội...', 'trong lúc...').",
+      "formation": "Động từ thể từ điển / thể た / thể ている ＋ 折に ｜ Danh từ ＋ の ＋ 折に",
+      "examples": [
+        {
+          "translation": "Vào thời điểm cha tôi lâm bệnh, tôi đang đi du học ở nước ngoài."
+        },
+        {
+          "translation": "Khi có dịp sang Nhật Bản, xin hãy mua chút quà lưu niệm về giúp tôi nhé."
+        },
+        {
+          "translation": "Vào lúc bọn trẻ đang ngủ say, xin vui lòng giữ trật tự giùm."
+        },
+        {
+          "translation": "Khi có dịp gặp anh ấy, xin hãy trao tận tay bức thư này giúp tôi."
+        }
+      ]
+    },
+    "ja_極まりない_240": {
+      "title": "～極まりない (〜kiwamarinai)",
+      "shortExplanation": "Lối nói trang trọng biểu thị mức độ cực điểm, tột cùng (thường dùng cho nghĩa tiêu cực); 'vô cùng...', 'hết sức...', 'cực kỳ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～極まりない' là cách diễn đạt mang tính văn viết trang trọng, dùng để nhấn mạnh một trạng thái, tính chất đã lên đến đỉnh điểm hoặc cùng cực, không còn mức độ nào cao hơn được nữa ('vô cùng...', 'cực kỳ...', 'không sao tả xiết'). Mẫu này phần lớn dùng với các tính từ mang nghĩa tiêu cực (như vô lễ, nguy hiểm, mất vệ sinh, thiếu ý thức...) để bày tỏ sự phê phán hay bất bình mạnh mẽ.",
+      "formation": "Tính từ đuôi な (bỏ な) ＋ 極まりない ｜ Tính từ đuôi い (thể liên dụng: bỏ い thêm く) ＋ こと ＋ 極まりない ｜ Danh từ ＋ 極まりない",
+      "examples": [
+        {
+          "translation": "Thái độ vô phép của anh ta quả thật là vô cùng thô lỗ, không thể chấp nhận nổi."
+        },
+        {
+          "translation": "Cách lái xe kiểu đó là hết sức nguy hiểm."
+        },
+        {
+          "translation": "Sự ích kỷ ngang bướng của cô ta là cực kỳ thiếu ý thức và khó chấp nhận."
+        },
+        {
+          "translation": "Căn phòng bẩn thỉu đến mức này thì đúng là cực kỳ mất vệ sinh."
+        }
+      ]
+    },
+    "ja_極まる_241": {
+      "title": "～極まる (〜kiwamaru)",
+      "shortExplanation": "Lối nói trang trọng biểu thị tính chất hay trạng thái đạt tới đỉnh điểm, tột cùng (thường là nghĩa tiêu cực); 'hết sức...', 'vô cùng...', 'cực kỳ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～極まる' là cách diễn đạt văn viết cổ kính, đồng nghĩa với '～極まりない', dùng để nhấn mạnh tính chất hay mức độ đã lên đến đỉnh điểm cao nhất ('hết sức...', 'vô cùng...'). Mẫu này thường đi liền với các tính từ đuôi な mang tính quán dụng cố định như '失礼極まる' (hết sức vô phép), '非常識極まる' (vô cùng phi lý, thiếu ý thức), '無責任極まる' (hết sức vô trách nhiệm), '遺憾極まる' (vô cùng đáng tiếc).",
+      "formation": "Tính từ đuôi な (bỏ な) ＋ 極まる ｜ Tính từ đuôi い (bỏ い thêm く) ＋ こと ＋ 極まる",
+      "examples": [
+        {
+          "translation": "Lời nói và hành động của anh ta quả thực là hết sức vô lễ."
+        },
+        {
+          "translation": "Thái độ đó là vô cùng thiếu ý thức và không thể chấp nhận được."
+        },
+        {
+          "translation": "Lời phát biểu của cô ta là hết sức vô trách nhiệm."
+        },
+        {
+          "translation": "Để xảy ra hiểu lầm tai hại như thế này là điều vô cùng đáng tiếc."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_びた_227": {
+      "title": "～びた (～bita)",
+      "shortExplanation": "接尾词，表示带有某种倾向、气息或外观；“带有……气息”、“显出……样子”、“带有……色彩”。",
+      "longExplanation": "接尾词“～びた”是动词“～びる”的连体形，接在某些名词或形容词词干后，用于修饰后续名词，表示某人或某物带有、透出某种性质或外观风格（“带着……的气息”、“显得颇有……的感觉”）。常见的固定搭配有：大人びた（显得成熟、带大人气的）、古びた（陈旧的、略显沧桑的）、田舎びた（带乡村风味的、淳朴的）。",
+      "formation": "名词 / 形容词词干 ＋ びた ＋ 名词（如：大人びた人、古びた建物、田舎びた町）",
+      "examples": [
+        {
+          "translation": "思考方式成熟、带有大人气概的孩子。"
+        },
+        {
+          "translation": "我舍不得扔掉那只陈旧斑驳的旧包。"
+        },
+        {
+          "translation": "带有浓厚乡村风情的气息是这座小镇的魅力所在。"
+        },
+        {
+          "translation": "她的打扮略微透着些成熟大人的气质。"
+        }
+      ]
+    },
+    "ja_びる_228": {
+      "title": "～びる (〜biru)",
+      "shortExplanation": "接尾动词，表示呈现出某种风貌或带上某种气息；“显得……”、“显出……风貌”、“变得……”。",
+      "longExplanation": "接尾动词“～びる”接在特定名词或形容词词干后，构成二类动词（一段动词），表示某种事物或人呈现出该词所指的外貌、气质或风格特征（“显出……的样子”、“带有……的气息”）。日常多以存续状态“～びている”的形式出现。常见组合如：大人びる（显得成熟、显现出大人样）、古びる（变陈旧、显旧）、田舎びる（带乡村风情、显得淳朴土气）。",
+      "formation": "名词 / 形容词词干 ＋ びる（作为二类动词活用：びる、びて、びている、びた）",
+      "examples": [
+        {
+          "translation": "她看起来比实际年龄要更加成熟稳重。"
+        },
+        {
+          "translation": "这栋建筑物已经彻底变得老旧陈腐了。"
+        },
+        {
+          "translation": "他虽然是在大城市长大的，但说话方式却略带些乡土气息。"
+        },
+        {
+          "translation": "看到小孩子突然变得像个大人一样的瞬间，总会让人感到惊讶。"
+        }
+      ]
+    },
+    "ja_ぶった_229": {
+      "title": "～ぶった (～butta)",
+      "shortExplanation": "动词“～ぶる”的过去形或连体修饰形，多含贬义，表示装模作样、故意摆架子；“装出……的样子”、“摆出……的姿态”。",
+      "longExplanation": "“～ぶった”是动词“～ぶる”的过去形或连体修饰形，接在名词或形容词后修饰后续名词，常带有批评、讽刺或不满的语感，指某人故意装腔作势，表现出其实并不具备的品质、身份或态度（“装模作样的”、“摆出……架子的”）。常见的固定搭配有：偉そうぶった（摆架子的、自命不凡的）、大人ぶった（装成熟的、故作老成的大人腔调）、いい子ぶった（装乖乖牌的、故作老实的）。",
+      "formation": "名词 / 形容词词干 ＋ ぶる → ぶった ＋ 名词（如：偉そうぶった態度、大人ぶった口調、いい子ぶった顔）",
+      "examples": [
+        {
+          "translation": "他摆出一副仿佛什么都知道似的高深莫测的态度。"
+        },
+        {
+          "translation": "被人用自以为是、摆架子的口气说话，让人心里有些恼火。"
+        },
+        {
+          "translation": "她用故作老成的大人口气说着话，其实本质上还只是个高中生。"
+        },
+        {
+          "translation": "你完全没必要摆出一副装乖乖牌的虚伪态度。"
+        }
+      ]
+    },
+    "ja_ぶって_230": {
+      "title": "～ぶって (〜butte)",
+      "shortExplanation": "动词“～ぶる”的て形，表示装作某种样子、摆出某种架子并进行后续行为；“装作……的样子”、“故意摆出……”。",
+      "longExplanation": "“～ぶって”是动词“～ぶる”的连用形（て形），用于中顿或连接后续动作，带有明显的批评、轻蔑或否定色彩，指某人故意装腔作势、假装某种样子行事（“装出一副……的样子而……”）。常见搭配如：知ったかぶって（不懂装懂地）、偉そうぶって（摆出一副了不起的架子地）、大人ぶって（装模作样扮成熟地）。",
+      "formation": "名词 / 形容词词干 ＋ ぶる → ぶって",
+      "examples": [
+        {
+          "translation": "他不论什么事情都要不懂装懂地大发议论。"
+        },
+        {
+          "translation": "她表面上装出一无所知的无辜样子，实际上心里全都一清二楚。"
+        },
+        {
+          "translation": "他总是摆出一副高人一等的傲慢架子对身边的人指手画脚。"
+        },
+        {
+          "translation": "虽然总爱故意装出一副大人的深沉样，但他身上依然有很幼稚的地方。"
+        }
+      ]
+    },
+    "ja_ぶり_231": {
+      "title": "～ぶり (〜buri)",
+      "shortExplanation": "接在表示时间的词后，表示时隔多时再次发生某事；“时隔……”、“隔了……才……”。",
+      "longExplanation": "接尾词“～ぶり”接在表示时间段的词语后，表示距离上次进行某项动作或发生某事已经过去了相当长的一段时间，再次重复该行为或出现该事态（“时隔多久才再次……”、“暌违……”）。常带有时隔已久的感触或感慨。",
+      "formation": "表示时间的词语 ＋ ぶり（如：三年ぶり、一週間ぶり、一ヶ月ぶり、五年ぶり）",
+      "examples": [
+        {
+          "translation": "时隔三年，我终于又见到了他。"
+        },
+        {
+          "translation": "隔了一整周，我才又去了健身房。"
+        },
+        {
+          "translation": "时隔一个月，我再次收到了他寄来的信。"
+        },
+        {
+          "translation": "时隔五年，这里终于又下雪了。"
+        }
+      ]
+    },
+    "ja_ぶる_232": {
+      "title": "～ぶる (〜buru)",
+      "shortExplanation": "接尾动词，带有批评色彩，表示并不具备某种特质却故意装腔作势；“装出……的样子”、“摆出……的架子”、“装作……”。",
+      "longExplanation": "接尾动词“～ぶる”接在名词或形容词词干后，构成一类动词（五段动词），表示某种并非自身真实状态的做作举止。通常含有强烈的负面和贬义色彩，指责他人故意摆架子、装腔作势或故作姿态（“故意装成……的样子”、“自命不凡地扮演……”）。常见搭配有：学者ぶる（摆学者架子）、女優ぶる（装大明星做派）、お嬢様ぶる（装千金小姐）、無邪気ぶる（装纯洁无辜）。",
+      "formation": "名词 / 形容词词干 ＋ ぶる（作为一类动词活用：ぶる、ぶらない、ぶった、ぶって）",
+      "examples": [
+        {
+          "translation": "他装出一副学者派头，仿佛什么高深知识都通晓似的。"
+        },
+        {
+          "translation": "别再摆女明星的臭架子了，老老实实做你自己吧。"
+        },
+        {
+          "translation": "她总是故意端着一副名门千金小姐的做作架子。"
+        },
+        {
+          "translation": "看着我受人欺负时她却在一旁装作天真无辜的样子，我心中顿时怒火中烧。"
+        }
+      ]
+    },
+    "ja_までだ_233": {
+      "title": "～までだ (～made da)",
+      "shortExplanation": "表示界限、范围或程度的极限；“仅仅到……为止”、“不过是……而已”。",
+      "longExplanation": "句型“～までだ”用于限定事物的时间、范围或程度，强调该事物仅停留在此界限之内，绝不会超出该范围（“只限于……”、“仅仅停留在这步”）。此外接动词时还可表示“大不了就……”或“不过是……罢了”，在此处结合具体语境着重强调“程度或界线仅止于此，没有更进一步”。",
+      "formation": "动词辞书形 / 动词ない形 ＋ までだ ｜ い形容词 ＋ までだ ｜ 名词 ＋ までだ",
+      "examples": [
+        {
+          "translation": "我和他之间仅仅止步于普通朋友，绝非更进一步的关系。"
+        },
+        {
+          "translation": "无限量畅饮只到晚上9点为止，此后需要另行支付追加费用。"
+        },
+        {
+          "translation": "我们掌握的信息仅截止到昨天，之后并没有任何进一步的更新。"
+        },
+        {
+          "translation": "他的知识储备仅仅停留在初中生水平，超出这个层次的内容他就无法理解了。"
+        }
+      ]
+    },
+    "ja_もなんでもない_234": {
+      "title": "～もなんでもない (〜mo nandemonai)",
+      "shortExplanation": "强烈否定或看轻某事的重要性；“根本不算什么”、“毫无大碍”、“一点也不值一提”。",
+      "longExplanation": "句型“～もなんでもない”用于彻底否定某项事实、性质或身份的重要性，表示说话人对此毫不在意、完全不放在心上，认为某事无足轻重或毫不相干（“根本算不上什么大不了的事”、“完全无所谓”）。",
+      "formation": "动词辞书形 / 动词ない形 ＋ もなんでもない ｜ い形容词 ＋ もなんでもない ｜ な形容词 ＋ なもなんでもない（或 でもなんでもない） ｜ 名词 ＋ （だ）もなんでもない",
+      "examples": [
+        {
+          "translation": "输掉一百万日元对我来说根本就算不上什么大不了的事。"
+        },
+        {
+          "translation": "他是不是社长对我而言根本毫无意义，一点都不重要。"
+        },
+        {
+          "translation": "你来不来对我来说完全无所谓，根本算不得什么。"
+        },
+        {
+          "translation": "那东西美不美根本毫无所谓，一点意义也没有。"
+        }
+      ]
+    },
+    "ja_ものとして_235": {
+      "title": "～ものとして (～mono to shite)",
+      "shortExplanation": "将某事设定为假定或前提条件；“当作……”、“假定为……”、“在认定……的前提下”。",
+      "longExplanation": "句型“～ものとして”用于设定某种假定条件、前提或规定，并以此为根据展开后续的判断、行动或措施（“假定……而采取行动”、“视为……来进行处理”）。说话人以该假定作为行为的前提基准。",
+      "formation": "普通形（动词 / い形容词 / な形容词 ＋ な / 名词 ＋ の 或 である） ＋ ものとして",
+      "examples": [
+        {
+          "translation": "认定天肯定会下雨，所以我特意带了雨伞出门。"
+        },
+        {
+          "translation": "假定他因病无法出席，因此由我代替他参加了会议。"
+        },
+        {
+          "translation": "姑且当作这块蛋糕很美味，大家一起把它分着吃了吧。"
+        },
+        {
+          "translation": "认定她具备学生身份，因此为她办理了学生优惠折扣。"
+        }
+      ]
+    },
+    "ja_んがために_236": {
+      "title": "～んがために (〜n ga tame ni)",
+      "shortExplanation": "较庄重的文语表达，表示强烈的目的与决心；“为了……”、“一心只为……”。",
+      "longExplanation": "句型“～んがために”（有时作“～んがため”）是源自古日语的庄重书面语表达，用于强调为了实现某一重大目标、崇高愿望或抱负而下定巨大决心采取行动（“一心只为了达到……的目的”）。后项多接续体现强烈意志或付出艰苦努力的动作。动词接未然形加“ん”（“する”特殊变为“せん”）。",
+      "formation": "动词未然形（ない形去掉ない） ＋ んがために（特别注意：する → せんがために）",
+      "examples": [
+        {
+          "translation": "为了能够持久保持身体健康，我每天都坚持体育锻炼。"
+        },
+        {
+          "translation": "一心只为了顺利考及格，我拼尽全力发愤苦读。"
+        },
+        {
+          "translation": "为了备战明天的关键考试，我打算今晚早点就寝休息。"
+        },
+        {
+          "translation": "仅仅为了能见上她那灿烂的笑容，我每天都会不辞辛劳去见她。"
+        }
+      ]
+    },
+    "ja_んばかりに_237": {
+      "title": "～んばかりに (〜n bakari ni)",
+      "shortExplanation": "生动地描写某种几乎就要发生的逼真情态；“眼看就要……似的”、“仿佛在说……似地”。",
+      "longExplanation": "句型“～んばかりに”（连体形为“～んばかりの ＋ 名词”）是具有生动描摹色彩的书面语表达，用于描写动作、表情或态势极其逼真逼近，让人觉得“马上就要发生某事”，或者“虽然没开口却仿佛在传达某种心声”（“几乎要……似的”、“简直像在表示……一样”）。动词接未然形加“ん”（“する”变为“せんばかりに”）。",
+      "formation": "动词未然形（ない形去掉ない） ＋ んばかりに（特别注意：する → せんばかりに）",
+      "examples": [
+        {
+          "translation": "他完全无视我的提问，装得仿佛自己什么内情都不知道一样。"
+        },
+        {
+          "translation": "那个孩子眉头紧锁、皱起小脸，眼看就要哭出来了。"
+        },
+        {
+          "translation": "她紧紧捂住嘴巴，险些忍不住要当场噗嗤笑出声来。"
+        },
+        {
+          "translation": "他接连不断地大声叹气，仿佛在无声地抱怨自己有多无聊。"
+        }
+      ]
+    },
+    "ja_差し支えない_238": {
+      "title": "～差し支えない (〜sashitsukaenai)",
+      "shortExplanation": "较为礼貌客气的说法，表示没有妨碍或没有问题；“没有妨碍”、“无碍”、“完全可以”。",
+      "longExplanation": "句型“～差し支えない”（郑重形式为“～差し支えありません”）是常用于商务及正式社交场合的礼貌表达，表示某事即使发生或如此处理，也不会产生任何不便、阻碍或负面影响（“即使……也完全没关系”、“并不妨碍”）。多以“～ても差し支えない”（即使……也无妨）的形式使用。",
+      "formation": "动词て形 ＋ も差し支えない ｜ い形容词（去い变く） ＋ ても差し支えない ｜ な形容词词干 / 名词 ＋ でも差し支えない ｜ 名词 ＋ が / は差し支えない",
+      "examples": [
+        {
+          "translation": "稍微迟到一点也是完全没有妨碍的。"
+        },
+        {
+          "translation": "房间稍微有点乱也完全没关系，并不影响什么。"
+        },
+        {
+          "translation": "就算下起雨来，也丝毫不会对我们造成妨碍。"
+        },
+        {
+          "translation": "他留在这里对于您来说会有什么妨碍或不方便吗？"
+        }
+      ]
+    },
+    "ja_折に_239": {
+      "title": "～折に (〜ori ni)",
+      "shortExplanation": "较为郑重的表达，表示事情发生的时机或场合；“在……的时候”、“趁着……之际”。",
+      "longExplanation": "句型“～折に”（有时作“～折には / ～折の”）是多用于书信、商务及郑重谈话中的书面语表达，相当于“～ときに”，表示某一动作或事态发生的特定时机、阶段或机缘（“在……之际”、“逢……的时候”）。",
+      "formation": "动词辞书形 / 动词た形 / 动词ている形 ＋ 折に ｜ 名词 ＋ の ＋ 折に",
+      "examples": [
+        {
+          "translation": "父亲患病静养的那段时期，我恰好正在海外留学。"
+        },
+        {
+          "translation": "您去日本出差旅游之际，请务必帮我买些当地特产带回来。"
+        },
+        {
+          "translation": "在小孩子正在安睡的时候，请大家务必保持安静。"
+        },
+        {
+          "translation": "您与他见面之际，请劳烦帮我把这封信交给他。"
+        }
+      ]
+    },
+    "ja_極まりない_240": {
+      "title": "～極まりない (〜kiwamarinai)",
+      "shortExplanation": "较为正式的书面语，表示程度达到了极点（多含负面评价）；“极其……”、“……至极”、“极其无比”。",
+      "longExplanation": "句型“～極まりない”是极具庄重色彩的书面语表达，表示事物的状态、性质达到了登峰造极、无以复加的极限程度（“极其……”、“……到了极点”）。在绝大多数情况下与具有消极、负面色彩的词语搭配使用（如失礼、危险、不讲理、不卫生等），用以表达强烈的批判、愤慨或非难情绪。",
+      "formation": "な形容词词干 ＋ 極まりない ｜ い形容词连用形（去い变く） ＋ こと ＋ 極まりない ｜ 名词 ＋ 極まりない",
+      "examples": [
+        {
+          "translation": "他那蛮横无礼的态度简直无礼至极，让人忍无可忍。"
+        },
+        {
+          "translation": "那种鲁莽的驾驶方式极其危险。"
+        },
+        {
+          "translation": "她那任性胡闹的做派极其缺乏常识，荒谬至极。"
+        },
+        {
+          "translation": "这间屋子脏乱到这种地步，简直是不卫生到了极点。"
+        }
+      ]
+    },
+    "ja_極まる_241": {
+      "title": "～極まる (〜kiwamaru)",
+      "shortExplanation": "典雅庄重的书面语，表示程度达到极限（多用于负面评价或固定表达）；“极其……”、“……至极”。",
+      "longExplanation": "句型“～極まる”是古雅庄重的书面语表达，与“～極まりない”同义，表示某事物的性质、状态达到了极致（“极其……”、“……到了极点”）。多接在な形容词词干后形成固定短语，如“失礼極まる”（极其失礼）、“非常識極まる”（荒唐至极）、“無責任極まる”（极不负责）、“遺憾極まる”（极其令人遗憾）。",
+      "formation": "な形容词词干 ＋ 極まる ｜ い形容词连用形（去い变く） ＋ こと ＋ 極まる",
+      "examples": [
+        {
+          "translation": "他的言行举止简直无礼至极。"
+        },
+        {
+          "translation": "那种傲慢的态度简直是荒唐至极、不可理喻。"
+        },
+        {
+          "translation": "她的发言是极不负责任的恶劣行为。"
+        },
+        {
+          "translation": "产生这样严重的误解，实在是令人遗憾至极。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_びた_227": {
+      "title": "～びた (～bita)",
+      "shortExplanation": "어떤 느낌이나 상태를 띠고 있음을 나타내는 접미사로, '~의 느낌이 나는', '~티를 띠는', '~다운'이라는 뜻입니다.",
+      "longExplanation": "'～びた'는 동사 '～びる'의 연체 수식형으로, 특정 명사나 형용사 어간 뒤에 붙어 그 명사나 상태의 풍모, 기운, 성질을 강하게 띠고 있음을 나타냅니다('~티가 나는', '~ 느낌이 물씬 풍기는'). 주로 '大人びた'(어른스러운, 어른티가 나는), '古びた'(낡은, 오래되어 손때 묻은), '田舎びた'(시골티가 나는, 촌티 어린) 등의 형태로 정형화되어 뒤에 오는 명사를 수식합니다.",
+      "formation": "명사 / 형용사 어간 ＋ びた ＋ 명사 (예: 大人びた人, 古びた建物, 田舎びた町 등)",
+      "examples": [
+        {
+          "translation": "어른스러운 사고방식을 지닌 아이."
+        },
+        {
+          "translation": "오래되어 낡은 가방을 차마 버릴 수가 없다."
+        },
+        {
+          "translation": "시골티 나는 정겨운 분위기가 이 마을의 매력이다."
+        },
+        {
+          "translation": "그녀는 약간 어른스러운 느낌의 옷차림을 하고 있다."
+        }
+      ]
+    },
+    "ja_びる_228": {
+      "title": "～びる (〜biru)",
+      "shortExplanation": "그런 모습이나 상태를 띠게 됨을 나타내는 접미사(동사화)로, '~티를 내다', '~티가 나다', '~스러워지다'라는 뜻입니다.",
+      "longExplanation": "'～びる'는 명사나 형용사 어간 뒤에 결합하여 2그룹 동사를 만드는 접미사로, 어떤 사람이나 사물이 그 명사나 상태의 풍모나 기운을 띠게 됨을 나타냅니다. 주로 상태를 나타내는 '～びている'의 형태로 자주 쓰이며, 대표적으로 '大人びる'(어른티가 나다, 성숙해지다), '古びる'(낡아지다, 고풍스러워지다), '田舎びる'(시골티가 나다, 촌스러워지다) 등이 있습니다.",
+      "formation": "명사 / 형용사 어간 ＋ びる (2그룹 동사 활용: びる, びて, びている, びた)",
+      "examples": [
+        {
+          "translation": "그녀는 실제 나이에 비해 훨씬 어른스러운 티가 난다."
+        },
+        {
+          "translation": "이 건물은 이제 완전히 낡고 퇴락해 있다."
+        },
+        {
+          "translation": "그는 도시 출신인데도 어딘가 약간 시골티 나는 말투로 이야기한다."
+        },
+        {
+          "translation": "아이가 문득 어른스러워지는 순간을 마주하면 깜짝 놀라곤 한다."
+        }
+      ]
+    },
+    "ja_ぶった_229": {
+      "title": "～ぶった (～butta)",
+      "shortExplanation": "'～ぶる'의 과거형 또는 연체형으로, 그런 척하며 잘난 체하거나 꾸며대는 태도를 나타내며, '~인 척한', '~체한'이라는 뜻입니다.",
+      "longExplanation": "'～ぶった'는 어떤 성질이나 신분인 체 꾸며대는 동사 '～ぶる'의 과거형 및 연체 수식형입니다. 실상은 그렇지 않으면서 겉으로만 그런 척 거만하게 굴거나 꾸며대는 행동을 비판적, 부정적 뉘앙스로 지적할 때 쓰입니다('~인 척 구는', '~체하는'). '偉そうぶった'(잘난 체하는, 거들먹거리는), '大人ぶった'(어른인 척하는), 'いい子ぶった'(착한 척하는) 등의 형태로 명사를 수식합니다.",
+      "formation": "명사 / 형용사 어간 ＋ ぶる → ぶった ＋ 명사 (예: 偉そうぶった態度, 大人ぶった口調, いい子ぶった顔 등)",
+      "examples": [
+        {
+          "translation": "그는 마치 모든 것을 다 알고 있다는 듯 으스대는 태도를 취한다."
+        },
+        {
+          "translation": "잘난 체하며 거들먹거리는 말투를 들으면 은근히 부아가 치민다."
+        },
+        {
+          "translation": "그녀는 어른인 척 짐짓 점잔을 빼며 말하지만, 실은 아직 고등학생이다."
+        },
+        {
+          "translation": "그렇게 착한 아이인 척 내숭 떠는 태도를 취하지 않아도 돼."
+        }
+      ]
+    },
+    "ja_ぶって_230": {
+      "title": "～ぶって (〜butte)",
+      "shortExplanation": "'～ぶる'의 て형으로, 그런 척 꾸며대거나 젠체하는 모습을 나타내며, '~인 척하며', '~체하며'라는 뜻입니다.",
+      "longExplanation": "'～ぶって'는 남에게 뽐내거나 사실과 다른 척 꾸며대는 '～ぶる'의 て형으로, 문장을 이어주며 그런 태도로 다른 행동을 취함을 나타냅니다. 주로 상대방의 거만함, 아는 체함, 내숭 등을 비판하거나 비꼴 때 쓰입니다. 대표적으로 '知ったかぶって'(아는 체하며, 아는 척 굴며), '偉そうぶって'(잘난 척하며, 으스대며), '大人ぶって'(어른인 척 굴며) 등이 있습니다.",
+      "formation": "명사 / 형용사 어간 ＋ ぶる → ぶって",
+      "examples": [
+        {
+          "translation": "그는 무엇이든 다 아는 척하며 이야기를 늘어놓는다."
+        },
+        {
+          "translation": "그녀는 아무것도 모른다는 듯 내숭을 떨었지만, 실은 모든 것을 다 알고 있다."
+        },
+        {
+          "translation": "그는 언제나 잘난 척하며 주위 사람들에게 이래라저래라 지시를 내린다."
+        },
+        {
+          "translation": "겉으로는 어른인 척 굴고 있지만, 여전히 아이 같은 구석이 남아 있다."
+        }
+      ]
+    },
+    "ja_ぶり_231": {
+      "title": "～ぶり (〜buri)",
+      "shortExplanation": "시간 표현 뒤에 붙어 어떤 일이 오랜 기간이 지난 뒤 다시 일어남을 나타내며, '~ 만에'라는 뜻입니다.",
+      "longExplanation": "접미사 '～ぶり'는 시간이나 기간을 나타내는 명사 뒤에 직접 결합하여, 마지막으로 그 일이나 동작이 일어난 이후 상당한 시간이 흘러 다시 이루어짐을 나타냅니다. 한국어의 '~ 만에'에 해당하며, 오랜만에 무언가를 다시 경험할 때의 감회나 특별함을 담아 표현할 때 자주 쓰입니다.",
+      "formation": "시간/기간 명사 ＋ ぶり (예: 三年ぶり, 一週間ぶり, 一ヶ月ぶり, 五年ぶり 등)",
+      "examples": [
+        {
+          "translation": "3년 만에 그 사람을 다시 만났습니다."
+        },
+        {
+          "translation": "일주일 만에 피트니스 센터에 운동하러 갔다."
+        },
+        {
+          "translation": "한 달 만에 그 사람에게서 편지가 도착했다."
+        },
+        {
+          "translation": "5년 만에 이곳에 눈이 내렸다."
+        }
+      ]
+    },
+    "ja_ぶる_232": {
+      "title": "～ぶる (〜buru)",
+      "shortExplanation": "명사나 형용사 뒤에 붙어 실제로는 그렇지 않으면서 그런 체함을 나타내는 접미사로, '~인 척하다', '~체하다'라는 뜻입니다.",
+      "longExplanation": "접미사 '～ぶる'는 명사나 형용사 어간 뒤에 붙어 1그룹 동사를 만들며, 실제로는 그러한 품성이나 지위가 아니면서 겉으로만 그런 척 거만을 떨거나 내숭을 부리는 태도를 나타냅니다. 상대방의 가식적인 행동이나 젠체하는 모습을 비판, 경멸하는 부정적인 뉘앙스로 쓰입니다. 대표적으로 '学者ぶる'(학자인 척 굴다), '女優ぶる'(여배우 행세를 하다), 'お嬢様ぶる'(부잣집 아가씨 행세를 하다), '無邪気ぶる'(순진한 척 굴다) 등이 있습니다.",
+      "formation": "명사 / 형용사 어간 ＋ ぶる (1그룹 동사 활용: ぶる, ぶらない, ぶった, ぶって)",
+      "examples": [
+        {
+          "translation": "그는 마치 모든 것을 꿰뚫고 있다는 듯 학자인 척 폼을 잡는다."
+        },
+        {
+          "translation": "여배우인 척 유난 떨지 말고 솔직한 자기 자신으로 있어라."
+        },
+        {
+          "translation": "그녀는 언제나 고귀한 귀한 집 아가씨 행세를 하며 내숭을 떤다."
+        },
+        {
+          "translation": "내가 괴롭힘을 당하고 있는데도 옆에서 천진난만한 척 연기하는 그녀를 보고 분노가 치밀었다."
+        }
+      ]
+    },
+    "ja_までだ_233": {
+      "title": "～までだ (～made da)",
+      "shortExplanation": "시간, 범위, 정도의 한계를 나타내며, '~까지일 뿐이다', '~에 머무를 뿐이다'라는 뜻입니다.",
+      "longExplanation": "'～までだ'는 어떤 사태나 관계, 지식, 기한이 특정 한도나 범위에만 국한됨을 나타내며, 그 이상의 단계로는 절대 나아가지 않음을 강조하는 문형입니다('~에 그칠 뿐이다', '~까지가 한계이다'). 동사 원형 뒤에 붙을 때는 '그저 ~할 따름이다' 혹은 '안 되면 ~하면 그만이다'라는 뜻으로도 쓰이며, 여기서는 사물의 한계와 범위를 분명히 그어 나타냅니다.",
+      "formation": "동사 사전형 / 동사 ない형 ＋ までだ ｜ い형용사 ＋ までだ ｜ 명사 ＋ までだ",
+      "examples": [
+        {
+          "translation": "그 사람과는 어디까지나 친구 사이일 뿐이다. 그 이상의 특별한 관계는 아닙니다."
+        },
+        {
+          "translation": "음료 무제한 주문은 밤 9시까지일 뿐입니다. 그 이후에는 추가 요금이 발생합니다."
+        },
+        {
+          "translation": "우리가 파악하고 있는 정보는 어제까지의 내용뿐입니다. 그 이후의 새로운 업데이트는 없습니다."
+        },
+        {
+          "translation": "그의 지식은 중학생 수준에 머무를 뿐이다. 그 이상의 깊은 내용은 이해하지 못한다."
+        }
+      ]
+    },
+    "ja_もなんでもない_234": {
+      "title": "～もなんでもない (〜mo nandemonai)",
+      "shortExplanation": "어떤 일의 중요성이나 가치를 완전히 일축하며, '아무것도 아니다', '전혀 대수롭지 않다', '상관없다'라는 뜻입니다.",
+      "longExplanation": "'～もなんでもない'는 특정 사실, 신분, 상황의 영향력이나 중요성을 강하게 부정하고 대수롭지 않게 여길 때 사용하는 표현입니다. 화자가 그 일에 대해 전혀 개의치 않거나 아무런 가치도 두지 않음을 나타내며, '전혀 별것 아니다', '아무런 상관도 없다'라는 뉘앙스를 전달합니다.",
+      "formation": "동사 사전형 / 동사 ない형 ＋ もなんでもない ｜ い형용사 ＋ もなんでもない ｜ な형용사 ＋ なもなんでもない (또는 でもなんでもない) ｜ 명사 ＋ (だ)もなんでもない",
+      "examples": [
+        {
+          "translation": "100만 엔을 잃는 것쯤은 나에게 아무런 대수도 아니다."
+        },
+        {
+          "translation": "그 사람이 사장이든 뭐든 나에게는 전혀 아무런 상관도 없다."
+        },
+        {
+          "translation": "당신이 오지 않는다 해도 나에게는 전혀 큰일이 아니다."
+        },
+        {
+          "translation": "그것이 아름답든 어떻든 나에게는 아무런 의미도 가치도 없다."
+        }
+      ]
+    },
+    "ja_ものとして_235": {
+      "title": "～ものとして (～mono to shite)",
+      "shortExplanation": "어떤 일을 전제나 가정으로 삼아 행동함을 나타내며, '~인 것으로 치고', '~인 것으로 간주하여'라는 뜻입니다.",
+      "longExplanation": "'～ものとして'는 어떤 상황이나 조건을 확정된 전제나 가설로 정해두고, 그 전제에 입각하여 후속 행동을 취하거나 방침을 결정할 때 쓰는 표현입니다('~셈 치고', '~한다고 가정하고'). 미리 가정한 상황에 대비하여 일을 처리할 때 널리 쓰입니다.",
+      "formation": "보통형 (동사 / い형용사 / な형용사 ＋ な / 명사 ＋ の 또는 である) ＋ ものとして",
+      "examples": [
+        {
+          "translation": "비가 올 것으로 간주하고 미리 우산을 챙겨서 갔습니다."
+        },
+        {
+          "translation": "그가 병환 중인 것으로 치고 내가 대신하여 회의에 참석했다."
+        },
+        {
+          "translation": "이 케이크가 아주 맛있는 것으로 치고 모두 함께 나누어 먹읍시다."
+        },
+        {
+          "translation": "그녀를 학생 신분인 것으로 간주하여 학생 할인을 적용해 주었습니다."
+        }
+      ]
+    },
+    "ja_んがために_236": {
+      "title": "～んがために (〜n ga tame ni)",
+      "shortExplanation": "중대한 목적이나 강한 결의를 나타내는 격식 있는 문어체 표현으로, '~하기 위하여', '~하고자'라는 뜻입니다.",
+      "longExplanation": "'～んがために'(또는 '～んがため')는 고어에서 유래한 매우 격식 차린 문어체 표현으로, 달성하고자 하는 절실한 목표나 염원을 품고 비장한 각오로 행동에 임함을 나타냅니다('오직 ~하기 위한 목적으로'). 후속절에는 그 목적을 위해 기울이는 강한 의지나 헌신적인 노력이 따릅니다. 동사의 미연형(ない형에서 ない를 뺀 형태)에 'んがために'가 붙으며, 'する'는 특수하게 'せんがために'가 됩니다.",
+      "formation": "동사 미연형(ない형 어간) ＋ んがために (예외: する → せんがために)",
+      "examples": [
+        {
+          "translation": "건강을 온전히 유지하고자 매일 거르지 않고 운동을 하고 있습니다."
+        },
+        {
+          "translation": "시험에 기필코 합격하기 위하여 온 힘을 다해 열심히 공부합니다."
+        },
+        {
+          "translation": "내일 있을 시험에 만전을 기하고자 오늘 밤은 일찍 잠자리에 들 생각입니다."
+        },
+        {
+          "translation": "오로지 그녀의 환한 미소를 보기 위하여 날마다 그녀를 만나러 갑니다."
+        }
+      ]
+    },
+    "ja_んばかりに_237": {
+      "title": "～んばかりに (〜n bakari ni)",
+      "shortExplanation": "당장이라도 어떤 행동을 할 것 같거나 어떤 말을 하려는 듯한 기세를 나타내며, '금방이라도 ~할 듯이', '~라고 말하려는 듯이'라는 뜻입니다.",
+      "longExplanation": "'～んばかりに'(명사를 수식할 때는 '～んばかりの')는 문학적이고 생생한 묘사 표현으로, 표정이나 기세가 너무나도 절박하거나 두드러져서 당장이라도 그 행동이 터져 나올 것 같거나, 굳이 말로 하지 않아도 마음을 웅변하는 듯한 모습을 나타냅니다('금방이라도 ~할 듯한 기세로'). 동사의 미연형에 'んばかりに'가 연결되며, 'する'는 'せんばかりに'가 됩니다.",
+      "formation": "동사 미연형(ない형 어간) ＋ んばかりに (예외: する → せんばかりに)",
+      "examples": [
+        {
+          "translation": "그는 아무것도 모른다는 듯이 시치미를 떼며 내 질문을 묵살했다."
+        },
+        {
+          "translation": "그 아이는 금방이라도 울음을 터뜨릴 듯이 얼굴을 찡그렸다."
+        },
+        {
+          "translation": "그녀는 터져 나오는 웃음을 참지 못할 듯이 입가를 손으로 틀어막았다."
+        },
+        {
+          "translation": "그는 지루해 죽겠다는 말을 하려는 듯이 연신 한숨을 푹푹 내쉬었다."
+        }
+      ]
+    },
+    "ja_差し支えない_238": {
+      "title": "～差し支えない (〜sashitsukaenai)",
+      "shortExplanation": "정중하고 격식 있는 표현으로 지장이나 문제가 없음을 나타내며, '지장이 없다', '상관없다', '괜찮다'라는 뜻입니다.",
+      "longExplanation": "'～差し支えない'(정중형: '～差し支えありません / ～差し支えないです')는 비즈니스나 격식 있는 자리에서 주로 쓰이며, 어떤 일을 행하거나 어떤 상태가 되더라도 아무런 방해, 지장, 불편이 생기지 않음을 공손하게 나타내는 표현입니다('~해도 무방하다', '~해도 전혀 상관없다'). 주로 '～ても差し支えない'(~해도 지장이 없다)의 형태로 쓰입니다.",
+      "formation": "동사 て형 ＋ も差し支えない ｜ い형용사 어간 ＋ くても差し支えない ｜ な형용사 어간 / 명사 ＋ でも差し支えない ｜ 명사 ＋ が / は差し支えない",
+      "examples": [
+        {
+          "translation": "다소 늦어지더라도 일정 진행에 아무런 지장이 없습니다."
+        },
+        {
+          "translation": "방이 조금 어질러져 있어도 전혀 상관없습니다."
+        },
+        {
+          "translation": "비가 내린다 하더라도 아무런 문제가 없습니다."
+        },
+        {
+          "translation": "그 사람이 여기에 함께 있어도 괜찮으신가요(지장이 없으신가요)?"
+        }
+      ]
+    },
+    "ja_折に_239": {
+      "title": "～折に (〜ori ni)",
+      "shortExplanation": "어떤 일이 일어나는 때나 기회를 정중하게 나타내며, '~할 때', '~하던 차에', '~하는 기회에'라는 뜻입니다.",
+      "longExplanation": "'～折に'(또는 '～折에는 / ～折의')는 편지글이나 비즈니스 등 격식 차린 상황에서 주로 쓰이는 정중한 문어체 표현으로, '～ときに'(~할 때)의 세련된 표현입니다. 특정한 시기나 국면, 혹은 좋은 기회를 계기 삼아 어떤 행동이 이루어짐을 나타냅니다('~할 때에', '~하는 기회에').",
+      "formation": "동사 사전형 / 동사 た형 / 동사 ている형 ＋ 折に ｜ 명사 ＋ の ＋ 折に",
+      "examples": [
+        {
+          "translation": "아버지께서 병환으로 누워 계실 무렵에 저는 유학 중이었습니다."
+        },
+        {
+          "translation": "일본에 가실 기회가 있을 때 부디 기념 선물을 좀 사다 주십시오."
+        },
+        {
+          "translation": "아이가 곤히 잠들어 있는 동안에는 부디 조용히 해 주십시오."
+        },
+        {
+          "translation": "그 사람을 만나시게 될 때 이 편지를 전해 주시기 바랍니다."
+        }
+      ]
+    },
+    "ja_極まりない_240": {
+      "title": "～極まりない (〜kiwamarinai)",
+      "shortExplanation": "정도가 극에 달해 있음을 나타내는 격식 있는 문어체 표현(주로 부정적 상황); '더없이 ~하다', '극히 ~하기 짝이 없다'라는 뜻입니다.",
+      "longExplanation": "'～極まりない'는 성질이나 상태의 정도가 최고조에 이르러 더할 나위가 없음을 강조하는 격식 차린 문어체 표현입니다('극에 달하다', '~하기 짝이 없다'). 대부분 무례함, 위험, 몰상식, 비위생 등 부정적이고 비판적인 평가를 담은 어휘와 호응하여 강한 분노나 비난의 어조를 나타냅니다.",
+      "formation": "な형용사 어간 ＋ 極まりない ｜ い형용사 연용형(く) ＋ こと ＋ 極まりない ｜ 명사 ＋ 極まりない",
+      "examples": [
+        {
+          "translation": "그의 무례하기 짝이 없는 태도는 정말이지 도를 넘었다."
+        },
+        {
+          "translation": "그런 식의 난폭 운전은 위험하기 짝이 없다."
+        },
+        {
+          "translation": "그녀의 제멋대로 구는 행동거지는 몰상식하기 이를 데 없다."
+        },
+        {
+          "translation": "이 방의 지저분함은 비위생적이기 짝이 없다."
+        }
+      ]
+    },
+    "ja_極まる_241": {
+      "title": "～極まる (〜kiwamaru)",
+      "shortExplanation": "사태나 성질이 극도에 달했음을 나타내는 격식 있는 문어체 표현으로, '더없이 ~하다', '극히 ~하기 이를 데 없다'라는 뜻입니다.",
+      "longExplanation": "'～極まる'는 '～極まりない'와 거의 같은 뜻으로 쓰이는 격식 있는 문어체 표현으로, 사물의 정도나 상태가 한계에 이를 정도로 극심함을 나타냅니다. 주로 な형용사 어간에 직접 붙어 '失礼極まる'(극히 무례하다), '非常識極まる'(상식 밖이기 짝이 없다), '無責任極まる'(극도로 무책임하다), '遺憾極まる'(더없이 유감스럽다) 등 관용적이고 정형화된 어구로 쓰입니다.",
+      "formation": "な형용사 어간 ＋ 極まる ｜ い형용사 연용형(く) ＋ こと ＋ 極まる",
+      "examples": [
+        {
+          "translation": "그의 언동은 참으로 무례하기 짝이 없다."
+        },
+        {
+          "translation": "그런 태도는 상식 밖이기 이를 데 없다."
+        },
+        {
+          "translation": "그녀의 발언은 극도로 무책임한 처사이다."
+        },
+        {
+          "translation": "이러한 오해가 빚어진 것은 더없이 유감스럽기 그지없다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_びた_227": {
+      "title": "～びた (～bita)",
+      "shortExplanation": "そのような様子や気配を帯びていることを表す接尾辞で、「〜のような様子をした」「〜の趣がある」という意味を表します。",
+      "longExplanation": "接尾辞「～びた」は、動詞「～びる」の連体形（過去・完了形）で、特定の名詞や形容詞の語幹などに付いて後続の名詞を修飾し、そのものの性質や雰囲気を色濃く帯びているさまを表します。「大人びた（大人のような落ち着きがある）」「古びた（年月を経て古めかしい風情がある）」「田舎びた（都会的でなく素朴な田舎の趣がある）」など、慣用的な複合語として用いられます。",
+      "formation": "名詞 / 形容詞語幹 ＋ びた ＋ 名詞（例：大人びた人、古びた建物、田舎びた町 など）",
+      "examples": [
+        {
+          "translation": "大人のように落ち着いて物事を深く考える子供。"
+        },
+        {
+          "translation": "長年愛用してすっかり古めかしくなったカバンを捨てられない。"
+        },
+        {
+          "translation": "どこか田舎の素朴な趣を帯びた雰囲気が、この町の最大の魅力だ。"
+        },
+        {
+          "translation": "彼女は年頃よりも少し大人っぽい落ち着いた服装をしている。"
+        }
+      ]
+    },
+    "ja_びる_228": {
+      "title": "～びる (〜biru)",
+      "shortExplanation": "そのような様子や性質を帯びるようになることを表す動詞を作る接尾辞で、「〜の様子を帯びる」「〜らしくなる」という意味を表します。",
+      "longExplanation": "接尾辞「～びる」は、名詞や形容詞の語幹などに付いて二一段（グループ2）動詞を形成し、その事物の持つ気配や性質、風情が表面に現れてくることを表します。多くの場合、状態を表す「～びている」の形で用いられ、「大人びる（大人のような落ち着きを帯びる）」「古びる（年月が経って古めかしくなる）」「田舎びる（田舎特有の素朴さや風情を帯びる）」などの慣用句として用いられます。",
+      "formation": "名詞 / 形容詞語幹 ＋ びる（二一段動詞として活用：びる、びて、びている、びた）",
+      "examples": [
+        {
+          "translation": "彼女は実年齢よりもずっと大人びた雰囲気を醸し出している。"
+        },
+        {
+          "translation": "この建物は長い年月が経ち、すっかり古びて風情を増している。"
+        },
+        {
+          "translation": "彼は都会育ちであるにもかかわらず、どこか田舎びた素朴な話し方をする。"
+        },
+        {
+          "translation": "子供がふとした拍子に急に大人びる瞬間を目の当たりにすると驚かされる。"
+        }
+      ]
+    },
+    "ja_ぶった_229": {
+      "title": "～ぶった (～butta)",
+      "shortExplanation": "「～ぶる」の過去形または連体修飾形で、実際はそうでないのにそのように見せかける態度を表し、「〜ぶった」「〜を装った」という意味を表します。",
+      "longExplanation": "「～ぶった」は、実際はそうではないのに外見や態度だけそのように取り繕って見せる動詞「～ぶる」の連体修飾形（過去形）です。相手の気取った態度や偽善的な振る舞いに対する批判や皮肉といった否定的なニュアンスを含みます。「偉そうぶった（偉そうに振る舞う）」「大人ぶった（大人のふりをした）」「いい子ぶった（善人ぶった）」などの形で後続の名詞を修飾します。",
+      "formation": "名詞 / 形容詞語幹 ＋ ぶる → ぶった ＋ 名詞（例：偉そうぶった態度、大人ぶった口調、いい子ぶった顔 など）",
+      "examples": [
+        {
+          "translation": "彼はまるで何事も知り尽くしているかのように気取った態度を取る。"
+        },
+        {
+          "translation": "偉そうに尊大ぶった物言いをされると、内心少し腹が立つ。"
+        },
+        {
+          "translation": "彼女は大人びた口調を気取って話しているが、実際はまだ高校生にすぎない。"
+        },
+        {
+          "translation": "わざわざ周囲にいい子ぶった態度を取り繕う必要などないよ。"
+        }
+      ]
+    },
+    "ja_ぶって_230": {
+      "title": "～ぶって (〜butte)",
+      "shortExplanation": "「～ぶる」のて形で、実際はそうでないのにそのようなふりをして振る舞うことを表し、「〜のふりをして」「〜ぶって」という意味を表します。",
+      "longExplanation": "「～ぶって」は、自分を実際以上に見せかけたり、知ったかぶりや気取った態度をとったりする動詞「～ぶる」のて形です。多くは相手の思い上がりや不誠実な見栄を批判・揶揄する文脈で用いられます。「知ったかぶって（知っているふりをして）」「偉そうぶって（尊大に構えて）」「大人ぶって（大人のまねをして）」のように用いられ、後続の行動へ続きます。",
+      "formation": "名詞 / 形容詞語幹 ＋ ぶる → ぶって",
+      "examples": [
+        {
+          "translation": "彼は何事に対しても知ったかぶりをして得意げに語る。"
+        },
+        {
+          "translation": "彼女は何も知らないふりを装って見せていたが、実は全てを把握している。"
+        },
+        {
+          "translation": "彼はいつも周囲に対して偉そうに尊大な態度をとって指図している。"
+        },
+        {
+          "translation": "普段は大人ぶって背伸びしているけれど、まだまだ子供っぽい一面が残っている。"
+        }
+      ]
+    },
+    "ja_ぶり_231": {
+      "title": "～ぶり (〜buri)",
+      "shortExplanation": "時間を表す言葉の後に付き、前回の出来事からその期間が経過した後に再び同じことが起こることを表し、「〜ぶりに」「〜の間隔を経て」という意味を表します。",
+      "longExplanation": "接尾辞「～ぶり」は、年・月・日・週などの時間を表す語句に直接接続し、以前にある事柄が行われてからその期間ずっと途絶えていた後、久しぶりに再びその事柄が実現することを表します。「〜年ぶりに」「〜週間ぶりに」のように、空白期間の長さを意識しながら感慨を込めて用いられることが多くあります。",
+      "formation": "時間を表す名詞 ＋ ぶり（例：三年ぶり、一週間ぶり、一ヶ月ぶり、五年ぶり など）",
+      "examples": [
+        {
+          "translation": "前回の再会から3年という歳月を経て、彼と久しぶりに再会しました。"
+        },
+        {
+          "translation": "まるまる1週間もの間隔を空けて、久しぶりにジムへ行って汗を流した。"
+        },
+        {
+          "translation": "1ヶ月もの間音沙汰がなかった彼から、久しぶりに手紙が届いた。"
+        },
+        {
+          "translation": "観測史上5年という歳月を経て、この地に久しぶりに雪が降った。"
+        }
+      ]
+    },
+    "ja_ぶる_232": {
+      "title": "～ぶる (〜buru)",
+      "shortExplanation": "実際はそうでないのに、そのように見せかけて気取ることを表す動詞を作る接尾辞で、「〜のふりをする」「〜ぶる」という意味を表します。",
+      "longExplanation": "接尾辞「～ぶる」は、名詞や形容詞の語幹などに接続して五一段（グループ1）動詞を作り、実際にはその身分や器量、性質を備えていないにもかかわらず、外見や態度だけそれらしく装って気取るさまを表します。相手の見栄っ張りな態度や偽善、うぬぼれを非難・軽蔑する否定的なニュアンスを含みます。「学者ぶる（学者気取りをする）」「女優ぶる（女優のように振る舞う）」「お嬢様ぶる（令嬢のように気取る）」「無邪気ぶる（純真なふりをする）」などの形で用いられます。",
+      "formation": "名詞 / 形容詞語幹 ＋ ぶる（五一段動詞として活用：ぶる、ぶらない、ぶった、ぶって）",
+      "examples": [
+        {
+          "translation": "彼はあたかも全知全能であるかのように学者気取りの態度をとる。"
+        },
+        {
+          "translation": "大女優気取りで振る舞うのはやめて、ありのままの自分らしくありなさい。"
+        },
+        {
+          "translation": "彼女は周囲の目を気にして、いつでも育ちのいいお嬢様ぶっている。"
+        },
+        {
+          "translation": "私がいじめの標的にされている時、無邪気な善人を装ってすます彼女を見て怒りが込み上げた。"
+        }
+      ]
+    },
+    "ja_までだ_233": {
+      "title": "～までだ (～made da)",
+      "shortExplanation": "範囲・期限・程度の限界を示し、「〜までにすぎない」「〜の段階にとどまる」という意味を表します。",
+      "longExplanation": "「～までだ」は、時間や範囲、人間関係や知識などの限度を明確に画し、それ以上の領域や段階には決して踏み込まないことを限定・強調する表現です（「〜にとどまり、それ以上ではない」）。なお、動詞に接続して「ただ〜しただけだ（他意はない）」や「いざとなれば〜するだけのことだ（覚悟の表明）」を表す用法もありますが、名詞などに付いて境界線を引く用法としても広く使われます。",
+      "formation": "動詞辞書形 / 動詞ない形 ＋ までだ ｜ い形容詞辞書形 ＋ までだ ｜ 名詞 ＋ までだ",
+      "examples": [
+        {
+          "translation": "彼と私の間柄は友人関係にとどまる。それ以上の特別な関係では決してありません。"
+        },
+        {
+          "translation": "飲み放題のサービスは夜の9時までだ。その時間を過ぎると別途追加料金が発生する。"
+        },
+        {
+          "translation": "私たちが把握している情報は昨日の時点までだ。それ以降の最新の更新状況はありません。"
+        },
+        {
+          "translation": "彼の学識は中学生レベルの段階までだ。それ以上の専門的な内容になると理解が追いつかない。"
+        }
+      ]
+    },
+    "ja_もなんでもない_234": {
+      "title": "～もなんでもない (〜mo nandemonai)",
+      "shortExplanation": "事態の重要性や影響力を完全に否定し、「全く大したことではない」「何の意味も持たない」という意味を表します。",
+      "longExplanation": "「～もなんでもない」は、ある事柄や性質、身分などが持つ重大性や影響力を強く打ち消し、取るに足らないこととして一蹴する表現です。話者がその事態を全く気にも留めていないことや、問題にする価値すら感じていないという無関心や強気の姿勢を表します。",
+      "formation": "動詞辞書形 / 動詞ない形 ＋ もなんでもない ｜ い形容詞辞書形 ＋ もなんでもない ｜ な形容詞 ＋ なもなんでもない（または でもなんでもない） ｜ 名詞 ＋ （だ）もなんでもない",
+      "examples": [
+        {
+          "translation": "100万円の損失を被ることなど、私にとっては痛くも痒くもなく何でもない。"
+        },
+        {
+          "translation": "彼が会社の社長であろうが何だろうが、私にとっては全く関係のないことだ。"
+        },
+        {
+          "translation": "あなたがこちらに来ないとしても、私にとっては少しも痛手ではない。"
+        },
+        {
+          "translation": "それが世間的に美しいものであろうとなかろうと、何一つ価値を持たない。"
+        }
+      ]
+    },
+    "ja_ものとして_235": {
+      "title": "～ものとして (～mono to shite)",
+      "shortExplanation": "ある事柄を仮定や前提として設定し、「〜と仮定して」「〜と見なして」という意味を表します。",
+      "longExplanation": "「～ものとして」は、ある状況や条件をあらかじめ確定した前提や仮定として設定し、その仮定に基づいた上で次の行動や判断、手続きを進めることを表す文型です（「〜という前提に立って」「〜であると見なして」）。あらかじめ起こりうる事態を想定して対策を講じる際などに用いられます。",
+      "formation": "普通形（動詞 / い形容詞 / な形容詞 ＋ な / 名詞 ＋ の または である） ＋ ものとして",
+      "examples": [
+        {
+          "translation": "後から雨が降るものとあらかじめ想定して、傘を携えて出かけました。"
+        },
+        {
+          "translation": "彼が病気で欠席するものと見なして、代理として私が会議に出席した。"
+        },
+        {
+          "translation": "このケーキが格別に美味しいものと仮定して、皆で均等に分け合いましょう。"
+        },
+        {
+          "translation": "彼女が正式な学生であると見なして、学生割引の手続きを適用しました。"
+        }
+      ]
+    },
+    "ja_んがために_236": {
+      "title": "～んがために (〜n ga tame ni)",
+      "shortExplanation": "強い目的意識や重大な決意を表す改まった文章語的表現で、「〜するために」「〜することを目的として」という意味を表します。",
+      "longExplanation": "「～んがために」（または「～んがため」）は、古語の助動詞「む」に由来する格調高い文章語の表現で、ある重大な目的や強い願望を達成するために、強い決意をもって並々ならぬ努力や行動を起こすことを表します（「どうしても〜するために」）。後続文には強い意志を伴う行為が述べられます。動詞の未然形（ない形の「ない」を除いた形）に接続し、「する」は不規則に「せんがために」となります。",
+      "formation": "動詞未然形（ない形語幹） ＋ んがために（例外：する → せんがために）",
+      "examples": [
+        {
+          "translation": "自らの健康な身体を維持せんがために、毎日欠かさず運動に励んでいます。"
+        },
+        {
+          "translation": "難関試験に何としても合格せんがために、身を粉にして懸命に勉強する。"
+        },
+        {
+          "translation": "明日に控えた重要試験に万全に備えんがため、今夜は早めに就寝する所存です。"
+        },
+        {
+          "translation": "彼女の喜ぶ笑顔をひと目見んがために、毎日彼女のもとへと足を運ぶ。"
+        }
+      ]
+    },
+    "ja_んばかりに_237": {
+      "title": "～んばかりに (〜n bakari ni)",
+      "shortExplanation": "今にもその動作をしそうな様子や、まるでそう言わんとする勢いを表し、「今にも〜しそうに」「〜と言わんばかりに」という意味を表します。",
+      "longExplanation": "「～んばかりに」（名詞を修飾する場合は「～んばかりの」）は、今にもある動作や現象が起こりそうなほど差し迫った様子や、言葉には出さないものの態度や表情が雄弁にその内容を物語っているさまを臨場感豊かに描写する文型です（「あたかも〜しそうな勢いで」）。動詞の未然形に接続し、「する」は「せんばかりに」となります。",
+      "formation": "動詞未然形（ない形語幹） ＋ んばかりに（例外：する → せんばかりに）",
+      "examples": [
+        {
+          "translation": "彼は自分は何も知らないと言わんばかりの態度で、私の質問を無視した。"
+        },
+        {
+          "translation": "その幼子は今にも大声で泣き出しそうに顔を激しく歪めた。"
+        },
+        {
+          "translation": "彼女は思わず吹き出して大笑いしそうになり、慌てて手で口元を覆った。"
+        },
+        {
+          "translation": "彼は退屈で仕方がないと全身で言わんばかりに、何度も大きなため息をついた。"
+        }
+      ]
+    },
+    "ja_差し支えない_238": {
+      "title": "～差し支えない (〜sashitsukaenai)",
+      "shortExplanation": "支障や不都合がないことを丁寧に表し、「問題ない」「構わない」「支障をきたさない」という意味を表します。",
+      "longExplanation": "「～差し支えない」（丁寧形：～差し支えありません / ～差し支えないです）は、改まった場面やビジネスシーンでよく用いられる表現で、ある行為を行ったりある状態が生じたりしても、何ら支障や不都合、悪影響が生じないことを礼儀正しく述べる際に用いられます（「〜しても問題ありません」「〜でも差し支えございません」）。主に「〜ても差し支えない」の形で用いられます。",
+      "formation": "動詞て形 ＋ も差し支えない ｜ い形容詞連用形（く） ＋ ても差し支えない ｜ な形容詞語幹 / 名詞 ＋ でも差し支えない ｜ 名詞 ＋ が / は差し支えない",
+      "examples": [
+        {
+          "translation": "到着が多少遅れたとしても、業務上特に差し支えございません。"
+        },
+        {
+          "translation": "部屋が多少散らかっていたとしても、私としては一向に差し支えない。"
+        },
+        {
+          "translation": "たとえ雨が降ったとしても、今回の催しには何の支障もございません。"
+        },
+        {
+          "translation": "彼がこの場に同席することについて、何か差し支えはございませんか。"
+        }
+      ]
+    },
+    "ja_折に_239": {
+      "title": "～折に (〜ori ni)",
+      "shortExplanation": "ある事柄が起こる時や機会を改まって表し、「〜の際に」「〜の時に」「〜の機会に」という意味を表します。",
+      "longExplanation": "「～折に」（「～折には」「～折の」とも）は、手紙やビジネス文書、改まった会話などで用いられる品格のある表現で、「〜の時に」を丁寧に言い換えた文型です。特定の時期や好機、巡り合わせを捉えてある事柄が行われることを表します（「〜した折に」「〜の機会に」）。",
+      "formation": "動詞辞書形 / 動詞た形 / 動詞ている形 ＋ 折に ｜ 名詞 ＋ の ＋ 折に",
+      "examples": [
+        {
+          "translation": "父が病の床に伏していた折に、私は海外へ留学しておりました。"
+        },
+        {
+          "translation": "今度日本へ行かれる折には、ぜひお土産を買ってきてください。"
+        },
+        {
+          "translation": "子供が静かに眠っている折には、どうか静粛にお願いいたします。"
+        },
+        {
+          "translation": "近いうちに彼とお会いになる折に、この手紙をお渡し願えますでしょうか。"
+        }
+      ]
+    },
+    "ja_極まりない_240": {
+      "title": "～極まりない (〜kiwamarinai)",
+      "shortExplanation": "状態や性質がこの上ない極限に達していることを表し（主に否定的な文脈）、「極めて〜だ」「この上なく〜だ」という意味を表します。",
+      "longExplanation": "「～極まりない」は、改まった文章語の表現で、ある状態や性質の度合いが極限まで達しており、それ以上はない状態であることを強調します。大半は「失礼」「危険」「非常識」「不衛生」などの好ましくない評価を表す語と結びつき、話者の強い憤りや非難の念を込めて用いられます。",
+      "formation": "な形容詞語幹 ＋ 極まりない ｜ い形容詞連用形（く） ＋ こと ＋ 極まりない ｜ 名詞 ＋ 極まりない",
+      "examples": [
+        {
+          "translation": "彼の無礼極まりない態度は、社会人として到底容認できるものではない。"
+        },
+        {
+          "translation": "あのような無謀な運転の仕方は危険極まりない行為だ。"
+        },
+        {
+          "translation": "彼女の常軌を逸したわがままぶりは、非常識極まりない。"
+        },
+        {
+          "translation": "この部屋の凄まじい汚れようは、不衛生極まりないと言わざるを得ない。"
+        }
+      ]
+    },
+    "ja_極まる_241": {
+      "title": "～極まる (〜kiwamaru)",
+      "shortExplanation": "状態や性質が極限・頂点に達していることを表し、「この上なく〜だ」「極めて〜だ」という意味を表します。",
+      "longExplanation": "「～極まる」は、「～極まりない」とほぼ同義の格調高い文章語表現で、事態や性質の度合いが極限に達していることを強調します。「失礼極まる（極めて無礼である）」「非常識極まる（常識を甚だしく逸脱している）」「無責任極まる（この上なく無責任だ）」「遺憾極まる（痛恨の極みである）」のように、主にな形容詞の語幹と結合して慣用的な定型句として用いられます。",
+      "formation": "な形容詞語幹 ＋ 極まる ｜ い形容詞連用形（く） ＋ こと ＋ 極まる",
+      "examples": [
+        {
+          "translation": "彼の言動の数々は失礼極まり、断じて許容されるものではない。"
+        },
+        {
+          "translation": "そのような反抗的な態度は非常識極まり、良識を疑う。"
+        },
+        {
+          "translation": "公式の場での彼女の発言は無責任極まり、非難に値する。"
+        },
+        {
+          "translation": "このような重大な誤解が生じてしまったことは、遺憾極まる次第であります。"
+        }
+      ]
+    }
+  }
+}

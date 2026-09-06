@@ -1,0 +1,850 @@
+{
+  "vi": {
+    "en_c1_15": {
+      "title": "Danh từ hóa trong văn bản học thuật (Nominalization)",
+      "shortExplanation": "Chuyển đổi động từ hoặc mệnh đề thành cụm danh từ để câu văn trở nên súc tích, khách quan và mang tính học thuật cao.",
+      "longExplanation": "Danh từ hóa là quá trình chuyển đổi hành động (động từ), tính chất (tính từ) hoặc cả một mệnh đề thành một cụm danh từ. Cấu trúc này giúp:\n1. Nén thông tin súc tích: Thay vì viết câu dài nhiều mệnh đề, ta dùng danh từ (Ví dụ: 'Giá cả tăng đáng kể' → 'Đã có sự gia tăng đáng kể về giá cả').\n2. Dễ dàng bổ sung các định ngữ miêu tả chi tiết.\n3. Tạo giọng văn khách quan, trang trọng, hạn chế đại từ nhân xưng, rất được ưa chuộng trong văn viết học thuật và báo cáo.",
+      "formation": "Mệnh đề chứa động từ → Cụm danh từ (Ví dụ: The fact that prices increased → The increase in prices...)",
+      "examples": [
+        {
+          "translation": "Chất lượng không khí đã có sự cải thiện đáng kể."
+        },
+        {
+          "translation": "Việc anh ấy từ chối bình luận đã khiến mọi người ngạc nhiên."
+        }
+      ]
+    },
+    "en_c1_16": {
+      "title": "Phân từ hiện tại: Mệnh đề V-ing (Present participle clause)",
+      "shortExplanation": "Dùng cụm phân từ hiện tại (V-ing) để rút gọn mệnh đề trạng ngữ chỉ hành động đồng thời hoặc nguyên nhân.",
+      "longExplanation": "Mệnh đề phân từ hiện tại (V-ing) được dùng để rút gọn mệnh đề phụ khi hai mệnh đề có cùng chủ ngữ:\n• Hành động diễn ra đồng thời: Walking home, I noticed something strange. (= Khi đang đi bộ về nhà, tôi nhận thấy...)\n• Chỉ nguyên nhân, lý do: Knowing the answer, she raised her hand. (= Vì đã biết câu trả lời, cô ấy...)\n• Lưu ý: Chủ ngữ ngầm hiểu của phân từ bắt buộc phải trùng với chủ ngữ của mệnh đề chính; tránh lỗi phân từ treo (phân từ lơ lửng).",
+      "formation": "Hiện tại phân từ (V-ing) + ..., Chủ ngữ + Động từ... / Phủ định: Not + V-ing + ..., Chủ ngữ + Động từ...",
+      "examples": [
+        {
+          "translation": "Vừa đến sân bay, anh ấy nhận ra mình đã để quên hộ chiếu."
+        },
+        {
+          "translation": "Không biết phải làm gì, cô ấy đã gọi điện cho mẹ."
+        }
+      ]
+    },
+    "en_c1_17": {
+      "title": "Cụm quá khứ phân từ: Mệnh đề V3 / Having + V3 (Past participle phrase)",
+      "shortExplanation": "Dùng quá khứ phân từ (V3/V-ed) cho nghĩa bị động hoặc 'Having + V3' để diễn tả hành động đã hoàn tất trước mệnh đề chính.",
+      "longExplanation": "Rút gọn mệnh đề bằng quá khứ phân từ giúp câu văn cô đọng và mang sắc thái văn phong cao cấp:\n• Mệnh đề quá khứ phân từ (V3/V-ed): Mang ý nghĩa bị động (Ví dụ: Built in 1889, the Eiffel Tower... = Được xây dựng vào năm 1889, tháp Eiffel...).\n• Cấu trúc phân từ hoàn thành (Having + V3/V-ed): Nhấn mạnh một hành động đã hoàn tất trước hành động của mệnh đề chính (Ví dụ: Having read the report, he called a meeting = Sau khi đọc xong báo cáo, anh ấy đã triệu tập cuộc họp).",
+      "formation": "Quá khứ phân từ (V3/V-ed) + ..., Chủ ngữ + Động từ... HOẶC Having + V3/V-ed + ..., Chủ ngữ + Động từ...",
+      "examples": [
+        {
+          "translation": "Bị bất ngờ trước tin tức đó, cô ấy lặng lẽ ngồi xuống."
+        },
+        {
+          "translation": "Sau khi hoàn thành bài thi, các học sinh đã rời khỏi phòng."
+        }
+      ]
+    },
+    "en_c2_01": {
+      "title": "Câu điều kiện với unless / provided / as long as / on condition that",
+      "shortExplanation": "Các liên từ thay thế 'if' để diễn đạt các sắc thái điều kiện nghiêm ngặt, giả định hoặc giao ước.",
+      "longExplanation": "Các liên từ thay thế 'if' trong câu điều kiện nâng cao:\n• unless = trừ khi, nếu không (bằng nghĩa với 'if not', bản thân mang nghĩa phủ định nên mệnh đề theo sau không dùng thể phủ định).\n• provided (that) / providing (that) = miễn là, với điều kiện là (chỉ điều kiện duy nhất, bắt buộc).\n• as long as = miễn là, chỉ cần (nhấn mạnh sự duy trì điều kiện trong suốt quá trình).\n• on condition that = với điều kiện là (rất trang trọng, thường dùng trong hợp đồng, văn bản chính thức).\n• in case = phòng khi, phòng trường hợp.",
+      "formation": "Liên từ điều kiện (Unless / Provided / As long as / On condition that) + Mệnh đề điều kiện, Mệnh đề chính",
+      "examples": [
+        {
+          "translation": "Tôi sẽ cho bạn vay tiền, miễn là bạn phải trả lại cho tôi."
+        },
+        {
+          "translation": "Bạn có thể dùng máy tính xách tay của tôi, với điều kiện bạn không được tải về bất cứ thứ gì."
+        }
+      ]
+    },
+    "en_c2_02": {
+      "title": "Câu hỏi giả định với Suppose / Supposing / What if",
+      "shortExplanation": "Dùng để nêu ra tình huống giả tưởng, đưa ra câu hỏi giả định hoặc gợi ý tưởng tượng.",
+      "longExplanation": "Các từ dùng để thiết lập tình huống giả định:\n• Suppose / Supposing: Dùng tương đương như 'nếu / giả sử' trong các câu hỏi mang tính suy đoán, tưởng tượng.\n• What if: Là dạng diễn đạt thân mật hơn trong khẩu ngữ, mang nghĩa 'lỡ như... thì sao?'.\n• Đi với thì Quá khứ đơn hoặc Quá khứ hoàn thành để diễn tả tình huống hoàn toàn mang tính tưởng tượng, không có thật hoặc rất khó xảy ra.",
+      "formation": "Suppose / Supposing / What if + Chủ ngữ + Động từ (chia ở thì Quá khứ hoặc Hiện tại)..., Mệnh đề nghi vấn?",
+      "examples": [
+        {
+          "translation": "Giả sử bạn bắt buộc phải lựa chọn — bạn sẽ chọn cái nào?"
+        },
+        {
+          "translation": "Lỡ như chẳng có ai đến thì sao? Chúng ta nên làm gì đây?"
+        }
+      ]
+    },
+    "en_c2_03": {
+      "title": "Đảo ngữ với Only đứng đầu câu (Only + trạng ngữ + đảo ngữ)",
+      "shortExplanation": "Đưa cụm 'Only' kết hợp với trạng từ, giới từ hoặc mệnh đề lên đầu câu và đảo trợ động từ lên trước chủ ngữ để nhấn mạnh tuyệt đối.",
+      "longExplanation": "Khi cụm từ bắt đầu bằng Only kết hợp với các từ chỉ thời gian, điều kiện hoặc phương thức (như only when, only after, only if, only then, only by, only in) được đảo lên đầu câu nhằm mục đích tu từ, mệnh đề chính bắt buộc phải thực hiện đảo ngữ (đưa trợ động từ lên trước chủ ngữ).\nĐây là một trong những biện pháp tu từ mạnh mẽ nhất trong văn viết trang trọng và nghệ thuật diễn thuyết trước công chúng.",
+      "formation": "Only + Trạng ngữ (thời gian / điều kiện / phương thức) + Trợ động từ / Động từ khiếm khuyết + Chủ ngữ + Động từ chính...",
+      "examples": [
+        {
+          "translation": "Chỉ khi bạn tự mình trải nghiệm thì bạn mới có thể thực sự thấu hiểu."
+        },
+        {
+          "translation": "Chỉ sau nhiều năm khổ luyện cô ấy mới làm chủ được kỹ năng đó."
+        }
+      ]
+    },
+    "en_c2_04": {
+      "title": "Đảo ngữ với So / Such (So + tính từ/trạng từ + đảo ngữ)",
+      "shortExplanation": "Đưa 'So + tính từ/trạng từ' hoặc 'Such' lên đầu câu nhằm nhấn mạnh mức độ đến nỗi gây ra kết quả ở mệnh đề sau.",
+      "longExplanation": "Cấu trúc đảo ngữ mang phong cách sách vở, trang trọng và giàu tính hùng biện:\n• So + Tính từ / Trạng từ + Động từ to be / Trợ động từ + Chủ ngữ + that + Mệnh đề chỉ kết quả (đến mức độ mà...).\n• Such + Động từ to be + Chủ ngữ + that + Mệnh đề chỉ kết quả (sự việc to lớn / nghiêm trọng đến mức mà...).",
+      "formation": "So + Tính từ / Trạng từ + be / Trợ động từ + Chủ ngữ + that + Mệnh đề HOẶC Such + be + Chủ ngữ + that + Mệnh đề",
+      "examples": [
+        {
+          "translation": "Sự biến đổi diễn ra nhanh đến nỗi không một ai kịp thời thích nghi."
+        },
+        {
+          "translation": "Tài năng của cô ấy xuất chúng đến mức cô đã được trao một suất học bổng."
+        }
+      ]
+    },
+    "en_c2_05": {
+      "title": "Ngôn ngữ rào đón trong văn bản học thuật (Hedging)",
+      "shortExplanation": "Sử dụng các cấu trúc làm mềm phát ngôn để thể hiện sự khách quan, cẩn trọng và khiêm tốn khoa học.",
+      "longExplanation": "Ngôn ngữ rào đón (cách nói giảm độ khẳng định) là kỹ thuật diễn đạt thận trọng, tránh khẳng định tuyệt đối để phù hợp với chuẩn mực nghiên cứu khoa học.\nCác cấu trúc nòng cốt:\n• appear / seem to: dường như, có vẻ như\n• tend to: có xu hướng, thường có khuynh hướng\n• be likely / unlikely to: có khả năng / khó có khả năng xảy ra\n• be thought / considered to be: được cho là, được nhìn nhận là",
+      "formation": "Chủ ngữ + appear / seem / tend + Động từ nguyên mẫu có to HOẶC Chủ ngữ + be likely / thought / considered + Động từ nguyên mẫu có to",
+      "examples": [
+        {
+          "translation": "Các kết quả dường như gợi ý về sự tồn tại của một mối tương quan."
+        },
+        {
+          "translation": "Các doanh nghiệp thường có xu hướng đánh giá thấp chi phí triển khai."
+        }
+      ]
+    },
+    "en_c2_06": {
+      "title": "Từ nối liên kết trong văn bản học thuật (Discourse markers)",
+      "shortExplanation": "Các từ nối chuyển ý giúp cấu trúc hóa lập luận, tạo sự mạch lạc và liên kết chặt chẽ cho bài viết học thuật.",
+      "longExplanation": "Từ nối liên kết văn bản đóng vai trò định hướng người đọc và gắn kết các mạch suy nghĩ trong văn bản học thuật:\n• Bổ sung ý kiến: Moreover, Furthermore, In addition, Additionally (hơn nữa, thêm vào đó)\n• Tương phản, đối lập: However, Nevertheless, Conversely, On the other hand (tuy nhiên, ngược lại, trái lại)\n• Kết quả, hệ quả: Therefore, Consequently, As a result, Hence, Thus (do đó, vì vậy, kết quả là)\n• Giải thích, làm rõ: In other words, That is to say, Namely (nói cách khác, tức là, cụ thể là)\n• Nhượng bộ: Admittedly, While it is true that, Despite this (phải thừa nhận rằng, mặc dù đúng là, dẫu vậy)",
+      "formation": "Từ nối liên kết (đầu câu) + Dấu phẩy + Mệnh đề độc lập HOẶC Mệnh đề 1; Từ nối, Mệnh đề 2",
+      "examples": [
+        {
+          "translation": "Thí nghiệm đã thất bại. Dù vậy, các kết quả thu được vẫn mang lại nhiều bài học bổ ích."
+        },
+        {
+          "translation": "Hơn nữa, dữ liệu nghiên cứu chỉ ra một mối tương quan hết sức chặt chẽ."
+        }
+      ]
+    },
+    "en_c2_07": {
+      "title": "Ngữ vực phong cách (Speech registers): trang trọng, trung tính, thân mật",
+      "shortExplanation": "Lựa chọn mức độ từ vựng và ngữ pháp phù hợp tùy theo bối cảnh, đối tượng giao tiếp và mục đích truyền tải.",
+      "longExplanation": "Ngữ vực là phong cách ngôn ngữ được quyết định bởi mục đích, người nghe và hoàn cảnh giao tiếp:\n• Trang trọng: Dùng câu bị động, danh từ hóa, liên từ phức, không viết tắt, ưu tiên từ gốc Latin (commence, terminate, assist).\n• Trung tính: Ngữ pháp chuẩn mực, không dùng tiếng lóng, cách diễn đạt chuẩn chỉ thông dụng.\n• Thân mật: Dùng lược từ, cụm động từ thay thế từ gốc Latin (put off thay cho postpone), viết tắt, từ ngữ khẩu ngữ đời thường.",
+      "formation": "Trang trọng (Từ vựng học thuật, bị động, không viết tắt) ↔ Trung tính (Chuẩn mực thông dụng) ↔ Thân mật (Khẩu ngữ, cụm động từ, viết tắt)",
+      "examples": [
+        {
+          "translation": "Trang trọng: Tôi xin được hướng sự chú ý của quý vị tới một điểm sai lệch."
+        },
+        {
+          "translation": "Trung tính: Tôi muốn chỉ ra một lỗi sai."
+        },
+        {
+          "translation": "Thân mật: Mình chỉ muốn nhắc nhanh một chút thôi."
+        }
+      ]
+    },
+    "en_c2_08": {
+      "title": "Nghĩa biểu cảm của từ đồng nghĩa - các sắc thái ý nghĩa (Connotations)",
+      "shortExplanation": "Phân biệt sắc thái tình cảm (tích cực, trung tính, tiêu cực) giữa các từ có cùng nét nghĩa cơ bản.",
+      "longExplanation": "Các từ đồng nghĩa có thể cùng miêu tả một sự vật hoặc hiện tượng nhưng lại khác nhau về sắc thái biểu cảm (nghĩa biểu cảm) và mức độ phù hợp ngữ cảnh.\nCác thang đo sắc thái tiêu biểu:\n• slim (mảnh mai: tích cực) → thin (gầy: trung tính) → skinny (gầy gò/gầy nhẳng: tiêu cực) → scrawny/gaunt (gầy trơ xương/hốc hác: rất tiêu cực)\n• determined (kiên định: tích cực) → firm (vững vàng: trung tính) → stubborn/pig-headed (bướng bỉnh/cứng đầu: tiêu cực)\n• thrifty (tiết kiệm/biết tính toán: tích cực) → economical (tiết kiệm: trung tính) → stingy/tight-fisted (keo kiệt/bủn xỉn: tiêu cực)\n• confident (tự tin: tích cực) → assertive (quả quyết: trung tính) → arrogant (ngạo mạn/kiêu căng: tiêu cực)",
+      "formation": "Từ đồng nghĩa: Sắc thái tích cực (+) → Sắc thái trung tính (0) → Sắc thái tiêu cực (-)",
+      "examples": [
+        {
+          "translation": "Cùng miêu tả một nét vóc dáng nhưng thể hiện thái độ khác biệt: Cô ấy mảnh mai (+) / Cô ấy gầy (0) / Cô ấy gầy gò nhom nhem (-)."
+        }
+      ]
+    },
+    "en_c2_09": {
+      "title": "Biện pháp tu từ: điệp từ đầu câu, đối chéo, tam trùng (Rhetorical devices)",
+      "shortExplanation": "Các thủ pháp tu từ cổ điển giúp tăng sức truyền cảm, tạo nhịp điệu và gây ấn tượng sâu sắc trong văn phong hùng biện.",
+      "longExplanation": "Các thủ pháp tu từ nâng cao thường được vận dụng trong diễn thuyết, báo chí và văn nghị luận:\n• Điệp từ ngữ đầu câu: Lặp lại từ ngữ ở đầu các câu hoặc mệnh đề liên tiếp để tạo cao trào cảm xúc (Ví dụ: 'I have a dream... I have a dream...').\n• Phép đối chéo: Kết cấu đối xứng bắt chéo theo mô hình A-B / B-A (Ví dụ: 'Ask not what your country can do for you, but what you can do for your country').\n• Phép tam trùng: Chuỗi ba thành phần cú pháp song song tạo nhịp điệu thuyết phục (Ví dụ: 'Veni, vidi, vici' - Tôi đến, tôi thấy, tôi chinh phục; 'Chính quyền của dân, do dân, vì dân').",
+      "formation": "Điệp từ đầu (A..., A...) / Phép đối chéo (A-B, B-A) / Phép tam trùng (Ba vế song hành A, B, C)",
+      "examples": [
+        {
+          "translation": "Hỡi các bạn, những người La Mã, hỡi đồng bào, xin hãy lắng nghe tôi. (Phép tam trùng ba vế song hành)"
+        },
+        {
+          "translation": "Càng học nhiều, bạn càng kiếm được nhiều tiền. (Phép đối chéo trong tục ngữ)"
+        }
+      ]
+    },
+    "en_c2_10": {
+      "title": "Kết hợp từ chuẩn xác trong văn bản học thuật (Academic collocations)",
+      "shortExplanation": "Sử dụng chính xác các cặp động từ - danh từ cố định theo chuẩn mực học thuật quốc tế.",
+      "longExplanation": "Ở trình độ cao cấp, việc kết hợp chuẩn xác động từ đi kèm với từng danh từ là tiêu chí quan trọng để tạo nên tính tự nhiên và học thuật:\nCác cụm kết hợp từ học thuật tiêu biểu:\n• conduct / carry out research (tiến hành nghiên cứu; không dùng make/do)\n• draw / reach a conclusion (rút ra kết luận)\n• raise / address / tackle an issue (nêu lên / giải quyết một vấn đề)\n• reach / achieve a consensus (đạt được sự đồng thuận chung)\n• make significant progress (đạt được bước tiến đáng kể)\n• pose / present a challenge (đặt ra một thách thức)",
+      "formation": "Động từ học thuật chuyên biệt + Cụm danh từ tương ứng (Ví dụ: conduct research, reach a consensus...)",
+      "examples": [
+        {
+          "translation": "Các nhà nghiên cứu đã tiến hành các cuộc phỏng vấn trên quy mô sâu rộng."
+        },
+        {
+          "translation": "Ủy ban đã không thể đạt được sự đồng thuận chung."
+        }
+      ]
+    },
+    "en_c2_11": {
+      "title": "Cấu trúc tuyệt đối với phân từ (Absolute construction)",
+      "shortExplanation": "Cấu trúc gồm danh từ/đại từ đi cùng phân từ có chủ ngữ độc lập với mệnh đề chính, dùng để bổ sung hoàn cảnh mà không cần liên từ.",
+      "longExplanation": "Cấu trúc tuyệt đối (cấu trúc độc lập phân từ) = Danh từ / Đại từ + Phân từ (mang chủ ngữ độc lập, không phụ thuộc vào chủ ngữ của mệnh đề chính).\nCấu trúc này mang văn phong trang trọng, thường xuất hiện trong văn viết để bổ sung hoàn cảnh (thời gian, điều kiện, nguyên nhân) một cách cô đọng mà không cần dùng liên từ phụ thuộc.\nCác phân loại thường gặp:\n• Điều kiện: Weather permitting = Nếu thời tiết cho phép\n• Nhận định: All things considered = Sau khi cân nhắc mọi khía cạnh\n• Thời gian / Hoàn thành: Her work finished = Khi công việc của cô ấy hoàn thành; This done = Sau khi điều này được thực hiện xong",
+      "formation": "Danh từ / Đại từ + Phân từ (V-ing hoặc V3/V-ed) + ..., Mệnh đề chính",
+      "examples": [
+        {
+          "translation": "Xét về mọi khía cạnh, đó vẫn là một sự kiện thành công tốt đẹp."
+        },
+        {
+          "translation": "Do thời hạn chót đã trôi qua, dự án đã bị bãi bỏ."
+        }
+      ]
+    },
+    "en_c2_12": {
+      "title": "Lược bỏ và thay thế trong ngữ cảnh văn bản (Ellipsis & Substitution)",
+      "shortExplanation": "Kỹ thuật lược bớt hoặc dùng từ thay thế cho các thành phần đã biết để câu văn súc tích và tránh lặp từ không cần thiết.",
+      "longExplanation": "Lược bỏ và thay thế là hai phương tiện liên kết ngữ văn quan trọng giúp văn bản mạch lạc:\n• Lược bỏ: Bỏ qua những thành phần đã được đề cập từ trước mà người nghe/người đọc vẫn tự hiểu được (Ví dụ: I wanted to leave, but wasn't allowed to [leave]).\n• Thay thế: Dùng các từ thay thế ngắn như do, so, one, it thay vì lặp lại cả một cụm từ dài.\nCác trường hợp điển hình:\n• Trả lời ngắn gọn: A: Are you coming? B: Might do.\n• Đồng tình: She speaks French and he does too / so does he.\n• Thay thế danh từ bằng 'one': The big one? I prefer the small one.",
+      "formation": "Mệnh đề nêu thông tin + Liên từ / Lượt lời đối thoại + [Thành phần được lược bỏ hoặc thay bằng do / so / one / to]",
+      "examples": [
+        {
+          "translation": "Bạn có biết lái xe không? — Trước đây tôi từng biết lái (nhưng giờ không lái nữa)."
+        },
+        {
+          "translation": "Cô ấy bảo rằng cô ấy sẽ có mặt ở đây, và quả đúng là cô ấy đã đến."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "en_c1_15": {
+      "title": "学术文本中的名词化（Nominalization）",
+      "shortExplanation": "将动词或从句转换为名词短语，使语言更加精炼、客观并富有学术色彩。",
+      "longExplanation": "名词化是指将动词、形容词或整个从句转换为名词或名词短语的语言现象。其主要功能包括：\n1. 浓缩信息：避免冗长的复合从句，大幅提升信息密度（如将'物价大幅上涨'表达为'物价的显著上涨'）。\n2. 便于添加修饰成分：能够在名词前后灵活添加定语进行严谨界定。\n3. 营造客观严谨的学术基调：弱化第一人称主观色彩，凸显客观研究事实。",
+      "formation": "谓语从句/动词短语 → 名词短语（例如：The fact that prices increased → The increase in prices...）",
+      "examples": [
+        {
+          "translation": "空气质量有了显著的改善。"
+        },
+        {
+          "translation": "他拒绝发表评论让所有人都感到意外。"
+        }
+      ]
+    },
+    "en_c1_16": {
+      "title": "现在分词短语：V-ing 分词从句（Present participle clause）",
+      "shortExplanation": "使用现在分词（V-ing）短语简化状语从句，表达伴随动作、同时发生或原因。",
+      "longExplanation": "当状语从句与主句主语一致时，可用现在分词（V-ing）短语进行简化：\n• 表示动作同时发生：Walking home, I noticed something strange.（= 在走回家的路上，我注意到了一些异常情况）\n• 表示原因：Knowing the answer, she raised her hand.（= 因为知道答案，她举起了手）\n• 注意避免悬垂分词错误：分词短语的逻辑主语必须严格与主句主语保持一致。",
+      "formation": "现在分词（V-ing）+ ……，主语 + 谓语…… / 否定形式：Not + V-ing + ……，主语 + 谓语……",
+      "examples": [
+        {
+          "translation": "一到达机场，他就意识到自己忘了带护照。"
+        },
+        {
+          "translation": "不知该如何是好，她便给母亲打了电话。"
+        }
+      ]
+    },
+    "en_c1_17": {
+      "title": "过去分词短语：V3 / Having + V3 从句（Past participial phrase）",
+      "shortExplanation": "过去分词表被动含义，Having + V3 则强调分词动作先于主句动作完成。",
+      "longExplanation": "使用过去分词或完成分词短语可以使书面表达更加简洁优雅：\n• 过去分词短语（V-ed/V3）：表示被动含义或完成状态（例如：Built in 1889, the Eiffel Tower... = 埃菲尔铁塔建于1889年……）。\n• 完成分词短语（Having + V3）：明确强调该动作在主句谓语动作发生之前就已经结束（例如：Having read the report, he called a meeting. = 读完报告后，他召集了会议）。",
+      "formation": "过去分词（V-ed/V3）+ ……，主语 + 谓语…… 或 Having + 过去分词（V-ed/V3）+ ……，主语 + 谓语……",
+      "examples": [
+        {
+          "translation": "听到这个消息感到十分震惊，她默默地坐了下来。"
+        },
+        {
+          "translation": "完成考试后，学生们便离开了考场。"
+        }
+      ]
+    },
+    "en_c2_01": {
+      "title": "含 unless / provided / as long as / on condition that 的条件句",
+      "shortExplanation": "替代 'if' 引导条件从句，表达除非、只要或以……为前提等严格限定条件。",
+      "longExplanation": "在高级英语中，常用特定连词替代 if 来表达更精确的条件关系：\n• unless = 除非、如果不（相当于 if not，其引导的从句本身含否定意味，从句谓语不可再用否定式）。\n• provided / providing (that) = 只要、在……条件下（强调必要前提条件）。\n• as long as = 只要（强调条件的持续性或前提假设）。\n• on condition that = 在……条件下（语体极为正式，常用于合同或书面协议）。\n• in case = 以防、万一。",
+      "formation": "条件连词（Unless / Provided / As long as / On condition that）+ 条件从句，主句",
+      "examples": [
+        {
+          "translation": "只要你保证按时还钱，我就把钱借给你。"
+        },
+        {
+          "translation": "你可以使用我的笔记本电脑，前提是不能下载任何内容。"
+        }
+      ]
+    },
+    "en_c2_02": {
+      "title": "Suppose / Supposing / What if 引导的假设问句",
+      "shortExplanation": "用于提出假设性问题、推测未知情况或邀请对方设想某种情境。",
+      "longExplanation": "用于构建假设情境的句型结构：\n• Suppose / Supposing：相当于 if，常用于引导假设性、探讨性的设问。\n• What if：更为口语化的表达方式，意思是'要是……怎么办？'或'如果……会怎样？'。\n• 搭配一般过去时或过去完成时：表示与现实相反或极不可能发生的纯假设情况。",
+      "formation": "Suppose / Supposing / What if + 主语 + 谓语动词（过去时或现在时）……，疑问句分句？",
+      "examples": [
+        {
+          "translation": "假定你必须做出选择——你会选哪一个？"
+        },
+        {
+          "translation": "要是没有人来怎么办？我们该采取什么措施？"
+        }
+      ]
+    },
+    "en_c2_03": {
+      "title": "Only + 状语置于句首的倒装结构",
+      "shortExplanation": "将含有 'Only' 的时间、条件或方式状语置于句首以示强调，主句必须进行部分倒装。",
+      "longExplanation": "当以 Only 开头的时间、条件或方式状语（如 only when, only after, only if, only then, only by, only in）置于句首以突出重点时，主句必须采用部分倒装（将助动词、情态动词或 be 动词置于主语之前）。\n这是正式书面语和公众演讲中最具感染力与修辞力量的句式之一。",
+      "formation": "Only + 状语（时间/条件/方式）+ 助动词/情态动词/be动词 + 主语 + 谓语主要动词……",
+      "examples": [
+        {
+          "translation": "唯有亲身经历过，你才能真正体会与理解。"
+        },
+        {
+          "translation": "历经数年的刻苦练习之后，她才真正掌握了这门技能。"
+        }
+      ]
+    },
+    "en_c2_04": {
+      "title": "So + 形容词/副词 引起的倒装结构",
+      "shortExplanation": "将 'So + 形容词/副词' 或 'Such' 提前到句首以强化程度，引导表示结果的倒装句。",
+      "longExplanation": "属于典雅的书面语与演说修辞风格：\n• So + 形容词/副词 + be动词/助动词 + 主语 + that + 结果从句（程度剧烈到如此地步，以至于……）。\n• Such + be动词 + 主语 + that + 结果从句（情况严重/程度重大到如此地步，以至于……）。",
+      "formation": "So + 形容词/副词 + be动词/助动词 + 主语 + that + 从句 或 Such + be动词 + 主语 + that + 从句",
+      "examples": [
+        {
+          "translation": "变革来得如此迅猛，以至于没有任何人能够立刻适应。"
+        },
+        {
+          "translation": "她的才华极为出众，以至于直接获得了全额奖学金。"
+        }
+      ]
+    },
+    "en_c2_05": {
+      "title": "学术模糊限制语（Hedging）：appear to, seem to, tend to, be likely to",
+      "shortExplanation": "通过委婉弱化陈述的确定性，体现科学论述的审慎度与客观谦逊。",
+      "longExplanation": "模糊限制语是学术写作中不可或缺的表达策略，旨在避免主观武断，保持严谨审慎的学术态度。\n常用核心结构包括：\n• appear / seem to：似乎、表面看来\n• tend to：倾向于、往往容易\n• be likely / unlikely to：很可能 / 极不可能\n• be thought / considered to be：被认为、被视作",
+      "formation": "主语 + appear / seem / tend + 动词不定式（to + 动词原形）或 主语 + be likely / thought / considered + 动词不定式（to + 动词原形）",
+      "examples": [
+        {
+          "translation": "实验结果似乎表明两者之间存在某种关联性。"
+        },
+        {
+          "translation": "企业往往容易低估方案的落地实施成本。"
+        }
+      ]
+    },
+    "en_c2_06": {
+      "title": "学术文本中的语篇标记词（Discourse markers）",
+      "shortExplanation": "连接各逻辑层面的衔接词，用于梳理学术论证脉络并增强行文逻辑性。",
+      "longExplanation": "语篇标记词在学术文本中用于构建逻辑骨架，引导读者的思维走向：\n• 递进与补充：Moreover, Furthermore, In addition, Additionally（此外、而且、并且）\n• 转折与对比：However, Nevertheless, Conversely, On the other hand（然而、尽管如此、相反、另一方面）\n• 因果与推论：Therefore, Consequently, As a result, Hence, Thus（因此、由此、结果表明）\n• 解释与阐明：In other words, That is to say, Namely（换句话说、也就是说、即）\n• 让步与限定：Admittedly, While it is true that, Despite this（诚然、虽然确实如此、尽管如此）",
+      "formation": "语篇标记词（句首）+ 逗号 + 独立句子 或 句子1；语篇标记词，句子2",
+      "examples": [
+        {
+          "translation": "实验失败了。尽管如此，所获得的研究发现依然极具启发意义。"
+        },
+        {
+          "translation": "此外，各项数据均显示出极强的正相关性。"
+        }
+      ]
+    },
+    "en_c2_07": {
+      "title": "语言语体（Speech registers）：正式、中性、口语",
+      "shortExplanation": "根据交际场合、受众群体与交流目的，准确选取适宜的词汇与句式层次。",
+      "longExplanation": "语体风格由语境、交流对象和表达目的共同决定：\n• 正式语体：大量运用被动语态、名词化结构、复合连词、无缩略形式，偏好拉丁源动词（如 commence, terminate, assist）。\n• 中性语体：遵循规范语法，不包含俚语，采用通用得体的标准表达。\n• 口语语体：多用省略句、短语动词（如用 put off 代替 postpone）、缩略词以及口语熟语。",
+      "formation": "正式语体（学术词汇、被动语态、完整书写）↔ 中性语体（规范日常表达）↔ 口语语体（短语动词、缩略形式、口语俚俗）",
+      "examples": [
+        {
+          "translation": "正式语体：我想提请阁下注意此处存在的一处差异。"
+        },
+        {
+          "translation": "中性语体：我想指出这里的一个错误。"
+        },
+        {
+          "translation": "口语语体：就是想顺便提醒你注意一下这事。"
+        }
+      ]
+    },
+    "en_c2_08": {
+      "title": "同义词内涵意义与感情色彩（Connotations）",
+      "shortExplanation": "辨析同义词在感情色彩（褒义、中性、贬义）及细微语义上的明暗层次。",
+      "longExplanation": "同义词尽管概念意义相近，但其所蕴含的感情色彩（内涵意义）和适用的语体风格存在显著差异。\n典型梯度对比示例：\n• slim（苗条：褒义）→ thin（消瘦：中性）→ skinny（皮包骨：贬义）→ scrawny/gaunt（骨瘦如柴/憔悴干瘪：极贬义）\n• determined（坚定执着：褒义）→ firm（坚决稳重：中性）→ stubborn/pig-headed（顽固不化/死脑筋：贬义）\n• thrifty（节俭善持家：褒义）→ economical（节约算计：中性）→ stingy/tight-fisted（吝啬小气：贬义）\n• confident（自信昂扬：褒义）→ assertive（笃定果敢：中性）→ arrogant（傲慢狂妄：贬义）",
+      "formation": "同义词序列：褒义倾向（+）→ 中性基调（0）→ 贬义倾向（-）",
+      "examples": [
+        {
+          "translation": "描述同一客观体态却体现完全不同的情感倾向：她很苗条（+）/ 她很瘦（0）/ 她骨瘦如柴（-）。"
+        }
+      ]
+    },
+    "en_c2_09": {
+      "title": "修辞手法：首语从复、交错配列、三句式（Rhetorical devices）",
+      "shortExplanation": "经典修辞格，赋予语言节奏美感与感染力，广泛运用于公共演说与政论散文。",
+      "longExplanation": "高级英语写作与公众演说中常用的经典修辞手法：\n• 首语从复：在连续的句子或从句开头重复相同的词句，层层递进以强化情感力量（例如：'I have a dream... I have a dream...'）。\n• 交错配列：采用 AB-BA 的交叉对称句式，产生哲理思辨的对照张力（例如：'Ask not what your country can do for you, but what you can do for your country'）。\n• 三句式（三分法）：由三个并列的排比要素构成平衡对称的节律（例如凯撒名言 'Veni, vidi, vici' 我来，我见，我征服；林肯演说 '民有、民治、民享的政府'）。",
+      "formation": "首语从复（句首连续重复 A...）/ 交错配列（A-B 对照 B-A）/ 三句式排比（并列三要素 A, B, C）",
+      "examples": [
+        {
+          "translation": "朋友们，罗马同胞们，乡亲们，请听我说。（经典三句式排比）"
+        },
+        {
+          "translation": "学得越多，赚得越多。（民间谚语中的交错对称句式）"
+        }
+      ]
+    },
+    "en_c2_10": {
+      "title": "学术文本中的精准词语搭配（Academic collocations）",
+      "shortExplanation": "掌握符合学术规范的固定动宾搭配与习惯用语，确保行文地道严谨。",
+      "longExplanation": "在高级英语表达中，特定学术名词往往有其约定俗成的标准搭配动词：\n常见学术核心搭配：\n• conduct / carry out research（开展研究；切忌使用 make 或 do）\n• draw / reach a conclusion（得出结论）\n• raise / address / tackle an issue（提出/正视/解决问题）\n• reach / achieve a consensus（达成共识）\n• make significant progress（取得显著进展）\n• pose / present a challenge（构成严峻挑战）",
+      "formation": "规范学术动词 + 相应核心名词（例如：conduct research, reach a consensus...）",
+      "examples": [
+        {
+          "translation": "研究人员展开了极其广泛的深度访谈。"
+        },
+        {
+          "translation": "委员会最终未能就该议题达成共识。"
+        }
+      ]
+    },
+    "en_c2_11": {
+      "title": "分词独立主格结构（Absolute construction）",
+      "shortExplanation": "由名词/代词与分词构成的独立状语结构，无需连词即可简洁交代背景情境。",
+      "longExplanation": "独立主格结构（分词独立结构）= 名词/代词 + 分词短语（拥有独立于主句的逻辑主语）。\n常用于正式书面文体中，能够在不依赖从属连词的前提下，极其凝练地提供时间、原因、条件或伴随状况等背景信息。\n典型类别解析：\n• 条件背景：Weather permitting = 如果天气情况允许\n• 综合评述：All things considered = 全面综合权衡之后\n• 时间与完成：Her work finished = 当她的工作完成之后；This done = 此事办妥之后",
+      "formation": "名词/代词 + 现在分词（V-ing）或 过去分词（V-ed/V3），主句",
+      "examples": [
+        {
+          "translation": "综合所有因素来看，这依然是一场非常成功的活动。"
+        },
+        {
+          "translation": "由于截止日期已过，该项目遗憾被取消了。"
+        }
+      ]
+    },
+    "en_c2_12": {
+      "title": "语篇中的省略与替代（Ellipsis & Substitution）",
+      "shortExplanation": "省略已知多余成分或运用代词、助动词进行替代，使语篇紧凑连贯、自然流畅。",
+      "longExplanation": "省略与替代是构建语篇衔接、避免机械重复的关键语言手段：\n• 省略：略去前文已明确交代过的信息成分（例如：I wanted to leave, but wasn't allowed to [leave] 省略了动词原形）。\n• 替代：使用 do, so, one, it 等简短代用词来指代先前出现过的名词、动词短语或整个命题。\n常见类型展示：\n• 对话简答省略：A: Are you coming? B: Might (do).\n• 并列替代：She speaks French and he does too / so does he.\n• 名词单复数替代：The big one? I prefer the small one.",
+      "formation": "前置陈述句子 + 连词/对话回应 + [省去重合成分 或 使用 do / so / one / to 进行替代]",
+      "examples": [
+        {
+          "translation": "你会开车吗？——我过去会开（现在不开好多年了）。"
+        },
+        {
+          "translation": "她曾说过自己会准时来这儿，她确实来了。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "en_c1_15": {
+      "title": "学術文における名詞化（Nominalization）",
+      "shortExplanation": "動詞や節を名詞句へ変換することで、文章を簡潔で客観的かつ格調高い学術的文体にする手法。",
+      "longExplanation": "名詞化とは、動詞、形容詞、または従属節全体を名詞や名詞句へと変換する文法的手法です。以下の効果があります：\n1. 情報の凝縮：複数の節からなる長い文を簡潔にまとめ、情報密度を高めます（例：「物価が上がった」→「物価の上昇」）。\n2. 修飾語の付加：名詞句の前後に形容詞などの修飾語を付加し、精密な定義を可能にします。\n3. 客観的・学術的な文体の形成：主観的な人称代名詞を排除し、フォーマルで客観的な論文調の文章に仕上げます。",
+      "formation": "動詞を含む節 → 名詞句（例：The fact that prices increased → The increase in prices...）",
+      "examples": [
+        {
+          "translation": "大気の質に著しい改善が見られました。"
+        },
+        {
+          "translation": "彼がコメントを拒否したことは、誰もを驚かせました。"
+        }
+      ]
+    },
+    "en_c1_16": {
+      "title": "現在分詞構文：V-ing 節（Present participle clause）",
+      "shortExplanation": "現在分詞（V-ing）を用いて副詞節を短縮し、同時進行の動作や理由・原因を表す表現。",
+      "longExplanation": "主節と主語が一致する場合、副詞節を現在分詞（V-ing）を用いた分詞構文へと書き換えることができます：\n• 同時進行（〜しながら、〜するとき）：Walking home, I noticed something strange.（＝ 家に歩いて帰っている途中、奇妙なことに気づいた）\n• 理由・原因（〜なので）：Knowing the answer, she raised her hand.（＝ 答えがわかっていたので、彼女は手を挙げた）\n• 注意点：分詞構文の意味上の主語は、必ず主節の主語と一致していなければならず、懸垂分詞の誤りを避ける必要があります。",
+      "formation": "現在分詞（V-ing）＋ 〜, 主語 ＋ 動詞〜 ／ 否定形：Not ＋ V-ing ＋ 〜, 主語 ＋ 動詞〜",
+      "examples": [
+        {
+          "translation": "空港に到着したとき、彼はパスポートを忘れてきたことに気づきました。"
+        },
+        {
+          "translation": "どうすべきかわからず、彼女は母親に電話をかけました。"
+        }
+      ]
+    },
+    "en_c1_17": {
+      "title": "過去分詞構文：V3 / Having + V3 節（Past participial phrase）",
+      "shortExplanation": "過去分詞で受動の意味を表し、「Having + 過去分詞」で主節よりも前の完了動作を表す表現。",
+      "longExplanation": "過去分詞や完了分詞を用いた分詞構文は、格調高い簡潔な記述を可能にします：\n• 過去分詞節（V-ed/V3）：受動の意味や完了した状態を表します（例：Built in 1889, the Eiffel Tower... ＝ 1889年に建造されたエッフェル塔は…）。\n• 完了分詞節（Having ＋ 過去分詞）：分詞の表す動作が、主節の動作よりも明確に過去に完了していたことを強調します（例：Having read the report, he called a meeting. ＝ 報告書を読み終えた後、彼は会議を招集した）。",
+      "formation": "過去分詞（V-ed/V3）＋ 〜, 主語 ＋ 動詞〜 または Having ＋ 過去分詞（V-ed/V3）＋ 〜, 主語 ＋ 動詞〜",
+      "examples": [
+        {
+          "translation": "その知らせに大きな衝撃を受け、彼女は静かに座り込みました。"
+        },
+        {
+          "translation": "試験を終えると、生徒たちは教室を退出していきました。"
+        }
+      ]
+    },
+    "en_c2_01": {
+      "title": "unless / provided / as long as / on condition that を用いた条件節",
+      "shortExplanation": "「if」の代用として、「〜でない限り」「〜という条件で」「〜でさえあれば」という厳格な条件を表す表現。",
+      "longExplanation": "上級英語において、if の代わりに特定の接続詞を用いて条件を細やかに表現します：\n• unless ＝ 〜でない限り、もし〜でなければ（if not に相当。語自体に否定の意味が含まれるため、節内では否定形を用いません）。\n• provided / providing (that) ＝ 〜という条件で、〜でありさえすれば（不可欠な必要条件を表します）。\n• as long as ＝ 〜である限り、〜でさえあれば（状態の継続を前提とする条件）。\n• on condition that ＝ 〜を条件として（契約書や公式文書で用いられる非常にフォーマルな表現）。\n• in case ＝ 〜の場合に備えて、万一〜なら。",
+      "formation": "条件を表す接続詞（Unless / Provided / As long as / On condition that）＋ 条件節, 主節",
+      "examples": [
+        {
+          "translation": "きちんと返済してくれるなら、お金をお貸ししますよ。"
+        },
+        {
+          "translation": "何もダウンロードしないという条件なら、私のノートパソコンを使って構いません。"
+        }
+      ]
+    },
+    "en_c2_02": {
+      "title": "Suppose / Supposing / What if による仮定表現",
+      "shortExplanation": "仮定の状況を提示したり、もしもの場合の問いかけを行ったりする表現。",
+      "longExplanation": "仮定の状況を設定して問いかける際に用いられる構文です：\n• Suppose / Supposing：if の代わりに用いられ、「もし〜だとしたらどうするか」という仮定の設問を作ります。\n• What if：「もし〜だったらどうなるだろう？」「〜したらどうする？」という口語的な表現です。\n• 過去形や過去完了形を伴う場合：現実には起こりそうにない空想上の事態や反実仮想を表します。",
+      "formation": "Suppose / Supposing / What if ＋ 主語 ＋ 動詞（過去形または現在形）〜, 疑問節？",
+      "examples": [
+        {
+          "translation": "仮に選択しなければならないとしたら、どちらを選びますか？"
+        },
+        {
+          "translation": "もし誰も来なかったらどうしましょう？ どうすべきですかね？"
+        }
+      ]
+    },
+    "en_c2_03": {
+      "title": "Only + 状況語句による倒置構文",
+      "shortExplanation": "「Only」を伴う時や条件の副詞句・節を文頭に置いて強調し、主節を倒置させる構文。",
+      "longExplanation": "Only を伴う時・条件・手段の表現（only when, only after, only if, only then, only by, only in など）が文頭に置かれて強調されると、主節は助動詞・be動詞が主語の前に出る部分倒置になります。\nこれは格式ある文章や公式演説において、極めて強い説得力と力強さをもたらす代表的な修辞技法です。",
+      "formation": "Only ＋ 状況副詞句／副詞節（時・条件・手段）＋ 助動詞／be動詞 ＋ 主語 ＋ 本動詞〜",
+      "examples": [
+        {
+          "translation": "実際に自ら経験してみて初めて、人は真に理解できるのです。"
+        },
+        {
+          "translation": "何年もの厳しい鍛錬を経て初めて、彼女はその技を完全に習得しました。"
+        }
+      ]
+    },
+    "en_c2_04": {
+      "title": "So + 形容詞／副詞 による倒置構文",
+      "shortExplanation": "「So ＋ 形容詞／副詞」や「Such」を文頭に配置して程度を際立たせ、結果を導く倒置表現。",
+      "longExplanation": "文語的で格調高い演説調の倒置構文です：\n• So ＋ 形容詞／副詞 ＋ be動詞／助動詞 ＋ 主語 ＋ that ＋ 結果の節（非常に〜だったので、その結果…）。\n• Such ＋ be動詞 ＋ 主語 ＋ that ＋ 結果の節（事態があまりにも〜であったため、その結果…）。",
+      "formation": "So ＋ 形容詞／副詞 ＋ be動詞／助動詞 ＋ 主語 ＋ that ＋ 節 または Such ＋ be動詞 ＋ 主語 ＋ that ＋ 節",
+      "examples": [
+        {
+          "translation": "変化があまりにも急激であったため、誰ひとりとして適応することができませんでした。"
+        },
+        {
+          "translation": "彼女の才能は極めて卓越していたため、奨学金の給付を提示されました。"
+        }
+      ]
+    },
+    "en_c2_05": {
+      "title": "垣根表現・ヘッジング（Hedging）：appear to, seem to, tend to, be likely to",
+      "shortExplanation": "断定を慎重に和らげることで、学術的な客観性と謙虚さを示す表現法。",
+      "longExplanation": "垣根表現（ヘッジング）とは、学術論文などで主張を過度に断定せず、控えめで慎重なトーンを保つために用いられる表現技術です。\n代表的な基本構造：\n• appear / seem to：〜のように思われる、〜のように見受けられる\n• tend to：〜する傾向がある、往々にして〜である\n• be likely / unlikely to：〜する可能性が高い ／ 考えにくい\n• be thought / considered to be：〜であると考えられている／みなされている",
+      "formation": "主語 ＋ appear / seem / tend ＋ to 不定詞 または 主語 ＋ be likely / thought / considered ＋ to 不定詞",
+      "examples": [
+        {
+          "translation": "研究結果は、一定の相関関係の存在を示唆しているように見受けられます。"
+        },
+        {
+          "translation": "企業は導入コストを過小評価してしまう傾向にあります。"
+        }
+      ]
+    },
+    "en_c2_06": {
+      "title": "学術文における談話標識（Discourse markers）",
+      "shortExplanation": "論理の展開や段落間の接続を明示し、学術的な議論を整然と構築するつなぎ言葉。",
+      "longExplanation": "ディスコースマーカー（談話標識）は、学術的文章の論理構造を整理し、読者を正しく導く役割を果たします：\n• 追加・情報の付加：Moreover, Furthermore, In addition, Additionally（さらに、加えて）\n• 対比・逆接：However, Nevertheless, Conversely, On the other hand（しかしながら、それにもかかわらず、逆に、他方では）\n• 結果・帰結：Therefore, Consequently, As a result, Hence, Thus（したがって、結果として、それゆえに）\n• 言い換え・詳述：In other words, That is to say, Namely（言い換えれば、すなわち、つまり）\n• 譲歩：Admittedly, While it is true that, Despite this（確かに〜であるが、事実ではあるものの、それにもかかわらず）",
+      "formation": "談話標識（文頭）＋ カンマ ＋ 独立節 または 節1；談話標識, 節2",
+      "examples": [
+        {
+          "translation": "実験は不成功に終わりました。それにもかかわらず、得られた知見は多くの示唆に富むものでした。"
+        },
+        {
+          "translation": "さらに、収集されたデータは極めて強い相関関係を示しています。"
+        }
+      ]
+    },
+    "en_c2_07": {
+      "title": "言語位相・レジスター（Speech registers）：フォーマル、ニュートラル、口語",
+      "shortExplanation": "相手、場面、目的に応じて、格式体、中立体、口語体を適切に使い分ける概念。",
+      "longExplanation": "言語の位相（レジスター）は、文脈、話し相手、伝達目的に応じて適切に選択されます：\n• 格式体（フォーマル）：受動態、名詞化構文、複合接続詞を多用し、短縮形を避け、ラテン語起源の語彙（commence, terminate, assist など）を用います。\n• 中立体（ニュートラル）：標準的な文法に従い、俗語を用いず、平易かつ過不足のない表現を用います。\n• 口語体（インフォーマル）：主語や語句の省略、句動詞（postpone に対する put off など）、短縮形、日常的なくだけた口語表現を多用します。",
+      "formation": "格式体（学術語彙・受動態・非短縮）↔ 中立体（標準文法表現）↔ 口語体（句動詞・短縮形・口語表現）",
+      "examples": [
+        {
+          "translation": "フォーマル（格式体）：ある相違点につきまして、ご留意いただきたく存じます。"
+        },
+        {
+          "translation": "ニュートラル（中立体）：間違いをひとつ指摘させていただきたいと思います。"
+        },
+        {
+          "translation": "インフォーマル（口語）：ちょっと気になった点があったから共有しておきたくて。"
+        }
+      ]
+    },
+    "en_c2_08": {
+      "title": "類義語のニュアンスとコノテーション（Connotations）",
+      "shortExplanation": "類義語が持つ感情的色彩（肯定的、中立的、否定的）や語感の違いを正しく見極める概念。",
+      "longExplanation": "同じ事象を指す同義語であっても、内包する感情的色彩（コノテーション）や受ける印象が大きく異なります。\n代表的なニュアンスのグラデーション：\n• slim（ほっそりとして魅力的：肯定）→ thin（痩せている：中立）→ skinny（痩せこけている：否定）→ scrawny/gaunt（骨と皮ばかり／げっそりやつれた：極めて否定）\n• determined（意志が固く不屈：肯定）→ firm（揺るぎない：中立）→ stubborn/pig-headed（頑固／意固地：否定）\n• thrifty（やりくり上手：肯定）→ economical（経済的：中立）→ stingy/tight-fisted（ケチ／出し惜しみ：否定）\n• confident（自信に満ちた：肯定）→ assertive（自己主張がはっきりした：中立）→ arrogant（傲慢で横柄：否定）",
+      "formation": "類義語の階層：肯定的な意味合い（＋）→ 中立的な意味合い（0）→ 否定的な意味合い（−）",
+      "examples": [
+        {
+          "translation": "同じ体型を指す場合でも話者の評価が異なります：彼女はスリムだ（肯定）／彼女は痩せている（中立）／彼女はガリガリだ（否定）。"
+        }
+      ]
+    },
+    "en_c2_09": {
+      "title": "修辞技法：首句反復、交差配列法、三連句法（Rhetorical devices）",
+      "shortExplanation": "演説や論説文においてリズムを生み出し、聴衆に強い印象を残す古典的レトリック手法。",
+      "longExplanation": "格調高い文章や演説で多用される伝統的な修辞技法：\n• 首句反復：連続する文や節の冒頭で同じ言葉を繰り返し、感情的な高揚感を生み出します（例：「I have a dream... I have a dream...」）。\n• 交差配列法：A-B に対し B-A という交差的・対称的な構造を用いて深い対比の印象を残します（例：「Ask not what your country can do for you, but what you can do for your country」）。\n• 三連句法（トリコロン）：3つの並列する要素をテンポよく並べて心地よいリズムを作ります（例：「来た、見た、勝った」／「人民の、人民による、人民のための政治」）。",
+      "formation": "首句反復（文頭で A を反復）／ 交差配列法（A-B に対する B-A の対称構造）／ 三連句法（3つの並列句 A, B, C）",
+      "examples": [
+        {
+          "translation": "友よ、ローマ市民たちよ、同胞たちよ、私の声に耳を傾けてほしい。（三連句法による呼びかけ）"
+        },
+        {
+          "translation": "多くを学べば学ぶほど、より多くを稼ぐことができる。（格言に見られる交差対句表現）"
+        }
+      ]
+    },
+    "en_c2_10": {
+      "title": "学術文における的確なコロケーション（Academic collocations）",
+      "shortExplanation": "特定の名詞に対して最もふさわしい学術動詞を正しく組み合わせる連結表現。",
+      "longExplanation": "最上級の英語においては、各名詞と自然に結びつく「正しい動詞」を選択することが極めて重視されます：\n主要な学術的コロケーション：\n• conduct / carry out research（研究・調査を実施する；make や do は用いない）\n• draw / reach a conclusion（結論を導き出す・達する）\n• raise / address / tackle an issue（問題を提起する／問題に対処する／取り組む）\n• reach / achieve a consensus（合意に達する／コンセンサスを形成する）\n• make significant progress（著しい進展を遂げる）\n• pose / present a challenge（難題を突きつける／課題をもたらす）",
+      "formation": "定型的な学術動詞 ＋ 対応する名詞句（例：conduct research, reach a consensus など）",
+      "examples": [
+        {
+          "translation": "研究チームは非常に広範なインタビュー調査を実施しました。"
+        },
+        {
+          "translation": "委員会は最終的に合意に達することができませんでした。"
+        }
+      ]
+    },
+    "en_c2_11": {
+      "title": "独立分詞構文（Absolute construction）",
+      "shortExplanation": "主節と異なる主語を持つ名詞と分詞の組み合わせにより、接続詞なしで簡潔に状況を補足する構文。",
+      "longExplanation": "独立分詞構文＝ 名詞／代名詞 ＋ 分詞（主節とは異なる独自の意味上の主語を保持）。\n文語的でフォーマルなスタイルで用いられ、従属接続詞を用いずに状況（時、原因、条件、付帯状況）を凝縮して付け加えることができます。\n代表的な類型：\n• 条件：Weather permitting ＝ 天候が許せば\n• 総合評価：All things considered ＝ あらゆる事情を勘案すると\n• 完了・時：Her work finished ＝ 彼女の仕事が終わったとき；This done ＝ これが済んだ後",
+      "formation": "名詞／代名詞 ＋ 分詞（現在分詞 V-ing または過去分詞 V-ed/V3）, 主節",
+      "examples": [
+        {
+          "translation": "すべての要素を総合的に勘案すれば、それは非常に成功したイベントでした。"
+        },
+        {
+          "translation": "提出期限がすでに過ぎてしまっていたため、そのプロジェクトは打ち切られました。"
+        }
+      ]
+    },
+    "en_c2_12": {
+      "title": "談話における省略と代名・代行（Ellipsis & Substitution）",
+      "shortExplanation": "既出の冗長な要素を省略したり代用表現に置き換えることで、文を簡潔かつ自然に連結する技法。",
+      "longExplanation": "文章の流れをスムーズにし、同一語の退屈な重複を避けるための必須技法です：\n• 省略：文脈上すでに自明な要素を思い切って省くこと（例：I wanted to leave, but wasn't allowed to [leave] で不定詞の動詞を省略）。\n• 代名・代行（代用）：繰り返しの代わりに do, so, one, it などの代用表現を用いること。\n具体的なパターンの例：\n• 対話における省略：A: Are you coming? B: Might (do).\n• 並列での代動詞：She speaks French and he does too / so does he.\n• 名詞の反復回避（one）：The big one? I prefer the small one.",
+      "formation": "先行する文／節 ＋ 接続詞／対話応答 ＋ [既知要素の省略 または do / so / one / to による代用]",
+      "examples": [
+        {
+          "translation": "車の運転はできますか？ —— 以前は運転していました（今はしていません）。"
+        },
+        {
+          "translation": "彼女はここに来ると言っていましたし、実際にやって来ました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "en_c1_15": {
+      "title": "학술 텍스트에서의 명사화 (Nominalization)",
+      "shortExplanation": "동사나 절을 명사구로 전환하여 문장을 간결하고 객관적이며 격식 있는 학술적 어조로 만드는 표현.",
+      "longExplanation": "명사화는 동사, 형용사 또는 절 전체를 명사나 명사구 형태로 변환하는 고급 문법 기법입니다. 다음과 같은 기능을 합니다:\n1. 정보 압축: 여러 절로 이루어진 긴 문장을 압축하여 정보 전달의 밀도를 높입니다(예: '물가가 크게 올랐다' → '물가의 상당한 상승').\n2. 수식어 추가 용이: 명사구 앞뒤에 다양한 형용사적 수식어를 덧붙여 정밀한 정의가 가능해집니다.\n3. 객관적이고 격식 있는 문체 형성: 주관적인 인칭대명사를 줄이고 연구 사실 중심의 차분한 학술적 분위기를 조성합니다.",
+      "formation": "동사를 포함한 절 → 명사구 (예: The fact that prices increased → The increase in prices...)",
+      "examples": [
+        {
+          "translation": "공기의 질에 있어 매우 뚜렷한 개선이 있었습니다."
+        },
+        {
+          "translation": "그가 입장 표명을 거부한 것은 모두를 크게 놀라게 했습니다."
+        }
+      ]
+    },
+    "en_c1_16": {
+      "title": "현재분사 구문: V-ing 절 (Present participle clause)",
+      "shortExplanation": "현재분사(V-ing)를 활용하여 부사절을 간결하게 줄이고, 동시 동작이나 원인·이유를 나타내는 구문.",
+      "longExplanation": "주절과 주어가 일치할 때 부사절을 현재분사(V-ing)를 이용한 분사구문으로 압축할 수 있습니다:\n• 동시 동작(〜하면서, 〜할 때): Walking home, I noticed something strange. (= 집으로 걸어가던 도중, 이상한 낌새를 알아챘다)\n• 원인 및 이유(〜해서, 〜이므로): Knowing the answer, she raised her hand. (= 정답을 알고 있었기 때문에, 그녀는 손을 들었다)\n• 주의할 점: 분사구문의 의미상 주어는 반드시 주절의 주어와 일치해야 하며, 현수분사(부적절한 분사 연결) 오류가 발생하지 않도록 유의해야 합니다.",
+      "formation": "현재분사(V-ing) + ~, 주어 + 동사~ / 부정형: Not + V-ing + ~, 주어 + 동사~",
+      "examples": [
+        {
+          "translation": "공항에 도착하자마자, 그는 여권을 두고 왔다는 사실을 불현듯 깨달았습니다."
+        },
+        {
+          "translation": "어떻게 대처해야 할지 몰라, 그녀는 어머니에게 전화를 걸었습니다."
+        }
+      ]
+    },
+    "en_c1_17": {
+      "title": "과거분사 구문: V3 / Having + V3 절 (Past participial phrase)",
+      "shortExplanation": "과거분사(V3)로 수동의 의미를 나타내거나, 'Having + V3'로 주절보다 앞선 완료 동작을 나타내는 구문.",
+      "longExplanation": "과거분사 또는 완료분사를 활용한 구문은 글을 한층 격조 있고 간결하게 다듬어 줍니다:\n• 과거분사절(V-ed/V3): 수동의 의미나 완료된 상태를 나타냅니다(예: Built in 1889, the Eiffel Tower... = 1889년에 건축된 에펠탑은...).\n• 완료분사절(Having + V3): 분사가 나타내는 동작이 주절의 시점보다 앞서 완료되었음을 명확히 강조합니다(예: Having read the report, he called a meeting. = 보고서를 다 읽고 난 후, 그는 회의를 소집했다).",
+      "formation": "과거분사(V-ed/V3) + ~, 주어 + 동사~ 또는 Having + 과거분사(V-ed/V3) + ~, 주어 + 동사~",
+      "examples": [
+        {
+          "translation": "그 소식에 큰 충격을 받은 그녀는 묵묵히 자리에 주저앉았습니다."
+        },
+        {
+          "translation": "시험을 모두 마친 후, 학생들은 교실 밖으로 퇴실했습니다."
+        }
+      ]
+    },
+    "en_c2_01": {
+      "title": "unless / provided / as long as / on condition that 조건문",
+      "shortExplanation": "'if' 대신 사용하여 엄격한 전제 조건, 한도, 상호 약정 등을 정밀하게 표현하는 조건 구문.",
+      "longExplanation": "고급 영어에서는 if 대신 보다 구체적인 뉘앙스를 가진 접속사를 통해 조건을 한정합니다:\n• unless = 〜하지 않는 한, 만약 〜가 아니라면 (if not에 해당하며 단어 자체에 부정의 의미가 내포되어 있으므로 절 내부에 부정어를 중복 사용하지 않음).\n• provided / providing (that) = 오직 〜라는 조건에서만, 〜하기만 한다면 (필수적인 전제 조건을 강조).\n• as long as = 〜하는 한, 〜하기만 하다면 (조건 상태의 지속을 전제로 함).\n• on condition that = 〜을 조건으로 하여 (계약서나 법률 문서 등에서 쓰이는 매우 격식 있는 표현).\n• in case = 〜에 대비하여, 만일의 경우에.",
+      "formation": "조건 접속사(Unless / Provided / As long as / On condition that) + 조건절, 주절",
+      "examples": [
+        {
+          "translation": "반드시 갚는다는 조건이라면, 당신에게 기꺼이 돈을 빌려드리겠습니다."
+        },
+        {
+          "translation": "아무것도 새로 내려받지 않는다는 전제하에, 제 노트북을 사용하셔도 좋습니다."
+        }
+      ]
+    },
+    "en_c2_02": {
+      "title": "Suppose / Supposing / What if를 사용한 가정문",
+      "shortExplanation": "가정의 상황을 제시하거나 만약의 경우를 상정하여 질문할 때 사용하는 표현.",
+      "longExplanation": "가설적인 상황을 전제하고 상대방의 의견을 묻는 구문입니다:\n• Suppose / Supposing: if 대신 쓰여 '만약 〜라고 가정해 보면 어떨까'라는 질문을 던집니다.\n• What if: 보다 일상적인 구어 표현으로, '만약 〜하면 어떻게 하지?', '〜라면 어쩌지?'라는 뜻입니다.\n• 과거시제나 과거완료시제와 결합 시: 현실에서 실현 가능성이 매우 낮거나 상상 속의 상황임을 나타냅니다.",
+      "formation": "Suppose / Supposing / What if + 주어 + 동사(과거형 또는 현재형)~, 의문절?",
+      "examples": [
+        {
+          "translation": "만약 당신이 꼭 하나를 선택해야만 한다면, 어느 쪽을 고르시겠습니까?"
+        },
+        {
+          "translation": "만약 아무도 참석하지 않으면 어쩌죠? 우리는 어떻게 조치해야 할까요?"
+        }
+      ]
+    },
+    "en_c2_03": {
+      "title": "Only + 상황어구 도치 구문",
+      "shortExplanation": "'Only'가 이끄는 시간·조건의 부사구/절을 문두에 놓아 강조하고 주절을 도치시키는 구문.",
+      "longExplanation": "Only와 결합된 시간, 조건, 수단의 표현(only when, only after, only if, only then, only by, only in 등)이 강조를 위해 문장 맨 앞으로 이동하면, 주절은 조동사나 be동사가 주어 앞으로 나오는 부분도치 형태를 취합니다.\n격식 있는 작문과 대중 연설에서 가장 강력한 설득력과 웅변 효과를 발휘하는 고급 수사 장치 중 하나입니다.",
+      "formation": "Only + 상황 부사구/부사절(시간·조건·수단) + 조동사/be동사 + 주어 + 본동사~",
+      "examples": [
+        {
+          "translation": "스스로 직접 경험해 보고 나서야 비로소 사람은 진정으로 이해할 수 있습니다."
+        },
+        {
+          "translation": "수년에 걸친 고된 훈련을 거친 후에야 비로소 그녀는 그 기술을 온전히 숙달했습니다."
+        }
+      ]
+    },
+    "en_c2_04": {
+      "title": "So + 형용사/부사 도치 구문",
+      "shortExplanation": "'So + 형용사/부사'나 'Such'를 문두로 전치하여 정도의 극단성을 부각하고 결과를 이끄는 도치 구문.",
+      "longExplanation": "문어적이고 웅변적인 성격을 띠는 고급 도치 구문입니다:\n• So + 형용사/부사 + be동사/조동사 + 주어 + that + 결과절 (너무나 〜하여 그 결과 …하다).\n• Such + be동사 + 주어 + that + 결과절 (상황의 정도가 너무나 막대하여 그 결과 …하다).",
+      "formation": "So + 형용사/부사 + be동사/조동사 + 주어 + that + 절 또는 Such + be동사 + 주어 + that + 절",
+      "examples": [
+        {
+          "translation": "변화가 너무나 급격하게 일어났기 때문에, 그 누구도 제때 적응하지 못했습니다."
+        },
+        {
+          "translation": "그녀의 재능이 워낙 특출났기 때문에, 곧바로 전액 장학금을 제안받았습니다."
+        }
+      ]
+    },
+    "en_c2_05": {
+      "title": "학술적 완곡 표현 (Hedging): appear to, seem to, tend to, be likely to",
+      "shortExplanation": "주장의 단정성을 완화하여 연구자로서의 객관성과 신중한 겸손을 드러내는 서술 기법.",
+      "longExplanation": "완곡 표현(헤징)은 학술 글쓰기에서 지나치게 독단적인 단정을 지양하고, 과학적 신중함과 타당성을 유지하기 위해 필수의 표현 전략입니다.\n주요 핵심 구조:\n• appear / seem to: 〜인 것으로 보인다, 〜인 듯하다\n• tend to: 〜하는 경향이 있다, 으레 〜하기 쉽다\n• be likely / unlikely to: 〜할 가능성이 높다 / 낮다\n• be thought / considered to be: 〜인 것으로 여겨지다/간주되다",
+      "formation": "주어 + appear / seem / tend + to 부정사 또는 주어 + be likely / thought / considered + to 부정사",
+      "examples": [
+        {
+          "translation": "연구 결과는 두 변수 사이에 유의미한 상관관계가 존재함을 시사하는 것으로 보입니다."
+        },
+        {
+          "translation": "기업들은 새로운 시스템 도입에 드는 비용을 과소평가하는 경향이 흔히 있습니다."
+        }
+      ]
+    },
+    "en_c2_06": {
+      "title": "학술 텍스트의 담화 표지어 (Discourse markers)",
+      "shortExplanation": "논리적 전개와 연결성을 부여하여 학술적 논증을 빈틈없이 조직화하는 담화 연결어.",
+      "longExplanation": "담화 표지어는 학술 텍스트에서 글의 뼈대를 세우고 독자가 필자의 사고 흐름을 자연스럽게 따라오도록 돕습니다:\n• 부가 및 추가: Moreover, Furthermore, In addition, Additionally (더욱이, 게다가, 아울러)\n• 대조 및 역접: However, Nevertheless, Conversely, On the other hand (그러나, 그럼에도 불구하고, 반대로, 다른 한편으로는)\n• 인과 및 결론: Therefore, Consequently, As a result, Hence, Thus (따라서, 결과적으로, 그러므로)\n• 부연 및 환언: In other words, That is to say, Namely (다시 말해, 즉, 구체적으로는)\n• 양보: Admittedly, While it is true that, Despite this (인정하건대, 비록 사실이긴 하나, 이러한 점에도 불구하고)",
+      "formation": "담화 표지어(문두) + 쉼표 + 독립문 또는 문장1; 담화 표지어, 문장2",
+      "examples": [
+        {
+          "translation": "실험은 결국 실패로 끝났습니다. 그럼에도 불구하고, 도출된 발견점들은 많은 시사점을 주었습니다."
+        },
+        {
+          "translation": "게다가, 분석된 제반 데이터는 매우 밀접한 상관관계를 뚜렷이 나타냅니다."
+        }
+      ]
+    },
+    "en_c2_07": {
+      "title": "언어역 (Speech registers): 격식체, 중립체, 구어체",
+      "shortExplanation": "소통하는 상황, 청중, 목적에 맞춰 어휘와 문법의 격식 수준을 적절하게 구사하는 개념.",
+      "longExplanation": "언어역은 소통의 맥락, 상대방과의 관계, 전달 목적에 의해 결정됩니다:\n• 격식체: 수동태, 명사화 구문, 복합 접속사를 적극 활용하고 축약형을 배제하며, 라틴어 어원의 어휘(commence, terminate, assist 등)를 선호합니다.\n• 중립체: 표준 문법을 엄격히 준수하면서도 비속어를 피하고 과하지 않은 일상적 어휘를 사용합니다.\n• 비격식체/구어체: 성분 생략, 구동사(postpone 대신 put off 등), 축약형, 친근한 일상 구어 표현을 자주 사용합니다.",
+      "formation": "격식체(학술 어휘, 수동태, 완전한 형태) ↔ 중립체(표준 문법 표현) ↔ 비격식체/구어체(구동사, 축약형, 일상 구어)",
+      "examples": [
+        {
+          "translation": "격식체: 일치하지 않는 어긋난 부분에 대해 귀하의 주의를 환기해 드리고자 합니다."
+        },
+        {
+          "translation": "중립체: 제가 발견한 오류를 하나 짚어 드리고 싶습니다."
+        },
+        {
+          "translation": "구어체: 그냥 좀 마음에 걸리는 부분이 있어서 짚고 넘어가려고요."
+        }
+      ]
+    },
+    "en_c2_08": {
+      "title": "동의어의 함축적 뉘앙스와 어감 차이 (Connotations)",
+      "shortExplanation": "기본 의미가 유사한 동의어들 사이의 정서적 색채(긍정, 중립, 부정)와 미묘한 어감 차이를 식별하는 개념.",
+      "longExplanation": "동의어들은 사전적 핵심 의미는 같을지라도, 내포하는 정서적 색채(함축 의미)와 쓰이는 맥락에서 확연한 차이를 보입니다.\n대표적인 뉘앙스 단계 비교:\n• slim(늘씬하여 매력적인: 긍정) → thin(살이 없는: 중립) → skinny(앙상하게 마른: 부정) → scrawny/gaunt(피골이 상접한/수척한: 극부정)\n• determined(결단력 있고 확고한: 긍정) → firm(단호한: 중립) → stubborn/pig-headed(고집불통의/완고한: 부정)\n• thrifty(알뜰살뜰한: 긍정) → economical(절약하는: 중립) → stingy/tight-fisted(구두쇠의/인색한: 부정)\n• confident(당당하고 자신감 있는: 긍정) → assertive(자기주장이 분명한: 중립) → arrogant(거만하고 오만한: 부정)",
+      "formation": "동의어 위계: 긍정적 어감(+) → 중립적 어감(0) → 부정적 어감(-)",
+      "examples": [
+        {
+          "translation": "동일한 체형을 묘사하더라도 화자의 태도에 따라 어감이 다릅니다: 그녀는 늘씬하다(+) / 그녀는 말랐다(0) / 그녀는 삐쩍 말랐다(-)."
+        }
+      ]
+    },
+    "en_c2_09": {
+      "title": "수사적 기법: 수어반복법, 교차대구법, 삼분법 (Rhetorical devices)",
+      "shortExplanation": "연설과 논설문에서 리듬감을 창출하고 청중에게 강렬한 인상을 심어주는 고전 수사학 장치.",
+      "longExplanation": "격조 높은 웅변과 고급 글쓰기에서 강력한 호소력을 이끌어내는 고전 수사 기법입니다:\n• 수어반복법: 연속되는 문장이나 절의 첫머리에서 동일한 단어구를 반복하여 감정을 고조시킵니다(예: 'I have a dream... I have a dream...').\n• 교차대구법: A-B와 B-A의 교차 대칭 구조를 활용하여 역설적이면서도 깊은 인상을 남깁니다(예: 'Ask not what your country can do for you, but what you can do for your country').\n• 삼분법: 대등한 세 가지 요소를 나란히 배열하여 완벽한 리듬과 균형미를 완성합니다(예: 시저의 '왔노라, 보았노라, 이겼노라' / 링컨의 '국민의, 국민에 의한, 국민을 위한 정부').",
+      "formation": "수어반복(문두 연속 반복 A...) / 교차대구(A-B와 B-A의 대칭 배열) / 삼분법(세 요소 병렬 A, B, C)",
+      "examples": [
+        {
+          "translation": "벗들이여, 로마 시민들이여, 동포들이여, 제 말에 부디 귀를 기울여 주십시오. (삼분법 구문)"
+        },
+        {
+          "translation": "배우는 것이 많을수록, 더 많은 것을 벌게 된다. (격언에 나타난 교차대구 구조)"
+        }
+      ]
+    },
+    "en_c2_10": {
+      "title": "학술 텍스트의 정확한 연어 표현 (Academic collocations)",
+      "shortExplanation": "학술적 표준 관용에 부합하는 정밀한 동사-명사 결합을 구사하는 표현.",
+      "longExplanation": "최고급 영어에서는 개별 명사에 호응하는 '정확하고 알맞은 동사'를 결합해 쓰는 연어(어휘 결합) 능력이 글의 품격을 좌우합니다:\n주요 학술 연어 목록:\n• conduct / carry out research (연구를 수행하다; make나 do는 쓰지 않음)\n• draw / reach a conclusion (결론을 도출하다/도달하다)\n• raise / address / tackle an issue (문제를 제기하다/다루다/해결에 착수하다)\n• reach / achieve a consensus (합의를 이끌어내다/도달하다)\n• make significant progress (현저한 진전을 이루다)\n• pose / present a challenge (난제를 제기하다/도전을 안겨주다)",
+      "formation": "고유한 학술 동사 + 호응하는 명사구 (예: conduct research, reach a consensus 등)",
+      "examples": [
+        {
+          "translation": "연구진은 대단히 광범위한 심층 인터뷰를 수행했습니다."
+        },
+        {
+          "translation": "위원회는 끝내 합의점을 도출해 내지 못했습니다."
+        }
+      ]
+    },
+    "en_c2_11": {
+      "title": "독립분사구문 (Absolute construction)",
+      "shortExplanation": "주절과 다른 독자적인 주어를 지닌 명사와 분사의 결합으로 접속사 없이 상황을 압축 보충하는 구문.",
+      "longExplanation": "독립분사구문 = 명사/대명사 + 분사 (주절의 주어와 일치하지 않는 독자적인 의미상 주어를 유지).\n문어적이고 매우 격식 있는 문체에서 사용되며, 종속접속사를 쓰지 않고도 상황적 배경(시간, 원인, 조건, 부대상황)을 문장에 매우 간결하게 덧붙일 수 있습니다.\n주요 유형 분류:\n• 조건: Weather permitting = 날씨가 허락한다면\n• 종합 평가: All things considered = 모든 사정을 두루 참작해 볼 때\n• 완료 및 시점: Her work finished = 그녀의 일이 끝났을 때; This done = 이 일이 마무리된 후",
+      "formation": "명사/대명사 + 분사(현재분사 V-ing 또는 과거분사 V-ed/V3), 주절",
+      "examples": [
+        {
+          "translation": "모든 제반 조건을 종합적으로 고려해 보았을 때, 그것은 대단히 성공적인 행사였습니다."
+        },
+        {
+          "translation": "제출 마감 기한이 이미 지났기 때문에, 해당 프로젝트는 취소되었습니다."
+        }
+      ]
+    },
+    "en_c2_12": {
+      "title": "텍스트 맥락에서의 생략과 대용 (Ellipsis & Substitution)",
+      "shortExplanation": "맥락상 이미 알려진 요소를 생략하거나 짧은 대용어로 대체하여 문장의 중복을 피하고 응집성을 높이는 기법.",
+      "longExplanation": "텍스트의 결속성을 높이고 동일 어구의 지루한 중복을 방지하기 위한 핵심 언어 장치입니다:\n• 생략: 앞선 맥락을 통해 청자가 충분히 알 수 있는 기지 정보를 문장에서 과감히 생략하는 것(예: I wanted to leave, but wasn't allowed to [leave] 에서 중복되는 동사 생략).\n• 대용: 반복되는 명사나 동사구, 절 전체 대신 do, so, one, it 등의 대용어를 사용하는 것.\n대표적 활용 양상:\n• 대화 응답에서의 생략: A: Are you coming? B: Might (do).\n• 대동사를 통한 대용: She speaks French and he does too / so does he.\n• 명사 반복 회피(one): The big one? I prefer the small one.",
+      "formation": "앞선 언급 문장 + 접속사/대화 응답 + [기지 성분 생략 또는 do / so / one / to를 통한 대치]",
+      "examples": [
+        {
+          "translation": "운전할 줄 아세요? —— 예전에는 할 줄 알았어요(지금은 안 하지만요)."
+        },
+        {
+          "translation": "그녀는 이곳에 오겠다고 말했고, 실제로 이곳에 왔습니다."
+        }
+      ]
+    }
+  }
+}

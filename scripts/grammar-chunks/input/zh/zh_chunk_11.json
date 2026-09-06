@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_对N没兴趣_153",
+    "language": "zh",
+    "pattern": "对 N 没兴趣",
+    "title": "对 N 没兴趣 (not interested in N)",
+    "shortExplanation": "not interested in N",
+    "longExplanation": "not interested in N. Pinyin: duì N méi xìngqù",
+    "formation": "duì N méi xìngqù",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "他们对中国电影没兴趣。",
+        "romanization": "tāmen duì Zhōngguó diànyǐng méi xìngqù。",
+        "translation": "They are not interested in Chinese movies."
+      }
+    ]
+  },
+  {
+    "id": "zh_半_154",
+    "language": "zh",
+    "pattern": "半",
+    "title": "半 (half hour)",
+    "shortExplanation": "half hour",
+    "longExplanation": "half hour. Pinyin: bàn",
+    "formation": "bàn",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "现在七点半。",
+        "romanization": "xiànzài qī diǎn bàn。",
+        "translation": "It’s half past seven."
+      }
+    ]
+  },
+  {
+    "id": "zh_一刻_155",
+    "language": "zh",
+    "pattern": "一刻",
+    "title": "一刻 (quarter hour (when telling time))",
+    "shortExplanation": "quarter hour (when telling time)",
+    "longExplanation": "quarter hour (when telling time). Pinyin: yī kè",
+    "formation": "yī kè",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "现在七点一刻。",
+        "romanization": "xiànzài qī diǎn yī kè。",
+        "translation": "Now it’s quarter past seven."
+      }
+    ]
+  },
+  {
+    "id": "zh_一刻钟_156",
+    "language": "zh",
+    "pattern": "一刻钟",
+    "title": "一刻钟 (quarter hour (duration))",
+    "shortExplanation": "quarter hour (duration)",
+    "longExplanation": "quarter hour (duration). Pinyin: yī kè zhōng",
+    "formation": "yī kè zhōng",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你迟到了一刻钟。",
+        "romanization": "nǐ chí dàoliǎo yī kè zhōng。",
+        "translation": "You are late for 15 minutes."
+      }
+    ]
+  },
+  {
+    "id": "zh_差ch_157",
+    "language": "zh",
+    "pattern": "差 (chà)",
+    "title": "差 (chà) (to (when telling time))",
+    "shortExplanation": "to (when telling time)",
+    "longExplanation": "to (when telling time). Pinyin: chà (chà)",
+    "formation": "chà (chà)",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "已经差一刻八点了！",
+        "romanization": "yǐjīng chà yī kè bā diǎn le！",
+        "translation": "It’s already a quarter to eight!"
+      }
+    ]
+  },
+  {
+    "id": "zh_再V_158",
+    "language": "zh",
+    "pattern": "再 V",
+    "title": "再 V (again (later))",
+    "shortExplanation": "again (later)",
+    "longExplanation": "again (later). Pinyin: zài V",
+    "formation": "zài V",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我明天还要再去看看。",
+        "romanization": "wǒ míngtiān hái yào zài qù kànkan。",
+        "translation": "I will go see it again tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "zh_又V_159",
+    "language": "zh",
+    "pattern": "又 V",
+    "title": "又 V ((did) again)",
+    "shortExplanation": "(did) again",
+    "longExplanation": "(did) again. Pinyin: yòu V",
+    "formation": "yòu V",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你今天怎么又迟到了?",
+        "romanization": "nǐ jīntiān zěnme yòu chí dàoliǎo?",
+        "translation": "Why are you late again today?"
+      }
+    ]
+  },
+  {
+    "id": "zh_SQ1就Q2_160",
+    "language": "zh",
+    "pattern": "S + Q1 + 就 + Q2",
+    "title": "S + Q1 + 就 + Q2 ((S acts in a way so that the answer to Q1 is the same as the answer to Q2.))",
+    "shortExplanation": "(S acts in a way so that the answer to Q1 is the same as the answer to Q2.)",
+    "longExplanation": "(S acts in a way so that the answer to Q1 is the same as the answer to Q2.). Pinyin: S + Q1 + jiù + Q2",
+    "formation": "S + Q1 + jiù + Q2",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我想喝什么就喝什么。",
+        "romanization": "wǒ xiǎng hē shénme jiù hē shénme。",
+        "translation": "I drink whatever I want to drink."
+      }
+    ]
+  },
+  {
+    "id": "zh_S1QS2就Q_161",
+    "language": "zh",
+    "pattern": "S1 + Q + S2 + 就 + Q",
+    "title": "S1 + Q + S2 + 就 + Q ((S2 acts in a way that the answer to Q is true for both S1 and S2.))",
+    "shortExplanation": "(S2 acts in a way that the answer to Q is true for both S1 and S2.)",
+    "longExplanation": "(S2 acts in a way that the answer to Q is true for both S1 and S2.). Pinyin: S1 + Q + S2 + jiù + Q",
+    "formation": "S1 + Q + S2 + jiù + Q",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你喝什么我就喝什么。",
+        "romanization": "nǐ hē shénme wǒ jiù hē shénme。",
+        "translation": "I drink whatever you drink."
+      }
+    ]
+  },
+  {
+    "id": "zh_越V1A1越V2A2_162",
+    "language": "zh",
+    "pattern": "越 V1/A1 越 V2/A2",
+    "title": "越 V1/A1 越 V2/A2 (the more V1/A1 the more V2/A2)",
+    "shortExplanation": "the more V1/A1 the more V2/A2",
+    "longExplanation": "the more V1/A1 the more V2/A2. Pinyin: yuè V1/A1 yuè V2/A2",
+    "formation": "yuè V1/A1 yuè V2/A2",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我们越聊越开心。",
+        "romanization": "wǒmen yuè liáo yuè kāixīn。",
+        "translation": "The more we chat, the more joyous we are."
+      }
+    ]
+  },
+  {
+    "id": "zh_N1跟N2一样_163",
+    "language": "zh",
+    "pattern": "N1 跟 N2 一样",
+    "title": "N1 跟 N2 一样 (N1 is like N2)",
+    "shortExplanation": "N1 is like N2",
+    "longExplanation": "N1 is like N2. Pinyin: N1 gēn N2 yīyàng",
+    "formation": "N1 gēn N2 yīyàng",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你的眼睛跟大熊猫一样。",
+        "romanization": "nǐ de yǎnjing gēn dàxióngmāo yīyàng。",
+        "translation": "Your eyes are like pandas’ [eyes]."
+      }
+    ]
+  },
+  {
+    "id": "zh_N1跟N2一样A_164",
+    "language": "zh",
+    "pattern": "N1 跟 N2 一样 A",
+    "title": "N1 跟 N2 一样 A (N1 is as A as N2)",
+    "shortExplanation": "N1 is as A as N2",
+    "longExplanation": "N1 is as A as N2. Pinyin: N1 gēn N2 yīyàng A",
+    "formation": "N1 gēn N2 yīyàng A",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "儿子跟爸爸一样高。",
+        "romanization": "érzi gēn bàba yīyàng gāo。",
+        "translation": "The son is as tall as his father."
+      }
+    ]
+  },
+  {
+    "id": "zh_没有N这么那么A_165",
+    "language": "zh",
+    "pattern": "没有 N (这么/那么) A",
+    "title": "没有 N (这么/那么) A (not as A as N)",
+    "shortExplanation": "not as A as N",
+    "longExplanation": "not as A as N. Pinyin: méiyǒu N ( zhème/ nàme) A",
+    "formation": "méiyǒu N ( zhème/ nàme) A",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我的汉语没有他那么好。",
+        "romanization": "wǒ de Hànyǔ méiyǒu tā nàme hǎo。",
+        "translation": "My Chinese is not as good as his."
+      }
+    ]
+  },
+  {
+    "id": "zh_A一点儿一些_166",
+    "language": "zh",
+    "pattern": "A 一点儿/一些",
+    "title": "A 一点儿/一些 (A little more A)",
+    "shortExplanation": "A little more A",
+    "longExplanation": "A little more A. Pinyin: A yīdiǎnr/ yīxiē",
+    "formation": "A yīdiǎnr/ yīxiē",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "大山比大卫矮一点儿。",
+        "romanization": "Dàshān bǐ Dàwèi ǎi yīdiǎnr。",
+        "translation": "Dashan is a little shorter than David."
+      }
+    ]
+  },
+  {
+    "id": "zh_A得多多了_167",
+    "language": "zh",
+    "pattern": "A 得多/多了",
+    "title": "A 得多/多了 (much more A)",
+    "shortExplanation": "much more A",
+    "longExplanation": "much more A. Pinyin: A dé duō/ duō le",
+    "formation": "A dé duō/ duō le",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "今天的作业比昨天多得多。",
+        "romanization": "jīntiān de zuòyè bǐ zuótiān duō dé duō。",
+        "translation": "Today's homework is much more than yesterday’s."
+      }
+    ]
+  }
+]

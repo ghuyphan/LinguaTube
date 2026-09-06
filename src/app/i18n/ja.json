@@ -27,7 +27,8 @@
         "placeholder": "YouTube URLまたは動画IDを貼り付け...",
         "invalid": "有効なYouTube URLを入力してください",
         "cancel": "キャンセル",
-        "load": "読み込む"
+        "load": "読み込む",
+        "paste": "貼り付け"
     },
     "header": {
         "words": "単語",
@@ -60,6 +61,7 @@
         "closeVideo": "動画を閉じる",
         "resume": "再開",
         "normal": "通常",
+        "off": "オフ",
         "hint": "YouTube URLを貼り付けて学習を始めましょう。字幕を自動で取得します。"
     },
     "subtitle": {
@@ -96,6 +98,7 @@
         "video": "動画",
         "cost": "消費",
         "yourBalance": "保有残高",
+        "securityCheck": "人間による認証",
         "generate": "生成する",
         "languageMismatch": "学習言語と異なります",
         "languageMismatchMessage": "{{requested}}の字幕はありません。代わりに{{detected}}を使用します。",
@@ -135,7 +138,11 @@
         "nativeCaptionsFree": "通常の動画は無料ですか？",
         "nativeCaptionsFreeDesc": "はい！既存のYouTube字幕がある動画は完全無料で、AIクレジットを消費しません。",
         "allCreditsAvailable": "全クレジット利用可能",
-        "depletedNotice": "AIクレジットを3つすべて使用しました。YouTube字幕付きの通常動画は引き続き完全無料です！"
+        "depletedNotice": "AIクレジットを3つすべて使用しました。YouTube字幕付きの通常動画は引き続き完全無料です！",
+        "translationFailed": "翻訳に失敗しました。もう一度お試しください。",
+        "readingHint": "文字の上に読み仮名・発音ガイドを表示",
+        "grammarHint": "文法構造とパターンをハイライト",
+        "dualSubsHint": "二重翻訳字幕を表示"
     },
     "vocab": {
         "title": "単語帳",
@@ -175,7 +182,11 @@
         "saved": "保存済み",
         "saveWord": "単語を保存",
         "close": "閉じる",
-        "translateTo": "翻訳先"
+        "translateTo": "翻訳先",
+        "translateAll": "すべての定義を翻訳",
+        "all": "すべて",
+        "failed": "失敗",
+        "retry": "再試行"
     },
     "grammar": {
         "mode": "文法",
@@ -299,7 +310,10 @@
         "onStreak": "{{count}}日連続達成中！",
         "howItWorks": "仕組み",
         "howToExtend": "継続記録を伸ばすには毎日学習してください。フリーズなしで1日学習を休むと、記録は0にリセットされます。",
-        "freezeExplanation": "ストリークフリーズを持っていると、学習し忘れた日でも記録が自動的に保護されます。残り{{count}}回分あります。"
+        "freezeExplanation": "ストリークフリーズを持っていると、学習し忘れた日でも記録が自動的に保護されます。残り{{count}}回分あります。",
+        "reached": "達成しました",
+        "days": "日！",
+        "saved": "連続記録を保護しました！❄️"
     },
     "history": {
         "title": "履歴",
@@ -398,7 +412,9 @@
         "nowPlaying": "再生中",
         "continueStudying": "学習を続ける",
         "resume": "再開",
-        "browseByLanguage": "言語別で探す"
+        "browseByLanguage": "言語別で探す",
+        "loopOn": "ループ再生中",
+        "shuffleOn": "シャッフル再生中"
     },
     "common": {
         "loading": "読み込み中...",
@@ -407,7 +423,9 @@
         "off": "オフ",
         "back": "戻る",
         "undo": "元に戻す",
-        "retry": "再試行"
+        "retry": "再試行",
+        "close": "閉じる",
+        "clear": "クリア"
     },
     "onboarding": {
         "welcomeTitle": "Vocaへようこそ",

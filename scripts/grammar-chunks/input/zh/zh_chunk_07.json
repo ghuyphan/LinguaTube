@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_请让叫OV_92",
+    "language": "zh",
+    "pattern": "请/让/叫 O V",
+    "title": "请/让/叫 O V (invite/let/ask O to V)",
+    "shortExplanation": "invite/let/ask O to V",
+    "longExplanation": "invite/let/ask O to V. Pinyin: qǐng/ ràng/ jiào O V",
+    "formation": "qǐng/ ràng/ jiào O V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我请你吃饭。",
+        "romanization": "wǒ qǐng nǐ chīfàn。",
+        "translation": "I’m inviting you to have a meal."
+      }
+    ]
+  },
+  {
+    "id": "zh_VV_93",
+    "language": "zh",
+    "pattern": "V V",
+    "title": "V V (V for a bit)",
+    "shortExplanation": "V for a bit",
+    "longExplanation": "V for a bit. Pinyin: V V",
+    "formation": "V V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你看看这几件衣服。",
+        "romanization": "nǐ kànkan zhè jǐ jiàn yīfu。",
+        "translation": "Take a look at these clothes."
+      }
+    ]
+  },
+  {
+    "id": "zh_V一V_94",
+    "language": "zh",
+    "pattern": "V一V",
+    "title": "V一V (V for a bit)",
+    "shortExplanation": "V for a bit",
+    "longExplanation": "V for a bit. Pinyin: V yīV",
+    "formation": "V yīV",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你看一看这几件衣服。",
+        "romanization": "nǐ kànyīkàn zhè jǐ jiàn yīfu。",
+        "translation": "Take a look at these clothes."
+      }
+    ]
+  },
+  {
+    "id": "zh_Vresult_95",
+    "language": "zh",
+    "pattern": "V result",
+    "title": "V result ((result complements))",
+    "shortExplanation": "(result complements)",
+    "longExplanation": "(result complements). Pinyin: V result",
+    "formation": "V result",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我看到你的女朋友了。",
+        "romanization": "wǒ kàn dào nǐ de nǚpéngyou le。",
+        "translation": "I saw your girlfriend."
+      }
+    ]
+  },
+  {
+    "id": "zh_没Vresult_96",
+    "language": "zh",
+    "pattern": "没 V result",
+    "title": "没 V result ((result complements))",
+    "shortExplanation": "(result complements)",
+    "longExplanation": "(result complements). Pinyin: méi V result",
+    "formation": "méi V result",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我没看到你的女朋友。",
+        "romanization": "wǒ méi kàn dào nǐ de nǚpéngyou。",
+        "translation": "I didn’t see your girlfriend."
+      }
+    ]
+  },
+  {
+    "id": "zh_从N1到N2_97",
+    "language": "zh",
+    "pattern": "从 N1 到 N2",
+    "title": "从 N1 到 N2 (from N1 to N2)",
+    "shortExplanation": "from N1 to N2",
+    "longExplanation": "from N1 to N2. Pinyin: cóng N1 dào N2",
+    "formation": "cóng N1 dào N2",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "从老人到孩子都喜欢吃苹果。",
+        "romanization": "cóng lǎorén dào háizi dōu xǐhuan chī píngguǒ。",
+        "translation": "From old to young, all like to eat apples."
+      }
+    ]
+  },
+  {
+    "id": "zh_第MN_98",
+    "language": "zh",
+    "pattern": "第 # M N",
+    "title": "第 # M N (#-th N)",
+    "shortExplanation": "#-th N",
+    "longExplanation": "#-th N. Pinyin: dì # M N",
+    "formation": "dì # M N",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "第四件事情还没做。",
+        "romanization": "dì sì jiàn shìqing hái méi zuò。",
+        "translation": "We haven't done the fourth thing yet."
+      }
+    ]
+  },
+  {
+    "id": "zh_不要别V_99",
+    "language": "zh",
+    "pattern": "不要/别 V",
+    "title": "不要/别 V (don’t do V)",
+    "shortExplanation": "don’t do V",
+    "longExplanation": "don’t do V. Pinyin: bùyào/ bié V",
+    "formation": "bùyào/ bié V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "不要/别玩儿手机！",
+        "romanization": "bùyào/ bié wánr shǒujī！",
+        "translation": "Don’t play with your phone!"
+      }
+    ]
+  },
+  {
+    "id": "zh_不要别V了_100",
+    "language": "zh",
+    "pattern": "不要/别 V 了",
+    "title": "不要/别 V 了 (stop doing V)",
+    "shortExplanation": "stop doing V",
+    "longExplanation": "stop doing V. Pinyin: bùyào/ bié V le",
+    "formation": "bùyào/ bié V le",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "不要/别玩儿手机了！",
+        "romanization": "bùyào/ bié wánr shǒujī le！",
+        "translation": "Stop playing with your phone!"
+      }
+    ]
+  },
+  {
+    "id": "zh_对NA_101",
+    "language": "zh",
+    "pattern": "对 N A",
+    "title": "对 N A (Is A for N)",
+    "shortExplanation": "Is A for N",
+    "longExplanation": "Is A for N. Pinyin: duì N A",
+    "formation": "duì N A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "学汉语对在中国工作有帮助。",
+        "romanization": "xué Hànyǔ duì zài Zhōngguó gōngzuò yǒubāngzhù。",
+        "translation": "Learning Chinese is helpful for working in China."
+      }
+    ]
+  },
+  {
+    "id": "zh_SV的N_102",
+    "language": "zh",
+    "pattern": "S V 的 N",
+    "title": "S V 的 N (the N which S V’ed)",
+    "shortExplanation": "the N which S V’ed",
+    "longExplanation": "the N which S V’ed. Pinyin: S V de N",
+    "formation": "S V de N",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我妈妈做的饭非常好吃。",
+        "romanization": "wǒ māma zuò de fàn fēicháng hǎochī。",
+        "translation": "The food that mom makes is very delicious."
+      }
+    ]
+  },
+  {
+    "id": "zh_N1比N2A_103",
+    "language": "zh",
+    "pattern": "N1 比 N2 A",
+    "title": "N1 比 N2 A (N2 is more A than N1)",
+    "shortExplanation": "N2 is more A than N1",
+    "longExplanation": "N2 is more A than N1. Pinyin: N1 bǐ N2 A",
+    "formation": "N1 bǐ N2 A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "哥哥比姐姐高。",
+        "romanization": "gēge bǐ jiějie gāo。",
+        "translation": "My (older) brother is taller than my (older) sister."
+      }
+    ]
+  },
+  {
+    "id": "zh_N1没有N2A_104",
+    "language": "zh",
+    "pattern": "N1 没有 N2 A",
+    "title": "N1 没有 N2 A (N2 is not as A than N1)",
+    "shortExplanation": "N2 is not as A than N1",
+    "longExplanation": "N2 is not as A than N1. Pinyin: N1 méiyǒu N2 A",
+    "formation": "N1 méiyǒu N2 A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "哥哥没有姐姐高。",
+        "romanization": "gēge méiyǒu jiějie gāo。",
+        "translation": "My (older) brother is not as tall as my (older) sister."
+      }
+    ]
+  },
+  {
+    "id": "zh_可能_105",
+    "language": "zh",
+    "pattern": "可能",
+    "title": "可能 (probably)",
+    "shortExplanation": "probably",
+    "longExplanation": "probably. Pinyin: kěnéng",
+    "formation": "kěnéng",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "她可能不会唱歌。",
+        "romanization": "tā kěnéng bùhuì chànggē。",
+        "translation": "Maybe she cannot sing."
+      }
+    ]
+  },
+  {
+    "id": "zh_V得A_106",
+    "language": "zh",
+    "pattern": "V 得 A",
+    "title": "V 得 A ((using adverbs))",
+    "shortExplanation": "(using adverbs)",
+    "longExplanation": "(using adverbs). Pinyin: V dé A",
+    "formation": "V dé A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我跑得很快。",
+        "romanization": "wǒ pǎo dehěn kuài。",
+        "translation": "I run very quickly."
+      }
+    ]
+  }
+]

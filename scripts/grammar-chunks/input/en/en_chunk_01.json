@@ -1,0 +1,342 @@
+[
+  {
+    "id": "en_a1_01",
+    "language": "en",
+    "pattern": "am / is / are",
+    "title": "am / is / are - forms of the verb to be",
+    "shortExplanation": "I am, he is, they are",
+    "longExplanation": "to be is the most important verb in the English language, an analogue of the \nThree forms: am - only with I; is - with he, she, it; are - with you, we, they.",
+    "formation": "I am, he is, they are",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "I am hungry.",
+        "translation": "I'm hungry."
+      },
+      {
+        "sentence": "She is a doctor.",
+        "translation": "She's a doctor."
+      },
+      {
+        "sentence": "They are ready.",
+        "translation": "They're ready."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_02",
+    "language": "en",
+    "pattern": "Negation",
+    "title": "Negation: am not / isn't / aren't",
+    "shortExplanation": "I'm not tired. He isn't here. They aren't ready.",
+    "longExplanation": "Negation is constructed by adding not: am not, is not, are not.\nShort forms: isn't (= is not), aren't (= are not). Only am not is not reduced to amn't - an exception!",
+    "formation": "I'm not tired. He isn't here. They aren't ready.",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "I'm not a student.",
+        "translation": "I'm not a student."
+      },
+      {
+        "sentence": "He isn't tired.",
+        "translation": "He's not tired."
+      },
+      {
+        "sentence": "We aren't ready.",
+        "translation": "We're not ready."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_03",
+    "language": "en",
+    "pattern": "to be",
+    "title": "Questions with to be: Am I? / Is she? / Are they?",
+    "shortExplanation": "Is she a teacher? Are you cold? Am I late?",
+    "longExplanation": "In questions, the verb to be is placed before the subject: She is → Is she?\nSpecial questions: question word + to be + subject: Where is he? What is this?\nShort answers: Yes, I am. / No, she isn't",
+    "formation": "Is she a teacher? Are you cold? Am I late?",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "Are you a student?",
+        "translation": "Are you a student?"
+      },
+      {
+        "sentence": "Is it expensive?",
+        "translation": "Is it expensive?"
+      },
+      {
+        "sentence": "Where are they?",
+        "translation": "Where are they?"
+      }
+    ]
+  },
+  {
+    "id": "en_a1_04",
+    "language": "en",
+    "pattern": "Short answers",
+    "title": "Short answers: Yes, I am. / No, she isn't.",
+    "shortExplanation": "Only full form - not allowed: \"Yes, I'm\"",
+    "longExplanation": "In short answers the pronoun + to be. You cannot shorten the form of the verb in an affirmative answer.\nAre you tired? — Yes, I am.✓    Yes, I'm. ✗",
+    "formation": "Only full form - not allowed: \"Yes, I'm\"",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "Is she ready? — Yes, she is.",
+        "translation": "Is she ready? - Yes."
+      },
+      {
+        "sentence": "Are they your friends? — No, they aren't.",
+        "translation": "Are they your friends? - No."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_05",
+    "language": "en",
+    "pattern": "Article a / an",
+    "title": "Article a / an - indefinite",
+    "shortExplanation": "a dog, an apple, an hour, a university",
+    "longExplanation": "a and an are the indefinite article, placed before the first mentioned object in the singular.\nThe choice depends on the sound, not the letter:\n• a - before the consonant sound: a book, a car, a university [ju...]\n• an - before a vowel sound: an apple, an hour [aʊ...], an honest man",
+    "formation": "a dog, an apple, an hour, a university",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "I saw a cat in the garden.",
+        "translation": "I saw a cat in the garden."
+      },
+      {
+        "sentence": "She is an engineer.",
+        "translation": "She's an engineer."
+      },
+      {
+        "sentence": "It took an hour.",
+        "translation": "It took an hour."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_06",
+    "language": "en",
+    "pattern": "Article the",
+    "title": "Article the - definite",
+    "shortExplanation": "the sun, the door, the book on the table",
+    "longExplanation": "the is used when the speaker and listener know what they are talking about.\nWhen we put the:\n1. The subject has already been mentioned:I saw a cat. The cat was black.\n2. One of a kind: the sun, the moon, the earth\n3. It is clear from the context: Close the window, please.\n4. Superlative: the best, the biggest",
+    "formation": "the sun, the door, the book on the table",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "The film we saw was amazing.",
+        "translation": "The movie we watched was amazing."
+      },
+      {
+        "sentence": "Could you pass the salt?",
+        "translation": "Could you pass the salt?"
+      }
+    ]
+  },
+  {
+    "id": "en_a1_07",
+    "language": "en",
+    "pattern": "Zero article",
+    "title": "Zero article - when the article is not needed",
+    "shortExplanation": "I like music. She plays tennis. He is from Russia.",
+    "longExplanation": "The article is not placed before:\n• Proper names: John, London, Russia\n• Languages and nationalities: English, \n• Sports and games: football, chess\n• Food/drinks in a general sense: I love coffee\n• Abstract concepts in general: Life is short. Love is blind.\n• Plural in the general sense: Dogs are friendly.",
+    "formation": "I like music. She plays tennis. He is from Russia.",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "She speaks Spanish.",
+        "translation": "She speaks Spanish."
+      },
+      {
+        "sentence": "He plays basketball every day.",
+        "translation": "He plays basketball every day."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_08",
+    "language": "en",
+    "pattern": "Present Simple",
+    "title": "Present Simple - affirmative sentences",
+    "shortExplanation": "I work. He works. She goes. It runs.",
+    "longExplanation": "Present Simple is used for: habits and regular actions, facts and general truths, schedules.\nFormula: I/you/we/they + infinitive; he/she/it + infinitive+s/es\nRules for writing endings -s/-es:\n• Most verbs: + s → works, plays\n• Ending in -o, -ch, -sh, -s, -ss, -x: + es → goes, watches, washes\n• End with a consonant + -y: -y → ies → studies, tries",
+    "formation": "I work. He works. She goes. It runs.",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "I drink coffee every morning.",
+        "translation": "I drink coffee every morning."
+      },
+      {
+        "sentence": "She works in a hospital.",
+        "translation": "She works in a hospital."
+      },
+      {
+        "sentence": "The Earth goes round the Sun.",
+        "translation": "The Earth revolves around the Sun."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_09",
+    "language": "en",
+    "pattern": "Present Simple - negation",
+    "title": "Present Simple - negation: don't / doesn't",
+    "shortExplanation": "I don't like it. He doesn't like it. (not: he don't)",
+    "longExplanation": "Negation is constructed using the auxiliary verb do/does + not:\n• I/you/we/they + don't + infinitive\n• he/she/it + doesn't + infinitive",
+    "formation": "I don't like it. He doesn't like it. (not: he don't)",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "I don't eat meat.",
+        "translation": "I don't eat meat."
+      },
+      {
+        "sentence": "He doesn't speak French.",
+        "translation": "He doesn't speak French."
+      },
+      {
+        "sentence": "They don't work here.",
+        "translation": "They don't work here."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_10",
+    "language": "en",
+    "pattern": "Present Simple - questions",
+    "title": "Present Simple - questions: Do you? /Does she?",
+    "shortExplanation": "Do you like pizza? Does he work here? Where do they live?",
+    "longExplanation": "Questions: Do/Does + subject + infinitive?\n• I/you/we/they: Do you...?\n• he/she/it: Does she...?\nSpecial questions: question word + do/does + subject + infinitive:\nWhere does she live? What do they do?",
+    "formation": "Do you like pizza? Does he work here? Where do they live?",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "Do you speak Russian?",
+        "translation": "Do you speak Russian?"
+      },
+      {
+        "sentence": "Does she live nearby?",
+        "translation": "Does she live nearby?"
+      },
+      {
+        "sentence": "Where do you work?",
+        "translation": "Where do you work?"
+      }
+    ]
+  },
+  {
+    "id": "en_a1_11",
+    "language": "en",
+    "pattern": "Stative verbs",
+    "title": "Stative verbs - verbs not used in Continuous",
+    "shortExplanation": "I know, not: I am knowing. I love, not: I am loving.",
+    "longExplanation": "Some verbs describe a state rather than an action - they are not used in Continuous tenses.\nMain groups:\n• Opinions: know, believe, think, understand, remember, forget\n• Feelings: love, hate, like, want, need, prefer\n• Perception: see, hear, smell, taste, look\n• Being: be, exist, belong, contain, seem, appear",
+    "formation": "I know, not: I am knowing. I love, not: I am loving.",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "I understand you. (не: I am understanding)",
+        "translation": "I understand you."
+      },
+      {
+        "sentence": "She loves chocolate. (не: is loving)",
+        "translation": "She loves chocolate."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_12",
+    "language": "en",
+    "pattern": "Personal pronouns",
+    "title": "Personal pronouns: I, you, he, she, it, we, they",
+    "shortExplanation": "You always need an explicit subject - you can't skip I",
+    "longExplanation": "Unlike \nIn \nObject forms (after a verb or preposition): me, you, him, her, it, us, them.",
+    "formation": "You always need an explicit subject - you can't skip I",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "She is a teacher.",
+        "translation": "She's a teacher."
+      },
+      {
+        "sentence": "Tell him the truth.",
+        "translation": "Tell him the truth."
+      },
+      {
+        "sentence": "Can you help me?",
+        "translation": "Can you help me?"
+      }
+    ]
+  },
+  {
+    "id": "en_a1_13",
+    "language": "en",
+    "pattern": "Possessive adjectives",
+    "title": "Possessive adjectives: my, your, his, her, its, our, their",
+    "shortExplanation": "my book, her car, their house - do not change by number",
+    "longExplanation": "Possessive adjectives show ownership and go before the noun.\nImportant: its (without apostrophe) = ownership; it's (with an apostrophe) = it is.\nDo not change in gender and number: my friend / my friends - the same.",
+    "formation": "my book, her car, their house - do not change by number",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "This is my phone.",
+        "translation": "This is my phone."
+      },
+      {
+        "sentence": "Their dog is cute.",
+        "translation": "Their dog is cute."
+      },
+      {
+        "sentence": "The cat hurt its paw.",
+        "translation": "The cat injured its paw."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_14",
+    "language": "en",
+    "pattern": "Plural of nouns",
+    "title": "Plural of nouns",
+    "shortExplanation": "cats, boxes, knives, children, men, sheep",
+    "longExplanation": "Basic rule: add -s.\nSpecial cases:\n• -s, -ss, -sh, -ch, -x, -o: + es → boxes, watches, tomatoes\n• vowel + -y: + s → boys, days\n• consonant + -y: -y → ies → cities, babies\n• -f/-fe: → ves → knives, leaves, wives\nIrregular: child→children, man→men, woman→women, tooth→teeth, foot→feet, mouse→mice, person→people, fish→fish, sheep→sheep",
+    "formation": "cats, boxes, knives, children, men, sheep",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "one bus → two buses",
+        "translation": "one bus → two buses"
+      },
+      {
+        "sentence": "one child → many children",
+        "translation": "one child → many children"
+      }
+    ]
+  },
+  {
+    "id": "en_a1_15",
+    "language": "en",
+    "pattern": "This / that / these / those",
+    "title": "This / that / these / those",
+    "shortExplanation": "this/these - nearby; that/those - far away",
+    "longExplanation": "this (this) - singular + next\nthese (these) - plural + nearby\nthat (that) - singular + far or already known\nthose (those) - plural + far\nAlso used about time: this week (this week), that year (that year).",
+    "formation": "this/these - nearby; that/those - far away",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "This is my bag.",
+        "translation": "This is my bag."
+      },
+      {
+        "sentence": "Those shoes are expensive.",
+        "translation": "Those shoes are expensive."
+      },
+      {
+        "sentence": "What is that?",
+        "translation": "What is it?"
+      }
+    ]
+  }
+]

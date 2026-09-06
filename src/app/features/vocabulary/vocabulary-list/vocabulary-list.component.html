@@ -20,7 +20,7 @@
             <app-icon name="search" [size]="15" class="search-icon" />
             <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('vocab.search')" class="search-input" spellcheck="false" autocomplete="off" />
             @if (searchQuery) {
-            <button type="button" class="clear-btn" (click)="clearSearch()" aria-label="Clear search">
+            <button type="button" class="clear-btn" (click)="clearSearch()" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
                 <app-icon name="x" [size]="13" />
             </button>
             }

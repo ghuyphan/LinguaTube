@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_을_44",
+    "language": "ko",
+    "pattern": "~을",
+    "title": "~을 바탕으로 [eul batangeuro] (Based on)",
+    "shortExplanation": "Indicates that something is done 'based on' or 'on the basis of' certain information.",
+    "longExplanation": "'~을 바탕으로' is a postpositional phrase used to express that an action or decision is founded on a particular fact, evidence, or experience. The noun preceding this expression serves as the basis for what follows.",
+    "formation": "Noun + 을 바탕으로",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "우리는 고객들의 피드백을 바탕으로 제품을 개선했습니다.",
+        "romanization": "Urineun gogudeul-ui pideubaeg-eul batangeuro jepumeul gaeseonhaetseumnida.",
+        "translation": "We improved the product based on our customers’ feedback."
+      },
+      {
+        "sentence": "그녀는 자신의 경험을 바탕으로 책을 썼습니다.",
+        "romanization": "Geunyeoneun jasin-ui gyeongheomeul batangeuro chaegeul sseotseumnida.",
+        "translation": "She wrote a book based on her personal experiences."
+      },
+      {
+        "sentence": "저는 이전 회사에서의 경험을 바탕으로 이 작업을 빠르게 마칠 수 있습니다.",
+        "romanization": "Jeoneun ijeon hoesaeseoui gyeongheomeul batangeuro i jageobeul bbalge machil su isseumnida.",
+        "translation": "I can complete this task quickly based on my experience at my previous company."
+      },
+      {
+        "sentence": "그들은 사실을 바탕으로 결정을 내렸습니다.",
+        "romanization": "Geudeureun sasileul batangeuro gyeoljeongeul naeryeotseumnida.",
+        "translation": "They made a decision based on the facts."
+      }
+    ]
+  },
+  {
+    "id": "ko_을_45",
+    "language": "ko",
+    "pattern": "~을",
+    "title": "~을 빼다 [eul ppaeda] (Except for)",
+    "shortExplanation": "Expresses exclusion; meaning 'except for' or 'aside from'.",
+    "longExplanation": "'~을 빼다' is used in Korean to exclude a particular item or group from a general statement. It specifies that while a general rule applies, there are exceptions.",
+    "formation": "Noun + 을/를 빼다 + (rest of the sentence)",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "우리 학교에서는 학생들이 모두 친절해요, 몇 명의 학생들을 빼고 모두 친절해요.",
+        "romanization": "Uri hakgyoeseoneun haksengdeul-i modu chinjeolhaeyo, myeot myeong-ui haksengdeuleul ppaego modu chinjeolhaeyo.",
+        "translation": "In our school, all the students are kind; except for a few, everyone is kind."
+      },
+      {
+        "sentence": "이 식당의 모든 메뉴는 맛있어요, 몇 가지 메뉴를 빼고는 모두 맛있어요.",
+        "romanization": "I shiktang-ui modeun menyuneun mashisseoyo, myeot gaji menyureul ppaegoneun modu mashisseoyo.",
+        "translation": "All the menus in this restaurant are delicious, except for a few, everything is delicious."
+      },
+      {
+        "sentence": "여기 있는 모든 사람들이 한국어를 할 수 있어요, 몇몇 사람들을 빼고는.",
+        "romanization": "Yeogi itneun modeun saramdeul-i hangugeoreul hal su isseoyo, myeotmyeot saramdeuleul ppaegoneun.",
+        "translation": "Everyone here can speak Korean, except for a few people."
+      },
+      {
+        "sentence": "읽은 모든 책들 중에서 가장 재미있었어요, 몇 권의 책을 빼고.",
+        "romanization": "Ilgeun modeun chaegdeul jungeseo gajang jaemiisseotseoyo, myeot gweon-ui chaegeul ppaego.",
+        "translation": "Among all the books I read, it was the most interesting—except for a few."
+      }
+    ]
+  },
+  {
+    "id": "ko_을_46",
+    "language": "ko",
+    "pattern": "~을",
+    "title": "~을 사이 [eul sai] (Between)",
+    "shortExplanation": "Used to express 'between' or 'among'.",
+    "longExplanation": "'~을 사이' is used to indicate that something is located between or among two or more items. It is most naturally used with two nouns, often connected with '과/와', to show a spatial or conceptual intermediate position.",
+    "formation": "Noun1과(와) Noun2 사이(에)",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "나는 아침 식사와 점심 식사 사이에 간단한 간식을 먹습니다.",
+        "romanization": "Naneun achim siksa-wa jeomsim siksa saie gananhan gansigeul meokseumnida.",
+        "translation": "I have a simple snack between breakfast and lunch."
+      },
+      {
+        "sentence": "첫 번째 작업과 두 번째 작업 사이에 휴식 시간을 갖는 것이 중요합니다.",
+        "romanization": "Cheot beonjjae jakeob-gwa du beonjjae jakeob saie hyusik siganeul ganeun geosi jungyohamnida.",
+        "translation": "It is important to have a break between the first and second tasks."
+      },
+      {
+        "sentence": "그녀의 집과 학교 사이에 있는 공원에서 공부를 했습니다.",
+        "romanization": "Geunyeoui jip-gwa hakgyo saie itneun gongwon-eseo gongbureul haetseumnida.",
+        "translation": "I studied in the park located between her house and the school."
+      },
+      {
+        "sentence": "우리는 두 회사 사이에 있는 레스토랑에서 만났습니다.",
+        "romanization": "Urineun du hoesa saie itneun reseutorang-eseo mannatseumnida.",
+        "translation": "We met at a restaurant situated between the two companies."
+      }
+    ]
+  },
+  {
+    "id": "ko_을_47",
+    "language": "ko",
+    "pattern": "~을",
+    "title": "~을 테니 [eul teni] (I assume/bet)",
+    "shortExplanation": "Used to express a confident assumption or prediction about a future event.",
+    "longExplanation": "The grammar point '~을 테니' is used to make a deduction or prediction based on available evidence. It expresses the speaker’s confident guess about a result or outcome, usually followed by a consequent action or result.",
+    "formation": "Verb/Adjective + 을 테니 + (result/consequence)",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "내일 비가 올 테니 우산을 가져가는 것이 좋겠어요.",
+        "romanization": "Naeil biga ol teni usaneul gajyeoganeun geosi johgesseoyo.",
+        "translation": "I bet it will rain tomorrow, so it would be wise to bring an umbrella."
+      },
+      {
+        "sentence": "진희가 어렸을 때 수영을 배웠을 테니 수영을 잘할 것입니다.",
+        "romanization": "Jinheega eoryeosseul ttae suyeongeul baewosseul teni suyeongeul jalhal geosimnida.",
+        "translation": "Since Jinhee learned to swim when she was young, she must be good at it."
+      },
+      {
+        "sentence": "그는 일어나서 아침을 먹은 것으로 보입니다. 밥그릇에 밥이 조금 남아 있을 테니 그가 아침을 먹고 간 것입니다.",
+        "romanization": "Geuneun ireonaseo achimeul meogeun geoseuro boimnida. Babgeureute bap-i jogeum nama isseul teni geuga achimeul meokgo gan geosimnida.",
+        "translation": "It appears that he woke up and had breakfast; I assume he left after eating since a little rice remains in the bowl."
+      },
+      {
+        "sentence": "영희가 피곤하다고 해서, 지금은 집에서 잘 테니 전화하지 마세요.",
+        "romanization": "Yeongheega pigonhadago haeseo, jigeumeun jibeseo jal teni jeonhwahaji maseyo.",
+        "translation": "Since Younghee said she was tired, I bet she’s sleeping at home now. Don’t call her."
+      }
+    ]
+  },
+  {
+    "id": "ko_을_48",
+    "language": "ko",
+    "pattern": "~을",
+    "title": "~을 통해 [eul tonghae] (Through, via)",
+    "shortExplanation": "Expresses the means or method by which something is done.",
+    "longExplanation": "The phrase '~을 통해' signifies the channel, method, or process by which an action is carried out. It is used after a noun to show that the following action occurs by way of or through that noun.",
+    "formation": "Noun + 을 통해",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "우리는 이메일을 통해 의견을 주고받았어요, 그래서 모두가 표현하기 편했어요.",
+        "romanization": "Urineun imeireul tonghae uigyeoneul jugobadatsseoyo, geuraeseo moduga pyohyeonhagi pyeonhaesseoyo.",
+        "translation": "We exchanged opinions through email, so everyone found it easy to express themselves."
+      },
+      {
+        "sentence": "저는 책을 통해 새로운 지식을 배우는 것을 좋아합니다, 그래서 자주 도서관을 방문합니다.",
+        "romanization": "Jeoneun chaekeul tonghae saeroun jisigeul baeuneun geoseul johahamnida, geuraeseo jaju doseogwaneul bangmunhamnida.",
+        "translation": "I like learning new things through books, so I visit the library frequently."
+      },
+      {
+        "sentence": "그녀는 구글 번역을 통해 한국어를 배우고 있어요, 그래서 언어를 배우는데 편리합니다.",
+        "romanization": "Geunyeoneun gugle beonyeogeul tonghae hangugeoreul baewugo isseoyo, geuraeseo eoneoreul baewuneunde pyeonrihamnida.",
+        "translation": "She is learning Korean through Google Translate, which makes learning languages convenient for her."
+      },
+      {
+        "sentence": "우리는 마스크 착용을 통해 코로나바이러스의 확산을 막을 수 있었어요, 그래서 많은 생명이 구해졌어요.",
+        "romanization": "Urineun maseukeu chakyong-eul tonghae koronabaireoseu-ui hwagsan-eul mageul su isseosseoyo, geuraeseo manheun saengmyeong-i guhaejyeosseoyo.",
+        "translation": "We were able to prevent the spread of the coronavirus through wearing masks, thereby saving many lives."
+      }
+    ]
+  },
+  {
+    "id": "ko_을를_49",
+    "language": "ko",
+    "pattern": "~을/를",
+    "title": "~을/를 틈타 [eul/reul teumta] (Taking advantage of, during)",
+    "shortExplanation": "Describes using a spare moment or opportunity to do something.",
+    "longExplanation": "'~을/를 틈타' is used to indicate that someone takes advantage of a gap in time or an opportunity to perform an action. It implies doing something in the interim or making use of a favorable situation.",
+    "formation": "Noun/Verb stem + 을/를 틈타",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "저는 출근하는 길을 틈타 책을 읽곤 해요, 그래서 지루한 통학 시간을 잘 활용할 수 있어요.",
+        "romanization": "Jeoneun chulgeunhaneun gireul teumta chaegeul ilkgon haeyo, geuraeseo jiruhan tonghak siganeul jal hyangyonghal su isseoyo.",
+        "translation": "I tend to read books on my way to work, so I can make good use of the long, boring commute."
+      },
+      {
+        "sentence": "그녀는 휴식 시간을 틈타 학습했어요, 그래서 시험 준비가 더 잘 되었어요.",
+        "romanization": "Geunyeoneun hyusik siganeul teumta hakseubhaesseoyo, geuraeseo siheom junbiga deo jal doeeosseoyo.",
+        "translation": "She took advantage of her break time to study, so she was better prepared for the exam."
+      },
+      {
+        "sentence": "아기가 잠들 때를 틈타 집안일을 해요, 그래서 많은 일을 처리할 수 있어요.",
+        "romanization": "Agiga jamdeul ttaereul teumta jibanireul haeyo, geureoni manheun ildeul-eul cheolihal su isseoyo.",
+        "translation": "I do housework when the baby is asleep, so I can get many tasks done."
+      },
+      {
+        "sentence": "비가 오는 날을 틈타 분위기 있는 카페에서 책을 읽었어요, 정말 평온한 시간이었어요.",
+        "romanization": "Biga oneun naleul teumta bunwigiga itneun kape-eseo chaegeul ilgyeosseoyo, jeongmallo pyeongonhan siganyeosseoyo.",
+        "translation": "I took advantage of a rainy day to read a book in a cozy cafe; it was a really peaceful time."
+      }
+    ]
+  },
+  {
+    "id": "ko_이기는_50",
+    "language": "ko",
+    "pattern": "~이기는",
+    "title": "~이기는 한데 [igineun hande] (Although, but)",
+    "shortExplanation": "Indicates a contrast by acknowledging one fact while negating or limiting it with another.",
+    "longExplanation": "'~이기는 한데' is used in Korean to show that while one part of a statement is true, the following part provides a contrasting or limiting remark. It is roughly equivalent to 'although' or 'but' in English.",
+    "formation": "Verb-기는 한데",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "저는 그 영화가 재미있게 보기는 한데, 약간의 폭력 씬이 너무 많이 나와서 좀 불편했어요.",
+        "romanization": "Jeoneun geu yeonghwaga jaemiitge bogineun hande, yakgan-ui pokryeok ssin-i neomu mani nawa seo jom bulpyeonhaesseoyo.",
+        "translation": "Although I found that movie entertaining, there were too many violent scenes that made me uncomfortable."
+      },
+      {
+        "sentence": "한국어를 공부하기는 한데, 중국어를 더 잘하고 싶어요.",
+        "romanization": "Hangugeoreul gongbu hagi neun hande, junggug-eoreul deo jalhago sip-eoyo.",
+        "translation": "Although I am studying Korean, I want to become better at Chinese."
+      },
+      {
+        "sentence": "우리 팀이 승리하긴 했는데, 상대 팀이 더 잘했어요.",
+        "romanization": "Uri tim-i seunglihagin haessneunde, sangdaetim-i deo jalhaesseoyo.",
+        "translation": "Although our team won, the opposing team played better."
+      },
+      {
+        "sentence": "내일 체육 대회가 있어서 연습을 많이 해야 하기는 한데, 시간이 없어서 어떻게 할지 모르겠어요.",
+        "romanization": "Naeil cheyuk daehoega isseoseo yeonseub-eul mani haeya hagin hande, sigani eopseoseo eotteoke halji moreugesseoyo.",
+        "translation": "Although I have to practice a lot for tomorrow’s sports festival, I don’t know how to manage it because I have no time."
+      }
+    ]
+  },
+  {
+    "id": "ko_이나_51",
+    "language": "ko",
+    "pattern": "~이나",
+    "title": "~이나 [ina] (Or something)",
+    "shortExplanation": "Expresses uncertainty or gives approximate examples, similar to 'or something' or 'or so'.",
+    "longExplanation": "'~이나' is a particle used in Korean to introduce alternatives or approximate examples when the speaker is not certain of the details or wants to imply that there are other possibilities.",
+    "formation": "Noun + 이나",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "저는 커피이나 차이나 뭔가 마실게요, 제가 너무 목이 말라서요.",
+        "romanization": "Jeoneun keopiina chaiina mwonga masilgeyo, jega neomu mogi maraseoyo.",
+        "translation": "I'll have coffee or tea or something, because I'm so thirsty."
+      },
+      {
+        "sentence": "우리는 이번 주말에 피크닉이나 가볼까요? 좋은 날씨를 즐기는 것도 좋을 것 같아요.",
+        "romanization": "Urineun ibeon jumal-e piknikina gabolkka? Joeun nalssireul jeulgineun geosdo joheulgeot gatayo.",
+        "translation": "Shall we go for a picnic or something this weekend? It would be nice to enjoy the good weather."
+      },
+      {
+        "sentence": "그녀는 점심으로 라면이나 유부초밥 같은 간단한 것을 먹었어요.",
+        "romanization": "Geunyeoneun jeomsimeuro ramyeonina yubuchobab gateun gandanhan geoseul meogeosseoyo.",
+        "translation": "She had something simple like ramen or tofu sushi for lunch."
+      },
+      {
+        "sentence": "나는 10 kilometer이나 걸어가서 집에 돌아왔어요, 왜냐하면 버스가 없었거든요.",
+        "romanization": "Naneun 10 kilometeoina georeogaseo jibe dorawasseoyo, waenyahamyeon beoseuga eopseosseoya.",
+        "translation": "I walked about 10 kilometers or so to get home because there was no bus."
+      }
+    ]
+  },
+  {
+    "id": "ko_이래_52",
+    "language": "ko",
+    "pattern": "~이래",
+    "title": "~이래 [irae] (Since then, like this)",
+    "shortExplanation": "Expresses that a state or action has continued from a past point until now, or describes the manner in which something is done.",
+    "longExplanation": "'~이래' is used in Korean to indicate that a situation has continued from a specific point in the past to the present, or to describe how something is done. It is generally translated as 'since then' or 'like this' in English.",
+    "formation": "Verb Stem + (으)면서 이래 / Noun + 이래",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "학교에서 그녀를 처음 만난 이래로 그녀를 사랑하게 되었어요.",
+        "romanization": "Hakgyoeseo geunyeoreul cheoeum mannan iraero, geunyeoreul saranghage doeeosseoyo.",
+        "translation": "Since I first met her in school, I have fallen in love with her."
+      },
+      {
+        "sentence": "인디아에 와서는 처음으로 매운 음식을 먹어 본 이래로 매운 음식을 좋아하게 되었어요.",
+        "romanization": "India-e waseoneun cheoeumeuro maeun eumsigeul meogeobon iraero, maeun eumsigeul joahage doeeosseoyo.",
+        "translation": "Since I first tried spicy food after coming to India, I have come to like spicy food."
+      },
+      {
+        "sentence": "일어나서 이야기를 듣다 보니 이래로 소리를 내지 않게 되었어요.",
+        "romanization": "Ireonaseo iyagireul deutda boni iraero sorireul naeji anke doeeosseoyo.",
+        "translation": "After hearing the story when I woke up, I became so quiet that I couldn’t make a sound."
+      },
+      {
+        "sentence": "건물이 불에 탄 이래로 그 곳은 빈집이 되어 버렸어요.",
+        "romanization": "Geonmuri bule tan iraero, geu got-eun binjibi doeeo beoryeosseoyo.",
+        "translation": "Since the building was burned, it has become an empty house."
+      }
+    ]
+  },
+  {
+    "id": "ko_이러하다_53",
+    "language": "ko",
+    "pattern": "~이러하다",
+    "title": "~이러하다 [ireohada] (Like this, such)",
+    "shortExplanation": "Used to express 'like this' or 'such', indicating a certain state or condition.",
+    "longExplanation": "'~이러하다' is a descriptive verb used in Korean to depict a specific state, condition, or characteristic. It is used to describe something that is 'like this' or 'in such a way'—often when directly observing or experiencing the subject.",
+    "formation": "Subject + 이러하다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "상황이 이러하니까 모두 어찌할 바를 몰랐어요.",
+        "romanization": "Sanghwangi ireohanikka modu eojjikal bareul mollasseoyo.",
+        "translation": "Because the situation was like this, no one knew what to do."
+      },
+      {
+        "sentence": "생각보다 문제가 이러하니 참 당황스럽네요.",
+        "romanization": "Saenggakboda munje-ga ireohani cham danghwangseureopneyo.",
+        "translation": "I'm quite flustered because the problem is like this, which is unexpected."
+      },
+      {
+        "sentence": "사람들이 이러하게 취급하는 것이 너무 서글픕니다.",
+        "romanization": "Saramdeul-i ireohage chwihaenghaneun geosi neomu seulpeumnida.",
+        "translation": "It's really depressing that people treat me like this."
+      },
+      {
+        "sentence": "그의 이러한 행동으로 인해 많은 사람들이 고통 받았어요.",
+        "romanization": "Geu-ui ireohan haengdong-euro inhae manheun saramdeul-i gotong badasseoyo.",
+        "translation": "Many people have suffered due to his actions like this."
+      }
+    ]
+  },
+  {
+    "id": "ko_이리_54",
+    "language": "ko",
+    "pattern": "~이리",
+    "title": "~이리 [iri] (This way, like this)",
+    "shortExplanation": "Used to denote 'in this manner' or 'like this', often to illustrate the way something is done.",
+    "longExplanation": "'~이리' is a Korean expression that indicates a specific method or manner of doing something. It is equivalent to the English expressions 'like this', 'in this way', or 'in this manner' and is frequently used in everyday conversation.",
+    "formation": "Verb stem + 이리",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "그렇게 부르지 마세요, 이리 부르세요.",
+        "romanization": "Geureohge bureuji maseyo, iri bureuseyo.",
+        "translation": "Don't call like that; call this way."
+      },
+      {
+        "sentence": "그는 과제를 이리 해왔어요.",
+        "romanization": "Geuneun gwaje-reul iri hae wasseoyo.",
+        "translation": "He did the assignment like this."
+      },
+      {
+        "sentence": "이리 사진을 찍어 주세요.",
+        "romanization": "Iri sajineul jjigeo juseyo.",
+        "translation": "Please take a picture this way."
+      },
+      {
+        "sentence": "제가 이리 할 것 같아요.",
+        "romanization": "Jega iri hal geot gatayo.",
+        "translation": "I think I’m going to do it this way."
+      }
+    ]
+  },
+  {
+    "id": "ko_이미_55",
+    "language": "ko",
+    "pattern": "~이미",
+    "title": "~이미 [imi] (Already)",
+    "shortExplanation": "Used to express that an action has already been completed.",
+    "longExplanation": "'~이미' is a particle used to denote that an action or event has already taken place. It functions similarly to the English adverb 'already' and is typically placed before the verb phrase to stress the completion of an action.",
+    "formation": "이미 + Verb",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "저는 이미 한국어 공부를 시작했어요, 조금 늦었지만 열심히 하기로 결정했어요.",
+        "romanization": "Jeoneun imi hangugeo gongbureul sijakhaesseoyo, jogeum neujjiman yeolsimhi hagiro gyeoljeonghaesseoyo.",
+        "translation": "I have already started studying Korean; although I am a bit late, I decided to work hard."
+      },
+      {
+        "sentence": "우리는 이미 바다에 도착했어요, 더 이상 기다릴 필요가 없어요.",
+        "romanization": "Urineun imi badae dochakhaesseoyo, deo isang gidaril pillyoga eopseoyo.",
+        "translation": "We have already arrived at the sea, so there is no need to wait any longer."
+      },
+      {
+        "sentence": "아이들은 이미 저녁을 먹었어요, 그래서 지금은 배가 불러요.",
+        "romanization": "Aideureun imi jeonyeogeul meogeosseoyo, geuraeseo jigeumeun baega bulleoyo.",
+        "translation": "The children have already eaten dinner, so they are full now."
+      },
+      {
+        "sentence": "그 영화는 이미 봤어요, 그래서 다른 걸 찾아봐야 할 것 같아요.",
+        "romanization": "Geu yeonghwaneun imi bwasseoyo, geuraeseo dareun geol chajabwaya hal geot gatayo.",
+        "translation": "I have already seen that movie, so I think I need to look for something else."
+      }
+    ]
+  },
+  {
+    "id": "ko_인_56",
+    "language": "ko",
+    "pattern": "~인",
+    "title": "~인 바 [in ba] (Since, because it's the case that)",
+    "shortExplanation": "Used to express 'since' or 'because it's the case that'.",
+    "longExplanation": "'~인 바' is a formal grammar form used to provide a reason or cause for something. It is similar to saying 'since' or 'because it's the case that' in English and is most often found in written or formal contexts.",
+    "formation": "Clause (with -인) + 바",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "모임이 취소된 바 있으므로, 오늘은 집에서 쉴 생각이에요.",
+        "romanization": "Moim-i chwisodoen ba iss-eumyeo, oneul-eun jib-eseo swil saenggag-ieyo.",
+        "translation": "Since the meeting has been canceled, I plan to rest at home today."
+      },
+      {
+        "sentence": "그녀가 도착한 바 없으니, 아마 그녀는 우리를 기다리나 봐요.",
+        "romanization": "Geunyeoga dochakhan ba eopseuni, ama geunyeoneun uril gidarina bwayo.",
+        "translation": "Since she hasn't arrived, she must be waiting for us."
+      },
+      {
+        "sentence": "이 바이러스가 감염된 바 있는 사람들은 자가 격리를 해야 합니다.",
+        "romanization": "I baireoseuga gamyeomdoen ba issneun saramdeul-eun jaga gyeokrireul haeya hamnida.",
+        "translation": "People who have been infected with this virus must self-quarantine."
+      },
+      {
+        "sentence": "화장실을 사용한 바 있으니, 지금은 다른 사람이 사용할 수 있어요.",
+        "romanization": "Hwajangsil-eul sayonghan ba iss-euni, jigeum-eun dareun saram-i sayonghal su isseoyo.",
+        "translation": "Since the bathroom has been used, someone else can use it now."
+      }
+    ]
+  },
+  {
+    "id": "ko_인_57",
+    "language": "ko",
+    "pattern": "~인",
+    "title": "~인 이상 [in isang] (As long as, since)",
+    "shortExplanation": "Used to express 'as long as', 'since', or 'now that' a certain condition is met.",
+    "longExplanation": "'~인 이상' sets a condition and implies that, because the condition is met, a corresponding result or action must follow. It can be translated as 'as long as', 'since', or 'now that' in English.",
+    "formation": "Verb + (으)ㄴ 이상",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "우리가 이미 이렇게까지 온 이상, 포기하면 안 돼요.",
+        "romanization": "Uriga imi ireohgekkaji on isang, pogihamyeon an dwaeyo.",
+        "translation": "As long as we have come this far, we must not give up."
+      },
+      {
+        "sentence": "허락받은 이상, 자유롭게 할 수 있어요.",
+        "romanization": "Heorakbadeun isang, jayuropge hal su isseoyo.",
+        "translation": "Since you have received permission, you can do it freely."
+      },
+      {
+        "sentence": "약속을 한 이상, 꼭 지켜야 해요.",
+        "romanization": "Yaksogeul han isang, kkok jikyeoya haeyo.",
+        "translation": "As long as you have made a promise, you must keep it."
+      },
+      {
+        "sentence": "시험에 합격한 이상, 우리가 너를 축하해야겠어.",
+        "romanization": "Siheome hapgyeoghan isang, uriga neoreul chughahaeya-gesseo.",
+        "translation": "Now that you have passed the exam, we should congratulate you."
+      }
+    ]
+  },
+  {
+    "id": "ko_인즉슨_58",
+    "language": "ko",
+    "pattern": "~인즉슨",
+    "title": "~인즉슨 [injeuksseun] (Which means, in other words)",
+    "shortExplanation": "Means 'which implies that' or 'in other words', used to clarify a previous statement.",
+    "longExplanation": "'~인즉슨' is used to restate or clarify the premise mentioned earlier. The following clause summarizes or explains the previous information and is equivalent to 'which means that', 'implying', or 'in other words' in English.",
+    "formation": "Sentence + 인즉슨 + Explanation",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "우리는 소통의 기능이 필요하다. 인즉슨, 서로의 생각을 알아야 한다는 것이다.",
+        "romanization": "Urineun sotong-ui gineungi pilyohada. Injeuksseun, seoro-ui saenggageul al-aya handaneun geos-ida.",
+        "translation": "We need a means of communication. In other words, we need to understand each other’s thoughts."
+      },
+      {
+        "sentence": "아버지께서는 일찍이 돌아가셨습니다. 인즉슨, 제가 아주 어렸을 때부터 부친을 잃었다는 뜻입니다.",
+        "romanization": "Abeojikkeseoneun iljjigi doragasyeotseumnida. Injeuksseun, jega aju eoryeosseutdae butchinueul ilheotseutaneun tteusibnida.",
+        "translation": "My father passed away early. This means that I lost him when I was very young."
+      },
+      {
+        "sentence": "그는 이 일을 담당합니다. 인즉슨, 이 일의 책임이 그에게 있다는 것입니다.",
+        "romanization": "Geuneun i il-eul damdanghabnida. Injeuksseun, i il-ui chaegimi geuege ittdaneun geos-ida.",
+        "translation": "He is in charge of this work. In other words, the responsibility for this work lies with him."
+      },
+      {
+        "sentence": "우리는 다음 주에 시험을 봅니다. 인즉슨, 주말 동안 공부하러 도서관에 갈 필요가 있다는 것입니다.",
+        "romanization": "Urineun daeum juae siheomeul bobnida. Injeuksseun, jumaldongan gongbuhareo doseogwan-e gal pilyoga ittdaneun geos-ida.",
+        "translation": "We will have an exam next week. In other words, we need to go to the library to study during the weekend."
+      }
+    ]
+  }
+]

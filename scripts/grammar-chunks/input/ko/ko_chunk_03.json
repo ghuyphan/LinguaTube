@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_아직_30",
+    "language": "ko",
+    "pattern": "아직",
+    "title": "아직 [ajik] (Yet, still)",
+    "shortExplanation": "Used to indicate that a condition or situation persists; 'yet', 'still'.",
+    "longExplanation": "'아직 [ajik]' shows that an action or state is not finished or has not changed up to now. It can be translated as 'still' or 'yet' in English, depending on the context. It often appears in negative contexts (아직 안 했다) but can also be used more neutrally (아직 하고 있다).",
+    "formation": "아직 + Verb / Noun / Adjective",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "아직 저는 한국어를 완벽하게 이해하지 못해요. 계속 연습이 필요해요.",
+        "romanization": "Ajik jeoneun hangugeoreul wanbyeokhage ihaehaji mothaeyo. Gyesok yeonseub-i piryohaeyo.",
+        "translation": "I still cannot fully understand Korean. I need to keep practicing."
+      },
+      {
+        "sentence": "결정할 수 있어도, 아직 그 문제에 대해 생각 중이에요.",
+        "romanization": "Gyeoljeonghal su iss-eodo, ajik geu munjee daehae saenggak jung-ieyo.",
+        "translation": "Even though I can decide, I'm still thinking about that issue."
+      },
+      {
+        "sentence": "아직 그 영화를 보지 않았어요. 주말에 볼 예정이에요.",
+        "romanization": "Ajik geu yeonghwareul boji anasseoyo. Jumal-e bol yejeong-ieyo.",
+        "translation": "I haven't watched that movie yet. I plan to see it this weekend."
+      },
+      {
+        "sentence": "아직 점심을 먹지 않았어요. 배가 너무 고프네요.",
+        "romanization": "Ajik jeomsimeul meokji anasseoyo. Baega neomu gopeuneyo.",
+        "translation": "I haven't had lunch yet. I'm really hungry."
+      }
+    ]
+  },
+  {
+    "id": "ko_때_31",
+    "language": "ko",
+    "pattern": "때",
+    "title": "때 [ttae] (When, time)",
+    "shortExplanation": "Used to indicate a specific time or moment; 'when', 'at the time'.",
+    "longExplanation": "'때 [ttae]' is a noun meaning 'time' or 'moment.' It is commonly attached to a verb stem (or sometimes a noun + 적 or similar forms) to indicate 'when' something happened or will happen. It's very versatile and appears in expressions like '어릴 때' (when I was young) or '시간이 없을 때' (when there is no time).",
+    "formation": "Verb stem/Noun + 때",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 어릴 때부터 한국어를 배우고 싶어했어요.",
+        "romanization": "Jeoneun eoril ttaebuteo hangugeoreul baeugo sipeohaesseoyo.",
+        "translation": "I have wanted to learn Korean since I was young."
+      },
+      {
+        "sentence": "그 여자가 웃을 때, 저는 정말 행복해요.",
+        "romanization": "Geu yeojaga useul ttae, jeoneun jeongmal haengbokhaeyo.",
+        "translation": "When she smiles, I feel truly happy."
+      },
+      {
+        "sentence": "첫 만남 때, 그를 절대 잊지 못할 거예요.",
+        "romanization": "Cheot mannam ttae, geureul jeoldae itji mothal geoyeyo.",
+        "translation": "When we first met, I knew I'd never forget him."
+      },
+      {
+        "sentence": "이번 주말에 여행을 가고 싶은데, 시간이 없을 때 어떻게 해야 할까요?",
+        "romanization": "Ibeon jumare yeohaengeul gago sip-eunde, sigani eopseul ttae eotteoke haeya halkkayo?",
+        "translation": "I want to travel this weekend, but what should I do when there's no time?"
+      }
+    ]
+  },
+  {
+    "id": "ko_으려고하다euryeogohadaIntendtodo_32",
+    "language": "ko",
+    "pattern": "(으)려고 하다 [(eu)ryeogo hada] (Intend to do)",
+    "title": "(으)려고 하다 [(eu)ryeogo hada] (Intend to do)",
+    "shortExplanation": "Used to express the intention or plan to do something.",
+    "longExplanation": "'(으)려고 하다' is used to say that someone intends or plans to do something in the future. The verb stem is followed by (으)려고, then '하다' is conjugated to show tense or politeness level. It often implies a near-future plan or deliberate intention.",
+    "formation": "Verb stem + (으)려고 하다",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 한국어를 더 잘하기 위해 노력하려고 합니다. 연습을 많이 해서 실력을 키우려고 해요.",
+        "romanization": "Jeoneun hangugeoreul deo jalhagi wihae noryeokharyeogo hamnida. Yeonseubeul manhi haeseo sillyeogeul kiuryeogo haeyo.",
+        "translation": "I intend to work hard to improve my Korean. I plan to practice a lot to build my skills."
+      },
+      {
+        "sentence": "내일 비가 오려고 하니 우산을 챙기려고 해요. 감기를 예방하려고 합니다.",
+        "romanization": "Naeil biga oryeogo hani usaneul chaenggiryego haeyo. Gamgireul yebangharyeogo hamnida.",
+        "translation": "Since it looks like it will rain tomorrow, I intend to take an umbrella. I'm trying to prevent catching a cold."
+      },
+      {
+        "sentence": "친구와 함께 여행을 가려고 해요. 같이 좋은 추억을 만들려고 합니다.",
+        "romanization": "Chinguwa hamkke yeohaengeul garyeogo haeyo. Gachi joeun chu-eokeul mandeulryeogo hamnida.",
+        "translation": "I'm planning to go on a trip with my friend. I want to make good memories together."
+      },
+      {
+        "sentence": "그녀는 다음 달에 결혼 준비를 하려고 해요. 모든 것을 완벽하게 만들려고 해요.",
+        "romanization": "Geunyeoneun daeum dale gyeolhon junbireul haryeogo haeyo. Modeun geoseul wanbyeokhage mandeulryeogo haeyo.",
+        "translation": "She plans to prepare for her wedding next month. She wants everything to be perfect."
+      }
+    ]
+  },
+  {
+    "id": "ko_처럼_33",
+    "language": "ko",
+    "pattern": "처럼",
+    "title": "처럼 [cheoreom] (Like, as)",
+    "shortExplanation": "Used to express similarity or comparison, like 'like' or 'as' in English.",
+    "longExplanation": "'처럼 [cheoreom]' is a Korean particle that expresses similarity to or comparison with the preceding noun. It can be read as 'like (something)' or 'as (something).' It often appears in similes or metaphors, but can also be used literally.",
+    "formation": "Noun + 처럼",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "그는 사자처럼 강해 보였지만, 실제로는 그렇게 강하진 않아요.",
+        "romanization": "Geuneun sajacheoreom ganghae boyeotjiman, siljero-neun geureohge ganghajin anhayo.",
+        "translation": "He seemed strong like a lion, but in reality, he's not that strong."
+      },
+      {
+        "sentence": "우리 친구는 항상 별처럼 빛나요. 모두에게 사랑받는 사람입니다.",
+        "romanization": "Uri chinguneun hangsang byeolcheoreom bitnayo. Modeuege sarangbatneun saramimnida.",
+        "translation": "Our friend always shines like a star. She is someone everyone loves."
+      },
+      {
+        "sentence": "그녀는 나비처럼 춤을 춰요. 정말 아름답고 우아해요.",
+        "romanization": "Geunyeoneun nabicheoreom chumeul chwoyo. Jeongmal areumdapgo uahaeyo.",
+        "translation": "She dances like a butterfly. It's really beautiful and graceful."
+      },
+      {
+        "sentence": "그는 독수리처럼 높이 날아갔어요. 비행이 아주 인상적이었어요.",
+        "romanization": "Geuneun doksuricheoreom nopi naragasseoyo. Bihaengi aju insangjeogieosseoyo.",
+        "translation": "He flew high like an eagle. His flight was very impressive."
+      }
+    ]
+  },
+  {
+    "id": "ko_같이_34",
+    "language": "ko",
+    "pattern": "같이",
+    "title": "같이 [gachi] (Together)",
+    "shortExplanation": "Used to express 'together' or 'along with'.",
+    "longExplanation": "'같이 [gachi]' is an adverb meaning 'together'. It often follows a noun (e.g., 엄마랑 같이) or appears before the verb. It emphasizes doing something in each other's company or jointly with someone else.",
+    "formation": "Noun + 같이",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "제 친구와 같이 영화를 보러 갔어요. 정말 재미있었어요!",
+        "romanization": "Je chinguwa gachi yeonghwareul boreo gasseoyo. Jeongmal jaemiisseosseoyo!",
+        "translation": "I went to watch a movie together with my friend. It was really fun!"
+      },
+      {
+        "sentence": "내일은 우리 모두 같이 공원에 가서 피크닉을 하기로 했어요.",
+        "romanization": "Naeireun uri modu gachi gongwone gaseo piknikeul hagiro haesseoyo.",
+        "translation": "We decided that tomorrow we'll all go to the park together for a picnic."
+      },
+      {
+        "sentence": "엄마와 같이 요리하면 항상 더 맛있는 음식을 만들 수 있어요.",
+        "romanization": "Eommawa gachi yorihamyeon hangsang deo masinneun eumsigeul mandeul su isseoyo.",
+        "translation": "If I cook with my mom, I can always make more delicious food."
+      },
+      {
+        "sentence": "과외 선생님과 같이 공부하면 많은 도움이 돼요.",
+        "romanization": "Gwaoe seonsaengnimgwa gachi gongbuhamyeon manheun doumi dwaeyo.",
+        "translation": "Studying with a private tutor is very helpful."
+      }
+    ]
+  },
+  {
+    "id": "ko_이랑irangWith_35",
+    "language": "ko",
+    "pattern": "(이)랑 [(i)rang] (With)",
+    "title": "(이)랑 [(i)rang] (With)",
+    "shortExplanation": "Used to express 'with' or 'and' when referring to being together or doing something together.",
+    "longExplanation": "'(이)랑 [(i)rang]' is a conjunctive particle used in Korean to denote the concept of 'with' or 'and'. It connotes a sense of togetherness, indicating that the speaker is together with someone or doing something jointly. If the noun ends with a vowel, use '랑 [rang]'; if it ends with a consonant, use '이랑 [irang]'.",
+    "formation": "Vowel-ending noun + 랑, Consonant-ending noun + 이랑",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "제가 친구랑 영화를 봤어요, 그 영화는 재미있었어요.",
+        "romanization": "Jega chingurang yeonghwaleul bwasseoyo, geu yeonghwaneun jaemiisseosseoyo.",
+        "translation": "I watched a movie with a friend, and it was interesting."
+      },
+      {
+        "sentence": "어제 저는 엄마랑 시장에 갔어요, 우리는 많은 식료품을 샀어요.",
+        "romanization": "Eoje jeoneun eommarang sijange gasseoyo, urineun maneun singnyopumeul sasseoyo.",
+        "translation": "Yesterday, I went to the market with my mom, and we bought a lot of groceries."
+      },
+      {
+        "sentence": "나는 동생이랑 공원에서 놀았어요, 우리는 많이 즐거웠어요.",
+        "romanization": "Naneun dongsaengirang gongwoneseo norasseoyo, urineun mani jeulgeowosseoyo.",
+        "translation": "I played in the park with my younger sibling, and we had a great time."
+      },
+      {
+        "sentence": "오늘 점심시간에 친구랑 음악을 들었어요, 그 음악이 너무 좋았어요.",
+        "romanization": "Oneul jeomsimsigan-e chingurang eumageul deureosseoyo, geu eumagi neomu joasseoyo.",
+        "translation": "At lunchtime today, I listened to music with a friend, and it was really good."
+      }
+    ]
+  },
+  {
+    "id": "ko_그런데_36",
+    "language": "ko",
+    "pattern": "그런데",
+    "title": "그런데 [geureonde] (However, but)",
+    "shortExplanation": "Used to indicate contrast or contradiction; 'however', 'but'.",
+    "longExplanation": "'그런데 [geureonde]' is a transitional phrase used to introduce a statement that contradicts or contrasts with the previous statement. It can mean 'however', 'but', or 'though' in English. It often shifts the direction of the conversation or highlights an unexpected twist.",
+    "formation": "Sentence + 그런데 + Sentence",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "처음에는 그 과제가 쉬워 보였어요, 그런데 실제로 해보니 매우 어려웠어요.",
+        "romanization": "Cheoeumeneun geu gwajega swiweo boyeosseoyo, geureonde siljero hae boni maeu eoryeosseoyo.",
+        "translation": "At first, the assignment seemed easy, but once I actually did it, it was very hard."
+      },
+      {
+        "sentence": "저는 가장 좋아하는 스포츠가 농구인데, 그런데 제 친구는 농구를 전혀 좋아하지 않아요.",
+        "romanization": "Jeoneun gajang joahaneun seupocheuga nongguinde, geureonde je chinguneun nonggureul jeonhyeo joahaji anhayo.",
+        "translation": "My favorite sport is basketball, but my friend doesn't like basketball at all."
+      },
+      {
+        "sentence": "어제 영화관에 갔는데, 그런데 영화가 이미 시작된 후였어요.",
+        "romanization": "Eoje yeonghwagwane gasseunde, geureonde yeonghwaga imi sijakdoen hueosseoyo.",
+        "translation": "I went to the cinema yesterday, but the movie had already started."
+      },
+      {
+        "sentence": "친구가 이 청바지를 추천해 줬는데, 그런데 제 스타일에 맞지 않아요.",
+        "romanization": "Chinguga i cheongbajireul chucheonhae junneunde, geureonde je seutair-e matji anhayo.",
+        "translation": "My friend recommended these jeans, but they don't suit my style."
+      }
+    ]
+  },
+  {
+    "id": "ko_그래서_37",
+    "language": "ko",
+    "pattern": "그래서",
+    "title": "그래서 [geuraeseo] (So, therefore)",
+    "shortExplanation": "Used to show a cause-and-effect relationship; 'so', 'therefore'.",
+    "longExplanation": "'그래서 [geuraeseo]' is a conjunctive adverb that indicates the result or conclusion of the preceding clause. It's similar to 'so' or 'therefore' in English. The second sentence (after '그래서') explains the logical outcome or effect of the first sentence.",
+    "formation": "Sentence + 그래서 + Sentence",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "오늘은 간단하게 먹으려고 했는데, 친구가 맛있는 음식을 가져왔어요. 그래서 많이 먹었어요.",
+        "romanization": "Oneureun gandanage meogeuryeogo haetneunde, chinguga masinneun eumsigeul gajyeowasseoyo. Geuraeseo manhi meogeosseoyo.",
+        "translation": "I planned to eat lightly today, but my friend brought delicious food. So I ate a lot."
+      },
+      {
+        "sentence": "전 책을 읽는 것을 좋아해요. 그래서 한 달에 여러 권의 책을 읽어요.",
+        "romanization": "Jeon chaegeul ilgneun geoseul joahaeyo. Geuraeseo han dale yeoreo gwonui chaegeul ilgeoyo.",
+        "translation": "I like reading books. So I read several books each month."
+      },
+      {
+        "sentence": "어제 공부를 너무 많이 했어요. 그래서 오늘은 쉬어야겠어요.",
+        "romanization": "Eoje gongbureul neomu mani haesseoyo. Geuraeseo oneureun swieoyagess-eoyo.",
+        "translation": "I studied too much yesterday. So I should rest today."
+      },
+      {
+        "sentence": "주말에는 늦게까지 자서 일어나지 못했어요. 그래서 점심이 되어 버렸어요.",
+        "romanization": "Jumaleneun neutgekkaji jaseo il-eonaji mothaesseoyo. Geuraeseo jeomsimi doeeo beoryeosseoyo.",
+        "translation": "I slept late on the weekend and couldn't wake up. So it ended up being lunchtime."
+      }
+    ]
+  },
+  {
+    "id": "ko_그리고_38",
+    "language": "ko",
+    "pattern": "그리고",
+    "title": "그리고 [geurigo] (And then)",
+    "shortExplanation": "Used to link consecutive actions or events, often translated as 'and then'.",
+    "longExplanation": "'그리고 [geurigo]' is a conjunction in Korean that links events or actions occurring in sequence. It implies continuation or succession, like 'and then' in English. It's common in narratives or step-by-step descriptions.",
+    "formation": "Sentence + 그리고 + Sentence",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 학교에 갔어요 그리고 수업을 들었어요 그리고 친구들과 점심을 먹었어요.",
+        "romanization": "Jeoneun hakgyoe gasseoyo geurigo sueopeul deuleosseoyo geurigo chingudeulgwa jeomsimeul meogeosseoyo.",
+        "translation": "I went to school, and then I took classes, and then I had lunch with friends."
+      },
+      {
+        "sentence": "게임을 했어요 그리고 졸려서 잠을 잤어요 그리고 다시 게임을 했어요.",
+        "romanization": "Geimeul haesseoyo geurigo jollyeoseo jameul jasseoyo geurigo dasi geimeul haesseoyo.",
+        "translation": "I played a game, and then I got sleepy and slept, and then I played again."
+      },
+      {
+        "sentence": "제가 커피를 마셨어요 그리고 도서관에 갔어요 그리고 공부를 했어요.",
+        "romanization": "Jega keopireul masyeosseoyo geurigo doseogwane gaseoyo geurigo gongbureul haesseoyo.",
+        "translation": "I drank coffee, and then I went to the library, and then I studied."
+      },
+      {
+        "sentence": "친구를 만났어요 그리고 영화를 봤어요 그리고 집에 돌아왔어요.",
+        "romanization": "Chingureul mannasseoyo geurigo yeonghwareul bwasseoyo geurigo jibe dolawasseoyo.",
+        "translation": "I met a friend, and then we watched a movie, and then I came home."
+      }
+    ]
+  },
+  {
+    "id": "ko_아어여_39",
+    "language": "ko",
+    "pattern": "아/어/여",
+    "title": "아/어/여 주다 [a/eo/yeo juda] (To do for someone)",
+    "shortExplanation": "Used to express doing an action for someone’s benefit.",
+    "longExplanation": "'아/어/여 주다' is a verb ending that means doing something *for* or *on behalf of* someone else. It attaches to the verb stem (with 아/어/여 depending on the stem’s final vowel), followed by '주다'. It often suggests kindness, favor, or helping the other person.",
+    "formation": "Verb stem + 아/어/여 + 주다",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "제가 수업 노트를 정리해서 친구에게 메일로 보내주었어요.",
+        "romanization": "Jega sueop noteureul jeongnihaeseo chinguege meillo bonaejueosseoyo.",
+        "translation": "I organized the class notes and sent them to my friend by email."
+      },
+      {
+        "sentence": "서민이가 청소를 해주는 것을 본 뒤에 저도 청소를 도와주었어요.",
+        "romanization": "Seominiga cheongso-reul haejuneun geoseul bon dwie jeodo cheongso-reul dowajueosseoyo.",
+        "translation": "After seeing Seomin clean, I ended up helping with the cleaning too."
+      },
+      {
+        "sentence": "어려운 문제 때문에 고민했는데, 선생님이 해결 방법을 알려주셨어요.",
+        "romanization": "Eoryeoun munje ttaemune gominhaetneunde, seonsaengnim-i haegyeol bangbeobeul allyeojusyeosseoyo.",
+        "translation": "I was struggling with a difficult problem, and the teacher showed me the solution."
+      },
+      {
+        "sentence": "맛있는 음식을 만들어서 친구들에게 저녁을 챙겨주는 걸 좋아해요.",
+        "romanization": "Masinneun eumsigeul mandeureoseo chingudeurege jeonyeogeul chaenggyeojuneun geol johahaeyo.",
+        "translation": "I like making delicious food and serving dinner to my friends."
+      }
+    ]
+  },
+  {
+    "id": "ko_아어여_40",
+    "language": "ko",
+    "pattern": "아/어/여",
+    "title": "아/어/여 하다 [a/eo/yeo hada] (To feel or show a certain emotion)",
+    "shortExplanation": "Used mainly to convert adjectives (descriptive verbs) into active verbs that show one’s feeling or reaction.",
+    "longExplanation": "In Korean, some descriptive verbs (adjectives) become active verbs when combined with '아/어/여 하다'. For example, '슬프다' (to be sad) → '슬퍼하다' (to feel or show sadness). It indicates that the subject actively experiences or outwardly shows the emotion/state. This pattern is especially common with psychological or emotional adjectives.",
+    "formation": "Descriptive verb stem + 아/어/여 + 하다",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "그는 영화가 너무 슬퍼서 울기도 하고 슬퍼해요.",
+        "romanization": "Geuneun yeonghwaga neomu seulpeoseo ulgido hago seulpeohaeyo.",
+        "translation": "He finds the movie so sad that he cries and expresses his sadness."
+      },
+      {
+        "sentence": "아이가 무서워해서 혼자 자는 것을 싫어해요.",
+        "romanization": "Aiga museowohaeseo honja janeun geoseul sil-eohaeyo.",
+        "translation": "The child is scared, so he dislikes sleeping alone."
+      },
+      {
+        "sentence": "그녀는 부끄러워하여 사람들 앞에 나서길 망설였어요.",
+        "romanization": "Geunyeoneun bukkeureowohayeo saramdeul ape naseogil mangseoryeosseoyo.",
+        "translation": "She felt embarrassed and hesitated to stand in front of people."
+      },
+      {
+        "sentence": "사람들은 그 소식을 듣고 몹시 놀라워했어요.",
+        "romanization": "Saramdeureun geu sosigeul deutgo mopsi nollawohaesseoyo.",
+        "translation": "People were very astonished when they heard the news."
+      }
+    ]
+  },
+  {
+    "id": "ko_의_41",
+    "language": "ko",
+    "pattern": "의",
+    "title": "의 [ui] (Possessive marker)",
+    "shortExplanation": "Used to denote possession or relationship; similar to '’s' in English.",
+    "longExplanation": "The marker '의 [ui]' indicates a possessive or descriptive relationship between two nouns. It is similar to English apostrophe-s ('s), or 'of' in some contexts. It can show ownership, belonging, or other relationships (e.g., family relationships, origin, material).",
+    "formation": "Noun1 + 의 + Noun2",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "이것은 나의 책이에요, 그래서 누구에게도 주지 않을 거예요.",
+        "romanization": "Igeoseun naui chaegieyo, geuraeseo nuguegedo juji anheul geoyeyo.",
+        "translation": "This is my book, so I'm not going to give it to anyone."
+      },
+      {
+        "sentence": "부탁드려요, 저의 주차 공간을 차지하지 말아 주세요.",
+        "romanization": "Butakdeuryeoyo, jeoui jucha gongganeul chajihaji mara juseyo.",
+        "translation": "Please do not occupy my parking space."
+      },
+      {
+        "sentence": "그녀는 그녀의 강아지를 정말 많이 사랑해요.",
+        "romanization": "Geunyeoneun geunyeoui gangajireul jeongmal manhi saranghaeyo.",
+        "translation": "She really loves her puppy."
+      },
+      {
+        "sentence": "이것은 그의 아버지의 오래된 시계예요.",
+        "romanization": "Igeoseun geuui abeojiui oraedoen sigyeyeyo.",
+        "translation": "This is his father's old watch."
+      }
+    ]
+  },
+  {
+    "id": "ko_으로euroTotowardbymeansof_42",
+    "language": "ko",
+    "pattern": "(으)로 [(eu)ro] (To, toward; by means of)",
+    "title": "(으)로 [(eu)ro] (To, toward; by means of)",
+    "shortExplanation": "Used to express direction, method, or transformation ('to', 'toward', 'by', 'into').",
+    "longExplanation": "'(으)로 [(eu)ro]' is a Korean particle with several functions. It can indicate direction ('to/toward'), method or instrument ('by/with/using'), or transformation ('into'). After a consonant, use '으로'; after a vowel, just '로'.",
+    "formation": "Noun + (으)로",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "나는 매일 아침 지하철로 학교에 가요.",
+        "romanization": "Naneun maeil achim jihacheollo hakgyoe gayo.",
+        "translation": "I go to school by subway every morning."
+      },
+      {
+        "sentence": "우리 아빠는 요리를 재료로 사랑을 표현해요.",
+        "romanization": "Uri appaneun yorireul jaeryoro sarangeul pyohyeonhaeyo.",
+        "translation": "My father shows his love through cooking ingredients."
+      },
+      {
+        "sentence": "그 회사는 종이를 재활용해서 노트북으로 만들어요.",
+        "romanization": "Geu hoesaneun jongireul jaehwallyonghaeseo noteubugeuro mandeureoyo.",
+        "translation": "That company recycles paper and makes it into notebooks."
+      },
+      {
+        "sentence": "문을 열기 위해 열쇠로 문을 돌려요.",
+        "romanization": "Muneul yeolgi wihae yeolswero muneul dolryeoyo.",
+        "translation": "I turn the key in order to open the door."
+      }
+    ]
+  },
+  {
+    "id": "ko_한테에게_43",
+    "language": "ko",
+    "pattern": "한테/에게",
+    "title": "한테/에게 [hante/ege] (To someone)",
+    "shortExplanation": "Used to indicate the recipient or target of an action; roughly 'to' in English.",
+    "longExplanation": "'한테 [hante]' and '에게 [ege]' both mean 'to (a person)' in Korean. '에게' is slightly more formal, whereas '한테' is more colloquial. They specify to whom or to what an action is directed (e.g., giving, telling, teaching).",
+    "formation": "Noun + 한테/에게 + Verb",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "제가 어제 친구에게 선물을 줬어요.",
+        "romanization": "Jega eoje chinguege seonmureul jwosseoyo.",
+        "translation": "I gave a gift to my friend yesterday."
+      },
+      {
+        "sentence": "제 목소리를 직접 그녀에게 들려주고 싶어요.",
+        "romanization": "Je mogsorireul jikjeop geunyeoege deullyeojugo sip-eoyo.",
+        "translation": "I want her to hear my voice in person."
+      },
+      {
+        "sentence": "언니한테 좋은 뉴스를 전하고 싶어요.",
+        "romanization": "Eonni-hante joheun nyuseureul jeonhago sip-eoyo.",
+        "translation": "I want to tell my older sister the good news."
+      },
+      {
+        "sentence": "어머니한테 저녁 식사를 준비해드렸어요.",
+        "romanization": "Eomeoni-hante jeonyeok siksareul junbihaedeuryeosseoyo.",
+        "translation": "I prepared dinner for my mother."
+      }
+    ]
+  },
+  {
+    "id": "ko_한테서에서_44",
+    "language": "ko",
+    "pattern": "한테서/에서",
+    "title": "한테서/에서 [hanteseo/eseo] (From someone)",
+    "shortExplanation": "Used to denote the source or origin; 'from'.",
+    "longExplanation": "'한테서/에서 [hanteseo/eseo]' indicates the source or place from which something (an object, idea, or action) originates. '한테서' is used when receiving something from a person, and '에서' is used for inanimate sources or places. For example, when you get a letter from a friend, you use '친구한테서'; when you borrow a book from the library, you use '도서관에서.'",
+    "formation": "Noun + 한테서 (person) / 에서 (place or inanimate source)",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "친구한테서 편지를 받았어요. 그는 항상 연락을 잘 해 줘요.",
+        "romanization": "Chinguhanteseo pyeonjireul badasseoyo. Geuneun hangsang yeollageul jal hae jwoyo.",
+        "translation": "I received a letter from a friend. He always keeps in good touch."
+      },
+      {
+        "sentence": "서울에서 부산까지 차로 얼마나 걸릴까요?",
+        "romanization": "Seoul-eseo Busan-kkaji charo eolmana geolrilkkayo?",
+        "translation": "How long does it take to get from Seoul to Busan by car?"
+      },
+      {
+        "sentence": "제가 이 책을 도서관에서 빌렸어요.",
+        "romanization": "Jega i chaekeul doseogwaneseo billyeosseoyo.",
+        "translation": "I borrowed this book from the library."
+      },
+      {
+        "sentence": "그 음식은 어머니한테서 배웠어요.",
+        "romanization": "Geu eumsigeun eomeonihanteseo baeweosseoyo.",
+        "translation": "I learned how to make that dish from my mother."
+      }
+    ]
+  }
+]

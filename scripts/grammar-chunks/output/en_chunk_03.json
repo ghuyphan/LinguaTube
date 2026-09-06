@@ -1,0 +1,898 @@
+{
+  "vi": {
+    "en_a2_07": {
+      "title": "be going to - Dự định và dự đoán có căn cứ",
+      "shortExplanation": "Dùng để diễn tả dự định đã định trước hoặc dự đoán có căn cứ rõ ràng trước mắt.",
+      "longExplanation": "Cấu trúc 'be going to' được dùng trong các trường hợp:\n1. Dự định, quyết định đã có từ trước: 'I'm going to start a diet next week.' (Tôi dự định bắt đầu ăn kiêng vào tuần tới).\n2. Dự đoán dựa trên dấu hiệu hiện tại nhìn thấy được: 'Look at those clouds - it's going to rain!' (Nhìn những đám mây kia kìa - trời sắp mưa rồi!).\nCấu trúc: am/is/are + going to + động từ nguyên mẫu",
+      "formation": "Chủ ngữ + am/is/are + going to + Động từ nguyên mẫu",
+      "examples": [
+        {
+          "translation": "Tôi dự định sẽ học ngành y."
+        },
+        {
+          "translation": "Cô ấy sắp sinh em bé."
+        }
+      ]
+    },
+    "en_a2_08": {
+      "title": "Thì hiện tại tiếp diễn: am/is/are + V-ing",
+      "shortExplanation": "Diễn tả hành động đang diễn ra tại thời điểm nói hoặc tạm thời trong giai đoạn hiện tại.",
+      "longExplanation": "Thì hiện tại tiếp diễn (Present Continuous) diễn tả hành động đang xảy ra ngay lúc nói hoặc chỉ xảy ra tạm thời xung quanh thời điểm hiện tại.\nCấu trúc: am/is/are + động từ thêm -ing\nQuy tắc thêm đuôi -ing:\n• Hầu hết động từ: chỉ cần thêm -ing → working, playing\n• Động từ kết thúc bằng -e: bỏ -e rồi thêm -ing → making, coming\n• Động từ một âm tiết có nguyên âm ngắn đứng giữa hai phụ âm: gấp đôi phụ âm cuối rồi thêm -ing → running, sitting",
+      "formation": "Chủ ngữ + am/is/are + Động từ-ing",
+      "examples": [
+        {
+          "translation": "Bây giờ tôi đang học tiếng Anh."
+        },
+        {
+          "translation": "Tháng này cô ấy làm việc tại nhà."
+        }
+      ]
+    },
+    "en_a2_09": {
+      "title": "Thì hiện tại tiếp diễn diễn tả kế hoạch tương lai",
+      "shortExplanation": "Dùng để diễn tả các kế hoạch, lịch trình đã được sắp xếp cụ thể trong tương lai.",
+      "longExplanation": "Thì hiện tại tiếp diễn được sử dụng để chỉ các cuộc hẹn hoặc kế hoạch chắc chắn trong tương lai, khi thời gian và địa điểm thường đã được xác định trước.\nSo sánh sự khác biệt:\n• 'I'm meeting Alice tomorrow': Buổi gặp đã được hai bên đồng ý và sắp xếp cụ thể (kế hoạch rõ ràng).\n• 'I'll meet Alice tomorrow': Quyết định đưa ra ngay lúc nói hoặc lời đề nghị.",
+      "formation": "Chủ ngữ + am/is/are + Động từ-ing + Trạng từ chỉ thời gian tương lai",
+      "examples": [
+        {
+          "translation": "Tối nay tôi sẽ đi ăn tối với Alex."
+        },
+        {
+          "translation": "Họ sẽ kết hôn vào tháng 6."
+        }
+      ]
+    },
+    "en_a2_10": {
+      "title": "Phân biệt Thì hiện tại đơn và Hiện tại tiếp diễn",
+      "shortExplanation": "Hiện tại đơn diễn tả thói quen, sự thật hiển nhiên; Hiện tại tiếp diễn diễn tả hành động đang xảy ra hoặc tạm thời.",
+      "longExplanation": "Thì hiện tại đơn (Present Simple): dùng cho thói quen, sự thật chân lý, lịch trình cố định hoặc chân lý chung.\nThì hiện tại tiếp diễn (Present Continuous): dùng cho hành động đang diễn ra ngay tại thời điểm nói hoặc mang tính chất tạm thời.\nSo sánh ví dụ:\n• 'She speaks French': Cô ấy biết nói tiếng Pháp (khả năng, thói quen lâu dài).\n• 'She is speaking French': Cô ấy đang nói tiếng Pháp ngay lúc này.",
+      "formation": "Hiện tại đơn: Chủ ngữ + Động từ (s/es) | Hiện tại tiếp diễn: Chủ ngữ + am/is/are + Động từ-ing",
+      "examples": [
+        {
+          "translation": "Nước sôi ở 100°C."
+        },
+        {
+          "translation": "Tuần này tôi đang đọc một cuốn sách rất hay."
+        }
+      ]
+    },
+    "en_a2_11": {
+      "title": "should / shouldn't - Lời khuyên và đề xuất",
+      "shortExplanation": "Dùng để đưa ra lời khuyên nhẹ nhàng hoặc ý kiến cá nhân: 'nên' / 'không nên'.",
+      "longExplanation": "'should' dùng để diễn tả lời khuyên chân thành, sự gợi ý hoặc quan điểm cá nhân (mức độ nhẹ hơn 'must').\nTheo sau 'should / shouldn't' luôn là động từ nguyên mẫu không có 'to'.\nNgoài ra cấu trúc 'should have + quá khứ phân từ' còn được dùng để chỉ sự nuối tiếc hoặc trách móc trong quá khứ.",
+      "formation": "Chủ ngữ + should / shouldn't + Động từ nguyên mẫu",
+      "examples": [
+        {
+          "translation": "Bạn nên tập thể dục nhiều hơn."
+        },
+        {
+          "translation": "Cô ấy không nên làm việc quá sức như vậy."
+        }
+      ]
+    },
+    "en_a2_12": {
+      "title": "must / mustn't - Sự bắt buộc và điều cấm tuyệt đối",
+      "shortExplanation": "'must' diễn tả bổn phận, trách nhiệm bắt buộc; 'mustn't' diễn tả sự nghiêm cấm tuyệt đối.",
+      "longExplanation": "'must' diễn tả nghĩa vụ mạnh mẽ (thường xuất phát từ ý thức chủ quan của người nói) hoặc yêu cầu dứt khoát.\n'mustn't' diễn tả sự cấm đoán nghiêm ngặt (tuyệt đối không được phép làm).\nLưu ý phân biệt:\n• mustn't = bị cấm (hoàn toàn không được làm)\n• don't have to = không bắt buộc phải làm (nhưng nếu muốn thì vẫn có thể làm)",
+      "formation": "Chủ ngữ + must / mustn't + Động từ nguyên mẫu",
+      "examples": [
+        {
+          "translation": "Bạn phải xuất trình hộ chiếu của mình."
+        },
+        {
+          "translation": "Bạn tuyệt đối không được hút thuốc ở đây."
+        }
+      ]
+    },
+    "en_a2_13": {
+      "title": "have to - Sự cần thiết do yếu tố khách quan",
+      "shortExplanation": "Diễn tả việc phải làm do quy định, luật lệ hoặc hoàn cảnh khách quan bên ngoài chi phối.",
+      "longExplanation": "'have to' diễn tả sự bắt buộc hoặc cần thiết bắt nguồn từ quy định, luật lệ hoặc hoàn cảnh bên ngoài tác động.\nPhân biệt với 'must':\n• must - sự bắt buộc mang tính chủ quan từ bản thân người nói: 'I must call her' (Tự bản thân tôi thấy cần thiết phải gọi).\n• have to - sự bắt buộc khách quan: 'I have to wear a uniform' (Đó là nội quy quy định).\n'don't have to' = không cần phải làm (tùy ý, không ép buộc).",
+      "formation": "Chủ ngữ + have to / has to / don't have to / doesn't have to + Động từ nguyên mẫu",
+      "examples": [
+        {
+          "translation": "Tôi phải hoàn thành bản báo cáo này trước thứ Sáu."
+        },
+        {
+          "translation": "Bạn không cần phải đến nếu không muốn."
+        }
+      ]
+    },
+    "en_a2_14": {
+      "title": "could - Khả năng trong quá khứ và lời yêu cầu lịch sự",
+      "shortExplanation": "Dùng để diễn tả khả năng, năng khiếu trong quá khứ hoặc dùng trong lời yêu cầu, nhờ vả lịch sự.",
+      "longExplanation": "'could' là dạng quá khứ của 'can', có hai cách dùng chính:\n1. Năng lực hoặc khả năng trong quá khứ: 'I could read at 4 years old.' (Tôi đã biết đọc từ lúc 4 tuổi).\n2. Lời thỉnh cầu hoặc đề nghị lịch sự (lịch sự và trang trọng hơn 'can'): 'Could you pass the salt, please?' (Bạn làm ơn chuyển giúp tôi lọ muối được không?).\nNgoài ra, 'could' cũng dùng để diễn tả một khả năng có thể xảy ra ở hiện tại: 'It could be true.' (Điều đó có thể là sự thật).",
+      "formation": "Chủ ngữ + could + Động từ nguyên mẫu | Could + Chủ ngữ + Động từ nguyên mẫu...?",
+      "examples": [
+        {
+          "translation": "Khi còn nhỏ cô ấy đã có thể chơi đàn vĩ cầm."
+        },
+        {
+          "translation": "Bạn có thể nói chậm hơn một chút được không?"
+        }
+      ]
+    },
+    "en_a2_15": {
+      "title": "Cấp so sánh hơn của tính từ",
+      "shortExplanation": "Dùng để so sánh tính chất giữa hai đối tượng: tính từ ngắn thêm đuôi -er, tính từ dài dùng 'more'.",
+      "longExplanation": "Quy tắc cấu tạo so sánh hơn:\n• Tính từ một âm tiết và hai âm tiết tận cùng bằng -y: thêm đuôi -er (fast → faster, happy → happier).\n• Tính từ dài (từ hai âm tiết trở lên không tận cùng bằng -y): dùng more + tính từ (more interesting).\n• Quy tắc biến đổi chính tả: tận cùng -e chỉ thêm -r (nice → nicer); một phụ âm đi sau một nguyên âm ngắn thì gấp đôi phụ âm cuối (big → bigger); phụ âm + y đổi thành -ier (heavy → heavier).\n• Bất quy tắc: good → better, bad → worse, far → further/farther, much/many → more.\nCấu trúc so sánh hơn thường đi với 'than': 'She is taller than her sister.'",
+      "formation": "Tính từ ngắn-er + than / more + Tính từ dài + than",
+      "examples": [
+        {
+          "translation": "Bộ phim này thú vị hơn bộ phim kia."
+        },
+        {
+          "translation": "Hôm nay thời tiết tệ hơn hôm qua."
+        }
+      ]
+    },
+    "en_a2_16": {
+      "title": "Cấp so sánh nhất của tính từ",
+      "shortExplanation": "Dùng để so sánh từ ba đối tượng trở lên: tính từ ngắn dùng 'the + -est', tính từ dài dùng 'the most'.",
+      "longExplanation": "Quy tắc cấu tạo so sánh nhất:\n• Tính từ ngắn (một âm tiết): the + tính từ thêm -est (fast → the fastest).\n• Tính từ dài (từ hai âm tiết trở lên): the most + tính từ (the most beautiful).\n• Quy tắc chính tả tương tự như so sánh hơn: -e biến thành -est (nice → the nicest); gấp đôi phụ âm cuối (big → the biggest); đổi -y thành -iest (happy → the happiest).\n• Bất quy tắc: good → the best, bad → the worst, far → the furthest/farthest, much/many → the most.",
+      "formation": "the + Tính từ ngắn-est / the most + Tính từ dài",
+      "examples": [
+        {
+          "translation": "Đây là nhà hàng đắt đỏ nhất trong thành phố."
+        },
+        {
+          "translation": "Anh ấy là cầu thủ xuất sắc nhất trong đội."
+        }
+      ]
+    },
+    "en_a2_17": {
+      "title": "some / any - Lượng từ chỉ số lượng không xác định",
+      "shortExplanation": "'some' dùng trong câu khẳng định và lời mời/đề nghị; 'any' dùng trong câu phủ định và câu hỏi.",
+      "longExplanation": "'some' và 'any' được dùng với cả danh từ đếm được số nhiều và danh từ không đếm được để chỉ một lượng không xác định:\n• some: thường dùng trong câu khẳng định, và trong câu hỏi khi đưa ra lời mời mọc, đề nghị lịch sự mà mong muốn nhận được câu trả lời đồng ý (ví dụ: 'Would you like some tea?', 'Can I have some water?').\n• any: thường dùng trong câu nghi vấn thông thường và câu phủ định (ví dụ: 'I don't have any money').",
+      "formation": "some / any + Danh từ không đếm được hoặc Danh từ đếm được số nhiều",
+      "examples": [
+        {
+          "translation": "Tôi đã mua một ít bánh mì và sữa."
+        },
+        {
+          "translation": "Trong tủ lạnh còn chút sữa nào không?"
+        },
+        {
+          "translation": "Tôi không mang theo chút tiền mặt nào trong người."
+        }
+      ]
+    },
+    "en_a2_18": {
+      "title": "much / many / a lot of / a few / a little - Lượng từ chỉ số lượng nhiều và ít",
+      "shortExplanation": "'much/a little' đi với danh từ không đếm được; 'many/a few' đi với danh từ đếm được; 'a lot of' đi với cả hai.",
+      "longExplanation": "Cách phân biệt và sử dụng các từ chỉ số lượng trong tiếng Anh:\n• much: dùng với danh từ không đếm được (much water, much time, much money), thường gặp trong câu phủ định và câu hỏi.\n• many: dùng với danh từ đếm được số nhiều (many people, many books).\n• a lot of / lots of: dùng được với cả hai loại danh từ, phổ biến trong văn phong giao tiếp hàng ngày.\n• a few: một vài, một ít (danh từ đếm được, mang nghĩa tích cực/đủ dùng).\n• few: rất ít, hầu như không có (danh từ đếm được, mang nghĩa tiêu cực/thiếu thốn).\n• a little: một chút, một ít (danh từ không đếm được, mang nghĩa tích cực/đủ dùng).\n• little: rất ít, hầu như không có (danh từ không đếm được, mang nghĩa tiêu cực/thiếu thốn).",
+      "formation": "much/a little + Danh từ không đếm được | many/a few + Danh từ đếm được số nhiều | a lot of + cả hai",
+      "examples": [
+        {
+          "translation": "Tôi không có nhiều thời gian."
+        },
+        {
+          "translation": "Cô ấy có một vài người bạn ở Luân Đôn."
+        },
+        {
+          "translation": "Vẫn còn một chút đường."
+        }
+      ]
+    },
+    "en_a2_19": {
+      "title": "Danh từ đếm được và không đếm được",
+      "shortExplanation": "Danh từ đếm được có dạng số ít và số nhiều; danh từ không đếm được không thể đếm trực tiếp và không có dạng số nhiều.",
+      "longExplanation": "Phân biệt danh từ đếm được và không đếm được:\n• Danh từ đếm được (Countable): có thể đếm bằng số (1, 2, 3...), có dạng số ít và số nhiều (a book, two books).\n• Danh từ không đếm được (Uncountable): không thể đếm trực tiếp bằng số, không dùng mạo từ 'a/an' và không có dạng số nhiều.\nCác danh từ không đếm được tiêu biểu: water (nước), milk (sữa), bread (bánh mì), rice (gạo), money (tiền), information (thông tin), advice (lời khuyên), news (tin tức), weather (thời tiết), luggage (hành lý), furniture (đồ đạc nội thất), hair (tóc), music (âm nhạc), work (công việc).\nĐể đếm số lượng cho danh từ không đếm được, cần dùng từ chỉ đơn vị đo lường: a glass of water (một cốc nước), a piece of advice (một lời khuyên), a loaf of bread (một ổ bánh mì), a bag of rice (một bao gạo).",
+      "formation": "Đếm được: a/an + Danh từ số ít / Danh từ-s/es | Không đếm được: Từ chỉ đơn vị + of + Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi có thể xin một vài thông tin được không?"
+        },
+        {
+          "translation": "Cô ấy đã cho tôi một lời khuyên rất hữu ích."
+        }
+      ]
+    },
+    "en_a2_20": {
+      "title": "Giới từ chỉ thời gian: in / on / at",
+      "shortExplanation": "'at' đi với thời điểm chính xác; 'on' đi với ngày và thứ; 'in' đi với tháng, năm, mùa và các khoảng thời gian dài.",
+      "longExplanation": "Quy tắc sử dụng giới từ chỉ thời gian:\n• at → mốc thời gian cụ thể: at 6 o'clock (lúc 6 giờ), at noon (buổi trưa), at midnight (nửa đêm), at night (vào ban đêm), at the weekend (vào cuối tuần).\n• on → thứ trong tuần và ngày tháng cụ thể: on Monday (vào thứ Hai), on 5 March (vào ngày 5 tháng 3), on my birthday (vào sinh nhật tôi), on New Year's Day (vào ngày Tết/Đầu năm mới).\n• in → các khoảng thời gian lớn hơn như tháng, năm, mùa, thế kỷ hoặc các buổi trong ngày: in July (vào tháng Bảy), in 2023 (vào năm 2023), in the morning/afternoon/evening (vào buổi sáng/chiều/tối), in summer (vào mùa hè), in the 21st century (vào thế kỷ 21).\nTrường hợp không dùng giới từ: khi đứng trước có this, last, next (ví dụ: this morning, last week, next year).",
+      "formation": "at + Giờ/Thời điểm cụ thể | on + Thứ/Ngày | in + Tháng/Năm/Mùa/Buổi",
+      "examples": [
+        {
+          "translation": "Cuộc họp diễn ra lúc ba giờ rưỡi."
+        },
+        {
+          "translation": "Cô ấy sinh vào ngày 12 tháng 4."
+        },
+        {
+          "translation": "Tôi bắt đầu công việc này vào tháng Mười."
+        }
+      ]
+    },
+    "en_a2_21": {
+      "title": "for / since / ago - Khoảng thời gian, mốc thời gian và thời gian trong quá khứ",
+      "shortExplanation": "'for' chỉ khoảng thời gian kéo dài; 'since' chỉ mốc thời gian bắt đầu; 'ago' chỉ thời điểm cách đây bao lâu trong quá khứ.",
+      "longExplanation": "Phân biệt cách dùng for, since và ago:\n• for - chỉ khoảng thời gian kéo dài bao lâu: for two hours (trong 2 giờ), for a week (trong một tuần), for years (trong nhiều năm). Có thể kết hợp với nhiều thì khác nhau.\n• since - chỉ mốc thời gian bắt đầu hành động từ khi nào: since Monday (từ thứ Hai), since 2019 (từ năm 2019), since I was a child (từ khi tôi còn nhỏ). Thường dùng với thì hiện tại hoàn thành.\n• ago - dùng sau một khoảng thời gian để chỉ sự việc đã xảy ra cách thời điểm hiện tại bao lâu: three days ago (3 ngày trước), a month ago (một tháng trước). Luôn đi với thì quá khứ đơn.",
+      "formation": "for + Khoảng thời gian | since + Mốc thời gian/Mệnh đề quá khứ | Khoảng thời gian + ago",
+      "examples": [
+        {
+          "translation": "Tôi đã ở đây được sáu tháng rồi."
+        },
+        {
+          "translation": "Cô ấy đã làm việc ở đây từ năm 2020."
+        },
+        {
+          "translation": "Tôi đã gặp anh ấy hai ngày trước."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "en_a2_07": {
+      "title": "be going to - 计划打算与依据预见",
+      "shortExplanation": "表示事先做好的打算、计划，或根据现有迹象做出的明显预测。",
+      "longExplanation": "'be going to'主要用于以下两种情况：\n1. 事先做好的决定或计划打算：例如 'I'm going to start a diet next week.'（我打算下周开始节食）。\n2. 根据眼前的明显迹象做出的推断与预测：例如 'Look at those clouds - it's going to rain!'（看那些乌云——要下雨了！）。\n结构：am/is/are + going to + 动词原形",
+      "formation": "主语 + am/is/are + going to + 动词原形",
+      "examples": [
+        {
+          "translation": "我打算学医。"
+        },
+        {
+          "translation": "她要生小孩了。"
+        }
+      ]
+    },
+    "en_a2_08": {
+      "title": "现在进行时：am/is/are + V-ing",
+      "shortExplanation": "表示此时此刻正在进行的动作，或现阶段暂时发生的行为。",
+      "longExplanation": "现在进行时用于描述说话瞬间正在发生的动作，或现阶段处于暂时状态的事情。\n结构：am/is/are + 动词现在分词（-ing形式）\n动词加-ing的规则：\n• 一般动词：直接加-ing → working, playing\n• 以不发音的-e结尾：去掉-e再加-ing → making, coming\n• 短元音的重读闭音节：双写末尾辅音字母再加-ing → running, sitting",
+      "formation": "主语 + am/is/are + 动词-ing形式",
+      "examples": [
+        {
+          "translation": "我现在正在学英语。"
+        },
+        {
+          "translation": "她这个月都在居家办公。"
+        }
+      ]
+    },
+    "en_a2_09": {
+      "title": "现在进行时表示既定未来计划",
+      "shortExplanation": "用于表示未来已做好明确安排或约定的计划日程。",
+      "longExplanation": "现在进行时可用于表示将来确切的安排或约定，通常时间和地点均已商定好。\n区别比较：\n• 'I'm meeting Alice tomorrow'：双方已约定好见面的具体安排（确定的计划）。\n• 'I'll meet Alice tomorrow'：临时决定、个人意图或随口提议。",
+      "formation": "主语 + am/is/are + 动词-ing形式 + 将来时间状语",
+      "examples": [
+        {
+          "translation": "我今晚要和亚历克斯一起吃晚餐。"
+        },
+        {
+          "translation": "他们定于六月份结婚。"
+        }
+      ]
+    },
+    "en_a2_10": {
+      "title": "一般现在时与现在进行时的区别",
+      "shortExplanation": "一般现在时表示习惯与客观事实；现在进行时表示此刻正在进行或现阶段暂时发生的事。",
+      "longExplanation": "一般现在时（Present Simple）：用于表示长期的习惯、客观真理、固定日程或普遍事实。\n现在进行时（Present Continuous）：用于表示此刻正在发生的事情，或现阶段短期的临时状态。\n对比示例：\n• 'She speaks French.'：她会讲法语（属于长期掌握的语言能力）。\n• 'She is speaking French.'：她此刻正在讲法语。",
+      "formation": "一般现在时：主语 + 动词原形/第三人称单数形式 | 现在进行时：主语 + am/is/are + 动词-ing形式",
+      "examples": [
+        {
+          "translation": "水在100摄氏度时沸腾。"
+        },
+        {
+          "translation": "这周我正在读一本很棒的书。"
+        }
+      ]
+    },
+    "en_a2_11": {
+      "title": "should / shouldn't - 建议与劝告",
+      "shortExplanation": "用于提出温和的建议或个人观点，意为'应该'或'不应该'。",
+      "longExplanation": "'should'用于表达友善的建议、劝告或个人意见，语气比'must'缓和得多。\n'should / shouldn't'后接不带to的动词原形。\n此外，'should have + 过去分词'还可用于对过去的事情表达遗憾、责备或后悔。",
+      "formation": "主语 + should / shouldn't + 动词原形",
+      "examples": [
+        {
+          "translation": "你应该多做运动。"
+        },
+        {
+          "translation": "她不应该工作得那么拼命。"
+        }
+      ]
+    },
+    "en_a2_12": {
+      "title": "must / mustn't - 必须与严厉禁止",
+      "shortExplanation": "'must'表示强烈的责任或命令；'mustn't'表示严厉的禁止，意为'绝不能'、'千万不可'。",
+      "longExplanation": "'must'表示出于内心强烈认同的义务或命令，语气十分坚决。\n'mustn't'则表示强烈的禁止，指绝对不允许做某事。\n注意区分：\n• mustn't = 禁止、严禁（绝不能做）\n• don't have to = 不必（没有硬性规定，做与不做均可）",
+      "formation": "主语 + must / mustn't + 动词原形",
+      "examples": [
+        {
+          "translation": "你必须出示护照。"
+        },
+        {
+          "translation": "你绝对不能在这里吸烟。"
+        }
+      ]
+    },
+    "en_a2_13": {
+      "title": "have to - 客观必要性",
+      "shortExplanation": "表示由于外界规则、法律或客观情况所迫而'不得不'、'必须'做某事。",
+      "longExplanation": "'have to'表示源于外界要求、规章制度或现实环境的客观必要性。\n与'must'的区别：\n• must - 出自主观意愿的必要性：'I must call her'（我觉得我很有必要给她打电话）。\n• have to - 客观规则约束：'I have to wear a uniform'（这是校规或工服规定）。\n'don't have to' = 没必要做（不作强制要求，想做也可以做）。",
+      "formation": "主语 + have to / has to / don't have to / doesn't have to + 动词原形",
+      "examples": [
+        {
+          "translation": "我必须在周五之前完成这份报告。"
+        },
+        {
+          "translation": "如果你不想去，就不必去了。"
+        }
+      ]
+    },
+    "en_a2_14": {
+      "title": "could - 过去能力与委婉礼貌请求",
+      "shortExplanation": "表示过去具备的能力，或在提出请求与请求帮助时表达委婉礼貌的语气。",
+      "longExplanation": "'could'是'can'的过去式，主要有两个核心用法：\n1. 过去的能力：例如 'I could read at 4 years old.'（我4岁时就会读书了）。\n2. 委婉礼貌的请求（比'can'更加客气和尊崇）：例如 'Could you pass the salt, please?'（请把盐递给我好吗？）。\n此外还可用于表达现在的可能性：'It could be true.'（这可能是真的）。",
+      "formation": "主语 + could + 动词原形 | Could + 主语 + 动词原形...?",
+      "examples": [
+        {
+          "translation": "她小时候就会拉小提琴。"
+        },
+        {
+          "translation": "请问您能讲得慢一点吗？"
+        }
+      ]
+    },
+    "en_a2_15": {
+      "title": "形容词比较级",
+      "shortExplanation": "用于两者之间的比较：单音节形容词词尾加-er，多音节形容词前加more。",
+      "longExplanation": "形容词比较级的构成规则：\n• 单音节词及以-y结尾的双音节词：词尾加-er（fast → faster, happy → happier）。\n• 多音节词（多数双音节及三音节以上）：more + 形容词原级（more interesting）。\n• 拼写规则：以-e结尾只加-r（nice → nicer）；重读闭音节双写末尾辅音（big → bigger）；以辅音字母加-y结尾变y为-ier（heavy → heavier）。\n• 不规则变化：good → better, bad → worse, far → further/farther, much/many → more。\n比较级后面常用than连接比较对象：'She is taller than her sister.'",
+      "formation": "短形容词-er + than / more + 长形容词 + than",
+      "examples": [
+        {
+          "translation": "这部电影比那部更有趣。"
+        },
+        {
+          "translation": "今天的情况比昨天更糟。"
+        }
+      ]
+    },
+    "en_a2_16": {
+      "title": "形容词最高级",
+      "shortExplanation": "用于三者或三者以上的比较：单音节形容词用'the + -est'，多音节形容词用'the most + 形容词'。",
+      "longExplanation": "形容词最高级的构成规则：\n• 单音节词：the + 形容词尾加-est（the biggest）。\n• 多音节词：the most + 形容词原级（the most beautiful）。\n• 拼写变化规则与比较级一致：以-e结尾直接加-st（the nicest）；双写末尾辅音字母（the biggest）；变-y为-iest（the heaviest）。\n• 不规则变化：good → the best, bad → the worst, far → the furthest/farthest, much/many → the most。",
+      "formation": "the + 短形容词-est / the most + 长形容词",
+      "examples": [
+        {
+          "translation": "这是全城最昂贵的餐厅。"
+        },
+        {
+          "translation": "他是全队最出色的队员。"
+        }
+      ]
+    },
+    "en_a2_17": {
+      "title": "some / any - 不定量代词与限定词",
+      "shortExplanation": "'some'常用于肯定句及礼貌提议；'any'常用于否定句和一般疑问句。",
+      "longExplanation": "'some'和'any'均可修饰不可数名词或可数名词复数，表示'一些、某些'：\n• some：用于肯定句；以及希望得到肯定回答或表示诚意邀请、请求的疑问句中（如：'Would you like some tea?'，'Can I have some water?'）。\n• any：用于否定句（表示'任何、一点也没有'）和普通疑问句中（如：'Do you have any questions?'）。",
+      "formation": "some / any + 不可数名词 或 可数名词复数",
+      "examples": [
+        {
+          "translation": "我买了一些面包和牛奶。"
+        },
+        {
+          "translation": "冰箱里还有牛奶吗？"
+        },
+        {
+          "translation": "我身上没有带任何现金。"
+        }
+      ]
+    },
+    "en_a2_18": {
+      "title": "much / many / a lot of / a few / a little - 数量词",
+      "shortExplanation": "'much/a little'修饰不可数名词；'many/a few'修饰可数名词复数；'a lot of'两者皆可修饰。",
+      "longExplanation": "常用数量表达方式及用法区别：\n• much：修饰不可数名词（much water, much time），多用于否定句和疑问句。\n• many：修饰可数名词复数（many people, many books）。\n• a lot of / lots of：两者均可修饰，常用于日常口语肯定句。\n• a few：有几个、一些（修饰可数名词，含肯定意味）。\n• few：几乎没有（修饰可数名词，含否定意味）。\n• a little：有一点（修饰不可数名词，含肯定意味）。\n• little：几乎没有（修饰不可数名词，含否定意味）。",
+      "formation": "much/a little + 不可数名词 | many/a few + 可数名词复数 | a lot of + 两者皆可",
+      "examples": [
+        {
+          "translation": "我没有多少时间了。"
+        },
+        {
+          "translation": "她在伦敦有几位朋友。"
+        },
+        {
+          "translation": "还剩下一点糖。"
+        }
+      ]
+    },
+    "en_a2_19": {
+      "title": "可数名词与不可数名词",
+      "shortExplanation": "可数名词有单复数之分；不可数名词不能直接计数，没有复数形式，不能直接加不定冠词。",
+      "longExplanation": "可数名词与不可数名词的界定与用法：\n• 可数名词（Countable）：可以用具体数字直接计数，有单数和复数形式（如：a book, two books）。\n• 不可数名词（Uncountable）：无法直接用数字计数，没有复数形式，前面不能加 a/an。\n常见不可数名词：water（水）、milk（牛奶）、bread（面包）、rice（大米）、money（金钱）、information（信息）、advice（建议）、news（新闻）、weather（天气）、luggage（行李）、furniture（家具）、hair（头发）、music（音乐）、work（工作）。\n表示不可数名词的数量时，需使用计量单位词：a glass of water（一杯水）、a piece of advice（一条建议）、a loaf of bread（一条面包）、a bag of rice（一袋大米）。",
+      "formation": "可数：a/an + 单数名词 / 复数名词-s/es | 不可数：计量词 + of + 不可数名词",
+      "examples": [
+        {
+          "translation": "请问能给我提供一些信息吗？"
+        },
+        {
+          "translation": "她给了我非常实用的建议。"
+        }
+      ]
+    },
+    "en_a2_20": {
+      "title": "时间介词 in / on / at",
+      "shortExplanation": "'at'用于具体时间点；'on'用于具体某一天和日期；'in'用于月份、年份、季节及较长时段。",
+      "longExplanation": "常用时间介词的用法规则：\n• at → 具体的具体时刻或特殊节点：at 6 o'clock（6点整）、at noon（正午）、at midnight（午夜）、at night（在夜间）、at the weekend（在周末）。\n• on → 特定的某一天或具体日期：on Monday（在星期一）、on 5 March（在3月5日）、on my birthday（在我生日那天）、on New Year's Day（在元旦）。\n• in → 较长的时间段（月份、年份、季节、世纪）及一日当中的某一时段：in July（在七月）、in 2023（在2023年）、in the morning/afternoon/evening（在上午/下午/晚上）、in summer（在夏天）、in the 21st century（在21世纪）。\n不加介词的情况：含有this / last / next的时间状语前不加介词（如：this morning, last week, next year）。",
+      "formation": "at + 具体钟点/时刻 | on + 星期/具体日期 | in + 月份/年份/季节/世纪",
+      "examples": [
+        {
+          "translation": "会议在三点半举行。"
+        },
+        {
+          "translation": "她出生于四月十二日。"
+        },
+        {
+          "translation": "我是十月份开始这份工作的。"
+        }
+      ]
+    },
+    "en_a2_21": {
+      "title": "for / since / ago - 时段、起点与过去时间",
+      "shortExplanation": "'for'表示持续的一段时间；'since'表示动作开始的时间起点；'ago'表示从现在起算过去的某个时间点。",
+      "longExplanation": "for, since 和 ago 的用法及区别：\n• for - 表示动作持续了多久（一段时间）：for two hours（持续两小时）、for a week（持续一周）、for years（持续数年）。可用于多种时态。\n• since - 表示动作开始的过去具体时间点（自……以来）：since Monday（自周一以来）、since 2019（自2019年以来）、since I was a child（自幼童时期起）。常与现在完成时连用。\n• ago - 用于一段时间之后，表示距今多久以前：three days ago（三天前）、a month ago（一个月前）。仅与一般过去时连用。",
+      "formation": "for + 一段时间 | since + 时间起点/过去从句 | 一段时间 + ago",
+      "examples": [
+        {
+          "translation": "我已经在这里待了六个月了。"
+        },
+        {
+          "translation": "她从2020年起就在这里工作了。"
+        },
+        {
+          "translation": "我两天前见到了他。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "en_a2_07": {
+      "title": "be going to - 予定・意図と根拠のある予測",
+      "shortExplanation": "事前に決めていた予定や意図、または目に見える根拠に基づく予測を表します。",
+      "longExplanation": "「be going to」は主に以下の場面で用いられます：\n1. 事前に決めていた予定や意志：「I'm going to start a diet next week.」（来週からダイエットを始める予定です）。\n2. 目の前の兆候に基づく予測：「Look at those clouds - it's going to rain!」（あの雲を見て、雨が降りそうだ！）。\n構造：am/is/are + going to + 動詞の原形",
+      "formation": "主語 + am/is/are + going to + 動詞の原形",
+      "examples": [
+        {
+          "translation": "私は医学を勉強するつもりです。"
+        },
+        {
+          "translation": "彼女は赤ちゃんが生まれる予定です。"
+        }
+      ]
+    },
+    "en_a2_08": {
+      "title": "現在進行形：am/is/are + V-ing",
+      "shortExplanation": "今まさに起きている動作や、現時点で一時的に行われている行為を表します。",
+      "longExplanation": "現在進行形（Present Continuous）は、話しているまさにその瞬間に進行している動作や、最近一時的に行っている事柄を表します。\n構造：am/is/are + 動詞の-ing形\n-ingの付け方の規則：\n• ほとんどの動詞：そのまま-ingを付ける → working, playing\n• 語尾が-eで終わる語：-eを取り除いて-ingを付ける → making, coming\n• 短母音＋子音字で終わる1音節の語：末尾の子音字を重ねて-ingを付ける → running, sitting",
+      "formation": "主語 + am/is/are + 動詞-ing",
+      "examples": [
+        {
+          "translation": "私は今、英語を勉強しています。"
+        },
+        {
+          "translation": "彼女は今月、在宅勤務をしています。"
+        }
+      ]
+    },
+    "en_a2_09": {
+      "title": "確定した未来の予定を表す現在進行形",
+      "shortExplanation": "時間や場所などがすでに手配・約束されている確実な未来の予定を表します。",
+      "longExplanation": "現在進行形は、日時や場所があらかじめ決められている具体的な予定・取り決めを表す際にも用いられます。\nニュアンスの違い：\n• 「I'm meeting Alice tomorrow」：アリスとの面会の約束がすでに済んでいる（確定した予定）。\n• 「I'll meet Alice tomorrow」：その場で決めた意志や提案。",
+      "formation": "主語 + am/is/are + 動詞-ing + 未来を表す副詞句",
+      "examples": [
+        {
+          "translation": "今夜アレックスとディナーを食べる予定です。"
+        },
+        {
+          "translation": "彼らは6月に結婚します。"
+        }
+      ]
+    },
+    "en_a2_10": {
+      "title": "現在形と現在進行形の違い",
+      "shortExplanation": "現在形は習慣や普遍の事実を表し、現在進行形は今まさに起きていることや一時的な状態を表します。",
+      "longExplanation": "現在形（Present Simple）：普段の習慣、客観的な事実、確定した時刻表、一般的な真理を表します。\n現在進行形（Present Continuous）：今この瞬間に起きていることや、一時的な動作・状態を表します。\n比較例：\n• 「She speaks French.」：彼女はフランス語を話せる（永続的な能力・状態）。\n• 「She is speaking French.」：彼女は今まさにフランス語を話している。",
+      "formation": "現在形：主語 + 動詞原形/三人称単数形 | 現在進行形：主語 + am/is/are + 動詞-ing",
+      "examples": [
+        {
+          "translation": "水は100度で沸騰します。"
+        },
+        {
+          "translation": "今週、私は素晴らしい本を読んでいます。"
+        }
+      ]
+    },
+    "en_a2_11": {
+      "title": "should / shouldn't - 助言・提案",
+      "shortExplanation": "穏やかなアドバイスや個人的な意見を表し、「〜すべきだ」「〜しないほうがいい」という意味になります。",
+      "longExplanation": "「should」は強制力のない親身な助言や提案、主観的な意見を表します（「must」よりも柔らかいニュアンス）。\n「should / shouldn't」の後にはtoの付かない動詞の原形が続きます。\nまた、「should have + 過去分詞」の形で過去に対する後悔や非難を表すこともできます。",
+      "formation": "主語 + should / shouldn't + 動詞の原形",
+      "examples": [
+        {
+          "translation": "もっと運動したほうがいいですよ。"
+        },
+        {
+          "translation": "彼女はそんなに無理して働くべきではありません。"
+        }
+      ]
+    },
+    "en_a2_12": {
+      "title": "must / mustn't - 義務と厳格な禁止",
+      "shortExplanation": "「must」は強い義務や命令を表し、「mustn't」は絶対にしてはならない禁止を表します。",
+      "longExplanation": "「must」は強い義務（話し手自身の強い意志や確信）や絶対的な要求を表します。\n一方「mustn't」は強い禁止（絶対にダメ、許されないこと）を表します。\n使い分けの注意点：\n• mustn't ＝ 〜してはならない（禁止）\n• don't have to ＝ 〜する必要はない（自由選択であり、禁止ではない）",
+      "formation": "主語 + must / mustn't + 動詞の原形",
+      "examples": [
+        {
+          "translation": "パスポートを提示しなければなりません。"
+        },
+        {
+          "translation": "ここでタバコを吸ってはいけません。"
+        }
+      ]
+    },
+    "en_a2_13": {
+      "title": "have to - 客観的な必要性",
+      "shortExplanation": "規則、法律、外部の状況などによって「〜しなければならない」という客観的な義務を表します。",
+      "longExplanation": "「have to」は、ルールや周囲の状況、他者の要求などの外的要因によって生じる必要性を表します。\n「must」との違い：\n• must - 話し手自身の内面的な必要性：「I must call her」（自分の気持ちとして電話しなきゃと思う）。\n• have to - 外的な規則や状況：「I have to wear a uniform」（規則なので制服を着なければならない）。\n否定形の「don't have to」は「〜する必要はない（自由）」という意味になります。",
+      "formation": "主語 + have to / has to / don't have to / doesn't have to + 動詞の原形",
+      "examples": [
+        {
+          "translation": "金曜日までにこの報告書を仕上げなければなりません。"
+        },
+        {
+          "translation": "来たくないなら、来なくてもいいですよ。"
+        }
+      ]
+    },
+    "en_a2_14": {
+      "title": "could - 過去の能力・丁寧な依頼",
+      "shortExplanation": "過去にできた能力を表すほか、相手に丁寧に頼み事をする際の「〜していただけますか」を表します。",
+      "longExplanation": "「could」は「can」の過去形であり、主に2つの使い方があります：\n1. 過去における能力：「I could read at 4 years old.」（4歳の時に本が読めました）。\n2. 丁寧な依頼・お願い（canより丁寧で控えめな表現）：「Could you pass the salt, please?」（お塩を取っていただけますか？）。\nまた、現在の可能性（「〜かもしれない」）を表すこともあります：「It could be true.」（本当かもしれない）。",
+      "formation": "主語 + could + 動詞の原形 | Could + 主語 + 動詞の原形...?",
+      "examples": [
+        {
+          "translation": "彼女は子どもの頃バイオリンを弾くことができました。"
+        },
+        {
+          "translation": "もう少しゆっくり話していただけますでしょうか？"
+        }
+      ]
+    },
+    "en_a2_15": {
+      "title": "形容詞の比較級",
+      "shortExplanation": "2つのものを比較する表現です。短い形容詞は語尾に-erを付け、長い形容詞は前にmoreを置きます。",
+      "longExplanation": "比較級の作り方：\n• 1音節の語および-yで終わる2音節の語：語尾に-erを付ける（fast → faster, happy → happier）。\n• 2音節以上の長い語：more + 形容詞原級（more interesting）。\n• つづりの規則：語尾が-eの語は-rのみ（nice → nicer）、短母音＋子音字は末尾の子音字を重ねる（big → bigger）、子音字＋-yは-ierに変える（heavy → heavier）。\n• 不規則変化：good → better, bad → worse, far → further/farther, much/many → more。\n比較の対象を示す接続詞thanとともに使います：「She is taller than her sister.」",
+      "formation": "短い形容詞-er + than / more + 長い形容詞 + than",
+      "examples": [
+        {
+          "translation": "この映画はあの映画よりも面白いです。"
+        },
+        {
+          "translation": "今日は昨日よりも悪いです。"
+        }
+      ]
+    },
+    "en_a2_16": {
+      "title": "形容詞の最上級",
+      "shortExplanation": "3つ以上のものの中で「最も〜」であることを表します。短い形容詞にはthe + -est、長い形容詞にはthe mostを付けます。",
+      "longExplanation": "最上級の作り方：\n• 1音節の語：the + 語尾に-estを付ける（the biggest）。\n• 多音節の語：the most + 形容詞原級（the most beautiful）。\n• つづりの変化規則は比較級と同様です：語尾が-eの語は-stのみ、短母音＋子音字は末尾の子音字を重ねる、子音字＋-yは-iestに変える。\n• 不規則変化：good → the best, bad → the worst, far → the furthest/farthest, much/many → the most。",
+      "formation": "the + 短い形容詞-est / the most + 長い形容詞",
+      "examples": [
+        {
+          "translation": "ここは市内で最も高級なレストランです。"
+        },
+        {
+          "translation": "彼はチームの中で一番優秀な選手です。"
+        }
+      ]
+    },
+    "en_a2_17": {
+      "title": "some / any - 不特定な数量を表す表現",
+      "shortExplanation": "「some」は肯定文や丁寧な勧誘・依頼で用いられ、「any」は否定文や通常の疑問文で用いられます。",
+      "longExplanation": "「some」と「any」は数えられない名詞（不可算名詞）または複数形の名詞とともに用いられ、不特定の数量（いくつか、いくらか）を表します：\n• some：主に肯定文で使われます。また、相手に勧める時や肯定の返答を期待する依頼の疑問文でも使われます（例：「Would you like some tea?」「Can I have some water?」）。\n• any：主に否定文（「一つも〜ない」）や一般的な疑問文（「少しでも〜あるか」）で使われます。",
+      "formation": "some / any + 不可算名詞 または 複数名詞",
+      "examples": [
+        {
+          "translation": "パンと牛乳を少し買いました。"
+        },
+        {
+          "translation": "冷蔵庫に牛乳はありますか？"
+        },
+        {
+          "translation": "現金の持ち合わせが全くありません。"
+        }
+      ]
+    },
+    "en_a2_18": {
+      "title": "much / many / a lot of / a few / a little - 数量を表す語",
+      "shortExplanation": "「much/a little」は不可算名詞に、「many/a few」は可算名詞に、「a lot of」は両方に使われます。",
+      "longExplanation": "数量を表す修飾語の使い分け：\n• much：数えられない名詞に用います（much water, much time）。主に否定文や疑問文で使われます。\n• many：数えられる名詞の複数形に用います（many people, many books）。\n• a lot of / lots of：どちらの名詞にも使え、会話表現で頻繁に用いられます。\n• a few：少数の、2〜3の（可算名詞・肯定的なニュアンス）。\n• few：ほとんどない（可算名詞・否定的なニュアンス）。\n• a little：少量の、少しの（不可算名詞・肯定的なニュアンス）。\n• little：ほとんどない（不可算名詞・否定的なニュアンス）。",
+      "formation": "much/a little + 不可算名詞 | many/a few + 可算名詞複数形 | a lot of + 両方",
+      "examples": [
+        {
+          "translation": "私にはあまり時間がありません。"
+        },
+        {
+          "translation": "彼女にはロンドンに何人か友人がいます。"
+        },
+        {
+          "translation": "砂糖が少し残っています。"
+        }
+      ]
+    },
+    "en_a2_19": {
+      "title": "可算名詞と不可算名詞",
+      "shortExplanation": "可算名詞は1つ2つと数えられ複数形がありますが、不可算名詞は直接数えられず複数形や不定冠詞を持ちません。",
+      "longExplanation": "英語における名詞の分類：\n• 可算名詞（Countable）：直接数えることができ、単数形と複数形が存在します（例：a book, two books）。\n• 不可算名詞（Uncountable）：直接数字で数えられないため、複数形がなく、不定冠詞（a/an）を付けることもできません。\n代表的な不可算名詞：water（水）、milk（牛乳）、bread（パン）、rice（米）、money（お金）、information（情報）、advice（助言）、news（ニュース）、weather（天気）、luggage（荷物）、furniture（家具）、hair（髪）、music（音楽）、work（仕事）。\n不可算名詞の分量を表すには単位表現を用います：a glass of water（コップ一杯の水）、a piece of advice（一つの助言）、a loaf of bread（パン一斤）、a bag of rice（米一袋）。",
+      "formation": "可算名詞：a/an + 単数名詞 / 複数名詞-s/es | 不可算名詞：単位を表す語 + of + 不可算名詞",
+      "examples": [
+        {
+          "translation": "情報を少し教えていただけますでしょうか？"
+        },
+        {
+          "translation": "彼女はとても役に立つアドバイスをくれました。"
+        }
+      ]
+    },
+    "en_a2_20": {
+      "title": "時を表す前置詞 in / on / at",
+      "shortExplanation": "「at」は特定の時刻、「on」は曜日や日付、「in」は月・年・季節・時間帯などに使います。",
+      "longExplanation": "時を表す前置詞の使い分け：\n• at → ピンポイントの時刻や決まった時：at 6 o'clock（6時に）、at noon（正午に）、at midnight（真夜中に）、at night（夜に）、at the weekend（週末に）。\n• on → 特定の日や曜日、日付：on Monday（月曜日に）、on 5 March（3月5日に）、on my birthday（私の誕生日に）、on New Year's Day（元日に）。\n• in → ある程度の幅がある期間（月、年、季節、世紀、一日の時間帯）：in July（7月に）、in 2023（2023年に）、in the morning/afternoon/evening（午前中/午後/夕方に）、in summer（夏に）、in the 21st century（21世紀に）。\n前置詞を伴わない場合：this / last / nextが付く時間表現には前置詞を置きません（例：this morning, last week, next year）。",
+      "formation": "at + 時刻・時点 | on + 曜日・特定の日 | in + 月・年・季節・世紀",
+      "examples": [
+        {
+          "translation": "会議は3時半からです。"
+        },
+        {
+          "translation": "彼女は4月12日に生まれました。"
+        },
+        {
+          "translation": "私は10月にこの仕事を始めました。"
+        }
+      ]
+    },
+    "en_a2_21": {
+      "title": "for / since / ago - 期間・起点・過去の時点",
+      "shortExplanation": "「for」は継続する期間を表し、「since」は開始した起点を表し、「ago」は現在から遡った過去の時点を表します。",
+      "longExplanation": "「for」「since」「ago」の使い分け：\n• for - 動作がどれくらい続いているかという期間を表します：for two hours（2時間）、for a week（1週間）、for years（何年間も）。様々な時制で用いられます。\n• since - 行為や状態が始まった過去の起点（〜以来）を表します：since Monday（月曜日から）、since 2019（2019年から）、since I was a child（子どもの頃から）。主に現在完了形とともに用いられます。\n• ago - 現在を基準として「〜前」という過去の時点を表します：three days ago（3日前）、a month ago（1ヶ月前）。過去形とのみ組み合わせて使います。",
+      "formation": "for + 期間 | since + 起点となる時点・過去の節 | 期間 + ago",
+      "examples": [
+        {
+          "translation": "私はここに6か月間います。"
+        },
+        {
+          "translation": "彼女は2020年からここで働いています。"
+        },
+        {
+          "translation": "私は2日前に彼と会いました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "en_a2_07": {
+      "title": "be going to - 사전 계획 및 확실한 예측",
+      "shortExplanation": "이전에 미리 결심한 의도나 눈앞의 확실한 징후를 바탕으로 한 예측을 나타냅니다.",
+      "longExplanation": "'be going to'는 주로 다음과 같은 상황에서 쓰입니다:\n1. 미리 계획하거나 결심한 의도: 'I'm going to start a diet next week.' (다음 주부터 다이어트를 시작할 거야).\n2. 눈앞에 보이는 근거를 바탕으로 한 예측: 'Look at those clouds - it's going to rain!' (저 먹구름 좀 봐, 비가 오겠어!).\n형태: am/is/are + going to + 동사원형",
+      "formation": "주어 + am/is/are + going to + 동사원형",
+      "examples": [
+        {
+          "translation": "저는 의학을 공부할 계획입니다."
+        },
+        {
+          "translation": "그녀는 곧 출산할 예정입니다."
+        }
+      ]
+    },
+    "en_a2_08": {
+      "title": "현재진행형: am/is/are + V-ing",
+      "shortExplanation": "지금 이 순간 일어나고 있는 동작이나 현재 일시적으로 진행 중인 일을 나타냅니다.",
+      "longExplanation": "현재진행형(Present Continuous)은 말하는 바로 지금 진행 중인 동작이나, 요즘 일시적으로 하고 있는 일을 나타낼 때 사용합니다.\n형태: am/is/are + 동사-ing\n-ing 변형 규칙:\n• 대부분의 동사: 원형 뒤에 -ing → working, playing\n• -e로 끝나는 동사: -e를 빼고 -ing → making, coming\n• 단모음+단자음으로 끝나는 단음절 동사: 마지막 자음을 한 번 더 쓰고 -ing → running, sitting",
+      "formation": "주어 + am/is/are + 동사-ing",
+      "examples": [
+        {
+          "translation": "저는 지금 영어를 공부하고 있습니다."
+        },
+        {
+          "translation": "그녀는 이번 달에 재택근무를 하고 있습니다."
+        }
+      ]
+    },
+    "en_a2_09": {
+      "title": "예정된 미래를 나타내는 현재진행형",
+      "shortExplanation": "시간과 장소 등이 이미 확정된 구체적인 미래 계획이나 약속을 나타냅니다.",
+      "longExplanation": "현재진행형은 이미 구체적으로 합의되거나 약속된 미래 일정을 표현할 때 쓰이며, 보통 시간과 장소가 결정되어 있습니다.\n차이점 비교:\n• 'I'm meeting Alice tomorrow': 만나기로 미리 약속이 되어 있음 (확정된 계획).\n• 'I'll meet Alice tomorrow': 즉흥적인 결정이나 막연한 의도, 제안.",
+      "formation": "주어 + am/is/are + 동사-ing + 미래 시간 표현",
+      "examples": [
+        {
+          "translation": "오늘 밤에 알렉스와 저녁을 먹기로 했어요."
+        },
+        {
+          "translation": "그들은 6월에 결혼할 예정입니다."
+        }
+      ]
+    },
+    "en_a2_10": {
+      "title": "현재시제와 현재진행형의 차이",
+      "shortExplanation": "현재시제는 반복되는 습관과 일반적 사실을, 현재진행형은 지금 일어나는 동작이나 일시적 상황을 나타냅니다.",
+      "longExplanation": "현재시제(Present Simple): 반복적인 습관, 변함없는 사실, 시간표, 보편적 진리를 나타냅니다.\n현재진행형(Present Continuous): 말하는 순간 진행 중인 일이나 요즘 한시적으로 일어나는 일을 나타냅니다.\n비교 예시:\n• 'She speaks French.': 그녀는 프랑스어를 할 줄 안다 (지속적인 능력 및 상태).\n• 'She is speaking French.': 그녀는 지금 프랑스어로 말하고 있다.",
+      "formation": "현재시제: 주어 + 동사원형/3인칭단수형 | 현재진행형: 주어 + am/is/are + 동사-ing",
+      "examples": [
+        {
+          "translation": "물은 100도에서 끓습니다."
+        },
+        {
+          "translation": "이번 주에 아주 훌륭한 책을 한 권 읽고 있습니다."
+        }
+      ]
+    },
+    "en_a2_11": {
+      "title": "should / shouldn't - 조언 및 권유",
+      "shortExplanation": "부드러운 조언이나 개인적 의견을 나타내며, '~하는 편이 좋다(해야 한다)', '~하지 않는 편이 좋다'는 뜻입니다.",
+      "longExplanation": "'should'는 상대방에게 부드럽게 권유하거나 의견을 제시할 때 사용하며, 'must'보다 강제성이 훨씬 약합니다.\n'should / shouldn't' 뒤에는 to가 붙지 않는 동사원형이 옵니다.\n과거의 일에 대한 후회나 비판을 나타낼 때는 'should have + 과거분사' 형태를 사용합니다.",
+      "formation": "주어 + should / shouldn't + 동사원형",
+      "examples": [
+        {
+          "translation": "운동을 더 많이 하시는 편이 좋겠습니다."
+        },
+        {
+          "translation": "그녀는 그렇게 무리해서 일하지 말아야 합니다."
+        }
+      ]
+    },
+    "en_a2_12": {
+      "title": "must / mustn't - 의무 및 강한 금지",
+      "shortExplanation": "'must'는 강한 의무나 필수를, 'mustn't'는 절대 해서는 안 되는 강력한 금지를 나타냅니다.",
+      "longExplanation": "'must'는 강한 의무(화자 자신의 주관적 필요나 절대적 요구)를 나타냅니다.\n'mustn't'는 절대 해서는 안 되는 금지 사항을 의미합니다.\n주의할 점:\n• mustn't = 금지 (~해서는 안 된다)\n• don't have to = 불필요 (~할 필요가 없다, 해도 상관없음)",
+      "formation": "주어 + must / mustn't + 동사원형",
+      "examples": [
+        {
+          "translation": "여권을 반드시 제시하셔야 합니다."
+        },
+        {
+          "translation": "여기서 담배를 피우시면 절대 안 됩니다."
+        }
+      ]
+    },
+    "en_a2_13": {
+      "title": "have to - 객관적 필요성",
+      "shortExplanation": "규칙, 법률, 외부 환경 등 객관적인 요인에 의해 '~해야 한다'는 필요성을 나타냅니다.",
+      "longExplanation": "'have to'는 외부의 규칙, 규정, 상황 등의 제약으로 인해 발생하는 객관적 의무를 나타냅니다.\n'must'와의 차이점:\n• must - 주관적 의무: 'I must call her' (내 스스로 전화해야겠다고 생각함).\n• have to - 객관적 의무: 'I have to wear a uniform' (규칙상 유니폼을 입어야 함).\n부정형인 'don't have to'는 '~할 필요가 없다 (선택 사항)'를 의미합니다.",
+      "formation": "주어 + have to / has to / don't have to / doesn't have to + 동사원형",
+      "examples": [
+        {
+          "translation": "금요일까지 이 보고서를 끝내야 합니다."
+        },
+        {
+          "translation": "오기 싫으시다면 오지 않으셔도 됩니다."
+        }
+      ]
+    },
+    "en_a2_14": {
+      "title": "could - 과거의 능력 및 정중한 부탁",
+      "shortExplanation": "과거에 할 수 있었던 능력을 나타내거나, 공손하게 부탁할 때 '~해 주시겠어요?'의 뜻으로 쓰입니다.",
+      "longExplanation": "'could'는 'can'의 과거형이며, 두 가지 주된 용법이 있습니다:\n1. 과거의 능력: 'I could read at 4 years old.' (저는 4살 때 글을 읽을 수 있었습니다).\n2. 정중한 요청/부탁 ('can'보다 훨씬 공손한 어조): 'Could you pass the salt, please?' (소금 좀 건네주시겠어요?).\n또한 현재 시점에서의 불확실한 가능성('~일 수도 있다')을 나타내기도 합니다: 'It could be true.' (사실일 수도 있습니다).",
+      "formation": "주어 + could + 동사원형 | Could + 주어 + 동사원형...?",
+      "examples": [
+        {
+          "translation": "그녀는 어릴 때 바이올린을 켤 줄 알았습니다."
+        },
+        {
+          "translation": "조금만 더 천천히 말씀해 주시겠습니까?"
+        }
+      ]
+    },
+    "en_a2_15": {
+      "title": "형용사의 비교급",
+      "shortExplanation": "두 대상을 비교할 때 쓰이며, 짧은 형용사는 -er을 붙이고 긴 형용사는 앞에 more를 씁니다.",
+      "longExplanation": "형용사 비교급 규칙:\n• 1음절 형용사 및 -y로 끝나는 2음절 형용사: 어미에 -er 첨가 (fast → faster, happy → happier).\n• 2음절 이상의 긴 형용사: more + 형용사 원급 (more interesting).\n• 철자 규칙: -e로 끝나는 단어는 -r만 추가 (nice → nicer), 단모음+단자음은 마지막 자음 중복 (big → bigger), 자음+-y는 -ier로 변환 (heavy → heavier).\n• 불규칙 변화: good → better, bad → worse, far → further/farther, much/many → more.\n비교 대상 앞에는 주로 'than'을 붙입니다: 'She is taller than her sister.'",
+      "formation": "짧은 형용사-er + than / more + 긴 형용사 + than",
+      "examples": [
+        {
+          "translation": "이 영화는 저 영화보다 더 흥미롭습니다."
+        },
+        {
+          "translation": "오늘은 어제보다 상태가 더 안 좋습니다."
+        }
+      ]
+    },
+    "en_a2_16": {
+      "title": "형용사의 최상급",
+      "shortExplanation": "셋 이상의 대상 중 '가장 ~한'을 나타내며, 짧은 형용사는 'the + -est', 긴 형용사는 'the most'를 붙입니다.",
+      "longExplanation": "형용사 최상급 규칙:\n• 1음절 단어: the + 형용사-est (the biggest).\n• 2음절 이상의 긴 단어: the most + 형용사 원급 (the most beautiful).\n• 철자 변화는 비교급과 동일합니다: -e로 끝나는 단어는 -st, 단모음+단자음은 자음 중복, 자음+-y는 -iest로 변경.\n• 불규칙 변화: good → the best, bad → the worst, far → the furthest/farthest, much/many → the most.",
+      "formation": "the + 짧은 형용사-est / the most + 긴 형용사",
+      "examples": [
+        {
+          "translation": "이곳은 도시에서 가장 비싼 식당입니다."
+        },
+        {
+          "translation": "그는 팀에서 가장 훌륭한 선수입니다."
+        }
+      ]
+    },
+    "en_a2_17": {
+      "title": "some / any - 불특정한 수량 표현",
+      "shortExplanation": "'some'은 긍정문과 권유·요청에 쓰이고, 'any'는 부정문과 일반 의문문에 쓰입니다.",
+      "longExplanation": "'some'과 'any'는 셀 수 없는 명사 또는 복수 명사 앞에 붙어 불특정한 양이나 수를 나타냅니다:\n• some: 주로 긍정문에 쓰이며, 상대방에게 무언가를 권하거나 긍정의 대답을 기대하는 의문문에서도 쓰입니다 (예: 'Would you like some tea?', 'Can I have some water?').\n• any: 주로 부정문(전혀 ~없다)과 일반 의문문(조금이라도 ~있는가)에 사용됩니다.",
+      "formation": "some / any + 셀 수 없는 명사 또는 복수 명사",
+      "examples": [
+        {
+          "translation": "빵과 우유를 조금 샀습니다."
+        },
+        {
+          "translation": "냉장고에 우유가 좀 있나요?"
+        },
+        {
+          "translation": "수중에 현금이 전혀 없습니다."
+        }
+      ]
+    },
+    "en_a2_18": {
+      "title": "much / many / a lot of / a few / a little - 수량 한정사",
+      "shortExplanation": "'much/a little'은 셀 수 없는 명사에, 'many/a few'는 셀 수 있는 명사에, 'a lot of'는 둘 다에 쓰입니다.",
+      "longExplanation": "수량 표현의 상세 구분 및 용법:\n• much: 셀 수 없는 명사 수식 (much water, much time). 주로 부정문과 의문문에서 쓰입니다.\n• many: 셀 수 있는 복수 명사 수식 (many people, many books).\n• a lot of / lots of: 셀 수 있는 명사와 없는 명사 모두에 사용 가능한 일상 회화 표현.\n• a few: 몇몇의, 조금 있는 (셀 수 있는 명사, 긍정적 뉘앙스).\n• few: 거의 없는 (셀 수 있는 명사, 부정적 뉘앙스).\n• a little: 약간의, 조금 있는 (셀 수 없는 명사, 긍정적 뉘앙스).\n• little: 거의 없는 (셀 수 없는 명사, 부정적 뉘앙스).",
+      "formation": "much/a little + 셀 수 없는 명사 | many/a few + 셀 수 있는 복수 명사 | a lot of + 둘 다 가능",
+      "examples": [
+        {
+          "translation": "저는 시간이 많지 않습니다."
+        },
+        {
+          "translation": "그녀에게는 런던에 몇 명의 친구가 있습니다."
+        },
+        {
+          "translation": "설탕이 조금 남아 있습니다."
+        }
+      ]
+    },
+    "en_a2_19": {
+      "title": "가산명사와 불가산명사",
+      "shortExplanation": "가산명사는 직접 셀 수 있어 복수형이 존재하며, 불가산명사는 직접 셀 수 없어 복수형이나 부정관사를 쓰지 않습니다.",
+      "longExplanation": "명사의 가산성과 불가산성 구분:\n• 가산명사(Countable): 숫자로 직접 셀 수 있으며, 단수형과 복수형이 있습니다 (예: a book, two books).\n• 불가산명사(Uncountable): 직접 숫자로 셀 수 없으므로 복수형이 없으며 부정관사(a/an)를 붙일 수 없습니다.\n대표적인 불가산명사: water(물), milk(우유), bread(빵), rice(쌀), money(돈), information(정보), advice(조언), news(뉴스), weather(날씨), luggage(짐), furniture(가구), hair(머리카락), music(음악), work(일).\n불가산명사의 수량을 나타낼 때는 단위 명사를 사용합니다: a glass of water(물 한 잔), a piece of advice(조언 한마디), a loaf of bread(빵 한 덩이), a bag of rice(쌀 한 포대).",
+      "formation": "가산명사: a/an + 단수명사 / 복수명사-s/es | 불가산명사: 단위 표현 + of + 불가산명사",
+      "examples": [
+        {
+          "translation": "정보를 좀 얻을 수 있을까요?"
+        },
+        {
+          "translation": "그녀는 나에게 매우 유용한 조언을 해 주었습니다."
+        }
+      ]
+    },
+    "en_a2_20": {
+      "title": "시간 전치사 in / on / at",
+      "shortExplanation": "'at'은 특정한 시각, 'on'은 요일과 날짜, 'in'은 월·연도·계절·긴 기간에 씁니다.",
+      "longExplanation": "시간을 나타내는 전치사의 기본 용법:\n• at → 정확한 시각이나 특정 시점: at 6 o'clock (6시에), at noon (정오에), at midnight (자정에), at night (밤에), at the weekend (주말에).\n• on → 요일 및 특정한 날짜, 기념일: on Monday (월요일에), on 5 March (3월 5일에), on my birthday (내 생일에), on New Year's Day (새해 첫날에).\n• in → 월, 연도, 계절, 세기 등 비교적 긴 기간 및 하루 중의 시간대: in July (7월에), in 2023 (2023년에), in the morning/afternoon/evening (아침/오후/저녁에), in summer (여름에), in the 21st century (21세기에).\n전치사를 쓰지 않는 경우: this / last / next가 붙는 시간 표현 앞에는 전치사를 생략합니다 (예: this morning, last week, next year).",
+      "formation": "at + 구체적 시각 | on + 요일/날짜/특정한 날 | in + 월/연도/계절/세기",
+      "examples": [
+        {
+          "translation": "회의는 3시 반에 있습니다."
+        },
+        {
+          "translation": "그녀는 4월 12일에 태어났습니다."
+        },
+        {
+          "translation": "저는 10월에 이 일을 시작했습니다."
+        }
+      ]
+    },
+    "en_a2_21": {
+      "title": "for / since / ago - 기간, 시작 시점, 과거 시점",
+      "shortExplanation": "'for'는 지속되는 기간, 'since'는 시작된 과거 시점, 'ago'는 현재 기준 과거의 시점을 나타냅니다.",
+      "longExplanation": "'for', 'since', 'ago'의 용법 및 차이점:\n• for - 동작이나 상태가 지속된 기간(얼마 동안): for two hours (2시간 동안), for a week (일주일 동안), for years (수년 동안). 다양한 시제와 결합할 수 있습니다.\n• since - 동작이나 상태가 시작된 과거의 기점(~이래로, ~부터): since Monday (월요일부터), since 2019 (2019년부터), since I was a child (어릴 때부터). 주로 현재완료 시제와 함께 쓰입니다.\n• ago - 현재를 기준으로 '얼마 전'이라는 과거의 특정 시점: three days ago (3일 전), a month ago (한 달 전). 과거시제와만 함께 사용합니다.",
+      "formation": "for + 기간 | since + 시작 시점/과거 절 | 기간 + ago",
+      "examples": [
+        {
+          "translation": "저는 이곳에 6개월 동안 머물고 있습니다."
+        },
+        {
+          "translation": "그녀는 2020년부터 여기서 일하고 있습니다."
+        },
+        {
+          "translation": "저는 이틀 전에 그를 보았습니다."
+        }
+      ]
+    }
+  }
+}

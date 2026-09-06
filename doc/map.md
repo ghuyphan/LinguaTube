@@ -1,6 +1,6 @@
 # System Architecture & Component Map
 
-This document details the architectural layout, component hierarchy, data flow pathways, and execution lifecycle across **LinguaTube**.
+This document details the architectural layout, component hierarchy, data flow pathways, and execution lifecycle across **Voca** (formerly LinguaTube).
 
 ---
 
@@ -12,7 +12,7 @@ graph TB
         UI[Angular UI Shell / Standalone Components]
         State[Signal State Stores]
         Repos[Offline-First Repositories]
-        IDB[(IndexedDB / LocalStorage)]
+        IDB[(IndexedDB: lingua-tube-cache & LocalStorage)]
     end
 
     subgraph Edge["Cloudflare Pages Functions (Edge Workers)"]
@@ -22,17 +22,21 @@ graph TB
         
         API_Transcript["/api/transcript"]
         API_Dict["/api/dict"]
-        API_Tokens["/api/tokenize"]
+        API_Tokens["/api/tokenize/:lang"]
+        API_TokensBatch["/api/tokenize-batch/:lang"]
         API_Dual["/api/dual-subtitles"]
+        API_TranslateSingle["/api/translate/[[path]]"]
+        API_TranslateBatch["/api/translate/batch"]
         API_VideoInfo["/api/video-info"]
         API_Diamonds["/api/diamonds"]
+        API_AuthConfig["/api/auth-config"]
         API_Proxy["/proxy/[service]"]
     end
 
     subgraph CloudflareData["Cloudflare Infrastructure"]
-        D1[(Cloudflare D1 SQLite)]
-        R2[(Cloudflare R2 Transcripts)]
-        KV[(Cloudflare KV Cache)]
+        D1[(Cloudflare D1 SQLite: video_languages, no_transcript_cache, video_meta)]
+        R2[(Cloudflare R2: transcripts/ & translations/)]
+        KV[(Cloudflare KV: ratelimit, tokens, video-info, trbatch)]
     end
 
     subgraph External["External Services & APIs"]
@@ -42,6 +46,14 @@ graph TB
         Turnstile[Cloudflare Turnstile CAPTCHA]
         PocketHost[PocketBase Server voca.pockethost.io]
         DictAPIs[Jotoba / Mazii / Naver / MDBG / Glosbe]
+        Lingva[Lingva Translate API]
+        GoogleGTX[Google Translate GTX]
+    end
+
+    subgraph DevServer["Local Development Server (Port 3001)"]
+        ExpressApp[Express 5 Server server/server.js]
+        Innertube[youtubei.js Innertube Client]
+        LocalDiskCache[(server/transcripts_cache/)]
     end
 
     UI --> State
@@ -50,6 +62,10 @@ graph TB
     Repos <--> PocketHost
     
     UI --> Edge
+    UI -.->|Local Dev Proxy via proxy.conf.json| DevServer
+    DevServer --> Innertube
+    DevServer --> LocalDiskCache
+    
     Edge --> CloudflareData
     
     API_Transcript --> R2
@@ -62,6 +78,14 @@ graph TB
     API_Dict --> DictAPIs
     
     API_Dual --> R2
+    API_Dual --> Lingva
+    API_Dual --> GoogleGTX
+    
+    API_TranslateSingle --> Lingva
+    API_TranslateSingle --> GoogleGTX
+    API_TranslateBatch --> KV
+    API_TranslateBatch --> Lingva
+    
     API_VideoInfo --> D1
     API_VideoInfo --> KV
 ```
@@ -70,7 +94,7 @@ graph TB
 
 ## 2. Frontend Component Hierarchy & Routing
 
-LinguaTube uses Angular 19 Standalone Components with deferred loading and dynamic imports.
+Voca uses Angular 19 Standalone Components with deferred loading and dynamic imports.
 
 ```mermaid
 graph TD
@@ -105,11 +129,12 @@ graph TD
         VideoPlayer --> CenterControls[CenterControlsComponent]
         VideoPlayer --> ProgressBar[ProgressBarComponent]
         VideoPlayer --> BottomBar[VideoBottomBarComponent]
-        VideoPlayer --> FullscreenSubtitle[FullscreenSubtitleComponent]
+        VideoPlayer --> FullscreenSubtitle[FullscreenSubtitleComponent - Draggable Snap Bar]
+        VideoPlayer --> PlayerSettings[PlayerSettings Overlay / DualSub Menu]
     end
 
     subgraph StudyPageChildren["Study Page Domain"]
-        StudyPage --> StudyMode[StudyModeComponent - SM2 SRS Flashcards]
+        StudyPage --> StudyMode[StudyModeComponent - SM-2 SRS Flashcards]
         StudyPage --> QuizInput[QuizInputComponent]
     end
 ```
@@ -134,7 +159,7 @@ sequenceDiagram
 
     User->>Player: Paste YouTube URL / Select Video
     Player->>TS: fetchTranscript(videoId, lang)
-    TS->>TS: Check Memory & IndexedDB Cache
+    TS->>TS: Check Memory & IndexedDB Cache (lingua-tube-cache)
     alt Hit in IndexedDB / Memory
         TS-->>Player: Return Cached Subtitle Cues
     else Miss
@@ -150,7 +175,7 @@ sequenceDiagram
             alt Native Captions Available
                 Supa-->>Edge: Return Timed Segments
                 Edge->>R2: Async Save to R2
-                Edge->>D1: Async Record in video_meta
+                Edge->>D1: Async Record in video_meta & video_languages
                 Edge-->>TS: 200 OK (Source: native)
             else No Native Captions
                 Edge->>D1: Mark no_transcript_cache (D1)
@@ -178,7 +203,7 @@ sequenceDiagram
 
 ---
 
-### 3.2. Tokenization & Multi-Source Dictionary Lookup Flow
+### 3.2. Tokenization, Romaji & Multi-Source Dictionary Lookup Flow
 
 ```mermaid
 sequenceDiagram
@@ -195,8 +220,8 @@ sequenceDiagram
     Learner->>SubDisplay: View Subtitle Line
     SubDisplay->>SubService: getTokens(cue, lang)
     alt Japanese (ja)
-        SubService->>SubService: Morphological Analysis via Kuromoji (Token + Reading + Romaji)
-    else Korean / Chinese (ko / zh)
+        SubService->>SubService: Morphological Analysis via Kuromoji (Token + Reading + Romaji modes)
+    else Korean / Chinese / English (ko / zh / en)
         SubService->>SubService: Intl.Segmenter + Pinyin / Hangul Romanization
     end
     SubDisplay->>Grammar: detectGrammarPatterns(tokens, lang)
@@ -219,7 +244,7 @@ sequenceDiagram
         DictAPI->>DictAPI: Write to KV (7 day TTL)
     end
     DictAPI-->>DictService: Return Normalized DictionaryEntry[]
-    DictService-->>SubDisplay: Display WordPopupComponent (Meanings, Readings, Examples)
+    DictService-->>SubDisplay: Display WordPopupComponent (Meanings, Readings, Examples, Circle Flags)
 ```
 
 ---
@@ -232,13 +257,13 @@ sequenceDiagram
     actor User
     participant Popup as WordPopupComponent
     participant Repo as OfflineVocabularyRepository
-    participant Storage as LocalStorage / IndexedDB
+    participant Storage as LocalStorage / StorageService
     participant PB as PocketBaseService (voca.pockethost.io)
 
     User->>Popup: Click "+ Add to Vocabulary"
     Popup->>Repo: addWord(word, meaning, lang, reading, sentence)
     Repo->>Repo: Generate Deterministic ID: base64(userId + '|' + word + '|' + lang).slice(0,15)
-    Repo->>Storage: Persist to LocalStorage (Instant, optimistic)
+    Repo->>Storage: Persist to LocalStorage linguatube_vocabulary (Instant, optimistic)
     Repo->>Repo: Update vocabulary$ Signal & recalculate stats
     alt User is Logged In & Online
         Repo->>PB: Push single item / Background Sync
@@ -258,20 +283,24 @@ sequenceDiagram
 
 ## 4. Directory & File Responsibility Matrix
 
-| Directory | Layer | Primary Responsibility |
+| Directory / File | Layer | Primary Responsibility |
 | :--- | :--- | :--- |
 | `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Error handler |
 | `src/app/core/repositories` | Data Layer | Offline-first sync repositories for Vocab, Streaks, Playlists, History |
-| `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, gesture handling, keyboard shortcuts |
+| `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, draggable fullscreen subtitles, controls |
 | `src/app/features/dictionary` | Linguistics | Multi-provider dictionary lookups, word popup, grammar popup |
 | `src/app/features/vocabulary` | Study / Retention | Vocabulary notebook table, quick view panel, SM-2 flashcard study page |
 | `src/app/features/playlist` | Organization | Custom user playlists and curated community language learning channels |
 | `src/app/features/history` | Analytics | Watch history, resume points, completed learning logs |
 | `src/app/features/quiz` | Assessment | Fill-in-the-blank and interactive vocabulary testing inputs |
-| `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation queue, Bottom sheet manager, Streaks |
+| `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
 | `src/app/data` | Static Data | Large CJK grammar rules and offline dictionary fallbacks |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints for Cloudflare Pages Functions |
+| `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, video-info, auth-config |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, PocketBase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries and R2 S3-compatible bucket reader/writer |
-| `server/server.js` | Dev Environment | Local Express mock backend providing Gladia, MDBG, Naver, and tokenizer APIs |
+| `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, Gladia, MDBG, Naver, and tokenizers |
+| `server/transcripts_cache/` | Dev Cache | Local disk persistence for fetched YouTube transcripts during development |
+| `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via esbuild |
+| `scripts/merge-translations.js` | Data Pipeline | Merges translated grammar chunks into TypeScript data files |

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_のももっともだ_133": {
+      "title": "～のももっともだ (〜no mo mottomo da)",
+      "shortExplanation": "Diễn tả một phản ứng, hành động, cảm xúc hoặc sự việc là hoàn toàn đương nhiên, hợp tình hợp lý hoặc rất dễ hiểu trong hoàn cảnh đó; '... cũng là điều đương nhiên', '... cũng phải thôi', '... là điều dễ hiểu'.",
+      "longExplanation": "Mẫu ngữ pháp '～のももっともだ' (chữ Hán là 尤も) kết hợp với thể thông thường (kèm 'の') để biểu thị rằng trước một tình huống hay nguyên nhân cụ thể, việc ai đó phản ứng, suy nghĩ hay một kết quả diễn ra như vậy là hoàn toàn thỏa đáng, hợp lý và có thể thấu hiểu được ('... cũng phải thôi', '... là điều hiển nhiên'). Người nói dùng cấu trúc này để bày tỏ sự đồng tình, cảm thông sâu sắc và xem đó là lẽ dĩ nhiên mà bất kỳ ai trong hoàn cảnh đó cũng sẽ như vậy.",
+      "formation": "Động từ thể thông thường + のももっともだ | Tính từ đuôi い + のももっともだ | Tính từ đuôi な + なのももっともだ | Danh từ + なのももっともだ",
+      "examples": [
+        {
+          "translation": "Anh ấy cảm thấy căng thẳng cũng là điều đương nhiên thôi."
+        },
+        {
+          "translation": "Câu hỏi này khó đến mức ấy thì ai cũng thấy khó là điều dễ hiểu."
+        },
+        {
+          "translation": "Cô ấy cảm thấy hạnh phúc như vậy cũng là điều hết sức tự nhiên."
+        },
+        {
+          "translation": "Anh ấy được chọn làm người lãnh đạo cũng là điều hoàn toàn xứng đáng và hiển nhiên."
+        }
+      ]
+    },
+    "ja_の上では_134": {
+      "title": "〜の上では (〜no ue de wa)",
+      "shortExplanation": "Chỉ căn cứ, phương diện, góc độ hoặc lập trường để đưa ra phán đoán, đánh giá; 'xét về mặt...', 'trên phương diện...', 'theo...'.",
+      "longExplanation": "Mẫu ngữ pháp '～の上では' (hoặc '～上は') kết hợp với danh từ để xác định rõ phạm vi, góc độ, tiêu chuẩn hoặc cơ sở lý thuyết mà dựa vào đó người nói đưa ra nhận định hoặc đánh giá ('xét về phương diện...', 'trên lý thuyết / pháp luật mà nói thì...'). Cách nói này thường ngụ ý việc nhận định chỉ dựa trên tiêu chuẩn hoặc phương diện cụ thể đó, đôi khi để đối lập với tình hình thực tế ngoài đời.",
+      "formation": "Danh từ + の上では",
+      "examples": [
+        {
+          "translation": "Xét về mặt hiệu suất thì phương pháp này là tối ưu nhất."
+        },
+        {
+          "translation": "Dưới góc độ pháp luật, hành vi của anh ấy không hề vi phạm pháp luật."
+        },
+        {
+          "translation": "Xét về hương vị, nhà hàng này nhận được đánh giá rất cao."
+        },
+        {
+          "translation": "Xét trên phương diện thành tích học tập, cậu ấy là học sinh xuất sắc nhất lớp."
+        }
+      ]
+    },
+    "ja_の下で_135": {
+      "title": "～の下で (〜no shita de)",
+      "shortExplanation": "Diễn tả một sự việc diễn ra dưới sự chỉ dẫn, quản lý, ảnh hưởng, tình cảm của ai đó hoặc dưới một điều kiện, hoàn cảnh cụ thể; 'dưới...', 'dưới sự...'.",
+      "longExplanation": "Mẫu ngữ pháp '～の下で' (thường đọc là 'のもとで' khi chỉ sự chỉ đạo, bảo bọc, hướng dẫn của người có thẩm quyền; hoặc 'のしたで') đi kèm với danh từ để biểu thị một hành động hay sự phát triển diễn ra dưới sự kèm cặp, dạy dỗ, che chở, quản lý của ai đó, hoặc trong một điều kiện, bối cảnh, bầu không khí nhất định ('dưới sự chỉ bảo của...', 'dưới bầu trời trong xanh...', 'dưới áp lực...').",
+      "formation": "Danh từ + の下で",
+      "examples": [
+        {
+          "translation": "Được học tập dưới sự chỉ bảo của thầy giáo thực sự rất vui vẻ."
+        },
+        {
+          "translation": "Chúng ta hãy cùng nhau đi dã ngoại dưới bầu trời quang đãng nhé."
+        },
+        {
+          "translation": "Dưới bầu không khí căng thẳng, cô ấy đã hoàn thành bài phát biểu một cách thành công."
+        },
+        {
+          "translation": "Dưới tình yêu thương chở che của cha mẹ, con cái lớn lên trong hạnh phúc."
+        }
+      ]
+    },
+    "ja_ばかりかも_136": {
+      "title": "～ばかりか〜も (〜bakari ka 〜 mo)",
+      "shortExplanation": "Diễn tả ý nghĩa 'không chỉ... mà còn...', nhấn mạnh rằng không chỉ dừng lại ở một mức độ hay yếu tố này mà còn có thêm một yếu tố khác vượt ngoài mong đợi.",
+      "longExplanation": "Mẫu ngữ pháp '～ばかりか〜も' kết hợp với thể thông thường của động từ, tính từ hoặc danh từ để biểu thị quan hệ tăng tiến ('không chỉ... mà còn...', 'không những... mà ngay cả... cũng'). Vế trước nêu lên một sự việc đã đủ ấn tượng hoặc rõ ràng, nhưng vế sau tiếp tục bổ sung thêm một sự việc, tính chất khác ở mức độ cao hơn hoặc đáng ngạc nhiên hơn. Vế sau thường đi kèm với trợ từ 'も', 'まで', 'さえ'.",
+      "formation": "Động từ thể thông thường + ばかりか... も | Tính từ đuôi い + ばかりか... も | Tính từ đuôi な (hoặc である) + ばかりか... も | Danh từ (+ である) + ばかりか... も",
+      "examples": [
+        {
+          "translation": "Cậu ấy không chỉ đáng yêu mà còn rất thông minh nữa."
+        },
+        {
+          "translation": "Nhà hàng này không chỉ đồ ăn ngon mà dịch vụ cũng vô cùng tuyệt vời."
+        },
+        {
+          "translation": "Cô ấy không những giỏi tiếng Nhật mà còn nói được cả tiếng Anh."
+        },
+        {
+          "translation": "Anh ấy không chỉ hát hay mà nhảy cũng rất cừ khôi."
+        }
+      ]
+    },
+    "ja_ばかりだ_137": {
+      "title": "～ばかりだ (〜bakari da)",
+      "shortExplanation": "Diễn tả một hành động lặp đi lặp lại liên tục hoặc chỉ toàn xảy ra một tình trạng, sự việc tiêu cực, gây ngán ngẩm; 'suốt ngày chỉ toàn...', 'toàn là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ばかりだ' (khi đi với động từ thể て hoặc danh từ) diễn tả việc ai đó liên tục lặp đi lặp lại một hành động hoặc trong một hoàn cảnh chỉ toàn xuất hiện những sự việc, trạng thái tương tự nhau mà không có sự thay đổi nào khác ('suốt ngày chỉ làm...', 'toàn là...'). Mẫu câu này thường mang sắc thái phê phán, bất mãn, ngán ngẩm hoặc tự trách của người nói trước một thói quen hoặc xu hướng tiêu cực. (Lưu ý: Nếu đi với động từ thể từ điển, nó còn biểu thị xu hướng xấu ngày càng tăng tiến 'càng ngày càng...').",
+      "formation": "Động từ thể て + ばかりだ / ばかりいる | Danh từ + ばかりだ",
+      "examples": [
+        {
+          "translation": "Anh ấy lúc nào cũng chỉ toàn phàn nàn, càu nhàu thôi."
+        },
+        {
+          "translation": "Bộ phim này chẳng có gì thú vị, suốt từ đầu đến cuối tôi chỉ thấy chán ngắt."
+        },
+        {
+          "translation": "Cô ấy suốt ngày chỉ toàn ngồi rỗi mà chẳng chịu làm việc gì cả."
+        },
+        {
+          "translation": "Dạo gần đây, trong công việc của tôi toàn gặp phải thất bại liên tiếp."
+        }
+      ]
+    },
+    "ja_ばかりに_138": {
+      "title": "～ばかりに (〜bakari ni)",
+      "shortExplanation": "Diễn tả nguyên nhân duy nhất dẫn đến một kết quả xấu, đáng tiếc hoặc bất lợi ngoài mong muốn; 'chỉ vì... mà...', 'chỉ tại... mà...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ばかりに' đi với thể thông thường của động từ, tính từ hoặc danh từ (kèm な hoặc である) để nhấn mạnh rằng chỉ vì một nguyên nhân duy nhất, đôi khi là một sơ suất nhỏ, mà dẫn đến một kết quả tiêu cực, tồi tệ hoặc vô cùng đáng tiếc ngoài ý muốn ('chỉ vì... mà ra nông nỗi này'). Mẫu câu này luôn đi kèm với kết quả không mong muốn ở vế sau và chứa đựng cảm xúc ân hận, nuối tiếc hoặc oán trách sâu sắc của người nói.",
+      "formation": "Động từ thể thông thường (thường là thể quá khứ た) + ばかりに | Tính từ đuôi い + ばかりに | Tính từ đuôi な + なばかりに / であるばかりに | Danh từ + なばかりに / であるばかりに",
+      "examples": [
+        {
+          "translation": "Chỉ vì trời đổ mưa mà trận đấu đã phải hủy bỏ."
+        },
+        {
+          "translation": "Chỉ tại anh ấy đến muộn mà cả đám chúng tôi cũng bị trễ theo."
+        },
+        {
+          "translation": "Chỉ vì để quên đồ mà tôi phải quay lại cửa hàng một chuyến."
+        },
+        {
+          "translation": "Chỉ vì cô ấy quá xinh đẹp mà mọi người xung quanh ai nấy đều ghen tị."
+        }
+      ]
+    },
+    "ja_ばというものでもない_139": {
+      "title": "～ば～というものでもない (〜ba 〜to iu mono demo nai)",
+      "shortExplanation": "Diễn tả ý nghĩa phủ định tính tất yếu, không phải cứ thỏa mãn điều kiện phía trước thì kết quả phía sau đương nhiên sẽ xảy ra; 'không phải cứ... là sẽ...', 'chưa chắc cứ... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ば～というものでもない' (hoặc '～たら～というものでもない') dùng để bác bỏ quan điểm cho rằng khi một điều kiện nào đó được thỏa mãn thì kết quả tương ứng nhất định sẽ xảy ra ('không phải cứ... là tốt / là được đâu'). Cấu trúc này dùng để nhấn mạnh tính tương đối của sự việc, rằng trong thực tế còn phụ thuộc vào nhiều yếu tố khác chứ không thể suy diễn một cách tuyệt đối hay đơn giản như vậy.",
+      "formation": "Động từ thể ば + というものでもない | Tính từ đuôi い (ければ) + というものでもない | Tính từ đuôi な (なら) + というものでもない | Danh từ (なら) + というものでもない",
+      "examples": [
+        {
+          "translation": "Đồ đắt tiền chưa chắc cái nào cũng là đồ tốt."
+        },
+        {
+          "translation": "Không phải cứ giỏi tiếng Anh là chắc chắn sẽ thành công đâu."
+        },
+        {
+          "translation": "Không phải cứ có ngoại hình xinh đẹp thì tâm hồn cũng đẹp đẽ đâu."
+        },
+        {
+          "translation": "Đâu phải cứ thi đỗ vào trường đại học danh tiếng là tương lai sẽ được an nhàn đảm bảo."
+        }
+      ]
+    },
+    "ja_はともかくは_140": {
+      "title": "～はともかく～は (〜wa tomokaku 〜wa)",
+      "shortExplanation": "Diễn tả việc tạm gác một yếu tố sang một bên chưa bàn đến, để tập trung nhấn mạnh vào một yếu tố khác quan trọng hơn; 'khoan bàn đến... thì...', 'tạm thời không xét đến... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～はともかく（として）～は' kết hợp với danh từ để biểu thị ý nghĩa: tạm thời gác lại vấn đề A, chưa xét đến hoặc chưa đánh giá vội, mà muốn hướng sự chú ý và nhấn mạnh vào vấn đề B quan trọng hơn phía sau ('A thì khoan hãy nói, còn B thì...'). Thường yếu tố A có thể chưa hoàn hảo hoặc gây tranh cãi, nhưng yếu tố B thì rất rõ ràng, nổi bật hoặc đáng ghi nhận.",
+      "formation": "Danh từ 1 (+ はともかく / はともかくとして) + Danh từ 2 + は",
+      "examples": [
+        {
+          "translation": "Khoan bàn về thiết kế, xét về tính năng thì chiếc điện thoại này là tốt nhất."
+        },
+        {
+          "translation": "Ngoại hình của anh ấy thì tạm gác sang một bên, chứ tính cách thì thực sự rất tuyệt vời."
+        },
+        {
+          "translation": "Hương vị món ăn thì khoan hãy nói tới, nhưng cách trình bày thì rất đẹp mắt."
+        },
+        {
+          "translation": "Chưa xét đến giá cả thì chất lượng của chiếc túi xách này rất tốt."
+        }
+      ]
+    },
+    "ja_はまだしも_141": {
+      "title": "～はまだしも (〜wa mada shimo)",
+      "shortExplanation": "Diễn tả việc một tình huống phía trước tuy không tốt nhưng vẫn còn có thể châm chước, chấp nhận được, trong khi tình huống phía sau thì hoàn toàn không thể tha thứ hay chấp nhận nổi; '... thì còn tạm chấp nhận được, đằng này...'.",
+      "longExplanation": "Mẫu ngữ pháp '～はまだしも' (hoặc '～ならまだしも') gắn vào danh từ hoặc mệnh đề được danh từ hóa (với 'の') để biểu thị sự so sánh nhượng bộ: tình huống A dẫu sao vẫn còn ở mức độ có thể tha thứ, chịu đựng hoặc châm chước được ('thì cũng đành / còn tạm được'), thế nhưng tình huống B xảy ra tiếp theo thì tệ hại hơn nhiều và hoàn toàn không thể chấp nhận được. Thường thể hiện sự bất bình, phẫn nộ hoặc phê phán gay gắt đối với tình huống B.",
+      "formation": "Danh từ + はまだしも | Động từ / Tính từ thể thông thường + のはまだしも",
+      "examples": [
+        {
+          "translation": "Thất bại thì còn chấp nhận được, chứ không chịu làm để rồi hối tiếc thì đau đớn hơn nhiều."
+        },
+        {
+          "translation": "Chiếc bánh pizza này ít rau thì còn tạm bỏ qua, đằng này hương vị của nó cũng dở tệ."
+        },
+        {
+          "translation": "Thỉnh thoảng đi muộn thì còn châm chước được, chứ đi muộn mà không buồn báo trước một tiếng thì không thể tha thứ."
+        },
+        {
+          "translation": "Không trả lời được câu hỏi khó thì còn có thể hiểu được, đằng này ngay cả câu hỏi đơn giản cũng không trả lời được thì đúng là có vấn đề."
+        }
+      ]
+    },
+    "ja_はもとより_142": {
+      "title": "～はもとより (〜wa moto yori)",
+      "shortExplanation": "Diễn tả ý nghĩa điều phía trước là đương nhiên rồi, không cần phải bàn cãi, và thêm vào đó ngay cả điều phía sau cũng như vậy; 'không chỉ... mà ngay cả... cũng...', '... thì là lẽ đương nhiên rồi, ngoài ra... cũng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～はもとより' (đồng nghĩa trang trọng hơn của '～はもちろん') gắn trực tiếp vào danh từ để khẳng định rằng yếu tố đứng trước là điều dĩ nhiên, hiển nhiên ai cũng biết, và muốn bổ sung thêm rằng ngay cả yếu tố đứng sau cũng hoàn toàn áp dụng được ('A thì khỏi phải bàn rồi, mà ngay cả B cũng...'). Cấu trúc này thường xuất hiện trong văn viết trang trọng, bài phát biểu hoặc các bối cảnh trang nghiêm.",
+      "formation": "Danh từ 1 + はもとより (+ Danh từ 2 + も)",
+      "examples": [
+        {
+          "translation": "Tiếng Anh thì dĩ nhiên rồi, tôi còn đang học thêm cả tiếng Tây Ban Nha nữa."
+        },
+        {
+          "translation": "Nấu ăn ngon là điều hiển nhiên rồi, cô ấy còn rất khéo tay trong khoản làm bánh kẹo."
+        },
+        {
+          "translation": "Khách sạn này phòng ốc sạch sẽ là điều đương nhiên, mà dịch vụ chăm sóc khách hàng cũng vô cùng tuyệt vời."
+        },
+        {
+          "translation": "Âm nhạc thì khỏi phải nói, anh ấy vẽ tranh cũng rất cừ khôi."
+        }
+      ]
+    },
+    "ja_は抜きにして_143": {
+      "title": "～は抜きにして (〜wa nuki ni shite)",
+      "shortExplanation": "Diễn tả việc bỏ qua, loại trừ hoặc không tính đến một yếu tố nào đó để tập trung xem xét, đánh giá vấn đề chính; 'bỏ qua...', 'gạt... sang một bên', 'không tính đến...'.",
+      "longExplanation": "Mẫu ngữ pháp '～は抜きにして' (hoặc '～を抜きにして', '～抜きで') kết hợp với danh từ để biểu thị việc chủ động loại bỏ, không xét tới hoặc tạm gác một yếu tố, thành phần thường có sang một bên ('bỏ qua...', 'không tính đến...', 'loại trừ...'). Cách diễn đạt này thường dùng khi người nói muốn tập trung phán đoán thực chất của sự việc mà không bị chi phối bởi yếu tố bị lược bỏ đó, hoặc dùng trong các cụm từ quán dụng như 'お世辞は抜きにして' (bỏ qua những lời tâng bốc khách sáo), '冗談は抜きにして' (bỏ qua chuyện đùa giỡn, nói nghiêm túc).",
+      "formation": "Danh từ + は抜きにして / を抜きにして",
+      "examples": [
+        {
+          "translation": "Bỏ qua chuyện giá cả thì món ăn này quả thực rất ngon."
+        },
+        {
+          "translation": "Gạt tính cách của anh ấy sang một bên, tôi vẫn buộc phải công nhận thực lực xuất sắc của anh ấy."
+        },
+        {
+          "translation": "Không tính đến mặt thiết kế thì tính năng của chiếc điện thoại này vượt trội hơn hẳn."
+        },
+        {
+          "translation": "Bỏ qua tốc độ lái xe sang một bên, cô ấy là một tài xế rất ân cần và đáng tin cậy."
+        }
+      ]
+    },
+    "ja_べきではない_144": {
+      "title": "～べきではない (〜beki dewa nai)",
+      "shortExplanation": "Diễn tả quan điểm mang tính đạo đức, chuẩn mực xã hội hoặc lẽ thường rằng không nên hoặc không được phép làm một việc gì đó; 'không nên...', 'không được làm...'.",
+      "longExplanation": "Mẫu ngữ pháp '～べきではない' kết hợp với thể từ điển của động từ để đưa ra lời khuyên răn, phán đoán hoặc khẳng định mang tính chuẩn mực, luân thường đạo lý hoặc bổn phận xã hội rằng hành động đó là không đúng, không nên hoặc không được phép thực hiện ('không nên làm', 'lẽ ra không được...'). Đây là nhận định dựa trên lương tâm, lẽ phải khách quan chứ không phải chỉ là mệnh lệnh cá nhân nhất thời. Với động từ 'する', dạng phủ định có thể dùng 'するべきではない' hoặc 'すべきではない'.",
+      "formation": "Động từ thể từ điển + べきではない / べきではありません (Lưu ý: する chuyển thành するべきではない hoặc すべきではない)",
+      "examples": [
+        {
+          "translation": "Nếu không có lý do chính đáng thì bạn không nên đi muộn."
+        },
+        {
+          "translation": "Không nên nói những lời thô tục, ác ý trước mặt trẻ nhỏ."
+        },
+        {
+          "translation": "Không nên uống quá nhiều loại thuốc này trong cùng một lần."
+        },
+        {
+          "translation": "Tuyệt đối không nên chia sẻ thông tin cá nhân của mình cho người lạ."
+        }
+      ]
+    },
+    "ja_まい_145": {
+      "title": "～まい (〜mai)",
+      "shortExplanation": "Diễn tả (1) quyết tâm dứt khoát không làm gì (ý chí phủ định: 'quyết không...'), hoặc (2) phỏng đoán tiêu cực rằng một việc có lẽ sẽ không xảy ra (suy đoán phủ định: 'chắc là sẽ không...').",
+      "longExplanation": "Mẫu ngữ pháp '～まい' là dạng phủ định mang tính văn viết, trang trọng của '〜ないだろう' (phủ định suy đoán) hoặc '〜ないつもりだ / 〜ないでおこう' (phủ định ý chí): (1) Khi chủ ngữ là ngôi thứ nhất, nó biểu thị ý chí kiên quyết, thề dứt khoát không bao giờ làm điều gì đó nữa ('quyết không...', 'tuyệt đối không...'). (2) Khi chủ ngữ là ngôi thứ ba hoặc một sự việc khách quan, nó biểu thị suy đoán phủ định rằng điều đó khó lòng xảy ra ('chắc chắn không...', 'có lẽ sẽ không...'). Nếu muốn nói về ý chí của người khác, thường dùng dạng '〜まいと思っている / 〜まいとしている'.",
+      "formation": "Động từ nhóm 1: Thể từ điển + まい | Động từ nhóm 2: Thể từ điển (hoặc thể ます bỏ ます) + まい | Động từ nhóm 3: する → するまい / すまい, くる → くるまい / こまい",
+      "examples": [
+        {
+          "translation": "Tối nay chắc là anh ấy sẽ không đến đâu."
+        },
+        {
+          "translation": "Bị trễ đến mức này rồi thì chắc là không kịp bắt chuyến tàu điện nữa đâu."
+        },
+        {
+          "translation": "Con người ấy chắc chắn sẽ không bao giờ quên được đâu."
+        },
+        {
+          "translation": "Tôi quyết tâm sẽ không bao giờ lặp lại sai lầm ấy một lần nào nữa."
+        }
+      ]
+    },
+    "ja_までて_146": {
+      "title": "～まで～て (〜made 〜te)",
+      "shortExplanation": "Diễn tả một hành động được duy trì liên tục cho tới một thời điểm, giới hạn hoặc điều kiện nhất định, rồi sau đó chuyển tiếp sang hành động tiếp theo; '... cho đến tận... rồi...'.",
+      "longExplanation": "Mẫu kết hợp '～まで～て' sử dụng trợ từ 'まで' (chỉ mốc giới hạn về thời gian, không gian hoặc sự việc hoàn tất) đi kèm động từ thể て để diễn tả quá trình một hành động được thực hiện liên tục kéo dài cho tới tận mốc đó, rồi sau đó tiến hành một hành động hoặc sự việc tiếp nối ('làm việc tới tận..., sau đó...'). Thường dùng để tường thuật trình tự diễn tiến của công việc hay chuỗi sinh hoạt hàng ngày.",
+      "formation": "Thời gian / Danh từ / Động từ thể từ điển + まで + Động từ thể て",
+      "examples": [
+        {
+          "translation": "Tôi đã làm việc liên tục đến tận 9 giờ rồi sau đó mới nghỉ giải lao."
+        },
+        {
+          "translation": "Tôi đã miệt mài học bài cho tới tận đêm khuya và cuối cùng đã đỗ kỳ thi."
+        },
+        {
+          "translation": "Tôi đọc một mạch cho tới tận trang cuối cùng rồi mới gấp cuốn sách lại."
+        },
+        {
+          "translation": "Tôi đứng đợi cho tới khi tàu điện đến ga rồi gặp gỡ bạn của mình."
+        }
+      ]
+    },
+    "ja_ままに_147": {
+      "title": "～ままに (〜mama ni)",
+      "shortExplanation": "Diễn tả việc giữ nguyên một trạng thái không hề thay đổi mà thực hiện hành động khác, hoặc làm theo tự nhiên, thuận theo những gì vốn có; 'cứ để nguyên như thế mà...', 'thuận theo...', 'cứ theo...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ままに' (hoặc '～まま', '～ままで') dùng để biểu thị: (1) Giữ nguyên một trạng thái, tình trạng vốn có mà không có sự thay đổi nào để tiến hành một hành vi khác ('giữ nguyên như vậy mà...'). (2) Làm một việc gì đó hoàn toàn thuận theo cảm xúc, suy nghĩ tự nhiên hoặc sự đưa đẩy của hoàn cảnh mà không gượng ép ('cứ theo như...', 'thuận theo tự nhiên', như trong '思うままに' - theo ý muốn, '気の向くままに' - tùy hứng, '足の向くままに' - theo bước chân dẫn lối).",
+      "formation": "Động từ thể た / thể ている + まま(に) | Tính từ đuôi い + まま(に) | Tính từ đuôi な + なまま(に) | Danh từ + のまま(に)",
+      "examples": [
+        {
+          "translation": "Giữ yên cho đứa bé ngủ say như vậy, tôi khẽ khàng bước ra khỏi phòng."
+        },
+        {
+          "translation": "Cửa sổ cứ để mở toang như thế nên phòng trở nên lạnh buốt."
+        },
+        {
+          "translation": "Ông ấy chuyển vào viện dưỡng lão khi cơ thể vẫn còn rất khỏe mạnh, tráng kiện."
+        },
+        {
+          "translation": "Tôi trở về thị trấn này, vẹn nguyên theo những ký ức ngọt ngào xưa cũ."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_のももっともだ_133": {
+      "title": "～のももっともだ (〜no mo mottomo da)",
+      "shortExplanation": "表示在某种情境或事实下，某种行为、反应或情绪是理所当然、完全可以理解的；“……也是理所当然的”、“……也是很正常的”、“难怪……”。",
+      "longExplanation": "句型“～のももっともだ”（汉字写作“尤も”）接在普通形加“の”之后，表示结合当时的情境、原因或客观事实来看，某人产生的某种感情、采取的行动或出现的状况是完全合情合理的，任何人都能够理解和认同（“……也是理所当然的”、“难怪会……”）。说话人在此表达强烈的理解、同情或认同态度。",
+      "formation": "动词普通形 + のももっともだ | 一类形容词（い形容词） + のももっともだ | 二类形容词（な形容词）词干 + なのももっともだ | 名词 + なのももっともだ",
+      "examples": [
+        {
+          "translation": "他感到紧张也是理所当然的。"
+        },
+        {
+          "translation": "这道题这么难，大家觉得难也是合情合理的。"
+        },
+        {
+          "translation": "她感到如此幸福也是理所当然的。"
+        },
+        {
+          "translation": "由他来担任领导也是顺理成章、完全在情理之中的。"
+        }
+      ]
+    },
+    "ja_の上では_134": {
+      "title": "〜の上では (〜no ue de wa)",
+      "shortExplanation": "表示以某一特定角度、立场、标准或理论为依据进行判断或评价；“在……方面”、“从……角度来看”、“在……上”。",
+      "longExplanation": "句型“〜の上では”接在名词之后，表示限定判断、评价或讨论的标准、范围或理论依据（“在……上”、“从……的角度来看”、“就……而言”）。常用于从理论、法律、数据、表面等某一个特定侧面做出说明，有时隐含着虽然在这一方面如此，但实际情况或其他方面可能另有不同的对比语气。",
+      "formation": "名词 + の上では",
+      "examples": [
+        {
+          "translation": "从效率的角度来看，这个方法是最合适的。"
+        },
+        {
+          "translation": "在法律层面上，他的行为并不违法。"
+        },
+        {
+          "translation": "论起味道来，这家餐厅的评价非常高。"
+        },
+        {
+          "translation": "单看成绩的话，他是班里最优秀的学生。"
+        }
+      ]
+    },
+    "ja_の下で_135": {
+      "title": "～の下で (〜no shita de)",
+      "shortExplanation": "表示在某种影响、指导、庇护、管理或者某种客观条件、气氛之下进行某事；“在……之下”、“在……的指导／关怀下”。",
+      "longExplanation": "句型“～の下で”（常读作“のもとで”，也读作“のしたで”）接在名词之后，表示某项行动、成长或事态是在某人的指导、管理、关怀、支配下进行的，或者是在特定的自然环境、社会条件、紧张氛围下发生的（“在……之下”、“在……的关怀／庇护下”）。",
+      "formation": "名词 + の下で",
+      "examples": [
+        {
+          "translation": "在老师的悉心教导下学习非常令人愉快。"
+        },
+        {
+          "translation": "让我们在晴朗蔚蓝的天空下尽情野餐吧。"
+        },
+        {
+          "translation": "在高度紧张的氛围下，她的演讲获得了圆满成功。"
+        },
+        {
+          "translation": "在父母深沉的关爱下，孩子们幸福地茁壮成长。"
+        }
+      ]
+    },
+    "ja_ばかりかも_136": {
+      "title": "～ばかりか〜も (〜bakari ka 〜 mo)",
+      "shortExplanation": "表示“不仅……而且……”，强调程度的递进，即不仅前面所说的事项如此，甚至更进一步的事项也是如此。",
+      "longExplanation": "句型“～ばかりか〜も”接在各类词的普通形之后，表示递进关系（“不仅……而且还……”、“不光……就连……也……”）。前项已经达到某种程度或具备某种特点，后项则进一步提出程度更高、范围更广或更令人意想不到的事项。后项常与助词“も”、“まで”、“さえ”相呼应使用。",
+      "formation": "动词普通形 + ばかりか... も | 一类形容词（い形容词） + ばかりか... も | 二类形容词（な形容词）词干 + な／である + ばかりか... も | 名词（+ である） + ばかりか... も",
+      "examples": [
+        {
+          "translation": "他不仅长得可爱，而且还非常聪明。"
+        },
+        {
+          "translation": "这家餐厅不仅饭菜味道好，服务也极佳。"
+        },
+        {
+          "translation": "她不仅日语流利，还会说英语。"
+        },
+        {
+          "translation": "他不仅唱歌好听，跳舞也十分出色。"
+        }
+      ]
+    },
+    "ja_ばかりだ_137": {
+      "title": "～ばかりだ (〜bakari da)",
+      "shortExplanation": "接在动词“て形”或名词后，表示反复不断地做某事，或者某种负面、令人不满的状态频繁发生；“净是……”、“总是……”、“光是……”。",
+      "longExplanation": "句型“～ばかりだ”（主要接动词て形或名词）表示某种行为频繁重复发生，或者某种事物、状态大量充斥，几乎没有其他情况（“总是……”、“光是……”、“净做……”）。通常带有说话人感到厌烦、不满、无奈或批评的消极语气。（注：若接动词辞书形，则常表示情况向消极方向不断恶化，意为“越来越……”）。",
+      "formation": "动词て形 + ばかりだ／ばかりいる | 名词 + ばかりだ",
+      "examples": [
+        {
+          "translation": "他总是一味地发牢骚抱怨。"
+        },
+        {
+          "translation": "这部电影毫无趣味，看得我只觉得百无聊赖。"
+        },
+        {
+          "translation": "她整天无所事事，光在那儿闲着。"
+        },
+        {
+          "translation": "最近工作中接连全是失误和挫折。"
+        }
+      ]
+    },
+    "ja_ばかりに_138": {
+      "title": "～ばかりに (〜bakari ni)",
+      "shortExplanation": "表示仅仅因为某一个单一的原因或微小的过失，而招致了意料之外的不良结果或遗憾局面；“仅仅因为……就……”、“只怪……才……”。",
+      "longExplanation": "句型“～ばかりに”接在各词类普通形（名词和二类形容词接“な／である”）之后，强调仅仅因为某个原因、动机或偶然差错，结果导致了意想不到的消极、糟糕或令人痛心的结局（“只因……才造成了……”、“就因为……而……”）。后项必定为不希望发生的事态，且全句往往蕴含着说话人强烈的懊悔、遗憾或抱怨之情。",
+      "formation": "动词普通形（多用过去形た） + ばかりに | 一类形容词（い形容词） + ばかりに | 二类形容词（な形容词）词干 + な／である + ばかりに | 名词 + な／である + ばかりに",
+      "examples": [
+        {
+          "translation": "仅仅因为下起了雨，比赛就被迫取消了。"
+        },
+        {
+          "translation": "就怪他迟到了，害得我们也跟着迟到了。"
+        },
+        {
+          "translation": "仅仅因为忘带了东西，我不得不再次折返回去购物。"
+        },
+        {
+          "translation": "就因为她长得太漂亮，大家都很嫉妒她。"
+        }
+      ]
+    },
+    "ja_ばというものでもない_139": {
+      "title": "～ば～というものでもない (〜ba 〜to iu mono demo nai)",
+      "shortExplanation": "表示部分否定或推翻必然性，说明即使满足了前项条件，也未必就会出现后项的结果；“并不是只要……就……”、“未必……”。",
+      "longExplanation": "句型“～ば～というものでもない”（亦常用“～たら～というものでもない”）用于否定前项条件与后项结果之间的必然联系，指出事态的发展并非只要满足了某一条件就能自然而然地达成或变好（“并不是说只要……就一定能……”、“未必有了……就万事大吉”）。常用于提醒对方看问题不可绝对化，现实中还取决于其他诸多综合因素。",
+      "formation": "动词假定形（ば形） + というものでもない | 一类形容词（ければ） + というものでもない | 二类形容词／名词（なら） + というものでもない",
+      "examples": [
+        {
+          "translation": "价格昂贵的东西未必全都是好东西。"
+        },
+        {
+          "translation": "并不是只要会说英语，就一定会取得成功的。"
+        },
+        {
+          "translation": "外表美丽并不意味着心灵也同样美丽。"
+        },
+        {
+          "translation": "并不是只要考上了名牌大学，将来就能够高枕无忧的。"
+        }
+      ]
+    },
+    "ja_はともかくは_140": {
+      "title": "～はともかく～は (〜wa tomokaku 〜wa)",
+      "shortExplanation": "表示暂且抛开前项不谈，将评价或关注的焦点放在更重要的后项上；“暂且不论……、……先搁置一边”、“……姑且不说，……”。",
+      "longExplanation": "句型“～はともかく～は”（亦作“～はともかくとして”）接在名词或名词化短语之后，表示把前项事项暂时搁置、不予深究或认为其相对次要，而将说话的重心和评价重点放在后项更为突出、确定的要素上（“……先抛开不谈，……倒是……”、“……姑且不论，……”）。通常前项可能存在争议或不足，而后项则是值得肯定、强调或亟待解决的事项。",
+      "formation": "名词1 + はともかく（として） + 名词2 + は",
+      "examples": [
+        {
+          "translation": "设计暂且不论，单论功能的话这款手机是最出色的。"
+        },
+        {
+          "translation": "他的外貌姑且不说，性格是真的非常棒。"
+        },
+        {
+          "translation": "味道先抛开不谈，这道菜的摆盘确实赏心悦目。"
+        },
+        {
+          "translation": "价格先放在一边，这款包的质量确实很好。"
+        }
+      ]
+    },
+    "ja_はまだしも_141": {
+      "title": "～はまだしも (〜wa mada shimo)",
+      "shortExplanation": "表示前项的情况尚可容忍或姑且能够理解，而后项的情况则更加严重、恶劣，完全令人无法接受；“……倒还罢了／还可以原谅，可是……”。",
+      "longExplanation": "句型“～はまだしも”（亦常用“～ならまだしも”）接在名词或名词化分句（普通形＋の）之后，表示对前项做出一定的让步和包容，认为前项虽然也有不足，但还在可以接受或谅解的限度之内；相比之下，后项的事态则性质更为恶劣、程度更为严重，绝对无法容忍或令人大失所望（“……倒也还说得过去，但……简直不能原谅”）。",
+      "formation": "名词 + はまだしも | 动词／形容词普通形 + のはまだしも",
+      "examples": [
+        {
+          "translation": "失败了倒还罢了，连尝试都不做就徒留后悔才更加令人痛苦。"
+        },
+        {
+          "translation": "这款披萨蔬菜少点也就罢了，味道居然也这么难吃。"
+        },
+        {
+          "translation": "偶尔迟到一次尚且可以原谅，但不打任何招呼就迟到是绝对不能容忍的。"
+        },
+        {
+          "translation": "答不上难题倒还情有可原，要是连简单的问题都回答不出来那可真成问题了。"
+        }
+      ]
+    },
+    "ja_はもとより_142": {
+      "title": "～はもとより (〜wa moto yori)",
+      "shortExplanation": "表示前项是不言自明的理所当然之事，而后项同样也是如此；“不用说……，就连……也……”、“……自不必说，……也……”。",
+      "longExplanation": "句型“～はもとより”（比口语中的“～はもちろん”更为郑重、书面化）接在名词之后，表示前项作为一个众所周知的事实或不言而喻的前提是理所应当的，同时进一步追加指出后项的其他方面也同样具备这种特征或表现出色（“……自不待言，……也……”、“不仅……连……也……”）。多用于正式的书面语、演说或公关文书中。",
+      "formation": "名词1 + はもとより（+ 名词2 + も）",
+      "examples": [
+        {
+          "translation": "英语自不必说，我现在还在学习西班牙语。"
+        },
+        {
+          "translation": "烹饪手艺好自不用提，她做起各式点心来也非常在行。"
+        },
+        {
+          "translation": "这家酒店不仅客房干净整洁自不用说，服务质量也是一流的。"
+        },
+        {
+          "translation": "他不仅在音乐方面造诣深厚，绘画水平也非常高超。"
+        }
+      ]
+    },
+    "ja_は抜きにして_143": {
+      "title": "～は抜きにして (〜wa nuki ni shite)",
+      "shortExplanation": "表示去掉、排除或不把某项因素考虑在内，直接探讨或评价核心事物；“抛开……不谈”、“撇开……不说”、“省去……”。",
+      "longExplanation": "句型“～は抜きにして”（亦常用“～を抜きにして”、“～抜きで”）接在名词之后，表示主动排除或不计入通常会涉及的某种要素、惯例或前提，从而专注于对实质问题进行客观看待与评价（“抛开……不谈”、“省去……不说”）。常用于评价某事物的真正价值，或者用于诸如“お世辞は抜きにして（抛开客套话不讲）”、“冗谈は抜きにして（言归正传、别开玩笑了）”等固定搭配中。",
+      "formation": "名词 + は抜きにして／を抜きにして",
+      "examples": [
+        {
+          "translation": "抛开价格不谈，味道确实非常美味。"
+        },
+        {
+          "translation": "撇开他的性格不说，他的真才实学我不得不承认。"
+        },
+        {
+          "translation": "先不提外观设计，这款手机的功能确实十分优越。"
+        },
+        {
+          "translation": "抛开驾驶速度不谈，她是一位既热情又值得信赖的司机。"
+        }
+      ]
+    },
+    "ja_べきではない_144": {
+      "title": "～べきではない (〜beki dewa nai)",
+      "shortExplanation": "基于社会常识、道德伦理或常理规则，表示从道理上讲不应当或不应该做某事；“不应该……”、“不应当……”。",
+      "longExplanation": "句型“～べきではない”接在动词辞书形之后，表示根据普遍的社会公德、常识规范、做人道理或责任义务，认为某一行为在道义或情理上是不可取的、不应当做的（“不应该做……”、“不该……”）。它表达的是一种具有强烈正义感或客观原则性的忠告和判断。（注：“する”既可以用“するべきではない”，也可以用更简练的“すべきではない”）。",
+      "formation": "动词辞书形 + べきではない／べきではありません（注：“する”可变为“するべきではない”或“すべきではない”）",
+      "examples": [
+        {
+          "translation": "如果没有什么正当理由的话，就不应当迟到。"
+        },
+        {
+          "translation": "不应该对小孩子说恶言恶语。"
+        },
+        {
+          "translation": "这种药不应该一次吃得太多。"
+        },
+        {
+          "translation": "不应该向陌生人透露或分享自己的个人信息。"
+        }
+      ]
+    },
+    "ja_まい_145": {
+      "title": "～まい (〜mai)",
+      "shortExplanation": "表示（1）坚决不做的意志（否定意志：“绝不再……”）；或（2）否定性的推测（否定推量：“大概不会……”、“想必不会……”）。",
+      "longExplanation": "句型“～まい”是较为郑重的书面语表达，相当于“～ないだろう”（推测）或“～ないでおこう／～ないつもりだ”（意志）：（1）主语为第一人称时，表示绝不再做某事的坚定决心或誓言（“绝不……”、“决意不再……”）；（2）主语为第三人称或叙述客观事态时，表示对未来的事情进行强烈的否定推断，认为某事大概率不会发生（“想必不会……”、“大概不会……”）。若用于叙述第三人称的意志，通常以“～まいと思っている”等形式出现。",
+      "formation": "一类动词（五段）：辞书形 + まい | 二类动词（一段）：辞书形（或连用形去ます） + まい | 三类动词：する → するまい／すまい，来る → くるまい／こまい",
+      "examples": [
+        {
+          "translation": "今晚他大概是不会来了吧。"
+        },
+        {
+          "translation": "都耽搁延误成这样了，恐怕是赶不上电车了吧。"
+        },
+        {
+          "translation": "那个人必定绝不会忘记的。"
+        },
+        {
+          "translation": "我发誓决不再重犯那样的错误。"
+        }
+      ]
+    },
+    "ja_までて_146": {
+      "title": "～まで～て (〜made 〜te)",
+      "shortExplanation": "表示某项动作或状态持续进行到某一时间、限度或条件为止，随后再进行接下来的动作；“一直……到……，然后……”。",
+      "longExplanation": "结构“～まで～て”通过助词“まで”（表示时间、空间或程度的终点）与动词“て形”的相连，表示将某项行为或动作不间断地持续进行直至到达某个界限点或状态，接着顺承进行下一个动作（“持续做到……为止，然后……”）。常用于按时间先后顺序平实记叙日常生活或工作安排的连续过程。",
+      "formation": "时间／名词／动词辞书形 + まで + 动词て形",
+      "examples": [
+        {
+          "translation": "我一直工作到9点，之后才休息了一会儿。"
+        },
+        {
+          "translation": "我拼命学习一直学到深夜，最终顺利通过了考试。"
+        },
+        {
+          "translation": "我一口气读到最后一页，然后合上了书本。"
+        },
+        {
+          "translation": "我一直等到电车进站，然后与朋友碰了面。"
+        }
+      ]
+    },
+    "ja_ままに_147": {
+      "title": "～ままに (〜mama ni)",
+      "shortExplanation": "表示保持原有的某种状态不变而做另一动作，或者任由事物自然发展、顺从某种意志与冲动行事；“保持着……的样子”、“任凭……”、“随……”。",
+      "longExplanation": "句型“～ままに”（亦常用“～まま”、“～ままで”）具有两种主要语意：（1）保持某种原封不动的既存状态，在此状态下进行后项动作（“……着就……”、“任由……保持原样”）；（2）完全顺应自然的发展、顺从内心的想法或任凭外界的摆布而不做人为改变（“随心所欲地……”、“任由……”，如“思うままに”（随心所想）、“気の向くままに”（随性而为）、“言われるがままに”（任凭他人摆布））。",
+      "formation": "动词た形／ている形 + まま（に） | 一类形容词（い形容词） + まま（に） | 二类形容词（な形容词）词干 + なまま（に） | 名词 + のまま（に）",
+      "examples": [
+        {
+          "translation": "孩子依然熟睡着，我便悄无声息地走出了房间。"
+        },
+        {
+          "translation": "窗户一直开着没有关，屋里变得很冷。"
+        },
+        {
+          "translation": "他在身体依然很硬朗的状态下住进了养老院。"
+        },
+        {
+          "translation": "带着当年的往昔回忆，我重回了这座小镇。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_のももっともだ_133": {
+      "title": "～のももっともだ (〜no mo mottomo da)",
+      "shortExplanation": "어떤 상황이나 이유를 고려할 때 특정 행동, 감정, 결과 등이 아주 당연하거나 지극히 이해할 만함을 나타내며, '~하는 것도 당연하다', '~하는 것도 무리가 아니다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～のももっともだ'(한자로는 尤も)는 보통형에 'の'가 결합된 형태 뒤에 붙어, 전후 맥락이나 상황, 원인을 감안했을 때 주어의 감정, 반응, 행동 또는 해당 사태가 발생하는 것이 지극히 당연하고 합당함을 나타냅니다('~하는 것도 당연하다', '~하는 것도 지당하다'). 화자가 상대방의 행동이나 상태에 깊이 공감하고 수긍할 때 자주 사용됩니다.",
+      "formation": "동사 보통형 + のももっともだ | い형용사 + のももっともだ | な형용사 어간 + なのももっともだ | 명사 + なのももっともだ",
+      "examples": [
+        {
+          "translation": "그가 긴장하는 것도 당연하다."
+        },
+        {
+          "translation": "이 문제가 이렇게 어렵다면 다들 어려워하는 것도 무리가 아니다."
+        },
+        {
+          "translation": "그녀가 그토록 행복해하는 것도 지극히 당연하다."
+        },
+        {
+          "translation": "그가 리더를 맡은 것도 당연하고 납득할 만한 일이다."
+        }
+      ]
+    },
+    "ja_の上では_134": {
+      "title": "〜の上では (〜no ue de wa)",
+      "shortExplanation": "특정 기준, 관점, 법률이나 이론적 근거에 입각하여 판단이나 평가를 내림을 나타내며, '~상으로는', '~의 관점에서는', '~면에서는'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '〜の上では'는 명사 뒤에 붙어, 판단이나 평가의 기준이 되는 특정한 관점, 측면, 이론적 바탕 또는 법률적 근거를 한정하여 나타냅니다('~상으로는', '~면에서는', '~의 관점에서는'). 서류, 법률, 계산, 이론 등 특정 기준에 국한하여 말할 때 주로 쓰이며, 현실적인 실태나 다른 측면에서는 다를 수 있다는 뉘앙스를 내포하기도 합니다.",
+      "formation": "명사 + の上では",
+      "examples": [
+        {
+          "translation": "효율성 면에서는 이 방법이 가장 적합합니다."
+        },
+        {
+          "translation": "법률상으로는 그의 행위가 위법이 아닙니다."
+        },
+        {
+          "translation": "맛의 측면에서 이 식당은 평가가 매우 높습니다."
+        },
+        {
+          "translation": "성적상으로는 그가 반에서 가장 우수합니다."
+        }
+      ]
+    },
+    "ja_の下で_135": {
+      "title": "～の下で (〜no shita de)",
+      "shortExplanation": "누군가의 지도, 관리, 비호, 영향력 아래에 있거나 특정한 환경, 조건, 분위기 속에서 어떤 일이 이루어짐을 나타내며, '~ 아래에서', '~의 지도/보살핌 아래에서'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～の下で'(흔히 'のもとで'로 읽힘)는 주로 명사 뒤에 접속하여, 특정 인물의 지도, 관리, 영향력, 애정 등의 영향권 안에 있거나, 특정한 자연환경, 조건, 긴장된 분위기 속에서 행동이나 상황이 전개됨을 나타냅니다('~ 밑에서', '~의 지도 아래', '~한 조건 속에서').",
+      "formation": "명사 + の下で",
+      "examples": [
+        {
+          "translation": "선생님의 지도 아래에서 공부하는 것은 매우 즐겁습니다."
+        },
+        {
+          "translation": "맑고 푸른 하늘 아래에서 소풍을 즐깁시다."
+        },
+        {
+          "translation": "긴장감이 감도는 분위기 속에서 그녀는 훌륭하게 연설을 마쳤습니다."
+        },
+        {
+          "translation": "부모님의 따뜻한 사랑 아래에서 아이들은 행복하게 자랍니다."
+        }
+      ]
+    },
+    "ja_ばかりかも_136": {
+      "title": "～ばかりか〜も (〜bakari ka 〜 mo)",
+      "shortExplanation": "'뿐만 아니라 ~도'의 의미로, 앞의 사실에 그치지 않고 그 이상의 다른 사실이나 상황까지 더해짐을 강조하며, '~뿐만 아니라 ~도', '~은 물론이고 ~까지도'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ばかりか〜も'는 보통형에 접속하여 앞서 언급한 조건이나 사실에 그치지 않고, 그보다 정도가 더하거나 예상 밖의 사실이 뒤따라 덧붙여짐을 나타내는 점층 표현입니다('~뿐만 아니라 ~도', '~에 그치지 않고 ~까지도'). 후건에는 보통 'も', 'まで', 'さえ' 등의 조사가 함께 호응하여 쓰입니다.",
+      "formation": "동사 보통형 + ばかりか... も | い형용사 + ばかりか... も | な형용사 어간 + な／である + ばかりか... も | 명사(+ である) + ばかりか... も",
+      "examples": [
+        {
+          "translation": "그는 귀여울 뿐만 아니라 똑똑하기까지 하다."
+        },
+        {
+          "translation": "이 레스토랑은 맛이 좋을 뿐만 아니라 서비스도 훌륭합니다."
+        },
+        {
+          "translation": "그녀는 일본어를 잘할 뿐만 아니라 영어도 할 줄 안다."
+        },
+        {
+          "translation": "그는 노래를 잘 부를 뿐만 아니라 춤도 잘 춘다."
+        }
+      ]
+    },
+    "ja_ばかりだ_137": {
+      "title": "～ばかりだ (〜bakari da)",
+      "shortExplanation": "동사 て형이나 명사 뒤에 붙어, 어떤 행동을 끊임없이 반복하거나 부정적이고 마음에 들지 않는 일만 일어남을 나타내며, '온통 ~뿐이다', '계속 ~만 하고 있다', '늘 ~하기만 하다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ばかりだ'는 주로 동사의 て형이나 명사 뒤에 접속하여, 다른 일은 하지 않고 특정한 한 가지 행동만을 되풀이하거나 어떠한 상태·사건만이 반복되어 나타나는 모습을 나타냅니다('줄곧 ~만 하다', '온통 ~뿐이다'). 대개 불만, 비판, 지루함, 자책 등 부정적인 뉘앙스를 담아 표현할 때 자주 쓰입니다. (참고: 동사 사전형과 결합할 때는 부정적인 방향으로 사태가 계속 악화되어 감을 나타내는 '~일 뿐이다/갈수록 ~하기만 하다'라는 뜻이 됩니다.)",
+      "formation": "동사 て형 + ばかりだ / ばかりいる | 명사 + ばかりだ",
+      "examples": [
+        {
+          "translation": "그는 온종일 불평불만만 늘어놓고 있다."
+        },
+        {
+          "translation": "이 영화는 재미가 없어서 지루하기 짝이 없었다."
+        },
+        {
+          "translation": "그녀는 아무것도 하지 않고 줄곧 한가하게 빈둥거리기만 한다."
+        },
+        {
+          "translation": "최근 들어 직장에서 온통 실패의 연속뿐이다."
+        }
+      ]
+    },
+    "ja_ばかりに_138": {
+      "title": "～ばかりに (〜bakari ni)",
+      "shortExplanation": "단지 그 원인 하나 때문에 뜻하지 않은 나쁜 결과나 유감스러운 사태를 초래했음을 나타내며, '단지 ~하는 바람에', '~한 탓에', '~했다는 이유만으로'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ばかりに'는 보통형(명사·な형용사는 'な/である' 연결)에 접속하여, 단지 그 하나의 사소한 원인이나 이유 때문에 예상 밖의 부정적이고 안타까운 결과를 낳았음을 나타냅니다('오직 ~했다는 이유만으로', '~한 탓에'). 후건에는 반드시 화자에게 바람직하지 않은 나쁜 결과가 오며, 화자의 강한 후회, 아쉬움, 원망 등의 감정이 짙게 배어 있습니다.",
+      "formation": "동사 보통형(주로 과거형 た) + ばかりに | い형용사 + ばかりに | な형용사 어간 + な／である + ばかりに | 명사 + な／である + ばかりに",
+      "examples": [
+        {
+          "translation": "단지 비가 내렸다는 이유로 시합이 취소되었습니다."
+        },
+        {
+          "translation": "그가 늦게 온 탓에 우리까지 덩달아 지각하고 말았다."
+        },
+        {
+          "translation": "물건을 깜빡 두고 온 탓에 다시 사러 돌아가야만 한다."
+        },
+        {
+          "translation": "그녀가 미인이라는 이유만으로 모두가 그녀를 시기하고 있다."
+        }
+      ]
+    },
+    "ja_ばというものでもない_139": {
+      "title": "～ば～というものでもない (〜ba 〜to iu mono demo nai)",
+      "shortExplanation": "전건의 조건이 충족된다고 해서 반드시 후건의 결과로 이어지는 것은 아님을 나타내며, '반드시 ~한다고 해서 ~인 것은 아니다', '~하기만 하면 다 되는 것은 아니다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ば～というものでもない'(또는 '～たら～というものでもない')는 어떤 조건이 성립한다고 해서 그것이 필연적으로 좋은 결과나 특정 사태로 직결되는 것은 아니라는 점을 지적할 때 쓰이는 부분 부정 표현입니다('단지 ~한다고 해서 꼭 ~인 것은 아니다', '~면 다 해결되는 것은 아니다'). 사물을 지나치게 단순화하거나 절대시하는 견해를 바로잡을 때 효과적으로 사용됩니다.",
+      "formation": "동사 가정형(ば형) + というものでもない | い형용사(ければ) + というものでもない | な형용사/명사(なら) + というものでもない",
+      "examples": [
+        {
+          "translation": "비싼 것이 반드시 다 좋은 물건인 것만은 아니다."
+        },
+        {
+          "translation": "영어를 잘한다고 해서 반드시 성공하는 것은 아니다."
+        },
+        {
+          "translation": "겉모습이 아름답다고 해서 마음씨까지 아름다운 것은 아니다."
+        },
+        {
+          "translation": "유명 대학에 들어간다고 해서 미래가 보장되는 것은 아니다."
+        }
+      ]
+    },
+    "ja_はともかくは_140": {
+      "title": "～はともかく～は (〜wa tomokaku 〜wa)",
+      "shortExplanation": "앞의 사항은 일단 제쳐두고 논외로 하되, 뒤의 사항을 우선시하여 강조할 때 쓰이며, '~은/는 어찌 되었든 ~은/는', '~은/는 제쳐두고라도 ~은/는'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～はともかく～は'(또는 '～はともかくとして')는 명사 뒤에 접속하여, 앞의 문제나 요소는 일단 보류하거나 논의 대상에서 제외하고, 그보다 더 중요하거나 확실한 뒤의 요소를 부각시켜 말할 때 사용됩니다('~은 어쨌든 간에 ~은', '~은 접어두고라도 ~은'). 전건에 대해서는 문제 삼지 않거나 미흡함을 인정하면서, 후건의 뛰어난 점이나 핵심을 강조하는 뉘앙스를 지닙니다.",
+      "formation": "명사1 + はともかく(として) + 명사2 + は",
+      "examples": [
+        {
+          "translation": "디자인은 어찌 되었든 간에, 기능 면에서는 이 휴대전화가 최고입니다."
+        },
+        {
+          "translation": "그의 외모는 제쳐두고라도 성격만큼은 정말 훌륭합니다."
+        },
+        {
+          "translation": "요리 맛은 차치하고라도 담음새는 참 깔끔하고 예쁩니다."
+        },
+        {
+          "translation": "가격은 일단 접어두고라도 이 가방의 품질은 매우 좋습니다."
+        }
+      ]
+    },
+    "ja_はまだしも_141": {
+      "title": "～はまだしも (〜wa mada shimo)",
+      "shortExplanation": "앞의 것은 그나마 너그럽게 봐줄 수 있거나 견딜 만하지만, 뒤의 것은 정도가 더 심하여 도저히 용납하거나 받아들일 수 없음을 나타내며, '~라면 그나마 낫지만', '~은 봐줄 수 있어도 ~은 도저히 안 된다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～はまだしも'(또는 '～ならまだしも')는 명사나 명사화 표현(보통형＋の) 뒤에 붙어, 앞의 상황은 부족하거나 불만족스럽더라도 어느 정도 참거나 이해해 줄 여지가 있지만, 뒤의 상황은 그 허용 한도를 훌쩍 넘어 도저히 묵과할 수 없음을 나타냅니다('~라면 그나마 괜찮겠지만, ~은 도저히 용납할 수 없다'). 후건에 대한 강한 비판, 불만, 분노의 뉘앙스를 담고 있습니다.",
+      "formation": "명사 + はまだしも | 동사/형용사 보통형 + のはまだしも",
+      "examples": [
+        {
+          "translation": "실패하는 것은 그나마 괜찮지만, 시도조차 하지 않고 후회하는 편이 훨씬 괴롭다."
+        },
+        {
+          "translation": "이 피자는 채소가 적은 것까지는 봐줄 만한데, 맛까지 형편없다."
+        },
+        {
+          "translation": "가끔 지각하는 것은 그나마 이해할 수 있어도, 아무런 연락도 없이 지각하는 것은 용납할 수 없다."
+        },
+        {
+          "translation": "어려운 질문에 대답하지 못하는 것은 그럴 수 있다 쳐도, 쉬운 질문에도 답하지 못하는 것은 큰 문제다."
+        }
+      ]
+    },
+    "ja_はもとより_142": {
+      "title": "～はもとより (〜wa moto yori)",
+      "shortExplanation": "앞의 것은 말할 것도 없이 당연하고, 뒤의 것 또한 그러함을 나타내며, '~은 물론이고 ~도', '~은 두말할 나위 없이 ~도'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～はもとより'는 명사 뒤에 접속하여, 앞의 사항은 굳이 언급할 필요도 없이 지극히 당연한 기본 전제이며, 거기에 더해 뒤에 오는 다른 요소 역시 마찬가지임을 나타내는 격식 있는 문어체 표현입니다('~은 물론이거니와 ~도', '~은 기본이고 ~까지도'). 일상 대화에서 쓰이는 '~はもちろん'보다 한층 더 정중하고 격식 있는 어조를 띱니다.",
+      "formation": "명사1 + はもとより (+ 명사2 + 도/も)",
+      "examples": [
+        {
+          "translation": "영어는 물론이고 스페인어도 공부하고 있습니다."
+        },
+        {
+          "translation": "요리는 두말할 나위 없고, 그녀는 과자 만들기 솜씨도 뛰어납니다."
+        },
+        {
+          "translation": "이 호텔은 객실의 청결함은 물론이고 서비스 또한 훌륭합니다."
+        },
+        {
+          "translation": "그는 음악은 말할 것도 없고 그림도 아주 잘 그립니다."
+        }
+      ]
+    },
+    "ja_は抜きにして_143": {
+      "title": "～は抜きにして (〜wa nuki ni shite)",
+      "shortExplanation": "통상적으로 포함되거나 고려해야 할 요소를 제외하거나 빼놓고 본질적인 부분만을 다룸을 나타내며, '~은 빼놓고', '~은 제쳐 두고', '~은 제외하고'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～は抜きにして'(또는 '～を抜きにして', '～抜きで')는 명사 뒤에 붙어, 평소 늘 따라붙거나 고려 대상이 되는 특정 요소, 관례, 조건 등을 과감히 제외하고 본론이나 실질적인 가치에 집중하려 할 때 쓰입니다('~은 빼고 이야기하자면', '~은 차치하고'). 또한 'お世辞は抜きにして(빈말은 빼놓고/접어두고)', '冗談は抜きにして(농담은 그만하고/진지하게 말해서)'와 같은 관용적 표현으로도 매우 자주 쓰입니다.",
+      "formation": "명사 + は抜きにして / を抜きにして",
+      "examples": [
+        {
+          "translation": "가격은 빼놓고 생각하면 맛은 정말 좋습니다."
+        },
+        {
+          "translation": "그의 성격은 제쳐 두고라도, 그의 뛰어난 실력만큼은 인정하지 않을 수 없다."
+        },
+        {
+          "translation": "디자인은 제외하고 본다면 이 휴대전화의 기능은 매우 뛰어납니다."
+        },
+        {
+          "translation": "운전 속도는 논외로 하더라도, 그녀는 친절하고 믿음직한 운전사입니다."
+        }
+      ]
+    },
+    "ja_べきではない_144": {
+      "title": "～べきではない (〜beki dewa nai)",
+      "shortExplanation": "사회적 상식, 도덕 규범, 도리에 비추어 보았을 때 어떤 행동을 해서는 안 됨을 나타내며, '~해서는 안 된다', '~하지 말아야 한다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～べきではない'는 동사 사전형에 결합하여, 도덕적 의무, 사회 통념, 상식적인 도리상 어떠한 행위를 하는 것이 올바르지 않으며 삼가야 함을 강하게 나타내는 표현입니다('~해서는 안 된다', '~하지 않는 것이 마땅하다'). 화자의 단순한 개인적 명령이 아니라, 보편적인 원칙이나 도리에 기반한 충고나 주장을 나타냅니다. (참고: 'する'는 'するべきではない' 또는 'すべきではない' 두 형태로 모두 사용됩니다.)",
+      "formation": "동사 기본형(사전형) + べきではない / べきではありません (참고: する는 するべきではない 또는 すべきではない)",
+      "examples": [
+        {
+          "translation": "늦을 만한 합당한 이유가 없다면 지각해서는 안 됩니다."
+        },
+        {
+          "translation": "아이들에게 험담이나 나쁜 말을 해서는 안 됩니다."
+        },
+        {
+          "translation": "이 약을 한꺼번에 너무 많이 복용해서는 안 된다."
+        },
+        {
+          "translation": "모르는 사람과 개인 정보를 공유해서는 안 된다."
+        }
+      ]
+    },
+    "ja_まい_145": {
+      "title": "～まい (〜mai)",
+      "shortExplanation": "(1) 결코 하지 않겠다는 강한 결심(부정 의지: '결코 ~하지 않겠다')이나, (2) 어떤 일이 일어나지 않을 것이라는 추측(부정 추측: '아마 ~하지 않을 것이다')을 나타냅니다.",
+      "longExplanation": "문법 패턴 '～まい'는 문어적이고 격식 있는 부정 표현으로, 두 가지 용법으로 쓰입니다: (1) 1인칭 주어와 함께 쓰여 '절대로 다시는 하지 않겠다'는 단호한 다짐과 부정적 의지를 나타냅니다('다시는 ~하지 않으리라'). (2) 3인칭 주어나 객관적 사태와 함께 쓰여 '아마 ~하지 않을 것이다'라는 부정적 추측을 나타냅니다('~하지 않을 테지'). 3인칭의 의지를 나타낼 때는 보통 '~まいと思っている(~하지 않으려고 생각하고 있다)'의 형태로 사용합니다.",
+      "formation": "1그룹 동사(5단): 사전형 + まい | 2그룹 동사(1단): 사전형(또는 ます형 어간) + まい | 3그룹 동사: する → するまい / すまい, くる → くるまい / こまい",
+      "examples": [
+        {
+          "translation": "그는 오늘 밤 오지 않을 것이다."
+        },
+        {
+          "translation": "이렇게 늦어져서야 전철 시간에 맞추지 못할 것이다."
+        },
+        {
+          "translation": "그 사람은 결코 잊지 않을 것이다."
+        },
+        {
+          "translation": "나는 두 번 다시 그 실수를 되풀이하지 않겠다."
+        }
+      ]
+    },
+    "ja_までて_146": {
+      "title": "～まで～て (〜made 〜te)",
+      "shortExplanation": "어떤 동작이나 상태를 특정한 시점, 범위, 조건에 이를 때까지 계속한 뒤 다음 행동으로 이어짐을 나타내며, '~까지 ...하고 나서', '~까지 줄곧 ...하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～まで～て'는 시점, 한도, 도달점을 나타내는 조사 'まで'와 연속 동작을 이어주는 동사의 'て형'이 결합하여, 어떠한 행위나 노력을 특정한 한계점이나 시간까지 중단 없이 지속한 후 그 다음 단계의 행동을 취함을 나타냅니다('~까지 줄곧 일/공부하고 나서...'). 일상생활의 시간적 흐름이나 순차적인 일의 진행 과정을 묘사할 때 자연스럽게 사용됩니다.",
+      "formation": "시간 / 명사 / 동사 사전형 + まで + 동사 て형",
+      "examples": [
+        {
+          "translation": "9시까지 일하고 나서 그 후에 휴식을 취했습니다."
+        },
+        {
+          "translation": "밤늦게까지 열심히 공부해서 시험에 합격했습니다."
+        },
+        {
+          "translation": "마지막 페이지까지 다 읽고 나서 책을 덮었습니다."
+        },
+        {
+          "translation": "전철이 도착할 때까지 기다렸다가 친구를 만났습니다."
+        }
+      ]
+    },
+    "ja_ままに_147": {
+      "title": "～ままに (〜mama ni)",
+      "shortExplanation": "어떤 상태를 원래 그대로 둔 채 다른 행동을 하거나, 생각·기분·흐름에 맡겨 자연스럽게 행함을 나타내며, '~한 채로', '~대로', '~에 맡겨'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ままに'(또는 '～まま', '～ままで')는 크게 두 가지 의미로 사용됩니다: (1) 어떤 상태나 조건에 인위적인 변화를 주지 않고 본래의 상태를 고스란히 유지한 채 다른 동작을 행함을 나타냅니다('~한 채로', '~인 상태 그대로'). (2) 마음, 감정, 사물의 자연스러운 흐름이나 타인의 처분에 일절 거스르지 않고 순리에 맡겨 행동함을 나타냅니다('~하는 대로', '~에 이끌려', 예: '思うままに(마음 내키는 대로)', '気の向くままに(발길 닿는 대로)', '言われるがままに(시키는 대로)').",
+      "formation": "동사 た형 / ている형 + まま(に) | い형용사 + まま(に) | な형용사 어간 + なまま(に) | 명사 + のまま(に)",
+      "examples": [
+        {
+          "translation": "아이가 잠들어 있는 채로 조용히 방을 나왔습니다."
+        },
+        {
+          "translation": "창문이 열려 있는 채로 있어서 방이 쌀쌀해졌습니다."
+        },
+        {
+          "translation": "그는 여전히 건강한 상태 그대로 양로원에 입소했습니다."
+        },
+        {
+          "translation": "옛 추억을 고스란히 간직한 채 이 마을로 돌아왔습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_のももっともだ_133": {
+      "title": "～のももっともだ (〜no mo mottomo da)",
+      "shortExplanation": "ある状況や理由を考慮すれば、その行動や感情、結果などが極めて当然であり、十分に理解できることを表し、「〜のも当然だ」「〜のも無理はない」という意味を表します。",
+      "longExplanation": "「～のももっともだ」（漢字では「尤も」）は、普通形＋「の」に接続し、その場の事情や背景となる理由から考えて、そうした感情を抱いたり行動を取ったり、あるいはその結果になることが極めて妥当で道理にかなっていることを表す文型です。「〜するのも当たり前だ」「〜なのも無理はない」と話し手が深く納得し、同調や共感を示す際に用いられます。",
+      "formation": "動詞普通形 ＋ のももっともだ | い形容詞 ＋ のももっともだ | な形容詞語幹 ＋ なのももっともだ | 名詞 ＋ なのももっともだ",
+      "examples": [
+        {
+          "translation": "彼が緊張するのももっともだ。"
+        },
+        {
+          "translation": "この問題が難しいのももっともだ。"
+        },
+        {
+          "translation": "彼女が幸せなのももっともだ。"
+        },
+        {
+          "translation": "彼がリーダーなのももっともだ。"
+        }
+      ]
+    },
+    "ja_の上では_134": {
+      "title": "〜の上では (〜no ue de wa)",
+      "shortExplanation": "特定の観点や基準、理論、法律などの根拠に基づいて判断や評価を下すことを表し、「〜の点では」「〜の立場・基準から見れば」という意味を表します。",
+      "longExplanation": "「〜の上では」は、名詞に接続し、議論や判断、評価の対象を特定の側面・観点・理論的根拠に限定して述べる表現です（「〜の観点からは」「〜の基準では」）。法律、書類、理論、計算上などの前提・基準を明示する際によく用いられ、「理論や形式上はそうであるが、実際の現実とは異なる場合もある」という対比の含みを持つこともあります。",
+      "formation": "名詞 ＋ の上では",
+      "examples": [
+        {
+          "translation": "効率の上では、この方法が最適です。"
+        },
+        {
+          "translation": "法律の上では、彼の行為は違法ではありません。"
+        },
+        {
+          "translation": "味の上では、このレストランは評価が高いです。"
+        },
+        {
+          "translation": "成績の上では、彼はクラスで一番優秀です。"
+        }
+      ]
+    },
+    "ja_の下で_135": {
+      "title": "～の下で (〜no shita de)",
+      "shortExplanation": "ある人の指導、庇護、影響、支配などのもとで、または特定の自然条件や状況・雰囲気のもとで物事が行われることを表し、「〜の指導・影響を受けて」「〜という条件や環境の中で」という意味を表します。",
+      "longExplanation": "「～の下で」（多くは「〜のもとで」と読まれます）は、主に名詞に接続し、影響力や権威を持つ人物の指導・管理・庇護・愛情などの恩恵や支配を受けながら物事が行われること、あるいは特定の環境条件や雰囲気の中で行動がなされることを表します（「〜の管理・指導のもとで」「〜という状況下で」）。",
+      "formation": "名詞 ＋ の下で",
+      "examples": [
+        {
+          "translation": "先生の下で勉強するのはとても楽しいです。"
+        },
+        {
+          "translation": "晴天の下でピクニックをしましょう。"
+        },
+        {
+          "translation": "緊張感の下で、彼女はスピーチに成功しました。"
+        },
+        {
+          "translation": "親の愛情の下で、子供たちは幸せに育ちます。"
+        }
+      ]
+    },
+    "ja_ばかりかも_136": {
+      "title": "～ばかりか〜も (〜bakari ka 〜 mo)",
+      "shortExplanation": "「〜だけでなく、その上〜も」という意味で、前述の事柄にとどまらず、さらに別の事柄やそれ以上の程度が加わることを強調して表します。",
+      "longExplanation": "「～ばかりか〜も」は、各品詞の普通形に接続し、「それだけでも十分な程度・状態であるのに、さらにそれにとどまらず別の要素まで加わる」という累加・添加のニュアンスを表す文型です（「〜だけでなく〜も」「〜のみならず〜さえ」）。後続の文節には助詞「も」のほか、「まで」や「さえ」などが呼応して用いられることが多く、予想以上であるという驚きや感嘆、呆れなどの気持ちが含まれます。",
+      "formation": "動詞普通形 ＋ ばかりか…も | い形容詞 ＋ ばかりか…も | な形容詞語幹 ＋ な／である ＋ ばかりか…も | 名詞（＋ である） ＋ ばかりか…も",
+      "examples": [
+        {
+          "translation": "彼はかわいいばかりか、賢くもある。"
+        },
+        {
+          "translation": "このレストランは味が良いばかりかサービスも素晴らしいです。"
+        },
+        {
+          "translation": "彼女は日本語が上手ばかりか英語も話せる。"
+        },
+        {
+          "translation": "彼は歌が上手いばかりかダンスもうまい。"
+        }
+      ]
+    },
+    "ja_ばかりだ_137": {
+      "title": "～ばかりだ (〜bakari da)",
+      "shortExplanation": "動詞のて形や名詞に接続し、ある好ましくない行為を絶え間なく繰り返したり、特定の状態ばかりが続いていることを表し、「いつも〜ばかりしている」「〜ばかりである」という意味を表します。",
+      "longExplanation": "「～ばかりだ」は、動詞のて形や名詞に接続することで、他のことをせず特定の好ましくない行動ばかりを何度も繰り返すことや、同じような不満・否定的な出来事・状態ばかりが占めている様子を表します（「〜してばかりいる」「〜だらけだ」）。話し手の不満、非難、呆れ、自嘲などのマイナスの気持ちを込めて使われることが多いです。（※なお、動詞辞書形に接続する場合は「悪い方向に変化が進む一方だ」という意味を表します）。",
+      "formation": "動詞て形 ＋ ばかりだ／ばかりいる | 名詞 ＋ ばかりだ",
+      "examples": [
+        {
+          "translation": "彼は文句を言ってばかりだ。"
+        },
+        {
+          "translation": "この映画は面白くなくて、退屈してばかりだ。"
+        },
+        {
+          "translation": "彼女は暇でいるばかりだ。"
+        },
+        {
+          "translation": "最近、仕事の失敗ばかりだ。"
+        }
+      ]
+    },
+    "ja_ばかりに_138": {
+      "title": "～ばかりに (〜bakari ni)",
+      "shortExplanation": "そのことだけが原因となって、思わぬ悪い結果や不本意で残念な事態を招いてしまったことを表し、「〜したことだけが原因で」「〜したばっかりに」という意味を表します。",
+      "longExplanation": "「～ばかりに」は、各品詞の普通形（な形容詞・名詞は「な／である」）に接続し、「ただそのことだけが直接の引き金となって、思いがけない好ましくない結果や大きな不利益を招いてしまった」という強い後悔、無念さ、恨みなどの気持ちを表す表現です。後続文には必ず望ましくない事態が述べられ、話し手の「〜さえしなければこんなことにはならなかったのに」というニュアンスが強く含まれます。",
+      "formation": "動詞普通形（主にた形） ＋ ばかりに | い形容詞 ＋ ばかりに | な形容詞語幹 ＋ な／である ＋ ばかりに | 名詞 ＋ な／である ＋ ばかりに",
+      "examples": [
+        {
+          "translation": "雨が降ったばかりに、試合が中止になりました。"
+        },
+        {
+          "translation": "彼が遅れたばかりに、私たちも遅刻しました。"
+        },
+        {
+          "translation": "忘れ物をしたばかりに、買い物に戻らなければなりません。"
+        },
+        {
+          "translation": "彼女が美人なばかりに、みんなが彼女を羨んでいます。"
+        }
+      ]
+    },
+    "ja_ばというものでもない_139": {
+      "title": "～ば～というものでもない (〜ba 〜to iu mono demo nai)",
+      "shortExplanation": "前の条件が満たされたからといって、必ずしも後ろの結果になるわけではないという部分否定を表し、「〜すればそれでいいというわけではない」「必ずしも〜とは限らない」という意味を表します。",
+      "longExplanation": "「～ば～というものでもない」（または「〜たら〜というものでもない」）は、ある条件を満たせば当然望ましい結果が得られると考えがちな一般的な見方に対して、「実際には必ずしもそうとは言い切れない」「それだけでは不十分である」と反論・釘を刺す際に用いる文型です。物事を一面だけで判断することへの戒めや、現実はそう単純ではないというニュアンスを含みます。",
+      "formation": "動詞ば形 ＋ というものでもない | い形容詞（ければ） ＋ というものでもない | な形容詞・名詞（なら） ＋ というものでもない",
+      "examples": [
+        {
+          "translation": "高いものがいいものばかりではない。"
+        },
+        {
+          "translation": "英語ができれば、成功するというものでもない。"
+        },
+        {
+          "translation": "見た目が美しいからといって、心も美しいというものでもない。"
+        },
+        {
+          "translation": "有名大学に入れば、将来が安泰だというものでもない。"
+        }
+      ]
+    },
+    "ja_はともかくは_140": {
+      "title": "～はともかく～は (〜wa tomokaku 〜wa)",
+      "shortExplanation": "前述の事柄は今は問題にせずひとまず横に置いておき、後ろのより重要な事柄に焦点を当てて述べる表現で、「〜はさておき、〜は」「〜は別として、〜は」という意味を表します。",
+      "longExplanation": "「～はともかく～は」（または「〜はともかくとして」）は、名詞に接続し、「前の要素については評価や議論をひとまず保留するが、後ろの要素についてははっきりと主張・強調したい」という場合に使われる文型です。前項には多少の難点や議論の余地がある事柄が置かれ、後項には確実に評価できる点や優先すべき重要な事柄が対比的に述べられます。",
+      "formation": "名詞1 ＋ はともかく（として） ＋ 名詞2 ＋ は",
+      "examples": [
+        {
+          "translation": "デザインはともかく、機能はこの携帯電話が一番です。"
+        },
+        {
+          "translation": "彼の容姿はともかく、性格は素晴らしいです。"
+        },
+        {
+          "translation": "料理の味はともかく、盛り付けは綺麗です。"
+        },
+        {
+          "translation": "値段はともかく、このバッグの質は良いです。"
+        }
+      ]
+    },
+    "ja_はまだしも_141": {
+      "title": "～はまだしも (〜wa mada shimo)",
+      "shortExplanation": "前者の状況ならまだ我慢できたり許容できたりするが、後者の状況は度を越していて到底許せない・受け入れられないことを表し、「〜ならまだいいが」「〜ならまだ許せるが、〜は到底だめだ」という意味を表します。",
+      "longExplanation": "「～はまだしも」（または「〜ならまだしも」）は、名詞や形式名詞「の」を伴う節に接続し、前の事態については「決して良くはないが、まだ許容の余地がある／我慢できる」と譲歩を示しつつ、それに対して後ろの事態は一層悪質・深刻であり「到底許容できない」「話にならない」と強い不満や批判を述べる文型です。",
+      "formation": "名詞 ＋ はまだしも | 動詞・形容詞普通形 ＋ のはまだしも",
+      "examples": [
+        {
+          "translation": "失敗するのはまだしも、やらないで後悔する方がつらい。"
+        },
+        {
+          "translation": "このピザは野菜が少ないのはまだしも、味も悪い。"
+        },
+        {
+          "translation": "たまに遅刻するのはまだしも、連絡もせずに遅刻するのは許せない。"
+        },
+        {
+          "translation": "難しい質問に答えられないのはまだしも、簡単な質問にも答えられないのは問題だ。"
+        }
+      ]
+    },
+    "ja_はもとより_142": {
+      "title": "～はもとより (〜wa moto yori)",
+      "shortExplanation": "前述の事柄は言うまでもなく当然のことであり、その上さらに別の事柄も同様であることを表し、「〜はもちろんのこと、〜も」「〜は言うに及ばず〜も」という意味を表します。",
+      "longExplanation": "「～はもとより」は、名詞に接続し、「前の事柄はわざわざ言うまでもなく当然の前提であるが、それに加えてさらに後ろの事柄も当てはまる」という累加を表す、改まった書き言葉の文型です。日常会話でよく使われる「〜はもちろん」に比べて硬く格式ばった響きを持ち、公式な挨拶文やスピーチ、論文などでよく用いられます。",
+      "formation": "名詞1 ＋ はもとより（＋ 名詞2 ＋ も）",
+      "examples": [
+        {
+          "translation": "英語はもとより、スペイン語も勉強しています。"
+        },
+        {
+          "translation": "彼女は料理はもとより、お菓子作りも得意です。"
+        },
+        {
+          "translation": "このホテルは部屋の清潔さはもとより、サービスも素晴らしいです。"
+        },
+        {
+          "translation": "彼は音楽はもとより、絵も上手です。"
+        }
+      ]
+    },
+    "ja_は抜きにして_143": {
+      "title": "～は抜きにして (〜wa nuki ni shite)",
+      "shortExplanation": "通常なら含まれるはずの要素や条件を取り除き、それを除外して物事を考えたり評価したりすることを表し、「〜を除いて」「〜は横に置いて」という意味を表します。",
+      "longExplanation": "「～は抜きにして」（または「〜を抜きにして」「〜抜きで」）は、名詞に接続し、本来あるべきものや通常考慮される事柄をあえて除外・省略して、本質的な部分を客観的に評価・議論したいときに用いる文型です（「〜を考慮に入れずに」「〜なしで」）。日常会話やビジネスでも「お世辞は抜きにして（お世辞抜きで）」「冗談は抜きにして」といった慣用的な言い回しとして非常によく使われます。",
+      "formation": "名詞 ＋ は抜きにして／を抜きにして",
+      "examples": [
+        {
+          "translation": "値段は抜きにして、味は美味しい。"
+        },
+        {
+          "translation": "彼の性格は抜きにして、彼の実力は認めざるを得ない。"
+        },
+        {
+          "translation": "デザインは抜きにして、この携帯電話の機能は優れています。"
+        },
+        {
+          "translation": "運転の速さは抜きにして、彼女は親切で信頼できる運転手だ。"
+        }
+      ]
+    },
+    "ja_べきではない_144": {
+      "title": "～べきではない (〜beki dewa nai)",
+      "shortExplanation": "社会的な常識や道徳、良識、義務などに照らして「そうするべきではない」「してはならない」と判断・忠告する表現で、「〜しないのが当然だ」「〜してはならない」という意味を表します。",
+      "longExplanation": "「～べきではない」は、動詞の辞書形に接続し、人間としての道徳心や社会通念、一般的な常識・ルールに照らし合わせて、「その行為をすることは間違っている」「道理として絶対にしてはならない」と強く主張したり忠告したりする文型です。個人の単なる希望や一時的な感情ではなく、客観的な正しさ・道理に基づいた判断を表します（※「する」は「するべきではない」のほかに「すべきではない」の形も非常によく使われます）。",
+      "formation": "動詞辞書形 ＋ べきではない／べきではありません（※「する」は「するべきではない」または「すべきではない」）",
+      "examples": [
+        {
+          "translation": "遅れる理由がないなら、遅れるべきではありません。"
+        },
+        {
+          "translation": "子供に悪口を言うべきではありません。"
+        },
+        {
+          "translation": "この薬は一度に飲みすぎるべきではない。"
+        },
+        {
+          "translation": "知らない人と個人情報を共有するべきではない。"
+        }
+      ]
+    },
+    "ja_まい_145": {
+      "title": "～まい (〜mai)",
+      "shortExplanation": "（1）二度と〜しないという強い決意（否定の意志：「決して〜しない」）や、（2）おそらく〜ないだろうという推量を表します（否定の推量：「〜ないだろう」）。",
+      "longExplanation": "「～まい」は、改まった文体や書き言葉で用いられる否定表現で、文脈や主語によって2つの意味を持ちます。（1）主語が一人称（話し手）の場合は、「もう二度と〜するまい」という固い決意や不作為の誓いを表します（否定の意志）。（2）主語が三人称や客観的な事態の場合は、「おそらく〜しないだろう」「〜のはずがない」という強い推量を表します（否定の推量）。なお、三人称の意志を表す場合には「〜まいと思っているようだ」などの形式をとるのが一般的です。",
+      "formation": "Ⅰグループ（五段動詞）：辞書形 ＋ まい | Ⅱグループ（一段動詞）：辞書形（またはます形語幹） ＋ まい | Ⅲグループ：する → するまい／すまい、来る → くるまい／こまい",
+      "examples": [
+        {
+          "translation": "彼は今晩来るまい。"
+        },
+        {
+          "translation": "こんなに遅れては、電車に間に合うまい。"
+        },
+        {
+          "translation": "あの人は絶対に忘れるまい。"
+        },
+        {
+          "translation": "私は二度とその失敗を繰り返すまい。"
+        }
+      ]
+    },
+    "ja_までて_146": {
+      "title": "～まで～て (〜made 〜te)",
+      "shortExplanation": "ある時間や限度、条件に至るまで動作や状態を継続して行い、その上で次の動作へ移行することを表し、「〜の時点・段階まで…して、それから〜」という意味を表します。",
+      "longExplanation": "「～まで～て」は、限界や到達点を表す助詞「まで」と動作の接続を表す「動詞て形」を組み合わせた表現で、ある特定の時刻・限界・状態に達するまで一つの行為を継続して行い、その後で次の行動に移る一連の経過を順序立てて説明する際に用いられます（「〜まで…し続けて、それから〜」）。日常の行動記録や出来事の推移を客観的に叙述する際によく現れます。",
+      "formation": "時間／名詞／動詞辞書形 ＋ まで ＋ 動詞て形",
+      "examples": [
+        {
+          "translation": "9時まで働いて、その後休憩しました。"
+        },
+        {
+          "translation": "夜まで勉強して、試験に合格しました。"
+        },
+        {
+          "translation": "最後のページまで読んで、本を閉じました。"
+        },
+        {
+          "translation": "電車が着くまで待って、友達と会いました。"
+        }
+      ]
+    },
+    "ja_ままに_147": {
+      "title": "～ままに (〜mama ni)",
+      "shortExplanation": "ある状態を変化させずそのままの状態で別の動作を行ったり、感情や自然の成り行きに任せて行動することを表し、「〜の状態のままで」「〜の通りに、〜に任せて」という意味を表します。",
+      "longExplanation": "「～ままに」（または「〜まま」「〜ままで」）は、名詞や動詞・形容詞に接続し、主に2つのニュアンスを持ちます。（1）既存の状態に手を加えず、そのままの状態を維持しながら別の動作を行うことを表します（「〜た状態のままで」）。（2）自分の感情や欲求、あるいは自然の推移や他人のなすがままに任せて行動することを表します（「気の向くままに」「思うままに」「言われるがままに」など、作為を加えず流れに身を任せるニュアンス）。",
+      "formation": "動詞た形／ている形 ＋ まま（に） | い形容詞 ＋ まま（に） | な形容詞語幹 ＋ なまま（に） | 名詞 ＋ のまま（に）",
+      "examples": [
+        {
+          "translation": "子供が寝ているままに、静かに部屋を出ました。"
+        },
+        {
+          "translation": "窓が開いたままで、寒くなりました。"
+        },
+        {
+          "translation": "彼は元気なままで老人ホームに入りました。"
+        },
+        {
+          "translation": "昔の思い出のままに、この町に戻りました。"
+        }
+      ]
+    }
+  }
+}

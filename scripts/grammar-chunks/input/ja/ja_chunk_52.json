@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_ごとく_182",
+    "language": "ja",
+    "pattern": "～ごとく",
+    "title": "～ごとく (〜gotoku)",
+    "shortExplanation": "To seem like; as if; as though.",
+    "longExplanation": "The ～ごとく grammar point is used to express similarity or resemblance. It is quite formal/literary, meaning 'as if,' 'as though,' or 'like.' It can be used with verbs and nouns.",
+    "formation": "Verb-て + ごとく / Noun + の + ごとく",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は鳥のごとく飛んでいるように見えた。",
+        "romanization": "Kare wa tori no gotoku tonde iru you ni mieta.",
+        "translation": "He looked as though he was flying like a bird."
+      },
+      {
+        "sentence": "彼は死んだごとく眠っていた。",
+        "romanization": "Kare wa shinda gotoku nemutte ita.",
+        "translation": "He was sleeping as though he were dead."
+      },
+      {
+        "sentence": "彼女はアイドルのごとく崇められている。",
+        "romanization": "Kanojo wa aidoru no gotoku agamerarete iru.",
+        "translation": "She is revered as if she were an idol."
+      },
+      {
+        "sentence": "彼は風のごとく走った。",
+        "romanization": "Kare wa kaze no gotoku hashitta.",
+        "translation": "He ran like the wind."
+      }
+    ]
+  },
+  {
+    "id": "ja_こととて_183",
+    "language": "ja",
+    "pattern": "～こととて",
+    "title": "～こととて (〜koto tote)",
+    "shortExplanation": "Used to express the reason or premise for a decision or judgment; 'since', 'because'.",
+    "longExplanation": "The ～こととて grammar point expresses a reason or premise in a slightly formal or literary way. It can often be interpreted as 'since' or 'because'.",
+    "formation": "Verb (plain form) + こととて / Noun + の + こととて / (な-Adjective + な) + こととて",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は裁判に勝つために全資産を使うこととて、弁護士に頼んだ。",
+        "romanization": "Kare wa saiban ni katsu tame ni zenshisan o tsukau koto tote, bengoshi ni tanonda.",
+        "translation": "Since he's using all his assets to win the trial, he hired a lawyer."
+      },
+      {
+        "sentence": "明日は大切な試験があることとて、今夜は早く寝ます。",
+        "romanization": "Ashita wa taisetsu na shiken ga aru koto tote, konya wa hayaku nemasu.",
+        "translation": "Since I have an important exam tomorrow, I’m going to bed early tonight."
+      },
+      {
+        "sentence": "このプロジェクトの成功は会社の未来に影響することとて、全力を尽くします。",
+        "romanization": "Kono purojekuto no seikou wa kaisha no mirai ni eikyou suru koto tote, zenryoku o tsukushimasu.",
+        "translation": "Because the success of this project will affect the company's future, I will do my best."
+      },
+      {
+        "sentence": "彼が有名人であることとて、プライバシーが保護されるべきだ。",
+        "romanization": "Kare ga yuumeijin de aru koto tote, puraibashii ga hogo sareru beki da.",
+        "translation": "Since he is a celebrity, his privacy should be protected."
+      }
+    ]
+  },
+  {
+    "id": "ja_ずにすんだ_184",
+    "language": "ja",
+    "pattern": "～ずにすんだ",
+    "title": "～ずにすんだ (〜zuni sunda)",
+    "shortExplanation": "Expresses the idea of 'was able to do without'; 'managed to avoid'.",
+    "longExplanation": "The ～ずにすんだ grammar point indicates that one was able to avoid doing something or managed to get by without doing it. It translates as 'managed to avoid ~' or 'got by without ~.'",
+    "formation": "Verb-ず form + に + すんだ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は事故を起こさずにすんだ。",
+        "romanization": "Kare wa jiko o okosazu ni sunda.",
+        "translation": "He managed to avoid having an accident."
+      },
+      {
+        "sentence": "私は手術せずにすんだ。",
+        "romanization": "Watashi wa shujutsu sezu ni sunda.",
+        "translation": "I was able to do without surgery."
+      },
+      {
+        "sentence": "雨が降らずにすんだ。",
+        "romanization": "Ame ga furazu ni sunda.",
+        "translation": "We managed to avoid the rain."
+      },
+      {
+        "sentence": "罰金を払わずにすんだ。",
+        "romanization": "Bakkin o harawazu ni sunda.",
+        "translation": "I managed to avoid paying a fine."
+      }
+    ]
+  },
+  {
+    "id": "ja_だろうとなかろうと_185",
+    "language": "ja",
+    "pattern": "～だろうとなかろうと",
+    "title": "～だろうとなかろうと (〜darou to nakarou to)",
+    "shortExplanation": "Expresses 'regardless of whether it is or isn't'.",
+    "longExplanation": "The ～だろうとなかろうと grammar point is used to express the idea of 'regardless of whether it is or isn't.' It translates roughly as 'whether it is ~ or not' in English. This construction emphasizes that the speaker’s stance or action does not change, regardless of the two possible conditions.",
+    "formation": "Noun / i-Adjective / na-Adjective / Verb + だろうとなかろうと",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "試験が難しいだろうとなかろうと、全力で頑張ります。",
+        "romanization": "Shiken ga muzukashii darou to nakarou to, zenryoku de ganbarimasu.",
+        "translation": "Regardless of whether the exam is difficult or not, I will do my best."
+      },
+      {
+        "sentence": "彼が来るだろうとなかろうと、私たちは始めます。",
+        "romanization": "Kare ga kuru darou to nakarou to, watashitachi wa hajimemasu.",
+        "translation": "Whether he comes or not, we will start."
+      },
+      {
+        "sentence": "この仕事が面白いだろうとなかろうと、私は続けます。",
+        "romanization": "Kono shigoto ga omoshiroi darou to nakarou to, watashi wa tsuzukemasu.",
+        "translation": "Whether this job is interesting or not, I will continue."
+      },
+      {
+        "sentence": "彼が賛成するだろうとなかろうと、私たちは進行します。",
+        "romanization": "Kare ga sansei suru darou to nakarou to, watashitachi wa shinkou shimasu.",
+        "translation": "Whether he agrees or not, we will proceed."
+      }
+    ]
+  },
+  {
+    "id": "ja_つもりだ_186",
+    "language": "ja",
+    "pattern": "～つもりだ",
+    "title": "～つもりだ (〜tsumori da)",
+    "shortExplanation": "Expresses the speaker's intention or plan.",
+    "longExplanation": "The ～つもりだ grammar point is used to express the speaker's intention or plan to do something. It translates as 'intend to,' 'plan to,' or 'think that (I will).' It's often used with the verb in its dictionary form.",
+    "formation": "Verb-dictionary form + つもりだ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "明日は早く起きるつもりです。",
+        "romanization": "Ashita wa hayaku okiru tsumori desu.",
+        "translation": "I plan to wake up early tomorrow."
+      },
+      {
+        "sentence": "私は日本語を勉強するつもりです。",
+        "romanization": "Watashi wa nihongo o benkyou suru tsumori desu.",
+        "translation": "I intend to study Japanese."
+      },
+      {
+        "sentence": "彼は留学するつもりだと言った。",
+        "romanization": "Kare wa ryuugaku suru tsumori da to itta.",
+        "translation": "He said he plans to study abroad."
+      },
+      {
+        "sentence": "私は来週末に家族と旅行するつもりだ。",
+        "romanization": "Watashi wa raishuumatsu ni kazoku to ryokou suru tsumori da.",
+        "translation": "I plan to travel with my family next weekend."
+      }
+    ]
+  },
+  {
+    "id": "ja_つもりで_187",
+    "language": "ja",
+    "pattern": "～つもりで",
+    "title": "～つもりで (〜tsumori de)",
+    "shortExplanation": "Expresses the speaker's intention or plan; 'with the intention of', 'planning to'.",
+    "longExplanation": "The ～つもりで grammar point is used to express the speaker's intention or mindset when doing something. It can often be translated as 'with the intention of' or 'with the mindset that.'",
+    "formation": "Verb-dictionary form + つもりで",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "私は日本に住むつもりで日本語を勉強しています。",
+        "romanization": "Watashi wa Nihon ni sumu tsumori de Nihongo o benkyou shiteimasu.",
+        "translation": "I am studying Japanese with the intention of living in Japan."
+      },
+      {
+        "sentence": "彼は全てを失うつもりでギャンブルをしました。",
+        "romanization": "Kare wa subete o ushinau tsumori de gyanburu o shimashita.",
+        "translation": "He gambled with the intention of risking everything."
+      },
+      {
+        "sentence": "明日のテストに合格するつもりで一生懸命勉強します。",
+        "romanization": "Ashita no tesuto ni goukaku suru tsumori de isshoukenmei benkyou shimasu.",
+        "translation": "I will study hard with the intention of passing tomorrow’s test."
+      },
+      {
+        "sentence": "彼は早く起きるつもりで早く寝ました。",
+        "romanization": "Kare wa hayaku okiru tsumori de hayaku nemashita.",
+        "translation": "He went to bed early with the intention of waking up early."
+      }
+    ]
+  },
+  {
+    "id": "ja_ではすまない_188",
+    "language": "ja",
+    "pattern": "～ではすまない",
+    "title": "～ではすまない (〜dewa sumanai)",
+    "shortExplanation": "Expresses that just doing something is not enough or will not suffice.",
+    "longExplanation": "The grammar point ～ではすまない is used when the speaker strongly feels that an action or situation alone is not sufficient or acceptable, implying that more serious measures are needed or that the consequences are more severe.",
+    "formation": "Verb-dictionary form + ではすまない / い-Adjective + ではすまない / な-Adjective + ではすまない / Noun + ではすまない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "ただ謝るではすまない。何か行動を取らなければならない。",
+        "romanization": "Tada ayamaru dewa sumanai. Nanika koudou o toranakereba naranai.",
+        "translation": "Just apologizing will not suffice. Some action needs to be taken."
+      },
+      {
+        "sentence": "この問題は議論だけではすまない。具体的な計画が必要だ。",
+        "romanization": "Kono mondai wa giron dake dewa sumanai. Gutaiteki na keikaku ga hitsuyou da.",
+        "translation": "This problem won't be solved with just discussions. A concrete plan is needed."
+      },
+      {
+        "sentence": "彼の失敗は注意だけではすまない。彼はその責任を取るべきだ。",
+        "romanization": "Kare no shippai wa chuui dake dewa sumanai. Kare wa sono sekinin o toru beki da.",
+        "translation": "His failure won't be resolved with just a warning. He should take responsibility."
+      },
+      {
+        "sentence": "この失敗は金だけではすまない。信頼を取り戻すため、真心で謝罪するべきだ。",
+        "romanization": "Kono shippai wa kane dake dewa sumanai. Shinrai o torimodosu tame, magokoro de shazai suru beki da.",
+        "translation": "This mistake cannot be settled with money alone. To regain trust, an earnest apology is needed."
+      }
+    ]
+  },
+  {
+    "id": "ja_とあって_189",
+    "language": "ja",
+    "pattern": "～とあって",
+    "title": "～とあって (〜to atte)",
+    "shortExplanation": "Expresses a special situation or event due to certain circumstances.",
+    "longExplanation": "The ～とあって grammar point is used to indicate that, due to a special or noteworthy circumstance, a particular situation has occurred. It often translates as 'because (it is)...' or 'given that...' in English, emphasizing the uniqueness of the cause.",
+    "formation": "Noun + とあって / (Sometimes Verb + とあって, depending on context)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "春休みとあって、公園は子供たちでいっぱいだ。",
+        "romanization": "Haruyasumi to atte, kouen wa kodomo-tachi de ippai da.",
+        "translation": "Because it's spring break, the park is full of children."
+      },
+      {
+        "sentence": "試験前とあって、図書館は学生で混んでいる。",
+        "romanization": "Shiken mae to atte, toshokan wa gakusei de konde iru.",
+        "translation": "With exams coming up, the library is crowded with students."
+      },
+      {
+        "sentence": "開店日とあって、その店にはたくさんの人が並んでいた。",
+        "romanization": "Kaitenbi to atte, sono mise ni wa takusan no hito ga narande ita.",
+        "translation": "Because it was the store's opening day, a lot of people lined up."
+      },
+      {
+        "sentence": "彼の誕生日とあって、友人たちはサプライズパーティーを計画した。",
+        "romanization": "Kare no tanjoubi to atte, yuujin-tachi wa sapuraizu paatii o keikaku shita.",
+        "translation": "Because it was his birthday, his friends planned a surprise party."
+      }
+    ]
+  },
+  {
+    "id": "ja_とあれば_190",
+    "language": "ja",
+    "pattern": "～とあれば",
+    "title": "～とあれば (〜to areba)",
+    "shortExplanation": "Expresses a condition; 'if', 'when', 'since'.",
+    "longExplanation": "The ～とあれば grammar point is used to express a condition or premise in which a certain outcome or action naturally follows. It can be translated as 'if,' 'when,' or 'since,' depending on context. It emphasizes that under this specific condition, a certain response is expected.",
+    "formation": "Verb-casual + とあれば / い-Adjective + とあれば / な-Adjective + だとあれば / Noun + だとあれば",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "無料とあれば、誰でも利用したいと思います。",
+        "romanization": "Muryou to areba, dare demo riyou shitai to omoimasu.",
+        "translation": "If it's free, anyone would want to use it."
+      },
+      {
+        "sentence": "この曲が流れるとあれば、彼は必ず踊り始めます。",
+        "romanization": "Kono kyoku ga nagareru to areba, kare wa kanarazu odorihajimemasu.",
+        "translation": "If this song starts playing, he will definitely begin to dance."
+      },
+      {
+        "sentence": "明日が休日だとあれば、今夜は遅くまで起きていられます。",
+        "romanization": "Ashita ga kyuujitsu da to areba, konya wa osoku made okite iraremasu.",
+        "translation": "If tomorrow is a holiday, I can stay up late tonight."
+      },
+      {
+        "sentence": "彼が参加するとあれば、このイベントは成功でしょう。",
+        "romanization": "Kare ga sanka suru to areba, kono ibento wa seikou deshou.",
+        "translation": "If he participates, this event will surely be successful."
+      }
+    ]
+  },
+  {
+    "id": "ja_といえども_191",
+    "language": "ja",
+    "pattern": "～といえども",
+    "title": "～といえども (〜to iedomo)",
+    "shortExplanation": "Even if it is said that; Even though; Although.",
+    "longExplanation": "The ～といえども grammar point is used to show a contrast or contradiction. It is similar to 'even though' or 'although' in English. It can be used with nouns, verbs, adjectives, etc., to emphasize that the reality is different from the assumption or label.",
+    "formation": "Noun + といえども / Verb-plain form + といえども / Adjective + といえども",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼が天才といえども、ミスをすることはあります。",
+        "romanization": "Kare ga tensai to iedomo, misu o suru koto wa arimasu.",
+        "translation": "Even though he’s a genius, he still makes mistakes."
+      },
+      {
+        "sentence": "このパソコンが新しいといえども、問題があります。",
+        "romanization": "Kono pasokon ga atarashii to iedomo, mondai ga arimasu.",
+        "translation": "Even though this computer is new, it has problems."
+      },
+      {
+        "sentence": "春といえども、まだ寒い日があります。",
+        "romanization": "Haru to iedomo, mada samui hi ga arimasu.",
+        "translation": "Even though it's spring, there are still cold days."
+      },
+      {
+        "sentence": "彼女が一番好きな人といえども、嫌なことは嫌です。",
+        "romanization": "Kanojo ga ichiban suki na hito to iedomo, iya na koto wa iya desu.",
+        "translation": "Even though she’s my favorite person, unpleasant things are still unpleasant."
+      }
+    ]
+  },
+  {
+    "id": "ja_といったらありはしない_192",
+    "language": "ja",
+    "pattern": "～といったらありはしない",
+    "title": "～といったらありはしない (〜to ittara ari wa shinai)",
+    "shortExplanation": "Express extreme exclamation; 'extremely', 'unbelievable', 'unsurpassed'.",
+    "longExplanation": "The ～といったらありはしない grammar point is used to express an extreme degree of something, often surprise or admiration. It can be loosely translated as 'unbelievably...' or 'incredibly...'.",
+    "formation": "Noun + といったらありはしない / な-Adjective + といったらありはしない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の英語の上手さといったらありはしない。",
+        "romanization": "Kare no eigo no jouzusa to ittara ari wa shinai.",
+        "translation": "His English is unbelievably good."
+      },
+      {
+        "sentence": "このスイーツの美味しさといったらありはしない。",
+        "romanization": "Kono suiitsu no oishisa to ittara ari wa shinai.",
+        "translation": "These sweets are unbelievably delicious."
+      },
+      {
+        "sentence": "その子の頭の良さといったらありはしない。",
+        "romanization": "Sono ko no atama no yosa to ittara ari wa shinai.",
+        "translation": "That kid's intelligence is unsurpassed."
+      },
+      {
+        "sentence": "彼女の美しさといったらありはしない。",
+        "romanization": "Kanojo no utsukushisa to ittara ari wa shinai.",
+        "translation": "Her beauty is beyond belief."
+      }
+    ]
+  },
+  {
+    "id": "ja_といったらありゃしない_193",
+    "language": "ja",
+    "pattern": "～といったらありゃしない",
+    "title": "～といったらありゃしない (〜to ittara arya shinai)",
+    "shortExplanation": "Emphasizes that something is to the extreme; 'you have no idea how...', 'it's incredibly...'.",
+    "longExplanation": "The ～といったらありゃしない grammar point is an idiomatic expression used to emphasize that something is extremely or incredibly a certain way—often beyond words. It can be loosely rendered as 'you wouldn't believe how...' or 'it's indescribably...'.",
+    "formation": "Verb-casual + といったらありゃしない / い-Adjective + といったらありゃしない / な-Adjective + だ + といったらありゃしない / Noun + だ + といったらありゃしない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "その店のラーメンは美味しいといったらありゃしない。",
+        "romanization": "Sono mise no ramen wa oishii to ittara arya shinai.",
+        "translation": "You have no idea how delicious the ramen at that shop is."
+      },
+      {
+        "sentence": "彼女の料理の腕前は上手だといったらありゃしない。",
+        "romanization": "Kanojo no ryouri no udemae wa jouzu da to ittara arya shinai.",
+        "translation": "You have no idea how skilled she is at cooking."
+      },
+      {
+        "sentence": "この冬の寒さは厳しいといったらありゃしない。",
+        "romanization": "Kono fuyu no samusa wa kibishii to ittara arya shinai.",
+        "translation": "You have no idea how harsh this winter's cold is."
+      },
+      {
+        "sentence": "その小説は面白いといったらありゃしない。",
+        "romanization": "Sono shousetsu wa omoshiroi to ittara arya shinai.",
+        "translation": "You have no idea how interesting that novel is."
+      }
+    ]
+  },
+  {
+    "id": "ja_といったらない_194",
+    "language": "ja",
+    "pattern": "～といったらない",
+    "title": "～といったらない (〜to ittara nai)",
+    "shortExplanation": "Expresses the extreme of something; 'nothing can be more ... than this'.",
+    "longExplanation": "The ～といったらない grammar point is used to emphasize the high degree or intensity of an action or state. It can be translated as “nothing can be more ... than this” or “it’s extremely...”. It conveys that something is so intense or extreme that it cannot be adequately described.",
+    "formation": "い-Adjective + といったらない / な-Adjective + だといったらない / Noun + だといったらない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "今日は寒いといったらない。",
+        "romanization": "Kyou wa samui to ittara nai.",
+        "translation": "It’s extremely cold today."
+      },
+      {
+        "sentence": "彼女の料理の美味しさといったらない。",
+        "romanization": "Kanojo no ryouri no oishisa to ittara nai.",
+        "translation": "Nothing can be more delicious than her cooking."
+      },
+      {
+        "sentence": "この子の頭の良さだといったらない。",
+        "romanization": "Kono ko no atama no yosa da to ittara nai.",
+        "translation": "This child is unbelievably smart."
+      },
+      {
+        "sentence": "彼の怠けっぷりだといったらない。",
+        "romanization": "Kare no namakeppuri da to ittara nai.",
+        "translation": "Nobody could be lazier than him."
+      }
+    ]
+  },
+  {
+    "id": "ja_ときている_195",
+    "language": "ja",
+    "pattern": "～ときている",
+    "title": "～ときている (〜to kite iru)",
+    "shortExplanation": "Highlights a situation or condition that is serious/extreme, often with a negative nuance.",
+    "longExplanation": "The grammar point ～ときている is used to emphasize that some circumstance is particularly notable—often negatively. It implies, “Given that things are so ~, it’s no wonder that...” or “Because the situation is (too) ~, such-and-such follows.” It is relatively informal and more common in spoken language.",
+    "formation": "Verb-casual / い-Adjective / な-Adjective（＋だ） / Noun（＋だ） + ときている",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "仕事が忙しいときているので、なかなか休みが取れません。",
+        "romanization": "Shigoto ga isogashii to kite iru no de, nakanaka yasumi ga toremasen.",
+        "translation": "Because work is so busy, I just can’t take any time off."
+      },
+      {
+        "sentence": "経済が悪いときているだけに、会社が大量解雇を発表した。",
+        "romanization": "Keizai ga warui to kite iru dake ni, kaisha ga tairyou kaiko o happyou shita.",
+        "translation": "Since the economy is in such bad shape, the company announced mass layoffs."
+      },
+      {
+        "sentence": "旅行先で荷物を盗まれたときているから、旅行を楽しむどころではない。",
+        "romanization": "Ryokousaki de nimotsu o nusumareta to kite iru kara, ryokou o tanoshimu dokoro de wa nai.",
+        "translation": "Given that my luggage was stolen while traveling, there’s no way I can enjoy the trip."
+      },
+      {
+        "sentence": "試験が近いときているうえに、課題も山ほどあって大変だ。",
+        "romanization": "Shiken ga chikai to kite iru ue ni, kadai mo yamahodo atte taihen da.",
+        "translation": "Not only are exams coming up, but I also have a mountain of assignments, so it’s really tough."
+      }
+    ]
+  },
+  {
+    "id": "ja_ところを_196",
+    "language": "ja",
+    "pattern": "～ところを",
+    "title": "～ところを (〜tokoro wo)",
+    "shortExplanation": "Indicates a contrasting or inconvenient timing; 'just when...', 'even though...'.",
+    "longExplanation": "The grammar point ～ところを is often used when something happens (or one acts) at a certain moment/condition that makes the timing inconvenient or contrary to what is expected. It can imply “in spite of the fact that...” or “just when...” depending on context.",
+    "formation": "Verb-ている + ところを / Noun + の + ところを / い-Adjective + ところを / な-Adjective + な + ところを",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "ちょうど映画を見ているところを、停電で真っ暗になった。",
+        "romanization": "Choudo eiga o mite iru tokoro o, teiden de makkura ni natta.",
+        "translation": "Just when I was in the middle of watching a movie, the power went out and everything went dark."
+      },
+      {
+        "sentence": "美味しく食べているところを、彼が全部横取りしてしまった。",
+        "romanization": "Oishiku tabete iru tokoro o, kare ga zenbu yokodori shite shimatta.",
+        "translation": "Right when I was enjoying my meal, he took it all away."
+      },
+      {
+        "sentence": "飛行機が離陸しようとしているところを、急にエンジンが止まった。",
+        "romanization": "Hikouki ga ririku shiyou to shite iru tokoro o, kyuu ni enjin ga tomatta.",
+        "translation": "Just as the plane was about to take off, the engine suddenly stopped."
+      },
+      {
+        "sentence": "彼女が怒っているところを、私は冗談を言ってしまった。",
+        "romanization": "Kanojo ga okotte iru tokoro o, watashi wa joudan o itte shimatta.",
+        "translation": "Even though she was angry, I went ahead and made a joke."
+      }
+    ]
+  }
+]

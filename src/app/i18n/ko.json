@@ -27,7 +27,8 @@
         "placeholder": "YouTube URL 또는 동영상 ID 붙여넣기...",
         "invalid": "유효한 YouTube URL을 입력하세요",
         "cancel": "취소",
-        "load": "로드"
+        "load": "로드",
+        "paste": "붙여넣기"
     },
     "header": {
         "words": "단어",
@@ -60,6 +61,7 @@
         "closeVideo": "동영상 닫기",
         "resume": "이어보기",
         "normal": "보통",
+        "off": "끄기",
         "hint": "YouTube URL을 붙여넣어 학습을 시작하세요. 자막을 자동으로 가져옵니다."
     },
     "subtitle": {
@@ -96,6 +98,7 @@
         "video": "동영상",
         "cost": "비용",
         "yourBalance": "보유 다이아몬드",
+        "securityCheck": "사용자 확인",
         "generate": "생성하기",
         "languageMismatch": "학습 언어와 다름",
         "languageMismatchMessage": "{{requested}} 자막이 없습니다. 대신 {{detected}}를 사용합니다.",
@@ -135,7 +138,11 @@
         "nativeCaptionsFree": "일반 영상은 무료인가요?",
         "nativeCaptionsFreeDesc": "네! 기존 유튜브 자막이 있는 동영상은 100% 무료이며 AI 크레딧을 전혀 사용하지 않습니다.",
         "allCreditsAvailable": "모든 크레딧 사용 가능",
-        "depletedNotice": "AI 크레딧 3개를 모두 사용했습니다. 유튜브 자막이 있는 일반 영상은 언제나 무료입니다!"
+        "depletedNotice": "AI 크레딧 3개를 모두 사용했습니다. 유튜브 자막이 있는 일반 영상은 언제나 무료입니다!",
+        "translationFailed": "번역에 실패했습니다. 다시 시도해 주세요.",
+        "readingHint": "글자 위에 발음 가이드 표시",
+        "grammarHint": "문법 구조 및 패턴 강조",
+        "dualSubsHint": "보조 번역 자막 표시"
     },
     "vocab": {
         "title": "단어장",
@@ -175,7 +182,11 @@
         "saved": "저장됨",
         "saveWord": "단어 저장",
         "close": "닫기",
-        "translateTo": "번역 대상"
+        "translateTo": "번역 대상",
+        "translateAll": "모든 정의 번역",
+        "all": "모두",
+        "failed": "실패",
+        "retry": "다시 시도"
     },
     "grammar": {
         "mode": "문법",
@@ -299,7 +310,10 @@
         "onStreak": "{{count}}일 연속 학습 중입니다!",
         "howItWorks": "작동 방식",
         "howToExtend": "연속 기록을 연장하려면 매일 연습하세요. 프리즈 없이 하루를 거르면 기록이 0으로 초기화됩니다.",
-        "freezeExplanation": "스트릭 프리즈는 연습을 잊은 날 자동으로 기록을 보호합니다. {{count}}개의 프리즈가 남았습니다."
+        "freezeExplanation": "스트릭 프리즈는 연습을 잊은 날 자동으로 기록을 보호합니다. {{count}}개의 프리즈가 남았습니다.",
+        "reached": "도달했습니다",
+        "days": "일!",
+        "saved": "연속 학습 보호됨! ❄️"
     },
     "history": {
         "title": "기록",
@@ -398,7 +412,9 @@
         "nowPlaying": "현재 재생 중",
         "continueStudying": "학습 계속하기",
         "resume": "이어보기",
-        "browseByLanguage": "언어별 탐색"
+        "browseByLanguage": "언어별 탐색",
+        "loopOn": "반복 재생 켜짐",
+        "shuffleOn": "셔플 켜짐"
     },
     "common": {
         "loading": "로딩 중...",
@@ -407,7 +423,9 @@
         "off": "끄기",
         "back": "뒤로",
         "undo": "실행 취소",
-        "retry": "다시 시도"
+        "retry": "다시 시도",
+        "close": "닫기",
+        "clear": "지우기"
     },
     "onboarding": {
         "welcomeTitle": "Voca에 오신 것을 환영합니다",

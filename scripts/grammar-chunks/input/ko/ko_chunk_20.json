@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_에_88",
+    "language": "ko",
+    "pattern": "~에",
+    "title": "~에 따르다 [e ddareuda] (To be attributed to, according to)",
+    "shortExplanation": "Used to express cause, reason, criteria or standards; 'according to', 'in accordance with', 'dependent on'.",
+    "longExplanation": "'~에 따르다 [e ddareuda]' is a compound verb commonly used in Korean to indicate that something happens or changes due to or as per some reason, rules, condition, or standard. It's like saying 'according to', 'in accordance with', or 'dependent on' in English. It's used to describe a circumstance that varies or is defined based on certain criteria or standards.",
+    "formation": "Noun + 에 따르다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "날씨에 따라서 옷을 입는 스타일이 바뀌기 마련이에요, 매우 추운 날에는 멋보다 따뜻함이 우선이죠.",
+        "romanization": "Nalssie ttaraseo oseul ibneun seutairi bakwigi maranieyo, maeu chuun nal-eneun meotboda ttatteumhami useonijyo.",
+        "translation": "It's natural that the style of clothing changes according to the weather. On very cold days, warmth takes precedence over style."
+      },
+      {
+        "sentence": "음식의 맛은 재료에 따라 전혀 다를 수 있어요, 신선한 재료를 사용하면 맛있는 음식을 만들 수 있지요.",
+        "romanization": "Eumsigui maseun jaeryoe ttaraseo jeonhyeo dareul su isseoyo, sinseonhan jaeryoreul sayonghamyeon masinneun eumsigeul mandeul su issjiyo.",
+        "translation": "The taste of food can be completely different depending on the ingredients. You can make delicious food by using fresh ingredients."
+      },
+      {
+        "sentence": "교통상황에 따라서 도착 시간이 달라질 수 있어요, 교통이 막히면 늦게 도착하게 될 수 있죠.",
+        "romanization": "Gyotongsanghwange ttaraseo dochak sigani dallajil su isseoyo, gyotongi makimyeon neudge dochakhage doel su itjyo.",
+        "translation": "The arrival time can change depending on the traffic conditions. If the traffic is congested, you could arrive late."
+      },
+      {
+        "sentence": "실력에 따라 결과가 달라지는 거예요, 열심히 공부하면 좋은 결과를 얻을 수 있어요.",
+        "romanization": "Sillyeoge ttara gyeolgwaga dallajineun geoyeyo, yeolsimhi gongbuhamyeon joheun gyeolgwareul eodeul su isseoyo.",
+        "translation": "The result varies depending on your ability. Studying hard can yield good results."
+      }
+    ]
+  },
+  {
+    "id": "ko_에_89",
+    "language": "ko",
+    "pattern": "~에",
+    "title": "~에 비해 [e bihae] (Compared to)",
+    "shortExplanation": "Used to compare or contrast something in respect to another.",
+    "longExplanation": "'~에 비해 [e bihae]' is a postposition in Korean used to indicate comparison or contrast between two subjects or objects, similar to 'compared to' in English. Its use emphasizes the different characteristics or states of things based on a certain standard or reference.",
+    "formation": "Subject1 + ~에 비해 + Subject2 + Verb",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "서울에 비해 부산은 날씨가 좋아서 여름에 가기 좋아요.",
+        "romanization": "Seoure bihae Busaneun nalssiga joaseo yeoreume gagi joayo.",
+        "translation": "Compared to Seoul, the weather in Busan is better, so it's good to go there in the summer."
+      },
+      {
+        "sentence": "저는 채소에 비해 과일을 더 많이 먹어요, 과일이 더 달아서 좋아요.",
+        "romanization": "Jeoneun chaesoe bihae gwaireul deo manhi meogeoyo, gwairi deo dalaseo joayo.",
+        "translation": "I eat more fruit compared to vegetables because fruit is sweeter, and I like that."
+      },
+      {
+        "sentence": "지난 학기 성적에 비해 이번 학기 성적은 훨씬 향상되었어요.",
+        "romanization": "Jinan hakgi seongjeoge bihae ibeon hakgi seongjeogeun hwolssin hyangsangdwaesseoyo.",
+        "translation": "Compared to last semester's grades, this semester's grades have improved a lot."
+      },
+      {
+        "sentence": "커피에 비해 차는 카페인이 덜하니 밤에 마실 수 있어요.",
+        "romanization": "Keopie bihae chaneun kapeini deolhani bame masil su isseoyo.",
+        "translation": "Compared to coffee, tea has less caffeine, so you can drink it at night."
+      }
+    ]
+  },
+  {
+    "id": "ko_에게_90",
+    "language": "ko",
+    "pattern": "~에게",
+    "title": "~에게 [ege] (To someone, for someone)",
+    "shortExplanation": "Used to indicate the target or recipient of an action.",
+    "longExplanation": "'~에게 [ege]' is a particle in Korean grammar that is used to indicate the target or recipient of an action. It is attached to the end of a noun/pronoun and translates to 'to' or 'for' in English. It's frequently used when giving, sending, or saying something to someone.",
+    "formation": "Noun + 에게",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 어제 친구에게 이 메시지를 보냈어요, 그런데 아직 답장이 없어요.",
+        "romanization": "Jeoneun eoje chinguege i mesijireul bonaesseoyo, geureonde ajik dapjangi eobseoyo.",
+        "translation": "I sent this message to my friend yesterday, but there's no reply yet."
+      },
+      {
+        "sentence": "선생님은 학생들에게 과제를 많이 주셨어요, 다 완료하기 위해선 시간이 많이 필요할 것 같아요.",
+        "romanization": "Seonsaengnimeun haksaengdeurege gwajeleul mani jusyeosseoyo, da wallyo hagi wihaeseon sigani manhi pil-yohal geot gatayo.",
+        "translation": "The teacher gave a lot of assignments to the students. I think it will take a lot of time to finish them all."
+      },
+      {
+        "sentence": "어머니께서는 아기에게 이야기를 들려주고 계셔요.",
+        "romanization": "Eomeonigeseoneun agiege iyagireul deullyeojugo gyesyeoyo.",
+        "translation": "The mother is telling a story to her baby."
+      },
+      {
+        "sentence": "저는 동생에게 선물을 줬어요, 그는 새로운 책을 받으며 아주 행복해 보였어요.",
+        "romanization": "Jeoneun dongsaengege seonmureul jwasseoyo, geuneun saeroun chaegeul badeumyeo aju haengbokhae boyeosseoyo.",
+        "translation": "I gave a gift to my younger sibling. He looked very happy receiving a new book."
+      }
+    ]
+  },
+  {
+    "id": "ko_에서_91",
+    "language": "ko",
+    "pattern": "~에서",
+    "title": "~에서 [eseo] (At, in)",
+    "shortExplanation": "'에서 [eseo]' is used to indicate location or origin where an action takes place.",
+    "longExplanation": "'에서 [eseo]' is a particle often used in Korean to specify the place of origin or the space in which an action unfolds. It can sometimes be translated as 'at', 'in', or 'from' in English. The noun before '에서' is the reference point, and the verb that follows indicates an action taking place in or from that location.",
+    "formation": "Noun + 에서",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 서울에서 태어났어요. 서울은 제가 처음 숨을 쉬어 본 곳이에요.",
+        "romanization": "Jeoneun Seoureseo taeeonasseoyo. Seoureun jega cheoeum sumeul swieo bon gos-ieyo.",
+        "translation": "I was born in Seoul. Seoul is the first place I ever breathed."
+      },
+      {
+        "sentence": "학교에서 공부하는 것이 저에게 가장 중요해요. 그래서 항상 열심히 하는 편이에요.",
+        "romanization": "Hakgyoeseo gongbuhaneun geosi jeo-ege gajang jungyohaeyo. Geuraeseo hangsang yeolsimhi haneun pyeon-ieyo.",
+        "translation": "Studying at school is the most important thing for me. That's why I'm always diligent."
+      },
+      {
+        "sentence": "공항에서 비행기를 타고 도쿄로 갔어요. 도쿄는 저에게는 생소한 곳이지만 참 재미있었어요.",
+        "romanization": "Gonghangeseo bihaenggireul tago Dokyoro gasseoyo. Dokyoneun jeoege-neun saengsohan gos-ijiman cham jaemiisseosseoyo.",
+        "translation": "I took a plane from the airport to Tokyo. Tokyo was unfamiliar to me, but it was really fun."
+      },
+      {
+        "sentence": "커피숍에서 음악을 들으며 공부를 해요. 그러면 즐겁게 공부할 수 있어요.",
+        "romanization": "Keopisyopeseo eumageul deuleumyeo gongbureul haeyo. Geureomyeon jeulgeopge gongbuhal su isseoyo.",
+        "translation": "I study while listening to music in a coffee shop. That way, I can study happily."
+      }
+    ]
+  },
+  {
+    "id": "ko_에서부터_92",
+    "language": "ko",
+    "pattern": "~에서부터",
+    "title": "~에서부터 ~까지 [eseobuteo ~ kkaji] (From ~ to)",
+    "shortExplanation": "Used to indicate a duration or range from a specific start point to an end point.",
+    "longExplanation": "'에서부터 [eseobuteo]' and '까지 [kkaji]' are postpositions used in Korean to indicate a duration or range from a specified start point to an end point. They can be used with both time and place. In English, this can be translated as 'from ~ to'.",
+    "formation": "Noun + 에서부터 + Noun + 까지",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "매일 아침 7시에서부터 8시까지 아침 운동을 하고 학교에 가요.",
+        "romanization": "Maeil achim 7si-eseobuteo 8si-kkaji achim undongeul hago hakgyoe gayo.",
+        "translation": "Every morning, I do morning exercise from 7AM to 8AM and then go to school."
+      },
+      {
+        "sentence": "우리는 서울에서부터 부산까지 차로 여행을 했어요.",
+        "romanization": "Urineun Seouleseobuteo Busankkaji charo yeohaengeul haesseoyo.",
+        "translation": "We traveled by car from Seoul to Busan."
+      },
+      {
+        "sentence": "이번 주말에는 토요일 저녁 5시에서부터 일요일 오후 3시까지 휴식을 취해요.",
+        "romanization": "Ibeon jumal-eneun toyoil jeonyeok 5si-eseobuteo iryoil ohu 3si-kkaji hyusigeul chwihaeyo.",
+        "translation": "This weekend, I will rest from Saturday at 5 p.m. to Sunday at 3 p.m."
+      },
+      {
+        "sentence": "사진 전시회는 11월 1일에서부터 11월 30일까지 열릴 거예요.",
+        "romanization": "Sajin jeonsihoeneun 11wol 1il-eseobuteo 11wol 30il-kkaji yeollil geoyeyo.",
+        "translation": "The photo exhibition will be open from November 1 to November 30."
+      }
+    ]
+  },
+  {
+    "id": "ko_와과_93",
+    "language": "ko",
+    "pattern": "~와/과",
+    "title": "~와/과 [wa/gwa] (And, with)",
+    "shortExplanation": "Used to express 'and' or 'with' in a list or connection between two or more nouns.",
+    "longExplanation": "'~와/과 [wa/gwa]' is a connective particle in Korean that links two or more nouns together. It is equivalent to the English conjunction 'and' or preposition 'with'. It is used when you need to link nouns in a list or show a connection between them. The choice between '와' (after a vowel) or '과' (after a consonant) depends on the final sound of the preceding noun.",
+    "formation": "Noun(ending with a vowel) + 와 / Noun(ending with a consonant) + 과",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "오늘 아침에는 밥과 김치와 갈비를 먹었어요.",
+        "romanization": "Oneul achimeneun bapgwa gimchiwa galbireul meogeosseoyo.",
+        "translation": "This morning I ate rice, kimchi, and ribs."
+      },
+      {
+        "sentence": "나는 내 친구와 영화관에 갔어요.",
+        "romanization": "Naneun nae chinguwa yeonghwagwane gasseoyo.",
+        "translation": "I went to the cinema with my friend."
+      },
+      {
+        "sentence": "운동화와 청바지와 티셔츠를 사러 가고 싶어요.",
+        "romanization": "Undonghwawa cheongbajiwa tisyeocheureul sareo gago sip-eoyo.",
+        "translation": "I want to go buy sneakers, jeans, and a T-shirt."
+      },
+      {
+        "sentence": "이번 주말에 나는 가족과 함께 행복한 시간을 보냈어요.",
+        "romanization": "Ibeon jumal-e naneun gajokgwa hamkke haengbokhan siganeul bonaesseoyo.",
+        "translation": "I spent a happy time with my family this weekend."
+      }
+    ]
+  },
+  {
+    "id": "ko_와과_94",
+    "language": "ko",
+    "pattern": "~와/과",
+    "title": "~와/과 같다 [wa/gwa gatda] (Be the same as, like)",
+    "shortExplanation": "Used to express similarities or equivalences; 'like', 'the same as'.",
+    "longExplanation": "'~와/과 같다 [wa/gwa gatda]' is used in Korean to express similarity, comparison, or equivalence—acting like 'as', 'like' or 'the same as' in English. The context determines whether '와' or '과' is used, depending on whether the preceding noun ends in a vowel or a consonant.",
+    "formation": "Noun + 와/과 + 같다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그녀의 눈은 별과 같아요, 빛나고 아름다워요.",
+        "romanization": "Geunyeoui nuneun byeolgwa gatayo, bitnago areumdawayo.",
+        "translation": "Her eyes are like stars; they shine and are beautiful."
+      },
+      {
+        "sentence": "성장하면서 목표는 항상 북극성과 같았어요, 언제나 방향을 제시해 줬죠.",
+        "romanization": "Seongjanghamyeonseo mokpyoneun hangsang bukgeukseong-gwa gatasseoyo, eonjena banghyangeul jesihae jwotjyo.",
+        "translation": "As I grew up, my goal was always like the North Star; it always gave me direction."
+      },
+      {
+        "sentence": "우리 학교의 기숙사는 호텔과 같아요, 매우 편안하고 모든 시설이 잘 갖춰져 있어요.",
+        "romanization": "Uri hakgyoui gisugsaneun hotel-gwa gatayo, maeu pyeonanago modeun siseoli jal gatchwojyeo isseoyo.",
+        "translation": "Our school's dormitory is like a hotel—it's very comfortable and has all the necessary facilities."
+      },
+      {
+        "sentence": "이 문제는 그 전의 문제와 같아요, 유사한 해결 방법을 가지고 있어요.",
+        "romanization": "I munjeneun geu jeonui munjewa gatayo, yusahan haegyeol bangbeomeul gajigo isseoyo.",
+        "translation": "This problem is the same as the previous one; it has a similar solution."
+      }
+    ]
+  },
+  {
+    "id": "ko_와과_95",
+    "language": "ko",
+    "pattern": "~와/과",
+    "title": "~와/과 달리 [wa/gwa dalli] (Unlike, different from)",
+    "shortExplanation": "This pattern is used to indicate contrast or difference between two things or situations.",
+    "longExplanation": "'~와/과 달리' is a postposition in Korean generally used to contrast or compare two different things, situations, or ideas. It translates into English as 'unlike' or 'different from' and indicates a clear contrast between the two subjects.",
+    "formation": "(Noun1 + 와/과) + Noun2 + 달리 + Sentence",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "매일 출근하는 것과 달리, 오늘은 집에서 일했어요.",
+        "romanization": "Maeil chulgeunhaneun geot-gwa dalli, oneureun jibeseo ilhaesseoyo.",
+        "translation": "Unlike going to work every day, I worked from home today."
+      },
+      {
+        "sentence": "여름과 달리 겨울에는 날씨가 춥기 때문에 많은 옷을 입어야 해요.",
+        "romanization": "Yeoreum-gwa dalli gyeoure-neun nalssiga chubgi ttaemune maneun oseul ibeoya haeyo.",
+        "translation": "Unlike summer, in winter you have to wear a lot of clothes because it's cold."
+      },
+      {
+        "sentence": "철우씨와 달리, 진우씨는 공부를 잘해요.",
+        "romanization": "Cheolussi-wa dalli, Jinwussi-neun gongbureul jalhaeyo.",
+        "translation": "Unlike Cheolwoo, Jinwoo is good at studying."
+      },
+      {
+        "sentence": "서울과 달리 부산에서는 겨울이 덜 춥습니다.",
+        "romanization": "Seoul-gwa dalli Busanesoneun gyeouri deol chupsseumnida.",
+        "translation": "Unlike Seoul, winters are less cold in Busan."
+      }
+    ]
+  },
+  {
+    "id": "ko_을를_96",
+    "language": "ko",
+    "pattern": "~을/를",
+    "title": "~을/를 통해 [eul/reul tonghae] (Through, by means of)",
+    "shortExplanation": "Used to indicate the medium or method through which an action or result was achieved.",
+    "longExplanation": "'~을/를 통해 [eul/reul tonghae]' is a postpositional phrase in Korean used to signify the means, channel, or method through which an action or outcome was reached. It corresponds to 'through' in English and often appears with expressions about communicating information, conveying feelings, or achieving results.",
+    "formation": "Noun + 을/를 + 통해",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "이 책을 통해 그의 생각과 철학을 더 잘 이해할 수 있었다.",
+        "romanization": "I chaekeul tonghae geuui saenggakgwa cheolhageul deo jal ihaehal su isseotda.",
+        "translation": "Through this book, I was able to understand his thoughts and philosophy better."
+      },
+      {
+        "sentence": "남자는 음악을 통해 자신의 감정을 표현했다.",
+        "romanization": "Namjaneun eumageul tonghae jasinui gamjeongeul pyohyeonhaetda.",
+        "translation": "He expressed his emotions through music."
+      },
+      {
+        "sentence": "문화교류를 통해 우리는 다른 국가들과의 관계를 강화할 수 있다.",
+        "romanization": "Munhwagyoryureul tonghae urineun dareun gukadeulgwaui gwangyereul ganghwahal su itda.",
+        "translation": "Through cultural exchange, we can strengthen our relationships with other countries."
+      },
+      {
+        "sentence": "여행을 통해 나는 여러 가지 문화와 풍경을 경험했다.",
+        "romanization": "Yeohaengeul tonghae naneun yeoreo gaji munhwawa punggyeongeul gyeongheomhaetda.",
+        "translation": "Through traveling, I experienced various cultures and landscapes."
+      }
+    ]
+  },
+  {
+    "id": "ko_이가_97",
+    "language": "ko",
+    "pattern": "~이/가",
+    "title": "~이/가 되다 [i/ga dweda] (Become)",
+    "shortExplanation": "This grammar point is used to describe a change or transition into a new state or condition.",
+    "longExplanation": "The grammar point '~이/가 되다 [i/ga dweda]' is used in Korean to indicate a change or transition into a different state or condition. It can be used to describe things like becoming an adult, becoming a teacher, or even something more abstract like becoming happy or becoming cold. The subject or condition that is changing is placed before '이/가 되다'.",
+    "formation": "Noun + 이/가 되다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "아이들이 어른이 되는데는 시간이 많이 필요해요.",
+        "romanization": "Aideuri eoreuni doeneunde-neun sigani mani piryohaeyo.",
+        "translation": "It takes a lot of time for children to become adults."
+      },
+      {
+        "sentence": "그녀는 아주 유명한 가수가 되었어요.",
+        "romanization": "Geunyeoneun aju yumyeonghan gasuga doeeosseoyo.",
+        "translation": "She has become a very famous singer."
+      },
+      {
+        "sentence": "오늘은 갑자기 추워져서 장갑이 필요하게 되었어요.",
+        "romanization": "Oneureun gabjagi chuwojyeoseo janggabi piryohage doeeosseoyo.",
+        "translation": "Today, it suddenly became cold, so I needed gloves."
+      },
+      {
+        "sentence": "나는 공부를 열심히 해서 의사가 되었어요.",
+        "romanization": "Naneun gongbureul yeolsimhi haeseo uisaga doeeosseoyo.",
+        "translation": "I studied hard and became a doctor."
+      }
+    ]
+  },
+  {
+    "id": "ko_이가_98",
+    "language": "ko",
+    "pattern": "~이/가",
+    "title": "~이/가 아니다 [i/ga anida] (Is not, are not)",
+    "shortExplanation": "Used to negate a noun; 'is not', 'are not'.",
+    "longExplanation": "The literal translation of '~이/가 아니다 [i/ga anida]' is 'is not' or 'are not'. It is used to negate a noun in a statement. You put '이 아니다' after a noun that ends with a consonant and '가 아니다' after a noun that ends with a vowel. This is roughly equivalent to English 'not', functioning to show contradiction or denial.",
+    "formation": "Noun + 이/가 아니다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 학생이 아닙니다, 저는 선생님이에요.",
+        "romanization": "Jeoneun haksaengi anibnida, jeoneun seonsaengimnida.",
+        "translation": "I am not a student, I am a teacher."
+      },
+      {
+        "sentence": "고양이가 우리 분실물이 아닙니다, 우리 분실물은 강아지예요.",
+        "romanization": "Goyangiga uri bunsilmuri anibnida, uri bunsilmureun gangajiyeyo.",
+        "translation": "The cat is not our lost item; our lost item is a puppy."
+      },
+      {
+        "sentence": "요리 잘하는 사람은 내가 아닙니다, 저는 요리하는 능력이 전혀 없어요.",
+        "romanization": "Yori jalhaneun sarameun naega anibnida, jeoneun yorihaneun neungnyeogi jeonhyeo eopseoyo.",
+        "translation": "I am not the person who cooks well; I have absolutely no cooking ability."
+      },
+      {
+        "sentence": "그 사람은 우리 학교 학생이 아닙니다, 그는 다른 학교의 학생이에요.",
+        "romanization": "Geu sarameun uri hakgyo haksaengi anibnida, geuneun dareun hakgyoui haksaengieyo.",
+        "translation": "That person is not a student of our school; he is a student of another school."
+      }
+    ]
+  },
+  {
+    "id": "ko_이라도_99",
+    "language": "ko",
+    "pattern": "~이라도",
+    "title": "~이라도 [irado] (Even if, at least)",
+    "shortExplanation": "Used to signify 'even if' or 'at least' in scenarios where something is better than nothing.",
+    "longExplanation": "'~이라도 [irado]' is a postposition used in Korean to minimize the value of the subject but imply that the mentioned thing is still better than having nothing at all. It implies a somewhat unsatisfactory situation, yet shows a compromise, similar to 'even if' or 'at least' in English.",
+    "formation": "Noun + 이라도",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "비록 그것이 기대했던 것이 아니라도, 아무것도 없는 것보다는 낫죠.",
+        "romanization": "Birok geugeosi gidaehaetdeon geosi anirado, amugeosdo eopneun geotbodaneun natjyo.",
+        "translation": "Even if it's not what I expected, it's better than having nothing."
+      },
+      {
+        "sentence": "이 사진이라도 찍어 두면 나중에 좋은 추억이 될 거예요.",
+        "romanization": "I sajinirado jjigeo dumyeon najunge joeun chueogi doel geoyeyo.",
+        "translation": "Even if it's just this photo, it will become a good memory later."
+      },
+      {
+        "sentence": "노래를 잘 못해도 노래방에서 한 곡이라도 불러 보세요.",
+        "romanization": "Noraereul jal mothaedo noraebangeseo han gogirado bulleo boseyo.",
+        "translation": "Even if you can't sing well, try singing at least one song at karaoke."
+      },
+      {
+        "sentence": "시험에서 높은 점수를 못 받았더라도, 이해 안 가는 부분이라도 공부했다면 큰 수확이에요.",
+        "romanization": "Siheomeseo nopeun jeomsureul mot badasdeorado, ihae an ganeun bubunirado gongbuhatdamyeon keun suhwagieyo.",
+        "translation": "Even if you didn’t get a high score on the test, studying at least the parts you didn’t understand is a big accomplishment."
+      }
+    ]
+  },
+  {
+    "id": "ko_이래_100",
+    "language": "ko",
+    "pattern": "~이래",
+    "title": "~이래 [irae] (Since then)",
+    "shortExplanation": "Used to indicate a period of time starting from a specific point in the past to the present time.",
+    "longExplanation": "'~이래 [irae]' is used in Korean to express 'since then' or 'ever since', indicating that something has continued or remained the same from a past point in time up to the present.",
+    "formation": "Verb Past Tense + ~이래 / Noun + ~이래",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그 사건이 발생한 지 5년 이래로 나는 그곳을 한 번도 방문한 적이 없어요.",
+        "romanization": "Geu sageoni balsenghan ji ony e nyon iraero naneun geu goseul han beondo bangmunhan jeogi eopseoyo.",
+        "translation": "I haven't visited that place even once in the five years since that incident happened."
+      },
+      {
+        "sentence": "백 년 이래 최초로 우리 학교 축구팀이 우승을 차지했어요.",
+        "romanization": "Baek nyeon irae choecho-ro uri hakgyo chukgutimi useungeul chajieosseoyo.",
+        "translation": "For the first time in a hundred years, our school's soccer team won."
+      },
+      {
+        "sentence": "나는 이렇게 열정적인 구직자를 만난 게 정말 오랜만이래.",
+        "romanization": "Naneun ireohge yeoljeongjeok-in gujikjareul mannan ge jeongmal oraenmanirae.",
+        "translation": "It's really been a long time since I met such a passionate job seeker."
+      },
+      {
+        "sentence": "학교에서 가장 높은 점수를 받았던 그날 이래로, 부모님이 나를 아주 자랑스러워하셨어요.",
+        "romanization": "Hakgyoeseo gajang nopeun jeomsureul badatdeon geunal iraero, bumonimi nareul aju jarangseureowohasyeosseoyo.",
+        "translation": "Ever since the day I got the highest score at school, my parents have been very proud of me."
+      }
+    ]
+  },
+  {
+    "id": "ko_이랑_101",
+    "language": "ko",
+    "pattern": "~이랑",
+    "title": "~이랑 [irang] (And, with)",
+    "shortExplanation": "Used to express the relationship of 'and' or 'with' between two or more things or people.",
+    "longExplanation": "'~이랑 [irang]' is a postposition in Korean that can mean 'and' or 'with' when connecting two or more nouns. It is often used for casual or friendly contexts, indicating doing something together with someone or having something along with something else.",
+    "formation": "Noun + 이랑",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 친구랑 영화를 보러 갔어요. 정말 재미있었어요.",
+        "romanization": "Jeoneun chingurang yeonghwareul boreo gasseoyo. Jeongmal jaemiisseosseoyo.",
+        "translation": "I went to watch a movie with my friend. It was really fun."
+      },
+      {
+        "sentence": "길고 어려운 숙제를 친구랑 같이 해서 도전정신이 생겼어요.",
+        "romanization": "Gilgo eoryeoun sukjereul chingurang gachi haeseo dojeonjeongsini saenggyeosseoyo.",
+        "translation": "I did my long and difficult homework with my friend, and it built my sense of challenge."
+      },
+      {
+        "sentence": "가족이랑 잊지 못할 여행을 다녀왔어요. 정말 즐거웠어요.",
+        "romanization": "Gajogirang itji mot-hal yeohaengeul danyeowasseoyo. Jeongmal jeulgeowosseoyo.",
+        "translation": "I went on an unforgettable trip with my family. It was really enjoyable."
+      },
+      {
+        "sentence": "저는 매일 아침에 운동이랑 샤워를 하고 학교에 가요.",
+        "romanization": "Jeoneun maeil achime undongirang syaworeul hago hakgyoe gayo.",
+        "translation": "Every morning, I exercise and take a shower, then go to school."
+      }
+    ]
+  },
+  {
+    "id": "ko_이렇게_102",
+    "language": "ko",
+    "pattern": "~이렇게",
+    "title": "~이렇게 [ireohge] (Like this, in this way)",
+    "shortExplanation": "Used to indicate the manner or degree of an action; 'like this', 'in this way'.",
+    "longExplanation": "'~이렇게 [ireohge]' is an adverb in Korean that describes how or to what degree an action is performed. It can translate as 'like this' or 'in this way.' It can also convey surprise or emphasis depending on context.",
+    "formation": "이렇게 + Verb/Clause",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "이렇게 더운 날에는 아이스크림을 먹는 것이 최고예요.",
+        "romanization": "Ireohge deoun nal-eneun aiseukeurimeul meogneun geosi choegoyeyo.",
+        "translation": "On a hot day like this, eating ice cream is the best."
+      },
+      {
+        "sentence": "제가 이렇게 늦게 도착할 줄 몰랐어요.",
+        "romanization": "Jega ireohge neujge dochakhal jul mollasseoyo.",
+        "translation": "I didn't know I would arrive this late."
+      },
+      {
+        "sentence": "나는 이렇게 큰 문제를 해결할 수 있을 줄 몰랐어요.",
+        "romanization": "Naneun ireohge keun munjereul haegyeolhal su isseul jul mollasseoyo.",
+        "translation": "I didn't think I could solve such a big problem like this."
+      },
+      {
+        "sentence": "저는 이렇게 몸이 커진 줄 몰랐어요.",
+        "romanization": "Jeoneun ireohge momi keojin jul mollasseoyo.",
+        "translation": "I didn't realize my body had grown like this."
+      }
+    ]
+  }
+]

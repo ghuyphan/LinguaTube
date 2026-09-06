@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_ようになった_115",
+    "language": "ja",
+    "pattern": "～ようになった",
+    "title": "～ようになった (〜you ni natta)",
+    "shortExplanation": "Express an event or state that became possible; 'became able to', 'started to', 'now can'.",
+    "longExplanation": "The ～ようになった grammar point is used to express that an event, ability, or state has become possible or started to occur. It can be translated as 'became able to', 'started to', or 'now can' in English. Usually this is used with verbs in their dictionary or potential form (e.g., 食べられるようになった).",
+    "formation": "Verb-casual + ようになった",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は料理を作るようになった。",
+        "romanization": "Kare wa ryouri wo tsukuru you ni natta.",
+        "translation": "He became able to cook."
+      },
+      {
+        "sentence": "その子は読めるようになった。",
+        "romanization": "Sono ko wa yomeru you ni natta.",
+        "translation": "That child started to be able to read."
+      },
+      {
+        "sentence": "会議は週に一度開催されるようになった。",
+        "romanization": "Kaigi wa shuu ni ichido kaisai sareru you ni natta.",
+        "translation": "The meeting started to be held once a week."
+      },
+      {
+        "sentence": "日本語がわかるようになった。",
+        "romanization": "Nihongo ga wakaru you ni natta.",
+        "translation": "I became able to understand Japanese."
+      }
+    ]
+  },
+  {
+    "id": "ja_ように言う_116",
+    "language": "ja",
+    "pattern": "～ように言う",
+    "title": "～ように言う (〜you ni iu)",
+    "shortExplanation": "To convey a message, instruction or request to someone; 'to tell (someone) to', 'to say to (someone)'.",
+    "longExplanation": "The ～ように言う grammar point is used to convey a message, instruction or request to someone. It can be translated as 'to tell (someone) to' or 'to say to (someone)'. It is commonly formed by taking the dictionary (or negative) form of the verb plus ように言う.",
+    "formation": "Verb-dictionary form + ように言う / Verb-nai form + ように言う",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "先生は私にもっと勉強するように言った。",
+        "romanization": "Sensei wa watashi ni motto benkyou suru you ni itta.",
+        "translation": "The teacher told me to study more."
+      },
+      {
+        "sentence": "彼女は彼に待つように言いました。",
+        "romanization": "Kanojo wa kare ni matsu you ni iimashita.",
+        "translation": "She told him to wait."
+      },
+      {
+        "sentence": "母は私に部屋を片付けるように言いました。",
+        "romanization": "Haha wa watashi ni heya wo katazukeru you ni iimashita.",
+        "translation": "My mother told me to clean my room."
+      },
+      {
+        "sentence": "先生は生徒に質問をするように言った。",
+        "romanization": "Sensei wa seito ni shitsumon wo suru you ni itta.",
+        "translation": "The teacher told the student to ask a question."
+      }
+    ]
+  },
+  {
+    "id": "ja_らしい_117",
+    "language": "ja",
+    "pattern": "～らしい",
+    "title": "～らしい (〜rashii)",
+    "shortExplanation": "Expresses hearsay; 'I heard', 'it seems', 'apparently'.",
+    "longExplanation": "The ～らしい grammar point is used to indicate that the information provided is based on hearsay or an indirect source. In English, this can be translated as 'I heard', 'it seems', or 'apparently'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + らしい, い-Adjective + らしい, な-Adjective + だらしい, Noun + だらしい",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼はインフルエンザらしい。",
+        "romanization": "Kare wa infuruenza rashii.",
+        "translation": "Apparently, he has the flu."
+      },
+      {
+        "sentence": "明日雪が降るらしい。",
+        "romanization": "Ashita yuki ga furu rashii.",
+        "translation": "I heard it will snow tomorrow."
+      },
+      {
+        "sentence": "このレストランは美味しいらしい。",
+        "romanization": "Kono resutoran wa oishii rashii.",
+        "translation": "I heard that this restaurant is delicious."
+      },
+      {
+        "sentence": "彼女は医者だらしい。",
+        "romanization": "Kanojo wa isha darashii.",
+        "translation": "It seems that she is a doctor."
+      }
+    ]
+  },
+  {
+    "id": "ja_られた_118",
+    "language": "ja",
+    "pattern": "～られた",
+    "title": "～られた (〜rareta)",
+    "shortExplanation": "Express a passive action, 'was/were', 'has/have been'.",
+    "longExplanation": "The ～られた grammar point is used to express a passive action or situation. It is formed by conjugating the verb into its passive form in the past tense, which can be translated into English as 'was/were' or 'has/have been'. This grammar is used in situations where the subject is affected by an action rather than performing the action itself.",
+    "formation": "Verb (passive form, past tense) + られた",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "この本はたくさんの人に読まれた。",
+        "romanization": "Kono hon wa takusan no hito ni yomareta.",
+        "translation": "This book was read by many people."
+      },
+      {
+        "sentence": "彼は友達に騙された。",
+        "romanization": "Kare wa tomodachi ni damasareta.",
+        "translation": "He was deceived by his friend."
+      },
+      {
+        "sentence": "昨日、私の財布が盗まれました。",
+        "romanization": "Kinou, watashi no saifu ga nusumaremashita.",
+        "translation": "Yesterday, my wallet was stolen."
+      },
+      {
+        "sentence": "彼女は映画に感動させられた。",
+        "romanization": "Kanojo wa eiga ni kandou saserareta.",
+        "translation": "She was deeply moved by the movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_ている_119",
+    "language": "ja",
+    "pattern": "～ている",
+    "title": "～ている (〜te iru)",
+    "shortExplanation": "Expresses a continuing action or a resulting state; 'is ~ing', 'has been', 'has'.",
+    "longExplanation": "The ～ている grammar point is used to describe a continuing or repeated action, or the result/state of a completed action. Depending on the context, it can be translated as 'is ~ing', 'has been ~ed', or simply 'has/are/is'. In passive contexts (e.g., 食べられている, 開けられている), it shows that something has been done and remains in that state. With intransitive or non-passive verbs, it shows an ongoing or resultant state (e.g., 寝込んでいる, 終わっている).",
+    "formation": "Verb-て form + いる",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "窓が開けられている。",
+        "romanization": "Mado ga akerarete iru.",
+        "translation": "The window is open (someone opened it and it remains open)."
+      },
+      {
+        "sentence": "ケーキが全部食べられている。",
+        "romanization": "Keeki ga zenbu taberarete iru.",
+        "translation": "The whole cake has been eaten."
+      },
+      {
+        "sentence": "彼女は病気で寝込んでいる。",
+        "romanization": "Kanojo wa byouki de nekonde iru.",
+        "translation": "She is bedridden due to illness."
+      },
+      {
+        "sentence": "宿題が終わっている。",
+        "romanization": "Shukudai ga owatte iru.",
+        "translation": "The homework is finished (has been done)."
+      }
+    ]
+  },
+  {
+    "id": "ja_わけがない_120",
+    "language": "ja",
+    "pattern": "～わけがない",
+    "title": "～わけがない (〜wake ga nai)",
+    "shortExplanation": "Expresses that something is impossible or unreasonable; 'there's no way', 'can't be'.",
+    "longExplanation": "The ～わけがない grammar point is used to show that something is impossible, non-existent, or unreasonable based on logic or context. It is often translated as 'there's no way' or 'it's impossible'.",
+    "formation": "Verb-casual + わけがない, い-Adjective + わけがない, な-Adjective + なわけがない, Noun + のわけがない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼がそんなことを言うわけがない。",
+        "romanization": "Kare ga sonna koto wo iu wake ga nai.",
+        "translation": "There's no way he would say something like that."
+      },
+      {
+        "sentence": "あのレストランがまずいわけがない。",
+        "romanization": "Ano resutoran ga mazui wake ga nai.",
+        "translation": "There's no way that restaurant tastes bad."
+      },
+      {
+        "sentence": "彼女が優しくないわけがない。",
+        "romanization": "Kanojo ga yasashiku nai wake ga nai.",
+        "translation": "There's no way she's not kind."
+      },
+      {
+        "sentence": "彼が試験に合格しないわけがない。",
+        "romanization": "Kare ga shiken ni goukaku shinai wake ga nai.",
+        "translation": "There's no way he won't pass the exam."
+      }
+    ]
+  },
+  {
+    "id": "ja_わけだ_121",
+    "language": "ja",
+    "pattern": "～わけだ",
+    "title": "～わけだ (〜wake da)",
+    "shortExplanation": "Expresses a logical conclusion or reason based on information; 'that's why', 'no wonder', 'it means'.",
+    "longExplanation": "The ～わけだ grammar point is used to express a conclusion, reason, or interpretation based on a certain situation or piece of information. It can be translated as 'that's why', 'no wonder', or 'it means'.",
+    "formation": "Verb-casual + わけだ, い-Adjective + わけだ, な-Adjective + なわけだ, Noun + のわけだ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は風邪を引いている。だから、声がかすれているわけだ。",
+        "romanization": "Kare wa kaze wo hiite iru. Dakara, koe ga kasurete iru wake da.",
+        "translation": "He has a cold. That's why his voice is hoarse."
+      },
+      {
+        "sentence": "今日は忙しかった。だから、疲れたわけだ。",
+        "romanization": "Kyou wa isogashikatta. Dakara, tsukareta wake da.",
+        "translation": "Today was busy. No wonder I'm tired."
+      },
+      {
+        "sentence": "田中さんはたくさん勉強している。だから、試験に合格したわけだ。",
+        "romanization": "Tanaka-san wa takusan benkyou shite iru. Dakara, shiken ni goukaku shita wake da.",
+        "translation": "Tanaka has been studying a lot. It means he passed the exam."
+      },
+      {
+        "sentence": "彼女は有名な歌手の娘なんだ。だから、歌が上手なわけだ。",
+        "romanization": "Kanojo wa yuumei na kashu no musume nan da. Dakara, uta ga jouzu na wake da.",
+        "translation": "She's the daughter of a famous singer. That's why she's good at singing."
+      }
+    ]
+  },
+  {
+    "id": "ja_わけではない_122",
+    "language": "ja",
+    "pattern": "～わけではない",
+    "title": "～わけではない (〜wake dewa nai)",
+    "shortExplanation": "Denies a general assumption; 'it does not mean that', 'it's not the case'.",
+    "longExplanation": "The ～わけではない grammar point is used to deny or correct a general assumption or statement without completely negating the situation. It often emphasizes one particular point that is not true, while acknowledging other possibilities.",
+    "formation": "Verb-casual + わけではない, い-Adjective + わけではない, な-Adjective + だわけではない, Noun + だわけではない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼が忙しいからといって、友達がいないわけではない。",
+        "romanization": "Kare ga isogashii kara to itte, tomodachi ga inai wake dewa nai.",
+        "translation": "Just because he's busy doesn't mean he has no friends."
+      },
+      {
+        "sentence": "この映画は面白くないわけではないが、好みではない。",
+        "romanization": "Kono eiga wa omoshirokunai wake dewa nai ga, konomi dewa nai.",
+        "translation": "It's not that this movie isn't interesting; it's just not my taste."
+      },
+      {
+        "sentence": "彼女が病気だからといって、毎日寝ているわけではない。",
+        "romanization": "Kanojo ga byouki dakara to itte, mainichi nete iru wake dewa nai.",
+        "translation": "Just because she's sick doesn't mean she's in bed all day."
+      },
+      {
+        "sentence": "彼が大学に行っていないからといって、バカだわけではない。",
+        "romanization": "Kare ga daigaku ni itte inai kara to itte, baka da wake dewa nai.",
+        "translation": "Just because he didn't go to college doesn't mean he's stupid."
+      }
+    ]
+  },
+  {
+    "id": "ja_わけにはいかない_123",
+    "language": "ja",
+    "pattern": "～わけにはいかない",
+    "title": "～わけにはいかない (〜wake ni wa ikanai)",
+    "shortExplanation": "Expresses that something cannot be allowed or permitted due to social/moral obligations.",
+    "longExplanation": "The ～わけにはいかない grammar point is used to express that a particular action cannot be taken due to social or moral obligations, responsibilities, or natural consequences. It often translates as 'I can't afford to...' or 'I can't just...' in English.",
+    "formation": "Verb-casual + わけにはいかない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "こんなところで寝るわけにはいかない。",
+        "romanization": "Konna tokoro de neru wake ni wa ikanai.",
+        "translation": "I can't possibly sleep in a place like this."
+      },
+      {
+        "sentence": "試験が明日だから、遊びに行くわけにはいかない。",
+        "romanization": "Shiken ga ashita dakara, asobi ni iku wake ni wa ikanai.",
+        "translation": "I can't afford to go out to have fun, since the exam is tomorrow."
+      },
+      {
+        "sentence": "こんなに高いものを買うわけにはいかない。",
+        "romanization": "Konna ni takai mono wo kau wake ni wa ikanai.",
+        "translation": "I can't allow myself to purchase something so expensive."
+      },
+      {
+        "sentence": "体調が悪いから、パーティーに参加するわけにはいかない。",
+        "romanization": "Taichou ga warui kara, paatii ni sanka suru wake ni wa ikanai.",
+        "translation": "Since I'm not feeling well, I can't attend the party."
+      }
+    ]
+  },
+  {
+    "id": "ja_わりには_124",
+    "language": "ja",
+    "pattern": "～わりには",
+    "title": "～わりには (〜wari ni wa)",
+    "shortExplanation": "Expresses contrast between expectation and reality; 'despite', 'considering', 'even though'.",
+    "longExplanation": "The ～わりには grammar point is used to highlight a contrast between what is expected from a certain condition and the actual result. It can be translated as 'despite', 'considering', or 'even though'.",
+    "formation": "Verb-casual + わりには, い-Adjective + わりには, な-Adjective + だわりには, Noun + だわりには",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼はあまり勉強しないわりには、テストの点数が高いです。",
+        "romanization": "Kare wa amari benkyou shinai wari ni wa, tesuto no tensuu ga takai desu.",
+        "translation": "Despite not studying much, he gets high scores on tests."
+      },
+      {
+        "sentence": "この料理は見た目が悪いわりには、味は美味しいです。",
+        "romanization": "Kono ryouri wa mitame ga warui wari ni wa, aji wa oishii desu.",
+        "translation": "Even though this dish doesn't look good, it tastes delicious."
+      },
+      {
+        "sentence": "彼女は若いわりには、とても落ち着いていますね。",
+        "romanization": "Kanojo wa wakai wari ni wa, totemo ochitsuite imasu ne.",
+        "translation": "Considering she's young, she's very calm."
+      },
+      {
+        "sentence": "この部屋は狭いわりには、家賃が高いです。",
+        "romanization": "Kono heya wa semai wari ni wa, yachin ga takai desu.",
+        "translation": "Despite being small, this room’s rent is high."
+      }
+    ]
+  },
+  {
+    "id": "ja_んだって_125",
+    "language": "ja",
+    "pattern": "～んだって",
+    "title": "～んだって (〜n datte)",
+    "shortExplanation": "Conveys information heard from someone else; 'I heard', 'They said'.",
+    "longExplanation": "The ～んだって grammar point is used to relay information the speaker has heard from someone else. It's a casual way of quoting what was said, effectively combining explanatory のだ (んだ) with the informal quoting particle って. It can be translated as 'I heard...' or 'They said...'.",
+    "formation": "Verb-casual + んだって, い-Adjective + んだって, な-Adjective + なんだって, Noun + なんだって",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は東京に行くんだって。",
+        "romanization": "Kare wa Toukyou ni iku n datte.",
+        "translation": "I heard he's going to Tokyo."
+      },
+      {
+        "sentence": "この映画、面白いんだって。",
+        "romanization": "Kono eiga, omoshiroi n datte.",
+        "translation": "They said this movie is interesting."
+      },
+      {
+        "sentence": "彼女は有名な歌手なんだって。",
+        "romanization": "Kanojo wa yuumei na kashu na n datte.",
+        "translation": "I heard she's a famous singer."
+      },
+      {
+        "sentence": "あのレストラン、夜景がきれいなんだって。",
+        "romanization": "Ano resutoran, yakei ga kirei na n datte.",
+        "translation": "They said the night view at that restaurant is beautiful."
+      }
+    ]
+  },
+  {
+    "id": "ja_んだもん_126",
+    "language": "ja",
+    "pattern": "～んだもん",
+    "title": "～んだもん (〜nda mon)",
+    "shortExplanation": "Used to convey a sense of justification; 'because', 'that's why', 'it's just that'.",
+    "longExplanation": "The ～んだもん grammar point is used when someone wants to give a reason, justification, or explanatory information in a more casual and emphatic way. It can be translated as 'because', 'that's why', or 'it's just that' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + んだもん, い-Adjective + んだもん, な-Adjective + なんだもん, Noun + なんだもん",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "遅れたんだもん、ごめん。",
+        "romanization": "Okureta nda mon, gomen.",
+        "translation": "I was late, that's why I'm sorry."
+      },
+      {
+        "sentence": "おいしいんだもん、もうちょっと食べたい。",
+        "romanization": "Oishii nda mon, mou chotto tabetai.",
+        "translation": "It's delicious, that's why I want to eat more."
+      },
+      {
+        "sentence": "疲れているんだもん、早く寝たい。",
+        "romanization": "Tsukarete iru nda mon, hayaku netai.",
+        "translation": "I'm tired, that's why I want to go to bed early."
+      },
+      {
+        "sentence": "彼は友達なんだもん、手伝わないわけにはいかない。",
+        "romanization": "Kare wa tomodachi nan da mon, tetsudawanai wake ni wa ikanai.",
+        "translation": "He's my friend, that's why I can't not help him."
+      }
+    ]
+  },
+  {
+    "id": "ja_上げる_127",
+    "language": "ja",
+    "pattern": "～上げる",
+    "title": "～上げる (〜ageru)",
+    "shortExplanation": "Indicates to finish doing something completely.",
+    "longExplanation": "The ～上げる grammar point is used to express that an action has been completed or finished entirely. It's often used with verbs that have a ます stem, and can be translated as 'to finish (doing something)', 'to complete', or 'to get something done'.",
+    "formation": "Verb-ますstem + 上げる",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "レポートを書き上げるまで、寝られません。",
+        "romanization": "Repooto o kakiageru made, neraremasen.",
+        "translation": "I cannot sleep until I finish writing the report."
+      },
+      {
+        "sentence": "彼女は早速部屋の掃除を始め、一時間で掃除をやり上げた。",
+        "romanization": "Kanojo wa sassoku heya no souji o hajime, ichijikan de souji o yariageta.",
+        "translation": "She started cleaning the room right away and finished cleaning it in an hour."
+      },
+      {
+        "sentence": "試験前夜、勉強をやり上げてから寝た。",
+        "romanization": "Shiken zenya, benkyou o yariagete kara neta.",
+        "translation": "I went to bed after finishing studying on the night before the exam."
+      },
+      {
+        "sentence": "このプロジェクトをやり上げるためには、みんなの協力が必要です。",
+        "romanization": "Kono purojekuto o yariageru tame ni wa, minna no kyouryoku ga hitsuyou desu.",
+        "translation": "To finish this project, everyone's cooperation is needed."
+      }
+    ]
+  },
+  {
+    "id": "ja_切れない_128",
+    "language": "ja",
+    "pattern": "～切れない",
+    "title": "～切れない (～kirenai)",
+    "shortExplanation": "Expresses inability to completely finish or do something.",
+    "longExplanation": "The ～切れない grammar point is used to express the inability to fully complete, finish, or do something. It is formed by attaching 切れない to the stem of a verb. It often implies that some portion of the action is done, but finishing it entirely is not possible for some reason.",
+    "formation": "Verb-stem + 切れない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "この本を一晩で読み切れない。",
+        "romanization": "Kono hon wo hitoban de yomikirenai.",
+        "translation": "I cannot finish reading this book in one night."
+      },
+      {
+        "sentence": "彼は泣き切れないほど嬉しかった。",
+        "romanization": "Kare wa nakikirenai hodo ureshikatta.",
+        "translation": "He was so happy that he couldn't stop crying."
+      },
+      {
+        "sentence": "この部屋を一日で掃除し切れない。",
+        "romanization": "Kono heya wo ichinichi de soujishikirenai.",
+        "translation": "I cannot finish cleaning this room in one day."
+      },
+      {
+        "sentence": "彼女は話し切れないほどの悩みがある。",
+        "romanization": "Kanojo wa hanashikirenai hodo no nayami ga aru.",
+        "translation": "She has so many worries that she can't finish talking about them."
+      }
+    ]
+  },
+  {
+    "id": "ja_必ずしもとは限らない_129",
+    "language": "ja",
+    "pattern": "必ずしも～とは限らない",
+    "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
+    "shortExplanation": "Not necessarily; not always.",
+    "longExplanation": "The 必ずしも～とは限らない grammar point is used to express that something is not necessarily or not always the case, indicating that a certain assumption may not hold true in all situations.",
+    "formation": "必ずしも + Statement + とは限らない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "高いものが必ずしも良いとは限らない。",
+        "romanization": "Takai mono ga kanarazushimo yoi to wa kagiranai.",
+        "translation": "Expensive things are not necessarily better."
+      },
+      {
+        "sentence": "有名な人が必ずしも幸せとは限らない。",
+        "romanization": "Yuumei na hito ga kanarazushimo shiawase to wa kagiranai.",
+        "translation": "Famous people are not necessarily happy."
+      },
+      {
+        "sentence": "外国語が話せる人が必ずしも英語が得意とは限らない。",
+        "romanization": "Gaikokugo ga hanaseru hito ga kanarazushimo eigo ga tokui to wa kagiranai.",
+        "translation": "People who can speak a foreign language are not always good at English."
+      },
+      {
+        "sentence": "勉強時間が多い生徒が必ずしも試験で点数が高いとは限らない。",
+        "romanization": "Benkyou jikan ga ooi seito ga kanarazushimo shiken de tensuu ga takai to wa kagiranai.",
+        "translation": "Students who study a lot are not necessarily scoring high on exams."
+      }
+    ]
+  }
+]

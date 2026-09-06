@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_实际_243",
+    "language": "zh",
+    "pattern": "实际",
+    "title": "实际 (reality)",
+    "shortExplanation": "reality",
+    "longExplanation": "reality. Pinyin: shíjì",
+    "formation": "shíjì",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "广告跟实际不一样。",
+        "romanization": "guǎnggào gēn shíjì bùyīyàng。",
+        "translation": "Advertising is not the same as the actual [thing]."
+      }
+    ]
+  },
+  {
+    "id": "zh_实际上_244",
+    "language": "zh",
+    "pattern": "实际上",
+    "title": "实际上 (in reality)",
+    "shortExplanation": "in reality",
+    "longExplanation": "in reality. Pinyin: shíjìshàng",
+    "formation": "shíjìshàng",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "广告说得好，实际上不一定好。",
+        "romanization": "guǎnggào shuō dé hǎo， shíjìshàng bùyīdìng hǎo。",
+        "translation": "The advertisement is well said, but it is not necessarily good in reality."
+      }
+    ]
+  },
+  {
+    "id": "zh_对来说_245",
+    "language": "zh",
+    "pattern": "对……来说",
+    "title": "对……来说 (for, as for)",
+    "shortExplanation": "for, as for",
+    "longExplanation": "for, as for. Pinyin: duì…… láishuō",
+    "formation": "duì…… láishuō",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "对我来说，学习机会更重要。",
+        "romanization": "duìwǒláishuō， xuéxí jīhuì gèng zhòngyào。",
+        "translation": "For me, learning opportunities are more important."
+      }
+    ]
+  },
+  {
+    "id": "zh_特别_246",
+    "language": "zh",
+    "pattern": "特别",
+    "title": "特别 (very much, extremely)",
+    "shortExplanation": "very much, extremely",
+    "longExplanation": "very much, extremely. Pinyin: tèbié",
+    "formation": "tèbié",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "您女儿长得特别像您。",
+        "romanization": "nín nǚ'ér zhǎngde tèbié xiàng nín。",
+        "translation": "Your daughter looks especially like you."
+      }
+    ]
+  },
+  {
+    "id": "zh_特别尤其_247",
+    "language": "zh",
+    "pattern": "特别/尤其",
+    "title": "特别/尤其 (especially, particularly)",
+    "shortExplanation": "especially, particularly",
+    "longExplanation": "especially, particularly. Pinyin: tèbié/ yóuqí",
+    "formation": "tèbié/ yóuqí",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "您女儿长得真像您，特别是/尤其眼睛。",
+        "romanization": "nín nǚ'ér zhǎngde zhēn xiàng nín， tèbié shì/ yóuqí yǎnjing。",
+        "translation": "Your daughter looks like you, especially her eyes."
+      }
+    ]
+  },
+  {
+    "id": "zh_特别的_248",
+    "language": "zh",
+    "pattern": "特别的",
+    "title": "特别的 (special)",
+    "shortExplanation": "special",
+    "longExplanation": "special. Pinyin: tèbié de",
+    "formation": "tèbié de",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我有一个特别的要求。",
+        "romanization": "wǒ yǒu yī gè tèbié de yāoqiú。",
+        "translation": "I have a special request."
+      }
+    ]
+  },
+  {
+    "id": "zh_竟然VA_249",
+    "language": "zh",
+    "pattern": "竟然 V/A",
+    "title": "竟然 V/A ((expressing surprise))",
+    "shortExplanation": "(expressing surprise)",
+    "longExplanation": "(expressing surprise). Pinyin: jìngrán V/A",
+    "formation": "jìngrán V/A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这个歌特别好听，最近很流行，你竟然没听过？",
+        "romanization": "zhège gē tèbié hǎotīng， zuìjìn hěn liúxíng， nǐ jìngrán méi tīng guò？",
+        "translation": "This song is particularly nice, it has been very popular recently, you’re telling me you’ve never heard of it?"
+      }
+    ]
+  },
+  {
+    "id": "zh_倍_250",
+    "language": "zh",
+    "pattern": "# 倍",
+    "title": "# 倍 (# times)",
+    "shortExplanation": "# times",
+    "longExplanation": "# times. Pinyin: # bèi",
+    "formation": "# bèi",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "二的五倍是十。",
+        "romanization": "èr de wǔ bèi shì shí。",
+        "translation": "2, multiplied 5 times, is 10."
+      }
+    ]
+  },
+  {
+    "id": "zh_值得V_251",
+    "language": "zh",
+    "pattern": "值得 V",
+    "title": "值得 V (is worth)",
+    "shortExplanation": "is worth",
+    "longExplanation": "is worth. Pinyin: zhíde V",
+    "formation": "zhíde V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "您看看这个，不管从价格方面看， 还是从质量上看， 都是值得考虑的。",
+        "romanization": "nín kànkan zhège， bùguǎn cóng jiàgé fāngmiàn kàn， háishi cóng zhìliàng shàng kàn， dōu shì zhíde kǎolǜ de。",
+        "translation": "Look at this, both in terms of price and quality, it is worth considering."
+      }
+    ]
+  },
+  {
+    "id": "zh_值值得_252",
+    "language": "zh",
+    "pattern": "值/值得",
+    "title": "值/值得 (is worth it)",
+    "shortExplanation": "is worth it",
+    "longExplanation": "is worth it. Pinyin: zhí/ zhíde",
+    "formation": "zhí/ zhíde",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "别总是为一点儿小事生气，不值/值得。",
+        "romanization": "bié zǒngshì wéi yīdiǎnr xiǎoshì shēngqì， bùzhí/ zhíde。",
+        "translation": "Don't always be angry with a little thing, it’s not worth it."
+      }
+    ]
+  },
+  {
+    "id": "zh_值_253",
+    "language": "zh",
+    "pattern": "值 $",
+    "title": "值 $ (is worth $)",
+    "shortExplanation": "is worth $",
+    "longExplanation": "is worth $. Pinyin: zhí $",
+    "formation": "zhí $",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这个手表值五十块。",
+        "romanization": "zhège shǒubiǎo zhí wǔshí kuài。",
+        "translation": "This watch is worth fifty yuan."
+      }
+    ]
+  },
+  {
+    "id": "zh_其中_254",
+    "language": "zh",
+    "pattern": "其中",
+    "title": "其中 (among them)",
+    "shortExplanation": "among them",
+    "longExplanation": "among them. Pinyin: qízhōng",
+    "formation": "qízhōng",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我们不仅要会读书，还要会选择其中的好书来读。",
+        "romanization": "wǒmen bùjǐn yào huì dúshū， hái yào huì xuǎnzé qízhōng de hǎo shū lái dú。",
+        "translation": "Not only do we have to read books, but we also need to know how to choose the good ones among them to read."
+      }
+    ]
+  },
+  {
+    "id": "zh_在SITUATION下_255",
+    "language": "zh",
+    "pattern": "(在) SITUATION 下",
+    "title": "(在) SITUATION 下 (under SITUATION)",
+    "shortExplanation": "under SITUATION",
+    "longExplanation": "under SITUATION. Pinyin: ( zài) SITUATION xià",
+    "formation": "( zài) SITUATION xià",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "(在) 一般情况下，你花的钱越多，买的东西也就越好。",
+        "romanization": "( zài) yībān qíngkuàng xià， nǐ huā de qián yuè duō， mǎi de dōngxi yě jiù yuè hǎo。",
+        "translation": "In general (lit. under general circumstances), the more money you spend, the better the goods you buy."
+      }
+    ]
+  },
+  {
+    "id": "zh_估计可能CLAUSE_256",
+    "language": "zh",
+    "pattern": "估计/可能 CLAUSE",
+    "title": "估计/可能 CLAUSE (perhaps CLAUSE)",
+    "shortExplanation": "perhaps CLAUSE",
+    "longExplanation": "perhaps CLAUSE. Pinyin: gūjì/ kěnéng CLAUSE",
+    "formation": "gūjì/ kěnéng CLAUSE",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "你有没有去问问小王？估计/可能他应该有办法。",
+        "romanization": "nǐ yǒu méiyǒu qù wèn wèn xiǎo wáng？ gūjì/ kěnéng tā yīnggāi yǒubànfǎ。",
+        "translation": "Have you asked Xiao Wang? Perhaps he should have a solution."
+      }
+    ]
+  },
+  {
+    "id": "zh_估计可能V_257",
+    "language": "zh",
+    "pattern": "估计/可能 V",
+    "title": "估计/可能 V (perhaps V)",
+    "shortExplanation": "perhaps V",
+    "longExplanation": "perhaps V. Pinyin: gūjì/ kěnéng V",
+    "formation": "gūjì/ kěnéng V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我还不习惯北方的气候，估计/可能是天气太干。",
+        "romanization": "wǒ hái bù xíguàn běifāng de qìhòu， gūjì/ kěnéng shì tiānqì tài gàn。",
+        "translation": "I am not used to the climate in the north. Perhaps it’s because the weather is too dry."
+      }
+    ]
+  }
+]

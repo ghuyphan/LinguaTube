@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Noun_62",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun にもまして (〜ni mo mashite)",
+    "shortExplanation": "This expresses 'Even more than; exceeding'.",
+    "longExplanation": "The Nounにもまして grammar point is used to express that something is even more or exceeds the noun that it’s being compared to. It translates to expressions like 'even more than' or 'exceeding' in English. It is used when making a comparison to emphasize the greater degree of something.",
+    "formation": "Noun + にもまして",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "私は彼にもまして、音楽を愛しています。",
+        "romanization": "Watashi wa kare ni mo mashite, ongaku o aishiteimasu.",
+        "translation": "I love music even more than he does."
+      },
+      {
+        "sentence": "彼女は年齢にもまして、経験豊富です。",
+        "romanization": "Kanojo wa nenrei ni mo mashite, keiken houfu desu.",
+        "translation": "She has even more experience than her age would suggest."
+      },
+      {
+        "sentence": "今日は昨日にもまして寒いです。",
+        "romanization": "Kyou wa kinou ni mo mashite samui desu.",
+        "translation": "It is even colder today than it was yesterday."
+      },
+      {
+        "sentence": "このビルは高さにもまして、美しい設計が有名です。",
+        "romanization": "Kono biru wa takasa ni mo mashite, utsukushii sekkei ga yuumei desu.",
+        "translation": "This building is famous for its beautiful design even more than its height."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_63",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun によらず (～ni yorazu)",
+    "shortExplanation": "Regardless of, irrespective of.",
+    "longExplanation": "The ～によらず grammar point is used to express the meaning 'regardless of' or 'irrespective of' in English. It is used when the outcome does not change regardless of differences in conditions.",
+    "formation": "Noun + によらず",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "結果は勉強時間によらず変わらないでしょう。",
+        "romanization": "Kekka wa benkyou jikan ni yorazu kawaranai deshou.",
+        "translation": "The result will not change regardless of the study time."
+      },
+      {
+        "sentence": "季節によらず、この地域は常に暖かいです。",
+        "romanization": "Kisetsu ni yorazu, kono chiiki wa tsune ni atatakai desu.",
+        "translation": "This region is always warm, regardless of the season."
+      },
+      {
+        "sentence": "年齢によらず、皆が楽しめるイベントです。",
+        "romanization": "Nenrei ni yorazu, mina ga tanoshimeru ibento desu.",
+        "translation": "It is an event that everyone can enjoy, regardless of age."
+      },
+      {
+        "sentence": "国籍によらず、誰でも参加できます。",
+        "romanization": "Kokuseki ni yorazu, dare demo sanka dekimasu.",
+        "translation": "Anyone can participate, regardless of nationality."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_64",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に先駆けて (〜ni saki gakete)",
+    "shortExplanation": "Meaning 'ahead of', 'before', or 'preceding in time'.",
+    "longExplanation": "The grammar point 〜に先駆けて indicates something happening ahead or before something else in terms of time. Typically used in written language or formal speech.",
+    "formation": "Noun + に先駆けて",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この映画は日本に先駆けて、アメリカで公開されました。",
+        "romanization": "Kono eiga wa Nippon ni sakigakete, Amerika de koukai saremashita.",
+        "translation": "This film was released in America ahead of Japan."
+      },
+      {
+        "sentence": "彼は周りの人々に先駆けて、その発表を聞いた。",
+        "romanization": "Kare wa mawari no hitobito ni sakigakete, sono happyou o kiita.",
+        "translation": "He heard the announcement before the people around him."
+      },
+      {
+        "sentence": "ジョンソンさんは他の参加者に先駆けて、会場に到着しました。",
+        "romanization": "Jonson-san wa hoka no sankasha ni sakigakete, kaijou ni touchaku shimashita.",
+        "translation": "Mr. Johnson arrived at the venue ahead of the other participants."
+      },
+      {
+        "sentence": "彼女は同級生に先駆けて卒業することができました。",
+        "romanization": "Kanojo wa doukyuusei ni sakigakete sotsugyou suru koto ga dekimashita.",
+        "translation": "She was able to graduate before her classmates."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_65",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に即した Noun (A ni sokushita B)",
+    "shortExplanation": "Expresses the idea of 'in accordance with', 'based on'.",
+    "longExplanation": "The grammar point 'Noun に即した Noun' is used to express the idea of something being done in accordance with or based on something else. Usually, the first noun is principle, rule, reality, etc. and the second noun could be action, method, plan, etc.",
+    "formation": "Noun1 + に即した + Noun2",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "社会のニーズに即した教育改革が必要だ。",
+        "romanization": "Shakai no niizu ni sokushita kyouiku kaikaku ga hitsuyou da.",
+        "translation": "We need an educational reform that is in accordance with the needs of society."
+      },
+      {
+        "sentence": "国際法に即した対応をとるべきだ。",
+        "romanization": "Kokusaihou ni sokushita taiou wo toru beki da.",
+        "translation": "We should respond in accordance with international law."
+      },
+      {
+        "sentence": "チームのポリシーに即した行動を取りましょう。",
+        "romanization": "Chiimu no porishii ni sokushita koudou wo torimashou.",
+        "translation": "Let's take action in accordance with the team's policy."
+      },
+      {
+        "sentence": "現実に即した計画を立てなければならない。",
+        "romanization": "Genjitsu ni sokushita keikaku wo tatenakereba naranai.",
+        "translation": "We must make a plan based on reality."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_66",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に即して Verb (〜ni soku shite ~)",
+    "shortExplanation": "The grammar point Noun に即して Verb is used to mean 'to act in accordance with', 'in line with' or 'based on'.",
+    "longExplanation": "The formation Noun に即して Verb is used when someone is doing something based on or in accordance with some norms, rules, decisions or principles. This structure is often used in business or official contexts.",
+    "formation": "Noun + に即して + Verb",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "会社のポリシーに即して行動しましょう。",
+        "romanization": "Kaisha no porishii ni soku shite koudou shimashou.",
+        "translation": "Let's act in accordance with the company's policy."
+      },
+      {
+        "sentence": "法律に即して判断を下すことが重要です。",
+        "romanization": "Houritsu ni soku shite hantei o kudasu koto ga juuyou desu.",
+        "translation": "It's important to make judgments in accordance with the law."
+      },
+      {
+        "sentence": "彼の意見に即して、プランを変更しました。",
+        "romanization": "Kare no iken ni soku shite, puran o henkou shimashita.",
+        "translation": "Based on his opinion, we changed the plan."
+      },
+      {
+        "sentence": "ルールに即して行動すれば、問題は起きません。",
+        "romanization": "Ruuru ni soku shite koudou sureba, mondai wa okimasen.",
+        "translation": "If we act in accordance with the rules, there will be no problem."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_67",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に言わせれば (Noun ni iwasereba)",
+    "shortExplanation": "Expresses 'according to', 'if you ask', 'in the opinion of'.",
+    "longExplanation": "The に言わせれば grammar point is used when we want to express someone's opinion or viewpoint. It can be translated as 'according to', 'if you ask', or 'in the opinion of'. This form is mostly used in formal or written language.",
+    "formation": "Noun + に言わせれば",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "先生に言わせれば、毎日勉強することが重要だと言う。",
+        "romanization": "Sensei ni iwasereba, mainichi benkyou suru koto ga juuyou da to iu.",
+        "translation": "According to the teacher, it's important to study every day."
+      },
+      {
+        "sentence": "彼に言わせれば、早く結婚する方がいいと思っている。",
+        "romanization": "Kare ni iwasereba, hayaku kekkon suru hou ga ii to omotte iru.",
+        "translation": "If you ask him, he thinks it's better to get married early."
+      },
+      {
+        "sentence": "評論家に言わせれば、この映画は今年の最高の映画だそうだ。",
+        "romanization": "Hyouronka ni iwasereba, kono eiga wa kotoshi no saikou no eiga da sou da.",
+        "translation": "According to the critic, this movie is the best of the year."
+      },
+      {
+        "sentence": "父に言わせれば、海外で働く経験はとても価値がある。",
+        "romanization": "Chichi ni iwasereba, kaigai de hataraku keiken wa totemo kachi ga aru.",
+        "translation": "In my father's opinion, the experience of working overseas is very valuable."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_68",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に限ったことではない (〜ni kagitta koto dewa nai)",
+    "shortExplanation": "Indicates that something is not only limited to; 'not only', 'not just'.",
+    "longExplanation": "This grammar point is used to express that the statement is not only limited to the noun mentioned before it. In English, it can be translated as 'not only', 'not just', or sometimes 'not necessarily'. It underscores that what is being said is also true for other things or situations, not just for the specific noun stated.",
+    "formation": "Noun + に限ったことではない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この問題は日本に限ったことではない。",
+        "romanization": "Kono mondai wa Nihon ni kagitta koto dewa nai.",
+        "translation": "This issue is not only limited to Japan."
+      },
+      {
+        "sentence": "英語はアメリカに限ったことではない。",
+        "romanization": "Eigo wa Amerika ni kagitta koto dewa nai.",
+        "translation": "English is not just limited to America."
+      },
+      {
+        "sentence": "スマホの依存症は若者に限ったことではない。",
+        "romanization": "Sumaho no izonshou wa wakamono ni kagitta koto dewa nai.",
+        "translation": "Smartphone addiction is not only limited to young people."
+      },
+      {
+        "sentence": "地球温暖化は我々人間に限ったことではない。",
+        "romanization": "Chikyuu ondanka wa wareware ningen ni kagitta koto dewa nai.",
+        "translation": "Global warming is not just limited to us humans."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_69",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に限ったことでもない (~ni kagitta koto demo nai)",
+    "shortExplanation": "'Not limited to'; 'not just', 'not exclusively'.",
+    "longExplanation": "The grammar point 'Noun に限ったことでもない' typically expresses that something is not only limited to a specific instance or category. It insinuates that there are also other instances or categories involved. In English, it can be translated as 'not limited to', 'not just', or 'not exclusively'.",
+    "formation": "Noun + に限ったことでもない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この試験が難しいのは、数学に限ったことでもない。",
+        "romanization": "Kono shiken ga muzukashii no wa, suugaku ni kagitta koto demo nai.",
+        "translation": "The exam being difficult is not limited to just math."
+      },
+      {
+        "sentence": "彼女が可愛いのは顔だけに限ったことでもない。性格も好きだ。",
+        "romanization": "Kanojo ga kawaii no wa kao dake ni kagitta koto demo nai. Seikaku mo suki da.",
+        "translation": "Her being cute is not just limited to her face. I also like her personality."
+      },
+      {
+        "sentence": "その問題が起こるのは、我々の国に限ったことでもない。",
+        "romanization": "Sono mondai ga okoru no wa, wareware no kuni ni kagitta koto demo nai.",
+        "translation": "The occurrence of that problem is not limited to our country."
+      },
+      {
+        "sentence": "この作家の本が売れているのは日本に限ったことでもない。",
+        "romanization": "Kono sakka no hon ga urete iru no wa Nippon ni kagitta koto demo nai.",
+        "translation": "The selling of this author's books is not limited to just Japan."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_70",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に限る (~ni kagiru)",
+    "shortExplanation": "Expresses the idea that 'nothing but', 'nothing is better than'.",
+    "longExplanation": "The noun に限る grammar point is used to express the idea that there is nothing better than the noun mentioned in the specific context. It is often used to give personal opinions, advice, or recommendations.",
+    "formation": "Noun + に限る",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "こういう時には家族に話すに限る。",
+        "romanization": "Kou iu toki ni wa kazoku ni hanasu ni kagiru.",
+        "translation": "At times like this, there's nothing better than talking to your family."
+      },
+      {
+        "sentence": "寒い冬には温かいお茶に限る。",
+        "romanization": "Samui fuyu ni wa atatakai ocha ni kagiru.",
+        "translation": "In cold winter, there's nothing better than warm tea."
+      },
+      {
+        "sentence": "疲れたときは、よい睡眠に限る。",
+        "romanization": "Tsukareta toki wa, yoi suimin ni kagiru.",
+        "translation": "When you are tired, nothing is better than a good sleep."
+      },
+      {
+        "sentence": "ダイエットするなら、運動に限る。",
+        "romanization": "Daietto suru nara, undou ni kagiru.",
+        "translation": "If you want to go on a diet, there is nothing better than exercise."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_71",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ぬいた Noun (A nuita B)",
+    "shortExplanation": "Expresses the idea of 'taking something out from something else'.",
+    "longExplanation": "This grammar point is used to denote the action of removing or taking out one thing from another. It is usually used with nouns.",
+    "formation": "Noun1 + をぬいた + Noun2",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "このサラダはにんじんをぬいたサラダです。",
+        "romanization": "Kono sarada wa ninjin o nuita sarada desu.",
+        "translation": "This is a salad with the carrots removed."
+      },
+      {
+        "sentence": "彼はコーヒーから砂糖をぬいた。",
+        "romanization": "Kare wa koohii kara satou o nuita.",
+        "translation": "He removed the sugar from the coffee."
+      },
+      {
+        "sentence": "私は料理から塩をぬいた。",
+        "romanization": "Watashi wa ryouri kara shio o nuita.",
+        "translation": "I removed the salt from the cooking."
+      },
+      {
+        "sentence": "彼女は服からシミをぬいた。",
+        "romanization": "Kanojo wa fuku kara shimi o nuita.",
+        "translation": "She removed the stain from the clothes."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_72",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + ぬいて（~nuite)",
+    "shortExplanation": "This is a way to express 'minus' or 'except for' some specific noun.",
+    "longExplanation": "The grammar point Noun + ぬいて is used when you want to exclude a certain noun from the whole or mention something about everything else except for a specific noun. It's usually translated in English as 'minus' or 'except for'. ",
+    "formation": "Noun + ぬいて",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "私たちは、彼ぬいて全員が集まることができました。",
+        "romanization": "Watashitachi wa, kare nuite zen'in ga atsumaru koto ga dekimashita.",
+        "translation": "We were able to gather everyone except for him."
+      },
+      {
+        "sentence": "このレストランはお子様メニューをぬいてすべてが美味しい。",
+        "romanization": "Kono resutoran wa okosama menyuu o nuite subete ga oishii.",
+        "translation": "Everything at this restaurant is delicious except for the kids' menu."
+      },
+      {
+        "sentence": "今日の仕事は昼休みをぬいて忙しかった。",
+        "romanization": "Kyou no shigoto wa hiruyasumi o nuite isogashikatta.",
+        "translation": "Today's work was busy except for the lunch break."
+      },
+      {
+        "sentence": "休暇の日をぬいて、毎日彼は働きます。",
+        "romanization": "Kyuuka no hi o nuite, mainichi kare wa hatarakimasu.",
+        "translation": "He works every day except for the holidays."
+      }
+    ]
+  },
+  {
+    "id": "ja_ぬくnuku_73",
+    "language": "ja",
+    "pattern": " ～ぬく (~nuku)",
+    "title": " ～ぬく (~nuku)",
+    "shortExplanation": "Expresses the concept of doing something completely or thoroughly.",
+    "longExplanation": "'Noun ぬく' is a phrase that conveys the idea of doing an action thoroughly or completely. It demonstrates a determination to carry out a task until the end. While the formation commonly uses verbs, it does convey a meaning similar to the English phrase 'to do completely'.",
+    "formation": "Verb-stem + ぬく",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は一日中本を読みぬく。",
+        "romanization": "Kare wa ichinichijuu hon o yominuku.",
+        "translation": "He will read the book all day long."
+      },
+      {
+        "sentence": "私はこのプロジェクトを終わらせぬく。",
+        "romanization": "Watashi wa kono purojekuto o owarasenuku.",
+        "translation": "I will finish this project completely."
+      },
+      {
+        "sentence": "彼女は毎日ジムに行き、エクササイズを終わりぬく。",
+        "romanization": "Kanojo wa mainichi jim ni iki, ekusasaizu o owari nuku.",
+        "translation": "She goes to the gym every day and finishes her exercise completely."
+      },
+      {
+        "sentence": "私たちはこのゲームを解きぬく。",
+        "romanization": "Watashitachi wa kono geemu o tokinuku.",
+        "translation": "We will solve this game completely."
+      }
+    ]
+  },
+  {
+    "id": "ja_Nounのいかんだ_74",
+    "language": "ja",
+    "pattern": "Noun+のいかんだ",
+    "title": "Noun+のいかんだ (Noun no ikan da)",
+    "shortExplanation": "Depends on; up to",
+    "longExplanation": "The のいかんだ(Noun no ikan da) grammar point is used to express that something depends on a particular situation or fact. It can be translated as 'Depends on' or 'up to' in English. The construction no ikan is usually used with nouns and naru verbs.",
+    "formation": "Noun + のいかんだ/Noun + のいかんでは",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼が来るのいかんで決めよう。",
+        "romanization": "Kare ga kuru no ikan de kimeyou.",
+        "translation": "Let's decide depending on whether he comes or not."
+      },
+      {
+        "sentence": "試験の結果のいかんで留年が決まります。",
+        "romanization": "Shiken no kekka no ikan de ryuunen ga kimarimasu.",
+        "translation": "Whether you repeat a year or not depends on the test results."
+      },
+      {
+        "sentence": "天気のいかんでは、ピクニックをキャンセルします。",
+        "romanization": "Tenki no ikan de wa, pikunikku o kyanseru shimasu.",
+        "translation": "I'll cancel the picnic depending on the weather."
+      },
+      {
+        "sentence": "彼の回答のいかんで、我々の次の行動が決まる。",
+        "romanization": "Kare no kaitou no ikan de, wareware no tsugi no koudou ga kimaru.",
+        "translation": "Our next action depends on his response."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_75",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun のいかんでは (Noun no ikan de wa)",
+    "shortExplanation": "It depends on the Noun",
+    "longExplanation": "The のいかんでは grammar point is used when you want to express that the outcome or decision hinges on the condition described in the noun preceding this phrase. It can be translated as 'depending on ___' or 'it depends on ___' in English.",
+    "formation": "Noun + のいかんでは",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "試験の結果のいかんでは、大学の入学許可を得られるかどうかが決まります。",
+        "romanization": "Shiken no kekka no ikan dewa, daigaku no nyuugaku kyoka o erareru ka douka ga kimarimasu.",
+        "translation": "Whether you can get permission to enter university depends on the result of the exam."
+      },
+      {
+        "sentence": "天気のいかんでは、ピクニックを延期するかもしれません。",
+        "romanization": "Tenki no ikan dewa, pikunikku o enki suru kamoshiremasen.",
+        "translation": "Depending on the weather, we might delay the picnic."
+      },
+      {
+        "sentence": "交通事情のいかんでは、遅れることがあります。",
+        "romanization": "Koutsuujijou no ikan dewa, okureru koto ga arimasu.",
+        "translation": "Depending on the traffic conditions, I might be late."
+      },
+      {
+        "sentence": "経済の状況のいかんでは、会社の将来は決まります。",
+        "romanization": "Keizai no joukyou no ikan dewa, kaisha no shourai wa kimarimasu.",
+        "translation": "Depending on the state of the economy, the company's future is determined."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_76",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun のいかんにかかわらず (Noun no ikan ni kakawarazu)",
+    "shortExplanation": "Regardless of, irrespective of.",
+    "longExplanation": "The phrase 'Noun のいかんにかかわらず' is used to express that something is the case irrespective of a certain condition. It can be translated as 'regardless of' or 'irrespective of' in English. This phrase is used with nouns.",
+    "formation": "Noun + のいかんにかかわらず",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "結果のいかんにかかわらず、彼は決定を後悔しなかった。",
+        "romanization": "Kekka no ikan ni kakawarazu, kare wa kettei wo koukai shinakatta.",
+        "translation": "Regardless of the outcome, he didn't regret his decision."
+      },
+      {
+        "sentence": "年齢のいかんにかかわらず、どんな人でも学ぶことは可能です。",
+        "romanization": "Nenrei no ikan ni kakawarazu, donna hito demo manabu koto wa kanou desu.",
+        "translation": "Regardless of age, anyone can learn."
+      },
+      {
+        "sentence": "経験のいかんにかかわらず、始めることが大切です。",
+        "romanization": "Keiken no ikan ni kakawarazu, hajimeru koto ga taisetsu desu.",
+        "translation": "Regardless of experience, it's important to start."
+      },
+      {
+        "sentence": "天候のいかんにかかわらず、ハイキングは予定通りに行われます。",
+        "romanization": "Tenkou no ikan ni kakawarazu, haikingu wa yotei doori ni okonawaremasu.",
+        "translation": "Regardless of the weather, the hiking will take place as scheduled."
+      }
+    ]
+  }
+]

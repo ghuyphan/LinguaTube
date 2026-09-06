@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_首先其次_228",
+    "language": "zh",
+    "pattern": "首先……其次……",
+    "title": "首先……其次…… (First… second…)",
+    "shortExplanation": "First… second…",
+    "longExplanation": "First… second…. Pinyin: shǒuxiān…… qícì……",
+    "formation": "shǒuxiān…… qícì……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "应聘时，首先要穿正式的衣服，其次不要紧张。",
+        "romanization": "yìngpìn shí， shǒuxiān yào chuān zhèngshì de yīfu， qícì bùyào jǐnzhāng。",
+        "translation": "At the job interview, first [you] should wear formal clothing, and second don't be nervous."
+      }
+    ]
+  },
+  {
+    "id": "zh_不管_229",
+    "language": "zh",
+    "pattern": "不管",
+    "title": "不管 (no matter)",
+    "shortExplanation": "no matter",
+    "longExplanation": "no matter. Pinyin: bùguǎn",
+    "formation": "bùguǎn",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "不管什么电影，我都喜欢看。",
+        "romanization": "bùguǎn shénme diànyǐng， wǒ dōu xǐhuan kàn。",
+        "translation": "I like to watch all kinds of movies. (Lit. No matter what movie, I like to watch them all.)"
+      }
+    ]
+  },
+  {
+    "id": "zh_以为_230",
+    "language": "zh",
+    "pattern": "以为",
+    "title": "以为 (to believe falsely)",
+    "shortExplanation": "to believe falsely",
+    "longExplanation": "to believe falsely. Pinyin: yǐwéi",
+    "formation": "yǐwéi",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我以为东西是给我的，其实是给爸爸的。",
+        "romanization": "wǒ yǐwéi dōngxi shì gěi wǒ de， qíshí shì gěi bàba de。",
+        "translation": "I thought the thing was for me, but actually it was for my father."
+      }
+    ]
+  },
+  {
+    "id": "zh_原来本来_231",
+    "language": "zh",
+    "pattern": "原来/本来",
+    "title": "原来/本来 (originally)",
+    "shortExplanation": "originally",
+    "longExplanation": "originally. Pinyin: yuánlái/ běnlái",
+    "formation": "yuánlái/ běnlái",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "原来/本来需要12个小时。",
+        "romanization": "yuánlái/ běnlái xūyào12 gè xiǎoshí。",
+        "translation": "It originally required 12 hours."
+      }
+    ]
+  },
+  {
+    "id": "zh_原来clause_232",
+    "language": "zh",
+    "pattern": "原来 clause",
+    "title": "原来 clause (it turns out)",
+    "shortExplanation": "it turns out",
+    "longExplanation": "it turns out. Pinyin: yuánlái clause",
+    "formation": "yuánlái clause",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我还以为是谁帮我打扫房间呢，原来是你啊！",
+        "romanization": "wǒ hái yǐwéi shì shéi bāng wǒ dǎsǎo fángjiān ne， yuánlái shì nǐ ā！",
+        "translation": "I was wondering who was cleaning the room for me. It turns out it’s you!"
+      }
+    ]
+  },
+  {
+    "id": "zh_本来就VA_233",
+    "language": "zh",
+    "pattern": "本来就 V/A",
+    "title": "本来就 V/A ((see 4.03.2))",
+    "shortExplanation": "(see 4.03.2)",
+    "longExplanation": "(see 4.03.2). Pinyin: běnlái jiù V/A",
+    "formation": "běnlái jiù V/A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "-",
+        "romanization": "-",
+        "translation": "-"
+      }
+    ]
+  },
+  {
+    "id": "zh_并不并没VA_234",
+    "language": "zh",
+    "pattern": "并不/并没 V/A",
+    "title": "并不/并没 V/A ((emphasize the negative))",
+    "shortExplanation": "(emphasize the negative)",
+    "longExplanation": "(emphasize the negative). Pinyin: bìngbù/ bìng méi V/A",
+    "formation": "bìngbù/ bìng méi V/A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "大家说外面很冷，但我并不觉得冷。",
+        "romanization": "dàjiā shuō wàimiàn hěn lěng， dàn wǒ bìngbù juéde lěng。",
+        "translation": "Everyone said that it was cold outside, but I (rather) didn’t feel cold."
+      }
+    ]
+  },
+  {
+    "id": "zh_按照N_235",
+    "language": "zh",
+    "pattern": "按照 N",
+    "title": "按照 N (according to N)",
+    "shortExplanation": "according to N",
+    "longExplanation": "according to N. Pinyin: ànzhào N",
+    "formation": "ànzhào N",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我们还是按照原来的计划进行。",
+        "romanization": "wǒmen háishi ànzhào yuánlái de jìhuà jìnxíng。",
+        "translation": "We are still proceeding according to the original plan."
+      }
+    ]
+  },
+  {
+    "id": "zh_甚至VA_236",
+    "language": "zh",
+    "pattern": "甚至 V/A",
+    "title": "甚至 V/A (even V/A)",
+    "shortExplanation": "even V/A",
+    "longExplanation": "even V/A. Pinyin: shènzhì V/A",
+    "formation": "shènzhì V/A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他工作很努力，甚至忘了吃饭。",
+        "romanization": "tā gōngzuò hěn nǔlì， shènzhì wàng le chīfàn。",
+        "translation": "He worked hard and even forgot to eat."
+      }
+    ]
+  },
+  {
+    "id": "zh_肯定VA_237",
+    "language": "zh",
+    "pattern": "肯定 V/A",
+    "title": "肯定 V/A (certainly V/A)",
+    "shortExplanation": "certainly V/A",
+    "longExplanation": "certainly V/A. Pinyin: kěndìng V/A",
+    "formation": "kěndìng V/A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "运动对身体健康肯定有好处。",
+        "romanization": "yùndòng duì shēntǐ jiànkāng kěndìng yǒu hǎochu。",
+        "translation": "Exercise is definitely good for your health."
+      }
+    ]
+  },
+  {
+    "id": "zh_肯定_238",
+    "language": "zh",
+    "pattern": "肯定",
+    "title": "肯定 (certain)",
+    "shortExplanation": "certain",
+    "longExplanation": "certain. Pinyin: kěndìng",
+    "formation": "kěndìng",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我能肯定，张远一定会来。",
+        "romanization": "wǒ néng kěndìng， zhāng yuǎn yīdìng huì lái。",
+        "translation": "I can be sure that Zhang Yuan will definitely come."
+      }
+    ]
+  },
+  {
+    "id": "zh_肯定的_239",
+    "language": "zh",
+    "pattern": "肯定的",
+    "title": "肯定的 (affirmative, positive)",
+    "shortExplanation": "affirmative, positive",
+    "longExplanation": "affirmative, positive. Pinyin: kěndìng de",
+    "formation": "kěndìng de",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他的回答是肯定的。",
+        "romanization": "tā de huídá shì kěndìng de。",
+        "translation": "His answer is yes (in the affirmative)."
+      }
+    ]
+  },
+  {
+    "id": "zh_再说_240",
+    "language": "zh",
+    "pattern": "再说",
+    "title": "再说 (talk about it / deal with it until a later time)",
+    "shortExplanation": "talk about it / deal with it until a later time",
+    "longExplanation": "talk about it / deal with it until a later time. Pinyin: zàishuō",
+    "formation": "zàishuō",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "现在学习忙，考完再说吧。",
+        "romanization": "xiànzài xuéxí máng， kǎowán zàishuō ba。",
+        "translation": "I’m busy studying now, let’s talk about it / deal with it (until) after the exam."
+      }
+    ]
+  },
+  {
+    "id": "zh_再说_241",
+    "language": "zh",
+    "pattern": "再说",
+    "title": "再说 (besides)",
+    "shortExplanation": "besides",
+    "longExplanation": "besides. Pinyin: zàishuō",
+    "formation": "zàishuō",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "毕业后大家都很忙，再说，很多同学不在一个城市。",
+        "romanization": "bìyè hòu dàjiā dōu hěn máng， zàishuō， hěn duō tóngxué bùzài yī gè chéngshì。",
+        "translation": "After graduation, everyone was very busy. Besides, many students are not in a city."
+      }
+    ]
+  },
+  {
+    "id": "zh_实际的_242",
+    "language": "zh",
+    "pattern": "实际的",
+    "title": "实际的 (real)",
+    "shortExplanation": "real",
+    "longExplanation": "real. Pinyin: shíjì de",
+    "formation": "shíjì de",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "实际的东西跟广告上的不一样。",
+        "romanization": "shíjì de dōngxi gēn guǎnggào shàng de bùyīyàng。",
+        "translation": "The actual thing is different from the one on the advertisement."
+      }
+    ]
+  }
+]

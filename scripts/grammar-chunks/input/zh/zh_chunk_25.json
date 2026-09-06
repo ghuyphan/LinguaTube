@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_V1着V1着V2了_395",
+    "language": "zh",
+    "pattern": "V1 着 V1 着 V2了",
+    "title": "V1 着 V1 着 V2了 (V2’ed while V1-ing)",
+    "shortExplanation": "V2’ed while V1-ing",
+    "longExplanation": "V2’ed while V1-ing. Pinyin: V1 zhe V1 zhe V2 le",
+    "formation": "V1 zhe V1 zhe V2 le",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "她讲着讲着就笑了。",
+        "romanization": "tā jiǎng zhe jiǎng zhe jiù xiào le。",
+        "translation": "As she was speaking, she started to laugh."
+      }
+    ]
+  },
+  {
+    "id": "zh_一就_396",
+    "language": "zh",
+    "pattern": "一……就……",
+    "title": "一……就…… (as soon as … then …)",
+    "shortExplanation": "as soon as … then …",
+    "longExplanation": "as soon as … then …. Pinyin: yī…… jiù……",
+    "formation": "yī…… jiù……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "她一回家就看电视。",
+        "romanization": "tā yī huíjiā jiù kàn diànshì。",
+        "translation": "As soon as she gets home, (then) she watches TV."
+      }
+    ]
+  },
+  {
+    "id": "zh_一就_397",
+    "language": "zh",
+    "pattern": "一……就……",
+    "title": "一……就…… (每次只要)",
+    "shortExplanation": "每次只要",
+    "longExplanation": "每次只要. Pinyin: yī…… jiù……",
+    "formation": "yī…… jiù……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "儿子小时候一说话就脸红。",
+        "romanization": "érzi xiǎoshíhou yī shuōhuà jiù liǎnhóng。",
+        "translation": "When [my] son was a child, as soon as he speaks, (then) he blushes."
+      }
+    ]
+  },
+  {
+    "id": "zh_究竟Q_398",
+    "language": "zh",
+    "pattern": "究竟 Q",
+    "title": "究竟 Q (Q exactly)",
+    "shortExplanation": "Q exactly",
+    "longExplanation": "Q exactly. Pinyin: jiūjìng Q",
+    "formation": "jiūjìng Q",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "究竟哪个季节去旅游比较好呢？",
+        "romanization": "jiūjìng nǎge jìjié qù lǚyóu bǐjiào hǎo ne？",
+        "translation": "Which season exactly is better to travel?"
+      }
+    ]
+  },
+  {
+    "id": "zh_V起来_399",
+    "language": "zh",
+    "pattern": "V 起(来)",
+    "title": "V 起(来) (V up)",
+    "shortExplanation": "V up",
+    "longExplanation": "V up. Pinyin: V qǐ( lái)",
+    "formation": "V qǐ( lái)",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "你先把桌子上的东西拿起(来)，我擦完之后你再放下来。",
+        "romanization": "nǐ xiān bǎ zhuōzi shàng de dōngxi náqǐ( lái)， wǒ cā wán zhīhòu nǐ zài fàng xiàlai。",
+        "translation": "You pick up the things on the table first, and then you [can] put them down after I clean it."
+      }
+    ]
+  },
+  {
+    "id": "zh_V起来_400",
+    "language": "zh",
+    "pattern": "V 起来",
+    "title": "V 起来 (to start to V)",
+    "shortExplanation": "to start to V",
+    "longExplanation": "to start to V. Pinyin: V qilai",
+    "formation": "V qilai",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "小王又唱起来了。",
+        "romanization": "xiǎo wáng yòu chàng qilai le。",
+        "translation": "Xiao Wang started singing again."
+      }
+    ]
+  },
+  {
+    "id": "zh_V起来_401",
+    "language": "zh",
+    "pattern": "V 起来",
+    "title": "V 起来 (seems like, sounds like)",
+    "shortExplanation": "seems like, sounds like",
+    "longExplanation": "seems like, sounds like. Pinyin: V qilai",
+    "formation": "V qilai",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "上海话听起来就像外语一样。",
+        "romanization": "Shànghǎihuà tīngqilai jiù xiàng wàiyǔ yīyàng。",
+        "translation": "The Shanghai dialect sounds like a foreign language."
+      }
+    ]
+  },
+  {
+    "id": "zh_说起O_402",
+    "language": "zh",
+    "pattern": "说起 O",
+    "title": "说起 O (speaking of O)",
+    "shortExplanation": "speaking of O",
+    "longExplanation": "speaking of O. Pinyin: shuōqǐ O",
+    "formation": "shuōqǐ O",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "说起吃的东西，给我印象最深的是湖南菜。",
+        "romanization": "shuōqǐ chī de dōngxi， gěi wǒ yìnxiàng zuì shēn de shì Húnán cài。",
+        "translation": "Speaking of food, the one that impressed me the most is Hunan cuisine."
+      }
+    ]
+  },
+  {
+    "id": "zh_如何_403",
+    "language": "zh",
+    "pattern": "如何",
+    "title": "如何 (how)",
+    "shortExplanation": "how",
+    "longExplanation": "how. Pinyin: rúhé",
+    "formation": "rúhé",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "评委叫第一对夫妻说说他俩是如何恩爱的。",
+        "romanization": "píngwěi jiào dìyī duì fūqī shuōshuo tā liǎ shì rúhé ēn'ài de。",
+        "translation": "The judge called the first couple to talk about how they loved each other."
+      }
+    ]
+  },
+  {
+    "id": "zh_如何_404",
+    "language": "zh",
+    "pattern": "如何",
+    "title": "如何 (how is)",
+    "shortExplanation": "how is",
+    "longExplanation": "how is. Pinyin: rúhé",
+    "formation": "rúhé",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "“80后”们月收入情况如何？",
+        "romanization": "“80 hòu” men yuèshōurù qíngkuàng rúhé？",
+        "translation": "How is the monthly income situation with those born in the 80s?"
+      }
+    ]
+  },
+  {
+    "id": "zh_怎么_405",
+    "language": "zh",
+    "pattern": "怎么，……",
+    "title": "怎么，…… ((expression of surprise))",
+    "shortExplanation": "(expression of surprise)",
+    "longExplanation": "(expression of surprise). Pinyin: zěnme，……",
+    "formation": "zěnme，……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "怎么，你不认识我了？！",
+        "romanization": "zěnme， nǐ bù rènshi wǒ le？！",
+        "translation": "What, you don't know me anymore?!"
+      }
+    ]
+  },
+  {
+    "id": "zh_靠_406",
+    "language": "zh",
+    "pattern": "靠",
+    "title": "靠 (to lean)",
+    "shortExplanation": "to lean",
+    "longExplanation": "to lean. Pinyin: kào",
+    "formation": "kào",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "王老师喜欢靠着桌子讲课。",
+        "romanization": "wáng lǎoshī xǐhuan kào zhe zhuōzi jiǎngkè。",
+        "translation": "Teacher Wang likes to give her lecture while leaning on the table."
+      }
+    ]
+  },
+  {
+    "id": "zh_靠_407",
+    "language": "zh",
+    "pattern": "靠",
+    "title": "靠 (beside)",
+    "shortExplanation": "beside",
+    "longExplanation": "beside. Pinyin: kào",
+    "formation": "kào",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我的座位是17号，是靠窗的座位。",
+        "romanization": "wǒ de zuòwèi shì17 hào， shì kàochuāng de zuòwèi。",
+        "translation": "My seat is No. 17, which is (a seat) by the window."
+      }
+    ]
+  },
+  {
+    "id": "zh_靠_408",
+    "language": "zh",
+    "pattern": "靠",
+    "title": "靠 (to depend)",
+    "shortExplanation": "to depend",
+    "longExplanation": "to depend. Pinyin: kào",
+    "formation": "kào",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "在家靠父母，出门靠朋友。",
+        "romanization": "zài jiā kào fùmǔ， chūmén kào péngyou。",
+        "translation": "At home [you] relies on [your] parents, [when you] go out [you] rely on [your] friends."
+      }
+    ]
+  },
+  {
+    "id": "zh_居然_409",
+    "language": "zh",
+    "pattern": "居然",
+    "title": "居然 ((See 竟然))",
+    "shortExplanation": "(See 竟然)",
+    "longExplanation": "(See 竟然). Pinyin: jūrán",
+    "formation": "jūrán",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这么简单的题，你居然也不会做？",
+        "romanization": "zhème jiǎndān de tí， nǐ jūrán yě bùhuì zuò？",
+        "translation": "[For] such a simple question, [you’re telling me that] you don’t know how to do it?"
+      }
+    ]
+  }
+]

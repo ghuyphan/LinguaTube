@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_が_75": {
+      "title": "～が 私に くれます (〜ga watashi ni kuremasu)",
+      "shortExplanation": "Dùng để diễn tả ai đó tặng quà hoặc làm một việc gì đó cho 'tôi'; 'ai đó cho/tặng tôi'.",
+      "longExplanation": "Mẫu ngữ pháp ～が私にくれます dùng để diễn tả việc người khác trao tặng đồ vật hoặc làm một điều gì đó cho người nói ('tôi') hoặc người thuộc phía người nói. Trong cấu trúc này, người trao tặng (chủ thể hành động) được đánh dấu bằng trợ từ が, còn người tiếp nhận là 私に (cho tôi). Đối với hành động giúp đỡ, động từ thường chia ở thể て kết hợp với くれます (～てくれます).",
+      "formation": "Người cho + が + (Vật / Hành động thể て) + 私に + くれます",
+      "examples": [
+        {
+          "translation": "Anh ấy đã tặng quà cho tôi."
+        },
+        {
+          "translation": "Bạn tôi đã giúp tôi làm bài tập về nhà."
+        },
+        {
+          "translation": "Mẹ đã làm cơm hộp cho tôi."
+        },
+        {
+          "translation": "Thầy cô giáo đã cho tôi lời khuyên."
+        }
+      ]
+    },
+    "ja_けど_76": {
+      "title": "～けど、～ (〜kedo、～)",
+      "shortExplanation": "Dùng để nối hai mệnh đề thể hiện sự đối lập hoặc mở đầu câu chuyện; 'nhưng', 'tuy... nhưng'.",
+      "longExplanation": "Mẫu liên từ ～けど được dùng trong văn nói thân mật để nối hai vế câu, thể hiện sự đối lập, tương phản hoặc dùng làm tiền đề mở đầu câu chuyện. Mang nghĩa tương đương 'nhưng', 'thế nhưng' trong tiếng Việt. Đây là dạng nói ngắn gọn, suồng sã hơn so với けれど hoặc が.",
+      "formation": "Động từ thể thông thường + けど / Tính từ đuôi い + けど / Tính từ đuôi な + だけど / Danh từ + だけど",
+      "examples": [
+        {
+          "translation": "Tôi đã đến lớp rồi nhưng vẫn phải làm bài tập về nhà."
+        },
+        {
+          "translation": "Hôm qua trời lạnh nhưng hôm nay lại ấm áp."
+        },
+        {
+          "translation": "Anh ấy tốt bụng nhưng có chút đáng sợ."
+        },
+        {
+          "translation": "Món này trông ngon đấy nhưng đắt quá."
+        }
+      ]
+    },
+    "ja_けれど_77": {
+      "title": "～けれど、～ (〜keredo、～)",
+      "shortExplanation": "Diễn tả sự tương phản, đối lập hoặc làm tiền đề nối hai vế; 'nhưng', 'tuy... nhưng'.",
+      "longExplanation": "Mẫu liên từ ～けれど dùng để nối hai vế câu biểu thị sự đối lập, nhượng bộ hoặc mở đầu câu chuyện một cách nhẹ nhàng. Mang ý nghĩa 'tuy... nhưng', 'thế nhưng'. Cấu trúc này trang trọng và lịch sự hơn so với dạng rút gọn 'けど', thích hợp dùng trong cả giao tiếp hàng ngày lẫn văn phong lịch sự vừa phải.",
+      "formation": "Động từ thể thông thường + けれど / Tính từ đuôi い + けれど / Tính từ đuôi な + だけれど / Danh từ + だけれど",
+      "examples": [
+        {
+          "translation": "Hôm nay trời lạnh nhưng tôi vẫn đi dạo."
+        },
+        {
+          "translation": "Anh ấy tốt bụng nhưng hơi đáng sợ một chút."
+        },
+        {
+          "translation": "Căn phòng này chật hẹp nhưng rất sáng sủa."
+        },
+        {
+          "translation": "Cô ấy dù bị ốm nhưng ngày nào cũng làm việc."
+        }
+      ]
+    },
+    "ja_こちら_78": {
+      "title": "こちら～ (kochira～)",
+      "shortExplanation": "Đại từ chỉ phương hướng, địa điểm, sự vật hoặc người ở phía người nói; dạng lịch sự của 'kore / koko'.",
+      "longExplanation": "Từ こちら là đại từ chỉ thị lịch sự thuộc hệ こ・そ・あ・ど, dùng để chỉ hướng ('hướng này, lối này'), địa điểm ('chỗ này, nơi đây'), đồ vật ('cái này') ở gần người nói, hoặc dùng để giới thiệu trang trọng về người ('vị này, người này'). Đây là cách nói lịch sự, trang trọng hơn của 'これ' (cái này), 'ここ' (chỗ này) và 'こっち' (phía này).",
+      "formation": "こちら / こちら + の + Danh từ",
+      "examples": [
+        {
+          "translation": "Đây là anh/chị Tanaka."
+        },
+        {
+          "translation": "Nhà hàng bên này rất ngon."
+        },
+        {
+          "translation": "Xin mời đi lối này."
+        },
+        {
+          "translation": "Cái này tốt hơn hay cái đằng kia tốt hơn?"
+        }
+      ]
+    },
+    "ja_さっき_79": {
+      "title": "さっき～ (sakki～)",
+      "shortExplanation": "Phó từ chỉ thời gian ngắn vừa trôi qua; 'vừa nãy', 'lúc nãy', 'vừa mới'.",
+      "longExplanation": "Từ さっき là phó từ chỉ thời gian, dùng để diễn tả một hành động hoặc sự việc vừa mới xảy ra cách đây một khoảng thời gian ngắn (vài phút đến một hai tiếng trước). Mang nghĩa là 'vừa nãy', 'lúc nãy' trong tiếng Việt. Thường dùng trong hội thoại thân mật hàng ngày; dạng lịch sự và trang trọng hơn là 'さきほど' (先程).",
+      "formation": "さっき + Động từ / Mệnh đề; さっき + の + Danh từ",
+      "examples": [
+        {
+          "translation": "Vừa nãy có điện thoại gọi đến."
+        },
+        {
+          "translation": "Tôi vừa mới dọn phòng lúc nãy."
+        },
+        {
+          "translation": "Tôi vừa gặp anh ấy lúc nãy."
+        },
+        {
+          "translation": "Bạn đã xem bản tin vừa nãy chưa?"
+        }
+      ]
+    },
+    "ja_すぐに_80": {
+      "title": "すぐに～ (sugu ni～)",
+      "shortExplanation": "Phó từ biểu thị hành động diễn ra nhanh chóng, không chậm trễ; 'ngay lập tức', 'ngay'.",
+      "longExplanation": "Phó từ すぐに được dùng để diễn tả một hành động hay sự thay đổi diễn ra ngay tức thì, lập tức mà không có bất kỳ khoảng thời gian trễ nào. Tương đương với 'ngay lập tức', 'liền' trong tiếng Việt. Thường đứng trước động từ hoặc tính từ để bổ nghĩa.",
+      "formation": "すぐに + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Khi bạn đến nơi, hãy gọi điện thoại cho tôi ngay nhé."
+        },
+        {
+          "translation": "Vừa nghe tin đó, tôi đã lập tức đến công ty."
+        },
+        {
+          "translation": "Cô ấy đã bật khóc ngay lập tức."
+        },
+        {
+          "translation": "Vừa bước vào lớp học, thầy giáo đã bắt đầu bài giảng ngay."
+        }
+      ]
+    },
+    "ja_ぜんぜん_81": {
+      "title": "ぜんぜん～ (zenzen～)",
+      "shortExplanation": "Đi với dạng phủ định để nhấn mạnh sự phủ định hoàn toàn; 'hoàn toàn không...', 'chẳng... chút nào'.",
+      "longExplanation": "Phó từ ぜんぜん (Toàn Nhiên) theo ngữ pháp chuẩn luôn đi kèm với các từ ngữ ở thể phủ định (động từ hoặc tính từ phủ định) để nhấn mạnh sự phủ định tuyệt đối. Mang nghĩa là 'hoàn toàn không...', 'chẳng... chút nào'.",
+      "formation": "ぜんぜん + Động từ / Tính từ thể phủ định",
+      "examples": [
+        {
+          "translation": "Anh ấy hoàn toàn không nói gì cả."
+        },
+        {
+          "translation": "Căn phòng này không hề tối một chút nào."
+        },
+        {
+          "translation": "Cô ấy hoàn toàn không mệt chút nào."
+        },
+        {
+          "translation": "Bộ phim đó chẳng thú vị một chút nào cả."
+        }
+      ]
+    },
+    "ja_そして_82": {
+      "title": "そして、～ (soshite、～)",
+      "shortExplanation": "Liên từ nối hai câu hoặc hai mệnh đề theo trình tự thời gian hoặc bổ sung thêm thông tin; 'và', 'rồi thì', 'sau đó'.",
+      "longExplanation": "Từ そして là liên từ dùng để nối tiếp hai câu hoặc hai ý lại với nhau. Cấu trúc này thường biểu thị sự tiếp nối các hành động theo trình tự thời gian ('làm A rồi làm B') hoặc dùng để bổ sung, liệt kê thêm một sự việc liên quan ('và', 'đồng thời').",
+      "formation": "Câu 1 + 。そして、 + Câu 2",
+      "examples": [
+        {
+          "translation": "Tôi thức dậy vào buổi sáng, rồi sau đó làm bài tập về nhà."
+        },
+        {
+          "translation": "Tôi đã uống cà phê, rồi sau đó đọc báo."
+        },
+        {
+          "translation": "Tôi đã rời khỏi nhà. Và sau đó, tôi đi đến nhà ga."
+        },
+        {
+          "translation": "Anh ấy đã chơi game. Sau đó, anh ấy xem ti-vi."
+        }
+      ]
+    },
+    "ja_そちら_83": {
+      "title": "そちら～ (sochira～)",
+      "shortExplanation": "Đại từ chỉ phương hướng, địa điểm, sự vật hoặc người ở phía người nghe; dạng lịch sự của 'sore / soko'.",
+      "longExplanation": "Từ そちら là đại từ chỉ thị lịch sự thuộc hệ こ・そ・あ・ど, dùng để chỉ hướng ('hướng đó, phía đó'), địa điểm ('chỗ đó'), sự vật ('cái đó') ở gần người nghe, hoặc người ở phía người nghe ('vị đó'). Ngoài ra, そちら còn được dùng trong giao tiếp lịch sự để chỉ chính đối phương hoặc phía đối phương ('quý vị, bên bạn').",
+      "formation": "そちら / そちら + の + Danh từ",
+      "examples": [
+        {
+          "translation": "Nhà hàng phía bên đó thế nào?"
+        },
+        {
+          "translation": "Vị ở bên đó có thể cho tôi biết quý danh được không ạ?"
+        },
+        {
+          "translation": "Trên đường đi về phía đó có một nhà ga."
+        },
+        {
+          "translation": "Chiếc túi xách ở chỗ bạn trông giống của tôi nhỉ."
+        }
+      ]
+    },
+    "ja_それから_84": {
+      "title": "それから、～ (sorekara、～)",
+      "shortExplanation": "Liên từ biểu thị hành động diễn ra tiếp nối sau một hành động trước đó; 'sau đó', 'rồi thì', 'tiếp theo'.",
+      "longExplanation": "Liên từ それから dùng để biểu thị trình tự thời gian liên tiếp giữa hai hành động hoặc sự việc: sau khi sự việc thứ nhất hoàn thành thì tiếp tục diễn ra sự việc thứ hai. Mang nghĩa tương đương với 'sau đó', 'rồi thì' trong tiếng Việt. Ngoài ra, nó cũng có thể dùng để liệt kê bổ sung thêm thông tin hoặc đồ vật ('và còn... nữa').",
+      "formation": "Mệnh đề 1 (Động từ thể て...) + 、それから + Mệnh đề 2",
+      "examples": [
+        {
+          "translation": "Tôi uống cà phê, sau đó rời khỏi nhà."
+        },
+        {
+          "translation": "Tôi đi mua sắm, sau đó đã đi xem phim."
+        },
+        {
+          "translation": "Cô ấy học bài xong, rồi sau đó đi ngủ."
+        },
+        {
+          "translation": "Tôi đã đến bữa tiệc, sau đó nói chuyện với bạn bè."
+        }
+      ]
+    },
+    "ja_だいたい_85": {
+      "title": "だいたい〜 (daitai〜)",
+      "shortExplanation": "Phó từ biểu thị ước lượng phỏng chừng hoặc đại khái; 'khoảng', 'đại khái', 'ước chừng'.",
+      "longExplanation": "Từ だいたい (Đại Thể) là phó từ dùng để đưa ra ước lượng phỏng chừng về số lượng, thời gian, mức độ, tỷ lệ mà không cần con số chính xác tuyệt đối. Mang nghĩa là 'khoảng chừng', 'ước chừng', 'đại khái'. Đặt trước số từ, lượng từ hoặc cụm diễn đạt mức độ.",
+      "formation": "だいたい + Số từ / Lượng từ / Tỷ lệ phần trăm",
+      "examples": [
+        {
+          "translation": "Có khoảng 100 người đã tham gia bữa tiệc."
+        },
+        {
+          "translation": "Cô ấy hoàn thành công việc đó trong khoảng 2 tiếng đồng hồ."
+        },
+        {
+          "translation": "Khoảng 80% học sinh đã đỗ kỳ thi."
+        },
+        {
+          "translation": "Hôm nay trời nóng khoảng 30 độ."
+        }
+      ]
+    },
+    "ja_たいてい_86": {
+      "title": "たいてい～ (taitei～)",
+      "shortExplanation": "Phó từ biểu thị tần suất phổ biến hoặc phần lớn trường hợp; 'thông thường', 'hầu hết', 'phần lớn'.",
+      "longExplanation": "Từ たいてい (Đại Đê) là phó từ dùng để diễn tả thói quen lặp đi lặp lại trong phần lớn thời gian hoặc một đặc điểm mang tính quy luật chung, phổ biến. Mang nghĩa 'thông thường', 'thường thường', 'phần lớn'. Khi đi với danh từ, nó kết hợp dưới dạng 'たいていの + Danh từ' mang nghĩa 'hầu hết / phần lớn (ai/cái gì)'.",
+      "formation": "たいてい + Động từ / Tính từ ; たいてい + の + Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi thường thức dậy vào lúc 8 giờ sáng."
+        },
+        {
+          "translation": "Anh ấy hầu như toàn đến muộn."
+        },
+        {
+          "translation": "Hàng hóa ở cửa hàng này nhìn chung đều rẻ."
+        },
+        {
+          "translation": "Hầu hết mọi người đều thích bộ phim đó."
+        }
+      ]
+    },
+    "ja_だから_87": {
+      "title": "だから、～ (dakara、～)",
+      "shortExplanation": "Biểu thị nguyên nhân, lý do dẫn đến kết quả ở vế sau; 'vì... nên', 'cho nên', 'do đó'.",
+      "longExplanation": "Cấu trúc だから dùng để chỉ ra lý do hoặc nguyên nhân dẫn đến phán đoán, hành động hay kết quả được nêu ở mệnh đề sau. Nó có thể đóng vai trò là đuôi liên kết sau Danh từ / Tính từ đuôi な (Danh từ + だから), hoặc đứng đầu câu như một liên từ kết nối ('vì vậy, cho nên'). Lưu ý: với Động từ và Tính từ đuôi い, ta nối trực tiếp với から (không có だ).",
+      "formation": "Danh từ + だから / Tính từ đuôi な + だから；Câu 1 + 。だから、 + Câu 2",
+      "examples": [
+        {
+          "translation": "Vì trời mưa nên chúng ta hãy mang theo ô nhé."
+        },
+        {
+          "translation": "Vì chiếc bánh này nổi tiếng nên ai cũng muốn ăn."
+        },
+        {
+          "translation": "Vì anh ấy bị ốm nên không thể đến trường."
+        },
+        {
+          "translation": "Vì cô ấy là học sinh nên được giảm giá ở nhà hàng này."
+        }
+      ]
+    },
+    "ja_たりたり_88": {
+      "title": "～たり、～たり します (〜tari, 〜tari shimasu)",
+      "shortExplanation": "Liệt kê tượng trưng một vài hành động tiêu biểu trong số nhiều hành động; 'lúc thì... lúc thì...', 'nào là... nào là...'.",
+      "longExplanation": "Mẫu ngữ pháp ～たり、～たり します được dùng để liệt kê một vài hành động hoặc trạng thái tiêu biểu đại diện, ngụ ý rằng ngoài những điều được kể ra thì còn có những hoạt động khác nữa. Trong tiếng Việt có thể dịch là 'làm những việc như... và...', 'nào là... nào là...', 'lúc thì... lúc thì...'. Cấu trúc được tạo bằng cách chia động từ sang thể quá khứ thông thường (thể た) rồi thêm り, cuối câu kết thúc bằng します (hoặc dạng quá khứ しました).",
+      "formation": "Động từ thể た + り + Động từ thể た + り + します",
+      "examples": [
+        {
+          "translation": "Vào ngày nghỉ, tôi thường làm những việc như xem phim, đi chơi với bạn bè."
+        },
+        {
+          "translation": "Anh ấy làm những việc như hát hò, nhảy múa, chơi piano."
+        },
+        {
+          "translation": "Ở nhà hàng này, bạn có thể thưởng thức những món như sushi, sashimi."
+        },
+        {
+          "translation": "Mỗi buổi sáng, cô ấy thường chạy bộ, tập yoga."
+        }
+      ]
+    },
+    "ja_だれ_89": {
+      "title": "だれ～ (dare～)",
+      "shortExplanation": "Đại từ nghi vấn dùng để hỏi về người; 'ai'.",
+      "longExplanation": "Từ だれ (chữ Hán: 誰) là đại từ nghi vấn dùng để hỏi danh tính của người nào đó, mang nghĩa là 'ai' trong tiếng Việt. Tùy theo vai trò ngữ pháp trong câu mà だれ sẽ kết hợp với các trợ từ thích hợp như: だれが (ai - làm chủ ngữ), だれを (ai - làm tân ngữ), だれに (cho ai / với ai), だれの (của ai). Trong cách nói lịch sự, trang trọng hơn người ta dùng 'どなた'.",
+      "formation": "だれ + Trợ từ (が, を, に, の...)",
+      "examples": [
+        {
+          "translation": "Ai đã mua cuốn sách đó vậy?"
+        },
+        {
+          "translation": "Bạn đang đợi ai thế?"
+        },
+        {
+          "translation": "Ai đã ăn quả táo đó vậy?"
+        },
+        {
+          "translation": "Ai đang giữ chìa khóa vậy?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_が_75": {
+      "title": "～が 私に くれます (〜ga watashi ni kuremasu)",
+      "shortExplanation": "用于表示别人给“我”某物或为“我”做某事；“某人给我……”。",
+      "longExplanation": "句型“～が私にくれます”用于表达他人给说话人（“我”）或者说话人一方的人某物，或为“我”做某事。动作的发出者（给予者）通常用助词“が”表示，接受者为“私に”（给我）。如果是为我做某事，动词通常使用て形接“くれます”（即～てくれます）。",
+      "formation": "给予者 + が + （物品 / 动词て形） + 私に + くれます",
+      "examples": [
+        {
+          "translation": "他送给了我一份礼物。"
+        },
+        {
+          "translation": "朋友帮我做了作业。"
+        },
+        {
+          "translation": "妈妈给我做了便当。"
+        },
+        {
+          "translation": "老师给了我建议。"
+        }
+      ]
+    },
+    "ja_けど_76": {
+      "title": "～けど、～ (〜kedo、～)",
+      "shortExplanation": "用于连接两个分句，表示转折或铺垫；“虽然……但是……”、“不过”。",
+      "longExplanation": "接续助词“～けど”常用于口语中连接前后两个分句，主要表示转折、对比，也可以用于引入话题的开场铺垫。相当于汉语中的“虽然……但是……”、“不过”。语气较为随意口语化，比“けれど”或“が”更随和。",
+      "formation": "动词普通形 + けど / い形容词 + けど / な形容词词干 + だけど / 名词 + だけど",
+      "examples": [
+        {
+          "translation": "虽然去上课了，但还得做作业。"
+        },
+        {
+          "translation": "昨天挺冷的，但今天很暖和。"
+        },
+        {
+          "translation": "他人很亲切，但有点可怕。"
+        },
+        {
+          "translation": "这个看起来很好吃，但太贵了。"
+        }
+      ]
+    },
+    "ja_けれど_77": {
+      "title": "～けれど、～ (〜keredo、～)",
+      "shortExplanation": "表示转折、对比或前置铺垫；“虽然……但是……”、“可是”。",
+      "longExplanation": "接续助词“～けれど”用于连接具有对比、转折关系的两个分句，也可用于引出话题的开场铺垫。相当于汉语中的“虽然……但是……”、“可是”。相比于更口语化的“けど”，“けれど”显得更加稳重、稍显正式。",
+      "formation": "动词普通形 + けれど / い形容词普通形 + けれど / な形容词词干 + だけれど / 名词 + だけれど",
+      "examples": [
+        {
+          "translation": "今天虽然寒冷，但我还是去散步。"
+        },
+        {
+          "translation": "他虽然很和善，但有点让人害怕。"
+        },
+        {
+          "translation": "这个房间虽然狭窄，但很明亮。"
+        },
+        {
+          "translation": "她虽然生病了，但每天都在工作。"
+        }
+      ]
+    },
+    "ja_こちら_78": {
+      "title": "こちら～ (kochira～)",
+      "shortExplanation": "指示代词，指代说话人近处的人、地点、方向或事物；“这边”、“这位”、“这一个”。",
+      "longExplanation": "“こちら”是日语中指示代词系统（こ・そ・あ・ど）中的近称礼貌说法。可用于指示靠近说话人的方向（“这边”）、场所（“这里”）、事物（“这个”），或者在向他人介绍时礼貌地指代人（“这位”）。它是“これ”、“ここ”、“こっち”的郑重敬体表达。",
+      "formation": "こちら / こちら + の + 名词",
+      "examples": [
+        {
+          "translation": "这位是田中先生/女士。"
+        },
+        {
+          "translation": "这边的餐厅很美味。"
+        },
+        {
+          "translation": "请往这边走。"
+        },
+        {
+          "translation": "是这边这个比较好，还是那边那个比较好？"
+        }
+      ]
+    },
+    "ja_さっき_79": {
+      "title": "さっき～ (sakki～)",
+      "shortExplanation": "时间副词，指刚刚过去的短暂时间；“刚才”、“方才”。",
+      "longExplanation": "“さっき”是表示时间的副词，用于表达某事就在不久前或刚刚发生，相当于汉语中的“刚才”、“方才”。多用于日常随和口语中；在更加正式、礼貌的场合通常使用“さきほど”（先程）。也可以加“の”修饰名词。",
+      "formation": "さっき + 动词/句子；さっき + の + 名词",
+      "examples": [
+        {
+          "translation": "刚才有电话打来。"
+        },
+        {
+          "translation": "我刚才打扫了房间。"
+        },
+        {
+          "translation": "我刚才碰见他了。"
+        },
+        {
+          "translation": "你看刚才的新闻了吗？"
+        }
+      ]
+    },
+    "ja_すぐに_80": {
+      "title": "すぐに～ (sugu ni～)",
+      "shortExplanation": "副词，表示动作或变化毫不迟延地发生；“马上”、“立刻”。",
+      "longExplanation": "“すぐに”是表示时间的副词，用于表达某一动作、变化或事件毫不耽搁地在极短时间内发生。相当于汉语中的“马上”、“立刻”、“顿时”。通常置于动词或形容词前作状语。",
+      "formation": "すぐに + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "朋友到了的话，请马上给我打电话。"
+        },
+        {
+          "translation": "一听到那个消息，我就立刻去了公司。"
+        },
+        {
+          "translation": "她立刻哭了出来。"
+        },
+        {
+          "translation": "一走进教室，老师就立刻开始了上课。"
+        }
+      ]
+    },
+    "ja_ぜんぜん_81": {
+      "title": "ぜんぜん～ (zenzen～)",
+      "shortExplanation": "副词，与否定形式呼应使用，表示全盘否定；“完全不……”、“一点儿也不……”。",
+      "longExplanation": "副词“ぜんぜん”（汉字写为“全然”）在传统标准文法中与否定形式呼应搭配，用于加强否定语气，表示“彻底不”、“完全不”、“丝毫没有”。",
+      "formation": "ぜんぜん + 动词/形容词否定形",
+      "examples": [
+        {
+          "translation": "他一点儿也不说话。"
+        },
+        {
+          "translation": "这个房间一点也不暗。"
+        },
+        {
+          "translation": "她一点儿也不累。"
+        },
+        {
+          "translation": "那部电影一点儿意思也没有。"
+        }
+      ]
+    },
+    "ja_そして_82": {
+      "title": "そして、～ (soshite、～)",
+      "shortExplanation": "连词，用于连接两个句子，表示时间顺承或内容并列累加；“然后”、“而且”、“并且”。",
+      "longExplanation": "“そして”是日语中常用的接续词，置于后一个句子的开头，用于顺承前句的动作或事实，表示时间的先后顺序（“然后”、“接着”），也可以用于在已有事实的基础上累加、并列补充新的信息（“而且”、“并且”）。",
+      "formation": "句子1 + 。そして、 + 句子2",
+      "examples": [
+        {
+          "translation": "早晨起床，然后做了作业。"
+        },
+        {
+          "translation": "喝了咖啡，然后读了报纸。"
+        },
+        {
+          "translation": "我从家里出发了。然后，去了车站。"
+        },
+        {
+          "translation": "他玩了游戏。接着，看了电视。"
+        }
+      ]
+    },
+    "ja_そちら_83": {
+      "title": "そちら～ (sochira～)",
+      "shortExplanation": "指示代词，礼貌指代靠近听话人一方的方向、场所、事物或人；“那边”、“那一位”、“您那边”。",
+      "longExplanation": "“そちら”属于指示代词（こ・そ・あ・ど）中的中称礼貌表达，用于指示靠近听话人的方向（“那边”）、场所（“那里”）、事物（“那个”）或人（“那位”）。在商务及礼貌交流中，也常用作第二人称的敬称代指对方或对方所在单位（“您那方”、“贵方”）。",
+      "formation": "そちら / そちら + の + 名词",
+      "examples": [
+        {
+          "translation": "那边的餐厅怎么样？"
+        },
+        {
+          "translation": "那位先生/女士，能请教一下您的名字吗？"
+        },
+        {
+          "translation": "去往那边的路途中有个车站。"
+        },
+        {
+          "translation": "您那边的那个包包，和我的挺像呢。"
+        }
+      ]
+    },
+    "ja_それから_84": {
+      "title": "それから、～ (sorekara、～)",
+      "shortExplanation": "接续词，表示在前一动作之后接着发生下一动作；“然后”、“在那之后”、“接着”。",
+      "longExplanation": "“それから”是由指示代词“それ”和助词“から”构成的接续词，用于连接具有先后时间顺序的两个动作或事件，表示在完成前一件事之后接着做下一件事。相当于汉语中的“然后”、“之后”、“接着”。此外在口语中还可用于追加列举事物（“还有……”）。",
+      "formation": "分句1（动词て形等） + 、それから + 分句2",
+      "examples": [
+        {
+          "translation": "喝了咖啡，然后出了门。"
+        },
+        {
+          "translation": "买了东西，然后去看了电影。"
+        },
+        {
+          "translation": "她学习了之后，接着就睡了。"
+        },
+        {
+          "translation": "去了派对，然后和朋友聊了天。"
+        }
+      ]
+    },
+    "ja_だいたい_85": {
+      "title": "だいたい〜 (daitai〜)",
+      "shortExplanation": "副词，表示对数量、时间或程度的大致估计；“大约”、“大致”、“大概”。",
+      "longExplanation": "“だいたい”（汉字写为“大体”）是表示概数的副词，置于数量词、时间词或百分比之前，用以表达大致的估算，表明该数值不是精确无误的。相当于汉语中的“大约”、“大概”、“大致”。",
+      "formation": "だいたい + 数量词 / 时间词 / 百分比",
+      "examples": [
+        {
+          "translation": "大约有100人参加了聚会。"
+        },
+        {
+          "translation": "她大约花两小时就能完成那项工作。"
+        },
+        {
+          "translation": "大约有80%的学生通过了考试。"
+        },
+        {
+          "translation": "今天大约有30度那么热。"
+        }
+      ]
+    },
+    "ja_たいてい_86": {
+      "title": "たいてい～ (taitei～)",
+      "shortExplanation": "副词，表示通常情况、大体上或绝大多数；“大多”、“通常”、“大部分”。",
+      "longExplanation": "“たいてい”（汉字写为“大抵”）是表示频度或普遍情况的副词，用于描述在通常状态下、绝大多数情况下发生的事情或具备的特征。相当于汉语中的“通常”、“大体上”、“大多”。修饰名词时通常采用“たいていの + 名词”的形式，意为“绝大多数的……”。",
+      "formation": "たいてい + 动词 / 形容词 ； たいてい + の + 名词",
+      "examples": [
+        {
+          "translation": "我通常早上8点起床。"
+        },
+        {
+          "translation": "他大多时候都会迟到。"
+        },
+        {
+          "translation": "这家店的商品大多很便宜。"
+        },
+        {
+          "translation": "大多数人都喜欢那部电影。"
+        }
+      ]
+    },
+    "ja_だから_87": {
+      "title": "だから、～ (dakara、～)",
+      "shortExplanation": "表示原因或理由，引出必然的结果或主观判断；“因为……所以……”、“因此”。",
+      "longExplanation": "“だから”用于连接前后两句话或句子成分，说明前项是导致后项结果、决定或判断的理由与原因。相当于汉语中的“因为……所以……”、“因此”。在句子中间接续时，常接在名词和な形容词词干之后（名词/な形容词 + だから）；也可独立置于句首作为接续词使用。注意动词和い形容词直接接“から”，不带“だ”。",
+      "formation": "名词 + だから / な形容词词干 + だから；句子1 + 。だから、 + 句子2",
+      "examples": [
+        {
+          "translation": "因为下雨，所以带上伞吧。"
+        },
+        {
+          "translation": "因为这个蛋糕很有名，所以大家都想尝尝。"
+        },
+        {
+          "translation": "因为他生病了，所以不能去学校。"
+        },
+        {
+          "translation": "因为她是学生，所以在这家餐厅可以打折。"
+        }
+      ]
+    },
+    "ja_たりたり_88": {
+      "title": "～たり、～たり します (〜tari, 〜tari shimasu)",
+      "shortExplanation": "列举若干代表性动作或状态，暗示还有其他行为；“又……又……”、“有时……有时……”、“做做……做做……”。",
+      "longExplanation": "句型“～たり、～たり します”用于在众多动作或状态中挑选出两三个具有代表性的例子进行列举，暗示除此之外还有其他活动。相当于汉语中的“又……又……”、“做做……做做……之类”、“有时……有时……”。接续方式是将动词变为简体过去式（た形）后接“り”，句末通常以“します”或“しました”收尾。",
+      "formation": "动词た形 + り + 动词た形 + り + します",
+      "examples": [
+        {
+          "translation": "休息日我看看电影、和朋友玩玩等等。"
+        },
+        {
+          "translation": "他唱歌、跳舞，还弹弹钢琴等等。"
+        },
+        {
+          "translation": "在这家餐厅里，可以吃吃寿司、吃吃生鱼片等等。"
+        },
+        {
+          "translation": "她每天早晨慢跑、做做瑜伽。"
+        }
+      ]
+    },
+    "ja_だれ_89": {
+      "title": "だれ～ (dare～)",
+      "shortExplanation": "疑问代词，用于询问人物的身份或姓名；“谁”。",
+      "longExplanation": "“だれ”（汉字写作“誰”）是询问人物身份、姓名的疑问代词，相当于汉语中的“谁”。根据在句中充当的句子成分，常与各种助词组合使用，如主语“だれが”、宾语“だれを”、对象“だれに”、所属“だれの”等。更礼貌、尊敬的说法是“どなた”。",
+      "formation": "だれ + 助词（が、を、に、の等）",
+      "examples": [
+        {
+          "translation": "谁买了那本书？"
+        },
+        {
+          "translation": "你在等谁？"
+        },
+        {
+          "translation": "谁吃了那个苹果？"
+        },
+        {
+          "translation": "谁拿着钥匙？"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_が_75": {
+      "title": "～が 私に くれます (〜ga watashi ni kuremasu)",
+      "shortExplanation": "다른 사람이 '나'에게 무언가를 주거나 호의를 베풀어 줄 때 쓰이며, '누군가가 나에게 주다'라는 뜻입니다.",
+      "longExplanation": "'～が私にくれます' 문형은 다른 사람이 화자('나') 또는 화자 측 사람에게 물건을 주거나 어떤 행동을 해 줄 때 사용합니다. 주는 주체(행위자)는 조사 'が'로 나타내고, 받는 사람(화자)은 '私に(나에게)'로 나타냅니다. 호의로 어떤 동작을 해 줄 때는 '동사 て형 + くれます(～てくれます)' 형태로 씁니다.",
+      "formation": "주는 사람 + が + (물건 / 동사 て형) + 私に + くれます",
+      "examples": [
+        {
+          "translation": "그가 나에게 선물을 주었습니다."
+        },
+        {
+          "translation": "친구가 숙제를 도와주었습니다."
+        },
+        {
+          "translation": "어머니께서 나에게 도시락을 만들어 주셨습니다."
+        },
+        {
+          "translation": "선생님께서 나에게 조언을 해 주셨습니다."
+        }
+      ]
+    },
+    "ja_けど_76": {
+      "title": "～けど、～ (〜kedo、～)",
+      "shortExplanation": "두 문장을 이어 역접(대조)이나 앞말을 놓는 완곡한 표현을 나타내며, '~하지만', '~인데'의 뜻입니다.",
+      "longExplanation": "'～けど'는 구어에서 두 절을 연결하여 앞뒤 내용의 대조나 역접을 나타내거나, 본론을 꺼내기 위한 전제로 완곡하게 말을 뗄 때 사용합니다. 한국어의 '~하지만', '~인데'에 해당합니다. 'けれど'나 'が'에 비해 격식이 없고 친근한 반말(구어체) 표현입니다.",
+      "formation": "동사 보통형 + けど / い형용사 + けど / な형용사 어간 + だけど / 명사 + だけど",
+      "examples": [
+        {
+          "translation": "수업에 들어갔지만, 아직 숙제를 해야 한다."
+        },
+        {
+          "translation": "어제는 추웠지만, 오늘은 따뜻합니다."
+        },
+        {
+          "translation": "그는 친절하지만, 조금 무섭다."
+        },
+        {
+          "translation": "이것은 맛있어 보이지만, 너무 비싸다."
+        }
+      ]
+    },
+    "ja_けれど_77": {
+      "title": "～けれど、～ (〜keredo、～)",
+      "shortExplanation": "대조나 역접, 또는 말을 꺼내기 위한 전제를 나타내며, '~하지만', '~인데'의 뜻입니다.",
+      "longExplanation": "'～けれど'는 두 절을 이어 앞 절과 뒤 절의 내용이 상반되거나 대조적임을 나타낼 때 쓰이며, 부드럽게 본론을 꺼내는 전제 표현으로도 쓰입니다. 한국어의 '~하지만', '~인데'에 해당합니다. 구어형인 'けど'보다 조금 더 정중하고 점잖은 느낌을 줍니다.",
+      "formation": "동사 보통형 + けれど / い형용사 + けれど / な형용사 어간 + だけれど / 명사 + だけれど",
+      "examples": [
+        {
+          "translation": "오늘은 춥지만, 산책을 갑니다."
+        },
+        {
+          "translation": "그는 친절하지만, 조금 무섭습니다."
+        },
+        {
+          "translation": "이 방은 좁지만, 밝습니다."
+        },
+        {
+          "translation": "그녀는 아프지만, 매일 일하고 있습니다."
+        }
+      ]
+    },
+    "ja_こちら_78": {
+      "title": "こちら～ (kochira～)",
+      "shortExplanation": "화자에게 가까운 방향, 장소, 사물 또는 사람을 정중하게 가리키며, '이쪽', '이분', '이것'의 뜻입니다.",
+      "longExplanation": "'こちら'는 지시대명사 체계(こ・そ・あ・ど) 중 화자와 가까운 대상을 공손하게 가리킬 때 쓰는 표현입니다. 방향('이쪽'), 장소('여기'), 사물('이것')을 나타낼 뿐만 아니라, 사람을 정중하게 소개할 때('이분')도 널리 사용됩니다. 'これ', 'ここ', 'こっち'의 정중어에 해당합니다.",
+      "formation": "こちら / こちら + の + 명사",
+      "examples": [
+        {
+          "translation": "이쪽은 다나카 씨입니다."
+        },
+        {
+          "translation": "이쪽 레스토랑은 맛있습니다."
+        },
+        {
+          "translation": "이쪽으로 오세요."
+        },
+        {
+          "translation": "이쪽이 더 좋습니까, 아니면 저쪽이 더 좋습니까?"
+        }
+      ]
+    },
+    "ja_さっき_79": {
+      "title": "さっき～ (sakki～)",
+      "shortExplanation": "조금 전이나 방금을 나타내는 시간 부사로, '아까', '조금 전'의 뜻입니다.",
+      "longExplanation": "'さっき'는 얼마 지나지 않은 가까운 과거의 시간을 가리키는 부사로, 어떤 일이나 행동이 방금 또는 조금 전에 일어났음을 나타냅니다. 한국어의 '아까', '조금 전'에 해당하며, 주로 친근한 일상 회화에서 쓰입니다. 더 공손하고 격식 있는 표현으로는 'さきほど(조금 전, 방금)'가 있습니다.",
+      "formation": "さっき + 동사/문장; さっき + の + 명사",
+      "examples": [
+        {
+          "translation": "아까 전화가 왔었습니다."
+        },
+        {
+          "translation": "조금 전에 방을 청소했습니다."
+        },
+        {
+          "translation": "아까 그를 만났습니다."
+        },
+        {
+          "translation": "조금 전 뉴스를 보셨습니까?"
+        }
+      ]
+    },
+    "ja_すぐに_80": {
+      "title": "すぐに～ (sugu ni～)",
+      "shortExplanation": "동작이나 사건이 지체 없이 일어남을 나타내는 부사로, '곧', '곧바로', '즉시'의 뜻입니다.",
+      "longExplanation": "'すぐに'는 어떤 동작이나 상태 변화가 시간적 지체 없이 바로 일어남을 나타내는 부사입니다. 한국어의 '곧바로', '즉시', '당장'에 해당하며, 주로 동사나 형용사 앞에 놓여 행위의 신속성을 강조합니다.",
+      "formation": "すぐに + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "친구가 오면 곧바로 전화를 걸어 주세요."
+        },
+        {
+          "translation": "그 뉴스를 듣고 곧바로 회사에 갔습니다."
+        },
+        {
+          "translation": "그녀는 바로 울음을 터뜨렸다."
+        },
+        {
+          "translation": "교실에 들어가자 선생님께서는 곧바로 수업을 시작하셨다."
+        }
+      ]
+    },
+    "ja_ぜんぜん_81": {
+      "title": "ぜんぜん～ (zenzen～)",
+      "shortExplanation": "부정형과 호응하여 전면 부정을 강조하며, '전혀 ~않다', '조금도 ~않다'의 뜻입니다.",
+      "longExplanation": "부사 'ぜんぜん(全然)'은 주로 부정형(동사나 형용사의 부정 표현)과 함께 쓰여 어떤 사실이나 상태를 완전히 부정할 때 사용합니다. 한국어의 '전혀 ~않다', '조금도 ~않다'에 해당합니다. 일상 구어에서 부정을 강하게 단정할 때 자주 쓰입니다.",
+      "formation": "ぜんぜん + 동사/형용사의 부정형",
+      "examples": [
+        {
+          "translation": "그는 전혀 말을 하지 않는다."
+        },
+        {
+          "translation": "이 방은 전혀 어둡지 않다."
+        },
+        {
+          "translation": "그녀는 전혀 지쳐 있지 않다."
+        },
+        {
+          "translation": "그 영화는 전혀 재미있지 않았다."
+        }
+      ]
+    },
+    "ja_そして_82": {
+      "title": "そして、～ (soshite、～)",
+      "shortExplanation": "두 문장을 이어 시간적 순서나 사실의 첨가를 나타내는 접속사로, '그리고', '그리고 나서'의 뜻입니다.",
+      "longExplanation": "'そして'는 문장과 문장을 연결하는 접속사로, 앞의 동작이나 사태에 이어 뒤의 일이 일어나는 시간적 순서(순목)를 나타내거나, 앞의 내용에 새로운 사실을 덧붙여 나열할 때 씁니다. 한국어의 '그리고', '그리하여', '그리고 나서'에 해당합니다.",
+      "formation": "문장 1 + 。そして、 + 문장 2",
+      "examples": [
+        {
+          "translation": "아침에 일어났고, 그리고 숙제를 했습니다."
+        },
+        {
+          "translation": "커피를 마셨고, 그리고 신문을 읽었습니다."
+        },
+        {
+          "translation": "집을 출발했습니다. 그리고 역으로 갔습니다."
+        },
+        {
+          "translation": "그는 게임을 했다. 그리고 텔레비전을 보았습니다."
+        }
+      ]
+    },
+    "ja_そちら_83": {
+      "title": "そちら～ (sochira～)",
+      "shortExplanation": "청자에게 가까운 방향, 장소, 사물 또는 사람을 정중하게 가리키며, '그쪽', '그분', '그곳'의 뜻입니다.",
+      "longExplanation": "'そちら'는 지시대명사(こ・そ・あ・ど) 체계 중 청자(듣는 사람)와 가까운 대상을 공손하게 가리키는 중칭 표현입니다. 방향('그쪽'), 장소('그곳'), 사물('그것') 또는 청자 쪽의 사람('그분')을 정중하게 나타냅니다. 또한 비즈니스나 격식 있는 대화에서 상대방 또는 상대방 측('귀사', '댁')을 공손히 부를 때도 널리 쓰입니다.",
+      "formation": "そちら / そちら + の + 명사",
+      "examples": [
+        {
+          "translation": "그쪽 레스토랑은 어떻습니까?"
+        },
+        {
+          "translation": "그쪽에 계신 분, 성함을 가르쳐 주실 수 있습니까?"
+        },
+        {
+          "translation": "그쪽으로 가는 도중에 역이 있습니다."
+        },
+        {
+          "translation": "그쪽 가방, 제 것과 닮았네요."
+        }
+      ]
+    },
+    "ja_それから_84": {
+      "title": "それから、～ (sorekara、～)",
+      "shortExplanation": "앞의 동작이나 사건이 끝난 후 이어지는 동작을 나타내며, '그 다음에', '그러고 나서', '그 후에'의 뜻입니다.",
+      "longExplanation": "'それから'는 앞선 동작이나 사태가 끝난 뒤, 그에 이어서 다음 행동이나 사건이 일어남을 나타내는 시간 순서의 접속사입니다. 한국어의 '그 다음에', '그러고 나서', '그 후에'에 해당합니다. 또한 사물을 추가로 덧붙여 열거할 때('그리고 또')도 사용됩니다.",
+      "formation": "절 1 (동사 て형 등) + 、それから + 절 2",
+      "examples": [
+        {
+          "translation": "커피를 마시고, 그러고 나서 집을 나섰습니다."
+        },
+        {
+          "translation": "쇼핑을 하고, 그 다음에 영화를 보러 갔습니다."
+        },
+        {
+          "translation": "그녀는 공부를 하고, 그러고 나서 잤습니다."
+        },
+        {
+          "translation": "파티에 가서, 그 후에 친구들과 이야기했습니다."
+        }
+      ]
+    },
+    "ja_だいたい_85": {
+      "title": "だいたい〜 (daitai〜)",
+      "shortExplanation": "수량이나 정도를 대략 어림잡아 나타내는 부사로, '대략', '대체로', '약'의 뜻입니다.",
+      "longExplanation": "'だいたい(大体)'는 수량, 시간, 정도, 비율 등의 앞머리에 붙어 정확한 수치가 아닌 대략적인 어림값을 나타내는 부사입니다. 한국어의 '대략', '약', '대체로'에 해당합니다.",
+      "formation": "だいたい + 숫자 / 수량 / 비율",
+      "examples": [
+        {
+          "translation": "대략 100명이 파티에 참가했습니다."
+        },
+        {
+          "translation": "그녀는 대략 2시간 만에 그 일을 끝냅니다."
+        },
+        {
+          "translation": "대략 80%의 학생이 시험에 합격했습니다."
+        },
+        {
+          "translation": "오늘은 대략 30도 정도의 더위입니다."
+        }
+      ]
+    },
+    "ja_たいてい_86": {
+      "title": "たいてい～ (taitei～)",
+      "shortExplanation": "보통의 상태나 대다수의 경우를 나타내는 부사로, '대개', '대체로', '보통'의 뜻입니다.",
+      "longExplanation": "'たいてい(大抵)'는 어떤 일이나 상황이 보통의 경우나 높은 빈도로 일어남을 나타내는 부사입니다. 한국어의 '대개', '대체로', '보통'에 해당합니다. 명사를 수식할 때는 'たいていの + 명사' 형태로 쓰여 '대부분의 ~'라는 의미를 나타냅니다.",
+      "formation": "たいてい + 동사 / 형용사 ; たいてい + の + 명사",
+      "examples": [
+        {
+          "translation": "대개 아침 8시에 일어납니다."
+        },
+        {
+          "translation": "그는 대체로 지각합니다."
+        },
+        {
+          "translation": "이 가게의 상품은 대부분 저렴합니다."
+        },
+        {
+          "translation": "대부분의 사람들은 그 영화를 좋아합니다."
+        }
+      ]
+    },
+    "ja_だから_87": {
+      "title": "だから、～ (dakara、～)",
+      "shortExplanation": "원인이나 이유를 나타내어 뒷문장의 결과를 이끌어 내며, '때문에', '그러므로', '그래서'의 뜻입니다.",
+      "longExplanation": "'だから'는 앞의 내용이 원인이나 이유가 되어 뒤의 결과나 판단, 행동이 일어남을 나타냅니다. 한국어의 '~이기 때문에', '그래서', '그러므로'에 해당합니다. 문장 중간에서는 주로 명사나 な형용사 뒤에 결합하며(명사/な형용사 + だから), 문장 첫머리에서 독립된 접속사로 쓰이기도 합니다. 동사나 い형용사 뒤에는 'だ' 없이 'から'만 붙습니다.",
+      "formation": "명사 + だから / な형용사 어간 + だから ; 문장 1 + 。だから、 + 문장 2",
+      "examples": [
+        {
+          "translation": "비가 오니까 우산을 가지고 갑시다."
+        },
+        {
+          "translation": "이 케이크는 유명하기 때문에 모두가 먹고 싶어 합니다."
+        },
+        {
+          "translation": "그는 아프기 때문에 학교에 갈 수 없습니다."
+        },
+        {
+          "translation": "그녀는 학생이기 때문에 이 레스토랑에서 할인을 받습니다."
+        }
+      ]
+    },
+    "ja_たりたり_88": {
+      "title": "～たり、～たり します (〜tari, 〜tari shimasu)",
+      "shortExplanation": "여러 동작이나 상태 중에서 대표적인 것을 예로 들어 나열하며, '~하거나 ~하거나 하다'의 뜻입니다.",
+      "longExplanation": "'～たり、～たり します' 문형은 여러 가지 행동이나 상태 중에서 2~3가지 대표적인 예시를 들어 열거할 때 쓰이며, 그 밖에도 다른 동작이 더 있음을 암시합니다. 한국어의 '~하거나 ~하거나 하다', '~하기도 하고 ~하기도 하다'에 해당합니다. 동사의 보통과거형(た형) 뒤에 'り'를 붙이고 문장 끝은 'します(과거형은 しました)'로 마무리합니다.",
+      "formation": "동사 た형 + り + 동사 た형 + り + します",
+      "examples": [
+        {
+          "translation": "휴일에는 영화를 보거나 친구와 놀거나 합니다."
+        },
+        {
+          "translation": "그는 노래하거나 춤추거나 피아노를 치거나 합니다."
+        },
+        {
+          "translation": "이 레스토랑에서는 초밥을 먹거나 회를 먹거나 합니다."
+        },
+        {
+          "translation": "그녀는 매일 아침 조깅을 하거나 요가를 하거나 합니다."
+        }
+      ]
+    },
+    "ja_だれ_89": {
+      "title": "だれ～ (dare～)",
+      "shortExplanation": "사람의 신원이나 정체를 묻는 의문대명사로, '누구'의 뜻입니다.",
+      "longExplanation": "'だれ(誰)'는 사람의 이름이나 정체, 신원을 물을 때 사용하는 의문대명사로, 한국어의 '누구'에 해당합니다. 문장 내 역할에 따라 주격을 나타내는 'だれが(누가)', 목적격을 나타내는 'だれを(누구를)', 대상인 'だれに(누구에게)', 소유인 'だれの(누구의)' 등 다양한 조사와 결합합니다. 더 정중하고 예의 바른 표현으로는 'どなた(어느 분)'가 있습니다.",
+      "formation": "だれ + 조사 (が, を, に, の 등)",
+      "examples": [
+        {
+          "translation": "누가 그 책을 샀습니까?"
+        },
+        {
+          "translation": "누구를 기다리고 있습니까?"
+        },
+        {
+          "translation": "누가 그 사과를 먹었습니까?"
+        },
+        {
+          "translation": "누가 열쇠를 가지고 있습니까?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_が_75": {
+      "title": "～が 私に くれます (〜ga watashi ni kuremasu)",
+      "shortExplanation": "他人が「私」に対して物を与えたり、親切な行為をしてくれたりすることを表し、「〜が私にくれる／くれます」という意味です。",
+      "longExplanation": "「～が私にくれます」は、話し手（私）または話し手側の身内に対して、他者が物を与えたり好意的な行為を行ったりすることを表す表現です。物や行為を与える人物を助詞「が」で表し、受け手となる自分を「私に」で表します。行為をしてくれる場合は「動詞 て形 ＋ くれます」の形で用いられます。",
+      "formation": "与える人 + が + （物／動詞て形） + 私に + くれます",
+      "examples": [
+        {
+          "translation": "彼がプレゼントを私にくれました。"
+        },
+        {
+          "translation": "友達が宿題を手伝って私にくれました。"
+        },
+        {
+          "translation": "お母さんがお弁当を作って私にくれました。"
+        },
+        {
+          "translation": "先生がアドバイスを私にくれました。"
+        }
+      ]
+    },
+    "ja_けど_76": {
+      "title": "～けど、～ (〜kedo、～)",
+      "shortExplanation": "前後の文をつなぎ、逆接（対比）や前置きを表し、「〜けれど」「〜が」のくだけた口語表現です。",
+      "longExplanation": "「～けど」は、二つの文や節をつなぎ、前後の内容が対比・逆接関係にあることを示したり、前置き・前触れとして本題を切り出す際に用いる接続助詞です。「〜けれど」「〜が」よりもくだけた日常会話（口語）で非常によく使われます。",
+      "formation": "動詞普通形 + けど / い形容詞 + けど / な形容詞語幹 + だけど / 名詞 + だけど",
+      "examples": [
+        {
+          "translation": "授業に出たけど、まだ宿題をしないといけない。"
+        },
+        {
+          "translation": "昨日寒かったけど、今日は暖かいです。"
+        },
+        {
+          "translation": "彼は親切だけど、ちょっと怖い。"
+        },
+        {
+          "translation": "これはおいしそうだけど、高すぎる。"
+        }
+      ]
+    },
+    "ja_けれど_77": {
+      "title": "～けれど、～ (〜keredo、～)",
+      "shortExplanation": "前後の文をつなぎ、対比・逆接や前置きを表し、「〜だが」「〜けれども」という意味を表します。",
+      "longExplanation": "「～けれど」は、二つの文をつないで前後の事柄が対立・対比関係にあることを示したり、前置きとして本題に導入したりする際に用いる接続表現です。「けど」に比べてやや改まった丁寧な響きを持ち、日常会話から一般的な丁寧表現まで幅広く使われます。",
+      "formation": "動詞普通形 + けれど / い形容詞 + けれど / な形容詞語幹 + だけれど / 名詞 + だけれど",
+      "examples": [
+        {
+          "translation": "今日は寒いけれど、散歩に行きます。"
+        },
+        {
+          "translation": "彼は親切けれど、少し怖いです。"
+        },
+        {
+          "translation": "この部屋は狭いけれど、明るいです。"
+        },
+        {
+          "translation": "彼女は病気だけれど、毎日働いています。"
+        }
+      ]
+    },
+    "ja_こちら_78": {
+      "title": "こちら～ (kochira～)",
+      "shortExplanation": "話し手に近い方向・場所・物、または人物を丁寧に指し示し、「こちら」「この方」「こちら側」を表します。",
+      "longExplanation": "「こちら」は、こそあど言葉（指示代名詞）の近称に属し、話し手に近い方向（こちら・こっち）、場所（ここ）、物（これ）を丁寧に指す語です。また、第三者を他者に丁寧に紹介する際（「こちらは〜さんです」）にも用いられます。「こっち」「ここ」「これ」の丁寧な表現です。",
+      "formation": "こちら / こちら + の + 名詞",
+      "examples": [
+        {
+          "translation": "こちらは田中さんです。"
+        },
+        {
+          "translation": "こちらのレストランは美味しいです。"
+        },
+        {
+          "translation": "こちらへどうぞ。"
+        },
+        {
+          "translation": "こちらの方がいいですか、それともあちらの方がいいですか？"
+        }
+      ]
+    },
+    "ja_さっき_79": {
+      "title": "さっき～ (sakki～)",
+      "shortExplanation": "少し前の時間、わずか前を表す副詞で、「先ほど」「たった今」という意味を表します。",
+      "longExplanation": "「さっき」は、現在から少し前の短い時間、少し前に起こった事柄を表す時間副詞です。「たった今」「少し前」という意味で日常会話で非常によく使われます。改まった場面や目上の人に対しては、より丁寧な「先ほど（さきほど）」を用います。名詞を修飾するときは「さっきの＋名詞」の形をとります。",
+      "formation": "さっき + 動詞／文；さっき + の + 名詞",
+      "examples": [
+        {
+          "translation": "さっき電話がありました。"
+        },
+        {
+          "translation": "さっき部屋を掃除しました。"
+        },
+        {
+          "translation": "さっき彼に会いました。"
+        },
+        {
+          "translation": "さっきのニュースを見ましたか？"
+        }
+      ]
+    },
+    "ja_すぐに_80": {
+      "title": "すぐに～ (sugu ni～)",
+      "shortExplanation": "時間を置かずに動作や変化が行われることを表す副詞で、「直ちに」「間もなく」「即座に」という意味です。",
+      "longExplanation": "「すぐに」は、ある出来事や動作の後に時間を置かず、即座に行動を起こしたり状態が変化したりすることを表す副詞です。「ただちに」「今すぐ」という意味で、動詞の直前に置いてその行動の迅速さを表します。",
+      "formation": "すぐに + 動詞／形容詞",
+      "examples": [
+        {
+          "translation": "友達が来たら、すぐに電話をかけてください。"
+        },
+        {
+          "translation": "そのニュースを聞いたら、すぐに会社に行きました。"
+        },
+        {
+          "translation": "彼女はすぐに泣き出した。"
+        },
+        {
+          "translation": "教室に入ると、先生はすぐに授業を始めた。"
+        }
+      ]
+    },
+    "ja_ぜんぜん_81": {
+      "title": "ぜんぜん～ (zenzen～)",
+      "shortExplanation": "否定の表現と呼応して、程度が皆無であることを強調し、「まったく〜ない」「少しも〜ない」という意味を表します。",
+      "longExplanation": "「ぜんぜん（全然）」は、後ろに打ち消し・否定の表現（動詞や形容詞の否定形）を伴って、その状態や動作が少しも存在しないこと（全面否定）を強調する副詞です。「少しも〜ない」「まったく〜ない」という意味になります。",
+      "formation": "ぜんぜん + 動詞・形容詞の否定形",
+      "examples": [
+        {
+          "translation": "彼はぜんぜん話さない。"
+        },
+        {
+          "translation": "この部屋はぜんぜん暗くない。"
+        },
+        {
+          "translation": "彼女はぜんぜん疲れていない。"
+        },
+        {
+          "translation": "その映画はぜんぜん面白くなかった。"
+        }
+      ]
+    },
+    "ja_そして_82": {
+      "title": "そして、～ (soshite、～)",
+      "shortExplanation": "前後の文をつなぎ、動作の順序や事柄の追加を表す接続詞で、「それから」「その上」という意味を表します。",
+      "longExplanation": "「そして」は、文と文をつなぐ順接・並立・累加の接続詞です。前の動作や事柄に引き続いて次の動作が起きる時間的順序を表したり（「それから」「続いて」）、前述の事柄に新たな情報や事実を付け加えたり（「その上」「さらに」）する際に広く用いられます。",
+      "formation": "文1 + 。そして、 + 文2",
+      "examples": [
+        {
+          "translation": "朝起きて、そして宿題をしました。"
+        },
+        {
+          "translation": "コーヒーを飲んで、そして新聞を読みました。"
+        },
+        {
+          "translation": "家を出発しました。そして、駅へ行きました。"
+        },
+        {
+          "translation": "彼はゲームをした。そして、テレビを見ました。"
+        }
+      ]
+    },
+    "ja_そちら_83": {
+      "title": "そちら～ (sochira～)",
+      "shortExplanation": "聞き手に近い方向・場所・物、または人物を丁寧に指し示し、「そっち」「そこ」「その方」の丁寧表現です。",
+      "longExplanation": "「そちら」は、こそあど言葉の中称に属し、聞き手に近い方向（そちら側）、場所（そこ）、物（それ）、または聞き手の身近にいる人物を丁寧に表す指示代名詞です。「そっち」「そこ」「それ」の丁寧な表現にあたり、ビジネスや改まった対話では相手方や相手の会社・部署を指す敬称としても用いられます。",
+      "formation": "そちら / そちら + の + 名詞",
+      "examples": [
+        {
+          "translation": "そちらのレストランはどうですか？"
+        },
+        {
+          "translation": "そちらの方、お名前を教えていただけますか？"
+        },
+        {
+          "translation": "そちらに行く途中で駅があります。"
+        },
+        {
+          "translation": "そちらのかばん、私のと似ていますね。"
+        }
+      ]
+    },
+    "ja_それから_84": {
+      "title": "それから、～ (sorekara、～)",
+      "shortExplanation": "前の事柄のあとに続いて次の事柄が行われることを表し、「そのあとで」「続いて」という意味を表します。",
+      "longExplanation": "「それから」は、ある動作や出来事が完了したあと、引き続いて次の事柄が行われる時間的継起を表す接続詞です。「そのあとで」「次に」という意味で、前後の文をつなぎます。また、物を追加して数え上げたり、話題を付け足したりする際にも使われます。",
+      "formation": "文・節1（動詞て形など） + 、それから + 文・節2",
+      "examples": [
+        {
+          "translation": "コーヒーを飲んで、それから家を出ました。"
+        },
+        {
+          "translation": "買い物をして、それから映画を見に行きました。"
+        },
+        {
+          "translation": "彼女は勉強をして、それから寝ました。"
+        },
+        {
+          "translation": "パーティーに行って、それから友達と話しました。"
+        }
+      ]
+    },
+    "ja_だいたい_85": {
+      "title": "だいたい〜 (daitai〜)",
+      "shortExplanation": "数量や程度をおおよそ見積もって表す副詞で、「およそ」「約」「おおむね」という意味です。",
+      "longExplanation": "「だいたい（大体）」は、厳密な数値ではなく、大体の目安やおおよその見当を表す副詞です。数量・時間・割合（パーセント）などの前に置くことで、「およそ」「約」という意味を表します。また、物事の大半・あらましを表す際にも用いられます。",
+      "formation": "だいたい + 数量・数値・割合",
+      "examples": [
+        {
+          "translation": "だいたい１００人がパーティーに参加しました。"
+        },
+        {
+          "translation": "彼女はだいたい２時間でその仕事を終えます。"
+        },
+        {
+          "translation": "だいたい８０％の生徒が試験に合格しました。"
+        },
+        {
+          "translation": "今日はだいたい３０度の暑さです。"
+        }
+      ]
+    },
+    "ja_たいてい_86": {
+      "title": "たいてい～ (taitei～)",
+      "shortExplanation": "一般的な習慣や大部分の状況を表す副詞で、「普段は」「普通は」「大部分は」という意味を表します。",
+      "longExplanation": "「たいてい（大抵）」は、通常の状況や高い頻度で繰り返される事柄、あるいは全体の大部分・大半を占める様子を表す副詞です。「普段は〜する」「おおよそ」「大部分」という意味になります。名詞を修飾する場合は「たいていの＋名詞」の形をとります。",
+      "formation": "たいてい + 動詞／形容詞；たいてい + の + 名詞",
+      "examples": [
+        {
+          "translation": "たいてい朝８時に起きます。"
+        },
+        {
+          "translation": "彼はたいてい遅刻します。"
+        },
+        {
+          "translation": "この店の商品はたいてい安いです。"
+        },
+        {
+          "translation": "たいていの人はその映画が好きです。"
+        }
+      ]
+    },
+    "ja_だから_87": {
+      "title": "だから、～ (dakara、～)",
+      "shortExplanation": "理由や原因を表して後続の結果や判断を導き、「〜だから」「そのため」「したがって」という意味を表します。",
+      "longExplanation": "「だから」は、前述の事柄が理由・原因となり、後述の結論・結果や話者の判断・行動が導き出されることを表す接続表現です。文中では名詞やな形容詞の語幹に接続し（名詞／な形容詞 ＋ だから）、文頭に置いて単独の接続詞（「だから、〜」）としても使われます。動詞やい形容詞には「だ」を付けず「〜から」の形で接続します。",
+      "formation": "名詞 + だから / な形容詞語幹 + だから；文1 + 。だから、 + 文2",
+      "examples": [
+        {
+          "translation": "雨だから、傘を持って行きましょう。"
+        },
+        {
+          "translation": "このケーキは有名だから、みんなが食べたいです。"
+        },
+        {
+          "translation": "彼は病気だから、学校に行けません。"
+        },
+        {
+          "translation": "彼女は学生だから、このレストランで割引があります。"
+        }
+      ]
+    },
+    "ja_たりたり_88": {
+      "title": "～たり、～たり します (〜tari, 〜tari shimasu)",
+      "shortExplanation": "多くの動作や状態の中から代表的なものを例示・列挙し、「〜したり〜したりする」という意味を表します。",
+      "longExplanation": "「～たり、～たり します」は、行われる多くの動作や状態の中から、代表的なものを2〜3個取り上げて例示・並列する文法表現です。例に挙げた以外にも他の動作が行われているニュアンスを含みます。動詞の普通形過去（た形）に「り」を接続させ、文末は「します」（過去なら「しました」）で結びます。",
+      "formation": "動詞た形 + り + 動詞た形 + り + します",
+      "examples": [
+        {
+          "translation": "休日には、映画を見たり、友達と遊んだりします。"
+        },
+        {
+          "translation": "彼は歌ったり、踊ったり、ピアノを弾いたりします。"
+        },
+        {
+          "translation": "このレストランでは、寿司を食べたり、刺身を食べたりします。"
+        },
+        {
+          "translation": "彼女は毎朝、ジョギングしたり、ヨガをしたりします。"
+        }
+      ]
+    },
+    "ja_だれ_89": {
+      "title": "だれ～ (dare～)",
+      "shortExplanation": "人物の素性・名前・正体を尋ねる不定称の指示代名詞（疑問詞）で、「誰」「どなた」という意味を表します。",
+      "longExplanation": "「だれ（誰）」は、不特定の人物や正体が分からない人について尋ねる際に用いる疑問詞（不定称の人代名詞）です。文中の役割に応じて、「だれが（主語）」「だれを（目的語）」「だれに（対象）」「だれの（所有）」など各種の格助詞を伴って使われます。改まった場や敬意を表す場面では、より丁寧な「どなた」を用います。",
+      "formation": "だれ + 助詞（が、を、に、の など）",
+      "examples": [
+        {
+          "translation": "だれがその本を買いましたか。"
+        },
+        {
+          "translation": "だれを待っていますか。"
+        },
+        {
+          "translation": "だれがそのリンゴを食べましたか。"
+        },
+        {
+          "translation": "だれが鍵を持っていますか。"
+        }
+      ]
+    }
+  }
+}

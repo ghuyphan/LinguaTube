@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Verb_152": {
+      "title": "Động từ thể ý chí + にも + Động từ thể khả năng phủ định / lý do (〜you ni mo 〜renai)",
+      "shortExplanation": "Diễn tả dù rất muốn làm hay cố làm một việc gì đó nhưng không thể làm được vì có trở ngại; 'dù muốn... cũng không thể... nổi'.",
+      "longExplanation": "Mẫu ngữ pháp '～ようにも～（ら）れない' (N1) kết hợp giữa động từ ở thể ý chí đi với trợ từ 'にも' và theo sau là cùng động từ đó ở thể khả năng phủ định (hoặc một vế chỉ lý do bất khả kháng). Cấu trúc này dùng để nhấn mạnh tâm trạng bất lực, bế tắc của người nói: bản thân rất có nguyện vọng, khao khát hoặc nỗ lực muốn thực hiện hành động đó, nhưng do hoàn cảnh hoặc trở ngại khách quan cản trở nên hoàn toàn không có cách nào làm được ('dù muốn... cũng không thể nào... được').",
+      "formation": "Động từ thể ý chí (thể よう) + にも + Động từ thể khả năng phủ định / lý do không thể làm",
+      "examples": [
+        {
+          "translation": "Dù muốn tin anh ấy nhưng lại có bằng chứng khiến tôi không thể tin nổi."
+        },
+        {
+          "translation": "Dù muốn xuất phát sớm nhưng xe lại bị hỏng mất rồi."
+        },
+        {
+          "translation": "Dù muốn gọi điện cho anh ấy nhưng tôi lại không biết số điện thoại."
+        },
+        {
+          "translation": "Dù muốn học nhiều hơn nữa nhưng tôi lại không có thời gian."
+        }
+      ]
+    },
+    "ja_Verb_153": {
+      "title": "Động từ thể ます + ようもない (~you mo nai)",
+      "shortExplanation": "Biểu thị hoàn toàn không có cách nào, không có phương pháp nào để thực hiện được hành động; 'không có cách nào mà...', 'không thể nào... nổi'.",
+      "longExplanation": "Mẫu ngữ pháp '～ようもない' (N1) kết hợp với thân động từ thể ます (bỏ ます) để diễn tả rằng hoàn toàn không có phương thức, biện pháp hay khả năng nào để tiến hành hành động đó ('không tài nào... được', 'hết cách...'). Cấu trúc này có ý nghĩa tương đương với '～ようがない', nhưng việc thêm trợ từ 'も' càng nhấn mạnh tính triệt để của việc bất khả kháng, tuyệt đối không còn đường nào xoay xở.",
+      "formation": "Động từ thể ます (bỏ ます) + ようもない",
+      "examples": [
+        {
+          "translation": "Vấn đề này không tài nào giải quyết nổi."
+        },
+        {
+          "translation": "Không thể nào nhẫn nhịn thêm được nữa."
+        },
+        {
+          "translation": "Không có cách nào khiến anh ấy hiểu ra được."
+        },
+        {
+          "translation": "Thứ thuốc đó đắng đến mức không tài nào uống nổi."
+        }
+      ]
+    },
+    "ja_Verbる_154": {
+      "title": "Động từ thể từ điển + がままに (〜ga mama ni)",
+      "shortExplanation": "Diễn tả việc để mặc sự việc diễn ra tự nhiên theo đúng bản chất hay trạng thái vốn có của nó; 'cứ để mặc cho...', 'phó mặc theo...'.",
+      "longExplanation": "Mẫu ngữ pháp '～がままに' (N1) kết hợp với động từ thể từ điển (hoặc kết hợp thành ngữ như 言われるがままに, なされるがままに, 流れるがままに) để diễn tả việc hành động hay sự việc diễn ra hoàn toàn tự nhiên theo xu thế sẵn có, hoặc để mặc cho đối phương hay hoàn cảnh định đoạt mà bản thân không can thiệp, không kháng cự ('cứ để thuận theo...', 'mặc cho...', 'phó mặc cho...'). Thường gợi lên trạng thái thụ động hoặc buông xuôi thuận theo tự nhiên.",
+      "formation": "Động từ thể từ điển + がままに",
+      "examples": [
+        {
+          "translation": "Tôi cứ để mặc cửa sổ mở nguyên như vậy, thế là gió lùa vào trong phòng."
+        },
+        {
+          "translation": "Cô ấy chỉ im lặng ngồi đó, cứ để mặc cho nước mắt tuôn rơi."
+        },
+        {
+          "translation": "Lũ trẻ cười đùa thỏa thích tự nhiên, chạy nhảy khắp công viên."
+        },
+        {
+          "translation": "Mặc cho mặt trời cứ thế lặn dần, chúng tôi vẫn tiếp tục trò chuyện bên bờ biển."
+        }
+      ]
+    },
+    "ja_Verbる_155": {
+      "title": "Động từ thể từ điển / thể た + が早いか (verb-ru ga hayai ka)",
+      "shortExplanation": "Diễn tả hành động vế sau diễn ra gần như ngay tức khắc sau hành động vế trước; 'vừa mới... thì ngay lập tức...', 'thoáng cái đã...'.",
+      "longExplanation": "Mẫu ngữ pháp '～が早いか' (N1) đi với động từ thể từ điển (hoặc đôi khi thể た) để diễn tả rằng ngay sau khi hành động ở vế trước vừa xảy ra thì hành động ở vế sau diễn ra gần như tức thì, chớp nhoáng đến mức như thể hai hành động diễn ra cùng một lúc ('vừa mới... là ngay tức khắc...'). Vế sau thường là hành động thực tế đã xảy ra, không dùng thể hiện ý chí, mệnh lệnh hay phỏng đoán của người nói.",
+      "formation": "Động từ thể từ điển / thể た + が早いか",
+      "examples": [
+        {
+          "translation": "Vừa mới bước chân vào phòng là anh ấy đã bật tivi lên ngay tức khắc."
+        },
+        {
+          "translation": "Vừa mới lên tàu là tôi đã chìm ngay vào giấc ngủ."
+        },
+        {
+          "translation": "Cô ấy vừa mới nhìn thấy một cái là lập tức òa khóc nức nở."
+        },
+        {
+          "translation": "Vừa mới nhận được tiền lương là tôi đã tiêu sạch bách không còn một xu."
+        }
+      ]
+    },
+    "ja_Verbる_156": {
+      "title": "Động từ thể từ điển + くらいなら (〜ru kurai nara)",
+      "shortExplanation": "Diễn tả thà chọn phương án khác còn hơn là phải làm một việc tồi tệ nào đó; 'nếu phải... thì thà... còn hơn'.",
+      "longExplanation": "Mẫu ngữ pháp '～くらいなら' kết hợp với động từ ở thể từ điển để diễn đạt rằng: nếu phải rơi vào hoặc thực hiện tình huống tồi tệ, khó chịu ở vế trước thì thà chọn giải pháp ở vế sau còn tốt hơn nhiều ('thà... còn hơn...', 'nếu phải... thì thà...'). Vế sau thường đi kèm với các từ ngữ biểu thị sự so sánh hoặc lựa chọn hơn như '～ほうがいい', '～ほうがましだ', '～たい'.",
+      "formation": "Động từ thể từ điển + くらいなら",
+      "examples": [
+        {
+          "translation": "Nếu phải đi một mình thì tôi thà ở nhà còn hơn."
+        },
+        {
+          "translation": "Nếu phải chịu thua thì thà không thi đấu còn hơn."
+        },
+        {
+          "translation": "Nếu phải đi muộn thì thà nghỉ cả ngày còn tốt hơn."
+        },
+        {
+          "translation": "Nếu phải chuốc lấy đau thương thì thà tôi tránh rủi ro đó đi còn hơn."
+        }
+      ]
+    },
+    "ja_Verbる_157": {
+      "title": "Động từ thể từ điển + ことなしに (Verb-ru koto nashi ni)",
+      "shortExplanation": "Diễn tả việc thực hiện một hành động khác mà hoàn toàn không thực hiện hành động này; 'mà không...', 'không hề...'. (Văn phong trang trọng)",
+      "longExplanation": "Mẫu ngữ pháp '～ことなしに' (hoặc '～ことなしには') là dạng văn viết trang trọng kết hợp với động từ thể từ điển, mang ý nghĩa 'mà không làm việc gì đó' (tương đương với '～ないで' hoặc '～ずに'). Mẫu câu này nhấn mạnh việc hoàn toàn bỏ qua hoặc không tiến hành hành động ở vế trước mà vẫn thực hiện hành động hay đạt được kết quả ở vế sau.",
+      "formation": "Động từ thể từ điển + ことなしに",
+      "examples": [
+        {
+          "translation": "Tôi đã đỗ kỳ thi mà không cần phải ôn tập."
+        },
+        {
+          "translation": "Tôi đã mua quần áo mà không hề mặc thử."
+        },
+        {
+          "translation": "Anh ấy vẫn sinh sống mà không cần phải làm việc."
+        },
+        {
+          "translation": "Tôi đã nghỉ việc mà không cần làm thủ tục gì cả."
+        }
+      ]
+    },
+    "ja_Verbる_158": {
+      "title": "Động từ thể từ điển + ことのないように (Verb-ru koto no nai you ni)",
+      "shortExplanation": "Diễn tả mục đích hoặc nỗ lực phòng ngừa, nhằm tránh để sự việc không mong muốn xảy ra; 'để không...', 'sao cho không bị...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことのないように' kết hợp với động từ ở thể từ điển, tương đương với '～ないように' nhưng mang tính trang trọng và cẩn trọng hơn. Cấu trúc này diễn tả mục đích ngăn ngừa, nỗ lực hết sức để không xảy ra sự cố, sai sót hoặc kết quả tiêu cực không mong muốn ở vế trước ('để tránh việc...', 'sao cho không xảy ra tình trạng...').",
+      "formation": "Động từ thể từ điển + ことのないように",
+      "examples": [
+        {
+          "translation": "Để không bị mất xe, nhất định hãy khóa xe cẩn thận ở bãi đỗ xe nhé."
+        },
+        {
+          "translation": "Để không bị cảm cúm, chúng ta hãy rửa tay thật kỹ nhé."
+        },
+        {
+          "translation": "Để không bị trượt kỳ thi, hãy học bài chăm chỉ mỗi ngày nhé."
+        },
+        {
+          "translation": "Để tránh mắc phải sai sót, hãy làm việc thật cẩn thận nhé."
+        }
+      ]
+    },
+    "ja_Verbる_159": {
+      "title": "Động từ thể từ điển + ときりがない (verb-ru to kiri ga nai)",
+      "shortExplanation": "Diễn tả nếu bắt đầu làm việc gì thì sự việc sẽ tiếp diễn bất tận không có hồi kết, không có điểm dừng; 'nếu mà... thì không biết bao giờ mới hết'.",
+      "longExplanation": "Mẫu ngữ pháp '～ときりがない' kết hợp giữa động từ thể từ điển với liên từ điều kiện 'と' và cụm từ 'きりがない' (kiri mang nghĩa giới hạn, điểm dừng). Cấu trúc này diễn tả rằng hễ cứ bắt đầu làm hành động đó thì số lượng hoặc tình trạng sẽ nhiều vô kể, tiếp diễn triền miên đến mức không có điểm dừng ('nếu mà... thì chẳng biết bao giờ mới hết', 'hễ... là không có hồi kết').",
+      "formation": "Động từ thể từ điển + と + きりがない",
+      "examples": [
+        {
+          "translation": "Nếu mà kể xấu về anh ta thì chẳng bao giờ có hồi kết."
+        },
+        {
+          "translation": "Nếu mà cứ suy nghĩ mãi về vấn đề đó thì không biết bao giờ mới dứt."
+        },
+        {
+          "translation": "Nếu mà liệt kê những ưu điểm của cô ấy thì có kể mãi cũng không hết."
+        },
+        {
+          "translation": "Nếu mà thưởng thức hết món ngon trên đời này thì ăn mãi chẳng cùng."
+        }
+      ]
+    },
+    "ja_Verbる_160": {
+      "title": "Động từ thể từ điển + ともなく + Động từ (Verb-ru tomonaku Verb)",
+      "shortExplanation": "Diễn tả hành động được thực hiện một cách vô thức, lơ đễnh, không hề có chủ đích hay mục đích rõ ràng; 'không chủ ý...', 'vô tình...', 'bâng quơ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ともなく' (N1) đứng sau động từ thể từ điển (thường lặp lại cùng một động từ hoặc đi kèm với một động từ cùng nhóm hành vi như 見るともなく見る/眺める, 聞くともなく聞く) để diễn tả trạng thái làm một việc gì đó hoàn toàn bâng quơ, không chủ ý, vô thức hoặc lơ đễnh mà không hề có mục đích hay sự tập trung định sẵn ('lơ đễnh...', 'vô tình mà...', 'chẳng chủ đích...').",
+      "formation": "Động từ thể từ điển + ともなく + Động từ (thường cùng động từ hoặc động từ liên quan)",
+      "examples": [
+        {
+          "translation": "Không hề chủ ý nhìn vào đâu xa xăm, tôi cứ thế lơ đễnh ngắm nhìn ra bên ngoài cửa sổ."
+        },
+        {
+          "translation": "Không hiểu sao vô tình tôi lại có cảm giác rằng anh ấy đã rời đi."
+        },
+        {
+          "translation": "Chẳng hề chủ ý đọc sách, tôi chỉ lơ đễnh lật giở từng trang."
+        },
+        {
+          "translation": "Không hẳn là định đi ngủ, tôi chỉ bâng quơ nằm dài trên giường."
+        }
+      ]
+    },
+    "ja_Verbる_161": {
+      "title": "Động từ thể từ điển + ともなしに + Động từ (Verb-ru tomonashi ni Verb)",
+      "shortExplanation": "Diễn tả việc làm gì đó một cách bâng quơ, vô tình không hề có chủ ý định trước, rồi tình cờ dẫn đến một kết quả; 'vô tình...', 'bâng quơ mà...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ともなしに' (N1) có ý nghĩa và cách dùng tương tự như '～ともなく', kết hợp với động từ thể từ điển để diễn tả hành động được thực hiện một cách hoàn toàn tự nhiên, không mang chủ ý hay dự định từ trước ('không định... mà lại...', 'vô tình...'). Cấu trúc này thường đi kèm với việc người nói trong khi đang làm một việc gì đó lơ đễnh, bâng quơ thì vô tình phát hiện hoặc dẫn tới một kết quả bất ngờ khác.",
+      "formation": "Động từ thể từ điển + ともなしに + Động từ",
+      "examples": [
+        {
+          "translation": "Không hề định đọc sách chăm chú, tôi cứ lơ đễnh xem rồi ngủ thiếp đi lúc nào không hay."
+        },
+        {
+          "translation": "Chỉ là bâng quơ viết một lá thư không chủ đích, ai ngờ tôi lại thổ lộ cả tấm chân tình với anh ấy."
+        },
+        {
+          "translation": "Chẳng chủ đích đi dạo đâu, tôi cứ thả bộ vu vơ thì tình cờ tìm thấy một quán cà phê mới."
+        },
+        {
+          "translation": "Trong lúc bâng quơ dọn dẹp quần áo, tôi vô tình tìm thấy những bức ảnh cũ ngày xưa."
+        }
+      ]
+    },
+    "ja_Verbる_162": {
+      "title": "Động từ thể từ điển + なり (Verb-ru nari)",
+      "shortExplanation": "Diễn tả vừa mới thực hiện hành động này xong thì ngay lập tức hành động kế tiếp xảy ra; 'vừa mới... thì đã ngay...', 'ngay sau khi...'.",
+      "longExplanation": "Mẫu ngữ pháp '～なり' (N1) kết hợp trực tiếp với động từ ở thể từ điển để diễn tả một hành động vừa mới diễn ra thì ngay lập tức một hành động kế tiếp theo sau không chút chậm trễ ('vừa mới... là đã lập tức...'). Chủ ngữ của hai vế thông thường là cùng một người (ngôi thứ ba), và vế sau thường là một hành vi bộc phát hoặc bất ngờ, không dùng câu mệnh lệnh hay rủ rê.",
+      "formation": "Động từ thể từ điển + なり",
+      "examples": [
+        {
+          "translation": "Vừa mới về đến nhà là anh ấy đã lăn ra ngủ ngay lập tức."
+        },
+        {
+          "translation": "Anh ấy vừa đến ga là gọi điện cho tôi ngay tức khắc."
+        },
+        {
+          "translation": "Vừa mở cửa ra một cái là chú chó đã sủa ầm ĩ."
+        },
+        {
+          "translation": "Bài thi vừa kết thúc là cậu ấy đã lập tức rời khỏi phòng học."
+        }
+      ]
+    },
+    "ja_Verbる_163": {
+      "title": "Danh từ / Động từ thể từ điển + にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
+      "shortExplanation": "Diễn tả sự việc không chỉ dừng lại ở phạm vi đó mà còn lan rộng ra phạm vi lớn hơn; 'không chỉ dừng lại ở... mà còn... cả...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にとどまらず' (N1) bắt nguồn từ động từ 'とどまる' (dừng lại/giới hạn), kết hợp với danh từ hoặc động từ thể từ điển để diễn tả rằng sự việc, hiện tượng không chỉ dừng lại ở mức độ hay phạm vi nhất định đó, mà còn vượt khỏi giới hạn ấy để mở rộng ra phạm vi lớn hơn, sâu rộng hơn ('không chỉ giới hạn ở... mà còn...'). Vế sau thường đi kèm trợ từ 'も'.",
+      "formation": "Danh từ / Động từ thể từ điển + にとどまらず + Danh từ/Mệnh đề + も",
+      "examples": [
+        {
+          "translation": "Anh ấy không chỉ làm việc mà còn tham gia cả các hoạt động tình nguyện nữa."
+        },
+        {
+          "translation": "Tính năng này không dừng lại ở việc chụp ảnh, mà còn có thể quay cả video."
+        },
+        {
+          "translation": "Nhà hàng này không chỉ phục vụ món ăn Nhật Bản mà còn cung cấp cả ẩm thực Trung Hoa."
+        },
+        {
+          "translation": "Doanh nghiệp đó không dừng lại ở ngành sản xuất mà còn lấn sân sang cả lĩnh vực phân phối."
+        }
+      ]
+    },
+    "ja_Verbる_164": {
+      "title": "Động từ thể từ điển / Danh từ + にはあたらない (Verb-ru ni wa ataranai)",
+      "shortExplanation": "Diễn tả việc không đến mức phải làm như vậy, hoặc không đáng để phản ứng thái quá; 'không đáng để...', 'không việc gì phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にはあたらない' (N1) là cách nói văn viết trang trọng, kết hợp với động từ thể từ điển hoặc danh từ có tính động từ, mang ý nghĩa sự việc đó không to tát đến mức đáng để làm như vậy ('chẳng đáng để...', 'không việc gì phải...', 'chẳng cần thiết phải...'). Thường đi kèm với các động từ chỉ cảm xúc, phản ứng tâm lý như kinh ngạc, bi quan, chỉ trích, lo lắng, xin lỗi.",
+      "formation": "Động từ thể từ điển / Danh từ + にはあたらない",
+      "examples": [
+        {
+          "translation": "Chẳng việc gì phải rơi vào hoảng loạn cả."
+        },
+        {
+          "translation": "Không đáng để phải xin lỗi anh ấy đâu."
+        },
+        {
+          "translation": "Chẳng việc gì phải lo lắng về những chuyện như thế."
+        },
+        {
+          "translation": "Không đáng để phải suy nghĩ quá sâu xa về chuyện đó đâu."
+        }
+      ]
+    },
+    "ja_Verbる_165": {
+      "title": "Động từ thể từ điển + にも (Verb-ru ni mo)",
+      "shortExplanation": "Diễn tả dù muốn làm hành động đó thì cũng khó khăn hoặc không thể thực hiện được do điều kiện cản trở; 'ngay cả khi muốn... thì cũng...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Động từ thể từ điển + にも' kết hợp với một vế sau giải thích nguyên nhân, trở ngại khách quan khiến cho hành động dù muốn thực hiện cũng gặp rất nhiều khó khăn hoặc không thể làm được ('ngay cả muốn... thì cũng...'). Mẫu này tương tự như '～（よ）うにも', nhưng sử dụng động từ thể từ điển để đặt ra giả định về điều kiện tiên quyết hoặc tình thế nan giải.",
+      "formation": "Động từ thể từ điển + にも + (lý do gây cản trở / tình huống khó khăn)",
+      "examples": [
+        {
+          "translation": "Cho dù ngày mai trời có mưa đi nữa, thì ngay cả muốn mang ô theo cũng không được vì hành lý quá nhiều."
+        },
+        {
+          "translation": "Tôi đã trượt kỳ thi, nhưng ngay cả muốn thi lại lần nữa thì tiền cũng không có đủ."
+        },
+        {
+          "translation": "Dù rất muốn gặp anh ấy, nhưng ngay cả việc muốn gặp lúc này cũng là một tình cảnh vô cùng khó khăn."
+        },
+        {
+          "translation": "Ngay cả muốn đi từ sân bay này đến nhà cô ấy thì cũng cần phải đi bằng taxi."
+        }
+      ]
+    },
+    "ja_Verbる_166": {
+      "title": "Động từ thể ý chí + にも + Động từ thể khả năng phủ định (Verb-ru ni mo Verb-re nai)",
+      "shortExplanation": "Diễn tả dù rất muốn làm hay cố hết sức làm điều gì đó thì cũng không tài nào làm nổi; 'dù muốn... cũng không thể... nổi'.",
+      "longExplanation": "Mẫu ngữ pháp 'Động từ thể ý chí + にも + cùng Động từ thể khả năng phủ định' (N1) được dùng để nhấn mạnh sự bất lực tột cùng: người nói rất muốn hoặc cố gắng thực hiện hành động nhưng vì hoàn cảnh khách quan hoặc rào cản tâm lý mà hoàn toàn không thể làm được ('dù muốn... cũng không thể nào... được'). Cấu trúc này lặp lại hai lần cùng một động từ, vế đầu ở thể ý chí (よう) và vế sau ở thể khả năng phủ định (れない/られない).",
+      "formation": "Động từ thể ý chí (thể よう) + にも + Động từ thể khả năng phủ định",
+      "examples": [
+        {
+          "translation": "Dù tôi có cố gắng muốn hiểu anh ấy đến đâu thì cũng không tài nào hiểu nổi."
+        },
+        {
+          "translation": "Dù muốn chạy cũng không thể nào chạy nổi."
+        },
+        {
+          "translation": "Dù muốn khóc thật to cũng chẳng thể khóc nổi."
+        },
+        {
+          "translation": "Dù có muốn quên đi thì cũng không tài nào quên được."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Verb_152": {
+      "title": "动词意志形 + にも + 动词可能形否定 / 原因 (〜you ni mo 〜renai)",
+      "shortExplanation": "表示即使想做某事，也因某种客观阻碍而无法做到；“即使想……也（做）不了……”、“想……也……不能”。",
+      "longExplanation": "句型“～ようにも～（ら）れない”接在动词意志形之后，加上助词“にも”，后项接续同一动词的可能形否定形式，或说明无法实施的客观原因。该句型用于表达说话人虽然主观上非常想做某事或试图去做，但受到客观情况、阻碍或不可抗力的限制而完全无法如愿（“即便想……也做不到……”、“想……也无法……”），带有强烈的无可奈何与遗憾叹息之情。",
+      "formation": "动词意志形 + にも + 动词可能形否定 / 无法实现的理由",
+      "examples": [
+        {
+          "translation": "即便想相信他，却有证据摆在面前让我无法相信。"
+        },
+        {
+          "translation": "哪怕想早点出发，车子却偏偏坏了。"
+        },
+        {
+          "translation": "即使想给他打电话，可我根本不知道他的电话号码。"
+        },
+        {
+          "translation": "虽然还想多学一点，但实在是没有时间。"
+        }
+      ]
+    },
+    "ja_Verb_153": {
+      "title": "动词连用形 + ようもない (~you mo nai)",
+      "shortExplanation": "表示完全没有方法或途径去做某事；“根本无法……”、“毫无办法……”、“无法可想”。",
+      "longExplanation": "句型“～ようもない”接在动词连用形（ます形去掉ます）之后，表示完全找不到进行该动作的方法、手段或可能性（“根本无法……”、“毫无……的办法”）。其含义与“～ようがない”基本相同，但助词“も”的存在进一步强化了否定色彩，断定在任何情况下都绝对无法实施该行为。",
+      "formation": "动词连用形（ます形去掉ます） + ようもない",
+      "examples": [
+        {
+          "translation": "这道难题根本无从解答。"
+        },
+        {
+          "translation": "已经无法再忍耐下去了。"
+        },
+        {
+          "translation": "根本不可能跟他讲得通。"
+        },
+        {
+          "translation": "那药实在难以下咽。"
+        }
+      ]
+    },
+    "ja_Verbる_154": {
+      "title": "动词辞书形 + がままに (〜ga mama ni)",
+      "shortExplanation": "表示任由事物自然发展或听凭摆布、毫无干预；“任凭……”、“听任……”、“随……”。",
+      "longExplanation": "句型“～がままに”接在动词辞书形之后（也常见于被动态如“言われるがままに”任人摆布、“なされるがままに”任凭处置），表示完全不加干涉、不作抵抗，任凭动作自然发生或听任事态按照原样发展（“任由……”、“任凭……”、“随心所欲地……”）。常带有顺其自然或被动接受、随波逐流的语感。",
+      "formation": "动词辞书形 + がままに",
+      "examples": [
+        {
+          "translation": "任凭窗户就那么开着，结果风都刮进了房间里。"
+        },
+        {
+          "translation": "她只是默默地坐着，任凭泪水止不住地流淌。"
+        },
+        {
+          "translation": "孩子们尽情地欢笑着，在公园里四处奔跑玩耍。"
+        },
+        {
+          "translation": "任凭夕阳缓缓西沉，我们依然坐在海边聊个不停。"
+        }
+      ]
+    },
+    "ja_Verbる_155": {
+      "title": "动词辞书形 / た形 + が早いか (verb-ru ga hayai ka)",
+      "shortExplanation": "表示前项动作刚一发生，后项动作几乎同时瞬间紧接着发生；“刚一……就立刻……”、“说时迟那时快……”。",
+      "longExplanation": "句型“～が早いか”接在动词辞书形或た形之后，用来表示前项动作刚刚完成的瞬间，后项动作便疾速展开，动作衔接之快宛如同时发生（“刚一……就马上……”、“一……立刻就……”）。后项叙述已经发生的事实，通常不能接表达说话人意志、命令、请求或推测的表达方式。",
+      "formation": "动词辞书形 / た形 + が早いか",
+      "examples": [
+        {
+          "translation": "刚一进房间，他就立刻打开了电视。"
+        },
+        {
+          "translation": "刚一坐上电车，我就立马睡着了。"
+        },
+        {
+          "translation": "她刚一眼看到，就立刻哭了起来。"
+        },
+        {
+          "translation": "工资刚一发下来，我就全花了个精光。"
+        }
+      ]
+    },
+    "ja_Verbる_156": {
+      "title": "动词辞书形 + くらいなら (〜ru kurai nara)",
+      "shortExplanation": "表示与其忍受前项极不情愿的情况，倒不如选择后项；“与其……倒不如……”、“要是……还不如……”。",
+      "longExplanation": "句型“～くらいなら”接在动词辞书形之后，用于表示说话人极其厌恶或极力回避前项动作或遭遇，认为与其发生前项那样糟糕的事，宁可选择后项的方案（“与其……宁愿……”、“要是……倒不如……”）。后项常与“～ほうがましだ”“～ほうがいい”“～たい”等表达偏好或两害相权取其轻的句式搭配使用。",
+      "formation": "动词辞书形 + くらいなら",
+      "examples": [
+        {
+          "translation": "与其一个人去，我倒宁愿待在家里。"
+        },
+        {
+          "translation": "要是注定要输，那还不如根本不参加比赛为好。"
+        },
+        {
+          "translation": "要是去迟到的话，倒不如直接请一天假算了。"
+        },
+        {
+          "translation": "与其落得痛苦的下场，我宁愿避开那个风险。"
+        }
+      ]
+    },
+    "ja_Verbる_157": {
+      "title": "动词辞书形 + ことなしに (Verb-ru koto nashi ni)",
+      "shortExplanation": "表示完全不做前项动作而进行后项动作；“在没有……的情况下”、“不……就……”。（书面语）",
+      "longExplanation": "句型“～ことなしに”是接在动词辞书形之后的郑重书面语表达，相当于口语中的“～ないで”或“～ずに”，表示在省略或完全不进行前项行为的前提下去做后项的事（“不……而……”、“未曾……便……”）。常用于强调略过了某项原本必要或预期的步骤。",
+      "formation": "动词辞书形 + ことなしに",
+      "examples": [
+        {
+          "translation": "没有怎么复习备考，我竟然通过了考试。"
+        },
+        {
+          "translation": "连试穿都没试穿一下，我就把衣服买了下来。"
+        },
+        {
+          "translation": "他不用工作也照样生活着。"
+        },
+        {
+          "translation": "没有办理任何手续，我就离职了。"
+        }
+      ]
+    },
+    "ja_Verbる_158": {
+      "title": "动词辞书形 + ことのないように (Verb-ru koto no nai you ni)",
+      "shortExplanation": "表示为了防止某种不良事态的发生而采取措施；“为了不……”、“以免……”、“切莫……”。",
+      "longExplanation": "句型“～ことのないように”接在动词辞书形之后，相当于“～ないように”的郑重书面表达，用于表示为了避免出现前项所描述的不良状况、过失或负面结果，而在后项采取防范措施或提出忠告建议（“为了免于……”、“以防……”、“避免发生……”）。",
+      "formation": "动词辞书形 + ことのないように",
+      "examples": [
+        {
+          "translation": "为了不至于丢失爱车，在停车场请务必锁好车门。"
+        },
+        {
+          "translation": "为了避免感冒，一定要认真洗手。"
+        },
+        {
+          "translation": "为了不考砸落榜，每天都要认真学习。"
+        },
+        {
+          "translation": "为了不出现差错，工作时请务必谨慎细致。"
+        }
+      ]
+    },
+    "ja_Verbる_159": {
+      "title": "动词辞书形 + ときりがない (verb-ru to kiri ga nai)",
+      "shortExplanation": "表示一旦开始做某事就会无休无止、没完没了；“一……就没完没了”、“要是……就毫无止境”。",
+      "longExplanation": "句型“～るときりがない”接在动词辞书形之后，由假定助词“と”加上表示“没有止境/毫无终结”的“きりがない（限がない）”构成。表示某种行为或现象一旦展开，数量之多或过程之长便会达到无法收拾、无穷无尽的程度（“一……就没个完”、“要是……就永无休止”）。",
+      "formation": "动词辞书形 + と + きりがない",
+      "examples": [
+        {
+          "translation": "要是说起他的坏话来，那可就没完没了了。"
+        },
+        {
+          "translation": "要是深入钻牛角尖琢磨那个问题，就根本没个尽头。"
+        },
+        {
+          "translation": "要是列举她的优点，真是一天一夜也数不完。"
+        },
+        {
+          "translation": "如果要把这世上的美食全吃一遍，那可真是无穷无尽了。"
+        }
+      ]
+    },
+    "ja_Verbる_160": {
+      "title": "动词辞书形 + ともなく + 动词 (Verb-ru tomonaku Verb)",
+      "shortExplanation": "表示漫无目的、心不在焉或无意识地做某事；“漫不经心地……”、“无意中……”、“并不打算……却……”。",
+      "longExplanation": "句型“～ともなく”接在动词辞书形之后（后项常重复该动词或使用同类动作的动词，如“見るともなく見る/眺める”漫无目的地看、“聞くともなく聞く”不经意地听），用来表达说话人并没有明确的意图、目的或焦点，只是随性、心不在焉或无意识地在做某个动作（“漫不经心地……”、“漫无目的地……”）。",
+      "formation": "动词辞书形 + ともなく + 动词（多为同一动词或相关动作）",
+      "examples": [
+        {
+          "translation": "并没有特意看远处的什么东西，只是漫无目的地眺望着窗外。"
+        },
+        {
+          "translation": "不知不觉间，我隐隐察觉到了他的离去。"
+        },
+        {
+          "translation": "并不是存心要读书，只是漫不经心地翻着书页。"
+        },
+        {
+          "translation": "也并没有打算真正睡觉，只是漫无目的地躺在床上发呆。"
+        }
+      ]
+    },
+    "ja_Verbる_161": {
+      "title": "动词辞书形 + ともなしに + 动词 (Verb-ru tomonashi ni Verb)",
+      "shortExplanation": "表示漫不经心、毫无特别动机或意图地做某事，往往在此过程中有了意外的发生或发现；“无意中……”、“漫不经心地……”。",
+      "longExplanation": "句型“～ともなしに”接在动词辞书形之后，用法与“～ともなく”非常相近，表示并不是出于某种特定的明确动机或强烈意愿，而只是漫不经心、无意识或顺其自然地做着某件事（“漫无目的地……”、“无意中……”）。常用于描述在漫不经心的动作进行过程中，偶然触发了另一件事或有了意外发现。",
+      "formation": "动词辞书形 + ともなしに + 动词",
+      "examples": [
+        {
+          "translation": "漫不经心地随手翻着书，不知不觉就睡着了。"
+        },
+        {
+          "translation": "怀着轻松的心情漫无目的地随笔写信，结果竟向他表白了自己的真心。"
+        },
+        {
+          "translation": "并无特别目的地随意漫步散心，偶然发现了一家新开的咖啡馆。"
+        },
+        {
+          "translation": "漫不经心地随手整理衣服时，偶然翻出了以前的旧照片。"
+        }
+      ]
+    },
+    "ja_Verbる_162": {
+      "title": "动词辞书形 + なり (Verb-ru nari)",
+      "shortExplanation": "表示前项动作刚一完成，紧接着立刻发生后项动作；“一……就立刻……”、“刚……就马上……”。",
+      "longExplanation": "句型“～なり”接在动词辞书形之后，用于表示某一动作刚刚做完，立刻就紧接着采取后一动作（“一……就……”、“刚……就立刻……”）。前后两项通常为同一主语（多为第三人称），后项常伴随出人意料或突发性的举动，不能用于表达说话人的命令、劝诱或推测。",
+      "formation": "动词辞书形 + なり",
+      "examples": [
+        {
+          "translation": "刚一回到家，他就立刻倒头睡了。"
+        },
+        {
+          "translation": "他刚一到车站，就立刻打来了电话。"
+        },
+        {
+          "translation": "刚一打开门，狗就汪汪叫了起来。"
+        },
+        {
+          "translation": "考试刚一结束，他就立刻走出了教室。"
+        }
+      ]
+    },
+    "ja_Verbる_163": {
+      "title": "名词 / 动词辞书形 + にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
+      "shortExplanation": "表示范围不仅局限于某一方面，而且还进一步扩展到更广的领域；“不仅局限于……而且连……也……”、“不仅……还……”。",
+      "longExplanation": "句型“～にとどまらず”接在名词或动词辞书形之后，源自表示停留、限制的动词“とどまる”。用于表达某事物的影响、作用或范围并不仅止于前项提及的界限，而是进一步波及、扩大到更大或更广的范围（“不仅止于……甚至还……”、“不局限于……连……也……”）。后项常与助词“も”呼应使用。",
+      "formation": "名词 / 动词辞书形 + にとどまらず + 名词/分句 + も",
+      "examples": [
+        {
+          "translation": "他不仅努力本职工作，而且还积极参与志愿活动。"
+        },
+        {
+          "translation": "这项功能不仅局限于拍照，录制视频也同样支持。"
+        },
+        {
+          "translation": "这家餐厅不仅提供日本料理，还供应中华料理。"
+        },
+        {
+          "translation": "那家企业不仅涉足制造业，还拓展了物流配送业务。"
+        }
+      ]
+    },
+    "ja_Verbる_164": {
+      "title": "动词辞书形 / 名词 + にはあたらない (Verb-ru ni wa ataranai)",
+      "shortExplanation": "表示事情并没有严重到那种地步，不值得或没有必要做出过度的反应；“用不着……”、“用不着大惊小怪地去……”、“并不值得……”。",
+      "longExplanation": "句型“～にはあたらない”是比较郑重的书面语表达，接在动词辞书形或动作性名词之后，表示该事态的程度轻微，根本不值得做出那么强烈的反应、情绪或举动（“并不至于……”、“用不着去……”、“犯不上……”）。常与表示心理反应或评价类的词汇搭配使用。",
+      "formation": "动词辞书形 / 名词 + にはあたらない",
+      "examples": [
+        {
+          "translation": "完全用不着陷入恐慌。"
+        },
+        {
+          "translation": "根本犯不上向他道歉。"
+        },
+        {
+          "translation": "用不着为那种事情担忧挂虑。"
+        },
+        {
+          "translation": "关于那件事，并不值得苦思冥想。"
+        }
+      ]
+    },
+    "ja_Verbる_165": {
+      "title": "动词辞书形 + にも (Verb-ru ni mo)",
+      "shortExplanation": "表示即使想做某事，也因客观条件所限而难以实现；“即使想……也（因为……而办不到）”。",
+      "longExplanation": "句型“动词辞书形 + にも”后项常接续说明阻碍原因或客观困难的分句，表示即便有打算去做某事，但由于面临种种客观限制、现实困难或条件不足，要实施起来也极度艰难甚至行不通（“哪怕想要……也因为……”）。其语法功能与“～ようにも”相近，多用于强调现实条件的欠缺与阻碍。",
+      "formation": "动词辞书形 + にも + 说明阻碍或困难的从句",
+      "examples": [
+        {
+          "translation": "即便明天下雨，可光是想带把伞，行李也实在太多带不了。"
+        },
+        {
+          "translation": "考试落榜了，但即便想再考一次，手头的钱也根本不够。"
+        },
+        {
+          "translation": "纵然心里想见他，但当下的处境即便想见一面也是困难重重。"
+        },
+        {
+          "translation": "就算从这个机场去她家，也必须要打出租车才行。"
+        }
+      ]
+    },
+    "ja_Verbる_166": {
+      "title": "动词意志形 + にも + 动词可能形否定 (Verb-ru ni mo Verb-re nai)",
+      "shortExplanation": "强调即使主观上极想去做某事，客观上也完全无法做到；“即使想……也（做）不了……”、“想……也……不成”。",
+      "longExplanation": "句型“动词意志形 + にも + 动词可能形否定”（N1）通过重复同一个动词（前半部分为意志形，后半部分为可能形否定），极力强调说话人虽然抱有强烈的做某事的意愿或尝试，但因受制于客观阻碍、能力所限或心理压抑而陷入完全无法实现的无助境地（“哪怕想……也做不到……”、“想……也无法……”）。",
+      "formation": "动词意志形 + にも + 动词可能形否定",
+      "examples": [
+        {
+          "translation": "哪怕我极力想去理解他，也完全无法理解。"
+        },
+        {
+          "translation": "哪怕想跑也根本跑不动。"
+        },
+        {
+          "translation": "想哭却连眼泪都流不出来。"
+        },
+        {
+          "translation": "哪怕千方百计想去遗忘，却怎么也忘不掉。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Verb_152": {
+      "title": "동사 의지형 + にも + 동사 가능형 부정 / 사유 (〜you ni mo 〜renai)",
+      "shortExplanation": "무언가를 하고 싶거나 하려고 해도 어떤 장애 때문에 도저히 할 수 없음을 나타내며, '~하려고 해도 ~할 수 없다'라는 뜻입니다.",
+      "longExplanation": "'～ようにも～（ら）れない'는 동사의 의지형에 조사 'にも'가 붙고, 뒤에 동일한 동사의 가능형 부정이나 불가능한 이유가 이어져 어떤 행위를 하고자 하는 의지나 바람은 굴뚝같지만, 현실적인 제약이나 사정 때문에 도저히 실현할 수 없는 안타까움과 무력감을 나타내는 N1 문형입니다('~하려고 해도 할 수가 없다', '~하려야 할 수 없다').",
+      "formation": "동사 의지형 + にも + 동사 가능형 부정 / 불가능한 사유",
+      "examples": [
+        {
+          "translation": "그를 믿으려 해도 믿을 수 없는 증거가 있다."
+        },
+        {
+          "translation": "일찍 출발하려 해도 차가 고장 나 버렸다."
+        },
+        {
+          "translation": "그에게 전화를 걸려고 해도 전화번호를 모른다."
+        },
+        {
+          "translation": "공부를 더 하려 해도 시간이 없다."
+        }
+      ]
+    },
+    "ja_Verb_153": {
+      "title": "동사 ます형 + ようもない (~you mo nai)",
+      "shortExplanation": "어떤 동작을 할 수 있는 방법이나 수단이 전혀 없음을 나타내며, '도저히 ~할 방법이 없다', '~할래야 할 수가 없다'라는 뜻입니다.",
+      "longExplanation": "'～ようもない'는 동사의 ます형 어간(연용형)에 접속하여, 그 동작을 수행할 방도나 수단이 전혀 없음을 강한 부정으로 나타내는 N1 문형입니다('도저히 ~할 길이 없다', '~할 수조차 없다'). '～ようがない'와 뜻이 거의 같지만, 조사 'も'가 들어가 부정의 뉘앙스가 한층 더 강조되어 어떠한 수단도 통하지 않는 완전한 불가능 상태를 나타냅니다.",
+      "formation": "동사 ます형(어간) + ようもない",
+      "examples": [
+        {
+          "translation": "이 문제는 도저히 풀 방법이 없다."
+        },
+        {
+          "translation": "이 이상은 참으려야 참을 수가 없다."
+        },
+        {
+          "translation": "그에게는 도무지 말이 통할 것 같지 않다."
+        },
+        {
+          "translation": "그 약은 도저히 삼킬 수가 없다."
+        }
+      ]
+    },
+    "ja_Verbる_154": {
+      "title": "동사 사전형 + がままに (〜ga mama ni)",
+      "shortExplanation": "인위적인 간섭 없이 자연스러운 흐름이나 상태에 그대로 맡겨 둠을 나타내며, '~하는 대로 내버려 두고', '~하는 대로'라는 뜻입니다.",
+      "longExplanation": "'～가ままに'는 동사의 사전형에 접속하여, 어떤 상황이나 동작에 인위적으로 개입하거나 저항하지 않고 본래 흘러가는 상태나 상대방의 처분에 그대로 맡겨 두는 모습을 나타내는 N1 문형입니다('~하는 대로 내맡긴 채', '~하는 대로'). 관용적으로 쓰이거나 수동적·자연적 흐름을 따를 때 자주 쓰입니다.",
+      "formation": "동사 사전형 + がままに",
+      "examples": [
+        {
+          "translation": "창문을 열어둔 채 그대로 두었더니 바람이 방으로 들어왔습니다."
+        },
+        {
+          "translation": "그녀는 눈물을 흘리는 대로 내버려 둔 채 그저 묵묵히 앉아 있었다."
+        },
+        {
+          "translation": "아이들은 마음껏 웃으며 공원을 이리저리 뛰어다녔다."
+        },
+        {
+          "translation": "해가 지는 대로 내버려 둔 채 우리는 해변에서 계속 이야기를 나누었습니다."
+        }
+      ]
+    },
+    "ja_Verbる_155": {
+      "title": "동사 사전형 / た형 + が早いか (verb-ru ga hayai ka)",
+      "shortExplanation": "앞의 동작이 끝나기 무섭게 뒤이어 순식간에 다음 동작이 일어남을 나타내며, '~하자마자', '~하기가 무섭게'라는 뜻입니다.",
+      "longExplanation": "'～が早いか'는 동사의 사전형(또는 た형)에 접속하여, 앞의 동작이 이루어지자마자 거의 동시에 찰나의 틈도 없이 다음 행동이나 사태가 뒤따르는 모습을 묘사하는 N1 문형입니다('~하기가 무섭게', '~하자마자 곧바로'). 후항에는 실제로 발생한 기정 사실의 동작이 오며, 화자의 의지나 명령, 청유 등의 표현은 오지 않습니다.",
+      "formation": "동사 사전형 / た형 + が早いか",
+      "examples": [
+        {
+          "translation": "방에 들어가기가 무섭게 그는 텔레비전을 켰다."
+        },
+        {
+          "translation": "전철에 타기가 무섭게 나는 곧바로 잠에 빠져들었다."
+        },
+        {
+          "translation": "그녀는 보자마자 바로 울기 시작했다."
+        },
+        {
+          "translation": "월급을 받기가 무섭게 전부 다 써버렸다."
+        }
+      ]
+    },
+    "ja_Verbる_156": {
+      "title": "동사 사전형 + くらいなら (〜ru kurai nara)",
+      "shortExplanation": "앞의 싫은 상황을 겪을 바에는 차라리 다른 쪽을 택하겠다는 강한 거부와 선호를 나타내며, '~할 바에는 차라리', '~하느니'라는 뜻입니다.",
+      "longExplanation": "'～くらいなら'는 동사의 사전형에 결합하여, 앞서 제시된 극도로 꺼려지거나 최악인 상황을 맞닥뜨리느니 차라리 후항의 다른 선택지를 택하는 편이 훨씬 낫다는 심정을 나타내는 문형입니다('~할 바에야 차라리', '~하느니 차라리 ~하는 게 낫다'). 후항에는 주로 차악을 선택하는 화자의 판단을 드러내는 표현들이 호응합니다.",
+      "formation": "동사 사전형 + くらいなら",
+      "examples": [
+        {
+          "translation": "혼자 갈 바에는 차라리 집에 있는 편이 낫습니다."
+        },
+        {
+          "translation": "패배할 바에는 차라리 경기를 치르지 않는 편이 좋다."
+        },
+        {
+          "translation": "지각할 바에는 하루 쉬는 편이 낫다."
+        },
+        {
+          "translation": "쓴맛을 볼 바에는 그 위험을 피하겠습니다."
+        }
+      ]
+    },
+    "ja_Verbる_157": {
+      "title": "동사 사전형 + ことなしに (Verb-ru koto nashi ni)",
+      "shortExplanation": "앞의 동작을 전혀 행하지 않은 채 뒤의 동작을 함을 나타내며, '~함이 없이', '~하지 않고서'라는 뜻의 격식 있는 표현입니다.",
+      "longExplanation": "'～ことなしに'는 동사의 사전형에 접속하는 문어체적 격식 표현으로, 앞선 행위를 생략하거나 전혀 거치지 않은 상태로 뒤의 일을 행함을 나타냅니다('~하는 일 없이', '~하지 않고서'). 마땅히 해야 할 과정이나 선행 동작을 건너뛰었음을 강조할 때 자주 사용됩니다.",
+      "formation": "동사 사전형 + ことなしに",
+      "examples": [
+        {
+          "translation": "시험공부를 하지 않고서도 합격했습니다."
+        },
+        {
+          "translation": "입어보는 일 없이 옷을 샀습니다."
+        },
+        {
+          "translation": "그는 일하는 일 없이 생활하고 있습니다."
+        },
+        {
+          "translation": "절차를 밟는 일 없이 퇴직했습니다."
+        }
+      ]
+    },
+    "ja_Verbる_158": {
+      "title": "동사 사전형 + ことのないように (Verb-ru koto no nai you ni)",
+      "shortExplanation": "바람직하지 않은 일이 일어나지 않도록 사전에 방지하거나 주의를 기울임을 나타내며, '~하는 일이 없도록', '~하지 않도록'이라는 뜻입니다.",
+      "longExplanation": "'～ことのないように'는 동사의 사전형에 접속하여, '~ないように'를 한층 더 정중하고 격식 있게 표현한 문형입니다. 앞서 언급된 부정적인 사태, 실수, 불상사가 일어나지 않도록 예방하거나 주의를 당부하는 목적을 나타낼 때 사용됩니다('~하는 일이 없도록', '~하지 않도록 주의하여').",
+      "formation": "동사 사전형 + ことのないように",
+      "examples": [
+        {
+          "translation": "차를 잃어버리는 일이 없도록 주차장에서는 반드시 문을 잠급시다."
+        },
+        {
+          "translation": "감기에 걸리는 일이 없도록 손을 깨끗이 씻읍시다."
+        },
+        {
+          "translation": "시험에 떨어지는 일이 없도록 매일 공부합시다."
+        },
+        {
+          "translation": "실수를 저지르는 일이 없도록 일을 신중하게 처리합시다."
+        }
+      ]
+    },
+    "ja_Verbる_159": {
+      "title": "동사 사전형 + ときりがない (verb-ru to kiri ga nai)",
+      "shortExplanation": "어떤 일을 일단 시작하면 끝도 한도 없이 계속됨을 나타내며, '~하면 끝이 없다', '~하자면 한이 없다'라는 뜻입니다.",
+      "longExplanation": "'～るときりがない'는 동사의 사전형에 조건 접속조사 'と'와 한도를 뜻하는 'きり(限り)'의 부정형 'ない'가 결합된 문형입니다. 일단 어떤 행동을 하기 시작하면 사안이나 분량이 너무 방대하여 도무지 끝이나 한계를 찾을 수 없음을 나타냅니다('~하면 끝이 없다', '~하자면 한도 끝도 없다').",
+      "formation": "동사 사전형 + と + きりがない",
+      "examples": [
+        {
+          "translation": "그의 험담을 늘어놓자면 끝이 없다."
+        },
+        {
+          "translation": "그 문제를 깊이 생각하자면 끝이 없다."
+        },
+        {
+          "translation": "그녀의 장점을 꼽자면 한이 없다."
+        },
+        {
+          "translation": "이 세상의 맛있는 음식을 먹자면 끝이 없다."
+        }
+      ]
+    },
+    "ja_Verbる_160": {
+      "title": "동사 사전형 + ともなく + 동사 (Verb-ru tomonaku Verb)",
+      "shortExplanation": "특별한 의도나 뚜렷한 목적 없이 무심코, 무의식적으로 어떤 행동을 하고 있음을 나타내며, '멍하니 ~하다', '무심코 ~하다'라는 뜻입니다.",
+      "longExplanation": "'～ともなく'는 동사의 사전형 뒤에 붙어(후항에는 주로 같거나 관련된 동사가 옴), 명확한 목적의식이나 집중력 없이 멍하니, 무심코, 혹은 무의식중에 어떤 행동을 하고 있는 상태를 나타내는 N1 문형입니다('특별히 ~하려는 것도 아닌 채', '무심코 멍하니 ~하다'). 지각 동사와 자주 어울립니다.",
+      "formation": "동사 사전형 + ともなく + 동사(주로 동일하거나 관련 동사)",
+      "examples": [
+        {
+          "translation": "멀리 무언가를 딱히 보려는 생각도 없이 멍하니 창밖을 바라보았다."
+        },
+        {
+          "translation": "어쩐지 모르게 그가 떠났음을 직감했다."
+        },
+        {
+          "translation": "책을 작정하고 읽으려는 것도 아닌 채 멍하니 페이지만 넘기고 있었다."
+        },
+        {
+          "translation": "잠을 자려던 것도 아닌 채 무심코 침대에 누워 있었다."
+        }
+      ]
+    },
+    "ja_Verbる_161": {
+      "title": "동사 사전형 + ともなしに + 동사 (Verb-ru tomonashi ni Verb)",
+      "shortExplanation": "특별한 목적이나 뚜렷한 생각 없이 무심결에 어떤 행동을 하다가 우연히 다른 일로 이어짐을 나타내며, '무심코 ~하다가', '특별한 생각 없이 ~하다'라는 뜻입니다.",
+      "longExplanation": "'～ともなしに'는 동사의 사전형에 접속하여 '～ともなく'와 거의 같은 의미로 쓰이는 N1 문형입니다. 특정한 목적의식이나 뚜렷한 의도 없이 무심결에, 건성으로 어떤 행위를 하고 있는 상황을 나타내며, 그 과정에서 우연히 어떤 결과를 맞이하거나 새로운 사실을 발견하게 되는 맥락에서 자주 사용됩니다('무심코 ~하다 보니', '특별한 뜻 없이 ~하다가').",
+      "formation": "동사 사전형 + ともなしに + 동사",
+      "examples": [
+        {
+          "translation": "책을 각 잡고 읽으려던 것도 아니었는데 무심코 보다가 잠이 들어 버렸다."
+        },
+        {
+          "translation": "가벼운 마음으로 무심코 편지를 쓰다가 그에게 진심을 고백하고 말았다."
+        },
+        {
+          "translation": "특별한 목적지 없이 그저 산책을 하다가 새로운 카페를 발견했다."
+        },
+        {
+          "translation": "옷을 무심결에 대충 정리하다가 옛날 사진을 발견했다."
+        }
+      ]
+    },
+    "ja_Verbる_162": {
+      "title": "동사 사전형 + なり (Verb-ru nari)",
+      "shortExplanation": "어떤 동작이 끝나자마자 바로 연이어 다음 행동을 취함을 나타내며, '~하자마자', '~하기가 무섭게'라는 뜻입니다.",
+      "longExplanation": "'～なり'는 동사의 사전형에 접속하여, 앞선 동작이 완료되자마자 조금의 지체도 없이 뒤이어 돌발적이거나 즉각적인 행동을 일으킴을 나타내는 N1 문형입니다('~하자마자 곧바로'). 대개 동일한 주어의 연속된 동작에 쓰이며, 후항에는 말하는 사람의 명령이나 청유, 의지 표현은 올 수 없습니다.",
+      "formation": "동사 사전형 + なり",
+      "examples": [
+        {
+          "translation": "집에 돌아오자마자 바로 곯아떨어졌다."
+        },
+        {
+          "translation": "그는 역에 도착하자마자 전화를 걸어왔다."
+        },
+        {
+          "translation": "문을 열기가 무섭게 개가 짖기 시작했다."
+        },
+        {
+          "translation": "시험이 끝나자마자 그는 교실을 빠져나갔다."
+        }
+      ]
+    },
+    "ja_Verbる_163": {
+      "title": "명사 / 동사 사전형 + にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
+      "shortExplanation": "어떤 범위나 수준에만 머무르지 않고 더 넓은 범위로 확대됨을 나타내며, '~에 머무르지 않고 ~도', '~뿐만 아니라 ~도'라는 뜻입니다.",
+      "longExplanation": "'～にとどまらず'는 명사나 동사의 사전형에 접속하여, 어떤 현상이나 영향이 전항의 좁은 범위에 국한되지 않고 한층 더 넓은 영역이나 상위 수준으로 확장되어 미침을 나타내는 N1 문형입니다('~에 그치지 않고 ~까지도', '~에 머물지 않고'). 후항에는 대개 조사 'も(도)'가 호응합니다.",
+      "formation": "명사 / 동사 사전형 + にとどまらず + 명사/절 + も",
+      "examples": [
+        {
+          "translation": "그는 직장 일에 머무르지 않고 자원봉사 활동도 하고 있다."
+        },
+        {
+          "translation": "이 기능은 사진 촬영에 그치지 않고 동영상 촬영도 가능합니다."
+        },
+        {
+          "translation": "이 레스토랑은 일본 요리에 머무르지 않고 중화 요리도 제공하고 있습니다."
+        },
+        {
+          "translation": "그 기업은 제조업에 그치지 않고 유통 업무까지 손을 뻗치고 있다."
+        }
+      ]
+    },
+    "ja_Verbる_164": {
+      "title": "동사 사전형 / 명사 + にはあたらない (Verb-ru ni wa ataranai)",
+      "shortExplanation": "그리 대단한 일이 아니므로 그럴 만한 가치가 없거나 그럴 필요까지는 없음을 나타내며, '~할 것까지는 없다', '~할 필요는 없다'라는 뜻의 격식 있는 표현입니다.",
+      "longExplanation": "'～にはあたらない'는 동사의 사전형이나 명사에 접속하는 격식 있는 문어체 표현으로, 사태의 경중을 보았을 때 그렇게까지 심각하게 반응하거나 대처할 만한 가치나 필요성이 없음을 나타냅니다('~할 것까지는 없다', '~할 만한 일은 아니다'). 주로 감정이나 평가를 나타내는 동사와 자주 결합합니다.",
+      "formation": "동사 사전형 / 명사 + にはあたらない",
+      "examples": [
+        {
+          "translation": "패닉에 빠질 것까지는 없다."
+        },
+        {
+          "translation": "그에게 사과할 필요까지는 없다."
+        },
+        {
+          "translation": "그런 일을 걱정할 것까지는 없다."
+        },
+        {
+          "translation": "그것에 대해 깊이 파고들어 생각할 것까지는 없다."
+        }
+      ]
+    },
+    "ja_Verbる_165": {
+      "title": "동사 사전형 + にも (Verb-ru ni mo)",
+      "shortExplanation": "비록 그 동작을 하려 해도 사정이나 조건이 여의치 않아 어렵거나 불가능함을 나타내며, '~하려 해도 (사정상 불가능하다)'라는 뜻입니다.",
+      "longExplanation": "'동사 사전형 + にも'는 후속절에 행위를 방해하는 사정이나 불가능한 이유를 동반하여, 마음으로는 그 행위를 하고 싶더라도 현실적인 제약이나 여건이 따르지 않아 실행하기가 곤란함을 나타내는 문형입니다('~하려고 해도 ~할 형편이 안 된다'). '～ようにも'와 유사하게 현실적 장애로 인한 제약을 드러냅니다.",
+      "formation": "동사 사전형 + にも + (곤란한 이유나 방해 요인)",
+      "examples": [
+        {
+          "translation": "내일 비가 온다 해도, 우산을 챙기려 해도 짐이 너무 많다."
+        },
+        {
+          "translation": "시험에 떨어졌지만, 다시 치르려 해도 돈이 부족하다."
+        },
+        {
+          "translation": "그를 만나고 싶다고 생각해도, 그를 만나려 해도 어려운 상황이다."
+        },
+        {
+          "translation": "이 공항에서 그녀의 집까지 가려 해도 택시가 필요하다."
+        }
+      ]
+    },
+    "ja_Verbる_166": {
+      "title": "동사 의지형 + にも + 동사 가능형 부정 (Verb-ru ni mo Verb-re nai)",
+      "shortExplanation": "아무리 그 행위를 하고자 애써도 현실적으로 도저히 할 수 없음을 강조하며, '~하려고 해도 ~할 수 없다'라는 뜻입니다.",
+      "longExplanation": "'동사 의지형 + にも + 동사 가능형 부정' 문형은 동일한 동사를 앞뒤로 반복하여(앞은 의지형, 뒤는 가능동사의 부정형), 주체가 그 행동을 간절히 바라고 시도하려 해도 외부적 제약이나 심리적 한계로 인해 결코 실현할 수 없는 깊은 무력감과 한계를 강조하는 N1 표현입니다('~하려야 할 수가 없다', '~하려고 해도 도저히 안 된다').",
+      "formation": "동사 의지형 + にも + 동사 가능형 부정",
+      "examples": [
+        {
+          "translation": "그를 이해하려고 해도 도저히 이해할 수가 없다."
+        },
+        {
+          "translation": "달리려고 해도 달릴 수가 없다."
+        },
+        {
+          "translation": "울려고 해도 울 수가 없다."
+        },
+        {
+          "translation": "잊으려 해도 잊을 수가 없다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Verb_152": {
+      "title": "動詞意向形 ＋ にも ＋ 動詞可能形否定 / 理由 (〜you ni mo 〜renai)",
+      "shortExplanation": "〜しようという意志や望みがあっても、何らかの障害や事情があってどうしてもできないことを表し、「〜しようとしても〜できない」という意味を表します。",
+      "longExplanation": "「～ようにも～（ら）れない」は、動詞の意向形に「にも」が付き、後続に同一動詞の可能形否定（または不可能な理由を表す節）を伴って、話し手にはその行為を行いたい強い意欲や試みがあるにもかかわらず、客観的な事情・障害に阻まれて実現できないもどかしさや無力感を表す文型です。「〜しようと思ってもできない」「〜したくても〜できない」という強いジレンマを表します。",
+      "formation": "動詞意向形 ＋ にも ＋ 動詞可能形否定 / 不可能な理由",
+      "examples": [
+        {
+          "translation": "彼を信じようにも信じられない証拠がある。"
+        },
+        {
+          "translation": "早く出発しようにも車が故障してしまった。"
+        },
+        {
+          "translation": "彼に電話しようにも電話番号を知らない。"
+        },
+        {
+          "translation": "もっと勉強しようにも時間がない。"
+        }
+      ]
+    },
+    "ja_Verb_153": {
+      "title": "動詞ます形 ＋ ようもない (~you mo nai)",
+      "shortExplanation": "その動作を行う手段や方法が全くないことを表し、「どうやっても〜できない」「〜する手段がない」という意味を表します。",
+      "longExplanation": "「～ようもない」は、動詞のます形（連用形語幹）に接続し、その動作を実現するための方法、手段、可能性が全く存在しないことを表す文型です。「〜ようがない」とほぼ同様の用法ですが、取り立て助詞「も」が加わることで否定の意がより強調され、「どんな手段を用いても絶対に〜できない」という完全な不可能性を示します。",
+      "formation": "動詞ます形（連用形語幹） ＋ ようもない",
+      "examples": [
+        {
+          "translation": "この問題は解きようもない。"
+        },
+        {
+          "translation": "これ以上我慢しようもない。"
+        },
+        {
+          "translation": "彼には通じようもない。"
+        },
+        {
+          "translation": "その薬は飲みようもない。"
+        }
+      ]
+    },
+    "ja_Verbる_154": {
+      "title": "動詞辞書形 ＋ がままに (〜ga mama ni)",
+      "shortExplanation": "作為や抵抗を加えず、あるがままの自然な状態や成り行きに任せることを表し、「〜するがままに」「〜の通りに任せて」という意味を表します。",
+      "longExplanation": "「～がままに」は、動詞の辞書形に接続し、人為的な意図や制限を加えずに、その動作や事態の自然な推移・成り行きにそのまま任せる様子を表す文型です（「言われるがままに」「なされるがままに」などの慣用表現も頻出します）。自分から抵抗したりコントロールしようとしたりせず、受動的あるいは自然な流れに従うニュアンスを含みます。",
+      "formation": "動詞辞書形 ＋ がままに",
+      "examples": [
+        {
+          "translation": "窓を開けるがままにしておいたら、風が部屋に入ってきました。"
+        },
+        {
+          "translation": "彼女は涙を流すがままに、ただ黙って座っていた。"
+        },
+        {
+          "translation": "子供たちは笑うがままに、公園で走り回っていた。"
+        },
+        {
+          "translation": "日が沈むがままに、私たちは海辺で話し続けました。"
+        }
+      ]
+    },
+    "ja_Verbる_155": {
+      "title": "動詞辞書形 / た形 ＋ が早いか (verb-ru ga hayai ka)",
+      "shortExplanation": "前項の動作が行われるとほとんど同時に、瞬間的に後項の動作や事態が起こることを表し、「〜するとすぐに」「〜するやいなや」という意味を表します。",
+      "longExplanation": "「～が早いか」は、動詞の辞書形（またはた形）に接続し、ある行為が終わるか終わらないかの瞬間、間髪を入れずに次の動作や事態が電光石火のように行われる様子を表すN1の文型です。「〜するが早いか」の後には既定の事実を表す文が続き、話し手の意志・希望・命令・働きかけなどの表現は続きません。",
+      "formation": "動詞辞書形 / た形 ＋ が早いか",
+      "examples": [
+        {
+          "translation": "部屋に入るが早いか、彼はテレビをつけた。"
+        },
+        {
+          "translation": "電車に乗るが早いか、私はすぐに眠ってしまった。"
+        },
+        {
+          "translation": "彼女が見るが早いか、すぐに泣き始めた。"
+        },
+        {
+          "translation": "給料をもらうが早いか、全て使い果たしてしまった。"
+        }
+      ]
+    },
+    "ja_Verbる_156": {
+      "title": "動詞辞書形 ＋ くらいなら (〜ru kurai nara)",
+      "shortExplanation": "前項のような嫌な事態になるくらいなら、後項の選択肢を選んだ方がまだ良いという気持ちを表し、「〜するくらいなら、むしろ…のほうがましだ」という意味を表します。",
+      "longExplanation": "「～くらいなら」は、動詞の辞書形に接続し、前項に極めて受け入れがたい最悪の事態・行為を挙げ、それを受け入れるくらいなら後項の行動をとるほうがずっとましであるという強い忌避や比較選択の心情を表す文型です。「〜するくらいなら、むしろ〜したい／〜ほうがいい／〜ほうがましだ」などの表現が後続することが一般的です。",
+      "formation": "動詞辞書形 ＋ くらいなら",
+      "examples": [
+        {
+          "translation": "一人で行くくらいなら、家にいるほうがましです。"
+        },
+        {
+          "translation": "負けるくらいなら、試合をしないほうがいい。"
+        },
+        {
+          "translation": "遅刻するくらいなら、一日休んだほうがいい。"
+        },
+        {
+          "translation": "痛い目に遭うくらいなら、そのリスクは避けます。"
+        }
+      ]
+    },
+    "ja_Verbる_157": {
+      "title": "動詞辞書形 ＋ ことなしに (Verb-ru koto nashi ni)",
+      "shortExplanation": "前項の動作を全く行わないで後項の事を行うことを表し、「〜しないで」「〜することなく」という意味の硬い改まった表現です。",
+      "longExplanation": "「～ことなしに」は、動詞の辞書形に接続し、日常会話の「〜ないで」「〜ずに」に相当する改まった書き言葉の文型です。本来行われるべき、あるいは予想される前項の動作や手続きを一切省略したり欠いたりした状態で後項の行為を行うことを表します。",
+      "formation": "動詞辞書形 ＋ ことなしに",
+      "examples": [
+        {
+          "translation": "試験を勉強することなしに、合格しました。"
+        },
+        {
+          "translation": "試着することなしに、服を買いました。"
+        },
+        {
+          "translation": "彼は働くことなしに生活しています。"
+        },
+        {
+          "translation": "手続きをすることなしに、退職しました。"
+        }
+      ]
+    },
+    "ja_Verbる_158": {
+      "title": "動詞辞書形 ＋ ことのないように (Verb-ru koto no nai you ni)",
+      "shortExplanation": "望ましくない事態や失敗が起こらないように注意や配慮を促す表現で、「〜しないように」「〜という事態を避けるために」という意味を表します。",
+      "longExplanation": "「～ことのないように」は、動詞の辞書形に接続し、「〜ないように」よりも改まった丁寧な言い方で、前項に挙げる好ましくない結果やトラブルを未然に防ぐための配慮・予防・注意喚起を表す文型です。ビジネス文書や公の場での指示・呼びかけなどで広く用いられます。",
+      "formation": "動詞辞書形 ＋ ことのないように",
+      "examples": [
+        {
+          "translation": "車をなくすことのないように、駐車場で必ずロックしましょう。"
+        },
+        {
+          "translation": "風邪を引くことのないように、手をよく洗いましょう。"
+        },
+        {
+          "translation": "試験に落ちることのないように、毎日勉強しましょう。"
+        },
+        {
+          "translation": "間違いをすることのないように、仕事を慎重に行いましょう。"
+        }
+      ]
+    },
+    "ja_Verbる_159": {
+      "title": "動詞辞書形 ＋ ときりがない (verb-ru to kiri ga nai)",
+      "shortExplanation": "一度その動作を始めると、際限がなく終わりが見えない状態になることを表し、「〜すると際限がない」「〜し始めると切りがない」という意味を表します。",
+      "longExplanation": "「～るときりがない」は、動詞の辞書形に条件を表す「と」と「終わり・限度」を意味する「きり（限り）」の否定「ない」が結びついた文型です。その行為をやり始めると、対象の数や事態の広がりがあまりにも多くてどこまでも続いてしまい、きりをつけることができなくなる様子を表します。",
+      "formation": "動詞辞書形 ＋ と ＋ きりがない",
+      "examples": [
+        {
+          "translation": "彼の悪口を言うときりがない。"
+        },
+        {
+          "translation": "その問題を考えるときりがない。"
+        },
+        {
+          "translation": "彼女の美点を挙げるときりがない。"
+        },
+        {
+          "translation": "この世でおいしいものを食べるときりがない。"
+        }
+      ]
+    },
+    "ja_Verbる_160": {
+      "title": "動詞辞書形 ＋ ともなく ＋ 動詞 (Verb-ru tomonaku Verb)",
+      "shortExplanation": "明確な目的や意識を持たず、ぼんやりと無意識にその動作を行っている様子を表し、「特に〜する気もなく」「何となく〜する」という意味を表します。",
+      "longExplanation": "「～ともなく」は、動詞の辞書形に接続し（後項にはしばしば同一または関連する動詞が続く。例：「見るともなく見る」「聞くともなく聞く」など）、明確な目的や強い意志を持たないまま、心ここにあらずの状態で漫然と・無意識にその動作を行っている情景を描写する文型です。",
+      "formation": "動詞辞書形 ＋ ともなく ＋ 動詞（主に同一または関連動詞）",
+      "examples": [
+        {
+          "translation": "遠くを見るともなく窓の外を眺めた。"
+        },
+        {
+          "translation": "知るともなく、彼が去ったことを感じた。"
+        },
+        {
+          "translation": "本を読むともなく、ページをめくっていた。"
+        },
+        {
+          "translation": "寝るともなく、ベッドに横になっていた。"
+        }
+      ]
+    },
+    "ja_Verbる_161": {
+      "title": "動詞辞書形 ＋ ともなしに ＋ 動詞 (Verb-ru tomonashi ni Verb)",
+      "shortExplanation": "特定の目的や強い意志を持たずに漫然とその動作を行い、その結果別の事態に至ることを表し、「特に〜する気もなく何となく」「無意識に〜して」という意味を表します。",
+      "longExplanation": "「～ともなしに」は、動詞の辞書形に接続し、「～ともなく」とほぼ同義のN1文型です。確固たる動機や意志がなく、ふと無心に・気兼ねなくその動作をしている状態を表します。また、そうして漫然と行動している最中に、思いがけない発見をしたり別の展開に至ったりする文脈で多く用いられます。",
+      "formation": "動詞辞書形 ＋ ともなしに ＋ 動詞",
+      "examples": [
+        {
+          "translation": "本を読むともなしに眠ってしまった。"
+        },
+        {
+          "translation": "軽い気持ちで手紙を書くともなしに、彼に本心を告白した。"
+        },
+        {
+          "translation": "散歩をするともなしに、新しいカフェを見つけた。"
+        },
+        {
+          "translation": "洋服を整理するともなしに、昔の写真を見つけた。"
+        }
+      ]
+    },
+    "ja_Verbる_162": {
+      "title": "動詞辞書形 ＋ なり (Verb-ru nari)",
+      "shortExplanation": "前項の動作が終わるやいなや、引き続いてすぐに後項の動作を行うことを表し、「〜するとすぐに」「〜するやいなや」という意味を表します。",
+      "longExplanation": "「～なり」は、動詞の辞書形に接続し、ある行為が完了した直後に、間を置かず次の動作に移る様子を表す文型です。前後の主語は通常同一（主に三人称）であり、後項には予想外の行動や素早い反射的動作が続きます。文末に命令や依頼、働きかけなどの表現を使うことはできません。",
+      "formation": "動詞辞書形 ＋ なり",
+      "examples": [
+        {
+          "translation": "家に帰るなり、すぐに寝た。"
+        },
+        {
+          "translation": "彼が駅に着くなり、電話をかけてきた。"
+        },
+        {
+          "translation": "ドアを開けるなり、犬が吠え始めた。"
+        },
+        {
+          "translation": "テストが終わるなり、彼は教室を出て行った。"
+        }
+      ]
+    },
+    "ja_Verbる_163": {
+      "title": "名詞 / 動詞辞書形 ＋ にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
+      "shortExplanation": "ある事態が前項の範囲内だけに留まらず、さらに広く及んでいることを表し、「〜だけに終わらず…も」「〜にとどまらないで…も」という意味を表します。",
+      "longExplanation": "「～にとどまらず」は、名詞または動詞の辞書形に接続し、事態の影響や規模がある特定の狭い範囲・枠内に限定されず、それを超えてさらに広い範囲や別の対象にまで広がっていることを表すN1の文型です。後項には「〜も」などの取り立て助詞を伴うことが多く、範囲の拡大や発展を示します。",
+      "formation": "名詞 / 動詞辞書形 ＋ にとどまらず ＋ 名詞/節 ＋ も",
+      "examples": [
+        {
+          "translation": "彼は仕事にとどまらず、ボランティア活動もしている。"
+        },
+        {
+          "translation": "この機能は写真撮影にとどまらず、動画撮影も可能です。"
+        },
+        {
+          "translation": "このレストランは日本料理にとどまらず、中華料理も提供しています。"
+        },
+        {
+          "translation": "その企業は製造業にとどまらず、流通業務も手がけている。"
+        }
+      ]
+    },
+    "ja_Verbる_164": {
+      "title": "動詞辞書形 / 名詞 ＋ にはあたらない (Verb-ru ni wa ataranai)",
+      "shortExplanation": "それほど大した事態ではないため、そこまでするほどの価値や必要性はないことを表し、「〜するほどのことではない」「〜するには及ばない」という意味を表します。",
+      "longExplanation": "「～にはあたらない」は、動詞の辞書形や名詞に接続する改まった文型の表現です。状況の程度がそれほど深刻・重大ではないため、大げさに反応したり取り乱したりする必要性・妥当性がないことを客観的に述べます。感情や評価を表す動詞とともに頻繁に用いられます。",
+      "formation": "動詞辞書形 / 名詞 ＋ にはあたらない",
+      "examples": [
+        {
+          "translation": "パニックに陥るにはあたらない。"
+        },
+        {
+          "translation": "彼に謝るにはあたらない。"
+        },
+        {
+          "translation": "そのようなことを心配するにはあたらない。"
+        },
+        {
+          "translation": "それについて深く考えるにはあたらない。"
+        }
+      ]
+    },
+    "ja_Verbる_165": {
+      "title": "動詞辞書形 ＋ にも (Verb-ru ni mo)",
+      "shortExplanation": "その動作を行おうとしても、事情や条件の制約があって困難または不可能な状況であることを表し、「〜しようとしても（事情があってできない）」という意味を表します。",
+      "longExplanation": "「動詞辞書形 ＋ にも」は、後続節にその動作の実行を妨げる障害や理由を伴い、話し手がその行為を行おうとする意図があっても、客観的な条件不足や困難な状況に阻まれてままならないことを表す文型です。「〜しようにも」と同様に、現実的な障壁によって行為の実現が妨げられているジレンマを表現します。",
+      "formation": "動詞辞書形 ＋ にも ＋ （不可能な理由・困難な状況）",
+      "examples": [
+        {
+          "translation": "明日雨が降ったとしても、傘を持つにも荷物が多すぎる。"
+        },
+        {
+          "translation": "試験に落ちたが、もう一度受けるにもお金が足りない。"
+        },
+        {
+          "translation": "彼に会いたいと思っても、彼に会うにも難しい状況だ。"
+        },
+        {
+          "translation": "この空港から彼女の家に行くにもタクシーが必要だ。"
+        }
+      ]
+    },
+    "ja_Verbる_166": {
+      "title": "動詞意向形 ＋ にも ＋ 動詞可能形否定 (Verb-ru ni mo Verb-re nai)",
+      "shortExplanation": "いくらその行為を行おうと強く望んだり試みたりしても、どうしても実行できないことを強調し、「〜しようとしても〜できない」「〜したくてもできない」という意味を表します。",
+      "longExplanation": "「動詞意向形 ＋ にも ＋ 動詞可能形否定」は、同一の動詞を前後に重ねて用い（前節は意向形、後節は可能動詞の否定形）、話し手がその動作を行いたい強い意志や試みを持っているにもかかわらず、客観的な障害や心理的障壁によってどうしても達成できない無力感やジレンマを強く際立たせる文型です。",
+      "formation": "動詞意向形 ＋ にも ＋ 動詞可能形否定",
+      "examples": [
+        {
+          "translation": "彼を理解しようにも理解できない。"
+        },
+        {
+          "translation": "走ろうにも走れない。"
+        },
+        {
+          "translation": "泣こうにも泣けない。"
+        },
+        {
+          "translation": "忘れようにも忘れられない。"
+        }
+      ]
+    }
+  }
+}

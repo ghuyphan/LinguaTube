@@ -52,7 +52,7 @@
                   "inlineCritical": true
                 },
                 "fonts": {
-                  "inline": true
+                  "inline": false
                 }
               },
               "serviceWorker": "ngsw-config.json"

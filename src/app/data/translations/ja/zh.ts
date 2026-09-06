@@ -3,4574 +3,17349 @@ import { GrammarTranslation } from '../../../models/grammar.model';
 export const GRAMMAR_JA_ZH: Record<string, GrammarTranslation> = {
   "ja_A_0": {
     "title": "A うが B うが (A uga B uga)",
-    "shortExplanation": "表示 the idea of 'no matter how... or', 'even if... or'.",
-    "longExplanation": "The ～うが ～うが grammar pattern is 用于表达 that regardless of the conditions in A and B, the result remains the same. Often you’ll see volitional forms or i-adjective '-かろうが' forms. 可以翻译为 'no matter how... or...', 'even if... or...'.",
-    "formation": "动词-volitional form + うが + 动词-volitional form + うが, or 形容词 (-かろう) + が + 形容词 (-かろう) + が"
+    "shortExplanation": "表示无论是处于A还是处于B的情况，后项的结果或态度都毫不动摇；“无论……还是……”、“不管……还是……都……”。",
+    "longExplanation": "JLPT N1句型“Aうが Bうが”接在动词意志形、一类形容词推量形（-かろうが）或“名词/二类形容词词干+であろうが”之后，列举两种互相对立、反差明显的情况（或同一动作的正反两面，如“しようがしまいが”），强调无论处于何种条件或极端境况之下，后项的事实、结论或意志都全然不受影响（“无论A还是B，结果都……”、“不管……还是……”）。",
+    "formation": "动词意志形 + が + 动词意志形 / 动词辞书形 + まい + が | 一类形容词词干 + かろうが | 二类形容词词干 / 名词 + であろうが",
+    "examples": [
+      {
+        "translation": "无论是清晨还是深夜，公交车总是晚点。"
+      },
+      {
+        "translation": "无论跟他说还是不说，结果都不会改变。"
+      },
+      {
+        "translation": "不管做不做这份工作，工资都一样。"
+      },
+      {
+        "translation": "不管跟不跟那个人说，我都不觉得他会理解。"
+      }
+    ]
   },
   "ja_AけれどもB_1": {
     "title": "A。けれども、～B。(A. Keredomo,~ B.)",
-    "shortExplanation": "用于表达 a 两个陈述之间的对比. 可以翻译为 'but' or 'however'.",
-    "longExplanation": "The grammar point A。けれども、～B。 is 用于表达 a contrast or contradiction between statement A and statement B. 可以翻译为 'but' or 'however' in English. けれども is a conjunction that links two clauses to show there is a conflicting or opposing idea between them.",
-    "formation": "Statement A + けれども、+ Statement B"
+    "shortExplanation": "用于表示前后两个句子之间的转折或对照；'但是'、'然而'。",
+    "longExplanation": "句型'A。けれども、～B。'用于表达句子A与句子B之间的转折、对照或矛盾关系，相当于汉语中的'但是'、'可是'或'然而'。'けれども'作为接续词置于后句句首，引出与前句内容相反或出乎意料的陈述。",
+    "formation": "句子A + 。けれども、 + 句子B",
+    "examples": [
+      {
+        "translation": "今天天气晴朗。但是很冷。"
+      },
+      {
+        "translation": "她很吵闹。不过挺有趣的。"
+      },
+      {
+        "translation": "那部电影很长。但是并不无聊。"
+      },
+      {
+        "translation": "他擅长运动。然而不擅长学习。"
+      }
+    ]
   },
   "ja_AしかしB_2": {
     "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
-    "shortExplanation": "表示 contrast or 两个分句之间的转折; 'A, but B', 'A, however B'.",
-    "longExplanation": "The grammar point A。しかし、～B。 is 用于展示 contrast or 两个分句之间的转折. 可以翻译为 'A, but B' or 'A, however B' in English. しかし is placed between two sentences to indicate a contrast between them.",
-    "formation": "Sentence A + しかし + Sentence B."
+    "shortExplanation": "表示前后两句之间的鲜明对比或对立转折；'但是'、'然而'。",
+    "longExplanation": "句型'A。然而、～B。'（A。しかし、～B。）通过在第二句句首使用接续词'しかし'，来表达后句内容与前句形成鲜明的对立或转折。相较于'でも'，'しかし'语气更为严肃、正式，广泛应用于书面语、正式演讲或郑重的对话中。",
+    "formation": "句子A + 。しかし、 + 句子B",
+    "examples": [
+      {
+        "translation": "今天我很忙。但是如果有时间的话，一起喝杯咖啡吧。"
+      },
+      {
+        "translation": "那部电影很有意思。但是太长了。"
+      },
+      {
+        "translation": "他很疲倦。然而还是完成了作业。"
+      },
+      {
+        "translation": "房间虽然狭小。但是位于便利的地方。"
+      }
+    ]
   },
   "ja_AじゃB_3": {
     "title": "A。じゃ、～B。(A. Ja, ~B.)",
-    "shortExplanation": "指示 a 决定或建议; 'well then', 'in that case', 'so'.",
-    "longExplanation": "The A。じゃ、～B。grammar point is 用于表达 a decision, suggestion, or course of action based on a given situation or information. 可以翻译为 'well then', 'in that case', or 'so' in English. This grammar works with any form of sentence, whether it's a verb, noun, い-adjective, or な-adjective in both parts (A and B).",
-    "formation": "A: Sentence, B: Sentence (A and B can be any sentence type)"
+    "shortExplanation": "根据前述情况做出决定、提议或转换话题；'那么'、'既然如此'。",
+    "longExplanation": "句型'A。じゃ、～B。'常用于日常口语会话中，表示根据前句A提及的情况或信息，在后句B做出判断、决定、提议或采取后续行动，相当于汉语中的'那么'、'那'或'既然这样'。'じゃ'是接续词'では'或'それじゃ'的口语随和形式。",
+    "formation": "句子A + 。じゃ、 + 句子B",
+    "examples": [
+      {
+        "translation": "没时间看电影了。那么，下次再去吧。"
+      },
+      {
+        "translation": "肚子饿了。那么，去餐馆吃饭吧。"
+      },
+      {
+        "translation": "电车晚点了。那就坐公交车去吧。"
+      },
+      {
+        "translation": "这件衬衫太贵了。那么，买别的吧。"
+      }
+    ]
   },
   "ja_AそれじゃB_4": {
     "title": "A。それじゃ、～B。(A. Soreja,~B.)",
-    "shortExplanation": "Connect two sentences; 'A, so/in that case, B'",
-    "longExplanation": "The A。それじゃ、～B。grammar point is used to connect two sentences or ideas. It translates to 'A, so/in that case, B' in English. This expression is used when the first sentence (A) creates a situation or context and the second sentence (B) 指示 the consequence or response to that situation.",
-    "formation": "Sentence A + 。それじゃ、 + Sentence B"
+    "shortExplanation": "连接前后两句，根据前句情况提出相应对策或建议；'那么'、'既然那样'。",
+    "longExplanation": "句型'A。それじゃ、～B。'用于连接两个句子，前句A陈述某种情境或前提，后句B则针对该情境提出相应的反应、对策或结论。'それじゃ'是'それでは'在日常口语对话中的简略形式，口吻自然亲切。",
+    "formation": "句子A + 。それじゃ、 + 句子B",
+    "examples": [
+      {
+        "translation": "今天休息。那么，去看电影吧。"
+      },
+      {
+        "translation": "停电了。既然这样，就用蜡烛吧。"
+      },
+      {
+        "translation": "餐馆很拥挤。那么，我们在别的地方吃吧。"
+      },
+      {
+        "translation": "听说明天会下雨。既然那样，野餐就取消吧。"
+      }
+    ]
   },
   "ja_AそれではB_5": {
     "title": "A。それでは、～B。(A. Soredewa,~B.)",
-    "shortExplanation": "Express a change in situation; 'then', 'in that case', 'so'.",
-    "longExplanation": "The A。それでは、～B。grammar point is 用于表达 a change in situation or transition from one action to another. 可以翻译为 'then', 'in that case', or 'so' in English. The formation consists of two sentences or clauses, with それでは connecting them and reflecting a change based on the previous statement (A).",
-    "formation": "A (Statement) + 。それでは、 + B (Follow-up action or statement)"
+    "shortExplanation": "承接前文情况引出后续行动、结论或转换；'那么'、'既然如此'。",
+    "longExplanation": "句型'A。それでは、～B。'使用较郑重的接续词'それでは'将两句话顺畅连接。根据前句A提及的事实或情况，在后句B引出相应的判断、后续行动或提议。相比于日常口语中的'じゃ'或'それじゃ'，'それでは'显得更为规范礼貌。",
+    "formation": "句子A + 。それでは、 + 句子B",
+    "examples": [
+      {
+        "translation": "今天休息。那么，去看电影吧。"
+      },
+      {
+        "translation": "这个面包已经不新鲜了。既然如此，就扔掉吧。"
+      },
+      {
+        "translation": "下起雨来了。那么，我们在室内玩吧。"
+      },
+      {
+        "translation": "肚子饿了。那么，我们去吃点东西吧。"
+      }
+    ]
   },
   "ja_A_6": {
     "title": "A というか B というか (A to iu ka B to iu ka)",
-    "shortExplanation": "Means 'rather than say A, it's more like B', or 'whether to call it A or B'.",
-    "longExplanation": "The grammar 'A というか B というか' is used when the speaker isn't sure which expression (A or B) describes the situation better. 可以翻译为 'rather than A, it's more B' or 'should I call it A or B?'.",
-    "formation": "Phrase A + というか + Phrase B + というか"
+    "shortExplanation": "表示不知道该说是A好还是说是B好，难以准确形容；“说是A呢还是说是B呢”、“该说是……还是……”。",
+    "longExplanation": "句型“A というか B というか”用于说话人在寻找贴切的词语来描述某种情况或感受时，觉得两种说法都沾边、都不完全准确，因而感到犹豫（“说是A好呢，还是说是B好呢……”、“该说是……还是该说是……”）。后半句常伴随“とにかく（总之）”等词语，给出自己的总体印象。",
+    "formation": "词语/分句A + というか + 词语/分句B + というか（接名词、形容词、动词等普通形）",
+    "examples": [
+      {
+        "translation": "他该说是无礼呢，还是该说是直接呢，总之性格非常直率明了。"
+      },
+      {
+        "translation": "这部电影说是很有趣呢，还是该说古怪呢，总之有一种不可思议的氛围。"
+      },
+      {
+        "translation": "他的画作该说是绝妙呢，还是令人惊叹呢，确实非常值得一看。"
+      },
+      {
+        "translation": "她的衣服说是可爱呢，还是说太扎眼呢，总之非常引人注目。"
+      }
+    ]
   },
   "ja_AでもB_7": {
     "title": "A。でも、～B。(A. Demo, ~B)",
-    "shortExplanation": "用于表达 两个陈述之间的对比; 'A, but B', 'A, however B'.",
-    "longExplanation": "The A。でも、～B。grammar point is 用于表达 contrast or an unexpected continuation from statement A to statement B. 可以翻译为 'A, but B' or 'A, however B' in English. The formation simply places でも at the beginning of the second sentence to show contrast with the first sentence.",
-    "formation": "从句 A + でも + 从句 B"
+    "shortExplanation": "表示两个句子之间的转折或对照；'但是'、'可是'。",
+    "longExplanation": "句型'A。でも、～B。'通过在后句句首使用接续词'でも'，来表达与前句A相反、对照或出乎意料的内容，相当于汉语中的'但是'、'可是'。这是日常会话中最常用的转折接续词之一，语气自然亲切。",
+    "formation": "句子A + 。でも、 + 句子B",
+    "examples": [
+      {
+        "translation": "昨天很冷。但是今天很暖和。"
+      },
+      {
+        "translation": "他很忙。可是还有时间和朋友一起玩。"
+      },
+      {
+        "translation": "考试及格了。不过我还在继续学习。"
+      },
+      {
+        "translation": "她很有名。但是非常谦虚。"
+      }
+    ]
   },
   "ja_Aと_8": {
     "title": "Aと Bと どちら～ (A to B to dochira~)",
-    "shortExplanation": "用于询问 which of two alternatives is preferred or to compare two things",
-    "longExplanation": "The grammar pattern Aと Bと どちら～ is used to compare two alternatives A and B, and ask which one is preferred, better, or more suitable. It can be used with verbs, adjectives, or nouns.",
-    "formation": "Aと Bと どちら + 动词/形容词/名词"
+    "shortExplanation": "用于在A和B两者之间进行比较并询问偏好或选择；'A和B哪一个……'。",
+    "longExplanation": "句型'Aと Bと どちら～'用于在两个选项A与B之间进行对比，询问对方更偏好哪一个、哪一个更合适或哪一个程度更高。'どちら'为表示两选一的礼貌疑问词，相当于汉语中的'哪一方'或'哪一个'。",
+    "formation": "Aと + Bと + どちら + が/を/で + 动词/形容词/名词 + か",
+    "examples": [
+      {
+        "translation": "苹果和橘子，你更喜欢哪一个？"
+      },
+      {
+        "translation": "应该坐电车还是坐公交车去呢？"
+      },
+      {
+        "translation": "你觉得红色的连衣裙和蓝色的连衣裙，哪一件更适合我？"
+      },
+      {
+        "translation": "这部相机和那部相机，哪一部更容易使用？"
+      }
+    ]
   },
   "ja_AとBと_9": {
     "title": "AとBと どっち〜 (A to B to docchi〜)",
-    "shortExplanation": "Asking which one; 'which', 'A or B'.",
-    "longExplanation": "The  AとBと どっち〜 grammar point is 用于询问 which one to choose between two options, A and B. 可以翻译为 'which', 'A or B' in English. This is often used in casual speech and can be shortened to  AかBか どっち〜.",
-    "formation": "AとBと どっち + 动词, AかBか どっち + 动词"
+    "shortExplanation": "口语中用于在二者之间询问选择；'A和B哪一个'、'A还是B'。",
+    "longExplanation": "句型'AとBと どっち〜'是'AとBとどちら'的口语随意表达，常用于朋友、家人之间的随和交流，询问在两个选项A与B之中更倾向于哪一个。亦可简化表达为'AかBか どっち〜'。",
+    "formation": "Aと + Bと + どっち + が/を + 动词/形容词 (+ か/？)",
+    "examples": [
+      {
+        "translation": "咖啡和红茶，你更喜欢哪一个？"
+      },
+      {
+        "translation": "电影和音乐，你更喜欢哪种享受方式？"
+      },
+      {
+        "translation": "红色衬衫和蓝色衬衫，你买哪一件？"
+      },
+      {
+        "translation": "日语和韩语，你想学哪一门？"
+      }
+    ]
   },
   "ja_A_10": {
     "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
-    "shortExplanation": "表示 'whether... or...', 'both... and...', 'in either case'.",
-    "longExplanation": "The ～AにつけBにつけ pattern is 用于展示 that some state or action applies in both situation A and situation B. It often pairs contrasting or related conditions and can be translated as 'whether A or B', 'in either case', etc.",
-    "formation": "Phrase A (dictionary/adjective form) + につけ、Phrase B (dictionary/adjective form) + につけ"
+    "shortExplanation": "并列相对的情形或心境，表示无论是处于A还是B的状态都同样如此；“无论……还是……”、“每当……或是……的时候”。",
+    "longExplanation": "句型“～AにつけBにつけ”通常将具有相反或对比意义的词语（如喜怒哀乐、日夜、哭笑等）并列使用，表示无论是处于情况A还是处于情况B，后项的心情、状态或行为都始终如一（“无论是在……还是在……的时候”、“或……或……”）。带有较浓厚的情感色彩和书面语文雅气息。",
+    "formation": "动词辞书形 + につけ + 动词辞书形 + につけ | 一类形容词 + につけ + 一类形容词 + につけ | 名词 + につけ + 名词 + につけ",
+    "examples": [
+      {
+        "translation": "对他而言，不论是笑还是哭，都散发着十足的魅力。"
+      },
+      {
+        "translation": "无论是高兴还是悲伤的时候，他总是在听音乐。"
+      },
+      {
+        "translation": "不论是在白天还是在夜晚，这里的景色都美不胜收。"
+      },
+      {
+        "translation": "无论是欣喜还是悲伤的时刻，她总是一直在背后默默支持着我。"
+      }
+    ]
   },
   "ja_A_11": {
     "title": "A のやら B のやら (A no yara B no yara)",
-    "shortExplanation": "Used when the speaker is unsure or confused between multiple possibilities.",
-    "longExplanation": "The A のやら B のやら grammar 表示 the speaker's confusion or inability to decide between possibility A and B. It can be translated roughly as 'whether it's A or B (I don't know).'",
-    "formation": "Noun1 + のやら + Noun2 + のやら (also works with adjectives and verbs + のやら)"
+    "shortExplanation": "表示情况不明确，说话人困惑于到底是A还是B；“不知是A还是B”、“真搞不懂是……还是……”。",
+    "longExplanation": "句型“A のやら B のやら”由形式名词“の”与带有疑问困惑语气的助词“やら”组合而成，用于表达说话人面对两种可能性时感到捉摸不透、无从判断（“不知是……还是……”、“搞不清究竟是……还是……”）。后半句几乎总是与“わからない（不知道）”、“はっきりしない（不清楚）”、“見当がつかない（摸不着头脑）”等表达相呼应。",
+    "formation": "动词/一类形容词普通形 + のやら + 动词/一类形容词普通形 + のやら | 二类形容词词干 + なのやら | 名词 + なのやら（或 のやら）",
+    "examples": [
+      {
+        "translation": "我真搞不清楚他到底是在生气还是在难过。"
+      },
+      {
+        "translation": "真不知道考试成绩是好是坏，心里惦记着放不下。"
+      },
+      {
+        "translation": "我真不知道她到底是喜欢我还是讨厌我。"
+      },
+      {
+        "translation": "他到底去还是不去，到现在也没个准信。"
+      }
+    ]
   },
   "ja_A_12": {
     "title": "A より B のほうが～ (A yori B no hou ga ～)",
-    "shortExplanation": "Used to compare two items; 'B is more ～ than A'.",
-    "longExplanation": "The grammar point A より B のほうが～ is used to compare two items or situations and indicate that one is more (adjective) than the other. 可以翻译为 'B is more ～ than A' in English. It is used with both い-adjectives and な-adjectives.",
-    "formation": "A + より + B + のほうが + 形容词"
+    "shortExplanation": "比较两项，强调B比A程度更深；'比起A，B更加……'。",
+    "longExplanation": "句型'A より B のほうが～'用于比较两个事物或情境。'A より'表示比较的基准（比起A），'B のほうが'则强调B这一方在性质或程度上更加突出，相当于汉语中的'比起A，B更……'。后续接各类形容词。",
+    "formation": "A + より + B + のほうが + 形容词",
+    "examples": [
+      {
+        "translation": "比起披萨，汉堡更好吃。"
+      },
+      {
+        "translation": "比起夏天，冬天更冷。"
+      },
+      {
+        "translation": "比起这里，那里更安静。"
+      },
+      {
+        "translation": "比起汽车，电车更快。"
+      }
+    ]
   },
   "ja_いAdjective_13": {
-    "title": "い-Adjective く + Verb (i-Adjective + ku + Verb)",
-    "shortExplanation": "Used to connect an い-adjective to a verb, modifying the verb (adverbial usage).",
-    "longExplanation": "The い-Adjective + く + Verb grammar point transforms an い-adjective into its adverbial form, describing how the verb is performed. In English, this often corresponds to '-ly' adverbs (e.g., 'quickly', 'slowly').",
-    "formation": "い-形容词 (remove い) + く + 动词"
+    "title": "い形容词连用形（〜く）+ 动词 (i-keiyoushi ku + doushi)",
+    "shortExplanation": "将い形容词转化为副词形态以修饰后续动词；'……地（做某事）'。",
+    "longExplanation": "该语法点将い形容词的词尾'い'变为'く'，使其连用形发挥副词的作用，用来修饰后面的动词，描述动作进行的方式、状态或性质，相当于汉语中的'……地（做某事）'（如'飞快地'、'温柔地'等）。",
+    "formation": "い形容词词干 (去掉词尾い) + く + 动词",
+    "examples": [
+      {
+        "translation": "他跑得很快。"
+      },
+      {
+        "translation": "我津津有味地吃完了这道菜。"
+      },
+      {
+        "translation": "她温柔地说话。"
+      },
+      {
+        "translation": "妈妈正忙碌地工作着。"
+      }
+    ]
   },
   "ja_いAdjective_14": {
-    "title": "い-Adjective く します (i-Adjective ku shimasu)",
-    "shortExplanation": "Use an い-adjective to express 'to make' or 'to become'.",
-    "longExplanation": "By adding くします to an い-adjective, you express making something (or causing something to become) the quality of that adjective. In English, this often corresponds to phrases like 'make something more ADJECTIVE.'",
-    "formation": "い-形容词 (remove い) + くします"
+    "title": "い形容词 + くします (i-keiyoushi ku shimasu)",
+    "shortExplanation": "表示通过人为作用使事物转变为某种状态；'使……变得……'、'把……弄成……'。",
+    "longExplanation": "将い形容词的词尾'い'变为'く'后接续动词'します'，用于表达人为、有意识地对某对象施加影响，使其变成该形容词所描述的状态或性质。相当于汉语中的'把……弄得/做得……'或'使……变得……'。与表示自然变化的'〜くなります'相对，本句型强调主观意图与人为行动。",
+    "formation": "宾语 + を + い形容词词干 (去掉词尾い) + くします",
+    "examples": [
+      {
+        "translation": "把房间弄得更亮一些。"
+      },
+      {
+        "translation": "让朋友的心情变得愉快起来。"
+      },
+      {
+        "translation": "为了让工作变得更简单，把处理方法加快。"
+      },
+      {
+        "translation": "把食物做得更加美味。"
+      }
+    ]
   },
   "ja_いAdjective_15": {
-    "title": "い-Adjective: Negative Polite Form",
-    "shortExplanation": "Change an い-adjective into a polite negative form with ～くないです (or ～くありません).",
-    "longExplanation": "To make an い-adjective negative and polite, remove the final い and add くないです. An alternative more formal style is くありません. For example, 美味しい → 美味しくないです / 美味しくありません。",
-    "formation": "い-形容词 (remove い) + くないです"
+    "title": "い形容词（一类形容词）礼貌否定形（～くないです / ～くありません）",
+    "shortExplanation": "い形容词的礼貌否定形式，词尾い变くないです（或くありません），表示“不……”。",
+    "longExplanation": "表示い形容词（一类形容词）的敬体礼貌否定时，将词尾的“い”去掉，加上“くないです”。在更为正式郑重的场合，也可以使用“くありません”。例如：美味しい → 美味しくないです / 美味しくありません。特别需要注意，特殊词“いい（好）”的否定形式为“よくないです / よくありません”。",
+    "formation": "い形容词词干（去 い） + くないです / くありません",
+    "examples": [
+      {
+        "translation": "这个披萨不好吃。"
+      },
+      {
+        "translation": "这个房间不宽敞。"
+      },
+      {
+        "translation": "他的意见没有意思。"
+      },
+      {
+        "translation": "那部电影不好看（没意思）。"
+      }
+    ]
   },
   "ja_いAdjective_16": {
-    "title": "い-Adjective て (i-Adjective + te~)",
-    "shortExplanation": "Used to connect two or more い-adjectives to describe something.",
-    "longExplanation": "The い-Adjective て form is used to connect two or more い-adjectives when listing attributes of something or someone. To form it, replace the final い with くて. For example, かわいい → かわいくて, おいしい → おいしくて.",
-    "formation": "い-形容词 (remove い) + くて + い-形容词"
+    "title": "い形容词的て形（～くて）",
+    "shortExplanation": "连接两个或多个形容词或分句，表示并列列举或轻微因果；“又……又……”、“既……又……”。",
+    "longExplanation": "い形容词（一类形容词）的连接形（て形）是将词尾“い”变成“くて”。用于并列列举事物的多个属性或状态（“既……又……”），也可表示轻微的原因理由（“因为……所以……”）。连接的多个形容词在情感色彩上通常保持一致。注意不规则变化：いい（好）→ よくて。",
+    "formation": "い形容词词干（去 い） + くて + 形容词 / 谓语",
+    "examples": [
+      {
+        "translation": "这个苹果又甜又好吃。"
+      },
+      {
+        "translation": "她既温柔又可爱。"
+      },
+      {
+        "translation": "电影很有意思，非常感人。"
+      },
+      {
+        "translation": "这个房间又宽敞又明亮。"
+      }
+    ]
   },
   "ja_なAdjective_17": {
-    "title": "な-Adjective に + Verb",
-    "shortExplanation": "Turn a な-adjective into an adverb by adding に.",
-    "longExplanation": "To make a な-adjective modify a verb, remove the な and add に. This form describes how an action is performed. For instance, 静か（な） → 静かに, 親切（な） → 親切に.",
-    "formation": "な-形容词 (remove な) + に + 动词"
+    "title": "な形容词 + に + 动词（副词化用法）",
+    "shortExplanation": "な形容词去词尾な加に修饰后接动词，描写动作进行的方式或状态；“……地（做某事）”。",
+    "longExplanation": "な形容词（二类形容词）修饰动词时，需去掉词尾的“な”并加上助词“に”，使其转化为副词性用法（连用修饰语），用来具体描摹动作进行时的状态、方式或情态。相当于汉语中的“……地”。例如：静か（な） → 静かに（安静地）、きれい（な） → きれいに（干净地、漂亮地）。",
+    "formation": "な形容词词干（去 な） + に + 动词",
+    "examples": [
+      {
+        "translation": "他小声地说话。"
+      },
+      {
+        "translation": "把房间打扫得很干净。"
+      },
+      {
+        "translation": "她充满活力地工作着。"
+      },
+      {
+        "translation": "老师很亲切地为我讲解。"
+      }
+    ]
   },
   "ja_なAdjective_18": {
-    "title": "な-Adjective で～ (na-Adjective de~)",
-    "shortExplanation": "Usage of で to connect or add information with a な-adjective.",
-    "longExplanation": "Use な-adjective + で to connect it to another quality, action, or description. It can combine a な-adjective with another adjective, verb, or clause.",
-    "formation": "な-形容词 + で"
+    "title": "な形容词的中顿形（～で）",
+    "shortExplanation": "な形容词去な加で连接其他形容词、动词或分句，表示并列列举或轻微原因；“既……又……”、“……而且……”。",
+    "longExplanation": "な形容词（二类形容词）的中顿形为去掉词尾“な”加上“で”。主要用于并列列举事物的多个性质特征（相当于“既……又……”），也可作为前后句的连接，表示轻微的因果关系（“因为……所以……”）。",
+    "formation": "な形容词词干（去 な） + で + 形容词 / 动词 / 分句",
+    "examples": [
+      {
+        "translation": "他喜欢既漂亮又温柔的女性。"
+      },
+      {
+        "translation": "这道料理很健康，吃完让人精神振奋。"
+      },
+      {
+        "translation": "他想在安静沉稳的环境中工作。"
+      },
+      {
+        "translation": "这个房间既整洁又让人感觉舒适。"
+      }
+    ]
   },
   "ja_なAdjective_19": {
-    "title": "な-Adjective に します (na-Adjective ni shimasu)",
-    "shortExplanation": "Expressing a decision or preference with a な-adjective.",
-    "longExplanation": "The な-adjective に します pattern is 用于表达 a decision or choice based on a な-adjective. It often translates as 'I’ll make it ...,' 'I will choose ...,' or 'I’ve decided on ...'.",
-    "formation": "な-形容词 + に + します"
+    "title": "な形容词 + に します（人为使……改变 / 决定、选择）",
+    "shortExplanation": "表示主观人为地使某事物变成某种状态（“弄成……”、“使……变得……”），或表示做出选择与决定（“选择……”）。",
+    "longExplanation": "句型“な形容词词干 + に + します”主要用于表示说话人有意识地施加动作，使对象的状态发生人为的改变（相当于汉语的“把……弄得……”、“使……变……”）。此外，还可以用于表示在多个选项中决定选择某种方案或性质（“选择……”、“决定……”）。",
+    "formation": "な形容词词干（去 な） + に + します",
+    "examples": [
+      {
+        "translation": "我会保持安静。"
+      },
+      {
+        "translation": "我会把房间打扫干净。"
+      },
+      {
+        "translation": "明天的会议我会安排得简单明了。"
+      },
+      {
+        "translation": "我选择健康的饮食。"
+      }
+    ]
   },
   "ja_なAdjective_20": {
-    "title": "な-Adjective に なります (na-Adjective ni narimasu)",
-    "shortExplanation": "Express a change or transformation into a state described by the な-adjective.",
-    "longExplanation": "The な-Adjective + に + なります grammar point is 用于表达 a change or transformation into the state described by the な-adjective. It translates to 'become' or 'turn into' along with the meaning of the な-adjective.",
-    "formation": "な-形容词 (remove な) + に + なります"
+    "title": "な形容词 + に なります（状态的自然转变）",
+    "shortExplanation": "表示事物自然而然地发生变化，进入某种新的状态；“变得……”、“变成……”。",
+    "longExplanation": "句型“な形容词词干 + に + なります”用于表示客观事物或人在性质、状态上的自然转变与演变，相当于汉语中的“变得……”或“变成……”。与强调人为作为的“に します”相对，“に なります”侧重于自然形成的变化过程或最终显现的客观结果。",
+    "formation": "な形容词词干（去 な） + に + なります",
+    "examples": [
+      {
+        "translation": "这个房间变得安静了。"
+      },
+      {
+        "translation": "她变得漂亮了。"
+      },
+      {
+        "translation": "他变得很有活力（恢复了精神）。"
+      },
+      {
+        "translation": "小镇变得热闹起来了。"
+      }
+    ]
   },
   "ja_Noun_21": {
-    "title": "Noun + ぐるみ (〜gurumi)",
-    "shortExplanation": "Describes 'entirely', 'all together', or 'as a whole group'.",
-    "longExplanation": "「Noun + ぐるみ」emphasizes that an action or state involves the entire group or everything related to that noun. It can mean 'altogether', 'as a whole', or 'with everyone/everything included.'",
-    "formation": "名词 + ぐるみ"
+    "title": "名词 + ぐるみ (gurumi)",
+    "shortExplanation": "接在表示团体、组织的词后，表示全员或整体一起参与某事；“全……一起”、“连同……在内”。",
+    "longExplanation": "后缀“～ぐるみ”（常以“～ぐるみで”的形式出现）接在表示家庭、集体、组织、地区等的名词之后，表示该整体内的全体成员无一例外地共同参与某项行动或卷入某种事态（“全……一起”、“整个……全员”）。常用于“家族ぐるみ（全家一起）”、“町ぐるみ（全镇一起）”等搭配。",
+    "formation": "名词（表示团体/组织的名词） + ぐるみ（常用：名词 + ぐるみで）",
+    "examples": [
+      {
+        "translation": "全家人一起去旅行了。"
+      },
+      {
+        "translation": "全班同学一起去远足了。"
+      },
+      {
+        "translation": "这个国家全体国民都支持那项法案。"
+      },
+      {
+        "translation": "他带着所有的朋友一起参加了那个俱乐部。"
+      }
+    ]
   },
   "ja_Noun_22": {
-    "title": "Noun こそあれ (~koso are)",
-    "shortExplanation": "表示 'though there is ... (some negative or burdensome aspect), still ...'.",
-    "longExplanation": "「Noun こそあれ」is a somewhat formal expression meaning 'Though there is X, (still) Y'. It acknowledges one (often negative) aspect while asserting that it does not prevent or change another fact or outcome.",
-    "formation": "名词 + こそあれ + (result/continuation)"
+    "title": "名词 + こそあれ (koso are)",
+    "shortExplanation": "承认前项确实存在（多为不足或负担），但后项依然积极成立；“虽然有……”、“尽管存在……”。",
+    "longExplanation": "句型“名词 + こそあれ”（“あれ”为文语动词“あり”的已然形接续）属于较庄重的书面语表达。前项承认某种负面要素、困难或缺点的存在（“虽然有……”、“尽管存在……”），后项则转折强调整体并未受阻，依然顺利或极有价值。",
+    "formation": "名词 + こそあれ | 形容动词词干 + でこそあれ",
+    "examples": [
+      {
+        "translation": "虽然存在一些问题，但项目整体进展很顺利。"
+      },
+      {
+        "translation": "尽管伴随少许风险，但依然有值得挑战的价值。"
+      },
+      {
+        "translation": "虽然有些缺点，但他的提议依然很有吸引力。"
+      },
+      {
+        "translation": "尽管心中尚有不安，但现在正是采取行动的时候。"
+      }
+    ]
   },
   "ja_Noun_23": {
-    "title": "Noun こそ～が (~koso~ga)",
-    "shortExplanation": "Emphasizes that 'it is precisely Noun that ...', then adds a contrasting or additional point.",
-    "longExplanation": "「Noun こそ～が」highlights the importance or uniqueness of the noun. It often translates as 'Yes, Noun is indeed ... , but ...'. The 'が' introduces a second, sometimes contrasting statement.",
-    "formation": "名词 + こそ + (statement) + が + (contrasting/additional statement)"
+    "title": "名词 + こそ～が (koso ~ ga)",
+    "shortExplanation": "强调某事物确实极为重要或属实，但随后转折指出另一相对的事实；“确实……，但是……”、“固然……，然而……”。",
+    "longExplanation": "句型“名词 + こそ + （谓语） + が”利用提示助词“こそ”强调前项名词的重要性或无可争辩的真实性，紧接着用转折连词“が”提出另一层对立或需要兼顾的现实（“……固然重要，但是……”、“正因为是……确实如此，然而……”）。",
+    "formation": "名词 + こそ + 谓语（动词/形容词） + が",
+    "examples": [
+      {
+        "translation": "金钱固然必不可少，但那绝非人生的全部。"
+      },
+      {
+        "translation": "努力固然十分重要，但结果同样不容忽视。"
+      },
+      {
+        "translation": "健康固然是宝贵的财富，但有时也不得不以工作为先。"
+      },
+      {
+        "translation": "爱固然是一种力量，但要表达出来却绝非易事。"
+      }
+    ]
   },
   "ja_Noun_24": {
-    "title": "Noun こそすれ (~koso sure)",
-    "shortExplanation": "An emphatic pattern meaning 'it may be X, but definitely not Y.' Often pairs with a negative statement.",
-    "longExplanation": "「Noun/Verb-ます形 + こそすれ」emphasizes that while one aspect (X) might exist or be true, another aspect (Y) absolutely does not. It's frequently used with negative expressions (e.g., 〜ない、〜できない) to strongly deny the second possibility.",
-    "formation": "名词 + こそすれ + (negative or contrasting statement)"
+    "title": "名词 + こそすれ (koso sure)",
+    "shortExplanation": "强调只可能存在前项的情况，绝不会发生后项；“只可能……绝不会……”、“虽说会……但决不……”。",
+    "longExplanation": "句型“名词 + こそすれ”（“すれ”为动词“する”的已然形）用于极为强烈的语气对比：肯定前项X有可能发生或属实，但后项紧跟否定形式（如“～ない”、“～できない”等），断然否认后项Y发生的可能性（“只会……绝不会……”、“只有……哪会……”）。常接在带有动作性的名词或动词连用形后。",
+    "formation": "名词（动作性名词） + こそすれ + 否定句 | 动词连用形（ます形去掉ます） + こそすれ + 否定句",
+    "examples": [
+      {
+        "translation": "我对您只有感激，绝不可能说出半句指责的话。"
+      },
+      {
+        "translation": "忙碌固然是有，但也绝不会感到半点无聊。"
+      },
+      {
+        "translation": "我只有悔恨，却无论如何也无法忘怀。"
+      },
+      {
+        "translation": "我心中只有满腹疑问，绝不可能表示赞同。"
+      }
+    ]
   },
   "ja_Noun_25": {
-    "title": "Noun ごとき / Noun ごとく (〜gotoki/〜gotoku)",
-    "shortExplanation": "Means 'like a...', 'as if...', expressing a simile or metaphor.",
-    "longExplanation": "「〜ごとき／〜ごとく」conveys similarity, as if comparing one thing to another. ごとき often modifies nouns, while ごとく can modify verbs or adjectives as well. It's more formal and literary in tone than simple expressions like みたい or よう.",
-    "formation": "名词 + ごとき, 名词 + ごとく, 动词-casual + ごとく, い-形容词 + ごとく"
+    "title": "名词 + ごとき / ごとく (gotoki / gotoku)",
+    "shortExplanation": "文语色彩浓厚的比喻表达；“宛如……”、“如同……一样”。（ごとき修饰名词，ごとく修饰动词或形容词）。",
+    "longExplanation": "文语比况句型“～ごとき／～ごとく”常用于文学作品、书面语或演说中，表示生动的比喻（“如……一样”、“宛如……”）。其连体修饰名词时用“ごとき”，连用修饰动词或形容词时用“ごとく”。相比于口语中的“ようだ”或“みたいだ”，本句型更具典雅厚重的修辞色彩与戏剧张力。",
+    "formation": "名词 + ごとき + 名词 | 名词 + ごとく + 动词 / 形容词",
+    "examples": [
+      {
+        "translation": "他如同天使一般纯洁无瑕。"
+      },
+      {
+        "translation": "休要做出那等如同恶魔般的行径！"
+      },
+      {
+        "translation": "她拥有宛如白雪般白皙细腻的肌肤。"
+      },
+      {
+        "translation": "他犹如一阵疾风般离去了。"
+      }
+    ]
   },
   "ja_Noun_26": {
-    "title": "Noun じゃあるまいし (~ja aru mai shi)",
-    "shortExplanation": "Expressing that something 'is not'; 'it's not like...'. Colloquial/masculine form of ではあるまいし.",
-    "longExplanation": "The phrase 「Noun (or Na-Adjective) + じゃあるまいし」 is a somewhat casual, sometimes masculine-sounding expression meaning 'it's not like...', 'it's not as if...', or 'there's no need to...' in certain contexts. It dismisses the idea that the noun or adjective is the reason or cause for something.",
-    "formation": "名词 or Na-形容词 + じゃあるまいし"
+    "title": "名词 + じゃあるまいし (ja aru mai shi)",
+    "shortExplanation": "口语中用于批评、劝告或辩解，驳斥某种不合情理的举动；“又不是……”、“并不会是……”。",
+    "longExplanation": "句型“名词 + じゃあるまいし”（口语形式，郑重或书面形式为“～ではあるまいし”）用于断然否定某种假设或事实（“又不是……何必这样呢”、“既然并非……就用不着……”）。后项常伴随责备、劝告、讽刺或表明某种反应毫无必要的表达。",
+    "formation": "名词 + じゃあるまいし（书面语：ではあるまいし）",
+    "examples": [
+      {
+        "translation": "他又不是小孩子了，理应妥善解决那个问题。"
+      },
+      {
+        "translation": "没必要这么着急，又不是时间来不及了。"
+      },
+      {
+        "translation": "你又不是总教练，何必为比赛结果瞎操心。"
+      },
+      {
+        "translation": "又不是硬糖，直接吞下去也没关系的。"
+      }
+    ]
   },
   "ja_Noun_27": {
-    "title": "Noun ずくめ (~zukume)",
-    "shortExplanation": "Denotes 'entirely' or 'nothing but' the preceding noun.",
-    "longExplanation": "「Noun + ずくめ」表示 that something consists entirely of that noun or is 'nothing but' that noun. It describes a situation with a predominance of one thing.",
-    "formation": "名词 + ずくめ"
+    "title": "名词 + ずくめ (zukume)",
+    "shortExplanation": "表示清一色全都是某种事物，或满是某种状态；“尽是……”、“清一色的……”、“全是……”。",
+    "longExplanation": "接尾词“～ずくめ”接在名词之后，表示某段时期、某种状态或某件物品完全被该事物所填满，没有任何杂质或例外（“尽是……”、“全都是……”、“清一色……”）。既可用于积极愉快的事物（如“いいことずくめ/全是好事”），也可用于消极不顺的事物（如“失敗ずくめ/接连失败”、“嘘ずくめ/满篇谎言”），还可用于外貌穿着（如“黒ずくめ/一袭黑衣”）。",
+    "formation": "名词 + ずくめ（或 ずくめの + 名词 / ずくめだ）",
+    "examples": [
+      {
+        "translation": "他最近接二连三尽是失败。"
+      },
+      {
+        "translation": "今年冬天到处是大雪，真是太不容易了。"
+      },
+      {
+        "translation": "他的话里从头到尾全是谎言。"
+      },
+      {
+        "translation": "今天的工作从早到晚尽是忙碌。"
+      }
+    ]
   },
   "ja_Noun_28": {
-    "title": "Noun だけではすまない (Noun dake dewa sumanai)",
-    "shortExplanation": "表示 'it can't be settled with just...', 'cannot be resolved merely by...'.",
-    "longExplanation": "「Noun + だけではすまない」指示 that simply doing or providing the noun is not sufficient to resolve or finish a matter. Something more is required.",
-    "formation": "名词 + だけではすまない"
+    "title": "名词 + だけではすまない (dake dewa sumanai)",
+    "shortExplanation": "表示仅凭某事无法解决问题或了结事态；“光靠……是解决不了的”、“仅仅……是交代不过去的”。",
+    "longExplanation": "句型“名词 + だけではすまない”（“すまない”是动词“済む/解决、了结”的否定形）表示事情性质严重或难度较大，仅仅靠前项所提及的行为、补偿或条件，是无法平息事态或敷衍过去的（“光靠……是远远不够的”、“不能只靠……就算完事”）。",
+    "formation": "名词 + だけではすまない（亦可接：动词辞书形/て形 + だけではすまない）",
+    "examples": [
+      {
+        "translation": "这个问题光道个歉是解决不了的。"
+      },
+      {
+        "translation": "她正在气头上呢，光送点点心可应付不过去。"
+      },
+      {
+        "translation": "这个项目的成功，绝非光靠努力就能达成的。"
+      },
+      {
+        "translation": "光靠筹措资金可不行，切实可行的商业计划同样不可或缺。"
+      }
+    ]
   },
   "ja_Nounで_29": {
-    "title": "Nounで～ (Noun de ~)",
-    "shortExplanation": "Indicate a place or means for an action or situation; 'at, in, on', 'using', or 'by means of'.",
-    "longExplanation": "The で grammar point is 用于表示 a location, method, or tool for doing an action or for being in a situation. 可以翻译为 'at, in, on', 'using', or 'by means of' in English. Nounで is formed by adding で after a noun.",
-    "formation": "名词 + で"
+    "title": "名词 + で（动作场所 / 工具、手段、语言）",
+    "shortExplanation": "接在名词后，表示动作发生的场所（“在……”）或使用的工具、交通手段、语言（“用……”、“乘……”）。",
+    "longExplanation": "格助词“で”接在名词后具有多种重要功能：① 接在场所名词后，表示动作、行为发生的地点（“在……”），与表示静态存在场所的“に”形成鲜明对比；② 接在交通工具、工具、手段、语言或原材料名词后，表示进行动作所使用的手段、方式或工具（“用……”、“乘……”）。",
+    "formation": "名词（场所 / 工具 / 交通手段 / 语言） + で",
+    "examples": [
+      {
+        "translation": "在图书馆学习。"
+      },
+      {
+        "translation": "乘公交车去学校。"
+      },
+      {
+        "translation": "用铅笔写了。"
+      },
+      {
+        "translation": "我们用英语交谈吧。"
+      }
+    ]
   },
   "ja_Noun_30": {
-    "title": "Noun たる Noun (~taru~)",
-    "shortExplanation": "指示 'being in the position/state of', used for roles or statuses.",
-    "longExplanation": "「Noun1 たる Noun2」表示 that the second noun is in the 'role/state/condition' of the first. It often has a formal or literary tone, emphasizing that someone/something rightly holds or embodies that status.",
-    "formation": "Noun1 + たる + Noun2"
+    "title": "名词1 + たる + 名词2 (taru)",
+    "shortExplanation": "书面语表达，强调处于某种崇高身份、地位应有的资格或义务；“作为……者”、“身为……的人”。",
+    "longExplanation": "句型“名词1 + たる + 名词2”（“たる”是文语断定助动词“たり”的连体形，源于“とあり”）属于十分庄重典雅的书面语。常接在表示社会身份、职务、地位的名词后（如领导、教师、医者、父母等），后项名词常接“者（もの）”，用于阐明处于该崇高地位者所应具备的职业操守、道德规范或应尽的本分（“作为……者理应……”、“身为……应当……”）。",
+    "formation": "名词1（身份/职务/地位） + たる + 名词2（常为“者”）",
+    "examples": [
+      {
+        "translation": "身为领导者，应当始终着眼未来并付诸行动。"
+      },
+      {
+        "translation": "作为一名教师，理应为学生树立良好的模范。"
+      },
+      {
+        "translation": "身为一位母亲，爱护家人是理所当然的事情。"
+      },
+      {
+        "translation": "身为医生，应当将患者的安全放在首位来考虑。"
+      }
+    ]
   },
   "ja_Noun_31": {
-    "title": "Noun ですら (~desura)",
-    "shortExplanation": "Means 'even', 'as much as', used for emphasis in formal contexts.",
-    "longExplanation": "「Noun + ですら」emphasizes 'even' in a formal or literary tone. It can carry nuance similar to さえ or すら but is used more in writing or formal speech.",
-    "formation": "名词 + ですら"
+    "title": "名词 + ですら (desura)",
+    "shortExplanation": "较为庄重的书面强调表达，通过举出极端或理所当然的例子来类推其余；“甚至连……都……”、“哪怕是……也……”。",
+    "longExplanation": "句型“名词 + ですら”是由断定助动词连用形“で”与强调副助词“すら”复合而成的书面语表达。其语气比普通的“さえ”或“すら”更为庄重、沉稳。通过提出一个极端、最基本或最无可争议的事例（“甚至连……都……”、“即使是……也……”），借以暗示其他一般情况自不必多言。",
+    "formation": "名词 + ですら",
+    "examples": [
+      {
+        "translation": "明明明天就要考试了，他却甚至连教科书都懒得看一眼。"
+      },
+      {
+        "translation": "这个难题甚至连专门领域的专家都无法解开。"
+      },
+      {
+        "translation": "她甚至在最后的致辞中都忍不住哭了出来。"
+      },
+      {
+        "translation": "他虽然每天都在学习，但甚至连最基础的汉字都记不住。"
+      }
+    ]
   },
   "ja_Noun_32": {
-    "title": "Noun でなくてなんだろう (〜de nakute nandarou)",
-    "shortExplanation": "A strong rhetorical question: 'If not X, then what is it?'",
-    "longExplanation": "「Noun + でなくてなんだろう」表示 the speaker’s strong conviction that something must be that noun—no other possibility. Literally, 'If it isn't Noun, then what is it?'",
-    "formation": "名词 + でなくてなんだろう"
+    "title": "名词 + でなくてなんだろう (〜de nakute nandarou)",
+    "shortExplanation": "强烈的反问修辞，表示绝对肯定的断言；“不是……又是什么呢”、“正是……”。",
+    "longExplanation": "句型“名词 + でなくてなんだろう”是一种语气极其强烈的反问句式，通过反问“如果这不是……那还会是什么呢”来表达说话人毫不动摇的强烈主观断定，深信该事物毫无疑问就是该名词所指的内容（“正是……”、“不是……又是什么呢”）。多带有浓厚的感叹色彩，常与“愛（爱）”、“真実（真相）”、“奇跡（奇迹）”、“運命（命运）”等具有高度概括性或情感色彩的抽象名词搭配使用。",
+    "formation": "名词 + でなくてなんだろう（或 でなくて何だろうか）",
+    "examples": [
+      {
+        "translation": "这不是真相又是什么呢。"
+      },
+      {
+        "translation": "他不是领袖又是什么呢。"
+      },
+      {
+        "translation": "这不是爱又是什么呢。"
+      },
+      {
+        "translation": "这不是最顶级的餐厅又是什么呢。"
+      }
+    ]
   },
   "ja_Noun_33": {
-    "title": "Noun ではあるまいし (~dewa aru maishi)",
-    "shortExplanation": "Means 'it’s not as if...', 'it’s not that...', more formal than じゃあるまいし.",
-    "longExplanation": "「Noun + ではあるまいし」指示 that the noun is not the situation or reason being implied. It dismisses a possibility or justification, e.g. 'It’s not as if X, so don’t worry/do that/etc.' This is the more formal counterpart to じゃあるまいし.",
-    "formation": "名词 + ではあるまいし"
+    "title": "名词 + ではあるまいし (~dewa aru maishi)",
+    "shortExplanation": "否定某种非事实的前提，表示责备、劝告或无可奈何；“又不是……”、“并不会是……”。",
+    "longExplanation": "句型“名词 + ではあるまいし”用于断定并否定某种假设、身份或理由（“又不是……”、“并不会是……”），以此为前提在后项表达对对方行为的责怪、劝诫、提醒或不满，认为对方不该那样做或没必要大惊小怪。相比于口语中极为常用的“～じゃあるまいし”，“～ではあるまいし”语气更庄重、典雅，多用于书面或正式语境。",
+    "formation": "名词 + ではあるまいし（口语多用：じゃあるまいし）",
+    "examples": [
+      {
+        "translation": "她又不是职业歌手，要求十全十美未免太苛刻了。"
+      },
+      {
+        "translation": "他又不是小孩子了，吃那么多巧克力我觉得实在不太好。"
+      },
+      {
+        "translation": "他又不是医生，根本没必要打听你的健康状况。"
+      },
+      {
+        "translation": "这枚戒指又不是什么昂贵之物，就算掉了也没什么大不了的。"
+      }
+    ]
   },
   "ja_Noun_34": {
-    "title": "Noun と Noun を兼ねて (Noun to Noun o kanete)",
-    "shortExplanation": "用于表示 doing two things at once or fulfilling two roles/purposes.",
-    "longExplanation": "「Noun と Noun を兼ねて」means that one action or thing serves the purpose of both nouns. 可以翻译为 'serving as both… and…', or 'for both… and…'.",
-    "formation": "名词 + と + 名词 + を兼ねて"
+    "title": "名词1 + と + 名词2 + を兼ねて (Noun to Noun o kanete)",
+    "shortExplanation": "表示一个人或事物同时兼具两种职责、身份、功能或目的；“兼任……和……”、“既作为……又作为……”。",
+    "longExplanation": "句型“名词1 + と + 名词2 + を兼ねて”（在句尾也常作“〜を兼ねる / 〜を兼ねている”）源自他动词“兼ねる”（兼顾、兼任），用于表示某人或某物同时承担两种身份、职务，或者兼具两种功能与目的（“兼任A与B”、“既作为A又兼作B”）。常用于介绍职业兼职、多功能空间或设施、以及兼顾多重目的的行为。",
+    "formation": "名词1 + と + 名词2 + を兼ねて（或 を兼ねる / を兼ねている）",
+    "examples": [
+      {
+        "translation": "父亲兼任社长和财务部长两职。"
+      },
+      {
+        "translation": "她身兼音乐教师和钢琴家双重身份。"
+      },
+      {
+        "translation": "这个房间兼作卧室和书房。"
+      },
+      {
+        "translation": "他一人兼充父母双重角色，悉心照料着孩子。"
+      }
+    ]
   },
   "ja_Noun_35": {
-    "title": "Noun といい Noun といい (〜to ii〜to ii)",
-    "shortExplanation": "用于表达 'both A and B'; 'whether it's A or B'; 'not to mention A and also B'.",
-    "longExplanation": "This grammar structure is used to provide two examples or two situations to demonstrate a certain characteristic or situation. It's a way of mentioning two items of the same theme to generalize or emphasize something applicable to them both. In English, it can be understood as 'both A and B', 'whether it's A or B', or 'not to mention A and also B'.",
-    "formation": "Noun1 + といい + Noun2 + といい + Comment"
+    "title": "名词1 + といい + 名词2 + といい (〜to ii〜to ii)",
+    "shortExplanation": "列举两项代表性事物，对整体做出高度评价、赞叹或批评感慨；“无论是……还是……”、“不论是……还是……”。",
+    "longExplanation": "句型“名词1 + といい + 名词2 + といい”通过列举同类或同一主题中具有代表性的两个例子（A和B），来对整体的性质、状态进行全面的综合评价（“无论是A还是B，都……”、“不论是A还是B”）。后项通常接续说话人的主观评价，既可用于赞美、钦佩（如“素晴らしい/棒”、“完璧だ/完美”），也可用于不满、感叹或批评（如“あきれる/让人无语”）。",
+    "formation": "名词1 + といい + 名词2 + といい + [综合评价 / 述部]",
+    "examples": [
+      {
+        "translation": "无论是日本的美食还是观光胜地，样样都令人赞不绝口。"
+      },
+      {
+        "translation": "不论是他温柔的性格还是充沛的体力，他都是一位理想的伴侣。"
+      },
+      {
+        "translation": "这座小镇无论是电影院还是公园，男女老少都能乐在其中。"
+      },
+      {
+        "translation": "无论是他的唱功还是舞蹈技巧，都堪称完美。"
+      }
+    ]
   },
   "ja_Noun_36": {
-    "title": "Noun という Noun (~to iu~)",
-    "shortExplanation": "Used to specify or define one noun with another; 'the noun called', 'the noun that is', or 'a certain'.",
-    "longExplanation": "The Noun という Noun construction is used to specify or define one noun with another. It usually translates as 'the noun called', 'the noun that is' or simply 'a certain'. It is a very common pattern for clarifying what something is named or known as.",
-    "formation": "Noun1 という Noun2"
+    "title": "名词1 + という + 名词2 (~to iu~)",
+    "shortExplanation": "用于明确指称、命名或定义事物；“名叫……的……”、“所谓的……”。",
+    "longExplanation": "句型“名词1 + という + 名词2”用于具体指明事物或人物的名称与属性。前面的“名词1”通常是专有名词、人名、作品名或特指称谓，后面的“名词2”则是表示类别的普通名词（如人、城市、书、店等）。常译为“名叫……的……”、“叫作……的……”、“……这样的……”，常用于向对方介绍对方可能不熟悉的人或事物。",
+    "formation": "名词1（专有名词 / 名称） + という + 名词2（类别名词）",
+    "examples": [
+      {
+        "translation": "名叫宫崎骏的人是一位著名的动画导演。"
+      },
+      {
+        "translation": "那位被称为他恋人的女性对他非常严厉。"
+      },
+      {
+        "translation": "东京这座城市即使到了夜晚也很热闹。"
+      },
+      {
+        "translation": "我很喜欢名为《哈利·波特》的这本书。"
+      }
+    ]
   },
   "ja_Noun_37": {
-    "title": "Noun というところだ (Noun to iu tokoro da)",
-    "shortExplanation": "Means 'it's approximately...' or 'it's about...'. 用于展示 approximation or a general assessment.",
-    "longExplanation": "The というところだ grammar point is 用于展示 an approximation or general assessment of something. It is often translated as 'it's approximately...', 'around...', or 'it's about...'.",
-    "formation": "名词 + というところだ"
+    "title": "名词 + というところだ (Noun to iu tokoro da)",
+    "shortExplanation": "对数量、比例或程度做出大致估算或评估；“大致在……左右”、“大概是……”。",
+    "longExplanation": "句型“名词 + というところだ”（句尾常作“〜というところだろう”或“〜というところです”）用于对数量、比例、进展或水平程度做出大致的估量、评估或推测（“大致在……左右”、“大约是……”、“差不多就是……的程度”）。常接在表示数字、百分比、比率或相对程度的名词之后。",
+    "formation": "名词（表示数量 / 比例 / 程度） + というところだ（或 というところだろう / というところです）",
+    "examples": [
+      {
+        "translation": "这次考试的及格人数大概有一半左右吧。"
+      },
+      {
+        "translation": "他的实力大致发挥了八成左右。"
+      },
+      {
+        "translation": "赞成这个方案的人大概占七成左右。"
+      },
+      {
+        "translation": "对于科长的意见，以我个人来说赞同度大概在90%左右吧。"
+      }
+    ]
   },
   "ja_Noun_38": {
-    "title": "Noun + というもの (~ to iu mono)",
-    "shortExplanation": "用于表达 a generic concept: 'all ~', 'any ~ of that kind'.",
-    "longExplanation": "The grammar pattern 'Noun + というもの' refers to the entirety or general nature of that noun—often implying 'all of this category' or 'this thing called...'. It can also highlight a universal truth about the noun mentioned.",
-    "formation": "名词 + というもの"
+    "title": "名词 + というもの (~ to iu mono)",
+    "shortExplanation": "阐述该类事物的本质属性、普遍特征或规律；“所谓……（就是）……”、“……这种东西往往……”。",
+    "longExplanation": "句型“名词 + というもの”（最常以主题形式“～というものは”出现）用于从普遍性、普遍规律的角度来阐述某类人或事物的内在本质、共同特征或普遍属性（“所谓的……就是……”、“凡是……往往……”）。常用于归纳一般规律、抒发人生感悟或提出带有普遍性常理的论断。",
+    "formation": "名词 + というもの（常作：名词 + というものは）",
+    "examples": [
+      {
+        "translation": "小孩子这种天性，每天就是尽情地玩耍。"
+      },
+      {
+        "translation": "所谓大学生，就是要把大量时间投入到学术研究中。"
+      },
+      {
+        "translation": "所谓的日本文化，是传统事物与崭新事物的交相融合。"
+      },
+      {
+        "translation": "所谓的离别，总归是一件令人悲伤的事。"
+      }
+    ]
   },
   "ja_Noun_39": {
-    "title": "Noun といったところだ (Noun to itta tokoro da)",
-    "shortExplanation": "表示 'at most', 'as much as', or 'limited to'.",
-    "longExplanation": "Noun といったところだ describes an upper limit or a maximum extent, often translating to 'at most' or 'around...'. It suggests the speaker doesn’t expect anything beyond that limit.",
-    "formation": "名词 + といったところだ"
+    "title": "名词 + といったところだ (Noun to itta tokoro da)",
+    "shortExplanation": "表示程度或数量的上限，带有“充其量不过如此”的语气；“充其量也就是……”、“顶多是……”。",
+    "longExplanation": "句型“名词 + といったところだ”用于指出数量、水平或程度所能达到的最高限度，含有“即使往高了估算，充其量也不过就是这个程度”（“充其量也就是……”、“顶多不过……”、“也就是……上下”）的语感。说话人通常认为该数值或程度并不算高，常与副词“せいぜい（顶多）”、“多くても（最多也就）”呼应使用。",
+    "formation": "名词（数量 / 水平 / 程度） + といったところだ（或 といったところです）",
+    "examples": [
+      {
+        "translation": "他的英语水平充其量也就是初级阶段。"
+      },
+      {
+        "translation": "我的日语词汇量顶多也就1000个词左右。"
+      },
+      {
+        "translation": "他每天跑步的极限顶多也就是5公里左右。"
+      },
+      {
+        "translation": "那家公司的员工充其量也就20人左右。"
+      }
+    ]
   },
   "ja_Noun_40": {
-    "title": "Noun といわず Noun といわず (A to iwazu B to iwazu)",
-    "shortExplanation": "表示 'both A and B' or 'be it A or B'; applies to both without distinction.",
-    "longExplanation": "The grammar pattern AといわずBといわず means 'be it A or B' or 'both A and B.' It emphasizes that something applies widely, without distinguishing between A and B.",
-    "formation": "Noun1 + といわず + Noun2 + といわず + (rest of the sentence)"
+    "title": "名词1 + といわず + 名词2 + といわず (A to iwazu B to iwazu)",
+    "shortExplanation": "表示不分彼此、毫无例外地全都如此；“无论是……还是……”、“不论……还是……”。",
+    "longExplanation": "句型“名词1 + といわず + 名词2 + といわず”意为“不单说是A还是B，二者都毫无分别”，用来强调某种状态或行为在整个范围内全面存在，不分A还是B，一律同样适用（“无论是A还是B都……”、“不论……还是……”）。常与成对的反义词或并列概念（如昼夜、冬夏、老幼、男女、身体各部位等）搭配使用，突出其无一例外、全面覆盖。",
+    "formation": "名词1 + といわず + 名词2 + といわず + [表示全面、无一例外的后文]",
+    "examples": [
+      {
+        "translation": "无论是冬天还是夏天，他总是吃着冰淇淋。"
+      },
+      {
+        "translation": "无论年长还是年轻，所有人都能在这场活动中尽享乐趣。"
+      },
+      {
+        "translation": "不论男女，任何人都会喜欢这部电影吧。"
+      },
+      {
+        "translation": "不管是周一还是周二，那家店每天都顾客盈门。"
+      }
+    ]
   },
   "ja_Noun_41": {
-    "title": "Noun + ときたら (〜tokitara)",
-    "shortExplanation": "表示 strong feelings about a topic; 'speaking of', 'when it comes to'.",
-    "longExplanation": "Noun + ときたら emphasizes strong feelings—often frustration, admiration, or surprise—about that noun. It can translate as 'when it comes to...', 'speaking of...', or 'honestly, about...'.",
-    "formation": "名词 + ときたら"
+    "title": "名词 + ときたら (〜tokitara)",
+    "shortExplanation": "提起某话题并对其抒发强烈的情感（多为不满、埋怨、无奈，偶作赞叹）；“说起……（可真是）……”、“提起……”。",
+    "longExplanation": "句型“名词 + ときたら”用于提起一个特定的话题或人物，随后对其抒发说话人强烈的感情（“提起……可真是……”、“说起……简直……”）。绝大多数情况下带有说话人的责备、不满、厌烦或无可奈何的情绪（常用于批评某人的态度、当今年轻人等），少数情况下也可用于表达极度的感叹或赞美。属于口语色彩较浓的表达。",
+    "formation": "名词 + ときたら + [带有强烈主观情绪的后述评价]",
+    "examples": [
+      {
+        "translation": "一说到寿司，他就什么都吃不下了。"
+      },
+      {
+        "translation": "一遇到数学难题，她总是束手无策。"
+      },
+      {
+        "translation": "要说起那家店的汉堡包，那可真是太美味了。"
+      },
+      {
+        "translation": "提起他平时那种态度，可真叫人头疼无奈。"
+      }
+    ]
   },
   "ja_Noun_42": {
-    "title": "Noun とは比べものにならない (~to wa kurabemono ni naranai)",
-    "shortExplanation": "指示 something is not comparable; 'beyond comparison'.",
-    "longExplanation": "Use とは比べものにならない to emphasize that two things differ so greatly they cannot be compared—one is vastly superior or different in scale, quality, etc.",
-    "formation": "名词 + とは比べものにならない"
+    "title": "名词 + とは比べものにならない (~to wa kurabemono ni naranai)",
+    "shortExplanation": "强调两者差距悬殊，根本无法相提并论；“与……无法相比”、“根本不能同……相提并论”。",
+    "longExplanation": "句型“名词 + とは比べものにならない”（修饰其他成分时亦常作“～とは比べものにならないほど / ～とは比べものにならない＋名词”）用于强调两件事物在质量、性能、规模、程度等方面差距极大，一方具有压倒性优势或截然不同，以至于根本无法放在一起比较（“远非……可比”、“同……相比不可同日而语”）。",
+    "formation": "名词 + とは比べものにならない（修饰副词形式：とは比べものにならないほど）",
+    "examples": [
+      {
+        "translation": "新车的速度与旧车相比根本不可同日而语。"
+      },
+      {
+        "translation": "他的英语流利程度与我相比根本无法相提并论。"
+      },
+      {
+        "translation": "日本的技术先进程度是其他国家所无法企及的。"
+      },
+      {
+        "translation": "这次地震的受灾程度与上一次相比根本不能相提并论。"
+      }
+    ]
   },
   "ja_Verb_43": {
-    "title": "Verb てしまう (〜te shimau)",
-    "shortExplanation": "表示 unintentional actions or actions with regrettable outcomes; 'to end up doing', 'to accidentally do'.",
-    "longExplanation": "The ～てしまう grammar point is 用于表示 unintentional actions or actions with regrettable outcomes. It can often be translated as 'to end up doing' or 'to accidentally do' in English. The formation requires adding しまう to the て-form of a verb.",
-    "formation": "动词-te form + しまう"
+    "title": "～てしまう (～te shimau)",
+    "shortExplanation": "表示动作彻底完成，或表达因动作发生而产生的遗憾、悔恨或无可奈何的心情；'……完了'、'不小心……了'。",
+    "longExplanation": "句型'～てしまう'由动词て形后接补助动词'しまう'构成，主要具有两大用法：①表示因发生了非本意或出乎意料的事情而感到遗憾、悔恨或后悔（相当于汉语的'不小心……了'、'搞得……了'）；②表示动作彻底完成、做到底（相当于汉语的'……光了'、'全部……完了'）。在口语随意的表达中，常音变为'～ちゃう'（接浊音て形时为'～じゃう'）。敬体形式为'～てしまいました'。",
+    "formation": "动词て形 + しまう（敬体：～てしまいました；口语形式：～ちゃう / ～じゃう）",
+    "examples": [
+      {
+        "translation": "我把蛋糕全给吃光了。"
+      },
+      {
+        "translation": "我不小心把作业给忘带了。"
+      },
+      {
+        "translation": "我不小心把秘密告诉他了。"
+      },
+      {
+        "translation": "我没看价签，不小心买了一件很贵的衣服。"
+      }
+    ]
   },
   "ja_Verb_44": {
-    "title": "Verb て ほしい (Verb-te hoshii)",
-    "shortExplanation": "Express a desire for someone else to do something; 'I want (someone) to'.",
-    "longExplanation": "The て ほしい grammar point is 用于表达 the speaker's desire for someone else to do an action. It is formed by combining the て-form of a verb with ほしい. The subject is usually followed by the particle に, but it can be dropped in casual speech.",
-    "formation": "动词-て form + ほしい"
+    "title": "～てほしい (～te hoshii)",
+    "shortExplanation": "表达说话人希望他人做某事，相当于汉语的“希望（某人）做……”、“想让（某人）做……”。",
+    "longExplanation": "句型“～てほしい”由动词て形后接表示愿望的形容词“ほしい”构成。与表达说话人自身想做某事的“～たい”不同，“～てほしい”用于表达说话人希望对方或第三者实施某种动作。动作的执行者通常用格助词“に”表示（日常口语中常被省略）。其否定形式有两种：动词ない形接“でほしい”（希望不要……，口语中更常用）和动词て形接“ほしくない”（不想让……）。由于该句型直接坦率地表达主观愿望，一般用于对晚辈、同辈或家人等亲密关系，不宜直接对长辈、上级或客户使用，在商务及正式场合通常用更客气委婉的“～ていただきたい”或“～ていただけますか”代替。",
+    "formation": "动词て形 + ほしい / 否定形式：动词ない形 + でほしい（或动词て形 + ほしくない）",
+    "examples": [
+      {
+        "translation": "我希望孩子能更加用功读书。"
+      },
+      {
+        "translation": "我希望他能来得更早一些。"
+      },
+      {
+        "translation": "我希望朋友能读一读那本书。"
+      },
+      {
+        "translation": "我希望老师能回答这个问题。"
+      }
+    ]
   },
   "ja_Verb_45": {
-    "title": "Verb てみる (〜te miru)",
-    "shortExplanation": "用于表达 'try to' or 'attempt to do'.",
-    "longExplanation": "The ～てみる grammar point is used with verbs to express 'trying' or 'attempting' to do something. It emphasizes the idea of giving something a go or trying it out, often to see what the results or outcome will be.",
-    "formation": "动词-て form + みる"
+    "title": "～てみる (～te miru)",
+    "shortExplanation": "表示试着做某事以观察其结果或获取经验，相当于汉语的“试着……看”、“尝尝看”。",
+    "longExplanation": "句型“～てみる”由动词て形后接补助动词“みる”（源自“見る”，通常用平假名书写）构成。用于表达抱着尝试、体验的心态去做某事，以确认其结果、感受或情况如何。补助动词“みる”在句中可以像普通动词一样进行各种活用，例如接表示敬体的“～てみます”、表示请求的“～てみてください”、表示愿望的“～てみたい”以及表示提议劝诱的“～てみよう”等。",
+    "formation": "动词て形 + みる",
+    "examples": [
+      {
+        "translation": "我打算试着做一下这道菜。"
+      },
+      {
+        "translation": "请试穿一下那件衣服吧。"
+      },
+      {
+        "translation": "我们去那家新开的餐厅试试看吧。"
+      },
+      {
+        "translation": "我想试着看一看这部电影。"
+      }
+    ]
   },
   "ja_Verb_46": {
-    "title": "Verb てもらいたい (～te moraitai)",
-    "shortExplanation": "Express a desire to receive a favor or service from someone else.",
-    "longExplanation": "The ～てもらいたい grammar point is 用于表达 one's desire to receive a favor, service, or action from someone else. It is formed by attaching もらいたい to the て-form of verbs. This structure emphasizes the help or favor the speaker wants from someone else.",
-    "formation": "动词-て-form + もらいたい"
+    "title": "～てもらいたい (～te moraitai)",
+    "shortExplanation": "表达希望获得他人为自己做某事的好意或帮助，相当于汉语的“希望得到……的帮助”、“想请（某人）为我做……”。",
+    "longExplanation": "句型“～てもらいたい”由动词て形后接授受补助动词“もらう”的愿望形“もらいたい”构成。用于表达说话人希望从他人那里获得某种动作恩惠或行为帮助的心愿。动作的实施者通常由补语助词“に”表示。与单纯表示希望对方做某事的“～てほしい”相比，“～てもらいたい”更加突出了说话人作为受益者的视角（希望“领受”对方的好意）。该句型多用于平辈、熟人或晚辈之间；若面对上级、长辈或商务客户时，应改用更具敬意和自谦色彩的“～ていただきたい”。",
+    "formation": "动词て形 + もらいたい（敬体：～てもらいたいです / ～てもらいたいんですが）",
+    "examples": [
+      {
+        "translation": "我想请人帮我把这件行李搬一下。"
+      },
+      {
+        "translation": "我希望他能把那个消息告诉我。"
+      },
+      {
+        "translation": "我想让朋友教我日语。"
+      },
+      {
+        "translation": "我希望工作人员能为我说明一下办理入住的方法。"
+      }
+    ]
   },
   "ja_Verb_47": {
-    "title": "Verb て もらう (Verb-te morau)",
-    "shortExplanation": "Express receiving a favor or action from someone.",
-    "longExplanation": "The Verb て もらう grammar point is 用于表达 that the speaker or a third person receives a favor or action from someone else. It describes an action performed by someone for the benefit of the speaker or a third person, implying gratitude or request from the beneficiary.",
-    "formation": "动词-て form + もらう"
+    "title": "～てもらう (～te morau)",
+    "shortExplanation": "表示请他人为自己做某事，或得到他人动作上的恩惠与帮助；相当于汉语的“请（某人）帮忙做……”、“得到……的帮助”。",
+    "longExplanation": "句型“～てもらう”由动词て形后接授受补助动词“もらう”（领受、得到）构成。用于描述主语（通常是说话人或己方人员）接受他人所实施的对自身有益的动作，并带有一种感激之情。在此句式中，承受恩惠的主体作主语（用“は”或“が”表示），而实施具体动作的施事者则用格助词“に”来标示。敬体形式为“～てもらいます”或过去式“～てもらいました”。该句型适用于同辈、朋友或晚辈；若给予帮助者为长辈或上级，则须改用自谦语“～ていただく”。",
+    "formation": "动词て形 + もらう（敬体：～てもらいます / ～てもらいました）",
+    "examples": [
+      {
+        "translation": "我请朋友帮我一起辅导了作业。"
+      },
+      {
+        "translation": "妈妈帮我把房间打扫干净了。"
+      },
+      {
+        "translation": "我想让他帮我拿一下行李。"
+      },
+      {
+        "translation": "老师能帮我解答一下疑问吗？"
+      }
+    ]
   },
   "ja_Verb_48": {
-    "title": "Verb てもらえませんか (～te moraemasen ka)",
-    "shortExplanation": "A polite way to ask for a favor or request someone to do something.",
-    "longExplanation": "The ～てもらえませんか grammar point is a polite and indirect way of asking someone to do something for you or asking for a favor. It is formed by conjugating the verb into the て-form and adding もらえませんか. This form is used in conversations to show politeness and humility.",
-    "formation": "动词-て form + もらえませんか"
+    "title": "～てもらえませんか (～te moraemasen ka)",
+    "shortExplanation": "委婉而礼貌地提出请求，请对方为自己做某事；相当于汉语的“能请您帮我……吗？”、“可以帮我……吗？”。",
+    "longExplanation": "句型“～てもらえませんか”由动词て形后接授受动词“もらう”的可能形否定敬体疑问式（即“もらえません”加疑问终助词“か”）构成。字面含义为“我能否领受到您……的帮助呢？”。通过否定疑问的形式，将选择权交由对方，使请求显得极为委婉含蓄，毫无强加之感。其客气程度高于“～てください”和“～てくれませんか”，广泛适用于向同事、熟人或外部人士提出委托。若面对上级长辈或尊贵客户，则需要进一步升级为自谦语“～ていただけませんか”或“～ていただけないでしょうか”。",
+    "formation": "动词て形 + もらえませんか",
+    "examples": [
+      {
+        "translation": "能请您帮我看一下这封信吗？"
+      },
+      {
+        "translation": "可以帮我拿一下行李吗？"
+      },
+      {
+        "translation": "能帮我打扫一下房间吗？"
+      },
+      {
+        "translation": "您明天能帮我参加一下会议吗？"
+      }
+    ]
   },
   "ja_Verb_49": {
-    "title": "Verb ない ことがある (Verb-nai koto ga aru)",
-    "shortExplanation": "表示 that something doesn't always happen or there are occasions when it doesn't happen.",
-    "longExplanation": "The ないことがある grammar point is 用于表示 that there are instances or times when something doesn't happen or isn't done. It is formed by combining the negative form of a verb (ない) with ことがある.",
-    "formation": "动词-negative form + ことがある"
+    "title": "～ないことがある (～nai koto ga aru)",
+    "shortExplanation": "表示平时普遍发生的事情，有时或偶尔也会出现不发生的情况；相当于汉语的“有时不……”、“也有不……的时候”。",
+    "longExplanation": "句型“～ないことがある”由动词否定形（ない形）后接形式名词“こと”、主格助词“が”及存在动词“ある”构成。用于说明某种惯常发生或理应如此的状态并非百分之百绝对，偶尔、有时会出现不进行该动作或不发生该现象的情况。句中常与“たまに（偶尔）”、“ときどき（有时）”等表示频率的副词搭配使用。需要注意将其与表示缺乏某种经历的“～たことがない（从未……过）”区分开来。",
+    "formation": "动词ない形 + ことがある（敬体：～ないことがあります）",
+    "examples": [
+      {
+        "translation": "有时他不会出席会议。"
+      },
+      {
+        "translation": "这趟电车有时不会准点到达。"
+      },
+      {
+        "translation": "我有时是不吃早饭的。"
+      },
+      {
+        "translation": "她有时会不接电话。"
+      }
+    ]
   },
   "ja_Noun_50": {
-    "title": "Noun ならいざ知らず (~nara izashirazu)",
-    "shortExplanation": "表示 'maybe X is possible, but Y is definitely not'. Often 'let alone...'.",
-    "longExplanation": "「Xならいざ知らず、Yは…」 emphasizes that while X might be possible or acceptable, Y is out of the question or even more difficult. 可以翻译为 'I could understand X, but Y is impossible' or 'Maybe X, but definitely not Y.'",
-    "formation": "Noun1 + ならいざ知らず + Noun2 (comment)"
+    "title": "名词 + ならいざ知らず (nara iza shirazu)",
+    "shortExplanation": "表示“如果是……倒还罢了，但……”，对比两者并对后者表示否定、无奈或不满。",
+    "longExplanation": "句型“名词1 + ならいざ知らず、名词2/句子…”用于通过极端对比来表达说话人的惊讶、不满、批评或无可奈何。其含义为“如果是前项的话尚且可以理解或原谅（暂且不论），但若是后项的话就完全不可能或不可容忍了”（“若是……还情有可原，但……”）。后半句通常带有极度的否定、难以办到或难以置信的评价。",
+    "formation": "名词1 + ならいざ知らず ＋ 名词2 / 分句［评价/否定］",
+    "examples": [
+      {
+        "translation": "数学倒还罢了，物理我可是一点儿都不懂。"
+      },
+      {
+        "translation": "跑5公里倒还可以，10公里我绝对跑不下来。"
+      },
+      {
+        "translation": "要是日语倒还好说，中文我根本不会讲。"
+      },
+      {
+        "translation": "冷水倒也罢了，在热水里游泳我想都没想过。"
+      }
+    ]
   },
   "ja_Verb_51": {
-    "title": "Verb ない ことになる (Verb nai koto ni naru)",
-    "shortExplanation": "表示 a result; 'end up not', 'it will become that', 'it would mean that'.",
-    "longExplanation": "The Verb ない ことになる grammar point is 用于表达 a result or consequence. It translates to 'end up not', 'it will become that', or 'it would mean that' in English. It is formed by using the negative form (ない) of a verb followed by ことになる.",
-    "formation": "动词-negative (ない) + ことになる"
+    "title": "～ないことになる (～nai koto ni naru)",
+    "shortExplanation": "表示因客观环境、外部规章、集体决议或推论结果而导致某事不会发生；相当于汉语的“决定不……”、“结果变成不……”、“意味着不……”。",
+    "longExplanation": "句型“～ないことになる”由动词否定形（ない形）后接“ことになる”构成。用于表达某种行为不被执行或某事不发生，是由客观形势的变化、集体或上级的决定、既定的规则制度所促成的，并非出于说话人个人的主观意志。此外，也常用于根据前项假设推导出的必然逻辑结论（“这就意味着……”）。若表示既定的客观决议或既成事实，常用过去式“～ないことになった”；若表示长期规章制度，则用“～ないことになっている”。",
+    "formation": "动词ない形 + ことになる（既定决议：～ないことになった；固定规则：～ないことになっている）",
+    "examples": [
+      {
+        "translation": "如果今天他不来的话，我们的计划就不得不取消了。"
+      },
+      {
+        "translation": "如果这个项目无法顺利推进的话，收益恐怕就会随之减少。"
+      },
+      {
+        "translation": "如果她没能通过考试的话，毕业就会被推迟。"
+      },
+      {
+        "translation": "要是下雨的话，野餐大概就举行不成了吧。"
+      }
+    ]
   },
   "ja_Verb_52": {
-    "title": "Verb ないほうがいい (Verb nai hou ga ii)",
-    "shortExplanation": "表示 the idea that it is better not to do something.",
-    "longExplanation": "The ないほうがいい grammar point is used to suggest that it's better not to do a certain action. It is formed by taking the negative form of the verb and adding ほうがいい.",
-    "formation": "动词-negative form + ほうがいい"
+    "title": "～ないほうがいい (～nai hou ga ii)",
+    "shortExplanation": "用于向对方提出劝告或建议，表示最好不要做某事；相当于汉语的“最好不要……”、“还是不……为好”。",
+    "longExplanation": "句型“～ないほうがいい”由动词否定形（ない形）后接形式名词“ほう”及形容词“いい”构成。用于向对方提出忠告、建议或提醒，指出不做某行为是更为明智、妥当的选择，否则可能会引发不良后果或造成麻烦。口语中常接“です”构成礼貌表达“～ないほうがいいです”。与之相对的正面建议句型为“～たほうがいい”（动词た形 + ほうがいい；特别需要注意：肯定建议通常使用た形，而否定建议则必须使用ない形）。",
+    "formation": "动词ない形 + ほうがいい（敬体：～ないほうがいいです）",
+    "examples": [
+      {
+        "translation": "最好不要吃这种药。"
+      },
+      {
+        "translation": "着急的时候，最好还是不要跑。"
+      },
+      {
+        "translation": "如果不想被他知道秘密的话，最好什么都别说。"
+      },
+      {
+        "translation": "下雨天最好不要出门。"
+      }
+    ]
   },
   "ja_Verb_53": {
-    "title": "Verb ながら (〜nagara)",
-    "shortExplanation": "表示 'while' or 'as' in the sense of doing two things simultaneously.",
-    "longExplanation": "The ～ながら grammar point is 用于表示 that two actions are happening simultaneously or that one action is happening while another is taking place. This can be translated to 'while' or 'as' in English. It is primarily used with verbs.",
-    "formation": "动词-masu stem + ながら"
+    "title": "～ながら (～nagara)",
+    "shortExplanation": "表示同一个主体同时进行两个动作，相当于汉语的“一边……一边……”、“边……边……”。",
+    "longExplanation": "接续助词“～ながら”接在动词连用形（即ます形去掉ます）之后，用于表示同一动作主体在同一时间内同时进行两项活动。使用该句型时需要注意两个核心原则：①两个动作的施事主体必须是同一个人；②句子的重心在后项动作，“ながら”前面的动作通常是附带的、次要的伴随动作，后面的动作才是主要的中心动作。整句话的时态由最后的主动词决定。此外，“ながら”在较高级别中还可表示逆接让步转折（相当于“虽然……但是……”），但初中级阶段主要以表示同时进行为主。",
+    "formation": "动词连用形（ます形去ます）+ ながら",
+    "examples": [
+      {
+        "translation": "我一边看电视一边做作业。"
+      },
+      {
+        "translation": "我一边听音乐一边做饭。"
+      },
+      {
+        "translation": "边走路边看手机是很危险的。"
+      },
+      {
+        "translation": "他一边说着话一边在笑。"
+      }
+    ]
   },
   "ja_Verb_54": {
-    "title": "Verb なさい (〜nasai)",
-    "shortExplanation": "A command form used to give orders or instructions; 'Please do', 'Do this'.",
-    "longExplanation": "The なさい grammar point is used to give orders or instructions, often used by teachers, parents, or other authority figures when addressing someone younger or of lower status. It is formed by attaching なさい to the stem of a verb. This form sounds polite, but can be considered strong and direct.",
-    "formation": "动词-stem + なさい"
+    "title": "～なさい (～nasai)",
+    "shortExplanation": "长辈或权威者对晚辈、下级发出命令、指示或要求，相当于汉语的“请……（命令口气）”、“快……吧”。",
+    "longExplanation": "命令句尾“～なさい”接在动词连用形（即ます形去掉ます）之后，用于向对方发出命令、指示或督促。它起源于尊敬语“なさる”的命令形式，因此听起来措辞端庄、语气规范，但其实质依然属于上对下的强制性指令。常见使用场合包括：父母对子女的叮嘱督促、老师对学生的课堂指令，以及各种试卷上的答题指导（如“写出正确的答案”）。口语亲切交流中常缩略为“～な”（如“聞きな”）。绝对不可用于对长辈、上级或平辈同僚。",
+    "formation": "动词连用形（ます形去ます）+ なさい",
+    "examples": [
+      {
+        "translation": "快去把房间打扫干净！"
+      },
+      {
+        "translation": "快去学习！"
+      },
+      {
+        "translation": "快点起床！"
+      },
+      {
+        "translation": "快做作业！"
+      }
+    ]
   },
   "ja_Verb_55": {
-    "title": "Verb にくい (〜nikui)",
-    "shortExplanation": "Express difficulty or complexity; 'hard to', 'difficult to', 'not easily'.",
-    "longExplanation": "The ～にくい grammar point is 用于表达 that an action is difficult or relatively hard to do. It is used by attaching にくい to the stem of a verb. 可以翻译为 'hard to', 'difficult to', or 'not easily' in English.",
-    "formation": "动词-stem + にくい"
+    "title": "～にくい (～nikui)",
+    "shortExplanation": "接在动词连用形后，表示某动作难以进行或某事态不易发生；相当于汉语的“难以……”、“难于……”。",
+    "longExplanation": "接尾词“～にくい”接在动词连用形（即ます形去掉ます）之后，构成复合一类形容词（い形容词），表示某种动作做起来十分困难、费力，或者某种现象不容易出现。结合后的词语完全按照い形容词的规则进行活用（如否定形式“～にくくない”、过去形式“～にくかった”等）。与侧重于生理或心理痛苦不适的“～づらい”相比，“～にくい”多从客观能力、客观属性或事物本身的物理特征出发，表达普遍意义上的“难以实现”。其反义句型为“～やすい（容易……）”。",
+    "formation": "动词连用形（ます形去ます）+ にくい",
+    "examples": [
+      {
+        "translation": "这个字很难读。"
+      },
+      {
+        "translation": "这扇门很难打开。"
+      },
+      {
+        "translation": "他的字迹很难辨认。"
+      },
+      {
+        "translation": "这道菜做起来很麻烦（很难做）。"
+      }
+    ]
   },
   "ja_Verb_56": {
-    "title": "Verb やすい (〜yasui)",
-    "shortExplanation": "指示 that something is easy to do; 'easy to', 'easy for'.",
-    "longExplanation": "The やすい grammar point is 用于表达 that something is easy to do or easy for someone. It is attached to the verb stem and can be translated as 'easy to' or 'easy for' in English. This formation is used with verbs only.",
-    "formation": "动词-stem + やすい"
+    "title": "～やすい (～yasui)",
+    "shortExplanation": "接在动词连用形后，表示某动作做起来容易，或某事态容易发生；相当于汉语的“容易……”、“好……”。",
+    "longExplanation": "接尾词“～やすい”接在动词连用形（即ます形去掉ます）之后，构成复合一类形容词（い形容词）。主要包含两种核心语意：①某动作做起来十分容易、顺手或方便（如“读起来很容易”、“很耐穿”）；②具有容易发生某种变化或倾向的特性（多用于“容易感冒”、“容易损坏”等消极倾向）。复合后的词语按照普通い形容词的规则进行活用（如“～やすかった”、“～やすくない”等）。此句型与“～にくい（难以……）”形成鲜明的反义对照。",
+    "formation": "动词连用形（ます形去ます）+ やすい",
+    "examples": [
+      {
+        "translation": "这本书很好读（很容易读懂）。"
+      },
+      {
+        "translation": "这件衬衫穿起来很舒服（很好穿）。"
+      },
+      {
+        "translation": "他是一个很好相处（很好说话）的人。"
+      },
+      {
+        "translation": "这道菜做起来很容易。"
+      }
+    ]
   },
   "ja_Verb_57": {
-    "title": "Verb ようと思う (Verb-you to omou)",
-    "shortExplanation": "Express intention or plan to do something; 'I think I will', 'I plan to', 'I intend to'.",
-    "longExplanation": "The ようと思う grammar point is 用于表达 the intention or plan to do something in the future. 可以翻译为 'I think I will', 'I plan to', or 'I intend to' in English. The formation involves using the volitional form of the verb followed by と思う.",
-    "formation": "动词-volitional + と思う"
+    "title": "～ようと思う (～you to omou)",
+    "shortExplanation": "表达说话人打算或决意要做某事；相当于汉语的“我想……”、“我打算……”、“我正琢磨着……”。",
+    "longExplanation": "句型“～ようと思う”由动词意志形（意向形）后接引用助词“と”及动词“思う”构成。用于向对方陈述自己未来的意图、打算或行动计划。在实际运用中需要区分两种时态表现：①“～ようと思う”通常表示说话人在说话当时刚刚萌生的打算或决意；②而进行时态“～ようと思っている”则表示这一想法由来已久，此前早已考虑并一直持续至今。与表示坚定计划的“～つもりだ”相比，“～ようと思う”语感更为柔和委婉，给听者留有商量或调整的余地；若指已有确定日期的既定日程安排，则使用“～予定だ”。",
+    "formation": "动词意志形（意向形）+ と思う（持续意图：～ようと思っている；敬体：～ようと思います）",
+    "examples": [
+      {
+        "translation": "我想明天去看场电影。"
+      },
+      {
+        "translation": "我打算周末和朋友一起出去玩。"
+      },
+      {
+        "translation": "我觉得自己应该更加努力学习。"
+      },
+      {
+        "translation": "我打算明年去国外旅游。"
+      }
+    ]
   },
   "ja_Verb_58": {
-    "title": "Verb ように (〜you ni)",
-    "shortExplanation": "用于表达 'like', 'as if', 'in order to', or 'so that'.",
-    "longExplanation": "The ～ように grammar point is 用于表达 different meanings depending on the context: 'like', 'as if', 'in order to', or 'so that'. Formation patterns can include: Noun + のように, Verb dictionary/negative form + ように, い-adjective + ように, etc.",
-    "formation": "Examples: 名词 + のように / 动词-casual + ように / い-adjective + ように"
+    "title": "～ように (～you ni)",
+    "shortExplanation": "表示为了达到某种预期状态或目的（“为了……”、“以便……”），或用于比喻描绘（“像……一样”）。",
+    "longExplanation": "句型“～ように”是日语中极具实用价值的多功能句型，其核心用法主要体现在以下两个方面：①表示目的（相当于汉语的“为了能……”、“以便……”）：前项多接无意志动词（如可能动词、状态动词“見える、聞こえる、分かる”或动词否定形“ない形”），后项采取积极行动以促成前项状态的实现或避免不良结果，与接意志动词表示直接目的的“～ために”形成互补；②表示比喻或比拟（相当于汉语的“像……一样”）：接在名词（名词 + のように）或修饰从句后，生动形象地比喻某种神态、动作或性质。此外在句末还可用作祈愿祝福或间接指示命令。",
+    "formation": "目的用法：动词字典形（原形）/ ない形 + ように ； 比喻用法：名词 + のように / 动词普通形 + ように",
+    "examples": [
+      {
+        "translation": "她像小鸟一样轻盈地起舞。"
+      },
+      {
+        "translation": "为了不忘掉所学的内容，每天都复习一下吧。"
+      },
+      {
+        "translation": "为了能成为歌手，我每天都在练习唱歌。"
+      },
+      {
+        "translation": "过马路时，请确认一下有没有车开过来。"
+      }
+    ]
   },
   "ja_Verb_59": {
-    "title": "Verb ようにする (Verb ~you ni suru)",
-    "shortExplanation": "Make an effort to; try to; see to it that; ensure that.",
-    "longExplanation": "The ようにする grammar point is 用于表达 that someone is making an effort, trying, or seeing to it that something happens. 可以翻译为 'make sure to', 'try to', or 'ensure that' in English. The formation is simple, involving a verb in the dictionary form followed by ようにする.",
-    "formation": "动词-dictionary form + ようにする"
+    "title": "～ようにする (～you ni suru)",
+    "shortExplanation": "表示为达到某种状态或养成习惯而有意识地努力、设法去做或不做某事；“努力做到……”、“尽量……”、“设法……”。",
+    "longExplanation": "语法句型“～ようにする”用于表示说话人为了实现某种目标或养成良好习惯，有意识地付出努力、采取行动或加以留心。使用“～ようにしている”时，侧重于表示目前一直在坚持的日常习惯；使用“～ようにしてください”时，则用于委婉、客气地叮嘱或提醒对方尽量做好某件事。",
+    "formation": "动词辞书形 / ない形 + ようにする",
+    "examples": [
+      {
+        "translation": "我尽量每天都坚持运动。"
+      },
+      {
+        "translation": "请尽量早点睡觉。"
+      },
+      {
+        "translation": "我会努力遵守约定的。"
+      },
+      {
+        "translation": "我打算尽量不去见他。"
+      }
+    ]
   },
   "ja_Verb_60": {
-    "title": "Verb ようになる (〜you ni naru)",
-    "shortExplanation": "Express a change in ability, situation or state; 'become able to', 'come to', 'begin to'.",
-    "longExplanation": "The ようになる grammar implies a change or development involving new abilities, situations or states. It can be translated into English as 'become able to', 'come to' or 'begin to'. This grammar is often used when talking about a skill that has been acquired or a change in habit or situation over time.",
-    "formation": "动词-dictionary/potential form + ようになる"
+    "title": "～ようになる (～you ni naru)",
+    "shortExplanation": "表示能力、状态或习惯等随着时间的推移发生了自然转变；“变得会……”、“逐渐能够……”、“开始（形成某种习惯）”。",
+    "longExplanation": "语法句型“～ようになる”用于表达某种事物、状态或个人能力发生了阶段性、自然的变化。当接在动词可能形之后时，表示从“不会/不能”变为“会/能够”；当接在一般动词的辞书形或ない形之后时，表示形成了过去所没有的新习惯、认知或生活方式。常译为“变得……”、“开始能够……”等。",
+    "formation": "动词可能形 / 动词辞书形 / 动词ない形 + ようになる",
+    "examples": [
+      {
+        "translation": "我已经能够说日语了。"
+      },
+      {
+        "translation": "最近我开始早睡了。"
+      },
+      {
+        "translation": "他已经变得会弹钢琴了。"
+      },
+      {
+        "translation": "自从开始这份工作后，我逐渐感觉每天都很忙碌。"
+      }
+    ]
   },
   "ja_あまりありません_61": {
     "title": "あまり～ありません (amari ~ arimasen)",
-    "shortExplanation": "Express 'not very', 'not much', or 'not really' when describing a negative state or situation.",
-    "longExplanation": "The grammar point あまり～ありません is used to describe a negative state or condition and indicate that it's not very, not much, or not really. It is commonly used with verbs in the negative form and can be used with い-adjectives, な-adjectives, and nouns.",
-    "formation": "あまり + 动词-ないform + ありません / あまり + い-形容词-く ありません / あまり + な-形容词・名词 じゃありません"
+    "shortExplanation": "与礼貌否定形式呼应，表示程度较低；'不太……'、'不怎么……'。",
+    "longExplanation": "副词'あまり'（amari）与礼貌否定谓语（～ありません / ～じゃありません）呼应使用，表示动作的频率或状态的程度并不高，相当于汉语的'不太……'、'并不怎么……'。这种部分否定方式比直接的全盘否定更加委婉客气。可修饰动词否定形、い形容词词尾变く接ありません，以及な形容词或名词接じゃありません（ではありません）。",
+    "formation": "あまり + 动词礼貌否定形（～ません / ～ていません） / あまり + い形容词词尾变く + ありません / あまり + な形容词 / 名词 + じゃありません（ではありません）",
+    "examples": [
+      {
+        "translation": "他不太累。"
+      },
+      {
+        "translation": "她其实并不怎么快哦。"
+      },
+      {
+        "translation": "我平时不怎么学习。"
+      },
+      {
+        "translation": "我没有多少钱。"
+      }
+    ]
   },
   "ja_あまりないです_62": {
     "title": "あまり～ないです (amari ~ nai desu)",
-    "shortExplanation": "Express 'not really' or 'not very'; used to soften a negative statement.",
-    "longExplanation": "The あまり～ないです grammar point is 用于表达 that something is 'not really' or 'not very' to a certain extent. It is often used to soften a negative statement. It can be used with verbs, い-adjectives, and な-adjectives in their negative forms.",
-    "formation": "あまり + 动词-ないform + です / あまり + い-形容词-くない + です / あまり + な-形容词-じゃない + です"
+    "shortExplanation": "在日常会话中委婉表达部分否定；'不太……'、'不怎么……'。",
+    "longExplanation": "句型'あまり～ないです'由副词'あまり'搭配简体否定形（ない形）并在末尾加上'です'构成。这是一种在现代日常口语中极为常见的礼貌表达方式，用于缓和否定语气，表达'不太……'、'并不怎么……'，显得十分自然且富有亲和力。",
+    "formation": "あまり + 动词ない形 + です / あまり + い形容词词尾变く + ないです / あまり + な形容词 / 名词 + じゃないです",
+    "examples": [
+      {
+        "translation": "我吃得并不多。"
+      },
+      {
+        "translation": "这部电影不太有意思。"
+      },
+      {
+        "translation": "他不太热情亲切。"
+      },
+      {
+        "translation": "我的日语不是很擅长。"
+      }
+    ]
   },
   "ja_あります_63": {
     "title": "～あります (〜arimasu)",
-    "shortExplanation": "Indicate possession or existence of inanimate objects; 'there is', 'there are'.",
-    "longExplanation": "The あります grammar point is 用于表示 the possession or existence of inanimate objects. 可以翻译为 'there is' or 'there are' in English. It is different from います, which is used for people and most living creatures. あります is commonly used with particle が to mark the object.",
-    "formation": "宾语 + が + あります"
+    "shortExplanation": "表示非生物、植物或抽象事物的存在与拥有；'有……'、'在……'。",
+    "longExplanation": "动词'あります'（arimasu）用于表示物品、植物、建筑物、设施或抽象事物等无自主意识对象的存在或拥有。所存在的对象用助词'が'标示，存在的场所则用助词'に'标示（场所 + に + 物体 + が + あります）。必须注意与表示具有自主行动能力的人或动物存在的'います'相区别。",
+    "formation": "名词（非生物/植物等） + が + あります / 场所 + に + 名词 + が + あります",
+    "examples": [
+      {
+        "translation": "教室里有桌子。"
+      },
+      {
+        "translation": "这个公园里有许多花。"
+      },
+      {
+        "translation": "车站附近有一家便利店。"
+      },
+      {
+        "translation": "家里有一台旧电视。"
+      }
+    ]
   },
   "ja_いかがですか_64": {
-    "title": "～いかがですか。 (〜ikaga desu ka.)",
-    "shortExplanation": "A polite way to ask someone's thoughts, opinions, or preferences; 'how about', 'how is'.",
-    "longExplanation": "The ～いかがですか grammar point is used to politely ask someone's thoughts, opinions, or preferences. 可以翻译为 'how about' or 'how is' in English. The formation is quite straightforward when used with verbs or nouns.",
-    "formation": "名词 + は + いかがですか / (动词-て form + は) いかがですか"
+    "title": "～いかがですか (〜ikaga desu ka)",
+    "shortExplanation": "礼貌地提出劝诱、建议或征求对方意见；'……怎么样？'、'来点……如何？'。",
+    "longExplanation": "'～いかがですか'是'どうですか'的敬语郑重说法。常用于向长辈、客人礼貌地推荐或招待饮品茶点（名词 + は + いかがですか）、委婉地提出行动建议（动词て形 + は + いかがですか），或者询问对方的意向与看法。广泛应用于商务礼仪与接待服务等正式场合。",
+    "formation": "名词 + は + いかがですか / 动词て形 + は + いかがですか",
+    "examples": [
+      {
+        "translation": "来点茶怎么样？"
+      },
+      {
+        "translation": "这件洋装怎么样？"
+      },
+      {
+        "translation": "要不要吃点蛋糕呢？"
+      },
+      {
+        "translation": "去看场电影如何？"
+      }
+    ]
   },
   "ja_いくつ_65": {
     "title": "いくつ～ (ikutsu~)",
-    "shortExplanation": "用于表达 'how many' or ask for the number of something.",
-    "longExplanation": "The grammar point いくつ is used when asking or expressing 'how many' of something there are, or to indicate an unspecified number. In English, 可以翻译为 'how many' or 'several'.",
-    "formation": "いくつ + 名词 (optional)"
+    "shortExplanation": "疑问词，用于询问事物的数量'几个/多少个'；亦可与'か'搭配表示'几个/一些'。",
+    "longExplanation": "'いくつ'（ikutsu）是用于询问通用物品数量的疑问词（对应和语数词ひとつ、ふたつ等），意为'几个'、'多少个'，也可作为询问年龄的礼貌说法。此外，与表示不确定的助词'か'组合成'いくつか'（或'いくつかの + 名词'）时，表示不确定的少量事物，意为'几个'、'若干'、'一些'。",
+    "formation": "いくつ + 助词 / いくつ + の + 名词 / いくつか + の + 名词",
+    "examples": [
+      {
+        "translation": "有几个苹果？"
+      },
+      {
+        "translation": "我必须解决几个问题。"
+      },
+      {
+        "translation": "你能说几种语言？"
+      },
+      {
+        "translation": "聚会上有好几种饮料。"
+      }
+    ]
   },
   "ja_いつか_66": {
     "title": "いつか～ (itsuka～)",
-    "shortExplanation": "指示 an unspecified point in time; 'someday', 'one day', 'at some point'.",
-    "longExplanation": "The grammar point いつか is 用于表示 an unspecified point in time, meaning 'someday', 'one day', or 'at some point' in the future or the past. It can be used in sentences to express hopes, dreams, or possibilities.",
-    "formation": "いつか + sentence"
+    "shortExplanation": "表示将来或过去某个不确定的时间点；'总有一天'、'某天'、'迟早'。",
+    "longExplanation": "'いつか'（itsuka）由疑问词'いつ'与表示不确定的助词'か'组合而成，意为将来的某一天或过去的某个时刻。在日常使用中，特别常用于表达对未来的愿望、抱负、憧憬或推测，相当于汉语的'总有一天'、'早晚'、'不知哪一天'。",
+    "formation": "いつか + 句子 / 谓语",
+    "examples": [
+      {
+        "translation": "总有一天我想去日本。"
+      },
+      {
+        "translation": "他将来某一天会成为著名的作家吧。"
+      },
+      {
+        "translation": "我心里想着总有一天要去攀登那座山。"
+      },
+      {
+        "translation": "我相信她总有一天能够实现梦想。"
+      }
+    ]
   },
   "ja_いつでも_67": {
     "title": "いつでも～ (itsudemo～)",
-    "shortExplanation": "表示 'anytime', 'always', or 'whenever'.",
-    "longExplanation": "The いつでも grammar point is 用于表达 that something occurs, can occur, or is allowed to occur anytime, always, or whenever. It emphasizes the lack of restrictions related to time for a certain action or event.",
-    "formation": "いつでも + (动词)"
+    "shortExplanation": "表示不受任何时间限制；'随时'、'无论何时'、'总是'。",
+    "longExplanation": "'いつでも'（itsudemo）由疑问词'いつ'搭配表示全面涵盖的助词'でも'构成，用于强调时间不受任何约束。既可用于许可、邀请、提供帮助等场合，表示'随时都可以'、'在任何时候'；也可用于描述某事态的常态性，表示'无论何时都……'、'总是'。",
+    "formation": "いつでも + 动词 / 形容词 / 名词",
+    "examples": [
+      {
+        "translation": "随时欢迎来玩。"
+      },
+      {
+        "translation": "她总是面带微笑。"
+      },
+      {
+        "translation": "随时都可以打电话联系。"
+      },
+      {
+        "translation": "这家店无论何时都很拥挤。"
+      }
+    ]
   },
   "ja_いつも_68": {
     "title": "いつも～ (itsumo～)",
-    "shortExplanation": "Expressing 'always' or 'usually' in a sentence.",
-    "longExplanation": "The grammar point いつも (itsumo) is 用于表达 the meaning of 'always' or 'usually' when describing a habitual action or situation. It is often used with the present tense or past tense to show that something is done on a regular basis or has been happening consistently.",
-    "formation": "いつも + 动词 / 形容词 / 名词"
+    "shortExplanation": "频率副词，表示习惯性动作或一贯状态；'总是'、'一直'、'平素'。",
+    "longExplanation": "'いつも'（itsumo）是由'いつ'加助词'も'构成的频率副词，表示某种动作规律性、习惯性地反复进行，或者某种状态一贯持续不变，相当于汉语的'总是'、'一直'、'向来'。通常与现在时或过去时搭配，用于描述日常生活习惯或一贯的做法与偏好。",
+    "formation": "いつも + 动词 / 形容词 / 名词",
+    "examples": [
+      {
+        "translation": "他总是迟到。"
+      },
+      {
+        "translation": "我一直喜欢温顺的狗。"
+      },
+      {
+        "translation": "她总是在安静的地方学习。"
+      },
+      {
+        "translation": "我每天都吃早饭。"
+      }
+    ]
   },
   "ja_て_69": {
     "title": "～て います (～te imasu)",
-    "shortExplanation": "表示 the present continuous or ongoing action; 'to be doing', 'currently doing'.",
-    "longExplanation": "The ～て います grammar pattern is 用于表达 that an action is currently happening or ongoing. 可以翻译为 'to be doing' or 'currently doing' in English. The formation differs depending on whether it is a る-verb, う-verb, or an irregular verb, but all use the verb’s て-form + います.",
-    "formation": "动词 て-form + います"
+    "shortExplanation": "表示正在进行的动作或持续的状态；'正在……'、'在做……'。",
+    "longExplanation": "句型'～ています'用于表达动作目前正在发生或持续进行，相当于汉语中的'正在做……'或'在做……'。虽然一段动词、五段动词以及不规则动词变化为て形的方式各有不同，但接续均为：动词て形 + います。",
+    "formation": "动词て形 + います",
+    "examples": [
+      {
+        "translation": "我现在正在听音乐。"
+      },
+      {
+        "translation": "爸爸正在看报纸。"
+      },
+      {
+        "translation": "她正在学习英语。"
+      },
+      {
+        "translation": "孩子们正在公园里玩耍。"
+      }
+    ]
   },
   "ja_が_70": {
     "title": "～が (〜ga)",
-    "shortExplanation": "Particle indicating the subject of a sentence or expressing 'but'.",
-    "longExplanation": "The ～が grammar point is a particle that is 用于表示 the subject of a sentence or to express a contrast similar to 'but' in English. It has various functions depending on the context.",
-    "formation": "名词 + が / い-形容词 + が / な-形容词 + が / 动词 + が"
+    "shortExplanation": "表示主语的格助词，或作为接续助词表示转折；'……是/的'、'但是'。",
+    "longExplanation": "助词'が'（ga）是日语中最基础的核心助词之一，具有两大主要功能：\n1. 格助词用法：标示句子的语法主语，尤其在强调主语本身、排他性指定、呈现新信息或客观描写眼前现象时使用。\n2. 接续助词用法：连接两个具有对比、转折关系的句子，相当于汉语的'但是'、'可是'，亦常用于句首作委婉铺垫。",
+    "formation": "名词 + が（主语） / 动词 / 形容词 / 名词 + が（接续助词'但是'）",
+    "examples": [
+      {
+        "translation": "我才是学生。"
+      },
+      {
+        "translation": "这个苹果好吃。"
+      },
+      {
+        "translation": "他虽然聪明，但性格不好。"
+      },
+      {
+        "translation": "我想跑步，可是脚很痛。"
+      }
+    ]
   },
   "ja_が_71": {
     "title": "～が、～ (〜ga, 〜)",
-    "shortExplanation": "Express a contrast between two sentences; 'but', 'however'.",
-    "longExplanation": "The ～が、～ grammar point is 用于表达 a contrast or contradiction between two sentences or clauses. 可以翻译为 'but' or 'however' in English. This grammar point is slightly more formal than けど and is 用于展示 a contrast in the situation.",
-    "formation": "Sentence 1 + が、+ Sentence 2"
+    "shortExplanation": "接续助词，用于连接两个分句表示转折与对比；'虽然……但是……'、'……，可是……'。",
+    "longExplanation": "句型'～が、～'置于前项分句末尾，用于连接前后两个意义相反、相对立或存在矛盾的句子，相当于汉语的'虽然……但是……'、'……，可是……'。相比于日常口语中多用的'～けど'，'～が'在语调上显得更加正式、文雅与庄重，广泛适用于书面文章、新闻报道和正式会话中。",
+    "formation": "分句1 + が、+ 分句2",
+    "examples": [
+      {
+        "translation": "甜点虽然好吃，但是热量很高。"
+      },
+      {
+        "translation": "他很聪明，可是有点懒惰。"
+      },
+      {
+        "translation": "公司虽然获得了利润，但员工的工资并没有上涨。"
+      },
+      {
+        "translation": "学外语虽然很有趣，但有时也挺难的。"
+      }
+    ]
   },
   "ja_から_72": {
-    "title": "～から、～ (〜kara、～)",
-    "shortExplanation": "表示 reason or cause; 'because', 'since', 'so'.",
-    "longExplanation": "The ～から grammar point is 用于表示 the reason or cause for something. 可以翻译为 'because', 'since', or 'so' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + から / い-形容词 + から / な-形容词 + だから / 名词 + だから"
+    "title": "～から、～ (〜kara, 〜)",
+    "shortExplanation": "接续助词，表示原因或理由；'因为……所以……'。",
+    "longExplanation": "'～から'（kara）用于连接分句表示原因或理由，后句常带有说话人的主观意志、判断、推测、提议或请求，相当于汉语的'因为……所以……'。在接续方面，动词和い形容词直接接普通形加'から'，な形容词和名词则需接'だから'（在礼貌语境中可用'ですから'）。",
+    "formation": "动词普通形 + から / い形容词 + から / な形容词 + だから / 名词 + だから",
+    "examples": [
+      {
+        "translation": "因为明天有考试，所以今晚必须学习。"
+      },
+      {
+        "translation": "因为这个房间太狭窄，我正在找更大的房间。"
+      },
+      {
+        "translation": "因为他是朋友，所以应该会帮我的吧。"
+      },
+      {
+        "translation": "因为下雨了，所以无法出门。"
+      }
+    ]
   },
   "ja_からです_73": {
     "title": "～からです (〜kara desu)",
-    "shortExplanation": "表达 reason or cause; 'because', 'since', 'due to'.",
-    "longExplanation": "The ～からです grammar point is used to state the reason or cause of something, often as a short concluding statement. 可以翻译为 'because', 'since', or 'due to' in English. The formation can be used with verbs, い-adjectives, な-adjectives, or nouns, but be careful with な-adjectives and nouns: typically, it's [Noun/な-adjective] + だからです.",
-    "formation": "动词-casual + からです / い-形容词 + からです / な-形容词 + だからです / 名词 + だからです"
+    "shortExplanation": "置于句末礼貌地阐明原因或理由；'是因为……'。",
+    "longExplanation": "'～からです'置于句尾，用于礼貌地陈述导致先前动作或结果的原因，或者用于回答询问原因的疑问句（如'なぜ'、'どうして'），意为'是因为……'。在语法接续上，动词和い形容词以普通形接'からです'，而な形容词和名词则需接'だからです'。",
+    "formation": "动词普通形 + からです / い形容词 + からです / な形容词 + だからです / 名词 + だからです",
+    "examples": [
+      {
+        "translation": "是因为天气冷。所以我穿着大衣。"
+      },
+      {
+        "translation": "是因为这家店便宜。所以我经常来。"
+      },
+      {
+        "translation": "是因为他为人亲切热心。大家都喜欢他。"
+      },
+      {
+        "translation": "是因为她是学生。所以她在图书馆学习。"
+      }
+    ]
   },
   "ja_から_74": {
     "title": "～から もらいます (〜kara moraimasu)",
-    "shortExplanation": "To receive something or get someone to do something.",
-    "longExplanation": "The ～からもらいます grammar point is 用于表达 receiving something from someone or getting someone to do something for you. In English, 可以翻译为 'to receive from' or 'to get someone to do something'.",
-    "formation": "名词 + から + (动词-て form) + もらいます"
+    "shortExplanation": "表示从某人那里得到物品，或得到他人为自己提供帮助；'从……得到'、'得到……为自己做……'。",
+    "longExplanation": "'～から もらいます'（亦可用'～に もらいます'）用于表示说话人（或己方人员）从他人、机构或团体处接收物品，意为'从……收到/获得'。当接在动词て形后构成'～てもらいます'时，表示得到他人的恩惠、由他人为自己做某事并心存感激，相当于汉语的'请某人做……'或'得到某人帮自己做……'。给予者或行为执行者后面使用助词'から'或'に'。",
+    "formation": "给予者 + から/に + 物品 + を + もらいます / 行为者 + に/から + 动词て形 + もらいます",
+    "examples": [
+      {
+        "translation": "我从朋友那里收到了礼物。"
+      },
+      {
+        "translation": "老师把作业发给了我。"
+      },
+      {
+        "translation": "妈妈给我做了料理。"
+      },
+      {
+        "translation": "哥哥把汽车借给了我。"
+      }
+    ]
   },
   "ja_が_75": {
     "title": "～が 私に くれます (〜ga watashi ni kuremasu)",
-    "shortExplanation": "用于表达 that someone gives a gift or favor to 'me'; 'someone gives me'.",
-    "longExplanation": "The ～が私にくれます grammar point is 用于表达 that someone gives 'me' something or does something for me. 可以翻译为 'someone gives me' or 'someone does something for me' in English. Typically, the giver is marked by が, and the receiver is 私に (to me).",
-    "formation": "Person + が + (Thing or Action) + 私に + くれます"
+    "shortExplanation": "用于表示别人给“我”某物或为“我”做某事；“某人给我……”。",
+    "longExplanation": "句型“～が私にくれます”用于表达他人给说话人（“我”）或者说话人一方的人某物，或为“我”做某事。动作的发出者（给予者）通常用助词“が”表示，接受者为“私に”（给我）。如果是为我做某事，动词通常使用て形接“くれます”（即～てくれます）。",
+    "formation": "给予者 + が + （物品 / 动词て形） + 私に + くれます",
+    "examples": [
+      {
+        "translation": "他送给了我一份礼物。"
+      },
+      {
+        "translation": "朋友帮我做了作业。"
+      },
+      {
+        "translation": "妈妈给我做了便当。"
+      },
+      {
+        "translation": "老师给了我建议。"
+      }
+    ]
   },
   "ja_けど_76": {
     "title": "～けど、～ (〜kedo、～)",
-    "shortExplanation": "Used to connect two clauses; 'but', 'however', 'although'",
-    "longExplanation": "The ～けど grammar point is used to connect two clauses, often to show a contrast or to introduce a different point of view. 可以翻译为 'but', 'however', or 'although' in English. It's more casual than けれど or が.",
-    "formation": "动词-casual + けど / い-adjective + けど / な-adjective + だけど / 名词 + だけど"
+    "shortExplanation": "用于连接两个分句，表示转折或铺垫；“虽然……但是……”、“不过”。",
+    "longExplanation": "接续助词“～けど”常用于口语中连接前后两个分句，主要表示转折、对比，也可以用于引入话题的开场铺垫。相当于汉语中的“虽然……但是……”、“不过”。语气较为随意口语化，比“けれど”或“が”更随和。",
+    "formation": "动词普通形 + けど / い形容词 + けど / な形容词词干 + だけど / 名词 + だけど",
+    "examples": [
+      {
+        "translation": "虽然去上课了，但还得做作业。"
+      },
+      {
+        "translation": "昨天挺冷的，但今天很暖和。"
+      },
+      {
+        "translation": "他人很亲切，但有点可怕。"
+      },
+      {
+        "translation": "这个看起来很好吃，但太贵了。"
+      }
+    ]
   },
   "ja_けれど_77": {
     "title": "～けれど、～ (〜keredo、～)",
-    "shortExplanation": "表示 a contrast or contradiction; 'but', 'however', 'even though'.",
-    "longExplanation": "The ～けれど grammar point is 用于表达 a contrast or contradiction between two statements. 可以翻译为 'but', 'however', or 'even though' in English. This grammar point is slightly more formal than けど.",
-    "formation": "动词-casual + けれど / い-形容词 + けれど / な-形容词 + だけれど / 名词 + だけれど"
+    "shortExplanation": "表示转折、对比或前置铺垫；“虽然……但是……”、“可是”。",
+    "longExplanation": "接续助词“～けれど”用于连接具有对比、转折关系的两个分句，也可用于引出话题的开场铺垫。相当于汉语中的“虽然……但是……”、“可是”。相比于更口语化的“けど”，“けれど”显得更加稳重、稍显正式。",
+    "formation": "动词普通形 + けれど / い形容词普通形 + けれど / な形容词词干 + だけれど / 名词 + だけれど",
+    "examples": [
+      {
+        "translation": "今天虽然寒冷，但我还是去散步。"
+      },
+      {
+        "translation": "他虽然很和善，但有点让人害怕。"
+      },
+      {
+        "translation": "这个房间虽然狭窄，但很明亮。"
+      },
+      {
+        "translation": "她虽然生病了，但每天都在工作。"
+      }
+    ]
   },
   "ja_こちら_78": {
     "title": "こちら～ (kochira～)",
-    "shortExplanation": "Refers to a person, place or thing; 'this', 'this one', 'this way', 'here'.",
-    "longExplanation": "The こちら grammar point is used to refer to a person, place, or thing that is closer to the speaker, or to show politeness when referring to someone. It can mean 'this', 'this one', 'this way', or 'here'.",
-    "formation": "こちら / こちら + の + Person/Thing"
+    "shortExplanation": "指示代词，指代说话人近处的人、地点、方向或事物；“这边”、“这位”、“这一个”。",
+    "longExplanation": "“こちら”是日语中指示代词系统（こ・そ・あ・ど）中的近称礼貌说法。可用于指示靠近说话人的方向（“这边”）、场所（“这里”）、事物（“这个”），或者在向他人介绍时礼貌地指代人（“这位”）。它是“これ”、“ここ”、“こっち”的郑重敬体表达。",
+    "formation": "こちら / こちら + の + 名词",
+    "examples": [
+      {
+        "translation": "这位是田中先生/女士。"
+      },
+      {
+        "translation": "这边的餐厅很美味。"
+      },
+      {
+        "translation": "请往这边走。"
+      },
+      {
+        "translation": "是这边这个比较好，还是那边那个比较好？"
+      }
+    ]
   },
   "ja_さっき_79": {
     "title": "さっき～ (sakki～)",
-    "shortExplanation": "Refers to a short time ago or just now.",
-    "longExplanation": "The word さっき (sakki) is an adverb 用于表达 that something happened or was done a short time ago or just now. It can be combined with verbs or other phrases to convey that meaning.",
-    "formation": "さっき + verb / さっき + phrase"
+    "shortExplanation": "时间副词，指刚刚过去的短暂时间；“刚才”、“方才”。",
+    "longExplanation": "“さっき”是表示时间的副词，用于表达某事就在不久前或刚刚发生，相当于汉语中的“刚才”、“方才”。多用于日常随和口语中；在更加正式、礼貌的场合通常使用“さきほど”（先程）。也可以加“の”修饰名词。",
+    "formation": "さっき + 动词/句子；さっき + の + 名词",
+    "examples": [
+      {
+        "translation": "刚才有电话打来。"
+      },
+      {
+        "translation": "我刚才打扫了房间。"
+      },
+      {
+        "translation": "我刚才碰见他了。"
+      },
+      {
+        "translation": "你看刚才的新闻了吗？"
+      }
+    ]
   },
   "ja_すぐに_80": {
     "title": "すぐに～ (sugu ni～)",
-    "shortExplanation": "Immediately or right away; 用于表达 promptness or quickness.",
-    "longExplanation": "The すぐに～ grammar point is 用于表达 an action happening immediately or right away. It often 指示 promptness or quickness and can be used with both verbs and adjectives.",
-    "formation": "すぐに + 动词/形容词"
+    "shortExplanation": "副词，表示动作或变化毫不迟延地发生；“马上”、“立刻”。",
+    "longExplanation": "“すぐに”是表示时间的副词，用于表达某一动作、变化或事件毫不耽搁地在极短时间内发生。相当于汉语中的“马上”、“立刻”、“顿时”。通常置于动词或形容词前作状语。",
+    "formation": "すぐに + 动词 / 形容词",
+    "examples": [
+      {
+        "translation": "朋友到了的话，请马上给我打电话。"
+      },
+      {
+        "translation": "一听到那个消息，我就立刻去了公司。"
+      },
+      {
+        "translation": "她立刻哭了出来。"
+      },
+      {
+        "translation": "一走进教室，老师就立刻开始了上课。"
+      }
+    ]
   },
   "ja_ぜんぜん_81": {
     "title": "ぜんぜん～ (zenzen～)",
-    "shortExplanation": "用于表达 'not at all' or 'completely' in negative sentences.",
-    "longExplanation": "The ぜんぜん grammar point is used to emphasize a negative statement and can be translated as 'not at all' or 'completely (in negative sense)'. It is commonly used with negative verbs or negative forms of adjectives, placed before the negative part.",
-    "formation": "ぜんぜん + [Negative verb/adjective]"
+    "shortExplanation": "副词，与否定形式呼应使用，表示全盘否定；“完全不……”、“一点儿也不……”。",
+    "longExplanation": "副词“ぜんぜん”（汉字写为“全然”）在传统标准文法中与否定形式呼应搭配，用于加强否定语气，表示“彻底不”、“完全不”、“丝毫没有”。",
+    "formation": "ぜんぜん + 动词/形容词否定形",
+    "examples": [
+      {
+        "translation": "他一点儿也不说话。"
+      },
+      {
+        "translation": "这个房间一点也不暗。"
+      },
+      {
+        "translation": "她一点儿也不累。"
+      },
+      {
+        "translation": "那部电影一点儿意思也没有。"
+      }
+    ]
   },
   "ja_そして_82": {
     "title": "そして、～ (soshite、～)",
-    "shortExplanation": "Used to connect two sentences; 'and then', 'and'.",
-    "longExplanation": "The そして grammar point is used to connect two sentences or ideas, expressing a sequence of events or actions. It is commonly translated to 'and then' or simply 'and' in English.",
-    "formation": "Sentence 1 + そして + Sentence 2"
+    "shortExplanation": "连词，用于连接两个句子，表示时间顺承或内容并列累加；“然后”、“而且”、“并且”。",
+    "longExplanation": "“そして”是日语中常用的接续词，置于后一个句子的开头，用于顺承前句的动作或事实，表示时间的先后顺序（“然后”、“接着”），也可以用于在已有事实的基础上累加、并列补充新的信息（“而且”、“并且”）。",
+    "formation": "句子1 + 。そして、 + 句子2",
+    "examples": [
+      {
+        "translation": "早晨起床，然后做了作业。"
+      },
+      {
+        "translation": "喝了咖啡，然后读了报纸。"
+      },
+      {
+        "translation": "我从家里出发了。然后，去了车站。"
+      },
+      {
+        "translation": "他玩了游戏。接着，看了电视。"
+      }
+    ]
   },
   "ja_そちら_83": {
     "title": "そちら～ (sochira～)",
-    "shortExplanation": "指示 a direction or person in moderate distance; 'that way', 'that person'.",
-    "longExplanation": "The そちら grammar point is used to refer to a direction or a person that is moderate distance from both the speaker and listener, often closer to the listener. 可以翻译为 'that way', 'that person', or 'that side'. This is distinct from あちら, used for things far from both speaker and listener.",
-    "formation": "そちら [alone] / そちら + の + 名词"
+    "shortExplanation": "指示代词，礼貌指代靠近听话人一方的方向、场所、事物或人；“那边”、“那一位”、“您那边”。",
+    "longExplanation": "“そちら”属于指示代词（こ・そ・あ・ど）中的中称礼貌表达，用于指示靠近听话人的方向（“那边”）、场所（“那里”）、事物（“那个”）或人（“那位”）。在商务及礼貌交流中，也常用作第二人称的敬称代指对方或对方所在单位（“您那方”、“贵方”）。",
+    "formation": "そちら / そちら + の + 名词",
+    "examples": [
+      {
+        "translation": "那边的餐厅怎么样？"
+      },
+      {
+        "translation": "那位先生/女士，能请教一下您的名字吗？"
+      },
+      {
+        "translation": "去往那边的路途中有个车站。"
+      },
+      {
+        "translation": "您那边的那个包包，和我的挺像呢。"
+      }
+    ]
   },
   "ja_それから_84": {
     "title": "それから、～ (sorekara、～)",
-    "shortExplanation": "Meaning 'after that', 'and then' or 'then', indicating sequence of events.",
-    "longExplanation": "The それから grammar point is used to describe the sequence of events or actions, indicating that one action or event takes place after another. 可以翻译为 'after that', 'and then', or 'then' in English. It can be used with verbs, adjectives, and nouns but should be placed between two clauses.",
-    "formation": "从句 1 + それから + 从句 2"
+    "shortExplanation": "接续词，表示在前一动作之后接着发生下一动作；“然后”、“在那之后”、“接着”。",
+    "longExplanation": "“それから”是由指示代词“それ”和助词“から”构成的接续词，用于连接具有先后时间顺序的两个动作或事件，表示在完成前一件事之后接着做下一件事。相当于汉语中的“然后”、“之后”、“接着”。此外在口语中还可用于追加列举事物（“还有……”）。",
+    "formation": "分句1（动词て形等） + 、それから + 分句2",
+    "examples": [
+      {
+        "translation": "喝了咖啡，然后出了门。"
+      },
+      {
+        "translation": "买了东西，然后去看了电影。"
+      },
+      {
+        "translation": "她学习了之后，接着就睡了。"
+      },
+      {
+        "translation": "去了派对，然后和朋友聊了天。"
+      }
+    ]
   },
   "ja_だいたい_85": {
     "title": "だいたい〜 (daitai〜)",
-    "shortExplanation": "表示 'roughly', 'approximately', or 'almost'.",
-    "longExplanation": "The だいたい〜 (daitai〜) grammar point is 用于表达 a rough estimate or generalization, meaning 'roughly', 'approximately', or 'almost' in English. It can be used before numbers, amounts, or percentages to show that the value is not exact.",
-    "formation": "だいたい + Number/Amount/Percentage"
+    "shortExplanation": "副词，表示对数量、时间或程度的大致估计；“大约”、“大致”、“大概”。",
+    "longExplanation": "“だいたい”（汉字写为“大体”）是表示概数的副词，置于数量词、时间词或百分比之前，用以表达大致的估算，表明该数值不是精确无误的。相当于汉语中的“大约”、“大概”、“大致”。",
+    "formation": "だいたい + 数量词 / 时间词 / 百分比",
+    "examples": [
+      {
+        "translation": "大约有100人参加了聚会。"
+      },
+      {
+        "translation": "她大约花两小时就能完成那项工作。"
+      },
+      {
+        "translation": "大约有80%的学生通过了考试。"
+      },
+      {
+        "translation": "今天大约有30度那么热。"
+      }
+    ]
   },
   "ja_たいてい_86": {
     "title": "たいてい～ (taitei～)",
-    "shortExplanation": "Used for expressing 'usually', 'mostly', or 'generally'.",
-    "longExplanation": "The たいてい grammar point is used to describe a situation that occurs frequently or under normal circumstances. 可以翻译为 'usually', 'mostly', or 'generally' in English. It is often used with verbs, but can also be used with adjectives and nouns.",
-    "formation": "たいてい + 动词/い-形容词/な-形容词/名词"
+    "shortExplanation": "副词，表示通常情况、大体上或绝大多数；“大多”、“通常”、“大部分”。",
+    "longExplanation": "“たいてい”（汉字写为“大抵”）是表示频度或普遍情况的副词，用于描述在通常状态下、绝大多数情况下发生的事情或具备的特征。相当于汉语中的“通常”、“大体上”、“大多”。修饰名词时通常采用“たいていの + 名词”的形式，意为“绝大多数的……”。",
+    "formation": "たいてい + 动词 / 形容词 ； たいてい + の + 名词",
+    "examples": [
+      {
+        "translation": "我通常早上8点起床。"
+      },
+      {
+        "translation": "他大多时候都会迟到。"
+      },
+      {
+        "translation": "这家店的商品大多很便宜。"
+      },
+      {
+        "translation": "大多数人都喜欢那部电影。"
+      }
+    ]
   },
   "ja_だから_87": {
     "title": "だから、～ (dakara、～)",
-    "shortExplanation": "表示 a reason or cause; 'because', 'so', 'therefore'.",
-    "longExplanation": "The だから grammar point is used to connect two sentences and express a reason or cause for the second sentence. It is typically used with nouns or な-adjectives, and can be translated as 'because', 'so', or 'therefore' in English. For verbs/い-adjectives, the form is usually ～から (not だから).",
-    "formation": "名词 + だから / な-形容词 + だから"
+    "shortExplanation": "表示原因或理由，引出必然的结果或主观判断；“因为……所以……”、“因此”。",
+    "longExplanation": "“だから”用于连接前后两句话或句子成分，说明前项是导致后项结果、决定或判断的理由与原因。相当于汉语中的“因为……所以……”、“因此”。在句子中间接续时，常接在名词和な形容词词干之后（名词/な形容词 + だから）；也可独立置于句首作为接续词使用。注意动词和い形容词直接接“から”，不带“だ”。",
+    "formation": "名词 + だから / な形容词词干 + だから；句子1 + 。だから、 + 句子2",
+    "examples": [
+      {
+        "translation": "因为下雨，所以带上伞吧。"
+      },
+      {
+        "translation": "因为这个蛋糕很有名，所以大家都想尝尝。"
+      },
+      {
+        "translation": "因为他生病了，所以不能去学校。"
+      },
+      {
+        "translation": "因为她是学生，所以在这家餐厅可以打折。"
+      }
+    ]
   },
   "ja_たりたり_88": {
     "title": "～たり、～たり します (〜tari, 〜tari shimasu)",
-    "shortExplanation": "Used to list multiple actions or states; 'do things like', 'and'.",
-    "longExplanation": "The ～たり、～たり します grammar point is used to list multiple actions or states without fully enumerating them. It can imply that there are more items in the list and can be translated as 'do things like', 'and', 'among other things', or 'and so on' in English. It is formed by attaching たり to the casual past tense of the verb, followed by します.",
-    "formation": "动词-casual-past + たり + 动词-casual-past + たり + します"
+    "shortExplanation": "列举若干代表性动作或状态，暗示还有其他行为；“又……又……”、“有时……有时……”、“做做……做做……”。",
+    "longExplanation": "句型“～たり、～たり します”用于在众多动作或状态中挑选出两三个具有代表性的例子进行列举，暗示除此之外还有其他活动。相当于汉语中的“又……又……”、“做做……做做……之类”、“有时……有时……”。接续方式是将动词变为简体过去式（た形）后接“り”，句末通常以“します”或“しました”收尾。",
+    "formation": "动词た形 + り + 动词た形 + り + します",
+    "examples": [
+      {
+        "translation": "休息日我看看电影、和朋友玩玩等等。"
+      },
+      {
+        "translation": "他唱歌、跳舞，还弹弹钢琴等等。"
+      },
+      {
+        "translation": "在这家餐厅里，可以吃吃寿司、吃吃生鱼片等等。"
+      },
+      {
+        "translation": "她每天早晨慢跑、做做瑜伽。"
+      }
+    ]
   },
   "ja_だれ_89": {
     "title": "だれ～ (dare～)",
-    "shortExplanation": "Asking 'who' in a sentence, used to inquire about someone's identity or to clarify who is being referred to.",
-    "longExplanation": "The だれ〜 grammar point is 用于询问 about the identity of someone in a sentence. 可以翻译为 'who' or 'whom' in English. It is often used with the particle が, は, or を, but can also be combined with other particles depending on the context.",
-    "formation": "だれ + appropriate particle (が, は or を)"
+    "shortExplanation": "疑问代词，用于询问人物的身份或姓名；“谁”。",
+    "longExplanation": "“だれ”（汉字写作“誰”）是询问人物身份、姓名的疑问代词，相当于汉语中的“谁”。根据在句中充当的句子成分，常与各种助词组合使用，如主语“だれが”、宾语“だれを”、对象“だれに”、所属“だれの”等。更礼貌、尊敬的说法是“どなた”。",
+    "formation": "だれ + 助词（が、を、に、の等）",
+    "examples": [
+      {
+        "translation": "谁买了那本书？"
+      },
+      {
+        "translation": "你在等谁？"
+      },
+      {
+        "translation": "谁吃了那个苹果？"
+      },
+      {
+        "translation": "谁拿着钥匙？"
+      }
+    ]
   },
   "ja_だれか_90": {
     "title": "だれか〜 (dareka〜)",
-    "shortExplanation": "指示 'someone' or something done or possessed by 'someone'.",
-    "longExplanation": "The grammar point だれか〜 is used to suggest that something is done by, possessed by, or related to 'someone', usually when the actual person is unidentified or not important. It can be used with verbs, adjectives, or nouns.",
-    "formation": "だれか + 动词, だれか + 形容词, だれか + 名词"
+    "shortExplanation": "表示“某人”、“有人”，用于指代身份未确定或无需明确指明的人。",
+    "longExplanation": "不定代词“だれか”用于表示“某人”、“有人”，常在说话人不知道具体是谁，或者该人的具体身份并不重要时使用。它可以单独使用，也可以与助词（如 が、を、に、の 等）结合接续动词、形容词或名词。在日常会话中，助词 が 或 を 有时可省略。",
+    "formation": "だれか (+ 助词 が / を / に / の) + 动词 / 形容词 / 名词",
+    "examples": [
+      {
+        "translation": "有人敲了门。"
+      },
+      {
+        "translation": "有人偷了我的雨伞。"
+      },
+      {
+        "translation": "谁来救救我！/ 有人吗，请帮帮我！"
+      },
+      {
+        "translation": "因为某人的缘故，停电了。"
+      }
+    ]
   },
   "ja_だれでも_91": {
     "title": "だれでも～ (dare demo～)",
-    "shortExplanation": "用于表达 'anyone' or 'everyone'; 'no matter who'.",
-    "longExplanation": "The grammar point だれでも is used to emphasize that something applies to everyone or anyone, regardless of who they are. 可以翻译为 'anyone', 'everyone', or 'no matter who' in English. It is used in sentences to show that a certain situation, characteristic, or condition applies to all people.",
-    "formation": "だれでも + 动词/形容词/名词"
+    "shortExplanation": "表示“任何人”、“无论谁都”，强调毫无例外地适用于所有人。",
+    "longExplanation": "句型“だれでも”由疑问词“だれ”与助词“でも”复合而成，表示“任何人”、“无论谁”、“大家”。用于强调某种情况、能力、特征或规则毫无例外地适用于所有人，不作任何特定区分。",
+    "formation": "だれでも + 动词 / 形容词 / 名词",
+    "examples": [
+      {
+        "translation": "任何人都可以玩这个游戏。"
+      },
+      {
+        "translation": "任何人都有感到疲倦的时候。"
+      },
+      {
+        "translation": "任何人都可以免费参加这个活动。"
+      },
+      {
+        "translation": "无论是谁都能尽情游览这个小镇的观光景点。"
+      }
+    ]
   },
   "ja_だれもないです_92": {
     "title": "だれも～ないです (dare mo ~ nai desu)",
-    "shortExplanation": "Express 'nobody' or 'no one' in a negative sentence.",
-    "longExplanation": "The grammar point だれも～ないです is 用于表达 the idea of 'nobody' or 'no one' in a negative sentence. だれも is followed by the negative form of a verb or adjective, often using the polite ないです form.",
-    "formation": "だれも + 动词-negative form (ないです), だれも + い-形容词-negative form (ないです), だれも + な-形容词-negative form (じゃないです)"
+    "shortExplanation": "在礼貌否定句中表示全盘否定；“谁也（不）……”、“没有人……”。",
+    "longExplanation": "句型“だれも～ないです”由表示全盘否定的“だれも”（谁也）与动词或形容词的礼貌否定形式“～ないです”搭配使用。用于表达“没有任何人……”、“谁也不……”的意思，语调亲切且礼貌，是日常会话中非常常见的表达方式。",
+    "formation": "だれも + 动词ない形 + です / い形容词词尾い变く + ないです / な形容词 + じゃないです",
+    "examples": [
+      {
+        "translation": "谁都不知道。"
+      },
+      {
+        "translation": "谁也不会来。"
+      },
+      {
+        "translation": "她谁都不喜欢。"
+      },
+      {
+        "translation": "这里一个人也没有。"
+      }
+    ]
   },
   "ja_だれもません_93": {
     "title": "だれも～ません (daremo ~masen)",
-    "shortExplanation": "Express 'nobody' or 'no one' in negative sentences.",
-    "longExplanation": "The grammar point だれも is used in combination with a negative form of the verb, usually ません, to 表达 idea of 'nobody' or 'no one' doing something. It is used with questions or statements and can be translated as 'nobody' or 'no one' in English.",
-    "formation": "だれも + 动词-negative (ません)"
+    "shortExplanation": "搭配动词敬体否定形表示全盘否定；“谁也不……”、“没有人……”。",
+    "longExplanation": "句型“だれも～ません”由表示全面否定的“だれも”搭配动词的标准敬体否定形式“～ません”（或过去否定形式“～ませんでした”）构成。用于以规范、庄重的语气说明没有任何人做某件事或进行某种行为。",
+    "formation": "だれも + 动词连用形（ます形去掉ます）+ ません / ませんでした",
+    "examples": [
+      {
+        "translation": "没有人知道这个秘密。"
+      },
+      {
+        "translation": "谁也没有回答那个问题。"
+      },
+      {
+        "translation": "没有人愿意去帮助他。"
+      },
+      {
+        "translation": "谁也不想看那部电影。"
+      }
+    ]
   },
   "ja_どう_94": {
     "title": "～どう しますか。 (～dou shimasu ka.)",
-    "shortExplanation": "Asking for someone's opinion or decision; 'what will you do?', 'how will you handle it?'.",
-    "longExplanation": "The ～どうしますか grammar point is 用于询问 for someone's opinion, decision, or course of action in a specific situation. 可以翻译为 'what will you do?' or 'how will you handle it?' in English. This grammar point is formed by attaching どうしますか to the end of a sentence.",
-    "formation": "Situation + どうしますか"
+    "shortExplanation": "用于询问对方的决定、打算或应对办法；“打算怎么办？”、“怎么处理？”。",
+    "longExplanation": "句型“～どうしますか”用于在面对特定情况、问题或假设条件时，询问对方的想法、打算采取的行动或处理方针。常接在陈述原因（ので、から）、假设条件（たら）或话题（について）的句子之后。",
+    "formation": "情况说明 / 话题 (+ について / は / たら / ので) + どうしますか",
+    "examples": [
+      {
+        "translation": "下雨了，你打算怎么办？"
+      },
+      {
+        "translation": "关于这个问题，你打算怎么处理？"
+      },
+      {
+        "translation": "如果他不来的话，你打算怎么办？"
+      },
+      {
+        "translation": "在决定前途去向时，你打算怎么做？"
+      }
+    ]
   },
   "ja_どうですか_95": {
     "title": "～どうですか。 (〜dou desu ka.)",
-    "shortExplanation": "Asking for opinions or suggestions; 'how about', 'what do you think of'.",
-    "longExplanation": "The ～どうですか grammar point is 用于询问 for someone's opinion or suggestion on something. 可以翻译为 'how about' or 'what do you think of' in English. This expression is neither casual nor super-formal, and can be used in various situations.",
-    "formation": "名词 + は/が + どうですか / 动词-casual + の + どうですか / い-形容词 + どうですか / な-形容词 + な + どうですか"
+    "shortExplanation": "询问对方的看法或感受（“觉得怎么样？”），亦可用于提出建议或劝诱（“……如何？”）。",
+    "longExplanation": "句型“～どうですか”主要有两种常见用法：一是询问对方对某事物的印象、感受、评价或当前状态（相当于“觉得……怎么样？”）；二是委婉地向对方提出建议、方案或劝诱（相当于“……怎么样？要不要……？”）。语气礼貌且自然，适用场合非常广泛。",
+    "formation": "名词 + は / が + どうですか / 动词普通形 + のは + どうですか / 形容词 / 句子 + どうですか",
+    "examples": [
+      {
+        "translation": "这部电影你觉得怎么样？"
+      },
+      {
+        "translation": "晚饭吃寿司怎么样？"
+      },
+      {
+        "translation": "我觉得这个房间挺宽敞的，你觉得呢？"
+      },
+      {
+        "translation": "新公司的条件挺严格的呢。铃木先生，要是换工作的话你觉得怎么样？"
+      }
+    ]
   },
   "ja_どうやって_96": {
     "title": "どうやって～ (douyatte～)",
-    "shortExplanation": "Ask 'how' something is done or how to do something.",
-    "longExplanation": "The grammar point どうやって is 用于询问 how something is done or how to do something, and is translated as 'how' in English. It is often used in combination with verbs to inquire about the method or process someone goes through to complete a task or action.",
-    "formation": "どうやって + 动词-casual"
+    "shortExplanation": "询问做某事的方法、途径或步骤；“怎么……”、“如何……”、“用什么方法……”。",
+    "longExplanation": "疑问词“どうやって”（源自“どうやる”的て形）用于询问完成某项行为或达成某个目标的具体方法、操作步骤、交通方式或途径。通常直接置于动词前，相当于汉语的“怎么做……”、“如何……”、“怎样……”。",
+    "formation": "どうやって + 动词",
+    "examples": [
+      {
+        "translation": "寿司是怎么做的？"
+      },
+      {
+        "translation": "你是怎么学习日语的？"
+      },
+      {
+        "translation": "这个问题要如何解决呢？"
+      },
+      {
+        "translation": "去车站怎么走？"
+      }
+    ]
   },
   "ja_どう_97": {
     "title": "～どう 言いますか。 (〜dou iimasu ka.)",
-    "shortExplanation": "Asking for the way to say something; 'how do you say'.",
-    "longExplanation": "The ～どう言いますか grammar point is 用于询问 someone how to express something in a particular language or the appropriate way to say it. 可以翻译为 'how do you say' in English.",
-    "formation": "Word/Phrase + は [language]でどう言いますか / Word/Phrase + をどう言いますか"
+    "shortExplanation": "用于请教某个词句在特定语言中该如何表达；“怎么说？”。",
+    "longExplanation": "句型“～どう言いますか”用于向他人请教某个词汇、短语或含义在某种特定语言中应当如何表达。常见的句式结构为：把要问的词语用助词“は”提示为主题（或用助词“を”作宾语），后接语言名称加上表示手段工具的助词“で”，最后接“どう言いますか”。",
+    "formation": "词语 / 表达 + は (或 を) + [语言名称] + で + どう言いますか",
+    "examples": [
+      {
+        "translation": "“谢谢（ありがとう）”用英语怎么说？"
+      },
+      {
+        "translation": "这个词用日语怎么说？"
+      },
+      {
+        "translation": "“对不起（すみません）”用法语怎么说？"
+      },
+      {
+        "translation": "那个表达用西班牙语怎么说？"
+      }
+    ]
   },
   "ja_とき_98": {
     "title": "～とき (〜toki)",
-    "shortExplanation": "表示 the time when something happens, 'when', 'at the time'.",
-    "longExplanation": "The ～とき grammar point is 用于表达 the time when something happens or happened. 可以翻译为 'when' or 'at the time' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + とき / い-形容词 + とき / な-形容词 + なとき / 名词 + のとき"
+    "shortExplanation": "表示动作、状态发生的时间或时机；“……的时候”、“当……时”。",
+    "longExplanation": "形式名词“とき”（时）用于引导时间从句，表示某种动作、行为或状态发生的时间、时期或情境，相当于汉语中的“……的时候”。接续方式根据前接词类而定：动词使用普通形（辞书形、た形、ない形）；い形容词保持原形；な形容词加“な”；名词加“の”。",
+    "formation": "动词普通形 + とき / い形容词 + とき / な形容词 + なとき / 名词 + のとき",
+    "examples": [
+      {
+        "translation": "在公园玩耍的时候，戴上帽子吧。"
+      },
+      {
+        "translation": "这个苹果变红的时候，就是最好吃的时候。"
+      },
+      {
+        "translation": "我学习的时候，家人们都会为我保持安静。"
+      },
+      {
+        "translation": "小时候，我经常去奶奶（外婆）家玩。"
+      }
+    ]
   },
   "ja_ときどき_99": {
     "title": "ときどき～ (tokidoki～)",
-    "shortExplanation": "用于表示 the frequency of an event; 'sometimes', 'occasionally', 'now and then'.",
-    "longExplanation": "The grammar point ときどき is an adverb used to describe an event or action that occurs occasionally or at irregular intervals. 可以翻译为 'sometimes', 'occasionally', or 'now and then' in English. It is often 用于表示 that the speaker cannot predict the exact time when a certain event occurs.",
-    "formation": "ときどき + 动词/形容词/名词"
+    "shortExplanation": "表示频率的副词；“有时”、“偶尔”、“时常”。",
+    "longExplanation": "副词“ときどき”（写成汉字为“時々”）用于表示动作、事件或状态并非持续发生，而是间隔一段时间偶尔出现，相当于汉语中的“有时”、“偶尔”。通常置于句首或动词前面修饰谓语。",
+    "formation": "ときどき + 动词 / 形容词 / 谓语",
+    "examples": [
+      {
+        "translation": "他有时会做蛋糕。"
+      },
+      {
+        "translation": "偶尔会下雨，所以最好带上雨伞。"
+      },
+      {
+        "translation": "我偶尔会在这家店买东西。"
+      },
+      {
+        "translation": "她有时会迟到。"
+      }
+    ]
   },
   "ja_どこ_100": {
     "title": "どこ～ (doko～)",
-    "shortExplanation": "Express 'where', used with question words for asking about locations.",
-    "longExplanation": "The どこ～ grammar point is 用于表达 'where', primarily for asking about locations or places. It is often combined with question words such as どこへ (doko e), どこで (doko de), and どこに (doko ni) to ask about destinations, locations of actions, and existence, respectively.",
-    "formation": "どこ + question particle"
+    "shortExplanation": "用于询问地点、位置的疑问词；“哪里”、“何处”。",
+    "longExplanation": "疑问代词“どこ”用于询问空间位置、场所或移动方向，相当于汉语中的“哪里”、“哪儿”。常与不同助词搭配构成疑问句：どこですか（询问事物所在位置）、どこで（询问动作发生的场所）、どこに（询问人或物存在的场所或定居点）、どこへ（询问移动的方向或目的地）。",
+    "formation": "どこ (+ 助词 は / で / に / へ / から) + 动词 / ですか",
+    "examples": [
+      {
+        "translation": "车站在哪里？"
+      },
+      {
+        "translation": "你在哪里看了电影？"
+      },
+      {
+        "translation": "你住在哪里？"
+      },
+      {
+        "translation": "你想去哪里？"
+      }
+    ]
   },
   "ja_どこか_101": {
     "title": "どこか～ (dokoka～)",
-    "shortExplanation": "表示 'somewhere', used when the specific location is unknown or uncertain.",
-    "longExplanation": "The grammar point どこか is used when the speaker wants to express that something is happening or located 'somewhere', but the exact location is either unknown or uncertain. It can be used by itself or combined with other words.",
-    "formation": "どこか + (Particle, if needed) + 动词/名词/形容词"
+    "shortExplanation": "表示不确定的场所；“某个地方”、“某处”、“哪里”。",
+    "longExplanation": "不定代词“どこか”由疑问词“どこ”加上表示不确定的助词“か”构成，用于指代说话人无法确定或无需明确具体位置的“某个地方”、“某处”。它可以直接与助词（如 で、に、へ 等）搭配连接动词，也可以直接置于名词短语前起修饰作用（如“どこか静かな場所”表示“某处安静的地方”）。",
+    "formation": "どこか (+ 助词 で / に / へ) + 动词 / 名词",
+    "examples": [
+      {
+        "translation": "我在某个地方把钱包弄丢了。"
+      },
+      {
+        "translation": "今天我想去某个地方转转。"
+      },
+      {
+        "translation": "这附近哪里有便宜的餐馆吗？"
+      },
+      {
+        "translation": "我想在某个安静的地方学习。"
+      }
+    ]
   },
   "ja_どこでも_102": {
     "title": "どこでも～ (dokodemo～)",
-    "shortExplanation": "Express 'anywhere' or 'everywhere' in Japanese.",
-    "longExplanation": "The grammar point どこでも is 用于表达 'anywhere' or 'everywhere' in Japanese. It is usually used in sentences to indicate that an action or situation could happen or exist in any location.",
-    "formation": "Simply use the word どこでも in the sentence as an adverb to indicate 'anywhere' or 'everywhere'."
+    "shortExplanation": "表示“任何地方”、“无论哪里”、“到处”，强调没有地点限制。",
+    "longExplanation": "语法“どこでも”由疑问词“どこ”与表示全面的助词“でも”复合而成，表示“任何地方”、“无论何处”、“哪儿都”。在句中作副词使用，强调某项行为、状态或可能性在所有场所都可以成立或进行，不受空间的任何局限。",
+    "formation": "どこでも (+ 助词 で / に / へ) + 动词 / 句子",
+    "examples": [
+      {
+        "translation": "你可以在任何喜欢的地方学习。"
+      },
+      {
+        "translation": "这台笔记本电脑很方便，所以在哪里都能连上网。"
+      },
+      {
+        "translation": "他在任何地方都能睡得着。"
+      },
+      {
+        "translation": "她非常喜欢在任何地方唱歌。"
+      }
+    ]
   },
   "ja_どこにも_103": {
-    "title": "どこにも + Verb + ないです (doko ni mo + Verb + nai desu)",
-    "shortExplanation": "Express that an action cannot be performed anywhere or something cannot be found anywhere.",
-    "longExplanation": "The grammar point どこにも + Verb + ないです is 用于表达 that an action cannot be performed anywhere or something cannot be found anywhere. It is used with a negative verb conjugation (ない-form) and highlights the unavailability or impossibility of finding or doing something in any location.",
-    "formation": "どこにも + 动词 in ない-form + です"
+    "title": "どこにも + 动词 + ないです (doko ni mo ~ nai desu)",
+    "shortExplanation": "与动词否定形搭配表示地点的全盘否定；“哪里也（不/没有）……”、“到处都（不）……”。",
+    "longExplanation": "句型“どこにも + 动词ない形 + です”由表示地点全盘否定的“どこにも”（在任何地方也……）与动词的礼貌否定形式“～ないです”组合而成。用于以自然随和且礼貌的语气强调某事物在任何地点都无法找到、不存在，或某动作在任何场所都无法进行。",
+    "formation": "どこにも + 动词ない形 + です",
+    "examples": [
+      {
+        "translation": "到处都没有卖雨伞的。"
+      },
+      {
+        "translation": "在任何地方都找不到他。"
+      },
+      {
+        "translation": "哪儿都没有可以学习的地方。"
+      },
+      {
+        "translation": "任何地方都没有好吃的纯素料理。"
+      }
+    ]
   },
   "ja_どこにも_104": {
-    "title": "どこにも + Verb + ません (doko ni mo + Verb + masen)",
-    "shortExplanation": "Express 'not anywhere' or 'nowhere' with a negative verb.",
-    "longExplanation": "The どこにも～ません grammar point is 用于表达 that something doesn't exist, appear, or happen anywhere. It means 'not anywhere' or 'nowhere' when used with a negative verb. The formation is quite simple as you just need to add どこにも before the negative verb.",
-    "formation": "どこにも + 动词-negative"
+    "title": "どこにも + 动词 + ません (doko ni mo ~ masen)",
+    "shortExplanation": "搭配动词敬体否定形表示地点的全盘否定；“在任何地方都（不）……”、“哪里也没有……”。",
+    "longExplanation": "句型“どこにも + 动词连用形 + ません”（也包括持续态否定“～ていません”）结合了表示地点全盘否定的“どこにも”与动词的标准敬体否定形式“～ません”。用于以正式、规范的语气表明某事物在任何地方都不存在、未出现，或某行为在任何地点都未曾发生。",
+    "formation": "どこにも + 动词连用形（ます形去掉ます）+ ません / て形 + いません",
+    "examples": [
+      {
+        "translation": "到处都看不到那只猫。"
+      },
+      {
+        "translation": "我没有把钱放在任何地方。"
+      },
+      {
+        "translation": "这个小镇上哪儿都没有好吃的拉面店。"
+      },
+      {
+        "translation": "任何地方都没有写她的名字。"
+      }
+    ]
   },
   "ja_どこへも_105": {
-    "title": "どこへも Verb ないです (doko e mo + Verb + nai desu)",
-    "shortExplanation": "Express that an action doesn't take place anywhere; 'nowhere', 'not anywhere'.",
-    "longExplanation": "The どこへも + Verb ないです grammar point is 用于表达 a situation where an action doesn't occur or isn't applicable anywhere. It emphasizes a strong sense of not performing the action anywhere. Keep in mind that only negative verbs can follow 'どこへも' in this construction.",
-    "formation": "どこへも + 动词 in negative form (ないです)"
+    "title": "どこへも～ないです (doko e mo ~ nai desu)",
+    "shortExplanation": "表示在任何地方都不进行某动作；'哪里都（不）……'、'哪儿也（不）……'。",
+    "longExplanation": "句型'どこへも～ないです'用于全面否定方向或目的地，强调动作在任何场所都不会发生，相当于汉语中的'哪里都不……'或'哪儿也没……'。在这一句型中，'どこへも'后面必须接续动词的否定形式（ない形＋です）。",
+    "formation": "どこへも + 动词否定形（ない形） + です",
+    "examples": [
+      {
+        "translation": "这个周末我哪儿也不去。"
+      },
+      {
+        "translation": "她哪儿都没去买东西。"
+      },
+      {
+        "translation": "超市哪儿都不卖这个。"
+      },
+      {
+        "translation": "我没有任何去别处的打算。"
+      }
+    ]
   },
   "ja_どこへも_106": {
-    "title": "どこへも Verb ません (doko e mo + Verb + masen)",
-    "shortExplanation": "Nowhere; Not to any place",
-    "longExplanation": "The grammar point どこへも is 用于表达 the idea of 'nowhere' or 'not to any place'. It is combined with the negative form of a verb to indicate that the action does not happen to any place or destination.",
-    "formation": "どこへも + 动词-negative"
+    "title": "どこへも～ません (doko e mo ~ masen)",
+    "shortExplanation": "在礼貌语中表示全面否定目的地或方向；'哪里也（不）……'、'哪儿都（不）……'。",
+    "longExplanation": "句型'どこへも～ません'由表示方向的助词'へ'、表示全面否定的'も'以及动词礼貌否定形'～ません'构成。用于郑重地表达主体不向任何方向或地点进行某动作（多与移动动词如'行きます'、'走ります'搭配使用）。",
+    "formation": "どこへも + 动词ます形词干 + ません",
+    "examples": [
+      {
+        "translation": "今天我哪儿也不去。"
+      },
+      {
+        "translation": "他哪儿都没跑去。"
+      },
+      {
+        "translation": "哪儿都没去买东西。"
+      },
+      {
+        "translation": "绝不会让人把她带去任何地方。"
+      }
+    ]
   },
   "ja_どこも_107": {
-    "title": "どこも Verb ないです (dokomo + Verb + naidesu)",
-    "shortExplanation": "Express that something cannot be found anywhere or in any place; 'nowhere', 'in no place'.",
-    "longExplanation": "The どこも～ないです grammar point is 用于表达 that something cannot be found anywhere or in any place. 可以翻译为 'nowhere' or 'in no place' in English. It is used in combination with a negative verb (ないです) to indicate the absence of something.",
-    "formation": "どこも + 动词-negative"
+    "title": "どこも～ないです (doko mo ~ nai desu)",
+    "shortExplanation": "表示某事物在任何地方都不存在；'哪里都（没有）……'、'到处都（没有）……'。",
+    "longExplanation": "句型'どこも～ないです'用于表达某事物在所有地方均不存在或无法找到，具有全盘否定的含义，相当于汉语中的'哪里都没有……'或'处处都无……'。疑问词'どこ'与助词'も'结合，搭配否定结尾'ないです'，突出在任何场所都不存在该对象。",
+    "formation": "どこも + [名词] + が + ないです / 动词否定形（ない形） + です",
+    "examples": [
+      {
+        "translation": "哪儿都找不到团扇。"
+      },
+      {
+        "translation": "在这个小镇上，哪儿都没有美味的拉面。"
+      },
+      {
+        "translation": "到处都没有停车场。"
+      },
+      {
+        "translation": "哪里都没有空座位。"
+      }
+    ]
   },
   "ja_どこも_108": {
-    "title": "どこも Verb ません (dokomo + Verb + masen)",
-    "shortExplanation": "Express that 'nowhere' meets the verb action; 'nowhere does/can'.",
-    "longExplanation": "The どこも + Verb ません grammar point is 用于表达 that nowhere does or can fulfill the verb action. It is a negative statement and can be translated as 'nowhere (+ verb)' in English. Note that the first example below uses an adjective rather than a verb, which still conveys 'nowhere is ...'.",
-    "formation": "どこも + 动词-ます form + ません"
+    "title": "どこも～ません (doko mo ~ masen)",
+    "shortExplanation": "表示没有任何地点能够满足该动作或状态；'哪里都（不/没）……'、'任何地方都（不）……'。",
+    "longExplanation": "句型'どこも～ません'用于郑重地表达在所有场所、店铺或机构都无法实施某动作或不具备某种性质。'どこも'与礼貌否定表达'～ません'（包括动词否定、可能态否定'～できません'、进行态否定'～ていません'或形容动词否定'～じゃありません'）呼应，构成全盘否定。",
+    "formation": "どこも + 动词ます形词干 + ません / な形容词 + じゃありません",
+    "examples": [
+      {
+        "translation": "哪儿都不安静。"
+      },
+      {
+        "translation": "哪家店都不卖那本书。"
+      },
+      {
+        "translation": "在这个地区，任何地方都无法连接互联网。"
+      },
+      {
+        "translation": "没有任何地方认识他。"
+      }
+    ]
   },
   "ja_どちら_109": {
     "title": "どちら～ (dochira～)",
-    "shortExplanation": "用于询问 about two choices or options.",
-    "longExplanation": "The どちら grammar point is 用于询问 about two choices or options. It translates to 'which of the two' or simply 'which' in English. It is commonly used with question words like どちらが or どちらを and can be combined with verbs, adjectives, and nouns to ask about preferences or to make comparisons.",
-    "formation": "どちら + が/を + verb, どちら + が/を + adjective, どちら + が/を + noun"
+    "shortExplanation": "用于在两者之间进行选择或比较，也是表示方向、场所的礼貌说法；'哪一个（二选一）'、'哪边'。",
+    "longExplanation": "疑问词'どちら'主要用于在两个事物或选项之间询问'哪一个'、'哪一方'。它比口语的'どっち'更郑重礼貌，也可以作为'どこ'的敬语形式用来询问方向或场所。常见接续包括'どちらが'（用于比较句）、'どちらの + 名词'以及'どちらに/を'。",
+    "formation": "どちら + が / を / に + 动词/形容词，或 どちらの + 名词",
+    "examples": [
+      {
+        "translation": "这两个苹果，哪一个更好吃？"
+      },
+      {
+        "translation": "你想穿哪一件礼服？"
+      },
+      {
+        "translation": "这两个小镇，你想去哪一个？"
+      },
+      {
+        "translation": "你觉得哪部电影更有趣？"
+      }
+    ]
   },
   "ja_どなた_110": {
     "title": "どなた～ (donata～)",
-    "shortExplanation": "A polite way to ask 'who', used for asking about someone's identity or when seeking information about an unknown person.",
-    "longExplanation": "The word どなた is a polite version of the question word だれ (who). It is used when asking about someone's identity or when seeking information about an unknown person in a polite or formal context. It can be used in questions and sometimes with も to express 'no matter who'.",
-    "formation": "どなた"
+    "shortExplanation": "询问'谁'的礼貌敬语表达；'哪位'、'哪一位'。",
+    "longExplanation": "疑问词'どなた'是'だれ'（谁）的敬语形式，用于礼貌或正式场合询问对方或第三者的身份。在商务或社交等郑重语境中广泛使用。常见用法包括搭配助词构成'どなたが'（哪一位）、'どなたか'（有人/某位）以及'どなたも'（无论是谁、大家）。",
+    "formation": "どなた (+ 助词：が / に / の / か / も)",
+    "examples": [
+      {
+        "translation": "打扰一下，请问哪位是山田先生？"
+      },
+      {
+        "translation": "他是大家都认识的著名演员。"
+      },
+      {
+        "translation": "明天的聚会有哪位要来呢？"
+      },
+      {
+        "translation": "能有哪位来帮我一下吗？"
+      }
+    ]
   },
   "ja_どの_111": {
-    "title": "どの Noun (dono Noun)",
-    "shortExplanation": "表示 'which'; 用于询问 about specific items within a group.",
-    "longExplanation": "The どの Noun grammar point is 用于询问 about specific items or objects within a group. It is the combination of the question word ど (which) and the particle の to connect to a noun. In English, 可以翻译为 'which' depending on the context.",
-    "formation": "どの + 名词"
+    "title": "どの + 名词 (dono + 名词)",
+    "shortExplanation": "连体词形式的疑问词，直接修饰名词，用于在三个及以上的对象中询问；'哪一个……'、'哪个……'。",
+    "longExplanation": "连体词'どの'属于日语'こそあど'指示词体系，必须直接后接名词作修饰语，用于在三个或三个以上的具体人或物中询问并确定其中某一个，相当于汉语中的'哪一个（名词）'或'哪个（名词）'。",
+    "formation": "どの + 名词",
+    "examples": [
+      {
+        "translation": "哪本书最有意思？"
+      },
+      {
+        "translation": "你想穿哪套衣服？"
+      },
+      {
+        "translation": "你喜欢哪种颜色？"
+      },
+      {
+        "translation": "你想去哪家餐厅？"
+      }
+    ]
   },
   "ja_どれでも_112": {
     "title": "どれでも～ (dore demo～)",
-    "shortExplanation": "指示 'any' or 'whichever' when referring to multiple items.",
-    "longExplanation": "The どれでも grammar point is 用于表达 that any option or element among multiple choices is acceptable. 可以翻译为 'any' or 'whichever' in English. It is often used in questions or suggestions and is commonly seen with でも, but it can also be used with だれでも, いつでも, どこでも, etc.",
-    "formation": "どれ + でも"
+    "shortExplanation": "表示在多个选项中任何一个都可以接受；'无论哪一个'、'哪个都（行/好）'。",
+    "longExplanation": "表达'どれでも'由疑问代词'どれ'（哪一个）与助词'でも'（即使……也）结合而成，表示在三个及以上的选择对象中，不论选择哪一个都没有限制、都可以接受，相当于汉语的'随便哪一个都……'或'无论哪一个'。常与'いい'、'好き'等搭配使用。",
+    "formation": "どれ + でも",
+    "examples": [
+      {
+        "translation": "哪一个都可以吗？"
+      },
+      {
+        "translation": "请随意挑选任何一个。"
+      },
+      {
+        "translation": "每一个都很好吃。"
+      },
+      {
+        "translation": "在这里面请随意拿走任何你喜欢的。"
+      }
+    ]
   },
   "ja_どんな_113": {
-    "title": "どんな Noun (donna)",
-    "shortExplanation": "用于询问 or describe 'what kind' or 'what type' of something.",
-    "longExplanation": "The どんな (donna) grammar point is 用于询问 or describe 'what kind' or 'what type' of something. It is usually followed by a noun. It is similar to the English expression 'What kind of' or 'What type of' when asking about a specific characteristic or attribute.",
-    "formation": "どんな + 名词"
+    "title": "どんな + 名词 (donna + 名词)",
+    "shortExplanation": "询问事物的性质、状态或种类；'怎样的……'、'什么样的……'。",
+    "longExplanation": "连体词'どんな'必须直接修饰名词，用于询问某人、某物或某事的性质、状态、特征或具体种类，相当于汉语中的'什么样的……'或'怎样的……'。回答时通常使用形容词或带有描述性质的名词短语。",
+    "formation": "どんな + 名词",
+    "examples": [
+      {
+        "translation": "你喜欢什么样的音乐？"
+      },
+      {
+        "translation": "你觉得她会喜欢什么样的电影？"
+      },
+      {
+        "translation": "什么样的书最有意思？"
+      },
+      {
+        "translation": "你最擅长做什么样的料理？"
+      }
+    ]
   },
   "ja_なに_114": {
-    "title": "なに～ (nani~)",
-    "shortExplanation": "Asking about 'what' or 'which' in Japanese",
-    "longExplanation": "The なに～ grammar point is 用于询问 questions about 'what' or 'which' in Japanese. It can be combined with various parts of speech to create different questions. The formation differs depending on whether it's used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词 + なに, い-形容词 + なに, な-形容词 + なに, 名词 + なに"
+    "title": "なに～ (nani～)",
+    "shortExplanation": "用于询问事物、内容或动作的疑问代词；'什么'。",
+    "longExplanation": "疑问代词'なに'（何）是日语中最基础的疑问词之一，用于询问未知的事物、内容或动作，相当于汉语的'什么'。单独使用或后接助词'が'、'を'、'に'等时通常读作'なに'（如'なにを'、'なにが'）；而在接续'です'、量词或以t、d、n行假名开头的词前时，常音变为'なん'（如'なんですか'、'なんさい'）。",
+    "formation": "なに + 助词（が / を / に / で / から）或 なに + ですか",
+    "examples": [
+      {
+        "translation": "这是什么？"
+      },
+      {
+        "translation": "那个人正在做什么？"
+      },
+      {
+        "translation": "你喜欢什么？"
+      },
+      {
+        "translation": "今天的天气怎么样？"
+      }
+    ]
   },
   "ja_なにか_115": {
     "title": "なにか～ (nanika～)",
-    "shortExplanation": "指示 'something' or 'some kind of'.",
-    "longExplanation": "The なにか grammar point is 用于表达 the idea of 'something' or 'some kind of' in Japanese. It is often used when the speaker is unsure or not specific about the details of the noun being referred to. なにか is used before the noun it modifies.",
-    "formation": "なにか + 名词"
+    "shortExplanation": "表示不确定或不具体指明的事物；'什么（东西）'、'某样东西'、'某种'。",
+    "longExplanation": "表达'なにか'由疑问词'なに'与表示不确定的副助词'か'结合而成，表示说话者指代一个不确定、不明确的具体事物或现象，相当于汉语中的'什么东西'、'某样事物'或'有什么……'。可以直接置于名词前修饰名词，也可以作为独立的句子成分使用。",
+    "formation": "なにか + 名词，或单独作成分：なにか (+ 助词) + 动词",
+    "examples": [
+      {
+        "translation": "请给我拿点喝的东西来。"
+      },
+      {
+        "translation": "如果有什么问题，请尽管提问。"
+      },
+      {
+        "translation": "她拿着某种礼物。"
+      },
+      {
+        "translation": "如果需要什么帮助的话，请尽管跟我说。"
+      }
+    ]
   },
   "ja_なにもないです_116": {
-    "title": "なにも～ないです (nani mo~nai desu)",
-    "shortExplanation": "用于表达 'not any' or 'nothing' in a negative sentence.",
-    "longExplanation": "The なにも～ないです grammar point is used in negative sentences to 表达 idea of 'not any', 'not at all', 'nothing', or 'none'. It is commonly used with verbs in the negative form.",
-    "formation": "なにも + 动词-negative"
+    "title": "なにも～ないです (nani mo ~ nai desu)",
+    "shortExplanation": "用于全面否定动作对象或事物；'什么也（不/没）……'、'什么都（不）……'。",
+    "longExplanation": "句型'なにも～ないです'由疑问词'なに'、表示全面否定的'も'以及动词否定形'～ないです'构成。用于表示动作的对象或事物完全不存在，强调毫无例外地全盘否定，相当于汉语的'什么都不……'或'什么也没……'。",
+    "formation": "なにも + 动词否定形（ない形） + です",
+    "examples": [
+      {
+        "translation": "他什么都没说。"
+      },
+      {
+        "translation": "我什么都不吃。"
+      },
+      {
+        "translation": "她什么都没拿。"
+      },
+      {
+        "translation": "这个盒子里什么也没装。"
+      }
+    ]
   },
   "ja_なにもません_117": {
-    "title": "なにも～ません (nanimo~masen)",
-    "shortExplanation": "用于表达 'not anything', 'nothing'.",
-    "longExplanation": "The grammar point なにも～ません is 用于表达 the idea of 'not anything' or 'nothing' in negative sentences. It is placed before the verb in its negative form (～ません).",
-    "formation": "なにも + 动词-ます form + ません"
+    "title": "なにも～ません (nani mo ~ masen)",
+    "shortExplanation": "在礼貌语中表示对动作对象的全面否定；'什么也（不/没）……'、'毫无……'。",
+    "longExplanation": "句型'なにも～ません'是标准的礼貌体全盘否定句式，将'なにも'置于动词礼貌否定形'～ません'（或过去否定'～ませんでした'）之前。用于郑重表达主体没有实施涉及任何事物的动作，译为'什么也没有……'或'什么都不……'。",
+    "formation": "なにも + 动词ます形词干 + ません",
+    "examples": [
+      {
+        "translation": "昨天我什么都没吃。"
+      },
+      {
+        "translation": "他什么也没说。"
+      },
+      {
+        "translation": "在这个房间里什么也看不见。"
+      },
+      {
+        "translation": "她什么东西都没买。"
+      }
+    ]
   },
   "ja_なん_118": {
-    "title": "なん～ (nan~)",
-    "shortExplanation": "Used to form interrogative questions and emphasize the question word for 'what', 'how'.",
-    "longExplanation": "The なん～ grammar point is used to form interrogative questions and emphasize the question word for 'what' or 'how'. It is an abbreviation of '何' meaning 'what'. Its usage can vary depending on whether it is used with a counter, verb, or adjective.",
-    "formation": "なん + Counter / なん + 动词 / なん + 形容词"
+    "title": "なん～ (nan～)",
+    "shortExplanation": "疑问词'何'的音变形式，常接量词或接在t、d、n行假名之前；'几'、'多少'、'什么'。",
+    "longExplanation": "‘なん’是汉字‘何’在特定语音环境下的发音变体。主要用于两种情况：一是与量词（助数词）结合用于询问数量或序列，译为‘几’或‘多少’（如‘何歳’几岁、‘何時’几点）；二是后接以d、t、n行假名开头的词（如‘なんですか’、‘なんと言う’、‘なんで’）时读作‘なん’。",
+    "formation": "なん + 量词（助数词） / なん + ですか / なん + と",
+    "examples": [
+      {
+        "translation": "你多大年纪（几岁）了？"
+      },
+      {
+        "translation": "这是什么？"
+      },
+      {
+        "translation": "他是乘什么交通工具来的？"
+      },
+      {
+        "translation": "那家餐厅叫什么名字？"
+      }
+    ]
   },
   "ja_なんで_119": {
     "title": "なんで～ (nande～)",
-    "shortExplanation": "Asking the reason or cause; 'why', 'how come'.",
-    "longExplanation": "The なんで grammar point is 用于询问 the reason or cause behind something. 可以翻译为 'why' or 'how come' in English. It is a casual way of asking for an explanation, and it can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "なんで + [phrase or sentence]"
+    "shortExplanation": "用于日常口语中询问原因或理由；'为什么'、'怎么'。",
+    "longExplanation": "疑问词'なんで'是日常口语中非常常用的询问原因、理由的表达方式，相当于汉语中的'为什么'、'怎么'。相较于中性的'どうして'和书面正式的'なぜ'，'なんで'更加随意口语化，常带有轻微的惊讶、不解或质问语气，可以直接置于句首引出问句。",
+    "formation": "なんで + 小句 / 句子",
+    "examples": [
+      {
+        "translation": "你怎么迟到了？"
+      },
+      {
+        "translation": "为什么这个房间这么脏啊？"
+      },
+      {
+        "translation": "她为什么在生气呢？"
+      },
+      {
+        "translation": "今天怎么放假呀？"
+      }
+    ]
   },
   "ja_なんでも_120": {
     "title": "なんでも～ (nandemo～)",
-    "shortExplanation": "Means 'any', 'anything', 'anyone'.",
-    "longExplanation": "The なんでも grammar point is 用于表达 the concept of 'any', 'anything', or 'anyone' in Japanese. It can be used with verbs, adjectives, and nouns. It is often used in the meaning of 'no matter what' or 'regardless of'.",
-    "formation": "なんでも + 动词 / なんでも + 形容词 / なんでも + 名词"
+    "shortExplanation": "表示“无论什么”、“什么都”；全面肯定，指代没有任何限制的全部事物。",
+    "longExplanation": "“なんでも”由疑问词“なに”（什么）和表示提示、包含的助词“でも”复合而成，表示“无论什么”、“任何东西”。它用于表达不加限定的全称肯定，在句子中可修饰动词、形容词或名词，表达毫无挑剔或无一例外的情况。",
+    "formation": "なんでも + 动词 / 形容词 / 名词",
+    "examples": [
+      {
+        "translation": "我什么都能吃，所以点什么都没问题。"
+      },
+      {
+        "translation": "如果什么都可以的话，我推荐这本书。"
+      },
+      {
+        "translation": "我们正在寻找一位什么都会做的工作人员。"
+      },
+      {
+        "translation": "在这家食堂里，端上来的任何料理都既美味又便宜。"
+      }
+    ]
   },
   "ja_なんと_121": {
     "title": "～なんと 言いますか。 (〜nan to iimasu ka.)",
-    "shortExplanation": "Asking how something is called or referred to; 'how do you say'",
-    "longExplanation": "The ～なんと言いますか grammar point is 用于询问 how something is called, expressed, or referred to in a polite manner. 可以翻译为 'how do you say' or 'what do you call' in English. The formation is used with a noun or a topic where you would like to know the proper expression or name for something.",
-    "formation": "名词 + は/が + なんと言いますか"
+    "shortExplanation": "用于询问某事物的名称、叫法或表达方式；“……叫什么？”、“……怎么说？”。",
+    "longExplanation": "句型“～なんと言いますか”是一种礼貌的提问表达，用于询问某事物的名称、称呼或者用某种语言应该如何表达。由疑问词“なん”（什么）、表示引用内容的助词“と”以及动词“言います”（说、称呼）的疑问形式构成。",
+    "formation": "名词 + は / が + なんと言いますか",
+    "examples": [
+      {
+        "translation": "这种花叫什么名字？"
+      },
+      {
+        "translation": "这道菜叫什么？"
+      },
+      {
+        "translation": "在日本这个叫作什么？"
+      },
+      {
+        "translation": "那部电影的名字叫什么？"
+      }
+    ]
   },
   "ja_に_122": {
     "title": "～に あげます (〜 ni agemasu)",
-    "shortExplanation": "用于表达 giving something to someone; 'give', 'offer'.",
-    "longExplanation": "The ～に あげます grammar point is used when the speaker offers or gives something to someone. It emphasizes that the action is performed for the benefit of the receiver. The formation involves using the particle 'に' after the person receiving the item, followed by the verb あげます.",
-    "formation": "Receiver + に + 宾语 + を + あげます"
+    "shortExplanation": "用于表示给某人某物；'给……'、'赠送'。",
+    "longExplanation": "句型'～にあげます'用于说话人（或说话人一方的人）向他人给予、赠送物品，强调该行为是为接受者的利益而进行的。接续方式为在接受物品的对象后加助词'に'，物品后加助词'を'，最后加上动词'あげます'。",
+    "formation": "接受者 + に + 物品 + を + あげます",
+    "examples": [
+      {
+        "translation": "我送给朋友一本书。"
+      },
+      {
+        "translation": "我们送给他一份礼物吧。"
+      },
+      {
+        "translation": "我打算送花给老师。"
+      },
+      {
+        "translation": "我想给妈妈送巧克力。"
+      }
+    ]
   },
   "ja_に_123": {
     "title": "～に もらいます (〜ni moraimasu)",
-    "shortExplanation": "To receive something or some action from someone; 'to get', 'to receive'.",
-    "longExplanation": "The ～に もらいます grammar point is 用于表达 receiving something or some action from someone. 可以翻译为 'to get' or 'to receive' in English. The formation involves placing に after the giver and もらいます to show the act of receiving.",
-    "formation": "Giver + に + 动词-te form + もらいます / Giver + に + 宾语 + を + もらいます"
+    "shortExplanation": "表示从某人那里得到某物或得到某人的帮助；“从……得到”、“得到……给做……”。",
+    "longExplanation": "句型“～にもらいます”用于表示说话人（或说话人一方的人）从他人那里接受物品或恩惠。接受来源（动作给予者）后加助词“に”（有时也可用“から”）。若是接受具体物品，接续为“物品 + を + もらいます”；若动作给予者为自己做某事，则接动词て形构成为“～てもらいます”，表示请某人为自己做事或得到他人的帮助。",
+    "formation": "给予者 + に + 物品 + を + もらいます / 动词て形 + もらいます",
+    "examples": [
+      {
+        "translation": "我从朋友那里收到了礼物。"
+      },
+      {
+        "translation": "我得到了老师的建议。"
+      },
+      {
+        "translation": "我让奶奶给我写了封信。"
+      },
+      {
+        "translation": "我让弟弟帮我做了作业。"
+      }
+    ]
   },
   "ja_の_124": {
     "title": "～の (〜no)",
-    "shortExplanation": "Express possession, apposition, or description using 'of' or ''s'.",
-    "longExplanation": "The ～の grammar point is 用于表达 possession, apposition, or description. It functions like 'of' or an apostrophe + 's' (’s) in English. It can be used with nouns, adjectives, and verbs to show relationships between words.",
-    "formation": "Noun1 + の + Noun2, (形容词/从句) + の (nominalized), etc."
+    "shortExplanation": "连接名词，表示所属、属性、产地、位置等；相当于汉语的“的”。",
+    "longExplanation": "助词“の”是日语中最核心的格助词之一，主要用于连接前后两个名词（名词1 + の + 名词2），表示所属关系（某人的）、属性、位置、所属机构或产地等，起修饰后项名词的作用。此外，“の”还可以用来代替前面提到过的名词，或者接在用言连体形后使从句名词化。",
+    "formation": "名词1 + の + 名词2",
+    "examples": [
+      {
+        "translation": "这是我的包。"
+      },
+      {
+        "translation": "她拿着一个红色的包。"
+      },
+      {
+        "translation": "他有一个干净的房间。"
+      },
+      {
+        "translation": "东京的天气很热。"
+      }
+    ]
   },
   "ja_はたいへんです_125": {
     "title": "～はたいへんです (〜wa taihen desu)",
-    "shortExplanation": "Express that something is difficult or tough.",
-    "longExplanation": "The ～はたいへんです grammar point is 用于表达 that something is difficult or tough to do, handle, or face. 可以翻译为 'is difficult' or 'is tough' in English. The formation is used with a noun followed by はたいへんです.",
-    "formation": "名词 + はたいへんです"
+    "shortExplanation": "表示某事非常辛苦、艰难或不容易；“……很辛苦”、“……很不容易”。",
+    "longExplanation": "句型“～はたいへんです”用于表达某项工作、动作或某种生活处境十分艰难、劳累，需要付出巨大的精力和辛劳。主语既可以是普通名词（如生活、工作），也可以是动词原形通过加“の”名词化后的动词短语，表示“做某事很辛苦/很难”。",
+    "formation": "名词 / 动词辞书形 + の + はたいへんです",
+    "examples": [
+      {
+        "translation": "记住汉字非常辛苦。"
+      },
+      {
+        "translation": "这份工作很辛苦。"
+      },
+      {
+        "translation": "要弄懂日本的车站是一件很不容易的事。"
+      },
+      {
+        "translation": "她生病的时候，生活非常艰辛。"
+      }
+    ]
   },
   "ja_ほとんど_126": {
     "title": "ほとんど〜 (hotondo〜)",
-    "shortExplanation": "用于表达 'almost', 'nearly', or 'most'.",
-    "longExplanation": "The ほとんど〜 grammar point is 用于表达 that something is 'almost', 'nearly', or 'most'. It can appear in both negative contexts (hardly/barely) or positive contexts (almost all). It is typically followed by a verb or used with a noun to describe the quantity or extent of something.",
-    "formation": "ほとんど + 动词 / ほとんど + 名词"
+    "shortExplanation": "副词或名词，表示比例或程度极高；肯定句中表示“几乎、大部分”，否定句中表示“几乎不……”。",
+    "longExplanation": "“ほとんど”可用作副词或名词，表示事物的数量、程度非常接近完全状态。在肯定语境中，表示“大部分”、“几乎全部”；在修饰否定形式时，则表示“几乎没有……”、“几乎不……”。修饰名词时，常用“ほとんどの + 名词”的接续方式。",
+    "formation": "ほとんど + 动词 / 形容词 或 ほとんどの + 名词",
+    "examples": [
+      {
+        "translation": "她几乎不会说英语。"
+      },
+      {
+        "translation": "大多数人都参加了派对。"
+      },
+      {
+        "translation": "我们几乎没怎么学习就通过了考试。"
+      },
+      {
+        "translation": "这本书我几乎读完了。"
+      }
+    ]
   },
   "ja_まあまあ_127": {
     "title": "まあまあ～ (maa maa～)",
-    "shortExplanation": "表示 something as 'so-so', 'not bad', or 'average'.",
-    "longExplanation": "The expression まあまあ is used to describe something that is neither particularly good nor bad, but rather average or 'so-so'. It is a neutral term and can be used in various contexts when discussing quality, feelings, or situations.",
-    "formation": "Used as an adverb or short expression with no special grammar structure."
+    "shortExplanation": "表示程度适中，不好也不坏；“还可以”、“过得去”、“马马虎虎”。",
+    "longExplanation": "“まあまあ”作为副词或な形容词使用，表示水平、状态或程度处于中等，既没有特别出色，但也没有很差，属于尚可接受的范围，相当于汉语中的“还可以”、“马马虎虎”、“一般般”。在口语中，它也可以作为感叹词用于劝解他人、平息争端（“好啦好啦”、“算了算了”）。",
+    "formation": "まあまあ + 形容词 / 动词 / 名词 + です",
+    "examples": [
+      {
+        "translation": "他的烹饪手艺马马虎虎。"
+      },
+      {
+        "translation": "今天的天气还算过得去吧。"
+      },
+      {
+        "translation": "那部电影挺有意思的，还可以。"
+      },
+      {
+        "translation": "我觉得她歌唱得还算不错。"
+      }
+    ]
   },
   "ja_まだ_128": {
     "title": "まだ〜 (mada〜)",
-    "shortExplanation": "指示 something has not yet happened or is still happening; 'still', 'not yet'.",
-    "longExplanation": "The まだ〜 grammar point is 用于表达 that something has not yet occurred or is still in progress. 可以翻译为 'still' or 'not yet' in English. Depending on the context or if expressing the negative, まだ can be used with different combinations of verb, adjective, or noun.",
-    "formation": "まだ + 动词 (non-past / negative / te-form), まだ + い-adjective, まだ + な-adjective + じゃない/ではない, まだ + 名词 + じゃない/ではない"
+    "shortExplanation": "表示状态仍在持续（“还”、“仍”），或某动作尚未发生（“还未”、“还没”）。",
+    "longExplanation": "“まだ”是日语中常用的时间副词。与肯定形式连用时，表示某种状态、性质仍在持续存在，相当于汉语的“还”、“依然”（例如：房间还很热）。与否定形式连用时，表示预期的动作或状态在现阶段尚未完成或发生，相当于汉语的“还没”、“尚未”（例如：还没吃午饭、山田先生还没来）。",
+    "formation": "まだ + 动词否定形（还没） / まだ + 形容词 / 名词 / 动词持续态（仍然、还在）",
+    "examples": [
+      {
+        "translation": "我还没吃午饭。"
+      },
+      {
+        "translation": "山田先生还没来。"
+      },
+      {
+        "translation": "这个房间还很热。"
+      },
+      {
+        "translation": "他现在还不是学生。"
+      }
+    ]
   },
   "ja_まだないです_129": {
     "title": "まだ〜ないです (mada 〜 nai desu)",
-    "shortExplanation": "表示 that something has not happened or been done yet.",
-    "longExplanation": "The まだ〜ないです grammar point is 用于表示 that a certain action or event has not yet happened or been completed. It is used with the negative form of a verb (casual negative + です) and can be translated as 'not yet', 'still', or 'haven't' in English.",
-    "formation": "まだ + 动词-negative + です"
+    "shortExplanation": "礼貌地表达某动作或事情尚未发生或尚未完成；“还没……”、“尚未……”。",
+    "longExplanation": "句型“まだ〜ないです”将副词“まだ”（尚未）与动词的否定形式（ない形）后加“です”结合，表达动作在现阶段尚未实施或未达到完成状态。这种表达比硬性的“～ません”略显柔和、日常，常在口语中用于陈述某事“还没有做”或“还没发生”（常见形式如“まだ〜ていないです”）。",
+    "formation": "まだ + 动词ない形 + です（或 まだ + 动词ていない形 + です）",
+    "examples": [
+      {
+        "translation": "我还没做作业。"
+      },
+      {
+        "translation": "他还没来。"
+      },
+      {
+        "translation": "电影还没开始。"
+      },
+      {
+        "translation": "我们还没吃晚饭。"
+      }
+    ]
   },
   "ja_まだません_130": {
     "title": "まだ～ません (mada ~masen)",
-    "shortExplanation": "表示 that something has not happened or been done yet (polite form).",
-    "longExplanation": "The まだ～ません grammar point is 用于表达 that something has not happened or been done yet in a polite register. It is used with the negative ます-form of a verb (～ません). まだ is placed before the verb phrase.",
-    "formation": "まだ + 动词-ます form (negative)"
+    "shortExplanation": "礼貌、规范地表示某事尚未发生或某动作未完成；“还没……”、“尚未……”。",
+    "longExplanation": "句型“まだ～ません”是日语中标准礼貌体（敬体）的否定表达，用来表示原本预期要发生的动作或状态截至目前为止尚未完成或实现。在实际应用中，如果表达“尚未处于完成状态”，通常采用“まだ + 动词ていません”的形式；如果表示尚未经历过某事，则用“まだ + 动词たことがありません”。",
+    "formation": "まだ + 动词ます形否定（ません / ていません）",
+    "examples": [
+      {
+        "translation": "还没吃午饭。"
+      },
+      {
+        "translation": "作业还没做完。"
+      },
+      {
+        "translation": "我还从没去过东京。"
+      },
+      {
+        "translation": "他还没来。"
+      }
+    ]
   },
   "ja_もう_131": {
     "title": "もう～ (mou～)",
-    "shortExplanation": "表示 'already', 'anymore', or 'soon'.",
-    "longExplanation": "The もう grammar point is 用于表达 the idea of 'already', 'anymore', or 'soon' in English. It 指示 that something has already happened, won't happen anymore, or will happen soon. It can be used with verbs, adjectives, or nouns depending on context.",
-    "formation": "もう + 动词 / もう + 形容词 / もう + 名词"
+    "shortExplanation": "副词，表示动作已完成（“已经”）、不再继续（“不再……”）或快要来临（“快要……”）。",
+    "longExplanation": "“もう”是日语中极为常用的副词，主要包含以下几种用法：1. 与过去时或完成态连用：表示事情已经发生或动作已经完成，相当于“已经”。2. 与否定形式连用：表示不再继续某种行为或状态，相当于“不再……”。3. 与时间词或“すぐ”连用：表示时间紧迫或某事即将到来，相当于“马上、快要”。4. 表示数量上的增加（如：もう一度、もう一杯，意为“再……”）。",
+    "formation": "もう + 动词（过去式/否定式） / 形容词 / 名词",
+    "examples": [
+      {
+        "translation": "我已经吃过午饭了。"
+      },
+      {
+        "translation": "我不再在这里工作了。"
+      },
+      {
+        "translation": "马上就是暑假了呢。"
+      },
+      {
+        "translation": "已经足够了。"
+      }
+    ]
   },
   "ja_もうすぐ_132": {
     "title": "もうすぐ〜 (mou sugu~)",
-    "shortExplanation": "Express an action or event happening soon: 'soon', 'in a short while', 'almost'.",
-    "longExplanation": "The もうすぐ grammar point is 用于表达 that an action or event is going to happen soon or is almost happening. 可以翻译为 'soon', 'in a short while', or 'almost' in English. もうすぐ is usually followed by a verb or a noun indicating an event.",
-    "formation": "もうすぐ + 动词 (~ます form or 〜る form)"
+    "shortExplanation": "表示某事或动作在很短的时间内即将发生；“马上”、“快要”、“不久”。",
+    "longExplanation": "“もうすぐ”是由表示接近的“もう”与表示即刻的“すぐ”结合而成的副词，用于表示某个动作、事件或状态在不久的将来马上就要发生或到来。后项通常接动词（辞书形或ます形）或者表示节日、日期的名词句。",
+    "formation": "もうすぐ + 动词 / 名词 + です",
+    "examples": [
+      {
+        "translation": "春天马上就要来了。"
+      },
+      {
+        "translation": "快到她的生日了。"
+      },
+      {
+        "translation": "考试马上就要结束了。"
+      },
+      {
+        "translation": "雨大概很快就会停了吧。"
+      }
+    ]
   },
   "ja_もっと_133": {
     "title": "もっと〜 (motto〜)",
-    "shortExplanation": "表示 'more' or 'even more' when describing a quantity, frequency, or degree.",
-    "longExplanation": "The もっと〜 grammar point is used to emphasize the desire or need for something to be 'more' or 'even more' in terms of quantity, frequency, or degree. It is often translated as 'more' or 'even more' in English. もっと can be used with verbs, い-adjectives, or な-adjectives.",
-    "formation": "もっと + 动词 / い-形容词 / な-形容词"
+    "shortExplanation": "副词，表示在现有程度或基准的基础上进一步增加；“更加”、“更”、“进一步”。",
+    "longExplanation": "“もっと”是表示程度加深的副词，常用于在现状或某一基准之上，追求或体现更高一层的数量、程度或品质。相当于汉语中的“更加”、“更……一些”。它可以直接修饰动词、い形容词或な形容词。",
+    "formation": "もっと + 动词 / い形容词 / な形容词（な）",
+    "examples": [
+      {
+        "translation": "必须更加努力学习。"
+      },
+      {
+        "translation": "我想把这个包换成更大一点的尺寸。"
+      },
+      {
+        "translation": "我想在更安静的地方工作。"
+      },
+      {
+        "translation": "她希望能变得更加熟练出色。"
+      }
+    ]
   },
   "ja_よく_134": {
     "title": "よく～ (yoku ~)",
-    "shortExplanation": "Often 用于表达 'doing something well' or 'often'.",
-    "longExplanation": "The よく～ grammar point is 用于表达 that someone does something well, frequently, or often. It is often placed before the verb and can also mean 'well done' or 'good job' when praising someone's action.",
-    "formation": "よく + 动词-casual"
+    "shortExplanation": "副词，表示频度高（“经常、常常”），或表示程度深、做得好（“充分地、很好地”）。",
+    "longExplanation": "“よく”是由形容词“よい／いい”（好）连用形转化而来的副词，主要有两种核心用法：1. 表示动作发生的频率很高，相当于汉语中的“经常”、“往往”、“常常”。2. 表示动作的程度深、做得出色或仔细，相当于“很好地”、“充分地”、“仔细地”。例如在称赞别人时常用的“よくできました”（做得很好！真棒！）。",
+    "formation": "よく + 动词",
+    "examples": [
+      {
+        "translation": "他经常用功学习。"
+      },
+      {
+        "translation": "她经常做饭。"
+      },
+      {
+        "translation": "我以前经常和老朋友们一起玩。"
+      },
+      {
+        "translation": "做得非常好！"
+      }
+    ]
   },
   "ja_場所にがあります_135": {
     "title": "～（場所）に～があります (〜basho ni 〜 ga arimasu)",
-    "shortExplanation": "表达 existence or presence of something in a place.",
-    "longExplanation": "The ～（場所）に～があります grammar point is 用于表达 the existence or presence of something in a specific location. In this structure, the place is followed by 'に', then the object, plus が, and finally あります (to exist / there is).",
-    "formation": "Place + に + 宾语/Thing + が + あります"
+    "shortExplanation": "表示某处存在某物（无生命物体或植物）；'在……有……'。",
+    "longExplanation": "句型'～（場所）に～があります'用于表达在某个特定场所存在某种非生命物体、事象或植物。在该句型中，场所名词后接助词'に'表示存在的地点，事物名词后接助词'が'表示存在的主体，句尾接动词'あります'（有、存在）。需要注意的是，人或动物等有生命对象需要使用'います'。",
+    "formation": "场所名词 + に + 物品/事物 + が + あります",
+    "examples": [
+      {
+        "translation": "图书馆里有很多书。"
+      },
+      {
+        "translation": "公园里有一个池塘。"
+      },
+      {
+        "translation": "车站前面有一家便利店。"
+      },
+      {
+        "translation": "山顶上有一座神社。"
+      }
+    ]
   },
   "ja_A_1": {
     "title": "A うと B うと (A uto B uto)",
-    "shortExplanation": "Shows that the speaker is indifferent to both conditions; 'whether A or B'.",
-    "longExplanation": "The うと うと pattern 指示 that A and B are both possibilities, yet the speaker's stance or the outcome doesn’t change. It's often translated as 'whether A or B'. For i-adjectives, the '-かろうと' form is used. For nouns or な-adjectives, you’ll see 'Noun/な-adjective + であろうと'.",
-    "formation": "い-adjective (-かろう) + と, な-adjective / 名词 + であろうと"
+    "shortExplanation": "表示不论是面临A还是B的状况，说话人的意志、态度或客观事实都一如既往；“无论……还是……”、“不管是……还是……”。",
+    "longExplanation": "JLPT N1句型“Aうと Bうと”与“Aうが Bうが”语义相通，接在动词意志形、一类形容词推量形（-かろうと）或“名词/二类形容词词干+であろうと”之后，并列列举两个相互对立的极端假定或选项，着重强调说话人的态度、行动或客观规律不会因外界处于A还是B的情况而发生任何动摇（“无论A还是B，我都一如既往……”、“不论……还是……结果都一样”）。",
+    "formation": "动词意志形 + と + 动词意志形 / 动词辞书形 + まい + と | 一类形容词词干 + かろうと | 二类形容词词干 / 名词 + であろうと",
+    "examples": [
+      {
+        "translation": "无论是下雨还是天晴，我每天都坚持慢跑。"
+      },
+      {
+        "translation": "不论考试是难还是容易，我都会拼尽全力好好复习。"
+      },
+      {
+        "translation": "不论他是学生还是社会人士，我都十分尊敬他。"
+      },
+      {
+        "translation": "那部电影不论是新片还是老片，只要精彩我就会看。"
+      }
+    ]
   },
   "ja_A_2": {
     "title": "A かたわら B (A katawara B)",
-    "shortExplanation": "表示 'while also', 'at the same time as'.",
-    "longExplanation": "The ～かたわら grammar point is used when someone is doing B while also doing A. It often implies that both tasks require considerable commitment or skill. 可以翻译为 'while also' or 'at the same time as'.",
-    "formation": "动词-dictionary form + かたわら, 名词 + のかたわら"
+    "shortExplanation": "表示在从事本职工作或主要活动A的同时，兼做另一项活动B；“一边……一边……”、“在……之余”。",
+    "longExplanation": "句型“～かたわら”（汉字写作“傍ら”）用于表示在从事某项长期、主要的本业或职责（如职业、学业等）的同时，兼顾进行另一项活动。常译为“一边从事……一边做……”、“在……之余兼做……”。该句型常用于较为正式的书面语、新闻报道或个人经历介绍中，强调两项活动都在持续进行。",
+    "formation": "动词辞书形 + かたわら | 名词 + のかたわら",
+    "examples": [
+      {
+        "translation": "他一边工作，一边还在上大学。"
+      },
+      {
+        "translation": "我在求学之余，还在一家餐厅做兼职。"
+      },
+      {
+        "translation": "她作为医生的同时，还出于兴趣从事绘画创作。"
+      },
+      {
+        "translation": "他一边工作，一边还积极参加志愿者活动。"
+      }
+    ]
   },
   "ja_A_3": {
     "title": "A かれ B かれ (A kare B kare)",
-    "shortExplanation": "表示 'whether A or B'; both situations are included.",
-    "longExplanation": "The grammar point ～AかれBかれ is a somewhat literary/old-fashioned pattern often seen with i-adjectives (e.g., 早かれ遅かれ). It can mean 'whether A or B'. Here it's shown with nouns or verbs, which is also possible in older or set expressions.",
-    "formation": "Commonly i-adjective stems + かれ + i-adjective stems + かれ (e.g. 早かれ遅かれ). Also sometimes 名词 + かれ + 名词 + かれ in older usage."
+    "shortExplanation": "表示无论是A还是B，无论在何种情况下都一样；“无论……还是……”、“不论……还是……”。",
+    "longExplanation": "句型“～AかれBかれ”是一种带有文语色彩或古风的惯用句型，通常将两个具有相反或相对含义的词并列，表示“无论是A还是B，两种情况都包含在内，结果或态度并无二致”（“不论……还是……”）。最常见于一类形容词词干（如“多かれ少なかれ/或多或少”、“早かれ遅かれ/迟早”），在旧式用法或固定搭配中也可与名词或动词连用。",
+    "formation": "一类形容词词干 + かれ + 一类形容词词干 + かれ（惯用搭配） | 名词 + かれ + 名词 + かれ | 动词普通形 + かれ + 动词普通形 + かれ",
+    "examples": [
+      {
+        "translation": "不管是冬天还是夏天，我每天都坚持慢跑。"
+      },
+      {
+        "translation": "不管他来还是不来，聚会都会照常开始。"
+      },
+      {
+        "translation": "不论输赢，参加比赛本身才是最重要的。"
+      },
+      {
+        "translation": "不管是下雨还是下雪，遛狗这件事我都从不落下。"
+      }
+    ]
   },
   "ja_いAdjective_4": {
-    "title": "い-Adjective く する/なる (i-Adjective kusuru/naru)",
-    "shortExplanation": "Express a change happening or making something change.",
-    "longExplanation": "The い-Adjective く する/なる grammar point is 用于表示 a change happening (naru) or intentionally making something change (suru). When using this grammatical structure, the い-adjective is changed to its く form, and then is followed by either する (to make the change) or なる (the change happens).",
-    "formation": "い-形容词 (remove い) + く + する/なる"
+    "title": "一类形容词（い形容词）+ くする / くなる (i-keiyoushi kusuru/naru)",
+    "shortExplanation": "表示性质或状态发生变化（くなる表示自然转变'变得……'；くする表示人为改变'使……变得……'）。",
+    "longExplanation": "句型'一类形容词 + くする / くなる'用于表达性质或状态的转变：\n• '～くなる'表示事物自然而然地发生变化，相当于汉语的'变得……'、'变成……'。\n• '～くする'表示人为地、有意识地对对象施加动作使其发生变化，相当于汉语的'使……变得……'、'把……弄得……'。\n接续方法是将一类形容词（い形容词）词尾的'い'变为'く'，再接'する'或'なる'。",
+    "formation": "一类形容词（去掉词尾 い）+ く + する / なる",
+    "examples": [
+      {
+        "translation": "我把房间弄得更亮一些。"
+      },
+      {
+        "translation": "他的脸变红了。"
+      },
+      {
+        "translation": "请把这道菜做得辣一点。"
+      },
+      {
+        "translation": "一下雨，道路就变得容易打滑。"
+      }
+    ]
   },
   "ja_なadjective_5": {
-    "title": "な-adjective に する/なる",
-    "shortExplanation": "用于表示 change or decision; 'to become' or 'to make' with na-adjectives.",
-    "longExplanation": "The な-adjective に する/なる grammar point is 用于表达 a change or a decision related to a na-adjective. The なる (naru) form 指示 a change that occurs by itself, while the する (suru) form 指示 a conscious decision made by someone.",
-    "formation": "な-形容词 + に + する/なる"
+    "title": "二类形容词（な形容词）+ にする / になる (na-keiyoushi ni suru/naru)",
+    "shortExplanation": "表示二类形容词的状态变化（になる表示客观变化'变得……'；にする表示人为改变'使……变得……'）。",
+    "longExplanation": "句型'二类形容词 + にする / になる'用于表达某种性质或状态的转变：\n• '～になる'表示客观自然地转变成某种状态，相当于汉语的'变得……'、'成为……'。\n• '～にする'表示人为地采取行动、使其达到某种状态，相当于汉语的'使……变得……'、'把……弄得……'。\n接续方式为二类形容词（な形容词）词干后接助词'に'，再接动词'する'或'なる'。",
+    "formation": "二类形容词词干（去掉 な）+ に + する / なる",
+    "examples": [
+      {
+        "translation": "把房间打扫干净。"
+      },
+      {
+        "translation": "他恢复了精神（身体好起来了）。"
+      },
+      {
+        "translation": "每天保持安静是很重要的。"
+      },
+      {
+        "translation": "我会努力让日语学习变得有趣起来。"
+      }
+    ]
   },
   "ja_Noun_6": {
-    "title": "Noun しか～ない (Noun shika~nai)",
-    "shortExplanation": "表示 'only', 'nothing but', or 'no other'.",
-    "longExplanation": "The grammar point Noun しか～ない is used to emphasize the small quantity or exclusiveness of something. 可以翻译为 'only', 'nothing but', or 'no other' in English. It is used with a negative verb to convey the meaning.",
-    "formation": "名词 + しか + Negative 动词"
+    "title": "名词 + しか～ない (shika~nai)",
+    "shortExplanation": "表示唯一的限定，带有数量少或无可奈何的语气；'只……'、'只能……'、'除了……别无他物'。",
+    "longExplanation": "句型'名词 + しか～ない'用于强调事物的单一性、排他性或数量极其稀少，往往带有'仅仅如此、别无他选'的遗憾或无奈语气。虽然助词'しか'必须与后项的否定动词搭配使用，但整体句意表达的是肯定的限定含义，相当于汉语中的'只有……'、'只能……'或'除……之外没有别的'。",
+    "formation": "名词（或动词辞书形）+ しか + 动词否定形（～ない / ～ません）",
+    "examples": [
+      {
+        "translation": "我只吃苹果。"
+      },
+      {
+        "translation": "只能坐电车去了（别无他法）。"
+      },
+      {
+        "translation": "他只有一本书。"
+      },
+      {
+        "translation": "这家店里除了啤酒什么都没有。"
+      }
+    ]
   },
   "ja_Noun_7": {
-    "title": "Noun に する (Noun ni suru)",
-    "shortExplanation": "用于表示 a choice or decision, 'to decide on' or 'to choose'.",
-    "longExplanation": "The grammar point 'Noun に する' is 用于表达 making a choice or decision, which can be translated as 'to decide on' or 'to choose' in English. It is often used when deciding between different options or making a decision in various situations, such as choosing a menu item, deciding on a plan, or selecting a gift.",
-    "formation": "名词 + に + する"
+    "title": "名词 + にする (ni suru)",
+    "shortExplanation": "用于表达在多个选项中做出选择或决定；'决定要……'、'选……'。",
+    "longExplanation": "句型'名词 + にする'用于表示主观上的选择或决定，说明在若干备选项中决定选取某一项。该表达在餐厅点餐（如'これにします'表示'我要这个'）、购物挑选商品、确定旅行目的地或日程安排等日常场景中极其常用。",
+    "formation": "名词 + に + する",
+    "examples": [
+      {
+        "translation": "我从菜单里选了比萨。"
+      },
+      {
+        "translation": "我打算选手表作为生日礼物。"
+      },
+      {
+        "translation": "我决定今天下午去购物。"
+      },
+      {
+        "translation": "我选择日本作为海外旅行的目的地。"
+      }
+    ]
   },
   "ja_Noun_8": {
-    "title": "Noun に なる (Noun ni naru)",
-    "shortExplanation": "To become; to change into; to turn into.",
-    "longExplanation": "The 'Noun に なる' grammar point is 用于展示 a change or a transformation from one state or form into another. In English, 可以翻译为 'to become', 'to change into', or 'to turn into'. It is often used with nouns that indicate profession, status, or condition.",
-    "formation": "名词 + に + なる"
+    "title": "名词 + になる (ni naru)",
+    "shortExplanation": "表示身份、职业、状态或时间的自然转变；'变成……'、'成为……'、'到了（某时间）'。",
+    "longExplanation": "句型'名词 + になる'用于表达从一种状态自然而然地转变为另一种新的状态，相当于汉语中的'成为……'、'变成……'或'到了……（时节/年龄）'。常与表示职业、身份、资格、年龄或季节天气的名词连用。",
+    "formation": "名词 + に + なる",
+    "examples": [
+      {
+        "translation": "他成为了一名医生。"
+      },
+      {
+        "translation": "小时候，我想成为一名老师。"
+      },
+      {
+        "translation": "她因为紧张而脸变红了。"
+      },
+      {
+        "translation": "一到春天，樱花就会盛开。"
+      }
+    ]
   },
   "ja_のために_9": {
-    "title": "のために (no tame ni)",
-    "shortExplanation": "用于表达 purpose or reason; 'for', 'for the sake of', 'in order to'.",
-    "longExplanation": "The のために grammar point is 用于表达 the purpose or reason for doing something, or for the benefit of someone or something. 可以翻译为 'for', 'for the sake of', or 'in order to' in English. The formation is straightforward, simply place のために after a noun.",
-    "formation": "名词 + のために"
+    "title": "名词 + のために (no tame ni)",
+    "shortExplanation": "表示动作的目的，或为了某人、某事的利益；'为了……'、'因为……'。",
+    "longExplanation": "句型'名词 + のために'用于表示后续动作的目的，或者为了某个人、集体的利益而做某事，相当于汉语中的'为了……'。当接在人物名词后时，表示'为……着想、为了……的利益'；当接在动作或目标名词后时，表示'为了达到……目的'。",
+    "formation": "名词 + のために",
+    "examples": [
+      {
+        "translation": "为了学习，我正在图书馆里寻找一个安静的地方。"
+      },
+      {
+        "translation": "他为了家人在拼命努力工作。"
+      },
+      {
+        "translation": "为了身体健康，我每天都在做运动。"
+      },
+      {
+        "translation": "为了世界和平，大家一起齐心协力吧。"
+      }
+    ]
   },
   "ja_Noun_10": {
-    "title": "Noun の 間に (〜no aida ni)",
-    "shortExplanation": "表示 'while' or 'during' a specific period or time.",
-    "longExplanation": "The Noun の 間に grammar point is 用于表示 a specific period or time during which an action takes place. It is often translated as 'while' or 'during' in English. This grammar point requires a noun to represent the time or period.",
-    "formation": "名词 + の間に"
+    "title": "名词 + の間に (no aida ni)",
+    "shortExplanation": "表示在某个特定的时间段内发生了某动作或事件；'在……期间'、'在……的时候'。",
+    "longExplanation": "句型'名词 + の間に'用于表示在前项名词所代表的时间段、期间之内，发生了后项的某一动作或事件。后项通常是瞬间动词或在期间内完成的一次性动作。需要注意的是，若不带'に'（即'〜の間'），则表示后项状态或动作持续贯穿于整个时间段。",
+    "formation": "名词（表示时间段）+ の間に",
+    "examples": [
+      {
+        "translation": "我会在午休期间去一趟银行。"
+      },
+      {
+        "translation": "我打算趁着暑假期间去海外旅行。"
+      },
+      {
+        "translation": "我趁孩子们在学校的期间去买了东西。"
+      },
+      {
+        "translation": "我在母亲节那天给妈妈寄送了礼物。"
+      }
+    ]
   },
   "ja_Noun_11": {
-    "title": "Noun ばかり (〜bakari)",
-    "shortExplanation": "表示 'only', 'nothing but', 'always', or 'just'.",
-    "longExplanation": "The ばかり grammar point is 用于表达 that something is only, nothing but, just, or always. It can be attached to nouns, verbs, or adjectives, and has various meanings based on the context.",
-    "formation": "名词 + ばかり, 动词-casual + ばかり, い-形容词 + ばかり, な-形容词 + だ ばかり"
+    "title": "名词 + ばかり (bakari)",
+    "shortExplanation": "表示净是、光是某种事物或总是做某种动作，常带消极语气；'净是……'、'光是……'、'总是……'。",
+    "longExplanation": "助词'ばかり'接在名词或动词等词后面，用于表示同类事物大量存在，或者某项动作反反复复进行，相当于汉语中的'光是……'、'净是……'、'老是……'。该用法往往带有说话人批判、埋怨、不满或感到无可奈何的语感。",
+    "formation": "名词 + ばかり（动词普通形 / 动词て形 + ばかりいる / 一类形容词 + ばかり / 二类形容词 + な・である + ばかり）",
+    "examples": [
+      {
+        "translation": "他张嘴闭嘴净谈钱的事。"
+      },
+      {
+        "translation": "她总是一味地在学习。"
+      },
+      {
+        "translation": "百货商场里光是昂贵的商品。"
+      },
+      {
+        "translation": "这个房间光剩狭窄了。"
+      }
+    ]
   },
   "ja_Noun_12": {
-    "title": "Noun を あげる (Noun wo ageru)",
-    "shortExplanation": "To give something to someone; 'give', 'offer', 'present'.",
-    "longExplanation": "The を あげる grammar point is 用于表达 giving something to someone. 可以翻译为 'give', 'offer', or 'present' in English. This construction is commonly used with nouns to indicate giving or offering a tangible item, action, or favor to someone else.",
-    "formation": "名词 + を + あげる"
+    "title": "名词 + をあげる (wo ageru)",
+    "shortExplanation": "表示给对方物品、送礼物（授受动词）；'给……'、'送……'。",
+    "longExplanation": "句型'名词 + をあげる'属于授受表现（给予动词），用于说话人（或己方人员）向平辈、晚辈等给予某物品。给予的物品后接宾格助词'を'，接受物品的对象后接助词'に'（即'接收者 + に + 物品 + をあげる'）。注意：对长辈或上级给予物品时，不宜使用'あげる'，而应使用谦逊语'差し上げる'。",
+    "formation": "（接受者 + に）+ 物品名词 + を + あげる",
+    "examples": [
+      {
+        "translation": "送礼物。"
+      },
+      {
+        "translation": "我给朋友送了花。"
+      },
+      {
+        "translation": "我打算送给父亲一块手表。"
+      },
+      {
+        "translation": "我想给她写一封信（送她一封信）。"
+      }
+    ]
   },
   "ja_Nounをいただく_13": {
-    "title": "Nounをいただく (Noun wo itadaku)",
-    "shortExplanation": "To receive or accept something politely; 'to receive', 'to get', 'to accept'.",
-    "longExplanation": "The Nounをいただく grammar point is 用于表达 the action of receiving or accepting something in a polite or humble manner. The verb 'いただく' is a more respectful version of the verb 'もらう' (to receive), so using 'いただく' shows humility and respect towards the person who is giving you something.",
-    "formation": "名词 + を + いただく"
+    "title": "名词 + をいただく (wo itadaku)",
+    "shortExplanation": "'もらう'的谦逊语，表示从长辈或尊长处领受物品、建议或恩惠；'承蒙得到……'、'领受……'。",
+    "longExplanation": "句型'名词 + をいただく'是授受动词'もらう'（得到、接受）的自谦语（谦逊语）。用于说话人从长辈、上级或受尊敬的人那里接受物品、指导、建议或关照，表达对给予者的崇高敬意与由衷谢意。给予者后常接助词'から'或'に'。此外，'いただく'也是动词'食べる'（吃）和'飲む'（喝）的自谦形式，可用于礼貌地表达饮食。",
+    "formation": "（赠予者 + から / に）+ 名词 + を + いただく",
+    "examples": [
+      {
+        "translation": "非常感谢您送给我的礼物。"
+      },
+      {
+        "translation": "我得到了老师的宝贵建议。"
+      },
+      {
+        "translation": "我可以喝这杯咖啡吗？"
+      },
+      {
+        "translation": "我从公司上司那里收到了晋升通知。"
+      }
+    ]
   },
   "ja_Nounをくださる_14": {
-    "title": "Nounをくださる",
-    "shortExplanation": "用于表达 someone doing something as a favor or for the benefit of the speaker.",
-    "longExplanation": "The grammar point 'Nounをくださる' is a polite expression used to say that someone is giving or doing something for the benefit of the speaker. It is often used when referring to people who have a higher social status or when expressing gratitude for their actions.",
-    "formation": "名词 + を + くださる"
+    "title": "～をくださる (〜wo kudasaru)",
+    "shortExplanation": "动词'くれる'的敬语形式（尊敬语），表示长辈或地位高的人给予说话人（或其亲友）某物；'赐予'、'给'。",
+    "longExplanation": "句型'～をくださる'是授受动词'くれる'的尊敬语形式。用于长辈、上司、老师等地位较高的人物向说话人（或说话人一方的人）给予物品、恩惠或关照的场合，充分体现出说话人的尊敬与感激之情。在日常礼貌交际中，通常使用礼貌体'くださいます'或过去式'くださいました'。",
+    "formation": "给予者（长辈/上级） + が + 接受者（说话人一方） + に + 名词（物品） + を + くださる（礼貌体：くださいます / くださいました）",
+    "examples": [
+      {
+        "translation": "老师给了我资料。"
+      },
+      {
+        "translation": "妈妈给了我点心。"
+      },
+      {
+        "translation": "领导给了我宝贵的建议。"
+      },
+      {
+        "translation": "朋友送给了我一份礼物。"
+      }
+    ]
   },
   "ja_Noun_15": {
-    "title": "Noun かたがた (Noun kata gata)",
-    "shortExplanation": "Do one thing while also doing another; 'while', 'and at the same time'.",
-    "longExplanation": "「Noun かたがた」 is a somewhat formal expression for doing one thing while also doing another. The first action is often the main purpose, and the second is done simultaneously or incidentally.",
-    "formation": "名词 + かたがた"
+    "title": "名词 + かたがた (Noun kata gata)",
+    "shortExplanation": "表示借做某事之便顺带做另一件事（较为郑重的表达）；“顺便……”、“借……之便”。",
+    "longExplanation": "句型“名词 + かたがた”（汉字多作“方々”）是一种较为庄重的表达方式，表示借着进行前项主要行动（通常伴随出行或拜访）的机会，顺便兼顾完成另一件事（“顺便……”、“借……之便顺带……”）。常用于商务书信、社交问候或看望致意（如“お礼かたがた/顺便致谢”、“ご挨拶かたがた/顺道问候”）。",
+    "formation": "名词（带有动作性的名词） + かたがた",
+    "examples": [
+      {
+        "translation": "借着去东京出差之便，我顺道去见了一位朋友。"
+      },
+      {
+        "translation": "观光游览的同时，我顺便买了些当地特产。"
+      },
+      {
+        "translation": "散步的时候，我顺手拾捡了垃圾。"
+      },
+      {
+        "translation": "在学习的同时，我也顺便听了听音乐。"
+      }
+    ]
   },
   "ja_Noun_16": {
-    "title": "Noun がてら (Noun gatera)",
-    "shortExplanation": "Means 'while...at the same time', 'on the occasion of', or 'along with'.",
-    "longExplanation": "The suffix ～がてら is 用于展示 doing one activity alongside another, taking advantage of the opportunity. It can often be translated as 'while', 'at the same time', 'along with', or 'on the occasion of'.",
-    "formation": "名词 + がてら"
+    "title": "名词 + がてら (Noun gatera)",
+    "shortExplanation": "表示借进行移动性动作的机会顺便做另一件事；“顺便……”、“借……之便”。",
+    "longExplanation": "句型“～がてら”接在表示移动的动作性名词（如散步、购物、兜风等）或动词连用形后，表示利用进行该动作的大好机会，顺道把另一件事也一起做了（“顺便……”、“借……的机会顺带……”）。属于日常口语和常用书面表达，后面常可加助词“に”构成“～がてらに”。",
+    "formation": "名词（表示移动的动作性名词） + がてら（或 がてらに） | 动词连用形（ます形去掉ます） + がてら",
+    "examples": [
+      {
+        "translation": "借着散步的机会，我在附近的公园里摘了几朵花。"
+      },
+      {
+        "translation": "去买东西顺便去拜访了朋友。"
+      },
+      {
+        "translation": "她借着旅行之便，学习了一门新的语言。"
+      },
+      {
+        "translation": "趁着开车兜风，我顺便听了新出的专辑。"
+      }
+    ]
   },
   "ja_Noun_17": {
-    "title": "Noun からある (〜kara aru)",
-    "shortExplanation": "Used with large numbers or measurements to emphasize 'at least that many' or 'no less than.'",
-    "longExplanation": "「Noun + Counter + からある」指示 a large or minimum number, emphasizing that the quantity is at least that high (often more). It conveys the idea that the figure is notably large or impressive.",
-    "formation": "Number + Counter + からある"
+    "title": "数量词 + からある (kara aru)",
+    "shortExplanation": "接在表示数量、重量、长度等数量词后，强调数量之多、规模之大；“多达……”、“足有……”、“不下……”。",
+    "longExplanation": "句型“数量词 + からある”（修饰名词时用“～からの”）接在表示重量、距离、数量、高度等数量词之后，用于强调数量庞大、规模可观，带有说话者感叹、惊异的语气，相当于中文的“多达……”、“足足有……”、“不下于……”。（注：表示价格时多用“～からする”，但在强调资产、总额等巨大数字时也可用“～からある”）。",
+    "formation": "数量词 + からある（或 からの ＋ 名词）",
+    "examples": [
+      {
+        "translation": "他的收藏品多达500件以上。"
+      },
+      {
+        "translation": "这座大厦足足有40多层高。"
+      },
+      {
+        "translation": "他的资产多达10亿日元以上。"
+      },
+      {
+        "translation": "这场马拉松赛程长达10公里以上。"
+      }
+    ]
   },
   "ja_Noun_18": {
-    "title": "Noun からする (Noun kara suru)",
-    "shortExplanation": "用于表示 that something is judged, estimated, or considered from a certain point or aspect.",
-    "longExplanation": "「Noun + からする」表示 a judgment or estimation based on a particular perspective or aspect. It translates to 'judging from', 'based on', or 'from the viewpoint of' in English, allowing the speaker to form an opinion or conclusion from that point.",
-    "formation": "名词 + からする"
+    "title": "名词 + からすると (kara suru to)",
+    "shortExplanation": "表示根据某一方面作为判断或推测的依据；“从……来看”、“由……判断”。",
+    "longExplanation": "句型“名词 + からすると”（亦常作“～からすれば”、“～からして”）接在表示依据、线索、态度或立场等的名词后，表示以该点为判断、推测或评价的基准（“从……来看”、“由……来判断”）。后项多伴随表示推测、判定的表达，如“～ようだ”、“～はずだ”、“～だろう”等。",
+    "formation": "名词 + からすると / からすれば / からして",
+    "examples": [
+      {
+        "translation": "从他的态度来看，他似乎对那项计划持反对意见。"
+      },
+      {
+        "translation": "从这家餐厅的气氛来判断，饭菜肯定也非常美味。"
+      },
+      {
+        "translation": "从她的成绩来看，她应该是一个非常勤奋好学的人。"
+      },
+      {
+        "translation": "从那家公司的增长率来看，将来应该能够获得巨大的利润。"
+      }
+    ]
   },
   "ja_Verb_19": {
-    "title": "Verb させられる (Verb-saserareru)",
-    "shortExplanation": "表达 passive causative form; 'to be made to', 'to be forced to'.",
-    "longExplanation": "The Verb させられる grammar point is the passive causative form of the verb. It is used to describe a situation where someone or something causes or forces another person to do something. This construction of passive causative is useful to show that the action was not done voluntarily by the person.",
-    "formation": "Group 1 动词: Replace ～う with ～わせられる, Group 2 动词: Replace ～る with ～させられる, Group 3 动词: する → させられる, くる → こさせられる"
+    "title": "～させられる (〜saserareru)",
+    "shortExplanation": "使役被动态，表示被迫或无奈做某事；'被迫做……'、'被强迫……'、'不得不……'。",
+    "longExplanation": "句型'～させられる'是动词的使役被动态，由使役形和被动态结合而成。表示主语在非自愿、迫于他人压力或规则要求的情况下，不得不做某事，含有极强的不情愿或困扰感。对于一类动词（五段动词），除词尾为'す'的动词外，口语中广泛使用约音形式'～される'（如：行かされる、飲まされる）。",
+    "formation": "一类动词：词尾う段假名变为あ段假名 + せられる（约音形式：あ段 + される，词尾为す除外） | 二类动词：去掉词尾る + させられる | 三类动词：する → させられる、くる → こさせられる",
+    "examples": [
+      {
+        "translation": "孩子们被老师强迫做作业。"
+      },
+      {
+        "translation": "他被公司强迫多加班工作。"
+      },
+      {
+        "translation": "我被朋友逼着说出了那个秘密。"
+      },
+      {
+        "translation": "受伤的选手被教练强制要求休息。"
+      }
+    ]
   },
   "ja_Verb_20": {
-    "title": "Verb させる (Verb-saseru)",
-    "shortExplanation": "表示 'to make someone do something', 'to let someone do something', or 'to cause someone to do something'.",
-    "longExplanation": "The ～させる verb form is used to describe causing or allowing someone to do something. 可以翻译为 'to make someone do something', 'to let someone do something', or 'to cause someone to do something' in English. The formation of the ～させる form depends on the verb it is attached to.",
-    "formation": "Group 1 Verbs: Change the last hiragana to ～せる, Group 2 Verbs: Remove ～る and add ～させる, Group 3 Verbs: する → させる, くる → こさせる"
+    "title": "～させる (〜saseru)",
+    "shortExplanation": "动词使役态，表示指示、命令某人做某事，或允许、放任某人做某事；'让……做'、'使……做'。",
+    "longExplanation": "句型'～させる'是日语动词的使役态形式。通常由地位较高或有支配权的人（父母、长辈、老师、上司等）向地位较低者使用。主要表意包括：①强制或命令对方做出某种行为（'让某人做某事'）；②容许、许可或放任对方做其想做的事（'允许某人做某事'，常结合授受表现使用，如'～させてあげる'）。此外还可表示诱发某种心理或情感反应（如：安心させる）。",
+    "formation": "一类动词：词尾う段假名变为あ段假名 + せる | 二类动词：去掉词尾る + させる | 三类动词：する → させる、くる → こさせる",
+    "examples": [
+      {
+        "translation": "老师让学生们做作业。"
+      },
+      {
+        "translation": "妈妈让我打扫房间。"
+      },
+      {
+        "translation": "我让她弹了钢琴。"
+      },
+      {
+        "translation": "上司让他编写了那个程序。"
+      }
+    ]
   },
   "ja_Verb_21": {
-    "title": "Verb た ことがある (Verb ta koto ga aru)",
-    "shortExplanation": "表示 the experience of having done something in the past.",
-    "longExplanation": "The ～たことがある grammar point is 用于表达 the experience of having done an action in the past. It 指示 that the speaker has had the experience of doing something at least once before. It is formed by adding ことがある to the た-form of the verb.",
-    "formation": "动词-た-form + ことがある"
+    "title": "～たことがある (〜ta koto ga aru)",
+    "shortExplanation": "表示过去曾有过的经历或体验；'曾经……过'、'有过……的经验'。",
+    "longExplanation": "句型'～たことがある'将动词た形与'ことがある'相结合，用于叙述说话人或某人在过去曾经经历过某件事或有过某种经验（哪怕只有一次）。它强调的是人生的经历，而不是刚刚发生的事件或日常例行习惯。其否定形式为'～たことがない'（从未做过），疑问句形式为'～たことがありますか'（曾经做过……吗？）。",
+    "formation": "动词た形 + ことがある（礼貌体：あります / ありません）",
+    "examples": [
+      {
+        "translation": "我去过日本。"
+      },
+      {
+        "translation": "你吃过寿司吗？"
+      },
+      {
+        "translation": "他曾跑过马拉松。"
+      },
+      {
+        "translation": "我从没体验过跳伞。"
+      }
+    ]
   },
   "ja_Verb_22": {
-    "title": "Verb た ときに (Verb た ときに)",
-    "shortExplanation": "Express an action or event that occurred at a specific time in the past; 'when', 'at the time'.",
-    "longExplanation": "The たときに grammar point is 用于表达 an action that happened at a specific time in the past, usually with a focus on a specific event or moment. 可以翻译为 'when' or 'at the time' in English. This grammar point requires a verb in its た-form followed by ときに to indicate the time at which the action occurred.",
-    "formation": "动词-た + ときに"
+    "title": "～たときに (〜ta toki ni)",
+    "shortExplanation": "表示前项动作已经完成或实现的时候发生了后项；'……的时候'、'当……之后'。",
+    "longExplanation": "句型'～たときに'由动词た形后接表示时间的'とき（に）'构成。它强调在前项动作或状态已经完全发生、实现的前提下，发生了后项的动作或事情。与表示动作尚未发生时的'动词辞书形 + とき'形成鲜明对比，'～たとき'明确前项动作在时间轴上优先于后项发生。",
+    "formation": "动词た形 + ときに（或 とき）",
+    "examples": [
+      {
+        "translation": "看那部电影的时候，我哭了。"
+      },
+      {
+        "translation": "第一次见到他的时候，我迟到了。"
+      },
+      {
+        "translation": "去日本的时候，我拍了许多照片。"
+      },
+      {
+        "translation": "朋友来我家的时候，我们一起打了游戏。"
+      }
+    ]
   },
   "ja_Verb_23": {
-    "title": "Verb た ところ (Verb ta tokoro)",
-    "shortExplanation": "表示 the situation right after an action has taken place.",
-    "longExplanation": "The たところ grammar point is used to describe a situation that occurs right after an action has taken place. It is often translated as 'just now', 'right after', or 'when'. The formation is relatively simple as it only requires the verb in its た form (past tense) followed by ところ.",
-    "formation": "动词 (た form) + ところ"
+    "title": "～たところ (〜ta tokoro)",
+    "shortExplanation": "表示刚做完某动作就发生了后面的事，或者做了某动作后发现了某种结果；'刚……就……'、'做了……之后发现……'。",
+    "longExplanation": "句型'～たところ'接在动词た形后，主要有两种用法：①表示某动作刚刚结束的紧接着瞬间，发生了另一件事（'刚……就……'）；②表示做了某种尝试、询问或行动之后，得到了某种结果或发现了某种既定事实（'一……却发现/结果是……'）。需要注意的是，后项多为陈述客观发生的事实，不能接带有说话人意志、命令或希望的表达。",
+    "formation": "动词た形 + ところ（或 ところで）",
+    "examples": [
+      {
+        "translation": "刚一打开门，一只猫就蹿了出来。"
+      },
+      {
+        "translation": "刚把电话挂断，它又响了起来。"
+      },
+      {
+        "translation": "刚把作业做完，朋友就联系我了。"
+      },
+      {
+        "translation": "买完东西回到家后，我才发现钱包丢了。"
+      }
+    ]
   },
   "ja_Verb_24": {
-    "title": "Verb たほうがいい (〜ta hou ga ii)",
-    "shortExplanation": "Used to give advice or make a suggestion to someone - 'it's better if...'.",
-    "longExplanation": "The たほうがいい grammar point is used to give advice or make a suggestion to someone. 可以翻译为 'it's better if...', 'should', or 'it's a good idea to'. It is formed by conjugating the verb into the past tense (た-form) and adding ほうがいい.",
-    "formation": "动词 (past tense) + ほうがいい"
+    "title": "～たほうがいい (〜ta hou ga ii)",
+    "shortExplanation": "用于向他人提出建议、劝告或指导；'最好……'、'还是……比较好'。",
+    "longExplanation": "句型'～たほうがいい'将动词た形与表示比较选择的'ほうがいい'结合，用于向听话人提出有益的劝告、建议或指点，相当于汉语的'最好……'、'还是……为好'。这里使用た形含有'假定已经做了该动作，将会产生较好结果'的心理预设。若劝告对方最好不要做某事，则使用否定形式'～ないほうがいい'。礼貌会话中句尾加上'です'。",
+    "formation": "动词た形 + ほうがいい（否定形式：动词ない形 + ほうがいい；礼貌体：ほうがいいです）",
+    "examples": [
+      {
+        "translation": "最好早点睡觉。"
+      },
+      {
+        "translation": "还是多用功学习比较好。"
+      },
+      {
+        "translation": "生病的时候，最好还是吃药。"
+      },
+      {
+        "translation": "最好还是不要喝咖啡。"
+      }
+    ]
   },
   "ja_Verb_25": {
-    "title": "Verb ために (tame ni)",
-    "shortExplanation": "Used to describe the purpose or reason for an action; 'for the sake of', 'in order to', 'because of'.",
-    "longExplanation": "The ために (tame ni) grammar point is 用于表达 either the purpose of doing something (in which case it translates to 'for the sake of' or 'in order to') or the cause/reason for a situation (in which case it translates to 'because of'). Typically, we use the dictionary form of the verb (e.g., 合格する) for the 'in order to' meaning. For an adjective or noun, attach ために appropriately (い-Adjective + ために, な-Adjective + な + ために, Noun + の + ために).",
-    "formation": "1) 动词 (dictionary form) + ために (purpose)\n2) い-形容词 + ために (reason)\n3) な-形容词 + な + ために (reason)\n4) 名词 + の + ために (reason)"
+    "title": "～ために (〜tame ni)",
+    "shortExplanation": "表示行动的目的（'为了……'），或表示客观原因、理由（'因为……'、'由于……'）。",
+    "longExplanation": "句型'～ために'具有两个核心用法：①表示目的：接在意志性动词辞书形或'名词 + の'之后，表示为了实现某一目标而采取行动，相当于汉语的'为了……'；②表示原因或理由：接在动词普通形、形容词或'名词 + の'之后，多用于书面语或正式场合，陈述导致某种后果的客观原因，相当于'因为……'、'由于……'。",
+    "formation": "目的：动词辞书形 / 名词 + の + ために | 原因：动词普通形 / い形容词 / な形容词 + な / 名词 + の + ために",
+    "examples": [
+      {
+        "translation": "为了通过考试，我每天都在努力学习。"
+      },
+      {
+        "translation": "为了身体健康，每天都必须坚持锻炼。"
+      },
+      {
+        "translation": "因为工作繁忙，所以没有时间和朋友见面。"
+      },
+      {
+        "translation": "因为下雨，比赛被取消了。"
+      }
+    ]
   },
   "ja_Verb_26": {
-    "title": "Verb つもり (〜tsumori)",
-    "shortExplanation": "表达 intention, plan, or determination to do something; 'I intend to', 'I plan to', 'I'm determined to'.",
-    "longExplanation": "The ～つもり grammar point is 用于表达 the intention, plan, or determination to do something. 可以翻译为 'I intend to', 'I plan to', or 'I'm determined to' in English. It is used with verbs in the casual form.",
-    "formation": "动词-casual + つもり"
+    "title": "～つもり (〜tsumori)",
+    "shortExplanation": "表示说话人的打算、意图或计划；'打算……'、'准备……'。",
+    "longExplanation": "句型'～つもり'接在动词普通形后，用于表达说话人内心已经确定的计划、打算或意图。通常用于第一人称的意向。否定表达有两种方式：'～ないつもり'（打算不做某事）以及语气更为坚决的'～つもりはない'（绝无……的打算）。在日常礼貌交际中，通常在句尾加上'です'构成'～つもりです'。",
+    "formation": "动词辞书形 + つもり（否定形式：动词ない形 + つもり / 动词辞书形 + つもりはない；礼貌体：つもりです）",
+    "examples": [
+      {
+        "translation": "我打算明天去见朋友。"
+      },
+      {
+        "translation": "我打算今晚做晚饭。"
+      },
+      {
+        "translation": "我打算明年去留学。"
+      },
+      {
+        "translation": "这个周末我打算去爬山。"
+      }
+    ]
   },
   "ja_Verb_27": {
-    "title": "Verb てあげる (Verb te ageru)",
-    "shortExplanation": "用于表达 doing something for someone; 'do something for someone'.",
-    "longExplanation": "The てあげる grammar point is 用于表达 that the speaker or someone other than the listener is doing something for someone else. It shows that the action is being done as a favor or out of kindness. This grammar point is used with verbs in their て-form, followed by あげる.",
-    "formation": "动词-て form + あげる"
+    "title": "～てあげる (〜te ageru)",
+    "shortExplanation": "表示说话人为他人做某件有益的事或提供帮助；'为……做……'、'帮……做……'。",
+    "longExplanation": "句型'～てあげる'由动词て形后接授受动词'あげる'构成，表示说话人（或说话人一方的人）出于好意为他人做出某种行为或提供协助。需要特别注意的是，由于该句型带有'施惠'的语感，因此在日常交际中不能直接对长辈、上司或客户使用，否则会显得傲慢无礼；对长辈应用自谦语'～てさしあげる'或更为委婉的表达。主要用于平辈、晚辈、家人或动植物。",
+    "formation": "动词て形 + あげる（礼貌体：あげます / あげました）",
+    "examples": [
+      {
+        "translation": "朋友看起来很累，所以我帮他拿了行李。"
+      },
+      {
+        "translation": "弟弟不会做作业，所以我帮了他。"
+      },
+      {
+        "translation": "看她好像快迟到了，我便去车站接了她。"
+      },
+      {
+        "translation": "小狗看起来口渴了，所以我给它喂了水。"
+      }
+    ]
   },
   "ja_Verb_28": {
-    "title": "Verb て ある (Verb-te aru)",
-    "shortExplanation": "指示 that an action has been done and its result is still in effect.",
-    "longExplanation": "The ～てある grammar point is 用于表达 that an action has been done and its result remains in effect. It 指示 that the action was intentionally performed and its effect continues. The formation is done by conjugating the verb into its て-form and then adding ある.",
-    "formation": "动词-て form + ある"
+    "title": "～てある (〜te aru)",
+    "shortExplanation": "表示某人为了某种目的而特意做好的动作，其结果状态至今依然保留；'已经做好……'、'……着'。",
+    "longExplanation": "句型'～てある'将他动词的て形与补助动词'ある'相结合，表示某人出于某种明确的目的事先做好了某事，且该行为所产生的结果状态目前仍然持续留存着。在该句型中，原来他动词的对象宾语通常改用助词'が'来提示（如：窓が開けてある）。与通常搭配自动词表示单纯客观状态的'～ている'不同，'～てある'暗含有人为事先准备、有意识操作的痕迹。",
+    "formation": "他动词て形 + ある（礼貌体：あります）",
+    "examples": [
+      {
+        "translation": "窗户特意开着（有人特意打开且保持现状）。"
+      },
+      {
+        "translation": "作业已经全部做好了。"
+      },
+      {
+        "translation": "洗好的衣物已经全部晾晒好了。"
+      },
+      {
+        "translation": "这个房间已经被打扫得干干净净了。"
+      }
+    ]
   },
   "ja_Verb_29": {
-    "title": "Verb て いく (Verb-te iku)",
-    "shortExplanation": "表示 an action that continues on into the future or a change that progresses over time.",
-    "longExplanation": "The て いく grammar point is 用于表示 that an action will continue or a change will progress into the future. It can be attached to the て-form of a verb and is often translated as 'to keep', 'to continue', or 'to go on' in English.",
-    "formation": "动词 in て-form + いく"
+    "title": "～ていく (～te iku)",
+    "shortExplanation": "表示动作向未来持续进行，或状态随着时间不断发展变化；'……下去'、'逐渐……'。",
+    "longExplanation": "句型'～ていく'由动词て形后接补助动词'いく'构成，主要用于表示：①动作以现在为起点，一直向未来持续进行下去（相当于汉语的'……下去'）；②事物的状态或性质随着时间的推移不断推移、发展；③表示动作主体伴随某种动作离开说话人所在的视点（'……去'）。常与'～てくる'形成空间和时间上的对照。",
+    "formation": "动词て形 + いく",
+    "examples": [
+      {
+        "translation": "如果照这样继续练习下去，应该会有进步的吧。"
+      },
+      {
+        "translation": "在他逐渐成长的过程中，自立意识变得越来越强了。"
+      },
+      {
+        "translation": "这家公司今后也将继续进行技术创新吧。"
+      },
+      {
+        "translation": "孩子们在不断地学习成长。"
+      }
+    ]
   },
   "ja_Verb_30": {
-    "title": "Verb ていただきたい (te itadakitai)",
-    "shortExplanation": "Express a polite request or desire that someone does something for you.",
-    "longExplanation": "The ていただきたい grammar point is 用于表达 a polite request or a desire for someone to do something for you. It is formed by attaching いただきたい to the て-form of the verb. It is more polite than the て-form + ほしい construction.",
-    "formation": "动词-て form + いただきたい"
+    "title": "～ていただきたい (～te itadakitai)",
+    "shortExplanation": "谦逊而客气地表达希望对方为自己做某事；'希望您能……'、'想请您……'。",
+    "longExplanation": "句型'～ていただきたい'由动词て形后接自谦动词'いただく'的愿望形'いただきたい'构成。用于向对方提出请求或表达希望对方为自己做某事的心愿，语气非常客气委婉。相比于'～てほしい'，它具有更强的礼貌和自谦色彩，广泛适用于商务职场、对长辈或对上级的交流。在实际口语中，常以'～ていただきたいのですが'的形式出现，以缓和语气，避免强加于人。",
+    "formation": "动词て形 + いただきたい（/ いただきたいです / いただきたいのですが）",
+    "examples": [
+      {
+        "translation": "我想请您帮忙复印一下这份资料。"
+      },
+      {
+        "translation": "这份工作想请您帮个忙，不知是否方便。"
+      },
+      {
+        "translation": "如果您方便的话，非常希望得到您的指导。"
+      },
+      {
+        "translation": "不知能否麻烦您送我到车站呢。"
+      }
+    ]
   },
   "ja_Verb_31": {
-    "title": "Verb ていただく (〜te itadaku)",
-    "shortExplanation": "用于表达 receiving someone's favor or help; 'to kindly do'.",
-    "longExplanation": "The ～ていただく grammar point is 用于表达 that someone has kindly done a favor or provided help. It is a more polite and humble way of saying that you received someone's help. The formation is created by attaching the て-form of the verb + いただく.",
-    "formation": "动词-て form + いただく"
+    "title": "～ていただく (～te itadaku)",
+    "shortExplanation": "谦逊地表示得到尊长或他人为自己做某事（得到恩惠）；'请……做'、'蒙受……为自己做'。",
+    "longExplanation": "句型'～ていただく'是补助动词'～てもらう'的自谦语形式。用于表示说话人（或己方人员）得到了尊长、上级或客人的恩惠或帮助，表达感激与敬意。施动者通常用助词'に'表示。敬体形式常用'～ていただきます'或过去式'～ていただきました'。",
+    "formation": "动词て形 + いただく（敬体：～ていただきます / ～ていただきました）",
+    "examples": [
+      {
+        "translation": "感谢您特意发来邮件。"
+      },
+      {
+        "translation": "承蒙您帮我搬运行李，真是帮了大忙。"
+      },
+      {
+        "translation": "我想请您帮忙过目检查一下这份资料。"
+      },
+      {
+        "translation": "老师为我提出了宝贵的建议。"
+      }
+    ]
   },
   "ja_Verb_32": {
-    "title": "Verb て いただけませんか (Verb te itadakemasen ka)",
-    "shortExplanation": "A polite request; 'Could you please...', 'Would you mind...'",
-    "longExplanation": "The て いただけませんか grammar point is used to make a polite request to someone. It is a more polite form of て くれませんか, and can be translated as 'Could you please...' or 'Would you mind...' in English. To use it, change the verb to its て-form and add いただけませんか.",
-    "formation": "动词-て form + いただけませんか"
+    "title": "～ていただけませんか (～te itadakemasen ka)",
+    "shortExplanation": "非常礼貌、委婉地请求对方为自己做某事；'能否请您……'、'可以请您帮我……吗'。",
+    "longExplanation": "句型'～ていただけませんか'是将自谦动词'いただく'变为可能否定形式'いただけない'的礼貌疑问句（～ていただけませんか）。字面意思是'我难道不能得到您为我做……的恩惠吗？'，用于向对方提出非常客气、委婉的请求或恳托。相比于'～てください'或'～てくれませんか'，它的敬意程度更高，十分适合在商务场合、对长辈或对不太熟悉的人使用。",
+    "formation": "动词て形 + いただけませんか",
+    "examples": [
+      {
+        "translation": "能否请您帮我把这封信寄出去呢？"
+      },
+      {
+        "translation": "可以请您帮我拿一下这个行李吗？"
+      },
+      {
+        "translation": "能否请您跟隔壁房间的人说一声，让他们安静一点呢？"
+      },
+      {
+        "translation": "能否请您仔细阅读一下这份说明书呢？"
+      }
+    ]
   },
   "ja_Verb_33": {
-    "title": "Verb て いる (Verb-te iru)",
-    "shortExplanation": "表示 an ongoing action or a state resulting from a past action.",
-    "longExplanation": "The ている form is 用于表达 either an ongoing action or a state resulting from a past action. It is formed by conjugating the verb into its て-form and then adding いる. In English, this can be translated as verb-ing or 'have verb-ed'. Its usage depends on the type of verb: action verbs or state verbs.",
-    "formation": "动词 (て-form) + いる"
+    "title": "～ている (～te iru)",
+    "shortExplanation": "表示动作正在进行，或动作完成后结果状态的持续；'正在……'、'……着'。",
+    "longExplanation": "句型'～ている'由动词て形接补助动词'いる'构成，依据动词的性质不同具有两大核心用法：①接持续性动作动词（如読む、勉強する等）时，表示动作正在进行，相当于汉语的'正在做……'；②接瞬间性/结果变化动词（如入る、結婚する、なる等）时，表示该动作完成之后所遗留的结果或状态依然持续存在，相当于汉语的'……着'或'已经……了'。敬体形式为'～ています'。",
+    "formation": "动词て形 + いる（敬体：～ています）",
+    "examples": [
+      {
+        "translation": "我现在正在看书。"
+      },
+      {
+        "translation": "他正在学英语。"
+      },
+      {
+        "translation": "蛋糕放在冰箱里。"
+      },
+      {
+        "translation": "房间变得干干净净的了。"
+      }
+    ]
   },
   "ja_Verb_34": {
-    "title": "Verb て いる ところ (Verb te iru tokoro)",
-    "shortExplanation": "Describes an action that is currently happening; 'in the middle of', 'in the process of'.",
-    "longExplanation": "The て いる ところ grammar point is 用于表达 an action that is currently happening or taking place. 可以翻译为 'in the middle of' or 'in the process of' in English. It is formed by using the て-form of a verb followed by いる and ところ.",
-    "formation": "动词-て form + いる ところ"
+    "title": "～ているところ (～te iru tokoro)",
+    "shortExplanation": "强调动作正处于进行的高潮阶段或某一特定时刻；'正处于……之中'、'正在……'。",
+    "longExplanation": "句型'～ているところ'由动词'～ている'连体修饰形式名词'ところ'构成，用来强调某个动作正处于进行的瞬间或具体阶段，相当于汉语的'正当……的时候'、'正在……之中'。与单纯的'～ている'相比，它更侧重于凸显时间点的临场感与进程感。句尾常接'だ'、'です'或过去式'でした'。",
+    "formation": "动词て形 + いる + ところ（だ / です / でした）",
+    "examples": [
+      {
+        "translation": "他正忙着写作业呢。"
+      },
+      {
+        "translation": "我们当时正看着电影呢。"
+      },
+      {
+        "translation": "孩子们正在公园里玩耍。"
+      },
+      {
+        "translation": "她正在做蛋糕，马上就过来。"
+      }
+    ]
   },
   "ja_Verb_35": {
-    "title": "Verb ことなく (~kotonaku)",
-    "shortExplanation": "Means 'without doing', 'not doing', or 'without happening'.",
-    "longExplanation": "The grammar point ことなく is added to the stem of a verb to express that something doesn't happen or isn't done. 可以翻译为 'without doing', 'not doing', or 'without happening'. The formation depends on whether it is used with a verb.",
-    "formation": "动词-stem + ことなく"
+    "title": "动词辞书形 + ことなく (~kotonaku)",
+    "shortExplanation": "表示在完全不做某事、不发生某情况的状态下持续进行某动作；意为“不……就……”、“毫不……”。",
+    "longExplanation": "句型“～ことなく”是口语中“～ないで”或“～ずに”的郑重书面表达形式。接在动词辞书形（原形）之后，表示某一主体在没有发生前项动作或未出现某一事态的情况下，顺畅、连续地完成或持续进行后项动作。具有庄重高雅的文体色彩，常用于正式演讲、叙事长文或报道之中。",
+    "formation": "动词辞书形 + ことなく",
+    "examples": [
+      {
+        "translation": "她一滴眼泪也没有掉，就这样默默回去了。"
+      },
+      {
+        "translation": "他没有做任何提醒说明，就突然动身出发了。"
+      },
+      {
+        "translation": "山田先生没有跟任何人商量透露，便辞职离开了公司。"
+      },
+      {
+        "translation": "二十年间，我从未生过病，一直兢兢业业地工作着。"
+      }
+    ]
   },
   "ja_Verb_36": {
-    "title": "Verb ないことには Verb ない (~nai koto ni wa ~ nai)",
-    "shortExplanation": "Express that something cannot be done without meeting a certain condition.",
-    "longExplanation": "The ないことには grammar point is 用于表示 that something cannot be done or achieved unless a certain condition is met. This pattern is formed by attaching ないことには to the negative form of a verb, followed by a negative outcome statement. It often appears as V-ない + ことには + V-ない or a negative expression.",
-    "formation": "动词-ない + ことには + 动词-ない"
+    "title": "动词未然形（ない形） + ことには (~nai koto ni wa ~ nai)",
+    "shortExplanation": "表示必要前提条件，若不先完成前项，后项的事情就绝对无法达成；意为“如果不……就无法……”。",
+    "longExplanation": "句型“～ないことには”用于表明某种绝对必要的前提条件。若前项动作不发生或条件不具备，则后项期待的结果或动作就无法成立。后项必定与表示否定、不可能的表达（如“～ない”、“～できない”、“～わけにはいかない”）相呼应。相当于汉语中的“若不……就不能……”。",
+    "formation": "动词未然形（ない形） + ことには + 否定形式（表示不可能或无法实现）",
+    "examples": [
+      {
+        "translation": "要是不按时吃药的话，疾病是好不了的。"
+      },
+      {
+        "translation": "如果不仔细思考研究这个问题，就无法得到妥善解决。"
+      },
+      {
+        "translation": "若不刻苦加以练习，专业技能是不会有所长进的。"
+      },
+      {
+        "translation": "如果不去亲自办理手续，就无法领到新的护照。"
+      }
+    ]
   },
   "ja_Verb_37": {
-    "title": "Verb て くださいませんか (Verb-te kudasaimasen ka)",
-    "shortExplanation": "Polite request for asking someone for a favor.",
-    "longExplanation": "The て くださいませんか grammar point is a polite way of asking someone for a favor or requesting them to do something. It is more formal than the simple て form followed by ください, and it is commonly used in more formal settings or when speaking to someone who is not close.",
-    "formation": "动词 in て-form + くださいませんか"
+    "title": "～てくださいませんか (～te kudasaimasen ka)",
+    "shortExplanation": "非常礼貌、客气地请求对方为自己做某事；'能否请您……'、'请您……好吗'。",
+    "longExplanation": "句型'～てくださいませんか'是由尊敬动词'くださる'的否定礼貌疑问形式（くださいませんか）构成的请求表达。采用否定疑问的形式向对方提出恳请，留给对方回绝的余地，显得委婉而克制。相比于直接命令式的'～てください'，它的语气更为恭敬和正式，常用于对长辈、上司、顾客或初次见面的人提出请求。",
+    "formation": "动词て形 + くださいませんか",
+    "examples": [
+      {
+        "translation": "请您喝杯咖啡好吗？"
+      },
+      {
+        "translation": "能否请您把门关上呢？"
+      },
+      {
+        "translation": "明天中午能否请您与我见个面呢？"
+      },
+      {
+        "translation": "能否请您把那份资料发给我呢？"
+      }
+    ]
   },
   "ja_Verb_38": {
-    "title": "Verb て くださる (Verb-te kudasaru)",
-    "shortExplanation": "表示 gratitude for receiving someone's favor; 'to kindly do'.",
-    "longExplanation": "The て くださる grammar point is 用于表达 gratitude for receiving a favor or action from someone else. It is an honorific way to say that someone kindly does something for the speaker or the listener. The verb is conjugated to its ～て form and followed by くださる.",
-    "formation": "动词 て-form + くださる"
+    "title": "～てくださる (～te kudasaru)",
+    "shortExplanation": "尊称长辈、上级或他人为自己（或己方人员）做某事，表达敬意与谢意；'（长辈等）为我做……'。",
+    "longExplanation": "句型'～てくださる'是补助动词'～てくれる'的尊敬语形式。用于表示地位高于自己的人、长辈或需要表示敬意的人，为说话人（或己方人员）做某事，带来恩惠或帮助。施动者通常用主格助词'が'或'は'表示。在实际交流中，多使用敬体形式'～てくださいます'或过去式'～てくださいました'。",
+    "formation": "动词て形 + くださる（敬体：～てくださいます / ～てくださいました）",
+    "examples": [
+      {
+        "translation": "老师热心地帮了我的忙。"
+      },
+      {
+        "translation": "母亲为我做美味可口的饭菜。"
+      },
+      {
+        "translation": "朋友好心地送我到了车站。"
+      },
+      {
+        "translation": "部长立刻为我解答了疑问。"
+      }
+    ]
   },
   "ja_Verb_39": {
-    "title": "Verb て くる (Verb te kuru)",
-    "shortExplanation": "An action that starts in the past and continues to the present or future; 'come to', 'begin to', 'become'.",
-    "longExplanation": "The て くる grammar point is 用于表达 an action that starts in the past and continues to the present or future. It can also show a change in state or condition. The formation involves attaching the て-form of the verb followed by くる.",
-    "formation": "动词 て-form + くる"
+    "title": "～てくる (～te kuru)",
+    "shortExplanation": "表示动作或状态从过去一直持续发展到现阶段，或某种变化、感觉开始显现；'……起来'、'逐渐……'。",
+    "longExplanation": "句型'～てくる'由动词て形后接补助动词'くる'构成，主要用法包括：①时间推移：表示某动作或状态从过去某一时间点开始，一直持续发展并推进到当前时刻；②状态变化与感觉产生：表示某种自然现象、心理情绪或身体感觉开始产生并显现出来（如变冷了、逐渐明白等）；③空间移动：表示伴随某种动作朝说话人视点靠近，或'做完某事后回来'。与'～ていく'形成时间与空间上的鲜明对照。",
+    "formation": "动词て形 + くる（过去形：～てきた）",
+    "examples": [
+      {
+        "translation": "最近，我渐渐开始能听懂日语了。"
+      },
+      {
+        "translation": "天气渐渐冷起来了，穿上大衣吧。"
+      },
+      {
+        "translation": "雨渐渐停下来了。"
+      },
+      {
+        "translation": "他渐渐变得可怕起来了。"
+      }
+    ]
   },
   "ja_Verb_40": {
-    "title": "Verb てくれませんか (〜te kuremasen ka)",
-    "shortExplanation": "A polite way to request someone to do something for you; 'Could you please', 'Would you please', 'Won't you'.",
-    "longExplanation": "The ～てくれませんか grammar point is 用于询问 someone politely to do something for you. It is formed by using the て-form of a verb followed by くれませんか. It translates to 'Could you please', 'Would you please', or 'Won't you' in English.",
-    "formation": "动词-て form + くれませんか"
+    "title": "～てくれませんか (～te kuremasen ka)",
+    "shortExplanation": "礼貌而亲切地请求对方为自己做某事；'能请你帮我……吗'、'可以帮我……吗'。",
+    "longExplanation": "句型'～てくれませんか'由动词て形后接给予动词'くれる'的否定礼貌疑问形式'くれませんか'构成。用于向对方提出请求，希望对方为自己做某事。语气礼貌而亲切，常用于平辈、朋友、同事之间，或者长辈对晚辈提出请求。若对上级、长辈或在正式商务场合中，则应使用敬意更高的'～ていただけませんか'。",
+    "formation": "动词て形 + くれませんか",
+    "examples": [
+      {
+        "translation": "能帮我把门打开吗？"
+      },
+      {
+        "translation": "可以帮我看一下这个吗？"
+      },
+      {
+        "translation": "能帮我一把吗？"
+      },
+      {
+        "translation": "明天可以来接我一下吗？"
+      }
+    ]
   },
   "ja_Verb_41": {
-    "title": "Verb て くれる (Verb-te kureru)",
-    "shortExplanation": "表示 that someone does something for the speaker (or another person in speaker's group); 'to do something for me/us'.",
-    "longExplanation": "The て くれる grammar point is 用于表达 when someone does something for, or gives something to the speaker (or someone in the speaker's group). The action is usually done willingly or as a favor by the person performing the action. It is usually translated into English as 'to do something for me' or 'to give something to me'.",
-    "formation": "动词-te form + くれる"
+    "title": "～てくれる (～te kureru)",
+    "shortExplanation": "表示他人为说话人（或说话人一方的人）做某事，体现出感激之情；'为我（们）做……'。",
+    "longExplanation": "句型'～てくれる'由动词て形后接给予动词'くれる'构成，专门用于表达他人主动为说话人、或为说话人一方（如家人、同伴）做出某项具有善意、帮助或恩惠性质的行为，蕴含着说话人的感谢之情。实施动作的主体用助词'が'或'は'表示。礼貌体形式为'～てくれます'或过去式'～てくれました'。",
+    "formation": "动词て形 + くれる（敬体：～てくれます / ～てくれました）",
+    "examples": [
+      {
+        "translation": "朋友帮我辅导了作业。"
+      },
+      {
+        "translation": "弟弟帮我把房间打扫干净了。"
+      },
+      {
+        "translation": "老师耐心地为我解答了问题。"
+      },
+      {
+        "translation": "她给我写了一封信。"
+      }
+    ]
   },
   "ja_Verb_42": {
-    "title": "Verb て + さしあげる (Verb TE sashiageru)",
-    "shortExplanation": "A polite way to express giving or doing something for someone.",
-    "longExplanation": "The grammar point 'Verb て + さしあげる' is 用于表达 the action of giving or doing something for someone in a polite manner. It is mainly used when the speaker is offering or doing something for someone of higher social status or showing respect towards the person. To form this expression, you need to conjugate the verb into its て-form and attach さしあげる.",
-    "formation": "动词-てform + さしあげる"
+    "title": "～てさしあげる (～te sashiageru)",
+    "shortExplanation": "自谦地表示自己（或己方人员）为尊长、客户等做某事；'为（长辈等）做……'。",
+    "longExplanation": "句型'～てさしあげる'是给予动词'～てあげる'的自谦语形式。用于表达说话人（或己方人员）为地位较高的人、长辈或客人提供某种帮助或做出有益的行为，以此压低自身动作以示谦恭。但需要注意的是，由于它本身仍含有'为他人施加恩惠'的色彩，直接对长辈面谈使用时容易显得傲慢居高临下，现代礼仪中更提倡使用更委婉的自谦句型如'お／ご……します'（例如用'お持ちしましょうか'代替'持ってさしあげましょうか'）。",
+    "formation": "动词て形 + さしあげる（敬体：～てさしあげます / ～てさしあげましょうか）",
+    "examples": [
+      {
+        "translation": "我来为您沏一杯茶。"
+      },
+      {
+        "translation": "我已经帮您把信息发送过去了。"
+      },
+      {
+        "translation": "需要我帮您拿行李吗？"
+      },
+      {
+        "translation": "我来帮您打这个电话吧。"
+      }
+    ]
   },
   "ja_Verb_50": {
-    "title": "Verb ない + ことにする (Verb nai koto ni suru)",
-    "shortExplanation": "To decide not to do something.",
-    "longExplanation": "The grammar point Verb ない + ことにする is 用于表达 the decision not to do something. This structure shows that the speaker has made a conscious choice to not take the action expressed in the verb.",
-    "formation": "动词-ない form + ことにする"
+    "title": "～ないことにする (～nai koto ni suru)",
+    "shortExplanation": "表示说话人自身主观决定不做某事；相当于汉语的“决定不……”、“决定不去……”。",
+    "longExplanation": "句型“～ないことにする”由动词否定形（ない形）后接“ことにする”构成。用于表达动作主体经过主观权衡思考后，自主做出了不实施某种行为的明确决断。若表示已经作出了该项决定，常用过去式“～ないことにした”或敬体“～ないことにしました”；若表示将不进行某事作为长期坚持的个人原则或生活习惯，则使用“～ないことにしている”。与表示客观决定或规定结果的“～ないことになる”存在本质区别。",
+    "formation": "动词ない形 + ことにする（过去式：～ないことにした / ～ないことにしました；习惯：～ないことにしている）",
+    "examples": [
+      {
+        "translation": "我决定明天不去参加聚会了。"
+      },
+      {
+        "translation": "我决定不吃那块蛋糕了。"
+      },
+      {
+        "translation": "我决定今天不去慢跑了。"
+      },
+      {
+        "translation": "我决定不再跟他见面了。"
+      }
+    ]
   },
   "ja_Verb_61": {
-    "title": "Verb ように言う (Verb-you ni iu)",
-    "shortExplanation": "Tell someone to do something; 'tell to do', 'instruct to do'.",
-    "longExplanation": "The grammar point Verb ように言う is used when someone tells or instructs another person to do something. 可以翻译为 'tell to do' or 'instruct to do' in English. The formation is created by adding ように言う to the casual form of a verb.",
-    "formation": "动词-casual + ように言う"
+    "title": "～ように言う (～you ni iu)",
+    "shortExplanation": "用于间接引述他人的要求、指示或提醒；“转告/吩咐（某人）做……”、“让（某人）……”。",
+    "longExplanation": "语法句型“～ように言う”用于间接引述的表达方式，将某人做出的指示、请求、命令或劝诫转述给第三方。相比于直接使用命令形或“～てください”的直接引语，“～ように言う”更加委婉客气、客观中立。句尾的动词“言う”还可以替换为“頼む”（拜托）、“伝える”（转告）、“注意する”（提醒/警告）等，以表达不同语气的传达。",
+    "formation": "动词辞书形 / ない形 + ように言う（或 頼む / 伝える / 注意する）",
+    "examples": [
+      {
+        "translation": "老师让我们做作业。"
+      },
+      {
+        "translation": "妈妈对弟弟说让他整理房间。"
+      },
+      {
+        "translation": "上司让我提交报告书。"
+      },
+      {
+        "translation": "朋友让我早点过去。"
+      }
+    ]
   },
   "ja_Verb_62": {
-    "title": "Verb られる (〜rareru)",
-    "shortExplanation": "表示 passive voice or potential form for verbs.",
-    "longExplanation": "The られる grammar point can be 用于表达 passive voice or potential form for verbs. Passive voice 指示 that the action is being done to the subject, while potential form 表示 the ability or possibility to do an action. The formation of られる depends on the type of verb (う, る, or irregular verbs).",
-    "formation": "う-verb (passive): Replace the final う with われる / る-verb (passive & potential): Replace る with られる / Irregular: する → される, くる → こられる"
+    "title": "～られる (～rareru)",
+    "shortExplanation": "表示动词的被动态（被……/受到……）或可能态（能……/可以……）；“被……”、“能……”。",
+    "longExplanation": "助动词“～れる / ～られる”在初中级日语中有两个最核心的功能：第一是“被动态（受身）”，表示主语受到他人的某种动作作用，常与助词“に”搭配表示施事者，分为直接被动、间接受害者被动（迷惑受身）以及物主被动；第二是“可能态（可能）”，特别是二类动词（一段动词）去掉“る”加“られる”表示具备做某事的能力或客观可能性。本条例句中，第1、2、4句为被动态，第3句为可能态。",
+    "formation": "一类动词（五段）：词尾う段变あ段 + れる / 二类动词（一段）：去掉る + られる / 三类动词（不规则）：する → される、くる → こられる",
+    "examples": [
+      {
+        "translation": "他受到了老师的表扬。"
+      },
+      {
+        "translation": "他被朋友们嘲笑了。"
+      },
+      {
+        "translation": "电影你看成了吗？（看到电影了吗？）"
+      },
+      {
+        "translation": "她被选为了队长。"
+      }
+    ]
   },
   "ja_Verb_63": {
-    "title": "Verb る ことがある (〜ru koto ga aru)",
-    "shortExplanation": "用于表达 that something happens sometimes or has happened before.",
-    "longExplanation": "The grammar point る ことがある is 用于表达 that something occurs sometimes or has occurred in the past. It 指示 that the action is not a regular or constant event, but rather something that takes place occasionally or has happened at least once.",
-    "formation": "动词-dictionary form + ことがある"
+    "title": "～ることがある (～ru koto ga aru)",
+    "shortExplanation": "表示某种动作或情况虽然不是经常发生，但有时也会出现；“有时会……”、“偶尔有……的情况”。",
+    "longExplanation": "句型“动词辞书形 + ことがある”用于说明某项动作并非日常固定发生，但偶尔、有时会出现此类情况。常与频度副词“たまに（偶尔）”、“ときどき（有时）”一同搭配使用。必须特别注意将其与“动词た形 + ことがある”（表示过去经历，“曾经做过……”）相区分。其否定形式为“～ないことがある”（有时不……）。",
+    "formation": "动词辞书形 + ことがある / ことがあります",
+    "examples": [
+      {
+        "translation": "他有时也会迟到。"
+      },
+      {
+        "translation": "我有时也会睡过头。"
+      },
+      {
+        "translation": "她偶尔也会唱唱歌。"
+      },
+      {
+        "translation": "小的时候，我偶尔也会去爬山。"
+      }
+    ]
   },
   "ja_Verb_64": {
-    "title": "Verb ることができる (〜ru koto ga dekiru)",
-    "shortExplanation": "Express ability or possibility of doing an action; 'can', 'be able to', 'is possible'.",
-    "longExplanation": "The ～ることができる grammar point is 用于表达 the ability or possibility of doing an action in Japanese. 可以翻译为 'can', 'be able to', or 'is possible' in English. The formation is made by adding the phrase 'ことができる' to the verb in its conjugated る-form.",
-    "formation": "动词-る + ことができる"
+    "title": "～ることができる (～ru koto ga dekiru)",
+    "shortExplanation": "表示具备做某事的能力，或在客观环境、条件允许下可以做某事；“能够……”、“可以……”。",
+    "longExplanation": "句型“动词辞书形 + ことができる”是日语中表达可能性的标准句型，主要包含两大语义：第一，表示动作主体自身掌握某项技能或具备某种能力（如会说日语、会弹吉他）；第二，表示客观情况、场所规则或物质条件允许做某事（如这里可以使用信用卡）。其语义与动词的可能态相同，但更具书面语色彩，在说明文、学术文章及正式商务会话中广泛使用。",
+    "formation": "动词辞书形 + ることができる / ことができます",
+    "examples": [
+      {
+        "translation": "我能够说日语。"
+      },
+      {
+        "translation": "他会弹吉他。"
+      },
+      {
+        "translation": "你能解决这个问题吗？"
+      },
+      {
+        "translation": "她能让狗游起泳来。"
+      }
+    ]
   },
   "ja_Verb_65": {
-    "title": "Verb ることにする (〜ru koto ni suru)",
-    "shortExplanation": "Decide to do something, make a decision.",
-    "longExplanation": "The ～ることにする grammar point is 用于表达 that someone has made a decision to do something or has decided on a specific course of action. It is formed by attaching ことにする to the verb in its る form.",
-    "formation": "动词-る + ことにする"
+    "title": "～ることにする (～ru koto ni suru)",
+    "shortExplanation": "表示说话人凭自己的主观意志决定做或不做某事；“决定做……”、“决定不……”。",
+    "longExplanation": "语法句型“～ことにする”强调由说话人自身的意志、决断或意图所做出的行动选择。通常使用过去式“～ことにした / ～ことにしました”来陈述已经做出的决定。如果使用“～ことにしている”的形式，则表示把某事作为自己日常坚持的准则或习惯（“我一直坚持……”）。否定形式为“～ないことにする”（决定不做……）。",
+    "formation": "动词辞书形 / ない形 + ことにする / ことにしました",
+    "examples": [
+      {
+        "translation": "我决定下周去健身房。"
+      },
+      {
+        "translation": "我决定买这双鞋了。"
+      },
+      {
+        "translation": "我决定每天都去散步。"
+      },
+      {
+        "translation": "我决定给他打个电话。"
+      }
+    ]
   },
   "ja_Verb_66": {
-    "title": "Verb る ことになる (〜ru koto ni naru)",
-    "shortExplanation": "指示 that something has been decided or arranged; 'it has been decided that', 'it turns out that'.",
-    "longExplanation": "The る ことになる grammar point is 用于表达 that something has been decided or arranged. It often 指示 a decision made by someone else or due to circumstances. 可以翻译为 'it has been decided that' or 'it turns out that' in English. The formation requires a verb in る (dictionary) form.",
-    "formation": "动词-る + ことになる"
+    "title": "～ることになる (～ru koto ni naru)",
+    "shortExplanation": "表示由于客观情况、规章制度或他人决定而确定了某种事实或安排；“决定……（客观决定）”、“结果成了……”。",
+    "longExplanation": "语法句型“～ことになる”用于表达某项计划、决定或事实的形成并非单纯出于说话人个人的自主意愿，而是受外界环境、所属组织安排、集体规则或客观形势推动而决定的。与强调个人主观决断的“～ことにする”形成鲜明对比。常以过去式“～ことになった / ～ことになりました”呈现。当使用“～ことになっている”时，则指早已确定好的规章、既定日程或社会惯例。",
+    "formation": "动词辞书形 / ない形 + ことになる / ことになりました",
+    "examples": [
+      {
+        "translation": "今天决定不开会了。"
+      },
+      {
+        "translation": "定下来下周要和朋友去旅行。"
+      },
+      {
+        "translation": "已经决定由她担任这次项目的负责人。"
+      },
+      {
+        "translation": "因为突然有了紧急工作，结果只好请假了。"
+      }
+    ]
   },
   "ja_Verb_67": {
-    "title": "Verb るときに (〜ru toki ni)",
-    "shortExplanation": "Describes the time when a certain action takes place; 'when', 'at the time'.",
-    "longExplanation": "The ～るときに grammar point is 用于表示 the time when a certain action or event happens. 可以翻译为 'when' or 'at the time' in English. The formation involves attaching ときに to the verb in its dictionary (る) form.",
-    "formation": "动词-る + ときに"
+    "title": "～るときに (～ru toki ni)",
+    "shortExplanation": "表示某个动作或事件发生的时间、场合；“……的时候”、“当……时”。",
+    "longExplanation": "句型“动词辞书形 + とき（に）”用于设定一个时间节点、场合或情境。当动词以辞书形（非过去形）接在“とき”之前时，通常表示该动作尚未完成、正在进行，或者作为一种普遍的规律与生活习惯（如“寝るとき/睡觉时”表示进入睡眠之前或准备就寝的时刻）。它与“动词た形 + とき（に）”（表示前项动作已经彻底完成后再做后项动作）形成时间先后顺序上的明确对照。",
+    "formation": "动词辞书形 + とき（に）",
+    "examples": [
+      {
+        "translation": "看电影的时候，我会吃爆米花。"
+      },
+      {
+        "translation": "睡觉的时候，我会把房间的灯关掉。"
+      },
+      {
+        "translation": "运动的时候，补充水分非常重要。"
+      },
+      {
+        "translation": "去旅行的时候，我喜欢带上照相机。"
+      }
+    ]
   },
   "ja_Verb_68": {
-    "title": "Verb る ところ (Verb-ru tokoro)",
-    "shortExplanation": "表示 the state or moment when an action is about to happen or is happening.",
-    "longExplanation": "The grammar point 'Verb る ところ' is 用于表达 that one is just about to do something, or is in the process of doing it. 可以翻译为 'just about to' or 'in the middle of' in English, depending on context.",
-    "formation": "动词-dictionary form + ところ"
+    "title": "～るところ (～ru tokoro)",
+    "shortExplanation": "表示动作正要开始、即将发生的临界时刻；“正要……”、“正打算……”、“差一点就……”。",
+    "longExplanation": "句型“动词辞书形 + ところ（です）”表示某个动作即将发生、正准备着手进行的瞬间。常与副词“今から（现在起）”、“ちょうど（正好）”等呼应使用。如果句尾为过去形式“～ところでした”，则多表示某种险情或情感爆发“差一点就要发生，但幸好没有”（如“泣くところでした/差一点就要哭出来了”）。这一句型与“～ているところ”（正在进行中）和“～たところ”（刚刚完成）共同构成了日语中表示动作阶段的完整体系。",
+    "formation": "动词辞书形 + ところ（です / でした）",
+    "examples": [
+      {
+        "translation": "他正准备吃饭。"
+      },
+      {
+        "translation": "我正要出门。"
+      },
+      {
+        "translation": "她差一点就要哭出来了。"
+      },
+      {
+        "translation": "我们正准备开始学习。"
+      }
+    ]
   },
   "ja_Verb_69": {
-    "title": "Verb 出す (~dasu)",
-    "shortExplanation": "表达 action of taking something out, starting an action, or emphasizing a verb.",
-    "longExplanation": "The verb 出す (~dasu) is 用于表达 the action of taking something out, starting an action, or emphasizing the verb it is attached to. To form this grammar point, simply attach 出す (~dasu) to the stem of the verb.",
-    "formation": "动词 stem + 出す (~dasu)"
+    "title": "～出す (～dasu)",
+    "shortExplanation": "作复合动词后半部分时表示动作突然开始或迸发；作为独立动词时表示“拿出”、“提交/交出”。",
+    "longExplanation": "“出す”（dasu）在日语中主要有两种用法：第一，作为独立他动词使用，意为从某处“拿出/取出”（例1：从书架取出书），或者“提交/交上”作业、报告等材料（例3：提交作业）。（注：例2“出ました”为对应自动词“出る”的过去式）。第二，接在动词连用形（ます形去掉ます）之后构成复合动词，表示某种动作、状态突然且势头明显地开始向外爆发（例4：歌い出しました/突然唱起歌来），如“泣き出す（哭出来）”、“雨が降り出す（下起雨来）”。",
+    "formation": "动词连用形（ます形去掉ます） + 出す / 名词 + を + 出す",
+    "examples": [
+      {
+        "translation": "请从书架上把书拿出来。"
+      },
+      {
+        "translation": "他急忙从房间里走了出来。"
+      },
+      {
+        "translation": "请在上课前把作业交上来。"
+      },
+      {
+        "translation": "她开始唱起歌来了。"
+      }
+    ]
   },
   "ja_Verb_70": {
-    "title": "Verb 方 (〜hou)",
-    "shortExplanation": "指示 the way or method of doing something; often read as '～かた' ('how to', 'the way of').",
-    "longExplanation": "The ～方 grammar point is 用于表达 the way or method of doing something, similar to 'how to' or 'the way of' in English. It can be attached to the stem of a verb to form a noun that 指示 the method of doing the action. In practice, ～方 is usually read as '～かた' (e.g., 作り方＝つくりかた).",
-    "formation": "动词-stem + 方 (read as かた)"
+    "title": "～方 (～kata)",
+    "shortExplanation": "接在动词后表示进行该动作的方法或途径；“……的方法”、“怎么……”。",
+    "longExplanation": "接尾词“～方”（读作“かた / kata”）接在动词连用形（ます形去掉ます）之后，将其名词化，用于表达进行该动作的具体方法、手段或方式（如“作り方/做法”、“使い方/使用方法”）。需要特别注意的是，原动词所带的宾语助词“を”在转换为该句型时，必须变更为表示定语所属的助词“の”（例如：ケーキを作る → ケーキの作り方；パソコンを使う → パソコンの使い方）。",
+    "formation": "动词连用形（ます形去掉ます） + 方（读作 かた） / 名词 + の + 动词连用形 + 方",
+    "examples": [
+      {
+        "translation": "有人知道蛋糕的做法吗？"
+      },
+      {
+        "translation": "她正在学习英语的说话方式（如何说英语）。"
+      },
+      {
+        "translation": "请教教我这台电脑的使用方法。"
+      },
+      {
+        "translation": "记住数学题的解题方法很困难。"
+      }
+    ]
   },
   "ja_Verb_71": {
-    "title": "Verb 終わる (〜owaru)",
-    "shortExplanation": "Verbal action is completed; 'to finish', 'to end'.",
-    "longExplanation": "The verb 終わる (owaru) is 用于表达 that an action has been completed or something has come to an end. Despite ending in る, 終わる is a godan (u-verb), so it does not follow the typical ichidan (る-verb) conjugation. It is translated as 'to finish', 'to end' or 'to be over' in English.",
-    "formation": "終わる (owaru) is a godan (u-verb)"
+    "title": "～終わる (～owaru)",
+    "shortExplanation": "表示动作、事件或工作完结、告终；“结束”、“完毕”、“做完”。",
+    "longExplanation": "“終わる”（owaru）是五段动词（一类动词），表示某事结束、完结。常作为自动词独立使用，与助词“が”搭配（如“映画が終わる/电影结束”、“仕事が終わる/工作结束”）。此外，还可以接在其他动词连用形（ます形去掉ます）之后构成复合动词，表示该动作彻底做完、告一段落（如“書き終わる/写完”、“読み終わる/读完”）。反义词为“始まる / 始める”。",
+    "formation": "名词 + が + 終わる（一类动词） / 动词连用形（ます形去掉ます） + 終わる",
+    "examples": [
+      {
+        "translation": "电影结束后，我就回家。"
+      },
+      {
+        "translation": "请等到工作结束。"
+      },
+      {
+        "translation": "聚会马上就要结束了。"
+      },
+      {
+        "translation": "考试结束后，我打算和朋友去玩。"
+      }
+    ]
   },
   "ja_Verb_72": {
-    "title": "Verb + 続ける (つづける, tsuzukeru)",
-    "shortExplanation": "To continue doing or to keep doing an action.",
-    "longExplanation": "The grammar point 続ける (tsuzukeru) is attached to the masu-stem form of verbs, and it 指示 the ongoing continuity of an action. 可以翻译为 'to continue doing' or 'to keep doing' in English.",
-    "formation": "动词-masu-stem + 続ける"
+    "title": "～続ける (～tsuzukeru)",
+    "shortExplanation": "表示动作或状态不间断地持续进行；“继续（做某事）”、“坚持……下去”。",
+    "longExplanation": "动词“続ける”（tsuzukeru）作为他动词，表示持续、继续某项活动。具有两种常见构造：第一，接在动词连用形（ます形去掉ます）之后构成复合动词，强调该动作毫不中断地一直持续下去（如“歩き続ける/一直走下去”、“勉強し続ける/坚持学习”）；第二，作为独立动词与宾语搭配使用，“名词 + を + 続ける”，表示继续开展某项学业、工作或运动。",
+    "formation": "动词连用形（ます形去掉ます） + 続ける / 名词 + を + 続ける",
+    "examples": [
+      {
+        "translation": "他每天都坚持在健身房锻炼。"
+      },
+      {
+        "translation": "她为了继续学习去了图书馆。"
+      },
+      {
+        "translation": "尽管下着雨，我们还是继续散步。"
+      },
+      {
+        "translation": "他决定继续做这份工作。"
+      }
+    ]
   },
   "ja_かしら_73": {
-    "title": "～かしら (〜kashira)",
-    "shortExplanation": "指示 uncertainty or doubt; 'I wonder', 'I'm not sure'.",
-    "longExplanation": "The ～かしら grammar point is 用于表达 uncertainty or doubt about a situation. 可以翻译为 'I wonder' or 'I'm not sure' in English. It is primarily used by females in casual conversations but can be used by males in some contexts as well. ～かしら is used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-casual + かしら, い-形容词 + かしら, な-形容词 + かしら, 名词 + かしら"
+    "title": "～かしら (～kashira)",
+    "shortExplanation": "用于句尾表示疑问、不确定或自问（多为女性在口语中使用）；“不知道……呢”、“……吧？”、“……吗？”。",
+    "longExplanation": "“かしら”是日语中常见的终助词，主要用于日常随意的口语会话中，表达说话人的自言自语、揣测、疑问或不确定的心理。其语意与“～かな”基本一致，但带有明显的女性用语色彩，语气更为柔和委婉。它可以直接接在动词、一类形容词的普通形之后；接在二类形容词和名词之后时，通常不加断定助动词“だ”。",
+    "formation": "动词普通形 + かしら / 一类形容词普通形 + かしら / 二类形容词词干（不加だ） + かしら / 名词（不加だ） + かしら",
+    "examples": [
+      {
+        "translation": "今天不知道会不会下雨呢？"
+      },
+      {
+        "translation": "不知道这个蛋糕好不好吃呢？"
+      },
+      {
+        "translation": "他不知道是不是生病了呢？"
+      },
+      {
+        "translation": "她不知道是不是学生呢？"
+      }
+    ]
   },
   "ja_かどうか_74": {
     "title": "～かどうか (〜ka dou ka)",
-    "shortExplanation": "用于表达 'whether' or 'if' in indirect questions or statements.",
-    "longExplanation": "The ～かどうか grammar point is 用于表达 'whether' or 'if' in indirect questions or statements. It is often 用于表达 uncertainty or to inquire about information in a more polite form. ～かどうか can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-casual + かどうか, い-形容词 + かどうか, な-形容词 + (だ)かどうか, 名词 + (だ)かどうか"
+    "shortExplanation": "用于间接疑问句，表示不确定的是非选择；“是否……”、“……还是不……”、“……与否”。",
+    "longExplanation": "句型“～かどうか”用于间接引语或疑问从句中，表示某种情况“是否如此”或“是不是”，相当于汉语的“是否……”、“……与否”。它常与“知りません（不知道）”、“分かりません（不清楚）”、“教えてください（请告诉我）”、“覚えていません（不记得）”等词语呼应使用。在标准语法中，名词和二类形容词通常直接接“かどうか”（口语中有时也会保留“だ”）。",
+    "formation": "动词普通形 + かどうか / 一类形容词 + かどうか / 二类形容词词干（或+だ）+ かどうか / 名词（或+だ）+ かどうか",
+    "examples": [
+      {
+        "translation": "我不知道他会不会来。"
+      },
+      {
+        "translation": "请告诉我这本书是否有趣。"
+      },
+      {
+        "translation": "我不知道她漂不漂亮。"
+      },
+      {
+        "translation": "我不记得他是不是老师了。"
+      }
+    ]
   },
   "ja_かなあ_75": {
     "title": "～かなあ (〜kanaa)",
-    "shortExplanation": "表示 uncertainty or wonder; 'I wonder', 'I'm not sure'.",
-    "longExplanation": "The ～かなあ grammar point is 用于表达 a feeling of uncertainty or wonder about a situation or statement. 可以翻译为 'I wonder' or 'I'm not sure' in English. In casual spoken Japanese, when using nouns or な-adjectives before かなあ, the copula だ is often omitted or replaced with の (e.g., 学生かなあ or 学生なのかなあ). This grammar point should not be used when asking questions directly to someone, as it may come off as too direct or impolite.",
-    "formation": "动词-casual + かなあ, い-形容词 + かなあ, (な-形容词/名词) + (だ) + かなあ"
+    "shortExplanation": "终助词，自言自语或对熟人表达不确定的揣测、自问或微弱的期待；“……吧”、“不知道……呢”。",
+    "longExplanation": "终助词“～かなあ”多用于口语中的自言自语，或者对关系亲密的人表达自己的困惑、揣测、犹豫或淡淡的期盼，相当于汉语的“……吧”、“不知道……呢”、“会不会……呢”。当接在名词或二类形容词之后时，通常省略断定助动词“だ”，或者变为“なのかなあ”。因为语气比较随便亲昵，所以不宜直接用于向上级或长辈提问。",
+    "formation": "动词普通形 + かなあ / 一类形容词 + かなあ / 二类形容词词干（或+なのかなあ）+ かなあ / 名词（或+なのかなあ）+ かなあ",
+    "examples": [
+      {
+        "translation": "明天不知道会不会下雨呢。"
+      },
+      {
+        "translation": "这个蛋糕不知道好不好吃呢。"
+      },
+      {
+        "translation": "他不知道是不是生病了。"
+      },
+      {
+        "translation": "她不知道是不是学生呢。"
+      }
+    ]
   },
   "ja_かもしれない_76": {
     "title": "～かもしれない (〜kamoshirenai)",
-    "shortExplanation": "Express uncertainty; 'maybe', 'might', 'possibly'.",
-    "longExplanation": "The ～かもしれない grammar point is 用于表达 uncertainty or the possibility of something occurring. 可以翻译为 'maybe', 'might', or 'possibly' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun. In everyday speech, speakers often omit だ before かもしれない for nouns and な-adjectives.",
-    "formation": "动词-casual + かもしれない, い-形容词 + かもしれない, な-形容词 + だかもしれない, 名词 + だかもしれない"
+    "shortExplanation": "表示说话人对事态不确定的推断或猜测；“也许”、“可能”、“说不定”。",
+    "longExplanation": "句型“～かもしれない”用于表达说话人对某种可能性的推测，确定程度相对较低（大约在百分之五十左右），相当于汉语的“也许……”、“可能……”、“说不定……”。其敬体形式为“～かもしれません”，在日常口语中常简略为“～かも”。接在名词或二类形容词后时，助动词“だ”通常省略。",
+    "formation": "动词普通形 + かもしれない / 一类形容词 + かもしれない / 二类形容词词干（省略だ）+ かもしれない / 名词（省略だ）+ かもしれない",
+    "examples": [
+      {
+        "translation": "明天可能会下雨。"
+      },
+      {
+        "translation": "这个蛋糕可能挺好吃的。"
+      },
+      {
+        "translation": "他也许是生病了。"
+      },
+      {
+        "translation": "她可能是一名学生。"
+      }
+    ]
   },
   "ja_から_77": {
     "title": "～から (〜kara)",
-    "shortExplanation": "Express a reason or cause; 'because', 'since', 'due to'.",
-    "longExplanation": "The ～から grammar point is 用于表达 a reason, cause, or the origin of something. 可以翻译为 'because', 'since', or 'due to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + から, い-形容词 + から, な-形容词 + だから, 名词 + だから"
+    "shortExplanation": "接续助词，表示主观的原因、理由或判断依据；“因为……”、“由于……”。",
+    "longExplanation": "接续助词“～から”用于连接前后两句话，前句说明原因、理由，后句说明结果、判断、要求或行动。与偏向客观描述的“～ので”相比，“～から”更带有说话人的主观情绪与个人意志，后续常接意志、命令、推测或提议。名词和二类形容词普通形接“から”时，必须使用“～だから”的形式。",
+    "formation": "动词普通形 + から / 一类形容词 + から / 二类形容词 + だから / 名词 + だから",
+    "examples": [
+      {
+        "translation": "因为下雨，请带上雨伞吧。"
+      },
+      {
+        "translation": "因为这个蛋糕很好吃，大家应该都会吃的吧。"
+      },
+      {
+        "translation": "因为他生病了，所以向学校请了假。"
+      },
+      {
+        "translation": "因为今天是星期日，所以学校没有课。"
+      }
+    ]
   },
   "ja_けれど_78": {
     "title": "～けれど (〜keredo)",
-    "shortExplanation": "Indicate a soft contrast or contradiction; 'but', 'however'.",
-    "longExplanation": "The ～けれど grammar point is 用于表达 a soft contrast or contradiction between two statements. 可以翻译为 'but' or 'however' in English. It is relatively informal and can be replaced by more formal expressions like けれども or が. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + けれど, い-形容词 + けれど, な-形容词 + だけれど, 名词 + だけれど"
+    "shortExplanation": "接续助词，表示轻微的转折关系或作为话题铺垫的前置引导；“虽然……但是……”、“不过……”。",
+    "longExplanation": "接续助词“～けれど”用于连接具有轻度转折或对比关系的两个分句，也可用于说话开头的客套铺垫或引出下文。语气较为口语化，更为礼貌正式的说法是“～けれども”或助词“～が”。接在名词和二类形容词普通形后时，通常采用“～だけれど”的形式。",
+    "formation": "动词普通形 + けれど / 一类形容词 + けれど / 二类形容词 + だけれど / 名词 + だけれど",
+    "examples": [
+      {
+        "translation": "今天虽然很忙，但明天会有更多时间。"
+      },
+      {
+        "translation": "这家餐厅虽然价格昂贵，但饭菜很可口。"
+      },
+      {
+        "translation": "他虽然年轻，但经验非常丰富。"
+      },
+      {
+        "translation": "她虽然生病了，但依然十分开朗有精神。"
+      }
+    ]
   },
   "ja_させてください_79": {
     "title": "～させてください (〜sasete kudasai)",
-    "shortExplanation": "Express a polite request to allow or permit someone to do something.",
-    "longExplanation": "The ～させてください grammar point is used to make a polite request to allow or permit someone to do something. 可以翻译为 'please let me' or 'please allow me to' in English. It is formed by taking the causative form of a verb and adding ください.",
-    "formation": "动词-causative form + ください"
+    "shortExplanation": "动词使役态搭配请求表达，礼貌地请求对方允许自己做某事；“请让我……”、“请允许我……”。",
+    "longExplanation": "句型“～させてください”由动词使役态的连用形（て形）接补助动词“ください”构成，用于向对方提出礼貌请求，希望对方准许自己进行某项行为。相当于汉语的“请让我做……”、“请允许我做……”。在更为正式的商务场合，通常使用更为谦逊恭敬的“～させていただきます”或“～させていただけますでしょうか”。",
+    "formation": "动词使役态て形（〜させて）+ ください",
+    "examples": [
+      {
+        "translation": "请让我再考虑一下。"
+      },
+      {
+        "translation": "请让我拍张照片。"
+      },
+      {
+        "translation": "请让我再稍微练习一下。"
+      },
+      {
+        "translation": "请允许我在这里等候。"
+      }
+    ]
   },
   "ja_しし_80": {
     "title": "～し、～し、～ (〜shi, 〜shi, 〜)",
-    "shortExplanation": "Express multiple reasons or characteristics; 'and', 'because', 'since'.",
-    "longExplanation": "The ～し、～し、～ grammar point is used to connect multiple reasons or characteristics that support a conclusion or statement. 可以翻译为 'and', 'because', or 'since' in English. This grammar can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-casual + し, い-形容词 + し, な-形容词 + だし, 名词 + だし"
+    "shortExplanation": "列举两项及以上的理由、原因或并列的属性特征；“既……又……”、“又……而且……”。",
+    "longExplanation": "接续助词“～し”用于并列列举两个或以上的理由、原因，用以支持后文的结论或判断；也可用于单纯并列列举事物的多项同类特征。它暗示“除了所列举的之外还有其他因素”。接在名词和二类形容词普通形后时，需使用“～だし”的形式。",
+    "formation": "动词普通形 + し / 一类形容词 + し / 二类形容词 + だし / 名词 + だし",
+    "examples": [
+      {
+        "translation": "他既年轻、有活力，为人又随和，我觉得他能和大家相处融洽。"
+      },
+      {
+        "translation": "这家餐厅菜品美味，环境宜人，价格也十分公道，所以非常推荐。"
+      },
+      {
+        "translation": "她学习优秀，擅长体育，性格也很讨人喜欢。"
+      },
+      {
+        "translation": "今天天气又冷，还下着雨，还是在家里好好休息比较好。"
+      }
+    ]
   },
   "ja_すぎる_81": {
     "title": "～すぎる (〜sugiru)",
-    "shortExplanation": "表示 that something is excessive or overdone; 'too much', 'too', 'over'.",
-    "longExplanation": "The ～すぎる grammar point is 用于表达 that something is excessive or beyond a certain level. 可以翻译为 'too much', 'too', or 'over' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
-    "formation": "动词-stem + すぎる, い-形容词 (remove い) + すぎる, な-形容词 + すぎる"
+    "shortExplanation": "接在动词或形容词后，表示程度、数量或状态过度超标；“太……”、“过于……”、“……过分”。",
+    "longExplanation": "复合动词“～すぎる”接在动词连用形（去ます）或形容词词干后，表示某种动作、性质或状态超出了适度、合情理的界限，通常含有消极、带来不便或令人困扰的语感。在语法活用上属于二类动词（一段动词）。在现代年轻人口语中，偶尔也用于夸张地表达积极程度。",
+    "formation": "动词连用形（ます形去ます）+ すぎる / 一类形容词词干（去 い）+ すぎる / 二类形容词词干（去 な）+ すぎる",
+    "examples": [
+      {
+        "translation": "这个房间太热了。"
+      },
+      {
+        "translation": "他来得太早了。"
+      },
+      {
+        "translation": "这个箱子太重了，搬不起来。"
+      },
+      {
+        "translation": "她工作太忙，不可能玩得过度。"
+      }
+    ]
   },
   "ja_ずつ_82": {
     "title": "～ずつ (〜zutsu)",
-    "shortExplanation": "指示 equal distribution; 'each', 'per', 'apiece'.",
-    "longExplanation": "The ～ずつ grammar point is 用于表达 an equal distribution of something, whether it is an action, an amount, or an item. It is translated as 'each', 'per', or 'apiece' in English.",
-    "formation": "名词 + ずつ"
+    "shortExplanation": "副助词，接在数量词等后，表示等量均分或一定分量的循序推进；“各……”、“每……”。",
+    "longExplanation": "副助词“～ずつ”接在数词、量词或表示分量的词语之后，表示同等分量地分配给各个对象（如每人分两个），或者表示动作以固定的份额、分量反复进行或逐步推进（如一步一步、一点一点）。相当于汉语的“每……”、“各……”、“一次……”。",
+    "formation": "数量词 / 名词 + ずつ",
+    "examples": [
+      {
+        "translation": "每人分发两个苹果。"
+      },
+      {
+        "translation": "我们每周打扫一次卫生。"
+      },
+      {
+        "translation": "大家都一步一步地走过了相同的距离。"
+      },
+      {
+        "translation": "她给孩子们每人送了一份礼物。"
+      }
+    ]
   },
   "ja_そうだ_83": {
     "title": "～そうだ (〜sou da)",
-    "shortExplanation": "表达 appearance, seeming, or feeling of something; 'looks like', 'seems', 'appears'.",
-    "longExplanation": "The ～そうだ grammar point is used to describe the appearance or feeling of something based on what is observed or inferred. 可以翻译为 'looks like', 'seems', or 'appears' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
-    "formation": "动词-ますstem + そうだ, い-形容词 (without い) + そうだ, な-形容词 + そうだ"
+    "shortExplanation": "样态助动词，表示通过视觉直观观察做出的样态推测或前兆；“看起来……”、“好像要……”。",
+    "longExplanation": "样态助动词“～そうだ”用于描述根据眼前直接看到的迹象或神态所做出的直观推测。接在形容词词干后表示“看起来……”；接在动词连用形后表示某种事态即将发生的前兆（“眼看就要……”）。特别注意不规则变化：一类形容词“いい”变为“よさそうだ”，“ない”变为“なさそうだ”。需要与表示传闻的“～そうだ（听说）”严格区分。",
+    "formation": "动词连用形（ます形去ます）+ そうだ / 一类形容词词干（去 い）+ そうだ / 二类形容词词干（去 な）+ そうだ",
+    "examples": [
+      {
+        "translation": "那朵花看起来非常漂亮。"
+      },
+      {
+        "translation": "他看起来很疲惫。"
+      },
+      {
+        "translation": "这本书看起来很有意思。"
+      },
+      {
+        "translation": "眼看着就要下雨了。"
+      }
+    ]
   },
   "ja_そんな_84": {
-    "title": "そんな (sonna) + Noun",
-    "shortExplanation": "表示 'that kind/type of'; referring to something near the listener or previously mentioned.",
-    "longExplanation": "The word 'そんな' is used before a noun to indicate 'that kind of' or 'that type of', typically referring to something near the listener or previously mentioned in the conversation. It specifies the noun based on context or shared understanding between the speaker and the listener.",
-    "formation": "そんな + 名词"
+    "title": "そんな (sonna) + 名词",
+    "shortExplanation": "连体词，修饰名词，表示“那种”、“那样的”（靠近对方或前文所提及的类别事物）。",
+    "longExplanation": "连体词“そんな”直接置于名词之前进行修饰，表示与听话人相关、靠近听话人，或者刚在前文中提及的事物种类或性质，相当于汉语的“那种……”、“那样的……”。在口语中，它常常带有强烈的惊讶、轻蔑、难以置信或全面否定的情感色彩。",
+    "formation": "そんな + 名词",
+    "examples": [
+      {
+        "translation": "那种话，简直令人难以置信。"
+      },
+      {
+        "translation": "我才不想看那种电影呢。"
+      }
+    ]
   },
   "ja_そんなに_85": {
     "title": "そんなに～ (sonna ni〜)",
-    "shortExplanation": "表示 'not so much', 'not that', or 'not so ~'.",
-    "longExplanation": "The grammar point そんなに is an adverb 用于表达 that something is not as extreme as described or not to that extent. It is often translated as 'not so much', 'not that', or 'not so ~'. It is commonly followed by a negative form of a verb or adjective.",
-    "formation": "そんなに + 动词-negation, そんなに + 形容词-negation"
+    "shortExplanation": "程度副词，多与否定搭配，表示程度并未达到所说的那么高；“并不那么……”、“没有那么……”。",
+    "longExplanation": "程度副词“そんなに”通常与句尾的否定形式呼应使用，表示某事物在数量、程度或状态上并没有外界认为或预期的那样极端或显著，相当于汉语中的“并不那么……”、“没有那么……”。",
+    "formation": "そんなに + 动词否定形 / 一类形容词否定形 / 二类形容词否定形",
+    "examples": [
+      {
+        "translation": "不用那么着急也可以哦。"
+      },
+      {
+        "translation": "我觉得并不是那么难的问题。"
+      },
+      {
+        "translation": "她的个子并没有那么高。"
+      },
+      {
+        "translation": "我认为没有必要吃那么多。"
+      }
+    ]
   },
   "ja_たらいい_86": {
     "title": "～たらいい (〜tara ii)",
-    "shortExplanation": "Expressing a desire or suggestion for a particular outcome; 'it would be good if', 'should', 'I hope'.",
-    "longExplanation": "The ～たらいい grammar point is 用于表达 a desire, suggestion, or hope for a particular outcome. 可以翻译为 'it would be good if', 'should', or 'I hope' in English. The formation is simple, and it is used with verbs in their casual past tense form.",
-    "formation": "动词-casual-past + たらいい"
+    "shortExplanation": "提出建议或表达期盼、祈愿；“……就好了”、“最好……”。",
+    "longExplanation": "句型“～たらいい”将顺接条件假定“～たら”与形容词“いい（好）”结合，用于温和地给对方提出建议或对策（相当于“如果……的话比较好”）。在自言自语或句尾加上终助词“な”（如～たらいいな）时，则用来表达说话人希望某种事态能够如愿发生的心愿与期盼。",
+    "formation": "动词た形 + らいい（たらいい）",
+    "examples": [
+      {
+        "translation": "再多用功学习一下比较好哦。"
+      },
+      {
+        "translation": "雨要是能停就好了啊。"
+      },
+      {
+        "translation": "要是能早日康复就好了呢。"
+      },
+      {
+        "translation": "我觉得你联系他一下比较好。"
+      }
+    ]
   },
   "ja_たら_87": {
     "title": "～たら いかがですか (〜tara ikaga desu ka)",
-    "shortExplanation": "Making polite suggestions; 'how about if', 'what if', 'it would be good if'.",
-    "longExplanation": "The ～たら いかがですか grammar point is used to make polite suggestions, ask for opinions, or imply that something would be good or desirable if the condition is met. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual, past + たら いかがですか, い-形容词 + かったら いかがですか, な-形容词 + だったら いかがですか, 名词 + だったら いかがですか"
+    "shortExplanation": "极为客气礼貌地向对方提出建议、劝告或征求意见；“如果……意下如何呢？”。",
+    "longExplanation": "句型“～たら いかがですか”使用条件假定“～たら”与极为郑重礼貌的敬语疑问表达“いかがですか”相结合，用于向长辈、客户或上级委婉提出建议或探询对方意见。它是“～たらどうですか”的高级敬语形式，表现出对听话人极高的敬意与尊重。",
+    "formation": "动词た形 + ら いかがですか / 一类形容词连用形（词尾变かっ）+ たら いかがですか / 二类形容词 + だったら いかがですか / 名词 + だったら いかがですか",
+    "examples": [
+      {
+        "translation": "去图书馆看一看意下如何呢？"
+      },
+      {
+        "translation": "如果觉得冷的话，穿一件开衫怎么样呢？"
+      },
+      {
+        "translation": "要是房间很暗的话，打开照明怎么样呢？"
+      },
+      {
+        "translation": "如果是自己的想法，试着询问一下他人的看法意下如何呢？"
+      }
+    ]
   },
   "ja_たら_88": {
     "title": "～たら どうですか (〜tara doudesuka)",
-    "shortExplanation": "Express a suggestion or advice; 'what if', 'how about', 'why don't you'.",
-    "longExplanation": "The ～たら どうですか grammar point is used to make a suggestion or give advice to someone. 可以翻译为 'what if', 'how about', or 'why don't you' in English. This structure is used with the た-form of verbs to make a gentle, polite suggestion.",
-    "formation": "动词-た form + ら どうですか"
+    "shortExplanation": "用于向对方提出温和友善的建议、劝诱或劝告；“……怎么样？”、“要不要……试试？”。",
+    "longExplanation": "句型“～たら どうですか”通过动词た形后续假定接续“たら”，再连接询问语“どうですか”，用于在日常交流中向平辈或晚辈提出亲切、委婉的建议或解决办法。相当于汉语的“……怎么样？”、“要不要……试试看？”。由于仍属于带有指导性的建议，通常不适合直接对长辈或地位明显高于自己的人使用。",
+    "formation": "动词た形 + ら どうですか（たらどうですか）",
+    "examples": [
+      {
+        "translation": "去滑雪怎么样？"
+      },
+      {
+        "translation": "稍微休息一下怎么样？"
+      },
+      {
+        "translation": "读一读这本书怎么样？"
+      },
+      {
+        "translation": "坐出租车回家怎么样？"
+      }
+    ]
   },
   "ja_たりたり_89": {
     "title": "～たり～たり (〜tari 〜tari)",
-    "shortExplanation": "Used to list multiple actions or states; 'doing things like', 'and so on', 'etc.'",
-    "longExplanation": "The ～たり～たり grammar point is used to list two or more actions or states, without specifying their order or importance. It implies that these actions or states are representative examples, and there may be others. This construction is useful for describing general or habitual actions.",
-    "formation": "动词-ta + り + next verb-ta + り, い-形容词 + かったり + next verb-ta + り, な-形容词 + だったり + next verb-ta + り, 名词 + だったり + next verb-ta + り"
+    "shortExplanation": "用于列举具有代表性的动作或状态，或表示交替反复；'又……又……'、'有时……有时……'、'做做……啦，做做……啦'。",
+    "longExplanation": "句型'～たり～たり'用于从多个动作或状态中挑选出两到三个具有代表性的例子进行不完全列举，不强调先后顺序，暗示除了列举出的项目之外还有其他事情。句尾通常接动词'する'（与形容词或名词搭配时也可接'です'）。当连接正反两方面的内容时，还可表示两种状态交替出现（'时而……时而……'）。",
+    "formation": "动词た形 + り + 动词た形 + り + する / 一类形容词（去掉 い）+ かったり / 二类形容词词干 + だったり / 名词 + だったり",
+    "examples": [
+      {
+        "translation": "周末我做做看电影、读读书之类的事情。"
+      },
+      {
+        "translation": "她既擅长做饭，唱歌也很拿手。"
+      },
+      {
+        "translation": "在这个度假村，可以滑雪、泡温泉等。"
+      },
+      {
+        "translation": "这个地区的天气忽冷忽热（时而炎热，时而寒冷）。"
+      }
+    ]
   },
   "ja_だろう_90": {
     "title": "～だろう (〜darou)",
-    "shortExplanation": "Express probability, likelihood or certainty; 'probably', 'maybe', 'I think'.",
-    "longExplanation": "The ～だろう grammar point is 用于表达 probability, likelihood, or certainty about a situation or event. 可以翻译为 'probably', 'maybe', or 'I think' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + だろう, い-形容词 (drop い) + だろう, な-形容词 + だろう, 名词 + だろう"
+    "shortExplanation": "表示说话人的推测或判断（普通体/简体）；'大概……吧'、'恐怕……吧'。",
+    "longExplanation": "句型'～だろう'是礼貌体'～でしょう'对应的普通体（简体）形式，用于表达说话人对某种事态、状况的主观推测或判断，相当于汉语中的'大概……吧'、'也许……吧'。常与'たぶん'（大概）、'きっと'（一定）等副词呼应使用。在句尾读升调时，也可用于熟人之间寻求对方同意或确认事实。",
+    "formation": "动词普通形 + だろう / 一类形容词普通形 + だろう / 二类形容词词干 + だろう / 名词 + だろう",
+    "examples": [
+      {
+        "translation": "明天大概会放晴吧。"
+      },
+      {
+        "translation": "他大概很忙吧。"
+      },
+      {
+        "translation": "这本书应该挺有趣的吧。"
+      },
+      {
+        "translation": "她大概是老师吧。"
+      }
+    ]
   },
   "ja_っていう_91": {
     "title": "～っていう (〜tte iu)",
-    "shortExplanation": "Used to quote, define, or specify a noun.",
-    "longExplanation": "The ～っていう grammar point is used for quoting, defining, or specifying a noun. 可以翻译为 'called', 'that is to say', or 'I mean' in English. This expression is similar to ～という, but it is more casual and commonly used in spoken conversations.",
-    "formation": "名词/形容词/动词 + っていう + 名词"
+    "shortExplanation": "用于日常口语，是'～という'的随和口语形式，表示称谓、定义或引用；'叫作……的'、'所谓的……'。",
+    "longExplanation": "句型'～っていう'是'～という'在口语中的音变形式，语气非常随和亲切。常用于向对方介绍某事物名称（'叫……的'）、对某概念进行定义与解释（'所谓的……'），或者作为话题引出某人某事。也可以用来转述他人所说的话或听到的传闻。",
+    "formation": "普通体（名词 / 动词 / 形容词） + っていう + 名词",
+    "examples": [
+      {
+        "translation": "我非常喜欢叫作披萨的料理。"
+      },
+      {
+        "translation": "他那个人真是有趣极了。"
+      },
+      {
+        "translation": "这部电影，真的很令人感动呢。"
+      },
+      {
+        "translation": "她所说的那家店并不是这里。"
+      }
+    ]
   },
   "ja_で_92": {
     "title": "～で (〜de)",
-    "shortExplanation": "指示 the means, method, or place.",
-    "longExplanation": "The ～で grammar point is 用于表示 the means or method used to perform an action, or to specify the place where an action took place. It is typically used with verbs and comes after a noun.",
-    "formation": "名词 + ～で"
+    "shortExplanation": "格助词，表示动作进行的场所，或动作所使用的手段、方法、工具、材料；'在……'、'用……'、'乘……'。",
+    "longExplanation": "格助词'～で'用法十分广泛，主要包括两大核心功能：\n1. 接在交通工具、工具、手段、语言或原材料名词后，表示实施某项动作的手段或方式，相当于汉语的'用……'、'乘/坐……'、'以……'。\n2. 接在场所名词后，表示动态行为发生的具体地点，相当于汉语的'在……'。",
+    "formation": "名词（手段 / 工具 / 交通工具 / 场所） + で",
+    "examples": [
+      {
+        "translation": "我骑自行车去上学。"
+      },
+      {
+        "translation": "他用日语写了信。"
+      },
+      {
+        "translation": "我用铅笔画了画。"
+      },
+      {
+        "translation": "我在餐馆吃了午饭。"
+      }
+    ]
   },
   "ja_でしょう_93": {
     "title": "～でしょう (〜deshou)",
-    "shortExplanation": "A conjecture or probability; 'probably', 'I think', 'it seems'.",
-    "longExplanation": "The ～でしょう grammar point is 用于表示 a conjecture or probability. 可以翻译为 'probably', 'I think', or 'it seems' in English. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-ますstem + でしょう, い-形容词 + でしょう, な-形容词 + でしょう, 名词 + でしょう"
+    "shortExplanation": "表示礼貌的推测或确认；'大概……吧'、'……吧'。",
+    "longExplanation": "句型'～でしょう'是表示推测的敬体（礼貌体）形式，常用于天气预报、新闻报道或日常礼貌交流中，表示说话人依据现有情况所做出的较为委婉客观的推断。常与'たぶん'（大概）等推测副词连用。如果句尾读升调，则用于礼貌地向听话人征求赞同或确认事实（'……对吧？'）。",
+    "formation": "动词普通形 + でしょう / 一类形容词普通形 + でしょう / 二类形容词词干 + でしょう / 名词 + でしょう",
+    "examples": [
+      {
+        "translation": "明天大概会放晴吧。"
+      },
+      {
+        "translation": "他应该挺有精神的吧。"
+      },
+      {
+        "translation": "这本书应该很有意思吧。"
+      },
+      {
+        "translation": "她大概是医生吧。"
+      }
+    ]
   },
   "ja_てはいけない_94": {
     "title": "～てはいけない (〜te wa ikenai)",
-    "shortExplanation": "表示 prohibition; 'must not', 'cannot'.",
-    "longExplanation": "The ～てはいけない grammar point is 用于表达 strict prohibition or something that must not be done. 可以翻译为 'must not', 'cannot', or 'should not' in English. It is formed by adding て-form of a verb followed by はいけない.",
-    "formation": "动词-て-form + はいけない"
+    "shortExplanation": "表示禁止，强调不得做某事；'不能……'、'不可以……'、'不许……'。",
+    "longExplanation": "句型'～てはいけない'（敬体为'～てはいけません'）用于明确表达禁止，指示某人不得实施某项行为。常用于公共场所的规章制度、法律法规或长辈对晚辈的告诫与训示中。口语中常简略为'～ちゃいけない'或'～じゃいけない'。",
+    "formation": "动词て形 + はいけない / はいけません",
+    "examples": [
+      {
+        "translation": "不可以在公园里吸烟。"
+      },
+      {
+        "translation": "这里不能拍照。"
+      },
+      {
+        "translation": "在图书馆里不可以大声喧哗。"
+      },
+      {
+        "translation": "不能在公交车上给站着的人让座。"
+      }
+    ]
   },
   "ja_てもいい_95": {
     "title": "～てもいい (〜temo ii)",
-    "shortExplanation": "To give or ask permission; 'it's okay to', 'may', 'can'.",
-    "longExplanation": "The ～てもいい grammar point is used to give or ask for permission to do something. 可以翻译为 'it's okay to', 'may', or 'can' in English. The formation is derived by adding てもいい after the て-form of a verb.",
-    "formation": "动词-て form + もいい"
+    "shortExplanation": "表示许可或请求许可；'可以……'、'……也可以'。",
+    "longExplanation": "句型'～てもいい'（敬体为'～てもいいです'）用于向对方给予许可，表示允许做某事（'可以……'）。如果句尾加上疑问助词'か'变成'～てもいいですか'，则表示礼貌地征求对方许可或同意（'我可以……吗？'）。如果动词て形为'～で'结尾，则接续为'～でもいい'。",
+    "formation": "动词て形 + もいい / もいいです / もいいですか",
+    "examples": [
+      {
+        "translation": "可以在这里拍照吗？"
+      },
+      {
+        "translation": "我可以吃这个苹果吗？"
+      },
+      {
+        "translation": "考试结束后就可以回去了。"
+      },
+      {
+        "translation": "今晚可以和朋友一起出去玩。"
+      }
+    ]
   },
   "ja_てもでも_96": {
     "title": "～ても/でも (〜te mo/demo)",
-    "shortExplanation": "表示 'even if' or 'even though'; used to convey contradiction or contrast.",
-    "longExplanation": "The ～ても/でも grammar point is 用于表达 'even if' or 'even though' in a sentence, showing the idea of contradiction or contrast. The formation of ても differs depending on whether it is used with a verb, い-adjective, or な-adjective. For nouns, でも is used.",
-    "formation": "动词-て-form + も, い-形容词 (-い) + くても, な-形容词 + でも, 名词 + でも"
+    "shortExplanation": "表示让步条件或逆接假定；'即使……也……'、'就算……也……'。",
+    "longExplanation": "句型'～ても/でも'用于表示逆接假定条件，即无论前项的条件或事态如何成立，后项的结果或行为都不会受到影响，仍然照常发生或成立。相当于汉语中的'即使……也……'、'就算……也……'。连接形式为：动词て形加'も'；一类形容词将词尾'い'变为'くても'；二类形容词与名词后接'でも'。",
+    "formation": "动词て形 + も / 一类形容词（去掉 い）+ くても / 二类形容词词干 + でも / 名词 + でも",
+    "examples": [
+      {
+        "translation": "即使下雨，我也要去上学。"
+      },
+      {
+        "translation": "就算这个房间很脏，我也不打算打扫。"
+      },
+      {
+        "translation": "即使那部电影没意思，我也会看。"
+      },
+      {
+        "translation": "即使她生病了，也依然会工作。"
+      }
+    ]
   },
   "ja_といい_97": {
     "title": "～といい (〜to ii)",
-    "shortExplanation": "Express a wish or hope; 'I hope', 'it would be good if'.",
-    "longExplanation": "The ～といい grammar point is 用于表达 a wish or hope for a certain situation or outcome. 可以翻译为 'I hope', 'it would be good if', or 'it would be nice if' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + といい, い-形容词 + といい, な-形容词 + だといい, 名词 + だといい"
+    "shortExplanation": "表示说话人的愿望、期盼或对对方的祝福；'要是……就好了'、'希望……'。",
+    "longExplanation": "句型'～といい'用于表达说话人对某件事态或结果的愿望、期盼，相当于汉语中的'要是……就好了'、'但愿……'。句尾常搭配终助词'ね'、'な'（'～といいね'、'～といいな'）来抒发内心的祈愿；在礼貌表达中常使用'～といいですね'，用于向对方表达美好的祝愿或期待。",
+    "formation": "动词普通形 + といい / 一类形容词普通形 + といい / 二类形容词词干 + だといい / 名词 + だといい",
+    "examples": [
+      {
+        "translation": "明天要是能放晴就好了呢。"
+      },
+      {
+        "translation": "希望能通过这次考试。"
+      },
+      {
+        "translation": "但愿他身体健康（好好的）。"
+      },
+      {
+        "translation": "那家餐厅要是好吃就太好了呢。"
+      }
+    ]
   },
   "ja_という_98": {
-    "title": "～という (〜to iu) Noun",
-    "shortExplanation": "Used to define or explain a noun more specifically.",
-    "longExplanation": "The ～という grammar point is used to define or explain a noun more specifically. It is often translated as 'called', 'named', or 'that is to say' in English. It can be used with nouns, な-adjectives, and adjectival verbs.",
-    "formation": "名词 + という + 名词, な-形容词 + という + 名词, Adjectival 动词 + という + 名词"
+    "title": "～という + 名词 (〜to iu + 名词)",
+    "shortExplanation": "修饰名词，用于对名词进行具体说明、定义或转述传闻；'叫作……的'、'所谓的……'、'据说是……的'。",
+    "longExplanation": "句型'～という + 名词'用于对后接的名词进行详细界定、说明或补充其内容。它可以用来提示人、事物或地点的称谓（'叫……的人/物'），也可以用于转述某种评价、名声或传闻（'据说是……的产品'），相当于汉语中的'所谓的……'、'被称为……的'。",
+    "formation": "普通体（名词 / 动词 / 形容词） + という + 名词",
+    "examples": [
+      {
+        "translation": "他是一位日语讲得很流利的美国人。"
+      },
+      {
+        "translation": "昨天我吃了据说是很美味的蛋糕。"
+      },
+      {
+        "translation": "作为著名歌手的她拥有众多粉丝。"
+      },
+      {
+        "translation": "号称环保的产品很受欢迎。"
+      }
+    ]
   },
   "ja_どういう_99": {
-    "title": "どういう Noun (dou iu Noun)",
-    "shortExplanation": "Asking for clarification or more information about a noun; 'what kind of', 'what sort of'.",
-    "longExplanation": "The どういう Noun grammar point is 用于询问 for more information or clarification about a specific noun. 可以翻译为 'what kind of' or 'what sort of' in English. The formation is simply using どういう followed by the noun in question.",
-    "formation": "どういう + 名词"
+    "title": "どういう + 名词 (dou iu + 名词)",
+    "shortExplanation": "询问后项名词的性质、种类、内容或理由；'什么样的……'、'怎样的……'。",
+    "longExplanation": "句型'どういう + 名词'作为连体词使用，用于就后接名词的具体内容、性质、种类或原委向对方寻求更详尽的说明与解释，相当于汉语中的'什么样的……'、'怎样的……'。虽然与'どんな'含义相近，但'どういう'更加侧重于探求背后的原因、理由或实质内涵（例如：どういう理由、どういう意味）。",
+    "formation": "どういう + 名词",
+    "examples": [
+      {
+        "translation": "你做的是什么样的工作？"
+      },
+      {
+        "translation": "你喜欢什么类型的电影？"
+      },
+      {
+        "translation": "你想穿什么样的衣服？"
+      },
+      {
+        "translation": "你是出于什么原因迟到的？"
+      }
+    ]
   },
   "ja_と思う_100": {
     "title": "～と思う (〜to omou)",
-    "shortExplanation": "Express one's thoughts or opinions; 'I think', 'I believe'.",
-    "longExplanation": "The ～と思う grammar point is 用于表达 one's thoughts or opinions on a particular subject or situation. 可以翻译为 'I think' or 'I believe' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + と思う, い-形容词 + と思う, な-形容词 + だと思う, 名词 + だと思う"
+    "shortExplanation": "表达说话人自己的意见、看法或主观推测；'我认为……'、'我觉得……'、'我想……'。",
+    "longExplanation": "句型'～と思う'（敬体为'～と思います'）用于陈述说话人自己的观点、思考、感想或主观判断。在日语交流中，经常使用此句型来避免语气过于武断或绝对，使表达更为委婉谦和。接在'と思う'前面的从句必须使用普通体（简体）。",
+    "formation": "动词普通形 + と思う / 一类形容词普通形 + と思う / 二类形容词词干 + だと思う / 名词 + だと思う",
+    "examples": [
+      {
+        "translation": "我觉得明天会放晴。"
+      },
+      {
+        "translation": "我认为这部电影很有趣。"
+      },
+      {
+        "translation": "我觉得他为人很热心善良。"
+      },
+      {
+        "translation": "我认为铃木先生是老师。"
+      }
+    ]
   },
   "ja_という_101": {
     "title": "～という (〜to iu)",
-    "shortExplanation": "Used to quote, express hearsay or define something.",
-    "longExplanation": "The ～という grammar point is used to quote someone's words, express something you heard or read from someone else, or define and clarify the subject. 可以翻译为 'called', 'that', or 'it is said'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + という, い-形容词 + という, な-形容词 + という, 名词 + という"
+    "shortExplanation": "用于引用言论、传述传闻或对事物进行称谓和定义；'说是……'、'叫作……'、'据说……'。",
+    "longExplanation": "句型'～という'在日语中具有多种重要语法功能：\n1. 引用：直接或间接引用他人所说的话或思想内容（'说……'）。\n2. 传闻与评价：表达从他人处听说的信息、名声或传闻（'据说……'、'有着……的名声'）。\n3. 称谓与定义：说明人名、物名或概念（'叫作……的'）。\n前面接动词、形容词或名词的普通体。",
+    "formation": "普通体（动词 / 一类形容词 / 二类形容词 / 名词） + という",
+    "examples": [
+      {
+        "translation": "他说了句'喜欢你'。"
+      },
+      {
+        "translation": "那部电影有传闻说很有趣。"
+      },
+      {
+        "translation": "日本有一座名叫富士山的高山。"
+      },
+      {
+        "translation": "听人说她正在做一份很难的工作。"
+      }
+    ]
   },
   "ja_ないといけない_102": {
     "title": "～ないといけない (〜nai to ikenai)",
-    "shortExplanation": "Express a necessity; 'must', 'have to', 'need to'.",
-    "longExplanation": "The ～ないといけない grammar point is 用于表达 a sense of necessity or obligation, similar to 'must', 'have to', or 'need to' in English. This structure is formed by using the negative form of the verb (ending in ない) followed by といけない.",
-    "formation": "动词-negative + といけない"
+    "shortExplanation": "表示必须做某事，表达义务或客观必要性；'必须……'、'不得不……'、'得……'。",
+    "longExplanation": "句型'～ないといけない'（敬体为'～ないといけません'）用于表达实施某项行为的必要性或义务，字面意思是'如果不做的话就不行'，相当于汉语中的'必须……'、'得……'、'非……不可'。常用于日常口语会话中，提醒自己或他人应当完成某事。",
+    "formation": "动词ない形 + といけない / といけません",
+    "examples": [
+      {
+        "translation": "因为明天有考试，所以今晚必须学习。"
+      },
+      {
+        "translation": "必须在9点出发。"
+      },
+      {
+        "translation": "为了不感冒，必须把手好好洗干净。"
+      },
+      {
+        "translation": "这项工作必须在明天之前完成。"
+      }
+    ]
   },
   "ja_なきゃいけない_103": {
     "title": "～なきゃいけない (〜nakya ikenai)",
-    "shortExplanation": "Express a necessity or obligation; 'must', 'have to'.",
-    "longExplanation": "The ～なきゃいけない grammar point is 用于表达 a sense of necessity or obligation, similar to saying 'must' or 'have to' in English. It is a casual and more colloquial form of the ～なければいけない grammar point. The formation is different for verbs, but it is not used with い-adjectives, な-adjectives, or nouns.",
-    "formation": "动词-casual (negative form without い) + なきゃいけない"
+    "shortExplanation": "口语中表示必须做某事的随和表达（是'～なければいけない'的简略说法）；'必须……'、'得……'。",
+    "longExplanation": "句型'～なきゃいけない'是日常口语中'～なければいけない'的缩略形式，表示说话人面临的义务、责任或迫切需要去做某事，相当于汉语中的'必须……'、'得……'。在极其随意的会话中，常常直接省略后半部分，单用'～なきゃ'来表达（例如：'早く行かなきゃ'——得快点走了）。",
+    "formation": "动词ない形（去掉 い） + なきゃいけない / なきゃいけません",
+    "examples": [
+      {
+        "translation": "明天之前必须把作业做完。"
+      },
+      {
+        "translation": "马上就要出门了，所以得赶快准备。"
+      },
+      {
+        "translation": "这个项目必须在下周提交。"
+      },
+      {
+        "translation": "在乘电车之前，必须先买车票。"
+      }
+    ]
   },
   "ja_なくちゃいけない_104": {
     "title": "～なくちゃいけない (〜naku cha ikenai)",
-    "shortExplanation": "表达 obligation to do something; 'have to', 'must', 'need to'.",
-    "longExplanation": "The ～なくちゃいけない grammar point is 用于表达 that there is an obligation or necessity to do something. 可以翻译为 'have to', 'must', or 'need to' in English. This grammar point is mainly used with verbs.",
-    "formation": "动词-ない form (-ない ending is dropped) + なくちゃいけない"
+    "shortExplanation": "表示必须做某事，含有义务或必要性；'必须……'、'不得不……'（口语表达）。",
+    "longExplanation": "句型'～なくちゃいけない'是'～なくてはいけない'在日常口语中的简略缩略形式（'なくては'音变为'なくちゃ'）。用于表达由于客观情况或规定，某人不得不做某事，具有必须、非做不可的义务感或必要性，相当于汉语的'必须……'、'不得不……'、'得……'。接在动词ない形后。其敬体形式为'～なくちゃいけません'。",
+    "formation": "动词ない形（去掉「い」）+ くちゃいけない / くちゃいけません",
+    "examples": [
+      {
+        "translation": "因为得去上班，所以不得不早起。"
+      },
+      {
+        "translation": "因为有考试，所以我必须得好好学习。"
+      },
+      {
+        "translation": "因为必须更换护照，所以得去一趟大使馆。"
+      },
+      {
+        "translation": "因为今天必须交钱，所以得去一趟银行。"
+      }
+    ]
   },
   "ja_なくてはいけない_105": {
     "title": "～なくてはいけない (〜nakute wa ikenai)",
-    "shortExplanation": "表示 the necessity or obligation; 'must', 'have to'.",
-    "longExplanation": "The ～なくてはいけない grammar point is 用于表达 the necessity or obligation to do something. 可以翻译为 'must' or 'have to' in English. The formation requires the negative form of a verb and is followed by いけない (cannot go/progress). It 指示 that if something is not done, it will be a problem or inappropriate.",
-    "formation": "动词-negative form + なくてはいけない"
+    "shortExplanation": "表示具有必须履行的义务或必要性；'必须……'、'不得不……'。",
+    "longExplanation": "句型'～なくてはいけない'由动词否定形（ない形）加上接续助词'て'、提示助词'は'和'いけない'（不行）构成，字面意思是'如果不做……就不行'。用于表达由于社会常识、规章制度或客观情况，必须履行某项行为或义务，相当于汉语的'必须……'、'应该……'。其敬体形式为'～なくてはいけません'。",
+    "formation": "动词ない形（去掉「い」）+ くてはいけない / くてはいけません",
+    "examples": [
+      {
+        "translation": "我必须做作业。"
+      },
+      {
+        "translation": "这封信最迟必须在明天之前寄出去。"
+      },
+      {
+        "translation": "我们绝不能浪费食物。"
+      },
+      {
+        "translation": "虽然想早退，但必须等到下课。"
+      }
+    ]
   },
   "ja_なくてもいい_106": {
     "title": "～なくてもいい (〜nakutemo ii)",
-    "shortExplanation": "表示 that something is not necessary to do; 'it's okay if not', 'don't have to'.",
-    "longExplanation": "The ～なくてもいい grammar point is 用于表达 that an action or situation is not necessary or required, implying that it's okay if it does not occur. 可以翻译为 'it's okay if not' or 'don't have to' in English. This grammar is used with verbs.",
-    "formation": "动词-ない-form + てもいい"
+    "shortExplanation": "表示没有必要做某事，或者许可不做某事；'不……也可以'、'不用……'。",
+    "longExplanation": "句型'～なくてもいい'由动词否定形（ない形）去'い'加'くても'（即使不……也）和'いい'（好、行）构成，用于表达某事并非必须完成，免除对方的义务，或者表示即使不做也没有关系。相当于汉语的'不用……也行'、'不……也可以'。其敬体形式为'～なくてもいいです'。",
+    "formation": "动词ない形（去掉「い」）+ くてもいい / くてもいいです",
+    "examples": [
+      {
+        "translation": "不喝咖啡也可以的。"
+      },
+      {
+        "translation": "作业今天不做也可以。"
+      },
+      {
+        "translation": "不用马上回复也没关系哦。"
+      },
+      {
+        "translation": "吃不完也没关系，请不要勉强。"
+      }
+    ]
   },
   "ja_なければ_107": {
     "title": "～なければ ならない (〜nakereba naranai)",
-    "shortExplanation": "Express obligation or necessity; 'must', 'have to', 'need to'.",
-    "longExplanation": "The ～なければ ならない grammar point is 用于表达 obligation or necessity. In English, 可以翻译为 'must', 'have to', or 'need to'. The formation differs depending on whether it is used with a verb. It cannot be used with い-adjectives, な-adjectives or nouns.",
-    "formation": "动词-ない form + なければ ならない"
+    "shortExplanation": "表示客观的义务或理所应当做的事情；'必须……'、'应该……'。",
+    "longExplanation": "句型'～なければならない'由动词否定假定形'～なければ'（如果不……）和'ならない'（不行、不成）构成，字面意思是'如果不做就不行'。主要用于表达依照社会常理、道德、法律或客观规律，必须履行某种义务或进行某项动作，相当于汉语的'必须……'、'不得不……'。其敬体形式为'～なければなりません'。",
+    "formation": "动词ない形（去掉「い」）+ ければならない / ければなりません",
+    "examples": [
+      {
+        "translation": "必须做作业。"
+      },
+      {
+        "translation": "明天之前必须把这本书读完。"
+      },
+      {
+        "translation": "为了上课不迟到，必须早起。"
+      },
+      {
+        "translation": "去旅行之前必须先买好票。"
+      }
+    ]
   },
   "ja_に_108": {
     "title": "～に (〜ni)",
-    "shortExplanation": "指示 direction, destination, purpose, or time.",
-    "longExplanation": "The ～に grammar point is one of the most versatile Japanese particles. It is commonly 用于表示 the direction or destination of an action, to show the purpose of an action or item, or to specify a point in time. Depending on the context, 可以翻译为 'to', 'at', 'in', 'on', or 'for' in English.",
-    "formation": "名词 + に"
+    "shortExplanation": "格助词，表示具体时间、目的地、动作对象或归着点；'在'、'到'、'给'。",
+    "longExplanation": "格助词'に'是日语中最基础且用法广泛的助词之一，主要用法包括：\n1. 表示具体明确的时间点（'在……点'）。\n2. 表示移动的目的地或方向（'到……'、'去往……'）。\n3. 表示动作涉及的接受对象或间接宾语（'给某人……'、'向某人……'）。\n4. 表示人或物体存在的场所（'在……'）。\n5. 表示移动行为的目的（动词连用形＋に＋行く／来る）。",
+    "formation": "名词 + に / 动词ます形（去掉「ます」）+ に",
+    "examples": [
+      {
+        "translation": "妈妈给我做了一个蛋糕。"
+      },
+      {
+        "translation": "她搬家去了东京。"
+      },
+      {
+        "translation": "我把钱存进银行里。"
+      },
+      {
+        "translation": "我在早上7点起床。"
+      }
+    ]
   },
   "ja_ので_109": {
     "title": "～ので (〜node)",
-    "shortExplanation": "Express a reason or a cause for something; 'because', 'since', 'so'.",
-    "longExplanation": "The ～ので grammar point is 用于表达 reason or cause for something. 可以翻译为 'because', 'since', or 'so' in English. It is similar to から but is considered more polite and formal. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + ので, い-形容词 + ので, な-形容词 + なので, 名词 + なので"
+    "shortExplanation": "表示客观原因或理由，语气柔和委婉；'因为……所以……'。",
+    "longExplanation": "接续助词'～ので'用于连接表示原因的前项与表示结果的后项。与主观色彩强烈的'から'相比，'ので'强调事情是客观事实发展带来的必然结果，语气更加柔和、客气且礼貌，不会给人强加于人的感觉。因此，在日常礼貌交际、道歉、请假或请求他人原谅时，普遍优先使用'ので'。",
+    "formation": "动词 / 一类形容词普通形 + ので / 二类形容词词干 + なので / 名词 + なので",
+    "examples": [
+      {
+        "translation": "因为明天有考试，所以今晚要学习。"
+      },
+      {
+        "translation": "因为这件连衣裙太贵了，我决定不买了。"
+      },
+      {
+        "translation": "田中先生因为生病了，今天不过来。"
+      },
+      {
+        "translation": "因为正在下雨，最好还是别外出了。"
+      }
+    ]
   },
   "ja_のです_110": {
     "title": "～のです (〜no desu)",
-    "shortExplanation": "Provides an explanation or gives background information; 'the fact is', 'the reason is', 'actually'.",
-    "longExplanation": "The ～のです grammar point is used to provide an explanation or give background information on a situation, often used when there is a need to justify or clarify one's statement. 可以翻译为 'the fact is', 'the reason is', or 'actually' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + のです, い-形容词 + のです, な-形容词 + なのです, 名词 + なのです"
+    "shortExplanation": "用于说明事情的原委、提供背景信息或强调理由；'其实是……'、'因为……嘛'。",
+    "longExplanation": "句型'～のです'（口语形式常为'～んです'）置于句末，主要用于向对方阐述事情的原因、背景、原委，或对某种状况进行说明与强调，含有渴望对方理解自己处境的心情。在疑问句中，则常用于向对方探询原因或确认背景情况。",
+    "formation": "动词 / 一类形容词普通形 + のです / 二类形容词词干 + なのです / 名词 + なのです",
+    "examples": [
+      {
+        "translation": "这本书实际上相当难懂呢。"
+      },
+      {
+        "translation": "其实是因为我明天特别忙。"
+      },
+      {
+        "translation": "原因是她是一名英语老师。"
+      },
+      {
+        "translation": "实际上我是感冒了。"
+      }
+    ]
   },
   "ja_のに_111": {
     "title": "～のに (〜no ni)",
-    "shortExplanation": "用于表达 contrast between expectation and reality, or to indicate a purpose for doing something",
-    "longExplanation": "The ～のに grammar point has two main usages. The first is to express contrast between an expectation and reality, with translations like 'even though', 'despite' or 'in spite of' in English. The second is to indicate a purpose for doing something, translated as 'in order to' or 'for the purpose of'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + のに, い-形容词 + のに, な-形容词 + なのに, 名词 + なのに"
+    "shortExplanation": "表示事与愿违的转折逆接（'明明……却……'）或表示动作的目的用途（'为了……'）。",
+    "longExplanation": "句型'～のに'主要有两大经典用法：\n1. 转折逆接：连接两个意义相反的分句，表示后项事实与从前项推测出的常理或期待相矛盾，常伴有说话人遗憾、惊讶、责备或不满的情绪，相当于'明明……却……'、'尽管……然而……'。\n2. 目的用途：接在动词字典形后，表示某种目的、用途或基准，常与'必要だ'、'使う'、'かかる'等词搭配，相当于'为了……'、'用于……'。",
+    "formation": "【转折】动词 / 一类形容词普通形 + のに / 二类形容词词干 + なのに / 名词 + なのに | 【目的】动词字典形 + のに",
+    "examples": [
+      {
+        "translation": "明明迟到了，老师却没有发火。"
+      },
+      {
+        "translation": "尽管他已经很疲惫了，却依然在工作。"
+      },
+      {
+        "translation": "为了专心学习，需要一个安静的地方。"
+      },
+      {
+        "translation": "为了每天锻炼身体，我在家里练习瑜伽。"
+      }
+    ]
   },
   "ja_ばいい_112": {
     "title": "～ばいい (〜ba ii)",
-    "shortExplanation": "Express a suggestion or advice; 'should', 'it would be good if'.",
-    "longExplanation": "The ～ばいい grammar point is 用于表达 a suggestion, recommendation or advice. 可以翻译为 'should', or 'it would be good if' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-ば-form + いい, い-形容词 + ければいい, な-形容词 + であればいい, 名词 + であればいい"
+    "shortExplanation": "提出建议、劝告或解决方案；'只要……就行'、'……就可以了'。",
+    "longExplanation": "句型'～ばいい'由假定形'～ば'加上'いい'构成，用于向对方提供建议、劝告或指明解决问题的简单方法，相当于汉语的'只要……就可以'、'做……就行了'。在问句中以'～ばいいですか'的形式向对方请教方法或征求意见（'该怎么做才好呢？'）。",
+    "formation": "动词假定形（ば形）+ いい / 一类形容词词尾「い」变为「ければ」+ いい / 二类形容词词干 + であればいい / 名词 + であればいい",
+    "examples": [
+      {
+        "translation": "你只要再多用功学一学就行了。"
+      },
+      {
+        "translation": "要是肚子饿了，吃点东西就可以了。"
+      },
+      {
+        "translation": "再跑快一点就行了。"
+      },
+      {
+        "translation": "要是不懂的话，问老师就可以了。"
+      }
+    ]
   },
   "ja_まで_113": {
     "title": "～まで (〜made)",
-    "shortExplanation": "指示 extent, 'until', 'up to', 'as far as', 'even'.",
-    "longExplanation": "The ～まで grammar point is 用于表达 extent or range in terms of time, distance, or degree. 可以翻译为 'until', 'up to', 'as far as', or 'even' in English. It is used with verbs, い-adjectives, な-adjectives, or nouns.",
-    "formation": "动词 + まで, い-形容词 + まで, な-形容词 + まで, 名词 + まで"
+    "shortExplanation": "表示时间、空间的终点界限（'到……为止'）或表示极端的程度（'连……都'）。",
+    "longExplanation": "助词'～まで'主要有以下两大经典用法：\n1. 时间与空间终点：表示动作、状态持续发展达到的界限终点，相当于汉语的'到……为止'、'直到……'。常与'から'搭配构成'～从……到……'（从……到……）。\n2. 极端程度举例：表示范围不仅限于普通事物，甚至波及到令人意想不到的极端事例，相当于汉语的'连……都'、'甚至连……也'。",
+    "formation": "动词字典形 + まで / 名词 + まで",
+    "examples": [
+      {
+        "translation": "我会一直等到工作结束。"
+      },
+      {
+        "translation": "从这里步行到车站需要10分钟。"
+      },
+      {
+        "translation": "我会一直支持他，直到他取得成功。"
+      },
+      {
+        "translation": "她甚至连猫也喜欢。"
+      }
+    ]
   },
   "ja_までに_114": {
     "title": "～までに (〜made ni)",
-    "shortExplanation": "Express 'by' or 'before' a certain time or action.",
-    "longExplanation": "The ～までに grammar point is 用于表示 that something must be completed or occurs by a certain time or before a specific action. It can be used with verbs, nouns, and time expressions.",
-    "formation": "动词-casual + までに, 名词 + までに, Time expression + までに"
+    "shortExplanation": "表示动作或事件必须完成的最后截止时间；'在……之前'、'最迟到……'。",
+    "longExplanation": "句型'～までに'用于指示某项瞬间性动作或事件必须在此时间点之前完成的最终期限。与表示动作一直持续进行到终点的'～まで'不同，'～までに'强调的是期限与截止点，只要在规定的时间终点到来之前的任何时间点完成该行为即可，相当于汉语的'在……之前'、'最迟……'。",
+    "formation": "动词字典形 + までに / 时间名词 + までに",
+    "examples": [
+      {
+        "translation": "请在明天早上8点之前起床。"
+      },
+      {
+        "translation": "请在下周五之前提交报告。"
+      },
+      {
+        "translation": "我想在他回家之前把菜做完。"
+      },
+      {
+        "translation": "我们必须在30分钟之内赶到车站。"
+      }
+    ]
   },
   "ja_まま_115": {
     "title": "～まま (〜mama)",
-    "shortExplanation": "Express 'as it is', 'while' or 'unchanged state'.",
-    "longExplanation": "The ～まま grammar point is 用于表达 a state or condition that remains unchanged or continues, often translated as 'as it is', 'while', or 'unchanged'. It can be used with verbs and adjectives to show that something remains in a certain state or condition.",
-    "formation": "动词-てform + いる+ まま, 形容词 (い & な) + まま, 名词 + のまま"
+    "shortExplanation": "表示保持原有状态不变进行后续动作；'保持……原样'、'就那样……'。",
+    "longExplanation": "句型'～まま'表示前一个动作所产生的结果或某种状态在未发生改变的情况下，继续进行另一个动作。常含有'本该改变或恢复原状的事物，却反常地保持原样不变'的语感，常伴有粗心遗忘或意外的语气。此外，接在形容词或名词后，表示保持某种天然原生态的状态。相当于汉语的'保持……状态'、'原样……'。",
+    "formation": "动词た形 / 动词ない形 + まま / 一类形容词 + まま / 二类形容词词干 + なまま / 名词 + のまま",
+    "examples": [
+      {
+        "translation": "我把门敞开着就出门去了。"
+      },
+      {
+        "translation": "他把闹钟按掉后，就那样继续睡着了。"
+      },
+      {
+        "translation": "请让那个房间一直保持干净整洁的原样。"
+      },
+      {
+        "translation": "她依然保留着如孩童般纯真的心灵。"
+      }
+    ]
   },
   "ja_みたいだ_116": {
     "title": "～みたいだ (〜mitai da)",
-    "shortExplanation": "指示 similarity, resemblance or 'like'; 'it seems', 'appears', 'looks like'.",
-    "longExplanation": "The ～みたいだ grammar point is 用于表达 that something appears, seems or resembles something else. It can be used with nouns, verbs, い-adjectives, and な-adjectives. 可以翻译为 'it seems', 'appears', or 'looks like' in English.",
-    "formation": "动词-casual + みたいだ, い-形容词 + みたいだ, な-形容词 + みたいだ, 名词 + みたいだ"
+    "shortExplanation": "表示主观直觉推测（'好像……'）或比喻比拟（'像……一样'）（口语表达）。",
+    "longExplanation": "助动词'～みたいだ'是日常口语中极为常用的推测与比喻表达，相当于书面语中的'～ようだ'。主要有两大功能：\n1. 直觉推测：根据说话人直接观察到的外貌、神态或声音等直接线索，凭感觉作出推测，相当于汉语的'好像……'、'似乎……'。\n2. 比喻比拟：将某事物比拟为性质相似的另一事物，相当于汉语的'像……一样'。敬体形式为'～みたいです'。",
+    "formation": "动词 / 一类形容词普通形 + みたいだ / 二类形容词词干 + みたいだ / 名词 + みたいだ",
+    "examples": [
+      {
+        "translation": "她好像是生病了。"
+      },
+      {
+        "translation": "这条连衣裙看起来好像挺贵的。"
+      },
+      {
+        "translation": "那个人看起来就像是个名人一样。"
+      },
+      {
+        "translation": "他现在好像很忙的样子。"
+      }
+    ]
   },
   "ja_も_117": {
     "title": "～も (〜mo)",
-    "shortExplanation": "指示 'also', 'too', or 'as well'.",
-    "longExplanation": "The ～も grammar point is 用于表达 that something is also true, or to add some additional information to the previous statement. 可以翻译为 'also', 'too', or 'as well' in English. The grammar point can be used with verbs, adjectives, and nouns.",
-    "formation": "动词-casual + も, い-形容词 + も, な-形容词 + も, 名词 + も"
+    "shortExplanation": "提示助词，表示同类事物的追加或并列；'也'、'既……又……'。",
+    "longExplanation": "提示助词'も'主要用于表示某种情况与之前提到的事物具有同等性质，相当于汉语中的'也'。主要用法包括：\n1. 表示类同追加：将同一性质的事物追加到现有话题中（'也……'）。\n2. 并列并提：在'Aも Bも'句型中表示'既A又B'、'A和B都'。\n3. 强调数量之多：接在数量词后表示说话人觉得数量大得令人惊讶（'居然多达……'）。\n4. 全面否定：接在疑问词后与否定呼应，表示全面否定（'一个也不……'）。",
+    "formation": "名词 + も / 动词て形 + も",
+    "examples": [
+      {
+        "translation": "我也喜欢吃寿司。"
+      },
+      {
+        "translation": "她既会说英语，也会说日语。"
+      },
+      {
+        "translation": "那部电影很有趣，他也说想看。"
+      },
+      {
+        "translation": "今天挺冷的。明天大概也会很冷吧。"
+      }
+    ]
   },
   "ja_ようだ_118": {
     "title": "～ようだ (〜you da)",
-    "shortExplanation": "表示 appearance, similarity or inference; 'it seems', 'it looks like', 'it appears'.",
-    "longExplanation": "The ～ようだ grammar point is 用于表达 appearance, similarity or inference about a situation or action. 可以翻译为 'it seems', 'it looks like', or 'it appears' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-て form + ようだ, い-形容词 (drop い) + ようだ, な-形容词 + のようだ, 名词 + のようだ"
+    "shortExplanation": "表示依据观察证据作出的推断（'似乎……'）或修辞比喻（'宛如……一样'）。",
+    "longExplanation": "助动词'～ようだ'是较'～みたいだ'更为正式、书面化的推断与比喻句型：\n1. 推断依据：说话人根据自己眼见、耳闻或收集到的具体事实信息、客观迹象，合乎逻辑地作出判断，相当于'似乎……'、'好像……'。\n2. 比喻用法：以生动形象的方式将事物比拟为性质相似的另一事物，常与'まるで'呼应，相当于'宛如……一般'。",
+    "formation": "动词 / 一类形容词普通形 + ようだ / 二类形容词词干 + なようだ / 名词 + のようだ",
+    "examples": [
+      {
+        "translation": "他看起来似乎没什么精神。"
+      },
+      {
+        "translation": "这道菜看起来好像很好吃的样子。"
+      },
+      {
+        "translation": "她宛如名人一般引人注目。"
+      },
+      {
+        "translation": "这个房间看起来简直就像个图书馆。"
+      }
+    ]
   },
   "ja_んです_119": {
     "title": "～んです (〜n desu)",
-    "shortExplanation": "Provide an explanation or reason; 'it is that', 'the thing is', 'the reason is'.",
-    "longExplanation": "The ～んです grammar point is used to provide an explanation or reason for a situation or action. 可以翻译为 'it is that', 'the thing is', or 'the reason is' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + んです, い-形容词 + んです, な-形容词 + なんです, 名词 + なんです"
+    "shortExplanation": "用于解释说明理由、背景或强调语气；'是因为……'、'其实是……'。",
+    "longExplanation": "句型'～んです'（口语简体为'～んだ'，书面语为'～のだ'）用于对某种情况、现状或原因进行解释、说明或提供背景信息，语气带有向对方说明因由或寻求理解的情感。动词、い形容词接普通形后接'んです'；な形容词和名词在接'んです'时需将词尾变为'な'（即'～なんです'）。",
+    "formation": "动词普通形 + んです / い形容词普通形 + んです / な形容词词干 + なんです / 名词 + なんです",
+    "examples": [
+      {
+        "translation": "我迟到了，是因为电车晚点了。"
+      },
+      {
+        "translation": "我是太累了（所以才这样的）。"
+      },
+      {
+        "translation": "其实他是一个很温柔的人。"
+      },
+      {
+        "translation": "是因为作业太多了。"
+      }
+    ]
   },
   "ja_文Aそのうえ_120": {
     "title": "文A。そのうえ 文B。",
-    "shortExplanation": "Shows additional information; 'furthermore', 'besides', 'in addition'.",
-    "longExplanation": "This grammar point is used to connect two sentences, where the first sentence 文A provides some information, and the second sentence 文B adds additional related information. 可以翻译为 'furthermore', 'besides', or 'in addition' in English.",
-    "formation": "Sentence A + そのうえ + Sentence B + 。"
+    "shortExplanation": "用于承接前文并递进补充相关信息；'而且'、'再加上'、'更兼'。",
+    "longExplanation": "接续词'そのうえ'（写作'その上'）位于后句句首，用于在句A所叙述的事实或特征之上，进一步追加同性质的事项或补充信息。它通常用于同向递进，即前项和后项同为褒义（优点叠加）或同为贬义（缺点叠加），相当于汉语的'而且'、'再加上'、'不仅如此还……'。",
+    "formation": "句子A。 + そのうえ (その上)、 + 句子B。",
+    "examples": [
+      {
+        "translation": "这款软件很好用。而且，价格也很实惠。"
+      },
+      {
+        "translation": "她是个大美人。不仅如此，头脑也很聪明。"
+      },
+      {
+        "translation": "这部电影很有趣。再加上，演员们的演技也十分精彩。"
+      },
+      {
+        "translation": "东京有很多观光景点。而且，美味的餐馆也很多。"
+      }
+    ]
   },
   "ja_文Aそれで_121": {
     "title": "文A。それで 文B (Bun A. Sorede Bun B)",
-    "shortExplanation": "Used to connect two sentences; 'So', 'That's why', 'Therefore'.",
-    "longExplanation": "The grammar point 文A。それで 文B is used to connect two sentences and show that the second sentence (文B) is a result or consequence of the first sentence (文A). 可以翻译为 'so', 'that's why', or 'therefore' in English.",
-    "formation": "Sentence A。それで Sentence B。"
+    "shortExplanation": "表示顺接因果关系，后项为自然产生的结果；'因此'、'所以'、'于是'。",
+    "longExplanation": "接续词'それで'位于句首连接两句话，表示句子A是原因、前提或背景，句子B是其自然引发的结果或随之发生的事态。常用于日常对话或叙述事情的前因后果，相当于汉语的'因此'、'所以'、'于是'。需要注意的是，后句通常是既成事实或自然的结果，一般不用于表示命令、请求或强烈的个人意志。",
+    "formation": "句子A。 + それで、 + 句子B。",
+    "examples": [
+      {
+        "translation": "今天天气很热。所以，我打开了空调。"
+      },
+      {
+        "translation": "电车晚点了。因此，我上班迟到了。"
+      },
+      {
+        "translation": "他很疲惫。于是，决定早点睡觉。"
+      },
+      {
+        "translation": "我通过了考试。所以，和朋友们举办了庆祝派对。"
+      }
+    ]
   },
   "ja_文Aそれに_122": {
     "title": "文A。それに 文B (Bun A. Soreni Bun B)",
-    "shortExplanation": "Express 'in addition to; besides,' used to include additional information.",
-    "longExplanation": "This grammar point 文A。それに 文B is 用于表达 an additional statement on what was mentioned earlier. 可以翻译为 'in addition to,' 'besides,' or 'on top of that,' in English. It connects two sentences by highlighting supplementary information, opinions, or reasons.",
-    "formation": "Sentence A + それに + Sentence B"
+    "shortExplanation": "用于追加并列的事项、理由或情况；'而且'、'再加上'、'此外'。",
+    "longExplanation": "接续词'それに'置于句首连接两句话，用于在前文所述内容的基础上，进一步追加并列的同类事实、特征或理由，以增强说服力或使描述更加全面。相当于汉语的'而且'、'此外'、'再加上'。与表示因果的接续词不同，'それに'侧重于事项的累加与递进补充。",
+    "formation": "句子A。 + それに、 + 句子B。",
+    "examples": [
+      {
+        "translation": "他很聪明。而且，运动也很在行。"
+      },
+      {
+        "translation": "这款蛋糕很好吃。此外，价格也很便宜。"
+      },
+      {
+        "translation": "我会说日语。再加上，我还会说韩语。"
+      },
+      {
+        "translation": "她是个美女。而且，性格也很好。"
+      }
+    ]
   },
   "ja_文Aだから_123": {
     "title": "文A。だから 文B (Bun A. Dakara Bun B)",
-    "shortExplanation": "Express reason or cause; 'because', 'so', 'therefore'.",
-    "longExplanation": "The 文A。だから 文B grammar point is 用于表示 that the reason or cause of an action or event expressed in the second sentence (文B) is a result or consequence of the situation described in the first sentence (文A). 可以翻译为 'because', 'so', or 'therefore' in English.",
-    "formation": "Sentence A + だから + Sentence B"
+    "shortExplanation": "表示明确的因果关系，引出判断、结论或主观主张；'所以'、'因此'。",
+    "longExplanation": "接续词'だから'连接两个句子，将前句A作为理由、根据，在后句B中引出说话人的结论、行动、判断、建议或意志。与单纯陈述客观结果的'それで'相比，'だから'的后句常常可以接说话人的主观意图、愿望、劝诱或命令，相当于汉语的'所以'、'因此'。",
+    "formation": "句子A。 + だから、 + 句子B。",
+    "examples": [
+      {
+        "translation": "明天有考试。所以今天必须学习。"
+      },
+      {
+        "translation": "这道菜很简单。因此就算是新手也能做。"
+      },
+      {
+        "translation": "他生病了。所以今天向学校请假。"
+      },
+      {
+        "translation": "到车站挺远的。因此最好坐出租车去。"
+      }
+    ]
   },
   "ja_うちに_1": {
     "title": "～うちに (〜uchi ni)",
-    "shortExplanation": "Express 'while', 'before', or 'during' a certain condition or situation.",
-    "longExplanation": "The ～うちに grammar point is 用于表达 the idea of doing something while a certain condition or situation is still present or before it changes. 可以翻译为 'while', 'before', or 'during' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
-    "formation": "动词-てform + いる + うちに, い-形容词 + い + うちに, な-形容词 + な + うちに"
+    "shortExplanation": "表示趁着某种状态尚未改变而做某事，或在某期间内发生了某事；'趁着……'、'在……期间'、'在……之前'。",
+    "longExplanation": "句型'～うちに'主要有两种用法：(1) 表示趁着某种状态尚未发生变化或某个时间段尚未结束，抓紧时间做某事，相当于'趁着……'、'在……之前'；(2) 表示在持续某种状态的过程中不知不觉发生了某种变化或事态，相当于'在……的过程中'。接续时，动词接辞书形、ている形或ない形；い形容词接原形；な形容词接'～な'；名词接'～の'。",
+    "formation": "动词辞书形 / ている形 / ない形 + うちに / い形容词 + うちに / な形容词词干 + なうちに / 名词 + のうちに",
+    "examples": [
+      {
+        "translation": "趁着年轻，多体验各种各样的事情是很重要的。"
+      },
+      {
+        "translation": "趁着还没下雨，去买东西吧。"
+      },
+      {
+        "translation": "趁菜还热，赶紧吃吧。"
+      },
+      {
+        "translation": "我想在假期期间制定旅行计划。"
+      }
+    ]
   },
   "ja_うとした_2": {
     "title": "～うとした (〜uto shita)",
-    "shortExplanation": "Express an action someone tried to do but couldn't; 'tried to', 'attempted to'.",
-    "longExplanation": "The ～うとした grammar point is 用于表达 an action that someone tried to do but couldn't complete, for various reasons. The formation differs depending on whether it is used with verbs. This grammar point can be translated as 'tried to' or 'attempted to' in English.",
-    "formation": "动词-う stem + とした"
+    "shortExplanation": "表示正打算做某事或尝试做某事，但由于某种妨碍未能实现；'正打算……却……'、'正要……'。",
+    "longExplanation": "句型'～（よ）うとした（が/けれど）'用于表达当事人正准备实行某项动作，或试图做某事时，突然出现某种阻碍、意外或因客观原因导致该动作无法实现、中断。由动词意志形（～よう / ～おう）加上'とした'构成，后文往往紧接转折词'が'或'けれど'来陈述受阻的情况。",
+    "formation": "动词意志形 (～よう / ～おう) + とした (が / けれど)",
+    "examples": [
+      {
+        "translation": "我刚打算接电话，对方却已经挂断了。"
+      },
+      {
+        "translation": "他打算大声说话，但话到嘴边却说不出来。"
+      },
+      {
+        "translation": "我本来打算做蛋糕，但原料不够了。"
+      },
+      {
+        "translation": "她正打算游泳，却因害怕而不敢下水。"
+      }
+    ]
   },
   "ja_おかげで_3": {
     "title": "～おかげで (〜okagede)",
-    "shortExplanation": "表示 gratitude or shows a positive result due to a certain factor; 'thanks to', 'because of'.",
-    "longExplanation": "The ～おかげで grammar point is 用于表达 gratitude or show a positive outcome resulting from a certain factor, event or person. 可以翻译为 'thanks to' or 'because of' in English. The formation is straightforward and can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-casual + おかげで, い-形容词 + おかげで, な-形容词 + だおかげで, 名词 + のおかげで"
+    "shortExplanation": "表示由于某种原因而带来了积极良好的结果，带有感谢之意；'多亏了……'、'托……的福'。",
+    "longExplanation": "句型'～おかげで'（多亏、托福）用于表达某种原因、恩惠或他人的帮助带来了令人满意、积极正面的好结果，常伴随说话人的感谢与庆幸之情。（在讽刺语境下也可用于指责他人造成的糟糕后果）。接续方面，动词和い形容词接普通形，な形容词接词尾'な'，名词后接助词'の'。",
+    "formation": "动词普通形 + おかげで / い形容词 + おかげで / な形容词词干 + なおかげで / 名词 + のおかげで",
+    "examples": [
+      {
+        "translation": "多亏了妈妈，我恢复了健康。"
+      },
+      {
+        "translation": "多亏了老师的帮助，我通过了考试。"
+      },
+      {
+        "translation": "多亏学了日语，我才能理解这部电影。"
+      },
+      {
+        "translation": "托放晴天气的福，野餐非常开心。"
+      }
+    ]
   },
   "ja_かけ_4": {
     "title": "～かけ (〜kake)",
-    "shortExplanation": "表示 the meaning of being in the middle of doing something or of something being partway done.",
-    "longExplanation": "The ～かけ grammar point is 用于表示 that something is in the process of being done or is partway completed. This is often used with verbs to describe an action that is not yet finished or is ongoing. The verb should be in its ます-form, and かけ is added after removing the ます.",
-    "formation": "动词-ますstem + かけ"
+    "shortExplanation": "表示动作刚开始进行或进行到一半中途停顿、尚未完成；'做了一半'、'刚开始……'。",
+    "longExplanation": "句型'～かけ'连接在动词ます形词干之后（常作'～かけの＋名词'或'～かけだ'），用于表示某个动作已经开始但中途停下、尚未全部完成的状态，相当于汉语的'刚开始……'、'做到一半还未完成'、'……到中途'。例如'食べかけ'（吃了一半）、'読みかけ'（读到中途）。",
+    "formation": "动词ます形去掉ます + かけ (だ / の + 名词)",
+    "examples": [
+      {
+        "translation": "他的饭刚吃到一半。"
+      },
+      {
+        "translation": "这本书我读到一半，还没有读完。"
+      },
+      {
+        "translation": "这个房间打扫了一半，还没有收拾整齐。"
+      },
+      {
+        "translation": "项目刚开始推进，预计下周可以完工。"
+      }
+    ]
   },
   "ja_かなあ_5": {
     "title": "～かなあ (〜kanaa)",
-    "shortExplanation": "Expressing uncertainty or a mild wish; 'I wonder', 'maybe'.",
-    "longExplanation": "The ～かなあ grammar point is 用于表达 uncertainty or a mild wish. 可以翻译为 'I wonder' or 'maybe' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + かなあ, い-形容词 + かなあ, な-形容词 + だかなあ, 名词 + だかなあ"
+    "shortExplanation": "用于自言自语或随口询问，表达不确定、推测或隐约的期盼；'……吧'、'不知道会不会……呢'。",
+    "longExplanation": "句尾助词'～かなあ'（为'～かな'的拉长形式，语气更加轻柔悠长）常用于自言自语或非正式对话中，表达说话人内心的疑问、不确定、猜测或淡淡的愿望，相当于汉语中的'不知道……呢'、'会不会……呀'、'大概……吧'。动词、い形容词接普通形，な形容词和名词接词干或接普通形后加'かなあ'。",
+    "formation": "动词普通形 + かなあ / い形容词 + かなあ / な形容词词干 (+ だ) + かなあ / 名词 (+ だ) + かなあ",
+    "examples": [
+      {
+        "translation": "不知道明天会不会放晴呢。"
+      },
+      {
+        "translation": "这个汤不知道辣不辣呢。"
+      },
+      {
+        "translation": "不知道他是不是个安静的人呢。"
+      },
+      {
+        "translation": "不知道她是不是医生呢。"
+      }
+    ]
   },
   "ja_ないで_6": {
     "title": "～ないで (〜naide)",
-    "shortExplanation": "Express 'without doing ~' or 'without ~ing'.",
-    "longExplanation": "The ～ないで grammar point is 用于表达 the idea of 'without doing something' or 'without ~ing' in English. It is formed by attaching the ない-form of the verb and adding で (de). This is used for expressing when an action is not taken or avoided, without interfering with the main action.",
-    "formation": "动词-ない-form + で"
+    "shortExplanation": "表示不做某事就进行后项动作（伴随状态）；'不……而……'、'在没……的情况下'。",
+    "longExplanation": "句型'～ないで'由动词ない形后接助词'で'构成，表示在不做前项动作的状态下，进行后项的主要动作，相当于汉语中的'不……就……'、'没有做……而……'。它体现的是后项动作发生时所伴随的一种否定状态。",
+    "formation": "动词ない形 + で",
+    "examples": [
+      {
+        "translation": "我没有见面就打了那通电话。"
+      },
+      {
+        "translation": "我没有等下雨就走出了家门。"
+      },
+      {
+        "translation": "我没有向任何人打听就得知了那个秘密。"
+      },
+      {
+        "translation": "我不知道已经迟到了，直接前往了车站。"
+      }
+    ]
   },
   "ja_からにかけて_7": {
     "title": "～から～にかけて (〜kara 〜ni kakete)",
-    "shortExplanation": "表示 a range of something, such as time or space; 'from...to', 'between'.",
-    "longExplanation": "The ～から～にかけて grammar point is 用于展示 a range, whether it is a range of time, space, or another measure. 可以翻译为 'from...to' or 'between' in English. This grammar point is commonly used with nouns indicating time or place.",
-    "formation": "名词 (time, place, or measure) + から + 名词 (time, place or measure) + にかけて"
+    "shortExplanation": "表示时间、空间或范围从起点大致延伸到终点（边界相对模糊）；'从……到……'、'由……至……'。",
+    "longExplanation": "句型'～から～にかけて'用于表示时间、空间或某种数值的大致范围。与界限明确具体的'～から～まで'相比，'～にかけて'表示起讫界限相对模糊、连绵不绝的过程或区域，常伴随在这一范围内断断续续或持续发生的状态，相当于汉语的'从……到……'、'由……至……的一带/期间'。",
+    "formation": "名词 (时间/场所/范围) + から + 名词 + にかけて",
+    "examples": [
+      {
+        "translation": "我在上午8点到下午5点之间工作。"
+      },
+      {
+        "translation": "这个地区从北向南一带地势狭窄。"
+      },
+      {
+        "translation": "从10岁到20岁期间生长发育很快。"
+      },
+      {
+        "translation": "今年夏天，从6月到8月期间雨水很多。"
+      }
+    ]
   },
   "ja_かわりに_8": {
     "title": "～かわりに (〜kawari ni)",
-    "shortExplanation": "In place of; instead of; as a substitute for.",
-    "longExplanation": "The ～かわりに grammar point is 用于表达 doing something in place of or as a substitute for something else. 可以翻译为 'instead of', 'in place of', or 'as a substitute for' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + かわりに, い-形容词 + かわりに, な-形容词 + だかわりに, 名词 + だかわりに"
+    "shortExplanation": "表示代替、替代或作为补偿与交换；'代替'、'作为……的补偿/代偿'、'而不是'。",
+    "longExplanation": "句型'～かわりに'（代わり）主要有两种用法：(1) 表示作为替代，不做前项而做后项，或由某人替代另一个人，相当于'代替……'、'而不做……'；(2) 表示前后两项存在补偿、抵消或代价关系（虽然有A的好处，但代价是B；或者虽然有A的不足，但作为补偿有B）。接续时，动词和い形容词接普通形，な形容词接'～な'，名词接'～の'。",
+    "formation": "动词普通形 + かわりに / い形容词 + かわりに / な形容词词干 + なかわりに / 名词 + のかわりに",
+    "examples": [
+      {
+        "translation": "我没有看电影，而是读了一本书。"
+      },
+      {
+        "translation": "请多喝水来代替喝酒。"
+      },
+      {
+        "translation": "我想养猫来代替养狗。"
+      },
+      {
+        "translation": "为了不坐电车，我决定骑自行车去。"
+      }
+    ]
   },
   "ja_きり_9": {
     "title": "～きり (〜kiri)",
-    "shortExplanation": "表示 the idea of 'only', 'since', or 'after'.",
-    "longExplanation": "The ～きり grammar point is 用于表达 the idea of 'only', 'since', or 'after'. It 指示 that a certain action or state continues without any change since a specific point in time or after a certain event. It is commonly used with verbs in the past tense, but can also be used with other forms.",
-    "formation": "动词-past + きり, 动词-てform + きり (less common), 名词 + きり"
+    "shortExplanation": "表示自从做了某事之后，其状态一直持续没有再次发生变化；'自……之后一直没有……'、'仅仅'。",
+    "longExplanation": "句型'～きり'主要有两种用法：(1) 接在动词た形后，表示在发生某动作之后，其状态就一直维持不变，之后预想中的后续动作再未发生（后句多为否定式，表示'自从……之后就一直没有……'）；(2) 接在数量词或名词后，表示限定唯一，相当于'仅仅……'、'只有……'（常带有单独、孤立的感触，如'二人きり'两人独处）。",
+    "formation": "动词た形 + きり（亦可接动词て形 + きり） / 名词 + きり",
+    "examples": [
+      {
+        "translation": "他出门之后就一直没有回来。"
+      },
+      {
+        "translation": "昨天喝了咖啡之后，我什么都没喝过。"
+      },
+      {
+        "translation": "毕业之后，我就再也没见过她。"
+      },
+      {
+        "translation": "自从看了那部电影之后，我一直很想再看一遍。"
+      }
+    ]
   },
   "ja_くせに_10": {
     "title": "～くせに (〜kuse ni)",
-    "shortExplanation": "用于表达 criticism or disapproval; 'even though', 'despite', 'in spite of'.",
-    "longExplanation": "The ～くせに grammar point is 用于表达 criticism or disapproval in a sentence. 可以翻译为 'even though', 'despite', or 'in spite of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + くせに, い-形容词 + くせに, な-形容词 + な/のくせに, 名词 + のくせに"
+    "shortExplanation": "表示责难、不满或讽刺；'明明……却……'、'虽然……可是偏偏……'。",
+    "longExplanation": "句型'～くせに'用于表达说话者的责备、蔑视或强烈不满的语气，表示后项事实与前项本应具备的状态或身份截然相反。通常用于指责第二人称或第三人称，不可用于自身，带有明显的感情色彩和贬义倾向。",
+    "formation": "动词普通形 + くせに / い形容词 + くせに / な形容词 + なくせに / 名词 + のくせに",
+    "examples": [
+      {
+        "translation": "他明明很有钱，却非常小气。"
+      },
+      {
+        "translation": "这房间明明这么脏，你还有脸抱怨。"
+      },
+      {
+        "translation": "他明明很闲，却不肯帮我。"
+      },
+      {
+        "translation": "她长得明明很漂亮，约会却总是维持不下去。"
+      }
+    ]
   },
   "ja_くらい_11": {
     "title": "～くらい (〜kurai)",
-    "shortExplanation": "表示 an approximate quantity or degree; 'about', 'approximately', or 'to the extent of'.",
-    "longExplanation": "The ～くらい grammar point is 用于表达 an approximate quantity, degree, or extent. 可以翻译为 'about', 'approximately', or 'to the extent of' in English. The formation is straightforward and can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-casual + くらい, い-形容词 + くらい, な-形容词 + くらい, 名词 + くらい"
+    "shortExplanation": "表示大概的数量或程度；'大约'、'左右'、'到了……的程度'。",
+    "longExplanation": "句型'～くらい'（或'～ぐらい'）主要有两种用法：一是接在数量词或名词后，表示大概的数量、时间或程度，相当于'大约……'、'……左右'；二是接在动词或形容词后，表示程度之深，相当于'到了……的程度'、'甚至……'。",
+    "formation": "动词普通形 + くらい / い形容词 + くらい / な形容词 + なくらい / 名词 + くらい",
+    "examples": [
+      {
+        "translation": "我们等大约10分钟吧。"
+      },
+      {
+        "translation": "那部电影她看了大约5次。"
+      },
+      {
+        "translation": "那本书难到了让人觉得很有趣的程度。"
+      },
+      {
+        "translation": "这个房间宽敞得令人赏心悦目。"
+      }
+    ]
   },
   "ja_くらいはない_12": {
     "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
-    "shortExplanation": "表达 least one can do; 'at least', 'the least', 'no less than'.",
-    "longExplanation": "The ～くらい～は～ない grammar point is used to emphasize the minimum expectation in a situation or the least one can do. 可以翻译为 'at least', 'the least', or 'no less than' in English. The formation differs depending on whether it is used with a verb or an adjective.",
-    "formation": "动词-casual (non-past) + くらい + は + 动词-casual (negative), 形容词 (non-past) + くらい + は + 形容词 (negative)"
+    "shortExplanation": "强调最起码的要求或最低限度的底线；'至少也得……'、'起码……'。",
+    "longExplanation": "句型'～くらい～は～ない'（常以'～くらいは～ない / ～ないと'的形式出现）用于强调在某种情境下最起码应该做到的底线或最低期望。表达'就算其他做不到，至少这件事情总得完成'的语气。",
+    "formation": "名词 / 动词普通形 + くらい + は + 动词否定形（～ない / ～ないと） / 形容词 + くらい + は + 形容词否定形",
+    "examples": [
+      {
+        "translation": "至少每周也得去一次健身房啊。"
+      },
+      {
+        "translation": "起码每天都得刷牙吧。"
+      },
+      {
+        "translation": "至少这个问题必须得解决掉。"
+      },
+      {
+        "translation": "她都哭成那样了，起码也得去安慰一下才行。"
+      }
+    ]
   },
   "ja_こそ_13": {
     "title": "～こそ (〜koso)",
-    "shortExplanation": "Emphasizes the importance or uniqueness of something or someone; 'precisely', 'exactly', 'it is...', 'of all...'.",
-    "longExplanation": "The ～こそ grammar point is used to emphasize the importance, uniqueness, or the most suitable thing or person in a specific situation. 可以翻译为 'precisely', 'exactly', or 'it is...' in English. In practice, it most often appears after a noun (e.g. 今日こそ), or with verbs in the て-form (e.g. 頑張ってこそ).",
-    "formation": "名词 + こそ, (动词-て + こそ)"
+    "shortExplanation": "强调特定的人、事物或时间；'正是'、'唯有'、'偏偏（今天）'。",
+    "longExplanation": "提示助词'～こそ'用于强烈强调特定的人物、事物、时间或理由，带有排他性，强调'除了这个之外没有别的'或'唯有此者才相称'。在日常会话中常用于郑重表达决心，或用于寒暄回礼（如'こちらこそ'）。",
+    "formation": "名词 + こそ / 动词て形 + こそ",
+    "examples": [
+      {
+        "translation": "今天我无论如何一定要好好学习。"
+      },
+      {
+        "translation": "你才真正是我最好的朋友。"
+      },
+      {
+        "translation": "没有钱这件事本身，不正是幸福的秘诀吗？"
+      },
+      {
+        "translation": "正是他，才能唱得宛如真正的专业歌手一般。"
+      }
+    ]
   },
   "ja_こと_14": {
     "title": "～こと (〜koto)",
-    "shortExplanation": "Express an action in a nominal (noun-like) form or state fact or experience.",
-    "longExplanation": "The ～こと grammar point is used to turn a verb or verb phrase into a noun or noun phrase. This allows the verb to be talked about as a general concept, fact, or experience. The formation varies slightly depending on whether it is used with a verb or a verb phrase.",
-    "formation": "动词-plain form + こと, 动词-phrase in plain form + こと"
+    "shortExplanation": "将动词或小句形式名词化；'……这件事'、'……（的行为）'。",
+    "longExplanation": "形式名词'～こと'接在动词普通形之后，用于将动词或动词短语转化为抽象的名词概念，使之能够在句子中充当主语、宾语或补语，与助词'が'、'は'、'を'、'に'等自由结合，表示行为、事实或概念。",
+    "formation": "动词普通形 + こと",
+    "examples": [
+      {
+        "translation": "我能够讲日语。"
+      },
+      {
+        "translation": "每天运动对身体健康很有益处。"
+      },
+      {
+        "translation": "他非常喜欢弹钢琴。"
+      },
+      {
+        "translation": "我不想把时间花费在看电影上。"
+      }
+    ]
   },
   "ja_ことだ_15": {
     "title": "～ことだ (〜koto da)",
-    "shortExplanation": "表示 advice or recommendation; 'should', 'it is important', 'it is necessary'.",
-    "longExplanation": "The ～ことだ grammar point is 用于表达 a piece of advice or recommendation to someone. 可以翻译为 'should', 'it is important', or 'it is necessary' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-ますstem + ことだ, い-形容词 + ことだ, な-形容词 + なことだ, 名词 + のことだ"
+    "shortExplanation": "用于提出忠告、建议或嘱咐；'应该……'、'最好……'、'必须……'。",
+    "longExplanation": "句型'～ことだ'接在动词辞书形或ない形之后，用于向对方提出直接或中肯的建议、劝告，表达'在这种情况最好这样做'或'千万不要这样做'的含义。通常带有长辈或有经验者向晚辈传授经验、忠告的语感。",
+    "formation": "动词辞书形 / 动词ない形 + ことだ",
+    "examples": [
+      {
+        "translation": "应该每天坚持做运动。"
+      },
+      {
+        "translation": "为了健康，应该多吃蔬菜。"
+      },
+      {
+        "translation": "学习的时候，最好选择安静的场所。"
+      },
+      {
+        "translation": "应该多查字典来牢记新单词。"
+      }
+    ]
   },
   "ja_ことにしている_16": {
     "title": "～ことにしている (〜koto ni shite iru)",
-    "shortExplanation": "Express a personal rule or habit; 'I make it a rule to', 'I always make sure to'.",
-    "longExplanation": "The ～ことにしている grammar point is 用于表达 a personal rule, habit, or decision that the speaker has made for themselves. 可以翻译为 'I make it a rule to' or 'I always make sure to' in English. This grammar point is formed by attaching ことにしている to the casual form of a verb.",
-    "formation": "动词-casual + ことにしている"
+    "shortExplanation": "表示说话人自己定下的习惯或日常坚持的准则；'一直坚持……'、'定好习惯……'。",
+    "longExplanation": "句型'～ことにしている'接在动词辞书形或ない形之后，用于表示由说话人自身的主观意志所决定的习惯、日常规律或个人行为准则，相当于'我规定自己一直……'或'我习惯……'。强调这种习惯是由自己的决心并持续付诸行动的。",
+    "formation": "动词辞书形 / 动词ない形 + ことにしている",
+    "examples": [
+      {
+        "translation": "我坚持每天都做运动。"
+      },
+      {
+        "translation": "我定下规矩，决不工作到深夜。"
+      },
+      {
+        "translation": "我习惯饭后一定刷牙。"
+      },
+      {
+        "translation": "我总是坚持开会提前10分钟到达。"
+      }
+    ]
   },
   "ja_ことになっている_17": {
     "title": "～ことになっている (〜koto ni natte iru)",
-    "shortExplanation": "Describes something that is decided, arranged, or expected.",
-    "longExplanation": "The ～ことになっている grammar point is 用于表达 that something has been decided or arranged, or is expected as a rule or custom. 可以翻译为 'it is decided that...', 'it is arranged that...', or 'it is expected to...' in English. The formation is used with verbs in their dictionary form.",
-    "formation": "动词-dictionary form + ことになっている"
+    "shortExplanation": "表示规则、社会风俗或既定的预定与安排；'规定……'、'预定……'、'按规定要……'。",
+    "longExplanation": "句型'～ことになっている'接在动词辞书形或ない形之后，用于表达团体组织制定的规章制度、法律法规、社会公认的习俗惯例，或是已确定好的日程计划。与强调个人决定的'～ことにしている'不同，该句型强调客观的规定或外部安排。",
+    "formation": "动词辞书形 / 动词ない形 + ことになっている",
+    "examples": [
+      {
+        "translation": "在这家公司，规定晚上8点必须结束工作。"
+      },
+      {
+        "translation": "在日本，年满18岁以上的人按规定享有选举投票权。"
+      },
+      {
+        "translation": "学校规定学生必须穿校服。"
+      },
+      {
+        "translation": "按计划预定由田中先生担任这次的项目负责人。"
+      }
+    ]
   },
   "ja_ことはが_18": {
     "title": "～ことは…が (～koto wa... ga)",
-    "shortExplanation": "指示 that while something may be true or valid, there is another contrasting point.",
-    "longExplanation": "The ～ことは…が grammar point is 用于表达 that although something might be true, there is another point or fact that is being contrasted with it. 可以翻译为 'it may be true but...', 'it is that... however...', etc. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + ことは + が, い-形容词 + ことは + が, な-形容词 + だ + ことは + が, 名词 + だ + ことは + が"
+    "shortExplanation": "承认前项事实，但后项紧接着提出转折或消极评价；'……倒是……，可是……'。",
+    "longExplanation": "句型'～ことは…が'通常重复同一个词，用于首先肯定或承认前半句提到的事实或特点，随后在后半句提出与之相对立的看法、保留意见或某些不足之处，相当于汉语的'……倒是……，不过……'、'好是好，可是……'。",
+    "formation": "动词普通形 + ことは + 动词 + が / い形容词 + ことは + い形容词 + が / な形容词 + なことは + な形容词 + だが / 名词 + であることは + 名词 + だが",
+    "examples": [
+      {
+        "translation": "这部电影有趣倒是有趣，但稍微有点太长了。"
+      },
+      {
+        "translation": "他人好倒是挺好，不过话有点少。"
+      },
+      {
+        "translation": "这个游戏难确实是难，但就是停不下来。"
+      },
+      {
+        "translation": "她漂亮倒是漂亮，就是有点高傲自负。"
+      }
+    ]
   },
   "ja_ことはない_19": {
     "title": "～ことはない (〜koto wa nai)",
-    "shortExplanation": "表示 that something doesn't need to be done or there's no occasion to do it; 'don't have to', 'not necessary'.",
-    "longExplanation": "The ～ことはない grammar point is 用于表达 that doing something is not necessary, or there's no occasion to do it. It implies that although a certain action might not be needed, it does not mean it is forbidden. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-dictionary form + ことはない, い-形容词 + ことはない, な-形容词 + であることはない, 名词 + であることはない"
+    "shortExplanation": "表示没有必要做某事；'用不着……'、'没有必要……'、'不必……'。",
+    "longExplanation": "句型'～ことはない'主要接在动词辞书形之后，用于表示某项行为并没有进行的必要性，相当于汉语的'用不着……'、'不必……'。常用于安慰他人、打消顾虑或提出放轻松的建议。",
+    "formation": "动词辞书形 + ことはない",
+    "examples": [
+      {
+        "translation": "既然有钱，就没必要勉强自己去存钱。"
+      },
+      {
+        "translation": "这本书很简单，用不着查词典。"
+      },
+      {
+        "translation": "她要是并不想去海外旅行，就不必勉强去。"
+      },
+      {
+        "translation": "要是不冷的话，就没必要穿大衣。"
+      }
+    ]
   },
   "ja_さ_20": {
     "title": "～さ (〜sa)",
-    "shortExplanation": "表达 degree or extent of a quality; '-ness', 'degree of'.",
-    "longExplanation": "The ～さ grammar point is 用于表达 the degree or extent of a certain quality or characteristic. It is often translated as '-ness' or 'degree of' in English. The formation differs depending on whether it is used with an い-adjective or a な-adjective.",
-    "formation": "い-形容词 (drop い) + さ, な-形容词 + さ"
+    "shortExplanation": "接在形容词后构成表示程度、性质的名词；'……度'、'……的程度'、'……感'。",
+    "longExplanation": "接尾词'～さ'接在い形容词词干（去掉词尾い）或な形容词词干之后，将形容词名词化，用于客观地表示某种性质、状态的程度或分量。常常用来指代可以衡量或客观感受到的属性（如高度、长度、深度、辣度等）。",
+    "formation": "い形容词词干（去掉い） + さ / な形容词词干 + さ",
+    "examples": [
+      {
+        "translation": "这道菜辣度很强。"
+      },
+      {
+        "translation": "她的美丽令所有人倾慕不已。"
+      },
+      {
+        "translation": "山田先生凭借他的热心善良，帮助了许多身处困境的人。"
+      },
+      {
+        "translation": "我认为这个房间的宽敞度已经足够了。"
+      }
+    ]
   },
   "ja_さえ_21": {
     "title": "～さえ (～sae)",
-    "shortExplanation": "Emphasizes a specific item or action; 'even', 'if only', 'as long as'.",
-    "longExplanation": "The ～さえ grammar point is used to emphasize a specific item, person, or action, implying that it alone is sufficient, remarkable, or an exception. 可以翻译为 'even', 'if only', or 'as long as' in English. The formation differs slightly depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "名词 + さえ, 动词-casual + さえ, い-形容词 + さえ, な-形容词 + でさえ"
+    "shortExplanation": "提出极端事例表示'甚至连……也……'，或表示最低限度的充要条件'只要……就……'。",
+    "longExplanation": "提示助词'～さえ'主要有两个核心用法：一是举出一个极端的或显而易见的事例，以此类推其他更不用多说，相当于汉语的'连……都/也……'、'甚至……'；二是与假定形呼应构成'～さえ～ば'，表示只要满足了这个最起码的条件，其他都不是问题，相当于'只要……就……'。",
+    "formation": "名词 + さえ / な形容词 + でさえ / 名词 + さえ + 动词假定形（～ば）",
+    "examples": [
+      {
+        "translation": "只要有钱，就能周游全世界。"
+      },
+      {
+        "translation": "他只要会说英语，大概就能胜任那份工作吧。"
+      },
+      {
+        "translation": "她不仅聪明，运动也很在行。甚至连网球都会打。"
+      },
+      {
+        "translation": "我喜欢在明亮的地方看书。甚至连房间的电灯都不用开也没事。"
+      }
+    ]
   },
   "ja_しかない_22": {
     "title": "～しかない (〜shika nai)",
-    "shortExplanation": "表达 idea of 'only', 'no other option but', 'nothing else but'.",
-    "longExplanation": "The ～しかない grammar point is used to emphasize that there are no other options or possibilities, and the subject must follow a specified action or state. 可以翻译为 'only', 'no other option but', or 'nothing else but' in English.",
-    "formation": "动词-casual + しかない, い-形容词 + しかない, な-形容词 + しかない, 名词 + しかない"
+    "shortExplanation": "表示别无选择，唯有如此；'只能……'、'只得……'、'只有……'。",
+    "longExplanation": "句型'～しかない'接在动词辞书形或名词之后，用于强烈强调除此以外没有其他的选择、方法或退路，只能采取前述的行动或处于该状态，相当于汉语的'只能……'、'只有……'、'别无他法，唯有……'。",
+    "formation": "动词辞书形 + しかない / 名词 + しかない",
+    "examples": [
+      {
+        "translation": "解决这个问题的方法只有一个。"
+      },
+      {
+        "translation": "要是他走掉了，我就只能哭了。"
+      },
+      {
+        "translation": "她只剩下最后这一个月了。"
+      },
+      {
+        "translation": "我除了相信你之外，已经别无选择了。"
+      }
+    ]
   },
   "ja_すこしもない_23": {
     "title": "すこしも〜ない (sukoshimo~nai)",
-    "shortExplanation": "Express a negative state or action; 'not at all', 'none whatsoever'.",
-    "longExplanation": "The すこしも〜ない grammar point is used to emphasize a negative state or action, indicating that something does not exist or happen even a little bit. 可以翻译为 'not at all', 'none whatsoever', or 'not one bit' in English. This expression is used with negative verbs.",
-    "formation": "すこしも + 动词-negative"
+    "shortExplanation": "与否定谓语呼应，表示彻底的全盘否定；'一点也不……'、'丝毫没有……'。",
+    "longExplanation": "副词'すこしも'（通常写作'少しも'）必须与否定形式的谓语（动词否定形或形容词否定形）搭配使用，用于极其强烈地否定某种状态或动作的存在，相当于汉语的'一点儿也不……'、'丝毫未曾……'。",
+    "formation": "すこしも + 动词否定形（～ない / ～ません） / すこしも + い形容词词尾变く + ない / すこしも + な形容词 / 名词 + ではない",
+    "examples": [
+      {
+        "translation": "他看起来一点也不伤心。"
+      },
+      {
+        "translation": "这个房间一点儿也不冷。"
+      },
+      {
+        "translation": "她丝毫没有担心。"
+      },
+      {
+        "translation": "和完全不认识的人说话让人感到害怕。"
+      }
+    ]
   },
   "ja_ずに_24": {
     "title": "～ずに (〜zu ni)",
-    "shortExplanation": "Express 'without doing' something or 'not doing' something.",
-    "longExplanation": "The ～ずに grammar point is 用于表达 the meaning of not doing something or doing an action without doing another action first. It is similar to the negative ないで form (～ないで) but ～ずに is considered slightly more formal.",
-    "formation": "动词-ない form (Remove ない) + ずに"
+    "shortExplanation": "表示在不做前项动作的情况下进行后项动作；'不……就……'、'没有做……而……'。",
+    "longExplanation": "句型'～ずに'接在动词ない形词干（去掉ない）之后，其中'する'变为'せずに'，表示伴随状态，即在不进行前项动作的情况下进行后项动作。用法与口语中的'～ないで'基本相同，但'～ずに'书面语色彩更浓厚，语气更为郑重。",
+    "formation": "动词ない形（去掉ない） + ずに（特殊变化：する -> せずに）",
+    "examples": [
+      {
+        "translation": "他没笑，一直静静地听着故事。"
+      },
+      {
+        "translation": "不吃东西就睡觉对身体不好。"
+      },
+      {
+        "translation": "我没喝咖啡就直接开始工作了。"
+      },
+      {
+        "translation": "我没有告诉任何人就出门了。"
+      }
+    ]
   },
   "ja_せいで_25": {
     "title": "～せいで (〜sei de)",
-    "shortExplanation": "指示 that something or someone caused an unfortunate result.",
-    "longExplanation": "The ～せいで grammar point is 用于表达 that something or someone is the reason or cause of an unfortunate result or situation. 可以翻译为 'because of' or 'due to' in English.",
-    "formation": "动词-casual + せいで, い-形容词 + せいで, な-形容词 + なせいで, 名词 + のせいで"
+    "shortExplanation": "表示导致消极、不好或令人遗憾的结果的原因；'都怪……'、'因为……（导致不好结果）'。",
+    "longExplanation": "句型'～せいで'用于表示引起令人不满、消极或不幸后果的原因或理由，常带有责怪、怨恨或遗憾的语气（相当于汉语的'都怪……'、'由于……导致'）。在句中作状语时使用'～せいで'，用于句末作结句时使用'～せいだ'或'～せいです'。",
+    "formation": "动词普通形 + せいで | い形容词 + せいで | な形容词 + なせいで | 名词 + のせいで",
+    "examples": [
+      {
+        "translation": "因为下雨，比赛被取消了。"
+      },
+      {
+        "translation": "都怪他迟到，让大家一直等着。"
+      },
+      {
+        "translation": "因为生病，假期全搞砸了。"
+      },
+      {
+        "translation": "工作太忙导致睡眠不足，根本无法集中注意力。"
+      }
+    ]
   },
   "ja_せてください_26": {
     "title": "～せてください (〜sete kudasai)",
-    "shortExplanation": "Requesting someone to allow or let you do something (causative request).",
-    "longExplanation": "The せてください grammar point is used to request permission or ask someone to allow you to do something. It is a polite way of making a request and can be translated as 'please let me...' or 'please allow me...' in English. It is formed by using the causative form of the verb (Verb-させる) in the て-form, plus ください (e.g. 帰らせる → 帰らせて → 帰らせてください).",
-    "formation": "动词-causative (させ) + て + ください"
+    "shortExplanation": "请求对方允许自己做某事（使役请求）；'请让我……'、'请允许我……'。",
+    "longExplanation": "句型'～（さ）せてください'由动词使役形的て形加上'ください'构成，用于向上级或对方请求许可，允许自己（或自己一方的人）进行某项动作。这是一种礼貌而谦逊的请求表达方式。",
+    "formation": "动词使役形て形 (～せて / ～させて) + ください",
+    "examples": [
+      {
+        "translation": "请允许我再解释一次。"
+      },
+      {
+        "translation": "请让我回家吧。"
+      },
+      {
+        "translation": "请让我看一下那本书。"
+      },
+      {
+        "translation": "请允许我在这里等候。"
+      }
+    ]
   },
   "ja_そのために_27": {
     "title": "～そのために (〜sono tame ni)",
-    "shortExplanation": "For the purpose of; because of; in order to.",
-    "longExplanation": "The ～そのために grammar point is used to convey the purpose or reason behind an action or situation. 可以翻译为 'for that reason', 'for the purpose of', or 'in order to' in English. It connects two sentences, where the first sentence gives a goal or reason, and the second sentence shows the resulting action.",
-    "formation": "Sentence/phrase 1 + そのために + Sentence/phrase 2"
+    "shortExplanation": "承接前项的目的或目标，引出后项采取的行动或措施；'为此'、'为了那个目的'。",
+    "longExplanation": "接续词'そのために'常用于句首，指示前文提到的目标、意图或原因，后文接着叙述为实现该目的而付诸的具体行动、手段或产生的状态。常译为'为此'、'为了实现这一目标'。",
+    "formation": "句子1（目标/目的） + 。そのために、 + 句子2（行动/措施）",
+    "examples": [
+      {
+        "translation": "为了通过考试，我每天都在学习。为此，我尽量早睡早起。"
+      },
+      {
+        "translation": "我想过上健康的生活。为此，我去健身房锻炼身体。"
+      },
+      {
+        "translation": "为了保护环境，我们正在推进资源回收利用。为此，我们做好垃圾分类后再丢弃。"
+      },
+      {
+        "translation": "我想找一份新工作。为此，我正在写简历并提交应聘。"
+      }
+    ]
   },
   "ja_その結果_28": {
     "title": "～その結果 (〜sono kekka)",
-    "shortExplanation": "Shows the result or consequence of a previous action or situation; 'as a result', 'in consequence'.",
-    "longExplanation": "The ～その結果 grammar point is 用于展示 the result, outcome, or consequence of a previous action or situation. 可以翻译为 'as a result', 'in consequence', or 'therefore' in English. It is typically placed between two statements to link cause and effect.",
-    "formation": "Situation/ACTION 1 + その結果 + RESULT"
+    "shortExplanation": "引出前项动作或事态所导致的最终结果；'结果……'、'其结果是……'。",
+    "longExplanation": "接续词'その結果'用于连接具有因果关系的两个句子，前项交代起因、行为或事态背景，后项客观陈述其直接导向的结局或后果（无论好坏）。常用于书面语或较为庄重的解说语境中。",
+    "formation": "句子1（行为/事态） + 。その結果、 + 句子2（结果）",
+    "examples": [
+      {
+        "translation": "她每天都刻苦练习。结果赢得了比赛。"
+      },
+      {
+        "translation": "公司破产了。结果他失去了工作。"
+      },
+      {
+        "translation": "我们迟到了。结果没能赶上电车。"
+      },
+      {
+        "translation": "他荒废了学业。结果考试不及格。"
+      }
+    ]
   },
   "ja_それと_29": {
     "title": "～それと～ (〜sore to〜)",
-    "shortExplanation": "Used to link two or more items; 'and', 'also'.",
-    "longExplanation": "The ～それと～ grammar point is used to connect two or more items or actions, similar to how 'and' or 'also' is used in English. The expression それと can appear at the start of a new sentence or between items in a list to add another point.",
-    "formation": "Item1 + それと + Item2"
+    "shortExplanation": "用于在已知事项的基础上追加补充另一事项；'还有……'、'以及……'。",
+    "longExplanation": "接续词'それと'是口语中非常常用的表达，常位于第二句话的开头，用于在前面已经提及的事物、事项或动作之上，追加补充新的信息，相当于汉语的'还有'、'加上'、'以及'。",
+    "formation": "事项/句子1 + 。それと、 + 事项/句子2",
+    "examples": [
+      {
+        "translation": "我打算去买东西。还有，我也得去一趟邮局。"
+      },
+      {
+        "translation": "今天我做了塔可卷饼。另外，还做了沙拉。"
+      },
+      {
+        "translation": "出门前请把房间打扫一下。还有，请把垃圾倒了。"
+      },
+      {
+        "translation": "他会说法语。不仅如此，他还会说西班牙语。"
+      }
+    ]
   },
   "ja_それとも_30": {
     "title": "～？それとも～？ (～? sore tomo ～?)",
-    "shortExplanation": "Presents two alternatives or choices; 'or', 'either...or'.",
-    "longExplanation": "The ～？それとも～？ grammar point is used to present two alternatives or choices in a single sentence. It is similar to 'or' or 'either...or' in English. It can be used with verbs, adjectives, or nouns.",
-    "formation": "动词-casual + ？それとも + 动词-casual + ？, etc."
+    "shortExplanation": "用于在疑问句中提出两项选择，供对方选取其一；'还是……？'、'或者……？'。",
+    "longExplanation": "接续词'それとも'用于连接两个具有选择关系的疑问句，列出两种可能性或方案供对方挑选，相当于汉语的'还是……？'、'或者说……？'。常用于口语和日常交流中。",
+    "formation": "疑问句A + ？それとも + 疑问句B + ？",
+    "examples": [
+      {
+        "translation": "喝咖啡吗？还是喝红茶？"
+      },
+      {
+        "translation": "这部电影有趣吗？还是无聊？"
+      },
+      {
+        "translation": "他是日本人？还是外国人？"
+      },
+      {
+        "translation": "去吃寿司吗？还是去吃拉面？"
+      }
+    ]
   },
   "ja_だけしか_31": {
     "title": "～だけしか (～dake shika)",
-    "shortExplanation": "Emphasizes the scarcity or insufficiency of something; 'only', 'nothing but'.",
-    "longExplanation": "The ～だけしか grammar point is used to emphasize that there is nothing except what is mentioned, and it requires a negative verb. 可以翻译为 'only' or 'nothing but' in English.",
-    "formation": "名词/Quantity + だけ + しか + Negative 动词"
+    "shortExplanation": "双重限定，强烈强调数量极少或范围极其狭窄（后接否定）；'仅有……'、'只……'。",
+    "longExplanation": "句型'～だけしか'将表示限定的'だけ'与表示排他的'しか'重叠使用，后项必须搭配否定形式动词，用来极力强调数量之少、程度之低或范围之窄，往往带有说话人感到不足、遗憾或吃惊的主观色彩。",
+    "formation": "名词 / 数量词 + だけしか + 动词否定形",
+    "examples": [
+      {
+        "translation": "今天我只学了一个小时。"
+      },
+      {
+        "translation": "他只吃咖喱，别的什么都不吃。"
+      },
+      {
+        "translation": "田中只邀请了区区五个人。"
+      },
+      {
+        "translation": "那家餐厅只卖蔬菜。"
+      }
+    ]
   },
   "ja_だけど_32": {
     "title": "だけど (dakedo)",
-    "shortExplanation": "表示 a contrast or contradiction; 'but', 'however', 'even though'.",
-    "longExplanation": "The だけど grammar point is 用于表达 a contrast or contradiction between two statements. In written or spoken Japanese, だけど is often placed at the start of a new sentence (after a period) to mean 'however'. Within a single sentence, speakers often just say けど without だ.",
-    "formation": "Sentence 1 + だけど + Sentence 2, or Sentence 1 + 。だけど、Sentence 2"
+    "shortExplanation": "表示转折或对比关系的口语接续词；'但是'、'可是'、'虽然……但是……'。",
+    "longExplanation": "接续词'だけど'（'だけれども'的简体口语形式）用于连接两个意思相反、相对立或互有矛盾的句子或分句。常在日常对话中放在第二句句首表示'可是'、'但是'；在同一个句子内部连接前后两项时，经常直接使用'～けど'。",
+    "formation": "句子1 + だけど / けど + 句子2 | 句子1 + 。だけど、 + 句子2",
+    "examples": [
+      {
+        "translation": "虽然考试及格了，但还是得继续学习。"
+      },
+      {
+        "translation": "这个房间挺宽敞，但是房租很贵。"
+      },
+      {
+        "translation": "他性格很温柔，但有时也很严厉。"
+      },
+      {
+        "translation": "想做早饭，可是没有时间。"
+      }
+    ]
   },
   "ja_たて_33": {
     "title": "～たて (～tate)",
-    "shortExplanation": "指示 an action that has just been completed; 'freshly', 'just'.",
-    "longExplanation": "The ～たて grammar point is 用于表达 that an action has just been completed, and the result or condition is still fresh or new. This is often used with verbs like 焼く (bake), 作る (make), or 洗う (wash).",
-    "formation": "动词-stem + たて"
+    "shortExplanation": "表示某动作刚刚完成，其产生的成果或状态依然十分新鲜；'刚……好的'、'新……的'。",
+    "longExplanation": "语法'～たて'接在动词连用形（ます形词干）之后，表示某个动作刚刚完成不久，其呈现出的状态最新鲜、最完好。常用于烹饪、洗涤等动作（如'刚烤好的'、'刚做好的'、'刚洗好的'）。修饰名词时使用'～たての + 名词'。",
+    "formation": "动词连用形（去ます） + たて (+ の + 名词 / + で)",
+    "examples": [
+      {
+        "translation": "这个面包是刚烤出炉的，还是热乎的。"
+      },
+      {
+        "translation": "现做好的便当非常美味。"
+      },
+      {
+        "translation": "刚洗好的衬衫闻起来香香的。"
+      },
+      {
+        "translation": "她把刚切好的新鲜蔬菜放进了沙拉里。"
+      }
+    ]
   },
   "ja_たとえても_34": {
     "title": "～たとえ～ても (〜tatoe〜temo)",
-    "shortExplanation": "Express a condition with 'even if'; 'no matter how'.",
-    "longExplanation": "The ～たとえ～ても grammar point is 用于表达 a hypothetical or conditional situation where the outcome remains the same even if the condition is met. 可以翻译为 'even if' or 'no matter how' in English.",
-    "formation": "たとえ + 动词-casual + ても, たとえ + い-形容词 + くても, たとえ + な-形容词 + であっても, たとえ + 名词 + であっても"
+    "shortExplanation": "表示即使出现极端假定情况，后项结论或意志也毫不改变；'即使……也……'、'就算……也……'。",
+    "longExplanation": "句型'たとえ～ても'用于表示让步假定。副词'たとえ'置于句首，与后接的表示让步的'～ても / ～でも'相呼应，强调哪怕出现前项假设的极端情况或条件，后项既定的事实、判断、意志或结果也绝不发生动摇或改变。",
+    "formation": "たとえ + 动词て形 + も | たとえ + い形容词词干（去い） + くても | たとえ + な形容词词干 / 名词 + でも（或 であっても）",
+    "examples": [
+      {
+        "translation": "就算下雨，我们也出门吧。"
+      },
+      {
+        "translation": "哪怕他会发火，我们也要把实情说出来。"
+      },
+      {
+        "translation": "就算天气很冷，我也想去散散步。"
+      },
+      {
+        "translation": "就算他很有名，我也对他毫无兴趣。"
+      }
+    ]
   },
   "ja_たところ_35": {
     "title": "～たところ (〜ta tokoro)",
-    "shortExplanation": "表示 the result or outcome of an action; 'after', 'just when', 'upon'.",
-    "longExplanation": "The ～たところ grammar point is 用于表示 the result or outcome right after performing an action. 可以翻译为 'after', 'just when', or 'upon' in English. It is formed by attaching ところ to the past tense (た-form) of verbs.",
-    "formation": "动词-た form + ところ"
+    "shortExplanation": "表示做了某动作之后，得知了某种结果、反应或有了新发现；'……之后发现'、'刚……就……'。",
+    "longExplanation": "句型'～たところ'接在动词た形之后，表示做完某动作之后，得知了相应的结果、外界的反应，或者发现了某种此前不知道的事实。后项通常叙述客观出现的情况、意外的发展或新得到的情报，不受说话人主观意志控制。",
+    "formation": "动词た形 + ところ",
+    "examples": [
+      {
+        "translation": "刚做完作业，老师就又留了一道课题。"
+      },
+      {
+        "translation": "和朋友见面后，他告诉我他要去国外了。"
+      },
+      {
+        "translation": "刚吃完饭，电话就响了。"
+      },
+      {
+        "translation": "整理了桌子后，找到了之前遗忘的备忘条。"
+      }
+    ]
   },
   "ja_たとたん_36": {
     "title": "～たとたん (〜ta totan)",
-    "shortExplanation": "表达 moment something happens; 'as soon as', 'the moment', 'the instant'.",
-    "longExplanation": "The ～たとたん grammar point is 用于表达 that something occurs immediately at the exact moment another action is completed. 可以翻译为 'as soon as', 'the moment', or 'the instant' in English. It is attached to the past tense (た-form) of a verb.",
-    "formation": "动词-た form + とたん"
+    "shortExplanation": "表示前项动作刚一发生或完成的瞬间，紧接着发生了意想不到的事；'刚一……就立刻……'、'一……就……'。",
+    "longExplanation": "句型'～たとたん'（或'～たとたんに'）接在动词た形之后，表示前一个动作刚结束的刹那，几乎同时发生了后一项事态。后项通常是出乎意料的偶然事件或突发状态变化，不能使用表示命令、劝诱或说话人主观意志的表达。",
+    "formation": "动词た形 + とたん（或 とたんに）",
+    "examples": [
+      {
+        "translation": "刚一把门打开，猫就跑了出去。"
+      },
+      {
+        "translation": "刚拨通电话，手机就没电关机了。"
+      },
+      {
+        "translation": "天一刚开始下雨，大家就立刻撑起了伞。"
+      },
+      {
+        "translation": "一见到我，他脸上的笑容立刻就消失了。"
+      }
+    ]
   },
   "ja_たびに_37": {
     "title": "～たびに (〜tabi ni)",
-    "shortExplanation": "Express 'every time' or 'whenever'.",
-    "longExplanation": "The ～たびに grammar point is 用于表达 that an action or event occurs every time or whenever something else happens. 可以翻译为 'every time', 'whenever', or 'each time' in English. Typically, you attach たびに to a verb in its dictionary form, or to a noun plus の.",
-    "formation": "动词-dictionary form + たびに, 名词 + のたびに"
+    "shortExplanation": "表示每当发生某件事时，总是无一例外地伴随同一种情况或心情；'每当……就……'、'每次……都……'。",
+    "longExplanation": "句型'～たびに'接在动词辞书形（原形）或'名词 + の'之后，表示某种事情反复发生，每次发生时都会伴随同样的后续反应或心理状态（相当于汉语的'每逢……就……'、'每次……都……'）。通常不用于描述日升日落等自然周期的日常必然规律。",
+    "formation": "动词辞书形 + たびに | 名词 + のたびに",
+    "examples": [
+      {
+        "translation": "每次见到她，我的心都会欢快地跳动。"
+      },
+      {
+        "translation": "每当下雨，那些令人怀念的回忆就会涌上心头。"
+      },
+      {
+        "translation": "每当听这首歌，心情就会变得很幸福。"
+      },
+      {
+        "translation": "每次我回到家，猫咪都会跑出来迎接我。"
+      }
+    ]
   },
   "ja_だものだ_38": {
     "title": "～だものだ (〜da mono da)",
-    "shortExplanation": "表达 reason or cause, often used to justify something.",
-    "longExplanation": "The ～だものだ grammar point is used to explain a reason or cause in a subjective, explanatory tone (e.g. 'because... after all'). Often, you'll see it used as ～だものだから ('because... after all').",
-    "formation": "动词-casual + んだものだ, い-形容词 + んだものだ, な-形容词 + なんだものだ, 名词 + なんだものだ (often with から as んだものだから)"
+    "shortExplanation": "用于主观申辩、陈述理由或借口，以博得对方理解；'因为……嘛'、'毕竟是因为……'（多用～ものだから）。",
+    "longExplanation": "句型'～ものだから'（口语中也常作'～んだもの'或'～もの'）用于陈述事情发生的客观理由或主观辩解，带有撒娇、解释或为自己的行为找由头以期得到对方谅解的语气。常译为'因为……嘛'、'由于……没办法呀'。",
+    "formation": "动词普通形 + んだものだから / んだもの | い形容词 + んだものだから / んだもの | な形容词 + なんだものだから / なんだもの | 名词 + なんだものだから / なんだもの",
+    "examples": [
+      {
+        "translation": "因为太累了嘛，所以想休息一下。"
+      },
+      {
+        "translation": "肚子实在太饿了嘛，所以想吃点东西。"
+      },
+      {
+        "translation": "因为实在太忙了嘛，所以去不了。"
+      },
+      {
+        "translation": "毕竟他人那么热心善良，大家都喜欢他。"
+      }
+    ]
   },
   "ja_ちゃった_39": {
     "title": "～ちゃった (〜chatta)",
-    "shortExplanation": "Express an unintentional action or a regretful action; 'ended up doing', 'did accidentally'.",
-    "longExplanation": "The ～ちゃった grammar point is the informal, colloquial version of ～てしまった. It 表示 unintentional or regretful actions and can be translated as 'ended up doing' or 'did accidentally'.",
-    "formation": "动词-て/で form → ちゃった/じゃった (e.g. 食べてしまった → 食べちゃった)"
+    "shortExplanation": "动词'～てしまった'的口语简略形式，表示不经意做错了某事而感到遗憾、后悔，或表示动作彻底完成；'不小心……了'、'……光了'。",
+    "longExplanation": "句型'～ちゃった'（浊音为'～じゃった'）是'～てしまった / ～でしまった'在日常口语会话中的缩略表达。常用于表示因疏忽大意或情不自禁而发生了不可挽回、令人遗憾懊恼的事情（'不小心……了'），也可以表示某动作彻底完成或消耗殆尽（'……完了'）。",
+    "formation": "动词て形（去掉て） + ちゃった | 动词で形（去掉で） + じゃった（例如：食べてしまった → 食べちゃった、飲んでしまった → 飲んじゃった）",
+    "examples": [
+      {
+        "translation": "我不小心把东西给落下了。"
+      },
+      {
+        "translation": "睡过头了，结果迟到了。"
+      },
+      {
+        "translation": "我把蛋糕全给吃光了。"
+      },
+      {
+        "translation": "本来不打算说的，结果还是给说漏嘴了。"
+      }
+    ]
   },
   "ja_ついでに_40": {
     "title": "～ついでに (〜tsuide ni)",
-    "shortExplanation": "Do something while or after completing another action; 'while', 'by the way'.",
-    "longExplanation": "The ～ついでに grammar point is 用于表达 doing something 'on the occasion of' another action. It can mean 'while you're at it', 'by the way', or 'in passing'.",
-    "formation": "动词 (dictionary or た-form) + ついでに, 名词 + の + ついでに, or 动词-て form + いる + ついでに"
+    "shortExplanation": "顺便，借着做某项主要动作的机会附带做另一件事；'顺便'、'顺手'、'趁便'。",
+    "longExplanation": "句型'～ついでに'表示趁着做前项主要动作的契机或机会，顺便、附带着完成另一件相关的后项事情。前项是原计划要做的主动作，后项则是顺道做的事。",
+    "formation": "动词辞书形 / た形 + ついでに | 名词 + のついでに",
+    "examples": [
+      {
+        "translation": "去买东西顺便去邮局寄封信吧。"
+      },
+      {
+        "translation": "在图书馆借书顺便碰到了朋友。"
+      },
+      {
+        "translation": "趁着来日本的机会，我想去游览著名的观光胜地。"
+      },
+      {
+        "translation": "去电影院顺便看了新电影的海报。"
+      }
+    ]
   },
   "ja_っけ_41": {
     "title": "～っけ？ (〜kke?)",
-    "shortExplanation": "用于表达 that one is trying to recall some information.",
-    "longExplanation": "The ～っけ？ grammar point is added at the end of a sentence when the speaker is trying to recall something or confirm a memory. It can be used with verbs, adjectives, or nouns in casual form.",
-    "formation": "动词-casual + っけ?, い-形容词 + かったっけ?, な-形容词/名词 + だっけ?"
+    "shortExplanation": "句尾终助词，用于口语中回忆、确认记不清或遗忘的事情；'……来着？'、'……是不是啊？'。",
+    "longExplanation": "终助词'～っけ'常用于随意的口语会话中，置于句末。说话人在自言自语回忆自己模糊或淡忘的事情，或者向对方确认某一过去的信息时使用，相当于汉语的'……来着？'、'……是什么来着？'。",
+    "formation": "动词普通形（常用た形） + っけ | い形容词词尾 + かったっけ | な形容词词干 / 名词 + だっけ（敬语为 でしたっけ）",
+    "examples": [
+      {
+        "translation": "他是几点来着？"
+      },
+      {
+        "translation": "这部电影有意思来着吗？"
+      },
+      {
+        "translation": "她是个学生来着吧？"
+      },
+      {
+        "translation": "寿司店在什么地方来着？"
+      }
+    ]
   },
   "ja_っぱい_42": {
     "title": "～っぱい (〜ppai)",
-    "shortExplanation": "表示 fullness or completeness; 'full', 'full of', 'filled with'.",
-    "longExplanation": "The ～っぱい grammar point is used to convey that something is filled or packed with something else. Commonly used as 『Noun + でいっぱい』 (e.g., 荷物でいっぱい) to mean 'full of X'.",
-    "formation": "名词 + で + いっぱい (Note: written as いっぱい, read as 'ippai')"
+    "shortExplanation": "表示空间或状态充满了某物或某种情绪；'满是……'、'充满了……'（常作 〜でいっぱい）。",
+    "longExplanation": "表达'～（で）いっぱい'用于表示某个空间、场所被某物占满，或者内心、状态充满某种情绪或事物。通常以'名词 + でいっぱい'的形式出现，意为'满是……'、'挤满/装满了……'。",
+    "formation": "名词 + でいっぱい（或 でいっぱいです / でいっぱいだ）",
+    "examples": [
+      {
+        "translation": "房间里堆满了行李。"
+      },
+      {
+        "translation": "她的脸上洋溢着灿烂的笑容。"
+      },
+      {
+        "translation": "他正忙于工作，分身乏术。"
+      },
+      {
+        "translation": "公园里开满了鲜花。"
+      }
+    ]
   },
   "ja_っぱなし_43": {
     "title": "～っぱなし (〜ppanashi)",
-    "shortExplanation": "Indicate a state where an action is left as is (unchanged or unfinished).",
-    "longExplanation": "The ～っぱなし grammar point is 用于表达 that an action happened and was left in that state, unattended or unchanged. It is formed by taking the ます-stem of a verb and adding ～っぱなし.",
-    "formation": "动词-ますstem + っぱなし"
+    "shortExplanation": "表示动作做完后放任不管、保持原样，或某状态一直持续；'放置不管'、'一直……着'。",
+    "longExplanation": "句型'～っぱなし'接在动词连用形（去ます）后，表示某动作完成后理应进行后续处理却未处理，任由其保持原样不变。多带有批评、抱怨、不满或粗心大意的消极语气（如门开着不关、电视开着不关等）。另外也可表示某种状态一直持续不断（如站了一整天）。",
+    "formation": "动词连用形（去ます） + っぱなし (+ にする / になる / だ)",
+    "examples": [
+      {
+        "translation": "要是把窗户一直敞开着，虫子就会飞进来的。"
+      },
+      {
+        "translation": "洗好的衣服一直晾在外面没收，结果被雨淋湿了。"
+      },
+      {
+        "translation": "他把门开着就出门去了。"
+      },
+      {
+        "translation": "电视一直开着，我就这么睡着了。"
+      }
+    ]
   },
   "ja_つまり_44": {
     "title": "～つまり (〜tsumari)",
-    "shortExplanation": "Summarizing, restating, or clarifying a point: 'in other words', 'that is to say'.",
-    "longExplanation": "The ～つまり grammar point is used to restate or clarify in a concise way what has been said. 可以翻译为 'in other words', 'that is to say', or 'in short'.",
-    "formation": "Sentence A + つまり + Sentence B (rephrasing)"
+    "shortExplanation": "承接连词，用于总结、重新表述或阐明前文内容；'也就是说'、'换言之'、'简而言之'。",
+    "longExplanation": "接续词'つまり'用于对前项所述内容进行概括、换一种更简明易懂的方式重新表达，或者从前文自然推导出结论。常译为'也就是说'、'换句话说'、'换言之'。",
+    "formation": "句子1 + 。つまり、 + 句子2",
+    "examples": [
+      {
+        "translation": "他是大学教授。也就是说，是位专家。"
+      },
+      {
+        "translation": "今天是周六。也就是说，明天是周日。"
+      },
+      {
+        "translation": "山田女士是我朋友的姐姐。也就是说，她是我们的熟人。"
+      },
+      {
+        "translation": "她来自法国。换句话说，她会说法语。"
+      }
+    ]
   },
   "ja_つもりでした_45": {
     "title": "～つもりでした (〜tsumori deshita)",
-    "shortExplanation": "Expressing a past intention or plan; 'was planning to', 'meant to'.",
-    "longExplanation": "The ～つもりでした grammar point is 用于表达 a past intention or plan that did not happen, or a past belief that turned out incorrect. 可以翻译为 'was planning to', 'intended to', or 'meant to'.",
-    "formation": "动词-casual (dictionary form) + つもりでした"
+    "shortExplanation": "表示过去的打算或计划，但实际上未能实现；'本打算……'、'原本想……（却没成）'。",
+    "longExplanation": "句型'～つもりでした'用于叙述过去本有某种意图或计划，但由于某种原因或意外，最终没能实现或改变了计划。后文通常使用'が'或'けれど'引出与原意图相反的实际情况，常带有遗憾或无可奈何的语气。",
+    "formation": "动词辞书形 / 否定形（ない形） + つもりでした",
+    "examples": [
+      {
+        "translation": "昨天本来打算去见朋友的，但是感冒了。"
+      },
+      {
+        "translation": "本来打算看电影的，结果没有时间了。"
+      },
+      {
+        "translation": "他们原本打算过来的，但打电话取消了。"
+      },
+      {
+        "translation": "我本来打算读这本书的，却发现已经读过了。"
+      }
+    ]
   },
   "ja_てくれと_46": {
     "title": "～てくれと (〜te kureto)",
-    "shortExplanation": "Quote someone's request (telling someone to do something).",
-    "longExplanation": "The ～てくれと grammar point is used when quoting a request or command made by someone else. It literally means 'someone said “please do …”'. Typically used as 「～てくれと頼む/言う」 to indicate being asked or told to do something.",
-    "formation": "动词-て form + くれと (言う / 頼む / 伝える, etc.)"
+    "shortExplanation": "间接转述他人的请求、拜托或指示；'说让（某人）做……'、'拜托说请……'。",
+    "longExplanation": "句型'～てくれと'用于间接引述他人提出的请求、拜托或命令，后常接'言われる'（被说）、'頼まれる'（被拜托）、'お願いされる'（被请求）等动词，表示'某人对我说/拜托我说“请……做某事”'。",
+    "formation": "动词て形 + くれと (言われる / 頼まれる / 言う / 頼む 等)",
+    "examples": [
+      {
+        "translation": "有人叫我打个电话。"
+      },
+      {
+        "translation": "有人拜托我把这个行李搬过去。"
+      },
+      {
+        "translation": "对方恳请我一直等到最后。"
+      },
+      {
+        "translation": "有人对我说让我好好休息。"
+      }
+    ]
   },
   "ja_てごらん_47": {
     "title": "～てごらん (〜te goran)",
-    "shortExplanation": "Suggest or invite someone to try doing something; 'Why don't you try...'.",
-    "longExplanation": "The ～てごらん grammar point is used to gently suggest or invite someone to try doing something. It is softer and more casual than ～てみて, and is used among friends or family.",
-    "formation": "动词-て form + ごらん"
+    "shortExplanation": "温和地建议或鼓励对方尝试做某事；'……试试看'、'你试着……看看'。",
+    "longExplanation": "句型'～てごらん'（是'～てごらんなさい'的略语）常用于长辈对晚辈、父母对孩子或亲近的朋友之间，用于亲切、温和地劝诱或建议对方尝试做某事。相当于'～てみて'，但语气更加亲切和蔼。",
+    "formation": "动词て形 + ごらん（或 ごらんなさい）",
+    "examples": [
+      {
+        "translation": "你玩玩看那个游戏吧。"
+      },
+      {
+        "translation": "试着跟他谈谈看吧。"
+      },
+      {
+        "translation": "试着做做新的食谱菜肴看吧。"
+      },
+      {
+        "translation": "试穿一下那件礼服裙看看吧。"
+      }
+    ]
   },
   "ja_ですから_48": {
     "title": "ですから～ (desu kara)",
-    "shortExplanation": "表示 reason or cause; 'because', 'since', 'so'.",
-    "longExplanation": "The ですから grammar point is 用于表示 the reason or cause for a statement, often in polite speech. 可以翻译为 'because', 'since', or 'so'.",
-    "formation": "Sentence A + ですから + Sentence B"
+    "shortExplanation": "礼貌语接续词，表示前因后果；'因此'、'所以'、'因为……所以……'。",
+    "longExplanation": "接续词'ですから'常用于礼貌或郑重的语境中，用于承接前文的原因、理由，并引出后文的结果、判断、建议或请求。相当于汉语的'因此'、'所以'。",
+    "formation": "句子1（原因） + ですから、 + 句子2（结果 / 建议 / 判断）",
+    "examples": [
+      {
+        "translation": "今天天气冷，请穿上外套。"
+      },
+      {
+        "translation": "这部电影很有趣，请务必看一下。"
+      },
+      {
+        "translation": "明天休息，请好好放松休息一下。"
+      },
+      {
+        "translation": "他为人热心，应该会帮忙的吧。"
+      }
+    ]
   },
   "ja_てはじめて_49": {
     "title": "～てはじめて (〜te hajimete)",
-    "shortExplanation": "Realization or action done for the first time; 'only after', 'not until'.",
-    "longExplanation": "The ～てはじめて grammar point 指示 that something is realized or happens for the first time only after another action is completed. 可以翻译为 'only after' or 'not until'.",
-    "formation": "动词-て form + はじめて"
+    "shortExplanation": "表示直到发生了前项动作之后，才第一次意识到或体会到后项；'……之后才（第一次）……'、'只有在……之后才……'。",
+    "longExplanation": "句型'～てはじめて'接在动词て形后，强调只有在亲身经历了前项的事情之后，后项的认识、觉察、感受或新状态才得以出现。常用于表达'直到经历了……才深深体会到/意识到……'。",
+    "formation": "动词て形 + はじめて",
+    "examples": [
+      {
+        "translation": "直到去了国外，我才体会到日本的好处。"
+      },
+      {
+        "translation": "直到和她分手后，我才意识到她的重要。"
+      },
+      {
+        "translation": "直到大学毕业，我才懂得学生时代的快乐。"
+      },
+      {
+        "translation": "有了孩子之后，我才真正理解了父母的心情。"
+      }
+    ]
   },
   "ja_てほしい_50": {
     "title": "～てほしい (〜te hoshii)",
-    "shortExplanation": "Express a desire for someone else to do something; 'I want you to do...'.",
-    "longExplanation": "The ～てほしい grammar point is 用于表达 a desire that someone else perform an action. It is formed by attaching ほしい to the て-form of a verb. 可以翻译为 'I want you to...' in English.",
-    "formation": "动词-て form + ほしい"
+    "shortExplanation": "表示希望对方或第三者做某事；'希望（某人）做……'、'想让（某人）做……'。",
+    "longExplanation": "句型'～てほしい'接在动词て形后，用于表达说话人希望对方或其他人实施某种行为的愿望。动作的执行者通常用助词'に'表示。其否定形式为'～ないでほしい'（希望不要做某事）。",
+    "formation": "动作主体 + に + 动词て形 + ほしい（否定：～ないでほしい）",
+    "examples": [
+      {
+        "translation": "我希望孩子能更加用功读书。"
+      },
+      {
+        "translation": "我希望他能给我打电话。"
+      },
+      {
+        "translation": "我希望朋友能帮帮我。"
+      },
+      {
+        "translation": "我希望她明天能来这里。"
+      }
+    ]
   },
   "ja_ても_51": {
     "title": "～ても (〜temo)",
-    "shortExplanation": "'Even if', 'even though', or 'although'.",
-    "longExplanation": "The ～ても grammar point 表示 that even if a certain condition holds, the outcome or situation doesn't change. 可以翻译为 'even if' or 'even though'.",
-    "formation": "动词-て form + も, い-形容词 (～く) + ても, な-形容词/名词 (～で) + も"
+    "shortExplanation": "表示逆接的让步条件；'即使……也……'、'就算……也……'。",
+    "longExplanation": "句型'～ても'（以浊音结尾时为'～でも'）用于连接假定或既定的让步条件，表示即使在前项成立的情况下，后项的动作、状态也不会受到改变或影响，往往得出与通常预期相反的结果。常译为'即使……也……'、'哪怕……也……'。",
+    "formation": "动词て形 + も | い形容词词干（去い） + くても | な形容词词干 / 名词 + でも",
+    "examples": [
+      {
+        "translation": "即使下雨，运动会也会照常举行。"
+      },
+      {
+        "translation": "即使再忙，我也每天抽时间学习。"
+      },
+      {
+        "translation": "哪怕价格昂贵，我也会买品质优良的商品。"
+      },
+      {
+        "translation": "就算她是有名的人，我也并不认识她。"
+      }
+    ]
   },
   "ja_といいなあ_52": {
     "title": "～といいなあ (〜to ii naa)",
-    "shortExplanation": "Express a wish or hope; 'it would be nice if', 'I hope that'.",
-    "longExplanation": "The ～といいなあ grammar point is 用于表达 a wish or hope for something to happen or to be in a certain way. 可以翻译为 'it would be nice if' or 'I hope that' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + といいなあ, い-形容词 + といいなあ, な-形容词 + だといいなあ, 名词 + だといいなあ"
+    "shortExplanation": "在随意的口语或自言自语中表达希望、心愿；'要是……就好了啊'、'希望能……啊'。",
+    "longExplanation": "句型'～といいなあ'由条件助词'と'加上'いい'和感叹助词'なあ'构成，用于口语或独白中，向内心或亲近的人表达自己对某种良好情况的期盼、愿望或祝愿。常译为'要是……就好了啊'、'但愿……'。",
+    "formation": "动词普通形 + といいなあ | い形容词 + といいなあ | な形容词词干 / 名词 + だといいなあ",
+    "examples": [
+      {
+        "translation": "要是明天是个晴天就好了啊。"
+      },
+      {
+        "translation": "希望能通过这次考试啊。"
+      },
+      {
+        "translation": "但愿她身体安好。"
+      },
+      {
+        "translation": "要是他能找到新工作就好了啊。"
+      }
+    ]
   },
   "ja_という_53": {
     "title": "～という (〜to iu)",
-    "shortExplanation": "Used for quoting, defining, or giving an example; 'called', 'that is to say', 'like'.",
-    "longExplanation": "The ～という grammar point is used to quote, define, or give an example of something. 可以翻译为 'called', 'that is to say', or 'like' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "名词 + という + 名词, 动词-casual + という + 名词, い-形容词 + という + 名词, な-形容词 + という + 名词"
+    "shortExplanation": "用于提示名称、定义或修饰后面的名词；'叫作……的'、'所谓的……'、'传闻说……的'。",
+    "longExplanation": "句型'～という'用于引出名称、传闻、内容或定义以修饰后续的名词。当以'名词1 + という + 名词2'的形式出现时，表示'名叫名词1的名词2'；接在动词、形容词普通形后修饰名词时，表示'据说是……的'或'关于……的内容'。",
+    "formation": "名词1 + という + 名词2 | 普通形（动词 / 形容词 / 名词+だ） + という + 名词",
+    "examples": [
+      {
+        "translation": "我在书店买了一本名叫《哈利·波特》的书。"
+      },
+      {
+        "translation": "昨天我吃了据说是很美味的蛋糕。"
+      },
+      {
+        "translation": "大家都评价说他为人非常亲切。"
+      },
+      {
+        "translation": "今年夏天，我想去东京一个叫作“迪士尼乐园”的主题公园。"
+      }
+    ]
   },
   "ja_ということだ_54": {
     "title": "～ということだ (〜to iu koto da)",
-    "shortExplanation": "Express a conclusion or hearsay; 'I heard', 'it means', 'it can be said'.",
-    "longExplanation": "The ～ということだ grammar point is 用于表达 a conclusion, summary, or hearsay about a certain situation or statement. 可以翻译为 'I heard', 'it means', or 'it can be said' in English. This grammar point is often used with verbs, adjectives, and nouns.",
-    "formation": "动词-casual + ということだ, い-形容词 + ということだ, な-形容词 + だということだ, 名词 + だということだ"
+    "shortExplanation": "用于转述传闻信息（据说……）或总结说明事情的含义与结论（也就是说……、这意味着……）。",
+    "longExplanation": "句型'～ということだ'主要有两种用法：一是用于客观、郑重地转述从别处听来的传闻或消息，常与'～によると'等搭配，相当于'据说……'、'听说……'；二是用于对某种事态进行解释、总结或下结论，相当于'也就是说……'、'意味着……'。",
+    "formation": "动词普通形 + ということだ | い形容词 + ということだ | な形容词词干 / 名词 + だということだ",
+    "examples": [
+      {
+        "translation": "听说他下周就要结婚了。"
+      },
+      {
+        "translation": "也就是说，这次考试非常难（据说这次考试很难）。"
+      },
+      {
+        "translation": "听说她已经搬家了。"
+      },
+      {
+        "translation": "据说他的工作进展得并不顺利。"
+      }
+    ]
   },
   "ja_というと_55": {
     "title": "～というと (〜to iu to)",
-    "shortExplanation": "Used to provide an example or characteristic related to the topic; 'when it comes to', 'speaking of'.",
-    "longExplanation": "The ～というと grammar point is 用于表示 an example, characteristic, or association related to the topic being discussed. 可以翻译为 'when it comes to', 'speaking of', or 'in terms of' in English.",
-    "formation": "名词 + というと"
+    "shortExplanation": "提起某个话题时，立刻联想到其代表性特征或典型事例；“说到……”、“一提到……就联想到……”。",
+    "longExplanation": "句型“～というと”用于引出一个话题、事物或对象，并随即陈述由该事物所联想到的最典型的事例、代表性特征或直观印象（相当于“一提到A，脑海中就浮现出B”）。此外，在日常会话中也可用于重复对方所说的话，以便进一步确认或展开交谈。",
+    "formation": "名词 + というと",
+    "examples": [
+      {
+        "translation": "说起日本料理，脑海中首先浮现出的就是寿司。"
+      },
+      {
+        "translation": "提到巴黎，就会让人想起埃菲尔铁塔。"
+      },
+      {
+        "translation": "一提到暑假，就很期待去海边玩。"
+      },
+      {
+        "translation": "说到他，我觉得他总是一个充满活力的人。"
+      }
+    ]
   },
   "ja_というの_56": {
     "title": "～というの～ (〜to iu no〜)",
-    "shortExplanation": "Explain or emphasize the reason for a situation or action.",
-    "longExplanation": "The ～というの〜 grammar point is used to provide an explanation or emphasize the reason for a certain situation or action. 可以翻译为 'the reason is that...', or 'it's because...'.",
-    "formation": "动词-casual + というの, い-形容词 + というの, な-形容词 + だというの, 名词 + だというの"
+    "shortExplanation": "常用于“～のは、～というのだ”句式中，用于说明或强调某种状况或行为的根本原因；“之所以……是因为……”。",
+    "longExplanation": "句型“～作为～というの～”多以“～のは、～というのだ”或“～という理由だ”的形式出现，用于对前半句所提出的状况、结果或行为，在后半句做出明确的解释或强调其背后的真正原因（相当于汉语的“之所以……，原因就在于……”）。通过“というの”将原因名词化并加以强调说明。",
+    "formation": "动词普通形 + というの | い形容词 + というの | な形容词 + だというの | 名词 + だというの",
+    "examples": [
+      {
+        "translation": "之所以迟到，是因为电车晚点了。"
+      },
+      {
+        "translation": "这个房间之所以这么脏，是因为没有打扫。"
+      },
+      {
+        "translation": "她之所以生气，是因为他违背了诺言。"
+      },
+      {
+        "translation": "他之所以能够成功，是因为努力用功学习了。"
+      }
+    ]
   },
   "ja_というのは_57": {
     "title": "～というのは (〜to iu no wa)",
-    "shortExplanation": "Used to provide an explanation or definition; 'that is to say...', 'by that, I mean...'.",
-    "longExplanation": "The ～というのは grammar point is used to provide an explanation or definition of the preceding statement or word. 可以翻译为 'that is to say...', 'by that, I mean...', or 'what I mean by...'.",
-    "formation": "Phrase/sentence + というのは + explanation/definition"
+    "shortExplanation": "用于对某个词语、概念下定义或进行说明，也可用于解释前述事情的原由；“所谓的……是指……”、“也就是说……”。",
+    "longExplanation": "句型“～というのは”主要有两种常见用法：一是用于对前面提出的词语、短语或概念进行定义与详细阐述，句末常搭配“〜のことだ”或“〜ということだ”（相当于“所谓的……是指……”）；二是承接前述结论来进一步解释其具体原因或背景，句尾常与“〜からだ”搭配使用。",
+    "formation": "词语 / 句子 + というのは + 解释说明（句尾常搭配 〜のことだ / 〜ということだ / 〜からだ）",
+    "examples": [
+      {
+        "translation": "“去日本”指的是去日本旅行这件事。"
+      },
+      {
+        "translation": "说这个问题很难，意思是解决它需要花费较多时间。"
+      },
+      {
+        "translation": "说他生气了，指的是他心里感到很不满。"
+      },
+      {
+        "translation": "所谓的“发胖”，就是指体重增加了。"
+      }
+    ]
   },
   "ja_というより_58": {
     "title": "～というより (〜to iu yori)",
-    "shortExplanation": "Express a comparison with preference; 'rather than', 'more like', 'instead of'.",
-    "longExplanation": "The ～というより grammar point is 用于表达 a comparison where one description is more accurate than another. Translated as 'rather than', 'more like', or 'instead of'.",
-    "formation": "动词-casual + というより, い-形容词 + というより, な-形容词 + だというより, 名词 + だというより"
+    "shortExplanation": "表示与其用前项的说法，倒不如用后项的表达更为贴切、准确；“与其说……倒不如说……”。",
+    "longExplanation": "句型“～というより”（常以“AというよりB”的形式出现）用于对比两种不同的描述或评价。说话人认为用A来形容不够确切或不够妥当，用B来表达才更加符合实际情况、更为恰当。相当于汉语的“与其说是A，不如说是B”。",
+    "formation": "动词普通形 + というより | い形容词 + というより | な形容词 + (だ)というより | 名词 + (だ)というより",
+    "examples": [
+      {
+        "translation": "这个房间与其说是狭窄，倒不如说是让人感觉很舒适自在。"
+      },
+      {
+        "translation": "他与其说是可怕，倒不如说是非常可靠。"
+      },
+      {
+        "translation": "这部电影与其说是无聊，倒不如说是稍微长了点。"
+      },
+      {
+        "translation": "她与其说是朋友，倒不如说更像家人一样的存在。"
+      }
+    ]
   },
   "ja_といっても_59": {
     "title": "～といっても (〜to ittemo)",
-    "shortExplanation": "表达 meaning 'even though', 'although', 'but'.",
-    "longExplanation": "The ～といっても grammar point is 用于展示 a contrast or clarify that 'even though' something is the case, it does not necessarily lead to the expected result. 可以翻译为 'even though', 'although', or 'but'.",
-    "formation": "动词-casual + といっても, い-形容词 + といっても, な-形容词 + だといっても, 名词 + だといっても"
+    "shortExplanation": "承认前项属实，但紧接着指出实际程度并不像想象中那样高；“虽说……但是……”、“虽说是……其实也只是……”。",
+    "longExplanation": "句型“～といっても”用于说话人虽然认可前项的事实，但为了防止对方产生过高或不切实际的联想，而在后项加以限定、补充说明，指出实际情况并没有达到常人预想的程度。相当于汉语的“话虽如此说，但实际上……”、“虽说……但（也没那么夸张）”。",
+    "formation": "动词普通形 + といっても | い形容词 + といっても | な形容词 + (だ)といっても | 名词 + (だ)といっても",
+    "examples": [
+      {
+        "translation": "虽说他很有名，但也并非人人都认识他。"
+      },
+      {
+        "translation": "这个汤虽说很辣，但对我来说刚刚好。"
+      },
+      {
+        "translation": "她虽然年轻，但就算说有经验，也终究还是个新人。"
+      },
+      {
+        "translation": "这家餐厅虽说价格昂贵，但能吃到美味的料理，所以物有所值。"
+      }
+    ]
   },
   "ja_とおり_60": {
     "title": "～とおり (〜toori)",
-    "shortExplanation": "表示 that something is done 'as is', 'as stated', or 'as instructed'.",
-    "longExplanation": "The ～とおり grammar point is 用于表达 that something is done exactly as stated, instructed, or shown. It is commonly used with verbs and nouns, and can be translated as 'just like', 'as per', or 'according to'.",
-    "formation": "动词-て form + とおり, 名词 + のとおり"
+    "shortExplanation": "表示后项的动作或状态完全符合前项所说、所见、所料或指示的内容；“正如……那样”、“按照……”。",
+    "longExplanation": "句型“～とおり”（常作“～とおりに”或接在名词后音变为“～どおり”）用于表达某项行为、状态或结果与之前所听到的、看到的、预想的或规定的基准完全一致，分毫不差。相当于汉语的“按照……去做”、“正如……所料”。",
+    "formation": "动词（辞书形 / た形 / てある形）+ とおり(に) | 名词 + のとおり(に) / 名词 + どおり(に)",
+    "examples": [
+      {
+        "translation": "我完全按照老师说的去完成了作业。"
+      },
+      {
+        "translation": "如果按照地图上标示的那样走，就能到达车站。"
+      },
+      {
+        "translation": "我按照食谱的做法做了蛋糕。"
+      },
+      {
+        "translation": "正如她承诺的那样，她准时赴约了。"
+      }
+    ]
   },
   "ja_とく_61": {
     "title": "～とく (〜toku)",
-    "shortExplanation": "Express doing something in advance or for future convenience (casual form of ～ておく).",
-    "longExplanation": "The ～とく grammar point (from ～ておく) is 用于表达 doing something in advance or preparing for something. It implies you're performing an action now to avoid inconvenience later. It is a casual, colloquial contraction of ～ておく.",
-    "formation": "动词-て form + とく (e.g., 食べておく→食べとく, 読んでおく→読んどく)"
+    "shortExplanation": "「～ておく」在日常口语中的简略缩略形式，表示预先做好某事以便将来之需；“预先做好……”、“先……好”。",
+    "longExplanation": "“～とく”是补助动词句型“～ておく”在口语、熟人随意交谈中的缩略形态（“〜ておく”缩略为“〜とく”，“〜でおく”缩略为“〜どく”）。它表示为了应对之后可能发生的事情而预先做好某种准备动作，或者将某种动作产生的结果保持下去。",
+    "formation": "动词て形省略て接とく（～ておく → ～とく、～でおく → ～どく）",
+    "examples": [
+      {
+        "translation": "晚上会变迟，所以我先把今晚的饭做好。"
+      },
+      {
+        "translation": "可能用得上雨伞，所以我先带上一把。"
+      },
+      {
+        "translation": "快要考试了，现在开始先把书读好吧。"
+      },
+      {
+        "translation": "明天会很忙，所以先把衣服洗好。"
+      }
+    ]
   },
   "ja_ところが_62": {
     "title": "～ところが (〜tokoro ga)",
-    "shortExplanation": "表示 a contrast or unexpected outcome; 'however', 'but', 'even though'.",
-    "longExplanation": "The ～ところが grammar point is 用于表达 a contrast or an unexpected outcome. 可以翻译为 'however', 'but', or 'even though' in English. It emphasizes a situation that contradicts what was expected.",
-    "formation": "Phrase 1 (expected situation) + ところが + Phrase 2 (unexpected result)"
+    "shortExplanation": "用于引出与前述预期、预想或计划完全相反的意外结果；“然而”、“可是”、“没想到”。",
+    "longExplanation": "句型“～ところが”用来连接前后两个事项。前半句陈述所做出的某种尝试、期待或原定计划，而后半句则引出一个出乎说话人意料之外的结局（往往与预想截然相反，多伴有惊讶、遗憾或意外的语气）。既可接在动词た形后连接分句（“〜たところが”），也可作为接续词单独置于句首（“ところが、”）。",
+    "formation": "动词た形 + ところが | 句子1（动作/预想）+ 。ところが、 + 句子2（出人意料的结果）",
+    "examples": [
+      {
+        "translation": "他平时总是迟到，可是今天却早早就到了。"
+      },
+      {
+        "translation": "昨天天气还挺热，可今天却一下子变冷了。"
+      },
+      {
+        "translation": "原本以为比赛会输，没想到竟然出乎意料地赢了。"
+      },
+      {
+        "translation": "眼看就要在决赛中夺冠了，却在最后一分上输掉了比赛。"
+      }
+    ]
   },
   "ja_ところだった_63": {
     "title": "～ところだった (〜tokoro datta)",
-    "shortExplanation": "表示 a near miss or a situation that almost happened; 'was just about to', 'almost', 'nearly'.",
-    "longExplanation": "The ～ところだった grammar point is 用于表达 a situation that almost occurred or something that the speaker was just about to do. 可以翻译为 'was just about to', 'almost', or 'nearly' in English. Typically, it is formed with the dictionary form or ている form of a verb + ところだった.",
-    "formation": "动词 (dictionary form or ている form) + ところだった"
+    "shortExplanation": "表示差一点就发生了某种危险或不好的事情，但幸好在最后关头避免了；“差一点就……”、“险些……”。",
+    "longExplanation": "句型“～ところだった”用于表达某种不好的事态、危险或失误几乎就要发生，但最终在千钧一发之际得以避开，实际上并没有真正发生的状况。句中常与副词“もう少しで”（差一点点）、“危うく”（险些）搭配呼应使用。",
+    "formation": "动词辞书形 / 动词ない形 + ところだった（常与 もう少しで、危うく 连用）",
+    "examples": [
+      {
+        "translation": "差一点点就迟到了。"
+      },
+      {
+        "translation": "他险些就遭遇了交通事故。"
+      },
+      {
+        "translation": "正要坐上电车的时候，车门却关上了。"
+      },
+      {
+        "translation": "差一点就把东西落下了。"
+      }
+    ]
   },
   "ja_ところで_64": {
     "title": "ところで (tokorode)",
-    "shortExplanation": "Used for changing the topic or bringing up a new topic; 'by the way', 'speaking of'.",
-    "longExplanation": "The ところで (tokorode) grammar point is used to change the topic of conversation or introduce a new topic. 可以翻译为 'by the way' or 'speaking of' in English. It is often used when the speaker wants to ask a question or share some information on a different subject. It can be placed at the beginning or in the middle of a sentence.",
-    "formation": "ところで + new topic or question"
+    "shortExplanation": "用于结束前面的谈话内容，主动转换到一个全新的话题；“话说回来”、“顺便问一下”、“对了”。",
+    "longExplanation": "接续词“ところで”在对话中起到转变话题的关键作用。说话人在打算告一段落或中断原先的交谈内容、引出一个截然不同的话题或提出新的询问时使用该词。相当于汉语中的“话说”、“对了”、“顺便问一句”。",
+    "formation": "句子1 + 。ところで、 + 句子2（引出全新话题或疑问）",
+    "examples": [
+      {
+        "translation": "话说回来，昨天的作业你已经做完了吗？"
+      },
+      {
+        "translation": "他正在游泳池里游泳呢。顺便问一下，午饭打算吃什么？"
+      },
+      {
+        "translation": "昨天玩得真开心呢。对了，你看到这张照片了吗？"
+      },
+      {
+        "translation": "话说，你知道明天开会的时间吗？"
+      }
+    ]
   },
   "ja_としたら_65": {
     "title": "～としたら (〜to shitara)",
-    "shortExplanation": "Express a hypothetical situation; 'if', 'suppose', 'assuming'.",
-    "longExplanation": "The ～としたら grammar point is 用于表达 a hypothetical situation or assumption. 可以翻译为 'if', 'suppose', or 'assuming' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + としたら, い-形容词 + としたら, な-形容词 + だとしたら, 名词 + だとしたら"
+    "shortExplanation": "提出某种假设条件，进而在此前提下做出推断、评价或决定行动；“如果假设……”、“要是……的话”。",
+    "longExplanation": "句型“～としたら”用于提出一个假定存在的事态或前提条件（相当于“如果假定……是真的”），并在此假定成立的基础上，推导、陈述后半句的判断、推论或应对方案。常用于逻辑假设或对未来可能出现情况的推想。",
+    "formation": "动词普通形 + としたら | い形容词 + としたら | な形容词 + だとしたら | 名词 + だとしたら",
+    "examples": [
+      {
+        "translation": "如果明天真要下雨的话，我们就带上雨伞吧。"
+      },
+      {
+        "translation": "要是这个蛋糕不好吃的话，恐怕谁也不会吃的吧。"
+      },
+      {
+        "translation": "如果他真是生病了，请务必让他立刻去医院看病。"
+      },
+      {
+        "translation": "如果她是学生的话，这家餐厅应该会有优惠折扣吧。"
+      }
+    ]
   },
   "ja_として_66": {
     "title": "～として (〜to shite)",
-    "shortExplanation": "指示 a role, capacity, or identity; 'as', 'in the capacity of'.",
-    "longExplanation": "The ～として grammar point is 用于表达 a role, capacity, or identity in which someone or something functions. 可以翻译为 'as' or 'in the capacity of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + として, い-形容词 + として, な-形容词 + だとして, 名词 + だとして"
+    "shortExplanation": "明确指出某人或某事物所具备的资格、身份、立场、角色或名义；“作为……”、“以……身份/名义”。",
+    "longExplanation": "句型“～として”直接接在名词后，用于指明动作主体所处的立场、社会地位、身份、所具备的资格，或者某个事物所充当的功能、种类与角色。此外，若修饰后项名词，可使用“～としての + 名词”的形式。",
+    "formation": "名词 + として（修饰名词时用 名词 + としての + 名词）",
+    "examples": [
+      {
+        "translation": "他作为一名律师在开展工作。"
+      },
+      {
+        "translation": "这道料理可以作为点心小吃来食用。"
+      },
+      {
+        "translation": "她作为领袖深受大家的尊敬。"
+      },
+      {
+        "translation": "这本书被用作参考书。"
+      }
+    ]
   },
   "ja_どんなにことか_67": {
     "title": "～どんなに～ことか (〜donna ni〜koto ka)",
-    "shortExplanation": "表示 the extent of something or emphasizes the degree of a condition or situation.",
-    "longExplanation": "The ～どんなに～ことか grammar point is used to emphasize the extent of a condition or circumstance, and to express how much or to what degree something is happening. It is often translated as 'how much', 'how greatly', or 'to what extent' in English. This pattern is usually used with an adjective or verb in a sentence.",
-    "formation": "どんなに + 形容词 + ことか, どんなに + 动词 + ことか"
+    "shortExplanation": "感叹句表达，强烈感叹某种情绪、心理或事态的程度之深；“多么……啊”、“不知有多么……”。",
+    "longExplanation": "句型“～どんなに～ことか”是用于表达强烈感慨与抒发情感的感叹句型。说话人借此强调某种状态、心情或经历的程度极其深广，达到了常人难以想象或言表的地步。句中的“どんなに”常可与“どれほど”（多么）、“なんと”（何等）等疑问副词替换使用。",
+    "formation": "どんなに + 动词普通形 / い形容词 / な形容词 + な + ことか",
+    "examples": [
+      {
+        "translation": "到底有多累，简直无法用言语来形容。"
+      },
+      {
+        "translation": "不知该有多么艰辛，她每天依然拼命地努力工作。"
+      },
+      {
+        "translation": "他的成功该是多么令人高兴的一件事啊。"
+      },
+      {
+        "translation": "和大家一起去旅行，那该是多么令人快乐的事情啊。"
+      }
+    ]
   },
   "ja_どんなにても_68": {
     "title": "どんなに～ても (donna ni ~ temo)",
-    "shortExplanation": "表示 'no matter how much' or 'even if'; emphasizes the degree of a situation.",
-    "longExplanation": "The どんなに～ても grammar point is used to emphasize the degree of a situation or condition, often translated as 'no matter how much' or 'even if' in English. It can be used with verbs, い-adjectives, and な-adjectives.",
-    "formation": "どんなに + 动词-てform + も, どんなに + い-形容词-てform + も, どんなに + な-形容词 + でも"
+    "shortExplanation": "表示极端的让步假定，无论动作或状态达到何种程度，后项的结果依然不会改变；“无论多么……也……”、“不管怎么……都……”。",
+    "longExplanation": "句型“どんなに～ても”用来构成极端条件的让步句，强调无论前项的事态或动作达到怎样的高度、深浅或极限程度，后项所阐述的客观事实、意志或结果都绝不会动摇或发生改变。相当于汉语的“哪怕再……也……”、“无论怎么……都”，与“いくら〜ても”意思相近。",
+    "formation": "どんなに + 动词て形 + も | どんなに + い形容词（去「い」加「くても」）| どんなに + な形容词 / 名词 + でも",
+    "examples": [
+      {
+        "translation": "无论多么努力用功学习，依然会有弄不明白的地方。"
+      },
+      {
+        "translation": "不管跑得有多快，我始终都赢不了他。"
+      },
+      {
+        "translation": "无论身体多么疲惫，在把工作完成之前都不能回家。"
+      },
+      {
+        "translation": "哪怕再怎么美味可口，我也吃不下更多了。"
+      }
+    ]
   },
   "ja_ないことはない_69": {
     "title": "～ないことはない (〜nai koto wa nai)",
-    "shortExplanation": "表达 idea that 'it's not that it's impossible' or 'it's not that it cannot be done'.",
-    "longExplanation": "The ～ないことはない grammar point is 用于表达 that something is not impossible, or not that it cannot be done. It creates a softer, more indirect way of saying that something is possible or can be done, but not necessarily easy or preferred.",
-    "formation": "动词-ない form + ことはない"
+    "shortExplanation": "通过双重否定来表示委婉、消极或有所保留的肯定；“并不是不……”、“也不是不能……”。",
+    "longExplanation": "句型“～ないことはない”（口语中亦常作“～ないこともない”）通过两次否定构成肯定语气。说话人并非全盘否定某事，而是想表达“如果要说完全不可能或完全不做倒也不是，但并不太情愿或存在某些困难、附加条件”，具有委婉、谨慎或保留余地的陈述色彩。",
+    "formation": "动词ない形 + ことはない | い形容词（去「い」加「くない」）+ ことはない | な形容词 + ではない / じゃない + ことはない | 名词 + ではない / じゃない + ことはない",
+    "examples": [
+      {
+        "translation": "这道题并不是解不出来，只是貌似挺花时间的。"
+      },
+      {
+        "translation": "见他一面倒也不是不行，只是我不太想和他多说话。"
+      },
+      {
+        "translation": "这部电影并不是不可以看，但我感觉其他电影更精彩一些。"
+      },
+      {
+        "translation": "那本书并不是读不下去，只是篇幅很长，请做好心理准备。"
+      }
+    ]
   },
   "ja_ないと_70": {
     "title": "～ないと (〜nai to)",
-    "shortExplanation": "Express a condition; 'if... not', 'unless', 'must'.",
-    "longExplanation": "The ～ないと grammar point is 用于表达 a condition, focusing on the negative consequences if the action is not performed. 可以翻译为 'if... not', 'unless', or 'must' in English. The formation is simply attaching ないと to the negative form of a verb.",
-    "formation": "动词-negative form + ないと"
+    "shortExplanation": "表示假定否定条件，“如果不……的话就……”；后项常接续不良后果或困境。",
+    "longExplanation": "句型“～ないと”接在动词否定形（ない形）后，用于提示假定否定条件，相当于“如果不……的话”。它通常强调若不付诸某种行动，就会必然招致麻烦、负面影响或不良后果。此外，在日常口语中若单独出现在句末（为“〜ないといけない”或“〜ないとだめだ”的省略），则表示“必须做某事”。",
+    "formation": "动词ない形 + と",
+    "examples": [
+      {
+        "translation": "如果不吃早餐的话，肚子就会饿。"
+      },
+      {
+        "translation": "如果不做作业的话，就会被老师训斥。"
+      },
+      {
+        "translation": "如果不充电的话，手机就没法用了。"
+      },
+      {
+        "translation": "如果不把这次事故上报的话，问题就会变得更严重。"
+      }
+    ]
   },
   "ja_なぜなら_71": {
     "title": "～なぜなら (〜nazenara)",
-    "shortExplanation": "Express a reason or explanation; 'because', 'the reason is'.",
-    "longExplanation": "The ～なぜなら grammar point is used to provide a reason or explanation for a preceding statement or situation. 可以翻译为 'because' or 'the reason is' in English. It is often followed by から or だから to emphasize the reason or cause.",
-    "formation": "Sentence/Statement + なぜなら + Reason + から/だから"
+    "shortExplanation": "用于对前文所述的结论或事实补充说明原因，“之所以……是因为……”、“因为……”。",
+    "longExplanation": "接续词“～なぜなら”（亦可作“なぜならば”）用于在先行句中陈述某种结果、现象或结论后，紧接着在后句引出并阐述其背后的原因或根据（相当于“究其原因在于……”）。在语法搭配上，句尾通常与“〜からだ”、“〜からである”或“〜から”相互呼应，使句子的因果逻辑关系更加明确严谨。",
+    "formation": "句子（结果）。なぜなら（ば） + 理由 + から（だ） / だから",
+    "examples": [
+      {
+        "translation": "我很喜欢这家餐厅。因为这里的饭菜非常可口。"
+      },
+      {
+        "translation": "她没有通过考试。因为她此前根本没有用功学习。"
+      },
+      {
+        "translation": "我不去看电影了。因为我今天很忙。"
+      },
+      {
+        "translation": "可以把这个项目委托给他负责。因为他拥有丰富的经验。"
+      }
+    ]
   },
   "ja_など_72": {
     "title": "～など (〜nado)",
-    "shortExplanation": "指示 a non-exhaustive list of examples; 'such as', 'things like', 'among others'.",
-    "longExplanation": "The ～など grammar point is used to give a non-exhaustive list of examples, meaning the mentioned items are only some of many possibilities. 可以翻译为 'such as', 'things like', or 'among others' in English. This grammar point can be used with nouns.",
-    "formation": "名词 + など"
+    "shortExplanation": "用于不完全列举代表性事物，“……等”、“……之类”。",
+    "longExplanation": "副助词“～など”接在名词之后，用于列举具有代表性的事例，借以暗示除了列出的项目之外还有其他同类事物，相当于中文的“……等等”、“……之类的”。在句子中常与助词“や”配合使用，构成“AやBなど”的形式。",
+    "formation": "名词 + など",
+    "examples": [
+      {
+        "translation": "我在市场上买了鱼和水果等等。"
+      },
+      {
+        "translation": "他能说日语、英语、汉语等多种语言。"
+      },
+      {
+        "translation": "在美术馆里，我参观了绘画、雕塑等艺术作品。"
+      },
+      {
+        "translation": "这家店出售面包、蛋糕等点心。"
+      }
+    ]
   },
   "ja_なんか_73": {
     "title": "～なんか (〜nanka)",
-    "shortExplanation": "表示 the idea of 'things like' or 'something like', used for listing examples or downplaying something.",
-    "longExplanation": "The ～なんか grammar point is used for listing examples by indicating 'things like' or 'something like'. It can also be used to downplay or devalue something, making it seem less important or less significant than it really is.",
-    "formation": "名词 + なんか, 动词-casual + なんか, い-形容词 + なんか, な-形容词 + なんか"
+    "shortExplanation": "“など”的口语形式，用于举例，或带有轻视、自谦、强烈否定等感情色彩，“……之类的”、“……这种东西”。",
+    "longExplanation": "副助词“～なんか”是“など”在口语中的随和表达。除了用于随意列举示例之外，它经常带有贬低、轻视某事物的语气，认为其微不足道或不值一提；在涉及自身时常表示谦逊客气；而在否定句中，则能够强化全面否定的语气，表示“绝不……”、“根本不……”。",
+    "formation": "名词 + なんか | 动词普通形 + なんか | い形容词 + なんか | な形容词 + （な）なんか",
+    "examples": [
+      {
+        "translation": "钱这种东西我才不需要呢。"
+      },
+      {
+        "translation": "他连钢琴之类的乐器也会弹。"
+      },
+      {
+        "translation": "我哪有什么忙啊，一点也不忙。"
+      },
+      {
+        "translation": "她可谈不上什么亲切体贴。"
+      }
+    ]
   },
   "ja_において_74": {
     "title": "～において (〜ni oite)",
-    "shortExplanation": "指示 the place, time, or context where an action or situation takes place.",
-    "longExplanation": "The ～において grammar point is 用于表示 where an action or situation occurs. It can often be translated as 'in', 'at', or 'on' in English. In some cases, it can also express a specific context or aspect. This grammar point can be used with verbs, adjectives, and nouns.",
-    "formation": "名词 (Place/Time/Context) + において"
+    "shortExplanation": "郑重的书面语，表示动作或事件发生的场所、时代、时间、领域或场合，“在……”、“于……”。",
+    "longExplanation": "句型“～において”是一种庄重严谨的书面语表达，相当于口语中的助词“で”。用于指示动作发生或状态存在的具体地点、历史时期、时间阶段、专业领域或特定环境。在句子中直接修饰后续名词时，需转变为“〜における + 名词”的形式。",
+    "formation": "名词（场所 / 时间 / 领域 / 场合） + において（修饰名词时用 における + 名词）",
+    "examples": [
+      {
+        "translation": "在日本，盂兰盆节是全家人团聚的重要节日。"
+      },
+      {
+        "translation": "在会议上，他的意见最具有说服力。"
+      },
+      {
+        "translation": "在科学领域中，各项研究工作每天都在取得进展。"
+      },
+      {
+        "translation": "在幼儿时期，孩子们吸收并记忆事物的能力非常惊人。"
+      }
+    ]
   },
   "ja_にかわって_75": {
     "title": "～にかわって (〜ni kawatte)",
-    "shortExplanation": "表示 'in place of', 'on behalf of', or 'instead of'.",
-    "longExplanation": "The ～にかわって grammar point is 用于表达 that someone or something is acting in place of, on behalf of, or instead of someone or something else. Typically used with nouns (e.g., 人, 会社, etc.).",
-    "formation": "名词 + にかわって"
+    "shortExplanation": "表示替代某人或代表某方采取行动，“代替……”、“代表……”、“换作……”。",
+    "longExplanation": "句型“～にかわって”（常写作“～に代わって”或“～に換わって”）接在名词之后，表示某人顶替原本应当出席或行动的人，或者代表他人、某个组织去执行某事；亦可表示新事物代替旧事物发挥效用。修饰后续名词时，需使用“〜にかわる + 名词”的形式。",
+    "formation": "名词 + にかわって（修饰名词时用 にかわる + 名词）",
+    "examples": [
+      {
+        "translation": "因为他生病了，所以由我来出席会议。我将代替他出席这次会议。"
+      },
+      {
+        "translation": "母亲很忙，所以我代替母亲做饭。"
+      },
+      {
+        "translation": "这次旅行换作我和大家一起去，代替了我妹妹。"
+      },
+      {
+        "translation": "由于老师出差不在，助教将代替老师负责这堂课。"
+      }
+    ]
   },
   "ja_にしては_76": {
     "title": "～にしては (〜ni shite wa)",
-    "shortExplanation": "Express 'for' or 'considering' in the sense of being unusual or unexpected.",
-    "longExplanation": "The ～にしては grammar point is 用于表达 that something is unusual or unexpected considering a specific condition or context. 可以翻译为 'for' or 'considering' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + にしては, い-形容词 + にしては, な-形容词 + にしては, 名词 + にしては"
+    "shortExplanation": "表示实际情况与由某个前提或标准所预期的不一致，“就……而言却……”、“照……来说却出乎意料”。",
+    "longExplanation": "句型“～にしては”以某种身份、条件或事实作为评价基准，指出其实际表现或状态与该基准通常所应有的水准并不相称，带有出乎意料或感到意外的评价语气（相当于“明明是……却……”、“就……来说算挺不错/反常”）。后项通常陈述客观事实或评价，不能接表示说话人意愿、愿望或命令的语句。",
+    "formation": "动词普通形 + にしては | い形容词 + にしては | な形容词（词干 / である） + にしては | 名词 + にしては",
+    "examples": [
+      {
+        "translation": "作为初学者来说，她游泳游得真棒。"
+      },
+      {
+        "translation": "以这么便宜的价格而言，这顿寿司可以说是相当美味了。"
+      },
+      {
+        "translation": "就他年纪轻轻来说，表现得非常沉稳成熟。"
+      },
+      {
+        "translation": "那个人虽说是外国人，日语却说得相当流利地道。"
+      }
+    ]
   },
   "ja_にしても_77": {
     "title": "～にしても (〜ni shitemo)",
-    "shortExplanation": "表示 'even if', 'no matter', 'regardless of'.",
-    "longExplanation": "The ～にしても grammar point is 用于表达 that even if a certain condition is true or a certain situation occurs, the outcome will not change. 可以翻译为 'even if', 'no matter', or 'regardless of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + にしても, い-形容词 + にしても, な-形容词 + だにしても, 名词 + だにしても"
+    "shortExplanation": "表示假定让步，“即使……也……”、“就算……也……”。",
+    "longExplanation": "句型“～にしても”用于提出假定条件或退一步承认某种既成事实，表示即便承认前项的情况成立，后项的结论、态度或行动也丝毫不会改变（相当于“就算是……也仍然……”）。句末常伴随说话人的主观评价、判断、建议或不满之情。",
+    "formation": "动词普通形 + にしても | い形容词 + にしても | な形容词（词干 / である / だ） + にしても | 名词（词干 / である / だ） + にしても",
+    "examples": [
+      {
+        "translation": "就算是下雨，也必须得去学校。"
+      },
+      {
+        "translation": "即便她正在发脾气，沟通交流也是无法回避的。"
+      },
+      {
+        "translation": "就算这家餐厅价钱较贵，但饭菜质量上乘，非常值得推荐。"
+      },
+      {
+        "translation": "就算他很有名气，谈论人家的私生活也是很不礼貌的。"
+      }
+    ]
   },
   "ja_について_78": {
     "title": "～について (〜ni tsuite)",
-    "shortExplanation": "Expressing 'about', 'concerning', or 'regarding'.",
-    "longExplanation": "The ～について grammar point is 用于表达 'about', 'concerning', or 'regarding' a certain topic or subject. It is often used in both casual and formal contexts. The formation is simple – just add について after the noun that represents the topic you are discussing.",
-    "formation": "名词 + について"
+    "shortExplanation": "提示思考、陈述、研究或讨论的主题与内容，“关于……”、“就……”。",
+    "longExplanation": "句型“～について”接在名词之后，用于引出交谈、思考、调查、研究或写作等动作所围绕的具体主题、对象或领域，相当于中文的“关于……”、“就……”。若需修饰后续名词，需转变为“〜についての + 名词”的形式。常与“考える”、“話す”、“調べる”等动词搭配。",
+    "formation": "名词 + について（修饰名词时用 についての + 名词）",
+    "examples": [
+      {
+        "translation": "我想深入了解关于日本文化的知识。"
+      },
+      {
+        "translation": "让我们针对他的意见共同讨论一下吧。"
+      },
+      {
+        "translation": "关于这个问题，请详细地跟我讲解一下。"
+      },
+      {
+        "translation": "我们必须认真思考关于孩子们的教育问题。"
+      }
+    ]
   },
   "ja_にとって_79": {
     "title": "～にとって (〜ni totte)",
-    "shortExplanation": "表达 meaning 'for', 'to', 'from the perspective of'.",
-    "longExplanation": "The ～にとって grammar point is 用于表达 the meaning 'for', 'to', or 'from the perspective of' when describing someone or something's point of view, feelings, benefits, or importance. It is used with all types of words, such as verbs, adjectives, and nouns.",
-    "formation": "名词 (person or thing) + にとって + 动词/形容词/名词"
+    "shortExplanation": "表示评判基准或立场，“对……来说”、“在……看来”。",
+    "longExplanation": "句型“～にとって”接在表示人物、团体或立场的名词之后，表示从该主体的视角或立场出发来看待事物时，所做出的价值评判、感受或衡量（相当于“对……而言”）。后项通常接表示重要性、难易度、利害关系等评价性的词语（如“大切だ”、“必要だ”、“難しい”等）。修饰后续名词时，需变为“〜にとっての + 名词”。",
+    "formation": "名词（人物 / 组织等立场） + にとって（修饰名词时用 にとっての + 名词）",
+    "examples": [
+      {
+        "translation": "对我来说，身体健康是最重要的事情。"
+      },
+      {
+        "translation": "对那家公司而言，这个项目具有十分重要的意义。"
+      },
+      {
+        "translation": "对小孩子们来说，玩具是很有趣的东西。"
+      },
+      {
+        "translation": "对于外国人而言，日语是比较难学的语言之一。"
+      }
+    ]
   },
   "ja_によって_80": {
     "title": "～によって (〜ni yotte)",
-    "shortExplanation": "指示 the reason or cause, difference depending on a factor, or methods used.",
-    "longExplanation": "The ～によって grammar point is 用于表达 the reason or cause of something, to show a difference depending on a certain factor, or to indicate the method or means by which something is done. 可以翻译为 'by', 'depending on', 'due to', or 'according to' in English. The formation is the same for verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-casual + によって, い-形容词 + によって, な-形容词 + によって, 名词 + によって"
+    "shortExplanation": "表示原因理由（“由于……”）、手段方法（“通过……”）、或依情况而异（“根据……”、“因……而异”）。",
+    "longExplanation": "句型“～によって”是日语中用法广泛的核心句型，主要包含以下几种用法：(1) 表示引发某种事态的原因或理由（“由于……”、“因……”）；(2) 表示达成某种结果的手段、方法或途径（“通过……”、“凭借……”）；(3) 表示因情况、条件或对象的不同而产生差异（“根据……”、“因……而不同”）；(4) 在被动句中表示创作者或发明者（“由……”）。修饰后续名词时需变为“〜による + 名词”。",
+    "formation": "名词 + によって（修饰名词时用 による + 名词） | 动词普通形 + ことによって",
+    "examples": [
+      {
+        "translation": "那起事故是由恶劣天气引发的。"
+      },
+      {
+        "translation": "根据生活习惯的不同，健康状况也会发生变化。"
+      },
+      {
+        "translation": "他的成功是凭借勤奋努力换来的。"
+      },
+      {
+        "translation": "结果会因考试难度的不同而有所差异。"
+      }
+    ]
   },
   "ja_によれば_81": {
     "title": "～によれば (〜ni yoreba)",
-    "shortExplanation": "Means 'according to', 'based on' or 'by'.",
-    "longExplanation": "The ～によれば grammar point is 用于表达 information, opinions or a judgement made based on a certain source. 可以翻译为 'according to', 'based on', or 'by' in English. This grammar point is typically used with a noun that represents the source of information.",
-    "formation": "名词 + によれば"
+    "shortExplanation": "用于引述信息来源或传闻的根据，“根据……”、“据……说”。",
+    "longExplanation": "句型“～によれば”（与“～によると”意思相同）接在表示消息来源的名词（如天气预报、报刊文章、调查数据、某人言论等）之后，用于交代后面信息的出处与依据（相当于“据……称”、“根据……记载”）。句尾通常与表示传闻或推量的句尾表达（如“〜そうだ”、“〜ということだ”、“〜らしい”、“〜だろう”）相呼应。",
+    "formation": "名词（消息来源） + によれば + 传闻/推测表达（〜そうだ / 〜ということだ / 〜らしい / 〜だろう）",
+    "examples": [
+      {
+        "translation": "据天气预报说，明天大概是个晴天。"
+      },
+      {
+        "translation": "据老师讲，这道题目好像挺简单的。"
+      },
+      {
+        "translation": "根据调查显示，年轻人的吸烟率正在下降。"
+      },
+      {
+        "translation": "据报纸报道，那家企业似乎面临着破产的危机。"
+      }
+    ]
   },
   "ja_に対して_82": {
     "title": "～に対して (～ni taishite)",
-    "shortExplanation": "指示 a target or contrast; 'toward', 'against', 'in contrast to', 'in response to'.",
-    "longExplanation": "The ～に対して grammar point is 用于表示 the target or direction of an action, or to show a contrast between two situations or objects. 可以翻译为 'toward', 'against', 'in contrast to', or 'in response to' in English. It can be used with verbs, adjectives, and nouns.",
-    "formation": "动词-casual + に対して, い-形容词 + に対して, な-形容词 + に対して, 名词 + に対して"
+    "shortExplanation": "表示动作或态度的指向对象（“对……”、“针对……”），或表示两者鲜明对照（“与……相对”、“相比之下”）。",
+    "longExplanation": "句型“～に対して”主要有两种核心用法：(1) 指示动作、态度、言语或感情所指向的对象（相当于“对待……”、“针对……”）；(2) 用于将两个事物或情况并列对比，突出它们截然相反的特征（相当于“与……相反”、“相较于……”）。当直接修饰后续名词时，需变形为“〜に対する + 名词”。",
+    "formation": "名词 + に対して | 动词/形容词普通形（な形容词+な/である+の、名词+な/である+の） + に対して（修饰名词时用 に対する + 名词）",
+    "examples": [
+      {
+        "translation": "对待孩子们，父母应当始终保持温柔慈爱。"
+      },
+      {
+        "translation": "面对提出的问题，他坦诚地作出了回答。"
+      },
+      {
+        "translation": "与田中先生的成功形成鲜明对比的是，佐藤先生失败了。"
+      },
+      {
+        "translation": "针对他的意见，我采取了反对的立场。"
+      }
+    ]
   },
   "ja_に比べて_83": {
     "title": "～に比べて (〜ni kurabete)",
-    "shortExplanation": "Comparing to; in comparison with; as opposed to.",
-    "longExplanation": "The ～に比べて grammar point is used to compare two things or situations by highlighting their differences. 可以翻译为 'comparing to', 'in comparison with', or 'as opposed to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + に比べて, い-形容词 + に比べて, な-形容词 + だ/である + に比べて, 名词 + だ/である + に比べて"
+    "shortExplanation": "表示以某事物作为基准进行比较，“与……相比”、“比起……”。",
+    "longExplanation": "句型“～に比べて”（源于动词“比べる”）接在名词等之后，用于把某人或某事物作为比较的基准，以此凸显后项事物在性质、程度或特征上的差异与区别（相当于“比起……来说”、“与……相比”）。在表达中也可以使用“〜に比べ”或“〜に比べると”。",
+    "formation": "名词 + に比べて | 动词/形容词普通形 + のに比べて",
+    "examples": [
+      {
+        "translation": "与夏天相比，冬天要寒冷得多。"
+      },
+      {
+        "translation": "这个西红柿比起红透的西红柿来说味道差了些。"
+      },
+      {
+        "translation": "比起我来，他的英语要优秀得多。"
+      },
+      {
+        "translation": "比起东京，京都可以说是一座宁静的城市。"
+      }
+    ]
   },
   "ja_に関して_84": {
     "title": "～に関して (〜ni kanshite)",
-    "shortExplanation": "Regarding, concerning, about, with respect to.",
-    "longExplanation": "The ～に関して grammar point is 用于表达 the topic or subject matter one is talking about. 可以翻译为 'regarding', 'concerning', 'about', or 'with respect to' in English. The formation is simple and remains the same regardless of it being used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "名词 + に関して"
+    "shortExplanation": "郑重的书面语，引出涉及的话题或内容领域，“关于……”、“有关……”、“与……有关”。",
+    "longExplanation": "句型“～に関して”是比“〜について”更为郑重、正式的书面语表达，用于引出讨论、调查、研究或说明所涉及的重大主题、议题或广阔范畴（相当于“关于……”、“涉及到……的事项”）。多见于正式公文、新闻报道、调查报告或学术论文中。修饰后续名词时，需转变为“〜に関する + 名词”的形式。",
+    "formation": "名词 + に関して（修饰名词时用 に関する + 名词）",
+    "examples": [
+      {
+        "translation": "关于健康方面，多加留意是非常重要的。"
+      },
+      {
+        "translation": "关于这个项目，他了解所有的具体细节。"
+      },
+      {
+        "translation": "有关环境问题，我们必须承担起更多的责任。"
+      },
+      {
+        "translation": "关于这起事件的信息目前还不够充分。"
+      }
+    ]
   },
   "ja_の_85": {
     "title": "～の～ (〜no 〜)",
-    "shortExplanation": "指示 possession, attribution, or connection between two nouns.",
-    "longExplanation": "The ～の～ grammar point is 用于展示 the relationship between two nouns in Japanese. 可以翻译为 'of', 'in', or 'the' in English. This grammar point is 用于表示 possession, attribution, or connection between the two nouns.",
-    "formation": "Noun1 + の + Noun2"
+    "shortExplanation": "连接两个名词，表示所属、属性、所在地或两者的关联；相当于汉语的“的”。",
+    "longExplanation": "助词“の”是日语中最基础且核心的格助词之一，置于两个名词之间（名词1 + の + 名词2），以前置名词修饰限定后置名词。常用于表示所属关系（如“我的伞”）、所属机构或产地（如“东京的景点”）、性质内容或专业领域（如“音乐老师”）等。",
+    "formation": "名词1 + の + 名词2",
+    "examples": [
+      {
+        "translation": "这是我的雨伞。"
+      },
+      {
+        "translation": "那座大楼是东京著名的旅游景点。"
+      },
+      {
+        "translation": "他是部长的秘书。"
+      },
+      {
+        "translation": "她是音乐老师。"
+      }
+    ]
   },
   "ja_ばかり_86": {
     "title": "～ばかり (〜bakari)",
-    "shortExplanation": "表示 'only', 'nothing but', 'always', 'just'.",
-    "longExplanation": "The ～ばかり grammar point is 用于表达 that something is only, nothing but, always, or just a certain way. It emphasizes the repeated or continuous nature of an action or state. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-ますstem + ばかり, い-形容词 + ばかり, な-形容词 + ばかり, 名词 + ばかり"
+    "shortExplanation": "表示同一事物占绝大多数，或同一动作不断反复发生；“净……”、“尽是……”、“光是……”，常带有不满或责备的语气。",
+    "longExplanation": "句型“～ばかり”用于强调某种事物在数量上极多、占据全部（名词 + ばかり，意为“全都是……”），或者某一动作反复频繁地进行（动词て形 + ばかりいる，意为“净顾着……、总是……”）。在日常表达中，往往带有说话人觉得过多、过分，因而产生不满、责备或遗憾的消极语感。",
+    "formation": "名词 + ばかり | 动词て形 + ばかり(いる)",
+    "examples": [
+      {
+        "translation": "他整天净顾着打游戏。"
+      },
+      {
+        "translation": "这个房间里全都是漂亮的东西。"
+      },
+      {
+        "translation": "她一门心思只顾着学习，根本没有时间去玩。"
+      },
+      {
+        "translation": "他的话里全都是谎言，根本无法相信。"
+      }
+    ]
   },
   "ja_ばかりか_87": {
     "title": "～ばかりか (〜bakarika) ～も (mo)",
-    "shortExplanation": "Not only... but also; more than just; not just",
-    "longExplanation": "The grammar point ～ばかりか ～も is used to emphasize that something is not limited to only one thing, but also includes another thing. 可以翻译为 'not only... but also', 'more than just', or 'not just' in English. This expression is typically used with verbs, adjectives, and nouns.",
-    "formation": "动词-casual + ばかりか/も, い-形容词 + ばかりか/も, な-形容词 + だ + ばかりか/も, 名词 + だ + ばかりか/も"
+    "shortExplanation": "表示不仅限于前项，更有甚者还包括后项；“不仅……而且……”，“不但……连……也……”，后项常与“も”、“まで”等呼应。",
+    "longExplanation": "句型“～ばかりか”（后半句多与“～も”搭配）用于强调情况并不仅停留在前项所说的事实上，后项还会累加程度更深或范围更广的事物（相当于汉语的“不仅……而且……”）。前后两项通常在感情色彩上保持一致（同为正面评价或同为负面问题）。",
+    "formation": "动词普通形 + ばかりか | い形容词 + ばかりか | な形容词 + (な/である)ばかりか | 名词 + (である)ばかりか",
+    "examples": [
+      {
+        "translation": "她不仅会说英语，连法语也会说。"
+      },
+      {
+        "translation": "这家餐厅不仅味道好，而且服务也非常棒。"
+      },
+      {
+        "translation": "聚会不仅非常开心，而且料理也很美味。"
+      },
+      {
+        "translation": "他不仅头脑聪明，而且体育也很擅长。"
+      }
+    ]
   },
   "ja_はずだ_88": {
     "title": "～はずだ (〜hazu da)",
-    "shortExplanation": "表示 an expectation, 'should' or 'it is supposed to'.",
-    "longExplanation": "The ～はずだ grammar point is 用于表达 an expectation or belief that something is true, even if it has not been confirmed. 可以翻译为 'should', 'it is supposed to', or 'ought to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + はずだ, い-形容词 + はずだ, な-形容词 + なはずだ, 名词 + のはずだ"
+    "shortExplanation": "基于某种客观根据、常理或已知事实进行推断，表示理所当然该如此；“按理应该……”、“肯定会……”。",
+    "longExplanation": "句型“～はずだ”用于说话人依据一定的客观事实、确凿理由或自然规律，做出具有高度把握的合情合理的推测与判断（相当于汉语的“按道理应当……”、“想必一定会……”）。说话人深信该事情理应如此发生。",
+    "formation": "动词普通形 + はずだ | い形容词 + はずだ | な形容词 + なはずだ | 名词 + のはずだ",
+    "examples": [
+      {
+        "translation": "他应该已经到了。"
+      },
+      {
+        "translation": "吃了这种药，疼痛应该就会消失。"
+      },
+      {
+        "translation": "明天按理应该是晴天。"
+      },
+      {
+        "translation": "她按理说应该很健康精神。"
+      }
+    ]
   },
   "ja_ばのに_89": {
     "title": "～ば～のに (〜ba 〜noni)",
-    "shortExplanation": "表示 regret or dissatisfaction; 'if only', 'wish'.",
-    "longExplanation": "The ～ば～のに grammar point is 用于表达 regret or dissatisfaction about a situation that didn't happen or to express a contrary view of the actual situation. 可以翻译为 'if only' or 'wish' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-ば form + ～のに, い-形容词-ば form + ～のに, な-形容词 + であれば + ～のに, 名词 + であれば + ～のに"
+    "shortExplanation": "表示与过去或现在事实相反的假定，抒发遗憾、悔恨或不满的心情；“要是……就好了（却没能……）”。",
+    "longExplanation": "句型“～ば～のに”由假定形“～ば”与表示逆接转折的句尾助词“～のに”组合而成。用于设想一种与事实完全相反的假定条件，并说明如果该条件成立本可获得某种理想结果，借此强烈表达说话人内心的懊悔、遗憾或失望之情。",
+    "formation": "动词ば形 + ～のに | い形容词词尾い变ければ + ～のに | な形容词 + であれば/なら + ～のに | 名词 + であれば/なら + ～のに",
+    "examples": [
+      {
+        "translation": "要是早点来的话，就能赶上电车了（真可惜）。"
+      },
+      {
+        "translation": "要是多用功学习的话，就能通过考试了。"
+      },
+      {
+        "translation": "她要是再温柔一点的话，和他就能相处得很融洽了。"
+      },
+      {
+        "translation": "要是日语好的话，就能读懂这本书了。"
+      }
+    ]
   },
   "ja_ばほど_90": {
     "title": "～ば～ほど (〜ba 〜hodo)",
-    "shortExplanation": "表示 'the more ~, the more ~'; a proportional relationship between two phrases.",
-    "longExplanation": "The ～ば～ほど grammar point is 用于表达 a proportional relationship between two phrases, meaning 'the more A, the more B'. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
-    "formation": "动词-casual + ば + 动词-casual + ほど, い-形容词 + ば + い-形容词 + ほど, な-形容词 + であれば + な-形容词 + ほど"
+    "shortExplanation": "表示前后两件事的程度呈正比例变化；“越……越……”、“愈……愈……”。",
+    "longExplanation": "句型“～ば～ほど”通过重复同一个动词或形容词的假定形（ば形）与基本形搭配“ほど”，来表示前后两个分句之间的正比例伴随关系。即前项的动作或状态程度每加深一分，后项的事态也会相应地随之深化或变化（相当于汉语的“越……就越……”）。",
+    "formation": "动词ば形 + 动词辞书形 + ほど | い形容词词尾い变ければ + い形容词 + ほど | な形容词 + であれば/なら + な形容词 + なほど",
+    "examples": [
+      {
+        "translation": "起得越早，时间就越多。"
+      },
+      {
+        "translation": "越是练习，进步就越快。"
+      },
+      {
+        "translation": "料理越美味，大家就越开心。"
+      },
+      {
+        "translation": "日语越好，在日本的生活就会越轻松。"
+      }
+    ]
   },
   "ja_はもちろんも_91": {
     "title": "～はもちろん～も (〜wa mochiron 〜mo)",
-    "shortExplanation": "Used for emphasizing that not only one thing but also another thing is included. It means 'not only... but also' or 'of course... and...'.",
-    "longExplanation": "The ～はもちろん～も grammar point is used to emphasize that not only the first thing mentioned is included, but also the second thing. 可以翻译为 'not only... but also' or 'of course... and...' in English. This grammar phrase can be used with nouns.",
-    "formation": "Noun1 + はもちろん + Noun2 + も"
+    "shortExplanation": "前项作为理所当然的前提，进一步强调后项也同样如此；“……自不必说，……也……”、“不用说……就连……也……”。",
+    "longExplanation": "句型“～はもちろん～も”用于把前项事物视为众所周知、理所当然的前提先列举出来，紧接着指出后项也同样具备这种特质或状况（相当于汉语的“A是理所当然的，不仅如此B也……”、“A自不必说，连B也……”），用以拓宽范围并起到加重语气的修辞效果。",
+    "formation": "名词1 + はもちろん + 名词2 + も",
+    "examples": [
+      {
+        "translation": "他数学就不用说了，英语也非常擅长。"
+      },
+      {
+        "translation": "这家餐厅日料自不必说，西餐也非常美味。"
+      },
+      {
+        "translation": "我的兴趣爱好里音乐自不用说，阅读我也非常喜欢。"
+      },
+      {
+        "translation": "东京不仅观光旅游业发达，商务往来也十分繁盛。"
+      }
+    ]
   },
   "ja_ばよかった_92": {
     "title": "～ばよかった (〜ba yokatta)",
-    "shortExplanation": "Express a sense of regret; 'I wish', 'it would have been better if'.",
-    "longExplanation": "The ～ばよかった grammar point is 用于表达 a sense of regret or to convey that one wishes something had been done differently. 可以翻译为 'I wish' or 'it would have been better if' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
-    "formation": "动词-ば-form + よかった, い-形容词-く + ばよかった, な-形容词 + ならよかった"
+    "shortExplanation": "对过去未能做某事感到后悔、懊恼或遗憾；“要是……就好了”、“要是早知道……就好了”。",
+    "longExplanation": "句型“～ばよかった”用于说话人回顾过去时，对当时没有采取某种行动而深感懊悔与惋惜。表示“如果当时做了这件事，结果肯定会比现在好得多”，常用于自我反省或表达由衷的遗憾之情。",
+    "formation": "动词ば形 + よかった | い形容词词尾い变ければ + よかった | な形容词 + ならよかった",
+    "examples": [
+      {
+        "translation": "早点起床就好了。"
+      },
+      {
+        "translation": "昨天要是去参加聚会就好了。"
+      },
+      {
+        "translation": "要是买更便宜一点的就好了。"
+      },
+      {
+        "translation": "那时候要是更加用功学习就好了。"
+      }
+    ]
   },
   "ja_ふりをする_93": {
     "title": "～ふりをする (〜furi wo suru)",
-    "shortExplanation": "Pretending or acting as if; 'pretend', 'act like'.",
-    "longExplanation": "The ～ふりをする grammar point is 用于表达 that someone is pretending or acting as if they are doing something, feeling a certain way, or possessing a certain quality. 可以翻译为 'pretend' or 'act like' in English. The formation is the same for verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词 (dictionary form) + ふりをする, い-形容词 + ふりをする, な-形容词 + ふりをする, 名词 + ふりをする"
+    "shortExplanation": "表示故意装出某种假象或姿态，以掩盖真实情况；“装作……”、“假装……”、“装出……的样子”。",
+    "longExplanation": "句型“～ふりをする”用于表示某人表面上做出某种动作、态度或神情，让外人误以为是事实，但其内情或真实状态其实截然相反。常用于掩人耳目、敷衍应付或隐藏真实想法的场合。",
+    "formation": "动词普通形 + ふりをする | い形容词 + ふりをする | な形容词 + な + ふりをする | 名词 + の + ふりをする",
+    "examples": [
+      {
+        "translation": "他装作不知道的样子。"
+      },
+      {
+        "translation": "她装病向学校请了假。"
+      },
+      {
+        "translation": "他虽然装出一副高兴的样子，但心里其实很难过。"
+      },
+      {
+        "translation": "她摆出一副领导者的架势，带领着团队。"
+      }
+    ]
   },
   "ja_べきだ_94": {
     "title": "～べきだ (〜beki da)",
-    "shortExplanation": "Express an obligation or something that should be done (mainly with verbs).",
-    "longExplanation": "The ～べきだ grammar point is 用于表达 a sense of obligation or to indicate something that should be done. In modern Japanese, it is almost always used with verbs in the dictionary form. In English, 可以翻译为 'should' or 'ought to'.",
-    "formation": "动词-dictionary form + べきだ"
+    "shortExplanation": "基于道德观念、社会常识或责任义务，表示理所应当做某事；“应该……”、“应当……”。",
+    "longExplanation": "句型“～べきだ”源于古语助动词“べし”，表示从做人的常理、道德良知、社会责任或公序良俗来看，某件事是理所应当去做、必须去履行的（相当于汉语的“应当”、“应该”）。注意该句型通常不直接用于向长辈或上级提出命令式要求。",
+    "formation": "动词辞书形 + べきだ（动词する变为すべきだ或するべきだ）",
+    "examples": [
+      {
+        "translation": "应该好好学习。"
+      },
+      {
+        "translation": "应该早点睡觉。"
+      },
+      {
+        "translation": "应当保持安静。"
+      },
+      {
+        "translation": "应该向他道歉。"
+      }
+    ]
   },
   "ja_ほど_95": {
     "title": "～ほど～ (〜hodo〜)",
-    "shortExplanation": "表示 the degree or extent; 'about', 'to the extent', 'as much as'.",
-    "longExplanation": "The ～ほど grammar point is 用于表达 the degree or extent of something. 可以翻译为 'about', 'to the extent', or 'as much as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + ほど, い-形容词 + ほど, な-形容词 + ほど, 名词 + ほど"
+    "shortExplanation": "常用于否定句“AはBほど……ない”中进行程度对比，表示“A不如B那样……”、“没有比……更……的”。",
+    "longExplanation": "句型“～ほど……ない”通过将后接词置于否定形式，以B作为高标准的基准，表示A在程度上不及B（相当于汉语的“A不如B……”、“A没有B那么……”）。若以“〜ほど…はない”的形式出现，则表示“没有比……更……的了”，具有最高级的强调含义。",
+    "formation": "名词 + ほど + 形容词/动词否定形 (ない)",
+    "examples": [
+      {
+        "translation": "她跑得没有我快。"
+      },
+      {
+        "translation": "这个蛋糕没有那个蛋糕好吃。"
+      },
+      {
+        "translation": "没有哪个国家的四季能像日本这样分明。"
+      },
+      {
+        "translation": "东京的人没有大阪那么多。"
+      }
+    ]
   },
   "ja_ますように_96": {
     "title": "～ますように (〜masu you ni)",
-    "shortExplanation": "用于表达 a wish or hope for oneself or someone else.",
-    "longExplanation": "The ～ますように grammar point is 用于表达 a wish or hope. It is often used as a closing phrase in letters or messages, and can be applied to both oneself and others. The phrase is typically used with the ます form of the verb, with the final る replaced by ように.",
-    "formation": "动词-ます form, remove final る + ように"
+    "shortExplanation": "置于句末，用于表达对自己或他人的祈愿、祝福或殷切期望；“但愿……”、“祝愿……”、“希望……”。",
+    "longExplanation": "句型“～ますように”常用于神社寺庙参拜祈愿、七夕节许愿短册以及信件、贺卡末尾的祝福语中。它承载着说话人发自内心的虔诚心愿，期望某件美好的事情能够实现或祝福他人平安幸福。",
+    "formation": "动词ます形 + ように",
+    "examples": [
+      {
+        "translation": "但愿明天的考试能考个好成绩。"
+      },
+      {
+        "translation": "希望他能平安无事地归来。"
+      },
+      {
+        "translation": "祈愿大家都能身体健康。"
+      },
+      {
+        "translation": "祝愿她能够获得幸福。"
+      }
+    ]
   },
   "ja_まったくない_97": {
     "title": "まったく～ない (mattaku ~nai)",
-    "shortExplanation": "Completely not; not at all.",
-    "longExplanation": "The まったく～ない grammar point is 用于表达 that something is not the case at all, or to emphasize the negativity of a situation or action. It is used with negative forms of verbs, い-adjectives, and な-adjectives. 可以翻译为 'completely not' or 'not at all' in English.",
-    "formation": "まったく + 动词-negative, まったく + い-形容词-negative, まったく + な-形容词-negative"
+    "shortExplanation": "副词“まったく”与后项的否定形式相呼应，表示彻底、全面的完全否定；“完全不……”、“一点儿也不……”。",
+    "longExplanation": "句型“まったく～ない”通过将副词“まったく”与动词、形容词或名词的否定形式相呼应，达到彻底推翻某种可能性或状态的效果，强调程度上的绝对为零（相当于汉语的“根本不……”、“毫无……”、“完全没有……”）。",
+    "formation": "まったく + 动词否定形 (ない) | まったく + い形容词词尾い变くない | まったく + な形容词 / 名词 + ではない",
+    "examples": [
+      {
+        "translation": "他完全不记得了。"
+      },
+      {
+        "translation": "这个房间一点儿也不暖和。"
+      },
+      {
+        "translation": "她一点儿也没有迟到。"
+      },
+      {
+        "translation": "这个一点儿也不方便。"
+      }
+    ]
   },
   "ja_まで_98": {
     "title": "～まで (〜made)",
-    "shortExplanation": "Express 'until', 'up to', or 'as far as' to indicate the end point of an action or range.",
-    "longExplanation": "The ～まで grammar point is 用于表达 the end point, limit, or extent of an action or range in terms of time, space, or quantity. 可以翻译为 'until', 'up to', or 'as far as' in English. The formation depends on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + まで, い-形容词 + まで, な-形容词 + まで, 名词 + まで"
+    "shortExplanation": "表示时间、空间、地点或数量范围的终点或界限；“到……为止”、“直到……”。",
+    "longExplanation": "格助词/副助词“～まで”用于指出时间、空间移动、动作持续或数量界限的最终终点（相当于汉语的“到……为止”、“直到……”）。接在动词辞书形之后时，表示前项动作或事态一直持续到该临界点为止。",
+    "formation": "名词（时间、场所、范围） + まで | 动词辞书形 + まで",
+    "examples": [
+      {
+        "translation": "我工作到10点。"
+      },
+      {
+        "translation": "我坐电车一直坐到东京。"
+      },
+      {
+        "translation": "他一直跑到精疲力竭为止。"
+      },
+      {
+        "translation": "请读到第5页。"
+      }
+    ]
   },
   "ja_まま_99": {
     "title": "～まま (〜mama)",
-    "shortExplanation": "表示 the state or condition remaining unchanged.",
-    "longExplanation": "The 〜まま grammar point is 用于表示 that a state or condition remains unchanged or continues as it is, without any change or intervention. It can be used with verbs, い-adjectives, な-adjectives, and nouns to 表达 idea of something being left, kept, or maintained in its current state.",
-    "formation": "动词-ます stem + まま, い-形容词 + まま, な-形容词 + なまま, 名词 + のまま"
+    "shortExplanation": "表示某种状态保持不变，在维持该状态的情况下进行下一动作；“保持……的样子”、“就那样……”。",
+    "longExplanation": "句型“～まま”用于表示某个动作产生的结果或某种现存的状态未经改变而一直持续着，并在这种状态下继续开展后续的动作或行为（相当于汉语的“在……状态下”、“保持着……不变而……”）。多用于指出原本应该改变或收拾却没有改变的特殊状况（如开着窗户睡觉）。",
+    "formation": "动词た形 / ない形 + まま | い形容词 + まま | な形容词 + なまま | 名词 + のまま",
+    "examples": [
+      {
+        "translation": "我开着房间的窗户就那么睡着了。"
+      },
+      {
+        "translation": "趁热喝了滚烫的咖啡，把舌头烫伤了。"
+      },
+      {
+        "translation": "他一直那么忙碌，连休息日也在工作。"
+      },
+      {
+        "translation": "她留在家乡没有出国，就找到了工作。"
+      }
+    ]
   },
   "ja_まるでよう_100": {
     "title": "まるで～よう (maru de ~ you)",
-    "shortExplanation": "用于表达 a strong resemblance or similarity; 'as if', 'just like', 'as though'.",
-    "longExplanation": "The まるで～よう grammar point is used to emphasize a strong resemblance or similarity between two things or situations. 可以翻译为 'as if', 'just like', or 'as though' in English. The formation is まるで + phrase/sentence + よう.",
-    "formation": "まるで + phrase/sentence + よう"
+    "shortExplanation": "用于打比方或强调两者极度相似；相当于汉语的“简直就像……一样”、“宛如……”。",
+    "longExplanation": "副词“まるで”（简直、完全）与表示比喻的“～よう”搭配使用，用于生动地描绘某事物与另一事物极其相似，强调夸张或生动的比喻色彩。修饰名词时用“まるで～ような＋名词”，修饰动词或形容词时用“まるで～ように”，结句时用“まるで～ようだ”。",
+    "formation": "まるで + 名词 + のよう(だ/な/に) | まるで + 动词/形容词普通形 + よう(だ/な/に)",
+    "examples": [
+      {
+        "translation": "她美得宛如天使一般。"
+      },
+      {
+        "translation": "他工作起来简直就像个机器人一样。"
+      },
+      {
+        "translation": "那栋房子简直就像一座城堡。"
+      },
+      {
+        "translation": "这里宛如世外乐园一般。"
+      }
+    ]
   },
   "ja_てみる_101": {
     "title": "～てみる (〜te miru)",
-    "shortExplanation": "A grammar structure 用于表达 the action of trying or attempting something to see what happens.",
-    "longExplanation": "The 〜てみる grammar point is used with a verb in the 〜て form followed by みる. It emphasizes doing something as a trial or to see the result. It often translates as 'to try doing something' or 'try it out'.",
-    "formation": "动词-て form + みる"
+    "shortExplanation": "表示为了了解情况或看结果而尝试做某事；相当于汉语的“试着做……”、“做做看”。",
+    "longExplanation": "句型“～てみる”由动词て形后续补助动词“みる”构成。此时的“みる”失去原有的视觉感知含义，转为表示尝试性的动作，用于通过实际去做某件事来了解体验、效果或结果。",
+    "formation": "动词て形 + みる",
+    "examples": [
+      {
+        "translation": "他试着跑了跑，但还是觉得膝盖疼。"
+      },
+      {
+        "translation": "她试着做了做菜，但做砸了。"
+      },
+      {
+        "translation": "在第一次约会时，他想给她一个惊喜，于是试着唱了一首歌。"
+      },
+      {
+        "translation": "这个蛋糕看起来很好吃，我尝一口试试。"
+      }
+    ]
   },
   "ja_みたいだ_102": {
     "title": "～みたいだ (〜mitai da)",
-    "shortExplanation": "Express similarity or appearance; 'like', 'seems', 'looks'.",
-    "longExplanation": "The ～みたいだ grammar point is 用于表达 similarity, appearance or resemblance to something. 可以翻译为 'like', 'seems', or 'looks' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + みたいだ, い-形容词 + みたいだ, な-形容词 + みたいだ, 名词 + みたいだ"
+    "shortExplanation": "用于口语中表示基于感官直觉的推测或打比方；相当于汉语的“好像……”、“似乎……”、“像……一样”。",
+    "longExplanation": "句型“～みたいだ”是口语中极其高频的助动词表达，相当于“～ようだ”。主要用于两种语境：一是根据直观感受、传闻或征兆对事物做出不确定的推测（“似乎……”）；二是用于比喻某种相似的性质或状态（“像……一样”）。修饰名词时用“～みたいな＋名词”，修饰用言时用“～みたいに”。",
+    "formation": "动词普通形 + みたいだ | い形容词 + みたいだ | な形容词词干 + みたいだ | 名词 + みたいだ",
+    "examples": [
+      {
+        "translation": "他好像在生气。"
+      },
+      {
+        "translation": "那栋大楼看起来似乎挺旧的。"
+      },
+      {
+        "translation": "她看起来好像很累。"
+      },
+      {
+        "translation": "这道菜好像很辣。"
+      }
+    ]
   },
   "ja_めったにない_103": {
     "title": "～めったに～ない (〜metta ni 〜nai)",
-    "shortExplanation": "用于表达 that something rarely, hardly ever or seldom happens.",
-    "longExplanation": "The ～めったに～ない grammar point is 用于表达 that something rarely, hardly ever or seldom happens. It is a negative expression and always needs to be used with ～ない (negative form) at the end.",
-    "formation": "めったに + 动词[ない-form] / めったに + い-形容词[ない-form] / めったに + な-形容词[じゃない/ではない-form]"
+    "shortExplanation": "表示动作、事件发生的频率极低；相当于汉语的“很少……”、“难得……”、“几乎不……”。",
+    "longExplanation": "副词“めったに”（极少、罕有）必须与句尾的否定形式“～ない”呼应使用。用于强调某事发生的概率或频率极低，在日常生活或常规状态下几乎不会出现。",
+    "formation": "めったに + 动词ない形 | めったに + い形容词词尾い变くない | めったに + な形容词 + ではない/じゃない",
+    "examples": [
+      {
+        "translation": "他极少在外面餐馆吃饭。"
+      },
+      {
+        "translation": "我平时很少吃寿司。"
+      },
+      {
+        "translation": "这个地区难得下一次雪。"
+      },
+      {
+        "translation": "她几乎从不发脾气。"
+      }
+    ]
   },
   "ja_めったにない_104": {
     "title": "～めったにない (〜metta ni nai)",
-    "shortExplanation": "表示 the rarity of an action, event or state; 'hardly', 'rarely', 'seldom'.",
-    "longExplanation": "The ～めったにない grammar point is 用于表达 that an action, event or state rarely, hardly, or seldom happens. It is usually combined with a negative verb form. Though it can be used with positive verbs, it is uncommon and sounds unnatural.",
-    "formation": "动词-negative + めったにない, い-形容词-negative + めったにない, な-形容词-negative + めったにない, 名词-negative + めったにない"
+    "shortExplanation": "表示某种事态、现象或机会极为罕见；相当于汉语的“极少有……”、“极其罕见”、“难得一见”。",
+    "longExplanation": "句型“～めったにない”可以直接作为谓语，或以“めったにない＋名词”的形式作定语（如“难得的机会”）。常与形式名词“こと/の”搭配，以“动词辞书形＋ことは/のはめったにない”的形式，强调某种事态在现实中极少发生、颇为难得。",
+    "formation": "动词辞书形 + (こと/の)はめったにない | 名词 + はめったにない | めったにない + 名词",
+    "examples": [
+      {
+        "translation": "在这个城镇，下雪是极其少见的事。"
+      },
+      {
+        "translation": "他极少在外面吃饭。"
+      },
+      {
+        "translation": "朋友来家里玩是很难得的。"
+      },
+      {
+        "translation": "她几乎从不发脾气。"
+      }
+    ]
   },
   "ja_もしかするとかもしれない_105": {
     "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
-    "shortExplanation": "表达 possibility of something; 'maybe', 'perhaps', 'might'.",
-    "longExplanation": "The もしかすると〜かもしれない grammar point is 用于表示 that there might be a possibility of a certain situation happening or someone feeling a certain way. This structure is often used to describe uncertain situations and can be translated into English as 'maybe', 'perhaps', or 'might'.",
-    "formation": "もしかすると + Sentence + かもしれない"
+    "shortExplanation": "表示说话人对某种低概率可能性的不确定推测；相当于汉语的“也许……也说不定”、“搞不好会……”。",
+    "longExplanation": "副词“もしかすると”（或许、说不定）置于句首，与句尾表示低概率推测的助动词“かもしれない”（也许）前后呼应。用于表达说话人虽然缺乏确凿根据，但认为存在某种可能性，语气委婉且带有不确定性。",
+    "formation": "もしかすると + 动词/形容词普通形 + かもしれない | もしかすると + な形容词词干/名词 + かもしれない",
+    "examples": [
+      {
+        "translation": "也许他可能会迟到也说不定。"
+      },
+      {
+        "translation": "说不定她感到累了。"
+      },
+      {
+        "translation": "搞不好会下雨。"
+      },
+      {
+        "translation": "也许他们并不喜欢那部电影。"
+      }
+    ]
   },
   "ja_もしたなら_106": {
     "title": "もし～たなら (moshi ~ tanara)",
-    "shortExplanation": "Express a hypothetical condition, 'if' or 'in case'.",
-    "longExplanation": "The もし～たなら grammar point is 用于表达 a hypothetical condition or situation in a more polite manner. It emphasizes the conditional part of a sentence and can be translated as 'if' or 'in case' in English. It is mainly used with verbs in the past tense, casual form.",
-    "formation": "もし + 动词-casual past + なら, もし + い-形容词-casual past + なら, もし + な-形容词 + だったなら, もし + 名词 + だったなら"
+    "shortExplanation": "强调假设条件成立或动作已完成的情况；相当于汉语的“要是……的话”、“假使……”。",
+    "longExplanation": "副词“もし”（假使、如果）与用言过去式（た形）加“なら”相搭配，用于强调在假设某一动作已经发生或既成事实成立的前提下，后项提出建议、劝告、要求或推测。语气比普通的假定更为明确和突出。",
+    "formation": "もし + 动词た形 + なら | もし + い形容词词尾い变かったなら | もし + な形容词/名词 + だったなら",
+    "examples": [
+      {
+        "translation": "要是下雨了的话，就带上雨伞去吧。"
+      },
+      {
+        "translation": "如果蛋糕不好吃的话，大概谁也不会去吃吧。"
+      },
+      {
+        "translation": "如果他确实生病了，请立刻送他去医院。"
+      },
+      {
+        "translation": "要是她是学生的话，这家餐厅应该会有优惠吧。"
+      }
+    ]
   },
   "ja_もしても_107": {
     "title": "もし～ても (moshi ~ temo)",
-    "shortExplanation": "Express a hypothetical situation or assumption with the nuance of 'even if'.",
-    "longExplanation": "The もし～ても grammar point is used to describe a situation in which even if the stated condition is true, the result or decision does not change. 可以翻译为 'even if', 'no matter if', or 'suppose ~'.",
-    "formation": "もし + 动词-て form + も / もし + い-形容词(く) + ても / もし + な-形容词/名词 + でも"
+    "shortExplanation": "表示让步假设，即使前项假设的情况成立，后项结果或决定也不会发生改变；相当于汉语的“即使……也……”、“哪怕……也……”。",
+    "longExplanation": "副词“もし”（假使）与表示逆接让步条件的“～ても / ～でも”呼应使用。强调即使发生了前项假设的极端情况或不利条件，后项的事态、意志或既定结论依然不受其影响，保持不变。",
+    "formation": "もし + 动词て形 + も | もし + い形容词词尾い变くても | もし + な形容词/名词 + でも",
+    "examples": [
+      {
+        "translation": "即使下雨，我们也依然要去野餐。"
+      },
+      {
+        "translation": "就算他道歉了，我大概还是会生气。"
+      },
+      {
+        "translation": "即使考试及格了，我依然会继续学习。"
+      },
+      {
+        "translation": "就算她来迟了，我也会等她。"
+      }
+    ]
   },
   "ja_もしもなら_108": {
     "title": "もしも～なら (moshimo ~ nara)",
-    "shortExplanation": "Express a hypothetical condition or situation; 'if', 'in case', 'suppose'.",
-    "longExplanation": "The もしも～なら grammar point is 用于表达 a hypothetical condition or situation, often with a sense of uncertainty. 可以翻译为 'if', 'in case', or 'suppose'. The formation varies slightly based on whether it is used with a verb, an い-adjective, a な-adjective, or a noun.",
-    "formation": "动词-casual + なら, い-形容词 + なら, な-形容词 + なら, 名词 + なら"
+    "shortExplanation": "更加强调假设、揣测或万一发生的情况；相当于汉语的“如果……的话”、“万一……的话”、“假使……”。",
+    "longExplanation": "“もしも”比“もし”具有更强烈的假设和不确定色彩，常用于假设发生概率较低的事态、万一出现的不测情况，或是纯粹的虚拟设想。后项多接续说话人的应对措施、建议或判断。",
+    "formation": "もしも + 动词/形容词普通形 + なら | もしも + な形容词词干 + なら | もしも + 名词 + なら",
+    "examples": [
+      {
+        "translation": "万一明天下了雨，我就不出门了。"
+      },
+      {
+        "translation": "如果他没有来的话，我们就自己办派对。"
+      },
+      {
+        "translation": "要是她觉得累了的话，就请让她好好休息吧。"
+      },
+      {
+        "translation": "假使那是事实的话，我们就必须承认。"
+      }
+    ]
   },
   "ja_ようとしない_109": {
     "title": "～ようとしない (〜you to shinai)",
-    "shortExplanation": "Not showing any sign or intention to do something.",
-    "longExplanation": "The ～ようとしない grammar point 指示 that someone is not showing any sign or intention of doing an action. It is 用于表达 a refusal or unwillingness to do something. It is formed by using the volitional form of a verb followed by としない.",
-    "formation": "动词-volitional form + としない"
+    "shortExplanation": "表示第三人称毫无做某事的意愿或态度顽固；相当于汉语的“不想……”、“不肯……”、“毫无做……的打算”。",
+    "longExplanation": "句型“～ようとしない”由动词意志形后续助词“と”以及“しない”构成。该句型专门用于描写第三人称的行为态度，表示对方完全不打算付诸行动、缺乏尝试的意图，说话人往往带有不满、责备或无可奈何的语气。",
+    "formation": "动词意志形 + としない",
+    "examples": [
+      {
+        "translation": "他根本不肯用功学习。"
+      },
+      {
+        "translation": "她丝毫没有道歉的意思。"
+      },
+      {
+        "translation": "儿子根本不想收拾自己的房间。"
+      },
+      {
+        "translation": "小狗怎么也不肯去散步。"
+      }
+    ]
   },
   "ja_ようと思う_110": {
     "title": "～ようと思う (〜you to omou)",
-    "shortExplanation": "表示 the speaker's intention or plan to do something.",
-    "longExplanation": "The ～ようと思う grammar point is 用于表达 the speaker's intention or plan to do something in the future. 可以翻译为 'I think I will...' or 'I am planning to...' in English. It is formed by taking the volitional form of a verb and adding と思う.",
-    "formation": "动词-volitional + と思う"
+    "shortExplanation": "表达说话人打算做某事的意志或计划；相当于汉语的“打算……”、“想要……”。",
+    "longExplanation": "句型“～ようと思う”由动词意志形后续“と思う”构成，用于表达说话人当前的打算或刚刚萌生的个人意志。如果表示在此之前就已经持续抱有该计划或打算，通常使用持续体形式“～ようと思っている”。",
+    "formation": "动词意志形 + と思う / と思っている",
+    "examples": [
+      {
+        "translation": "今天我打算早点睡。"
+      },
+      {
+        "translation": "我正计划着明天去美术馆。"
+      },
+      {
+        "translation": "我打算买一部新相机。"
+      },
+      {
+        "translation": "我正打算下周和朋友一起去看电影。"
+      }
+    ]
   },
   "ja_ように_111": {
     "title": "～ように (〜you ni)",
-    "shortExplanation": "Expressing a purpose, a goal or a way of doing something; 'in order to', 'so that', 'like', 'as'",
-    "longExplanation": "The ～ように grammar point is 用于表达 a purpose, a goal, or a way of doing something. 可以翻译为 'in order to', 'so that', 'like', or 'as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + ように, い-形容词 + ように, な-形容词 + に, 名词 + のように"
+    "shortExplanation": "表示动作的目的或期望达到的状态（“为了……”、“以便……”），亦可表示比喻或样态（“像……一样”）。",
+    "longExplanation": "句型“～ように”主要包含两种核心用法：一是表示后项动作的目的与企图，前项多接无意志动词、可能形或否定形，意为“为了达到某种状态/以便……”；二是表示比喻、样态，以前置事物生动描摹后置事物，意为“如同一朵花一样”或“表现得好像很有精神的样子”。",
+    "formation": "动词辞书形/ない形 + ように | い形容词 + ように | な形容词 + なように | 名词 + のように",
+    "examples": [
+      {
+        "translation": "为了能早点回家，我赶紧把工作做完了。"
+      },
+      {
+        "translation": "她看起来如同一朵美丽的花儿一样。"
+      },
+      {
+        "translation": "为了让这个房间变得干净，我们来打扫一下吧。"
+      },
+      {
+        "translation": "山田先生虽然举止显得很有精神，但实际上似乎挺累的。"
+      }
+    ]
   },
   "ja_ように_112": {
     "title": "～ように (〜you ni)",
-    "shortExplanation": "用于表达 a purpose, a way, or a natural tendency.",
-    "longExplanation": "The ～ように grammar point is 用于表达 a purpose, a way or a method, or a natural tendency. It can be used with verbs, い-adjectives, な-adjectives, or nouns. It is frequently used with the verb する (to do) to 表达 purpose or method.",
-    "formation": "动词-casual + ように, い-形容词 + ように, な-形容词 + だように, 名词 + のように"
+    "shortExplanation": "表示期望实现的目标或状态（“为了能够……”、“以便……”），以及用来作生动的比拟（“如同……一样”）。",
+    "longExplanation": "句型“～ように”用于连接前项的目标状态与后项的努力行为，表示为了实现某种期望的状态而采取后项的对策或行动。前项通常接续可能动词、表示状态变化的动词或无意志性动词（如“過ごせる”、“話せる”等）。此外接续名词时（“名词＋のように”）表示生动的比拟与对照。",
+    "formation": "动词辞书形/可能形/ない形 + ように | 名词 + のように",
+    "examples": [
+      {
+        "translation": "为了让孩子们能够安全地生活，我整理了屋子。"
+      },
+      {
+        "translation": "宛如美丽的花朵一样，她的笑容十分迷人。"
+      },
+      {
+        "translation": "为了能够自然流畅地说英语，我每天都在练习。"
+      },
+      {
+        "translation": "为了能够取得成功，我们来制定计划吧。"
+      }
+    ]
   },
   "ja_ように_113": {
     "title": "～ように (〜you ni)",
-    "shortExplanation": "用于表达 purpose or how something is done; 'like', 'as if', 'in order to'.",
-    "longExplanation": "The ～ように grammar point is 用于表达 the purpose of an action or the manner in which something is done. 可以翻译为 'like', 'as if', or 'in order to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + ように, い-形容词 + ように, な-形容词 + に, 名词 + のように"
+    "shortExplanation": "表示动作的方式、企图达到的状态（“以便……”、“做到……”），以及形象的比喻（“像……一样”）。",
+    "longExplanation": "句型“～ように”用于规定或引导动作实施的具体方式（如“请解释得让人容易理解”）、后项努力所要达成的目标（如“努力做到和朋友友好相处”、“为了日语进步而学习”），亦可用于形容动作的方式与特征如同某一事物（如“像小鸟一样歌唱”）。",
+    "formation": "动词辞书形/ない形 + ように | い形容词 + ように | 名词 + のように",
+    "examples": [
+      {
+        "translation": "请讲解得浅显易懂一些。"
+      },
+      {
+        "translation": "他唱起歌来像小鸟一样动听。"
+      },
+      {
+        "translation": "我正努力和朋友们处好关系。"
+      },
+      {
+        "translation": "为了提高日语水平，我正在努力学习。"
+      }
+    ]
   },
   "ja_ようにしましょう_114": {
     "title": "～ようにしましょう (〜you ni shimashou)",
-    "shortExplanation": "A suggestion to make an effort or try to do something; 'let's try to', 'let's make sure to'.",
-    "longExplanation": "The ～ようにしましょう grammar point is used to suggest making an effort or trying to do something. 可以翻译为 'let's try to' or 'let's make sure to' in English. Typically, we use the dictionary or negative form of the verb with ようにする/ようにしましょう to show the effort we want to make.",
-    "formation": "动词-dictionary form + ようにしましょう / 动词-negative form + ようにしましょう"
+    "shortExplanation": "用于礼貌地号召或提议共同努力养成某种习惯、做到某事；相当于汉语的“让我们努力做到……吧”、“注意要……吧”。",
+    "longExplanation": "句型“～ようにしましょう”是将表示努力促成某种习惯或状态的“～ようにする”转化为礼貌劝诱形“～ましょう”。用于向对方委婉提出建议或大家共同倡议，努力在日常生活中坚持某种良好行为习惯，或是注意避免不良行为。",
+    "formation": "动词辞书形 + ようにしましょう | 动词ない形 + ようにしましょう",
+    "examples": [
+      {
+        "translation": "让我们坚持每天运动吧。"
+      },
+      {
+        "translation": "大家尽量早点睡觉吧。"
+      },
+      {
+        "translation": "让我们待人热情友善吧。"
+      },
+      {
+        "translation": "让我们注意不要浪费时间吧。"
+      }
+    ]
   },
   "ja_ようになった_115": {
     "title": "～ようになった (〜you ni natta)",
-    "shortExplanation": "Express an event or state that became possible; 'became able to', 'started to', 'now can'.",
-    "longExplanation": "The ～ようになった grammar point is 用于表达 that an event, ability, or state has become possible or started to occur. 可以翻译为 'became able to', 'started to', or 'now can' in English. Usually this is used with verbs in their dictionary or potential form (e.g., 食べられるようになった).",
-    "formation": "动词-casual + ようになった"
+    "shortExplanation": "表示能力、习惯或状态发生转变，从过去的不可能、未做变成“变得能够……”、“开始……”。",
+    "longExplanation": "句型“～ようになった”用于表达随着时间的推移、个人努力或环境变化，主体的能力、习惯或客观状态发生了质的改变。接在动词可能形后，表示以前无法做到、现在掌握了该项能力（如“变得会读了”）；接在意志动词辞书形后，表示形成了某种新的生活习惯或日常行为模式（如“开始自己做饭了”）。",
+    "formation": "动词辞书形 / 动词可能形 + ようになった",
+    "examples": [
+      {
+        "translation": "他开始自己做饭了。"
+      },
+      {
+        "translation": "那个孩子变得会阅读了。"
+      },
+      {
+        "translation": "会议变成了每周举行一次。"
+      },
+      {
+        "translation": "我变得能听懂日语了。"
+      }
+    ]
   },
   "ja_ように言う_116": {
     "title": "～ように言う (〜you ni iu)",
-    "shortExplanation": "To convey a message, instruction or request to someone; 'to tell (someone) to', 'to say to (someone)'.",
-    "longExplanation": "The ～ように言う grammar point is used to convey a message, instruction or request to someone. 可以翻译为 'to tell (someone) to' or 'to say to (someone)'. It is commonly formed by taking the dictionary (or negative) form of the verb plus ように言う.",
-    "formation": "动词-dictionary form + ように言う / 动词-nai form + ように言う"
+    "shortExplanation": "用于间接转述指示、嘱咐、要求或劝告；“转告/对（某人）说要……”、“让（某人）做……”。",
+    "longExplanation": "句型“～ように言う”（以及相关的“ように頼む”、“ように伝える”等）属于间接引述句型，用于向第三者传达某人所下达的指示、提出的要求、所做的叮嘱或劝告。相比于直接引用命令形（如“～しろと言った”），这种表达方式更为委婉客气、不生硬，是日常及商务交流中的常见表达。",
+    "formation": "动词辞书形 + ように言う | 动词ない形 + ように言う",
+    "examples": [
+      {
+        "translation": "老师叫我再多用功学习。"
+      },
+      {
+        "translation": "她让他等一等。"
+      },
+      {
+        "translation": "母亲叫我把房间收拾干净。"
+      },
+      {
+        "translation": "老师让学生提出问题。"
+      }
+    ]
   },
   "ja_らしい_117": {
     "title": "～らしい (〜rashii)",
-    "shortExplanation": "表示 hearsay; 'I heard', 'it seems', 'apparently'.",
-    "longExplanation": "The ～らしい grammar point is 用于表示 that the information provided is based on hearsay or an indirect source. In English, this can be translated as 'I heard', 'it seems', or 'apparently'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + らしい, い-形容词 + らしい, な-形容词 + だらしい, 名词 + だらしい"
+    "shortExplanation": "表示传闻或依据客观间接信息作出的推断；“听说……”、“好像……”。",
+    "longExplanation": "助动词“～らしい”主要用于传闻或间接推量。表示说话人从报刊、电视、他人交谈等外部客观渠道获取了某种信息，或者依据间接获得的客观证据推测事情确实如此（意为“据听说……”、“似乎……”）。说话人自身并未直接亲历确认，因而在表述上保持客观留有余地。",
+    "formation": "动词普通形 + らしい | い形容词 + らしい | な形容词词干 + らしい | 名词 + らしい",
+    "examples": [
+      {
+        "translation": "听说他得了流感。"
+      },
+      {
+        "translation": "听说明天会下雪。"
+      },
+      {
+        "translation": "听说这家餐厅味道很好。"
+      },
+      {
+        "translation": "听说她是一名医生。"
+      }
+    ]
   },
   "ja_られた_118": {
     "title": "～られた (〜rareta)",
-    "shortExplanation": "Express a passive action, 'was/were', 'has/have been'.",
-    "longExplanation": "The ～られた grammar point is 用于表达 a passive action or situation. It is formed by conjugating the verb into its passive form in the past tense, which can be translated into English as 'was/were' or 'has/have been'. This grammar is used in situations where the subject is affected by an action rather than performing the action itself.",
-    "formation": "动词 (passive form, past tense) + られた"
+    "shortExplanation": "被动态过去时，表示主语受到他人或外力的作用与影响；“被……”、“受……”、“由……”。",
+    "longExplanation": "“～られた”是日语动词被动态（受身形）的过去时形式。表示主语作为动作的承受者，受到了外界行为的施加与作用。既可以用于客观叙述事实的直接被动（如“被很多人阅读”），也可以用于表达因他人行为造成自身受损或困扰的间接受害被动（如“钱包被偷了”），亦可用于表达心理受强烈震撼的使役受身过去时（～させられた：“被深深感动”）。",
+    "formation": "动词被动态过去时：一类动词词尾变あ段 + れた | 二类动词去掉る + られた | 三类动词：された / 来られた",
+    "examples": [
+      {
+        "translation": "这本书被许多人阅读过。"
+      },
+      {
+        "translation": "他被朋友给骗了。"
+      },
+      {
+        "translation": "昨天，我的钱包被偷了。"
+      },
+      {
+        "translation": "她被那部电影深深地打动了。"
+      }
+    ]
   },
   "ja_ている_119": {
     "title": "～ている (〜te iru)",
-    "shortExplanation": "表示 a continuing action or a resulting state; 'is ~ing', 'has been', 'has'.",
-    "longExplanation": "The ～ている grammar point is used to describe a continuing or repeated action, or the result/state of a completed action. Depending on the context, 可以翻译为 'is ~ing', 'has been ~ed', or simply 'has/are/is'. In passive contexts (e.g., 食べられている, 開けられている), it shows that something has been done and remains in that state. With intransitive or non-passive verbs, it shows an ongoing or resultant state (e.g., 寝込んでいる, 終わっている).",
-    "formation": "动词-て form + いる"
+    "shortExplanation": "表示动作正在进行，或表示动作完成之后所留下的结果状态持续存在；“正在……”、“处于……状态”。",
+    "longExplanation": "句型“～ている”是日语体态（aspect）系统的核心表现：与持续性动词连用时，表示说话时刻该动作行为正在进行（“正在……”）；与瞬间性动词或状态变化动词连用时，表示动作已经发生完毕，但其引发的结果状态一直留存至今（“处于……状态”）；与被动态动词结合时（如“開けられている”），则突显某人实施该动作后所造成的客观存续状态。",
+    "formation": "动词て形 + いる",
+    "examples": [
+      {
+        "translation": "窗户正开着（有人开过，目前保持开着的状态）。"
+      },
+      {
+        "translation": "蛋糕已经全被吃光了。"
+      },
+      {
+        "translation": "她因生病正卧床不起。"
+      },
+      {
+        "translation": "作业已经做完了。"
+      }
+    ]
   },
   "ja_わけがない_120": {
     "title": "～わけがない (〜wake ga nai)",
-    "shortExplanation": "表示 that something is impossible or unreasonable; 'there's no way', 'can't be'.",
-    "longExplanation": "The ～わけがない grammar point is 用于展示 that something is impossible, non-existent, or unreasonable based on logic or context. It is often translated as 'there's no way' or 'it's impossible'.",
-    "formation": "动词-casual + わけがない, い-形容词 + わけがない, な-形容词 + なわけがない, 名词 + のわけがない"
+    "shortExplanation": "基于常理、逻辑或明确依据做出斩钉截铁的强烈否定推断；“绝不可能……”、“怎么可能会……”。",
+    "longExplanation": "句型“～わけがない”（口语中常用“～わけない”）用于说话人根据客观常理、逻辑推论或确凿事实，完全断定某事绝无可能发生、绝无此种道理（相当于汉语中的“绝对不可能……”、“哪有……的道理”）。若采用双重否定形式“～ないわけがない”，则表示极度坚决的肯定推断（“绝对一定会……”）。",
+    "formation": "动词普通形 + わけがない | い形容词 + わけがない | な形容词 + なわけがない | 名词 + の/である/なわけがない",
+    "examples": [
+      {
+        "translation": "他绝不可能说出那种话来。"
+      },
+      {
+        "translation": "那家餐厅的味道绝不可能难吃。"
+      },
+      {
+        "translation": "她绝不可能不温柔（她肯定很温柔）。"
+      },
+      {
+        "translation": "他绝不可能考不及格。"
+      }
+    ]
   },
   "ja_わけだ_121": {
     "title": "～わけだ (〜wake da)",
-    "shortExplanation": "表示 a logical conclusion or reason based on information; 'that's why', 'no wonder', 'it means'.",
-    "longExplanation": "The ～わけだ grammar point is 用于表达 a conclusion, reason, or interpretation based on a certain situation or piece of information. 可以翻译为 'that's why', 'no wonder', or 'it means'.",
-    "formation": "动词-casual + わけだ, い-形容词 + わけだ, な-形容词 + なわけだ, 名词 + のわけだ"
+    "shortExplanation": "表示查明原委之后恍然大悟，得出合乎情理的必然结论；“怪不得……”、“难怪……”、“当然会……”。",
+    "longExplanation": "句型“～わけだ”用于说话人获知了某项事实或原因之后，恍然明白前后因果关系，认为后续结果的发生是合情合理、顺理成章的（相当于汉语中的“难怪如此……”、“怪不得……”）。体现了从前提自然引申出必然结果的逻辑推导过程。",
+    "formation": "动词普通形 + わけだ | い形容词 + わけだ | な形容词 + なわけだ | 名词 + な/である/というわけだ",
+    "examples": [
+      {
+        "translation": "他感冒了。怪不得声音这么沙哑。"
+      },
+      {
+        "translation": "今天忙了一整天。难怪这么疲劳。"
+      },
+      {
+        "translation": "田中同学学习很刻苦。难怪他通过了考试。"
+      },
+      {
+        "translation": "她是著名歌手的女儿啊。怪不得唱歌这么好听。"
+      }
+    ]
   },
   "ja_わけではない_122": {
     "title": "～わけではない (〜wake dewa nai)",
-    "shortExplanation": "Denies a general assumption; 'it does not mean that', 'it's not the case'.",
-    "longExplanation": "The ～わけではない grammar point is used to deny or correct a general assumption or statement without completely negating the situation. It often emphasizes one particular point that is not true, while acknowledging other possibilities.",
-    "formation": "动词-casual + わけではない, い-形容词 + わけではない, な-形容词 + だわけではない, 名词 + だわけではない"
+    "shortExplanation": "用于部分否定，纠正以偏概全的误解或绝对化推论；“并不是说……”、“未必……”、“也并非……”。",
+    "longExplanation": "句型“～わけではない”（口语中常作“～恶けじゃない”）用于部分否定。它并不全盘否定事实，而是指出虽然表面上可能有此倾向，但绝不能绝对化地认为事实完全如此（“并不代表就一定……”、“并非全部……”）。常与表示逆接条件的“～からといって（虽说……但也未必……）”呼应使用。",
+    "formation": "动词普通形 + わけではない | い形容词 + わけではない | な形容词 + なわけではない | 名词 + な/である/のわけではない",
+    "examples": [
+      {
+        "translation": "虽说他很忙，但并不是说他就没有朋友。"
+      },
+      {
+        "translation": "这部电影倒不是不好看，只是不符合我的口味。"
+      },
+      {
+        "translation": "虽说她生病了，但也并非每天都躺在床上。"
+      },
+      {
+        "translation": "虽说他没上过大学，但并不意味着他就是个笨蛋。"
+      }
+    ]
   },
   "ja_わけにはいかない_123": {
     "title": "～わけにはいかない (〜wake ni wa ikanai)",
-    "shortExplanation": "表示 that something cannot be allowed or permitted due to social/moral obligations.",
-    "longExplanation": "The ～わけにはいかない grammar point is 用于表达 that a particular action cannot be taken due to social or moral obligations, responsibilities, or natural consequences. It often translates as 'I can't afford to...' or 'I can't just...' in English.",
-    "formation": "动词-casual + わけにはいかない"
+    "shortExplanation": "表示受制于社会常理、道德规范、责任担当或客观情理，在情理上“绝不能……”、“不可以……”。",
+    "longExplanation": "句型“～わけにはいかない”用于表达当事人在主观意愿上或许想做（或不想做）某事，但出于社会公德、职业操守、人情世故或严重不良后果的考量，在理智和情理上“万万不能去做”。接动词否定形式构成的“～ないわけにはいかない”则表示迫于道德义务或责任“不能不去做（必须去做）”。",
+    "formation": "动词辞书形 + わけにはいかない | 动词ない形 + わけにはいかない",
+    "examples": [
+      {
+        "translation": "我绝不能在这样的地方睡觉。"
+      },
+      {
+        "translation": "明天就要考试了，我绝不能跑出去玩。"
+      },
+      {
+        "translation": "我可不能买这么昂贵的东西。"
+      },
+      {
+        "translation": "因为身体不舒服，所以我不能去参加聚会。"
+      }
+    ]
   },
   "ja_わりには_124": {
     "title": "～わりには (〜wari ni wa)",
-    "shortExplanation": "表示 contrast between expectation and reality; 'despite', 'considering', 'even though'.",
-    "longExplanation": "The ～わりには grammar point is used to highlight a contrast between what is expected from a certain condition and the actual result. 可以翻译为 'despite', 'considering', or 'even though'.",
-    "formation": "动词-casual + わりには, い-形容词 + わりには, な-形容词 + だわりには, 名词 + だわりには"
+    "shortExplanation": "表示从前项的标准或通常认知来看，后项的结果出人意料、不相称；“虽然……但是却……”、“就……而言倒挺……”。",
+    "longExplanation": "句型“～わりには”用于强调根据前项所列出的事实、身份、价格或外在条件进行考量时，后项实际产生的结果却与通常预期的标准不相称，带有一种意外、吃惊或感叹的语气（相当于汉语中的“作为……来说反而……”、“虽说是……但其实挺……”）。",
+    "formation": "动词普通形 + わりには | い形容词 + わりには | な形容词 + な/であるわりには | 名词 + の/であるわりには",
+    "examples": [
+      {
+        "translation": "他虽然平时不大用功，但考试的分数却挺高的。"
+      },
+      {
+        "translation": "这道菜虽然卖相不佳，但味道却很美味。"
+      },
+      {
+        "translation": "她虽然年纪轻轻，但看起来非常沉稳呢。"
+      },
+      {
+        "translation": "这间屋子虽然狭窄，但房租却很贵。"
+      }
+    ]
   },
   "ja_んだって_125": {
     "title": "～んだって (〜n datte)",
-    "shortExplanation": "Conveys information heard from someone else; 'I heard', 'They said'.",
-    "longExplanation": "The ～んだって grammar point is used to relay information the speaker has heard from someone else. It's a casual way of quoting what was said, effectively combining explanatory のだ (んだ) with the informal quoting particle って. 可以翻译为 'I heard...' or 'They said...'.",
-    "formation": "动词-casual + んだって, い-形容词 + んだって, な-形容词 + なんだって, 名词 + なんだって"
+    "shortExplanation": "口语中用于向亲近之人转达所听闻的消息、传言；“听说……呢”、“据说……哦”。",
+    "longExplanation": "句型“～んだって”是日语口语中非常活跃的传闻表达句式，由表示说明背景的“のだ（んだ）”与表示引述传闻的终助词“って”融合而成。常在亲切友好的闲聊氛围中，用于向对方转述自己从旁人、广播或网络上获知的新信息（相当于汉语口语中的“听说……呢”、“人家说……哦”）。",
+    "formation": "动词普通形 + んだって | い形容词 + んだって | な形容词 + なんだって | 名词 + なんだって",
+    "examples": [
+      {
+        "translation": "听说他要去东京呢。"
+      },
+      {
+        "translation": "听说这部电影很有趣哦。"
+      },
+      {
+        "translation": "听说她是一位著名歌手呢。"
+      },
+      {
+        "translation": "听说那家餐厅的夜景很美哦。"
+      }
+    ]
   },
   "ja_んだもん_126": {
     "title": "～んだもん (〜nda mon)",
-    "shortExplanation": "Used to convey a sense of justification; 'because', 'that's why', 'it's just that'.",
-    "longExplanation": "The ～んだもん grammar point is used when someone wants to give a reason, justification, or explanatory information in a more casual and emphatic way. 可以翻译为 'because', 'that's why', or 'it's just that' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + んだもん, い-形容词 + んだもん, な-形容词 + なんだもん, 名词 + なんだもん"
+    "shortExplanation": "口语中用于陈述理由并带有撒娇、申辩或理直气壮的辩解语气；“因为……嘛”、“人家……嘛”。",
+    "longExplanation": "句型“～んだもん”（郑重形式为“～のだもの”，更口语形式为“～もん”）是日常会话中富有情绪色彩的句尾表达，多用于女性、儿童以及亲近朋友之间。用于为自己的言行举止、情绪或决定辩解，带有撒娇、任性或委屈申辩的语感（相当于汉语中的“因为就是这样嘛”、“没办法嘛”）。",
+    "formation": "动词普通形 + んだもん | い形容词 + んだもん | な形容词 + なんだもん | 名词 + なんだもん",
+    "examples": [
+      {
+        "translation": "人家迟到了嘛，对不起啦。"
+      },
+      {
+        "translation": "因为太好吃了嘛，我还想再吃一点。"
+      },
+      {
+        "translation": "因为太累了嘛，我想早点睡。"
+      },
+      {
+        "translation": "因为他可是我的朋友嘛，我怎么能不帮他呢。"
+      }
+    ]
   },
   "ja_上げる_127": {
     "title": "～上げる (〜ageru)",
-    "shortExplanation": "指示 to finish doing something completely.",
-    "longExplanation": "The ～上げる grammar point is 用于表达 that an action has been completed or finished entirely. It's often used with verbs that have a ます stem, and can be translated as 'to finish (doing something)', 'to complete', or 'to get something done'.",
-    "formation": "动词-ますstem + 上げる"
+    "shortExplanation": "接在动词后，表示付出辛劳与努力将某项动作彻底完成、做好；“做完……”、“完成……”。",
+    "longExplanation": "复合动词后项“～上げる”接在动词连用形（ます形去掉ます）之后，强调经过一番努力、时间投入或专心致志的作业，最终把某件作品、任务或事情彻底完成，达到完工阶段（如“書き上げる”写完、“作り上げる”打造完成、“やり上げる”彻底做完）。",
+    "formation": "动词连用形（ます形去掉ます）+ 上げる",
+    "examples": [
+      {
+        "translation": "在写完报告之前，我都不能睡觉。"
+      },
+      {
+        "translation": "她马上开始打扫房间，用一个小时把大扫除全部做完了。"
+      },
+      {
+        "translation": "考试前夕，我学完全部内容之后才睡觉。"
+      },
+      {
+        "translation": "为了彻底做好这个项目，大家的通力合作是必不可少的。"
+      }
+    ]
   },
   "ja_切れない_128": {
     "title": "～切れない (～kirenai)",
-    "shortExplanation": "表示 inability to completely finish or do something.",
-    "longExplanation": "The ～切れない grammar point is 用于表达 the inability to fully complete, finish, or do something. It is formed by attaching 切れない to the stem of a verb. It often implies that some portion of the action is done, but finishing it entirely is not possible for some reason.",
-    "formation": "动词-stem + 切れない"
+    "shortExplanation": "表示由于数量庞大、程度过深或精力有限，客观上无法彻底做完、做到底；“做不完……”、“无法完全……”。",
+    "longExplanation": "“～切れない”是复合动词接尾词“～切る”（表示动作贯彻到底、全部做完）的可能否定形式。接在动词连用形后，表示面对过多的数量、极其沉重的负担或客观限制，无法将该行为进行到底或全部料理干净（相当于汉语中的“无法全部……完”、“怎么也……不尽”）。",
+    "formation": "动词连用形（ます形去掉ます）+ 切れない",
+    "examples": [
+      {
+        "translation": "我一晚上根本读不完这本书。"
+      },
+      {
+        "translation": "他高兴得眼泪怎么流都流不尽。"
+      },
+      {
+        "translation": "一天之内根本打扫不完这个房间。"
+      },
+      {
+        "translation": "她的烦恼多得根本倾诉不完。"
+      }
+    ]
   },
   "ja_必ずしもとは限らない_129": {
     "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
-    "shortExplanation": "Not necessarily; not always.",
-    "longExplanation": "The 必ずしも～とは限らない grammar point is 用于表达 that something is not necessarily or not always the case, indicating that a certain assumption may not hold true in all situations.",
-    "formation": "必ずしも + Statement + とは限らない"
+    "shortExplanation": "表示事物并非在所有情况下都绝对如此，指出普遍认知中存在例外；“未必……”、“不一定……”。",
+    "longExplanation": "句型“必ずしも～とは限らない”是典型的部分否定句式。由副词“必ずしも（必定、一定）”与表示限定否定的“とは限らない”前后呼应，用于委婉打破某种常识性的刻板印象或绝对化断言，指出某种情况虽然常见，但决不能一概而论，依然存在特殊例外（相当于汉语中的“未必一定……”、“并不必然都……”）。",
+    "formation": "必ずしも + 动词/形容词/名词普通形 + とは限らない",
+    "examples": [
+      {
+        "translation": "昂贵的东西未必就是好东西。"
+      },
+      {
+        "translation": "有名的人未必就过得幸福。"
+      },
+      {
+        "translation": "会说外语的人不一定就擅长英语。"
+      },
+      {
+        "translation": "学习时间长的学生在考试中未必得分就高。"
+      }
+    ]
   },
   "ja_最中に_130": {
     "title": "～最中に (～saichuu ni)",
-    "shortExplanation": "In the middle of / while doing something.",
-    "longExplanation": "The ～最中に grammar point is 用于表示 that something happens during the middle of an action or situation. 可以翻译为 'in the middle of' or 'while' in English. It often involves appending 最中に to a verb in 〜ている form or a noun plus の.",
-    "formation": "动词-て form + いる + 最中に, 名词 + の + 最中に"
+    "shortExplanation": "表示正当处于某动作或事态的高潮进程中时，突然发生了意想不到的事件；“正……的时候”、“正在……之中”。",
+    "longExplanation": "句型“～最中に”（或“～最中だ”）用于强调某个动作或事件正在高度集中或白热化地进行当中，此时突然发生了某件出乎意料的事情或横生干扰，从而打断了正在进行的进程。通常接在动词“～ている”形式之后，或接在表示动作行为的名词加“の”之后。后项往往是短暂发生的外界突发事件。",
+    "formation": "动词て形 + いる + 最中に | 名词 + の + 最中に",
+    "examples": [
+      {
+        "translation": "正当我午睡的时候，电话响了。"
+      },
+      {
+        "translation": "正在做饭的时候发生了火灾。"
+      },
+      {
+        "translation": "在开会的中途，我因为有急事不得不离席。"
+      },
+      {
+        "translation": "正在考试的时候发生了地震。"
+      }
+    ]
   },
   "ja_決してない_131": {
     "title": "決して～ない (kesshite ~ nai)",
-    "shortExplanation": "Express 'never', 'by no means', or 'not at all' when negating a statement.",
-    "longExplanation": "The 決して～ない grammar point is used to emphasize a negative statement or action. 可以翻译为 'never', 'by no means', or 'not at all'. This grammar point must be paired with a negative verb form to maintain its negative meaning.",
-    "formation": "決して + 动词 (negative form)"
+    "shortExplanation": "与否定形式呼应，表示强烈的否定断定或坚定意志；“决不……”、“绝对不……”、“万万不……”。",
+    "longExplanation": "副词“決して”通常与后项的否定句式（～ない、～ません、～ないで等）相呼应，用于表示坚决的否定意志、庄严的承诺、告诫或断定的判断，意为“绝对不”、“决不”。它排除了任何例外情况，带有强烈的决绝语气，常用于表明决心、保守秘密、忠告他人等语境。",
+    "formation": "決して + 动词否定形（ない形 / ません / ないで） | 決して + 形容词 / 名词否定形",
+    "examples": [
+      {
+        "translation": "他决不迟到。"
+      },
+      {
+        "translation": "这个秘密请绝对不要告诉任何人。"
+      },
+      {
+        "translation": "决不要放弃，坚持努力到最后吧。"
+      },
+      {
+        "translation": "她是一个决不说谎的人。"
+      }
+    ]
   },
   "ja_Aおまけに_1": {
     "title": "A。おまけに B。(~omake ni)",
-    "shortExplanation": "表示 that in addition to A, there is also B; 'moreover', 'besides', 'not only', 'but also'.",
-    "longExplanation": "The A。おまけに B。grammar point is 用于表达 that in addition to the first statement A, there is also the second statement B which often emphasizes the negative aspect or difficulty of the situation. 可以翻译为 'moreover', 'besides', 'not only', or 'but also' in English. The formation is used with two sentences, placing おまけに between those two sentences.",
-    "formation": "Sentence A + おまけに  + Sentence B"
+    "shortExplanation": "表示在已有情况的基础上进一步递进添加，多用于雪上加霜或锦上添花；“而且”、“加之”、“再加上”。",
+    "longExplanation": "连词“おまけに”（来源于名词“おまけ”，意为附赠品、额外添头）置于句首，用于在句A陈述的基础上追加同方向的另一种情况B。虽然也可用于积极正面的事物，但在实际运用中多用于消极负面语境，突出不良状况的层层加码，带有“屋漏偏逢连夜雨”、“不仅如此，偏偏还……”的感叹语气。",
+    "formation": "句子A。 + おまけに + 句子B。",
+    "examples": [
+      {
+        "translation": "他迟到了。而且还忘了带作业。"
+      },
+      {
+        "translation": "这间公寓很狭窄。再加上房租也很贵。"
+      },
+      {
+        "translation": "她工作很忙。更何况孩子还小。"
+      },
+      {
+        "translation": "昨天下了雨。加之风刮得也很大。"
+      }
+    ]
   },
   "ja_Aさて_2": {
     "title": "A。さて B。(A. Sate B.)",
-    "shortExplanation": "指示 a sudden change or shift in the topic or situation; 'now then', 'well', 'so'.",
-    "longExplanation": "The さて grammar point is 用于表示 a sudden change or shift in the topic or situation. It often 表示 a sense of moving on to the next topic or action, acting as a connector between sentences. It can be loosely translated as 'now then', 'well', or 'so' in English.",
-    "formation": "A + さて + B"
+    "shortExplanation": "用于转换话题或告一段落后开启新的行动；“那么”、“话说回来”、“接下来”。",
+    "longExplanation": "接续词“さて”常置于句首，表示上一件事情已告一段落，借此打住前文，将话题或行动转向新的内容或下一步计划。在日常会话、会议主持、讲演报告以及节目主持中十分常见，用于集中听众的注意力，并提示进入实质性或新的议题。",
+    "formation": "句子A。 + さて、 + 句子B。",
+    "examples": [
+      {
+        "translation": "今天的工作结束了。那么，接下来准备回家吧。"
+      },
+      {
+        "translation": "话扯得有点长了呢。那么，请再多告诉我一些关于喜美子小姐的事吧。"
+      },
+      {
+        "translation": "看电影很开心。那么，接下来去吃点什么好呢。"
+      },
+      {
+        "translation": "马拉松跑完了！那么，先休息一会儿再去洗澡吧。"
+      }
+    ]
   },
   "ja_Aしかも_3": {
     "title": "A。しかも B。(A. Shikamo B.)",
-    "shortExplanation": "Expressing additional information; 'moreover', 'besides', 'furthermore'.",
-    "longExplanation": "The しかも grammar point is 用于表达 additional information, supplementing or emphasizing what was mentioned before. 可以翻译为 'moreover', 'besides', or 'furthermore' in English. Both A and B are independent statements, and しかも is used to connect them.",
-    "formation": "Statement A + 。しかも + Statement B。"
+    "shortExplanation": "用于补充提供具有递进性质的追加信息；“而且”、“并且”、“况且”。",
+    "longExplanation": "接续词“しかも”位于句首或分句之间，用于连接两个独立的句子或分句。它在句A的基础上追加同方向的评价或事实B，起到进一步加强语气、深化程度的作用（相当于“而且”、“并且”）。常用于陈述事物的多重优点或叠加特征，使叙述更加具有说服力。",
+    "formation": "句子A。 + しかも、 + 句子B。",
+    "examples": [
+      {
+        "translation": "这道菜很好吃。而且，价格很便宜。"
+      },
+      {
+        "translation": "他是一名优秀的学生。而且，还擅长体育运动。"
+      },
+      {
+        "translation": "她歌唱得很好。而且，舞跳得也很棒。"
+      },
+      {
+        "translation": "这家咖啡馆气氛很好。而且，咖啡也很好喝。"
+      }
+    ]
   },
   "ja_Aしたがって_4": {
     "title": "A。したがって B。(A. Shitagatte B.)",
-    "shortExplanation": "Express a cause-and-effect relationship; 'therefore', 'consequently', 'so'.",
-    "longExplanation": "The したがって grammar point is 用于表达 a cause-and-effect relationship between two sentences, where 'A' is the cause and 'B' is the effect, result or conclusion. 可以翻译为 'therefore', 'consequently', or 'so' in English.",
-    "formation": "A + したがって + B"
+    "shortExplanation": "表示合乎逻辑的顺接因果关系，引出必然结果或推论；“因此”、“因而”、“所以”。",
+    "longExplanation": "接续词“したがって”（汉字写作“従って”）用于连接具有严密因果逻辑的两个句子，表示句子A是原因、前提或客观依据，句子B是据此顺理成章推导出的必然结论、结果或应对措施。其语体风格非常郑重、客观，极少带有强烈的个人感彩，广泛应用于正式论文、商务报告、公文法规以及学术讲演中。",
+    "formation": "句子A。 + したがって、 + 句子B。",
+    "examples": [
+      {
+        "translation": "今天正在下雨。因此，带上雨伞出门吧。"
+      },
+      {
+        "translation": "他很忙。因此，我们还是不要联系他为好。"
+      },
+      {
+        "translation": "那家餐厅很有人气。因此，如果不提前预约的话可能会没有座位。"
+      },
+      {
+        "translation": "考试临近了。因此，集中精力投入学习吧。"
+      }
+    ]
   },
   "ja_A_5": {
     "title": "A であれ B であれ (A deare B deare)",
-    "shortExplanation": "指示 the same statement applies to both A and B; 'whether A or B'.",
-    "longExplanation": "The grammar point A であれ B であれ is used to say a statement applies equally whether it's A or B. Often the nouns/conditions are contrasting pairs, and it's translated as 'whether A or B'.",
-    "formation": "名词 A + であれ + 名词 B + であれ"
+    "shortExplanation": "表示无论是A还是B，后面的情况或结论都同样适用；“无论是A还是B”、“不论是A还是B”。",
+    "longExplanation": "句型“A であれ B であれ”由断定助动词“である”演变而来，常将成对的反义词或同类词并列，表示在任何一种情况下结论或原则都完全相同，没有任何区别或例外（“无论是……还是……”、“不论是……还是……”）。属于庄重的书面语表达，多用于议论文、演讲或原则性声明中。",
+    "formation": "名词1 + であれ + 名词2 + であれ | 二类形容词词干 + であれ + 二类形容词词干 + であれ",
+    "examples": [
+      {
+        "translation": "无论是下雨还是下雪，比赛都不会中止。"
+      },
+      {
+        "translation": "无论是男性还是女性，都应当受到平等的对待。"
+      },
+      {
+        "translation": "无论是富有还是贫穷，真正的幸福都是金钱买不到的。"
+      },
+      {
+        "translation": "不论是有经验者还是新手，都能享受这款游戏的乐趣。"
+      }
+    ]
   },
   "ja_Aすると_6": {
     "title": "A。すると B。(~suruto)",
-    "shortExplanation": "指示 that when action A is done, action or event B follows; 'then', 'when', 'if'.",
-    "longExplanation": "The A。すると B。grammar point is 用于表达 that when action A is done or takes place, action or event B follows. 可以翻译为 'then', 'when', or 'if' in English. It is 用于展示 a natural consequence or result of action A.",
-    "formation": "A (Sentence) + すると + B (Sentence)"
+    "shortExplanation": "表示做了动作A之后，紧接着自然发生或发现了事态B；“于是”、“接着”、“这么一来”。",
+    "longExplanation": "接续词“すると”置于句首，用于连接前后两个句子，表示前句的动作A一经实施或发生，后句的事态B便立刻紧随其后出现或被观察到（相当于“于是”、“接着”、“一……就……”）。常用于叙述客观事实的经过或叙事线索的推移。需要注意的是，后句不能接续表达说话人个人意志、请求或命令的句式。",
+    "formation": "句子A。 + すると、 + 句子B。",
+    "examples": [
+      {
+        "translation": "一拨通电话，她就接听了。"
+      },
+      {
+        "translation": "只要按下这个按钮，门就会打开。"
+      },
+      {
+        "translation": "一去便利店，正巧碰见了朋友。"
+      },
+      {
+        "translation": "他刚走出家门，立刻就下起雨来了。"
+      }
+    ]
   },
   "ja_Aそういえば_7": {
     "title": "A。そういえば B。(~souieba)",
-    "shortExplanation": "Recalling something related to A; 'speaking of which', 'by the way', 'now that you mention it'.",
-    "longExplanation": "The A。そういえば B。grammar point is used when something related to A is recalled or brought up. 可以翻译为 'speaking of which', 'by the way', or 'now that you mention it' in English. It is commonly used to connect two related topics or ideas in a conversation and 指示 a change of focus. The formation consists of two clauses: the first being A and the second being B, with 'そういえば' in between as a connector.",
-    "formation": "A + そういえば + B"
+    "shortExplanation": "由前句的话题联想到相关的事情，用于顺势转换或补充话题；“说起来”、“这么一说”、“提起这事”。",
+    "longExplanation": "连词“そういえば”（字面由“そう言えば”演变而来）置于句首，用于说话人因前句提及的词语或事实A受到启发，突然回忆起或联想到与之相关的某项信息B（相当于“说起来”、“经你这么一说我才想起来”）。这是日常口语会话中极为高频的表达，能够自然流畅地推进交流并展开新的关联话题。",
+    "formation": "句子A。 + そういえば、 + 句子B。",
+    "examples": [
+      {
+        "translation": "电影啊。说起来，他是在电影院工作的呢。"
+      },
+      {
+        "translation": "山田小姐啊。说起来，她这周末要去旅行呢。"
+      },
+      {
+        "translation": "那家餐厅啊。提起这事，下个周末那里要举办聚会呢。"
+      },
+      {
+        "translation": "好冷啊。说起来，听说明天好像要下雪呢。"
+      }
+    ]
   },
   "ja_Aそこで_8": {
     "title": "A。そこで B。(~sokode)",
-    "shortExplanation": "表示 'therefore' or 'because of that'.",
-    "longExplanation": "The A。そこで B。grammar point is used to describe the reason for an action or situation in the A part and the result or decision made in the B part. 可以翻译为 'therefore' or 'because of that' in English.",
-    "formation": "A + そこで + B"
+    "shortExplanation": "针对前述的情况、问题或背景，采取相应的应对行动或决定；“于是”、“为此”、“正因如此”。",
+    "longExplanation": "接续词“そこで”置于句首，用于连接两个句子。前句A说明某种具体的情况、背景、面临的困难或原由，后句B则叙述针对该情况所采取的主动应对措施、对策或行为决定（相当于“为此”、“于是”）。与侧重于客观自然结果的“それで”不同，“そこで”后项常伴随有意识的主观动作与解决方案。",
+    "formation": "句子A。 + そこで、 + 句子B。",
+    "examples": [
+      {
+        "translation": "明天有考试。因此，我打算今晚好好学习。"
+      },
+      {
+        "translation": "这家餐厅很拥挤。为此，我们去别的地方吃午饭吧。"
+      },
+      {
+        "translation": "她有过敏症。于是，我为她专门做另一道料理。"
+      },
+      {
+        "translation": "我没带雨伞。为此，我准备等雨停了再走。"
+      }
+    ]
   },
   "ja_AそれがB_9": {
     "title": "A。それがB。(~sorega)",
-    "shortExplanation": "Expressing 'that's exactly what A is; in other words, B'.",
-    "longExplanation": "The grammar point A。それがB。can be used to restate or clarify that B is precisely what A means. It emphasizes the essence or definition of A by stating B. 可以翻译为 'that’s what A is,' 'that is precisely A/B,' or 'in other words, B.'",
-    "formation": "A (Statement)。それが B (Restatement or explanation of A)。"
+    "shortExplanation": "指出前述的A恰恰就是B的本质或真正定义；“那就是所谓的……”、“这正是……”。",
+    "longExplanation": "句型“A。それがB。”利用指示代词“それが”承接前句所描述的行为、状态或事实A，并在后句B中指出其本质属性或确立其定义，强调“A正是B的核心所在 / A才称得上是真正的B”。在后句中常与“～というものだ”、“～の醍醐味だ”等表达呼应，带有赞叹、感慨或深刻领悟的语气。",
+    "formation": "句子A。 + それが + 句子B / 短语B。",
+    "examples": [
+      {
+        "translation": "他很会读书。那就是所谓的叫作天才吧。"
+      },
+      {
+        "translation": "烹制美味的料理。那正是我的爱好所在。"
+      },
+      {
+        "translation": "她总会向我伸出援手。这才是所谓的朋友。"
+      },
+      {
+        "translation": "一个人踏上漫长的旅途。这就是所谓的自由。"
+      }
+    ]
   },
   "ja_Aそれで_10": {
     "title": "A。それで B。 (~sore de)",
-    "shortExplanation": "Express a sequence of events or cause-and-effect; 'and then', 'so', 'because of that'.",
-    "longExplanation": "The A。それで B。grammar point is used to connect two sentences or events, expressing a sequence of events or explaining the reason for the second event based on the first event. Essentially, it means 'and then', 'so', or 'because of that' in English.",
-    "formation": "Sentence A +。それで+ Sentence B。"
+    "shortExplanation": "表示客观顺接的因果关系，后项为前项自然引发的结果；“因此”、“所以”、“于是”。",
+    "longExplanation": "接续词“それで”置于句首，用于将前句A（原因、事态或理由）与后句B（随之自然产生的事实或结果）连接起来。它是口语和书面叙事中非常基础且高频的因果连接词，常用于交代事情发生的前因后果（相当于“因此”、“所以”）。需要注意后句一般叙述既成事实或自然发展的客观事态，不能用于祈使、命令或劝诱。",
+    "formation": "句子A。 + それで、 + 句子B。",
+    "examples": [
+      {
+        "translation": "昨天下了雨。所以，我没去公园。"
+      },
+      {
+        "translation": "考试不及格。因此，不得不参加补考。"
+      },
+      {
+        "translation": "房间里很冷。于是，我打开了暖气。"
+      },
+      {
+        "translation": "今天休息。所以，我要去看电影。"
+      }
+    ]
   },
   "ja_Aそれでも_11": {
     "title": "A。それでも B。(~sore demo)",
-    "shortExplanation": "表示 'even so', 'nevertheless', 'still', or 'but'; used to contrast two statements.",
-    "longExplanation": "The A。それでも B。grammar point is 用于展示 a 两个陈述之间的对比. The first statement (A) presents a situation, and the second statement (B) presents an action or thought that might be unexpected or contrary to the initial situation. 可以翻译为 'even so', 'nevertheless', 'still', or 'but' in English.",
-    "formation": "A (situation) + 。それでも + B (action or thought)"
+    "shortExplanation": "表示让步转折，即使存在前述的不利情况，后述行为或事实依然成立；“尽管如此”、“即便那样”、“仍然”。",
+    "longExplanation": "接续词“それでも”（由指示词“それ”与助词“でも”结合而成）置于句首，用于表示即便承认并接受前句A所描述的困境、阻碍或既成事实，后句B依然采取了不屈服于该状况的行动，或是产生了出乎常理的事态（相当于“尽管如此依然……”、“即便那样还是……”）。常用于展现坚定的意志或形成鲜明的对比。",
+    "formation": "句子A。 + それでも、 + 句子B。",
+    "examples": [
+      {
+        "translation": "今天是周日。尽管如此，我还是不得不去上班。"
+      },
+      {
+        "translation": "他虽然年轻。即便如此，经验却很丰富。"
+      },
+      {
+        "translation": "外面正在下雨。即便那样，我还是想去散步。"
+      },
+      {
+        "translation": "考试成绩很差。尽管如此，我也决不放弃。"
+      }
+    ]
   },
   "ja_Aそれなのに_12": {
     "title": "A。それなのに B。(~sorenanoni)",
-    "shortExplanation": "Express contrast or a contradiction between two situations or facts; 'even though', 'despite', 'but still'.",
-    "longExplanation": "The A。それなのにB。grammar point is 用于表达 contrast, contradiction or unexpectedness between two situations or facts. 可以翻译为 'even though', 'despite', or 'but still' in English. The formation is simple, with A and B representing the two contrasting or contradicting statements.",
-    "formation": "A。それなのに B。"
+    "shortExplanation": "表示事态的发展与基于前因所产生的合情常理的预期截然相反，含有意外、不满或遗憾的语气；“尽管如此却……”、“然而却……”、“偏偏却……”。",
+    "longExplanation": "接续词“それなのに”（由“それ”与表示转折的“なのに”构成）置于句首，用于强烈表达后句B的事态与从前句A自然预期的结果完全相悖。它不仅表达事实上的逆接转折，而且往往带有说话人感到不可思议、惊讶、失望、委屈或抱怨等浓厚的感情色彩（相当于“明明那样，却偏偏……”、“然而却出人意料地……”）。",
+    "formation": "句子A。 + それなのに、 + 句子B。",
+    "examples": [
+      {
+        "translation": "他很聪明。然而却在考试中落榜了。"
+      },
+      {
+        "translation": "我起得很早。即便如此却还是没赶上公交车。"
+      },
+      {
+        "translation": "昨天天气晴朗。尽管如此他却带了把伞。"
+      },
+      {
+        "translation": "她不擅长运动。然而却决定去跑马拉松。"
+      }
+    ]
   },
   "ja_Aそれなら_13": {
     "title": "A。それなら B。(A. Sore nara B.)",
-    "shortExplanation": "Express 'if that's the case, then'; 用于展示 a logical consequence or decision based on a given situation.",
-    "longExplanation": "The A。それなら B。grammar point is 用于表达 a logical consequence or decision based on the given situation in the first part of the sentence (A). The phrase それなら can be translated as 'if that's the case', 'in that case', or 'then' in English.",
-    "formation": "Situation A (sentence) + 。それなら + Situation B (sentence)"
+    "shortExplanation": "承接前文A所述的情况或事实，进而引出后文B的判断、决定或建议；“要是那样的话……”、“既然如此……”。",
+    "longExplanation": "连接词“それなら”（为“それならば”的口语缩略形式）用于承接前一句话A所陈述的事实、情报或状况，并在后一句话B中顺理成章地提出说话人的应对措施、主观决定、判断或建议，相当于汉语中的“要是那样的话”、“既然那样”、“那么”。",
+    "formation": "句子A（前提状况/事实） + 。それなら + 句子B（决定/判断/建议）",
+    "examples": [
+      {
+        "translation": "考试临近了。要是那样的话，就必须更加努力学习了。"
+      },
+      {
+        "translation": "明天大概会下雨吧。要是那样的话，带上雨伞去吧。"
+      },
+      {
+        "translation": "他们已经回去了。既然那样，我也回去吧。"
+      },
+      {
+        "translation": "那家餐厅预订已经满了。要是那样的话，我们找别的地方吧。"
+      }
+    ]
   },
   "ja_A_14": {
     "title": "A それはそうと B。 (A Sore wa sou to B)",
-    "shortExplanation": "Changing the topic; 'by the way', 'speaking of which'.",
-    "longExplanation": "The grammar point A それはそうと B is used to change the topic or bring up a new subject in a conversation. 可以翻译为 'by the way' or 'speaking of which' in English. It's used to connect two unrelated sentences or ideas, with A being the original topic and B being the new topic brought up.",
-    "formation": "Sentence A + それはそうと + Sentence B"
+    "shortExplanation": "用于在会话中转换话题，将前文A的话题搁置一边而引出全新的话题B；“话说回来”、“顺便提一下”、“且不说那个”。",
+    "longExplanation": "连接词“それはそうと”常用于口语会话中，用来打断或告一段落正在进行的话题A，从而巧妙地把谈话转向一个无关或全新的话题B。相当于汉语中的“话说回来”、“先不谈那个”、“顺便问一下”。",
+    "formation": "句子A（原有话题） + 。それはそうと + 句子B（新话题）",
+    "examples": [
+      {
+        "translation": "话说回来，今天的天气真好啊。"
+      },
+      {
+        "translation": "电影很有意思。话说回来，这家店的拉面很美味哦。"
+      },
+      {
+        "translation": "明天开始就是暑假了呢。顺便说一句，好像有一家新咖啡厅开业了。"
+      },
+      {
+        "translation": "昨天的考试太难了。话说回来，你知道这个周末有派对吗？"
+      }
+    ]
   },
   "ja_Aだが_15": {
     "title": "A。だが B。(~daga)",
-    "shortExplanation": "表示 contrasting ideas or statements; 'but', 'however'.",
-    "longExplanation": "The A。だが B。grammar point is 用于表达 contrasting ideas or statements. It connects two sentences or phrases with a contrasting meaning. 可以翻译为 'but' or 'however' in English.",
-    "formation": "Sentence A + だが + Sentence B"
+    "shortExplanation": "表示转折关系的连接词，用于连接具有对立、对照关系的两个句子；“但是”、“然而”、“不过”。",
+    "longExplanation": "连接词“だが”（源自“であるが”的略语）用于承接前文A，引出与之相反、对立或带有转折性质的事实或评价B。相比于口语中的“でも”，“だが”语气更加果断、书面化，常用于书面语、议论文、新闻报道或严肃稳重的会话中。",
+    "formation": "句子A + 。だが + 句子B",
+    "examples": [
+      {
+        "translation": "这家餐厅价格昂贵。但是，味道非常棒。"
+      },
+      {
+        "translation": "他很疲倦。然而，在工作做完之前他是不会休息的。"
+      },
+      {
+        "translation": "昨天很冷。不过，今天很暖和。"
+      },
+      {
+        "translation": "她的外表朴素。但是，性格极好。"
+      }
+    ]
   },
   "ja_AただB_16": {
     "title": "A。ただB。(~tada)",
-    "shortExplanation": "Express contrast between two situations; 'although', 'but', 'however'.",
-    "longExplanation": "The ただ grammar point is 用于表达 contrast between two situations or facts. It can often be translated as 'although', 'but', or 'however' in English. It is 用于展示 a contradiction or a different aspect of a situation.",
-    "formation": "Sentence A + ただ + Sentence B"
+    "shortExplanation": "在基本肯定前文A的前提下，引出轻微的转折、附加说明、不足之处或例外条件；“只是”、“不过”、“唯独”。",
+    "longExplanation": "连接词“ただ”用于在认可前句A的事实或大体情况的同时，在后句B中补充说明某一相反的情况、小缺陷、补充条件或不尽如人意之处。与表示强烈转折的“しかし”不同，“ただ”偏向于“基本认可，只是有一点需要提一下”的语感。",
+    "formation": "句子A + 。ただ + 句子B",
+    "examples": [
+      {
+        "translation": "他脑子很聪明。只是不太付出努力。"
+      },
+      {
+        "translation": "外面正在下雨。不过，呆在家里又很无聊。"
+      },
+      {
+        "translation": "那家餐厅价格偏高。不过，服务确实很好。"
+      },
+      {
+        "translation": "考试成绩不太理想。只是，还有重考的机会。"
+      }
+    ]
   },
   "ja_AただしB_17": {
     "title": "A。ただしB。 (A. Tadashi B)",
-    "shortExplanation": "Adding a condition or exception to a statement; 'however', 'provided that', 'but only if'.",
-    "longExplanation": "The grammar point A。ただしB is used to add a condition or exception to a previous statement. It can be translated to 'however', 'provided that', or 'but only if' in English. This structure consists of two parts: A (statement) and B (condition/exception). The word ただし is used to connect these two parts.",
-    "formation": "Statement A + ただし + Condition B"
+    "shortExplanation": "用于在前文A的陈述、许可或承诺之后，附加补充限制条件、例外情况或注意事项；“但是”、“不过”、“前提是……”。",
+    "longExplanation": "连接词“ただし”（但し）用于在陈述了前句A的内容之后，立即在后句B中补充指出必须遵守的附加条件、例外规定或注意事项。多用于公文公告、规章制度、合同契约、操作说明等规范性语境中，语气客观而严谨。",
+    "formation": "句子A（主陈述/许可事项） + 。ただし + 句子B（附加限制条件/例外事项）",
+    "examples": [
+      {
+        "translation": "可以使用这个房间。不过，使用完毕后请打扫干净。"
+      },
+      {
+        "translation": "明天起我因出差不在。但是，紧急情况下请拨打我的手机。"
+      },
+      {
+        "translation": "餐费全额由公司承担。不过，酒类费用需由个人自理。"
+      },
+      {
+        "translation": "可以在图书馆借书。但是，必须在期限内归还。"
+      }
+    ]
   },
   "ja_Aだって_18": {
     "title": "A。だって B。(Datte~)",
-    "shortExplanation": "Used to give a reason, express cause or bring up a topic; 'because', 'since', 'it's just that'.",
-    "longExplanation": "The A。だって B。grammar point is used to give a reason, express cause, or introduce a topic in a casual manner. 可以翻译为 'because', 'since', or 'it's just that'. A is the reason and B is the statement that follows due to the reason. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-casual + だって、い-形容词 + だって、な-形容词 + だって、名词 + だって"
+    "shortExplanation": "在日常口语中用于陈述理由、原因或进行解释、辩解；“因为……嘛”、“可那是由于……”、“说是……”。",
+    "longExplanation": "在日常亲近朋友或家人的口语会话中，“だって”常用于随口提出理由、因由，或是为后项的行为、建议进行辩解或解释说明。语气亲切、随和，带有一种向对方撒娇、辩白或随性陈述原因的语感。",
+    "formation": "动词普通形 + だって | 形容词（い形） + だって | 形容动词（な形词干） + だって | 名词 + だって",
+    "examples": [
+      {
+        "translation": "说是闲着没事嘛，一起去看电影吧！"
+      },
+      {
+        "translation": "听说天冷呢，请把外套穿上吧。"
+      },
+      {
+        "translation": "说是很累了嘛，还是休息一下比较好。"
+      },
+      {
+        "translation": "因为她做饭手艺好，大家都非常期待尝尝她做的菜。"
+      }
+    ]
   },
   "ja_Aちなみに_19": {
     "title": "A。ちなみに B。(A. Chinamini B.)",
-    "shortExplanation": "Used to give additional information about the topic; 'by the way', 'incidentally'.",
-    "longExplanation": "The ちなみに grammar point is used to provide additional information or a side note about a topic that has been previously mentioned. 可以翻译为 'by the way' or 'incidentally' in English. This grammar point is typically used to give further context, background information, or a slight change in topic.",
-    "formation": "A。ちなみに B。"
+    "shortExplanation": "用于在谈论话题A之后，顺带补充相关的参考信息或背景细节；“顺便提一句”、“顺带说明”、“顺便说一下”。",
+    "longExplanation": "连接词“ちなみに”（汉字写作“因みに”）用于在陈述了前文A的主题后，作为旁注或参考资料，顺带附加上与之相关的背景知识、衍生信息或有用情报。与完全跳出话题的“それはそうと”不同，“ちなみに”后接的B内容与A紧密关联，属于延伸补充性质。",
+    "formation": "句子A（主要信息） + 。ちなみに + 句子B（补充/参考信息）",
+    "examples": [
+      {
+        "translation": "今天没有课。顺便提一句，明天也放假。"
+      },
+      {
+        "translation": "这家店的拉面很好吃。顺便说一下，饺子也很值得推荐。"
+      },
+      {
+        "translation": "他今天迟到了。顺便说一句，他昨天缺席了。"
+      },
+      {
+        "translation": "电影很有意思。顺便提一句，原著小说还要更精彩哦。"
+      }
+    ]
   },
   "ja_Aということは_20": {
     "title": "A。ということは B。 (A. To iu koto wa B.)",
-    "shortExplanation": "表示 the meaning 'if A, that means B' or 'A implies B'.",
-    "longExplanation": "The A。ということは B。grammar point is 用于表达 the logical conclusion that if A is true, then B must also be true. 可以翻译为 'if A, that means B' or 'A implies B' in English. This pattern is used when the speaker wants to infer or deduce B based on the information provided by A.",
-    "formation": "A + ということは + B"
+    "shortExplanation": "根据前文A所见或所得的事实，逻辑推导或推测出后文B的结论；“也就是说……”、“这就意味着……”。",
+    "longExplanation": "句型“ということは”用于承接前面句子A所展现的事实、状况或情报，由此推导或合乎逻辑地得出结论B。说话人通过这种表达对既有信息进行解读与推断，后项B常与表示推测的语气句式（如“～に違いない”、“～かもしれない”等）搭配使用。",
+    "formation": "句子A（既知事实/信息） + 。ということは + 句子B（推论/结论）",
+    "examples": [
+      {
+        "translation": "她在哭泣。这就意味着肯定发生了什么伤心的事。"
+      },
+      {
+        "translation": "这块蛋糕还剩着。也就是说，大家当时可能都已经吃饱了吧。"
+      },
+      {
+        "translation": "道路严重堵车。那就意味着可能是发生了交通事故。"
+      },
+      {
+        "translation": "他考上试了。这就意味着他学习确实非常努力啊。"
+      }
+    ]
   },
   "ja_Aというのは_21": {
     "title": "A。というのは B。(Toiu no wa~)",
-    "shortExplanation": "Used to give an explanation or provide additional information for A; 'that is to say', 'in other words'.",
-    "longExplanation": "The grammar point A。というのは B。 is used to provide an explanation, definition, or further information about statement A. 可以翻译为 'that is to say', 'in other words', or 'namely' in English.",
-    "formation": "[Statement A]。というのは、[Statement B]。"
+    "shortExplanation": "用于在前文A陈述结果或判断后，在后文B解释其原因、理由或进行具体阐述；“之所以这么说是因为……”、“那是因为……”。",
+    "longExplanation": "连接词“というのは”用于对前一句A提出的结论、结果、主张或事实进行深入说明，详细解释其背后的原因或具体内容。后项B通常与表原因的结句“～からだ”（因为……）或“～ためだ”（由于……）相呼应，构成严密的因果解释结构。",
+    "formation": "句子A（结论/结果） + 。というのは + 句子B（理由：～からだ / ～ためだ 或具体说明）",
+    "examples": [
+      {
+        "translation": "他非常疲倦。那是因为昨晚他开车去了很远的地方。"
+      },
+      {
+        "translation": "我推荐这家餐厅。这是因为这里的菜品美味，而且氛围也很好。"
+      },
+      {
+        "translation": "我考试挂科了。之所以如此，是因为我没有充分复习。"
+      },
+      {
+        "translation": "她有一种很独特的爱好。具体来说，那就是收集昆虫。"
+      }
+    ]
   },
   "ja_AなおB_22": {
     "title": "A。なおB。(A. Nao B.)",
-    "shortExplanation": "Provides additional information; 'moreover', 'besides', 'in addition'.",
-    "longExplanation": "The なお grammar point is used to provide additional information or emphasize an existing fact. 可以翻译为 'moreover', 'besides', or 'in addition' in English. なお is placed between two sentences to connect them and provide supplementary information.",
-    "formation": "A (sentence) + なお + B (sentence)"
+    "shortExplanation": "用于在陈述完前文A之后，公事公办或客观地追加补充相关信息、通知或注意事项；“另外”、“此外”、“附带说明”。",
+    "longExplanation": "连接词“なお”（汉字写作“尚”）多用于正式的书面通知、官方公告、商务信函以及庄重的公开发言中，用于在完成主要陈述A之后，客观追加相关的说明事项、补充信息或注意事项B。语气郑重平实。",
+    "formation": "句子A + 。なお + 句子B",
+    "examples": [
+      {
+        "translation": "明天放假。另外，周一也是休息日。"
+      },
+      {
+        "translation": "他很聪明。此外，体育运动也很擅长。"
+      },
+      {
+        "translation": "这本书很有趣。而且，价格也很便宜。"
+      },
+      {
+        "translation": "我正在学习日语。另外，我也在学习韩语。"
+      }
+    ]
   },
   "ja_Aもっとも_23": {
     "title": "A。もっとも B。(Motto mo ~)",
-    "shortExplanation": "Express contrasting opinions or facts; 'although', 'but', 'however'.",
-    "longExplanation": "The A。もっとも B。 grammar point is 用于表达 contrasting opinions or facts. 可以翻译为 'although', 'but', or 'however' in English. This structure connects two clauses and highlights the contrast between them.",
-    "formation": "从句 A + もっとも + 从句 B"
+    "shortExplanation": "在前文A做出概括性叙述后，在后文B补充修正、限制或例外，使表述更加严谨客观；“不过”、“话虽如此”、“当然……”。",
+    "longExplanation": "连接词“もっとも”（尤も）用于在句A陈述了一个整体性观点或评价之后，说话人意识到该说法可能过于绝对，因而在句B中主动补充说明限制条件、附带事实或相反倾向，以保持言论的客观与平衡。相当于汉语的“不过”、“话虽如此”、“话是这么说”。",
+    "formation": "句子A + 。もっとも + 句子B",
+    "examples": [
+      {
+        "translation": "他脑子聪明。话虽如此，努力学习也很重要。"
+      },
+      {
+        "translation": "这家餐厅味道很棒。不过，价格偏贵。"
+      },
+      {
+        "translation": "她长得很漂亮。话虽这么说，脾气却很糟糕。"
+      },
+      {
+        "translation": "日本是个很有趣的国家。话虽如此，要在那里生活似乎也挺不容易的。"
+      }
+    ]
   },
   "ja_A要するに_24": {
     "title": "A。要するに B。(A. Yousuru ni B.)",
-    "shortExplanation": "Expressing 'in short', 'in a nutshell', or 'to sum up' when restating or summarizing A as B.",
-    "longExplanation": "The A。要するに B。grammar point is used to restate or summarize the information provided in A more concisely as B. 可以翻译为 'in short', 'in a nutshell', or 'to sum up' in English. The formation consists of two sentences or statements, A and B, with 要するに (yousuru ni) in between to indicate the summary or restatement of A as B.",
-    "formation": "A。要するに B。"
+    "shortExplanation": "用于将前文A的详细叙述或繁琐说明加以归纳提炼，在后文B引出简明扼要的核心结论；“总而言之”、“简而言之”、“归根结底”。",
+    "longExplanation": "连接词“要するに”（汉字写作“要するに”）用于承接前文A冗长或具体的细节描述，将其提炼为后文B最核心的实质内容或概括性结论。相当于汉语中的“总而言之”、“简言之”、“一句话概括”。",
+    "formation": "句子A（具体叙述/铺垫） + 。要するに + 句子B（归纳概括/核心结论）",
+    "examples": [
+      {
+        "translation": "这个项目获得了成功。总而言之，我们的团队完成了一项出色的工作。"
+      },
+      {
+        "translation": "他很会做饭。简而言之，他是一位优秀的厨师。"
+      },
+      {
+        "translation": "昨天非常忙碌。总而言之，我工作了整整一整天。"
+      },
+      {
+        "translation": "她很喜欢新工作。简而言之，她感到很满意。"
+      }
+    ]
   },
   "ja_Noun_29": {
-    "title": "Noun たりとも～ない (~tari tomo ~nai)",
-    "shortExplanation": "用于展示 a strong negative: 'not even ~', 'not a single ~'.",
-    "longExplanation": "「Noun + たりとも + Negative Verb」表示 a strong negation such as 'not even one', 'not even once', or 'none at all'.",
-    "formation": "名词 + たりとも + Negative 动词"
+    "title": "最小数量词 + たりとも～ない (tari tomo ~ nai)",
+    "shortExplanation": "与表示极小单位的数量词搭配，表示强烈的彻底否定；“哪怕……也不……”、“连一个……也不……”。",
+    "longExplanation": "句型“最小数量词（通常为数字‘1’+量词） + たりとも + 否定句”带有浓厚的书面语与训诫色彩。用于前置极微小的数量单位（如一分、一秒、一滴、一人、一言等），后接否定谓语，以斩钉截铁的语气表示全盘否定，强调绝不容许丝毫的妥协或浪费（“哪怕是一……也决不……”、“连一丝一毫也不……”）。",
+    "formation": "最小数量词（1 + 量词） + たりとも + 否定表现（～ない / ～するな）",
+    "examples": [
+      {
+        "translation": "哪怕一分钟也不要虚度！"
+      },
+      {
+        "translation": "他连半个字也不肯说。"
+      },
+      {
+        "translation": "那部电影她连一次都没有看过。"
+      },
+      {
+        "translation": "那张照片我连一张也没有留存。"
+      }
+    ]
   },
   "ja_あげく_37": {
     "title": "～あげく (~ageku)",
-    "shortExplanation": "表示 the outcome of a series of actions or events; 'in the end', 'finally', 'after'.",
-    "longExplanation": "The ～あげく grammar point is 用于表达 the outcome or result after a series of actions or events. It can usually be translated into English as 'in the end', 'finally', or 'after'. The typical formation is adding あげく to the past form of a verb (Verb-た), or adding のあげく to a noun. This 指示 that, after a long process or a number of attempts, a certain final outcome is reached—often with a sense that it took considerable effort or time.",
-    "formation": "动词-た + あげく / 名词 + の + あげく"
+    "shortExplanation": "表示经过长时间的纠结、努力或波折之后，最终导致了某种（多为消极遗憾的）结果；意为“到头来……”、“结果却……”。",
+    "longExplanation": "句型“～あげく”（常见接续形式为“～あげくに”或“～あげくの + 名词”）表示某人在经过长期的努力、尝试、烦恼、波折或争执之后，最终迎来的结局。后项所导致的结果绝大多数是不尽如人意、令人惋惜甚至失败的结局，往往带有说话人“白白耗费了精力却落得如此下场”的遗憾口吻。接动词过去式（た形）或“名词 + の”。",
+    "formation": "动词过去式（た形） + あげく / 名词 + の + あげく",
+    "examples": [
+      {
+        "translation": "等了很长时间，结果电车到头来却没有来。"
+      },
+      {
+        "translation": "在尝试了各种各样的方法之后，最终迎来了成功。"
+      },
+      {
+        "translation": "在历经连番失败之后，他最终下定决心辞职离开了公司。"
+      },
+      {
+        "translation": "她在长时间苦苦纠结之后，最终还是回绝了那份工作邀请。"
+      }
+    ]
   },
   "ja_あまり_38": {
     "title": "～あまり (〜amari)",
-    "shortExplanation": "表示 the result of doing something excessively or beyond a certain point.",
-    "longExplanation": "The ～あまり grammar point is 用于表达 a negative or undesirable outcome caused by doing something excessively or beyond a certain point. It often follows verbs, adjectives, and nouns, and is commonly translated as 'so much', 'too much', or 'to the extent that'.",
-    "formation": "动词-ます stem + あまり, い-形容词 + あまり, な-形容词 + のあまり, 名词 + のあまり"
+    "shortExplanation": "因某种感情、情绪或状态过度强烈，从而导致了异乎寻常的极端行为或结果；意为“因过于……而……”。",
+    "longExplanation": "句型“～あまり”（或“～あまりに”、“～あまりの + 名词 + に/で”）表示某种情感（如喜悦、悲伤、紧张、愤怒等）或身体、精神状态达到了极高的程度，以至于超过了正常限度，进而引发了出人意料的举动或消极、反常的后续事态。常与表心情、精神状态的词汇搭配使用。",
+    "formation": "动词普通形 + あまり / 形容词（い形） + あまり / 形容动词词干 + なあまり（或 のあまり） / 名词 + のあまり",
+    "examples": [
+      {
+        "translation": "昨天因为过于劳累，我一觉深度昏睡到了大清早。"
+      },
+      {
+        "translation": "她因为极度喜悦高兴，竟然忍不住失声痛哭了起来。"
+      },
+      {
+        "translation": "他因为对安全过于神经紧绷，一遍又一遍地确认房门有没有锁好。"
+      },
+      {
+        "translation": "由于天寒地冻到了极点，他的身体止不住地剧烈颤抖。"
+      }
+    ]
   },
   "ja_うちに_39": {
     "title": "～うちに (〜uchi ni)",
-    "shortExplanation": "表示 doing something while a certain condition still holds; 'while', 'before', 'as long as'.",
-    "longExplanation": "The ～うちに grammar point is 用于表示 that an action should be done while a certain condition still exists or before a situation changes. 可以翻译为 'while', 'before', or 'as long as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + うちに, い-形容词 + うちに, な-形容词 + なうちに, 名词 + のうちに"
+    "shortExplanation": "趁着当前的良好条件或状态尚未发生改变，抓紧时间做某事；意为“趁着……的时候”、“在……之前”。",
+    "longExplanation": "句型“～うちに”表示趁着当前某种状态仍在维系、情势尚未恶化或改变的有限时间内，抓紧行动以防错失良机。后项通常是带有说话人主观意志的动作、建议或劝诱表达（如“趁着年轻好好学习”、“趁热吃”）。若错过该时期，动作将变得困难或无法实行。",
+    "formation": "动词普通形 + うちに | 形容词（い形） + うちに | 形容动词词干 + なうちに | 名词 + のうちに",
+    "examples": [
+      {
+        "translation": "请趁着身体还硬朗健康的时候，尽情享受外出旅行的乐趣吧。"
+      },
+      {
+        "translation": "应当趁着年轻，多去广泛学习各种各样的新知识。"
+      },
+      {
+        "translation": "趁着孩子们还在熟睡，我们来抓紧准备晚餐吧。"
+      },
+      {
+        "translation": "趁着雨还没下起来，我们赶紧回家吧。"
+      }
+    ]
   },
   "ja_がい_40": {
     "title": "～がい (〜gai)",
-    "shortExplanation": "表示 'worth doing' for verbs.",
-    "longExplanation": "The ～がい grammar point is 用于表达 that an action is worth doing or to emphasize the value and importance of doing something. It is attached to verbs in their stem form and can be translated as 'worth doing' in English.",
-    "formation": "动词-stem + がい"
+    "shortExplanation": "接在动词连用形后，表示付出心血或时间做某事非常具有价值或精神回报；意为“值得……的价值”。",
+    "longExplanation": "接尾词“～がい”（由名词“甲斐”连浊发生浊音化而成）接在动词连用形（ます形去掉ます）后，表示付出某种劳力、心血或时间所换来的精神满足感与价值回馈。常用形式有“～がいがある”（很值得做）、“～がいがない”（不值得做）、“～がいのある + 名词”（值得从事的工作/目标等）。典型例词包括“やりがい”（有做的价值）、“生きがい”（生存的意义）、“働きがい”（工作价值）。",
+    "formation": "动词连用形（ます形去掉ます） + がい (＋ がある / がない / のある + 名词)",
+    "examples": [
+      {
+        "translation": "这本书内容很有深度，非常值得一读。"
+      },
+      {
+        "translation": "我认为早起做事是非常有价值、很值得坚持的。"
+      },
+      {
+        "translation": "这是一份值得投入大量时间与心血去完成的工作。"
+      },
+      {
+        "translation": "同他促膝长谈一番，必定是一件很有启发、非常值得的事吧。"
+      }
+    ]
   },
   "ja_かいがあって_41": {
     "title": "～かいがあって (〜kaiga atte)",
-    "shortExplanation": "用于表达 that an effort is worth it or has value; 'to be worth the effort' or 'to pay off'.",
-    "longExplanation": "The ～かいがあって grammar point is used to convey the idea that an action or effort is worth it, or that it has value. It is often translated as 'to be worth the effort' or 'to pay off' in English. It is typically associated with actions or efforts that lead to a successful or desirable result.",
-    "formation": "动词-past + かいがあって / 名词 + の + かいがあって"
+    "shortExplanation": "表示付出努力或辛劳得到了应有的回报，迎来了令人满意的良好成果；意为“不枉费……”、“功夫不负有心人”。",
+    "longExplanation": "句型“～かいがあって”（连词形式，源于“甲斐がある”）表示此前所付出的艰苦努力、心力、漫长时间或代价没有白费，最终顺理成章地换来了如愿以偿、令人欣喜的丰硕成果。相当于汉语中的“没白费……”、“功夫不负有心人，终于……”。",
+    "formation": "动词过去式（た形） + かいがあって / 名词 + の + かいがあって",
+    "examples": [
+      {
+        "translation": "每天坚持刻苦学习终于得到了回报，我顺利通过了考试。"
+      },
+      {
+        "translation": "平时刻苦训练没有白费，我们在比赛中成功赢得了胜利。"
+      },
+      {
+        "translation": "顶着大雨一路飞奔果然值得，我刚好赶上了那趟电车。"
+      },
+      {
+        "translation": "早起认真打扫确实见到了成效，房间里变得一尘不染、格外干净。"
+      }
+    ]
   },
   "ja_かいもなく_42": {
     "title": "～かいもなく (〜kai mo naku)",
-    "shortExplanation": "表示 the meaning of 'without worth', 'in vain', 'fruitless'.",
-    "longExplanation": "The ～かいもなく grammar point is 用于表达 that something has been done without worth, in vain, or fruitlessly. It often appears as 'Verb-た + かいもなく' or 'Noun + の + かいもなく' to indicate that an effort did not produce the hoped-for result.",
-    "formation": "动词-た + かいもなく / 名词 + の + かいもなく"
+    "shortExplanation": "表示虽然付出了很多努力或心血，但最终徒劳无功、未见成效；意为“白费了一番心血”、“徒劳无功”。",
+    "longExplanation": "句型“～かいもなく”（源自“甲斐がある”的否定连接形式）表达了说话人深沉的懊恼与遗憾。它表示前项虽然付出了巨大的努力、牺牲、祈愿或高昂成本，但所有付出均未能如愿以偿，后项最终归于徒劳无功或遭遇失败挫折。常用于描写无可奈何的惋惜结局。",
+    "formation": "动词过去式（た形） + かいもなく / 名词 + の + かいもなく",
+    "examples": [
+      {
+        "translation": "漫长岁月的辛勤苦熬终究徒劳无功，到头来还是失败了。"
+      },
+      {
+        "translation": "虽然在这个项目上倾注了大量的时间和精力，但最终全白费了，没能顺利推行。"
+      },
+      {
+        "translation": "尽管拼命呼救求援，但终究徒劳无益，没有任何人赶来。"
+      },
+      {
+        "translation": "虽然尝试了各种各样的方法来减肥，但完全白忙活一场，体重一点也没降下来。"
+      }
+    ]
   },
   "ja_かける_43": {
     "title": "～かける (〜kakeru)",
-    "shortExplanation": "指示 a process or action is 'in progress' or 'halfway'.",
-    "longExplanation": "The ～かける grammar point is used to describe a process or action that is in progress, halfway, or not yet completed. It can be attached to verbs to imply that the action is still ongoing or something is in a certain state of partial completion.",
-    "formation": "动词-stem + かける"
+    "shortExplanation": "表示动作做到一半便停顿下来，处于未完成的中间状态；“刚……了一半”、“还没……完”。",
+    "longExplanation": "句型“～かける”接在动词连用形（ます形去掉ます）之后，表示某一动作刚开始或进行到中途尚未完成，动作暂时中断并处于未完成的状态。常以“～かけの＋名词”的形式作定语修饰名词，例如“食べかけ”（吃了一半的）、“読みかけ”（读了一半的）。此外，当接在非意志性动词后时，还可表示“刚要……就……”或“差点儿……”之意。",
+    "formation": "动词连用形（ます形去掉ます） + かける / かけの + 名词",
+    "examples": [
+      {
+        "translation": "她把吃了一半的苹果放下就出门了。"
+      },
+      {
+        "translation": "孩子们把做了一半的作业留在了书桌上。"
+      },
+      {
+        "translation": "一到晚上，我就会去找那本读了一半的书。"
+      },
+      {
+        "translation": "办公室里有许多做到一半的文件。"
+      }
+    ]
   },
   "ja_がち_44": {
     "title": "～がち (〜gachi)",
-    "shortExplanation": "表示 that something tends to occur frequently or habitually.",
-    "longExplanation": "The ～がち grammar point is 用于表达 that something has a tendency to occur frequently or habitually. It can be attached to verbs and adjectives to indicate that the action or state tends to occur often.",
-    "formation": "动词-ます stem + がち / い-形容词 stem + がち / な-形容词 stem + がち"
+    "shortExplanation": "表示经常容易发生某种不好的动作、状态或倾向；“往往……”、“动辄……”、“容易……”。",
+    "longExplanation": "句型“～がち”接在动词连用形（ます形去掉ます）或某些名词之后，表示某事或某种状态频繁发生，具有这种倾向或习惯。多用于表示消极、负面或令人不快的情况（如容易生病、容易迟到、容易遗忘等）。修饰名词时用“～がちな＋名词”，句尾可用“～がちだ / がちです”。",
+    "formation": "动词连用形（ます形去掉ます） + がち | 名词 + がち (+ だ / な / に)",
+    "examples": [
+      {
+        "translation": "他往往很容易感冒。"
+      },
+      {
+        "translation": "这个地区动辄就容易下雨。"
+      },
+      {
+        "translation": "她总是容易忘带东西。"
+      },
+      {
+        "translation": "因为我经常容易迟到，所以必须起得更早一些。"
+      }
+    ]
   },
   "ja_かないかのうちに_45": {
     "title": "～か～ないかのうちに (〜ka〜naika no uchi ni)",
-    "shortExplanation": "表示 an action that occurs immediately after another action; 'as soon as', 'no sooner than', 'the moment'.",
-    "longExplanation": "The ～か～ないかのうちに grammar point is 用于表达 that an action occurs immediately after another action. In English, 可以翻译为 'as soon as', 'no sooner than', or 'the moment'. This grammar point is used with verbs, showing the verb in both affirmative and negative forms with か and ないか, followed by のうちに.",
-    "formation": "动词-casual + か + 动词-negative form + かのうちに"
+    "shortExplanation": "表示前一个动作刚开始或几乎尚未结束的刹那，紧接着发生了后一个动作；“刚一……就……”、“还没……就……”。",
+    "longExplanation": "句型“～か～ないかのうちに”通过将同一个动词的原形（肯定）与“ない形”（否定）并列，来极力强调两件事相隔的时间极其短暂：前一个动作甚至还没分清到底做完与否，后一个动作或变化就接踵而至。后项多为表示意外发生或既成事实的陈述，不能用于祈使、命令或意志表达。",
+    "formation": "动词辞书形 + か + 动词ない形 + かのうちに",
+    "examples": [
+      {
+        "translation": "刚一到车站，就下起雨来了。"
+      },
+      {
+        "translation": "刚买了手机没多久，新机型就发售了。"
+      },
+      {
+        "translation": "他刚一迈出家门，电话就响了。"
+      },
+      {
+        "translation": "派对刚一开始，她就哭了出来。"
+      }
+    ]
   },
   "ja_かねない_46": {
     "title": "～かねない (〜kane nai)",
-    "shortExplanation": "表达 likelihood of a negative outcome or consequence.",
-    "longExplanation": "The ～かねない grammar point is 用于表达 the possibility or likelihood of a negative outcome or consequence, often used when there is concern about the result. It is typically used with verbs in their stem form and can be understood as 'might (have a bad result)'.",
-    "formation": "动词-stem + かねない"
+    "shortExplanation": "表示从当前的情况来看，很有可能会招致某种不良后果或危险；“很有可能……”、“恐怕会……”。",
+    "longExplanation": "句型“～かねない”接在动词连用形（ます形去掉ます）之后，表达说话人的担忧或预判，表示照这样下去，很有可能会发生令人担忧的严重不良后果或坏结果。在感情色彩上几乎全部用于消极、负面的负罪、事故、失败或危险情况。",
+    "formation": "动词连用形（ます形去掉ます） + かねない",
+    "examples": [
+      {
+        "translation": "他太不负责任了，很有可能会违背诺言。"
+      },
+      {
+        "translation": "如果不加注意的话，很有可能会引发事故。"
+      },
+      {
+        "translation": "这个应用程序漏洞很多，恐怕会发生崩溃。"
+      },
+      {
+        "translation": "她现在非常紧张，很有可能会遭遇失败。"
+      }
+    ]
   },
   "ja_かねる_47": {
     "title": "～かねる (〜kaneru)",
-    "shortExplanation": "Express inability or impossibility of doing an action (often as a polite refusal).",
-    "longExplanation": "The ～かねる grammar point is 用于表达 that someone cannot do an action or that something is impossible to do. It typically has a nuance of reluctance or polite refusal and is formed by adding かねる to the ます-stem of the verb.",
-    "formation": "动词-ます stem + かねる"
+    "shortExplanation": "委婉、礼貌地表示难以做到某事或予以委婉拒绝；“难以……”、“恕难……”。",
+    "longExplanation": "句型“～かねる”接在动词连用形（ます形去掉ます）之后，表示因立场、责任、心理阻碍或能力所限，难以做到某事或难以做出某种决定。常以敬体“～かねます”的形式用于商务往来和正式交际场合，作为一种委婉、客气的拒绝表达，避免直接使用“できない”给对方造成生硬不快的印象。",
+    "formation": "动词连用形（ます形去掉ます） + かねる / かねます",
+    "examples": [
+      {
+        "translation": "因为那个问题很难，所以我难以解决。"
+      },
+      {
+        "translation": "我很难判断他所说的话是否属实。"
+      },
+      {
+        "translation": "关于她是否会来，我现在难以知晓。"
+      },
+      {
+        "translation": "关于详细内容，恕我难以说明。"
+      }
+    ]
   },
   "ja_かのようだ_48": {
     "title": "～かのようだ (〜ka no you da)",
-    "shortExplanation": "Express a similarity or comparison; 'as if', 'like', 'as though'.",
-    "longExplanation": "The ～かのようだ grammar point is 用于表达 similarity or comparison between two things or situations. 可以翻译为 'as if', 'like', or 'as though' in English. The standard patterns differ depending on whether it’s used with verbs, い-adjectives, な-adjectives, or nouns. For な-adjectives and nouns, we usually insert である before かのようだ.",
-    "formation": "动词-casual + かのようだ, い-形容词 + かのようだ, な-形容词 + であるかのようだ, 名词 + であるかのようだ"
+    "shortExplanation": "表示实际上并非如此，但某种举止或状态给人的感觉极像如此；“宛如……”、“简直就像……一样”。",
+    "longExplanation": "句型“～かのようだ”用于比喻或推测，表示实际上事实并非如此或尚不确定，但当下的某种外在表现、动作或神态却令人强烈地感到仿佛就是那样。修饰名词时用“～かのような＋名词”，修饰动词或形容词作状语时用“～かのように”。名词和二类形容词后续通常加“である”。",
+    "formation": "动词普通形 + かのようだ | 一类形容词 + かのようだ | 二类形容词 + であるかのようだ | 名词 + であるかのようだ",
+    "examples": [
+      {
+        "translation": "他看起来简直就像很怕狗一样。"
+      },
+      {
+        "translation": "这个房间感觉就像很冷一样。"
+      },
+      {
+        "translation": "她举手投足宛如自己是个名人一般。"
+      },
+      {
+        "translation": "他的举止简直就像个孩子一样。"
+      }
+    ]
   },
   "ja_かまいか_49": {
     "title": "～か～まいか (〜ka 〜maika)",
-    "shortExplanation": "用于表达 a dilemma or indecision between two options or actions.",
-    "longExplanation": "The ～か～まいか grammar point 表示 uncertainty or indecision, often with a more formal or literary feel. Typically, it is seen with verbs in the volitional form plus まい (the negative volitional). In more academic or stiff writing, い／な-adjectives and nouns plus である can also appear before まいか.",
-    "formation": "动词-volitional + か + 动词-volitional + まいか, い-形容词 + であるか + い-形容词 + であるまいか, な-形容词 + であるか + な-形容词 + であるまいか, 名词 + であるか + 名词 + であるまいか"
+    "shortExplanation": "表示在做还是不做某动作之间犹豫不决、举棋不定；“是……呢还是不……呢”。",
+    "longExplanation": "句型“～か～まいか”通过将动词意志形（肯定）与表示否定意志的“まい”（否定）并列，生动表达当事人在“做还是不做”、“接不接受”之间左右为难、纠结徘徊的心情。带有较强的书面语或郑重语彩。在更正式的论述文体中，形容词或名词亦可搭配“であるか……であるまいか”。",
+    "formation": "动词意志形 + か + 动词 + まいか | 形容词 / 名词 + であるか + であるまいか",
+    "examples": [
+      {
+        "translation": "究竟要不要接下这个项目，我还没有决定好。"
+      },
+      {
+        "translation": "他是否会成功，目前还无法预测。"
+      },
+      {
+        "translation": "对于这个问题究竟是简单还是不简单，大家的意见产生了分歧。"
+      },
+      {
+        "translation": "他是成为领袖还是不当下属追随者，应当由他自己来选择。"
+      }
+    ]
   },
   "ja_からこそ_50": {
     "title": "～からこそ (〜kara koso)",
-    "shortExplanation": "表达 emphasis on the reason; 'precisely because', 'it is precisely because'.",
-    "longExplanation": "The ～からこそ grammar point is used to emphasize the reason or cause of a situation, often implying that the effect is especially notable or even surprising. 可以翻译为 'precisely because' or 'it is precisely because.'",
-    "formation": "动词-casual + からこそ, い-形容词 + からこそ, な-形容词 + だからこそ, 名词 + だからこそ"
+    "shortExplanation": "强烈强调某个理由或原因的独特性与决定性；“正因为……才……”、“正是由于……”。",
+    "longExplanation": "句型“～からこそ”由表示原因的助词“から”和表示强力强调的提示助词“こそ”复合而成，用于极力强调正是这一特殊理由（绝非其他次要原因）才必然导致了后文显著或意料之外的结果。常用于积极、由衷感慨或总结经验教训的语境中。",
+    "formation": "动词普通形 + からこそ | 一类形容词 + からこそ | 二类形容词 + だからこそ | 名词 + だからこそ",
+    "examples": [
+      {
+        "translation": "正因为经历过失败，才真正理解了成功的意义。"
+      },
+      {
+        "translation": "正因为吃过苦头，才有了今天的我。"
+      },
+      {
+        "translation": "他正因为待人亲切，才深受大家欢迎。"
+      },
+      {
+        "translation": "正因为有过去的经验，才能深刻理解那个问题。"
+      }
+    ]
   },
   "ja_からして_51": {
     "title": "〜からして (〜kara shite)",
-    "shortExplanation": "表示 that something is exceptional, unusual, or negative based on a particular aspect or point.",
-    "longExplanation": "The 〜からして grammar point is used when you want to make a conclusion or emphasize that something is exceptional (often negative or surprising) from a certain aspect or starting point. The part before からして serves as the base or clue for the judgment.",
-    "formation": "名词 + からして"
+    "shortExplanation": "举出一个具有代表性的局部特征或起点，由此推断整体；“单从……来看”、“光从……就……”。",
+    "longExplanation": "句型“〜からして”接在名词之后，通过挑出一个极具代表性、最先映入眼帘的侧面或细小线索（如神情、外表、名字等）作为判断的基准，暗示“仅仅从这一个局部来看就已经是这种状况了，整个全局自然可想而知”。绝大多数情况下用于消极、负面或令人失望的推断与评价。",
+    "formation": "名词 + からして",
+    "examples": [
+      {
+        "translation": "单从他的神色来看，想必是发生了什么坏事吧。"
+      },
+      {
+        "translation": "光从这道菜的卖相来看，就感觉不太好吃。"
+      },
+      {
+        "translation": "单从她的考试成绩来看，要及格恐怕很困难吧。"
+      },
+      {
+        "translation": "单从那部电影的片名来看，我就觉得不会有趣。"
+      }
+    ]
   },
   "ja_からすると_52": {
     "title": "～からすると (〜kara suru to)",
-    "shortExplanation": "表示 a judgment or evaluation based on a certain standard; 'from this perspective', 'considering', 'judging from'.",
-    "longExplanation": "The ～からすると grammar point is used to make a judgment or evaluation based on some criterion, perspective, or standard. 可以翻译为 'from this perspective', 'considering', or 'judging from' in English.",
-    "formation": "名词 + からすると"
+    "shortExplanation": "以某种标准、依据、线索或立场为基准来进行推断或评价；“从……来看”、“按……来说”。",
+    "longExplanation": "句型“～からすると”（同义表达有“～からすれば”）接在名词之后，用于提出作出判断的依据、参考标准、评价角度或所处的立场（如经验、口碑、价格等），并由此引出说话人的推断、猜测或结论。相当于汉语中的“从……来看”、“根据……判断”。",
+    "formation": "名词 + からすると",
+    "examples": [
+      {
+        "translation": "从经验来看，这项工作大概会很难吧。"
+      },
+      {
+        "translation": "从口碑来看，那家餐厅非常美味。"
+      },
+      {
+        "translation": "从价格来推断，这件商品被认为是高品质之物。"
+      },
+      {
+        "translation": "关于这个区域，从交通便利度来看是非常方便的。"
+      }
+    ]
   },
   "ja_からといって_53": {
     "title": "～からといって (〜kara to itte)",
-    "shortExplanation": "表示 'just because...doesn't mean' or 'even though...not necessarily'.",
-    "longExplanation": "The ～からといって grammar point is used to convey that even though something is true, it does not necessarily mean a certain result will occur. 可以翻译为 'just because...doesn't mean' or 'even though...not necessarily.'",
-    "formation": "动词-casual + からといって, い-形容词 + からといって, な-形容词 + だからといって, 名词 + だからといって"
+    "shortExplanation": "表示不能仅凭前述的理由，就理所当然地认定后项也成立；“虽说……但也未必……”、“不能因为……就……”。",
+    "longExplanation": "句型“～からといって”用于否定某种片面的因果必然性。尽管前项所述的理由或事实属实，但后项绝非理所当然或必定如此。后半句常常呼应部分否定或消极判定的句型，如“～わけではない”（并非……）、“～とは限らない”（未必……）、“～とは言えない”（不能说……）。",
+    "formation": "动词普通形 + からといって | 一类形容词 + からといって | 二类形容词 + だからといって | 名词 + だからといって",
+    "examples": [
+      {
+        "translation": "不能因为下了雨，比赛就一定会中止。"
+      },
+      {
+        "translation": "不能因为他有名，他的意见就总是正确的。"
+      },
+      {
+        "translation": "不能因为这道汤很辣，就认定所有人都会觉得辣。"
+      },
+      {
+        "translation": "不能因为她在哭，就断定她一定很伤心。"
+      }
+    ]
   },
   "ja_からにかけて_54": {
     "title": "～から～にかけて (〜kara 〜ni kakete)",
-    "shortExplanation": "表示 a range of time, space, or quantities; 'from...to', 'between...and', 'over'.",
-    "longExplanation": "The ～から～にかけて grammar pattern is 用于表示 a range or scope—often in time or space. 可以翻译为 'from...to', 'between...and', or 'over' in English.",
-    "formation": "名词 1 + から + 名词 2 + にかけて"
+    "shortExplanation": "表示时间或空间从某处到某处的大致范围；“从……到……”、“在……到……之间”。",
+    "longExplanation": "句型“～から～にかけて”用于表示在时间上或空间上跨越一段大致的范围。与表示起止界限十分明确分明的“～从……到……”（～から～まで）不同，“～から～にかけて”强调的是界限并不严格分明的大致区间，通常描述该区间内持续发生或断断续续呈现的某种状态与现象。",
+    "formation": "名词1 + から + 名词2 + にかけて",
+    "examples": [
+      {
+        "translation": "我从上午9点到下午5点之间一直在工作。"
+      },
+      {
+        "translation": "新干线行驶于东京至大阪一带。"
+      },
+      {
+        "translation": "从春天到夏天这一期间，盛开着许多花朵。"
+      },
+      {
+        "translation": "在20岁到30岁之间，大多数人大学毕业并参加工作是普遍现象。"
+      }
+    ]
   },
   "ja_からには_55": {
     "title": "～からには (〜kara niwa)",
-    "shortExplanation": "Express a sense of responsibility or determination; 'since', 'now that', 'if'.",
-    "longExplanation": "The ～からには grammar point is 用于展示 a sense of responsibility or strong resolve once a certain condition is met. 可以翻译为 'since', 'now that', or 'if'.",
-    "formation": "名词 + だ + からには, な-形容词 + だ + からには, い-形容词 + からには, 动词-casual + からには"
+    "shortExplanation": "表示既然前项已成为既成事实，后项就理应承担相应的责任、决心或义务；“既然……就（应该）……”、“既然……就必须……”。",
+    "longExplanation": "句型“～からには”用于表示前项事实已经确定或无可更改，因而基于道义、常理或决心，后项理所当然地必须采取某种行动。后半句常呼应表示义务、强烈决心、建议或要求的句式，如“～なければならない”（必须）、“～べきだ”（应该）、“～つもりだ”（打算）、“～たい”（想要）等。",
+    "formation": "动词普通形 + からには | 一类形容词 + からには | 二类形容词 + である / だ + からには | 名词 + である / だ + からには",
+    "examples": [
+      {
+        "translation": "既然考试合格了，就必须拼命努力工作。"
+      },
+      {
+        "translation": "既然做出了承诺，就必须信守诺言。"
+      },
+      {
+        "translation": "既然这部电影这么有趣，那我也想推荐给朋友看看。"
+      },
+      {
+        "translation": "既然她已经求助了，就必须伸出援手帮助她。"
+      }
+    ]
   },
   "ja_から見ると_56": {
     "title": "～から見ると (〜kara miru to)",
-    "shortExplanation": "Express a perspective or point of view; 'from the standpoint of', 'in terms of', 'from the perspective of'.",
-    "longExplanation": "The ～から見ると grammar point is 用于表达 a particular perspective or point of view. In English, it translates to 'from the standpoint of', 'from the perspective of', or 'in terms of'. It is usually used with a noun that 指示 the perspective.",
-    "formation": "名词 + から見ると"
+    "shortExplanation": "从某种特定的立场、观点或角度来进行审视和评价；“从……的角度来看”、“就……而言”。",
+    "longExplanation": "句型“～から見ると”（同类表达有“～から見れば”、“～から見て”）接在名词之后，明确提出观察问题或进行评判时的出发点、特定立场或考量维度（如费用、实力、健康、当事人看法等），并据此得出说话人的判断或分析。相当于汉语中的“从……来看”、“在……看来”。",
+    "formation": "名词 + から見ると",
+    "examples": [
+      {
+        "translation": "从费用的角度来看，这个方案非常划算。"
+      },
+      {
+        "translation": "从她的观点来看，社长的决定是可以理解的。"
+      },
+      {
+        "translation": "就实力而言，他在团队中是最优秀的。"
+      },
+      {
+        "translation": "从健康方面来看，这种食品并不好。"
+      }
+    ]
   },
   "ja_から言うと_57": {
     "title": "～から言うと (〜kara iuto)",
-    "shortExplanation": "Express a judgment or opinion based on a specific criterion; 'speaking from', 'in terms of', 'from the viewpoint of'.",
-    "longExplanation": "The ～から言うと grammar point is 用于表达 a judgment or opinion based on a specific criterion or aspect. 可以翻译为 'speaking from', 'in terms of', or 'from the viewpoint of' in English. It is most commonly used with nouns, although you may occasionally see other forms (like adjectives).",
-    "formation": "名词 + から言うと (common), [动词-casual / 形容词 + から言って] (less common)"
+    "shortExplanation": "从某一特定侧面、特征或评价标准出发来发表看法；“从……来说”、“就……而言”。",
+    "longExplanation": "句型“～から言うと”（同义表达有“～から言えば”、“～から言って”）接在表示某种属性、基准或角度的名词之后（如价格、口味、便利性、健康等），用于限定评价的范畴，表达“抛开其他因素不论，仅单就该方面而言”的判断或主观看法。",
+    "formation": "名词 + から言うと / から言って / から言えば",
+    "examples": [
+      {
+        "translation": "从价格上来说，这款商品是最划算的。"
+      },
+      {
+        "translation": "从味道来说，我觉得这家餐厅很好吃。"
+      },
+      {
+        "translation": "就便利程度而言，这间公寓处于最优越的位置。"
+      },
+      {
+        "translation": "从健康的角度来说，每天坚持运动非常重要。"
+      }
+    ]
   },
   "ja_くせに_58": {
     "title": "～くせに (〜kuse ni)",
-    "shortExplanation": "Used to criticize someone for doing something contrary to what one would expect from their nature or situation.",
-    "longExplanation": "The grammar point ～くせに is 用于表达 criticism or disapproval toward someone who does something contradictory to their expected nature, role, or prior statement. It's used in fairly casual or spoken contexts and can sound quite critical or accusing. Note that there's a colloquial variant ～くせして, but ～くせに is the standard form taught in most references.",
-    "formation": "动词 (casual) + くせに / い-形容词 + くせに / な-形容词 + な(or の) + くせに / 名词 + の + くせに"
+    "shortExplanation": "表示对某人做出与其身份、能力或所说之话相违背的行为表达指责、不满或蔑视；“明明……却……”。",
+    "longExplanation": "句型“～くせに”用于对某人做出与其自身身份、地位、立场、能力或先前的言行完全不符甚至相悖的举动表达强烈的指责、不满、蔑视或讽刺之意。多用于非正式口语交际中，带有明显的负面贬义色彩。前后两项的主语原则上必须为同一个人或群体，且说话人通常不用来指责自己（自嘲时除外）。",
+    "formation": "动词普通形 + くせに | い形容词 + くせに | な形容词 + な / の + くせに | 名词 + の + くせに",
+    "examples": [
+      {
+        "translation": "他自己总是迟到，却讨厌让别人等他。"
+      },
+      {
+        "translation": "嘴上说着不好意思，却又在重蹈覆辙。"
+      },
+      {
+        "translation": "他个子明明挺高，篮球却打得很烂。"
+      },
+      {
+        "translation": "这家店明明很有名，服务却很差。"
+      }
+    ]
   },
   "ja_ことから_59": {
     "title": "～ことから (〜koto kara)",
-    "shortExplanation": "指示 the reason or basis for something; 'because', 'since', 'due to'.",
-    "longExplanation": "The ～ことから grammar point is 用于表示 the reason or basis for a conclusion, fact, or premise. 可以翻译为 'because', 'since', or 'due to' in English. The same pattern is used whether it’s with verbs, adjectives, or nouns (with the appropriate こと or の).",
-    "formation": "动词-casual + ことから / い-形容词 + ことから / な-形容词 + なことから / 名词 + のことから"
+    "shortExplanation": "表示做出某种判断、得出结论或命名的根据、起因或理由；“因为……”、“从……来看”、“由……可知”。",
+    "longExplanation": "句型“～ことから”用于说明某种事实、特征、由头构成了得出结论、做出判断、产生名称或某种状态变化的理由与依据（“源于……这一事实”）。常用于书面语、新闻报道以及解释事物来历、名称由来的说明性文体中，语气客观严谨。",
+    "formation": "动词普通形 + ことから | い形容词 + ことから | な形容词 + なことから | 名词 + であることから / のことから",
+    "examples": [
+      {
+        "translation": "因为他每天都坚持运动，所以身体很健壮。"
+      },
+      {
+        "translation": "由于这家店服务周到，所以总是座无虚席。"
+      },
+      {
+        "translation": "她为人非常亲切热心，因此受到大家的喜爱。"
+      },
+      {
+        "translation": "由于那家公司口碑极佳，所以作为就职去向非常受欢迎。"
+      }
+    ]
   },
   "ja_ことに_60": {
     "title": "～ことに (〜koto ni)",
-    "shortExplanation": "用于表达 feelings or emotions about a situation, action, or outcome.",
-    "longExplanation": "The ～ことに grammar point is used to highlight the speaker’s feelings or emotional reaction toward a situation, action, or outcome. It often appears in constructions like 驚いたことに, 残念なことに, 不思議なことに, etc.",
-    "formation": "动词-casual + ことに / い-形容词 + ことに / な-形容词 + なことに / 名词 + のことに"
+    "shortExplanation": "表示对某件事态或结果所产生的强烈主观情感或心理反应；“对……感到……”、“令人……的是”。",
+    "longExplanation": "句型“～ことに”用于强调说话人对某种状况、事实或结果产生的主观情感反应（如惊讶、感动、愤怒等）。该句型既可以放在句首作情态状语（如“驚いたことに”令人吃惊的是），也可以接在事实从句之后，作为后项表示情感体验的动词（如驚く、感動する、腹が立つ等）的对象，表示“对某事感到……”。",
+    "formation": "动词普通形 + ことに | い形容词 + ことに | な形容词 + なことに",
+    "examples": [
+      {
+        "translation": "对他突然回国这件事，我感到十分惊讶。"
+      },
+      {
+        "translation": "得知她赢得了冠军，我深受感动。"
+      },
+      {
+        "translation": "对于他总是迟到这件事，我感到十分恼火。"
+      },
+      {
+        "translation": "我之前竟然没有察觉到她是如此美丽。"
+      }
+    ]
   },
   "ja_ことになっている_61": {
     "title": "～ことになっている (〜koto ni natte iru)",
-    "shortExplanation": "表示 that something is supposed to be or has been decided (rule, plan, custom).",
-    "longExplanation": "The ～ことになっている grammar point is used when something has been decided, planned, or there is a rule/custom that everyone follows. 可以翻译为 'it is supposed to be,' 'it is decided,' or 'it is customary that.'",
-    "formation": "动词-plain form + ことになっている / い-形容词 + ことになっている / な-形容词 + だ + ことになっている / 名词 + だ + ことになっている"
+    "shortExplanation": "表示法律法规、社会公约、组织规定或既定安排；“规定……”、“按规定要……”、“预定……”。",
+    "longExplanation": "句型“～ことになっている”用于表达已经确立的规则、制度、社会习俗、法律规章或既定的日程安排。它强调该决定是客观存在的外部约束，并非说话人个人的即时主观意志，所有人通常都需要遵守或按此执行。",
+    "formation": "动词普通形 + ことになっている | い形容词 + ことになっている | な形容词 + である / だという + ことになっている | 名词 + である / だという + ことになっている",
+    "examples": [
+      {
+        "translation": "在日本，规定车辆要靠左行驶。"
+      },
+      {
+        "translation": "按照公司规章，上班要穿制服。"
+      },
+      {
+        "translation": "按照安排，她明天将举行婚礼。"
+      },
+      {
+        "translation": "这款商品被公认为拥有高品质。"
+      }
+    ]
   },
   "ja_さえば_62": {
     "title": "～さえ～ば (〜sae ~ba)",
-    "shortExplanation": "表示 that, as long as a certain condition is met, something else will follow; 'if only', 'provided that'.",
-    "longExplanation": "The ～さえ～ば grammar point is 用于表示 that if a certain single condition is fulfilled, everything else will be fine or a certain result will occur. It often translates as 'as long as...' or 'if only...'.",
-    "formation": "名词 + さえ + 动词-conditional / 动词-ますstem + さえすれば / etc. (varies by part of speech)"
+    "shortExplanation": "表示只要满足了这一最低限度的唯一条件，其他事情便不成问题；“只要……就……”。",
+    "longExplanation": "句型“～さえ～ば”用于强调只要满足了某一个特定或最低限度的充分条件，其他的一切就都能迎刃而解，后项所期望的结果或状态就能顺利实现。既可以接在名词后表示“只要有……”，也可以接在动词连用形后表示“只要做了……”。",
+    "formation": "名词 + さえ + 假定形（ば） | 动词连用形（ます形去掉ます） + さえすれば / さえあれば",
+    "examples": [
+      {
+        "translation": "只要有钱，我就感到很幸福。"
+      },
+      {
+        "translation": "只要考试合格，就能够毕业。"
+      },
+      {
+        "translation": "只要我多吃蔬菜，妈妈就会很高兴。"
+      },
+      {
+        "translation": "只要能帮我报销交通费，我去哪里都可以。"
+      }
+    ]
   },
   "ja_ざるを得ない_63": {
     "title": "～ざるを得ない (〜zaru wo enai)",
-    "shortExplanation": "Have no choice but to; cannot help but.",
-    "longExplanation": "The ～ざるを得ない grammar point is 用于表示 that one has no choice but to do something or cannot avoid doing it. It is formed from the negative form (ない) but replaces ない with ざる, followed by を得ない. (Note: する → せざるを得ない.)",
-    "formation": "动词-ない form (drop ない) + ざるを得ない"
+    "shortExplanation": "表示迫于客观形势或常理，尽管本心并不愿意，也别无选择只能去做；“不得不……”、“只得……”。",
+    "longExplanation": "句型“～ざるを得ない”表示虽然说话人主观上并不想做某事，但迫于客观事实、形势所迫或常识常理，除此以外别无他法，只能硬着头皮去做。接续方式为动词ない形去掉ない加“ざるを得ない”，特例为“する”变为“せざるを得ない”。具有较为郑重、偏书面语的语感。",
+    "formation": "动词ない形（去掉ない） + ざるを得ない（“する”变为“せざるを得ない”）",
+    "examples": [
+      {
+        "translation": "这项工作截稿期将近，不得不加班。"
+      },
+      {
+        "translation": "由于电车延误，只好乘坐了出租车。"
+      },
+      {
+        "translation": "虽然对她的解释心存疑虑，但眼下不得不先相信她。"
+      },
+      {
+        "translation": "在这种情况下，不得不重新制定新计划。"
+      }
+    ]
   },
   "ja_ずにはいられない_64": {
     "title": "～ずにはいられない (〜zu ni wa irarenai)",
-    "shortExplanation": "Cannot help but; cannot resist doing; an irresistible urge.",
-    "longExplanation": "The ～ずにはいられない grammar point 表示 that one cannot resist or help doing something. In other words, there is a strong urge that one cannot suppress. It's formed from the negative stem of a verb plus ずにはいられない. (Note: する → せずにはいられない.)",
-    "formation": "动词-ない form (drop ない) + ずにはいられない"
+    "shortExplanation": "表示内心的某种强烈感情、冲动或本能无法自我克制；“忍不住要……”、“不由得……”、“不能不……”。",
+    "longExplanation": "句型“～ずにはいられない”表示某种由内而发的冲动、情绪或自然反应极其强烈，以至于凭理智无论如何也无法压抑或克制，自然而然地付诸行动。接续方式为动词ない形去掉ない加“ずにはいられない”，特例为“する”变为“せずにはいられない”。多用于第一人称表达自身的不可遏制之情；若用于第三人称，通常后接“～ようだ”或“～らしい”等推测表达。",
+    "formation": "动词ない形（去掉ない） + ずにはいられない（“する”变为“せずにはいられない”）",
+    "examples": [
+      {
+        "translation": "一听到这首歌，我就忍不住要跟着唱起来。"
+      },
+      {
+        "translation": "看到她哭泣的样子，我就不由得想要去安慰她。"
+      },
+      {
+        "translation": "这部小说太有意思了，让人忍不住一口气读下去。"
+      },
+      {
+        "translation": "他一面对美食，就忍不住一定要尝一尝。"
+      }
+    ]
   },
   "ja_そうにない_65": {
     "title": "～そうにない (〜sou ni nai)",
-    "shortExplanation": "表达 unlikelihood of something happening; 'not likely', 'doesn't seem'.",
-    "longExplanation": "The ～そうにない grammar point is 用于表示 that something does not appear likely to happen. Often translated as 'doesn't seem like' or 'not likely to...'. Attach そうにない to the verb stem or adjective stem.",
-    "formation": "动词-stem + そうにない / い-形容词 (drop い) + そうにない / な-形容词 + そうにない"
+    "shortExplanation": "表示根据当前情况判断，某事发生或实现的几率极低；“看起来不会……”、“几乎不可能……”、“难以……”。",
+    "longExplanation": "句型“～そうにない”（亦可加强语气为“～そうにもない”）是样态助动词“～そうだ”的否定形式。说话人根据亲眼所见的迹象或当前形势做出推测，认为某种动作或状态发生、实现的可能性极小，希望十分渺茫。接在动词连用形（ます形去掉ます）或形容词词干之后。",
+    "formation": "动词连用形（ます形去掉ます） + そうにない | い形容词词干 + そうにない | な形容词词干 + そうにない",
+    "examples": [
+      {
+        "translation": "这场雨看起来一时半会儿停不下来。"
+      },
+      {
+        "translation": "看起来他很难通过这次考试。"
+      },
+      {
+        "translation": "这道菜看着并不怎么好吃。"
+      },
+      {
+        "translation": "这个房间看起来不大可能干净整洁。"
+      }
+    ]
   },
   "ja_たかと思ったら_66": {
     "title": "～たかと思ったら (〜ta ka to omottara)",
-    "shortExplanation": "Express a sequence of events happening in quick succession; 'as soon as', 'no sooner than'.",
-    "longExplanation": "The ～たかと思ったら grammar point 指示 that one action occurs almost immediately after another, often conveying surprise at how quickly it happens. It is frequently translated as 'as soon as...' or 'no sooner than...'.",
-    "formation": "动词-た form + かと思ったら"
+    "shortExplanation": "表示前一个动作刚发生，紧接着瞬间发生了下一个动作，令说话人感到意外和迅速；“刚一……就……”、“以为刚……却已经……”。",
+    "longExplanation": "句型“～たかと思ったら”（亦常作“～たと思うと”）用于表示前项动作或变化刚告一段落，后项的事态就紧接着接踵而至，其转换速度之快令说话人感到惊讶或出乎预料。后项陈述客观发生的既成事实，不能使用祈使、命令或意志表达。",
+    "formation": "动词た形 + かと思ったら / かと思うと",
+    "examples": [
+      {
+        "translation": "刚把电话拨过去，她就立刻接听了。"
+      },
+      {
+        "translation": "刚一起飞，飞机就开始颠簸起来。"
+      },
+      {
+        "translation": "刚出门去买东西，天就下起雨来了。"
+      },
+      {
+        "translation": "刚以为工作做完了，上司就又拿来了额外的工作。"
+      }
+    ]
   },
   "ja_たきり_67": {
     "title": "～たきり (〜takiri)",
-    "shortExplanation": "Express 'since then' or 'after'; 用于表示 that an action occurred once and has not been repeated or that a state has continued since a certain event or time.",
-    "longExplanation": "The ～たきり grammar point is 用于表达 that an action occurred once and has not been repeated, or that a situation or state has continued since a certain event or time. 可以翻译为 'since then', 'after', or 'one time only' in English.",
-    "formation": "动词-past + きり"
+    "shortExplanation": "表示做了某事之后，其后续状态就一直持续着，再也没有发生预期的变化或后续行动；“自从……之后就一直没有……”。",
+    "longExplanation": "句型“～たきり”接在动词过去形（た形）之后，表示前项动作发生后，某种状态就一直原封不动地持续下去，本该随之发生的变化或期待的进展却再也没有出现（常与后项的否定形式呼应，如“〜たきり〜ない”）。常带有说话人因音信全无或事态停滞而产生的遗憾、担忧之感。",
+    "formation": "动词た形 + きり（后项常搭配否定形式）",
+    "examples": [
+      {
+        "translation": "他自从辞职离开公司后，就一直音信全无。"
+      },
+      {
+        "translation": "昨天早上把邮件发出去后，到现在也没有收到任何回复。"
+      },
+      {
+        "translation": "小时候去过一次海边之后，一晃已经过去二十年了。"
+      },
+      {
+        "translation": "自从和她分手之后，我就再也没有想起过她。"
+      }
+    ]
   },
   "ja_だけあって_68": {
     "title": "～だけあって (〜dake atte)",
-    "shortExplanation": "表示 that something is as expected or deserves its reputation.",
-    "longExplanation": "The ～だけあって grammar point is 用于表示 that something is as expected or deserves its reputation, based on certain facts or qualities. 可以翻译为 'no wonder', 'as expected', or 'it is natural that' in English.",
-    "formation": "动词-casual + だけあって, い-形容词 + だけあって, な-形容词 + なだけあって, 名词 + だけあって"
+    "shortExplanation": "表示某事物的实际表现或结果与其名声、能力或所处地位完全相称，值得称道；“不愧是……”、“正因为……果然名不虚传”。",
+    "longExplanation": "句型“～だけあって”（亦常作“～だけのことはある”）用于表达高度评价或赞赏，表示某种结果、表现或水平与前项所具备的名气、特长、资历或地位完全相符，让人由衷赞叹“果然名不虚传”。后项必须是对正面、积极成果的评价，不能用于负面贬义的语境中。",
+    "formation": "动词普通形 + だけあって | い形容词 + だけあって | な形容词 + なだけあって | 名词 + だけあって",
+    "examples": [
+      {
+        "translation": "他不愧日语很好，能够像日本人一样流利地交流。"
+      },
+      {
+        "translation": "这家餐厅真不愧名气很大，菜肴非常美味。"
+      },
+      {
+        "translation": "她不愧经验丰富，轻而易举地就解决了那个难题。"
+      },
+      {
+        "translation": "他不愧是优秀的学生，考试成绩总是名列前茅。"
+      }
+    ]
   },
   "ja_だけましだ_69": {
     "title": "～だけましだ (〜dake mashi da)",
-    "shortExplanation": "表示 that although the situation isn’t ideal, it could be worse; 'it’s not great, but at least...'.",
-    "longExplanation": "The ～だけましだ grammar point is used to compare two undesirable or less-than-ideal situations, saying that one is not good, but still better than the worse alternative. It often translates as 'at least (it’s only...)' or 'it could be worse.'",
-    "formation": "动词-casual + だけましだ, い-形容词 + だけましだ, な-形容词 + だけましだ, 名词 + だけましだ"
+    "shortExplanation": "表示现状虽然并不令人十分满意，但比起更糟糕的恶果来已经算值得庆幸；“还算好的”、“总比……强”。",
+    "longExplanation": "句型“～だけましだ”用于将当前处境与可能发生的更恶劣、更严峻的事态进行对比。说话人承认当前的状况虽称不上理想甚至有所遗憾，但考虑到最坏的结果并没有发生，心里感到自我宽慰，觉得“不幸中的万幸”、“总算还可以接受”。",
+    "formation": "动词普通形 + だけましだ | い形容词 + だけましだ | な形容词 + なだけましだ | 名词 + なだけましだ / であるだけましだ",
+    "examples": [
+      {
+        "translation": "只是失败了已经算好的了，幸好没有引发更严重的后果。"
+      },
+      {
+        "translation": "只是迟到总比根本来不了强，还算值得庆幸。"
+      },
+      {
+        "translation": "房间虽小但总算有得住，总比完全没有地方住要好。"
+      },
+      {
+        "translation": "他没结婚就算万幸了，差点儿可就惹出大麻烦了。"
+      }
+    ]
   },
   "ja_たところ_70": {
     "title": "～たところ (〜ta tokoro)",
-    "shortExplanation": "Used to describe an action that has just been completed, often followed by a result or observation.",
-    "longExplanation": "The ～たところ grammar point is used when an action has just been completed and the speaker wants to describe an observation or result that follows. 可以翻译为 'just finished doing something' or 'as soon as (I did something)...'.",
-    "formation": "动词-past + ところ"
+    "shortExplanation": "表示做了某项动作之后，随之得到了某种结果、反应或有了新的发现；“……之后发现……”、“一……结果……”。",
+    "longExplanation": "句型“～たところ”接在动词过去形（た形）之后，表示尝试或完成了前项动作后，后项随之出现了某种客观的结果、对方的反馈或崭新的事实发现。后项为客观陈述句，叙述已知的结果或事实，不能包含说话人的意志、推测或命令请求。",
+    "formation": "动词た形 + ところ",
+    "examples": [
+      {
+        "translation": "打扫了一番之后，房间变得干净整洁多了。"
+      },
+      {
+        "translation": "向他询问了一下，他似乎也不知道那个问题的答案。"
+      },
+      {
+        "translation": "刚把作业交上去，老师就挑出了里面的错误。"
+      },
+      {
+        "translation": "吃了午饭之后，心情感觉好多了。"
+      }
+    ]
   },
   "ja_たとたん_71": {
     "title": "～たとたん (〜ta totan)",
-    "shortExplanation": "表达 moment something happens; 'as soon as', 'just when'.",
-    "longExplanation": "The ～たとたん grammar point is 用于表达 that an action or event occurred at the same moment another action or event happened. 可以翻译为 'as soon as' or 'just when.' It requires the past tense of a verb.",
-    "formation": "动词-past + たとたん"
+    "shortExplanation": "表示在前一个动作刚完成的一瞬间，紧接着突然发生了意料之外的事态；“刚一……就立刻……”、“正当……的时候猛然……”。",
+    "longExplanation": "句型“～たとたん”（亦常作“～たとたんに”）接在动词过去形（た形）之后，强调在前项动作结束的电光石火般的同一瞬间，后项的事态骤然发生。后项往往是令说话人始料未及的突发变化或客观事态，不能使用带有说话人意志、打算或祈使命令的表达。",
+    "formation": "动词た形 + とたん / とたんに",
+    "examples": [
+      {
+        "translation": "刚把门一打开，就突然下起雨来。"
+      },
+      {
+        "translation": "刚一把电话打过去，电池就没电关机了。"
+      },
+      {
+        "translation": "一见到她的那一瞬间，耳边就响起了那首承载着回忆的歌曲。"
+      },
+      {
+        "translation": "考试一结束，立刻就轻松了下来。"
+      }
+    ]
   },
   "ja_だらけ_72": {
     "title": "～だらけ (〜darake)",
-    "shortExplanation": "指示 that something is full of or covered with a certain (usually negative) characteristic.",
-    "longExplanation": "The ～だらけ grammar point is 用于表达 that something is full of, covered with, or filled with a certain characteristic. It frequently has a negative or undesirable nuance.",
-    "formation": "名词 + だらけ"
+    "shortExplanation": "表示表面或空间里充斥、布满了大量令人不快、肮脏或负面的事物；“满是……”、“全是……”、“净是……”。",
+    "longExplanation": "句型“～だらけ”直接接在名词之后，表示某一场所、物体表面或整体布满、充斥着某种事物。在感情色彩上绝大多数用于消极、负面、肮脏或充满瑕疵的事物（如垃圾、皱纹、伤口、错误、泥垢等），表达说话人厌恶、不悦或遗憾的评价。修饰名词时用“～だらけの＋名词”，句尾可用“～だらけだ”。",
+    "formation": "名词 + だらけ (+ だ / の + 名词)",
+    "examples": [
+      {
+        "translation": "他的房间里满是垃圾。"
+      },
+      {
+        "translation": "这片海滩到处都是礁石，很难游泳。"
+      },
+      {
+        "translation": "他的脸上布满了皱纹。"
+      },
+      {
+        "translation": "这个苹果上全是被虫子咬出的洞。"
+      }
+    ]
   },
   "ja_っこない_73": {
     "title": "～っこない (〜kkonai)",
-    "shortExplanation": "表示 the impossibility or very low probability of something happening; 'no way', 'impossible'.",
-    "longExplanation": "The ～っこない grammar point is 用于表达 that something is impossible or extremely unlikely. It’s formed by attaching ～っこない to the negative stem of a verb. 可以翻译为 'no way', 'no chance', or 'impossible.'",
-    "formation": "动词-negative stem + っこない"
+    "shortExplanation": "表示强烈的否定，坚信某事绝不可能发生或极难实现；“绝不可能……”、“怎么也不可能……”、“哪能……”。",
+    "longExplanation": "句型“～っこない”接在动词连用形（ます形去掉ます）之后，表示说话人基于主观判断强烈断定某事绝无可能发生，或无论如何也做不到（“绝对不可能……”、“怎么也做不到……”）。该句型语气坚决，常用于日常口语及熟人之间的交谈中，带有较强的主观否定色彩。",
+    "formation": "动词连用形（ます形去掉ます） + っこない",
+    "examples": [
+      {
+        "translation": "下了这么大的雪，怎么可能赶得上去学校呢。"
+      },
+      {
+        "translation": "他不会游泳，绝对不可能游到游泳池的对面。"
+      },
+      {
+        "translation": "她非常胆小，绝对不可能一个人晚上去公园。"
+      },
+      {
+        "translation": "在这么短的时间内，绝对不可能把那本书全部读完。"
+      }
+    ]
   },
   "ja_つつ_74": {
     "title": "～つつ (〜tsutsu)",
-    "shortExplanation": "Shows two actions happening simultaneously or a contrast; 'while', 'although'.",
-    "longExplanation": "The ～つつ grammar point is 用于表达 two actions occurring simultaneously, or to show a contrast between an ongoing action and another factor. 可以翻译为 'while' or 'although.' It is attached to a verb in its stem form.",
-    "formation": "动词-stem + つつ"
+    "shortExplanation": "表示两个动作同时进行（“一边……一边……”），或表示前后情况相互对立、矛盾（“虽然……但是……”、“尽管……却……”）。",
+    "longExplanation": "句型“～つつ”接在动词连用形（ます形去掉ます）之后，属于较书面、正式的表达，主要有两种用法：(1) 表示两个动作同时进行，相当于“ながら”（“一边……一边……”），通常后项动词为主动作；(2) 表示逆折转折，常接在表示心理活动的动词（如“思う”、“知る”等）之后，相当于“～つつも”或“～ながらも”（“虽然心里想着……，但实际上却……”、“明知……却依然……”）。",
+    "formation": "动词连用形（ます形去掉ます） + つつ",
+    "examples": [
+      {
+        "translation": "他一边看着电视，一边做作业。"
+      },
+      {
+        "translation": "虽说最近觉得很忙，但我每天仍坚持锻炼身体。"
+      },
+      {
+        "translation": "她虽然流着泪，却依然微笑着道别。"
+      },
+      {
+        "translation": "尽管被雨淋湿着，他还是继续向前走着。"
+      }
+    ]
   },
   "ja_つつある_75": {
     "title": "～つつある (〜tsutsu aru)",
-    "shortExplanation": "表示 an ongoing process or gradual change.",
-    "longExplanation": "The ～つつある grammar point is used to describe something that is in the middle of a gradual change or development. 可以翻译为 '(something) is in the process of ~ing.' The most common usage is with the verb stem plus つつある.",
-    "formation": "动词-stem + つつある"
+    "shortExplanation": "表示某种变化或事态正在逐步进行中；“正在不断……”、“正逐步处于……的过程中”。",
+    "longExplanation": "句型“～つつある”接在动词连用形（ます形去掉ます）之后，属于书面语，表示某种状态或变化正在逐步、持续地发生（“正逐渐……”、“正不断……”）。常与表示增减、变化、进展等瞬间或持续变化的动词搭配使用，如“回復する”（恢复）、“変化する”（变化）、“増加する”（增加）、“発展する”（发展）等，常见于新闻报道、学术文章及正式演说中。",
+    "formation": "动词连用形（ます形去掉ます） + つつある",
+    "examples": [
+      {
+        "translation": "全球变暖正在不断加剧。"
+      },
+      {
+        "translation": "这座城镇正在迅速发展。"
+      },
+      {
+        "translation": "孩子们正在一天天长大。"
+      },
+      {
+        "translation": "经济正在逐步复苏。"
+      }
+    ]
   },
   "ja_っぱなし_76": {
     "title": "～っぱなし (〜ppanashi)",
-    "shortExplanation": "Express a continuous action or state; 'left as is', 'non-stop'.",
-    "longExplanation": "The ～っぱなし grammar point is 用于表达 that something is left in a certain condition for an extended time or that an action continues without stopping. It attaches to the ます-stem of verbs.",
-    "formation": "动词-ます stem + っぱなし"
+    "shortExplanation": "表示本该妥善处理的动作完成后却放置不管任由其维持原状，或某一动作、状态持续不断；“一直放置不管”、“一直……着”。",
+    "longExplanation": "句型“～っぱなし”（由动词“放す”演变而来）接在动词连用形（ます形去掉ます）之后，主要表示以下两种含义：(1) 完成了某动作后，本应进行后续清理或处理，却放任不管，一直维持该状态不变（例如：开着窗户没关、电视开着就睡了），往往含有说话人的不满、责备或遗憾之情；(2) 某一动作或状态持续不断、没有间歇（如：立ちっぱなし 一直站着）。",
+    "formation": "动词连用形（ます形去掉ます） + っぱなし (+ だ / にする / で)",
+    "examples": [
+      {
+        "translation": "一直开着窗户没关，弄得房间变冷了。"
+      },
+      {
+        "translation": "他喜欢听音乐，总是戴着耳机一直不摘下来。"
+      },
+      {
+        "translation": "孩子把玩具扔在地板上不管，没有收拾。"
+      },
+      {
+        "translation": "昨晚因为太忙太累，电视一直开着就睡着了。"
+      }
+    ]
   },
   "ja_っぽい_77": {
     "title": "～っぽい (〜ppoi)",
-    "shortExplanation": "指示 that something has the appearance, characteristics, or behavior of something else.",
-    "longExplanation": "The ～っぽい grammar point is used when something or someone appears to have characteristics, traits, or a vibe that resemble something else. It can mean 'looks like,' 'seems like,' or 'has the quality of.'",
-    "formation": "名词 + っぽい, 动词-casual + っぽい, い-形容词 + っぽい, な-形容词 + っぽい"
+    "shortExplanation": "表示带有某种倾向、感觉或具有某种性质；“有点儿像……”、“显得……”、“带……倾向”。",
+    "longExplanation": "后缀“～っぽい”属于日常会话中的口语表达，接在名词、形容词词干或动词连用形之后，主要用于：(1) 表示具有某种气质、外貌或感觉，但本质并非如此（例如：大人っぽい 像大人般成熟、子供っぽい 孩子气）；(2) 表示带有某种颜色、味道或状态倾向（例如：白っぽい 偏白、油っぽい 油腻）；(3) 表示容易反复产生某种情绪或行为习惯（例如：怒りっぽい 容易发怒、忘れっぽい 健忘）。",
+    "formation": "名词 + っぽい | 动词连用形（ます形去掉ます） + っぽい | 一类形容词词干（去掉い） + っぽい | 二类形容词词干 + っぽい",
+    "examples": [
+      {
+        "translation": "她穿着一套看起来很成熟的大人风格的衣服。"
+      },
+      {
+        "translation": "这个解释听起来似乎有点难懂。"
+      },
+      {
+        "translation": "他脸上带着一副看起来很疲惫的表情。"
+      },
+      {
+        "translation": "这个房间给人一种冷清清、凉飕飕的感觉。"
+      }
+    ]
   },
   "ja_ていられない_78": {
     "title": "～ていられない (〜te irarenai)",
-    "shortExplanation": "表示 that one cannot afford to do something; 'can't keep on', 'unable to continue'.",
-    "longExplanation": "The ～ていられない grammar point is 用于表达 a feeling of not being able to continue doing something or remaining in a certain state. 可以翻译为 'can't keep on', 'unable to continue', or 'can't afford to' in English. The formation is the same for all verb types.",
-    "formation": "动词-て form + いられない"
+    "shortExplanation": "表示由于客观状况紧迫或心理无法容忍，不能再继续保持某种状态或动作；“无法继续……下去”、“不能一直……了”。",
+    "longExplanation": "句型“～ていられない”是动词持续体“～ている”的可能否定形，接在动词て形之后。表示由于时间紧迫、情况危急，或者在心理上无法忍耐，说话人觉得不能再慢吞吞地继续维持当下的动作或状态了（“不能再这么等下去了”、“哪能一直玩下去呢”）。通常暗示必须立刻采取行动改变现状。",
+    "formation": "动词て形 + いられない",
+    "examples": [
+      {
+        "translation": "明明这么忙，我可不能硬要顾着玩耍。"
+      },
+      {
+        "translation": "天气太冷了，我实在没办法一直在外面等下去。"
+      },
+      {
+        "translation": "这个问题非常重大，绝不能放任不管。"
+      },
+      {
+        "translation": "我无法忍受她的态度，做不到一直保持沉默。"
+      }
+    ]
   },
   "ja_てかなわない_79": {
     "title": "～てかなわない (〜te kanawanai)",
-    "shortExplanation": "表示 that something cannot be endured, tolerated, or is unbearable.",
-    "longExplanation": "The ～てかなわない grammar point is typically used with adjectives (or a rephrased verb) in 〜て form to show an unbearable situation or feeling. It means you 'can’t stand' or 'can’t endure' something. It often appears with expressions like 「暑くてかなわない」「うるさくてかなわない」 and so on.",
-    "formation": "形容词 (〜く / 〜で) + て + かなわない / 动词 phrase (reworded to an adjective/negative) + て + かなわない"
+    "shortExplanation": "表示某种状况、感觉或情感程度极高，达到了令人无法忍受、难以承受的地步；“……得受不了”、“……得吃不消”。",
+    "longExplanation": "句型“～てかなわない”（“かなわない”源自“敵わない”，意为匹敌、抵挡）接在形容词或动词的て形之后，主要用于抱怨某种麻烦、不快的状况或者过于强烈的情感，达到了令人难以抵挡、无法忍受的程度（“受不了”、“苦不堪言”）。通常与表示负面、困扰或生理/心理不适的词语连用，如“暑い”（热）、“うるさい”（吵闹）、“不便だ”（不便）等。",
+    "formation": "一类形容词词干（去掉い） + くてかなわない | 二类形容词 + でかなわない | 动词て形 + かなわない",
+    "examples": [
+      {
+        "translation": "这么热的天气，真是让人受不了。"
+      },
+      {
+        "translation": "他的话太失礼了，实在让人无法忍受。"
+      },
+      {
+        "translation": "这部电影太感人了，让我久久无法忘怀、难以释怀。"
+      },
+      {
+        "translation": "她的笑容实在太耀眼了，耀眼得令人无法直视。"
+      }
+    ]
   },
   "ja_てからでないと_80": {
     "title": "～てからでないと (〜te kara denai to)",
-    "shortExplanation": "指示 that something cannot be done before a certain action is completed; 'not until', 'only after'.",
-    "longExplanation": "The ～てからでないと grammar point is 用于表达 that an action cannot be done before another action has been completed. 可以翻译为 'not until' or 'only after' in English. It attaches to a verb in the て-form, plus からでないと.",
-    "formation": "动词-て + からでないと"
+    "shortExplanation": "表示前置的必要前提条件，即在前面的动作未完成之前，绝不能做或无法实现后面的事情；“只有在……之后才……”、“如果不先……就无法……”。",
+    "longExplanation": "句型“～てからでないと”（或“～てからでなければ”）接在动词て形之后，用来明确提出后项动作成立所必不可少的前提条件。句末后项几乎总是与否定形式、可能否定形或表示负面结果的表达相呼应，表示“如果前项事情不先办妥，后项的事情就根本做不成或无法实现”（“必须先……之后才能……”）。",
+    "formation": "动词て形 + からでないと / からでなければ",
+    "examples": [
+      {
+        "translation": "如果不先做好作业，就不能去玩。"
+      },
+      {
+        "translation": "只有在吃完饭之后，才能吃甜点。"
+      },
+      {
+        "translation": "必须先买了票，才能看电影。"
+      },
+      {
+        "translation": "必须等考试结束之后，才能请假休息。"
+      }
+    ]
   },
   "ja_てこそ_81": {
     "title": "～てこそ (〜te koso)",
-    "shortExplanation": "Emphasizes the condition; 'only when', 'precisely because'.",
-    "longExplanation": "The ～てこそ grammar point is used to emphasize that 'only when' or 'precisely because' the stated condition is met, a certain result or meaning arises. For nouns and adjectives, similar forms appear (e.g., Noun + でこそ, い-Adjective くてこそ, な-Adjective でこそ).",
-    "formation": "动词-て form + こそ / い-形容词 + くてこそ / な-形容词 + でこそ / 名词 + でこそ"
+    "shortExplanation": "强调只有做到了某件事或具备了某项条件，才真正具有意义或才能产生成果；“只有……才算真正……”、“正是因为……才……”。",
+    "longExplanation": "强调助词“こそ”与动词て形（或形容词、名词连接形式）结合而成的句型“～てこそ”，用于强烈强调前提条件的重要性。表示“只有实际体验了、做到了某件事之后，才真正算得上…… / 才能体会到其真正价值”（“唯有……才真正……”）。后项多接表示评价、意义、能力或必然结果的句子，带有说话人深刻的体会或劝谕口吻。",
+    "formation": "动词て形 + こそ | 一类形容词词干（去掉い） + くてこそ | 二类形容词 + でこそ | 名词 + でこそ",
+    "examples": [
+      {
+        "translation": "只有用功读书，才能通过考试。"
+      },
+      {
+        "translation": "只有坦率真诚，才能理解对方的心意。"
+      },
+      {
+        "translation": "正是因为安静，心灵才得以平静。"
+      },
+      {
+        "translation": "正因为是朋友，互相帮助才是理所当然的。"
+      }
+    ]
   },
   "ja_でしょうがない_82": {
     "title": "～でしょうがない (〜deshou ga nai)",
-    "shortExplanation": "表示 an intense emotional or physical state; 'extremely', 'can’t help but'.",
-    "longExplanation": "The pattern ～(て)しょうがない (or 〜でしょうがない) 指示 a condition or feeling so intense that one is almost 'overcome' by it. It’s often used with emotions (e.g. 退屈で(しょうがない), 嬉しくてしょうがない, 寒くてしょうがない).",
-    "formation": "い-形容词(く) + てしょうがない / な-形容词 + で(は)しょうがない / 动词-て form + しょうがない"
+    "shortExplanation": "表示某种感情、感觉或身体反应极其强烈，说话人无法自控；“……得不得了”、“极度……”、“不由得……”。",
+    "longExplanation": "句型“～でしょうがない”（亦作“～てしょうがない”、“～て仕様がない”）接在动词、形容词的て形之后，表示某种自然涌现的内心情感、生理感觉或欲望极其强烈，达到了自己难以控制或压抑的地步（“……得受不了”、“极度……”）。常用于表达悲伤、不安、喜悦、寂寞等心理状态，或疼痛、口渴、困倦等生理感受。",
+    "formation": "一类形容词词干（去掉い） + くてしょうがない | 二类形容词 + でしょうがない / ではしょうがない | 动词て形 + しょうがない",
+    "examples": [
+      {
+        "translation": "今天闲得不得了，无聊透顶。"
+      },
+      {
+        "translation": "马上就要考试了，我心里不安得不得了。"
+      },
+      {
+        "translation": "头疼得受不了，我想早点回家休息。"
+      },
+      {
+        "translation": "我对那款新游戏好奇得不得了，一直念念不忘。"
+      }
+    ]
   },
   "ja_でたまらない_83": {
     "title": "～でたまらない (〜de tamaranai)",
-    "shortExplanation": "Express extremely strong feelings or sensations; 'can't stand', 'unbearably'.",
-    "longExplanation": "The ～でたまらない grammar point is used to convey very strong emotion or sensation—so strong it’s almost unbearable. It’s common with expressions like 暑くてたまらない, うれしくてたまらない, etc.",
-    "formation": "い-形容词 (く) + てたまらない / な-形容词 + でたまらない / 动词-て form + たまらない"
+    "shortExplanation": "表示生理上的感觉、内心情感或愿望极其强烈，令人无法忍受或抑制；“……得不得了”、“……得难以忍受”、“非常……”。",
+    "longExplanation": "句型“～でたまらない”（“たまらない”源于“堪る”，意为忍耐、容忍）接在形容词或动词的て形之后，表示某种生理感受（如冷、热、疼、痒）、心理情感（如喜欢、高兴、后悔、悲伤）或欲望极其强烈，以至于说话人无法忍耐或抑制（“……得受不了”、“非常想……”）。与多含反感厌烦的“～てかなわない”相比，“～でたまらない”既可用于消极痛苦的感受，也可用于喜悦、喜爱等积极强烈的情感。",
+    "formation": "一类形容词词干（去掉い） + くてたまらない | 二类形容词 + でたまらない | 动词て形 + たまらない",
+    "examples": [
+      {
+        "translation": "这种燥热天气真是热得让人受不了。"
+      },
+      {
+        "translation": "我非常喜欢她，喜欢得不可自拔。"
+      },
+      {
+        "translation": "这个房间冷得让人受不了。"
+      },
+      {
+        "translation": "看着他的态度，我气得火冒三丈、难以忍耐。"
+      }
+    ]
   },
   "ja_でならない_84": {
     "title": "～でならない (〜de naranai)",
-    "shortExplanation": "指示 an uncontrollable emotion or feeling; 'can’t help but', 'overwhelmingly'.",
-    "longExplanation": "The ～でならない grammar pattern 表示 a very strong, often involuntary feeling—e.g., '不思議でならない' (it’s so mysterious I can’t help thinking about it), '残念でならない' (I’m so disappointed), '心配でならない' (I’m extremely worried).",
-    "formation": "な-形容词 + でならない / い-形容词 (く) + てならない / 动词-て + ならない"
+    "shortExplanation": "表示某种由衷自然产生的情感或心绪不由自主地涌上心头，自己难以抑制；“不由得……起来”、“不由自主地感到……”、“……得不得了”。",
+    "longExplanation": "句型“～でならない”（或“～てならない”）接在形容词或动词的て形之后，表示某种情感或想法完全出于自然萌发，在内心深处挥之不去、无法克制（“情不自禁地……”、“禁不住……”）。通常与表示心理活动、自然发自内心的感觉或自发态动词连用，如“心配だ”（担忧）、“残念だ”（遗憾）、“気になる”（挂念）、“思える”（觉得）、“不思議だ”（不可思议）等。语气较为书面、典雅，多用于表达内心深切的感受。",
+    "formation": "一类形容词词干（去掉い） + くてならない | 二类形容词 + でならない | 动词て形 + ならない",
+    "examples": [
+      {
+        "translation": "他的精湛演技令人由衷地赞叹不已。"
+      },
+      {
+        "translation": "我心里一直惦记着发榜结果，不由自主地焦躁不安。"
+      },
+      {
+        "translation": "朋友搬家离开了，我心里感到无比的寂寞。"
+      },
+      {
+        "translation": "这是我第一次去海外旅行，心里由衷感到忐忑不安。"
+      }
+    ]
   },
   "ja_でばかりはいられない_85": {
     "title": "～でばかりはいられない (〜de bakari wa irarenai)",
-    "shortExplanation": "Cannot afford to only do something; cannot always rely on it.",
-    "longExplanation": "The ～でばかりはいられない grammar point is used when one realizes they cannot keep doing only that one thing or cannot always rely on a certain situation. It implies the need to take other actions or responsibilities.",
-    "formation": "动词-て form + ばかりはいられない / 名词 + ばかりはいられない (with appropriate particles)"
+    "shortExplanation": "表示不能一直耽于某种行为或停留在某种状态中，必须面对现实采取其他行动；“不能老是……”、“哪能一直……下去”。",
+    "longExplanation": "句型“～でばかりはいられない”（亦作“～てばかりはいられない”）将表示限定、频繁的“ばかり”（净是、老是）与“～てはいられない”（不能一直……）结合。表示说话人意识到不能总是沉溺于某种单一的行为或依赖某种状态（如一味休息、依赖他人、沉浸在悲伤或玩乐中），而是必须振作起来，承担起应负的责任并采取必要的下一步行动（“不能只顾着……，还得……”）。",
+    "formation": "动词て形 + ばかりはいられない | 一类形容词词干（去掉い） + くてばかりはいられない | 二类形容词 + でばかりはいられない | 名词 + でばかりはいられない",
+    "examples": [
+      {
+        "translation": "我不能老是让别人帮我，总得自己独立。"
+      },
+      {
+        "translation": "哪能只挑自己喜欢的工作做呢。"
+      },
+      {
+        "translation": "我绝不能一辈子老指望着依赖父母。"
+      },
+      {
+        "translation": "不能一直光顾着休息，也该干活了。"
+      }
+    ]
   },
   "ja_ではないか_86": {
     "title": "～ではないか (〜de wa nai ka)",
-    "shortExplanation": "用于展示 a strong assertion or emphasis on one’s opinion; 'isn't it?', 'aren't you?', 'right?'.",
-    "longExplanation": "The ～ではないか grammar point is used at the end of a sentence to make a rhetorical question or a strong, emphatic statement. It often translates as 'isn't it…?' 'aren't you…?' or 'wouldn’t you say…?'.",
-    "formation": "名词 + ではないか / い-形容词 + ではないか / な-形容词 + ではないか / 动词-casual + ではないか"
+    "shortExplanation": "用于强烈断定、征求对方赞同或表示意外发现时的感叹；“难道不是……吗？”、“这不正是……吗！”。",
+    "longExplanation": "句型“～ではないか”（口语中常作“～じゃないか”或“～ではないですか”）置于句末，语气随语调和语境而变化，主要有以下用法：(1) 强硬或明确地阐述自己的见解，带有促使对方赞同的语气（“难道不是……吗”）；(2) 用于反问以提醒、劝阻或轻微责备对方；(3) 伴随着升调或感叹语气，表示对眼前意外发现的事实感到惊讶或赞叹（“这不是……吗！”）。",
+    "formation": "动词普通形 + ではないか | 一类形容词 + ではないか | 二类形容词词干 + ではないか | 名词 + ではないか",
+    "examples": [
+      {
+        "translation": "他难道不是一名优秀的学生吗？"
+      },
+      {
+        "translation": "这道菜这不是很美味嘛！"
+      },
+      {
+        "translation": "你不就是她的朋友嘛。"
+      },
+      {
+        "translation": "明天不是放假休息吗？"
+      }
+    ]
   },
   "ja_てはならない_87": {
     "title": "～てはならない (〜te wa naranai)",
-    "shortExplanation": "Express prohibition; 'must not', 'cannot', 'should not'.",
-    "longExplanation": "The ～てはならない grammar point is 用于表达 a strong prohibition. It is often more formal or strict and can be translated as 'must not', 'cannot', or 'should not.'",
-    "formation": "动词-て form + はならない"
+    "shortExplanation": "表示强烈的规劝、严格的禁令或社会伦理原则上的禁止；“绝不能……”、“不许……”、“切不可……”。",
+    "longExplanation": "句型“～てはならない”接在动词て形之后，属于非常严谨、庄重的书面语表达。用于依据法律法令、社会公序良俗或道德规范，发布严肃的禁令和告诫（“严禁……”、“决不可……”）。它带有权威性和约束力，常用于法律条文、规章制度、公开告示、警示标语以及教诲演讲中，通常不用于日常生活中的私人小事劝阻。",
+    "formation": "动词て形 + はならない",
+    "examples": [
+      {
+        "translation": "此处严禁吸烟。"
+      },
+      {
+        "translation": "切不可将秘密泄露给他人。"
+      },
+      {
+        "translation": "不得擅自进入这个房间。"
+      },
+      {
+        "translation": "绝不可酒后驾车。"
+      }
+    ]
   },
   "ja_てまで_88": {
     "title": "～てまで (〜te made)",
-    "shortExplanation": "表达 extent someone goes in order to achieve something; 'to the point of', 'even', 'so far as to'.",
-    "longExplanation": "The ～てまで grammar point is used to convey the extent someone goes to achieve something, highlighting the action one takes or the sacrifice one makes for a certain purpose. 可以翻译为 'to the point of', 'even', or 'so far as to' in English. It is used with verbs, not adjectives or nouns.",
-    "formation": "动词-て form + まで"
+    "shortExplanation": "表示为了达到某种目的而不惜采取极端、反常的手段或付出过度的代价；“甚至……”、“甚至不惜……”。",
+    "longExplanation": "句型“～てまで”接在动词て形之后，表示为了实现某一目的，竟然不惜采取超出常理的极端手段，甚至付出巨大的牺牲或沉重代价（“甚至不惜……”、“到了……的地步”）。该句型往往带有强烈的语气色彩，常用于表达说话人的吃惊、敬佩，或是质疑与批评（暗示这样做有失常理、代价过大）。",
+    "formation": "动词て形 + まで",
+    "examples": [
+      {
+        "translation": "为了通过考试，他甚至不惜彻夜通宵用功学习。"
+      },
+      {
+        "translation": "因为太想要这件商品了，我甚至一大早起来排队去购买。"
+      },
+      {
+        "translation": "为了救治他，她甚至不惜四处借钱来支付昂贵的手术费。"
+      },
+      {
+        "translation": "部长为了促成那个项目的成功，甚至在节假日也加班加点全力投入工作。"
+      }
+    ]
   },
   "ja_て当然だ_89": {
     "title": "～て当然だ (〜te tōzen da)",
-    "shortExplanation": "表示 that something is natural or expected.",
-    "longExplanation": "The ～て当然だ grammar point is 用于表达 that something is natural, obvious, or expected under the circumstances. 可以翻译为 'it's natural that', 'as expected', or 'no wonder' in English.",
-    "formation": "动词-て form + 当然だ"
+    "shortExplanation": "表示在某种情理、前因或客观条件下，出现这一结果是理所应当、顺理成章的；“理所当然”、“自然是……”。",
+    "longExplanation": "句型“～て当然だ”（常与“～て当たり前だ”同义互换）接在动词て形、形容词连用形等之后，表示根据前面的原因、努力或事实依据，产生相应的结果是完全符合逻辑与情理的，谁看都觉得毫无意外（“……是理所当然的”、“自然会这样”）。常用于肯定努力应有的回报，或指出因果必然性。",
+    "formation": "动词て形 + 当然だ | 一类形容词词干（去掉い） + くて当然だ | 二类形容词 + で当然だ",
+    "examples": [
+      {
+        "translation": "他每天都在刻苦学习，考试能够及格是理所当然的。"
+      },
+      {
+        "translation": "那家餐厅的饭菜味道极好，预约名额爆满也是理所当然的。"
+      },
+      {
+        "translation": "她每天晚上都在认真练习，技术变得熟练出色是理所当然的。"
+      },
+      {
+        "translation": "他在事业上取得了巨大成功，成为富翁也是顺理成章的。"
+      }
+    ]
   },
   "ja_というものだ_90": {
     "title": "～というものだ (〜to iu mono da)",
-    "shortExplanation": "Expressing a general rule or common sense.",
-    "longExplanation": "The ～というものだ grammar point is used to emphasize a general rule, a piece of common sense, or an indisputable fact. It often appears in comments or observations about something commonly accepted as true.",
-    "formation": "Sentence + というものだ"
+    "shortExplanation": "表示依据常理、人情或客观公理所作出的评价、感慨或本质断定；“这才真正是……”、“正是所谓……”。",
+    "longExplanation": "句型“～というものだ”用于表达说话人立足于社会公认的常识、道理或客观规律，对某事物的本质作出深刻评价、断定或抒发强烈感慨（“这才真正称得上是……”、“所谓的……正是如此”）。常用于对事物本质进行凝练概括，或引出具有人生哲理意味的普遍法则。",
+    "formation": "普通形 + というものだ | 二类形容词词干 / だ / である + というものだ | 名词 / だ / である + というものだ",
+    "examples": [
+      {
+        "translation": "年轻人的这份热忱，确实是值得令人肃然起敬的。"
+      },
+      {
+        "translation": "学业这回事哪怕懈怠偷懒一天也会落后，这是不争的常理。"
+      },
+      {
+        "translation": "想要获得成功就必须勇于直面困难，这才是通往成功的必然法则。"
+      },
+      {
+        "translation": "真正的友谊是金钱无论如何也买不来的，事实正是如此。"
+      }
+    ]
   },
   "ja_どうにかないものか_91": {
     "title": "どうにか～ないものか (dō ni ka ~ nai mono ka)",
-    "shortExplanation": "Express a strong desire or wish for something to be possible.",
-    "longExplanation": "どうにか～ないものか is 用于表达 a strong desire or wish for something to be resolved or made possible. It translates roughly as 'isn't there some way...?', 'can't we somehow...?', or 'is there no way...?'",
-    "formation": "どうにか + 动词-negative form + ないものか"
+    "shortExplanation": "表示面对棘手困难的处境时，强烈期盼能设法解决或出现转机；“难道就没有办法……吗”、“要是能设法……该多好”。",
+    "longExplanation": "句型“どうにか～ないものか”（由表示设法、千方百计的副词“どうにか”与否定疑问结构“～ないものか / ないものだろうか”构成）用于在面临难以化解的窘境或重大挑战时，表达说话人迫切希望寻得解决之策、促成良好结果的焦急与希冀之情（“难道就不能想办法……吗”、“真希望能设法解决……”）。",
+    "formation": "どうにか + 动词ない形 + (もの) か / ないものだろうか",
+    "examples": [
+      {
+        "translation": "难道就没有什么办法能尽快把这项繁重的工作做完吗？"
+      },
+      {
+        "translation": "要是能想个办法在接下来的考试中顺利合格该有多好啊。"
+      },
+      {
+        "translation": "面对如此拥挤的电车，难道就没有什么办法能挤上去吗？"
+      },
+      {
+        "translation": "难道就没有什么途径能想办法和她重归于好吗？"
+      }
+    ]
   },
   "ja_とおり_92": {
     "title": "～とおり (〜toori)",
-    "shortExplanation": "Express doing something as instructed or describing how something matches a rule or guideline; 'as', 'according to'.",
-    "longExplanation": "The ～とおり grammar point is 用于表达 doing something exactly as instructed or describing how something matches a guideline or is exactly as one heard/expected. 可以翻译为 'as', 'according to', or 'the same way...'.",
-    "formation": "动词-casual + とおり, い-形容词 + とおり, な-形容词 + だとおり, 名词 + だとおり"
+    "shortExplanation": "表示后项的行为或事态发展完全符合前项的指示、规定、预期或传言；“正如……”、“按照……那样”。",
+    "longExplanation": "句型“～とおり（～どおり）”用于表示某一动作的进行或事态的展开，与之前听到的传闻、给出的指示、制定的规则或原本的预期丝毫不差、完全吻合（“正如……所说”、“按照……那样”）。动词多接辞书形或た形；直接接在名词后时，名词常发生连浊音变为“～どおり”（如：予定どおり、規則どおり），也可使用“名词 + のとおり”的形式。",
+    "formation": "动词辞书形 / た形 + とおり（に） | 名词 + のとおり（に） / 名词 + どおり（に） | 普通形 + というとおり",
+    "examples": [
+      {
+        "translation": "我完全遵照老师之前嘱咐的那样做完了家庭作业。"
+      },
+      {
+        "translation": "请严格按照这份地图所指引的路线前行。"
+      },
+      {
+        "translation": "他玩游戏时一向严格遵守规则、按部就班。"
+      },
+      {
+        "translation": "那条街道正如传闻所说的那样，夜晚也和白天一样热闹非凡。"
+      }
+    ]
   },
   "ja_とか_93": {
     "title": "～とか (〜to ka)",
-    "shortExplanation": "Used to list examples or express uncertainty; 'such as', 'like', 'or something like that'.",
-    "longExplanation": "The ～とか grammar point can be used to list examples or express a somewhat vague mention of items/activities. 可以翻译为 'such as', 'like', or 'or something like that'.",
-    "formation": "动词-casual + とか, い-形容词 + とか, な-形容词 + だとか, 名词 + だとか"
+    "shortExplanation": "用于列举具有代表性的同类事物或动作，或含糊委婉地陈述听来的非确切信息；“……啦、……啦”、“听说……之类的”。",
+    "longExplanation": "助词“～とか”在日常口语中极为常用，主要包含两大功能：① 用于列举具有代表性的事例（“诸如……或……等”、“……啦……啦”），常用“～とか～とか”的并列形式；② 接在句末或词后，用于模糊化地陈述从别处听闻的传言，或当自己把握不足时避免过于武断地下定论（“据说是……什么的”）。语气亲切随和。",
+    "formation": "动词普通形 + とか | い形容词 + とか | な形容词 + だとか | 名词 + だとか",
+    "examples": [
+      {
+        "translation": "休息日我通常是通过看看电影、或者逛街买买东西之类的来度过时光。"
+      },
+      {
+        "translation": "她很想去诸如澳大利亚或是新西兰这类风景优美的地方旅游。"
+      },
+      {
+        "translation": "听说今天的天气好像是一会儿放晴、一会儿转阴之类的。"
+      },
+      {
+        "translation": "他平时总是在打打棒球、踢踢足球什么的。"
+      }
+    ]
   },
   "ja_ところ_94": {
     "title": "～ところ (〜tokoro)",
-    "shortExplanation": "Express a specific point in time or state; 'when', 'just about', or 'in the middle of'.",
-    "longExplanation": "The ～ところ grammar point is used to describe a specific point in time or stage of action. Depending on the verb tense, it can mean 'just about to do something', 'in the middle of doing something', or 'just did something'.",
-    "formation": "动词-casual + ところ, い-形容词 + ところ, な-形容词 + なところ, 名词 + のところ"
+    "shortExplanation": "表示动作所处的具体时间阶段（正要发生、正在进行、刚刚完毕），或表示特定的处境、场合；“正要……之时”、“正在……”。",
+    "longExplanation": "形式名词“～ところ”依据接续的动词时态与词类具有精细的分工：① 动词辞书形 + ところ：表示动作正打算开始的紧要关头（“正要……”）；② 动词ている + ところ：表示动作正处于持续进行的高潮阶段（“正在……之中”）；③ 动词た形 + ところ：表示动作刚刚完结不久的瞬刻（“刚……完”）。此外，与形容词或名词结合时，常用于寒暄语中指代某种特定的场合与处境（如“百忙之中”、“紧要关头”）。",
+    "formation": "动词辞书形 / ている形 / た形 + ところ | い形容词 + ところ | な形容词 + なところ | 名词 + のところ",
+    "examples": [
+      {
+        "translation": "我正打算准备出门。"
+      },
+      {
+        "translation": "我此时此刻正在观看着电影。"
+      },
+      {
+        "translation": "我打算在一家味道可口的餐馆里用餐。"
+      },
+      {
+        "translation": "他在自己百忙之中还特意赶来协助我。"
+      }
+    ]
   },
   "ja_どころか_95": {
     "title": "～どころか (〜dokoro ka)",
-    "shortExplanation": "Express 'far from', 'not just', 'not only', or 'to say nothing of'.",
-    "longExplanation": "The ～どころか grammar point is used to emphasize that reality is far from what one might expect or that something is not only one way, but actually goes beyond it. 可以翻译为 'far from', 'not just', or 'to say nothing of'.",
-    "formation": "动词-casual + どころか, い-形容词 + どころか, な-形容词 + どころか, 名词 + どころか"
+    "shortExplanation": "表示实际情况与前述的设想相距甚远，或程度远远超乎寻常；“何止……简直……”、“别说……反倒……”。",
+    "longExplanation": "句型“～どころか”用于强烈推翻或否定先前的预设与低估，强调事实的实际程度截然不同。主要有两种情感色彩：① 实际程度远远高于前项基准（“何止是……简直是更上一层楼”）；② 实际情况与美好期望完全背道而驰，甚至滑向极其负面的深渊（“不仅没……反倒变本加厉”）。",
+    "formation": "动词普通形 + どころか | い形容词 + どころか | な形容词 + どころか | 名词 + どころか",
+    "examples": [
+      {
+        "translation": "他何止是歌唱得好，听起来简直就像专业歌唱家一样震撼。"
+      },
+      {
+        "translation": "这道美味佳肴何止是可口，其滋味简直达到了登峰造极的水准。"
+      },
+      {
+        "translation": "她哪里只是普通的泛泛之交，她可是我推心置腹的至交挚友。"
+      },
+      {
+        "translation": "他何止是精通英语，甚至还能自如地使用另外三门外语进行交流。"
+      }
+    ]
   },
   "ja_どころではない_96": {
     "title": "～どころではない (〜dokoro de wa nai)",
-    "shortExplanation": "Not the time/place for; far from; can't possibly.",
-    "longExplanation": "The ～どころではない grammar point is 用于表达 that circumstances make it impossible or inappropriate to do something—there’s a much bigger issue at hand. It can also mean ‘far from’ in a figurative sense.",
-    "formation": "动词-casual + どころではない, い-形容词 + どころではない, な-形容词 + どころではない, 名词 + どころではない"
+    "shortExplanation": "表示因局势严峻、异常繁忙或身处逆境，根本没有心思、时间或余力去从事某事；“哪有心思……”、“根本不是……的时候”。",
+    "longExplanation": "句型“～どころではない”用于强调当前面临的情势极其紧迫、工作极为繁杂，或遇到了极其严峻的困难，从而使得当事人在时间、精力或心境上，全然无法顾及某项原本平常或惬意的举动（“哪有那个闲情雅致……”、“根本谈不上……”）。常用于推辞邀请或吐露自身所承受的巨大压力。",
+    "formation": "动词普通形 + どころではない | い形容词 + どころではない | な形容词 + どころではない | 名词 + どころではない",
+    "examples": [
+      {
+        "translation": "眼下根本不是取笑他失误的时候，我们自己也正犯着同样的低级错误呢。"
+      },
+      {
+        "translation": "重病卧床休养之际，哪里还会有什么心思去到处游玩呢。"
+      },
+      {
+        "translation": "大考已经迫在眉睫，我根本没有心思去看什么电影。"
+      },
+      {
+        "translation": "手头的工作实在繁忙得不可开交，根本谈不上抽空考虑外出旅游的事。"
+      }
+    ]
   },
   "ja_としたら_97": {
     "title": "～としたら (〜to shitara)",
-    "shortExplanation": "Express a hypothetical situation; 'if', 'suppose', 'assuming'.",
-    "longExplanation": "The ～としたら grammar point is 用于表达 a hypothetical situation or assumption. 可以翻译为 'if', 'suppose', or 'assuming' in English. The formation differs depending on whether it’s used with verbs, adjectives, or nouns.",
-    "formation": "动词-casual + としたら, い-形容词 + としたら, な-形容词 + だとしたら, 名词 + だとしたら"
+    "shortExplanation": "假定某种情况或事实成立，以此为前提进行推断或提出对策；“假如……”、“要是……的话”。",
+    "longExplanation": "句型“～としたら”（与“～とすれば”含义相近）用于在思维中设定一个假设性前提条件（“如果假设……是真的”、“倘若出现……的情况”），并以此为基准，在后项引出相应的推理结论、应对措施或个人主张。相比于一般的假定助词“たら”，它更加突显出说话人主观设立纯粹假设的逻辑推导色彩。",
+    "formation": "动词普通形 + としたら | い形容词 + としたら | な形容词 + だとしたら | 名词 + だとしたら",
+    "examples": [
+      {
+        "translation": "假如说明天下雨的话，我们就带上雨伞一同出发吧。"
+      },
+      {
+        "translation": "要是这个蛋糕当真不好吃的话，恐怕任谁也不会愿意动嘴品尝吧。"
+      },
+      {
+        "translation": "如果他真的是身体抱恙生病了，就必须尽早送往医院就诊才行。"
+      },
+      {
+        "translation": "假设她是学生身份的话，在这家餐厅应当能享受到学生优惠折扣吧。"
+      }
+    ]
   },
   "ja_としても_98": {
     "title": "～としても (〜to shite mo)",
-    "shortExplanation": "Even if, despite, although",
-    "longExplanation": "The ～としても grammar point is used to say ‘even if...’ or ‘even assuming that...’, often followed by a conclusion or stance. It’s similar to ～ても, but puts more emphasis on the hypothetical assumption or viewpoint.",
-    "formation": "动词-casual + としても, い-形容词 + としても, な-形容词 + だとしても, 名词 + だとしても"
+    "shortExplanation": "设定某种假设性的让步前提，表示即便那种设想属实，后项的结论、意志或事实也绝不改变；“即使……也……”、“就算……也……”。",
+    "longExplanation": "句型“～としても”（与“～にしても”用法相近）用于提出一个强有力的假定性让步条件（“哪怕退一步假设是……”、“就算真的会……”）。后项紧跟说话人坚定不移的意志、主张或必然的客观事实，表明其绝不会因前项假定情况的发生而发生丝毫动摇或改变。比一般的让步句型“～ても”更具假设意味。",
+    "formation": "动词普通形 + としても | い形容词 + としても | な形容词 + だとしても | 名词 + だとしても",
+    "examples": [
+      {
+        "translation": "即使天空中下起大雨，比赛也绝不会因此而中止。"
+      },
+      {
+        "translation": "就算这个蛋糕并不美味，我也决意要把属于自己的那份吃完。"
+      },
+      {
+        "translation": "哪怕她会迟到赴约，我们大家也会一直耐心等待下去。"
+      },
+      {
+        "translation": "即便日常工作再怎么忙碌，我也一定要信守与朋友立下的诺言。"
+      }
+    ]
   },
   "ja_とともに_99": {
     "title": "～と～ともに (〜to 〜tomoni)",
-    "shortExplanation": "表示 'together with' or 'along with'; used to describe two events or actions happening simultaneously or in parallel.",
-    "longExplanation": "The ～と～ともに grammar point is 用于表达 that two events or actions are happening simultaneously or in parallel. It is translated as 'together with' or 'along with' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + とともに, い-形容词 + とともに, な-形容词 + とともに, 名词 + とともに"
+    "shortExplanation": "表示伴随前项事态的转变而后项也同步发生改变，或表示两者同时发生、共同行动；“随着……”、“与……同时”。",
+    "longExplanation": "句型“～とともに”（汉字写作“共に”）属于书面语色彩较浓的郑重句型，涵盖以下几大主要用法：① 比例伴随：随着前项事物的推移或演变，后项也随之同步发生联动变化（“伴随着……”、“随着……”）；② 同时生起：表示两个事件在同一时刻并发（“在……的同时”）；③ 共同参与：表示与某人或某群体一道行动（“同……一起”）。",
+    "formation": "动词辞书形 + とともに | 名词 + とともに | い形容词 + とともに | な形容词 + (である) とともに",
+    "examples": [
+      {
+        "translation": "伴随着他的如期到来，宴会活动也正式拉开了帷幕。"
+      },
+      {
+        "translation": "随着一年四季时令的更迭，人们服装的流行风尚也在不断悄然转变。"
+      },
+      {
+        "translation": "伴随着人生的成长历程，广泛积累多方面的经验阅历是至关重要的。"
+      },
+      {
+        "translation": "随着科学技术的飞速进步，各种便捷好用的手机应用程序正如雨后春笋般不断涌现。"
+      }
+    ]
   },
   "ja_とは限らない_100": {
     "title": "～とは限らない (〜to wa kagiranai)",
-    "shortExplanation": "表示 that something is not necessarily true; 'not always', 'not necessarily'.",
-    "longExplanation": "The ～とは限らない grammar point is 用于表达 that something is not necessarily true or does not always occur. 可以翻译为 'not always' or 'not necessarily' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + とは限らない, い-形容词 + とは限らない, な-形容词 + だとは限らない, 名词 + だとは限らない"
+    "shortExplanation": "表示部分否定，指出普遍认可的规律、常识或预期并非百分之百成立；“未必……”、“不一定……”。",
+    "longExplanation": "句型“～とは限らない”是日语中经典的“部分否定”表达方式，用于表明某种看似顺理成章的普遍共识、预判或常识在现实中绝非绝对化，往往存在不可忽视的例外（“并不一定……”、“不见得全都……”）。句中经常与副词“必ずしも（未必）”、“いつも（总是）”、“すべて（全盘）”等互相呼应使用。",
+    "formation": "动词普通形 + とは限らない | い形容词 + とは限らない | な形容词 + （だ）とは限らない | 名词 + （だ）とは限らない",
+    "examples": [
+      {
+        "translation": "我可不一定随时随地都一直埋头苦读呢。"
+      },
+      {
+        "translation": "标价高昂的名贵商品，并不见得品质就一定十全十美。"
+      },
+      {
+        "translation": "他的观点与主张并不一定次次都是正确无误的。"
+      },
+      {
+        "translation": "天色纵使看起来阴沉，也未必就意味着一定会降雨。"
+      }
+    ]
   },
   "ja_ないことはない_101": {
     "title": "～ないことはない (〜nai koto wa nai)",
-    "shortExplanation": "Express that something is not impossible, meaning it is possible or could be done.",
-    "longExplanation": "The ～ないことはない grammar point is 用于表达 a double negative, meaning that something is not impossible, implying that it is possible or could be done. Essentially, it downplays the possibility or ability to do something but still acknowledges that it's possible.",
-    "formation": "动词-ないform + ことはない"
+    "shortExplanation": "通过双重否定句式委婉消极地表达肯定，暗示事情并非全无可能；“并不是不……”、“也不是不行”。",
+    "longExplanation": "句型“～ないことはない”利用两个否定形式的重叠（双重否定），以一种极其委婉、留有余地的方式表达对某一动作或性质的微弱肯定（“要说完全不……倒也并非如此”、“努力一下的话倒也能做得到”）。说话人刻意避免做出武断自信的直接断言，而是谨慎地承认客观上依然具备一定的可能性与可行性。",
+    "formation": "动词ない形 + ことはない | 一类形容词词干（去掉い） + くないことはない | 二类形容词 + でない / じゃないことはない | 名词 + でない / じゃないことはない",
+    "examples": [
+      {
+        "translation": "他倒也并不是绝不可能来赴约（他还是很有可能前来的）。"
+      },
+      {
+        "translation": "那道难题也并不是完全解不出来（费些工夫还是能够攻克的）。"
+      },
+      {
+        "translation": "那份工作倒也不是毫无难度（多少还是存在一些挑战性的）。"
+      },
+      {
+        "translation": "倒也不能说她的判断完全没有道理（她可能确实是正确的）。"
+      }
+    ]
   },
   "ja_ないこともない_102": {
     "title": "～ないこともない (〜nai koto mo nai)",
-    "shortExplanation": "用于表达 an action or state is 'not impossible', but emphasizes reluctance or doubt.",
-    "longExplanation": "The ～ないこともない grammar point is 用于表达 that something is not impossible, but the speaker is reluctant, has doubts, or deems it as a less favorable option. 可以翻译为 'not that one can't', 'not that it's impossible', or 'it's not out of the question'.",
-    "formation": "动词-ないForm + こともない, い-adjective + こともない"
+    "shortExplanation": "表示并非完全做不到或绝无可能，但说话人内心带有顾虑、勉强或迟疑之意；“倒也不是不……但……”。",
+    "longExplanation": "句型“～ないこともない”由于助词“も”的介入，比起“～ないことはない”，更加侧重突出说话人的犹疑不决、勉为其难或不情愿的态度（“真要让我做的话倒也不是绝对办不到，只是实在有些勉强”）。后半句往往自然衔接“けれど”、“が”等转折连词，进一步陈述内心的顾虑、阻碍或附加的严苛条件。",
+    "formation": "动词ない形 + こともない | 一类形容词词干（去掉い） + くないこともない | 二类形容词 + でない / じゃないこともない | 名词 + でない / じゃないこともない",
+    "examples": [
+      {
+        "translation": "这道题我倒也不是完全解不出来，只是真的十分棘手难解。"
+      },
+      {
+        "translation": "去与他会面谈谈倒也不是绝对不行，只是手头实在抽不出太多深入交谈的时间。"
+      },
+      {
+        "translation": "手头倒也不是真的囊空如洗，只不过眼下还是厉行节约些更为稳妥。"
+      },
+      {
+        "translation": "这款游戏倒也并非枯燥无味，只是相比之下别的游戏玩起来更带劲些。"
+      }
+    ]
   },
   "ja_ないではいられない_103": {
     "title": "～ないではいられない (〜nai de wa irarenai)",
-    "shortExplanation": "Cannot help but; cannot avoid; unable to refrain from.",
-    "longExplanation": "The ～ないではいられない grammar point is 用于表达 a strong feeling, urge, or uncontrollable action that someone cannot resist or help doing, even if it may be undesirable. 可以翻译为 'cannot help but', 'cannot avoid', or 'unable to refrain from' in English.",
-    "formation": "动词-ない form + ではいられない or じゃいられない"
+    "shortExplanation": "表示某种强烈的情感、冲动或本能反应难以自控，忍不住要做某事；“忍不住……”、“不由得……”、“不能不……”。",
+    "longExplanation": "句型“～ないではいられない”（口语中常说成“～ないじゃいられない”）接在动词未然形（ない形）之后，表示当事人内心涌起强烈的感情、冲动或生理反应，在心理或生理上无论如何也无法压抑、克制住自己的行为（“忍不住要……”、“不由得……”）。主语通常为第一人称；若用于第三人称，句尾常接“～ようだ”、“～らしい”等推测或情态表达。",
+    "formation": "动词未然形（ない形） + ではいられない / じゃいられない（注：“する”变为“しないではいられない”或“せずにはいられない”）",
+    "examples": [
+      {
+        "translation": "这部电影实在太感人了，让我忍不住流下了眼泪。"
+      },
+      {
+        "translation": "一看到她的笑容，我就忍不住笑了起来。"
+      },
+      {
+        "translation": "这个房间太冷了，冻得我忍不住直打哆嗦。"
+      },
+      {
+        "translation": "他的故事虽然枯燥无趣，但我还是忍不住想要听下去。"
+      }
+    ]
   },
   "ja_ながら_104": {
     "title": "～ながら (〜nagara)",
-    "shortExplanation": "Express doing two things simultaneously or at the same time.",
-    "longExplanation": "The ～ながら grammar point is 用于表达 the concept of doing two things simultaneously or at the same time. In English, 可以翻译为 'while', 'as', or 'during'. ～ながら can be attached to the stem of a verb to convey this meaning.",
-    "formation": "动词-stem + ながら"
+    "shortExplanation": "表示同一主体同时进行两项动作；“一边……一边……”。",
+    "longExplanation": "句型“～ながら”接在动词连用形（ます形去掉ます）之后，表示同一个动作主体在同一时间段内同时进行两个动作（“一边……一边……”）。其中，连接在“ながら”前面的动作通常为伴随性、次要的动作，而后项动词所表示的才是主要的动作。",
+    "formation": "动词连用形（ます形去掉ます） + ながら",
+    "examples": [
+      {
+        "translation": "我一边看电视，一边做作业。"
+      },
+      {
+        "translation": "她一边哼着歌，一边做着料理。"
+      },
+      {
+        "translation": "电车里有很多人一边站着一边看书。"
+      },
+      {
+        "translation": "我一边走着路，一边玩着智能手机。"
+      }
+    ]
   },
   "ja_にあたり_105": {
     "title": "～にあたり (〜ni atari)",
-    "shortExplanation": "表示 the meaning of 'at the time of', 'in', 'on', or 'upon'.",
-    "longExplanation": "The ～にあたり grammar point is used to describe an important event or situation that occurs at a specific moment. 可以翻译为 'at the time of', 'in', 'on', or 'upon' in English. The formation is quite simple, as it only requires a noun before it.",
-    "formation": "名词 + にあたり"
+    "shortExplanation": "表示在面临重要事件、特殊时刻或关键起点之际；“在……之际”、“值此……之时”、“正当……之际”。",
+    "longExplanation": "句型“～にあたり”（或“～にあたって”）接在名词或动词辞书形之后，表示在面临某件重要的开端、转折点、重大事件或活动之际（如开学、结婚、就职、新年等）。后项通常伴随致辞、问候、决心、注意事项或准备工作。此表达具有较高的正式度和郑重感，广泛应用于仪式演讲、商务文书和正式通告之中。",
+    "formation": "名词 + にあたり / にあたって | 动词辞书形 + にあたり / にあたって",
+    "examples": [
+      {
+        "translation": "入学之际，请提前准备好所需的文件资料。"
+      },
+      {
+        "translation": "值此新年之际，很多人都会树立起新一年的抱负。"
+      },
+      {
+        "translation": "在喜结良缘之际，两家举行了隆重而庄严的仪式。"
+      },
+      {
+        "translation": "在开展新的工作之际，前期的充分准备是必不可少的。"
+      }
+    ]
   },
   "ja_において_106": {
     "title": "～において (〜ni oite)",
-    "shortExplanation": "指示 the place, time, or context where an action or event occurs; 'in', 'at', 'on', 'regarding'.",
-    "longExplanation": "The ～において grammar point is 用于展示 the place, time, or context where an action or event takes place. 可以翻译为 'in', 'at', 'on', or 'regarding' in English. It is often used in formal situations and can be replaced by more casual equivalents such as で, に, or は in informal contexts.",
-    "formation": "名词 + において"
+    "shortExplanation": "表示动作、事件发生的场所、时间、领域或背景，相当于书面语中的“在……”、“于……”、“关于……方面”。",
+    "longExplanation": "句型“～において”接在名词之后，是助词“で”或“に”的书面语郑重表达，用于明确指出事件、行为发生的具体场所、时代背景、历史阶段，或某项活动所涉及的研究领域、范围（“在……之中”、“在……方面”、“于……”）。修饰后续名词时需变为“～における＋名词”的形式。广泛用于新闻报道、学术论文、公文演讲等正式庄重的语境中。",
+    "formation": "名词 + において（修饰名词时用：名词 + における + 名词）",
+    "examples": [
+      {
+        "translation": "在这所大学里，英语课程是最受欢迎的。"
+      },
+      {
+        "translation": "在他的研究中有了全新的重大发现。"
+      },
+      {
+        "translation": "在运动会上，他表现得格外活跃出彩。"
+      },
+      {
+        "translation": "在环境问题方面，每个人都应当承担起责任并付诸行动。"
+      }
+    ]
   },
   "ja_にかかわらず_107": {
     "title": "～にかかわらず (〜ni kakawarazu)",
-    "shortExplanation": "Regardless of; irrespective of; (often used as) 'whether or not'.",
-    "longExplanation": "The ～にかかわらず grammar point is 用于表达 that something happens or is true regardless of a particular fact, condition, or circumstance. 可以翻译为 'regardless of', 'irrespective of', or 'whether or not'. It can be used with verbs, い-adjectives, な-adjectives, or nouns.",
-    "formation": "动词-dictionary form + にかかわらず, い-形容词 + にかかわらず, な-形容词 + にかかわらず, 名词 + にかかわらず"
+    "shortExplanation": "表示后项的实行或结果不受前项条件、情况的左右或影响；“不论……”、“不管……”、“不论……与否”。",
+    "longExplanation": "句型“～にかかわらず”（汉字写为“～に関わらず”）接在动词、形容词或名词之后，表示后项的行为、状态或决定完全不受前项条件、情况、程度的制约与影响（“不管……都……”、“不论……与否”）。前项常接具有正反对立意义的词语（做或不做、好或坏、有无）或者包含幅度和差异的名词（如天气、年龄、国籍、性别等）。",
+    "formation": "动词辞书形 / ない形 + にかかわらず | い形容词 + にかかわらず | な形容词（或 である） + にかかわらず | 名词 + にかかわらず",
+    "examples": [
+      {
+        "translation": "不论天气如何，今天的比赛都会照常举行。"
+      },
+      {
+        "translation": "不论年龄多大，他始终坚持不断地学习新知识。"
+      },
+      {
+        "translation": "不管那份工作难度如何，她都始终坚持努力做好。"
+      },
+      {
+        "translation": "不论有无经验，任何人都可以使用并参与这个项目。"
+      }
+    ]
   },
   "ja_にかけては_108": {
     "title": "～にかけては (〜ni kakete wa)",
-    "shortExplanation": "指示 a specific area or aspect in which someone or something excels.",
-    "longExplanation": "The grammar point ～にかけては is used to emphasize a particular area or aspect in which someone or something excels or is exceptional. This structure is often used with positive connotations regarding the subject's expertise or outstanding qualities.",
-    "formation": "名词 + にかけては"
+    "shortExplanation": "突出强调在某一特定领域、技能或方面拥有卓越超群的才能；“在……方面”、“论……的话”、“谈到……的话”。",
+    "longExplanation": "句型“～にかけては”接在名词之后，用于特意指出某人或某事物在某一特定技能、技艺、知识、专长领域表现极为出众（“在……方面”、“论起……来没人比得上”）。后项多伴随带有极高评价的词句，如“誰にも負けない（不输给任何人）”、“一番（最……）”、“得意（擅长）”等，表达对其卓越才能的由衷肯定或自豪。",
+    "formation": "名词 + にかけては",
+    "examples": [
+      {
+        "translation": "论烹饪手艺的话，她绝不输给任何人。"
+      },
+      {
+        "translation": "论这个小镇的话，他的店卖的拉面是最好吃的。"
+      },
+      {
+        "translation": "谈到音乐知识，在我们当中他是最了如指掌的。"
+      },
+      {
+        "translation": "在体育运动方面，他无论什么项目都非常拿手。"
+      }
+    ]
   },
   "ja_にしたがって_109": {
     "title": "～にしたがって (〜ni shitagatte)",
-    "shortExplanation": "表示 a natural consequence or a change that occurs according to something else; 'as', 'with', 'in accordance with'.",
-    "longExplanation": "The ～にしたがって grammar point is 用于表达 a natural consequence or a change that occurs according to something else. 可以翻译为 'as', 'with', or 'in accordance with' in English. This grammar point is used with nouns and can be 用于展示 a change in proportion or in accordance with a rule or principle.",
-    "formation": "名词 + にしたがって"
+    "shortExplanation": "表示（1）伴随着前项的变化，后项也相应地发生比例变化（“随着……”、“越……越……”）；（2）遵从、按照既定的规则或指示行事（“按照……”、“遵循……”）。",
+    "longExplanation": "句型“～にしたがって”接在动词辞书形或名词之后，主要有两种核心用法：(1) 表示伴随性变化，即随着前项事物的变化、进展，后项事物也随之发生同方向或相应的程度变化（“随着……”、“伴随……”）；(2) 表示服从或遵照某种规则、计划、指示或要求行事（“按照……”、“遵照……”）。",
+    "formation": "动词辞书形 + にしたがって | 名词 + にしたがって",
+    "examples": [
+      {
+        "translation": "随着不断生长，这株植物的叶子会变得越来越大。"
+      },
+      {
+        "translation": "请按照说明书来组装家具。"
+      },
+      {
+        "translation": "随着年龄的增长，人的体力也会逐渐下降。"
+      },
+      {
+        "translation": "通常情况下，随着运动量的增加，心率也会相应上升。"
+      }
+    ]
   },
   "ja_にしたら_110": {
     "title": "～にしたら (〜ni shitara)",
-    "shortExplanation": "Express a point of view; 'from the perspective of', 'if I were'.",
-    "longExplanation": "The ～にしたら grammar point is 用于表达 a point of view or opinion from someone else's perspective. 可以翻译为 'from the perspective of' or 'if I were' in English. The formation differs depending on whether it is used with a noun or a pronoun.",
-    "formation": "名词 + にしたら, Pronoun + にしたら"
+    "shortExplanation": "站在某人的立场、角度或处境来设身处地进行推测或体会；“对……来说”、“从……的角度来看”、“要是站在……的立场上”。",
+    "longExplanation": "句型“～にしたら”（同义表达有“～にすれば”、“～にしてみれば”、“～にしても”）接在表示人的名词或代词之后，表示说话人站在该当事人的角度、立场或处境上，换位思考并推测其内心的感受、想法或心情（“对……而言”、“站在……的角度来看”）。后项句尾常常带有“～だろう”、“～かもしれない”等推测或情态表达。",
+    "formation": "名词 + にしたら | 代词 + にしたら",
+    "examples": [
+      {
+        "translation": "从他的角度来看，大概很想早点回家吧。"
+      },
+      {
+        "translation": "对孩子们来说，这个故事或许很无聊。"
+      },
+      {
+        "translation": "对我来说，我觉得那份礼物非常棒。"
+      },
+      {
+        "translation": "站在她的立场来看，恐怕不会喜欢这部电影吧。"
+      }
+    ]
   },
   "ja_にしろにしろ_111": {
     "title": "～にしろ～にしろ (〜ni shiro 〜ni shiro)",
-    "shortExplanation": "表示 'either way', 'in any case', 'be it...', used when presenting two alternatives.",
-    "longExplanation": "The ～にしろ～にしろ grammar point is used to present two alternatives and emphasize that regardless of which one is chosen or occurs, the result or conclusion remains the same. 可以翻译为 'either way', 'in any case', or 'be it...'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词 (dictionary form or negative form) + にしろ, い-形容词 + にしろ, な-形容词 + にしろ, 名词 + にしろ"
+    "shortExplanation": "列举出对立或并列的两种情况，表示无论属于哪一种，后项的结论或态度都毫无改变；“无论……还是……”、“不管是……还是……”。",
+    "longExplanation": "句型“～にしろ～にしろ”（书面语中常为“～にせよ～にせよ”）通过列举两个相互对立、对照的选项或同类情况，强调无论前项属于哪一种情形，后项的事态、判断、结论或要求都始终保持不变（“不论是……还是……都……”）。后项常伴随判断、建议、命令或既定事实。",
+    "formation": "动词普通形 + にしろ | い形容词 + にしろ | な形容词（或 である） + にしろ | 名词（或 である） + にしろ",
+    "examples": [
+      {
+        "translation": "不管去还是不去，都请尽快做决定。"
+      },
+      {
+        "translation": "不论他来还是不来，我们都把派对开始吧。"
+      },
+      {
+        "translation": "不管下不下雨，最好都还是把雨伞带上。"
+      },
+      {
+        "translation": "这家餐厅无论价格贵还是便宜，菜肴都非常美味。"
+      }
+    ]
   },
   "ja_につけにつけ_112": {
     "title": "～につけ～につけ (〜ni tsuke 〜ni tsuke)",
-    "shortExplanation": "表示 'whenever', 'each time', 'whether...or'.",
-    "longExplanation": "The ～につけ～につけ grammar point is 用于表达 that something happens 'each time' or 'whenever' a certain event or situation occurs, and can also mean 'whether...or'. This grammar point 指示 that the same event or feeling occurs no matter which of the following situations happen.",
-    "formation": "动词-casual + につけ, い-形容词 + につけ, な-形容词 + につけ, 名词 + につけ"
+    "shortExplanation": "列举并列或相对的两种情况，表示无论在何种情况下都会自然引起相同的情感或思绪；“每当……或者……的时候总会……”、“不论……还是……”。",
+    "longExplanation": "句型“～につけ～につけ”接在动词、形容词或名词之后，通过列举两个对照或并列的代表性事例（如善恶、悲喜、春秋等），强调无论在哪种场合下，心中都会油然而生同一种感受、感慨或同样的反应（“无论是……还是……，都会……”）。后项往往紧接表示心理感受、回忆、感慨或无法自已的情感表达。",
+    "formation": "动词普通形 + につけ | い形容词 + につけ | な形容词 + につけ | 名词 + につけ",
+    "examples": [
+      {
+        "translation": "无论去国外还是自己学习，我总是会遭遇语言的障碍。"
+      },
+      {
+        "translation": "每当和他交谈，或是每当听到他的想法时，我都会为他博学多识而惊叹不已。"
+      },
+      {
+        "translation": "在这个公园里无论是玩耍还是散步，都会让我不禁回想起自己的童年时光。"
+      },
+      {
+        "translation": "不管是到了春天还是秋天，他都会回去探访母校。"
+      }
+    ]
   },
   "ja_につれて_113": {
     "title": "～につれて (〜ni tsurete)",
-    "shortExplanation": "表示 the idea that as one thing changes, so does another; 'as', 'along with', 'while'.",
-    "longExplanation": "The ～につれて grammar point is 用于表达 the idea that as one thing changes or progresses, another thing changes or progresses simultaneously. In English, 可以翻译为 'as', 'along with', or 'while'.",
-    "formation": "动词 (dictionary form) + につれて, 名词 + につれて"
+    "shortExplanation": "表示伴随着一方在程度、时间或阶段上的逐步变化，另一方也相应地发生自然演变；“随着……”、“越……越……”。",
+    "longExplanation": "句型“～につれて”接在动词辞书形或名词之后，表示前项事物在时间推移、程度加深或阶段发展的同时，后项事物也随之自然而然地发生同方向或相应的比例变化（“随着……逐渐……”）。前项常搭配表示变化过程的动词（如“近づく”、“増える”、“進む”等）或动作性名词，多用于客观叙述自然的演进与变化过程。",
+    "formation": "动词辞书形 + につれて | 名词 + につれて",
+    "examples": [
+      {
+        "translation": "随着年龄的增长，我们必须越来越注重身体健康。"
+      },
+      {
+        "translation": "随着春天的临近，气温也逐渐回升了。"
+      },
+      {
+        "translation": "随着不断地深入学习，渐渐地就能够弄明白了。"
+      },
+      {
+        "translation": "随着经验的不断积累，自信心也逐渐建立起来了。"
+      }
+    ]
   },
   "ja_にともなって_114": {
     "title": "～にともなって (〜ni tomonatte)",
-    "shortExplanation": "表示 'along with' or 'as a result of'; 指示 that one event occurs along with another.",
-    "longExplanation": "The ～にともなって grammar point is 用于表示 that one event occurs along with another event, or as a result of another event. 可以翻译为 'along with', 'as a result of', or 'in accordance with' in English.",
-    "formation": "名词 (event) + にともなって, 动词-casual + にともなって"
+    "shortExplanation": "表示随着某重大变化或事件的发生，另一事态作为伴随现象或结果也随之产生；“随着……”、“伴随着……”、“由……所引起的”。",
+    "longExplanation": "句型“～にともなって”（汉字为“～に伴って”）接在名词或动词普通形之后，表示某个重大的事件、社会现象或整体性变化发生时，另一项事态作为伴随现象、联带反应或结果也同时发生或逐步加剧（“伴随……”、“随着……的发生而……”）。此表达具有较强的郑重语感，常用于社会、经济、自然等宏观层面的现象分析、新闻报道和学术调查之中。",
+    "formation": "名词 + にともなって | 动词普通形 + にともなって",
+    "examples": [
+      {
+        "translation": "伴随着人口的不断增加，交通拥堵也在日益加剧。"
+      },
+      {
+        "translation": "随着季节的交替变换，人的身体往往容易出现不适。"
+      },
+      {
+        "translation": "伴随着经济的增长，就业机会想必也会不断增多吧。"
+      },
+      {
+        "translation": "随着他的升迁，我们全家决定搬家了。"
+      }
+    ]
   },
   "ja_にほかならない_115": {
     "title": "～にほかならない (〜ni hoka naranai)",
-    "shortExplanation": "Express that something is 'nothing but' or 'none other than'.",
-    "longExplanation": "The ～にほかならない grammar point is used to emphasize that something is no more or no less than what is specified. It can be seen as a strong way to say that something is 'nothing but' or 'none other than'.",
-    "formation": "动词-plain + にほかならない, い-形容词 + にほかならない, な-形容词 + にほかならない, 名词 + にほかならない"
+    "shortExplanation": "强烈断定某事的根本原因或本质正是该事物，绝无其他可能；“无非是……”、“正是……”、“不外乎是……”。",
+    "longExplanation": "句型“～にほかならない”（汉字为“～に他ならない”）接在名词、动词或形容词普通形之后，用于做出十分强烈的绝对断定，指出某项结果的唯一核心原因、本质或真相正是前项所指，绝非其他（“不外乎……”、“无非正是……”）。具有郑重、果断的书面语气，常用于政论文、评论文和正式演讲之中。",
+    "formation": "名词 + にほかならない | 动词普通形 + （から）にほかならない | い形容词 + （从/から）にほかならない | な形容词 + である（から）にほかならない",
+    "examples": [
+      {
+        "translation": "他的成功不外乎是他努力拼搏的结果。"
+      },
+      {
+        "translation": "这阵疼痛无非就是严寒天气所造成的。"
+      },
+      {
+        "translation": "他失败的原因无非正是因为盲目自满。"
+      },
+      {
+        "translation": "她的笑容无非正是她内心阳光开朗的体现。"
+      }
+    ]
   },
   "ja_にもかかわらず_116": {
     "title": "～にもかかわらず (〜ni mo kakawarazu)",
-    "shortExplanation": "表示 'despite', 'in spite of' or 'even though'.",
-    "longExplanation": "The ～にもかかわらず grammar point is 用于表达 that something occurs, or a situation exists, despite or in spite of a contrasting or unfavorable condition. 可以翻译为 'despite', 'in spite of', or 'even though' in English.",
-    "formation": "动词 (any tense/form) + にもかかわらず, い-形容词 + にもかかわらず, な-形容词 (or 名词) + であるにもかかわらず"
+    "shortExplanation": "表示尽管存在前项的情况或条件，后项却产生了与之相反、出乎意料的事实；“尽管……却……”、“虽然……但是依然……”。",
+    "longExplanation": "句型“～にもかかわらず”（汉字为“～にも関わらず”）接在动词、形容词或名词之后，表示转折关系。通常前项提出了一个理应产生某种结果的前提或不利条件，而后项却出现了完全相反、意料之外的行为或结果（“尽管……却依然……”、“虽然……但毫无顾虑地……”）。相比于口语中的“～のに”，此句型语气更显正式、庄重与客观。",
+    "formation": "动词普通形 + にもかかわらず | い形容词 + にもかかわらず | な形容词 / 名词 + であるにもかかわらず（口语中也可直接 名词 + にもかかわらず）",
+    "examples": [
+      {
+        "translation": "尽管非常繁忙，他每天却依然坚持锻炼身体。"
+      },
+      {
+        "translation": "尽管天空下着雨，她还是出去散步了。"
+      },
+      {
+        "translation": "这辆汽车虽然很旧，却依然开得很好。"
+      },
+      {
+        "translation": "尽管成绩不尽如人意，他依然坚持不懈地继续努力。"
+      }
+    ]
   },
   "ja_により_117": {
     "title": "～により (〜ni yori)",
-    "shortExplanation": "指示 the reason, method, or means by which something happens; 'by', 'through', 'due to'.",
-    "longExplanation": "The ～により grammar point is 用于表示 the reason, method, or means by which something happens or is done. It can be often translated as 'by', 'through', or 'due to' in English. It can be attached directly to nouns or verbs in plain form.",
-    "formation": "名词 + により, 动词 + により"
+    "shortExplanation": "表示原因、手段、依据或被动句的行为主体；“由于……”、“通过……”、“根据……”、“由……所……”。",
+    "longExplanation": "句型“～により”（或“～によって”）接在名词之后，属于正式的书面表达，主要包含以下核心用法：(1) 表示导致某种后果的原因或理由（“由于……”、“因……”）；(2) 表示达成某目的所采用的手段、途径或方法（“通过……”、“凭借……”）；(3) 表示判断或处理事情的依据（“根据……”）；(4) 在被动句中引出创作、发明的行为主体（“由……所制作／发明”）。修饰后续名词时需用“～による＋名词”的形式。",
+    "formation": "名词 + により（修饰名词时用：名词 + による + 名词）",
+    "examples": [
+      {
+        "translation": "这起事故是由于司机的粗心大意而引起的。"
+      },
+      {
+        "translation": "那部电影是根据小说改编制作而成的。"
+      },
+      {
+        "translation": "罪犯已经被警方逮捕归案。"
+      },
+      {
+        "translation": "公司的发展壮大是通过全体员工的不懈努力而得以实现的。"
+      }
+    ]
   },
   "ja_にわたって_118": {
     "title": "～にわたって (〜ni watatte)",
-    "shortExplanation": "指示 a range or extent; 'over', 'throughout', 'across'.",
-    "longExplanation": "The ～にわたって grammar point is 用于表达 a range or extent of a particular action, event, or situation. 可以翻译为 'over', 'throughout', or 'across' in English. This structure can be used with various types of words such as time, distance, and quantity.",
-    "formation": "名词 + にわたって"
+    "shortExplanation": "表示动作、现象或状态在时间上持续较长，或在空间、地域、范围、数量上涉及面广；“长达……”、“跨越……”、“贯穿……”、“遍及……”。",
+    "longExplanation": "句型“～にわたって”（连体修饰名词时用“～にわたる＋名词”，书面语郑重形式也常用“～にわたり”）接在表示时间、距离、空间、次数或范围的名词之后。用于强调某一动作、事件或状态在整个时间段内持续不断，或者覆盖、涉及了相当广泛的范围、跨度与规模。常用于新闻报道、学术论文及较正式的说明文体中。",
+    "formation": "名词 + にわたって（连体修饰：名词 + にわたる + 名词）",
+    "examples": [
+      {
+        "translation": "她学习日语长达一年之久。"
+      },
+      {
+        "translation": "该项目将修建一条跨度达50公里的道路。"
+      },
+      {
+        "translation": "他的著作在许多国家被广泛阅读。"
+      },
+      {
+        "translation": "那个秘密世代相传，一直被严密保守着。"
+      }
+    ]
   },
   "ja_に先立ち_119": {
     "title": "～に先立ち (〜ni sakidachi)",
-    "shortExplanation": "Express an action or event that occurs before another; 'before', 'prior to', 'preceding'.",
-    "longExplanation": "The ～に先立ち grammar point is 用于表示 that a certain action or event occurs before another action or event. 可以翻译为 'before', 'prior to', or 'preceding' in English. It is often used with nouns (Noun + に先立ち) or with dictionary-form verbs (Verb-dictionary form + に先立って).",
-    "formation": "名词 + に先立ち / 动词-dictionary form + に先立って"
+    "shortExplanation": "表示在开始某项重要活动、事件或计划之前预先进行某事；“在……之前”、“在……之先”。",
+    "longExplanation": "句型“～に先立ち”（形式上也常用“～に先立って”，连体修饰名词时为“～に先立つ＋名词”）接在名词或动词辞书形之后，表示在举行某项重大事件、仪式、会议、工程或出发等重要行动之前，预先做好某些准备工作或必要行动。语气较为郑重正式，多用于商务公文、会议主持、新闻公告等正式场合。",
+    "formation": "名词 + に先立ち / に先立って | 动词辞书形 + に先立ち / に先立って（连体修饰：名词 / 动词辞书形 + に先立つ + 名词）",
+    "examples": [
+      {
+        "translation": "会议开始之前，我们先确认一下资料吧。"
+      },
+      {
+        "translation": "在出发前，我把行李整理妥当了。"
+      },
+      {
+        "translation": "在就寝之前，我会先刷牙。"
+      },
+      {
+        "translation": "在电影放映前，会先播出预告片。"
+      }
+    ]
   },
   "ja_に反して_120": {
     "title": "～に反して (〜ni hanshite)",
-    "shortExplanation": "Contrary to, against, in spite of",
-    "longExplanation": "The ～に反して grammar point is 用于表达 that something is contrary to or against an expectation or belief. 可以翻译为 'contrary to', 'against', or 'in spite of' in English. It is generally used with nouns.",
-    "formation": "名词 + に反して"
+    "shortExplanation": "表示实际结果或行动与预想、期待、意愿或规定背道而驰；“与……相反”、“违反……”、“违背……”。",
+    "longExplanation": "句型“～に反して”（连体修饰名词时用“～に反する＋名词”，书面语中也可用“～に反し”）接在表示预测、期待、意图、规定或规则的名词（如予想、期待、意向、規則、法等）之后。表示事态的发展或最终结果完全违背了预先的设想、期待，或者行为违背了公认的原则与规章制度。",
+    "formation": "名词 + に反して / に反し（连体修饰：名词 + に反する + 名词）",
+    "examples": [
+      {
+        "translation": "与天气预报相反，今天下起了雨。"
+      },
+      {
+        "translation": "出乎他的意料，我们赢得了比赛。"
+      },
+      {
+        "translation": "违背父母的意见，我和他结婚了。"
+      },
+      {
+        "translation": "这部电影与影评家的评价大相径庭，获得了巨大的成功。"
+      }
+    ]
   },
   "ja_に基づいて_121": {
     "title": "～に基づいて (〜ni motozuite)",
-    "shortExplanation": "Based on, according to, depending on",
-    "longExplanation": "The ～に基づいて grammar point is 用于表达 that something is based on, according to, or depending on a certain source or foundation. It can be used with nouns that represent a source, rule, principle, or standard.",
-    "formation": "名词 + に基づいて"
+    "shortExplanation": "表示以某事物作为根据、基准、原则或出发点来采取行动或得出结论；“基于……”、“根据……”、“依据……”。",
+    "longExplanation": "句型“～に基づいて”（连体修饰名词时用“～に基づく＋名词”或“～に基づいた＋名词”，书面语郑重形式为“～に基づき”）接在表示基准、依据、法律、数据、调查结果、经验或方针的名词之后。表示将该事物作为立足点、客观根据或规范，据此开展某项行动、制定决策或推导出结论。在商务、学术、法律及公文中极其常用。",
+    "formation": "名词 + に基づいて / に基づき（连体修饰：名词 + に基づく / に基づいた + 名词）",
+    "examples": [
+      {
+        "translation": "基于研究结果，开发出了一种新的治疗方法。"
+      },
+      {
+        "translation": "依据法律，犯罪分子被依法逮捕。"
+      },
+      {
+        "translation": "根据该数据，我们可以得出结论。"
+      },
+      {
+        "translation": "我们将根据客户的需求对商品进行改良。"
+      }
+    ]
   },
   "ja_に対して_122": {
     "title": "～に対して (〜ni taishite)",
-    "shortExplanation": "表示 'toward', 'against', 'in contrast to', or 'in response to'.",
-    "longExplanation": "The ～に対して grammar point is 用于表示 a direction or target, showing an action or attitude towards something or someone. It can also be 用于展示 a contrast between two situations or to express 'in response to' an action or situation.",
-    "formation": "名词 + に対して"
+    "shortExplanation": "表示动作、态度或情感所指向的对象（“对于……”、“对……”）；亦可表示两种事物或情况的鲜明对照（“与……相对”、“而……”）。",
+    "longExplanation": "句型“～に対して”（连体修饰名词时为“～に対する＋名词”，书面语为“～に対し”）主要有两种用法：第一，表示动作、行为、态度、情感等所针对的人或事物，意为“面对……”、“对……”；第二，用于将两个不同的人、事物或情况进行鲜明的对比，意为“与……相比，……则相反”或“……而……”。",
+    "formation": "名词 + に対して / に対し（连体修饰：名词 + に対する + 名词）| 普通形（二类形容词词干 + な/である | 名词 + な/である）+ のに対して",
+    "examples": [
+      {
+        "translation": "我对日本文化怀有崇高的敬意。"
+      },
+      {
+        "translation": "请不要对他采取无礼的态度。"
+      },
+      {
+        "translation": "面对老师的提问，她立刻做出了回答。"
+      },
+      {
+        "translation": "相比于男性，女性即便是从事同样的工作，拿到的薪水却更低。"
+      }
+    ]
   },
   "ja_に応えて_123": {
     "title": "～に応えて (〜ni kotaete)",
-    "shortExplanation": "Responding to; living up to; meeting.",
-    "longExplanation": "The ～に応えて grammar point is 用于表达 an action in response to something (an expectation, request, or situation). 可以翻译为 'responding to', 'living up to', or 'meeting' in English. This grammar point is generally used with nouns or noun phrases.",
-    "formation": "名词 + に応えて"
+    "shortExplanation": "表示为了响应、回报或满足对方的期待、要求、呼声等而采取相应行动；“回应……”、“响应……”、“不负……”。",
+    "longExplanation": "句型“～に応えて”（连体修饰名词时用“～に応える＋名词”，书面语为“～に応え”）接在表示期待、希望、要求、呼声、声援等名词（如期待、要望、要求、声、アンコール等）之后。表示当事人主动顺应这些期待或呼吁，为了满足对方的愿望、不负众望而做出积极的努力或采取行动。",
+    "formation": "名词 + に応えて / に応え（连体修饰：名词 + に応える + 名词）",
+    "examples": [
+      {
+        "translation": "响应顾客的要求，我们推出了全新菜单。"
+      },
+      {
+        "translation": "他不负全队的殷切期望，展现了极为精彩的发挥。"
+      },
+      {
+        "translation": "政府顺应民众的呼声，制定了新的法律。"
+      },
+      {
+        "translation": "企业积极应对环境问题，正致力于研发环保产品。"
+      }
+    ]
   },
   "ja_に応じて_124": {
     "title": "～に応じて (〜ni oujite)",
-    "shortExplanation": "In accordance with, depending on, in response to.",
-    "longExplanation": "The ～に応じて grammar point is 用于表达 something that varies according to a certain condition or responds to a change. 可以翻译为 'in accordance with', 'depending on', or 'in response to' in English. The formation is used with nouns.",
-    "formation": "名词 + に応じて"
+    "shortExplanation": "表示根据条件、程度、要求或变化而采取相应的对策或做出调整；“根据……”、“按照……”、“随着……而相应调整”。",
+    "longExplanation": "句型“～に応じて”（连体修饰名词时用“～に応じた＋名词”，书面语形式为“～に応じ”）接在具有阶段性、多样性或会发生变化的名词（如年龄、收入、季节、能力、需求等）之后。表示后项的行动、措施或状态会伴随前项条件、程度或情况的不同而做出与之相适应的调整或变动。",
+    "formation": "名词 + に応じて / に応じ（连体修饰：名词 + に応じた + 名词）",
+    "examples": [
+      {
+        "translation": "工资会根据工作量的多少而有所变动。"
+      },
+      {
+        "translation": "让我们根据季节的变化来选择合适的服装吧。"
+      },
+      {
+        "translation": "我们会根据客户的具体意愿提出相应的方案。"
+      },
+      {
+        "translation": "根据年龄段的不同，体检的项目也有所区别。"
+      }
+    ]
   },
   "ja_に決まっている_125": {
     "title": "～に決まっている (〜ni kimatte iru)",
-    "shortExplanation": "Express certainty; 'it is obvious', 'it must be', 'no doubt'.",
-    "longExplanation": "The ～に決まっている grammar point is 用于表达 certainty or a strong conviction about a situation or event. It can be translated in English as 'it is obvious', 'it must be', or 'no doubt'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + に決まっている, い-形容词 + に決まっている, な-形容词 + だに決まっている, 名词 + だに決まっている"
+    "shortExplanation": "表示说话人根据主观直觉、经验或常理做出极为肯定、不容置疑的判断；“一定……”、“肯定是……”、“必然……”。",
+    "longExplanation": "句型“～に決まっている”接在动词、形容词或名词的简体形之后（注意：二类形容词和名词通常直接去掉“だ”接“に決まっている”）。表示说话人凭借个人的主观经验、推断或直觉，十分确信某事必定如此，带着强烈笃定的语气（“想都不用想肯定如此”、“毫无疑问”）。常用于口语交际。",
+    "formation": "动词普通形 + に決まっている | 一类形容词 + に決まっている | 二类形容词词干 + に決まっている | 名词 + に決まっている",
+    "examples": [
+      {
+        "translation": "在这么热的天气里运动，肯定会大汗淋漓的。"
+      },
+      {
+        "translation": "如果他考试不及格，肯定会大失所望的。"
+      },
+      {
+        "translation": "她总是迟到，今天也肯定会迟到的。"
+      },
+      {
+        "translation": "这款游戏肯定非常好玩。"
+      }
+    ]
   },
   "ja_に沿って_126": {
     "title": "～に沿って (〜ni sotte)",
-    "shortExplanation": "Along with; in accordance with; following",
-    "longExplanation": "The ～に沿って grammar point is 用于表达 that something happens or is done along with, in accordance with, or following a particular line, path, or guideline. It is often used in instructions or explanations. The に沿って is attached to the noun representing the line, path or guideline.",
-    "formation": "名词 + に沿って"
+    "shortExplanation": "表示沿着线状延展的物体行进（“沿着……”、“顺着……”）；或指遵照、顺应既定的规则、方针、计划等行事（“按照……”、“遵循……”）。",
+    "longExplanation": "句型“～に沿って”（连体修饰名词时用“～に沿う＋名词”或“～に沿った＋名词”，书面语为“～に沿い”）接在名词之后。主要有两种用法：第一，沿着河流、道路、海岸线等狭长延展的物理路线移动；第二，抽象用法，表示严格遵循规章制度、教学大纲、既定方针、计划或顾客意愿，不脱离其轨道地推进工作或行动。",
+    "formation": "名词 + に沿って / に沿い（连体修饰：名词 + に沿う / に沿った + 名词）",
+    "examples": [
+      {
+        "translation": "沿着这条河往前走，就能看到一座桥。"
+      },
+      {
+        "translation": "只要按照这个食谱做菜，就绝不会出错。"
+      },
+      {
+        "translation": "我们必须按照规章制度采取行动。"
+      },
+      {
+        "translation": "顺着山间小道前行，有一座小小的神社。"
+      }
+    ]
   },
   "ja_に過ぎない_127": {
     "title": "～に過ぎない (〜ni suginai)",
-    "shortExplanation": "表示 that something is 'just' or 'nothing more than'; 'merely', 'only', 'simply'.",
-    "longExplanation": "The ～に過ぎない grammar point is 用于表示 that something is 'just' or 'nothing more than' the stated quality or condition. It implies that the thing is not as significant or important as it might seem at first glance. This grammar point can be translated as 'merely', 'only', or 'simply' in English. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-casual + に過ぎない, い-形容词 + に過ぎない, な-形容词 + に過ぎない, 名词 + に過ぎない"
+    "shortExplanation": "表示程度极低、微不足道，只不过是该程度而已；“只不过是……”、“仅是……”、“无非是……”。",
+    "longExplanation": "句型“～に過ぎない”接在动词、形容词或名词的简体形之后（名词和二类形容词通常省略“だ”直接接续，或接“である”）。说话人借助此句型表达某种事物、情况并不像人们想象的那样重要、严重或了不起，其价值、数量或程度仅仅止步于此，带有轻视、评价不高或就事论事的语气（“充其量不过是……”）。",
+    "formation": "动词普通形 + に過ぎない | 一类形容词 + に過ぎない | 二类形容词词干（或 である）+ に過ぎない | 名词（或 である）+ に過ぎない",
+    "examples": [
+      {
+        "translation": "他的失败不过是一次失误而已。"
+      },
+      {
+        "translation": "这次考试只不过是一些简单的题目罢了。"
+      },
+      {
+        "translation": "她不过是个普通朋友而已。"
+      },
+      {
+        "translation": "那番言论只不过是一句玩笑话。"
+      }
+    ]
   },
   "ja_に関わって_128": {
     "title": "～に関わって (〜ni kakawatte)",
-    "shortExplanation": "指示 that something is related to or influenced by a certain matter or factor; 'concerning', 'in connection with', 'regarding'.",
-    "longExplanation": "The ～に関わって grammar point is 用于表达 that something is related to, influenced by, or connected with a certain matter or factor. 可以翻译为 'concerning', 'in connection with', or 'regarding' in English. The formation depends on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + に関わって, い-形容词 + に関わって, な-形容词 + に関わって, 名词 + に関わって"
+    "shortExplanation": "表示与某事、某人有关联、有牵连，或关乎重大的影响；“与……有关”、“关于……”、“涉及到……”。",
+    "longExplanation": "句型“～に関わって”（连体修饰名词时用“～に関わる＋名词”，书面语形式为“～に関わり”）接在名词之后。用于表示参与了某项事务、与某件事情有密切关联或牵涉其中；在特定语境下，也可表示对名誉、生命、前途等产生重大关系与影响。日常交流中也常作为“关于……”、“涉及到……”的话题引出表达。",
+    "formation": "名词 + に関わって / に関わり（连体修饰：名词 + に関わる + 名词）",
+    "examples": [
+      {
+        "translation": "关于考试的内容，我想向老师提几个问题。"
+      },
+      {
+        "translation": "关于这个项目，大家如果有意见，请尽管畅所欲言。"
+      },
+      {
+        "translation": "事关身体健康，饮食生活起居是至关重要的。"
+      },
+      {
+        "translation": "因为牵涉到那起案件，他也受到了一定程度的怀疑。"
+      }
+    ]
   },
   "ja_に限り_129": {
     "title": "～に限り (〜ni kagiri)",
-    "shortExplanation": "表示 limitation; 'only', 'limited to', 'exclusive to'.",
-    "longExplanation": "The ～に限り grammar point is 用于表示 that something is limited or exclusive to a certain condition or situation. 可以翻译为 'only', 'limited to', or 'exclusive to' in English. The formation is simple and can be used with nouns.",
-    "formation": "名词 + に限り"
+    "shortExplanation": "表示仅限于特定的人员、日期、资格或对象，以此作为例外或特别优惠；“仅限……”、“只限……”。",
+    "longExplanation": "句型“～に限り”（在句尾作结语时多用“～に限る”）接在表示时间、人员资格、特定场所或条件的属性名词之后。主要用于商业广告、官方通知或告示规则之中，明确指出某项特惠待遇、规则或措施仅对该特定对象或时间生效，不适用于其他任何常规情况。",
+    "formation": "名词 + に限り（句尾结句时：名词 + に限る）",
+    "examples": [
+      {
+        "translation": "仅限今日，该商品实行半价优惠。"
+      },
+      {
+        "translation": "该优惠券仅限在本店使用有效。"
+      },
+      {
+        "translation": "仅限会员方可免费使用这项服务。"
+      },
+      {
+        "translation": "此项特惠仅限前10名到场顾客。"
+      }
+    ]
   },
   "ja_に際して_130": {
     "title": "～に際して (〜ni saishite)",
-    "shortExplanation": "用于表达 the moment or the occasion of an action; 'at the time of', 'upon', 'when'.",
-    "longExplanation": "The ～に際して grammar point describes an action that occurs during a specific event, occasion, or when something takes place. It can be translated into English as 'at the time of', 'upon', 'when', or 'in the event of'. This grammar is used with nouns to describe the context or situation during which an action takes place.",
-    "formation": "名词 + に際して"
+    "shortExplanation": "表示面临重要时刻、特殊节点或开展重要活动之际；“在……之际”、“当……之时”、“临到……”。",
+    "longExplanation": "句型“～に際して”（修饰名词时用“～に際しての＋名词”，书面语为“～に際し”）接在名词或动词辞书形之后。主要用于面临毕业、结婚、开业、留学、签约等人生大事、重大活动或特殊节点时，引出接下来的演讲、致辞、准备事项或心境态度。属于郑重典雅的正式语体。",
+    "formation": "名词 + に際して / に際し | 动词辞书形 + に際して / に際し（连体修饰：名词 / 动词辞书形 + に際しての + 名词）",
+    "examples": [
+      {
+        "translation": "在毕业典礼之际，校长将发表致辞。"
+      },
+      {
+        "translation": "在从事这项工作之际，责任感至关重要。"
+      },
+      {
+        "translation": "在赴海外留学之际，必须办理签证手续。"
+      },
+      {
+        "translation": "在举行婚礼之际，我向父母表达了由衷的感激之情。"
+      }
+    ]
   },
   "ja_ねばならない_131": {
     "title": "～ねばならない (〜neba naranai)",
-    "shortExplanation": "表示 obligation or necessity; 'must', 'have to', 'need to'.",
-    "longExplanation": "The ～ねばならない grammar point is 用于表达 obligation or necessity. 可以翻译为 'must', 'have to', or 'need to' in English. This grammar point is mainly used with verbs, indicating that the action must be done.",
-    "formation": "动词-ない form → (remove い) → ね + ばならない"
+    "shortExplanation": "表示强烈的义务、职责或情势所迫必须做某事；“必须……”、“不得不……”、“务必……”。",
+    "longExplanation": "句型“～ねばならない”（书面语亦常作“～ねばならぬ”）接在动词未然形之后（将动词ない形的“ない”替换为“ねばならない”；特殊变化：“する”变为“せねばならない”）。是“～なければならない”的古典文语残留表达，带有浓厚的书面语与古风色彩。常用于表达强烈的责任感、道德义务、坚定决心或不可避免的客观必要性。",
+    "formation": "动词未然形（ない形去掉ない） + ねばならない（注意：“する”变为“せねばならない”）",
+    "examples": [
+      {
+        "translation": "为了通过考试，我必须更加努力地学习。"
+      },
+      {
+        "translation": "为了赶上飞机，我必须赶快抓紧时间。"
+      },
+      {
+        "translation": "我必须在6点前赶回家。"
+      },
+      {
+        "translation": "我必须在今天之内把这项工作做完。"
+      }
+    ]
   },
   "ja_のみならずも_132": {
     "title": "～のみならず～も (〜nomi narazu 〜mo)",
-    "shortExplanation": "Not only... but also; as well as.",
-    "longExplanation": "The ～のみならず～も grammar point is 用于展示 that something applies not only to one thing, but also to another thing. This can be translated as 'not only... but also', or 'as well as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + のみならず + (も), い-形容词 + のみならず + (も), な-形容词 + のみならず + (も), 名词 + のみならず + (も)"
+    "shortExplanation": "表示不仅前项如此，而且后项同样如此，具有递进扩展的语气；“不仅……而且……”、“不但……也……”。",
+    "longExplanation": "句型“～のみならず～も”接在动词、形容词或名词的普通形之后（二类形容词和名词可以直接接续，亦可使用“である”形式）。用于说明某事物不仅限于前项所列举的范围或优点，而且还同时兼具后项的其他性质或对象，表示范围的进一步扩充。与“～だけでなく”意思相近，但“～のみならず”更具书面语色彩，显得更加郑重典雅。",
+    "formation": "动词普通形 + のみならず（…も） | 一类形容词 + のみならず（…も） | 二类形容词词干（或 である）+ のみならず（…も） | 名词（或 である）+ のみならず（…も）",
+    "examples": [
+      {
+        "translation": "他不仅会说英语，而且还会说法语。"
+      },
+      {
+        "translation": "这家餐厅不仅味道美味，氛围也格外好。"
+      },
+      {
+        "translation": "这款应用程序不仅使用方便，而且安全性也很高。"
+      },
+      {
+        "translation": "她不仅头脑聪明，体育运动也十分拿手。"
+      }
+    ]
   },
   "ja_のももっともだ_133": {
     "title": "～のももっともだ (〜no mo mottomo da)",
-    "shortExplanation": "Express that something is understandable or reasonable.",
-    "longExplanation": "The ～のももっともだ grammar point is 用于表达 that a situation, action, or feeling is understandable or reasonable, considering the circumstances. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + のももっともだ, い-形容词 + のももっともだ, な-形容词 + なのももっともだ, 名词 + なのももっともだ"
+    "shortExplanation": "表示在某种情境或事实下，某种行为、反应或情绪是理所当然、完全可以理解的；“……也是理所当然的”、“……也是很正常的”、“难怪……”。",
+    "longExplanation": "句型“～のももっともだ”（汉字写作“尤も”）接在普通形加“の”之后，表示结合当时的情境、原因或客观事实来看，某人产生的某种感情、采取的行动或出现的状况是完全合情合理的，任何人都能够理解和认同（“……也是理所当然的”、“难怪会……”）。说话人在此表达强烈的理解、同情或认同态度。",
+    "formation": "动词普通形 + のももっともだ | 一类形容词（い形容词） + のももっともだ | 二类形容词（な形容词）词干 + なのももっともだ | 名词 + なのももっともだ",
+    "examples": [
+      {
+        "translation": "他感到紧张也是理所当然的。"
+      },
+      {
+        "translation": "这道题这么难，大家觉得难也是合情合理的。"
+      },
+      {
+        "translation": "她感到如此幸福也是理所当然的。"
+      },
+      {
+        "translation": "由他来担任领导也是顺理成章、完全在情理之中的。"
+      }
+    ]
   },
   "ja_の上では_134": {
     "title": "〜の上では (〜no ue de wa)",
-    "shortExplanation": "指示 'on the basis of', 'in terms of', or 'from the standpoint of'.",
-    "longExplanation": "The 〜の上では grammar point is 用于展示 that you are expressing a view or making a judgment based on a specific standpoint or perspective. 可以翻译为 'on the basis of', 'in terms of', or 'from the standpoint of'. The formation is straightforward, which involves attaching 〜の上では to a noun or a phrase.",
-    "formation": "名词 or Phrase + の上では"
+    "shortExplanation": "表示以某一特定角度、立场、标准或理论为依据进行判断或评价；“在……方面”、“从……角度来看”、“在……上”。",
+    "longExplanation": "句型“〜の上では”接在名词之后，表示限定判断、评价或讨论的标准、范围或理论依据（“在……上”、“从……的角度来看”、“就……而言”）。常用于从理论、法律、数据、表面等某一个特定侧面做出说明，有时隐含着虽然在这一方面如此，但实际情况或其他方面可能另有不同的对比语气。",
+    "formation": "名词 + の上では",
+    "examples": [
+      {
+        "translation": "从效率的角度来看，这个方法是最合适的。"
+      },
+      {
+        "translation": "在法律层面上，他的行为并不违法。"
+      },
+      {
+        "translation": "论起味道来，这家餐厅的评价非常高。"
+      },
+      {
+        "translation": "单看成绩的话，他是班里最优秀的学生。"
+      }
+    ]
   },
   "ja_の下で_135": {
     "title": "～の下で (〜no shita de)",
-    "shortExplanation": "Under the context or condition of; under.",
-    "longExplanation": "The ～の下で grammar point is 用于表达 that something occurs under a certain context, condition, or circumstance. 可以翻译为 'under' or 'in' in English. The formation is simple, as it can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-casual + の下で, い-形容词 + の下で, な-形容词 + の下で, 名词 + の下で"
+    "shortExplanation": "表示在某种影响、指导、庇护、管理或者某种客观条件、气氛之下进行某事；“在……之下”、“在……的指导／关怀下”。",
+    "longExplanation": "句型“～の下で”（常读作“のもとで”，也读作“のしたで”）接在名词之后，表示某项行动、成长或事态是在某人的指导、管理、关怀、支配下进行的，或者是在特定的自然环境、社会条件、紧张氛围下发生的（“在……之下”、“在……的关怀／庇护下”）。",
+    "formation": "名词 + の下で",
+    "examples": [
+      {
+        "translation": "在老师的悉心教导下学习非常令人愉快。"
+      },
+      {
+        "translation": "让我们在晴朗蔚蓝的天空下尽情野餐吧。"
+      },
+      {
+        "translation": "在高度紧张的氛围下，她的演讲获得了圆满成功。"
+      },
+      {
+        "translation": "在父母深沉的关爱下，孩子们幸福地茁壮成长。"
+      }
+    ]
   },
   "ja_ばかりかも_136": {
     "title": "～ばかりか〜も (〜bakari ka 〜 mo)",
-    "shortExplanation": "表示 'not only... but also'; emphasizing the extent of something.",
-    "longExplanation": "The ～ばかりか〜も grammar point is 用于表达 the idea of 'not only... but also' in a sentence. It emphasizes the extent to which something applies, showing a certain component or factor is not the only relevant one.",
-    "formation": "名词/动词/形容词 + ばかりか + 名词/动词/形容词 + も"
+    "shortExplanation": "表示“不仅……而且……”，强调程度的递进，即不仅前面所说的事项如此，甚至更进一步的事项也是如此。",
+    "longExplanation": "句型“～ばかりか〜も”接在各类词的普通形之后，表示递进关系（“不仅……而且还……”、“不光……就连……也……”）。前项已经达到某种程度或具备某种特点，后项则进一步提出程度更高、范围更广或更令人意想不到的事项。后项常与助词“も”、“まで”、“さえ”相呼应使用。",
+    "formation": "动词普通形 + ばかりか... も | 一类形容词（い形容词） + ばかりか... も | 二类形容词（な形容词）词干 + な／である + ばかりか... も | 名词（+ である） + ばかりか... も",
+    "examples": [
+      {
+        "translation": "他不仅长得可爱，而且还非常聪明。"
+      },
+      {
+        "translation": "这家餐厅不仅饭菜味道好，服务也极佳。"
+      },
+      {
+        "translation": "她不仅日语流利，还会说英语。"
+      },
+      {
+        "translation": "他不仅唱歌好听，跳舞也十分出色。"
+      }
+    ]
   },
   "ja_ばかりだ_137": {
     "title": "～ばかりだ (〜bakari da)",
-    "shortExplanation": "Express a continuing state or negative tendency; 'just', 'only', 'always'.",
-    "longExplanation": "The ～ばかりだ grammar point is 用于表达 a continuing or unchanging state, often emphasizing a negative or undesired tendency. 可以翻译为 'just', 'only', or 'always' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-てform + ばかりだ, い-形容词 + ばかりだ, な-形容词 + ばかりだ, 名词 + ばかりだ"
+    "shortExplanation": "接在动词“て形”或名词后，表示反复不断地做某事，或者某种负面、令人不满的状态频繁发生；“净是……”、“总是……”、“光是……”。",
+    "longExplanation": "句型“～ばかりだ”（主要接动词て形或名词）表示某种行为频繁重复发生，或者某种事物、状态大量充斥，几乎没有其他情况（“总是……”、“光是……”、“净做……”）。通常带有说话人感到厌烦、不满、无奈或批评的消极语气。（注：若接动词辞书形，则常表示情况向消极方向不断恶化，意为“越来越……”）。",
+    "formation": "动词て形 + ばかりだ／ばかりいる | 名词 + ばかりだ",
+    "examples": [
+      {
+        "translation": "他总是一味地发牢骚抱怨。"
+      },
+      {
+        "translation": "这部电影毫无趣味，看得我只觉得百无聊赖。"
+      },
+      {
+        "translation": "她整天无所事事，光在那儿闲着。"
+      },
+      {
+        "translation": "最近工作中接连全是失误和挫折。"
+      }
+    ]
   },
   "ja_ばかりに_138": {
     "title": "～ばかりに (〜bakari ni)",
-    "shortExplanation": "Express an undesired situation or result caused by something; 'simply because', 'due to', 'on account of'.",
-    "longExplanation": "The ～ばかりに grammar point is 用于表达 an undesired situation or result that arises simply because of some factor. 可以翻译为 'simply because', 'due to', or 'on account of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + ばかりに, い-形容词 + ばかりに, な-形容词 + なばかりに, 名词 + なばかりに"
+    "shortExplanation": "表示仅仅因为某一个单一的原因或微小的过失，而招致了意料之外的不良结果或遗憾局面；“仅仅因为……就……”、“只怪……才……”。",
+    "longExplanation": "句型“～ばかりに”接在各词类普通形（名词和二类形容词接“な／である”）之后，强调仅仅因为某个原因、动机或偶然差错，结果导致了意想不到的消极、糟糕或令人痛心的结局（“只因……才造成了……”、“就因为……而……”）。后项必定为不希望发生的事态，且全句往往蕴含着说话人强烈的懊悔、遗憾或抱怨之情。",
+    "formation": "动词普通形（多用过去形た） + ばかりに | 一类形容词（い形容词） + ばかりに | 二类形容词（な形容词）词干 + な／である + ばかりに | 名词 + な／である + ばかりに",
+    "examples": [
+      {
+        "translation": "仅仅因为下起了雨，比赛就被迫取消了。"
+      },
+      {
+        "translation": "就怪他迟到了，害得我们也跟着迟到了。"
+      },
+      {
+        "translation": "仅仅因为忘带了东西，我不得不再次折返回去购物。"
+      },
+      {
+        "translation": "就因为她长得太漂亮，大家都很嫉妒她。"
+      }
+    ]
   },
   "ja_ばというものでもない_139": {
     "title": "～ば～というものでもない (〜ba 〜to iu mono demo nai)",
-    "shortExplanation": "Not necessarily true that if A, then B.",
-    "longExplanation": "The ～ば～というものでもない grammar point is 用于表达 that something is not necessarily true even if a certain condition is met. In other words, if A happens, it doesn't always mean B will happen.",
-    "formation": "动词-ば form + というものでもない"
+    "shortExplanation": "表示部分否定或推翻必然性，说明即使满足了前项条件，也未必就会出现后项的结果；“并不是只要……就……”、“未必……”。",
+    "longExplanation": "句型“～ば～というものでもない”（亦常用“～たら～というものでもない”）用于否定前项条件与后项结果之间的必然联系，指出事态的发展并非只要满足了某一条件就能自然而然地达成或变好（“并不是说只要……就一定能……”、“未必有了……就万事大吉”）。常用于提醒对方看问题不可绝对化，现实中还取决于其他诸多综合因素。",
+    "formation": "动词假定形（ば形） + というものでもない | 一类形容词（ければ） + というものでもない | 二类形容词／名词（なら） + というものでもない",
+    "examples": [
+      {
+        "translation": "价格昂贵的东西未必全都是好东西。"
+      },
+      {
+        "translation": "并不是只要会说英语，就一定会取得成功的。"
+      },
+      {
+        "translation": "外表美丽并不意味着心灵也同样美丽。"
+      },
+      {
+        "translation": "并不是只要考上了名牌大学，将来就能够高枕无忧的。"
+      }
+    ]
   },
   "ja_はともかくは_140": {
     "title": "～はともかく～は (〜wa tomokaku 〜wa)",
-    "shortExplanation": "Used to compare or contrast two elements; 'as for...'.",
-    "longExplanation": "The grammar point ～はともかく～は is used to compare or contrast two elements in a sentence. It implies that the first element can be set aside or is less important compared to the second element. It often translates to 'putting A aside, B...'.",
-    "formation": "Noun1 はともかく Noun2 は"
+    "shortExplanation": "表示暂且抛开前项不谈，将评价或关注的焦点放在更重要的后项上；“暂且不论……、……先搁置一边”、“……姑且不说，……”。",
+    "longExplanation": "句型“～はともかく～は”（亦作“～はともかくとして”）接在名词或名词化短语之后，表示把前项事项暂时搁置、不予深究或认为其相对次要，而将说话的重心和评价重点放在后项更为突出、确定的要素上（“……先抛开不谈，……倒是……”、“……姑且不论，……”）。通常前项可能存在争议或不足，而后项则是值得肯定、强调或亟待解决的事项。",
+    "formation": "名词1 + はともかく（として） + 名词2 + は",
+    "examples": [
+      {
+        "translation": "设计暂且不论，单论功能的话这款手机是最出色的。"
+      },
+      {
+        "translation": "他的外貌姑且不说，性格是真的非常棒。"
+      },
+      {
+        "translation": "味道先抛开不谈，这道菜的摆盘确实赏心悦目。"
+      },
+      {
+        "translation": "价格先放在一边，这款包的质量确实很好。"
+      }
+    ]
   },
   "ja_はまだしも_141": {
     "title": "～はまだしも (〜wa mada shimo)",
-    "shortExplanation": "表示 that while the first item is somewhat acceptable, the second item is not.",
-    "longExplanation": "The ～はまだしも grammar point is 用于展示 a contrast where the first item or situation might still be understandable or tolerable, whereas the second one is harder to accept. It’s often translated as 'X is one thing, but Y...'.",
-    "formation": "Noun1 + はまだしも + Noun2"
+    "shortExplanation": "表示前项的情况尚可容忍或姑且能够理解，而后项的情况则更加严重、恶劣，完全令人无法接受；“……倒还罢了／还可以原谅，可是……”。",
+    "longExplanation": "句型“～はまだしも”（亦常用“～ならまだしも”）接在名词或名词化分句（普通形＋の）之后，表示对前项做出一定的让步和包容，认为前项虽然也有不足，但还在可以接受或谅解的限度之内；相比之下，后项的事态则性质更为恶劣、程度更为严重，绝对无法容忍或令人大失所望（“……倒也还说得过去，但……简直不能原谅”）。",
+    "formation": "名词 + はまだしも | 动词／形容词普通形 + のはまだしも",
+    "examples": [
+      {
+        "translation": "失败了倒还罢了，连尝试都不做就徒留后悔才更加令人痛苦。"
+      },
+      {
+        "translation": "这款披萨蔬菜少点也就罢了，味道居然也这么难吃。"
+      },
+      {
+        "translation": "偶尔迟到一次尚且可以原谅，但不打任何招呼就迟到是绝对不能容忍的。"
+      },
+      {
+        "translation": "答不上难题倒还情有可原，要是连简单的问题都回答不出来那可真成问题了。"
+      }
+    ]
   },
   "ja_はもとより_142": {
     "title": "～はもとより (〜wa moto yori)",
-    "shortExplanation": "Expressing that something is obvious, and there is also something else.",
-    "longExplanation": "The ～はもとより grammar point is used to emphasize that something is obvious or a given, and on top of that, there’s another aspect to consider. It translates to 'not only…but also…' or 'of course…and also…'.",
-    "formation": "Noun1 + はもとより, Noun2 + も"
+    "shortExplanation": "表示前项是不言自明的理所当然之事，而后项同样也是如此；“不用说……，就连……也……”、“……自不必说，……也……”。",
+    "longExplanation": "句型“～はもとより”（比口语中的“～はもちろん”更为郑重、书面化）接在名词之后，表示前项作为一个众所周知的事实或不言而喻的前提是理所应当的，同时进一步追加指出后项的其他方面也同样具备这种特征或表现出色（“……自不待言，……也……”、“不仅……连……也……”）。多用于正式的书面语、演说或公关文书中。",
+    "formation": "名词1 + はもとより（+ 名词2 + も）",
+    "examples": [
+      {
+        "translation": "英语自不必说，我现在还在学习西班牙语。"
+      },
+      {
+        "translation": "烹饪手艺好自不用提，她做起各式点心来也非常在行。"
+      },
+      {
+        "translation": "这家酒店不仅客房干净整洁自不用说，服务质量也是一流的。"
+      },
+      {
+        "translation": "他不仅在音乐方面造诣深厚，绘画水平也非常高超。"
+      }
+    ]
   },
   "ja_は抜きにして_143": {
     "title": "～は抜きにして (〜wa nuki ni shite)",
-    "shortExplanation": "Leaving aside, excluding.",
-    "longExplanation": "The ～は抜きにして grammar point is 用于表达 the idea of 'leaving aside' or 'excluding' a certain aspect. It is often used to focus the discussion or judgment on something else by disregarding the omitted point.",
-    "formation": "名词 + は抜きにして"
+    "shortExplanation": "表示去掉、排除或不把某项因素考虑在内，直接探讨或评价核心事物；“抛开……不谈”、“撇开……不说”、“省去……”。",
+    "longExplanation": "句型“～は抜きにして”（亦常用“～を抜きにして”、“～抜きで”）接在名词之后，表示主动排除或不计入通常会涉及的某种要素、惯例或前提，从而专注于对实质问题进行客观看待与评价（“抛开……不谈”、“省去……不说”）。常用于评价某事物的真正价值，或者用于诸如“お世辞は抜きにして（抛开客套话不讲）”、“冗谈は抜きにして（言归正传、别开玩笑了）”等固定搭配中。",
+    "formation": "名词 + は抜きにして／を抜きにして",
+    "examples": [
+      {
+        "translation": "抛开价格不谈，味道确实非常美味。"
+      },
+      {
+        "translation": "撇开他的性格不说，他的真才实学我不得不承认。"
+      },
+      {
+        "translation": "先不提外观设计，这款手机的功能确实十分优越。"
+      },
+      {
+        "translation": "抛开驾驶速度不谈，她是一位既热情又值得信赖的司机。"
+      }
+    ]
   },
   "ja_べきではない_144": {
     "title": "～べきではない (〜beki dewa nai)",
-    "shortExplanation": "Express that an action should not be done; 'should not', 'ought not to'.",
-    "longExplanation": "The ～べきではない grammar point is 用于表示 that an action is not recommended or should not be done. 可以翻译为 'should not' or 'ought not to' in English. The typical formation is “Verb-dictionary form + べきではない.”",
-    "formation": "动词-dictionary form + べき + ではない"
+    "shortExplanation": "基于社会常识、道德伦理或常理规则，表示从道理上讲不应当或不应该做某事；“不应该……”、“不应当……”。",
+    "longExplanation": "句型“～べきではない”接在动词辞书形之后，表示根据普遍的社会公德、常识规范、做人道理或责任义务，认为某一行为在道义或情理上是不可取的、不应当做的（“不应该做……”、“不该……”）。它表达的是一种具有强烈正义感或客观原则性的忠告和判断。（注：“する”既可以用“するべきではない”，也可以用更简练的“すべきではない”）。",
+    "formation": "动词辞书形 + べきではない／べきではありません（注：“する”可变为“するべきではない”或“すべきではない”）",
+    "examples": [
+      {
+        "translation": "如果没有什么正当理由的话，就不应当迟到。"
+      },
+      {
+        "translation": "不应该对小孩子说恶言恶语。"
+      },
+      {
+        "translation": "这种药不应该一次吃得太多。"
+      },
+      {
+        "translation": "不应该向陌生人透露或分享自己的个人信息。"
+      }
+    ]
   },
   "ja_まい_145": {
     "title": "～まい (〜mai)",
-    "shortExplanation": "Express a negative conjecture or determination; 'probably not' or 'I will not'.",
-    "longExplanation": "The ～まい grammar point is 用于表达 a negative conjecture or a strong determination not to do something. In modern usage, it is generally used with the dictionary form of verbs (来る→来るまい, する→するまい, etc.). 可以翻译为 'probably not' or 'I will not' in English.",
-    "formation": "动词-dictionary form + まい"
+    "shortExplanation": "表示（1）坚决不做的意志（否定意志：“绝不再……”）；或（2）否定性的推测（否定推量：“大概不会……”、“想必不会……”）。",
+    "longExplanation": "句型“～まい”是较为郑重的书面语表达，相当于“～ないだろう”（推测）或“～ないでおこう／～ないつもりだ”（意志）：（1）主语为第一人称时，表示绝不再做某事的坚定决心或誓言（“绝不……”、“决意不再……”）；（2）主语为第三人称或叙述客观事态时，表示对未来的事情进行强烈的否定推断，认为某事大概率不会发生（“想必不会……”、“大概不会……”）。若用于叙述第三人称的意志，通常以“～まいと思っている”等形式出现。",
+    "formation": "一类动词（五段）：辞书形 + まい | 二类动词（一段）：辞书形（或连用形去ます） + まい | 三类动词：する → するまい／すまい，来る → くるまい／こまい",
+    "examples": [
+      {
+        "translation": "今晚他大概是不会来了吧。"
+      },
+      {
+        "translation": "都耽搁延误成这样了，恐怕是赶不上电车了吧。"
+      },
+      {
+        "translation": "那个人必定绝不会忘记的。"
+      },
+      {
+        "translation": "我发誓决不再重犯那样的错误。"
+      }
+    ]
   },
   "ja_までて_146": {
     "title": "～まで～て (〜made 〜te)",
-    "shortExplanation": "Express doing something until a certain time or condition; 'until', 'to'.",
-    "longExplanation": "The ～まで～て grammar point is 用于展示 that an action continues until a certain time or condition. In your examples, a time expression (such as 9時) is followed by まで, then the action in the て-form. 可以翻译为 'until' or 'up to the point when/where'.",
-    "formation": "Time/名词 + まで + 动词(て-form)"
+    "shortExplanation": "表示某项动作或状态持续进行到某一时间、限度或条件为止，随后再进行接下来的动作；“一直……到……，然后……”。",
+    "longExplanation": "结构“～まで～て”通过助词“まで”（表示时间、空间或程度的终点）与动词“て形”的相连，表示将某项行为或动作不间断地持续进行直至到达某个界限点或状态，接着顺承进行下一个动作（“持续做到……为止，然后……”）。常用于按时间先后顺序平实记叙日常生活或工作安排的连续过程。",
+    "formation": "时间／名词／动词辞书形 + まで + 动词て形",
+    "examples": [
+      {
+        "translation": "我一直工作到9点，之后才休息了一会儿。"
+      },
+      {
+        "translation": "我拼命学习一直学到深夜，最终顺利通过了考试。"
+      },
+      {
+        "translation": "我一口气读到最后一页，然后合上了书本。"
+      },
+      {
+        "translation": "我一直等到电车进站，然后与朋友碰了面。"
+      }
+    ]
   },
   "ja_ままに_147": {
     "title": "～ままに (〜mama ni)",
-    "shortExplanation": "Act according to; leave as is; unchanged.",
-    "longExplanation": "The ～ままに grammar point is 用于表达 leaving something in its current state or doing something exactly as is. It can also imply doing something naturally or without altering the circumstances. Depending on the part of speech, different particles are used: Verb-て + まま, い-Adjective + のまま, な-Adjective + なまま, Noun + のまま.",
-    "formation": "动词-て + まま, い-形容词 + のまま, な-形容词 + なまま, 名词 + のまま"
+    "shortExplanation": "表示保持原有的某种状态不变而做另一动作，或者任由事物自然发展、顺从某种意志与冲动行事；“保持着……的样子”、“任凭……”、“随……”。",
+    "longExplanation": "句型“～ままに”（亦常用“～まま”、“～ままで”）具有两种主要语意：（1）保持某种原封不动的既存状态，在此状态下进行后项动作（“……着就……”、“任由……保持原样”）；（2）完全顺应自然的发展、顺从内心的想法或任凭外界的摆布而不做人为改变（“随心所欲地……”、“任由……”，如“思うままに”（随心所想）、“気の向くままに”（随性而为）、“言われるがままに”（任凭他人摆布））。",
+    "formation": "动词た形／ている形 + まま（に） | 一类形容词（い形容词） + まま（に） | 二类形容词（な形容词）词干 + なまま（に） | 名词 + のまま（に）",
+    "examples": [
+      {
+        "translation": "孩子依然熟睡着，我便悄无声息地走出了房间。"
+      },
+      {
+        "translation": "窗户一直开着没有关，屋里变得很冷。"
+      },
+      {
+        "translation": "他在身体依然很硬朗的状态下住进了养老院。"
+      },
+      {
+        "translation": "带着当年的往昔回忆，我重回了这座小镇。"
+      }
+    ]
   },
   "ja_もかまわず_148": {
     "title": "～もかまわず (〜mo kamawazu)",
-    "shortExplanation": "Express indifference or disregard; 'without hesitating', 'without worrying about'.",
-    "longExplanation": "The ～もかまわず grammar point is 用于表达 indifference or disregard toward possible consequences or external factors. 可以翻译为 'without hesitating', 'without worrying about', or 'regardless of'. It attaches to verbs in their dictionary form or nouns.",
-    "formation": "动词-dictionary form + もかまわず, 名词 + もかまわず"
+    "shortExplanation": "表示完全不顾及周围人的眼光、时间、天气或危险等，依然若无其事地采取行动；“不顾……”、“不管……”、“毫无顾忌地……”。",
+    "longExplanation": "句型“～もかまわず”（来源于动词“構う”，意为介意、在乎）接在名词或动词辞书形（加“の”）之后，表示行动者完全不顾及或不在意周围的视线、客观阻碍、恶劣条件或潜在危险，毫不犹豫或肆无忌惮地做出某种举动（“不顾……”、“全然不顾……”、“不管……”）。多用于客观描述第三者的行为，往往带有说话人对此举动感到意外、吃惊甚至略带责备或批评的语气。",
+    "formation": "名词 + もかまわず | 动词辞书形 + のもかまわず",
+    "examples": [
+      {
+        "translation": "他完全不顾周围的人，扯着嗓门大声说话。"
+      },
+      {
+        "translation": "她丝毫不管时间有多晚，依旧不紧不慢地继续看书。"
+      },
+      {
+        "translation": "他全然不顾严寒的天气，依然在室外坚持锻炼。"
+      },
+      {
+        "translation": "她不顾自身危险，毅然冲进火场救人。"
+      }
+    ]
   },
   "ja_ものか_149": {
     "title": "～ものか (〜mono ka)",
-    "shortExplanation": "Definitely not; no way; no chance.",
-    "longExplanation": "The ～ものか grammar point is 用于表达 a strong denial, refusal, or astonishment. It often appears with a rhetorical question tone in casual forms, such as Verb (dictionary/volitional/～たい) + ものか, Adjective + ものか, or Noun + ものか, meaning 'No way...', 'As if I'd ever...', etc.",
-    "formation": "动词-casual + ものか, い-形容词 + ものか, な-形容词 + (な)ものか, 名词 + (な)ものか"
+    "shortExplanation": "表示强烈的否定、断然拒绝或反驳；“绝不……”、“怎么可能……”、“哪会……”、“绝没有……”。",
+    "longExplanation": "句型“～ものか”（口语中常音变为“～もんか”，郑重形式为“～ものですか／～もんですか”）接在各词类普通形之后，以反问的形式表达说话人坚决的否定、断然拒绝或强烈的反驳心情（“决不会……”、“哪里会……”、“难道会……吗，绝不！”）。常含有情感上的抵触、不屑或坚定意志，坚决表示绝不去做某事或绝不赞同某种观点与判断。",
+    "formation": "动词普通形 + ものか | 一类形容词（い形容词） + ものか | 二类形容词（な形容词）词干 + なものか | 名词 + な东西／なものか",
+    "examples": [
+      {
+        "translation": "那种事情，我怎么可能会想去做呢！"
+      },
+      {
+        "translation": "这样的苦活累活，谁会愿意接手啊！（绝没有人接手！）"
+      },
+      {
+        "translation": "谁会去求他帮忙啊！（我绝不可能向他求助！）"
+      },
+      {
+        "translation": "在这么冷的天气里到外头玩耍，怎么可能办得到嘛！"
+      }
+    ]
   },
   "ja_ものがある_150": {
     "title": "～ものがある (〜mono ga aru)",
-    "shortExplanation": "Express a strong impression or feeling; 'there's something about it that...'",
-    "longExplanation": "「～ものがある」 is used to convey that there is a certain intangible quality or strong feeling about something that the speaker cannot ignore. It is often used with verbs (plain form), い-adjectives, or な-adjectives + な, to show that one ‘feels strongly that...’ or ‘there’s something about it that…’.",
-    "formation": "动词-casual + ものがある, い-形容词 + ものがある, な-形容词 + なものがある"
+    "shortExplanation": "表示某事具有让人深刻感受到的性质或特质，给人留下强烈深刻的印象；“有……之处”、“让人感到……”、“确实有令人……的地方”。",
+    "longExplanation": "句型“～ものがある”接在动词普通形、一类形容词（い形容词）或二类形容词（な形容词+な）之后，表示某事物具有某种不容忽视的特质、价值或情感力量，使说话人从心底深切地体会或感受到（“确实有让人……的地方”、“深有……之感”）。常与表达感触、评价或心理反应的词语（如心を打たれる、考えさせられる等）搭配使用。",
+    "formation": "动词普通形 + ものがある | 一类形容词（い形容词） + ものがある | 二类形容词（な形容词）词干 + なものがある",
+    "examples": [
+      {
+        "translation": "他的演讲中确实有深深打动人心的地方。"
+      },
+      {
+        "translation": "这部电影有许多发人深省、引人深思之处。"
+      },
+      {
+        "translation": "他所说的话确实也有几分道理。"
+      },
+      {
+        "translation": "每天都忙得不可开交的生活，确实让人感到有些窒息压抑。"
+      }
+    ]
   },
   "ja_ものだ_151": {
     "title": "～ものだ (〜mono da)",
-    "shortExplanation": "表示 something natural or expected; 'it is normal that...', 'should', 'ought to'.",
-    "longExplanation": "「～ものだ」 can indicate that something is regarded as a general truth, common sense, or natural behavior. It can also express strong sentiment or emotion. In the past tense (Verb-た form + ものだ), it often shows nostalgia or recollection ('I used to...').",
-    "formation": "动词-dictionary form + ものだ, な-形容词 + なものだ, (Also: 动词-た form + ものだ for recollections)"
+    "shortExplanation": "表示客观真理、自然规律、社会常理或理应如此的伦理道德规范；“按理应当……”、“本来就……”、“通常是……”。",
+    "longExplanation": "句型“～ものだ”接在动词辞书形、形容词之后，用来阐述事物的本质属性、普遍真理、世间常识或社会通则（“本来就该……”、“人总是……”）。此外，也可用于基于社会公德或道德规范对人提出劝告或警示，指出做人处事理应遵守的原则。（注：接动词过去时“た形”时表示对往事的怀念回顾；接感情词语时表示由衷的感叹）。",
+    "formation": "动词辞书形 + ものだ | 一类形容词（い形容词） + ものだ | 二类形容词（な形容词）词干 + なものだ",
+    "examples": [
+      {
+        "translation": "年轻的时候本来就该多玩乐、多体验。"
+      },
+      {
+        "translation": "既然许下了承诺，理所当然就应当信守承诺。"
+      },
+      {
+        "translation": "客人来访的时候，端茶倒水本就是常礼。"
+      },
+      {
+        "translation": "人生本来就是应当勇于直面各种困难的。"
+      }
+    ]
   },
   "ja_ものだから_152": {
     "title": "～ものだから (〜mono dakara)",
-    "shortExplanation": "表达 reason or cause for something; 'because', 'since', 'due to'.",
-    "longExplanation": "「～ものだから」 is used to explain a reason or cause from the speaker’s point of view. 可以翻译为 'because', 'since', or 'due to'. It often carries the nuance of 'you see, that's why ...'.",
-    "formation": "动词-plain + ものだから, い-形容词 + ものだから, な-形容词 + なものだから, 名词 + なものだから"
+    "shortExplanation": "用于向对方说明原因、理由，常带有申辩、辩解或说明客观情由的语气；“因为……”、“由于……嘛”、“主要是因为……”。",
+    "longExplanation": "句型“～ものだから”（口语中常略为“～もんだから”）接在各词类的普通形之后（二类形容词和名词接“な”），用于向对方解释导致某种结果或采取某种行动的个人缘由或客观背景（“因为……嘛”、“由于……的原因”）。语气上多带有辩解、申明理由或寻求对方理解的柔和态度，说明事情发生也是事出有因、情非得已。",
+    "formation": "动词普通形 + ものだから | 一类形容词（い形容词） + ものだから | 二类形容词（な形容词）词干 + なものだから | 名词 + なものだから",
+    "examples": [
+      {
+        "translation": "因为考试迫在眉睫了，所以我每天都在努力用功。"
+      },
+      {
+        "translation": "这家餐厅人气实在是太高了，如果不提前预约的话可能根本没有座位。"
+      },
+      {
+        "translation": "因为他还很年轻，所以尚未积累足够丰富的人生经验。"
+      },
+      {
+        "translation": "今天外头天气实在太冷了，咱们还是把手套带上吧。"
+      }
+    ]
   },
   "ja_ものではない_153": {
     "title": "～ものではない (〜mono dewa nai)",
-    "shortExplanation": "表示 a strong negative suggestion or prohibition: 'should not', 'must not'.",
-    "longExplanation": "「～ものではない」 is 用于表示 that something should not or must not be done. It often appears in written or formal contexts, meaning 'it is not proper to...' or 'you shouldn’t...'.",
-    "formation": "动词-dictionary form + ものではない"
+    "shortExplanation": "基于社会公德、常识或做人道义，提出严厉的劝诫、告诫或轻微的禁止；“不应当……”、“不能……”、“哪能……”。",
+    "longExplanation": "句型“～ものではない”（口语缩略为“～もんじゃない”，礼貌体为“～ものではありません”）接在动词辞书形之后，表示根据普遍的道德标准、社会公德或常识性礼仪，某项行为是不妥当或不应该做的，用于规劝、训诫或告诫他人（“不应该……”、“不可以……”、“做人哪能……”）。通常不用于强制性的法律禁令，而是出于道义和常理层面的良言相劝。",
+    "formation": "动词辞书形 + ものではない / ものではありません",
+    "examples": [
+      {
+        "translation": "怎么能说出那样轻率无礼的话来呢！"
+      },
+      {
+        "translation": "在公共场合是不应该大声喧哗叫嚷的。"
+      },
+      {
+        "translation": "绝不应该把他的个人秘密随便泄露给别人。"
+      },
+      {
+        "translation": "在安全的地方玩玩倒无妨，但绝不可以跑到危险的地方去玩耍。"
+      }
+    ]
   },
   "ja_ものなら_154": {
     "title": "～ものなら (〜mono nara)",
-    "shortExplanation": "表示 a conditional wish or unlikely possibility; 'if only', 'if it were possible'.",
-    "longExplanation": "「～ものなら」 is used when expressing a strong wish under a hypothetical or difficult condition. It often implies that fulfilling this condition is unlikely or very hard, but 'if only it could happen, then...'.",
-    "formation": "动词-(potential/plain) form + ものなら, etc."
+    "shortExplanation": "表示对极难实现或实际上不可能的事做出假定，后项表达强烈的愿望或企图；“如果能够……的话，真想……”、“要是能……”。",
+    "longExplanation": "句型“～ものなら”常接在动词可能形之后，表示假定一种在现实中很难实现或几乎不可能发生的理想情况，后项则紧跟着表达说话人由衷而强烈的愿望、期待或意志（“要是能……的话该多好”、“如果真能够……的话，真想……”）。语境中往往蕴含着现实无法如愿的无奈、遗憾或极其迫切的心情。",
+    "formation": "动词可能形 + ものなら",
+    "examples": [
+      {
+        "translation": "要是真能回去的话，我现在真想立刻飞回祖国。"
+      },
+      {
+        "translation": "如果真能做得到的话，我真想去环游世界一周看看。"
+      },
+      {
+        "translation": "人生要是能重新来过，我真想回到无忧无虑的童年时代。"
+      },
+      {
+        "translation": "只要能恢复健康，哪怕是任何药物我都愿意试一试。"
+      }
+    ]
   },
   "ja_ものの_155": {
     "title": "～ものの、～ (〜mono no、～)",
-    "shortExplanation": "指示 contrast or 两个分句之间的转折; 'although', 'but'.",
-    "longExplanation": "「～ものの」 is used to connect two parts of a sentence where the first part is true, yet the second part shows a contrasting or unexpected outcome. 可以翻译为 'although', 'even though', or 'but still'.",
-    "formation": "动词-casual + ものの, い-形容词 + ものの, な-形容词 + なものの, 名词 + であるものの"
+    "shortExplanation": "表示转折关系，承认前项事实成立，但后项却出现了出人意料、不尽人意或与之相反的结果；“虽然……但是……”、“虽说……可是……”。",
+    "longExplanation": "句型“～ものの”接在各词类的普通形之后（名词接“であるものの”，二类形容词接“な／であるものの”），用于连接转折关系的两个分句（“虽说……但是……”、“尽管……却……”）。说话人首先承认前半句的事实是真实的，但紧接着指出后半句并没有产生理应出现的结果，反而呈现出令人遗憾、不相称或出乎意料的消极状况。",
+    "formation": "动词普通形 + ものの | 一类形容词（い形容词） + ものの | 二类形容词（な形容词）词干 + なものの（或 であるものの） | 名词 + であるものの",
+    "examples": [
+      {
+        "translation": "虽然起了个大早，但最后还是没能赶上公共汽车。"
+      },
+      {
+        "translation": "这间屋子虽然挺宽敞的，可是家具却少得可怜。"
+      },
+      {
+        "translation": "她虽然容貌出众，性格却十分恶劣。"
+      },
+      {
+        "translation": "尽管他是一位知名歌手，但演唱会上却没来多少观众。"
+      }
+    ]
   },
   "ja_もばも_156": {
     "title": "～も～ば～も～ (〜mo〜ba〜mo〜)",
-    "shortExplanation": "Lists multiple attributes or actions applying to the same subject: 'both…and…', 'not only…but also…'.",
-    "longExplanation": "「～も～ば～も～」 is used when describing multiple characteristics or actions. It often appears with the conditional form (ば) plus も, indicating that 'A is true, and also B is true.' For example, 'He can do X, and he can also do Y.' It's different from '～ば～ほど', which means 'the more… the more…'.",
-    "formation": "名词/动词/形容词 + も + (动词/形容词 in ば-form) + も + (动词/形容词)"
+    "shortExplanation": "并列举出兼具的多种性质、特点或动作；“既……又……”、“不但……而且……”、“也有……也有……”。",
+    "longExplanation": "句型“～も～ば～も～”将助词“も”与假定形“～ば”相结合，用于并列列举同一事物或人所同时兼具的两个或两个以上的事项、特征或能力（“既……又……”、“不仅……而且还……”）。既可以用于全面赞扬某种兼收并蓄的优点（如物美价廉、能文能武），也可以用于列举并存的各种不同境遇或喜怒哀乐。",
+    "formation": "名词 + も + 动词／形容词假定形（ば形） + 名词 + も + 动词／形容词",
+    "examples": [
+      {
+        "translation": "他既擅长学习功课，又擅长体育运动。"
+      },
+      {
+        "translation": "这家餐厅既价格公道实惠，味道又非常鲜美。"
+      },
+      {
+        "translation": "她不仅会弹奏钢琴，还会弹奏吉他。"
+      },
+      {
+        "translation": "人生中既有欢乐欢畅的时刻，也有艰辛痛苦的日子。"
+      }
+    ]
   },
   "ja_も同然だ_157": {
     "title": "～も同然だ (〜mo douzen da)",
-    "shortExplanation": "指示 'as good as', 'virtually', or 'practically' the same as something.",
-    "longExplanation": "「～も同然だ」 means something is practically the same as (X). It emphasizes that although it may not be literally identical, there is hardly any difference in reality.",
-    "formation": "名词 + (も)同然だ, 动词-casual + (も)同然だ, etc."
+    "shortExplanation": "表示虽然在形式或名义上并不完全一样，但实际上几乎毫无二致；“跟……几乎一样”、“几乎等于……”、“无异于……”。",
+    "longExplanation": "句型“～も同然だ”（汉字写作“同然”，意为相同、同样）接在名词、动词普通形（尤其是过去时“た形”或否定形“ない形”）之后，表示某事物在实质、效果或现态上与某种极端状况几乎没有任何区别（“跟……没什么两样”、“可以说就等于……”、“无异于……”）。常用于强调两者关系非同寻常的亲近，或用于表达对某种不理想状态的强烈不满与讽刺。",
+    "formation": "名词 + も同然だ | 动词普通形 + も同然だ",
+    "examples": [
+      {
+        "translation": "我和他交情匪浅，相处得就像一家人一样。"
+      },
+      {
+        "translation": "天天迟到成这样，跟根本没来几乎没有什么区别。"
+      },
+      {
+        "translation": "她和我是青梅竹马的发小，关系亲密得宛如亲姐妹一般。"
+      },
+      {
+        "translation": "拿这么点微薄的薪水，简直就跟白干活没什么两样。"
+      }
+    ]
   },
   "ja_やらやら_158": {
     "title": "～やら～やら (〜yara〜yara)",
-    "shortExplanation": "表示 various items or actions, 'things like..., and so on'.",
-    "longExplanation": "「～やら～やら」 is used to list multiple things or actions in a somewhat non-exhaustive way. 可以翻译为 'things like A and B' or 'A, B, and so on.' The grammar is often Verb-casual + やら, Noun + やら, い-Adjective + やら, etc.",
-    "formation": "动词-casual + やら, い-形容词 + やら, な-形容词 + やら, 名词 + やら"
+    "shortExplanation": "列举多个并存的事项、动作或状态，常带有繁杂、杂乱或应接不暇的语气；“又是……又是……”、“一会儿……一会儿……”、“……啦……啦”。",
+    "longExplanation": "句型“～やら～やら”接在名词、动词普通形或形容词之后，用于不完全列举若干代表性的事物、动作或情况（“又是……又是……”、“……啦……啦”）。其语感往往暗含着头绪繁多、杂乱无章或事情堆积在一起让人忙不过来、应接不暇的心情，常用于表达事务繁重、物品繁杂或情绪百感交集。",
+    "formation": "名词 + やら + 名词 + やら | 动词普通形 + やら | 一类形容词（い形容词） + やら | 二类形容词（な形容词）词干 + やら",
+    "examples": [
+      {
+        "translation": "又是写作业又是大扫除，手头要忙的事情实在太多了。"
+      },
+      {
+        "translation": "我买了各种各样的食品，蔬菜啦水果啦应有尽有。"
+      },
+      {
+        "translation": "她又是擅长唱歌，又是擅长跳舞，真是一位多才多艺的人才。"
+      },
+      {
+        "translation": "店里摆满了包包啦、鞋子啦、首饰配件等各种琳琅满目的商品。"
+      }
+    ]
   },
   "ja_ようがない_159": {
     "title": "～ようがない (〜you ga nai)",
-    "shortExplanation": "表示 that there is no way (method) to do something; it's impossible to do.",
-    "longExplanation": "「～ようがない」 is used with the ます-stem of a verb to indicate that there is no means or method to carry out that action. It conveys the sense that it's impossible to do something or that there's absolutely no way to achieve it.",
-    "formation": "动词-ます stem + ようがない"
+    "shortExplanation": "表示即使想做也完全没有任何方法、手段或可能去实现；“无法……”、“想……也没办法……”、“根本没有办法……”。",
+    "longExplanation": "句型“～ようがない”（礼貌体为“～ようがありません”，修饰名词时为“～ようのない”）接在动词连用形（即ます形去掉ます）之后，表示由于缺乏手段、信息、条件或事态已无可挽回，导致无论怎么想做都根本无法实施该动作（“毫无办法……”、“无法实现……”、“无从……”）。语气中常带有无可奈何、束手无策的叹息与绝望感。",
+    "formation": "动词连用形（ます形去掉ます） + ようがない / ようがありません",
+    "examples": [
+      {
+        "translation": "因为不知道他的联系方式，所以想帮他也无从帮起。"
+      },
+      {
+        "translation": "损坏到了这般地步，已经彻底没法修好了。"
+      },
+      {
+        "translation": "由于完全没有真凭实据，根本无法证明他就是凶手。"
+      },
+      {
+        "translation": "突然被人用英语搭话，我一时不知该如何回答，根本无法作答。"
+      }
+    ]
   },
   "ja_よりほかない_160": {
     "title": "～よりほかない (〜yori hoka nai)",
-    "shortExplanation": "Express that there is no other choice; 'have no choice but', 'cannot do anything but'.",
-    "longExplanation": "The ～よりほかない grammar point is 用于表达 that there is no other choice or alternative in a given situation. 可以翻译为 'have no choice but to...', 'nothing but...', or 'cannot do anything but...'.",
-    "formation": "动词-dictionary form + よりほかない"
+    "shortExplanation": "表示别无他法，处于无可奈何的境地，只能采取该行动；“只能……”、“唯有……”、“除了……别无他法”。",
+    "longExplanation": "句型“～よりほかない”（也可作“～よりほかはない”、“～よりない”、“～ほかない”）接在动词辞书形之后，表示在当前的现实条件或困境下，不存在其他任何替代手段或选择余地，除了采取该做法之外别无他路（“只有……”、“不得不……”、“只好……”）。常常带有无可奈何、不得不向现实低头的妥协和决断语气。",
+    "formation": "动词辞书形 + よりほかない / よりほかはない",
+    "examples": [
+      {
+        "translation": "考试迫在眉睫，除了埋头苦读别无他法。"
+      },
+      {
+        "translation": "感冒非常严重，只能早点上床睡觉了。"
+      },
+      {
+        "translation": "公共汽车一直不来，只好步行走着去了。"
+      },
+      {
+        "translation": "囊中羞涩没有钱，唯有购买便宜货了。"
+      }
+    ]
   },
   "ja_わけがない_161": {
     "title": "～わけがない (〜wake ga nai)",
-    "shortExplanation": "表示 'there’s no way' or 'it’s impossible', indicating a high degree of certainty.",
-    "longExplanation": "The ～わけがない grammar point is 用于表达 that something is highly unlikely or impossible. 可以翻译为 'there's no way' or 'it's impossible'.",
-    "formation": "动词-casual + わけがない, い-形容词 + わけがない, な-形容词 + なわけがない, 名词 + のわけがない"
+    "shortExplanation": "基于客观事实或情理逻辑进行断定，表示绝无可能；“绝不可能……”、“根本不会……”、“哪有可能会……”。",
+    "longExplanation": "句型“～わけがない”（口语中常作“～わけない”，礼貌体为“～わけがありません”）接在各词类的普通形之后（二类形容词接“な”，名词接“の”），表示说话人依据客观情由、常理或已知前提，断定某事在情理上是绝对不可能发生的（“怎么可能……”、“绝不会……”）。具有极高的确定性和逻辑推断色彩，坚信事实决非如此。",
+    "formation": "动词普通形 + わけがない | 一类形容词（い形容词） + わけがない | 二类形容词（な形容词）词干 + なわけがない | 名词 + のわけがない",
+    "examples": [
+      {
+        "translation": "他受了重伤，怎么可能会赢下这场比赛呢。"
+      },
+      {
+        "translation": "对于一个谎话连篇的人，我怎么可能会去信任他。"
+      },
+      {
+        "translation": "她那么繁忙，绝不可能跑来参加这个派对。"
+      },
+      {
+        "translation": "昨天我一整天都在睡觉，怎么可能会知道那起事件呢。"
+      }
+    ]
   },
   "ja_わけだ_162": {
     "title": "～わけだ (〜wake da)",
-    "shortExplanation": "Express a logical conclusion or reason; 'it means', 'no wonder', 'the reason is'.",
-    "longExplanation": "The ～わけだ grammar point is 用于表达 a logical conclusion or reason. 可以翻译为 'it means...', 'no wonder...', or 'that explains why...'.",
-    "formation": "动词-casual + わけだ, い-形容词 + わけだ, な-形容词 + なわけだ, 名词 + のわけだ"
+    "shortExplanation": "表示了解原因后恍然大悟，指出某种结果在情理之中是理所当然的；“难怪……”、“怪不得……”、“原来是这么回事”。",
+    "longExplanation": "句型“～わけだ”（礼貌体为“～わけです”）接在各词类的普通形之后（二类形容词和名词接“な”或“である”），表示在得知事实或由头后，对某一结果豁然开朗，确认其符合逻辑与情理（“难怪……”、“怪不得……”、“也就是说……”）。常用于说话人对某件事的前因后果恍然大悟时，感叹“原来如此，怪不得会发展成这样”。",
+    "formation": "动词普通形 + わけだ | 一类形容词（い形容词） + わけだ | 二类形容词（な形容词）词干 + なわけだ | 名词 + なわけだ（或 であるわけだ）",
+    "examples": [
+      {
+        "translation": "她之所以迟到，原来是因为电车晚点了啊。"
+      },
+      {
+        "translation": "课讲得那么生动有趣，怪不得大家都听得那么专心致志。"
+      },
+      {
+        "translation": "他工作如此繁忙，难怪平时几乎连休息的日子都没有。"
+      },
+      {
+        "translation": "这道题目这么难，怪不得我完全摸不着头脑。"
+      }
+    ]
   },
   "ja_わけではない_163": {
     "title": "～わけではない (〜wake dewa nai)",
-    "shortExplanation": "Not necessarily; it doesn't mean that ~.",
-    "longExplanation": "The ～わけではない grammar point is 用于表达 that something is not necessarily the case or 'it doesn’t mean that...' It negates a broad assumption or generalization.",
-    "formation": "动词-plain + わけではない, い-形容词 + わけではない, な-形容词 + だわけではない, 名词 + だわけではない"
+    "shortExplanation": "表示部分否定，意为“并不是……”、“并非……”、“并不意味着……”。",
+    "longExplanation": "句型“～わけではない”用于对某种普遍看法、对方的推测或表面看起来顺理成章的结论进行部分否定，说明情况并不像想象的那样绝对或极端（“并不是说……”、“并非……”、“并不意味着……”）。常与“必ずしも（未必）”、“全部（全部）”、“特に（特别）”等副词搭配使用，表达委婉客观的语气。",
+    "formation": "动词普通形 + わけではない | 一类形容词 + わけではない | 二类形容词词干 + な / である + わけではない | 名词 + な / である / という + わけではない",
+    "examples": [
+      {
+        "translation": "并不是他不学习，只是成绩不太好。"
+      },
+      {
+        "translation": "并不是说这家餐厅很贵，但要是每天都来吃的话还是有点贵呢。"
+      },
+      {
+        "translation": "并不是她不温柔，只是有时说话语气有点冲。"
+      },
+      {
+        "translation": "并不是他有多忙，而是他似乎不太懂得合理利用时间。"
+      }
+    ]
   },
   "ja_わけにはいかない_164": {
     "title": "～わけにはいかない (〜wake ni wa ikanai)",
-    "shortExplanation": "表示 that one cannot (or must not) do something due to responsibility, social pressure, etc.",
-    "longExplanation": "The ～わけにはいかない grammar point is 用于表达 that you cannot afford to do something or are not allowed to do it. It often implies a sense of responsibility, moral/social obligation, or external pressure that prevents you from doing it.",
-    "formation": "动词-dictionary form + わけにはいかない"
+    "shortExplanation": "表示出于常理、社会道德、人情或责任感等原因而“不能做某事”；“不能……”、“绝不能……”、“无法……”。",
+    "longExplanation": "句型“～わけにはいかない”接在动词辞书形之后，表示从能力上来说虽然可以做到，但在情理、社会公德、责任义务或人际关系等制约下，在心理或道义上绝对不能、不允许那样做（“不能……”、“绝不能……”、“无法……”）。体现了说话人出于道德约束或责任担当而做出的自觉克制。",
+    "formation": "动词辞书形 + わけにはいかない",
+    "examples": [
+      {
+        "translation": "快要考试了，我绝不能顾着玩。"
+      },
+      {
+        "translation": "田中先生正在等着，我可绝不能迟到。"
+      },
+      {
+        "translation": "为了孩子们，我无论如何也不能辞掉这份工作。"
+      },
+      {
+        "translation": "这个问题十分重要，我们绝不能视而不见。"
+      }
+    ]
   },
   "ja_をきっかけに_165": {
     "title": "～をきっかけに (〜wo kikkake ni)",
-    "shortExplanation": "指示 that something serves as a trigger or starting point for another action/event.",
-    "longExplanation": "「～をきっかけに」 is used with a noun to show that an event, thing, or situation became a trigger or motive that led to a new development or action. It translates as 'taking ... as an opportunity,' 'due to ...,' or 'inspired by ...'.",
-    "formation": "名词 + をきっかけに"
+    "shortExplanation": "表示以某事为契机、诱因、开端或转折点，从而引发了后续的行动或变化；“以……为契机”、“借……之机”。",
+    "longExplanation": "句型“～をきっかけに”（亦可作“～をきっかけにして / として”；修饰名词时用“～をきっかけにした / とした”）接在名词之后，表示某次具体的事件、经历、相遇或客观情境成为了促成后续新行动、新习惯或生活重大转变的“契机”或“转折点”（“以……为契机”、“借……的机会”、“因……而起”）。常用于叙述发生积极转变或迎来人生新阶段的过程。",
+    "formation": "名词 + をきっかけに（或 をきっかけにして / をきっかけとして）",
+    "examples": [
+      {
+        "translation": "以结婚为契机，他开始认真努力地工作了。"
+      },
+      {
+        "translation": "借由那次相遇，我们成为了朋友。"
+      },
+      {
+        "translation": "受那场音乐会的启发，她决定走上音乐之路。"
+      },
+      {
+        "translation": "以出国留学为契机，我的外语水平得到了提升。"
+      }
+    ]
   },
   "ja_をとして_166": {
     "title": "～を～として (〜wo〜toshite)",
-    "shortExplanation": "Express 'as', 'in the capacity of', or 'taking something as...'.",
-    "longExplanation": "The grammar pattern 「～を～として」 is used with nouns to indicate taking one thing 'as' or 'in the role of' another. It shows how a certain noun is being viewed or utilized.",
-    "formation": "Noun1 + を + Noun2 + として"
+    "shortExplanation": "表示把某事物当作、作为某种角色、目的、基础或资格；“把……作为……”、“以……为……”。",
+    "longExplanation": "句型“～を～として”（作定语修饰名词时用“～を～とする”或“～を～とした”）接在两个名词之间，表示将前项名词确定为后项名词所指的角色、身份、目的、基准或定位（“把A当作/作为B”、“以A为B”）。常用于正式陈述、书面语、组织规划或阐述目标等庄重语境。",
+    "formation": "名词1 + を + 名词2 + として（修饰名词：とする + 名词 / とした + 名词）",
+    "examples": [
+      {
+        "translation": "他把教师作为自己的职业在工作。"
+      },
+      {
+        "translation": "她接受了把队长作为自己的职责。"
+      },
+      {
+        "translation": "我们把他作为同伴而深受信赖。"
+      },
+      {
+        "translation": "这位艺术家以传统为基础创作作品。"
+      }
+    ]
   },
   "ja_を中心に_167": {
     "title": "～を中心に (〜wo chuushin ni)",
-    "shortExplanation": "指示 that something is centered around or focused on a main topic or area.",
-    "longExplanation": "「～を中心に」 is used with nouns to show that an action or situation is mainly or primarily about the specified noun. 可以翻译为 'centered on', 'focusing on', or 'with ... as the main focus'.",
-    "formation": "名词 + を中心に"
+    "shortExplanation": "表示以某人、某物、某地域或某议题为核心或重点；“以……为中心”、“以……为主”。",
+    "longExplanation": "句型“～を中心に”（亦可作“～を中心にして / として”；作定语时用“～を中心とした / とする”）接在名词之后，表示某项活动、讨论、工作或现象是以该名词为主要核心、重点或核心区域展开的（“以……为中心”、“围绕……展开”、“以……为主”）。常用于新闻报道、学术调研、商务策划以及描述地理分布或团队运作。",
+    "formation": "名词 + を中心に（或 を中心にして / を中心として；修饰名词：を中心とした + 名词 / を中心とする + 名词）",
+    "examples": [
+      {
+        "translation": "这个活动以音乐为中心，深受大家喜爱。"
+      },
+      {
+        "translation": "他的工作主要以东京为中心开展。"
+      },
+      {
+        "translation": "她正围绕健康这一核心主题在写书。"
+      },
+      {
+        "translation": "最近的研究主要以环境保护为核心而展开。"
+      }
+    ]
   },
   "ja_を問わず_168": {
     "title": "～を問わず (〜wo towazu)",
-    "shortExplanation": "Means 'regardless of' or 'irrespective of'.",
-    "longExplanation": "「～を問わず」 is 用于表达 that something applies or is available without any distinction regarding the stated nouns/conditions. It means 'regardless of...' or 'irrespective of...'.",
-    "formation": "名词 + を問わず"
+    "shortExplanation": "表示不受某一条件或差别的限制与区别，一律同等对待；“不论……”、“不管……”、“不分……”、“与……无关”。",
+    "longExplanation": "句型“～を問わず”（汉字写作“問わず”，意为不过问、不追究）接在名词之后，该名词通常是包含差异、范围或成对相反意义的概念（如年龄、性别、国籍、昼夜、季节、有无经验等），表示不论该条件如何均一视同仁，毫无限制或区分（“不论……”、“不问……”、“不受……限制”）。常用于招聘简章、活动公告及规则说明等正式书面语中。",
+    "formation": "名词 + を問わず",
+    "examples": [
+      {
+        "translation": "这项活动不分年龄，任何人都可以参加。"
+      },
+      {
+        "translation": "这家超市不论周日与否，每天都营业。"
+      },
+      {
+        "translation": "不论严寒酷暑，她每天早晨都坚持散步。"
+      },
+      {
+        "translation": "社长不问国籍，对所有员工一律平等对待。"
+      }
+    ]
   },
   "ja_を込めて_169": {
     "title": "～を込めて (〜wo komete)",
-    "shortExplanation": "To express that something is done with a certain feeling, intention, or emotion.",
-    "longExplanation": "The ～を込めて grammar point is 用于表达 that an action is done with a certain feeling, intention or emotion. 可以翻译为 'with' or 'filled with' in English. ～を込めて is typically used with feelings or emotions that the speaker wishes to convey through their actions.",
-    "formation": "Feeling/emotion/intention 名词 + を + 込めて + 动词"
+    "shortExplanation": "表示将某种深厚的情感、心意、祈愿或全部精力倾注在某种行为之中；“倾注……”、“怀着……”、“饱含……”。",
+    "longExplanation": "句型“～を込めて”（动词“込める”意为倾注、融入；作定语时用“～を込めた”）接在表示心意、情感、祝福、愿望或精力的名词之后（如爱、感激、祈愿、心血、真诚等），表示怀着极其诚挚、深切的情感去做某件事，将其全部倾注在行动或作品中（“怀着全部的爱/谢意”、“倾注心血……”）。常用于烹饪、赠礼、写信或表达敬意等温馨真挚的场景。",
+    "formation": "名词（表示情感、心意、祈愿） + を込めて（修饰名词：を込めた + 名词）",
+    "examples": [
+      {
+        "translation": "我满怀爱意地做了这道菜。"
+      },
+      {
+        "translation": "我怀着深深的感激之情给老师写了一封感谢信。"
+      },
+      {
+        "translation": "他竭尽全力战斗到了最后一刻。"
+      },
+      {
+        "translation": "她满含悲伤地向朋友道出了告别的话语。"
+      }
+    ]
   },
   "ja_を通じて_170": {
     "title": "～を通じて (〜wo tsuujite)",
-    "shortExplanation": "表示 'through', 'throughout', or 'during'.",
-    "longExplanation": "The ～を通じて grammar point is 用于表达 actions or conditions that occur through or throughout a specific period, medium, or method. 可以翻译为 'through', 'throughout', or 'during' in English. It is formed by attaching 'を通じて' to a noun that represents time, place, or method.",
-    "formation": "名词 + を通じて"
+    "shortExplanation": "表示以某事物、媒介或人作为中间手段（“通过……”）；或者表示在某一整个时间段内持续不断（“整个……期间”、“历经……”）。",
+    "longExplanation": "句型“～を通じて”（汉字写作“通じて”；作定语时用“～を通じた”）主要有两种用法：① 作为间接的手段、媒介、渠道或中介人，借此实现交流、获取情报或开展活动（“通过……”、“经由……”）；② 接在表示时间、时期的名词之后，表示某种状态或行为贯穿整个时间段，从头到尾持续不断（“贯穿整个……”、“整整……”）。",
+    "formation": "名词 + を通じて（修饰名词：を通じた + 名词）",
+    "examples": [
+      {
+        "translation": "我通过网络与朋友保持联络。"
+      },
+      {
+        "translation": "他整整一天都在勤勉地工作。"
+      },
+      {
+        "translation": "该活动将在整个周末期间持续举办。"
+      },
+      {
+        "translation": "那种花在整个春季期间都会盛开。"
+      }
+    ]
   },
   "ja_を頼りに_171": {
     "title": "～を頼りに (〜wo tayori ni)",
-    "shortExplanation": "To rely on or depend on something or someone.",
-    "longExplanation": "The ～を頼りに grammar point is 用于表达 that someone is relying on or depending on something or someone. 可以翻译为 'to rely on', 'to depend on', or 'counting on' in English. This phrase is used with nouns (people or objects) that act as a source of support or help.",
-    "formation": "名词 + を頼りに"
+    "shortExplanation": "表示依靠、凭借某人、某物或微弱的线索作为指引和依靠来进行某事；“依靠……”、“凭借……”、“以……为线索/依靠”。",
+    "longExplanation": "句型“～を頼りに”（源自动词“頼る”，意为依靠、依赖；亦可作“～を頼りにして”；作定语时用“～を頼りにした”）接在名词之后，表示将某人、某物、某种力量或线索（如地图、微光、记忆、朋友的帮助等）作为自己行动的支柱、指南或依靠，以此来解决问题或达成目标（“依靠……”、“凭借……”、“以……为依靠”）。常用于在处于未知、困境或线索微弱时向前摸索的情境。",
+    "formation": "名词 + を頼りに（或 を頼りにして；修饰名词：を頼りにした + 名词）",
+    "examples": [
+      {
+        "translation": "她凭借着一张地图在旅行。"
+      },
+      {
+        "translation": "许多人依靠他的力量维持着生活。"
+      },
+      {
+        "translation": "在这个项目中，我们非常仰仗你的专业技能。"
+      },
+      {
+        "translation": "他试图依靠朋友的帮助来解决问题。"
+      }
+    ]
   },
   "ja_一方_172": {
     "title": "～一方 (〜ippou)",
-    "shortExplanation": "指示 that while one action or situation is happening, another action or situation is also occurring or is in contrast.",
-    "longExplanation": "The ～一方 grammar point is 用于表达 that while one action or situation is taking place, another is occurring at the same time or in contrast. The clauses connected by 一方 often show simultaneous actions, opposing characteristics, or parallel developments.",
-    "formation": "动词-casual + 一方(で), い-形容词 + 一方(で), な-形容词 + な/である一方(で), 名词 + である一方(で)"
+    "shortExplanation": "表示同一事物的两个相对立或不同的侧面，或两件并行发展的事态；“一方面……另一方面……”，“同时又……”。",
+    "longExplanation": "句型“～一方”（常作“～一方で”）接在普通形之后，主要用于对比同一事物、人物或局势所具有的两种截然不同、甚至是相反的特征与侧面（“一方面……另一方面却……”），也可以表示在某一种倾向发展的同时，伴随着另一件事态的并行发生（“与此同时……”）。常用于议论文、新闻评论或分析事物两面性的语境中。",
+    "formation": "动词普通形 + 一方（で） | 一类形容词 + 一方（で） | 二类形容词 + な / である一方（で） | 名词 + である一方（で）",
+    "examples": [
+      {
+        "translation": "技术在不断进步，而另一方面生活却变得越来越忙碌了。"
+      },
+      {
+        "translation": "日语在不断进步的同时，我总觉得自己的英语能力反而下降了。"
+      },
+      {
+        "translation": "这道菜虽然很好吃，但另一方面价格也有点贵。"
+      },
+      {
+        "translation": "他虽然为人温柔，但另一方面也有严厉的一面。"
+      }
+    ]
   },
   "ja_一方だ_173": {
     "title": "～一方だ (〜ippou da)",
-    "shortExplanation": "表示 that a situation or condition is continuing to increase or decrease in one direction.",
-    "longExplanation": "The ～一方だ grammar point is used when something is trending in a single direction over time, often increasing or worsening. It emphasizes that the tendency keeps going in one direction.",
-    "formation": "动词-dictionary form + 一方だ"
+    "shortExplanation": "表示某种事态或倾向一直朝着一个方向不断发展、持续加剧；“不断……”、“越来越……”、“一直……”。",
+    "longExplanation": "句型“～一方だ”接在表示状态变化的动词辞书形（如“増える”、“減る”、“悪化する”、“高くなる”等）之后，表示某种倾向或事态单向发展、毫无停歇或逆转之势（“不断……”、“日趋……”、“越来越……”）。绝大多数情况下用于描述不良事态、危机或令人担忧的恶化趋势，强调这种单一走向的持续性。",
+    "formation": "动词辞书形（表示变化的动词） + 一方だ",
+    "examples": [
+      {
+        "translation": "世界人口一直在持续增加。"
+      },
+      {
+        "translation": "这个小镇的治安每况愈下，日趋恶化。"
+      },
+      {
+        "translation": "我的日语水平一直在不断提升。"
+      },
+      {
+        "translation": "一到夏天，酷热天气就愈演愈烈。"
+      }
+    ]
   },
   "ja_上で_174": {
     "title": "～上で (〜ue de)",
-    "shortExplanation": "用于表达 that something is done after or on the basis of something else; 'after', 'upon'.",
-    "longExplanation": "The ～上で grammar point is 用于表示 that an action or decision is made after another action or condition, or based on certain information. 可以翻译为 'after doing something' or 'on the basis of...'.",
-    "formation": "动词-ますstem + 上で, 名词 + の上で"
+    "shortExplanation": "表示在做完前项动作、完成必要的前提准备之后，再进行后项的决定或行为；“在……之后”、“在做完……的基础上”。",
+    "longExplanation": "句型“～上で”接在动词た形或“名词+の上で”之后，表示把前项动作或充分准备作为前提条件，在充分了解情况、进行确认或完成前项之后，再做出后项的决定、判断或行动（“在……之后再……”、“在……的基础上……”）。强调前项是有意识、有步骤的必要前提，常用于正式的商务或决断场合。",
+    "formation": "动词た形 + 上で | 名词 + の上で",
+    "examples": [
+      {
+        "translation": "在完成调查之后，我们再得出结论吧。"
+      },
+      {
+        "translation": "在结束求职活动之后，我再决定是否继续升学。"
+      },
+      {
+        "translation": "试穿过之后，我再考虑要不要买这件衣服。"
+      },
+      {
+        "translation": "在听取了有经验者的意见之后，我们再决定项目的方向吧。"
+      }
+    ]
   },
   "ja_上に_175": {
     "title": "～上に (〜ue ni)",
-    "shortExplanation": "Express 'in addition to', 'besides', 'not only... but also'.",
-    "longExplanation": "The ～上に grammar point is 用于表示 that there is an additional piece of information or situation besides the first one. 可以翻译为 'in addition to', 'besides', or 'not only... but also'. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
-    "formation": "动词-plain + 上に, い-形容词 + 上に, な-形容词 + な上に, 名词 + の上に"
+    "shortExplanation": "表示在某种状态或特征的基础上再加上同类性质的事物；“不仅……而且……”、“既……又……”、“加上……”。",
+    "longExplanation": "句型“～上に”接在修饰词的连体形或普通形之后，表示在某种已有的情况、优点或缺点的基础上，同方向进一步叠加同性质的其他条件（“不仅……而且……”、“加上……”）。前后两项在评价上必须保持同向一致，即“既好又好”或“既坏又坏”，不能用于前后相反的对比。",
+    "formation": "动词普通形 + 上に | 一类形容词 + 上に | 二类形容词词干 + な上に（或 である上に） | 名词 + の上に（或 である上に）",
+    "examples": [
+      {
+        "translation": "他不仅脑子聪明，而且还擅长体育运动。"
+      },
+      {
+        "translation": "这件连衣裙不仅漂亮，而且价格也很实惠。"
+      },
+      {
+        "translation": "她不仅温柔体贴，而且厨艺也很棒。"
+      },
+      {
+        "translation": "他不仅是公司社长，同时也是一位著名作家。"
+      }
+    ]
   },
   "ja_上は_176": {
     "title": "～上は (～ue wa)",
-    "shortExplanation": "表示 'now that', 'since', or 'once'.",
-    "longExplanation": "The ～上は grammar point is 用于表达 that since a certain condition or situation exists, a certain action or result follows. 可以翻译为 'now that', 'since', or 'once' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
-    "formation": "动词-casual + 上は, い-形容词 + 上は, な-形容词 + な上は, 名词 + の上は"
+    "shortExplanation": "表示既然事已至此、做出了某种决定或处于某种境地，就必须承担起责任或下定决心行动；“既然……就……”、“既然已经……就必须……”。",
+    "longExplanation": "句型“～上は”（与“～以上は”、“～からには”意义相近）接在动词普通形（多用过去时た形或辞书形）之后，表示事情既然已经成为定局，或者自己既然已经做出承诺与决定，后续就必须抱有强烈的责任感与觉悟去履行（“既然已经……就应当/必须……”）。后项多伴随强烈的意志、决心、义务或要求（常搭配“〜つもりだ”、“〜べきだ”、“〜なければならない”、“〜よう”等）。",
+    "formation": "动词普通形（常用た形或辞书形） + 上は",
+    "examples": [
+      {
+        "translation": "既然已经通过了考试，那就开个派对庆祝吧。"
+      },
+      {
+        "translation": "既然接下了这份工作，我就打算坚持到底、全力做好。"
+      },
+      {
+        "translation": "既然被夸奖热情善良，那我就来帮帮你吧。"
+      },
+      {
+        "translation": "既然喜欢吃甜食，那你一定会喜欢这款甜点的。"
+      }
+    ]
   },
   "ja_以上_177": {
     "title": "～以上 (〜ijou)",
-    "shortExplanation": "表示 'since' or 'as long as' in a conditional context.",
-    "longExplanation": "The ～以上 grammar point is 用于表达 a condition or requirement, and 可以翻译为 'since', 'as long as', or 'if'. It often emphasizes that if a certain condition is met, a certain action or consequence will follow.",
-    "formation": "动词-casual + 以上, い-形容词 + 以上, な-形容词 + な以上, 名词 + の以上"
+    "shortExplanation": "表示既然处于某种前置立场、承诺或事实之下，就理所当然地具有某种义务或决心；“既然……就……”、“既然已经……就应当……”。",
+    "longExplanation": "句型“～以上”（亦常作“～以上は”）接在普通形（名词和二类形容词常接“である”）之后，表示以某个已成既定事实的前提、承诺、身份或立场为理由，后项理所当然地应当采取负责任的行动或得出必然的决断（“既然……就必须……”、“既然是……就应当……”）。后句通常伴有表达义务、决心、劝告、推断的句尾表达（如“〜べきだ”、“〜なければならない”、“〜たい”等）。",
+    "formation": "动词普通形 + 以上（は） | 一类形容词 + 以上（は） | 二类形容词 + である以上（は） | 名词 + である以上（は）",
+    "examples": [
+      {
+        "translation": "既然他那么忙，就算我去帮忙恐怕也是白费力气吧。"
+      },
+      {
+        "translation": "既然做出了承诺，就理应信守诺言。"
+      },
+      {
+        "translation": "既然截止日期临近，就必须全力以赴地工作。"
+      },
+      {
+        "translation": "她既然身为大学生，就理应把学业放在优先位置。"
+      }
+    ]
   },
   "ja_以来_178": {
     "title": "～以来 (〜irai)",
-    "shortExplanation": "指示 something happening 'since', 'ever since', or 'after' a particular time.",
-    "longExplanation": "The ～以来 grammar point is 用于表达 a period of time that has continued uninterrupted since a certain point in the past. 可以翻译为 'since', 'ever since', or 'after'. The formation differs depending on whether it is used with a verb, an adjective, or a noun.",
-    "formation": "动词-past + 以来, い-形容词 + 以来, 名词 + 以来"
+    "shortExplanation": "表示从过去的某个时间点或事件发生之后，某种状态一直持续至今；“自……以来”、“……之后一直”。",
+    "longExplanation": "句型“～以来”接在动词て形、た形或名词之后，表示以过去的某一特定时间节点或某个大事件为起点，其后的某种状态、变化一直持续不断地延续到今天（“自……以来”、“……之后一直……”）。后项通常为表示持续性状态或发展趋势的表达，不能用于叙述未来，也不用于仅发生了一次的短暂动作。",
+    "formation": "动词て形 / た形 + 以来 | 名词 + 以来",
+    "examples": [
+      {
+        "translation": "毕业以来，我一直没有见过她。"
+      },
+      {
+        "translation": "自从孩子出生以来，我变得忙碌起来。"
+      },
+      {
+        "translation": "自从搬到东京以来，我的朋友变多了。"
+      },
+      {
+        "translation": "自从看了那部电影以来，她变得胆小起来。"
+      }
+    ]
   },
   "ja_切る_179": {
     "title": "～切る (〜kiru)",
-    "shortExplanation": "To do something completely or thoroughly.",
-    "longExplanation": "The ～切る grammar point is added to the verb stem (masu-form) to express doing something completely or thoroughly, often implying a strong sense of finishing or using up everything.",
-    "formation": "动词-stem + 切る"
+    "shortExplanation": "表示把某个动作彻底做完、做到最后，或某种状态达到了极限；“彻底……完”、“……到底”、“极为……”。",
+    "longExplanation": "句型“～切る”接在动词连用形（ます形去掉ます）之后，主要有两个用法：一是表示动作彻底完成、坚决贯彻到底，没有留下任何剩余或余地（“彻底做完”、“完全……”、“……到底”）；二是表示某种身体或心理状态达到了极限（如“疲惫不堪”、“精疲力竭”）。其可能形式“～切れる”与否定形式“～切れない”（如“数え切れない / 数不清”）在日常生活中也极其常用。",
+    "formation": "动词连用形（ます形去掉ます） + 切る（可能形：切れる；否定形：切れない）",
+    "examples": [
+      {
+        "translation": "他打算拼尽全力坚持把备考坚持到底。"
+      },
+      {
+        "translation": "在彻底把这项工作做完之前，请不要回去。"
+      },
+      {
+        "translation": "和朋友吵架了，我一句话也没能彻底说出来。"
+      },
+      {
+        "translation": "他们得以把那个游戏彻底通关到底。"
+      }
+    ]
   },
   "ja_反面_180": {
     "title": "～反面 (〜hanmen)",
-    "shortExplanation": "Express contrast between two aspects; 'on the one hand', 'on the other hand'.",
-    "longExplanation": "The ～反面 grammar point is 用于展示 a contrast between two aspects of something. 可以翻译为 'on the one hand' or 'on the other hand'.",
-    "formation": "动词-casual + 反面, い-形容词 + 反面, な-形容词 + である反面, 名词 + である反面"
+    "shortExplanation": "表示同一事物或人物具有截然相反的两个方面；“一方面……另一方面……”、“但相反……”。",
+    "longExplanation": "句型“～反面”用于叙述同一主体同时具备相互对立、彼此矛盾的两个侧面，通常是一好一坏或一优一劣（“一方面……，但另一方面却……”、“反面则是……”）。强调同一个事物并非单一维度，常用于客观分析事物的利弊得失。亦可以“その反面”的形式单独置于句首连接前后两句。",
+    "formation": "动词普通形 + 反面 | 一类形容词 + 反面 | 二类形容词词干 + な / である + 反面 | 名词 + である + 反面",
+    "examples": [
+      {
+        "translation": "这辆车虽然速度快，但另一方面油耗很高。"
+      },
+      {
+        "translation": "他虽然脑子聪明，但相反却不擅长运动。"
+      },
+      {
+        "translation": "她为人热情善良，但另一方面有时又未免太爱操心了。"
+      },
+      {
+        "translation": "这份工作虽然薪水很高，但另一方面压力也很大。"
+      }
+    ]
   },
   "ja_向け_181": {
     "title": "～向け (〜muke)",
-    "shortExplanation": "Indicating target or intended audience.",
-    "longExplanation": "The ～向け grammar point is 用于表示 the target or intended audience for a product, service, or event. 可以翻译为 'for', 'aimed at', or 'intended for'.",
-    "formation": "名词 + 向け"
+    "shortExplanation": "表示以特定的人物、群体或对象为目标而专门制定、设计；“面向……”、“专为……而设”。",
+    "longExplanation": "接尾词“～向け”接在表示人、群体或机构的名词之后，表示某种产品、服务、活动或设施是专门针对该特定对象而设计、生产或准备的（“面向……”、“专供……使用”）。修饰名词时使用“～向けの”，修饰动词作状语时使用“～向けに”。注意与表示客观属性上自然“适合”的“～向き”进行区分。",
+    "formation": "名词 + 向け（修饰名词：向けの名词；作状语：向けに）",
+    "examples": [
+      {
+        "translation": "这本杂志是面向年轻人的。"
+      },
+      {
+        "translation": "超市正在售卖面向家庭的食品套餐。"
+      },
+      {
+        "translation": "这款应用是专为初学者制作的。"
+      },
+      {
+        "translation": "这家餐厅面向纯素食者的菜单非常丰富。"
+      }
+    ]
   },
   "ja_恐れがある_182": {
     "title": "～恐れがある (〜osore ga aru)",
-    "shortExplanation": "Express a concern or fear that something undesirable might occur.",
-    "longExplanation": "The ～恐れがある grammar point 指示 that there is a concern or fear that something undesirable or negative might happen. It is often used for potential problems or risks, and can be translated as 'there is a risk' or 'there is a possibility'.",
-    "formation": "动词-dictionary form + 恐れがある"
+    "shortExplanation": "表示存在发生某种不良后果、危险或负面事态的可能性；“恐怕会……”、“有……的危险/风险”。",
+    "longExplanation": "句型“～恐れがある”接在动词辞书形、ない形或“名词+の”之后，用于表示担忧未来可能发生某种令人不快、危险或具有破坏性的消极事态（“恐怕会有……的危险”、“存在……的可能”）。语气较为郑重严谨，多用于新闻报道、天气预警、医疗健康说明或商业风险评估等正式文体中。",
+    "formation": "动词辞书形 / ない形 + 恐れがある | 名词 + の恐れがある",
+    "examples": [
+      {
+        "translation": "由于有发生地震的危险，请前往避难所避难。"
+      },
+      {
+        "translation": "他有发生事故的危险，所以请小心驾驶。"
+      },
+      {
+        "translation": "过量服用这种药物的话，恐怕会有产生副作用的危险。"
+      },
+      {
+        "translation": "如果以过低的预算推进这个项目，恐怕会有质量下降的风险。"
+      }
+    ]
   },
   "ja_折には_183": {
     "title": "～折には (〜ori ni wa)",
-    "shortExplanation": "表示 'when' or 'in case of' specific situations or timings.",
-    "longExplanation": "The ～折には grammar point is used to emphasize a specific moment or situation (often not very frequent). 可以翻译为 'when (the occasion arises)' or 'in case of'.",
-    "formation": "动词-dictionary form + 折には, 动词-た form + 折には, い-形容词 + 折には, な-形容词 + な折には, 名词 + の折には"
+    "shortExplanation": "表示某个特定时刻、机会或际遇，相当于“～とき”的郑重表达；“……之际”、“……的时候”。",
+    "longExplanation": "句型“～折には”（亦作“～折に”）接在各类词修饰名词的形式之后，是“～とき（……的时候）”的极其郑重、礼貌的说法（“……之际”、“正当……之时”、“……的时候”）。常用于商务书信、正式社交寒暄或致意中，表达在难得的相遇、拜访、出差等特定机会或时机发生某事。",
+    "formation": "动词辞书形 / た形 + 折（に / には） | 一类形容词 + 折（に / には） | 二类形容词词干 + な折（に / には） | 名词 + の折（に / には）",
+    "examples": [
+      {
+        "translation": "口渴的时候，请喝这瓶瓶装水。"
+      },
+      {
+        "translation": "来到这个地区的时候，请务必去参拜这座神社。"
+      },
+      {
+        "translation": "看他无精打采的时候，请问问他是不是身体不舒服。"
+      },
+      {
+        "translation": "每当遇到机会之际，请毫不犹豫地付诸行动。"
+      }
+    ]
   },
   "ja_末_184": {
     "title": "～末 (～sue)",
-    "shortExplanation": "表达 outcome after a period of time or series of actions; 'after', 'as a result of'.",
-    "longExplanation": "The ～末 grammar point is 用于表示 an outcome or result after a period of time, effort, or a series of actions. 可以翻译为 'after', 'as a result of', or 'following'. It is typically used with nouns (e.g., '相談の末', '努力の末').",
-    "formation": "名词 + 末"
+    "shortExplanation": "表示经过了长时间的艰辛、思索、争论或努力之后，终于得出了某种结局或决定；“经过……之后终于”、“……的结果”。",
+    "longExplanation": "句型“～末”（常以“～末に”作状语，或以“～末の”修饰名词）接在动词た形或“名词+の”之后，表示历经了长时间的思想斗争、反复商榷、竭力拼搏或艰难波折之后，最终迎来了某种结果或作出了重大决断（“在历经……之后，终于……”、“在……的最后”）。后项引出的结果既可以是令人欣慰的成功，也可以是令人遗憾的结局。",
+    "formation": "动词た形 + 末（に / の） | 名词 + の末（に / の）",
+    "examples": [
+      {
+        "translation": "经过长时间的讨论，大家的意见终于达成了一致。"
+      },
+      {
+        "translation": "经过一周的刻苦学习，我终于通过了考试。"
+      },
+      {
+        "translation": "历经多次失败之后，终于获得了成功。"
+      },
+      {
+        "translation": "与他分手之后，我开启了全新的人生。"
+      }
+    ]
   },
   "ja_次第_185": {
     "title": "～次第 (〜shidai)",
-    "shortExplanation": "表示 'as soon as' (when used with Verb-ますstem) or 'depending on' (when used with a noun).",
-    "longExplanation": "The grammar pattern ～次第 can mean 'as soon as' when used with a verb in its ます-stem, and 'depending on' when used with a noun. For instance, 仕事が終わり次第 (as soon as work finishes) or 天気次第 (depending on the weather).",
-    "formation": "动词-ますstem + 次第, 名词 + 次第"
+    "shortExplanation": "接动词表示“一……立刻就……”，接名词表示“取决于……”、“全凭……”。",
+    "longExplanation": "句型“～次第”主要有两种基本用法：一是接在动词连用形（ます形去掉ます）之后，表示前项动作一旦顺利完成，就紧接着立即施行后项有意志的行为（“一……立刻就……”、“办好……就……”）；二是直接接在名词之后，表示事态的走向、结果由前项的条件所决定（“全凭……”、“取决于……”、“视……而定”）。",
+    "formation": "动词连用形（ます形去掉ます） + 次第（一……立刻……） | 名词 + 次第（取决于……、全凭……）",
+    "examples": [
+      {
+        "translation": "工作一结束，我就立刻回家。"
+      },
+      {
+        "translation": "我们将根据顾客的意见来改进服务。"
+      },
+      {
+        "translation": "去不去参加聚会，取决于他的答复。"
+      },
+      {
+        "translation": "我们根据天气的具体情况来安排野餐。"
+      }
+    ]
   },
   "ja_次第で_186": {
     "title": "～次第で (〜shidai de)",
-    "shortExplanation": "指示 'depending on; based on' a certain factor or situation.",
-    "longExplanation": "The ～次第で pattern typically follows a noun to show that something is decided or changes 'depending on' that factor. 可以翻译为 'based on...' or 'depending on...'.",
-    "formation": "名词 + 次第で"
+    "shortExplanation": "表示后项的事态由前项的条件、因素决定或随之改变；“取决于……”、“视……而定”、“根据……不同而……”。",
+    "longExplanation": "句型“～次第で”由表示决定的“次第”加上表示依据、方式的格助词“で”构成，接在名词之后，明确指出后项的结果、程度或选择全凭前项的情况如何而发生变动（“根据……而定”、“随……的不同而有变化”）。若用于修饰后续名词，则使用“～次第での”或“～次第の”。",
+    "formation": "名词 + 次第で（修饰名词：次第での / 次第の + 名词）",
+    "examples": [
+      {
+        "translation": "根据工作结束时间的早晚，回家的时刻也会随之改变。"
+      },
+      {
+        "translation": "视天气情况而定，我们打算去野餐。"
+      },
+      {
+        "translation": "是否参加聚会，全看他的心情而定。"
+      },
+      {
+        "translation": "根据会议的进展情况，最终决定可能会有所改变。"
+      }
+    ]
   },
   "ja_次第です_187": {
     "title": "～次第です (〜shidai desu)",
-    "shortExplanation": "A polite/formal way to say 'it depends on...' or 'as soon as...', often used in concluding statements.",
-    "longExplanation": "「～次第です」 is frequently used in more formal contexts, either to mean that something depends on certain conditions or to indicate an action will happen as soon as something else is completed. It’s also used as a set phrase to conclude an explanation in writing.",
-    "formation": "动词-ますstem + 次第です (or 名词 + 次第です)"
+    "shortExplanation": "郑重表述“完全取决于……”；或在正式公文中用于句末说明事情的原委与缘由；“全凭……”、“特此说明缘由”。",
+    "longExplanation": "句型“～次第です”是“次第”的礼貌结句形式，主要用于两个方面：一是接在名词后，郑重表示事态的结果全凭该条件决定（“全取决于……”、“视……而定”）；二是接在动词普通形后，常出现于商业书信、正式公文或报告的结语中，向对方正式说明造成当前现状的来龙去脉与具体原委（“缘由如此”、“情况特此报告”）。",
+    "formation": "名词 + 次第です（取决于……） | 动词普通形 + 次第です（公文中阐明原委、经过）",
+    "examples": [
+      {
+        "translation": "虽然还要看天气情况，但我打算明天去野餐。"
+      },
+      {
+        "translation": "虽然取决于考试成绩，但我还是希望能出国留学。"
+      },
+      {
+        "translation": "我们将根据各位客人的宝贵意见，由此决定是否增设新菜单。"
+      },
+      {
+        "translation": "由于只要申请一完成就会立刻发放，所以手续办完之后您就可以领取护照了。"
+      }
+    ]
   },
   "ja_気味_188": {
     "title": "～気味 (〜gimi)",
-    "shortExplanation": "指示 a slight feeling or tendency toward a particular state.",
-    "longExplanation": "The suffix ～気味 generally attaches to nouns (or nominalized words) to express a slight feeling, tendency, or inclination toward a particular state. It often translates to '-ish' or 'a bit' in English (e.g., 'sleep-deprived-ish', 'nervous-ish').",
-    "formation": "名词 + 気味 (e.g., 風邪気味, 寝不足気味, 緊張気味)"
+    "shortExplanation": "表示身体、心理或状态稍微带有某种令人担忧或消极的倾向与征兆；“有点……倾向”、“略带……样”。",
+    "longExplanation": "接尾词“～気味”（读作ぎみ）接在名词或动词连用形（ます形去掉ます）之后，表示虽然程度不深，但隐隐让人感到存在某种不良的发展趋势、身体症状或心理状态（“稍微有点……”、“略微有些……”、“有……的苗头”）。通常用于描述负面或令人不快的情况，如略微感冒（風邪気味）、睡眠不足（寝不足気味）、略显紧张（緊張気味）、身材微胖（太り気味）等。",
+    "formation": "名词 + 気味 | 动词连用形（ます形去掉ます） + 気味（修饰名词：気味的名词；作状语：気味に）",
+    "examples": [
+      {
+        "translation": "最近有点睡眠不足，感到有些疲惫。"
+      },
+      {
+        "translation": "这个房间稍微有些偏暗，换个更明亮的灯吧。"
+      },
+      {
+        "translation": "她说话时略微显得有些紧张。"
+      },
+      {
+        "translation": "他的声音听起来好像有点感冒了呢。"
+      }
+    ]
   },
   "ja_限り_189": {
     "title": "～限り (〜kagiri)",
-    "shortExplanation": "表示 'as long as', 'while', or 'to the extent that' a certain condition holds true.",
-    "longExplanation": "The phrase ～限り is 用于表示 that something continues or is true 'as long as' or 'while' a certain condition is met. It can also mean 'to the extent that'.",
-    "formation": "动词-casual + 限り, い-形容词 + 限り, な-形容词 + な限り, 名词 + の限り"
+    "shortExplanation": "表示只要前项的条件或状态持续存在，后项的状态就会一直保持；“只要……就……”、“在……的限度内”。",
+    "longExplanation": "句型“～限り”接在用言连体形或“名词+である”之后，表示只要前项设定的条件、范围或时间限度得以维持，后项的事态就同样保持不变或持续有效（“只要还处于……状态，就一直……”）。此外，还可以用于表示个人所知或调查的“范围极限”（如“私が知る限り / 据我所知”）。",
+    "formation": "动词普通形 + 限り | 一类形容词 + 限り | 二类形容词词干 + な / である + 限り | 名词 + である / の + 限り",
+    "examples": [
+      {
+        "translation": "只要身体还硬朗，我就会一直坚持运动。"
+      },
+      {
+        "translation": "只要手头还有钱，我就想尽情享受旅行。"
+      },
+      {
+        "translation": "只要他一直讲下去，这个项目的优势就会传递给大家吧。"
+      },
+      {
+        "translation": "只要你坚持学习，通过考试的可能性就会不断提高。"
+      }
+    ]
   },
   "ja_際に_190": {
     "title": "～際に (〜sai ni)",
-    "shortExplanation": "Means 'when', 'while', or 'on the occasion of' a certain event or situation.",
-    "longExplanation": "～際に is used to specify a time or occasion when something happens. It’s more formal than a simple 'とき' and often appears in announcements or polite instructions.",
-    "formation": "动词-casual + 際に, い-形容词 + 際に, な-形容词 + な際に, 名词 + の際に"
+    "shortExplanation": "用于郑重表示某个特定的时间或场合，相当于“～とき”的郑重说法；“在……的时候”、“……之际”。",
+    "longExplanation": "句型“～際に”（亦作“～際には”）接在动词辞书形、动词た形或“名词+の”之后，是“～とき（……的时候）”的书面语及郑重表达，用于说明在某种特定的时间、重要场合或手续流程中需要做某事（“在……之际”、“当……的时候”）。广泛见于各类公共指南、告示、商务信函以及正式的口头说明中。",
+    "formation": "动词辞书形 / た形 + 際（に / には） | 名词 + の際（に / には）",
+    "examples": [
+      {
+        "translation": "出发之际，请不要忘记带护照。"
+      },
+      {
+        "translation": "发生地震的时候，请立即避难。"
+      },
+      {
+        "translation": "来日本之际，我打算买很多伴手礼。"
+      },
+      {
+        "translation": "面试的时候，请务必穿着正装西服。"
+      }
+    ]
   },
   "ja_A_4": {
     "title": "A だの B だの (A dano B dano)",
-    "shortExplanation": "Used to list examples (often with a critical or complaining tone); 'things like A, B, etc.'.",
-    "longExplanation": "The ～だの～だの grammar point is used to list examples, typically in a casual or complaining tone. 可以翻译为 'things like... and so on'.",
-    "formation": "名词/动词 casual + だの + 名词/动词 casual + だの"
+    "shortExplanation": "用于列举同类事物或行为（常带有抱怨、不满或无可奈何的语气）；“又是……又是……”、“什么……啦……啦”。",
+    "longExplanation": "句型“～だの～だの”用于列举具有代表性的事例（常列举两项或更多）。其最大特点是往往伴随着说话人的不满、抱怨、厌烦或无可奈何的情绪，觉得事情繁琐或令人头疼。多用于口语交流中，常译为“又是……又是……”、“又是说……又是说……”、“什么……啦，什么……啦”。",
+    "formation": "名词 + だの + 名词 + だの | 动词/形容词普通形 + だの + 动词/形容词普通形 + だの",
+    "examples": [
+      {
+        "translation": "他总是又是迟到又是忘工作，真让人头疼。"
+      },
+      {
+        "translation": "她经常把钱花在买新衣服啦、买化妆品啦之类的事情上。"
+      },
+      {
+        "translation": "据他自己说，他似乎喜欢音乐啦、电影啦、书本之类的东西。"
+      },
+      {
+        "translation": "我想无限制地给孩子们他们喜欢的点心啦、玩具啦等等。"
+      }
+    ]
   },
   "ja_A_7": {
     "title": "A とも B とも (A tomo B tomo)",
-    "shortExplanation": "表示 two possibilities; 'either A or B', 'whether A or B'.",
-    "longExplanation": "The 'A とも B とも' grammar pattern 指示 two possible scenarios. 可以翻译为 'whether A or B' or 'either A or B'.",
-    "formation": "名词 + とも + 名词 + とも (or sometimes 动词 forms for each A, B)"
+    "shortExplanation": "列举两种可能性或对象，表示“无论是A还是B”、“不论是A还是B”或难以断定其一。",
+    "longExplanation": "句型“A とも B とも”用于并列列举两种可能的情形、事物或对象，表示“不论是A还是B”，或者说明两者兼具、难以明确界定（“无论是A还是B”、“难以说是A还是B”）。常与表示无法判断的表达（如“〜言えない”、“〜つかない”）或表示交由未来判断的句子连用。",
+    "formation": "名词 + とも + 名词 + とも | 普通形 + とも + 普通形 + とも",
+    "examples": [
+      {
+        "translation": "无论是有魄力的决断还是失误，时间最终都会告诉我们答案吧。"
+      },
+      {
+        "translation": "不管是和父亲还是和哥哥，他都已经好几年没有说过话了。"
+      },
+      {
+        "translation": "我打算去看电影，要么是跟女朋友要么是跟朋友一起去。"
+      },
+      {
+        "translation": "这款游戏所需要的毅力，难以单纯用时间或努力来衡量。"
+      }
+    ]
   },
   "ja_A_8": {
     "title": "A にしろ B にしろ (A nishiro B nishiro)",
-    "shortExplanation": "Means 'whether it is A or B'; 'regardless of A or B'.",
-    "longExplanation": "A にしろ B にしろ is 用于表示 that even though A and B are different possibilities, the statement or conclusion applies regardless. Often translated as 'whether it’s A or B' or 'regardless of A or B'.",
-    "formation": "名词 A + にしろ + 名词 B + にしろ, or 动词-casual A + にしろ + 动词-casual B + にしろ"
+    "shortExplanation": "列举两个对立或不同的例子，表示无论哪种情况后项结论或做法都不变；“无论是A还是B”、“不论……还是……”。",
+    "longExplanation": "句型“A にしろ B にしろ”常列举相反或相关的两种情况，表示即便是前项这两种不同的情形，后项的判断、建议或事实也毫不动摇，完全适用（“无论是……还是……”、“不论……还是……”）。既可用于较正式的会话，也可用于文章写作。",
+    "formation": "名词 + にしろ + 名词 + にしろ | 动词/形容词普通形 + にしろ + 动词/形容词普通形 + にしろ",
+    "examples": [
+      {
+        "translation": "不管天气热还是冷，每天都应该进行适度运动。"
+      },
+      {
+        "translation": "无论是合格还是落榜，我都已经竭尽全力了。"
+      },
+      {
+        "translation": "不论是忙碌还是闲暇，都应当珍惜时间。"
+      },
+      {
+        "translation": "不管大箱子还是小箱子，请把那些箱子全都搬到这里来。"
+      }
+    ]
   },
   "ja_A_9": {
     "title": "A にせよ B にせよ (A ni seyo B ni seyo)",
-    "shortExplanation": "Either A or B; Regardless of whether it's A or B.",
-    "longExplanation": "The 〜にせよ 〜にせよ grammar point is 用于表达 two possibilities A and B, indicating that regardless of whether it is A or B, the statement remains valid. 可以翻译为 'whether it's A or B.'",
-    "formation": "名词 + にせよ + 名词 + にせよ (also works with verbs in dictionary form + にせよ)"
+    "shortExplanation": "书面语表达，表示无论是A还是B，后项事实或主张都不受影响；“无论……还是……”、“不论……还是……”。",
+    "longExplanation": "句型“A にせよ B にせよ”比“～にしろ～にしろ”更具书面语色彩，用于列举两种可能性或选择项，强调无论处于A还是B的状态，后项的结论、观点或决定都保持不变（“无论是……还是……”、“即使是……抑或是……”）。常见于评论文、公文或正式发言中。",
+    "formation": "名词 + にせよ + 名词 + にせよ | 动词/形容词普通形 + にせよ + 动词/形容词普通形 + にせよ",
+    "examples": [
+      {
+        "translation": "无论是下雨还是下雪，比赛都不会中止。"
+      },
+      {
+        "translation": "无论由他去还是由她去，总该由一个人前往。"
+      },
+      {
+        "translation": "不论是结果还是付出的努力，二者都至关重要。"
+      },
+      {
+        "translation": "不管是春天还是秋天，我都非常喜欢花卉。"
+      }
+    ]
   },
   "ja_Noun1_12": {
-    "title": "Noun1 が Noun1 なら、 Noun2 も Noun2 だ (A ga A nara, B mo B da)",
-    "shortExplanation": "指示 a parallel or matching situation; 'if Noun1 is (truly) Noun1, then Noun2 is also Noun2'.",
-    "longExplanation": "This structure conveys a comparison: 'If Noun1 is indeed that kind of thing (Noun1), then naturally Noun2 is also that kind of thing (Noun2)'. It’s often 用于展示 parallels or equivalences in a rhetorical way.",
-    "formation": "Noun1 + が + (repeat Noun1) + なら、Noun2 + も + (repeat Noun2) + だ"
+    "title": "名词1 + が + 名词1 + なら、 名词2 + も + 名词2 + だ (A ga A nara, B mo B da)",
+    "shortExplanation": "通过重复名词表示两者的对称或对等关系；“如果A算得上是A，那么B也是B”、“既然A如此，B也不例外”。",
+    "longExplanation": "句型“名词1 が 名词1 なら、名词2 も 名词2 だ”通过重复两个名词，强调两者在性质、立场或程度上具有同等的对等性或相称性（“如果说A是如此，那B也同样如此”、“A要是算作A，那B同样也是B”）。常用于带有修辞色彩的辩驳、对比或对立抗衡的语境中。",
+    "formation": "名词1 + が + （重复名词1） + なら、名词2 + も + （重复名词2） + だ",
+    "examples": [
+      {
+        "translation": "如果说鬼魅残酷无情，那么人类也同样残酷得不相上下。"
+      },
+      {
+        "translation": "如果他是社长，那我也是社长。"
+      },
+      {
+        "translation": "如果你自诩为战士，那我也是堂堂正正的战士。"
+      },
+      {
+        "translation": "如果仓鼠算作宠物，那么猫当然也是宠物。"
+      }
+    ]
   },
   "ja_Noun1_13": {
-    "title": "Noun1 も Noun1 なら、Noun2 も Noun2 だ (A mo A nara, B mo B da)",
-    "shortExplanation": "Highlights two parallel facts or characteristics; 'if it’s said that ~, then it can also be said that ~'.",
-    "longExplanation": "This grammar point sets two items or facts side by side, emphasizing that both follow a similar logic or share a parallel characteristic. Often it can be rendered as 'If you say Noun1 is Noun1, then Noun2 is also Noun2.'",
-    "formation": "Noun1 + も + (repeat Noun1) + なら、Noun2 + も + (repeat Noun2) + だ"
+    "title": "名词1 + も + 名词1 + なら、名词2 + も + 名词2 + だ (A mo A nara, B mo B da)",
+    "shortExplanation": "并列指出两者都有问题或各有其极端特点；“A固然有不对，B也半斤八两”、“A是如此，B也一样”。",
+    "longExplanation": "句型“名词1 も 名词1 なら、名词2 も 名词2 だ”将两个事物或人物并列，表示双方都存在类似的问题、缺点或各具不可思议的鲜明特点（“A固然不像话，B也彼此彼此”、“A也是有不是之处，B也同样好不到哪去”）。通常带有对双方都予以批评、无奈叹息或客观对比的语感。",
+    "formation": "名词1 + も + （重复名词1） + なら、名词2 + も + （重复名词2） + だ",
+    "examples": [
+      {
+        "translation": "你固然有不对的地方，但我也是彼此彼此。"
+      },
+      {
+        "translation": "夏天固然热得不像话，冬天也同样冷得要命。"
+      },
+      {
+        "translation": "东京固然有东京的奇特之处，大阪也同样有大阪的风味。"
+      },
+      {
+        "translation": "狗固然有狗的脾气，猫也同样有猫的个性。"
+      }
+    ]
   },
   "ja_Noun_14": {
-    "title": "Noun + あっての + Noun (A atte no B)",
-    "shortExplanation": "表示 'B cannot exist without A'; 'B only exists because of A'.",
-    "longExplanation": "The 'Noun + あっての + Noun' pattern emphasizes that the second noun (B) exists only thanks to, or on the foundation of, the first noun (A). It's often translated as 'B is nothing without A' or 'B exists only because of A'.",
-    "formation": "Noun1 + あっての + Noun2"
+    "title": "名词1 + あっての + 名词2 (A atte no B)",
+    "shortExplanation": "强调正因为有了名词1的存在作为基础，名词2才得以成立；“正因为有了……才会有……”、“有了……才有……”。",
+    "longExplanation": "句型“名词1 + あっての + 名词2”用于强调名词1是名词2不可或缺的前提、基础或恩惠来源，如果没有名词1，名词2就根本无法成立或失去意义（“正因为有了A才有B”、“全仰仗A才有B”）。常带有强烈的感恩、珍视之情，或用于阐明至关重要的决定性条件。",
+    "formation": "名词1 + あっての + 名词2",
+    "examples": [
+      {
+        "translation": "正因为有了家人的支持，才有了今天的我。"
+      },
+      {
+        "translation": "企业经营全仰仗顾客的支持才能成立。"
+      },
+      {
+        "translation": "正因为有了刻苦的练习，才迎来了成功。"
+      },
+      {
+        "translation": "只有拥有了健康，工作才具有意义。"
+      }
+    ]
   },
   "ja_Noun_19": {
-    "title": "Noun からの (~kara no)",
-    "shortExplanation": "Defines the starting point or the origin; 'from'.",
-    "longExplanation": "「Noun + からの」指示 the place, source, or origin of something. It simply means 'from (Noun)'.",
-    "formation": "名词 + からの"
+    "title": "名词1 + からの + 名词2 (kara no)",
+    "shortExplanation": "修饰后项名词，表示来源、起点或出处；“来自……的”、“从……来的”。",
+    "longExplanation": "句型“名词1 + からの + 名词2”是由表示起点的助词“から”与连接名词的助词“の”复合而成，用于修饰后项名词，表示事物发生的地点、起点、出处、发信方或开始的时间等（“来自……的……”、“从……寄来的……”）。",
+    "formation": "名词1 + からの + 名词2",
+    "examples": [
+      {
+        "translation": "我收到了来自日本的信件。"
+      },
+      {
+        "translation": "他是一位来自东京的旅客。"
+      },
+      {
+        "translation": "昨天母亲打来了电话。"
+      },
+      {
+        "translation": "她是自大学时期就认识的朋友。"
+      }
+    ]
   },
   "ja_Noun_20": {
-    "title": "Noun から言わせれば (~kara iwasereba)",
-    "shortExplanation": "表达 perspective of the noun; 'from ~'s point of view.'",
-    "longExplanation": "「Noun + から言わせれば」is 用于表达 an opinion or perspective from that noun's point of view. It can translate as 'from ~'s perspective' or 'if ~ had a say...'.",
-    "formation": "名词 + から言わせれば"
+    "title": "名词 + から言わせれば (kara iwasereba)",
+    "shortExplanation": "从某人的立场或角度来陈述观点；“在……看来”、“要是让……来说的话”。",
+    "longExplanation": "句型“名词 + から言わせれば”（“言わせる”是动词“言う”的使役态，加假定形“ば”）用于站在该人物或对象的角度表达其看法或主张（“在……看来”、“要是让……来说的话”、“从……的立场而言”）。常用于提出针对某一事物的独到见解或有别于他人的主观看法。",
+    "formation": "名词（人物或拟人化对象） + から言わせれば / から言えば",
+    "examples": [
+      {
+        "translation": "在老师看来，学生理应每天都坚持学习。"
+      },
+      {
+        "translation": "要是让孩子们来说的话，他们希望能有更多玩耍的时间。"
+      },
+      {
+        "translation": "依我看来，那个方案完全是可行的。"
+      },
+      {
+        "translation": "要是狗会说话的话，它肯定想要多去散散步。"
+      }
+    ]
   },
   "ja_Noun_43": {
-    "title": "Noun + ともあろう + Noun (~tomoarou~)",
-    "shortExplanation": "Used to criticize or question unbecoming behavior by someone of a certain status.",
-    "longExplanation": "Noun + ともあろう + Noun is 用于表达 that someone with a certain role or status has done something unbefitting their position. It often carries disapproval or surprise: 'For someone who is supposed to be X, how could they...?'",
-    "formation": "名词 + ともあろう + 名词"
+    "title": "名词1 + ともあろう + 名词2 (~tomoarou~)",
+    "shortExplanation": "对具备崇高地位或身份者做出不相称的行为表示批评、谴责或震惊；“堂堂一个……竟然……”。",
+    "longExplanation": "句型“名词1 + ともあろう + 名词2”（前项“名词1”通常是具有较高社会地位、职业声誉或重大责任的称谓，如“先生/老师”、“社長/社长”、“大人/成年人”；后项“名词2”多为“者”、“人”）用于表达说话人的强烈震惊、责备或失望，认为以对方那样令人尊敬或责任重大的崇高身份，理应具备相称的操守，却竟然做出了极其不得体、令人遗憾的可耻行为（“堂堂一个……竟然做出这种事”、“身为……怎么能……”）。",
+    "formation": "名词1（崇高身份 / 职业头衔） + ともあろう + 名词2（者 / 人 / 方） + が / は",
+    "examples": [
+      {
+        "translation": "堂堂一位老师，竟然会犯下如此低级的错误。"
+      },
+      {
+        "translation": "堂堂一个成年人，绝不应该表现得像个孩子一样。"
+      },
+      {
+        "translation": "堂堂一位公司社长，竟然会说出如此失礼的话来。"
+      },
+      {
+        "translation": "堂堂一名职业选手，参加比赛竟然还会迟到，实在不可思议。"
+      }
+    ]
   },
   "ja_Noun_44": {
-    "title": "Noun ともなると (〜to mo naru to)",
-    "shortExplanation": "'When it comes to...', emphasizes a change of situation or status.",
-    "longExplanation": "Noun + ともなると 指示 a change of state or circumstances once that noun becomes relevant or once one attains that position. It conveys that 'once it’s X, things change' or 'when it comes to X...'.",
-    "formation": "名词 + ともなると"
+    "title": "名词 + ともなると (〜to mo naru to)",
+    "shortExplanation": "强调一旦到了某种特殊时期、阶段或地位，情况就会发生显著变化；“一旦到了……（就）……”、“一成为……”。",
+    "longExplanation": "句型“名词 + ともなると”（接在表示特殊时期、节庆、年龄或特殊身份地位的名词之后，亦可接动词普通形）用于强调一旦达到了某种特殊的阶段、重要时刻或相应高度，事态或周围环境就会发生与平常截然不同的显著变化（“一旦到了……的时候就会……”、“只要一上升到……层面就……”）。后项多陈述随之而来的必然现象、自然产生的明显变化。",
+    "formation": "名词 + ともなると | 动词普通形 + ともなると",
+    "examples": [
+      {
+        "translation": "一旦到了圣诞节，整座城市看起来都闪闪发光。"
+      },
+      {
+        "translation": "孩子要是能主动承认自己的过错，那性质可就不一样了。"
+      },
+      {
+        "translation": "一到暑假，海边到处挤满了观光游客。"
+      },
+      {
+        "translation": "一到考试周，图书馆就比平时更加拥挤不堪。"
+      }
+    ]
   },
   "ja_Noun_45": {
-    "title": "Noun ともなれば (〜to mo nareba)",
-    "shortExplanation": "表示 'if it comes to', 'when', or 'once'.",
-    "longExplanation": "The grammar point ～ともなれば is used to stress the likelihood of a change or consequence that comes about due to the situation expressed before ともなれば. 可以翻译为 'when it comes to', 'once', or 'if it comes to' in English. It's usually used with nouns.",
-    "formation": "名词 + ともなれば"
+    "title": "名词 + ともなれば (〜to mo nareba)",
+    "shortExplanation": "强调一旦到了某种重要关头、地位或特殊阶段，就会理所当然地产生相应变化；“一旦到了……（就）……”、“要是成为……”。",
+    "longExplanation": "句型“名词 + ともなれば”（由动词“なる”的假定形与副助词“とも”复合而成）用于强调一旦上升到了某个重大阶段、关键时刻或特殊身份地位，就必然会伴随产生相应的心理状态、环境变化或严峻考验（“一旦到了……阶段，就理所当然会……”、“若是到了……关头”）。常用于人生大事（如结婚、大考、升职等）或具有决定性意义的阶段转变。",
+    "formation": "名词 + ともなれば | 动词普通形 + ともなれば",
+    "examples": [
+      {
+        "translation": "一旦面临考试，绝大多数人都会感到紧张。"
+      },
+      {
+        "translation": "要是他当上了领队，团队的整体表现肯定会进一步提升吧。"
+      },
+      {
+        "translation": "一到了暑假，各处的旅游胜地总是游人如织。"
+      },
+      {
+        "translation": "一旦谈及结婚，往往有许多事情光凭两个人彼此相爱是无法解决的。"
+      }
+    ]
   },
   "ja_Noun_46": {
-    "title": "Noun と相まって (~ to aimatte)",
-    "shortExplanation": "用于表达 'in combination with', 'together with', 'along with'.",
-    "longExplanation": "The Noun と相まって grammar point is 用于表示 that something happens or is the result of two or more factors working together. 可以翻译为 'in combination with', 'together with' or 'along with' in English. It is used with nouns.",
-    "formation": "名词 + と相まって"
+    "title": "名词 + と相まって (~ to aimatte)",
+    "shortExplanation": "表示多种因素相互结合、产生协同效应或相辅相成；“与……相结合”、“加上……的作用”。",
+    "longExplanation": "句型“名词 + と相まって”（源自古语动词“相まつ”，意为相互配合、交织作用）用于表示两项或多项有利因素、条件相互结合，产生协同增强效应，从而带来了极其显著的积极效果或美好结果（“再加上……的配合”、“与……相互交织/相辅相成”）。常以“AとB（と）が相まって”或“AがBと相まって”的形式出现，多用于形容风景绝美、料理绝妙、事业大获成功等。",
+    "formation": "名词 + と相まって（常见形式：名词1 と 名词2（与）が相まって ｜ 名词1 が 名词2 と相まって）",
+    "examples": [
+      {
+        "translation": "再加上风和日丽的好天气，野餐取得了极大的成功。"
+      },
+      {
+        "translation": "自身的努力加上运气的相助，他顺利通过了考试。"
+      },
+      {
+        "translation": "向日葵油与大蒜的风味相得益彰，这道菜非常美味。"
+      },
+      {
+        "translation": "新技术与丰富经验相辅相成，使我们成功攻克了这一难题。"
+      }
+    ]
   },
   "ja_Noun_47": {
-    "title": "Noun なくして～はない (Noun nakushite ~ wa nai)",
-    "shortExplanation": "表示 'without ~, there can't be ~'; 'can't do ~ without first doing ~'.",
-    "longExplanation": "The なくして grammar point is 用于表示 that something is indispensable or necessary for something else to occur. 'Without' the first noun, the second part 'cannot exist/occur'. It demonstrates the principle of causality or necessity.",
-    "formation": "名词 + なくして + Sentence ～はない"
+    "title": "名词 + なくして～はない (nakushite ~ wa nai)",
+    "shortExplanation": "表示“如果没有……就无法……”，强调某事物是必不可少的先决条件。",
+    "longExplanation": "句型“名词 + なくして～はない”（或 なくしては～ない）是较为庄重的书面语表达，表示“如果缺少了前项的事物，后项就根本不可能实现或成立”，强调前项是不可或缺的前提条件或根本基础。常与“努力”、“愛（爱）”、“信頼（信任）”、“協力（协作）”等表示精神品质、抽象价值或核心要素的名词连用。后半句必须接否定意义的表达，如“～はない”、“～はあり得ない”、“～はできない”。",
+    "formation": "名词 + なくして(は) + ［否定表达：～はない / ～できない］",
+    "examples": [
+      {
+        "translation": "没有努力就没有成功。"
+      },
+      {
+        "translation": "没有时间就做不出完美的作品。"
+      },
+      {
+        "translation": "没有经历就没有成长。"
+      },
+      {
+        "translation": "没有领导力，团队就不可能取得成功。"
+      }
+    ]
   },
   "ja_Noun_48": {
-    "title": "Noun なしでは～ない (Noun nashi de wa ~nai)",
-    "shortExplanation": "表示 the necessity of something; 'cannot do without', 'not possible without'.",
-    "longExplanation": "Noun なしでは～ない is used to emphasize that something is indispensable. 可以翻译为 'cannot do without' or 'not possible without.'",
-    "formation": "名词 + なしでは～ない"
+    "title": "名词 + なしでは～ない (nashi de wa ~ nai)",
+    "shortExplanation": "表示“要是没有……就无法……”，强调某事物是不可或缺的。",
+    "longExplanation": "句型“名词 + なしでは～ない”用于表示“如果缺少了该事物，某项行为、状态或结果便无法成立或进行”（“要是没有……就不能/无法……”）。既可用于“水”、“电脑”等具体的生活用品、客观条件，也可用于“帮助”、“友情”等抽象概念。后半句常接可能动词的否定形式或表示不可能的短语，如“～られない”、“～できない”、“～成り立たない”。",
+    "formation": "名词 + なしでは + ［否定表达：～ない / ～られない / ～成り立たない］",
+    "examples": [
+      {
+        "translation": "没有水就无法生存。"
+      },
+      {
+        "translation": "如果没有他的帮助，就无法解决这个问题。"
+      },
+      {
+        "translation": "没有电脑，现代商业就无法运转。"
+      },
+      {
+        "translation": "如果缺少了友情，人生大概会很乏味吧。"
+      }
+    ]
   },
   "ja_Noun_49": {
-    "title": "Noun なしには～ない (Noun nashi ni wa ~nai)",
-    "shortExplanation": "Means 'without', 'cannot do without', 'not possible without'.",
-    "longExplanation": "The なしには～ない grammar point is 用于表达 that without the mentioned noun, something is not possible. 可以翻译为 'cannot (do) without ~', or 'not possible without ~'.",
-    "formation": "名词 + なしには + 动词-negative"
+    "title": "名词 + なしには～ない (nashi ni wa ~ nai)",
+    "shortExplanation": "表示“若无……就无法……”，比“なしでは”更具书面语色彩，强调前提的不可或缺。",
+    "longExplanation": "句型“名词 + なしには～ない”表示“如果缺乏前项的事物，后项的动作或状态就绝不可能实现”（“若没有……就无法……”）。在语义上与“～なしでは～ない”基本相同，但“なしには”更具文雅、庄重的书面语色彩，强调该前提是达成目标不可替代的基础。后半句必须接动词的否定形式（尤其是可能态否定，如“～できない”、“～られない”）。",
+    "formation": "名词 + なしには + ［动词否定形：～ない / ～られない］",
+    "examples": [
+      {
+        "translation": "没有钱就无法生活。"
+      },
+      {
+        "translation": "没有爱就无法抚育孩子。"
+      },
+      {
+        "translation": "没有他，这项企划就无法推进。"
+      },
+      {
+        "translation": "没有水就无法生存下去。"
+      }
+    ]
   },
   "ja_Noun_51": {
-    "title": "Noun + ならでは (~nara de wa)",
-    "shortExplanation": "表示 something unique or characteristic only of that noun; 'only found in', 'only possible with'.",
-    "longExplanation": "The pattern Noun + ならでは highlights something that is unique or distinctive to that noun, suggesting that only this place, person, or thing could possess or create it.",
-    "formation": "名词 + ならでは"
+    "title": "名词 + ならでは (nara dewa)",
+    "shortExplanation": "表示“只有……才有的”、“特有的”，强调某人或某地独具的特色与魅力。",
+    "longExplanation": "句型“名词 + ならでは”用于强调某种优点、特色、风味或魅力是只有该人、该地或该事物才独有的，其他任何地方或他人均无法企及（“只有……才有的”、“……特有的”）。多带有强烈的赞赏与积极评价色彩。常以作定语修饰后项名词的形式“名词1 + ならではの + 名词2”（如“日本ならではの文化”）出现，或作为谓语结句“～ならではだ / ならではのものだ”。",
+    "formation": "名词 + ならではの + 名词 / 名词 + ならではだ",
+    "examples": [
+      {
+        "translation": "这真是只有在日本才能见到的风景呢。"
+      },
+      {
+        "translation": "新鲜的鱼是只有在这个小镇才能品尝到的特产。"
+      },
+      {
+        "translation": "他的精湛技术是独属于他一人的绝技。"
+      },
+      {
+        "translation": "这件手工艺精品，只有她才能制作得出来。"
+      }
+    ]
   },
   "ja_Noun_52": {
-    "title": "Noun なり Noun なり (A nari B nari)",
-    "shortExplanation": "Lists alternatives of the same kind; 'either A or B', 'A or B, for example'.",
-    "longExplanation": "The pattern AなりBなり is used to suggest alternatives or options, usually of the same category. 可以翻译为 'whether A or B' or 'A or B, for example'.",
-    "formation": "名词 + なり + 名词 + なり"
+    "title": "名词1 + なり + 名词2 + なり (nari ~ nari)",
+    "shortExplanation": "列举同类事物作为备选建议；“比如……或者……之类”、“无论……还是……”。",
+    "longExplanation": "句型“名词1 + なり + 名词2 + なり”用于从同类事物中列举出两项代表性事例作为备选方案供对方挑选，表示“无论选择A还是选择B都可以，任选其一均可”（“比如A或者B之类”、“……也好，……也好”）。后半句通常接提议、劝诱、请求或建议对方采取行动的表达，如“～てください”、“～たらどうか”。",
+    "formation": "名词1 + なり + 名词2 + なり（后常接助词或动词）",
+    "examples": [
+      {
+        "translation": "你有什么兴趣爱好吗，比如电影或者音乐之类的？"
+      },
+      {
+        "translation": "请给我拿点喝的，红茶或者咖啡什么的都行。"
+      },
+      {
+        "translation": "吃点东西吧，面包或者饭团什么的。"
+      },
+      {
+        "translation": "请坐出租车或者搭公交车过来吧。"
+      }
+    ]
   },
   "ja_Noun_53": {
-    "title": "Noun なりとも (~nari tomo)",
-    "shortExplanation": "指示 even a small amount or degree; 'at least', 'even a little'.",
-    "longExplanation": "Noun + なりとも is 用于展示 that even a small amount or degree is valuable or needed. It translates as 'at least' or 'even a little' in English.",
-    "formation": "名词 + なりとも"
+    "title": "名词 + なりとも (nari tomo)",
+    "shortExplanation": "表示哪怕数量极少或程度极轻的最低要求；“哪怕只是……也好”、“哪怕稍微……”。",
+    "longExplanation": "句型“名词 + なりとも”常接在表示极少数量、极短时间或极小程度的词语（如“一目”、“一言”、“少し”、“わずか”）之后，表示“即使达不到最高期望，哪怕只有这一点点最低限度也好”（“哪怕只是一点点……”、“哪怕……也好”）。语气庄重、客气而委婉，常与表达说话人愿望、希望或建议的句尾（如“～たい”、“～てほしい”、“～べきだ”）搭配使用。",
+    "formation": "名词（多为表示极小数量的词） + なりとも",
+    "examples": [
+      {
+        "translation": "因为时间有限，哪怕只练习一个小时也好，也应该抓紧练一练。"
+      },
+      {
+        "translation": "哪怕只是一句道歉的话，我也希望能从他嘴里听到。"
+      },
+      {
+        "translation": "这个项目哪怕能增加哪怕一名成员也好，非常需要人手。"
+      },
+      {
+        "translation": "哪怕只是一句话，我也想向您表达我的感谢。"
+      }
+    ]
   },
   "ja_Noun_54": {
-    "title": "Noun に Noun を重ねて (A ni B wo kasanete)",
-    "shortExplanation": "This expression is used to describe repeated actions or states, 'one after another' or 'pile up'.",
-    "longExplanation": "The structure Noun に Noun を重ねて is 用于表示 the repetition of actions or states. In English, this could be translated as 'one after another' or 'pile up'. It's typically used to emphasize a great deal of continuation or accumulation of something.",
-    "formation": "名词 に 名词 を重ねて"
+    "title": "名词 + に + 名词 + を重ねて (ni ~ o kasanete)",
+    "shortExplanation": "表示同一行为或事态接连不断地重复发生；“屡屡……”、“一再……”、“接连……”。",
+    "longExplanation": "句型“名词 + に + 名词 + を重ねて”（前后使用同一个名词，源于动词“重ねる”，意为层叠、重叠）用于强调某种动作、经历或事态的大量重复与累积（“接连不断地……”、“一次又一次地……”）。既可用于表达坚持不懈的努力或探讨（如“努力に努力を重ねて”），也常用于描述接二连三的挫折、失败或麻烦（如“失敗に失敗を重ねて”），后文多引出由此导致的最终结果。",
+    "formation": "名词（同词重复） + に + 名词 + を重ねて（或 を重ねる / を重ねた結果）",
+    "examples": [
+      {
+        "translation": "经历了一次又一次的失败，她最终还是辞职离开了公司。"
+      },
+      {
+        "translation": "工作一项接着一项压过来，他已经精疲力竭了。"
+      },
+      {
+        "translation": "考试没及格，他陷入了一次又一次的失望之中。"
+      },
+      {
+        "translation": "他接二连三地惹出各种麻烦，最终被学校勒令退学了。"
+      }
+    ]
   },
   "ja_Noun_55": {
-    "title": "Noun にあっては (Noun ni atte ha)",
-    "shortExplanation": "指示 a specific situation or environment in which something happens or is the case.",
-    "longExplanation": "The にあっては grammar point is used after a noun that 指示 a specific situation or environment. It 表示 the context in which an event takes place, or the circumstances that pertain to the information to be explained or highlighted. 可以翻译为 'in', 'at' or 'under' in English.",
-    "formation": "名词 + にあっては"
+    "title": "名词 + にあっては (ni atte wa)",
+    "shortExplanation": "表示处于某种特殊的境地、时期或状况之中；“处于……之中”、“在……的情况下”。硬朗的书面语。",
+    "longExplanation": "句型“名词 + にあっては”（相当于庄重的“～においては”）接在表示特殊时期、非常状况、特定境遇或立场的名词之后，表示“置身于这种特殊的环境或局势之中”（“处于……之下”、“在……时期”）。常与“戦争時（战争时期）”、“危機（危机）”、“不況（萧条）”、“非常時（紧急关头）”等具有严峻性或转折性的背景词搭配使用，强调该背景对后项事件或对策的决定性影响。多用于书面语或政论性文章。",
+    "formation": "名词（时期/局势/境况） + にあっては",
+    "examples": [
+      {
+        "translation": "在战争时期，所有人都面临着重重困难。"
+      },
+      {
+        "translation": "在经济危机之中，许多企业都濒临破产的边缘。"
+      },
+      {
+        "translation": "在萧条萧索的大环境下，任何企业都不得不削减成本。"
+      },
+      {
+        "translation": "在改革时期，必须重视并珍惜新的创意。"
+      }
+    ]
   },
   "ja_Noun_56": {
-    "title": "Noun にあるまじき Noun (Noun ni aru majiki Noun)",
-    "shortExplanation": "表示 the idea of 'unfitting', 'unbecoming' or 'inappropriate'.",
-    "longExplanation": "The grammar point Noun にあるまじき Noun is 用于表达 that the noun doesn't fit or is inappropriate in some way for the other noun. It can translate loosely as 'unfitting for', 'unbecoming of' or 'something that must not be for a/ the noun'.",
-    "formation": "Noun1 にあるまじき Noun2"
+    "title": "名词1 + にあるまじき + 名词2 (ni aru majiki)",
+    "shortExplanation": "表示出于某种身份、职业或作为人不该有的恶劣行为；“不应有的……”、“决不该有的……”。",
+    "longExplanation": "句型“名词1 + にあるまじき + 名词2”是一种庄重的文语表达，用于对某人的言行举止提出极其强烈的道义谴责。其含义为“从名词1的职业地位、社会身份或作为人的道德底线来看，名词2是绝不应该出现或绝不可容忍的恶劣言行”（“决不该有的……”、“不配为人/教师的……”）。名词1多为具有道德约束力的身份（如“教師”、“医者”、“人間”、“社会人”），名词2多为“言動”、“行為”、“振る舞い”等表示行为的词汇。",
+    "formation": "名词1（身份/职业/地位） + にあるまじき + 名词2（言行/行为/态度）",
+    "examples": [
+      {
+        "translation": "他做出了绝不应该是一个教师所能有的言行。"
+      },
+      {
+        "translation": "这是绝不应有人性的人类所做出的残暴行径。"
+      },
+      {
+        "translation": "她表现出了与社长身份极不相符、绝不应有的失态举止。"
+      },
+      {
+        "translation": "那是作为一个社会人绝不该有的行为。"
+      }
+    ]
   },
   "ja_Noun_57": {
-    "title": "Noun にして (Noun ni shite)",
-    "shortExplanation": "表示 the idea 'even for', 'even though', or 'in spite of'.",
-    "longExplanation": "The grammar point Noun にして 表示 a sense of surprise, disbelief or unexpectedness in response to a situation or circumstance. Generally, it is used when the speaker wants to convey that something is unexpected even for someone (noun) or in their situation.",
-    "formation": "名词 + にして"
+    "title": "名词 + にして (ni shite)",
+    "shortExplanation": "表示“哪怕是像……这样高水准的人也……”，对出乎意料的事态表示惊讶。庄重书面语。",
+    "longExplanation": "句型“名词 + にして”（在此用法中相当于“〜であって／〜ほどの高いレベルの人でさえ”）接在具备高超能力、丰富经验或优越条件的身份名词之后，表示“即便是像……这样优秀/专业的人，竟然也发生了令人意外的情况”，以此表达说话人极度的惊讶、难以置信或叹息（“哪怕是……也……”、“即便贵为……却……”）。后半句往往跟与该身份能力不相符的失败、失误或困惑。",
+    "formation": "名词（具备高水准能力或地位的人） + にして",
+    "examples": [
+      {
+        "translation": "他身为主治医师，竟然连这种基础知识都不具备，真令人难以置信。"
+      },
+      {
+        "translation": "哪怕是像他这样经验丰富的老司机，也还是发生了交通事故。"
+      },
+      {
+        "translation": "哪怕是成绩如此优异的学生，也没能解出那道难题。"
+      },
+      {
+        "translation": "哪怕是像他这样勤奋好学的人，也没能理解那个问题。"
+      }
+    ]
   },
   "ja_Noun_58": {
-    "title": "Noun にして初めて (Noun nishite hajimete)",
-    "shortExplanation": "表示 'only when/after... for the first time'.",
-    "longExplanation": "The phrase Noun にして初めて is 用于表达 a sense of realization or experience that only came about or was felt after reaching that particular stage or status. In English, it could be translated as 'only when/after... for the first time'.",
-    "formation": "名词 + にして初めて"
+    "title": "名词 + にして初めて (ni shite hajimete)",
+    "shortExplanation": "表示“直到处于某种年龄、阶段或身份时，才第一次体会/领悟到”；“直到……才初次……”。",
+    "longExplanation": "句型“名词 + にして初めて”接在表示年龄、人生阶段或特定职位身份的名词（如“40歳”、“大人”、“親”、“社長”）之后，表示经过漫长的岁月，直到进入这一阶段或登上这一地位之后，才初次有了某种切身体验或大彻大悟（“直到……才初次……”、“到了……才第一次……”）。强调只有达到该特定状态，才促成了后项深刻领悟或全新经历的产生。",
+    "formation": "名词（年龄/地位/人生阶段） + にして初めて",
+    "examples": [
+      {
+        "translation": "直到长大成人，我才第一次真正体会到父母的辛劳。"
+      },
+      {
+        "translation": "他直到40岁时，才初次体验了海外旅行。"
+      },
+      {
+        "translation": "只有当了父母之后，她才第一次理解了抚养孩子的艰难不易。"
+      },
+      {
+        "translation": "直到当上社长，他才初次痛感到整家公司沉甸甸的重责。"
+      }
+    ]
   },
   "ja_Noun_59": {
-    "title": "Noun にすら (〜ni sura)",
-    "shortExplanation": "表示 the concept of 'even'; 'even in', 'even as', 'even to'.",
-    "longExplanation": "The 〜にすら grammar point is 用于展示 surprise that an action or situation applies even to the noun in question. It can be translated into English as 'even in', 'even as', or 'even to'. It's often used with negative or unexpected statements, emphasizing that 'even' in this particular case something can't or doesn't happen.",
-    "formation": "名词 + にすら"
+    "title": "名词 + にすら (ni sura)",
+    "shortExplanation": "表示“甚至连……都（不）”，由格助词“に”与表示极端事例的提示助词“すら”复合而成。比“にさえ”更为文雅。",
+    "longExplanation": "句型“名词 + にすら”是由表示对象、场所或事态的格助词“に”与提示极端事例的副助词“すら”（相当于“さえ”）组合而成的书面语表达。通过列举最极端、最理所当然的一项，以此反衬其他更不用提（“甚至连……也/都……”）。后半句多与否定形式连用，表达说话人的强烈惊讶、失望、意外或叹息。相比于口语中常用的“～にさえ”，“～にすら”显得更典雅、更具文学色彩。",
+    "formation": "名词 + にすら",
+    "examples": [
+      {
+        "translation": "甚至连他都没能解出那道题。"
+      },
+      {
+        "translation": "她甚至连测试都没能及格。"
+      },
+      {
+        "translation": "这只狗甚至对自己的名字都毫无反应。"
+      },
+      {
+        "translation": "我甚至忙得连跟他说句话的余裕都没有。"
+      }
+    ]
   },
   "ja_Noun_60": {
-    "title": "Noun にとどまらず～も (~ ni todomarazu ~ mo)",
-    "shortExplanation": "This 表示 the idea of 'not only...but also', 'not stopping at...'.",
-    "longExplanation": "This grammar point is 用于表达 that something is not limited to just one thing (the thing before にとどまらず), but also includes other things (the thing after も). 可以翻译为 'not only... but also...' or 'not stopping at...'.",
-    "formation": "名词 + にとどまらず + 名词 + も"
+    "title": "名词1 + にとどまらず + 名词2 + も (ni todomarazu ~ mo)",
+    "shortExplanation": "表示不仅局限于某一范围，更进一步扩展到其他领域；“不仅止于……而且……”。",
+    "longExplanation": "句型“名词1 + にとどまらず + 名词2 + も”源于动词“とどまる（止步、停留）”的否定连用形“ず”，表示某种影响、活动、范围或势头不仅停留在前项这一局部范围之内，更进一步波及或扩展到后项更大的范围或其它领域（“不仅限于……连……也……”、“不止于……甚至……”）。语气严谨庄重，多用于报刊社论、新闻报道及正式论述文。",
+    "formation": "名词1 + にとどまらず + 名词2 + も",
+    "examples": [
+      {
+        "translation": "这款应用程序不仅支持日语，还支持其他多种语言。"
+      },
+      {
+        "translation": "他的兴趣不仅局限于音乐，对电影制作也同样充满热情。"
+      },
+      {
+        "translation": "他的影响力不仅局限在家庭内部，更波及到了整个地区。"
+      },
+      {
+        "translation": "她的才华不仅体现在绘画上，更延伸到了文学领域。"
+      }
+    ]
   },
   "ja_Noun_61": {
-    "title": "Noun にひきかえ Noun は (~ni hikikae ~ wa)",
-    "shortExplanation": "Represents 'in contrast to', 'as opposed to'.",
-    "longExplanation": "The grammar point Noun にひきかえ Noun は is used in Japanese to express contrast or opposition between two nouns. It translates to 'as opposed to' or 'in contrast to' in English. The first noun represents what is being contrasted against and the second noun represents the main subject.",
-    "formation": "名词 1 + にひきかえ + 名词 2 + は"
+    "title": "名词1 + にひきかえ + 名词2 + は (ni hikikae ~ wa)",
+    "shortExplanation": "将两事物进行鲜明对比；“与……相比迥然不同的是……”、“与……形成鲜明对比的是……”。",
+    "longExplanation": "句型“名词1 + にひきかえ + 名词2 + は”源于动词“引き換える（兑换、对照）”，用于将两个事物、人物或状态进行强烈对比，突出两者之间天差地别的悬殊反差（“与……相反”、“与……形成鲜明对照的是……”）。前后项往往在性质上形成极端的对立（如亲切与冷漠、昔日与现代），并往往带有说话人强烈的主观感情色彩，如对其中一方的赞美、同情或对另一方的批评、感叹。",
+    "formation": "名词1 + にひきかえ + 名词2 + は",
+    "examples": [
+      {
+        "translation": "与他的热情体贴形成鲜明对比的是，她显得冷漠无情。"
+      },
+      {
+        "translation": "与夏天截然相反，冬天则被冰雪覆盖，寒冷刺骨。"
+      },
+      {
+        "translation": "与日本的车站不同，美国的车站显得格外宽敞辽阔。"
+      },
+      {
+        "translation": "与过去大不相同的是，现代科技取得了日新月异的进步。"
+      }
+    ]
   },
   "ja_Noun_62": {
-    "title": "Noun にもまして (〜ni mo mashite)",
-    "shortExplanation": "This 表示 'Even more than; exceeding'.",
-    "longExplanation": "The Nounにもまして grammar point is 用于表达 that something is even more or exceeds the noun that it’s being compared to. It translates to expressions like 'even more than' or 'exceeding' in English. It is used when making a comparison to emphasize the greater degree of something.",
-    "formation": "名词 + にもまして"
+    "title": "名词 + にもまして (〜ni mo mashite)",
+    "shortExplanation": "表示程度甚至超过前者；“比……更加”、“更加……”、“甚至胜过……”。",
+    "longExplanation": "句型“名词 + にもまして”用于对比，表示后项事物的性质、程度甚至超过了作为基准的前项名词（“比……更加”、“甚至胜过……”）。通常前项事物本身的程度就已经非常显著或不同寻常，而说话人强调后项的事态还要更胜一筹。常与表示过去时间的词（如“以前”、“去年”、“昨日”）结合表示“比起以往更加……”，也常与疑问词“何”搭配构成“何にもまして”，表示“比任何事物都……”、“最……”。",
+    "formation": "名词 + にもまして（或 疑问词 + にもまして）",
+    "examples": [
+      {
+        "translation": "比起他，我甚至更加热爱音乐。"
+      },
+      {
+        "translation": "她的经验之丰富，远超其实际年龄。"
+      },
+      {
+        "translation": "今天比昨天还要寒冷。"
+      },
+      {
+        "translation": "这座大楼因其优美的设计而闻名，其名气甚至胜过了高度本身。"
+      }
+    ]
   },
   "ja_Noun_63": {
-    "title": "Noun によらず (～ni yorazu)",
-    "shortExplanation": "Regardless of, irrespective of.",
-    "longExplanation": "The ～によらず grammar point is 用于表达 the meaning 'regardless of' or 'irrespective of' in English. It is used when the outcome does not change regardless of differences in conditions.",
-    "formation": "名词 + によらず"
+    "title": "名词 + によらず (～ni yorazu)",
+    "shortExplanation": "表示事态不受某种条件或差异的左右；“不论……”、“不管……”、“不依……”。",
+    "longExplanation": "句型“名词 + によらず”源自“による”的否定连用形，用于表示后项的结果、状态或规则不受前项名词所涉及的条件、区别、标准等要素的左右与限制，一律同样适用或保持不变（“不论……”、“不管……”、“不拘……”）。常与“年齢（年龄）”、“国籍（国籍）”、“理由（理由）”、“季節（季节）”等表示差异或种类的名词搭配使用。属于书面语色彩较浓的庄重表达。",
+    "formation": "名词 + によらず",
+    "examples": [
+      {
+        "translation": "不论学习时间长短，结果大概都不会有所改变吧。"
+      },
+      {
+        "translation": "不论哪个季节，这个地区始终都很温暖。"
+      },
+      {
+        "translation": "这是一场不论年龄大小、大家都能乐在其中的活动。"
+      },
+      {
+        "translation": "不论国籍为何，任何人都可以参加。"
+      }
+    ]
   },
   "ja_Noun_64": {
-    "title": "Noun に先駆けて (〜ni saki gakete)",
-    "shortExplanation": "Meaning 'ahead of', 'before', or 'preceding in time'.",
-    "longExplanation": "The grammar point 〜に先駆けて 指示 something happening ahead or before something else in terms of time. Typically used in written language or formal speech.",
-    "formation": "名词 + に先駆けて"
+    "title": "名词 + に先駆けて (〜ni sakigakete)",
+    "shortExplanation": "表示走在其他人或事物的前面抢先采取行动；“先于……”、“比……更早”、“作为先驱……”。",
+    "longExplanation": "句型“名词 + に先駆けて”源自他动词“先駆ける”（领跑、开风气之先），用于表示在时间上领先于其他人物、团体、竞争对手或国家地区，率先开创、试行或实施某项举措（“先于……”、“走在……之前”）。与侧重于事前筹备的“～に先立って”相比，“～に先駆けて”更鲜明地强调开创性、先驱性以及领先于竞争对手的语感。也可以使用“～に先駆け”的形式，常出现于新闻报道、商业企划和正式公文中。",
+    "formation": "名词 + に先駆けて（或 に先駆け）",
+    "examples": [
+      {
+        "translation": "这部电影先于日本在美国上映。"
+      },
+      {
+        "translation": "他比周围的人更早一步听到了那个消息发表。"
+      },
+      {
+        "translation": "约翰逊先生先于其他与会人员到达了会场。"
+      },
+      {
+        "translation": "她比同班同学更早一步完成了学业并毕业。"
+      }
+    ]
   },
   "ja_Noun_65": {
-    "title": "Noun に即した Noun (A ni sokushita B)",
-    "shortExplanation": "表示 the idea of 'in accordance with', 'based on'.",
-    "longExplanation": "The grammar point 'Noun に即した Noun' is 用于表达 the idea of something being done in accordance with or based on something else. Usually, the first noun is principle, rule, reality, etc. and the second noun could be action, method, plan, etc.",
-    "formation": "Noun1 + に即した + Noun2"
+    "title": "名词1 + に即した + 名词2 (A ni sokushita B)",
+    "shortExplanation": "作定语修饰后续名词，表示符合并贴近实际、规则或要求；“符合……的”、“依据……的”、“贴近……的”。",
+    "longExplanation": "句型“名词1 + に即した + 名词2”是动词“即する”（紧密贴合、依据）的连体修饰形式，用于表示名词2（通常是计划、对策、改革、行动、方针等）紧密贴合前项名词1所代表的现实情况、法律规则、社会需求或指导原则（“符合……的”、“切合……的”、“依据……的”）。属于公文、论文、商务或新闻中极其常见的正式文体。",
+    "formation": "名词1 + に即した + 名词2",
+    "examples": [
+      {
+        "translation": "我们需要一项贴合社会需求的教育改革。"
+      },
+      {
+        "translation": "应当采取符合国际法的应对措施。"
+      },
+      {
+        "translation": "大家行动起来，要符合团队的方针政策。"
+      },
+      {
+        "translation": "我们必须制定出切合实际的计划。"
+      }
+    ]
   },
   "ja_Noun_66": {
-    "title": "Noun に即して Verb (〜ni soku shite ~)",
-    "shortExplanation": "The grammar point Noun に即して Verb is used to mean 'to act in accordance with', 'in line with' or 'based on'.",
-    "longExplanation": "The formation Noun に即して Verb is used when someone is doing something based on or in accordance with some norms, rules, decisions or principles. This structure is often used in business or official contexts.",
-    "formation": "名词 + に即して + 动词"
+    "title": "名词 + に即して + 动词 (〜ni sokushite〜)",
+    "shortExplanation": "作状语修饰后续动词，表示紧跟现实或按照规则行动；“依据……”、“按照……”、“结合……”。",
+    "longExplanation": "句型“名词 + に即して + 动词”是动词“即する”的连用形，在句中充当状语修饰后续动词，表示严格遵循某种准则、依据客观事实或切合实际情况来做出决断、执行行动（“依据……”、“按照……”、“结合……而……”）。与修饰名词的“～に即した”相对应，“～に即して”专用于修饰动词谓语。常用于商业决策、法律适用、学术研讨及公文通知等庄重语境。",
+    "formation": "名词 + に即して + 动词",
+    "examples": [
+      {
+        "translation": "让我们按照公司的方针政策来行动吧。"
+      },
+      {
+        "translation": "依据法律做出判断是至关重要的。"
+      },
+      {
+        "translation": "我们根据他的意见调整了方案。"
+      },
+      {
+        "translation": "只要按照规则行事，就不会出现问题。"
+      }
+    ]
   },
   "ja_Noun_67": {
-    "title": "Noun に言わせれば (Noun ni iwasereba)",
-    "shortExplanation": "表示 'according to', 'if you ask', 'in the opinion of'.",
-    "longExplanation": "The に言わせれば grammar point is used when we want to express someone's opinion or viewpoint. 可以翻译为 'according to', 'if you ask', or 'in the opinion of'. This form is mostly used in formal or written language.",
-    "formation": "名词 + に言わせれば"
+    "title": "名词 + に言わせれば (Noun ni iwasereba)",
+    "shortExplanation": "从某人的立场或角度引述其意见或看法；“在……看来”、“按……的说法”、“要是听……说”。",
+    "longExplanation": "句型“名词 + に言わせれば”由动词“言う”的使役形加假定形构成（字面意思为“要是让某人说的话”），接在指代人物或团体的名词后，用于从该人的独特立场、视角或专业身份出发引述其主观观点或评价（“在……看来”、“按……的说法”、“在……眼里”）。常用于引述专家的权威见解，或者表达该人特有的看法（有时带有些许主观独断或与常人相异的色彩）。口语中也常说“～に言わせたら”。",
+    "formation": "名词（指人或具备意志的团体） + に言わせれば（口语常作：に言わせたら）",
+    "examples": [
+      {
+        "translation": "在老师看来，每天坚持学习至关重要。"
+      },
+      {
+        "translation": "按他的看法，他觉得早点结婚比较好。"
+      },
+      {
+        "translation": "在影评人看来，这部电影堪称今年最佳影片。"
+      },
+      {
+        "translation": "在父亲看来，在海外工作的经历非常有价值。"
+      }
+    ]
   },
   "ja_Noun_68": {
-    "title": "Noun に限ったことではない (〜ni kagitta koto dewa nai)",
-    "shortExplanation": "指示 that something is not only limited to; 'not only', 'not just'.",
-    "longExplanation": "This grammar point is 用于表达 that the statement is not only limited to the noun mentioned before it. In English, 可以翻译为 'not only', 'not just', or sometimes 'not necessarily'. It underscores that what is being said is also true for other things or situations, not just for the specific noun stated.",
-    "formation": "名词 + に限ったことではない"
+    "title": "名词 + に限ったことではない (〜ni kagitta koto dewa nai)",
+    "shortExplanation": "强调某种现象或问题并非仅存在于某单一事物；“不仅限于……”、“不单是……”、“并非只有……如此”。",
+    "longExplanation": "句型“名词 + に限ったことではない”通过否定“限于该名词”，用来明确指出某种情况、社会问题、特性或事态绝非只局限于前项所提及的特定对象，在其他范围、人群、地区或领域中同样广泛存在（“不仅限于……”、“并不单单是……才有的事”）。常用于社会评论、现象分析或议论文中，用于纠正他人狭隘片面的看法。",
+    "formation": "名词 + に限ったことではない（口语常作：に限ったことじゃない）",
+    "examples": [
+      {
+        "translation": "这个问题绝不仅限于日本。"
+      },
+      {
+        "translation": "英语的使用绝不仅限于美国。"
+      },
+      {
+        "translation": "智能手机成瘾绝非仅限于年轻人。"
+      },
+      {
+        "translation": "全球变暖的影响绝不仅限于我们人类。"
+      }
+    ]
   },
   "ja_Noun_69": {
-    "title": "Noun に限ったことでもない (~ni kagitta koto demo nai)",
-    "shortExplanation": "'Not limited to'; 'not just', 'not exclusively'.",
-    "longExplanation": "The grammar point 'Noun に限ったことでもない' typically 表示 that something is not only limited to a specific instance or category. It insinuates that there are also other instances or categories involved. In English, 可以翻译为 'not limited to', 'not just', or 'not exclusively'.",
-    "formation": "名词 + に限ったことでもない"
+    "title": "名词 + に限ったことでもない (~ni kagitta koto demo nai)",
+    "shortExplanation": "委婉指出并不单单局限于某一方面；“也不见得只局限于……”、“倒也不仅仅是……”。",
+    "longExplanation": "句型“名词 + に限ったことでもない”与“～に限ったことではない”意义基本相同，但由于助词“でも”的加入，语气更加委婉、柔和且富有余地（“倒也不见得只局限于……”、“也不单单是……”）。说话人委婉暗示除了前项提及的对象外，其他事物或方面同样存在类似的情况，从而避免过于生硬绝对的断言。",
+    "formation": "名词 + に限ったことでもない",
+    "examples": [
+      {
+        "translation": "这场考试难度大，倒也不仅仅体现在数学一科上。"
+      },
+      {
+        "translation": "她的可爱之处倒也不仅仅在于长相，我也很喜欢她的性格。"
+      },
+      {
+        "translation": "发生那种问题，倒也不见得只局限于我们国家。"
+      },
+      {
+        "translation": "这位作家的书热销，倒也不仅仅局限于日本。"
+      }
+    ]
   },
   "ja_Noun_70": {
-    "title": "Noun に限る (~ni kagiru)",
-    "shortExplanation": "表示 the idea that 'nothing but', 'nothing is better than'.",
-    "longExplanation": "The noun に限る grammar point is 用于表达 the idea that there is nothing better than the noun mentioned in the specific context. It is often used to give personal opinions, advice, or recommendations.",
-    "formation": "名词 + に限る"
+    "title": "名词 / 动词 + に限る (~ni kagiru)",
+    "shortExplanation": "主观断定某种做法或事物是最佳选择；“最好不过”、“莫过于……”、“当属第一”。",
+    "longExplanation": "句型“名词 / 动词辞书形 + に限る”用于表达说话人强烈的个人经验、主观判断或热心建议，断言在某种特定情境下，该事物或该做法无疑是最佳、最有效的选择，没有比这更好的了（“……最好不过”、“莫过于……”、“当属第一”）。多用于日常生活经验的交流、抒发感叹或给人提出生活建议。",
+    "formation": "名词 / 动词辞书形 + に限る",
+    "examples": [
+      {
+        "translation": "这种时候，向家人倾诉是最好的办法。"
+      },
+      {
+        "translation": "在寒冷的冬日里，喝上一杯热茶再惬意不过了。"
+      },
+      {
+        "translation": "疲劳的时候，好好睡一觉是最好的补药。"
+      },
+      {
+        "translation": "要想减肥，运动无疑是最好的途径。"
+      }
+    ]
   },
   "ja_Noun_71": {
-    "title": "Noun ぬいた Noun (A nuita B)",
-    "shortExplanation": "表示 the idea of 'taking something out from something else'.",
-    "longExplanation": "This grammar point is used to denote the action of removing or taking out one thing from another. It is usually used with nouns.",
-    "formation": "Noun1 + をぬいた + Noun2"
+    "title": "名词1 + (を)ぬいた + 名词2 (A nuita B)",
+    "shortExplanation": "表示剔除、省去某种成分后的事物；“去掉了……的……”、“不加……的……”、“抽出了……的……”。",
+    "longExplanation": "句型“名词1 + (を)ぬいた + 名词2”使用动词“抜く”（抽出、拔掉、去除、免去）的连体修饰形，用来修饰后面的名词2，表示该事物是剔除、去掉了某种特定成分、配料或杂质（名词1）之后的状态（“去掉了……的……”、“不含……的……”）。在日常餐饮、料理制作中非常多见，常用于表示免去某种佐料或配菜（如去芥末、去胡萝卜、去糖等）。",
+    "formation": "名词1 + (を)ぬいた + 名词2",
+    "examples": [
+      {
+        "translation": "这份沙拉是去掉了胡萝卜的沙拉。"
+      },
+      {
+        "translation": "他喝咖啡时不加糖（把糖去掉了）。"
+      },
+      {
+        "translation": "我在做菜时去掉了盐。"
+      },
+      {
+        "translation": "她去掉了衣服上的污渍。"
+      }
+    ]
   },
   "ja_Noun_72": {
-    "title": "Noun + ぬいて（~nuite)",
-    "shortExplanation": "This is a way to express 'minus' or 'except for' some specific noun.",
-    "longExplanation": "The grammar point Noun + ぬいて is used when you want to exclude a certain noun from the whole or mention something about everything else except for a specific noun. It's usually translated in English as 'minus' or 'except for'. ",
-    "formation": "名词 + ぬいて"
+    "title": "名词 + ぬいて (~nuite)",
+    "shortExplanation": "表示将某项特定对象排除在整体之外；“除去……”、“除了……之外”、“不算……”。",
+    "longExplanation": "句型“名词 + (を)ぬいて”是动词“抜く”（免除、排除）的连用て形（相当于“〜抜きにして / 〜抜きで”），用于从全体讨论范围中剔除某个特定的人物、项目、时间或部分，并对剩余的全部事物做出陈述或评价（“除了……之外”、“除去……不算”）。常用于日常叙述某人缺席，或者除某项特例之外其余全部如此的语境。",
+    "formation": "名词 + (を)ぬいて",
+    "examples": [
+      {
+        "translation": "除了他以外，我们所有人全都到齐了。"
+      },
+      {
+        "translation": "这家餐厅除了儿童套餐之外，所有的菜品都非常美味。"
+      },
+      {
+        "translation": "今天的工作除了午休时间外一直都很忙碌。"
+      },
+      {
+        "translation": "除了休假日，他每天都在工作。"
+      }
+    ]
   },
   "ja_ぬくnuku_73": {
-    "title": " ～ぬく (~nuku)",
-    "shortExplanation": "表示 the concept of doing something completely or thoroughly.",
-    "longExplanation": "'Noun ぬく' is a phrase that conveys the idea of doing an action thoroughly or completely. It demonstrates a determination to carry out a task until the end. While the formation commonly uses verbs, it does convey a meaning similar to the English phrase 'to do completely'.",
-    "formation": "动词-stem + ぬく"
+    "title": "动词连用形 + ぬく (〜nuku)",
+    "shortExplanation": "表示坚持把动作进行到底或彻底做到极致；“……到底”、“坚决……下去”、“彻底……”。",
+    "longExplanation": "复合动词后缀“～ぬく”接在动词连用形（ます形去掉ます）后，主要有两种用法：1）表示顶住艰难困苦、克服一切阻碍坚持将动作进行到底、贯彻终始（“……到底”、“坚持……下去”，如“やり抜く/坚持做到底”、“生き抜く/坚强地活下去”）；2）表示将某种心理状态或动作程度彻底发挥到极致（“极其……”、“极度……”，如“悩み抜く/苦恼至极”、“困り抜く/作难至极”）。体现出坚韧的意志力和极高的完成度。",
+    "formation": "动词ます形（去掉ます） + ぬく",
+    "examples": [
+      {
+        "translation": "他整整一天都坚持把整本书读完了。"
+      },
+      {
+        "translation": "我一定会把这个项目坚持完成到底。"
+      },
+      {
+        "translation": "她每天都去健身房，坚持把所有的锻炼项目彻底做完。"
+      },
+      {
+        "translation": "我们一定会将这款游戏彻底通关解开。"
+      }
+    ]
   },
   "ja_Nounのいかんだ_74": {
-    "title": "Noun+のいかんだ (Noun no ikan da)",
-    "shortExplanation": "Depends on; up to",
-    "longExplanation": "The のいかんだ(Noun no ikan da) grammar point is 用于表达 that something depends on a particular situation or fact. 可以翻译为 'Depends on' or 'up to' in English. The construction no ikan is usually used with nouns and naru verbs.",
-    "formation": "名词 + のいかんだ/名词 + のいかんでは"
+    "title": "名词 + のいかんだ (Noun no ikan da)",
+    "shortExplanation": "位于句尾表示结果完全取决于前项；“取决于……”、“全看……如何”。",
+    "longExplanation": "句型“名词 + のいかんだ”（或连用形“～のいかんで”）源自文言疑问副词“如何（いかん）”，位于句末充当述语，用于庄重地表示事态的成败、决定或最终发展完全取决于前项名词所体现的情形、努力、态度或结果（“取决于……”、“全看……如何”，相当于书面语中的“〜次第だ”）。常与“結果（结果）”、“態度（态度）”、“成績（成绩）”、“理由（理由）”等具有不确定性或可变性的名词搭配。若为假定可能则常用“～のいかんでは”。",
+    "formation": "名词 + のいかんだ（或 のいかんで / のいかんでは）",
+    "examples": [
+      {
+        "translation": "就看他来不来再做决定吧。"
+      },
+      {
+        "translation": "是否留级完全取决于考试的结果。"
+      },
+      {
+        "translation": "视天气情况如何，野餐可能会取消。"
+      },
+      {
+        "translation": "我们接下来的行动取决于他的回答。"
+      }
+    ]
   },
   "ja_Noun_75": {
-    "title": "Noun のいかんでは (Noun no ikan de wa)",
-    "shortExplanation": "It depends on the Noun",
-    "longExplanation": "The のいかんでは grammar point is used when you want to express that the outcome or decision hinges on the condition described in the noun preceding this phrase. 可以翻译为 'depending on ___' or 'it depends on ___' in English.",
-    "formation": "名词 + のいかんでは"
+    "title": "名词 + のいかんでは (Noun no ikan de wa)",
+    "shortExplanation": "表示视前项的具体情况不同而可能会产生某种结果；“根据……的情况不同可能会……”、“视……如何而可能……”。",
+    "longExplanation": "句型“名词 + のいかんでは”接在表示条件、状态或进展的名词后，通过副助词“は”强化假设前提，表示视该事项的具体情况、程度或发展方向不同，后项有可能会出现某种相应的结果或采取特定的对应措施（“根据……的情况不同可能会……”、“视……如何而定”）。后项谓语常常伴随“〜かもしれない（也许）”、“〜こともある（也有可能）”等表示推测或可能性的表达。属于庄重的公文与政论语体。",
+    "formation": "名词 + のいかんでは",
+    "examples": [
+      {
+        "translation": "能否获得大学入学许可，取决于这次考试的成绩如何。"
+      },
+      {
+        "translation": "视天气状况如何，野餐有可能会延期。"
+      },
+      {
+        "translation": "视交通状况如何，有时可能会迟到。"
+      },
+      {
+        "translation": "根据经济形势的好坏，公司的未来将被决定。"
+      }
+    ]
   },
   "ja_Noun_76": {
-    "title": "Noun のいかんにかかわらず (Noun no ikan ni kakawarazu)",
-    "shortExplanation": "Regardless of, irrespective of.",
-    "longExplanation": "The phrase 'Noun のいかんにかかわらず' is 用于表达 that something is the case irrespective of a certain condition. 可以翻译为 'regardless of' or 'irrespective of' in English. This phrase is used with nouns.",
-    "formation": "名词 + のいかんにかかわらず"
+    "title": "名词 + のいかんにかかわらず (Noun no ikan ni kakawarazu)",
+    "shortExplanation": "表示完全不受前项状况或结果的影响；“不论……如何”、“不管……怎样”、“无论……与否”。",
+    "longExplanation": "句型“名词 + のいかんにかかわらず”（同义表达为“～のいかんによらず”）是由文言词“いかん”与“かかわらず”构成的极具庄重感的文言句式，表示不论前项名词所涉及的事态、理由、好坏或结果究竟如何，后项的原则、行动或状态都完全不受其左右与影响，始终一律照常进行或同样成立（“不论……如何”、“不管……怎样”、“无论……与否”）。多用于法律条文、官方公告、正式声明或严谨的学术议论文中。",
+    "formation": "名词 + のいかんにかかわらず（或 のいかんによらず）",
+    "examples": [
+      {
+        "translation": "不论结果如何，他都没有后悔自己的决定。"
+      },
+      {
+        "translation": "不论年龄大小，任何人都完全能够坚持学习。"
+      },
+      {
+        "translation": "不论经验有无，重要的是迈出开始的第一步。"
+      },
+      {
+        "translation": "不论天气如何，徒步活动都将按原计划举行。"
+      }
+    ]
   },
   "ja_Noun_77": {
-    "title": "Noun のいかんによっては (Noun no ikan ni yotte wa)",
-    "shortExplanation": "Depending on the matter; depending on noun",
-    "longExplanation": "The phrase のいかんによっては (no ikan ni yotte wa) is 用于表达 the concept of 'depending on the matter or situation'. It is 用于表示 that the outcome may change based on the condition or quality of the noun (matter) in question.",
-    "formation": "名词 + のいかんによっては"
+    "title": "名词 + のいかんによっては (Noun no ikan ni yotte wa)",
+    "shortExplanation": "表示根据前项事态的情况或结果，可能会产生某种应对或后果；“根据……的不同，也可能会……”、“视……而可能……”。",
+    "longExplanation": "句型“名词 + のいかんによっては”（“いかん”汉字写作“如何”）用于表示前项事物的情况、状态或结果将决定后项事态的发展，特别强调在某种特定情况下可能出现特定的结果或采取特定措施（“根据……的不同，有时也可能会……”、“视……的情况而定”）。相较于“～のいかんによって”，“～によっては”更加着眼于可能会发生的个别可能性或具体应对手段。属于正式的书面语及郑重语表达。",
+    "formation": "名词 + のいかんによっては",
+    "examples": [
+      {
+        "translation": "根据天气情况，我们把野餐推迟吧。"
+      },
+      {
+        "translation": "根据考试结果的不同，有可能可以升学。"
+      },
+      {
+        "translation": "视情况的发展，我会考虑提前退休。"
+      },
+      {
+        "translation": "根据他的反应如何，我们将决定接下来的行动。"
+      }
+    ]
   },
   "ja_Noun_78": {
-    "title": "Noun のいかんによらず (~ no ikan ni yorazu)",
-    "shortExplanation": "Means 'regardless of', 'irrespective of', or 'no matter'",
-    "longExplanation": "The Noun のいかんによらず grammar point is 用于表达 that something is happening, will occur, or is true, regardless of a particular situation or condition. It is often translated as 'irrespective of', 'regardless of', or 'no matter' in English.",
-    "formation": "名词 + のいかんによらず"
+    "title": "名词 + のいかんによらず (~ no ikan ni yorazu)",
+    "shortExplanation": "表示不受前项情况、结果或差异的影响，后项事态依然成立；“不管……如何”、“不论……怎样”。",
+    "longExplanation": "句型“名词 + のいかんによらず”用于表示后项的行为、要求或事态完全不受前项名词所体现的情况、差异、结果或程度的影响（“不论……如何”、“不管……怎样”）。常与含有多种可能或变化的名词（如“理由”、“結果”、“天候”、“成否”等）连用。与“～のいかんに関わらず”含义相近，均属于非常正式的书面语，常出现在规章制度、公文或郑重的书面声明中。",
+    "formation": "名词 + のいかんによらず",
+    "examples": [
+      {
+        "translation": "无论考试结果如何，请继续坚信自己。"
+      },
+      {
+        "translation": "不论天气好坏，我每天都坚持慢跑。"
+      },
+      {
+        "translation": "不管年龄多大，他的经验都非常丰富。"
+      },
+      {
+        "translation": "不论国籍如何，任何人都可以参加此次活动。"
+      }
+    ]
   },
   "ja_Noun_79": {
-    "title": "Noun のごとき Noun (A no gotoki B)",
-    "shortExplanation": "表示 'like' or 'as if'; something/someone resembles something else strongly.",
-    "longExplanation": "The のごとき pattern is used to convey the concept of 'just like' or 'as if'. The comparison here is strong, indicating that the thing/person is very similar to or almost the same as the thing/person compared to. It is a bit archaic and thus is more often found in writings than in everyday conversation.",
-    "formation": "Noun1 + のごとき + Noun2"
+    "title": "名词1 + のごとき + 名词2 (A no gotoki B)",
+    "shortExplanation": "用于强烈的比喻，修饰后项名词；“如同……般的……”、“像……一样的……”。",
+    "longExplanation": "句型“名词1 + のごとき + 名词2”是古典日语助动词“ごとし”的连体形用法，相当于现代日语中的“～のような”。该句型用于将后项的名词2强烈比喻为前项的名词1，生动地形容其性质、形态或特征非常相似甚至达到极致（“如同……般的……”、“宛如……一样的……”）。副词形式为“～のごとく”，结句形式为“～のごとし”。由于带有浓厚的古风与文语色彩，多见于文学作品、演讲词或书面正式表达中。",
+    "formation": "名词1 + のごとき + 名词2（或 动词普通形 + ごとき + 名词）",
+    "examples": [
+      {
+        "translation": "他是一个如同神明般的存在。"
+      },
+      {
+        "translation": "她的美丽宛如花朵一般。"
+      },
+      {
+        "translation": "他做出了如同恶魔一般的行径。"
+      },
+      {
+        "translation": "这个地区有着如同春天般宜人的气候。"
+      }
+    ]
   },
   "ja_Noun_80": {
-    "title": "Noun のことだから (〜no koto dakara)",
-    "shortExplanation": "Because it is about ~, considering it's ~",
-    "longExplanation": "The のことだから grammar point is 用于表达 an expectation or decision that is made specifically because of the person or thing mentioned. Usually it implies that the speaker is familiar with the character or typical behavior of the person or thing being talked about.",
-    "formation": "名词 + のことだから"
+    "title": "名词 + のことだから (〜no koto dakara)",
+    "shortExplanation": "基于对某人性格或特点的充分了解而做出推测；“正因为是……（所以肯定……）”、“凭……的为人，想必……”。",
+    "longExplanation": "句型“名词 + のことだから”用于根据说话人对前述人物的性格、习惯、为人或特质的深入了解，对其行为或事态的发展做出合乎常理的推断或预料（“正因为是……，所以肯定……”、“凭……的为人/作风”）。前接名词通常是说话人熟悉的人物，有时也可以是团体、企业或店铺。后项句尾常搭配推测或确信的表达，如“～だろう”、“～はずだ”、“～に違いない”等。",
+    "formation": "名词（通常为人物/团体） + のことだから",
+    "examples": [
+      {
+        "translation": "凭他的为人，我想肯定不会有问题的。"
+      },
+      {
+        "translation": "正因为是这家店，饭菜按理说肯定很美味。"
+      },
+      {
+        "translation": "凭她的性格，应该马上就会到了吧。"
+      },
+      {
+        "translation": "以这家公司的作风，估计很快就会发布新产品了吧。"
+      }
+    ]
   },
   "ja_Noun_81": {
-    "title": "Noun の 嫌いがある (Noun no kirai ga aru)",
-    "shortExplanation": "Have a dislike for a particular Noun",
-    "longExplanation": "The grammar point 'Nounの嫌いがある' is 用于表达 a dislike for a particular thing, action or situation, indicated by the noun. This structure is somewhat formal or old-fashioned. In casual speech, people more commonly say 'Noun が嫌い'.",
-    "formation": "名词 + の嫌いがある"
+    "title": "名词 + の嫌いがある (Noun no kirai ga aru)",
+    "shortExplanation": "表示对某种事物抱有厌恶、反感或排斥倾向；“讨厌……”、“对……有嫌恶感”。",
+    "longExplanation": "句型“名词 + の嫌いがある”（汉字写作“嫌いがある”）是一种较为郑重或带有旧式色彩的表达方式，用于表示某人对特定的事物、对象或环境怀有反感、厌恶或不喜欢的心理偏好（“对……感到嫌弃/反感”、“讨厌……”）。在现代日常会话中，通常直接使用“～が嫌いだ”。（注：在JLPT N1的普遍考点中，“～きらいがある”多接在动词辞书形后表示“有某种不良倾向”，而本条目体现的是接在名词后表示对该事物本身存有嫌恶倾向的传统用法）。",
+    "formation": "名词 + の嫌いがある（或 のきらいがある）",
+    "examples": [
+      {
+        "translation": "他有些吃不惯鱼，所以不吃寿司。"
+      },
+      {
+        "translation": "她对高处有些恐高反感，因此从不去登山。"
+      },
+      {
+        "translation": "我父亲讨厌拥挤的人群，所以不去人多的地方。"
+      },
+      {
+        "translation": "小时候我对蔬菜有些挑食厌恶，但现在很喜欢吃。"
+      }
+    ]
   },
   "ja_Noun_82": {
-    "title": "Noun の手前 (~no temae)",
-    "shortExplanation": "表示 the idea of 'Before doing something; on the verge of'.",
-    "longExplanation": "This grammar point is 用于表达 the idea of being on the verge of doing something, or just before some major action/event. Nouns that are frequently used with this structure often denote an action or event (試験の手前, 選挙の手前, etc.).",
-    "formation": "名词 + の手前"
+    "title": "名词 + の手前 (~no temae)",
+    "shortExplanation": "表示在某项重要事件或行为发生的前夕、临近节点；“就在……之前”、“临近……之际”。",
+    "longExplanation": "句型“名词 + の手前”（或“动词辞书形 + 手前”）用于表达时间上的临近，表示在重大事件、关键节点或特定行为即将发生前的那一刻（“就在……之前”、“临近……前夕”）。常与表示事件、考核、期限的名词连用，如“試験”、“選挙”、“締め切り”等。（注：除此处表示时间“临近前夕”的用法外，“～の手前”在日语N1文法中还常用于表示“出于顾及体面或面子，在某人面前不得不……”之意）。",
+    "formation": "名词 + の手前（或 动词辞书形 + 手前）",
+    "examples": [
+      {
+        "translation": "考试就在眼前了，最好不要再出去玩了。"
+      },
+      {
+        "translation": "就在正要和她分手的关头，我又改变了主意。"
+      },
+      {
+        "translation": "赶在截止时间前夕，终于把报告完成了。"
+      },
+      {
+        "translation": "临近选举之际，有关政治的话题多了起来。"
+      }
+    ]
   },
   "ja_Noun_83": {
-    "title": "Noun の極み (〜no kiwami)",
-    "shortExplanation": "用于表达 the extreme or utmost point of something.",
-    "longExplanation": "The の極み grammar point is 用于表达 the highest level or the extreme of something. It often describes an extreme state or condition. The noun before の極み usually 指示 some situation, state, or quality (e.g., 美の極み, 感動の極み).",
-    "formation": "名词 + の極み"
+    "title": "名词 + の極み (〜no kiwami)",
+    "shortExplanation": "表示某种状态、情感或境界达到了极点或最高峰；“……之极”、“……的顶峰”。",
+    "longExplanation": "句型“名词 + の極み”（汉字写作“極み”）是格调高雅的书面语表达，用于表示某种状态、性质、情感或境界达到了登峰造极、无以复加的极限程度（“……之极”、“……的绝顶”）。常与表示情感、审美、精神状态或抽象特质的名词搭配，如“感動”、“美”、“贅沢”、“痛恨”、“栄誉”等。常用于文学修辞、隆重的致辞或深切的赞叹与感慨中。",
+    "formation": "名词 + の極み",
+    "examples": [
+      {
+        "translation": "他厨艺的绝顶造诣，是任谁也模仿不来的。"
+      },
+      {
+        "translation": "她拼尽全力的极大努力，造就了这次的成功。"
+      },
+      {
+        "translation": "他一直在不断追求音乐的最高境界。"
+      },
+      {
+        "translation": "这处景色堪称美之极致。"
+      }
+    ]
   },
   "ja_Noun_84": {
-    "title": "Noun の 至り (~no itari)",
-    "shortExplanation": "表示 'the height of', 'the extreme of' something.",
-    "longExplanation": "The 'Nounの至り' grammar point is used to emphasize an extreme or the highest level of something, often an emotional state or an honor. Common nouns include 光栄, 若気, 感激, 恥, etc.",
-    "formation": "名词 + の至り"
+    "title": "名词 + の至り (~no itari)",
+    "shortExplanation": "强调情感、心境或荣誉达到了无可附加的极点；“极其……”、“至极”、“莫大的……”。",
+    "longExplanation": "句型“名词 + の至り”（汉字写作“至り”）是非常庄重、典雅的郑重表达，用于强调自身的情感、心理状态或所受的待遇达到了无以复加的极限（“……之至”、“莫大的……”、“极其……”）。多与具有固定搭配色彩的名词连用，如“光栄の至り（无上光荣）”、“感激の至り（感激涕零）”、“赤面の至り（羞愧难当）”、“若気の至り（年少轻狂的结果）”等。常用于官方致辞、郑重谢意、自省致歉等庄重社交场合。",
+    "formation": "名词 + の至り",
+    "examples": [
+      {
+        "translation": "听到他的玩笑，我简直惊讶到了极点。"
+      },
+      {
+        "translation": "父亲担任了项目负责人，这真是莫大的光荣。"
+      },
+      {
+        "translation": "她那精湛的演技令人感动至极。"
+      },
+      {
+        "translation": "那次失败对我而言真是奇耻大辱、羞愧之至。"
+      }
+    ]
   },
   "ja_Noun_85": {
-    "title": "Noun はいざ知らず (~ wa iza shirazu)",
-    "shortExplanation": "‘I can understand it for ~, but for …? (surprising)’",
-    "longExplanation": "The はいざ知らず grammar point is used when contrasting two scenarios: the first being understandable, and the second being unexpected or surprising by comparison. It often translates as “Well, for A, I can understand, but for B…?!”",
-    "formation": "名词 + はいざ知らず, 名词 + とは/なんて/しかし etc."
+    "title": "名词 + はいざ知らず (~ wa iza shirazu)",
+    "shortExplanation": "表示前项尚可理解或姑且不论，但后项的情况却令人意外或难以接受；“……尚且不论，……却……”、“……倒还罢了，但……”。",
+    "longExplanation": "句型“名词 + はいざ知らず”（或“动词普通形 + のはいざ知らず”）用于通过对比两个极端或不同情形，表示前项的情况如果发生还算情有可原、尚可理解或暂且不提，但后项的事态相比之下却令人深感意外、震惊或不可思议（“……的话倒还罢了，但是……”、“……尚且不论，竟然连……”）。后项常伴随表示超出常理或令人惊讶的助词及句尾，如“～まで”、“～とは”、“～なんて”。",
+    "formation": "名词 + はいざ知らず（或 动词/形容词普通形 + のはいざ知らず）",
+    "examples": [
+      {
+        "translation": "他迟到倒还罢了，连她都迟到可真让人意外。"
+      },
+      {
+        "translation": "夏天倒也罢了，冬天吃冰淇淋难道不会太冷了吗？"
+      },
+      {
+        "translation": "小孩子沉迷电子游戏还算情有可原，真没想到连大人都会如此着迷。"
+      },
+      {
+        "translation": "艰难时期努力倒也罢了，平常时期也能如此拼搏真是太了不起了。"
+      }
+    ]
   },
   "ja_Noun_86": {
-    "title": "Noun はおろか～すら (Noun wa oroka ～sura)",
-    "shortExplanation": "表示 'not to mention ~, even ~'.",
-    "longExplanation": "The grammar point Noun はおろか～すら is used to emphasize that a particular statement applies not only to the first noun mentioned, but even more so to what comes after すら or さえ. 可以翻译为 ‘let alone ~, even ~’.",
-    "formation": "Noun1 はおろか, Noun2 すら/さえ ～"
+    "title": "名词1 + はおろか + 名词2 + すら (Noun wa oroka ～sura)",
+    "shortExplanation": "强调事态程度之严重；“别说A了，就连B也……”、“不用说A，连B都……”。",
+    "longExplanation": "句型“名词1 + はおろか + 名词2 + すら”（或“～さえ”）用于强调事态的严重性或极端程度：前项A程度较高或要求更高，自然是无法做到或实现，但令人难以置信的是，连后项B这样更低标准、更基础或更简单的事物也无法做到（“别说A了，就连B也……”、“不用说A，甚至连B都……”）。通常与否定或消极意义的表达呼应，突出整体状况之恶劣或能力之不足。",
+    "formation": "名词1 + はおろか + 名词2 + すら（或 さえ）",
+    "examples": [
+      {
+        "translation": "他别说是跑步了，就连快步走都做不到。"
+      },
+      {
+        "translation": "别说是日语了，他甚至连英语都不会说。"
+      },
+      {
+        "translation": "他别说吃饭了，整整一天连水都没喝一口。"
+      },
+      {
+        "translation": "这家餐厅且不论味道如何，甚至连服务都非常糟糕。"
+      }
+    ]
   },
   "ja_Noun_87": {
-    "title": "Noun はおろか～まで (~wa oroka ~made)",
-    "shortExplanation": "Means 'not just A, but even B'; 'let alone A, even B'.",
-    "longExplanation": "The phrase 'Noun はおろか' emphasizes something beyond the obvious. 可以翻译为 'not only ..., but even ...'. The '～まで' part extends that idea further to show an unexpected or more advanced case.",
-    "formation": "Noun1 + はおろか + Noun2 + まで"
+    "title": "名词1 + はおろか + 名词2 + まで (~wa oroka ~made)",
+    "shortExplanation": "表示程度或范围不仅包含本属理所应当的A，甚至出人意料地延伸至B；“不仅A，甚至连B也……”、“A自不必说，连B都……”。",
+    "longExplanation": "句型“名词1 + はおろか + 名词2 + まで”用于表示事态的范围或能力并不局限于前项A（前项A通常已被视为理所应当或已非常出色），而是进一步延伸扩展到了令人意想不到的后项B（“不仅A，甚至连B也……”、“A自不用说，竟然连B都……”）。助词“まで”在此起到强调范围超乎寻常、令人惊叹的作用。",
+    "formation": "名词1 + はおろか + 名词2 + まで",
+    "examples": [
+      {
+        "translation": "他不仅英语流利，甚至连日语都说得非常地道。"
+      },
+      {
+        "translation": "她不仅数学好，甚至连物理也很擅长。"
+      },
+      {
+        "translation": "这道菜不仅卖相诱人，甚至连味道也是绝顶棒。"
+      },
+      {
+        "translation": "他不仅歌唱得好，甚至连舞蹈也跳得极其出色。"
+      }
+    ]
   },
   "ja_Noun_88": {
-    "title": "Noun はおろか～も (Noun wa oroka ～ mo)",
-    "shortExplanation": "'Not only...but also', 'not to mention', 'to say nothing of'",
-    "longExplanation": "The 'Noun はおろか～も' grammar point is used to list items with an emphasis on how far the situation extends. It often appears in negative contexts to show that something supposedly more advanced (first part) is out of the question, and even something simpler (second part) is also not possible. 可以翻译为 'Needless to say X, (he/she) can't even do Y.'",
-    "formation": "名词 + はおろか + 名词 + も"
+    "title": "名词1 + はおろか + 名词2 + も (Noun wa oroka ～ mo)",
+    "shortExplanation": "常与否定表达连用，表示高层次的A自不必说，连基础的B也无法做到；“别说A了，连B也（不）……”、“A且不论，连B都……”。",
+    "longExplanation": "句型“名词1 + はおろか + 名词2 + も”主要用于消极或否定句中，强调事物程度或能力的全面匮乏：程度较高的前项A自然是不在话下、无法实现，而更糟糕的是，连更简单、更基础的后项B也无法达成或不具备（“别说A了，连B也未曾/不能……”、“A自不用说，连B也做不到”）。与“～はおろか～さえ/すら”语法功能类似，借助助词“も”强调并列包含与连带否定。",
+    "formation": "名词1 + はおろか + 名词2 + も",
+    "examples": [
+      {
+        "translation": "别说画画了，他甚至连字都写不出来。"
+      },
+      {
+        "translation": "别说是英语了，他连日语都不懂。"
+      },
+      {
+        "translation": "她别说是高深的数学了，连基础算术都不擅长。"
+      },
+      {
+        "translation": "别说是跑步了，他连走路都觉得很困难。"
+      }
+    ]
   },
   "ja_Noun_89": {
-    "title": "Noun はさておき (~ wa sateoki)",
-    "shortExplanation": "Means 'putting aside', 'aside from', 'notwithstanding'.",
-    "longExplanation": "The grammar point 'Noun はさておき' is used when highlighting something as an exception from an overall generalization, or when putting aside a particular matter before progressing to another point of discussion. The literal translation would be 'putting Noun aside', 'aside from Noun' or 'notwithstanding Noun.'",
-    "formation": "名词 + はさておき"
+    "title": "名词 + はさておき (~ wa sateoki)",
+    "shortExplanation": "表示把前项问题暂时搁置一边，优先讨论更重要的事项；“姑且不论……”、“暂且不谈……”、“先抛开……不说”。",
+    "longExplanation": "句型“名词 + はさておき”（汉字写作“扨措き”）用于表示暂时将前项的事情置于一旁、不作为当前讨论的核心，而将焦点和主旨转移到后项更重要、更优先或更值得关注的议题上（“姑且不论……”、“暂且不谈……”、“……先放在一边”）。也可以接在动词/形容词普通形加“こと/の”之后。常用于转换话题、调整讨论重点的会话或书面表达中。",
+    "formation": "名词 + はさておき（或 普通形 + こと/の + はさておき）",
+    "examples": [
+      {
+        "translation": "考试成绩姑且不论，这个学期我学到了很多东西。"
+      },
+      {
+        "translation": "天气情况先放在一边，我很期待明天的野餐。"
+      },
+      {
+        "translation": "姑且不论他的性格如何，他的专业技能是令人不得不认可的。"
+      },
+      {
+        "translation": "且不说他迟到得太离谱，大家理所当然地认为他会来这件事本身就是个问题。"
+      }
+    ]
   },
   "ja_Noun_90": {
-    "title": "Noun + はどうであれ (~ wa dou de are)",
-    "shortExplanation": "This phrase means 'regardless of' or 'no matter how…'.",
-    "longExplanation": "It is used to convey indifference about the state or condition of a certain thing or matter. You can think of it as 'no matter what' or 'regardless of' in English. The phrase shows the speaker’s strong intention to do something or an assertion that doesn’t change regardless of the noun’s state or condition.",
-    "formation": "名词 + はどうであれ"
+    "title": "名词 + はどうであれ (~ wa dou de are)",
+    "shortExplanation": "表示无论前项的情况或结果如何，后项的决心、态度或事态都不受影响；“无论……怎样”、“不管……如何”。",
+    "longExplanation": "句型“名词 + はどうであれ”（“であれ”是文语断定助动词“である”的假定或让步连用形）用于表达强烈的让步：无论前项事物的状态、性质、意见或结果怎样，后项所表示的态度、决心、既定事实或行为都绝不受其动摇或改变（“无论……如何”、“不管……怎样”）。语气坚定果断，多见于郑重的书面语或表达明确意志的场合。",
+    "formation": "名词 + はどうであれ",
+    "examples": [
+      {
+        "translation": "无论天气状况如何，比赛都将照常举行。"
+      },
+      {
+        "translation": "不管结果怎样，我们只要竭尽全力就好。"
+      },
+      {
+        "translation": "不论你的意见如何，我都选择相信他。"
+      },
+      {
+        "translation": "无论考试结果如何，对你而言都不会有任何改变。"
+      }
+    ]
   },
   "ja_Noun_91": {
-    "title": "Noun まみれ (~mamire)",
-    "shortExplanation": "表示 a state in which something is entirely covered or filled with something else.",
-    "longExplanation": "The まみれ grammar point is 用于表达 a state where someone or something is completely covered, smeared, or filled with another thing. The noun before まみれ 指示 what the person or thing is covered in. This grammar point often has a negative connotation.",
-    "formation": "名词 + まみれ"
+    "title": "名词 + まみれ (~mamire)",
+    "shortExplanation": "表示人或物体的表面沾满、附着了污秽、液体或不良事物；“沾满……”、“浑身是……”、“布满……”。",
+    "longExplanation": "句型“名词 + まみれ”（汉字写作“塗れ”）作为接尾词，用于表示某人或某物体的表面完全被不干净、令人不适的液体、颗粒或消极事物附着、涂抹或沾满（“浑身是……”、“沾满……”、“陷入……泥潭”）。常与具有粘附性、污浊性的名词连用，如“血（血）”、“泥（泥）”、“汗（汗水）”、“埃（灰尘）”、“借金（债务）”、“スキャンダル（丑闻）”等。几乎全部用于消极、负面或令人不快的语境（与“～だらけ”相比更强调液体、粉末等细碎粘着物在表面附着的狼狈状态）。",
+    "formation": "名词 + まみれ",
+    "examples": [
+      {
+        "translation": "他浑身沾满泥巴回到了家。"
+      },
+      {
+        "translation": "她满脸泪水、抽泣着进行了表白。"
+      },
+      {
+        "translation": "那起事件之后，他彻底陷入了丑闻缠身的泥潭。"
+      },
+      {
+        "translation": "这个房间里到处布满了灰尘。"
+      }
+    ]
   },
   "ja_Noun_92": {
-    "title": "Noun もさることながら Noun も (A mo saru koto nagara B mo)",
-    "shortExplanation": "Means 'not only... but also'; the second noun is especially emphasized.",
-    "longExplanation": "The grammar point 'Noun もさることながら Noun も' is 用于表达 that both Nouns are true, important, or relevant. 可以翻译为 'not only... but also' in English. However, among the two nouns, the one coming after もさることながら is more emphasized in comparison to the one before it.",
-    "formation": "Noun1 + もさることながら + Noun2 + も"
+    "title": "名词1 + もさることながら + 名词2 + も (A mo saru koto nagara B mo)",
+    "shortExplanation": "表示“A自不必说，B也同样（甚至更甚）”；“不仅A……B也……”，更侧重强调后项B。",
+    "longExplanation": "句型“～もさることながら”用于表示“前项A是理所当然的事实，但后项B同样如此，甚至比前项更值得关注、更令人印象深刻”。常译为“A自不必说，B也……”、“不仅A……连B也……”。说话人在承认A的同时，意在着重强调后项B的程度或价值，常用于赞美或评价。",
+    "formation": "名词1 + もさることながら + 名词2 + も",
+    "examples": [
+      {
+        "translation": "他的唱功自不必说，舞蹈也同样非常精彩。"
+      },
+      {
+        "translation": "这家餐厅的味道自不必说，服务也是极其出色。"
+      },
+      {
+        "translation": "她的美貌自不用多说，而她的才智同样极具魅力。"
+      },
+      {
+        "translation": "那部电影故事情节好自不用说，音乐也格外精彩。"
+      }
+    ]
   },
   "ja_Noun_93": {
-    "title": "Noun も兼ねて (~mo kanete)",
-    "shortExplanation": "用于表达 'as well as', 'also', or 'at the same time'.",
-    "longExplanation": "The も兼ねて grammar point 指示 that two actions or purposes are being served simultaneously. The noun before も兼ねて tells what the additional action or purpose is.",
-    "formation": "名词 + も兼ねて"
+    "title": "名词 + も兼ねて (mo kanete)",
+    "shortExplanation": "表示兼顾另一项目的或意图；“兼作……”、“顺便兼顾……”、“同时也为了……”。",
+    "longExplanation": "句型“～も兼ねて”（汉字写作“兼ねて”）用于表示在进行某项主要行动的同时，还附带有另一项目的或意图，两者一同进行。常译为“兼作……”、“顺便兼顾……”、“同时也为了……”。前面的名词通常是具有活动或目的性质的词汇，如散步、观光、学习、问候等。",
+    "formation": "名词 + も兼ねて",
+    "examples": [
+      {
+        "translation": "我去了一趟公园，也顺便兼散散步。"
+      },
+      {
+        "translation": "今天我打算看一部日本电影，同时也兼为了学习日语。"
+      },
+      {
+        "translation": "我计划出国一趟，顺便兼顾工作。"
+      },
+      {
+        "translation": "我去参加朋友的婚礼，同时也当作顺便旅游。"
+      }
+    ]
   },
   "ja_Noun_94": {
-    "title": "Noun も相まって (~mo aimatte)",
-    "shortExplanation": "用于表达 that combined with something else, it caused a certain outcome.",
-    "longExplanation": "The grammar point Noun も相まって is 用于表达 the meaning that, combined with something else, it caused a certain result. Literally, it translates to 'also contributes to'. It is generally used with nouns and points out that there are multiple contributing factors.",
-    "formation": "名词 + も相まって"
+    "title": "名词 + も相まって (mo aimatte)",
+    "shortExplanation": "表示多种因素相互结合、共同作用而产生了某种结果；“加上……的影响”、“与……相互作用”。",
+    "longExplanation": "句型“～も相まって”（汉字写作“相まって”）用于表示前述要素与其他已有的条件或因素相互结合、协同作用，从而促成了某种显著的结果或局面。常译为“再加上……的作用”、“与……相互结合”、“伴随着……”。多用于较为正式的书面语中，分析带来成功、发展或显著特性的多重原因。",
+    "formation": "名词 + も相まって",
+    "examples": [
+      {
+        "translation": "加上适宜的气候，这个地区非常适合从事农业。"
+      },
+      {
+        "translation": "再加上他过人的才能，他得到了迅速的晋升。"
+      },
+      {
+        "translation": "再加上技术的进步，我们已经能够更高效地完成工作。"
+      },
+      {
+        "translation": "加上他的不懈努力，项目取得了成功。"
+      }
+    ]
   },
   "ja_Noun_95": {
-    "title": "Noun を おいて他に Verb ない (〜wo oite hoka ni〜nai)",
-    "shortExplanation": "Means 'apart from ~ there's nothing else,' implying the Noun is the best or most suitable choice.",
-    "longExplanation": "The structure Nounをおいて他に〜ない is 用于表达 that there is no substitute for the Noun, no other choice, or that the Noun is the best or the only one to choose among various options. This form is often used in praising or making strong positive comments about someone or something.",
-    "formation": "名词 + をおいて他に + 动词 negative form"
+    "title": "名词 + をおいて他に + 动词否定形 (wo oite hoka ni...nai)",
+    "shortExplanation": "强调该对象是无可替代的最佳人选或唯一选择；“除了……之外别无……”。",
+    "longExplanation": "句型“～をおいて他に～ない”（汉字写作“置いて”）用于强烈表示某人或某物具有无可替代的价值，除了该对象之外，再也没有其他更合适的人选或更好的选择了（“除了……之外没有其他人/物……”、“非……莫属”）。该句型常用于对人或事物给予极高的评价与赞赏。",
+    "formation": "名词 + をおいて他に + 动词否定形式（ない形）",
+    "examples": [
+      {
+        "translation": "要把这份工作托付出去，除了他之外别无他人。"
+      },
+      {
+        "translation": "能够解决这个问题的，除了他之外再无别人。"
+      },
+      {
+        "translation": "在这一带要说能做出美味面条的店铺，除了这家别无其他。"
+      },
+      {
+        "translation": "能够超越她美妙歌喉的歌手，除了她之外再无他人。"
+      }
+    ]
   },
   "ja_Noun_96": {
-    "title": "Noun をもって (~wo motte)",
-    "shortExplanation": "用于表示 means, methods, or time; 'with', 'by means of', 'at'.",
-    "longExplanation": "The をもって grammar is 用于表达 a means or method to achieve something, or to indicate a point in time. 可以翻译为 'with' or 'by means of' when indicating means, and 'at' when indicating a point in time.",
-    "formation": "名词 + をもって"
+    "title": "名词 + をもって (wo motte)",
+    "shortExplanation": "表示手段、方法或态度（“以……”、“用……”），亦可表示时间上的终止或转折界限（“到……为止”）。",
+    "longExplanation": "句型“～をもって”（汉字写作“以て”）属于郑重的书面用语，主要有两种用法：\n1. 表示手段、方法、态度或依据，译为“以……”、“用……”、“凭借……”。\n2. 接在表示时间或特定节点的词语后，表示官方活动、业务或期限的结束，译为“截至……”、“到……为止”。常用于正式公告、演讲或商务文书中。",
+    "formation": "名词 + をもって",
+    "examples": [
+      {
+        "translation": "他以诚恳的态度赢得了人们的信任。"
+      },
+      {
+        "translation": "凭借这个奖项，她的努力得到了大家的认可。"
+      },
+      {
+        "translation": "他带着坚定的决心投入到了问题的解决中。"
+      },
+      {
+        "translation": "本店将于3月底正式闭店。"
+      }
+    ]
   },
   "ja_Noun_97": {
-    "title": "Noun をものともせずに (Noun wo mono tomo sezu ni)",
-    "shortExplanation": "表示 the idea that 'despite something, action was carried out', translating to 'without being fazed by something'.",
-    "longExplanation": "The 'Nounをものともせずに' grammar point 指示 that something which could potentially be a hindrance or challenge was not taken into account when carrying out an action. The literal idea is ‘not making something an obstacle’, meaning actions were performed without being fazed or distracted by it.",
-    "formation": "名词 + をものともせずに"
+    "title": "名词 + をものともせずに (wo mono tomo sezu ni)",
+    "shortExplanation": "表示不畏惧艰难险阻、压力或恶劣条件，依然勇敢行动；“不顾……”、“不畏……”、“勇于克服……”。",
+    "longExplanation": "句型“～をものともせずに”用于称赞或描述某人在面对危险、困难、恶劣环境、病痛或巨大压力时，毫不畏缩退缩，而是勇敢顽强地采取行动（“不畏……”、“毫不介意……”、“战胜困难”）。常用于对他人英勇表现或坚强意志的正面赞颂。",
+    "formation": "名词 + をものともせずに",
+    "examples": [
+      {
+        "translation": "她毫不畏惧，径直向着黑暗深处走去。"
+      },
+      {
+        "translation": "他不惧考试的巨大压力，胸有成竹地作出了回答。"
+      },
+      {
+        "translation": "他不顾暴风雪的侵袭，依然攀登上了高山。"
+      },
+      {
+        "translation": "他毫不气馁于失败，继续坚定地向前迈进。"
+      }
+    ]
   },
   "ja_Noun_98": {
-    "title": "Noun をよそに (~wo yoso ni)",
-    "shortExplanation": "Despite; Notwithstanding; Regardless of",
-    "longExplanation": "The Japanese phrase 'Nounをよそに' is 用于表达 a situation where, despite some circumstance (represented by the noun), a certain action takes place. It can convey a feeling of disregard or nonchalance. In English, 可以翻译为 'despite', 'notwithstanding', or 'regardless of'.",
-    "formation": "名词 + をよそに"
+    "title": "名词 + をよそに (wo yoso ni)",
+    "shortExplanation": "表示对周围人的担心、反对、期待或客观情况漠不关心、置之不理而自行其是；“无视……”、“不管……”、“不顾……”。",
+    "longExplanation": "句型“～をよそに”（汉字写作“余所に”）用于表示主体对周围人的担忧、关切、批评、反对或外部客观环境不放在心上，仿佛事不关己一般依旧自顾自地行动。常译为“无视……”、“对……置若罔闻”、“不顾……”。通常伴有说话人感到意外、无奈或略带批评谴责的语气。",
+    "formation": "名词 + をよそに",
+    "examples": [
+      {
+        "translation": "他不顾当前的经济危机，依然买了一辆豪车。"
+      },
+      {
+        "translation": "无视考试迫在眉睫，他依然在一味地玩耍。"
+      },
+      {
+        "translation": "不顾父母的极力反对，她还是和他结婚了。"
+      },
+      {
+        "translation": "无视那个国家的经济状况，许多企业依然在持续进驻开拓市场。"
+      }
+    ]
   },
   "ja_Noun_99": {
-    "title": "Noun を余儀なくされる (Noun wo yogi naku sareru)",
-    "shortExplanation": "表示 the idea of being forced into a certain situation, 'to be compelled', 'to be obliged'.",
-    "longExplanation": "The grammar pattern 'Noun を余儀なくされる' is used to describe circumstances where a person or party is compelled or obliged to do something due to necessity or unavoidable circumstances. It translates as 'to be forced to', 'to be compelled to', or 'to have no choice but to'. This form is often used in formal or written Japanese.",
-    "formation": "名词 + を + 余儀なくされる"
+    "title": "名词 + を余儀なくされる (wo yogi naku sareru)",
+    "shortExplanation": "表示由于无法抗拒的外部客观原因，被迫落入某种无奈的境地；“不得不……”、“被迫……”。",
+    "longExplanation": "句型“～を余儀なくされる”（汉字写作“余儀なくされる”）属于较为正式的书面用语或新闻报道语言，用于表示因灾难、经济困难、伤病等非自愿的客观原因，导致主体别无选择，只能迫于无奈做出某种决定或承受某种不利结果。常译为“被迫……”、“不得不……”、“别无选择只能……”。",
+    "formation": "名词 + を余儀なくされる",
+    "examples": [
+      {
+        "translation": "由于经济困难，他被迫退学。"
+      },
+      {
+        "translation": "因天气恶劣，我们不得不取消了远足活动。"
+      },
+      {
+        "translation": "因为受伤，他被迫住院接受治疗。"
+      },
+      {
+        "translation": "出于对裁员风潮的恐惧，许多员工不得不选择了跳槽换工作。"
+      }
+    ]
   },
   "ja_Noun_100": {
-    "title": "Noun を前提として (Noun wo zentei toshite)",
-    "shortExplanation": "用于表达 'on the assumption of', 'based on'.",
-    "longExplanation": "The grammar point 'Noun を前提として' is used to convey that something is done based on or assuming something else. It 指示 a preconceived condition or assumption on which the following action or plan relies.",
-    "formation": "名词 + を前提として"
+    "title": "名词 + を前提として (wo zentei toshite)",
+    "shortExplanation": "表示将某事作为前置条件或假定基础来推进后续行动；“以……为前提”、“在……的前提下”。",
+    "longExplanation": "句型“～を前提として”（汉字写作“前提として”）用于表示将前述名词作为开展行动、制定计划或达成协议的预设先决条件与基础。常译为“以……为前提”、“在……的前提假定下”。多用于较为正式的商务、学术、政策讨论等语境中。",
+    "formation": "名词 + を前提として",
+    "examples": [
+      {
+        "translation": "我们以取得成功为前提，制定了商业计划书。"
+      },
+      {
+        "translation": "我们以他能够获胜为前提，开始筹备庆祝聚会。"
+      },
+      {
+        "translation": "我将在取得父母理解的前提下，推进这次旅行计划。"
+      },
+      {
+        "translation": "该项目是以资金全部到位为前提而开展的。"
+      }
+    ]
   },
   "ja_Noun_101": {
-    "title": "Noun を前提にして (Noun wo zentei ni shite)",
-    "shortExplanation": "Assuming; presupposing; on the assumption of.",
-    "longExplanation": "The grammar point 'Noun を前提にして' is 用于展示 that something is done assuming or presupposing the noun that comes before it. In English, 可以翻译为 'on the assumption of', 'assuming', or 'presupposing'.",
-    "formation": "名词 + を前提にして"
+    "title": "名词 + を前提にして (wo zentei ni shite)",
+    "shortExplanation": "表示以某种假定或条件作为基础前提来进行准备或安排；“以……为前提”、“在假定……的基础上”。",
+    "longExplanation": "句型“～を前提にして”（汉字写作“前提にして”）与“～を前提として”意义基本相同，表示把前述名词作为思考、计划或决策的出发点与预设前提。常译为“以……为前提”、“在预先设定……的基础上”。用法十分广泛，在商务会议、工作安排和日常生活中均很常见。",
+    "formation": "名词 + を前提にして",
+    "examples": [
+      {
+        "translation": "在假定明天天气晴好的前提下，我们制定了野餐计划。"
+      },
+      {
+        "translation": "我们以她能顺利考上为前提，开始着手准备庆祝宴会。"
+      },
+      {
+        "translation": "预算方案是在假定经济会实现增长的前提下制定的。"
+      },
+      {
+        "translation": "我们以他能够参加为前提，确定了开会日程。"
+      }
+    ]
   },
   "ja_Noun_102": {
-    "title": "Noun を境にして (Noun wo sakai ni shite)",
-    "shortExplanation": "Means 'as a turning point', 'since (time)', or 'from (time) on'.",
-    "longExplanation": "The grammar point 'Noun を境にして' is 用于表示 a significant change or turning point marked by a specific event or time. It means that after this boundary, some situation changes or a new state begins.",
-    "formation": "名词 + を境に(して)"
+    "title": "名词 + を境にして (wo sakai ni shite)",
+    "shortExplanation": "表示以某个特定时间或重大事件为分界线与转折点，自此之后情况发生了明显变化；“以……为界”、“自……起”。",
+    "longExplanation": "句型“～を境にして”（常作“～を境に”，汉字写作“境にして”）用于表示以某一事件、特定时期或时间节点作为前后状态发生根本改变的分界线或转折点。常译为“以……为界”、“自……以来”、“在……之后（彻底改变）”。常用于描述人物性格、生活习惯、社会局势等的显著转变。",
+    "formation": "名词 + を境に / を境にして",
+    "examples": [
+      {
+        "translation": "以父亲的离世为转折点，他的性格彻底变了一个人。"
+      },
+      {
+        "translation": "打算以考试结束为界，好好休个假。"
+      },
+      {
+        "translation": "我打算以春天为起点，开始一段崭新的生活。"
+      },
+      {
+        "translation": "自入学以来，她便开始对时尚打扮产生了浓厚兴趣。"
+      }
+    ]
   },
   "ja_Noun_103": {
-    "title": "Noun を機にして (~wo ki ni shite)",
-    "shortExplanation": "To take the opportunity to; taking the occasion to; on the occasion of.",
-    "longExplanation": "The grammar pattern 'Noun を機にして' 表示 the idea of using a certain event or situation as an opportunity to do something else. It is often used when some change or new step is taken as a result of a specific event.",
-    "formation": "名词 + を機にして"
+    "title": "名词 + を機にして (wo ki ni shite)",
+    "shortExplanation": "表示以某事作为契机或良机，主动开始新的行动或做出改变；“以……为契机”、“借……之机”。",
+    "longExplanation": "句型“～を機にして”（常作“～を機に”，汉字写作“機にして”）用于表示把某次重大的事件、转折或经历（如毕业、结婚、搬家、经历挫折等）作为良好的机会与动力，主动采取新的行动或促成重要改变。常译为“以……为契机”、“趁着……的机会”。相比“～をきっかけに”，更强调有意识地抓住机遇。",
+    "formation": "名词 + を機に / を機にして",
+    "examples": [
+      {
+        "translation": "借着搬家之机，我把家里的家具都换成了新的。"
+      },
+      {
+        "translation": "以毕业为契机，我开始寻找新的工作。"
+      },
+      {
+        "translation": "借着这次项目失败的契机，我们决定重新审视全公司的工作方式。"
+      },
+      {
+        "translation": "以结婚为契机，我们搬到了一个新的城镇生活。"
+      }
+    ]
   },
   "ja_Noun_104": {
-    "title": "Noun を皮切りに / を皮切りにして (Noun wo kawakiri ni / wo kawakiri ni shite)",
-    "shortExplanation": "用于表示 the starting point of some series of events or actions; 'starting with', 'beginning with'.",
-    "longExplanation": "The grammar point 'Noun を皮切りに / を皮切りにして' is used to convey the idea of something beginning or starting with a certain event or action. This pattern is often used when the speaker wants to highlight the starting point of a series or string of events.",
-    "formation": "名词 + を皮切りに / を皮切りにして"
+    "title": "名词 + を皮切りに / を皮切りにして (wo kawakiri ni / wo kawakiri ni shite)",
+    "shortExplanation": "表示以某事作为打头阵的开端，随后接连开展一系列同类行动或事件；“以……为开端”、“以……打头阵”。",
+    "longExplanation": "句型“～を皮切りに / ～を皮切りにして”（语源为针灸时最初施艾的“皮切り”）用于表示某件事情作为开头的第一炮，随后接二连三地展开了相同性质、同等规模的一系列事件或活动。常译为“以……为开端”、“打头阵”、“揭开……的序幕”。常用于巡回展出、演艺活动、商业推广及学术发布等报道中。",
+    "formation": "名词 + を皮切りに / を皮切りにして",
+    "examples": [
+      {
+        "translation": "以此篇论文为开端，他陆续展开了多项研究课题。"
+      },
+      {
+        "translation": "以这次比赛为起点，她的舞蹈职业生涯取得了飞跃性的发展。"
+      },
+      {
+        "translation": "以这部电影为开端，他确立了作为当红人气演员的地位。"
+      },
+      {
+        "translation": "以该项目为发端，公司开始展现出全新的发展方向。"
+      }
+    ]
   },
   "ja_Noun_105": {
-    "title": "Noun を皮切りにして (Noun wo kawakiri ni shite)",
-    "shortExplanation": "用于表达 'Starting with', 'Beginning with'",
-    "longExplanation": "'Noun を皮切りにして' is a Japanese grammatical form used when one wants to express that something begins with a certain event or action, then continues on in a sequence. It is the same as saying 'starting with...' or 'beginning with...' in English.",
-    "formation": "名词 + を皮切りに (して)"
+    "title": "名词 + を皮切りにして (wo kawakiri ni shite)",
+    "shortExplanation": "表示以某事作为第一步或起点，其后同类行动或事件接续发生；“以……为起点”、“自……开始”。",
+    "longExplanation": "句型“～を皮切りにして”用于指出某一个特定事件作为引子或先锋，自此拉开序幕，随后同类的一系列活动或发展接踵而至。常译为“以……为起点”、“自……开始陆续开展”。常用于描述巡回活动、连续性事件的开启或个人事业由此迅速展开的局面。",
+    "formation": "名词 + を皮切りにして（或 を皮切りに）",
+    "examples": [
+      {
+        "translation": "自那一天开始，他便每天都去健身房锻炼。"
+      },
+      {
+        "translation": "以新年联欢会为开端，今年将陆续举办多场活动。"
+      },
+      {
+        "translation": "自这部电影问世起，他的人气便一路急剧飙升。"
+      },
+      {
+        "translation": "以东京站为首站起点，他的个人展计划在全国各地巡回展出。"
+      }
+    ]
   },
   "ja_Noun_106": {
-    "title": "Noun を禁じ得ない (〜wo kinjienai)",
-    "shortExplanation": "'Cannot help but do', or 'inevitable'",
-    "longExplanation": "The 〜を禁じ得ない (wo kinjienai) grammar point is 用于表达 a situation or emotion that is so strong it can't be helped or is inevitable. It is used with nouns to express an uncontrollable feeling or action.",
-    "formation": "名词 + を禁じ得ない"
+    "title": "名词 + を禁じ得ない (wo kinjienai)",
+    "shortExplanation": "表示某种强烈的感情油然而生，无论如何也按捺、压抑不住；“不禁……”、“禁不住……”、“难掩……之情”。",
+    "longExplanation": "句型“～を禁じ得ない”（汉字写作“禁じ得ない”）属于较为郑重的书面用语。通常接在表示情感、情绪的名词（如惊奇、怒火、同情、喜悦、眼泪、疑问等）之后，表示当事人面对某种状况时，内心情感奔涌而出，无法加以抑制与平复。常译为“不禁……”、“难免……”、“无法抑制……之情”。",
+    "formation": "名词（情感类名词） + を禁じ得ない",
+    "examples": [
+      {
+        "translation": "面对这一结果，我由不得感到震惊万分。"
+      },
+      {
+        "translation": "听到那个消息，我不禁油然而生想要为他的成功送上祝福的心情。"
+      },
+      {
+        "translation": "面对她的动人美貌，我禁不住为之深深动容。"
+      },
+      {
+        "translation": "听了他的这番话，我忍不住扑哧笑出声来。"
+      }
+    ]
   },
   "ja_Noun_107": {
-    "title": "Noun を経て (〜wo hete)",
-    "shortExplanation": "表示 the idea of 'through' or 'via'; going through some process or phase.",
-    "longExplanation": "The を経て grammar point is 用于表达 the concept of going through some process, phase, place, or period of time as a means of achieving something or reaching some end point. It can be literally translated as 'through' or 'via' in English, and can be used both literally and metaphorically.",
-    "formation": "名词 + を経て"
+    "title": "名词 + を経て (wo hete)",
+    "shortExplanation": "表示“经历、经过”（某种阶段、过程、时间）或“途经、经由”（某个地点）。",
+    "longExplanation": "句型“～を経て”（汉字写作“経て”）用于表示经历漫长或曲折的过程、阶段、时间，最终达到某种结果或状态；也可表示空间上的“途经、经由某地”。常译为“经过……”、“经历……”、“经由……”。多用于书面语或郑重表达。",
+    "formation": "名词 + を経て",
+    "examples": [
+      {
+        "translation": "他历经千辛万苦，终于收获了成功。"
+      },
+      {
+        "translation": "她途经纽约回到了日本。"
+      },
+      {
+        "translation": "我们经过长期的深入讨论作出了决定。"
+      },
+      {
+        "translation": "经过无数次的刻苦磨炼，他达到了宗师级的水平。"
+      }
+    ]
   },
   "ja_Noun_108": {
-    "title": "Noun を踏まえて (〜wo fumaete)",
-    "shortExplanation": "Based on; taking into account; in light of",
-    "longExplanation": "The verb 踏まえる (fumaeru) means 'to be based on' or 'to take into consideration'. When ～を踏まえて is connected with a noun, it implies that actions or decisions are made based on or taking into account the noun. It also 表示 looking at a situation from the standpoint of the noun before proceeding to the following action.",
-    "formation": "名词 + を踏まえて"
+    "title": "名词 + を踏まえて (wo fumaete)",
+    "shortExplanation": "表示“根据……”、“基于……”、“考虑到……”；以某事物为依据、立足点来进行判断或采取行动。",
+    "longExplanation": "句型“～を踏まえて”（动词为“踏まえる”，本义为踩实、以……为立足点）表示以某种经验、过往结果、意见或现状等作为前提和依据，在此基础上进行思考、决策或采取后续行动。常译为“根据……”、“基于……”、“考虑到……”。多用于商务、学术及正式公文等郑重场合。",
+    "formation": "名词 + を踏まえて",
+    "examples": [
+      {
+        "translation": "根据过去的结果，我们制定了全新的规划。"
+      },
+      {
+        "translation": "充分考虑到当地的文化背景，我正在准备演示汇报。"
+      },
+      {
+        "translation": "参考汲取教师们的意见，我们对规章制度进行了修改。"
+      },
+      {
+        "translation": "基于最新的科研成果，研发出了一种新药。"
+      }
+    ]
   },
   "ja_Noun_109": {
-    "title": "Noun を限りに (Noun wo kagiri ni)",
-    "shortExplanation": "表示 the idea of 'as of', 'with', or 'from', indicating the end of something or a point of change.",
-    "longExplanation": "The grammar point Noun を限りに is 用于表示 the end point of something or a point of change from that time onward. The noun preceding this expression usually refers to a point in time, signifying that something ends or changes starting at that point.",
-    "formation": "名词 + を限りに"
+    "title": "名词 + を限りに (wo kagiri ni)",
+    "shortExplanation": "表示“以……为界”、“截至……”、“从……起结束”；指出某事以此时间点为最后期限而宣告终结。",
+    "longExplanation": "句型“～を限りに”接在表示时间的名词之后（如今日、本次、今年度等），表示一直持续至今的事情或状态以该时间点为界限而正式终结或发生改变。常译为“截至……”、“以……为最后期限”、“从……起结束”。语气决绝或郑重，常用于发表告别宣言、宣布离职、戒烟或节目停播等场合。",
+    "formation": "名词（时间名词） + を限りに",
+    "examples": [
+      {
+        "translation": "我打算以本学年为界，正式结束在这所大学的教学生涯。"
+      },
+      {
+        "translation": "从今天起，我彻底戒烟了。"
+      },
+      {
+        "translation": "截至3月31日，我将从公司正式离职。"
+      },
+      {
+        "translation": "本节目将于下周正式完结停播。"
+      }
+    ]
   },
   "ja_Noun_110": {
-    "title": "Noun 並み (~nami)",
-    "shortExplanation": "指示 'like' or 'as' something or someone; 'equivalent to', 'around'.",
-    "longExplanation": "The Noun 並み grammar point is 用于展示 a comparison, often translated as 'like' or 'equivalent to'. It can also indicate approximate quantity or extent, similar to 'around'.",
-    "formation": "名词 + 並み"
+    "title": "名词 + 並み (nami)",
+    "shortExplanation": "表示程度、水平或状态与某事物相当；“与……相当”、“匹敌……”、“像……一样”。",
+    "longExplanation": "句型“～並み”（汉字写作“並み”，表示同等、并列之意）接在名词后，表示某人某物的水平、状态、程度达到了与该名词相同的标准或水平。常译为“与……相当”、“赶得上……”、“不亚于……”。常见搭配如“プロ並み（堪比专业人士）”、“人並み（像常人一样）”等。",
+    "formation": "名词 + 並み（+ の + 名词 / + だ / + に）",
+    "examples": [
+      {
+        "translation": "他拥有堪比职业拳击手的强大力量。"
+      },
+      {
+        "translation": "她的厨艺水平堪比高级餐厅的大厨。"
+      },
+      {
+        "translation": "这个地区夏天的炎热程度宛如沙漠一般。"
+      },
+      {
+        "translation": "今天手头的工作繁重忙碌得堪比大公司社长。"
+      }
+    ]
   },
   "ja_Noun_111": {
-    "title": "Noun + 前提で (Noun + zentei de)",
-    "shortExplanation": "表示 a condition or requirement for something to be established: 'on the assumption that', 'under the condition of'.",
-    "longExplanation": "The Noun + 前提で grammar point is used to define the premise, assumption, or requirement necessary for some event or action. It translates to 'on the assumption that', 'under the condition of', or 'with the understanding that'. The following clause is based on that premise.",
-    "formation": "名词 + 前提で"
+    "title": "名词 / 动词普通形 + 前提で (zentei de)",
+    "shortExplanation": "表示以某种条件、假定为前提来进行后续的行动；“以……为前提”、“在……的前提下”。",
+    "longExplanation": "句型“～前提で”用于说明后项的行为或计划是建立在某项既定的假定、条件或预期之上的。常译为“以……为前提”、“在假设……的条件下”。前面的成分可以是名词（如“結婚前提で”），也可以是修饰前提的动词连体形短语。",
+    "formation": "名词 + 前提で | 动词普通形 + 前提で",
+    "examples": [
+      {
+        "translation": "请在具备能够清晰阐述的英语能力这一前提下，承接这份工作。"
+      },
+      {
+        "translation": "以他会一同前往为前提，我制定了旅行计划。"
+      },
+      {
+        "translation": "我们正以必定能够成功为前提，全力推进这个项目。"
+      },
+      {
+        "translation": "在默认绝对不会下雨的前提下，我做好了野餐的各项准备。"
+      }
+    ]
   },
   "ja_Verbる_112": {
-    "title": "Verbる / Noun(である) + 限り(は) (kagiri (wa))",
-    "shortExplanation": "表示 'as long as', 'while this condition is true'.",
-    "longExplanation": "This grammar is 用于表达 that something holds true as long as a particular condition remains in effect. When using a noun, it can appear as Noun(である) + 限り(は). With a verb, use the dictionary form + 限り(は).",
-    "formation": "动词-dictionary form + 限り(は)\n名词(である) + 限り(は)"
+    "title": "动词辞书形 / 名词(である) + 限り(は) (kagiri (wa))",
+    "shortExplanation": "表示“只要……就……”、“在……的期间内一直”；只要某种状态或条件持续，后项就会一直保持。",
+    "longExplanation": "句型“～限り（は）”表示只要前项所限定的范围、状态或条件持续存在，后项的情况就一直成立并持续。常译为“只要……就……”、“在……范围内”。接动词连体形（辞书形、ている形等）、形容词连体形或“名词＋である”。",
+    "formation": "动词辞书形／ている形 + 限り(は) | 名词 + である限り(は) | 一类形容词 + 限り(は) | 二类形容词 + である／な限り(は)",
+    "examples": [
+      {
+        "translation": "只要我还活在世上一天，就一定会支持守护你。"
+      },
+      {
+        "translation": "只要孩子们还在学校上学，我们就会竭力保护他们。"
+      },
+      {
+        "translation": "只要能力所及，我定当竭尽全力。"
+      },
+      {
+        "translation": "只要你留在这里，我心中便十分安心。"
+      }
+    ]
   },
   "ja_Verb_113": {
-    "title": "Verb がてら (~ gatera)",
-    "shortExplanation": "表示 doing something while doing another; 'while', 'on the occasion of'.",
-    "longExplanation": "The ～がてら grammar point is 用于表达 doing something else in the middle of or on the occasion of another activity. Often used with verbs of movement or activities that easily combine with a second action.",
-    "formation": "动词 (dictionary or -ます stem) + がてら"
+    "title": "动词连用形（去ます） / 名词 + がてら (gatera)",
+    "shortExplanation": "表示借做某主要行动之便，顺便做另一件事；“顺便……”、“借……之便”。",
+    "longExplanation": "句型“～がてら”接在具有移动性质的动词连用形（ます形去掉ます）或动作性名词后，表示在进行该项主要活动的同时，顺带借机完成另一项行动。常译为“顺便……”、“借……之便”。与“～ついでに”相比，“～がてら”更强调两件事在同一移动或行动过程中兼顾进行。",
+    "formation": "动词连用形（去掉ます） + がてら（に） | 名词 + がてら（に）",
+    "examples": [
+      {
+        "translation": "散步的时候，顺便去了趟邮局办点事。"
+      },
+      {
+        "translation": "外出购物的时候，顺便去探望了朋友。"
+      },
+      {
+        "translation": "晨跑的时候，顺道去买了份报纸。"
+      },
+      {
+        "translation": "在公园野餐的同时，顺便静心阅读了书籍。"
+      }
+    ]
   },
   "ja_Verb_114": {
-    "title": "Verb こそすれ (~koso sure)",
-    "shortExplanation": "Often used in the pattern 'Xこそすれ、Y〜ない', meaning 'One might do X, but definitely not Y'.",
-    "longExplanation": "Verb-ますstem + こそすれ is typically used to emphasize that while someone might certainly do or be X, there's no way they would do or be Y. The sentence that follows is usually a strong negative, denying the possibility of Y.",
-    "formation": "动词-ますstem + こそすれ、(絶対に)～ない"
+    "title": "动词连用形（去ます） / 名词 + こそすれ (koso sure)",
+    "shortExplanation": "常用于“Aこそすれ、B～ない”结构，表示“只会做A，绝不会做B”；肯定前项而彻底否定后项。",
+    "longExplanation": "句型“～こそすれ”由强调助词“こそ”与“する”的已然形“すれ”构成，通常以“Aこそすれ、B～ない”的形式出现。用于强烈断言：某人某事或许会发生A，但绝不可能发生相反或极端的B（“虽说……但决不会……”、“只会……绝不……”）。后项必定接否定表达。",
+    "formation": "动词连用形（去掉ます） + こそすれ | 名词 + こそすれ",
+    "examples": [
+      {
+        "translation": "他只会尽心帮助朋友，绝不会妄自菲薄贬低自己。"
+      },
+      {
+        "translation": "她虽说偶尔会做做饭，但搞卫生清洁却几乎从不沾手。"
+      },
+      {
+        "translation": "我哥哥只顾着埋头苦读，几乎完全没有休息玩耍的时间。"
+      },
+      {
+        "translation": "母亲只是一味拼命操劳工作，几乎从不把时间花在自己身上。"
+      }
+    ]
   },
   "ja_Verb_115": {
-    "title": "Verb させられる (~saserareru)",
-    "shortExplanation": "表示 'being forced to do something' or 'being made to do something'.",
-    "longExplanation": "The させられる grammar point is 用于表达 the passive causative form in Japanese. This form is used when you are forced or made to do something by someone or something else. It's a combination of causative and passive form, and it often implies having been made to do something against one's will.",
-    "formation": "动词-casual (non-past) + させられる"
+    "title": "动词使役被动形 (saserareru / sareru)",
+    "shortExplanation": "表示“被迫做……”、“被要求做……”；主语在违背自身意愿的情况下被迫进行某动作。",
+    "longExplanation": "句型“～させられる／～される”是日语中的使役被动形式（使役受身形），表示说话人或主语受他人强迫、指使或由于客观环境所迫，不得不进行某项自己本不情愿做的事情。常译为“被迫做……”、“被逼……”、“被弄得……”。一类动词常用缩略形式“～される”（词尾为す的除外），二类动词为“～させられる”，三类动词为“させられる／こさせられる”。",
+    "formation": "一类动词：词尾变あ段 + される（或 させられる） | 二类动词：去る + させられる | 三类动词：する → させられる、くる → こさせられる",
+    "examples": [
+      {
+        "translation": "我被他强行硬逼着灌下了酒。"
+      },
+      {
+        "translation": "我被父亲严厉逼着去学习功课。"
+      },
+      {
+        "translation": "孩子们每天都被逼着练习弹钢琴。"
+      },
+      {
+        "translation": "我们被强制要求每天大清早起床。"
+      }
+    ]
   },
   "ja_Verb_116": {
-    "title": "Verb ざるを得ない (~ zaru wo enai)",
-    "shortExplanation": "'Cannot but', 'have no choice but to', 'forced to'",
-    "longExplanation": "The Verb ざるを得ない construction is used when the subject is compelled or forced to do something out of necessity, leaving no other choice. It conveys the idea of 'cannot but...' or 'have no choice but...' in English.",
-    "formation": "动词-dictionary form + ざるを得ない (する → せざるを得ない)"
+    "title": "动词未然形 + ざるを得ない (zaru wo enai)",
+    "shortExplanation": "表示出于客观情况或压力，不得不做某事；“不得不……”、“只能……”。",
+    "longExplanation": "句型“～ざるを得ない”（“ざる”为古典否定助动词，“得ない”表示不能）用于表示主观上虽不情愿，但在某种外部客观条件、事态发展或规则压力下，没有其他选择余地，唯有采取该项行动。常译为“不得不……”、“迫不得已只能……”。接动词未然形（去掉ない的形式），特别注意“する”变为“せざるを得ない”。",
+    "formation": "动词未然形（去掉ない） + ざるを得ない（注：する → せざるを得ない）",
+    "examples": [
+      {
+        "translation": "要是这么厌恶这份工作，那如今也就只能辞职了。"
+      },
+      {
+        "translation": "因为考试迫在眉睫，不得不熬夜攻读至深夜。"
+      },
+      {
+        "translation": "眼泪止不住地夺眶而出，让人不得不放声哭泣。"
+      },
+      {
+        "translation": "因为这是老师下达的命令，不得不遵照执行。"
+      }
+    ]
   },
   "ja_Verb_117": {
-    "title": "Verb ずじまい (~zu jimai)",
-    "shortExplanation": "Expressing regret for not having done something; not being able to; missing the chance to do it.",
-    "longExplanation": "The grammar point ～ずじまい (~zu jimai) is 用于表达 regret for not doing something, not being able to do it, or not getting the chance to do it. It highlights an action that ultimately never happened, despite intentions or opportunities.",
-    "formation": "动词-ない form (remove ない) + ずじまい"
+    "title": "动词未然形 + ずじまい (zu jimai)",
+    "shortExplanation": "表示本有打算或机会，但最终却未能实现而深感遗憾；“终究没能……”、“结果还是没……就结束了”。",
+    "longExplanation": "句型“～ずじまい”（汉字写作“仕舞い”，表示结束）接在动词未然形后，表示原本打算做某事或曾有绝佳机会，但由于种种原因拖延、受阻，最终直到结束也未能做成，带有强烈的遗憾、惋惜之情。常译为“终究没能……”、“结果还是没能……就完了”。“する”变为“せずじまい”。",
+    "formation": "动词未然形（去掉ない） + ずじまい（注：する → せずじまい）",
+    "examples": [
+      {
+        "translation": "难得专程来到日本，结果却一次富士山都没能看成就回国了。"
+      },
+      {
+        "translation": "因为匆忙出差的缘故，结果终究没能和她碰上一面。"
+      },
+      {
+        "translation": "昨天身体实在太疲劳了，结果家庭作业终究没做就睡着了。"
+      },
+      {
+        "translation": "虽然精心买下了和服，但结果一次也没能穿过就一直搁置着。"
+      }
+    ]
   },
   "ja_Verb_118": {
-    "title": "Verb ずとも (〜zu tomo)",
-    "shortExplanation": "Means 'Even without doing (X), (Y) can still happen'.",
-    "longExplanation": "The ～ずとも grammar point is 用于表达 that, even if something isn't done, the desired result can still be achieved or the situation remains unaffected. 可以翻译为 'even without' or 'even if not'.",
-    "formation": "动词-negative stem + ずとも"
+    "title": "动词未然形 + ずとも / なくとも (zu tomo / nakutomo)",
+    "shortExplanation": "表示“即使不做……也……”、“即便没有……也无妨”；相当于书面语的“～なくても”。",
+    "longExplanation": "句型“～ずとも”是文语（书面语）表达，相当于口语中的“～なくても”。表示即使不采取某行动，或者即便处于缺少某种条件的状态下，也完全不影响后项事情的成立或目的的达成。常译为“即使不……也……”、“就算没有……也能……”。动词接未然形（去掉ない的形式），“する”变为“せずとも”，“ない”的形式为“なくとも”。",
+    "formation": "动词未然形（去掉ない） + ずとも（注：する → せずとも） | ない → なくとも",
+    "examples": [
+      {
+        "translation": "即便不吃早饭，我也能照常打起精神工作。"
+      },
+      {
+        "translation": "就算没有私家车，搭乘公交车也一样能够前往。"
+      },
+      {
+        "translation": "即便手头没有很多钱财，人也照样能够收获幸福。"
+      },
+      {
+        "translation": "即便没有互联网，获取所需信息的渠道也依然有好几种。"
+      }
+    ]
   },
   "ja_Verb_119": {
-    "title": "Verb ずにはおかない (~zuni wa okanai)",
-    "shortExplanation": "表示 'cannot help but...', 'will definitely...', or 'must do something'.",
-    "longExplanation": "The ずにはおかない grammar point conveys the sentiment of an inevitable action or a strong emotional compulsion. It can mean 'I can’t let it pass without doing X' or 'I definitely will do X'.",
-    "formation": "动词-ない form (remove ない) + ずにはおかない"
+    "title": "动词未然形 + ずにはおかない (zuni wa okanai)",
+    "shortExplanation": "表示“绝不放过……”、“一定要……”、“必然会使……”；表达强烈的决心或必然会引发某种反应。",
+    "longExplanation": "句型“～ずにはおかない”（“おかない”表示放置不管）主要有两种用法：一是指说话人抱有坚定的决心，绝不坐视不管，必定要采取某种行动（“一定要……”、“绝不容许不……”）；二是指某事物必然会自然而然地对他人产生强烈的感染或影响，使其不得不产生某种情感或状态（“必定会令……产生……”）。接动词未然形，“する”变为“せずにはおかない”。",
+    "formation": "动词未然形（去掉ない） + ずにはおかない（注：する → せずにはおかない）",
+    "examples": [
+      {
+        "translation": "要是听说他深陷困境，我绝不会坐视不管，一定要伸出援手帮助他。"
+      },
+      {
+        "translation": "备餐要是再照这样拖延下去，我恐怕绝不可能袖手旁观而不去帮忙。"
+      },
+      {
+        "translation": "这个问题要是得不到解决，我无论如何也一定要构想出改善方案。"
+      },
+      {
+        "translation": "亲眼看到她在伤心哭泣，我无论如何也忍不住要去上前安慰她。"
+      }
+    ]
   },
   "ja_Verb_120": {
-    "title": "Verb ずにはすまない (Verb zuni wa sumanai)",
-    "shortExplanation": "'Cannot do without...', 'unavoidable', 'have to'.",
-    "longExplanation": "The grammar point ずにはすまない is used when something must be done due to social/moral obligation, necessity, or rules. It implies that there is no way around taking that action.",
-    "formation": "动词-ない form (remove ない) + ずにはすまない"
+    "title": "动词未然形 + ずにはすまない (zuni wa sumanai)",
+    "shortExplanation": "表示从社会常识、道德道义或情理来看，必须做某事；“不……就交代不过去”、“不能不……”、“必须……”。",
+    "longExplanation": "句型“～ずにはすまない”（“すまない”汉字写作“済まない”，意为事情不能了结、过意不去）用于表示从社会道德准则、人情常理、法律规章或当事人的良心来看，如果不采取该项行动，事情就无法妥善解决或内心难以心安理得。常译为“不……就交代不过去”、“必须……”、“不能不……”。接动词未然形，“する”变为“せずにはすまない”。",
+    "formation": "动词未然形（去掉ない） + ずにはすまない（注：する → せずにはすまない）",
+    "examples": [
+      {
+        "translation": "如果不解决这个问题，整个社会都会受到波及影响，因此绝不能不彻底解决它。"
+      },
+      {
+        "translation": "一顾及到孩子们的未来，这项教育改革就是不得不果断推行的重任。"
+      },
+      {
+        "translation": "关于这件事情，我必须要当面向他郑重致歉才行。"
+      },
+      {
+        "translation": "既然出席隆重的婚礼，就绝不能不备上一份贺礼奉上。"
+      }
+    ]
   },
   "ja_Verb_121": {
-    "title": "Verb そうにない (Verb sou ni nai)",
-    "shortExplanation": "表示 unlikelihood or that something does not seem likely to happen.",
-    "longExplanation": "The そうにない grammar point is typically formed from the verb’s ます-stem plus そうにない, and is 用于表达 that something seems unlikely to happen or that someone seems unlikely to do something.",
-    "formation": "动词-ますstem + そうにない"
+    "title": "动词连用形（去ます） + そうにない (sou ni nai)",
+    "shortExplanation": "表示根据推测，某事几乎没有发生的可能性；“看起来不太可能……”、“几乎不可能……”。",
+    "longExplanation": "句型“～そうにない”是样态助动词“そうだ”的否定形式之一，接在动词连用形（ます形去掉ます）后，表示说话人根据眼前的迹象或状况推断，认为某事极不可能发生或某动作很难实现。常译为“看起来不大可能……”、“很难……”、“几乎没有……的可能”。也可使用“～そうにもない”或“～そうもない”以进一步加强语气。",
+    "formation": "动词连用形（去掉ます） + そうにない（或 そうにもない／そうもない）",
+    "examples": [
+      {
+        "translation": "他看起来几乎不可能奔跑得那么飞快。"
+      },
+      {
+        "translation": "这份重要文件明天之前恐怕很难顺利整理收尾。"
+      },
+      {
+        "translation": "今天的天空看起来完全没有要下雨的迹象。"
+      },
+      {
+        "translation": "凭她的细心程度，看起来不大可能会出差错。"
+      }
+    ]
   },
   "ja_Verb_122": {
-    "title": "Verb そうもない (〜sou mo nai)",
-    "shortExplanation": "表示 negative potential; 'it doesn't seem like...', 'it's not likely...'.",
-    "longExplanation": "～そうもない is 用于表达 a low possibility or unlikelihood of something happening. It is typically attached to the ます-stem of a verb, similar to そうにない but with an even stronger sense of improbability in many contexts.",
-    "formation": "动词-ますstem + そうもない"
+    "title": "动词连用形 + そうもない (〜sou mo nai)",
+    "shortExplanation": "表示可能性极低或几乎没有实现的指望；“很难……”、“看来不可能……”、“几乎没有……的可能”。",
+    "longExplanation": "句型“～そうもない”接在动词连用形（ます形去掉ます）之后，用于表达说话人根据当前情况做出的主观推测，表示某事发生的可能性极低，几乎不可能会实现（“很难……”、“眼看不能……”、“绝不可能……”）。与“～そうにない”相比，助词“も”的加入进一步强化了否定语气，表达出更为绝望、彻底的低可能性。",
+    "formation": "动词连用形（ます形去掉ます） + そうもない",
+    "examples": [
+      {
+        "translation": "看来今天之内很难把工作完成了。"
+      },
+      {
+        "translation": "雨看起来一点也没有要停的样子。"
+      },
+      {
+        "translation": "他看来很难会遵守约定。"
+      },
+      {
+        "translation": "这个复杂的难题看来很难得到解决。"
+      }
+    ]
   },
   "ja_Verb_123": {
-    "title": "Verb そばから (〜soba kara)",
-    "shortExplanation": "表示 that as soon as one action finishes, another begins immediately.",
-    "longExplanation": "The 〜そばから grammar point is 用于表示 that right after a certain action is completed, another action takes place—often suggesting a repetitive or frustrating cycle.",
-    "formation": "动词-ますstem + そばから"
+    "title": "动词 + そばから (〜soba kara)",
+    "shortExplanation": "表示刚做完某一动作，立刻又发生另一件事，通常暗含重复发生且令人无奈、懊恼的语气；“刚……就又……”、“随……随……”。",
+    "longExplanation": "句型“～そばから”接在动词辞书形或た形之后，表示某种行为刚刚完成，紧接着又出现了相反或破坏性的动作，而且这种情况往往反复发生（“刚……就立刻又……”、“随收拾随弄乱”）。通常带有说话人感到前功尽弃、徒劳无功、无可奈何或焦躁不满的感情色彩，不能用于一次性的普通自然现象。",
+    "formation": "动词辞书形 / た形 + そばから",
+    "examples": [
+      {
+        "translation": "刚打扫完房间，孩子们就又给弄乱了。"
+      },
+      {
+        "translation": "刚做完手头的工作，新的工作就接踵而至了。"
+      },
+      {
+        "translation": "刚解决掉那个问题，马上又冒出了别的问题。"
+      },
+      {
+        "translation": "刚一入睡，电话就响了起来。"
+      }
+    ]
   },
   "ja_Verb_124": {
-    "title": "Verb たが最後 (〜ta ga saigo)",
-    "shortExplanation": "Emphasizes 'once something happens, there is no going back'; 'once', 'as soon as', etc.",
-    "longExplanation": "The 〜たが最後 grammar point 指示 that once an action is taken or event occurs, some (often irreversible) consequence follows. In English, 可以翻译为 'once', 'as soon as', or 'the moment that...'.",
-    "formation": "动词-casual, past (た form) + が最後"
+    "title": "动词た形 + が最後 (〜ta ga saigo)",
+    "shortExplanation": "强调一旦发生了某种情况，就会产生无法挽回的后果；“一旦……就彻底完了”、“要是……可就全完了”。",
+    "longExplanation": "句型“～たが最後”接在动词た形之后，用于假设或陈述一旦发生某种行为或事件，局势便会变得无法收拾、不可逆转（“一旦……就彻底完了”、“只要……就再无挽回的余地”）。后项通常接续极其严重、消极的不良后果，或者陷入完全无法控制的事态。",
+    "formation": "动词た形 + が最後",
+    "examples": [
+      {
+        "translation": "他一旦发火，谁也拦不住他。"
+      },
+      {
+        "translation": "一旦开始玩这个游戏，我就玩了整整一个晚上停不下来。"
+      },
+      {
+        "translation": "她一旦走出了房间，就再也没有回来过。"
+      },
+      {
+        "translation": "我一旦迈过了那座桥，就成了永诀。"
+      }
+    ]
   },
   "ja_Verb_125": {
-    "title": "Verb たことにしてください (~ ta koto ni shite kudasai)",
-    "shortExplanation": "Asking someone to pretend or accept that something has already happened or taken a certain state.",
-    "longExplanation": "The grammar point 'Verb たことにしてください' is used to request someone to act as if or pretend that a certain action has already occurred or a certain state exists. It is used in various contexts to 表达 idea of accepting a hypothetical situation for convenience or to avoid conflicts.",
-    "formation": "动词 (past, casual) + ことにしてください"
+    "title": "动词た形 + ことにしてください (~ ta koto ni shite kudasai)",
+    "shortExplanation": "请求对方当作某事已经发生或权当处于某种状态；“请当作已经……”、“请权当……”。",
+    "longExplanation": "句型“～たことにしてください”由“～ことにする”（权当、当作）派生而来，接在动词た形之后，用于请求对方在态度或处理方式上假定某件事已经发生或既成事实（即便实际情况并非如此）。常用于为了息事宁人、保密或省去不必要的麻烦而采取的变通说法（“请全当已经……吧”、“就当……处理吧”）。",
+    "formation": "动词た形 + ことにしてください",
+    "examples": [
+      {
+        "translation": "昨天的事，请您就当作已经忘了吧。"
+      },
+      {
+        "translation": "请不要告诉任何人我来过这里，就当成我们之间的秘密吧。"
+      },
+      {
+        "translation": "请您权当是他自己弄错了就好。"
+      },
+      {
+        "translation": "就请当作她已经回家了吧。"
+      }
+    ]
   },
   "ja_Verb_126": {
-    "title": "Verb たら Verb たで (~ tara ~ tade)",
-    "shortExplanation": "Conveys that if something happens (or doesn’t happen), there is a particular consequence or situation either way.",
-    "longExplanation": "The pattern VerbたらVerbたで is used for scenarios where doing something creates a certain issue or reaction, and not doing it also creates a different concern. It often shows that no matter which side of the condition you end up on, there’s some related result or trouble.",
-    "formation": "动词-た form + ら + (same 动词-た form) + で"
+    "title": "动词た形 + ら + 动词た形 + で (~ tara ~ tade)",
+    "shortExplanation": "表示即便实现了或做了某事，也自有其相应的麻烦或困扰，横竖都不省心；“真要是……了倒也……”。",
+    "longExplanation": "句型“动词た形 + ら + 动词た形 + で”用于说明：即使前项如愿发生或采取了某种行动，也会随之带来该种情况特有的麻烦、负担或问题（“真去做了也有做的事后麻烦”）。常与否定形式“～なかったら～なかったで”并列使用，形成“做也有做的烦恼，不做也有不做的为难”，淋漓尽致地展现出进退两难的心态。",
+    "formation": "动词た形 + ら + （同一）动词た形 + で",
+    "examples": [
+      {
+        "translation": "真要是去了吧也有去的辛苦，可要是不去吧又觉得会后悔。"
+      },
+      {
+        "translation": "要是买了钱包就空了，可要是没买以后又心心念念想买。"
+      },
+      {
+        "translation": "要是做了饭吧又吃不完，可要是不做吧肚子又饿。"
+      },
+      {
+        "translation": "要是出门去旅行吧容易累，可要是待在家里又闲得无聊。"
+      }
+    ]
   },
   "ja_Verb_127": {
-    "title": "Verb たら きりがない (Verb tara kiri ga nai)",
-    "shortExplanation": "指示 an endless or unending cycle once an action is started; 'if one starts doing something, it will not stop.'",
-    "longExplanation": "The たらきりがない grammar pattern is used when something negative or undesirable continues indefinitely once it begins. The implication is that you should avoid initiating the action because it’ll just go on and on.",
-    "formation": "动词-た form + ら + きりがない"
+    "title": "动词た形 + ら + きりがない (tara kiri ga nai)",
+    "shortExplanation": "表示一旦开了头就会没完没了、永无止境；“要是……就没个完”、“一……就没完没了”。",
+    "longExplanation": "句型“～たらきりがない”（“きり”对应汉字“限/切り”，意为界限、尽头）接在动词た形+ら之后，表示如果一旦开始做某件事，其引发的麻烦、要求或后果就会接连不断、永无停歇（“要是……可就没底了”、“要是……就没完没了”）。通常用于消极负面的语境，暗示应当适可而止或干脆不要轻易破例开头。",
+    "formation": "动词た形 + ら + きりがない",
+    "examples": [
+      {
+        "translation": "这台发动机修好了又立刻坏，要是修下去可就没完没了了。"
+      },
+      {
+        "translation": "一旦开喝起来就没完没了、停不下来。"
+      },
+      {
+        "translation": "要是借钱给她的话，可就没个底了。"
+      },
+      {
+        "translation": "一旦听他唠叨起来，那就没完没了了。"
+      }
+    ]
   },
   "ja_Verb_128": {
-    "title": "Verb たら最後 (〜tara saigo)",
-    "shortExplanation": "表示 that once a certain action happens, the situation changes irreversibly—usually in a negative way.",
-    "longExplanation": "The たら最後 grammar point 指示 that once an action (in た-form) occurs, there is no going back and an unpleasant or unavoidable state follows. Often translated as 'once...then it's all over' or 'the moment...there’s no turning back.'",
-    "formation": "动词-た form + ら最後"
+    "title": "动词た形 + ら最後 (〜tara saigo)",
+    "shortExplanation": "表示一旦做出某种举动，便会陷入无法自拔或不可挽回的境地；“一旦……就彻底完了”、“只要一……就停不下来”。",
+    "longExplanation": "句型“～たら最後”接在动词た形+ら之后，用于表示一旦某种行为发生，局势就将彻底走向不可逆转、无法遏制或无法收拾的结局（“一旦……就再也停不下来”、“要是……可就无可挽回了”）。与“～たが最後”用法基本相同，后项多伴随失控、沉迷或灾难性的后果。",
+    "formation": "动词た形 + ら最後",
+    "examples": [
+      {
+        "translation": "这个游戏一旦开始玩，就会彻底忘记时间的流逝。"
+      },
+      {
+        "translation": "他一旦开喝起一杯啤酒，就再也停不下来了。"
+      },
+      {
+        "translation": "这本书一旦开始读，我就忍不住一口气读完了。"
+      },
+      {
+        "translation": "你要是惹他发了火，那可就很难得到他的原谅了。"
+      }
+    ]
   },
   "ja_Verb_129": {
-    "title": "Verb つ Verb つ (Verb tsu Verb tsu)",
-    "shortExplanation": "表示 two alternating actions happening repeatedly.",
-    "longExplanation": "The 〜つ〜つ pattern is used with two verb ます-stems to express two ongoing, repeated or alternating actions. For example, 'push and pull,' 'go and come back,' 'eat and play,' etc. The same subject is typically implied for both verbs.",
-    "formation": "动词-ますstem + つ + 动词-ますstem + つ"
+    "title": "动词连用形 + つ + 动词连用形 + つ (tsu... tsu...)",
+    "shortExplanation": "表示两个动作交替反复进行，常搭配成对的反义或相关动词；“时而……时而……”、“一会儿……一会儿……”。",
+    "longExplanation": "句型“～つ～つ”接在两个动词连用形（ます形去掉ます）之后，用于表示两个动作交替进行、反复出现（“时而……时而……”、“又……又……”）。常常与成对的反义动词、相对动词搭配形成固定惯用表达（如“持ちつ持たれつ/互相帮助”、“押しつ押されつ/拥挤不堪”），属于具有文语色彩、文雅庄重的书面语表达。",
+    "formation": "动词1连用形（去掉ます） + つ + 动词2连用形（去掉ます） + つ",
+    "examples": [
+      {
+        "translation": "从早到晚一会儿工作一会儿学习，真是把我累坏了。"
+      },
+      {
+        "translation": "他一边说一边笑，玩得十分开心。"
+      },
+      {
+        "translation": "孩子们边吃边玩。"
+      },
+      {
+        "translation": "我一会儿阅读一会儿写作，就这样度过了一整天。"
+      }
+    ]
   },
   "ja_Verb_130": {
-    "title": "Verb てからというもの (Verb te kara to iu mono)",
-    "shortExplanation": "表示 that ever since a certain event happened, a condition has continued until now.",
-    "longExplanation": "The てからというもの grammar point 指示 that from the time a certain action happened, a significant change or condition has persisted continuously. It emphasizes that the new situation contrasts with what came before.",
-    "formation": "动词-て form + からというもの"
+    "title": "动词て形 + からというもの (te kara to iu mono)",
+    "shortExplanation": "表示自从发生某事之后，一种全新的状态便一直持续至今；“自从……以来一直……”、“自从……之后就……”。",
+    "longExplanation": "句型“～てからというもの”接在动词て形之后，用于强调自从某个转折性的重大事件发生之后，生活或环境便发生了深刻变化，且这种新状态一直稳定持续到了今天（“自从……之后就一直……”）。与普通的“～てから”相比，该句型更加突显该事件作为分水岭的里程碑意义，以及事后状态长期的持续性。",
+    "formation": "动词て形 + からというもの",
+    "examples": [
+      {
+        "translation": "自从和她分手之后，我一个人独处的时间变多了。"
+      },
+      {
+        "translation": "自从孩子出生以后，自己的自由时间就荡然无存了。"
+      },
+      {
+        "translation": "自从换了新工作以来，每天都变得非常忙碌。"
+      },
+      {
+        "translation": "自从上了大学之后，就再也没有时间做运动了。"
+      }
+    ]
   },
   "ja_Verb_131": {
-    "title": "Verb てこそ (Verb te koso)",
-    "shortExplanation": "Emphasizes 'only by doing something, a certain result or realization can occur.'",
-    "longExplanation": "The ～てこそ grammar point is used to highlight that only by performing the verb in て-form can a certain important outcome be achieved or recognized. It often translates as 'only by (doing)' or 'only when (doing).'",
-    "formation": "动词-て form + こそ"
+    "title": "动词て形 + こそ (te koso)",
+    "shortExplanation": "强调只有做到了某件事，才算真正具有意义，或才能体会到某种价值；“只有……才……”、“正因为……才真正……”。",
+    "longExplanation": "句型“～てこそ”接在动词て形之后，借助强调用助词“こそ”，表明前项行为是实现后项认知、价值或成果不可或缺的唯一先决条件（“唯有……才真正……”、“只有做到了……才算……”）。后项通常接续表示正面评价、深刻感悟、获得成果或具有积极意义的表达。",
+    "formation": "动词て形 + こそ",
+    "examples": [
+      {
+        "translation": "只有真正实际使用过，才能理解它的真正价值。"
+      },
+      {
+        "translation": "只有亲自去经历，才能学到宝贵的东西。"
+      },
+      {
+        "translation": "唯有经历过失败，才能真正体会到成功的滋味。"
+      },
+      {
+        "translation": "只有付出努力，才能成就一番事业。"
+      }
+    ]
   },
   "ja_Verb_132": {
-    "title": "Verb ては (～te wa)",
-    "shortExplanation": "表示 a repeated pattern or cycle, often implying a frustrating outcome; 'whenever X happens, Y happens again.'",
-    "longExplanation": "The grammar ～ては is 用于展示 that whenever one action or situation occurs, another action or situation repeatedly follows. It can also be used in an alternating pattern: 'do this, then that, then this, then that.'",
-    "formation": "动词-て form + は"
+    "title": "动词て形 + は (～te wa)",
+    "shortExplanation": "表示只要一发生某种动作便屡屡伴随特定结果，或两项动作周而复始反复循环；“每当……就总是……”、“一……就又……”。",
+    "longExplanation": "句型“～ては”接在动词て形之后，主要有两种用法：1）表示“每当……时，就总是会引发某种重复出现的结果”，带有规律性或无奈感；2）以“～ては……、～ては……”的形式，表示两项动作此起彼伏、周而复始地交替反复进行（“一……就……，刚……又……”）。常用于感叹某种无法打破的循环或单调重复的生活状态。",
+    "formation": "动词て形 + は",
+    "examples": [
+      {
+        "translation": "每当见到她，我总是忍不住感到十分紧张。"
+      },
+      {
+        "translation": "这间屋子刚打扫干净就又乱了，刚收拾整齐就又被弄得乱七八糟。"
+      },
+      {
+        "translation": "我一直过着运动完就吃、吃饱了又运动的反复循环生活。"
+      },
+      {
+        "translation": "每天都是学了就睡、睡醒了又学的日子。"
+      }
+    ]
   },
   "ja_Verb_133": {
-    "title": "Verb ては Verb (~ te wa ~)",
-    "shortExplanation": "表示 a repeated pattern of action; translates as 'every time', 'whenever', etc.",
-    "longExplanation": "This grammar point is used when you want to express a repeated or cyclical pattern of actions or events. 可以翻译为 'every time', 'whenever', or 'if at all'. The typical formation is a verb in the て-form, followed by は, and then another verb (often in the same tense or a continuing action).",
-    "formation": "动词-て form + は + 动词"
+    "title": "动词1て形 + は + 动词2 (~ te wa ~)",
+    "shortExplanation": "表示一种规律性的习惯动作或反复模式；“每当……就……”、“一……就常常……”。",
+    "longExplanation": "句型“动词1て形 + は + 动词2”用于表达一种固定的行为模式或规律性习惯：每当前项的动作或情境发生时，后项的动作就会紧接着重复出现（“每逢……就会去做……”、“只要……就照例……”）。强调前后两个动作之间形成了稳固的连带关系与反复出现的频率。",
+    "formation": "动词1て形 + は + 动词2",
+    "examples": [
+      {
+        "translation": "每当我上下班通勤时，都会阅读电子书。"
+      },
+      {
+        "translation": "朋友每次一来我房间，我们就会一起打游戏。"
+      },
+      {
+        "translation": "每当他喝了酒，我就会坚决制止他开车。"
+      },
+      {
+        "translation": "我每写出一首新歌，就会立刻录制下来。"
+      }
+    ]
   },
   "ja_Verb_134": {
-    "title": "Verb てまでも (~ temademo)",
-    "shortExplanation": "表示 'even if it means doing...', 'no matter what it takes'.",
-    "longExplanation": "This grammar point is used when the speaker wants to emphasize the lengths they would go to in order to achieve something. It attaches to the verb's て-form to mean 'even if it means doing X', 'even at the cost of X', or 'no matter what it takes'.",
-    "formation": "动词-て form + までも"
+    "title": "动词て形 + までも (~ temademo)",
+    "shortExplanation": "表示为了达到目的，甚至不惜采取极端手段或付出极大代价；“甚至不惜做到……的地步”、“即使……也……”。",
+    "longExplanation": "句型“～てまでも”（或“～てまで”）接在动词て形之后，用于强调前项行为已经达到了常理之外的极端程度。说话人以此表达为了实现后项的目标或心愿，甚至甘愿做出牺牲、吃尽苦头、乃至采取非常规手段的强烈意志与决心（“即便到了……的地步也要……”、“甚至不惜……也要……”）。助词“も”进一步加剧了语气的极端感。",
+    "formation": "动词て形 + までも（或 てまで）",
+    "examples": [
+      {
+        "translation": "为了通过考试，我甚至不惜削减睡眠时间也要拼命学习。"
+      },
+      {
+        "translation": "只要能和她结婚，哪怕吃尽千辛万苦我也要把钱存下来。"
+      },
+      {
+        "translation": "因为很想在这家公司工作，即使耗费很长时间通勤我也愿意去上班。"
+      },
+      {
+        "translation": "只要是为了他的康复，无论付出何种代价我都愿意全力支持他。"
+      }
+    ]
   },
   "ja_Verb_135": {
-    "title": "Verb てみせる (Verb te miseru)",
-    "shortExplanation": "'Show by doing', 'demonstrate', 'prove by action'.",
-    "longExplanation": "The ～てみせる grammar point is 用于表达 the action of demonstrating or proving something by actually doing it. 可以翻译为 'show by doing', 'demonstrate', or 'prove by action' in English.",
-    "formation": "动词-て form + みせる"
+    "title": "动词て形 + みせる (te miseru)",
+    "shortExplanation": "通过实际行动展示给别人看，或表达一定要做成的坚定决心；“做给……看”、“一定要……证明给大家看”。",
+    "longExplanation": "句型“～てみせる”接在动词て形之后，主要有两种语义情境：1）当面向他人演示、展示某种高超技巧或能力（“做给别人看”、“示范给……看”）；2）向周围的人展现出不容动摇的坚定决心与自信，誓言自己一定能克服困难达成目标，让质疑的人刮目相看（“一定要做成……给你们瞧瞧”）。",
+    "formation": "动词て形 + みせる",
+    "examples": [
+      {
+        "translation": "他解开了那个智力拼图，当场向大家展示了一番。"
+      },
+      {
+        "translation": "我会亲自把这项工作做好，证明给大家看我有这个能力。"
+      },
+      {
+        "translation": "为了通过考试，她拼命努力学习，向大家展现了她的决心。"
+      },
+      {
+        "translation": "他纵身一跃，以此向大家证明自己什么都不怕。"
+      }
+    ]
   },
   "ja_Verb_136": {
-    "title": "Verb てやまない (Verb te yamanai)",
-    "shortExplanation": "Used with certain emotional/mental verbs to show a strong, unceasing emotion: 'can't stop', 'never cease to'.",
-    "longExplanation": "The grammar ～てやまない is typically used with verbs like 願う, 祈る, 愛する, 尊敬する, 期待する, etc., expressing a deep, continuous emotional state (love, respect, hope, prayer). It emphasizes that the feeling 'never ceases.'",
-    "formation": "动词-て form + やまない (common with certain verbs)"
+    "title": "动词て形 + やまない (te yamanai)",
+    "shortExplanation": "接在表示情感、愿望的心里动词后，表示由衷且持久不息的强烈感情；“衷心……不已”、“由衷地……”、“……不止”。",
+    "longExplanation": "句型“～てやまない”（“やまない”来源于动词“止む/平息、停止”）接在动词て形之后，通常与表达内心深刻情感、祈愿或敬慕的动词（如“祈る/祈愿”、“願う/祝愿”、“愛する/深爱”、“尊敬する/崇敬”、“期待する/期待”等）搭配使用。用于郑重表达某种发自肺腑的深厚感情或真挚愿望长久持续、永无止息（“由衷地祝愿……”、“深爱不已……”、“无时无刻不在敬仰……”）。具有浓厚的书面语与郑重致辞色彩。",
+    "formation": "动词て形 + やまない（常与 祈る、願う、愛する、尊敬する、期待する 等心里动词搭配）",
+    "examples": [
+      {
+        "translation": "我对母亲的思念之情由衷且从未止息。"
+      },
+      {
+        "translation": "他由衷且深深地爱着她。"
+      },
+      {
+        "translation": "他对日本文化怀着崇敬不已的心情。"
+      },
+      {
+        "translation": "我由衷且殷切地期盼着她能够取得成功。"
+      }
+    ]
   },
   "ja_Verb_137": {
-    "title": "Verb ないではおかない (~ nai de wa okanai)",
-    "shortExplanation": "Means 'cannot help but do', 'will definitely do', or 'is bound to happen'.",
-    "longExplanation": "The pattern Verb ないではおかない 指示 that something definitely occurs as a logical or emotional consequence. 可以翻译为 'cannot not do', 'can’t help but do', or 'will inevitably do'. The verb is put in the negative form followed by ないではおかない.",
-    "formation": "动词-ない form + ではおかない"
+    "title": "动词未然形 + ではおかない / ずにはおかない (〜nai de wa okanai)",
+    "shortExplanation": "表示必然会引起某种结果，或者说话人下定决心一定要做某事；“一定要……”、“绝不放过……”、“必然会……”。",
+    "longExplanation": "句型“～ないではおかない”接在动词未然形之后，是双重否定表强烈肯定的N1句型。当主语是第一人称时，表示说话人强烈的决心与意志，坚决要把某事做到底，决不罢休（“一定要……”、“决不能放过……”）。当主语是第三人称或自然事物时，表示某种行为或现象必然会引发某种自然反应、情感波动或不可避免的结果（“必然会使……”、“不可避免地会引起……”）。同义表达为“～ずにはおかない”。",
+    "formation": "动词未然形（ない形） + ではおかない / 动词未然形 + ずにはおかない（する变为せずにはおかない）",
+    "examples": [
+      {
+        "translation": "她每次迟到，都免不了要被老师狠狠批评一顿。"
+      },
+      {
+        "translation": "只要有美味的食物，他就一定会吃个精光。"
+      },
+      {
+        "translation": "这部小说太感人了，读了之后必然会让人潸然泪下。"
+      },
+      {
+        "translation": "因为每天都在刻苦训练，在比赛中他必定会拿下胜利吧。"
+      }
+    ]
   },
   "ja_Verb_138": {
-    "title": "Verb ないではすまない (Verb nai dewa sumanai)",
-    "shortExplanation": "'Cannot end without doing', 'must do'—an unavoidable moral or social necessity.",
-    "longExplanation": "The grammar Verb ないではすまない 表示 that something must be done (often for moral, social, or personal reasons) and cannot be left undone. It implies an obligation or inevitability, akin to 'I can't get away without doing it.'",
-    "formation": "动词-ない form + ではすまない"
+    "title": "动词未然形 + ではすまない / ずにはすまない (〜nai de wa sumanai)",
+    "shortExplanation": "表示从社会常识、道义责任或当事人良心来看，不能不采取某种行动；“不……就说不过去”、“非……不可”。",
+    "longExplanation": "句型“～ないではすまない”接在动词未然形（ない形）之后，表示由于受到社会常识、道德规约、法律或自身良心的约束，如果不做某件事，事态就无法妥善了结，在情理上也说不过去（“不能不……”、“非得……才行”）。相比于一般的“～なければならない”，该句型更加侧重于道义责任与心理层面的不可推卸性。同义表达为“～ずにはすまない”。",
+    "formation": "动词未然形（ない形） + ではすまない / 动词未然形 + ずにはすまない（する变为せずにはすまない）",
+    "examples": [
+      {
+        "translation": "一旦犯了错误，就必须要赔礼道歉，否则说不过去。"
+      },
+      {
+        "translation": "这个问题性质重大，我必须向上级汇报。"
+      },
+      {
+        "translation": "这部电影实在是太感人了，让人不禁感动落泪。"
+      },
+      {
+        "translation": "孩子犯了错误，做家长的不能不加以指正教育。"
+      }
+    ]
   },
   "ja_Verb_139": {
-    "title": "Verb ないまでも (Verb nai made mo)",
-    "shortExplanation": "'Even if not to the extent of...', 'although not completely...'.",
-    "longExplanation": "The pattern ないまでも is used when acknowledging that something doesn’t reach a certain extreme, but at least some part or degree of it applies. Often translated as 'even if not entirely...' or 'though not as far as...'.",
-    "formation": "动词-ない form + までも"
+    "title": "动词未然形 + までも (〜nai made mo)",
+    "shortExplanation": "表示虽然达不到理想或极端的程度，但至少也应该达到某种底线或基本要求；“即使不至于……但也至少……”。",
+    "longExplanation": "句型“～ないまでも”接在动词未然形（ない形）之后，用于退一步承认虽然前项所描述的理想状态或极端程度未能达成，但后项至少达到了一个次一级的、较为实际或妥协的程度（“虽说谈不上……但好歹也……”、“即使做不到……也希望至少……”）。后项常伴随说话人的最低期望、妥协方案或基本努力。",
+    "formation": "动词未然形（ない形） + までも",
+    "examples": [
+      {
+        "translation": "即使做不到全部理解，我也希望你至少能掌握最基础的内容。"
+      },
+      {
+        "translation": "即使见不到面，我也想在电话里听听你的声音。"
+      },
+      {
+        "translation": "就算每天慢跑实在勉为其难，我也希望能坚持每周至少跑一次。"
+      },
+      {
+        "translation": "就算无法得到所有人的喜爱，我也想要真诚地对待每一个人。"
+      }
+    ]
   },
   "ja_Verb_140": {
-    "title": "Verb ないものだろうか (Verb nai mono darou ka)",
-    "shortExplanation": "Expressing hope or wonder if something can be done: 'Isn't there a way...?', 'Can't we...?'",
-    "longExplanation": "This grammar point is used when the speaker 表示 the hope, wish, or wonder if an action could be possible. It creates the nuance of 'Isn't there some way...?' or 'Can't I/you/we...?' in English, often with the negative potential form.",
-    "formation": "动词-negative (often negative potential) + ものだろうか"
+    "title": "动词未然形 + ものだろうか (〜nai mono darou ka)",
+    "shortExplanation": "表示强烈的愿望或期待，探寻是否有可能实现某种期望；“难道就不能……吗？”、“真希望能……”。",
+    "longExplanation": "句型“～ないものだろうか”常接在动词可能态否定形式之后（也可以接一般动词未然形），用于表达说话人面对困难现状时，由衷期盼某种难以实现的愿望能够得以实现的迫切心情（“难道就没有办法……吗？”、“真希望能够想想办法……”）。语气中常带有无可奈何却又不愿放弃的探寻与感慨色彩。",
+    "formation": "动词可能态否定形（或动词ない形） + ものだろうか",
+    "examples": [
+      {
+        "translation": "如果能有更多时间，难道就不能常来这里转转吗？"
+      },
+      {
+        "translation": "要是向她解释得更清楚一些，难道她就真的不能理解吗？"
+      },
+      {
+        "translation": "难道就没有能够解决这个问题的办法了吗？"
+      },
+      {
+        "translation": "难道就不能坦然承认自己的错误吗？"
+      }
+    ]
   },
   "ja_Verb_141": {
-    "title": "Verb ないものでもない (Verb nai mono demo nai)",
-    "shortExplanation": "表示 the idea that it's not entirely impossible or non-existent: 'It's not that I don't...', 'It's not that there aren't...'",
-    "longExplanation": "The grammar point Verbないものでもない is 用于表达 that a situation is not completely impossible or nonexistent. Literally, 可以翻译为 'it's not that there aren't...' or 'it's not that I never...'. It implies that some possibility or partial truth exists.",
-    "formation": "动词-negative form (ない form) + ものでもない"
+    "title": "动词未然形 + ものでもない (〜nai mono demo nai)",
+    "shortExplanation": "双重否定表示委婉的肯定，说明事情并非完全不可能或完全没有希望；“并非不……”、“倒也不是不能……”。",
+    "longExplanation": "句型“～ないものでもない”接在动词未然形（或可能态否定形）之后，通过双重否定的形式表达委婉、含蓄的肯定判断。表示某事虽然难度很大或并不常见，但如果具备了一定条件，倒也并非完全不可能实现（“也并不是不可以……”、“未必就做不到……”）。常用于避免过于绝对或武断的断言。",
+    "formation": "动词未然形（ない形 / 可能态否定形） + ものでもない",
+    "examples": [
+      {
+        "translation": "我倒也不是完全不想去旅行。"
+      },
+      {
+        "translation": "他所说的那些话，也并非完全没有一丁点差错。"
+      },
+      {
+        "translation": "那个问题也并不是完全解答不出来。"
+      },
+      {
+        "translation": "我倒也不是不想见他。"
+      }
+    ]
   },
   "ja_Verb_142": {
-    "title": "Verb の ない Noun (~ no nai ~)",
-    "shortExplanation": "Used to modify a noun with a negative verb form; 'a Noun without (Verb)'.",
-    "longExplanation": "VerbのないNoun modifies a noun by describing the absence of the verb's action. It 指示 'a Noun where the action does not happen' or 'a Noun without that action.'",
-    "formation": "动词 in negative form + の + 名词"
+    "title": "名词1 + のない + 名词2 (〜no nai〜)",
+    "shortExplanation": "修饰后项名词，表示缺乏或不存在前项事物；“没有[名词1]的[名词2]”。",
+    "longExplanation": "句型“[名词1] のない [名词2]”属于日语连体修饰节（定语从句）中主格助词“が”向领格助词“の”转化的语法现象（即“が・の交代”）。在以形容词“ない”为谓语的从句中，原本表示主语的“〜がない”可转换为“〜のない”，用来直接修饰后面的中心名词，强调该事物缺乏某种核心要素或特征（“没有欢笑的人生”、“没有水的场所”）。",
+    "formation": "名词1 + のない + 名词2",
+    "examples": [
+      {
+        "translation": "没有欢笑的人生是索然无味的。"
+      },
+      {
+        "translation": "在没有水源的地方，人类是无法生存的。"
+      },
+      {
+        "translation": "一个没有语言的世界，实在是难以想象。"
+      },
+      {
+        "translation": "没有爱情的婚姻是难以长久维持下去的。"
+      }
+    ]
   },
   "ja_Verb_143": {
-    "title": "Verb ば きりがない (〜ba kiri ga nai)",
-    "shortExplanation": "指示 there's no end once you start listing, doing, or saying something: 'If one starts to..., there will be no end.'",
-    "longExplanation": "The pattern ～ばきりがない is used when expressing that if you start an action—like listing examples or complaining—there is no end. It literally means 'if (you) do X, there's no limit/end.'",
-    "formation": "动词-conditional form (ば) + きりがない"
+    "title": "动词假定形 + きりがない (〜ba kiri ga nai)",
+    "shortExplanation": "表示如果一旦开始做某件事（如数落、抱怨、举例等），就会没完没了、永无止境；“要是……就没完没了了”。",
+    "longExplanation": "句型“～ばきりがない”由动词假定形（ば形）与表示“无休无止”的惯用语“きりがない”组合而成。用于强调数量极多或某种消极行为极其泛滥，一旦开启了某个动作（如举例、列举缺点、抱怨、发牢骚），就根本停不下来，无论怎样也无法罗列穷尽（“若要说起来可就说不完了”、“要是数起来可就没底了”）。",
+    "formation": "动词假定形（ば形） + きりがない",
+    "examples": [
+      {
+        "translation": "要是说起别人的坏话来，那可真是没完没了。"
+      },
+      {
+        "translation": "要是数落起他的缺点来，简直没完没了。"
+      },
+      {
+        "translation": "这个国家风景秀丽的地方，要是列举起来根本数不过来。"
+      },
+      {
+        "translation": "此外如果还要继续举例的话，那可就无穷无尽了。"
+      }
+    ]
   },
   "ja_Verb_144": {
-    "title": "Verb もしないで (~ mo shinai de)",
-    "shortExplanation": "Means 'without even doing'.",
-    "longExplanation": "This pattern is 用于表达 that one has not done (or not even tried to do) some action before proceeding to do something else. It emphasizes doing something 'without even' doing the prior action.",
-    "formation": "动词 (masu stem) + もしないで"
+    "title": "动词连用形 + もしないで (〜mo shinai de)",
+    "shortExplanation": "批评或责备某人连理所应当先做的动作都没做，就贸然进行后面的事情；“连……都不做就……”、“根本不……就……”。",
+    "longExplanation": "句型“～もしないで”接在动词连用形（ます形去掉ます）之后，带有强烈的责备、不满或批评语气。用于指出行为主体对于本该事先认真完成的基础动作连试都没试、根本不予理会，便草率地进行了下一步行动（“查都不查就写答案”、“书都没翻就写报告”）。",
+    "formation": "动词连用形（ます形去掉ます） + もしないで",
+    "examples": [
+      {
+        "translation": "连查都没查一下，我就把答案写上去了。"
+      },
+      {
+        "translation": "他连复习都没复习，居然就通过了考试。"
+      },
+      {
+        "translation": "她那本书连翻都没翻过，就写完了读后报告。"
+      },
+      {
+        "translation": "连事前准备都没做，他就直接开始了演示汇报。"
+      }
+    ]
   },
   "ja_Verb_145": {
-    "title": "Verb やしない (~ yashinai)",
-    "shortExplanation": "表示 a strong denial or refusal: 'I would never...', 'No way I would...'.",
-    "longExplanation": "This grammar adds a nuance of strong denial or dismissal of the idea that the speaker (or someone) would do the action. Formed by adding やしない to the verb's stem, it often appears in casual or spoken language.",
-    "formation": "动词 (masu stem) + やしない"
+    "title": "动词连用形 + やしない (〜yashinai)",
+    "shortExplanation": "口语中带有烦躁、不满或斩钉截铁语气的强烈否定；“根本不……”、“哪会……”、“绝不……”。",
+    "longExplanation": "句型“～やしない”是口语中“～はしない”的音变形式，接在动词连用形（ます形去掉ます）之后。它传达出一种极为强烈的否定意味，通常伴随着说话人的焦躁、抱怨、愤慨或冷漠决绝的情绪，用于断言某种行为绝不可能发生或某人根本不肯做某事（“我才不会哭呢”、“他怎么可能听得进去”）。",
+    "formation": "动词连用形（ます形去掉ます） + やしない",
+    "examples": [
+      {
+        "translation": "这种节骨眼上，我才不会哭呢。"
+      },
+      {
+        "translation": "我怎么可能会去帮他那种人。"
+      },
+      {
+        "translation": "他绝不可能会说出那种荒唐的话来。"
+      },
+      {
+        "translation": "我才不可能去买那么昂贵的东西。"
+      }
+    ]
   },
   "ja_Verb_146": {
-    "title": "Verb よう (~ you / ~ you ni)",
-    "shortExplanation": "表示 'the way/manner of doing something' or 'in order to / so that / try to'.",
-    "longExplanation": "This usage of よう most commonly appears as 「Verb辞書形 + ように」. It can mean 'in order to do something', 'so that something happens', or 'in the way someone does something'. It is also used in expressions like ～ようにする (to make an effort to) or ～ように言う (to tell someone to do something).",
-    "formation": "动词 (dictionary or negative form) + ように (する / etc.)"
+    "title": "动词辞书形 / ない形 + ように (〜you ni)",
+    "shortExplanation": "表示目的（“为了……”）、样态方式（“正如……”）、努力的习惯（“争取……”）或委婉的劝告指示（“请务必……”）。",
+    "longExplanation": "句型“～ように”是表示目的、状态和间接意图的多功能句型。接在非意志动词或动词可能态/否定形之后时，常用于表示目的（“为了能够……”）；后续接“努力する”、“気をつける”或“〜ようにしている”时，表示努力养成某种习惯或达成某种状态（“争取做到……”）；后续接“言う”、“頼む”等言语动词时，表示转述委婉的命令或嘱咐（“转告其务必……”）；而在祈使句中也可直接作结，表示温和的叮嘱与祈愿。",
+    "formation": "动词辞书形 / ない形 + ように（＋ する / 努力する / 言う 等）",
+    "examples": [
+      {
+        "translation": "我会努力去把这道难题解答出来。"
+      },
+      {
+        "translation": "我们就按照他所交代的方法来做吧。"
+      },
+      {
+        "translation": "我每天都坚持去慢跑。"
+      },
+      {
+        "translation": "请务必好好珍视呵护自己的内心。"
+      }
+    ]
   },
   "ja_Verb_147": {
-    "title": "Verb ようか Verbるまいか (Verb you ka Verb ru mai ka)",
-    "shortExplanation": "表示 indecision: 'Should I do it or not?'.",
-    "longExplanation": "This grammar shows hesitation about whether to do something or not. The volitional form plus まい (negative volitional) suggests an internal debate about two opposite choices of the *same* verb.",
-    "formation": "动词-volitional form + か + 动词-volitional negative form (まい) + か"
+    "title": "动词意志形 + か + 动词 + まいか (〜you ka〜mai ka)",
+    "shortExplanation": "表示在做还是不做某件事之间拿不定主意，内心充满犹豫和彷徨；“做还是不做呢”、“要不要……呢”。",
+    "longExplanation": "句型“～ようか～まいか”将同一动词的意志形（～よう）与否定意志形（～まい）并列使用，真实再现了说话人在两种截然相反的抉择之间摇摆不定、纠结万分的心理状态（“是去呢还是不去呢”、“要不要坦白呢”）。后项通常搭配“迷う”、“悩む”、“考える”等表示心理思索与困惑的动词。",
+    "formation": "动词意志形 + か + 动词辞书形（一段动词去る） + まい + か（する变为しようかしまいか/すまいか；来る变为こようかくるまいか/こまいか）",
+    "examples": [
+      {
+        "translation": "到底要不要跟他说实话，我心里真的很纠结。"
+      },
+      {
+        "translation": "我正在犹豫到底要不要去参加这次考试。"
+      },
+      {
+        "translation": "我正在考虑要不要向那个人赔礼道歉。"
+      },
+      {
+        "translation": "我正在为究竟要不要继续升学深造而苦恼。"
+      }
+    ]
   },
   "ja_Verb_148": {
-    "title": "Verb ようが Verb るまいが (Verb you ga Verb ru mai ga)",
-    "shortExplanation": "表示 'whether or not', 'no matter if something happens or not'.",
-    "longExplanation": "Verbようが Verbるまいが 指示 that whatever happens—whether the action is done or not—the outcome remains unchanged or the speaker's stance remains the same.",
-    "formation": "动词-volitional form + が + 动词-negative volitional form + が"
+    "title": "动词意志形 + が + 动词 + まいが (〜you ga〜mai ga)",
+    "shortExplanation": "表示不论前项是否采取该行动，后项的事态或说话人的态度决心都完全不受影响；“无论……还是不……”。",
+    "longExplanation": "句型“～ようが～まいが”罗列了积极与消极两个对立的极端假设，用以表达无论出现哪种情况，后项的结果、既定事实或说话人的决心立场都毫无二致，不会发生任何改变（“不论去还是不去，结果都一样”）。属于较郑重的表达方式，与“～ようと～まいと”用法基本相同。",
+    "formation": "动词意志形 + が + 动词辞书形（一段动词去る） + まいが（する变为しようがしまいが；来る变为こようがくるまいが）",
+    "examples": [
+      {
+        "translation": "不管他来还是不来，派对都会照常开始。"
+      },
+      {
+        "translation": "不管你学还是不学，考试的最终结果都不会改变。"
+      },
+      {
+        "translation": "不管下不下雨，我们都会按计划去野餐。"
+      },
+      {
+        "translation": "不管天热还是天冷，我每天都会坚持慢跑。"
+      }
+    ]
   },
   "ja_Verb_149": {
-    "title": "Verb ようがない (〜you ga nai)",
-    "shortExplanation": "表示 'no way to do something,' 'impossible to do'.",
-    "longExplanation": "〜ようがない is used to say that there's no way or method to do something, even if you wanted to.",
-    "formation": "动词 (masu stem) + ようがない"
+    "title": "动词连用形 + ようがない (〜you ga nai)",
+    "shortExplanation": "表示即使心里想做，也找不到任何手段或办法来实施；“无法……”、“毫无办法……”、“没办法……”。",
+    "longExplanation": "句型“～ようがない”接在动词连用形（ます形去掉ます）之后，表示缺乏达成该动作的途径、工具、手段或可能性，哪怕主观上十分渴望去付诸行动，客观上也完全无能为力（“想做也做不成”、“无从下手”、“无可挽回”）。常用于表达人在不可抗力或绝境面前的深深无奈感。",
+    "formation": "动词连用形（ます形去掉ます） + ようがない",
+    "examples": [
+      {
+        "translation": "电车里拥挤得动弹不得，连挪动一下身子都毫无办法。"
+      },
+      {
+        "translation": "他跑得实在太快了，我无论如何也追不上。"
+      },
+      {
+        "translation": "这对我而言根本无从理解。"
+      },
+      {
+        "translation": "无论用什么法子，这东西都已经无法修好了。"
+      }
+    ]
   },
   "ja_Verb_150": {
-    "title": "Verb ようと Verbる まいと (Verb you to Verb ru mai to)",
-    "shortExplanation": "This structure 指示 that regardless of whether one does (verb) or not, the outcome/attitude remains unchanged.",
-    "longExplanation": "The expression 'Verb-volitional form + と + Verb-negative volitional (～まい) + と' means 'regardless of whether one does X or not, it doesn't change the situation'. It shows the speaker's firm stance or the unchanging nature of some outcome.",
-    "formation": "动词-volitional + と + 动词-negative volitional (～まい) + と"
+    "title": "动词意志形 + と + 动词 + まいと (〜you to〜mai to)",
+    "shortExplanation": "表示无论做还是不做某事，既定事实或说话人的根本态度都决不会改变；“无论……还是不……”。",
+    "longExplanation": "句型“～ようと～まいと”在意义上与“～ようが～まいが”相同，表示无论肯定项还是否定项成立，后项的事态推进或说话人的坚定意志都全然不受干预（“不论做不做都一样”）。相比于“～ようが～まいが”，该句型书面语色彩更为浓厚，常用于庄重、严肃的语境或书面文章中。",
+    "formation": "动词意志形 + と + 动词辞书形（一段动词去る） + まいと（する变为しようとしまいと；来る变为こようとくるまいと）",
+    "examples": [
+      {
+        "translation": "不管你来还是不来，派对都将按照预定计划开始。"
+      },
+      {
+        "translation": "不管他去不去那里，我们都已经无力阻止他了。"
+      },
+      {
+        "translation": "不管她道不道歉，既成的事实都无法改变。"
+      },
+      {
+        "translation": "不管你参不参加考试，作为父母我都会全心全意支持你。"
+      }
+    ]
   },
   "ja_Verb_151": {
-    "title": "Verb ようにも (〜you ni mo)",
-    "shortExplanation": "用于表达 'even though one wants to do something, one can't for some reason'.",
-    "longExplanation": "The ～ようにも grammar point 指示 that a person wants or tries to do something (volitional form), but for some reason cannot. Often, there's a second clause explaining what prevents the action.",
-    "formation": "动词-volitional form + にも + (reason/potential negative, etc.)"
+    "title": "动词意志形 + にも (〜you ni mo)",
+    "shortExplanation": "表示即便主观上很想做某事，但受到客观障碍或某种条件的阻碍而根本无法实现；“想……也（做不到）”。",
+    "longExplanation": "句型“～ようにも”接在动词意志形之后，后项通常接续可能态否定形式（如“〜できない”）或“〜無理だ”等表示无法实现的客观表达。用于表达由于外部阻碍、自身能力或身体状况限制，即使自己有着强烈的行动意愿，也完全无法如愿以偿的无力感与遗憾之情（“想走也走不了”、“想说却说不出”）。",
+    "formation": "动词意志形 + にも ＋ （后接可能态否定 / 无法实现的表达）",
+    "examples": [
+      {
+        "translation": "就算我想跑得再快一些，可脚实在太疼了根本办不到。"
+      },
+      {
+        "translation": "我即便想跟他好好谈谈，可他却一直在无视我。"
+      },
+      {
+        "translation": "就算我想多学一会儿，可实在抽不出时间来。"
+      },
+      {
+        "translation": "我就算想要向她道歉，可她早就已经火冒三丈了。"
+      }
+    ]
   },
   "ja_Verb_152": {
-    "title": "Verb ようにも Verb れない (〜you ni mo 〜renai)",
-    "shortExplanation": "表示 the inability to do something even if one wants/tries.",
-    "longExplanation": "This grammar shows that you want (or try) to do something (volitional form), but cannot due to some obstacle. Often it appears as 'Verb-volitional + にも + Verb (potential negative)' or simply 'Verb-volitional + にも + (reason you can't)'.",
-    "formation": "动词-volitional form + にも + (potential negative form / reason)"
+    "title": "动词意志形 + にも + 动词可能形否定 / 原因 (〜you ni mo 〜renai)",
+    "shortExplanation": "表示即使想做某事，也因某种客观阻碍而无法做到；“即使想……也（做）不了……”、“想……也……不能”。",
+    "longExplanation": "句型“～ようにも～（ら）れない”接在动词意志形之后，加上助词“にも”，后项接续同一动词的可能形否定形式，或说明无法实施的客观原因。该句型用于表达说话人虽然主观上非常想做某事或试图去做，但受到客观情况、阻碍或不可抗力的限制而完全无法如愿（“即便想……也做不到……”、“想……也无法……”），带有强烈的无可奈何与遗憾叹息之情。",
+    "formation": "动词意志形 + にも + 动词可能形否定 / 无法实现的理由",
+    "examples": [
+      {
+        "translation": "即便想相信他，却有证据摆在面前让我无法相信。"
+      },
+      {
+        "translation": "哪怕想早点出发，车子却偏偏坏了。"
+      },
+      {
+        "translation": "即使想给他打电话，可我根本不知道他的电话号码。"
+      },
+      {
+        "translation": "虽然还想多学一点，但实在是没有时间。"
+      }
+    ]
   },
   "ja_Verb_153": {
-    "title": "Verb ようもない (~you mo nai)",
-    "shortExplanation": "表示 'it's impossible to do something'.",
-    "longExplanation": "～ようもない typically attaches to the verb's ます-stem, adding ようもない to indicate that there is 'no way' or 'no method' to perform the action. It’s the same nuance as 'Verbようがない' in many references.",
-    "formation": "动词-ます stem + ようもない"
+    "title": "动词连用形 + ようもない (~you mo nai)",
+    "shortExplanation": "表示完全没有方法或途径去做某事；“根本无法……”、“毫无办法……”、“无法可想”。",
+    "longExplanation": "句型“～ようもない”接在动词连用形（ます形去掉ます）之后，表示完全找不到进行该动作的方法、手段或可能性（“根本无法……”、“毫无……的办法”）。其含义与“～ようがない”基本相同，但助词“も”的存在进一步强化了否定色彩，断定在任何情况下都绝对无法实施该行为。",
+    "formation": "动词连用形（ます形去掉ます） + ようもない",
+    "examples": [
+      {
+        "translation": "这道难题根本无从解答。"
+      },
+      {
+        "translation": "已经无法再忍耐下去了。"
+      },
+      {
+        "translation": "根本不可能跟他讲得通。"
+      },
+      {
+        "translation": "那药实在难以下咽。"
+      }
+    ]
   },
   "ja_Verbる_154": {
-    "title": "Verbる がままに (〜ga mama ni)",
-    "shortExplanation": "表示 'letting something happen as it is'; 'just as something does'.",
-    "longExplanation": "がままに describes an action happening exactly 'as is,' without intervention or change, often suggesting doing something passively or naturally.",
-    "formation": "动词-dictionary form + がままに"
+    "title": "动词辞书形 + がままに (〜ga mama ni)",
+    "shortExplanation": "表示任由事物自然发展或听凭摆布、毫无干预；“任凭……”、“听任……”、“随……”。",
+    "longExplanation": "句型“～がままに”接在动词辞书形之后（也常见于被动态如“言われるがままに”任人摆布、“なされるがままに”任凭处置），表示完全不加干涉、不作抵抗，任凭动作自然发生或听任事态按照原样发展（“任由……”、“任凭……”、“随心所欲地……”）。常带有顺其自然或被动接受、随波逐流的语感。",
+    "formation": "动词辞书形 + がままに",
+    "examples": [
+      {
+        "translation": "任凭窗户就那么开着，结果风都刮进了房间里。"
+      },
+      {
+        "translation": "她只是默默地坐着，任凭泪水止不住地流淌。"
+      },
+      {
+        "translation": "孩子们尽情地欢笑着，在公园里四处奔跑玩耍。"
+      },
+      {
+        "translation": "任凭夕阳缓缓西沉，我们依然坐在海边聊个不停。"
+      }
+    ]
   },
   "ja_Verbる_155": {
-    "title": "Verbる が早いか (verb-ru ga hayai ka)",
-    "shortExplanation": "表示 'as soon as...' or 'the moment when...'.",
-    "longExplanation": "Verbる が早いか 指示 that something happens immediately after something else. It's similar to 'as soon as...' or 'no sooner than...'.",
-    "formation": "动词-dictionary form + が早いか"
+    "title": "动词辞书形 / た形 + が早いか (verb-ru ga hayai ka)",
+    "shortExplanation": "表示前项动作刚一发生，后项动作几乎同时瞬间紧接着发生；“刚一……就立刻……”、“说时迟那时快……”。",
+    "longExplanation": "句型“～が早いか”接在动词辞书形或た形之后，用来表示前项动作刚刚完成的瞬间，后项动作便疾速展开，动作衔接之快宛如同时发生（“刚一……就马上……”、“一……立刻就……”）。后项叙述已经发生的事实，通常不能接表达说话人意志、命令、请求或推测的表达方式。",
+    "formation": "动词辞书形 / た形 + が早いか",
+    "examples": [
+      {
+        "translation": "刚一进房间，他就立刻打开了电视。"
+      },
+      {
+        "translation": "刚一坐上电车，我就立马睡着了。"
+      },
+      {
+        "translation": "她刚一眼看到，就立刻哭了起来。"
+      },
+      {
+        "translation": "工资刚一发下来，我就全花了个精光。"
+      }
+    ]
   },
   "ja_Verbる_156": {
-    "title": "Verbる くらいなら (〜ru kurai nara)",
-    "shortExplanation": "表示 preference to avoid something: 'rather than...', 'if it comes to doing X, I'd rather...'.",
-    "longExplanation": "This grammar is used when the speaker would rather not do something or chooses another option rather than face the stated action. It’s often translated as 'rather than... I'd prefer...' or 'if it comes down to doing X, I'd rather...'.",
-    "formation": "动词-dictionary form + くらいなら"
+    "title": "动词辞书形 + くらいなら (〜ru kurai nara)",
+    "shortExplanation": "表示与其忍受前项极不情愿的情况，倒不如选择后项；“与其……倒不如……”、“要是……还不如……”。",
+    "longExplanation": "句型“～くらいなら”接在动词辞书形之后，用于表示说话人极其厌恶或极力回避前项动作或遭遇，认为与其发生前项那样糟糕的事，宁可选择后项的方案（“与其……宁愿……”、“要是……倒不如……”）。后项常与“～ほうがましだ”“～ほうがいい”“～たい”等表达偏好或两害相权取其轻的句式搭配使用。",
+    "formation": "动词辞书形 + くらいなら",
+    "examples": [
+      {
+        "translation": "与其一个人去，我倒宁愿待在家里。"
+      },
+      {
+        "translation": "要是注定要输，那还不如根本不参加比赛为好。"
+      },
+      {
+        "translation": "要是去迟到的话，倒不如直接请一天假算了。"
+      },
+      {
+        "translation": "与其落得痛苦的下场，我宁愿避开那个风险。"
+      }
+    ]
   },
   "ja_Verbる_157": {
-    "title": "Verbる こと なし に (Verb-ru koto nashi ni)",
-    "shortExplanation": "用于表达 'without doing something'.",
-    "longExplanation": "Verbることなしに 指示 doing something else 'without' performing the stated action. It can imply skipping or omitting the verb action entirely.",
-    "formation": "动词-dictionary form + ことなしに"
+    "title": "动词辞书形 + ことなしに (Verb-ru koto nashi ni)",
+    "shortExplanation": "表示完全不做前项动作而进行后项动作；“在没有……的情况下”、“不……就……”。（书面语）",
+    "longExplanation": "句型“～ことなしに”是接在动词辞书形之后的郑重书面语表达，相当于口语中的“～ないで”或“～ずに”，表示在省略或完全不进行前项行为的前提下去做后项的事（“不……而……”、“未曾……便……”）。常用于强调略过了某项原本必要或预期的步骤。",
+    "formation": "动词辞书形 + ことなしに",
+    "examples": [
+      {
+        "translation": "没有怎么复习备考，我竟然通过了考试。"
+      },
+      {
+        "translation": "连试穿都没试穿一下，我就把衣服买了下来。"
+      },
+      {
+        "translation": "他不用工作也照样生活着。"
+      },
+      {
+        "translation": "没有办理任何手续，我就离职了。"
+      }
+    ]
   },
   "ja_Verbる_158": {
-    "title": "Verbる ことのないように (Verb-ru koto no nai you ni)",
-    "shortExplanation": "表示 the desire or effort to prevent something: 'so as not to...', 'to avoid...'.",
-    "longExplanation": "Verbる ことのないように is 用于展示 that one is trying or intending to prevent some action from happening. It's like 'so that this doesn't happen' or 'in order not to...'.",
-    "formation": "动词-dictionary form + ことのないように"
+    "title": "动词辞书形 + ことのないように (Verb-ru koto no nai you ni)",
+    "shortExplanation": "表示为了防止某种不良事态的发生而采取措施；“为了不……”、“以免……”、“切莫……”。",
+    "longExplanation": "句型“～ことのないように”接在动词辞书形之后，相当于“～ないように”的郑重书面表达，用于表示为了避免出现前项所描述的不良状况、过失或负面结果，而在后项采取防范措施或提出忠告建议（“为了免于……”、“以防……”、“避免发生……”）。",
+    "formation": "动词辞书形 + ことのないように",
+    "examples": [
+      {
+        "translation": "为了不至于丢失爱车，在停车场请务必锁好车门。"
+      },
+      {
+        "translation": "为了避免感冒，一定要认真洗手。"
+      },
+      {
+        "translation": "为了不考砸落榜，每天都要认真学习。"
+      },
+      {
+        "translation": "为了不出现差错，工作时请务必谨慎细致。"
+      }
+    ]
   },
   "ja_Verbる_159": {
-    "title": "Verbる ときりがない (verb-ru to kiri ga nai)",
-    "shortExplanation": "用于表示 that something can go on endlessly or without limits.",
-    "longExplanation": "The ～るときりがない grammar point is 用于表达 that once you start doing the verb, there’s no end or limit. The phrase 'きりがない' means 'no end' or 'endless.'",
-    "formation": "动词-casual + と + きりがない"
+    "title": "动词辞书形 + ときりがない (verb-ru to kiri ga nai)",
+    "shortExplanation": "表示一旦开始做某事就会无休无止、没完没了；“一……就没完没了”、“要是……就毫无止境”。",
+    "longExplanation": "句型“～るときりがない”接在动词辞书形之后，由假定助词“と”加上表示“没有止境/毫无终结”的“きりがない（限がない）”构成。表示某种行为或现象一旦展开，数量之多或过程之长便会达到无法收拾、无穷无尽的程度（“一……就没个完”、“要是……就永无休止”）。",
+    "formation": "动词辞书形 + と + きりがない",
+    "examples": [
+      {
+        "translation": "要是说起他的坏话来，那可就没完没了了。"
+      },
+      {
+        "translation": "要是深入钻牛角尖琢磨那个问题，就根本没个尽头。"
+      },
+      {
+        "translation": "要是列举她的优点，真是一天一夜也数不完。"
+      },
+      {
+        "translation": "如果要把这世上的美食全吃一遍，那可真是无穷无尽了。"
+      }
+    ]
   },
   "ja_Verbる_160": {
-    "title": "Verbる ともなく Verb (Verb-ru tomonaku Verb)",
-    "shortExplanation": "用于表达 'without a particular intention', 'unconsciously', or 'before one knows it'.",
-    "longExplanation": "The phrase VerbるともなくVerb 指示 doing something unintentionally or unconsciously— you just find yourself doing it without a clear aim or intention.",
-    "formation": "动词-dictionary form + ともなく + 动词"
+    "title": "动词辞书形 + ともなく + 动词 (Verb-ru tomonaku Verb)",
+    "shortExplanation": "表示漫无目的、心不在焉或无意识地做某事；“漫不经心地……”、“无意中……”、“并不打算……却……”。",
+    "longExplanation": "句型“～ともなく”接在动词辞书形之后（后项常重复该动词或使用同类动作的动词，如“見るともなく見る/眺める”漫无目的地看、“聞くともなく聞く”不经意地听），用来表达说话人并没有明确的意图、目的或焦点，只是随性、心不在焉或无意识地在做某个动作（“漫不经心地……”、“漫无目的地……”）。",
+    "formation": "动词辞书形 + ともなく + 动词（多为同一动词或相关动作）",
+    "examples": [
+      {
+        "translation": "并没有特意看远处的什么东西，只是漫无目的地眺望着窗外。"
+      },
+      {
+        "translation": "不知不觉间，我隐隐察觉到了他的离去。"
+      },
+      {
+        "translation": "并不是存心要读书，只是漫不经心地翻着书页。"
+      },
+      {
+        "translation": "也并没有打算真正睡觉，只是漫无目的地躺在床上发呆。"
+      }
+    ]
   },
   "ja_Verbる_161": {
-    "title": "Verbる ともなしに Verb (Verb-ru tomonashi ni Verb)",
-    "shortExplanation": "表示 doing something unintentionally or without conscious thought.",
-    "longExplanation": "VerbるともなしにVerb is 用于展示 that you do some action without particularly intending to. Often you ‘end up doing’ something by habit or casually.",
-    "formation": "动词-dictionary form + ともなしに + 动词"
+    "title": "动词辞书形 + ともなしに + 动词 (Verb-ru tomonashi ni Verb)",
+    "shortExplanation": "表示漫不经心、毫无特别动机或意图地做某事，往往在此过程中有了意外的发生或发现；“无意中……”、“漫不经心地……”。",
+    "longExplanation": "句型“～ともなしに”接在动词辞书形之后，用法与“～ともなく”非常相近，表示并不是出于某种特定的明确动机或强烈意愿，而只是漫不经心、无意识或顺其自然地做着某件事（“漫无目的地……”、“无意中……”）。常用于描述在漫不经心的动作进行过程中，偶然触发了另一件事或有了意外发现。",
+    "formation": "动词辞书形 + ともなしに + 动词",
+    "examples": [
+      {
+        "translation": "漫不经心地随手翻着书，不知不觉就睡着了。"
+      },
+      {
+        "translation": "怀着轻松的心情漫无目的地随笔写信，结果竟向他表白了自己的真心。"
+      },
+      {
+        "translation": "并无特别目的地随意漫步散心，偶然发现了一家新开的咖啡馆。"
+      },
+      {
+        "translation": "漫不经心地随手整理衣服时，偶然翻出了以前的旧照片。"
+      }
+    ]
   },
   "ja_Verbる_162": {
-    "title": "Verbる なり (Verb-ru nari)",
-    "shortExplanation": "表示 'as soon as' or 'the moment'.",
-    "longExplanation": "Verbるなり 指示 that the following action happens immediately after the verb action. 可以翻译为 'no sooner than...', 'as soon as...', or 'the moment...'.",
-    "formation": "动词-dictionary form + なり"
+    "title": "动词辞书形 + なり (Verb-ru nari)",
+    "shortExplanation": "表示前项动作刚一完成，紧接着立刻发生后项动作；“一……就立刻……”、“刚……就马上……”。",
+    "longExplanation": "句型“～なり”接在动词辞书形之后，用于表示某一动作刚刚做完，立刻就紧接着采取后一动作（“一……就……”、“刚……就立刻……”）。前后两项通常为同一主语（多为第三人称），后项常伴随出人意料或突发性的举动，不能用于表达说话人的命令、劝诱或推测。",
+    "formation": "动词辞书形 + なり",
+    "examples": [
+      {
+        "translation": "刚一回到家，他就立刻倒头睡了。"
+      },
+      {
+        "translation": "他刚一到车站，就立刻打来了电话。"
+      },
+      {
+        "translation": "刚一打开门，狗就汪汪叫了起来。"
+      },
+      {
+        "translation": "考试刚一结束，他就立刻走出了教室。"
+      }
+    ]
   },
   "ja_Verbる_163": {
-    "title": "Verbる にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
-    "shortExplanation": "表示 'not only… but also', 'not limited to…'.",
-    "longExplanation": "にとどまらず is 用于表示 that something goes beyond just the stated verb or noun. 可以翻译为 'not just… but also…' or 'not limited to…'.",
-    "formation": "名词 / 动词-dictionary form + にとどまらず + も/ほかのこと"
+    "title": "名词 / 动词辞书形 + にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
+    "shortExplanation": "表示范围不仅局限于某一方面，而且还进一步扩展到更广的领域；“不仅局限于……而且连……也……”、“不仅……还……”。",
+    "longExplanation": "句型“～にとどまらず”接在名词或动词辞书形之后，源自表示停留、限制的动词“とどまる”。用于表达某事物的影响、作用或范围并不仅止于前项提及的界限，而是进一步波及、扩大到更大或更广的范围（“不仅止于……甚至还……”、“不局限于……连……也……”）。后项常与助词“も”呼应使用。",
+    "formation": "名词 / 动词辞书形 + にとどまらず + 名词/分句 + も",
+    "examples": [
+      {
+        "translation": "他不仅努力本职工作，而且还积极参与志愿活动。"
+      },
+      {
+        "translation": "这项功能不仅局限于拍照，录制视频也同样支持。"
+      },
+      {
+        "translation": "这家餐厅不仅提供日本料理，还供应中华料理。"
+      },
+      {
+        "translation": "那家企业不仅涉足制造业，还拓展了物流配送业务。"
+      }
+    ]
   },
   "ja_Verbる_164": {
-    "title": "Verbる にはあたらない (Verb-ru ni wa ataranai)",
-    "shortExplanation": "Used to say 'there is no need to...', 'it’s not necessary to...'.",
-    "longExplanation": "Verbる にはあたらない 表示 that something is not worth the reaction or there is no need to do the verb. It's somewhat formal and often used in writing.",
-    "formation": "动词-dictionary form + にはあたらない"
+    "title": "动词辞书形 / 名词 + にはあたらない (Verb-ru ni wa ataranai)",
+    "shortExplanation": "表示事情并没有严重到那种地步，不值得或没有必要做出过度的反应；“用不着……”、“用不着大惊小怪地去……”、“并不值得……”。",
+    "longExplanation": "句型“～にはあたらない”是比较郑重的书面语表达，接在动词辞书形或动作性名词之后，表示该事态的程度轻微，根本不值得做出那么强烈的反应、情绪或举动（“并不至于……”、“用不着去……”、“犯不上……”）。常与表示心理反应或评价类的词汇搭配使用。",
+    "formation": "动词辞书形 / 名词 + にはあたらない",
+    "examples": [
+      {
+        "translation": "完全用不着陷入恐慌。"
+      },
+      {
+        "translation": "根本犯不上向他道歉。"
+      },
+      {
+        "translation": "用不着为那种事情担忧挂虑。"
+      },
+      {
+        "translation": "关于那件事，并不值得苦思冥想。"
+      }
+    ]
   },
   "ja_Verbる_165": {
-    "title": "Verbる にも (Verb-ru ni mo)",
-    "shortExplanation": "指示 that doing the verb is impossible or difficult, even if one wants to.",
-    "longExplanation": "Verbる にも is often used with an additional clause explaining why the action can’t be done. 可以翻译为 'even if (I) want to do X, I can’t (because...)'.",
-    "formation": "动词-dictionary form + にも + (reason it can't be done)"
+    "title": "动词辞书形 + にも (Verb-ru ni mo)",
+    "shortExplanation": "表示即使想做某事，也因客观条件所限而难以实现；“即使想……也（因为……而办不到）”。",
+    "longExplanation": "句型“动词辞书形 + にも”后项常接续说明阻碍原因或客观困难的分句，表示即便有打算去做某事，但由于面临种种客观限制、现实困难或条件不足，要实施起来也极度艰难甚至行不通（“哪怕想要……也因为……”）。其语法功能与“～ようにも”相近，多用于强调现实条件的欠缺与阻碍。",
+    "formation": "动词辞书形 + にも + 说明阻碍或困难的从句",
+    "examples": [
+      {
+        "translation": "即便明天下雨，可光是想带把伞，行李也实在太多带不了。"
+      },
+      {
+        "translation": "考试落榜了，但即便想再考一次，手头的钱也根本不够。"
+      },
+      {
+        "translation": "纵然心里想见他，但当下的处境即便想见一面也是困难重重。"
+      },
+      {
+        "translation": "就算从这个机场去她家，也必须要打出租车才行。"
+      }
+    ]
   },
   "ja_Verbる_166": {
-    "title": "Verbる にも Verb れない (Verb-ru ni mo Verb-re nai)",
-    "shortExplanation": "表示: 'Even if I try/want to do something, I cannot.'",
-    "longExplanation": "This pattern emphasizes that a person wants or attempts to do something (often in volitional form), but is incapable of doing so. It is often used with potential verbs in negative form: 'Even if I try to ~, I can't ~.'",
-    "formation": "动词-volitional + にも + 动词-potential negative"
+    "title": "动词意志形 + にも + 动词可能形否定 (Verb-ru ni mo Verb-re nai)",
+    "shortExplanation": "强调即使主观上极想去做某事，客观上也完全无法做到；“即使想……也（做）不了……”、“想……也……不成”。",
+    "longExplanation": "句型“动词意志形 + にも + 动词可能形否定”（N1）通过重复同一个动词（前半部分为意志形，后半部分为可能形否定），极力强调说话人虽然抱有强烈的做某事的意愿或尝试，但因受制于客观阻碍、能力所限或心理压抑而陷入完全无法实现的无助境地（“哪怕想……也做不到……”、“想……也无法……”）。",
+    "formation": "动词意志形 + にも + 动词可能形否定",
+    "examples": [
+      {
+        "translation": "哪怕我极力想去理解他，也完全无法理解。"
+      },
+      {
+        "translation": "哪怕想跑也根本跑不动。"
+      },
+      {
+        "translation": "想哭却连眼泪都流不出来。"
+      },
+      {
+        "translation": "哪怕千方百计想去遗忘，却怎么也忘不掉。"
+      }
+    ]
   },
   "ja_Verbる_167": {
-    "title": "Verbる べからざる Noun (Verb-ru bekara zaru Noun)",
-    "shortExplanation": "用于表达 what should not be done; 'must not', 'should not'.",
-    "longExplanation": "The Japanese grammar point Verbる べからざる Noun is 用于表示 something that should not be done, or is not allowed to be done. It translates to 'must not' or 'should not' in English. It is often used in formal written Japanese or in formal speeches. It is constructed by using the verb in its dictionary form followed by 'べからざる' and a noun, usually related to behavior or events.",
-    "formation": "动词-dictionary form + べからざる + 名词"
+    "title": "动词辞书形 + べからざる + 名词 (Verb-ru bekara zaru Noun)",
+    "shortExplanation": "用于书面语中修饰名词，表示强烈的道德或伦理禁止；“不应……的”、“绝不可……的”。",
+    "longExplanation": "句型“～べからざる”是源自古日语助动词“べし”的连体形否定表现（修饰名词），属于JLPT N1级别的硬文体句型。常与表示行为、罪过、过失等名词（如行為、行動、罪、態度等）连用，表达在道德、法律或道义上“绝不能做”、“不可原谅”或“不可（如：不可动摇、不可侵犯）”的庄重语气。注意动词“する”常变为“すべからざる”或“するべからざる”。",
+    "formation": "动词辞书形（“する”多用“すべからざる/するべからざる”） + べからざる + 名词",
+    "examples": [
+      {
+        "translation": "背叛他人是绝不能容许的行为。"
+      },
+      {
+        "translation": "伤害孩子是绝不应该做出的行径。"
+      },
+      {
+        "translation": "在公众面前说谎是绝不可为的行为。"
+      },
+      {
+        "translation": "侵犯他人财产是绝不容许实施的非法行为。"
+      }
+    ]
   },
   "ja_Verbる_168": {
-    "title": "Verbる べからず (〜ru bekara zu)",
-    "shortExplanation": "表示 the idea of 'must not do' or 'should not do'.",
-    "longExplanation": "The ～るべからず grammar point is 用于表达 a strong prohibition or firmly established rule. 可以翻译为 'must not do' or 'should not do'. It is common in formal or instructive settings (e.g., signs, notices). The formation is straightforward with verbs in dictionary form followed by べからず.",
-    "formation": "动词-ru + べからず"
+    "title": "动词辞书形 + べからず (〜ru bekara zu)",
+    "shortExplanation": "表示严肃、断然的禁止命令；“不可……”、“切勿……”、“严禁……”。",
+    "longExplanation": "句型“～べからず”是古日语助动词“べし”的未然形后接打消助动词“ず”构成的句末表现，属于JLPT N1级别的硬体禁令表达。用于向公众或他人发出严肃、决绝的禁止命令（“切勿……”、“不可……”、“禁止……”）。常出现在公共警示标语、公告牌、校训校规、格言以及训诫文体中。动词“する”接续时常写作“すべからず”或“するべからず”。",
+    "formation": "动词辞书形（“する”接续为“すべからず/するべからず”） + べからず",
+    "examples": [
+      {
+        "translation": "切勿说谎。"
+      },
+      {
+        "translation": "严禁泄露他们的秘密。"
+      },
+      {
+        "translation": "绝不可破坏规则。"
+      },
+      {
+        "translation": "切不可荒废学业。"
+      }
+    ]
   },
   "ja_Verbる_169": {
-    "title": "Verbる べく (Verb-ru beku)",
-    "shortExplanation": "表示 the meaning of 'in order to', 'for the purpose of'.",
-    "longExplanation": "The 'Verbる べく' grammar point is 用于表示 a strong intention or purpose of the speaker. 可以翻译为 'in order to' or 'for the purpose of' in English. It is more common in written language or formal contexts.",
-    "formation": "动词-dictionary form + べく"
+    "title": "动词辞书形 + べく (Verb-ru beku)",
+    "shortExplanation": "用于郑重的书面语中表示强烈的目的或打算；“为了……”、“旨在……”、“企图……”。",
+    "longExplanation": "句型“～べく”是源自古日语助动词“べし”的连用形，属于JLPT N1级别的硬文体表现。相当于“～ようと思って”或“～するために”，用于郑重表达说话人抱着明确的目的和坚定的意志去采取后项的行动（“为了想要……”、“打算……”）。前后两项主语通常一致，且后项均为有意识的意志性行为动词；后项不能接请求、劝诱或命令语气。动词“する”接续时多写作“すべく”或“するべく”。",
+    "formation": "动词辞书形（“する”多接为“すべく/するべく”） + べく",
+    "examples": [
+      {
+        "translation": "为了获得成功，我每天都在刻苦努力。"
+      },
+      {
+        "translation": "为了保持健康，我每天都坚持运动。"
+      },
+      {
+        "translation": "他每天用功苦读，旨在取得学位。"
+      },
+      {
+        "translation": "为了尽快赶到目的地，我叫了一辆出租车。"
+      }
+    ]
   },
   "ja_Verbる_170": {
-    "title": "Verbる べくもない (Verb-ru beku mo nai)",
-    "shortExplanation": "Means 'it's impossible to...' or 'there's no way to...'.",
-    "longExplanation": "This grammar point is used when you want to express that something is impossible or there is no way to do something. The verb before 'べくもない' should be in its dictionary form.",
-    "formation": "动词-dictionary form + べくもない"
+    "title": "动词辞书形 + べくもない (Verb-ru beku mo nai)",
+    "shortExplanation": "表示情况绝不允许或客观上根本不可能做到；“不可能……”、“哪能……”、“无法……”。",
+    "longExplanation": "句型“～べくもない”由古语中表示可能的“べく”加上提示助词“も”和否定“ない”构成，属于JLPT N1级别的庄重书面语。相当于“～できるわけがない”或“とても～できない”，表示在当时的状况或条件下，绝不可能做到某事或毫无实现的余地（“根本无法……”、“岂能……”）。常与“知る（知晓）”、“望む（指望）”、“比べる（比较）”、“疑う（怀疑）”等动词搭配，动词“する”接续为“すべくもない”或“するべくもない”。",
+    "formation": "动词辞书形（“する”接续为“すべくもない/するべくもない”） + べくもない",
+    "examples": [
+      {
+        "translation": "那道题太难了，根本不可能解得出来。"
+      },
+      {
+        "translation": "她跑得实在太快了，根本追不上。"
+      },
+      {
+        "translation": "我忘了带考试书写工具，根本没办法作答。"
+      },
+      {
+        "translation": "他跳得极高，根本无法超越他。"
+      }
+    ]
   },
   "ja_Verbる_171": {
-    "title": "Verbる までもない (〜ru made mo nai)",
-    "shortExplanation": "It's not necessary to the extent of; no need to.",
-    "longExplanation": "The 〜るまでもない grammar point is 用于表达 that something is not necessary to the extent of doing that action. 可以翻译为 'no need to' in English.",
-    "formation": "动词-る + までもない"
+    "title": "动词辞书形 + までもない (〜ru made mo nai)",
+    "shortExplanation": "表示事情显而易见或微不足道，用不着大费周章地去做；“用不着……”、“无需……”、“犯不着……”。",
+    "longExplanation": "句型“～までもない”接在动词辞书形之后，表示事情本身极其显然、简单，或者事情太小，根本没有必要特意达到做某动作的程度（“用不着……”、“无需特地去……”）。常用于事情理所当然无需赘言（如常见固定搭配“言うまでもない”——不言而喻），或者问题轻微、不值得花费精力去担忧、商讨等场合。",
+    "formation": "动词辞书形 + までもない",
+    "examples": [
+      {
+        "translation": "根本用不着那么担心。"
+      },
+      {
+        "translation": "这是不值当特意打电话去说的小事。"
+      },
+      {
+        "translation": "犯不着因为一次小小的失败就放弃。"
+      },
+      {
+        "translation": "这个问题用不着拿到会议上去讨论。"
+      }
+    ]
   },
   "ja_Verbる_172": {
-    "title": "Verbる ものとする (〜ru mono to suru)",
-    "shortExplanation": "Assuming or deciding something as...",
-    "longExplanation": "The ～るものとする grammar point is often used in formal or legal contexts to express a decision or assumption. 可以翻译为 'it is decided/assumed that...' or 'shall be deemed that...'.",
-    "formation": "动词-dictionary form + ものとする"
+    "title": "动词辞书形 + ものとする (〜ru mono to suru)",
+    "shortExplanation": "多用于合同、法规、公文等正式条款中，规定原则、约定或决定；“视同……”、“应当……”、“定为……”。",
+    "longExplanation": "句型“～ものとする”接在动词辞书形之后，是法律文书、合同协议、章程制度及公函告示中极具代表性的规约性表达。用于白纸黑字地确立硬性规则、权利义务、生效条款或决策判断（“规定为……”、“视为……”、“应认定为……”），具有明确的约束力和制度规范性。",
+    "formation": "动词辞书形 + ものとする（礼貌体：ものとします）",
+    "examples": [
+      {
+        "translation": "此处的商讨内容定为保密事项。"
+      },
+      {
+        "translation": "本合同自明日起生效。"
+      },
+      {
+        "translation": "现决定由他担任团队负责人。"
+      },
+      {
+        "translation": "关于此事视为就此告一段落。"
+      }
+    ]
   },
   "ja_Verbる_173": {
-    "title": "Verbる や否や (Verb-ru ya ina ya)",
-    "shortExplanation": "表示 the idea of 'as soon as', 'the moment...'.",
-    "longExplanation": "The grammar point Verbる や否や is 用于表达 something happening immediately after another action or event. 可以翻译为 'as soon as...' or 'the moment...'. The verb must be in dictionary form.",
-    "formation": "动词-dictionary form + や否や"
+    "title": "动词辞书形 + や否や (Verb-ru ya ina ya)",
+    "shortExplanation": "表示前项动作刚一发生，后项紧接着瞬间发生；“刚一……就立刻……”、“一……马上就……”。",
+    "longExplanation": "句型“～や否や”接在动词辞书形之后，属于JLPT N1级别的硬体书面表现。用于描述紧接在某一动作发生的一刹那，后项的动作或突发状况便瞬时随之发生，几乎难分先后（“刚一……就……”、“刹那间……”）。后项通常为叙述已发生的客观事实，不能接续包含说话人意志、推量、命令或劝诱的句子。",
+    "formation": "动词辞书形 + や否や",
+    "examples": [
+      {
+        "translation": "她刚一回到家，就立刻打开了电视。"
+      },
+      {
+        "translation": "我刚一把信箱打开，信件就掉了出来。"
+      },
+      {
+        "translation": "放学铃声刚一响，孩子们就飞奔向了公园。"
+      },
+      {
+        "translation": "父亲刚一读报纸，就因什么事情浑身颤抖起来。"
+      }
+    ]
   },
   "ja_Verbる_174": {
-    "title": "Verbる 始末だ (〜ru shimatsu da)",
-    "shortExplanation": "指示 a (often unfortunate) result or conclusion of an action.",
-    "longExplanation": "The ～る始末だ grammar point 表示 the outcome or conclusion of an action, typically a negative or unfortunate result. 可以翻译为 'end up...', 'the result is...', or 'the conclusion is...'.",
-    "formation": "动词-dictionary form + 始末だ"
+    "title": "动词辞书形 + 始末だ (〜ru shimatsu da)",
+    "shortExplanation": "表示经过不良的发展过程，最终落得糟糕、遗憾的下场；“最终落得……”、“结果竟然……”、“落到……地步”。",
+    "longExplanation": "句型“～始末だ”接在动词辞书形之后，属于JLPT N1表现。用于描述事态经过一系列恶化、疏忽或不良的发展，最终导致了十分糟糕、无可挽回或狼狈不堪的不幸结局（“落得个……的下场”、“结果搞得……的地步”）。常含有说话人强烈的自责、叹息、埋怨或批判的不满情绪。",
+    "formation": "动词辞书形 + 始末だ（过去式：始末だった）",
+    "examples": [
+      {
+        "translation": "一时粗心给忘了，结果落得把护照忘在家里的下场。"
+      },
+      {
+        "translation": "每天晚上都加班到深夜，最后竟搞到病倒的地步。"
+      },
+      {
+        "translation": "平时根本不学习，结果落得考试不及格的下场。"
+      },
+      {
+        "translation": "由于电车晚点，最后落得开会迟到的结局。"
+      }
+    ]
   },
   "ja_Verbる_175": {
-    "title": "Verbる 嫌いがある (～ru kirai ga aru)",
-    "shortExplanation": "Tendency to do a negative action; have a bad habit of ~.",
-    "longExplanation": "The ～る嫌いがある grammar point is 用于表达 a negative tendency or habit. It often carries a critical or disapproving tone and points out someone's habitual action.",
-    "formation": "动词-dictionary form + 嫌いがある"
+    "title": "动词辞书形 / 名词 + の + 嫌いがある (～ru kirai ga aru)",
+    "shortExplanation": "表示有某种不良的倾向、恶习或缺点；“有……的倾向”、“毛病是往往会……”。",
+    "longExplanation": "句型“～嫌いがある”接在动词辞书形或“名词+の”之后，属于JLPT N1级别的委婉批评表达。“嫌い”在此处意为“不好的倾向或倾向性特点”。用于指出某人或某事物具有某种令人遗憾、需要指责或不理想的负面倾向或不良癖好（“有点……的毛病”、“往往有……的倾向”）。语气多带有批评、规劝或反省色彩。",
+    "formation": "动词辞书形 / 名词 + の + 嫌いがある",
+    "examples": [
+      {
+        "translation": "她有容易迟到的毛病。"
+      },
+      {
+        "translation": "我父亲往往有饮酒过度的倾向。"
+      },
+      {
+        "translation": "他有转头就忘东西的不良习惯。"
+      },
+      {
+        "translation": "她往往有中途打断别人说话的不良习惯。"
+      }
+    ]
   },
   "ja_いつまでのやら_176": {
-    "title": "いつまで～のやら (itsumade ~ no yara)",
-    "shortExplanation": "表示 uncertainty regarding duration; 'don't know when... will end'.",
-    "longExplanation": "The いつまで～のやら grammar point is 用于表达 uncertainty about when something will end or finish. It is often used in situations where the speaker is unsure about when a particular state of affairs or event will conclude.",
-    "formation": "いつまで + 动词 (dictionary form) + のやら"
+    "title": "いつまで + 动词辞书形 + のやら (itsumade ~ no yara)",
+    "shortExplanation": "表示不知某事究竟要持续到何时，常带有无可奈何、叹息或不安的语气；“不知要……到几时”、“真不知何时才能……”。",
+    "longExplanation": "句型“いつまで～のやら”将疑问词“いつまで（到何时）”与表示不确定的终助词“のやら（不知……）”结合，用于表达说话人对眼下拖沓漫长、令人疲惫的状态究竟何时能够结束充满困惑、无法预测的感慨（“真不知到底要持续到什么时候……”）。通常伴随着叹息、厌倦、无可奈何或焦虑不安的心情。",
+    "formation": "いつまで + 动词辞书形 / 形容词 / 名词 + のやら",
+    "examples": [
+      {
+        "translation": "这备考复习真不知还要持续到何时啊。"
+      },
+      {
+        "translation": "真不知道他的长篇大论什么时候才讲得完。"
+      },
+      {
+        "translation": "这场雨真不知还要下到什么时候。"
+      },
+      {
+        "translation": "新冠疫情真不知要持续到何时才能结束。"
+      }
+    ]
   },
   "ja_が_177": {
-    "title": "～が Verb られる (〜ga Verb rareru)",
-    "shortExplanation": "表示 potential or ability to do something; 'can', 'able to'.",
-    "longExplanation": "The ～が Verb られる grammar pattern generally refers to the potential form of Japanese verbs (i.e., 'can do something'). However, the exact formation depends on the verb group. For most Group 1 (五段) verbs, potential form changes the final -u to -eru (e.g., 書く→書ける). For Group 2 (一段) verbs, you often see ～られる (e.g., 食べる→食べられる). In English, it translates as 'can' or 'able to'.",
-    "formation": "❶ (Group 1) 动词:  書く → 書ける / 飲む → 飲める, etc.\n❷ (Group 2) 动词-ます stem + られる (食べる→食べられる、見る→見られる)"
+    "title": "主语 / 宾语 + が + 动词可能形 (〜ga Verb rareru)",
+    "shortExplanation": "表示主体具备某种能力或客观条件允许做某事；“能……”、“可以……”、“会……”。",
+    "longExplanation": "该句型运用日语动词的可能形（可能态），通常使用助词“が”来提示动作的对象（如“日本語が話せる”）或在从句中提示动作主体（如“彼が解ける”），用于表达具备某种技能能力或客观条件许可实现该动作（“能……”、“会……”）。可能形的变形规则：一类动词（五段动词）将词尾元音由u段变为e段后加る（如：解く→解ける、運ぶ→運べる）；二类动词（一段动词）去る加られる（如：食べる→食べられる）；三类动词中“する”变为“できる”，“来る”变为“来（こ）られる”。",
+    "formation": "❶ 一类动词（五段动词）：词尾由u段变e段 ＋ る（解く→解ける、運ぶ→運べる）\n❷ 二类动词（一段动词）：词干（去る） ＋ られる（食べる→食べられる）\n❸ 三类动词（变格动词）：する → できる / 来る → 来られる（こられる）\n句型结构：名词（宾语/主语） + が + 动词可能形",
+    "examples": [
+      {
+        "translation": "你认为他能解出这道题吗？"
+      },
+      {
+        "translation": "我能搬得动那个大箱子吗？"
+      },
+      {
+        "translation": "我认为他可以跑得很快。"
+      },
+      {
+        "translation": "她会说日语。"
+      }
+    ]
   },
   "ja_かと思いきや_178": {
-    "title": "～かと思いきや (〜ka to omoikiya)",
-    "shortExplanation": "Expressing unexpected outcomes; 'just when I thought...', 'but...'.",
-    "longExplanation": "The ～かと思いきや grammar point is used when the outcome turns out different from what was initially assumed or expected. 可以翻译为 'just when I thought...' or simply 'but (actually)...'. It often highlights that the speaker’s assumption was proven wrong by subsequent events.",
-    "formation": "Sentence + かと思いきや (动词 plain form, i-/na-形容词, or 名词 + だ + かと思いきや)"
+    "title": "简体形 + かと思いきや (〜ka to omoikiya)",
+    "shortExplanation": "表示实际情况与当初的预料、推想截然相反；“本以为……谁知却……”、“原以为……不料……”。",
+    "longExplanation": "句型“～かと思いきや”源自古语表现“思いきや（岂料、哪曾想到）”，接在简体句之后，属于JLPT N1级别的转折表达。用于叙述事态的发展与说话人原先的预想、推测或常理判断完全相反（“原以为……岂料……”、“本以为……结果却出人意料地……”），后项必定带来出乎意料的转折事实，蕴含着浓厚的意外与吃惊感。",
+    "formation": "简体句（动词普通形 / い形容词 / な形容词词干 + だ / 名词 + だ） + かと思いきや",
+    "examples": [
+      {
+        "translation": "本以为明天会是个晴天，谁料竟然下起了雨。"
+      },
+      {
+        "translation": "原以为他这次考试考砸了，没想到他竟然合格了。"
+      },
+      {
+        "translation": "原以为这块蛋糕一定很美味，谁料一点甜味都没有。"
+      },
+      {
+        "translation": "本以为列车一定会晚点，不料却准时到达了。"
+      }
+    ]
   },
   "ja_がゆえに_179": {
-    "title": "～がゆえに (～ga yue ni)",
-    "shortExplanation": "表示 the reason or cause; 'because', 'due to', 'as a result of'.",
-    "longExplanation": "The ～がゆえに grammar point is 用于表达 a reason or cause, often in more formal writing or speech. It roughly corresponds to 'because (of)', 'due to', or 'as a result of' in English.",
-    "formation": "名词 / 动词 / 形容词 + がゆえに"
+    "title": "名词 / 动词 / 形容词 + がゆえに (～ga yue ni)",
+    "shortExplanation": "在庄重书面语中强调深刻的原因或由头；“正因为……所以……”、“由于……之故”。",
+    "longExplanation": "句型“～がゆえに”属于JLPT N1级别的古雅书面语表现。“ゆえ（故）”表示理由、原由。用于庄重或具有文学色彩的语境中，深刻揭示后项之所以产生、存在的根本原因或前因后果（“正因……才……”、“由……之故”）。常与表述人类深刻情感（爱、恨）、身份资质、宿命、经验不足等词语连用。",
+    "formation": "名词（+ である） / 动词普通形 / い形容词 / な形容词（+ な/である） + がゆえに",
+    "examples": [
+      {
+        "translation": "正因为爱之切，他原谅了她。"
+      },
+      {
+        "translation": "由于突降暴雨，比赛被迫延期了。"
+      },
+      {
+        "translation": "正因他不懈努力，才取得了成功。"
+      },
+      {
+        "translation": "因他的离世，其家人陷入了无尽的深切悲痛之中。"
+      }
+    ]
   },
   "ja_がゆえの_180": {
-    "title": "～がゆえの Noun (〜ga yue no Noun)",
-    "shortExplanation": "表示 the reason or cause for something; 'because of', 'due to'.",
-    "longExplanation": "The ～がゆえの Noun pattern is used to describe a noun that exists or occurs due to some cause. It is often used in more literary or formal contexts.",
-    "formation": "名词 / 动词-dictionary form + がゆえの + 名词"
+    "title": "名词 / 动词辞书形 + がゆえの + 名词 (〜ga yue no Noun)",
+    "shortExplanation": "修饰名词，表示由前述原因而产生的某种结果或状态；“源于……的……”、“因……而产生的……”。",
+    "longExplanation": "句型“～がゆえの”是“～がゆえに”的连体形表现，属于JLPT N1级别的古雅文体。后项直接修饰名词，用于指明该名词所代表的结果、状态、情感或产物是由于前述原因而生发出来的（“正因……才有的……”、“源于……的……”）。多见于文学作品、哲学随笔或庄重评论中。",
+    "formation": "名词 / 动词辞书形 + がゆえの + 名词",
+    "examples": [
+      {
+        "translation": "源于挚爱的悲伤。"
+      },
+      {
+        "translation": "因拥有健康而带来的幸福。"
+      },
+      {
+        "translation": "因作恶多端而招致的惩罚。"
+      },
+      {
+        "translation": "源自刻苦努力所斩获的成功。"
+      }
+    ]
   },
   "ja_から_181": {
-    "title": "～から Noun に 至る まで (〜kara 〜ni itaru made)",
-    "shortExplanation": "Expressing range from one thing to another; 'from...to', 'ranging from...to'.",
-    "longExplanation": "The ～から〜に至るまで grammar point emphasizes a range or scope extending from one extreme to another. 可以翻译为 'from...to...' or 'ranging from...to...' in English. It can apply to people, places, times, objects, and so on.",
-    "formation": "名词 (start) + から + 名词 (end) + に至るまで"
+    "title": "名词1 + から + 名词2 + に至るまで (〜kara 〜ni itaru made)",
+    "shortExplanation": "表示范围极其宽广、无所不包；“从……一直到……”、“从……到……乃至……”。",
+    "longExplanation": "句型“～から～に至るまで”由起点助词“から”、动词“至る（到达）”以及终点表现“まで”结合而成，属于JLPT N1级别的正式书面语。通过列举两个极端的典型代表或起止界限，强调涵盖的范围之大、对象之广、包罗万象（“从……直至……”、“上至……下至……”）。可广泛用于年龄阶层、时间跨度、空间地域、事物种类等。",
+    "formation": "名词1（起点） + から + 名词2（终点） + に至るまで",
+    "examples": [
+      {
+        "translation": "这支乐队的曲目深受大众喜爱，从青年人一直到老年人无不被其吸引。"
+      },
+      {
+        "translation": "从小户型单间到大型建筑楼宇，所有物业资产的管理均由我们全权负责。"
+      },
+      {
+        "translation": "从早间新闻广播到深夜电视剧集，我每天都在看电视。"
+      },
+      {
+        "translation": "这个地区从春天一直到冬天，终年游人如织、热闹非凡。"
+      }
+    ]
   },
   "ja_ごとく_182": {
     "title": "～ごとく (〜gotoku)",
-    "shortExplanation": "To seem like; as if; as though.",
-    "longExplanation": "The ～ごとく grammar point is 用于表达 similarity or resemblance. It is quite formal/literary, meaning 'as if,' 'as though,' or 'like.' It can be used with verbs and nouns.",
-    "formation": "动词-て + ごとく / 名词 + の + ごとく"
+    "shortExplanation": "表示比喻或类似，具有浓厚的书面语及典雅色彩；“如同……”、“仿佛……一般”、“像……一样”。",
+    "longExplanation": "句型“～ごとく”源自古文助动词“ごとし（如し）”的连用形，属于庄重、典雅的书面文语，用于以某种事物作比喻，形象地修饰后续的动作或状态（“如同……一般”、“像……一样地……”）。后续常接续动词或形容词起副词性修饰作用。",
+    "formation": "动词普通形（＋かの） / 动词た形 ＋ ごとく ｜ 名词 ＋ （の） ＋ ごとく",
+    "examples": [
+      {
+        "translation": "他看上去仿佛像鸟儿一样在飞翔。"
+      },
+      {
+        "translation": "他熟睡着，宛如死去了一般。"
+      },
+      {
+        "translation": "她如同偶像一般受人崇拜。"
+      },
+      {
+        "translation": "他如疾风般奔跑飞驰。"
+      }
+    ]
   },
   "ja_こととて_183": {
     "title": "～こととて (〜koto tote)",
-    "shortExplanation": "用于表达 the reason or premise for a decision or judgment; 'since', 'because'.",
-    "longExplanation": "The ～こととて grammar point 表示 a reason or premise in a slightly formal or literary way. It can often be interpreted as 'since' or 'because'.",
-    "formation": "动词 (plain form) + こととて / 名词 + の + こととて / (な-形容词 + な) + こととて"
+    "shortExplanation": "表示原因、理由，多用于正式书面语、书信或致歉语境；“因为……”、“由于……”。",
+    "longExplanation": "句型“～こととて”属于格调高雅庄重的书面文语，常见于公文、商务书信或正式交际中。该句型用于陈述引发后项结果或某种应对措施的原因与前提（“由于……的缘故”），后项常用于说明采取的慎重行动，或用于说明特殊原委以请求对方给予体谅、包涵与谅解。",
+    "formation": "动词普通形 ＋ こととて ｜ 名词 ＋ の（或 である） ＋ こととて ｜ な形容词 ＋ な（或 である） ＋ こととて ｜ い形容词 ＋ こととて",
+    "examples": [
+      {
+        "translation": "由于为了打赢官司打算投入全部家产，他便聘请了律师。"
+      },
+      {
+        "translation": "因明天有重要考试，我今晚打算早点休息。"
+      },
+      {
+        "translation": "由于该项目的成功关乎公司的未来，我必将全力以赴。"
+      },
+      {
+        "translation": "正因为他是公众人物，其个人隐私才更应当受到保护。"
+      }
+    ]
   },
   "ja_ずにすんだ_184": {
     "title": "～ずにすんだ (〜zuni sunda)",
-    "shortExplanation": "表示 the idea of 'was able to do without'; 'managed to avoid'.",
-    "longExplanation": "The ～ずにすんだ grammar point 指示 that one was able to avoid doing something or managed to get by without doing it. It translates as 'managed to avoid ~' or 'got by without ~.'",
-    "formation": "动词-ず form + に + すんだ"
+    "shortExplanation": "表示幸好不必做某事，或庆幸避免了某种损失与糟糕局面；“免去了……”、“幸亏没……就解决了”。",
+    "longExplanation": "句型“～ずにすんだ”是“～ずにすむ”的过去时，由否定文语形式“ず”（相当于“ないで”）加上表示了结、解决的“済む”构成。常带有庆幸、宽慰的语气，表示原本预料中可能需要承担的劳苦、损失或不良后果，最终由于某种幸运的情况而得以避免，事情得以顺利解决（“幸免于……”、“幸亏没……就过去了”）。",
+    "formation": "动词ない形（去ない） ＋ ずにすんだ（「する」变为「せずにすんだ」）",
+    "examples": [
+      {
+        "translation": "幸好他没有酿成交通事故。"
+      },
+      {
+        "translation": "我幸免于做手术。"
+      },
+      {
+        "translation": "幸亏天没有下雨。"
+      },
+      {
+        "translation": "我免于缴纳罚款。"
+      }
+    ]
   },
   "ja_だろうとなかろうと_185": {
     "title": "～だろうとなかろうと (〜darou to nakarou to)",
-    "shortExplanation": "表示 'regardless of whether it is or isn't'.",
-    "longExplanation": "The ～だろうとなかろうと grammar point is 用于表达 the idea of 'regardless of whether it is or isn't.' It translates roughly as 'whether it is ~ or not' in English. This construction emphasizes that the speaker’s stance or action does not change, regardless of the two possible conditions.",
-    "formation": "名词 / i-形容词 / na-形容词 / 动词 + だろうとなかろうと"
+    "shortExplanation": "表示无论前项情况存在与否，后项的态度或事实都不受影响；“无论是否……”、“不管……还是不……”。",
+    "longExplanation": "句型“～だろうとなかろうと”由推量形式“～だろうと”与否定推量“～なかろうと”对举构成，用于表达无论前述的正面或负面情况是否成立，说话人的决心、行动或既成事实都决不动摇或改变（“无论……还是不……都……”、“不管是否存在……都……”）。",
+    "formation": "动词普通形 / い形容词 / な形容词词干 / 名词 ＋ だろうとなかろうと",
+    "examples": [
+      {
+        "translation": "不管考试难还是不难，我都会拼尽全力。"
+      },
+      {
+        "translation": "无论他来还是不来，我们都会按时开始。"
+      },
+      {
+        "translation": "不管这份工作有趣与否，我都会继续做下去。"
+      },
+      {
+        "translation": "无论他赞成与否，我们都会推进下去。"
+      }
+    ]
   },
   "ja_つもりだ_186": {
     "title": "～つもりだ (〜tsumori da)",
-    "shortExplanation": "表示 the speaker's intention or plan.",
-    "longExplanation": "The ～つもりだ grammar point is 用于表达 the speaker's intention or plan to do something. It translates as 'intend to,' 'plan to,' or 'think that (I will).' It's often used with the verb in its dictionary form.",
-    "formation": "动词-dictionary form + つもりだ"
+    "shortExplanation": "表示说话人的主观打算、意图或计划；“打算……”、“准备……”。",
+    "longExplanation": "句型“～つもりだ”接在动词辞书形或ない形之后，用于表达说话人自身已决定好的主观打算、计划或实施某行为的意愿（“打算做……”、“不打算做……”）。主语通常为第一人称；若表示第三人称的打算，通常需后续“～と言っている”或“～ようだ”等引述或推测表达。",
+    "formation": "动词辞书形 / 动词ない形 ＋ つもりだ（或 つもりです）",
+    "examples": [
+      {
+        "translation": "我打算明天早点起床。"
+      },
+      {
+        "translation": "我打算学习日语。"
+      },
+      {
+        "translation": "他说过打算去留学。"
+      },
+      {
+        "translation": "我打算下周末和家人去旅行。"
+      }
+    ]
   },
   "ja_つもりで_187": {
     "title": "～つもりで (〜tsumori de)",
-    "shortExplanation": "表示 the speaker's intention or plan; 'with the intention of', 'planning to'.",
-    "longExplanation": "The ～つもりで grammar point is 用于表达 the speaker's intention or mindset when doing something. It can often be translated as 'with the intention of' or 'with the mindset that.'",
-    "formation": "动词-dictionary form + つもりで"
+    "shortExplanation": "表示带着某种意图、心态或决心去做某事；“抱着……的打算”、“怀着……的心态”。",
+    "longExplanation": "句型“～つもりで”接在动词辞书形、た形或“名词＋の”之后，用于表明当事人实施某一行为时所抱有的意向、心态或坚定决心（“抱着……的打算”、“下定……的决心”）。此外，也可以表示现实并非完全如此，但心理上姑且当作如此来采取行动（“权当……一样地”）。",
+    "formation": "动词辞书形 / 动词た形 / 名词 ＋ の ＋ つもりで",
+    "examples": [
+      {
+        "translation": "我怀着将来在日本定居的打算学习日语。"
+      },
+      {
+        "translation": "他抱着倾家荡产的觉悟孤注一掷去赌博。"
+      },
+      {
+        "translation": "我怀着明天一定要考过的决心拼命学习。"
+      },
+      {
+        "translation": "他怀着明天早起的心思早早地睡下了。"
+      }
+    ]
   },
   "ja_ではすまない_188": {
     "title": "～ではすまない (〜dewa sumanai)",
-    "shortExplanation": "表示 that just doing something is not enough or will not suffice.",
-    "longExplanation": "The grammar point ～ではすまない is used when the speaker strongly feels that an action or situation alone is not sufficient or acceptable, implying that more serious measures are needed or that the consequences are more severe.",
-    "formation": "动词-dictionary form + ではすまない / い-形容词 + ではすまない / な-形容词 + ではすまない / 名词 + ではすまない"
+    "shortExplanation": "表示事态严重，仅凭表面敷衍的做法或程度绝不能善罢甘休；“光……可解决不了”、“单凭……是交代不过去的”。",
+    "longExplanation": "句型“～ではすまない”接在动词辞书形、名词等之后（常与“だけ”呼应成“～だけではすまない”），用于强烈断定事态性质严重，仅靠简单的口头道歉、口头提醒或轻微赔偿绝对无法了结或获得原谅（“单单……是过不了关的”、“绝不是……就能解决的”）。暗示当事人必须承担更沉重的责任、受到处分或付出更大代价。",
+    "formation": "动词辞书形 / 名词 / 形容词 ＋ ではすまない（常与「だけ」连用，构成「～だけではすまない」）",
+    "examples": [
+      {
+        "translation": "光是口头道歉是解决不了问题的，必须采取实质行动。"
+      },
+      {
+        "translation": "这个问题绝非单凭议论就能了结，必须有具体的计划。"
+      },
+      {
+        "translation": "他的失误绝不是口头提醒一下就能完事的，他应当承担相应责任。"
+      },
+      {
+        "translation": "这次过失绝不是赔钱就能了事的。为了挽回信赖，必须由衷地赔罪。"
+      }
+    ]
   },
   "ja_とあって_189": {
     "title": "～とあって (〜to atte)",
-    "shortExplanation": "表示 a special situation or event due to certain circumstances.",
-    "longExplanation": "The ～とあって grammar point is 用于表示 that, due to a special or noteworthy circumstance, a particular situation has occurred. It often translates as 'because (it is)...' or 'given that...' in English, emphasizing the uniqueness of the cause.",
-    "formation": "名词 + とあって / (Sometimes 动词 + とあって, depending on context)"
+    "shortExplanation": "表示处于某种特殊的场合或时期，因而自然出现了后项相应的情形；“正值……”、“由于处于……的特殊时期”。",
+    "longExplanation": "句型“～とあって”接在名词或动词普通形之后，用于提出一个引人注目的特殊时机、事件或背景（如节假日、新店开张等），后项随之描述在该特殊背景下顺理成章出现的繁荣景象或必然结果（“正因为是……所以……”、“由于正值……特殊时机”）。多用于新闻报道或客观叙述。",
+    "formation": "名词 / 动词普通形 ＋ とあって",
+    "examples": [
+      {
+        "translation": "正值春假，公园里挤满了小孩子们。"
+      },
+      {
+        "translation": "正逢考前时期，图书馆里满是自习的学生。"
+      },
+      {
+        "translation": "因为是开业首日，那家店门前排起了长队。"
+      },
+      {
+        "translation": "正逢他的生日，朋友们策划了一场惊喜派对。"
+      }
+    ]
   },
   "ja_とあれば_190": {
     "title": "～とあれば (〜to areba)",
-    "shortExplanation": "表示 a condition; 'if', 'when', 'since'.",
-    "longExplanation": "The ～とあれば grammar point is 用于表达 a condition or premise in which a certain outcome or action naturally follows. 可以翻译为 'if,' 'when,' or 'since,' depending on context. It emphasizes that under this specific condition, a certain response is expected.",
-    "formation": "动词-casual + とあれば / い-形容词 + とあれば / な-形容词 + だとあれば / 名词 + だとあれば"
+    "shortExplanation": "表示如果是出于某种特殊条件或前提，就必定会采取后项行动；“如果说是为了……”、“既然是……的话”。",
+    "longExplanation": "句型“～とあれば”用于提出一个特殊的前提假设，表示如果确实存在该特殊情况或前提，人们自然就会产生后项的行动、强烈愿望或决心（“如果是……的话，那肯定……”、“既然是……就必定会……”）。常用于表达为了达成某个特殊目的甘愿付出一切，或者某种条件触发的必然反应。",
+    "formation": "动词普通形 / い形容词 / な形容词（词干 / だ） / 名词（だ） ＋ とあれば",
+    "examples": [
+      {
+        "translation": "如果说是免费的话，谁都想要利用一下。"
+      },
+      {
+        "translation": "只要播放这首曲子，他就必定会跳起舞来。"
+      },
+      {
+        "translation": "既然明天是休息日，今晚就可以熬夜熬得很晚了。"
+      },
+      {
+        "translation": "只要有他参加，这场活动肯定会大获成功的。"
+      }
+    ]
   },
   "ja_といえども_191": {
     "title": "～といえども (〜to iedomo)",
-    "shortExplanation": "Even if it is said that; Even though; Although.",
-    "longExplanation": "The ～といえども grammar point is 用于展示 a contrast or contradiction. It is similar to 'even though' or 'although' in English. It can be used with nouns, verbs, adjectives, etc., to emphasize that the reality is different from the assumption or label.",
-    "formation": "名词 + といえども / 动词-plain form + といえども / 形容词 + といえども"
+    "shortExplanation": "表示转折或让步，具有庄重的书面语色彩；“虽说……”、“即使是……也……”。",
+    "longExplanation": "句型“～といえども”源自古典文语“と言へども”，属于格调庄重的书面文语。接在名词、动词或形容词之后，用于承认前项所具备的事实、资格或特殊身份，但后项紧接着指出并不符合常理期待的转折事实（“即便是……也……”、“虽说确实是……但……”）。常用于强调即使是专家、名流或特殊时期，也不能超脱于常理之外。",
+    "formation": "名词 / 动词普通形 / 形容词 ＋ といえども",
+    "examples": [
+      {
+        "translation": "虽说他是天才，但也有失手犯错的时候。"
+      },
+      {
+        "translation": "这台电脑虽说是崭新的，但依然存在故障。"
+      },
+      {
+        "translation": "虽说已是春天，但依然有寒冷的天气。"
+      },
+      {
+        "translation": "哪怕她是我最钟爱的人，讨厌的事情我依旧无法接受。"
+      }
+    ]
   },
   "ja_といったらありはしない_192": {
     "title": "～といったらありはしない (〜to ittara ari wa shinai)",
-    "shortExplanation": "Express extreme exclamation; 'extremely', 'unbelievable', 'unsurpassed'.",
-    "longExplanation": "The ～といったらありはしない grammar point is 用于表达 an extreme degree of something, often surprise or admiration. It can be loosely translated as 'unbelievably...' or 'incredibly...'.",
-    "formation": "名词 + といったらありはしない / な-形容词 + といったらありはしない"
+    "shortExplanation": "极度强调事物的程度深重，到了无法用语言形容的地步；“……得不得了”、“无可比拟”、“难以形容”。",
+    "longExplanation": "句型“～といったらありはしない”是表示强烈感叹的强调句型，字面意为“如果要说起那份……，根本无处寻得”，意指其性质或状态之甚世所罕见，已达到无以复加的地步（“……得无以复加”、“别提有多……了”）。前项多接“形容词词干＋さ”等形式，可用于赞美，也可用于表达反感或震惊。",
+    "formation": "名词（常为形容词词干＋さ） / い形容词 / な形容词 ＋ といったらありはしない",
+    "examples": [
+      {
+        "translation": "他英语水平之高超，简直无以复加。"
+      },
+      {
+        "translation": "这道甜点的美味程度简直妙不可言。"
+      },
+      {
+        "translation": "那孩子的聪明劲儿真是无人能及。"
+      },
+      {
+        "translation": "她的美貌绝伦，简直无可比拟。"
+      }
+    ]
   },
   "ja_といったらありゃしない_193": {
     "title": "～といったらありゃしない (〜to ittara arya shinai)",
-    "shortExplanation": "Emphasizes that something is to the extreme; 'you have no idea how...', 'it's incredibly...'.",
-    "longExplanation": "The ～といったらありゃしない grammar point is an idiomatic expression used to emphasize that something is extremely or incredibly a certain way—often beyond words. It can be loosely rendered as 'you wouldn't believe how...' or 'it's indescribably...'.",
-    "formation": "动词-casual + といったらありゃしない / い-形容词 + といったらありゃしない / な-形容词 + だ + といったらありゃしない / 名词 + だ + といったらありゃしない"
+    "shortExplanation": "口语中极度强调事物的夸张程度；“别提有多……了”、“简直……得要命”。",
+    "longExplanation": "句型“～といったらありゃしない”是“～といったらありはしない”在口语中的约音形式（“ありは”音变为“ありゃ”）。主要用于日常口语会话中，强烈感叹某种状态或程度达到了极致（“别提多……了”、“真是……得不得了”）。多伴随说话人赞叹、惊讶、嫌弃或不胜烦扰等强烈的口头情绪。",
+    "formation": "动词普通形 / い形容词 / な形容词（词干 / だ） / 名词（だ） ＋ といったらありゃしない",
+    "examples": [
+      {
+        "translation": "那家店的拉面别提有多好吃了。"
+      },
+      {
+        "translation": "她的厨艺好得简直没话说。"
+      },
+      {
+        "translation": "这个冬天的严寒真是冷得让人吃不消。"
+      },
+      {
+        "translation": "那部小说简直有趣得不得了。"
+      }
+    ]
   },
   "ja_といったらない_194": {
     "title": "～といったらない (〜to ittara nai)",
-    "shortExplanation": "表示 the extreme of something; 'nothing can be more ... than this'.",
-    "longExplanation": "The ～といったらない grammar point is used to emphasize the high degree or intensity of an action or state. 可以翻译为 “nothing can be more ... than this” or “it’s extremely...”. It conveys that something is so intense or extreme that it cannot be adequately described.",
-    "formation": "い-形容词 + といったらない / な-形容词 + だといったらない / 名词 + だといったらない"
+    "shortExplanation": "强调程度达到了难以言表的极限；“别提有多……了”、“……得不得了”。",
+    "longExplanation": "句型“～といったらない”接在形容词或名词之后，字面意为“如果要说起那份……，连用以形容的言辞都没有”，用于极度强调某种感觉、情绪或状态达到了难以言表的极点（“别提多……了”、“真是……到了极点”）。无论用于喜悦、赞叹等正面情感，还是用于严寒、懒散等负面状态，都能生动传达说话人的强烈震撼。",
+    "formation": "い形容词 / な形容词（だ） / 名词（だ） ＋ といったらない",
+    "examples": [
+      {
+        "translation": "今天真是冷得要命。"
+      },
+      {
+        "translation": "她做的饭菜之美味，简直妙不可言。"
+      },
+      {
+        "translation": "这孩子简直聪明绝顶。"
+      },
+      {
+        "translation": "他的懒散劲儿真是让人没眼看。"
+      }
+    ]
   },
   "ja_ときている_195": {
     "title": "～ときている (〜to kite iru)",
-    "shortExplanation": "Highlights a situation or condition that is serious/extreme, often with a negative nuance.",
-    "longExplanation": "The grammar point ～ときている is used to emphasize that some circumstance is particularly notable—often negatively. It implies, “Given that things are so ~, it’s no wonder that...” or “Because the situation is (too) ~, such-and-such follows.” It is relatively informal and more common in spoken language.",
-    "formation": "动词-casual / い-形容词 / な-形容词（＋だ） / 名词（＋だ） + ときている"
+    "shortExplanation": "突出强调某种显而易见或极端的状况（多为不利局面），作为后项必然结果的前提；“本就……”、“正因为……”。",
+    "longExplanation": "句型“～ときている”用于特意指出某种显著的状况、属性或特殊事实作为前提条件（通常带有负面消极、棘手无奈的语感），以此引出后项必然发生的困局或理所当然的举动（“本来就……偏偏又……”、“正因为情况已经……难怪会……”）。句尾常与“～ので”、“～だけに”、“～から”、“～うえに”等接续助词呼应使用。",
+    "formation": "动词普通形 / い形容词 / な形容词（词干 / だ） / 名词（だ） ＋ ときている",
+    "examples": [
+      {
+        "translation": "本来工作就极其繁忙，所以根本休不了假。"
+      },
+      {
+        "translation": "正因为经济形势本就萧条，公司才宣布了大规模裁员。"
+      },
+      {
+        "translation": "偏偏在旅途中行李被盗了，哪里还有心思享受旅行。"
+      },
+      {
+        "translation": "本就临近考试，偏又作业堆积如山，真是苦不堪言。"
+      }
+    ]
   },
   "ja_ところを_196": {
     "title": "～ところを (〜tokoro wo)",
-    "shortExplanation": "指示 a contrasting or inconvenient timing; 'just when...', 'even though...'.",
-    "longExplanation": "The grammar point ～ところを is often used when something happens (or one acts) at a certain moment/condition that makes the timing inconvenient or contrary to what is expected. It can imply “in spite of the fact that...” or “just when...” depending on context.",
-    "formation": "动词-ている + ところを / 名词 + の + ところを / い-形容词 + ところを / な-形容词 + な + ところを"
+    "shortExplanation": "表示正处于某种动作进行中、特定状态或尴尬关头时，发生了不凑巧的干扰或意外；“正当……的时候”、“在……之际却偏偏……”。",
+    "longExplanation": "句型“～ところを”用于表明前项正处于进行中的动作、特定场面或敏感时刻，而后项突然发生意外事件或行为介入，使得时机显得极不凑巧、令人扫兴或充满戏剧性转折（“正……的时候，却突然……”、“在……关头偏偏……”）。在商务礼仪与社交用语中，也常用于在对方繁忙之际表示客套致歉（如“お忙しいところを”在您百忙之中打扰）。",
+    "formation": "动词ている形 / 动词意志形＋としている / 名词＋の / い形容词 / な形容词＋な ＋ ところを",
+    "examples": [
+      {
+        "translation": "正看着电影的时候突然停电，四周一片漆黑。"
+      },
+      {
+        "translation": "我正吃得津津有味的时候，却被他一把全抢走了。"
+      },
+      {
+        "translation": "飞机正要起飞的紧要关头，引擎却突然熄火了。"
+      },
+      {
+        "translation": "偏偏在她正生气的时候，我却不合时宜地开了个玩笑。"
+      }
+    ]
   },
   "ja_とされる_197": {
     "title": "～とされる (〜to sareru)",
-    "shortExplanation": "指示 a general belief or widely accepted view; 'is considered', 'is seen as', 'is said to be'.",
-    "longExplanation": "The ～とされる grammar point 表示 what is generally believed, accepted, or reputed. 可以翻译为 'is considered to be,' 'is seen as,' or 'is said to be.' It’s often used in formal or written contexts. The structure differs slightly depending on whether it’s used with a noun, adjective, or verb.",
-    "formation": "动词-casual + とされる / い-形容词 + とされる / な-形容词 + だとされる / 名词 + だとされる"
+    "shortExplanation": "表示社会普遍认同的看法、评价或共识；“被认为……”、“被视为……”、“被看作是……”。",
+    "longExplanation": "句型“～とされる”是动词“とする（看作、作为）”的被动态形式，常用于新闻报道、论文或正式书面语中。它用于陈述社会普遍的观点、学术共识或大众公认的评价（“被公认为……”、“被看作是……”），避免直接以说话人个人主观视点下定论，体现客观叙述色彩。",
+    "formation": "动词普通形 ＋ とされる ｜ い形容词 ＋ とされる ｜ な形容词 ＋ だとされる ｜ 名词 ＋ だとされる（常用形式：～とされている）",
+    "examples": [
+      {
+        "translation": "足球被公认为是世界上最受欢迎的体育运动。"
+      },
+      {
+        "translation": "他被认为是最有才能的科学家。"
+      },
+      {
+        "translation": "该建筑被视为当地的标志性地标。"
+      },
+      {
+        "translation": "那座寺庙被视为古代艺术珍品。"
+      }
+    ]
   },
   "ja_としたところで_198": {
     "title": "～としたところで (〜to shita tokoro de)",
-    "shortExplanation": "Means 'even if' or 'even assuming'; emphasizes that the outcome won’t change.",
-    "longExplanation": "The ～としたところで grammar point means 'even if' or 'even assuming that ~.' It highlights that even if the stated condition were met, the result would not significantly change. Often used to convey a sense of futility or skepticism in hypothetical statements.",
-    "formation": "动词-casual + としたところで / い-形容词 + としたところで / な-形容词 + だとしたところで / 名词 + だとしたところで"
+    "shortExplanation": "表示假定让步，强调即使退一步假定成立，结果也毫无改变；“即使……也（无济于事）”、“就算……也……”。",
+    "longExplanation": "句型“～としたところで”属于让步假定表达，常带有说话人的无奈、怀疑或消极评价色彩。它表示“即使退一步承认或做到了某事，后续的情况或结果也不会有任何实质性改变”（“即便……也是徒劳”）。后项多伴随否定评价、怀疑推测或消极结果。",
+    "formation": "动词普通形 ＋ としたところで ｜ い形容词 ＋ としたところで ｜ な形容词 ＋ だとしたところで ｜ 名词 ＋ だとしたところで",
+    "examples": [
+      {
+        "translation": "就算他真来了，恐怕也改变不了任何现状吧。"
+      },
+      {
+        "translation": "哪怕做出了美味的点心，也无法保证它一定能畅销。"
+      },
+      {
+        "translation": "即使打通电话过去，她也未必会接听。"
+      },
+      {
+        "translation": "就算使用了最顶级的食材，也未必就能做出绝顶的美味。"
+      }
+    ]
   },
   "ja_とすると_199": {
     "title": "～とすると (〜to suru to)",
-    "shortExplanation": "表示 'if', 'when', or 'assuming that' in a speculative sense.",
-    "longExplanation": "The ～とすると grammar point is used for hypothetical or speculative situations, often in the sense of 'if we assume...', 'when it comes to...', or 'given that...' . It sets up a condition and then states the expected or possible outcome.",
-    "formation": "动词-casual + とすると / い-形容词 + とすると / な-形容词 + だとすると / 名词 + だとすると"
+    "shortExplanation": "表示假设或前提推导；“如果假设……”、“假定……的话”、“要是……的话”。",
+    "longExplanation": "句型“～とすると”用于设定一个假设条件或假想前提（“假如说……”、“如果以……为前提的话”），后项据此推导出必然发生的结果、逻辑判断或后续推算。它侧重于纯粹的理论性假定与逻辑推论。",
+    "formation": "动词普通形 ＋ とすると ｜ い形容词 ＋ とすると ｜ な形容词 ＋ だとすると ｜ 名词 ＋ だとすると",
+    "examples": [
+      {
+        "translation": "如果他要来的话，按理说马上就应该到了。"
+      },
+      {
+        "translation": "假定要完成这项工作，起码也得耗费三天时间吧。"
+      },
+      {
+        "translation": "假如爆发战争的话，将会有无数民众沦为牺牲品。"
+      },
+      {
+        "translation": "要是他作为经营者的话，想必将背负极其重大的责任。"
+      }
+    ]
   },
   "ja_とすれば_200": {
     "title": "～とすれば (～to sureba)",
-    "shortExplanation": "用于表达 'if it were the case that...', 'if we assume that...'.",
-    "longExplanation": "The ～とすれば grammar point poses a hypothetical condition and then draws a conclusion or inference. It translates as 'if we suppose/assume that...' or 'if it is the case that...'.",
-    "formation": "动词-casual + とすれば / い-形容词 + とすれば / な-形容词 + だとすれば / 名词 + だとすれば"
+    "shortExplanation": "提出假定条件或前提；“如果说……”、“要是假设……的话”、“如果属实的话”。",
+    "longExplanation": "句型“～とすれば”用于提出某种假设或视作既定事实的前提（“假若……的话”、“如果真是这样的话”）。后项紧接着表明基于该假设的判断、应对意见、提问或个人意志。相比于“とすると”偏向客观推导，“とすれば”常可接续说话人的意志、愿望、建议或疑问。",
+    "formation": "动词普通形 ＋ とすれば ｜ い形容词 ＋ とすれば ｜ な形容词 ＋ だとすれば ｜ 名词 ＋ だとすれば",
+    "examples": [
+      {
+        "translation": "如果说他是个大骗子，那他的话就完全不可信了。"
+      },
+      {
+        "translation": "要是你一起去的话，我也跟着去。"
+      },
+      {
+        "translation": "如果他真的出轨了，那我该怎么办才好呢？"
+      },
+      {
+        "translation": "假使那种药没有效果，我们就应该尝试别的方法。"
+      }
+    ]
   },
   "ja_となったら_201": {
     "title": "～となったら (〜to nattara)",
-    "shortExplanation": "用于表达 'if it comes to...', 'when it becomes the case that...'.",
-    "longExplanation": "The ～となったら grammar point is used to describe a situation where, if matters progress to that stage, a certain action or outcome will follow. It’s often translated as 'when it comes to...', 'if it comes to...'.",
-    "formation": "动词-casual + となったら / 名词 + となったら"
+    "shortExplanation": "表示事情一旦真正成为现实或发展到该地步；“要是真的……的话”、“真到了……的地步”。",
+    "longExplanation": "句型“～となったら”用于假设某种情况一旦真正成为事实、或局面真正发展到了那一阶段（“真要是……的话”、“一旦面临……”）。通常带有说话人面对现实转折时的真切感受、担忧困惑或认真应对的心态，后项多伴随情感反应、对策行动或感慨。",
+    "formation": "动词普通形 ＋ となったら ｜ 名词 ＋ となったら",
+    "examples": [
+      {
+        "translation": "要是真决定去旅行的话，就非得抓紧收拾行李不可了。"
+      },
+      {
+        "translation": "要是考试真的落榜了，我该怎么办才好呢。"
+      },
+      {
+        "translation": "真要是到了和她分手的地步，我会感到无比悲伤。"
+      },
+      {
+        "translation": "一旦面临结婚这件事，人生大概会发生翻天覆地的转变吧。"
+      }
+    ]
   },
   "ja_となると_202": {
     "title": "～となると (〜to naru to)",
-    "shortExplanation": "Used to highlight a certain circumstance; 'when it comes to...', 'if it becomes...', 'in the event that...'.",
-    "longExplanation": "The ～となると grammar point highlights a specific situation or condition and 指示 what normally or naturally happens under that circumstance. 可以翻译为 'when it comes to...', 'if it becomes...', or 'in the event that...'.",
-    "formation": "动词-casual + となると / い-形容词 + となると / な-形容词 + だとなると / 名词 + だとなると"
+    "shortExplanation": "提出特定的话题或局面，表示一旦面临该情况自然会出现的结果；“一提到……”、“一旦涉及……的话”。",
+    "longExplanation": "句型“～となると”用于凸显某种特定的情况、话题或事态转变（“一说到……”、“要是变成……的情况”）。后项通常接续在该特定条件下一贯发生的情感反应、必然呈现的局面或合乎情理的推断。",
+    "formation": "动词普通形 ＋ となると ｜ い形容词 ＋ となると ｜ な形容词 ＋ だとなると ｜ 名词（＋だ） ＋ となると",
+    "examples": [
+      {
+        "translation": "一到考试的时候，许多学生就会不由自主地紧张起来。"
+      },
+      {
+        "translation": "要是搬到东京去住的话，生活成本一下子就会大幅增加。"
+      },
+      {
+        "translation": "要是截止期限真在明天的话，今晚恐怕得彻夜不眠了。"
+      },
+      {
+        "translation": "如果由他来担任队长，团队的各项活动或许会有极大的改观。"
+      }
+    ]
   },
   "ja_となれば_203": {
     "title": "～となれば (〜to nareba)",
-    "shortExplanation": "表示 the idea of 'if it comes to...; when we talk about...; in the case of...'.",
-    "longExplanation": "The ～となれば grammar point is 用于表达 a situation where a particular case or condition brings about a certain result or consequence. It translates as 'if it comes to...; when we talk about...; in the case of...' in English.",
-    "formation": "动词-casual + となれば, い-形容词 + となれば, な-形容词 + だとなれば, 名词 + だとなれば"
+    "shortExplanation": "提出某种既定假设或事态演变；“如果真是……的话”、“要是事情变成……的话”。",
+    "longExplanation": "句型“～となれば”用于设定某种既成事实或局面转变作为前提条件（“既然事已至此……”、“倘若演变成……的话”）。后项往往顺理成章地引出由此引发的必然判断、应对决策、建议或行动意志。",
+    "formation": "动词普通形 ＋ となれば ｜ い形容词 ＋ となれば ｜ な形容词 ＋ だとなれば ｜ 名词 ＋ だとなれば",
+    "examples": [
+      {
+        "translation": "要是真由他来领头，该项目想必一定会取得成功吧。"
+      },
+      {
+        "translation": "倘若明天真要下雨的话，咱们就把野餐取消了吧。"
+      },
+      {
+        "translation": "这项工作既然已经做完了，你就可以申请休假了。"
+      },
+      {
+        "translation": "若是那场测验难度很高的话，我们就必须更加加倍努力学习才行。"
+      }
+    ]
   },
   "ja_とのことだ_204": {
     "title": "～とのことだ (〜to no koto da)",
-    "shortExplanation": "表示 something that the speaker heard; 'I've heard that', 'I was told that'.",
-    "longExplanation": "The ～とのことだ grammar point is 用于表达 something that the speaker has heard from someone else. It can be roughly translated as 'I've heard that', 'I was told that' in English. It is a formal way to present hearsay or information the speaker did not directly witness but was informed about.",
-    "formation": "Simplified phrase + とのことだ"
+    "shortExplanation": "以郑重口吻转述传闻或转告他人的信息；“据说……”、“听说是……”。",
+    "longExplanation": "句型“～とのことだ”（礼貌形为“～とのことです”）用于转述从第三方、书信、通知或报道中获取的消息（“据说……”、“据悉……”）。其含义与“～そうだ”相似，但更显郑重客气，是商务邮件、公文报告及正式交际中极为常用的传闻表达。",
+    "formation": "普通形小句 ＋ とのことだ（或 とのことです） ｜ 名词 / な形容词 ＋ だとのことだ",
+    "examples": [
+      {
+        "translation": "听闻这个周末将会举办一场聚会。"
+      },
+      {
+        "translation": "据说他明年就要搬家去伦敦了。"
+      },
+      {
+        "translation": "据悉她已经顺利入职了新工作。"
+      },
+      {
+        "translation": "听说承蒙通知明天并没有考试安排。"
+      }
+    ]
   },
   "ja_とはいえ_205": {
     "title": "～とはいえ (～to wa ie)",
-    "shortExplanation": "Even though; although; but",
-    "longExplanation": "The ～とはいえ grammar structure is 用于表达 the contradictory nature of a situation or event. It means 'even though' or 'although', signifying a sense of contrast or contradiction. The usage of this structure is mainly seen in a formal or written context.",
-    "formation": "名词 + とはいえ, な-形容词 + だとはいえ, い-形容词 + とはいえ, 动词-casual + とはいえ"
+    "shortExplanation": "表示转折让步，属于较为正式的书面语；“虽说……”、“话虽如此……但是……”。",
+    "longExplanation": "句型“～とはいえ”属于庄重的书面语逆接表达。它首先承认前项所陈述的事实或前提（“虽说确实如此……”），但后项紧接着指出与该事实引发的常理预想相反的实际情况、限制或事实反差（“可是实际上……”、“但也……”）。",
+    "formation": "名词 ＋ とはいえ ｜ な形容词（＋だ） ＋ とはいえ ｜ い形容词 ＋ とはいえ ｜ 动词普通形 ＋ とはいえ",
+    "examples": [
+      {
+        "translation": "他虽说头脑聪明，但却有点懒散。"
+      },
+      {
+        "translation": "这家餐厅虽说味道确实可口，但价格稍微贵了些。"
+      },
+      {
+        "translation": "日本虽说国土狭小，其科学技术却是世界一流水平。"
+      },
+      {
+        "translation": "她虽说年纪尚轻，经验却十分丰富。"
+      }
+    ]
   },
   "ja_とみえて_206": {
     "title": "～とみえて (〜to miete)",
-    "shortExplanation": "It seems that; apparently",
-    "longExplanation": "The ～とみえて grammar point is 用于表达 the speaker's judgment about a situation based on visible or known information. It is often translated as 'apparently' or 'it seems that' in English.",
-    "formation": "动词-casual + とみえて, い-形容词 + とみえて, な-形容词 + だとみえて, 名词 + だとみえて"
+    "shortExplanation": "根据观察到的外在迹象或事实做出推测；“看来是……”、“似乎……的样子”。",
+    "longExplanation": "句型“～とみえて”用于说话人根据眼前亲眼所见的情景、对方的表现或外在证据，推导其背后的原因或心理状态（“看来像是……”、“显露出……的样子”）。后项常陈述作为推断依据的客观事实或行为举止。",
+    "formation": "动词普通形 ＋ とみえて ｜ い形容词 ＋ とみえて ｜ な形容词（＋だ） ＋ とみえて ｜ 名词（＋だ） ＋ とみえて",
+    "examples": [
+      {
+        "translation": "他看起来很擅长运动，每天都去健身房锻炼。"
+      },
+      {
+        "translation": "她似乎非常繁忙，总也见不到她的人影。"
+      },
+      {
+        "translation": "田中先生显出疲惫的样子，很早就回家去了。"
+      },
+      {
+        "translation": "那家店铺看来人气很旺，门前总是排着长队。"
+      }
+    ]
   },
   "ja_とみられる_207": {
     "title": "～とみられる (～to mirareru)",
-    "shortExplanation": "It is considered that; It is thought that; It is believed that",
-    "longExplanation": "The ～とみられる grammar point is 用于表达 how an idea, fact, or circumstance is considered or understood. This phrase is often used in news or reports to show the speaker's or writer's estimation, judgment, or present belief about something.",
-    "formation": "动词-casual + とみられる, 名词 + とみられる"
+    "shortExplanation": "基于客观形势做出判断或预测，多见于新闻报道；“被认为……”、“预计……”、“据估计……”。",
+    "longExplanation": "句型“～とみられる”是动词“見る（看待、判断）”的受身形，属于典型的新闻报道与书面语表达。它用于根据当前局势、证据或数据客观地陈述推断或预测（“据分析……”、“预计会……”），使表达显得客观、严谨，避免个人断言。",
+    "formation": "动词普通形 ＋ とみられる ｜ い形容词 ＋ とみられる ｜ な形容词（词干/だ） ＋ とみられる ｜ 名词（词干/だ） ＋ とみられる（常作「～とみられている」）",
+    "examples": [
+      {
+        "translation": "他的这种行为被普遍视为是不负责任的。"
+      },
+      {
+        "translation": "这幅画作据推断是毕加索的真迹作品。"
+      },
+      {
+        "translation": "地震发生后，预计灾害损失还将进一步扩大。"
+      },
+      {
+        "translation": "据气象分析，周末的天气预计将会好转。"
+      }
+    ]
   },
   "ja_とみると_208": {
     "title": "～とみると (〜to miru to)",
-    "shortExplanation": "表示 the concept of 'when one sees it as', 'viewed as', or 'considering'.",
-    "longExplanation": "The ～とみると grammar point is 用于表达 the concept of seeing something from a specific perspective and responding accordingly. It often brings awareness toward something or a change in perception. It is translated as 'when one sees it as', 'viewed as', or 'considering'.",
-    "formation": "动词-casual + とみると, い-形容词 + とみると, な-形容词 + だとみると, 名词 + だとみると"
+    "shortExplanation": "从某一特定角度、身份或立场出发进行观察与评判；“如果从……来看”、“一视作……的话”。",
+    "longExplanation": "句型“～とみると”表示将某一事物置于特定的视角、立场或标准下来审视（“若以……的眼光来看”、“既然视其为……”）。随着视角的切换，后项常自然引出随之显现的见解、合理的评价或应当采取的举措。",
+    "formation": "动词普通形 ＋ とみると ｜ い形容词 ＋ とみると ｜ な形容词 ＋ だとみると ｜ 名词 ＋ だとみると",
+    "examples": [
+      {
+        "translation": "若从数学的角度来审视这一问题，解决之道便清晰可见了。"
+      },
+      {
+        "translation": "鉴于她是一名极为优秀的学生，荣获该项奖赏也是理所当然的。"
+      },
+      {
+        "translation": "若将他视为刚入职的新员工来看待，这番成果可以说是非常卓越的。"
+      },
+      {
+        "translation": "考虑到这种大熊猫属于濒危物种，对其实施保护是不可或缺的。"
+      }
+    ]
   },
   "ja_どんなにうが_209": {
     "title": "どんなに～うが (donna ni ～ u ga)",
-    "shortExplanation": "表示 'no matter how much...', 'even if...'.",
-    "longExplanation": "The grammar point どんなに～うが is 用于表达 a condition that is not affected by the degree of an action or state. 可以翻译为 'no matter how much...' or 'even if...'. It is generally used with verbs, い-adjectives and な-adjectives in their volitional or かろう/だろう form.",
-    "formation": "どんなに + 动词-volitional + うが, どんなに + い-形容词(～かろう) + が, どんなに + な-形容词 + だろうが"
+    "shortExplanation": "表示极端的程度让步，语气坚定；“无论多么……”、“不管怎样……都……”。",
+    "longExplanation": "句型“どんなに～うが”（接意志形/推量形加助词“が”，相当于“どんなに～ても”）属于语气坚决的让步句型。它表示无论前项动作或状态的程度达到何种极致的地步（“无论怎样拼命……”、“不管如何……”），后项的事实、结论或决心都绝不会受到丝毫动摇或改变。",
+    "formation": "どんなに ＋ 动词意志形 ＋ が（ようが / ろうが） ｜ どんなに ＋ い形容词（去い变かろう） ＋ が ｜ どんなに ＋ な形容词 / 名词 ＋ だろうが",
+    "examples": [
+      {
+        "translation": "无论我怎样拼尽全力，也赶不上他那惊人的速度。"
+      },
+      {
+        "translation": "不管吃下多少东西，她也完全不会发胖。"
+      },
+      {
+        "translation": "无论天气多么严寒，他都每天坚持慢跑。"
+      },
+      {
+        "translation": "不管天气多么炎热，我也决不开空调。"
+      }
+    ]
   },
   "ja_と言わんばかりに_210": {
     "title": "～と言わんばかりに (〜to iwan bakari ni)",
-    "shortExplanation": "指示 an action or behavior that strongly implies a certain unspoken message or feeling.",
-    "longExplanation": "The ～と言わんばかりに grammar point is 用于表达 that someone's action or behavior is so strong that it's as if they are saying something without actually saying it. 可以翻译为 'as if to say' or 'almost as though stating'. This form is often used when the speaker wants to convey speculation about someone's unvoiced thoughts or feelings based on their behavior.",
-    "formation": "动词-volitional + と言わんばかりに, い-形容词 + と言わんばかりに, な-形容词 + だと言わんばかりに, 名词 + だと言わんばかりに"
+    "shortExplanation": "形容神态或举止极其明显，宛如虽未明说却呼之欲出；“宛如在说……”、“仿佛在示意……一般”。",
+    "longExplanation": "句型“～と言わんばかりに”（其中“言わん”为古日语否定/意志助动词形式）属于生动传神的书面描写表达。它用于描摹人物的神情、目光或举动十分鲜明，虽然并未当场用言语道出，但那副神态举止却强烈传达出某种心声（“就差没亲口说出……”、“宛若在说……似地”）。充当副词修饰后续动词。",
+    "formation": "动词普通形 / 意志形 ＋ と言わんばかりに ｜ い形容词 ＋ と言わんばかりに ｜ な形容词 ＋ だと言わんばかりに ｜ 名词 ＋ だと言わんばかりに",
+    "examples": [
+      {
+        "translation": "她灿烂地笑了起来，那副模样仿佛在宣告自己夺得了冠军一般。"
+      },
+      {
+        "translation": "他满脸倦容，神态疲惫得宛若随时都要当场倒下一样。"
+      },
+      {
+        "translation": "她讨厌阴雨连绵的日子，凝视着窗外，眼神里宛如在企盼着天气快些放晴。"
+      },
+      {
+        "translation": "他的举动宛如在说已经再也没有人肯相信他了一样。"
+      }
+    ]
   },
   "ja_と言わんばかりの_211": {
-    "title": "～と言わんばかりの Noun (～to iwan bakari no Noun)",
-    "shortExplanation": "表示 the concept of 'as if to say'; 'almost says'; 'suggests'.",
-    "longExplanation": "The ～と言わんばかりの Noun grammar point is 用于表达 that someone's action or a situation suggests a certain message, even though it is not explicitly said. 可以翻译为 'as if to say', 'almost says', or 'suggests'. It is typically used to convey an unspoken message through someone's demeanor or behavior.",
-    "formation": "动词-plain form + と言わんばかりの 名词"
+    "title": "～と言わんばかりの + 名词 (～to iwan bakari no Noun)",
+    "shortExplanation": "作定语修饰后续名词，形容神态、目光或表情呼之欲出；“宛若在说……般的（神态/目光）”。",
+    "longExplanation": "句型“～と言わんばかりの ＋ 名词”是“～と言わんばかりに”的连体修饰形式。它直接修饰后续表示表情、视线、神态、风度等名词（如 笑顔、視線、態度、姿 等），生动传神地刻画出某种即便没有用言语挑明、但神情中却展露无遗的心声与态度（“宛如在示意……似的笑容/眼神”）。",
+    "formation": "动词普通形 ＋ と言わんばかりの ＋ 名词 ｜ 普通形小句 ＋ と言わんばかりの ＋ 名词",
+    "examples": [
+      {
+        "translation": "田中先生露出了喜不自禁、仿佛高兴得要跳起来一般的满面笑容。"
+      },
+      {
+        "translation": "她向我投来了宛如想要搭话一般的热切视线。"
+      },
+      {
+        "translation": "那位老人瑟瑟发抖，流露出一副仿佛在诉说严寒难耐的身影。"
+      },
+      {
+        "translation": "他周身散发出一种宛如因极度紧张而身躯僵硬一般的紧绷气场。"
+      }
+    ]
   },
   "ja_ながらに_212": {
     "title": "～ながらに (～nagara ni)",
-    "shortExplanation": "表示 a state or condition continuing just as it is (e.g. 'from birth', 'while crying', 'in the old way').",
-    "longExplanation": "The ～ながらに grammar point is 用于表示 a condition that remains unchanged from some starting point or in a certain manner. It appears in set phrases such as 生まれながらに (from birth), 涙ながらに (while crying), 昔ながらに (in the old/original way), 子供ながらに (even though [still] a child), etc.",
-    "formation": "Common set phrases: 生まれながらに, 涙ながらに, 昔ながらに, 子供ながらに, etc."
+    "shortExplanation": "表示保持原有的状态或处于某种特定情境中；“保持原样”、“自……以来”、“在……之中”。",
+    "longExplanation": "句型“～ながらに”（常用形式为“～ながらにして”）多用于较庄重的文语表达，表示某种状态从最初开始便一直保持不变，或者始终处于某种特定的情境与状态之中。该句型常用于固定的习惯搭配中，如“生まれながらに”（天生、打从出生起）、“涙ながらに”（流着泪、满含热泪地）、“昔ながらに”（保留着旧时的面貌）、“子供ながらに”（虽然还是个孩子，却……）等。",
+    "formation": "固定惯用搭配：名词 / 动词ます形词干 ＋ ながらに（常见搭配：生まれながらに、涙ながらに、昔ながらに、子供ながらに 等）",
+    "examples": [
+      {
+        "translation": "她天生就拥有出色的音准感。"
+      },
+      {
+        "translation": "他虽然只是个孩子，却能听懂大人们的谈话。"
+      },
+      {
+        "translation": "她满含热泪地倾诉着事情的真相。"
+      },
+      {
+        "translation": "我们一直悉心守护着从古流传至今、仍保留原貌的传统节日。"
+      }
+    ]
   },
   "ja_ながらの_213": {
-    "title": "～ながらの Noun (〜nagara no Noun)",
-    "shortExplanation": "指示 one action or state happening at the same time as the noun in question (e.g. 'dinner while watching TV').",
-    "longExplanation": "The ～ながらの Noun grammar point is used to modify a noun by describing an action happening simultaneously. For example, テレビを見ながらの夕食 means 'dinner while watching TV.' 可以翻译为 'while ~ing' or 'during ~.'",
-    "formation": "动词-ますstem (or plain minus る) + ながら + の + 名词"
+    "title": "～ながらの + 名词 (〜nagara no Noun)",
+    "shortExplanation": "修饰后续名词，表示伴随某个动作同时进行的动作或状态；“一边……一边……”、“在……中的……”。",
+    "longExplanation": "句型“～ながらの”接在动词ます形词干后，用于连体修饰后续的名词，表示后项事物是在伴随前项动作的同时进行的（“一边做某事一边进行的某事”）。例如“テレビを見ながらの夕食”表示“一边看电视一边吃的晚餐”。",
+    "formation": "动词ます形词干 ＋ ながら ＋ の ＋ 名词",
+    "examples": [
+      {
+        "translation": "一边看电视一边吃晚餐，对孩子们来说大概会很有趣吧。"
+      },
+      {
+        "translation": "一边看地图一边开车是非常危险的。"
+      },
+      {
+        "translation": "一边散步一边交谈能让人放松身心。"
+      },
+      {
+        "translation": "一边听音乐一边学习或许能够提高专注力。"
+      }
+    ]
   },
   "ja_ながらも_214": {
     "title": "～ながらも (〜nagara mo)",
-    "shortExplanation": "Means 'even though' or 'despite'.",
-    "longExplanation": "The ～ながらも grammar point is 用于表达 contrast, highlighting the difference between what is usually expected from a situation and what actually happens. 可以翻译为 'even though' or 'despite.'",
-    "formation": "动词 stem + ながらも, い-形容词 + ながらも, な-形容词/名词 + ながらも"
+    "shortExplanation": "表示转折，意为“虽然……但是……”、“尽管……却……”。",
+    "longExplanation": "句型“～ながらも”属于N1级转折表达，用于连接两个具有对比反差的事项，强调实际发生的事实与从前项状态通常所预料的情况相反（“尽管处于……的状态，但却……”、“虽然……却依然……”）。可接续动词、形容词或名词。",
+    "formation": "动词ます形词干 / い形容词 / な形容词（直接接续或保留な） / 名词（直接接续或接であり） ＋ ながらも",
+    "examples": [
+      {
+        "translation": "他虽然生活清贫，却过着幸福的生活。"
+      },
+      {
+        "translation": "尽管平时工作繁忙，我每天依然坚持锻炼身体。"
+      },
+      {
+        "translation": "虽然身患疾病，但他仍然坚持继续工作。"
+      },
+      {
+        "translation": "尽管天空正下着雨，他还是出门去散步了。"
+      }
+    ]
   },
   "ja_なくはない_215": {
     "title": "～なくはない (〜naku wa nai)",
-    "shortExplanation": "表示 the idea 'it's not that it's impossible' or 'it's not that I can't'.",
-    "longExplanation": "The ～なくはない grammar point implies that while something may not be your first choice or not guaranteed, it's not outright impossible. Translates to 'It's not that it's impossible,' 'It's not that I don't/can't ~.'",
-    "formation": "动词-ないform + なくはない, い-形容词－い + くはない, な-形容词 + ではなくはない, 名词 + ではなくはない"
+    "shortExplanation": "双重否定表示委婉或有所保留的肯定；“并非不……”、“也不是不……”。",
+    "longExplanation": "句型“～なくはない”通过双重否定构成委婉或略带勉强的肯定语气，表示某件事虽然算不上首选、理想或者十拿九稳，但也绝非完全不可能或毫无此意（“并非完全不……”、“倒也不是不行”）。常带有说话人留有余地、不愿把话说得过满的语感。",
+    "formation": "动词ない形（去ない） ＋ なくはない ｜ い形容词（去い） ＋ くなくはない ｜ な形容词 / 名词 ＋ ではなくはない",
+    "examples": [
+      {
+        "translation": "要想把它做完，倒也并非不难。"
+      },
+      {
+        "translation": "去和他搭话，我也不是完全不怕。"
+      },
+      {
+        "translation": "要说去看电影的时间，我也并非抽不出来。"
+      },
+      {
+        "translation": "用日语作演讲倒也不是不可能，但也绝非易事。"
+      }
+    ]
   },
   "ja_なくもない_216": {
     "title": "～なくもない (〜naku mo nai)",
-    "shortExplanation": "表示 'not impossible' or 'might as well'.",
-    "longExplanation": "The ～なくもない grammar point is used to suggest that something is not necessarily preferred or likely, but it's also not out of the question. It can often translate to 'It’s not a bad idea' or 'It might be feasible.'",
-    "formation": "动词-ないform + なくもない, い-形容词－い + くもない, な-形容词 + でもない, 名词 + でもない"
+    "shortExplanation": "双重否定表示委婉许可或不排除可能性；“也不是不可以……”、“也并非不……”。",
+    "longExplanation": "句型“～なくもない”属于双重否定表达，用于委婉地表示某种看法、态度或行动方案尚在可考虑的范围之内，虽然算不上积极热衷，但也并不坚决排斥（“倒也不是不行”、“也不是没有这种可能”）。相较于“～なくはない”，其语气更为随意，常用于表示轻微的倾向或不情愿的赞同。",
+    "formation": "动词ない形（去ない） ＋ なくもない ｜ い形容词（去い） ＋ くなくはない ｜ な形容词 / 名词 ＋ ではなくはない",
+    "examples": [
+      {
+        "translation": "如果他马上就回来的话，等他一会儿倒也不是不可以。"
+      },
+      {
+        "translation": "如果这本书真的有用的话，买下来倒也未尝不可。"
+      },
+      {
+        "translation": "如果天气好的话，我们去野餐也未始不可。"
+      },
+      {
+        "translation": "如果那个项目取得成功，获得晋升也并非没有可能。"
+      }
+    ]
   },
   "ja_ならなりに_217": {
     "title": "～なら～なりに",
-    "shortExplanation": "Means 'if it is X, then it's X in its own way', emphasizing unique qualities.",
-    "longExplanation": "The ～なら～なりに grammar point shows that something has its own particular way or style of being, based on that condition. It often conveys a positive acceptance or appreciation of the situation 'in its own way.'",
-    "formation": "名词/形容词 + なら + (same 名词/形容词) + なりに"
+    "shortExplanation": "表示具备与该条件相符的方式或独有价值；“若是……便有其相应的……”。",
+    "longExplanation": "句型“～なら～なりに”重复相同的名词或形容词，用于表达某事物虽处于特定条件或局限之中，但却具备与其身份、状态或特性相适应的表现、努力或独特风味（“既然是……，就会以符合……的方式去努力/展现其优点”）。多带有对现状积极认可与欣赏的语感。",
+    "formation": "名词 / 形容词 ＋ なら ＋ （同一名词 / 形容词） ＋ なりに",
+    "examples": [
+      {
+        "translation": "他虽然还是个初学者，但也在以初学者应有的方式全力努力着。"
+      },
+      {
+        "translation": "这道菜如果说辣的话，倒也辣得别有一番风味。"
+      },
+      {
+        "translation": "那个人虽然有些古怪，但也有着其独特怪异之处所带来的有趣。"
+      },
+      {
+        "translation": "这座城镇虽然小，但也自有其属于小城镇的别样乐趣。"
+      }
+    ]
   },
   "ja_には及ばない_218": {
     "title": "～には及ばない (〜ni wa oyobanai)",
-    "shortExplanation": "Means 'no need to go that far' or 'not necessary'.",
-    "longExplanation": "The ～には及ばない grammar point is 用于展示 that an action or degree of effort is unnecessary or excessive. It often translates to 'there’s no need to...' or 'it doesn’t warrant...' in English.",
-    "formation": "动词-dictionary form + には及ばない"
+    "shortExplanation": "表示没有必要做到那种地步；“用不着……”、“不必……”。",
+    "longExplanation": "句型“～には及ばない”属于N1级句型，用于指出某项行动、过度的操劳或过激的应对是完全没有必要的，事情尚没有发展到需要采取那般手段的严重程度（“用不着做到……”、“不必特地……”）。常用于劝慰他人或表明客观判断。",
+    "formation": "动词辞书形 / 名词 ＋ には及ばない",
+    "examples": [
+      {
+        "translation": "用不着非去坐头等舱，经济舱就已经足够了。"
+      },
+      {
+        "translation": "用不着每次见面都非得带礼物去。"
+      },
+      {
+        "translation": "那个问题还不至于去请教老师，你自己就能解决。"
+      },
+      {
+        "translation": "仅仅因为一点小小的失误，用不着说出那么刻薄过分的话吧。"
+      }
+    ]
   },
   "ja_に堪えない_219": {
     "title": "～に堪えない (～ni taenai)",
-    "shortExplanation": "指示 something is unbearable or not worth doing (e.g., 'unbearable to watch', 'unbearable to listen to').",
-    "longExplanation": "The ～に堪えない grammar pattern is used when something is so unpleasant, awful, or painful that one cannot tolerate it. Common verbs include 見るに堪えない, 聞くに堪えない, 読むに堪えない, etc., meaning 'unbearable to see/hear/read.'",
-    "formation": "动词-dictionary form + に堪えない, 名词 + に堪えない"
+    "shortExplanation": "表示某种事物糟糕、惨烈得令人不忍目睹或难以忍受；“不堪……”、“不忍……”。",
+    "longExplanation": "句型“～に堪えない”表示某事物、某种表现或惨状实在太过拙劣、粗俗或凄惨，以至于让人无法忍耐继续看、听或读下去（“不堪入目”、“不堪入耳”、“不忍卒读”）。常与视听知觉动词搭配，形成“見るに堪えない”、“聞くに堪えない”、“読むに堪えない”等固定短语。",
+    "formation": "动词辞书形 / 名词 ＋ に堪えない（常与「見る」「聞く」「読む」等动词连用）",
+    "examples": [
+      {
+        "translation": "他讲的笑话低俗拙劣，简直不堪入耳。"
+      },
+      {
+        "translation": "那部电影制作得太糟糕了，简直不堪入目。"
+      },
+      {
+        "translation": "这部小说枯燥乏味得让人不忍卒读。"
+      },
+      {
+        "translation": "他的种种恶劣行为让人看不下去。"
+      }
+    ]
   },
   "ja_に堪える_220": {
     "title": "～に堪える (～ni taeru)",
-    "shortExplanation": "Used to say that something is 'worth doing' or 'can stand up to' something (the positive counterpart of ～に堪えない).",
-    "longExplanation": "The ～に堪える grammar point 指示 that something is good enough or worthy enough to do (read, see, listen to, etc.). Common examples include 読むに堪える, 見るに堪える, 聞くに堪える, etc., meaning 'worth reading/watching/listening to.'",
-    "formation": "动词-dictionary form + に堪える, 名词 + に堪える"
+    "shortExplanation": "表示某事物具备足够的水准或价值，值得品味或经得起评价；“值得……”、“经得起……”。",
+    "longExplanation": "句型“～に堪える”是“～に堪えない”的肯定形式，用于评价某部作品或事物具备高度的价值、深度或水准，完全值得人们去仔细阅读、观赏、倾听或认真批判（“值得一读/看/听”、“经得起推敲/检验”）。常与“見る”、“聞く”、“読む”、“鑑賞する”等动词连用。",
+    "formation": "动词辞书形 / 名词 ＋ に堪える（常与「見る」「聞く」「読む」「鑑賞する」等动词连用）",
+    "examples": [
+      {
+        "translation": "他的歌声十分动听，很值得一听。"
+      },
+      {
+        "translation": "这部小说内容充实深刻，非常值得一读。"
+      },
+      {
+        "translation": "那部电影是一部值得反复观赏的杰作。"
+      },
+      {
+        "translation": "他的意见极具参考价值，完全值得借鉴。"
+      }
+    ]
   },
   "ja_に耐える_221": {
     "title": "～に耐える (～ni taeru)",
-    "shortExplanation": "To endure or withstand something; 'endure', 'withstand', 'tolerate'.",
-    "longExplanation": "The ～に耐える grammar point is 用于表达 the concept of enduring or withstanding something, often involving a degree of difficulty or hardship. 可以翻译为 'endure', 'withstand', or 'tolerate' in English. Here we focus on usage with nouns (e.g., a force or a hardship to endure).",
-    "formation": "名词 + に耐える"
+    "shortExplanation": "表示承受痛苦、严酷考验或抵御外部巨大力量；“经受住……”、“耐受……”。",
+    "longExplanation": "句型“～に耐える”（汉字写作“耐”）着重表示顽强忍受肉体上的痛苦、精神上的折磨或生活上的严苛考验，亦可表示建筑物或物体能够承受强烈的风暴、地震或巨大冲击等物理外力而不致毁损（“经受住考验”、“抵御得住……”）。",
+    "formation": "名词 ＋ に耐える",
+    "examples": [
+      {
+        "translation": "他顽强地经受住了严酷的修行训练。"
+      },
+      {
+        "translation": "这座桥梁能够经受得住强风的袭击。"
+      },
+      {
+        "translation": "她坚韧地忍受住了巨大的痛苦。"
+      },
+      {
+        "translation": "这栋建筑物能够经受住地震的考验。"
+      }
+    ]
   },
   "ja_に至った_222": {
     "title": "～に至った (〜ni itatta)",
-    "shortExplanation": "表示 the outcome or final conclusion of a process; 'reached the point', 'led to'.",
-    "longExplanation": "The ～に至った grammar point is 用于表达 the final outcome or conclusion that has been reached as a result of a process or a series of events. 可以翻译为 'reached the point', 'led to', or 'resulted in' in English. It often 指示 a significant outcome.",
-    "formation": "动词-てform + に至った or 名词 / 动词-dictionary + に至る (more general)."
+    "shortExplanation": "表示事物经过一系列发展后最终达到的结果或阶段；“达到了……”、“以至于……”。",
+    "longExplanation": "句型“～に至った”是“～に至る”的过去时态，用于陈述某件事物在历经多番过程、曲折或一系列演变之后，最终发展到了某个决定性的阶段、局势或得出了某种结论（“最终导致了……”、“终于达到了……的境地”）。多用于指代具有重大意义的结果或严重的局势。",
+    "formation": "名词 / 动词辞书形 ＋ に至った（或 に至る）",
+    "examples": [
+      {
+        "translation": "经过反复刻苦的练习，他最终成为了一名专业吉他手。"
+      },
+      {
+        "translation": "随着调查的不断深入，最终得出了一个令人惊愕的结论。"
+      },
+      {
+        "translation": "这个问题最终激化，演变成了国际性的对抗。"
+      },
+      {
+        "translation": "在历经了无数次失败之后，我终于走向了成功。"
+      }
+    ]
   },
   "ja_に越したことはない_223": {
     "title": "～に越したことはない (〜ni koshita koto wa nai)",
-    "shortExplanation": "表示 that something is the best or most desirable course of action; 'nothing better than...'.",
-    "longExplanation": "The ～に越したことはない grammar point 指示 that a certain state or action is the most favorable or ideal. It literally conveys the idea that nothing surpasses the stated condition.",
-    "formation": "动词 (dictionary form) + に越したことはない, い-形容词 + に越したことはない, な-形容词/名词 + である + に越したことはない"
+    "shortExplanation": "表示某种做法或状态最为理想、再好不过；“最好不过……”、“莫过于……”。",
+    "longExplanation": "句型“～に越したことはない”源自古语动词“越す”（超越），字面意思是“没有什么能够超越这一状态”。该句型用于表达某件事情无疑是最稳妥、最妥当、最理想的方案（“当然还是……最好”、“能……自是再好不过”）。",
+    "formation": "动词辞书形 / い形容词 / な形容词（或 である） / 名词（或 である） ＋ に越したことはない",
+    "examples": [
+      {
+        "translation": "早做准备当然是再好不过的了。"
+      },
+      {
+        "translation": "使用新鲜的食材比什么都好。"
+      },
+      {
+        "translation": "安全驾驶终究是最为重要的。"
+      },
+      {
+        "translation": "过上健康的生活自然是最好不过的。"
+      }
+    ]
   },
   "ja_に難くない_224": {
     "title": "～に難くない (～ni katakunai)",
-    "shortExplanation": "表示 'not difficult to ~' in a formal/literary sense; e.g., 'not hard to imagine/understand'.",
-    "longExplanation": "The ～に難くない (～にかたくない) grammar is typically used in formal or literary contexts to indicate that something is not difficult. Common expressions include 想像に難くない ('not hard to imagine'), 理解に難くない ('not difficult to understand'), 察するに難くない, and so on.",
-    "formation": "动词-dictionary form + に難くない (commonly with 想像する, 理解する, 察する, etc.)"
+    "shortExplanation": "书面语中表示根据情理不难推知或理解；“不难……”、“完全可以……”。",
+    "longExplanation": "句型“～に难くない”（读作 にかたくない）是典雅庄重的书面语表达，用于表示根据当前的客观事实或情境，完全可以轻而易举地推测、体察或理解对方的心理或事情的缘由（“不难想象”、“不难理解”、“完全可以体察”）。常与“想像”、“察する”、“理解”等词搭配使用。",
+    "formation": "动词辞书形 / 名词 ＋ に難くない（常与「想像」「察する」「理解」等词连用）",
+    "examples": [
+      {
+        "translation": "他心中的喜悦是完全不难想象的。"
+      },
+      {
+        "translation": "这个结果让她深感失望，这一点完全不难理解。"
+      },
+      {
+        "translation": "对于他愤怒的心情，人们完全不难体察。"
+      },
+      {
+        "translation": "之所以会发生这种局面，其原因是不难想象的。"
+      }
+    ]
   },
   "ja_のは_225": {
-    "title": "～のは Noun ぐらいのものだ (〜no wa Noun gurai no mono da)",
-    "shortExplanation": "Conveys that 'only (Noun) is the case' or 'nothing but (Noun)'.",
-    "longExplanation": "The ～のは Noun ぐらいのものだ pattern 指示 that something is exclusively or solely that particular Noun, conveying the sense of 'That's the only thing...' or 'There's nothing but...' about a situation.",
-    "formation": "动词-casual + のは + 名词 + ぐらいのものだ, い-形容词 + のは + 名词 + ぐらいのものだ, etc."
+    "title": "～のは + 名词 + ぐらいのものだ (〜no wa Noun gurai no mono da)",
+    "shortExplanation": "表示除了该事物之外别无其他；“充其量只有……”、“顶多也就是……罢了”。",
+    "longExplanation": "句型“～のは + 名词 + ぐらいのものだ”（亦可作 くらいのものだ）用于表示在某种情境下，满足条件或值得一提的仅仅只有该名词而已，除此以外别无长物（“唯一能称得上……的也就只有……”、“充其量不过是……罢了”）。常带有略显无奈、轻视或消极评价的感触。",
+    "formation": "动词普通形 / い形容词 / な形容词（＋な） ＋ のは ＋ 名词 ＋ ぐらいのものだ（或 くらいのものだ）",
+    "examples": [
+      {
+        "translation": "读这本小说充其量也就是打发时间罢了。"
+      },
+      {
+        "translation": "今晚这顿晚饭里唯一算得上不错的，大概也就只有披萨了。"
+      },
+      {
+        "translation": "看这部电影顶多也就是在浪费时间罢了。"
+      },
+      {
+        "translation": "和他说话除了徒增压力之外，根本起不到任何作用。"
+      }
+    ]
   },
   "ja_ばものを_226": {
     "title": "～ば～ものを (～ba～mono o)",
-    "shortExplanation": "表示 regret or a missed opportunity: 'if only', 'had I but...'.",
-    "longExplanation": "The ～ば～ものを grammar point shows regret about what could have been, often translated as 'if only...' or 'it would have been better if...'. It can be used with verbs, adjectives, or nouns, usually in a past or conditional form.",
-    "formation": "动词-ば + 动词-past + ものを, い-形容词 + ければ + ものを, な-形容词/名词 + であれば + ものを, etc."
+    "shortExplanation": "对已经发生的事态表达遗憾、惋惜或埋怨；“要是早……就好了，却偏偏……”。",
+    "longExplanation": "句型“～ば～ものを”是N1级虚拟反实语气表达，用于针对已经成为事实的遗憾结果，表达“如果当时采取了某种做法，本来可以得到良好结果，然而实际却并非如此”的深切惋惜、悔恨或间接的责备与抱怨（“要是早……的话本可以……的，可偏偏却……”）。",
+    "formation": "动词假定形（ば形） / い形容词（ければ） / な形容词・名词（なら / であれば） ＋ 动词た形（或普通形） ＋ ものを",
+    "examples": [
+      {
+        "translation": "要是早点起床的话，本来就不会迟到了的。"
+      },
+      {
+        "translation": "要是再加把劲的话，原本就能通过考试的，真可惜。"
+      },
+      {
+        "translation": "要是手头有钱的话，我早就买新车了。"
+      },
+      {
+        "translation": "要是当时有朋友在的话，本来就可以一起开心地玩耍了。"
+      }
+    ]
   },
   "ja_びた_227": {
     "title": "～びた (～bita)",
-    "shortExplanation": "A suffix meaning “looking or seeming like ~” (often appears with nouns/adjectives).",
-    "longExplanation": "The suffix ～びた attaches to certain words to mean “to have the look/feel of ~.” Common examples include 大人びた (adult-like), 古びた (old/worn), 田舎びた (countrified). It 表示 that someone or something appears or has become like that noun/adjective.",
-    "formation": "[名词/形容词 stem] + びた (forms a 連体形 modifier, e.g., 大人びた人 “an adult-like person”)"
+    "shortExplanation": "接尾词，表示带有某种倾向、气息或外观；“带有……气息”、“显出……样子”、“带有……色彩”。",
+    "longExplanation": "接尾词“～びた”是动词“～びる”的连体形，接在某些名词或形容词词干后，用于修饰后续名词，表示某人或某物带有、透出某种性质或外观风格（“带着……的气息”、“显得颇有……的感觉”）。常见的固定搭配有：大人びた（显得成熟、带大人气的）、古びた（陈旧的、略显沧桑的）、田舎びた（带乡村风味的、淳朴的）。",
+    "formation": "名词 / 形容词词干 ＋ びた ＋ 名词（如：大人びた人、古びた建物、田舎びた町）",
+    "examples": [
+      {
+        "translation": "思考方式成熟、带有大人气概的孩子。"
+      },
+      {
+        "translation": "我舍不得扔掉那只陈旧斑驳的旧包。"
+      },
+      {
+        "translation": "带有浓厚乡村风情的气息是这座小镇的魅力所在。"
+      },
+      {
+        "translation": "她的打扮略微透着些成熟大人的气质。"
+      }
+    ]
   },
   "ja_びる_228": {
     "title": "～びる (〜biru)",
-    "shortExplanation": "A suffix meaning “to appear/to become ~,” often used with certain adjectives or nouns.",
-    "longExplanation": "The suffix ～びる is used to form verbs meaning 'to become like' or 'to seem like.' Typical examples include 大人びる (to become or behave like an adult), 古びる (to become old or look old), 田舎びる (to become rustic/countrified).",
-    "formation": "形容词/名词 + びる (to form a verb)"
+    "shortExplanation": "接尾动词，表示呈现出某种风貌或带上某种气息；“显得……”、“显出……风貌”、“变得……”。",
+    "longExplanation": "接尾动词“～びる”接在特定名词或形容词词干后，构成二类动词（一段动词），表示某种事物或人呈现出该词所指的外貌、气质或风格特征（“显出……的样子”、“带有……的气息”）。日常多以存续状态“～びている”的形式出现。常见组合如：大人びる（显得成熟、显现出大人样）、古びる（变陈旧、显旧）、田舎びる（带乡村风情、显得淳朴土气）。",
+    "formation": "名词 / 形容词词干 ＋ びる（作为二类动词活用：びる、びて、びている、びた）",
+    "examples": [
+      {
+        "translation": "她看起来比实际年龄要更加成熟稳重。"
+      },
+      {
+        "translation": "这栋建筑物已经彻底变得老旧陈腐了。"
+      },
+      {
+        "translation": "他虽然是在大城市长大的，但说话方式却略带些乡土气息。"
+      },
+      {
+        "translation": "看到小孩子突然变得像个大人一样的瞬间，总会让人感到惊讶。"
+      }
+    ]
   },
   "ja_ぶった_229": {
     "title": "～ぶった (～butta)",
-    "shortExplanation": "Often appears as a past form of ～ぶる, meaning 'acted/pretended like ~' (or literally 'hit/bashed', depending on context).",
-    "longExplanation": "The verb ～ぶる means 'to act/behave as if one is ~' (e.g., 偉そうにぶる: 'to act all high and mighty'). In its past tense, ～ぶった can describe someone who acted or pretended in a certain way. Be aware that ぶった can also simply be 'hit' (past tense of 打つ/ぶつ) depending on the kanji/spelling, but as a grammar pattern, it’s about 'putting on airs.'",
-    "formation": "名词/形容词 + ぶる → ぶった (past tense), e.g., 偉そうぶった, 大人ぶった"
+    "shortExplanation": "动词“～ぶる”的过去形或连体修饰形，多含贬义，表示装模作样、故意摆架子；“装出……的样子”、“摆出……的姿态”。",
+    "longExplanation": "“～ぶった”是动词“～ぶる”的过去形或连体修饰形，接在名词或形容词后修饰后续名词，常带有批评、讽刺或不满的语感，指某人故意装腔作势，表现出其实并不具备的品质、身份或态度（“装模作样的”、“摆出……架子的”）。常见的固定搭配有：偉そうぶった（摆架子的、自命不凡的）、大人ぶった（装成熟的、故作老成的大人腔调）、いい子ぶった（装乖乖牌的、故作老实的）。",
+    "formation": "名词 / 形容词词干 ＋ ぶる → ぶった ＋ 名词（如：偉そうぶった態度、大人ぶった口調、いい子ぶった顔）",
+    "examples": [
+      {
+        "translation": "他摆出一副仿佛什么都知道似的高深莫测的态度。"
+      },
+      {
+        "translation": "被人用自以为是、摆架子的口气说话，让人心里有些恼火。"
+      },
+      {
+        "translation": "她用故作老成的大人口气说着话，其实本质上还只是个高中生。"
+      },
+      {
+        "translation": "你完全没必要摆出一副装乖乖牌的虚伪态度。"
+      }
+    ]
   },
   "ja_ぶって_230": {
     "title": "～ぶって (〜butte)",
-    "shortExplanation": "Te-form of ～ぶる, meaning 'acting/pretending to be ~'.",
-    "longExplanation": "～ぶる (in te-form: ～ぶって) 指示 'behaving as if one were ~.' This is often used negatively to criticize someone for putting on airs or pretending to know more than they do (e.g., 知ったかぶって 'to act like a know-it-all').",
-    "formation": "名词/形容词 + ぶる → ぶって (te-form)"
+    "shortExplanation": "动词“～ぶる”的て形，表示装作某种样子、摆出某种架子并进行后续行为；“装作……的样子”、“故意摆出……”。",
+    "longExplanation": "“～ぶって”是动词“～ぶる”的连用形（て形），用于中顿或连接后续动作，带有明显的批评、轻蔑或否定色彩，指某人故意装腔作势、假装某种样子行事（“装出一副……的样子而……”）。常见搭配如：知ったかぶって（不懂装懂地）、偉そうぶって（摆出一副了不起的架子地）、大人ぶって（装模作样扮成熟地）。",
+    "formation": "名词 / 形容词词干 ＋ ぶる → ぶって",
+    "examples": [
+      {
+        "translation": "他不论什么事情都要不懂装懂地大发议论。"
+      },
+      {
+        "translation": "她表面上装出一无所知的无辜样子，实际上心里全都一清二楚。"
+      },
+      {
+        "translation": "他总是摆出一副高人一等的傲慢架子对身边的人指手画脚。"
+      },
+      {
+        "translation": "虽然总爱故意装出一副大人的深沉样，但他身上依然有很幼稚的地方。"
+      }
+    ]
   },
   "ja_ぶり_231": {
     "title": "～ぶり (〜buri)",
-    "shortExplanation": "表示 the amount of time elapsed since doing something last.",
-    "longExplanation": "The ～ぶり grammar point is 用于表达 that a certain amount of time has passed since you last did something. It often translates as 'for the first time in ~' or 'after (time period)'.",
-    "formation": "Time expression + ぶり"
+    "shortExplanation": "接在表示时间的词后，表示时隔多时再次发生某事；“时隔……”、“隔了……才……”。",
+    "longExplanation": "接尾词“～ぶり”接在表示时间段的词语后，表示距离上次进行某项动作或发生某事已经过去了相当长的一段时间，再次重复该行为或出现该事态（“时隔多久才再次……”、“暌违……”）。常带有时隔已久的感触或感慨。",
+    "formation": "表示时间的词语 ＋ ぶり（如：三年ぶり、一週間ぶり、一ヶ月ぶり、五年ぶり）",
+    "examples": [
+      {
+        "translation": "时隔三年，我终于又见到了他。"
+      },
+      {
+        "translation": "隔了一整周，我才又去了健身房。"
+      },
+      {
+        "translation": "时隔一个月，我再次收到了他寄来的信。"
+      },
+      {
+        "translation": "时隔五年，这里终于又下雪了。"
+      }
+    ]
   },
   "ja_ぶる_232": {
     "title": "～ぶる (〜buru)",
-    "shortExplanation": "Used when someone is acting or pretending to be something they are not (often a negative connotation).",
-    "longExplanation": "The ～ぶる grammar point is used when someone pretends or acts like something they aren't. It often has a negative nuance, suggesting insincerity or putting on airs. Common usage includes nouns or descriptive words before ぶる (e.g., 学者ぶる, 偉そうぶる, etc.).",
-    "formation": "名词 / (形容词 stem) + ぶる"
+    "shortExplanation": "接尾动词，带有批评色彩，表示并不具备某种特质却故意装腔作势；“装出……的样子”、“摆出……的架子”、“装作……”。",
+    "longExplanation": "接尾动词“～ぶる”接在名词或形容词词干后，构成一类动词（五段动词），表示某种并非自身真实状态的做作举止。通常含有强烈的负面和贬义色彩，指责他人故意摆架子、装腔作势或故作姿态（“故意装成……的样子”、“自命不凡地扮演……”）。常见搭配有：学者ぶる（摆学者架子）、女優ぶる（装大明星做派）、お嬢様ぶる（装千金小姐）、無邪気ぶる（装纯洁无辜）。",
+    "formation": "名词 / 形容词词干 ＋ ぶる（作为一类动词活用：ぶる、ぶらない、ぶった、ぶって）",
+    "examples": [
+      {
+        "translation": "他装出一副学者派头，仿佛什么高深知识都通晓似的。"
+      },
+      {
+        "translation": "别再摆女明星的臭架子了，老老实实做你自己吧。"
+      },
+      {
+        "translation": "她总是故意端着一副名门千金小姐的做作架子。"
+      },
+      {
+        "translation": "看着我受人欺负时她却在一旁装作天真无辜的样子，我心中顿时怒火中烧。"
+      }
+    ]
   },
   "ja_までだ_233": {
     "title": "～までだ (～made da)",
-    "shortExplanation": "表示 a limit or extent; 'it's only up to...', 'no more than...'.",
-    "longExplanation": "The ～までだ grammar point is used to emphasize that something goes only up to a certain limit or extent. It can also imply 'it's only this and nothing more.'",
-    "formation": "动词 (dictionary/ない form) + までだ, い-形容词 + までだ, 名词 + までだ"
+    "shortExplanation": "表示界限、范围或程度的极限；“仅仅到……为止”、“不过是……而已”。",
+    "longExplanation": "句型“～までだ”用于限定事物的时间、范围或程度，强调该事物仅停留在此界限之内，绝不会超出该范围（“只限于……”、“仅仅停留在这步”）。此外接动词时还可表示“大不了就……”或“不过是……罢了”，在此处结合具体语境着重强调“程度或界线仅止于此，没有更进一步”。",
+    "formation": "动词辞书形 / 动词ない形 ＋ までだ ｜ い形容词 ＋ までだ ｜ 名词 ＋ までだ",
+    "examples": [
+      {
+        "translation": "我和他之间仅仅止步于普通朋友，绝非更进一步的关系。"
+      },
+      {
+        "translation": "无限量畅饮只到晚上9点为止，此后需要另行支付追加费用。"
+      },
+      {
+        "translation": "我们掌握的信息仅截止到昨天，之后并没有任何进一步的更新。"
+      },
+      {
+        "translation": "他的知识储备仅仅停留在初中生水平，超出这个层次的内容他就无法理解了。"
+      }
+    ]
   },
   "ja_もなんでもない_234": {
     "title": "～もなんでもない (〜mo nandemonai)",
-    "shortExplanation": "Used to dismiss or negate something’s importance; 'it’s nothing at all', 'it doesn’t matter'.",
-    "longExplanation": "The ～もなんでもない pattern is used to deny or downplay the significance of something. It can mean 'it doesn’t matter at all' or 'it’s no big deal.'",
-    "formation": "动词-dictionary form + もなんでもない, い-形容词 + もなんでもない, な-形容词 + なもなんでもない, 名词 + もなんでもない"
+    "shortExplanation": "强烈否定或看轻某事的重要性；“根本不算什么”、“毫无大碍”、“一点也不值一提”。",
+    "longExplanation": "句型“～もなんでもない”用于彻底否定某项事实、性质或身份的重要性，表示说话人对此毫不在意、完全不放在心上，认为某事无足轻重或毫不相干（“根本算不上什么大不了的事”、“完全无所谓”）。",
+    "formation": "动词辞书形 / 动词ない形 ＋ もなんでもない ｜ い形容词 ＋ もなんでもない ｜ な形容词 ＋ なもなんでもない（或 でもなんでもない） ｜ 名词 ＋ （だ）もなんでもない",
+    "examples": [
+      {
+        "translation": "输掉一百万日元对我来说根本就算不上什么大不了的事。"
+      },
+      {
+        "translation": "他是不是社长对我而言根本毫无意义，一点都不重要。"
+      },
+      {
+        "translation": "你来不来对我来说完全无所谓，根本算不得什么。"
+      },
+      {
+        "translation": "那东西美不美根本毫无所谓，一点意义也没有。"
+      }
+    ]
   },
   "ja_ものとして_235": {
     "title": "～ものとして (～mono to shite)",
-    "shortExplanation": "指示 an assumption or supposition; 'assuming', 'under the assumption that'.",
-    "longExplanation": "The ～ものとして grammar pattern is 用于表达 a supposition or assumption: 'assuming that ~', 'on the premise that ~'. It often sets up a condition or rule as the basis for some action or decision.",
-    "formation": "动词-casual + ものとして, い-形容词 + ものとして, な-形容词 + なものとして, 名词 + のものとして"
+    "shortExplanation": "将某事设定为假定或前提条件；“当作……”、“假定为……”、“在认定……的前提下”。",
+    "longExplanation": "句型“～ものとして”用于设定某种假定条件、前提或规定，并以此为根据展开后续的判断、行动或措施（“假定……而采取行动”、“视为……来进行处理”）。说话人以该假定作为行为的前提基准。",
+    "formation": "普通形（动词 / い形容词 / な形容词 ＋ な / 名词 ＋ の 或 である） ＋ ものとして",
+    "examples": [
+      {
+        "translation": "认定天肯定会下雨，所以我特意带了雨伞出门。"
+      },
+      {
+        "translation": "假定他因病无法出席，因此由我代替他参加了会议。"
+      },
+      {
+        "translation": "姑且当作这块蛋糕很美味，大家一起把它分着吃了吧。"
+      },
+      {
+        "translation": "认定她具备学生身份，因此为她办理了学生优惠折扣。"
+      }
+    ]
   },
   "ja_んがために_236": {
     "title": "～んがために (〜n ga tame ni)",
-    "shortExplanation": "Emphasizes the reason or purpose for an action; 'in order to', 'for the sake of'.",
-    "longExplanation": "The ～んがために form is a formal/literary expression meaning 'in order to' or 'for the purpose of.' It attaches to the negative stem (ない-form minus ない) of the verb: e.g., する→せん, 行く→いかん, 保つ→たもたん, etc.",
-    "formation": "动词-negative stem + んがために"
+    "shortExplanation": "较庄重的文语表达，表示强烈的目的与决心；“为了……”、“一心只为……”。",
+    "longExplanation": "句型“～んがために”（有时作“～んがため”）是源自古日语的庄重书面语表达，用于强调为了实现某一重大目标、崇高愿望或抱负而下定巨大决心采取行动（“一心只为了达到……的目的”）。后项多接续体现强烈意志或付出艰苦努力的动作。动词接未然形加“ん”（“する”特殊变为“せん”）。",
+    "formation": "动词未然形（ない形去掉ない） ＋ んがために（特别注意：する → せんがために）",
+    "examples": [
+      {
+        "translation": "为了能够持久保持身体健康，我每天都坚持体育锻炼。"
+      },
+      {
+        "translation": "一心只为了顺利考及格，我拼尽全力发愤苦读。"
+      },
+      {
+        "translation": "为了备战明天的关键考试，我打算今晚早点就寝休息。"
+      },
+      {
+        "translation": "仅仅为了能见上她那灿烂的笑容，我每天都会不辞辛劳去见她。"
+      }
+    ]
   },
   "ja_んばかりに_237": {
     "title": "～んばかりに (〜n bakari ni)",
-    "shortExplanation": "指示 'as though about to ~' or 'as if to say ~'.",
-    "longExplanation": "The ～んばかりに form is typically built on the negative stem of a verb (ない-form minus ない: 行か→行かん, 言わ→言わん, 知ら→知らん, etc.) + ばかり. It describes someone’s action or expression as though it were about to happen, or as though conveying a certain meaning without explicitly stating it.",
-    "formation": "动词-negative stem + ん + ばかりに"
+    "shortExplanation": "生动地描写某种几乎就要发生的逼真情态；“眼看就要……似的”、“仿佛在说……似地”。",
+    "longExplanation": "句型“～んばかりに”（连体形为“～んばかりの ＋ 名词”）是具有生动描摹色彩的书面语表达，用于描写动作、表情或态势极其逼真逼近，让人觉得“马上就要发生某事”，或者“虽然没开口却仿佛在传达某种心声”（“几乎要……似的”、“简直像在表示……一样”）。动词接未然形加“ん”（“する”变为“せんばかりに”）。",
+    "formation": "动词未然形（ない形去掉ない） ＋ んばかりに（特别注意：する → せんばかりに）",
+    "examples": [
+      {
+        "translation": "他完全无视我的提问，装得仿佛自己什么内情都不知道一样。"
+      },
+      {
+        "translation": "那个孩子眉头紧锁、皱起小脸，眼看就要哭出来了。"
+      },
+      {
+        "translation": "她紧紧捂住嘴巴，险些忍不住要当场噗嗤笑出声来。"
+      },
+      {
+        "translation": "他接连不断地大声叹气，仿佛在无声地抱怨自己有多无聊。"
+      }
+    ]
   },
   "ja_差し支えない_238": {
     "title": "～差し支えない (〜sashitsukaenai)",
-    "shortExplanation": "指示 no problem or obstacle; 'it’s fine if...', 'there’s no issue'.",
-    "longExplanation": "The ～差し支えない grammar point 表示 that doing something (or something occurring) is not a problem and causes no inconvenience. It’s often used in polite or formal situations.",
-    "formation": "动词-て form + も差し支えない, 名词 + が差し支えない"
+    "shortExplanation": "较为礼貌客气的说法，表示没有妨碍或没有问题；“没有妨碍”、“无碍”、“完全可以”。",
+    "longExplanation": "句型“～差し支えない”（郑重形式为“～差し支えありません”）是常用于商务及正式社交场合的礼貌表达，表示某事即使发生或如此处理，也不会产生任何不便、阻碍或负面影响（“即使……也完全没关系”、“并不妨碍”）。多以“～ても差し支えない”（即使……也无妨）的形式使用。",
+    "formation": "动词て形 ＋ も差し支えない ｜ い形容词（去い变く） ＋ ても差し支えない ｜ な形容词词干 / 名词 ＋ でも差し支えない ｜ 名词 ＋ が / は差し支えない",
+    "examples": [
+      {
+        "translation": "稍微迟到一点也是完全没有妨碍的。"
+      },
+      {
+        "translation": "房间稍微有点乱也完全没关系，并不影响什么。"
+      },
+      {
+        "translation": "就算下起雨来，也丝毫不会对我们造成妨碍。"
+      },
+      {
+        "translation": "他留在这里对于您来说会有什么妨碍或不方便吗？"
+      }
+    ]
   },
   "ja_折に_239": {
     "title": "～折に (〜ori ni)",
-    "shortExplanation": "指示 the time or occasion when something happens; 'when', 'at the time of'.",
-    "longExplanation": "The ～折に grammar point is used in a somewhat formal register to express that one event or action takes place on the occasion of another. It essentially means 'when' or 'at the time of'.",
-    "formation": "动词-dictionary form + 折に, 动词-た形 + 折に, 名词 + の折に"
+    "shortExplanation": "较为郑重的表达，表示事情发生的时机或场合；“在……的时候”、“趁着……之际”。",
+    "longExplanation": "句型“～折に”（有时作“～折には / ～折の”）是多用于书信、商务及郑重谈话中的书面语表达，相当于“～ときに”，表示某一动作或事态发生的特定时机、阶段或机缘（“在……之际”、“逢……的时候”）。",
+    "formation": "动词辞书形 / 动词た形 / 动词ている形 ＋ 折に ｜ 名词 ＋ の ＋ 折に",
+    "examples": [
+      {
+        "translation": "父亲患病静养的那段时期，我恰好正在海外留学。"
+      },
+      {
+        "translation": "您去日本出差旅游之际，请务必帮我买些当地特产带回来。"
+      },
+      {
+        "translation": "在小孩子正在安睡的时候，请大家务必保持安静。"
+      },
+      {
+        "translation": "您与他见面之际，请劳烦帮我把这封信交给他。"
+      }
+    ]
   },
   "ja_極まりない_240": {
     "title": "～極まりない (〜kiwamarinai)",
-    "shortExplanation": "表示 an extreme state, often negative; 'utterly', 'extremely', 'boundlessly'.",
-    "longExplanation": "The ～極まりない grammar point 指示 an extreme or utmost degree, most commonly with a negative nuance (e.g., 失礼極まりない, 危険極まりない). It can sometimes be used for positive contexts, but that usage is less common.",
-    "formation": "な-形容词（語幹）+ 極まりない, い-形容词（連用形）+ こと + 極まりない, 名词 + の極まりない"
+    "shortExplanation": "较为正式的书面语，表示程度达到了极点（多含负面评价）；“极其……”、“……至极”、“极其无比”。",
+    "longExplanation": "句型“～極まりない”是极具庄重色彩的书面语表达，表示事物的状态、性质达到了登峰造极、无以复加的极限程度（“极其……”、“……到了极点”）。在绝大多数情况下与具有消极、负面色彩的词语搭配使用（如失礼、危险、不讲理、不卫生等），用以表达强烈的批判、愤慨或非难情绪。",
+    "formation": "な形容词词干 ＋ 極まりない ｜ い形容词连用形（去い变く） ＋ こと ＋ 極まりない ｜ 名词 ＋ 極まりない",
+    "examples": [
+      {
+        "translation": "他那蛮横无礼的态度简直无礼至极，让人忍无可忍。"
+      },
+      {
+        "translation": "那种鲁莽的驾驶方式极其危险。"
+      },
+      {
+        "translation": "她那任性胡闹的做派极其缺乏常识，荒谬至极。"
+      },
+      {
+        "translation": "这间屋子脏乱到这种地步，简直是不卫生到了极点。"
+      }
+    ]
   },
   "ja_極まる_241": {
     "title": "～極まる (〜kiwamaru)",
-    "shortExplanation": "Also 表示 an extreme degree or state, typically negative.",
-    "longExplanation": "The ～極まる form often appears with な-adjectives: e.g., 失礼極まる, 非常識極まる ('extremely rude/unreasonable'). It's largely synonymous with ～極まりない but tends to appear in set phrases. Both forms are quite formal and emphatic.",
-    "formation": "な-形容词（語幹）+ 極まる, い-形容词（連用形）+ こと + 極まる, etc."
+    "shortExplanation": "典雅庄重的书面语，表示程度达到极限（多用于负面评价或固定表达）；“极其……”、“……至极”。",
+    "longExplanation": "句型“～極まる”是古雅庄重的书面语表达，与“～極まりない”同义，表示某事物的性质、状态达到了极致（“极其……”、“……到了极点”）。多接在な形容词词干后形成固定短语，如“失礼極まる”（极其失礼）、“非常識極まる”（荒唐至极）、“無責任極まる”（极不负责）、“遺憾極まる”（极其令人遗憾）。",
+    "formation": "な形容词词干 ＋ 極まる ｜ い形容词连用形（去い变く） ＋ こと ＋ 極まる",
+    "examples": [
+      {
+        "translation": "他的言行举止简直无礼至极。"
+      },
+      {
+        "translation": "那种傲慢的态度简直是荒唐至极、不可理喻。"
+      },
+      {
+        "translation": "她的发言是极不负责任的恶劣行为。"
+      },
+      {
+        "translation": "产生这样严重的误解，实在是令人遗憾至极。"
+      }
+    ]
   },
   "ja_足りない_242": {
     "title": "～足りない (～tarinai)",
-    "shortExplanation": "表示 insufficiency or lack; 'not enough', 'insufficient'.",
-    "longExplanation": "The ～足りない pattern simply means that something is not sufficient in quantity, time, detail, ability, etc. It’s the negative form of 足りる ('to be enough').",
-    "formation": "名词 + (が) 足りない, 动词-casual + ほど/だけ + (が) 足りない"
+    "shortExplanation": "表示数量、时间、能力或程度等不足、不够；“不够……”、“缺乏……”、“不足”。",
+    "longExplanation": "句型“～足りない”是动词“足りる”（足够）的否定形式，用于表示某种事物在数量、时间、能力、详细程度等方面未达到令人满意或必要的标准，处于欠缺、不够充分的状态（“不足”、“不够”、“欠缺”）。常与格助词“が”搭配使用，或直接作谓语。",
+    "formation": "名词 ＋ (が) 足りない | 动词普通形 ＋ ほど / だけ ＋ (が) 足りない",
+    "examples": [
+      {
+        "translation": "我的日语能力还远远不够。"
+      },
+      {
+        "translation": "因为时间不够了，现在必须马上出发。"
+      },
+      {
+        "translation": "他的说明里缺乏具体细节。"
+      },
+      {
+        "translation": "做饭用的食材不够了。"
+      }
+    ]
   },
   "ja_足る_243": {
-    "title": "～足る Noun (〜taru Noun)",
-    "shortExplanation": "指示 that something is worthy or sufficient to be called/used as ~; 'worthy of', 'enough to ~'.",
-    "longExplanation": "The classical pattern 'Noun + に足る + Noun' or 'Verb + に足る + Noun' means 'something is worthy of or sufficient for ~.' For instance, '信頼に足る人物' means 'a person worthy of trust.' It’s different from the everyday verb 足りる ('to be enough').",
-    "formation": "名词/动词-dictionary form + に足る + 名词"
+    "title": "～足る + 名词 (〜taru Noun)",
+    "shortExplanation": "修饰后项名词，表示具有充分的价值或资格；“值得……的”、“足以……的”。",
+    "longExplanation": "文语及书面语句型“～に足る ＋ 名词”接在名词或动词字典形后，用于连体修饰后续的名词，表示某事物具备充分的价值、理由、能力或资格，完全配得上某种评价或足以担当某种行为（“值得……的”、“足以……的”）。与口语动词“足りる”不同，它属于庄重文雅的书面表达，常见搭配有“信頼に足る人物”（值得信赖的人物）、“読むに足る価値”（值得一读的价值）等。",
+    "formation": "名词 / 动词字典形 ＋ に足る ＋ 名词",
+    "examples": [
+      {
+        "translation": "他是一个值得信赖的人物。"
+      },
+      {
+        "translation": "这部小说具备值得一读的价值。"
+      },
+      {
+        "translation": "已经收集到了足以供我们研讨审查的充分数据。"
+      },
+      {
+        "translation": "我认为他的解释是值得令人信服的。"
+      }
+    ]
   },
   "ja_限りだ_244": {
     "title": "～限りだ (〜kagiri da)",
-    "shortExplanation": "表示 an extreme degree of emotion or reaction; 'I feel so ~', 'as ~ as can be'.",
-    "longExplanation": "The ～限りだ structure is often used with adjectives describing the speaker's emotion, highlighting how strongly the speaker feels. Translations often include 'I’m as ~ as can be,' 'I feel so ~.'",
-    "formation": "い-形容词 + 限りだ, な-形容词 + な/である + 限りだ, 名词 + の + 限りだ"
+    "shortExplanation": "表示说话人的感情、心境达到了极点；“极其……”、“无比……”、“非常……”。",
+    "longExplanation": "句型“～限りだ”（N1）用于表达说话人主观的情感或心理感受达到了最高限度或极点（“极其……”、“无比……”、“……之极”）。常与表示喜怒哀乐、羡慕、安心等感情心理的词汇（如“嬉しい”、“悲しい”、“寂しい”、“羨ましい”、“幸せ”、“驚き”等）搭配使用，强调面对某种事态时内心所产生的极其强烈的情感波动。",
+    "formation": "い形容词 ＋ 限りだ | な形容词 ＋ な / である ＋ 限りだ | 名词 ＋ の ＋ 限りだ（亦可接表示情感的 动词た形 ＋ 限りだ）",
+    "examples": [
+      {
+        "translation": "她突然辞职了，我感到无比震惊。"
+      },
+      {
+        "translation": "儿子成功了，我感到高兴之极。"
+      },
+      {
+        "translation": "能够看到如此美丽娇艳的花朵，真感到无比幸福。"
+      },
+      {
+        "translation": "顺利通过了考试，感到心里一块石头落了地，极其欣慰。"
+      }
+    ]
+  },
+  "en_a1_01": {
+    "title": "am / is / are - be动词的现在时形式",
+    "shortExplanation": "be动词现在时形式：I 搭配 am；he/she/it 搭配 is；you/we/they 搭配 are；意为“是、在”或表状态。",
+    "longExplanation": "be动词是英语中最核心且最基础的动词，常译为“是”、“在”或作为连系动词连接主语和表语（形容词、名词等）。在一般现在时中，be动词随主语的人称和数分为三种形式：\n• 'am'：仅用于第一人称单数 'I'。\n• 'is'：用于第三人称单数（he、she、it 以及单数可数名词或不可数名词）。\n• 'are'：用于第二人称及各复数人称（you、we、they 以及复数名词）。",
+    "formation": "主语 + am / is / are (+ 名词 / 形容词 / 介词短语)",
+    "examples": [
+      {
+        "translation": "我饿了。"
+      },
+      {
+        "translation": "她是一名医生。"
+      },
+      {
+        "translation": "他们准备好了。"
+      }
+    ]
+  },
+  "en_a1_02": {
+    "title": "be动词的否定句：am not / isn't / aren't",
+    "shortExplanation": "在be动词后直接加 'not' 构成否定；缩略形式为 isn't (= is not)、aren't (= are not)、I'm not。",
+    "longExplanation": "be动词的否定句构成非常规则，只需在 'am'、'is'、'are' 之后添加否定词 'not' 即可。在日常交际和口语中，通常使用缩略形式：\n• is not 缩写为 isn't\n• are not 缩写为 aren't\n• am not 在标准英语中没有 'amn't' 这种形式，而是与主语缩写为 I'm not（特殊例外）。",
+    "formation": "主语 + am / is / are + not (+ 名词 / 形容词)",
+    "examples": [
+      {
+        "translation": "我不是学生。"
+      },
+      {
+        "translation": "他不累。"
+      },
+      {
+        "translation": "我们还没准备好。"
+      }
+    ]
+  },
+  "en_a1_03": {
+    "title": "be动词的疑问句：Am I? / Is she? / Are they?",
+    "shortExplanation": "将be动词提至主语前构成一般疑问句；特殊疑问句为：疑问词 + be动词 + 主语。",
+    "longExplanation": "含有be动词的句子在变疑问句时，需将 'am / is / are' 置于主语之前（例如：She is → Is she?）。\n• 一般疑问句：Am / Is / Are + 主语...？\n• 特殊疑问句：特殊疑问词（Where, What, Who 等）+ am / is / are + 主语...？\n• 简略回答：Yes, 主语代词 + be动词. / No, 主语代词 + be动词 + not.",
+    "formation": "Am / Is / Are + 主语...? 或 疑问词 + am / is / are + 主语...?",
+    "examples": [
+      {
+        "translation": "你是学生吗？"
+      },
+      {
+        "translation": "这个贵吗？"
+      },
+      {
+        "translation": "他们在哪里？"
+      }
+    ]
+  },
+  "en_a1_04": {
+    "title": "简略回答：Yes, I am. / No, she isn't.",
+    "shortExplanation": "be动词问句的简略回答：肯定回答必须使用完整形式（如 Yes, I am；不可缩写为 Yes, I'm）；否定回答常使用缩略形式。",
+    "longExplanation": "回答以be动词开头的疑问句时，通常使用简略回答，结构为：Yes/No + 人称代词 + be动词。\n• 肯定回答：be动词必须用完整形式，绝对不可缩写（例如：Yes, I am. 正确 / Yes, I'm. 错误；Yes, she is. 正确 / Yes, she's. 错误）。\n• 否定回答：通常使用缩略形式（例如：No, I'm not. / No, she isn't. / No, they aren't.）。",
+    "formation": "肯定：Yes, + 代词 + am / is / are. | 否定：No, + 代词 + am not / isn't / aren't.",
+    "examples": [
+      {
+        "translation": "她准备好了吗？——是的，她准备好了。"
+      },
+      {
+        "translation": "他们是你的朋友吗？——不，他们不是。"
+      }
+    ]
+  },
+  "en_a1_05": {
+    "title": "不定冠词：a / an",
+    "shortExplanation": "置于单数可数名词前，表示泛指或初次提及；以辅音音素开头用 'a'，以元音音素开头用 'an'。",
+    "longExplanation": "'a' 和 'an' 是不定冠词，置于单数可数名词之前，用于泛指某类人或事物中的一个，或者初次提及的对象。选用 'a' 还是 'an' 取决于紧随其后的单词的发音（音素），而非拼写字母：\n• 'a' 用于以辅音音素开头的单词前：a book、a car、a university（首音为辅音/半元音 /juː/）。\n• 'an' 用于以元音音素开头的单词前：an apple、an orange、an hour（字母 h 不发音，以元音 /aʊ/ 开头）、an honest person。\n• 不可数名词及复数名词前不可使用 a/an。",
+    "formation": "a + 辅音音素开头的词 / an + 元音音素开头的词 + 单数可数名词",
+    "examples": [
+      {
+        "translation": "我看见花园里有一只猫。"
+      },
+      {
+        "translation": "她是一名工程师。"
+      },
+      {
+        "translation": "这花了一个小时。"
+      }
+    ]
+  },
+  "en_a1_06": {
+    "title": "定冠词：the",
+    "shortExplanation": "用于说话双方心知肚明的特定对象，或世上独一无二的事物、最高级等。",
+    "longExplanation": "'the' 是定冠词，可修饰单数名词、复数名词及不可数名词，表示特指。主要用法包括：\n1. 前文已经提到过的人或物：I saw a cat. The cat was black.\n2. 世界上独一无二的事物：the sun（太阳）、the moon（月亮）、the earth（地球）。\n3. 结合上下文或现场语境双方心知肚明的对象：Close the window, please.（请关上窗户）。\n4. 与形容词最高级和序数词连用：the best（最好的）、the first（第一）。",
+    "formation": "the + 名词（单数、复数或不可数）",
+    "examples": [
+      {
+        "translation": "我们看的那部电影太精彩了。"
+      },
+      {
+        "translation": "你能把盐递给我吗？"
+      }
+    ]
+  },
+  "en_a1_07": {
+    "title": "零冠词：不使用冠词的情况",
+    "shortExplanation": "专有名词、语言、运动项目，以及表示泛指的不可数名词或复数名词前通常不加冠词。",
+    "longExplanation": "在英语中，名词前不加任何冠词（a, an, the）的现象称为零冠词。主要情形包括：\n• 专有名词（人名、城市名、国名）：John、London、Russia、China。\n• 语言名称：English、Spanish、Chinese。\n• 球类运动与棋类游戏：football、basketball、chess。\n• 泛指的饮食与物质名词：I love coffee, She drinks milk.\n• 泛指的抽象概念：Life is short. Love is blind.\n• 泛指某一类人或事物的复数名词：Dogs are friendly.",
+    "formation": "动词 / 介词 + 名词（不加冠词）",
+    "examples": [
+      {
+        "translation": "她说西班牙语。"
+      },
+      {
+        "translation": "他每天都打篮球。"
+      }
+    ]
+  },
+  "en_a1_08": {
+    "title": "一般现在时：肯定句",
+    "shortExplanation": "表示经常性习惯、普遍真理或客观事实；主语为第三人称单数时动词需加 -s 或 -es。",
+    "longExplanation": "一般现在时（Present Simple）用于表示经常性、规律性的动作，客观事实以及自然规律。\n• 动词形式规则：\n- 主语为 I / you / we / they 或复数名词：动词使用原形。\n- 主语为 he / she / it 或单数名词（第三人称单数）：动词末尾加 '-s' 或 '-es'。\n• 动词加 -s / -es 的拼写规则：\n- 大多数动词：直接加 '-s'（works, plays）。\n- 以 -o, -ch, -sh, -s, -ss, -x 结尾的动词：加 '-es'（goes, watches, washes）。\n- 以“辅音字母 + y”结尾的动词：变 y 为 '-ies'（study → studies, try → tries）。",
+    "formation": "主语 (I/you/we/they) + 动词原形 | 主语 (he/she/it) + 动词原形加 -s/-es",
+    "examples": [
+      {
+        "translation": "我每天早晨都喝咖啡。"
+      },
+      {
+        "translation": "她在一家医院工作。"
+      },
+      {
+        "translation": "地球绕着太阳运转。"
+      }
+    ]
+  },
+  "en_a1_09": {
+    "title": "一般现在时：否定句 (don't / doesn't)",
+    "shortExplanation": "借助助动词 'don't' 或 'doesn't' 后接动词原形构成否定句。",
+    "longExplanation": "在一般现在时中，实义动词的否定句需要借助助动词 do / does 与 not 结合，后接动词原形：\n• 主语为 I / you / we / they 时：主语 + don't (do not) + 动词原形。\n• 主语为 he / she / it（第三人称单数）时：主语 + doesn't (does not) + 动词原形。\n特别注意：在 doesn't 之后，动词必须还原为原形，不能再加 -s 或 -es（正确：He doesn't like / 错误：He doesn't likes）。",
+    "formation": "主语 (I/you/we/they) + don't + 动词原形 | 主语 (he/she/it) + doesn't + 动词原形",
+    "examples": [
+      {
+        "translation": "我不吃肉。"
+      },
+      {
+        "translation": "他不会说法语。"
+      },
+      {
+        "translation": "他们不在这里工作。"
+      }
+    ]
+  },
+  "en_a1_10": {
+    "title": "一般现在时：疑问句 (Do you? / Does she?)",
+    "shortExplanation": "将助动词 Do 或 Does 提至主语前；特殊疑问句为：疑问词 + do/does + 主语 + 动词原形。",
+    "longExplanation": "一般现在时中对实义动词提问时，将助动词 Do 或 Does 置于主语之前，谓语动词使用原形：\n• 一般疑问句：\n- Do + I/you/we/they + 动词原形...？\n- Does + he/she/it + 动词原形...？\n• 特殊疑问句：特殊疑问词（Where, What, When 等）+ do / does + 主语 + 动词原形...？",
+    "formation": "Do / Does + 主语 + 动词原形...? 或 疑问词 + do / does + 主语 + 动词原形...?",
+    "examples": [
+      {
+        "translation": "你会说俄语吗？"
+      },
+      {
+        "translation": "她住在附近吗？"
+      },
+      {
+        "translation": "你在哪里工作？"
+      }
+    ]
+  },
+  "en_a1_11": {
+    "title": "状态动词：通常不用于进行时的动词",
+    "shortExplanation": "表示心理状态、情感或感官的动词通常不用于进行时（使用 'I know'，不可用 'I am knowing'）。",
+    "longExplanation": "状态动词（Stative verbs）用于表示某种持续的状态、知觉、情感或所有关系，而非具体的动作。这类动词通常不能用于现在进行时或任何进行时态：\n• 认知与观点：know（知道）、believe（相信）、understand（理解）、remember（记得）、forget（忘记）。\n• 情感与愿望：love（爱）、hate（讨厌）、like（喜欢）、want（想要）、need（需要）、prefer（更喜欢）。\n• 感官与知觉：see（看见）、hear（听见）、smell（闻起来）、taste（尝起来）。\n• 存在与所有：belong（属于）、contain（包含）、seem（似乎）、appear（显得）。",
+    "formation": "主语 + 状态动词（使用一般时态，不用进行时态 -ing 形式）",
+    "examples": [
+      {
+        "translation": "我理解你的意思。（不可说：I am understanding）"
+      },
+      {
+        "translation": "她很喜欢巧克力。（不可说：is loving）"
+      }
+    ]
+  },
+  "en_a1_12": {
+    "title": "人称代词：I, you, he, she, it, we, they",
+    "shortExplanation": "英语句子必须有明确的主语；区分作主语的主格（I, you, he...）与作宾语的宾格（me, you, him...）。",
+    "longExplanation": "在英语中，完整的陈述句必须包含明确的主语，不能随意省略代词主语。\n• 主格代词（在句中作主语，置于动词前）：I（我）、you（你/你们）、he（他）、she（她）、it（它）、we（我们）、they（他们）。\n• 宾格代词（作动词或介词的宾语，置于动词或介词后）：me、you、him、her、it、us、them（例如：Tell him, Listen to me, Help us）。",
+    "formation": "主格代词 + 动词 | 动词 / 介词 + 宾格代词",
+    "examples": [
+      {
+        "translation": "她是一名教师。"
+      },
+      {
+        "translation": "把真相告诉他。"
+      },
+      {
+        "translation": "你能帮我一下吗？"
+      }
+    ]
+  },
+  "en_a1_13": {
+    "title": "形容词性物主代词：my, your, his, her, its, our, their",
+    "shortExplanation": "置于名词前表示所属关系（“我的”、“你的”等）；形式不随所修饰名词的单复数改变。",
+    "longExplanation": "形容词性物主代词用于指明物品的归属，必须放在名词前面使用：\n• my（我的）、your（你的/你们的）、his（他的）、her（她的）、its（它的）、our（我们的）、their（他们的）。\n• 重要辨析：区分 'its'（物主代词，无撇号）与 'it's'（it is 或 it has 的缩写，有撇号）。\n• 形容词性物主代词本身没有单复数变化：my friend（我的一个朋友）/ my friends（我的朋友们）中 'my' 保持不变。",
+    "formation": "形容词性物主代词 (my / your / his / her / its / our / their) + 名词",
+    "examples": [
+      {
+        "translation": "这是我的手机。"
+      },
+      {
+        "translation": "他们的狗很可爱。"
+      },
+      {
+        "translation": "那只猫弄伤了它的爪子。"
+      }
+    ]
+  },
+  "en_a1_14": {
+    "title": "名词复数形式",
+    "shortExplanation": "规则变化在词尾加 -s 或 -es；另有 -y、-f/-fe 结尾的变化及不规则复数变化形式。",
+    "longExplanation": "英语可数名词表示两个或两个以上时须使用复数形式：\n• 一般规则：在词尾直接加 '-s'（cat → cats、book → books）。\n• 以 -s, -ss, -sh, -ch, -x, -o 结尾：加 '-es'（box → boxes、watch → watches、tomato → tomatoes）。\n• “元音字母 + y”结尾：直接加 '-s'（boy → boys、day → days）。\n• “辅音字母 + y”结尾：变 y 为 '-ies'（city → cities、baby → babies）。\n• 以 -f 或 -fe 结尾：变 -f/-fe 为 '-ves'（knife → knives、leaf → leaves、wife → wives）。\n• 常见不规则复数：child → children、man → men、woman → women、tooth → teeth、foot → feet、mouse → mice、person → people、sheep → sheep、fish → fish。",
+    "formation": "单数名词 + s / es / ies / ves（或不规则复数形式）",
+    "examples": [
+      {
+        "translation": "一辆公共汽车 → 两辆公共汽车"
+      },
+      {
+        "translation": "一个孩子 → 许多孩子"
+      }
+    ]
+  },
+  "en_a1_15": {
+    "title": "指示代词：This / that / these / those",
+    "shortExplanation": "this/these 指代较近的人或事物；that/those 指代较远的人或事物；this/that 接单数，these/those 接复数。",
+    "longExplanation": "指示代词用于指代特定的人或事物，依据空间或时间上的远近以及数量的单复数进行区分：\n• 'this'（这，这个）：指代距离说话人较近的单数对象。\n• 'these'（这些）：指代距离说话人较近的复数对象。\n• 'that'（那，那个）：指代距离说话人较远的单数对象，或前文提及的事物。\n• 'those'（那些）：指代距离说话人较远的复数对象。\n在时间表达中也经常使用：this week（本周）、that year（那一年）。",
+    "formation": "This / That + 单数名词（或单数动词）| These / Those + 复数名词（或复数动词）",
+    "examples": [
+      {
+        "translation": "这是我的包。"
+      },
+      {
+        "translation": "那些鞋子很贵。"
+      },
+      {
+        "translation": "那是什么？"
+      }
+    ]
+  },
+  "en_a1_16": {
+    "title": "There is / There are - 表示存在",
+    "shortExplanation": "用于表示某处存在某人或某物，相当于汉语的'有……'。",
+    "longExplanation": "'There is / There are'句型用于表示人或事物的存在（相当于汉语中的'有'）。\n• There is 后面接单数可数名词或不可数名词。\n• There are 后面接复数可数名词。\n否定式：There isn't / There aren't。\n疑问式：将be动词提前至句首，即 Is there...? / Are there...?",
+    "formation": "肯定句：There is + 单数名词/不可数名词 | There are + 复数名词\n否定句：There isn't / There aren't + 名词\n疑问句：Is there...? / Are there...?",
+    "examples": [
+      {
+        "translation": "这附近有一家电影院。"
+      },
+      {
+        "translation": "附近有商店吗？——是的，有。"
+      }
+    ]
+  },
+  "en_a1_17": {
+    "title": "地点介词：in, on, at, under, next to, behind, between",
+    "shortExplanation": "用于明确人或事物在空间中的具体位置；'在……里'、'在……上'、'在……处'等。",
+    "longExplanation": "三个最核心的地点介词：\n• in = 在某个空间或范围内部：in the box（盒子里）、in the city（城市里）、in bed（在床上）\n• on = 在表面上：on the table（桌子上）、on the wall（墙上）、on the left（在左边）\n• at = 在某个具体地点或位置点：at the station（在车站）、at home（在家）、at school（在学校）\n其他常用介词：under（在……下方）、next to / beside（在……旁边）、behind（在……后面）、in front of（在……前面）、between（在……两者之间）、opposite（在……对面）。",
+    "formation": "地点介词 (in / on / at / under / next to / behind...) + 名词短语/地点",
+    "examples": [
+      {
+        "translation": "钥匙在桌子上。"
+      },
+      {
+        "translation": "她在厨房里。"
+      },
+      {
+        "translation": "在入口处碰头吧。"
+      }
+    ]
+  },
+  "en_a1_18": {
+    "title": "祈使句（Imperative）",
+    "shortExplanation": "用于发出命令、请求、指示或劝诱建议；'请……'、'不要……'、'让我们……'。",
+    "longExplanation": "祈使句用于表达指示、指令、警告或建议，通常省略主语，直接以动词原形开头。\n• 肯定形式：动词原形开头（例如：Open your books - 打开书本）。\n• 否定形式：Don't + 动词原形（例如：Don't run - 不要跑）。\n• 在句首或句尾加上'please'可以使语气更加礼貌客气。\n• 包含说话人在内的提议或号召：Let's + 动词原形（例如：Let's go! - 我们走吧！）。",
+    "formation": "肯定句：动词原形 (+ 宾语/其他成分)\n否定句：Don't + 动词原形\n礼貌请求：(Please) + 动词原形 + (please)\n提议劝诱：Let's + 动词原形",
+    "examples": [
+      {
+        "translation": "在十字路口向左转。"
+      },
+      {
+        "translation": "不要碰那个！"
+      },
+      {
+        "translation": "我们休息一下吧。"
+      }
+    ]
+  },
+  "en_a1_19": {
+    "title": "can / can't - 能力、可能性与许可",
+    "shortExplanation": "情态动词，用于表示能力、可能性或请求许可；'能'、'会'、'可以' / '不能'。",
+    "longExplanation": "'can'是情态动词，后面接动词原形，常用于表达：\n1. 能力或技能：I can play the guitar（我会弹吉他）。\n2. 可能性或客观情况：It can be dangerous（这可能会很危险）。\n3. 请求或给予许可（常用于口语）：Can I use your phone?（我可以用一下你的手机吗？）\n否定形式为 can't（cannot 的缩写）。",
+    "formation": "肯定句：主语 + can + 动词原形\n否定句：主语 + can't (cannot) + 动词原形\n疑问句：Can + 主语 + 动词原形...?",
+    "examples": [
+      {
+        "translation": "我会说三种语言。"
+      },
+      {
+        "translation": "她今天来不了。"
+      },
+      {
+        "translation": "请问你能帮我一下吗？"
+      }
+    ]
+  },
+  "en_a1_20": {
+    "title": "疑问词：what, where, who, when, how, why, which, whose, how much/many",
+    "shortExplanation": "用于引导特殊疑问句以获取具体信息；'什么'、'哪里'、'谁'、'怎样'等。",
+    "longExplanation": "疑问词通常置于疑问句句首，后接助动词或be动词，再接主语。\n• what = 什么\n• where = 哪里、何处\n• who = 谁（询问主语时不需要助动词do/does：Who lives here?）\n• when = 什么时候\n• why = 为什么\n• which = 哪一个（有特定选择范围）\n• whose = 谁的\n• how = 怎样、如何；how much = 多少（修饰不可数名词/价格）；how many = 多少（修饰可数名词复数）；how old = 多大年纪；how long = 多久/多长。",
+    "formation": "疑问词 + 助动词 / be动词 + 主语 + 动词原形 / 其他成分...?",
+    "examples": [
+      {
+        "translation": "她在哪里工作？"
+      },
+      {
+        "translation": "现在几点了？"
+      },
+      {
+        "translation": "你有几个兄弟？"
+      }
+    ]
+  },
+  "en_a1_21": {
+    "title": "基数词（Cardinal numerals）：1–1000",
+    "shortExplanation": "用于计算人或事物的数量；'一、二、三……一百、一千'。",
+    "longExplanation": "英语中1到1000基数词的构成规律：\n• 1至12：各自有独立单词（one, two, three... twelve）。\n• 13至19：词尾加'-teen'（thirteen, fourteen... nineteen；注意 thirteen, fifteen, eighteen 的拼写变化）。\n• 几十的整数：词尾为'-ty'（twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety）。\n• 几十几的复合数字：用连字符连接（例如：21 = twenty-one）。\n• 百与千：100 = a/one hundred；1000 = a/one thousand。\n• 在英式英语中，hundred之后通常用'and'连接后面的十位或个位（例如：two hundred and fifty）。",
+    "formation": "十位数 + 连字符 (-) + 个位数 (21–99) | 数量词 + hundred / thousand (+ and + 其余数字)",
+    "examples": [
+      {
+        "translation": "她二十三岁。"
+      },
+      {
+        "translation": "这张票价值四百英镑。"
+      }
+    ]
+  },
+  "en_a1_22": {
+    "title": "序数词（Ordinal numbers）：first, second, third...",
+    "shortExplanation": "用于表示顺序、位次、日期或楼层；'第一、第二、第三……'。",
+    "longExplanation": "英语序数词大多数通过在基数词后加'-th'构成：fourth, sixth, seventh...\n特殊变化形式需单独记忆：first（第1）、second（第2）、third（第3）、fifth（第5）、eighth（第8）、ninth（第9）、twelfth（第12）。\n用法要点：序数词前通常必须加定冠词'the'（例如：the first day - 第一天，the third floor - 三楼）。\n分数表达：½ = a half（二分之一），⅓ = a third（三分之一），¼ = a quarter（四分之一）。",
+    "formation": "the + 序数词 (+ 名词) | （例如：the first, the second, the third... the twenty-first）",
+    "examples": [
+      {
+        "translation": "我的办公室在三楼。"
+      },
+      {
+        "translation": "今天是三月一日。"
+      }
+    ]
+  },
+  "en_a1_23": {
+    "title": "名词所有格：'s 与 s'",
+    "shortExplanation": "用撇号与字母's'表示所属关系；'……的'。",
+    "longExplanation": "英语中主要通过撇号和字母s（'s 或 s'）来表示生命体或特定对象的所属关系：\n• 单数名词：在词尾加's（例如：Tom's book - 汤姆的书，the dog's tail - 狗的尾巴）。\n• 以-s结尾的规则复数名词：仅加撇号'（例如：the teachers' room - 教师办公室，my parents' house - 我父母的房子）。\n• 不规则复数名词（不以-s结尾）：加's（例如：the children's playground - 孩子们游乐场，men's clothes - 男士服装）。\n• 以-s结尾的人名专有名词：James's 或 James' 两种拼写均可。",
+    "formation": "单数名词 + 's + 所属名词 | 以-s结尾的复数名词 + ' + 所属名词",
+    "examples": [
+      {
+        "translation": "这是安娜的笔记本电脑。"
+      },
+      {
+        "translation": "孩子们的玩具都在箱子里。"
+      }
+    ]
+  },
+  "en_a1_24": {
+    "title": "方向与动态介词：to, into, out of, up, down, along, across, through",
+    "shortExplanation": "与移动动词搭配，用于表示运动的方向或轨迹；'向'、'进入'、'穿过'等。",
+    "longExplanation": "动态介词常与表示位移的动词连用，表示运动的方向、路径与轨迹：\n• to = 朝着某个目标点移动：go to work（去上班）、walk to the park（步行去公园）\n• into = 向内部移动：come into the room（走进房间）、jump into the pool（跳进泳池）\n• out of = 从内部移向外部：get out of the car（从车里出来）、take out of the bag（从包里拿出来）\n• up / down = 向上 / 向下：climb up the hill（爬上小山）、walk down the stairs（走下楼梯）\n• along = 沿着：walk along the river（沿着河边走）\n• across = 从表面穿过/横穿：swim across the lake（游过湖）、walk across the road（过马路）\n• through = 从立体空间或内部穿过：drive through the tunnel（开车穿过隧道）。",
+    "formation": "移动动词 + 动态介词 (to / into / out of / across / through...) + 名词/地点",
+    "examples": [
+      {
+        "translation": "她走进了房间。"
+      },
+      {
+        "translation": "他跑着穿过了马路。"
+      },
+      {
+        "translation": "我们驱车穿过了森林。"
+      }
+    ]
+  },
+  "en_a2_01": {
+    "title": "一般过去时 - 规则动词：加 -ed",
+    "shortExplanation": "表示在过去已经完成的动作或状态，规则动词在词尾加'-ed'。",
+    "longExplanation": "一般过去时用于描述在过去特定时间发生且已结束的动作。\n规则动词过去式加'-ed'的拼写规则：\n• 大多数动词：直接加'-ed'（worked, played）。\n• 以'-e'结尾的动词：直接加'-d'（loved, used）。\n• 以'辅音字母 + y'结尾的动词：变'y'为'i'再加'-ed'（studied, tried）。\n• 以单个短元音加单个辅音字母结尾的重读音节动词：双写该辅音字母再加'-ed'（stopped, planned）。",
+    "formation": "主语 + 规则动词过去式(-ed) (+ 宾语/时间状语)",
+    "examples": [
+      {
+        "translation": "她昨天工作了一整天。"
+      },
+      {
+        "translation": "他们上周日打了网球。"
+      }
+    ]
+  },
+  "en_a2_02": {
+    "title": "一般过去时 - 不规则动词",
+    "shortExplanation": "用于描述过去的动作，不规则动词不按加'-ed'的规则变化，拥有独特的过去式形式。",
+    "longExplanation": "英语中许多常用动词在变成过去式时不加'-ed'，而是具有独特的不规则变化形态（最核心的50个动词覆盖了约90%的日常使用）。\n按形态变化规律归类：\n• AAA型（原形、过去式、过去分词均相同）：cut, put, hit, set, let。\n• ABA型（过去分词回到原形）：run→ran→run, come→came→come。\n• ABC型（三态各不相同）：go→went→gone, be→was/were→been, see→saw→seen。\n• ABB型（过去式与过去分词相同）：have→had→had, buy→bought→bought。",
+    "formation": "主语 + 不规则动词过去式 (+ 宾语/时间状语)",
+    "examples": [
+      {
+        "translation": "我去年夏天去了巴黎。"
+      },
+      {
+        "translation": "她看了一部非常棒的电影。"
+      },
+      {
+        "translation": "我们上午9点开了一个会。"
+      }
+    ]
+  },
+  "en_a2_03": {
+    "title": "一般过去时 - 否定句：didn't + 动词原形",
+    "shortExplanation": "用于否定过去发生的动作或事件，表示'过去没有做某事'。",
+    "longExplanation": "在一般过去时中，普通动词的否定句统一使用助动词'did'加'not'，通常缩写为'didn't'，适用于所有人称主语。\n关键规则：助动词'didn't'之后，主要动词必须恢复为动词原形，绝对不能再使用过去式（例如：She didn't go，而不能说 She didn't went）。",
+    "formation": "主语 + didn't (did not) + 动词原形",
+    "examples": [
+      {
+        "translation": "我昨天没有见到他。"
+      },
+      {
+        "translation": "她没有去上班。"
+      }
+    ]
+  },
+  "en_a2_04": {
+    "title": "一般过去时 - 疑问句：Did you? Where did she go?",
+    "shortExplanation": "用于询问过去发生的动作或事件；'……了吗？'、'去哪儿了？'等。",
+    "longExplanation": "一般过去时中普通动词疑问句的构成方式：\n• 一般疑问句：将助动词'Did'置于句首，接主语和动词原形：Did + 主语 + 动词原形？（例如：Did they arrive? - 他们到了吗？）。\n• 特殊疑问句：疑问词置于句首，后接 did、主语及动词原形：疑问词 + did + 主语 + 动词原形？（例如：Where did they go? - 他们去哪里了？）。\n• 特殊情况：当疑问词本身作主语时，不使用助动词did，动词直接使用过去式（例如：Who told you that? - 谁告诉你那件事的？）。",
+    "formation": "一般疑问句：Did + 主语 + 动词原形...?\n特殊疑问句：疑问词 + did + 主语 + 动词原形...?",
+    "examples": [
+      {
+        "translation": "你喜欢那部电影吗？"
+      },
+      {
+        "translation": "他们去哪儿了？"
+      },
+      {
+        "translation": "谁告诉你那件事的？"
+      }
+    ]
+  },
+  "en_a2_05": {
+    "title": "was / were - be动词的过去式",
+    "shortExplanation": "be动词的过去时态形式，用于描述过去的状态、身份或特征；'是'、'在'。",
+    "longExplanation": "be动词在一般过去时中有两种形式，根据主语的人称和单复数而定：\n• was：用于第一人称单数和第三人称单数主语（I, he, she, it 以及单数名词/不可数名词）。\n• were：用于第二人称和复数主语（you, we, they 以及复数名词）。\n否定式：wasn't（was not 的缩写）/ weren't（were not 的缩写）。\n疑问式：将 was 或 were 提前至主语之前：Was she...? / Were they...?",
+    "formation": "肯定句：I / He / She / It + was | You / We / They + were\n否定句：主语 + wasn't / weren't\n疑问句：Was / Were + 主语...?",
+    "examples": [
+      {
+        "translation": "我昨晚非常累。"
+      },
+      {
+        "translation": "他们一整天都在家。"
+      },
+      {
+        "translation": "那个东西贵吗？"
+      }
+    ]
+  },
+  "en_a2_06": {
+    "title": "will - 预测与临时即兴决定",
+    "shortExplanation": "情态动词，用于表达说话时即刻做出的决定、主观预测、承诺或请求；'将'、'会'。",
+    "longExplanation": "'will'作为情态助动词后接动词原形，常用于以下情境：\n1. 即时决定（在说话时刻做出的决定）：I'll help you with that（我来帮你做那件事）。\n2. 无明确计划的主观预测：I think it will rain（我觉得天要下雨了）。\n3. 承诺与保证：I won't tell anyone（我不会告诉任何人的）。\n4. 请求与邀请：Will you open the window?（你能打开窗户吗？）。\n缩写形式为'll。否定形式为 won't（will not 的缩写）。",
+    "formation": "肯定句：主语 + will ('ll) + 动词原形\n否定句：主语 + won't (will not) + 动词原形\n疑问句：Will + 主语 + 动词原形...?",
+    "examples": [
+      {
+        "translation": "电话在响。——我去接！"
+      },
+      {
+        "translation": "明天天气会很冷。"
+      }
+    ]
+  },
+  "en_a2_07": {
+    "title": "be going to - 计划打算与依据预见",
+    "shortExplanation": "表示事先做好的打算、计划，或根据现有迹象做出的明显预测。",
+    "longExplanation": "'be going to'主要用于以下两种情况：\n1. 事先做好的决定或计划打算：例如 'I'm going to start a diet next week.'（我打算下周开始节食）。\n2. 根据眼前的明显迹象做出的推断与预测：例如 'Look at those clouds - it's going to rain!'（看那些乌云——要下雨了！）。\n结构：am/is/are + going to + 动词原形",
+    "formation": "主语 + am/is/are + going to + 动词原形",
+    "examples": [
+      {
+        "translation": "我打算学医。"
+      },
+      {
+        "translation": "她要生小孩了。"
+      }
+    ]
+  },
+  "en_a2_08": {
+    "title": "现在进行时：am/is/are + V-ing",
+    "shortExplanation": "表示此时此刻正在进行的动作，或现阶段暂时发生的行为。",
+    "longExplanation": "现在进行时用于描述说话瞬间正在发生的动作，或现阶段处于暂时状态的事情。\n结构：am/is/are + 动词现在分词（-ing形式）\n动词加-ing的规则：\n• 一般动词：直接加-ing → working, playing\n• 以不发音的-e结尾：去掉-e再加-ing → making, coming\n• 短元音的重读闭音节：双写末尾辅音字母再加-ing → running, sitting",
+    "formation": "主语 + am/is/are + 动词-ing形式",
+    "examples": [
+      {
+        "translation": "我现在正在学英语。"
+      },
+      {
+        "translation": "她这个月都在居家办公。"
+      }
+    ]
+  },
+  "en_a2_09": {
+    "title": "现在进行时表示既定未来计划",
+    "shortExplanation": "用于表示未来已做好明确安排或约定的计划日程。",
+    "longExplanation": "现在进行时可用于表示将来确切的安排或约定，通常时间和地点均已商定好。\n区别比较：\n• 'I'm meeting Alice tomorrow'：双方已约定好见面的具体安排（确定的计划）。\n• 'I'll meet Alice tomorrow'：临时决定、个人意图或随口提议。",
+    "formation": "主语 + am/is/are + 动词-ing形式 + 将来时间状语",
+    "examples": [
+      {
+        "translation": "我今晚要和亚历克斯一起吃晚餐。"
+      },
+      {
+        "translation": "他们定于六月份结婚。"
+      }
+    ]
+  },
+  "en_a2_10": {
+    "title": "一般现在时与现在进行时的区别",
+    "shortExplanation": "一般现在时表示习惯与客观事实；现在进行时表示此刻正在进行或现阶段暂时发生的事。",
+    "longExplanation": "一般现在时（Present Simple）：用于表示长期的习惯、客观真理、固定日程或普遍事实。\n现在进行时（Present Continuous）：用于表示此刻正在发生的事情，或现阶段短期的临时状态。\n对比示例：\n• 'She speaks French.'：她会讲法语（属于长期掌握的语言能力）。\n• 'She is speaking French.'：她此刻正在讲法语。",
+    "formation": "一般现在时：主语 + 动词原形/第三人称单数形式 | 现在进行时：主语 + am/is/are + 动词-ing形式",
+    "examples": [
+      {
+        "translation": "水在100摄氏度时沸腾。"
+      },
+      {
+        "translation": "这周我正在读一本很棒的书。"
+      }
+    ]
+  },
+  "en_a2_11": {
+    "title": "should / shouldn't - 建议与劝告",
+    "shortExplanation": "用于提出温和的建议或个人观点，意为'应该'或'不应该'。",
+    "longExplanation": "'should'用于表达友善的建议、劝告或个人意见，语气比'must'缓和得多。\n'should / shouldn't'后接不带to的动词原形。\n此外，'should have + 过去分词'还可用于对过去的事情表达遗憾、责备或后悔。",
+    "formation": "主语 + should / shouldn't + 动词原形",
+    "examples": [
+      {
+        "translation": "你应该多做运动。"
+      },
+      {
+        "translation": "她不应该工作得那么拼命。"
+      }
+    ]
+  },
+  "en_a2_12": {
+    "title": "must / mustn't - 必须与严厉禁止",
+    "shortExplanation": "'must'表示强烈的责任或命令；'mustn't'表示严厉的禁止，意为'绝不能'、'千万不可'。",
+    "longExplanation": "'must'表示出于内心强烈认同的义务或命令，语气十分坚决。\n'mustn't'则表示强烈的禁止，指绝对不允许做某事。\n注意区分：\n• mustn't = 禁止、严禁（绝不能做）\n• don't have to = 不必（没有硬性规定，做与不做均可）",
+    "formation": "主语 + must / mustn't + 动词原形",
+    "examples": [
+      {
+        "translation": "你必须出示护照。"
+      },
+      {
+        "translation": "你绝对不能在这里吸烟。"
+      }
+    ]
+  },
+  "en_a2_13": {
+    "title": "have to - 客观必要性",
+    "shortExplanation": "表示由于外界规则、法律或客观情况所迫而'不得不'、'必须'做某事。",
+    "longExplanation": "'have to'表示源于外界要求、规章制度或现实环境的客观必要性。\n与'must'的区别：\n• must - 出自主观意愿的必要性：'I must call her'（我觉得我很有必要给她打电话）。\n• have to - 客观规则约束：'I have to wear a uniform'（这是校规或工服规定）。\n'don't have to' = 没必要做（不作强制要求，想做也可以做）。",
+    "formation": "主语 + have to / has to / don't have to / doesn't have to + 动词原形",
+    "examples": [
+      {
+        "translation": "我必须在周五之前完成这份报告。"
+      },
+      {
+        "translation": "如果你不想去，就不必去了。"
+      }
+    ]
+  },
+  "en_a2_14": {
+    "title": "could - 过去能力与委婉礼貌请求",
+    "shortExplanation": "表示过去具备的能力，或在提出请求与请求帮助时表达委婉礼貌的语气。",
+    "longExplanation": "'could'是'can'的过去式，主要有两个核心用法：\n1. 过去的能力：例如 'I could read at 4 years old.'（我4岁时就会读书了）。\n2. 委婉礼貌的请求（比'can'更加客气和尊崇）：例如 'Could you pass the salt, please?'（请把盐递给我好吗？）。\n此外还可用于表达现在的可能性：'It could be true.'（这可能是真的）。",
+    "formation": "主语 + could + 动词原形 | Could + 主语 + 动词原形...?",
+    "examples": [
+      {
+        "translation": "她小时候就会拉小提琴。"
+      },
+      {
+        "translation": "请问您能讲得慢一点吗？"
+      }
+    ]
+  },
+  "en_a2_15": {
+    "title": "形容词比较级",
+    "shortExplanation": "用于两者之间的比较：单音节形容词词尾加-er，多音节形容词前加more。",
+    "longExplanation": "形容词比较级的构成规则：\n• 单音节词及以-y结尾的双音节词：词尾加-er（fast → faster, happy → happier）。\n• 多音节词（多数双音节及三音节以上）：more + 形容词原级（more interesting）。\n• 拼写规则：以-e结尾只加-r（nice → nicer）；重读闭音节双写末尾辅音（big → bigger）；以辅音字母加-y结尾变y为-ier（heavy → heavier）。\n• 不规则变化：good → better, bad → worse, far → further/farther, much/many → more。\n比较级后面常用than连接比较对象：'She is taller than her sister.'",
+    "formation": "短形容词-er + than / more + 长形容词 + than",
+    "examples": [
+      {
+        "translation": "这部电影比那部更有趣。"
+      },
+      {
+        "translation": "今天的情况比昨天更糟。"
+      }
+    ]
+  },
+  "en_a2_16": {
+    "title": "形容词最高级",
+    "shortExplanation": "用于三者或三者以上的比较：单音节形容词用'the + -est'，多音节形容词用'the most + 形容词'。",
+    "longExplanation": "形容词最高级的构成规则：\n• 单音节词：the + 形容词尾加-est（the biggest）。\n• 多音节词：the most + 形容词原级（the most beautiful）。\n• 拼写变化规则与比较级一致：以-e结尾直接加-st（the nicest）；双写末尾辅音字母（the biggest）；变-y为-iest（the heaviest）。\n• 不规则变化：good → the best, bad → the worst, far → the furthest/farthest, much/many → the most。",
+    "formation": "the + 短形容词-est / the most + 长形容词",
+    "examples": [
+      {
+        "translation": "这是全城最昂贵的餐厅。"
+      },
+      {
+        "translation": "他是全队最出色的队员。"
+      }
+    ]
+  },
+  "en_a2_17": {
+    "title": "some / any - 不定量代词与限定词",
+    "shortExplanation": "'some'常用于肯定句及礼貌提议；'any'常用于否定句和一般疑问句。",
+    "longExplanation": "'some'和'any'均可修饰不可数名词或可数名词复数，表示'一些、某些'：\n• some：用于肯定句；以及希望得到肯定回答或表示诚意邀请、请求的疑问句中（如：'Would you like some tea?'，'Can I have some water?'）。\n• any：用于否定句（表示'任何、一点也没有'）和普通疑问句中（如：'Do you have any questions?'）。",
+    "formation": "some / any + 不可数名词 或 可数名词复数",
+    "examples": [
+      {
+        "translation": "我买了一些面包和牛奶。"
+      },
+      {
+        "translation": "冰箱里还有牛奶吗？"
+      },
+      {
+        "translation": "我身上没有带任何现金。"
+      }
+    ]
+  },
+  "en_a2_18": {
+    "title": "much / many / a lot of / a few / a little - 数量词",
+    "shortExplanation": "'much/a little'修饰不可数名词；'many/a few'修饰可数名词复数；'a lot of'两者皆可修饰。",
+    "longExplanation": "常用数量表达方式及用法区别：\n• much：修饰不可数名词（much water, much time），多用于否定句和疑问句。\n• many：修饰可数名词复数（many people, many books）。\n• a lot of / lots of：两者均可修饰，常用于日常口语肯定句。\n• a few：有几个、一些（修饰可数名词，含肯定意味）。\n• few：几乎没有（修饰可数名词，含否定意味）。\n• a little：有一点（修饰不可数名词，含肯定意味）。\n• little：几乎没有（修饰不可数名词，含否定意味）。",
+    "formation": "much/a little + 不可数名词 | many/a few + 可数名词复数 | a lot of + 两者皆可",
+    "examples": [
+      {
+        "translation": "我没有多少时间了。"
+      },
+      {
+        "translation": "她在伦敦有几位朋友。"
+      },
+      {
+        "translation": "还剩下一点糖。"
+      }
+    ]
+  },
+  "en_a2_19": {
+    "title": "可数名词与不可数名词",
+    "shortExplanation": "可数名词有单复数之分；不可数名词不能直接计数，没有复数形式，不能直接加不定冠词。",
+    "longExplanation": "可数名词与不可数名词的界定与用法：\n• 可数名词（Countable）：可以用具体数字直接计数，有单数和复数形式（如：a book, two books）。\n• 不可数名词（Uncountable）：无法直接用数字计数，没有复数形式，前面不能加 a/an。\n常见不可数名词：water（水）、milk（牛奶）、bread（面包）、rice（大米）、money（金钱）、information（信息）、advice（建议）、news（新闻）、weather（天气）、luggage（行李）、furniture（家具）、hair（头发）、music（音乐）、work（工作）。\n表示不可数名词的数量时，需使用计量单位词：a glass of water（一杯水）、a piece of advice（一条建议）、a loaf of bread（一条面包）、a bag of rice（一袋大米）。",
+    "formation": "可数：a/an + 单数名词 / 复数名词-s/es | 不可数：计量词 + of + 不可数名词",
+    "examples": [
+      {
+        "translation": "请问能给我提供一些信息吗？"
+      },
+      {
+        "translation": "她给了我非常实用的建议。"
+      }
+    ]
+  },
+  "en_a2_20": {
+    "title": "时间介词 in / on / at",
+    "shortExplanation": "'at'用于具体时间点；'on'用于具体某一天和日期；'in'用于月份、年份、季节及较长时段。",
+    "longExplanation": "常用时间介词的用法规则：\n• at → 具体的具体时刻或特殊节点：at 6 o'clock（6点整）、at noon（正午）、at midnight（午夜）、at night（在夜间）、at the weekend（在周末）。\n• on → 特定的某一天或具体日期：on Monday（在星期一）、on 5 March（在3月5日）、on my birthday（在我生日那天）、on New Year's Day（在元旦）。\n• in → 较长的时间段（月份、年份、季节、世纪）及一日当中的某一时段：in July（在七月）、in 2023（在2023年）、in the morning/afternoon/evening（在上午/下午/晚上）、in summer（在夏天）、in the 21st century（在21世纪）。\n不加介词的情况：含有this / last / next的时间状语前不加介词（如：this morning, last week, next year）。",
+    "formation": "at + 具体钟点/时刻 | on + 星期/具体日期 | in + 月份/年份/季节/世纪",
+    "examples": [
+      {
+        "translation": "会议在三点半举行。"
+      },
+      {
+        "translation": "她出生于四月十二日。"
+      },
+      {
+        "translation": "我是十月份开始这份工作的。"
+      }
+    ]
+  },
+  "en_a2_21": {
+    "title": "for / since / ago - 时段、起点与过去时间",
+    "shortExplanation": "'for'表示持续的一段时间；'since'表示动作开始的时间起点；'ago'表示从现在起算过去的某个时间点。",
+    "longExplanation": "for, since 和 ago 的用法及区别：\n• for - 表示动作持续了多久（一段时间）：for two hours（持续两小时）、for a week（持续一周）、for years（持续数年）。可用于多种时态。\n• since - 表示动作开始的过去具体时间点（自……以来）：since Monday（自周一以来）、since 2019（自2019年以来）、since I was a child（自幼童时期起）。常与现在完成时连用。\n• ago - 用于一段时间之后，表示距今多久以前：three days ago（三天前）、a month ago（一个月前）。仅与一般过去时连用。",
+    "formation": "for + 一段时间 | since + 时间起点/过去从句 | 一段时间 + ago",
+    "examples": [
+      {
+        "translation": "我已经在这里待了六个月了。"
+      },
+      {
+        "translation": "她从2020年起就在这里工作了。"
+      },
+      {
+        "translation": "我两天前见到了他。"
+      }
+    ]
+  },
+  "en_a2_22": {
+    "title": "反意疑问句（附加疑问句）：...isn't it? / ...do you? / ...haven't they?",
+    "shortExplanation": "用于陈述句后寻求确认或求证；相当于汉语中的'……是吗？'、'……对吧？'。",
+    "longExplanation": "反意疑问句（附加疑问句）由陈述句加上简短的疑问尾句构成，主要用于向对方求证事实或寻求赞同。\n核心规则：\n• 前肯后否：陈述部分为肯定句，疑问尾句用否定形式（例：你喜欢爵士乐，对吧？）。\n• 前否后肯：陈述部分为否定句，疑问尾句用肯定形式（例：你不喜欢恐怖片，是吗？）。\n疑问尾句中的助动词（包括系动词、助动词或情态动词）必须与陈述部分的时态及主语人称保持一致，且尾句主语须用相应的人称代词。\n语调特点：\n• 降调（↘）：说话人倾向于确认事实或寻求附和，并非真正询问。\n• 升调（↗）：说话人对事实并不确信，属于真正的提问。",
+    "formation": "肯定句：肯定陈述句 + , + 否定形式助动词 + 代词主语？\n否定句：否定陈述句 + , + 肯定形式助动词 + 代词主语？",
+    "examples": [
+      {
+        "translation": "今天天气真不错，对吧？"
+      },
+      {
+        "translation": "你不喜欢看恐怖电影，是吗？"
+      },
+      {
+        "translation": "她会游泳，不是吗？"
+      }
+    ]
+  },
+  "en_a2_23": {
+    "title": "have got - 表所属/拥有（英式口语）",
+    "shortExplanation": "英式英语中常用于口语表达拥有或具备某物；相当于动词 have，'有'。",
+    "longExplanation": "have got 在英式英语口语中极为常用，用来表示所属关系或拥有，其含义完全等同于普通的 have。\n句型结构：\n• 肯定式：主语 + have got / has got（常缩写为 've got / 's got）。\n• 否定式：主语 + haven't got / hasn't got（无需借助助动词 do/does）。\n• 疑问式：Have / Has + 主语 + got...?（简略回答：Yes, I have. / No, I haven't.）。\n注意：该结构仅用于一般现在时表示所属；在过去时中直接使用 had，不可使用 had got 表示所属。",
+    "formation": "肯定句：主语 + have got / has got + 名词\n否定句：主语 + haven't got / hasn't got + 名词\n疑问句：Have / Has + 主语 + got + 名词？",
+    "examples": [
+      {
+        "translation": "我有两个哥哥。"
+      },
+      {
+        "translation": "你知道现在几点了吗？"
+      },
+      {
+        "translation": "她身上没带任何现金。"
+      }
+    ]
+  },
+  "en_a2_24": {
+    "title": "方式副词：quickly, carefully, well, hard, fast",
+    "shortExplanation": "用于修饰动词，说明动作以何种方式进行；通常位于动词或宾语之后。",
+    "longExplanation": "方式副词用于描述动作进行的方式、状态或特点。\n构成规则：\n• 大多数方式副词由形容词后加后缀 -ly 构成：quick → quickly（快速地）、careful → carefully（仔细地）、slow → slowly（缓慢地）。\n特殊与不规则变化：\n• good → well（好地；没有 goodly 这种形式）。\n• fast → fast（快速地；形容词与副词同形，无 fastly）。\n• hard → hard（努力地、猛烈地；hardly 为另一个词，意为'几乎不'）。\n• late → late（迟、晚；lately 为另一个词，意为'最近、近来'）。\n句中位置：通常位于动词之后，或位于动词的宾语之后（例：She speaks English well）。切忌将副词放在动词与直接宾语之间。",
+    "formation": "形容词 + -ly（或不规则同形副词）\n句中位置：动词 + 副词 或 动词 + 宾语 + 副词",
+    "examples": [
+      {
+        "translation": "他把事情解释得很清楚。"
+      },
+      {
+        "translation": "她跑得很快。"
+      },
+      {
+        "translation": "他们一整天都在辛勤工作。"
+      }
+    ]
+  },
+  "en_a2_25": {
+    "title": "频度副词及其在句中的位置",
+    "shortExplanation": "用于表达动作发生的频繁程度；常位于实义动词之前、系动词及助动词之后。",
+    "longExplanation": "频度副词用来表达某件事或某个动作发生的频率高低。\n常见频度副词（频率从高到低）：\nalways（总是 100%）→ usually（通常 90%）→ often（经常 70%）→ sometimes（有时 50%）→ occasionally（偶尔 30%）→ rarely / seldom（罕见、极少 10%）→ never（从不 0%）。\n句中位置规则：\n• 位于实义动词（行为动词）之前：She always drinks tea.\n• 位于系动词 be 之后：He is always late.\n• 位于助动词或情态动词之后：She has never been to Italy.\n注：短语形式的频度表达（如 every day, once a week, twice a month 等）通常放在句末。",
+    "formation": "主语 + 频度副词 + 实义动词\n主语 + 系动词/助动词 + 频度副词",
+    "examples": [
+      {
+        "translation": "我通常早上7点起床。"
+      },
+      {
+        "translation": "她上班从不迟到。"
+      },
+      {
+        "translation": "他们每周见一次面。"
+      }
+    ]
+  },
+  "en_a2_26": {
+    "title": "名词前多个形容词的排列顺序",
+    "shortExplanation": "当多个形容词共同修饰一个名词时，必须遵循固定的前后排列先后顺序。",
+    "longExplanation": "在英语中，当名词前面出现两个或两个以上的修饰性形容词时，通常遵循严格的先后排列顺序：\n1. 观点/主观评价（Opinion：lovely, beautiful）\n2. 尺寸/大小（Size：big, small）\n3. 年龄/新旧（Age：old, young, new）\n4. 形状（Shape：round, square）\n5. 颜色（Color：red, brown）\n6. 来源/产地（Origin：Italian, French）\n7. 质地/材料（Material：leather, wooden）\n8. 用途/功能（Purpose：writing, sports）\n→ 最后接中心名词。\n例：a small beautiful old square brown French wooden writing desk（一张精致小巧、年代久远、方形棕色的法国木质写字台）。",
+    "formation": "观点 + 大小 + 新旧 + 形状 + 颜色 + 产地 + 材料 + 用途 + 中心名词",
+    "examples": [
+      {
+        "translation": "一座可爱小巧的古朴小屋"
+      },
+      {
+        "translation": "一辆红色的大号意大利跑车"
+      }
+    ]
+  },
+  "en_b1_01": {
+    "title": "现在完成时 - 形式与用法",
+    "shortExplanation": "强调过去发生的动作对现在产生的影响、结果，或过去的经历与持续状态；'已经……'、'曾经……'。",
+    "longExplanation": "现在完成时用于将过去的动作或状态与现在联系起来。\n基本构成：主语 + have / has + 动词过去分词（规则动词加 -ed，不规则动词需单独记忆变化）。\n三大核心用法：\n1. 人生经历（不提及具体时间）：表示过去是否有过某项体验，如 I have visited Tokyo（我去过东京）。\n2. 对现在造成的结果或影响：强调过去发生的事在当下产生的状态，如 I have lost my keys（我把钥匙弄丢了，现在手里没有钥匙）。\n3. 持续到现在的动作或状态：动作起于过去，一直延续至今，如 She has lived here for 5 years（她在这里住了5年）。",
+    "formation": "肯定句：主语 + have / has + 过去分词\n否定句：主语 + haven't / hasn't + 过去分词\n疑问句：Have / Has + 主语 + 过去分词？",
+    "examples": [
+      {
+        "translation": "你吃过寿司吗？"
+      },
+      {
+        "translation": "我刚刚做完家庭作业。"
+      },
+      {
+        "translation": "她还没有打电话来。"
+      }
+    ]
+  },
+  "en_b1_02": {
+    "title": "ever / never / already / yet / just - 现在完成时标志副词",
+    "shortExplanation": "与现在完成时连用的常用时间副词，用于强调人生体验、提前完成或刚发生的状态。",
+    "longExplanation": "这些副词是现在完成时中最典型的标志词，各自有着固定的用法与位置：\n• ever（曾经）：常用于疑问句中询问是否有某种人生经历。位置：置于过去分词之前。\n• never（从不、从未）：表示全盘否定的经历。位置：置于过去分词之前（句中不再加 not）。\n• already（已经）：强调事情比预期更早发生。位置：常位于过去分词前，亦可置于句末。\n• yet（还、已经）：常用于否定句（表示'尚未、还没'）与疑问句（表示'已经……了吗'）。位置：通常置于句末。\n• just（刚刚）：表示动作在极短的片刻之前刚发生。位置：置于过去分词之前。",
+    "formation": "主语 + have / has + ever / never / already / just + 过去分词\n主语 + haven't / hasn't + 过去分词 + yet\nHave / Has + 主语 + ever + 过去分词？\nHave / Has + 主语 + 过去分词 + yet？",
+    "examples": [
+      {
+        "translation": "你曾经去过苏格兰吗？"
+      },
+      {
+        "translation": "我从没吃过蜗牛。"
+      },
+      {
+        "translation": "我已经看过那部电影了。"
+      }
+    ]
+  },
+  "en_b1_03": {
+    "title": "现在完成时与一般过去时的区别 - 核心差异",
+    "shortExplanation": "现在完成时强调动作与现在的关联及影响（不提及具体过去时间）；一般过去时仅表示过去明确时间发生并已结束的事实。",
+    "longExplanation": "这是英语语法中最关键的区别之一。\n• 现在完成时：动作发生在过去，但重点在于对现在的影响或结果，句中不能带有表示具体的过去时间状语。例如：I've lost my wallet（我的钱包丢了——核心在于当下我现在手里没钱包）。\n• 一般过去时：动作在过去已经彻底发生并结束，通常带有明确的过去时间状语（如 yesterday, last night, in 2019 等）或存在具体的过去语境。例如：I lost my wallet yesterday（我昨天把钱包丢了——强调事件发生在昨天这个具体时间）。",
+    "formation": "现在完成时：主语 + have / has + 过去分词（无具体过去时间点）\n一般过去时：主语 + 动词过去式（常带具体过去时间状语）",
+    "examples": [
+      {
+        "translation": "我已经见过新来的主管了。"
+      },
+      {
+        "translation": "我上周二见到了他。"
+      }
+    ]
+  },
+  "en_b1_04": {
+    "title": "现在完成时与 for 及 since 的搭配用法",
+    "shortExplanation": "用于表达动作从过去某时开始一直持续到当下；for 后接时间段，since 后接时间点。",
+    "longExplanation": "在现在完成时中，for 和 since 是回答'多久了？'（How long...?）的核心引导词：\n• for（长达、计有）：后接表示持续长度的一段时间（例如：for two days, for a year, for a long time, for ages）。\n• since（自……以来、从……起）：后接一个明确的历史起始时间点，或是由一般过去时引导的时间状语从句（例如：since Monday, since 2015, since I was a child）。\n询问动作持续时间的疑问句型为：How long + have / has + 主语 + 过去分词...?",
+    "formation": "主语 + have / has + 过去分词 + for + 时间段\n主语 + have / has + 过去分词 + since + 时间点/一般过去时从句",
+    "examples": [
+      {
+        "translation": "她在这里工作已经有十年了。"
+      },
+      {
+        "translation": "我和他从大学时代起就认识了。"
+      }
+    ]
+  },
+  "en_b1_05": {
+    "title": "现在完成进行时：have been + 动词现在分词(-ing)",
+    "shortExplanation": "强调动作从过去持续到现在的过程、时长，或解释当前眼前的结果；'一直在做……'。",
+    "longExplanation": "现在完成进行时着重强调动作的延续性、未完成性或长时间的过程。\n基本构成：主语 + have / has been + 动词现在分词（-ing 形式）。\n核心特点：\n1. 强调过程的持续性（回答'持续了多久？'）：I've been waiting for an hour（我已经等了整整一个小时了）。\n2. 用于解释眼前的直观结果或状态：You look tired - have you been running?（你看起来很累——刚才跑步去了吗？）。\n与现在完成时（简单式）的区别：\n• 现在完成时强调结果与完成度：I've read 50 pages（我已经读了50页——看重成效）。\n• 现在完成进行时强调动作的过程本身：I've been reading all evening（我整个晚上都在看书——看重投入的时间与持续动作）。",
+    "formation": "肯定句：主语 + have / has been + 动词现在分词(-ing)\n否定句：主语 + haven't / hasn't been + 动词现在分词(-ing)\n疑问句：Have / Has + 主语 + been + 动词现在分词(-ing)？",
+    "examples": [
+      {
+        "translation": "我已经学了整整两年的英语了。"
+      },
+      {
+        "translation": "你的手怎么脏兮兮的？——我刚才一直在修车。"
+      }
+    ]
+  },
+  "en_b1_06": {
+    "title": "过去进行时：was/were + 动词现在分词(-ing)",
+    "shortExplanation": "表示在过去某一具体时刻或某一段时间内正在进行的动作；'那时正在做……'。",
+    "longExplanation": "过去进行时用于表达过去某个特定时间点上正在发生或持续的动作。\n构成公式：主语 + was / were + 动词现在分词（-ing 形式）。单数主语用 was，复数及第二人称用 were。\n核心用法场景：\n1. 过去某一具体时刻正在发生的动作：At 9pm I was having dinner（昨晚9点我正在吃晚饭）。\n2. 作为背景动作被另一突发动作打断：I was walking when it started to rain（我正在散步，突然下起了雨）。\n3. 过去同时进行的两个平行对比动作：While she was cooking, he was watching TV（她做饭的时候，他正在看电视）。",
+    "formation": "肯定句：主语 + was / were + 动词现在分词(-ing)\n否定句：主语 + wasn't / weren't + 动词现在分词(-ing)\n疑问句：Was / Were + 主语 + 动词现在分词(-ing)？",
+    "examples": [
+      {
+        "translation": "我出门的时候天正下着雨。"
+      },
+      {
+        "translation": "昨天晚上7点你在做什么呢？"
+      }
+    ]
+  },
+  "en_b1_07": {
+    "title": "一般过去时与过去进行时 - 背景动作与插曲事件",
+    "shortExplanation": "过去进行时用于描绘持续发生的长背景动作，一般过去时用于表达突发插入的短动作。",
+    "longExplanation": "这是讲述过去故事时的经典句式搭配：一个持续进行的长动作作为背景（用过去进行时），中间被一个短暂突发的动作打断（用一般过去时）。\n常用连词规则：\n• when（当……时）：通常引导一般过去时从句，表示突发介入的短暂事件：She was sleeping when the alarm went off（她正睡着，闹钟突然响了）。\n• while / as（正当……之际）：通常引导过去进行时从句，用于交代持续的背景动作：While I was watching TV, the power went out（我正在看电视，突然停电了）。",
+    "formation": "过去进行时分句 + when + 一般过去时分句\nWhile + 过去进行时分句 + , + 一般过去时分句",
+    "examples": [
+      {
+        "translation": "她正在洗澡，电话突然响了起来。"
+      },
+      {
+        "translation": "在他发表演讲的时候，有人睡着了。"
+      }
+    ]
+  },
+  "en_b1_08": {
+    "title": "零级条件句：If + 一般现在时，一般现在时 - 客观真理与规律",
+    "shortExplanation": "用于叙述客观真理、科学事实或自然规律；'只要……就必然……'。",
+    "longExplanation": "零级条件句（Zero Conditional）用于表达科学定律、客观规律或无可置疑的事实常识。在这些情况下，只要前提条件满足，结果就必然百分之百发生。\n句型公式：If + 一般现在时从句，一般现在时主句。\n核心特点：从句与主句均采用一般现在时，因为两件事属于因果必然关系。\n在零级条件句中，连词 if 通常可以与 when 相互替换而意思保持不变：When you mix red and blue, you get purple（将红蓝两色混合时，就会得到紫色）。",
+    "formation": "If / When + 主语 + 动词一般现在时 + , + 主语 + 动词一般现在时",
+    "examples": [
+      {
+        "translation": "如果给冰加热，它就会融化。"
+      },
+      {
+        "translation": "如果下雨，街道就会变湿。"
+      }
+    ]
+  },
+  "en_b1_09": {
+    "title": "第一类条件句：If + 一般现在时，will - 真实的将来可能",
+    "shortExplanation": "表示在将来现实生活中完全有可能发生的事情或条件；'如果……就会……'。",
+    "longExplanation": "第一类条件句（First Conditional）用于表达在现在或将来极有可能成真、符合现实的假设及可能导致的结果。\n句型结构：If + 一般现在时从句，主语 + will + 动词原形。\n核心规则：\n• 主将从现：条件从句（if从句）必须使用一般现在时，绝对不可使用 will；主句则使用一般将来时。\n• 主句中的 will 也可以根据需要替换为情态动词 can, may, might, should 等，以表达不同的情态语气或建议。\n• 主句与从句位置可以互换，若主句在前则中间无需加逗号：I'll stay home if it rains。",
+    "formation": "If + 主语 + 动词一般现在时 + , + 主语 + will / can / may + 动词原形",
+    "examples": [
+      {
+        "translation": "如果她用功学习，她就会通过考试。"
+      },
+      {
+        "translation": "如果你需要帮忙，我可以过来。"
+      }
+    ]
+  },
+  "en_b1_10": {
+    "title": "第二类条件句：If + 一般过去时，would - 与现在事实相反的虚拟假设",
+    "shortExplanation": "用于假想与现在或将来事实相反的情况，或可能性极小的事情；'要是……就会……'。",
+    "longExplanation": "第二类条件句（Second Conditional，即对现在的虚拟语气）用于表达与现在客观事实相反的纯粹设想，或在将来几乎不太可能实现的假设情况。\n句型公式：If + 一般过去时从句，主语 + would + 动词原形。\n核心要点：\n• 从句谓语采用一般过去时。如果是系动词 be，在传统规范英语中无论人称单复数一律使用 were（如 If I were you...）。\n• 主句使用情态动词过去式 would / could / might + 动词原形，表达假定推导出的结果。",
+    "formation": "If + 主语 + 动词一般过去时 + , + 主语 + would / could + 动词原形",
+    "examples": [
+      {
+        "translation": "如果我中了彩票，我就会去环游世界。"
+      },
+      {
+        "translation": "要是我再长高一点，我就会去打篮球了。"
+      }
+    ]
+  },
+  "en_b1_11": {
+    "title": "第一类与第二类条件句对比：真实条件句 vs 非真实条件句",
+    "shortExplanation": "对比第一类条件句（可能发生的事实或未来可能）与第二类条件句（与现在事实相反的假设或不太可能的情况）。",
+    "longExplanation": "选择第一类还是第二类条件句取决于说话人对情况真实性的把握与态度：\n• 第一类条件句（If + 一般现在时，will + 动词原形）：表示说话人认为条件很可能实现或完全符合实际（例如：'If I see her'——我预计会见到她）。\n• 第二类条件句（If + 一般过去时，would + 动词原形）：表示与现在事实相反的假设，或说话人认为极不可能发生的事情（例如：'If I saw her'——几乎不可能见到，纯属幻想）。\n这不仅是语法形式的区别，更体现了说话人对事件可能性的主观看法。",
+    "formation": "第一类：If + 主语 + 一般现在时动词，主语 + will + 动词原形\n第二类：If + 主语 + 一般过去时动词，主语 + would + 动词原形",
+    "examples": [
+      {
+        "translation": "如果明天下雨，我会带把伞。（现实中很有可能发生）"
+      },
+      {
+        "translation": "如果天天都下雨，我就搬去西班牙。（不太可能的假设或幻想）"
+      }
+    ]
+  },
+  "en_b1_12": {
+    "title": "一般现在时的被动语态：am / is / are + 过去分词",
+    "shortExplanation": "表示经常性、习惯性或现阶段客观存在的被动动作，侧重动作本身或承受者。",
+    "longExplanation": "一般现在时的被动语态主要在以下情况使用：\n• 动作本身比动作的执行者更重要或更值得关注。\n• 动作的执行者未知、不言自明或无需提及。\n构成规则：主语 + am / is / are + 过去分词。如果需要指明动作的执行者，可用介词 'by' 引出：例如 'The window is broken by the children'（窗户被孩子们打破了）。",
+    "formation": "主语 + am / is / are + 过去分词 (+ by + 动作执行者)",
+    "examples": [
+      {
+        "translation": "许多国家都讲英语。"
+      },
+      {
+        "translation": "这封信是用法语写的。"
+      }
+    ]
+  },
+  "en_b1_13": {
+    "title": "一般过去时的被动语态：was / were + 过去分词",
+    "shortExplanation": "表示过去发生的被动动作或过去承受某种动作的状态；'被……'、'受到……'。",
+    "longExplanation": "一般过去时的被动语态用于强调过去某个时刻或时间段内发生的动作承受情况：\n• 单数主语（I、he、she、it及不可数/单数名词）使用 was + 过去分词\n• 复数主语（you、we、they及复数名词）使用 were + 过去分词\n主动语态转被动语态示例：Someone stole my car.（有人偷了我的车。）→ My car was stolen.（我的车被偷了。）",
+    "formation": "主语 + was / were + 过去分词 (+ by + 动作执行者)",
+    "examples": [
+      {
+        "translation": "埃菲尔铁塔建于1889年。"
+      },
+      {
+        "translation": "事故中有三人受伤。"
+      }
+    ]
+  },
+  "en_b1_14": {
+    "title": "现在完成时的被动语态：has / have been + 过去分词",
+    "shortExplanation": "表示过去发生并已经完成的被动动作，强调该动作对现在造成的影响或结果。",
+    "longExplanation": "现在完成时的被动语态用于强调动作已经完成并产生了当前的结果，而不需要指明动作具体发生的确切时间：\n• 第三人称单数主语使用 has been + 过去分词\n• 其他人称及复数主语使用 have been + 过去分词",
+    "formation": "主语 + has / have been + 过去分词",
+    "examples": [
+      {
+        "translation": "该项目已经顺利竣工。"
+      },
+      {
+        "translation": "所有宾客均已接到通知。"
+      }
+    ]
+  },
+  "en_b1_15": {
+    "title": "间接引语——时态后退规则",
+    "shortExplanation": "当引述动词为过去时，将直接引语转为间接引语时，从句的时态通常需要相应地往过去推移一个时态。",
+    "longExplanation": "在间接引语中，若主句引述动词（如 said, told）为过去时，宾语从句的时态通常遵循'时态后退'规则：\n• 一般现在时 → 一般过去时（work → worked）\n• 一般过去时 → 过去完成时（went → had gone）\n• 现在完成时 → 过去完成时（have seen → had seen）\n• 情态动词变化：will → would、can → could、is/am going to → was going to。",
+    "formation": "主语 + said (that) / told + 宾语 + (that) + 降阶时态从句",
+    "examples": [
+      {
+        "translation": "她说：'我要走了。' → 她说她要走了。"
+      },
+      {
+        "translation": "他告诉我：'我来不了。' → 他告诉我他来不了了。"
+      }
+    ]
+  },
+  "en_b1_16": {
+    "title": "间接疑问句：疑问词 / if / whether + 陈述语序",
+    "shortExplanation": "直接引语的疑问句转为间接引语时，必须使用陈述句语序（主语 + 谓语动词），不再使用倒装。",
+    "longExplanation": "在间接疑问句中需注意以下三条核心规则：\n1. 语序还原为陈述句语序（主语在前，谓语动词在后），绝不倒装。\n2. 去掉疑问句助动词 do / does / did。\n3. 特殊疑问句保留原疑问词（where, what, who 等）引导从句；一般疑问句（Yes/No 问句）使用 if 或 whether 引导，意为'是否'。",
+    "formation": "特殊疑问句：主语 + asked + 疑问词 + 主语 + 谓语动词\n一般疑问句：主语 + asked + if / whether + 主语 + 谓语动词",
+    "examples": [
+      {
+        "translation": "'你在哪里工作？' → 她问我在哪里工作。"
+      },
+      {
+        "translation": "'你结婚了吗？' → 他想知道我是否结了婚。"
+      }
+    ]
+  },
+  "en_b1_17": {
+    "title": "间接引语中 say 与 tell 的区别",
+    "shortExplanation": "say 后面通常不直接接听话人；tell 后面必须紧跟听话的对象（人称宾语）。",
+    "longExplanation": "在转述间接引语时，say 和 tell 的接续用法有明确区分：\n• say (that)...：后方无需跟听话的人（例如：She said she was tired）。若要提及对象，必须加介词 to：said to me。\n• tell + 人 + (that)...：tell 后面必须直接跟听话的人作为宾语（例如：She told me she was tired）。\n常见错误：He told that he was late ✗ → 正确表达：He said that he was late ✓ 或 He told us that he was late ✓。",
+    "formation": "主语 + say/said + (that) + 从句\n主语 + tell/told + 听话人宾语 + (that) + 从句",
+    "examples": [
+      {
+        "translation": "她说她需要帮助。"
+      },
+      {
+        "translation": "他告诉我们会议已经取消了。"
+      }
+    ]
+  },
+  "en_b1_18": {
+    "title": "动词后接动名词（动词-ing形式）",
+    "shortExplanation": "某些动词后必须接动名词（动词-ing）作为宾语，而不能接不定式（to + 动词原形）。",
+    "longExplanation": "英语中有一类及物动词只能接动名词（V-ing）作宾语：\n常见动词包括：enjoy（享受/喜爱）、finish（完成）、avoid（避免）、mind（介意）、suggest（建议）、keep（保持/持续）、consider（考虑）、deny（否认）、imagine（想象）、miss（错过/想念）、practice（练习）、risk（冒……险）、admit（承认）、delay（推迟）、give up（放弃）、put off（拖延）、recommend（推荐/建议）等。\n记忆诀窍：动名词通常表达已经发生、实际体验过或具有持续过程性质的行为动作。",
+    "formation": "主语 + 动词 + 动名词 (动词-ing)",
+    "examples": [
+      {
+        "translation": "我喜欢在海里游泳。"
+      },
+      {
+        "translation": "她正在考虑移居国外。"
+      },
+      {
+        "translation": "他刻意回避了眼神接触。"
+      }
+    ]
+  },
+  "en_b1_19": {
+    "title": "动词后接不定式（to + 动词原形）",
+    "shortExplanation": "某些动词后必须接不定式（to + 动词原形）作宾语，通常表达未来的意向、期望或计划。",
+    "longExplanation": "英语中许多动词要求后接不定式（to-infinitive）作宾语，这类动词多与未来的意图、决定、愿望或计划相关：\n常见动词包括：want（想要）、decide（决定）、hope（希望）、plan（计划）、manage（设法做到）、agree（同意）、promise（承诺）、refuse（拒绝）、fail（未能做到）、expect（期盼）、offer（提议）、learn（学习）、need（需要）、afford（负担得起）、arrange（安排）、attempt（尝试）、choose（选择）、demand（要求）、deserve（值得）、pretend（假装）、tend（倾向于）、threaten（威胁要）等。",
+    "formation": "主语 + 动词 + to + 动词原形",
+    "examples": [
+      {
+        "translation": "她决定辞去自己的工作。"
+      },
+      {
+        "translation": "我希望能尽快见到你。"
+      },
+      {
+        "translation": "他未能给出答复。"
+      }
+    ]
+  },
+  "en_b1_20": {
+    "title": "兼接动名词与不定式的动词（like, love, hate, start, begin）",
+    "shortExplanation": "这类动词后既可以接动名词（V-ing）也可以接不定式（to-V），意义相同或仅有细微语感差别。",
+    "longExplanation": "在英语中，部分动词后接动名词（V-ing）或不定式（to-V）均可：\n• 表示喜好的动词（like, love, hate, prefer）：接 V-ing 侧重于表达一般的兴趣、爱好或享受某种活动的过程（如：'I love cooking'——我平时很喜欢烹饪）；接 to-V 则常侧重于特定情境下的选择或习惯动作（如：'I like to wake up early'——我习惯早起）。\n• 表示开始或继续的动词（start, begin, continue）：接两种形式在意义上几乎没有任何实质性差异。",
+    "formation": "主语 + like / love / hate / start / begin + 动名词 (V-ing) 或 to + 动词原形",
+    "examples": [
+      {
+        "translation": "我热爱旅行。"
+      },
+      {
+        "translation": "她从五月份开始在这里工作。"
+      }
+    ]
+  },
+  "en_b1_21": {
+    "title": "used to——过去的习惯与状态",
+    "shortExplanation": "表示过去经常发生或曾经存在但现在已经停止的习惯、动作或状态；'过去常常'、'曾经'。",
+    "longExplanation": "'used to' 用于表达过去规律性的动作、习惯或状态，而这种习惯或状态目前已不复存在。\n• 肯定形式：主语 + used to + 动词原形\n• 否定形式：主语 + didn't use to + 动词原形\n• 疑问形式：Did + 主语 + use to + 动词原形……？\n与 'be used to + 动名词/名词' 的区别：'be used to' 表示'现在习惯于某事'（例如：'I am used to waking up early'——我已经习惯早起了）。",
+    "formation": "肯定句：主语 + used to + 动词原形\n否定句：主语 + didn't use to + 动词原形\n疑问句：Did + 主语 + use to + 动词原形？",
+    "examples": [
+      {
+        "translation": "我过去常常抽烟，不过后来戒掉了。"
+      },
+      {
+        "translation": "你以前曾经演奏过某种乐器吗？"
+      }
+    ]
+  },
+  "en_b1_22": {
+    "title": "定语从句：who, which, that, where, whose",
+    "shortExplanation": "使用关系代词或关系副词引导从句，修饰前面的先行词（名词或代词）。",
+    "longExplanation": "定语从句用于为前面的名词（先行词）提供修饰和补充说明：\n• who：先行词为人，在从句中作主语或宾语（例：The woman who called is my sister）。\n• which：先行词为物或动物（例：The book which I borrowed was great）。\n• that：在限制性定语从句中既可指人也可指物（例：The car that he bought is new）。\n• where：关系副词，先行词为地点，并在从句中作地点状语（例：The café where we met is closed）。\n• whose：关系代词，表示所属关系，相当于'……的'（例：The girl whose bag was stolen）。\n提示：在口语交流中，当关系代词在从句中充当动词宾语时常常可以省略：The film (that) I saw。",
+    "formation": "先行词 (名词) + who / which / that / where / whose + 从句",
+    "examples": [
+      {
+        "translation": "住在隔壁的那位男士非常友善。"
+      },
+      {
+        "translation": "我们入住的那家酒店自带一个游泳池。"
+      }
+    ]
+  },
+  "en_b1_23": {
+    "title": "表示对比与转折的连词：although, however, despite, in spite of, whereas",
+    "shortExplanation": "用于表达转折、让步或对比关系的连接词与副词；'虽然'、'尽管'、'然而'、'而'。",
+    "longExplanation": "英语中表示对比与让步的连接词在语法搭配上有严格区分：\n• although / even though / though + 从句（主语 + 谓语）：表示'虽然、尽管'。\n• despite / in spite of + 名词 / 代词 / 动名词（V-ing）：注意后面绝对不能直接接完整的陈述从句。\n• however：副词，常置于句首（位于句号或分号之后），后接逗号，表示'然而、不过'。\n• whereas：从属连词，用于对比两个对照明显的事实，意为'然而、鉴于、而'。",
+    "formation": "although / even though + 从句\ndespite / in spite of + 名词 / 代词 / 动名词\nhowever, + 新完整句子\n分句1, whereas + 分句2",
+    "examples": [
+      {
+        "translation": "虽然很累，但她还是坚持继续工作。"
+      },
+      {
+        "translation": "尽管下着雨，他依然骑自行车去上班。"
+      },
+      {
+        "translation": "价格很昂贵。然而，物有所值。"
+      }
+    ]
+  },
+  "en_b1_24": {
+    "title": "将来进行时：will be + 动词-ing",
+    "shortExplanation": "表示将来某一特定时刻正在进行的动作，或按计划必然发生的未来行动。",
+    "longExplanation": "将来进行时主要用于以下三大典型语境：\n1. 将来某一明确时间点正在持续进行的动作（例如：At this time tomorrow, I'll be lying on the beach——明天这个时候，我正躺在沙滩上呢）。\n2. 预计在将来发生或作为事情自然发展的结果而发生的动作（例如：I'll be seeing her tomorrow anyway——反正我明天也会见到她）。\n3. 礼貌客气地询问对方未来的安排或打算，避免显得施压或过于探听隐私（例如：Will you be coming to the party?——您会来参加聚会吗？）。",
+    "formation": "肯定式：主语 + will be + 动词-ing\n否定式：主语 + will not (won't) be + 动词-ing\n疑问式：Will + 主语 + be + 动词-ing？",
+    "examples": [
+      {
+        "translation": "8点别给我打电话——那时我正在吃晚饭。"
+      },
+      {
+        "translation": "下周的这个时候，我正坐在海滩上享受呢。"
+      }
+    ]
+  },
+  "en_b1_25": {
+    "title": "将来完成时：will have + 过去分词",
+    "shortExplanation": "表示在将来某一时间点或另一动作发生之前就已经完成的动作；'到……时将已经完成'。",
+    "longExplanation": "将来完成时强调某种动作或状态在将来的某个特定截点之前将处于'已经完成'的状态。\n通常与表示时间截点的状语连用，如 'by...'（到……为止）、'by the time + 从句'（等到……的时候）、'before...'（在……之前）等：\n例如：'By the time you arrive, I will have cooked dinner'（等你到的时候，我肯定已经把晚饭做好了）。",
+    "formation": "肯定式：主语 + will have + 过去分词\n否定式：主语 + will not (won't) have + 过去分词\n疑问式：Will + 主语 + have + 过去分词？",
+    "examples": [
+      {
+        "translation": "到星期天之前，我就会读完这本书。"
+      },
+      {
+        "translation": "到2050年，科学家们将已经找到治愈方法。"
+      }
+    ]
+  },
+  "en_b1_26": {
+    "title": "目的状语表达方式：to, in order to, so that, so as to",
+    "shortExplanation": "用于表达动作的目的；'为了……'、'以便……'。",
+    "longExplanation": "用于表达做某事的目的的常见句型：\n• to / in order to / so as to + 动词原形：用于前后主语一致时，表示动作的目的。其中 in order to 和 so as to 比单独的 to 更具正式语体色彩。否定形式为 in order not to 或 so as not to（为了不做某事）。\n• so that / in order that + 从句（主语 + 情态动词 can/could, will/would + 动词原形）：常用于两个分句主语不同，或强调实现某种可能与能力的情况。",
+    "formation": "to / in order to / so as to + 动词原形 | so that + 主语 + 情态动词 + 动词原形",
+    "examples": [
+      {
+        "translation": "她努力学习是为了拿到奖学金。"
+      },
+      {
+        "translation": "他早早出发，以便能赶上末班火车。"
+      }
+    ]
+  },
+  "en_b1_27": {
+    "title": "基础短语动词",
+    "shortExplanation": "动词与副词或介词结合构成的固定搭配，通常具有独特的习惯意义。",
+    "longExplanation": "短语动词是由'动词 + 小品词（介词或副词）'组合而成，其整体含义往往不能仅凭字面直接推导，具有强烈的习语色彩。\n最常用的短语动词包括：\n• give up = 放弃、戒掉\n• find out = 查明、弄清楚\n• turn on / turn off = 打开 / 关闭（电源、电器）\n• look up = 查阅（字典、网络信息等）\n• look after = 照顾、照料\n• put off = 推迟、延期\n• carry on = 继续进行\n• get on / along (with) = 与某人和睦相处\n• bring up = 养育成人；提出（话题）\n• come across = 偶然遇见、偶然发现",
+    "formation": "动词 + 介词 / 副词（小品词）",
+    "examples": [
+      {
+        "translation": "我已经戒烟了。"
+      },
+      {
+        "translation": "我不在家的时候你能帮我照看一下猫吗？"
+      },
+      {
+        "translation": "我们需要查明到底发生了什么事。"
+      }
+    ]
+  },
+  "en_b2_01": {
+    "title": "过去完成时：had + 过去分词",
+    "shortExplanation": "表示在过去某一特定时刻或另一过去动作之前已经完成的动作（过去的过去）。",
+    "longExplanation": "过去完成时用于描述在过去某个时间参照点之前就已经发生并结束的动作（即'过去的过去'）。\n• 肯定句：主语 + had + 过去分词（所有主语人称均使用 had）\n• 否定句：主语 + hadn't + 过去分词\n• 疑问句：Had + 主语 + 过去分词？\n• 常用连词与时间状语：before, after, when, by the time, already, just, never。",
+    "formation": "主语 + had + 过去分词 (hadn't + 过去分词)",
+    "examples": [
+      {
+        "translation": "当我到达时，她已经离开了。"
+      },
+      {
+        "translation": "在那个冬天之前，他从未见过雪。"
+      }
+    ]
+  },
+  "en_b2_02": {
+    "title": "过去完成进行时：had been + 动词现在分词",
+    "shortExplanation": "强调在过去某一时刻之前一直持续不断进行的动作，常用于解释过去某一结果的原因。",
+    "longExplanation": "过去完成进行时的结构为 had been + 动词现在分词（动词-ing形式）。该时态侧重强调动作在过去某个基准点之前持续的时间跨度和过程，常用于解释过去某一状态的原因或展示当时显而易见的痕迹与结果。",
+    "formation": "主语 + had been + 动词-ing形式 (hadn't been + 动词-ing形式)",
+    "examples": [
+      {
+        "translation": "她筋疲力尽——她整整工作了一整夜。"
+      },
+      {
+        "translation": "在她到达之前，你已经等了多久了？"
+      }
+    ]
+  },
+  "en_b2_03": {
+    "title": "must have + 过去分词 - 对过去事实的有把握推测",
+    "shortExplanation": "表示依据证据对过去发生的事情进行极有把握的逻辑推测；'一定已经……'、'准是……'。",
+    "longExplanation": "must have + 过去分词用于根据已有的迹象或事实，对过去的情况做出高度确定的推测，说话人确信这是唯一合理的解释。\n对过去推测的语气强弱梯队：\n• must have + 过去分词：必定发生过（极有把握）\n• should have + 过去分词：本来理应发生（实际未发生）\n• may / might have + 过去分词：可能发生过（存疑不确定）\n• can't have + 过去分词：绝不可能发生过（确定没发生）。",
+    "formation": "主语 + must have + 过去分词",
+    "examples": [
+      {
+        "translation": "在那次长途跋涉之后，你当时一定累坏了。"
+      },
+      {
+        "translation": "她肯定是提前离开了——她的大衣已经不在了。"
+      }
+    ]
+  },
+  "en_b2_04": {
+    "title": "can't have + 过去分词 - 对过去可能性的否定推测",
+    "shortExplanation": "表示对过去事实有把握的否定推论；'不可能已经……'、'绝不可能……'。",
+    "longExplanation": "can't have（或 couldn't have）+ 过去分词用于根据确凿证据断定某事在过去绝不可能发生过。它是 must have + 过去分词 的反义否定结构。",
+    "formation": "主语 + can't have + 过去分词",
+    "examples": [
+      {
+        "translation": "他不可能见过她——她当时还在国外呢。"
+      },
+      {
+        "translation": "那绝不可能是正确的地址。"
+      }
+    ]
+  },
+  "en_b2_05": {
+    "title": "should have + 过去分词 - 对过去的责备与遗憾",
+    "shortExplanation": "表示过去本该做某事却没做，或本不该做却做了；表达懊悔、遗憾或批评指责。",
+    "longExplanation": "• should have + 过去分词：表示过去本应该做某事，但实际上并未付诸行动（含有遗憾、内疚或责怪的意思）。\n• shouldn't have + 过去分词：表示过去本不应该做某事，但实际上却做了（用于批评、谴责或自我反省）。\n这是表达遗憾与责备时最核心的高频句型。",
+    "formation": "主语 + should have / shouldn't have + 过去分词",
+    "examples": [
+      {
+        "translation": "我本来应该带把伞的。"
+      },
+      {
+        "translation": "她本不该把那个秘密告诉他的。"
+      }
+    ]
+  },
+  "en_b2_06": {
+    "title": "might / could have + 过去分词 - 对过去可能性的推测与假设",
+    "shortExplanation": "表示过去可能发生过某事（不太确定），或过去本来有能力/可能做到某事（实际没做）。",
+    "longExplanation": "• might have / could have + 过去分词：用于对过去可能发生的情况做出推测，但说话人并不十分确定（'也许已经……'、'说不定……'）。\n• 此外，could have + 过去分词 还可表示过去本来具备能力或机会做到某事，但实际上并没有去实现（例如：如果我再努力一点，我本来是可以获胜的）。",
+    "formation": "主语 + might / could have + 过去分词",
+    "examples": [
+      {
+        "translation": "她可能把开会的事给忘了。"
+      },
+      {
+        "translation": "他当时可能是从后门溜出去的。"
+      }
+    ]
+  },
+  "en_b2_07": {
+    "title": "第三类条件句：If + 过去完成时, would have + 过去分词",
+    "shortExplanation": "用于假设与过去事实完全相反的情况；'如果当时……那么本来就会……'。",
+    "longExplanation": "第三类条件句（过去非真实条件句）用于表达对过去情况的虚拟假设，所描述的场景在过去完全没有发生：\n• 句型：If + 主语 + had + 过去分词, 主语 + would have + 过去分词\n• 前后两个分句皆为假想：条件未曾满足，预期的结果自然也未曾出现。\n• 主句中的 would 也可用 could（本来能够）或 might（也许本来会）替换。",
+    "formation": "If + 主语 + had + 过去分词, 主语 + would have + 过去分词",
+    "examples": [
+      {
+        "translation": "如果她当时按时吃药，她本来就已经康复了。"
+      },
+      {
+        "translation": "如果他当时没有提早离开，他本来就能遇见她的。"
+      }
+    ]
+  },
+  "en_b2_08": {
+    "title": "混合条件句",
+    "shortExplanation": "将不同时间层面的假设条件与结果结合在一起（过去 ↔ 现在）。",
+    "longExplanation": "混合条件句打破了单一时间维度的限制，连接不同时间的假设与结果：\n1. 过去的假设条件 → 现在的虚拟结果：\n• If + 主语 + had + 过去分词, 主语 + would + 动词原形\n• 例：如果我当初接受了那份工作，我现在就身在纽约了。\n2. 现在的恒常属性/状态 → 过去的虚拟结果：\n• If + 主语 + 一般过去时, 主语 + would have + 过去分词\n• 例：如果她平时做事更细心一点，当初就不会把它弄坏了。",
+    "formation": "If + 主语 + had + 过去分词, 主语 + would + 动词原形",
+    "examples": [
+      {
+        "translation": "如果我当年学了医，我现在就是一名医生了。"
+      }
+    ]
+  },
+  "en_b2_09": {
+    "title": "将来时被动语态与含情态动词的被动语态",
+    "shortExplanation": "表示将来被执行或必须/应该被处理的动作；'将被……'、'必须被……'。",
+    "longExplanation": "含有情态动词及将来时的被动语态基本结构：\n• 情态动词 + be + 过去分词\n常见搭配句式：\n• will be + 过去分词：将被完成\n• must be + 过去分词：必须被完成\n• should be + 过去分词：应该被完成\n• can be + 过去分词：能够被完成。",
+    "formation": "主语 + 情态动词 (will / must / should / can) + be + 过去分词",
+    "examples": [
+      {
+        "translation": "这份报告将于明天发布。"
+      },
+      {
+        "translation": "这个错误必须立即得到纠正。"
+      }
+    ]
+  },
+  "en_b2_10": {
+    "title": "使役结构 have/get：have something done",
+    "shortExplanation": "表示请人、雇人或安排他人为自己提供服务或代办某事。",
+    "longExplanation": "have / get + 宾语 + 过去分词 结构用于说明请专业人员或他人为自己服务，而非本人亲自动手。\n对比说明：\n• I cut my hair：我自己拿起剪刀理发（通常不合常理）。\n• I had my hair cut：我去理发店剪头发了（由理发师剪发）。\n其中 get 更偏向日常口语对话，have 相对更具书面正式色彩。",
+    "formation": "主语 + have / get + 宾语 + 过去分词",
+    "examples": [
+      {
+        "translation": "我需要去检查一下牙齿（找牙医做检查）。"
+      },
+      {
+        "translation": "去年春天她雇人把房子重新粉刷了一遍。"
+      }
+    ]
+  },
+  "en_b2_11": {
+    "title": "客观报道动词的被动语态：It is said that... / He is believed to...",
+    "shortExplanation": "用于客观转述大众舆论、新闻报道或公认观点；'据说……'、'据普遍认为……'。",
+    "longExplanation": "常与 say, think, believe, report, know, expect, consider 等传达动词搭配使用的两种被动句型（在新闻媒体和官方正式文本中极常见）：\n1. It + 被动形式动词 + that + 从句（例如：It is believed that... 人们普遍相信……）\n2. 主语 + be动词 + 过去分词 + to + 动词原形（例如：She is known to be... 大家都知道她是……）。\n注意：如果不定式所表达的动作发生在报道动作之前，则需要使用不定式的完成式：to have + 过去分词。",
+    "formation": "It + be动词 + 过去分词 + that 从句 | 主语 + be动词 + 过去分词 + to + 动词原形",
+    "examples": [
+      {
+        "translation": "据报道，有三人在事故中受伤。"
+      },
+      {
+        "translation": "据普遍认为，他已经离开了该国。"
+      }
+    ]
+  },
+  "en_b2_12": {
+    "title": "区分 remember / forget 接动词-ing形式与动词不定式",
+    "shortExplanation": "接动词-ing表示记得/忘记过去做过某事；接to不定式表示记得/忘记去做该做的事项。",
+    "longExplanation": "remember 与 forget 之后接不同的动词形式时，含义具有明确差异：\n• remember / forget + 动词-ing形式（动名词）：指记得或忘记在过去已经发生过的经历或事件。\n• remember / forget + to + 动词原形（动词不定式）：指记住或忘记去做某件未来的任务、职责或待办事项。",
+    "formation": "remember / forget + 动词-ing形式 (过去经历) vs remember / forget + to + 动词原形 (待办任务)",
+    "examples": [
+      {
+        "translation": "我记得曾经在一场会议上见过她。"
+      },
+      {
+        "translation": "记得给你妈妈打电话！"
+      },
+      {
+        "translation": "我忘了买牛奶。"
+      }
+    ]
+  },
+  "en_b2_13": {
+    "title": "区分 stop / regret / mean 接动词-ing形式与动词不定式",
+    "shortExplanation": "stop、regret、mean 接动词-ing形式或to不定式时所表达的截然不同的语法意义。",
+    "longExplanation": "动词 stop, regret, mean 后面接动名词（-ing）还是不定式（to + 动词原形）决定了其具体的语义指向：\n• stop + 动词-ing：终止正在进行中的动作（例如：戒除抽烟恶习）。\n• stop + to + 动词原形：停下手头的事情，转而去做另一件事。\n• regret + 动词-ing：为过去曾经做过的事情感到追悔与内疚。\n• regret + to + 动词原形：遗憾地去传达或做某事（常用于正式公函通报不良消息：很遗憾地通知您……）。\n• mean + 动词-ing：意味着……、意味着需要付出某种代价。\n• mean + to + 动词原形：意图、打算做某事。",
+    "formation": "stop / regret / mean + 动词-ing形式 vs stop / regret / mean + to + 动词原形",
+    "examples": [
+      {
+        "translation": "他去年戒烟了。"
+      },
+      {
+        "translation": "她停下脚步，驻足欣赏周围的风景。"
+      }
+    ]
+  },
+  "en_b2_14": {
+    "title": "wish + 一般过去时 - 对现在情况的虚拟愿望",
+    "shortExplanation": "用于表达与现在事实相反、难以实现的愿望或遗憾，意为“要是……就好了”、“但愿”。",
+    "longExplanation": "结构“wish + 一般过去时”属于虚拟语气范畴，动词形式与第二类条件句（虚拟条件句）相同，用来表达说话者希望改变当前的某种现状，但在现实中该愿望无法实现或难以成真。从句中的 be 动词在正式文体中各人称一律使用 were，但在日常口语中 was 也很常见。",
+    "formation": "主语 + wish / wishes + (that) + 主语 + 动词一般过去时 / were",
+    "examples": [
+      {
+        "translation": "要是我的英语能说得更好一些就好了。"
+      },
+      {
+        "translation": "她希望自己能生活在一个气候更温暖的国家。"
+      }
+    ]
+  },
+  "en_b2_15": {
+    "title": "wish + 过去完成时 - 对过去的遗憾与后悔",
+    "shortExplanation": "用于表达对过去已经发生或未发生之事的懊悔与遗憾，意为“要是当时……就好了”。",
+    "longExplanation": "结构“wish + 过去完成时（had + 过去分词）”是对过去事实的虚拟，语法形式与第三类条件句相同。常用来对过去已经无法更改的决定、经历或既成事实表达惋惜与自责。",
+    "formation": "主语 + wish / wishes + (that) + 主语 + had + 动词过去分词",
+    "examples": [
+      {
+        "translation": "真希望我当时没吃那么多。"
+      },
+      {
+        "translation": "她后悔当时没有接受那份工作邀请。"
+      }
+    ]
+  },
+  "en_b2_16": {
+    "title": "wish + would - 表达希望他人改变行为或现状转变",
+    "shortExplanation": "用于表达对他人行为的不满、焦躁，或迫切希望某种令人厌烦的现状发生改变，意为“要是……肯……就好了”。",
+    "longExplanation": "结构“wish + would + 动词原形”通常带有说话者的不耐烦、抱怨或强烈期盼，希望某人能改正令人困扰的举动，或者期盼天气等不受主观控制的客观环境能够转变。注意：主句主语与从句主语相同时通常不使用 would（即不说 I wish I would，而改用 could 或动词过去时）。",
+    "formation": "主语 1 + wish / wishes + (that) + 主语 2 + would + 动词原形",
+    "examples": [
+      {
+        "translation": "真希望你能听听我说话。"
+      },
+      {
+        "translation": "但愿雨快点停下来。"
+      }
+    ]
+  },
+  "en_b2_17": {
+    "title": "限制性定语从句与非限制性定语从句",
+    "shortExplanation": "限制性从句用于明确界定先行词（不用逗号），非限制性从句仅补充说明附加信息（用逗号隔开）。",
+    "longExplanation": "1. 限制性定语从句：不用逗号隔开，是主句意思不可或缺的组成部分，用于具体明确所指的人或事物；若将其删去，主句语义将不明确；关系代词可使用 that 替代 who 或 which。\n2. 非限制性定语从句：通常用逗号与主句隔开，仅对已知或特定的先行词提供附加说明；若将其删去，主句的核心意义依然完整清晰；在此结构中绝对不能使用关系代词 that 代替 who 或 which。",
+    "formation": "限制性：先行词 + 关系代词 (who / which / that) + 从句 | 非限制性：先行词, + 关系代词 (who / which), + 从句",
+    "examples": [
+      {
+        "translation": "我和你提过的那部电影今晚放映。"
+      },
+      {
+        "translation": "我姐姐目前住在巴黎，她下周要来看我。"
+      }
+    ]
+  },
+  "en_b2_18": {
+    "title": "定语从句中介词的位置与搭配规则",
+    "shortExplanation": "日常口语中介词通常留在从句末尾，而在正式文体与书面语中介词前置于关系代词（whom / which）之前。",
+    "longExplanation": "定语从句中介词的位置主要取决于语体风格：\n1. 非正式口语：介词通常保留在从句末尾（例如：the house I grew up in），此时引导从句的关系代词常可省略或由 that 充当。\n2. 正式文体与书面语：介词移至关系代词之前（例如：the house in which I grew up）。\n关键规则：介词紧随其后时，指人只能使用宾格 whom，指物只能使用 which，绝对不能使用 that 或 who。",
+    "formation": "口语形式：先行词 + (关系代词) + 从句 + 介词 | 正式形式：先行词 + 介词 + whom / which + 从句",
+    "examples": [
+      {
+        "translation": "我正在参与的这个项目非常吸引人。"
+      },
+      {
+        "translation": "我目前正在参与的该项目非常引人入胜。"
+      }
+    ]
+  },
+  "en_b2_19": {
+    "title": "结果连词与连接词：so... that, such... that, therefore, as a result",
+    "shortExplanation": "用于表达因某种原因而导致的结果，意为“如此……以至于……”、“因此”、“结果”。",
+    "longExplanation": "英语中表达因果结果的典型句型与连接副词：\n1. so + 形容词 / 副词 + that 从句：强调程度之深以致产生某种结果（例如：He spoke so quickly that nobody understood）。\n2. such + (a / an) + 形容词 + 名词 + that 从句：语义与 so... that 相同，但核心修饰对象为名词短语（例如：It was such a long film that I fell asleep）。\n3. 句子之间的连接副词：therefore（因此）、consequently（结果）、as a result（结果是）、hence / thus（因而）。通常置于分号或句号之后，并后跟逗号。",
+    "formation": "so + 形容词 / 副词 + that + 从句 | such + (a / an) + 形容词 + 名词 + that + 从句 | 句子 1; therefore / consequently / as a result, + 句子 2",
+    "examples": [
+      {
+        "translation": "那是本非常精彩的书，以至于我读了两次。"
+      },
+      {
+        "translation": "她错过了截止日期，因此失去了那份合同。"
+      }
+    ]
+  },
+  "en_b2_20": {
+    "title": "be used to / get used to + 动名词 - 习惯于 / 逐渐习惯于",
+    "shortExplanation": "“be used to”表示已经对某事习以为常，“get used to”强调从不习惯到习惯的适应过程。",
+    "longExplanation": "1. be used to + 动名词 (V-ing) / 名词：表示主语已处于对某事物习惯、熟谙的状态（此处 to 为介词，故后接动名词或名词）。\n2. get used to + 动名词 (V-ing) / 名词：侧重于“逐渐适应、开始习惯”这一动态过渡与心理转变。\n辨析重点：务必与“used to + 动词原形”（过去常常做某事但现在已不做）区分开来，二者语法结构与含义截然不同。",
+    "formation": "主语 + be / get used to + 动名词 (V-ing) / 名词",
+    "examples": [
+      {
+        "translation": "我还不太习惯起得这么早。"
+      },
+      {
+        "translation": "虽然花了些时间，但她已经适应了新系统。"
+      }
+    ]
+  },
+  "en_b2_21": {
+    "title": "过去将来时：would / was, were going to",
+    "shortExplanation": "立足于过去某一时刻来看待将要发生的动作或打算，常用于间接引语或叙事文学中。",
+    "longExplanation": "过去将来时用于叙述从过去特定时间点眺望未来所呈现的动作或状态：\n1. would + 动词原形：情态助动词 will 的过去形式，常在间接引语中转述过去所作出的承诺、决定或预判（例如：She said she would come）。\n2. was / were going to + 动词原形：表示过去曾拟定好的计划或打算，但常常暗示该计划因故未达成或受阻（例如：He was going to call but forgot）。\n3. was / were about to + 动词原形：表示在过去那一瞬间“正打算、刚要”做某事，却被突发状况打断。",
+    "formation": "主语 + would + 动词原形 | 主语 + was / were going to + 动词原形 | 主语 + was / were about to + 动词原形",
+    "examples": [
+      {
+        "translation": "她答应过她一定会到场的。"
+      },
+      {
+        "translation": "他正打算离开，这时她打来了电话。"
+      }
+    ]
+  },
+  "en_b2_22": {
+    "title": "be to + 动词不定式 - 官方指令、既定日程与宿命安排",
+    "shortExplanation": "用于传达正式指令、规章要求、预先安排的官方活动，或叙事中不可避免的命运结局。",
+    "longExplanation": "“be 动词 + to 动词不定式”为正式书面语结构，具有以下核心含义：\n1. 官方指令与规章要求：表示上级指示、规则条例或严肃要求（例如：Passengers are to remain seated - 乘客须保持就座）。\n2. 正式计划与日程安排：用于正式公布的重大日程或协议（例如：The summit is to take place next month - 峰会定于下月举行）。\n3. 注定的命运（通常用过去式 was / were to）：在传记或历史叙事中描述不可改变的命中注定（例如：They were never to meet again - 他们此后注定再未相遇）。",
+    "formation": "主语 + am / is / are / was / were + to + 动词原形",
+    "examples": [
+      {
+        "translation": "你必须在周五前提交这份报告。"
+      },
+      {
+        "translation": "她注定将成为那个时代最伟大的科学家之一。"
+      }
+    ]
+  },
+  "en_b2_23": {
+    "title": "ought to - 道德义务与合情推断",
+    "shortExplanation": "表示道义责任、社会规劝或合乎逻辑的必然期望，意为“应当”、“理应”。",
+    "longExplanation": "情态动词“ought to”强调客观道义上的规范、职责或合情合理的逻辑推论，语意比 should 更加正式且严肃。\n• 形式特点：必须携带不定式符号 to，接动词原形（ought to do）。\n• 否定形式：ought not to（缩写为 oughtn't to）。\n• 指向过去：“ought to have + 过去分词”表示“过去本应该做某事却未做”，含有责备、批评或追悔的意味。",
+    "formation": "肯定句：主语 + ought to + 动词原形 | 否定句：主语 + ought not to + 动词原形 | 过去式：主语 + ought to have + 动词过去分词",
+    "examples": [
+      {
+        "translation": "你理应为你所说的话道歉。"
+      },
+      {
+        "translation": "她本来应该早点告诉我们的。"
+      }
+    ]
+  },
+  "en_b2_24": {
+    "title": "need - 情态动词与实义动词的用法",
+    "shortExplanation": "“need”兼具情态动词（主要用于正式否定句和疑问句）与普通实义动词双重属性。",
+    "longExplanation": "“need”在英语语法中具有两种不同的语法功能与句式结构：\n1. 作为情态动词：主要用于正式文体的否定句和疑问句。第三人称单数不加 -s，否定句无需借助助动词（使用 needn't），后接不带 to 的动词原形（例如：You needn't worry / Need I explain?）。\n2. 作为实义动词：具有常规动词的一切屈折变化（第三人称单数加 -s），否定与疑问句借用 do / does / did，后接带 to 的动词不定式（例如：She doesn't need to come）。",
+    "formation": "情态动词：主语 + needn't + 动词原形 | 实义动词：主语 + don't / doesn't / didn't need to + 动词原形",
+    "examples": [
+      {
+        "translation": "你不需要把两份表格都填写好。"
+      },
+      {
+        "translation": "她不必参加每一次会议。"
+      }
+    ]
+  },
+  "en_b2_25": {
+    "title": "dare - 敢于、竟敢（情态动词与实义动词）",
+    "shortExplanation": "用于表示有胆量做某事，或在感叹句中表达强烈的愤怒与谴责，意为“敢”、“竟敢”。",
+    "longExplanation": "“dare”意为“敢于”、“竟敢”，具备情态动词与实义动词两种形态：\n1. 作为情态动词：常见于修辞疑问句、感叹句及否定句中。无人称数的变化，后面直接跟不带 to 的动词原形（例如：How dare you! / I daren't ask）。\n2. 作为实义动词：遵循常规动词变化规则，否定句与疑问句借助 do / does / did，后接带 to（有时亦可省略 to）的不定式（例如：She didn't dare to look / He dared to challenge the boss）。",
+    "formation": "感叹 / 情态：How dare + 主语 + 动词原形! | 主语 + daren't + 动词原形 | 实义动词：主语 + dare / dares / dared (to) + 动词原形",
+    "examples": [
+      {
+        "translation": "你竟敢这样跟我说话！"
+      },
+      {
+        "translation": "她敢于公开表达自己的观点。"
+      }
+    ]
+  },
+  "en_b2_26": {
+    "title": "反身代词：myself, yourself, himself, herself, itself, ourselves, yourselves, themselves",
+    "shortExplanation": "用于动作作用于自身时充当宾语，或置于名词后以强调亲自独立完成某事。",
+    "longExplanation": "反身代词（myself, yourself, himself, herself, itself, ourselves, yourselves, themselves）在句中主要发挥以下语法功能：\n1. 充当反身宾语：当谓语动词的承受者与施动主语为同一主体时，必须使用反身代词作宾语（例如：He cut himself - 他割伤了自己）。\n2. 充当同位语表示强调：紧跟在主语之后或置于句末，强调“亲自、独立”完成该动作，不假外力（例如：I did it myself - 这是我亲手做的）。\n3. 常见固定词组：by oneself（独自一人、独立地）、help yourself（请自便、请随意享用）、enjoy oneself（尽情玩乐）。",
+    "formation": "作宾语：主语 + 动词 + 反身代词 | 作强调：主语 (+ 反身代词) + 谓语 + 宾语 (+ 反身代词)",
+    "examples": [
+      {
+        "translation": "她是自学弹吉他的。"
+      },
+      {
+        "translation": "这台机器会自动关机。"
+      }
+    ]
+  },
+  "en_b2_27": {
+    "title": "集合名词的主谓一致：team, family, committee, government...",
+    "shortExplanation": "指代由多名成员构成的集体名词；根据着眼于整体还是各个成员，谓语动词可单可复。",
+    "longExplanation": "集合名词（如 team, family, government, committee, staff, audience, crew, public 等）指代若干个体构成的群体：\n• 英式英语：灵活根据语境判定。当强调群体中各个成员的个体行为时，谓语动词常用复数形式（例如：The team are playing well）；若将整个组织视作单一整体时则用单数形式。\n• 美式英语：倾向于将集合名词统一视作单一实体，绝大多数情况下一律搭配单数动词（例如：The team is playing well）。\n特别注意：“police”（警方）在任何英语变体中均被视作复数，必须搭配复数动词。",
+    "formation": "集合名词 + 单数谓语动词（视为统一实体 / 美式偏好）或 复数谓语动词（着眼于各个成员 / 英式偏好）",
+    "examples": [
+      {
+        "translation": "政府公布了新的应对举措。"
+      },
+      {
+        "translation": "全场观众都起立欢呼鼓掌。"
+      }
+    ]
+  },
+  "en_b2_28": {
+    "title": "分数、小数与基本数学运算表达规则",
+    "shortExplanation": "英语中分数、小数、百分数以及基础四则算术运算的正确读法与句式表达规则。",
+    "longExplanation": "英语中各类数词与数学表达的规范读法：\n1. 分数表达：分子采用基数词，分母采用序数词；若分子大于 1，分母序数词必须加复数后缀 -s（例如：1/2 读作 a half；1/3 读作 a third；1/4 读作 a quarter；3/4 读作 three quarters；2/3 读作 two thirds）。\n2. 小数表达：小数点读作“point”，小数点后的所有数字依次单个独立读出（例如：3.14 读作 three point one four；5.7 读作 five point seven）。\n3. 百分比表达：基数词 + percent（例如：25% 读作 twenty-five percent）。\n4. 基础四则运算：加法符号（+）读作 plus，减法符号（-）读作 minus，乘法符号（×）读作 times 或 multiplied by，除法符号（÷）读作 divided by，等号（=）读作 equals 或 is。",
+    "formation": "分数：基数词（分子）+ 序数词（分母，分子>1时加-s） | 小数：整数 + point + 各个数字逐位独立读出",
+    "examples": [
+      {
+        "translation": "四分之三的学生通过了这次考试。"
+      },
+      {
+        "translation": "通货膨胀率下降至百分之二点五。"
+      }
+    ]
+  },
+  "en_b2_29": {
+    "title": "副词的比较等级（比较级与最高级）",
+    "shortExplanation": "副词的比较变化：更快、更仔细、最好、更差、更远。",
+    "longExplanation": "副词的比较等级构成规则与形容词基本相同：\n• 单音节副词：词尾加 -er（比较级）/ -est（最高级）：fast → faster, hard → harder, early → earlier。\n• 大多数以 -ly 结尾的副词：在词前加 more（比较级）/ most（最高级）：carefully → more carefully → most carefully。\n• 不规则变化：well → better → best, badly → worse → worst, far → further/farther → furthest/farthest, little → less → least, much → more → most。",
+    "formation": "单音节副词 + -er / -est 或 more / most + -ly结尾副词",
+    "examples": [
+      {
+        "translation": "她说话比以前更自信了。"
+      },
+      {
+        "translation": "他在团队中工作最努力。"
+      }
+    ]
+  },
+  "en_c1_01": {
+    "title": "否定副词引起的倒装句",
+    "shortExplanation": "否定副词置于句首时，助动词置于主语之前构成倒装以示强调。",
+    "longExplanation": "为了达到强调效果，将具有否定或半否定含义的副词/短语置于句首。此时句子必须采用部分倒装语序：助动词/be动词置于主语之前（词序与疑问句相同）。\n引起倒装的常见词语：never（从不）、rarely / seldom（极少）、little（几乎不）、hardly / scarcely / barely（几乎不/刚……就）、not only（不仅）、only（只有）、no sooner（刚……就）。",
+    "formation": "否定副词 + 助动词 + 主语 + 主要动词",
+    "examples": [
+      {
+        "translation": "我从未见过如此美丽的东西。"
+      },
+      {
+        "translation": "她极少犯错误。"
+      },
+      {
+        "translation": "我当时全然不知即将发生什么。"
+      }
+    ]
+  },
+  "en_c1_02": {
+    "title": "Not only... but also 引起的倒装",
+    "shortExplanation": "强调句式：Not only 引导的分句采用部分倒装，but also 引导的分句保持正常语序。",
+    "longExplanation": "当把 'Not only' 置于句首用于加强语气时，前一个分句必须使用倒装语序（助动词置于主语前），而 'but (also)' 引导的后半部分则保持正常陈述句语序。\n常用于强调某种情况比预想的更加显著或更进一步：“不仅……而且……”。",
+    "formation": "Not only + 助动词 + 主语 + 动词, but (主语) + also + ...",
+    "examples": [
+      {
+        "translation": "她不仅才华横溢，而且非常勤奋。"
+      },
+      {
+        "translation": "他们不仅迟到了，还把文件给忘了。"
+      }
+    ]
+  },
+  "en_c1_03": {
+    "title": "Hardly / Scarcely / No sooner 倒装句（刚……就……）",
+    "shortExplanation": "表示两个动作紧密相连、紧接着发生：“刚……就……”、“一……就……”。",
+    "longExplanation": "用于表达过去两个动作接踵而至、紧密相连的固定句型。先发生的动作使用过去完成时的倒装结构（had + 主语 + 过去分词），后发生的动作使用一般过去时。\n• Hardly / Scarcely + had + 主语 + 过去分词 + when / before + 一般过去时句子。\n• No sooner + had + 主语 + 过去分词 + than + 一般过去时句子。",
+    "formation": "Hardly/Scarcely + had + 主语 + 过去分词 + when + 过去时 / No sooner + had + 主语 + 过去分词 + than + 过去时",
+    "examples": [
+      {
+        "translation": "她刚到，天就下起雨来了。"
+      },
+      {
+        "translation": "我刚坐下，就有人敲门。"
+      }
+    ]
+  },
+  "en_c1_04": {
+    "title": "条件句中的倒装：Had / Were / Should",
+    "shortExplanation": "在正式文体中省略连词 if，通过将 Had、Were 或 Should 提前至句首构成倒装。",
+    "longExplanation": "在正式文体或书面语中，可以省略连词 'if' 并采用倒装语序来表达条件关系：\n• 虚拟语气第三类条件句（对过去的虚拟）：Had + 主语 + 过去分词（等同于 If + 主语 + had + 过去分词）。\n• 虚拟语气第二类条件句（对现在的虚拟）：Were + 主语 (+ to + 动词原形)（等同于 If + 主语 + were / 一般过去时）。\n• 第一类条件句（表达可能性较低的设想）：Should + 主语 + 动词原形（等同于 If + 主语 + should + 动词原形）。",
+    "formation": "Had + 主语 + 过去分词 / Were + 主语 (+ to + 动词原形) / Should + 主语 + 动词原形",
+    "examples": [
+      {
+        "translation": "要是她早告诉我，我早就帮忙了。"
+      },
+      {
+        "translation": "如果我处于你的位置，我就会接受。"
+      },
+      {
+        "translation": "如果您需要任何帮助，请致电我们。"
+      }
+    ]
+  },
+  "en_c1_05": {
+    "title": "It 强调句（分裂句）：It was ... who/that ...",
+    "shortExplanation": "利用 'It is/was ... that/who' 结构将句中的某一特定成分独立出来加以重点强调。",
+    "longExplanation": "It 分裂句（强调句）的基本结构为：It + 动词 be 的相应时态 + 被强调成分 + that/who/which + 句子的其余部分。\n该结构的作用是将受众的注意力焦点完全转移到被提出来的核心要素上：\n• 强调人时：可用 who 或 that。\n• 强调事物、状语等时：通常使用 that（有时可用 which）。",
+    "formation": "It + be动词 + 被强调成分 + that/who + 其余部分",
+    "examples": [
+      {
+        "translation": "正是那个噪音把我吵醒了。"
+      },
+      {
+        "translation": "正是辛勤的付出带来了成功。"
+      }
+    ]
+  },
+  "en_c1_06": {
+    "title": "Wh- 引导的分裂句（假拟分裂句）：What ... is/was ...",
+    "shortExplanation": "用 What 引导的主语从句引出话题，将想要重点强调的内容放在 be 动词之后。",
+    "longExplanation": "Wh- 分裂句（又称假拟分裂句）的典型结构为：What 从句 + 动词 be + 被强调的成分。\n该结构先用 What 从句抛出关注点，随后在句末揭晓核心信息，从而产生突出的强调效果：“我所……的正是……”。",
+    "formation": "What + 从句 + be动词 + 被强调成分",
+    "examples": [
+      {
+        "translation": "我最喜欢伦敦的一点就是它的多元化。"
+      },
+      {
+        "translation": "他的所作所为完全出乎所有人的意料。"
+      }
+    ]
+  },
+  "en_c1_07": {
+    "title": "要求/建议动词后的正式虚拟语气",
+    "shortExplanation": "在表示要求、建议等动词后的 that 从句中，谓语动词一律使用动词原形（虚拟语气）。",
+    "longExplanation": "在表示建议、推荐、要求、命令的动词之后，如 suggest（建议）、recommend（推荐）、insist（坚持）、demand（要求）、propose（提议）、request / require（请求/要求）、order（命令）+ that 从句：\n从句中的谓语动词必须使用动词原形，不受主语人称和数的影响（即不加 -s，be 动词直接用 be）。\n• 美式英语倾向于直接使用动词原形的纯虚拟语气。\n• 英式英语则常常使用 'should + 动词原形' 的形式（例如：I suggest that he should leave）。",
+    "formation": "主语 + 要求/建议类动词 + that + 主语 + (should) + 动词原形",
+    "examples": [
+      {
+        "translation": "我建议他去看看医生。"
+      },
+      {
+        "translation": "所有学生都必须参加这次会议，这是至关重要的。"
+      }
+    ]
+  },
+  "en_c1_08": {
+    "title": "It's high time + 一般过去时（正是……的时候了）",
+    "shortExplanation": "表示某事早该完成却拖延至今，含有轻微催促或批评的意味：“早该……了”。",
+    "longExplanation": "句型结构：It's (high / about) time + 主语 + 动词一般过去时。\n虽然形式上使用了一般过去时，但实际表达的是针对现在或将来的虚拟语气含义。用以强调某事拖得太久，现在必须立刻去做：\n• It's time：到……的时间了。\n• It's high time / It's about time：语气更加强烈，“早该……了”、“正是……的关头”。",
+    "formation": "It's (high / about) time + 主语 + 一般过去时动词",
+    "examples": [
+      {
+        "translation": "她该找份新工作了。"
+      },
+      {
+        "translation": "你早就该道歉了。"
+      }
+    ]
+  },
+  "en_c1_09": {
+    "title": "as if / as though 后的虚拟语气（仿佛……似乎……）",
+    "shortExplanation": "表示与事实相反或不太可能实现的非真实比喻：“仿佛……”、“好像……一样”。",
+    "longExplanation": "连词 as if 与 as though（仿佛、好似）常与虚拟语气连用，表达与实际情况不符的假设或比喻：\n• as if / as though + 一般过去时：表示与现在事实相反的假设（be 动词通常统一使用 were）。\n• as if / as though + 过去完成时（had + 过去分词）：表示与过去事实相反的假设。",
+    "formation": "主语 + 动词 + as if / as though + 主语 + 过去时 / 过去完成时",
+    "examples": [
+      {
+        "translation": "他花起钱来就好像自己是个百万富翁似的。"
+      },
+      {
+        "translation": "她说起话来仿佛之前就见过他似的。"
+      }
+    ]
+  },
+  "en_c1_10": {
+    "title": "So / Neither + 助动词 + 主语（简略倒装赞同句）",
+    "shortExplanation": "用于表达同意：'So...' 附和肯定句（也是），'Neither...' 附和否定句（也不）。",
+    "longExplanation": "用于附和前者的观点或状况，避免重复整句话：\n• So + 助动词 + 主语：针对肯定陈述表示“某人也是如此”。\n• Neither / Nor + 助动词 + 主语：针对否定陈述表示“某人也不……”。\n注意：使用的助动词/be动词在时态和形式上必须与上文句子的谓语动词保持一致。",
+    "formation": "So / Neither + 助动词 + 主语",
+    "examples": [
+      {
+        "translation": "我喜欢爵士乐。她也喜欢。"
+      },
+      {
+        "translation": "我还没去过罗马。我也没去过。"
+      }
+    ]
+  },
+  "en_c1_11": {
+    "title": "代替从句的 'so'：I think so / I hope so / I'm afraid so",
+    "shortExplanation": "在 think、hope、afraid 等词后用 'so' 代替前文提到的整个从句内容。",
+    "longExplanation": "单词 'so' 常用作代词，承接上文提到的一整句话或宾语从句，多用于表达个人观点、期望或顾虑的动词之后：think（认为）、hope（希望）、suppose（料想）、expect（预计）、believe（相信）、imagine（设想）、be afraid（恐怕）。\n否定形式有两种表现方式：\n• 否定主动词：I don't think so、I don't suppose so。\n• 在动词后直接加 not（与 hope、be afraid 连用）：I hope not（希望不会）、I'm afraid not（恐怕不行）。切记不能说 'I don't hope so'。",
+    "formation": "主语 + think / hope / suppose... + so（否定形式：I don't think so / I hope not）",
+    "examples": [
+      {
+        "translation": "他会来吗？——我想会吧。/ 我觉得不会。"
+      },
+      {
+        "translation": "这个贵吗？——恐怕挺贵的。"
+      },
+      {
+        "translation": "已经关门了吗？——希望没有。"
+      }
+    ]
+  },
+  "en_c1_12": {
+    "title": "限制性定语从句与非限制性定语从句",
+    "shortExplanation": "区分限制性定语从句（无逗号，界定修饰）与非限制性定语从句（有逗号，补充说明）。",
+    "longExplanation": "关系从句（定语从句）的两大类别及核心区别：\n• 限制性定语从句（Defining）：提供必不可少的关键识别信息，指明具体是哪一个人或物。不用逗号隔开；关系代词可用 that；关系代词在从句中作宾语时通常可以省略。\n• 非限制性定语从句（Non-defining）：对已知或已明确的人/物提供额外的补充说明信息。前后必须用逗号隔开；关系代词只能用 who 或 which（绝不能用 that）；关系代词绝不可省略。",
+    "formation": "限制性：先行词 + that/who/which + 句子 / 非限制性：先行词, who/which + 句子, ...",
+    "examples": [
+      {
+        "translation": "赢得奥斯卡奖的那部电影棒极了。（限制性从句，界定是哪部电影）"
+      },
+      {
+        "translation": "2009年上映的电影《阿凡达》取得了巨大的成功。（非限制性从句，补充已知电影的背景）"
+      }
+    ]
+  },
+  "en_c1_13": {
+    "title": "正式文体中“介词 + which/whom”结构",
+    "shortExplanation": "在正式语体中将介词置于关系代词 which/whom 之前，而非置于句末。",
+    "longExplanation": "在正式、学术或商务语体中：\n• 介词通常直接置于关系代词之前：介词 + which（修饰物）或 介词 + whom（修饰人）。\n• 在口语或非正式交流中，介词通常留在从句末尾（此时常使用 who、that 或直接省略关系代词）。\n注意：当介词位于关系代词前时，指人只能使用 whom（不可用 who 或 that），指物只能使用 which（不可用 that）。",
+    "formation": "正式：先行词 + 介词 + which/whom + ... / 非正式：先行词 + (who/that/which) + ... + 介词",
+    "examples": [
+      {
+        "translation": "我所提及的那份报告已附在后。（正式文体）"
+      },
+      {
+        "translation": "我提到的那份报告已经附上了。（中性语体）"
+      },
+      {
+        "translation": "我刚才说的那份报告附在邮件里了。（口语/非正式表达）"
+      }
+    ]
+  },
+  "en_c1_14": {
+    "title": "英语中的名词化现象（Nominalization）",
+    "shortExplanation": "将动词或形容词转化为名词形式，是学术文体与商务写作的核心特征。",
+    "longExplanation": "名词化（Nominalization）是指通过词缀派生等方式，将动词或形容词转化为名词的过程。这是学术论文、科技报告和商务文书的关键特征，能够使语言表达更加客观、紧凑、正式且富于凝练度。\n主要常见名词后缀：\n• -tion / -sion：decide → decision（决定）、discuss → discussion（讨论）。\n• -ment：improve → improvement（改进）、develop → development（发展）。\n• -ance / -ence：appear → appearance（外貌/出现）、differ → difference（差异）。\n• -ity：complex → complexity（复杂性）、able → ability（能力）。\n• -ness：happy → happiness（幸福）、aware → awareness（意识）。",
+    "formation": "动词/形容词 + 名词后缀（-tion, -ment, -ance, -ity, -ness等）",
+    "examples": [
+      {
+        "translation": "她决定扩张业务。→ 我们扩大公司规模的决定……"
+      },
+      {
+        "translation": "他发现了…… → 他对该错误的发现……"
+      }
+    ]
+  },
+  "en_c1_15": {
+    "title": "学术文本中的名词化（Nominalization）",
+    "shortExplanation": "将动词或从句转换为名词短语，使语言更加精炼、客观并富有学术色彩。",
+    "longExplanation": "名词化是指将动词、形容词或整个从句转换为名词或名词短语的语言现象。其主要功能包括：\n1. 浓缩信息：避免冗长的复合从句，大幅提升信息密度（如将'物价大幅上涨'表达为'物价的显著上涨'）。\n2. 便于添加修饰成分：能够在名词前后灵活添加定语进行严谨界定。\n3. 营造客观严谨的学术基调：弱化第一人称主观色彩，凸显客观研究事实。",
+    "formation": "谓语从句/动词短语 → 名词短语（例如：The fact that prices increased → The increase in prices...）",
+    "examples": [
+      {
+        "translation": "空气质量有了显著的改善。"
+      },
+      {
+        "translation": "他拒绝发表评论让所有人都感到意外。"
+      }
+    ]
+  },
+  "en_c1_16": {
+    "title": "现在分词短语：V-ing 分词从句（Present participle clause）",
+    "shortExplanation": "使用现在分词（V-ing）短语简化状语从句，表达伴随动作、同时发生或原因。",
+    "longExplanation": "当状语从句与主句主语一致时，可用现在分词（V-ing）短语进行简化：\n• 表示动作同时发生：Walking home, I noticed something strange.（= 在走回家的路上，我注意到了一些异常情况）\n• 表示原因：Knowing the answer, she raised her hand.（= 因为知道答案，她举起了手）\n• 注意避免悬垂分词错误：分词短语的逻辑主语必须严格与主句主语保持一致。",
+    "formation": "现在分词（V-ing）+ ……，主语 + 谓语…… / 否定形式：Not + V-ing + ……，主语 + 谓语……",
+    "examples": [
+      {
+        "translation": "一到达机场，他就意识到自己忘了带护照。"
+      },
+      {
+        "translation": "不知该如何是好，她便给母亲打了电话。"
+      }
+    ]
+  },
+  "en_c1_17": {
+    "title": "过去分词短语：V3 / Having + V3 从句（Past participial phrase）",
+    "shortExplanation": "过去分词表被动含义，Having + V3 则强调分词动作先于主句动作完成。",
+    "longExplanation": "使用过去分词或完成分词短语可以使书面表达更加简洁优雅：\n• 过去分词短语（V-ed/V3）：表示被动含义或完成状态（例如：Built in 1889, the Eiffel Tower... = 埃菲尔铁塔建于1889年……）。\n• 完成分词短语（Having + V3）：明确强调该动作在主句谓语动作发生之前就已经结束（例如：Having read the report, he called a meeting. = 读完报告后，他召集了会议）。",
+    "formation": "过去分词（V-ed/V3）+ ……，主语 + 谓语…… 或 Having + 过去分词（V-ed/V3）+ ……，主语 + 谓语……",
+    "examples": [
+      {
+        "translation": "听到这个消息感到十分震惊，她默默地坐了下来。"
+      },
+      {
+        "translation": "完成考试后，学生们便离开了考场。"
+      }
+    ]
+  },
+  "en_c2_01": {
+    "title": "含 unless / provided / as long as / on condition that 的条件句",
+    "shortExplanation": "替代 'if' 引导条件从句，表达除非、只要或以……为前提等严格限定条件。",
+    "longExplanation": "在高级英语中，常用特定连词替代 if 来表达更精确的条件关系：\n• unless = 除非、如果不（相当于 if not，其引导的从句本身含否定意味，从句谓语不可再用否定式）。\n• provided / providing (that) = 只要、在……条件下（强调必要前提条件）。\n• as long as = 只要（强调条件的持续性或前提假设）。\n• on condition that = 在……条件下（语体极为正式，常用于合同或书面协议）。\n• in case = 以防、万一。",
+    "formation": "条件连词（Unless / Provided / As long as / On condition that）+ 条件从句，主句",
+    "examples": [
+      {
+        "translation": "只要你保证按时还钱，我就把钱借给你。"
+      },
+      {
+        "translation": "你可以使用我的笔记本电脑，前提是不能下载任何内容。"
+      }
+    ]
+  },
+  "en_c2_02": {
+    "title": "Suppose / Supposing / What if 引导的假设问句",
+    "shortExplanation": "用于提出假设性问题、推测未知情况或邀请对方设想某种情境。",
+    "longExplanation": "用于构建假设情境的句型结构：\n• Suppose / Supposing：相当于 if，常用于引导假设性、探讨性的设问。\n• What if：更为口语化的表达方式，意思是'要是……怎么办？'或'如果……会怎样？'。\n• 搭配一般过去时或过去完成时：表示与现实相反或极不可能发生的纯假设情况。",
+    "formation": "Suppose / Supposing / What if + 主语 + 谓语动词（过去时或现在时）……，疑问句分句？",
+    "examples": [
+      {
+        "translation": "假定你必须做出选择——你会选哪一个？"
+      },
+      {
+        "translation": "要是没有人来怎么办？我们该采取什么措施？"
+      }
+    ]
+  },
+  "en_c2_03": {
+    "title": "Only + 状语置于句首的倒装结构",
+    "shortExplanation": "将含有 'Only' 的时间、条件或方式状语置于句首以示强调，主句必须进行部分倒装。",
+    "longExplanation": "当以 Only 开头的时间、条件或方式状语（如 only when, only after, only if, only then, only by, only in）置于句首以突出重点时，主句必须采用部分倒装（将助动词、情态动词或 be 动词置于主语之前）。\n这是正式书面语和公众演讲中最具感染力与修辞力量的句式之一。",
+    "formation": "Only + 状语（时间/条件/方式）+ 助动词/情态动词/be动词 + 主语 + 谓语主要动词……",
+    "examples": [
+      {
+        "translation": "唯有亲身经历过，你才能真正体会与理解。"
+      },
+      {
+        "translation": "历经数年的刻苦练习之后，她才真正掌握了这门技能。"
+      }
+    ]
+  },
+  "en_c2_04": {
+    "title": "So + 形容词/副词 引起的倒装结构",
+    "shortExplanation": "将 'So + 形容词/副词' 或 'Such' 提前到句首以强化程度，引导表示结果的倒装句。",
+    "longExplanation": "属于典雅的书面语与演说修辞风格：\n• So + 形容词/副词 + be动词/助动词 + 主语 + that + 结果从句（程度剧烈到如此地步，以至于……）。\n• Such + be动词 + 主语 + that + 结果从句（情况严重/程度重大到如此地步，以至于……）。",
+    "formation": "So + 形容词/副词 + be动词/助动词 + 主语 + that + 从句 或 Such + be动词 + 主语 + that + 从句",
+    "examples": [
+      {
+        "translation": "变革来得如此迅猛，以至于没有任何人能够立刻适应。"
+      },
+      {
+        "translation": "她的才华极为出众，以至于直接获得了全额奖学金。"
+      }
+    ]
+  },
+  "en_c2_05": {
+    "title": "学术模糊限制语（Hedging）：appear to, seem to, tend to, be likely to",
+    "shortExplanation": "通过委婉弱化陈述的确定性，体现科学论述的审慎度与客观谦逊。",
+    "longExplanation": "模糊限制语是学术写作中不可或缺的表达策略，旨在避免主观武断，保持严谨审慎的学术态度。\n常用核心结构包括：\n• appear / seem to：似乎、表面看来\n• tend to：倾向于、往往容易\n• be likely / unlikely to：很可能 / 极不可能\n• be thought / considered to be：被认为、被视作",
+    "formation": "主语 + appear / seem / tend + 动词不定式（to + 动词原形）或 主语 + be likely / thought / considered + 动词不定式（to + 动词原形）",
+    "examples": [
+      {
+        "translation": "实验结果似乎表明两者之间存在某种关联性。"
+      },
+      {
+        "translation": "企业往往容易低估方案的落地实施成本。"
+      }
+    ]
+  },
+  "en_c2_06": {
+    "title": "学术文本中的语篇标记词（Discourse markers）",
+    "shortExplanation": "连接各逻辑层面的衔接词，用于梳理学术论证脉络并增强行文逻辑性。",
+    "longExplanation": "语篇标记词在学术文本中用于构建逻辑骨架，引导读者的思维走向：\n• 递进与补充：Moreover, Furthermore, In addition, Additionally（此外、而且、并且）\n• 转折与对比：However, Nevertheless, Conversely, On the other hand（然而、尽管如此、相反、另一方面）\n• 因果与推论：Therefore, Consequently, As a result, Hence, Thus（因此、由此、结果表明）\n• 解释与阐明：In other words, That is to say, Namely（换句话说、也就是说、即）\n• 让步与限定：Admittedly, While it is true that, Despite this（诚然、虽然确实如此、尽管如此）",
+    "formation": "语篇标记词（句首）+ 逗号 + 独立句子 或 句子1；语篇标记词，句子2",
+    "examples": [
+      {
+        "translation": "实验失败了。尽管如此，所获得的研究发现依然极具启发意义。"
+      },
+      {
+        "translation": "此外，各项数据均显示出极强的正相关性。"
+      }
+    ]
+  },
+  "en_c2_07": {
+    "title": "语言语体（Speech registers）：正式、中性、口语",
+    "shortExplanation": "根据交际场合、受众群体与交流目的，准确选取适宜的词汇与句式层次。",
+    "longExplanation": "语体风格由语境、交流对象和表达目的共同决定：\n• 正式语体：大量运用被动语态、名词化结构、复合连词、无缩略形式，偏好拉丁源动词（如 commence, terminate, assist）。\n• 中性语体：遵循规范语法，不包含俚语，采用通用得体的标准表达。\n• 口语语体：多用省略句、短语动词（如用 put off 代替 postpone）、缩略词以及口语熟语。",
+    "formation": "正式语体（学术词汇、被动语态、完整书写）↔ 中性语体（规范日常表达）↔ 口语语体（短语动词、缩略形式、口语俚俗）",
+    "examples": [
+      {
+        "translation": "正式语体：我想提请阁下注意此处存在的一处差异。"
+      },
+      {
+        "translation": "中性语体：我想指出这里的一个错误。"
+      },
+      {
+        "translation": "口语语体：就是想顺便提醒你注意一下这事。"
+      }
+    ]
+  },
+  "en_c2_08": {
+    "title": "同义词内涵意义与感情色彩（Connotations）",
+    "shortExplanation": "辨析同义词在感情色彩（褒义、中性、贬义）及细微语义上的明暗层次。",
+    "longExplanation": "同义词尽管概念意义相近，但其所蕴含的感情色彩（内涵意义）和适用的语体风格存在显著差异。\n典型梯度对比示例：\n• slim（苗条：褒义）→ thin（消瘦：中性）→ skinny（皮包骨：贬义）→ scrawny/gaunt（骨瘦如柴/憔悴干瘪：极贬义）\n• determined（坚定执着：褒义）→ firm（坚决稳重：中性）→ stubborn/pig-headed（顽固不化/死脑筋：贬义）\n• thrifty（节俭善持家：褒义）→ economical（节约算计：中性）→ stingy/tight-fisted（吝啬小气：贬义）\n• confident（自信昂扬：褒义）→ assertive（笃定果敢：中性）→ arrogant（傲慢狂妄：贬义）",
+    "formation": "同义词序列：褒义倾向（+）→ 中性基调（0）→ 贬义倾向（-）",
+    "examples": [
+      {
+        "translation": "描述同一客观体态却体现完全不同的情感倾向：她很苗条（+）/ 她很瘦（0）/ 她骨瘦如柴（-）。"
+      }
+    ]
+  },
+  "en_c2_09": {
+    "title": "修辞手法：首语从复、交错配列、三句式（Rhetorical devices）",
+    "shortExplanation": "经典修辞格，赋予语言节奏美感与感染力，广泛运用于公共演说与政论散文。",
+    "longExplanation": "高级英语写作与公众演说中常用的经典修辞手法：\n• 首语从复：在连续的句子或从句开头重复相同的词句，层层递进以强化情感力量（例如：'I have a dream... I have a dream...'）。\n• 交错配列：采用 AB-BA 的交叉对称句式，产生哲理思辨的对照张力（例如：'Ask not what your country can do for you, but what you can do for your country'）。\n• 三句式（三分法）：由三个并列的排比要素构成平衡对称的节律（例如凯撒名言 'Veni, vidi, vici' 我来，我见，我征服；林肯演说 '民有、民治、民享的政府'）。",
+    "formation": "首语从复（句首连续重复 A...）/ 交错配列（A-B 对照 B-A）/ 三句式排比（并列三要素 A, B, C）",
+    "examples": [
+      {
+        "translation": "朋友们，罗马同胞们，乡亲们，请听我说。（经典三句式排比）"
+      },
+      {
+        "translation": "学得越多，赚得越多。（民间谚语中的交错对称句式）"
+      }
+    ]
+  },
+  "en_c2_10": {
+    "title": "学术文本中的精准词语搭配（Academic collocations）",
+    "shortExplanation": "掌握符合学术规范的固定动宾搭配与习惯用语，确保行文地道严谨。",
+    "longExplanation": "在高级英语表达中，特定学术名词往往有其约定俗成的标准搭配动词：\n常见学术核心搭配：\n• conduct / carry out research（开展研究；切忌使用 make 或 do）\n• draw / reach a conclusion（得出结论）\n• raise / address / tackle an issue（提出/正视/解决问题）\n• reach / achieve a consensus（达成共识）\n• make significant progress（取得显著进展）\n• pose / present a challenge（构成严峻挑战）",
+    "formation": "规范学术动词 + 相应核心名词（例如：conduct research, reach a consensus...）",
+    "examples": [
+      {
+        "translation": "研究人员展开了极其广泛的深度访谈。"
+      },
+      {
+        "translation": "委员会最终未能就该议题达成共识。"
+      }
+    ]
+  },
+  "en_c2_11": {
+    "title": "分词独立主格结构（Absolute construction）",
+    "shortExplanation": "由名词/代词与分词构成的独立状语结构，无需连词即可简洁交代背景情境。",
+    "longExplanation": "独立主格结构（分词独立结构）= 名词/代词 + 分词短语（拥有独立于主句的逻辑主语）。\n常用于正式书面文体中，能够在不依赖从属连词的前提下，极其凝练地提供时间、原因、条件或伴随状况等背景信息。\n典型类别解析：\n• 条件背景：Weather permitting = 如果天气情况允许\n• 综合评述：All things considered = 全面综合权衡之后\n• 时间与完成：Her work finished = 当她的工作完成之后；This done = 此事办妥之后",
+    "formation": "名词/代词 + 现在分词（V-ing）或 过去分词（V-ed/V3），主句",
+    "examples": [
+      {
+        "translation": "综合所有因素来看，这依然是一场非常成功的活动。"
+      },
+      {
+        "translation": "由于截止日期已过，该项目遗憾被取消了。"
+      }
+    ]
+  },
+  "en_c2_12": {
+    "title": "语篇中的省略与替代（Ellipsis & Substitution）",
+    "shortExplanation": "省略已知多余成分或运用代词、助动词进行替代，使语篇紧凑连贯、自然流畅。",
+    "longExplanation": "省略与替代是构建语篇衔接、避免机械重复的关键语言手段：\n• 省略：略去前文已明确交代过的信息成分（例如：I wanted to leave, but wasn't allowed to [leave] 省略了动词原形）。\n• 替代：使用 do, so, one, it 等简短代用词来指代先前出现过的名词、动词短语或整个命题。\n常见类型展示：\n• 对话简答省略：A: Are you coming? B: Might (do).\n• 并列替代：She speaks French and he does too / so does he.\n• 名词单复数替代：The big one? I prefer the small one.",
+    "formation": "前置陈述句子 + 连词/对话回应 + [省去重合成分 或 使用 do / so / one / to 进行替代]",
+    "examples": [
+      {
+        "translation": "你会开车吗？——我过去会开（现在不开好多年了）。"
+      },
+      {
+        "translation": "她曾说过自己会准时来这儿，她确实来了。"
+      }
+    ]
+  },
+  "en_c2_13": {
+    "title": "不定式短语代替从句",
+    "shortExplanation": "使用动词不定式短语替代宾语从句或状语从句，使句子结构更加紧凑精炼。",
+    "longExplanation": "复合宾语结构（宾语 + 动词不定式）常用于替代由从属连词引导的完整从句：\n• 表示意愿、要求的动词 + 宾语 + 动词不定式（带 'to'）：例如表达'想要某人留下'。\n• 在感官动词与使役动词（如看见、听见、注视、让、迫使等）后：主动语态中省略 'to'，使用不带 'to' 的动词原形，例如'看见她离开'、'使他哭泣'、'让我来帮忙'。\n• 使役动词变为被动语态时：必须恢复使用带 'to' 的不定式，例如'他被迫付款'。\n• 主语补足语结构（接在看似、显得、碰巧、证明是等表象动词后）+ 带 'to' 的不定式：例如'她似乎知情'、'他碰巧在场'。",
+    "formation": "主语 + 谓语动词 + 宾语 + 动词不定式（带 'to' / 不带 'to'）或 主语 + 表象动词 + 动词不定式（带 'to'）",
+    "examples": [
+      {
+        "translation": "我需要你在这份文件上签字。"
+      },
+      {
+        "translation": "她被迫公开道歉。"
+      },
+      {
+        "translation": "他似乎把一切都忘了。"
+      }
+    ]
+  },
+  "en_c2_14": {
+    "title": "将来完成进行时",
+    "shortExplanation": "强调某一动作持续进行，一直延续到未来某一特定时刻的时间长度。",
+    "longExplanation": "将来完成进行时用于着重强调某一动作持续至未来某个时间点的时间长度或不间断性，通常回答'到那时为止已经进行了多久？'这一问题。\n常与表示时间界限或持续时长的状语连用（如'到……为止'、'持续……时间'、'当……时'）：例如'到下周一为止，她参与该项目的工作就满三周了'。",
+    "formation": "主语 + will have been + 动词现在分词（'-ing' 形式）",
+    "examples": [
+      {
+        "translation": "到明年，我学习英语就满五年了。"
+      },
+      {
+        "translation": "等我们到达时，她就已经等了两个小时了。"
+      }
+    ]
+  },
+  "en_c2_15": {
+    "title": "时态呼应（复合句中的时态一致）",
+    "shortExplanation": "复合句中从句谓语动词根据主句过去时态进行的相应时态调整与呼应。",
+    "longExplanation": "在主从复合句中，从句的谓语动词时态须受主句动词时态的制约。\n当主句谓语动词使用过去时态时，从句动词通常需要向过去推移一个时态（时态后退）：\n• 一般现在时变为一般过去时（例如：他说那是真的）。\n• 一般过去时变为过去完成时（例如：她说她曾见过）。\n• 现在完成时变为过去完成时（例如：他说他已经完成了）。\n• 情态动词与助动词相应变为过去式（will 变为 would，can 变为 could，may 变为 might，is 变为 was 等）。\n*注意例外：当从句表述客观真理、科学事实或普遍规律时，时态不作改变，依然保持一般现在时。",
+    "formation": "主句（一般过去时） + 从句（相应后退的过去时态动词）",
+    "examples": [
+      {
+        "translation": "他告诉我他在那里已经住了很多年。"
+      },
+      {
+        "translation": "她说地球绕着太阳转。"
+      }
+    ]
+  },
+  "en_c2_16": {
+    "title": "并列连词",
+    "shortExplanation": "连接语法地位平等的单词、短语或独立分句的连词。",
+    "longExplanation": "并列连词用于连接句中具有同等语法地位和结构的成分。英语中最常见的7个基础并列连词：\n• for：意为'因为'（较正式，用于补充说明理由）：例如'她离开了，因为她累了'。\n• and：意为'和、并且'（表示并列与递进补充）。\n• nor：意为'也不'（连接否定分句，后接倒装语序）：例如'她没有打电话，也没有写信'。\n• but：意为'但是'（表示转折对比）。\n• or：意为'或者'（表示选择）。\n• yet：意为'然而、尽管如此'（比 but 更具书面语色彩的转折）。\n• so：意为'因此、所以'（表示结果）。",
+    "formation": "独立分句 + 逗号（,） + 并列连词（for, and, nor, but, or, yet, so） + 独立分句",
+    "examples": [
+      {
+        "translation": "她虽然很累，然而依然坚持工作。"
+      },
+      {
+        "translation": "他既没有复习功课，也没有去上课。"
+      }
+    ]
+  },
+  "en_c2_17": {
+    "title": "从属连词",
+    "shortExplanation": "用于引导从句并阐明从句与主句之间各种逻辑关系的连词。",
+    "longExplanation": "从属连词用于引导状语从句或名词性从句，表明从句与主句之间的逻辑从属关系。\n按表达语义分类：\n• 时间关系：当……时、在……期间、在……之后、在……之前、直到……、一旦……、一……就……、无论何时等\n• 原因关系：因为、既然、鉴于、考虑到等\n• 条件关系：如果、除非、只要、在……条件下、以防万一、假设等\n• 目的关系：为了、以便、唯恐、免得等\n• 让步与对比关系：虽然、尽管、而/反之、然而等",
+    "formation": "从属连词 + 从属从句 + 逗号（,） + 主句 或 主句 + 从属连词 + 从属从句",
+    "examples": [
+      {
+        "translation": "鉴于截止日期已过，我们取消了会议。"
+      },
+      {
+        "translation": "唯恐她遗忘，他给她发了一份提醒。"
+      }
+    ]
+  },
+  "en_c2_18": {
+    "title": "逗号、分号与冒号的用法",
+    "shortExplanation": "掌握英文标点符号中逗号、分号与冒号在连接分句、引出列表及解释说明时的规范用法。",
+    "longExplanation": "英文标点符号的核心用法规则：\n• 逗号（,）：位于连接两个独立分句的并列连词前；位于句首状语或引导短语之后（例如：'然而，她决定留下'）；用于项的列举与分隔（包括位于最后一个并列词之前的牛津逗号）。\n• 分号（;）：用于在无需连词的情况下，直接连接两个在语义上联系紧密的独立分句（例如：'她累了；她上床睡觉了'）。\n• 冒号（:）：用于引出清单列表、进一步的阐释说明或直接引用语。",
+    "formation": "独立分句 + 逗号（,） + 并列连词 + 独立分句 或 独立分句 + 分号（;） + 独立分句 或 完整句子 + 冒号（:） + 列表 / 解释说明",
+    "examples": [
+      {
+        "translation": "然而，结果并不确凿；仍需开展进一步的研究。"
+      },
+      {
+        "translation": "该公司拥有三大重点目标：效率、创新与可持续性。"
+      }
+    ]
+  },
+  "en_c2_19": {
+    "title": "破折号、撇号与引号的用法",
+    "shortExplanation": "掌握英文中破折号强调插入语、撇号表示缩写及所有格、以及引号用于直接引语的规范用法。",
+    "longExplanation": "破折号、撇号及引号的用法准则：\n• 破折号（—）：用于分隔并突显句中的插入语或补充说明，其强调语气比逗号更为强烈（例如：'该方案——尽管造价昂贵——被证明是行之有效的'）。\n• 撇号（'）：用于单词的缩写形式（如 it's 代替 it is，don't，they're 等）；以及用于名词所有格（如约翰的书、学生们的分数）。\n• 引号：用于标示直接引语或精确引文（美式英语习惯使用双引号 \" \"，英式英语则更常用单引号 ' '）。",
+    "formation": "原句成分 + 破折号（—） + 插入语/补充成分 + 破折号（—） 或 缩写词 / 名词 + 撇号（'） + 所有格成分 或 引号（\" \"） + 直接引语",
+    "examples": [
+      {
+        "translation": "该项目——于2020年启动——超越了所有的预期。"
+      },
+      {
+        "translation": "在使用之前检查它的各项设置是非常重要的。"
+      }
+    ]
+  },
+  "en_c2_20": {
+    "title": "学术文本中的间接疑问句",
+    "shortExplanation": "在学术写作中，直接疑问句通常转换为使用陈述语序的间接疑问句（疑问从句）。",
+    "longExplanation": "在学术论文与学术文本中，为保持客观严谨、正式庄重的文风，通常避免使用直接疑问句，而采用间接疑问句（名词性从句）来表述问题。\n间接疑问句属于从属分句，遵循陈述句的标准语序（即'主语 + 谓语'，不进行主谓倒装，也不借助助动词构成疑问语序）。\n常用引导词包括：表示'是否'的引导词，以及各类疑问词（什么、何处、何时、如何、为何、哪个等）。\n转换示例：'这组数据说明了什么？' → '核心问题在于这组数据说明了什么'。",
+    "formation": "主句 + 疑问词 / 是否引导词 + 主语 + 谓语动词（陈述语序）",
+    "examples": [
+      {
+        "translation": "我想知道该假设是否正确。"
+      },
+      {
+        "translation": "这项研究探讨了社交媒体如何对行为产生影响。"
+      }
+    ]
   }
 };

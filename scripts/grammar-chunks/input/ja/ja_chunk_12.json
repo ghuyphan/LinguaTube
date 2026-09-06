@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Verb_29",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て いく (Verb-te iku)",
+    "shortExplanation": "Expresses an action that continues on into the future or a change that progresses over time.",
+    "longExplanation": "The て いく grammar point is used to indicate that an action will continue or a change will progress into the future. It can be attached to the て-form of a verb and is often translated as 'to keep', 'to continue', or 'to go on' in English.",
+    "formation": "Verb in て-form + いく",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "このまま練習を続けていくと、上達するでしょう。",
+        "romanization": "Kono mama renshuu o tsuzukete iku to, joutatsu suru deshou.",
+        "translation": "If you keep practicing like this, you will improve."
+      },
+      {
+        "sentence": "彼は成長していくうちに、自立心が強くなった。",
+        "romanization": "Kare wa seichou shite iku uchi ni, jiritsushin ga tsuyoku natta.",
+        "translation": "As he grew up, his independence became stronger."
+      },
+      {
+        "sentence": "この会社はこれからも技術革新を行っていくでしょう。",
+        "romanization": "Kono kaisha wa korekara mo gijutsu kakushin o okonatte iku deshou.",
+        "translation": "This company will continue to innovate in technology in the future."
+      },
+      {
+        "sentence": "子供たちはどんどん学んでいく。",
+        "romanization": "Kodomo-tachi wa dondon manande iku.",
+        "translation": "Children will keep learning more and more."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_30",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ていただきたい (te itadakitai)",
+    "shortExplanation": "Express a polite request or desire that someone does something for you.",
+    "longExplanation": "The ていただきたい grammar point is used to express a polite request or a desire for someone to do something for you. It is formed by attaching いただきたい to the て-form of the verb. It is more polite than the て-form + ほしい construction.",
+    "formation": "Verb-て form + いただきたい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "資料をコピーしていただきたいです。",
+        "romanization": "Shiryou wo kopii shite itadakitai desu.",
+        "translation": "I would like you to make copies of the documents."
+      },
+      {
+        "sentence": "この仕事を手伝っていただきたいのですが。",
+        "romanization": "Kono shigoto wo tetsudatte itadakitai no desu ga.",
+        "translation": "I would like to ask for your assistance with this work."
+      },
+      {
+        "sentence": "もしよろしければ、指導していただきたいです。",
+        "romanization": "Moshi yoroshikereba, shidou shite itadakitai desu.",
+        "translation": "If it is not too much trouble, I would like you to guide me."
+      },
+      {
+        "sentence": "駅まで送っていただきたいんですが。",
+        "romanization": "Eki made okutte itadakitain desu ga.",
+        "translation": "I was wondering if you could give me a ride to the station."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_31",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ていただく (〜te itadaku)",
+    "shortExplanation": "Used to express receiving someone's favor or help; 'to kindly do'.",
+    "longExplanation": "The ～ていただく grammar point is used to express that someone has kindly done a favor or provided help. It is a more polite and humble way of saying that you received someone's help. The formation is created by attaching the て-form of the verb + いただく.",
+    "formation": "Verb-て form + いただく",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "メールを送っていただいて、ありがとうございます。",
+        "romanization": "Meeru o okutte itadaite, arigatou gozaimasu.",
+        "translation": "Thank you for kindly sending the email."
+      },
+      {
+        "sentence": "荷物を運んでいただいて、助かりました。",
+        "romanization": "Nimotsu o hakonde itadaite, tasukarimashita.",
+        "translation": "You really helped me by carrying the luggage."
+      },
+      {
+        "sentence": "資料をチェックしていただきたいです。",
+        "romanization": "Shiryou o chekku shite itadakitai desu.",
+        "translation": "I would like you to kindly check the documents."
+      },
+      {
+        "sentence": "先生にアドバイスをしていただきました。",
+        "romanization": "Sensei ni adobaisu o shite itadakimashita.",
+        "translation": "The teacher kindly gave me advice."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_32",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て いただけませんか (Verb te itadakemasen ka)",
+    "shortExplanation": "A polite request; 'Could you please...', 'Would you mind...'",
+    "longExplanation": "The て いただけませんか grammar point is used to make a polite request to someone. It is a more polite form of て くれませんか, and can be translated as 'Could you please...' or 'Would you mind...' in English. To use it, change the verb to its て-form and add いただけませんか.",
+    "formation": "Verb-て form + いただけませんか",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "この手紙を投函していただけませんか。",
+        "romanization": "Kono tegami wo toukan shite itadakemasen ka.",
+        "translation": "Could you please mail this letter for me?"
+      },
+      {
+        "sentence": "この荷物を持っていただけませんか。",
+        "romanization": "Kono nimotsu wo motte itadakemasen ka.",
+        "translation": "Could you please carry this luggage for me?"
+      },
+      {
+        "sentence": "隣の部屋にいる人に静かにしていただけませんか。",
+        "romanization": "Tonari no heya ni iru hito ni shizuka ni shite itadakemasen ka.",
+        "translation": "Could you please ask the person next door to be quiet?"
+      },
+      {
+        "sentence": "説明書を読んでいただけませんか。",
+        "romanization": "Setsumeisho wo yonde itadakemasen ka.",
+        "translation": "Could you please read the instruction manual?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_33",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て いる (Verb-te iru)",
+    "shortExplanation": "Expresses an ongoing action or a state resulting from a past action.",
+    "longExplanation": "The ている form is used to express either an ongoing action or a state resulting from a past action. It is formed by conjugating the verb into its て-form and then adding いる. In English, this can be translated as verb-ing or 'have verb-ed'. Its usage depends on the type of verb: action verbs or state verbs.",
+    "formation": "Verb (て-form) + いる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "今、本を読んでいます。",
+        "romanization": "Ima, hon wo yonde imasu.",
+        "translation": "I am reading a book now."
+      },
+      {
+        "sentence": "彼は英語を勉強しています。",
+        "romanization": "Kare wa eigo wo benkyou shite imasu.",
+        "translation": "He is studying English."
+      },
+      {
+        "sentence": "ケーキが冷蔵庫に入っています。",
+        "romanization": "Keeki ga reizouko ni haitte imasu.",
+        "translation": "The cake is in the refrigerator."
+      },
+      {
+        "sentence": "部屋がきれいになっています。",
+        "romanization": "Heya ga kirei ni natte imasu.",
+        "translation": "The room has become clean."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_34",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て いる ところ (Verb te iru tokoro)",
+    "shortExplanation": "Describes an action that is currently happening; 'in the middle of', 'in the process of'.",
+    "longExplanation": "The て いる ところ grammar point is used to express an action that is currently happening or taking place. It can be translated as 'in the middle of' or 'in the process of' in English. It is formed by using the て-form of a verb followed by いる and ところ.",
+    "formation": "Verb-て form + いる ところ",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は宿題をしているところです。",
+        "romanization": "Kare wa shukudai wo shite iru tokoro desu.",
+        "translation": "He is in the middle of doing his homework."
+      },
+      {
+        "sentence": "私たちは映画を見ているところでした。",
+        "romanization": "Watashitachi wa eiga wo mite iru tokoro deshita.",
+        "translation": "We were in the process of watching a movie."
+      },
+      {
+        "sentence": "子供たちは公園で遊んでいるところです。",
+        "romanization": "Kodomotachi wa kouen de asonde iru tokoro desu.",
+        "translation": "The kids are in the middle of playing in the park."
+      },
+      {
+        "sentence": "彼女はケーキを作っているところで、すぐ来ます。",
+        "romanization": "Kanojo wa keeki wo tsukutte iru tokoro de, sugu kimasu.",
+        "translation": "She is in the process of making a cake and will come soon."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_35",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ている間に (te iru aida ni)",
+    "shortExplanation": "Expresses 'while' or 'during the time' something is happening.",
+    "longExplanation": "The ～ている間に grammar point is used to express that an action or event occurs during the time another action or event is happening. It is often translated to 'while' or 'during the time' in English. It is formed by combining the て-form of a verb with いる and adding 間に.",
+    "formation": "Verb-て form + いる + 間に",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "映画を見ている間に、彼は寝てしまった。",
+        "romanization": "Eiga o mite iru aida ni, kare wa nete shimatta.",
+        "translation": "While watching the movie, he fell asleep."
+      },
+      {
+        "sentence": "子供が遊んでいる間に、私は料理を作ります。",
+        "romanization": "Kodomo ga asonde iru aida ni, watashi wa ryouri o tsukurimasu.",
+        "translation": "While the children are playing, I'll cook."
+      },
+      {
+        "sentence": "会議が行われている間に、雨が降り始めた。",
+        "romanization": "Kaigi ga okonawarete iru aida ni, ame ga furihajimeta.",
+        "translation": "While the meeting was being held, it started raining."
+      },
+      {
+        "sentence": "彼が仕事をしている間に、私たちは買い物に行く。",
+        "romanization": "Kare ga shigoto o shite iru aida ni, watashitachi wa kaimono ni iku.",
+        "translation": "While he is working, we'll go shopping."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_36",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ておく (〜te oku)",
+    "shortExplanation": "Perform an action in preparation for a future situation; 'to do something in advance'.",
+    "longExplanation": "The ～ておく grammar point is used when you want to express performing an action in preparation for a future situation or to do something in advance. It is attached to the te-form of a verb and expresses the idea of doing something beforehand, as a preparatory action.",
+    "formation": "Verb-て form + おく",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "駅で切符を買っておこう。",
+        "romanization": "Eki de kippu wo katte okou.",
+        "translation": "Let's buy the tickets in advance at the station."
+      },
+      {
+        "sentence": "明日早く起きるために、今晩早く寝ておきます。",
+        "romanization": "Ashita hayaku okiru tame ni, konban hayaku nete okimasu.",
+        "translation": "I will go to bed early tonight to wake up early tomorrow."
+      },
+      {
+        "sentence": "試験前に勉強しておかないと、失敗するかもしれない。",
+        "romanization": "Shiken mae ni benkyou shite okanai to, shippai suru kamo shirenai.",
+        "translation": "If I don't study in advance before the exam, I might fail."
+      },
+      {
+        "sentence": "彼が到着する前に、部屋をきれいに掃除しておきましょう。",
+        "romanization": "Kare ga touchaku suru mae ni, heya wo kirei ni souji shite okimashou.",
+        "translation": "Let's clean the room before he arrives."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_37",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て くださいませんか (Verb-te kudasaimasen ka)",
+    "shortExplanation": "Polite request for asking someone for a favor.",
+    "longExplanation": "The て くださいませんか grammar point is a polite way of asking someone for a favor or requesting them to do something. It is more formal than the simple て form followed by ください, and it is commonly used in more formal settings or when speaking to someone who is not close.",
+    "formation": "Verb in て-form + くださいませんか",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "コーヒーを飲んでくださいませんか。",
+        "romanization": "Koohii o nonde kudasaimasen ka.",
+        "translation": "Would you please drink some coffee?"
+      },
+      {
+        "sentence": "ドアを閉めてくださいませんか。",
+        "romanization": "Doa o shimete kudasaimasen ka.",
+        "translation": "Would you please close the door?"
+      },
+      {
+        "sentence": "明日お昼に会ってくださいませんか。",
+        "romanization": "Ashita ohiru ni atte kudasaimasen ka.",
+        "translation": "Would you please meet me at lunch tomorrow?"
+      },
+      {
+        "sentence": "その資料を送ってくださいませんか。",
+        "romanization": "Sono shiryou o okutte kudasaimasen ka.",
+        "translation": "Would you please send me that document?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_38",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て くださる (Verb-te kudasaru)",
+    "shortExplanation": "Expresses gratitude for receiving someone's favor; 'to kindly do'.",
+    "longExplanation": "The て くださる grammar point is used to express gratitude for receiving a favor or action from someone else. It is an honorific way to say that someone kindly does something for the speaker or the listener. The verb is conjugated to its ～て form and followed by くださる.",
+    "formation": "Verb て-form + くださる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "先生が手伝ってくださる。",
+        "romanization": "Sensei ga tetsudatte kudasaru.",
+        "translation": "The teacher kindly helps."
+      },
+      {
+        "sentence": "お母さんが美味しい料理を作ってくださる。",
+        "romanization": "Okaasan ga oishii ryouri wo tsukutte kudasaru.",
+        "translation": "My mother kindly cooks delicious meals."
+      },
+      {
+        "sentence": "友達が私を駅まで送ってくださる。",
+        "romanization": "Tomodachi ga watashi wo eki made okutte kudasaru.",
+        "translation": "My friend kindly gives me a ride to the station."
+      },
+      {
+        "sentence": "部長がすぐに質問に答えてくださる。",
+        "romanization": "Buchou ga sugu ni shitsumon ni kotaete kudasaru.",
+        "translation": "The manager kindly answers the questions immediately."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_39",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て くる (Verb te kuru)",
+    "shortExplanation": "An action that starts in the past and continues to the present or future; 'come to', 'begin to', 'become'.",
+    "longExplanation": "The て くる grammar point is used to express an action that starts in the past and continues to the present or future. It can also show a change in state or condition. The formation involves attaching the て-form of the verb followed by くる.",
+    "formation": "Verb て-form + くる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "最近、日本語が分かってくるようになりました。",
+        "romanization": "Saikin, nihongo ga wakatte kuru you ni narimashita.",
+        "translation": "Recently, I've come to understand Japanese."
+      },
+      {
+        "sentence": "寒くなってきたので、コートを着ましょう。",
+        "romanization": "Samuku natte kita node, kooto wo kimashou.",
+        "translation": "Since it's gotten cold, let's put on a coat."
+      },
+      {
+        "sentence": "雨がやんできました。",
+        "romanization": "Ame ga yande kimashita.",
+        "translation": "The rain has stopped (and it's cleared up)."
+      },
+      {
+        "sentence": "彼がだんだん怖くなってきた。",
+        "romanization": "Kare ga dandan kowaku natte kita.",
+        "translation": "He has become progressively scarier."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_40",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てくれませんか (〜te kuremasen ka)",
+    "shortExplanation": "A polite way to request someone to do something for you; 'Could you please', 'Would you please', 'Won't you'.",
+    "longExplanation": "The ～てくれませんか grammar point is used to ask someone politely to do something for you. It is formed by using the て-form of a verb followed by くれませんか. It translates to 'Could you please', 'Would you please', or 'Won't you' in English.",
+    "formation": "Verb-て form + くれませんか",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "ドアを開けてくれませんか。",
+        "romanization": "Doa wo akete kuremasen ka.",
+        "translation": "Could you please open the door?"
+      },
+      {
+        "sentence": "これを見てくれませんか。",
+        "romanization": "Kore wo mite kuremasen ka.",
+        "translation": "Would you please take a look at this?"
+      },
+      {
+        "sentence": "手伝ってくれませんか。",
+        "romanization": "Tetsudatte kuremasen ka.",
+        "translation": "Won't you help me?"
+      },
+      {
+        "sentence": "明日、迎えに来てくれませんか。",
+        "romanization": "Ashita, mukae ni kite kuremasen ka.",
+        "translation": "Could you please come to pick me up tomorrow?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_41",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て くれる (Verb-te kureru)",
+    "shortExplanation": "Expresses that someone does something for the speaker (or another person in speaker's group); 'to do something for me/us'.",
+    "longExplanation": "The て くれる grammar point is used to express when someone does something for, or gives something to the speaker (or someone in the speaker's group). The action is usually done willingly or as a favor by the person performing the action. It is usually translated into English as 'to do something for me' or 'to give something to me'.",
+    "formation": "Verb-te form + くれる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "友達が宿題を手伝ってくれました。",
+        "romanization": "Tomodachi ga shukudai wo tetsudatte kuremashita.",
+        "translation": "My friend helped me with my homework."
+      },
+      {
+        "sentence": "弟が部屋を掃除してくれた。",
+        "romanization": "Otouto ga heya wo souji shite kureta.",
+        "translation": "My younger brother cleaned the room for me."
+      },
+      {
+        "sentence": "先生が質問に答えてくれます。",
+        "romanization": "Sensei ga shitsumon ni kotaete kuremasu.",
+        "translation": "The teacher answers my questions for me."
+      },
+      {
+        "sentence": "彼女が手紙を書いてくれる。",
+        "romanization": "Kanojo ga tegami wo kaite kureru.",
+        "translation": "She writes a letter for me."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_42",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て + さしあげる (Verb TE sashiageru)",
+    "shortExplanation": "A polite way to express giving or doing something for someone.",
+    "longExplanation": "The grammar point 'Verb て + さしあげる' is used to express the action of giving or doing something for someone in a polite manner. It is mainly used when the speaker is offering or doing something for someone of higher social status or showing respect towards the person. To form this expression, you need to conjugate the verb into its て-form and attach さしあげる.",
+    "formation": "Verb-てform + さしあげる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "お茶を入れてさしあげます。",
+        "romanization": "Ocha wo irete sashiagemasu.",
+        "translation": "I will prepare and serve tea (for you)."
+      },
+      {
+        "sentence": "メッセージを送ってさしあげました。",
+        "romanization": "Messeiji wo okutte sashiagemashita.",
+        "translation": "I have sent the message (for you)."
+      },
+      {
+        "sentence": "荷物を持ってさしあげましょうか。",
+        "romanization": "Nimotsu wo motte sashiagemashou ka.",
+        "translation": "Shall I carry the luggage (for you)?"
+      },
+      {
+        "sentence": "お電話をかけてさしあげます。",
+        "romanization": "Odenwa wo kakete sashiagemasu.",
+        "translation": "I will make a phone call (for you)."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_43",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てしまう (〜te shimau)",
+    "shortExplanation": "Expresses unintentional actions or actions with regrettable outcomes; 'to end up doing', 'to accidentally do'.",
+    "longExplanation": "The ～てしまう grammar point is used to indicate unintentional actions or actions with regrettable outcomes. It can often be translated as 'to end up doing' or 'to accidentally do' in English. The formation requires adding しまう to the て-form of a verb.",
+    "formation": "Verb-te form + しまう",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "ケーキを全部食べてしまった。",
+        "romanization": "Keeki wo zenbu tabete shimatta.",
+        "translation": "I ended up eating the whole cake."
+      },
+      {
+        "sentence": "宿題を忘れてしまいました。",
+        "romanization": "Shukudai wo wasurete shimaimashita.",
+        "translation": "I accidentally forgot my homework."
+      },
+      {
+        "sentence": "彼に秘密を言ってしまった。",
+        "romanization": "Kare ni himitsu wo itte shimatta.",
+        "translation": "I accidentally told him the secret."
+      },
+      {
+        "sentence": "値札を見ずに高い服を買ってしまった。",
+        "romanization": "Nefuda wo mizu ni takai fuku wo katte shimatta.",
+        "translation": "I ended up buying expensive clothes without looking at the price tag."
+      }
+    ]
+  }
+]

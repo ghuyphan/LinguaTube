@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_ようになった_115": {
+      "title": "～ようになった (〜you ni natta)",
+      "shortExplanation": "Diễn tả sự biến đổi về năng lực, thói quen hoặc trạng thái; từ 'chưa thể/chưa từng' trở thành 'đã có thể...', 'bắt đầu...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ようになった' biểu thị một quá trình biến đổi theo thời gian dẫn đến việc một khả năng mới được hình thành, một thói quen mới bắt đầu xuất hiện hoặc một trạng thái mới bắt đầu diễn ra. Khi kết hợp với động từ thể khả năng (như 読める, 食べられる), cấu trúc này mang nghĩa 'đã có thể làm được việc gì' (trước đây không làm được). Khi kết hợp với động từ chỉ thói quen hoặc hành động thông thường, nó mang nghĩa 'bắt đầu làm gì, dần dần có thói quen làm gì'.",
+      "formation": "Động từ thể từ điển / Động từ thể khả năng + ようになった",
+      "examples": [
+        {
+          "translation": "Anh ấy đã bắt đầu tự nấu ăn."
+        },
+        {
+          "translation": "Đứa bé đó đã bắt đầu biết đọc."
+        },
+        {
+          "translation": "Cuộc họp đã bắt đầu được tổ chức mỗi tuần một lần."
+        },
+        {
+          "translation": "Tôi đã bắt đầu hiểu được tiếng Nhật."
+        }
+      ]
+    },
+    "ja_ように言う_116": {
+      "title": "～ように言う (〜you ni iu)",
+      "shortExplanation": "Dùng để truyền đạt gián tiếp một chỉ thị, yêu cầu, nhắc nhở hoặc lời khuyên; 'bảo/nhắc ai đó hãy làm (hoặc đừng làm) gì'.",
+      "longExplanation": "Mẫu ngữ pháp '～ように言う' (cũng như các cách nói tương tự như ように頼む, ように伝える) được sử dụng trong câu tường thuật gián tiếp nhằm truyền đạt lại chỉ thị, yêu cầu, lời dặn dò hay lời khuyên của một người tới người khác. Cách diễn đạt này mang sắc thái mềm mỏng, lịch sự và nhẹ nhàng hơn nhiều so với việc trích dẫn trực tiếp thể mệnh lệnh.",
+      "formation": "Động từ thể từ điển + ように言う | Động từ thể ない + ように言う",
+      "examples": [
+        {
+          "translation": "Thầy giáo bảo tôi hãy học bài nhiều hơn."
+        },
+        {
+          "translation": "Cô ấy đã bảo anh ấy hãy chờ."
+        },
+        {
+          "translation": "Mẹ bảo tôi hãy dọn dẹp phòng."
+        },
+        {
+          "translation": "Thầy giáo đã bảo học sinh hãy đặt câu hỏi."
+        }
+      ]
+    },
+    "ja_らしい_117": {
+      "title": "～らしい (〜rashii)",
+      "shortExplanation": "Diễn tả thông tin nghe nói hoặc suy đoán dựa trên căn cứ gián tiếp khách quan; 'nghe nói là...', 'hình như...', 'có vẻ như...'.",
+      "longExplanation": "Trợ động từ '～らしい' dùng để diễn đạt thông tin mà người nói tiếp nhận được qua lời đồn, nghe ngóng từ người khác hoặc dựa trên các dấu hiệu, chứng cứ gián tiếp khách quan mà phán đoán ('nghe đồn là...', 'hình như là...'). Người nói tường thuật lại thông tin một cách khách quan mà không trực tiếp khẳng định tính xác thực tuyệt đối của sự việc.",
+      "formation": "Động từ thể thông thường + らしい | Tính từ đuôi い + らしい | Tính từ đuôi な (bỏ な) + らしい | Danh từ + らしい",
+      "examples": [
+        {
+          "translation": "Nghe nói anh ấy bị cúm."
+        },
+        {
+          "translation": "Nghe nói ngày mai tuyết sẽ rơi."
+        },
+        {
+          "translation": "Nghe nói nhà hàng này ngon lắm."
+        },
+        {
+          "translation": "Hình như cô ấy là bác sĩ."
+        }
+      ]
+    },
+    "ja_られた_118": {
+      "title": "～られた (〜rareta)",
+      "shortExplanation": "Thể bị động ở thì quá khứ; diễn tả hành động 'đã bị...', 'đã được...', chủ thể tiếp nhận tác động từ người hoặc sự việc khác.",
+      "longExplanation": "'～られた' là dạng quá khứ của trợ động từ bị động (〜れる / 〜られる). Cấu trúc này dùng để diễn tả rằng chủ ngữ đã chịu tác động từ một hành vi do đối tượng khác thực hiện. Trong tiếng Nhật, câu bị động có thể dùng để trần thuật khách quan ('được làm gì'), biểu thị sự phiền hà, thiệt hại đối với chủ thể ('bị làm sao'), hoặc thể bị động sai khiến (〜させられた: 'bị làm cho rung động, cảm động').",
+      "formation": "Động từ thể bị động (quá khứ): Động từ nhóm 1 (đổi đuôi hàng u sang hàng a) + れた | Động từ nhóm 2 (bỏ る) + られた | Động từ nhóm 3: された / 来られた",
+      "examples": [
+        {
+          "translation": "Cuốn sách này đã được rất nhiều người đọc."
+        },
+        {
+          "translation": "Anh ấy đã bị bạn bè lừa gạt."
+        },
+        {
+          "translation": "Hôm qua, ví tiền của tôi đã bị trộm mất."
+        },
+        {
+          "translation": "Cô ấy đã bị bộ phim làm cho vô cùng cảm động."
+        }
+      ]
+    },
+    "ja_ている_119": {
+      "title": "～ている (〜te iru)",
+      "shortExplanation": "Diễn tả hành động đang tiếp diễn hoặc trạng thái là kết quả của một hành vi đã hoàn thành; 'đang...', 'đang trong trạng thái...'.",
+      "longExplanation": "Cấu trúc '～ている' biểu thị các trạng thái ngữ nghĩa phong phú: với động từ tiếp diễn, nó diễn tả hành động đang xảy ra tại thời điểm nói ('đang làm gì'); với động từ chỉ sự thay đổi trạng thái, nó diễn tả hành động đã hoàn tất nhưng kết quả của nó vẫn còn lưu lại ở hiện tại ('đã hoàn tất và đang ở trạng thái đó'); khi kết hợp với thể bị động (như 開けられている, 食べられている), nó nhấn mạnh một trạng thái do hành vi của ai đó tạo ra và hiện trạng vẫn đang tồn tại.",
+      "formation": "Động từ thể て + いる",
+      "examples": [
+        {
+          "translation": "Cửa sổ đang được mở (ai đó đã mở và cửa vẫn đang mở)."
+        },
+        {
+          "translation": "Bánh ngọt đã bị ăn hết sạch rồi."
+        },
+        {
+          "translation": "Cô ấy đang ốm liệt giường."
+        },
+        {
+          "translation": "Bài tập về nhà đã được làm xong rồi."
+        }
+      ]
+    },
+    "ja_わけがない_120": {
+      "title": "～わけがない (〜wake ga nai)",
+      "shortExplanation": "Diễn tả sự phủ định tuyệt đối dựa trên lý lẽ, logic hoặc căn cứ chắc chắn; 'tuyệt đối không thể nào...', 'làm sao có chuyện...'.",
+      "longExplanation": "Mẫu ngữ pháp '～わけがない' (trong khẩu ngữ thường dùng '～わけない') được sử dụng khi người nói dựa trên lẽ thường, logic tự nhiên hoặc thông tin chắc chắn để khẳng định rằng một sự việc tuyệt đối không có lý do gì để xảy ra, không thể nào có chuyện như thế được. Khi kết hợp với thể phủ định (〜ないわけがない), cấu trúc mang nghĩa khẳng định mạnh mẽ ('chắc chắn là...').",
+      "formation": "Động từ thể thông thường + わけがない | Tính từ đuôi い + わけがない | Tính từ đuôi な + なわけがない | Danh từ + の/である/なわけがない",
+      "examples": [
+        {
+          "translation": "Làm sao có chuyện anh ấy lại nói ra những lời như thế được."
+        },
+        {
+          "translation": "Nhà hàng đó tuyệt đối không thể nào dở được."
+        },
+        {
+          "translation": "Cô ấy không đời nào lại không dịu dàng cả (chắc chắn cô ấy rất dịu dàng)."
+        },
+        {
+          "translation": "Làm sao có chuyện anh ấy không thi đỗ được chứ."
+        }
+      ]
+    },
+    "ja_わけだ_121": {
+      "title": "～わけだ (〜wake da)",
+      "shortExplanation": "Diễn tả một kết luận hợp lý, tất yếu sau khi đã hiểu rõ nguyên nhân, lý do; 'thảo nào mà...', 'hóa ra là vì vậy...', 'đương nhiên là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～わけだ' được sử dụng khi người nói nhận biết được một tình huống, nguyên nhân hay hoàn cảnh cụ thể, từ đó vỡ lẽ và hiểu ra lý do tại sao sự việc lại diễn ra như vậy ('thảo nào mà lại thế!', 'hóa ra là vậy!'). Nó thể hiện mối liên hệ nhân quả mang tính logic tự nhiên và hiển nhiên giữa nguyên nhân và kết quả.",
+      "formation": "Động từ thể thông thường + わけだ | Tính từ đuôi い + わけだ | Tính từ đuôi な + なわけだ | Danh từ + な/である/というわけだ",
+      "examples": [
+        {
+          "translation": "Anh ấy bị cảm. Thảo nào mà giọng lại khàn đặc như vậy."
+        },
+        {
+          "translation": "Hôm nay bận rộn suốt cả ngày. Thảo nào mà người mệt mỏi thế này."
+        },
+        {
+          "translation": "Anh Tanaka đã học hành rất nhiều. Thảo nào mà anh ấy đỗ kỳ thi."
+        },
+        {
+          "translation": "Cô ấy là con gái của một ca sĩ nổi tiếng. Thảo nào mà cô ấy hát hay đến vậy."
+        }
+      ]
+    },
+    "ja_わけではない_122": {
+      "title": "～わけではない (〜wake dewa nai)",
+      "shortExplanation": "Dùng để phủ định một phần, bác bỏ cách nhìn nhận phiến diện hoặc tuyệt đối hóa; 'không hẳn là...', 'không có nghĩa là...', 'không phải là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～わけではない' (trong khẩu ngữ thường nói '～わけじゃない') dùng để phủ định một phần nhận định, làm rõ rằng mặc dù tình hình có thể có nét giống như vậy nhưng không hoàn toàn đúng 100% như người khác mặc định hay suy diễn ('không hẳn là như thế'). Cấu trúc này rất hay kết hợp với '〜からといって' (chỉ vì... mà nói là...).",
+      "formation": "Động từ thể thông thường + わけではない | Tính từ đuôi い + わけではない | Tính từ đuôi な + なわけではない | Danh từ + な/である/のわけではない",
+      "examples": [
+        {
+          "translation": "Dù anh ấy bận rộn nhưng không có nghĩa là anh ấy không có bạn bè."
+        },
+        {
+          "translation": "Bộ phim này không hẳn là không hay, chỉ là không hợp gu của tôi thôi."
+        },
+        {
+          "translation": "Dù cô ấy đang ốm nhưng không phải là ngày nào cô ấy cũng nằm liệt giường."
+        },
+        {
+          "translation": "Dù anh ấy không học đại học nhưng không có nghĩa là anh ấy ngu ngốc."
+        }
+      ]
+    },
+    "ja_わけにはいかない_123": {
+      "title": "～わけにはいかない (〜wake ni wa ikanai)",
+      "shortExplanation": "Diễn tả việc không thể làm gì do ràng buộc bởi đạo đức, trách nhiệm xã hội, lương tâm hoặc tình thế; 'không thể nào...', 'không thể... được'.",
+      "longExplanation": "Mẫu ngữ pháp '～わけにはいかない' được dùng khi người nói muốn làm (hoặc không muốn làm) một việc, nhưng xét theo chuẩn mực đạo đức xã hội, nghĩa vụ, trách nhiệm hoặc hoàn cảnh khách quan thì không cho phép làm điều đó ('không thể làm như vậy được'). Khi dùng với thể phủ định '〜ないわけにはいかない', cấu trúc mang nghĩa 'buộc phải làm, không thể không làm' vì trách nhiệm hoặc lương tâm thôi thúc.",
+      "formation": "Động từ thể từ điển + わけにはいかない | Động từ thể ない + わけにはいかない",
+      "examples": [
+        {
+          "translation": "Tôi không thể nào ngủ ở một nơi như thế này được."
+        },
+        {
+          "translation": "Ngày mai thi rồi nên tôi không thể đi chơi được."
+        },
+        {
+          "translation": "Tôi không thể mua một món đồ đắt tiền đến mức này được."
+        },
+        {
+          "translation": "Vì thấy trong người không khỏe nên tôi không thể tham gia bữa tiệc được."
+        }
+      ]
+    },
+    "ja_わりには_124": {
+      "title": "～わりには (〜wari ni wa)",
+      "shortExplanation": "Diễn tả sự trái ngược, bất ngờ giữa tiêu chuẩn/điều kiện thực tế và kết quả; 'dù... nhưng...', 'so với... thì tương đối...'.",
+      "longExplanation": "Mẫu ngữ pháp '～わりには' dùng khi kết quả hoặc thực tế không tương xứng, thậm chí trái ngược với những gì người ta thường kỳ vọng từ mức độ, tiêu chuẩn hay điều kiện đã nêu ở vế trước ('so với tiêu chuẩn A thì kết quả B lại ngoài dự tính'). Cấu trúc này thường đi kèm sắc thái bất ngờ, ngạc nhiên của người nói.",
+      "formation": "Động từ thể thông thường + わりには | Tính từ đuôi い + わりには | Tính từ đuôi な + な/であるわりには | Danh từ + の/であるわりには",
+      "examples": [
+        {
+          "translation": "Cậu ấy tuy không học nhiều lắm nhưng điểm thi lại khá cao."
+        },
+        {
+          "translation": "Món ăn này trông vẻ ngoài tuy xấu nhưng hương vị lại rất ngon."
+        },
+        {
+          "translation": "Cô ấy so với tuổi đời còn trẻ thì trông rất chín chắn, điềm đạm nhỉ."
+        },
+        {
+          "translation": "Căn phòng này tuy chật hẹp nhưng tiền thuê lại đắt."
+        }
+      ]
+    },
+    "ja_んだって_125": {
+      "title": "～んだって (〜n datte)",
+      "shortExplanation": "Dùng trong hội thoại thân mật để truyền đạt lại thông tin, lời đồn nghe được từ người khác; 'nghe nói là...', 'bảo là... đấy'.",
+      "longExplanation": "Mẫu ngữ pháp '～んだって' là cách nói thân mật, suồng sã trong giao tiếp hàng ngày, kết hợp giữa thể giải thích '〜のだ (〜んだ)' và trợ từ trích dẫn thông tin gián tiếp 'って'. Nó được dùng để chia sẻ, thuật lại cho đối phương một thông tin mà mình vừa nghe ngóng được từ người khác ('nghe người ta bảo là... đấy').",
+      "formation": "Động từ thể thông thường + んだって | Tính từ đuôi い + んだって | Tính từ đuôi な + なんだって | Danh từ + なんだって",
+      "examples": [
+        {
+          "translation": "Nghe nói là anh ấy sẽ đi Tokyo đấy."
+        },
+        {
+          "translation": "Thấy bảo bộ phim này hay lắm đấy."
+        },
+        {
+          "translation": "Nghe nói cô ấy là ca sĩ nổi tiếng đấy."
+        },
+        {
+          "translation": "Nghe nói cảnh đêm ở nhà hàng kia đẹp lắm đấy."
+        }
+      ]
+    },
+    "ja_んだもん_126": {
+      "title": "～んだもん (〜nda mon)",
+      "shortExplanation": "Dùng trong văn nói thân mật để nêu lý do, phân trần hoặc biện bạch mang tính giãi bày, nũng nịu; 'tại vì... mà', 'bởi vì... đấy thôi'.",
+      "longExplanation": "'～んだもん' (hoặc dạng đầy đủ '〜のだもの', dạng rút gọn '〜もん') là cách nói rất thân mật trong khẩu ngữ, thường được phụ nữ và trẻ em sử dụng (cũng rất phổ biến giữa bạn bè thân thiết). Nó dùng để đưa ra lý do nhằm giải thích, biện hộ, phân trần hoặc nũng nịu về một hành động, quyết định hay cảm xúc của bản thân ('tại vì như thế mà!').",
+      "formation": "Động từ thể thông thường + んだもん | Tính từ đuôi い + んだもん | Tính từ đuôi な + なんだもん | Danh từ + なんだもん",
+      "examples": [
+        {
+          "translation": "Tại tôi đến muộn mà, xin lỗi nhé."
+        },
+        {
+          "translation": "Tại vì ngon quá mà, cho tôi ăn thêm chút nữa đi."
+        },
+        {
+          "translation": "Tại vì tôi mệt mỏi quá mà, muốn đi ngủ sớm thôi."
+        },
+        {
+          "translation": "Tại vì cậu ấy là bạn bè mà, làm sao tôi có thể không giúp được chứ."
+        }
+      ]
+    },
+    "ja_上げる_127": {
+      "title": "～上げる (〜ageru)",
+      "shortExplanation": "Biểu thị việc hoàn thành trọn vẹn, rốt ráo một hành động sau khi đã bỏ ra nỗ lực hoặc thời gian; 'làm xong...', 'hoàn tất...'.",
+      "longExplanation": "Cấu trúc bổ trợ '～上げる' gắn vào sau thân động từ (thể ます bỏ ます) để diễn tả một hành vi, công việc đòi hỏi nỗ lực, thời gian hoặc sự tập trung cuối cùng đã được hoàn thành xong xuôi, trọn vẹn đến đích (như 書き上げる: viết xong, 作り上げる: hoàn thành tác phẩm, やり上げる: làm xong xuôi).",
+      "formation": "Động từ thể ます (bỏ ます) + 上げる",
+      "examples": [
+        {
+          "translation": "Tôi không thể đi ngủ cho tới khi viết xong bản báo cáo này."
+        },
+        {
+          "translation": "Cô ấy lập tức bắt tay vào dọn phòng và đã hoàn tất việc dọn dẹp trong vòng một tiếng."
+        },
+        {
+          "translation": "Đêm trước kỳ thi, tôi học xong xuôi bài vở rồi mới đi ngủ."
+        },
+        {
+          "translation": "Để hoàn thành trọn vẹn dự án này, sự hợp tác của mọi người là rất cần thiết."
+        }
+      ]
+    },
+    "ja_切れない_128": {
+      "title": "～切れない (～kirenai)",
+      "shortExplanation": "Diễn tả việc không thể làm hết toàn bộ, không thể hoàn thành trọn vẹn vì số lượng quá nhiều hoặc vượt quá giới hạn; 'không thể... hết được'.",
+      "longExplanation": "Dạng phủ định '～切れない' là thể khả năng phủ định của trợ động từ '～切る' (làm hết, làm đến cùng). Nó được gắn vào sau thân động từ để diễn tả rằng do số lượng quá lớn, thời gian có hạn hoặc sức lực không cho phép, người ta không thể nào hoàn tất hay thực hiện hết toàn bộ hành động đó đến cùng ('không thể nào làm xuể', 'không sao kể xiết').",
+      "formation": "Động từ thể ます (bỏ ます) + 切れない",
+      "examples": [
+        {
+          "translation": "Tôi không thể nào đọc hết cuốn sách này trong một đêm được."
+        },
+        {
+          "translation": "Anh ấy vui sướng đến mức không thể nào khóc hết được những giọt nước mắt (ngập tràn cảm xúc)."
+        },
+        {
+          "translation": "Không thể nào dọn dẹp xong xuôi căn phòng này chỉ trong một ngày được."
+        },
+        {
+          "translation": "Cô ấy có nhiều phiền muộn đến mức không thể kể hết được."
+        }
+      ]
+    },
+    "ja_必ずしもとは限らない_129": {
+      "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
+      "shortExplanation": "Diễn tả sự phủ định tính tất yếu hoặc quy luật tuyệt đối; 'không nhất thiết...', 'chưa hẳn là...', 'không phải lúc nào cũng...'.",
+      "longExplanation": "Cấu trúc '必ずしも～とは限らない' là một trong những cách diễn đạt phủ định một phần tiêu biểu nhất trong tiếng Nhật. Phó từ '必ずしも' (nhất thiết, luôn luôn) kết hợp với vị ngữ phủ định 'とは限らない' (không hạn định/quy định là) nhằm phản bác lại suy nghĩ cho rằng một điều gì đó là luôn luôn đúng trong mọi trường hợp, chỉ ra rằng vẫn luôn tồn tại ngoại lệ ('không nhất thiết cứ A thì sẽ là B').",
+      "formation": "必ずしも + Thể thông thường (Động từ / Tính từ / Danh từ) + とは限らない",
+      "examples": [
+        {
+          "translation": "Đồ đắt tiền chưa hẳn đã là đồ tốt."
+        },
+        {
+          "translation": "Người nổi tiếng chưa chắc đã hạnh phúc."
+        },
+        {
+          "translation": "Người nói được ngoại ngữ chưa hẳn đã giỏi tiếng Anh."
+        },
+        {
+          "translation": "Học sinh học nhiều thời gian chưa chắc đã đạt điểm cao trong kỳ thi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_ようになった_115": {
+      "title": "～ようになった (〜you ni natta)",
+      "shortExplanation": "表示能力、习惯或状态发生转变，从过去的不可能、未做变成“变得能够……”、“开始……”。",
+      "longExplanation": "句型“～ようになった”用于表达随着时间的推移、个人努力或环境变化，主体的能力、习惯或客观状态发生了质的改变。接在动词可能形后，表示以前无法做到、现在掌握了该项能力（如“变得会读了”）；接在意志动词辞书形后，表示形成了某种新的生活习惯或日常行为模式（如“开始自己做饭了”）。",
+      "formation": "动词辞书形 / 动词可能形 + ようになった",
+      "examples": [
+        {
+          "translation": "他开始自己做饭了。"
+        },
+        {
+          "translation": "那个孩子变得会阅读了。"
+        },
+        {
+          "translation": "会议变成了每周举行一次。"
+        },
+        {
+          "translation": "我变得能听懂日语了。"
+        }
+      ]
+    },
+    "ja_ように言う_116": {
+      "title": "～ように言う (〜you ni iu)",
+      "shortExplanation": "用于间接转述指示、嘱咐、要求或劝告；“转告/对（某人）说要……”、“让（某人）做……”。",
+      "longExplanation": "句型“～ように言う”（以及相关的“ように頼む”、“ように伝える”等）属于间接引述句型，用于向第三者传达某人所下达的指示、提出的要求、所做的叮嘱或劝告。相比于直接引用命令形（如“～しろと言った”），这种表达方式更为委婉客气、不生硬，是日常及商务交流中的常见表达。",
+      "formation": "动词辞书形 + ように言う | 动词ない形 + ように言う",
+      "examples": [
+        {
+          "translation": "老师叫我再多用功学习。"
+        },
+        {
+          "translation": "她让他等一等。"
+        },
+        {
+          "translation": "母亲叫我把房间收拾干净。"
+        },
+        {
+          "translation": "老师让学生提出问题。"
+        }
+      ]
+    },
+    "ja_らしい_117": {
+      "title": "～らしい (〜rashii)",
+      "shortExplanation": "表示传闻或依据客观间接信息作出的推断；“听说……”、“好像……”。",
+      "longExplanation": "助动词“～らしい”主要用于传闻或间接推量。表示说话人从报刊、电视、他人交谈等外部客观渠道获取了某种信息，或者依据间接获得的客观证据推测事情确实如此（意为“据听说……”、“似乎……”）。说话人自身并未直接亲历确认，因而在表述上保持客观留有余地。",
+      "formation": "动词普通形 + らしい | い形容词 + らしい | な形容词词干 + らしい | 名词 + らしい",
+      "examples": [
+        {
+          "translation": "听说他得了流感。"
+        },
+        {
+          "translation": "听说明天会下雪。"
+        },
+        {
+          "translation": "听说这家餐厅味道很好。"
+        },
+        {
+          "translation": "听说她是一名医生。"
+        }
+      ]
+    },
+    "ja_られた_118": {
+      "title": "～られた (〜rareta)",
+      "shortExplanation": "被动态过去时，表示主语受到他人或外力的作用与影响；“被……”、“受……”、“由……”。",
+      "longExplanation": "“～られた”是日语动词被动态（受身形）的过去时形式。表示主语作为动作的承受者，受到了外界行为的施加与作用。既可以用于客观叙述事实的直接被动（如“被很多人阅读”），也可以用于表达因他人行为造成自身受损或困扰的间接受害被动（如“钱包被偷了”），亦可用于表达心理受强烈震撼的使役受身过去时（～させられた：“被深深感动”）。",
+      "formation": "动词被动态过去时：一类动词词尾变あ段 + れた | 二类动词去掉る + られた | 三类动词：された / 来られた",
+      "examples": [
+        {
+          "translation": "这本书被许多人阅读过。"
+        },
+        {
+          "translation": "他被朋友给骗了。"
+        },
+        {
+          "translation": "昨天，我的钱包被偷了。"
+        },
+        {
+          "translation": "她被那部电影深深地打动了。"
+        }
+      ]
+    },
+    "ja_ている_119": {
+      "title": "～ている (〜te iru)",
+      "shortExplanation": "表示动作正在进行，或表示动作完成之后所留下的结果状态持续存在；“正在……”、“处于……状态”。",
+      "longExplanation": "句型“～ている”是日语体态（aspect）系统的核心表现：与持续性动词连用时，表示说话时刻该动作行为正在进行（“正在……”）；与瞬间性动词或状态变化动词连用时，表示动作已经发生完毕，但其引发的结果状态一直留存至今（“处于……状态”）；与被动态动词结合时（如“開けられている”），则突显某人实施该动作后所造成的客观存续状态。",
+      "formation": "动词て形 + いる",
+      "examples": [
+        {
+          "translation": "窗户正开着（有人开过，目前保持开着的状态）。"
+        },
+        {
+          "translation": "蛋糕已经全被吃光了。"
+        },
+        {
+          "translation": "她因生病正卧床不起。"
+        },
+        {
+          "translation": "作业已经做完了。"
+        }
+      ]
+    },
+    "ja_わけがない_120": {
+      "title": "～わけがない (〜wake ga nai)",
+      "shortExplanation": "基于常理、逻辑或明确依据做出斩钉截铁的强烈否定推断；“绝不可能……”、“怎么可能会……”。",
+      "longExplanation": "句型“～わけがない”（口语中常用“～わけない”）用于说话人根据客观常理、逻辑推论或确凿事实，完全断定某事绝无可能发生、绝无此种道理（相当于汉语中的“绝对不可能……”、“哪有……的道理”）。若采用双重否定形式“～ないわけがない”，则表示极度坚决的肯定推断（“绝对一定会……”）。",
+      "formation": "动词普通形 + わけがない | い形容词 + わけがない | な形容词 + なわけがない | 名词 + の/である/なわけがない",
+      "examples": [
+        {
+          "translation": "他绝不可能说出那种话来。"
+        },
+        {
+          "translation": "那家餐厅的味道绝不可能难吃。"
+        },
+        {
+          "translation": "她绝不可能不温柔（她肯定很温柔）。"
+        },
+        {
+          "translation": "他绝不可能考不及格。"
+        }
+      ]
+    },
+    "ja_わけだ_121": {
+      "title": "～わけだ (〜wake da)",
+      "shortExplanation": "表示查明原委之后恍然大悟，得出合乎情理的必然结论；“怪不得……”、“难怪……”、“当然会……”。",
+      "longExplanation": "句型“～わけだ”用于说话人获知了某项事实或原因之后，恍然明白前后因果关系，认为后续结果的发生是合情合理、顺理成章的（相当于汉语中的“难怪如此……”、“怪不得……”）。体现了从前提自然引申出必然结果的逻辑推导过程。",
+      "formation": "动词普通形 + わけだ | い形容词 + わけだ | な形容词 + なわけだ | 名词 + な/である/というわけだ",
+      "examples": [
+        {
+          "translation": "他感冒了。怪不得声音这么沙哑。"
+        },
+        {
+          "translation": "今天忙了一整天。难怪这么疲劳。"
+        },
+        {
+          "translation": "田中同学学习很刻苦。难怪他通过了考试。"
+        },
+        {
+          "translation": "她是著名歌手的女儿啊。怪不得唱歌这么好听。"
+        }
+      ]
+    },
+    "ja_わけではない_122": {
+      "title": "～わけではない (〜wake dewa nai)",
+      "shortExplanation": "用于部分否定，纠正以偏概全的误解或绝对化推论；“并不是说……”、“未必……”、“也并非……”。",
+      "longExplanation": "句型“～わけではない”（口语中常作“～恶けじゃない”）用于部分否定。它并不全盘否定事实，而是指出虽然表面上可能有此倾向，但绝不能绝对化地认为事实完全如此（“并不代表就一定……”、“并非全部……”）。常与表示逆接条件的“～からといって（虽说……但也未必……）”呼应使用。",
+      "formation": "动词普通形 + わけではない | い形容词 + わけではない | な形容词 + なわけではない | 名词 + な/である/のわけではない",
+      "examples": [
+        {
+          "translation": "虽说他很忙，但并不是说他就没有朋友。"
+        },
+        {
+          "translation": "这部电影倒不是不好看，只是不符合我的口味。"
+        },
+        {
+          "translation": "虽说她生病了，但也并非每天都躺在床上。"
+        },
+        {
+          "translation": "虽说他没上过大学，但并不意味着他就是个笨蛋。"
+        }
+      ]
+    },
+    "ja_わけにはいかない_123": {
+      "title": "～わけにはいかない (〜wake ni wa ikanai)",
+      "shortExplanation": "表示受制于社会常理、道德规范、责任担当或客观情理，在情理上“绝不能……”、“不可以……”。",
+      "longExplanation": "句型“～わけにはいかない”用于表达当事人在主观意愿上或许想做（或不想做）某事，但出于社会公德、职业操守、人情世故或严重不良后果的考量，在理智和情理上“万万不能去做”。接动词否定形式构成的“～ないわけにはいかない”则表示迫于道德义务或责任“不能不去做（必须去做）”。",
+      "formation": "动词辞书形 + わけにはいかない | 动词ない形 + わけにはいかない",
+      "examples": [
+        {
+          "translation": "我绝不能在这样的地方睡觉。"
+        },
+        {
+          "translation": "明天就要考试了，我绝不能跑出去玩。"
+        },
+        {
+          "translation": "我可不能买这么昂贵的东西。"
+        },
+        {
+          "translation": "因为身体不舒服，所以我不能去参加聚会。"
+        }
+      ]
+    },
+    "ja_わりには_124": {
+      "title": "～わりには (〜wari ni wa)",
+      "shortExplanation": "表示从前项的标准或通常认知来看，后项的结果出人意料、不相称；“虽然……但是却……”、“就……而言倒挺……”。",
+      "longExplanation": "句型“～わりには”用于强调根据前项所列出的事实、身份、价格或外在条件进行考量时，后项实际产生的结果却与通常预期的标准不相称，带有一种意外、吃惊或感叹的语气（相当于汉语中的“作为……来说反而……”、“虽说是……但其实挺……”）。",
+      "formation": "动词普通形 + わりには | い形容词 + わりには | な形容词 + な/であるわりには | 名词 + の/であるわりには",
+      "examples": [
+        {
+          "translation": "他虽然平时不大用功，但考试的分数却挺高的。"
+        },
+        {
+          "translation": "这道菜虽然卖相不佳，但味道却很美味。"
+        },
+        {
+          "translation": "她虽然年纪轻轻，但看起来非常沉稳呢。"
+        },
+        {
+          "translation": "这间屋子虽然狭窄，但房租却很贵。"
+        }
+      ]
+    },
+    "ja_んだって_125": {
+      "title": "～んだって (〜n datte)",
+      "shortExplanation": "口语中用于向亲近之人转达所听闻的消息、传言；“听说……呢”、“据说……哦”。",
+      "longExplanation": "句型“～んだって”是日语口语中非常活跃的传闻表达句式，由表示说明背景的“のだ（んだ）”与表示引述传闻的终助词“って”融合而成。常在亲切友好的闲聊氛围中，用于向对方转述自己从旁人、广播或网络上获知的新信息（相当于汉语口语中的“听说……呢”、“人家说……哦”）。",
+      "formation": "动词普通形 + んだって | い形容词 + んだって | な形容词 + なんだって | 名词 + なんだって",
+      "examples": [
+        {
+          "translation": "听说他要去东京呢。"
+        },
+        {
+          "translation": "听说这部电影很有趣哦。"
+        },
+        {
+          "translation": "听说她是一位著名歌手呢。"
+        },
+        {
+          "translation": "听说那家餐厅的夜景很美哦。"
+        }
+      ]
+    },
+    "ja_んだもん_126": {
+      "title": "～んだもん (〜nda mon)",
+      "shortExplanation": "口语中用于陈述理由并带有撒娇、申辩或理直气壮的辩解语气；“因为……嘛”、“人家……嘛”。",
+      "longExplanation": "句型“～んだもん”（郑重形式为“～のだもの”，更口语形式为“～もん”）是日常会话中富有情绪色彩的句尾表达，多用于女性、儿童以及亲近朋友之间。用于为自己的言行举止、情绪或决定辩解，带有撒娇、任性或委屈申辩的语感（相当于汉语中的“因为就是这样嘛”、“没办法嘛”）。",
+      "formation": "动词普通形 + んだもん | い形容词 + んだもん | な形容词 + なんだもん | 名词 + なんだもん",
+      "examples": [
+        {
+          "translation": "人家迟到了嘛，对不起啦。"
+        },
+        {
+          "translation": "因为太好吃了嘛，我还想再吃一点。"
+        },
+        {
+          "translation": "因为太累了嘛，我想早点睡。"
+        },
+        {
+          "translation": "因为他可是我的朋友嘛，我怎么能不帮他呢。"
+        }
+      ]
+    },
+    "ja_上げる_127": {
+      "title": "～上げる (〜ageru)",
+      "shortExplanation": "接在动词后，表示付出辛劳与努力将某项动作彻底完成、做好；“做完……”、“完成……”。",
+      "longExplanation": "复合动词后项“～上げる”接在动词连用形（ます形去掉ます）之后，强调经过一番努力、时间投入或专心致志的作业，最终把某件作品、任务或事情彻底完成，达到完工阶段（如“書き上げる”写完、“作り上げる”打造完成、“やり上げる”彻底做完）。",
+      "formation": "动词连用形（ます形去掉ます）+ 上げる",
+      "examples": [
+        {
+          "translation": "在写完报告之前，我都不能睡觉。"
+        },
+        {
+          "translation": "她马上开始打扫房间，用一个小时把大扫除全部做完了。"
+        },
+        {
+          "translation": "考试前夕，我学完全部内容之后才睡觉。"
+        },
+        {
+          "translation": "为了彻底做好这个项目，大家的通力合作是必不可少的。"
+        }
+      ]
+    },
+    "ja_切れない_128": {
+      "title": "～切れない (～kirenai)",
+      "shortExplanation": "表示由于数量庞大、程度过深或精力有限，客观上无法彻底做完、做到底；“做不完……”、“无法完全……”。",
+      "longExplanation": "“～切れない”是复合动词接尾词“～切る”（表示动作贯彻到底、全部做完）的可能否定形式。接在动词连用形后，表示面对过多的数量、极其沉重的负担或客观限制，无法将该行为进行到底或全部料理干净（相当于汉语中的“无法全部……完”、“怎么也……不尽”）。",
+      "formation": "动词连用形（ます形去掉ます）+ 切れない",
+      "examples": [
+        {
+          "translation": "我一晚上根本读不完这本书。"
+        },
+        {
+          "translation": "他高兴得眼泪怎么流都流不尽。"
+        },
+        {
+          "translation": "一天之内根本打扫不完这个房间。"
+        },
+        {
+          "translation": "她的烦恼多得根本倾诉不完。"
+        }
+      ]
+    },
+    "ja_必ずしもとは限らない_129": {
+      "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
+      "shortExplanation": "表示事物并非在所有情况下都绝对如此，指出普遍认知中存在例外；“未必……”、“不一定……”。",
+      "longExplanation": "句型“必ずしも～とは限らない”是典型的部分否定句式。由副词“必ずしも（必定、一定）”与表示限定否定的“とは限らない”前后呼应，用于委婉打破某种常识性的刻板印象或绝对化断言，指出某种情况虽然常见，但决不能一概而论，依然存在特殊例外（相当于汉语中的“未必一定……”、“并不必然都……”）。",
+      "formation": "必ずしも + 动词/形容词/名词普通形 + とは限らない",
+      "examples": [
+        {
+          "translation": "昂贵的东西未必就是好东西。"
+        },
+        {
+          "translation": "有名的人未必就过得幸福。"
+        },
+        {
+          "translation": "会说外语的人不一定就擅长英语。"
+        },
+        {
+          "translation": "学习时间长的学生在考试中未必得分就高。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_ようになった_115": {
+      "title": "～ようになった (〜you ni natta)",
+      "shortExplanation": "능력, 습관, 상태의 변화를 나타내며, 이전에는 불가능하거나 하지 않던 것이 '하게 되다', '~할 수 있게 되다'라는 뜻입니다.",
+      "longExplanation": "'～ようになった'는 시간의 흐름, 지속적인 연습, 혹은 환경의 변화에 따라 주체의 능력이나 습관, 사태의 객관적 상황이 새로운 국면으로 전환되었음을 나타내는 문형입니다. 동사의 가능형과 결합하면 예전에는 할 수 없었던 일을 비로소 '할 수 있게 되었다'는 능력 획득을 뜻하고, 의지동사의 사전형과 결합하면 새로운 습관이 형성되어 '그렇게 하기 시작했다'는 뜻을 나타냅니다.",
+      "formation": "동사 사전형 / 동사 가능형 + ようになった",
+      "examples": [
+        {
+          "translation": "그는 요리를 만들게 되었다."
+        },
+        {
+          "translation": "그 아이는 글을 읽을 수 있게 되었다."
+        },
+        {
+          "translation": "회의는 일주일에 한 번씩 열리게 되었다."
+        },
+        {
+          "translation": "일본어를 알아들을 수 있게 되었다."
+        }
+      ]
+    },
+    "ja_ように言う_116": {
+      "title": "～ように言う (〜you ni iu)",
+      "shortExplanation": "지시, 부탁, 요구, 조언 등의 내용을 제3자에게 간접적으로 전달할 때 쓰이며, '~(하)라고 말하다', '~(하)도록 전하다'라는 뜻입니다.",
+      "longExplanation": "'～ように言う'(및 'ように頼む', 'ように伝える' 등)는 화자가 다른 사람에게 특정 행위를 하거나 하지 말 것을 요청·지시·당부하는 내용을 간접화법 형태로 전달하는 문형입니다. 직접 명령형을 인용하는 방식보다 어조가 한결 부드럽고 공손하여, 일상 회화뿐만 아니라 비즈니스 상황에서도 널리 활용됩니다.",
+      "formation": "동사 사전형 + ように言う | 동사 ない형 + ように言う",
+      "examples": [
+        {
+          "translation": "선생님은 나에게 공부를 더 열심히 하라고 말씀하셨다."
+        },
+        {
+          "translation": "그녀는 그에게 기다리라고 말했습니다."
+        },
+        {
+          "translation": "어머니는 나에게 방을 치우라고 말씀하셨습니다."
+        },
+        {
+          "translation": "선생님은 학생에게 질문을 하라고 말씀하셨다."
+        }
+      ]
+    },
+    "ja_らしい_117": {
+      "title": "～らしい (〜rashii)",
+      "shortExplanation": "간접적으로 전해 들은 소문이나 객관적 근거에 바탕을 둔 추측을 나타내며, '~라고 한다', '~인 것 같다', '~라더라'라는 뜻입니다.",
+      "longExplanation": "조동사 '～らしい'는 다른 사람에게서 전해 들은 전언 정보나 외부의 객관적 징후·정황을 근거로 삼아 판단을 내릴 때 사용됩니다. 화자가 직접 목격하거나 체험하지 않은 간접적 출처의 사실임을 전제로 하여, 객관적이면서도 단정 짓지 않는 신중한 어조를 띱니다.",
+      "formation": "동사 보통형 + らしい | い형용사 + らしい | な형용사 어간 + らしい | 명사 + らしい",
+      "examples": [
+        {
+          "translation": "그는 독감에 걸린 모양이다."
+        },
+        {
+          "translation": "내일 눈이 올 모양이다."
+        },
+        {
+          "translation": "이 식당은 맛있다고 한다."
+        },
+        {
+          "translation": "그녀는 의사인 모양이다."
+        }
+      ]
+    },
+    "ja_られた_118": {
+      "title": "～られた (〜rareta)",
+      "shortExplanation": "수동태(피동)의 과거형으로, 주어가 다른 대상에 의해 동작이나 작용을 겪었음을 나타내며, '~해졌다', '~당했다', '~받았다'라는 뜻입니다.",
+      "longExplanation": "'～られた'는 피동 조동사 'れる／られる'의 과거형입니다. 문장의 주어가 동작을 직접 행하는 주체가 아니라, 타인이나 외력에 의해 동작의 영향을 받는 수동적 입장에 놓였음을 나타냅니다. 사실을 담담히 서술하는 직접수동, 피해나 곤란한 심정을 드러내는 간접(피해)수동, 그리고 깊은 감정적 감화를 나타내는 사역수동 과거형(～させられた: '감동을 받았다') 등 다양한 맥락에서 쓰입니다.",
+      "formation": "동사 피동 과거형: 1그룹 동사 어미를 あ단으로 바꾸고 + れた | 2그룹 동사 어미 る 탈락 + られた | 3그룹 동사: された / 来られた",
+      "examples": [
+        {
+          "translation": "이 책은 수많은 사람들에게 읽혔다."
+        },
+        {
+          "translation": "그는 친구에게 속았다."
+        },
+        {
+          "translation": "어제 제 지갑을 도둑맞았습니다."
+        },
+        {
+          "translation": "그녀는 영화에 크게 감동을 받았다."
+        }
+      ]
+    },
+    "ja_ている_119": {
+      "title": "～ている (〜te iru)",
+      "shortExplanation": "동작이 현재 진행 중이거나, 동작 완료 후의 결과 상태가 유지되고 있음을 나타내며, '~하고 있다', '~해 있다'라는 뜻입니다.",
+      "longExplanation": "'～ている'는 일본어 시제와 상(aspect)의 중심이 되는 문법입니다. 계속동사와 어우러져 지금 이 순간 행위가 일어나고 있는 '동작의 진행'을 나타내며, 순간동사나 변화동사와 결합하면 행위는 이미 끝났으나 그 결과로 빚어진 상태가 이어지고 있는 '결과 상태의 지속'을 나타냅니다. 수동형과 결합할 경우(開けられている 등), 누군가의 행위 결과가 그대로 유지되고 있는 상태를 강조합니다.",
+      "formation": "동사 て형 + いる",
+      "examples": [
+        {
+          "translation": "창문이 열려 있다(누군가 열어 놓아 열린 채로 있다)."
+        },
+        {
+          "translation": "케이크가 전부 먹혀 버렸다."
+        },
+        {
+          "translation": "그녀는 아파서 자리에 누워 있다."
+        },
+        {
+          "translation": "숙제가 다 끝나 있다."
+        }
+      ]
+    },
+    "ja_わけがない_120": {
+      "title": "～わけがない (〜wake ga nai)",
+      "shortExplanation": "상식이나 명백한 논리적 근거에 입각하여 가능성을 단호하게 부정할 때 쓰이며, '절대 ~할 리가 없다', '~할 턱이 없다'라는 뜻입니다.",
+      "longExplanation": "'～わけがない'(구어 표현: '～わけない')는 객관적인 상식, 논리적 이치, 혹은 명백한 정황에 비추어 볼 때 '그러한 일이 일어날 이유나 가능성이 결코 존재하지 않는다'고 강하게 확신하며 전면 부정하는 문형입니다. 이중 부정 표현인 '～ないわけがない'는 '반드시 ~하기 마련이다'라는 강렬한 확신을 나타냅니다.",
+      "formation": "동사 보통형 + わけがない | い형용사 + わけがない | な형용사 + なわけがない | 명사 + の/である/なわけがない",
+      "examples": [
+        {
+          "translation": "그가 그런 말을 할 리가 없다."
+        },
+        {
+          "translation": "저 식당이 맛없을 리가 없다."
+        },
+        {
+          "translation": "그녀가 상냥하지 않을 리가 없다(틀림없이 상냥하다)."
+        },
+        {
+          "translation": "그가 시험에 합격하지 못할 리가 없다."
+        }
+      ]
+    },
+    "ja_わけだ_121": {
+      "title": "～わけだ (〜wake da)",
+      "shortExplanation": "이유나 사정을 파악한 후 당연한 귀결로서 고개를 끄덕이며 납득함을 나타내며, '어쩐지 ~하더라니', '그래서 ~한 것이로군'이라는 뜻입니다.",
+      "longExplanation": "'～わけだ'는 어떤 사태의 원인이나 숨은 사정을 알게 된 화자가 '아, 과연 그래서 그랬구나', '그렇게 되는 것이 당연한 이치로군'이라고 논리적 필연성을 납득하고 이해할 때 사용하는 표현입니다. 원인과 결과 사이의 자연스러운 인과관계를 설명합니다.",
+      "formation": "동사 보통형 + わけだ | い형용사 + わけだ | な형용사 + なわけだ | 명사 + な/である/というわけだ",
+      "examples": [
+        {
+          "translation": "그는 감기에 걸렸다. 어쩐지 목소리가 쉬었더라니."
+        },
+        {
+          "translation": "오늘은 바빴다. 어쩐지 피곤하더라니."
+        },
+        {
+          "translation": "다나카 씨는 공부를 많이 했다. 그러니 시험에 합격한 것이 당연하다."
+        },
+        {
+          "translation": "그녀는 유명한 가수의 딸이구나. 어쩐지 노래를 잘 부르더라니."
+        }
+      ]
+    },
+    "ja_わけではない_122": {
+      "title": "～わけではない (〜wake dewa nai)",
+      "shortExplanation": "극단적인 단정이나 일반화를 배제하고 완곡하게 부분 부정을 나타내며, '반드시 ~인 것은 아니다', '~라는 뜻은 아니다'라는 뜻입니다.",
+      "longExplanation": "'～わけではない'(구어에서는 '～わけじゃない')는 전체를 다 부정하는 것이 아니라, 일견 그렇게 보일지라도 100% 온전히 그러한 것은 아니라고 완곡하게 해명·수정하는 부분 부정 문법입니다. '~からといって(~라고 해서)'와 짝을 이루어 선입견을 바로잡는 용법으로 자주 쓰입니다.",
+      "formation": "동사 보통형 + わけではない | い형용사 + わけではない | な형용사 + なわけではない | 명사 + な/である/のわけではない",
+      "examples": [
+        {
+          "translation": "그가 바쁘다고 해서 친구가 없는 것은 아니다."
+        },
+        {
+          "translation": "이 영화가 재미없는 것은 아니지만, 내 취향은 아니다."
+        },
+        {
+          "translation": "그녀가 아프다고 해서 매일 누워만 있는 것은 아니다."
+        },
+        {
+          "translation": "그가 대학을 가지 않았다고 해서 바보인 것은 아니다."
+        }
+      ]
+    },
+    "ja_わけにはいかない_123": {
+      "title": "～わけにはいかない (〜wake ni wa ikanai)",
+      "shortExplanation": "사회적 도덕, 양심, 책임감, 혹은 처한 사정상 차마 그렇게 행할 수 없음을 나타내며, '도저히 ~할 수는 없다', '~할 수 없다'라는 뜻입니다.",
+      "longExplanation": "'～わけにはいかない'는 개인적인 희망이나 충동과 상관없이, 사회 통념, 도의적 의무, 체면, 혹은 예상되는 심각한 부작용을 고려할 때 도리상 '그렇게 처신할 수는 없다'고 스스로를 자제·억제할 때 쓰입니다. 부정형인 '～ないわけにはいかない'는 양심상 '안 할 수가 없다(꼭 해야 한다)'는 필연적 의무감을 드러냅니다.",
+      "formation": "동사 사전형 + わけにはいかない | 동사 ない형 + わけにはいかない",
+      "examples": [
+        {
+          "translation": "이런 곳에서 잘 수는 없다."
+        },
+        {
+          "translation": "시험이 내일이라 놀러 갈 수는 없다."
+        },
+        {
+          "translation": "이렇게 비싼 물건을 살 수는 없다."
+        },
+        {
+          "translation": "몸 상태가 좋지 않아서 파티에 참가할 수는 없다."
+        }
+      ]
+    },
+    "ja_わりには_124": {
+      "title": "～わりには (〜wari ni wa)",
+      "shortExplanation": "앞서 제시된 기준이나 상식적 예상과 달리 뒤따르는 결과가 어울리지 않고 뜻밖임을 나타내며, '~에 비해서는', '~치고는'이라는 뜻입니다.",
+      "longExplanation": "'～わりには'는 앞 절의 기준(신분, 가격, 조건, 외관 등)에서 보통 기대되거나 유추되는 수준에 비해, 뒤 절의 실제 사태가 불균형을 이루며 예상 밖의 모습을 보일 때 사용하는 문형입니다. 화자의 뜻밖이라는 느낌, 놀라움, 감탄 등의 어감이 깃듭니다.",
+      "formation": "동사 보통형 + わりには | い형용사 + わりには | な형용사 + な/であるわりには | 명사 + の/であるわりには",
+      "examples": [
+        {
+          "translation": "그는 공부를 별로 안 하는 것에 비해서는 시험 점수가 높습니다."
+        },
+        {
+          "translation": "이 요리는 겉보기가 별로인 것에 비해서는 맛이 좋습니다."
+        },
+        {
+          "translation": "그녀는 젊은 것에 비해서는 무척 침착하네요."
+        },
+        {
+          "translation": "이 방은 좁은 것에 비해서는 집세가 비쌉니다."
+        }
+      ]
+    },
+    "ja_んだって_125": {
+      "title": "～んだって (〜n datte)",
+      "shortExplanation": "구어에서 남에게 전해 들은 소식이나 이야기를 친근하게 전달할 때 쓰이며, '~라더라', '~라고 하더라고'라는 뜻입니다.",
+      "longExplanation": "'～んだって'는 사정이나 배경을 설명하는 'のだ(んだ)'와 인용의 종조사 'って'가 결합한 일상적인 구어 표현입니다. 친밀한 관계에서 다른 곳에서 들은 소식이나 풍문을 상대방에게 가볍게 공유하며 대화를 이어갈 때 자주 쓰입니다.",
+      "formation": "동사 보통형 + んだって | い형용사 + んだって | な형용사 + なんだって | 명사 + なんだって",
+      "examples": [
+        {
+          "translation": "그 사람 도쿄에 간다더라."
+        },
+        {
+          "translation": "이 영화 참 재미있다고 하더라고."
+        },
+        {
+          "translation": "그녀는 유명한 가수라더라."
+        },
+        {
+          "translation": "저 식당 야경이 아주 예쁘다고 하더라고."
+        }
+      ]
+    },
+    "ja_んだもん_126": {
+      "title": "～んだもん (〜nda mon)",
+      "shortExplanation": "구어에서 이유를 내세우며 어리광을 부리거나 변명, 항변할 때 쓰이며, '~걸 뭐', '~인걸', '~하단 말이야'라는 뜻입니다.",
+      "longExplanation": "'～んだもん'(격식 있는 표현은 '～のだもの', 구어 축약형은 '～もん')은 친한 사이에서 자신의 언행이나 감정에 대한 정당성을 주장하거나 어리광을 섞어 변명할 때 쓰이는 종조사적 표현입니다. 주로 여성이나 어린이가 자주 구사하지만, 친밀한 친구 사이에서도 자연스럽게 쓰입니다.",
+      "formation": "동사 보통형 + んだもん | い형용사 + んだもん | な형용사 + なんだもん | 명사 + なんだもん",
+      "examples": [
+        {
+          "translation": "늦은 걸 뭐, 미안해."
+        },
+        {
+          "translation": "맛있는걸, 좀 더 먹고 싶단 말이야."
+        },
+        {
+          "translation": "피곤한걸, 일찍 자고 싶어."
+        },
+        {
+          "translation": "그는 친구인걸, 돕지 않을 수가 없잖아."
+        }
+      ]
+    },
+    "ja_上げる_127": {
+      "title": "～上げる (〜ageru)",
+      "shortExplanation": "노력과 공을 들여 어떤 일이나 동작을 완전히 마무리지음을 나타내며, '다 ~해내다', '완전히 ~해 마치다'라는 뜻입니다.",
+      "longExplanation": "'～上げる'는 동사의 연용형(ます형 어간) 뒤에 붙어 결합하는 복합동사 문형으로, 시간과 정성을 아끼지 않고 쏟아부어 목표했던 과업이나 창작, 작업을 끝까지 훌륭하게 완수해 냈음을 나타냅니다(예: 書き上げる 다 써내다, やり上げる 끝까지 해내다, 作り上げる 완성해 내다).",
+      "formation": "동사 ます형(어간) + 上げる",
+      "examples": [
+        {
+          "translation": "보고서를 다 써낼 때까지는 잠들 수 없습니다."
+        },
+        {
+          "translation": "그녀는 곧바로 방 청소를 시작해 한 시간 만에 청소를 다 끝마쳤다."
+        },
+        {
+          "translation": "시험 전날 밤, 공부를 다 끝마치고 나서 잤다."
+        },
+        {
+          "translation": "이 프로젝트를 완수해 내기 위해서는 모두의 협력이 필요합니다."
+        }
+      ]
+    },
+    "ja_切れない_128": {
+      "title": "～切れない (～kirenai)",
+      "shortExplanation": "수량이 너무 많거나 한계를 벗어나 끝까지 완전히 해낼 수 없음을 나타내며, '다 ~할 수 없다', '끝까지 ~해내지 못하다'라는 뜻입니다.",
+      "longExplanation": "'～切れない'는 끝까지 철저하게 완결함을 나타내는 복합동사 '～切る'의 가능부정형입니다. 대상의 분량이 지나치게 방대하거나 정신적·육체적 한계로 인해 어떤 행위를 모조리 끝까지 마치거나 다 털어내는 것이 불가능한 상태를 나타냅니다.",
+      "formation": "동사 ます형(어간) + 切れない",
+      "examples": [
+        {
+          "translation": "이 책을 하룻밤 만에 다 읽을 수는 없다."
+        },
+        {
+          "translation": "그는 다 울지도 못할 만큼 기뻤다."
+        },
+        {
+          "translation": "이 방을 하루 만에 다 청소할 수는 없다."
+        },
+        {
+          "translation": "그녀에게는 다 털어놓을 수 없을 만큼 많은 고민이 있다."
+        }
+      ]
+    },
+    "ja_必ずしもとは限らない_129": {
+      "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
+      "shortExplanation": "통념이나 상식적 판단에 대해 예외가 있음을 지적하는 부분 부정 표현으로, '반드시 ~인 것은 아니다', '꼭 ~라고는 할 수 없다'라는 뜻입니다.",
+      "longExplanation": "'必ずしも～とは限らない'는 부사 '必ずしも(반드시, 꼭)'와 제한 부정을 나타내는 'とは限らない(~라고 한정할 수는 없다)'가 호응하는 대표적 부분 부정 구문입니다. 세간에서 흔히 당연시하는 통념에 대해 '항상 100% 들어맞는 것은 아니며 다른 예외적 경우도 얼마든지 있다'고 유연하고 신중한 관점을 피력할 때 쓰입니다.",
+      "formation": "반드시(必ずしも) + 동사/형용사/명사 보통형 + とは限らない",
+      "examples": [
+        {
+          "translation": "비싼 물건이 반드시 좋은 것만은 아니다."
+        },
+        {
+          "translation": "유명한 사람이 반드시 행복한 것은 아니다."
+        },
+        {
+          "translation": "외국어를 할 줄 아는 사람이 반드시 영어를 잘하는 것은 아니다."
+        },
+        {
+          "translation": "공부 시간이 많은 학생이 반드시 시험에서 높은 점수를 받는 것은 아니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_ようになった_115": {
+      "title": "～ようになった (〜you ni natta)",
+      "shortExplanation": "以前は不可能だったことやしていなかったことが可能になったり、新しい習慣や状態に移行したことを表し、「〜するようになる」「〜できるようになる」という意味を表します。",
+      "longExplanation": "「～ようになった」は、時間の経過や努力、環境の変化などによって、主体の能力や習慣、あるいは客観的な状況が新たな段階へと変化したことを表す表現です。動詞の可能形と結びつくと、以前はできなかった行為を遂行できる能力を獲得したこと（例：読めるようになった）を表し、意志動詞の辞書形と結びつくと、新たな習慣が定着して日常的に行うようになったこと（例：作るようになった）を表します。",
+      "formation": "動詞辞書形／動詞可能形 ＋ ようになった",
+      "examples": [
+        {
+          "translation": "彼は料理を作るようになった。"
+        },
+        {
+          "translation": "その子は読めるようになった。"
+        },
+        {
+          "translation": "会議は週に一度開催されるようになった。"
+        },
+        {
+          "translation": "日本語がわかるようになった。"
+        }
+      ]
+    },
+    "ja_ように言う_116": {
+      "title": "～ように言う (〜you ni iu)",
+      "shortExplanation": "指示、依頼、注意、助言などの内容を他者へ間接的に伝える表現で、「〜するように言う」「〜するように伝える」という意味を表します。",
+      "longExplanation": "「～ように言う」（関連表現に「ように頼む」「ように伝える」など）は、ある人物が下した指示や要望、忠告などの内容を、第三者に間接的に引用して伝達する間接話法の文型です。直接的な命令形（「〜しろと言った」など）に比べて威圧感がなく、柔らかく丁寧な語感で相手に指示内容を伝達することができます。",
+      "formation": "動詞辞書形 ＋ ように言う | 動詞ない形 ＋ ように言う",
+      "examples": [
+        {
+          "translation": "先生は私にもっと勉強するように言った。"
+        },
+        {
+          "translation": "彼女は彼に待つように言いました。"
+        },
+        {
+          "translation": "母は私に部屋を片付けるように言いました。"
+        },
+        {
+          "translation": "先生は生徒に質問をするように言った。"
+        }
+      ]
+    },
+    "ja_らしい_117": {
+      "title": "～らしい (〜rashii)",
+      "shortExplanation": "他者から聞き及んだ情報や客観的な間接証拠に基づく推量を表し、「〜だそうだ」「〜のようだ」という意味を表します。",
+      "longExplanation": "助動詞「～らしい」は、伝聞や間接的な情報源に基づく推量判断を表します。報道、噂、他人の発言など外部から間接的に得られた情報や、周囲の客観的な状況証拠から「どうやら〜であるようだ」と判断した事柄を客観的に述べます。話し手自身が直接見聞きした確証ではないことを示すニュアンスを含みます。",
+      "formation": "動詞普通形 ＋ らしい | い形容詞 ＋ らしい | な形容詞語幹 ＋ らしい | 名詞 ＋ らしい",
+      "examples": [
+        {
+          "translation": "彼はインフルエンザにかかっているらしい。"
+        },
+        {
+          "translation": "明日雪が降るらしい。"
+        },
+        {
+          "translation": "このレストランは美味しいらしい。"
+        },
+        {
+          "translation": "彼女は医者であるらしい。"
+        }
+      ]
+    },
+    "ja_られた_118": {
+      "title": "～られた (〜rareta)",
+      "shortExplanation": "受身（受身形）の過去形を表し、主語が他者や外力から何らかの動作や影響を受けたことを表します。",
+      "longExplanation": "「～られた」は、受身の助動詞「れる／られる」の過去形です。主語が動作の主体ではなく客体として外的な影響を被ったことを示します。事実を客観的に記述する直接受身（本が読まれた）のほか、他者の行為によって不利益や迷惑を被ったことを表す迷惑受身（財布が盗まれた）、さらには心動かされた経緯を表す使役受身過去形（感動させられた）など幅広い文脈で用いられます。",
+      "formation": "動詞受身形（過去形）：Iグループ動詞あ段＋れた | IIグループ動詞語幹＋られた | IIIグループ動詞：された／来られた",
+      "examples": [
+        {
+          "translation": "この本はたくさんの人に読まれた。"
+        },
+        {
+          "translation": "彼は友達に騙された。"
+        },
+        {
+          "translation": "昨日、私の財布が盗まれました。"
+        },
+        {
+          "translation": "彼女は映画に感動させられた。"
+        }
+      ]
+    },
+    "ja_ている_119": {
+      "title": "～ている (〜te iru)",
+      "shortExplanation": "動作が現在進行中であること、あるいは動作完了に伴う結果状態がそのまま持続していることを表し、「〜している」「〜してある」という意味を表します。",
+      "longExplanation": "「～ている」は、動詞のアスペクト（様相）を表す極めて基本的な構文です。継続動詞と結びつくと「現にその動作が進行している局面」を表し、瞬間動詞・変化動詞と結びつくと「動作や変化はすでに完了したが、その結果として生じた状態が今もそのまま継続している局面」を表します。受身形と結びついた場合（開けられているなど）は、他者による行為が施されたあとの状態維持を表します。",
+      "formation": "動詞て形 ＋ いる",
+      "examples": [
+        {
+          "translation": "窓が開けられている（誰かが開けて開いたままになっている）。"
+        },
+        {
+          "translation": "ケーキが全部食べられている。"
+        },
+        {
+          "translation": "彼女は病気で寝込んでいる。"
+        },
+        {
+          "translation": "宿題が終わっている。"
+        }
+      ]
+    },
+    "ja_わけがない_120": {
+      "title": "～わけがない (〜wake ga nai)",
+      "shortExplanation": "道理、常識、確固たる根拠に基づき、事態の可能性を強く全否定する表現で、「絶対に〜なはずがない」「〜するわけがない」という意味を表します。",
+      "longExplanation": "「～わけがない」（くだけた口語では「〜わけない」）は、論理的な思考や常識、明確な根拠に照らして、「客観的に考えてそのような事態になる理由や可能性は絶対にあり得ない」と話し手が強い確信を持って否定する文型です。二重否定の形（〜ないわけがない）を取ると、「絶対に〜であるはずだ」という強い肯定的確信を表します。",
+      "formation": "動詞普通形 ＋ わけがない | い形容詞 ＋ わけがない | な形容詞 ＋ なわけがない | 名詞 ＋ の／である／なわけがない",
+      "examples": [
+        {
+          "translation": "彼がそんなことを言うわけがない。"
+        },
+        {
+          "translation": "あのレストランがまずいわけがない。"
+        },
+        {
+          "translation": "彼女が優しくないわけがない。"
+        },
+        {
+          "translation": "彼が試験に合格しないわけがない。"
+        }
+      ]
+    },
+    "ja_わけだ_121": {
+      "title": "～わけだ (〜wake da)",
+      "shortExplanation": "原因や背景となる事情を知り、当然の帰結として論理的に納得したことを表し、「道理で〜なわけだ」「そういうわけで〜なのだ」という意味を表します。",
+      "longExplanation": "「～わけだ」は、ある事象の背景や原因を知った話し手が、「なるほど、そういう理由だったのか、それなら納得がいく」と事態の必然性を理解し納得した気持ちを表す表現です。前提となる事実から結果への自然で論理的な因果関係を明示します。",
+      "formation": "動詞普通形 ＋ わけだ | い形容詞 ＋ わけだ | な形容詞 ＋ なわけだ | 名詞 ＋ な／である／というわけだ",
+      "examples": [
+        {
+          "translation": "彼は風邪を引いている。だから、声がかすれているわけだ。"
+        },
+        {
+          "translation": "今日は忙しかった。だから、疲れたわけだ。"
+        },
+        {
+          "translation": "田中さんはたくさん勉強している。だから、試験に合格したわけだ。"
+        },
+        {
+          "translation": "彼女は有名な歌手の娘なんだ。だから、歌が上手なわけだ。"
+        }
+      ]
+    },
+    "ja_わけではない_122": {
+      "title": "～わけではない (〜wake dewa nai)",
+      "shortExplanation": "一面的な決めつけや極端な断定を否定し、部分的な否定を表す表現で、「必ずしも〜というわけではない」「〜ではない」という意味を表します。",
+      "longExplanation": "「～わけではない」（口語では「〜わけじゃない」）は、全面否定ではなく「全部が全部そうというわけではない」「一概にそうとは言えない」と、相手の誤解や過度な一般化を穏やかに是正する部分否定の構文です。「〜からといって」と呼応して使われることが多くあります。",
+      "formation": "動詞普通形 ＋ わけではない | い形容詞 ＋ わけではない | な形容詞 ＋ なわけではない | 名詞 ＋ な／である／のわけではない",
+      "examples": [
+        {
+          "translation": "彼が忙しいからといって、友達がいないわけではない。"
+        },
+        {
+          "translation": "この映画は面白くないわけではないが、好みではない。"
+        },
+        {
+          "translation": "彼女が病気だからといって、毎日寝ているわけではない。"
+        },
+        {
+          "translation": "彼が大学に行っていないからといって、バカなわけではない。"
+        }
+      ]
+    },
+    "ja_わけにはいかない_123": {
+      "title": "～わけにはいかない (〜wake ni wa ikanai)",
+      "shortExplanation": "社会的常識、道徳的義務、立場や周囲の状況から判断して、「そうすることはできない」「〜するわけにはいかない」という意味を表します。",
+      "longExplanation": "「～わけにはいかない」は、個人の感情や願望がどうであれ、社会通念、道義的責任、世間体、あるいは後々の不都合を考慮すると「人情や道理の上から到底そんな行為は許されない・できない」と自己抑制する心理を表す文型です。否定形「〜ないわけにはいかない」は「義務感や義理からどうしても〜せざるを得ない」という強い必然性を表します。",
+      "formation": "動詞辞書形 ＋ わけにはいかない | 動詞ない形 ＋ わけにはいかない",
+      "examples": [
+        {
+          "translation": "こんなところで寝るわけにはいかない。"
+        },
+        {
+          "translation": "試験が明日だから、遊びに行くわけにはいかない。"
+        },
+        {
+          "translation": "こんなに高いものを買うわけにはいかない。"
+        },
+        {
+          "translation": "体調が悪いから、パーティーに参加するわけにはいかない。"
+        }
+      ]
+    },
+    "ja_わりには_124": {
+      "title": "～わりには (〜wari ni wa)",
+      "shortExplanation": "前項の基準や通念から予想される程度と実際の結果が釣り合わず、意外であることを表し、「〜の割には」「〜にしては」という意味を表します。",
+      "longExplanation": "「～わりには」は、前項の基準（年齢、価格、外見、条件など）から一般的に予想される当然の結果と、後項の実際の事実とが食い違っており、不相応・意外であると話し手が感じたときに用いる表現です。意外性や感嘆、驚きのニュアンスを含みます。",
+      "formation": "動詞普通形 ＋ わりには | い形容詞 ＋ わりには | な形容詞 ＋ な／であるわりには | 名詞 ＋ の／であるわりには",
+      "examples": [
+        {
+          "translation": "彼はあまり勉強しないわりには、テストの点数が高いです。"
+        },
+        {
+          "translation": "この料理は見た目が悪いわりには、味は美味しいです。"
+        },
+        {
+          "translation": "彼女は若いわりには、とても落ち着いていますね。"
+        },
+        {
+          "translation": "この部屋は狭いわりには、家賃が高いです。"
+        }
+      ]
+    },
+    "ja_んだって_125": {
+      "title": "～んだって (〜n datte)",
+      "shortExplanation": "口語で他者から聞き知った情報や噂を親しい相手に伝える伝聞表現で、「〜なんだそうだ」「〜らしいよ」という意味を表します。",
+      "longExplanation": "「～んだって」は、状況説明の「のだ（んだ）」と引用の終助詞「って」が組み合わさった親しい間柄での口語表現です。外部で耳にした情報や人づてに聞いた話を、相手に共有・報告する際に日常会話で頻繁に用いられます。",
+      "formation": "動詞普通形 ＋ んだって | い形容詞 ＋ んだって | な形容詞 ＋ なんだって | 名詞 ＋ なんだって",
+      "examples": [
+        {
+          "translation": "彼は東京に行くんだって。"
+        },
+        {
+          "translation": "この映画、面白いんだって。"
+        },
+        {
+          "translation": "彼女は有名な歌手なんだって。"
+        },
+        {
+          "translation": "あのレストラン、夜景がきれいなんだって。"
+        }
+      ]
+    },
+    "ja_んだもん_126": {
+      "title": "～んだもん (〜nda mon)",
+      "shortExplanation": "口語で自分の行為や感情の理由を述べ、甘え、言い訳、または自己主張するニュアンスを表し、「〜なんだもの」「〜だから」という意味を表します。",
+      "longExplanation": "「～んだもん」（「〜のだもの」のくだけた口語形、さらに縮まると「〜もん」）は、親しい間柄での会話で、自分の行動や主張の正当性を主張したり、言い訳や甘えの気持ちを込めて理由を述べたりする終助詞的構文です。女性や子どもがよく用いますが、親しい友人同士の間でも日常的に使われます。",
+      "formation": "動詞普通形 ＋ んだもん | い形容詞 ＋ んだもん | な形容詞 ＋ なんだもん | 名詞 ＋ なんだもん",
+      "examples": [
+        {
+          "translation": "遅れたんだもん、ごめん。"
+        },
+        {
+          "translation": "おいしいんだもん、もうちょっと食べたい。"
+        },
+        {
+          "translation": "疲れているんだもん、早く寝たい。"
+        },
+        {
+          "translation": "彼は友達なんだもん、手伝わないわけにはいかない。"
+        }
+      ]
+    },
+    "ja_上げる_127": {
+      "title": "～上げる (〜ageru)",
+      "shortExplanation": "努力や手間をかけて、ある動作や作業を最後まで完全にやり遂げることを表し、「〜し終える」「すっかり〜し終える」という意味を表します。",
+      "longExplanation": "「～上げる」は、動詞の連用形（ます形語幹）に後続する複合動詞の構文で、時間や労力を費やして、ある行為や制作・作業を完璧に仕上げ、完成させたことを表します（例：書き上げる、作り上げる、やり上げる、鍛え上げる）。",
+      "formation": "動詞ます形語幹 ＋ 上げる",
+      "examples": [
+        {
+          "translation": "レポートを書き上げるまで、寝られません。"
+        },
+        {
+          "translation": "彼女は早速部屋の掃除を始め、一時間で掃除をやり上げた。"
+        },
+        {
+          "translation": "試験前夜、勉強をやり上げてから寝た。"
+        },
+        {
+          "translation": "このプロジェクトをやり上げるためには、みんなの協力が必要です。"
+        }
+      ]
+    },
+    "ja_切れない_128": {
+      "title": "～切れない (～kirenai)",
+      "shortExplanation": "数量が多すぎたり限度を超えていたりして、最後まで全部やり終えることができないことを表し、「すべて〜しきることができない」「最後まで〜できない」という意味を表します。",
+      "longExplanation": "「～切れない」は、行為を最後まで完全にやり遂げることを表す複合動詞「～切る」の可能否定形です。対象となる数量が膨大であることや、程度が甚だしいことなどが原因で、その行為を完全に完了させたり尽くしたりすることが不可能である状況を表します（例：食べきれない、数えきれない、読み切れない）。",
+      "formation": "動詞ます形語幹 ＋ 切れない",
+      "examples": [
+        {
+          "translation": "この本を一晩で読み切れない。"
+        },
+        {
+          "translation": "彼は泣き切れないほど嬉しかった。"
+        },
+        {
+          "translation": "この部屋を一日で掃除し切れない。"
+        },
+        {
+          "translation": "彼女は話し切れないほどの悩みがある。"
+        }
+      ]
+    },
+    "ja_必ずしもとは限らない_129": {
+      "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
+      "shortExplanation": "一般的な通念や思い込みに対して例外が存在することを指摘する部分否定表現で、「絶対に〜とは言えない」「いつも〜であるとは限らない」という意味を表します。",
+      "longExplanation": "「必ずしも～とは限らない」は、副詞「必ずしも」と陳述の副詞呼応「とは限らない」が結びついた代表的な部分否定の構文です。「一般的にはそう考えられがちだが、100パーセント常にそうであるとは断定できず、例外もある」という客観的で慎重な判断を述べる際に用いられます。",
+      "formation": "必ずしも ＋ 動詞／形容詞／名詞普通形 ＋ とは限らない",
+      "examples": [
+        {
+          "translation": "高いものが必ずしも良いとは限らない。"
+        },
+        {
+          "translation": "有名な人が必ずしも幸せとは限らない。"
+        },
+        {
+          "translation": "外国語が話せる人が必ずしも英語が得意とは限らない。"
+        },
+        {
+          "translation": "勉強時間が多い生徒が必ずしも試験で点数が高いとは限らない。"
+        }
+      ]
+    }
+  }
+}

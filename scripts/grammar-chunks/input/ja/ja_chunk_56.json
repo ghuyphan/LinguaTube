@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ja_足りない_242",
+    "language": "ja",
+    "pattern": "～足りない",
+    "title": "～足りない (～tarinai)",
+    "shortExplanation": "Expresses insufficiency or lack; 'not enough', 'insufficient'.",
+    "longExplanation": "The ～足りない pattern simply means that something is not sufficient in quantity, time, detail, ability, etc. It’s the negative form of 足りる ('to be enough').",
+    "formation": "Noun + (が) 足りない, Verb-casual + ほど/だけ + (が) 足りない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "私の日本語の能力はまだまだ足りない。",
+        "romanization": "Watashi no nihongo no nouryoku wa madamada tarinai.",
+        "translation": "My Japanese skills are still not enough."
+      },
+      {
+        "sentence": "時間が足りないから、今すぐ行かなきゃ。",
+        "romanization": "Jikan ga tarinai kara, ima sugu ikanakya.",
+        "translation": "We don't have enough time, so we must go right now."
+      },
+      {
+        "sentence": "彼の説明には詳細が足りない。",
+        "romanization": "Kare no setsumei ni wa shousai ga tarinai.",
+        "translation": "His explanation lacks detail."
+      },
+      {
+        "sentence": "料理するための食材が足りない。",
+        "romanization": "Ryouri suru tame no shokuzai ga tarinai.",
+        "translation": "There's not enough food to cook with."
+      }
+    ]
+  },
+  {
+    "id": "ja_足る_243",
+    "language": "ja",
+    "pattern": "～足る",
+    "title": "～足る Noun (〜taru Noun)",
+    "shortExplanation": "Indicates that something is worthy or sufficient to be called/used as ~; 'worthy of', 'enough to ~'.",
+    "longExplanation": "The classical pattern 'Noun + に足る + Noun' or 'Verb + に足る + Noun' means 'something is worthy of or sufficient for ~.' For instance, '信頼に足る人物' means 'a person worthy of trust.' It’s different from the everyday verb 足りる ('to be enough').",
+    "formation": "Noun/Verb-dictionary form + に足る + Noun",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は信頼に足る人物だ。",
+        "romanization": "Kare wa shinrai ni taru jinbutsu da.",
+        "translation": "He is a person worthy of trust."
+      },
+      {
+        "sentence": "この小説は読むに足る価値がある。",
+        "romanization": "Kono shousetsu wa yomu ni taru kachi ga aru.",
+        "translation": "This novel is well worth reading."
+      },
+      {
+        "sentence": "検討に足るデータが十分に集まった。",
+        "romanization": "Kentou ni taru deeta ga juubun ni atsumatta.",
+        "translation": "We've gathered enough data to be worth examining."
+      },
+      {
+        "sentence": "彼の説明は信用に足るものだと思う。",
+        "romanization": "Kare no setsumei wa shinyou ni taru mono da to omou.",
+        "translation": "I think his explanation is worthy of trust."
+      }
+    ]
+  },
+  {
+    "id": "ja_限りだ_244",
+    "language": "ja",
+    "pattern": "～限りだ",
+    "title": "～限りだ (〜kagiri da)",
+    "shortExplanation": "Expresses an extreme degree of emotion or reaction; 'I feel so ~', 'as ~ as can be'.",
+    "longExplanation": "The ～限りだ structure is often used with adjectives describing the speaker's emotion, highlighting how strongly the speaker feels. Translations often include 'I’m as ~ as can be,' 'I feel so ~.'",
+    "formation": "い-Adjective + 限りだ, な-Adjective + な/である + 限りだ, Noun + の + 限りだ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女が急に辞めてしまった。驚きの限りだ。",
+        "romanization": "Kanojo ga kyuu ni yamete shimatta. Odoroki no kagiri da.",
+        "translation": "She suddenly quit. I'm as shocked as can be."
+      },
+      {
+        "sentence": "息子が成功した。嬉しい限りだ。",
+        "romanization": "Musuko ga seikou shita. Ureshii kagiri da.",
+        "translation": "My son succeeded. I'm so happy."
+      },
+      {
+        "sentence": "こんなに綺麗な花が見られるなんて、幸せの限りだ。",
+        "romanization": "Konna ni kirei na hana ga mirareru nante, shiawase no kagiri da.",
+        "translation": "I'm as happy as can be to see such beautiful flowers."
+      },
+      {
+        "sentence": "試験に合格できて、ほっとした限りだ。",
+        "romanization": "Shiken ni goukaku dekite, hotto shita kagiri da.",
+        "translation": "I passed the exam—what a relief!"
+      }
+    ]
+  }
+]

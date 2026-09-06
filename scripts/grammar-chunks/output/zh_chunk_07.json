@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_请让叫OV_92": {
+      "title": "请 / 让 / 叫 + Tân ngữ + Động từ (Câu kiêm ngữ: Mời / Để / Bảo ai làm gì)",
+      "shortExplanation": "Câu kiêm ngữ dùng các động từ sứ khiến như '请' (mời), '让' (cho phép/bảo), '叫' (bảo/kêu) để yêu cầu, mời mọc hoặc cho phép ai đó làm một việc gì.",
+      "longExplanation": "Trong tiếng Trung, câu kiêm ngữ (兼语句) là mẫu câu có tân ngữ của động từ thứ nhất đồng thời làm chủ ngữ thực hiện hành động của động từ thứ hai. Ba động từ sứ khiến thông dụng nhất là: '请' (qǐng - mời, nhờ, mang sắc thái lịch sự, tôn trọng), '让' (ràng - để, cho phép, bảo ai làm gì), và '叫' (jiào - gọi, sai, bảo ai làm gì, rất phổ biến trong khẩu ngữ hàng ngày).",
+      "formation": "Chủ ngữ + 请 / 让 / 叫 + Tân ngữ (Người thực hiện) + Động từ (+ Thành phần khác)",
+      "examples": [
+        {
+          "translation": "Tôi mời bạn ăn cơm."
+        }
+      ]
+    },
+    "zh_VV_93": {
+      "title": "Động từ trùng điệp (Lặp lại động từ: Làm một chút, thử làm [giảm nhẹ ngữ khí])",
+      "shortExplanation": "Động từ đơn âm tiết lặp lại biểu thị hành động diễn ra trong thời gian ngắn, làm thử hoặc làm một cách nhẹ nhàng, thoải mái; '...một chút', 'thử... xem'.",
+      "longExplanation": "Trong tiếng Trung, động từ đơn âm tiết có thể lặp lại (như: 看看 - xem xem/nhìn xem, 听听 - nghe một chút, 想想 - nghĩ ngợi một chút). Khi trùng điệp, âm tiết thứ hai thường đọc thanh nhẹ (khinh thanh). Mẫu câu này biểu thị hành động diễn ra trong khoảng thời gian rất ngắn hoặc có tính chất thử nghiệm, đồng thời làm cho ngữ khí câu nói trở nên nhẹ nhàng, thân mật, bớt tính mệnh lệnh.",
+      "formation": "Chủ ngữ + Động từ + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Bạn xem thử mấy bộ quần áo này xem."
+        }
+      ]
+    },
+    "zh_V一V_94": {
+      "title": "Động từ + 一 + Động từ (Trùng điệp động từ chèn 一: Làm thử một chút, làm một lát)",
+      "shortExplanation": "Chèn số từ '一' vào giữa động từ trùng điệp để biểu thị hành động diễn ra nhanh chóng, làm thử một chút; 'thử... một chút'.",
+      "longExplanation": "Bên cạnh hình thức lặp trực tiếp (như 看看), động từ đơn âm tiết trong tiếng Trung còn có biến thể rất phổ biến là chèn số từ '一' vào giữa (như 看一看 - xem thử một chút, 听一听 - nghe thử một lát, 想一想 - nghĩ một chút). Nghĩa của hình thức này tương đương với hình thức lặp trực tiếp, đều nhấn mạnh tính chất thử nghiệm, hành động diễn ra nhanh gọn và làm giảm nhẹ sắc thái mệnh lệnh, khiến câu nói nghe nhẹ nhàng, uyển chuyển hơn.",
+      "formation": "Chủ ngữ + Động từ + 一 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Bạn xem thử mấy bộ quần áo này xem nào."
+        }
+      ]
+    },
+    "zh_Vresult_95": {
+      "title": "Động từ + Bổ ngữ kết quả (Biểu thị kết quả đạt được của hành động)",
+      "shortExplanation": "Động từ kết hợp trực tiếp với một động từ hoặc tính từ phía sau làm bổ ngữ kết quả, diễn tả hành động đã dẫn đến kết cục hoặc mục đích nhất định.",
+      "longExplanation": "Trong tiếng Trung, bổ ngữ kết quả (结果补语) đứng ngay liền kề sau động từ chính mà không có bất kỳ từ nào xen vào giữa, dùng để biểu thị kết quả nảy sinh từ động tác đó. Các bổ ngữ kết quả phổ biến bao gồm: '到' hoặc '见' (nhìn thấy, nghe thấy, đạt được), '完' (xong, hết), '好' (hoàn tất, ổn thỏa), '懂' (hiểu), '对/错' (đúng/sai). Khi câu biểu thị sự việc đã hoàn thành hoặc đạt kết quả trong thực tế, thường có trợ từ động thái '了' đi kèm.",
+      "formation": "Chủ ngữ + Động từ + Bổ ngữ kết quả (+ Tân ngữ) (+ 了)",
+      "examples": [
+        {
+          "translation": "Tôi đã nhìn thấy bạn gái của bạn rồi."
+        }
+      ]
+    },
+    "zh_没Vresult_96": {
+      "title": "没(有) + Động từ + Bổ ngữ kết quả (Phủ định của bổ ngữ kết quả: Chưa/Không đạt được kết quả)",
+      "shortExplanation": "Dùng phó từ phủ định '没(有)' đặt trước động từ để phủ định việc kết quả của hành động đã diễn ra; tuyệt đối không dùng '了' ở cuối câu.",
+      "longExplanation": "Để phủ định một hành động đã không đạt được kết quả mong muốn hoặc kết quả đó chưa từng xảy ra, tiếng Trung sử dụng '没' hoặc '没有' đặt trước cấu trúc 'Động từ + Bổ ngữ kết quả'. Hai điểm quy tắc ngữ pháp tối quan trọng cần nhớ: (1) Không được dùng '不' để phủ định bổ ngữ kết quả của sự việc trong quá khứ/hiện tại; (2) Trợ từ hoàn thành '了' phải được lược bỏ hoàn toàn khi đã có '没(有)' phủ định.",
+      "formation": "Chủ ngữ + 没(有) + Động từ + Bổ ngữ kết quả (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi không nhìn thấy bạn gái của bạn."
+        }
+      ]
+    },
+    "zh_从N1到N2_97": {
+      "title": "从 + Danh từ 1 + 到 + Danh từ 2 (Từ... đến... [chỉ phạm vi đối tượng, không gian, thời gian])",
+      "shortExplanation": "Cụm giới từ biểu thị phạm vi bao quát từ đối tượng/địa điểm/thời gian này đến đối tượng/địa điểm/thời gian khác; 'từ... đến...'.",
+      "longExplanation": "'从……到……' (cóng... dào...) là kết cấu giới từ dùng để biểu thị điểm xuất phát và điểm kết thúc trong một phạm vi. Mẫu câu này không chỉ giới hạn ở phạm vi không gian (địa điểm) hoặc thời gian, mà còn mở rộng rất phổ biến sang phạm vi đối tượng con người, sự vật (ví dụ: '从老人到孩子' - từ người già đến trẻ nhỏ). Do bao hàm toàn bộ phạm vi, vị ngữ phía sau thường đi kèm với phó từ '都' (đều).",
+      "formation": "从 + Danh từ 1 + 到 + Danh từ 2 (+ 都) + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Từ người già đến trẻ con đều thích ăn táo."
+        }
+      ]
+    },
+    "zh_第MN_98": {
+      "title": "第 + Số từ + Lượng từ + Danh từ (Chỉ số thứ tự: Thứ... [cái thứ tư, người thứ nhất])",
+      "shortExplanation": "Tiền tố '第' kết hợp với số từ và lượng từ đứng trước danh từ để biểu thị thứ tự sắp xếp; tương đương với 'thứ...' trong tiếng Việt.",
+      "longExplanation": "Trong tiếng Trung, để chuyển đổi số đếm (nhất, nhị, tam, tứ...) thành số thứ tự (thứ nhất, thứ hai, thứ ba, thứ tư...), người ta thêm tiền tố '第' (dì) vào ngay trước con số. Khi bổ nghĩa cho danh từ, cấu trúc bắt buộc phải có lượng từ thích hợp chen giữa số từ và danh từ: '第 + Số từ + Lượng từ + Danh từ' (ví dụ: 第四本书 - cuốn sách thứ tư, 第一位老师 - người thầy đầu tiên).",
+      "formation": "第 + Số từ + Lượng từ + Danh từ",
+      "examples": [
+        {
+          "translation": "Việc thứ tư vẫn còn chưa làm."
+        }
+      ]
+    },
+    "zh_不要别V_99": {
+      "title": "不要 / 别 + Động từ (Câu mệnh lệnh phủ định: Đừng, không được làm gì)",
+      "shortExplanation": "Dùng '不要' hoặc '别' đứng trước động từ để khuyên can, ngăn cấm hoặc ra lệnh cho người khác không được thực hiện một hành động; 'đừng...', 'không được...'.",
+      "longExplanation": "'不要' (bùyào) và '别' (bié) là hai phó từ phủ định dùng trong câu cầu khiến để thể hiện sự khuyên ngăn, khuyên bảo hoặc cấm đoán ai làm việc gì. Trong khẩu ngữ hàng ngày, '别' được sử dụng cực kỳ phổ biến vì tính ngắn gọn và dứt khoát. Cả hai từ này đều đứng trực tiếp trước động từ hoặc cụm động từ để tạo thành câu mệnh lệnh phủ định (ví dụ: 别说话 - đừng nói chuyện, 不要走 - đừng đi).",
+      "formation": "(Chủ ngữ + ) 不要 / 别 + Động từ (+ Tân ngữ)!",
+      "examples": [
+        {
+          "translation": "Đừng nghịch điện thoại! (Đừng chơi điện thoại!)"
+        }
+      ]
+    },
+    "zh_不要别V了_100": {
+      "title": "不要 / 别 + Động từ + 了 (Đừng... nữa! [yêu cầu chấm dứt hành động đang diễn ra])",
+      "shortExplanation": "Thêm trợ từ ngữ khí '了' vào cuối câu mệnh lệnh phủ định để yêu cầu người nghe dừng ngay hành động đang làm lại; 'đừng... nữa!'.",
+      "longExplanation": "Khi cấu trúc '不要' hoặc '别' kết hợp với trợ từ ngữ khí '了' ở cuối câu ('不要/别……了'), nghĩa của câu chuyển từ việc khuyên không nên làm nói chung sang việc yêu cầu dừng hẳn một hành động đang thực sự diễn ra tại thời điểm nói. Trợ từ '了' ở đây biểu thị sự chuyển biến trạng thái (từ đang làm chuyển sang ngừng làm), tương đương với 'đừng... nữa', 'thôi... đi' trong tiếng Việt.",
+      "formation": "(Chủ ngữ + ) 不要 / 别 + Động từ (+ Tân ngữ) + 了！",
+      "examples": [
+        {
+          "translation": "Đừng nghịch điện thoại nữa!"
+        }
+      ]
+    },
+    "zh_对NA_101": {
+      "title": "对 + Danh từ + Tính từ (Đối với... thì... [biểu thị đối tượng tiếp nhận hoặc tác động])",
+      "shortExplanation": "Giới từ '对' dẫn ra đối tượng hướng tới, liên quan hoặc chịu tác động, phía sau kết hợp với tính từ hoặc cụm miêu tả; 'đối với... thì...'.",
+      "longExplanation": "'对' (duì) là giới từ thông dụng dùng để giới thiệu đối tượng mà một tính chất, thái độ, đánh giá hoặc tác động hướng vào. Trong cấu trúc '对 + Danh từ/Cụm danh từ + Tính từ/Cụm miêu tả', vị ngữ phía sau thường là các tính từ hoặc đoản ngữ đánh giá như: 有帮助 (có ích, giúp ích), 有好处 (có lợi), 有用 (hữu ích), 好 (tốt), 严格 (nghiêm khắc). Cấu trúc này tương đương với 'đối với... có lợi/tốt/hữu ích...' trong tiếng Việt.",
+      "formation": "(Chủ ngữ + ) 对 + Danh từ / Cụm danh từ + Tính từ / Cụm tính chất",
+      "examples": [
+        {
+          "translation": "Học tiếng Trung rất có ích cho công việc tại Trung Quốc."
+        }
+      ]
+    },
+    "zh_SV的N_102": {
+      "title": "Chủ ngữ + Động từ + 的 + Danh từ (Cụm chủ - vị làm định ngữ: Cái mà... làm)",
+      "shortExplanation": "Một mệnh đề chủ - vị hoàn chỉnh đứng trước trợ từ kết cấu '的' để làm định ngữ tu sức cho danh từ trung tâm đứng sau; 'cái/người mà... làm'.",
+      "longExplanation": "Trong tiếng Trung, mọi thành phần bổ nghĩa (định ngữ) đều bắt buộc phải đứng TRƯỚC danh từ trung tâm được bổ nghĩa. Khi cả một cụm chủ - vị (chủ ngữ nhỏ + vị ngữ động từ nhỏ) làm định ngữ để hạn định hoặc miêu tả cho một danh từ, giữa chúng bắt buộc phải có trợ từ kết cấu '的' (de) làm cầu nối liên kết. Cấu trúc này tương đương với mệnh đề quan hệ (relative clause) trong tiếng Anh, hay cách diễn đạt 'cái mà ai đó làm' trong tiếng Việt.",
+      "formation": "(Chủ ngữ nhỏ + Động từ) + 的 + Danh từ trung tâm",
+      "examples": [
+        {
+          "translation": "Cơm mẹ tôi nấu ăn rất ngon."
+        }
+      ]
+    },
+    "zh_N1比N2A_103": {
+      "title": "Danh từ 1 + 比 + Danh từ 2 + Tính từ (Câu chữ 比: So sánh hơn giữa hai đối tượng)",
+      "shortExplanation": "Dùng giới từ '比' để so sánh giữa hai đối tượng, biểu thị đối tượng thứ nhất có mức độ tính chất cao hơn đối tượng thứ hai; '...hơn...'.",
+      "longExplanation": "Câu chữ '比' (bǐ) là cấu trúc so sánh hơn cơ bản nhất trong tiếng Trung. Trật tự câu là: 'Đối tượng 1 + 比 + Đối tượng 2 + Tính từ'. Lưu ý quy tắc ngữ pháp đặc biệt: tính từ vị ngữ trong câu so sánh '比' tuyệt đối KHÔNG được đi kèm với các phó từ chỉ mức độ tuyệt đối như '很', '非常', '太', '真' (ví dụ: nói '哥哥比姐姐高', không được nói '哥哥比姐姐很高').",
+      "formation": "Danh từ 1 + 比 + Danh từ 2 + Tính từ",
+      "examples": [
+        {
+          "translation": "Anh trai cao hơn chị gái."
+        }
+      ]
+    },
+    "zh_N1没有N2A_104": {
+      "title": "Danh từ 1 + 没有 + Danh từ 2 + Tính từ (So sánh kém với 没有: Không bằng, chưa bằng)",
+      "shortExplanation": "Dùng '没有' để so sánh giữa hai đối tượng, biểu thị đối tượng thứ nhất không đạt đến mức độ tính chất như đối tượng thứ hai; '...không bằng...'.",
+      "longExplanation": "'没有' (méiyǒu) được dùng trong cấu trúc so sánh để biểu thị sự so sánh kém hoặc phủ định sự ngang bằng. Cấu trúc chuẩn là: 'Đối tượng 1 + 没有 + Đối tượng 2 + (这么/那么) + Tính từ'. Mẫu câu này chỉ rõ đối tượng 1 có mức độ thuộc tính thấp hơn đối tượng 2 (chưa đạt đến chuẩn của đối tượng 2). Trong khẩu ngữ, người ta thường chèn thêm '那么' (nàme) hoặc '这么' (zhème) trước tính từ để nhấn mạnh (ví dụ: 哥哥没有姐姐那么高 = Anh trai không cao bằng chị gái).",
+      "formation": "Danh từ 1 + 没有 + Danh từ 2 (+ 这么 / 那么) + Tính từ",
+      "examples": [
+        {
+          "translation": "Anh trai không cao bằng chị gái."
+        }
+      ]
+    },
+    "zh_可能_105": {
+      "title": "可能 (Phó từ / Động từ năng nguyện: Có thể, có lẽ, có khả năng)",
+      "shortExplanation": "Dùng để phỏng đoán, ước lượng hoặc đánh giá về khả năng xảy ra của một sự việc hay hành động; 'có thể', 'có lẽ'.",
+      "longExplanation": "'可能' (kěnéng) vừa có thể hoạt động như một phó từ chỉ sự phỏng đoán, vừa có thể dùng như một động từ năng nguyện (trợ động từ) trong tiếng Trung. Nó thường đứng trước vị ngữ hoặc đứng ở đầu câu (trước chủ ngữ) để đưa ra nhận định không hoàn toàn chắc chắn của người nói về một sự việc, tương đương với 'có thể', 'có lẽ', 'chắc là'. Khi kết hợp với phủ định, thường đặt trước '不' hoặc '没' (ví dụ: 可能不会 - có lẽ không biết/sẽ không).",
+      "formation": "Chủ ngữ + 可能 + Vị ngữ (Động từ / Tính từ) (hoặc: 可能 + Chủ ngữ + Vị ngữ)",
+      "examples": [
+        {
+          "translation": "Cô ấy có lẽ không biết hát đâu."
+        }
+      ]
+    },
+    "zh_V得A_106": {
+      "title": "Động từ + 得 + Tính từ (Bổ ngữ trạng thái: Đánh giá trình độ hoặc kết quả của hành động)",
+      "shortExplanation": "Dùng trợ từ kết cấu '得' đứng sau động từ để nối với tính từ, biểu thị nhận xét, đánh giá về trạng thái, mức độ hoặc hiệu quả của hành động.",
+      "longExplanation": "Trong tiếng Trung, cấu trúc 'Động từ + 得 + Tính từ/Cụm tính từ' là hình thức cơ bản nhất của bổ ngữ trạng thái (状态补语, còn gọi là bổ ngữ mức độ hoặc bổ ngữ tình thái). Nó dùng để miêu tả, đánh giá hoặc nhận xét xem một động tác diễn ra như thế nào, đạt đến trình độ hoặc trạng thái ra sao (ví dụ: 跑得快 - chạy nhanh, 说得好 - nói hay). Nếu sau '得' là một tính từ đơn độc mang nghĩa tích cực thì phía trước tính từ đó thường bắt buộc phải có phó từ chỉ mức độ như '很', '非常', '真' (ví dụ: nói '跑得很快', không nói '跑得快' trừ khi so sánh).",
+      "formation": "Chủ ngữ + Động từ + 得 + (Phó từ mức độ + ) Tính từ",
+      "examples": [
+        {
+          "translation": "Tôi chạy rất nhanh."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_请让叫OV_92": {
+      "title": "请 / 让 / 叫 ＋ 目的語 ＋ 動詞（兼語文：人に〜してもらう／〜させる／〜を誘う）",
+      "shortExplanation": "使役動詞「请」（招待する・お願いする）、「让」（〜させる・〜してもらう）、「叫」（〜言いつける・〜させる）を用いて、「人に〜させる」「人を誘って〜する」と表す兼語文の構文です。",
+      "longExplanation": "中国語の兼語文（兼语句）とは、第1動詞の目的語がそのまま第2動詞の意味上の主語（動作の実行者）となる文構造です。代表的な使役動詞には、丁寧にお願いや招待をする「请」（qǐng：ごちそうする、頼む）、許可や指示を表す「让」（ràng：〜させる、〜してもらう）、口語で人に指示・言いつけをする「叫」（jiào：〜に言いつける、〜させる）があります。",
+      "formation": "主語 ＋ 请 / 让 / 叫 ＋ 目的語（兼語） ＋ 動詞（＋ その他）",
+      "examples": [
+        {
+          "translation": "私からあなたにご飯をごちそうします。"
+        }
+      ]
+    },
+    "zh_VV_93": {
+      "title": "動詞の重ね型（動詞の重複：ちょっと〜してみる［動作の短時間・試行・語気の緩和］）",
+      "shortExplanation": "単音節動詞を重ねて用い、動作の継続時間が短いこと、試しにやってみること、または語気を和らげるニュアンスを表します。",
+      "longExplanation": "中国語の単音節動詞は重ね型（例：看看、听听、说说）にすることで、「ちょっと〜する」「試しに〜してみる」という動作の短時間・試行を表すことができます。重ねた2つ目の音節は通常、軽声で発音されます。命令や依頼の文で用いると、相手に対する圧迫感が減り、柔らかく親しみのあるニュアンスを添える効果があります。",
+      "formation": "主語 ＋ 動詞 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "この何着かの服をちょっと見てごらんなさい。"
+        }
+      ]
+    },
+    "zh_V一V_94": {
+      "title": "動詞 ＋ 一 ＋ 動詞（動詞の間に「一」を挟む重ね型：ちょっと〜してみる）",
+      "shortExplanation": "単音節動詞の間に数詞「一」を挟んで、動作を「ちょっと〜してみる」「ひと通り〜してみる」という意味を表します。",
+      "longExplanation": "単音節動詞の重ね型において、動詞の間に「一」を挟んだ型（例：看一看、听一听、想一想）は、直接重ねる型とほぼ同義で用いられます。「ちょっと〜してみる」「一度〜してみる」という動作の短時間の試みや気軽な実行を表し、話し手の語気を柔らかくする働きがあります。文末や命令文に添えることで、親しみのある柔らかな表現になります。",
+      "formation": "主語 ＋ 動詞 ＋ 一 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "この何着かの服をちょっと見てみてください。"
+        }
+      ]
+    },
+    "zh_Vresult_95": {
+      "title": "動詞 ＋ 結果補語（動作の結果の発生・達成を表す）",
+      "shortExplanation": "動詞の直後に動詞や形容詞を結果補語として続け、動作によってどのような結果や状態が生じたか・達成されたかを表します。",
+      "longExplanation": "中国語の結果補語（结果补语）は、主動詞のすぐ後ろに密着して置かれ、動作を行った結果として何が起きたか、どのような状態に至ったかを表す重要な文法項目です。よく使われる結果補語には「到／见」（〜が見える／行き着く）、「完」（〜し終える）、「好」（きちんと仕上がる）、「懂」（理解する）、「对／错」（正しく〜する／間違える）などがあります。動作の結果が実現したことを示すため、文末や動詞句の後ろに「了」を伴うのが一般的です。",
+      "formation": "主語 ＋ 動詞 ＋ 結果補語（＋ 目的語）（＋ 了）",
+      "examples": [
+        {
+          "translation": "あなたの彼女の姿を見かけましたよ。"
+        }
+      ]
+    },
+    "zh_没Vresult_96": {
+      "title": "没（有） ＋ 動詞 ＋ 結果補語（結果補語の否定：〜しなかった・〜できなかった）",
+      "shortExplanation": "動詞の前に否定詞「没（有）」を置き、動作の結果が実現しなかったこと・達成されなかったことを表します。文末に「了」は使いません。",
+      "longExplanation": "結果補語を伴う動詞句を否定する場合、必ず「没」または「没有」を動詞の前に置きます（過去または既成の事実に対する結果の不成立を表すため、「不」は使えません）。また、完了や実現を表す助詞「了」は、「没（有）」による否定文では必ず脱落するという重要な文法規則があります（例：×没看到～了 → ○没看到～）。",
+      "formation": "主語 ＋ 没（有） ＋ 動詞 ＋ 結果補語（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "あなたの彼女は見かけませんでした。"
+        }
+      ]
+    },
+    "zh_从N1到N2_97": {
+      "title": "从 ＋ 名詞1 ＋ 到 ＋ 名詞2（〜から〜まで［対象・空間・時間の範囲］）",
+      "shortExplanation": "前置詞「从」と「到」を組み合わせて、人や事物の対象、または時間や空間の始まりから終わりまでの包括的な範囲を表します。",
+      "longExplanation": "「从……到……」（cóng... dào...）は、ある起点から終点までの全範囲を包括して提示する前置詞構文です。場所や時間（朝から晩まで、北京から上海まで）だけでなく、例のように「老人から子どもまで」といった人物や事物のカテゴリー全体を網羅する際にも多用されます。範囲全体を指し示すため、後続の述語の前には副詞「都」（みな、すべて）が呼応して置かれるのが通例です。",
+      "formation": "从 ＋ 名詞1 ＋ 到 ＋ 名詞2（＋ 都） ＋ 述語",
+      "examples": [
+        {
+          "translation": "お年寄りから子どもまで、みんなリンゴを食べるのが好きです。"
+        }
+      ]
+    },
+    "zh_第MN_98": {
+      "title": "第 ＋ 数詞 ＋ 量詞 ＋ 名詞（第〜番目の…［順序・序数詞］）",
+      "shortExplanation": "数詞の前に接頭辞「第」を付け、さらに量詞を介して名詞を修飾し、「第〜番目の…」という順序を表します。",
+      "longExplanation": "中国語で基数（1、2、3…）を順序を表す序数（第1、第2、第3…）に変えるには、数詞の直前に接頭辞「第」（dì）を付けます。名詞を修飾する際には、数詞と名詞の間に必ずその名詞に対応する「量詞」を挟む必要があります（構造：第 ＋ 数詞 ＋ 量詞 ＋ 名詞、例：第四本书＝4冊目の本、第一个人＝最初の人）。",
+      "formation": "第 ＋ 数詞 ＋ 量詞 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "4つ目の用事はまだ済んでいません。"
+        }
+      ]
+    },
+    "zh_不要别V_99": {
+      "title": "不要 / 别 ＋ 動詞（禁止・制止の表現：〜するな・〜しないで）",
+      "shortExplanation": "動詞の前に「不要」または「别」を置き、相手に動作を制止したり思いとどまらせたりする禁止・忠告を表します。",
+      "longExplanation": "「不要」（bùyào）と「别」（bié）は、相手にある行動をしないよう忠告、要請、または命令する禁止表現です。日常会話では簡潔な「别」が一層好んで用いられます。動詞句の直前に置くだけで「〜しないでください」「〜してはならない」という否定の命令・依頼文を作ることができます。親しい間柄での忠告から、強い制止・警告まで幅広く使われます。",
+      "formation": "（主語 ＋ ）不要 / 别 ＋ 動詞（＋ 目的語）！",
+      "examples": [
+        {
+          "translation": "スマホをいじるのはやめなさい（スマホで遊ばないで）！"
+        }
+      ]
+    },
+    "zh_不要别V了_100": {
+      "title": "不要 / 别 ＋ 動詞 ＋ 了（もう〜するな・〜するのはやめなさい［動作の中止］）",
+      "shortExplanation": "文末に変化を表す語気助詞「了」を伴うことで、現に行われている動作を「もうやめなさい」「これ以上〜するな」と制止します。",
+      "longExplanation": "「不要／别……了」の構文は、文末の「了」が状態の変化を表す機能を持ちます。単なる一般的な禁止（〜するな）ではなく、「今行っているその行為を今すぐやめて、しない状態に切り替えなさい」と、現行の動作を中止させる強いニュアンスを持ちます。日本語の「もう〜するな」「〜するのはもうやめて」にぴったり合致する表現です。",
+      "formation": "（主語 ＋ ）不要 / 别 ＋ 動詞（＋ 目的語） ＋ 了！",
+      "examples": [
+        {
+          "translation": "もうスマホをいじるのはやめなさい！"
+        }
+      ]
+    },
+    "zh_对NA_101": {
+      "title": "对 ＋ 名詞 ＋ 形容詞（〜に対して〜だ・〜にとって〜だ［対象と評価］）",
+      "shortExplanation": "前置詞「对」で対象や相手を導き、後続の形容詞等と結びついて「〜にとって…だ」「〜に対して…だ」という評価や関係性を表します。",
+      "longExplanation": "前置詞「对」（duì）は、ある評価や影響、態度が向けられる対象や相手を提示する働きをします。「对 ＋ 名詞句 ＋ 形容詞句」のパターンでは、述語部分に「有帮助」（助けになる）、「有好处」（メリットがある）、「好」（良い）、「严格」（厳しい）などの評価・性状を表す語句が置かれ、「〜にとって有益だ」「〜に対して良い効果がある」という意味を表します。",
+      "formation": "（主語 ＋ ）对 ＋ 名詞 / 名詞句 ＋ 形容詞 / 評価述語",
+      "examples": [
+        {
+          "translation": "中国語を学ぶことは、中国で働くことにとって助けになります。"
+        }
+      ]
+    },
+    "zh_SV的N_102": {
+      "title": "主語 ＋ 動詞 ＋ 的 ＋ 名詞（主述句による連体修飾節：〜が…した〜）",
+      "shortExplanation": "「主語 ＋ 動詞」という主述構造を構造助詞「的」で名詞に繋げ、「〜が作った…」「〜が読んだ…」のように名詞を修飾する構文です。",
+      "longExplanation": "中国語では修飾語（連体修飾語）は必ず被修飾名詞の「前」に置かれます。主述節（小主語＋動詞述語）が名詞を修飾して限定する場合、必ず構造助詞「的」（de）を介して結びつけます（英語の関係代名詞節、日本語の連体修飾節「〜が…した名詞」に相当します）。例の「我妈妈做的饭」は、「母が作ったご飯」という構造になります。",
+      "formation": "（小主語 ＋ 動詞） ＋ 的 ＋ 中心名詞",
+      "examples": [
+        {
+          "translation": "私の母が作ったご飯はとても美味しいです。"
+        }
+      ]
+    },
+    "zh_N1比N2A_103": {
+      "title": "名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞（比構文：2つの対象の優劣比較）",
+      "shortExplanation": "前置詞「比」を用いて2つの対象を比較し、「名詞1は名詞2よりも〜だ」と程度が勝っていることを表します。",
+      "longExplanation": "「比」（bǐ）を用いた構文は、中国語における最も基本的な比較表現です。「名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞」の語順で、「名詞1は名詞2よりも〜である」という優劣比較を表します。極めて重要な注意点として、文末の形容詞の前には「很」「非常」「真」「太」などの絶対的な程度副詞を置くことができません（誤り例：×哥哥比姐姐很高 → 正しい文：○哥哥比姐姐高）。",
+      "formation": "名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "兄は姉よりも背が高いです。"
+        }
+      ]
+    },
+    "zh_N1没有N2A_104": {
+      "title": "名詞1 ＋ 没有 ＋ 名詞2 ＋ 形容詞（没有比較文：〜ほど…ではない［劣等比較］）",
+      "shortExplanation": "「没有」を用いて比較を行い、「名詞1は名詞2ほど〜ではない」と、ある水準や程度に達していないことを表します。",
+      "longExplanation": "「没有」（méiyǒu）を用いた文は、比較における劣等比較（または「有」による同等比較の否定形式）を表します。語順は「名詞1 ＋ 没有 ＋ 名詞2 ＋ （那么／这么） ＋ 形容詞」で、「名詞1は名詞2ほど〜ではない」という意味になります。形容詞の前に指示代名詞の「那么」（あんなに）や「这么」（こんなに）を補って用いられることが多く、相手のレベルに及ばないことを強調します。",
+      "formation": "名詞1 ＋ 没有 ＋ 名詞2（＋ 这么 / 那么） ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "兄は姉ほど背が高くありません。"
+        }
+      ]
+    },
+    "zh_可能_105": {
+      "title": "可能（副詞・能願動詞：たぶん〜だろう・〜かもしれない［推量・可能性］）",
+      "shortExplanation": "主語の前または述語の前に置き、事態の発生や可能性について「たぶん〜だろう」「〜かもしれない」と推量・推測を表します。",
+      "longExplanation": "「可能」（kěnéng）は副詞または能願動詞（助動詞）として機能し、ある事態が起こる蓋然性や可能性について話し手が推量する際に用いられます。主語の前、あるいは主語と述語動詞の間に置かれ、「おそらく〜だろう」「〜の可能性がある」という意味を表します。否定表現と併用する場合は「可能不……」の語順で用いられることが多く、「おそらく〜しない／できないだろう」という意味になります。",
+      "formation": "主語 ＋ 可能 ＋ 述語（動詞 / 形容詞）（または：可能 ＋ 主語 ＋ 述語）",
+      "examples": [
+        {
+          "translation": "彼女はおそらく歌が歌えないのでしょう。"
+        }
+      ]
+    },
+    "zh_V得A_106": {
+      "title": "動詞 ＋ 得 ＋ 形容詞（様態補語：動作のありさま・到達度を評価する）",
+      "shortExplanation": "動詞の後に構造助詞「得」を置き、後続の形容詞等と結びつけて、動作がどのような状態・レベルで行われているかを評価・描写します。",
+      "longExplanation": "中国語の様態補語（情態補語／状態補語）は、「動詞 ＋ 得 ＋ 形容詞句」の形で構成され、行われた動作が「上手にできたか」「速いか」「美しいか」など、その達成度合いや様態を客観的に評価・描写する必須の構文です。形容詞の前には通常「很」「非常」などの程度副詞を伴うのが基本ルールです（例：跑得很快＝走るのがとても速い）。",
+      "formation": "主語 ＋ 動詞 ＋ 得 ＋ （程度副詞 ＋ ）形容詞",
+      "examples": [
+        {
+          "translation": "私は走るのがとても速いです。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_请让叫OV_92": {
+      "title": "请 / 让 / 叫 + 목적어 + 동사 (겸어문: ~에게 ~하도록 초대하다/시키다/하게 하다)",
+      "shortExplanation": "사역성 동사인 '请'(초대하다/부탁하다), '让'(~하게 하다/~하도록 시키다), '叫'(~에게 시키다/부르다)를 사용하여 대상에게 어떤 행동을 하도록 권하거나 시키는 겸어문 구문입니다.",
+      "longExplanation": "중국어의 겸어문(兼语句)은 앞선 동사의 목적어가 동시에 뒤따르는 동사의 주어(동작 수행자) 역할을 겸하는 문장 형태입니다. 대표적인 동사로 정중한 초대나 부탁을 나타내는 '请'(qǐng), 허가나 사역을 나타내는 '让'(ràng), 구어에서 흔히 어떤 행동을 시키거나 명령할 때 쓰는 '叫'(jiào)가 있습니다. 한국어의 '~에게 턱을 내다/대접하다', '~에게 ~하라고 시키다' 등에 상응합니다.",
+      "formation": "주어 + 请 / 让 / 叫 + 목적어(겸어) + 동사(+ 기타 성분)",
+      "examples": [
+        {
+          "translation": "내가 너한테 밥 한 끼 살게 (식사 대접할게)."
+        }
+      ]
+    },
+    "zh_VV_93": {
+      "title": "동사 중첩 (동사의 거듭 쓰기: 좀 ~해 보다 [짧은 시간·시도·어기 완화])",
+      "shortExplanation": "단음절 동사를 중첩하여 동작의 지속 시간이 짧거나 시험 삼아 가볍게 해 봄을 나타내며, 부드러운 어기를 전달합니다.",
+      "longExplanation": "중국어 단음절 동사는 '看看'(보다), '听听'(듣다), '想想'(생각하다)처럼 두 번 거듭 쓰는 중첩이 가능합니다. 중첩된 두 번째 글자는 대개 경성(가볍고 짧은 소리)으로 발음됩니다. 이 구문은 행동이 짧은 시간 동안 이루어지거나 시험 삼아 한 번 해본다는 의미를 지니며, 명령이나 요청의 문장에서 상대방에게 강요하는 느낌을 줄여 부드럽고 친근한 뉘앙스를 부여합니다.",
+      "formation": "주어 + 동사 + 동사(+ 목적어)",
+      "examples": [
+        {
+          "translation": "이 옷들 몇 벌 좀 봐봐."
+        }
+      ]
+    },
+    "zh_V一V_94": {
+      "title": "동사 + 一 + 동사 (동사 사이에 '一'을 넣는 중첩: 한번 ~해 보다, 좀 ~해 보다)",
+      "shortExplanation": "단음절 동사 사이에 수사 '一'을 삽입한 형태로, 어떤 동작을 짧게 시도해 보거나 가볍게 시험 삼아 함을 나타냅니다.",
+      "longExplanation": "단음절 동사의 중첩 형태 중 가운데에 '一'을 넣는 구조(예: 看一看, 听一听, 想一想)는 직접 겹쳐 쓰는 형태와 의미상 대등합니다. 동작을 한 번 가볍게 시도해 보거나 짧은 시간 동안 실행함을 나타내며, 상대방에게 무엇을 권유할 때 완곡하고 부드러운 어조를 형성합니다. 한국어로는 '한번 ~해 보다', '좀 ~해 보다'로 자연스럽게 번역됩니다.",
+      "formation": "주어 + 동사 + 一 + 동사(+ 목적어)",
+      "examples": [
+        {
+          "translation": "이 옷 몇 벌을 한번 살펴보세요."
+        }
+      ]
+    },
+    "zh_Vresult_95": {
+      "title": "동사 + 결과보어 (동작의 결과·달성 표시)",
+      "shortExplanation": "동사 바로 뒤에 또 다른 동사나 형용사를 결과보어로 붙여, 그 동작을 행한 결과 어떤 상태에 도달했거나 목적을 달성했음을 나타냅니다.",
+      "longExplanation": "중국어의 결과보어(结果补语)는 동사 직후에 틈 없이 결합하여 동작의 최종 결과나 귀결을 명시하는 문법 요소입니다. 주요 결과보어로는 '到/见'(보고 듣는 감각의 도달 및 포착), '完'(동작의 끝마침), '好'(만족스럽고 확실한 완료), '懂'(이해에 도달), '错/对'(틀림/맞음) 등이 있습니다. 실제 동작이 행해져 결과가 발생했음을 나타내므로 대개 완료를 나타내는 조사 '了'와 함께 쓰입니다.",
+      "formation": "주어 + 동사 + 결과보어(+ 목적어)(+ 了)",
+      "examples": [
+        {
+          "translation": "나 네 여자친구 봤어."
+        }
+      ]
+    },
+    "zh_没Vresult_96": {
+      "title": "没(有) + 동사 + 결과보어 (결과보어의 부정: ~하지 못했다, ~한 결과에 도달하지 못했다)",
+      "shortExplanation": "동사 앞에 부정사 '没(有)'를 두어 동작에 따른 결과가 발생하지 않았거나 도달하지 못했음을 나타냅니다. 완료의 '了'는 함께 쓰지 않습니다.",
+      "longExplanation": "중국어에서 결과보어가 쓰인 문장을 부정할 때는 '不'가 아닌 '没' 또는 '没有'를 동사 앞에 위치시켜 '그 행동을 한 결과에 도달하지 못했다'는 사실을 나타냅니다. 중요한 규칙으로, '没(有)'로 결과를 부정할 때는 완료나 실현을 나타내는 조사 '了'를 절대로 문말에 함께 쓰지 않아야 합니다.",
+      "formation": "주어 + 没(有) + 동사 + 결과보어(+ 목적어)",
+      "examples": [
+        {
+          "translation": "나 네 여자친구 못 봤어."
+        }
+      ]
+    },
+    "zh_从N1到N2_97": {
+      "title": "从 + 명사1 + 到 + 명사2 (~에서 ~까지, ~부터 ~에 이르기까지 [범위 포괄])",
+      "shortExplanation": "개사(전치사) '从'과 '到'가 짝을 이루어 대상, 공간, 시간 등의 시작점부터 끝점까지의 포괄적 범위를 나타냅니다.",
+      "longExplanation": "'从……到……'(cóng... dào...)는 기준점과 도달점을 아우르는 전치사 호응 구문입니다. 공간적 이동 경로(어디에서 어디까지)나 시간대(몇 시부터 몇 시까지)뿐 아니라, 예문처럼 '노인부터 어린아이에 이르기까지'와 같이 특정 인물 집단이나 사물의 전체 범위를 포괄할 때도 광범위하게 쓰입니다. 전 범위에 두루 해당함을 나타내므로 술어 앞에는 대개 포괄 부사인 '都'가 함께 쓰입니다.",
+      "formation": "从 + 명사1 + 到 + 명사2(+ 都) + 술어",
+      "examples": [
+        {
+          "translation": "노인부터 아이에 이르기까지 모두 사과 먹는 것을 좋아한다."
+        }
+      ]
+    },
+    "zh_第MN_98": {
+      "title": "第 + 수사 + 양사 + 명사 (제~번째의 … [서수 표현])",
+      "shortExplanation": "수사 앞에 접두사 '第'를 붙이고 알맞은 양사를 결합하여 '제~번째의 …'라는 순서와 차례를 나타냅니다.",
+      "longExplanation": "중국어에서 일반 기수(하나, 둘, 셋)를 순서를 가리키는 서수(첫째, 둘째, 셋째)로 바꿀 때는 수사 앞에 접두사 '第'(dì)를 붙입니다. 뒤따르는 명사를 수식할 때는 반드시 '第 + 수사 + 양사 + 명사'의 어순을 지켜야 하며, 양사를 생략하지 않습니다(예: 第四件事 - 네 번째 일, 第一个问题 - 첫 번째 질문).",
+      "formation": "第 + 수사 + 양사 + 명사",
+      "examples": [
+        {
+          "translation": "네 번째 일은 아직 하지 않았습니다."
+        }
+      ]
+    },
+    "zh_不要别V_99": {
+      "title": "不要 / 别 + 동사 (부정 명령·금지: ~하지 마라, ~하지 마세요)",
+      "shortExplanation": "동사 앞에 '不要' 또는 '别'을 붙여 상대방에게 어떤 행동을 하지 말라고 권고하거나 금지·만류하는 부정 명령문입니다.",
+      "longExplanation": "'不要'(bùyào)와 '别'(bié)은 청자에게 특정 행동을 하지 말 것을 요구하는 부정 명령 표현입니다. 회화에서는 한 음절로 간결한 '别'이 매우 흔하게 사용됩니다. 동사 앞에 놓여 '~하지 마라', '~해서는 안 된다'라는 뜻을 나타내며, 어조에 따라 가벼운 당부나 조언부터 엄격한 금지나 주의 환기까지 두루 쓰입니다.",
+      "formation": "(주어 + ) 不要 / 别 + 동사(+ 목적어)!",
+      "examples": [
+        {
+          "translation": "휴대폰 하지 마 (휴대폰 갖고 놀지 마)!"
+        }
+      ]
+    },
+    "zh_不要别V了_100": {
+      "title": "不要 / 别 + 동사 + 了 (이제 그만 ~해라, 더 이상 ~하지 마라 [진행 중인 동작 중지])",
+      "shortExplanation": "문말에 변화의 어기조사 '了'를 붙여, 현재 이미 진행 중인 동작이나 상태를 '더 이상 계속하지 말고 멈춰라'라고 제지합니다.",
+      "longExplanation": "'不要/别……了' 구문은 단순한 사전 금지가 아니라, 청자가 실제로 이미 하고 있는 행동을 겨냥하여 '이제 그만 멈춰라'라고 요구하는 표현입니다. 문말의 '了'는 이전의 상태(행동 중)에서 새로운 상태(행동 중지)로의 전환을 유도하는 변화의 뉘앙스를 담고 있습니다. 한국어로는 '이제 그만 ~해', '더 이상 ~하지 마'에 해당합니다.",
+      "formation": "(주어 + ) 不要 / 别 + 동사(+ 목적어) + 了!",
+      "examples": [
+        {
+          "translation": "이제 그만 휴대폰 좀 봐 (휴대폰 그만 만져)!"
+        }
+      ]
+    },
+    "zh_对NA_101": {
+      "title": "对 + 명사 + 형용사 (~에 대해 ~하다, ~에 있어서 ~하다 [대상과 평가])",
+      "shortExplanation": "개사(전치사) '对'로 대상이나 범위를 이끌고, 뒤에 형용사나 평가 술어를 결합하여 '~에 대해 유익하다/좋다' 등 영향과 성질을 나타냅니다.",
+      "longExplanation": "'对'(duì)는 어떤 작용이나 태도, 평가가 향하는 대상을 도입하는 전치사입니다. '对 + 명사(구) + 형용사(구)' 구문에서 서술어로는 '有帮助'(도움이 되다), '有好处'(유익하다), '有用'(쓸모 있다), '严格'(엄격하다) 등의 표현이 자주 호응하여, 특정 사안이 해당 대상에게 어떤 긍정적·부정적 영향이나 효용을 지니는지 밝힙니다. 한국어로는 '~에 대해/있어서 유익하다', '~에게 도움이 되다'로 풀이됩니다.",
+      "formation": "(주어 + ) 对 + 명사 / 명사구 + 형용사 / 서술어",
+      "examples": [
+        {
+          "translation": "중국어를 배우는 것은 중국에서 일하는 데 도움이 된다."
+        }
+      ]
+    },
+    "zh_SV的N_102": {
+      "title": "주어 + 동사 + 的 + 명사 (주술 구조 관형어: ~가 한 … [수식절])",
+      "shortExplanation": "'주어 + 동사'로 이루어진 절이 구조조사 '的'을 통해 뒤따르는 명사를 수식하여 '~가 한 …'이라는 관형어(수식어) 역할을 합니다.",
+      "longExplanation": "중국어의 모든 수식어(관형어)는 피수식어인 명사 중심어 '앞'에 위치한다는 절대적 어순 규칙이 있습니다. 절 단위의 온전한 주술 관계(주어+동사)가 뒤의 명사를 한정하거나 묘사할 때는 연결 고리로 구조조사 '的'(de)를 반드시 사용합니다. 이는 한국어의 '~가 한 (명사)', 영어의 관계사절 수식에 해당하며, 복잡한 사물이나 사람을 특정할 때 매우 자주 쓰입니다.",
+      "formation": "(소주어 + 동사) + 的 + 중심 명사",
+      "examples": [
+        {
+          "translation": "우리 엄마가 만든 밥은 정말 맛있다."
+        }
+      ]
+    },
+    "zh_N1比N2A_103": {
+      "title": "명사1 + 比 + 명사2 + 형용사 (比 비교문: 두 대상 간의 우세 비교)",
+      "shortExplanation": "개사(전치사) '比'를 사용하여 두 대상을 비교하며, '명사1이 명사2보다 더 ~하다'라는 우세 비교를 나타냅니다.",
+      "longExplanation": "'比'(bǐ)를 사용하는 문장은 중국어의 가장 대표적인 비교문 형식입니다. 어순은 '명사1 + 比 + 명사2 + 형용사'로, 명사1의 성질이나 상태가 명사2보다 더 우세함을 나타냅니다. 학습 시 가장 주의해야 할 규칙은 술어로 쓰인 형용사 앞에 절대적 정도부사인 '很', '非常', '太', '真' 등을 결합할 수 없다는 점입니다(예: '哥哥比姐姐很高'는 비문이며, 반드시 '哥哥比姐姐高'로 씀).",
+      "formation": "명사1 + 比 + 명사2 + 형용사",
+      "examples": [
+        {
+          "translation": "오빠(형)가 누나(언니)보다 키가 더 크다."
+        }
+      ]
+    },
+    "zh_N1没有N2A_104": {
+      "title": "명사1 + 没有 + 명사2 + 형용사 (没有 비교문: ~만큼 …하지 않다 [열등 비교])",
+      "shortExplanation": "'没有'를 사용하여 두 대상을 비교하며, '명사1은 명사2만큼 ~하지 못하다'라는 열등 비교나 정도의 미달을 나타냅니다.",
+      "longExplanation": "'没有'(méiyǒu) 비교문은 '명사1 + 没有 + 명사2 + (这么/那么) + 형용사'의 형태로 쓰여, 명사1의 정도나 수치가 명사2의 수준에 미치지 못함을 나타내는 구문입니다. 한국어의 '~은/는 ~만큼 …하지 않다', '~보다 덜 …하다'에 대응합니다. 회화에서는 형용사 앞에 흔히 지시대명사인 '那么'(그렇게)나 '这么'(이렇게)를 덧붙여 미달하는 정도의 격차를 강조합니다.",
+      "formation": "명사1 + 没有 + 명사2(+ 这么 / 那么) + 형용사",
+      "examples": [
+        {
+          "translation": "오빠(형)는 누나(언니)만큼 키가 크지 않다."
+        }
+      ]
+    },
+    "zh_可能_105": {
+      "title": "可能 (부사/능원동사: 아마 ~일 것이다, ~일지도 모른다 [추측·가능성])",
+      "shortExplanation": "술어 앞이나 주어 앞에 쓰여 어떤 사실이나 상황의 실현 가능성에 대해 '아마 ~일 것이다', '~일지도 모른다'라는 화자의 짐작과 추측을 나타냅니다.",
+      "longExplanation": "'可能'(kěnéng)은 부사 또는 조동사(능원동사) 역할을 하며, 사태의 가능성이나 개연성을 추량할 때 사용됩니다. 주어의 앞 혹은 주어와 술어 사이에 자유롭게 놓이며, 확신하지 못하는 일에 대해 조심스럽게 추측을 제기하는 어기를 전달합니다. 부정형과 함께 쓰일 때는 대개 '可能不/没……'의 형태를 취하여 '아마 ~하지 못할 것이다', '어쩌면 ~하지 않을지도 모른다'를 뜻합니다.",
+      "formation": "주어 + 可能 + 술어(동사 / 형용사) (또는: 可能 + 주어 + 술어)",
+      "examples": [
+        {
+          "translation": "그녀는 아마 노래를 부를 줄 모를 것이다."
+        }
+      ]
+    },
+    "zh_V得A_106": {
+      "title": "동사 + 得 + 형용사 (상태보어: 동작의 양태·수준·결과 평가)",
+      "shortExplanation": "동사 뒤에 구조조사 '得'를 붙이고 형용사를 결합하여, 동작이 이루어지는 상태나 수준, 속도 등을 묘사하고 평가합니다.",
+      "longExplanation": "중국어의 상태보어(状态补语, 또는 정도보어)는 '동사 + 得 + 형용사구'의 구조를 취하며, 이미 실행되었거나 통상적으로 이루어지는 동작이 '어떠한 상태로', '어느 정도의 수준으로' 행해지는지를 평가할 때 쓰입니다. 상태보어로 쓰이는 형용사 앞에는 대개 '很'(매우), '非常'(대단히) 등의 정도부사가 함께 붙는 것이 자연스럽습니다(예: '跑得快' 단독보다는 '跑得很快' 형태가 일반적임).",
+      "formation": "주어 + 동사 + 得 + (정도부사 + ) 형용사",
+      "examples": [
+        {
+          "translation": "나는 달리기가 매우 빠르다 (달리는 속도가 매우 빠르다)."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_请让叫OV_92": {
+      "title": "请 / 让 / 叫 + 宾语 + 动词（兼语句：请客 / 叫某人做某事 / 让某人做某事）",
+      "shortExplanation": "使用使役动词“请”（邀请、请求）、“让”（允许、让步）、“叫”（吩咐、叫唤）构成的兼语句，表示请托、指派或允许某人做某事。",
+      "longExplanation": "兼语句是汉语中一种常见的特殊句式，其核心特征是前一个动词的宾语同时充当后一个动词的主语（动作发出者），前后两重关系交织在一起。常用的使役兼语动词包括：“请”（qǐng，表示客气礼貌的邀请或委托）、“让”（ràng，表示允许、让使或安排）、“叫”（jiào，口语中广泛用于指派、吩咐或唤使他人做事）。",
+      "formation": "主语 + 请 / 让 / 叫 + 宾语（兼语） + 动词（+ 其他成分）",
+      "examples": [
+        {
+          "translation": "我请客，带你去吃顿饭。"
+        }
+      ]
+    },
+    "zh_VV_93": {
+      "title": "动词重叠（单音节动词重叠：看一看、试一试［表示动作时间短、尝试或语气缓和］）",
+      "shortExplanation": "单音节动词重叠，表示动作历时短暂、进行尝试，或用于祈使句中缓和语气；相当于“做一下”、“试着做”。",
+      "longExplanation": "汉语中大部分单音节动作动词可以重叠（如“看看”、“想想”、“听听”），重叠后的后一个音节通常读轻声。动词重叠表示动作持续的时间短暂、次数少或带有轻松尝试的意味。在日常交流的指令或请求中，动词重叠可以极大地缓和说话语气，使其更显得客气、委婉、随和。",
+      "formation": "主语 + 动词 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "你瞧瞧这几件衣服吧。"
+        }
+      ]
+    },
+    "zh_V一V_94": {
+      "title": "动词 + 一 + 动词（动词重叠式中间加“一”：试着做做看）",
+      "shortExplanation": "单音节动词重叠式中间插入数词“一”，表示动作的短暂性、尝试性以及语气的舒缓。",
+      "longExplanation": "汉语单音节动词重叠时，除了直接重叠外，还常在两个相同动词中间插入数词“一”，构成格式（如“看一看”、“想一想”、“问一问”）。此格式与直接重叠语义基本一致，突出动作短暂、动作量少或试着做做看的意味，常用在口语中表示委婉客气的建议、商量或催促，使表达更显亲切温和。",
+      "formation": "主语 + 动词 + 一 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "你翻看翻看这几件衣服吧（看一看这几件衣服）。"
+        }
+      ]
+    },
+    "zh_Vresult_95": {
+      "title": "动词 + 结果补语（表示动作产生的结果或达到的目的）",
+      "shortExplanation": "在主动词后紧跟另一个动词或形容词作结果补语，用来表示动作产生的结果、达到的状态或最终结局。",
+      "longExplanation": "汉语中的结果补语紧接在主动词之后，二者之间不能插入任何其他成分，专门用来补充说明动作发生后带来的实际后果或状态转变。常见的结果补语包括：“到/见”（表示感官察知或到达目标）、“完”（表示终结消耗）、“好”（表示妥当完成）、“懂”（表示理解领会）等。肯定句通常与动态助词“了”配合，表示动作及其结果已经落实实现。",
+      "formation": "主语 + 动词 + 结果补语（+ 宾语）（+ 了）",
+      "examples": [
+        {
+          "translation": "我瞧见你女朋友了。"
+        }
+      ]
+    },
+    "zh_没Vresult_96": {
+      "title": "没（有） + 动词 + 结果补语（结果补语的否定形式）",
+      "shortExplanation": "在动词前加否定副词“没（有）”，用来否定动作结果的产生或实现；句末绝不能带“了”。",
+      "longExplanation": "否定包含结果补语的动词短语时，必须在动词前使用“没”或“没有”，表示动作客观上尚未发生或动作虽已发生但未能产生预期的结果。语法重点在于：否定既定事实的结果补语时通常不能用“不”，且在使用了“没（有）”的否定句末尾，必须去掉表示实现完成的动态助词或语气助词“了”。",
+      "formation": "主语 + 没（有） + 动词 + 结果补语（+ 宾语）",
+      "examples": [
+        {
+          "translation": "我没看见你女朋友。"
+        }
+      ]
+    },
+    "zh_从N1到N2_97": {
+      "title": "从 + 名词1 + 到 + 名词2（介词短语：表示范围从……到……）",
+      "shortExplanation": "介词“从”与“到”配合使用，涵盖从某一对象、空间或时间起点延伸至终点的全部范围；相当于“自……至……”。",
+      "longExplanation": "“从……到……”（cóng... dào...）是汉语中表示范围起止的常用介词框架。它不仅可以表示空间地点的距离起点与终点，以及时间跨度的始末，还可以广泛引申表示涉及的人物、对象或事物门类的全称涵盖（例如“从老人到孩子”）。因为表述的是一个涵盖全局的完整范围，后半句的谓语前往往配合总括副词“都”来呼应。",
+      "formation": "从 + 名词1 + 到 + 名词2（+ 都） + 谓语",
+      "examples": [
+        {
+          "translation": "无论老人还是小孩，全都很喜欢吃苹果。"
+        }
+      ]
+    },
+    "zh_第MN_98": {
+      "title": "第 + 数词 + 量词 + 名词（序数词短语：表示次序）",
+      "shortExplanation": "数词前加词缀“第”，后接量词修饰名词，用以表示排列顺序或位次；相当于“第几个……”。",
+      "longExplanation": "在汉语中，表示排列先后的序数时，通常在基数词前面加上前缀“第”（dì）（如第一、第二、第三）。当序数词修饰名词充当定语时，其标准结构必须带有相应的量词，即“第 + 数词 + 量词 + 名词”（例如“第四件事”、“第一个人”）。这种结构能够严谨准确地指代序列中的特定某一个体或事项。",
+      "formation": "第 + 数词 + 量词 + 名词",
+      "examples": [
+        {
+          "translation": "第四件事项目前还没办呢。"
+        }
+      ]
+    },
+    "zh_不要别V_99": {
+      "title": "不要 / 别 + 动词（副词：表示禁止与劝阻，别做某事）",
+      "shortExplanation": "在动词前使用否定副词“不要”或“别”，用于祈使句中劝阻他人或发出禁止指令；相当于“不要……”、“别……”。",
+      "longExplanation": "“不要”（bùyào）和“别”（bié）是汉语中用于祈使句的否定副词，表示对他人行动的劝阻、警告或禁止。口语中，“别”的使用频率极高，语气更为直接干脆。二者直接置于动词或动词短语前，构成否定命令句（如“别出声”、“不要乱动”），提醒或命令对方切勿做出某种行为。",
+      "formation": "（主语 + ）不要 / 别 + 动词（+ 宾语）！",
+      "examples": [
+        {
+          "translation": "别低头玩手机了（不要玩手机）！"
+        }
+      ]
+    },
+    "zh_不要别V了_100": {
+      "title": "不要 / 别 + 动词 + 了（句末助词“了”表制止：别再做某事了）",
+      "shortExplanation": "句末加上表示事态转变的语气助词“了”，强调勒令停止正在进行中的动作；相当于“别再做……了”。",
+      "longExplanation": "“不要/别……了”与单纯的“不要/别……”相比，关键在于句末的语气助词“了”具有提示“情况发生转变”的语法功用。这个句式特指某种行为当前正在持续发生，说话人要求对方立即打住、终止该行为，从“做”的状态转入“不做”的状态。口语中常带有催促、责备或不耐烦的色彩，相当于“别再继续……了”。",
+      "formation": "（主语 + ）不要 / 别 + 动词（+ 宾语） + 了！",
+      "examples": [
+        {
+          "translation": "别再玩手机啦，快放下吧！"
+        }
+      ]
+    },
+    "zh_对NA_101": {
+      "title": "对 + 名词 + 形容词（介词短语：引进对象，表示对……有益/有效）",
+      "shortExplanation": "介词“对”引出动作或性质所涉及的对象，后接形容词或描述性短语，表示“对某人/某事而言具有某种影响或特性”。",
+      "longExplanation": "介词“对”（duì）用于引申出评价、态度、功效所直接针对的目标或对象。在“对 + 名词短语 + 形容词/属性短语”的句式中，后置谓语往往搭配诸如“有帮助”、“有好处”、“有用”、“严格”、“好”等词语，用来阐明某事物针对特定对象具有积极效用、指导意义或特定性质。",
+      "formation": "（主语 + ）对 + 名词 / 名词短语 + 形容词 / 性状短语",
+      "examples": [
+        {
+          "translation": "学好中文对于在华工作大有裨益（很有帮助）。"
+        }
+      ]
+    },
+    "zh_SV的N_102": {
+      "title": "主语 + 动词 + 的 + 名词（主谓短语作定语修饰中心语）",
+      "shortExplanation": "主谓短语后接结构助词“的”，置于名词之前充当定语，用以限定或描写中心语；相当于“……所做的……”。",
+      "longExplanation": "汉语的定语遵循严格置于中心语之前的语序规则。由“小主语 + 动词谓语”构成的主谓短语可以整体充当定语，修饰后面的核心名词（中心语）。在此结构中，必须使用结构助词“的”（de）来连接修饰成分与中心语。这种句式能够精准界定特定事物，说明该事物是由谁经过何种动作产生的。",
+      "formation": "（主语 + 动词） + 的 + 中心名词",
+      "examples": [
+        {
+          "translation": "我妈妈亲手做的饭菜特别可口好吃。"
+        }
+      ]
+    },
+    "zh_N1比N2A_103": {
+      "title": "名词1 + 比 + 名词2 + 形容词（“比”字句：表示事物间的比较与差别）",
+      "shortExplanation": "使用介词“比”连接两个比较对象，表示前者在某种性质或状态的程度上超过后者；相当于“……比……更……”。",
+      "longExplanation": "“比”字句是汉语中最具代表性的比较句型，基本格式为“名词1 + 比 + 名词2 + 形容词”。需要特别注意的是，“比”字句中的谓语形容词前，通常绝对不能加“很”、“非常”、“真”、“太”等表绝对程度的副词（例如可以说“哥哥比姐姐高”，不能说“×哥哥比姐姐很高”）。若要说明差距大，应在形容词后添加数量补语或“得多”、“多了”。",
+      "formation": "名词1 + 比 + 名词2 + 形容词",
+      "examples": [
+        {
+          "translation": "哥哥的个子比姐姐还要高一些。"
+        }
+      ]
+    },
+    "zh_N1没有N2A_104": {
+      "title": "名词1 + 没有 + 名词2 + 形容词（“没有”句表比较：不及、不如）",
+      "shortExplanation": "使用“没有”作为比较标志，表示前者的性质或状态未能达到后者的标准或水平；相当于“……不如……那么……”。",
+      "longExplanation": "“没有”构成的比较句是表示否定比较或劣等比较的经典句式，基本格局为“名词1 + 没有 + 名词2 + （这么/那么） + 形容词”，意指名词1在某种特质上比不上名词2。在实际表达中，谓语形容词前常可加上指示代词“那么”或“这么”来充当状语，以此强调差距程度（例如“哥哥没有姐姐那么高”）。",
+      "formation": "名词1 + 没有 + 名词2（+ 这么 / 那么） + 形容词",
+      "examples": [
+        {
+          "translation": "哥哥的个头没有姐姐那么高。"
+        }
+      ]
+    },
+    "zh_可能_105": {
+      "title": "可能（副词 / 能愿动词：表示推测估计或可能性）",
+      "shortExplanation": "置于谓语前或句首充当状语，表示说话人对某种情况所作出的推断、估计或假设；相当于“或许”、“大概”。",
+      "longExplanation": "“可能”（kěnéng）兼具能愿动词与副词的用法，专门用作情态表意成分，表示客观上存在某种可能性，或者说话人主观上所作出的不十分确定的推测和估计。它可以灵活地置于主语之后、谓语动词之前，也可以直接置于句首修饰全句。在否定句中，通常置于否定词“不”或“没”的前面（如“可能不会”、“可能没去”）。",
+      "formation": "主语 + 可能 + 谓语（动词 / 形容词）（或：可能 + 主语 + 谓语）",
+      "examples": [
+        {
+          "translation": "她大概不会唱歌吧（可能不擅长唱歌）。"
+        }
+      ]
+    },
+    "zh_V得A_106": {
+      "title": "动词 + 得 + 形容词（状态补语：描写或评价动作的方式与程度）",
+      "shortExplanation": "动词后使用结构助词“得”连接形容词，用以对动作进行的方式、状态、效率或达到水平进行评价与描摹。",
+      "longExplanation": "状态补语（又称情态补语）是汉语述补结构的重要类别。其基础结构为“动词 + 得 + （程度副词 + ）形容词”，专门用于客观评述或描摹某一动作行为体现出的状态表现或水平高低。在肯定形式中，形容词中心语之前通常需要带有程度副词（如“很”、“非常”、“特别”），构成“跑得很快”、“说得很好”等标准表达。",
+      "formation": "主语 + 动词 + 得 + （程度副词 + ）形容词",
+      "examples": [
+        {
+          "translation": "我跑起步来速度非常快。"
+        }
+      ]
+    }
+  }
+}

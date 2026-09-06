@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_どこへも_105": {
+      "title": "どこへも～ないです (doko e mo ~ nai desu)",
+      "shortExplanation": "Diễn tả hành động không diễn ra ở bất kỳ nơi nào; 'hoàn toàn không... ở đâu cả', 'không đi đâu cả'.",
+      "longExplanation": "Mẫu ngữ pháp どこへも kết hợp với động từ thể phủ định ngắn cùng です (thể ないです) dùng để nhấn mạnh sự phủ định hoàn toàn về phương hướng hoặc địa điểm. Cấu trúc này biểu thị chủ ngữ không thực hiện hành động tại bất kỳ nơi nào hay không đi tới bất kỳ đâu. Lưu ý rằng theo sau どこへも trong cấu trúc này luôn luôn là động từ ở dạng phủ định.",
+      "formation": "どこへも + Động từ thể phủ định (thể ない) + です",
+      "examples": [
+        {
+          "translation": "Cuối tuần này tôi không đi đâu cả."
+        },
+        {
+          "translation": "Cô ấy đã không đi mua sắm ở bất cứ đâu cả."
+        },
+        {
+          "translation": "Các siêu thị đều không bán món này."
+        },
+        {
+          "translation": "Tôi không có kế hoạch đi đâu cả."
+        }
+      ]
+    },
+    "ja_どこへも_106": {
+      "title": "どこへも～ません (doko e mo ~ masen)",
+      "shortExplanation": "Biểu thị sự phủ định hoàn toàn về phương hướng hoặc địa điểm trong câu nói lịch sự; 'hoàn toàn không đi đâu cả', 'không đến bất kỳ nơi nào'.",
+      "longExplanation": "Mẫu câu どこへも～ません kết hợp trợ từ chỉ phương hướng へ với trợ từ phủ định toàn thể も và động từ thể lịch sự phủ định (thể ません). Cấu trúc này dùng để diễn tả rằng hành động (thường là các động từ chỉ sự di chuyển như 行きます, 走ります) không diễn ra tới bất kỳ địa điểm hay nơi chốn nào.",
+      "formation": "どこへも + Động từ thể ません",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi không đi đâu cả."
+        },
+        {
+          "translation": "Anh ấy đã không chạy đi đâu cả."
+        },
+        {
+          "translation": "Tôi đã không đi mua sắm ở bất cứ đâu cả."
+        },
+        {
+          "translation": "Tôi sẽ không để ai dẫn cô ấy đi bất cứ đâu cả."
+        }
+      ]
+    },
+    "ja_どこも_107": {
+      "title": "どこも～ないです (doko mo ~ nai desu)",
+      "shortExplanation": "Biểu thị sự vật hoặc trạng thái không tồn tại ở bất kỳ nơi nào; 'ở đâu cũng không có...', 'chẳng có nơi nào...'.",
+      "longExplanation": "Mẫu câu どこも～ないです dùng để diễn tả sự vắng mặt, không tồn tại của sự vật, dịch vụ hay đặc điểm nào đó ở mọi địa điểm được nhắc đến. Trợ từ も kết hợp với từ để hỏi どこ mang ý nghĩa phủ định toàn bộ ('bất kỳ đâu cũng không') khi đi kèm với vị ngữ phủ định ないです.",
+      "formation": "どこも + [Danh từ] + が + ないです / Động từ thể phủ định (thể ない) + です",
+      "examples": [
+        {
+          "translation": "Ở đâu cũng không có quạt tròn."
+        },
+        {
+          "translation": "Ở thị trấn này, chẳng nơi nào có món mì ramen ngon cả."
+        },
+        {
+          "translation": "Chỗ nào cũng không có bãi đỗ xe."
+        },
+        {
+          "translation": "Chẳng có chỗ ngồi ở bất kỳ đâu cả."
+        }
+      ]
+    },
+    "ja_どこも_108": {
+      "title": "どこも～ません (doko mo ~ masen)",
+      "shortExplanation": "Diễn tả không một địa điểm nào đáp ứng hành động hoặc trạng thái trong câu lịch sự; 'ở đâu cũng không...', 'chẳng có nơi nào...'.",
+      "longExplanation": "Mẫu câu どこも～ません dùng trong văn phong lịch sự để biểu thị rằng tất cả các địa điểm, cửa hàng hay tổ chức đều không thực hiện hành động hoặc không thỏa mãn một trạng thái nào đó. Theo sau どこも có thể là động từ thể ません, động từ thể khả năng phủ định (～できません), thể đang tiếp diễn phủ định (～ていません), hoặc tính từ đuôi な phủ định (～じゃありません).",
+      "formation": "どこも + Động từ thể ません / Tính từ đuôi な + じゃありません",
+      "examples": [
+        {
+          "translation": "Chẳng có nơi nào yên tĩnh cả."
+        },
+        {
+          "translation": "Không nơi nào bán cuốn sách đó cả."
+        },
+        {
+          "translation": "Ở khu vực này, không nơi nào có thể kết nối Internet được cả."
+        },
+        {
+          "translation": "Chẳng nơi nào biết đến anh ấy cả."
+        }
+      ]
+    },
+    "ja_どちら_109": {
+      "title": "どちら～ (dochira～)",
+      "shortExplanation": "Từ nghi vấn dùng để hỏi khi lựa chọn giữa hai đối tượng hoặc hỏi phương hướng lịch sự; 'cái nào (trong hai cái)', 'bên nào'.",
+      "longExplanation": "Từ nghi vấn どちら được sử dụng khi yêu cầu người nghe lựa chọn giữa hai đối tượng hoặc phương án ('cái nào trong hai cái'). Ngoài ra, どちら còn là dạng nói lịch sự hơn của どっち hoặc どこ khi hỏi về phương hướng, địa điểm. Cấu trúc thường kết hợp với các trợ từ: どちらが (trong câu so sánh), どちらの + Danh từ, どちらに, hoặc どちらを.",
+      "formation": "どちら + が / を / に + Động từ / Tính từ, hoặc どちらの + Danh từ",
+      "examples": [
+        {
+          "translation": "Trong hai quả táo này, quả nào ngon hơn?"
+        },
+        {
+          "translation": "Bạn muốn mặc chiếc váy nào hơn?"
+        },
+        {
+          "translation": "Giữa hai thị trấn này, bạn muốn đến thị trấn nào?"
+        },
+        {
+          "translation": "Bạn nghĩ bộ phim nào hay hơn?"
+        }
+      ]
+    },
+    "ja_どなた_110": {
+      "title": "どなた～ (donata～)",
+      "shortExplanation": "Cách nói lịch sự, tôn kính của từ để hỏi 'ai' (だれ); 'vị nào', 'ai (kính ngữ)'.",
+      "longExplanation": "Từ どなた là dạng kính ngữ, lịch sự hơn của từ để hỏi だれ (ai). Từ này được sử dụng khi hỏi về danh tính của người khác trong các ngữ cảnh trang trọng, công sở hoặc khi giao tiếp với người trên. Các dạng phái sinh thường gặp bao gồm: どなたか (có vị nào / có ai đó), どなたも (bất kỳ ai cũng...), どなたが (vị nào / ai).",
+      "formation": "どなた (+ Trợ từ: が / に / の / か / も)",
+      "examples": [
+        {
+          "translation": "Xin lỗi, vị nào là anh Yamada ạ?"
+        },
+        {
+          "translation": "Đó là một diễn viên nổi tiếng mà ai ai cũng biết."
+        },
+        {
+          "translation": "Trong bữa tiệc ngày mai sẽ có những vị nào đến ạ?"
+        },
+        {
+          "translation": "Có vị nào có thể giúp tôi một tay được không ạ?"
+        }
+      ]
+    },
+    "ja_どの_111": {
+      "title": "どの + Danh từ (dono + Danh từ)",
+      "shortExplanation": "Từ chỉ định nghi vấn bổ nghĩa cho danh từ đi sau để hỏi lựa chọn trong 3 đối tượng trở lên; '... nào'.",
+      "longExplanation": "Mẫu cấu trúc どの + Danh từ là từ chỉ định nghi vấn thuộc hệ thống Ko-So-A-Do (kết hợp giữa ど và trợ từ の). Mẫu này bắt buộc phải đi trực tiếp trước một danh từ, dùng để hỏi người nghe lựa chọn hoặc xác định một sự vật hay người cụ thể trong một nhóm gồm ba đối tượng trở lên ('... nào').",
+      "formation": "どの + Danh từ",
+      "examples": [
+        {
+          "translation": "Cuốn sách nào là thú vị nhất?"
+        },
+        {
+          "translation": "Bạn muốn mặc bộ quần áo nào?"
+        },
+        {
+          "translation": "Bạn thích màu nào?"
+        },
+        {
+          "translation": "Bạn muốn đến nhà hàng nào?"
+        }
+      ]
+    },
+    "ja_どれでも_112": {
+      "title": "どれでも～ (dore demo～)",
+      "shortExplanation": "Biểu thị bất kỳ cái nào trong nhiều sự lựa chọn cũng đều được chấp nhận; 'cái nào cũng được', 'bất cứ cái nào'.",
+      "longExplanation": "Từ どれでも được hình thành từ đại từ nghi vấn どれ (cái nào trong 3 cái trở lên) kết hợp với trợ từ でも (dù là / cũng). Cấu trúc này diễn tả rằng trong số các lựa chọn được đưa ra, chọn bất kỳ cái nào cũng được hoặc tất cả đều thỏa mãn, tương đương với 'bất cứ cái nào' hoặc 'cái nào cũng...' trong tiếng Việt. Thường đi kèm với いい (được), 好き (thích).",
+      "formation": "どれ + でも",
+      "examples": [
+        {
+          "translation": "Cái nào cũng được phải không ạ?"
+        },
+        {
+          "translation": "Xin hãy chọn bất cứ cái nào bạn thích."
+        },
+        {
+          "translation": "Cái nào cũng ngon cả."
+        },
+        {
+          "translation": "Trong số này, xin hãy lấy bất cứ thứ gì bạn thích mang về nhé."
+        }
+      ]
+    },
+    "ja_どんな_113": {
+      "title": "どんな + Danh từ (donna + Danh từ)",
+      "shortExplanation": "Từ chỉ định nghi vấn dùng để hỏi về tính chất, chủng loại hoặc đặc điểm của sự vật, con người; '... như thế nào', 'loại... gì'.",
+      "longExplanation": "Mẫu cấu trúc どんな + Danh từ là từ chỉ định nghi vấn dùng để hỏi về đặc tính, trạng thái hoặc chủng loại của danh từ đứng sau nó. Mẫu này tương đương với 'như thế nào', 'loại nào', 'kiểu gì' trong tiếng Việt. Khi trả lời câu hỏi với どんな, người nói thường sử dụng tính từ hoặc danh từ chỉ đặc tính để miêu tả cụ thể.",
+      "formation": "どんな + Danh từ",
+      "examples": [
+        {
+          "translation": "Bạn thích thể loại âm nhạc như thế nào?"
+        },
+        {
+          "translation": "Bạn nghĩ cô ấy thích thể loại phim như thế nào?"
+        },
+        {
+          "translation": "Loại sách như thế nào là thú vị nhất?"
+        },
+        {
+          "translation": "Bạn nấu giỏi món ăn thuộc thể loại nào?"
+        }
+      ]
+    },
+    "ja_なに_114": {
+      "title": "なに～ (nani～)",
+      "shortExplanation": "Đại từ nghi vấn dùng để hỏi về sự vật, sự việc hoặc hành động; 'cái gì', 'gì'.",
+      "longExplanation": "Đại từ nghi vấn なに (cái gì) là một trong những từ để hỏi cơ bản nhất trong tiếng Nhật, dùng để hỏi về sự vật, nội dung hoặc hành động chưa xác định. Khi đứng độc lập hoặc đi trước các trợ từ như が, を, に, từ này được phát âm là 'nani' (なにが, なにを); khi đi trước các âm thuộc hàng d, t, n hoặc từ chỉ số đếm, từ này thường biến âm thành 'nan' (なん).",
+      "formation": "なに + Trợ từ (が / を / に / で / から) hoặc なに + ですか",
+      "examples": [
+        {
+          "translation": "Đây là cái gì?"
+        },
+        {
+          "translation": "Người kia đang làm cái gì thế?"
+        },
+        {
+          "translation": "Bạn thích cái gì?"
+        },
+        {
+          "translation": "Thời tiết hôm nay thế nào?"
+        }
+      ]
+    },
+    "ja_なにか_115": {
+      "title": "なにか～ (nanika～)",
+      "shortExplanation": "Diễn tả một thứ gì đó, điều gì đó không xác định rõ ràng; 'cái gì đó', 'điều gì đó'.",
+      "longExplanation": "Từ なにか được hình thành từ từ để hỏi なに kết hợp với trợ từ bất định か, biểu thị một sự vật, đối tượng hoặc sự việc chưa được xác định cụ thể ('cái gì đó', 'thứ gì đó'). Cấu trúc này có thể đứng độc lập làm thành phần trong câu, hoặc đứng trước một danh từ như một định từ để diễn tả ý 'món... nào đó / chút... gì đó'.",
+      "formation": "なにか + Danh từ, hoặc dùng độc lập: なにか (+ Trợ từ) + Động từ",
+      "examples": [
+        {
+          "translation": "Xin vui lòng mang cho tôi chút đồ uống gì đó."
+        },
+        {
+          "translation": "Nếu có câu hỏi gì, xin đừng ngại hỏi nhé."
+        },
+        {
+          "translation": "Cô ấy đang cầm một món quà gì đó."
+        },
+        {
+          "translation": "Nếu cần sự giúp đỡ nào, xin hãy nói cho tôi biết nhé."
+        }
+      ]
+    },
+    "ja_なにもないです_116": {
+      "title": "なにも～ないです (nani mo ~ nai desu)",
+      "shortExplanation": "Phủ định hoàn toàn mọi sự vật hoặc hành động trong câu thân mật lịch sự; 'hoàn toàn không... cái gì cả', 'chẳng... gì cả'.",
+      "longExplanation": "Mẫu câu なにも～ないです là sự kết hợp giữa từ để hỏi なに với trợ từ phủ định toàn bộ も và động từ thể phủ định ngắn kết hợp です (thể ないです). Cấu trúc này diễn tả sự phủ định tuyệt đối đối với đối tượng của hành động, tương đương với 'hoàn toàn không... cái gì cả' hoặc 'không có gì cả' trong tiếng Việt.",
+      "formation": "なにも + Động từ thể phủ định (thể ない) + です",
+      "examples": [
+        {
+          "translation": "Anh ấy đã chẳng nói điều gì cả."
+        },
+        {
+          "translation": "Tôi không ăn bất cứ thứ gì cả."
+        },
+        {
+          "translation": "Cô ấy không cầm theo thứ gì cả."
+        },
+        {
+          "translation": "Trong chiếc hộp này không có chứa bất cứ thứ gì cả."
+        }
+      ]
+    },
+    "ja_なにもません_117": {
+      "title": "なにも～ません (nani mo ~ masen)",
+      "shortExplanation": "Biểu thị sự phủ định hoàn toàn về sự vật, nội dung trong câu nói trang trọng, lịch sự; 'hoàn toàn không... bất cứ cái gì'.",
+      "longExplanation": "Mẫu câu なにも～ません sử dụng trong giao tiếp lịch sự chuẩn mực, kết hợp なにも với động từ dạng phủ định thể ます (thể ません hoặc quá khứ ませんでした). Mẫu này nhấn mạnh sự phủ định tuyệt đối đối với tân ngữ của động từ, biểu thị rằng người nói không làm bất kỳ điều gì hoặc không có đối tượng nào liên quan.",
+      "formation": "なにも + Động từ thể ません",
+      "examples": [
+        {
+          "translation": "Hôm qua tôi đã không ăn bất cứ thứ gì cả."
+        },
+        {
+          "translation": "Anh ấy không nói bất cứ điều gì cả."
+        },
+        {
+          "translation": "Trong căn phòng này, tôi không nhìn thấy bất cứ thứ gì cả."
+        },
+        {
+          "translation": "Cô ấy đã không mua bất cứ món đồ nào cả."
+        }
+      ]
+    },
+    "ja_なん_118": {
+      "title": "なん～ (nan～)",
+      "shortExplanation": "Biến thể ngữ âm của từ để hỏi '何' (cái gì), thường đứng trước từ chỉ số đếm hoặc âm đầu là d, t, n; 'mấy', 'bao nhiêu', 'gì'.",
+      "longExplanation": "Từ なん là biến thể ngữ âm của chữ Hán 何 (nghĩa là 'gì', 'cái gì'). Từ này được dùng khi đứng trước từ chỉ số đếm (lượng từ) để hỏi số lượng như 'mấy', 'bao nhiêu' (なんさい - mấy tuổi, なんじ - mấy giờ, なんばん - số mấy), hoặc khi đứng trước các từ bắt đầu bằng âm thuộc hàng t, d, n như です (なんですか - là cái gì), と (なんという - gọi là gì).",
+      "formation": "なん + Lượng từ (từ chỉ số đếm) / なん + ですか / なん + と",
+      "examples": [
+        {
+          "translation": "Bạn bao nhiêu tuổi rồi?"
+        },
+        {
+          "translation": "Cái này là cái gì thế?"
+        },
+        {
+          "translation": "Anh ấy đã đến bằng phương tiện gì vậy?"
+        },
+        {
+          "translation": "Nhà hàng kia tên gọi là gì thế?"
+        }
+      ]
+    },
+    "ja_なんで_119": {
+      "title": "なんで～ (nande～)",
+      "shortExplanation": "Từ nghi vấn thân mật dùng để hỏi nguyên nhân hoặc lý do; 'tại sao', 'sao lại', 'vì sao'.",
+      "longExplanation": "Từ nghi vấn なんで được sử dụng phổ biến trong văn giao tiếp thân mật, đời thường để hỏi về nguyên nhân, lý do của một sự việc hoặc hành động, tương đương với 'tại sao', 'sao lại' trong tiếng Việt. So với どうして (tự nhiên, trung tính) hay なぜ (trang trọng, văn viết), なんで mang sắc thái gần gũi, thoải mái hơn nhưng đôi khi cũng có thể hàm ý ngạc nhiên hoặc trách móc nhẹ.",
+      "formation": "なんで + Mệnh đề / Câu hỏi",
+      "examples": [
+        {
+          "translation": "Sao bạn lại đến muộn thế?"
+        },
+        {
+          "translation": "Tại sao căn phòng này lại bẩn đến mức này chứ?"
+        },
+        {
+          "translation": "Tại sao cô ấy lại nổi giận vậy?"
+        },
+        {
+          "translation": "Sao hôm nay lại được nghỉ thế nhỉ?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_どこへも_105": {
+      "title": "どこへも～ないです (doko e mo ~ nai desu)",
+      "shortExplanation": "表示在任何地方都不进行某动作；'哪里都（不）……'、'哪儿也（不）……'。",
+      "longExplanation": "句型'どこへも～ないです'用于全面否定方向或目的地，强调动作在任何场所都不会发生，相当于汉语中的'哪里都不……'或'哪儿也没……'。在这一句型中，'どこへも'后面必须接续动词的否定形式（ない形＋です）。",
+      "formation": "どこへも + 动词否定形（ない形） + です",
+      "examples": [
+        {
+          "translation": "这个周末我哪儿也不去。"
+        },
+        {
+          "translation": "她哪儿都没去买东西。"
+        },
+        {
+          "translation": "超市哪儿都不卖这个。"
+        },
+        {
+          "translation": "我没有任何去别处的打算。"
+        }
+      ]
+    },
+    "ja_どこへも_106": {
+      "title": "どこへも～ません (doko e mo ~ masen)",
+      "shortExplanation": "在礼貌语中表示全面否定目的地或方向；'哪里也（不）……'、'哪儿都（不）……'。",
+      "longExplanation": "句型'どこへも～ません'由表示方向的助词'へ'、表示全面否定的'も'以及动词礼貌否定形'～ません'构成。用于郑重地表达主体不向任何方向或地点进行某动作（多与移动动词如'行きます'、'走ります'搭配使用）。",
+      "formation": "どこへも + 动词ます形词干 + ません",
+      "examples": [
+        {
+          "translation": "今天我哪儿也不去。"
+        },
+        {
+          "translation": "他哪儿都没跑去。"
+        },
+        {
+          "translation": "哪儿都没去买东西。"
+        },
+        {
+          "translation": "绝不会让人把她带去任何地方。"
+        }
+      ]
+    },
+    "ja_どこも_107": {
+      "title": "どこも～ないです (doko mo ~ nai desu)",
+      "shortExplanation": "表示某事物在任何地方都不存在；'哪里都（没有）……'、'到处都（没有）……'。",
+      "longExplanation": "句型'どこも～ないです'用于表达某事物在所有地方均不存在或无法找到，具有全盘否定的含义，相当于汉语中的'哪里都没有……'或'处处都无……'。疑问词'どこ'与助词'も'结合，搭配否定结尾'ないです'，突出在任何场所都不存在该对象。",
+      "formation": "どこも + [名词] + が + ないです / 动词否定形（ない形） + です",
+      "examples": [
+        {
+          "translation": "哪儿都找不到团扇。"
+        },
+        {
+          "translation": "在这个小镇上，哪儿都没有美味的拉面。"
+        },
+        {
+          "translation": "到处都没有停车场。"
+        },
+        {
+          "translation": "哪里都没有空座位。"
+        }
+      ]
+    },
+    "ja_どこも_108": {
+      "title": "どこも～ません (doko mo ~ masen)",
+      "shortExplanation": "表示没有任何地点能够满足该动作或状态；'哪里都（不/没）……'、'任何地方都（不）……'。",
+      "longExplanation": "句型'どこも～ません'用于郑重地表达在所有场所、店铺或机构都无法实施某动作或不具备某种性质。'どこも'与礼貌否定表达'～ません'（包括动词否定、可能态否定'～できません'、进行态否定'～ていません'或形容动词否定'～じゃありません'）呼应，构成全盘否定。",
+      "formation": "どこも + 动词ます形词干 + ません / な形容词 + じゃありません",
+      "examples": [
+        {
+          "translation": "哪儿都不安静。"
+        },
+        {
+          "translation": "哪家店都不卖那本书。"
+        },
+        {
+          "translation": "在这个地区，任何地方都无法连接互联网。"
+        },
+        {
+          "translation": "没有任何地方认识他。"
+        }
+      ]
+    },
+    "ja_どちら_109": {
+      "title": "どちら～ (dochira～)",
+      "shortExplanation": "用于在两者之间进行选择或比较，也是表示方向、场所的礼貌说法；'哪一个（二选一）'、'哪边'。",
+      "longExplanation": "疑问词'どちら'主要用于在两个事物或选项之间询问'哪一个'、'哪一方'。它比口语的'どっち'更郑重礼貌，也可以作为'どこ'的敬语形式用来询问方向或场所。常见接续包括'どちらが'（用于比较句）、'どちらの + 名词'以及'どちらに/を'。",
+      "formation": "どちら + が / を / に + 动词/形容词，或 どちらの + 名词",
+      "examples": [
+        {
+          "translation": "这两个苹果，哪一个更好吃？"
+        },
+        {
+          "translation": "你想穿哪一件礼服？"
+        },
+        {
+          "translation": "这两个小镇，你想去哪一个？"
+        },
+        {
+          "translation": "你觉得哪部电影更有趣？"
+        }
+      ]
+    },
+    "ja_どなた_110": {
+      "title": "どなた～ (donata～)",
+      "shortExplanation": "询问'谁'的礼貌敬语表达；'哪位'、'哪一位'。",
+      "longExplanation": "疑问词'どなた'是'だれ'（谁）的敬语形式，用于礼貌或正式场合询问对方或第三者的身份。在商务或社交等郑重语境中广泛使用。常见用法包括搭配助词构成'どなたが'（哪一位）、'どなたか'（有人/某位）以及'どなたも'（无论是谁、大家）。",
+      "formation": "どなた (+ 助词：が / に / の / か / も)",
+      "examples": [
+        {
+          "translation": "打扰一下，请问哪位是山田先生？"
+        },
+        {
+          "translation": "他是大家都认识的著名演员。"
+        },
+        {
+          "translation": "明天的聚会有哪位要来呢？"
+        },
+        {
+          "translation": "能有哪位来帮我一下吗？"
+        }
+      ]
+    },
+    "ja_どの_111": {
+      "title": "どの + 名词 (dono + 名词)",
+      "shortExplanation": "连体词形式的疑问词，直接修饰名词，用于在三个及以上的对象中询问；'哪一个……'、'哪个……'。",
+      "longExplanation": "连体词'どの'属于日语'こそあど'指示词体系，必须直接后接名词作修饰语，用于在三个或三个以上的具体人或物中询问并确定其中某一个，相当于汉语中的'哪一个（名词）'或'哪个（名词）'。",
+      "formation": "どの + 名词",
+      "examples": [
+        {
+          "translation": "哪本书最有意思？"
+        },
+        {
+          "translation": "你想穿哪套衣服？"
+        },
+        {
+          "translation": "你喜欢哪种颜色？"
+        },
+        {
+          "translation": "你想去哪家餐厅？"
+        }
+      ]
+    },
+    "ja_どれでも_112": {
+      "title": "どれでも～ (dore demo～)",
+      "shortExplanation": "表示在多个选项中任何一个都可以接受；'无论哪一个'、'哪个都（行/好）'。",
+      "longExplanation": "表达'どれでも'由疑问代词'どれ'（哪一个）与助词'でも'（即使……也）结合而成，表示在三个及以上的选择对象中，不论选择哪一个都没有限制、都可以接受，相当于汉语的'随便哪一个都……'或'无论哪一个'。常与'いい'、'好き'等搭配使用。",
+      "formation": "どれ + でも",
+      "examples": [
+        {
+          "translation": "哪一个都可以吗？"
+        },
+        {
+          "translation": "请随意挑选任何一个。"
+        },
+        {
+          "translation": "每一个都很好吃。"
+        },
+        {
+          "translation": "在这里面请随意拿走任何你喜欢的。"
+        }
+      ]
+    },
+    "ja_どんな_113": {
+      "title": "どんな + 名词 (donna + 名词)",
+      "shortExplanation": "询问事物的性质、状态或种类；'怎样的……'、'什么样的……'。",
+      "longExplanation": "连体词'どんな'必须直接修饰名词，用于询问某人、某物或某事的性质、状态、特征或具体种类，相当于汉语中的'什么样的……'或'怎样的……'。回答时通常使用形容词或带有描述性质的名词短语。",
+      "formation": "どんな + 名词",
+      "examples": [
+        {
+          "translation": "你喜欢什么样的音乐？"
+        },
+        {
+          "translation": "你觉得她会喜欢什么样的电影？"
+        },
+        {
+          "translation": "什么样的书最有意思？"
+        },
+        {
+          "translation": "你最擅长做什么样的料理？"
+        }
+      ]
+    },
+    "ja_なに_114": {
+      "title": "なに～ (nani～)",
+      "shortExplanation": "用于询问事物、内容或动作的疑问代词；'什么'。",
+      "longExplanation": "疑问代词'なに'（何）是日语中最基础的疑问词之一，用于询问未知的事物、内容或动作，相当于汉语的'什么'。单独使用或后接助词'が'、'を'、'に'等时通常读作'なに'（如'なにを'、'なにが'）；而在接续'です'、量词或以t、d、n行假名开头的词前时，常音变为'なん'（如'なんですか'、'なんさい'）。",
+      "formation": "なに + 助词（が / を / に / で / から）或 なに + ですか",
+      "examples": [
+        {
+          "translation": "这是什么？"
+        },
+        {
+          "translation": "那个人正在做什么？"
+        },
+        {
+          "translation": "你喜欢什么？"
+        },
+        {
+          "translation": "今天的天气怎么样？"
+        }
+      ]
+    },
+    "ja_なにか_115": {
+      "title": "なにか～ (nanika～)",
+      "shortExplanation": "表示不确定或不具体指明的事物；'什么（东西）'、'某样东西'、'某种'。",
+      "longExplanation": "表达'なにか'由疑问词'なに'与表示不确定的副助词'か'结合而成，表示说话者指代一个不确定、不明确的具体事物或现象，相当于汉语中的'什么东西'、'某样事物'或'有什么……'。可以直接置于名词前修饰名词，也可以作为独立的句子成分使用。",
+      "formation": "なにか + 名词，或单独作成分：なにか (+ 助词) + 动词",
+      "examples": [
+        {
+          "translation": "请给我拿点喝的东西来。"
+        },
+        {
+          "translation": "如果有什么问题，请尽管提问。"
+        },
+        {
+          "translation": "她拿着某种礼物。"
+        },
+        {
+          "translation": "如果需要什么帮助的话，请尽管跟我说。"
+        }
+      ]
+    },
+    "ja_なにもないです_116": {
+      "title": "なにも～ないです (nani mo ~ nai desu)",
+      "shortExplanation": "用于全面否定动作对象或事物；'什么也（不/没）……'、'什么都（不）……'。",
+      "longExplanation": "句型'なにも～ないです'由疑问词'なに'、表示全面否定的'も'以及动词否定形'～ないです'构成。用于表示动作的对象或事物完全不存在，强调毫无例外地全盘否定，相当于汉语的'什么都不……'或'什么也没……'。",
+      "formation": "なにも + 动词否定形（ない形） + です",
+      "examples": [
+        {
+          "translation": "他什么都没说。"
+        },
+        {
+          "translation": "我什么都不吃。"
+        },
+        {
+          "translation": "她什么都没拿。"
+        },
+        {
+          "translation": "这个盒子里什么也没装。"
+        }
+      ]
+    },
+    "ja_なにもません_117": {
+      "title": "なにも～ません (nani mo ~ masen)",
+      "shortExplanation": "在礼貌语中表示对动作对象的全面否定；'什么也（不/没）……'、'毫无……'。",
+      "longExplanation": "句型'なにも～ません'是标准的礼貌体全盘否定句式，将'なにも'置于动词礼貌否定形'～ません'（或过去否定'～ませんでした'）之前。用于郑重表达主体没有实施涉及任何事物的动作，译为'什么也没有……'或'什么都不……'。",
+      "formation": "なにも + 动词ます形词干 + ません",
+      "examples": [
+        {
+          "translation": "昨天我什么都没吃。"
+        },
+        {
+          "translation": "他什么也没说。"
+        },
+        {
+          "translation": "在这个房间里什么也看不见。"
+        },
+        {
+          "translation": "她什么东西都没买。"
+        }
+      ]
+    },
+    "ja_なん_118": {
+      "title": "なん～ (nan～)",
+      "shortExplanation": "疑问词'何'的音变形式，常接量词或接在t、d、n行假名之前；'几'、'多少'、'什么'。",
+      "longExplanation": "‘なん’是汉字‘何’在特定语音环境下的发音变体。主要用于两种情况：一是与量词（助数词）结合用于询问数量或序列，译为‘几’或‘多少’（如‘何歳’几岁、‘何時’几点）；二是后接以d、t、n行假名开头的词（如‘なんですか’、‘なんと言う’、‘なんで’）时读作‘なん’。",
+      "formation": "なん + 量词（助数词） / なん + ですか / なん + と",
+      "examples": [
+        {
+          "translation": "你多大年纪（几岁）了？"
+        },
+        {
+          "translation": "这是什么？"
+        },
+        {
+          "translation": "他是乘什么交通工具来的？"
+        },
+        {
+          "translation": "那家餐厅叫什么名字？"
+        }
+      ]
+    },
+    "ja_なんで_119": {
+      "title": "なんで～ (nande～)",
+      "shortExplanation": "用于日常口语中询问原因或理由；'为什么'、'怎么'。",
+      "longExplanation": "疑问词'なんで'是日常口语中非常常用的询问原因、理由的表达方式，相当于汉语中的'为什么'、'怎么'。相较于中性的'どうして'和书面正式的'なぜ'，'なんで'更加随意口语化，常带有轻微的惊讶、不解或质问语气，可以直接置于句首引出问句。",
+      "formation": "なんで + 小句 / 句子",
+      "examples": [
+        {
+          "translation": "你怎么迟到了？"
+        },
+        {
+          "translation": "为什么这个房间这么脏啊？"
+        },
+        {
+          "translation": "她为什么在生气呢？"
+        },
+        {
+          "translation": "今天怎么放假呀？"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_どこへも_105": {
+      "title": "どこへも～ないです (doko e mo ~ nai desu)",
+      "shortExplanation": "어느 곳으로도 동작을 하지 않음을 나타내며, '어디로도 ~하지 않다', '아무 데도 ~하지 않다'라는 뜻입니다.",
+      "longExplanation": "'どこへも～ないです' 문형은 방향이나 목적지를 전면 부정할 때 사용하며, 어떤 장소로도 향하지 않거나 어떤 곳에서도 동작을 행하지 않음을 강하게 나타냅니다. 우리말의 '어디에도/아무 데도 ~하지 않습니다'에 해당하며, 'どこへも' 뒤에는 반드시 부정형 동사가 연결됩니다.",
+      "formation": "どこへも + 동사 ない형 + です",
+      "examples": [
+        {
+          "translation": "이번 주말에는 아무 데도 가지 않아요."
+        },
+        {
+          "translation": "그녀는 어디로도 쇼핑하러 가지 않았습니다."
+        },
+        {
+          "translation": "슈퍼마켓 어디에서도 팔지 않습니다."
+        },
+        {
+          "translation": "저는 어디에도 갈 계획이 없습니다."
+        }
+      ]
+    },
+    "ja_どこへも_106": {
+      "title": "どこへも～ません (doko e mo ~ masen)",
+      "shortExplanation": "정중한 표현으로 목적지나 방향을 전면 부정하며, '어디로도 ~하지 않습니다', '아무 데도 ~하지 않습니다'라는 뜻입니다.",
+      "longExplanation": "'どこへも～ません'은 방향을 나타내는 조사 'へ'에 전면 부정을 나타내는 '도(も)', 그리고 정중한 부정형 동사 '～ません'이 결합된 문형입니다. 어떤 목적지나 장소로도 행위(주로 이동 행위)를 하지 않음을 정중하고 명확하게 나타냅니다.",
+      "formation": "どこへも + 동사 ます형 어간 + ません",
+      "examples": [
+        {
+          "translation": "오늘은 어디로도 가지 않습니다."
+        },
+        {
+          "translation": "그는 아무 데로도 달려가지 않았습니다."
+        },
+        {
+          "translation": "어디로도 쇼핑하러 가지 않았습니다."
+        },
+        {
+          "translation": "그녀를 어디로도 데려가게 두지 않습니다."
+        }
+      ]
+    },
+    "ja_どこも_107": {
+      "title": "どこも～ないです (doko mo ~ nai desu)",
+      "shortExplanation": "어떤 사물이나 상태가 어느 곳에도 존재하지 않음을 나타내며, '어디에도 (없다)', '어느 곳에도 ~하지 않다'라는 뜻입니다.",
+      "longExplanation": "'どこも～ないです' 문형은 언급된 모든 장소에서 특정 대상이 존재하지 않거나 찾을 수 없음을 나타내는 전면 부정 표현입니다. 의문사 'どこ'에 조사 'も'가 붙고 부정형 서술어 'ないです'가 이어져 '어디에도 ~가 없다'라는 의미를 나타냅니다.",
+      "formation": "どこも + [명사] + が + ないです / 동사 ない형 + です",
+      "examples": [
+        {
+          "translation": "어디에도 부채가 없어요."
+        },
+        {
+          "translation": "이 동네에는 어디에도 맛있는 라멘이 없습니다."
+        },
+        {
+          "translation": "어디에도 주차장이 없어요."
+        },
+        {
+          "translation": "어디에도 빈자리가 없습니다."
+        }
+      ]
+    },
+    "ja_どこも_108": {
+      "title": "どこも～ません (doko mo ~ masen)",
+      "shortExplanation": "어느 장소에서도 해당 동작이나 상태가 성립하지 않음을 정중히 나타내며, '어디도 ~하지 않습니다'라는 뜻입니다.",
+      "longExplanation": "'どこも～ません' 문형은 모든 장소나 기관에서 특정 동작이나 상태가 충족되지 않음을 정중하게 나타내는 전면 부정 문형입니다. 'どこも' 뒤에 동사의 정중 부정형(～ません / ～ていません / ～できません) 또는 형용사 부정형(～じゃありません)이 이어져 '어느 곳도 ~하지 않다'라는 의미를 나타냅니다.",
+      "formation": "どこも + 동사 ます형 어간 + ません / な형용사 + じゃありません",
+      "examples": [
+        {
+          "translation": "어디도 조용하지 않습니다."
+        },
+        {
+          "translation": "어디에서도 그 책을 팔지 않습니다."
+        },
+        {
+          "translation": "이 지역에서는 어디에서도 인터넷에 접속할 수 없습니다."
+        },
+        {
+          "translation": "어디에서도 그를 알지 못합니다."
+        }
+      ]
+    },
+    "ja_どちら_109": {
+      "title": "どちら～ (dochira～)",
+      "shortExplanation": "둘 중에서 선택할 때 묻는 의문사 또는 방향·장소의 정중한 표현으로, '어느 쪽', '어느 것'이라는 뜻입니다.",
+      "longExplanation": "'どちら'는 둘 중에서 하나를 선택하거나 비교할 때 사용하는 의문사로, '어느 쪽', '어느 것'에 해당합니다. 구어 표현인 'どっち'의 정중한 형태이며, 방향이나 장소를 정중하게 물을 때도 사용됩니다. 주로 'どちらが'(둘 중 어느 쪽이), 'どちらの + 명사', 'どちらに/を' 등의 형태로 결합합니다.",
+      "formation": "どちら + が / を / に + 동사/형용사, 또는 どちらの + 명사",
+      "examples": [
+        {
+          "translation": "이 사과 두 개 중 어느 것이 더 맛있나요?"
+        },
+        {
+          "translation": "어느 드레스를 입고 싶으세요?"
+        },
+        {
+          "translation": "이 두 마을 중 어느 쪽에 가고 싶으세요?"
+        },
+        {
+          "translation": "어느 영화가 더 재미있다고 생각하세요?"
+        }
+      ]
+    },
+    "ja_どなた_110": {
+      "title": "どなた～ (donata～)",
+      "shortExplanation": "'누구(だれ)'의 정중하고 격식 있는 존칭 표현으로, '어느 분', '누구(높임)'라는 뜻입니다.",
+      "longExplanation": "'どなた'는 '누구'를 뜻하는 의문사 'だれ'의 정중한 존칭 표현입니다. 비즈니스나 격식 있는 자리, 또는 윗사람을 대할 때 상대방이나 제3자의 신원을 정중하게 물을 때 사용합니다. 'どなたが'(어느 분이), 'どなたか'(누군가/어느 분), 'どなたも'(누구나/어느 분이나) 등의 형태로 다양하게 쓰입니다.",
+      "formation": "どなた (+ 조사: が / に / の / か / も)",
+      "examples": [
+        {
+          "translation": "실례합니다만, 어느 분이 야마다 씨인가요?"
+        },
+        {
+          "translation": "누구나 다 아는 유명한 배우입니다."
+        },
+        {
+          "translation": "내일 파티에는 어느 분이 오시나요?"
+        },
+        {
+          "translation": "누구 도와주실 분 계신가요?"
+        }
+      ]
+    },
+    "ja_どの_111": {
+      "title": "どの + 명사 (dono + 명사)",
+      "shortExplanation": "명사 앞에 직접 붙어 셋 이상의 대상 가운데 특정한 것을 물을 때 쓰며, '어느 (명사)', '어떤 (명사)'이라는 뜻입니다.",
+      "longExplanation": "'どの'는 명사를 수식하는 연체사(지시형용사 성격)로, 반드시 명사 앞에 직접 연결되어 사용됩니다. 셋 이상의 대상(사물, 사람, 장소 등) 중에서 특정한 하나를 가리켜 물을 때 쓰이며, 우리말의 '어느 ~'에 해당합니다.",
+      "formation": "どの + 명사",
+      "examples": [
+        {
+          "translation": "어느 책이 가장 재미있나요?"
+        },
+        {
+          "translation": "어느 옷을 입고 싶으세요?"
+        },
+        {
+          "translation": "어느 색을 좋아하세요?"
+        },
+        {
+          "translation": "어느 식당에 가고 싶으세요?"
+        }
+      ]
+    },
+    "ja_どれでも_112": {
+      "title": "どれでも～ (dore demo～)",
+      "shortExplanation": "여러 개 중에서 어느 것이든 상관없이 수용됨을 나타내며, '어느 것이나', '어느 것이든'이라는 뜻입니다.",
+      "longExplanation": "'どれでも'는 의문대명사 'どれ'(어느 것)에 조사 'でも'(~라도, ~이든)가 결합한 표현입니다. 셋 이상의 선택지 가운데 어느 것을 선택하더라도 무방하거나 모두 만족함을 나타내며, 우리말의 '어느 것이든', '아무거나'에 해당합니다. 뒤에 'いい'(좋다), '好き'(좋아하다) 등과 어울려 자주 쓰입니다.",
+      "formation": "どれ + でも",
+      "examples": [
+        {
+          "translation": "어느 것이라도 괜찮나요?"
+        },
+        {
+          "translation": "어느 것이든 골라 주세요."
+        },
+        {
+          "translation": "어느 것이나 다 맛있어요."
+        },
+        {
+          "translation": "이 중에서 좋아하는 것으로 아무거나 가져가세요."
+        }
+      ]
+    },
+    "ja_どんな_113": {
+      "title": "どんな + 명사 (donna + 명사)",
+      "shortExplanation": "사물이나 사람의 성질, 상태, 종류를 물을 때 쓰며, '어떤 (명사)', '무슨 (명사)'이라는 뜻입니다.",
+      "longExplanation": "'どんな'는 명사를 수식하는 의문 연체사로, 뒤에 오는 명사의 성질, 상태, 모양, 종류 등을 물을 때 사용합니다. 우리말의 '어떤 ~', '무슨 ~'에 해당하며, 대답할 때는 구체적인 형용사나 묘사하는 말을 사용하여 설명합니다.",
+      "formation": "どんな + 명사",
+      "examples": [
+        {
+          "translation": "어떤 음악을 좋아하세요?"
+        },
+        {
+          "translation": "그녀는 어떤 영화를 좋아할 것 같나요?"
+        },
+        {
+          "translation": "어떤 책이 가장 재미있나요?"
+        },
+        {
+          "translation": "어떤 요리를 잘하시나요?"
+        }
+      ]
+    },
+    "ja_なに_114": {
+      "title": "なに～ (nani～)",
+      "shortExplanation": "사물, 내용, 행동을 물을 때 사용하는 기본 의문대명사로, '무엇', '뭐'라는 뜻입니다.",
+      "longExplanation": "'なに'(何)는 사물이나 사실, 행동의 내용을 물을 때 쓰이는 가장 기본적인 의문대명사로, 우리말의 '무엇', '뭐'에 해당합니다. 단독으로 쓰이거나 조사 'が', 'を', 'に' 등이 뒤따를 때는 보통 'なに'로 발음되고(なにが, なにを), 'です'나 조수사, d/t/n행 음 앞에서는 'なん'으로 음운 변화합니다.",
+      "formation": "なに + 조사(が / を / に / で / から) 또는 なに + ですか",
+      "examples": [
+        {
+          "translation": "이것은 무엇입니까?"
+        },
+        {
+          "translation": "저 사람은 무엇을 하고 있나요?"
+        },
+        {
+          "translation": "무엇을 좋아하세요?"
+        },
+        {
+          "translation": "오늘 날씨는 어떤가요?"
+        }
+      ]
+    },
+    "ja_なにか_115": {
+      "title": "なにか～ (nanika～)",
+      "shortExplanation": "불특정한 사물이나 일을 가리키며, '무엇인가', '뭔가', '어떤'이라는 뜻입니다.",
+      "longExplanation": "'なにか'는 의문사 'なに'에 불확정을 나타내는 조사 'か'가 결합된 형태로, 구체적으로 정해지지 않았거나 불분명한 사물이나 사실을 가리킵니다. 우리말의 '무엇인가', '뭔가'에 해당하며, 뒤에 오는 명사를 수식하여 '무슨/어떤 (명사)'의 뜻을 나타내거나 문장 내에서 독립적인 성분으로 쓰입니다.",
+      "formation": "なにか + 명사, 또는 단독 사용: なにか (+ 조사) + 동사",
+      "examples": [
+        {
+          "translation": "마실 것 좀 가져다주세요."
+        },
+        {
+          "translation": "무슨 질문이 있으시면 주저 말고 물어보세요."
+        },
+        {
+          "translation": "그녀는 무언가 선물을 들고 있습니다."
+        },
+        {
+          "translation": "뭔가 도움이 필요하시면 말씀해 주세요."
+        }
+      ]
+    },
+    "ja_なにもないです_116": {
+      "title": "なにも～ないです (nani mo ~ nai desu)",
+      "shortExplanation": "행동의 대상이나 사물을 전면 부정하며, '아무것도 ~하지 않다', '하나도 ~않다'라는 뜻입니다.",
+      "longExplanation": "'なにも～ないです' 문형은 의문사 'なに'에 전면 부정을 나타내는 조사 'も'와 동사의 부정형 'ないです'가 결합된 형태입니다. 행위의 대상이 되는 사물이나 내용을 전부 부정하여 '아무것도 ~하지 않다'라는 강한 부정 의미를 나타냅니다.",
+      "formation": "なにも + 동사 ない형 + です",
+      "examples": [
+        {
+          "translation": "그는 아무 말도 하지 않았습니다."
+        },
+        {
+          "translation": "저는 아무것도 먹지 않아요."
+        },
+        {
+          "translation": "그녀는 아무것도 가지고 있지 않습니다."
+        },
+        {
+          "translation": "이 상자에는 아무것도 들어있지 않아요."
+        }
+      ]
+    },
+    "ja_なにもません_117": {
+      "title": "なにも～ません (nani mo ~ masen)",
+      "shortExplanation": "정중한 표현으로 사물이나 행동 대상을 전면 부정하며, '아무것도 ~하지 않습니다'라는 뜻입니다.",
+      "longExplanation": "'なにも～ません' 문형은 정중체에서 대상이나 행위 내용을 전면 부정할 때 사용하는 표준적인 표현입니다. 'な에도' 뒤에 동사의 정중한 부정형인 '～ません'(또는 과거형 '～ませんでした')이 이어져 '아무것도 ~하지 않습니다'라는 의미를 나타냅니다.",
+      "formation": "なにも + 동사 ます형 어간 + ません",
+      "examples": [
+        {
+          "translation": "어제는 아무것도 먹지 않았습니다."
+        },
+        {
+          "translation": "그는 아무 말도 하지 않습니다."
+        },
+        {
+          "translation": "이 방에서는 아무것도 보이지 않습니다."
+        },
+        {
+          "translation": "그녀는 아무것도 사지 않았습니다."
+        }
+      ]
+    },
+    "ja_なん_118": {
+      "title": "なん～ (nan～)",
+      "shortExplanation": "'何(무엇)'의 음운 변화 형태로, 조수사 앞이나 t, d, n행 자음 앞에서 쓰이며 '몇', '무슨', '무엇'이라는 뜻입니다.",
+      "longExplanation": "'なん'은 한자 '何(무엇)'의 음운 변이형태로, 뒤따르는 발음에 따라 'なに' 대신 사용됩니다. 조수사(수량 단위) 앞에 붙어 수량을 물을 때('何歳' 몇 살, '何時' 몇 시, '何人' 몇 명) 쓰이거나, t, d, n행 음 앞(예: 'なんですか', 'なんという', 'なんで')에서 '무엇', '무슨'의 뜻으로 활용됩니다.",
+      "formation": "なん + 조수사(수량 단위) / なん + ですか / なん + と",
+      "examples": [
+        {
+          "translation": "당신은 몇 살인가요?"
+        },
+        {
+          "translation": "이것은 무엇입니까?"
+        },
+        {
+          "translation": "그는 무엇을 타고 왔습니까?"
+        },
+        {
+          "translation": "저 식당은 이름이 무엇이라고 합니까?"
+        }
+      ]
+    },
+    "ja_なんで_119": {
+      "title": "なんで～ (nande～)",
+      "shortExplanation": "일상 구어체에서 이유나 원인을 물을 때 쓰며, '왜', '어째서'라는 뜻입니다.",
+      "longExplanation": "'なんで'는 일상 회화에서 어떤 일의 원인이나 이유를 물을 때 친근하게 사용하는 의문사로, 우리말의 '왜', '어째서'에 해당합니다. 비교적 중립적인 'どうして'나 격식체·문어체인 'なぜ'에 비해 캐주얼하고 구어적인 뉘앙스가 강하며, 때로는 놀람이나 가벼운 따짐의 뉘앙스를 담기도 합니다.",
+      "formation": "なんで + 절 / 문장",
+      "examples": [
+        {
+          "translation": "왜 늦었어?"
+        },
+        {
+          "translation": "왜 이 방은 이렇게 더러워?"
+        },
+        {
+          "translation": "그녀는 왜 화가 났어?"
+        },
+        {
+          "translation": "오늘 왜 쉬는 날이야?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_どこへも_105": {
+      "title": "どこへも～ないです (doko e mo ~ nai desu)",
+      "shortExplanation": "動作や移動がどの場所に対しても行われないことを全面的に否定し、「どこへも〜ない」という意味を表します。",
+      "longExplanation": "「どこへも〜ないです」は、移動や動作の方向・目的地を全面的に否定する表現です。話し手がある動作をどの場所に対しても行わないことを強調します。「どこへも」の後ろには必ず動詞の否定形（ない形＋です）が続きます。",
+      "formation": "どこへも + 動詞ない形 + です",
+      "examples": [
+        {
+          "translation": "今週末どこへも行かないです。"
+        },
+        {
+          "translation": "彼女はどこへも買い物に行きませんでした。"
+        },
+        {
+          "translation": "スーパーはどこへも売らないです。"
+        },
+        {
+          "translation": "私はどこへも行く予定がないです。"
+        }
+      ]
+    },
+    "ja_どこへも_106": {
+      "title": "どこへも～ません (doko e mo ~ masen)",
+      "shortExplanation": "目的地や移動の方向を丁寧に全面否定し、「どこへも〜ません」という意味を表します。",
+      "longExplanation": "「どこへも～ません」は、方向を表す助詞「へ」に全否定の助詞「も」、そして丁寧な否定形「〜ません」が結びついた文型です。主に移動を表す動詞（行く、走るなど）とともに用いられ、どの場所へも向かわないことを改まって丁寧に表します。",
+      "formation": "どこへも + 動詞ます形語幹 + ません",
+      "examples": [
+        {
+          "translation": "今日はどこへも行きません。"
+        },
+        {
+          "translation": "彼はどこへも走りませんでした。"
+        },
+        {
+          "translation": "どこへも買い物に行きませんでした。"
+        },
+        {
+          "translation": "彼女はどこへも連れて行かせません。"
+        }
+      ]
+    },
+    "ja_どこも_107": {
+      "title": "どこも～ないです (doko mo ~ nai desu)",
+      "shortExplanation": "どの場所にも該当するものや状態が存在しないことを全面的に否定し、「どこにも〜ない」という意味を表します。",
+      "longExplanation": "「どこも～ないです」は、場所を表す疑問詞「どこ」に全否定の助詞「も」がつき、否定形「ないです」と呼応して、すべての場所において何かが存在しないことや見当たらないことを表す表現です。名詞＋「がないです」の形や、動詞のナイ形＋「です」の形で接続します。",
+      "formation": "どこも + [名詞] + が + ないです / 動詞ない形 + です",
+      "examples": [
+        {
+          "translation": "どこもうちわがないです。"
+        },
+        {
+          "translation": "この町ではどこも美味しいラーメンがないです。"
+        },
+        {
+          "translation": "どこも駐車場がないです。"
+        },
+        {
+          "translation": "どこも席がないです。"
+        }
+      ]
+    },
+    "ja_どこも_108": {
+      "title": "どこも～ません (doko mo ~ masen)",
+      "shortExplanation": "どの場所もその動作や状態に当てはまらないことを丁寧に表し、「どこも〜ない」「どこも〜ません」という意味を表します。",
+      "longExplanation": "「どこも～ません」は、すべての場所や機関を対象として、動作の成立や状態を丁寧に全否定する文型です。後続には動詞の否定形（〜ません、〜ていません、〜できません）や形容動詞の否定形（〜じゃありません）が用いられ、該当する場所が一つもないことを表します。",
+      "formation": "どこも + 動詞ます形語幹 + ません / ナ形容詞 + じゃありません",
+      "examples": [
+        {
+          "translation": "どこも静かじゃありません。"
+        },
+        {
+          "translation": "どこもその本を売っていません。"
+        },
+        {
+          "translation": "この地域では、どこもインターネットに接続できません。"
+        },
+        {
+          "translation": "どこも彼を知りません。"
+        }
+      ]
+    },
+    "ja_どちら_109": {
+      "title": "どちら～ (dochira～)",
+      "shortExplanation": "2つの選択肢の中から1つを選ぶ際に用いる疑問詞で、「どちら」「どちらの方」という意味を表します。",
+      "longExplanation": "「どちら」は、2つの事物や選択肢を比較したり、その中から1つを選んだりする際に用いる疑問詞です。「どっち」の丁寧な表現であり、方角や場所を丁寧に尋ねる際（「どこ」の丁寧語）にも用いられます。主に「どちらが」「どちらの＋名詞」「どちらに／を」などの形で接続します。",
+      "formation": "どちら + が / を / に + 動詞/形容詞、または どちらの + 名詞",
+      "examples": [
+        {
+          "translation": "この二つのリンゴ、どちらが美味しいですか？"
+        },
+        {
+          "translation": "どちらのドレスを着たいですか？"
+        },
+        {
+          "translation": "この二つの町、どちらに行きたいですか？"
+        },
+        {
+          "translation": "どちらの映画が面白いと思いますか？"
+        }
+      ]
+    },
+    "ja_どなた_110": {
+      "title": "どなた～ (donata～)",
+      "shortExplanation": "「だれ」の丁寧・敬語表現で、人の身元や名前を改まって尋ねる際に用いる疑問詞です。",
+      "longExplanation": "「どなた」は、疑問詞「だれ」の改まった敬語表現（丁寧語・尊敬表現）です。ビジネスシーンや改まった場面で、相手や第三者の名前・身元を尋ねる際に用いられます。「どなたが」「どなたか」「どなたも」などの形で助詞と結びついて広く使われます。",
+      "formation": "どなた (+ 助詞：が／に／の／か／も)",
+      "examples": [
+        {
+          "translation": "すみません、どなたが山田さんですか？"
+        },
+        {
+          "translation": "どなたも知っている有名な俳優です。"
+        },
+        {
+          "translation": "明日のパーティーにはどなたが来ますか？"
+        },
+        {
+          "translation": "どなたか手伝っていただけますか？"
+        }
+      ]
+    },
+    "ja_どの_111": {
+      "title": "どの + 名詞 (dono + 名詞)",
+      "shortExplanation": "名詞を直接修飾する連体詞で、3つ以上の選択肢の中から対象を特定・質問する際に用い、「どの〜」という意味を表します。",
+      "longExplanation": "「どの」は、こそあど言葉の連体詞（指示代名詞連体形）であり、必ず後ろに名詞を伴って「どの＋名詞」の形で用います。3つ以上の複数の対象の中から、特定の事物や人物を尋ねたり選んだりする際に使用されます。",
+      "formation": "どの + 名詞",
+      "examples": [
+        {
+          "translation": "どの本が一番面白いですか。"
+        },
+        {
+          "translation": "どの服を着たいですか。"
+        },
+        {
+          "translation": "どの色が好きですか。"
+        },
+        {
+          "translation": "どのレストランに行きたいですか。"
+        }
+      ]
+    },
+    "ja_どれでも_112": {
+      "title": "どれでも～ (dore demo～)",
+      "shortExplanation": "複数の事物の中からどれを選んでも構わない・問題ないことを表し、「どれでも」「どの１つでも」という意味を表します。",
+      "longExplanation": "「どれでも」は、疑問代名詞「どれ」に助詞「でも」が結合した表現です。3つ以上の選択肢の中で、特定のものに限定せず、どれを選んでも差し支えないことや、すべてに共通して当てはまることを表します。「どれでもいい」「どれでも選んでください」などの形で頻繁に用いられます。",
+      "formation": "どれ + でも",
+      "examples": [
+        {
+          "translation": "どれでもいいですか？"
+        },
+        {
+          "translation": "どれでも選んでください。"
+        },
+        {
+          "translation": "どれでもおいしいです。"
+        },
+        {
+          "translation": "この中でどれでも好きなものを持って行ってください。"
+        }
+      ]
+    },
+    "ja_どんな_113": {
+      "title": "どんな + 名詞 (donna + 名詞)",
+      "shortExplanation": "人や事物の性質、状態、種類などを尋ねる連体詞で、「どんな〜」「どのような〜」という意味を表します。",
+      "longExplanation": "「どんな」は名詞を直接修飾し、その対象の性質、特徴、形状、種類などを具体的に尋ねる際に用いる疑問詞（連体詞）です。答える側は、形容詞や詳しい説明を含む名詞句を用いて性質や特徴を答えます。「どのような」のくだけた口語表現としても位置づけられます。",
+      "formation": "どんな + 名詞",
+      "examples": [
+        {
+          "translation": "どんな音楽が好きですか？"
+        },
+        {
+          "translation": "彼女はどんな映画が好きだと思う？"
+        },
+        {
+          "translation": "どんな本が一番面白いですか？"
+        },
+        {
+          "translation": "どんな料理が得意ですか？"
+        }
+      ]
+    },
+    "ja_なに_114": {
+      "title": "なに～ (nani～)",
+      "shortExplanation": "事柄や内容、動作などを尋ねる基本的な疑問代名詞で、「何（なに）」という意味を表します。",
+      "longExplanation": "「なに（何）」は、未知の事物、内容、行為などを問う最も基礎的な疑問代名詞です。単独で用いる場合や、助詞「が」「を」「に」などが続く場合は原則として「なに」と発音されます。一方、「です」の前や助数詞の前、またはタ行・ダ行・ナ行の音が続く環境では「なん」と音韻変化します。",
+      "formation": "なに + 助詞（が／を／に／で／から）または なに + ですか",
+      "examples": [
+        {
+          "translation": "これはなにですか。"
+        },
+        {
+          "translation": "あの人はなにをしているのですか？"
+        },
+        {
+          "translation": "なにが好きですか？"
+        },
+        {
+          "translation": "今日の天気はなにですか？"
+        }
+      ]
+    },
+    "ja_なにか_115": {
+      "title": "なにか～ (nanika～)",
+      "shortExplanation": "特定しない事物や漠然としたものを指し、「何か」「何かしらの」という意味を表します。",
+      "longExplanation": "「なにか（何か）」は、疑問詞「なに」に不特定を表す副助詞「か」がついた語で、話し手が具体的に特定していない事物や漠然とした対象を表します。名詞の前に置かれて連体的に修飾したり（「何か飲み物」）、文中で副詞的・代名詞的に用いられたりします。",
+      "formation": "なにか + 名詞、または単独で なにか (+ 助詞) + 動詞",
+      "examples": [
+        {
+          "translation": "なにか飲み物を持ってきてください。"
+        },
+        {
+          "translation": "なにか質問があれば、遠慮なく聞いてください。"
+        },
+        {
+          "translation": "彼女はなにかプレゼントを持っている。"
+        },
+        {
+          "translation": "なにか助けが必要なら、言ってください。"
+        }
+      ]
+    },
+    "ja_なにもないです_116": {
+      "title": "なにも～ないです (nani mo ~ nai desu)",
+      "shortExplanation": "動作の対象や事物を全面的に否定し、「何も〜ない」という意味を表します。",
+      "longExplanation": "「なにも～ないです」は、疑問詞「なに」に全否定を表す助詞「も」がつき、動詞のナイ形＋「です」と呼応して、対象となる事物が全く存在しないことや、何一つその動作を行わないことを全面的に表す否定表現です。",
+      "formation": "なにも + 動詞ない形 + です",
+      "examples": [
+        {
+          "translation": "彼はなにも言わなかったです。"
+        },
+        {
+          "translation": "私はなにも食べないです。"
+        },
+        {
+          "translation": "彼女はなにも持っていないです。"
+        },
+        {
+          "translation": "この箱にはなにも入っていないです。"
+        }
+      ]
+    },
+    "ja_なにもません_117": {
+      "title": "なにも～ません (nani mo ~ masen)",
+      "shortExplanation": "丁寧な表現において動作の対象を全面的に否定し、「何も〜ません」という意味を表します。",
+      "longExplanation": "「なにも～ません」は、丁寧語の文脈において、事物の存在や動作の対象を全否定する標準的な文型です。「なにも」の後ろに動詞のマス形否定「〜ません」（過去否定なら「〜ませんでした」）が接続し、何一つその行為を行わない、または行わなかったことを改まって表します。",
+      "formation": "なにも + 動詞ます形語幹 + ません",
+      "examples": [
+        {
+          "translation": "昨日はなにも食べませんでした。"
+        },
+        {
+          "translation": "彼はなにも話しません。"
+        },
+        {
+          "translation": "この部屋ではなにも見えません。"
+        },
+        {
+          "translation": "彼女はなにも買いませんでした。"
+        }
+      ]
+    },
+    "ja_なん_118": {
+      "title": "なん～ (nan～)",
+      "shortExplanation": "疑問詞「何」の音便形で、助数詞の前やタ行・ダ行・ナ行音の前で用いられ、「何」「いくつ」という意味を表します。",
+      "longExplanation": "「なん」は、漢字「何」が特定の音環境において音変化した形です。主に助数詞に直接接続して数量や順序を尋ねる場合（何歳、何時、何人など）や、後ろに「です」やタ行・ダ行・ナ行音（「なんという」「なんで」「なんですか」など）が続く場合に「なに」に代わって用いられます。",
+      "formation": "なん + 助数詞 / なん + ですか / なん + と",
+      "examples": [
+        {
+          "translation": "あなたはなん歳ですか？"
+        },
+        {
+          "translation": "これはなんですか？"
+        },
+        {
+          "translation": "彼はなんで来ましたか？"
+        },
+        {
+          "translation": "あのレストランはなんと言う名前ですか？"
+        }
+      ]
+    },
+    "ja_なんで_119": {
+      "title": "なんで～ (nande～)",
+      "shortExplanation": "日常会話において理由や原因をくだけて尋ねる疑問詞で、「なぜ」「どうして」という意味を表します。",
+      "longExplanation": "「なんで」は、事態の理由や原因、動機を尋ねる際に日常の親しい間柄で広く使われる口語表現です。中立的な「どうして」や改まった文章語の「なぜ」と比べてカジュアルな響きを持ち、時に話者の驚きや不満、疑問の気持ちが込められることがあります。文頭に置いて文全体に接続します。",
+      "formation": "なんで + 文",
+      "examples": [
+        {
+          "translation": "なんで遅れたの？"
+        },
+        {
+          "translation": "なんでこの部屋はこんなに汚いの？"
+        },
+        {
+          "translation": "なんで彼女は怒っているの？"
+        },
+        {
+          "translation": "なんで今日は休みなの？"
+        }
+      ]
+    }
+  }
+}

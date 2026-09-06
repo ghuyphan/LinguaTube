@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ja_て_69",
+    "language": "ja",
+    "pattern": "～て",
+    "title": "～て います (～te imasu)",
+    "shortExplanation": "Expresses the present continuous or ongoing action; 'to be doing', 'currently doing'.",
+    "longExplanation": "The ～て います grammar pattern is used to express that an action is currently happening or ongoing. It can be translated as 'to be doing' or 'currently doing' in English. The formation differs depending on whether it is a る-verb, う-verb, or an irregular verb, but all use the verb’s て-form + います.",
+    "formation": "Verb て-form + います",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今、音楽を聞いています。",
+        "romanization": "Ima, ongaku wo kiite imasu.",
+        "translation": "I am listening to music right now."
+      },
+      {
+        "sentence": "父は新聞を読んでいます。",
+        "romanization": "Chichi wa shinbun wo yonde imasu.",
+        "translation": "My father is reading a newspaper."
+      },
+      {
+        "sentence": "彼女は英語を勉強しています。",
+        "romanization": "Kanojo wa eigo wo benkyou shite imasu.",
+        "translation": "She is studying English."
+      },
+      {
+        "sentence": "子供たちは公園で遊んでいます。",
+        "romanization": "Kodomotachi wa kouen de asonde imasu.",
+        "translation": "The children are playing in the park."
+      }
+    ]
+  },
+  {
+    "id": "ja_に_122",
+    "language": "ja",
+    "pattern": "～に",
+    "title": "～に あげます (〜 ni agemasu)",
+    "shortExplanation": "Used to express giving something to someone; 'give', 'offer'.",
+    "longExplanation": "The ～に あげます grammar point is used when the speaker offers or gives something to someone. It emphasizes that the action is performed for the benefit of the receiver. The formation involves using the particle 'に' after the person receiving the item, followed by the verb あげます.",
+    "formation": "Receiver + に + Object + を + あげます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "私は友達に本をあげました。",
+        "romanization": "Watashi wa tomodachi ni hon wo agemashita.",
+        "translation": "I gave a book to my friend."
+      },
+      {
+        "sentence": "彼にプレゼントをあげましょう。",
+        "romanization": "Kare ni purezento wo agemashou.",
+        "translation": "Let's give him a present."
+      },
+      {
+        "sentence": "先生に花をあげます。",
+        "romanization": "Sensei ni hana wo agemasu.",
+        "translation": "I will give flowers to the teacher."
+      },
+      {
+        "sentence": "お母さんにチョコレートをあげたいです。",
+        "romanization": "Okaasan ni chokoreeto wo agetai desu.",
+        "translation": "I want to give chocolate to my mom."
+      }
+    ]
+  }
+]

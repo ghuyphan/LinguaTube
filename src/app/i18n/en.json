@@ -27,7 +27,8 @@
         "placeholder": "Paste YouTube URL or video ID...",
         "invalid": "Please enter a valid YouTube URL",
         "cancel": "Cancel",
-        "load": "Load"
+        "load": "Load",
+        "paste": "Paste"
     },
     "header": {
         "words": "Words",
@@ -60,6 +61,7 @@
         "closeVideo": "Close Video",
         "resume": "Resume",
         "normal": "Normal",
+        "off": "Off",
         "hint": "Paste a YouTube URL to start learning. We'll try to fetch captions automatically."
     },
     "subtitle": {
@@ -93,6 +95,7 @@
         "video": "Video",
         "cost": "Cost",
         "yourBalance": "Your Balance",
+        "securityCheck": "Human Verification",
         "generate": "Generate",
         "languageMismatch": "Language Mismatch",
         "languageMismatchMessage": "{{requested}} is not available for this video. Using {{detected}} instead.",
@@ -134,7 +137,12 @@
         "nativeCaptionsFree": "Are regular videos free?",
         "nativeCaptionsFreeDesc": "Yes! Videos with existing YouTube captions are 100% free and never use AI credits.",
         "allCreditsAvailable": "All credits available",
-        "depletedNotice": "You've used all 3 AI credits. Videos with existing YouTube captions remain 100% free!"
+        "depletedNotice": "You've used all 3 AI credits. Videos with existing YouTube captions remain 100% free!",
+        "translationFailed": "Translation failed. Please try again.",
+        "orUseAI": "or use AI",
+        "readingHint": "Show pronunciation guide above characters",
+        "grammarHint": "Highlight grammar structures and patterns",
+        "dualSubsHint": "Show secondary translated subtitles"
     },
     "vocab": {
         "title": "Vocabulary",
@@ -174,7 +182,11 @@
         "saved": "Saved",
         "saveWord": "Save Word",
         "close": "Close",
-        "translateTo": "Translate to"
+        "translateTo": "Translate to",
+        "translateAll": "Translate all definitions",
+        "all": "All",
+        "failed": "Failed",
+        "retry": "Retry"
     },
     "grammar": {
         "mode": "Grammar",
@@ -298,7 +310,10 @@
         "onStreak": "You are on a {{count}} day streak!",
         "howItWorks": "How it works",
         "howToExtend": "Practice every day to extend your streak. If you skip a day without a freeze, your streak resets to 0.",
-        "freezeExplanation": "Streak freezes automatically protect your streak if you miss a day. You have {{count}} freeze(s) left."
+        "freezeExplanation": "Streak freezes automatically protect your streak if you miss a day. You have {{count}} freeze(s) left.",
+        "reached": "You hit",
+        "days": "days!",
+        "saved": "Streak Saved! ❄️"
     },
     "history": {
         "title": "History",
@@ -397,7 +412,9 @@
         "nowPlaying": "Now Playing",
         "continueStudying": "Continue Studying",
         "resume": "Resume",
-        "browseByLanguage": "Browse by Language"
+        "browseByLanguage": "Browse by Language",
+        "loopOn": "Looping on",
+        "shuffleOn": "Shuffle on"
     },
     "common": {
         "loading": "Loading...",
@@ -406,7 +423,9 @@
         "off": "Off",
         "back": "Back",
         "undo": "Undo",
-        "retry": "Retry"
+        "retry": "Retry",
+        "close": "Close",
+        "clear": "Clear"
     },
     "onboarding": {
         "welcomeTitle": "Welcome to Voca",

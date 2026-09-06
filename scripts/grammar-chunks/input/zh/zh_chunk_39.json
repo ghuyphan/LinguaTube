@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_何尝_615",
+    "language": "zh",
+    "pattern": "何尝",
+    "title": "何尝 (why wouldn’t)",
+    "shortExplanation": "why wouldn’t",
+    "longExplanation": "why wouldn’t. Pinyin: hécháng",
+    "formation": "hécháng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我何尝不想买一所大房子呢？",
+        "romanization": "wǒ hécháng bùxiǎng mǎi yī suǒ dà fángzi ne？",
+        "translation": "Why wouldn’t I want to buy a big house?"
+      }
+    ]
+  },
+  {
+    "id": "zh_何至于_616",
+    "language": "zh",
+    "pattern": "何至于",
+    "title": "何至于 (why must)",
+    "shortExplanation": "why must",
+    "longExplanation": "why must. Pinyin: hé zhìyú",
+    "formation": "hé zhìyú",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "你何至于生这么大的气呢？",
+        "romanization": "nǐ hé zhìyú shēng zhème dà de qì ne？",
+        "translation": "Why do you have to get so angry?"
+      }
+    ]
+  },
+  {
+    "id": "zh_V了个RESULT_617",
+    "language": "zh",
+    "pattern": "V 了个 RESULT",
+    "title": "V 了个 RESULT (V to RESULT)",
+    "shortExplanation": "V to RESULT",
+    "longExplanation": "V to RESULT. Pinyin: V le gè RESULT",
+    "formation": "V le gè RESULT",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我们喝了个痛快。",
+        "romanization": "wǒmen hē le gè tòngkuài。",
+        "translation": "We drank to [our] satisfaction."
+      }
+    ]
+  },
+  {
+    "id": "zh_据说_618",
+    "language": "zh",
+    "pattern": "据说……",
+    "title": "据说…… (It is said that…)",
+    "shortExplanation": "It is said that…",
+    "longExplanation": "It is said that…. Pinyin: jùshuō……",
+    "formation": "jùshuō……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "据说，他年轻时曾经一个人去过非洲大森林。",
+        "romanization": "jùshuō， tā niánqīng shí céngjīng yīgèrén qù guò Fēizhōu dà sēnlín。",
+        "translation": "It is said that at one time he went to the great forest in Africa when he was young."
+      }
+    ]
+  },
+  {
+    "id": "zh_因而_619",
+    "language": "zh",
+    "pattern": "因而",
+    "title": "因而 (therefore)",
+    "shortExplanation": "therefore",
+    "longExplanation": "therefore. Pinyin: yīn'ér",
+    "formation": "yīn'ér",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这条河河道很窄，因而容易发生水灾。",
+        "romanization": "zhè tiáo hé hédào hěn zhǎi， yīn'ér róngyì fāshēng shuǐzāi。",
+        "translation": "The river is narrow and is therefore prone to flooding."
+      }
+    ]
+  },
+  {
+    "id": "zh_也_620",
+    "language": "zh",
+    "pattern": "也",
+    "title": "也 (still)",
+    "shortExplanation": "still",
+    "longExplanation": "still. Pinyin: yě",
+    "formation": "yě",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "你不想干也得干。",
+        "romanization": "nǐ bùxiǎng gàn yě dé gàn。",
+        "translation": "You still have to do it even if you don’t want to."
+      }
+    ]
+  },
+  {
+    "id": "zh_再也_621",
+    "language": "zh",
+    "pattern": "再……也……",
+    "title": "再……也…… (no matter how)",
+    "shortExplanation": "no matter how",
+    "longExplanation": "no matter how. Pinyin: zài…… yě……",
+    "formation": "zài…… yě……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我再累也要把作业做完。",
+        "romanization": "wǒ zài lèi yě yào bǎ zuòyè zuòwán。",
+        "translation": "No matter how tired I am, I need to finish my homework."
+      }
+    ]
+  },
+  {
+    "id": "zh_巴不得_622",
+    "language": "zh",
+    "pattern": "巴不得",
+    "title": "巴不得 (be only too eager to)",
+    "shortExplanation": "be only too eager to",
+    "longExplanation": "be only too eager to. Pinyin: bābude",
+    "formation": "bābude",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "我巴不得他们能真的和好，从此以后和和睦睦过日子。",
+        "romanization": "wǒ bābude tāmen néng zhēn de héhǎo， cóngcǐ yǐhòu hé hémù mù guòrìzi。",
+        "translation": "I only wish that they could really be reconciled and lived in harmony from now on."
+      }
+    ]
+  },
+  {
+    "id": "zh_别提多了_623",
+    "language": "zh",
+    "pattern": "别提多……了",
+    "title": "别提多……了 (indescribably)",
+    "shortExplanation": "indescribably",
+    "longExplanation": "indescribably. Pinyin: bié tíduō…… le",
+    "formation": "bié tíduō…… le",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "这个人办事，别提多负责了。",
+        "romanization": "zhège rén bànshì， bié tíduō fùzé le。",
+        "translation": "This person does things, don't mention more responsibility."
+      }
+    ]
+  },
+  {
+    "id": "zh_具有语体差别的同义词_624",
+    "language": "zh",
+    "pattern": "具有语体差别的同义词",
+    "title": "具有语体差别的同义词 (synonyms that differ by style)",
+    "shortExplanation": "synonyms that differ by style",
+    "longExplanation": "synonyms that differ by style. Pinyin: jùyǒu yǔ tǐ chà biéde tóngyìcí",
+    "formation": "jùyǒu yǔ tǐ chà biéde tóngyìcí",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他便/就回答说/道：“将/把这只戒指拿去吧。”",
+        "romanization": "tā biàn/ jiù huídá shuō/ dào：“ jiāng/ bǎ zhè zhǐ jièzhi ná qù ba。”",
+        "translation": "Then he just said, “Take this ring.”"
+      }
+    ]
+  },
+  {
+    "id": "zh_恨不得_625",
+    "language": "zh",
+    "pattern": "恨不得",
+    "title": "恨不得 (to wish (badly))",
+    "shortExplanation": "to wish (badly)",
+    "longExplanation": "to wish (badly). Pinyin: hènbude",
+    "formation": "hènbude",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "工作忙的时候，她恨不得一个人干两个人的活儿。",
+        "romanization": "gōngzuò máng de shíhou， tā hènbude yīgèrén gàn liǎng gèrén de huór。",
+        "translation": "When the work [gets] busy, she wished [she could] do two people’s work all by herself."
+      }
+    ]
+  },
+  {
+    "id": "zh_顿时_626",
+    "language": "zh",
+    "pattern": "顿时",
+    "title": "顿时 (suddenly)",
+    "shortExplanation": "suddenly",
+    "longExplanation": "suddenly. Pinyin: dùnshí",
+    "formation": "dùnshí",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "听了医生的话，顿时，他的心里又燃起了希望。",
+        "romanization": "tīng le yīshēng dehuà， dùnshí， tā de xīnli yòu ránqǐ le xīwàng。",
+        "translation": "After hearing to the doctor's words, suddenly, his heart lit up hope again."
+      }
+    ]
+  },
+  {
+    "id": "zh_不由得_627",
+    "language": "zh",
+    "pattern": "不由得",
+    "title": "不由得 (can’t help but to)",
+    "shortExplanation": "can’t help but to",
+    "longExplanation": "can’t help but to. Pinyin: bùyóude",
+    "formation": "bùyóude",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "李朋带病上场参加比赛了，我不由得有些担心。",
+        "romanization": "lǐ péng dàibìng shàngchǎng cānjiā bǐsài le， wǒ bùyóude yǒuxiē dānxīn。",
+        "translation": "Li Peng was sick and went to the competition. I couldn't help but worry (somewhat)."
+      }
+    ]
+  },
+  {
+    "id": "zh_V番_628",
+    "language": "zh",
+    "pattern": "V # 番",
+    "title": "V # 番 (V’ed # times over)",
+    "shortExplanation": "V’ed # times over",
+    "longExplanation": "V’ed # times over. Pinyin: V # fān",
+    "formation": "V # fān",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他打量了我一番，到嘴边的话又不说了。",
+        "romanization": "tā dǎliang le wǒ yī fān， dào zuǐ biān dehuà yòu bù shuō le。",
+        "translation": "He sized me up (once over) and swallowed his words. (Lit. [As for] the words that [came] to the edge of his mouth, he [changed his mind] again and didn’t utter them.)"
+      }
+    ]
+  },
+  {
+    "id": "zh_番_629",
+    "language": "zh",
+    "pattern": "番",
+    "title": "番 ((measure word for tumultuous events))",
+    "shortExplanation": "(measure word for tumultuous events)",
+    "longExplanation": "(measure word for tumultuous events). Pinyin: fān",
+    "formation": "fān",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "经过了几番风雨，他才懂得人生的价值。",
+        "romanization": "jīngguò le jǐ fān fēngyǔ， tā cái dǒngde rénshēng de jiàzhí。",
+        "translation": "Only after a few (times of) setbacks (lit. storms), he understood the value of life."
+      }
+    ]
+  }
+]

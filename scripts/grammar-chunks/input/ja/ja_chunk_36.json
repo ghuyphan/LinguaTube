@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_のももっともだ_133",
+    "language": "ja",
+    "pattern": "～のももっともだ",
+    "title": "～のももっともだ (〜no mo mottomo da)",
+    "shortExplanation": "Express that something is understandable or reasonable.",
+    "longExplanation": "The ～のももっともだ grammar point is used to express that a situation, action, or feeling is understandable or reasonable, considering the circumstances. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + のももっともだ, い-Adjective + のももっともだ, な-Adjective + なのももっともだ, Noun + なのももっともだ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼が緊張するのももっともだ。",
+        "romanization": "Kare ga kinchou suru no mo mottomo da.",
+        "translation": "It's understandable that he is nervous."
+      },
+      {
+        "sentence": "この問題が難しいのももっともだ。",
+        "romanization": "Kono mondai ga muzukashii no mo mottomo da.",
+        "translation": "It's reasonable that this problem is difficult."
+      },
+      {
+        "sentence": "彼女が幸せなのももっともだ。",
+        "romanization": "Kanojo ga shiawase na no mo mottomo da.",
+        "translation": "It's understandable that she is happy."
+      },
+      {
+        "sentence": "彼がリーダーなのももっともだ。",
+        "romanization": "Kare ga riidaa na no mo mottomo da.",
+        "translation": "It's reasonable that he is the leader."
+      }
+    ]
+  },
+  {
+    "id": "ja_の上では_134",
+    "language": "ja",
+    "pattern": "〜の上では",
+    "title": "〜の上では (〜no ue de wa)",
+    "shortExplanation": "Indicates 'on the basis of', 'in terms of', or 'from the standpoint of'.",
+    "longExplanation": "The 〜の上では grammar point is used to show that you are expressing a view or making a judgment based on a specific standpoint or perspective. It can be translated as 'on the basis of', 'in terms of', or 'from the standpoint of'. The formation is straightforward, which involves attaching 〜の上では to a noun or a phrase.",
+    "formation": "Noun or Phrase + の上では",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "効率の上では、この方法が最適です。",
+        "romanization": "Kouritsu no ue de wa, kono houhou ga saiteki desu.",
+        "translation": "In terms of efficiency, this method is the best."
+      },
+      {
+        "sentence": "法律の上では、彼の行為は違法ではありません。",
+        "romanization": "Houritsu no ue de wa, kare no koui wa ihan dewa arimasen.",
+        "translation": "From a legal standpoint, his actions are not illegal."
+      },
+      {
+        "sentence": "味の上では、このレストランは評価が高いです。",
+        "romanization": "Aji no ue de wa, kono resutoran wa hyouka ga takai desu.",
+        "translation": "In terms of taste, this restaurant has a high rating."
+      },
+      {
+        "sentence": "成績の上では、彼はクラスで一番優秀です。",
+        "romanization": "Seiseki no ue de wa, kare wa kurasu de ichiban yuushuu desu.",
+        "translation": "On the basis of grades, he is the most outstanding student in the class."
+      }
+    ]
+  },
+  {
+    "id": "ja_の下で_135",
+    "language": "ja",
+    "pattern": "～の下で",
+    "title": "～の下で (〜no shita de)",
+    "shortExplanation": "Under the context or condition of; under.",
+    "longExplanation": "The ～の下で grammar point is used to express that something occurs under a certain context, condition, or circumstance. It can be translated as 'under' or 'in' in English. The formation is simple, as it can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-casual + の下で, い-Adjective + の下で, な-Adjective + の下で, Noun + の下で",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "先生の下で勉強するのはとても楽しいです。",
+        "romanization": "Sensei no shita de benkyou suru no wa totemo tanoshii desu.",
+        "translation": "Studying under the teacher is very enjoyable."
+      },
+      {
+        "sentence": "晴天の下でピクニックをしましょう。",
+        "romanization": "Seiten no shita de pikunikku wo shimashou.",
+        "translation": "Let's have a picnic under the clear sky."
+      },
+      {
+        "sentence": "緊張感の下で、彼女はスピーチに成功しました。",
+        "romanization": "Kinchoukan no shita de, kanojo wa supiichi ni seikou shimashita.",
+        "translation": "Under pressure, she succeeded in her speech."
+      },
+      {
+        "sentence": "親の愛情の下で、子供たちは幸せに育ちます。",
+        "romanization": "Oya no aijou no shita de, kodomo-tachi wa shiawase ni sodachimasu.",
+        "translation": "Under the love of their parents, children grow up happily."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばかりかも_136",
+    "language": "ja",
+    "pattern": "～ばかりか〜も",
+    "title": "～ばかりか〜も (〜bakari ka 〜 mo)",
+    "shortExplanation": "Expresses 'not only... but also'; emphasizing the extent of something.",
+    "longExplanation": "The ～ばかりか〜も grammar point is used to express the idea of 'not only... but also' in a sentence. It emphasizes the extent to which something applies, showing a certain component or factor is not the only relevant one.",
+    "formation": "Noun/Verb/Adjective + ばかりか + Noun/Verb/Adjective + も",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼はかわいいばかりか、賢くもある。",
+        "romanization": "Kare wa kawaii bakari ka, kashikoku mo aru.",
+        "translation": "He is not only cute but also smart."
+      },
+      {
+        "sentence": "このレストランは味が良いばかりかサービスも素晴らしいです。",
+        "romanization": "Kono resutoran wa aji ga yoi bakari ka saabisu mo subarashii desu.",
+        "translation": "This restaurant not only has great taste but also wonderful service."
+      },
+      {
+        "sentence": "彼女は日本語が上手ばかりか英語も話せる。",
+        "romanization": "Kanojo wa nihongo ga jouzu bakari ka eigo mo hanaseru.",
+        "translation": "She can speak not only Japanese but also English."
+      },
+      {
+        "sentence": "彼は歌が上手いばかりかダンスもうまい。",
+        "romanization": "Kare wa uta ga umai bakari ka dansu mo umai.",
+        "translation": "He is not only good at singing but also dancing."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばかりだ_137",
+    "language": "ja",
+    "pattern": "～ばかりだ",
+    "title": "～ばかりだ (〜bakari da)",
+    "shortExplanation": "Express a continuing state or negative tendency; 'just', 'only', 'always'.",
+    "longExplanation": "The ～ばかりだ grammar point is used to express a continuing or unchanging state, often emphasizing a negative or undesired tendency. It can be translated as 'just', 'only', or 'always' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-てform + ばかりだ, い-Adjective + ばかりだ, な-Adjective + ばかりだ, Noun + ばかりだ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は文句を言ってばかりだ。",
+        "romanization": "Kare wa monku wo itte bakari da.",
+        "translation": "He is always complaining."
+      },
+      {
+        "sentence": "この映画は面白くなくて、退屈してばかりだ。",
+        "romanization": "Kono eiga wa omoshirokunakute, taikutsu shite bakari da.",
+        "translation": "This movie isn't interesting, and I'm just bored."
+      },
+      {
+        "sentence": "彼女は暇でいるばかりだ。",
+        "romanization": "Kanojo wa hima de iru bakari da.",
+        "translation": "She is always just idling around with nothing to do."
+      },
+      {
+        "sentence": "最近、仕事の失敗ばかりだ。",
+        "romanization": "Saikin, shigoto no shippai bakari da.",
+        "translation": "Lately, it’s just been one failure at work after another."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばかりに_138",
+    "language": "ja",
+    "pattern": "～ばかりに",
+    "title": "～ばかりに (〜bakari ni)",
+    "shortExplanation": "Express an undesired situation or result caused by something; 'simply because', 'due to', 'on account of'.",
+    "longExplanation": "The ～ばかりに grammar point is used to express an undesired situation or result that arises simply because of some factor. It can be translated as 'simply because', 'due to', or 'on account of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + ばかりに, い-Adjective + ばかりに, な-Adjective + なばかりに, Noun + なばかりに",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "雨が降ったばかりに、試合が中止になりました。",
+        "romanization": "Ame ga futta bakari ni, shiai ga chuushi ni narimashita.",
+        "translation": "Simply because it rained, the match was cancelled."
+      },
+      {
+        "sentence": "彼が遅れたばかりに、私たちも遅刻しました。",
+        "romanization": "Kare ga okureta bakari ni, watashitachi mo chikoku shimashita.",
+        "translation": "Because he was late, we ended up being late too."
+      },
+      {
+        "sentence": "忘れ物をしたばかりに、買い物に戻らなければなりません。",
+        "romanization": "Wasuremono wo shita bakari ni, kaimono ni modoranakereba narimasen.",
+        "translation": "Simply because I forgot something, I have to go back to the store."
+      },
+      {
+        "sentence": "彼女が美人なばかりに、みんなが彼女を羨んでいます。",
+        "romanization": "Kanojo ga bijin na bakari ni, minna ga kanojo wo urayande imasu.",
+        "translation": "Just because she is beautiful, everyone is envious of her."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばというものでもない_139",
+    "language": "ja",
+    "pattern": "～ば～というものでもない",
+    "title": "～ば～というものでもない (〜ba 〜to iu mono demo nai)",
+    "shortExplanation": "Not necessarily true that if A, then B.",
+    "longExplanation": "The ～ば～というものでもない grammar point is used to express that something is not necessarily true even if a certain condition is met. In other words, if A happens, it doesn't always mean B will happen.",
+    "formation": "Verb-ば form + というものでもない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "高いものがいいものばかりではない。",
+        "romanization": "Takai mono ga ii mono bakari de wa nai.",
+        "translation": "Expensive things are not always good."
+      },
+      {
+        "sentence": "英語ができれば、成功するというものでもない。",
+        "romanization": "Eigo ga dekireba, seikou suru to iu mono demo nai.",
+        "translation": "Just because you can speak English doesn’t mean you’ll succeed."
+      },
+      {
+        "sentence": "見た目が美しいからといって、心も美しいというものでもない。",
+        "romanization": "Mitame ga utsukushii kara to itte, kokoro mo utsukushii to iu mono demo nai.",
+        "translation": "Just because someone is beautiful on the outside, it doesn’t mean they’re beautiful on the inside."
+      },
+      {
+        "sentence": "有名大学に入れば、将来が安泰だというものでもない。",
+        "romanization": "Yuumei daigaku ni haireba, shourai ga antai da to iu mono demo nai.",
+        "translation": "Getting into a famous university doesn’t guarantee a secure future."
+      }
+    ]
+  },
+  {
+    "id": "ja_はともかくは_140",
+    "language": "ja",
+    "pattern": "～はともかく～は",
+    "title": "～はともかく～は (〜wa tomokaku 〜wa)",
+    "shortExplanation": "Used to compare or contrast two elements; 'as for...'.",
+    "longExplanation": "The grammar point ～はともかく～は is used to compare or contrast two elements in a sentence. It implies that the first element can be set aside or is less important compared to the second element. It often translates to 'putting A aside, B...'.",
+    "formation": "Noun1 はともかく Noun2 は",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "デザインはともかく、機能はこの携帯電話が一番です。",
+        "romanization": "Dezain wa tomokaku, kinou wa kono keitai denwa ga ichiban desu.",
+        "translation": "As for design, the functionality of this phone is the best."
+      },
+      {
+        "sentence": "彼の容姿はともかく、性格は素晴らしいです。",
+        "romanization": "Kare no youshi wa tomokaku, seikaku wa subarashii desu.",
+        "translation": "Putting aside his looks, his personality is wonderful."
+      },
+      {
+        "sentence": "料理の味はともかく、盛り付けは綺麗です。",
+        "romanization": "Ryouri no aji wa tomokaku, moritsuke wa kirei desu.",
+        "translation": "Putting aside the taste of the food, the presentation is beautiful."
+      },
+      {
+        "sentence": "値段はともかく、このバッグの質は良いです。",
+        "romanization": "Nedan wa tomokaku, kono baggu no shitsu wa yoi desu.",
+        "translation": "Ignoring the price, this bag’s quality is good."
+      }
+    ]
+  },
+  {
+    "id": "ja_はまだしも_141",
+    "language": "ja",
+    "pattern": "～はまだしも",
+    "title": "～はまだしも (〜wa mada shimo)",
+    "shortExplanation": "Expresses that while the first item is somewhat acceptable, the second item is not.",
+    "longExplanation": "The ～はまだしも grammar point is used to show a contrast where the first item or situation might still be understandable or tolerable, whereas the second one is harder to accept. It’s often translated as 'X is one thing, but Y...'.",
+    "formation": "Noun1 + はまだしも + Noun2",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "失敗するのはまだしも、やらないで後悔する方がつらい。",
+        "romanization": "Shippai suru no wa mada shimo, yaranai de koukai suru hou ga tsurai.",
+        "translation": "Failing is one thing, but regretting not even trying is worse."
+      },
+      {
+        "sentence": "このピザは野菜が少ないのはまだしも、味も悪い。",
+        "romanization": "Kono piza wa yasai ga sukunai no wa mada shimo, aji mo warui.",
+        "translation": "It’s not just that this pizza has few vegetables, it also tastes bad."
+      },
+      {
+        "sentence": "たまに遅刻するのはまだしも、連絡もせずに遅刻するのは許せない。",
+        "romanization": "Tama ni chikoku suru no wa mada shimo, renraku mo sezu ni chikoku suru no wa yurusenai.",
+        "translation": "Being late occasionally might be forgivable, but being late without any contact is unacceptable."
+      },
+      {
+        "sentence": "難しい質問に答えられないのはまだしも、簡単な質問にも答えられないのは問題だ。",
+        "romanization": "Muzukashii shitsumon ni kotaerarenai no wa mada shimo, kantan na shitsumon ni mo kotaerarenai no wa mondai da.",
+        "translation": "It’s one thing not to be able to answer difficult questions, but it’s a real problem if you can’t even answer simple ones."
+      }
+    ]
+  },
+  {
+    "id": "ja_はもとより_142",
+    "language": "ja",
+    "pattern": "～はもとより",
+    "title": "～はもとより (〜wa moto yori)",
+    "shortExplanation": "Expressing that something is obvious, and there is also something else.",
+    "longExplanation": "The ～はもとより grammar point is used to emphasize that something is obvious or a given, and on top of that, there’s another aspect to consider. It translates to 'not only…but also…' or 'of course…and also…'.",
+    "formation": "Noun1 + はもとより, Noun2 + も",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "英語はもとより、スペイン語も勉強しています。",
+        "romanization": "Eigo wa moto yori, supeingo mo benkyou shite imasu.",
+        "translation": "I'm studying not only English, but also Spanish."
+      },
+      {
+        "sentence": "彼女は料理はもとより、お菓子作りも得意です。",
+        "romanization": "Kanojo wa ryouri wa moto yori, okashi tsukuri mo tokui desu.",
+        "translation": "She’s not only good at cooking, but also at making sweets."
+      },
+      {
+        "sentence": "このホテルは部屋の清潔さはもとより、サービスも素晴らしいです。",
+        "romanization": "Kono hoteru wa heya no seiketsusa wa moto yori, saabisu mo subarashii desu.",
+        "translation": "This hotel not only has clean rooms but also great service."
+      },
+      {
+        "sentence": "彼は音楽はもとより、絵も上手です。",
+        "romanization": "Kare wa ongaku wa moto yori, e mo jouzu desu.",
+        "translation": "He’s not only good at music, but also skilled at drawing."
+      }
+    ]
+  },
+  {
+    "id": "ja_は抜きにして_143",
+    "language": "ja",
+    "pattern": "～は抜きにして",
+    "title": "～は抜きにして (〜wa nuki ni shite)",
+    "shortExplanation": "Leaving aside, excluding.",
+    "longExplanation": "The ～は抜きにして grammar point is used to express the idea of 'leaving aside' or 'excluding' a certain aspect. It is often used to focus the discussion or judgment on something else by disregarding the omitted point.",
+    "formation": "Noun + は抜きにして",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "値段は抜きにして、味は美味しい。",
+        "romanization": "Nedan wa nuki ni shite, aji wa oishii.",
+        "translation": "Leaving aside the price, the taste is delicious."
+      },
+      {
+        "sentence": "彼の性格は抜きにして、彼の実力は認めざるを得ない。",
+        "romanization": "Kare no seikaku wa nuki ni shite, kare no jitsuryoku wa mitomezaru o enai.",
+        "translation": "Putting aside his personality, I have to acknowledge his ability."
+      },
+      {
+        "sentence": "デザインは抜きにして、この携帯電話の機能は優れています。",
+        "romanization": "Dezain wa nuki ni shite, kono keitai denwa no kinou wa sugurete imasu.",
+        "translation": "Leaving aside the design, this phone’s features are excellent."
+      },
+      {
+        "sentence": "運転の速さは抜きにして、彼女は親切で信頼できる運転手だ。",
+        "romanization": "Unten no hayasa wa nuki ni shite, kanojo wa shinsetsu de shinrai dekiru untenshu da.",
+        "translation": "Leaving aside her driving speed, she's a kind and trustworthy driver."
+      }
+    ]
+  },
+  {
+    "id": "ja_べきではない_144",
+    "language": "ja",
+    "pattern": "～べきではない",
+    "title": "～べきではない (〜beki dewa nai)",
+    "shortExplanation": "Express that an action should not be done; 'should not', 'ought not to'.",
+    "longExplanation": "The ～べきではない grammar point is used to indicate that an action is not recommended or should not be done. It can be translated as 'should not' or 'ought not to' in English. The typical formation is “Verb-dictionary form + べきではない.”",
+    "formation": "Verb-dictionary form + べき + ではない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "遅れる理由がないなら、遅れるべきではありません。",
+        "romanization": "Okureru riyuu ga nai nara, okureru beki dewa arimasen.",
+        "translation": "If there's no reason to be late, you shouldn’t be late."
+      },
+      {
+        "sentence": "子供に悪口を言うべきではありません。",
+        "romanization": "Kodomo ni waruguchi o iu beki dewa arimasen.",
+        "translation": "You shouldn’t say hurtful things to children."
+      },
+      {
+        "sentence": "この薬は一度に飲みすぎるべきではない。",
+        "romanization": "Kono kusuri wa ichido ni nomisugiru beki dewa nai.",
+        "translation": "You should not take too much of this medicine at once."
+      },
+      {
+        "sentence": "知らない人と個人情報を共有するべきではない。",
+        "romanization": "Shiranai hito to kojin jouhou o kyouyuu suru beki dewa nai.",
+        "translation": "You shouldn't share personal information with strangers."
+      }
+    ]
+  },
+  {
+    "id": "ja_まい_145",
+    "language": "ja",
+    "pattern": "～まい",
+    "title": "～まい (〜mai)",
+    "shortExplanation": "Express a negative conjecture or determination; 'probably not' or 'I will not'.",
+    "longExplanation": "The ～まい grammar point is used to express a negative conjecture or a strong determination not to do something. In modern usage, it is generally used with the dictionary form of verbs (来る→来るまい, する→するまい, etc.). It can be translated as 'probably not' or 'I will not' in English.",
+    "formation": "Verb-dictionary form + まい",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は今晩来るまい。",
+        "romanization": "Kare wa konban kuru mai.",
+        "translation": "He probably won't come tonight."
+      },
+      {
+        "sentence": "こんなに遅れては、電車に間に合うまい。",
+        "romanization": "Konnani okurete wa, densha ni maniau mai.",
+        "translation": "Being this late, I probably won't make it for the train."
+      },
+      {
+        "sentence": "あの人は絶対に忘れるまい。",
+        "romanization": "Ano hito wa zettai ni wasureru mai.",
+        "translation": "That person will definitely not forget."
+      },
+      {
+        "sentence": "私は二度とその失敗を繰り返すまい。",
+        "romanization": "Watashi wa nidoto sono shippai o kurikaesu mai.",
+        "translation": "I will not repeat that mistake again."
+      }
+    ]
+  },
+  {
+    "id": "ja_までて_146",
+    "language": "ja",
+    "pattern": "～まで～て",
+    "title": "～まで～て (〜made 〜te)",
+    "shortExplanation": "Express doing something until a certain time or condition; 'until', 'to'.",
+    "longExplanation": "The ～まで～て grammar point is used to show that an action continues until a certain time or condition. In your examples, a time expression (such as 9時) is followed by まで, then the action in the て-form. It can be translated as 'until' or 'up to the point when/where'.",
+    "formation": "Time/Noun + まで + Verb(て-form)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "9時まで働いて、その後休憩しました。",
+        "romanization": "Ku-ji made hataraite, sono ato kyuukei shimashita.",
+        "translation": "I worked until 9 o'clock, and then took a break."
+      },
+      {
+        "sentence": "夜まで勉強して、試験に合格しました。",
+        "romanization": "Yoru made benkyou shite, shiken ni goukaku shimashita.",
+        "translation": "I studied until night, and passed the exam."
+      },
+      {
+        "sentence": "最後のページまで読んで、本を閉じました。",
+        "romanization": "Saigo no peeji made yonde, hon o tojimashita.",
+        "translation": "I read until the last page, then closed the book."
+      },
+      {
+        "sentence": "電車が着くまで待って、友達と会いました。",
+        "romanization": "Densha ga tsuku made matte, tomodachi to aimashita.",
+        "translation": "I waited until the train arrived, and then met my friend."
+      }
+    ]
+  },
+  {
+    "id": "ja_ままに_147",
+    "language": "ja",
+    "pattern": "～ままに",
+    "title": "～ままに (〜mama ni)",
+    "shortExplanation": "Act according to; leave as is; unchanged.",
+    "longExplanation": "The ～ままに grammar point is used to express leaving something in its current state or doing something exactly as is. It can also imply doing something naturally or without altering the circumstances. Depending on the part of speech, different particles are used: Verb-て + まま, い-Adjective + のまま, な-Adjective + なまま, Noun + のまま.",
+    "formation": "Verb-て + まま, い-Adjective + のまま, な-Adjective + なまま, Noun + のまま",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "子供が寝ているままに、静かに部屋を出ました。",
+        "romanization": "Kodomo ga nete iru mama ni, shizuka ni heya o demashita.",
+        "translation": "I quietly left the room while the child was still sleeping."
+      },
+      {
+        "sentence": "窓が開いたままで、寒くなりました。",
+        "romanization": "Mado ga aita mama de, samuku narimashita.",
+        "translation": "It got cold with the window left open."
+      },
+      {
+        "sentence": "彼は元気なままで老人ホームに入りました。",
+        "romanization": "Kare wa genki na mama de roujin hoomu ni hairimashita.",
+        "translation": "He entered the nursing home while still in good health."
+      },
+      {
+        "sentence": "昔の思い出のままに、この町に戻りました。",
+        "romanization": "Mukashi no omoide no mama ni, kono machi ni modorimashita.",
+        "translation": "I returned to this town with my old memories intact."
+      }
+    ]
+  }
+]

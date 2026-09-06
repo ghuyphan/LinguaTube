@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Verb_137",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ないではおかない (~ nai de wa okanai)",
+    "shortExplanation": "Means 'cannot help but do', 'will definitely do', or 'is bound to happen'.",
+    "longExplanation": "The pattern Verb ないではおかない indicates that something definitely occurs as a logical or emotional consequence. It can be translated as 'cannot not do', 'can’t help but do', or 'will inevitably do'. The verb is put in the negative form followed by ないではおかない.",
+    "formation": "Verb-ない form + ではおかない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女は毎回遅刻をしては、先生に怒られないではおかない。",
+        "romanization": "Kanojo wa maikai chikoku o shite wa, sensei ni okorarenaide wa okanai.",
+        "translation": "Every time she's late, she inevitably gets scolded by the teacher."
+      },
+      {
+        "sentence": "美味しいものがあれば、彼は食べないではおかない。",
+        "romanization": "Oishii mono ga areba, kare wa tabenai de wa okanai.",
+        "translation": "If there's delicious food, he can't help but eat it."
+      },
+      {
+        "sentence": "この小説は感動的で、読めば涙を流さないではおかない。",
+        "romanization": "Kono shōsetsu wa kandōteki de, yomeba namida o nagasanai de wa okanai.",
+        "translation": "This novel is so moving that you can't help but shed tears when you read it."
+      },
+      {
+        "sentence": "毎日練習しているから、試合では勝たないではおかないだろう。",
+        "romanization": "Mainichi renshū shite iru kara, shiai de wa katanai de wa okanai darō.",
+        "translation": "He practices every day, so he's bound to win the match."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_138",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ないではすまない (Verb nai dewa sumanai)",
+    "shortExplanation": "'Cannot end without doing', 'must do'—an unavoidable moral or social necessity.",
+    "longExplanation": "The grammar Verb ないではすまない expresses that something must be done (often for moral, social, or personal reasons) and cannot be left undone. It implies an obligation or inevitability, akin to 'I can't get away without doing it.'",
+    "formation": "Verb-ない form + ではすまない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "失敗をしたら、謝らないではすまない。",
+        "romanization": "Shippai o shitara, ayamaranai de wa sumanai.",
+        "translation": "If you make a mistake, you have to apologize—there’s no way around it."
+      },
+      {
+        "sentence": "この問題は重大なので、報告しないではすまない。",
+        "romanization": "Kono mondai wa jūdai na node, hōkoku shinai de wa sumanai.",
+        "translation": "This issue is so serious that I must report it."
+      },
+      {
+        "sentence": "この映画はとても感動的で、泣かないではすまない。",
+        "romanization": "Kono eiga wa totemo kandōteki de, nakanai de wa sumanai.",
+        "translation": "This movie is so moving that you can’t help but cry."
+      },
+      {
+        "sentence": "子供が間違えたら、教えないではすまない。",
+        "romanization": "Kodomo ga machigaetara, oshienai de wa sumanai.",
+        "translation": "If a child makes a mistake, you must correct them—there’s no avoiding it."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_139",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ないまでも (Verb nai made mo)",
+    "shortExplanation": "'Even if not to the extent of...', 'although not completely...'.",
+    "longExplanation": "The pattern ないまでも is used when acknowledging that something doesn’t reach a certain extreme, but at least some part or degree of it applies. Often translated as 'even if not entirely...' or 'though not as far as...'.",
+    "formation": "Verb-ない form + までも",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "全てを理解しないまでも、基本的なことは分かってほしい。",
+        "romanization": "Subete o rikai shinai made mo, kihonteki na koto wa wakatte hoshii.",
+        "translation": "Even if you don't understand everything, I'd like you at least to grasp the basics."
+      },
+      {
+        "sentence": "会えないまでも、電話で声を聞きたい。",
+        "romanization": "Aenai made mo, denwa de koe o kikitai.",
+        "translation": "Even if we can’t meet, I still want to hear your voice over the phone."
+      },
+      {
+        "sentence": "毎日は無理にしても、週に一度くらいはジョギングを続けたい。",
+        "romanization": "Mainichi wa muri ni shite mo, shū ni ichido kurai wa jogingu o tsuzuketai.",
+        "translation": "Even if I can't do it every day, I want to at least keep jogging once a week."
+      },
+      {
+        "sentence": "全員に気に入られないまでも、誠実に向き合いたい。",
+        "romanization": "Zen'in ni ki ni irarenai made mo, seijitsu ni mukiai tai.",
+        "translation": "Even if not everyone will like me, I still want to face them sincerely."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_140",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ないものだろうか (Verb nai mono darou ka)",
+    "shortExplanation": "Expressing hope or wonder if something can be done: 'Isn't there a way...?', 'Can't we...?'",
+    "longExplanation": "This grammar point is used when the speaker expresses the hope, wish, or wonder if an action could be possible. It creates the nuance of 'Isn't there some way...?' or 'Can't I/you/we...?' in English, often with the negative potential form.",
+    "formation": "Verb-negative (often negative potential) + ものだろうか",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "もっと時間があれば、ここに来られないものだろうか。",
+        "romanization": "Motto jikan ga areba, koko ni korarenai mono darou ka.",
+        "translation": "If I had more time, wouldn't it be possible to come here?"
+      },
+      {
+        "sentence": "彼女にもっとよく説明すれば、理解できないものだろうか。",
+        "romanization": "Kanojo ni motto yoku setsumei sureba, rikai dekinai mono darou ka.",
+        "translation": "If I explain it better to her, wouldn't she understand?"
+      },
+      {
+        "sentence": "この問題を解決する方法はないものだろうか。",
+        "romanization": "Kono mondai o kaiketsu suru houhou wa nai mono darou ka.",
+        "translation": "Isn't there a way to solve this problem?"
+      },
+      {
+        "sentence": "自分の間違いを認められないものだろうか。",
+        "romanization": "Jibun no machigai o mitomerarenai mono darou ka.",
+        "translation": "Can't I admit my own mistakes?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_141",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ないものでもない (Verb nai mono demo nai)",
+    "shortExplanation": "Expresses the idea that it's not entirely impossible or non-existent: 'It's not that I don't...', 'It's not that there aren't...'",
+    "longExplanation": "The grammar point Verbないものでもない is used to express that a situation is not completely impossible or nonexistent. Literally, it can be translated as 'it's not that there aren't...' or 'it's not that I never...'. It implies that some possibility or partial truth exists.",
+    "formation": "Verb-negative form (ない form) + ものでもない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "旅行に行きたいと思わないものでもない。",
+        "romanization": "Ryokou ni ikitai to omowanai mono demo nai.",
+        "translation": "It's not that I never want to travel."
+      },
+      {
+        "sentence": "彼の言ったこと全部が間違いないものでもない。",
+        "romanization": "Kare no itta koto zenbu ga machigai nai mono demo nai.",
+        "translation": "It's not that everything he said is completely free from mistakes."
+      },
+      {
+        "sentence": "その問題が解けないものでもない。",
+        "romanization": "Sono mondai ga tokenai mono demo nai.",
+        "translation": "It's not that the problem can't be solved."
+      },
+      {
+        "sentence": "彼に会いたくないものでもない。",
+        "romanization": "Kare ni aitakunai mono demo nai.",
+        "translation": "It's not that I don't want to see him."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_142",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb の ない Noun (~ no nai ~)",
+    "shortExplanation": "Used to modify a noun with a negative verb form; 'a Noun without (Verb)'.",
+    "longExplanation": "VerbのないNoun modifies a noun by describing the absence of the verb's action. It indicates 'a Noun where the action does not happen' or 'a Noun without that action.'",
+    "formation": "Verb in negative form + の + Noun",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "笑いのない人生は、つまらない。",
+        "romanization": "Warai no nai jinsei wa, tsumaranai.",
+        "translation": "A life without laughter is boring."
+      },
+      {
+        "sentence": "水のない場所には、人は住めない。",
+        "romanization": "Mizu no nai basho ni wa, hito wa sumenai.",
+        "translation": "People cannot live in a place without water."
+      },
+      {
+        "sentence": "言葉のない世界は、想像するのが難しい。",
+        "romanization": "Kotoba no nai sekai wa, souzou suru no ga muzukashii.",
+        "translation": "It's hard to imagine a world without words."
+      },
+      {
+        "sentence": "愛のない結婚は、長続きしない。",
+        "romanization": "Ai no nai kekkon wa, nagatsudzuki shinai.",
+        "translation": "A marriage without love will not last."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_143",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ば きりがない (〜ba kiri ga nai)",
+    "shortExplanation": "Indicates there's no end once you start listing, doing, or saying something: 'If one starts to..., there will be no end.'",
+    "longExplanation": "The pattern ～ばきりがない is used when expressing that if you start an action—like listing examples or complaining—there is no end. It literally means 'if (you) do X, there's no limit/end.'",
+    "formation": "Verb-conditional form (ば) + きりがない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "悪口を言い始めればきりがない。",
+        "romanization": "Waruguchi o iihajimereba kiri ga nai.",
+        "translation": "Once I start speaking ill of someone, there's no end."
+      },
+      {
+        "sentence": "彼の欠点を数えればきりがない。",
+        "romanization": "Kare no ketten o kazoereba kiri ga nai.",
+        "translation": "If I start counting his flaws, there will be no end."
+      },
+      {
+        "sentence": "この国の美しい場所は、挙げればきりがない。",
+        "romanization": "Kono kuni no utsukushii basho wa, agereba kiri ga nai.",
+        "translation": "If I start listing this country's beautiful places, there's no end."
+      },
+      {
+        "sentence": "ほかにも例を挙げればきりがない。",
+        "romanization": "Hoka ni mo rei o agereba kiri ga nai.",
+        "translation": "If I start giving more examples, there will be no end."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_144",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb もしないで (~ mo shinai de)",
+    "shortExplanation": "Means 'without even doing'.",
+    "longExplanation": "This pattern is used to express that one has not done (or not even tried to do) some action before proceeding to do something else. It emphasizes doing something 'without even' doing the prior action.",
+    "formation": "Verb (masu stem) + もしないで",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "調べもしないで、答えを書きました。",
+        "romanization": "Shirabe mo shinai de, kotae o kakimashita.",
+        "translation": "I wrote the answer without even investigating."
+      },
+      {
+        "sentence": "彼は試験を勉強もしないで、テストに合格した。",
+        "romanization": "Kare wa shiken o benkyou mo shinai de, tesuto ni goukaku shita.",
+        "translation": "He passed the test without even studying."
+      },
+      {
+        "sentence": "彼女はその本を読みもしないで、レポートを書いた。",
+        "romanization": "Kanojo wa sono hon o yomi mo shinai de, repooto o kaita.",
+        "translation": "She wrote her report without even reading the book."
+      },
+      {
+        "sentence": "準備もしないで、プレゼンテーションを始めました。",
+        "romanization": "Junbi mo shinai de, purezenteeshon o hajimemashita.",
+        "translation": "He started the presentation without even preparing."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_145",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb やしない (~ yashinai)",
+    "shortExplanation": "Expresses a strong denial or refusal: 'I would never...', 'No way I would...'.",
+    "longExplanation": "This grammar adds a nuance of strong denial or dismissal of the idea that the speaker (or someone) would do the action. Formed by adding やしない to the verb's stem, it often appears in casual or spoken language.",
+    "formation": "Verb (masu stem) + やしない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "こんな時に泣きやしない。",
+        "romanization": "Konna toki ni naki-yashinai.",
+        "translation": "I would never cry at a time like this."
+      },
+      {
+        "sentence": "私が彼を助けやしない。",
+        "romanization": "Watashi ga kare o tasuke-yashinai.",
+        "translation": "There's no way I'd help him."
+      },
+      {
+        "sentence": "彼がそんなことを言いやしない。",
+        "romanization": "Kare ga sonna koto o ii-yashinai.",
+        "translation": "He would never say such a thing."
+      },
+      {
+        "sentence": "私がそんな高価なものを買いやしない。",
+        "romanization": "Watashi ga sonna kouka na mono o kai-yashinai.",
+        "translation": "There's no way I'd buy something so expensive."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_146",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb よう (~ you / ~ you ni)",
+    "shortExplanation": "Expresses 'the way/manner of doing something' or 'in order to / so that / try to'.",
+    "longExplanation": "This usage of よう most commonly appears as 「Verb辞書形 + ように」. It can mean 'in order to do something', 'so that something happens', or 'in the way someone does something'. It is also used in expressions like ～ようにする (to make an effort to) or ～ように言う (to tell someone to do something).",
+    "formation": "Verb (dictionary or negative form) + ように (する / etc.)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この問題を解くように努力します。",
+        "romanization": "Kono mondai o toku you ni doryoku shimasu.",
+        "translation": "I will try to solve this problem."
+      },
+      {
+        "sentence": "彼が言ったようにやりましょう。",
+        "romanization": "Kare ga itta you ni yarimashou.",
+        "translation": "Let's do it the way he said."
+      },
+      {
+        "sentence": "毎日走るようにしています。",
+        "romanization": "Mainichi hashiru you ni shiteimasu.",
+        "translation": "I make it a point to run every day."
+      },
+      {
+        "sentence": "自分の心を大切にするように。",
+        "romanization": "Jibun no kokoro o taisetsu ni suru you ni.",
+        "translation": "Try to take care of your own heart."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_147",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようか Verbるまいか (Verb you ka Verb ru mai ka)",
+    "shortExplanation": "Expresses indecision: 'Should I do it or not?'.",
+    "longExplanation": "This grammar shows hesitation about whether to do something or not. The volitional form plus まい (negative volitional) suggests an internal debate about two opposite choices of the *same* verb.",
+    "formation": "Verb-volitional form + か + Verb-volitional negative form (まい) + か",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼に話そうか話すまいか、本当に迷っている。",
+        "romanization": "Kare ni hanasou ka hanasu mai ka, hontou ni mayotte iru.",
+        "translation": "I'm really unsure whether to talk to him or not."
+      },
+      {
+        "sentence": "試験を受けようか受けまいか迷っています。",
+        "romanization": "Shiken o ukeyou ka ukemai ka mayotte imasu.",
+        "translation": "I'm wondering whether to take the exam or not."
+      },
+      {
+        "sentence": "あの人に謝ろうか謝るまいか考えています。",
+        "romanization": "Ano hito ni ayamarou ka ayamaru mai ka kangaete imasu.",
+        "translation": "I'm considering whether to apologize to that person or not."
+      },
+      {
+        "sentence": "進学しようかしまいか悩んでいる。",
+        "romanization": "Shingaku shiyou ka shimai ka nayande iru.",
+        "translation": "I'm worried about whether to continue my studies or not."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_148",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようが Verb るまいが (Verb you ga Verb ru mai ga)",
+    "shortExplanation": "Expresses 'whether or not', 'no matter if something happens or not'.",
+    "longExplanation": "Verbようが Verbるまいが indicates that whatever happens—whether the action is done or not—the outcome remains unchanged or the speaker's stance remains the same.",
+    "formation": "Verb-volitional form + が + Verb-negative volitional form + が",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼が来ようが来るまいが、パーティーは始まります。",
+        "romanization": "Kare ga koyou ga kurumai ga, paatii wa hajimarimasu.",
+        "translation": "Whether he comes or not, the party will start."
+      },
+      {
+        "sentence": "勉強しようがしまいが、テストの結果は変わらない。",
+        "romanization": "Benkyou shiyou ga shimai ga, tesuto no kekka wa kawaranai.",
+        "translation": "Whether you study or not, the test results won't change."
+      },
+      {
+        "sentence": "雨が降ろうが降るまいが、ピクニックに行きます。",
+        "romanization": "Ame ga furou ga furumai ga, pikunikku ni ikimasu.",
+        "translation": "Whether it rains or not, we're going on a picnic."
+      },
+      {
+        "sentence": "暑かろうが寒かろうが、毎日ジョギングします。",
+        "romanization": "Atsukarou ga samukarou ga, mainichi jogingu shimasu.",
+        "translation": "Whether it's hot or cold, I jog every day."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_149",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようがない (〜you ga nai)",
+    "shortExplanation": "Expresses 'no way to do something,' 'impossible to do'.",
+    "longExplanation": "〜ようがない is used to say that there's no way or method to do something, even if you wanted to.",
+    "formation": "Verb (masu stem) + ようがない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "電車が混んでいて、動きようがない。",
+        "romanization": "Densha ga konde ite, ugoki you ga nai.",
+        "translation": "The train is so crowded that I can't move."
+      },
+      {
+        "sentence": "彼はとても早く走るので、追いつきようがない。",
+        "romanization": "Kare wa totemo hayaku hashiru no de, oitsuki you ga nai.",
+        "translation": "He runs so fast, there's no way I can catch up."
+      },
+      {
+        "sentence": "私には理解しようがない。",
+        "romanization": "Watashi ni wa rikai shiyou ga nai.",
+        "translation": "There's no way for me to understand it."
+      },
+      {
+        "sentence": "どうやっても、これを直しようがない。",
+        "romanization": "Dou yatte mo, kore o naoshi you ga nai.",
+        "translation": "No matter what I try, there's no way to fix this."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_150",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようと Verbる まいと (Verb you to Verb ru mai to)",
+    "shortExplanation": "This structure indicates that regardless of whether one does (verb) or not, the outcome/attitude remains unchanged.",
+    "longExplanation": "The expression 'Verb-volitional form + と + Verb-negative volitional (～まい) + と' means 'regardless of whether one does X or not, it doesn't change the situation'. It shows the speaker's firm stance or the unchanging nature of some outcome.",
+    "formation": "Verb-volitional + と + Verb-negative volitional (～まい) + と",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "あなたが来ようと来るまいと、パーティーは予定通りに始まります。",
+        "romanization": "Anata ga koyou to kuru mai to, paatii wa yotei doori ni hajimarimasu.",
+        "translation": "Whether you come or not, the party will start as scheduled."
+      },
+      {
+        "sentence": "彼があそこに行こうと行くまいと、私たちは止めることができません。",
+        "romanization": "Kare ga asoko ni ikou to iku mai to, watashitachi wa tomeru koto ga dekimasen.",
+        "translation": "Whether he tries to go there or not, we can't stop him."
+      },
+      {
+        "sentence": "彼女が謝ろうと謝るまいと、事実は変わらない。",
+        "romanization": "Kanojo ga ayamarou to ayamaru mai to, jijitsu wa kawaranai.",
+        "translation": "Whether she apologizes or not, the fact won't change."
+      },
+      {
+        "sentence": "試験を受けようと受けるまいと、親として私はあなたを支えます。",
+        "romanization": "Shiken o ukeyou to ukeru mai to, oya to shite watashi wa anata o sasaemasu.",
+        "translation": "Whether you take the exam or not, I will support you as your parent."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_151",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようにも (〜you ni mo)",
+    "shortExplanation": "Used to express 'even though one wants to do something, one can't for some reason'.",
+    "longExplanation": "The ～ようにも grammar point indicates that a person wants or tries to do something (volitional form), but for some reason cannot. Often, there's a second clause explaining what prevents the action.",
+    "formation": "Verb-volitional form + にも + (reason/potential negative, etc.)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "もう少し速く走ろうにも、足が痛くて無理だ。",
+        "romanization": "Mou sukoshi hayaku hashirou ni mo, ashi ga itakute muri da.",
+        "translation": "I'd like to run a bit faster, but I can’t because my leg hurts."
+      },
+      {
+        "sentence": "彼に話そうにも、彼は私を無視している。",
+        "romanization": "Kare ni hanasou ni mo, kare wa watashi o mushi shite iru.",
+        "translation": "I want to talk to him, but he's ignoring me."
+      },
+      {
+        "sentence": "もっと勉強しようにも、時間がない。",
+        "romanization": "Motto benkyou shiyou ni mo, jikan ga nai.",
+        "translation": "I want to study more, but I have no time."
+      },
+      {
+        "sentence": "彼女に謝ろうにも、彼女はもう怒っている。",
+        "romanization": "Kanojo ni ayamarou ni mo, kanojo wa mou okotte iru.",
+        "translation": "I would like to apologize to her, but she's already angry."
+      }
+    ]
+  }
+]

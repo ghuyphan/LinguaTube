@@ -1,0 +1,251 @@
+[
+  {
+    "id": "zh_支_519",
+    "language": "zh",
+    "pattern": "支",
+    "title": "支 (to prop up, to support)",
+    "shortExplanation": "to prop up, to support",
+    "longExplanation": "to prop up, to support. Pinyin: zhī",
+    "formation": "zhī",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他的两只手放在桌上，支着脑袋，想着事情。",
+        "romanization": "tā de liǎng zhǐ shǒu fàng zài zhuō shàng， zhī zhe nǎodài， xiǎng zhe shìqing。",
+        "translation": "His two hands were on the table, propping up his head, and he thought about things."
+      }
+    ]
+  },
+  {
+    "id": "zh_支_520",
+    "language": "zh",
+    "pattern": "支",
+    "title": "支 ((measure word for guns, songs, or armies))",
+    "shortExplanation": "(measure word for guns, songs, or armies)",
+    "longExplanation": "(measure word for guns, songs, or armies). Pinyin: zhī",
+    "formation": "zhī",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "给他十支枪，他就能拉起一支军队来。",
+        "romanization": "gěi tā shí zhī qiāng， tā jiù néng lā qǐ yī zhī jūnduì lái。",
+        "translation": "Give him ten guns and he can raise an army."
+      }
+    ]
+  },
+  {
+    "id": "zh_凭_521",
+    "language": "zh",
+    "pattern": "凭",
+    "title": "凭 (to reply on)",
+    "shortExplanation": "to reply on",
+    "longExplanation": "to reply on. Pinyin: píng",
+    "formation": "píng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "干工作不能光凭经验，还要有创新。",
+        "romanization": "gàn gōngzuò bùnéng guāng píng jīngyàn， hái yàoyǒu chuàngxīn。",
+        "translation": "When we work, we can’t just rely on experience, we also need to innovate."
+      }
+    ]
+  },
+  {
+    "id": "zh_硬V_522",
+    "language": "zh",
+    "pattern": "硬 V",
+    "title": "硬 V (by brute force)",
+    "shortExplanation": "by brute force",
+    "longExplanation": "by brute force. Pinyin: yìng V",
+    "formation": "yìng V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "虽然中药有点儿苦，但他还是硬喝下去了。",
+        "romanization": "suīrán Zhōngyào yǒudiǎnr kǔ， dàn tā háishi yìng hē xiàqù le。",
+        "translation": "Although the Chinese medicine is a bit bitter, he still bit the bullet and drank it."
+      }
+    ]
+  },
+  {
+    "id": "zh_硬V_523",
+    "language": "zh",
+    "pattern": "硬 V",
+    "title": "硬 V (to insist on V-ing)",
+    "shortExplanation": "to insist on V-ing",
+    "longExplanation": "to insist on V-ing. Pinyin: yìng V",
+    "formation": "yìng V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我不让他去，他硬要去。",
+        "romanization": "wǒ bù ràng tā qù， tā yìngyào qù。",
+        "translation": "I won’t let him go, he just insists on going."
+      }
+    ]
+  },
+  {
+    "id": "zh_偶然的_524",
+    "language": "zh",
+    "pattern": "偶然的",
+    "title": "偶然的 (accidental (opportunity))",
+    "shortExplanation": "accidental (opportunity)",
+    "longExplanation": "accidental (opportunity). Pinyin: ǒurán de",
+    "formation": "ǒurán de",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "那是一次偶然的相遇。",
+        "romanization": "nàshi yīcì ǒurán de xiāngyù。",
+        "translation": "It was an accidental encounter."
+      }
+    ]
+  },
+  {
+    "id": "zh_偶然V_525",
+    "language": "zh",
+    "pattern": "偶然 V",
+    "title": "偶然 V (occasionally)",
+    "shortExplanation": "occasionally",
+    "longExplanation": "occasionally. Pinyin: ǒurán V",
+    "formation": "ǒurán V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "她专心地织着毛衣，偶然也会抬眼看一下墙上的挂钟。",
+        "romanization": "tā zhuānxīn dì zhī zhe máoyī， ǒurán yě huì tái yǎnkàn yīxià qiáng shàng de guàzhōng。",
+        "translation": "She focused on knitting a sweater, and occasionally glances at the clock on the wall."
+      }
+    ]
+  },
+  {
+    "id": "zh_尽快V_526",
+    "language": "zh",
+    "pattern": "尽快 V",
+    "title": "尽快 V (as soon as possible)",
+    "shortExplanation": "as soon as possible",
+    "longExplanation": "as soon as possible. Pinyin: jǐnkuài V",
+    "formation": "jǐnkuài V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "新产品出了点儿问题，你和严经理尽快商量一下这事。",
+        "romanization": "xīnchǎnpǐn chū le diǎnr wèntí， nǐ hé yán jīnglǐ jǐnkuài shāngliang yīxià zhè shì。",
+        "translation": "The new product has some problems. You should discuss with Manager Yan as soon as you can."
+      }
+    ]
+  },
+  {
+    "id": "zh_一旦V_527",
+    "language": "zh",
+    "pattern": "一旦 V",
+    "title": "一旦 V (once (something happens))",
+    "shortExplanation": "once (something happens)",
+    "longExplanation": "once (something happens). Pinyin: yīdàn V",
+    "formation": "yīdàn V",
+    "level": "HSK 5",
+    "examples": []
+  },
+  {
+    "id": "zh_难免_529",
+    "language": "zh",
+    "pattern": "难免",
+    "title": "难免 (inevitable)",
+    "shortExplanation": "inevitable",
+    "longExplanation": "inevitable. Pinyin: nánmiǎn",
+    "formation": "nánmiǎn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "刚开始工作，这样的错误是难免的。",
+        "romanization": "gāng kāishǐ gōngzuò， zhèyàng de cuòwù shì nánmiǎn de。",
+        "translation": "At the beginning of work, such mistakes are inevitable."
+      }
+    ]
+  },
+  {
+    "id": "zh_自从TIME_530",
+    "language": "zh",
+    "pattern": "自从 TIME",
+    "title": "自从 TIME (since TIME)",
+    "shortExplanation": "since TIME",
+    "longExplanation": "since TIME. Pinyin: zìcóng TIME",
+    "formation": "zìcóng TIME",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "自从我到北京以后，身体越来越好了。",
+        "romanization": "zìcóng wǒ dào Běijīng yǐhòu， shēntǐ yuèláiyuè hǎole。",
+        "translation": "Since I arrived in Beijing, my body has gotten better and better."
+      }
+    ]
+  },
+  {
+    "id": "zh_一致_531",
+    "language": "zh",
+    "pattern": "一致",
+    "title": "一致 (in agreement)",
+    "shortExplanation": "in agreement",
+    "longExplanation": "in agreement. Pinyin: yīzhì",
+    "formation": "yīzhì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他们的意见不一致。",
+        "romanization": "tāmen de yìjiàn bù yīzhì。",
+        "translation": "Their opinions do not agree."
+      }
+    ]
+  },
+  {
+    "id": "zh_一致V_532",
+    "language": "zh",
+    "pattern": "一致 V",
+    "title": "一致 V (unanimously)",
+    "shortExplanation": "unanimously",
+    "longExplanation": "unanimously. Pinyin: yīzhì V",
+    "formation": "yīzhì V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "专家们一致认为这是一种成功的产品。",
+        "romanization": "zhuānjiā men yīzhì rènwéi zhè shì yīzhǒng chénggōng de chǎnpǐn。",
+        "translation": "Experts agree (lit. unanimously think) that this is a successful product."
+      }
+    ]
+  },
+  {
+    "id": "zh_某MN_533",
+    "language": "zh",
+    "pattern": "某 (M) N",
+    "title": "某 (M) N (certain)",
+    "shortExplanation": "certain",
+    "longExplanation": "certain. Pinyin: mǒu (M) N",
+    "formation": "mǒu (M) N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "进行某(个)方面的训练，就可以在那方面的能力提高。",
+        "romanization": "jìnxíng mǒu( gè) fāngmiàn de xùnliàn， jiù kěyǐ zài nà fāngmiàn de nénglì tígāo。",
+        "translation": "If you receiving training in a certain discipline (lit. aspect), you will be able to improve your ability in that discipline."
+      }
+    ]
+  },
+  {
+    "id": "zh_某某_534",
+    "language": "zh",
+    "pattern": "某某",
+    "title": "某某 (so-and-so)",
+    "shortExplanation": "so-and-so",
+    "longExplanation": "so-and-so. Pinyin: mǒumǒu",
+    "formation": "mǒumǒu",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "在墙上写“某某到此一游”的行为是不文明的。",
+        "romanization": "zài qiáng shàng xiě“ mǒumǒu dàocǐyīyóu” de xíngwéi shì bù wénmíng de。",
+        "translation": "It is not civil to write “so-and-so visited here” on the wall."
+      }
+    ]
+  }
+]

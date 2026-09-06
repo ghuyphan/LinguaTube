@@ -3,21 +3,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 72px;
   width: 100%;
-  padding: var(--space-sm) var(--space-md);
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-lg);
   box-sizing: border-box;
 }
 
 .turnstile-placeholder {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-xs);
+  width: 300px;
+  max-width: 100%;
+  height: 65px;
+  background-color: var(--bg-card);
+  border: 1px dashed var(--border-color);
+  border-radius: 0;
   color: var(--text-muted);
-  font-size: var(--font-size-sm);
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 500;
 
   .shield-icon {
     color: var(--accent-primary);
@@ -28,8 +31,17 @@
 .turnstile-container {
   display: flex;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  width: 300px;
+  max-width: 100%;
   min-height: 65px;
+  border-radius: 0;
+  overflow: hidden;
+
+  :host ::ng-deep iframe,
+  iframe {
+    border-radius: 0 !important;
+  }
 
   &:not(.is-ready) {
     display: none;
@@ -40,8 +52,8 @@
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  color: var(--danger-color, #ef4444);
-  font-size: var(--font-size-xs);
+  color: var(--error, #ef4444);
+  font-size: var(--text-xs, 0.75rem);
   margin-top: var(--space-xs);
 
   .retry-btn {
@@ -51,6 +63,7 @@
     text-decoration: underline;
     cursor: pointer;
     font-size: inherit;
+    font-weight: 600;
     padding: 0;
     margin-left: var(--space-2xs);
 
@@ -70,3 +83,4 @@
     transform: scale(1.05);
   }
 }
+

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_하기는_133",
+    "language": "ko",
+    "pattern": "~하기는",
+    "title": "~하기는 [hakineun] (Though, although)",
+    "shortExplanation": "Used to express 'though' or 'although', showing contrast or contradiction.",
+    "longExplanation": "'~하기는 [hakineun]' is used to convey a sense of contrast or contradiction, similar to 'though' or 'although' in English. While the sentence may start with an assumption or statement, this grammar introduces a point that contradicts or partially goes against the expected outcome.",
+    "formation": "Verb stem + 기는 + (contradicting statement)",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 요리하기는 좋아하지만, 게으른 편이라서 자주 식당에서 먹어요.",
+        "romanization": "Jeoneun yori-hakineun joahajiman, ge-eu-reun pyeoniraseo jaju sikdang-eseo meogeoyo.",
+        "translation": "Although I like cooking, I often eat in restaurants because I'm lazy."
+      },
+      {
+        "sentence": "이 영화를 보러 가기는 하지만, 사실 기대하진 않아요.",
+        "romanization": "I yeonghwareul boreo ga-gineun hajiman, sasil gidaehajin anhayo.",
+        "translation": "Though I'm going to watch this movie, honestly, I don't have high expectations."
+      },
+      {
+        "sentence": "친구가 가게를 운영하기는 하지만, 자주 방문하지는 않아요.",
+        "romanization": "Chinguga gagereul unyeong-hakineun hajiman, jaju bangmunhajineun anhayo.",
+        "translation": "Though my friend runs a shop, I don't visit often."
+      },
+      {
+        "sentence": "제가 그 사람을 좋아하기는 하지만, 그 사람이 절 좋아하지는 않아요.",
+        "romanization": "Jega geu sarameul joahakineun hajiman, geu sarami jeol joahajineun anhayo.",
+        "translation": "Though I like that person, they don't like me."
+      }
+    ]
+  },
+  {
+    "id": "ko_하기로_134",
+    "language": "ko",
+    "pattern": "~하기로",
+    "title": "~하기로 하다 [hakiro hada] (Decide to)",
+    "shortExplanation": "Expresses a decision or agreement to do something.",
+    "longExplanation": "'~하기로 하다 [hakiro hada]' indicates that a decision or agreement has been made to perform an action. It often appears in contexts describing future plans or intentions. After a verb stem, it is followed by '기로 하다' which translates to 'decide to' in English.",
+    "formation": "Verb stem + 기로 하다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "내일 우리는 수영장에 가기로 했어요. 다 같이 수영할 거예요.",
+        "romanization": "Naeil urineun suyeongjange ga-giro haesseoyo. Da gachi suyeonghal geoyeyo.",
+        "translation": "We decided to go to the swimming pool tomorrow; we'll all swim together."
+      },
+      {
+        "sentence": "나는 다음 학기에 한국어 공부하기로 했습니다. 한국어 능력을 향상시키고 싶어요.",
+        "romanization": "Naneun daeum hakgye-e hangugeo gongbu-hakiro haetseumnida. Hangugeo neungnyeogeul hyangsangsikigo sip-eoyo.",
+        "translation": "I decided to study Korean next semester; I want to improve my Korean skills."
+      },
+      {
+        "sentence": "집에 오는 길에 장보기로 했어요. 식료품이 부족해서요.",
+        "romanization": "Jibe oneun gil-e jang-bokiro haesseoyo. Sikryopumi bujokhaeseoyo.",
+        "translation": "I decided to do some grocery shopping on my way home, because we're running low on food."
+      },
+      {
+        "sentence": "우리 팀은 이번 주에 프로젝트를 시작하기로 했어요. 일찍 끝내고 싶어서요.",
+        "romanization": "Uri timeun ibeon jue peurojekteureul sijak-hakiro haesseoyo. Iljjik kkeutnaego sipeoseoyo.",
+        "translation": "Our team decided to start the project this week, because we want to finish early."
+      }
+    ]
+  },
+  {
+    "id": "ko_하기보다_135",
+    "language": "ko",
+    "pattern": "~하기보다",
+    "title": "~하기보다 [hakiboda] (Rather than)",
+    "shortExplanation": "Compares two actions or things, indicating a preference for one over the other.",
+    "longExplanation": "'~하기보다 [hakiboda]' is used to express 'rather than' in Korean. It typically shows that the second action or choice is more desirable, suitable, or preferable than the first one.",
+    "formation": "Verb(기) + 보다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "살을 더 찌우기보다 건강하게 운동하는 것이 더 중요해요.",
+        "romanization": "Sareul deo jjiugiboda geonganghage undonghaneun geosi deo jungyohaeyo.",
+        "translation": "Rather than putting on more weight, it's more important to exercise in a healthy way."
+      },
+      {
+        "sentence": "집에 있기보다 친구들과 밖에서 놀고 싶어요.",
+        "romanization": "Jibe itgi-boda chingudeulgwa bakk-eseo nolgo sipeoyo.",
+        "translation": "Rather than staying at home, I'd like to go out and play with my friends."
+      },
+      {
+        "sentence": "꿈을 포기하기보다 계속 추구하기로 결정했어요.",
+        "romanization": "Kkumeul pogihagiboda gyesok chuguhagiro gyeoljeonghaesseoyo.",
+        "translation": "I decided to keep pursuing my dream rather than giving it up."
+      },
+      {
+        "sentence": "돈을 벌기보다 무엇을 사랑하는지 찾는 것이 더 중요하다고 생각해요.",
+        "romanization": "Doneul beolgiboda mueoseul saranghaneunji chatneun geosi deo jungyohadago saenggakhaeyo.",
+        "translation": "I think it's more important to find what you love rather than just earning money."
+      }
+    ]
+  },
+  {
+    "id": "ko_하기에_136",
+    "language": "ko",
+    "pattern": "~하기에",
+    "title": "~하기에 [hakie] (For, considering)",
+    "shortExplanation": "Expresses a reason or basis for a certain situation; 'for, considering'.",
+    "longExplanation": "'~하기에 [hakie]' is used to provide a reason or basis for a circumstance or decision. It can translate to 'for', 'because', or 'considering that...' in English, especially when justifying or explaining a certain choice.",
+    "formation": "Descriptive Verb + 기에",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그의 나이에 비해 축구 실력이 매우 좋아서, 프로 팀 진출이 가능하기에 노력하고 있어요.",
+        "romanization": "Geuui naie bihae chukgu silryeogi maeu johaseo, peuro tim jinchul-i ganeunghakie noryeokhago isseoyo.",
+        "translation": "Considering his age, his soccer skills are really good, so he's trying to join a professional team."
+      },
+      {
+        "sentence": "그 직업은 수입이 많지만 스트레스도 많아서, 건강을 위해서는 좋지 않을 수 있기에 주의해야 해요.",
+        "romanization": "Geu jig-eobeun su-ibi manhjiman seuteureseu-do manhaseo, geongangeul wihaeseoneun jotji anheul su itgye jeuihaeya haeyo.",
+        "translation": "That job has a high income but is also stressful; considering your health, it might not be the best choice, so be cautious."
+      },
+      {
+        "sentence": "재료가 너무 많아 필요 없는 것들을 버리기에는 아깝다고 느껴져요.",
+        "romanization": "Jaeryoga neomu manha piryo eomneun geotdeureul beorigieneun akkapdago neukkyeojyeoyo.",
+        "translation": "There are so many ingredients that it feels wasteful to throw away the unnecessary ones."
+      },
+      {
+        "sentence": "최근 날씨 변화를 보면, 내일 피크닉 가기에는 너무 더울 것 같아요.",
+        "romanization": "Choegeun nalssi byeonhwareul bomyeon, naeil pikeunik gagieneun neomu deoul geot gatayo.",
+        "translation": "Considering the recent weather changes, it might be too hot to go on a picnic tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "ko_하기만_137",
+    "language": "ko",
+    "pattern": "~하기만",
+    "title": "~하기만 하면 [hakiman hamyeon] (As long as)",
+    "shortExplanation": "Expresses that if a certain condition is met, a result is guaranteed to follow; 'as long as'.",
+    "longExplanation": "'~하기만 하면 [hakiman hamyeon]' means 'as long as one does something, then something else will definitely happen.' It implies a condition that, once fulfilled, ensures a particular outcome.",
+    "formation": "Verb stem + 기만 하면",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 열심히 공부하기만 하면 한국어 시험을 분명히 통과할 거예요.",
+        "romanization": "Jeoneun yeolsimhi gongbu-hagiman hamyeon hangugeo siheomeul bunmyeonghi tonggwahal geoyeyo.",
+        "translation": "As long as I study hard, I'll definitely pass the Korean exam."
+      },
+      {
+        "sentence": "당신이 저를 믿어주기만 하면 상처를 치유하기가 훨씬 수월해질 거예요.",
+        "romanization": "Dangsini jeoreul mideojugiman hamyeon sangcheoreul chiyuhagiga hwolssin suwolhaejil geoyeyo.",
+        "translation": "As long as you trust me, healing the wounds will be much easier."
+      },
+      {
+        "sentence": "조금만 노력하기만 하면 그림 그리는 기술을 향상시킬 수 있을 겁니다.",
+        "romanization": "Jogeumman noryeok-hagiman hamyeon geurim geurineun gisuleul hyangsangsikil su isseul geomnida.",
+        "translation": "As long as you make even a bit of effort, you can improve your drawing skills."
+      },
+      {
+        "sentence": "사람들이 서로를 이해하려고 노력하기만 하면 세상은 더 나은 곳이 될 수 있어요.",
+        "romanization": "Saramdeuri seororeul ihaeharyeogo noryeok-hagiman hamyeon sesangeun deo naeun gosi doel su isseoyo.",
+        "translation": "As long as people try to understand each other, the world can become a better place."
+      }
+    ]
+  },
+  {
+    "id": "ko_하는_138",
+    "language": "ko",
+    "pattern": "~하는",
+    "title": "~하는 것 같다 [haneun geot gatda] (It seems like)",
+    "shortExplanation": "Used to express that something appears or seems a certain way; 'it seems/looks like'.",
+    "longExplanation": "'~하는 것 같다 [haneun geot gatda]' indicates the speaker's guess or observation based on evidence or impressions. It can translate to 'it seems like', 'it appears that', or 'it looks like' in English. The verb or adjective precedes '...는 것 같다' to form a statement of appearance or assumption.",
+    "formation": "Verb stem + 는 것 같다 / Adjective stem + (으)ㄴ 것 같다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "나는 그가 내 말을 이해하는 것 같아요. 그의 표정이 안도감을 보여줬거든요.",
+        "romanization": "Naneun geuga nae mareul ihaehaneun geot gatayo. Geuui pyojeongi andogameul boyeojwotgeodeunyo.",
+        "translation": "It seems like he understands what I’m saying; his expression showed relief."
+      },
+      {
+        "sentence": "오늘 너무 추운 것 같아요. 밖에서 사람들이 몸을 잔뜩 웅크리고 있더라고요.",
+        "romanization": "Oneul neomu chuun geot gatayo. Bakk-eseo saramdeuri momeul jantteuk ungkeurigo itdeoragoyo.",
+        "translation": "It seems really cold today; I saw people outside huddling together."
+      },
+      {
+        "sentence": "내 친구가 수업에 늦는 것 같아요. 학교로 뛰어가면서 급하게 문자를 보냈어요.",
+        "romanization": "Nae chinguga sueobe neujneun geot gatayo. Hakgyoro ttwieogamyeonseo geuphage munjareul bonaesseoyo.",
+        "translation": "It seems like my friend is late for class. She sent me a rushed text while running to school."
+      },
+      {
+        "sentence": "그가 나에게 화난 것 같아요. 표정이 좋지 않더라고요.",
+        "romanization": "Geuga naege hwanan geot gatayo. Pyojeongi joji antdeoragoyo.",
+        "translation": "It seems like he’s mad at me. His facial expression didn’t look good."
+      }
+    ]
+  },
+  {
+    "id": "ko_하는_139",
+    "language": "ko",
+    "pattern": "~하는",
+    "title": "~하는 데 [haneun de] (In doing)",
+    "shortExplanation": "Expresses the process of doing something, often involving time, effort, or resources.",
+    "longExplanation": "'~하는 데 [haneun de]' highlights the time, effort, or resources necessary for an action. It can be thought of as 'in doing something' or 'it takes X to do something'.",
+    "formation": "Verb stem + 는 데 + (time/effort/resources)",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "집에 도착하는 데 시간이 오래 걸렸어요. 차가 많이 막혔거든요.",
+        "romanization": "Jibe dochak-haneun de sigani orae geollyeosseoyo. Chaga manhi makyeotgeodeunyo.",
+        "translation": "It took a long time to get home. There was a lot of traffic."
+      },
+      {
+        "sentence": "올해 목표를 달성하는 데 정말 많은 노력이 필요했어요.",
+        "romanization": "Olhae mokpyoreul dalsseong-haneun de jeongmal manheun noryeogi pilyohaesseoyo.",
+        "translation": "It took a lot of effort to achieve this year's goal."
+      },
+      {
+        "sentence": "이 케이크를 만드는 데 하루 종일 걸렸어요. 재료 준비부터 장식까지 다 했거든요.",
+        "romanization": "I keikeureul mandeuneun de haru jongil geollyeosseoyo. Jaeryo junbibuteo jangsik-kkaji da haetgeodeunyo.",
+        "translation": "It took me all day to make this cake, from preparing the ingredients to decorating it."
+      },
+      {
+        "sentence": "이효리 신곡을 작곡하는 데 한 달 넘게 걸렸어요.",
+        "romanization": "Ihyo-ri singogeul jakgok-haneun de han dal neomge geollyeosseoyo.",
+        "translation": "It took over a month to compose Lee Hyo-ri's new song."
+      }
+    ]
+  },
+  {
+    "id": "ko_하는_140",
+    "language": "ko",
+    "pattern": "~하는",
+    "title": "~하는 편이다 [haneun pyeonida] (Tend to do)",
+    "shortExplanation": "Expresses a habitual action, tendency, or characteristic.",
+    "longExplanation": "'~하는 편이다 [haneun pyeonida]' means someone or something tends toward a certain behavior or habit. It implies that it’s not an absolute rule, but rather the usual or likely tendency the speaker observes.",
+    "formation": "Verb stem + 는 편이다 / Adjective stem + (으)ㄴ 편이다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "나는 책 읽는 걸 좋아해서 보통 많은 시간을 보내는 편이다.",
+        "romanization": "Naneun chaek ilgneun geol joahaeseo botong manheun siganeul bonaeneun pyeonida.",
+        "translation": "I like reading books, so I tend to spend a lot of time on it."
+      },
+      {
+        "sentence": "그는 항상 일찍 자는 편이다. 그래서 늘 건강하다는 말을 자주 들어요.",
+        "romanization": "Geuneun hangsang iljjik janeun pyeonida. Geuraeseo neul geonganghadaneun mareul jaju deureoyo.",
+        "translation": "He tends to go to bed early, so people often say he's very healthy."
+      },
+      {
+        "sentence": "우리 엄마는 늘 맛있는 음식을 만드는 편이다.",
+        "romanization": "Uri eomma-neun neul masinneun eumsigeul mandeuneun pyeonida.",
+        "translation": "My mom tends to always cook delicious food."
+      },
+      {
+        "sentence": "저는 일을 미루는 편이라서, 가끔 할 일이 몰릴 때가 많아요.",
+        "romanization": "Jeoneun ireul miruneun pyeoniraseo, gakkeum hal iri mollil ttaega manhayo.",
+        "translation": "I tend to procrastinate, so I often end up with a lot of tasks all at once."
+      }
+    ]
+  },
+  {
+    "id": "ko_하는_141",
+    "language": "ko",
+    "pattern": "~하는",
+    "title": "~하는 한 [haneun han] (As long as)",
+    "shortExplanation": "Expresses the meaning 'as long as' or 'while' a certain condition holds true.",
+    "longExplanation": "'~하는 한 [haneun han]' is used to indicate that something remains valid or continues to be the case so long as a condition is met. It can translate to 'as long as' in English, specifying the scope or boundary within which an action or state continues.",
+    "formation": "Verb stem + 는 한",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "당신이 건강을 유지하는 한 큰 문제는 없을 거예요.",
+        "romanization": "Dangsini geongangeul yuji-haneun han, keun munjeneun eobseul geoyeyo.",
+        "translation": "There won't be any big problems as long as you stay healthy."
+      },
+      {
+        "sentence": "네가 내 옆에 있는 한 나는 행복해.",
+        "romanization": "Nega nae yeope inneun han naneun haengbokhae.",
+        "translation": "As long as you're by my side, I'm happy."
+      },
+      {
+        "sentence": "그녀가 진심으로 노력하는 한 목표는 달성할 수 있을 거야.",
+        "romanization": "Geunyeoga jinsimeuro noryeok-haneun han mokpyoneun dalseonghal su isseul geoya.",
+        "translation": "She can achieve her goal as long as she's sincerely working hard."
+      },
+      {
+        "sentence": "우리가 함께하는 한 어떤 어려움도 극복할 수 있어.",
+        "romanization": "Uriga hamkke-haneun han eotteon eoryeoumdo geukbokhal su isseo.",
+        "translation": "We can overcome any difficulty as long as we're together."
+      }
+    ]
+  },
+  {
+    "id": "ko_하는데_142",
+    "language": "ko",
+    "pattern": "~하는데",
+    "title": "~하는데 [haneunde] (But, and so)",
+    "shortExplanation": "Used to express contrast or a cause-and-result link; 'but', 'and so'.",
+    "longExplanation": "'~하는데 [haneunde]' is a Korean connector used to indicate contrast or provide background leading to a result, akin to 'but' or 'and so' in English. Often, the first clause establishes a situation or background and the second clause states a contradictory fact or a consequence derived from that background.",
+    "formation": "Verb + 는데 (Present) / Verb + 았/었는데 (Past)",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "제 친구는 공부를 많이 했는데도 시험에 떨어졌어요.",
+        "romanization": "Je chinguneun gongbureul mani haetneundedo siheome tteoreojyeosseoyo.",
+        "translation": "My friend studied a lot, but he still failed the exam."
+      },
+      {
+        "sentence": "비가 오는데 우산을 가져오지 않았어요.",
+        "romanization": "Biga oneunde usaneul gajyeoji anasseoyo.",
+        "translation": "It's raining, but I didn't bring an umbrella."
+      },
+      {
+        "sentence": "게임이 재미있는데 시간이 너무 빨리 가요.",
+        "romanization": "Geimi jaemiissneunde sigani neomu ppalli gayo.",
+        "translation": "The game is fun, and time passes so quickly."
+      },
+      {
+        "sentence": "이 케이크는 맛있는데 당분이 너무 많아요.",
+        "romanization": "I keikeuneun masissneunde dangbuni neomu manhayo.",
+        "translation": "This cake is delicious, but it has too much sugar."
+      }
+    ]
+  },
+  {
+    "id": "ko_하다_143",
+    "language": "ko",
+    "pattern": "~하다",
+    "title": "~하다 보면 [hada bomyeon] (If one keeps doing)",
+    "shortExplanation": "Expresses that, with continued or repeated action, a certain result or realization will emerge.",
+    "longExplanation": "'~하다 보면 [hada bomyeon]' indicates that if someone continues or repeatedly does an action over time, a new result, skill, or understanding will naturally occur. It's akin to 'if one keeps doing something' or 'if one continues doing something' in English.",
+    "formation": "Verb (dictionary form) + 하다 보면",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "매일 한국어를 공부하다 보면 어느새 한국어를 잘하게 될 거예요.",
+        "romanization": "Maeil hangugeoreul gongbuhada bomyeon eoneusae hangugeoreul jalhage doel geoyeyo.",
+        "translation": "If you keep studying Korean every day, you'll eventually become good at it."
+      },
+      {
+        "sentence": "계속 연습하다 보면 예술에 대한 흥미와 재능을 찾을 수 있을 거라고 생각해요.",
+        "romanization": "Gyesok yeonseuphada bomyeon yesure daehan heungmiwa jaeneungeul chajeul su isseul georago saenggakaeyo.",
+        "translation": "If you keep practicing, I think you'll be able to find your interest and talent in art."
+      },
+      {
+        "sentence": "헬스장에 자주 가다 보면 체력이 좋아지고 더 건강해질 거예요.",
+        "romanization": "Helseujange jaju gada bomyeon cheryeogi joajigo deo geonganghaejil geoyeyo.",
+        "translation": "If you go to the gym often, your stamina will improve and you'll get healthier."
+      },
+      {
+        "sentence": "매일 그림을 그리다 보면 훌륭한 화가가 될 수도 있어요.",
+        "romanization": "Maeil geurimeul geurida bomyeon hullyunghan hwagaga doel sudo isseoyo.",
+        "translation": "If you draw every day, you can become a great painter."
+      }
+    ]
+  },
+  {
+    "id": "ko_하다가는_144",
+    "language": "ko",
+    "pattern": "~하다가는",
+    "title": "~하다가는 [hadaganeun] (If you continue doing)",
+    "shortExplanation": "Indicates a likely negative outcome if the current action continues in the same manner.",
+    "longExplanation": "'~하다가는 [hadaganeun]' is used to warn that if the speaker continues performing the preceding action in the same way, it will lead to an undesirable or negative consequence. It carries a sense of caution or concern.",
+    "formation": "Verb stem + 하다가는",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "이렇게 계속 먹다가는 건강이 나빠질 수도 있어요.",
+        "romanization": "Ireohge gyesok meokdaganeun geongangi nappeojil sudo isseoyo.",
+        "translation": "If you keep eating like this, your health could get worse."
+      },
+      {
+        "sentence": "같이 일하다가는 서로 관계가 나빠질 것 같아요.",
+        "romanization": "Gati ilhadaganeun seoro gwangyega napajil geot gatayo.",
+        "translation": "If we keep working together like this, our relationship might deteriorate."
+      },
+      {
+        "sentence": "이런 식으로 공부하다가는 시험에 떨어질 수 있어.",
+        "romanization": "Ireon sigeuro gongbuhadaganeun siheome tteoreojil su isseo.",
+        "translation": "If you keep studying like this, you could fail the exam."
+      },
+      {
+        "sentence": "너는 맨날 게임만 하다가는 미래에 문제를 겪을지도 몰라.",
+        "romanization": "Neoneun maennal geimman hadaganeun mirae-e munjereul gyeokkeuljido molla.",
+        "translation": "If you just keep playing games all the time, you might face problems in the future."
+      }
+    ]
+  },
+  {
+    "id": "ko_하여_145",
+    "language": "ko",
+    "pattern": "~하여",
+    "title": "~하여 [hayeo] (~ing, and)",
+    "shortExplanation": "Used to connect actions or show a method of doing something; roughly 'and' or 'by doing'.",
+    "longExplanation": "'~하여 [hayeo]' is a somewhat formal connective ending in Korean used to link two actions or show that the second action happens by means of the first. It can often be translated as 'and' or 'by doing' in English. This form is more common in written or formal contexts compared to conversational speech.",
+    "formation": "Verb stem + 하여",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그는 매일 운동하여 건강을 유지합니다.",
+        "romanization": "Geuneun maeil undonghayeo geongangeul yujihamnida.",
+        "translation": "He exercises every day and thus maintains his health."
+      },
+      {
+        "sentence": "열심히 공부하여 목표를 달성했습니다.",
+        "romanization": "Yeolsimhi gongbuhayeo mokpyoreul dalseonghaesseumnida.",
+        "translation": "I studied hard and achieved my goal."
+      },
+      {
+        "sentence": "사장님은 직원들에게 동기를 부여하여 더 나은 성과를 얻었어요.",
+        "romanization": "Sajangnimeun jigwondeurege donggireul buyeohayeo deo naeun seonggwareul eot-eosseoyo.",
+        "translation": "The boss motivated the employees and achieved better results."
+      },
+      {
+        "sentence": "나는 예산을 절약하여 여행 자금을 마련했어요.",
+        "romanization": "Naneun yesaneul jeoryaghayeo yeohaeng jagumeul maryeonhaesseoyo.",
+        "translation": "I saved money on my budget and set aside funds for travel."
+      }
+    ]
+  },
+  {
+    "id": "ko_하여야_146",
+    "language": "ko",
+    "pattern": "~하여야",
+    "title": "~하여야 [hayeoya] (Must)",
+    "shortExplanation": "Expresses necessity or obligation; 'must', 'have to'.",
+    "longExplanation": "'~하여야 [hayeoya]' is a more formal verb ending indicating something must or has to be done. It attaches to action verbs and emphasizes the necessity of the action. It's typically used in more formal or written contexts.",
+    "formation": "Action Verb + 하여야",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "시험을 잘 보려면 열심히 공부하여야 합니다.",
+        "romanization": "Siheomeul jal boryeomyeon yeolsimhi gongbuhayeoya hamnida.",
+        "translation": "If you want to do well on the test, you must study hard."
+      },
+      {
+        "sentence": "비올레 코딩을 배우려면 먼저 기본 파이썬 문법을 숙지하여야 합니다.",
+        "romanization": "Biole koding-eul baeureomyeon meonjeo gibon paiseon munbeobeul sukjihayeoya hamnida.",
+        "translation": "If you want to learn ‘Viole coding,’ you must first master basic Python grammar."
+      },
+      {
+        "sentence": "당신은 일을 잘하려면 집중하여야 합니다.",
+        "romanization": "Dangsineun ireul jalharyeomyeon jipjunghayeoya hamnida.",
+        "translation": "You must concentrate if you want to do your job well."
+      },
+      {
+        "sentence": "빠르게 체중을 줄이려면 매일 운동하여야 해요.",
+        "romanization": "Ppareuge chejung-eul juriryeomyeon maeil undonghayeoya haeyo.",
+        "translation": "If you want to lose weight quickly, you have to exercise daily."
+      }
+    ]
+  },
+  {
+    "id": "ko_하였다_147",
+    "language": "ko",
+    "pattern": "~하였다",
+    "title": "~하였다 [hayeotda] (Past formal)",
+    "shortExplanation": "A formal past-tense marker in Korean, used when addressing elders, superiors, or in polite writing.",
+    "longExplanation": "'~하였다 [hayeotda]' is a formal or literary past-tense form in Korean that can be attached to action or descriptive verbs. It's frequently seen in official documents or polite narratives, emphasizing respect or formality.",
+    "formation": "Verb stem + 하였다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "나는 어제 라면을 만들어 먹으려고 집에 돌아왔다가, 아주머니가 손님들을 위해 음식을 만들었다고 하여 함께 도왔습니다.",
+        "romanization": "Naneun eoje ramyeoneul mandeureo meogeuryeogo jibe dorawatdaga, ajumeoni-ga sonnimdeureul wihae eumsigeul mandeureotdago hayeo hamkke dowatseumnida.",
+        "translation": "Yesterday, I returned home to make ramen, but I found out the lady was cooking for guests, so I helped her."
+      },
+      {
+        "sentence": "그는 한국어를 배우기 시작했을 때 아무것도 몰랐지만, 이제는 토픽 시험을 준비하였습니다.",
+        "romanization": "Geuneun hangugeoreul baeugi sijakhaesseul ttae amugeotdo mollatjiman, ijeneun Topik siheomeul junbihayeotseumnida.",
+        "translation": "When he began learning Korean, he knew nothing at all, but now he has prepared for the TOPIK exam."
+      },
+      {
+        "sentence": "학생들이 과제를 준비하지 않을 것이라고 예상했으나, 모두 진지하게 과제를 준비하였습니다.",
+        "romanization": "Haksaengdeuri gwajereul junbihaji aneul geosirago yesanghaesseuna, modu jinjihage gwajereul junbihayeotseumnida.",
+        "translation": "We expected students wouldn't prepare their homework, but they all prepared seriously."
+      },
+      {
+        "sentence": "우리 팀은 이번 프로젝트를 위해 열심히 노력하였고, 결국 성공적으로 마무리하였습니다.",
+        "romanization": "Uri timeun ibeon peurojekteureul wihae yeolsimhi noryeokhayeotgo, gyeolguk seonggongjeogeuro mamurihayeotseumnida.",
+        "translation": "Our team worked hard on this project and ultimately finished it successfully."
+      }
+    ]
+  }
+]

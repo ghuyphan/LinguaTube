@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_A极了_183",
+    "language": "zh",
+    "pattern": "A 极了",
+    "title": "A 极了 (extremely A)",
+    "shortExplanation": "extremely A",
+    "longExplanation": "extremely A. Pinyin: A jíle",
+    "formation": "A jíle",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "今天天气冷极了。",
+        "romanization": "jīntiān tiānqì lěng jíle。",
+        "translation": "The weather is extremely cold today."
+      }
+    ]
+  },
+  {
+    "id": "zh_如果的话就_184",
+    "language": "zh",
+    "pattern": "如果……(的话), 就……",
+    "title": "如果……(的话), 就…… (if …, then…)",
+    "shortExplanation": "if …, then…",
+    "longExplanation": "if …, then…. Pinyin: rúguǒ……( dehuà), jiù……",
+    "formation": "rúguǒ……( dehuà), jiù……",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "如果你太累的话，就休息一会儿。",
+        "romanization": "rúguǒ nǐ tài lèi dehuà， jiù xiūxi yīhuìr。",
+        "translation": "If you are too tired, take a break."
+      }
+    ]
+  },
+  {
+    "id": "zh_A得CLAUSE_185",
+    "language": "zh",
+    "pattern": "A + 得 + CLAUSE",
+    "title": "A + 得 + CLAUSE (so A that + CLAUSE)",
+    "shortExplanation": "so A that + CLAUSE",
+    "longExplanation": "so A that + CLAUSE. Pinyin: A + dé + CLAUSE",
+    "formation": "A + dé + CLAUSE",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "儿子累得下了班就睡觉了。",
+        "romanization": "érzi lèi dé xià le bān jiù shuìjiào le。",
+        "translation": "The son was so tired that he went to sleep as soon as he got off work."
+      }
+    ]
+  },
+  {
+    "id": "zh_AA的_186",
+    "language": "zh",
+    "pattern": "A + A + 的",
+    "title": "A + A + 的 (A (with characteristics))",
+    "shortExplanation": "A (with characteristics)",
+    "longExplanation": "A (with characteristics). Pinyin: A + A + de",
+    "formation": "A + A + de",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "她鼻子小小的，头发黑黑的。",
+        "romanization": "tā bízi xiǎoxiǎo de， tóufa hēi hēi de。",
+        "translation": "Her nose is teeny tiny and her hair is black."
+      }
+    ]
+  },
+  {
+    "id": "zh_VV_187",
+    "language": "zh",
+    "pattern": "V + V",
+    "title": "V + V (V for a bit)",
+    "shortExplanation": "V for a bit",
+    "longExplanation": "V for a bit. Pinyin: V + V",
+    "formation": "V + V",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我带你去医院检查检查吧。",
+        "romanization": "wǒ dài nǐ qù yīyuàn jiǎnchá jiǎnchá ba。",
+        "translation": "Let me take you to the hospital for to check up a bit."
+      }
+    ]
+  },
+  {
+    "id": "zh_Q都_188",
+    "language": "zh",
+    "pattern": "Q + 都",
+    "title": "Q + 都 (Q-ever)",
+    "shortExplanation": "Q-ever",
+    "longExplanation": "Q-ever. Pinyin: Q + dōu",
+    "formation": "Q + dōu",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "小刚什么都喜欢吃。",
+        "romanization": "xiǎo gāng shénme dōu xǐhuan chī。",
+        "translation": "Xiao Gang likes to eat anything (lit. whatever)."
+      }
+    ]
+  },
+  {
+    "id": "zh_只要就_189",
+    "language": "zh",
+    "pattern": "只要……就……",
+    "title": "只要……就…… (as long as)",
+    "shortExplanation": "as long as",
+    "longExplanation": "as long as. Pinyin: zhǐyào…… jiù……",
+    "formation": "zhǐyào…… jiù……",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "只要我有时间，就一定跟你去旅游。",
+        "romanization": "zhǐyào wǒ yǒu shíjiān， jiù yīdìng gēn nǐ qù lǚyóu。",
+        "translation": "As long as I have time, I will definitely travel with you."
+      }
+    ]
+  },
+  {
+    "id": "zh_关于_190",
+    "language": "zh",
+    "pattern": "关于",
+    "title": "关于 (about)",
+    "shortExplanation": "about",
+    "longExplanation": "about. Pinyin: guānyú",
+    "formation": "guānyú",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "关于这件事，我们还没有决定呢。",
+        "romanization": "guānyú zhè jiàn shì， wǒmen hái méiyǒu juédìng ne。",
+        "translation": "We have not decided on this matter yet."
+      }
+    ]
+  },
+  {
+    "id": "zh_V出来_191",
+    "language": "zh",
+    "pattern": "V + 出来",
+    "title": "V + 出来 (V and produce an outcome)",
+    "shortExplanation": "V and produce an outcome",
+    "longExplanation": "V and produce an outcome. Pinyin: V + chūlái",
+    "formation": "V + chūlái",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "这个字你能写出来吗?",
+        "romanization": "zhège zì nǐ néng xiě chūlái ma?",
+        "translation": "Can you write (out) this word?"
+      }
+    ]
+  },
+  {
+    "id": "zh_V出来_192",
+    "language": "zh",
+    "pattern": "V + 出来",
+    "title": "V + 出来 (V and recognize)",
+    "shortExplanation": "V and recognize",
+    "longExplanation": "V and recognize. Pinyin: V + chūlái",
+    "formation": "V + chūlái",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你听出来了吗？这是谁的声音？",
+        "romanization": "nǐ tīng chūlái le ma？ zhè shì shéi de shēngyīn？",
+        "translation": "After listening, did you recognize [it]? Whose voice is this?"
+      }
+    ]
+  },
+  {
+    "id": "zh_V下来_193",
+    "language": "zh",
+    "pattern": "V + 下来",
+    "title": "V + 下来 (V down)",
+    "shortExplanation": "V down",
+    "longExplanation": "V down. Pinyin: V + xiàlai",
+    "formation": "V + xiàlai",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我真希望时间能慢下来。",
+        "romanization": "wǒ zhēn xīwàng shíjiān néng màn xiàlai。",
+        "translation": "I really hope that time can slow down."
+      }
+    ]
+  },
+  {
+    "id": "zh_想起来_194",
+    "language": "zh",
+    "pattern": "想起来",
+    "title": "想起来 (to recall)",
+    "shortExplanation": "to recall",
+    "longExplanation": "to recall. Pinyin: xiǎngqilai",
+    "formation": "xiǎngqilai",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我想不起来他的名字了。",
+        "romanization": "wǒ xiǎng bù qilai tā de míngzi le。",
+        "translation": "I can't think of (lit. think up) his name."
+      }
+    ]
+  },
+  {
+    "id": "zh_看起来看上去_195",
+    "language": "zh",
+    "pattern": "看起来/看上去",
+    "title": "看起来/看上去 (to seem)",
+    "shortExplanation": "to seem",
+    "longExplanation": "to seem. Pinyin: kànqǐlái/ kànshangqu",
+    "formation": "kànqǐlái/ kànshangqu",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "他看上去/看起来像40多岁。",
+        "romanization": "tā kànshangqu/ kànqǐlái xiàng40 duō suì。",
+        "translation": "He looks like he is in his 40s."
+      }
+    ]
+  },
+  {
+    "id": "zh_使叫让OAV_196",
+    "language": "zh",
+    "pattern": "使/叫/让 + O + A/V",
+    "title": "使/叫/让 + O + A/V (make O A/V)",
+    "shortExplanation": "make O A/V",
+    "longExplanation": "make O A/V. Pinyin: shǐ/ jiào/ ràng + O + A/V",
+    "formation": "shǐ/ jiào/ ràng + O + A/V",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "读书使/叫/让我快乐。",
+        "romanization": "dúshū shǐ/ jiào/ ràng wǒ kuàilè。",
+        "translation": "Reading makes me happy."
+      }
+    ]
+  },
+  {
+    "id": "zh_O被叫让SV_197",
+    "language": "zh",
+    "pattern": "O + 被/叫/让 + S + V",
+    "title": "O + 被/叫/让 + S + V (O is V’ed by S)",
+    "shortExplanation": "O is V’ed by S",
+    "longExplanation": "O is V’ed by S. Pinyin: O + bèi/ jiào/ ràng + S + V",
+    "formation": "O + bèi/ jiào/ ràng + S + V",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我的照相机被/叫/让谁拿走了?",
+        "romanization": "wǒ de zhàoxiàngjī bèi/ jiào/ ràng shéi názǒu le?",
+        "translation": "My camera was taken by who?"
+      }
+    ]
+  }
+]

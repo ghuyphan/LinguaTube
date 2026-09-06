@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_っこない_73",
+    "language": "ja",
+    "pattern": "～っこない",
+    "title": "～っこない (〜kkonai)",
+    "shortExplanation": "Expresses the impossibility or very low probability of something happening; 'no way', 'impossible'.",
+    "longExplanation": "The ～っこない grammar point is used to express that something is impossible or extremely unlikely. It’s formed by attaching ～っこない to the negative stem of a verb. It can be translated as 'no way', 'no chance', or 'impossible.'",
+    "formation": "Verb-negative stem + っこない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "こんなに雪が降っているんだから、学校に間に合いっこない。",
+        "romanization": "Konna ni yuki ga futteirun dakara, gakkō ni maniai kkonai.",
+        "translation": "With snow falling this heavily, there's no way we'll make it to school on time."
+      },
+      {
+        "sentence": "彼は泳げないので、プールの向こう側に泳いで行きっこない。",
+        "romanization": "Kare wa oyogenai node, pūru no mukōgawa ni oyoide ikkonai.",
+        "translation": "Since he can’t swim, there’s no way he’ll make it to the other side of the pool."
+      },
+      {
+        "sentence": "彼女はとても怖がりなので、一人で夜の公園に行きっこない。",
+        "romanization": "Kanojo wa totemo kowagari na node, hitori de yoru no kōen ni ikkonai.",
+        "translation": "She’s so timid, there’s no chance she’d go to the park alone at night."
+      },
+      {
+        "sentence": "この短い時間で、その本を全部読むことはできっこない。",
+        "romanization": "Kono mijikai jikan de, sono hon o zenbu yomu koto wa dekikkonai.",
+        "translation": "It's impossible to read the entire book in such a short time."
+      }
+    ]
+  },
+  {
+    "id": "ja_つつ_74",
+    "language": "ja",
+    "pattern": "～つつ",
+    "title": "～つつ (〜tsutsu)",
+    "shortExplanation": "Shows two actions happening simultaneously or a contrast; 'while', 'although'.",
+    "longExplanation": "The ～つつ grammar point is used to express two actions occurring simultaneously, or to show a contrast between an ongoing action and another factor. It can be translated as 'while' or 'although.' It is attached to a verb in its stem form.",
+    "formation": "Verb-stem + つつ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼はテレビを見つつ、宿題をしていました。",
+        "romanization": "Kare wa terebi o mitsutsu, shukudai o shite imashita.",
+        "translation": "He was doing his homework while watching TV."
+      },
+      {
+        "sentence": "最近忙しいと思いつつ、毎日運動を続けています。",
+        "romanization": "Saikin isogashii to omoi tsutsu, mainichi undō o tsuzukete imasu.",
+        "translation": "Although I feel busy these days, I still exercise every day."
+      },
+      {
+        "sentence": "彼女は泣きつつ、笑顔で別れを告げた。",
+        "romanization": "Kanojo wa naki tsutsu, egao de wakare o tsugeta.",
+        "translation": "She was crying, yet she said goodbye with a smile on her face."
+      },
+      {
+        "sentence": "雨に濡れつつ、彼は歩き続けました。",
+        "romanization": "Ame ni nure tsutsu, kare wa aruki tsuzukemashita.",
+        "translation": "He continued walking even though he was getting soaked by the rain."
+      }
+    ]
+  },
+  {
+    "id": "ja_つつある_75",
+    "language": "ja",
+    "pattern": "～つつある",
+    "title": "～つつある (〜tsutsu aru)",
+    "shortExplanation": "Expresses an ongoing process or gradual change.",
+    "longExplanation": "The ～つつある grammar point is used to describe something that is in the middle of a gradual change or development. It can be translated as '(something) is in the process of ~ing.' The most common usage is with the verb stem plus つつある.",
+    "formation": "Verb-stem + つつある",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "地球温暖化は進行しつつある。",
+        "romanization": "Chikyū ondanka wa shinkō shitsutsu aru.",
+        "translation": "Global warming is in progress."
+      },
+      {
+        "sentence": "この町は急速に発展しつつある。",
+        "romanization": "Kono machi wa kyūsoku ni hatten shitsutsu aru.",
+        "translation": "This town is rapidly developing."
+      },
+      {
+        "sentence": "子供たちは成長しつつある。",
+        "romanization": "Kodomo-tachi wa seichō shitsutsu aru.",
+        "translation": "The children are growing up."
+      },
+      {
+        "sentence": "景気が回復しつつある。",
+        "romanization": "Keiki ga kaifuku shitsutsu aru.",
+        "translation": "The economy is recovering."
+      }
+    ]
+  },
+  {
+    "id": "ja_っぱなし_76",
+    "language": "ja",
+    "pattern": "～っぱなし",
+    "title": "～っぱなし (〜ppanashi)",
+    "shortExplanation": "Express a continuous action or state; 'left as is', 'non-stop'.",
+    "longExplanation": "The ～っぱなし grammar point is used to express that something is left in a certain condition for an extended time or that an action continues without stopping. It attaches to the ます-stem of verbs.",
+    "formation": "Verb-ます stem + っぱなし",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "窓を開けっぱなしにして、部屋が寒くなってしまった。",
+        "romanization": "Mado o akeppanashi ni shite, heya ga samuku natte shimatta.",
+        "translation": "I left the window open, and the room got cold."
+      },
+      {
+        "sentence": "彼は音楽を聴くのが好きで、いつもイヤホンをつけっぱなしです。",
+        "romanization": "Kare wa ongaku o kiku no ga suki de, itsumo iyahon o tsukeppanashi desu.",
+        "translation": "He loves listening to music and always has his earphones on."
+      },
+      {
+        "sentence": "子供はおもちゃを床に置きっぱなしで、片付けなかった。",
+        "romanization": "Kodomo wa omocha o yuka ni okippanashi de, katazukenakatta.",
+        "translation": "The child left the toys on the floor and didn’t put them away."
+      },
+      {
+        "sentence": "昨夜は忙しかったので、テレビをつけっぱなしにして寝てしまった。",
+        "romanization": "Sakuya wa isogashikatta node, terebi o tsukeppanashi ni shite nete shimatta.",
+        "translation": "I was busy last night, so I left the TV on and fell asleep."
+      }
+    ]
+  },
+  {
+    "id": "ja_っぽい_77",
+    "language": "ja",
+    "pattern": "～っぽい",
+    "title": "～っぽい (〜ppoi)",
+    "shortExplanation": "Indicates that something has the appearance, characteristics, or behavior of something else.",
+    "longExplanation": "The ～っぽい grammar point is used when something or someone appears to have characteristics, traits, or a vibe that resemble something else. It can mean 'looks like,' 'seems like,' or 'has the quality of.'",
+    "formation": "Noun + っぽい, Verb-casual + っぽい, い-Adjective + っぽい, な-Adjective + っぽい",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼女は大人っぽい服を着ている。",
+        "romanization": "Kanojo wa otonappoi fuku o kite iru.",
+        "translation": "She’s wearing clothes that look mature."
+      },
+      {
+        "sentence": "この説明は分かりにくっぽい。",
+        "romanization": "Kono setsumei wa wakari nikuppoi.",
+        "translation": "This explanation seems hard to understand."
+      },
+      {
+        "sentence": "彼は疲れたっぽい顔をしている。",
+        "romanization": "Kare wa tsukareta ppoi kao o shite iru.",
+        "translation": "He has a face that looks tired."
+      },
+      {
+        "sentence": "この部屋は寒っぽい感じがする。",
+        "romanization": "Kono heya wa samuppoi kanji ga suru.",
+        "translation": "This room feels kind of chilly."
+      }
+    ]
+  },
+  {
+    "id": "ja_ていられない_78",
+    "language": "ja",
+    "pattern": "～ていられない",
+    "title": "～ていられない (〜te irarenai)",
+    "shortExplanation": "Expresses that one cannot afford to do something; 'can't keep on', 'unable to continue'.",
+    "longExplanation": "The ～ていられない grammar point is used to express a feeling of not being able to continue doing something or remaining in a certain state. It can be translated as 'can't keep on', 'unable to continue', or 'can't afford to' in English. The formation is the same for all verb types.",
+    "formation": "Verb-て form + いられない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "こんなに忙しいのに、無理に遊んでいられない。",
+        "romanization": "Konna ni isogashii noni, muri ni asonde irarenai.",
+        "translation": "I'm so busy that I can't afford to just play around."
+      },
+      {
+        "sentence": "寒すぎて、外で待っていられない。",
+        "romanization": "Samusugite, soto de matte irarenai.",
+        "translation": "It's too cold; I can't keep waiting outside."
+      },
+      {
+        "sentence": "この問題は重要だから、放っておいていられない。",
+        "romanization": "Kono mondai wa jūyō dakara, houtte oite irarenai.",
+        "translation": "This issue is too important to ignore."
+      },
+      {
+        "sentence": "彼女の態度が我慢できず、黙っていられない。",
+        "romanization": "Kanojo no taido ga gaman dekizu, damatte irarenai.",
+        "translation": "I can't stand her attitude, so I can't stay silent."
+      }
+    ]
+  },
+  {
+    "id": "ja_てかなわない_79",
+    "language": "ja",
+    "pattern": "～てかなわない",
+    "title": "～てかなわない (〜te kanawanai)",
+    "shortExplanation": "Expresses that something cannot be endured, tolerated, or is unbearable.",
+    "longExplanation": "The ～てかなわない grammar point is typically used with adjectives (or a rephrased verb) in 〜て form to show an unbearable situation or feeling. It means you 'can’t stand' or 'can’t endure' something. It often appears with expressions like 「暑くてかなわない」「うるさくてかなわない」 and so on.",
+    "formation": "Adjective (〜く / 〜で) + て + かなわない / Verb phrase (reworded to an adjective/negative) + て + かなわない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "こんなに暑くてかなわない。",
+        "romanization": "Konnani atsukute kanawanai.",
+        "translation": "I can’t stand this heat."
+      },
+      {
+        "sentence": "彼の話は失礼すぎてかなわない。",
+        "romanization": "Kare no hanashi wa shitsurei sugite kanawanai.",
+        "translation": "His remarks are so rude I can’t put up with them."
+      },
+      {
+        "sentence": "映画があまりに感動的で、忘れられなくてかなわない。",
+        "romanization": "Eiga ga amari ni kandō-teki de, wasurerarenakute kanawanai.",
+        "translation": "The movie was so moving that I can’t stand how it stays on my mind."
+      },
+      {
+        "sentence": "彼女の笑顔がまぶしくてかなわない。",
+        "romanization": "Kanojo no egao ga mabushikute kanawanai.",
+        "translation": "Her smile is so dazzling that it’s overwhelming."
+      }
+    ]
+  },
+  {
+    "id": "ja_てからでないと_80",
+    "language": "ja",
+    "pattern": "～てからでないと",
+    "title": "～てからでないと (〜te kara denai to)",
+    "shortExplanation": "Indicates that something cannot be done before a certain action is completed; 'not until', 'only after'.",
+    "longExplanation": "The ～てからでないと grammar point is used to express that an action cannot be done before another action has been completed. It can be translated as 'not until' or 'only after' in English. It attaches to a verb in the て-form, plus からでないと.",
+    "formation": "Verb-て + からでないと",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "宿題をしてからでないと、遊びに行けません。",
+        "romanization": "Shukudai o shite kara denai to, asobi ni ikemasen.",
+        "translation": "You cannot go play until you’ve finished your homework."
+      },
+      {
+        "sentence": "食事をしてからでないと、デザートを食べられません。",
+        "romanization": "Shokuji o shite kara denai to, dezāto o taberaremasen.",
+        "translation": "You cannot eat dessert until after having a meal."
+      },
+      {
+        "sentence": "チケットを買ってからでないと、映画を見られません。",
+        "romanization": "Chiketto o katte kara denai to, eiga o miraremasen.",
+        "translation": "You can’t watch the movie until after you buy a ticket."
+      },
+      {
+        "sentence": "試験が終わってからでないと、休みを取れません。",
+        "romanization": "Shiken ga owatte kara denai to, yasumi o toremasen.",
+        "translation": "You can’t take time off until the exam is over."
+      }
+    ]
+  },
+  {
+    "id": "ja_てこそ_81",
+    "language": "ja",
+    "pattern": "～てこそ",
+    "title": "～てこそ (〜te koso)",
+    "shortExplanation": "Emphasizes the condition; 'only when', 'precisely because'.",
+    "longExplanation": "The ～てこそ grammar point is used to emphasize that 'only when' or 'precisely because' the stated condition is met, a certain result or meaning arises. For nouns and adjectives, similar forms appear (e.g., Noun + でこそ, い-Adjective くてこそ, な-Adjective でこそ).",
+    "formation": "Verb-て form + こそ / い-Adjective + くてこそ / な-Adjective + でこそ / Noun + でこそ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "勉強してこそ、テストに合格できる。",
+        "romanization": "Benkyō shite koso, tesuto ni gōkaku dekiru.",
+        "translation": "Only when you study can you pass the test."
+      },
+      {
+        "sentence": "素直になってこそ、相手の気持ちが分かります。",
+        "romanization": "Sunao ni natte koso, aite no kimochi ga wakarimasu.",
+        "translation": "Only when you’re honest can you understand the other person’s feelings."
+      },
+      {
+        "sentence": "静かでこそ、心が落ち着く。",
+        "romanization": "Shizuka de koso, kokoro ga ochitsuku.",
+        "translation": "Only in silence can one’s mind be at peace."
+      },
+      {
+        "sentence": "友達でこそ、お互いに助け合うのは当然だ。",
+        "romanization": "Tomodachi de koso, otagai ni tasukeau no wa tōzen da.",
+        "translation": "Precisely because we’re friends, it’s natural to help each other."
+      }
+    ]
+  },
+  {
+    "id": "ja_でしょうがない_82",
+    "language": "ja",
+    "pattern": "～でしょうがない",
+    "title": "～でしょうがない (〜deshou ga nai)",
+    "shortExplanation": "Expresses an intense emotional or physical state; 'extremely', 'can’t help but'.",
+    "longExplanation": "The pattern ～(て)しょうがない (or 〜でしょうがない) indicates a condition or feeling so intense that one is almost 'overcome' by it. It’s often used with emotions (e.g. 退屈で(しょうがない), 嬉しくてしょうがない, 寒くてしょうがない).",
+    "formation": "い-Adjective(く) + てしょうがない / な-Adjective + で(は)しょうがない / Verb-て form + しょうがない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "今日は暇で(は)しょうがない。",
+        "romanization": "Kyō wa hima de shō ga nai.",
+        "translation": "I’m extremely bored today."
+      },
+      {
+        "sentence": "試験が近いから不安でしょうがない。",
+        "romanization": "Shiken ga chikai kara fuan deshō ga nai.",
+        "translation": "I’m so anxious because the exam is coming up."
+      },
+      {
+        "sentence": "頭が痛くてしょうがないから、早退したい。",
+        "romanization": "Atama ga itakute shō ga nai kara, sōtai shitai.",
+        "translation": "My head hurts so much I can’t stand it—I want to leave early."
+      },
+      {
+        "sentence": "新しいゲームが気になってしょうがない。",
+        "romanization": "Atarashii gēmu ga ki ni natte shō ga nai.",
+        "translation": "I can’t help but keep thinking about the new game."
+      }
+    ]
+  },
+  {
+    "id": "ja_でたまらない_83",
+    "language": "ja",
+    "pattern": "～でたまらない",
+    "title": "～でたまらない (〜de tamaranai)",
+    "shortExplanation": "Express extremely strong feelings or sensations; 'can't stand', 'unbearably'.",
+    "longExplanation": "The ～でたまらない grammar point is used to convey very strong emotion or sensation—so strong it’s almost unbearable. It’s common with expressions like 暑くてたまらない, うれしくてたまらない, etc.",
+    "formation": "い-Adjective (く) + てたまらない / な-Adjective + でたまらない / Verb-て form + たまらない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この暑さは本当に暑くてたまらない。",
+        "romanization": "Kono atsusa wa hontō ni atsukute tamaranai.",
+        "translation": "This heat is absolutely unbearable."
+      },
+      {
+        "sentence": "彼女のことが好きでたまらない。",
+        "romanization": "Kanojo no koto ga suki de tamaranai.",
+        "translation": "I like her so much I can hardly stand it."
+      },
+      {
+        "sentence": "この部屋は寒くてたまらない。",
+        "romanization": "Kono heya wa samukute tamaranai.",
+        "translation": "This room is unbearably cold."
+      },
+      {
+        "sentence": "彼の態度を見ていると、腹が立ってたまらない。",
+        "romanization": "Kare no taido o mite iru to, hara ga tatte tamaranai.",
+        "translation": "Seeing his attitude makes me extremely angry."
+      }
+    ]
+  },
+  {
+    "id": "ja_でならない_84",
+    "language": "ja",
+    "pattern": "～でならない",
+    "title": "～でならない (〜de naranai)",
+    "shortExplanation": "Indicates an uncontrollable emotion or feeling; 'can’t help but', 'overwhelmingly'.",
+    "longExplanation": "The ～でならない grammar pattern expresses a very strong, often involuntary feeling—e.g., '不思議でならない' (it’s so mysterious I can’t help thinking about it), '残念でならない' (I’m so disappointed), '心配でならない' (I’m extremely worried).",
+    "formation": "な-Adjective + でならない / い-Adjective (く) + てならない / Verb-て + ならない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼の演技が素晴らしくてならない。",
+        "romanization": "Kare no engi ga subarashikute naranai.",
+        "translation": "I can’t help but be amazed at his wonderful performance."
+      },
+      {
+        "sentence": "合格発表が気になってならない。",
+        "romanization": "Gōkaku happyō ga ki ni natte naranai.",
+        "translation": "I can’t stop worrying about the exam results."
+      },
+      {
+        "sentence": "友達が引っ越してしまって、寂しくてならない。",
+        "romanization": "Tomodachi ga hikkoshite shimatte, sabishikute naranai.",
+        "translation": "My friend moved away, and I feel unbearably lonely."
+      },
+      {
+        "sentence": "初めての海外旅行で、不安でならない。",
+        "romanization": "Hajimete no kaigai ryokō de, fuan de naranai.",
+        "translation": "It’s my first trip abroad, and I’m extremely anxious."
+      }
+    ]
+  },
+  {
+    "id": "ja_でばかりはいられない_85",
+    "language": "ja",
+    "pattern": "～でばかりはいられない",
+    "title": "～でばかりはいられない (〜de bakari wa irarenai)",
+    "shortExplanation": "Cannot afford to only do something; cannot always rely on it.",
+    "longExplanation": "The ～でばかりはいられない grammar point is used when one realizes they cannot keep doing only that one thing or cannot always rely on a certain situation. It implies the need to take other actions or responsibilities.",
+    "formation": "Verb-て form + ばかりはいられない / Noun + ばかりはいられない (with appropriate particles)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "いつも助けてもらってばかりはいられない。",
+        "romanization": "Itsumo tasukete moratte bakari wa irarenai.",
+        "translation": "I can’t just keep letting people help me all the time."
+      },
+      {
+        "sentence": "好きな仕事ばかりしてはいられない。",
+        "romanization": "Suki na shigoto bakari shite wa irarenai.",
+        "translation": "I can’t afford to only do the work I love."
+      },
+      {
+        "sentence": "親に頼ってばかりはいられない。",
+        "romanization": "Oya ni tayotte bakari wa irarenai.",
+        "translation": "I can’t keep depending on my parents forever."
+      },
+      {
+        "sentence": "休んでばかりはいられない。仕事もしなくちゃ。",
+        "romanization": "Yasunde bakari wa irarenai. Shigoto mo shinakucha.",
+        "translation": "I can’t just keep taking breaks; I have work to do as well."
+      }
+    ]
+  },
+  {
+    "id": "ja_ではないか_86",
+    "language": "ja",
+    "pattern": "～ではないか",
+    "title": "～ではないか (〜de wa nai ka)",
+    "shortExplanation": "Used to show a strong assertion or emphasis on one’s opinion; 'isn't it?', 'aren't you?', 'right?'.",
+    "longExplanation": "The ～ではないか grammar point is used at the end of a sentence to make a rhetorical question or a strong, emphatic statement. It often translates as 'isn't it…?' 'aren't you…?' or 'wouldn’t you say…?'.",
+    "formation": "Noun + ではないか / い-Adjective + ではないか / な-Adjective + ではないか / Verb-casual + ではないか",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は優秀な学生ではないか。",
+        "romanization": "Kare wa yūshū na gakusei de wa nai ka.",
+        "translation": "Isn’t he an excellent student?"
+      },
+      {
+        "sentence": "この料理は美味しいではないか。",
+        "romanization": "Kono ryōri wa oishii de wa nai ka.",
+        "translation": "Isn’t this dish delicious?"
+      },
+      {
+        "sentence": "あなたは彼女の友達ではないか。",
+        "romanization": "Anata wa kanojo no tomodachi de wa nai ka.",
+        "translation": "Aren’t you her friend?"
+      },
+      {
+        "sentence": "明日は休みではないか。",
+        "romanization": "Ashita wa yasumi de wa nai ka.",
+        "translation": "Tomorrow’s a day off, right?"
+      }
+    ]
+  },
+  {
+    "id": "ja_てはならない_87",
+    "language": "ja",
+    "pattern": "～てはならない",
+    "title": "～てはならない (〜te wa naranai)",
+    "shortExplanation": "Express prohibition; 'must not', 'cannot', 'should not'.",
+    "longExplanation": "The ～てはならない grammar point is used to express a strong prohibition. It is often more formal or strict and can be translated as 'must not', 'cannot', or 'should not.'",
+    "formation": "Verb-て form + はならない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "ここでタバコを吸ってはならない。",
+        "romanization": "Koko de tabako o sutte wa naranai.",
+        "translation": "You must not smoke here."
+      },
+      {
+        "sentence": "秘密を他人に話してはならない。",
+        "romanization": "Himitsu o tanin ni hanashite wa naranai.",
+        "translation": "You cannot reveal this secret to others."
+      },
+      {
+        "sentence": "この部屋に入ってはならない。",
+        "romanization": "Kono heya ni haitte wa naranai.",
+        "translation": "You must not enter this room."
+      },
+      {
+        "sentence": "飲酒運転をしてはならない。",
+        "romanization": "Inshu unten o shite wa naranai.",
+        "translation": "You must not drink and drive."
+      }
+    ]
+  }
+]

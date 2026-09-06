@@ -1,0 +1,239 @@
+[
+  {
+    "id": "zh_name某某某_535",
+    "language": "zh",
+    "pattern": "name 某/某某",
+    "title": "name 某/某某 (placeholder for a name)",
+    "shortExplanation": "placeholder for a name",
+    "longExplanation": "placeholder for a name. Pinyin: name mǒu/ mǒumǒu",
+    "formation": "name mǒu/ mǒumǒu",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "公司业务员李某/李某某闻之大喜。",
+        "romanization": "gōngsī yèwùyuán lǐ mǒu/ lǐ mǒumǒu wén zhī dàxǐ。",
+        "translation": "Company salesman Li (So-and-so) heard the big joy."
+      }
+    ]
+  },
+  {
+    "id": "zh_幸亏_536",
+    "language": "zh",
+    "pattern": "幸亏……",
+    "title": "幸亏…… (thankfully…)",
+    "shortExplanation": "thankfully…",
+    "longExplanation": "thankfully…. Pinyin: xìngkuī……",
+    "formation": "xìngkuī……",
+    "level": "HSK 5",
+    "examples": []
+  },
+  {
+    "id": "zh_行动_538",
+    "language": "zh",
+    "pattern": "行动",
+    "title": "行动 (activity, action)",
+    "shortExplanation": "activity, action",
+    "longExplanation": "activity, action. Pinyin: xíngdòng",
+    "formation": "xíngdòng",
+    "level": "HSK 5",
+    "examples": []
+  },
+  {
+    "id": "zh_行动_540",
+    "language": "zh",
+    "pattern": "行动",
+    "title": "行动 (move around)",
+    "shortExplanation": "move around",
+    "longExplanation": "move around. Pinyin: xíngdòng",
+    "formation": "xíngdòng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他运动时受伤了，行动不便。",
+        "romanization": "tā yùndòng shí shòushāng le， xíngdòngbùbiàn。",
+        "translation": "When he was doing sports he injured his feet, so it’s hard for him to move around."
+      }
+    ]
+  },
+  {
+    "id": "zh_行动_541",
+    "language": "zh",
+    "pattern": "行动",
+    "title": "行动 (act)",
+    "shortExplanation": "act",
+    "longExplanation": "act. Pinyin: xíngdòng",
+    "formation": "xíngdòng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "有些鸟类喜欢单独行动。",
+        "romanization": "yǒuxiē niǎolèi xǐhuan dāndú xíngdòng。",
+        "translation": "Some birds like to act alone."
+      }
+    ]
+  },
+  {
+    "id": "zh_义务_542",
+    "language": "zh",
+    "pattern": "义务",
+    "title": "义务 (obligation)",
+    "shortExplanation": "obligation",
+    "longExplanation": "obligation. Pinyin: yìwù",
+    "formation": "yìwù",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "建设家乡，人人有责，我们也要承担这个义务。",
+        "romanization": "jiànshè jiāxiāng， rénrényǒuzé， wǒmen yě yào chéngdān zhège yìwù。",
+        "translation": "Everyone has the responsibility of building his/her hometown, and we should also take up this obligation."
+      }
+    ]
+  },
+  {
+    "id": "zh_义务_543",
+    "language": "zh",
+    "pattern": "义务",
+    "title": "义务 (compulsory)",
+    "shortExplanation": "compulsory",
+    "longExplanation": "compulsory. Pinyin: yìwù",
+    "formation": "yìwù",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我们每个学期都要至少参加三次义务劳动。",
+        "romanization": "wǒmen měi gè xuéqī dōu yào zhìshǎo cānjiā sāncì yìwù láodòng。",
+        "translation": "We must participate in at least three compulsory labor per semester."
+      }
+    ]
+  },
+  {
+    "id": "zh_朝_544",
+    "language": "zh",
+    "pattern": "朝",
+    "title": "朝 (toward)",
+    "shortExplanation": "toward",
+    "longExplanation": "toward. Pinyin: cháo",
+    "formation": "cháo",
+    "level": "HSK 5",
+    "examples": []
+  },
+  {
+    "id": "zh_朝_546",
+    "language": "zh",
+    "pattern": "朝",
+    "title": "朝 (to face toward)",
+    "shortExplanation": "to face toward",
+    "longExplanation": "to face toward. Pinyin: cháo",
+    "formation": "cháo",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我们学校的正门坐西朝东。",
+        "romanization": "wǒmen xuéxiào de zhèngmén zuò xī cháo dōng。",
+        "translation": "The main entrance of our school is situated in the west and oriented toward the east."
+      }
+    ]
+  },
+  {
+    "id": "zh_简直_547",
+    "language": "zh",
+    "pattern": "简直",
+    "title": "简直 (practically, in essence)",
+    "shortExplanation": "practically, in essence",
+    "longExplanation": "practically, in essence. Pinyin: jiǎnzhí",
+    "formation": "jiǎnzhí",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "船长简直是疯了！",
+        "romanization": "chuánzhǎng jiǎnzhí shì fēng le！",
+        "translation": "The captain is practically mad!"
+      }
+    ]
+  },
+  {
+    "id": "zh_来_548",
+    "language": "zh",
+    "pattern": "来",
+    "title": "来 (over)",
+    "shortExplanation": "over",
+    "longExplanation": "over. Pinyin: lái",
+    "formation": "lái",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他几乎每天都能钓到5斤来重的大鱼。",
+        "romanization": "tā jīhū měitiān dōu néng diào dào5 jīn lái zhòng de dà yú。",
+        "translation": "He can catch over 5 pounds (weight) of fish almost every day."
+      }
+    ]
+  },
+  {
+    "id": "zh_一来是二来是_549",
+    "language": "zh",
+    "pattern": "一来(是)……二来(是)……",
+    "title": "一来(是)……二来(是)…… (First… secondly…)",
+    "shortExplanation": "First… secondly…",
+    "longExplanation": "First… secondly…. Pinyin: yīlái( shì)…… èrlái( shì)……",
+    "formation": "yīlái( shì)…… èrlái( shì)……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我到这里看看大家，一(来)是给大家送水果，二(来)是看看大家过节还有什么难处。",
+        "romanization": "wǒ dào zhèlǐ kànkan dàjiā， yī( lái) shì gěi dàjiā sòng shuǐguǒ， èr( lái) shì kànkan dàjiā guòjié háiyǒu shénme nánchu。",
+        "translation": "I am here to see everyone, one [reason] is to bring fruit to everyone, another [reason] is to see if anyone has any difficulties over the holidays."
+      }
+    ]
+  },
+  {
+    "id": "zh_至于_550",
+    "language": "zh",
+    "pattern": "至于",
+    "title": "至于 (as for)",
+    "shortExplanation": "as for",
+    "longExplanation": "as for. Pinyin: zhìyú",
+    "formation": "zhìyú",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我们决定明年结婚，至于具体时间还要再商量。",
+        "romanization": "wǒmen juédìng míngnián jiéhūn， zhìyú jùtǐ shíjiān hái yào zài shāngliang。",
+        "translation": "We decided to get married next year. As for the specific time, we’ll have to discuss later."
+      }
+    ]
+  },
+  {
+    "id": "zh_至于_551",
+    "language": "zh",
+    "pattern": "至于",
+    "title": "至于 (go so far as)",
+    "shortExplanation": "go so far as",
+    "longExplanation": "go so far as. Pinyin: zhìyú",
+    "formation": "zhìyú",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他不至于撒谎。",
+        "romanization": "tā bùzhìyú sāhuǎng。",
+        "translation": "He won’t go so far as to tell a lie."
+      }
+    ]
+  },
+  {
+    "id": "zh_总算_552",
+    "language": "zh",
+    "pattern": "总算",
+    "title": "总算 (finally)",
+    "shortExplanation": "finally",
+    "longExplanation": "finally. Pinyin: zǒngsuàn",
+    "formation": "zǒngsuàn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "经过沟通，大导演总算搞明白了。",
+        "romanization": "jīngguò gōutōng， dà dǎoyǎn zǒngsuàn gǎo míngbai le。",
+        "translation": "After communicating, the principal director has finally figured it out."
+      }
+    ]
+  }
+]

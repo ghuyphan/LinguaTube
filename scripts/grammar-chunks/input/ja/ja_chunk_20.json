@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_せいで_25",
+    "language": "ja",
+    "pattern": "～せいで",
+    "title": "～せいで (〜sei de)",
+    "shortExplanation": "Indicates that something or someone caused an unfortunate result.",
+    "longExplanation": "The ～せいで grammar point is used to express that something or someone is the reason or cause of an unfortunate result or situation. It can be translated as 'because of' or 'due to' in English.",
+    "formation": "Verb-casual + せいで, い-Adjective + せいで, な-Adjective + なせいで, Noun + のせいで",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "雨のせいで試合が中止になりました。",
+        "romanization": "Ame no sei de shiai ga chuushi ni narimashita.",
+        "translation": "The game was cancelled because of the rain."
+      },
+      {
+        "sentence": "彼の遅刻のせいで、みんな待たされました。",
+        "romanization": "Kare no chikoku no sei de, minna matasaremashita.",
+        "translation": "Everyone had to wait because of his lateness."
+      },
+      {
+        "sentence": "病気のせいで休日が台無しになった。",
+        "romanization": "Byouki no sei de kyuujitsu ga dainashi ni natta.",
+        "translation": "My holiday was ruined due to illness."
+      },
+      {
+        "sentence": "仕事が忙しくて寝不足なせいで、集中できない。",
+        "romanization": "Shigoto ga isogashikute nebusoku na sei de, shuuchuu dekinai.",
+        "translation": "I can't concentrate because I'm sleep-deprived due to busy work."
+      }
+    ]
+  },
+  {
+    "id": "ja_せてください_26",
+    "language": "ja",
+    "pattern": "～せてください",
+    "title": "～せてください (〜sete kudasai)",
+    "shortExplanation": "Requesting someone to allow or let you do something (causative request).",
+    "longExplanation": "The せてください grammar point is used to request permission or ask someone to allow you to do something. It is a polite way of making a request and can be translated as 'please let me...' or 'please allow me...' in English. It is formed by using the causative form of the verb (Verb-させる) in the て-form, plus ください (e.g. 帰らせる → 帰らせて → 帰らせてください).",
+    "formation": "Verb-causative (させ) + て + ください",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "もう一度説明させてください。",
+        "romanization": "Mou ichido setsumei sasete kudasai.",
+        "translation": "Please let me explain it once more."
+      },
+      {
+        "sentence": "帰らせてください。",
+        "romanization": "Kaerasete kudasai.",
+        "translation": "Please let me go home."
+      },
+      {
+        "sentence": "その本を見せてください。",
+        "romanization": "Sono hon o misete kudasai.",
+        "translation": "Please let me see that book."
+      },
+      {
+        "sentence": "ここで待たせてください。",
+        "romanization": "Koko de matasete kudasai.",
+        "translation": "Please let me wait here."
+      }
+    ]
+  },
+  {
+    "id": "ja_そのために_27",
+    "language": "ja",
+    "pattern": "～そのために",
+    "title": "～そのために (〜sono tame ni)",
+    "shortExplanation": "For the purpose of; because of; in order to.",
+    "longExplanation": "The ～そのために grammar point is used to convey the purpose or reason behind an action or situation. It can be translated as 'for that reason', 'for the purpose of', or 'in order to' in English. It connects two sentences, where the first sentence gives a goal or reason, and the second sentence shows the resulting action.",
+    "formation": "Sentence/phrase 1 + そのために + Sentence/phrase 2",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "試験に合格するために、毎日勉強しています。そのために、早く寝て早く起きるようにしています。",
+        "romanization": "Shiken ni goukaku suru tame ni, mainichi benkyou shiteimasu. Sono tame ni, hayaku nete hayaku okiru you ni shiteimasu.",
+        "translation": "I study every day to pass the exam. For that reason, I go to bed early and wake up early."
+      },
+      {
+        "sentence": "健康的な生活を送りたい。そのために、ジムに通って運動しています。",
+        "romanization": "Kenkouteki na seikatsu wo okuritai. Sono tame ni, jimu ni kayotte undou shiteimasu.",
+        "translation": "I want to lead a healthy lifestyle. For that reason, I go to the gym and exercise."
+      },
+      {
+        "sentence": "環境を守るために、リサイクルに取り組んでいます。そのために、ゴミを分別して捨てています。",
+        "romanization": "Kankyou wo mamoru tame ni, risaikuru ni torikundeimasu. Sono tame ni, gomi wo bunbetsu shite suteteimasu.",
+        "translation": "I'm working on recycling to protect the environment. Therefore, I separate and dispose of trash properly."
+      },
+      {
+        "sentence": "新しい仕事を見つけたい。そのために、履歴書を書いて応募しています。",
+        "romanization": "Atarashii shigoto wo mitsuketai. Sono tame ni, rirekisho wo kaite oubo shiteimasu.",
+        "translation": "I want to find a new job. So, I'm writing my resume and applying."
+      }
+    ]
+  },
+  {
+    "id": "ja_その結果_28",
+    "language": "ja",
+    "pattern": "～その結果",
+    "title": "～その結果 (〜sono kekka)",
+    "shortExplanation": "Shows the result or consequence of a previous action or situation; 'as a result', 'in consequence'.",
+    "longExplanation": "The ～その結果 grammar point is used to show the result, outcome, or consequence of a previous action or situation. It can be translated as 'as a result', 'in consequence', or 'therefore' in English. It is typically placed between two statements to link cause and effect.",
+    "formation": "Situation/ACTION 1 + その結果 + RESULT",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼女は毎日練習した。その結果、試合に勝った。",
+        "romanization": "Kanojo wa mainichi renshuu shita. Sono kekka, shiai ni katta.",
+        "translation": "She practiced every day. As a result, she won the match."
+      },
+      {
+        "sentence": "会社が倒産した。その結果、彼は仕事を失った。",
+        "romanization": "Kaisha ga tousan shita. Sono kekka, kare wa shigoto wo ushinatta.",
+        "translation": "The company went bankrupt. As a result, he lost his job."
+      },
+      {
+        "sentence": "私たちは遅刻した。その結果、電車に乗れなかった。",
+        "romanization": "Watashitachi wa chikoku shita. Sono kekka, densha ni norenakatta.",
+        "translation": "We were late. As a result, we couldn't catch the train."
+      },
+      {
+        "sentence": "彼は勉強を怠った。その結果、試験に落ちた。",
+        "romanization": "Kare wa benkyou wo okotatta. Sono kekka, shiken ni ochita.",
+        "translation": "He neglected his studies. As a result, he failed the exam."
+      }
+    ]
+  },
+  {
+    "id": "ja_それと_29",
+    "language": "ja",
+    "pattern": "～それと～",
+    "title": "～それと～ (〜sore to〜)",
+    "shortExplanation": "Used to link two or more items; 'and', 'also'.",
+    "longExplanation": "The ～それと～ grammar point is used to connect two or more items or actions, similar to how 'and' or 'also' is used in English. The expression それと can appear at the start of a new sentence or between items in a list to add another point.",
+    "formation": "Item1 + それと + Item2",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "買い物に行くつもりです。それと、郵便局にも行かなくては。",
+        "romanization": "Kaimono ni iku tsumori desu. Sore to, yuubinkyoku ni mo ikanakute wa.",
+        "translation": "I plan to go shopping, and I also have to go to the post office."
+      },
+      {
+        "sentence": "今日はタコスを作りました。それと、サラダも作りました。",
+        "romanization": "Kyou wa takosu wo tsukurimashita. Sore to, sarada mo tsukurimashita.",
+        "translation": "Today, I made tacos, and I also made a salad."
+      },
+      {
+        "sentence": "出かける前に、部屋を掃除してください。それと、ゴミを捨ててください。",
+        "romanization": "Dekakeru mae ni, heya wo souji shite kudasai. Sore to, gomi wo sutete kudasai.",
+        "translation": "Please clean the room before you go out, and also throw away the trash."
+      },
+      {
+        "sentence": "彼はフランス語が話せます。それと、スペイン語も話せます。",
+        "romanization": "Kare wa furansugo ga hanasemasu. Sore to, supeingo mo hanasemasu.",
+        "translation": "He can speak French, and he can also speak Spanish."
+      }
+    ]
+  },
+  {
+    "id": "ja_それとも_30",
+    "language": "ja",
+    "pattern": "～？それとも～？",
+    "title": "～？それとも～？ (～? sore tomo ～?)",
+    "shortExplanation": "Presents two alternatives or choices; 'or', 'either...or'.",
+    "longExplanation": "The ～？それとも～？ grammar point is used to present two alternatives or choices in a single sentence. It is similar to 'or' or 'either...or' in English. It can be used with verbs, adjectives, or nouns.",
+    "formation": "Verb-casual + ？それとも + Verb-casual + ？, etc.",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "コーヒーを飲む？それとも紅茶を飲む？",
+        "romanization": "Koohii o nomu? Sore tomo koucha o nomu?",
+        "translation": "Do you want to drink coffee? Or tea?"
+      },
+      {
+        "sentence": "この映画は面白い？それともつまらない？",
+        "romanization": "Kono eiga wa omoshiroi? Sore tomo tsumaranai?",
+        "translation": "Is this movie interesting? Or is it boring?"
+      },
+      {
+        "sentence": "彼は日本人だ？それとも外国人だ？",
+        "romanization": "Kare wa nihonjin da? Sore tomo gaikokujin da?",
+        "translation": "Is he Japanese? Or is he a foreigner?"
+      },
+      {
+        "sentence": "寿司を食べに行く？それともラーメンを食べに行く？",
+        "romanization": "Sushi o tabe ni iku? Sore tomo raamen o tabe ni iku?",
+        "translation": "Are we going to eat sushi? Or are we going to eat ramen?"
+      }
+    ]
+  },
+  {
+    "id": "ja_だけしか_31",
+    "language": "ja",
+    "pattern": "～だけしか",
+    "title": "～だけしか (～dake shika)",
+    "shortExplanation": "Emphasizes the scarcity or insufficiency of something; 'only', 'nothing but'.",
+    "longExplanation": "The ～だけしか grammar point is used to emphasize that there is nothing except what is mentioned, and it requires a negative verb. It can be translated as 'only' or 'nothing but' in English.",
+    "formation": "Noun/Quantity + だけ + しか + Negative Verb",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "今日は1時間だけしか勉強できなかった。",
+        "romanization": "Kyou wa ichijikan dake shika benkyou dekinakatta.",
+        "translation": "Today, I could study for only one hour."
+      },
+      {
+        "sentence": "彼はカレーだけしか食べない。",
+        "romanization": "Kare wa karee dake shika tabenai.",
+        "translation": "He eats only curry."
+      },
+      {
+        "sentence": "田中さんは5人だけしか招待しなかった。",
+        "romanization": "Tanaka-san wa gonin dake shika shoutai shinakatta.",
+        "translation": "Tanaka only invited five people."
+      },
+      {
+        "sentence": "あのレストランでは野菜だけしか売っていない。",
+        "romanization": "Ano resutoran de wa yasai dake shika utte inai.",
+        "translation": "That restaurant sells only vegetables."
+      }
+    ]
+  },
+  {
+    "id": "ja_だけど_32",
+    "language": "ja",
+    "pattern": "だけど",
+    "title": "だけど (dakedo)",
+    "shortExplanation": "Expresses a contrast or contradiction; 'but', 'however', 'even though'.",
+    "longExplanation": "The だけど grammar point is used to express a contrast or contradiction between two statements. In written or spoken Japanese, だけど is often placed at the start of a new sentence (after a period) to mean 'however'. Within a single sentence, speakers often just say けど without だ.",
+    "formation": "Sentence 1 + だけど + Sentence 2, or Sentence 1 + 。だけど、Sentence 2",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "試験に合格したけど、まだ勉強しなければならない。",
+        "romanization": "Shiken ni goukaku shita kedo, mada benkyou shinakereba naranai.",
+        "translation": "I passed the exam, but I still have to study."
+      },
+      {
+        "sentence": "この部屋は広いけど、家賃が高いです。",
+        "romanization": "Kono heya wa hiroi kedo, yachin ga takai desu.",
+        "translation": "This room is spacious, but the rent is high."
+      },
+      {
+        "sentence": "彼は優しいけど、時々厳しいです。",
+        "romanization": "Kare wa yasashii kedo, tokidoki kibishii desu.",
+        "translation": "He is kind, but sometimes strict."
+      },
+      {
+        "sentence": "朝ごはんは作りたいけど、時間がない。",
+        "romanization": "Asagohan wa tsukuritai kedo, jikan ga nai.",
+        "translation": "I want to make breakfast, but there's no time."
+      }
+    ]
+  },
+  {
+    "id": "ja_たて_33",
+    "language": "ja",
+    "pattern": "～たて",
+    "title": "～たて (～tate)",
+    "shortExplanation": "Indicates an action that has just been completed; 'freshly', 'just'.",
+    "longExplanation": "The ～たて grammar point is used to express that an action has just been completed, and the result or condition is still fresh or new. This is often used with verbs like 焼く (bake), 作る (make), or 洗う (wash).",
+    "formation": "Verb-stem + たて",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "このパンは焼きたてで、まだ温かいです。",
+        "romanization": "Kono pan wa yakitate de, mada atatakai desu.",
+        "translation": "This bread is freshly baked and still warm."
+      },
+      {
+        "sentence": "作りたてのお弁当が美味しい。",
+        "romanization": "Tsukuritate no obentou ga oishii.",
+        "translation": "A freshly made bento is delicious."
+      },
+      {
+        "sentence": "洗いたてのシャツはいい匂いがする。",
+        "romanization": "Araitate no shatsu wa ii nioi ga suru.",
+        "translation": "Freshly washed shirts smell nice."
+      },
+      {
+        "sentence": "彼女は切りたての野菜をサラダに入れました。",
+        "romanization": "Kanojo wa kiritate no yasai wo sarada ni iremashita.",
+        "translation": "She added freshly cut vegetables to the salad."
+      }
+    ]
+  },
+  {
+    "id": "ja_たとえても_34",
+    "language": "ja",
+    "pattern": "～たとえ～ても",
+    "title": "～たとえ～ても (〜tatoe〜temo)",
+    "shortExplanation": "Express a condition with 'even if'; 'no matter how'.",
+    "longExplanation": "The ～たとえ～ても grammar point is used to express a hypothetical or conditional situation where the outcome remains the same even if the condition is met. It can be translated as 'even if' or 'no matter how' in English.",
+    "formation": "たとえ + Verb-casual + ても, たとえ + い-Adjective + くても, たとえ + な-Adjective + であっても, たとえ + Noun + であっても",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "たとえ雨が降っても、出かけましょう。",
+        "romanization": "Tatoe ame ga futte mo, dekakemashou.",
+        "translation": "Even if it rains, let's go out."
+      },
+      {
+        "sentence": "たとえ彼が怒っても、本当のことを言いましょう。",
+        "romanization": "Tatoe kare ga okotte mo, hontou no koto wo iimashou.",
+        "translation": "Even if he gets angry, let's tell the truth."
+      },
+      {
+        "sentence": "たとえ寒くても、散歩に行きたい。",
+        "romanization": "Tatoe samukute mo, sanpo ni ikitai.",
+        "translation": "Even if it's cold, I want to go for a walk."
+      },
+      {
+        "sentence": "たとえ彼が有名であっても、彼には興味がありません。",
+        "romanization": "Tatoe kare ga yuumei de attemo, kare ni wa kyoumi ga arimasen.",
+        "translation": "Even if he's famous, I'm not interested in him."
+      }
+    ]
+  },
+  {
+    "id": "ja_たところ_35",
+    "language": "ja",
+    "pattern": "～たところ",
+    "title": "～たところ (〜ta tokoro)",
+    "shortExplanation": "Expresses the result or outcome of an action; 'after', 'just when', 'upon'.",
+    "longExplanation": "The ～たところ grammar point is used to indicate the result or outcome right after performing an action. It can be translated as 'after', 'just when', or 'upon' in English. It is formed by attaching ところ to the past tense (た-form) of verbs.",
+    "formation": "Verb-た form + ところ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "宿題をしたところ、先生からもう一つ課題が出された。",
+        "romanization": "Shukudai wo shita tokoro, sensei kara mou hitotsu kadai ga dasareta.",
+        "translation": "Just when I finished my homework, the teacher gave us another assignment."
+      },
+      {
+        "sentence": "友達に会ったところ、彼が海外に行くと言った。",
+        "romanization": "Tomodachi ni atta tokoro, kare ga kaigai ni iku to itta.",
+        "translation": "Upon meeting my friend, he told me he's going abroad."
+      },
+      {
+        "sentence": "食事を食べ終わったところ、電話がかかってきた。",
+        "romanization": "Shokuji wo tabeowatta tokoro, denwa ga kakatte kita.",
+        "translation": "Just when I finished eating, I got a phone call."
+      },
+      {
+        "sentence": "机を整理したところ、忘れていたメモが見つかった。",
+        "romanization": "Tsukue wo seiri shita tokoro, wasureteita memo ga mitsukatta.",
+        "translation": "After organizing my desk, I found a memo I had forgotten about."
+      }
+    ]
+  },
+  {
+    "id": "ja_たとたん_36",
+    "language": "ja",
+    "pattern": "～たとたん",
+    "title": "～たとたん (〜ta totan)",
+    "shortExplanation": "Express the moment something happens; 'as soon as', 'the moment', 'the instant'.",
+    "longExplanation": "The ～たとたん grammar point is used to express that something occurs immediately at the exact moment another action is completed. It can be translated as 'as soon as', 'the moment', or 'the instant' in English. It is attached to the past tense (た-form) of a verb.",
+    "formation": "Verb-た form + とたん",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "ドアを開けたとたん、猫が逃げ出した。",
+        "romanization": "Doa wo aketa totan, neko ga nigedashita.",
+        "translation": "As soon as I opened the door, the cat ran away."
+      },
+      {
+        "sentence": "電話をかけたとたん、電池が切れた。",
+        "romanization": "Denwa wo kaketa totan, denchi ga kireta.",
+        "translation": "The moment I made the phone call, the battery died."
+      },
+      {
+        "sentence": "雨が降り始めたとたん、みんなが傘をさした。",
+        "romanization": "Ame ga furihajimeta totan, minna ga kasa wo sashita.",
+        "translation": "The instant it started raining, everyone put up their umbrellas."
+      },
+      {
+        "sentence": "彼に会ったとたん、彼の笑顔が消えた。",
+        "romanization": "Kare ni atta totan, kare no egao ga kieta.",
+        "translation": "As soon as he met me, his smile disappeared."
+      }
+    ]
+  },
+  {
+    "id": "ja_たびに_37",
+    "language": "ja",
+    "pattern": "～たびに",
+    "title": "～たびに (〜tabi ni)",
+    "shortExplanation": "Express 'every time' or 'whenever'.",
+    "longExplanation": "The ～たびに grammar point is used to express that an action or event occurs every time or whenever something else happens. It can be translated as 'every time', 'whenever', or 'each time' in English. Typically, you attach たびに to a verb in its dictionary form, or to a noun plus の.",
+    "formation": "Verb-dictionary form + たびに, Noun + のたびに",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼女に会うたびに、心が弾む。",
+        "romanization": "Kanojo ni au tabi ni, kokoro ga hazumu.",
+        "translation": "Every time I meet her, my heart leaps."
+      },
+      {
+        "sentence": "雨が降るたびに、懐かしい思い出がよみがえる。",
+        "romanization": "Ame ga furu tabi ni, natsukashii omoide ga yomigaeru.",
+        "translation": "Whenever it rains, nostalgic memories come back."
+      },
+      {
+        "sentence": "この歌を聴くたびに、幸せな気分になる。",
+        "romanization": "Kono uta wo kiku tabi ni, shiawase na kibun ni naru.",
+        "translation": "Every time I listen to this song, I feel happy."
+      },
+      {
+        "sentence": "家に帰るたびに、猫が出迎えてくれる。",
+        "romanization": "Ie ni kaeru tabi ni, neko ga demukaete kureru.",
+        "translation": "Every time I return home, the cat greets me."
+      }
+    ]
+  },
+  {
+    "id": "ja_だものだ_38",
+    "language": "ja",
+    "pattern": "～だものだ",
+    "title": "～だものだ (〜da mono da)",
+    "shortExplanation": "Express the reason or cause, often used to justify something.",
+    "longExplanation": "The ～だものだ grammar point is used to explain a reason or cause in a subjective, explanatory tone (e.g. 'because... after all'). Often, you'll see it used as ～だものだから ('because... after all').",
+    "formation": "Verb-casual + んだものだ, い-Adjective + んだものだ, な-Adjective + なんだものだ, Noun + なんだものだ (often with から as んだものだから)",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "疲れたんだものだから、休みたい。",
+        "romanization": "Tsukareta n da mono da kara, yasumitai.",
+        "translation": "I want to rest because I'm tired."
+      },
+      {
+        "sentence": "お腹が空いたんだものだから、何か食べたい。",
+        "romanization": "Onaka ga suita n da mono da kara, nanika tabetai.",
+        "translation": "I want to eat something because I'm hungry."
+      },
+      {
+        "sentence": "忙しいんだものだから、来られない。",
+        "romanization": "Isogashii n da mono da kara, korarenai.",
+        "translation": "I can't come because I'm busy."
+      },
+      {
+        "sentence": "彼は親切なんだものだから、誰も彼が好きだ。",
+        "romanization": "Kare wa shinsetsu na n da mono da kara, dare mo kare ga suki da.",
+        "translation": "Everyone likes him because he is kind."
+      }
+    ]
+  },
+  {
+    "id": "ja_ちゃった_39",
+    "language": "ja",
+    "pattern": "～ちゃった",
+    "title": "～ちゃった (〜chatta)",
+    "shortExplanation": "Express an unintentional action or a regretful action; 'ended up doing', 'did accidentally'.",
+    "longExplanation": "The ～ちゃった grammar point is the informal, colloquial version of ～てしまった. It expresses unintentional or regretful actions and can be translated as 'ended up doing' or 'did accidentally'.",
+    "formation": "Verb-て/で form → ちゃった/じゃった (e.g. 食べてしまった → 食べちゃった)",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "忘れ物をしちゃった。",
+        "romanization": "Wasuremono o shichatta.",
+        "translation": "I accidentally left something behind."
+      },
+      {
+        "sentence": "寝坊して遅刻しちゃった。",
+        "romanization": "Nebou shite chikoku shichatta.",
+        "translation": "I overslept and ended up being late."
+      },
+      {
+        "sentence": "ケーキを全部食べちゃった。",
+        "romanization": "Keeki o zenbu tabechatta.",
+        "translation": "I ended up eating the whole cake."
+      },
+      {
+        "sentence": "言わないつもりだったけど、言っちゃった。",
+        "romanization": "Iwanai tsumori datta kedo, icchatta.",
+        "translation": "I wasn't planning to say it, but I ended up saying it."
+      }
+    ]
+  }
+]

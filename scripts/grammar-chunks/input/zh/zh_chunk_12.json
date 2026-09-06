@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_1_168",
+    "language": "zh",
+    "pattern": "# #+1",
+    "title": "# #+1 (# or #+1)",
+    "shortExplanation": "# or #+1",
+    "longExplanation": "# or #+1. Pinyin: # #+1",
+    "formation": "# #+1",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我每天学习一两个小时汉语。",
+        "romanization": "wǒ měitiān xuéxí yī liǎng gè xiǎoshí Hànyǔ。",
+        "translation": "I study Chinese for one or two hours a day."
+      }
+    ]
+  },
+  {
+    "id": "zh_把了_169",
+    "language": "zh",
+    "pattern": "把 + Ｏ + Ｖ + 了",
+    "title": "把 + Ｏ + Ｖ + 了 (V’ed the O)",
+    "shortExplanation": "V’ed the O",
+    "longExplanation": "V’ed the O. Pinyin: bǎ + Ｏ + Ｖ + le",
+    "formation": "bǎ + Ｏ + Ｖ + le",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我把钱包忘了。",
+        "romanization": "wǒ bǎ qiánbāo wàng le。",
+        "translation": "I forgot my/the wallet."
+      }
+    ]
+  },
+  {
+    "id": "zh_不要别没把了_170",
+    "language": "zh",
+    "pattern": "不要/别/没把 + Ｏ + Ｖ + 了",
+    "title": "不要/别/没把 + Ｏ + Ｖ + 了 (don’t/don’t/haven’t V’ed the O)",
+    "shortExplanation": "don’t/don’t/haven’t V’ed the O",
+    "longExplanation": "don’t/don’t/haven’t V’ed the O. Pinyin: bùyào/ bié/ méi bǎ + Ｏ + Ｖ + le",
+    "formation": "bùyào/ bié/ méi bǎ + Ｏ + Ｖ + le",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "别把手机忘了。",
+        "romanization": "bié bǎshǒu jī wàng le。",
+        "translation": "Don't forget your/the phone."
+      }
+    ]
+  },
+  {
+    "id": "zh_左右_171",
+    "language": "zh",
+    "pattern": "# 左右",
+    "title": "# 左右 (approximately #)",
+    "shortExplanation": "approximately #",
+    "longExplanation": "approximately #. Pinyin: # zuǒyòu",
+    "formation": "# zuǒyòu",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "周末我一般十点左右起床。",
+        "romanization": "zhōumò wǒ yībān shí diǎn zuǒyòu qǐchuáng。",
+        "translation": "I usually get up at around 10 o'clock on weekends."
+      }
+    ]
+  },
+  {
+    "id": "zh_就VA_172",
+    "language": "zh",
+    "pattern": "就 V/A",
+    "title": "就 V/A (just (better than expected))",
+    "shortExplanation": "just (better than expected)",
+    "longExplanation": "just (better than expected). Pinyin: jiù V/A",
+    "formation": "jiù V/A",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "坐飞机一个小时就到了。",
+        "romanization": "zuòfēijī yī gè xiǎoshí jiù dàoliǎo。",
+        "translation": "It takes only an hour to get there by plane."
+      }
+    ]
+  },
+  {
+    "id": "zh_才VA_173",
+    "language": "zh",
+    "pattern": "才 V/A",
+    "title": "才 V/A (just (worse than expected))",
+    "shortExplanation": "just (worse than expected)",
+    "longExplanation": "just (worse than expected). Pinyin: cái V/A",
+    "formation": "cái V/A",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "你怎么才来？",
+        "romanization": "nǐ zěnme cái lái？",
+        "translation": "How come you only came just now? (Why are you so late?)"
+      }
+    ]
+  },
+  {
+    "id": "zh_把OV在到PLACE_174",
+    "language": "zh",
+    "pattern": "把 + O + V + 在/到 +  PLACE",
+    "title": "把 + O + V + 在/到 +  PLACE (V’d the O to PLACE)",
+    "shortExplanation": "V’d the O to PLACE",
+    "longExplanation": "V’d the O to PLACE. Pinyin: bǎ + O + V + zài/ dào + PLACE",
+    "formation": "bǎ + O + V + zài/ dào + PLACE",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我把照片放在你包里了。",
+        "romanization": "wǒ bǎ zhàopiàn fàng zài nǐ bāo lǐ le。",
+        "translation": "I put the photo in your bag."
+      }
+    ]
+  },
+  {
+    "id": "zh_VmotionV来去_175",
+    "language": "zh",
+    "pattern": "V + motion V + 来/去",
+    "title": "V + motion V + 来/去 ((compound complements of direction))",
+    "shortExplanation": "(compound complements of direction)",
+    "longExplanation": "(compound complements of direction). Pinyin: V + motion V + lái/ qù",
+    "formation": "V + motion V + lái/ qù",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "明天我们一起把礼物送过去。",
+        "romanization": "míngtiān wǒmen yīqǐ bǎ lǐwù sòng guòqu。",
+        "translation": "Let's send the gift over together tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "zh_一边V1一边V2_176",
+    "language": "zh",
+    "pattern": "一边 + V1 + 一边 + V2",
+    "title": "一边 + V1 + 一边 + V2 (V1 while V2)",
+    "shortExplanation": "V1 while V2",
+    "longExplanation": "V1 while V2. Pinyin: yībiān + V1 + yībiān + V2",
+    "formation": "yībiān + V1 + yībiān + V2",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "他一边唱歌一边跳舞。",
+        "romanization": "tā yībiān chànggē yībiān tiàowǔ。",
+        "translation": "He sang while he danced."
+      }
+    ]
+  },
+  {
+    "id": "zh_把OVresult_177",
+    "language": "zh",
+    "pattern": "把 + O + V + result",
+    "title": "把 + O + V + result (V the O until RESULT)",
+    "shortExplanation": "V the O until RESULT",
+    "longExplanation": "V the O until RESULT. Pinyin: bǎ + O + V + result",
+    "formation": "bǎ + O + V + result",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我把衣服洗干净了。",
+        "romanization": "wǒ bǎ yīfu xǐ gānjìng le。",
+        "translation": "I washed my clothes clean."
+      }
+    ]
+  },
+  {
+    "id": "zh_把OVdirection_178",
+    "language": "zh",
+    "pattern": "把 + O + V + direction",
+    "title": "把 + O + V + direction (V the O to DIRECTION)",
+    "shortExplanation": "V the O to DIRECTION",
+    "longExplanation": "V the O to DIRECTION. Pinyin: bǎ + O + V + direction",
+    "formation": "bǎ + O + V + direction",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "他把水果拿过来了。",
+        "romanization": "tā bǎ shuǐguǒ ná guòlái le。",
+        "translation": "He took the fruit over."
+      }
+    ]
+  },
+  {
+    "id": "zh_先再又然后_179",
+    "language": "zh",
+    "pattern": "先……再/又……然后……",
+    "title": "先……再/又……然后…… (First, then, then, …)",
+    "shortExplanation": "First, then, then, …",
+    "longExplanation": "First, then, then, …. Pinyin: xiān…… zài/ yòu…… ránhòu……",
+    "formation": "xiān…… zài/ yòu…… ránhòu……",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "我先坐了公共汽车，又坐了地铁，然后才到小刚家。",
+        "romanization": "wǒ xiān zuò le gōnggòngqìchē， yòu zuò le dìtiě， ránhòu cái dào xiǎo gāng jiā。",
+        "translation": "I first took the bus, then took the subway, and then went to Xiaogang's house."
+      }
+    ]
+  },
+  {
+    "id": "zh_除了N以外_180",
+    "language": "zh",
+    "pattern": "除了 N 以外",
+    "title": "除了 N 以外 (except N)",
+    "shortExplanation": "except N",
+    "longExplanation": "except N. Pinyin: chúle N yǐwài",
+    "formation": "chúle N yǐwài",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "除了这个汉字以外，别的我都认识。",
+        "romanization": "chúle zhège hànzì yǐwài， biéde wǒ dōu rènshi。",
+        "translation": "Except for this Chinese character, I know everything else."
+      }
+    ]
+  },
+  {
+    "id": "zh_除了以外还_181",
+    "language": "zh",
+    "pattern": "除了……(以外)，还……",
+    "title": "除了……(以外)，还…… (not only…, but also…)",
+    "shortExplanation": "not only…, but also…",
+    "longExplanation": "not only…, but also…. Pinyin: chúle……( yǐwài)， hái……",
+    "formation": "chúle……( yǐwài)， hái……",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "上网除了看新闻(以外)，还可以听音乐。",
+        "romanization": "shàngwǎng chúle kàn xīnwén( yǐwài)， hái kěyǐ tīng yīnyuè。",
+        "translation": "In addition to watching the news, you can listen to music too."
+      }
+    ]
+  },
+  {
+    "id": "zh_什么_182",
+    "language": "zh",
+    "pattern": "什么",
+    "title": "什么 (any)",
+    "shortExplanation": "any",
+    "longExplanation": "any. Pinyin: shénme",
+    "formation": "shénme",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "周末你有什么打算吗?",
+        "romanization": "zhōumò nǐ yǒu shénme dǎsuàn ma?",
+        "translation": "Do you have any plans for the weekend?"
+      }
+    ]
+  }
+]

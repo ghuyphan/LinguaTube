@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Noun_17",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun からある (〜kara aru)",
+    "shortExplanation": "Used with large numbers or measurements to emphasize 'at least that many' or 'no less than.'",
+    "longExplanation": "「Noun + Counter + からある」indicates a large or minimum number, emphasizing that the quantity is at least that high (often more). It conveys the idea that the figure is notably large or impressive.",
+    "formation": "Number + Counter + からある",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼のコレクションは500個からある。",
+        "romanization": "Kare no korekushon wa gohyaku ko kara aru.",
+        "translation": "He has at least 500 items in his collection."
+      },
+      {
+        "sentence": "このビルは40階からある。",
+        "romanization": "Kono biru wa yonjuu kai kara aru.",
+        "translation": "This building has at least 40 floors."
+      },
+      {
+        "sentence": "彼の財産は10億円からある。",
+        "romanization": "Kare no zaisan wa juu oku en kara aru.",
+        "translation": "He has assets worth at least one billion yen."
+      },
+      {
+        "sentence": "このマラソンは10kmからある。",
+        "romanization": "Kono marason wa juu kiro kara aru.",
+        "translation": "This marathon is at least 10 kilometers long."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_18",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun からする (Noun kara suru)",
+    "shortExplanation": "Used to indicate that something is judged, estimated, or considered from a certain point or aspect.",
+    "longExplanation": "「Noun + からする」expresses a judgment or estimation based on a particular perspective or aspect. It translates to 'judging from', 'based on', or 'from the viewpoint of' in English, allowing the speaker to form an opinion or conclusion from that point.",
+    "formation": "Noun + からする",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の態度からすると、彼はその計画に反対しているようだ。",
+        "romanization": "Kare no taido kara suru to, kare wa sono keikaku ni hantai shiteiru you da.",
+        "translation": "Judging from his attitude, he seems to be against the plan."
+      },
+      {
+        "sentence": "このレストランの雰囲気からすると、料理もすばらしいはずだ。",
+        "romanization": "Kono resutoran no fun'iki kara suru to, ryouri mo subarashii hazu da.",
+        "translation": "Judging from the atmosphere of this restaurant, the food must be wonderful."
+      },
+      {
+        "sentence": "彼女の成績からすると、彼女は非常に勉強熱心な人でしょう。",
+        "romanization": "Kanojo no seiseki kara suru to, kanojo wa hijou ni benkyou nesshin na hito deshou.",
+        "translation": "Judging from her grades, she must be a very diligent student."
+      },
+      {
+        "sentence": "その会社の成長率からすると、将来的には大きな利益を得られるでしょう。",
+        "romanization": "Sono kaisha no seicho-ritsu kara suru to, shouraiteki ni wa ooki na rieki o erareru deshou.",
+        "translation": "From the company's growth rate, it seems likely to gain substantial profits in the future."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_19",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun からの (~kara no)",
+    "shortExplanation": "Defines the starting point or the origin; 'from'.",
+    "longExplanation": "「Noun + からの」indicates the place, source, or origin of something. It simply means 'from (Noun)'.",
+    "formation": "Noun + からの",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "日本からの手紙を受け取りました。",
+        "romanization": "Nihon kara no tegami wo uketorimashita.",
+        "translation": "I received a letter from Japan."
+      },
+      {
+        "sentence": "彼は東京からの旅行者です。",
+        "romanization": "Kare wa Tokyo kara no ryokousha desu.",
+        "translation": "He is a traveler from Tokyo."
+      },
+      {
+        "sentence": "昨日、母からの電話がありました。",
+        "romanization": "Kinou, haha kara no denwa ga arimashita.",
+        "translation": "Yesterday, I got a call from my mother."
+      },
+      {
+        "sentence": "彼女は大学からの友人です。",
+        "romanization": "Kanojo wa daigaku kara no yuujin desu.",
+        "translation": "She is a friend from college."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_20",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun から言わせれば (~kara iwasereba)",
+    "shortExplanation": "Express the perspective of the noun; 'from ~'s point of view.'",
+    "longExplanation": "「Noun + から言わせれば」is used to express an opinion or perspective from that noun's point of view. It can translate as 'from ~'s perspective' or 'if ~ had a say...'.",
+    "formation": "Noun + から言わせれば",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "先生から言わせれば、毎日勉強するべきだ。",
+        "romanization": "Sensei kara iwasereba, mainichi benkyou suru beki da.",
+        "translation": "From the teacher's point of view, you should study every day."
+      },
+      {
+        "sentence": "子供たちから言わせれば、もっと遊ぶ時間がほしい。",
+        "romanization": "Kodomo-tachi kara iwasereba, motto asobu jikan ga hoshii.",
+        "translation": "From the children's perspective, they want more time to play."
+      },
+      {
+        "sentence": "僕から言わせれば、そのプランは実行可能だ。",
+        "romanization": "Boku kara iwasereba, sono puran wa jikkou kanou da.",
+        "translation": "From my point of view, that plan is feasible."
+      },
+      {
+        "sentence": "犬から言わせれば、もっと散歩したいはずだ。",
+        "romanization": "Inu kara iwasereba, motto sanpo shitai hazu da.",
+        "translation": "If the dog could talk, it would probably want more walks."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_21",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + ぐるみ (〜gurumi)",
+    "shortExplanation": "Describes 'entirely', 'all together', or 'as a whole group'.",
+    "longExplanation": "「Noun + ぐるみ」emphasizes that an action or state involves the entire group or everything related to that noun. It can mean 'altogether', 'as a whole', or 'with everyone/everything included.'",
+    "formation": "Noun + ぐるみ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "家族ぐるみで旅行に行きました。",
+        "romanization": "Kazoku gurumi de ryokou ni ikimashita.",
+        "translation": "We went on a trip with the whole family."
+      },
+      {
+        "sentence": "クラスぐるみで遠足に行きました。",
+        "romanization": "Kurasu gurumi de ensoku ni ikimashita.",
+        "translation": "The entire class went on an excursion."
+      },
+      {
+        "sentence": "この国は国民ぐるみでその法案を支持しています。",
+        "romanization": "Kono kuni wa kokumin gurumi de sono houan wo shiji shiteimasu.",
+        "translation": "The entire population of the country supports that bill."
+      },
+      {
+        "sentence": "彼は友人ぐるみでそのクラブに参加した。",
+        "romanization": "Kare wa yuujin gurumi de sono kurabu ni sanka shita.",
+        "translation": "He joined the club along with all of his friends."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_22",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun こそあれ (~koso are)",
+    "shortExplanation": "Expresses 'though there is ... (some negative or burdensome aspect), still ...'.",
+    "longExplanation": "「Noun こそあれ」is a somewhat formal expression meaning 'Though there is X, (still) Y'. It acknowledges one (often negative) aspect while asserting that it does not prevent or change another fact or outcome.",
+    "formation": "Noun + こそあれ + (result/continuation)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "問題こそあれ、プロジェクトは順調に進んでいます。",
+        "romanization": "Mondai koso are, purojekuto wa junchou ni susunde imasu.",
+        "translation": "Though there are problems, the project is progressing smoothly."
+      },
+      {
+        "sentence": "多少のリスクこそあれ、挑戦する価値はある。",
+        "romanization": "Tashou no risuku koso are, chousen suru kachi wa aru.",
+        "translation": "Though there is some risk, it's worth taking on the challenge."
+      },
+      {
+        "sentence": "欠点こそあれ、彼の提案は興味深い。",
+        "romanization": "Ketten koso are, kare no teian wa kyoumibukai.",
+        "translation": "Though it has flaws, his proposal is intriguing."
+      },
+      {
+        "sentence": "不安こそあれ、今が行動するときだ。",
+        "romanization": "Fuan koso are, ima ga koudou suru toki da.",
+        "translation": "Though there is anxiety, now is the time to act."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_23",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun こそ～が (~koso~ga)",
+    "shortExplanation": "Emphasizes that 'it is precisely Noun that ...', then adds a contrasting or additional point.",
+    "longExplanation": "「Noun こそ～が」highlights the importance or uniqueness of the noun. It often translates as 'Yes, Noun is indeed ... , but ...'. The 'が' introduces a second, sometimes contrasting statement.",
+    "formation": "Noun + こそ + (statement) + が + (contrasting/additional statement)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "お金こそ必要だが、それだけが人生のすべてではない。",
+        "romanization": "Okane koso hitsuyou da ga, sore dake ga jinsei no subete de wa nai.",
+        "translation": "Money is indeed necessary, but it isn't everything in life."
+      },
+      {
+        "sentence": "努力こそ大事だが、結果も見逃せない。",
+        "romanization": "Doryoku koso daiji da ga, kekka mo minogasenai.",
+        "translation": "Effort is certainly crucial, but results also matter."
+      },
+      {
+        "sentence": "健康こそ宝だが、ときには仕事を優先せざるを得ない。",
+        "romanization": "Kenkou koso takara da ga, toki ni wa shigoto o yuusen sezaru wo enai.",
+        "translation": "Health is indeed a treasure, but sometimes you have to prioritize work."
+      },
+      {
+        "sentence": "愛こそ力だが、表現するのは難しい。",
+        "romanization": "Ai koso chikara da ga, hyougen suru no wa muzukashii.",
+        "translation": "Love is certainly a powerful force, but it's difficult to express."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_24",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun こそすれ (~koso sure)",
+    "shortExplanation": "An emphatic pattern meaning 'it may be X, but definitely not Y.' Often pairs with a negative statement.",
+    "longExplanation": "「Noun/Verb-ます形 + こそすれ」emphasizes that while one aspect (X) might exist or be true, another aspect (Y) absolutely does not. It's frequently used with negative expressions (e.g., 〜ない、〜できない) to strongly deny the second possibility.",
+    "formation": "Noun + こそすれ + (negative or contrasting statement)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "感謝こそすれ、非難などできません。",
+        "romanization": "Kansha koso sure, hinan nado dekimasen.",
+        "translation": "I might feel grateful, but I could never criticize."
+      },
+      {
+        "sentence": "忙しさこそすれ、退屈することはありません。",
+        "romanization": "Isogashisa koso sure, taikutsu suru koto wa arimasen.",
+        "translation": "I may be busy, but I'm never bored."
+      },
+      {
+        "sentence": "後悔こそすれ、忘れることはできない。",
+        "romanization": "Koukai koso sure, wasureru koto wa dekinai.",
+        "translation": "I might regret it, but I can't forget it."
+      },
+      {
+        "sentence": "疑問こそすれ、賛成はできない。",
+        "romanization": "Gimon koso sure, sansei wa dekinai.",
+        "translation": "I may have doubts, but I cannot agree."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_25",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ごとき / Noun ごとく (〜gotoki/〜gotoku)",
+    "shortExplanation": "Means 'like a...', 'as if...', expressing a simile or metaphor.",
+    "longExplanation": "「〜ごとき／〜ごとく」conveys similarity, as if comparing one thing to another. ごとき often modifies nouns, while ごとく can modify verbs or adjectives as well. It's more formal and literary in tone than simple expressions like みたい or よう.",
+    "formation": "Noun + ごとき, Noun + ごとく, Verb-casual + ごとく, い-Adjective + ごとく",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は天使のごとく純粋だ。",
+        "romanization": "Kare wa tenshi no gotoku junsui da.",
+        "translation": "He is as pure as an angel."
+      },
+      {
+        "sentence": "悪魔のごとき行為をするな。",
+        "romanization": "Akuma no gotoki koui o suru na.",
+        "translation": "Don't engage in acts like those of a devil."
+      },
+      {
+        "sentence": "彼女は雪のごとく白い肌をしている。",
+        "romanization": "Kanojo wa yuki no gotoku shiroi hada o shiteiru.",
+        "translation": "She has skin as white as snow."
+      },
+      {
+        "sentence": "彼は風のごとく去った。",
+        "romanization": "Kare wa kaze no gotoku satta.",
+        "translation": "He left like the wind."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_26",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun じゃあるまいし (~ja aru mai shi)",
+    "shortExplanation": "Expressing that something 'is not'; 'it's not like...'. Colloquial/masculine form of ではあるまいし.",
+    "longExplanation": "The phrase 「Noun (or Na-Adjective) + じゃあるまいし」 is a somewhat casual, sometimes masculine-sounding expression meaning 'it's not like...', 'it's not as if...', or 'there's no need to...' in certain contexts. It dismisses the idea that the noun or adjective is the reason or cause for something.",
+    "formation": "Noun or Na-Adjective + じゃあるまいし",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は子供じゃあるまいし、その問題をしっかりと解決するべきだ。",
+        "romanization": "Kare wa kodomo ja aru mai shi, sono mondai o shikkari to kaiketsu suru beki da.",
+        "translation": "He’s not a child, so he should solve that problem properly."
+      },
+      {
+        "sentence": "急ぐ必要はない、時間じゃあるまいし。",
+        "romanization": "Isogu hitsuyou wa nai, jikan ja aru mai shi.",
+        "translation": "We don’t need to hurry; it’s not like we’re short of time."
+      },
+      {
+        "sentence": "監督じゃあるまいし、試合の結果について心配するな。",
+        "romanization": "Kantoku ja aru mai shi, shiai no kekka ni tsuite shinpai suru na.",
+        "translation": "You’re not the coach, so don’t worry about the game results."
+      },
+      {
+        "sentence": "飴じゃあるまいし、そのまま飲み込んでも大丈夫だよ。",
+        "romanization": "Ame ja aru mai shi, sono mama nomikonde mo daijoubu da yo.",
+        "translation": "It’s not candy, so it’s okay to just swallow it."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_27",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ずくめ (~zukume)",
+    "shortExplanation": "Denotes 'entirely' or 'nothing but' the preceding noun.",
+    "longExplanation": "「Noun + ずくめ」expresses that something consists entirely of that noun or is 'nothing but' that noun. It describes a situation with a predominance of one thing.",
+    "formation": "Noun + ずくめ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は最近、失敗ずくめだ。",
+        "romanization": "Kare wa saikin, shippai zukume da.",
+        "translation": "He has had nothing but failures recently."
+      },
+      {
+        "sentence": "この冬は雪ずくめで大変だ。",
+        "romanization": "Kono fuyu wa yuki zukume de taihen da.",
+        "translation": "This winter has been nothing but snow, which is tough."
+      },
+      {
+        "sentence": "彼の話は嘘ずくめだった。",
+        "romanization": "Kare no hanashi wa uso zukume datta.",
+        "translation": "His story was full of nothing but lies."
+      },
+      {
+        "sentence": "今日の仕事は忙しさずくめだった。",
+        "romanization": "Kyou no shigoto wa isogashisa zukume datta.",
+        "translation": "Today's work was nothing but constant busyness."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_28",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun だけではすまない (Noun dake dewa sumanai)",
+    "shortExplanation": "Expresses 'it can't be settled with just...', 'cannot be resolved merely by...'.",
+    "longExplanation": "「Noun + だけではすまない」indicates that simply doing or providing the noun is not sufficient to resolve or finish a matter. Something more is required.",
+    "formation": "Noun + だけではすまない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この問題は謝罪だけではすまない。",
+        "romanization": "Kono mondai wa shazai dake dewa sumanai.",
+        "translation": "This problem cannot be settled with just an apology."
+      },
+      {
+        "sentence": "彼女が怒っているから、お菓子をあげただけではすまないよ。",
+        "romanization": "Kanojo ga okotte iru kara, okashi o ageta dake dewa sumanai yo.",
+        "translation": "She’s angry, so just giving her sweets won't fix it."
+      },
+      {
+        "sentence": "このプロジェクトの成功は努力だけではすまない。",
+        "romanization": "Kono purojekuto no seikou wa doryoku dake dewa sumanai.",
+        "translation": "Success on this project cannot be achieved with mere effort."
+      },
+      {
+        "sentence": "資金調達だけではすまない、実際のビジネスプランも必要だ。",
+        "romanization": "Shikin choutatsu dake dewa sumanai, jissai no bijinesu puran mo hitsuyou da.",
+        "translation": "We can’t just finish with fundraising; we also need a real business plan."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_29",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun たりとも～ない (~tari tomo ~nai)",
+    "shortExplanation": "Used to show a strong negative: 'not even ~', 'not a single ~'.",
+    "longExplanation": "「Noun + たりとも + Negative Verb」expresses a strong negation such as 'not even one', 'not even once', or 'none at all'.",
+    "formation": "Noun + たりとも + Negative Verb",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "一分たりとも無駄にするな。",
+        "romanization": "Ippun tari tomo muda ni suru na.",
+        "translation": "Don’t waste even a single minute."
+      },
+      {
+        "sentence": "彼は一言たりとも話さない。",
+        "romanization": "Kare wa hitokoto tari tomo hanasanai.",
+        "translation": "He doesn't speak even a single word."
+      },
+      {
+        "sentence": "彼女は一度たりともその映画を見たことがない。",
+        "romanization": "Kanojo wa ichido tari tomo sono eiga o mita koto ga nai.",
+        "translation": "She has never seen that movie, not even once."
+      },
+      {
+        "sentence": "私は一枚たりともその写真を持っていない。",
+        "romanization": "Watashi wa ichimai tari tomo sono shashin o motte inai.",
+        "translation": "I don't have even a single picture of it."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_30",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun たる Noun (~taru~)",
+    "shortExplanation": "Indicates 'being in the position/state of', used for roles or statuses.",
+    "longExplanation": "「Noun1 たる Noun2」expresses that the second noun is in the 'role/state/condition' of the first. It often has a formal or literary tone, emphasizing that someone/something rightly holds or embodies that status.",
+    "formation": "Noun1 + たる + Noun2",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "リーダーたる者は、常に先を見て行動すべきだ。",
+        "romanization": "Riidaa taru mono wa, tsune ni saki o mite koudou subeki da.",
+        "translation": "A person who is a leader should always look ahead and act accordingly."
+      },
+      {
+        "sentence": "教師たる者、学生に模範を示すべきである。",
+        "romanization": "Kyoushi taru mono, gakusei ni mohan o shimesu beki de aru.",
+        "translation": "Someone who is a teacher should set a good example for the students."
+      },
+      {
+        "sentence": "母たる者、家族を愛するのは当然だ。",
+        "romanization": "Haha taru mono, kazoku o aisuru no wa touzen da.",
+        "translation": "If you are a mother, it’s natural to love your family."
+      },
+      {
+        "sentence": "医者たる者、患者の安全を最優先に考えるべきだ。",
+        "romanization": "Isha taru mono, kanja no anzen o saiyuusen ni kangaeru beki da.",
+        "translation": "A person who is a doctor should make patient safety their top priority."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_31",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ですら (~desura)",
+    "shortExplanation": "Means 'even', 'as much as', used for emphasis in formal contexts.",
+    "longExplanation": "「Noun + ですら」emphasizes 'even' in a formal or literary tone. It can carry nuance similar to さえ or すら but is used more in writing or formal speech.",
+    "formation": "Noun + ですら",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "明日試験があるのに、彼はテキストですら読まない。",
+        "romanization": "Ashita shiken ga aru noni, kare wa tekisuto desura yomanai.",
+        "translation": "He doesn’t even read the textbook, despite having a test tomorrow."
+      },
+      {
+        "sentence": "この問題は専門家ですら解けない。",
+        "romanization": "Kono mondai wa senmonka desura tokenai.",
+        "translation": "Even an expert can’t solve this problem."
+      },
+      {
+        "sentence": "彼女は最後のスピーチですら泣いてしまった。",
+        "romanization": "Kanojo wa saigo no supiichi desura naite shimatta.",
+        "translation": "She ended up crying, even during the final speech."
+      },
+      {
+        "sentence": "彼は毎日勉強しているが、基本の漢字ですら覚えられない。",
+        "romanization": "Kare wa mainichi benkyou shite iru ga, kihon no kanji desura oboerarenai.",
+        "translation": "He studies every day, but can’t even remember basic kanji."
+      }
+    ]
+  }
+]

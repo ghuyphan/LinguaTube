@@ -1,0 +1,886 @@
+{
+  "vi": {
+    "en_b1_11": {
+      "title": "Câu điều kiện loại 1 so với loại 2: Có thật vs Giả định khó xảy ra",
+      "shortExplanation": "So sánh câu điều kiện loại 1 (sự việc có thể xảy ra ở hiện tại hoặc tương lai) và loại 2 (giả định không có thật hoặc khó xảy ra ở hiện tại).",
+      "longExplanation": "Việc lựa chọn câu điều kiện loại 1 hay loại 2 thể hiện mức độ tin tưởng của người nói vào khả năng xảy ra của tình huống:\n• Câu điều kiện loại 1 (If + hiện tại đơn, will + động từ nguyên thể): Diễn tả tình huống thực tế, có khả năng cao xảy ra (Ví dụ: 'If I see her' - Tôi kỳ vọng sẽ gặp cô ấy).\n• Câu điều kiện loại 2 (If + quá khứ đơn, would + động từ nguyên thể): Diễn tả tình huống giả định, tưởng tượng hoặc rất khó xảy ra ở hiện tại (Ví dụ: 'If I saw her' - Khó có khả năng gặp, chỉ là tưởng tượng).\nSự khác biệt không chỉ nằm ở cấu trúc ngữ pháp mà còn thể hiện thái độ và góc nhìn của người nói đối với khả năng xảy ra của sự việc.",
+      "formation": "Loại 1: If + Chủ ngữ + Động từ (hiện tại đơn), Chủ ngữ + will + Động từ nguyên thể\nLoại 2: If + Chủ ngữ + Động từ (quá khứ đơn), Chủ ngữ + would + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Nếu ngày mai trời mưa, tôi sẽ mang theo ô (dù). (Khả năng thực tế có thể xảy ra)"
+        },
+        {
+          "translation": "Nếu ngày nào trời cũng mưa, tôi sẽ chuyển đến Tây Ban Nha sống. (Giả định khó xảy ra)"
+        }
+      ]
+    },
+    "en_b1_12": {
+      "title": "Thể bị động - Thì hiện tại đơn: am / is / are + Quá khứ phân từ (V3/ed)",
+      "shortExplanation": "Diễn tả hành động được thực hiện ở hiện tại, tập trung vào bản thân hành động hoặc đối tượng chịu tác động thay vì người thực hiện.",
+      "longExplanation": "Thể bị động ở thì hiện tại đơn được sử dụng khi:\n• Bản thân hành động hoặc kết quả quan trọng hơn người thực hiện hành động đó.\n• Người thực hiện hành động không rõ, không quan trọng hoặc đã hiển nhiên.\nNếu muốn nhắc đến người hoặc tác nhân thực hiện hành động, ta sử dụng giới từ 'by': Ví dụ: 'The window is broken by the ball' (Cửa sổ bị quả bóng làm vỡ).",
+      "formation": "Chủ ngữ + am / is / are + Quá khứ phân từ (V3/ed) (+ by + Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tiếng Anh được nói ở nhiều quốc gia."
+        },
+        {
+          "translation": "Bức thư được viết bằng tiếng Pháp."
+        }
+      ]
+    },
+    "en_b1_13": {
+      "title": "Thể bị động - Thì quá khứ đơn: was / were + Quá khứ phân từ (V3/ed)",
+      "shortExplanation": "Diễn tả hành động đã được thực hiện hoặc đã xảy ra đối với chủ ngữ trong quá khứ.",
+      "longExplanation": "Thể bị động ở thì quá khứ đơn dùng để diễn tả một sự việc đã xảy ra và kết thúc trong quá khứ mà đối tượng chịu tác động được đặt lên làm trọng tâm.\n• Dùng 'was' với chủ ngữ số ít (I, he, she, it, danh từ số ít).\n• Dùng 'were' với chủ ngữ số nhiều (you, we, they, danh từ số nhiều).\nChuyển từ câu chủ động sang bị động: Someone stole my car (Ai đó đã trộm xe của tôi) → My car was stolen (Xe của tôi đã bị trộm).",
+      "formation": "Chủ ngữ + was / were + Quá khứ phân từ (V3/ed) (+ by + Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tháp Eiffel được xây dựng vào năm 1889."
+        },
+        {
+          "translation": "Ba người đã bị thương trong vụ tai nạn."
+        }
+      ]
+    },
+    "en_b1_14": {
+      "title": "Thể bị động - Thì hiện tại hoàn thành: has / have been + Quá khứ phân từ (V3/ed)",
+      "shortExplanation": "Diễn tả hành động vừa mới được thực hiện hoặc đã hoàn thành tính đến thời điểm hiện tại, nhấn mạnh kết quả.",
+      "longExplanation": "Thể bị động ở thì hiện tại hoàn thành được dùng khi muốn nhấn mạnh kết quả của hành động ở hiện tại, chứ không quan trọng thời điểm chính xác hành động đó xảy ra.\n• Dùng 'has been' với chủ ngữ ngôi thứ ba số ít (he, she, it, danh từ số ít).\n• Dùng 'have been' với các chủ ngữ còn lại (I, you, we, they, danh từ số nhiều).",
+      "formation": "Chủ ngữ + has / have been + Quá khứ phân từ (V3/ed)",
+      "examples": [
+        {
+          "translation": "Dự án đã được hoàn thành."
+        },
+        {
+          "translation": "Tất cả khách mời đều đã được thông báo."
+        }
+      ]
+    },
+    "en_b1_15": {
+      "title": "Câu gián tiếp - Quy tắc lùi thì",
+      "shortExplanation": "Khi chuyển từ câu trực tiếp sang câu gián tiếp, các thì của động từ thường lùi một thì về quá khứ.",
+      "longExplanation": "Trong câu tường thuật gián tiếp, khi động từ tường thuật ở quá khứ (như 'said', 'told'), thì trong mệnh đề gián tiếp phải lùi về quá khứ tương ứng:\n• Hiện tại đơn → Quá khứ đơn (work → worked)\n• Quá khứ đơn → Quá khứ hoàn thành (went → had gone)\n• Hiện tại hoàn thành → Quá khứ hoàn thành (have seen → had seen)\n• Động từ khuyết thiếu: will → would, can → could, may → might, is/am going to → was going to.",
+      "formation": "Chủ ngữ + said (that) / told + Tân ngữ + (that) + Mệnh đề lùi thì",
+      "examples": [
+        {
+          "translation": "Cô ấy nói: 'Tôi đang rời đi.' → Cô ấy nói rằng cô ấy đang rời đi."
+        },
+        {
+          "translation": "Anh ấy bảo tôi: 'Tôi không thể đến.' → Anh ấy bảo tôi rằng anh ấy không thể đến."
+        }
+      ]
+    },
+    "en_b1_16": {
+      "title": "Câu hỏi gián tiếp: Từ để hỏi / if / whether + Chủ ngữ + Động từ",
+      "shortExplanation": "Chuyển câu hỏi trực tiếp sang gián tiếp: không đảo ngữ, đưa về trật tự câu trần thuật (Chủ ngữ + Động từ).",
+      "longExplanation": "Khi tường thuật một câu hỏi sang câu gián tiếp:\n1. Trật tự từ trở về trật tự của câu trần thuật (Chủ ngữ đứng trước Động từ), không còn hiện tượng đảo ngữ.\n2. Bỏ các trợ động từ do / does / did của câu hỏi.\n3. Với câu hỏi có từ để hỏi (Wh-questions): giữ nguyên từ để hỏi (where, what, why...) rồi đến Chủ ngữ + Động từ.\n4. Với câu hỏi Có/Không (Yes/No questions): dùng liên từ 'if' hoặc 'whether' + Chủ ngữ + Động từ.",
+      "formation": "Câu hỏi có từ để hỏi: Chủ ngữ + asked (+ Tân ngữ) + Từ để hỏi + Chủ ngữ + Động từ lùi thì\nCâu hỏi Có/Không: Chủ ngữ + asked (+ Tân ngữ) + if / whether + Chủ ngữ + Động từ lùi thì",
+      "examples": [
+        {
+          "translation": "'Bạn làm việc ở đâu?' → Cô ấy hỏi tôi làm việc ở đâu."
+        },
+        {
+          "translation": "'Anh đã kết hôn chưa?' → Anh ấy muốn biết liệu tôi đã kết hôn hay chưa."
+        }
+      ]
+    },
+    "en_b1_17": {
+      "title": "Phân biệt 'say' và 'tell' trong câu gián tiếp",
+      "shortExplanation": "'say' không bắt buộc có tân ngữ chỉ người nhận thông tin; 'tell' luôn bắt buộc phải có tân ngữ chỉ người theo sau.",
+      "longExplanation": "Trong câu tường thuật, 'say' và 'tell' có sự khác biệt rõ rệt về cấu trúc:\n• say (that)...: Không cần tân ngữ chỉ người nghe đi kèm (Ví dụ: She said that she was tired). Nếu muốn thêm người nghe, phải dùng giới từ 'to': said to me.\n• tell + tân ngữ chỉ người + (that)...: Bắt buộc PHẢI có tân ngữ chỉ người ngay sau 'tell' (Ví dụ: She told me that she was tired).\nSai: He told that he was late ✗ → Đúng: He said that he was late ✓ hoặc He told me that he was late ✓.",
+      "formation": "Chủ ngữ + say/said + (that) + Mệnh đề\nChủ ngữ + tell/told + Tân ngữ chỉ người + (that) + Mệnh đề",
+      "examples": [
+        {
+          "translation": "Cô ấy nói rằng cô ấy cần sự giúp đỡ."
+        },
+        {
+          "translation": "Anh ấy bảo với chúng tôi rằng cuộc họp đã bị hủy."
+        }
+      ]
+    },
+    "en_b1_18": {
+      "title": "Động từ theo sau bởi danh động từ (Động từ thêm -ing)",
+      "shortExplanation": "Các động từ bắt buộc kết hợp với danh động từ (V-ing) đóng vai trò làm tân ngữ theo sau.",
+      "longExplanation": "Một số động từ trong tiếng Anh luôn đòi hỏi một danh động từ (V-ing) theo sau làm tân ngữ trực tiếp, không dùng động từ nguyên thể có to (to-V).\nCác động từ tiêu biểu gồm: enjoy (thích), finish (hoàn thành), avoid (tránh), mind (phiền/ngại), suggest (gợi ý), keep (tiếp tục), consider (cân nhắc), deny (phủ nhận), imagine (tưởng tượng), miss (bỏ lỡ/nhớ), practice (luyện tập), risk (mạo hiểm), admit (thừa nhận), delay (trì hoãn), give up (từ bỏ), put off (hoãn lại), recommend (khuyên/tiến cử).\nMẹo ghi nhớ: Những hành động mang tính quá trình, trải nghiệm thực tế hoặc việc đang diễn ra thường đi với danh động từ -ing.",
+      "formation": "Chủ ngữ + Động từ + Danh động từ (Động từ thêm -ing)",
+      "examples": [
+        {
+          "translation": "Tôi rất thích bơi lội ở biển."
+        },
+        {
+          "translation": "Cô ấy đang cân nhắc việc chuyển ra nước ngoài sinh sống."
+        },
+        {
+          "translation": "Anh ấy đã tránh giao tiếp bằng mắt."
+        }
+      ]
+    },
+    "en_b1_19": {
+      "title": "Động từ theo sau bởi động từ nguyên thể có 'to' (to + V)",
+      "shortExplanation": "Các động từ bắt buộc kết hợp với động từ nguyên thể có 'to' đóng vai trò làm tân ngữ theo sau.",
+      "longExplanation": "Nhiều động từ trong tiếng Anh đòi hỏi một động từ nguyên thể có 'to' (to-infinitive) đi sau làm tân ngữ, thường diễn tả ý định, kế hoạch, mong muốn hoặc kỳ vọng hướng tới tương lai.\nCác động từ thông dụng bao gồm: want (muốn), decide (quyết định), hope (hy vọng), plan (lên kế hoạch), manage (xoay xở/thành công), agree (đồng ý), promise (hứa), refuse (từ chối), fail (thất bại/không làm được), expect (mong đợi), offer (đề nghị), learn (học), need (cần), afford (đủ khả năng chi trả), arrange (sắp xếp), attempt (cố gắng), choose (chọn), demand (yêu cầu), deserve (xứng đáng), pretend (giả vờ), tend (có xu hướng), threaten (đe dọa).",
+      "formation": "Chủ ngữ + Động từ + to + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Cô ấy đã quyết định nghỉ việc."
+        },
+        {
+          "translation": "Tôi hy vọng sẽ sớm được gặp lại bạn."
+        },
+        {
+          "translation": "Anh ấy đã không thể đưa ra câu trả lời."
+        }
+      ]
+    },
+    "en_b1_20": {
+      "title": "Động từ đi được với cả danh động từ (-ing) và động từ nguyên thể (to-V)",
+      "shortExplanation": "Các động từ có thể đi cùng cả V-ing lẫn to-V (như like, love, hate, start, begin) với nghĩa tương đồng hoặc có sự khác biệt nhỏ về sắc thái.",
+      "longExplanation": "Một nhóm động từ trong tiếng Anh có thể kết hợp với cả danh động từ (V-ing) lẫn động từ nguyên thể có to (to-V):\n• Với nhóm động từ chỉ cảm xúc (like, love, hate, prefer): Dùng V-ing khi nói về sở thích hoặc hành động nói chung (Ví dụ: 'I love cooking' - Tôi rất thích việc nấu ăn nói chung); Dùng to-V khi nhấn mạnh một tình huống cụ thể, sự lựa chọn hoặc thói quen tốt (Ví dụ: 'I like to clean my room on Sundays').\n• Với nhóm động từ bắt đầu hoặc tiếp tục (start, begin, continue): Cả hai cách dùng hầu như không có sự khác biệt về mặt ý nghĩa.",
+      "formation": "Chủ ngữ + like / love / hate / start / begin + Danh động từ (V-ing) HOẶC to + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Tôi rất thích đi du lịch."
+        },
+        {
+          "translation": "Cô ấy đã bắt đầu làm việc ở đây từ tháng Năm."
+        }
+      ]
+    },
+    "en_b1_21": {
+      "title": "used to - Thói quen hoặc trạng thái trong quá khứ",
+      "shortExplanation": "Diễn tả thói quen hoặc trạng thái từng xảy ra thường xuyên trong quá khứ nhưng nay đã chấm dứt; 'đã từng'.",
+      "longExplanation": "Cấu trúc 'used to' được dùng để nói về những hành động, thói quen lặp đi lặp lại hoặc tình trạng từng tồn tại trong quá khứ nhưng hiện tại không còn nữa.\n• Khẳng định: Chủ ngữ + used to + Động từ nguyên thể\n• Phủ định: Chủ ngữ + didn't use to + Động từ nguyên thể\n• Nghi vấn: Did + Chủ ngữ + use to + Động từ nguyên thể...?\nPhân biệt với 'be used to + V-ing/Danh từ': 'be used to' mang nghĩa 'quen với việc gì ở hiện tại' (Ví dụ: 'I am used to waking up early' - Tôi đã quen với việc dậy sớm).",
+      "formation": "Khẳng định: Chủ ngữ + used to + Động từ nguyên thể\nPhủ định: Chủ ngữ + didn't use to + Động từ nguyên thể\nNghi vấn: Did + Chủ ngữ + use to + Động từ nguyên thể?",
+      "examples": [
+        {
+          "translation": "Tôi từng hút thuốc, nhưng giờ tôi đã bỏ rồi."
+        },
+        {
+          "translation": "Trước đây bạn có từng chơi nhạc cụ nào không?"
+        }
+      ]
+    },
+    "en_b1_22": {
+      "title": "Mệnh đề quan hệ: who, which, that, where, whose",
+      "shortExplanation": "Sử dụng đại từ quan hệ và trạng từ quan hệ để bổ nghĩa và làm rõ danh từ đứng trước.",
+      "longExplanation": "Mệnh đề quan hệ được dùng để cung cấp thêm thông tin thiết yếu hoặc bổ sung cho danh từ đứng ngay trước nó:\n• who: Thay thế cho danh từ chỉ người làm chủ ngữ hoặc tân ngữ (Ví dụ: The woman who called is my sister).\n• which: Thay thế cho danh từ chỉ đồ vật hoặc động vật (Ví dụ: The book which I borrowed was great).\n• that: Có thể thay thế cho cả người lẫn vật trong mệnh đề quan hệ xác định (Ví dụ: The car that he bought is new).\n• where: Trạng từ quan hệ chỉ nơi chốn (Ví dụ: The café where we met is closed).\n• whose: Chỉ sự sở hữu (Ví dụ: The girl whose bag was stolen).\nLưu ý: Trong văn nói hàng ngày, đại từ quan hệ làm tân ngữ thường được lược bỏ: The film (that) I saw.",
+      "formation": "Danh từ (tiền từ) + who / which / that / where / whose + Mệnh đề quan hệ",
+      "examples": [
+        {
+          "translation": "Người đàn ông sống ở nhà bên cạnh rất thân thiện."
+        },
+        {
+          "translation": "Khách sạn nơi chúng tôi từng lưu trú có một hồ bơi."
+        }
+      ]
+    },
+    "en_b1_23": {
+      "title": "Liên từ chỉ sự tương phản: although, however, despite, in spite of, whereas",
+      "shortExplanation": "Các từ nối diễn tả sự đối lập hoặc nhượng bộ giữa hai mệnh đề hoặc ý niệm; 'mặc dù', 'tuy nhiên', 'trong khi'.",
+      "longExplanation": "Các liên từ chỉ sự tương phản trong tiếng Anh có cách kết hợp ngữ pháp khác nhau:\n• although / even though / though + Mệnh đề (Chủ ngữ + Động từ): Mang nghĩa 'mặc dù / dẫu cho'.\n• despite / in spite of + Danh từ / Cụm danh từ / Danh động từ (V-ing): Tuyệt đối KHÔNG đi trực tiếp với mệnh đề có chủ vị.\n• however: Trạng từ liên kết, thường đứng đầu câu mới sau dấu chấm hoặc dấu chấm phẩy và ngăn cách bởi dấu phẩy, mang nghĩa 'tuy nhiên'.\n• whereas: Dùng để so sánh và đối chiếu hai sự thật trái ngược nhau giữa hai mệnh đề, mang nghĩa 'trong khi / trái lại'.",
+      "formation": "although / even though / though + Mệnh đề\ndespite / in spite of + Danh từ / Cụm danh từ / Danh động từ (V-ing)\nhowever, + Mệnh đề mới\nMệnh đề 1, whereas + Mệnh đề 2",
+      "examples": [
+        {
+          "translation": "Dù rất mệt, cô ấy vẫn tiếp tục làm việc."
+        },
+        {
+          "translation": "Bất chấp trời mưa, anh ấy vẫn đạp xe đi làm."
+        },
+        {
+          "translation": "Món đồ đó đắt đỏ. Tuy nhiên, nó hoàn toàn xứng đáng với giá tiền."
+        }
+      ]
+    },
+    "en_b1_24": {
+      "title": "Thì tương lai tiếp diễn: will be + Động từ thêm -ing (V-ing)",
+      "shortExplanation": "Diễn tả hành động đang diễn ra tại một thời điểm xác định trong tương lai hoặc hành động đã được lên kế hoạch theo tiến trình tự nhiên.",
+      "longExplanation": "Thì tương lai tiếp diễn được sử dụng trong các trường hợp chính sau:\n1. Hành động đang xảy ra tại một thời điểm xác định cụ thể trong tương lai (Ví dụ: At this time tomorrow, I'll be lying on the beach - Vào giờ này ngày mai, tôi đang nằm trên bãi biển).\n2. Hành động chắc chắn sẽ xảy ra trong tương lai theo kế hoạch hoặc diễn biến tự nhiên thường lệ (Ví dụ: I'll be seeing her tomorrow anyway).\n3. Đặt câu hỏi lịch sự về kế hoạch của người khác mà không tạo áp lực hay có vẻ dò xét (Ví dụ: Will you be coming to the party? - Bạn sẽ đến dự bữa tiệc chứ?).",
+      "formation": "Khẳng định: Chủ ngữ + will be + Động từ thêm -ing\nPhủ định: Chủ ngữ + won't be + Động từ thêm -ing\nNghi vấn: Will + Chủ ngữ + be + Động từ thêm -ing?",
+      "examples": [
+        {
+          "translation": "Đừng gọi lúc 8 giờ nhé — lúc đó tôi đang ăn tối."
+        },
+        {
+          "translation": "Giờ này tuần sau, tôi sẽ đang ngồi thư giãn trên bãi biển."
+        }
+      ]
+    },
+    "en_b1_25": {
+      "title": "Thì tương lai hoàn thành: will have + Quá khứ phân từ (V3/ed)",
+      "shortExplanation": "Diễn tả một hành động sẽ được hoàn thành trước một thời điểm hoặc trước một hành động khác trong tương lai.",
+      "longExplanation": "Thì tương lai hoàn thành dùng để nhấn mạnh tính hoàn tất của một hành động trước một mốc thời gian cụ thể trong tương lai.\nThường đi kèm với các cụm từ chỉ thời gian bắt đầu bằng 'by' (trước/vào lúc), 'by the time' (trước khi), 'before' (trước khi):\nVí dụ: 'By the time you arrive, I will have cooked dinner' (Trước khi bạn đến, tôi sẽ nấu xong bữa tối rồi).",
+      "formation": "Khẳng định: Chủ ngữ + will have + Quá khứ phân từ (V3/ed)\nPhủ định: Chủ ngữ + won't have + Quá khứ phân từ (V3/ed)\nNghi vấn: Will + Chủ ngữ + have + Quá khứ phân từ (V3/ed)?",
+      "examples": [
+        {
+          "translation": "Tôi sẽ đọc xong cuốn sách này trước Chủ nhật."
+        },
+        {
+          "translation": "Trước năm 2050, các nhà khoa học sẽ tìm ra phương pháp chữa trị."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "en_b1_11": {
+      "title": "第一类与第二类条件句对比：真实条件句 vs 非真实条件句",
+      "shortExplanation": "对比第一类条件句（可能发生的事实或未来可能）与第二类条件句（与现在事实相反的假设或不太可能的情况）。",
+      "longExplanation": "选择第一类还是第二类条件句取决于说话人对情况真实性的把握与态度：\n• 第一类条件句（If + 一般现在时，will + 动词原形）：表示说话人认为条件很可能实现或完全符合实际（例如：'If I see her'——我预计会见到她）。\n• 第二类条件句（If + 一般过去时，would + 动词原形）：表示与现在事实相反的假设，或说话人认为极不可能发生的事情（例如：'If I saw her'——几乎不可能见到，纯属幻想）。\n这不仅是语法形式的区别，更体现了说话人对事件可能性的主观看法。",
+      "formation": "第一类：If + 主语 + 一般现在时动词，主语 + will + 动词原形\n第二类：If + 主语 + 一般过去时动词，主语 + would + 动词原形",
+      "examples": [
+        {
+          "translation": "如果明天下雨，我会带把伞。（现实中很有可能发生）"
+        },
+        {
+          "translation": "如果天天都下雨，我就搬去西班牙。（不太可能的假设或幻想）"
+        }
+      ]
+    },
+    "en_b1_12": {
+      "title": "一般现在时的被动语态：am / is / are + 过去分词",
+      "shortExplanation": "表示经常性、习惯性或现阶段客观存在的被动动作，侧重动作本身或承受者。",
+      "longExplanation": "一般现在时的被动语态主要在以下情况使用：\n• 动作本身比动作的执行者更重要或更值得关注。\n• 动作的执行者未知、不言自明或无需提及。\n构成规则：主语 + am / is / are + 过去分词。如果需要指明动作的执行者，可用介词 'by' 引出：例如 'The window is broken by the children'（窗户被孩子们打破了）。",
+      "formation": "主语 + am / is / are + 过去分词 (+ by + 动作执行者)",
+      "examples": [
+        {
+          "translation": "许多国家都讲英语。"
+        },
+        {
+          "translation": "这封信是用法语写的。"
+        }
+      ]
+    },
+    "en_b1_13": {
+      "title": "一般过去时的被动语态：was / were + 过去分词",
+      "shortExplanation": "表示过去发生的被动动作或过去承受某种动作的状态；'被……'、'受到……'。",
+      "longExplanation": "一般过去时的被动语态用于强调过去某个时刻或时间段内发生的动作承受情况：\n• 单数主语（I、he、she、it及不可数/单数名词）使用 was + 过去分词\n• 复数主语（you、we、they及复数名词）使用 were + 过去分词\n主动语态转被动语态示例：Someone stole my car.（有人偷了我的车。）→ My car was stolen.（我的车被偷了。）",
+      "formation": "主语 + was / were + 过去分词 (+ by + 动作执行者)",
+      "examples": [
+        {
+          "translation": "埃菲尔铁塔建于1889年。"
+        },
+        {
+          "translation": "事故中有三人受伤。"
+        }
+      ]
+    },
+    "en_b1_14": {
+      "title": "现在完成时的被动语态：has / have been + 过去分词",
+      "shortExplanation": "表示过去发生并已经完成的被动动作，强调该动作对现在造成的影响或结果。",
+      "longExplanation": "现在完成时的被动语态用于强调动作已经完成并产生了当前的结果，而不需要指明动作具体发生的确切时间：\n• 第三人称单数主语使用 has been + 过去分词\n• 其他人称及复数主语使用 have been + 过去分词",
+      "formation": "主语 + has / have been + 过去分词",
+      "examples": [
+        {
+          "translation": "该项目已经顺利竣工。"
+        },
+        {
+          "translation": "所有宾客均已接到通知。"
+        }
+      ]
+    },
+    "en_b1_15": {
+      "title": "间接引语——时态后退规则",
+      "shortExplanation": "当引述动词为过去时，将直接引语转为间接引语时，从句的时态通常需要相应地往过去推移一个时态。",
+      "longExplanation": "在间接引语中，若主句引述动词（如 said, told）为过去时，宾语从句的时态通常遵循'时态后退'规则：\n• 一般现在时 → 一般过去时（work → worked）\n• 一般过去时 → 过去完成时（went → had gone）\n• 现在完成时 → 过去完成时（have seen → had seen）\n• 情态动词变化：will → would、can → could、is/am going to → was going to。",
+      "formation": "主语 + said (that) / told + 宾语 + (that) + 降阶时态从句",
+      "examples": [
+        {
+          "translation": "她说：'我要走了。' → 她说她要走了。"
+        },
+        {
+          "translation": "他告诉我：'我来不了。' → 他告诉我他来不了了。"
+        }
+      ]
+    },
+    "en_b1_16": {
+      "title": "间接疑问句：疑问词 / if / whether + 陈述语序",
+      "shortExplanation": "直接引语的疑问句转为间接引语时，必须使用陈述句语序（主语 + 谓语动词），不再使用倒装。",
+      "longExplanation": "在间接疑问句中需注意以下三条核心规则：\n1. 语序还原为陈述句语序（主语在前，谓语动词在后），绝不倒装。\n2. 去掉疑问句助动词 do / does / did。\n3. 特殊疑问句保留原疑问词（where, what, who 等）引导从句；一般疑问句（Yes/No 问句）使用 if 或 whether 引导，意为'是否'。",
+      "formation": "特殊疑问句：主语 + asked + 疑问词 + 主语 + 谓语动词\n一般疑问句：主语 + asked + if / whether + 主语 + 谓语动词",
+      "examples": [
+        {
+          "translation": "'你在哪里工作？' → 她问我在哪里工作。"
+        },
+        {
+          "translation": "'你结婚了吗？' → 他想知道我是否结了婚。"
+        }
+      ]
+    },
+    "en_b1_17": {
+      "title": "间接引语中 say 与 tell 的区别",
+      "shortExplanation": "say 后面通常不直接接听话人；tell 后面必须紧跟听话的对象（人称宾语）。",
+      "longExplanation": "在转述间接引语时，say 和 tell 的接续用法有明确区分：\n• say (that)...：后方无需跟听话的人（例如：She said she was tired）。若要提及对象，必须加介词 to：said to me。\n• tell + 人 + (that)...：tell 后面必须直接跟听话的人作为宾语（例如：She told me she was tired）。\n常见错误：He told that he was late ✗ → 正确表达：He said that he was late ✓ 或 He told us that he was late ✓。",
+      "formation": "主语 + say/said + (that) + 从句\n主语 + tell/told + 听话人宾语 + (that) + 从句",
+      "examples": [
+        {
+          "translation": "她说她需要帮助。"
+        },
+        {
+          "translation": "他告诉我们会议已经取消了。"
+        }
+      ]
+    },
+    "en_b1_18": {
+      "title": "动词后接动名词（动词-ing形式）",
+      "shortExplanation": "某些动词后必须接动名词（动词-ing）作为宾语，而不能接不定式（to + 动词原形）。",
+      "longExplanation": "英语中有一类及物动词只能接动名词（V-ing）作宾语：\n常见动词包括：enjoy（享受/喜爱）、finish（完成）、avoid（避免）、mind（介意）、suggest（建议）、keep（保持/持续）、consider（考虑）、deny（否认）、imagine（想象）、miss（错过/想念）、practice（练习）、risk（冒……险）、admit（承认）、delay（推迟）、give up（放弃）、put off（拖延）、recommend（推荐/建议）等。\n记忆诀窍：动名词通常表达已经发生、实际体验过或具有持续过程性质的行为动作。",
+      "formation": "主语 + 动词 + 动名词 (动词-ing)",
+      "examples": [
+        {
+          "translation": "我喜欢在海里游泳。"
+        },
+        {
+          "translation": "她正在考虑移居国外。"
+        },
+        {
+          "translation": "他刻意回避了眼神接触。"
+        }
+      ]
+    },
+    "en_b1_19": {
+      "title": "动词后接不定式（to + 动词原形）",
+      "shortExplanation": "某些动词后必须接不定式（to + 动词原形）作宾语，通常表达未来的意向、期望或计划。",
+      "longExplanation": "英语中许多动词要求后接不定式（to-infinitive）作宾语，这类动词多与未来的意图、决定、愿望或计划相关：\n常见动词包括：want（想要）、decide（决定）、hope（希望）、plan（计划）、manage（设法做到）、agree（同意）、promise（承诺）、refuse（拒绝）、fail（未能做到）、expect（期盼）、offer（提议）、learn（学习）、need（需要）、afford（负担得起）、arrange（安排）、attempt（尝试）、choose（选择）、demand（要求）、deserve（值得）、pretend（假装）、tend（倾向于）、threaten（威胁要）等。",
+      "formation": "主语 + 动词 + to + 动词原形",
+      "examples": [
+        {
+          "translation": "她决定辞去自己的工作。"
+        },
+        {
+          "translation": "我希望能尽快见到你。"
+        },
+        {
+          "translation": "他未能给出答复。"
+        }
+      ]
+    },
+    "en_b1_20": {
+      "title": "兼接动名词与不定式的动词（like, love, hate, start, begin）",
+      "shortExplanation": "这类动词后既可以接动名词（V-ing）也可以接不定式（to-V），意义相同或仅有细微语感差别。",
+      "longExplanation": "在英语中，部分动词后接动名词（V-ing）或不定式（to-V）均可：\n• 表示喜好的动词（like, love, hate, prefer）：接 V-ing 侧重于表达一般的兴趣、爱好或享受某种活动的过程（如：'I love cooking'——我平时很喜欢烹饪）；接 to-V 则常侧重于特定情境下的选择或习惯动作（如：'I like to wake up early'——我习惯早起）。\n• 表示开始或继续的动词（start, begin, continue）：接两种形式在意义上几乎没有任何实质性差异。",
+      "formation": "主语 + like / love / hate / start / begin + 动名词 (V-ing) 或 to + 动词原形",
+      "examples": [
+        {
+          "translation": "我热爱旅行。"
+        },
+        {
+          "translation": "她从五月份开始在这里工作。"
+        }
+      ]
+    },
+    "en_b1_21": {
+      "title": "used to——过去的习惯与状态",
+      "shortExplanation": "表示过去经常发生或曾经存在但现在已经停止的习惯、动作或状态；'过去常常'、'曾经'。",
+      "longExplanation": "'used to' 用于表达过去规律性的动作、习惯或状态，而这种习惯或状态目前已不复存在。\n• 肯定形式：主语 + used to + 动词原形\n• 否定形式：主语 + didn't use to + 动词原形\n• 疑问形式：Did + 主语 + use to + 动词原形……？\n与 'be used to + 动名词/名词' 的区别：'be used to' 表示'现在习惯于某事'（例如：'I am used to waking up early'——我已经习惯早起了）。",
+      "formation": "肯定句：主语 + used to + 动词原形\n否定句：主语 + didn't use to + 动词原形\n疑问句：Did + 主语 + use to + 动词原形？",
+      "examples": [
+        {
+          "translation": "我过去常常抽烟，不过后来戒掉了。"
+        },
+        {
+          "translation": "你以前曾经演奏过某种乐器吗？"
+        }
+      ]
+    },
+    "en_b1_22": {
+      "title": "定语从句：who, which, that, where, whose",
+      "shortExplanation": "使用关系代词或关系副词引导从句，修饰前面的先行词（名词或代词）。",
+      "longExplanation": "定语从句用于为前面的名词（先行词）提供修饰和补充说明：\n• who：先行词为人，在从句中作主语或宾语（例：The woman who called is my sister）。\n• which：先行词为物或动物（例：The book which I borrowed was great）。\n• that：在限制性定语从句中既可指人也可指物（例：The car that he bought is new）。\n• where：关系副词，先行词为地点，并在从句中作地点状语（例：The café where we met is closed）。\n• whose：关系代词，表示所属关系，相当于'……的'（例：The girl whose bag was stolen）。\n提示：在口语交流中，当关系代词在从句中充当动词宾语时常常可以省略：The film (that) I saw。",
+      "formation": "先行词 (名词) + who / which / that / where / whose + 从句",
+      "examples": [
+        {
+          "translation": "住在隔壁的那位男士非常友善。"
+        },
+        {
+          "translation": "我们入住的那家酒店自带一个游泳池。"
+        }
+      ]
+    },
+    "en_b1_23": {
+      "title": "表示对比与转折的连词：although, however, despite, in spite of, whereas",
+      "shortExplanation": "用于表达转折、让步或对比关系的连接词与副词；'虽然'、'尽管'、'然而'、'而'。",
+      "longExplanation": "英语中表示对比与让步的连接词在语法搭配上有严格区分：\n• although / even though / though + 从句（主语 + 谓语）：表示'虽然、尽管'。\n• despite / in spite of + 名词 / 代词 / 动名词（V-ing）：注意后面绝对不能直接接完整的陈述从句。\n• however：副词，常置于句首（位于句号或分号之后），后接逗号，表示'然而、不过'。\n• whereas：从属连词，用于对比两个对照明显的事实，意为'然而、鉴于、而'。",
+      "formation": "although / even though + 从句\ndespite / in spite of + 名词 / 代词 / 动名词\nhowever, + 新完整句子\n分句1, whereas + 分句2",
+      "examples": [
+        {
+          "translation": "虽然很累，但她还是坚持继续工作。"
+        },
+        {
+          "translation": "尽管下着雨，他依然骑自行车去上班。"
+        },
+        {
+          "translation": "价格很昂贵。然而，物有所值。"
+        }
+      ]
+    },
+    "en_b1_24": {
+      "title": "将来进行时：will be + 动词-ing",
+      "shortExplanation": "表示将来某一特定时刻正在进行的动作，或按计划必然发生的未来行动。",
+      "longExplanation": "将来进行时主要用于以下三大典型语境：\n1. 将来某一明确时间点正在持续进行的动作（例如：At this time tomorrow, I'll be lying on the beach——明天这个时候，我正躺在沙滩上呢）。\n2. 预计在将来发生或作为事情自然发展的结果而发生的动作（例如：I'll be seeing her tomorrow anyway——反正我明天也会见到她）。\n3. 礼貌客气地询问对方未来的安排或打算，避免显得施压或过于探听隐私（例如：Will you be coming to the party?——您会来参加聚会吗？）。",
+      "formation": "肯定式：主语 + will be + 动词-ing\n否定式：主语 + will not (won't) be + 动词-ing\n疑问式：Will + 主语 + be + 动词-ing？",
+      "examples": [
+        {
+          "translation": "8点别给我打电话——那时我正在吃晚饭。"
+        },
+        {
+          "translation": "下周的这个时候，我正坐在海滩上享受呢。"
+        }
+      ]
+    },
+    "en_b1_25": {
+      "title": "将来完成时：will have + 过去分词",
+      "shortExplanation": "表示在将来某一时间点或另一动作发生之前就已经完成的动作；'到……时将已经完成'。",
+      "longExplanation": "将来完成时强调某种动作或状态在将来的某个特定截点之前将处于'已经完成'的状态。\n通常与表示时间截点的状语连用，如 'by...'（到……为止）、'by the time + 从句'（等到……的时候）、'before...'（在……之前）等：\n例如：'By the time you arrive, I will have cooked dinner'（等你到的时候，我肯定已经把晚饭做好了）。",
+      "formation": "肯定式：主语 + will have + 过去分词\n否定式：主语 + will not (won't) have + 过去分词\n疑问式：Will + 主语 + have + 过去分词？",
+      "examples": [
+        {
+          "translation": "到星期天之前，我就会读完这本书。"
+        },
+        {
+          "translation": "到2050年，科学家们将已经找到治愈方法。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "en_b1_11": {
+      "title": "第1種条件文と第2種条件文（仮定法過去）の比較：現実的 vs 非現実的",
+      "shortExplanation": "第1種条件文（現実に起こる可能性が高い未来の条件）と第2種条件文・仮定法過去（現在の事実に反する仮定や起こりそうにない空想）の違いを比較します。",
+      "longExplanation": "どちらの条件文を使うかは、その状況が実現可能かどうかに対する話し手の確信度や態度によって決まります。\n• 第1種条件文（If ＋ 現在形、will ＋ 動詞の原形）：実現の可能性が高い現実的な状況を表します（例：'If I see her' ＝ 実際に会うと予想している）。\n• 第2種条件文（If ＋ 過去形、would ＋ 動詞の原形）：現在の事実と異なる仮定や、実現の可能性が極めて低い空想を表します（例：'If I saw her' ＝ 会える見込みはほとんどなく、単なる想像）。\nこれは単なる文法上の違いにとどまらず、話し手がその状況をどのように捉えているかという主観的なニュアンスの違いを表します。",
+      "formation": "第1種：If ＋ 主語 ＋ 現在形動詞, 主語 ＋ will ＋ 動詞の原形\n第2種：If ＋ 主語 ＋ 過去形動詞, 主語 ＋ would ＋ 動詞の原形",
+      "examples": [
+        {
+          "translation": "明日雨が降ったら、傘を持って行きます。（現実に起こる可能性が高い）"
+        },
+        {
+          "translation": "毎日雨が降るなら、スペインに引っ越すのになあ。（実現性の低い空想）"
+        }
+      ]
+    },
+    "en_b1_12": {
+      "title": "受動態（現在形）：am / is / are ＋ 過去分詞",
+      "shortExplanation": "現在における受動の動作や状態を表し、「〜される」「〜されている」という意味を表します。",
+      "longExplanation": "現在形の受動態は、以下のような場合に使用されます：\n• 動作を行う人（行為者）よりも、動作そのものやその対象が重要なとき。\n• 行為者が不明であるか、文脈上言うまでもなく明らかなとき。\n行為者を表す必要がある場合は、後ろに「by ＋ 行為者」を付け加えます（例：The window is broken by the ball. 窓がボールによって割られる）。",
+      "formation": "主語 ＋ am / is / are ＋ 過去分詞 (＋ by ＋ 行為者)",
+      "examples": [
+        {
+          "translation": "英語は多くの国で話されています。"
+        },
+        {
+          "translation": "その手紙はフランス語で書かれています。"
+        }
+      ]
+    },
+    "en_b1_13": {
+      "title": "受動態（過去形）：was / were ＋ 過去分詞",
+      "shortExplanation": "過去に行われた受動の動作や出来事を表し、「〜された」「〜された状態だった」という意味を表します。",
+      "longExplanation": "過去形の受動態は、過去のある時点で動作が行われたり出来事が起きたりしたことを表します。\n• 単数主語（I, he, she, it, 単数名詞）には was を使用\n• 複数主語（you, we, they, 複数名詞）には were を使用\n能動態から受動態への書き換え例：Someone stole my car.（誰かが私の車を盗んだ）→ My car was stolen.（私の車が盗まれた）。",
+      "formation": "主語 ＋ was / were ＋ 過去分詞 (＋ by ＋ 行為者)",
+      "examples": [
+        {
+          "translation": "エッフェル塔は1889年に建設されました。"
+        },
+        {
+          "translation": "その事故で3人が負傷しました。"
+        }
+      ]
+    },
+    "en_b1_14": {
+      "title": "受動態（現在完了形）：has / have been ＋ 過去分詞",
+      "shortExplanation": "過去にすでに行われ、現在において「〜されてしまった」「〜されたところである」という結果や完了の状態を表します。",
+      "longExplanation": "現在完了形の受動態は、動作が具体的にいつ起きたかよりも、現在どのような結果になっているか・完了しているかに焦点を当てる際に用いられます。\n• 三人称単数主語には has been ＋ 過去分詞\n• 一人称・二人称・複数主語には have been ＋ 過去分詞",
+      "formation": "主語 ＋ has / have been ＋ 過去分詞",
+      "examples": [
+        {
+          "translation": "そのプロジェクトは完了しました。"
+        },
+        {
+          "translation": "ゲスト全員に案内が通知されました。"
+        }
+      ]
+    },
+    "en_b1_15": {
+      "title": "間接話法——時制の一致（時制の後退）",
+      "shortExplanation": "直接話法から間接話法に書き換える際、主節の動詞が過去形であれば従属節の時制を過去方向へと1つ繰り下げます。",
+      "longExplanation": "間接話法において、伝達動詞（said や told など）が過去形の場合、被伝達節内の時制を1段階過去へシフトさせる「時制の一致」が適用されます：\n• 現在形 → 過去形（work → worked）\n• 過去形 → 過去完了形（went → had gone）\n• 現在完了形 → 過去完了形（have seen → had seen）\n• 助動詞の変化：will → would、can → could、is/am going to → was going to。",
+      "formation": "主語 ＋ said (that) / told ＋ 目的語 ＋ (that) ＋ 時制が一致した節",
+      "examples": [
+        {
+          "translation": "彼女は「出発します」と言った。→ 彼女は出発すると言った。"
+        },
+        {
+          "translation": "彼は私に「行けない」と言った。→ 彼は私に来られないと伝えた。"
+        }
+      ]
+    },
+    "en_b1_16": {
+      "title": "間接疑問文：疑問詞 / if / whether ＋ 平叙文の語順",
+      "shortExplanation": "疑問文を間接話法で伝える構文で、倒置を行わず「主語 ＋ 動詞」という平叙文の語順にします。",
+      "longExplanation": "間接疑問文を作る際の主要なポイントは以下の通りです：\n1. 倒置を行わず、平叙文と同じ「主語 ＋ 動詞」の語順にする。\n2. 疑問文用の助動詞 do / does / did は削除する。\n3. 疑問詞で始まる疑問文は、その疑問詞（where, what など）をそのまま接続詞として用いる。\n4. はい／いいえで答える一般疑問文は、if または whether（〜かどうか）を用いて接続する。",
+      "formation": "疑問詞疑問文：主語 ＋ asked (＋ 目的語) ＋ 疑問詞 ＋ 主語 ＋ 動詞\nYes/No疑問文：主語 ＋ asked (＋ 目的語) ＋ if / whether ＋ 主語 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "「どこで働いているのですか？」→ 彼女は私がどこで働いているのか尋ねた。"
+        },
+        {
+          "translation": "「結婚していますか？」→ 彼は私が既婚かどうか知りたがっていた。"
+        }
+      ]
+    },
+    "en_b1_17": {
+      "title": "間接話法における say と tell の使い分け",
+      "shortExplanation": "say は聞き手を直接後ろに置かないのに対し、tell は必ず直後に「誰に伝えたか」という聞き手（目的語）を必要とします。",
+      "longExplanation": "間接話法で発言を伝える際、say と tell では構文の取り方が異なります：\n• say (that)...：直後に聞き手を置かずに内容を伝えます（例：She said she was tired.）。もし相手を表す場合は said to me のように前置詞 to が必要です。\n• tell ＋ 人 ＋ (that)...：tell の直後には必ず「話しかけた相手（目的語）」が必要です（例：She told me she was tired.）。\n誤用例：He told that he was late ✗ → 正しい文：He said that he was late ✓ / He told me that he was late ✓。",
+      "formation": "主語 ＋ say/said ＋ (that) ＋ 節\n主語 ＋ tell/told ＋ 聞き手（人） ＋ (that) ＋ 節",
+      "examples": [
+        {
+          "translation": "彼女は助けが必要だと言った。"
+        },
+        {
+          "translation": "彼は私たちに会議が中止になったと伝えた。"
+        }
+      ]
+    },
+    "en_b1_18": {
+      "title": "動名詞（〜ing）を目的語にとる動詞",
+      "shortExplanation": "後ろに不定詞（to＋動詞の原形）ではなく、必ず動名詞（〜ing）を目的語として従える動詞の用法です。",
+      "longExplanation": "英語の一部の動詞は、目的語として動名詞（〜ing形）のみを必要とし、to不定詞を取ることができません。\n代表的な動詞：enjoy（楽しむ）、finish（終える）、avoid（避ける）、mind（気にする）、suggest（提案する）、keep（〜し続ける）、consider（検討する）、deny（否定する）、imagine（想像する）、miss（逃す/恋しく思う）、practice（練習する）、risk（危険を冒す）、admit（認める）、delay / put off（延期する）、give up（諦める）、recommend（勧める）など。\n理解のポイント：動名詞は「過去の経験」「既に行われていること」「継続するプロセス」を連想させる動詞と相性が良い傾向があります。",
+      "formation": "主語 ＋ 動詞 ＋ 動名詞 (動詞の〜ing形)",
+      "examples": [
+        {
+          "translation": "私は海で泳ぐのが大好きです。"
+        },
+        {
+          "translation": "彼女は海外移住を検討しています。"
+        },
+        {
+          "translation": "彼は視線を合わせるのを避けました。"
+        }
+      ]
+    },
+    "en_b1_19": {
+      "title": "to不定詞（to ＋ 動詞の原形）を目的語にとる動詞",
+      "shortExplanation": "動名詞ではなく、後ろにto不定詞（to ＋ 動詞の原形）を目的語として従える動詞の用法です。",
+      "longExplanation": "英語の多くの動詞は、目的語としてto不定詞を必要とします。これらは主に将来に向けた意図、計画、希望、決断などを表す動詞に多く見られます。\n代表的な動詞：want（〜したい）、decide（決める）、hope（望む）、plan（計画する）、manage（どうにかやり遂げる）、agree（同意する）、promise（約束する）、refuse（断る）、fail（〜し損なう）、expect（期待する）、offer（申し出る）、learn（学ぶ）、need（必要とする）、afford（〜する余裕がある）、attempt（試みる）、choose（選ぶ）、pretend（〜のふりをする）、tend（〜する傾向がある）など。",
+      "formation": "主語 ＋ 動詞 ＋ to ＋ 動詞の原形",
+      "examples": [
+        {
+          "translation": "彼女は仕事を辞めることを決意しました。"
+        },
+        {
+          "translation": "近いうちにお会いできることを楽しみにしています。"
+        },
+        {
+          "translation": "彼は返答することができませんでした。"
+        }
+      ]
+    },
+    "en_b1_20": {
+      "title": "動名詞（〜ing）とto不定詞の両方を取る動詞（like, love, hate, start, begin）",
+      "shortExplanation": "後ろに動名詞（〜ing）とto不定詞の両方を置くことができ、ほぼ同じ意味またはわずかなニュアンスの違いを表す動詞です。",
+      "longExplanation": "英語の一部の動詞は、目的語に動名詞とto不定詞のどちらを取ることも可能です：\n• 好悪を表す動詞（like, love, hate, prefer）：〜ing は一般的な趣味や行為そのものを楽しむニュアンス（例：'I love cooking.' 普段料理するのが好き）；to不定詞は特定の状況での選択や習慣・意図を強調する傾向があります。\n• 開始・継続を表す動詞（start, begin, continue）：どちらを用いても意味やニュアンスの違いは実質的にほとんどありません。",
+      "formation": "主語 ＋ like / love / hate / start / begin ＋ 動名詞 (〜ing) または to ＋ 動詞の原形",
+      "examples": [
+        {
+          "translation": "私は旅行することが大好きです。"
+        },
+        {
+          "translation": "彼女は5月にここで働き始めました。"
+        }
+      ]
+    },
+    "en_b1_21": {
+      "title": "used to——過去の習慣と状態",
+      "shortExplanation": "過去に定期的に行っていた習慣や、過去に存在していたが現在はもう続いていない状態を表し、「かつて〜していた」「以前は〜だった」という意味を表します。",
+      "longExplanation": "「used to ＋ 動詞の原形」は、過去に反復して行われていた行動やかつての習慣・状態を表す際に用います。現在はすでに終了している点が特徴です。\n• 肯定文：主語 ＋ used to ＋ 動詞の原形\n• 否定文：主語 ＋ didn't use to ＋ 動詞の原形\n• 疑問文：Did ＋ 主語 ＋ use to ＋ 動詞の原形...?\n※「be used to ＋ 名詞／動名詞（〜に慣れている）」との混同に注意してください（例：I am used to waking up early. ＝ 早起きに慣れている）。",
+      "formation": "肯定文：主語 ＋ used to ＋ 動詞の原形\n否定文：主語 ＋ didn't use to ＋ 動詞の原形\n疑問文：Did ＋ 主語 ＋ use to ＋ 動詞の原形？",
+      "examples": [
+        {
+          "translation": "昔はタバコを吸っていましたが、やめました。"
+        },
+        {
+          "translation": "以前、何か楽器を演奏していましたか？"
+        }
+      ]
+    },
+    "en_b1_22": {
+      "title": "関係詞節（関係代名詞・関係副詞）：who, which, that, where, whose",
+      "shortExplanation": "関係代名詞や関係副詞を用いて名詞（先行詞）を修飾し、詳細な情報を付け加える構文です。",
+      "longExplanation": "関係詞節は、直前の先行詞（名詞）を後ろから修飾して説明を加える役割を果たします：\n• who：人を先行詞とし、関係節内で主語や目的語になります（例：The woman who called is my sister.）。\n• which：物や動物を先行詞とします（例：The book which I borrowed was great.）。\n• that：制限用法において人・物の両方を先行詞として使えます（例：The car that he bought is new.）。\n• where：関係副詞として場所を表す先行詞を修飾します（例：The café where we met is closed.）。\n• whose：先行詞の所有関係を表します（例：The girl whose bag was stolen...）。\n注記：口語では、関係代名詞が目的語として機能している場合に省略されることがよくあります（The film (that) I saw...）。",
+      "formation": "先行詞 (名詞) ＋ who / which / that / where / whose ＋ 修飾節",
+      "examples": [
+        {
+          "translation": "隣に住んでいる男性はとても親切です。"
+        },
+        {
+          "translation": "私たちが宿泊したホテルにはプールがありました。"
+        }
+      ]
+    },
+    "en_b1_23": {
+      "title": "対比・譲歩の接続詞・副詞：although, however, despite, in spite of, whereas",
+      "shortExplanation": "対比や逆接、譲歩を表す表現で、「〜にもかかわらず」「しかしながら」「その一方で」という意味を表します。",
+      "longExplanation": "対比や譲歩を表す英語の表現は、後ろに続く品詞や文構造に明確な違いがあります：\n• although / even though / though ＋ 節（主語 ＋ 動詞）：「〜だけれども」「〜にもかかわらず」。\n• despite / in spite of ＋ 名詞 / 動名詞（〜ing）：前置詞句のため、後ろに直接節（主語＋動詞）を置くことはできません。\n• however：接続副詞であり、ピリオドやセミコロンの後に置かれ、後ろにカンマを伴って独立した文を導きます（「しかしながら」）。\n• whereas：2つの事実や状況を対比させる接続詞で、「一方で」「〜であるのに対して」という意味を表します。",
+      "formation": "although / even though ＋ 節 (主語 ＋ 動詞)\ndespite / in spite of ＋ 名詞 / 動名詞 (〜ing)\nhowever, ＋ 新しい文\n節1, whereas ＋ 節2",
+      "examples": [
+        {
+          "translation": "彼女は疲れていたにもかかわらず、仕事を続けました。"
+        },
+        {
+          "translation": "雨にもかかわらず、彼は自転車で出勤しました。"
+        },
+        {
+          "translation": "それは高価でした。しかしながら、それだけの価値はありました。"
+        }
+      ]
+    },
+    "en_b1_24": {
+      "title": "未来進行形：will be ＋ 動詞の〜ing形",
+      "shortExplanation": "未来の特定の時点で進行中である動作や、自然の成り行きで予定されている未来の事柄を表します。",
+      "longExplanation": "未来進行形は主に以下のような場面で用いられます：\n1. 未来のある特定の時点でまさに進行している動作を表す（例：At this time tomorrow, I'll be lying on the beach. 明日の今頃は浜辺で寝そべっているだろう）。\n2. 予定や成り行きとして自然に発生する未来の出来事を表す（例：I'll be seeing her tomorrow anyway. どのみち明日彼女に会うことになっている）。\n3. 相手に押し付けがましくなく、計画について丁寧に尋ねる（例：Will you be coming to the party? パーティーには来られるご予定ですか？）。",
+      "formation": "肯定文：主語 ＋ will be ＋ 動詞の〜ing形\n否定文：主語 ＋ won't be ＋ 動詞の〜ing形\n疑問文：Will ＋ 主語 ＋ be ＋ 動詞の〜ing形？",
+      "examples": [
+        {
+          "translation": "8時には電話しないでね。ちょうど夕食を食べているところだから。"
+        },
+        {
+          "translation": "来週の今頃は、ビーチに座っていることでしょう。"
+        }
+      ]
+    },
+    "en_b1_25": {
+      "title": "未来完了形：will have ＋ 過去分詞",
+      "shortExplanation": "未来の特定の時点、あるいは別の出来事が起きる前までに完了している動作を表し、「〜までに（すでに）…してしまっているだろう」という意味を表します。",
+      "longExplanation": "未来完了形は、将来のある基準となる時点までに、ある動作や状態が完了・結果として生じていることを表します。\n期限や基準時を表す「by ＋ 時句（〜までに）」、「by the time ＋ 節（〜する時までに）」、「before ＋ 時句/節（〜の前に）」などの表現とともに頻繁に用いられます：\n例：By the time you arrive, I will have cooked dinner.（あなたが到着する時までには、私は夕食を作り終えているでしょう）。",
+      "formation": "肯定文：主語 ＋ will have ＋ 過去分詞\n否定文：主語 ＋ won't have ＋ 過去分詞\n疑問文：Will ＋ 主語 ＋ have ＋ 過去分詞？",
+      "examples": [
+        {
+          "translation": "日曜日までにはこの本を読み終えているでしょう。"
+        },
+        {
+          "translation": "2050年までには、科学者たちが治療法を発見しているはずです。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "en_b1_11": {
+      "title": "조건문 1형식 vs 2형식(가정법 과거): 실현 가능 vs 실현 가능성 희박",
+      "shortExplanation": "실현 가능성이 있는 단순 조건문(1형식)과 현재 사실과 반대되거나 실현 가능성이 희박한 가정법 과거(2형식)를 비교합니다.",
+      "longExplanation": "어느 유형을 선택할지는 상황의 현실성에 대한 화자의 확신과 태도를 반영합니다.\n• 1형식 조건문 (If + 현재시제, will + 동사원형): 실제로 일어날 가능성이 높다고 예상하는 상황을 나타냅니다 (예: 'If I see her' - 그녀를 만날 것으로 기대함).\n• 2형식 조건문 / 가정법 과거 (If + 과거시제, would + 동사원형): 현재 사실과 반대되는 가정이거나 일어날 가능성이 매우 희박한 상상을 나타냅니다 (예: 'If I saw her' - 만날 가능성이 희박하거나 단순한 공상임).\n이는 단순한 문법적 차이가 아니라 상황의 실현 가능성을 바라보는 화자의 심리적 태도 차이를 보여줍니다.",
+      "formation": "1형식: If + 주어 + 현재시제 동사, 주어 + will + 동사원형\n2형식: If + 주어 + 과거시제 동사, 주어 + would + 동사원형",
+      "examples": [
+        {
+          "translation": "내일 비가 오면 우산을 가져갈 거야. (충분히 일어날 수 있는 현실적 상황)"
+        },
+        {
+          "translation": "만약 매일 비가 온다면 스페인으로 이사 갈 텐데. (실현 가능성이 희박한 상상)"
+        }
+      ]
+    },
+    "en_b1_12": {
+      "title": "수동태 - 현재시제: am / is / are + 과거분사",
+      "shortExplanation": "현재 일반적으로 행해지는 동작이나 상태를 나타내며, '~된다', '~해진다'라는 의미입니다.",
+      "longExplanation": "현재시제 수동태는 다음과 같은 경우에 주로 사용됩니다:\n• 행위자보다 동작 자체나 행위의 대상이 더 중요할 때\n• 행위자가 누구인지 알 수 없거나 굳이 밝힐 필요 없이 명백할 때\n행위자를 밝혀야 할 경우에는 문장 끝에 'by + 행위자'를 덧붙입니다 (예: The window is broken by the children. 그 창문은 아이들에 의해 깨졌다).",
+      "formation": "주어 + am / is / are + 과거분사 (+ by + 행위자)",
+      "examples": [
+        {
+          "translation": "영어는 많은 나라에서 사용됩니다."
+        },
+        {
+          "translation": "그 편지는 프랑스어로 작성되어 있습니다."
+        }
+      ]
+    },
+    "en_b1_13": {
+      "title": "수동태 - 과거시제: was / were + 과거분사",
+      "shortExplanation": "과거에 발생한 수동의 동작이나 사건을 나타내며, '~되었다', '~받았다'라는 의미입니다.",
+      "longExplanation": "과거시제 수동태는 과거의 특정한 시점에 완료된 동작이나 사건에서 행위의 대상을 강조할 때 사용됩니다.\n• 단수 주어(I, he, she, it, 단수명사): was 사용\n• 복수 주어(you, we, they, 복수명사): were 사용\n능동태를 수동태로 전환하는 예시: Someone stole my car. (누군가 내 차를 훔쳤다) → My car was stolen. (내 차를 도난당했다).",
+      "formation": "주어 + was / were + 과거분사 (+ by + 행위자)",
+      "examples": [
+        {
+          "translation": "에펠탑은 1889년에 건립되었습니다."
+        },
+        {
+          "translation": "그 사고로 세 명이 부상을 입었습니다."
+        }
+      ]
+    },
+    "en_b1_14": {
+      "title": "수동태 - 현재완료: has / have been + 과거분사",
+      "shortExplanation": "과거에 발생한 수동의 동작이 완료되어 현재까지 그 결과나 영향이 이어지고 있음을 나타냅니다.",
+      "longExplanation": "현재완료 수동태는 동작이 정확히 언제 일어났는가보다는, 그 동작이 현재 완료되어 어떠한 상태인지(결과)를 강조할 때 사용됩니다.\n• 3인칭 단수 주어: has been + 과거분사\n• 1·2인칭 및 복수 주어: have been + 과거분사",
+      "formation": "주어 + has / have been + 과거분사",
+      "examples": [
+        {
+          "translation": "프로젝트가 성공적으로 완료되었습니다."
+        },
+        {
+          "translation": "모든 하객들에게 연락이 전달되었습니다."
+        }
+      ]
+    },
+    "en_b1_15": {
+      "title": "간접화법 - 시제 일치 (시제 후퇴)",
+      "shortExplanation": "직접화법을 간접화법으로 전환할 때 전달동사가 과거형이면 인용절의 동사 시제를 한 단계 과거로 물립니다.",
+      "longExplanation": "간접화법에서 전달동사(said, told 등)가 과거시제일 경우, 종속절의 시제는 과거 방향으로 한 시제 후퇴하는 '시제 일치' 원칙이 적용됩니다:\n• 현재시제 → 과거시제 (work → worked)\n• 과거시제 → 과거완료 (went → had gone)\n• 현재완료 → 과거완료 (have seen → had seen)\n• 조동사 변화: will → would, can → could, is/am going to → was going to.",
+      "formation": "주어 + said (that) / told + 목적어 + (that) + 시제 일치된 절",
+      "examples": [
+        {
+          "translation": "그녀는 '저 지금 가요'라고 말했다. → 그녀는 자기가 떠나는 중이라고 말했다."
+        },
+        {
+          "translation": "그는 내게 '나 갈 수 없어'라고 말했다. → 그는 내게 올 수 없다고 말했다."
+        }
+      ]
+    },
+    "en_b1_16": {
+      "title": "간접의문문: 의문사 / if / whether + 평서문 어순",
+      "shortExplanation": "직접의문문을 간접화법으로 바꿀 때 도치되지 않고 '주어 + 동사'의 평서문 어순을 취합니다.",
+      "longExplanation": "간접의문문으로 바꿀 때 유의해야 할 핵심 규칙은 다음과 같습니다:\n1. 의문문의 도치를 풀고 평서문 어순(주어 + 동사)으로 배열합니다.\n2. 의문문 형성용 조동사 do / does / did는 생략합니다.\n3. 의문사가 있는 의문문은 해당 의문사(where, what 등) 뒤에 '주어 + 동사'를 연결합니다.\n4. Yes/No 의문문은 '~인지 아닌지'라는 뜻의 if 또는 whether 접속사를 사용합니다.",
+      "formation": "의문사 의문문: 주어 + asked (+ 목적어) + 의문사 + 주어 + 동사\nYes/No 의문문: 주어 + asked (+ 목적어) + if / whether + 주어 + 동사",
+      "examples": [
+        {
+          "translation": "'어디서 일하세요?' → 그녀는 내가 어디서 일하는지 물었다."
+        },
+        {
+          "translation": "'결혼하셨나요?' → 그는 내가 기혼인지 알고 싶어 했다."
+        }
+      ]
+    },
+    "en_b1_17": {
+      "title": "간접화법에서 say와 tell의 구분",
+      "shortExplanation": "say 뒤에는 듣는 사람을 직접 두지 않지만, tell 뒤에는 반드시 듣는 대상(목적어)이 뒤따라야 합니다.",
+      "longExplanation": "간접화법에서 발언 내용을 전달할 때 say와 tell은 문장 구조상 뚜렷한 차이가 있습니다:\n• say (that)...: 뒤에 듣는 대상을 직접 취하지 않고 내용절을 연결합니다 (예: She said she was tired). 대상을 나타내려면 전치사 to를 써서 said to me로 표현해야 합니다.\n• tell + 사람 + (that)...: tell 바로 뒤에는 반드시 말을 듣는 대상(목적어)이 와야 합니다 (예: She told me she was tired).\n흔한 오류: He told that he was late ✗ → 올바른 표현: He said that he was late ✓ 또는 He told me that he was late ✓.",
+      "formation": "주어 + say/said + (that) + 절\n주어 + tell/told + 사람 목적어 + (that) + 절",
+      "examples": [
+        {
+          "translation": "그녀는 도움이 필요하다고 말했다."
+        },
+        {
+          "translation": "그는 우리에게 회의가 취소되었다고 전했다."
+        }
+      ]
+    },
+    "en_b1_18": {
+      "title": "동명사(-ing)를 목적어로 취하는 동사",
+      "shortExplanation": "to부정사 대신 반드시 동명사(-ing)만을 목적어로 취해야 하는 동사들의 용법입니다.",
+      "longExplanation": "영어의 특정 동사들은 뒤에 to부정사가 아닌 동명사(-ing) 형태만을 목적어로 취합니다.\n대표적인 동사: enjoy(즐기다), finish(끝내다), avoid(피하다), mind(꺼리다), suggest(제안하다), keep(계속하다), consider(고려하다), deny(부인하다), imagine(상상하다), miss(놓치다/그리워하다), practice(연습하다), risk(위험을 무릅쓰다), admit(인정하다), delay / put off(미루다), give up(포기하다), recommend(추천하다) 등.\n이해 팁: 동명사는 대개 '과거의 사실', '직접적인 경험', 또는 '진행 중인 과정'을 함축하는 동사들과 주로 결합합니다.",
+      "formation": "주어 + 동사 + 동명사 (동사-ing)",
+      "examples": [
+        {
+          "translation": "저는 바다에서 수영하는 것을 즐깁니다."
+        },
+        {
+          "translation": "그녀는 해외로 이주하는 것을 고려 중입니다."
+        },
+        {
+          "translation": "그는 눈을 마주치는 것을 피했습니다."
+        }
+      ]
+    },
+    "en_b1_19": {
+      "title": "to부정사(to + 동사원형)를 목적어로 취하는 동사",
+      "shortExplanation": "동명사 대신 to부정사(to + 동사원형)만을 목적어로 취하는 동사들의 용법입니다.",
+      "longExplanation": "영어의 많은 동사들은 목적어로 to부정사를 취하며, 대개 미래 지향적인 계획, 의도, 결정, 소망 등을 표현합니다.\n대표적인 동사: want(원하다), decide(결정하다), hope(바라다), plan(계획하다), manage(용케 해내다), agree(동의하다), promise(약속하다), refuse(거절하다), fail(~하지 못하다), expect(기대하다), offer(제안하다), learn(배우다), need(필요로 하다), afford(~할 여유가 있다), arrange(마련하다), attempt(시도하다), choose(선택하다), demand(요구하다), pretend(~인 척하다), tend(~하는 경향이 있다) 등.",
+      "formation": "주어 + 동사 + to + 동사원형",
+      "examples": [
+        {
+          "translation": "그녀는 직장을 그만두기로 결심했습니다."
+        },
+        {
+          "translation": "곧 다시 뵙기를 기대합니다."
+        },
+        {
+          "translation": "그는 끝내 답변을 하지 못했습니다."
+        }
+      ]
+    },
+    "en_b1_20": {
+      "title": "동명사(-ing)와 to부정사를 모두 취하는 동사 (like, love, hate, start, begin)",
+      "shortExplanation": "뒤에 동명사(-ing)와 to부정사 둘 다 올 수 있으며, 의미가 같거나 미세한 뉘앙스 차이만 있는 동사들의 용법입니다.",
+      "longExplanation": "일부 영어 동사들은 목적어로 동명사와 to부정사를 모두 취할 수 있습니다:\n• 선호나 감정을 나타내는 동사 (like, love, hate, prefer): 동명사(-ing)는 일반적인 취미나 행위 자체를 즐김을 나타내며 (예: 'I love cooking' - 평소 요리하는 것을 무척 좋아함), to부정사는 특정 상황에서의 선택이나 습관적인 판단을 나타내는 경향이 있습니다.\n• 시작과 지속을 나타내는 동사 (start, begin, continue): 두 형태 간에 의미상의 실질적인 차이가 거의 없습니다.",
+      "formation": "주어 + like / love / hate / start / begin + 동명사(-ing) 또는 to + 동사원형",
+      "examples": [
+        {
+          "translation": "저는 여행하는 것을 정말 좋아합니다."
+        },
+        {
+          "translation": "그녀는 5월부터 이곳에서 일하기 시작했습니다."
+        }
+      ]
+    },
+    "en_b1_21": {
+      "title": "used to - 과거의 습관과 상태",
+      "shortExplanation": "과거에 주기적으로 하던 습관이나 과거의 상태를 나타내며, 현재는 더 이상 하지 않음을 뜻합니다; '~하곤 했다', '예전에는 ~였다'.",
+      "longExplanation": "'used to + 동사원형'은 과거에 규칙적으로 반복되던 동작이나 지속되던 상태를 표현할 때 사용하며, 현재는 완전히 중단되었음을 내포합니다.\n• 긍정문: 주어 + used to + 동사원형\n• 부정문: 주어 + didn't use to + 동사원형\n• 의문문: Did + 주어 + use to + 동사원형...?\n주의: 'be used to + 명사/동명사(~에 익숙하다)'와의 차이에 주의하세요 (예: I am used to waking up early. = 나는 일찍 일어나는 것에 익숙하다).",
+      "formation": "긍정문: 주어 + used to + 동사원형\n부정문: 주어 + didn't use to + 동사원형\n의문문: Did + 주어 + use to + 동사원형?",
+      "examples": [
+        {
+          "translation": "예전에는 담배를 피우곤 했지만, 지금은 끊었습니다."
+        },
+        {
+          "translation": "예전에 악기를 연주하곤 하셨나요?"
+        }
+      ]
+    },
+    "en_b1_22": {
+      "title": "관계사절: who, which, that, where, whose",
+      "shortExplanation": "관계대명사와 관계부사를 활용하여 선행사(명사)를 뒤에서 수식하고 상세 정보를 보충합니다.",
+      "longExplanation": "관계사절은 앞에 나오는 선행사(명사)를 구체적으로 수식하는 형용사절 역할을 합니다:\n• who: 사람이 선행사일 때 사용하며 주어 또는 목적어 역할을 합니다 (예: The woman who called is my sister).\n• which: 사물이나 동물이 선행사일 때 사용합니다 (예: The book which I borrowed was great).\n• that: 제한적 용법에서 사람과 사물 모두를 선행사로 취할 수 있습니다 (예: The car that he bought is new).\n• where: 장소를 나타내는 선행사를 수식하는 관계부사입니다 (예: The café where we met is closed).\n• whose: 소유 관계를 나타냅니다 (예: The girl whose bag was stolen).\n참고: 구어체에서는 관계대명사가 목적어로 쓰일 때 자주 생략됩니다 (The film (that) I saw).",
+      "formation": "선행사 (명사) + who / which / that / where / whose + 수식절",
+      "examples": [
+        {
+          "translation": "옆집에 사는 남자는 매우 친절합니다."
+        },
+        {
+          "translation": "우리가 묵었던 호텔에는 수영장이 딸려 있었습니다."
+        }
+      ]
+    },
+    "en_b1_23": {
+      "title": "대조와 양보의 접속사·부사: although, however, despite, in spite of, whereas",
+      "shortExplanation": "대조, 반전, 양보 관계를 나타내며, '~에도 불구하고', '하지만', '반면에'라는 뜻입니다.",
+      "longExplanation": "대조와 양보를 나타내는 표현들은 뒤따르는 문법 요소에 명확한 차이가 있습니다:\n• although / even though / though + 절(주어 + 동사): '비록 ~일지라도'라는 뜻의 접속사입니다.\n• despite / in spite of + 명사(구) / 동명사(-ing): 전치사구이므로 뒤에 바로 절(주어+동사)이 올 수 없습니다.\n• however: 접속부사로, 보통 마침표나 세미콜론 뒤 새로운 문장의 서두에 쉼표와 함께 사용됩니다 ('그러나').\n• whereas: 두 가지 사실 간의 뚜렷한 대비를 나타내는 접속사로, '반면에', '~임에 비하여'라는 뜻입니다.",
+      "formation": "although / even though + 절 (주어 + 동사)\ndespite / in spite of + 명사(구) / 동명사(-ing)\nhowever, + 새로운 문장\n절 1, whereas + 절 2",
+      "examples": [
+        {
+          "translation": "그녀는 피곤했음에도 불구하고 계속 일했습니다."
+        },
+        {
+          "translation": "비가 내렸음에도 그는 자전거를 타고 출근했습니다."
+        },
+        {
+          "translation": "가격이 비쌌습니다. 그렇지만 그만한 가치가 있었습니다."
+        }
+      ]
+    },
+    "en_b1_24": {
+      "title": "미래진행형: will be + 동사-ing",
+      "shortExplanation": "미래의 특정한 시점에 진행 중일 동작이나 일상적 일정상 자연스럽게 발생할 일을 나타냅니다.",
+      "longExplanation": "미래진행형은 주로 다음과 같은 용법으로 활용됩니다:\n1. 미래의 특정 시점에 한창 진행되고 있을 동작 (예: At this time tomorrow, I'll be lying on the beach - 내일 이맘때면 해변에 누워 있을 것이다).\n2. 정해진 일정이나 자연스러운 흐름에 따라 예정되어 있는 미래의 동작 (예: I'll be seeing her tomorrow anyway - 어차피 내일 그녀를 만나게 될 것이다).\n3. 부담을 주지 않고 상대방의 미래 계획을 정중하게 물어볼 때 (예: Will you be coming to the party? - 파티에 오실 예정인가요?).",
+      "formation": "긍정문: 주어 + will be + 동사-ing\n부정문: 주어 + won't be + 동사-ing\n의문문: Will + 주어 + be + 동사-ing?",
+      "examples": [
+        {
+          "translation": "8시에는 전화하지 마세요. 그때 저녁 식사 중일 거예요."
+        },
+        {
+          "translation": "다음 주 이맘때쯤이면 해변에 앉아 쉬고 있을 거예요."
+        }
+      ]
+    },
+    "en_b1_25": {
+      "title": "미래완료: will have + 과거분사",
+      "shortExplanation": "미래의 특정한 기준 시점이나 다른 사건이 일어나기 전에 이미 완료되어 있을 동작을 나타내며, '~까지는 다 해놓았을 것이다'라는 뜻입니다.",
+      "longExplanation": "미래완료 시제는 미래의 특정 시점을 기준으로 그 시점 이전에 어떤 동작이 완결되어 있음을 강조할 때 사용됩니다.\n기준 시점을 나타내는 'by + 시간 명사(~까지)', 'by the time + 절(~할 때쯤에는)', 'before(~ 전에)' 등의 표현과 자주 함께 쓰입니다:\n예시: By the time you arrive, I will have cooked dinner. (네가 도착할 때쯤이면 난 저녁을 다 만들어 놓았을 거야).",
+      "formation": "긍정문: 주어 + will have + 과거분사\n부정문: 주어 + won't have + 과거분사\n의문문: Will + 주어 + have + 과거분사?",
+      "examples": [
+        {
+          "translation": "일요일까지는 이 책을 다 읽어 놓을 것입니다."
+        },
+        {
+          "translation": "2050년이 되면 과학자들은 치료법을 발견해 냈을 것입니다."
+        }
+      ]
+    }
+  }
+}

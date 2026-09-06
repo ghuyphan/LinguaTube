@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_无不V_675",
+    "language": "zh",
+    "pattern": "无不 V",
+    "title": "无不 V (there is nothing that doesn’t V)",
+    "shortExplanation": "there is nothing that doesn’t V",
+    "longExplanation": "there is nothing that doesn’t V. Pinyin: wúbù V",
+    "formation": "wúbù V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "你的一言一行，一举一动，无不影响着你周围的人们。",
+        "romanization": "nǐ de yīyányīxíng， yījǔyīdòng， wúbù yǐngxiǎng zhe nǐ zhōuwéi de rénmen。",
+        "translation": "Your words and deeds, every move, they all (lit. there is nothing that doesn’t) affect the people around you."
+      }
+    ]
+  },
+  {
+    "id": "zh_换句话说也就是说_676",
+    "language": "zh",
+    "pattern": "换句话说/(也)就是说",
+    "title": "换句话说/(也)就是说 (in other words)",
+    "shortExplanation": "in other words",
+    "longExplanation": "in other words. Pinyin: huànjùhuàshuō/( yě) jiùshìshuō",
+    "formation": "huànjùhuàshuō/( yě) jiùshìshuō",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "每个国家都应与他国和睦相处。换句话说/(也)就是说，国家不能为所欲为。",
+        "romanization": "měi gè guójiā dōu yīng yǔ tāguó hémùxiāngchǔ。 huànjùhuàshuō/( yě) jiùshìshuō， guójiā bùnéng wéisuǒyùwéi。",
+        "translation": "Every country should live in harmony with other countries. In other words, a country can't do whatever it wants."
+      }
+    ]
+  },
+  {
+    "id": "zh_为S所V_677",
+    "language": "zh",
+    "pattern": "为 S 所 V",
+    "title": "为 S 所 V (V’ed by S)",
+    "shortExplanation": "V’ed by S",
+    "longExplanation": "V’ed by S. Pinyin: wéi S suǒ V",
+    "formation": "wéi S suǒ V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "没有一个人不为这部电影中的人物所感动。",
+        "romanization": "méiyǒu yīgèrén bù wéi zhè bù diànyǐng zhòngdì rénwù suǒ gǎndòng。",
+        "translation": "No one is [left] untouched by the characters in this movie."
+      }
+    ]
+  },
+  {
+    "id": "zh_足以_678",
+    "language": "zh",
+    "pattern": "足以",
+    "title": "足以 (is enough to)",
+    "shortExplanation": "is enough to",
+    "longExplanation": "is enough to. Pinyin: zúyǐ",
+    "formation": "zúyǐ",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "对这样的坏人不严惩就不足以平民愤。",
+        "romanization": "duì zhèyàng de huàirén bù yánchéng jiù bùzú yǐ píngmín fèn。",
+        "translation": "If they do not severely punish such bad people, it won’t be enough to calm the anger civilians."
+      }
+    ]
+  },
+  {
+    "id": "zh_东M西M_679",
+    "language": "zh",
+    "pattern": "东 # M 西 # M",
+    "title": "东 # M 西 # M (one here and one there, willy nilly)",
+    "shortExplanation": "one here and one there, willy nilly",
+    "longExplanation": "one here and one there, willy nilly. Pinyin: dōng # M xī # M",
+    "formation": "dōng # M xī # M",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "客人还不走，我只好跟他东一句西一句地没话找话说。",
+        "romanization": "kèrén hái bù zǒu， wǒ zhǐhǎo gēn tā dōng yījù xī yījù dì méi huà zhǎo huàshuō。",
+        "translation": "The guest is not leaving yet, so I have to talk aimlessly to him."
+      }
+    ]
+  },
+  {
+    "id": "zh_V中zhng_680",
+    "language": "zh",
+    "pattern": "V 中 (zhòng)",
+    "title": "V 中 (zhòng) (V on the mark)",
+    "shortExplanation": "V on the mark",
+    "longExplanation": "V on the mark. Pinyin: V zhōng (zhòng)",
+    "formation": "V zhōng (zhòng)",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "飞来一只苍蝇，人动手去打，却总是打不中。",
+        "romanization": "fēi lái yī zhǐ cāngying， rén dòngshǒu qù dǎ， què zǒngshì dǎ bù zhōng。",
+        "translation": "A fly flew in. People tried to hit it with their hands but always missed it."
+      }
+    ]
+  },
+  {
+    "id": "zh_中zhngN_681",
+    "language": "zh",
+    "pattern": "中 (zhòng) N",
+    "title": "中 (zhòng) N (hit by N)",
+    "shortExplanation": "hit by N",
+    "longExplanation": "hit by N. Pinyin: zhōng (zhòng) N",
+    "formation": "zhōng (zhòng) N",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "这种蘑菇不能吃，吃了会中毒的。",
+        "romanization": "zhèzhǒng mógu bùnéng chī， chī le huì zhòngdú de。",
+        "translation": "This kind of mushroom can't be eaten. You will be poisoned if you eat it."
+      }
+    ]
+  },
+  {
+    "id": "zh_姑且_682",
+    "language": "zh",
+    "pattern": "姑且",
+    "title": "姑且 (for now)",
+    "shortExplanation": "for now",
+    "longExplanation": "for now. Pinyin: gūqiě",
+    "formation": "gūqiě",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "这件事，你姑且先答应下来，然后再慢慢想办法。",
+        "romanization": "zhè jiàn shì， nǐ gūqiě xiān dāying xiàlai， ránhòu zài mànmàn xiǎng bànfǎ。",
+        "translation": "As for this matter, you can agree to it for now, and then take your time and think about how to deal with it."
+      }
+    ]
+  },
+  {
+    "id": "zh_随即_683",
+    "language": "zh",
+    "pattern": "随即",
+    "title": "随即 (as soon as)",
+    "shortExplanation": "as soon as",
+    "longExplanation": "as soon as. Pinyin: suíjí",
+    "formation": "suíjí",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "耶稣受了洗，随即从水里上来。",
+        "romanization": "Yēsū shòu le xǐ， suíjí cóng Shuǐlǐ shànglái。",
+        "translation": "As soon as Jesus was baptized, he went up out of the water."
+      }
+    ]
+  },
+  {
+    "id": "zh_宁愿_684",
+    "language": "zh",
+    "pattern": "宁愿",
+    "title": "宁愿 (would rather)",
+    "shortExplanation": "would rather",
+    "longExplanation": "would rather. Pinyin: nìngyuàn",
+    "formation": "nìngyuàn",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "咱们宁愿多花点儿钱，也要买个质量好的。",
+        "romanization": "zánmen nìngyuàn duō huā diǎnr qián， yě yào mǎi gè zhìliàng hǎo de。",
+        "translation": "We'd rather spend more money than buy a good one."
+      }
+    ]
+  },
+  {
+    "id": "zh_N归N_685",
+    "language": "zh",
+    "pattern": "N 归 N",
+    "title": "N 归 N (although N is N)",
+    "shortExplanation": "although N is N",
+    "longExplanation": "although N is N. Pinyin: N guī N",
+    "formation": "N guī N",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "朋友之间，开玩笑归开玩笑，但千万别过了头。",
+        "romanization": "péngyou zhījiān， kāiwánxiào guī kāiwánxiào， dàn qiānwàn bié guò le tóu。",
+        "translation": "Between friends, [although] jokes are jokes, but don't go too far."
+      }
+    ]
+  },
+  {
+    "id": "zh_进而_686",
+    "language": "zh",
+    "pattern": "进而",
+    "title": "进而 (and then)",
+    "shortExplanation": "and then",
+    "longExplanation": "and then. Pinyin: jìn'ér",
+    "formation": "jìn'ér",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "人是在实践中接受环境的影响，进而改造自己的。",
+        "romanization": "rén shì zài shíjiàn zhōng jiēshòu huánjìng de yǐngxiǎng， jìn'ér gǎizào zìjǐ de。",
+        "translation": "It is through trial and error, mankind is influenced by their environment, and then transform themselves."
+      }
+    ]
+  },
+  {
+    "id": "zh_得以V_687",
+    "language": "zh",
+    "pattern": "得以 V",
+    "title": "得以 V (be enabled to V)",
+    "shortExplanation": "be enabled to V",
+    "longExplanation": "be enabled to V. Pinyin: déyǐ V",
+    "formation": "déyǐ V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他因为年轻，得以免除惩罚。",
+        "romanization": "tā yīnwèi niánqīng， déyǐ miǎnchú chéngfá。",
+        "translation": "He is young, [which] enabled [him] to be exempt from punishment."
+      }
+    ]
+  },
+  {
+    "id": "zh_偏偏V_689",
+    "language": "zh",
+    "pattern": "偏偏 V",
+    "title": "偏偏 V (just V, to insist on V)",
+    "shortExplanation": "just V, to insist on V",
+    "longExplanation": "just V, to insist on V. Pinyin: piānpiān V",
+    "formation": "piānpiān V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "那里太危险了，大家都劝他不要去，他偏偏要去。",
+        "romanization": "nàli tài wēixiǎn le， dàjiā dōu quàn tā bùyào qù， tā piānpiān yào qù。",
+        "translation": "It's too dangerous there. Everyone advised him not to go. He just wanted to go. (He insisted on going.)"
+      }
+    ]
+  },
+  {
+    "id": "zh_偏偏CLAUSE_690",
+    "language": "zh",
+    "pattern": "偏偏 CLAUSE",
+    "title": "偏偏 CLAUSE ((CLAUSE is an undesirable occurence by chance))",
+    "shortExplanation": "(CLAUSE is an undesirable occurence by chance)",
+    "longExplanation": "(CLAUSE is an undesirable occurence by chance). Pinyin: piānpiān CLAUSE",
+    "formation": "piānpiān CLAUSE",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "正当我坐下来吃晚饭时, 偏偏电话来了。",
+        "romanization": "zhèngdàng wǒ zuò xiàlai chī wǎnfàn shí,  piānpiān diànhuà lái le。",
+        "translation": "It just have to [be] when I sit down and eat supper that a call came."
+      }
+    ]
+  }
+]

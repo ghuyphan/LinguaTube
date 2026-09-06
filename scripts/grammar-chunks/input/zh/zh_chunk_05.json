@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_几_62",
+    "language": "zh",
+    "pattern": "几",
+    "title": "几 (several)",
+    "shortExplanation": "several",
+    "longExplanation": "several. Pinyin: jǐ",
+    "formation": "jǐ",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "几本书",
+        "romanization": "jǐ běn shū",
+        "translation": "several books"
+      }
+    ]
+  },
+  {
+    "id": "zh_十几_63",
+    "language": "zh",
+    "pattern": "十几",
+    "title": "十几 ((any # from 11 to 19))",
+    "shortExplanation": "(any # from 11 to 19)",
+    "longExplanation": "(any # from 11 to 19). Pinyin: shíjǐ",
+    "formation": "shíjǐ",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "十几本书",
+        "romanization": "shíjǐ běn shū",
+        "translation": "a dozen or more books"
+      }
+    ]
+  },
+  {
+    "id": "zh_几十_64",
+    "language": "zh",
+    "pattern": "几十",
+    "title": "几十 (tens of)",
+    "shortExplanation": "tens of",
+    "longExplanation": "tens of. Pinyin: jǐ shí",
+    "formation": "jǐ shí",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "几十本书",
+        "romanization": "jǐ shí běn shū",
+        "translation": "tens of people"
+      }
+    ]
+  },
+  {
+    "id": "zh_几多_65",
+    "language": "zh",
+    "pattern": "# 几/多",
+    "title": "# 几/多 (over #)",
+    "shortExplanation": "over #",
+    "longExplanation": "over #. Pinyin: # jǐ/ duō",
+    "formation": "# jǐ/ duō",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "二十几本书/二十多本书",
+        "romanization": "èrshí jǐ běn shū/ èrshíduō běn shū",
+        "translation": "twenty something books"
+      }
+    ]
+  },
+  {
+    "id": "zh_M多月星期_66",
+    "language": "zh",
+    "pattern": "# M 多 月/星期",
+    "title": "# M 多 月/星期 (over # of months/weeks)",
+    "shortExplanation": "over # of months/weeks",
+    "longExplanation": "over # of months/weeks. Pinyin: # M duō yuè/ xīngqī",
+    "formation": "# M duō yuè/ xīngqī",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "两个多月，三个多星期",
+        "romanization": "liǎng gè duō yuè， sān gè duō xīngqī",
+        "translation": "over two months, over three weeks"
+      }
+    ]
+  },
+  {
+    "id": "zh_V不VorA不A_67",
+    "language": "zh",
+    "pattern": "V不V or A不A",
+    "title": "V不V or A不A ((questions))",
+    "shortExplanation": "(questions)",
+    "longExplanation": "(questions). Pinyin: V bùV or A bùA",
+    "formation": "V bùV or A bùA",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我去商店，你去不去？",
+        "romanization": "wǒ qù shāngdiàn， nǐ qù bù qù？",
+        "translation": "I’m going to the shop, are you going?"
+      }
+    ]
+  },
+  {
+    "id": "zh_是不是_68",
+    "language": "zh",
+    "pattern": "是不是……？",
+    "title": "是不是……？ (Is it true that…?)",
+    "shortExplanation": "Is it true that…?",
+    "longExplanation": "Is it true that…?. Pinyin: shìbùshì……？",
+    "formation": "shìbùshì……？",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你是不是喜欢运动？",
+        "romanization": "nǐ shìbùshì xǐhuan yùndòng？",
+        "translation": "Is it true that you like to exercise?"
+      }
+    ]
+  },
+  {
+    "id": "zh_每MN都V_69",
+    "language": "zh",
+    "pattern": "每 M N (都) V",
+    "title": "每 M N (都) V (every N V)",
+    "shortExplanation": "every N V",
+    "longExplanation": "every N V. Pinyin: měi M N ( dōu) V",
+    "formation": "měi M N ( dōu) V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你每个星期六(都)工作吗？",
+        "romanization": "nǐ měi gè Xīngqīliù( dōu) gōngzuò ma？",
+        "translation": "Do you work every Saturday (without exception)?"
+      }
+    ]
+  },
+  {
+    "id": "zh_多A_70",
+    "language": "zh",
+    "pattern": "多 A",
+    "title": "多 A (how A)",
+    "shortExplanation": "how A",
+    "longExplanation": "how A. Pinyin: duō A",
+    "formation": "duō A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "他多高？",
+        "romanization": "tā duō gāo？",
+        "translation": "How tall is he?"
+      }
+    ]
+  },
+  {
+    "id": "zh_的N_71",
+    "language": "zh",
+    "pattern": "的 (N)",
+    "title": "的 (N) ((omitting nouns after 的))",
+    "shortExplanation": "(omitting nouns after 的)",
+    "longExplanation": "(omitting nouns after 的). Pinyin: de (N)",
+    "formation": "de (N)",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "这个杯子是昨天买的(杯子)。",
+        "romanization": "zhège bēizi shì zuótiān mǎi de( bēizi)。",
+        "translation": "This cup is the one (cup) that was bought yesterday."
+      }
+    ]
+  },
+  {
+    "id": "zh_一下_72",
+    "language": "zh",
+    "pattern": "一下",
+    "title": "一下 (once (quickly/easily))",
+    "shortExplanation": "once (quickly/easily)",
+    "longExplanation": "once (quickly/easily). Pinyin: yīxià",
+    "formation": "yīxià",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你去给老师送一下报纸。",
+        "romanization": "nǐ qù gěi lǎoshī sòng yīxià bàozhǐ。",
+        "translation": "Go and deliver the newspaper to your teacher."
+      }
+    ]
+  },
+  {
+    "id": "zh_真_73",
+    "language": "zh",
+    "pattern": "真",
+    "title": "真 (very, truly)",
+    "shortExplanation": "very, truly",
+    "longExplanation": "very, truly. Pinyin: zhēn",
+    "formation": "zhēn",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "牛奶真好喝啊！",
+        "romanization": "niúnǎi zhēn hǎohē ā！",
+        "translation": "The milk is so tasty!"
+      }
+    ]
+  },
+  {
+    "id": "zh_O是SV的_74",
+    "language": "zh",
+    "pattern": "O 是 S V 的",
+    "title": "O 是 S V 的 (it’s S who V’ed O)",
+    "shortExplanation": "it’s S who V’ed O",
+    "longExplanation": "it’s S who V’ed O. Pinyin: O shì S V de",
+    "formation": "O shì S V de",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "这本书是我买的。",
+        "romanization": "zhè běn shū shì wǒ mǎi de。",
+        "translation": "(It’s) I (who) bought the book."
+      }
+    ]
+  },
+  {
+    "id": "zh_的时候_75",
+    "language": "zh",
+    "pattern": "……的时候",
+    "title": "……的时候 (the time when …)",
+    "shortExplanation": "the time when …",
+    "longExplanation": "the time when …. Pinyin: …… de shíhou",
+    "formation": "…… de shíhou",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我18岁的时候来过北京。",
+        "romanization": "wǒ18 suì de shíhou lái guò Běijīng。",
+        "translation": "I’ve come to Beijing when I was 18."
+      }
+    ]
+  },
+  {
+    "id": "zh_已经VA了_76",
+    "language": "zh",
+    "pattern": "已经 V/A 了",
+    "title": "已经 V/A 了 (already V/A)",
+    "shortExplanation": "already V/A",
+    "longExplanation": "already V/A. Pinyin: yǐjīng V/A le",
+    "formation": "yǐjīng V/A le",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我已经工作两年多了。",
+        "romanization": "wǒ yǐjīng gōngzuò liǎng nián duō le。",
+        "translation": "I already worked for over two years."
+      }
+    ]
+  }
+]

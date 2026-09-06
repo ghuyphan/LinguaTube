@@ -4,10 +4,10 @@
             (fullscreenChanged)="isVideoFullscreen.set($event)" (videoEnded)="onVideoEnded()"
             (saveClicked)="openAddToPlaylist()" (playlistNext)="onPlaylistNext()" (playlistPrev)="onPlaylistPrev()" />
 
-        <!-- Mobile Playlist Queue (In-flow directly below player, matching player width) -->
-        @if (hasPlaylist()) {
-        <div class="mobile-playlist-card mobile-only" [class.is-expanded]="mobilePlaylistExpanded()">
-            <div class="mobile-playlist-bar" (click)="toggleMobilePlaylist()">
+        <!-- Mobile Playlist Bar (Compact, zero-layout-shift YouTube Mobile style) -->
+        @if (showMobilePlaylistCard()) {
+        <div class="mobile-playlist-card mobile-only" (click)="openMobilePlaylistSheet()">
+            <div class="mobile-playlist-bar">
                 <div class="mobile-playlist-header-left">
                     <div class="mobile-playlist-badge">
                         <app-icon name="list-video" [size]="18" />
@@ -46,18 +46,10 @@
                         <app-icon name="shuffle" [size]="16"></app-icon>
                     </button>
                     <button class="control-btn chevron-btn" (click)="toggleMobilePlaylist()" aria-label="Toggle playlist queue">
-                        <app-icon [name]="mobilePlaylistExpanded() ? 'chevron-up' : 'chevron-down'" [size]="18"></app-icon>
+                        <app-icon [name]="mobilePlaylistSheetOpen() ? 'chevron-down' : 'chevron-up'" [size]="18"></app-icon>
                     </button>
                 </div>
             </div>
-
-            @if (mobilePlaylistExpanded()) {
-            <div class="mobile-playlist-body">
-                <app-playlist-panel [isMobile]="true" [shouldScrollIntoView]="true"
-                    (videoSelect)="onPlaylistVideoSelect($event)" (openMenu)="onOpenPlaylistMenu($event)"
-                    (requestClose)="toggleMobilePlaylist()" />
-            </div>
-            }
         </div>
         }
 
@@ -123,7 +115,7 @@
                             }
                             <span class="meta-author">{{ playlist.userName || i18n.t('playlist.community') }}</span>
                             <span class="separator">•</span>
-                            <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? 'video' : 'videos' }}</span>
+                            <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? i18n.t('history.videoSingular') : i18n.t('history.videoPlural') }}</span>
                         </div>
                     </div>
                     <div class="home-row-item__action">
@@ -228,6 +220,48 @@
 <app-word-popup [selectedWord]="selectedWord()" [currentSentence]="currentSentence()" (closed)="onWordPopupClosed()" />
 }
 
+<!-- Mobile Playlist Queue Bottom Sheet (YouTube Mobile Style with Zero Layout Shift) -->
+@if (playlistService.currentPlaylist(); as playlist) {
+<app-bottom-sheet [isOpen]="mobilePlaylistSheetOpen()" [title]="playlist.title" [maxHeight]="'72vh'" [maxWidth]="'540px'" [showCloseButton]="true"
+    (closed)="closeMobilePlaylistSheet()">
+    <div class="mobile-playlist-sheet">
+        <div class="mobile-playlist-sheet-header">
+            <div class="mobile-playlist-sheet-info">
+                <h3 class="mobile-playlist-sheet-title">{{ playlist.title }}</h3>
+                <span class="mobile-playlist-sheet-sub">
+                    {{ playlist.userName || (playlist.userId === 'local' ? i18n.t('playlist.you') : i18n.t('playlist.curated')) }} • {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
+                </span>
+            </div>
+            <div class="mobile-playlist-sheet-actions">
+                <button class="action-btn" [class.active]="isShareCopied()" [class.btn-copied]="isShareCopied()"
+                    (click)="onShareMobile(playlist)" [title]="isShareCopied() ? 'Link copied!' : i18n.t('playlist.sharePlaylist')"
+                    aria-label="Share playlist">
+                    <app-icon [name]="isShareCopied() ? 'check' : 'share'" [size]="15"
+                        [class.text-success]="isShareCopied()"></app-icon>
+                </button>
+                <button class="action-btn" [class.active]="playlistService.isLooping()"
+                    (click)="playlistService.toggleLoop()"
+                    [title]="playlistService.isLooping() ? i18n.t('playlist.loopOn') : i18n.t('playlist.loopPlaylist')"
+                    aria-label="Loop playlist">
+                    <app-icon name="repeat" [size]="15"></app-icon>
+                </button>
+                <button class="action-btn" [class.active]="playlistService.isShuffled()"
+                    (click)="playlistService.toggleShuffle()"
+                    [title]="playlistService.isShuffled() ? i18n.t('playlist.shuffleOn') : i18n.t('playlist.shufflePlaylist')"
+                    aria-label="Shuffle playlist">
+                    <app-icon name="shuffle" [size]="15"></app-icon>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-playlist-sheet-body">
+            <app-playlist-panel [isMobile]="true" [shouldScrollIntoView]="mobilePlaylistSheetOpen()"
+                (videoSelect)="onPlaylistVideoSelect($event)" (openMenu)="onOpenPlaylistMenu($event)"
+                (requestClose)="closeMobilePlaylistSheet()" />
+        </div>
+    </div>
+</app-bottom-sheet>
+}
+
 <!-- Playlist Video Options Menu -->
 @if (playlistService.currentPlaylist(); as playlist) {
 <app-bottom-sheet [isOpen]="videoMenuOpen()" [title]="i18n.t('playlist.videoOptions') || 'Video Options'" [showCloseButton]="true" (closed)="videoMenuOpen.set(false)">
@@ -294,67 +328,73 @@
 
 <!-- AI Subtitle Generation & Turnstile Verification Modal -->
 @if (showAiConfirmDialog() && youtube.currentVideo(); as video) {
-<app-bottom-sheet [isOpen]="showAiConfirmDialog()" [title]="i18n.t('subtitle.generateAi') || 'Generate AI Subtitles'" [maxWidth]="'460px'" [showCloseButton]="true"
+<app-bottom-sheet [isOpen]="showAiConfirmDialog()" [title]="i18n.t('subtitle.generateAi') || 'Generate AI Subtitles'" [maxWidth]="'440px'" [showCloseButton]="true" [allowBackdropClose]="true"
     (closed)="onCloseAiConfirmDialog()">
-    <div class="ai-confirm-dialog">
-        <div class="ai-confirm-header">
-            <div class="ai-confirm-icon">
-                <app-icon name="sparkles" [size]="22" />
+    <div class="dialog-content ai-confirm-modal">
+        <div class="dialog-header">
+            <div class="dialog-header__title-box">
+                <app-icon name="sparkles" [size]="20" class="dialog-header__icon" />
+                <h2 class="dialog-title">{{ i18n.t('subtitle.generateAi') || 'Generate AI Subtitles' }}</h2>
             </div>
-            <div class="ai-confirm-title-group">
-                <h3 class="ai-confirm-title">{{ i18n.t('subtitle.generateAi') || 'Generate AI Subtitles' }}</h3>
-                <p class="ai-confirm-subtitle">
-                    {{ currentLearningLanguage() }} • {{ i18n.t('subtitle.whisperAi') || 'Powered by Whisper AI' }}
-                </p>
-            </div>
+            <p class="dialog-subtitle">
+                {{ currentLearningLanguage() }} • {{ i18n.t('subtitle.whisperAi') || 'Powered by Whisper AI' }}
+            </p>
         </div>
 
-        <div class="ai-confirm-details">
-            <div class="ai-confirm-row">
-                <span class="detail-label">{{ i18n.t('subtitle.video') || 'Video' }}</span>
-                <span class="detail-value text-truncate">{{ video.title }}</span>
+        <div class="dialog-card">
+            <div class="card-row">
+                <span class="card-label">{{ i18n.t('subtitle.video') || 'Video' }}</span>
+                <span class="card-value text-truncate" [title]="video.title">{{ video.title }}</span>
             </div>
-            <div class="ai-confirm-row">
-                <span class="detail-label">{{ i18n.t('subtitle.cost') || 'Cost' }}</span>
-                <span class="detail-badge">
-                    <app-icon name="diamond" [size]="13" class="gem-icon" />
-                    {{ aiDiamondCost() }} {{ aiDiamondCost() === 1 ? (i18n.t('subtitle.diamond') || 'Diamond') : (i18n.t('subtitle.diamonds') || 'Diamonds') }}
+            <div class="card-row">
+                <span class="card-label">{{ i18n.t('subtitle.cost') || 'Cost' }}</span>
+                <div class="badge-pill badge-pill--diamond">
+                    <app-icon name="diamond" [size]="13" />
+                    <span>{{ aiDiamondCost() }} {{ aiDiamondCost() === 1 ? (i18n.t('subtitle.diamond') || 'Diamond') : (i18n.t('subtitle.diamonds') || 'Diamonds') }}</span>
+                </div>
+            </div>
+            <div class="card-row">
+                <span class="card-label">{{ i18n.t('subtitle.yourBalance') || 'Your Balance' }}</span>
+                <span class="card-value balance-val">
+                    <app-icon name="diamond" [size]="13" class="balance-icon" />
+                    {{ transcript.diamonds() }} / {{ transcript.maxDiamonds() }}
                 </span>
-            </div>
-            <div class="ai-confirm-row">
-                <span class="detail-label">{{ i18n.t('subtitle.yourBalance') || 'Your Balance' }}</span>
-                <span class="detail-value">{{ transcript.diamonds() }} / {{ transcript.maxDiamonds() }}</span>
             </div>
         </div>
 
         @if (isVideoTooLongForAI()) {
-        <div class="ai-confirm-alert ai-confirm-alert--danger">
-            <app-icon name="alert-circle" [size]="15" />
+        <div class="dialog-banner dialog-banner--danger">
+            <app-icon name="alert-circle" [size]="16" class="banner-icon" />
             <span>{{ i18n.t('subtitle.videoTooLongForAI') || 'AI transcription is limited to videos under 20 minutes.' }}</span>
         </div>
         } @else if (transcript.diamonds() < aiDiamondCost()) {
-        <div class="ai-confirm-alert ai-confirm-alert--warning">
-            <app-icon name="alert-circle" [size]="15" />
+        <div class="dialog-banner dialog-banner--warning">
+            <app-icon name="alert-circle" [size]="16" class="banner-icon" />
             <span>{{ i18n.t('subtitle.needMoreDiamonds') || 'Not enough diamonds for this video duration.' }}</span>
         </div>
         }
 
-        <!-- Cloudflare Turnstile CAPTCHA Widget -->
+        <!-- Cloudflare Turnstile Verification -->
         @if (!isVideoTooLongForAI() && transcript.diamonds() >= aiDiamondCost()) {
-        <div class="turnstile-section">
+        <div class="dialog-turnstile">
             <app-turnstile (resolved)="onCaptchaResolved($event)" (expired)="aiCaptchaToken.set(null)"
                 (captchaError)="aiCaptchaToken.set(null)" />
         </div>
         }
 
-        <div class="ai-confirm-actions">
-            <button type="button" class="btn btn-secondary" (click)="onCloseAiConfirmDialog()">
+        <div class="dialog-actions">
+            <button type="button" class="btn btn-secondary dialog-btn" (click)="onCloseAiConfirmDialog()">
                 {{ i18n.t('vocab.cancel') || 'Cancel' }}
             </button>
-            <button type="button" class="btn btn-primary" [disabled]="!aiCaptchaToken() || isSubmittingAi() || isVideoTooLongForAI() || transcript.diamonds() < aiDiamondCost()"
+            <button type="button" class="btn btn-primary dialog-btn" [disabled]="!aiCaptchaToken() || isSubmittingAi() || isVideoTooLongForAI() || transcript.diamonds() < aiDiamondCost()"
                 (click)="confirmGenerateAI()">
+                @if (isSubmittingAi()) {
+                <app-icon name="loader" [size]="16" class="spin-icon" />
+                <span>{{ i18n.t('common.loading') || 'Generating...' }}</span>
+                } @else {
                 <app-icon name="sparkles" [size]="16" />
                 <span>{{ i18n.t('subtitle.generate') || 'Generate' }}</span>
+                }
             </button>
         </div>
     </div>

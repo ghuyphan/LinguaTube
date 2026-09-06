@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_라든지_14",
+    "language": "ko",
+    "pattern": "~라든지",
+    "title": "~라든지 ~라든지 [radenji radenji] (Either or)",
+    "shortExplanation": "Used to list alternative options or possibilities without specifying a single choice.",
+    "longExplanation": "The '~라든지 ~라든지' pattern is used to list alternative options or possibilities, implying that any one of the mentioned items could be chosen. It is similar to 'either or' in English, used when the speaker does not wish to specify a particular option.",
+    "formation": "Noun/Verb + 라든지 + Noun/Verb + 라든지",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "오늘 저녁에는 피자라든지 치킨라든지 뭐든지 주문해 먹을 거예요.",
+        "romanization": "Oneul jeonyeogeneun pizaradenji chikinradenji mweodenji jumunhae meogeul geoyeyo.",
+        "translation": "For dinner tonight, I'll order something—maybe pizza, chicken, or whatever."
+      },
+      {
+        "sentence": "당신이 필요로 하는 것이 뭐든지, 컴퓨터라든지 책이라든지, 저는 준비할 수 있어요.",
+        "romanization": "Dangsin-i pilyoro haneun geosi mwo deunji, keompyuteoradenji chaeradenji, jeoneun junbi hal su isseoyo.",
+        "translation": "Whatever you need—be it a computer or a book—I can prepare it."
+      },
+      {
+        "sentence": "운동하러 갈까 생각 중인데, 달리기라든지 수영이라든지 뭐라든지 좋아요.",
+        "romanization": "Undong hareo galkka saenggak junginde, dalligiradenji suyeongradenji mweodenji joayo.",
+        "translation": "I'm thinking of going exercise—maybe running, swimming, or something else would be fine."
+      },
+      {
+        "sentence": "1위를 차지할 수 있는 사람은 당신이라든지 누군가 될 거예요.",
+        "romanization": "Ilwireul chaji hal su inneun saram-eun dangsinradenji nugungga doel geoyeyo.",
+        "translation": "The person who can take first place will either be you or someone else."
+      }
+    ]
+  },
+  {
+    "id": "ko_려고_15",
+    "language": "ko",
+    "pattern": "~려고",
+    "title": "~려고 하다 [ryeogo hada] (Try to)",
+    "shortExplanation": "Used to express an intention or plan to do something.",
+    "longExplanation": "The '~려고 하다' structure is commonly used to indicate that someone intends, plans, or attempts to do something. It is equivalent to the English phrases 'plan to', 'intend to', or 'try to'.",
+    "formation": "Verb stem + -려고 하다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "요즘 한국어를 배우려고 하다 보니까 하루가 어떻게 지나가는지도 모르겠어요.",
+        "romanization": "Yojeum hangug-eoreul baeworyeogo hada bonikka, haruga eotteohge jinaganeunji moleugess-eoyo.",
+        "translation": "These days, as I'm trying to learn Korean, I don't even notice how quickly the day passes."
+      },
+      {
+        "sentence": "내일 친구를 만나려고 해서 지금은 너무 먼저 자려고 하고 있어요.",
+        "romanization": "Naeil chingureul mannalyeogo haeseo, jigeumeun neomu meonjeo jalyeogo hago isseoyo.",
+        "translation": "I'm trying to sleep early now because I'm planning to meet a friend tomorrow."
+      },
+      {
+        "sentence": "그는 기타를 치려고 해서 어제부터 매일 연습하고 있어요.",
+        "romanization": "Geuneun gital-eul chillyeogo haeseo eoje-buteo maeil yeonseubhago isseoyo.",
+        "translation": "He is trying to play the guitar, so he has been practicing every day since yesterday."
+      },
+      {
+        "sentence": "아들은 학교에 진학하려고 하니까 공부에 집중하려고 하고 있어요.",
+        "romanization": "Adeul-eun hakgyoe jinhakhalyeogo hanikkaji, gongbu-e jibjunghalyeogo hago isseoyo.",
+        "translation": "My son is focusing on his studies because he plans to go to college."
+      }
+    ]
+  },
+  {
+    "id": "ko_만이_16",
+    "language": "ko",
+    "pattern": "~만이",
+    "title": "~만이 아니다 [mani anida] (Not only)",
+    "shortExplanation": "Used to indicate that the preceding clause is not the only reason or factor; 'not only'.",
+    "longExplanation": "The '~만이 아니다' pattern is used to express that something is not solely due to one reason, suggesting that additional factors or elements are involved. It is similar to 'not only' in English, highlighting that there is more than one contributing aspect.",
+    "formation": "Noun + 만이 아니다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "저는 한국어를 공부하는 것만이 아니라, 일본어와 중국어도 공부하고 있어요.",
+        "romanization": "Jeoneun hangug-eoreul gongbuhaneun geos-mani anila, ilbon-eowa junggug-eodo gongbuhago isseoyo.",
+        "translation": "I am not only studying Korean, but also studying Japanese and Chinese."
+      },
+      {
+        "sentence": "그는 배우만이 아니라 각본가이기도 해요.",
+        "romanization": "Geuneun baeumani anila, gagbon-gaigido haeyo.",
+        "translation": "He is not only an actor, but also a scriptwriter."
+      },
+      {
+        "sentence": "이 좋은 결과는 힘든 노력만이 아니라 지속적인 경험이 결합된 결과입니다.",
+        "romanization": "I jo-eun gyeolgwaneun himdeun nolyeog-mani anila, jisogjeog-in gyeongheom-i gyeolhabdoen gyeolgwaibnida.",
+        "translation": "This good result is due not only to hard work but also to continuous experience."
+      },
+      {
+        "sentence": "우리가 건축에 관심이 있는 것은 미적인 측면만이 아니라 그 기능적인 측면 때문입니다.",
+        "romanization": "Uliga geonchug-e gwan-sim-i issneun geoseun mijeg-in chugmyeon mani anila, geu gineungjeog-in chugmyeon ttaemun-ibnida.",
+        "translation": "Our interest in architecture is not only because of its aesthetic aspects, but also due to its functional aspects."
+      }
+    ]
+  },
+  {
+    "id": "ko_마련이다_17",
+    "language": "ko",
+    "pattern": "~마련이다",
+    "title": "~마련이다 [maryeonida] (Bound to, tend to)",
+    "shortExplanation": "Used to express that something is bound to happen or that a situation naturally tends to be a certain way.",
+    "longExplanation": "The expression '마련이다' is used to talk about an inevitability or a fact of life—something that is expected to occur given the nature or circumstances. It often carries a nuance of resignation or acceptance and is similar to the English expressions 'bound to' or 'tend to'.",
+    "formation": "Noun + 이/가 + 마련이다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "사람들이 보는 것을 신경 쓰지 않으려 해도 그럴 수 없는 건 마련이다.",
+        "romanization": "Saramdeuli boneun geoseul singyeong sseuji aneureo haedo geureol su eobsneun geon maryeonida.",
+        "translation": "Even if you try not to care about what people think, it’s only natural that you can’t help it."
+      },
+      {
+        "sentence": "작은 아이들이 많이 노는 것은, 그 나이의 특성상 당연한 일이 마련이다.",
+        "romanization": "Jageun aideuli mani noneun geoseun, geu naieui teukseongsang dangyeonhan iri maryeonida.",
+        "translation": "It’s only natural for young children to play a lot given the nature of their age."
+      },
+      {
+        "sentence": "이번에 실패했다고 해서 다음에도 실패할 거라고 확신할 수 없는 건 마련이다.",
+        "romanization": "Ibeone silpaehaetdago haeseo daeumeodo silpaehal georago hwaksinhal su eobsneun geon maryeonida.",
+        "translation": "Just because you failed this time doesn’t mean you’re bound to fail next time."
+      },
+      {
+        "sentence": "힘든 일이 생기면 우울해지는 건 마련이다.",
+        "romanization": "Himdeun iri saenggimyeon uulhaejineun geon maryeonida.",
+        "translation": "When hard times hit, it’s natural to feel down."
+      }
+    ]
+  },
+  {
+    "id": "ko_면서_18",
+    "language": "ko",
+    "pattern": "~면서",
+    "title": "~면서 [myeonseo] (While)",
+    "shortExplanation": "Used to express two concurrent actions or states; 'while' or 'as'.",
+    "longExplanation": "'~면서' is a grammatical structure used to indicate that two actions or states occur simultaneously. It carries the same meaning as 'while' or 'as' in English and is used when the same subject is performing both actions.",
+    "formation": "Verb Stem + 면서",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "저는 음악을 듣으면서 공부하는 게 좋아해요, 그렇게 하면 더 집중할 수 있어요.",
+        "romanization": "Jeoneun eumageul deudneunmyeonseo gongbureul haneun ge joaheoyo, geureokehamyeon deo jipjunghal su isseoyo.",
+        "translation": "I like studying while listening to music because I can focus better that way."
+      },
+      {
+        "sentence": "그는 밥을 먹으면서 텔레비전을 봐요, 그것은 그의 습관이에요.",
+        "romanization": "Geuneun babeul meogneunmyeonseo tellebijeoneul bwayo, geugeoseun geuui seupgwani eyo.",
+        "translation": "He watches television while eating; that is his habit."
+      },
+      {
+        "sentence": "영화를 보면서 점심을 먹었어요, 그럼 시간을 절약할 수 있어요.",
+        "romanization": "Yeonghwaleul bomyeonseo jeomsimeul meogeosseoyo, geureom siganeul jeolyaghall su isseoyo.",
+        "translation": "I ate lunch while watching a movie, so I was able to save time."
+      },
+      {
+        "sentence": "나는 운동하면서 팟캐스트를 들어요, 그건 나에게 유익해요.",
+        "romanization": "Naneun undonghamyeonseo patkaeseuteureul deureoyo, geugeun naege yuikehaeyo.",
+        "translation": "I listen to podcasts while exercising; it is beneficial to me."
+      }
+    ]
+  },
+  {
+    "id": "ko_동안_19",
+    "language": "ko",
+    "pattern": "~동안",
+    "title": "~동안 [dongan] (During/While)",
+    "shortExplanation": "Used to express the duration of an action or situation.",
+    "longExplanation": "'~동안' indicates the time span during which an action or situation occurs. It typically translates to 'during' or 'while' in English and is useful for describing ongoing actions over a period of time.",
+    "formation": "Noun (indicating time) + 동안 / Verb + 동안",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "저는 겨울 방학 동안 그림을 많이 그렸어요, 왜냐하면 그것이 제 취미이기 때문이죠.",
+        "romanization": "Jeoneun gyeoul banghak dongan geurimeul manhi geuryeosseoyo, waenyahamyeon geugeosi je chwimigie ttaemunijyo.",
+        "translation": "I drew a lot during winter break because it’s my hobby."
+      },
+      {
+        "sentence": "요리하는 동안 전화가 계속 울려서 요리에 집중할 수 없었어요.",
+        "romanization": "Yorihaneun dongan jeonhwaga gyesok ullyeoseo yorie jibjunghal su eopseosseoyo.",
+        "translation": "While I was cooking, the phone kept ringing so I couldn’t concentrate on it."
+      },
+      {
+        "sentence": "저는 노래방에서 노래 부르는 동안 친구들은 모두 춤을 췄어서 너무 재미있었어요.",
+        "romanization": "Jeoneun noraebangeseo norae buneun dongan chingudeureun modu chumeul chwoseo neomu jaemiisseosseoyo.",
+        "translation": "While I was singing at the karaoke, all my friends were dancing and it was so much fun."
+      },
+      {
+        "sentence": "그녀는 집에 없는 동안 도둑이 와서 그녀의 모든 가치 있는 것들을 훔쳤어요.",
+        "romanization": "Geunyeoneun jibe eopseun dongan doduki waseo geunyeoui modeun gachi inneun geosdeureul humchyeosseoyo.",
+        "translation": "While she was away from home, a thief came and stole all her valuable things."
+      }
+    ]
+  },
+  {
+    "id": "ko_부터는_20",
+    "language": "ko",
+    "pattern": "~부터는",
+    "title": "~부터는 [buteoneun] (From now on, since)",
+    "shortExplanation": "Used to express a change starting from a specific point in time; 'from now on', 'since', or 'after'.",
+    "longExplanation": "'~부터는' is a time-based postposition that marks the point from which a change occurs or a new condition starts. It can refer to events in the past, present, or future and signals that things will continue or change from that point onward.",
+    "formation": "Noun (Time/Event) + 부터는",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "오늘부터는 건강에 좀 더 신경 쓰기로 했어요. 그래서, 매일 아침에 조깅하려고 해요.",
+        "romanization": "Oneulbuteoneun geongang-e jom deo singyeong sseugiro haesseoyo. Geuraeseo, maeil achime jogingharyeogo haeyo.",
+        "translation": "From today, I decided to pay more attention to my health. So, I plan to jog every morning."
+      },
+      {
+        "sentence": "이 사건이 발생한 후부터는 모든 것이 변했습니다. 사람들은 이 사실을 알게 된 후 조금 더 조심스럽게 되었어요.",
+        "romanization": "I sageoni balghan hubuteoneun modeun geosi byeonhaetsseumnida. Saramdeureun i sasileul alge doen hu jogeum deo josimseureopge doeeosseoyo.",
+        "translation": "Everything changed after this incident occurred. People became a bit more cautious once they learned about it."
+      },
+      {
+        "sentence": "작년부터는 우리가 번 돈을 좀 더 아껴 쓰기로 했어요. 그래서, 쓸데없는 비용을 아끼기 위해 최대한 노력하고 있어요.",
+        "romanization": "Jagnyeonbuteoneun uriga beon doneul jom deo akkyeo sseugiro haesseoyo. Geuraeseo, sseuldeeopsneun biyongeul akkigi wihae choedaejeon noryeokhago isseoyo.",
+        "translation": "Since last year, we decided to save more of our earnings. So, we are doing our utmost to cut unnecessary expenses."
+      },
+      {
+        "sentence": "이 보고서를 읽은 후부터는 이 상황에 대해 더 잘 이해할 수 있었어요. 이상하게도, 전에는 이해할 수 없었던 부분들이 갑자기 말이 되더군요.",
+        "romanization": "I bogoseoreul ilgeun hubuteoneun i sanghwange daehae deo jal ihaehal su isseosseoyo. Isanghagedo, jeoneneun ihaehal su eopseotdeon bundeuli gapjagi mari doedeogunyo.",
+        "translation": "Since reading this report, I was able to understand the situation better. Strangely, the parts I couldn’t grasp before suddenly made sense."
+      }
+    ]
+  },
+  {
+    "id": "ko_서야_21",
+    "language": "ko",
+    "pattern": "~서야",
+    "title": "~서야 [seoya] (Only after)",
+    "shortExplanation": "Used to express that only after doing A can B be done, emphasizing the sequential order of events.",
+    "longExplanation": "'~서야' is used to indicate that the second action or condition can occur only after the first has been completed. It stresses that without fulfilling the prerequisite, the following action is impossible—much like saying 'only after' in English.",
+    "formation": "Verb Stem + 서야",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "제 책을 모두 읽어서야 이해할 수 있을 것입니다. 가볍게 넘기는 것이 아니라 매 문장, 매 단어를 세심하게 살펴봐야 합니다.",
+        "romanization": "Je chaeg-eul modu ilgeoseoya ihaehal su iss-eul geos-ibnida. Gabyeobge neomgineun geos-i anila mae munjang, mae dan-eoreul sesimhage salpyeobwaya hamnida.",
+        "translation": "You can only understand my book after reading it all; you must carefully examine every sentence and every word, not just skim through it."
+      },
+      {
+        "sentence": "사랑에 빠져서야 그 사람의 장단점을 보게 되는 거예요. 때로는 사랑의 맹목성 때문에 그들의 단점을 무시하게 될 수도 있어요.",
+        "romanization": "Sarang-e ppajyeoseoya geu saram-ui jangdanjeomeul boge doeneun geoeyo. Ttaeloneun sarang-ui maengmogseong ttaemune geudeul-ui danjeomeul mushihage doel su-do iss-eoyo.",
+        "translation": "Only after falling in love can you see that person’s strengths and weaknesses. Sometimes, the blindness of love may cause you to overlook their flaws."
+      },
+      {
+        "sentence": "이 비즈니스를 성공하려면 계획을 잘 세워서야 할 수 있습니다. 계획 없이 성공을 기대하는 것은 무리가 크다고 생각합니다.",
+        "romanization": "I bijeuniseuleul seonggonghalyeomyeon gyeheog-eul jal sewoseoya hal su issseubnida. Gyeheog eobs-i seonggong-eul gidaehaneun geoseun muliga keudago saeng-gaghabnida.",
+        "translation": "To succeed in this business, you must plan well first. Expecting success without a plan is unrealistic."
+      },
+      {
+        "sentence": "아무도 겪어보지 않은 상황이라서 고민이긴 하지만, 그 상황을 직접 겪어서야 정확한 대처 방법을 알 수 있을 것입니다.",
+        "romanization": "Amudo gyeogeoboji anh-eun sanghwang-ilaseo gomin-igin hajiman, geu sanghwang-eul jigjeob gyeogeoseoya jeonghwaghan daecheo bangbeob-eul al su iss-eul geos-ibnida.",
+        "translation": "It’s a situation no one has ever experienced, so it’s worrisome—but you’ll know the exact way to handle it only after you’ve gone through it yourself."
+      }
+    ]
+  },
+  {
+    "id": "ko_소문에는_22",
+    "language": "ko",
+    "pattern": "~소문에는",
+    "title": "~소문에는 [somuneneun] (I heard that)",
+    "shortExplanation": "Used to convey a hearsay or rumor that the speaker has heard.",
+    "longExplanation": "The '~소문에는' construction is used when the speaker wants to indicate that something has been heard as a rumor or hearsay. It does not express the speaker’s own opinion but relays what is commonly talked about.",
+    "formation": "Noun + 이/가 + ~소문에는",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "소문에는 그 회사가 곧 파산하게 될 것이라고 들었어요.",
+        "romanization": "Somuneneun geu hoesaga got pasanhage doel geosirago deureosseoyo.",
+        "translation": "I heard that that company is going to go bankrupt soon."
+      },
+      {
+        "sentence": "그의 성공에 대한 소문에는 그가 하루에 18시간 일한다고 해요.",
+        "romanization": "Geuui seonggonge daehan somuneneun geuga harue 18sigan ilhandago haeyo.",
+        "translation": "The rumor about his success is that he works 18 hours a day."
+      },
+      {
+        "sentence": "그녀가 유명해진 소문에는 그녀가 내년에 할리우드 영화에 출연할 것이라고 해요.",
+        "romanization": "Geunyeoga yumyeonghaejin somuneneun geunyeoga naenyeone hallyuudeu yeonghaee chulyeonhal geosirago haeyo.",
+        "translation": "The rumor about her rising fame is that she will appear in a Hollywood movie next year."
+      },
+      {
+        "sentence": "요즘 임재범의 인기에 대한 소문에는 그가 새로운 앨범을 더 빠르게 발표할 예정이라고 해요.",
+        "romanization": "Yojum limjaebeomui ingie daehan somuneneun geuga saeroun aelbeumeul deo ppareuge balpyohal yejeongirago haeyo.",
+        "translation": "The rumor about Lim Jae-beom’s current popularity is that he is planning to release a new album sooner."
+      }
+    ]
+  },
+  {
+    "id": "ko_아어_23",
+    "language": "ko",
+    "pattern": "~아/어",
+    "title": "~아/어 보이다 [a/eo boida] (To seem, appear)",
+    "shortExplanation": "Used to express that someone or something seems or appears a certain way, based on the speaker’s perception.",
+    "longExplanation": "The grammar point '~아/어 보이다' is used in Korean to convey the speaker’s judgment or perception about someone or something. The verb or adjective before '~아/어 보이다' is conjugated according to its final vowel, and the expression is equivalent to 'seem', 'appear', or 'look like' in English.",
+    "formation": "Verb or Adjective + 아/어 보이다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "그 남자가 정말 불쌍해 보여요, 아마 어려운 시기를 겪고 있는 것 같네요.",
+        "romanization": "Geu namjaga jeongmal bulssanghae boyeoyo, ama eoryeoun sigireul geotgo issneun geot gatneyo.",
+        "translation": "That man seems very pitiful; he must be going through a hard time."
+      },
+      {
+        "sentence": "오늘 피곤해 보이니까 일찍 쉬는 게 어때요?",
+        "romanization": "Oneul pigonhae boinikka, iljjik swineun ge eottaeyo?",
+        "translation": "You look tired today—how about getting some rest early?"
+      },
+      {
+        "sentence": "그녀는 행복해 보이는데, 아마 좋은 일이 있었나 봐요.",
+        "romanization": "Geunyeoneun haengbokhae boineunde, ama joheun iri isseotna bwayo.",
+        "translation": "She seems happy; maybe something good has happened to her."
+      },
+      {
+        "sentence": "이 요리가 맛있어 보이니까 내일 친구들과 함께 와서 먹어 볼게요.",
+        "romanization": "I yoriga masisseo boinikkaji, naeil chingudeulgwa hamkke wasseo meogeobolkkeyo.",
+        "translation": "This dish looks delicious; I’ll come and try it with my friends tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "ko_아어야지_24",
+    "language": "ko",
+    "pattern": "~아/어야지",
+    "title": "~아/어야지 [a/eoyaji] (I should, I better)",
+    "shortExplanation": "Used to express the speaker's determination or intention; 'I should' or 'I better'.",
+    "longExplanation": "‘~아/어야지’ is a Korean grammar point used to express the speaker’s determination or intention. It conveys that the speaker feels they should do something or had better do it. It is often used when making a self-suggestion or deciding to take a certain action in the future, and sometimes used rhetorically to encourage oneself.",
+    "formation": "Verb stem + 아/어야지 (if the stem ends in ㅏ or ㅗ, use 아야지; otherwise, use 어야지)",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "너무 늦었어, 이제 집에 가야지.",
+        "romanization": "Neomu neujeosseo, ije jibe gayaji.",
+        "translation": "It's too late, I should go home now."
+      },
+      {
+        "sentence": "이번에는 정말로 다이어트를 해야지.",
+        "romanization": "Ibeoneneun jeongmallo daieoteureul haeyaji.",
+        "translation": "This time, I really should go on a diet."
+      },
+      {
+        "sentence": "내일은 일찍 일어나서 운동해야지.",
+        "romanization": "Naeireun iljjik ireonaseo undonghaeyaji.",
+        "translation": "I should wake up early and exercise tomorrow."
+      },
+      {
+        "sentence": "과제가 많이 쌓였어, 이제부터 열심히 해야지.",
+        "romanization": "Gwajega manhi ssahyeosseo, ijebuteo yeolsimhi haeyaji.",
+        "translation": "I’ve piled up lots of assignments; I should really start working hard from now on."
+      }
+    ]
+  },
+  {
+    "id": "ko_았었다_25",
+    "language": "ko",
+    "pattern": "~았/었다",
+    "title": "~았/었다 치다 [at/eotda chida] (Let’s say, suppose)",
+    "shortExplanation": "Expresses a hypothetical situation, equivalent to 'let's say' or 'suppose'.",
+    "longExplanation": "‘~았/었다 치다’ is used to propose a hypothetical situation or condition. It is equivalent to saying 'let’s say' or 'suppose' in English, setting up an assumed scenario for discussion. This expression is often used to analyze possible outcomes or to plan by exploring various scenarios.",
+    "formation": "Verb stem + 았/었다 + 치다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "우리가 돈이 많았다 치면, 유럽 여행을 갈 수 있었을까요?",
+        "romanization": "Uriga doni manhatda chimyeon, yureop yeohaengeul gal su isseosseulkka yo?",
+        "translation": "Let's say we had a lot of money; would we have been able to go to Europe?"
+      },
+      {
+        "sentence": "그가 우리 팀에 있었다 치면, 이길 수 있었다고 생각해요?",
+        "romanization": "Geuga uri time isseotda chimyeon, igil su isseotdago saenggakhaeyo?",
+        "translation": "If we suppose that he was on our team, do you think we could have won?"
+      },
+      {
+        "sentence": "그녀가 없었다 치면, 그 일을 어떻게 대처했을까요?",
+        "romanization": "Geunyeoga eopseotda chimyeon, geu ireul eotteoke daecheohaesseulkka yo?",
+        "translation": "Let's say she wasn't there; how would we have dealt with that?"
+      },
+      {
+        "sentence": "요즘 비가 많이 왔다 치면, 야외 활동은 어떻게 될까요?",
+        "romanization": "Yojeum biga mani watda chimyeon, yaoe hwaldongeun eotteoke doilgeolkka yo?",
+        "translation": "Suppose it has rained a lot these days; how would outdoor activities be affected?"
+      }
+    ]
+  },
+  {
+    "id": "ko_았었던_26",
+    "language": "ko",
+    "pattern": "~았/었던",
+    "title": "~았/었던 것 같다 [at/eotdeon geot gatda] (It seemed that)",
+    "shortExplanation": "Used to express that something appeared or seemed a certain way in the past.",
+    "longExplanation": "‘~았/었던 것 같다’ is used to express a speaker’s vague recollection or speculation about a past event. It can be translated as 'it seemed that', 'it looked as if', or 'I think that', often indicating uncertainty or a vague impression.",
+    "formation": "Verb in past tense + ~았/었던 것 같다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "그녀는 매우 행복했던 것 같아요, 항상 미소를 짓고 있었어요.",
+        "romanization": "Geunyeoneun maeu haengbokhaetdeon geot gatayo, hangsang misoreul jitgo isseosseoyo.",
+        "translation": "She seemed very happy; she was always smiling."
+      },
+      {
+        "sentence": "그 날은 들어보지 못했던 노래를 들었던 것 같아요, 그 노래는 아직도 머릿속에 있어요.",
+        "romanization": "Geu nareun deureoboji moshan nolaereul deureossdeon geot gatayo, geu nolaeneun ajikdo meoritsoge isseoyo.",
+        "translation": "I think that on that day I heard a song I had never heard before; that song is still in my head."
+      },
+      {
+        "sentence": "저는 아주 오래전에 이곳을 방문했던 것 같아요, 건물들이 익숙해 보여요.",
+        "romanization": "Jeoneun aju oraejeon-e igoseul bangmunhaetdeon geot gatayo, geonmuldeuri iksukhae boyeoyo.",
+        "translation": "I think I visited this place a very long time ago; the buildings look familiar."
+      },
+      {
+        "sentence": "오늘이 일요일인 줄 알았던 것 같아요, 하지만 사실은 토요일이었어요.",
+        "romanization": "Oneuli iryoil-in jul aratdeon geot gatayo, hajiman sasil-eun toyoilieosseoyo.",
+        "translation": "I think I mistakenly thought today was Sunday, but it was actually Saturday."
+      }
+    ]
+  },
+  {
+    "id": "ko_았었어야_27",
+    "language": "ko",
+    "pattern": "~았/었어야",
+    "title": "~았/었어야 했다 [at/eosseoya haetda] (Should have)",
+    "shortExplanation": "Expresses regret over something in the past that should have been done but wasn't.",
+    "longExplanation": "‘~았/었어야 했다’ is used to express regret or a sense of missed opportunity about a past action. It is equivalent to 'should have' in English and reflects on an action that did not occur but would have been appropriate or beneficial if it had.",
+    "formation": "Verb stem + 았/었어야 했다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "이제 와서 미안하다고 하는 것은 늦었어, 처음에 아무래도 잘못을 인정했어야 했어.",
+        "romanization": "Ije waseo mianhadago haneun geoseun neujeosseo, cheoeume amuraedo jalmoseul injeonghaesseoya haesseo.",
+        "translation": "It's too late to apologize now; you should have admitted your mistake from the beginning."
+      },
+      {
+        "sentence": "그 이야기를 듣기 전에, 날 믿었어야 했어.",
+        "romanization": "Geu iyagireul deutgi jeone, nal mideosseoya haesseo.",
+        "translation": "You should have believed me before hearing that story."
+      },
+      {
+        "sentence": "나는 그 회사에 지원하지 말았어야 했어, 거기서의 경험은 나에게 좋지 않았어.",
+        "romanization": "Naneun geu hoesae jiweonhaji marasseoya haesseo, geogiseoui gyeongheomeun naege joji anhasseo.",
+        "translation": "I shouldn't have applied to that company; the experience there wasn't good for me."
+      },
+      {
+        "sentence": "우리는 더 일찍 출발했어야 했어, 그래서 지금보다 더 많은 관광지를 볼 수 있었을 텐데.",
+        "romanization": "Urineun deo iljjik chulbalhaesseoya haesseo, geuraeseo jigeumboda deo manheun gwangwangjireul bol su isseosseultende.",
+        "translation": "We should have left earlier, so we could have seen more tourist attractions."
+      }
+    ]
+  },
+  {
+    "id": "ko_어아_28",
+    "language": "ko",
+    "pattern": "~어/아",
+    "title": "~어/아 가다 [eo/a gada] (While doing)",
+    "shortExplanation": "Describes an action that is ongoing or a process that continues over time.",
+    "longExplanation": "‘~어/아 가다’ is used to indicate that an action started in the past is continuing into the present or future. It can be translated as 'while doing' or 'gradually' and is used to emphasize a process or change over time.",
+    "formation": "Verb stem + 아/어 가다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "저는 음악을 들으면서 걸어갈 거예요, 그래서 스트레스를 줄일 수 있어요.",
+        "romanization": "Jeoneun eumageul deureumyeonseo georeogal geoyeyo, geuraeseo seuteureseureul julil su isseoyo.",
+        "translation": "I will go while listening to music, so I can reduce stress."
+      },
+      {
+        "sentence": "우리 엄마는 매일 아침 운동하면서 가던 공원에 가곤 해요.",
+        "romanization": "Uri eommaneun maeil achim undonghamyeonseo gadeon gongwone gagon haeyo.",
+        "translation": "My mother often goes to the park she used to go to while exercising every morning."
+      },
+      {
+        "sentence": "아기가 성장하면서 점점 더 많은 것을 배워가고 있어요.",
+        "romanization": "Agiga seongjanghamyeonseo jeomjeom deo manheun geoseul baewogago isseoyo.",
+        "translation": "As the baby grows, it is learning more and more."
+      },
+      {
+        "sentence": "나는 한국어를 공부하면서 점차 나아져가고 있어요.",
+        "romanization": "Naneun hangugeoreul gongbuhamyeonseo jeomjeom naajyeogago isseoyo.",
+        "translation": "I am gradually improving while studying Korean."
+      }
+    ]
+  }
+]

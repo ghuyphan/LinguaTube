@@ -43,6 +43,7 @@ export class VideoBottomBarComponent {
   // Outputs for Right Controls
   toggleSubtitles = output<void>();
   toggleDualSubs = output<void>();
+  openDualSubMenu = output<MouseEvent>();
   speedClick = output<MouseEvent>();
   openSettings = output<MouseEvent>();
   toggleFullscreen = output<void>();
@@ -78,5 +79,11 @@ export class VideoBottomBarComponent {
 
     document.addEventListener('mousemove', onMove);
     document.addEventListener('mouseup', onUp);
+  }
+
+  onDualSubContextMenu(event: MouseEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.openDualSubMenu.emit(event);
   }
 }

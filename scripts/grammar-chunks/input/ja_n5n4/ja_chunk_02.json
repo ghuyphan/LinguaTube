@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_いAdjective_15",
+    "language": "ja",
+    "pattern": "い-Adjective:",
+    "title": "い-Adjective: Negative Polite Form",
+    "shortExplanation": "Change an い-adjective into a polite negative form with ～くないです (or ～くありません).",
+    "longExplanation": "To make an い-adjective negative and polite, remove the final い and add くないです. An alternative more formal style is くありません. For example, 美味しい → 美味しくないです / 美味しくありません。",
+    "formation": "い-Adjective (remove い) + くないです",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "このピザは美味しくないです。",
+        "romanization": "Kono piza wa oishiku nai desu.",
+        "translation": "This pizza is not delicious."
+      },
+      {
+        "sentence": "この部屋は広くないです。",
+        "romanization": "Kono heya wa hiroku nai desu.",
+        "translation": "This room is not spacious."
+      },
+      {
+        "sentence": "彼の意見は面白くないです。",
+        "romanization": "Kare no iken wa omoshiroku nai desu.",
+        "translation": "His opinion is not interesting."
+      },
+      {
+        "sentence": "その映画は楽しくありません。",
+        "romanization": "Sono eiga wa tanoshiku arimasen.",
+        "translation": "That movie is not enjoyable."
+      }
+    ]
+  },
+  {
+    "id": "ja_いAdjective_16",
+    "language": "ja",
+    "pattern": "い-Adjective",
+    "title": "い-Adjective て (i-Adjective + te~)",
+    "shortExplanation": "Used to connect two or more い-adjectives to describe something.",
+    "longExplanation": "The い-Adjective て form is used to connect two or more い-adjectives when listing attributes of something or someone. To form it, replace the final い with くて. For example, かわいい → かわいくて, おいしい → おいしくて.",
+    "formation": "い-Adjective (remove い) + くて + い-Adjective",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "このリンゴは甘くて美味しいです。",
+        "romanization": "Kono ringo wa amakute oishii desu.",
+        "translation": "This apple is sweet and delicious."
+      },
+      {
+        "sentence": "彼女は優しくてかわいいです。",
+        "romanization": "Kanojo wa yasashikute kawaii desu.",
+        "translation": "She is kind and cute."
+      },
+      {
+        "sentence": "映画は面白くて感動的でした。",
+        "romanization": "Eiga wa omoshirokute kandouteki deshita.",
+        "translation": "The movie was interesting and moving."
+      },
+      {
+        "sentence": "この部屋は広くて明るいです。",
+        "romanization": "Kono heya wa hirokute akarui desu.",
+        "translation": "This room is spacious and bright."
+      }
+    ]
+  },
+  {
+    "id": "ja_なAdjective_17",
+    "language": "ja",
+    "pattern": "な-Adjective",
+    "title": "な-Adjective に + Verb",
+    "shortExplanation": "Turn a な-adjective into an adverb by adding に.",
+    "longExplanation": "To make a な-adjective modify a verb, remove the な and add に. This form describes how an action is performed. For instance, 静か（な） → 静かに, 親切（な） → 親切に.",
+    "formation": "な-Adjective (remove な) + に + Verb",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼は静かに話す。",
+        "romanization": "Kare wa shizuka ni hanasu.",
+        "translation": "He speaks quietly."
+      },
+      {
+        "sentence": "部屋をきれいに掃除した。",
+        "romanization": "Heya o kirei ni souji shita.",
+        "translation": "I cleaned the room neatly."
+      },
+      {
+        "sentence": "彼女は元気に働いています。",
+        "romanization": "Kanojo wa genki ni hataraite imasu.",
+        "translation": "She works energetically."
+      },
+      {
+        "sentence": "先生は親切に説明してくれる。",
+        "romanization": "Sensei wa shinsetsu ni setsumei shite kureru.",
+        "translation": "The teacher explains kindly."
+      }
+    ]
+  },
+  {
+    "id": "ja_なAdjective_18",
+    "language": "ja",
+    "pattern": "な-Adjective",
+    "title": "な-Adjective で～ (na-Adjective de~)",
+    "shortExplanation": "Usage of で to connect or add information with a な-adjective.",
+    "longExplanation": "Use な-adjective + で to connect it to another quality, action, or description. It can combine a な-adjective with another adjective, verb, or clause.",
+    "formation": "な-Adjective + で",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼は綺麗で優しい女性が好きです。",
+        "romanization": "Kare wa kirei de yasashii josei ga suki desu.",
+        "translation": "He likes women who are beautiful and kind."
+      },
+      {
+        "sentence": "この料理は健康的で、元気な気分になります。",
+        "romanization": "Kono ryouri wa kenkouteki de, genki na kibun ni narimasu.",
+        "translation": "This dish is healthy and makes you feel energetic."
+      },
+      {
+        "sentence": "彼は静かで落ち着いた環境で仕事をしたい。",
+        "romanization": "Kare wa shizuka de ochitsuita kankyou de shigoto o shitai.",
+        "translation": "He wants to work in a quiet and calm environment."
+      },
+      {
+        "sentence": "この部屋は清潔で気持ちがいいです。",
+        "romanization": "Kono heya wa seiketsu de kimochi ga ii desu.",
+        "translation": "This room is clean and feels good."
+      }
+    ]
+  },
+  {
+    "id": "ja_なAdjective_19",
+    "language": "ja",
+    "pattern": "な-Adjective",
+    "title": "な-Adjective に します (na-Adjective ni shimasu)",
+    "shortExplanation": "Expressing a decision or preference with a な-adjective.",
+    "longExplanation": "The な-adjective に します pattern is used to express a decision or choice based on a な-adjective. It often translates as 'I’ll make it ...,' 'I will choose ...,' or 'I’ve decided on ...'.",
+    "formation": "な-Adjective + に + します",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "静かにします。",
+        "romanization": "Shizuka ni shimasu.",
+        "translation": "I will be quiet."
+      },
+      {
+        "sentence": "部屋をきれいにします。",
+        "romanization": "Heya o kirei ni shimasu.",
+        "translation": "I will make the room clean."
+      },
+      {
+        "sentence": "明日の会議は簡単にします。",
+        "romanization": "Ashita no kaigi wa kantan ni shimasu.",
+        "translation": "I will make tomorrow’s meeting simple."
+      },
+      {
+        "sentence": "健康的な食事にします。",
+        "romanization": "Kenkou-teki na shokuji ni shimasu.",
+        "translation": "I will choose a healthy meal."
+      }
+    ]
+  },
+  {
+    "id": "ja_なAdjective_20",
+    "language": "ja",
+    "pattern": "な-Adjective",
+    "title": "な-Adjective に なります (na-Adjective ni narimasu)",
+    "shortExplanation": "Express a change or transformation into a state described by the な-adjective.",
+    "longExplanation": "The な-Adjective + に + なります grammar point is used to express a change or transformation into the state described by the な-adjective. It translates to 'become' or 'turn into' along with the meaning of the な-adjective.",
+    "formation": "な-Adjective (remove な) + に + なります",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "この部屋は静かになります。",
+        "romanization": "Kono heya wa shizuka ni narimasu.",
+        "translation": "This room becomes quiet."
+      },
+      {
+        "sentence": "彼女はきれいになります。",
+        "romanization": "Kanojo wa kirei ni narimasu.",
+        "translation": "She becomes beautiful."
+      },
+      {
+        "sentence": "彼は元気になります。",
+        "romanization": "Kare wa genki ni narimasu.",
+        "translation": "He becomes energetic."
+      },
+      {
+        "sentence": "町はにぎやかになります。",
+        "romanization": "Machi wa nigiyaka ni narimasu.",
+        "translation": "The town becomes lively."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_21",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun か Noun か～ (Noun ka Noun ka～)",
+    "shortExplanation": "Expresses choice or alternatives; 'either', 'or'.",
+    "longExplanation": "The Noun か Noun か～ grammar point is used to present two or more alternatives for a choice. It can be translated to 'either', 'or' in English. It is formed by placing the particle か in between two nouns or noun phrases.",
+    "formation": "Noun1 + か + Noun2 + か～",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今日、映画を見るか、散歩するかどちらにしますか？",
+        "romanization": "Kyou, eiga wo miru ka, sanpo suru ka dochira ni shimasu ka?",
+        "translation": "Will we watch a movie or go for a walk today?"
+      },
+      {
+        "sentence": "コーヒーか紅茶か、一つだけ選んでください。",
+        "romanization": "Koohii ka koucha ka, hitotsu dake erande kudasai.",
+        "translation": "Please choose only one, either coffee or tea."
+      },
+      {
+        "sentence": "電車かバスを使って、学校に行くつもりです。",
+        "romanization": "Densha ka basu o tsukatte, gakkou ni iku tsumori desu.",
+        "translation": "I plan to go to school using either the train or the bus."
+      },
+      {
+        "sentence": "週末は山に登るか海に行くか、まだ決めていません。",
+        "romanization": "Shuumatsu wa yama ni noboru ka umi ni iku ka, mada kimete imasen.",
+        "translation": "I haven't decided whether to climb the mountain or go to the beach this weekend."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_22",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun が できます (Noun ga dekimasu)",
+    "shortExplanation": "Express the ability to do something.",
+    "longExplanation": "The Noun が できます grammar point is used to express the ability to do something. In this grammar pattern, the noun is the activity that the speaker or subject can do. It translates as 'can do' or 'able to do' in English.",
+    "formation": "Noun + が + できます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "英語ができます。",
+        "romanization": "Eigo ga dekimasu.",
+        "translation": "I can speak English."
+      },
+      {
+        "sentence": "料理ができます。",
+        "romanization": "Ryouri ga dekimasu.",
+        "translation": "I can cook."
+      },
+      {
+        "sentence": "彼は泳ぎができます。",
+        "romanization": "Kare wa oyogi ga dekimasu.",
+        "translation": "He can swim."
+      },
+      {
+        "sentence": "彼女はピアノができます。",
+        "romanization": "Kanojo wa piano ga dekimasu.",
+        "translation": "She can play the piano."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_23",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun がほしいです (〜ga hoshii desu)",
+    "shortExplanation": "Express a desire or wanting something; 'I want', 'I would like'.",
+    "longExplanation": "The がほしいです grammar point is used to express a desire or the act of wanting something in polite form. It can be translated as 'I want' or 'I would like' in English. It is used with a noun and the particle が.",
+    "formation": "Noun + が + ほしいです",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "新しい車がほしいです。",
+        "romanization": "Atarashii kuruma ga hoshii desu.",
+        "translation": "I want a new car."
+      },
+      {
+        "sentence": "コーヒーがほしいです。",
+        "romanization": "Koohii ga hoshii desu.",
+        "translation": "I would like some coffee."
+      },
+      {
+        "sentence": "彼女は花がほしいです。",
+        "romanization": "Kanojo wa hana ga hoshii desu.",
+        "translation": "She wants flowers."
+      },
+      {
+        "sentence": "友達がほしいです。",
+        "romanization": "Tomodachi ga hoshii desu.",
+        "translation": "I want a friend."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_24",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun から Noun まで (Noun kara Noun made)",
+    "shortExplanation": "Expresses a range; 'from...to', 'between...and'.",
+    "longExplanation": "The から...まで grammar point is used to express a range between two nouns, indicating the starting point and ending point of an action, event, or period of time. It can be translated as 'from...to' or 'between...and' in English.",
+    "formation": "Noun1 + から + Noun2 + まで",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "朝9時から午後5時まで働きます。",
+        "romanization": "Asa ku-ji kara gogo go-ji made hatarakimasu.",
+        "translation": "I work from 9 AM to 5 PM."
+      },
+      {
+        "sentence": "東京から大阪まで電車で行く。",
+        "romanization": "Toukyou kara Osaka made densha de iku.",
+        "translation": "I will go by train from Tokyo to Osaka."
+      },
+      {
+        "sentence": "地下鉄は午前6時から深夜まで運行しています。",
+        "romanization": "Chikatetsu wa gozen roku-ji kara shin'ya made unkou shite imasu.",
+        "translation": "The subway runs from 6 AM until midnight."
+      },
+      {
+        "sentence": "月曜日から金曜日まで学校に通います。",
+        "romanization": "Getsuyoubi kara Kinyoubi made gakkou ni kayoimasu.",
+        "translation": "I attend school from Monday to Friday."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_25",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun くらい～ (Noun kurai～)",
+    "shortExplanation": "Express the extent or degree of something; 'about', 'approximately', 'at least'.",
+    "longExplanation": "The くらい grammar point is used with a noun to express the extent or degree of something, meaning 'about', 'approximately', or 'at least' in English. It helps to provide a rough estimate or minimum standard to the noun it is attached to.",
+    "formation": "Noun + くらい",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "この本は三百ページくらいあります。",
+        "romanization": "Kono hon wa sanbyaku peeji kurai arimasu.",
+        "translation": "This book has about 300 pages."
+      },
+      {
+        "sentence": "彼の家まで歩いて20分くらいかかります。",
+        "romanization": "Kare no ie made aruite nijuppun kurai kakarimasu.",
+        "translation": "It takes about 20 minutes to walk to his house."
+      },
+      {
+        "sentence": "明日は暑くて、30度くらいになるでしょう。",
+        "romanization": "Ashita wa atsukute, sanjuu-do kurai ni naru deshou.",
+        "translation": "Tomorrow will be hot, about 30 degrees."
+      },
+      {
+        "sentence": "この料理を作るのに、材料は500円くらい必要です。",
+        "romanization": "Kono ryouri o tsukuru no ni, zairyou wa gohyaku-en kurai hitsuyou desu.",
+        "translation": "You need about 500 yen worth of ingredients to make this dish."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_26",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ぐらい～ (Noun gurai～)",
+    "shortExplanation": "Express an approximate amount or degree; 'about', 'approximately'.",
+    "longExplanation": "The ぐらい grammar point is used with nouns to express an approximate amount or degree. It is often translated as 'about', 'approximately', or 'around' in English. This can be used for time, quantity, or other measurements.",
+    "formation": "Noun + ぐらい",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "一日中勉強したので、１０時間ぐらい勉強しました。",
+        "romanization": "Ichinichijuu benkyou shita node, juu-jikan gurai benkyou shimashita.",
+        "translation": "I studied all day, so I studied for about 10 hours."
+      },
+      {
+        "sentence": "この本は１００ページぐらいある。",
+        "romanization": "Kono hon wa hyaku peeji gurai aru.",
+        "translation": "This book has about 100 pages."
+      },
+      {
+        "sentence": "彼は果物を５個ぐらい食べました。",
+        "romanization": "Kare wa kudamono o go-ko gurai tabemashita.",
+        "translation": "He ate about 5 pieces of fruit."
+      },
+      {
+        "sentence": "駅から家まで歩いて２０分ぐらいかかります。",
+        "romanization": "Eki kara ie made aruite nijuppun gurai kakarimasu.",
+        "translation": "It takes about 20 minutes to walk from the station to my house."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_27",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun ごろ～ (Noun + goro～)",
+    "shortExplanation": "Expresses 'around' or 'about' a certain time or age.",
+    "longExplanation": "The ごろ grammar point is used to indicate 'around' or 'about' a certain time or age. It is commonly used with time-related expressions and age-related expressions to give an approximate time or age.",
+    "formation": "Noun + ごろ",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "昼ごろに電話してください。",
+        "romanization": "Hiru goro ni denwa shite kudasai.",
+        "translation": "Please call me around noon."
+      },
+      {
+        "sentence": "彼は10歳ごろに日本に来ました。",
+        "romanization": "Kare wa juu-sai goro ni Nihon ni kimashita.",
+        "translation": "He came to Japan around the age of 10."
+      },
+      {
+        "sentence": "午後３時ごろに会いましょう。",
+        "romanization": "Gogo san-ji goro ni aimashou.",
+        "translation": "Let's meet around 3 PM."
+      },
+      {
+        "sentence": "昨日の夜8時ごろに帰りました。",
+        "romanization": "Kinou no yoru hachi-ji goro ni kaerimashita.",
+        "translation": "I returned home last night around 8 o'clock."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_28",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun だけ〜 (〜dake)",
+    "shortExplanation": "Indicates 'only', 'just', or 'merely'.",
+    "longExplanation": "The Noun だけ grammar point is used to emphasize the idea of 'only', 'just', or 'merely' in a sentence. It can be attached to nouns, verbs, い-adjectives, and な-adjectives to show this emphasis. This grammar point is commonly used in both spoken and written Japanese.",
+    "formation": "Noun + だけ, Verb-casual + だけ, い-Adjective + だけ, な-Adjective-な + だけ",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "コーヒーだけ飲んで、帰りました。",
+        "romanization": "Koohii dake nonde, kaerimashita.",
+        "translation": "I only drank coffee and went home."
+      },
+      {
+        "sentence": "この本は二十ページだけ読んだ。",
+        "romanization": "Kono hon wa nijuu peeji dake yonda.",
+        "translation": "I only read twenty pages of this book."
+      },
+      {
+        "sentence": "彼女はとても速いですが、走るだけでなく、考えるのも速いです。",
+        "romanization": "Kanojo wa totemo hayai desu ga, hashiru dake denaku, kangaeru no mo hayai desu.",
+        "translation": "She is very fast, not only at running but also at thinking."
+      },
+      {
+        "sentence": "この部屋は寝るだけの場所です。",
+        "romanization": "Kono heya wa neru dake no basho desu.",
+        "translation": "This room is a place only for sleeping."
+      }
+    ]
+  },
+  {
+    "id": "ja_Nounで_29",
+    "language": "ja",
+    "pattern": "Nounで～",
+    "title": "Nounで～ (Noun de ~)",
+    "shortExplanation": "Indicate a place or means for an action or situation; 'at, in, on', 'using', or 'by means of'.",
+    "longExplanation": "The で grammar point is used to indicate a location, method, or tool for doing an action or for being in a situation. It can be translated as 'at, in, on', 'using', or 'by means of' in English. Nounで is formed by adding で after a noun.",
+    "formation": "Noun + で",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "図書館で勉強します。",
+        "romanization": "Toshokan de benkyou shimasu.",
+        "translation": "I study at the library."
+      },
+      {
+        "sentence": "バスで学校に行きます。",
+        "romanization": "Basu de gakkou ni ikimasu.",
+        "translation": "I go to school by bus."
+      },
+      {
+        "sentence": "鉛筆で書きました。",
+        "romanization": "Enpitsu de kakimashita.",
+        "translation": "I wrote it using a pencil."
+      },
+      {
+        "sentence": "英語で話しましょう。",
+        "romanization": "Eigo de hanashimashou.",
+        "translation": "Let's talk in English."
+      }
+    ]
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Verb_44",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て ほしい (Verb-te hoshii)",
+    "shortExplanation": "Express a desire for someone else to do something; 'I want (someone) to'.",
+    "longExplanation": "The て ほしい grammar point is used to express the speaker's desire for someone else to do an action. It is formed by combining the て-form of a verb with ほしい. The subject is usually followed by the particle に, but it can be dropped in casual speech.",
+    "formation": "Verb-て form + ほしい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "子供にもっと勉強してほしい。",
+        "romanization": "Kodomo ni motto benkyou shite hoshii.",
+        "translation": "I want my child to study more."
+      },
+      {
+        "sentence": "彼にもっと早く来てほしい。",
+        "romanization": "Kare ni motto hayaku kite hoshii.",
+        "translation": "I want him to come earlier."
+      },
+      {
+        "sentence": "友達にその本を読んでほしい。",
+        "romanization": "Tomodachi ni sono hon o yonde hoshii.",
+        "translation": "I want my friend to read that book."
+      },
+      {
+        "sentence": "先生に質問に答えてほしい。",
+        "romanization": "Sensei ni shitsumon ni kotaete hoshii.",
+        "translation": "I want the teacher to answer the question."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_45",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てみる (〜te miru)",
+    "shortExplanation": "Used to express 'try to' or 'attempt to do'.",
+    "longExplanation": "The ～てみる grammar point is used with verbs to express 'trying' or 'attempting' to do something. It emphasizes the idea of giving something a go or trying it out, often to see what the results or outcome will be.",
+    "formation": "Verb-て form + みる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "この料理を作ってみます。",
+        "romanization": "Kono ryouri o tsukutte mimasu.",
+        "translation": "I will try to make this dish."
+      },
+      {
+        "sentence": "その服を着てみてください。",
+        "romanization": "Sono fuku o kite mite kudasai.",
+        "translation": "Please try on those clothes."
+      },
+      {
+        "sentence": "新しいレストランに行ってみよう。",
+        "romanization": "Atarashii resutoran ni itte miyou.",
+        "translation": "Let's try going to the new restaurant."
+      },
+      {
+        "sentence": "映画を見てみたいです。",
+        "romanization": "Eiga o mite mitai desu.",
+        "translation": "I want to try watching the movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_46",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てもらいたい (～te moraitai)",
+    "shortExplanation": "Express a desire to receive a favor or service from someone else.",
+    "longExplanation": "The ～てもらいたい grammar point is used to express one's desire to receive a favor, service, or action from someone else. It is formed by attaching もらいたい to the て-form of verbs. This structure emphasizes the help or favor the speaker wants from someone else.",
+    "formation": "Verb-て-form + もらいたい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "この荷物を運んでもらいたいです。",
+        "romanization": "Kono nimotsu o hakonde moraitai desu.",
+        "translation": "I want you to carry this luggage for me."
+      },
+      {
+        "sentence": "彼にそのニュースを教えてもらいたい。",
+        "romanization": "Kare ni sono nyuusu o oshiete moraitai.",
+        "translation": "I want him to tell me the news."
+      },
+      {
+        "sentence": "友達に日本語を教えてもらいたい。",
+        "romanization": "Tomodachi ni Nihongo o oshiete moraitai.",
+        "translation": "I want my friend to teach me Japanese."
+      },
+      {
+        "sentence": "スタッフにチェックインの方法を説明してもらいたい。",
+        "romanization": "Sutaffu ni chekkuin no houhou o setsumei shite moraitai.",
+        "translation": "I want the staff to explain the check-in process to me."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_47",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て もらう (Verb-te morau)",
+    "shortExplanation": "Express receiving a favor or action from someone.",
+    "longExplanation": "The Verb て もらう grammar point is used to express that the speaker or a third person receives a favor or action from someone else. It describes an action performed by someone for the benefit of the speaker or a third person, implying gratitude or request from the beneficiary.",
+    "formation": "Verb-て form + もらう",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "友達に宿題を手伝ってもらった。",
+        "romanization": "Tomodachi ni shukudai o tetsudatte moratta.",
+        "translation": "I had my friend help me with my homework."
+      },
+      {
+        "sentence": "母に部屋を掃除してもらいました。",
+        "romanization": "Haha ni heya o souji shite moraimashita.",
+        "translation": "I had my mother clean my room."
+      },
+      {
+        "sentence": "彼に荷物を持ってもらいたい。",
+        "romanization": "Kare ni nimotsu o motte moraitai.",
+        "translation": "I want him to carry my luggage for me."
+      },
+      {
+        "sentence": "先生に質問に答えてもらえますか？",
+        "romanization": "Sensei ni shitsumon ni kotaete moraemasu ka?",
+        "translation": "Can I have the teacher answer my question?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_48",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てもらえませんか (～te moraemasen ka)",
+    "shortExplanation": "A polite way to ask for a favor or request someone to do something.",
+    "longExplanation": "The ～てもらえませんか grammar point is a polite and indirect way of asking someone to do something for you or asking for a favor. It is formed by conjugating the verb into the て-form and adding もらえませんか. This form is used in conversations to show politeness and humility.",
+    "formation": "Verb-て form + もらえませんか",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "この手紙を見てもらえませんか。",
+        "romanization": "Kono tegami o mite moraemasen ka?",
+        "translation": "Could you take a look at this letter for me?"
+      },
+      {
+        "sentence": "荷物を持ってもらえませんか。",
+        "romanization": "Nimotsu o motte moraemasen ka?",
+        "translation": "Could you carry this luggage for me?"
+      },
+      {
+        "sentence": "部屋を掃除してもらえませんか。",
+        "romanization": "Heya o souji shite moraemasen ka?",
+        "translation": "Could you clean the room for me?"
+      },
+      {
+        "sentence": "明日のミーティングに参加してもらえませんか。",
+        "romanization": "Ashita no miitingu ni sanka shite moraemasen ka?",
+        "translation": "Could you attend tomorrow's meeting for me?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_49",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ない ことがある (Verb-nai koto ga aru)",
+    "shortExplanation": "Expresses that something doesn't always happen or there are occasions when it doesn't happen.",
+    "longExplanation": "The ないことがある grammar point is used to indicate that there are instances or times when something doesn't happen or isn't done. It is formed by combining the negative form of a verb (ない) with ことがある.",
+    "formation": "Verb-negative form + ことがある",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は会議に出席しないことがある。",
+        "romanization": "Kare wa kaigi ni shusseki shinai koto ga aru.",
+        "translation": "There are times when he doesn't attend meetings."
+      },
+      {
+        "sentence": "この電車は定刻に来ないことがある。",
+        "romanization": "Kono densha wa teikoku ni konai koto ga aru.",
+        "translation": "There are occasions when this train doesn't come on time."
+      },
+      {
+        "sentence": "私は朝食を食べないことがある。",
+        "romanization": "Watashi wa choushoku o tabenai koto ga aru.",
+        "translation": "There are times when I don't eat breakfast."
+      },
+      {
+        "sentence": "彼女は電話に出ないことがある。",
+        "romanization": "Kanojo wa denwa ni denai koto ga aru.",
+        "translation": "There are occasions when she doesn't answer the phone."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_50",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ない + ことにする (Verb nai koto ni suru)",
+    "shortExplanation": "To decide not to do something.",
+    "longExplanation": "The grammar point Verb ない + ことにする is used to express the decision not to do something. This structure shows that the speaker has made a conscious choice to not take the action expressed in the verb.",
+    "formation": "Verb-ない form + ことにする",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日のパーティーに行かないことにする。",
+        "romanization": "Ashita no paatii ni ikanai koto ni suru.",
+        "translation": "I've decided not to go to tomorrow's party."
+      },
+      {
+        "sentence": "そのケーキを食べないことにします。",
+        "romanization": "Sono keeki wo tabenai koto ni shimasu.",
+        "translation": "I've decided not to eat that cake."
+      },
+      {
+        "sentence": "今日はジョギングをしないことにする。",
+        "romanization": "Kyou wa jogingu wo shinai koto ni suru.",
+        "translation": "I've decided not to go jogging today."
+      },
+      {
+        "sentence": "彼と会わないことにしました。",
+        "romanization": "Kare to awanai koto ni shimashita.",
+        "translation": "I've decided not to meet him."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_51",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ない ことになる (Verb nai koto ni naru)",
+    "shortExplanation": "Expresses a result; 'end up not', 'it will become that', 'it would mean that'.",
+    "longExplanation": "The Verb ない ことになる grammar point is used to express a result or consequence. It translates to 'end up not', 'it will become that', or 'it would mean that' in English. It is formed by using the negative form (ない) of a verb followed by ことになる.",
+    "formation": "Verb-negative (ない) + ことになる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "今日彼が来ないことになると、私たちの予定はキャンセルされます。",
+        "romanization": "Kyou kare ga konai koto ni naru to, watashitachi no yotei wa kyanseru saremasu.",
+        "translation": "If he doesn't come today, our plans will be canceled."
+      },
+      {
+        "sentence": "このプロジェクトが進まないことになると、収益が減るでしょう。",
+        "romanization": "Kono purojekuto ga susumanai koto ni naru to, shuueki ga heru deshou.",
+        "translation": "If this project doesn't progress, it would mean that revenue will decrease."
+      },
+      {
+        "sentence": "彼女は試験に合格しないことになると、卒業が遅れます。",
+        "romanization": "Kanojo wa shiken ni goukaku shinai koto ni naru to, sotsugyou ga okuremasu.",
+        "translation": "If she ends up not passing the exam, her graduation will be delayed."
+      },
+      {
+        "sentence": "雨が降ると、ピクニックが行われないことになるでしょう。",
+        "romanization": "Ame ga furu to, pikunikku ga okonawarenai koto ni naru deshou.",
+        "translation": "If it rains, it will become that the picnic doesn't take place."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_52",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ないほうがいい (Verb nai hou ga ii)",
+    "shortExplanation": "Expresses the idea that it is better not to do something.",
+    "longExplanation": "The ないほうがいい grammar point is used to suggest that it's better not to do a certain action. It is formed by taking the negative form of the verb and adding ほうがいい.",
+    "formation": "Verb-negative form + ほうがいい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "この薬は飲まないほうがいいです。",
+        "romanization": "Kono kusuri wa nomanai hou ga ii desu.",
+        "translation": "It's better not to take this medicine."
+      },
+      {
+        "sentence": "急いでいるときは、走らないほうがいい。",
+        "romanization": "Isoide iru toki wa, hashiranai hou ga ii.",
+        "translation": "When you're in a hurry, it's better not to run."
+      },
+      {
+        "sentence": "彼に秘密を知られたくなければ、話さないほうがいい。",
+        "romanization": "Kare ni himitsu o shiraretakunakereba, hanasanai hou ga ii.",
+        "translation": "If you don't want him to know your secret, it's better not to tell him."
+      },
+      {
+        "sentence": "雨の日には、外出しないほうがいい。",
+        "romanization": "Ame no hi ni wa, gaishutsu shinai hou ga ii.",
+        "translation": "It's better not to go out on a rainy day."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_53",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ながら (〜nagara)",
+    "shortExplanation": "Expresses 'while' or 'as' in the sense of doing two things simultaneously.",
+    "longExplanation": "The ～ながら grammar point is used to indicate that two actions are happening simultaneously or that one action is happening while another is taking place. This can be translated to 'while' or 'as' in English. It is primarily used with verbs.",
+    "formation": "Verb-masu stem + ながら",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "テレビを見ながら宿題をしました。",
+        "romanization": "Terebi wo minagara shukudai wo shimashita.",
+        "translation": "I did my homework while watching television."
+      },
+      {
+        "sentence": "音楽を聞きながら料理をしました。",
+        "romanization": "Ongaku wo kikinagara ryouri wo shimashita.",
+        "translation": "I cooked while listening to music."
+      },
+      {
+        "sentence": "歩きながらスマホを見るのは危険です。",
+        "romanization": "Arukinagara sumaho wo miru no wa kiken desu.",
+        "translation": "Looking at your smartphone while walking is dangerous."
+      },
+      {
+        "sentence": "彼は話しながら笑っていました。",
+        "romanization": "Kare wa hanashi nagara waratte imashita.",
+        "translation": "He was laughing while talking."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_54",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb なさい (〜nasai)",
+    "shortExplanation": "A command form used to give orders or instructions; 'Please do', 'Do this'.",
+    "longExplanation": "The なさい grammar point is used to give orders or instructions, often used by teachers, parents, or other authority figures when addressing someone younger or of lower status. It is formed by attaching なさい to the stem of a verb. This form sounds polite, but can be considered strong and direct.",
+    "formation": "Verb-stem + なさい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "部屋を掃除しなさい。",
+        "romanization": "Heya wo souji shinasai.",
+        "translation": "Clean your room."
+      },
+      {
+        "sentence": "勉強しなさい。",
+        "romanization": "Benkyou shinasai.",
+        "translation": "Study."
+      },
+      {
+        "sentence": "早く起きなさい。",
+        "romanization": "Hayaku okinasai.",
+        "translation": "Wake up early."
+      },
+      {
+        "sentence": "宿題をやりなさい。",
+        "romanization": "Shukudai wo yarinasai.",
+        "translation": "Do your homework."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_55",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb にくい (〜nikui)",
+    "shortExplanation": "Express difficulty or complexity; 'hard to', 'difficult to', 'not easily'.",
+    "longExplanation": "The ～にくい grammar point is used to express that an action is difficult or relatively hard to do. It is used by attaching にくい to the stem of a verb. It can be translated as 'hard to', 'difficult to', or 'not easily' in English.",
+    "formation": "Verb-stem + にくい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "この字は読みにくいです。",
+        "romanization": "Kono ji wa yomi nikui desu.",
+        "translation": "This character is hard to read."
+      },
+      {
+        "sentence": "このドアは開けにくい。",
+        "romanization": "Kono doa wa ake nikui.",
+        "translation": "This door is difficult to open."
+      },
+      {
+        "sentence": "彼の字は読みにくい。",
+        "romanization": "Kare no ji wa yomi nikui.",
+        "translation": "His handwriting is hard to read."
+      },
+      {
+        "sentence": "この料理は作りにくい。",
+        "romanization": "Kono ryouri wa tsukuri nikui.",
+        "translation": "This dish is difficult to make."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_56",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb やすい (〜yasui)",
+    "shortExplanation": "Indicates that something is easy to do; 'easy to', 'easy for'.",
+    "longExplanation": "The やすい grammar point is used to express that something is easy to do or easy for someone. It is attached to the verb stem and can be translated as 'easy to' or 'easy for' in English. This formation is used with verbs only.",
+    "formation": "Verb-stem + やすい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "この本は読みやすいです。",
+        "romanization": "Kono hon wa yomiyasui desu.",
+        "translation": "This book is easy to read."
+      },
+      {
+        "sentence": "このシャツは着やすい。",
+        "romanization": "Kono shatsu wa kiyasui.",
+        "translation": "This shirt is easy to wear."
+      },
+      {
+        "sentence": "彼は話しやすい人です。",
+        "romanization": "Kare wa hanashiyasui hito desu.",
+        "translation": "He is an easy person to talk to."
+      },
+      {
+        "sentence": "この料理は作りやすい。",
+        "romanization": "Kono ryouri wa tsukuriyasui.",
+        "translation": "This dish is easy to make."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_57",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ようと思う (Verb-you to omou)",
+    "shortExplanation": "Express intention or plan to do something; 'I think I will', 'I plan to', 'I intend to'.",
+    "longExplanation": "The ようと思う grammar point is used to express the intention or plan to do something in the future. It can be translated as 'I think I will', 'I plan to', or 'I intend to' in English. The formation involves using the volitional form of the verb followed by と思う.",
+    "formation": "Verb-volitional + と思う",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日、映画を見ようと思います。",
+        "romanization": "Ashita, eiga o miyou to omoimasu.",
+        "translation": "I think I will watch a movie tomorrow."
+      },
+      {
+        "sentence": "週末に友達と遊ぼうと思っています。",
+        "romanization": "Shuumatsu ni tomodachi to asobou to omotteimasu.",
+        "translation": "I plan to hang out with friends on the weekend."
+      },
+      {
+        "sentence": "勉強をもっと頑張ろうと思う。",
+        "romanization": "Benkyou o motto ganbarou to omou.",
+        "translation": "I intend to study harder."
+      },
+      {
+        "sentence": "来年は海外旅行に行こうと思っている。",
+        "romanization": "Rainen wa kaigai ryokou ni ikou to omotteiru.",
+        "translation": "I plan to go on an overseas trip next year."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_58",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ように (〜you ni)",
+    "shortExplanation": "Used to express 'like', 'as if', 'in order to', or 'so that'.",
+    "longExplanation": "The ～ように grammar point is used to express different meanings depending on the context: 'like', 'as if', 'in order to', or 'so that'. Formation patterns can include: Noun + のように, Verb dictionary/negative form + ように, い-adjective + ように, etc.",
+    "formation": "Examples: Noun + のように / Verb-casual + ように / い-adjective + ように",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼女は鳥のように軽やかに踊る。",
+        "romanization": "Kanojo wa tori no you ni karoyaka ni odoru.",
+        "translation": "She dances lightly like a bird."
+      },
+      {
+        "sentence": "覚えたことを忘れないように、毎日復習しましょう。",
+        "romanization": "Oboeta koto wo wasurenai you ni, mainichi fukushuu shimashou.",
+        "translation": "In order not to forget what you've learned, let's review every day."
+      },
+      {
+        "sentence": "歌手になるように、毎日歌の練習をしています。",
+        "romanization": "Kashu ni naru you ni, mainichi uta no renshuu wo shiteimasu.",
+        "translation": "In order to become a singer, I practice singing every day."
+      },
+      {
+        "sentence": "道を渡る時、車が来ないように確認してください。",
+        "romanization": "Michi wo wataru toki, kuruma ga konai you ni kakunin shite kudasai.",
+        "translation": "When crossing the road, please make sure no cars are coming."
+      }
+    ]
+  }
+]

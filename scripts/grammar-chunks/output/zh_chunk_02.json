@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_怎么V_16": {
+      "title": "怎么 + Động từ (cách làm gì / làm thế nào để...)",
+      "shortExplanation": "Dùng để hỏi về cách thức, phương pháp thực hiện hành động; mang nghĩa 'làm thế nào', 'ra sao'.",
+      "longExplanation": "Đại từ nghi vấn '怎么' (zěnme) khi đứng trước động từ được dùng để hỏi về cách thức hoặc phương pháp tiến hành một hành động, tương đương với 'làm sao', 'thế nào', 'làm như thế nào' trong tiếng Việt.",
+      "formation": "怎么 + Động từ",
+      "examples": [
+        {
+          "translation": "Cái này đọc như thế nào?"
+        }
+      ]
+    },
+    "zh_月号日星期_17": {
+      "title": "...月...号/日 星期... (Cách diễn đạt ngày tháng thứ trong tiếng Trung)",
+      "shortExplanation": "Thứ tự biểu đạt thời gian trong tiếng Trung từ lớn đến bé: Tháng → Ngày (号/日) → Thứ (星期).",
+      "longExplanation": "Trong tiếng Trung, thứ tự biểu thị ngày tháng tuân theo quy tắc từ đơn vị lớn đến đơn vị nhỏ: 'Năm (年) → Tháng (月) → Ngày (号/日) → Thứ (星期)'. Trong khẩu ngữ hàng ngày thường dùng '号' (hào), còn trong văn viết hoặc văn phong trang trọng thường dùng '日' (rì).",
+      "formation": "[Số] + 月 + [Số] + 号/日 + 星期 + [Số/天]",
+      "examples": [
+        {
+          "translation": "Thứ Năm, ngày 2 tháng 9."
+        }
+      ]
+    },
+    "zh_去PLACEV_19": {
+      "title": "去 + Địa điểm + Động từ (Đi đến nơi nào để làm gì)",
+      "shortExplanation": "Câu liên động biểu thị mục đích: Đi đến một địa điểm nào đó để thực hiện một hành động.",
+      "longExplanation": "Đây là cấu trúc câu liên động trong tiếng Trung, dùng để diễn đạt việc đi tới một địa điểm xác định nhằm mục đích thực hiện hành động phía sau. Trong đó, '去' (đi) kết hợp với từ chỉ địa điểm/nơi chốn, theo sau là động từ chỉ mục đích của chuyến đi.",
+      "formation": "Chủ ngữ + 去 + Địa điểm + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi đi đến trường để học."
+        }
+      ]
+    },
+    "zh_想_20": {
+      "title": "想 + Động từ (Muốn / có ý định làm gì)",
+      "shortExplanation": "Động từ năng nguyện biểu thị mong muốn, nguyện vọng hoặc dự định làm một việc gì đó; 'muốn', 'định'.",
+      "longExplanation": "Động từ năng nguyện '想' (xiǎng) đứng trước động từ khác để biểu thị nguyện vọng, mong muốn hoặc ý định chủ quan của người nói, tương đương với 'muốn', 'thích' hoặc 'dự định' trong tiếng Việt. Khi phủ định dùng '不想' (không muốn). Ngoài ra '想' cũng có thể làm động từ độc lập mang nghĩa 'nhớ' hoặc 'suy nghĩ'.",
+      "formation": "Chủ ngữ + 想 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi muốn đọc sách."
+        }
+      ]
+    },
+    "zh_多少N_21": {
+      "title": "多少 (+ Lượng từ) + Danh từ (Bao nhiêu...)",
+      "shortExplanation": "Đại từ nghi vấn dùng để hỏi số lượng (thường dùng cho số lượng lớn hơn 10 hoặc số lượng chưa rõ); 'bao nhiêu'.",
+      "longExplanation": "Đại từ nghi vấn '多少' (duōshao) dùng để hỏi về số lượng. Khác với '几' (thường dùng hỏi số lượng ước lượng dưới 10 và bắt buộc phải có lượng từ kèm theo), '多少' thường dùng cho số lượng lớn hơn 10 hoặc số lượng không xác định, và lượng từ theo sau có thể có hoặc lược bỏ.",
+      "formation": "多少 (+ Lượng từ) + Danh từ",
+      "examples": [
+        {
+          "translation": "Bạn có bao nhiêu giáo viên tiếng Trung?"
+        }
+      ]
+    },
+    "zh_个_22": {
+      "title": "个 (Lượng từ đa năng thông dụng nhất)",
+      "shortExplanation": "Lượng từ vạn năng phổ biến nhất trong tiếng Trung, dùng cho người hoặc nhiều loại đồ vật không có lượng từ chuyên biệt.",
+      "longExplanation": "Lượng từ '个' (gè) là lượng từ cơ bản, thông dụng và đa năng nhất trong tiếng Trung hiện đại. Nó được dùng để đếm người (như học sinh, bạn bè), các đồ vật cụ thể không có lượng từ riêng hoặc các khái niệm trừu tượng (như vấn đề, ý kiến). Thường đứng giữa số từ (hoặc đại từ chỉ định '这/那') và danh từ.",
+      "formation": "Số từ / 这 / 那 + 个 + Danh từ",
+      "examples": [
+        {
+          "translation": "Năm người học sinh."
+        }
+      ]
+    },
+    "zh_口_23": {
+      "title": "口 (Lượng từ chỉ số nhân khẩu trong gia đình)",
+      "shortExplanation": "Lượng từ chuyên dùng để đếm số thành viên, nhân khẩu trong gia đình; 'người', 'nhân khẩu'.",
+      "longExplanation": "Lượng từ '口' (kǒu) trong giao tiếp hàng ngày chủ yếu được dùng làm lượng từ để chỉ số lượng nhân khẩu trong một gia đình (thường kết hợp với '人'). Ngoài ra, '口' còn có thể dùng làm lượng từ cho một số đồ vật có miệng như giếng nước, chuông, nồi hoặc ngụm (uống một ngụm nước).",
+      "formation": "Số từ + 口 + 人 (hoặc Danh từ phù hợp)",
+      "examples": [
+        {
+          "translation": "Gia đình tôi có năm người."
+        }
+      ]
+    },
+    "zh_元块_24": {
+      "title": "元 / 块 (Đơn vị tiền tệ đồng Nhân dân tệ)",
+      "shortExplanation": "Đơn vị tiền tệ chính của Trung Quốc; '元' dùng trong văn viết/trang trọng, '块' dùng phổ biến trong khẩu ngữ.",
+      "longExplanation": "Trong hệ thống tiền tệ Trung Quốc, đơn vị cơ bản là đồng (tệ). '元' (yuán) là đơn vị chính thức thường dùng trong văn viết, báo giá bằng văn bản hoặc giao dịch tài chính. Trong khi đó, '块' (kuài) là cách gọi quen thuộc, tự nhiên trong khẩu ngữ giao tiếp hàng ngày.",
+      "formation": "Số từ + 元 / 块",
+      "examples": [
+        {
+          "translation": "Một tệ (đồng)."
+        }
+      ]
+    },
+    "zh_在_25": {
+      "title": "在 (Ở / tồn tại ở một địa điểm, vị trí)",
+      "shortExplanation": "Động từ biểu thị sự tồn tại hoặc vị trí của người hoặc vật ở một nơi nào đó; 'ở', 'tại'.",
+      "longExplanation": "Động từ '在' (zài) dùng để chỉ sự hiện diện, vị trí không gian của người hoặc sự vật tại một địa điểm hoặc phương vị xác định. Khi phủ định dùng '不在' (không ở). Cấu trúc thường là 'Chủ ngữ + 在 + Nơi chốn / Từ chỉ phương vị'.",
+      "formation": "Chủ ngữ + 在 + Địa điểm / Từ chỉ vị trí",
+      "examples": [
+        {
+          "translation": "Anh ấy ở dưới ghế."
+        }
+      ]
+    },
+    "zh_哪儿_26": {
+      "title": "哪儿 / 哪里 (Ở đâu / đại từ nghi vấn chỉ nơi chốn)",
+      "shortExplanation": "Đại từ nghi vấn dùng để hỏi về địa điểm, nơi chốn; 'ở đâu', 'chỗ nào'.",
+      "longExplanation": "Đại từ nghi vấn '哪儿' (nǎr, phổ biến ở miền Bắc có âm uốn lưỡi) hoặc '哪里' (nǎlǐ, phổ biến ở miền Nam) dùng để hỏi về vị trí, địa điểm hoặc phương hướng. Khi kết hợp với '在' tạo thành câu hỏi vị trí '在哪儿' mang nghĩa 'ở đâu', 'ở chỗ nào'.",
+      "formation": "Chủ ngữ + 在 + 哪儿？",
+      "examples": [
+        {
+          "translation": "Cái cốc của tôi ở đâu?"
+        }
+      ]
+    },
+    "zh_在PLACEV_27": {
+      "title": "在 + Địa điểm + Động từ (Làm gì ở đâu)",
+      "shortExplanation": "Giới từ '在' kết hợp với danh từ nơi chốn làm trạng ngữ chỉ địa điểm diễn ra hành động: Ở đâu làm gì.",
+      "longExplanation": "Trong tiếng Trung, trạng ngữ chỉ địa điểm đứng trước động từ (khác với tiếng Việt thường đứng sau động từ). Cấu trúc '在 + Địa điểm + Động từ' dùng để biểu thị nơi chốn xảy ra hành động, mang nghĩa là 'ở đâu đó làm việc gì'.",
+      "formation": "Chủ ngữ + 在 + Địa điểm + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi uống trà ở nhà bạn."
+        }
+      ]
+    },
+    "zh_Q呢_28": {
+      "title": "Câu hỏi + 呢 (Trợ từ ngữ khí cuối câu nghi vấn)",
+      "shortExplanation": "Trợ từ ngữ khí đặt ở cuối câu hỏi để làm dịu ngữ khí, tăng tính thân mật, uyển chuyển hoặc biểu thị sự băn khoăn, thắc mắc.",
+      "longExplanation": "Khi đặt trợ từ ngữ khí '呢' (ne) ở cuối một câu hỏi đã có sẵn đại từ nghi vấn (như 谁, 什么, 哪儿, 怎么) hoặc câu hỏi chính phản, nó giúp làm cho ngữ điệu của câu hỏi trở nên nhẹ nhàng, tự nhiên, thân mật hơn, đồng thời nhấn mạnh tâm trạng băn khoăn, tò mò hoặc muốn xác nhận thông tin của người nói.",
+      "formation": "Câu hỏi (có đại từ nghi vấn) + 呢？",
+      "examples": [
+        {
+          "translation": "Anh ấy đang ở đâu thế nhỉ?"
+        }
+      ]
+    },
+    "zh_N呢_29": {
+      "title": "Danh từ + 呢？ (Hỏi vị trí của đối tượng: ...đâu rồi?)",
+      "shortExplanation": "Cấu trúc câu hỏi rút gọn hỏi về tung tích, vị trí của người hoặc đồ vật; '...đâu rồi?', '...ở đâu?'.",
+      "longExplanation": "Khi 'Danh từ + 呢？' đứng một mình mà không có ngữ cảnh đối chiếu trước đó (như 'còn bạn thì sao?'), mẫu câu này dùng để hỏi về nơi chốn, vị trí hiện tại hoặc tung tích của đối tượng được nhắc đến. Nghĩa tương đương với '[Danh từ] 在哪儿？' ([Danh từ] ở đâu rồi?).",
+      "formation": "Danh từ / Đại từ + 呢？",
+      "examples": [
+        {
+          "translation": "Cái cốc của tôi đâu rồi?"
+        }
+      ]
+    },
+    "zh_PLACE有N_30": {
+      "title": "Địa điểm + 有 + Danh từ (Ở đâu có cái gì / Câu tồn hiện)",
+      "shortExplanation": "Câu tồn hiện biểu thị sự tồn tại: Tại một địa điểm nào đó có người hoặc vật gì đó.",
+      "longExplanation": "Mẫu câu này thuộc câu tồn hiện trong tiếng Trung, dùng để diễn đạt sự tồn tại của người hoặc sự vật tại một địa điểm hoặc vị trí cụ thể. Cấu trúc là 'Từ chỉ nơi chốn/vị trí + 有 + Danh từ' (thường đi kèm số lượng từ), tương đương với 'Ở... có...' trong tiếng Việt.",
+      "formation": "Địa điểm / Vị trí + 有 + (Số từ + Lượng từ) + Danh từ",
+      "examples": [
+        {
+          "translation": "Dưới ghế có một chú chó con."
+        }
+      ]
+    },
+    "zh_PLACE没有N_31": {
+      "title": "Địa điểm + 没有 + Danh từ (Ở đâu không có cái gì)",
+      "shortExplanation": "Dạng phủ định của câu tồn hiện biểu thị sự không tồn tại của người hoặc sự vật ở một địa điểm nào đó; 'ở... không có...'.",
+      "longExplanation": "Đây là dạng phủ định của câu tồn hiện 'Địa điểm + 有 + Danh từ'. Để phủ định sự tồn tại, ta dùng '没有' (hoặc rút gọn là '没') thay cho '有', mang nghĩa là tại địa điểm đó không có người hay sự vật nào. Trong câu phủ định tồn hiện, trước danh từ thường không dùng số từ hoặc lượng từ.",
+      "formation": "Địa điểm / Vị trí + 没有 + Danh từ",
+      "examples": [
+        {
+          "translation": "Ở đây không có ai cả."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_怎么V_16": {
+      "title": "怎么 + 動詞 (どうやって〜する / やり方・方法)",
+      "shortExplanation": "動作や行為のやり方・方法を尋ね、「どうやって〜するのか」「どのように〜するのか」という意味を表します。",
+      "longExplanation": "疑問代名詞「怎么 (zěnme)」を動詞の前に置くことで、ある行為をどのような方法や手段で行うかを尋ねる表現です。日本語の「どうやって〜しますか」「どのように〜しますか」に相当します。",
+      "formation": "怎么 + 動詞",
+      "examples": [
+        {
+          "translation": "これはどうやって読みますか？"
+        }
+      ]
+    },
+    "zh_月号日星期_17": {
+      "title": "...月...号/日 星期... (日付と曜日の表現)",
+      "shortExplanation": "中国語の日付表現：大きい単位から順に「月 → 日（号／日） → 曜日（星期）」と並べます。",
+      "longExplanation": "中国語では日付を表す際、大きな単位から小さな単位へと並べる規則があり、「年 → 月 → 日 → 曜日」の順序になります。日常会話の口語では日に「号 (hào)」が好んで使われ、公的な表記や改まった場面では「日 (rì)」が使われます。曜日は「星期 (xīngqī) + 数字」で表します。",
+      "formation": "［数字］月 + ［数字］号/日 + 星期［数字/天］",
+      "examples": [
+        {
+          "translation": "9月2日木曜日"
+        }
+      ]
+    },
+    "zh_去PLACEV_19": {
+      "title": "去 + 場所 + 動詞 (〜へ…しに行く / 連動文)",
+      "shortExplanation": "連動文による目的の表現：「場所へ〜しに行く」という意味を表します。",
+      "longExplanation": "中国語の連動文（2つ以上の動詞が連続する文）の代表的な形で、ある場所に移動してその目的となる動作を行うことを表します。「去（行く）+ 場所」の後に目的となる動詞を続け、日本語の「〜へ…しに行く」に相当します。",
+      "formation": "主語 + 去 + 場所 + 動詞 (+ 目的語)",
+      "examples": [
+        {
+          "translation": "私は学校へ勉強しに行きます。"
+        }
+      ]
+    },
+    "zh_想_20": {
+      "title": "想 + 動詞 (〜したい / 願望・意向)",
+      "shortExplanation": "助動詞（能願動詞）として希望や意向を表し、「〜したい」「〜しようと思う」という意味を表します。",
+      "longExplanation": "助動詞（能願動詞）の「想 (xiǎng)」は動詞の前に置かれ、話し手の主観的な願望や計画、意図を表します。日本語の「〜したい」「〜するつもりだ」に相当します。否定形は動詞の直前に「不想」を置きます。",
+      "formation": "主語 + 想 + 動詞 (+ 目的語)",
+      "examples": [
+        {
+          "translation": "私は本を読みたいです。"
+        }
+      ]
+    },
+    "zh_多少N_21": {
+      "title": "多少 (+ 量詞) + 名詞 (いくつの〜 / 数量を尋ねる)",
+      "shortExplanation": "数量を尋ねる疑問詞で、一般に10以上の数量や見当がつかない数を尋ねる際に用います（「どれくらい」「何人/何個」）。",
+      "longExplanation": "疑問代名詞「多少 (duōshao)」は数量を尋ねるときに使われます。「几」が通常10以下の少ない数量を尋ねて量詞を必要とするのに対し、「多少」は10を超えると思われる数や見当がつかない数量、値段を尋ねる際に用いられ、量詞を省略して名詞に直接接続することも可能です。",
+      "formation": "多少 (+ 量詞) + 名詞",
+      "examples": [
+        {
+          "translation": "あなたの中国語の先生は何人いますか？"
+        }
+      ]
+    },
+    "zh_个_22": {
+      "title": "个 (最も基本的な汎用量詞)",
+      "shortExplanation": "最も基本的で広く使われる万能量詞で、人や個別の量詞を持たない様々な事物を数える際に用います。",
+      "longExplanation": "量詞「个 (gè)」は、現代中国語において最も使用頻度が高い汎用量詞です。人（学生、友達など）を数えるほか、特定の専用量詞を持たない様々な具体物や抽象的な概念（問題、考えなど）を数える際に幅広く使われます。数詞や指示代名詞（这・那）と名詞の間に置かれます。",
+      "formation": "数詞 / 这 / 那 + 个 + 名詞",
+      "examples": [
+        {
+          "translation": "5人の学生"
+        }
+      ]
+    },
+    "zh_口_23": {
+      "title": "口 (家族の人数などを数える量詞)",
+      "shortExplanation": "主に家族の構成人数（口・人）を数える際に用いられる量詞です。",
+      "longExplanation": "量詞「口 (kǒu)」は、日常会話において主に家族の構成人数・人口を数える際に使われます（通常「人」を修飾して「几口人」「三口人」のように用います）。その他、井戸や大鍋など口のある物や、「一口食べる・飲む」のような動作の回数（一口）を数える際にも用いられます。",
+      "formation": "数詞 + 口 + 人 (または該当する名詞)",
+      "examples": [
+        {
+          "translation": "私の家は5人家族です。"
+        }
+      ]
+    },
+    "zh_元块_24": {
+      "title": "元／块 (中国の通貨単位「元」)",
+      "shortExplanation": "中国の基本通貨単位を表します。「元」は書き言葉・公的な表現、「块」は日常会話の口語で広く用いられます。",
+      "longExplanation": "中国人民元の基本通貨単位です。「元 (yuán)」は公式な場や文書、価格表示などの書き言葉で用いられる正式名称です。一方、「块 (kuài)」は日常会話で最も頻繁に使われる親しみやすい口語表現です（日本語の「〜元」「〜塊」に相当）。",
+      "formation": "数詞 + 元 / 块",
+      "examples": [
+        {
+          "translation": "1元"
+        }
+      ]
+    },
+    "zh_在_25": {
+      "title": "在 (〜にいる、〜にある / 所在の表現)",
+      "shortExplanation": "人や事物の存在や所在を表し、「〜にいる」「〜にある」という意味を表す動詞です。",
+      "longExplanation": "動詞「在 (zài)」は、人や物が特定の場所や位置に存在していることを表します。日本語の「（場所）にいる」「（場所）にある」に相当します。否定形は「不在」となります。「主語 + 在 + 場所・方位詞」の語順で用います。",
+      "formation": "主語 + 在 + 場所 / 方位詞",
+      "examples": [
+        {
+          "translation": "彼は椅子の下にいます。"
+        }
+      ]
+    },
+    "zh_哪儿_26": {
+      "title": "哪儿？ (どこ？ / 場所を尋ねる疑問詞)",
+      "shortExplanation": "場所や位置を尋ねる疑問代名詞で、「どこ」「どちら」という意味を表します。",
+      "longExplanation": "疑問代名詞「哪儿 (nǎr)」は場所や所在を尋ねる際に用いられ、日本語の「どこ」「どちら」に相当します（北方方言で広く使われる児化表現で、南方では「哪里 (nǎlǐ)」が好まれます）。動詞「在」と組み合わせて「在 + 哪儿？（どこにありますか／いますか）」という形で頻繁に用いられます。",
+      "formation": "主語 + 在 + 哪儿？",
+      "examples": [
+        {
+          "translation": "私のコップはどこにありますか？"
+        }
+      ]
+    },
+    "zh_在PLACEV_27": {
+      "title": "在 + 場所 + 動詞 (〜で…する / 動作の場所)",
+      "shortExplanation": "介詞（前置詞）「在」を用いて動作が行われる場所を表し、「〜で…する」という意味を表します。",
+      "longExplanation": "介詞（前置詞）の「在 (zài)」は場所を表す名詞を伴って介詞句をつくり、動詞の前に置かれて連用修飾語（状語）として働きます。動作や行為が行われる場所を示し、日本語の「（場所）で〜する」に相当します。中国語では「場所」が動詞の「前」に来る語順が非常に重要です。",
+      "formation": "主語 + 在 + 場所 + 動詞 (+ 目的語)",
+      "examples": [
+        {
+          "translation": "私は友達の家でお茶を飲んでいます。"
+        }
+      ]
+    },
+    "zh_Q呢_28": {
+      "title": "疑問文 + 呢 (疑問の語気助詞「〜かな」「〜だろう」)",
+      "shortExplanation": "疑問文の末尾に置いて語気を和らげ、親しみを持たせたり、疑問・思案のニュアンスを深めます。",
+      "longExplanation": "疑問詞（谁、什么、哪儿、怎么など）を含む疑問文や選択疑問文の文末に語気助詞「呢 (ne)」を添えることで、尋ねる口調を柔らかく穏やかにし、親しみやすさを与えます。また、話し手の「いったい〜だろうか」「〜かな」という思案や好奇の気持ちを表します。",
+      "formation": "疑問詞を含む文 + 呢？",
+      "examples": [
+        {
+          "translation": "彼はどこにいるのかな？"
+        }
+      ]
+    },
+    "zh_N呢_29": {
+      "title": "名詞 + 呢？ (〜はどこ？ / 所在を尋ねる省略疑問文)",
+      "shortExplanation": "単独で用いられ、人や物の所在・行方を尋ねて「〜はどこ？」「〜はどうしたの？」という意味を表します。",
+      "longExplanation": "先行する文脈がない状況で「名詞 + 呢？ (ne)」を用いると、その人や物がどこにあるのか、所在や行方を尋ねる省略疑問文になります。これは「［名詞］在哪儿？（〜はどこにありますか／いますか）」とほぼ同じ意味を表す非常に日常的な言い回しです。",
+      "formation": "名詞 / 代名詞 + 呢？",
+      "examples": [
+        {
+          "translation": "私のコップはどこ？"
+        }
+      ]
+    },
+    "zh_PLACE有N_30": {
+      "title": "場所 + 有 + 名詞 (〜に…がある・いる / 存現文)",
+      "shortExplanation": "特定の場所に人や物が存在することを表す存現文で、「（場所）に〜がある／いる」という意味を表します。",
+      "longExplanation": "中国語の存現文（存在を表す文）の基本構文です。文頭に場所や位置を表す言葉（処所詞・方位詞）を置き、動詞「有 (yǒu)」の後ろに存在する人や物（通常は不特定の名詞句）を置きます。日本語の「〜に…がいる」「〜に…がある」に相当します。",
+      "formation": "場所 / 方位詞 + 有 + (数詞 + 量詞) + 名詞",
+      "examples": [
+        {
+          "translation": "椅子の下に子犬が1匹います。"
+        }
+      ]
+    },
+    "zh_PLACE没有N_31": {
+      "title": "場所 + 没有 + 名詞 (〜に…がない・いない / 存在の否定)",
+      "shortExplanation": "存現文の否定形で、特定の場所に人や物が存在しないことを表し、「（場所）に〜がない／いない」という意味を表します。",
+      "longExplanation": "「場所 + 有 + 名詞」の否定形式です。「有」の直前に否定の「没」を補って「没有（または没）」とし、ある場所に人や物が一切存在しないことを表します。日本語の「〜に…はいない／ない」に相当します。否定文では通常、名詞の前の「数詞 + 量詞」は省略されます。",
+      "formation": "場所 / 方位詞 + 没有 + 名詞",
+      "examples": [
+        {
+          "translation": "ここには誰もいません。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_怎么V_16": {
+      "title": "怎么 + 동사 (어떻게 ~하는가 / 방법 묻기)",
+      "shortExplanation": "동작이나 행위의 방법이나 방식을 물을 때 사용하며, '어떻게 ~하는가', '어떻게 ~해요'라는 뜻을 나타냅니다.",
+      "longExplanation": "의문대명사 '怎么(zěnme)'가 동사 앞에 놓여 어떤 동작이나 행위를 실행하는 방법이나 수단을 질문할 때 사용하는 구문입니다. 한국어의 '어떻게 ~해요?', '어떻게 ~합니까?'에 해당합니다.",
+      "formation": "怎么 + 동사",
+      "examples": [
+        {
+          "translation": "이것은 어떻게 읽나요?"
+        }
+      ]
+    },
+    "zh_月号日星期_17": {
+      "title": "...月...号/日 星期... (날짜와 요일 표현)",
+      "shortExplanation": "중국어의 날짜 표현 순서로, 큰 단위부터 '월(月) → 일(号/日) → 요일(星期)' 순으로 나타냅니다.",
+      "longExplanation": "중국어에서 날짜를 나타낼 때는 큰 단위에서 작은 단위 순서로 배열하여 '년(年) → 월(月) → 일(号/日) → 요일(星期)' 순으로 표현합니다. 구어(일상 대화)에서는 '일'을 나타낼 때 주로 '号(hào)'를 쓰고, 서면어(문어)에서는 '日(rì)'을 많이 사용합니다. 요일은 '星期(xīngqī)' 뒤에 숫자를 붙여 표현합니다.",
+      "formation": "[숫자]月 + [숫자]号/日 + 星期[숫자/天]",
+      "examples": [
+        {
+          "translation": "9월 2일 목요일"
+        }
+      ]
+    },
+    "zh_去PLACEV_19": {
+      "title": "去 + 장소 + 동사 (~에 …하러 가다 / 목적의 연동문)",
+      "shortExplanation": "연동문 구조로 목적을 나타내며, '어떤 장소에 ~하러 가다'라는 뜻입니다.",
+      "longExplanation": "둘 이상의 동사가 연이어 쓰이는 연동문의 대표적인 형태로, 특정 장소로 이동하여 어떠한 목적의 행동을 수행함을 나타냅니다. '去(가다) + 장소' 뒤에 목적에 해당하는 동작(동사)을 붙여 한국어의 '~에 …하러 가다'의 의미를 전달합니다.",
+      "formation": "주어 + 去 + 장소 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "저는 공부하러 학교에 갑니다."
+        }
+      ]
+    },
+    "zh_想_20": {
+      "title": "想 + 동사 (~하고 싶다 / 소망·의향)",
+      "shortExplanation": "조동사(능원동사)로서 소망이나 의향을 나타내며, '~하고 싶다', '~하려고 하다'라는 뜻입니다.",
+      "longExplanation": "능원동사(조동사) '想(xiǎng)'은 동사 앞에 놓여 말하는 사람의 주관적인 바람, 희망 또는 하고자 하는 계획·의향을 나타냅니다. 한국어의 '~하고 싶다'에 해당합니다. 부정을 할 때는 '不想'의 형태를 사용합니다.",
+      "formation": "주어 + 想 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "저는 책을 읽고 싶습니다."
+        }
+      ]
+    },
+    "zh_多少N_21": {
+      "title": "多少 (+ 양사) + 명사 (얼마나 많은 ~ / 수량 묻기)",
+      "shortExplanation": "수량을 묻는 의문대명사로, 대개 10 이상의 수나 범위를 가늠하기 어려울 때 사용하며 '얼마나', '몇'이라는 뜻입니다.",
+      "longExplanation": "의문대명사 '多少(duōshao)'는 사물이나 사람의 수량, 또는 가격 등을 질문할 때 쓰입니다. 10 이하의 적은 수를 묻고 양사를 반드시 동반해야 하는 '几'와 달리, '多少'는 10 이상의 많은 수나 수를 짐작하기 어려울 때 폭넓게 쓰이며, 뒤에 양사를 생략하고 명사를 바로 취할 수도 있습니다.",
+      "formation": "多少 (+ 양사) + 명사",
+      "examples": [
+        {
+          "translation": "당신은 중국어 선생님이 몇 분이나 계십니까?"
+        }
+      ]
+    },
+    "zh_个_22": {
+      "title": "个 (가장 대표적인 범용 양사 / 개, 명)",
+      "shortExplanation": "가장 기본적이고 널리 쓰이는 만능 양사로, 사람이나 전용 양사가 없는 사물을 셀 때 두루 사용합니다.",
+      "longExplanation": "양사 '个(gè)'는 현대 중국어에서 가장 흔히 쓰이는 대표적인 일반 양사입니다. 사람(학생, 친구 등)을 셀 때뿐만 아니라 전용 양사가 따로 정해져 있지 않은 구체적인 사물이나 추상적인 개념(문제, 생각 등)을 셀 때 널리 쓰입니다. 수사나 지시대명사(这/那)와 명사 사이에 위치합니다.",
+      "formation": "수사 / 这 / 那 + 个 + 명사",
+      "examples": [
+        {
+          "translation": "학생 다섯 명"
+        }
+      ]
+    },
+    "zh_口_23": {
+      "title": "口 (가족 식구 수를 세는 양사 / 식구)",
+      "shortExplanation": "주로 가족의 인원수(식구)를 셀 때 사용하는 양사입니다.",
+      "longExplanation": "양사 '口(kǒu)'는 일상 대화에서 주로 한 가정의 식구 수나 구성원 인원수를 셀 때 명사 '人' 앞에 쓰입니다(예: 三口人 - 세 식구). 그 외에도 우물, 솥 등 아가리가 있는 물건이나, 한 모금·한 입(一口)과 같이 먹거나 마시는 동작 단위를 나타낼 때도 사용됩니다.",
+      "formation": "수사 + 口 + 人 (또는 해당 명사)",
+      "examples": [
+        {
+          "translation": "우리 집은 다섯 식구입니다."
+        }
+      ]
+    },
+    "zh_元块_24": {
+      "title": "元／块 (중국 화폐 기본 단위 / 위안)",
+      "shortExplanation": "중국 화폐의 기본 단위로, '元'은 서면어·공식 표현에 쓰이고 '块'는 일상 구어 대화에서 널리 쓰입니다.",
+      "longExplanation": "중국 인민폐(RMB)의 기본 화폐 단위입니다. '元(yuán)'은 공문서나 은행, 공식 가격표 등 서면어에서 주로 쓰이는 공식 명칭입니다. 반면 '块(kuài)'는 실생활 대화나 시장 등 일상 구어에서 가장 널리 쓰이는 표현입니다.",
+      "formation": "수사 + 元 / 块",
+      "examples": [
+        {
+          "translation": "1위안"
+        }
+      ]
+    },
+    "zh_在_25": {
+      "title": "在 (~에 있다 / 소재 표현)",
+      "shortExplanation": "사람이나 사물이 특정 장소나 위치에 존재함을 나타내는 동사로, '~에 있다'라는 뜻입니다.",
+      "longExplanation": "동사 '在(zài)'는 사람이나 사물이 특정 장소, 공간, 또는 방위 위치에 존재하고 있음을 나타냅니다. 한국어의 '~에 있다'에 해당하며, 부정형은 '不在(~에 없다)'입니다. 기본 어순은 '주어 + 在 + 장소/방위사' 형태를 취합니다.",
+      "formation": "주어 + 在 + 장소 / 방위사",
+      "examples": [
+        {
+          "translation": "그는 의자 밑에 있습니다."
+        }
+      ]
+    },
+    "zh_哪儿_26": {
+      "title": "哪儿？ (어디? / 장소를 묻는 의문대명사)",
+      "shortExplanation": "장소나 소재 위치를 물을 때 사용하는 의문대명사로, '어디'라는 뜻입니다.",
+      "longExplanation": "의문대명사 '哪儿(nǎr)'은 위치나 장소를 질문할 때 사용하는 표현으로, 한국어의 '어디'에 해당합니다(중국 북방에서 얼화(儿化)된 형태로 널리 쓰이며, 남방에서는 '哪里(nǎlǐ)'를 많이 씁니다). 동사 '在'와 함께 '在 + 哪儿？' 구조로 쓰여 '~은 어디에 있습니까?'라는 질문으로 매우 흔히 사용됩니다.",
+      "formation": "주어 + 在 + 哪儿？",
+      "examples": [
+        {
+          "translation": "내 컵은 어디에 있나요?"
+        }
+      ]
+    },
+    "zh_在PLACEV_27": {
+      "title": "在 + 장소 + 동사 (~에서 …하다 / 동작 장소)",
+      "shortExplanation": "개사(전치사) '在'가 장소와 결합하여 동사 앞에서 동작이 행해지는 장소를 나타내며, '~에서 …하다'라는 뜻입니다.",
+      "longExplanation": "개사(전치사) '在(zài)'는 장소 명사와 결합하여 상황어(부사어) 역할을 하며, 반드시 본동사 앞에 위치합니다. 어떤 동작이나 행위가 발생하는 공간이나 장소를 나타내어 한국어의 '~에서 …하다'에 해당합니다.",
+      "formation": "주어 + 在 + 장소 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "저는 친구 집에서 차를 마십니다."
+        }
+      ]
+    },
+    "zh_Q呢_28": {
+      "title": "의문문 + 呢 (의문 어기조사 / 어조 완화·궁금증)",
+      "shortExplanation": "의문문 끝에 붙어 어조를 부드럽게 완화하고, 궁금증이나 확인의 뉘앙스를 더해줍니다.",
+      "longExplanation": "의문대명사(谁, 什么, 哪儿, 怎么 등)가 포함된 의문문의 끝에 어기조사 '呢(ne)'를 덧붙이면 질문하는 말투가 한결 부드럽고 친근해집니다. 또한 말하는 사람의 호기심이나 '도대체 어디에 있는 걸까?', '~일까?' 하는 의아함과 추측의 뉘앙스를 자연스럽게 나타냅니다.",
+      "formation": "의문문 + 呢？",
+      "examples": [
+        {
+          "translation": "그는 어디에 있는 거지?"
+        }
+      ]
+    },
+    "zh_N呢_29": {
+      "title": "명사 + 呢？ (~은 어디에 있나요? / 소재 묻기)",
+      "shortExplanation": "사람이나 사물의 행방이나 소재를 묻는 생략 의문문으로, '~은 어디 갔지?', '~은 어디에 있나요?'라는 뜻입니다.",
+      "longExplanation": "앞선 대화 맥락 없이 단독으로 '명사 + 呢？(ne)' 형태로 쓰이면, 그 대상의 현재 위치나 행방을 묻는 생략 의문문이 됩니다. 이는 '[명사] 在哪儿？(~은 어디에 있습니까?)'와 같은 뜻으로 일상생활에서 매우 자주 쓰입니다.",
+      "formation": "명사 / 대명사 + 呢？",
+      "examples": [
+        {
+          "translation": "내 컵은 어디 있지?"
+        }
+      ]
+    },
+    "zh_PLACE有N_30": {
+      "title": "장소 + 有 + 명사 (~에 …이/가 있다 / 존현문)",
+      "shortExplanation": "특정 장소에 사람이나 사물이 존재함을 나타내는 존현문으로, '~에 …이/가 있다'라는 뜻입니다.",
+      "longExplanation": "중국어에서 존재를 나타내는 존현문의 가장 대표적인 형식입니다. 문두에 장소나 방위사를 배치하고 동사 '有(yǒu)' 뒤에 존재하는 대상(보통 '수사 + 양사 + 명사'의 불특정 대상)을 연결하여, 한국어의 '~에 …이/가 있다'를 나타냅니다.",
+      "formation": "장소 / 방위사 + 有 + (수사 + 양사) + 명사",
+      "examples": [
+        {
+          "translation": "의자 밑에 강아지 한 마리가 있습니다."
+        }
+      ]
+    },
+    "zh_PLACE没有N_31": {
+      "title": "장소 + 没有 + 명사 (~에 …이/가 없다 / 존현문의 부정)",
+      "shortExplanation": "존현문의 부정형으로, 특정 장소에 사람이나 사물이 존재하지 않음을 나타내며 '~에 …이/가 없다'라는 뜻입니다.",
+      "longExplanation": "존현문 '장소 + 有 + 명사'의 부정형입니다. 동사 '有' 앞에 '没'을 붙여 '没有(méiyǒu)'로 나타내며, 특정 장소에 어떠한 사람이나 사물도 존재하지 않음을 표현합니다. 한국어의 '~에 …이/가 없다'에 해당하며, 부정형에서는 일반적으로 수량사를 동반하지 않고 명사만 바로 취합니다.",
+      "formation": "장소 / 방위사 + 没有 + 명사",
+      "examples": [
+        {
+          "translation": "여기에는 사람이 없습니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_怎么V_16": {
+      "title": "怎么 + 动词 (询问动作的方式或方法)",
+      "shortExplanation": "用于询问动作或行为的方式、方法，意为“如何”、“怎样做”。",
+      "longExplanation": "疑问代词“怎么”置于动词前面，用于询问进行某项动作或行为的具体方式、手段或操作步骤，相当于现代汉语口语中的“怎样做”、“如何做”。",
+      "formation": "怎么 + 动词",
+      "examples": [
+        {
+          "translation": "这个怎么读？"
+        }
+      ]
+    },
+    "zh_月号日星期_17": {
+      "title": "...月...号/日 星期... (日期的表达方式)",
+      "shortExplanation": "汉语中日期的表达顺序为由大到小：月 → 日（号/日） → 星期。",
+      "longExplanation": "汉语表示具体日期的基本顺序遵循由大到小的规律，通常为“年 → 月 → 日（号） → 星期”。在口语交际中，“日”通常用“号”表示，而在书面语或正式文体中多使用“日”；星期则用“星期”加数字一至六或“日/天”表示。",
+      "formation": "[数字]月 + [数字]号/日 + 星期[数字/天]",
+      "examples": [
+        {
+          "translation": "九月二号（日），星期四。"
+        }
+      ]
+    },
+    "zh_去PLACEV_19": {
+      "title": "去 + 处所/地点 + 动词 (去某地做某事 / 连动句)",
+      "shortExplanation": "连动句的一种形式，表示前往某地以完成某项动作或目的。",
+      "longExplanation": "这是汉语中表示目的的典型连动句句式，由动词“去”加上表示处所的名词或代词，后接第二个动词（或动词短语），表示前往该地点所要进行的活动或达到的目的。",
+      "formation": "主语 + 去 + 处所/地点 + 动词 (+ 宾语)",
+      "examples": [
+        {
+          "translation": "我去学校学习。"
+        }
+      ]
+    },
+    "zh_想_20": {
+      "title": "想 + 动词 (表示主观意愿或打算)",
+      "shortExplanation": "能愿动词，用在动词前表示愿望、希望或打算做某事，相当于“想要”、“打算”。",
+      "longExplanation": "“想”作为能愿动词（助动词），置于动词或动词短语之前，表达说话人的主观愿望、企图或打算，相当于“希望”、“打算做……”。其否定形式为“不想”。此外，“想”还可单独作为实义动词，表示“思考、考虑”或“想念”。",
+      "formation": "主语 + 想 + 动词 (+ 宾语)",
+      "examples": [
+        {
+          "translation": "我想看书。"
+        }
+      ]
+    },
+    "zh_多少N_21": {
+      "title": "多少 (+ 量词) + 名词 (询问数量)",
+      "shortExplanation": "疑问代词，用于询问数量，多用于数目大于十或不确定数量的场合。",
+      "longExplanation": "疑问代词“多少”主要用于询问数量或价格。与“几”（通常用于询问十以内的较小数目且后面必须带量词）不同，“多少”既可用于十以上的大数，也可用于未知的数量范围，且其后接名词时量词可带可不带。",
+      "formation": "多少 (+ 量词) + 名词",
+      "examples": [
+        {
+          "translation": "你有多少汉语老师？"
+        }
+      ]
+    },
+    "zh_个_22": {
+      "title": "个 (最常用的通用量词)",
+      "shortExplanation": "汉语中最基础、最通用的个体量词，用于人及没有专属量词的各种事物。",
+      "longExplanation": "“个”是现代汉语中使用频率最高、适用范围最广的个体量词。它常用于计数人（如学生、朋友），也可以修饰许多没有专用量词的无形概念或具体物体。通常位于数词或指示代词（这、那）与名词之间。",
+      "formation": "数词 / 这 / 那 + 个 + 名词",
+      "examples": [
+        {
+          "translation": "五个学生。"
+        }
+      ]
+    },
+    "zh_口_23": {
+      "title": "口 (计数家庭人口等的量词)",
+      "shortExplanation": "主要用于计算家庭成员人数（人口），也可用于某些有口器具或动物等。",
+      "longExplanation": "量词“口”在日常生活中最常见的用法是修饰“人”，专门用来计算一个家庭内的人口数量（例如“三口人”、“五口人”）。此外，它还可用于计数某些带口或器皿（如井、大锅、钟），或表示吃喝的一口动作等。",
+      "formation": "数词 + 口 + 人 (或其他适用名词)",
+      "examples": [
+        {
+          "translation": "我家有五口人。"
+        }
+      ]
+    },
+    "zh_元块_24": {
+      "title": "元／块 (货币基本单位)",
+      "shortExplanation": "人民币的基本单位。“元”多用于书面语或正式场合，“块”用于日常口语。",
+      "longExplanation": "“元”和“块”都是中国法定货币（人民币）的基本计量单位。“元”是法定正规名称，多见于书面文本、账目、标价及正式交流中；“块”（或写作“块钱”）则是大众日常口语交流中最常用的通俗称呼。",
+      "formation": "数词 + 元 / 块",
+      "examples": [
+        {
+          "translation": "一元（一块钱）。"
+        }
+      ]
+    },
+    "zh_在_25": {
+      "title": "在 (表示人或事物的存在与处所)",
+      "shortExplanation": "动词，表示人或事物处于某个空间位置或地点，意为“在某处”。",
+      "longExplanation": "“在”作为动词，用于指出人或客观事物所处的空间位置或地理处所，表示存在。其句式为“主语 + 在 + 处所/方位词”，否定形式为“不在”。",
+      "formation": "主语 + 在 + 处所 / 方位词",
+      "examples": [
+        {
+          "translation": "他在椅子下面。"
+        }
+      ]
+    },
+    "zh_哪儿_26": {
+      "title": "哪儿？ (询问处所或位置的疑问代词)",
+      "shortExplanation": "疑问代词，用于询问地点、处所，意为“哪里”、“何处”。",
+      "longExplanation": "疑问代词“哪儿”（常带儿化音，多见于北方口语，南方常说“哪里”）专门用于对空间位置、处所进行提问。最常用的句式是与动词“在”连用，构成“……在哪儿？”，用于询问某人或某物所处的具体位置。",
+      "formation": "主语 + 在 + 哪儿？",
+      "examples": [
+        {
+          "translation": "我的杯子在哪儿？"
+        }
+      ]
+    },
+    "zh_在PLACEV_27": {
+      "title": "在 + 处所/地点 + 动词 (表示动作发生的地点)",
+      "shortExplanation": "介词“在”引出动作发生的处所，作状语修饰后面的动词。",
+      "longExplanation": "介词“在”与表示处所的名词或方位短语组成介宾短语，置于谓语动词之前作状语，用以指明动作或事件发生的具体地点。其基本语序为“在 + 处所 + 动词”，强调“在某地做某事”。",
+      "formation": "主语 + 在 + 处所/地点 + 动词 (+ 宾语)",
+      "examples": [
+        {
+          "translation": "我在朋友家喝茶。"
+        }
+      ]
+    },
+    "zh_Q呢_28": {
+      "title": "疑问句 + 呢 (用于特指问句末尾舒缓语气)",
+      "shortExplanation": "语气助词，用在含疑问词的疑问句句尾，使语气更加柔和亲切，兼表深究或思索。",
+      "longExplanation": "在含有疑问代词（如“哪儿”、“什么”、“谁”、“怎么”等）的特指问句句尾加上语气助词“呢”，可以使提问的语气变得缓和、亲近，减弱生硬感，同时带有说话人思考、探寻或关切的情态色彩。",
+      "formation": "特指疑问句 + 呢？",
+      "examples": [
+        {
+          "translation": "他在哪儿呢？"
+        }
+      ]
+    },
+    "zh_N呢_29": {
+      "title": "名词 + 呢？ (询问人或事物的处所/下落)",
+      "shortExplanation": "省略疑问句，单独使用时用于寻找或询问某人、某物的下落或所在位置，相当于“……在哪儿”。",
+      "longExplanation": "在没有上文语境对比的情况下，单独使用“名词/代词 + 呢？”构成的省略句，通常用于询问该人或物品的所在处所或下落，意思等同于“……在哪儿？”或“……在什么地方？”。",
+      "formation": "名词 / 代词 + 呢？",
+      "examples": [
+        {
+          "translation": "我的杯子呢？"
+        }
+      ]
+    },
+    "zh_PLACE有N_30": {
+      "title": "处所 + 有 + 名词 (表示某处存在某人或某物/存现句)",
+      "shortExplanation": "存现句的基本句式，用于表示某地存在着某人或某种事物。",
+      "longExplanation": "这是汉语中表示存在的典型存现句。句首通常是处所词或方位短语，谓语动词为“有”，后接表示存在的人或事物的名词短语（多带有数量词，表示不确指的对象），说明“在某个地方有什么”。",
+      "formation": "处所 / 方位词 + 有 + (数词 + 量词) + 名词",
+      "examples": [
+        {
+          "translation": "椅子下面有一只小狗。"
+        }
+      ]
+    },
+    "zh_PLACE没有N_31": {
+      "title": "处所 + 没有 + 名词 (表示某处不存在某人或某物)",
+      "shortExplanation": "存现句的否定形式，表示某个地方没有某人或某种事物。",
+      "longExplanation": "这是“处所 + 有 + 名词”句式的否定形式。用否定词“没”或“没有”替代肯定式中的“有”，表示在特定的处所范围内不存在所指的人或事物。在否定句中，后面的名词通常直接出现，不带具体的数量词。",
+      "formation": "处所 / 方位词 + 没有 + 名词",
+      "examples": [
+        {
+          "translation": "这儿没有人。"
+        }
+      ]
+    }
+  }
+}

@@ -57,14 +57,17 @@ export class GrammarService {
         ja_vi: async () => (await import('../data/translations/ja/vi')).GRAMMAR_JA_VI,
         ja_zh: async () => (await import('../data/translations/ja/zh')).GRAMMAR_JA_ZH,
         ja_ko: async () => (await import('../data/translations/ja/ko')).GRAMMAR_JA_KO,
+        ja_ja: async () => (await import('../data/translations/ja/ja')).GRAMMAR_JA_JA,
 
         ko_vi: async () => (await import('../data/translations/ko/vi')).GRAMMAR_KO_VI,
         ko_zh: async () => (await import('../data/translations/ko/zh')).GRAMMAR_KO_ZH,
         ko_ja: async () => (await import('../data/translations/ko/ja')).GRAMMAR_KO_JA,
+        ko_ko: async () => (await import('../data/translations/ko/ko')).GRAMMAR_KO_KO,
 
         zh_vi: async () => (await import('../data/translations/zh/vi')).GRAMMAR_ZH_VI,
         zh_ja: async () => (await import('../data/translations/zh/ja')).GRAMMAR_ZH_JA,
         zh_ko: async () => (await import('../data/translations/zh/ko')).GRAMMAR_ZH_KO,
+        zh_zh: async () => (await import('../data/translations/zh/zh')).GRAMMAR_ZH_ZH,
     };
 
     // Grammar mode toggle
@@ -223,7 +226,7 @@ export class GrammarService {
      * Lazy-load translation pack for a learning language and UI language
      */
     async loadTranslation(learningLang: SupportedGrammarLang, uiLang: string): Promise<Record<string, GrammarTranslation>> {
-        if (uiLang === 'en' || learningLang === uiLang) {
+        if (uiLang === 'en') {
             return {};
         }
 

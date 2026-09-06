@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_V1V1V2V2_707",
+    "language": "zh",
+    "pattern": "V1V1V2V2",
+    "title": "V1V1V2V2 ((repeated action))",
+    "shortExplanation": "(repeated action)",
+    "longExplanation": "(repeated action). Pinyin: V1V1V2V2",
+    "formation": "V1V1V2V2",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "小孩子就喜欢打打闹闹，磕磕碰碰是难免的，过几天就好了， 别担心。",
+        "romanization": "xiǎoháizi jiù xǐhuan dǎ dǎ nào nào， kē kēpèng pèng shì nánmiǎn de， guò jǐtiān jiù hǎole， bié dānxīn。",
+        "translation": "Children like to make a lot of noise. It's inevitable to bump into each other. It'll be all right in a few days. Don't worry."
+      }
+    ]
+  },
+  {
+    "id": "zh_左MN右MN_708",
+    "language": "zh",
+    "pattern": "左 # M N 右 # M N",
+    "title": "左 # M N 右 # M N (one N after another)",
+    "shortExplanation": "one N after another",
+    "longExplanation": "one N after another. Pinyin: zuǒ # M N yòu # M N",
+    "formation": "zuǒ # M N yòu # M N",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "妈妈左一个电话右一个电话地催他回家。",
+        "romanization": "māma zuǒ yī gè diànhuà yòu yī gè diànhuà dì cuī tā huíjiā。",
+        "translation": "Mother called him left and right (lit. with one call after another), trying to hurry him to come home."
+      }
+    ]
+  },
+  {
+    "id": "zh_莫非难道不成_709",
+    "language": "zh",
+    "pattern": "莫非/难道 …… 不成",
+    "title": "莫非/难道 …… 不成 (could it be that)",
+    "shortExplanation": "could it be that",
+    "longExplanation": "could it be that. Pinyin: mòfēi/ nándào …… bùchéng",
+    "formation": "mòfēi/ nándào …… bùchéng",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他大吃一惊，头脑中一片空白——莫非受了骗不成?",
+        "romanization": "tā dàchīyījīng， tóunǎo zhōng yīpiàn kòngbái—— mòfēi shòu le piàn bùchéng?",
+        "translation": "He was shocked and his mind was blank - could he possibly be deceived?"
+      }
+    ]
+  },
+  {
+    "id": "zh_一个N_710",
+    "language": "zh",
+    "pattern": "一个 N",
+    "title": "一个 N (with a…)",
+    "shortExplanation": "with a…",
+    "longExplanation": "with a…. Pinyin: yī gè N",
+    "formation": "yī gè N",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他手没抓住栏杆，一个跟头栽了下来。",
+        "romanization": "tā shǒu méi zhuāzhù lángān， yī gè gēntou zāi le xiàlai。",
+        "translation": "He missed the railing and fell with a flip."
+      }
+    ]
+  },
+  {
+    "id": "zh_了个A_711",
+    "language": "zh",
+    "pattern": "(了) 个 A",
+    "title": "(了) 个 A (to the extent that it became A)",
+    "shortExplanation": "to the extent that it became A",
+    "longExplanation": "to the extent that it became A. Pinyin: ( le) gè A",
+    "formation": "( le) gè A",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他把心爱的琴摔了个粉碎。",
+        "romanization": "tā bǎ xīn'ài de qín shuāi le gè fěnsuì。",
+        "translation": "He smashed his beloved violin to pieces (lit. to the extent that it became shattered)."
+      }
+    ]
+  },
+  {
+    "id": "zh_向来VA_712",
+    "language": "zh",
+    "pattern": "向来 V/A",
+    "title": "向来 V/A (always have (been) V/A)",
+    "shortExplanation": "always have (been) V/A",
+    "longExplanation": "always have (been) V/A. Pinyin: xiànglái V/A",
+    "formation": "xiànglái V/A",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他们向来忠厚、老实，为人诚恳。",
+        "romanization": "tāmen xiànglái zhōnghòu、 lǎoshi， wéirén chéngkěn。",
+        "translation": "They have always been loyal, honest and sincere."
+      }
+    ]
+  },
+  {
+    "id": "zh_预先_713",
+    "language": "zh",
+    "pattern": "预先",
+    "title": "预先 (ahead of time)",
+    "shortExplanation": "ahead of time",
+    "longExplanation": "ahead of time. Pinyin: yùxiān",
+    "formation": "yùxiān",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "大家预先都没有想到，本届绘画展览竟然这么受欢迎。",
+        "romanization": "dàjiā yùxiān dōu méiyǒu xiǎngdào， běnjiè huìhuà zhǎnlǎn jìngrán zhème shòuhuānyíng。",
+        "translation": "It was never expected (ahead of time) that this painting exhibition would be so popular."
+      }
+    ]
+  },
+  {
+    "id": "zh_CLAUSE1也好CLAUSE2也罢_714",
+    "language": "zh",
+    "pattern": "CLAUSE1 也好 CLAUSE2 也罢",
+    "title": "CLAUSE1 也好 CLAUSE2 也罢 (it doesn’t matter whether CLAUSE1 or CLAUSE2)",
+    "shortExplanation": "it doesn’t matter whether CLAUSE1 or CLAUSE2",
+    "longExplanation": "it doesn’t matter whether CLAUSE1 or CLAUSE2. Pinyin: CLAUSE1 yě hǎo CLAUSE2 yěbà",
+    "formation": "CLAUSE1 yě hǎo CLAUSE2 yěbà",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "开汽车也好，骑自行车也罢，行进中打电话都会影响注意力与反应能力。",
+        "romanization": "kāi qìchē yě hǎo， qí zìxíngchē yěbà， xíngjìn zhōng dǎdiànhuà dūhuì yǐngxiǎng zhùyìlì yǔ fǎnyìng nénglì。",
+        "translation": "It doesn’t matter whether [you are] driving a car or riding a bicycle, making phone calls during the journey can affect attention and reaction ability."
+      }
+    ]
+  },
+  {
+    "id": "zh_不时_715",
+    "language": "zh",
+    "pattern": "不时",
+    "title": "不时 (from time to time)",
+    "shortExplanation": "from time to time",
+    "longExplanation": "from time to time. Pinyin: bùshí",
+    "formation": "bùshí",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "不时传来的几声鸟叫提醒我们，新的一天又开始了。",
+        "romanization": "bùshí chuánlái de jǐ shēng niǎo jiào tíxǐng wǒmen， xīn de yī tiān yòu kāishǐ le。",
+        "translation": "A few bird calls from time to time remind us that a new day has begun."
+      }
+    ]
+  },
+  {
+    "id": "zh_多多少少_716",
+    "language": "zh",
+    "pattern": "多多少少",
+    "title": "多多少少 (more or less)",
+    "shortExplanation": "more or less",
+    "longExplanation": "more or less. Pinyin: duōduōshǎoshǎo",
+    "formation": "duōduōshǎoshǎo",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他的话多多少少有些真实。",
+        "romanization": "tā dehuà duōduōshǎoshǎo yǒuxiē zhēnshí。",
+        "translation": "What he said was more or less truthful."
+      }
+    ]
+  },
+  {
+    "id": "zh_逐M_717",
+    "language": "zh",
+    "pattern": "逐 M",
+    "title": "逐 M (one by one)",
+    "shortExplanation": "one by one",
+    "longExplanation": "one by one. Pinyin: zhú M",
+    "formation": "zhú M",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "雨季快到了，水库要逐个检查，以排除安全隐患。",
+        "romanization": "yǔjì kuài dàoliǎo， shuǐkù yào zhúgè jiǎnchá， yǐ páichú ānquán yǐnhuàn。",
+        "translation": "As the rainy season is approaching, reservoirs should be inspected one by one to eliminate potential safety hazards."
+      }
+    ]
+  },
+  {
+    "id": "zh_归根到底_718",
+    "language": "zh",
+    "pattern": "归根到底",
+    "title": "归根到底 (after all)",
+    "shortExplanation": "after all",
+    "longExplanation": "after all. Pinyin: guīgēndàodǐ",
+    "formation": "guīgēndàodǐ",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "运动健身归根到底是自己的事，胡乱对付其实是在骗自己。",
+        "romanization": "yùndòng jiànshēn guīgēndàodǐ shì zìjǐ de shì， húluàn duìfu qíshí shì zài piàn zìjǐ。",
+        "translation": "Exercise and fitness is after all [your] own business. If you just try to scrape through it, you are actually deceiving yourself."
+      }
+    ]
+  },
+  {
+    "id": "zh_哪怕_719",
+    "language": "zh",
+    "pattern": "哪怕",
+    "title": "哪怕 (even if)",
+    "shortExplanation": "even if",
+    "longExplanation": "even if. Pinyin: nǎpà",
+    "formation": "nǎpà",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "您放心，我们 一定会尽全力抢救病人，哪怕只有一线希望。",
+        "romanization": "nín fàngxīn， wǒmen yīdìng huì jìn quánlì qiǎngjiù bìngrén， nǎpà zhǐyǒu yīxiànxīwàng。",
+        "translation": "You can rest assured that we will do our best to save the patients, even if there is only a glimmer of hope."
+      }
+    ]
+  },
+  {
+    "id": "zh_反之_720",
+    "language": "zh",
+    "pattern": "反之",
+    "title": "反之 (on the contrary)",
+    "shortExplanation": "on the contrary",
+    "longExplanation": "on the contrary. Pinyin: fǎnzhī",
+    "formation": "fǎnzhī",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "经济发展了，百姓的收入增加了，消费能力就强，反之，百姓的消费能力就差。",
+        "romanization": "jīngjìfāzhǎn le， bǎixìng de shōurù zēngjiā le， xiāofèi nénglì jiù qiáng， fǎnzhī， bǎixìng de xiāofèi nénglì jiù chà。",
+        "translation": "If the economy develops, people's income increases, and their buying power increases. On the contrary [if the opposite is true], people's buying power will be less."
+      }
+    ]
+  },
+  {
+    "id": "zh_VA1的VA1VA2的VA2_721",
+    "language": "zh",
+    "pattern": "V/A1 的 V/A1，V/A2 的 V/A2",
+    "title": "V/A1 的 V/A1，V/A2 的 V/A2 (some V/A1, some V/A2)",
+    "shortExplanation": "some V/A1, some V/A2",
+    "longExplanation": "some V/A1, some V/A2. Pinyin: V/A1 de V/A1，V/A2 de V/A2",
+    "formation": "V/A1 de V/A1，V/A2 de V/A2",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "进了果园，大家看到一树的桃 ，红的红，绿的绿，漂亮极了。",
+        "romanization": "jìn le guǒyuán， dàjiā kàn dào yī shù de táo ， hóng de hóng， lǜ de lǜ， piàoliang jíle。",
+        "translation": "Entering the orchard, you can see a tree of peaches, some red, some green, very beautiful."
+      }
+    ]
+  }
+]

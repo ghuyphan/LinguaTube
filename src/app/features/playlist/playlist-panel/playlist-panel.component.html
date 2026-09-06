@@ -18,20 +18,20 @@
             <button class="action-btn" [class.active]="isCopied()" [class.btn-copied]="isCopied()"
                 (click)="onShare()" [title]="isCopied() ? 'Link copied!' : i18n.t('playlist.sharePlaylist')"
                 aria-label="Share playlist">
-                <app-icon [name]="isCopied() ? 'check' : 'share'" [size]="14"
+                <app-icon [name]="isCopied() ? 'check' : 'share'" [size]="15"
                     [class.text-success]="isCopied()"></app-icon>
             </button>
             <button class="action-btn" [class.active]="playlistService.isLooping()"
                 (click)="playlistService.toggleLoop()"
                 [title]="playlistService.isLooping() ? i18n.t('playlist.loopOn') : i18n.t('playlist.loopPlaylist')"
                 aria-label="Loop playlist">
-                <app-icon name="repeat" [size]="14"></app-icon>
+                <app-icon name="repeat" [size]="15"></app-icon>
             </button>
             <button class="action-btn" [class.active]="playlistService.isShuffled()"
                 (click)="playlistService.toggleShuffle()"
                 [title]="playlistService.isShuffled() ? i18n.t('playlist.shuffleOn') : i18n.t('playlist.shufflePlaylist')"
                 aria-label="Shuffle playlist">
-                <app-icon name="shuffle" [size]="14"></app-icon>
+                <app-icon name="shuffle" [size]="15"></app-icon>
             </button>
             <button class="action-btn close-btn desktop-only" (click)="requestClose.emit()" [title]="i18n.t('playlist.closePlaylist')" aria-label="Close playlist">
                 <app-icon name="x" [size]="15"></app-icon>

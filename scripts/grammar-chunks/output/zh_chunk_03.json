@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_和_32": {
+      "title": "和 (Liên từ: Và, cùng)",
+      "shortExplanation": "Liên từ dùng để nối hai hoặc nhiều danh từ, đại từ hoặc cụm danh từ có quan hệ đẳng lập; 'và', 'cùng'.",
+      "longExplanation": "'和' (hé) là liên từ cơ bản trong tiếng Trung dùng để kết nối các từ hoặc cụm từ có vị trí ngữ pháp ngang hàng (quan hệ đẳng lập), chủ yếu là giữa danh từ, đại từ hoặc đoản ngữ danh từ (ví dụ: 爸爸、妈妈和我 - Bố, mẹ và tôi). Cần lưu ý rằng '和' trong tiếng Trung không dùng để nối hai mệnh đề độc lập hoặc hai câu hoàn chỉnh như từ 'and' trong tiếng Anh hay 'và' trong tiếng Việt.",
+      "formation": "Danh từ 1 / Đại từ 1 + 和 + Danh từ 2 / Đại từ 2",
+      "examples": [
+        {
+          "translation": "Bố, mẹ và tôi."
+        }
+      ]
+    },
+    "zh_能_33": {
+      "title": "能 (Động từ năng nguyện: Có thể [điều kiện, năng lực, sự cho phép])",
+      "shortExplanation": "Động từ năng nguyện biểu thị năng lực vốn có, điều kiện khách quan cho phép hoặc lời thỉnh cầu lịch sự; 'có thể'.",
+      "longExplanation": "'能' (néng) là động từ năng nguyện (trợ động từ) đứng trước động từ chính, dùng để biểu thị: 1) Khả năng/năng lực của bản thân đạt đến một mức độ nào đó; 2) Hoàn cảnh khách quan có đủ điều kiện để thực hiện hành động; 3) Sự cho phép hoặc hỏi ý kiến lịch sự trong câu nghi vấn ('我能...吗？' - Tôi có thể... được không?). Thể phủ định là '不能' (bù néng - không thể, không được phép).",
+      "formation": "Chủ ngữ + 能 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi có thể ngồi ở đây được không?"
+        }
+      ]
+    },
+    "zh_请V_34": {
+      "title": "请 + Động từ (Mời, xin vui lòng... [câu cầu khiến lịch sự])",
+      "shortExplanation": "Đặt trước động từ để biểu thị lời mời, thỉnh cầu hoặc đề nghị một cách lịch sự, nhã nhặn; 'mời...', 'xin mời...'.",
+      "longExplanation": "'请' (qǐng) đứng trước động từ để tạo thành câu cầu khiến lịch sự, tương đương với 'mời', 'xin mời' hoặc 'làm ơn' trong tiếng Việt. Khi giao tiếp hàng ngày, việc thêm '请' vào trước hành động giúp câu nói trở nên tôn trọng, khách khí và nhã nhặn hơn (ví dụ: 请进 - Mời vào, 请坐 - Mời ngồi, 请喝茶 - Mời uống trà).",
+      "formation": "(Chủ ngữ +) 请 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Xin mời ngồi."
+        }
+      ]
+    },
+    "zh_点分_35": {
+      "title": "Số từ + 点 + (Số từ + 分) (Cách diễn đạt giờ phút trong tiếng Trung)",
+      "shortExplanation": "Cách biểu đạt thời gian trong tiếng Trung: '点' biểu thị giờ và '分' biểu thị phút.",
+      "longExplanation": "Trong tiếng Trung, để đọc giờ và phút cụ thể, ta dùng công thức: 'Số từ + 点 (diǎn: giờ) + Số từ + 分 (fēn: phút)'. Khi số phút lớn hơn 10 thì có thể lược bỏ từ '分' trong khẩu ngữ (ví dụ: 十一点十 - 11 giờ 10). Đối với số phút từ 1 đến 9, cần thêm từ '零' (líng: linh/lẻ) trước số phút và giữ nguyên '分' (ví dụ: 八点零五分 - 8 giờ 5 phút). Đối với 2 giờ, dùng '两点' chứ không dùng '二点'.",
+      "formation": "Số từ + 点 (+ Số từ + 分)",
+      "examples": [
+        {
+          "translation": "11 giờ 10 phút."
+        }
+      ]
+    },
+    "zh_上午下午_36": {
+      "title": "上午 / 下午 (Buổi sáng / Buổi chiều trong diễn đạt thời gian)",
+      "shortExplanation": "Từ chỉ buổi trong ngày đặt trước giờ cụ thể để phân biệt sáng (上午) và chiều (下午).",
+      "longExplanation": "Trong tiếng Trung, để làm rõ thời điểm trong ngày (buổi sáng hay buổi chiều), các từ chỉ buổi như '上午' (shàngwǔ: buổi sáng, từ khoảng 8-9h đến 12h trưa) hoặc '下午' (xiàwǔ: buổi chiều, từ khoảng 12h trưa đến 18h tối) được đặt trước giờ cụ thể. Quy tắc ngữ pháp tiếng Trung luôn đi từ đơn vị thời gian lớn đến đơn vị nhỏ, do đó thứ tự luôn là: 'Buổi (上午/下午) + Giờ cụ thể (点/分)'.",
+      "formation": "上午 / 下午 + Số từ + 点 (+ Số từ + 分)",
+      "examples": [
+        {
+          "translation": "3 giờ 10 phút chiều."
+        }
+      ]
+    },
+    "zh_STIMEV_37": {
+      "title": "Chủ ngữ + Thời gian + Động từ (Trạng ngữ thời gian đứng sau chủ ngữ)",
+      "shortExplanation": "Từ chỉ thời gian đứng sau chủ ngữ và trước động từ để làm trạng ngữ biểu thị thời điểm hành động xảy ra.",
+      "longExplanation": "Trong ngữ pháp tiếng Trung, quy tắc cốt lõi về thời gian là: thời gian xảy ra hành động bắt buộc phải đứng TRƯỚC động từ, không bao giờ đặt ở cuối câu như tiếng Anh hay tiếng Việt. Khi cấu trúc là 'Chủ ngữ + Thời gian + Động từ', từ chỉ thời gian đóng vai trò là trạng ngữ chỉ thời gian tu sức cho vị ngữ phía sau (ví dụ: 妈妈六点做饭 - Mẹ nấu cơm lúc 6 giờ).",
+      "formation": "Chủ ngữ + Từ chỉ thời gian + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Mẹ nấu cơm lúc sáu giờ."
+        }
+      ]
+    },
+    "zh_TIMESV_38": {
+      "title": "Thời gian + Chủ ngữ + Động từ (Trạng ngữ thời gian đứng đầu câu)",
+      "shortExplanation": "Từ chỉ thời gian được đặt ở đầu câu trước chủ ngữ để làm trạng ngữ chỉ thời gian hoặc nhấn mạnh mốc thời gian.",
+      "longExplanation": "Bên cạnh vị trí sau chủ ngữ, từ chỉ thời gian trong tiếng Trung còn có thể đảo lên vị trí đầu câu, đứng trước cả chủ ngữ ('Thời gian + Chủ ngữ + Động từ'). Cách sắp xếp này thường dùng để nhấn mạnh thời điểm diễn ra sự việc, thiết lập bối cảnh thời gian chung cho toàn câu hoặc tạo sự tương phản về thời gian (ví dụ: 七点我吃饭 - Bảy giờ tôi ăn cơm). Dù đứng trước hay sau chủ ngữ, thời gian luôn tuyệt đối đứng trước động từ.",
+      "formation": "Từ chỉ thời gian + Chủ ngữ + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Bảy giờ tôi ăn cơm."
+        }
+      ]
+    },
+    "zh_TIME前_39": {
+      "title": "Thời điểm + 前 (Trước một mốc thời điểm cụ thể)",
+      "shortExplanation": "Đặt sau một mốc thời điểm cụ thể để chỉ thời gian trước thời điểm đó hoặc thời hạn chót; 'trước...', 'trước khi...'.",
+      "longExplanation": "'前' (qián) là từ chỉ phương vị/thời gian. Khi đặt ngay sau một mốc thời gian cụ thể (như ngày, thứ, tháng, giờ cụ thể), cấu trúc 'Thời điểm + 前' biểu thị hành động cần diễn ra trước hoặc chậm nhất là đến mốc thời gian đó (ví dụ: 星期五前 - trước thứ Sáu, 五点前 - trước 5 giờ). Trong câu hoàn chỉnh, cụm này thường làm trạng ngữ thời gian đứng trước động từ.",
+      "formation": "Mốc thời điểm cụ thể + 前",
+      "examples": [
+        {
+          "translation": "Trước thứ Sáu."
+        }
+      ]
+    },
+    "zh_DURATION前_40": {
+      "title": "Khoảng thời gian + 前 (... trước, cách đây...)",
+      "shortExplanation": "Đặt sau một lượng từ chỉ khoảng thời gian để biểu thị khoảng thời gian đã qua tính từ thời điểm hiện tại; 'cách đây...', '... trước'.",
+      "longExplanation": "Khác với mốc thời điểm cụ thể, khi '前' (qián) kết hợp sau một lượng thời gian (khoảng thời gian / thời lượng), cấu trúc 'Khoảng thời gian + 前' dùng để chỉ một sự việc đã xảy ra cách thời điểm nói bao lâu trong quá khứ, tương đương với '... trước' hoặc 'cách đây...' trong tiếng Việt (ví dụ: 一个星期前 - cách đây một tuần / một tuần trước, 三天前 - ba ngày trước).",
+      "formation": "Khoảng thời gian (Số từ + Lượng từ thời gian) + 前",
+      "examples": [
+        {
+          "translation": "Một tuần trước (cách đây một tuần)."
+        }
+      ]
+    },
+    "zh_N怎么样_41": {
+      "title": "Danh từ / Chủ ngữ + 怎么样？ (Như thế nào, ra sao [hỏi tình trạng, tính chất])",
+      "shortExplanation": "Đại từ nghi vấn '怎么样' đứng sau danh từ/chủ ngữ dùng để hỏi về tình trạng, tính chất, mức độ của người hoặc sự vật; '...thế nào?', '...ra sao?'.",
+      "longExplanation": "'怎么样' (zěnmeyàng) là đại từ nghi vấn phổ biến dùng để hỏi về tình hình, trạng thái, tính chất hoặc sức khỏe của một đối tượng (Chủ ngữ + 怎么样？). Người trả lời thường dùng các tính từ hoặc cụm tính từ (kèm phó từ chỉ mức độ như 很, 不太, 非常) để miêu tả (ví dụ: 你的汉语怎么样？ - Tiếng Trung của bạn thế nào? -> 我的汉语很好 - Tiếng Trung của tôi rất tốt).",
+      "formation": "Danh từ / Đại từ + 怎么样？",
+      "examples": [
+        {
+          "translation": "Tiếng Trung của bạn thế nào?"
+        }
+      ]
+    },
+    "zh_的_42": {
+      "title": "(的) (Lược bỏ 的 trong quan hệ sở hữu thân thuộc, gắn bó)",
+      "shortExplanation": "Trợ từ kết cấu biểu thị sở hữu '的' có thể được lược bỏ một cách tự nhiên khi nói về người thân, bộ phận cơ thể hoặc đơn vị sở thuộc.",
+      "longExplanation": "Trong tiếng Trung, trợ từ kết cấu '的' (de) dùng để nối định ngữ và trung tâm ngữ biểu thị quyền sở hữu (Định ngữ + 的 + Danh từ). Tuy nhiên, khi mối quan hệ giữa định ngữ và danh từ trung tâm là cực kỳ gắn bó, mật thiết—chẳng hạn như bộ phận cơ thể (我身体 - cơ thể/sức khỏe tôi), quan hệ gia đình ruột thịt (我妈妈 - mẹ tôi) hoặc trường lớp, công ty (我们学校 - trường chúng tôi)—thì '的' thường được lược bỏ trong khẩu ngữ để câu nói thêm tự nhiên, trôi chảy.",
+      "formation": "Đại từ / Danh từ định ngữ + (的) + Danh từ (bộ phận cơ thể / người thân / đơn vị)",
+      "examples": [
+        {
+          "translation": "Sức khỏe của tôi không được tốt lắm."
+        }
+      ]
+    },
+    "zh_太A了_43": {
+      "title": "太 + Tính từ + (了) (Quá... rồi, rất... [mức độ cao/cảm thán])",
+      "shortExplanation": "Phó từ mức độ '太' đứng trước tính từ, thường phối hợp với '了' ở cuối câu, biểu thị mức độ quá mức hoặc ngữ khí cảm thán; 'quá...', 'rất... rồi'.",
+      "longExplanation": "Cấu trúc '太 + Tính từ + (了)' (tài... le) có hai sắc thái biểu đạt chính: 1) Biểu thị mức độ vượt quá giới hạn mong muốn hoặc chịu đựng, mang ý chê bai, phàn nàn ('quá...', ví dụ: 太贵了 - đắt quá, 天气太冷了 - thời tiết lạnh quá); 2) Biểu thị mức độ cực kỳ cao mang ngữ khí khen ngợi, cảm thán phấn khởi ('rất...', 'quá chừng', ví dụ: 太好了 - tốt quá rồi!). Trong câu trần thuật khẳng định, chữ '了' thường đi kèm ở cuối câu để hoàn chỉnh ngữ khí.",
+      "formation": "Chủ ngữ + 太 + Tính từ + (了)",
+      "examples": [
+        {
+          "translation": "Thời tiết lạnh quá (rồi)."
+        }
+      ]
+    },
+    "zh_不太A_44": {
+      "title": "不太 + Tính từ (Không... lắm [phủ định mức độ nhẹ nhàng, uyển chuyển])",
+      "shortExplanation": "Phó từ phủ định '不' kết hợp với phó từ mức độ '太' đứng trước tính từ, dùng để giảm nhẹ mức độ; 'không... lắm', 'không quá...'.",
+      "longExplanation": "'不太 + Tính từ' (bù tài) là cấu trúc phủ định mức độ mang tính chất uyển chuyển, chừng mực trong tiếng Trung. Thay vì dùng '不好' (không tốt) tạo cảm giác thẳng thừng và tuyệt đối, việc dùng '不太好' (không tốt lắm) giúp câu nói trở nên nhẹ nhàng, tế nhị và khiêm tốn hơn. Chú ý: khác với câu khẳng định '太...了', trong câu phủ định '不太 + Tính từ' tuyệt đối KHÔNG dùng '了' ở cuối câu.",
+      "formation": "Chủ ngữ + 不太 + Tính từ",
+      "examples": [
+        {
+          "translation": "Sức khỏe của tôi không được tốt lắm."
+        }
+      ]
+    },
+    "zh_会V_45": {
+      "title": "会 + Động từ (Sẽ... [Động từ năng nguyện biểu thị khả năng, phán đoán tương lai])",
+      "shortExplanation": "Động từ năng nguyện đứng trước động từ để biểu thị khả năng một việc sẽ xảy ra trong tương lai theo phán đoán; 'sẽ'.",
+      "longExplanation": "'会' (huì) là động từ năng nguyện đa năng. Ngoài nghĩa biểu thị kỹ năng học được ('biết làm gì'), khi '会' kết hợp với một hành động sắp tới, nó mang nghĩa dự đoán hoặc phán đoán về khả năng xảy ra của một sự việc trong tương lai, tương đương với 'sẽ' trong tiếng Việt (ví dụ: 你会回家吗？ - Bạn sẽ về nhà chứ?, 明天会下雨 - Ngày mai trời sẽ mưa). Thể phủ định là '不会' (bù huì - sẽ không...).",
+      "formation": "Chủ ngữ + 会 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Bạn sẽ về nhà chứ?"
+        }
+      ]
+    },
+    "zh_喂_46": {
+      "title": "喂 (Thán từ: A-lô [chào hỏi khi nghe hoặc gọi điện thoại])",
+      "shortExplanation": "Thán từ dùng để chào hỏi, lên tiếng khi bắt đầu cuộc gọi điện thoại hoặc dùng để gọi gây sự chú ý; 'a-lô', 'này'.",
+      "longExplanation": "'喂' (thường đọc là wéi khi bắt máy gọi điện thoại, hoặc đọc là wèi khi gọi với ai đó) là thán từ thông dụng bậc nhất trong khẩu ngữ tiếng Trung. Trong giao tiếp qua điện thoại, người ta hầu như luôn dùng '喂' (A-lô) ở đầu cuộc gọi để xác nhận đường truyền và chào hỏi đối phương trước khi xưng hô hoặc hỏi han tiếp theo (ví dụ: 喂，李老师在家吗？ - A-lô, thầy Lý có ở nhà không ạ?).",
+      "formation": "喂，+ Lời chào hỏi / Câu nghi vấn",
+      "examples": [
+        {
+          "translation": "A-lô, thầy Lý có ở nhà không ạ?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_和_32": {
+      "title": "和（接続詞：〜と）",
+      "shortExplanation": "名詞や代名詞、名詞句を並列に結ぶ接続詞で、日本語の「〜と」に相当します。",
+      "longExplanation": "「和」（hé）は中国語で最も一般的に用いられる並列接続詞です。名詞・代名詞・名詞句同士を結びつけて並列関係を表します。3つ以上の要素を並べる際は、日本語の読点に似た「顿号（、）」で区切り、最後の要素の前にのみ「和」を置くのが通例です（例：爸爸、妈妈和我）。なお、英語の「and」と異なり、独立した文や複文の節同士を結ぶことはできません。",
+      "formation": "名詞1／代名詞1 ＋ 和 ＋ 名詞2／代名詞2",
+      "examples": [
+        {
+          "translation": "父、母、そして私。"
+        }
+      ]
+    },
+    "zh_能_33": {
+      "title": "能（能願動詞：〜できる・〜してもよい［能力・条件・許可］）",
+      "shortExplanation": "客観的な条件が整っていること、本来の能力、または許可・依頼を表す能願動詞で、「〜できる」「〜してもよい」を意味します。",
+      "longExplanation": "「能」（néng）は動詞の前に置かれる助動詞（能願動詞）です。主な用法として、①状況や客観的な条件が許して「〜できる」、②身体的能力や素質が備わっていて「〜できる」、③疑問文で相手に許可を求めたり依頼したりする「〜してもよいですか」（我能……吗？）があります。否定形は「不能」（〜できない／〜してはならない）となります。",
+      "formation": "主語 ＋ 能 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "ここに座ってもよろしいですか？"
+        }
+      ]
+    },
+    "zh_请V_34": {
+      "title": "请 ＋ 動詞（どうぞ〜してください・〜してください［丁寧な依頼・勧誘］）",
+      "shortExplanation": "動詞の前に置いて、丁寧な依頼・勧誘・促しを表す敬語的表現で、「どうぞ〜してください」に相当します。",
+      "longExplanation": "「请」（qǐng）は動詞の直前に置かれ、相手に対して礼儀正しく指示や勧誘、お願いをする際に用います（例：请进＝どうぞお入りください、请坐＝どうぞお掛けください）。日常会話や接客など幅広い場面で使われ、表現を柔らかく丁寧にする効果があります。",
+      "formation": "（主語 ＋）请 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "どうぞお座りください。"
+        }
+      ]
+    },
+    "zh_点分_35": {
+      "title": "数詞 ＋ 点 ＋（数詞 ＋ 分）（時刻の表し方：〜時〜分）",
+      "shortExplanation": "時刻を告げる表現で、「点」が「時」、「分」が「分」を表します。",
+      "longExplanation": "中国語で具体的な時刻を表す基本形式は「数詞 ＋ 点（diǎn：時） ＋ 数詞 ＋ 分（fēn：分）」です。分の数値が10以上の偶数桁の場合は、日常会話で末尾の「分」を省略することもあります（例：十一点十＝11時10分）。ただし、1分から9分までの端数は「零」を挟んで「八点零五分」（8時5分）のように言い、「分」は省略しません。なお、「2時」は「二点」ではなく「两点」と言います。",
+      "formation": "数詞 ＋ 点（＋ 数詞 ＋ 分）",
+      "examples": [
+        {
+          "translation": "11時10分。"
+        }
+      ]
+    },
+    "zh_上午下午_36": {
+      "title": "上午／下午（午前／午後［時刻の修飾語］）",
+      "shortExplanation": "具体的な時刻の前に置き、午前（上午）か午後（下午）かを明確にする時間詞です。",
+      "longExplanation": "中国語で一日の時間帯を区別する際、「上午」（shàngwǔ：午前／朝）や「下午」（xiàwǔ：午後／昼下がり）などの時間詞を具体的な時刻の前に置きます。中国語の表現順序は常に「大きい単位から小さい単位へ」進むため、「上午／下午 ＋ 時刻（〜点〜分）」という語順になります（例：下午三点十分＝午後3時10分）。",
+      "formation": "上午／下午 ＋ 数詞 ＋ 点（＋ 数詞 ＋ 分）",
+      "examples": [
+        {
+          "translation": "午後3時10分。"
+        }
+      ]
+    },
+    "zh_STIMEV_37": {
+      "title": "主語 ＋ 時間詞 ＋ 動詞（時間状語が主語の後に置かれる語順）",
+      "shortExplanation": "動作が行われる時点を表す時間詞を、主語の後・動詞の前に置いて時間状語（連用修飾語）とする基本文型です。",
+      "longExplanation": "中国語の文法における最重要ルールのひとつとして、「動作の行われる時間は必ず動詞の前に置く」という原則があります（文末に置くことはできません）。主語の直後に時間詞を配置する「主語 ＋ 時間詞 ＋ 動詞」の語順は最も基本的で自然な叙述順序であり、誰が・いつ・何をするかを明快に伝えます（例：妈妈六点做饭＝母は6時に料理を作ります）。",
+      "formation": "主語 ＋ 時間詞 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "母は6時にご飯を作ります。"
+        }
+      ]
+    },
+    "zh_TIMESV_38": {
+      "title": "時間詞 ＋ 主語 ＋ 動詞（時間状語が文頭に置かれる語順）",
+      "shortExplanation": "時間詞を文頭（主語の前）に置き、文全体の時間的背景を提示したり時刻を強調したりする文型です。",
+      "longExplanation": "中国語の時間状語は、主語の後ろだけでなく文の先頭（主語の前）に配置することもできます。この「時間詞 ＋ 主語 ＋ 動詞」という語順をとることで、発話全体の時間的枠組みを前もって提示したり、その時刻を際立たせたりするニュアンスが生まれます（例：七点我吃饭＝7時に私はご飯を食べます）。主語の前後どちらにあっても、動詞より前になければならない原則は共通です。",
+      "formation": "時間詞 ＋ 主語 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "7時に私はご飯を食べます。"
+        }
+      ]
+    },
+    "zh_TIME前_39": {
+      "title": "時点 ＋ 前（〜より前に・〜までに［期限・時点］）",
+      "shortExplanation": "特定の時点を表す語の後ろに「前」を付け、その時点より前、またはその時点を期限とすることを表します。",
+      "longExplanation": "「前」（qián）は特定の日時や曜日、時刻など「具体的な時点」の直後に置かれることで、「その時点よりも前に」「その時点までに」という時間的範囲や締め切りを表します（例：星期五前＝金曜日までに／金曜日より前に、明天前＝明日までに）。文中では動詞の前に置かれて連用修飾語（時間状語）として機能します。",
+      "formation": "具体的な時点 ＋ 前",
+      "examples": [
+        {
+          "translation": "金曜日より前に（金曜日までに）。"
+        }
+      ]
+    },
+    "zh_DURATION前_40": {
+      "title": "期間 ＋ 前（〜前・〜前のこと［過去の経過時間］）",
+      "shortExplanation": "時間の長さを表す語（時量詞）の後ろに「前」を付け、現在から遡って「〜前に」過去の事柄が起きたことを表します。",
+      "longExplanation": "ピンポイントの時点ではなく、「3日間」「1週間」「2ヶ月」といった時間の長さ（時量詞・期間）に「前」（qián）を接続すると、現在を起点として過去に遡った経過時間を表します。日本語の「〜前（〜まえ）」に直結する用法です（例：一个星期前＝1週間前、三天前＝3日前）。",
+      "formation": "期間（数詞 ＋ 時間量詞） ＋ 前",
+      "examples": [
+        {
+          "translation": "1週間前（1週間前に）。"
+        }
+      ]
+    },
+    "zh_N怎么样_41": {
+      "title": "名詞／主語 ＋ 怎么样？（〜はどうですか・どんな様子ですか［状態・性質の質問］）",
+      "shortExplanation": "疑問代名詞「怎么样」を主語の後に置き、人や事物の状態・性質・調子を尋ねる「〜はどうですか」を表します。",
+      "longExplanation": "「怎么样」（zěnmeyàng）は事物の状態や性質、状況を尋ねる代表的な疑問代名詞です。「主語 ＋ 怎么样？」の形で用いられ、相手の健康状態、学習や仕事の進み具合、天候などを「〜の調子はどうですか」「どんな様子ですか」と質問します。答える側は形容詞や程度副詞を用いて状況を説明します（例：你的汉语怎么样？＝あなたの中国語の腕前はどうですか）。",
+      "formation": "名詞／代名詞 ＋ 怎么样？",
+      "examples": [
+        {
+          "translation": "あなたの中国語の調子（腕前）はどうですか？"
+        }
+      ]
+    },
+    "zh_的_42": {
+      "title": "(的)（所属・所有を表す構造助詞「的」の省略）",
+      "shortExplanation": "親しい親族関係、身体部位、所属組織などを表す際、所有を示す構造助詞「的」が自然に省略される現象です。",
+      "longExplanation": "構造助詞「的」（de）は本来「私の本（我的书）」のように所属や所有関係を結ぶ語ですが、定語と名詞の関係が極めて密接な場合（親族、親しい知人、身体の部位、所属する学校や会社など）、日常会話では「的」が省略されるのが通例です（例：我身体不太好＝私の体調はあまりよくない、我妈妈＝私の母）。これにより表現がより親しみやすく自然になります。",
+      "formation": "人称代名詞／名詞 ＋ (的) ＋ 名詞（身体部位・親族・所属先）",
+      "examples": [
+        {
+          "translation": "私の体調はあまりよくありません。"
+        }
+      ]
+    },
+    "zh_太A了_43": {
+      "title": "太 ＋ 形容詞 ＋ (了)（あまりに〜すぎる・とても〜だ［過度・感嘆］）",
+      "shortExplanation": "程度副詞「太」が形容詞を修飾し、文末の語気助詞「了」と呼応して、過度な状態への不満や強い感嘆を表します。",
+      "longExplanation": "「太 ＋ 形容詞 ＋ (了)」（tài... le）は中国語で程度が甚だしいことを表す基本構文です。主な意味合いとして、①基準や許容範囲を超えて不満や不都合を訴える「あまりに〜すぎる」（例：太贵了＝高すぎる、太冷了＝寒すぎる）、②強い喜びや賛嘆を表す「とても〜だ」「本当に〜だ！」（例：太好了＝本当によかった！）の2通りがあります。肯定文では語末に語気助詞「了」を伴うのが通例です。",
+      "formation": "主語 ＋ 太 ＋ 形容詞 ＋ (了)",
+      "examples": [
+        {
+          "translation": "天気が寒すぎます（とても寒いです）。"
+        }
+      ]
+    },
+    "zh_不太A_44": {
+      "title": "不太 ＋ 形容詞（あまり〜でない・さほど〜ではない［部分否定・婉曲表現］）",
+      "shortExplanation": "否定副詞「不」と「太」が形容詞の前に置かれ、程度を和らげて控えめに否定する「あまり〜ではない」を表します。",
+      "longExplanation": "「不太 ＋ 形容詞」（bù tài）は程度を部分的に否定する表現で、断定を避けて柔らかく伝える婉曲表現（クッション言葉）として非常に重要です。「不好」（よくない）と直接的に言う代わりに「不太好」（あまりよくない）と言うことで、角を立てずに控えめな不満や否定を伝えます。なお、肯定の「太〜了」と異なり、否定の「不太〜」の文末には「了」を付けない規則があります。",
+      "formation": "主語 ＋ 不太 ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "私の体調はあまりよくありません。"
+        }
+      ]
+    },
+    "zh_会V_45": {
+      "title": "会 ＋ 動詞（〜するだろう・〜のはずだ［可能性・未来の予測］）",
+      "shortExplanation": "動詞の前に置いて、事態が実現する可能性や将来の予測を表す能願動詞で、「〜するだろう」「〜のはずだ」を意味します。",
+      "longExplanation": "能願動詞「会」（huì）は習得した能力を表す「〜できる」のほかに、将来における事態の実現可能性や主観的な予測を表す重要な用法を持っています。日本語の「〜するだろう」「〜のはずだ」「〜するつもりだ」に相当します（例：你会回家吗？＝あなたは帰宅しますか／帰ってきますか、明天会下雨＝明日は雨が降るだろう）。否定形は「不会」（〜しないだろう）となります。",
+      "formation": "主語 ＋ 会 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "あなたは家に帰ってきますか？"
+        }
+      ]
+    },
+    "zh_喂_46": {
+      "title": "喂（感嘆詞：もしもし［電話の応答・呼びかけ］）",
+      "shortExplanation": "電話を受ける際やかけ始めに用いる代表的な挨拶の感嘆詞で、日本語の「もしもし」に相当します。",
+      "longExplanation": "「喂」は電話の応対や呼びかけに用いられる最も一般的な感嘆詞です。電話に出る時や相手を呼び出す際は通常第2声（wéi）または第4声（wèi）で発音され、日本語の「もしもし」と全く同じ役割を果たします（例：喂，李老师在家吗？＝もしもし、李先生はいらっしゃいますか？）。また、道などで人を呼び止めるときに「ねえ」「おい」という意味で発音されることもあります。",
+      "formation": "喂，＋ 挨拶文／質問文",
+      "examples": [
+        {
+          "translation": "もしもし、李先生はいらっしゃいますか？"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_和_32": {
+      "title": "和 (접속사: ~와/과, ~하고)",
+      "shortExplanation": "명사나 대명사, 명사구를 대등하게 연결하는 접속사로, 한국어의 '~와/과', '~하고'에 해당합니다.",
+      "longExplanation": "'和'(hé)는 명사, 대명사, 명사성 어구를 나란히 연결할 때 사용하는 가장 대표적인 대등 접속사입니다. 여러 대상을 나열할 때는 모점(、)으로 구분하다가 마지막 항목 바로 앞에 '和'를 배치합니다(예: 爸爸、妈妈和我 - 아빠, 엄마 그리고 나). 영어의 'and'나 한국어의 '그리고'와 달리, 두 개의 독립된 절이나 완전한 문장을 연결하는 용도로는 사용할 수 없습니다.",
+      "formation": "명사1 / 대명사1 + 和 + 명사2 / 대명사2",
+      "examples": [
+        {
+          "translation": "아빠, 엄마 그리고 나."
+        }
+      ]
+    },
+    "zh_能_33": {
+      "title": "能 (능원동사: ~할 수 있다, ~해도 되다 [능력·조건·허가])",
+      "shortExplanation": "객관적 조건의 충족, 신체적 능력, 또는 허가와 부탁을 나타내는 조동사로, '~할 수 있다', '~해도 되다'를 뜻합니다.",
+      "longExplanation": "'能'(néng)은 본동사 앞에 위치하는 조동사(능원동사)입니다. 주된 용법으로는 ① 객관적인 환경이나 조건이 갖추어져서 '~할 수 있다', ② 신체적인 능력이나 회복으로 '~할 수 있다', ③ 의문문에서 상대방의 허가를 구하거나 정중하게 부탁하는 '~해도 될까요?'('我能...吗?')가 있습니다. 부정형은 '不能'(~할 수 없다, ~해서는 안 된다)입니다.",
+      "formation": "주어 + 能 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "제가 여기에 앉아도 될까요?"
+        }
+      ]
+    },
+    "zh_请V_34": {
+      "title": "请 + 동사 (부디 ~하세요, ~해 주세요 [정중한 청유·명령])",
+      "shortExplanation": "동사 앞에 붙어 정중한 권유, 청유, 공손한 명령을 나타내며, '부디 ~하십시오', '~해 주세요'에 해당합니다.",
+      "longExplanation": "'请'(qǐng)은 동사 바로 앞에 놓여 상대방에게 어떤 행동을 정중하게 권하거나 요청할 때 쓰입니다(예: 请进 - 들어오세요, 请坐 - 앉으세요, 请喝茶 - 차 드세요). 일상 대화나 비즈니스 등 다양한 상황에서 문장을 부드럽고 예의 바르게 만들어 주는 표현입니다.",
+      "formation": "(주어 +) 请 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "앉으세요 (앉으십시오)."
+        }
+      ]
+    },
+    "zh_点分_35": {
+      "title": "수사 + 点 + (수사 + 分) (시각 표현: ~시 ~분)",
+      "shortExplanation": "구체적인 시각을 나타내는 표현으로, '点'은 '시', '分'은 '분'을 가리킵니다.",
+      "longExplanation": "중국어에서 시각을 나타낼 때는 '수사 + 点(diǎn: 시) + 수사 + 分(fēn: 분)' 어순을 사용합니다. 10분 이상의 두 자리 분 단위일 경우 구어에서는 끝의 '分'을 생략하기도 합니다(예: 十一点十 - 11시 10분). 반면 1분부터 9분까지의 한 자리 분은 가운데에 '零'을 넣어 '八点零五分'(8시 5분)과 같이 읽으며 이때는 '分'을 생략할 수 없습니다. 또한 '2시'는 '二点'이 아닌 '两点'이라고 부릅니다.",
+      "formation": "수사 + 点 (+ 수사 + 分)",
+      "examples": [
+        {
+          "translation": "11시 10분."
+        }
+      ]
+    },
+    "zh_上午下午_36": {
+      "title": "上午 / 下午 (오전 / 오후 [시각 수식어])",
+      "shortExplanation": "구체적인 시각 앞에 놓여 오전(上午)인지 오후(下午)인지를 명확히 구분해 주는 시간 명사입니다.",
+      "longExplanation": "중국어에서 하루 중 시간대를 구분하여 말할 때는 '上午'(shàngwǔ: 오전)나 '下午'(xiàwǔ: 오후)와 같은 시간 어휘를 구체적인 시각 앞에 둡니다. 중국어 시간 표현은 언제나 '큰 단위에서 작은 단위' 순서로 전개되므로, 한국어와 마찬가지로 '오전/오후 + 시각' 어순을 취합니다(예: 下午三点十分 - 오후 3시 10분).",
+      "formation": "上午 / 下午 + 수사 + 点 (+ 수사 + 分)",
+      "examples": [
+        {
+          "translation": "오후 3시 10분."
+        }
+      ]
+    },
+    "zh_STIMEV_37": {
+      "title": "주어 + 시간사 + 동사 (시간 상황어가 주어 뒤에 위치하는 어순)",
+      "shortExplanation": "동작이 일어나는 시점을 나타내는 시간 어휘가 주어 뒤, 동사 앞에 놓여 시간 상황어 역할을 하는 기본 문형입니다.",
+      "longExplanation": "중국어 어순의 가장 핵심적인 규칙 중 하나는 '동작이 일어나는 시간은 반드시 동사 앞에 위치한다'는 점입니다. 영어처럼 문장 맨 끝에 둘 수 없습니다. '주어 + 시간사 + 동사' 어순에서는 시간 어휘가 주어 바로 뒤에서 술어 동사를 수식하는 시간 상황어 역할을 합니다(예: 妈妈六点做饭 - 엄마는 6시에 밥을 하신다).",
+      "formation": "주어 + 시간사 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "엄마는 여섯 시에 밥을 하십니다."
+        }
+      ]
+    },
+    "zh_TIMESV_38": {
+      "title": "시간사 + 주어 + 동사 (시간 상황어가 문장 맨 앞에 위치하는 어순)",
+      "shortExplanation": "시간을 나타내는 말을 문장 맨 앞(주어 앞)에 두어 전체 배경 시점을 제시하거나 시간을 강조하는 문형입니다.",
+      "longExplanation": "중국어에서 시간 상황어는 주어 뒤뿐만 아니라 문장 맨 앞(주어 앞)에도 위치할 수 있습니다. '시간사 + 주어 + 동사' 어순을 사용하면 문장 전체의 시간적 배경을 먼저 명확히 제시하거나, 특정 시점을 강조하는 효과가 있습니다(예: 七点我吃饭 - 7시에 나는 밥을 먹는다). 주어의 앞이든 뒤이든 상관없이 '동사보다는 항상 앞서야 한다'는 기본 원칙은 동일합니다.",
+      "formation": "시간사 + 주어 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "일곱 시에 저는 밥을 먹습니다."
+        }
+      ]
+    },
+    "zh_TIME前_39": {
+      "title": "시점 + 前 (~ 전에, ~ 전까지 [시점·기한])",
+      "shortExplanation": "특정한 시점을 나타내는 어휘 뒤에 '前'이 붙어 그 시점 이전이나 기한을 나타내며, '~ 전에', '~ 전까지'에 해당합니다.",
+      "longExplanation": "'前'(qián)이 요일, 날짜, 시각 등 '구체적인 시점' 바로 뒤에 붙으면 해당 시점보다 앞선 시간대이거나 늦어도 그때까지 마쳐야 하는 기한을 가리킵니다(예: 星期五前 - 금요일 전에 / 금요일 전까지, 五点前 - 5시 전에). 문장 내에서는 주로 동사 앞에 놓여 시간 상황어로 쓰입니다.",
+      "formation": "구체적 시점 + 前",
+      "examples": [
+        {
+          "translation": "금요일 전에 (금요일 전까지)."
+        }
+      ]
+    },
+    "zh_DURATION前_40": {
+      "title": "기간 + 前 (~ 전에, 지금으로부터 ~ 전 [과거 경과 시간])",
+      "shortExplanation": "시간의 양을 나타내는 시량사(기간) 뒤에 '前'이 붙어 현재 시점에서 과거로 거슬러 올라간 '~ 전에'를 나타냅니다.",
+      "longExplanation": "특정 시각이 아닌 '3일', '일주일', '한 달'과 같은 시간의 분량(시량사/기간) 뒤에 '前'(qián)이 결합하면, 현재 기준 시점으로부터 얼마만큼 이전이었는지를 나타냅니다. 한국어의 '지금으로부터 ~ 전', '~ 전에'에 해당합니다(예: 一个星期前 - 일주일 전에, 三天前 - 3일 전에).",
+      "formation": "기간 (수사 + 시간 양사) + 前",
+      "examples": [
+        {
+          "translation": "일주일 전 (일주일 전에)."
+        }
+      ]
+    },
+    "zh_N怎么样_41": {
+      "title": "명사 / 주어 + 怎么样? (~은/는 어떻습니까? [상태·성질 질문])",
+      "shortExplanation": "의문대명사 '怎么样'이 주어 뒤에 위치하여 사람이나 사물의 상태, 성질, 건강, 진행 상황 등을 묻는 '~은/는 어때요?'를 나타냅니다.",
+      "longExplanation": "'怎么样'(zěnmeyàng)은 상태나 상황, 성질을 질문할 때 사용하는 의문대명사입니다. '주어 + 怎么样?' 형태로 질문하여, 상대방의 건강, 실력, 날씨, 일의 진행 경과 등을 '어떻습니까?', '어때요?'라고 묻습니다. 대답할 때는 주로 정도부사(很, 不太 등)와 형용사를 결합하여 답합니다(예: 你的汉语怎么样？ - 당신의 중국어 실력은 어떻습니까?).",
+      "formation": "명사 / 대명사 + 怎么样?",
+      "examples": [
+        {
+          "translation": "당신의 중국어 실력은 어떻습니까?"
+        }
+      ]
+    },
+    "zh_的_42": {
+      "title": "(的) (소유·소속을 나타내는 구조조사 '的'의 생략)",
+      "shortExplanation": "친족, 신체 부위, 소속 기관 등 주체와 매우 밀접한 관계를 나타낼 때 소유 조사 '的'을 자연스럽게 생략하는 용법입니다.",
+      "longExplanation": "중국어에서 한정어와 중심명사 사이의 소유 관계는 원칙적으로 '的'(de)로 연결합니다. 그러나 신체 부위(我身体 - 내 몸/건강), 가까운 친족(我妈妈 - 우리 엄마), 소속 학교나 회사(我们学校 - 우리 학교)처럼 분리하기 힘든 밀접한 관계일 때는 구어에서 '的'을 생략하는 것이 훨씬 자연스럽습니다(예: 我身体不太好 - 제 몸 상태가 별로 좋지 않습니다).",
+      "formation": "인칭대명사 / 명사 + (的) + 명사 (신체 부위 / 친족 / 소속 등)",
+      "examples": [
+        {
+          "translation": "저는 몸(건강)이 별로 좋지 않습니다."
+        }
+      ]
+    },
+    "zh_太A了_43": {
+      "title": "太 + 형용사 + (了) (너무 ~하다 [지나침·감탄])",
+      "shortExplanation": "정도부사 '太'가 형용사 앞에 오고 문장 끝에 '了'가 호응하여, 정도의 지나침에 대한 불만이나 강한 감탄을 나타냅니다.",
+      "longExplanation": "'太 + 형용사 + (了)'(tài... le)는 정도가 극에 달했음을 나타내는 구문입니다. 크게 두 가지 뉘앙스로 쓰입니다: ① 감당할 수 있는 기준을 초과하여 불만을 표현하는 '너무 ~하다'(예: 太贵了 - 너무 비싸다, 天气太冷了 - 날씨가 너무 춥다); ② 칭찬이나 기쁨을 나타내는 감탄 표현 '정말 ~하다', '아주 ~하다!'(예: 太好了 - 너무 잘됐다!). 긍정 서술문에서는 대개 어기조사 '了'와 함께 호응합니다.",
+      "formation": "주어 + 太 + 형용사 + (了)",
+      "examples": [
+        {
+          "translation": "날씨가 너무 춥습니다."
+        }
+      ]
+    },
+    "zh_不太A_44": {
+      "title": "不太 + 형용사 (별로 ~하지 않다, 그리 ~하지 않다 [완곡한 부분 부정])",
+      "shortExplanation": "부정부사 '不'와 '太'가 결합하여 형용사 앞에서 정도를 완화하는 완곡한 부정 표현으로, '별로 ~하지 않다', '그리 ~하지 않다'를 뜻합니다.",
+      "longExplanation": "'不太 + 형용사'(bù tài)는 단정적인 어조를 피하고 부드럽고 완곡하게 표현할 때 사용하는 부분 부정 구문입니다. '不好'(나쁘다/안 좋다)라고 단정적으로 말하는 대신 '不太好'(별로 안 좋다)라고 표현함으로써 어조를 한층 조심스럽고 예의 바르게 만듭니다. 주의할 점으로 긍정 구문인 '太...了'와 달리, 부정문인 '不太 + 형용사' 뒤에는 어기조사 '了'를 붙이지 않습니다.",
+      "formation": "주어 + 不太 + 형용사",
+      "examples": [
+        {
+          "translation": "저는 몸(건강)이 별로 좋지 않습니다."
+        }
+      ]
+    },
+    "zh_会V_45": {
+      "title": "会 + 동사 (~할 것이다, ~할 가능성이 있다 [추측·미래 실현 가능성])",
+      "shortExplanation": "동사 앞에 쓰여 어떤 일이 장차 실현될 가능성이나 추측을 나타내는 조동사로, '~할 것이다', '~하겠습니까?'에 해당합니다.",
+      "longExplanation": "'会'(huì)는 학습을 통한 능력을 나타내는 것 외에도, 미래에 어떤 일이 일어날 가능성이 있거나 일어날 것으로 예측·판단할 때 사용하는 조동사(능원동사)입니다. 한국어의 '~할 것이다', '~하겠다'에 해당합니다(예: 你会回家吗？ - 집에 돌아올 건가요?, 明天会下雨 - 내일 비가 올 것이다). 부정형은 '不会'(~하지 않을 것이다)입니다.",
+      "formation": "주어 + 会 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "당신은 집에 돌아올 건가요?"
+        }
+      ]
+    },
+    "zh_喂_46": {
+      "title": "喂 (감탄사: 여보세요 [전화 통화 응답·인사])",
+      "shortExplanation": "전화를 받거나 걸 때 상대방을 확인하고 인사하는 대표적인 감탄사로, 한국어의 '여보세요'에 해당합니다.",
+      "longExplanation": "'喂'는 전화 통화 시 인사말이나 상대방을 부를 때 사용하는 가장 대표적인 감탄사입니다. 통화가 연결되었을 때 주로 제2성(wéi)이나 제4성(wèi)으로 발음하며, 한국어의 '여보세요'처럼 말을 꺼내거나 상대방의 신원을 확인할 때 첫머리에 둡니다(예: 喂，李老师在家吗？ - 여보세요, 이 선생님 댁에 계신가요?). 길에서 사람을 부를 때 '이봐요', '저기요'의 의미로 쓰이기도 합니다.",
+      "formation": "喂, + 안부 인사 / 질문 문장",
+      "examples": [
+        {
+          "translation": "여보세요, 이 선생님 집에 계십니까?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_和_32": {
+      "title": "和（连词：连接并列名词或代词）",
+      "shortExplanation": "用于连接名词、代词或名词性短语的并列连词，相当于“和”、“跟”、“与”。",
+      "longExplanation": "“和”（hé）是汉语中最基本的并列连词，主要用于连接地位平等的词或短语，通常是名词、代词或名词性短语（如：爸爸、妈妈和我）。列举三项或三项以上的事物时，前几个词之间通常用顿号（、）隔开，在最后一项前加上“和”。需要注意的是，“和”一般不能像英语中的“and”那样直接连接两个分句或独立完整的句子。",
+      "formation": "名词1 / 代词1 + 和 + 名词2 / 代词2",
+      "examples": [
+        {
+          "translation": "爸爸、妈妈和我。"
+        }
+      ]
+    },
+    "zh_能_33": {
+      "title": "能（能愿动词：能够、可以，表示能力、客观条件或许可）",
+      "shortExplanation": "表示具备某种能力、客观条件允许或征求对方许可的能愿动词；相当于“能够”、“可以”。",
+      "longExplanation": "“能”（néng）是常用的能愿动词（助动词），置于主要动词之前。主要用法包括：1）表示主观上具备某种生理能力或达到某种水平；2）表示客观环境和情理上具备做某事的条件（如：有时间、有条件）；3）在疑问句中用于礼貌地征求对方的许可或提出请求（如：“我能坐这儿吗？”）。其否定形式为“不能”，表示不具备条件或不被允许。",
+      "formation": "主语 + 能 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "我可以坐在这儿吗？"
+        }
+      ]
+    },
+    "zh_请V_34": {
+      "title": "请 + 动词（礼貌祈使：请、请您）",
+      "shortExplanation": "置于动词前，表示礼貌的邀请、请求或客气的祈使；相当于“请”、“请您”。",
+      "longExplanation": "“请”（qǐng）置于动词或动词短语之前，用于构成客气、礼貌的祈使句或请求句。在人际交往中，使用“请”能使语气显得委婉、谦逊且尊重对方，常用于迎客、指引或日常社交中（如：请进、请坐、请喝茶、请问）。",
+      "formation": "（主语 +）请 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "请坐。"
+        }
+      ]
+    },
+    "zh_点分_35": {
+      "title": "数词 + 点 +（数词 + 分）（时刻表达：几点几分）",
+      "shortExplanation": "表示具体钟点与分钟的时间表达法；“点”表示小时，“分”表示分钟。",
+      "longExplanation": "汉语中表示具体的钟表时刻采用“数词 + 点（diǎn） + 数词 + 分（fēn）”结构。当分钟数为10以上时，口语中常可省略末尾的“分”字（如：十一点十）。如果分钟数是个位数（1至9分），中间一般要加读“零”，且不可省略“分”（如：八点零五分）。特别需要注意的是，“2点”通常说“两点”，而不说“二点”。",
+      "formation": "数词 + 点（+ 数词 + 分）",
+      "examples": [
+        {
+          "translation": "十一点十分。"
+        }
+      ]
+    },
+    "zh_上午下午_36": {
+      "title": "上午 / 下午（时段词：上午与下午）",
+      "shortExplanation": "置于具体钟点之前，用以区分一天中的时间段；“上午”指早上到中午，“下午”指午后到傍晚。",
+      "longExplanation": "汉语在表达具体时刻时，通常在点钟前面加上表示一天中不同时段的名词，如“上午”（shàngwǔ）或“下午”（xiàwǔ）。由于汉语表达时间的习惯始终遵循“由大到小”的层级顺序，因此必须按照“时段词（上午/下午） + 具体钟点（几点几分）”的语序组合（如：下午三点十分）。",
+      "formation": "上午 / 下午 + 数词 + 点（+ 数词 + 分）",
+      "examples": [
+        {
+          "translation": "下午三点十分。"
+        }
+      ]
+    },
+    "zh_STIMEV_37": {
+      "title": "主语 + 时间词 + 动词（时间状语置于主语后、动词前）",
+      "shortExplanation": "表示动作发生时间的时间词充当状语，置于主语之后、谓语动词之前。",
+      "longExplanation": "在汉语语序规则中，表示时间的词语充当时间状语，必须位于谓语动词之前，绝不能像某些外语那样置于句末。“主语 + 时间词 + 谓语动词”是汉语中最常见的句式之一，用于清晰陈述某人在某个具体时间做某事（如：妈妈六点做饭）。",
+      "formation": "主语 + 时间词 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "妈妈六点做饭。"
+        }
+      ]
+    },
+    "zh_TIMESV_38": {
+      "title": "时间词 + 主语 + 动词（时间状语置于句首）",
+      "shortExplanation": "时间词置于句首、主语之前，充当全句的时间状语，用以设定时间背景或强调时间。",
+      "longExplanation": "汉语中充当时间状语的时间词不仅可以放在主语之后，也可以移到句首、主语之前，构成“时间词 + 主语 + 动词”的句式。这种语序常用于交代全句发生的宏观时间背景，或者带有对比、突出该时间点的修辞作用（如：七点我吃饭）。无论放在主语前还是主语后，时间词均必须置于动词之前。",
+      "formation": "时间词 + 主语 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "七点我吃饭。"
+        }
+      ]
+    },
+    "zh_TIME前_39": {
+      "title": "时间点 + 前（表示在某个具体时间点之前）",
+      "shortExplanation": "置于具体的时间点词语之后，表示在该时刻之前，或指明某项行动的截止时限；相当于“……前”、“……之前”。",
+      "longExplanation": "方位词“前”（qián）接在表示具体时间点的词语（如星期、钟点、日期等）之后，构成时间状语短语，表示“在某一特定时间点之前”或“不迟于该时间”（如：星期五前、五点前）。它通常置于谓语动词前，用以规定动作发生的最后期限或时间范围。",
+      "formation": "具体时间点 + 前",
+      "examples": [
+        {
+          "translation": "星期五之前。"
+        }
+      ]
+    },
+    "zh_DURATION前_40": {
+      "title": "时间段（时量词） + 前（表示从现在起过去的某段时间前）",
+      "shortExplanation": "置于表示时间长度的时量短语之后，表示从基准时间往过去推算的那段时间之前；相当于“……前”、“……之前”。",
+      "longExplanation": "与具体的时间点不同，当“前”（qián）接在表示时间段、时间长度的时量词语（如：一个星期、三天、两年）之后时，表示从当前或基准时间向过去追溯的某一段时间（如：一个星期前、三天前）。在句中常充当状语，说明过去某事发生距今的时长。",
+      "formation": "时间段（数词 + 时间量词） + 前",
+      "examples": [
+        {
+          "translation": "一个星期之前。"
+        }
+      ]
+    },
+    "zh_N怎么样_41": {
+      "title": "名词 / 主语 + 怎么样？（询问状况、性质或水平）",
+      "shortExplanation": "疑问代词“怎么样”置于主语后充当谓语，用于询问人或事物的状态、性质、健康状况或水平；相当于“……怎么样？”、“……如何？”。",
+      "longExplanation": "“怎么样”（zěnmeyàng）是常用的谓词性疑问代词，直接置于名词或主语之后充当谓语，构成“主语 + 怎么样？”句型。常用于询问对方的身体状况、天气情况、学习进度或技能水平（如：你的汉语怎么样？）。回答时通常使用形容词谓语句进行具体说明。",
+      "formation": "名词 / 代词 + 怎么样？",
+      "examples": [
+        {
+          "translation": "你的汉语水平如何？"
+        }
+      ]
+    },
+    "zh_的_42": {
+      "title": "(的)（定语和中心语之间结构助词“的”的省略）",
+      "shortExplanation": "表示领属关系的结构助词“的”，在修饰身体部位、直系亲属或亲密所属关系时通常可以省略。",
+      "longExplanation": "在汉语中，当定语表示人称代词或名词，而中心语是与该人称关系极其密切的事物（如身体器官部位、直系亲属、好友，或所属单位、学校）时，结构助词“的”在口语中往往省略不用，从而使语气更显亲切自然（如：我身体、我妈妈、我家）。",
+      "formation": "代词 / 名词 + (的) + 名词（身体器官 / 亲属 / 紧密所属单位）",
+      "examples": [
+        {
+          "translation": "我的身体不太好。"
+        }
+      ]
+    },
+    "zh_太A了_43": {
+      "title": "太 + 形容词 + (了)（程度副词：太……了，表示过分或极高程度）",
+      "shortExplanation": "程度副词“太”修饰形容词，句末常搭配语气助词“了”，表示程度过分或带有强烈的赞叹感叹语气；相当于“太……了”。",
+      "longExplanation": "“太 + 形容词 + (了)”是汉语中表示高度极性的常用句式。其主要语用功能包括：1）表示程度超过适当的标准或限度，多含不满、抱怨意味（如：太贵了、太冷了）；2）用于感叹句中表示极高的赞赏、欣喜或强调（如：太好了！、太漂亮了！）。在肯定陈述句中，句尾通常带有语气助词“了”以强化语气。",
+      "formation": "主语 + 太 + 形容词 + (了)",
+      "examples": [
+        {
+          "translation": "天气太冷了。"
+        }
+      ]
+    },
+    "zh_不太A_44": {
+      "title": "不太 + 形容词（程度副词否定：不太……，表示委婉否定）",
+      "shortExplanation": "否定副词“不”与“太”连用置于形容词前，表示程度不算高，起到缓和语气、委婉客气的表达效果；相当于“不太……”。",
+      "longExplanation": "“不太 + 形容词”（bù tài）是汉语中表示弱否定、委婉否定的常用结构。在表达负面评价或拒绝时，使用“不太……”（如：不太好、不太清楚、不太想去）比直接说“不好”、“不清楚”更加委婉含蓄、礼貌客气。特别需要注意的是，在“不太 + 形容词”这种否定句式中，句末通常不能加“了”（即不说“不太好了”）。",
+      "formation": "主语 + 不太 + 形容词",
+      "examples": [
+        {
+          "translation": "我的身体不太好。"
+        }
+      ]
+    },
+    "zh_会V_45": {
+      "title": "会 + 动词（能愿动词：表示可能性与未来预测）",
+      "shortExplanation": "能愿动词置于动词前，表示对未来事情发生的推测、预判或客观可能性；相当于“会”、“将要”。",
+      "longExplanation": "“会”（huì）作为能愿动词，除了表示经由学习而掌握某种技能之外，另一大核心用法是表示根据客观常理或主观经验作出的推测与预判，指某事极有可能发生或将要发生（如：你会回家吗？、明天会下雨）。其否定形式为“不会”，表示某事不可能发生或预期不会出现。",
+      "formation": "主语 + 会 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "你会回家吗？"
+        }
+      ]
+    },
+    "zh_喂_46": {
+      "title": "喂（感叹词：打招呼、接打电话用语）",
+      "shortExplanation": "接听或拨打电话时专用的招呼应答感叹词，也用于引起他人注意；相当于“喂”、“你好”。",
+      "longExplanation": "“喂”（wèi，打电话时习惯读作第二声 wéi）是现代汉语中最常用的感叹词之一。它最核心的交际场景是接打电话，置于整段通话的最开端，用以确认通话建立、向对方打招呼（相当于“喂，您好”），随后再展开具体的问候或寻人（如：喂，李老师在家吗？）。此外在非电话场合，也可用于呼唤他人以引起对方注意。",
+      "formation": "喂，+ 问候语 / 询问句",
+      "examples": [
+        {
+          "translation": "喂，李老师在家吗？"
+        }
+      ]
+    }
+  }
+}

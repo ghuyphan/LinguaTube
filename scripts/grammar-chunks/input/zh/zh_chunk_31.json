@@ -1,0 +1,251 @@
+[
+  {
+    "id": "zh_多亏_487",
+    "language": "zh",
+    "pattern": "多亏",
+    "title": "多亏 (thanks to)",
+    "shortExplanation": "thanks to",
+    "longExplanation": "thanks to. Pinyin: duōkuī",
+    "formation": "duōkuī",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "多亏了他这句话，人们如梦初醒。",
+        "romanization": "duōkuī le tā zhè jù huà， rénmen rú mèng chū xǐng。",
+        "translation": "Thanks to his words, people wake up like a dream."
+      }
+    ]
+  },
+  {
+    "id": "zh_所谓_488",
+    "language": "zh",
+    "pattern": "所谓",
+    "title": "所谓 (so-called)",
+    "shortExplanation": "so-called",
+    "longExplanation": "so-called. Pinyin: suǒwèi",
+    "formation": "suǒwèi",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他所谓的“新闻”， 其实我们早就知道了！",
+        "romanization": "tā suǒwèi de“ xīnwén”， qíshí wǒmen zǎojiù zhīdàole！",
+        "translation": "His so-called news, in fact, we already know!"
+      }
+    ]
+  },
+  {
+    "id": "zh_N则VA_489",
+    "language": "zh",
+    "pattern": "N 则 V/A",
+    "title": "N 则 V/A (whereas N V)",
+    "shortExplanation": "whereas N V",
+    "longExplanation": "whereas N V. Pinyin: N zé V/A",
+    "formation": "N zé V/A",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他高中毕业以后出国留学了，而我则一直留在国内。",
+        "romanization": "tā gāozhōng bìyè yǐhòu chūguó liúxué le， ér wǒ zé yīzhí liú zài guónèi。",
+        "translation": "After graduating from high school, he went abroad to study, whereas I stayed at home."
+      }
+    ]
+  },
+  {
+    "id": "zh_则_490",
+    "language": "zh",
+    "pattern": "……则……",
+    "title": "……则…… (if… then…)",
+    "shortExplanation": "if… then…",
+    "longExplanation": "if… then…. Pinyin: …… zé……",
+    "formation": "…… zé……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "北京的冬天，有风则寒，无风则暖。",
+        "romanization": "Běijīng de dōngtiān， yǒufēng zé hán， wú fēng zé nuǎn。",
+        "translation": "Beijing in the winter, if it’s windy then it’s cold, and if not then it’s warm."
+      }
+    ]
+  },
+  {
+    "id": "zh_则_491",
+    "language": "zh",
+    "pattern": "# 则",
+    "title": "# 则 ((measure word for stories))",
+    "shortExplanation": "(measure word for stories)",
+    "longExplanation": "(measure word for stories). Pinyin: # zé",
+    "formation": "# zé",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "今天的报纸上有一则非常重要的新闻。",
+        "romanization": "jīntiān de bàozhǐ shàng yǒu yīzé fēicháng zhòngyào de xīnwén。",
+        "translation": "There is a very important news in today's newspaper."
+      }
+    ]
+  },
+  {
+    "id": "zh_为S所V_492",
+    "language": "zh",
+    "pattern": "为 S 所 V",
+    "title": "为 S 所 V (is V’ed by S)",
+    "shortExplanation": "is V’ed by S",
+    "longExplanation": "is V’ed by S. Pinyin: wéi S suǒ V",
+    "formation": "wéi S suǒ V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "有了科学，大自然就可以更好地为人所用。",
+        "romanization": "yǒule kēxué， dàzìrán jiù kěyǐ gèng hǎo dì wéirén suǒ yòng。",
+        "translation": "With science, nature can be better used by mankind."
+      }
+    ]
+  },
+  {
+    "id": "zh_V起_493",
+    "language": "zh",
+    "pattern": "V 起",
+    "title": "V 起 (V up)",
+    "shortExplanation": "V up",
+    "longExplanation": "V up. Pinyin: V qǐ",
+    "formation": "V qǐ",
+    "level": "HSK 5",
+    "examples": []
+  },
+  {
+    "id": "zh_V得过_495",
+    "language": "zh",
+    "pattern": "V 得过",
+    "title": "V 得过 (can V and overcome)",
+    "shortExplanation": "can V and overcome",
+    "longExplanation": "can V and overcome. Pinyin: V dé guò",
+    "formation": "V dé guò",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "跟别人谈论起军事来，没有人说得过他。",
+        "romanization": "gēn biéren tánlùn qǐ jūnshì lái， méiyǒu rén shuō dé guò tā。",
+        "translation": "Talking to others about military affairs, no one can win arguments (lit. talk) over him."
+      }
+    ]
+  },
+  {
+    "id": "zh_迟早_496",
+    "language": "zh",
+    "pattern": "迟早",
+    "title": "迟早 (sooner or later)",
+    "shortExplanation": "sooner or later",
+    "longExplanation": "sooner or later. Pinyin: chízǎo",
+    "formation": "chízǎo",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "随着网络技术的发展，这些问题迟早都会得到解决。",
+        "romanization": "suízhe wǎngluòjìshù de fāzhǎn， zhèxiē wèntí chízǎo dūhuì dédào jiějué。",
+        "translation": "With the development of network technology, these problems will be solved sooner or later."
+      }
+    ]
+  },
+  {
+    "id": "zh_再三_497",
+    "language": "zh",
+    "pattern": "再三",
+    "title": "再三 (repeatedly)",
+    "shortExplanation": "repeatedly",
+    "longExplanation": "repeatedly. Pinyin: zàisān",
+    "formation": "zàisān",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "赵括的母亲再三阻止赵王任命儿子为大将。",
+        "romanization": "Zhào Kuò de mǔqīn zàisān zǔzhǐ zhào wáng rènmìng érzi wéi dàjiàng。",
+        "translation": "Zhao Kuo’s mother repeatedly prevented Zhao Wang from appointing his son as a general."
+      }
+    ]
+  },
+  {
+    "id": "zh_即_498",
+    "language": "zh",
+    "pattern": "即",
+    "title": "即 (that is)",
+    "shortExplanation": "that is",
+    "longExplanation": "that is. Pinyin: jí",
+    "formation": "jí",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "“旦”是象形字，即太阳从地平线上升起。",
+        "romanization": "“ dàn” shì xiàngxíngzì， jí tàiyang cóng dì píng xiànshàng shēngqǐ。",
+        "translation": "“旦” is a pictograph, that is, the sun rising from the horizon."
+      }
+    ]
+  },
+  {
+    "id": "zh_即_499",
+    "language": "zh",
+    "pattern": "……即……",
+    "title": "……即…… (if… then…)",
+    "shortExplanation": "if… then…",
+    "longExplanation": "if… then…. Pinyin: …… jí……",
+    "formation": "…… jí……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "不懂即问是他最大的优点，也是他成功的主要原因。",
+        "romanization": "bù dǒng jí wèn shì tā zuì dà de yōudiǎn， yě shì tā chénggōng de zhǔyào yuányīn。",
+        "translation": "If he doesn’t understand something, (then) he’ll just ask. This is his greatest strength, but also the main reason for his success."
+      }
+    ]
+  },
+  {
+    "id": "zh_个别V_500",
+    "language": "zh",
+    "pattern": "个别 V",
+    "title": "个别 V (individually V, separately V)",
+    "shortExplanation": "individually V, separately V",
+    "longExplanation": "individually V, separately V. Pinyin: gèbié V",
+    "formation": "gèbié V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他经常采取个别谈话的方式了解情况和解决问题。",
+        "romanization": "tā jīngcháng cǎiqǔ gèbié tánhuà de fāngshì liǎojiě qíngkuàng hé jiějué wèntí。",
+        "translation": "He often uses individual conversations to understand the situation and solve problems."
+      }
+    ]
+  },
+  {
+    "id": "zh_个别N_501",
+    "language": "zh",
+    "pattern": "个别 N",
+    "title": "个别 N (only a few N (as an exception))",
+    "shortExplanation": "only a few N (as an exception)",
+    "longExplanation": "only a few N (as an exception). Pinyin: gèbié N",
+    "formation": "gèbié N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "除了个别人以外，多数人体重的增加会从周六开始。",
+        "romanization": "chúle gè biéren yǐwài， duōshù rén tǐzhòng de zēngjiā huì cóng Zhōuliù kāishǐ。",
+        "translation": "Except for a few individual [persons], the weight gain of most people starts on Saturday."
+      }
+    ]
+  },
+  {
+    "id": "zh_非_502",
+    "language": "zh",
+    "pattern": "非",
+    "title": "非 (to insist on)",
+    "shortExplanation": "to insist on",
+    "longExplanation": "to insist on. Pinyin: fēi",
+    "formation": "fēi",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他非要离婚，我们谁拦也拦不住。",
+        "romanization": "tā fēiyào líhūn， wǒmen shéi lán yě lán bùzhù。",
+        "translation": "He insists on divorcing, and we can’t stop it."
+      }
+    ]
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_一时_722",
+    "language": "zh",
+    "pattern": "一时",
+    "title": "一时 (momentarily)",
+    "shortExplanation": "momentarily",
+    "longExplanation": "momentarily. Pinyin: yīshí",
+    "formation": "yīshí",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "她一时心急，连门都没有锁就冲出家门。",
+        "romanization": "tā yīshí xīnjí， lián mén dōu méiyǒu suǒ jiù chōngchū jiāmén。",
+        "translation": "She was anxious at the time and she rushed out without locking the door."
+      }
+    ]
+  },
+  {
+    "id": "zh_CLAUSES尚且V_723",
+    "language": "zh",
+    "pattern": "(CLAUSE) S 尚且 V",
+    "title": "(CLAUSE) S 尚且 V (even (CLAUSE) S V)",
+    "shortExplanation": "even (CLAUSE) S V",
+    "longExplanation": "even (CLAUSE) S V. Pinyin: (CLAUSE) S shàngqiě V",
+    "formation": "(CLAUSE) S shàngqiě V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "经济增长时，这个企业尚且如此，经济衰退时，企业肯定会出现生存问题。",
+        "romanization": "jīngjìzēngzhǎng shí， zhège qǐyè shàngqiě rúcǐ， jīngjìshuāituì shí， qǐyè kěndìng huì chūxiàn shēngcún wèntí。",
+        "translation": "Even during economic growth, the company is (yet) like this. It will certainly face survival problems in economic recession."
+      }
+    ]
+  },
+  {
+    "id": "zh_当年当时当代_724",
+    "language": "zh",
+    "pattern": "当年、当时、当代",
+    "title": "当年、当时、当代 (at that time)",
+    "shortExplanation": "at that time",
+    "longExplanation": "at that time. Pinyin: dāngnián、 dāngshí、 dāngdài",
+    "formation": "dāngnián、 dāngshí、 dāngdài",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他已不是当年的他了。",
+        "romanization": "tā yǐ bùshì dāngnián de tā le。",
+        "translation": "He is not the same man as he used to be (back in those days)."
+      }
+    ]
+  },
+  {
+    "id": "zh_终究_725",
+    "language": "zh",
+    "pattern": "终究",
+    "title": "终究 (after all)",
+    "shortExplanation": "after all",
+    "longExplanation": "after all. Pinyin: zhōngjiū",
+    "formation": "zhōngjiū",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "猫终究是动物，动物急了咬人也是常的。",
+        "romanization": "māo zhōngjiū shì dòngwù， dòngwù jí le yǎo rén yě shì cháng de。",
+        "translation": "Cats are animals after all, and it is normal for animals to bite people when they get frantic."
+      }
+    ]
+  },
+  {
+    "id": "zh_愈愈_726",
+    "language": "zh",
+    "pattern": "愈……愈……",
+    "title": "愈……愈…… (the more… the more…)",
+    "shortExplanation": "the more… the more…",
+    "longExplanation": "the more… the more…. Pinyin: yù…… yù……",
+    "formation": "yù…… yù……",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "愈是经营年画久了，他对年画就愈是热爱。",
+        "romanization": "yù shì jīngyíng nián huà jiǔ le， tā duì nián huà jiù yù shì rè'ài。",
+        "translation": "The longer he has been selling New Year's paintings, the more he loves them."
+      }
+    ]
+  },
+  {
+    "id": "zh_一经_727",
+    "language": "zh",
+    "pattern": "一经",
+    "title": "一经 (once)",
+    "shortExplanation": "once",
+    "longExplanation": "once. Pinyin: yī jīng",
+    "formation": "yī jīng",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "领导集团会对重大问题做出决定。一经决定，集团成员必须共同遵守。",
+        "romanization": "lǐngdǎo jítuán huì duì zhòngdà wèntí zuòchū juédìng。 yī jīng juédìng， jítuán chéngyuán bìxū gòngtóng zūnshǒu。",
+        "translation": "Leading groups will make decisions on major issues. Once a decision has been made, the members of the group must abide by it together."
+      }
+    ]
+  },
+  {
+    "id": "zh_本着N_728",
+    "language": "zh",
+    "pattern": "本着 N",
+    "title": "本着 N (based on)",
+    "shortExplanation": "based on",
+    "longExplanation": "based on. Pinyin: běnzhe N",
+    "formation": "běnzhe N",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "两国谈判代表本着互谅互让的精神，解决了拖延多年的问题。",
+        "romanization": "liǎngguó tánpàn dàibiǎo běnzhe hù liàng hù ràng de jīngshén， jiějué le tuōyán duō nián de wèntí。",
+        "translation": "In the spirit of mutual understanding and compromise, the negotiators of the two countries solved the problem of many years’ delay."
+      }
+    ]
+  },
+  {
+    "id": "zh_为起见_729",
+    "language": "zh",
+    "pattern": "为……起见",
+    "title": "为……起见 (for the sake of)",
+    "shortExplanation": "for the sake of",
+    "longExplanation": "for the sake of. Pinyin: wéi…… qǐjiàn",
+    "formation": "wéi…… qǐjiàn",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "购买餐具后，为安全起见可先将餐具进行消毒处理。",
+        "romanization": "gòumǎi cānjù hòu， wéi ānquán qǐjiàn kě xiān jiāng cānjù jìnxíng xiāodú chǔlǐ。",
+        "translation": "After you purchasing tableware, they can be disinfected in view of safety."
+      }
+    ]
+  },
+  {
+    "id": "zh_暂且_730",
+    "language": "zh",
+    "pattern": "暂且",
+    "title": "暂且 (for now)",
+    "shortExplanation": "for now",
+    "longExplanation": "for now. Pinyin: zànqiě",
+    "formation": "zànqiě",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "干了几天，小王就不想干了。大家没办法，只得暂且由他去。",
+        "romanization": "gàn le jǐtiān， xiǎo wáng jiù bùxiǎng gàn le。 dàjiā méibànfǎ， zhǐdé zànqiě yóu tā qù。",
+        "translation": "After a few days, Xiao Wang didn't want to work [that job] anymore. Everyone had no choice but to leave him for the time being."
+      }
+    ]
+  },
+  {
+    "id": "zh_屡次_731",
+    "language": "zh",
+    "pattern": "屡次",
+    "title": "屡次 (repeatedly)",
+    "shortExplanation": "repeatedly",
+    "longExplanation": "repeatedly. Pinyin: lǚcì",
+    "formation": "lǚcì",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "屡次创业，却屡次惨遭失败的人总想知道，创业有窍门吗?",
+        "romanization": "lǚcì chuàngyè， què lǚcì cǎnzāo shībài de rén zǒng xiǎng zhīdào， chuàngyè yǒu qiàomén ma?",
+        "translation": "People who repeatedly start businesses but repeatedly fail miserably often wonder, “Are there any secrets to starting a [successful] business?”"
+      }
+    ]
+  },
+  {
+    "id": "zh_依据_732",
+    "language": "zh",
+    "pattern": "依据",
+    "title": "依据 (basis)",
+    "shortExplanation": "basis",
+    "longExplanation": "basis. Pinyin: yījù",
+    "formation": "yījù",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "你们这样做有法律依据吗?",
+        "romanization": "nǐmen zhèyàng zuò yǒu fǎlǜ yījù ma?",
+        "translation": "Do you have any legal basis for doing so?"
+      }
+    ]
+  },
+  {
+    "id": "zh_依据_733",
+    "language": "zh",
+    "pattern": "依据",
+    "title": "依据 (based on)",
+    "shortExplanation": "based on",
+    "longExplanation": "based on. Pinyin: yījù",
+    "formation": "yījù",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "创业必须依据市场需求，这是一条永恒的真理。",
+        "romanization": "chuàngyè bìxū yījù shìchǎng xūqiú， zhè shì yī tiáo yǒnghéng de zhēnlǐ。",
+        "translation": "It is an eternal truth that entrepreneurship must be based on market demand."
+      }
+    ]
+  },
+  {
+    "id": "zh_任意_734",
+    "language": "zh",
+    "pattern": "任意",
+    "title": "任意 (arbitrary)",
+    "shortExplanation": "arbitrary",
+    "longExplanation": "arbitrary. Pinyin: rènyì",
+    "formation": "rènyì",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "合同一旦生效，任何一方都不能任意反悔了。",
+        "romanization": "hétong yīdàn shēngxiào， rènhé yīfāng dōu bùnéng rènyì fǎnhuǐ le。",
+        "translation": "Once the contract comes into force, neither party can change their minds arbitrarily."
+      }
+    ]
+  },
+  {
+    "id": "zh_尚未_735",
+    "language": "zh",
+    "pattern": "尚未",
+    "title": "尚未 (not yet)",
+    "shortExplanation": "not yet",
+    "longExplanation": "not yet. Pinyin: shàngwèi",
+    "formation": "shàngwèi",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "所谓潜在的市场，就是尚未被人们认识的市场。",
+        "romanization": "suǒwèi qiánzài de shìchǎng， jiùshì shàngwèi bèi rénmen rènshi de shìchǎng。",
+        "translation": "The so-called potential market is the market not yet recognized by people."
+      }
+    ]
+  },
+  {
+    "id": "zh_把放在眼里_736",
+    "language": "zh",
+    "pattern": "(把)……放在眼里",
+    "title": "(把)……放在眼里 (take … seriously)",
+    "shortExplanation": "take … seriously",
+    "longExplanation": "take … seriously. Pinyin: ( bǎ)…… fàngzàiyǎnlǐ",
+    "formation": "( bǎ)…… fàngzàiyǎnlǐ",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "这点困难她根本不放在眼里。",
+        "romanization": "zhè diǎn kùnnan tā gēnběn bù fàngzàiyǎnlǐ。",
+        "translation": "[As for] this (little bit of) difficulty, she didn't take it seriously  at all."
+      }
+    ]
+  }
+]

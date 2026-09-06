@@ -41,6 +41,15 @@ export class PlaylistService {
     /** Community published playlists */
     readonly communityPlaylists = signal<Playlist[]>([]);
 
+    /** Recommended playlists for active learning language (server-queried) */
+    readonly recommendedPlaylists = signal<Playlist[]>([]);
+
+    /** Specific loading state for recommended playlists */
+    readonly isRecommendedLoading = signal<boolean>(false);
+
+    /** In-memory cache for recommended playlists per language */
+    private readonly recommendedCache = new Map<string, Playlist[]>();
+
     /** Currently active playlist for playback */
     readonly currentPlaylist = signal<PlaylistWithVideos | null>(null);
 
@@ -764,6 +773,64 @@ export class PlaylistService {
             this.isCommunityLoading.set(false);
             this.isLoading.set(false);
             this.hasLoadedCommunity.set(true);
+        }
+    }
+
+    /**
+     * Load recommended playlists for a target learning language directly from server.
+     * Enforces server-side quality gates:
+     * - visibility = "published"
+     * - language = target language
+     * - video_count >= 2 (multi-video playlist)
+     * - Sorted by -is_featured, -save_count, -updated
+     * Falls back to video_count >= 1 if no playlists meet the >= 2 threshold.
+     */
+    async loadRecommendedPlaylists(language: string, limit = 3): Promise<Playlist[]> {
+        if (!language) return [];
+
+        if (this.recommendedCache.has(language)) {
+            const cached = this.recommendedCache.get(language)!;
+            this.recommendedPlaylists.set(cached);
+            return cached;
+        }
+
+        this.isRecommendedLoading.set(true);
+        try {
+            const client = await this.pb.getClient();
+
+            // 1. Primary server-side query: published, matching language, at least 2 videos
+            const primaryFilter = `visibility="published" && language="${language}" && video_count >= 2`;
+            const fetchPromise = client.collection('playlists').getList(1, limit, {
+                filter: primaryFilter,
+                sort: '-is_featured,-save_count,-updated',
+                expand: 'user'
+            });
+
+            const timeoutPromise = new Promise<never>((_, reject) =>
+                setTimeout(() => reject(new Error('Recommended playlists request timeout')), 5000)
+            );
+
+            let result = await Promise.race([fetchPromise, timeoutPromise]);
+
+            // 2. Fallback: If no playlists have >= 2 videos for this language, allow video_count >= 1
+            if (result.items.length === 0) {
+                const fallbackPromise = client.collection('playlists').getList(1, limit, {
+                    filter: `visibility="published" && language="${language}"`,
+                    sort: '-is_featured,-save_count,-updated',
+                    expand: 'user'
+                });
+                result = await Promise.race([fallbackPromise, timeoutPromise]);
+            }
+
+            const playlists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
+            this.recommendedCache.set(language, playlists);
+            this.recommendedPlaylists.set(playlists);
+            return playlists;
+        } catch (error) {
+            console.error('[Playlist] Failed to load recommended playlists from server:', error);
+            return [];
+        } finally {
+            this.isRecommendedLoading.set(false);
         }
     }
 

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_かける_43": {
+      "title": "～かける (〜kakeru)",
+      "shortExplanation": "Diễn tả một hành động mới chỉ bắt đầu và đang diễn ra dở dang, chưa hoàn tất; 'đang dở...', 'chưa xong'.",
+      "longExplanation": "Mẫu ngữ pháp '～かける' được gắn vào sau thân động từ (thể ます bỏ ます) để diễn tả một hành động đã bắt đầu nhưng bị dừng lại giữa chừng hoặc chưa hoàn thành trọn vẹn ('đang làm dở dang'). Khi đi với danh từ, nó thường mang dạng '～かけの + Danh từ' (ví dụ: 食べかけ - ăn dở, 読みかけ - đọc dở). Ngoài ra, mẫu câu này đôi khi còn mang nghĩa 'suýt nữa thì...' đối với các động từ chỉ sự biến đổi trạng thái.",
+      "formation": "Động từ thể ます (bỏ ます) + かける / かけの + Danh từ",
+      "examples": [
+        {
+          "translation": "Cô ấy để lại quả táo đang ăn dở rồi đi ra ngoài."
+        },
+        {
+          "translation": "Lũ trẻ để lại bài tập đang làm dở trên bàn."
+        },
+        {
+          "translation": "Cứ đến tối là tôi lại tìm cuốn sách đang đọc dở."
+        },
+        {
+          "translation": "Trong văn phòng có rất nhiều tài liệu đang làm dở."
+        }
+      ]
+    },
+    "ja_がち_44": {
+      "title": "～がち (〜gachi)",
+      "shortExplanation": "Diễn tả xu hướng thường hay xảy ra một sự việc, trạng thái không mong muốn; 'thường hay...', 'dễ bị...', 'có khuynh hướng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～がち' được gắn sau thân động từ (thể ます bỏ ます) hoặc danh từ để biểu thị một thói quen hoặc xu hướng thường xuyên lặp đi lặp lại. Đa phần được dùng cho những sự việc, trạng thái tiêu cực, bất tiện hoặc không như ý muốn (ví dụ: hay bị ốm, hay quên đồ, hay đi muộn). Khi làm bổ ngữ trước danh từ sẽ có dạng '～がちな + Danh từ', và khi đứng cuối câu thường là '～がちだ / がちです'.",
+      "formation": "Động từ thể ます (bỏ ます) + がち | Danh từ + がち (+ だ / な / に)",
+      "examples": [
+        {
+          "translation": "Anh ấy thường hay bị cảm cúm."
+        },
+        {
+          "translation": "Khu vực này thường hay có mưa."
+        },
+        {
+          "translation": "Cô ấy rất hay bỏ quên đồ đạc."
+        },
+        {
+          "translation": "Vì tôi hay đi muộn nên phải thức dậy sớm hơn."
+        }
+      ]
+    },
+    "ja_かないかのうちに_45": {
+      "title": "～か～ないかのうちに (〜ka〜naika no uchi ni)",
+      "shortExplanation": "Diễn tả một sự việc khác xảy ra gần như ngay tức khắc sau khi một hành động vừa mới chớm bắt đầu; 'vừa mới... thì đã...', 'chưa kịp... thì đã...'.",
+      "longExplanation": "Mẫu câu '～か～ないかのうちに' lặp lại cùng một động từ ở hai thể khẳng định (thể từ điển) và phủ định (thể ない) để nhấn mạnh sự kế tiếp cực kỳ nhanh chóng: hành động phía trước còn chưa biết là đã xong hẳn hay chưa thì sự việc phía sau đã lập tức xảy ra. Thường dùng để miêu tả các sự việc diễn ra bất ngờ, ngoài dự tính của người nói, và vế sau thường không dùng câu mệnh lệnh hay ý chí.",
+      "formation": "Động từ thể từ điển + か + Động từ thể ない + かのうちに",
+      "examples": [
+        {
+          "translation": "Vừa mới tới nhà ga thì trời đã bắt đầu đổ mưa."
+        },
+        {
+          "translation": "Vừa mới mua điện thoại thì mẫu mới đã được mở bán."
+        },
+        {
+          "translation": "Anh ấy vừa mới bước ra khỏi nhà thì chuông điện thoại đã reo."
+        },
+        {
+          "translation": "Bữa tiệc vừa mới bắt đầu thì cô ấy đã òa khóc."
+        }
+      ]
+    },
+    "ja_かねない_46": {
+      "title": "～かねない (〜kane nai)",
+      "shortExplanation": "Diễn tả khả năng hoặc nguy cơ dẫn đến một kết quả xấu, tiêu cực; 'có thể sẽ...', 'có nguy cơ...', 'rất dễ dẫn đến...'.",
+      "longExplanation": "Mẫu ngữ pháp '～かねない' được gắn vào thân động từ (thể ます bỏ ます) để diễn tả mối lo ngại hoặc phán đoán rằng một nguyên nhân nào đó hoàn toàn có thể dẫn tới một hậu quả tai hại, tiêu cực hoặc không mong muốn ('hoàn toàn có thể làm chuyện đó'). Cấu trúc này nhấn mạnh khả năng xấu xảy ra dựa trên tình hình hiện tại.",
+      "formation": "Động từ thể ます (bỏ ます) + かねない",
+      "examples": [
+        {
+          "translation": "Anh ta quá vô trách nhiệm nên hoàn toàn có thể sẽ phá vỡ lời hứa."
+        },
+        {
+          "translation": "Nếu không chú ý thì rất có thể sẽ gây ra tai nạn."
+        },
+        {
+          "translation": "Ứng dụng này có nhiều lỗi nên có nguy cơ sẽ bị sập."
+        },
+        {
+          "translation": "Cô ấy đang rất căng thẳng nên có thể sẽ gặp thất bại."
+        }
+      ]
+    },
+    "ja_かねる_47": {
+      "title": "～かねる (〜kaneru)",
+      "shortExplanation": "Dùng để từ chối một cách khéo léo, lịch sự hoặc bày tỏ rằng bản thân khó lòng có thể làm được điều gì; 'khó lòng...', 'không thể... được'.",
+      "longExplanation": "Mẫu ngữ pháp '～かねる' gắn sau thân động từ (thể ます bỏ ます) để diễn tả việc người nói không thể thực hiện một hành động nào đó do rào cản về tâm lý, lập trường, hoặc hoàn cảnh khách quan. Mẫu câu này thường xuất hiện dưới dạng lịch sự '～かねます' trong văn phong thương mại và giao tiếp trang trọng, nhằm khéo léo từ chối một yêu cầu mà không gây cảm giác thẳng thừng hay thất lễ.",
+      "formation": "Động từ thể ます (bỏ ます) + かねる / かねます",
+      "examples": [
+        {
+          "translation": "Vì vấn đề đó rất khó nên tôi khó lòng có thể giải quyết được."
+        },
+        {
+          "translation": "Tôi khó lòng phán đoán được liệu điều anh ấy nói có phải là sự thật hay không."
+        },
+        {
+          "translation": "Tôi khó có thể biết ngay lúc này liệu cô ấy có đến hay không."
+        },
+        {
+          "translation": "Về nội dung chi tiết thì tôi xin phép không thể giải thích được."
+        }
+      ]
+    },
+    "ja_かのようだ_48": {
+      "title": "～かのようだ (〜ka no you da)",
+      "shortExplanation": "Diễn tả sự ví von, so sánh về một trạng thái hoặc hành vi giống hệt như thể một sự việc có thật; 'cứ như thể là...', 'hệt như là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～かのようだ' được dùng để so sánh một sự việc, hành vi hay trạng thái nào đó trên thực tế không phải như vậy (hoặc chưa chắc đã phải như vậy) nhưng biểu hiện bên ngoài lại tạo cảm giác hệt như là thật. Khi làm định ngữ bổ nghĩa cho danh từ, nó có dạng '～かのような + Danh từ'; khi bổ nghĩa cho động từ, tính từ thì có dạng '～かのように'.",
+      "formation": "Động từ thể thông thường + かのようだ | Tính từ đuôi い + かのようだ | Tính từ đuôi な + であるかのようだ | Danh từ + であるかのようだ",
+      "examples": [
+        {
+          "translation": "Anh ấy có vẻ sợ chó cứ như thể nó đáng sợ lắm."
+        },
+        {
+          "translation": "Căn phòng này lạnh cứ như thể đang ở giữa mùa đông vậy."
+        },
+        {
+          "translation": "Cô ấy hành xử cứ như thể bản thân là một người nổi tiếng."
+        },
+        {
+          "translation": "Anh ta cư xử hệt như thể mình là một đứa trẻ con."
+        }
+      ]
+    },
+    "ja_かまいか_49": {
+      "title": "～か～まいか (〜ka 〜maika)",
+      "shortExplanation": "Diễn tả sự đắn đo, do dự, phân vân giữa việc làm hay không làm một việc gì đó; 'nên... hay không nên...?', 'làm hay không làm...'.",
+      "longExplanation": "Mẫu ngữ pháp '～か～まいか' kết hợp thể ý chí (khẳng định) với thể 'まい' (phủ định ý chí hoặc phỏng đoán phủ định) của động từ, nhằm diễn tả sự phân vân, lưỡng lự trong nội tâm của chủ ngữ trước việc có nên thực hiện một hành động nào đó hay không. Trong văn phong trang trọng, mẫu câu này còn có thể đi cùng danh từ hoặc tính từ kết hợp với 'であるか…であるまいか'.",
+      "formation": "Động từ thể ý chí + か + Động từ + まいか | Tính từ / Danh từ + であるか + であるまいか",
+      "examples": [
+        {
+          "translation": "Tôi vẫn chưa quyết định được là có nên nhận dự án này hay không."
+        },
+        {
+          "translation": "Liệu anh ấy có thành công hay không, hiện tại vẫn chưa thể dự đoán được."
+        },
+        {
+          "translation": "Ý kiến đang bị chia rẽ về việc vấn đề này là đơn giản hay là không hề đơn giản."
+        },
+        {
+          "translation": "Anh ấy nên tự mình lựa chọn xem bản thân là một người lãnh đạo hay là một người đi theo."
+        }
+      ]
+    },
+    "ja_からこそ_50": {
+      "title": "～からこそ (〜kara koso)",
+      "shortExplanation": "Nhấn mạnh nguyên nhân, lý do cốt lõi dẫn đến kết quả ở vế sau; 'chính vì...', 'chính do...'.",
+      "longExplanation": "Mẫu ngữ pháp '～からこそ' kết hợp trợ từ chỉ nguyên nhân 'から' với trợ từ nhấn mạnh 'こそ', dùng để khẳng định mạnh mẽ rằng chính lý do, nguyên nhân này (chứ không phải bất kỳ lý do nào khác) là nguồn cơn tất yếu dẫn tới kết quả đặc biệt ở mệnh đề sau. Thường mang sắc thái tích cực, đánh giá cao giá trị của nguyên nhân đó.",
+      "formation": "Động từ thể thông thường + からこそ | Tính từ đuôi い + からこそ | Tính từ đuôi な + だからこそ | Danh từ + だからこそ",
+      "examples": [
+        {
+          "translation": "Chính vì từng thất bại nên tôi mới thấu hiểu được ý nghĩa của sự thành công."
+        },
+        {
+          "translation": "Chính vì đã trải qua chuỗi ngày gian khổ nên mới có được tôi của ngày hôm nay."
+        },
+        {
+          "translation": "Chính vì anh ấy tốt bụng nên mới được mọi người yêu mến."
+        },
+        {
+          "translation": "Chính vì có kinh nghiệm từ trước nên tôi mới hiểu rất rõ vấn đề đó."
+        }
+      ]
+    },
+    "ja_からして_51": {
+      "title": "〜からして (〜kara shite)",
+      "shortExplanation": "Đưa ra một ví dụ hoặc đặc điểm tiêu biểu làm căn cứ để suy đoán, đánh giá toàn thể; 'ngay từ...', 'ngay cả... đã...'.",
+      "longExplanation": "Mẫu ngữ pháp '〜からして' được gắn sau danh từ nhằm chọn ra một chi tiết cụ thể, trực quan hoặc tiêu biểu (như vẻ bề ngoài, nét mặt, cái tên...) làm khởi điểm và căn cứ phán đoán. Hàm ý rằng ngay từ điểm cơ bản hoặc nhỏ nhất đó đã như vậy rồi thì những phương diện khác hoặc toàn thể chắc chắn cũng sẽ tương tự. Mẫu câu này phần lớn được dùng với các phán đoán mang sắc thái tiêu cực hoặc hoài nghi.",
+      "formation": "Danh từ + からして",
+      "examples": [
+        {
+          "translation": "Ngay từ nét mặt của anh ấy thì có lẽ đã có chuyện gì tồi tệ xảy ra rồi."
+        },
+        {
+          "translation": "Ngay từ vẻ ngoài của món ăn này trông đã thấy không ngon rồi."
+        },
+        {
+          "translation": "Xét từ thành tích thi cử của cô ấy thì việc đỗ đạt có lẽ là rất khó khăn."
+        },
+        {
+          "translation": "Ngay từ tựa đề của bộ phim tôi đã thấy có vẻ không hay rồi."
+        }
+      ]
+    },
+    "ja_からすると_52": {
+      "title": "～からすると (〜kara suru to)",
+      "shortExplanation": "Đưa ra phán đoán, nhận định hoặc đánh giá dựa trên một căn cứ, tiêu chuẩn hoặc góc độ nhất định; 'xét từ...', 'căn cứ vào...', 'nhìn từ góc độ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～からすると' (hoặc '～からすれば') đi sau danh từ để nêu lên một tiêu chuẩn, góc nhìn, căn cứ hoặc bằng chứng (như kinh nghiệm, giá cả, lời đồn...), từ đó người nói đưa ra kết luận, phán đoán hoặc đánh giá về một sự việc. Ngoài ra, nó cũng được dùng để nêu suy nghĩ đứng từ lập trường của một đối tượng nào đó.",
+      "formation": "Danh từ + からすると",
+      "examples": [
+        {
+          "translation": "Xét từ kinh nghiệm mà nói thì công việc này có lẽ là khó."
+        },
+        {
+          "translation": "Căn cứ vào danh tiếng thì nhà hàng đó rất ngon."
+        },
+        {
+          "translation": "Xét về mức giá thì sản phẩm này được xem là hàng chất lượng cao."
+        },
+        {
+          "translation": "Khu vực này, nếu xét về mặt giao thông đi lại thì rất tiện lợi."
+        }
+      ]
+    },
+    "ja_からといって_53": {
+      "title": "～からといって (〜kara to itte)",
+      "shortExplanation": "Diễn tả rằng dẫu có một lý do nào đó thì cũng không hẳn hoặc không thể lấy đó làm cớ để khẳng định kết quả; 'không phải cứ... là...', 'dẫu nói là... nhưng chưa chắc...'.",
+      "longExplanation": "Mẫu ngữ pháp '～からといって' được dùng để bác bỏ mối quan hệ nhân quả tất nhiên giữa hai mệnh đề: thừa nhận vế trước là một lý do có thực, nhưng vế sau không nhất thiết hoặc không thể đương nhiên xảy ra theo cách đó. Mệnh đề phía sau thường kết hợp với các cấu trúc phủ định một phần như '～わけではない' (không hẳn là), '～とは限らない' (chưa chắc đã), '～とは言えない' (không thể nói là).",
+      "formation": "Động từ thể thông thường + からといって | Tính từ đuôi い + からといって | Tính từ đuôi な + だからといって | Danh từ + だからといって",
+      "examples": [
+        {
+          "translation": "Không phải cứ trời mưa là trận đấu sẽ bị hủy bỏ đâu."
+        },
+        {
+          "translation": "Không phải cứ anh ấy nổi tiếng là ý kiến của anh ấy lúc nào cũng đúng."
+        },
+        {
+          "translation": "Không phải cứ món súp này cay là tất cả mọi người đều cảm thấy cay."
+        },
+        {
+          "translation": "Không phải cứ cô ấy đang khóc là cô ấy nhất định đang đau buồn đâu."
+        }
+      ]
+    },
+    "ja_からにかけて_54": {
+      "title": "～から～にかけて (〜kara 〜ni kakete)",
+      "shortExplanation": "Biểu thị khoảng phạm vi đại khái trong thời gian hoặc không gian; 'từ khoảng... đến khoảng...', 'từ... đến...'.",
+      "longExplanation": "Mẫu ngữ pháp '～から～にかけて' dùng để chỉ một khoảng phạm vi kéo dài trong thời gian hoặc trải rộng trong không gian từ điểm A đến điểm B. Khác với '～から～まで' vốn chỉ rõ mốc bắt đầu và kết thúc một cách dứt khoát, rạch ròi, '～から～にかけて' mang sắc thái ranh giới đại khái, mơ hồ và diễn biến liên tục hoặc rải rác.",
+      "formation": "Danh từ 1 + から + Danh từ 2 + にかけて",
+      "examples": [
+        {
+          "translation": "Tôi làm việc từ khoảng 9 giờ sáng đến 5 giờ chiều."
+        },
+        {
+          "translation": "Tàu Shinkansen chạy suốt từ khu vực Tokyo đến Osaka."
+        },
+        {
+          "translation": "Từ khoảng mùa xuân đến mùa hè, hoa nở rất nhiều."
+        },
+        {
+          "translation": "Trong độ tuổi từ khoảng 20 đến 30 tuổi, việc nhiều người tốt nghiệp đại học và đi làm là điều phổ biến."
+        }
+      ]
+    },
+    "ja_からには_55": {
+      "title": "～からには (〜kara niwa)",
+      "shortExplanation": "Diễn tả quyết tâm, bổn phận hoặc nghĩa vụ đương nhiên phải làm khi một sự việc đã xảy ra; 'một khi đã... thì...', 'đã... thì phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～からには' được dùng khi sự việc ở vế trước đã được quyết định hoặc trở thành sự thật hiển nhiên, từ đó dẫn đến trách nhiệm, nghĩa vụ hoặc quyết tâm tất yếu ở vế sau ('một khi đã... thì đương nhiên phải...'). Mệnh đề phía sau thường kết hợp với các cách nói thể hiện nghĩa vụ, quyết tâm hoặc đề xuất như '～なければならない' (phải), '～べきだ' (nên), '～つもりだ' (dự định), '～たい' (muốn).",
+      "formation": "Động từ thể thông thường + からには | Tính từ đuôi い + からには | Tính từ đuôi な + である / だ + からには | Danh từ + である / だ + からには",
+      "examples": [
+        {
+          "translation": "Một khi đã thi đỗ thì phải làm việc hết sức mình."
+        },
+        {
+          "translation": "Đã hứa rồi thì nhất định phải giữ lời."
+        },
+        {
+          "translation": "Một khi bộ phim này đã hay như vậy thì tôi cũng muốn cho bạn bè cùng xem."
+        },
+        {
+          "translation": "Một khi cô ấy đã nhờ giúp đỡ thì tôi phải giúp đỡ cô ấy."
+        }
+      ]
+    },
+    "ja_から見ると_56": {
+      "title": "～から見ると (〜kara miru to)",
+      "shortExplanation": "Đưa ra đánh giá, nhận xét nhìn từ một lập trường, quan điểm hoặc khía cạnh cụ thể; 'nhìn từ góc độ...', 'xét về mặt...', 'dưới góc nhìn của...'.",
+      "longExplanation": "Mẫu ngữ pháp '～から見ると' (hoặc '～から見れば', '～から見て') được gắn sau danh từ để xác lập một lập trường, góc nhìn của một đối tượng hoặc một phương diện xem xét cụ thể (như chi phí, thực lực, sức khỏe, ý kiến...). Dựa trên góc nhìn đó, người nói đưa ra nhận xét, đánh giá hoặc phán đoán của mình về bản chất của sự việc.",
+      "formation": "Danh từ + から見ると",
+      "examples": [
+        {
+          "translation": "Xét về mặt chi phí thì gói kế hoạch này rất có lợi."
+        },
+        {
+          "translation": "Nhìn từ quan điểm của cô ấy thì quyết định của giám đốc là có thể hiểu được."
+        },
+        {
+          "translation": "Xét về mặt thực lực thì anh ấy là người xuất sắc nhất trong đội."
+        },
+        {
+          "translation": "Dưới góc độ sức khỏe thì loại thực phẩm này không tốt."
+        }
+      ]
+    },
+    "ja_から言うと_57": {
+      "title": "～から言うと (〜kara iuto)",
+      "shortExplanation": "Đưa ra đánh giá, nhận xét xét riêng về một phương diện hoặc tiêu chí cụ thể; 'xét về mặt...', 'nói về...', 'nếu xét từ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～から言うと' (hoặc '～から言えば', '～から言って') được gắn sau danh từ chỉ một khía cạnh, đặc tính hoặc tiêu chí đánh giá (như giá cả, hương vị, sự tiện lợi, sức khỏe...) để đưa ra nhận định tập trung vào riêng phương diện đó. Dù các khía cạnh khác có thể chưa hẳn tốt, nhưng xét riêng về tiêu chí được nhắc đến thì đưa ra kết luận rõ ràng.",
+      "formation": "Danh từ + から言うと / から言って / から言えば",
+      "examples": [
+        {
+          "translation": "Xét về mặt giá cả thì sản phẩm này là có lợi nhất."
+        },
+        {
+          "translation": "Xét riêng về hương vị thì tôi thấy nhà hàng này rất ngon."
+        },
+        {
+          "translation": "Nói về độ tiện lợi thì căn hộ này nằm ở vị trí tối ưu nhất."
+        },
+        {
+          "translation": "Xét từ góc độ sức khỏe thì việc tập thể dục mỗi ngày là vô cùng quan trọng."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_かける_43": {
+      "title": "～かける (〜kakeru)",
+      "shortExplanation": "表示动作做到一半便停顿下来，处于未完成的中间状态；“刚……了一半”、“还没……完”。",
+      "longExplanation": "句型“～かける”接在动词连用形（ます形去掉ます）之后，表示某一动作刚开始或进行到中途尚未完成，动作暂时中断并处于未完成的状态。常以“～かけの＋名词”的形式作定语修饰名词，例如“食べかけ”（吃了一半的）、“読みかけ”（读了一半的）。此外，当接在非意志性动词后时，还可表示“刚要……就……”或“差点儿……”之意。",
+      "formation": "动词连用形（ます形去掉ます） + かける / かけの + 名词",
+      "examples": [
+        {
+          "translation": "她把吃了一半的苹果放下就出门了。"
+        },
+        {
+          "translation": "孩子们把做了一半的作业留在了书桌上。"
+        },
+        {
+          "translation": "一到晚上，我就会去找那本读了一半的书。"
+        },
+        {
+          "translation": "办公室里有许多做到一半的文件。"
+        }
+      ]
+    },
+    "ja_がち_44": {
+      "title": "～がち (〜gachi)",
+      "shortExplanation": "表示经常容易发生某种不好的动作、状态或倾向；“往往……”、“动辄……”、“容易……”。",
+      "longExplanation": "句型“～がち”接在动词连用形（ます形去掉ます）或某些名词之后，表示某事或某种状态频繁发生，具有这种倾向或习惯。多用于表示消极、负面或令人不快的情况（如容易生病、容易迟到、容易遗忘等）。修饰名词时用“～がちな＋名词”，句尾可用“～がちだ / がちです”。",
+      "formation": "动词连用形（ます形去掉ます） + がち | 名词 + がち (+ だ / な / に)",
+      "examples": [
+        {
+          "translation": "他往往很容易感冒。"
+        },
+        {
+          "translation": "这个地区动辄就容易下雨。"
+        },
+        {
+          "translation": "她总是容易忘带东西。"
+        },
+        {
+          "translation": "因为我经常容易迟到，所以必须起得更早一些。"
+        }
+      ]
+    },
+    "ja_かないかのうちに_45": {
+      "title": "～か～ないかのうちに (〜ka〜naika no uchi ni)",
+      "shortExplanation": "表示前一个动作刚开始或几乎尚未结束的刹那，紧接着发生了后一个动作；“刚一……就……”、“还没……就……”。",
+      "longExplanation": "句型“～か～ないかのうちに”通过将同一个动词的原形（肯定）与“ない形”（否定）并列，来极力强调两件事相隔的时间极其短暂：前一个动作甚至还没分清到底做完与否，后一个动作或变化就接踵而至。后项多为表示意外发生或既成事实的陈述，不能用于祈使、命令或意志表达。",
+      "formation": "动词辞书形 + か + 动词ない形 + かのうちに",
+      "examples": [
+        {
+          "translation": "刚一到车站，就下起雨来了。"
+        },
+        {
+          "translation": "刚买了手机没多久，新机型就发售了。"
+        },
+        {
+          "translation": "他刚一迈出家门，电话就响了。"
+        },
+        {
+          "translation": "派对刚一开始，她就哭了出来。"
+        }
+      ]
+    },
+    "ja_かねない_46": {
+      "title": "～かねない (〜kane nai)",
+      "shortExplanation": "表示从当前的情况来看，很有可能会招致某种不良后果或危险；“很有可能……”、“恐怕会……”。",
+      "longExplanation": "句型“～かねない”接在动词连用形（ます形去掉ます）之后，表达说话人的担忧或预判，表示照这样下去，很有可能会发生令人担忧的严重不良后果或坏结果。在感情色彩上几乎全部用于消极、负面的负罪、事故、失败或危险情况。",
+      "formation": "动词连用形（ます形去掉ます） + かねない",
+      "examples": [
+        {
+          "translation": "他太不负责任了，很有可能会违背诺言。"
+        },
+        {
+          "translation": "如果不加注意的话，很有可能会引发事故。"
+        },
+        {
+          "translation": "这个应用程序漏洞很多，恐怕会发生崩溃。"
+        },
+        {
+          "translation": "她现在非常紧张，很有可能会遭遇失败。"
+        }
+      ]
+    },
+    "ja_かねる_47": {
+      "title": "～かねる (〜kaneru)",
+      "shortExplanation": "委婉、礼貌地表示难以做到某事或予以委婉拒绝；“难以……”、“恕难……”。",
+      "longExplanation": "句型“～かねる”接在动词连用形（ます形去掉ます）之后，表示因立场、责任、心理阻碍或能力所限，难以做到某事或难以做出某种决定。常以敬体“～かねます”的形式用于商务往来和正式交际场合，作为一种委婉、客气的拒绝表达，避免直接使用“できない”给对方造成生硬不快的印象。",
+      "formation": "动词连用形（ます形去掉ます） + かねる / かねます",
+      "examples": [
+        {
+          "translation": "因为那个问题很难，所以我难以解决。"
+        },
+        {
+          "translation": "我很难判断他所说的话是否属实。"
+        },
+        {
+          "translation": "关于她是否会来，我现在难以知晓。"
+        },
+        {
+          "translation": "关于详细内容，恕我难以说明。"
+        }
+      ]
+    },
+    "ja_かのようだ_48": {
+      "title": "～かのようだ (〜ka no you da)",
+      "shortExplanation": "表示实际上并非如此，但某种举止或状态给人的感觉极像如此；“宛如……”、“简直就像……一样”。",
+      "longExplanation": "句型“～かのようだ”用于比喻或推测，表示实际上事实并非如此或尚不确定，但当下的某种外在表现、动作或神态却令人强烈地感到仿佛就是那样。修饰名词时用“～かのような＋名词”，修饰动词或形容词作状语时用“～かのように”。名词和二类形容词后续通常加“である”。",
+      "formation": "动词普通形 + かのようだ | 一类形容词 + かのようだ | 二类形容词 + であるかのようだ | 名词 + であるかのようだ",
+      "examples": [
+        {
+          "translation": "他看起来简直就像很怕狗一样。"
+        },
+        {
+          "translation": "这个房间感觉就像很冷一样。"
+        },
+        {
+          "translation": "她举手投足宛如自己是个名人一般。"
+        },
+        {
+          "translation": "他的举止简直就像个孩子一样。"
+        }
+      ]
+    },
+    "ja_かまいか_49": {
+      "title": "～か～まいか (〜ka 〜maika)",
+      "shortExplanation": "表示在做还是不做某动作之间犹豫不决、举棋不定；“是……呢还是不……呢”。",
+      "longExplanation": "句型“～か～まいか”通过将动词意志形（肯定）与表示否定意志的“まい”（否定）并列，生动表达当事人在“做还是不做”、“接不接受”之间左右为难、纠结徘徊的心情。带有较强的书面语或郑重语彩。在更正式的论述文体中，形容词或名词亦可搭配“であるか……であるまいか”。",
+      "formation": "动词意志形 + か + 动词 + まいか | 形容词 / 名词 + であるか + であるまいか",
+      "examples": [
+        {
+          "translation": "究竟要不要接下这个项目，我还没有决定好。"
+        },
+        {
+          "translation": "他是否会成功，目前还无法预测。"
+        },
+        {
+          "translation": "对于这个问题究竟是简单还是不简单，大家的意见产生了分歧。"
+        },
+        {
+          "translation": "他是成为领袖还是不当下属追随者，应当由他自己来选择。"
+        }
+      ]
+    },
+    "ja_からこそ_50": {
+      "title": "～からこそ (〜kara koso)",
+      "shortExplanation": "强烈强调某个理由或原因的独特性与决定性；“正因为……才……”、“正是由于……”。",
+      "longExplanation": "句型“～からこそ”由表示原因的助词“から”和表示强力强调的提示助词“こそ”复合而成，用于极力强调正是这一特殊理由（绝非其他次要原因）才必然导致了后文显著或意料之外的结果。常用于积极、由衷感慨或总结经验教训的语境中。",
+      "formation": "动词普通形 + からこそ | 一类形容词 + からこそ | 二类形容词 + だからこそ | 名词 + だからこそ",
+      "examples": [
+        {
+          "translation": "正因为经历过失败，才真正理解了成功的意义。"
+        },
+        {
+          "translation": "正因为吃过苦头，才有了今天的我。"
+        },
+        {
+          "translation": "他正因为待人亲切，才深受大家欢迎。"
+        },
+        {
+          "translation": "正因为有过去的经验，才能深刻理解那个问题。"
+        }
+      ]
+    },
+    "ja_からして_51": {
+      "title": "〜からして (〜kara shite)",
+      "shortExplanation": "举出一个具有代表性的局部特征或起点，由此推断整体；“单从……来看”、“光从……就……”。",
+      "longExplanation": "句型“〜からして”接在名词之后，通过挑出一个极具代表性、最先映入眼帘的侧面或细小线索（如神情、外表、名字等）作为判断的基准，暗示“仅仅从这一个局部来看就已经是这种状况了，整个全局自然可想而知”。绝大多数情况下用于消极、负面或令人失望的推断与评价。",
+      "formation": "名词 + からして",
+      "examples": [
+        {
+          "translation": "单从他的神色来看，想必是发生了什么坏事吧。"
+        },
+        {
+          "translation": "光从这道菜的卖相来看，就感觉不太好吃。"
+        },
+        {
+          "translation": "单从她的考试成绩来看，要及格恐怕很困难吧。"
+        },
+        {
+          "translation": "单从那部电影的片名来看，我就觉得不会有趣。"
+        }
+      ]
+    },
+    "ja_からすると_52": {
+      "title": "～からすると (〜kara suru to)",
+      "shortExplanation": "以某种标准、依据、线索或立场为基准来进行推断或评价；“从……来看”、“按……来说”。",
+      "longExplanation": "句型“～からすると”（同义表达有“～からすれば”）接在名词之后，用于提出作出判断的依据、参考标准、评价角度或所处的立场（如经验、口碑、价格等），并由此引出说话人的推断、猜测或结论。相当于汉语中的“从……来看”、“根据……判断”。",
+      "formation": "名词 + からすると",
+      "examples": [
+        {
+          "translation": "从经验来看，这项工作大概会很难吧。"
+        },
+        {
+          "translation": "从口碑来看，那家餐厅非常美味。"
+        },
+        {
+          "translation": "从价格来推断，这件商品被认为是高品质之物。"
+        },
+        {
+          "translation": "关于这个区域，从交通便利度来看是非常方便的。"
+        }
+      ]
+    },
+    "ja_からといって_53": {
+      "title": "～からといって (〜kara to itte)",
+      "shortExplanation": "表示不能仅凭前述的理由，就理所当然地认定后项也成立；“虽说……但也未必……”、“不能因为……就……”。",
+      "longExplanation": "句型“～からといって”用于否定某种片面的因果必然性。尽管前项所述的理由或事实属实，但后项绝非理所当然或必定如此。后半句常常呼应部分否定或消极判定的句型，如“～わけではない”（并非……）、“～とは限らない”（未必……）、“～とは言えない”（不能说……）。",
+      "formation": "动词普通形 + からといって | 一类形容词 + からといって | 二类形容词 + だからといって | 名词 + だからといって",
+      "examples": [
+        {
+          "translation": "不能因为下了雨，比赛就一定会中止。"
+        },
+        {
+          "translation": "不能因为他有名，他的意见就总是正确的。"
+        },
+        {
+          "translation": "不能因为这道汤很辣，就认定所有人都会觉得辣。"
+        },
+        {
+          "translation": "不能因为她在哭，就断定她一定很伤心。"
+        }
+      ]
+    },
+    "ja_からにかけて_54": {
+      "title": "～から～にかけて (〜kara 〜ni kakete)",
+      "shortExplanation": "表示时间或空间从某处到某处的大致范围；“从……到……”、“在……到……之间”。",
+      "longExplanation": "句型“～から～にかけて”用于表示在时间上或空间上跨越一段大致的范围。与表示起止界限十分明确分明的“～从……到……”（～から～まで）不同，“～から～にかけて”强调的是界限并不严格分明的大致区间，通常描述该区间内持续发生或断断续续呈现的某种状态与现象。",
+      "formation": "名词1 + から + 名词2 + にかけて",
+      "examples": [
+        {
+          "translation": "我从上午9点到下午5点之间一直在工作。"
+        },
+        {
+          "translation": "新干线行驶于东京至大阪一带。"
+        },
+        {
+          "translation": "从春天到夏天这一期间，盛开着许多花朵。"
+        },
+        {
+          "translation": "在20岁到30岁之间，大多数人大学毕业并参加工作是普遍现象。"
+        }
+      ]
+    },
+    "ja_からには_55": {
+      "title": "～からには (〜kara niwa)",
+      "shortExplanation": "表示既然前项已成为既成事实，后项就理应承担相应的责任、决心或义务；“既然……就（应该）……”、“既然……就必须……”。",
+      "longExplanation": "句型“～からには”用于表示前项事实已经确定或无可更改，因而基于道义、常理或决心，后项理所当然地必须采取某种行动。后半句常呼应表示义务、强烈决心、建议或要求的句式，如“～なければならない”（必须）、“～べきだ”（应该）、“～つもりだ”（打算）、“～たい”（想要）等。",
+      "formation": "动词普通形 + からには | 一类形容词 + からには | 二类形容词 + である / だ + からには | 名词 + である / だ + からには",
+      "examples": [
+        {
+          "translation": "既然考试合格了，就必须拼命努力工作。"
+        },
+        {
+          "translation": "既然做出了承诺，就必须信守诺言。"
+        },
+        {
+          "translation": "既然这部电影这么有趣，那我也想推荐给朋友看看。"
+        },
+        {
+          "translation": "既然她已经求助了，就必须伸出援手帮助她。"
+        }
+      ]
+    },
+    "ja_から見ると_56": {
+      "title": "～から見ると (〜kara miru to)",
+      "shortExplanation": "从某种特定的立场、观点或角度来进行审视和评价；“从……的角度来看”、“就……而言”。",
+      "longExplanation": "句型“～から見ると”（同类表达有“～から見れば”、“～から見て”）接在名词之后，明确提出观察问题或进行评判时的出发点、特定立场或考量维度（如费用、实力、健康、当事人看法等），并据此得出说话人的判断或分析。相当于汉语中的“从……来看”、“在……看来”。",
+      "formation": "名词 + から見ると",
+      "examples": [
+        {
+          "translation": "从费用的角度来看，这个方案非常划算。"
+        },
+        {
+          "translation": "从她的观点来看，社长的决定是可以理解的。"
+        },
+        {
+          "translation": "就实力而言，他在团队中是最优秀的。"
+        },
+        {
+          "translation": "从健康方面来看，这种食品并不好。"
+        }
+      ]
+    },
+    "ja_から言うと_57": {
+      "title": "～から言うと (〜kara iuto)",
+      "shortExplanation": "从某一特定侧面、特征或评价标准出发来发表看法；“从……来说”、“就……而言”。",
+      "longExplanation": "句型“～から言うと”（同义表达有“～から言えば”、“～から言って”）接在表示某种属性、基准或角度的名词之后（如价格、口味、便利性、健康等），用于限定评价的范畴，表达“抛开其他因素不论，仅单就该方面而言”的判断或主观看法。",
+      "formation": "名词 + から言うと / から言って / から言えば",
+      "examples": [
+        {
+          "translation": "从价格上来说，这款商品是最划算的。"
+        },
+        {
+          "translation": "从味道来说，我觉得这家餐厅很好吃。"
+        },
+        {
+          "translation": "就便利程度而言，这间公寓处于最优越的位置。"
+        },
+        {
+          "translation": "从健康的角度来说，每天坚持运动非常重要。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_かける_43": {
+      "title": "～かける (〜kakeru)",
+      "shortExplanation": "어떤 동작을 시작하여 중간까지만 하고 아직 끝내지 않은 상태임을 나타내며, '하다가 말다', '~하다 만'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～かける'는 동사의 연용형(ます형 어간)에 접속하여, 어떤 행위를 시작했으나 도중에 중단되어 완전히 끝마치지 못한 채 남아 있는 상태를 나타냅니다. 특히 명사를 수식할 때는 '～かけの + 명사'의 형태로 자주 쓰이며(예: 食べかけ 먹다 만, 読みかけ 읽다 만), 경우에 따라서는 상태 변화 동사와 결합하여 '~할 뻔하다', '막 ~하려 하다'라는 찰나의 의미를 나타내기도 합니다.",
+      "formation": "동사 ます형 어간 + かける / かけの + 명사",
+      "examples": [
+        {
+          "translation": "그녀는 먹다 만 사과를 두고 외출했다."
+        },
+        {
+          "translation": "아이들은 하다 만 숙제를 책상 위에 남겨 두었다."
+        },
+        {
+          "translation": "밤이 되면 읽다 만 책을 찾는다."
+        },
+        {
+          "translation": "사무실에는 작성하다 만 서류가 많이 있다."
+        }
+      ]
+    },
+    "ja_がち_44": {
+      "title": "～がち (〜gachi)",
+      "shortExplanation": "좋지 않은 일이나 경향이 자주 일어나기 쉬움을 나타내며, '자주 ~하다', '~하기 일쑤이다', '~하는 경향이 있다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～がち'는 동사의 연용형(ます형 어간)이나 일부 명사에 접속하여, 어떤 바람직하지 못한 사태나 상태가 자주 발생하거나 그러한 성향을 띠기 쉬움을 나타냅니다. 감기에 잘 걸린다거나, 지각하기 쉽다거나 하는 등 주로 부정적이거나 아쉬운 상황에 쓰입니다. 명사를 수식할 때는 '～がちな + 명사', 문말에서는 '～がちだ / がちです' 형태로 사용됩니다.",
+      "formation": "동사 ます형 어간 + がち | 명사 + がち (+ だ / な / に)",
+      "examples": [
+        {
+          "translation": "그는 감기에 자주 걸리곤 합니다."
+        },
+        {
+          "translation": "이 지역은 비가 자주 내리는 편입니다."
+        },
+        {
+          "translation": "그녀는 물건을 자주 깜빡하곤 합니다."
+        },
+        {
+          "translation": "저는 지각하기 일쑤라서 더 일찍 일어나야 합니다."
+        }
+      ]
+    },
+    "ja_かないかのうちに_45": {
+      "title": "～か～ないかのうちに (〜ka〜naika no uchi ni)",
+      "shortExplanation": "앞의 동작이 끝나자마자 거의 동시에 뒤의 동작이나 사태가 일어남을 나타내며, '~하자마자', '~할락 말락 하는 사이에'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～か～ないかのうちに'는 같은 동사의 사전형(긍정)과 ない형(부정)을 연이어 사용하여, 앞선 동작이 완전히 끝났는지 미처 끝나지 않았는지 알 수 없을 정도로 찰나의 순간에 다음 동작이나 사태가 연달아 일어남을 강조합니다. 주로 예상치 못한 돌발 상황이나 자연스러운 발생을 서술할 때 쓰이며, 뒷문장에 의지나 명령 표현은 오지 않습니다.",
+      "formation": "동사 사전형 + か + 동사 ない형 + かのうちに",
+      "examples": [
+        {
+          "translation": "역에 도착하자마자 비가 내리기 시작했다."
+        },
+        {
+          "translation": "휴대전화를 사자마자 새로운 모델이 출시되었다."
+        },
+        {
+          "translation": "그가 집을 나서자마자 전화벨이 울렸다."
+        },
+        {
+          "translation": "파티가 시작하자마자 그녀가 울기 시작했다."
+        }
+      ]
+    },
+    "ja_かねない_46": {
+      "title": "～かねない (〜kane nai)",
+      "shortExplanation": "나쁜 결과나 위험한 사태가 발생할 가능성이 있음을 나타내며, '~할지도 모른다', '~할 우려가 있다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～かねない'는 동사의 연용형(ます형 어간)에 접속하여, 현재의 원인이나 상황으로 미루어 볼 때 바람직하지 않은 나쁜 결과나 위험이 생길 가능성이 충분히 있음을 화자가 우려 섞인 어조로 추측할 때 쓰입니다. 대체로 부정적인 사태(사고, 실패, 위반 등)에 국한되어 사용됩니다.",
+      "formation": "동사 ます형 어간 + かねない",
+      "examples": [
+        {
+          "translation": "그는 너무나 무책임해서 약속을 어길지도 모른다."
+        },
+        {
+          "translation": "주의하지 않으면 사고를 일으킬 우려가 있다."
+        },
+        {
+          "translation": "이 앱은 버그가 많아서 충돌을 일으킬지도 모른다."
+        },
+        {
+          "translation": "그녀는 긴장하고 있어서 실패할 우려가 있다."
+        }
+      ]
+    },
+    "ja_かねる_47": {
+      "title": "～かねる (〜kaneru)",
+      "shortExplanation": "심리적 부담, 입장 또는 능력상의 제약으로 인해 어떤 일을 하기 어렵거나 정중하게 거절할 때 쓰이며, '~하기 어렵다', '~하기 곤란하다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～かねる'는 동사의 연용형(ます형 어간)에 접속하여, 자신의 입장이나 심리적 망설임, 상황적 한계 등으로 인해 어떤 동작을 이행하기 곤란함을 나타냅니다. 특히 비즈니스나 격식 있는 자리에서 '～かねます'의 형태로 자주 쓰이며, 상대방의 요구나 부탁에 대해 'できない'처럼 직설적으로 거절하지 않고 공손하고 완곡하게 거절의 뜻을 전할 때 필수적으로 활용됩니다.",
+      "formation": "동사 ます형 어간 + かねる / かねます",
+      "examples": [
+        {
+          "translation": "그 문제는 어려워서 제가 해결하기 어렵습니다."
+        },
+        {
+          "translation": "그가 하는 말이 진실인지 어떤지 판단하기 어렵습니다."
+        },
+        {
+          "translation": "그녀가 올지 안 올지 지금 당장은 알기 어렵습니다."
+        },
+        {
+          "translation": "자세한 내용에 대해서는 설명해 드리기 곤란합니다."
+        }
+      ]
+    },
+    "ja_かのようだ_48": {
+      "title": "～かのようだ (〜ka no you da)",
+      "shortExplanation": "실제로는 그렇지 않거나 확실치 않음에도 불구하고 마치 그러한 것처럼 느껴질 때 쓰이며, '마치 ~인 것 같다', '흡사 ~인 양'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～かのようだ'는 실제 사실은 그렇지 않지만, 겉으로 드러나는 모습이나 태도가 마치 어떤 상태인 것처럼 생생하게 느껴짐을 비유적으로 표현할 때 사용됩니다. 명사를 수식할 때는 '～かのような + 명사', 부사적으로 동사나 형용사를 수식할 때는 '～かのように'의 형태를 취합니다. 나형용사와 명사에는 보통 'である'가 접속합니다.",
+      "formation": "동사 보통형 + かのようだ | い형용사 + かのようだ | な형용사 + であるかのようだ | 명사 + であるかのようだ",
+      "examples": [
+        {
+          "translation": "그는 마치 개를 무서워하고 있는 것만 같다."
+        },
+        {
+          "translation": "이 방은 마치 추운 것만 같다."
+        },
+        {
+          "translation": "그녀는 마치 자기가 유명 연예인인 양 행동한다."
+        },
+        {
+          "translation": "그는 마치 어린아이인 양 행동한다."
+        }
+      ]
+    },
+    "ja_かまいか_49": {
+      "title": "～か～まいか (〜ka 〜maika)",
+      "shortExplanation": "어떤 동작을 할지 하지 말지 갈등하거나 망설이는 심리를 나타내며, '~할까 말까', '~할지 말지'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～か～まいか'는 동사의 의지형(긍정)과 부정 의지를 나타내는 'まい'를 대립시켜, 어떤 행동을 실행할 것인가 말 것인가를 두고 속으로 고뇌하거나 망설이는 상태를 나타냅니다. 다소 문어적이고 진지한 어감을 지니며, 격식체 문장에서는 형용사나 명사에 'であるか…であるまいか' 형태로 접속하기도 합니다.",
+      "formation": "동사 의지형 + か + 동사 + まいか | 형용사 / 명사 + であるか + であるまいか",
+      "examples": [
+        {
+          "translation": "이 프로젝트를 맡을까 말까 아직 결정하지 못했다."
+        },
+        {
+          "translation": "그가 성공할지 성공하지 못할지 지금은 예측할 수 없다."
+        },
+        {
+          "translation": "이 문제가 간단한지 아니면 어렵지 않은지를 두고 의견이 갈리고 있다."
+        },
+        {
+          "translation": "그는 리더가 될지 추종자가 되지 않을지를 스스로 선택해야 한다."
+        }
+      ]
+    },
+    "ja_からこそ_50": {
+      "title": "～からこそ (〜kara koso)",
+      "shortExplanation": "특정 이유나 원인을 강하게 강조하여 그로 인해 뒤의 결과가 생겨났음을 나타내며, '바로 ~이기에', '~이기 때문에 비로소'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～からこそ'는 이유를 나타내는 'から'에 강조의 조사 'こそ'가 결합된 형태로, 다른 이유가 아니라 바로 이 원인이야말로 뒤에 이어지는 특별한 결과나 상태를 낳은 결정적인 계기임을 강하게 피력할 때 사용됩니다. 고난을 극복했거나 특별한 보람을 느꼈을 때처럼 깊은 감회나 확신을 담아 긍정적인 맥락에서 자주 쓰입니다.",
+      "formation": "동사 보통형 + からこそ | い형용사 + からこそ | な형용사 + だからこそ | 명사 + だからこそ",
+      "examples": [
+        {
+          "translation": "실패를 경험했기에 비로소 성공의 의미를 알 수 있다."
+        },
+        {
+          "translation": "힘든 시기가 있었기에 바로 오늘의 내가 있는 것이다."
+        },
+        {
+          "translation": "그는 친절하기 때문에 비로소 인기가 있는 것이다."
+        },
+        {
+          "translation": "과거의 경험이 있기에 바로 그 문제를 잘 이해할 수 있다."
+        }
+      ]
+    },
+    "ja_からして_51": {
+      "title": "〜からして (〜kara shite)",
+      "shortExplanation": "대표적이거나 사소한 하나의 단서를 들어 전체를 판단하거나 평가할 때 쓰이며, '~부터가', '~부터 해서'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '〜からして'는 명사 뒤에 붙어, 겉모습이나 표정, 이름 등 가장 먼저 눈에 띄는 하나의 대표적인 부분이나 실마리를 제시하여 '그 사소한 것부터가 이미 그러하니 전체는 말할 것도 없다'는 뉘앙스로 판단을 내릴 때 쓰입니다. 대개의 경우 부정적이거나 못마땅한 평가, 비관적인 추측을 나타내는 데 자주 사용됩니다.",
+      "formation": "명사 + からして",
+      "examples": [
+        {
+          "translation": "그의 얼굴 표정부터가 무슨 안 좋은 일이 있었던 모양이다."
+        },
+        {
+          "translation": "이 요리의 겉모습부터가 맛이 없어 보인다."
+        },
+        {
+          "translation": "그녀의 시험 성적부터가 합격하기는 어려울 것으로 보인다."
+        },
+        {
+          "translation": "그 영화는 제목부터가 재미없을 것 같다."
+        }
+      ]
+    },
+    "ja_からすると_52": {
+      "title": "～からすると (〜kara suru to)",
+      "shortExplanation": "어떤 기준, 근거 또는 관점을 바탕으로 판단이나 평가를 내릴 때 쓰이며, '~로 보아', '~의 입장에서 보면', '~기준으로 하면'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～からすると'('～からすれば'와 동의)는 명사 뒤에 결합하여, 판단을 내리는 근거나 객관적인 판단 기준(경험, 평판, 가격 등) 또는 특정 대상의 입장·관점을 제시할 때 사용됩니다. 이를 토대로 화자의 추측, 평가, 결론을 이끌어내는 역할을 합니다.",
+      "formation": "명사 + からすると",
+      "examples": [
+        {
+          "translation": "경험으로 보아 이 일은 어려울 것입니다."
+        },
+        {
+          "translation": "평판으로 보아 저 레스토랑은 매우 맛있습니다."
+        },
+        {
+          "translation": "가격으로 볼 때 이 상품은 고품질인 것으로 여겨집니다."
+        },
+        {
+          "translation": "이 지역은 교통 편의 면에서 보면 편리합니다."
+        }
+      ]
+    },
+    "ja_からといって_53": {
+      "title": "～からといって (〜kara to itte)",
+      "shortExplanation": "앞의 이유나 사실을 인정하더라도 그것만으로 뒤의 결과가 당연하게 성립되는 것은 아님을 나타내며, '~라고 해서', '~라고 하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～からといって'는 앞선 이유나 전제가 사실이라 할지라도, 그것을 이유로 뒤에 이어지는 결론이나 결과가 당연하거나 필연적인 것은 아니라고 반박할 때 사용됩니다. 따라서 뒷문장에는 '～わけではない'(반드시 ~인 것은 아니다), '～とは限らない'(꼭 ~라고는 할 수 없다)와 같은 부분 부정의 호응 표현이 자주 뒤따릅니다.",
+      "formation": "동사 보통형 + からといって | い형용사 + からといって | な형용사 + だからといって | 명사 + だからといって",
+      "examples": [
+        {
+          "translation": "비가 내렸다고 해서 경기가 취소되는 것은 아닙니다."
+        },
+        {
+          "translation": "그가 유명하다고 해서 그의 의견이 언제나 옳은 것은 아니다."
+        },
+        {
+          "translation": "이 수프가 맵다고 해서 모든 사람이 맵다고 느끼는 것은 아니다."
+        },
+        {
+          "translation": "그녀가 울고 있다고 해서 반드시 슬픈 것은 아닐지도 모른다."
+        }
+      ]
+    },
+    "ja_からにかけて_54": {
+      "title": "～から～にかけて (〜kara 〜ni kakete)",
+      "shortExplanation": "시간이나 공간의 대략적인 범위를 나타내며, '~부터 ~에 걸쳐', '~에서 ~에 걸쳐서'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～から～にかけて'는 시간이나 공간이 어떤 지점에서 다른 지점으로 이어지는 개략적인 범위를 나타냅니다. 시작점과 종료점이 명확하게 선으로 그어지는 '～から～まで'와 달리, '～から～にかけて'는 경계선이 비교적 완만하고 모호하며, 해당 구간 전체에 걸쳐 현상이 지속되거나 산발적으로 일어남을 나타낼 때 사용됩니다.",
+      "formation": "명사 1 + から + 명사 2 + にかけて",
+      "examples": [
+        {
+          "translation": "오전 9시부터 오후 5시에 걸쳐 일을 하고 있습니다."
+        },
+        {
+          "translation": "도쿄에서 오사카에 걸쳐 신칸센이 달리고 있습니다."
+        },
+        {
+          "translation": "봄부터 여름에 걸쳐 꽃이 많이 피어 있습니다."
+        },
+        {
+          "translation": "20세부터 30세에 걸쳐 많은 사람이 대학을 졸업하고 취직하는 것이 일반적입니다."
+        }
+      ]
+    },
+    "ja_からには_55": {
+      "title": "～からには (〜kara niwa)",
+      "shortExplanation": "앞의 사실이 이미 결정되었거나 전제가 된 이상 당연히 뒤의 행동을 해야 한다는 결의나 의무를 나타내며, '기왕 ~한 바에는', '~한 이상은'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～からには'는 앞선 사실이 이미 기정사실화되었거나 조건으로 성립된 이상, 그에 걸맞은 강한 각오, 도의적 책임, 당연한 의무를 다해야 함을 나타낼 때 사용됩니다. 뒷문장에는 주로 화자의 결의나 의무를 나타내는 '～なければならない'(~해야 한다), '～べきだ'(~해야 마땅하다), '～たい'(~하고 싶다) 등의 표현이 호응합니다.",
+      "formation": "동사 보통형 + からには | い형용사 + からには | な형용사 + である / だ + からには | 명사 + である / だ + からには",
+      "examples": [
+        {
+          "translation": "시험에 합격한 이상은 열심히 일해야만 한다."
+        },
+        {
+          "translation": "약속을 한 이상은 반드시 지켜야만 합니다."
+        },
+        {
+          "translation": "이 영화가 재미있는 이상은 친구들에게도 보여주고 싶다."
+        },
+        {
+          "translation": "그녀가 도움을 요청한 이상은 도와주지 않으면 안 된다."
+        }
+      ]
+    },
+    "ja_から見ると_56": {
+      "title": "～から見ると (〜kara miru to)",
+      "shortExplanation": "특정한 입장, 관점 또는 측면에서 사물을 바라보고 평가할 때 쓰이며, '~의 입장에서 보면', '~의 관점에서 보면', '~면에서 보면'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～から見ると'('～から見れば', '～から見て'와 동의)는 명사 뒤에 붙어, 사안을 관찰하거나 평가하는 특정 주체의 입장, 관점 또는 고려하는 측면(비용, 실력, 건강, 의견 등)을 설정하고, 그 기준에서 사태를 판단하거나 결론을 도출할 때 사용됩니다.",
+      "formation": "명사 + から見ると",
+      "examples": [
+        {
+          "translation": "비용 면에서 보면 이 플랜이 경제적입니다."
+        },
+        {
+          "translation": "그녀의 의견 입장에서 보면 사장님의 결정을 이해할 수 있다."
+        },
+        {
+          "translation": "실력 면에서 보면 그는 팀에서 가장 우수하다."
+        },
+        {
+          "translation": "건강 측면에서 보면 이 식품은 좋지 않다."
+        }
+      ]
+    },
+    "ja_から言うと_57": {
+      "title": "～から言うと (〜kara iuto)",
+      "shortExplanation": "특정한 측면이나 판단 기준을 들어 자신의 의견이나 평가를 서술할 때 쓰이며, '~로 말하자면', '~면에서 말하면'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～から言うと'('～から言えば', '～から言って'와 동의)는 특정 속성, 기준, 측면(가격, 맛, 편리함, 건강 등)을 나타내는 명사 뒤에 붙어, '다른 요소는 차치하고 오직 그 관점에 한정하여 말하자면'이라는 뉘앙스로 판단이나 의견을 피력할 때 사용됩니다.",
+      "formation": "명사 + から言うと / から言って / から言えば",
+      "examples": [
+        {
+          "translation": "가격 면에서 말하자면 이 상품이 가장 알뜰합니다."
+        },
+        {
+          "translation": "맛으로 말하자면 이 레스토랑은 맛있다고 생각합니다."
+        },
+        {
+          "translation": "편리성 면에서 말하면 이 아파트는 최적의 위치에 있습니다."
+        },
+        {
+          "translation": "건강 면에서 말하자면 매일 운동하는 것이 중요합니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_かける_43": {
+      "title": "～かける (〜kakeru)",
+      "shortExplanation": "ある動作を始めて途中の段階にあり、まだ最後まで完了していない状態を表し、「〜しかけて途中でやめる」「〜の途中である」という意味を表します。",
+      "longExplanation": "「～かける」は動詞の連用形（ます形語幹）に接続し、ある行為に着手したものの、完了せずに途中で中断している状態を表します。名詞を修飾する際には「〜かけの＋名詞」という形がよく用いられ、「食べかけ」「読みかけ」のように複合名詞化して定着しているものも多くあります。また、無意志動詞や瞬間動詞に接続して「もう少しで〜しそうになる（溺れかけるなど）」という直前の状態を表す用法もあります。",
+      "formation": "動詞ます形語幹 ＋ かける ／ かけの ＋ 名詞",
+      "examples": [
+        {
+          "translation": "彼女は食べかけのリンゴを置いて出かけた。"
+        },
+        {
+          "translation": "子供たちはやりかけの宿題を机の上に残した。"
+        },
+        {
+          "translation": "読みかけの本を夜になると探す。"
+        },
+        {
+          "translation": "オフィスには、作りかけの書類がたくさんある。"
+        }
+      ]
+    },
+    "ja_がち_44": {
+      "title": "～がち (〜gachi)",
+      "shortExplanation": "好ましくない事態や行為が頻繁に起こる傾向があることを表し、「〜することが多い」「〜しやすい」という意味を表します。",
+      "longExplanation": "「～がち」は動詞の連用形（ます形語幹）や一部の名詞に接続し、ある望ましくない状態や行為が習慣的・頻繁に現れやすい傾向にあることを表します。病気になりやすい、忘れ物をしやすい、遅刻しやすいなど、マイナス評価の事柄に対して用いられることが一般的です。名詞を修飾するときは「〜がちな＋名詞」、文末では「〜がちだ／がちです」の形をとります。",
+      "formation": "動詞ます形語幹 ＋ がち ｜ 名詞 ＋ がち （＋ だ／な／に）",
+      "examples": [
+        {
+          "translation": "彼は風邪を引きがちです。"
+        },
+        {
+          "translation": "この地域は雨が降りがちです。"
+        },
+        {
+          "translation": "彼女は忘れ物をしがちです。"
+        },
+        {
+          "translation": "私は遅刻しがちなので、もっと早く起きないといけません。"
+        }
+      ]
+    },
+    "ja_かないかのうちに_45": {
+      "title": "～か～ないかのうちに (〜ka〜naika no uchi ni)",
+      "shortExplanation": "前のある動作が終わるとほぼ同時に、あるいは終わるか終わらないかの瞬間に次の事態が起こることを表し、「〜するとすぐに」「〜したとたんに」という意味を表します。",
+      "longExplanation": "「～か～ないかのうちに」は、同一の動詞の辞書形（肯定）とない形（否定）を組み合わせて用いることで、前の事態が完全に完了したかどうかも定かでないほどごくわずかな時間のうちに、間髪を入れず次の事態が発生することを強調する表現です。後続文には話者の意志や命令・依頼表現は用いられず、突発的な事態の発生や客観的な事実の推移が述べられます。",
+      "formation": "動詞辞書形 ＋ か ＋ 動詞ない形 ＋ かのうちに",
+      "examples": [
+        {
+          "translation": "駅に着くか着かないかのうちに、雨が降り出した。"
+        },
+        {
+          "translation": "ケータイを買うか買わないかのうちに、新しいモデルが発売された。"
+        },
+        {
+          "translation": "彼が家を出るか出ないかのうちに、電話が鳴った。"
+        },
+        {
+          "translation": "パーティーが始まるか始まらないかのうちに、彼女が泣き出した。"
+        }
+      ]
+    },
+    "ja_かねない_46": {
+      "title": "～かねない (〜kane nai)",
+      "shortExplanation": "現在の状況や原因から判断して、好ましくない結果や危険な事態を引き起こす可能性があることを表し、「〜するおそれがある」「〜しかねない」という意味を表します。",
+      "longExplanation": "「～かねない」は動詞の連用形（ます形語幹）に接続し、放置したり不注意であったりすると、重大な悪影響や失敗、事故などの好ましくない事態に発展する危険性・可能性があることを示唆します。話し手の心配や警告のニュアンスを含み、原則としてマイナス評価の出来事に対して用いられます。",
+      "formation": "動詞ます形語幹 ＋ かねない",
+      "examples": [
+        {
+          "translation": "彼はあまりにも無責任で、約束を破りかねない。"
+        },
+        {
+          "translation": "注意しないと、事故を起こしかねない。"
+        },
+        {
+          "translation": "このアプリはバグが多いので、クラッシュしかねない。"
+        },
+        {
+          "translation": "彼女は緊張しているので、失敗しかねない。"
+        }
+      ]
+    },
+    "ja_かねる_47": {
+      "title": "～かねる (〜kaneru)",
+      "shortExplanation": "心理的な抵抗や立場上の制約、状況の困難さから「〜することができない」と遠回し・丁寧に断る際に用いられ、「〜するのが難しい」「〜いたしかねる」という意味を表します。",
+      "longExplanation": "「～かねる」は動詞の連用形（ます形語幹）に接続し、能力的に単に不可能であるというよりは、立場や事情、心情的な理由からその行為を遂行することが困難であることを表します。改まったビジネスの場では丁寧体の「～かねます」の形で頻繁に用いられ、直接的な「できません」という表現を避けて相手の要求を角を立てずにやんわりと断るための重要な敬語的表現です。",
+      "formation": "動詞ます形語幹 ＋ かねる ／ かねます",
+      "examples": [
+        {
+          "translation": "その問題は難しいので、私には解決しかねます。"
+        },
+        {
+          "translation": "彼の言っていることが真実かどうか判断しかねます。"
+        },
+        {
+          "translation": "彼女が来るかどうか今すぐには分かりかねます。"
+        },
+        {
+          "translation": "詳しい内容については説明しかねます。"
+        }
+      ]
+    },
+    "ja_かのようだ_48": {
+      "title": "～かのようだ (〜ka no you da)",
+      "shortExplanation": "実際はそうではない、あるいは確実ではないのに、まるでそうであるかのような様子であることを比喩的に表し、「まるで〜のようだ」という意味を表します。",
+      "longExplanation": "「～かのようだ」は、実際には事実と異なる、または定かではない事柄について、外見や態度、雰囲気がまるでその状態であるかのように感じられることを比喩的に表現する文型です。名詞を修飾する際には「〜かのような＋名詞」、用言を修飾する連用修飾では「〜かのように」の形になります。な形容詞および名詞には通常「である」が前置されます。",
+      "formation": "動詞普通形 ＋ かのようだ ｜ い形容詞 ＋ かのようだ ｜ な形容詞 ＋ であるかのようだ ｜ 名詞 ＋ であるかのようだ",
+      "examples": [
+        {
+          "translation": "彼は犬が怖いかのようだ。"
+        },
+        {
+          "translation": "この部屋は寒いかのようだ。"
+        },
+        {
+          "translation": "彼女は有名人であるかのようだ。"
+        },
+        {
+          "translation": "彼は子供であるかのようだ。"
+        }
+      ]
+    },
+    "ja_かまいか_49": {
+      "title": "～か～まいか (〜ka 〜maika)",
+      "shortExplanation": "ある行為をするべきか、それともやめておくべきか、心の中で迷い躊躇している様子を表し、「〜しようか〜するのをやめようか」という意味を表します。",
+      "longExplanation": "「～か～まいか」は動詞の意志形（意向形）と、否定の意志・推量を表す「まい」を対比させて並べることで、ある行動を起こすか起こさないかの狭間で二者択一に悩み、葛藤する心理を表す表現です。やや硬い文語的な響きを持ちます。論文や改まった叙述では、形容詞や名詞を伴って「〜であるか〜であるまいか」の形が取られることもあります。",
+      "formation": "動詞意向形 ＋ か ＋ 動詞 ＋ まいか ｜ 形容詞／名詞 ＋ であるか ＋ であるまいか",
+      "examples": [
+        {
+          "translation": "このプロジェクトを引き受けようか引き受けまいか、まだ決めていない。"
+        },
+        {
+          "translation": "彼が成功しようか成功するまいか、今は予測できない。"
+        },
+        {
+          "translation": "この問題は簡単であるか難しいであるまいか、意見が分かれている。"
+        },
+        {
+          "translation": "彼はリーダーであるかフォロワーであるまいか、自分で選ぶべきだ。"
+        }
+      ]
+    },
+    "ja_からこそ_50": {
+      "title": "～からこそ (〜kara koso)",
+      "shortExplanation": "後続の結果をもたらした決定的な理由・原因を強く強調して表し、「まさに〜だから」「〜だからこそ」という意味を表します。",
+      "longExplanation": "「～からこそ」は、理由を表す「から」に取り立ての助詞「こそ」が付いた文型で、他の理由ではなくまさにその理由があるからこそ、後続の特別な結果や状態が導き出されているという強い確信や実感を込めて述べるときに用いられます。苦労の末の成功や、特別な恩恵に対する感謝など、感情を込めた叙述で好んで用いられます。",
+      "formation": "動詞普通形 ＋ からこそ ｜ い形容詞 ＋ からこそ ｜ な形容詞 ＋ だからこそ ｜ 名詞 ＋ だからこそ",
+      "examples": [
+        {
+          "translation": "失敗したからこそ、成功の意味がわかる。"
+        },
+        {
+          "translation": "苦しかったからこそ、今日の私がある。"
+        },
+        {
+          "translation": "彼は親切だからこそ、人気がある。"
+        },
+        {
+          "translation": "昔の経験があるからこそ、その問題がよく理解できる。"
+        }
+      ]
+    },
+    "ja_からして_51": {
+      "title": "〜からして (〜kara shite)",
+      "shortExplanation": "代表的な一つの手がかりや極端な一端を取り上げ、それを根拠にして全体を判断・評価する表現で、「〜から見ても」「〜の時点で既に」という意味を表します。",
+      "longExplanation": "「〜からして」は名詞に接続し、表情や見た目、タイトルなど、真っ先に目につく典型的な一面やささいな手がかりを例示して、「その最初の一点からして既にこのような状態なのだから、全体も推して知るべしである」という強い批判的・否定的な判断を下す際に多く用いられます。多くの場合、マイナス面の評価や悲観的な推測を伴います。",
+      "formation": "名詞 ＋ からして",
+      "examples": [
+        {
+          "translation": "彼の顔つきからして、何か悪いことがあったのだろう。"
+        },
+        {
+          "translation": "この料理の見た目からして、おいしくなさそうだ。"
+        },
+        {
+          "translation": "彼女の試験成績からして、合格するのは難しいでしょう。"
+        },
+        {
+          "translation": "その映画のタイトルからして、面白くないと思う。"
+        }
+      ]
+    },
+    "ja_からすると_52": {
+      "title": "～からすると (〜kara suru to)",
+      "shortExplanation": "ある根拠・判断基準や特定の立場を取り上げ、それに基づいて判断や評価を下す表現で、「〜から判断すると」「〜の立場から見れば」という意味を表します。",
+      "longExplanation": "「～からすると」（「〜からすれば」も同義）は名詞に接続し、推測や判断を行う際の材料・手掛かり・評価基準（経験、評判、価格など）を提示し、それをもとに「〜と考えられる」「〜に違いない」といった判断や意見を述べる際に用いられます。また、特定の人物や集団の立場に身を置いて意見を述べる文脈でも使用されます。",
+      "formation": "名詞 ＋ からすると",
+      "examples": [
+        {
+          "translation": "経験からすると、この仕事は難しいでしょう。"
+        },
+        {
+          "translation": "評判からすると、あのレストランはとても美味しいです。"
+        },
+        {
+          "translation": "価格からすると、この商品は高品質のものと思われます。"
+        },
+        {
+          "translation": "このエリアですが、交通の便からすると、便利です。"
+        }
+      ]
+    },
+    "ja_からといって_53": {
+      "title": "～からといって (〜kara to itte)",
+      "shortExplanation": "前述の理由や事実を認めるとしても、それだけで後述の事態が当然に成り立つわけではないことを表し、「〜という理由だけで」「〜だからといって」という意味を表します。",
+      "longExplanation": "「～からといって」は、ある理由や前提が存在することは認めつつも、そのことだけを根拠として後の結果が必然的・当然に引き起こされるわけではないと反論・留保する文型です。そのため、文末には「〜わけではない」「〜とは限らない」「〜とは言えない」といった部分否定や限定の表現が呼応して用いられるのが一般的です。",
+      "formation": "動詞普通形 ＋ からといって ｜ い形容詞 ＋ からといって ｜ な形容詞 ＋ だからといって ｜ 名詞 ＋ だからといって",
+      "examples": [
+        {
+          "translation": "雨が降ったからといって、試合が中止になるわけではありません。"
+        },
+        {
+          "translation": "彼が有名だからといって、彼の意見がいつも正しいわけではない。"
+        },
+        {
+          "translation": "このスープが辛いからといって、全ての人が辛いと感じるわけではない。"
+        },
+        {
+          "translation": "彼女が泣いているからといって、悲しいわけではないかもしれない。"
+        }
+      ]
+    },
+    "ja_からにかけて_54": {
+      "title": "～から～にかけて (〜kara 〜ni kakete)",
+      "shortExplanation": "時間や空間のある大体の範囲や広がりを表し、「〜から〜の間」「〜から〜の地域一帯にわたって」という意味を表します。",
+      "longExplanation": "「～から～にかけて」は、時間的または空間的な始まりとおおよその終わりを指し示し、その一連の範囲全体にわたって状態が継続したり、現象が広がったりしていることを表す表現です。始点と終点が明確に区切られる「〜から〜まで」に比べ、境界線があいまいで幅を持たせた範囲を示すニュアンスを含みます。",
+      "formation": "名詞1 ＋ から ＋ 名詞2 ＋ にかけて",
+      "examples": [
+        {
+          "translation": "午前９時から午後５時にかけて、仕事をしています。"
+        },
+        {
+          "translation": "東京から大阪にかけて、新幹線が走っています。"
+        },
+        {
+          "translation": "春から夏にかけて、花がたくさん咲いています。"
+        },
+        {
+          "translation": "２０歳から３０歳にかけて、多くの人が大学を卒業し、仕事に就くことが一般的です。"
+        }
+      ]
+    },
+    "ja_からには_55": {
+      "title": "～からには (〜kara niwa)",
+      "shortExplanation": "前述の事態が確定した事実や前提となった以上、それに見合う強い決意や当然の義務を果たすべきであることを表し、「〜である以上は」「〜のだから当然」という意味を表します。",
+      "longExplanation": "「～からには」は、先行する事柄が既成事実や避けられない前提となった状況において、「そうである以上は、覚悟を決めて後続の行為を行うのが当然である」という話し手の強い責任感、義務感、決意を表す表現です。後続の文には「〜なければならない」「〜べきだ」「〜つもりだ」「〜てはいけない」などの意志や義務を表す表現が呼応して用いられます。",
+      "formation": "動詞普通形 ＋ からには ｜ い形容詞 ＋ からには ｜ な形容詞 ＋ である／だ ＋ からには ｜ 名詞 ＋ である／だ ＋ からには",
+      "examples": [
+        {
+          "translation": "試験に合格したからには、一所懸命働かなければならない。"
+        },
+        {
+          "translation": "約束したからには、守らなければなりません。"
+        },
+        {
+          "translation": "この映画が面白いからには、友達にも見せたい。"
+        },
+        {
+          "translation": "彼女が助けを求めたからには、手伝わなければならない。"
+        }
+      ]
+    },
+    "ja_から見ると_56": {
+      "title": "～から見ると (〜kara miru to)",
+      "shortExplanation": "特定の立場、観点、あるいは物事の側面から眺めて判断や評価を下す表現で、「〜の立場から考えると」「〜の側面から言えば」という意味を表します。",
+      "longExplanation": "「～から見ると」（「〜から見れば」「〜から見て」も同義）は名詞に接続し、事態を考察する際の特定の視点・観点・側面（費用、実力、健康面、ある人物の立場など）を明示し、その角度から見た場合の妥当性や評価、判断を客観的・主観的に述べる表現です。",
+      "formation": "名詞 ＋ から見ると",
+      "examples": [
+        {
+          "translation": "費用から見ると、このプランはお得です。"
+        },
+        {
+          "translation": "彼女の意見から見ると、社長の決定は理解できる。"
+        },
+        {
+          "translation": "実力から見ると、彼はチームで最も優れている。"
+        },
+        {
+          "translation": "健康面から見ると、この食品は良くない。"
+        }
+      ]
+    },
+    "ja_から言うと_57": {
+      "title": "～から言うと (〜kara iuto)",
+      "shortExplanation": "ある特定の側面や評価基準に限定して意見や判断を述べる表現で、「〜の点から言えば」「〜の立場・基準で言えば」という意味を表します。",
+      "longExplanation": "「～から言うと」（「〜から言えば」「〜から言って」も同義）は、判断の対象となる性質、基準、側面（値段、味、利便性、健康など）を表す名詞に接続し、「他の要素はともかくとして、その側面だけに焦点を絞って述べるならば」というニュアンスで評価や意見を提示する表現です。",
+      "formation": "名詞 ＋ から言うと ／ から言って ／ から言えば",
+      "examples": [
+        {
+          "translation": "値段から言うと、この商品が最もお得です。"
+        },
+        {
+          "translation": "味から言って、このレストランはおいしいと思います。"
+        },
+        {
+          "translation": "便利さから言って、このアパートは最適な場所にあります。"
+        },
+        {
+          "translation": "健康から言うと、毎日運動することが大切です。"
+        }
+      ]
+    }
+  }
+}

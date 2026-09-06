@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Noun_30": {
+      "title": "Danh từ + と～ (to)",
+      "shortExplanation": "Dùng để nối các danh từ mang nghĩa 'và' (liệt kê toàn bộ) hoặc biểu thị 'cùng với' ai đó.",
+      "longExplanation": "Trợ từ 'と' được đặt sau danh từ để thực hiện hai chức năng chính: thứ nhất là liệt kê đầy đủ tất cả các đối tượng ('và', 'với'), khác với 'や' chỉ liệt kê mang tính đại diện; thứ hai là chỉ đối tượng cùng thực hiện hành động ('cùng với', thường đi kèm '一緒に').",
+      "formation": "Danh từ 1 + と + Danh từ 2 / Danh từ (người/đối tượng) + と (一緒に)",
+      "examples": [
+        {
+          "translation": "Tôi đã mua táo và chuối."
+        },
+        {
+          "translation": "Tôi sẽ đi xem phim cùng với bạn."
+        },
+        {
+          "translation": "Tôi đã đi du lịch cùng với bố và mẹ."
+        },
+        {
+          "translation": "Anh ấy và cô ấy đã kết hôn."
+        }
+      ]
+    },
+    "ja_Noun_31": {
+      "title": "Danh từ + に～ (ni)",
+      "shortExplanation": "Biểu thị đích đến, thời gian xác định, đối tượng hướng tới hoặc mục đích của hành động; 'vào lúc', 'đến', 'cho'.",
+      "longExplanation": "Trợ từ 'に' là một trong những trợ từ quan trọng và đa dụng nhất trong tiếng Nhật. Khi đứng sau danh từ, 'に' biểu thị điểm đến của sự di chuyển (đi đến đâu), thời điểm diễn ra hành động (vào lúc mấy giờ, ngày nào có con số cụ thể), hoặc đối tượng tiếp nhận hành động (tặng cho ai, viết thư cho ai).",
+      "formation": "Danh từ (thời gian / địa điểm / đối tượng) + に",
+      "examples": [
+        {
+          "translation": "Tôi đã tặng một món quà cho cô ấy."
+        },
+        {
+          "translation": "Tôi sẽ đi Nhật Bản."
+        },
+        {
+          "translation": "Chúng ta hãy tập hợp lúc 6 giờ nhé."
+        },
+        {
+          "translation": "Tôi sẽ viết một lá thư cho bạn."
+        }
+      ]
+    },
+    "ja_Noun_32": {
+      "title": "Danh từ + に帰ります (ni kaerimasu)",
+      "shortExplanation": "Diễn tả việc trở về một nơi chốn quen thuộc, nơi vốn dĩ thuộc về mình; 'trở về / về (nhà, quê, nước...)'.",
+      "longExplanation": "Mẫu câu 'Danh từ + に帰ります' dùng để diễn tả hành động trở về một địa điểm mà người nói vốn dĩ thuộc về hoặc là nơi chốn cố định của họ (như nhà '家', quê hương/nhà bố mẹ đẻ '実家', đất nước của mình '国', trường học '学校'). Trợ từ 'に' ở đây dùng để chỉ đích đến của hành vi trở về.",
+      "formation": "Danh từ (địa điểm / quê hương / nhà) + に + 帰ります",
+      "examples": [
+        {
+          "translation": "Khi kỳ nghỉ hè kết thúc, tôi sẽ quay trở lại trường."
+        },
+        {
+          "translation": "Mua sắm xong, tôi sẽ về nhà."
+        },
+        {
+          "translation": "Cuối tuần này, tôi sẽ về nhà bố mẹ đẻ (quê nhà)."
+        },
+        {
+          "translation": "Sau khi đi du lịch cùng bạn bè, tôi sẽ trở về Tokyo."
+        }
+      ]
+    },
+    "ja_Noun_33": {
+      "title": "Danh từ + にします (ni shimasu)",
+      "shortExplanation": "Biểu thị sự lựa chọn hoặc quyết định chọn một cái gì đó; 'chọn...', 'quyết định lấy...'.",
+      "longExplanation": "Cấu trúc 'Danh từ + にします' được sử dụng phổ biến trong sinh hoạt hàng ngày khi đưa ra quyết định hoặc lựa chọn từ nhiều khả năng, ví dụ như gọi món tại nhà hàng, chọn mua một món đồ hay quyết định kế hoạch. Nó nhấn mạnh ý chí chủ quan của người nói khi chọn phương án đó.",
+      "formation": "Danh từ + に します",
+      "examples": [
+        {
+          "translation": "Bữa trưa hôm nay tôi chọn ăn sushi."
+        },
+        {
+          "translation": "Tôi đang phân vân có nên mua đôi giày này không, nhưng tôi quyết định chọn đôi màu đỏ."
+        },
+        {
+          "translation": "Tôi đã quyết định sẽ làm gì vào ngày nghỉ rồi. Tôi quyết định sẽ đi đến rạp chiếu phim."
+        },
+        {
+          "translation": "Tôi đã phân vân giữa việc học tiếng Pháp hay tiếng Tây Ban Nha, nhưng cuối cùng tôi chọn tiếng Pháp."
+        }
+      ]
+    },
+    "ja_Noun_34": {
+      "title": "Danh từ + になります (ni narimasu)",
+      "shortExplanation": "Diễn tả sự biến đổi tự nhiên hoặc sự thay đổi trạng thái thành một cái gì đó; 'trở thành', 'trở nên', 'biến thành'.",
+      "longExplanation": "Cấu trúc 'Danh từ + になります' dùng để diễn tả sự thay đổi về thân phận, nghề nghiệp, thời gian hoặc trạng thái, biểu thị kết quả của một quá trình biến đổi tự nhiên hoặc khách quan mà không nhấn mạnh vào sự can thiệp của ý chí (khác với 'にします' vốn là lựa chọn có chủ ý).",
+      "formation": "Danh từ + に + なります",
+      "examples": [
+        {
+          "translation": "Anh ấy sẽ trở thành bác sĩ."
+        },
+        {
+          "translation": "Những chiếc lá màu nâu này sẽ chuyển sang màu đỏ."
+        },
+        {
+          "translation": "Khi món ăn nguội đi thì sẽ không còn ngon nữa."
+        },
+        {
+          "translation": "Sang năm sẽ là Thế vận hội Tokyo."
+        }
+      ]
+    },
+    "ja_Noun_35": {
+      "title": "Danh từ + に来ます (ni kimasu)",
+      "shortExplanation": "Biểu thị hành động di chuyển đến một địa điểm (hướng về phía người nói); 'đến / tới (nơi nào đó)'.",
+      "longExplanation": "Mẫu câu 'Danh từ + に来ます' dùng để chỉ hành động của người hoặc vật di chuyển hướng về phía vị trí của người nói hoặc điểm quy chiếu hiện tại. Danh từ đứng trước trợ từ 'に' là đích đến của hành động đến.",
+      "formation": "Danh từ (địa điểm) + に + 来ます",
+      "examples": [
+        {
+          "translation": "Bạn tôi sẽ đến nhà tôi chơi."
+        },
+        {
+          "translation": "Tối nay, bố sẽ đến ga đón tôi."
+        },
+        {
+          "translation": "Ngày mai thầy giáo sẽ đến trường."
+        },
+        {
+          "translation": "Một ca sĩ nổi tiếng sẽ đến thành phố này."
+        }
+      ]
+    },
+    "ja_Noun_36": {
+      "title": "Danh từ + に行きます (ni ikimasu)",
+      "shortExplanation": "Biểu thị hành động di chuyển rời xa vị trí hiện tại để đi đến một địa điểm; 'đi đến / tới (nơi nào đó)'.",
+      "longExplanation": "Cấu trúc 'Danh từ + に行きます' dùng để diễn tả hành động đi đến một địa điểm hoặc đích đến nhất định, hướng ra xa khỏi vị trí của người nói. Danh từ chỉ nơi chốn đứng trước trợ từ 'に' đóng vai trò là đích đến của sự di chuyển.",
+      "formation": "Danh từ (địa điểm / nơi chốn) + に + 行きます",
+      "examples": [
+        {
+          "translation": "Tôi đi đến trường."
+        },
+        {
+          "translation": "Ngày mai tôi sẽ đi siêu thị."
+        },
+        {
+          "translation": "Cuối tuần tôi sẽ đi rạp chiếu phim."
+        },
+        {
+          "translation": "Vào kỳ nghỉ hè, tôi sẽ đi biển."
+        }
+      ]
+    },
+    "ja_Noun_37": {
+      "title": "Danh từ + のあとで (no ato de)",
+      "shortExplanation": "Diễn tả thứ tự trước sau của hành động; 'sau khi...', 'sau...'.",
+      "longExplanation": "Mẫu câu 'Danh từ + のあとで' dùng để chỉ một sự việc hoặc hành động diễn ra sau một sự kiện, mốc thời gian hoặc hành vi do danh từ đó biểu thị. Danh từ kết hợp thường là danh từ chỉ hành động/sự kiện (như bữa ăn, cuộc họp, buổi xem phim). Trợ từ 'の' được dùng để liên kết danh từ với 'あとで'.",
+      "formation": "Danh từ (sự kiện / hành vi) + の + あとで",
+      "examples": [
+        {
+          "translation": "Sau bữa ăn sáng, tôi đánh răng."
+        },
+        {
+          "translation": "Sau buổi xem phim, chúng tôi đã ăn tối tại nhà hàng."
+        },
+        {
+          "translation": "Sau cuộc họp, tôi sẽ trao đổi với cấp trên."
+        },
+        {
+          "translation": "Sau bữa tối, tôi đã đi dạo bộ."
+        }
+      ]
+    },
+    "ja_Noun_38": {
+      "title": "Danh từ + の前に (no mae ni)",
+      "shortExplanation": "Dùng để biểu thị vị trí không gian ở 'phía trước / trước mặt' của một đối tượng hoặc địa điểm.",
+      "longExplanation": "Mẫu câu 'Danh từ + の前に' trong ngữ cảnh không gian được dùng để chỉ vị trí nằm ở ngay phía trước hoặc mặt tiền của một sự vật, địa điểm hoặc con người. Danh từ liên kết với danh từ chỉ phương hướng '前' thông qua trợ từ 'の', và 'に' biểu thị điểm định vị trong không gian.",
+      "formation": "Danh từ (địa điểm / người / vật thể) + の + 前に",
+      "examples": [
+        {
+          "translation": "Ở trước nhà ga có một cửa hàng tiện lợi."
+        },
+        {
+          "translation": "Xin vui lòng đỗ xe ở trước nhà."
+        },
+        {
+          "translation": "Anh ấy đã đứng ở ngay phía trước tôi."
+        },
+        {
+          "translation": "Một chiếc taxi đã đến trước khách sạn."
+        }
+      ]
+    },
+    "ja_Noun_39": {
+      "title": "Danh từ + は～ (wa)",
+      "shortExplanation": "Trợ từ chỉ chủ đề của câu; nêu ra đề tài được nói đến; 'về phần...', 'còn... thì'.",
+      "longExplanation": "Trợ từ 'は' (đọc là 'wa') là trợ từ chỉ chủ đề cơ bản nhất trong tiếng Nhật. Nó đứng sau danh từ để đưa danh từ đó lên làm chủ đề hoặc đề tài thảo luận của câu ('nói về X thì...'). 'は' khác với trợ từ chủ ngữ 'が' ở chỗ: 'は' nhấn mạnh phần vị ngữ đằng sau để thuyết minh về chủ đề, trong khi 'が' nhấn mạnh chính bản thân chủ ngữ đứng trước nó.",
+      "formation": "Danh từ + は",
+      "examples": [
+        {
+          "translation": "Tôi thích các món ăn Nhật Bản."
+        },
+        {
+          "translation": "Anh ấy rất giỏi tiếng Anh."
+        },
+        {
+          "translation": "Quyển sách này thú vị thật đấy."
+        },
+        {
+          "translation": "Hôm nay trời nóng quá nhỉ."
+        }
+      ]
+    },
+    "ja_Noun_40": {
+      "title": "Danh từ + も～ (mo)",
+      "shortExplanation": "Biểu thị sự đồng nhất về tính chất hoặc hành động với đối tượng đã nêu trước đó; 'cũng', 'cả... lẫn...'.",
+      "longExplanation": "Trợ từ 'も' đứng sau danh từ để biểu thị sự đồng nhất hoặc thêm vào, tương đương với 'cũng' trong tiếng Việt. Khi dùng 'も', nó sẽ thay thế cho các trợ từ như 'は' hoặc 'が'. Ngoài ra, cấu trúc lặp lại 'Danh từ 1 + も + Danh từ 2 + も' được dùng để diễn tả ý nghĩa 'cả A lẫn B đều...'.",
+      "formation": "Danh từ + も / Danh từ 1 + も + Danh từ 2 + も",
+      "examples": [
+        {
+          "translation": "Tôi cũng đang học tiếng Nhật."
+        },
+        {
+          "translation": "Anh ấy cũng thích bánh ngọt."
+        },
+        {
+          "translation": "Cả Tokyo lẫn Osaka đều có rất nhiều điểm du lịch."
+        },
+        {
+          "translation": "Cả bộ phim này lẫn bộ phim kia đều rất hay."
+        }
+      ]
+    },
+    "ja_Noun_41": {
+      "title": "Danh từ 1 + や + Danh từ 2 + など～ (ya ... nado)",
+      "shortExplanation": "Liệt kê không đầy đủ một vài ví dụ tiêu biểu; 'như là... và... chẳng hạn / vân vân'.",
+      "longExplanation": "Cấu trúc 'Danh từ 1 + や + Danh từ 2 + など' dùng để liệt kê mang tính đại diện một vài sự vật, sự việc cùng loại mà không liệt kê hết toàn bộ (khác với 'と' là liệt kê triệt để tất cả). 'や' có nghĩa là 'và... chẳng hạn', còn 'など' mang nghĩa là 'vân vân', 'những thứ như là'.",
+      "formation": "Danh từ 1 + や + Danh từ 2 (+ など)",
+      "examples": [
+        {
+          "translation": "Anh ấy thích ăn những món như rau củ và hoa quả."
+        },
+        {
+          "translation": "Tôi muốn đến các thành phố của Nhật Bản như Tokyo, Osaka chẳng hạn."
+        },
+        {
+          "translation": "Cô ấy thích các loài động vật như mèo và chó."
+        },
+        {
+          "translation": "Ở hiệu sách này có bán rất nhiều loại sách như truyện tranh và tiểu thuyết."
+        }
+      ]
+    },
+    "ja_Noun_42": {
+      "title": "Danh từ + を～ (o/wo)",
+      "shortExplanation": "Trợ từ chỉ tân ngữ trực tiếp của ngoại động từ; biểu thị đối tượng chịu tác động của hành động.",
+      "longExplanation": "Trợ từ 'を' (viết là wo nhưng phát âm là 'o') là trợ từ cách cơ bản được đặt sau danh từ để đánh dấu danh từ đó là tân ngữ trực tiếp chịu tác động của tha động từ (ngoại động từ) đi sau (ví dụ: ăn cơm, đọc sách, uống cà phê).",
+      "formation": "Danh từ (tân ngữ) + を + Tha động từ",
+      "examples": [
+        {
+          "translation": "Tôi đọc sách."
+        },
+        {
+          "translation": "Anh ấy đã ăn bánh ngọt."
+        },
+        {
+          "translation": "Mẹ tôi thích uống cà phê."
+        },
+        {
+          "translation": "Bạn tôi đã dùng bút của tôi."
+        }
+      ]
+    },
+    "ja_Verb_43": {
+      "title": "Động từ thể た + あとで (ta ato de)",
+      "shortExplanation": "Diễn tả sau khi hoàn thành một hành động nào đó thì mới thực hiện hành động tiếp theo; 'sau khi làm...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Động từ thể た + あとで' dùng để diễn tả trật tự thời gian giữa hai hành động, trong đó hành động đứng trước (chia ở thể た) phải được hoàn thành trọn vẹn rồi mới tiến hành hành động ở vế sau. Cấu trúc này nhấn mạnh rõ sự kết thúc của hành động thứ nhất.",
+      "formation": "Động từ thể た + あとで",
+      "examples": [
+        {
+          "translation": "Sau khi làm xong bài tập về nhà, tôi đã xem ti vi."
+        },
+        {
+          "translation": "Sau khi ăn bữa sáng xong, tôi đánh răng."
+        },
+        {
+          "translation": "Sau khi công việc kết thúc, tôi dự định sẽ đi đến phòng tập gym."
+        },
+        {
+          "translation": "Sau khi xem phim xong, tôi đã uống cà phê ở một quán cà phê."
+        }
+      ]
+    },
+    "ja_Verb_44": {
+      "title": "Động từ thể ます bỏ ます + たいです (taidesu)",
+      "shortExplanation": "Diễn tả mong muốn hoặc nguyện vọng làm một việc gì đó của người nói; 'muốn làm...'.",
+      "longExplanation": "Đuôi trợ động từ '～たい' được gắn vào sau thân động từ (thể ます bỏ ます) để thể hiện nguyện vọng hoặc mong muốn chủ quan của người nói ('tôi muốn...'). Khi dùng ở dạng lịch sự, ta thêm 'です' thành '～たいです'. Trợ từ chỉ tân ngữ của động từ có thể dùng cả 'を' lẫn 'が' (ví dụ: 水を飲みたい / 水が飲みたい). Khi nói về nguyện vọng của người thứ ba, người Nhật thường dùng dạng '～たがっている' thay vì '～たいです'.",
+      "formation": "Động từ thể ます bỏ ます + たいです (Động từ nhóm 1: đổi đuôi sang cột い + たいです; Động từ nhóm 2: bỏ る + たいです; Động từ nhóm 3: する → したいです, くる → きたいです)",
+      "examples": [
+        {
+          "translation": "Tôi muốn ăn sushi."
+        },
+        {
+          "translation": "Anh ấy muốn đi Nhật Bản."
+        },
+        {
+          "translation": "Cô ấy muốn học tiếng Anh."
+        },
+        {
+          "translation": "Lũ trẻ muốn được vui chơi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Noun_30": {
+      "title": "名词 + と～ (to)",
+      "shortExplanation": "用于连接名词，表示并列“和”（完全列举）或表示“和……一起”（伴随者）。",
+      "longExplanation": "格助词“と”接在名词后，主要有两种核心用法：一是用于完全列举名词，意为“和”、“与”，将所有列举的事项逐一完整列出；二是表示共同进行某动作的伙伴或对象，意为“和……一起”，常与副词“一緒に”搭配使用。",
+      "formation": "名词1 + と + 名词2 / 名词（人物/伴随对象） + と（一緒に）",
+      "examples": [
+        {
+          "translation": "我买了苹果和香蕉。"
+        },
+        {
+          "translation": "我和朋友一起去看电影。"
+        },
+        {
+          "translation": "我和父亲母亲一起去旅行了。"
+        },
+        {
+          "translation": "他和她结婚了。"
+        }
+      ]
+    },
+    "ja_Noun_31": {
+      "title": "名词 + に～ (ni)",
+      "shortExplanation": "表示移动的目的地、具体的时间点、动作的对象或接受者；“在……”、“到……”、“给……”等。",
+      "longExplanation": "格助词“に”接在名词后面，是日语中最基础且用法广泛的助词之一。主要用法包括：① 表示动作发生的具体时刻（通常带数字，如“6時に”）；② 表示移动行为的到达目的地或归着点（如“日本に行く”）；③ 表示动作指向的对象或接受者（如“彼女にプレゼントをあげる”）。",
+      "formation": "名词（时间 / 场所 / 动作对象） + に",
+      "examples": [
+        {
+          "translation": "我送给了她一份礼物。"
+        },
+        {
+          "translation": "我要去日本。"
+        },
+        {
+          "translation": "我们6点集合吧。"
+        },
+        {
+          "translation": "我给朋友写信。"
+        }
+      ]
+    },
+    "ja_Noun_32": {
+      "title": "名词 + に帰ります (ni kaerimasu)",
+      "shortExplanation": "表示返回、回到某地（通常指原本属于自己的归属地，如家、故乡、祖国等）；“回……”、“返回”。",
+      "longExplanation": "句型“名词 + に帰ります”用于表示物理上返回某一个本属于自己的场所，比如自己的家（家）、老家/娘家（実家）、祖国（国）或学校等。助词“に”表示返回的目标归宿地或终点。动词“帰る”含有“归去、回归本位”的语感。",
+      "formation": "名词（地点 / 场所） + に + 帰ります",
+      "examples": [
+        {
+          "translation": "暑假结束后，我就回学校。"
+        },
+        {
+          "translation": "买完东西后，我就回家。"
+        },
+        {
+          "translation": "这个周末我回老家（父母家）。"
+        },
+        {
+          "translation": "和朋友去旅游之后，我将返回东京。"
+        }
+      ]
+    },
+    "ja_Noun_33": {
+      "title": "名词 + にします (ni shimasu)",
+      "shortExplanation": "表示做出选择或决定；“决定要……”、“选……”、“定为……”。",
+      "longExplanation": "句型“名词 + にします”用于表达说话人经过考虑后做出的主观选择或决定。在餐馆点餐、购物挑选商品或确定计划安排时极为常用，表示在多种可能性中选定了某一项。",
+      "formation": "名词 + に します",
+      "examples": [
+        {
+          "translation": "今天午饭我选寿司。"
+        },
+        {
+          "translation": "我还在犹豫买不买这双鞋，不过还是决定选红色的那一双。"
+        },
+        {
+          "translation": "休息日做什么我已经决定好了。决定去电影院看电影。"
+        },
+        {
+          "translation": "在学法语还是西班牙语之间纠结了一番，但最后我还是决定学法语。"
+        }
+      ]
+    },
+    "ja_Noun_34": {
+      "title": "名词 + になります (ni narimasu)",
+      "shortExplanation": "表示状态的转变、结果或自然变化；“成为……”、“变成……”、“到（某个时间/时期）”。",
+      "longExplanation": "句型“名词 + になります”用于表示客观的、自然的状态改变或转变的结果，强调事物自然而然地发展成某种身份、职业、状态或时间节点（与表示主观决定的“にします”形成对比）。",
+      "formation": "名词 + に + なります",
+      "examples": [
+        {
+          "translation": "他要成为一名医生。"
+        },
+        {
+          "translation": "这片褐色的叶子会变成红色。"
+        },
+        {
+          "translation": "菜凉了之后，就会变得不好吃了。"
+        },
+        {
+          "translation": "明年就是东京奥运会了。"
+        }
+      ]
+    },
+    "ja_Noun_35": {
+      "title": "名词 + に来ます (ni kimasu)",
+      "shortExplanation": "表示朝着说话人所在的位置或立足点移动；“来到（某处）”。",
+      "longExplanation": "句型“名词 + に来ます”用于表示人或事物朝着说话人当前所在的位置、立场或参照点进行移动。助词“に”表示移动的目标目的地或到达点。",
+      "formation": "名词（地点 / 场所） + に + 来ます",
+      "examples": [
+        {
+          "translation": "朋友要来我家。"
+        },
+        {
+          "translation": "今晚爸爸会来车站接我。"
+        },
+        {
+          "translation": "明天老师会来学校。"
+        },
+        {
+          "translation": "著名歌手要来这座城市。"
+        }
+      ]
+    },
+    "ja_Noun_36": {
+      "title": "名词 + に行きます (ni ikimasu)",
+      "shortExplanation": "表示从当前地点朝向另一目的地移动；“去（某处）”、“到（某地）去”。",
+      "longExplanation": "句型“名词 + に行きます”用于表示离开说话人当前所在地、朝向某个特定目的地移动的动作。名词后接格助词“に”，用来明确指出移动的目标到达点。",
+      "formation": "名词（地点 / 场所） + に + 行きます",
+      "examples": [
+        {
+          "translation": "我去学校。"
+        },
+        {
+          "translation": "明天我去超市。"
+        },
+        {
+          "translation": "周末我要去电影院。"
+        },
+        {
+          "translation": "暑假我要去海边。"
+        }
+      ]
+    },
+    "ja_Noun_37": {
+      "title": "名词 + のあとで (no ato de)",
+      "shortExplanation": "表示事情发生的时间先后顺序；“在……之后”。",
+      "longExplanation": "句型“名词 + のあとで”用于表示某动作或事件发生在所提及的名词（通常指某个事件、动作或时间段）之后。名词与“あとで”之间必须用助词“の”连接。",
+      "formation": "名词（事件 / 动作名词） + の + あとで",
+      "examples": [
+        {
+          "translation": "吃过早饭后，我刷牙。"
+        },
+        {
+          "translation": "看完电影后，我们在餐厅吃了晚饭。"
+        },
+        {
+          "translation": "会议结束后，我和上司商谈。"
+        },
+        {
+          "translation": "吃过晚饭后，我去散了步。"
+        }
+      ]
+    },
+    "ja_Noun_38": {
+      "title": "名词 + の前に (no mae ni)",
+      "shortExplanation": "表示空间位置上的“在……的前面”、“在……前面”。",
+      "longExplanation": "句型“名词 + の前に”用于描述空间方位的相对位置，表示处于某人、某物或某场所的正前方或门前。名词与方位词“前”之间用助词“の”连接，助词“に”表示存在或动作发生的场所位置点。",
+      "formation": "名词（场所 / 人 / 物体） + の + 前に",
+      "examples": [
+        {
+          "translation": "车站前有一家便利店。"
+        },
+        {
+          "translation": "请把车停在房子前面。"
+        },
+        {
+          "translation": "他当时站在我的前面。"
+        },
+        {
+          "translation": "出租车开到了酒店门前。"
+        }
+      ]
+    },
+    "ja_Noun_39": {
+      "title": "名词 + は～ (wa)",
+      "shortExplanation": "提示助词，提示句子的主题或谈话的焦点；相当于“关于……而言”、“……是”。",
+      "longExplanation": "提示助词“は”（读作 wa）接在名词之后，用于提示整个句子的主旨或谈话的话题，引导后续谓语对该主题进行说明或叙述。与主格助词“が”不同，“は”强调后续的说明内容（谓语），而“が”强调动作的主体本身。",
+      "formation": "名词 + は",
+      "examples": [
+        {
+          "translation": "我喜欢日本料理。"
+        },
+        {
+          "translation": "他的英语很好。"
+        },
+        {
+          "translation": "这本书很有趣。"
+        },
+        {
+          "translation": "今天真热呀。"
+        }
+      ]
+    },
+    "ja_Noun_40": {
+      "title": "名词 + も～ (mo)",
+      "shortExplanation": "表示同类事物的追加、兼提或并列；“也”、“……和……都”。",
+      "longExplanation": "提示助词“も”接在名词后，用于表示该事物具有与前面所提到事物相同的性质或动作，相当于汉语的“也”。使用“も”时通常替代主格助词“が”或提示助词“は”。若重复使用为“名词1 + も + 名词2 + も”，则表示“既……又……”或“……和……都……”。",
+      "formation": "名词 + も / 名词1 + も + 名词2 + も",
+      "examples": [
+        {
+          "translation": "我也在学日语。"
+        },
+        {
+          "translation": "他也喜欢吃蛋糕。"
+        },
+        {
+          "translation": "东京和大阪都有很多观光景点。"
+        },
+        {
+          "translation": "这部电影和那部电影都很有意思。"
+        }
+      ]
+    },
+    "ja_Noun_41": {
+      "title": "名词1 + や + 名词2 + など～ (ya ... nado)",
+      "shortExplanation": "用于不完全列举同类事物中的代表性例子；“……和……等”、“诸如……之类”。",
+      "longExplanation": "句型“名词1 + や + 名词2 + など”用于在众多同类事物中列举出两三个具有代表性的例子，暗示还有其他未列出的项目，属于非完全列举（与表示完全列举的“と”相对）。“や”表示并列举例，“等等”由“など”表示。",
+      "formation": "名词1 + や + 名词2 (+ など)",
+      "examples": [
+        {
+          "translation": "他喜欢吃蔬菜和水果之类的食物。"
+        },
+        {
+          "translation": "我想去日本的城市，比如东京、大阪等地方。"
+        },
+        {
+          "translation": "她喜欢猫、狗等动物。"
+        },
+        {
+          "translation": "这家书店里卖着漫画、小说等许多书籍。"
+        }
+      ]
+    },
+    "ja_Noun_42": {
+      "title": "名词 + を～ (o/wo)",
+      "shortExplanation": "宾格助词，表示他动词（及物动词）的直接宾语或动作作用的对象。",
+      "longExplanation": "格助词“を”（读作 o）接在名词之后，用于提示该名词为他动词（及物动词）所作用的直接对象（即宾语）。在句中表示“吃某物”、“读某书”、“喝某饮品”等行为所指向的目标事物。",
+      "formation": "名词（宾语） + を + 他动词",
+      "examples": [
+        {
+          "translation": "我看书。"
+        },
+        {
+          "translation": "他吃了蛋糕。"
+        },
+        {
+          "translation": "妈妈喜欢喝咖啡。"
+        },
+        {
+          "translation": "朋友用了我的笔。"
+        }
+      ]
+    },
+    "ja_Verb_43": {
+      "title": "动词た形 + あとで (ta ato de)",
+      "shortExplanation": "表示前一个动作完成之后，再进行后一个动作；“在做完……之后”。",
+      "longExplanation": "句型“动词た形 + あとで”用于表达前后两个动作在时间上的先后顺序。前项动词必须变为过去形式（た形），表示前一个动作必须完全结束、告一段落之后，才发生或进行后项的动作。",
+      "formation": "动词た形 + あとで",
+      "examples": [
+        {
+          "translation": "做完作业之后，我看了电视。"
+        },
+        {
+          "translation": "吃完早饭之后，我刷牙。"
+        },
+        {
+          "translation": "工作结束之后，我打算去健身房。"
+        },
+        {
+          "translation": "看完电影之后，我在咖啡馆喝了咖啡。"
+        }
+      ]
+    },
+    "ja_Verb_44": {
+      "title": "动词连用形 + たいです (taidesu)",
+      "shortExplanation": "表示说话人想做某事的愿望或意愿；“想（做某事）”。",
+      "longExplanation": "希望助动词“～たい”接在动词连用形（ます形去掉ます）之后，主要用于表达第一人称（说话人）自身的愿望或意向。句尾加上“です”构成礼貌体“～たいです”。在表示愿望的对象时，宾格助词“を”常可换用为“が”（如“寿司が食べたい”）。当表达第三人称的愿望时，日语中通常使用“～たがっている”或“～たいと言っている”。",
+      "formation": "动词连用形（ます形去掉ます） + たいです（一类动词：词尾う段变い段 + たいです；二类动词：去る + たいです；三类动词：する → したいです，くる → きたいです）",
+      "examples": [
+        {
+          "translation": "我想吃寿司。"
+        },
+        {
+          "translation": "他想去日本。"
+        },
+        {
+          "translation": "她想学英语。"
+        },
+        {
+          "translation": "孩子们想玩耍。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Noun_30": {
+      "title": "명사 + と～ (to)",
+      "shortExplanation": "명사와 명사를 대등하게 이어 '와/과'의 뜻을 나타내거나, 동작을 함께하는 대상인 '~와 함께'를 나타냅니다.",
+      "longExplanation": "격조사 'と'는 명사 뒤에 붙어 크게 두 가지 역할을 합니다. 첫째는 사물이나 대상을 완전 열거하여 '와/과'로 나열하는 용법이며, 둘째는 어떤 동작을 함께 수행하는 동반자나 상대를 나타내는 '~와/과 함께'의 의미입니다. 동반을 나타낼 때는 부사 '一緒に(함께)'와 호응하여 자주 쓰입니다.",
+      "formation": "명사1 + と + 명사2 / 명사(인물/대상) + と (一緒に)",
+      "examples": [
+        {
+          "translation": "사과와 바나나를 샀습니다."
+        },
+        {
+          "translation": "친구와 영화를 보러 갑니다."
+        },
+        {
+          "translation": "아버지, 어머니와 함께 여행했습니다."
+        },
+        {
+          "translation": "그와 그녀는 결혼했습니다."
+        }
+      ]
+    },
+    "ja_Noun_31": {
+      "title": "명사 + に～ (ni)",
+      "shortExplanation": "동작이 이루어지는 구체적인 시점, 이동의 목적지, 동작이 향하는 대상(상대방)을 나타냅니다; '~에', '~에게'.",
+      "longExplanation": "격조사 'に'는 명사 뒤에 붙어 다양한 문법적 의미를 나타냅니다. 대표적으로 ① 숫자가 포함된 구체적인 시간을 가리킬 때('~에'), ② 이동 동사와 결합하여 도달점이나 목적지를 나타낼 때('~에/로'), ③ 동작이 전달되는 대상이나 상대방을 가리킬 때('~에게/께') 사용됩니다.",
+      "formation": "명사(시간 / 장소 / 대상) + に",
+      "examples": [
+        {
+          "translation": "그녀에게 선물을 주었습니다."
+        },
+        {
+          "translation": "일본에 갑니다."
+        },
+        {
+          "translation": "6시에 모입시다."
+        },
+        {
+          "translation": "친구에게 편지를 씁니다."
+        }
+      ]
+    },
+    "ja_Noun_32": {
+      "title": "명사 + に帰ります (ni kaerimasu)",
+      "shortExplanation": "원래 속해 있거나 돌아가야 할 장소로 되돌아감을 나타내며, '~에/로 돌아갑니다'라는 뜻입니다.",
+      "longExplanation": "'명사 + に帰ります' 문형은 집(家), 고향/본가(実家), 모국(国), 학교 등 자신이 본래 소속되어 있거나 생활 기반이 있는 장소로 돌아가는 행위를 나타냅니다. 조사 'に'는 되돌아가는 귀착점(목적지)을 가리킵니다.",
+      "formation": "명사(장소 / 귀착점) + に + 帰ります",
+      "examples": [
+        {
+          "translation": "여름방학이 끝나면 학교로 돌아갑니다."
+        },
+        {
+          "translation": "쇼핑을 마치면 집으로 돌아갑니다."
+        },
+        {
+          "translation": "이번 주말에 본가(부모님 댁)로 돌아갑니다."
+        },
+        {
+          "translation": "친구와 여행을 다녀온 뒤 도쿄로 돌아갑니다."
+        }
+      ]
+    },
+    "ja_Noun_33": {
+      "title": "명사 + にします (ni shimasu)",
+      "shortExplanation": "여러 가지 중에서 하나를 선택하거나 결정함을 나타내며, '~로 하겠습니다', '~로 정하겠습니다'라는 뜻입니다.",
+      "longExplanation": "'명사 + にします'는 여러 선택지 가운데 화자가 자신의 의지로 하나를 골라 결정할 때 사용하는 표현입니다. 음식점에서 메뉴를 주문할 때나 물건을 고를 때, 일정을 정할 때 아주 자주 쓰입니다.",
+      "formation": "명사 + に します",
+      "examples": [
+        {
+          "translation": "오늘 점심은 초밥으로 하겠습니다."
+        },
+        {
+          "translation": "이 신발을 살지 고민 중이지만, 빨간색 쪽으로 하겠습니다."
+        },
+        {
+          "translation": "쉬는 날에 무엇을 할지 정했다. 영화관에 가기로 하겠습니다."
+        },
+        {
+          "translation": "프랑스어와 스페인어 중 어느 쪽을 공부할지 고민했지만, 프랑스어로 정했습니다."
+        }
+      ]
+    },
+    "ja_Noun_34": {
+      "title": "명사 + になります (ni narimasu)",
+      "shortExplanation": "자연스러운 상태의 변화나 결과, 신분 등의 변화를 나타내며, '~이/가 되다'라는 뜻입니다.",
+      "longExplanation": "'명사 + になります' 문형은 어떤 대상이 자연스럽게 다른 상태나 신분, 직업 등으로 변하거나 특정 시기·시간에 도달함을 나타냅니다. 화자의 주관적 선택을 나타내는 'にします'와 달리 객관적이거나 자연스러운 변화의 결과를 나타낼 때 쓰입니다.",
+      "formation": "명사 + に + なります",
+      "examples": [
+        {
+          "translation": "그는 의사가 됩니다."
+        },
+        {
+          "translation": "이 갈색 잎이 붉게 변합니다."
+        },
+        {
+          "translation": "요리가 식으면 맛이 없어집니다."
+        },
+        {
+          "translation": "내년이면 도쿄 올림픽이 됩니다."
+        }
+      ]
+    },
+    "ja_Noun_35": {
+      "title": "명사 + に来ます (ni kimasu)",
+      "shortExplanation": "화자가 위치한 장소나 기준점으로 이동해 옴을 나타내며, '~에/로 옵니다'라는 뜻입니다.",
+      "longExplanation": "'명사 + に来ます' 문형은 사람이나 사물이 화자가 위치한 쪽이나 대화의 기준 장소를 향해 이동해 오는 동작을 나타냅니다. 명사 뒤의 조사 'に'는 이동의 도착점을 나타냅니다.",
+      "formation": "명사(장소 / 도착점) + に + 来ます",
+      "examples": [
+        {
+          "translation": "친구가 우리 집에 옵니다."
+        },
+        {
+          "translation": "오늘 밤 아버지가 역으로 마중을 오십니다."
+        },
+        {
+          "translation": "내일 선생님께서 학교에 오십니다."
+        },
+        {
+          "translation": "유명한 가수가 이 동네에 옵니다."
+        }
+      ]
+    },
+    "ja_Noun_36": {
+      "title": "명사 + に行きます (ni ikimasu)",
+      "shortExplanation": "현재 위치에서 특정 목적지를 향해 나아감을 나타내며, '~에/로 갑니다'라는 뜻입니다.",
+      "longExplanation": "'명사 + に行きます' 문형은 화자의 위치에서 벗어나 다른 목적지나 장소로 이동하는 행위를 나타냅니다. 이동의 목적지를 나타내는 명사 뒤에 조사 'に'를 붙이고 'いきます'를 연결합니다.",
+      "formation": "명사(장소 / 목적지) + に + 行きます",
+      "examples": [
+        {
+          "translation": "학교에 갑니다."
+        },
+        {
+          "translation": "내일 슈퍼마켓에 갑니다."
+        },
+        {
+          "translation": "주말에 영화관에 갑니다."
+        },
+        {
+          "translation": "여름방학에 바다에 갑니다."
+        }
+      ]
+    },
+    "ja_Noun_37": {
+      "title": "명사 + のあとで (no ato de)",
+      "shortExplanation": "어떤 사건이나 동작이 끝난 뒤에 다음 일이 일어남을 나타내며, '~ 후에', '~ 뒤에'라는 뜻입니다.",
+      "longExplanation": "'명사 + のあとで' 문형은 특정 사건이나 행위, 시간을 나타내는 명사 뒤에 붙어, 그 일의 종료 이후에 다른 동작이나 상황이 일어나는 시간적 선후 관계를 표현합니다. 명사와 'あとで' 사이에는 연체조사 'の'가 결합합니다.",
+      "formation": "명사(동작성 명사 / 사건) + の + あとで",
+      "examples": [
+        {
+          "translation": "아침 식사 후에 이를 닦습니다."
+        },
+        {
+          "translation": "영화가 끝난 후에 레스토랑에서 저녁을 먹었습니다."
+        },
+        {
+          "translation": "회의 후에 상사와 상의합니다."
+        },
+        {
+          "translation": "저녁 식사 후에 산책을 갔습니다."
+        }
+      ]
+    },
+    "ja_Noun_38": {
+      "title": "명사 + の前に (no mae ni)",
+      "shortExplanation": "공간적인 위치에서 어떤 대상이나 장소의 '앞에' 있음을 나타냅니다.",
+      "longExplanation": "'명사 + の前に' 문형은 물리적인 공간 위치를 나타내며, 기준이 되는 인물, 사물, 건물의 바로 '앞에' 다른 대상이 존재하거나 어떤 동작이 일어남을 표현합니다. 기준 명사와 '前'은 조사 'の'로 연결됩니다.",
+      "formation": "명사(장소 / 인물 / 물체) + の + 前に",
+      "examples": [
+        {
+          "translation": "역 앞에 편의점이 있습니다."
+        },
+        {
+          "translation": "집 앞에 차를 세워 주세요."
+        },
+        {
+          "translation": "제 앞에 그가 서 있었습니다."
+        },
+        {
+          "translation": "호텔 앞에 택시가 왔습니다."
+        }
+      ]
+    },
+    "ja_Noun_39": {
+      "title": "명사 + は～ (wa)",
+      "shortExplanation": "문장의 화제나 주제를 제시하는 보조사로, 한국어의 '~은/는'에 해당합니다.",
+      "longExplanation": "보조사 'は'(발음은 'wa')는 명사 뒤에 붙어 그 문장에서 다루고자 하는 핵심 화제(주제)를 제시합니다. 뒤에 오는 서술부는 해당 주제에 대한 설명이나 판단이 됩니다. 주어를 특정하여 서술하는 주격조사 'が(~이/가)'와 달리, 'は'는 이미 알려진 정보나 대화의 주제를 이끌어내는 역할을 합니다.",
+      "formation": "명사 + は",
+      "examples": [
+        {
+          "translation": "저는 일본 요리를 좋아합니다."
+        },
+        {
+          "translation": "그는 영어를 잘합니다."
+        },
+        {
+          "translation": "이 책은 재미있습니다."
+        },
+        {
+          "translation": "오늘은 덥네요."
+        }
+      ]
+    },
+    "ja_Noun_40": {
+      "title": "명사 + も～ (mo)",
+      "shortExplanation": "앞서 언급된 것과 동일한 내용이 다른 대상에도 해당함을 나타내며, 한국어의 '~도'에 해당합니다.",
+      "longExplanation": "보조사 'も'는 명사 뒤에 결합하여 다른 대상과 마찬가지라는 동류의 추가나 포함을 나타내며, 보통 조사 'は'나 'が'를 대신하여 쓰입니다. 또한 '명사1 + も + 명사2 + も'의 형태로 거듭 쓰이면 'A도 B도 (모두)'라는 병렬의 의미를 나타냅니다.",
+      "formation": "명사 + も / 명사1 + も + 명사2 + も",
+      "examples": [
+        {
+          "translation": "저도 일본어를 공부하고 있습니다."
+        },
+        {
+          "translation": "그 사람도 케이크를 좋아합니다."
+        },
+        {
+          "translation": "도쿄도 오사카도 관광지가 많이 있습니다."
+        },
+        {
+          "translation": "이 영화도 저 영화도 재미있었습니다."
+        }
+      ]
+    },
+    "ja_Noun_41": {
+      "title": "명사1 + や + 명사2 + など～ (ya ... nado)",
+      "shortExplanation": "같은 종류의 사물 중 대표적인 몇 가지를 불완전 열거할 때 쓰이며, '~나 ~ 등'이라는 뜻입니다.",
+      "longExplanation": "'명사1 + や + 명사2 + など' 문형은 동일한 범주에 속하는 여러 항목 중에서 대표적인 예시를 몇 개 들어 나열할 때 사용합니다. 대상을 모두 빠짐없이 열거하는 'と'와 달리, 다른 항목도 더 존재함을 나타내는 부분(불완전) 열거 방식입니다.",
+      "formation": "명사1 + や + 명사2 (+ など)",
+      "examples": [
+        {
+          "translation": "그는 야채나 과일 등을 먹는 것을 좋아합니다."
+        },
+        {
+          "translation": "일본의 도시인 도쿄나 오사카 등에 가고 싶습니다."
+        },
+        {
+          "translation": "그녀는 고양이나 개 등 동물을 좋아합니다."
+        },
+        {
+          "translation": "이 서점에서는 만화나 소설 등 많은 책이 팔리고 있습니다."
+        }
+      ]
+    },
+    "ja_Noun_42": {
+      "title": "명사 + を～ (o/wo)",
+      "shortExplanation": "타동사의 목적어(동작이 직접 미치는 대상)를 나타내는 목적격 조사로, '~을/를'에 해당합니다.",
+      "longExplanation": "격조사 'を'(발음은 'o')는 명사 뒤에 붙어 그 명사가 타동사 동작의 직접적인 대상(목적어)임을 나타냅니다. 한국어의 목적격 조사 '~을/를'에 대응하며, '책을 읽다', '밥을 먹다'처럼 동작의 대상이 되는 명사를 받습니다.",
+      "formation": "명사(목적어) + を + 타동사",
+      "examples": [
+        {
+          "translation": "저는 책을 읽습니다."
+        },
+        {
+          "translation": "그는 케이크를 먹었습니다."
+        },
+        {
+          "translation": "어머니는 커피 마시는 것을 좋아하십니다."
+        },
+        {
+          "translation": "친구가 제 펜을 사용했습니다."
+        }
+      ]
+    },
+    "ja_Verb_43": {
+      "title": "동사 た형 + あとで (ta ato de)",
+      "shortExplanation": "앞선 동작이 완전히 끝난 뒤에 다음 동작을 함을 나타내며, '~한 후에', '~하고 나서'라는 뜻입니다.",
+      "longExplanation": "'동사 た형 + あとで' 문형은 두 동작의 시간적 선후 관계를 나타낼 때 사용합니다. 앞의 동작을 나타내는 동사를 과거완료형인 'た형'으로 바꾸어 연결함으로써, 앞의 행위가 완전히 종결된 후에 다음 행위가 이루어짐을 명확히 전달합니다.",
+      "formation": "동사 た형 + あとで",
+      "examples": [
+        {
+          "translation": "숙제를 한 후에 텔레비전을 보았습니다."
+        },
+        {
+          "translation": "아침 밥을 먹은 후에 이를 닦습니다."
+        },
+        {
+          "translation": "일이 끝난 후에 헬스장에 갈 예정입니다."
+        },
+        {
+          "translation": "영화를 본 후에 카페에서 커피를 마셨습니다."
+        }
+      ]
+    },
+    "ja_Verb_44": {
+      "title": "동사 ます형(어간) + たいです (taidesu)",
+      "shortExplanation": "어떤 동작을 하고 싶다는 화자의 희망이나 소망을 나타내며, '~하고 싶습니다'라는 뜻입니다.",
+      "longExplanation": "희망 조동사 '～たい'는 동사의 연용형(ます형 어간) 뒤에 접속하여 화자 자신의 주관적인 욕구와 희망을 나타냅니다. 정중형은 뒤에 'です'를 붙인 '～たいです'가 됩니다. 희망 대상의 목적격 조사 'を'는 종종 '가'로 바뀌어 쓰이기도 합니다(예: 寿司を食べたい / 寿司が食べたい). 제3자의 희망을 서술할 때는 통상 '～たがっている' 등의 표현을 사용합니다.",
+      "formation": "동사 연용형(ます형 어간) + たいです (1그룹 동사: 어미 う단을 い단으로 바꾸고 + たいです; 2그룹 동사: る 탈락 + たいです; 3그룹 동사: する → したいです, くる → きたいです)",
+      "examples": [
+        {
+          "translation": "저는 초밥을 먹고 싶습니다."
+        },
+        {
+          "translation": "그는 일본에 가고 싶어 합니다."
+        },
+        {
+          "translation": "그녀는 영어를 공부하고 싶어 합니다."
+        },
+        {
+          "translation": "아이들은 놀고 싶어 합니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Noun_30": {
+      "title": "名詞 ＋ と～",
+      "shortExplanation": "名詞と名詞を並列して「〜と」と完全に列挙したり、動作を共にする相手を表して「〜と一緒に」という意味を表します。",
+      "longExplanation": "格助詞「と」は、名詞に接続して主に2つの用法を持ちます。1つは事物をすべて漏れなく並列・列挙する用法（全部列挙）で、「AとB」のように使われます。もう1つは動作を共に行う相手や同伴者を表す用法で、「（人と）一緒に」という意味を表し、副詞「一緒に」を伴って使われることも多いです。",
+      "formation": "名詞1 ＋ と ＋ 名詞2 ／ 名詞（人・相手） ＋ と（一緒に）",
+      "examples": [
+        {
+          "translation": "リンゴとバナナを買いました。"
+        },
+        {
+          "translation": "友達と映画を見に行きます。"
+        },
+        {
+          "translation": "父と母と一緒に旅行しました。"
+        },
+        {
+          "translation": "彼と彼女は結婚しました。"
+        }
+      ]
+    },
+    "ja_Noun_31": {
+      "title": "名詞 ＋ に～",
+      "shortExplanation": "移動の帰着点・目的地、動作が行われる特定の時間、動作の相手・対象などを表します。",
+      "longExplanation": "格助詞「に」は名詞に接続し、多様な意味役割を示します。主な用法として、①動作が行われる特定の時（数字を伴う時間など）、②移動動詞に伴う目的地・帰着点（「日本に行く」など）、③動作や働きかけの相手・受け手（「彼女にあげる」「友達に書く」など）を表します。",
+      "formation": "名詞（時・場所・相手など） ＋ に",
+      "examples": [
+        {
+          "translation": "彼女にプレゼントをあげました。"
+        },
+        {
+          "translation": "日本に行きます。"
+        },
+        {
+          "translation": "6時に集合しましょう。"
+        },
+        {
+          "translation": "友達に手紙を書きます。"
+        }
+      ]
+    },
+    "ja_Noun_32": {
+      "title": "名詞 ＋ に帰ります",
+      "shortExplanation": "自分が本来所属している場所や生活の拠点へ戻ることを表し、「〜に帰る・戻る」という意味です。",
+      "longExplanation": "「名詞 ＋ に帰ります」は、自宅（家）、実家、自国（国）、学校など、話し手が本来所属している場所や生活の拠点へと戻る動作を表します。格助詞「に」は帰着点（戻る目的地）を示します。",
+      "formation": "名詞（場所・生活拠点） ＋ に ＋ 帰ります",
+      "examples": [
+        {
+          "translation": "夏休みが終わったら、学校に帰ります。"
+        },
+        {
+          "translation": "買い物を終えたら、家に帰ります。"
+        },
+        {
+          "translation": "今週末、実家に帰ります。"
+        },
+        {
+          "translation": "友達と旅行に行ったあと、東京に帰ります。"
+        }
+      ]
+    },
+    "ja_Noun_33": {
+      "title": "名詞 ＋ にします",
+      "shortExplanation": "複数の選択肢の中から自分の意思で1つを選んで決めることを表し、「〜にする・〜に決める」という意味です。",
+      "longExplanation": "「名詞 ＋ にします」は、レストランでの注文、買い物での商品選び、予定の決定など、いくつかの候補や可能性の中から話し手が主観的に選択・決定した結果を表す表現です。動詞句を受ける場合は「〜ことにします」の形になります。",
+      "formation": "名詞 ＋ に します",
+      "examples": [
+        {
+          "translation": "今日の昼ご飯は寿司にします。"
+        },
+        {
+          "translation": "この靴を買うか迷っていますが、赤い色の方にします。"
+        },
+        {
+          "translation": "休みの日に何をするか決めた。映画館に行くことにします。"
+        },
+        {
+          "translation": "フランス語とスペイン語のどちらを勉強するか悩んだが、フランス語にします。"
+        }
+      ]
+    },
+    "ja_Noun_34": {
+      "title": "名詞 ＋ になります",
+      "shortExplanation": "状態や性質、身分などが変化して別の状態になることを表し、「〜になる」という意味です。",
+      "longExplanation": "「名詞 ＋ になります」は、物事が自然な推移や時間の経過、客観的な変化を経てある身分・職業・状態・時期へと移行・到達することを表します。主観的な選択を表す「〜にします」とは対照的に、自然な変化や客観的な結果を表す際に用いられます。",
+      "formation": "名詞 ＋ に ＋ なります",
+      "examples": [
+        {
+          "translation": "彼は医者になります。"
+        },
+        {
+          "translation": "この茶色の葉が赤になります。"
+        },
+        {
+          "translation": "料理が冷めたら、美味しくなくなります。"
+        },
+        {
+          "translation": "来年、東京オリンピックになります。"
+        }
+      ]
+    },
+    "ja_Noun_35": {
+      "title": "名詞 ＋ に来ます",
+      "shortExplanation": "話し手のいる場所や基準となる場所へ向かって移動してくることを表し、「〜に来る」という意味です。",
+      "longExplanation": "「名詞 ＋ に来ます」は、人や物が話し手の現在地や話題の視点がある場所へと向かって移動する動作を表します。「に」の前の名詞は到着地・目的地を示します。",
+      "formation": "名詞（場所） ＋ に ＋ 来ます",
+      "examples": [
+        {
+          "translation": "友達が私の家に来ます。"
+        },
+        {
+          "translation": "今晩、父が駅に迎えに来ます。"
+        },
+        {
+          "translation": "明日、先生が学校に来ます。"
+        },
+        {
+          "translation": "有名な歌手がこの街に来ます。"
+        }
+      ]
+    },
+    "ja_Noun_36": {
+      "title": "名詞 ＋ に行きます",
+      "shortExplanation": "話し手がある場所から別の目的地へと向かって移動することを表し、「〜へ・に行く」という意味です。",
+      "longExplanation": "「名詞 ＋ に行きます」は、話し手が現在いる場所を離れて、別の目的地や場所へと向かって移動する動作を表します。格助詞「に」は移動の目的地・到達点を示します。",
+      "formation": "名詞（場所） ＋ に ＋ 行きます",
+      "examples": [
+        {
+          "translation": "学校に行きます。"
+        },
+        {
+          "translation": "明日、スーパーに行きます。"
+        },
+        {
+          "translation": "週末に映画館に行きます。"
+        },
+        {
+          "translation": "夏休みに海に行きます。"
+        }
+      ]
+    },
+    "ja_Noun_37": {
+      "title": "名詞 ＋ のあとで",
+      "shortExplanation": "ある出来事や動作の終了後に別の動作や事態が起きる時間的順序を表し、「〜の後に」という意味です。",
+      "longExplanation": "「名詞 ＋ のあとで」は、名詞が表す出来事や行動（食事・会議・映画など）が終わった後のタイミングで、次の動作や出来事が行われることを表します。名詞と「あとで」は連体助詞「の」で接続します。",
+      "formation": "名詞（出来事・動作） ＋ の ＋ あとで",
+      "examples": [
+        {
+          "translation": "朝ご飯のあとで、歯を磨きます。"
+        },
+        {
+          "translation": "映画のあとで、レストランで夕食を食べました。"
+        },
+        {
+          "translation": "会議のあとで、上司と話し合います。"
+        },
+        {
+          "translation": "晩ご飯のあとで、散歩に行きました。"
+        }
+      ]
+    },
+    "ja_Noun_38": {
+      "title": "名詞 ＋ の前に",
+      "shortExplanation": "ある場所や人、建物の空間的な位置関係として「〜の正面・手前」を表し、「〜の前に」という意味です。",
+      "longExplanation": "「名詞 ＋ の前に」は、基準となる人物や建物・場所のすぐ手前や正面という空間的位置を表します。名詞と位置名詞「前」を連体助詞「の」で接続し、「に」で存在場所や動作の到達点を示します。",
+      "formation": "名詞（場所・人・建物） ＋ の ＋ 前に",
+      "examples": [
+        {
+          "translation": "駅の前にコンビニがあります。"
+        },
+        {
+          "translation": "家の前に車を止めてください。"
+        },
+        {
+          "translation": "私の前に彼が立っていました。"
+        },
+        {
+          "translation": "ホテルの前にタクシーが来た。"
+        }
+      ]
+    },
+    "ja_Noun_39": {
+      "title": "名詞 ＋ は～",
+      "shortExplanation": "文の主題（話題のテーマ）を提示する取り立て助詞で、「〜について言えば」という意味を表します。",
+      "longExplanation": "係助詞（取り立て助詞）「は」（発音は「ワ」）は、名詞に付いてその文が「何について述べるのか」という話題の主題を提示します。文の焦点は「は」の後ろの述語部分に置かれます。主語そのものを特定・指定する格助詞「が」とは役割が異なります。",
+      "formation": "名詞 ＋ は",
+      "examples": [
+        {
+          "translation": "私は日本の料理が好きです。"
+        },
+        {
+          "translation": "彼は英語が上手です。"
+        },
+        {
+          "translation": "この本は面白いです。"
+        },
+        {
+          "translation": "今日は暑いですね。"
+        }
+      ]
+    },
+    "ja_Noun_40": {
+      "title": "名詞 ＋ も～",
+      "shortExplanation": "既に出た事柄と同類・同様であることを表し、「〜も（同様に）」という意味を表します。",
+      "longExplanation": "係助詞「も」は、名詞に接続して、前に述べられたことと同じ事態・性質がこの名詞にも当てはまること（同類の追加・添加）を表します。通常「は」や「が」の代わりに用いられます。また「名詞1＋も＋名詞2＋も」と重ねて使うことで、「AもBも両方」という並列・網羅を表します。",
+      "formation": "名詞 ＋ も ／ 名詞1 ＋ も ＋ 名詞2 ＋ も",
+      "examples": [
+        {
+          "translation": "私も日本語を勉強しています。"
+        },
+        {
+          "translation": "彼もケーキが好きです。"
+        },
+        {
+          "translation": "東京も大阪も観光スポットがたくさんあります。"
+        },
+        {
+          "translation": "この映画もあの映画も面白かった。"
+        }
+      ]
+    },
+    "ja_Noun_41": {
+      "title": "名詞1 ＋ や ＋ 名詞2 ＋ など～",
+      "shortExplanation": "同類のものの中から代表的な例をいくつか挙げる不完全列挙を表し、「〜や〜など」という意味です。",
+      "longExplanation": "「名詞1 ＋ や ＋ 名詞2 ＋ など」は、同類の事物の中から代表的なものを2〜3点例示し、他にも同類の事柄があることを暗示する不完全列挙（一部列挙）の表現です。すべてを挙げ尽くす「と」（完全列挙）と使い分けられます。",
+      "formation": "名詞1 ＋ や ＋ 名詞2（＋ など）",
+      "examples": [
+        {
+          "translation": "彼は野菜や果物などを食べるのが好きです。"
+        },
+        {
+          "translation": "日本の都市や東京、大阪などに行きたいです。"
+        },
+        {
+          "translation": "彼女は猫や犬など動物が好きです。"
+        },
+        {
+          "translation": "この本屋では漫画や小説などたくさんの本が売られています。"
+        }
+      ]
+    },
+    "ja_Noun_42": {
+      "title": "名詞 ＋ を～",
+      "shortExplanation": "他動詞が表す動作や働きかけの直接の対象（目的語）を表します。",
+      "longExplanation": "格助詞「を」（発音は「オ」）は、名詞に接続して、その名詞が他動詞の表す動作や働きかけを受ける直接の対象（目的語）であることを示します。「本を読む」「ご飯を食べる」のように動作が向けられる事物を導きます。",
+      "formation": "名詞（目的語） ＋ を ＋ 他動詞",
+      "examples": [
+        {
+          "translation": "私は本を読みます。"
+        },
+        {
+          "translation": "彼はケーキを食べました。"
+        },
+        {
+          "translation": "母はコーヒーを飲むのが好きです。"
+        },
+        {
+          "translation": "友達が私のペンを使いました。"
+        }
+      ]
+    },
+    "ja_Verb_43": {
+      "title": "動詞た形 ＋ あとで",
+      "shortExplanation": "前項の動作が完了した後に、次の動作を行うことを表し、「〜した後に」「〜してから」という意味です。",
+      "longExplanation": "「動詞た形 ＋ あとで」は、2つの動作の時間的な前後関係を表す文型です。前項の動詞を過去・完了を表す「た形」にすることで、前項の行為が完全に終了したことを確認してから後項の行為を行うという順序を示します。",
+      "formation": "動詞 た形 ＋ あとで",
+      "examples": [
+        {
+          "translation": "宿題をしたあとで、テレビを見ました。"
+        },
+        {
+          "translation": "朝ごはんを食べたあとで、歯を磨きます。"
+        },
+        {
+          "translation": "仕事が終わったあとで、ジムに行く予定です。"
+        },
+        {
+          "translation": "映画を見たあとで、カフェでコーヒーを飲みました。"
+        }
+      ]
+    },
+    "ja_Verb_44": {
+      "title": "動詞連用形（ます形語幹） ＋ たいです",
+      "shortExplanation": "話し手がある行為を行いたいという希望や願望を表し、「〜したい」「〜したいです」という意味を表します。",
+      "longExplanation": "希望の助動詞「たい」は動詞の連用形（ます形の「ます」を取った形）に接続し、主に話し手（第1人称）が特定の行為をしたいという願望・意志を表します。丁寧に述べる場合は「です」を付けて「〜たいです」とします。対象を示す格助詞「を」は「が」になることもあります（例：「水を飲みたい／水が飲みたい」）。三人称の願望を述べる際は、通常「〜たがっている」「〜たいと言っている」などの形式を用います。",
+      "formation": "動詞連用形（ます形語幹） ＋ たいです（1グループ動詞：語尾のう段をい段に変える＋たいです、2グループ動詞：るを取る＋たいです、3グループ動詞：する→したいです、くる→きたいです）",
+      "examples": [
+        {
+          "translation": "私は寿司を食べたいです。"
+        },
+        {
+          "translation": "彼は日本に行きたいです。"
+        },
+        {
+          "translation": "彼女は英語を勉強したいです。"
+        },
+        {
+          "translation": "子供たちは遊びたいです。"
+        }
+      ]
+    }
+  }
+}

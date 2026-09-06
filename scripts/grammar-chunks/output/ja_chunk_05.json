@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Verb_60": {
+      "title": "Động từ thể từ điển + 前に (ru mae ni)",
+      "shortExplanation": "Dùng để diễn tả hành động xảy ra trước một hành động hoặc sự kiện khác; 'trước khi làm gì'.",
+      "longExplanation": "Mẫu ngữ pháp '～前に' (mae ni) kết hợp với động từ ở thể từ điển (thể nguyên dạng) để diễn tả rằng một hành động cần được thực hiện hoặc xảy ra trước khi một hành động hay sự việc khác bắt đầu. Lưu ý rằng động từ đứng ngay trước '前に' luôn luôn ở thể từ điển (thể hiện tại), không phụ thuộc vào thì của mệnh đề chính ở cuối câu.",
+      "formation": "Động từ thể từ điển + 前に",
+      "examples": [
+        {
+          "translation": "Trước khi ra ngoài, hãy dọn dẹp phòng nhé."
+        },
+        {
+          "translation": "Trước khi đi ngủ, tôi đánh răng."
+        },
+        {
+          "translation": "Hãy thu quần áo vào trước khi trời mưa."
+        },
+        {
+          "translation": "Chúng ta hãy chuẩn bị tài liệu trước khi cuộc họp bắt đầu nhé."
+        }
+      ]
+    },
+    "ja_あまりありません_61": {
+      "title": "あまり～ありません (amari ~ arimasen)",
+      "shortExplanation": "Phó từ đi kèm với dạng phủ định lịch sự để diễn tả mức độ không cao; 'không... lắm', 'không... cho lắm'.",
+      "longExplanation": "Phó từ 'あまり' (amari) khi đi kèm với vị ngữ ở dạng phủ định lịch sự ('～ありません' / '～じゃありません') biểu thị mức độ của hành động hoặc trạng thái ở mức thấp, tương đương với 'không... lắm' hoặc 'không nhiều lắm'. Cách diễn đạt này giúp làm giảm sắc thái khẳng định tiêu cực, khiến lời nói trở nên nhẹ nhàng, lịch sự và khiêm nhường hơn.",
+      "formation": "あまり + Động từ thể phủ định lịch sự (～ません / ～ていません) / あまり + Tính từ đuôi い (bỏ い) + くありません / あまり + Tính từ đuôi な / Danh từ + じゃありません (ではありません)",
+      "examples": [
+        {
+          "translation": "Anh ấy không mệt lắm."
+        },
+        {
+          "translation": "Cô ấy không nhanh lắm đâu nhé."
+        },
+        {
+          "translation": "Tôi không học bài nhiều lắm."
+        },
+        {
+          "translation": "Tôi không có nhiều tiền lắm."
+        }
+      ]
+    },
+    "ja_あまりないです_62": {
+      "title": "あまり～ないです (amari ~ nai desu)",
+      "shortExplanation": "Phủ định một phần trong khẩu ngữ lịch sự, nhẹ nhàng; 'không... lắm', 'không... cho lắm'.",
+      "longExplanation": "'あまり～ないです' là sự kết hợp giữa phó từ 'あまり' với thể phủ định thông thường (thể ない) kèm thêm 'です', rất phổ biến trong giao tiếp hàng ngày. Cấu trúc này giúp người nói biểu đạt sự phủ định một cách nhẹ nhàng, khiêm tốn và thân mật mà vẫn giữ được phép lịch sự.",
+      "formation": "あまり + Động từ thể ない + です / あまり + Tính từ đuôi い (bỏ い) + くないです / あまり + Tính từ đuôi な / Danh từ + じゃないです",
+      "examples": [
+        {
+          "translation": "Tôi không ăn nhiều lắm."
+        },
+        {
+          "translation": "Bộ phim này không hay lắm."
+        },
+        {
+          "translation": "Anh ấy không được thân thiện lắm."
+        },
+        {
+          "translation": "Tiếng Nhật của tôi không được giỏi cho lắm."
+        }
+      ]
+    },
+    "ja_あります_63": {
+      "title": "～あります (〜arimasu)",
+      "shortExplanation": "Diễn tả sự hiện diện, tồn tại hoặc sở hữu của đồ vật vô tri hoặc thực vật; 'có...', 'ở...'.",
+      "longExplanation": "'あります' (arimasu) là động từ chỉ sự tồn tại hoặc sở hữu dành cho các sự vật, đồ vật, thực vật hoặc hiện tượng trừu tượng không có khả năng tự vận động. Trợ từ 'が' đi kèm để biểu thị sự vật tồn tại, và trợ từ 'に' dùng để xác định vị trí tồn tại. Cần phân biệt rõ với 'います' (chỉ dùng cho người và động vật có tri giác).",
+      "formation": "Danh từ (đồ vật/sự vật) + が + あります / Địa điểm + に + Danh từ + が + あります",
+      "examples": [
+        {
+          "translation": "Trong lớp học có bàn học."
+        },
+        {
+          "translation": "Trong công viên này có rất nhiều hoa."
+        },
+        {
+          "translation": "Ở gần nhà ga có một cửa hàng tiện lợi."
+        },
+        {
+          "translation": "Ở trong nhà có một chiếc tivi cũ."
+        }
+      ]
+    },
+    "ja_いかがですか_64": {
+      "title": "～いかがですか (〜ikaga desu ka)",
+      "shortExplanation": "Cách nói kính ngữ lịch sự dùng để mời mọc, gợi ý hoặc hỏi ý kiến; '...thế nào ạ?', 'dùng... nhé?'.",
+      "longExplanation": "'～いかがですか' là thể lịch sự (kính ngữ) của 'どうですか', được dùng khi mời đối phương dùng đồ ăn, thức uống (Danh từ + は), nhẹ nhàng đề xuất một hành động (Động từ thể て + は), hoặc hỏi thăm ý kiến, tình hình của người nghe. Mẫu câu này rất thông dụng trong văn hóa tiếp khách, dịch vụ chăm sóc khách hàng và giao tiếp trang trọng.",
+      "formation": "Danh từ + は + いかがですか / Động từ thể て + は + いかがですか",
+      "examples": [
+        {
+          "translation": "Dùng chút trà nhé ạ?"
+        },
+        {
+          "translation": "Chiếc váy này trông thế nào ạ?"
+        },
+        {
+          "translation": "Hay là bạn dùng một chút bánh ngọt xem sao ạ?"
+        },
+        {
+          "translation": "Hay là bạn xem một bộ phim xem sao ạ?"
+        }
+      ]
+    },
+    "ja_いくつ_65": {
+      "title": "いくつ～ (ikutsu~)",
+      "shortExplanation": "Từ nghi vấn hỏi số lượng 'mấy cái / bao nhiêu', hoặc kết hợp thành 'いくつか' mang nghĩa 'một vài / một số'.",
+      "longExplanation": "'いくつ' (ikutsu) là từ để hỏi số lượng đồ vật chung (thường theo cách đếm thuần Nhật: ひとつ, ふたつ,...), mang nghĩa 'mấy cái', 'bao nhiêu cái', đồng thời cũng là cách hỏi tuổi lịch sự. Khi kết hợp với trợ từ nghi vấn 'か' thành 'いくつか' (hoặc 'いくつかの + Danh từ'), từ này biểu thị một số lượng nhỏ không xác định, mang nghĩa 'một vài', 'một số'.",
+      "formation": "いくつ + Trợ từ / いくつ + の + Danh từ / いくつか + の + Danh từ",
+      "examples": [
+        {
+          "translation": "Có bao nhiêu quả táo vậy?"
+        },
+        {
+          "translation": "Tôi phải giải quyết một vài vấn đề."
+        },
+        {
+          "translation": "Bạn có thể nói được bao nhiêu ngôn ngữ?"
+        },
+        {
+          "translation": "Ở bữa tiệc có một số loại đồ uống."
+        }
+      ]
+    },
+    "ja_いつか_66": {
+      "title": "いつか～ (itsuka～)",
+      "shortExplanation": "Chỉ một thời điểm không xác định trong tương lai hoặc quá khứ; 'một ngày nào đó', 'lúc nào đó'.",
+      "longExplanation": "'いつか' (itsuka) là phó từ được kết hợp từ từ để hỏi thời gian 'いつ' (khi nào) và trợ từ 'か', dùng để biểu thị một thời điểm chưa rõ ràng hoặc chưa xác định. Từ này đặc biệt hay xuất hiện khi nói về tương lai, thể hiện ước mơ, nguyện vọng, triển vọng hoặc hy vọng ('một ngày nào đó', 'rồi có lúc').",
+      "formation": "いつか + Câu / Cụm từ",
+      "examples": [
+        {
+          "translation": "Một ngày nào đó tôi muốn đến Nhật Bản."
+        },
+        {
+          "translation": "Anh ấy rồi sẽ trở thành một nhà văn nổi tiếng vào một ngày nào đó."
+        },
+        {
+          "translation": "Tôi đang nghĩ là một ngày nào đó muốn leo lên ngọn núi kia."
+        },
+        {
+          "translation": "Tôi tin rằng một ngày nào đó cô ấy sẽ có thể biến ước mơ thành hiện thực."
+        }
+      ]
+    },
+    "ja_いつでも_67": {
+      "title": "いつでも～ (itsudemo～)",
+      "shortExplanation": "Biểu thị sự không giới hạn về thời gian; 'bất cứ lúc nào', 'bất kể khi nào', 'lúc nào cũng'.",
+      "longExplanation": "'いつでも' (itsudemo) là sự kết hợp giữa từ nghi vấn 'いつ' và trợ từ toàn thể 'でも', mang ý nghĩa thời gian không có bất kỳ hạn chế hay điều kiện nào. Được dùng khi cho phép, mời mọc hoặc nói về khả năng ('bất cứ khi nào cũng được'), hoặc để miêu tả một trạng thái diễn ra thường trực ('lúc nào cũng...').",
+      "formation": "いつでも + Động từ / Tính từ / Danh từ",
+      "examples": [
+        {
+          "translation": "Hãy đến chơi bất cứ lúc nào nhé."
+        },
+        {
+          "translation": "Cô ấy lúc nào cũng nở nụ cười."
+        },
+        {
+          "translation": "Bạn có thể liên lạc qua điện thoại bất cứ lúc nào."
+        },
+        {
+          "translation": "Quán này lúc nào cũng đông đúc."
+        }
+      ]
+    },
+    "ja_いつも_68": {
+      "title": "いつも～ (itsumo～)",
+      "shortExplanation": "Phó từ tần suất diễn tả hành động lặp đi lặp lại thành thói quen hoặc trạng thái thường xuyên; 'luôn luôn', 'lúc nào cũng'.",
+      "longExplanation": "'いつも' (itsumo) là phó từ chỉ tần suất rất phổ biến, dùng để chỉ một hành động diễn ra đều đặn, tạo thành thói quen hàng ngày, hoặc một tình trạng, sở thích nhất quán không đổi theo thời gian. Tương đương với 'luôn luôn', 'lúc nào cũng', 'thường lệ' trong tiếng Việt.",
+      "formation": "いつも + Động từ / Tính từ / Danh từ",
+      "examples": [
+        {
+          "translation": "Anh ấy lúc nào cũng đi muộn."
+        },
+        {
+          "translation": "Tôi luôn luôn thích những chú chó hiền lành."
+        },
+        {
+          "translation": "Cô ấy luôn luôn học bài ở nơi yên tĩnh."
+        },
+        {
+          "translation": "Tôi luôn ăn bữa sáng."
+        }
+      ]
+    },
+    "ja_て_69": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "Diễn tả hành động đang diễn ra tại thời điểm nói hoặc trạng thái đang tiếp diễn; 'đang làm...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ています dùng để diễn tả một hành động đang diễn ra tại thời điểm nói, tương đương với 'đang (làm gì)' trong tiếng Việt. Tùy theo nhóm động từ (động từ nhóm 1, nhóm 2 hay động từ bất quy tắc) mà cách biến đổi sang thể て sẽ khác nhau, nhưng đều kết hợp theo cấu trúc: Động từ thể て + います.",
+      "formation": "Động từ thể て + います",
+      "examples": [
+        {
+          "translation": "Bây giờ tôi đang nghe nhạc."
+        },
+        {
+          "translation": "Bố tôi đang đọc báo."
+        },
+        {
+          "translation": "Cô ấy đang học tiếng Anh."
+        },
+        {
+          "translation": "Bọn trẻ đang chơi trong công viên."
+        }
+      ]
+    },
+    "ja_が_70": {
+      "title": "～が (〜ga)",
+      "shortExplanation": "Trợ từ biểu thị chủ ngữ ngữ pháp của câu hoặc liên từ nối biểu thị sự tương phản mang nghĩa 'nhưng'.",
+      "longExplanation": "Trợ từ 'が' (ga) là một trợ từ cơ bản có hai chức năng ngữ pháp cốt lõi:\n1. Cách dùng làm trợ từ cách: Biểu thị chủ ngữ ngữ pháp của câu, thường dùng để nhấn mạnh chủ thể được nhắc đến, đưa ra thông tin mới, hoặc miêu tả hiện tượng khách quan.\n2. Cách dùng làm trợ từ liên kết: Nối hai vế câu có quan hệ đối lập, tương phản mang nghĩa 'nhưng', 'tuy nhiên', hoặc dùng làm lời mở đầu, dẫn dắt câu chuyện.",
+      "formation": "Danh từ + が (chủ ngữ) / Động từ / Tính từ / Danh từ + が (liên từ 'nhưng')",
+      "examples": [
+        {
+          "translation": "Tôi chính là học sinh."
+        },
+        {
+          "translation": "Quả táo này ngon."
+        },
+        {
+          "translation": "Anh ấy thông minh nhưng tính tình lại xấu."
+        },
+        {
+          "translation": "Tôi muốn chạy nhưng chân lại bị đau."
+        }
+      ]
+    },
+    "ja_が_71": {
+      "title": "～が、～ (〜ga, 〜)",
+      "shortExplanation": "Liên từ nối biểu thị mối quan hệ tương phản, đối lập giữa hai mệnh đề; 'tuy... nhưng...', 'nhưng...'.",
+      "longExplanation": "Mẫu câu '～が、～' sử dụng trợ từ liên kết 'が' đặt ở cuối vế câu thứ nhất để nối hai vế có ý nghĩa tương phản, mâu thuẫn hoặc đối lập nhau, tương đương với 'tuy... nhưng...' hoặc 'nhưng...' trong tiếng Việt. So với '～けど' (thường dùng trong văn nói thân mật), '～が' mang sắc thái trang trọng, lịch sự và thường được dùng trong văn viết hoặc các bối cảnh giao tiếp chuẩn mực.",
+      "formation": "Mệnh đề 1 + が、+ Mệnh đề 2",
+      "examples": [
+        {
+          "translation": "Món tráng miệng tuy ngon nhưng lượng calo lại cao."
+        },
+        {
+          "translation": "Anh ấy thông minh nhưng hơi lười biếng một chút."
+        },
+        {
+          "translation": "Công ty đã thu được lợi nhuận, tuy nhiên lương của nhân viên lại không tăng."
+        },
+        {
+          "translation": "Học ngoại ngữ rất thú vị nhưng đôi lúc cũng khó khăn."
+        }
+      ]
+    },
+    "ja_から_72": {
+      "title": "～から、～ (〜kara, 〜)",
+      "shortExplanation": "Liên từ biểu thị nguyên nhân, lý do dẫn đến kết quả hoặc hành động ở vế sau; 'vì... nên...', 'do...'.",
+      "longExplanation": "'～から' (kara) là liên từ nối dùng để diễn tả nguyên nhân, lý do chủ quan của người nói, dẫn đến kết quả, phán đoán, yêu cầu hay mệnh lệnh ở vế tiếp theo ('Vì... nên...'). Vế trước nêu nguyên nhân, vế sau nêu hành động hoặc kết luận. Kết hợp với thể thông thường của động từ và tính từ đuôi い; đối với tính từ đuôi な và danh từ thì cần thêm 'だ' trước 'から' thành '～だから'.",
+      "formation": "Động từ thể thông thường + から / Tính từ đuôi い + から / Tính từ đuôi な + だから / Danh từ + だから",
+      "examples": [
+        {
+          "translation": "Vì ngày mai có bài kiểm tra nên tối nay tôi phải học bài."
+        },
+        {
+          "translation": "Vì căn phòng này chật chội nên tôi đang tìm một phòng rộng hơn."
+        },
+        {
+          "translation": "Vì anh ấy là bạn bè nên chắc sẽ giúp đỡ tôi thôi."
+        },
+        {
+          "translation": "Vì trời đã mưa nên tôi không thể ra ngoài."
+        }
+      ]
+    },
+    "ja_からです_73": {
+      "title": "～からです (〜kara desu)",
+      "shortExplanation": "Đứng ở cuối câu để giải thích nguyên nhân, lý do một cách lịch sự; 'là vì...', 'bởi vì...'.",
+      "longExplanation": "'～からです' đặt ở cuối câu để giải thích lý do, nguyên nhân cho một hành động hay trạng thái đã được nhắc đến trước đó, hoặc dùng để trả lời cho các câu hỏi hỏi nguyên nhân như 'どうして' (tại sao) hay 'なぜ' (vì sao). Mang nghĩa 'là vì...', 'bởi vì...'. Động từ và tính từ đuôi い kết hợp ở thể thông thường với 'からです', còn tính từ đuôi な và danh từ kết hợp với 'だからです'.",
+      "formation": "Động từ thể thông thường + からです / Tính từ đuôi い + からです / Tính từ đuôi な + だからです / Danh từ + だからです",
+      "examples": [
+        {
+          "translation": "Là vì trời lạnh. Tôi đang mặc áo khoác đây."
+        },
+        {
+          "translation": "Là vì quán này giá rẻ. Tôi thường xuyên ghé qua."
+        },
+        {
+          "translation": "Là vì anh ấy tốt bụng. Mọi người đều yêu mến anh ấy."
+        },
+        {
+          "translation": "Là vì cô ấy là học sinh. Cô ấy đang học bài ở thư viện."
+        }
+      ]
+    },
+    "ja_から_74": {
+      "title": "～から もらいます (〜kara moraimasu)",
+      "shortExplanation": "Nhận đồ vật từ ai đó hoặc được người khác làm giúp cho việc gì; 'nhận từ...', 'được... làm cho'.",
+      "longExplanation": "'～から もらいます' (hoặc '～に もらいます') dùng để diễn tả việc người nói (hoặc người thuộc phe người nói) nhận một đồ vật từ ai đó hoặc từ một tổ chức/đoàn thể. Khi kết hợp với động từ thể て tạo thành cấu trúc '～てもらいます', biểu thị việc được người khác thực hiện một hành vi giúp đỡ có lợi cho mình với thái độ biết ơn ('được ai đó làm cho việc gì'). Người cho hoặc người thực hiện hành động được đánh dấu bằng trợ từ 'から' hoặc 'に'.",
+      "formation": "Người cho + から/に + Đồ vật + を + もらいます / Người thực hiện + に/から + Động từ thể て + もらいます",
+      "examples": [
+        {
+          "translation": "Tôi đã nhận được quà từ bạn bè."
+        },
+        {
+          "translation": "Tôi đã được thầy giáo phát bài tập về nhà cho."
+        },
+        {
+          "translation": "Tôi đã được mẹ nấu ăn cho."
+        },
+        {
+          "translation": "Tôi đã được anh trai cho mượn xe ô tô."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Verb_60": {
+      "title": "动词辞书形 + 前に (ru mae ni)",
+      "shortExplanation": "表示在进行某项动作或某事发生之前；'在……之前'、'……之前'。",
+      "longExplanation": "语法句型'～前に'（mae ni）接在动词辞书形（原形/基本形）之后，用于表示在后项动作或事件发生之前，先进行前项动作。需要特别注意的是，无论主句的谓语是过去时还是将来时，'前に'前面的动词都必须始终保持辞书形。",
+      "formation": "动词辞书形 + 前に",
+      "examples": [
+        {
+          "translation": "出门之前，请打扫一下房间。"
+        },
+        {
+          "translation": "睡觉前，我要刷牙。"
+        },
+        {
+          "translation": "下雨之前，把洗好的衣服收进来。"
+        },
+        {
+          "translation": "会议开始之前，我们先准备好资料吧。"
+        }
+      ]
+    },
+    "ja_あまりありません_61": {
+      "title": "あまり～ありません (amari ~ arimasen)",
+      "shortExplanation": "与礼貌否定形式呼应，表示程度较低；'不太……'、'不怎么……'。",
+      "longExplanation": "副词'あまり'（amari）与礼貌否定谓语（～ありません / ～じゃありません）呼应使用，表示动作的频率或状态的程度并不高，相当于汉语的'不太……'、'并不怎么……'。这种部分否定方式比直接的全盘否定更加委婉客气。可修饰动词否定形、い形容词词尾变く接ありません，以及な形容词或名词接じゃありません（ではありません）。",
+      "formation": "あまり + 动词礼貌否定形（～ません / ～ていません） / あまり + い形容词词尾变く + ありません / あまり + な形容词 / 名词 + じゃありません（ではありません）",
+      "examples": [
+        {
+          "translation": "他不太累。"
+        },
+        {
+          "translation": "她其实并不怎么快哦。"
+        },
+        {
+          "translation": "我平时不怎么学习。"
+        },
+        {
+          "translation": "我没有多少钱。"
+        }
+      ]
+    },
+    "ja_あまりないです_62": {
+      "title": "あまり～ないです (amari ~ nai desu)",
+      "shortExplanation": "在日常会话中委婉表达部分否定；'不太……'、'不怎么……'。",
+      "longExplanation": "句型'あまり～ないです'由副词'あまり'搭配简体否定形（ない形）并在末尾加上'です'构成。这是一种在现代日常口语中极为常见的礼貌表达方式，用于缓和否定语气，表达'不太……'、'并不怎么……'，显得十分自然且富有亲和力。",
+      "formation": "あまり + 动词ない形 + です / あまり + い形容词词尾变く + ないです / あまり + な形容词 / 名词 + じゃないです",
+      "examples": [
+        {
+          "translation": "我吃得并不多。"
+        },
+        {
+          "translation": "这部电影不太有意思。"
+        },
+        {
+          "translation": "他不太热情亲切。"
+        },
+        {
+          "translation": "我的日语不是很擅长。"
+        }
+      ]
+    },
+    "ja_あります_63": {
+      "title": "～あります (〜arimasu)",
+      "shortExplanation": "表示非生物、植物或抽象事物的存在与拥有；'有……'、'在……'。",
+      "longExplanation": "动词'あります'（arimasu）用于表示物品、植物、建筑物、设施或抽象事物等无自主意识对象的存在或拥有。所存在的对象用助词'が'标示，存在的场所则用助词'に'标示（场所 + に + 物体 + が + あります）。必须注意与表示具有自主行动能力的人或动物存在的'います'相区别。",
+      "formation": "名词（非生物/植物等） + が + あります / 场所 + に + 名词 + が + あります",
+      "examples": [
+        {
+          "translation": "教室里有桌子。"
+        },
+        {
+          "translation": "这个公园里有许多花。"
+        },
+        {
+          "translation": "车站附近有一家便利店。"
+        },
+        {
+          "translation": "家里有一台旧电视。"
+        }
+      ]
+    },
+    "ja_いかがですか_64": {
+      "title": "～いかがですか (〜ikaga desu ka)",
+      "shortExplanation": "礼貌地提出劝诱、建议或征求对方意见；'……怎么样？'、'来点……如何？'。",
+      "longExplanation": "'～いかがですか'是'どうですか'的敬语郑重说法。常用于向长辈、客人礼貌地推荐或招待饮品茶点（名词 + は + いかがですか）、委婉地提出行动建议（动词て形 + は + いかがですか），或者询问对方的意向与看法。广泛应用于商务礼仪与接待服务等正式场合。",
+      "formation": "名词 + は + いかがですか / 动词て形 + は + いかがですか",
+      "examples": [
+        {
+          "translation": "来点茶怎么样？"
+        },
+        {
+          "translation": "这件洋装怎么样？"
+        },
+        {
+          "translation": "要不要吃点蛋糕呢？"
+        },
+        {
+          "translation": "去看场电影如何？"
+        }
+      ]
+    },
+    "ja_いくつ_65": {
+      "title": "いくつ～ (ikutsu~)",
+      "shortExplanation": "疑问词，用于询问事物的数量'几个/多少个'；亦可与'か'搭配表示'几个/一些'。",
+      "longExplanation": "'いくつ'（ikutsu）是用于询问通用物品数量的疑问词（对应和语数词ひとつ、ふたつ等），意为'几个'、'多少个'，也可作为询问年龄的礼貌说法。此外，与表示不确定的助词'か'组合成'いくつか'（或'いくつかの + 名词'）时，表示不确定的少量事物，意为'几个'、'若干'、'一些'。",
+      "formation": "いくつ + 助词 / いくつ + の + 名词 / いくつか + の + 名词",
+      "examples": [
+        {
+          "translation": "有几个苹果？"
+        },
+        {
+          "translation": "我必须解决几个问题。"
+        },
+        {
+          "translation": "你能说几种语言？"
+        },
+        {
+          "translation": "聚会上有好几种饮料。"
+        }
+      ]
+    },
+    "ja_いつか_66": {
+      "title": "いつか～ (itsuka～)",
+      "shortExplanation": "表示将来或过去某个不确定的时间点；'总有一天'、'某天'、'迟早'。",
+      "longExplanation": "'いつか'（itsuka）由疑问词'いつ'与表示不确定的助词'か'组合而成，意为将来的某一天或过去的某个时刻。在日常使用中，特别常用于表达对未来的愿望、抱负、憧憬或推测，相当于汉语的'总有一天'、'早晚'、'不知哪一天'。",
+      "formation": "いつか + 句子 / 谓语",
+      "examples": [
+        {
+          "translation": "总有一天我想去日本。"
+        },
+        {
+          "translation": "他将来某一天会成为著名的作家吧。"
+        },
+        {
+          "translation": "我心里想着总有一天要去攀登那座山。"
+        },
+        {
+          "translation": "我相信她总有一天能够实现梦想。"
+        }
+      ]
+    },
+    "ja_いつでも_67": {
+      "title": "いつでも～ (itsudemo～)",
+      "shortExplanation": "表示不受任何时间限制；'随时'、'无论何时'、'总是'。",
+      "longExplanation": "'いつでも'（itsudemo）由疑问词'いつ'搭配表示全面涵盖的助词'でも'构成，用于强调时间不受任何约束。既可用于许可、邀请、提供帮助等场合，表示'随时都可以'、'在任何时候'；也可用于描述某事态的常态性，表示'无论何时都……'、'总是'。",
+      "formation": "いつでも + 动词 / 形容词 / 名词",
+      "examples": [
+        {
+          "translation": "随时欢迎来玩。"
+        },
+        {
+          "translation": "她总是面带微笑。"
+        },
+        {
+          "translation": "随时都可以打电话联系。"
+        },
+        {
+          "translation": "这家店无论何时都很拥挤。"
+        }
+      ]
+    },
+    "ja_いつも_68": {
+      "title": "いつも～ (itsumo～)",
+      "shortExplanation": "频率副词，表示习惯性动作或一贯状态；'总是'、'一直'、'平素'。",
+      "longExplanation": "'いつも'（itsumo）是由'いつ'加助词'も'构成的频率副词，表示某种动作规律性、习惯性地反复进行，或者某种状态一贯持续不变，相当于汉语的'总是'、'一直'、'向来'。通常与现在时或过去时搭配，用于描述日常生活习惯或一贯的做法与偏好。",
+      "formation": "いつも + 动词 / 形容词 / 名词",
+      "examples": [
+        {
+          "translation": "他总是迟到。"
+        },
+        {
+          "translation": "我一直喜欢温顺的狗。"
+        },
+        {
+          "translation": "她总是在安静的地方学习。"
+        },
+        {
+          "translation": "我每天都吃早饭。"
+        }
+      ]
+    },
+    "ja_て_69": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "表示正在进行的动作或持续的状态；'正在……'、'在做……'。",
+      "longExplanation": "句型'～ています'用于表达动作目前正在发生或持续进行，相当于汉语中的'正在做……'或'在做……'。虽然一段动词、五段动词以及不规则动词变化为て形的方式各有不同，但接续均为：动词て形 + います。",
+      "formation": "动词て形 + います",
+      "examples": [
+        {
+          "translation": "我现在正在听音乐。"
+        },
+        {
+          "translation": "爸爸正在看报纸。"
+        },
+        {
+          "translation": "她正在学习英语。"
+        },
+        {
+          "translation": "孩子们正在公园里玩耍。"
+        }
+      ]
+    },
+    "ja_が_70": {
+      "title": "～が (〜ga)",
+      "shortExplanation": "表示主语的格助词，或作为接续助词表示转折；'……是/的'、'但是'。",
+      "longExplanation": "助词'が'（ga）是日语中最基础的核心助词之一，具有两大主要功能：\n1. 格助词用法：标示句子的语法主语，尤其在强调主语本身、排他性指定、呈现新信息或客观描写眼前现象时使用。\n2. 接续助词用法：连接两个具有对比、转折关系的句子，相当于汉语的'但是'、'可是'，亦常用于句首作委婉铺垫。",
+      "formation": "名词 + が（主语） / 动词 / 形容词 / 名词 + が（接续助词'但是'）",
+      "examples": [
+        {
+          "translation": "我才是学生。"
+        },
+        {
+          "translation": "这个苹果好吃。"
+        },
+        {
+          "translation": "他虽然聪明，但性格不好。"
+        },
+        {
+          "translation": "我想跑步，可是脚很痛。"
+        }
+      ]
+    },
+    "ja_が_71": {
+      "title": "～が、～ (〜ga, 〜)",
+      "shortExplanation": "接续助词，用于连接两个分句表示转折与对比；'虽然……但是……'、'……，可是……'。",
+      "longExplanation": "句型'～が、～'置于前项分句末尾，用于连接前后两个意义相反、相对立或存在矛盾的句子，相当于汉语的'虽然……但是……'、'……，可是……'。相比于日常口语中多用的'～けど'，'～が'在语调上显得更加正式、文雅与庄重，广泛适用于书面文章、新闻报道和正式会话中。",
+      "formation": "分句1 + が、+ 分句2",
+      "examples": [
+        {
+          "translation": "甜点虽然好吃，但是热量很高。"
+        },
+        {
+          "translation": "他很聪明，可是有点懒惰。"
+        },
+        {
+          "translation": "公司虽然获得了利润，但员工的工资并没有上涨。"
+        },
+        {
+          "translation": "学外语虽然很有趣，但有时也挺难的。"
+        }
+      ]
+    },
+    "ja_から_72": {
+      "title": "～から、～ (〜kara, 〜)",
+      "shortExplanation": "接续助词，表示原因或理由；'因为……所以……'。",
+      "longExplanation": "'～から'（kara）用于连接分句表示原因或理由，后句常带有说话人的主观意志、判断、推测、提议或请求，相当于汉语的'因为……所以……'。在接续方面，动词和い形容词直接接普通形加'から'，な形容词和名词则需接'だから'（在礼貌语境中可用'ですから'）。",
+      "formation": "动词普通形 + から / い形容词 + から / な形容词 + だから / 名词 + だから",
+      "examples": [
+        {
+          "translation": "因为明天有考试，所以今晚必须学习。"
+        },
+        {
+          "translation": "因为这个房间太狭窄，我正在找更大的房间。"
+        },
+        {
+          "translation": "因为他是朋友，所以应该会帮我的吧。"
+        },
+        {
+          "translation": "因为下雨了，所以无法出门。"
+        }
+      ]
+    },
+    "ja_からです_73": {
+      "title": "～からです (〜kara desu)",
+      "shortExplanation": "置于句末礼貌地阐明原因或理由；'是因为……'。",
+      "longExplanation": "'～からです'置于句尾，用于礼貌地陈述导致先前动作或结果的原因，或者用于回答询问原因的疑问句（如'なぜ'、'どうして'），意为'是因为……'。在语法接续上，动词和い形容词以普通形接'からです'，而な形容词和名词则需接'だからです'。",
+      "formation": "动词普通形 + からです / い形容词 + からです / な形容词 + だからです / 名词 + だからです",
+      "examples": [
+        {
+          "translation": "是因为天气冷。所以我穿着大衣。"
+        },
+        {
+          "translation": "是因为这家店便宜。所以我经常来。"
+        },
+        {
+          "translation": "是因为他为人亲切热心。大家都喜欢他。"
+        },
+        {
+          "translation": "是因为她是学生。所以她在图书馆学习。"
+        }
+      ]
+    },
+    "ja_から_74": {
+      "title": "～から もらいます (〜kara moraimasu)",
+      "shortExplanation": "表示从某人那里得到物品，或得到他人为自己提供帮助；'从……得到'、'得到……为自己做……'。",
+      "longExplanation": "'～から もらいます'（亦可用'～に もらいます'）用于表示说话人（或己方人员）从他人、机构或团体处接收物品，意为'从……收到/获得'。当接在动词て形后构成'～てもらいます'时，表示得到他人的恩惠、由他人为自己做某事并心存感激，相当于汉语的'请某人做……'或'得到某人帮自己做……'。给予者或行为执行者后面使用助词'から'或'に'。",
+      "formation": "给予者 + から/に + 物品 + を + もらいます / 行为者 + に/から + 动词て形 + もらいます",
+      "examples": [
+        {
+          "translation": "我从朋友那里收到了礼物。"
+        },
+        {
+          "translation": "老师把作业发给了我。"
+        },
+        {
+          "translation": "妈妈给我做了料理。"
+        },
+        {
+          "translation": "哥哥把汽车借给了我。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Verb_60": {
+      "title": "동사 사전형 + 前に (ru mae ni)",
+      "shortExplanation": "어떤 동작이나 사건이 일어나기 전에 다른 행동을 함을 나타내며, '~하기 전에'라는 뜻입니다.",
+      "longExplanation": "'～前に'(mae ni) 문형은 동사의 사전형(기본형) 뒤에 접속하여, 다른 동작이나 사건이 발생하기 전에 선행하여 완료해야 하는 행동을 나타냅니다. 주절의 시제가 과거이거나 미래이더라도 '前に' 바로 앞의 동사는 반드시 사전형(현재형)으로 쓰여야 한다는 점에 유의해야 합니다.",
+      "formation": "동사 사전형 + 前に",
+      "examples": [
+        {
+          "translation": "외출하기 전에 방을 청소해 주세요."
+        },
+        {
+          "translation": "자기 전에 이를 닦습니다."
+        },
+        {
+          "translation": "비가 내리기 전에 빨래를 걷을 것."
+        },
+        {
+          "translation": "회의가 시작되기 전에 자료를 준비합시다."
+        }
+      ]
+    },
+    "ja_あまりありません_61": {
+      "title": "あまり～ありません (amari ~ arimasen)",
+      "shortExplanation": "정중한 부정 서술어와 호응하여 정도가 높지 않음을 나타내며, '별로 ~하지 않습니다', '그다지 ~않습니다'라는 뜻입니다.",
+      "longExplanation": "부사 'あまり'(amari)는 정중체 부정 서술어인 '～ありません', '～じゃありません' 등과 호응하여, 상태의 정도나 동작의 빈도가 높지 않음을 완곡하게 표현할 때 쓰입니다. 직접적인 전면 부정을 피해 말씨를 부드럽고 공손하게 만들어 주는 효과가 있습니다. 동사의 정중 부정형, い형용사의 어미 'い'를 탈락시키고 'くありません'을 붙인 형태, な형용사 및 명사 뒤의 'じゃありません(ではありません)'과 결합합니다.",
+      "formation": "あまり + 동사 정중 부정형(～ません / ～ていません) / あまり + い형용사 어간 + くありません / あまり + な형용사 어간 / 명사 + じゃありません(ではありません)",
+      "examples": [
+        {
+          "translation": "그는 별로 피곤해하지 않습니다."
+        },
+        {
+          "translation": "그녀는 그다지 빠르지 않아요."
+        },
+        {
+          "translation": "저는 별로 공부를 안 해요."
+        },
+        {
+          "translation": "돈이 별로 없습니다."
+        }
+      ]
+    },
+    "ja_あまりないです_62": {
+      "title": "あまり～ないです (amari ~ nai desu)",
+      "shortExplanation": "일상 회화에서 부드럽게 부분 부정을 표현하며, '별로 ~하지 않아요', '그다지 ~않습니다'라는 뜻입니다.",
+      "longExplanation": "'あまり～ないです'는 부사 'あまり'에 보통형 부정형(ない형)과 'です'를 결합한 형태로, 현대 일상 회화에서 매우 자주 쓰이는 자연스러운 정중 표현입니다. 단정적이고 강한 부정을 완화하여 '별로 ~하지 않다', '그다지 ~아니다'라는 조심스럽고 공손한 뉘앙스를 전달합니다.",
+      "formation": "あまり + 동사 ない형 + です / あまり + い형용사 어간 + くないです / あまり + な형용사 어간 / 명사 + じゃないです",
+      "examples": [
+        {
+          "translation": "별로 많이 안 먹어요."
+        },
+        {
+          "translation": "이 영화는 별로 재미없어요."
+        },
+        {
+          "translation": "그는 그다지 친절하지 않아요."
+        },
+        {
+          "translation": "저는 일본어를 별로 잘하지 못해요."
+        }
+      ]
+    },
+    "ja_あります_63": {
+      "title": "～あります (〜arimasu)",
+      "shortExplanation": "사물이나 식물 등 무생물의 존재나 소유를 나타내며, '(사물이) 있다'라는 뜻입니다.",
+      "longExplanation": "'あります'(arimasu)는 물건, 식물, 건물, 추상적인 개념 등 스스로 움직이지 못하는 무생물의 존재나 소유를 나타내는 자동사입니다. 존재하는 대상을 조사 'が'로 지정하고, 존재하는 위치나 장소는 조사 'に'로 나타냅니다. 사람이나 동물 등 스스로 움직이는 생물에 쓰이는 'います'와 엄격히 구별하여 사용해야 합니다.",
+      "formation": "명사(사물/무생물) + が + あります / 장소 + に + 명사 + が + あります",
+      "examples": [
+        {
+          "translation": "교실에 책상이 있습니다."
+        },
+        {
+          "translation": "이 공원에 많은 꽃이 있습니다."
+        },
+        {
+          "translation": "역 근처에 편의점이 있습니다."
+        },
+        {
+          "translation": "집 안에 오래된 텔레비전이 있습니다."
+        }
+      ]
+    },
+    "ja_いかがですか_64": {
+      "title": "～いかがですか (〜ikaga desu ka)",
+      "shortExplanation": "정중하게 권유하거나 제안하고, 상대의 의견을 물을 때 쓰이며, '~은 어떠십니까?', '~해 보시는 건 어떠세요?'라는 뜻입니다.",
+      "longExplanation": "'～いかがですか'는 'どうですか'의 정중한 높임말 표현입니다. 손님이나 윗사람에게 음식이나 음료를 권할 때(명사 + は + いかがですか), 어떤 행동을 조심스럽고 공손하게 제안할 때(동사 て형 + は + いかがですか), 또는 상대방의 생각이나 상태를 여쭐 때 두루 쓰입니다. 비즈니스와 접객 등 격식 있는 자리에서 필수적인 표현입니다.",
+      "formation": "명사 + は + いかがですか / 동사 て형 + は + いかがですか",
+      "examples": [
+        {
+          "translation": "차 한잔 어떠십니까?"
+        },
+        {
+          "translation": "이 드레스는 어떠세요?"
+        },
+        {
+          "translation": "케이크를 드셔 보시는 건 어떠세요?"
+        },
+        {
+          "translation": "영화를 보시는 건 어떠세요?"
+        }
+      ]
+    },
+    "ja_いくつ_65": {
+      "title": "いくつ～ (ikutsu~)",
+      "shortExplanation": "사물의 개수나 수량을 묻는 의문사로 '몇 개/얼마나'를 뜻하며, 'か'와 결합하여 '몇몇/몇 가지'를 나타냅니다.",
+      "longExplanation": "'いくつ'(ikutsu)는 물건의 개수를 물어볼 때 쓰는 고유어 계통의 의문사로 '몇 개', '얼마나'를 뜻하며, 나이를 조심스럽게 물을 때도 사용됩니다. 또한 불특정을 나타내는 조사 'か'와 결합한 'いくつか'(또는 'いくつかの + 명사')의 형태는 수량이 정해지지 않은 소수의 대상을 가리켜 '몇몇', '몇 개', '몇 가지'라는 뜻을 나타냅니다.",
+      "formation": "いくつ + 조사 / いくつ + の + 명사 / いくつか + の + 명사",
+      "examples": [
+        {
+          "translation": "사과는 몇 개 있습니까?"
+        },
+        {
+          "translation": "몇 가지 문제를 해결해야 합니다."
+        },
+        {
+          "translation": "당신은 몇 개 언어를 구사할 수 있습니까?"
+        },
+        {
+          "translation": "파티에는 몇 가지 음료가 있습니다."
+        }
+      ]
+    },
+    "ja_いつか_66": {
+      "title": "いつか～ (itsuka～)",
+      "shortExplanation": "미래나 과거의 특정되지 않은 시점을 나타내며, '언젠가', '훗날'이라는 뜻입니다.",
+      "longExplanation": "'いつか'(itsuka)는 시간을 묻는 의문사 'いつ'(언제)에 불특정을 나타내는 조사 'か'가 결합된 부사입니다. 정확히 정해지지 않은 미래의 어느 시점이나 과거의 한때를 가리키며, 특히 미래의 꿈, 소망, 포부나 가능성을 이야기할 때 '언젠가', '훗날'이라는 뜻으로 매우 자주 쓰입니다.",
+      "formation": "いつか + 문장",
+      "examples": [
+        {
+          "translation": "언젠가 일본에 가고 싶습니다."
+        },
+        {
+          "translation": "그는 언젠가 유명한 작가가 되겠지요."
+        },
+        {
+          "translation": "언젠가 저 산을 등반하고 싶다고 생각하고 있습니다."
+        },
+        {
+          "translation": "그녀는 언젠가 꿈을 이룰 수 있을 것이라 믿고 있습니다."
+        }
+      ]
+    },
+    "ja_いつでも_67": {
+      "title": "いつでも～ (itsudemo～)",
+      "shortExplanation": "시간상의 제한이 없음을 나타내며, '언제든지', '언제라도', '항상'이라는 뜻입니다.",
+      "longExplanation": "'いつでも'(itsudemo)는 의문사 'いつ'에 전면적 긍정을 뜻하는 조사 'でも'가 붙은 부사입니다. 시간적인 제약이나 조건이 전혀 없음을 강조하여 상대방에게 권유나 허가를 할 때 '언제든지', '언제라도'라는 뜻으로 쓰이며, 어떤 상태가 늘 지속됨을 나타내어 '항상', '언제나'라는 의미로도 쓰입니다.",
+      "formation": "いつでも + 동사 / 형용사 / 명사",
+      "examples": [
+        {
+          "translation": "언제든지 놀러 오세요."
+        },
+        {
+          "translation": "그녀는 언제나 미소를 짓고 있습니다."
+        },
+        {
+          "translation": "언제든지 전화로 연락할 수 있습니다."
+        },
+        {
+          "translation": "이 가게는 언제나 붐빕니다."
+        }
+      ]
+    },
+    "ja_いつも_68": {
+      "title": "いつも～ (itsumo～)",
+      "shortExplanation": "습관적인 행동이나 지속적인 상태를 나타내는 빈도부사로, '항상', '늘', '언제나'라는 뜻입니다.",
+      "longExplanation": "'いつも'(itsumo)는 습관적으로 반복되는 행동이나 일관되게 유지되는 상태를 나타내는 빈도부사로, 한국어의 '항상', '늘', '언제나'에 해당합니다. 일상적인 생활 습관을 이야기하거나 지속적인 취향 및 태도를 서술할 때 매우 널리 사용됩니다.",
+      "formation": "いつも + 동사 / 형용사 / 명사",
+      "examples": [
+        {
+          "translation": "그는 항상 지각합니다."
+        },
+        {
+          "translation": "저는 늘 온순한 개를 좋아합니다."
+        },
+        {
+          "translation": "그녀는 항상 조용한 장소에서 공부합니다."
+        },
+        {
+          "translation": "언제나 아침밥을 먹습니다."
+        }
+      ]
+    },
+    "ja_て_69": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "현재 진행 중인 동작이나 지속 중인 상태를 나타내며, '~하고 있다', '~하는 중이다'의 뜻입니다.",
+      "longExplanation": "'～ています' 문형은 어떤 동작이 현재 진행 중이거나 계속되고 있음을 나타낼 때 사용하며, 한국어의 '~하고 있다', '~하는 중이다'에 해당합니다. 1그룹(5단) 동사, 2그룹(1단) 동사, 3그룹(불규칙) 동사에 따라 て형 변형 규칙은 다르지만, 모두 '동사 て형 + います' 형태로 접속합니다.",
+      "formation": "동사 て형 + います",
+      "examples": [
+        {
+          "translation": "지금 음악을 듣고 있습니다."
+        },
+        {
+          "translation": "아버지는 신문을 읽고 계십니다."
+        },
+        {
+          "translation": "그녀는 영어를 공부하고 있습니다."
+        },
+        {
+          "translation": "아이들은 공원에서 놀고 있습니다."
+        }
+      ]
+    },
+    "ja_が_70": {
+      "title": "～が (〜ga)",
+      "shortExplanation": "문장의 주어를 나타내는 격조사로 쓰이거나, 역접을 나타내는 접속조사로 쓰여 '이/가', '~지만'의 뜻을 나타냅니다.",
+      "longExplanation": "조사 'が'(ga)는 일본어 문법의 핵심적인 조사로 크게 두 가지 용법을 지닙니다:\n1. 격조사: 주어를 나타내며 특히 주어를 특정하거나 강조할 때, 새로운 정보를 제시할 때, 혹은 자연 현상을 묘사할 때 한국어의 조사 '이/가'에 해당합니다.\n2. 접속조사: 두 절을 연결하여 앞뒤 내용의 대조나 역접을 나타내며, 한국어의 '~하지만', '~인데'에 해당합니다.",
+      "formation": "명사 + が (주어) / 동사 / 형용사 / 명사 + が (접속조사 '~지만')",
+      "examples": [
+        {
+          "translation": "제가 학생입니다."
+        },
+        {
+          "translation": "이 사과가 맛있습니다."
+        },
+        {
+          "translation": "그는 머리는 좋지만 성격이 나쁩니다."
+        },
+        {
+          "translation": "달리고 싶지만 다리가 아픕니다."
+        }
+      ]
+    },
+    "ja_が_71": {
+      "title": "～が、～ (〜ga, 〜)",
+      "shortExplanation": "두 문장을 대조적으로 이어주는 역접의 접속조사로, '~하지만', '~인데'라는 뜻입니다.",
+      "longExplanation": "'～が、～'는 앞 절의 끝에 붙어 뒤 절과 서로 상반되거나 대조되는 내용을 연결해 주는 역접 접속 표현입니다. 한국어의 '~하지만', '~인데'에 해당합니다. 구어에서 자주 쓰이는 '～けど'에 비해 정중하고 격식 있는 어조를 띠며, 문어체나 비즈니스, 뉴스, 공식적인 담화에서 표준적으로 사용됩니다.",
+      "formation": "문장 1 + が、+ 문장 2",
+      "examples": [
+        {
+          "translation": "디저트는 맛있지만 칼로리가 높습니다."
+        },
+        {
+          "translation": "그는 머리는 좋지만 조금 게으릅니다."
+        },
+        {
+          "translation": "회사는 이익을 냈지만 직원의 급여는 오르지 않았습니다."
+        },
+        {
+          "translation": "외국어를 공부하는 것은 즐겁지만 때때로 어렵습니다."
+        }
+      ]
+    },
+    "ja_から_72": {
+      "title": "～から、～ (〜kara, 〜)",
+      "shortExplanation": "원인이나 이유를 나타내는 접속조사로, '~때문에', '~하니까', '~해서'라는 뜻입니다.",
+      "longExplanation": "'～から'(kara)는 앞 절에서 어떤 일의 원인이나 화자의 주관적인 이유를 제시하고, 뒷 절에서 그에 따른 결과, 의지, 판단, 권유 등을 이끌어낼 때 쓰는 대표적인 이유 표현입니다. 한국어의 '~때문에', '~하니까'에 해당합니다. 동사와 い형용사는 보통형 뒤에 바로 접속하며, な형용사와 명사 뒤에는 '～だから'(정중체에서는 '～ですから') 형태로 접속합니다.",
+      "formation": "동사 보통형 + から / い형용사 + から / な형용사 + だから / 명사 + だから",
+      "examples": [
+        {
+          "translation": "내일 시험이 있기 때문에 오늘 밤 공부해야 합니다."
+        },
+        {
+          "translation": "이 방은 좁기 때문에 더 넓은 방을 찾고 있습니다."
+        },
+        {
+          "translation": "그는 친구이니까 도와주겠지요."
+        },
+        {
+          "translation": "비가 내렸기 때문에 밖에 나갈 수 없습니다."
+        }
+      ]
+    },
+    "ja_からです_73": {
+      "title": "～からです (〜kara desu)",
+      "shortExplanation": "문장 끝에서 이유나 원인을 정중하게 서술할 때 쓰이며, '~(이)기 때문입니다'라는 뜻입니다.",
+      "longExplanation": "'～からです'는 문말에 위치하여 앞서 언급한 행동이나 상황의 이유를 뒤이어 설명하거나, 이유를 묻는 의문문(なぜ／どうして)에 정중하게 대답할 때 쓰는 표현입니다. 한국어의 '~(이)기 때문입니다', '~해서입니다'에 해당합니다. 동사와 い형용사의 보통형 뒤에 바로 'からです'가 접속하며, な형용사와 명사 뒤에는 '～だからです' 형태로 접속합니다.",
+      "formation": "동사 보통형 + からです / い형용사 + からです / な형용사 + だからです / 명사 + だからです",
+      "examples": [
+        {
+          "translation": "춥기 때문입니다. 코트를 입고 있습니다."
+        },
+        {
+          "translation": "이 가게가 저렴하기 때문입니다. 자주 옵니다."
+        },
+        {
+          "translation": "그는 친절하기 때문입니다. 모두에게 인기가 있습니다."
+        },
+        {
+          "translation": "그녀는 학생이기 때문입니다. 도서관에서 공부하고 있습니다."
+        }
+      ]
+    },
+    "ja_から_74": {
+      "title": "～から もらいます (〜kara moraimasu)",
+      "shortExplanation": "다른 사람에게서 물건을 받거나 호의로 어떤 행동을 받음을 나타내며, '~에게서 받다', '~가 ~해 주다/받다'라는 뜻입니다.",
+      "longExplanation": "'～から もらいます'(또는 '～に もらいます')는 화자(또는 화자 측의 사람)가 다른 사람이나 조직 등으로부터 물건을 받을 때 사용하며, 한국어의 '~에게서 받다'에 해당합니다. 또한 동사의 て형과 결합한 '～てもらいます' 형태는 다른 사람이 자신을 위해 베풀어 준 행동에 대해 감사의 뜻을 담아 표현하는 것으로, '~가 ~해 주다/받다'라는 의미를 나타냅니다. 물건을 주는 상대방이나 행위자 뒤에 조사 'から' 또는 'に'를 사용합니다.",
+      "formation": "주는 사람 + から/に + 물건 + を + もらいます / 행위자 + に/から + 동사 て형 + もらいます",
+      "examples": [
+        {
+          "translation": "친구에게서 선물을 받았습니다."
+        },
+        {
+          "translation": "선생님께서 숙제를 건네주셨습니다."
+        },
+        {
+          "translation": "어머니께서 요리를 만들어 주셨습니다."
+        },
+        {
+          "translation": "형에게서 차를 빌렸습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Verb_60": {
+      "title": "動詞辞書形 + 前に (ru mae ni)",
+      "shortExplanation": "ある動作や出来事が起こる前に行動することを表し、「〜する前に」という意味です。",
+      "longExplanation": "「～前に（まえに）」は、動詞の辞書形（基本形）に接続して、後続の動作や出来事が発生するよりも前に別の動作を行うことを表します。文末の主節が過去形であっても、「前に」の直前の動詞は常に現在形（辞書形）が用いられるのが重要な特徴です。",
+      "formation": "動詞辞書形 + 前に",
+      "examples": [
+        {
+          "translation": "出かける前に、部屋を掃除してください。"
+        },
+        {
+          "translation": "寝る前に、歯を磨きます。"
+        },
+        {
+          "translation": "雨が降る前に、洗濯物を取り込むこと。"
+        },
+        {
+          "translation": "会議が始まる前に、資料を準備しましょう。"
+        }
+      ]
+    },
+    "ja_あまりありません_61": {
+      "title": "あまり～ありません (amari ~ arimasen)",
+      "shortExplanation": "丁寧な否定表現と呼応して程度が高くないことを表し、「あまり〜ない」「それほど〜ではない」という意味です。",
+      "longExplanation": "副詞「あまり」は、丁寧な否定の述語（～ません／～ありません／～じゃありません）と呼応して、物事の程度や頻度が著しくないこと（部分否定）を表します。直接的な強い否定を避け、表現を柔らかく控えめにする働きがあります。動詞の否定形、い形容詞の連用形（〜く）＋ありません、な形容詞や名詞＋じゃありません（ではありません）に接続します。",
+      "formation": "あまり + 動詞丁寧否定形（～ません／～ていません） / あまり + い形容詞語幹＋くありません / あまり + な形容詞語幹・名詞 ＋ じゃありません（ではありません）",
+      "examples": [
+        {
+          "translation": "彼はあまり疲れていません。"
+        },
+        {
+          "translation": "彼女はあまり早くないですよ。"
+        },
+        {
+          "translation": "私はあまり勉強しないです。"
+        },
+        {
+          "translation": "あまりお金がありません。"
+        }
+      ]
+    },
+    "ja_あまりないです_62": {
+      "title": "あまり～ないです (amari ~ nai desu)",
+      "shortExplanation": "口語で柔らかく部分否定を表す丁寧表現で、「あまり〜ない」「それほど〜ではない」という意味です。",
+      "longExplanation": "「あまり～ないです」は、副詞「あまり」に動詞や形容詞のない形（普通形否定）＋「です」を組み合わせた文型です。日常会話において広く用いられ、「～ません」よりも親しみやすく、断定を避けた穏やかな否定のトーンを表現できます。",
+      "formation": "あまり + 動詞ない形 + です / あまり + い形容詞語幹＋くないです / あまり + な形容詞語幹・名詞 ＋ じゃないです",
+      "examples": [
+        {
+          "translation": "あまり食べないです。"
+        },
+        {
+          "translation": "この映画はあまり面白くないです。"
+        },
+        {
+          "translation": "彼はあまり親切じゃないです。"
+        },
+        {
+          "translation": "私はあまり日本語が上手じゃないです。"
+        }
+      ]
+    },
+    "ja_あります_63": {
+      "title": "～あります (〜arimasu)",
+      "shortExplanation": "無生物や植物、概念などの存在や所有を表し、「〜がある」「〜に存在する」という意味です。",
+      "longExplanation": "動詞「あります」は、自らの意志で動かない物品、建物、植物、抽象的な事柄などの存在や所有を表します。存在する対象を助詞「が」で指し示し、その所在場所を助詞「に」で表す「場所 ＋ に ＋ 物 ＋ が ＋ あります」の構文が基本です。人間や動物などの生物の存在を表す「います」と明確に使い分ける必要があります。",
+      "formation": "名詞（無生物・植物など） + が + あります / 場所 + に + 名詞 + が + あります",
+      "examples": [
+        {
+          "translation": "教室に机があります。"
+        },
+        {
+          "translation": "この公園にたくさんの花があります。"
+        },
+        {
+          "translation": "駅の近くにコンビニがあります。"
+        },
+        {
+          "translation": "家の中に古いテレビがあります。"
+        }
+      ]
+    },
+    "ja_いかがですか_64": {
+      "title": "～いかがですか (〜ikaga desu ka)",
+      "shortExplanation": "相手に飲食物を勧めたり、提案や意向を丁寧に尋ねたりする敬語表現で、「〜はどうですか」の丁寧な言い方です。",
+      "longExplanation": "「～いかがですか」は、「どうですか」の改まった敬語表現（丁寧語）です。相手に物を勧めるとき（名詞＋はいかがですか）や、ある行動を控えめに提案・勧誘するとき（動詞て形＋はいかがですか）、または相手の意見や都合を伺うときに用いられます。接客業やビジネスシーン、目上の人との会話で頻繁に使われる基本表現です。",
+      "formation": "名詞 + は + いかがですか / 動詞 て形 + は + いかがですか",
+      "examples": [
+        {
+          "translation": "お茶はいかがですか？"
+        },
+        {
+          "translation": "このドレスはいかがですか？"
+        },
+        {
+          "translation": "ケーキを食べてはいかがですか？"
+        },
+        {
+          "translation": "映画を見てはいかがですか？"
+        }
+      ]
+    },
+    "ja_いくつ_65": {
+      "title": "いくつ～ (ikutsu~)",
+      "shortExplanation": "物の個数や数量を尋ねる疑問詞で、「何個」「いくつ」を表し、「いくつか」で「数個」「何点か」を表します。",
+      "longExplanation": "「いくつ」は、物の個数や数量（主に和語数詞「ひとつ、ふたつ…」に対応する対象）を尋ねる疑問詞で、「いくつ」「何個」という意味を表します。また、年齢を丁寧に尋ねる際にも用いられます。不定を表す助詞「か」を伴った「いくつか」「いくつかの＋名詞」の形では、「定まらない少数の数量（数個、いくつか）」を表します。",
+      "formation": "いくつ + 助詞 / いくつ + の + 名詞 / いくつか + の + 名詞",
+      "examples": [
+        {
+          "translation": "リンゴはいくつありますか？"
+        },
+        {
+          "translation": "いくつかの問題を解決しなければなりません。"
+        },
+        {
+          "translation": "あなたはいくつの言語を話せますか？"
+        },
+        {
+          "translation": "パーティーにはいくつかの飲み物があります。"
+        }
+      ]
+    },
+    "ja_いつか_66": {
+      "title": "いつか～ (itsuka～)",
+      "shortExplanation": "特定されていない未来や過去の時を指し、「いつの日か」「そのうちに」という意味を表します。",
+      "longExplanation": "「いつか」は、時を尋ねる疑問詞「いつ」に不特定を表す助詞「か」が接続した副詞です。確定していない未来のある時点、または過去のある時を漠然と指します。特に将来の夢や希望、期待、予測などを述べる文脈脈でよく使われ、「将来いつの日か」「いつかきっと」というニュアンスを表します。",
+      "formation": "いつか + 文",
+      "examples": [
+        {
+          "translation": "いつか日本に行きたいです。"
+        },
+        {
+          "translation": "彼はいつか有名な作家になるでしょう。"
+        },
+        {
+          "translation": "いつかあの山を登りたいと思っています。"
+        },
+        {
+          "translation": "彼女はいつか夢を叶えることができると信じています。"
+        }
+      ]
+    },
+    "ja_いつでも_67": {
+      "title": "いつでも～ (itsudemo～)",
+      "shortExplanation": "時間の制約がないことを表し、「どんな時でも」「いつでも自由に」「常に」という意味です。",
+      "longExplanation": "「いつでも」は、疑問詞「いつ」に全般的な受容・肯定を表す助詞「でも」が付いた副詞です。時間的な制限や条件が全くないことを表し、相手への許可や誘いにおける「好きな時にいつでも」「いつでも自由に」という意味や、状態が常に変わらない「いついかなる時も」「普段から常に」という意味を表します。",
+      "formation": "いつでも + 動詞 / 形容詞 / 名詞",
+      "examples": [
+        {
+          "translation": "いつでも遊びに来てください。"
+        },
+        {
+          "translation": "彼女はいつでも笑顔です。"
+        },
+        {
+          "translation": "いつでも電話で連絡できます。"
+        },
+        {
+          "translation": "この店はいつでも混んでいます。"
+        }
+      ]
+    },
+    "ja_いつも_68": {
+      "title": "いつも～ (itsumo～)",
+      "shortExplanation": "習慣的な動作や常に変わらない状態を表す頻度副詞で、「常に」「普段から」という意味です。",
+      "longExplanation": "「いつも」は、日常の習慣として規則的に繰り返される動作や、常に一定して変わらない状態を表す頻度副詞です。「常に」「普段」「毎回」などの意味を持ち、日頃の習慣的な行動パターンや一貫した好み・性質を表現する際に用いられます。",
+      "formation": "いつも + 動詞 / 形容詞 / 名詞",
+      "examples": [
+        {
+          "translation": "彼はいつも遅刻します。"
+        },
+        {
+          "translation": "私はいつも優しい犬が好きです。"
+        },
+        {
+          "translation": "彼女はいつも静かな場所で勉強します。"
+        },
+        {
+          "translation": "いつも朝ご飯を食べます。"
+        }
+      ]
+    },
+    "ja_て_69": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "現在進行している動作や継続している行為を表し、「〜している」「〜しているところだ」という意味を表します。",
+      "longExplanation": "「～ています」は、ある動作が今まさに行われていることや、進行・継続中であることを表す文法表現です。動詞の種類（1グループ／五段動詞、2グループ／一段動詞、3グループ／不規則動詞）によって「て形」の作り方は異なりますが、いずれも「動詞 て形 ＋ います」の形で接続します。",
+      "formation": "動詞 て形 + います",
+      "examples": [
+        {
+          "translation": "今、音楽を聞いています。"
+        },
+        {
+          "translation": "父は新聞を読んでいます。"
+        },
+        {
+          "translation": "彼女は英語を勉強しています。"
+        },
+        {
+          "translation": "子どもたちは公園で遊んでいます。"
+        }
+      ]
+    },
+    "ja_が_70": {
+      "title": "～が (〜ga)",
+      "shortExplanation": "文の主語を表す格助詞、または前後の節を逆接で結ぶ接続助詞で、「〜が」「〜けれど」という意味です。",
+      "longExplanation": "助詞「が」は、日本語の最重要助詞の一つで、主に2つの基本的機能を持っています。\n1. 格助詞としての用法：文の主語を示します。特に未知の情報を提示するときや、主語そのものを排他的に指定・強調するとき、自然現象などを客観的に描写する際に使われます。\n2. 接続助詞としての用法：二つの節を結びつけ、前後の事柄が対比・逆接関係にあることを表し、「〜だが」「〜けれど」という意味を表します。",
+      "formation": "名詞 + が（主語） / 動詞・形容詞・名詞 + が（逆接の接続助詞）",
+      "examples": [
+        {
+          "translation": "私が学生です。"
+        },
+        {
+          "translation": "このりんごが美味しい。"
+        },
+        {
+          "translation": "彼は頭がいいが、性格が悪い。"
+        },
+        {
+          "translation": "走りたいが、足が痛い。"
+        }
+      ]
+    },
+    "ja_が_71": {
+      "title": "～が、～ (〜ga, 〜)",
+      "shortExplanation": "前後の文をつなぎ、対比や逆接の関係を表す接続助詞で、「〜だが」「〜けれど」という意味です。",
+      "longExplanation": "「～が、～」は、二つの文や節を接続して、前後の内容が対立・矛盾していることや、対比関係にあることを表す逆接の接続表現です。話し言葉で多用される「～けど」に比べて改まった丁寧な響きを持ち、書き言葉や公の場でのスピーチ、ニュース、ビジネス会話などで標準的に用いられます。",
+      "formation": "文1 + が、+ 文2",
+      "examples": [
+        {
+          "translation": "デザートは美味しいが、カロリーが高い。"
+        },
+        {
+          "translation": "彼は頭がいいが、少し怠け者だ。"
+        },
+        {
+          "translation": "会社は利益を上げたが、従業員の給与は上がらなかった。"
+        },
+        {
+          "translation": "外国語を勉強することが楽しいが、時々難しい。"
+        }
+      ]
+    },
+    "ja_から_72": {
+      "title": "～から、～ (〜kara, 〜)",
+      "shortExplanation": "原因や理由を表す接続助詞で、「〜だから」「〜ので」という意味を表します。",
+      "longExplanation": "「～から」は、後続の事柄に対する原因や理由を表す接続助詞です。話者の主観的な判断や理由づけを表すことが多く、後続の節には話者の意志、希望、推量、働きかけ（勧誘・依頼・命令など）が自然に続きます。動詞やい形容詞の普通形に接続し、な形容詞や名詞には「～だから」（丁寧体では「～ですから」）の形で接続します。",
+      "formation": "動詞普通形 + から / い形容詞 + から / な形容詞 + だから / 名詞 + だから",
+      "examples": [
+        {
+          "translation": "明日は試験があるから、今晩勉強しなければなりません。"
+        },
+        {
+          "translation": "この部屋は狭いから、もっと大きい部屋を探しています。"
+        },
+        {
+          "translation": "彼は友達だから、手伝ってくれるでしょう。"
+        },
+        {
+          "translation": "雨が降ったから、外に出られません。"
+        }
+      ]
+    },
+    "ja_からです_73": {
+      "title": "～からです (〜kara desu)",
+      "shortExplanation": "文末で理由や原因を丁寧に述べる表現で、「〜だからです」「〜という理由によるものです」という意味です。",
+      "longExplanation": "「～からです」は、文末に置いて先行する発言や出来事の理由・根拠を丁寧に説明する表現です。「なぜ」「どうして」と理由を尋ねられた際の丁寧な返答としても多用されます。動詞やい形容詞の普通形にそのまま接続し、な形容詞や名詞には「～だからです」の形で接続します。",
+      "formation": "動詞普通形 + からです / い形容詞 + からです / な形容詞 + だからです / 名詞 + だからです",
+      "examples": [
+        {
+          "translation": "寒いからです。コートを着ています。"
+        },
+        {
+          "translation": "この店は安いからです。よく来ます。"
+        },
+        {
+          "translation": "彼は親切だからです。みんなに好かれています。"
+        },
+        {
+          "translation": "彼女は学生だからです。図書館で勉強しています。"
+        }
+      ]
+    },
+    "ja_から_74": {
+      "title": "～から もらいます (〜kara moraimasu)",
+      "shortExplanation": "人や組織から物を受け取ったり、他者に恩恵的な行為をしてもらうことを表し、「〜からもらう」「〜に〜してもらう」という意味です。",
+      "longExplanation": "「～からもらいます」（または「～にもらいます」）は、話し手（または身内の者）が他者や学校・会社などの組織から物品を受け取ることを表します。また、動詞のて形に接続する「～てもらいます」の形では、他者の好意や依頼によって自分（または身内）のためにある動作をしてもらい、それに対して感謝の気持ちを抱いていることを表します。物品の授受元や行為者には助詞「から」または「に」を用います。",
+      "formation": "相手 + から／に + 物 + を + もらいます / 行為者 + に／から + 動詞 て形 + もらいます",
+      "examples": [
+        {
+          "translation": "友達からプレゼントをもらいました。"
+        },
+        {
+          "translation": "先生に宿題を渡してもらいました。"
+        },
+        {
+          "translation": "お母さんに料理を作ってもらいました。"
+        },
+        {
+          "translation": "兄に車を貸してもらいました。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko__101",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄴ/는지 모르겠다 [(eu)n/neunji moreugessda] (I'm not sure if)",
+    "shortExplanation": "Used to express uncertainty or lack of confidence about something; 'I'm not sure if'.",
+    "longExplanation": "'~(으)ㄴ/는지 모르겠다' is used in Korean when the speaker is not certain about some fact or situation. It often corresponds to 'I don't know if...' or 'I'm not sure whether...' in English. You attach ~(으)ㄴ/는지 to the verb or adjective stem, then add 모르겠다 (or 모른다, 모르겠어요, etc.) to indicate uncertainty.",
+    "formation": "Verb/Adjective + ~(으)ㄴ/는지 + 모르겠다",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "저는 장소를 정확하게 기억하고 나왔는지 모르겠어요.",
+        "romanization": "Jeoneun jangsoreul jeonghwakage gieokhago nawassneunji moreugesseoyo.",
+        "translation": "I'm not sure if I remembered the location correctly when I left."
+      },
+      {
+        "sentence": "그가 아직도 나를 사랑하는지 모르겠어요.",
+        "romanization": "Geuga ajikdo nareul saranghaneunji moreugesseoyo.",
+        "translation": "I'm not sure if he still loves me."
+      },
+      {
+        "sentence": "비가 왔었는지 모르겠는데, 바닥이 젖어 있네요.",
+        "romanization": "Biga wasseonneunji moreugenneunde, badagi jeojeo inneyo.",
+        "translation": "I'm not sure if it rained, but the ground is wet."
+      },
+      {
+        "sentence": "내일 학교에 갈 수 있는지 모르겠어요. 몸이 좀 안 좋아요.",
+        "romanization": "Naeil hakgyoe gal su inneunji moreugesseoyo. Momi jom an joayo.",
+        "translation": "I'm not sure if I can go to school tomorrow. I’m feeling a bit unwell."
+      }
+    ]
+  },
+  {
+    "id": "ko__102",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)려는 참이다 [(eu)ryeoneun chamida] (I really want to)",
+    "shortExplanation": "Used to express a strong desire or intention to do something, often implying frustration at not being able to do it.",
+    "longExplanation": "'~(으)려는 참이다' emphasizes a strong intent or desire toward an action, sometimes accompanied by a sense of frustration or impatience. It can be translated as 'I was just about to...' or 'I really want to...' in English. It's commonly used when you feel you have been holding yourself back but are on the verge of acting.",
+    "formation": "Verb-으려는 + 참이다 / Verb-려는 + 참이다",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "이 사람에게 뭐라고 하려는 참이었지만, 말을 꺼낼 수가 없었어요.",
+        "romanization": "I saramege mworago haryeoneun chamieotjiman, mareul kkeonael suga eopseosseoyo.",
+        "translation": "I really wanted to say something to this person, but I couldn’t bring myself to speak."
+      },
+      {
+        "sentence": "반말하려는 참이었지만 그를 존중해서 참았어요.",
+        "romanization": "Banmal haryeoneun chamieotjiman geureul jonjunghaeseo chamasseoyo.",
+        "translation": "I really wanted to speak informally, but I held back out of respect for him."
+      },
+      {
+        "sentence": "야외에서 놀려는 참이었지만 날씨가 너무 안 좋아서 못 했어요.",
+        "romanization": "Yawoeseo nolryeoneun chamieotjiman nalssiga neomu an joaseo mot haesseoyo.",
+        "translation": "I really wanted to play outside, but I couldn’t because the weather was too bad."
+      },
+      {
+        "sentence": "그 영화를 보려는 참이었는데 표가 매진이라서 못 봤어요.",
+        "romanization": "Geu yeonghwareul boryeoneun chamieotneunde pyoga maejiniraseo mot bwasseoyo.",
+        "translation": "I really wanted to watch that movie, but I couldn’t because it was sold out."
+      }
+    ]
+  },
+  {
+    "id": "ko__103",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ 것 같다 [(eu)l geot gatda] (It seems like)",
+    "shortExplanation": "Used to express a guess, assumption, or prediction.",
+    "longExplanation": "'~(으)ㄹ 것 같다' is used to say that something seems like it will happen, or that you assume/predict something based on what you know. Whether you use '으' depends on whether the verb/adjective stem ends in a consonant or vowel. In casual speech, you’ll often hear it as '것 같아(요).'",
+    "formation": "Verb/Adjective Stem + (으)ㄹ 것 같다",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "내일은 비가 올 것 같아요. 우산을 챙기는 게 좋겠어요.",
+        "romanization": "Naeireun biga ol geot gatayo. Usaneul chaengingeun ge jokesseoyo.",
+        "translation": "It seems like it will rain tomorrow. You’d better bring an umbrella."
+      },
+      {
+        "sentence": "그녀는 매우 행복할 것 같아요. 드디어 드림팀에 합류했으니까요.",
+        "romanization": "Geunyeoneun maeu haengbokhal geot gatayo. Deudieo deurimtime habryuhaesseunikka-yo.",
+        "translation": "She seems like she'll be really happy, because she finally joined her dream team."
+      },
+      {
+        "sentence": "이 지도를 보니까 우리가 길을 잃을 것 같아요.",
+        "romanization": "I jidoreul bonikka uriga gireul ilheul geot gatayo.",
+        "translation": "Looking at this map, it seems like we might lose our way."
+      },
+      {
+        "sentence": "이 제품은 인기가 높을 것 같아요. 기능이 매우 뛰어나거든요.",
+        "romanization": "I jepumeun ingiga nopeul geot gatayo. Gineungi maeu ttwieonagodeunyo.",
+        "translation": "It seems like this product will be popular because its features are excellent."
+      }
+    ]
+  },
+  {
+    "id": "ko__104",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ 것이다 [(eu)l geosida] (Will likely)",
+    "shortExplanation": "Used to express probability, anticipation, or plan for the future; 'will likely', 'will', 'is going to'.",
+    "longExplanation": "'~(으)ㄹ 것이다' is used in Korean to indicate a prediction, expectation, or plan regarding the future, akin to 'will' in English. It implies the speaker’s belief or intention about what will happen or what they (or someone else) will do.",
+    "formation": "Verb stem + ㄹ 것이다 (if ending in a vowel) / 을 것이다 (if ending in a consonant)",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "내일은 날씨가 좋을 것이다. 그래서 다들 야외에서 시간을 보내려고 할 것이다.",
+        "romanization": "Naeireun nalssiga joheul geosida. Geuraeseo dadeul yaoeseo siganeul bonaeryeogo hal geosida.",
+        "translation": "The weather will likely be good tomorrow, so everyone will probably plan to spend time outdoors."
+      },
+      {
+        "sentence": "저는 내년에 대학교를 졸업할 것이다. 그리고 취업을 준비할 것이다.",
+        "romanization": "Jeoneun naenyeone daehakgyoreul joleophal geosida. Geurigo chwieobeul junbihal geosida.",
+        "translation": "I will likely graduate from university next year, and I will prepare to get a job."
+      },
+      {
+        "sentence": "우리는 이번 주말에 캠핑을 갈 것이다. 그래서 캠핑용품을 살 것이다.",
+        "romanization": "Urineun ibeon jumale kaempingeul gal geosida. Geuraeseo kaempingyongpumeul sal geosida.",
+        "translation": "We will likely go camping this weekend, so we plan to buy camping gear."
+      },
+      {
+        "sentence": "그녀는 피아노 연습을 많이 하고 있으니까 곧 잘 칠 것이다.",
+        "romanization": "Geunyeoneun piano yeonseubeul manhi hago isseunikka got jal chil geosida.",
+        "translation": "Since she has been practicing the piano a lot, she will likely play well soon."
+      }
+    ]
+  },
+  {
+    "id": "ko__105",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ 뿐만 아니라 [(eu)l ppunman anira] (Not only... but also...)",
+    "shortExplanation": "Used to express 'not only..., but also...'.",
+    "longExplanation": "'~(으)ㄹ 뿐만 아니라' is used in Korean to emphasize two or more statements are true. The second part adds new information that supports or expands upon the first part, akin to 'not only…but also…' in English.",
+    "formation": "Verb/Adjective/Noun + ~(으)ㄹ 뿐만 아니라 + [Additional statement]",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "그는 일을 잘할 뿐만 아니라 창조성도 뛰어나서 모두에게 인정을 받았어요.",
+        "romanization": "Geuneun ireul jalhal ppunman anira changjoseongdo ttwieonaseo moduege injungeul badasseoyo.",
+        "translation": "Not only does he do his job well, but he’s also very creative, so everyone recognizes him."
+      },
+      {
+        "sentence": "이 레스토랑은 맛있는 음식을 제공할 뿐만 아니라 훌륭한 서비스도 제공해요.",
+        "romanization": "I reseutorang-eun masinneun eumsigeul jegonghal ppunman anira hullyunghan seobiseudo jegonghaeyo.",
+        "translation": "This restaurant not only provides delicious food but also excellent service."
+      },
+      {
+        "sentence": "그녀는 영어를 잘할 뿐만 아니라 중국어와 일본어도 유창해요.",
+        "romanization": "Geunyeoneun yeongeoreul jalhal ppunman anira junggueowa ilboneodo yuchanghaeyo.",
+        "translation": "She is not only good at English, but she’s also fluent in Chinese and Japanese."
+      },
+      {
+        "sentence": "지민 씨는 요리를 잘할 뿐만 아니라 정말 멋진 사진도 찍을 수 있어요.",
+        "romanization": "Jimin ssi-neun yorireul jalhal ppunman anira jeongmal meotjin sajindo jjigeul su isseoyo.",
+        "translation": "Not only can Jimin cook well, but he can also take really amazing photos."
+      }
+    ]
+  },
+  {
+    "id": "ko__106",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ 뿐이다 [(eu)l ppunida] (Only, just)",
+    "shortExplanation": "Used to express 'only' or 'just', emphasizing a sole action or state.",
+    "longExplanation": "'~(으)ㄹ 뿐이다' emphasizes that there is nothing more or different beyond what’s stated. It’s similar to saying 'I only do X' or 'It’s just that…' in English. The form depends on whether the verb stem ends in a vowel (ㄹ 뿐이다) or consonant (을 뿐이다).",
+    "formation": "Verb stem + ~(으)ㄹ 뿐이다",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "그녀는 말할 뿐이지, 실제로 행동하지 않아요.",
+        "romanization": "Geunyeoneun malhal ppuniji, siljero haengdonghaji anhayo.",
+        "translation": "She only talks; she doesn't actually take any action."
+      },
+      {
+        "sentence": "나는 그녀에게 웃을 뿐이다. 실제로 대화는 하지 않았어요.",
+        "romanization": "Naneun geunyeoege useul ppunida. Siljero daehwaneun haji anhasseoyo.",
+        "translation": "I just smiled at her; I didn’t actually have any conversation."
+      },
+      {
+        "sentence": "아버지는 손님들과 대화할 뿐이지 집안일을 돕지 않아요.",
+        "romanization": "Abeojineun sonnimdeulgwa daehwahal ppuniji jibanireul dopji anhayo.",
+        "translation": "Father only talks with the guests; he doesn't help with the housework."
+      },
+      {
+        "sentence": "그들은 영화만 보러 갈 뿐이다. 영화에 대해 이야기하진 않아요.",
+        "romanization": "Geudeureun yeonghwaman boreo gal ppunida. Yeonghwa-e daehae iyagihajin anhayo.",
+        "translation": "They’re just going to watch a movie. They don’t actually discuss it."
+      }
+    ]
+  },
+  {
+    "id": "ko__107",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ게요 [(eu)lgeyo] (I will, in the future)",
+    "shortExplanation": "Used to express an intention or promise about the future, often showing the speaker’s determination.",
+    "longExplanation": "'~(으)ㄹ게요' is a polite way in Korean to show the speaker’s intention or promise to do something soon. It also conveys the speaker’s will to carry out the action. Which form (을게요 or ㄹ게요) you use depends on the final sound of the verb stem.",
+    "formation": "Verb stem + (으)ㄹ게요",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "제가 직접 전화해서 진행 상황을 알려 드릴게요.",
+        "romanization": "Jega jigjeop jeonhwahaeseo jinhaeng sanghwang-eul allyeo deurilgeyo.",
+        "translation": "I will call personally to let you know the progress."
+      },
+      {
+        "sentence": "이 짐은 제가 갖고 갈게요. 너무 무거우니까 걱정하지 마세요.",
+        "romanization": "I jim-eun jega gajgo galgeyo. Neomu mugeounikka geokjeonghaji maseyo.",
+        "translation": "I will carry this luggage. Don’t worry because it’s quite heavy."
+      },
+      {
+        "sentence": "과제를 내일까지 끝내고 보고서도 쓸게요.",
+        "romanization": "Gwajereul naeilkkaji kkeutnaego bogoseodo seulgeyo.",
+        "translation": "I will finish the assignment by tomorrow and also write the report."
+      },
+      {
+        "sentence": "오늘 저녁에 모두 모이면 제가 음식을 만들어서 가져올게요.",
+        "romanization": "Oneul jeonyeoge modu moimyeon jega eumsigeul mandeureoseo gajyeo-olgeyo.",
+        "translation": "When everyone gathers this evening, I will cook and bring the food."
+      }
+    ]
+  },
+  {
+    "id": "ko__108",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ게 [(eu)lge] (I will, in the future)",
+    "shortExplanation": "A casual way to indicate the speaker will do something in the future, often reflecting one’s decision or promise.",
+    "longExplanation": "'~(으)ㄹ게' is the casual version of '~(으)ㄹ게요', used among friends or people of the same age. It expresses the speaker’s intention or promise to do something soon. As with '~(으)ㄹ게요', the form depends on the final sound of the verb stem.",
+    "formation": "Verb stem + (으)ㄹ게",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "나는 내일부터 다이어트할게. 오늘까지만 맛있는 음식 먹을 거야.",
+        "romanization": "Naneun naeilbuteo daieoteu halge. Oneulkkajiman masinneun eumsik meogeul geoya.",
+        "translation": "I’ll start dieting from tomorrow. I’ll only eat delicious food until today."
+      },
+      {
+        "sentence": "너무 걱정하지 마. 한국어 공부 열심히 할게.",
+        "romanization": "Neomu geokjeonghaji ma. Hangugeo gongbu yeolsimhi halge.",
+        "translation": "Don't worry too much. I’ll study Korean diligently."
+      },
+      {
+        "sentence": "미안해. 지금부터는 절대 늦지 않을게.",
+        "romanization": "Mianhae. Jigeumbuteoneun jeoldae neutji anheulge.",
+        "translation": "I’m sorry. From now on, I’ll never be late."
+      },
+      {
+        "sentence": "방 청소를 안 했어? 괜찮아, 나중에 내가 할게.",
+        "romanization": "Bang cheongso-reul an haesseo? Gwaenchanha, najunge naega halge.",
+        "translation": "You didn’t clean the room? It’s okay, I’ll do it later."
+      }
+    ]
+  },
+  {
+    "id": "ko__109",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ래 [(eu)llae] (I want to)",
+    "shortExplanation": "Used to express that the speaker wants or intends to do something, usually in casual speech.",
+    "longExplanation": "'~(으)ㄹ래' is used in casual Korean to indicate the speaker’s desire or plan to do something. It can translate to 'I want to…' or 'Shall we…?' depending on context. It is more informal than '~(으)ㄹ게요.'",
+    "formation": "Verb stem + (으)ㄹ래",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "오늘 저녁에 바베큐를 먹을래. 스테이크 하우스에 가고 싶어서.",
+        "romanization": "Oneul jeonyeoge babekyureul meogeullae. Seuteikeu hause-e gago sipaseo.",
+        "translation": "I want to have BBQ tonight. I feel like going to a steakhouse."
+      },
+      {
+        "sentence": "내일 친구들이랑 영화를 볼래. 요즘 재미있는 영화가 많잖아.",
+        "romanization": "Naeil chingudeurirang yeonghwareul bollae. Yojeum jaemiinneun yeonghwaga manjana.",
+        "translation": "I want to watch a movie with my friends tomorrow. There are lots of fun movies lately."
+      },
+      {
+        "sentence": "주말에 소풍 갈래? 날씨가 좋을 것 같아.",
+        "romanization": "Jumare sopung gallae? Nalssiga joeul geot gata.",
+        "translation": "Shall we go on a picnic this weekend? The weather seems like it’ll be nice."
+      },
+      {
+        "sentence": "새로운 취미를 찾을래. 지금까지 하던 게 좀 지루해졌어.",
+        "romanization": "Saeroun chwimireul chajeullae. Jigeumkkaji hadeon ge jom jiruhaejyeosseo.",
+        "translation": "I want to find a new hobby. The one I've had so far has gotten a bit boring."
+      }
+    ]
+  },
+  {
+    "id": "ko__110",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ라고 [(eu)llago] (Intend to)",
+    "shortExplanation": "Used to express someone's intention or plan to do something (colloquial).",
+    "longExplanation": "'~(으)ㄹ라고' is a somewhat colloquial form in Korean for expressing plans or intentions. It can be attached to a verb stem to indicate what someone is determined or plans to do. If the verb stem ends in a vowel or 'ㄹ', use 'ㄹ라고'; otherwise use '을라고'.",
+    "formation": "Verb stem + ㄹ라고 / 을라고",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "그는 내일 아침에 일찍 일어날라고 알람을 맞춰 놨어요.",
+        "romanization": "Geuneun naeil achime iljjik ireonallago allameul matchwo nwasseoyo.",
+        "translation": "He set an alarm because he intends to wake up early tomorrow morning."
+      },
+      {
+        "sentence": "지민이는 축구 대회에서 우승할라고 매일 연습하고 있어요.",
+        "romanization": "Jiminineun chukgu daehoeeseo useunghallago maeil yeonseuphago isseoyo.",
+        "translation": "Jimin practices every day because he intends to win the soccer tournament."
+      },
+      {
+        "sentence": "서연이는 결혼할라고 집을 구입할 계획을 세우고 있어요.",
+        "romanization": "Seoyeonineun gyeolhonhallago jibeul guiphal gyehoeg-eul seugo isseoyo.",
+        "translation": "Seoyeon is planning to buy a house because she intends to get married."
+      },
+      {
+        "sentence": "나는 이번 달에 새 차를 살라고 돈을 모으고 있어요.",
+        "romanization": "Naneun ibeon dare sae chareul sallago doneul mo-eugo isseoyo.",
+        "translation": "I’m saving money this month because I intend to buy a new car."
+      }
+    ]
+  },
+  {
+    "id": "ko__111",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ 테니까 [(eu)l tenikka] (Since I assume)",
+    "shortExplanation": "Used when the speaker makes a guess or assumption, then provides advice or a suggestion based on that assumption.",
+    "longExplanation": "'~(으)ㄹ 테니까' indicates a future assumption or strong belief about a situation, followed by advice or a suggestion. It shows that the speaker is giving guidance or instructions that hinge on this assumption.",
+    "formation": "Verb/Adjective stem + (으)ㄹ 테니까",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "너무 늦어질 테니까 이제 집에 가는 게 좋겠어요.",
+        "romanization": "Neomu neujeojil tenikka ije jibe ganeun ge jokgesseoyo.",
+        "translation": "It’s going to get too late, so you should probably head home now."
+      },
+      {
+        "sentence": "비가 올 테니까 우산을 가져가세요.",
+        "romanization": "Biga ol tenikka usaneul gajyeogaseyo.",
+        "translation": "It’s likely to rain, so take an umbrella."
+      },
+      {
+        "sentence": "내일 시험이 있을 테니까 오늘 밤에는 공부하는 게 좋겠어요.",
+        "romanization": "Naeil siheomi isseul tenikka oneul bamenen gongbuhaneun ge jokgesseoyo.",
+        "translation": "Since there’s probably a test tomorrow, you should study tonight."
+      },
+      {
+        "sentence": "그는 이미 알고 있을 테니까 너무 걱정하지 마세요.",
+        "romanization": "Geuneun imi algo isseul tenikka neomu geokjeonghaji maseyo.",
+        "translation": "He probably already knows, so don’t worry too much."
+      }
+    ]
+  },
+  {
+    "id": "ko__112",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ지라도 [(eu)ljirado] (Even if)",
+    "shortExplanation": "Used to express 'even if', emphasizing that a certain action or decision remains unchanged regardless of the situation.",
+    "longExplanation": "'~(으)ㄹ지라도' is a complex suffix used in Korean to signify 'even if' or 'although'. It is commonly used for mentioning a hypothetical or difficult scenario, yet affirming that one’s stance or decision does not change. It emphasizes the speaker’s firm determination or resolution in spite of possible negative outcomes.",
+    "formation": "Verb Stem + (으)ㄹ지라도",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "이 일이 얼마나 어려울지라도, 저는 반드시 해내겠어요.",
+        "romanization": "I iri eolmana eoryeouljirado, jeoneun bandeusi haenaegesseoyo.",
+        "translation": "No matter how difficult this task may be, I will definitely finish it."
+      },
+      {
+        "sentence": "자고 싶을지라도, 다가오는 시험 때문에 밤새 공부해야 해요.",
+        "romanization": "Jago sipeuljirado, dagaoneun siheom ttaemune bamsae gongbuhaya haeyo.",
+        "translation": "Even though I want to sleep, I have to study all night because of the upcoming exam."
+      },
+      {
+        "sentence": "비가 오지 않을지라도, 우산을 항상 가지고 다녀야 해요.",
+        "romanization": "Biga oji anheuljirado, usaneul hangsang gajigo danyeoya haeyo.",
+        "translation": "Even if it doesn't rain, you should always carry an umbrella."
+      },
+      {
+        "sentence": "날씨가 추울지라도, 저는 언제나 아이스크림을 먹고 싶어요.",
+        "romanization": "Nalssiga chuuljirado, jeoneun eonjena aiseukeurimeul meokgo sipeoyo.",
+        "translation": "Even if it's cold, I always want to eat ice cream."
+      }
+    ]
+  },
+  {
+    "id": "ko__113",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)면서도 [(eu)myeonseodo] (While, although)",
+    "shortExplanation": "Used to express contrast or contradiction; 'while', 'although'.",
+    "longExplanation": "'~(으)면서도' is used in Korean to show that two actions or states occur simultaneously, yet they are somewhat contradictory or unexpected when considered together. It is akin to saying 'while' or 'even though' in English.",
+    "formation": "Verb stem + (으)면서도",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "그녀는 아프면서도 일을 계속했습니다. 아픔을 이겨내고 일을 마무리했어요.",
+        "romanization": "Geunyeoneun apeumyeonseodo ireul gyesokhaetsseumnida. Apeumeul igyeonaego ireul mamurihaesseoyo.",
+        "translation": "Although she was sick, she kept working. She overcame the pain and finished her work."
+      },
+      {
+        "sentence": "비가 오면서도 축제는 계속됐어요. 모두들 즐거움에 흠뻑 빠져들었죠.",
+        "romanization": "Biga omyeonseodo chukjeneun gyesok dwaesseoyo. Modudeul jeulgeoume heumppok ppajyeodeureotjyo.",
+        "translation": "Even though it was raining, the festival continued. Everyone was fully immersed in the fun."
+      },
+      {
+        "sentence": "그는 실수를 하면서도 끝까지 포기하지 않았습니다. 그의 집중력과 끈기는 대단했어요.",
+        "romanization": "Geuneun silsureul hamyeonseodo ggeutkkaji pogihaji anatsseumnida. Geuui jipjungnyeokgwa kkeungineun daedanhaesseoyo.",
+        "translation": "Even though he made mistakes, he never gave up until the end. His focus and perseverance were amazing."
+      },
+      {
+        "sentence": "식사를 다 하면서도 배가 고픈 것 같았어요. 너무 많이 달려서 그런 것 같아요.",
+        "romanization": "Siksareul da hamyeonseodo baega gopeun geot gatasseoyo. Neomu mani dallyeoseo geureon geot gatayo.",
+        "translation": "Although I had finished eating, I still felt hungry. I think it’s because I ran so much."
+      }
+    ]
+  },
+  {
+    "id": "ko__114",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)시면 [(eu)simyeon] (If you)",
+    "shortExplanation": "Used to express a polite conditional, translating to 'if you' or 'when you' in English.",
+    "longExplanation": "'~(으)시면' is a polite conditional form used to say 'if you...' or 'when you...' in a respectful way. It is often directed at someone of equal or higher status, indicating a formal or polite tone.",
+    "formation": "Verb stem + (으)시면",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "편하시면 오늘 저녁에 저에게 전화해 주시겠어요?",
+        "romanization": "Pyeonhasimyeon oneul jeonyeoge jeoege jeonhwahae jusigesseoyo?",
+        "translation": "If it's convenient for you, could you call me tonight?"
+      },
+      {
+        "sentence": "수업이 끝나시면 자기소개를 시작해 주시면 감사하겠습니다.",
+        "romanization": "Sueobi kkeutnasimyeon jagi sogaereul sijakhae jusimyeon gamsahabnida.",
+        "translation": "I would appreciate it if you could start your self-introduction when the class ends."
+      },
+      {
+        "sentence": "가능하시면 내일 회의에 참석해 주실 수 있을까요?",
+        "romanization": "Ganeunghasimyeon naeil hoeuie chamseokhae jusil su isseulkkayo?",
+        "translation": "If it's possible, could you attend the meeting tomorrow?"
+      },
+      {
+        "sentence": "시간 나시면 사진 몇 장 보여주시면 감사하겠습니다.",
+        "romanization": "Sigan nasimyeon sajin myeot jang boyeojusimyeon gamsahabnida.",
+        "translation": "If you have time, I'd appreciate it if you showed me a few photos."
+      }
+    ]
+  },
+  {
+    "id": "ko__115",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)시겠어요 [(eu)sigesseoyo] (You will probably)",
+    "shortExplanation": "Used to express probability or an assumption about the listener’s action or state, in a polite way.",
+    "longExplanation": "'~(으)시겠어요' is a polite form in Korean used to express the speaker’s assumption or expectation about the listener’s future condition or action. It conveys respect and is often used in formal or semi-formal conversation.",
+    "formation": "Verb stem + (으)시겠어요",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "날씨가 꽤 춥네요. 당신은 목도리를 하시겠어요.",
+        "romanization": "Nalssiga kkwae chumneyo. Dangsineun mokdorireul hasigesseoyo.",
+        "translation": "The weather is quite cold, so you'll probably wear a scarf."
+      },
+      {
+        "sentence": "정말 바쁜 하루셨죠? 많이 피곤하시겠어요.",
+        "romanization": "Jeongmal bappeun harusyeotjyo? Mani pigonhasigesseoyo.",
+        "translation": "You had a really busy day, right? You must be very tired."
+      },
+      {
+        "sentence": "이렇게 일이 많으니 주말에도 일하시겠어요.",
+        "romanization": "Ireoke iri manheuni jumaredo ilhasigesseoyo.",
+        "translation": "Since there's so much work, you'll probably have to work over the weekend."
+      },
+      {
+        "sentence": "날씨가 이렇게 더우니 시원한 음료수를 좋아하시겠어요.",
+        "romanization": "Nalssiga ireohge deouni siwonhan eumryosureul joahasigesseoyo.",
+        "translation": "Because the weather is so hot, you'd probably like a cool drink."
+      }
+    ]
+  }
+]

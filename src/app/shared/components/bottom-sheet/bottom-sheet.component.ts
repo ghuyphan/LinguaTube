@@ -16,6 +16,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetService } from '../../../services/bottom-sheet.service';
 import { generateRandomId } from '../../../core/utils';
+import { I18nService } from '../../../core/services/i18n.service';
 
 
 @Component({
@@ -27,6 +28,7 @@ import { generateRandomId } from '../../../core/utils';
   styleUrl: './bottom-sheet.component.scss'
 })
 export class BottomSheetComponent implements OnDestroy {
+  readonly i18n = inject(I18nService);
   private sheetService = inject(BottomSheetService);
   private platformId = inject(PLATFORM_ID);
   private elementRef = inject(ElementRef);

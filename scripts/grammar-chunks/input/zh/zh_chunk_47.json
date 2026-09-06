@@ -1,0 +1,19 @@
+[
+  {
+    "id": "zh_不无_737",
+    "language": "zh",
+    "pattern": "不无",
+    "title": "不无 (not without)",
+    "shortExplanation": "not without",
+    "longExplanation": "not without. Pinyin: bùwú",
+    "formation": "bùwú",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "她说工资低，这也不无道理。",
+        "romanization": "tā shuō gōngzī dī， zhè yě bùwú dàoli。",
+        "translation": "She says that her salary is low. This is not without reason."
+      }
+    ]
+  }
+]

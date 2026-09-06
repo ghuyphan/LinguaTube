@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko__116",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㅂ시다 [(eu)bshida] (Let's)",
+    "shortExplanation": "Used to propose or suggest an activity together; 'Let's'.",
+    "longExplanation": "'~(으)ㅂ시다' is the standard form in Korean used to suggest doing something together, equivalent to 'Let's' in English. The form depends on whether the verb stem ends in a vowel (ㅂ시다) or consonant (읍시다).",
+    "formation": "Verb stem + ㅂ시다 / 읍시다",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "오늘 저녁 식당에서 저녁을 먹읍시다. 다른 모든 일들은 잊어버려요.",
+        "romanization": "Oneul jeonyeok sikdang-eseo jeonyeogeul meogeupsida. Dareun modeun ildeureun ijeobeoryeoyo.",
+        "translation": "Let's eat dinner at a restaurant tonight and forget everything else."
+      },
+      {
+        "sentence": "우리 함께 산책합시다. 다들 기분 전환이 될 거예요.",
+        "romanization": "Uri hamkke sanchaeghapsida. Dadeul gibun jeonhwani doel geoyeyo.",
+        "translation": "Let's take a walk together. It’ll help everyone refresh."
+      },
+      {
+        "sentence": "이 문제를 같이 해결합시다. 함께하면 더 쉬울 거예요.",
+        "romanization": "I munjereul gachi haegyeolhapsida. Hamkkehamyeon deo swiwul geoyeyo.",
+        "translation": "Let's solve this problem together. It will be easier if we do it together."
+      },
+      {
+        "sentence": "모두 같이 여행 갑시다. 같이 가면 훨씬 즐거울 거예요.",
+        "romanization": "Modu gachi yeohaeng gapsida. Gachi gamyeon hwolssin jeulgeoul geoyeyo.",
+        "translation": "Let's all go on a trip together. It will be much more fun if we go together."
+      }
+    ]
+  },
+  {
+    "id": "ko__117",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)십시오 [(eu)sipsio] (Please)",
+    "shortExplanation": "Used to express polite requests or commands; roughly 'please do ~'.",
+    "longExplanation": "'~(으)십시오' is one of the most formal imperative endings in Korean, used to give commands or requests politely. It corresponds to 'please do ~' in English. Whether you use '십시오' or '으십시오' depends on whether the verb stem ends in a vowel or a consonant.",
+    "formation": "Verb stem + (으)십시오",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "한 번 더 생각해보십시오. 아마 그것이 올바른 선택일 것입니다.",
+        "romanization": "Han beon deo saenggakhaebosipsio. Ama geugeosi olbareun seontaegil geosimnida.",
+        "translation": "Please think it over once more. It might be the right choice."
+      },
+      {
+        "sentence": "여기 앉으십시오. 드릴 말씀이 있습니다.",
+        "romanization": "Yeogi anjeusipsio. Deuril malsseumi itsseumnida.",
+        "translation": "Please sit here. I have something to tell you."
+      },
+      {
+        "sentence": "집에 오셨다면, 먼저 손을 씻으십시오.",
+        "romanization": "Jibe osyeotdamyeon, meonjeo soneul sseuseupsio.",
+        "translation": "If you have come home, please wash your hands first."
+      },
+      {
+        "sentence": "궁금증이 있다면 그 질문을 지금 물어보십시오.",
+        "romanization": "Gunggeumjeungi itdamyeon geu jilmuneul jigeum mureobosipsio.",
+        "translation": "If you have any questions, please ask them now."
+      }
+    ]
+  },
+  {
+    "id": "ko__0",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)나마 [(eu)nama] (At least, even if only)",
+    "shortExplanation": "Used to express the modest amount of what you can do or accept.",
+    "longExplanation": "'~(으)나마 [(eu)nama]' is a grammar point used in Korean to express that even if the quantity or degree is modest, it is at least that much. It can have a sense of consolation or slight regret, but also a feeling that one can be satisfied with that small amount in a given situation.",
+    "formation": "Verb stem + 나마 / Noun + 이나마",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "나는 일이 바빠서 많은 시간을 할애할 수는 없지만, 하루에 한 시간이나마 공부하려고 노력하고 있습니다.",
+        "romanization": "Naneun iri bappaseo maneun siganeul hal-aehal suneun eopjiman, harue han sigan-inama gongbu-haryeogo noryeokhago isseumnida.",
+        "translation": "I'm busy with work and can't devote a lot of time, but I'm trying to study at least one hour a day."
+      },
+      {
+        "sentence": "이번 달에는 돈이 조금 부족하지만, 세밀한 계획을 세우면 10만 원이나마 절약할 수 있을 것 같아요.",
+        "romanization": "Ibeon dareneun doni jogeum bujokhajiman, semilhan gyehoegeul se-umyeon sipman won-inama jeolyakhal su isseul geot gatayo.",
+        "translation": "Money is a bit short this month, but if we make a detailed plan, I think we can save at least 100,000 won."
+      },
+      {
+        "sentence": "그녀는 아프다며 자주 훈련을 빼먹지만, 남은 시간이나마 최선을 다하고 있어요.",
+        "romanization": "Geunyeoneun apeudamyeo jaju hullyeoneul ppaemeokjiman, nameun sigan-inama choeseoneul dahago isseoyo.",
+        "translation": "She often misses training because she's sick, but she's doing her best with the remaining time."
+      },
+      {
+        "sentence": "우리가 떨어진 것은 사실이지만, 좋은 친구로서 너와 이야기하는 시간이나마 가질 수 있으면 좋겠어.",
+        "romanization": "Uriga tteoreojin geoseun sasilijiman, joeun chinguroseo neowa iyagihaneun sigan-inama gajil su isseumyeon johgesseo.",
+        "translation": "The fact that we broke up is true, but I'd like to have at least the time to talk with you as a good friend."
+      }
+    ]
+  },
+  {
+    "id": "ko__1",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)니까 [(eu)nikka] (Because, so)",
+    "shortExplanation": "Used to indicate the cause or reason; 'Because', 'So'.",
+    "longExplanation": "'~(으)니까 [(eu)nikka]' is a conjunction used in Korean to indicate the cause or reason why something happens or a certain situation exists. It is similar to 'because' or 'so' in English. It is most often used in casual conversations and can be used both for positive and negative statements.",
+    "formation": "Verb/Adjective stem + (으)니까",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "비가 오니까 우산을 가져가세요.",
+        "romanization": "Biga onikka usaneul gajyeogaseyo.",
+        "translation": "Because it's raining, take an umbrella."
+      },
+      {
+        "sentence": "지금 너무 늦었으니까 우리 내일 다시 만나자.",
+        "romanization": "Jigeum neomu neujeosseunikka uri naeil dasi mannaja.",
+        "translation": "Because it's too late now, let's meet again tomorrow."
+      },
+      {
+        "sentence": "오늘 피곤하니까 일찍 집에 갔어요.",
+        "romanization": "Oneul pigonhanikka iljjik jibe gasseoyo.",
+        "translation": "Because I was tired today, I went home early."
+      },
+      {
+        "sentence": "운동을 많이 했으니까 힘이 없어요.",
+        "romanization": "Undongeul mani haesseunikka himi eopseoyo.",
+        "translation": "Because I exercised a lot, I have no energy."
+      }
+    ]
+  },
+  {
+    "id": "ko__2",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)려다가 [(eu)ryeodaga] (Was about to, tried to)",
+    "shortExplanation": "This grammar point is used to express an action that was about to happen but did not take place due to some intervening cause.",
+    "longExplanation": "'~(으)려다가' is used when you want to express an action that was on the verge of happening or one that you intended to do, but for some reason did not happen, or another event intervened. Depending on the context, it can be translated as 'was about to', 'tried to', 'was going to', or 'intended to'.",
+    "formation": "Verb stem + (으)려다가",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "집에 가려다가 비가 너무 많이 와서 친구 집에 머물렀어요.",
+        "romanization": "Jibe garyeodaga biga neomu mani waseo chingu jibe meomulleosseoyo.",
+        "translation": "I was about to go home, but it rained so much that I stayed at my friend's house."
+      },
+      {
+        "sentence": "책을 사려다가 돈이 부족해서 못 샀어요.",
+        "romanization": "Chaegeul saryeodaga doni bujokhaeseo mot sasseoyo.",
+        "translation": "I was about to buy a book, but I couldn't because I was short of money."
+      },
+      {
+        "sentence": "전화를 하려다가 휴대폰 배터리가 떨어져서 못 했어요.",
+        "romanization": "Jeonhwareul haryeodaga hyudaepon baeteoriga tteoreojyeoseo mot haesseoyo.",
+        "translation": "I was about to make a call, but I couldn't because my phone battery ran out."
+      },
+      {
+        "sentence": "운동하려다가 갑자기 몸이 아파서 포기했어요.",
+        "romanization": "Undongharyeodaga gapjagi momi apaseo pogihesseoyo.",
+        "translation": "I was about to exercise, but I suddenly felt sick, so I gave up."
+      }
+    ]
+  },
+  {
+    "id": "ko__3",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)니 [(eu)ni] (Because, as one would expect)",
+    "shortExplanation": "Used to indicate that given the circumstances, the result is natural or to be expected.",
+    "longExplanation": "'~(으)니 [(eu)ni]' is often used in Korean to mean 'because' or 'since,' emphasizing a cause-and-effect relationship or a natural/expected result. It can sound slightly more formal or written than '~(으)니까', and is also common in narratives to show that something is an obvious conclusion based on a certain action or condition.",
+    "formation": "Verb/Adjective stem + (으)니",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "매일 연습하면서 스피치를 준비하였으니, 스피치 대회에서 우승하였어요.",
+        "romanization": "Maeil yeonseubhamyeonseo seupichireul junbihayeosseuni, seupichi daehoeeseo useunghayeosseoyo.",
+        "translation": "I prepared my speech every day by practicing, so naturally I won the speech contest."
+      },
+      {
+        "sentence": "그는 항상 열심히 공부하였으니, 시험에서 좋은 결과를 얻었어요.",
+        "romanization": "Geuneun hangsang yeolsimhi gongbuhayeosseuni, siheomeseo joheun gyeolgwareul eodeosseoyo.",
+        "translation": "He always studied hard, so of course he got a good result on the test."
+      },
+      {
+        "sentence": "너무 많이 먹었으니, 배가 아픈 건 당연해요.",
+        "romanization": "Neomu mani meogeosseuni, baega apeun geon dangyeonhaeyo.",
+        "translation": "You ate too much, so it's only natural that your stomach hurts."
+      },
+      {
+        "sentence": "양치를 안 하였으니, 이가 아픈 건 예상할 수 있어요.",
+        "romanization": "Yangchireul an hayeosseuni, iga apeun geon yesanghal su isseoyo.",
+        "translation": "You didn't brush your teeth, so it's expected that your teeth would hurt."
+      }
+    ]
+  },
+  {
+    "id": "ko__4",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)면 ~(으)ㄹ수록 [(eu)myeon ~(eu)lsurok] (The more... the more...)",
+    "shortExplanation": "Used to express the idea that the more one situation or action occurs, the more another result follows.",
+    "longExplanation": "'~(으)면 ~(으)ㄹ수록' is used to show a relationship of proportion, much like the English pattern 'the more..., the more...'. The first clause describes a certain action or condition increasing, and the second clause describes the corresponding change or result that likewise increases or intensifies.",
+    "formation": "Verb/Adjective stem + (으)면 + (으)ㄹ수록",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "날이 점점 흐려져서 도로 위가 보이지 않으면 보이지 않을수록 운전하기가 무서워져요.",
+        "romanization": "Nariga jeomjeom heureojyeoseo doro wiga boiji anheumyeon boiji anheulsurok unjeonhagiga museowo-jyeoyo.",
+        "translation": "The cloudier it gets and the less I can see the road, the scarier it is to drive."
+      },
+      {
+        "sentence": "한국어를 공부하면 공부할수록 그 언어의 아름다움을 더 깊이 이해하게 됩니다.",
+        "romanization": "Hangugeoreul gongbuhamyeon gongbuhalsurok geu eoneoui areumdaumeul deo gipi ihaehage doemnida.",
+        "translation": "The more you study Korean, the more deeply you can understand its beauty."
+      },
+      {
+        "sentence": "친구들이랑 많이 얘기하면 얘기할수록 서로에 대해 더 많이 알 수 있어요.",
+        "romanization": "Chingudeurirang mani yaegihamyeon yaegihalsurok seoroe daehae deo mani al su isseoyo.",
+        "translation": "The more you talk with your friends, the more you can learn about each other."
+      },
+      {
+        "sentence": "이 책을 읽으면 읽을수록 흥미롭게 느껴져요.",
+        "romanization": "I chaegeul ilgeumyeon ilgeulsurok heungmiropge neukkyeojyeoyo.",
+        "translation": "The more I read this book, the more interesting it becomes."
+      }
+    ]
+  },
+  {
+    "id": "ko__5",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)면서는 [(eu)myeonseoneun] (While, whereas)",
+    "shortExplanation": "Used to connect two conflicting or contrasting situations or actions, often to criticize or show surprise.",
+    "longExplanation": "The grammar point '~(으)면서는' is used to connect two contrasting or unexpected situations in Korean. It can be translated as 'while' or 'whereas,' but it has a nuance of slight criticism or emphasis on the contradiction. It often conveys the speaker's surprise, disappointment, or disapproval about the two coexisting states.",
+    "formation": "(Verb/Adjective stem) + (으)면서는",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그는 학교에 다니면서는 전혀 공부를 하지 않아요, 그래서 성적이 나쁘다고 생각해요.",
+        "romanization": "Geuneun hakgyoe danimyeonseoneun jeonhyeo gongbureul haji anhayo, geuraeseo seongjeogi nappeudago saenggakhaeyo.",
+        "translation": "While attending school, he doesn’t study at all, so I think his grades are bad."
+      },
+      {
+        "sentence": "어머니는 일을 하면서는 집안일도 다 처리하셨어요, 그런데 아무도 어머니를 도와주지 않았어요.",
+        "romanization": "Eomeonineun ireul hamyeonseoneun jibanildo da cheorihasyeosseoyo, geureonde amudo eomeonireul dowajuji anasseoyo.",
+        "translation": "While working, my mother also took care of all the housework, but nobody helped her."
+      },
+      {
+        "sentence": "진수는 공부를 하면서는 항상 친구들과 놀기를 좋아해요, 그래서 시간관리가 정말 혼란스러워 보여요.",
+        "romanization": "Jinsuneun gongbureul hamyeonseoneun hangsang chingudeulgwa nolgireul joahaeyo, geuraeseo sigangwanriga jeongmal honranseureowo boyeoyo.",
+        "translation": "While Jinsu studies, he also always likes to hang out with friends, so his time management looks really chaotic."
+      },
+      {
+        "sentence": "비가 오면서는 날씨가 추워졌어요, 그런데 여름 중에 이렇게 추운 날씨는 정말 이상해요.",
+        "romanization": "Biga omyeonseoneun nalssiga chuweojyeosseoyo, geureonde yeoreum junge ireoke chuun nalssineun jeongmal isanghaeyo.",
+        "translation": "While it was raining, the weather got cold, but such cold weather in the middle of summer is really strange."
+      }
+    ]
+  },
+  {
+    "id": "ko__6",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)시거나 [(eu)sigeona] (Either... or... [honorific])",
+    "shortExplanation": "Used to present two or more possibilities or choices in a respectful manner (honorific).",
+    "longExplanation": "'~(으)시거나' is the honorific form of '~거나' (meaning 'or'), used when speaking about or to elders, superiors, or in polite/formal situations. It gives multiple alternatives, allowing the subject (respected person) to choose.",
+    "formation": "Verb stem + (으)시거나 / Noun + (이)시거나",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "선생님이 칠판에 문제를 적으시거나, 학생들에게 직접 문제를 설명하시곤 해요.",
+        "romanization": "Seonsaengnimi chilpane munjeleul jeogeusigona, hagsaengdeurege jikjeop munjeleul seolmyeonghasigon haeyo.",
+        "translation": "The teacher either writes the question on the board or explains it directly to the students."
+      },
+      {
+        "sentence": "소노피 할머니가 이번 주에 몸이 안 좋으시거나, 기침을 하시면 의사 선생님께 진료를 받으러 가셔야 해요.",
+        "romanization": "Sonopi halmeoniga ibeon jue momi an joeusigona, gichimeul hasimyeon uisa seonsaengnimkke jillyoreul badeureo gasyeoya haeyo.",
+        "translation": "If Grandma Sono is not feeling well this week or has a cough, she should go see the doctor."
+      },
+      {
+        "sentence": "운동을 하시거나, 책을 읽으시거나 하는 것이 좋은 스트레스 해소 방법입니다.",
+        "romanization": "Undongeul hasigona, chaegeul ilgeusigona haneun geosi joheun seuteureseu haeso bangbeobimnida.",
+        "translation": "Either exercising or reading a book is a good way to relieve stress."
+      },
+      {
+        "sentence": "어머니께서 집에 계시거나, 학교에 오시거나 하셔도 어느 쪽이든 편하십니다.",
+        "romanization": "Eomeonikkeseo jibe gyesigona, hakgyoe osigona hasyeodo eoneu jjogideun pyeonhasimnida.",
+        "translation": "Whether mother stays at home or comes to school, either way is comfortable for her."
+      }
+    ]
+  },
+  {
+    "id": "ko__7",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)시든지 [(eu)sideunji] (Whether... or... [honorific])",
+    "shortExplanation": "Used to list two or more possibilities in a respectful manner.",
+    "longExplanation": "The grammar point '~(으)시든지' is the honorific counterpart of '~든지', which means 'whether... or...' and presents multiple possibilities or conditions politely. It allows freedom of choice for the respected person, without asserting which option is preferred.",
+    "formation": "Verb stem + (으)시든지 / Adjective + (으)시든지 / Noun + (이)시든지",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "선생님이 미리 알려 주시든지, 아니면 수업시간에 배우시든지 해야 학생들이 이해할 수 있을 것 같아요.",
+        "romanization": "Seonsaengnimi miri allyeo jusideunji, animyeon sueopsigane baeusideunji haeya haksaengdeuri ihaehal su isseul geot gatayo.",
+        "translation": "Whether the teacher explains it ahead of time or teaches it during class, it seems students can understand better that way."
+      },
+      {
+        "sentence": "아빠가 지금 집에 오시든지, 아니면 조금 늦게 오시든지, 저는 항상 환영해요.",
+        "romanization": "Appaga jigeum jibe osideunji, animyeon jogeum neujge osideunji, jeoneun hangsang hwanyeonghaeyo.",
+        "translation": "Whether my dad comes home now or comes a little late, I always welcome him."
+      },
+      {
+        "sentence": "할머니가 저녁에 전화하시든지, 아니면 메시지를 보내시든지 하세요.",
+        "romanization": "Halmeoniga jeonyeoge jeonhwahasideunji, animyeon mesijireul bonaesideunji haseyo.",
+        "translation": "Whether my grandmother calls in the evening or sends a message, she does so."
+      },
+      {
+        "sentence": "의사 선생님이 약을 처방하시든지, 아니면 수술을 권고하시든지, 환자는 항상 존중받아야 해요.",
+        "romanization": "Uisa seonsaengnimi yageul cheobanghasideunji, animyeon susureul gwongohasideunji, hwanjaneun hangsang jonjungbadaya haeyo.",
+        "translation": "Whether the doctor prescribes medication or recommends surgery, the patient should always be respected."
+      }
+    ]
+  },
+  {
+    "id": "ko__8",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ 데가 없다 [(eu)l dega eopda] (There's no way to...)",
+    "shortExplanation": "Used to express 'there's absolutely no way/place/opportunity to...' do something.",
+    "longExplanation": "The phrase '~(으)ㄹ 데가 없다' literally means 'there is no place/way to do X' and emphasizes that, given the conditions, there is no possibility or option for the action. It can sound somewhat figurative, referring to both physical 'place' or a 'method/means' of doing something.",
+    "formation": "Verb stem + (으)ㄹ 데가 없다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그 문제를 해결할 데가 없어요, 너무 복잡해서 아무도 해결 방법을 찾지 못하고 있어요.",
+        "romanization": "Geu munjeleul haegyeolhal dega eopseoyo, neomu bokjabhaseo amudo haegyeol bangbeobeul chajji motago isseoyo.",
+        "translation": "There's no way to solve that problem; it's too complex and no one can find a solution."
+      },
+      {
+        "sentence": "우리가 그 영화를 볼 데가 없어요, 모든 표가 매진되었어요.",
+        "romanization": "Uriga geu yeonghwareul bol dega eopseoyo, modeun pyoga maejindwaesseoyo.",
+        "translation": "There's no way for us to watch that movie; all the tickets are sold out."
+      },
+      {
+        "sentence": "지금 이 시간에 교통체증을 피할 데가 없어요.",
+        "romanization": "Jigeum i sigane gyotongchejeungeul pihal dega eopseoyo.",
+        "translation": "There's no way to avoid traffic congestion at this time."
+      },
+      {
+        "sentence": "너무 늦게 왔으니까 그 차를 잡을 데가 없어요.",
+        "romanization": "Neomu neujge wasunikka geu chareul jabeul dega eopseoyo.",
+        "translation": "I arrived too late, so there's no way to catch that car."
+      }
+    ]
+  },
+  {
+    "id": "ko__9",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ 수밖에 없다 [(eu)l subakke eopda] (Have no choice but to)",
+    "shortExplanation": "Used to express that one has 'no choice but to' do something.",
+    "longExplanation": "'~(으)ㄹ 수밖에 없다' emphasizes that a certain action or situation is unavoidable or inevitable. It is equivalent to the English phrase 'have no choice but to.'",
+    "formation": "Verb stem + (으)ㄹ 수밖에 없다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "날씨가 너무 더워서 물을 마실 수밖에 없었어요.",
+        "romanization": "Nalssiga neomu deowoseo mureul masil subakke eopseosseoyo.",
+        "translation": "The weather was so hot that I had no choice but to drink water."
+      },
+      {
+        "sentence": "시간이 너무 없어서 택시를 타고 갈 수밖에 없었습니다.",
+        "romanization": "Sigani neomu eopseoseo taegsireul tago gal subakke eopseosseumnida.",
+        "translation": "I had too little time, so I had no choice but to take a taxi."
+      },
+      {
+        "sentence": "저는 돈이 없어서 라면을 먹을 수밖에 없었습니다.",
+        "romanization": "Jeoneun doni eopseoseo ramyeoneul meogeul subakke eopseosseumnida.",
+        "translation": "I had no money, so I had no choice but to eat ramen."
+      },
+      {
+        "sentence": "그가 너무 늦어서 저는 기다릴 수밖에 없었습니다.",
+        "romanization": "Geuga neomu neujeoseo jeoneun gidaril subakke eopseosseumnida.",
+        "translation": "He was so late that I had no choice but to wait."
+      }
+    ]
+  },
+  {
+    "id": "ko__10",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)ㄹ지라도 [(eu)ljirado] (Even if)",
+    "shortExplanation": "This grammar point is used to express 'even if' or 'no matter how'.",
+    "longExplanation": "'~(으)ㄹ지라도 [(eu)ljirado]' is a conditional ending in Korean used to convey that, even if the situation in the first clause is true, it does not affect or change the action or stance in the following clause. It often translates to 'no matter how' or 'even if'. It can also express an unlikely supposition or a scenario beyond one's control.",
+    "formation": "Verb/Adjective stem + (으)ㄹ지라도",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그가 얼마나 서운해할지라도, 나는 그의 결정을 반대할 거예요.",
+        "romanization": "Geuga eolmana seowonhaehaljirado, naneun geuui gyeoljeongeul bandaehal geoyeyo.",
+        "translation": "Even if he feels really upset, I will oppose his decision."
+      },
+      {
+        "sentence": "아무리 바쁠지라도, 우리는 시간을 내어 이 문제를 해결해야 해요.",
+        "romanization": "Amuri bappeuljirado, urineun siganeul naeeo i munjereul haegyeolhaeya haeyo.",
+        "translation": "No matter how busy we are, we must find time to solve this problem."
+      },
+      {
+        "sentence": "어떻게 해서든 우리 팀이 이 경기에 이길 수 있을지라도, 상대 팀은 여전히 강력한 상대입니다.",
+        "romanization": "Eotteoke haeseodeun uri timi i gyeonggie igil su isseuljirado, sangdae timeun yeojeonhi gangnyeokhan sangdaeyimnida.",
+        "translation": "No matter how, even if our team can win this match, the opposing team is still very strong."
+      },
+      {
+        "sentence": "이 춤을 아무리 잘 출지라도, 난 여전히 춤추는 게 부끄러워요.",
+        "romanization": "I chumeul amuri jal chuljirado, nan yeojeonhi chumchuneun ge bukkeureowoyo.",
+        "translation": "Even if I dance this dance really well, I'm still shy about dancing."
+      }
+    ]
+  },
+  {
+    "id": "ko__11",
+    "language": "ko",
+    "pattern": "~",
+    "title": "~(으)려나 [(eu)ryeona] (I wonder if...)",
+    "shortExplanation": "This grammar point is used when the speaker is wondering or pondering about a future possibility or outcome.",
+    "longExplanation": "'~(으)려나 [(eu)ryeona]' is used in Korean to express doubt, curiosity, or speculation about a situation in the future. It is similar to the English expression 'I wonder if'. If the verb stem ends in a vowel, '려나' is used; if it ends in a consonant, '으려나' is used.",
+    "formation": "Verb stem + (으)려나",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "오늘 저녁에 비가 올려나 모르겠어요.",
+        "romanization": "Oneul jeonyeoge biga olryeona moreugesseoyo.",
+        "translation": "I wonder if it will rain tonight."
+      },
+      {
+        "sentence": "친구가 내 생일을 기억하려나 모르겠어요.",
+        "romanization": "Chinguga nae saengireul gieokharyeona moreugesseoyo.",
+        "translation": "I wonder if my friend will remember my birthday."
+      },
+      {
+        "sentence": "이 시험을 통과할 수 있으려나 모르겠습니다.",
+        "romanization": "I siheomeul tonggwahal su isseuryeona moreugesseumnida.",
+        "translation": "I wonder if I can pass this exam."
+      },
+      {
+        "sentence": "내년에는 여행을 갈 수 있으려나 모르겠어요.",
+        "romanization": "Naenyeon-eneun yeohaengeul gal su isseuryeona moreugesseoyo.",
+        "translation": "I wonder if I will be able to travel next year."
+      }
+    ]
+  },
+  {
+    "id": "ko_겠지만_12",
+    "language": "ko",
+    "pattern": "~겠지만",
+    "title": "~겠지만 [gesjiman] (I think, but...)",
+    "shortExplanation": "Used to express an assumption or conjecture followed by a contrasting idea or condition.",
+    "longExplanation": "'~겠지만 [gesjiman]' is used in Korean to show a strong guess or assumption about something, immediately followed by a contrast or a different condition. It can be compared to the English phrase 'I think (that)... but...', and sometimes conveys a note of uncertainty or reservation.",
+    "formation": "Verb/Adjective stem + 겠지만",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "내일 날씨가 좋겠지만, 여행을 가기 위한 시간이 없어요.",
+        "romanization": "Naeil nalssiga jotgetjiman, yeohaengeul gagi wihan sigani eopseoyo.",
+        "translation": "I think the weather will be good tomorrow, but I don't have time to go on a trip."
+      },
+      {
+        "sentence": "그녀가 이해해주겠지만, 그녀에게 내 실수를 설명하는 것은 어렵네요.",
+        "romanization": "Geunyeoga ihaehaejugesjiman, geunyeoege nae silsureul seolmyeonghaneun geoseun eoryeopneyo.",
+        "translation": "I believe she’ll understand, but it's hard to explain my mistake to her."
+      },
+      {
+        "sentence": "이번 시험에서 좋은 성적을 받겠지만, 아직도 많이 걱정돼요.",
+        "romanization": "Ibeon siheomeseo joeun seongjeogeul batgetjiman, ajikdo manhi geokjeongdwaeyo.",
+        "translation": "I think I'll get good grades on this test, but I'm still very worried."
+      },
+      {
+        "sentence": "친구들이 놀라겠지만, 나는 이번 파티에 참석하지 않을 거예요.",
+        "romanization": "Chingudeuri nollalgesjiman, naneun ibeon patie chamsokhaji aneul geoyeyo.",
+        "translation": "I think my friends will be surprised, but I'm not going to attend this party."
+      }
+    ]
+  }
+]

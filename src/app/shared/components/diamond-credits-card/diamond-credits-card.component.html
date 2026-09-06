@@ -1,36 +1,36 @@
-<div class="diamond-credits" [class]="'variant--' + variant" [class.is-depleted]="isDepleted()"
+<div class="diamond-credits" [class]="'variant--' + variant()" [class.is-depleted]="isDepleted()"
     [class.is-full]="isFull()">
 
     <!-- Diamond Icons (for card/compact variants) -->
-    @if (variant === 'card' || variant === 'compact') {
+    @if (variant() === 'card' || variant() === 'compact') {
     <div class="diamond-icons">
         @for (i of diamondArray(); track i) {
-        <span class="diamond-gem" [class.filled]="i < diamonds">
-            <app-icon name="diamond" [size]="variant === 'compact' ? 12 : 14" />
+        <span class="diamond-gem" [class.filled]="i < diamonds()">
+            <app-icon name="diamond" [size]="variant() === 'compact' ? 12 : 14" />
         </span>
         }
     </div>
     }
 
     <!-- Collapsed variant: just icon + count -->
-    @if (variant === 'collapsed') {
+    @if (variant() === 'collapsed') {
     <app-icon name="diamond" [size]="18" class="collapsed-icon" />
-    <span class="collapsed-count">{{ diamonds }}</span>
+    <span class="collapsed-count">{{ diamonds() }}</span>
     }
 
     <!-- Inline variant: compact display for buttons -->
-    @if (variant === 'inline') {
-    <span class="inline-count">({{ diamonds }}/{{ maxDiamonds }})</span>
+    @if (variant() === 'inline') {
+    <span class="inline-count">({{ diamonds() }}/{{ maxDiamonds() }})</span>
     }
 
     <!-- Info Section (for card variant) -->
-    @if (variant === 'card') {
+    @if (variant() === 'card') {
     <div class="diamond-info">
-        @if (showLabel) {
+        @if (showLabel()) {
         <span class="diamond-label">{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</span>
         }
 
-        @if (diamonds < maxDiamonds && countdown()) { <div class="diamond-timer">
+        @if (diamonds() < maxDiamonds() && countdown()) { <div class="diamond-timer">
             <div class="regen-progress" [style.--progress]="progress() + '%'">
                 <svg class="progress-ring" viewBox="0 0 24 24">
                     <circle class="ring-bg" cx="12" cy="12" r="10"></circle>
@@ -40,14 +40,14 @@
             </div>
             <span class="timer-text">{{ countdown() }}</span>
     </div>
-    } @else if (diamonds === maxDiamonds) {
+    } @else if (diamonds() === maxDiamonds()) {
     <span class="diamond-status">{{ i18n.t('subtitle.ready') || 'Ready' }}</span>
     }
 </div>
 }
 
 <!-- Timer for compact variant -->
-@if (variant === 'compact' && diamonds < maxDiamonds && countdown()) { <div class="compact-timer">
+@if (variant() === 'compact' && diamonds() < maxDiamonds() && countdown()) { <div class="compact-timer">
     <div class="regen-progress" [style.--progress]="progress() + '%'">
         <svg class="progress-ring" viewBox="0 0 24 24">
             <circle class="ring-bg" cx="12" cy="12" r="10"></circle>

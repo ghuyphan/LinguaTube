@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_というと_55": {
+      "title": "～というと (〜to iu to)",
+      "shortExplanation": "Dùng khi nhắc đến một chủ đề nào đó thì lập tức liên tưởng ngay đến đặc trưng tiêu biểu hoặc ví dụ điển hình; 'nhắc đến...', 'nói đến... là nghĩ ngay đến'.",
+      "longExplanation": "Mẫu ngữ pháp '～というと' được dùng để nêu lên một chủ đề, đối tượng hoặc sự việc, từ đó liên tưởng ngay đến một hình ảnh đặc trưng, một ví dụ tiêu biểu hoặc một đặc điểm nổi bật nhất gắn liền với chủ đề đó ('hễ nhắc đến A là nghĩ ngay đến B'). Cấu trúc này cũng thường được dùng trong hội thoại để xác nhận lại điều mà đối phương vừa nhắc tới.",
+      "formation": "Danh từ + というと",
+      "examples": [
+        {
+          "translation": "Nói đến ẩm thực Nhật Bản thì tôi nghĩ ngay đến sushi."
+        },
+        {
+          "translation": "Nhắc đến Paris là tôi lại nhớ đến tháp Eiffel."
+        },
+        {
+          "translation": "Nói đến kỳ nghỉ hè là tôi lại háo hức mong chờ được đi biển."
+        },
+        {
+          "translation": "Nói về anh ấy thì tôi thấy anh ấy luôn là một người tràn đầy năng lượng."
+        }
+      ]
+    },
+    "ja_というの_56": {
+      "title": "～というの～ (〜to iu no〜)",
+      "shortExplanation": "Dùng trong mẫu câu '〜のは、〜というのだ' để giải thích hoặc nhấn mạnh nguyên nhân, lý do của một sự việc; 'sở dĩ... là vì/do...'.",
+      "longExplanation": "Mẫu ngữ pháp '～というの～' thường xuất hiện dưới cấu trúc '〜のは、〜というのだ' hoặc '〜という理由だ', dùng để giải thích rõ ràng hoặc nhấn mạnh nguyên nhân, bối cảnh dẫn đến một hành động, sự tình hay hiện trạng đã được nêu ở vế trước. Mẫu câu này làm nổi bật lý do thực sự khiến sự việc xảy ra.",
+      "formation": "Động từ thể thông thường + というの | Tính từ đuôi い + というの | Tính từ đuôi な + だというの | Danh từ + だというの",
+      "examples": [
+        {
+          "translation": "Lý do tôi đi muộn là vì tàu điện bị trễ."
+        },
+        {
+          "translation": "Căn phòng này bừa bộn là do đã không dọn dẹp."
+        },
+        {
+          "translation": "Cô ấy tức giận là vì anh ấy đã thất hứa."
+        },
+        {
+          "translation": "Anh ấy thành công là nhờ đã nỗ lực học tập chăm chỉ."
+        }
+      ]
+    },
+    "ja_というのは_57": {
+      "title": "～というのは (〜to iu no wa)",
+      "shortExplanation": "Dùng để định nghĩa, giải thích ý nghĩa của một từ ngữ hoặc làm rõ lý do, nội dung của sự việc; 'cái gọi là... nghĩa là...', 'sở dĩ nói như vậy là vì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～というのは' được dùng với hai mục đích chính: thứ nhất là đưa ra định nghĩa hoặc giải thích rõ ý nghĩa của một từ ngữ hay khái niệm (thường kết thúc bằng '〜のことだ' hoặc '〜ということだ'); thứ hai là nêu rõ nguyên nhân, lý do cho nhận định hay sự việc vừa nói ở trước (thường kết thúc bằng '〜からだ').",
+      "formation": "Từ ngữ / Mệnh đề + というのは + phần giải thích / định nghĩa (thường kết thúc bằng 〜のことだ / 〜ということだ / 〜からだ)",
+      "examples": [
+        {
+          "translation": "'Đi Nhật Bản' có nghĩa là đi du lịch sang Nhật Bản."
+        },
+        {
+          "translation": "Nói vấn đề này khó có nghĩa là việc giải quyết nó sẽ tốn nhiều thời gian."
+        },
+        {
+          "translation": "Nói anh ấy đang tức giận có nghĩa là anh ấy đang cảm thấy bất mãn."
+        },
+        {
+          "translation": "'Béo lên' có nghĩa là cân nặng cơ thể tăng lên."
+        }
+      ]
+    },
+    "ja_というより_58": {
+      "title": "～というより (〜to iu yori)",
+      "shortExplanation": "Dùng để so sánh cách diễn đạt, cho rằng cách nói sau chuẩn xác hoặc thỏa đáng hơn cách nói trước; 'nói đúng hơn là...', 'thay vì nói là... thì đúng hơn là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～というより' (thường dùng ở dạng 'AというよりB') được sử dụng khi người nói cảm thấy cách diễn đạt A chưa thực sự chuẩn xác hoặc chưa lột tả đúng bản chất, mà cách diễn đạt B mới là phù hợp và sát với thực tế hơn ('thay vì nói là A thì đúng hơn là B').",
+      "formation": "Động từ thể thông thường + というより | Tính từ đuôi い + というより | Tính từ đuôi な + (だ)というより | Danh từ + (だ)というより",
+      "examples": [
+        {
+          "translation": "Căn phòng này nói là chật hẹp thì đúng hơn là ấm cúng, dễ chịu."
+        },
+        {
+          "translation": "Anh ấy nói là đáng sợ thì đúng hơn là rất đáng tin cậy."
+        },
+        {
+          "translation": "Bộ phim nói là dở thì đúng hơn là hơi bị dài."
+        },
+        {
+          "translation": "Cô ấy nói là bạn bè thì đúng hơn là một người như người thân trong gia đình."
+        }
+      ]
+    },
+    "ja_といっても_59": {
+      "title": "～といっても (〜to ittemo)",
+      "shortExplanation": "Thừa nhận một sự thật ở vế trước, nhưng bổ sung thêm rằng thực tế không đến mức to tát hay nghiêm trọng như người ta tưởng tượng; 'dù nói là... nhưng...', 'nói thế chứ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～といっても' dùng khi người nói thừa nhận sự việc ở vế trước là có thật, nhưng ngay sau đó đưa ra thông tin đính chính hoặc giới hạn lại ở vế sau, nhằm tránh cho người nghe có những hình dung hay kỳ vọng thái quá so với thực tế bình thường.",
+      "formation": "Động từ thể thông thường + といっても | Tính từ đuôi い + といっても | Tính từ đuôi な + (だ)といっても | Danh từ + (だ)といっても",
+      "examples": [
+        {
+          "translation": "Dù nói anh ấy nổi tiếng nhưng không hẳn là ai ai cũng biết."
+        },
+        {
+          "translation": "Món súp này dù nói là cay nhưng với tôi thì lại vừa miệng."
+        },
+        {
+          "translation": "Cô ấy còn trẻ, tuy nói là có kinh nghiệm nhưng thực chất vẫn là người mới."
+        },
+        {
+          "translation": "Nhà hàng này dù nói là đắt nhưng đồ ăn ngon nên rất đáng đồng tiền."
+        }
+      ]
+    },
+    "ja_とおり_60": {
+      "title": "～とおり (〜toori)",
+      "shortExplanation": "Diễn tả một hành động hoặc kết quả diễn ra hoàn toàn khớp với những gì đã nói, đã thấy, đã dự đoán hay hướng dẫn; 'đúng như...', 'theo đúng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とおり' (hoặc '～とおりに', '～どおり') dùng để biểu thị rằng một hành động hay sự việc được thực hiện hoàn toàn chuẩn xác, y hệt theo những gì đã nghe, đã thấy, theo quy định, kế hoạch hay chỉ dẫn từ trước mà không có bất kỳ sai lệch nào. Khi đứng ngay sau danh từ, từ này thường biến âm thành '～どおり'.",
+      "formation": "Động từ (thể từ điển / thể た / thể てある) + とおり(に) | Danh từ + のとおり(に) / Danh từ + どおり(に)",
+      "examples": [
+        {
+          "translation": "Tôi đã làm bài tập về nhà đúng theo lời thầy giáo dặn."
+        },
+        {
+          "translation": "Nếu đi theo đúng những gì chỉ dẫn trên bản đồ thì sẽ đến được nhà ga."
+        },
+        {
+          "translation": "Tôi đã làm bánh ngọt theo đúng công thức."
+        },
+        {
+          "translation": "Cô ấy đã đến đúng giờ đúng như đã hứa."
+        }
+      ]
+    },
+    "ja_とく_61": {
+      "title": "～とく (〜toku)",
+      "shortExplanation": "Dạng nói tắt trong khẩu ngữ của '～ておく', diễn tả việc làm sẵn một hành động nào đó để chuẩn bị cho tương lai; 'làm sẵn...', 'làm trước...'.",
+      "longExplanation": "'～とく' là dạng rút gọn, biến âm trong giao tiếp thân mật hàng ngày của cấu trúc '～ておく' ('～ておく' nói tắt thành '～とく', và '～でおく' nói tắt thành '～どく'). Cấu trúc này dùng để diễn đạt việc hoàn thành sớm một hành động nhằm chuẩn bị cho sự việc tiếp theo hoặc để duy trì trạng thái tiện lợi cho sau này.",
+      "formation": "Động từ thể て lược bỏ て kết hợp với とく (～ておく → ～とく, ～でおく → ～どく)",
+      "examples": [
+        {
+          "translation": "Tối nay sẽ về muộn nên tôi nấu sẵn cơm tối từ trước."
+        },
+        {
+          "translation": "Có thể sẽ cần ô nên tôi cứ mang theo sẵn."
+        },
+        {
+          "translation": "Kỳ thi sắp đến rồi nên từ bây giờ hãy học bài sẵn thôi."
+        },
+        {
+          "translation": "Ngày mai bận rộn nên tôi giặt sẵn quần áo từ hôm nay."
+        }
+      ]
+    },
+    "ja_ところが_62": {
+      "title": "～ところが (〜tokoro ga)",
+      "shortExplanation": "Liên từ hoặc trợ từ liên kết biểu thị kết quả thực tế xảy ra hoàn toàn trái ngược hoặc ngoài dự đoán so với kỳ vọng ban đầu; 'thế nhưng', 'nhưng ngờ đâu'.",
+      "longExplanation": "'～ところが' dùng để kết nối hai sự việc có tính tương phản, trong đó vế trước nêu lên một hành động, dự định hoặc sự chờ đợi, còn vế sau đưa ra một kết quả thực tế xảy ra bất ngờ, ngoài dự tính của người nói. Thường mang sắc thái ngạc nhiên, thất vọng hoặc ngoài ý muốn. Có thể dùng nối câu ('Câu 1. ところが、Câu 2') hoặc nối vế câu ('〜たところが、...').",
+      "formation": "Động từ thể た + ところが | Câu 1 (sự việc / dự đoán) + 。ところが、 + Câu 2 (kết quả bất ngờ ngoài dự tính)",
+      "examples": [
+        {
+          "translation": "Anh ấy lúc nào cũng đi muộn, thế nhưng hôm nay lại đến sớm."
+        },
+        {
+          "translation": "Hôm qua trời còn nóng bức, thế mà hôm nay đã trở lạnh."
+        },
+        {
+          "translation": "Cứ ngỡ là sẽ thua trong trận đấu, thế nhưng bất ngờ thay chúng tôi đã thắng."
+        },
+        {
+          "translation": "Cứ ngỡ là đã vô địch trận chung kết rồi, thế nhưng lại bị thua ở điểm số quyết định cuối cùng."
+        }
+      ]
+    },
+    "ja_ところだった_63": {
+      "title": "～ところだった (〜tokoro datta)",
+      "shortExplanation": "Diễn tả một sự việc nguy hiểm, xấu hoặc đáng tiếc suýt chút nữa đã xảy ra nhưng may mắn là đã không xảy ra; 'suýt nữa thì...', 'suýt chút nữa là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ところだった' dùng để kể về một tình huống xấu, nguy hiểm, thất bại hay rắc rối suýt chút nữa đã trở thành hiện thực trong gang tấc, nhưng nhờ kịp thời tránh được hoặc nhờ may mắn mà thực tế đã không xảy ra. Mẫu này rất thường đi kèm với các phó từ như 'もう少しで' (chút xíu nữa), '危うく' (suýt chút).",
+      "formation": "Động từ thể từ điển / thể ない + ところだった (thường đi kèm với もう少しで, 危うく)",
+      "examples": [
+        {
+          "translation": "Suýt chút nữa là tôi bị trễ rồi."
+        },
+        {
+          "translation": "Anh ấy suýt chút nữa thì gặp tai nạn nguy hiểm."
+        },
+        {
+          "translation": "Tôi vừa định bước lên tàu thì cửa đã đóng sầm lại."
+        },
+        {
+          "translation": "Suýt nữa thì tôi để quên đồ rồi."
+        }
+      ]
+    },
+    "ja_ところで_64": {
+      "title": "ところで (tokorode)",
+      "shortExplanation": "Liên từ dùng để cắt ngang chủ đề đang nói và chuyển hướng câu chuyện sang một đề tài mới hoàn toàn; 'tiện đây', 'nhân tiện', 'à này'.",
+      "longExplanation": "'ところで' là liên từ dùng để chủ động chuyển đổi đề tài trong cuộc hội thoại. Người nói sử dụng từ này khi muốn kết thúc câu chuyện đang trao đổi trước đó để mở ra một chủ đề mới, đặt một câu hỏi mới hoặc nêu lên một thông tin khác mà bản thân vừa chợt nhớ ra.",
+      "formation": "Câu 1 + 。ところで、 + Câu 2 (chủ đề mới hoặc câu hỏi mới)",
+      "examples": [
+        {
+          "translation": "Nhân tiện thì bài tập về nhà hôm qua bạn đã làm xong chưa?"
+        },
+        {
+          "translation": "Anh ấy đang bơi ở hồ bơi. À này, bữa trưa mình ăn gì đây?"
+        },
+        {
+          "translation": "Hôm qua vui thật đấy nhỉ. Nhân tiện thì cậu đã xem bức ảnh này chưa?"
+        },
+        {
+          "translation": "Tiện đây, bạn có biết giờ họp ngày mai là mấy giờ không?"
+        }
+      ]
+    },
+    "ja_としたら_65": {
+      "title": "～としたら (〜to shitara)",
+      "shortExplanation": "Đưa ra một giả định hoặc điều kiện mang tính giả tưởng để từ đó đưa ra phán đoán, kết luận hoặc hành động tương ứng; 'nếu giả sử...', 'giả định là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～としたら' dùng để đặt ra một điều kiện giả định ('giả sử điều A là sự thật / giả định tình huống A xảy ra'), từ đó người nói nêu lên ý kiến, phán đoán, kết luận hoặc cách ứng phó tương ứng ở vế sau. Cấu trúc này thường dùng cho những tình huống giả định rõ rệt hoặc lập luận suy lý logic.",
+      "formation": "Động từ thể thông thường + としたら | Tính từ đuôi い + としたら | Tính từ đuôi な + だとしたら | Danh từ + だとしたら",
+      "examples": [
+        {
+          "translation": "Nếu giả sử ngày mai trời mưa thì chúng ta hãy mang ô đi nhé."
+        },
+        {
+          "translation": "Nếu như chiếc bánh này mà không ngon thì chắc chẳng ai thèm ăn đâu."
+        },
+        {
+          "translation": "Nếu giả sử anh ấy bị ốm thì hãy bảo anh ấy đi khám bệnh viện ngay đi."
+        },
+        {
+          "translation": "Nếu cô ấy là học sinh/sinh viên thì ở nhà hàng này chắc sẽ được giảm giá."
+        }
+      ]
+    },
+    "ja_として_66": {
+      "title": "～として (〜to shite)",
+      "shortExplanation": "Nêu rõ tư cách, thân phận, lập trường, vai trò hoặc danh nghĩa của một đối tượng; 'với tư cách là...', 'dưới danh nghĩa...', 'với vai trò là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～として' gắn trực tiếp sau danh từ để biểu thị tư cách, thân phận, chức danh, địa vị hoặc lập trường của một người, hoặc chức năng, danh nghĩa, mục đích sử dụng của một sự vật. Khi bổ nghĩa trực tiếp cho một danh từ theo sau, cấu trúc này có dạng '～としての + Danh từ'.",
+      "formation": "Danh từ + として (khi bổ nghĩa cho danh từ: Danh từ + としての + Danh từ)",
+      "examples": [
+        {
+          "translation": "Anh ấy đang làm việc với tư cách là một luật sư."
+        },
+        {
+          "translation": "Món ăn này có thể dùng như một món ăn vặt nhẹ."
+        },
+        {
+          "translation": "Cô ấy được mọi người kính trọng với tư cách là một người lãnh đạo."
+        },
+        {
+          "translation": "Cuốn sách này được dùng như một cuốn sách tham khảo."
+        }
+      ]
+    },
+    "ja_どんなにことか_67": {
+      "title": "～どんなに～ことか (〜donna ni〜koto ka)",
+      "shortExplanation": "Câu cảm thán nhấn mạnh mức độ sâu sắc, to lớn của cảm xúc hoặc tình trạng; '...biết bao nhiêu', '...biết dường nào'.",
+      "longExplanation": "Mẫu ngữ pháp '～どんなに～ことか' là một kết cấu cảm thán dùng ở cuối câu nhằm bày tỏ sự xúc động sâu sắc, nhấn mạnh mức độ cảm xúc, sự vất vả, niềm vui hoặc nỗi khổ tâm của người nói (hoặc người được nói tới) to lớn đến mức khôn xiết. 'どんなに' có thể được thay thế bằng các từ tương đương như 'どれほど', 'なんと'.",
+      "formation": "どんなに + Động từ thể thông thường / Tính từ đuôi い / Tính từ đuôi な + な + ことか",
+      "examples": [
+        {
+          "translation": "Tôi mệt mỏi đến nhường nào, không từ ngữ nào có thể diễn tả xiết."
+        },
+        {
+          "translation": "Chắc hẳn là vất vả biết bao, vậy mà hàng ngày cô ấy vẫn cố gắng làm việc."
+        },
+        {
+          "translation": "Thành công của anh ấy quả thực đáng mừng biết bao nhiêu."
+        },
+        {
+          "translation": "Đi du lịch cùng mọi người chắc chắn sẽ vui vẻ biết dường nào."
+        }
+      ]
+    },
+    "ja_どんなにても_68": {
+      "title": "どんなに～ても (donna ni ~ temo)",
+      "shortExplanation": "Biểu thị điều kiện nghịch bộ, dù mức độ của hành động hay trạng thái có cao hay nhiều đến mức nào thì kết quả vẫn không thay đổi; 'cho dù... đến thế nào đi nữa thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'どんなに～ても' là câu nhượng bộ biểu thị rằng dù mức độ của một hành động, nỗ lực hay trạng thái có cao đến cực điểm đi chăng nữa, thì kết quả, trạng thái hoặc quyết định ở vế sau vẫn không hề thay đổi. Cấu trúc này mang ý nghĩa tương tự như 'いくら～ても'.",
+      "formation": "どんなに + Động từ thể て + も | どんなに + Tính từ đuôi い bỏ い + くても | どんなに + Tính từ đuôi な / Danh từ + でも",
+      "examples": [
+        {
+          "translation": "Dù có học nhiều đến đâu đi nữa thì vẫn có những điều tôi chưa hiểu."
+        },
+        {
+          "translation": "Dù có chạy nhanh đến cỡ nào thì tôi cũng không thể thắng được anh ấy."
+        },
+        {
+          "translation": "Dù có mệt mỏi đến đâu thì chưa xong việc tôi vẫn chưa thể về nhà."
+        },
+        {
+          "translation": "Dù có ngon đến mấy đi nữa thì tôi cũng chẳng thể ăn thêm được nữa rồi."
+        }
+      ]
+    },
+    "ja_ないことはない_69": {
+      "title": "～ないことはない (〜nai koto wa nai)",
+      "shortExplanation": "Dùng hình thức phủ định kép để biểu thị sự khẳng định một cách dè dặt, ngập ngừng; 'không phải là không...', 'không hẳn là không...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ないことはない' (trong khẩu ngữ còn nói là '～ないこともない') sử dụng hình thức hai lần phủ định để đưa ra lời khẳng định mang tính dè dặt, ngập ngừng hoặc có chút gượng gạo. Ý nghĩa của cấu trúc là 'không phải là hoàn toàn không thể làm được hoặc không có khả năng, nhưng có điều kiện kèm theo hoặc bản thân không thực sự hào hứng'.",
+      "formation": "Động từ thể ない + ことはない | Tính từ đuôi い bỏ い + くない + ことはない | Tính từ đuôi な + ではない / じゃない + ことはない | Danh từ + ではない / じゃない + ことはない",
+      "examples": [
+        {
+          "translation": "Không phải là tôi không giải được bài này, nhưng có vẻ sẽ mất khá nhiều thời gian."
+        },
+        {
+          "translation": "Không phải là không thể gặp anh ấy, chỉ là tôi không muốn trò chuyện nhiều cho lắm."
+        },
+        {
+          "translation": "Không phải là không thể xem phim này, nhưng tôi nghĩ những bộ phim khác sẽ hay hơn."
+        },
+        {
+          "translation": "Không hẳn là không đọc được cuốn sách đó, nhưng nó khá dài nên hãy lưu ý nhé."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_というと_55": {
+      "title": "～というと (〜to iu to)",
+      "shortExplanation": "提起某个话题时，立刻联想到其代表性特征或典型事例；“说到……”、“一提到……就联想到……”。",
+      "longExplanation": "句型“～というと”用于引出一个话题、事物或对象，并随即陈述由该事物所联想到的最典型的事例、代表性特征或直观印象（相当于“一提到A，脑海中就浮现出B”）。此外，在日常会话中也可用于重复对方所说的话，以便进一步确认或展开交谈。",
+      "formation": "名词 + というと",
+      "examples": [
+        {
+          "translation": "说起日本料理，脑海中首先浮现出的就是寿司。"
+        },
+        {
+          "translation": "提到巴黎，就会让人想起埃菲尔铁塔。"
+        },
+        {
+          "translation": "一提到暑假，就很期待去海边玩。"
+        },
+        {
+          "translation": "说到他，我觉得他总是一个充满活力的人。"
+        }
+      ]
+    },
+    "ja_というの_56": {
+      "title": "～というの～ (〜to iu no〜)",
+      "shortExplanation": "常用于“～のは、～というのだ”句式中，用于说明或强调某种状况或行为的根本原因；“之所以……是因为……”。",
+      "longExplanation": "句型“～作为～というの～”多以“～のは、～というのだ”或“～という理由だ”的形式出现，用于对前半句所提出的状况、结果或行为，在后半句做出明确的解释或强调其背后的真正原因（相当于汉语的“之所以……，原因就在于……”）。通过“というの”将原因名词化并加以强调说明。",
+      "formation": "动词普通形 + というの | い形容词 + というの | な形容词 + だというの | 名词 + だというの",
+      "examples": [
+        {
+          "translation": "之所以迟到，是因为电车晚点了。"
+        },
+        {
+          "translation": "这个房间之所以这么脏，是因为没有打扫。"
+        },
+        {
+          "translation": "她之所以生气，是因为他违背了诺言。"
+        },
+        {
+          "translation": "他之所以能够成功，是因为努力用功学习了。"
+        }
+      ]
+    },
+    "ja_というのは_57": {
+      "title": "～というのは (〜to iu no wa)",
+      "shortExplanation": "用于对某个词语、概念下定义或进行说明，也可用于解释前述事情的原由；“所谓的……是指……”、“也就是说……”。",
+      "longExplanation": "句型“～というのは”主要有两种常见用法：一是用于对前面提出的词语、短语或概念进行定义与详细阐述，句末常搭配“〜のことだ”或“〜ということだ”（相当于“所谓的……是指……”）；二是承接前述结论来进一步解释其具体原因或背景，句尾常与“〜からだ”搭配使用。",
+      "formation": "词语 / 句子 + というのは + 解释说明（句尾常搭配 〜のことだ / 〜ということだ / 〜からだ）",
+      "examples": [
+        {
+          "translation": "“去日本”指的是去日本旅行这件事。"
+        },
+        {
+          "translation": "说这个问题很难，意思是解决它需要花费较多时间。"
+        },
+        {
+          "translation": "说他生气了，指的是他心里感到很不满。"
+        },
+        {
+          "translation": "所谓的“发胖”，就是指体重增加了。"
+        }
+      ]
+    },
+    "ja_というより_58": {
+      "title": "～というより (〜to iu yori)",
+      "shortExplanation": "表示与其用前项的说法，倒不如用后项的表达更为贴切、准确；“与其说……倒不如说……”。",
+      "longExplanation": "句型“～というより”（常以“AというよりB”的形式出现）用于对比两种不同的描述或评价。说话人认为用A来形容不够确切或不够妥当，用B来表达才更加符合实际情况、更为恰当。相当于汉语的“与其说是A，不如说是B”。",
+      "formation": "动词普通形 + というより | い形容词 + というより | な形容词 + (だ)というより | 名词 + (だ)というより",
+      "examples": [
+        {
+          "translation": "这个房间与其说是狭窄，倒不如说是让人感觉很舒适自在。"
+        },
+        {
+          "translation": "他与其说是可怕，倒不如说是非常可靠。"
+        },
+        {
+          "translation": "这部电影与其说是无聊，倒不如说是稍微长了点。"
+        },
+        {
+          "translation": "她与其说是朋友，倒不如说更像家人一样的存在。"
+        }
+      ]
+    },
+    "ja_といっても_59": {
+      "title": "～といっても (〜to ittemo)",
+      "shortExplanation": "承认前项属实，但紧接着指出实际程度并不像想象中那样高；“虽说……但是……”、“虽说是……其实也只是……”。",
+      "longExplanation": "句型“～といっても”用于说话人虽然认可前项的事实，但为了防止对方产生过高或不切实际的联想，而在后项加以限定、补充说明，指出实际情况并没有达到常人预想的程度。相当于汉语的“话虽如此说，但实际上……”、“虽说……但（也没那么夸张）”。",
+      "formation": "动词普通形 + といっても | い形容词 + といっても | な形容词 + (だ)といっても | 名词 + (だ)といっても",
+      "examples": [
+        {
+          "translation": "虽说他很有名，但也并非人人都认识他。"
+        },
+        {
+          "translation": "这个汤虽说很辣，但对我来说刚刚好。"
+        },
+        {
+          "translation": "她虽然年轻，但就算说有经验，也终究还是个新人。"
+        },
+        {
+          "translation": "这家餐厅虽说价格昂贵，但能吃到美味的料理，所以物有所值。"
+        }
+      ]
+    },
+    "ja_とおり_60": {
+      "title": "～とおり (〜toori)",
+      "shortExplanation": "表示后项的动作或状态完全符合前项所说、所见、所料或指示的内容；“正如……那样”、“按照……”。",
+      "longExplanation": "句型“～とおり”（常作“～とおりに”或接在名词后音变为“～どおり”）用于表达某项行为、状态或结果与之前所听到的、看到的、预想的或规定的基准完全一致，分毫不差。相当于汉语的“按照……去做”、“正如……所料”。",
+      "formation": "动词（辞书形 / た形 / てある形）+ とおり(に) | 名词 + のとおり(に) / 名词 + どおり(に)",
+      "examples": [
+        {
+          "translation": "我完全按照老师说的去完成了作业。"
+        },
+        {
+          "translation": "如果按照地图上标示的那样走，就能到达车站。"
+        },
+        {
+          "translation": "我按照食谱的做法做了蛋糕。"
+        },
+        {
+          "translation": "正如她承诺的那样，她准时赴约了。"
+        }
+      ]
+    },
+    "ja_とく_61": {
+      "title": "～とく (〜toku)",
+      "shortExplanation": "「～ておく」在日常口语中的简略缩略形式，表示预先做好某事以便将来之需；“预先做好……”、“先……好”。",
+      "longExplanation": "“～とく”是补助动词句型“～ておく”在口语、熟人随意交谈中的缩略形态（“〜ておく”缩略为“〜とく”，“〜でおく”缩略为“〜どく”）。它表示为了应对之后可能发生的事情而预先做好某种准备动作，或者将某种动作产生的结果保持下去。",
+      "formation": "动词て形省略て接とく（～ておく → ～とく、～でおく → ～どく）",
+      "examples": [
+        {
+          "translation": "晚上会变迟，所以我先把今晚的饭做好。"
+        },
+        {
+          "translation": "可能用得上雨伞，所以我先带上一把。"
+        },
+        {
+          "translation": "快要考试了，现在开始先把书读好吧。"
+        },
+        {
+          "translation": "明天会很忙，所以先把衣服洗好。"
+        }
+      ]
+    },
+    "ja_ところが_62": {
+      "title": "～ところが (〜tokoro ga)",
+      "shortExplanation": "用于引出与前述预期、预想或计划完全相反的意外结果；“然而”、“可是”、“没想到”。",
+      "longExplanation": "句型“～ところが”用来连接前后两个事项。前半句陈述所做出的某种尝试、期待或原定计划，而后半句则引出一个出乎说话人意料之外的结局（往往与预想截然相反，多伴有惊讶、遗憾或意外的语气）。既可接在动词た形后连接分句（“〜たところが”），也可作为接续词单独置于句首（“ところが、”）。",
+      "formation": "动词た形 + ところが | 句子1（动作/预想）+ 。ところが、 + 句子2（出人意料的结果）",
+      "examples": [
+        {
+          "translation": "他平时总是迟到，可是今天却早早就到了。"
+        },
+        {
+          "translation": "昨天天气还挺热，可今天却一下子变冷了。"
+        },
+        {
+          "translation": "原本以为比赛会输，没想到竟然出乎意料地赢了。"
+        },
+        {
+          "translation": "眼看就要在决赛中夺冠了，却在最后一分上输掉了比赛。"
+        }
+      ]
+    },
+    "ja_ところだった_63": {
+      "title": "～ところだった (〜tokoro datta)",
+      "shortExplanation": "表示差一点就发生了某种危险或不好的事情，但幸好在最后关头避免了；“差一点就……”、“险些……”。",
+      "longExplanation": "句型“～ところだった”用于表达某种不好的事态、危险或失误几乎就要发生，但最终在千钧一发之际得以避开，实际上并没有真正发生的状况。句中常与副词“もう少しで”（差一点点）、“危うく”（险些）搭配呼应使用。",
+      "formation": "动词辞书形 / 动词ない形 + ところだった（常与 もう少しで、危うく 连用）",
+      "examples": [
+        {
+          "translation": "差一点点就迟到了。"
+        },
+        {
+          "translation": "他险些就遭遇了交通事故。"
+        },
+        {
+          "translation": "正要坐上电车的时候，车门却关上了。"
+        },
+        {
+          "translation": "差一点就把东西落下了。"
+        }
+      ]
+    },
+    "ja_ところで_64": {
+      "title": "ところで (tokorode)",
+      "shortExplanation": "用于结束前面的谈话内容，主动转换到一个全新的话题；“话说回来”、“顺便问一下”、“对了”。",
+      "longExplanation": "接续词“ところで”在对话中起到转变话题的关键作用。说话人在打算告一段落或中断原先的交谈内容、引出一个截然不同的话题或提出新的询问时使用该词。相当于汉语中的“话说”、“对了”、“顺便问一句”。",
+      "formation": "句子1 + 。ところで、 + 句子2（引出全新话题或疑问）",
+      "examples": [
+        {
+          "translation": "话说回来，昨天的作业你已经做完了吗？"
+        },
+        {
+          "translation": "他正在游泳池里游泳呢。顺便问一下，午饭打算吃什么？"
+        },
+        {
+          "translation": "昨天玩得真开心呢。对了，你看到这张照片了吗？"
+        },
+        {
+          "translation": "话说，你知道明天开会的时间吗？"
+        }
+      ]
+    },
+    "ja_としたら_65": {
+      "title": "～としたら (〜to shitara)",
+      "shortExplanation": "提出某种假设条件，进而在此前提下做出推断、评价或决定行动；“如果假设……”、“要是……的话”。",
+      "longExplanation": "句型“～としたら”用于提出一个假定存在的事态或前提条件（相当于“如果假定……是真的”），并在此假定成立的基础上，推导、陈述后半句的判断、推论或应对方案。常用于逻辑假设或对未来可能出现情况的推想。",
+      "formation": "动词普通形 + としたら | い形容词 + としたら | な形容词 + だとしたら | 名词 + だとしたら",
+      "examples": [
+        {
+          "translation": "如果明天真要下雨的话，我们就带上雨伞吧。"
+        },
+        {
+          "translation": "要是这个蛋糕不好吃的话，恐怕谁也不会吃的吧。"
+        },
+        {
+          "translation": "如果他真是生病了，请务必让他立刻去医院看病。"
+        },
+        {
+          "translation": "如果她是学生的话，这家餐厅应该会有优惠折扣吧。"
+        }
+      ]
+    },
+    "ja_として_66": {
+      "title": "～として (〜to shite)",
+      "shortExplanation": "明确指出某人或某事物所具备的资格、身份、立场、角色或名义；“作为……”、“以……身份/名义”。",
+      "longExplanation": "句型“～として”直接接在名词后，用于指明动作主体所处的立场、社会地位、身份、所具备的资格，或者某个事物所充当的功能、种类与角色。此外，若修饰后项名词，可使用“～としての + 名词”的形式。",
+      "formation": "名词 + として（修饰名词时用 名词 + としての + 名词）",
+      "examples": [
+        {
+          "translation": "他作为一名律师在开展工作。"
+        },
+        {
+          "translation": "这道料理可以作为点心小吃来食用。"
+        },
+        {
+          "translation": "她作为领袖深受大家的尊敬。"
+        },
+        {
+          "translation": "这本书被用作参考书。"
+        }
+      ]
+    },
+    "ja_どんなにことか_67": {
+      "title": "～どんなに～ことか (〜donna ni〜koto ka)",
+      "shortExplanation": "感叹句表达，强烈感叹某种情绪、心理或事态的程度之深；“多么……啊”、“不知有多么……”。",
+      "longExplanation": "句型“～どんなに～ことか”是用于表达强烈感慨与抒发情感的感叹句型。说话人借此强调某种状态、心情或经历的程度极其深广，达到了常人难以想象或言表的地步。句中的“どんなに”常可与“どれほど”（多么）、“なんと”（何等）等疑问副词替换使用。",
+      "formation": "どんなに + 动词普通形 / い形容词 / な形容词 + な + ことか",
+      "examples": [
+        {
+          "translation": "到底有多累，简直无法用言语来形容。"
+        },
+        {
+          "translation": "不知该有多么艰辛，她每天依然拼命地努力工作。"
+        },
+        {
+          "translation": "他的成功该是多么令人高兴的一件事啊。"
+        },
+        {
+          "translation": "和大家一起去旅行，那该是多么令人快乐的事情啊。"
+        }
+      ]
+    },
+    "ja_どんなにても_68": {
+      "title": "どんなに～ても (donna ni ~ temo)",
+      "shortExplanation": "表示极端的让步假定，无论动作或状态达到何种程度，后项的结果依然不会改变；“无论多么……也……”、“不管怎么……都……”。",
+      "longExplanation": "句型“どんなに～ても”用来构成极端条件的让步句，强调无论前项的事态或动作达到怎样的高度、深浅或极限程度，后项所阐述的客观事实、意志或结果都绝不会动摇或发生改变。相当于汉语的“哪怕再……也……”、“无论怎么……都”，与“いくら〜ても”意思相近。",
+      "formation": "どんなに + 动词て形 + も | どんなに + い形容词（去「い」加「くても」）| どんなに + な形容词 / 名词 + でも",
+      "examples": [
+        {
+          "translation": "无论多么努力用功学习，依然会有弄不明白的地方。"
+        },
+        {
+          "translation": "不管跑得有多快，我始终都赢不了他。"
+        },
+        {
+          "translation": "无论身体多么疲惫，在把工作完成之前都不能回家。"
+        },
+        {
+          "translation": "哪怕再怎么美味可口，我也吃不下更多了。"
+        }
+      ]
+    },
+    "ja_ないことはない_69": {
+      "title": "～ないことはない (〜nai koto wa nai)",
+      "shortExplanation": "通过双重否定来表示委婉、消极或有所保留的肯定；“并不是不……”、“也不是不能……”。",
+      "longExplanation": "句型“～ないことはない”（口语中亦常作“～ないこともない”）通过两次否定构成肯定语气。说话人并非全盘否定某事，而是想表达“如果要说完全不可能或完全不做倒也不是，但并不太情愿或存在某些困难、附加条件”，具有委婉、谨慎或保留余地的陈述色彩。",
+      "formation": "动词ない形 + ことはない | い形容词（去「い」加「くない」）+ ことはない | な形容词 + ではない / じゃない + ことはない | 名词 + ではない / じゃない + ことはない",
+      "examples": [
+        {
+          "translation": "这道题并不是解不出来，只是貌似挺花时间的。"
+        },
+        {
+          "translation": "见他一面倒也不是不行，只是我不太想和他多说话。"
+        },
+        {
+          "translation": "这部电影并不是不可以看，但我感觉其他电影更精彩一些。"
+        },
+        {
+          "translation": "那本书并不是读不下去，只是篇幅很长，请做好心理准备。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_というと_55": {
+      "title": "～というと (〜to iu to)",
+      "shortExplanation": "어떤 화제나 대상을 들었을 때 가장 먼저 떠오르는 대표적인 특징이나 연상되는 것을 말할 때 쓰이며, '~라고 하면', '~하면 떠오르는 것은'이라는 뜻입니다.",
+      "longExplanation": "'～というと'는 어떤 명사를 화제로 제시하고, 그 단어나 대상으로부터 곧바로 연상되는 대표적인 이미지나 전형적인 사례를 꺼낼 때 사용하는 문법입니다. 일상 대화에서는 상대방이 꺼낸 말에 대해 되묻거나 확인하면서 화제를 이어갈 때도 자주 쓰입니다.",
+      "formation": "명사 + というと",
+      "examples": [
+        {
+          "translation": "일본 요리라고 하면 초밥이 떠오른다."
+        },
+        {
+          "translation": "파리라고 하면 에펠탑이 생각난다."
+        },
+        {
+          "translation": "여름방학이라고 하면 바다에 가는 것이 기대된다."
+        },
+        {
+          "translation": "그 사람이라고 하면 항상 활기찬 사람이라는 생각이 든다."
+        }
+      ]
+    },
+    "ja_というの_56": {
+      "title": "～というの～ (〜to iu no〜)",
+      "shortExplanation": "주로 '~のは、～というのだ'의 형태로 쓰여 어떤 상황이나 행동이 일어난 이유나 배경을 강조하여 설명할 때 쓰이며, '그 까닭은 ~라는 것이다', '~한 것은 ~하기 때문이다'라는 뜻입니다.",
+      "longExplanation": "'～というの～'는 앞에 제시된 사태나 행동에 대해 그 이유나 원인이 무엇인지를 명확하게 설명하거나 강조할 때 주로 '〜のは、〜というのだ' 또는 '〜という理由だ'의 형식으로 사용됩니다. 어떤 결과가 초래된 본질적인 사유를 청자에게 납득시키고자 할 때 쓰입니다.",
+      "formation": "동사 보통형 + というの | い형용사 + というの | な형용사 + だというの | 명사 + だというの",
+      "examples": [
+        {
+          "translation": "지각한 이유는 전철이 연착되었기 때문이다."
+        },
+        {
+          "translation": "이 방이 지저분한 것은 청소를 하지 않았기 때문이다."
+        },
+        {
+          "translation": "그녀가 화를 내는 것은 그가 약속을 어겼기 때문이다."
+        },
+        {
+          "translation": "그가 성공한 것은 열심히 노력해서 공부했기 때문이다."
+        }
+      ]
+    },
+    "ja_というのは_57": {
+      "title": "～というのは (〜to iu no wa)",
+      "shortExplanation": "어떤 단어나 개념의 뜻을 정의·설명하거나, 앞서 말한 내용의 이유나 배경을 밝힐 때 쓰이며, '~(이)라는 것은', '~라고 하는 것은'이라는 뜻입니다.",
+      "longExplanation": "'～というのは'는 앞의 단어, 어구, 또는 문장을 화제로 삼아 그 구체적인 정의나 의미를 명확히 설명할 때 쓰입니다(문말에 주로 '〜のことだ', '〜ということだ'와 호응). 또한 앞서 진술한 내용에 대해 구체적인 이유나 사정을 덧붙여 설명할 때도 널리 쓰입니다(문말에 '〜からだ'와 호응).",
+      "formation": "어구 / 문장 + というのは + 설명·정의 (주로 문말의 〜のことだ / 〜ということだ / 〜からだ와 호응)",
+      "examples": [
+        {
+          "translation": "'일본에 간다'는 것은 일본으로 여행을 간다는 뜻입니다."
+        },
+        {
+          "translation": "이 문제가 어렵다는 것은 해결하는 데 시간이 걸린다는 뜻입니다."
+        },
+        {
+          "translation": "그가 화를 내고 있다는 것은 그가 불만을 품고 있다는 뜻입니다."
+        },
+        {
+          "translation": "'살이 찐다'는 것은 체중이 늘어난다는 뜻입니다."
+        }
+      ]
+    },
+    "ja_というより_58": {
+      "title": "～というより (〜to iu yori)",
+      "shortExplanation": "앞의 표현보다 뒤의 표현이 실제 상황을 묘사하는 데 더 정확하고 적절함을 나타내며, '~라기보다는', '~라기보다 차라리'라는 뜻입니다.",
+      "longExplanation": "'～というより'(주로 'AというよりB' 형태)는 어떤 대상이나 상태를 묘사할 때, A라는 표현을 쓰는 것보다는 B라고 표현하는 편이 실정에 더 잘 부합하고 적절하다고 판단할 때 사용하는 비교 문형입니다. 'A라기보다는 차라리 B에 가깝다'라는 뉘앙스를 지닙니다.",
+      "formation": "동사 보통형 + というより | い형용사 + というより | な형용사 + (だ)というより | 명사 + (だ)というより",
+      "examples": [
+        {
+          "translation": "이 방은 좁다기보다는 아늑하고 편안하다."
+        },
+        {
+          "translation": "그는 무섭다기보다는 듬직하고 믿음직스럽다."
+        },
+        {
+          "translation": "영화는 재미없다기보다는 조금 길었다."
+        },
+        {
+          "translation": "그녀는 친구라기보다는 가족 같은 존재다."
+        }
+      ]
+    },
+    "ja_といっても_59": {
+      "title": "～といっても (〜to ittemo)",
+      "shortExplanation": "앞의 사실을 인정하기는 하지만, 실제로는 일반적으로 상상하는 정도나 수준에는 미치지 못함을 나타내며, '~라고 해도', '~라고는 하지만'이라는 뜻입니다.",
+      "longExplanation": "'～といっても'는 앞 절의 사실을 일단 긍정하면서도, 듣는 사람이 지레짐작으로 큰 기대를 하거나 오해하지 않도록 '실상은 생각만큼 대단하지 않다'며 한계를 짓거나 부연 설명을 덧붙일 때 사용합니다.",
+      "formation": "동사 보통형 + といっても | い형용사 + といっても | な형용사 + (だ)といっても | 명사 + (だ)といっても",
+      "examples": [
+        {
+          "translation": "그가 유명하다고 해도 모두에게 알려져 있는 것은 아닙니다."
+        },
+        {
+          "translation": "이 수프는 맵다고는 해도 저한테는 딱 좋습니다."
+        },
+        {
+          "translation": "그녀는 젊은 데다 경험이 있다고는 해도 아직 신입입니다."
+        },
+        {
+          "translation": "이 식당은 비싸다고는 해도 맛있는 음식을 먹을 수 있으니 그만한 가치가 있습니다."
+        }
+      ]
+    },
+    "ja_とおり_60": {
+      "title": "～とおり (〜toori)",
+      "shortExplanation": "앞서 보거나 듣거나 생각한 기준 또는 지시와 조금도 어긋남 없이 똑같이 행해짐을 나타내며, '~대로', '~한 바와 같이'라는 뜻입니다.",
+      "longExplanation": "'～とおり'(또는 '～とおりに', 명사 직결 시 '～どおり')는 어떤 행동이나 사태가 이미 말한 내용, 쓰여 있는 지침, 계획, 예상과 정확히 일치하여 진행되거나 실현됨을 나타내는 문법입니다. 명사 뒤에 직접 붙을 때는 대체로 탁음화하여 'どおり'로 발음됩니다.",
+      "formation": "동사 (사전형 / た형 / てある형) + とおり(に) | 명사 + のとおり(に) / 명사 + どおり(に)",
+      "examples": [
+        {
+          "translation": "선생님이 말씀하신 대로 숙제를 했습니다."
+        },
+        {
+          "translation": "지도에 그려져 있는 대로 가면 역에 도착합니다."
+        },
+        {
+          "translation": "레시피대로 케이크를 만들었다."
+        },
+        {
+          "translation": "그녀는 약속한 대로 시간에 맞춰 도착했습니다."
+        }
+      ]
+    },
+    "ja_とく_61": {
+      "title": "～とく (〜toku)",
+      "shortExplanation": "'～ておく(~해 두다)'의 구어 축약형으로, 미래의 편리나 준비를 위해 어떤 행동을 미리 해 두는 것을 나타내며, '~해 두다', '~해 놓다'라는 뜻입니다.",
+      "longExplanation": "'～とく'는 일상 회화에서 자주 쓰이는 '～ておく'의 편안한 구어 표현입니다('〜ておく'는 '〜とく', '〜でおく'는 '〜どく'로 축약). 미래에 생길 일에 대비하여 미리 사전 조치를 취해 두거나, 현재의 상태를 그대로 유지해 놓는다는 뉘앙스를 담고 있습니다.",
+      "formation": "동사 て형에서 て가 탈락하고 とく 연결 (～ておく → ～とく, ～でおく → ～どく)",
+      "examples": [
+        {
+          "translation": "밤늦게 들어올 테니 오늘 저녁밥을 미리 만들어 둘게."
+        },
+        {
+          "translation": "우산이 필요할지도 모르니까 미리 챙겨 둘게."
+        },
+        {
+          "translation": "시험이 가까워졌으니 지금부터 미리 공부해 두자."
+        },
+        {
+          "translation": "내일은 바쁘니까 미리 빨래를 해 둘게."
+        }
+      ]
+    },
+    "ja_ところが_62": {
+      "title": "～ところが (〜tokoro ga)",
+      "shortExplanation": "앞선 행동이나 계획, 예상과는 전혀 다르게 뜻밖의 결과가 벌어졌음을 나타낼 때 쓰이며, '그런데', '하지만 뜻밖에도'라는 뜻입니다.",
+      "longExplanation": "'～ところが'는 어떤 일이나 시도를 행했거나 예상을 했는데, 뒤이어 일어난 실제 결과가 애초의 기대나 상식과는 정반대로 혹은 전혀 뜻밖에 전개되었을 때 사용하는 역접 표현입니다. 대개 놀라움이나 실망감 등의 감정이 수반되며, 문장 머리에 접속사로 쓰이거나 '동사 た형 + ところが'의 형태로 절을 연결합니다.",
+      "formation": "동사 た형 + ところが | 문장 1 (상황/예상) + 。ところが、 + 문장 2 (뜻밖의 결과)",
+      "examples": [
+        {
+          "translation": "그는 언제나 지각하는데, 뜻밖에도 오늘은 일찍 왔습니다."
+        },
+        {
+          "translation": "어제는 더웠는데, 오늘은 기온이 뚝 떨어져 추워졌습니다."
+        },
+        {
+          "translation": "시합에서 질 줄 알았는데, 의외로 이겼습니다."
+        },
+        {
+          "translation": "결승전에서 거의 우승할 뻔했는데, 마지막 포인트에서 지고 말았습니다."
+        }
+      ]
+    },
+    "ja_ところだった_63": {
+      "title": "～ところだった (〜tokoro datta)",
+      "shortExplanation": "좋지 않은 일이나 위험한 상황이 일어날 뻔했으나 직전에 다행히 모면했음을 나타내며, '하마터면 ~할 뻔했다', '거의 ~할 뻔했다'라는 뜻입니다.",
+      "longExplanation": "'～ところだった'는 불리한 사태, 실수, 사고 등이 바로 직전까지 닥쳤으나 실제로는 발생하지 않고 끝났음을 회상하며 안도하거나 아쉬워할 때 쓰는 문법입니다. 주로 'もう少しで'(조금만 더 있으면), '危うく'(하마터면) 등의 부사와 함께 호응하여 쓰입니다.",
+      "formation": "동사 사전형 / 동사 ない형 + ところだった (주로 もう少しで, 危うく 등과 호응)",
+      "examples": [
+        {
+          "translation": "하마터면 늦을 뻔했다."
+        },
+        {
+          "translation": "그가 하마터면 사고를 당할 뻔했다."
+        },
+        {
+          "translation": "전철을 타려던 참이었는데 문이 닫혀 버렸다."
+        },
+        {
+          "translation": "하마터면 물건을 두고 갈 뻔했다."
+        }
+      ]
+    },
+    "ja_ところで_64": {
+      "title": "ところで (tokorode)",
+      "shortExplanation": "지금까지 하던 이야기를 일단락 짓고 새로운 화제로 화제를 전환할 때 쓰는 접속사로, '그런데', '그건 그렇고', '그나저나'라는 뜻입니다.",
+      "longExplanation": "접속사 'ところで'는 대화 도중 지금까지 나누던 대화 내용을 매듭짓고, 전혀 다른 새로운 주제로 이야기를 돌리거나 새로운 질문을 던질 때 사용합니다. 한국어의 '그런데', '그건 그렇고', '그나저나'에 해당합니다.",
+      "formation": "문장 1 + 。ところで、 + 문장 2 (새로운 화제 또는 질문)",
+      "examples": [
+        {
+          "translation": "그건 그렇고, 어제 숙제는 벌써 다 끝냈나요?"
+        },
+        {
+          "translation": "그는 수영장에서 수영을 하고 있어요. 그런데 점심은 뭘로 드실래요?"
+        },
+        {
+          "translation": "어제는 정말 즐거웠지요. 그건 그렇고 이 사진 보셨어요?"
+        },
+        {
+          "translation": "그런데 내일 회의 시간을 알고 계신가요?"
+        }
+      ]
+    },
+    "ja_としたら_65": {
+      "title": "～としたら (〜to shitara)",
+      "shortExplanation": "어떤 가상의 조건이나 상황을 가정하여 그 전제하에서 판단이나 행동을 이끌어낼 때 쓰이며, '만약 ~라면', '~라고 가정한다면'이라는 뜻입니다.",
+      "longExplanation": "'～としたら'는 어떤 상태나 사실을 가상으로 설정하고('만약 ~라고 가정한다면'), 그러한 조건이 성립되었을 때 뒤따르는 판단, 결론, 혹은 취해야 할 행동을 뒷부분에서 서술하는 가정 조건 문형입니다.",
+      "formation": "동사 보통형 + としたら | い형용사 + としたら | な형용사 + だとしたら | 명사 + だとしたら",
+      "examples": [
+        {
+          "translation": "만약 내일 비가 온다면 우산을 챙겨 갑시다."
+        },
+        {
+          "translation": "이 케이크가 맛이 없다면 아무도 먹지 않겠지요."
+        },
+        {
+          "translation": "만약 그가 아픈 거라면 즉시 병원에 보내 주세요."
+        },
+        {
+          "translation": "그녀가 학생이라면 이 식당에서 할인을 받을 수 있을 것입니다."
+        }
+      ]
+    },
+    "ja_として_66": {
+      "title": "～として (〜to shite)",
+      "shortExplanation": "어떤 대상이 지닌 자격, 신분, 입장, 역할, 혹은 명목을 나타내며, '~로서', '~의 자격으로'라는 뜻입니다.",
+      "longExplanation": "'～として'는 명사 뒤에 직접 결합하여 사람의 신분, 지위, 자격, 혹은 사물의 역할이나 용도, 범주를 명시할 때 사용하는 대표적인 표현입니다('~의 입장/자격으로'). 뒤에 명사를 수식할 때는 '～としての + 명사'의 형태를 취합니다.",
+      "formation": "명사 + として (명사 수식 시: 명사 + としての + 명사)",
+      "examples": [
+        {
+          "translation": "그는 변호사로서 일하고 있습니다."
+        },
+        {
+          "translation": "이 요리는 간식거리로 먹을 수 있습니다."
+        },
+        {
+          "translation": "그녀는 리더로서 존경받고 있다."
+        },
+        {
+          "translation": "이 책은 참고서로 사용됩니다."
+        }
+      ]
+    },
+    "ja_どんなにことか_67": {
+      "title": "～どんなに～ことか (〜donna ni〜koto ka)",
+      "shortExplanation": "감정이나 상태의 정도가 대단히 깊고 큼을 감탄하여 강조하는 문형으로, '얼마나 ~한가', '얼마나 ~했던가'라는 뜻입니다.",
+      "longExplanation": "'～どんなに～ことか'는 화자가 깊은 감회나 감탄, 고통, 기쁨 등의 강한 감정을 담아 그 정도가 상상을 초월할 만큼 크다는 것을 나타내는 감탄 표현입니다. '얼마나 ~했던가', '얼마나 ~한지 모른다'라는 의미로 쓰이며, 'どんなに' 대신 'どれほど'나 'なんと'가 쓰이기도 합니다.",
+      "formation": "どんなに + 동사 보통형 / い형용사 / な형용사 + な + ことか",
+      "examples": [
+        {
+          "translation": "얼마나 피곤했던지 말로는 다 표현할 수가 없습니다."
+        },
+        {
+          "translation": "얼마나 힘들고 괴로울지, 그녀는 매일 열심히 일하고 있습니다."
+        },
+        {
+          "translation": "그의 성공이 얼마나 기쁘고 경사스러운 일인가."
+        },
+        {
+          "translation": "모두 함께 여행을 떠나는 것이 얼마나 즐거운 일인지 모릅니다."
+        }
+      ]
+    },
+    "ja_どんなにても_68": {
+      "title": "どんなに～ても (donna ni ~ temo)",
+      "shortExplanation": "어떤 동작이나 상태의 정도가 아무리 극단적이더라도 뒤따르는 결과나 사실은 변함이 없음을 나타내며, '아무리 ~해도', '아무리 ~하더라도'라는 뜻입니다.",
+      "longExplanation": "'どんなに～ても'는 극단적인 양보 조건을 나타내는 문형으로, 앞 절의 행위나 상태의 정도가 아무리 극에 달하더라도 뒷 절에 제시된 결과나 결심, 사실에는 아무런 영향을 주지 못하고 변하지 않음을 강조할 때 씁니다. 'いくら〜ても'와 거의 같은 의미로 통용됩니다.",
+      "formation": "どんなに + 동사 て형 + も | どんなに + い형용사 어간 + くても | どんなに + な형용사 / 명사 + でも",
+      "examples": [
+        {
+          "translation": "아무리 열심히 공부해도 여전히 모르는 것이 있다."
+        },
+        {
+          "translation": "아무리 빨리 달려도 그를 이길 수는 없습니다."
+        },
+        {
+          "translation": "아무리 피곤하더라도 일을 끝마칠 때까지는 퇴근할 수 없습니다."
+        },
+        {
+          "translation": "아무리 맛있어도 더 이상은 먹을 수 없다."
+        }
+      ]
+    },
+    "ja_ないことはない_69": {
+      "title": "～ないことはない (〜nai koto wa nai)",
+      "shortExplanation": "이중 부정을 사용하여 소극적이고 조심스럽게 긍정의 뜻을 나타내며, '~하지 않는 것은 아니다', '~할 수 없는 것은 아니다'라는 뜻입니다.",
+      "longExplanation": "'～ないことはない'(또는 '～ないこともない')는 부정을 두 번 겹쳐 씀으로써 전면적인 긍정은 아니지만 '그렇다고 해서 전혀 불가능하거나 안 하는 것은 아니다'라는 식으로 소극적, 유보적인 긍정을 나타내는 문형입니다. 내키지 않거나 일정한 조건·어려움이 수반됨을 암시합니다.",
+      "formation": "동사 ない형 + ことはない | い형용사 어간 + くない + ことはない | な형용사 + ではない / じゃない + ことはない | 명사 + ではない / じゃない + ことはない",
+      "examples": [
+        {
+          "translation": "이 문제를 풀지 못하는 것은 아니지만, 시간이 꽤 걸릴 것 같다."
+        },
+        {
+          "translation": "그를 만나지 못할 것은 없지만 별로 이야기하고 싶지 않다."
+        },
+        {
+          "translation": "이 영화를 보지 못할 것은 없지만 다른 영화가 더 재미있을 것 같다."
+        },
+        {
+          "translation": "그 책을 읽지 못할 것은 없지만 분량이 기니 유의해 주세요."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_というと_55": {
+      "title": "～というと (〜to iu to)",
+      "shortExplanation": "ある話題や言葉を取り上げて、そこからすぐに連想される代表的な物事や典型的な特徴を挙げる表現で、「〜といえば」「〜から連想するのは」という意味を表します。",
+      "longExplanation": "「～というと」は、話題となる名詞を提示し、それによって真っ先に心に思い浮かぶ典型的な事柄や代表的な具体例、連想されるイメージを述べるときに使われます。また、日常会話の中で相手の発言を取り上げて確認したり、話を深めたりする際にも頻繁に用いられます。",
+      "formation": "名詞 ＋ というと",
+      "examples": [
+        {
+          "translation": "日本料理というと、寿司が思い浮かびます。"
+        },
+        {
+          "translation": "パリというと、エッフェル塔を思い出します。"
+        },
+        {
+          "translation": "夏休みというと、海に行くのが楽しみです。"
+        },
+        {
+          "translation": "彼というと、いつも元気な人だなと思います。"
+        }
+      ]
+    },
+    "ja_というの_56": {
+      "title": "～というの～ (〜to iu no〜)",
+      "shortExplanation": "主に「〜のは、〜というのだ」の形で用いられ、ある事態や行動が生じた理由や背景を明示・強調して説明する表現で、「〜なのは、〜というわけだ」という意味を表します。",
+      "longExplanation": "「～というの～」は、前置きされた事態や結果に対して、「〜なのは、実は〜という理由からだ」と根本的な原因や理由を取り立てて強調・説明する文型です。会話や文章において因果関係や理由付けを明確にする際に用いられます。",
+      "formation": "動詞普通形 ＋ というの | い形容詞 ＋ というの | な形容詞 ＋ だというの | 名詞 ＋ だというの",
+      "examples": [
+        {
+          "translation": "遅刻したのは、電車が遅れたという理由からです。"
+        },
+        {
+          "translation": "この部屋が汚いのは、掃除をしなかったからです。"
+        },
+        {
+          "translation": "彼女が怒っているのは、彼が約束を破ったからです。"
+        },
+        {
+          "translation": "彼が成功したのは、努力して勉強したからです。"
+        }
+      ]
+    },
+    "ja_というのは_57": {
+      "title": "～というのは (〜to iu no wa)",
+      "shortExplanation": "言葉の意味や概念を定義・説明したり、前に述べた事柄の理由や内情を詳しく説明したりする表現で、「〜の意味は」「〜というのは実は」という意味を表します。",
+      "longExplanation": "「～というのは」は、取り上げた語句や事柄について「〜というのは…という意味・ことだ」（文末：〜のことだ／〜ということだ）と定義・解説するときや、「〜なのは…という理由だからだ」（文末：〜からだ）と背景や原因を解き明かすときに用いられる基本的な文法表現です。",
+      "formation": "語句／文 ＋ というのは ＋ 説明・定義（文末は主に「〜のことだ」「〜ということだ」「〜からだ」）",
+      "examples": [
+        {
+          "translation": "「日本に行く」というのは、日本へ旅行することです。"
+        },
+        {
+          "translation": "この問題が難しいというのは、解決に時間がかかるということです。"
+        },
+        {
+          "translation": "彼が怒っているというのは、彼が不満を感じているということです。"
+        },
+        {
+          "translation": "「太る」というのは、体重が増えるということです。"
+        }
+      ]
+    },
+    "ja_というより_58": {
+      "title": "～というより (〜to iu yori)",
+      "shortExplanation": "前に挙げた表現よりも、後に続く表現のほうが実態に合っていてより適切であると述べる表現で、「〜というよりはむしろ」「〜と言うより」という意味を表します。",
+      "longExplanation": "「～というより」（多くは「AというよりB」の形）は、ある事柄を表現する際に、Aという言い方をするよりもBという言い方をしたほうが、より実情に合致しており的確であるという判断を示す比較表現です。「Aというよりは、むしろBだ」というニュアンスを含みます。",
+      "formation": "動詞普通形 ＋ というより | い形容詞 ＋ というより | な形容詞 ＋ (だ)というより | 名詞 ＋ (だ)というより",
+      "examples": [
+        {
+          "translation": "この部屋は狭いというより、居心地がいいです。"
+        },
+        {
+          "translation": "彼は怖いというより、むしろ頼りがいがあります。"
+        },
+        {
+          "translation": "映画はつまらないというより、少し長すぎました。"
+        },
+        {
+          "translation": "彼女は友達というより、まるで家族のような存在です。"
+        }
+      ]
+    },
+    "ja_といっても_59": {
+      "title": "～といっても (〜to ittemo)",
+      "shortExplanation": "前述の事実を一応認めつつも、実際には聞き手が想像するほど大げさなものではないと程度を限定・補足する表現で、「〜と言っても実際は」「確かに〜だが」という意味を表します。",
+      "longExplanation": "「～といっても」は、「確かに〜であることは事実だが、一般的なイメージや期待ほど程度が高かったり規模が大きかったりするわけではない」と、相手の過度な思い込みや誤解を防ぐために事実の範囲を限定・釈明する逆接的ニュアンスの表現です。",
+      "formation": "動詞普通形 ＋ といっても | い形容詞 ＋ といっても | な形容詞 ＋ (だ)といっても | 名詞 ＋ (だ)といっても",
+      "examples": [
+        {
+          "translation": "彼は有名だといっても、誰もが知っているわけではありません。"
+        },
+        {
+          "translation": "このスープは辛いといっても、私にはちょうどいい辛さです。"
+        },
+        {
+          "translation": "彼女は若いですが、経験があるといっても、まだ新人にすぎません。"
+        },
+        {
+          "translation": "このレストランは高いといっても、美味しい料理が食べられるので価値があります。"
+        }
+      ]
+    },
+    "ja_とおり_60": {
+      "title": "～とおり (〜toori)",
+      "shortExplanation": "前に述べられた指示・予想・情報・基準と全く同じ状態や動作を行うことを表し、「〜と同じように」「〜に従って」という意味を表します。",
+      "longExplanation": "「～とおり」（または「～とおりに」）は、見聞きしたこと、言われたこと、考えたこと、書かれている内容などに寸分違わず従って行動したり、物事がその基準通りに進行・成立したりすることを表します。名詞に直接接続する場合は連濁して「〜どおり」となることが一般的です。",
+      "formation": "動詞（辞書形／た形／てある形）＋ とおり（に） | 名詞 ＋ のとおり（に）／名詞 ＋ どおり（に）",
+      "examples": [
+        {
+          "translation": "先生のおっしゃったとおりに、宿題をやりました。"
+        },
+        {
+          "translation": "地図に書いてあるとおりに行けば、駅に到着します。"
+        },
+        {
+          "translation": "レシピのとおりにケーキを作りました。"
+        },
+        {
+          "translation": "彼女は約束したとおり、時間どおりに来ました。"
+        }
+      ]
+    },
+    "ja_とく_61": {
+      "title": "～とく (〜toku)",
+      "shortExplanation": "準備や以後の便宜のために前もって動作を行うことを表す「〜ておく」の口語縮約表現で、「あらかじめ〜しておく」という意味を表します。",
+      "longExplanation": "「～とく」は、日常のくだけた会話において「〜ておく」が音変化して縮まった形です（「〜ておく」→「〜とく」、「〜でおく」→「〜どく」）。将来の必要やトラブル回避のためにあらかじめ準備として動作を済ませておくことや、状態をそのまま保っておくことを表します。",
+      "formation": "動詞て形から「て」を除いて「とく」を接続（～ておく → ～とく、～でおく → ～どく）",
+      "examples": [
+        {
+          "translation": "夜遅くなるから、今晩のご飯をあらかじめ作っておきます。"
+        },
+        {
+          "translation": "傘が必要かもしれないので、持っておきます。"
+        },
+        {
+          "translation": "試験が近いから、今のうちから勉強しておこう。"
+        },
+        {
+          "translation": "明日は忙しいので、前もって洗濯をしておきます。"
+        }
+      ]
+    },
+    "ja_ところが_62": {
+      "title": "～ところが (〜tokoro ga)",
+      "shortExplanation": "前述の動作・計画・予想から当然期待されることとは正反対の、意外な結果や事態が生じたことを表し、「ところが」「しかし意外にも」という意味を表します。",
+      "longExplanation": "「～ところが」は、ある事柄や働きかけを行った結果、予想や期待とは食い違う予期せぬ結果が生じたことを述べる逆接表現です。話者の驚き、当惑、失望などの感情を伴うことが多く、文頭で接続詞「ところが、〜」として用いるほか、「動詞た形＋ところが」として従属節を導く形でも用いられます。",
+      "formation": "動詞た形 ＋ ところが | 文1（予想や試み）＋ 。ところが、 ＋ 文2（予期せぬ結果）",
+      "examples": [
+        {
+          "translation": "彼はいつも遅刻するのに、驚いたことに今日は早く来ました。"
+        },
+        {
+          "translation": "昨日は暑かったのですが、打って変わって今日は寒くなりました。"
+        },
+        {
+          "translation": "試合で負けると思ったのですが、思いがけず勝利しました。"
+        },
+        {
+          "translation": "決勝戦で優勝しそうだったのですが、最後の1点で負けてしまいました。"
+        }
+      ]
+    },
+    "ja_ところだった_63": {
+      "title": "～ところだった (〜tokoro datta)",
+      "shortExplanation": "好ましくない事態や危険な状況の寸前までいきながら、実際には間一髪でそれを免れたことを表し、「もう少しで〜するところだった」「危うく〜しそうだった」という意味を表します。",
+      "longExplanation": "「～ところだった」は、もう少しで失敗や事故、不都合な事態に陥りそうだったが、直前で回避できて実際には起こらずに済んだという過去の事実を振り返る表現です。文中では「もう少しで」「危うく」などの副詞と共起することが非常に多く見られます。",
+      "formation": "動詞辞書形／動詞ない形 ＋ ところだった（「もう少しで」「危うく」などと呼応）",
+      "examples": [
+        {
+          "translation": "もう少しで遅刻するところでした。"
+        },
+        {
+          "translation": "彼が危うく事故に遭ってしまうところでした。"
+        },
+        {
+          "translation": "電車に乗ろうとしたところでしたが、無情にもドアが閉まってしまいました。"
+        },
+        {
+          "translation": "もう少しで忘れ物をしてしまうところでした。"
+        }
+      ]
+    },
+    "ja_ところで_64": {
+      "title": "ところで (tokorode)",
+      "shortExplanation": "これまでの会話の話題を打ち切って、全く新しい話題や質問へ転換するときに用いる接続詞で、「それはそうと」「話を切り替えるが」という意味を表します。",
+      "longExplanation": "接続詞「ところで」は、それまでの話を一区切りさせ、意識的に別の新しい話題へ切り替えたり、ふと思い出した別の用件や質問を持ち出したりする際に使われます。会話の流れをスムーズに別のテーマへ移行させる働きを持ちます。",
+      "formation": "文1 ＋ 。ところで、 ＋ 文2（新しい話題や問いかけ）",
+      "examples": [
+        {
+          "translation": "ところで、昨日の宿題はもう終わりましたか。"
+        },
+        {
+          "translation": "彼はプールで泳いでいます。ところで、お昼ご飯は何にしますか。"
+        },
+        {
+          "translation": "昨日は楽しかったですね。ところで、この写真を見ましたか。"
+        },
+        {
+          "translation": "ところで、明日の会議の時間をご存知ですか。"
+        }
+      ]
+    },
+    "ja_としたら_65": {
+      "title": "～としたら (〜to shitara)",
+      "shortExplanation": "ある事柄を仮にそうであると仮定・設定し、その条件のもとでの判断や対処を述べる表現で、「もし〜と仮定するならば」「仮に〜とすれば」という意味を表します。",
+      "longExplanation": "「～としたら」は、「もし仮に〜という事態が成立すると想定した場合」と仮定の前提を提示し、その前提に基づいて導き出される話者の推量、判断、疑問、あるいは取るべき行動を後続の節で述べる仮定表現です。",
+      "formation": "動詞普通形 ＋ としたら | い形容詞 ＋ としたら | な形容詞 ＋ だとしたら | 名詞 ＋ だとしたら",
+      "examples": [
+        {
+          "translation": "もし明日雨が降ると仮定するなら、傘を持って行きましょう。"
+        },
+        {
+          "translation": "もしこのケーキが美味しくないとすれば、誰も食べないでしょう。"
+        },
+        {
+          "translation": "もし彼が病気なのだとしたら、すぐに病院へ行かせてあげてください。"
+        },
+        {
+          "translation": "もし彼女が学生であるならば、このレストランでは学割がきくでしょう。"
+        }
+      ]
+    },
+    "ja_として_66": {
+      "title": "～として (〜to shite)",
+      "shortExplanation": "人や事物の資格・身分・立場・役割・名目・種類などを明確に示す表現で、「〜の資格で」「〜の立場で」「〜という名目で」という意味を表します。",
+      "longExplanation": "「～として」は、名詞に直接接続して、その人物の社会的立場や身分、資格、あるいはその物が果たす役割や用途・名目を表す基本的な表現です。また、後ろの名詞を修飾する際には「〜としての＋名詞」という形をとります。",
+      "formation": "名詞 ＋ として（名詞修飾時は 名詞 ＋ としての ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "彼は弁護士という資格・立場で働いています。"
+        },
+        {
+          "translation": "この料理はおやつ・軽食として食べられます。"
+        },
+        {
+          "translation": "彼女はリーダーの立場で周囲から尊敬されています。"
+        },
+        {
+          "translation": "この本は参考書という名目で利用されています。"
+        }
+      ]
+    },
+    "ja_どんなにことか_67": {
+      "title": "～どんなに～ことか (〜donna ni〜koto ka)",
+      "shortExplanation": "感情や状態の程度が非常に甚だしいことを深く感嘆・強調して表す文末表現で、「どれほど〜だろうか」「本当に〜だ」という意味を表します。",
+      "longExplanation": "「～どんなに～ことか」は、話し手が心の中で抱く強い感慨、苦労、喜びなどの感情の度合いが並大抵ではないことを感嘆を込めて強調する表現です。「言葉では言い尽くせないほど〜だ」という強いニュアンスを持ち、「どんなに」の代わりに「どれほど」「なんと」などが用いられることもあります。",
+      "formation": "どんなに ＋ 動詞普通形／い形容詞／な形容詞な ＋ ことか",
+      "examples": [
+        {
+          "translation": "どれほど疲れたことか、とても言葉では言い表せません。"
+        },
+        {
+          "translation": "どれほど辛いことでしょう、彼女は毎日一生懸命に働いています。"
+        },
+        {
+          "translation": "彼の成功がどれほど喜ばしいことか、心から嬉しく思います。"
+        },
+        {
+          "translation": "みんなで旅行に行くのは、どれほど楽しいことでしょうか。"
+        }
+      ]
+    },
+    "ja_どんなにても_68": {
+      "title": "どんなに～ても (donna ni ~ temo)",
+      "shortExplanation": "動作や状態の度合いがどれほど極限に達しても、後件の結果や事実が全く変わらないことを表す逆接の条件表現で、「いくら〜しても」「どれほど〜であっても」という意味を表します。",
+      "longExplanation": "「どんなに～ても」は、前件の条件や度合いがどれほど大きく高まろうとも、後件に示された結果、意志、状況には何ら影響を与えず、変わることがないという強い逆接条件（譲歩）を表します。「いくら〜ても」とほぼ同義で用いられます。",
+      "formation": "どんなに ＋ 動詞て形 ＋ も | どんなに ＋ い形容詞語幹 ＋ くても | どんなに ＋ な形容詞／名詞 ＋ でも",
+      "examples": [
+        {
+          "translation": "どれほど勉強しても、まだ理解できないことがあります。"
+        },
+        {
+          "translation": "いくら速く走っても、彼には到底勝てません。"
+        },
+        {
+          "translation": "どれほど疲れていても、仕事を片付けるまでは帰るわけにはいきません。"
+        },
+        {
+          "translation": "いくら美味しくても、これ以上はもう食べられません。"
+        }
+      ]
+    },
+    "ja_ないことはない_69": {
+      "title": "～ないことはない (〜nai koto wa nai)",
+      "shortExplanation": "二重否定の形をとることによって、消極的・控えめに肯定のニュアンスを表し、「全く〜ないわけではない」「〜しようと思えばできる」という意味を表します。",
+      "longExplanation": "「～ないことはない」（口語では「〜ないこともない」とも言います）は、「ない」を重ねることで、「決して完全に不可能だったり否定されるわけではないが、積極的に賛成・実行したいわけでもない（多少の条件や難点がある）」というニュアンスを込めて、控えめ・遠回しに肯定する表現です。",
+      "formation": "動詞ない形 ＋ ことはない | い形容詞語幹 ＋ くない ＋ ことはない | な形容詞 ＋ ではない／じゃない ＋ ことはない | 名詞 ＋ ではない／じゃない ＋ ことはない",
+      "examples": [
+        {
+          "translation": "この問題が解けないわけではありませんが、時間がかかりそうです。"
+        },
+        {
+          "translation": "彼に会えないわけではないけれど、あまり会話はしたくありません。"
+        },
+        {
+          "translation": "この映画を見ないわけではないけれど、ほかの映画のほうが面白いと思います。"
+        },
+        {
+          "translation": "その本を読まないわけではありませんが、長いので心して読んでください。"
+        }
+      ]
+    }
+  }
+}

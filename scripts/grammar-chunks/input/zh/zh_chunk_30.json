@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_所_472",
+    "language": "zh",
+    "pattern": "所",
+    "title": "所 ((measure word for institutions))",
+    "shortExplanation": "(measure word for institutions)",
+    "longExplanation": "(measure word for institutions). Pinyin: suǒ",
+    "formation": "suǒ",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他来自北京的一所大学。",
+        "romanization": "tā láizì Běijīng de yī suǒ dàxué。",
+        "translation": "He is from a university in Beijing."
+      }
+    ]
+  },
+  {
+    "id": "zh_S所V的_473",
+    "language": "zh",
+    "pattern": "S + (所) + V + 的",
+    "title": "S + (所) + V + 的 (what S V)",
+    "shortExplanation": "what S V",
+    "longExplanation": "what S V. Pinyin: S + ( suǒ) + V + de",
+    "formation": "S + ( suǒ) + V + de",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "山水画(所)表现的是人与自然的关系。",
+        "romanization": "shānshuǐhuà( suǒ) biǎoxiàn de shì rén yǔ zìrán de guānxi。",
+        "translation": "What the landscape painting shows is the relationship between man and nature."
+      }
+    ]
+  },
+  {
+    "id": "zh_有所V_474",
+    "language": "zh",
+    "pattern": "有所 V",
+    "title": "有所 V (has/have V’ed)",
+    "shortExplanation": "has/have V’ed",
+    "longExplanation": "has/have V’ed. Pinyin: yǒusuǒ V",
+    "formation": "yǒusuǒ V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "随着年龄的增大，女性的职场幸福感有所提高。",
+        "romanization": "suízhe niánlíng de zēngdà， nǚxìng de zhíchǎng xìngfú gǎn yǒusuǒ tígāo。",
+        "translation": "As [their] age increases, women’s happiness at work has increased."
+      }
+    ]
+  },
+  {
+    "id": "zh_无所V_475",
+    "language": "zh",
+    "pattern": "无所 V",
+    "title": "无所 V (have nothing to V)",
+    "shortExplanation": "have nothing to V",
+    "longExplanation": "have nothing to V. Pinyin: wú suǒ V",
+    "formation": "wú suǒ V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "你要是坚持真理就可以无所畏惧。",
+        "romanization": "nǐ yàoshi jiānchí zhēnlǐ jiù kěyǐ wú suǒ wèijù。",
+        "translation": "If you stick to the truth, you've nothing to fear."
+      }
+    ]
+  },
+  {
+    "id": "zh_与N相当_476",
+    "language": "zh",
+    "pattern": "与 N 相当",
+    "title": "与 N 相当 (equivalent to N)",
+    "shortExplanation": "equivalent to N",
+    "longExplanation": "equivalent to N. Pinyin: yǔ N xiāngdāng",
+    "formation": "yǔ N xiāngdāng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "开车打电话的人的反应速度与醉酒者相当。",
+        "romanization": "kāichē dǎdiànhuà de rén de fǎnyìng sùdù yǔ zuìjiǔ zhě xiāngdāng。",
+        "translation": "The reaction speed of the person who calls while driving is equivalent to a drunk."
+      }
+    ]
+  },
+  {
+    "id": "zh_相当于N_477",
+    "language": "zh",
+    "pattern": "相当于 N",
+    "title": "相当于 N (equivalent to N)",
+    "shortExplanation": "equivalent to N",
+    "longExplanation": "equivalent to N. Pinyin: xiāngdāngyú N",
+    "formation": "xiāngdāngyú N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这种鸟一天所食的害虫相当于自己的体重。",
+        "romanization": "zhèzhǒng niǎo yī tiān suǒ shí de hàichóng xiāngdāngyú zìjǐ de tǐzhòng。",
+        "translation": "The pests that this bird eats a day are equivalent to its own weight."
+      }
+    ]
+  },
+  {
+    "id": "zh_相当_478",
+    "language": "zh",
+    "pattern": "相当",
+    "title": "相当 (quite)",
+    "shortExplanation": "quite",
+    "longExplanation": "quite. Pinyin: xiāngdāng",
+    "formation": "xiāngdāng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "菜的味道好极了，服务也周到，我相当满意。",
+        "romanization": "cài de wèidao hǎo jíle， fúwù yě zhōudào， wǒ xiāngdāng mǎnyì。",
+        "translation": "The dish is very delicious, the service is also thoughtful, I am quite satisfied."
+      }
+    ]
+  },
+  {
+    "id": "zh_相当_479",
+    "language": "zh",
+    "pattern": "相当",
+    "title": "相当 (considerable)",
+    "shortExplanation": "considerable",
+    "longExplanation": "considerable. Pinyin: xiāngdāng",
+    "formation": "xiāngdāng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "相当一部分人会以收入多少作为幸福的标准。",
+        "romanization": "xiāngdāng yībùfèn rén huì yǐ shōurù duōshao zuòwéi xìngfú de biāozhǔn。",
+        "translation": "A considerable number of people will regard their income as a standard of happiness."
+      }
+    ]
+  },
+  {
+    "id": "zh_数sh_480",
+    "language": "zh",
+    "pattern": "数 (shǔ)",
+    "title": "数 (shǔ) (to count)",
+    "shortExplanation": "to count",
+    "longExplanation": "to count. Pinyin: shǔ (shǔ)",
+    "formation": "shǔ (shǔ)",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我大概数了一下，车上有32个学生。",
+        "romanization": "wǒ dàgài shǔ le yīxià， chē shàng yǒu32 gè xuésheng。",
+        "translation": "I roughly counted it, there are 32 students in the vehicle."
+      }
+    ]
+  },
+  {
+    "id": "zh_数sh_481",
+    "language": "zh",
+    "pattern": "数 (shǔ)",
+    "title": "数 (shǔ) (to be reckoned as)",
+    "shortExplanation": "to be reckoned as",
+    "longExplanation": "to be reckoned as. Pinyin: shǔ (shǔ)",
+    "formation": "shǔ (shǔ)",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "要说我们班跑得最快的，那就数李阳了。",
+        "romanization": "yàoshuō wǒmen bān pǎo dé zuì kuài de， nà jiù shǔ lǐ yáng le。",
+        "translation": "If we were to discuss who our class runs the fastest, then it’s no other than Li Yang."
+      }
+    ]
+  },
+  {
+    "id": "zh_数sh_482",
+    "language": "zh",
+    "pattern": "数 (shù)",
+    "title": "数 (shù) (several)",
+    "shortExplanation": "several",
+    "longExplanation": "several. Pinyin: shǔ (shù)",
+    "formation": "shǔ (shù)",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这里夏季的雷阵雨一般可持续数小时或者更久的时间。",
+        "romanization": "zhèlǐ xiàjì de léizhènyǔ yībān kěchíxù shùxiǎoshí huòzhě gèng jiǔ de shíjiān。",
+        "translation": "The thunderstorms in summer here generally last for several hours or longer."
+      }
+    ]
+  },
+  {
+    "id": "zh_以及_483",
+    "language": "zh",
+    "pattern": "以及",
+    "title": "以及 (and)",
+    "shortExplanation": "and",
+    "longExplanation": "and. Pinyin: yǐjí",
+    "formation": "yǐjí",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "学校的领导、教师以及一些学生代表观看了演出。",
+        "romanization": "xuéxiào de lǐngdǎo、 jiàoshī yǐjí yīxiē xuésheng dàibiǎo guānkàn le yǎnchū。",
+        "translation": "School leaders, teachers, and some student representatives watched the show."
+      }
+    ]
+  },
+  {
+    "id": "zh_程度_484",
+    "language": "zh",
+    "pattern": "程度",
+    "title": "程度 (degree)",
+    "shortExplanation": "degree",
+    "longExplanation": "degree. Pinyin: chéngdù",
+    "formation": "chéngdù",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "问题已经发展到了十分严重的程度。",
+        "romanization": "wèntí yǐjīng fāzhǎn dàoliǎo shífēn yánzhòng de chéngdù。",
+        "translation": "The problem has grown to a very serious degree."
+      }
+    ]
+  },
+  {
+    "id": "zh_更何况_485",
+    "language": "zh",
+    "pattern": "(更)何况",
+    "title": "(更)何况 (let alone)",
+    "shortExplanation": "let alone",
+    "longExplanation": "let alone. Pinyin: ( gèng) hékuàng",
+    "formation": "( gèng) hékuàng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "连运动员都不满意，更何况看比赛的球迷呢？",
+        "romanization": "lián yùndòngyuán dōu bùmǎnyì， gèng hékuàng kàn bǐsài de qiúmí ne？",
+        "translation": "Even the athletes are not satisfied, let alone the fans watching the game?"
+      }
+    ]
+  },
+  {
+    "id": "zh_何必_486",
+    "language": "zh",
+    "pattern": "何必",
+    "title": "何必 (What for? Why do you have to…?)",
+    "shortExplanation": "What for? Why do you have to…?",
+    "longExplanation": "What for? Why do you have to…?. Pinyin: hébì",
+    "formation": "hébì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "你何必亲自送一趟呢？叫个快递不就行了？",
+        "romanization": "nǐ hébì qīnzì sòng yī tàng ne？ jiào gè kuàidì bù jiù xíng le？",
+        "translation": "Why do you have to deliver it yourself? Calling a courier is not enough?"
+      }
+    ]
+  }
+]

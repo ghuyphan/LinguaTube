@@ -3,6 +3,7 @@
     <!-- Current subtitle -->
     <div class="current-subtitle" [class.current-subtitle--small]="settings.settings().fontSize === 'small'"
         [class.current-subtitle--large]="settings.settings().fontSize === 'large'"
+        [class.current-subtitle--xlarge]="settings.settings().fontSize === 'xlarge'"
         [class.is-generating]="transcript.isGeneratingAI()" [class.has-scroll-top]="hasScrollTop()"
         [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko'].includes(effectiveLanguage())"
         [class.is-quiz-active]="quiz.isActive()">
@@ -39,9 +40,18 @@
                             [class.word--learning]="token.level === 'learning'"
                             [class.word--known]="token.level === 'known'" [class.word--saved]="token.isSaved"
                             [class.word--grammar]="token.isGrammar"
+                            role="button"
+                            tabindex="0"
+                            [attr.aria-label]="(token.isGrammar ? 'Grammar pattern: ' : 'Look up word: ') + token.surface"
+                            (keydown.enter)="token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)"
+                            (keydown.space)="$event.preventDefault(); token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)"
                             (click)="token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)">
-                            @if (showReadingAnnotation() && token.readingText) {
-                            <ruby>{{ token.surface }}<rt>{{ token.readingText }}</rt></ruby>
+                            @if (showReadingAnnotation()) {
+                                @if (token.readingText) {
+                                <ruby>{{ token.surface }}<rt>{{ token.readingText }}</rt></ruby>
+                                } @else {
+                                <ruby>{{ token.surface }}<rt class="rt-empty">&#160;</rt></ruby>
+                                }
                             } @else {
                             {{ token.displayText }}
                             }
@@ -64,7 +74,7 @@
                     <div class="subtitle-translation" @subtitleFade>
                         {{ translation }}
                     </div>
-                    } @else if (toastType() === 'error') {
+                    } @else if (toastType() === 'error' && toastMessage()) {
                     <div class="subtitle-translation subtitle-translation--error" @subtitleFade>
                         <app-icon name="alert-circle" [size]="14" />
                         <span>{{ toastMessage() || i18n.t('subtitle.translationFailed') || 'Translation failed'
@@ -218,7 +228,7 @@
 
     <!-- Subtitle list (scrollable) -->
     @if (subtitles.subtitles().length > 0) {
-    <div class="subtitle-list" #subtitleList [class.quiz-obfuscated]="quiz.isActive()">
+    <div class="subtitle-list" #subtitleList [class.quiz-obfuscated]="quiz.isActive()" (scroll)="onSubtitleListScroll()">
         @for (cue of subtitles.subtitles(); track cue.id; let i = $index) {
         <button type="button" class="cue-item" [class.cue-item--active]="cue.id === subtitles.currentCue()?.id"
             [class.cue-item--past]="i < subtitles.currentCueIndex()" [attr.data-cue-id]="cue.id"
@@ -316,7 +326,7 @@
                         [class.active]="settings.settings().fontSize === size"
                         (click)="setFontSize(size)">
                         <span class="size-segment-sample" [class]="'size-sample--' + size">Aa</span>
-                        <span class="size-segment-label">{{ size | titlecase }}</span>
+                        <span class="size-segment-label">{{ size === 'xlarge' ? 'XL' : (size | titlecase) }}</span>
                     </button>
                     }
                 </div>
@@ -330,7 +340,7 @@
                         <span class="reading-badge-icon reading-badge-icon--sm">{{ getReadingScriptIcon() }}</span>
                         <span class="option-label">{{ readingModeName() }}</span>
                     </div>
-                    <span class="option-hint">Show pronunciation guide above characters</span>
+                    <span class="option-hint">{{ i18n.t('subtitle.readingHint') }}</span>
                 </div>
                 <app-switch [checked]="showReading()" (checkedChange)="toggleReading()" />
             </div>
@@ -343,7 +353,7 @@
                         <app-icon name="book-open" [size]="16" />
                         <span class="option-label">{{ i18n.t('grammar.mode') }}</span>
                     </div>
-                    <span class="option-hint">Highlight grammar structures and patterns</span>
+                    <span class="option-hint">{{ i18n.t('subtitle.grammarHint') }}</span>
                 </div>
                 <app-switch [checked]="grammar.grammarModeEnabled()" (checkedChange)="toggleGrammarMode()" />
             </div>
@@ -356,7 +366,7 @@
                         <app-icon name="languages" [size]="16" />
                         <span class="option-label">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</span>
                     </div>
-                    <span class="option-hint">Show secondary translated subtitles</span>
+                    <span class="option-hint">{{ i18n.t('subtitle.dualSubsHint') }}</span>
                 </div>
                 <app-switch [checked]="settings.settings().showDualSubtitles" (checkedChange)="toggleDualSubtitles()" />
             </div>

@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_通过_274",
+    "language": "zh",
+    "pattern": "通过",
+    "title": "通过 (pass through)",
+    "shortExplanation": "pass through",
+    "longExplanation": "pass through. Pinyin: tōngguò",
+    "formation": "tōngguò",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这条街只能步行通过。",
+        "romanization": "zhè tiáo jiē zhǐnéng bùxíng tōngguò。",
+        "translation": "You can only go through this street on foot."
+      }
+    ]
+  },
+  {
+    "id": "zh_经过_275",
+    "language": "zh",
+    "pattern": "经过",
+    "title": "经过 (pass by)",
+    "shortExplanation": "pass by",
+    "longExplanation": "pass by. Pinyin: jīngguò",
+    "formation": "jīngguò",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我正好经过这儿，顺便过来看看你。",
+        "romanization": "wǒ zhènghǎo jīngguò zhèr， shùnbiàn guòlái kànkan nǐ。",
+        "translation": "It just so happened that I’m passing by, [so I] came to see you on the way."
+      }
+    ]
+  },
+  {
+    "id": "zh_通过_276",
+    "language": "zh",
+    "pattern": "通过",
+    "title": "通过 (to pass (an exam, interview or resolution))",
+    "shortExplanation": "to pass (an exam, interview or resolution)",
+    "longExplanation": "to pass (an exam, interview or resolution). Pinyin: tōngguò",
+    "formation": "tōngguò",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我通过那家公司的面试了。",
+        "romanization": "wǒ tōngguò nà jiā gōngsī de miànshì le。",
+        "translation": "I passed the interview with that company."
+      }
+    ]
+  },
+  {
+    "id": "zh_经过_277",
+    "language": "zh",
+    "pattern": "经过",
+    "title": "经过 (the whole story)",
+    "shortExplanation": "the whole story",
+    "longExplanation": "the whole story. Pinyin: jīngguò",
+    "formation": "jīngguò",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "小王把事情的经过告诉我了。",
+        "romanization": "xiǎo wáng bǎ shìqing de jīngguò gàosu wǒ le。",
+        "translation": "Xiao Wang told me the whole story of [how] the event [happened]."
+      }
+    ]
+  },
+  {
+    "id": "zh_可是_278",
+    "language": "zh",
+    "pattern": "可是",
+    "title": "可是 (but)",
+    "shortExplanation": "but",
+    "longExplanation": "but. Pinyin: kěshì",
+    "formation": "kěshì",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "当时她的父母和亲戚都不支持她，可是她坚持自己的选择。",
+        "romanization": "dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā， kěshì tā jiānchí zìjǐ de xuǎnzé。",
+        "translation": "At that time her parents and relatives did not support her, but she insisted on her choice."
+      }
+    ]
+  },
+  {
+    "id": "zh_结果_279",
+    "language": "zh",
+    "pattern": "结果",
+    "title": "结果 (result)",
+    "shortExplanation": "result",
+    "longExplanation": "result. Pinyin: jiéguǒ",
+    "formation": "jiéguǒ",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "请把调查结果交上来。",
+        "romanization": "qǐng bǎ diàochájiéguǒ jiāo shànglái。",
+        "translation": "Please submit the results of the investigation."
+      }
+    ]
+  },
+  {
+    "id": "zh_结果_280",
+    "language": "zh",
+    "pattern": "结果……",
+    "title": "结果…… (As a result, …)",
+    "shortExplanation": "As a result, …",
+    "longExplanation": "As a result, …. Pinyin: jiéguǒ……",
+    "formation": "jiéguǒ……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "上学期他学习很用功，结果考试及格了。",
+        "romanization": "shàng xuéqī tā xuéxí hěn yònggōng， jiéguǒ kǎoshì jígé le。",
+        "translation": "He studied hard last term and, as a result, he passed the examination."
+      }
+    ]
+  },
+  {
+    "id": "zh_上_281",
+    "language": "zh",
+    "pattern": "上 #",
+    "title": "上 # (over #)",
+    "shortExplanation": "over #",
+    "longExplanation": "over #. Pinyin: shàng #",
+    "formation": "shàng #",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这个城市的地铁已经有上百年的历史了。",
+        "romanization": "zhège chéngshì de dìtiě yǐjīng yǒu shàng bǎinián de lìshǐ le。",
+        "translation": "The city's subway has been around for over a hundred years."
+      }
+    ]
+  },
+  {
+    "id": "zh_不过_282",
+    "language": "zh",
+    "pattern": "不过",
+    "title": "不过 (nevertheless)",
+    "shortExplanation": "nevertheless",
+    "longExplanation": "nevertheless. Pinyin: bùguò",
+    "formation": "bùguò",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我本来想当律师，不过后来我发现自己对新闻更感兴趣。",
+        "romanization": "wǒ běnlái xiǎng dāng lǜshī， bùguò hòulái wǒ fāxiàn zìjǐ duì xīnwén gèng gǎnxìngqù。",
+        "translation": "I originally wanted to be a lawyer, nevertheless I found myself more interested in news."
+      }
+    ]
+  },
+  {
+    "id": "zh_不过V_283",
+    "language": "zh",
+    "pattern": "不过 V",
+    "title": "不过 V (only V)",
+    "shortExplanation": "only V",
+    "longExplanation": "only V. Pinyin: bùguò V",
+    "formation": "bùguò V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我们不过谈了点儿工作方面的问题，别的都没谈。",
+        "romanization": "wǒmen bùguò tán le diǎnr gōngzuò fāngmiàn de wèntí， biéde dōu méi tán。",
+        "translation": "We only talked about some work problems (and nothing more), and we didn’t talk about anything else."
+      }
+    ]
+  },
+  {
+    "id": "zh_确实_284",
+    "language": "zh",
+    "pattern": "确实",
+    "title": "确实 (indeed)",
+    "shortExplanation": "indeed",
+    "longExplanation": "indeed. Pinyin: quèshí",
+    "formation": "quèshí",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "爱情确实是结婚的重要原因，但仅有爱情是不够的。",
+        "romanization": "àiqíng quèshí shì jiéhūn de zhòngyào yuányīn， dàn jǐn yǒu àiqíng shì bùgòu de。",
+        "translation": "Love is indeed an important reason for marriage, but only love is not enough."
+      }
+    ]
+  },
+  {
+    "id": "zh_在S看来_285",
+    "language": "zh",
+    "pattern": "在 S 看来",
+    "title": "在 S 看来 (the way S see it)",
+    "shortExplanation": "the way S see it",
+    "longExplanation": "the way S see it. Pinyin: zài S kànlai",
+    "formation": "zài S kànlai",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "在很多人看来，听流行音乐仅仅是年轻人的爱好。",
+        "romanization": "zài hěn duō rén kànlai， tīng liúxíngyīnyuè jǐnjǐn shì niánqīngrén de àihào。",
+        "translation": "The way a lot of people sees it [is that] listening to pop music is only a hobby of young people."
+      }
+    ]
+  },
+  {
+    "id": "zh_由于_286",
+    "language": "zh",
+    "pattern": "由于……",
+    "title": "由于…… (because …)",
+    "shortExplanation": "because …",
+    "longExplanation": "because …. Pinyin: yóuyú……",
+    "formation": "yóuyú……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "由于我们的共同努力，任务提前完成了。",
+        "romanization": "yóuyú wǒmen de gòngtóngnǔlì， rènwu tíqián wánchéng le。",
+        "translation": "Owing to our joint efforts, the task was fulfilled ahead of schedule."
+      }
+    ]
+  },
+  {
+    "id": "zh_由于N_287",
+    "language": "zh",
+    "pattern": "由于 N",
+    "title": "由于 N (due to N)",
+    "shortExplanation": "due to N",
+    "longExplanation": "due to N. Pinyin: yóuyú N",
+    "formation": "yóuyú N",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "由于种种原因，我们不得不改变原来的计划。",
+        "romanization": "yóuyú zhǒngzhǒng yuányīn， wǒmen bùdébù gǎibiàn yuánlái de jìhuà。",
+        "translation": "For various reasons, we had to change the original plan."
+      }
+    ]
+  },
+  {
+    "id": "zh_比如_288",
+    "language": "zh",
+    "pattern": "比如……",
+    "title": "比如…… (for example, ……)",
+    "shortExplanation": "for example, ……",
+    "longExplanation": "for example, ……. Pinyin: bǐrú……",
+    "formation": "bǐrú……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "旅游前最好做个计划，比如要去几个地方，怎么坐车等。",
+        "romanization": "lǚyóu qián zuìhǎo zuò gè jìhuà， bǐrú yào qù jǐge dìfang， zěnme zuòchē děng。",
+        "translation": "It is best to make a plan before the trip, for example, how many places to go to, how to take transit, etc."
+      }
+    ]
+  }
+]

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Verb_59": {
+      "title": "～ようにする (～you ni suru)",
+      "shortExplanation": "Diễn tả sự nỗ lực, cố gắng thực hiện hoặc duy trì một thói quen, hành động; 'cố gắng...', 'chú ý làm sao để...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ようにする' được dùng để diễn tả việc người nói đang nỗ lực, cố gắng hoặc để tâm thực hiện (hay không thực hiện) một hành vi nào đó để tạo thành thói quen hoặc đạt được mục tiêu. Dạng '～ようにしている' nhấn mạnh thói quen đang được duy trì đều đặn trong cuộc sống hàng ngày. Dạng '～ようにしてください' được dùng để khuyên bảo, nhắc nhở hoặc yêu cầu đối phương cố gắng thực hiện một việc gì đó.",
+      "formation": "Động từ thể từ điển / thể ない + ようにする",
+      "examples": [
+        {
+          "translation": "Tôi cố gắng tập thể dục mỗi ngày."
+        },
+        {
+          "translation": "Xin hãy cố gắng đi ngủ sớm nhé."
+        },
+        {
+          "translation": "Tôi sẽ cố gắng giữ đúng lời hứa."
+        },
+        {
+          "translation": "Tôi sẽ cố gắng không gặp anh ấy."
+        }
+      ]
+    },
+    "ja_Verb_60": {
+      "title": "～ようになる (～you ni naru)",
+      "shortExplanation": "Diễn tả sự biến đổi về năng lực, trạng thái hoặc thói quen theo thời gian; 'trở nên có thể...', 'bắt đầu...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ようになる' biểu thị sự biến đổi, chuyển biến dần dần từ trạng thái chưa thể sang đã có thể làm được một việc gì đó (thường kết hợp với động từ thể khả năng), hoặc sự hình thành một thói quen, nhận thức mới theo thời gian mà trước đây chưa có. Cấu trúc này thường được dịch là 'đã có thể...', 'trở nên...', hoặc 'dần bắt đầu...'.",
+      "formation": "Động từ thể khả năng / Động từ thể từ điển / Động từ thể ない + ようになる",
+      "examples": [
+        {
+          "translation": "Tôi đã có thể nói được tiếng Nhật rồi."
+        },
+        {
+          "translation": "Dạo gần đây tôi đã bắt đầu đi ngủ sớm."
+        },
+        {
+          "translation": "Anh ấy đã có thể chơi được đàn piano rồi."
+        },
+        {
+          "translation": "Kể từ khi bắt đầu công việc này, tôi dần cảm thấy mỗi ngày đều bận rộn."
+        }
+      ]
+    },
+    "ja_Verb_61": {
+      "title": "～ように言う (～you ni iu)",
+      "shortExplanation": "Dùng để truyền đạt gián tiếp một mệnh lệnh, chỉ thị hoặc lời yêu cầu; 'bảo/nói là hãy làm gì', 'nhắc nhở làm gì'.",
+      "longExplanation": "Mẫu ngữ pháp '～ように言う' dùng trong cách nói tường thuật gián tiếp, biểu thị việc truyền đạt lại yêu cầu, chỉ thị hoặc lời dặn dò của mình hoặc của người khác cho đối phương (yêu cầu làm hoặc không làm việc gì). So với cách trích dẫn trực tiếp thể mệnh lệnh, cấu trúc này diễn đạt nhẹ nhàng, lịch sự và mang tính hướng dẫn hơn. Phía trước 'ように' là động từ ở thể từ điển hoặc thể ない.",
+      "formation": "Động từ thể từ điển / thể ない + ように言う",
+      "examples": [
+        {
+          "translation": "Thầy giáo đã bảo chúng tôi làm bài tập về nhà."
+        },
+        {
+          "translation": "Mẹ đã bảo em trai tôi dọn dẹp phòng."
+        },
+        {
+          "translation": "Cấp trên đã bảo tôi nộp bản báo cáo."
+        },
+        {
+          "translation": "Bạn tôi đã bảo tôi đến sớm."
+        }
+      ]
+    },
+    "ja_Verb_62": {
+      "title": "～られる (～rareru)",
+      "shortExplanation": "Diễn tả thể bị động (bị/được làm gì) hoặc thể khả năng (có thể làm gì) của động từ; 'bị/được...', 'có thể...'.",
+      "longExplanation": "Hậu tố '～られる' (và '～れる' đối với động từ nhóm 1) có hai cách dùng chính ở trình độ N4: 1. Thể bị động (受身): diễn tả hành động mà chủ ngữ phải chịu hoặc được đón nhận từ người khác (đối tượng tác động đi với trợ từ に). 2. Thể khả năng (可能): diễn tả năng lực của người hoặc điều kiện cho phép thực hiện hành động (đặc biệt phổ biến với động từ nhóm 2 bỏ る thêm られる).",
+      "formation": "Động từ nhóm 1 (Ngũ đoạn): Đổi đuôi [u] sang cột [a] + れる / Động từ nhóm 2 (Nhất đoạn): Bỏ る + られる / Động từ nhóm 3 (Bất quy tắc): する → される, くる → こられる",
+      "examples": [
+        {
+          "translation": "Anh ấy đã được thầy giáo khen ngợi."
+        },
+        {
+          "translation": "Anh ấy đã bị bạn bè cười chê."
+        },
+        {
+          "translation": "Bạn đã xem được bộ phim đó chưa?"
+        },
+        {
+          "translation": "Cô ấy đã được bầu chọn làm nhóm trưởng."
+        }
+      ]
+    },
+    "ja_Verb_63": {
+      "title": "～ることがある (～ru koto ga aru)",
+      "shortExplanation": "Diễn tả một sự việc, hành động thỉnh thoảng xảy ra hoặc có đôi khi xuất hiện; 'có khi...', 'thỉnh thoảng có việc...'.",
+      "longExplanation": "Mẫu câu 'Động từ thể từ điển + ことがある' dùng để biểu thị một hành động hoặc tình huống thỉnh thoảng, đôi khi xảy ra (không phải là thói quen cố định hay quy luật chắc chắn). Thường đi kèm với các phó từ chỉ tần suất như 'たまに' (thi thoảng), 'ときどき' (thỉnh thoảng). Cần phân biệt với 'Động từ thể た + ことがある' dùng để diễn tả trải nghiệm đã từng làm gì trong quá khứ.",
+      "formation": "Động từ thể từ điển + ことがある / ことがあります",
+      "examples": [
+        {
+          "translation": "Anh ấy thỉnh thoảng có đi trễ."
+        },
+        {
+          "translation": "Tôi thỉnh thoảng có ngủ quên."
+        },
+        {
+          "translation": "Cô ấy thỉnh thoảng có hát những bài hát."
+        },
+        {
+          "translation": "Hồi còn nhỏ, tôi thỉnh thoảng có leo núi."
+        }
+      ]
+    },
+    "ja_Verb_64": {
+      "title": "～ることができる (～ru koto ga dekiru)",
+      "shortExplanation": "Diễn tả năng lực có thể thực hiện một hành động hoặc khả năng, điều kiện cho phép việc gì đó xảy ra; 'có thể làm...'.",
+      "longExplanation": "Mẫu câu 'Động từ thể từ điển + ことができる' là cách diễn đạt phổ biến và trang trọng để biểu thị khả năng: 1. Năng lực hoặc kỹ năng của một người (ví dụ: biết bơi, biết ngoại ngữ). 2. Khả năng mang tính hoàn cảnh, điều kiện cho phép làm việc gì đó (ví dụ: tại đây có thể thanh toán bằng thẻ). Cấu trúc này tương đương về ý nghĩa với thể khả năng (可能形) của động từ, nhưng mang sắc thái văn phong trang trọng, rõ ràng và khách quan hơn.",
+      "formation": "Động từ thể từ điển + ることができる / ことができます",
+      "examples": [
+        {
+          "translation": "Tôi có thể nói được tiếng Nhật."
+        },
+        {
+          "translation": "Anh ấy có thể chơi đàn ghi-ta."
+        },
+        {
+          "translation": "Bạn có thể giải quyết được vấn đề này không?"
+        },
+        {
+          "translation": "Cô ấy có thể cho chó bơi lội."
+        }
+      ]
+    },
+    "ja_Verb_65": {
+      "title": "～ることにする (～ru koto ni suru)",
+      "shortExplanation": "Diễn tả quyết định chủ quan của bản thân về việc sẽ thực hiện hoặc không thực hiện một hành động; 'quyết định làm/không làm gì'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことにする' thể hiện quyết định do chính bản thân người nói chủ động đưa ra sau khi suy nghĩ hoặc lựa chọn. Dạng '～ことにした / ～ことにしました' dùng để thông báo về quyết định đã đưa ra. Khi dùng ở dạng '～ことにしている', mẫu câu biểu thị một thói quen hoặc quy tắc hành vi mà bản thân tự quy định và đang duy trì thực hiện. Phủ định là '～ないことにする' (quyết định không làm gì).",
+      "formation": "Động từ thể từ điển / thể ない + ことにする / ことにしました",
+      "examples": [
+        {
+          "translation": "Tôi đã quyết định tuần sau sẽ đi đến phòng tập gym."
+        },
+        {
+          "translation": "Tôi đã quyết định sẽ mua đôi giày này."
+        },
+        {
+          "translation": "Tôi đã quyết định mỗi ngày sẽ đi dạo."
+        },
+        {
+          "translation": "Tôi quyết định sẽ gọi điện thoại cho anh ấy."
+        }
+      ]
+    },
+    "ja_Verb_66": {
+      "title": "～ることになる (～ru koto ni naru)",
+      "shortExplanation": "Diễn tả sự việc đã được quyết định hoặc an bài do yếu tố khách quan, quy định hoặc người khác định đoạt; 'được quyết định là...', 'thành ra là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことになる' được dùng để diễn tả rằng một sự việc, kế hoạch hay quyết định đã được định đoạt dựa trên hoàn cảnh khách quan, quy tắc của tập thể, hoặc do người khác sắp đặt mà không phụ thuộc hoàn toàn vào ý chí chủ quan của bản thân người nói. Trái ngược với '～ことにする' (bản thân tự quyết), '～ことになる' mang tính khách quan. Dạng '～ことになっている' biểu thị một quy định, lịch trình hoặc phong tục đã định sẵn.",
+      "formation": "Động từ thể từ điển / thể ない + ことになる / ことになりました",
+      "examples": [
+        {
+          "translation": "Hôm nay đã có quyết định là cuộc họp sẽ bị hủy."
+        },
+        {
+          "translation": "Kế hoạch đã được định là tuần sau tôi sẽ đi du lịch với bạn bè."
+        },
+        {
+          "translation": "Đã có quyết định là cô ấy sẽ trở thành trưởng dự án lần này."
+        },
+        {
+          "translation": "Vì đột nhiên có việc bận nên tôi phải xin nghỉ phép."
+        }
+      ]
+    },
+    "ja_Verb_67": {
+      "title": "～るときに (～ru toki ni)",
+      "shortExplanation": "Chỉ thời điểm hoặc dịp một hành động nào đó diễn ra; 'khi...', 'lúc...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Động từ thể từ điển + とき（に）' được dùng để chỉ thời điểm hoặc dịp mà một hành động, sự kiện diễn ra. Khi động từ đứng trước 'とき' ở thể từ điển, nó diễn tả hành động đó chưa xảy ra, đang chuẩn bị thực hiện hoặc là một thói quen chung (ví dụ: 寝るときに...: lúc chuẩn bị đi ngủ thì tắt đèn). Điểm này phân biệt với 'Động từ thể た + とき（に）' vốn diễn tả hành động phía trước đã hoàn thành rồi mới diễn ra hành động tiếp theo.",
+      "formation": "Động từ thể từ điển + とき（に）",
+      "examples": [
+        {
+          "translation": "Khi xem phim, tôi ăn bỏng ngô."
+        },
+        {
+          "translation": "Khi đi ngủ, tôi tắt đèn trong phòng."
+        },
+        {
+          "translation": "Khi tập thể dục, việc bổ sung nước là rất quan trọng."
+        },
+        {
+          "translation": "Khi đi du lịch, tôi thích mang theo máy ảnh."
+        }
+      ]
+    },
+    "ja_Verb_68": {
+      "title": "～るところ (～ru tokoro)",
+      "shortExplanation": "Diễn tả thời điểm chuẩn bị hoặc sắp sửa thực hiện một hành động; 'chuẩn bị...', 'sắp sửa...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Động từ thể từ điển + ところ（です）' biểu thị khoảnh khắc ngay trước khi một hành động bắt đầu, khi chủ thể chuẩn bị hoặc sắp sửa làm việc đó trong tích tắc. Thường đi cùng với các phó từ như '今から' (bây giờ), 'これから' (từ giờ). Dạng quá khứ '～ところでした' diễn tả việc suýt chút nữa thì một sự việc xảy ra (suýt khóc, suýt ngã). Cần phân biệt với '～ているところ' (đang làm) và '～たところ' (vừa mới làm xong).",
+      "formation": "Động từ thể từ điển + ところ（です / でした）",
+      "examples": [
+        {
+          "translation": "Anh ấy chuẩn bị ăn cơm."
+        },
+        {
+          "translation": "Tôi chuẩn bị đi ra ngoài."
+        },
+        {
+          "translation": "Cô ấy đã suýt chút nữa bật khóc."
+        },
+        {
+          "translation": "Chúng tôi chuẩn bị bắt đầu học."
+        }
+      ]
+    },
+    "ja_Verb_69": {
+      "title": "～出す (～dasu)",
+      "shortExplanation": "Khi làm trợ động từ ghép biểu thị một hành động đột ngột bắt đầu phát ra ('bỗng nhiên bắt đầu...'); khi là động từ độc lập biểu thị việc lấy ra hoặc nộp/xuất trình.",
+      "longExplanation": "'出す' (dasu) trong tiếng Nhật có hai vai trò chính: 1. Là động từ độc lập mang nghĩa lấy cái gì đó ra khỏi một vị trí (ví dụ 1: lấy sách ra), hoặc nộp, xuất trình giấy tờ/bài tập (ví dụ 3: nộp bài tập). (Lưu ý: ví dụ 2 '出ました' là tự động từ 出る). 2. Là hậu tố ghép sau thân động từ thể ます (bỏ ます) để biểu thị một hành vi hoặc hiện tượng đột ngột bắt đầu bộc phát ra bên ngoài (ví dụ 4: 歌い出しました - bỗng cất tiếng hát), tương tự như 泣き出す (bỗng khóc òa lên), 降り出す (trời bỗng đổ mưa).",
+      "formation": "Động từ thể ます bỏ ます + 出す (hoặc Động từ độc lập: Danh từ + を + 出す)",
+      "examples": [
+        {
+          "translation": "Xin vui lòng lấy sách ra khỏi kệ."
+        },
+        {
+          "translation": "Anh ấy đã vội vã chạy ra khỏi phòng."
+        },
+        {
+          "translation": "Hãy nộp bài tập về nhà trước khi lớp học bắt đầu."
+        },
+        {
+          "translation": "Cô ấy đã bắt đầu cất tiếng hát."
+        }
+      ]
+    },
+    "ja_Verb_70": {
+      "title": "～方 (～kata)",
+      "shortExplanation": "Biểu thị cách thức, phương pháp thực hiện một hành động; 'cách làm...', 'phương pháp làm...'.",
+      "longExplanation": "Mẫu ngữ pháp '～方' (đọc là かた - kata) được gắn vào sau thân động từ (thể ます bỏ ます) để tạo thành một danh từ phái sinh chỉ cách thức, phương pháp thực hiện hành động đó. Khi muốn chỉ đối tượng của hành động, trợ từ tân ngữ 'を' sẽ được chuyển thành trợ từ 'の' đứng trước danh từ phương pháp (ví dụ: ケーキを作る → ケーキの作り方: cách làm bánh kem).",
+      "formation": "Động từ thể ます bỏ ます + 方 (かた) / Danh từ + の + Động từ bỏ ます + 方",
+      "examples": [
+        {
+          "translation": "Có ai biết cách làm bánh kem không?"
+        },
+        {
+          "translation": "Cô ấy đang học cách nói tiếng Anh."
+        },
+        {
+          "translation": "Xin hãy chỉ cho tôi cách sử dụng chiếc máy tính này."
+        },
+        {
+          "translation": "Thật khó để nhớ được cách giải bài toán này."
+        }
+      ]
+    },
+    "ja_Verb_71": {
+      "title": "～終わる (～owaru)",
+      "shortExplanation": "Diễn tả một hành động, sự kiện hoặc công việc hoàn thành hay kết thúc; 'kết thúc', 'xong', 'chấm dứt'.",
+      "longExplanation": "'終わる' (owaru) là động từ ngũ đoạn (nhóm 1) mang nghĩa kết thúc, xong xuôi. Nó có thể đóng vai trò tự động từ độc lập đi với trợ từ が để biểu thị sự kiện hay hành vi đã kết thúc (ví dụ: 映画が終わる: phim kết thúc). Ngoài ra, khi ghép vào sau thân động từ thể ます (bỏ ます), nó tạo thành động từ phức chỉ việc làm xong, hoàn tất trọn vẹn một hành động cụ thể (ví dụ: 読み終わる: đọc xong, 食べ終わる: ăn xong). Đối nghĩa với '始まる / 始める'.",
+      "formation": "Danh từ + が + 終わる (Động từ nhóm 1) / Động từ thể ます bỏ ます + 終わる",
+      "examples": [
+        {
+          "translation": "Khi bộ phim kết thúc, tôi sẽ về nhà."
+        },
+        {
+          "translation": "Xin hãy đợi cho đến khi công việc kết thúc."
+        },
+        {
+          "translation": "Bữa tiệc sẽ kết thúc ngay bây giờ."
+        },
+        {
+          "translation": "Sau khi kỳ thi kết thúc, tôi dự định sẽ đi chơi với bạn bè."
+        }
+      ]
+    },
+    "ja_Verb_72": {
+      "title": "～続ける (～tsuzukeru)",
+      "shortExplanation": "Diễn tả sự tiếp tục, duy trì một hành động hoặc trạng thái không gián đoạn; 'tiếp tục làm gì', 'duy trì...'.",
+      "longExplanation": "'続ける' (tsuzukeru) là tha động từ nhóm 2 biểu thị hành động tiếp diễn, duy trì. Cấu trúc có hai cách dùng phổ biến: 1. Ghép vào sau thân động từ thể ます (bỏ ます) để tạo thành động từ phức diễn tả một hành động được duy trì liên tục không ngắt quãng (ví dụ: 走り続ける - tiếp tục chạy, 勉強し続ける - tiếp tục học). 2. Dùng độc lập như một tha động từ đi cùng tân ngữ 'Danh từ + を + 続ける' (ví dụ: 運動を続ける - duy trì tập thể dục, 仕事を続ける - tiếp tục công việc).",
+      "formation": "Động từ thể ます bỏ ます + 続ける / Danh từ + を + 続ける",
+      "examples": [
+        {
+          "translation": "Anh ấy tiếp tục duy trì việc tập thể dục ở phòng gym mỗi ngày."
+        },
+        {
+          "translation": "Cô ấy đã đến thư viện để tiếp tục việc học."
+        },
+        {
+          "translation": "Chúng tôi vẫn tiếp tục đi dạo bất chấp trời mưa."
+        },
+        {
+          "translation": "Anh ấy đã quyết định sẽ tiếp tục công việc."
+        }
+      ]
+    },
+    "ja_かしら_73": {
+      "title": "～かしら (～kashira)",
+      "shortExplanation": "Trợ từ kết thúc câu dùng trong văn thoại thân mật (thường là nữ giới) để tự hỏi hoặc bày tỏ sự băn khoăn, nghi vấn nhẹ nhàng; 'không biết là... chăng?', 'liệu có... không nhỉ?'.",
+      "longExplanation": "'かしら' là trợ từ cuối câu, dùng trong văn thoại thân mật hàng ngày để diễn tả sự tự hỏi, phân vân, hoài nghi nhẹ nhàng của người nói về một sự việc nào đó. Cấu trúc này có ý nghĩa tương đương với '～かな' nhưng mang sắc thái nữ tính, dịu dàng hơn và chủ yếu được phụ nữ sử dụng. Nó đi trực tiếp với thể thông thường của động từ, tính từ đuôi い, tính từ đuôi な (bỏ だ) và danh từ (không thêm だ).",
+      "formation": "Động từ thể thông thường + かしら / Tính từ đuôi い + かしら / Tính từ đuôi な (bỏ だ) + かしら / Danh từ + かしら",
+      "examples": [
+        {
+          "translation": "Không biết hôm nay trời có mưa không nhỉ?"
+        },
+        {
+          "translation": "Không biết chiếc bánh này có ngon không ta?"
+        },
+        {
+          "translation": "Không biết có phải anh ấy bị ốm không nhỉ?"
+        },
+        {
+          "translation": "Không biết cô ấy có phải là học sinh không nhỉ?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Verb_59": {
+      "title": "～ようにする (～you ni suru)",
+      "shortExplanation": "表示为达到某种状态或养成习惯而有意识地努力、设法去做或不做某事；“努力做到……”、“尽量……”、“设法……”。",
+      "longExplanation": "语法句型“～ようにする”用于表示说话人为了实现某种目标或养成良好习惯，有意识地付出努力、采取行动或加以留心。使用“～ようにしている”时，侧重于表示目前一直在坚持的日常习惯；使用“～ようにしてください”时，则用于委婉、客气地叮嘱或提醒对方尽量做好某件事。",
+      "formation": "动词辞书形 / ない形 + ようにする",
+      "examples": [
+        {
+          "translation": "我尽量每天都坚持运动。"
+        },
+        {
+          "translation": "请尽量早点睡觉。"
+        },
+        {
+          "translation": "我会努力遵守约定的。"
+        },
+        {
+          "translation": "我打算尽量不去见他。"
+        }
+      ]
+    },
+    "ja_Verb_60": {
+      "title": "～ようになる (～you ni naru)",
+      "shortExplanation": "表示能力、状态或习惯等随着时间的推移发生了自然转变；“变得会……”、“逐渐能够……”、“开始（形成某种习惯）”。",
+      "longExplanation": "语法句型“～ようになる”用于表达某种事物、状态或个人能力发生了阶段性、自然的变化。当接在动词可能形之后时，表示从“不会/不能”变为“会/能够”；当接在一般动词的辞书形或ない形之后时，表示形成了过去所没有的新习惯、认知或生活方式。常译为“变得……”、“开始能够……”等。",
+      "formation": "动词可能形 / 动词辞书形 / 动词ない形 + ようになる",
+      "examples": [
+        {
+          "translation": "我已经能够说日语了。"
+        },
+        {
+          "translation": "最近我开始早睡了。"
+        },
+        {
+          "translation": "他已经变得会弹钢琴了。"
+        },
+        {
+          "translation": "自从开始这份工作后，我逐渐感觉每天都很忙碌。"
+        }
+      ]
+    },
+    "ja_Verb_61": {
+      "title": "～ように言う (～you ni iu)",
+      "shortExplanation": "用于间接引述他人的要求、指示或提醒；“转告/吩咐（某人）做……”、“让（某人）……”。",
+      "longExplanation": "语法句型“～ように言う”用于间接引述的表达方式，将某人做出的指示、请求、命令或劝诫转述给第三方。相比于直接使用命令形或“～てください”的直接引语，“～ように言う”更加委婉客气、客观中立。句尾的动词“言う”还可以替换为“頼む”（拜托）、“伝える”（转告）、“注意する”（提醒/警告）等，以表达不同语气的传达。",
+      "formation": "动词辞书形 / ない形 + ように言う（或 頼む / 伝える / 注意する）",
+      "examples": [
+        {
+          "translation": "老师让我们做作业。"
+        },
+        {
+          "translation": "妈妈对弟弟说让他整理房间。"
+        },
+        {
+          "translation": "上司让我提交报告书。"
+        },
+        {
+          "translation": "朋友让我早点过去。"
+        }
+      ]
+    },
+    "ja_Verb_62": {
+      "title": "～られる (～rareru)",
+      "shortExplanation": "表示动词的被动态（被……/受到……）或可能态（能……/可以……）；“被……”、“能……”。",
+      "longExplanation": "助动词“～れる / ～られる”在初中级日语中有两个最核心的功能：第一是“被动态（受身）”，表示主语受到他人的某种动作作用，常与助词“に”搭配表示施事者，分为直接被动、间接受害者被动（迷惑受身）以及物主被动；第二是“可能态（可能）”，特别是二类动词（一段动词）去掉“る”加“られる”表示具备做某事的能力或客观可能性。本条例句中，第1、2、4句为被动态，第3句为可能态。",
+      "formation": "一类动词（五段）：词尾う段变あ段 + れる / 二类动词（一段）：去掉る + られる / 三类动词（不规则）：する → される、くる → こられる",
+      "examples": [
+        {
+          "translation": "他受到了老师的表扬。"
+        },
+        {
+          "translation": "他被朋友们嘲笑了。"
+        },
+        {
+          "translation": "电影你看成了吗？（看到电影了吗？）"
+        },
+        {
+          "translation": "她被选为了队长。"
+        }
+      ]
+    },
+    "ja_Verb_63": {
+      "title": "～ることがある (～ru koto ga aru)",
+      "shortExplanation": "表示某种动作或情况虽然不是经常发生，但有时也会出现；“有时会……”、“偶尔有……的情况”。",
+      "longExplanation": "句型“动词辞书形 + ことがある”用于说明某项动作并非日常固定发生，但偶尔、有时会出现此类情况。常与频度副词“たまに（偶尔）”、“ときどき（有时）”一同搭配使用。必须特别注意将其与“动词た形 + ことがある”（表示过去经历，“曾经做过……”）相区分。其否定形式为“～ないことがある”（有时不……）。",
+      "formation": "动词辞书形 + ことがある / ことがあります",
+      "examples": [
+        {
+          "translation": "他有时也会迟到。"
+        },
+        {
+          "translation": "我有时也会睡过头。"
+        },
+        {
+          "translation": "她偶尔也会唱唱歌。"
+        },
+        {
+          "translation": "小的时候，我偶尔也会去爬山。"
+        }
+      ]
+    },
+    "ja_Verb_64": {
+      "title": "～ることができる (～ru koto ga dekiru)",
+      "shortExplanation": "表示具备做某事的能力，或在客观环境、条件允许下可以做某事；“能够……”、“可以……”。",
+      "longExplanation": "句型“动词辞书形 + ことができる”是日语中表达可能性的标准句型，主要包含两大语义：第一，表示动作主体自身掌握某项技能或具备某种能力（如会说日语、会弹吉他）；第二，表示客观情况、场所规则或物质条件允许做某事（如这里可以使用信用卡）。其语义与动词的可能态相同，但更具书面语色彩，在说明文、学术文章及正式商务会话中广泛使用。",
+      "formation": "动词辞书形 + ることができる / ことができます",
+      "examples": [
+        {
+          "translation": "我能够说日语。"
+        },
+        {
+          "translation": "他会弹吉他。"
+        },
+        {
+          "translation": "你能解决这个问题吗？"
+        },
+        {
+          "translation": "她能让狗游起泳来。"
+        }
+      ]
+    },
+    "ja_Verb_65": {
+      "title": "～ることにする (～ru koto ni suru)",
+      "shortExplanation": "表示说话人凭自己的主观意志决定做或不做某事；“决定做……”、“决定不……”。",
+      "longExplanation": "语法句型“～ことにする”强调由说话人自身的意志、决断或意图所做出的行动选择。通常使用过去式“～ことにした / ～ことにしました”来陈述已经做出的决定。如果使用“～ことにしている”的形式，则表示把某事作为自己日常坚持的准则或习惯（“我一直坚持……”）。否定形式为“～ないことにする”（决定不做……）。",
+      "formation": "动词辞书形 / ない形 + ことにする / ことにしました",
+      "examples": [
+        {
+          "translation": "我决定下周去健身房。"
+        },
+        {
+          "translation": "我决定买这双鞋了。"
+        },
+        {
+          "translation": "我决定每天都去散步。"
+        },
+        {
+          "translation": "我决定给他打个电话。"
+        }
+      ]
+    },
+    "ja_Verb_66": {
+      "title": "～ることになる (～ru koto ni naru)",
+      "shortExplanation": "表示由于客观情况、规章制度或他人决定而确定了某种事实或安排；“决定……（客观决定）”、“结果成了……”。",
+      "longExplanation": "语法句型“～ことになる”用于表达某项计划、决定或事实的形成并非单纯出于说话人个人的自主意愿，而是受外界环境、所属组织安排、集体规则或客观形势推动而决定的。与强调个人主观决断的“～ことにする”形成鲜明对比。常以过去式“～ことになった / ～ことになりました”呈现。当使用“～ことになっている”时，则指早已确定好的规章、既定日程或社会惯例。",
+      "formation": "动词辞书形 / ない形 + ことになる / ことになりました",
+      "examples": [
+        {
+          "translation": "今天决定不开会了。"
+        },
+        {
+          "translation": "定下来下周要和朋友去旅行。"
+        },
+        {
+          "translation": "已经决定由她担任这次项目的负责人。"
+        },
+        {
+          "translation": "因为突然有了紧急工作，结果只好请假了。"
+        }
+      ]
+    },
+    "ja_Verb_67": {
+      "title": "～るときに (～ru toki ni)",
+      "shortExplanation": "表示某个动作或事件发生的时间、场合；“……的时候”、“当……时”。",
+      "longExplanation": "句型“动词辞书形 + とき（に）”用于设定一个时间节点、场合或情境。当动词以辞书形（非过去形）接在“とき”之前时，通常表示该动作尚未完成、正在进行，或者作为一种普遍的规律与生活习惯（如“寝るとき/睡觉时”表示进入睡眠之前或准备就寝的时刻）。它与“动词た形 + とき（に）”（表示前项动作已经彻底完成后再做后项动作）形成时间先后顺序上的明确对照。",
+      "formation": "动词辞书形 + とき（に）",
+      "examples": [
+        {
+          "translation": "看电影的时候，我会吃爆米花。"
+        },
+        {
+          "translation": "睡觉的时候，我会把房间的灯关掉。"
+        },
+        {
+          "translation": "运动的时候，补充水分非常重要。"
+        },
+        {
+          "translation": "去旅行的时候，我喜欢带上照相机。"
+        }
+      ]
+    },
+    "ja_Verb_68": {
+      "title": "～るところ (～ru tokoro)",
+      "shortExplanation": "表示动作正要开始、即将发生的临界时刻；“正要……”、“正打算……”、“差一点就……”。",
+      "longExplanation": "句型“动词辞书形 + ところ（です）”表示某个动作即将发生、正准备着手进行的瞬间。常与副词“今から（现在起）”、“ちょうど（正好）”等呼应使用。如果句尾为过去形式“～ところでした”，则多表示某种险情或情感爆发“差一点就要发生，但幸好没有”（如“泣くところでした/差一点就要哭出来了”）。这一句型与“～ているところ”（正在进行中）和“～たところ”（刚刚完成）共同构成了日语中表示动作阶段的完整体系。",
+      "formation": "动词辞书形 + ところ（です / でした）",
+      "examples": [
+        {
+          "translation": "他正准备吃饭。"
+        },
+        {
+          "translation": "我正要出门。"
+        },
+        {
+          "translation": "她差一点就要哭出来了。"
+        },
+        {
+          "translation": "我们正准备开始学习。"
+        }
+      ]
+    },
+    "ja_Verb_69": {
+      "title": "～出す (～dasu)",
+      "shortExplanation": "作复合动词后半部分时表示动作突然开始或迸发；作为独立动词时表示“拿出”、“提交/交出”。",
+      "longExplanation": "“出す”（dasu）在日语中主要有两种用法：第一，作为独立他动词使用，意为从某处“拿出/取出”（例1：从书架取出书），或者“提交/交上”作业、报告等材料（例3：提交作业）。（注：例2“出ました”为对应自动词“出る”的过去式）。第二，接在动词连用形（ます形去掉ます）之后构成复合动词，表示某种动作、状态突然且势头明显地开始向外爆发（例4：歌い出しました/突然唱起歌来），如“泣き出す（哭出来）”、“雨が降り出す（下起雨来）”。",
+      "formation": "动词连用形（ます形去掉ます） + 出す / 名词 + を + 出す",
+      "examples": [
+        {
+          "translation": "请从书架上把书拿出来。"
+        },
+        {
+          "translation": "他急忙从房间里走了出来。"
+        },
+        {
+          "translation": "请在上课前把作业交上来。"
+        },
+        {
+          "translation": "她开始唱起歌来了。"
+        }
+      ]
+    },
+    "ja_Verb_70": {
+      "title": "～方 (～kata)",
+      "shortExplanation": "接在动词后表示进行该动作的方法或途径；“……的方法”、“怎么……”。",
+      "longExplanation": "接尾词“～方”（读作“かた / kata”）接在动词连用形（ます形去掉ます）之后，将其名词化，用于表达进行该动作的具体方法、手段或方式（如“作り方/做法”、“使い方/使用方法”）。需要特别注意的是，原动词所带的宾语助词“を”在转换为该句型时，必须变更为表示定语所属的助词“の”（例如：ケーキを作る → ケーキの作り方；パソコンを使う → パソコンの使い方）。",
+      "formation": "动词连用形（ます形去掉ます） + 方（读作 かた） / 名词 + の + 动词连用形 + 方",
+      "examples": [
+        {
+          "translation": "有人知道蛋糕的做法吗？"
+        },
+        {
+          "translation": "她正在学习英语的说话方式（如何说英语）。"
+        },
+        {
+          "translation": "请教教我这台电脑的使用方法。"
+        },
+        {
+          "translation": "记住数学题的解题方法很困难。"
+        }
+      ]
+    },
+    "ja_Verb_71": {
+      "title": "～終わる (～owaru)",
+      "shortExplanation": "表示动作、事件或工作完结、告终；“结束”、“完毕”、“做完”。",
+      "longExplanation": "“終わる”（owaru）是五段动词（一类动词），表示某事结束、完结。常作为自动词独立使用，与助词“が”搭配（如“映画が終わる/电影结束”、“仕事が終わる/工作结束”）。此外，还可以接在其他动词连用形（ます形去掉ます）之后构成复合动词，表示该动作彻底做完、告一段落（如“書き終わる/写完”、“読み終わる/读完”）。反义词为“始まる / 始める”。",
+      "formation": "名词 + が + 終わる（一类动词） / 动词连用形（ます形去掉ます） + 終わる",
+      "examples": [
+        {
+          "translation": "电影结束后，我就回家。"
+        },
+        {
+          "translation": "请等到工作结束。"
+        },
+        {
+          "translation": "聚会马上就要结束了。"
+        },
+        {
+          "translation": "考试结束后，我打算和朋友去玩。"
+        }
+      ]
+    },
+    "ja_Verb_72": {
+      "title": "～続ける (～tsuzukeru)",
+      "shortExplanation": "表示动作或状态不间断地持续进行；“继续（做某事）”、“坚持……下去”。",
+      "longExplanation": "动词“続ける”（tsuzukeru）作为他动词，表示持续、继续某项活动。具有两种常见构造：第一，接在动词连用形（ます形去掉ます）之后构成复合动词，强调该动作毫不中断地一直持续下去（如“歩き続ける/一直走下去”、“勉強し続ける/坚持学习”）；第二，作为独立动词与宾语搭配使用，“名词 + を + 続ける”，表示继续开展某项学业、工作或运动。",
+      "formation": "动词连用形（ます形去掉ます） + 続ける / 名词 + を + 続ける",
+      "examples": [
+        {
+          "translation": "他每天都坚持在健身房锻炼。"
+        },
+        {
+          "translation": "她为了继续学习去了图书馆。"
+        },
+        {
+          "translation": "尽管下着雨，我们还是继续散步。"
+        },
+        {
+          "translation": "他决定继续做这份工作。"
+        }
+      ]
+    },
+    "ja_かしら_73": {
+      "title": "～かしら (～kashira)",
+      "shortExplanation": "用于句尾表示疑问、不确定或自问（多为女性在口语中使用）；“不知道……呢”、“……吧？”、“……吗？”。",
+      "longExplanation": "“かしら”是日语中常见的终助词，主要用于日常随意的口语会话中，表达说话人的自言自语、揣测、疑问或不确定的心理。其语意与“～かな”基本一致，但带有明显的女性用语色彩，语气更为柔和委婉。它可以直接接在动词、一类形容词的普通形之后；接在二类形容词和名词之后时，通常不加断定助动词“だ”。",
+      "formation": "动词普通形 + かしら / 一类形容词普通形 + かしら / 二类形容词词干（不加だ） + かしら / 名词（不加だ） + かしら",
+      "examples": [
+        {
+          "translation": "今天不知道会不会下雨呢？"
+        },
+        {
+          "translation": "不知道这个蛋糕好不好吃呢？"
+        },
+        {
+          "translation": "他不知道是不是生病了呢？"
+        },
+        {
+          "translation": "她不知道是不是学生呢？"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Verb_59": {
+      "title": "～ようにする (～you ni suru)",
+      "shortExplanation": "어떤 행동이나 습관을 들이도록 의식적으로 노력하거나 유의함을 나타내며, '~하도록 하다', '~하기로 노력하다'라는 뜻입니다.",
+      "longExplanation": "'～ようにする' 문형은 특정 목표나 상태를 이루기 위해 의식적으로 주의를 기울이거나 노력하여 행동함을 나타냅니다. '~ようにしている'의 형태로 쓰이면 일상생활에서 꾸준히 실천하고 있는 노력이나 습관을 나타내며, '~ようにしてください'의 형태는 상대방에게 어떤 행동을 유의해서 실천하도록 정중하게 당부하거나 충고할 때 쓰입니다.",
+      "formation": "동사 사전형 / ない형 + ようにする",
+      "examples": [
+        {
+          "translation": "매일 운동하도록 노력하고 있습니다."
+        },
+        {
+          "translation": "일찍 자도록 하세요."
+        },
+        {
+          "translation": "약속을 지키도록 하겠습니다."
+        },
+        {
+          "translation": "그를 만나지 않도록 하겠다."
+        }
+      ]
+    },
+    "ja_Verb_60": {
+      "title": "～ようになる (～you ni naru)",
+      "shortExplanation": "능력, 습관, 상태 등의 변화를 나타내며, '~하게 되다', '~할 수 있게 되다'라는 뜻입니다.",
+      "longExplanation": "'～ようになる' 문형은 시간의 흐름이나 연습, 상황의 변화에 따라 이전에는 하지 못했던 동작을 할 수 있게 되거나(가능동사 결합), 이전에는 없었던 새로운 습관이나 상태가 자리 잡게 됨을 나타냅니다. 주로 가능동사의 사전형이나 일반 동사의 사전형 및 ない형에 접속하여 점진적이고 자연스러운 변화의 과정을 표현합니다.",
+      "formation": "동사 가능형 / 동사 사전형 / 동사 ない형 + ようになる",
+      "examples": [
+        {
+          "translation": "일본어를 말할 수 있게 되었습니다."
+        },
+        {
+          "translation": "요즘 일찍 자게 되었다."
+        },
+        {
+          "translation": "그는 피아노를 칠 수 있게 되었습니다."
+        },
+        {
+          "translation": "이 일을 시작하고 나서부터 매일 바쁘다고 느끼게 되었습니다."
+        }
+      ]
+    },
+    "ja_Verb_61": {
+      "title": "～ように言う (～you ni iu)",
+      "shortExplanation": "타인의 요구나 지시, 부탁을 간접적으로 전달할 때 쓰이며, '~하도록 말하다', '~하라고 전하다'라는 뜻입니다.",
+      "longExplanation": "'～ように言う' 문형은 다른 사람의 명령이나 충고, 지시, 부탁 내용을 제3자에게 간접 화법으로 전달할 때 사용됩니다. 직접 명령형이나 '~てください'를 직접 인용하는 것에 비해 한층 완곡하고 정중한 뉘앙스를 풍깁니다. 문말의 '言う' 대신 전달의 목적과 뉘앙스에 따라 '頼む(부탁하다)', '伝える(전하다)', '注意する(주의를 주다)' 등의 동사로 바꾸어 쓸 수도 있습니다.",
+      "formation": "동사 사전형 / ない형 + ように言う (또는 頼む / 伝える / 注意する)",
+      "examples": [
+        {
+          "translation": "선생님께서는 우리에게 숙제를 하라고 말씀하셨습니다."
+        },
+        {
+          "translation": "어머니는 남동생에게 방을 치우라고 말했습니다."
+        },
+        {
+          "translation": "상사는 나에게 보고서를 제출하라고 말했습니다."
+        },
+        {
+          "translation": "친구가 나에게 일찍 오라고 말했습니다."
+        }
+      ]
+    },
+    "ja_Verb_62": {
+      "title": "～られる (～rareru)",
+      "shortExplanation": "동사의 수동태(~을 당하다, ~받다) 또는 가능태(~할 수 있다)를 나타내며, '~해지다', '~되다', '~할 수 있다'라는 뜻입니다.",
+      "longExplanation": "'～れる / ～られる'는 동사의 중요한 활용형으로 크게 두 가지 핵심 용법을 가집니다. 1. 수동태(受身): 주어가 다른 사람에게 어떤 동작을 받거나 당함을 나타내며(동작의 주체는 조사 'に'로 표기), 직설적 수동뿐만 아니라 불이익을 당하는 '피해 수동(迷惑受身)'으로도 자주 쓰입니다. 2. 가능태(可能): 동작을 행할 능력이 있거나 조건이 갖추어졌음을 나타내며, 특히 2그룹 동사의 경우 어미 'る'를 떼고 'られる'를 접속합니다. 예문의 1, 2, 4번은 수동 표현이며, 3번은 가능 표현입니다.",
+      "formation": "1그룹 동사(5단): 어미 [う]단을 [あ]단으로 바꾸고 + れる / 2그룹 동사(1단): 어미 る 탈락 + られる / 3그룹 동사(불규칙): する → される, くる → こられる",
+      "examples": [
+        {
+          "translation": "그는 선생님께 칭찬을 받았습니다."
+        },
+        {
+          "translation": "그는 친구들에게 비웃음을 당했습니다."
+        },
+        {
+          "translation": "영화는 볼 수 있었나요?"
+        },
+        {
+          "translation": "그녀는 리더로 뽑혔습니다."
+        }
+      ]
+    },
+    "ja_Verb_63": {
+      "title": "～ることがある (～ru koto ga aru)",
+      "shortExplanation": "어떤 일이나 동작이 매번 일어나는 것은 아니지만 가끔 발생함을 나타내며, '가끔 ~할 때가 있다', '~하기도 한다'라는 뜻입니다.",
+      "longExplanation": "'동사 사전형 + ことがある' 문형은 일상적으로 항상 일어나는 일은 아니지만, 때때로 혹은 가끔 일어나는 일이나 버릇, 상황을 표현할 때 사용됩니다. 'ときどき(가끔)', 'たまに(때때로)'와 같은 빈도 부사와 잘 어울립니다. 과거의 경험을 나타내는 '동사 た형 + ことがある(~한 적이 있다)'와 혼동하지 않도록 주의해야 합니다. 부정형은 '～ないことがある(가끔 ~하지 않을 때가 있다)'입니다.",
+      "formation": "동사 사전형 + ことがある / ことがあります",
+      "examples": [
+        {
+          "translation": "그는 가끔 지각할 때가 있습니다."
+        },
+        {
+          "translation": "저는 가끔 늦잠을 잘 때가 있습니다."
+        },
+        {
+          "translation": "그녀는 가끔 노래를 부를 때가 있습니다."
+        },
+        {
+          "translation": "어릴 적에 자주 산에 오르곤 했습니다."
+        }
+      ]
+    },
+    "ja_Verb_64": {
+      "title": "～ることができる (～ru koto ga dekiru)",
+      "shortExplanation": "어떤 동작을 행할 능력이나 지식이 있거나 상황적 조건이 허용됨을 나타내며, '~할 수 있다'라는 뜻입니다.",
+      "longExplanation": "'동사 사전형 + ことができる' 문형은 가능성을 나타내는 대표적인 문법 표현으로 크게 두 가지 의미를 가집니다. 1. 화자나 주어가 어떤 기능이나 지식을 갖추고 있어 행할 수 있는 내적 능력(예: 일본어를 할 수 있다, 피아노를 칠 수 있다). 2. 규칙이나 환경, 정세 등의 조건이 갖추어져 어떤 일이 가능한 외적 가능성(예: 카드로 결제할 수 있다). 동사 가능형과 의미가 같으나, 보다 격식 있고 설명문이나 공식적인 문서에 자연스럽게 쓰입니다.",
+      "formation": "동사 사전형 + ることができる / ことができます",
+      "examples": [
+        {
+          "translation": "저는 일본어를 할 수 있습니다."
+        },
+        {
+          "translation": "그는 기타를 칠 수 있습니다."
+        },
+        {
+          "translation": "이 문제를 해결할 수 있습니까?"
+        },
+        {
+          "translation": "그녀는 개를 수영하게 할 수 있습니다."
+        }
+      ]
+    },
+    "ja_Verb_65": {
+      "title": "～ることにする (～ru koto ni suru)",
+      "shortExplanation": "자신의 의지와 주관적인 판단으로 어떤 행동을 하기로 결정함을 나타내며, '~하기로 하다', '~하기로 결정하다'라는 뜻입니다.",
+      "longExplanation": "'～ことにする' 문형은 다른 사람의 간섭 없이 화자 자신의 자유로운 의사와 선택에 의해 어떤 행동을 할 것을 결정함을 나타냅니다. 주로 과거형인 '～ことにした / ～ことに했습니다' 형태로 쓰여 결심한 사항을 전달합니다. 만약 '～ことにしている' 형태로 쓰이면 스스로 정한 개인적인 규칙이나 습관을 나타냅니다. 부정형은 '～ないことにする(~하지 않기로 하다)'입니다.",
+      "formation": "동사 사전형 / ない형 + ことにする / ことにしました",
+      "examples": [
+        {
+          "translation": "다음 주에 헬스장에 가기로 했습니다."
+        },
+        {
+          "translation": "이 구두를 사기로 했습니다."
+        },
+        {
+          "translation": "매일 산책을 하기로 했습니다."
+        },
+        {
+          "translation": "그에게 전화를 걸기로 하겠습니다."
+        }
+      ]
+    },
+    "ja_Verb_66": {
+      "title": "～ることになる (～ru koto ni naru)",
+      "shortExplanation": "화자의 주관적 의지가 아닌 외부의 상황, 규칙, 조직의 결정 등에 의해 어떤 결과가 정해짐을 나타내며, '~하게 되다', '~하기로 결정되다'라는 뜻입니다.",
+      "longExplanation": "'～ことになる' 문형은 어떤 일이나 계획, 방침이 주어의 직접적인 주관적 결심이 아니라, 주위의 상황이나 조직의 규정, 제3자의 결정 등 객관적인 요인에 의해 정해졌음을 나타냅니다. 주관적 결단을 나타내는 '～ことにする'와 뚜렷하게 대비됩니다. 과거형 '～ことになった / ～ことになりました'는 정해진 결과의 보고에 쓰이며, '～ことになっている'는 이미 정해진 규칙, 일정, 사회적 관습을 나타냅니다.",
+      "formation": "동사 사전형 / ない형 + ことになる / ことになりました",
+      "examples": [
+        {
+          "translation": "오늘은 회의가 취소되는 것으로 결정되었습니다."
+        },
+        {
+          "translation": "다음 주에 친구와 여행을 가기로 결정되었다."
+        },
+        {
+          "translation": "그녀가 이번 프로젝트의 리더를 맡기로 정해졌습니다."
+        },
+        {
+          "translation": "갑자기 일이 생겨서 휴가를 내게 되었습니다."
+        }
+      ]
+    },
+    "ja_Verb_67": {
+      "title": "～るときに (～ru toki ni)",
+      "shortExplanation": "어떤 동작이나 상태가 일어나는 때나 시점을 나타내며, '~할 때', '~하는 때에'라는 뜻입니다.",
+      "longExplanation": "'동사 사전형 + とき(に)' 문형은 특정 행동이 이루어지는 시간적 배경이나 계기, 조건을 제시할 때 쓰입니다. 동사의 사전형(현재형)에 접속할 경우, 그 동작이 아직 완료되지 않은 상태(준비 중이거나 행하고 있는 도중)이거나 일반적인 습관·법칙을 나타냅니다(예: 寝るときに 잠자리에 들 때 불을 끈다). 반면 앞의 동작이 먼저 완전히 끝난 후 후속 동작이 일어나는 '동사 た형 + とき(に)'와 시점의 선후 관계에서 차이가 납니다.",
+      "formation": "동사 사전형 + とき（に）",
+      "examples": [
+        {
+          "translation": "영화를 볼 때 팝콘을 먹습니다."
+        },
+        {
+          "translation": "잘 때 방의 불을 끕니다."
+        },
+        {
+          "translation": "운동을 할 때 수분 보충이 중요합니다."
+        },
+        {
+          "translation": "여행할 때 카메라를 챙겨가는 것을 좋아합니다."
+        }
+      ]
+    },
+    "ja_Verb_68": {
+      "title": "～るところ (～ru tokoro)",
+      "shortExplanation": "어떤 동작을 바로 시작하려는 직전의 찰나를 나타내며, '막 ~하려던 참이다', '~할 뻔하다'라는 뜻입니다.",
+      "longExplanation": "'동사 사전형 + ところ(です)' 문형은 어떤 행동을 지금 막 시작하기 바로 직전의 상태임을 나타냅니다. 주로 '今から(지금부터)', 'ちょうど(마침)' 등의 부사와 호응하여 쓰입니다. 문말이 과거형인 '～ところでした'가 되면 '하마터면 ~할 뻔했다'라는 의미로 어떤 사태가 일어나기 직전에 아슬아슬하게 피했거나 가까스로 멈추었음을 나타냅니다(예: 泣くところでした 울 뻔했습니다). '～ているところ(한창 ~하는 중이다)', '～たところ(방금 막 ~했다)'와 함께 동작의 단계를 나타내는 핵심 표현입니다.",
+      "formation": "동사 사전형 + ところ（です / でした）",
+      "examples": [
+        {
+          "translation": "그는 막 식사를 하려던 참입니다."
+        },
+        {
+          "translation": "저는 막 외출하려던 참입니다."
+        },
+        {
+          "translation": "그녀는 하마터면 울 뻔했습니다."
+        },
+        {
+          "translation": "우리는 막 공부를 시작하려던 참입니다."
+        }
+      ]
+    },
+    "ja_Verb_69": {
+      "title": "～出す (～dasu)",
+      "shortExplanation": "복합동사의 보조동사로 쓰여 동작이 돌발적으로 시작됨을 나타내거나, 독립 동사로서 '꺼내다', '제출하다'를 나타냅니다.",
+      "longExplanation": "'出す(dasu)'는 일본어에서 두 가지 주요한 용법을 가집니다. 1. 독립 타동사로서 물건을 안에서 밖으로 '꺼내다'(예문 1: 책장에서 책을 꺼내다) 또는 과제나 서류를 '제출하다/내다'(예문 3: 숙제를 내다)의 의미로 쓰입니다. (참고: 예문 2의 '出ました'는 자동사 '出る'의 과거형입니다). 2. 동사의 연용형(ます형 어간) 뒤에 붙어 보조동사 역할을 할 때는 어떤 동작이 갑작스럽고 기세 좋게 시작됨을 나타냅니다(예문 4: 歌い出しました 노래를 부르기 시작했습니다, 泣き出す 울음을 터뜨리다, 降り出す 비가 쏟아지기 시작하다).",
+      "formation": "동사 연용형(ます형 어간) + 出す / 명사 + を + 出す",
+      "examples": [
+        {
+          "translation": "책을 선반에서 꺼내 주세요."
+        },
+        {
+          "translation": "그는 방에서 서둘러 나왔습니다."
+        },
+        {
+          "translation": "수업이 시작되기 전에 숙제를 제출해 주세요."
+        },
+        {
+          "translation": "그녀는 노래를 부르기 시작했습니다."
+        }
+      ]
+    },
+    "ja_Verb_70": {
+      "title": "～方 (～kata)",
+      "shortExplanation": "어떤 동작을 수행하는 방법이나 방식을 나타내며, '~하는 방법', '~하는 법'이라는 뜻입니다.",
+      "longExplanation": "접미사 '～方(읽기: かた)'는 동사의 연용형(ます형 어간) 뒤에 결합하여 해당 동작을 실행하는 구체적인 수단, 방식, 방법을 나타내는 명사를 만듭니다. 본래 동사가 취하던 목적어의 조사 'を'는 명사화되면서 조사 'の'로 바뀌는 것이 문법적 규칙입니다(예: ケーキを作る 케이크를 만들다 → ケーキの作り方 케이크를 만드는 법, パソコンを使う 컴퓨터를 쓰다 → パソコンの使い方 컴퓨터 사용법).",
+      "formation": "동사 연용형(ます형 어간) + 方 (읽기: かた) / 명사 + の + 동사 연용형 + 方",
+      "examples": [
+        {
+          "translation": "누군가 케이크 만드는 법을 알고 있나요?"
+        },
+        {
+          "translation": "그녀는 영어로 말하는 법을 배우고 있습니다."
+        },
+        {
+          "translation": "이 컴퓨터의 사용법을 가르쳐 주세요."
+        },
+        {
+          "translation": "수학 문제의 풀이법을 외우는 것은 어렵습니다."
+        }
+      ]
+    },
+    "ja_Verb_71": {
+      "title": "～終わる (～owaru)",
+      "shortExplanation": "동작, 일, 행사 등이 완료되거나 끝남을 나타내며, '끝나다', '마치다', '다 ~하다'라는 뜻입니다.",
+      "longExplanation": "'終わる(owaru)'는 1그룹(5단) 동사로서 어떤 행위나 상황이 최종적으로 종결됨을 나타냅니다. 주로 자동사로서 조사 'が'와 함께 쓰여 일이나 영화, 시험 등이 끝남을 표현합니다(예: 仕事が終わる 일이 끝나다). 또한 다른 동사의 연용형(ます형 어간) 뒤에 붙어 보조동사로 쓰이면 그 동작을 완전히 끝마쳤음을 나타내는 복합동사가 됩니다(예: 読み終わる 다 읽다, 食べ終わる 다 먹다). 반의어는 '始まる / 始める'입니다.",
+      "formation": "명사 + が + 終わる (1그룹 동사) / 동사 연용형(ます형 어간) + 終わる",
+      "examples": [
+        {
+          "translation": "영화가 끝나면 집에 돌아갑니다."
+        },
+        {
+          "translation": "일이 끝날 때까지 기다려 주세요."
+        },
+        {
+          "translation": "파티는 곧 끝납니다."
+        },
+        {
+          "translation": "시험이 끝나면 친구들과 놀러 갈 예정입니다."
+        }
+      ]
+    },
+    "ja_Verb_72": {
+      "title": "～続ける (～tsuzukeru)",
+      "shortExplanation": "어떤 동작이나 상태를 중단하지 않고 계속 이어 나감을 나타내며, '계속 ~하다', '계속 이어가다'라는 뜻입니다.",
+      "longExplanation": "'続ける(tsuzukeru)'는 타동사로서 어떤 행동을 계속 유지하거나 지속함을 나타냅니다. 1. 보조동사로서 동사의 연용형(ます형 어간)에 접속하여 어떤 행동을 쉬지 않고 지속함을 나타내거나(예: 走り続ける 계속 달리다, 働き続ける 계속 일하다), 2. 독립된 동사로서 '명사 + を + 続ける' 형태로 일이나 운동, 공부 등을 계속 이어감을 나타냅니다.",
+      "formation": "동사 연용형(ます형 어간) + 続ける / 명사 + を + 続ける",
+      "examples": [
+        {
+          "translation": "그는 매일 헬스장에서 운동을 계속하고 있습니다."
+        },
+        {
+          "translation": "그녀는 공부를 계속하기 위해 도서관에 갔습니다."
+        },
+        {
+          "translation": "우리는 비가 내림에도 불구하고 산책을 계속했습니다."
+        },
+        {
+          "translation": "그는 일을 계속하기로 결정했다."
+        }
+      ]
+    },
+    "ja_かしら_73": {
+      "title": "～かしら (～kashira)",
+      "shortExplanation": "문장 끝에 붙어 혼잣말이나 가벼운 의문, 불확실성을 나타내며(주로 여성 구어체), '~일까?', '~려나?'라는 뜻입니다.",
+      "longExplanation": "'かしら'는 일상 회화에서 가벼운 의문이나 회의, 자문(스스로에게 묻는 독백)을 나타내는 종조사입니다. 남녀 모두 쓰는 '～かな'와 의미는 같으나, 부드럽고 여성적인 뉘앙스를 강하게 띱니다. 동사 및 い형용사의 보통형 뒤에 바로 접속하며, な형용사와 명사 뒤에는 보통 'だ'를 붙이지 않고 어간 뒤에 바로 연결됩니다.",
+      "formation": "동사 보통형 + かしら / い형용사 보통형 + かしら / な형용사 어간(だ 탈락) + かしら / 명사(だ 탈락) + かしら",
+      "examples": [
+        {
+          "translation": "오늘 비가 오려나?"
+        },
+        {
+          "translation": "이 케이크는 맛있으려나?"
+        },
+        {
+          "translation": "그는 아픈 걸까?"
+        },
+        {
+          "translation": "그녀는 학생일까?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Verb_59": {
+      "title": "～ようにする (～you ni suru)",
+      "shortExplanation": "ある状態や習慣の実現に向けて意識的に努力したり心掛けたりすることを表し、「〜するように心掛ける」「努めて〜する」という意味を表します。",
+      "longExplanation": "「～ようにする」は、目標とする行動や状態を実現させるために、意志を持って努力したり配慮・工夫したりすることを表す文型です。「〜ようにしている」の形にすると日頃から意識して続けている習慣や心掛けを表し、「〜ようにしてください」の形にすると相手に対してある行動を取るよう促したり注意・指示したりする丁寧な依頼・忠告の表現になります。",
+      "formation": "動詞辞書形 / ない形 ＋ ようにする",
+      "examples": [
+        {
+          "translation": "毎日運動するようにしています。"
+        },
+        {
+          "translation": "早く寝るようにしてください。"
+        },
+        {
+          "translation": "約束を守るようにします。"
+        },
+        {
+          "translation": "彼に会わないようにする。"
+        }
+      ]
+    },
+    "ja_Verb_60": {
+      "title": "～ようになる (～you ni naru)",
+      "shortExplanation": "能力や状況、習慣などが以前とは異なる状態へと変化したことを表し、「〜できるようになる」「〜するようになる」という意味を表します。",
+      "longExplanation": "「～ようになる」は、時間の経過や練習、環境の変化などに伴い、それまでは不可能だったことができるようになったり、以前には見られなかった新しい習慣や心理状態へと移行したりしたことを表す表現です。可能動詞に接続して能力の獲得を表す用法が代表的ですが、無意志動詞や一般動詞の辞書形・ない形に接続して習慣・状況の客観的な変化を表すこともできます。",
+      "formation": "動詞可能形 / 動詞辞書形 / 動詞ない形 ＋ ようになる",
+      "examples": [
+        {
+          "translation": "日本語が話せるようになりました。"
+        },
+        {
+          "translation": "最近、早く寝るようになった。"
+        },
+        {
+          "translation": "彼はピアノを弾けるようになりました。"
+        },
+        {
+          "translation": "この仕事を始めてから、毎日忙しいと感じるようになりました。"
+        }
+      ]
+    },
+    "ja_Verb_61": {
+      "title": "～ように言う (～you ni iu)",
+      "shortExplanation": "指示や依頼、忠告などの内容を第三者に間接的に伝える表現で、「〜するように言う」「〜しろと伝える」という意味を表します。",
+      "longExplanation": "「～ように言う」は、人からの依頼・指示・忠告・命令などの発言内容を間接話法で伝達する文型です。命令形や「〜てください」といった直接話法で伝えるのに比べ、客観的で角の立たない表現になります。文末の「言う」は、状況に応じて「頼む（依頼）」「伝える（伝言）」「注意する（警告）」などの動詞に置き換えて使用されることも多いです。",
+      "formation": "動詞辞書形 / ない形 ＋ ように言う（または 頼む / 伝える / 注意する）",
+      "examples": [
+        {
+          "translation": "先生は私たちに宿題をやるように言いました。"
+        },
+        {
+          "translation": "母は弟に部屋を片付けるように言いました。"
+        },
+        {
+          "translation": "上司は私に報告書を提出するように言いました。"
+        },
+        {
+          "translation": "友達が私に早く来るように言いました。"
+        }
+      ]
+    },
+    "ja_Verb_62": {
+      "title": "～られる (～rareru)",
+      "shortExplanation": "動詞の受身（他者から動作を受けること）または可能（動作を行う能力や条件があること）を表します。",
+      "longExplanation": "助動詞「れる・られる」は、主に「受身」と「可能」の二大用法を持ちます。①受身用法：主語が他者からある動作を受けることを表し、動作主は格助詞「に」で示されます。通常の直接受身のほか、迷惑を被る「迷惑受身（間接受身）」の用法もあります。②可能用法：ある行為を行う能力や条件が備わっていることを示し、特に一段動詞の語尾「る」を「られる」に変えることで可能動詞を形成します（例：観られる）。本項の例文1・2・4は受身用法、例文3は可能用法です。",
+      "formation": "五段動詞：語尾「う」段を「あ」段に変えて ＋ れる／一段動詞：語尾「る」を取って ＋ られる／サ変動詞：する → される／カ変動詞：くる → こられる",
+      "examples": [
+        {
+          "translation": "彼は先生に褒められました。"
+        },
+        {
+          "translation": "彼は友達に笑われました。"
+        },
+        {
+          "translation": "映画は観られましたか？"
+        },
+        {
+          "translation": "彼女はリーダーに選ばれました。"
+        }
+      ]
+    },
+    "ja_Verb_63": {
+      "title": "～ることがある (～ru koto ga aru)",
+      "shortExplanation": "常に起こるわけではないが、たまにそのような事態や行為が発生することを表し、「たまに〜することがある」「〜する場合もある」という意味を表します。",
+      "longExplanation": "「動詞辞書形 ＋ ことがある」は、日常的・普遍的な現象ではないものの、時々そのような事態や行為が起こることを表す文型です。「たまに」「ときどき」などの頻度を表す副詞とともに用いられることが多くあります。過去の経験を表す「動詞た形 ＋ ことがある（〜した経験がある）」とは明確に区別されます。また、否定の「〜ないことがある」は「たまに〜しないことがある」という意味を表します。",
+      "formation": "動詞辞書形 ＋ ことがある / ことがあります",
+      "examples": [
+        {
+          "translation": "彼は遅刻することがあります。"
+        },
+        {
+          "translation": "私は寝坊することがあります。"
+        },
+        {
+          "translation": "彼女は歌を歌うことがあります。"
+        },
+        {
+          "translation": "子供の頃、よく山に登ることがありました。"
+        }
+      ]
+    },
+    "ja_Verb_64": {
+      "title": "～ることができる (～ru koto ga dekiru)",
+      "shortExplanation": "ある動作を行う能力・技術があることや、状況・条件により可能であることを表し、「〜することができる」という意味を表します。",
+      "longExplanation": "「動詞辞書形 ＋ ことができる」は、可能性・能力を客観的に述べる代表的な表現です。主に①主体の能力・技術（外国語を話す能力など）、②客観的状況や条件・規則による可能性（クレジットカードで支払える条件など）の二つを表します。動詞の可能形（例：話せる、弾ける）と実質的な意味は同等ですが、改まった書き言葉や説明文、手続きの案内文などで好んで用いられます。",
+      "formation": "動詞辞書形 ＋ ことができる / ことができます",
+      "examples": [
+        {
+          "translation": "私は日本語を話すことができます。"
+        },
+        {
+          "translation": "彼はギターを弾くことができます。"
+        },
+        {
+          "translation": "この問題を解決することができますか？"
+        },
+        {
+          "translation": "彼女は犬を泳がせることができます。"
+        }
+      ]
+    },
+    "ja_Verb_65": {
+      "title": "～ることにする (～ru koto ni suru)",
+      "shortExplanation": "話し手自身の意志や判断によって、ある行為を行う（または行わない）ことを決める表現で、「〜することに決める」という意味を表します。",
+      "longExplanation": "「～ことにする」は、自己の主体的な意志や選択に基づいて行動を決定することを表す文型です。決定した事実を報告する際には過去形の「〜ことにした」「〜ことにしました」がよく用いられます。また、「〜ことにしている」の形にすると、自分自身で決めた習慣や生活上のルールとして継続していることを表します。否定形は「〜ないことにする（〜しないことに決める）」となります。",
+      "formation": "動詞辞書形 / ない形 ＋ ことにする / ことにしました",
+      "examples": [
+        {
+          "translation": "来週、ジムに行くことにしました。"
+        },
+        {
+          "translation": "この靴を買うことにしました。"
+        },
+        {
+          "translation": "毎日、散歩をすることにしました。"
+        },
+        {
+          "translation": "彼に電話をかけることにします。"
+        }
+      ]
+    },
+    "ja_Verb_66": {
+      "title": "～ることになる (～ru koto ni naru)",
+      "shortExplanation": "話し手の主観的な意志ではなく、周囲の状況や組織の決定、規則などによって物事が決まったことを表し、「〜することに決まる」「〜という結果になる」という意味を表します。",
+      "longExplanation": "「～ことになる」は、計画や予定、出来事の決定が個人の単なる意志によるものではなく、組織の方針・他者からの決定・客観的な成り行きによって生じたことを表す客観的表現です。自己の主観的決定を表す「〜ことにする」と対比されます。決定した事実を述べる際は過去形の「〜ことになった」「〜ことになりました」が用いられ、「〜ことになっている」の形にすると規則や法律、社会的慣習、あらかじめ定まった予定を表します。",
+      "formation": "動詞辞書形 / ない形 ＋ ことになる / ことになりました",
+      "examples": [
+        {
+          "translation": "今日は会議がなくなることになりました。"
+        },
+        {
+          "translation": "来週、友達と旅行することになった。"
+        },
+        {
+          "translation": "彼女が今度のプロジェクトのリーダーになることになりました。"
+        },
+        {
+          "translation": "急に仕事が入ったので、休みを取ることになった。"
+        }
+      ]
+    },
+    "ja_Verb_67": {
+      "title": "～るときに (～ru toki ni)",
+      "shortExplanation": "ある動作や出来事が行われる時間・時点を表し、「〜するとき」「〜する際に」という意味を表します。",
+      "longExplanation": "「動詞辞書形 ＋ とき（に）」は、ある行為や事態が生じる時間的場面・機会を設定する表現です。動詞の辞書形（非過去形）が接続する場合、その動作がまだ完了していない段階（その動作をする直前やその最中）、あるいは習慣的・一般的な事柄を表します（例：「寝るときに電気を消す」は寝る前の動作）。前項の動作が完全に完了した後に次の動作を行う「動詞た形 ＋ とき（に）」との時間的前後関係の相違が重要です。",
+      "formation": "動詞辞書形 ＋ とき（に）",
+      "examples": [
+        {
+          "translation": "映画を見るときに、ポップコーンを食べます。"
+        },
+        {
+          "translation": "寝るときに、部屋の電気を消します。"
+        },
+        {
+          "translation": "運動するときに、水分補給が大切です。"
+        },
+        {
+          "translation": "旅行するときに、カメラを持っていくことが好きです。"
+        }
+      ]
+    },
+    "ja_Verb_68": {
+      "title": "～るところ (～ru tokoro)",
+      "shortExplanation": "ある動作をまさに今から始めようとする直前の瞬間を表し、「ちょうど今から〜するところだ」「〜しそうになる」という意味を表します。",
+      "longExplanation": "「動詞辞書形 ＋ ところ（です）」は、行為が開始される直前の局面を表す文型です。「今から」「ちょうど」「これから」などの副詞を伴うことが多く、行為の直前性を強調します。過去形の「〜ところだった / 〜ところでした」を用いると、もう少しである事態になりかけたが直前で回避されたこと（「泣くところだった」＝泣きそうになった）を表す用法にもなります。「〜ているところ（進行中）」「〜たところ（直後）」と並ぶアスペクト（相）の重要表現です。",
+      "formation": "動詞辞書形 ＋ ところ（です / でした）",
+      "examples": [
+        {
+          "translation": "彼は食べるところです。"
+        },
+        {
+          "translation": "私は出かけるところです。"
+        },
+        {
+          "translation": "彼女は泣くところでした。"
+        },
+        {
+          "translation": "私たちは勉強するところです。"
+        }
+      ]
+    },
+    "ja_Verb_69": {
+      "title": "～出す (～dasu)",
+      "shortExplanation": "複合動詞として動作が急に始まること（突然の開始）を表すほか、本動詞として「外に出す」「提出する」という意味を表します。",
+      "longExplanation": "「出す（だす）」には主に二つの重要用法があります。①本動詞（他動詞）：中にあるものを外へ取り出す（例文1：棚から出す）、または書類や宿題を提出する（例文3：宿題を出す）という意味を表します。（※例文2「出ました」は対応する自動詞「出る」の用法です）。②補助動詞（接尾語的用法）：動詞の連用形（ます形語幹）に接続して複合動詞を作り、ある動作や変化が突然・勢いよく開始することを表します（例文4：歌い出しました。「泣き出す」「雨が降り出す」など）。",
+      "formation": "動詞連用形（ます形語幹） ＋ 出す / 名詞 ＋ を ＋ 出す",
+      "examples": [
+        {
+          "translation": "本を棚から出してください。"
+        },
+        {
+          "translation": "彼は部屋から急いで出ました。"
+        },
+        {
+          "translation": "授業が始まる前に宿題を出してください。"
+        },
+        {
+          "translation": "彼女は歌い出しました。"
+        }
+      ]
+    },
+    "ja_Verb_70": {
+      "title": "～方 (～kata)",
+      "shortExplanation": "ある行為を行うやり方や方法を表し、「〜する方法」「〜のやり方」という意味を表します。",
+      "longExplanation": "接尾語「～方（かた）」は、動詞の連用形（ます形語幹）に接続して名詞を作り、その動作を行う具体的な手段や方法、方式を表します（例：作り方、使い方、話し方、解き方）。元の動詞の目的語を示す格助詞「を」は、名詞化に伴って連体修飾の助詞「の」に変化するのが重要な文法規則です（例：ケーキを作る → ケーキの作り方）。",
+      "formation": "動詞連用形（ます形語幹） ＋ 方（読み：かた） / 名詞 ＋ の ＋ 動詞連用形 ＋ 方",
+      "examples": [
+        {
+          "translation": "誰かがケーキの作り方を知っていますか？"
+        },
+        {
+          "translation": "彼女は英語の話し方を学んでいます。"
+        },
+        {
+          "translation": "このパソコンの使い方を教えてください。"
+        },
+        {
+          "translation": "数学の問題の解き方を覚えるのが難しいです。"
+        }
+      ]
+    },
+    "ja_Verb_71": {
+      "title": "～終わる (～owaru)",
+      "shortExplanation": "動作や出来事、仕事などが完了して終了することを表し、「終わる」「〜し終える」という意味を表します。",
+      "longExplanation": "「終わる（おわる）」は、語尾が「る」ですが一段動詞ではなく五段動詞（一類動詞）です。主格を表す助詞「が」を伴う自動詞として「仕事が終わる」「映画が終わる」のように行事や事態の終了を表すほか、動詞の連用形（ます形語幹）に接続して「読み終わる」「書き終わる」のようにある行為を完全に完了することを表す複合動詞の補助動詞としても機能します。対義語は「始まる／始める」です。",
+      "formation": "名詞 ＋ が ＋ 終わる（五段動詞） / 動詞連用形（ます形語幹） ＋ 終わる",
+      "examples": [
+        {
+          "translation": "映画が終わったら、家に帰ります。"
+        },
+        {
+          "translation": "仕事が終わるまで、待ってください。"
+        },
+        {
+          "translation": "パーティーはもうすぐ終わります。"
+        },
+        {
+          "translation": "試験が終わったら、友達と遊びに行く予定です。"
+        }
+      ]
+    },
+    "ja_Verb_72": {
+      "title": "～続ける (～tsuzukeru)",
+      "shortExplanation": "ある動作や状態を中断せずに継続して行うことを表し、「〜し続ける」「継続する」という意味を表します。",
+      "longExplanation": "「続ける（つづける）」は、行為や状態を途切れることなく継続・持続させることを表す他動詞です。動詞の連用形（ます形語幹）に接続して複合動詞を作る場合、ある動作を休まずに継続することや、習慣的にずっとやり続けることを表します（例：走り続ける、祈り続ける）。また、本動詞として「名詞 ＋ を ＋ 続ける」の形でも頻繁に用いられます。",
+      "formation": "動詞連用形（ます形語幹） ＋ 続ける / 名詞 ＋ を ＋ 続ける",
+      "examples": [
+        {
+          "translation": "彼は毎日ジムで運動を続けています。"
+        },
+        {
+          "translation": "彼女は勉強を続けるために図書館に行きました。"
+        },
+        {
+          "translation": "私たちは雨にも関わらず散歩を続けました。"
+        },
+        {
+          "translation": "彼は仕事を続けることに決めた。"
+        }
+      ]
+    },
+    "ja_かしら_73": {
+      "title": "～かしら (～kashira)",
+      "shortExplanation": "文末に付いて不確かさや疑念、自問を表す終助詞で、主に親しい間柄の会話（女性語的ニュアンス）で「〜だろうか」「〜かな」という意味を表します。",
+      "longExplanation": "「かしら」は、「か＋知ら（ぬ）」に由来する終助詞で、自分の推量・疑問・不確かな気持ちを柔らかく表現したり、独り言として自問したりする際に用いられます。意味としては「〜かな」と同等ですが、より上品で柔らかな女性語としての色彩を持ちます。動詞・い形容詞の普通形に接続するほか、な形容詞・名詞には「だ」を付けずに直接接続するのが一般的です。",
+      "formation": "動詞普通形 ＋ かしら / い形容詞普通形 ＋ かしら / な形容詞語幹（だを除く） ＋ かしら / 名詞（だを除く） ＋ かしら",
+      "examples": [
+        {
+          "translation": "今日は雨が降るかしら？"
+        },
+        {
+          "translation": "このケーキは美味しいかしら？"
+        },
+        {
+          "translation": "彼は病気かしら？"
+        },
+        {
+          "translation": "彼女は学生かしら？"
+        }
+      ]
+    }
+  }
+}

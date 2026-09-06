@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Noun_28",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を はじめ (Noun wo hajime)",
+    "shortExplanation": "Meaning 'starting with', 'including', 'not only... but also'.",
+    "longExplanation": "The grammar point Nounをはじめ is used to show that there are other things or people being included apart from the mentioned noun. It can be used to provide an example, indicate a representative or list items. This can be translated as 'starting with', 'including', or 'not only... but also...' in English.",
+    "formation": "Noun + をはじめ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "日本料理をはじめ、さまざまな料理がこのレストランで楽しめます。",
+        "romanization": "Nihon ryouri wo hajime, samazama na ryouri ga kono resutoran de tanoshimemasu.",
+        "translation": "You can enjoy various dishes in this restaurant, starting with Japanese cuisine."
+      },
+      {
+        "sentence": "彼は絵画をはじめ、彫刻や写真もコレクションしている。",
+        "romanization": "Kare wa kaiga wo hajime, choukoku ya shashin mo korekushon shite iru.",
+        "translation": "He collects not only paintings but also sculptures and photographs."
+      },
+      {
+        "sentence": "京都をはじめ、日本のいくつかの都市で伝統的な祭りが行われている。",
+        "romanization": "Kyouto wo hajime, Nihon no ikutsu ka no toshi de dentouteki na matsuri ga okonawarete iru.",
+        "translation": "Traditional festivals are held in several cities in Japan, including Kyoto."
+      },
+      {
+        "sentence": "太陽をはじめ、地球や火星などの惑星も太陽系に含まれている。",
+        "romanization": "Taiyou wo hajime, chikyuu ya kasei nado no wakusei mo taiyoukei ni fukumarete iru.",
+        "translation": "Not only the Sun, but also planets such as Earth and Mars are included in the solar system."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_29",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を はじめとして (Noun wo hajime to shite)",
+    "shortExplanation": "Expresses 'starting with', 'beginning with', or 'including'.",
+    "longExplanation": "The grammar point Noun を はじめとして is used to emphasize a particular item or example along with others. It translates to 'starting with', 'beginning with', or 'including' in English. It is used to present a specific case and imply there are more related items.",
+    "formation": "Noun + をはじめとして",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "東京をはじめとして、日本にはたくさんの観光スポットがあります。",
+        "romanization": "Tōkyō o hajime to shite, Nihon ni wa takusan no kankō supotto ga arimasu.",
+        "translation": "There are many tourist spots in Japan, starting with Tokyo."
+      },
+      {
+        "sentence": "彼は、ピアノをはじめとして、たくさんの楽器を演奏できます。",
+        "romanization": "Kare wa, piano o hajime to shite, takusan no gakki o ensō dekimasu.",
+        "translation": "He can play many instruments, starting with piano."
+      },
+      {
+        "sentence": "この本は手作りのガーゼマスクをはじめとして、便利な生活アイディアが満載です。",
+        "romanization": "Kono hon wa tezukuri no gāze masuku o hajime to shite, benrina seikatsu aidea ga mansai desu.",
+        "translation": "This book is packed with useful life hacks, including how to make a handmade gauze mask."
+      },
+      {
+        "sentence": "そのショッピングモールには、ZARAをはじめとして、多くのブランドが集まっています。",
+        "romanization": "Sono shoppingu mōru ni wa, ZARA o hajime to shite, ōku no burando ga atsumatte imasu.",
+        "translation": "Many brands, including ZARA, gather in that shopping mall."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_30",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を はじめとする Noun (Noun o hajime to suru Noun)",
+    "shortExplanation": "Indicates a representative example of a group; 'starting with', 'including', 'such as'.",
+    "longExplanation": "The grammar pattern 'Noun を はじめとする Noun' is used to indicate a representative example of a group and suggests that there are other things besides the mentioned example. It can be translated as 'starting with', 'including', or 'such as' in English.",
+    "formation": "Noun1 を はじめとする Noun2",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼はフランス語をはじめとする外国語が話せる。",
+        "romanization": "Kare wa furansugo o hajime to suru gaikokugo ga hanaseru.",
+        "translation": "He can speak foreign languages, starting with French."
+      },
+      {
+        "sentence": "このコンサートには、BTSをはじめとする人気アーティストが出演する予定です。",
+        "romanization": "Kono konsāto ni wa, BTS o hajime to suru ninki ātisuto ga shutsuen suru yotei desu.",
+        "translation": "This concert is scheduled to feature popular artists, including BTS."
+      },
+      {
+        "sentence": "彼女は魚をはじめとする海の幸が大好きだ。",
+        "romanization": "Kanojo wa sakana o hajime to suru umi no sachi ga daisuki da.",
+        "translation": "She loves seafood, starting with fish."
+      },
+      {
+        "sentence": "この図書館には、子供向けの本をはじめとするさまざまなジャンルの本があります。",
+        "romanization": "Kono toshokan ni wa, kodomomuke no hon o hajime to suru samazama na janru no hon ga arimasu.",
+        "translation": "This library has various genres of books, including children's books."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_31",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を めぐって (Noun wo megutte)",
+    "shortExplanation": "Concerning; with regard to; about",
+    "longExplanation": "The grammar point Noun を めぐって is used to express that something is concerning, with regard to or about a certain noun. It covers a topic or an issue that is central to a discussion or a situation.",
+    "formation": "Noun + を + めぐって",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "環境問題をめぐって、多くの議論が行われています。",
+        "romanization": "Kankyō mondai o megutte, ōku no giron ga okonawarete imasu.",
+        "translation": "Many discussions are held concerning environmental issues."
+      },
+      {
+        "sentence": "彼の死をめぐって、いくつかの陰謀説が浮かび上がっている。",
+        "romanization": "Kare no shi o megutte, ikutsuka no inbōsetsu ga ukabiagatte iru.",
+        "translation": "Several conspiracy theories have emerged regarding his death."
+      },
+      {
+        "sentence": "昇給をめぐって会社と労働組合が話し合いをしています。",
+        "romanization": "Shōkyū o megutte kaisha to rōdō kumiai ga hanashiai o shite imasu.",
+        "translation": "The company and the labor union are having discussions about pay raises."
+      },
+      {
+        "sentence": "この映画をめぐって、賛否両論が存在している。",
+        "romanization": "Kono eiga o megutte, sanpi ryōron ga sonzai shite iru.",
+        "translation": "There are both pros and cons regarding this movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_32",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を めぐる Noun (Noun o meguru Noun)",
+    "shortExplanation": "Indicate a situation or event revolving around a particular noun; 'concerning', 'regarding', 'pertaining to'.",
+    "longExplanation": "The NounをめぐるNoun grammar point is used to express that a situation or event is centered around a particular noun. It can be translated as 'concerning', 'regarding', or 'pertaining to' in English. The formation consists of the particle 'を' placed between two nouns, and the verb 'めぐる' (to revolve around) following the first noun.",
+    "formation": "Noun1 + を + めぐる + Noun2",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この事件をめぐる議論が続いています。",
+        "romanization": "Kono jiken o meguru giron ga tsudzuite imasu.",
+        "translation": "The debate concerning this incident continues."
+      },
+      {
+        "sentence": "環境問題をめぐる国際会議が開かれます。",
+        "romanization": "Kankyō mondai o meguru kokusai kaigi ga hirakaremasu.",
+        "translation": "An international conference regarding environmental issues will be held."
+      },
+      {
+        "sentence": "彼の突然の辞任をめぐるうわさが広がっている。",
+        "romanization": "Kare no totsuzen no jinin o meguru uwasa ga hirogatte iru.",
+        "translation": "Rumors are spreading concerning his sudden resignation."
+      },
+      {
+        "sentence": "映画祭をめぐる活動が多くなっています。",
+        "romanization": "Eigashai o meguru katsudō ga ōku natte imasu.",
+        "translation": "There are increasing activities surrounding the film festival."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_33",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を もとに (Noun o moto ni)",
+    "shortExplanation": "Based on; drawing from; using as a reference.",
+    "longExplanation": "The grammar point Nounをもとに is used to convey that something is based on, drawn from, or using the noun as a reference. It is commonly used when one thing is being used as a foundation, source of information or inspiration for something else.",
+    "formation": "Noun + をもとに",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この映画は実話をもとに作られました。",
+        "romanization": "Kono eiga wa jitsuwa o moto ni tsukuraremashita.",
+        "translation": "This movie was made based on a true story."
+      },
+      {
+        "sentence": "彼の経験をもとにアドバイスが必要だ。",
+        "romanization": "Kare no keiken o moto ni adobaisu ga hitsuyō da.",
+        "translation": "Advice is needed based on his experience."
+      },
+      {
+        "sentence": "データをもとに分析を行いました。",
+        "romanization": "Dēta o moto ni bunseki o okonaimashita.",
+        "translation": "I performed an analysis based on the data."
+      },
+      {
+        "sentence": "世界中の美術館をもとにコレクションを作りました。",
+        "romanization": "Sekaijū no bijutsukan o moto ni korekushon o tsukurimashita.",
+        "translation": "I created a collection based on art galleries all over the world."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_34",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を もとにして (Noun wo moto ni shite)",
+    "shortExplanation": "Based on; using; utilizing.",
+    "longExplanation": "The 'Noun をもとにして' grammar point is used to express that something is done based on, using, or utilizing the noun. It indicates that the noun is the foundation, source or basis for the action or statement.",
+    "formation": "Noun + をもとにして",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼の意見をもとにして、計画を変更しました。",
+        "romanization": "Kare no iken o moto ni shite, keikaku o henkō shimashita.",
+        "translation": "Based on his opinion, we changed the plan."
+      },
+      {
+        "sentence": "この小説は実話をもとにして書かれています。",
+        "romanization": "Kono shōsetsu wa jitsuwa o moto ni shite kakarete imasu.",
+        "translation": "This novel is written based on a true story."
+      },
+      {
+        "sentence": "資料をもとにして、レポートを作成しました。",
+        "romanization": "Shiryō o moto ni shite, repōto o sakusei shimashita.",
+        "translation": "I created the report based on the materials."
+      },
+      {
+        "sentence": "過去の成功例をもとにして、新しいプロジェクトを進める予定です。",
+        "romanization": "Kako no seikōrei o moto ni shite, atarashii purojekuto o susumeru yotei desu.",
+        "translation": "We plan to proceed with the new project based on past successful examples."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_35",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ことなく (~kotonaku)",
+    "shortExplanation": "Means 'without doing', 'not doing', or 'without happening'.",
+    "longExplanation": "The grammar point ことなく is added to the stem of a verb to express that something doesn't happen or isn't done. It can be translated as 'without doing', 'not doing', or 'without happening'. The formation depends on whether it is used with a verb.",
+    "formation": "Verb-stem + ことなく",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼女は泣くことなく帰ってしまいました。",
+        "romanization": "Kanojo wa naku koto naku kaette shimaimashita.",
+        "translation": "She went home without crying."
+      },
+      {
+        "sentence": "彼は注意することなく突然出かけた。",
+        "romanization": "Kare wa chūi suru koto naku totsuzen dekaketa.",
+        "translation": "He suddenly left without giving any warning."
+      },
+      {
+        "sentence": "山田さんは誰にも話すことなく会社を辞めました。",
+        "romanization": "Yamada-san wa dare ni mo hanasu koto naku kaisha o yamemashita.",
+        "translation": "Mr. Yamada quit the company without talking to anyone."
+      },
+      {
+        "sentence": "２０年間、病気になることなく働いています。",
+        "romanization": "Nijūnenkan, byōki ni naru koto naku hataraite imasu.",
+        "translation": "I have been working for 20 years without getting sick."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_36",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ないことには Verb ない (~nai koto ni wa ~ nai)",
+    "shortExplanation": "Express that something cannot be done without meeting a certain condition.",
+    "longExplanation": "The ないことには grammar point is used to indicate that something cannot be done or achieved unless a certain condition is met. This pattern is formed by attaching ないことには to the negative form of a verb, followed by a negative outcome statement. It often appears as V-ない + ことには + V-ない or a negative expression.",
+    "formation": "Verb-ない + ことには + Verb-ない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "薬を飲まないことには、病気が治らない。",
+        "romanization": "Kusuri o nomanai koto ni wa, byōki ga naoranai.",
+        "translation": "Unless you take the medicine, the illness won't get better."
+      },
+      {
+        "sentence": "この問題によく考えないことには、解決できない。",
+        "romanization": "Kono mondai ni yoku kangaenai koto ni wa, kaiketsu dekinai.",
+        "translation": "Unless you think carefully about this problem, you can't solve it."
+      },
+      {
+        "sentence": "練習をしないことには、スキルが上達しない。",
+        "romanization": "Renshū o shinai koto ni wa, sukiru ga jōtatsu shinai.",
+        "translation": "Unless you practice, your skills won't improve."
+      },
+      {
+        "sentence": "手続きをしないことには、新しいパスポートがもらえない。",
+        "romanization": "Tetsuzuki o shinai koto ni wa, atarashii pasupōto ga moraenai.",
+        "translation": "Unless you go through the procedures, you can't get a new passport."
+      }
+    ]
+  },
+  {
+    "id": "ja_あげく_37",
+    "language": "ja",
+    "pattern": "～あげく",
+    "title": "～あげく (~ageku)",
+    "shortExplanation": "Expresses the outcome of a series of actions or events; 'in the end', 'finally', 'after'.",
+    "longExplanation": "The ～あげく grammar point is used to express the outcome or result after a series of actions or events. It can usually be translated into English as 'in the end', 'finally', or 'after'. The typical formation is adding あげく to the past form of a verb (Verb-た), or adding のあげく to a noun. This indicates that, after a long process or a number of attempts, a certain final outcome is reached—often with a sense that it took considerable effort or time.",
+    "formation": "Verb-た + あげく / Noun + の + あげく",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "長い時間待ったあげく、電車が来なかった。",
+        "romanization": "Nagai jikan matta ageku, densha ga konakatta.",
+        "translation": "After waiting a long time, in the end, the train didn't come."
+      },
+      {
+        "sentence": "いろいろな方法を試したあげく、成功した。",
+        "romanization": "Iroiro na hōhō o tameshita ageku, seikō shita.",
+        "translation": "After trying various methods, I finally succeeded."
+      },
+      {
+        "sentence": "彼は失敗のあげく、会社を辞める決心をした。",
+        "romanization": "Kare wa shippai no ageku, kaisha o yameru kesshin o shita.",
+        "translation": "In the end, after his failures, he decided to quit the company."
+      },
+      {
+        "sentence": "彼女は長い間悩んだあげく、その仕事を断った。",
+        "romanization": "Kanojo wa nagai aida nayanda ageku, sono shigoto o kotowatta.",
+        "translation": "After worrying for a long time, she finally turned down the job."
+      }
+    ]
+  },
+  {
+    "id": "ja_あまり_38",
+    "language": "ja",
+    "pattern": "～あまり",
+    "title": "～あまり (〜amari)",
+    "shortExplanation": "Expresses the result of doing something excessively or beyond a certain point.",
+    "longExplanation": "The ～あまり grammar point is used to express a negative or undesirable outcome caused by doing something excessively or beyond a certain point. It often follows verbs, adjectives, and nouns, and is commonly translated as 'so much', 'too much', or 'to the extent that'.",
+    "formation": "Verb-ます stem + あまり, い-Adjective + あまり, な-Adjective + のあまり, Noun + のあまり",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "昨日は疲れすぎたあまり、朝まで眠り続けました。",
+        "romanization": "Kinō wa tsukare-sugita amari, asa made nemuri tsuzukemashita.",
+        "translation": "Yesterday, I was so tired that I slept until morning."
+      },
+      {
+        "sentence": "彼女はうれしいあまり、泣き出してしまった。",
+        "romanization": "Kanojo wa ureshii amari, nakidashite shimatta.",
+        "translation": "She was so happy that she ended up crying."
+      },
+      {
+        "sentence": "彼は安全を確認するあまり、何回もドアをチェックしている。",
+        "romanization": "Kare wa anzen o kakunin suru amari, nankai mo doa o chekku shite iru.",
+        "translation": "He is so concerned about safety that he checks the door many times."
+      },
+      {
+        "sentence": "寒さのあまり、彼は震えが止まらなかった。",
+        "romanization": "Samusa no amari, kare wa furue ga tomaranakatta.",
+        "translation": "It was so cold that he couldn't stop shivering."
+      }
+    ]
+  },
+  {
+    "id": "ja_うちに_39",
+    "language": "ja",
+    "pattern": "～うちに",
+    "title": "～うちに (〜uchi ni)",
+    "shortExplanation": "Expresses doing something while a certain condition still holds; 'while', 'before', 'as long as'.",
+    "longExplanation": "The ～うちに grammar point is used to indicate that an action should be done while a certain condition still exists or before a situation changes. It can be translated as 'while', 'before', or 'as long as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + うちに, い-Adjective + うちに, な-Adjective + なうちに, Noun + のうちに",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "元気なうちに、旅行を楽しんでください。",
+        "romanization": "Genki na uchi ni, ryokō o tanoshinde kudasai.",
+        "translation": "Enjoy traveling while you are healthy."
+      },
+      {
+        "sentence": "若いうちに、いろいろなことを学ぶべきだ。",
+        "romanization": "Wakai uchi ni, iroiro na koto o manabu beki da.",
+        "translation": "One should learn various things while they are young."
+      },
+      {
+        "sentence": "子供が寝ているうちに、夕食の準備をしましょう。",
+        "romanization": "Kodomo ga nete iru uchi ni, yūshoku no junbi o shimashō.",
+        "translation": "Let's prepare dinner while the kids are sleeping."
+      },
+      {
+        "sentence": "雨が降らないうちに、家に帰りましょう。",
+        "romanization": "Ame ga furanai uchi ni, ie ni kaerimashō.",
+        "translation": "Let's go home before it starts raining."
+      }
+    ]
+  },
+  {
+    "id": "ja_がい_40",
+    "language": "ja",
+    "pattern": "～がい",
+    "title": "～がい (〜gai)",
+    "shortExplanation": "Expresses 'worth doing' for verbs.",
+    "longExplanation": "The ～がい grammar point is used to express that an action is worth doing or to emphasize the value and importance of doing something. It is attached to verbs in their stem form and can be translated as 'worth doing' in English.",
+    "formation": "Verb-stem + がい",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この本は読みがいがあります。",
+        "romanization": "Kono hon wa yomi-gai ga arimasu.",
+        "translation": "This book is worth reading."
+      },
+      {
+        "sentence": "早起きしがいがあると思いますよ。",
+        "romanization": "Hayaoki shigai ga aru to omoimasu yo.",
+        "translation": "I think it's worth waking up early."
+      },
+      {
+        "sentence": "長い時間をかけがいのある仕事だ。",
+        "romanization": "Nagai jikan o kake-gai no aru shigoto da.",
+        "translation": "It's a job worth spending a long time on."
+      },
+      {
+        "sentence": "彼とは話しがいがあるでしょう。",
+        "romanization": "Kare to wa hanashi-gai ga aru deshō.",
+        "translation": "It's worth talking to him."
+      }
+    ]
+  },
+  {
+    "id": "ja_かいがあって_41",
+    "language": "ja",
+    "pattern": "～かいがあって",
+    "title": "～かいがあって (〜kaiga atte)",
+    "shortExplanation": "Used to express that an effort is worth it or has value; 'to be worth the effort' or 'to pay off'.",
+    "longExplanation": "The ～かいがあって grammar point is used to convey the idea that an action or effort is worth it, or that it has value. It is often translated as 'to be worth the effort' or 'to pay off' in English. It is typically associated with actions or efforts that lead to a successful or desirable result.",
+    "formation": "Verb-past + かいがあって / Noun + の + かいがあって",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "毎日勉強したかいがあって、テストに合格しました。",
+        "romanization": "Mainichi benkyō shita kai ga atte, tesuto ni gōkaku shimashita.",
+        "translation": "Studying every day paid off—I passed the test."
+      },
+      {
+        "sentence": "練習のかいがあって、試合に勝つことができた。",
+        "romanization": "Renshū no kai ga atte, shiai ni katsu koto ga dekita.",
+        "translation": "The practice paid off, and we were able to win the match."
+      },
+      {
+        "sentence": "雨の中を走ってきたかいがあって、電車に間に合った。",
+        "romanization": "Ame no naka o hashitte kita kai ga atte, densha ni maniatta.",
+        "translation": "Running in the rain was worth it, as I made it to the train on time."
+      },
+      {
+        "sentence": "早起きして掃除をしたかいがあって、部屋がきれいになった。",
+        "romanization": "Hayaoki shite sōji o shita kai ga atte, heya ga kirei ni natta.",
+        "translation": "Waking up early to clean paid off; the room is now spotless."
+      }
+    ]
+  },
+  {
+    "id": "ja_かいもなく_42",
+    "language": "ja",
+    "pattern": "～かいもなく",
+    "title": "～かいもなく (〜kai mo naku)",
+    "shortExplanation": "Expresses the meaning of 'without worth', 'in vain', 'fruitless'.",
+    "longExplanation": "The ～かいもなく grammar point is used to express that something has been done without worth, in vain, or fruitlessly. It often appears as 'Verb-た + かいもなく' or 'Noun + の + かいもなく' to indicate that an effort did not produce the hoped-for result.",
+    "formation": "Verb-た + かいもなく / Noun + の + かいもなく",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "長い間苦労したかいもなく、失敗してしまった。",
+        "romanization": "Nagai aida kurō shita kai mo naku, shippai shite shimatta.",
+        "translation": "I struggled for a long time, but in the end, it was all in vain and I failed."
+      },
+      {
+        "sentence": "このプロジェクトにたくさん時間をかけたかいもなく、うまくいかなかった。",
+        "romanization": "Kono purojekuto ni takusan jikan o kaketa kai mo naku, umaku ikanakatta.",
+        "translation": "I spent a lot of time on this project, but it ended fruitlessly."
+      },
+      {
+        "sentence": "助けを求めたかいもなく、誰も来なかった。",
+        "romanization": "Tasuke o motometa kai mo naku, dare mo konakatta.",
+        "translation": "He asked for help, but it was in vain as no one came."
+      },
+      {
+        "sentence": "色々な方法でダイエットを試みたかいもなく、全然痩せなかった。",
+        "romanization": "Iroirona hōhō de daietto o kokoromita kai mo naku, zenzen yasenakatta.",
+        "translation": "I tried various diet methods, but it was all for nothing—I didn't lose any weight."
+      }
+    ]
+  }
+]

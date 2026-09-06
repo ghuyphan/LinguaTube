@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_が_75",
+    "language": "ja",
+    "pattern": "～が",
+    "title": "～が 私に くれます (〜ga watashi ni kuremasu)",
+    "shortExplanation": "Used to express that someone gives a gift or favor to 'me'; 'someone gives me'.",
+    "longExplanation": "The ～が私にくれます grammar point is used to express that someone gives 'me' something or does something for me. It can be translated as 'someone gives me' or 'someone does something for me' in English. Typically, the giver is marked by が, and the receiver is 私に (to me).",
+    "formation": "Person + が + (Thing or Action) + 私に + くれます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼がプレゼントを私にくれました。",
+        "romanization": "Kare ga purezento wo watashi ni kuremashita.",
+        "translation": "He gave me a present."
+      },
+      {
+        "sentence": "友達が宿題を手伝って私にくれました。",
+        "romanization": "Tomodachi ga shukudai wo tetsudatte watashi ni kuremashita.",
+        "translation": "My friend helped me with my homework."
+      },
+      {
+        "sentence": "お母さんがお弁当を作って私にくれました。",
+        "romanization": "Okaasan ga obentou wo tsukutte watashi ni kuremashita.",
+        "translation": "My mom made me a lunch box."
+      },
+      {
+        "sentence": "先生がアドバイスを私にくれました。",
+        "romanization": "Sensei ga adobaisu wo watashi ni kuremashita.",
+        "translation": "The teacher gave me advice."
+      }
+    ]
+  },
+  {
+    "id": "ja_けど_76",
+    "language": "ja",
+    "pattern": "～けど、～",
+    "title": "～けど、～ (〜kedo、～)",
+    "shortExplanation": "Used to connect two clauses; 'but', 'however', 'although'",
+    "longExplanation": "The ～けど grammar point is used to connect two clauses, often to show a contrast or to introduce a different point of view. It can be translated as 'but', 'however', or 'although' in English. It's more casual than けれど or が.",
+    "formation": "Verb-casual + けど / い-adjective + けど / な-adjective + だけど / Noun + だけど",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "授業に出たけど、まだ宿題をしないといけない。",
+        "romanization": "Jugyou ni deta kedo, mada shukudai wo shinai to ikenai.",
+        "translation": "I attended the class, but I still have to do my homework."
+      },
+      {
+        "sentence": "昨日寒かったけど、今日は暖かいです。",
+        "romanization": "Kinou samukatta kedo, kyou wa atatakai desu.",
+        "translation": "Yesterday was cold, but today is warm."
+      },
+      {
+        "sentence": "彼は親切だけど、ちょっと怖い。",
+        "romanization": "Kare wa shinsetsu da kedo, chotto kowai.",
+        "translation": "He is kind, but a little scary."
+      },
+      {
+        "sentence": "これはおいしそうだけど、高すぎる。",
+        "romanization": "Kore wa oishisou da kedo, takasugiru.",
+        "translation": "This looks delicious, but it is too expensive."
+      }
+    ]
+  },
+  {
+    "id": "ja_けれど_77",
+    "language": "ja",
+    "pattern": "～けれど、～",
+    "title": "～けれど、～ (〜keredo、～)",
+    "shortExplanation": "Expresses a contrast or contradiction; 'but', 'however', 'even though'.",
+    "longExplanation": "The ～けれど grammar point is used to express a contrast or contradiction between two statements. It can be translated as 'but', 'however', or 'even though' in English. This grammar point is slightly more formal than けど.",
+    "formation": "Verb-casual + けれど / い-Adjective + けれど / な-Adjective + だけれど / Noun + だけれど",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今日は寒いけれど、散歩に行きます。",
+        "romanization": "Kyou wa samui keredo, sanpo ni ikimasu.",
+        "translation": "Even though it's cold today, I'll go for a walk."
+      },
+      {
+        "sentence": "彼は親切けれど、少し怖いです。",
+        "romanization": "Kare wa shinsetsu keredo, sukoshi kowai desu.",
+        "translation": "He is kind, but a little scary."
+      },
+      {
+        "sentence": "この部屋は狭いけれど、明るいです。",
+        "romanization": "Kono heya wa semai keredo, akarui desu.",
+        "translation": "This room is small, but it's bright."
+      },
+      {
+        "sentence": "彼女は病気だけれど、毎日働いています。",
+        "romanization": "Kanojo wa byouki dakeredo, mainichi hataraite imasu.",
+        "translation": "She is sick, but she works every day."
+      }
+    ]
+  },
+  {
+    "id": "ja_こちら_78",
+    "language": "ja",
+    "pattern": "こちら～",
+    "title": "こちら～ (kochira～)",
+    "shortExplanation": "Refers to a person, place or thing; 'this', 'this one', 'this way', 'here'.",
+    "longExplanation": "The こちら grammar point is used to refer to a person, place, or thing that is closer to the speaker, or to show politeness when referring to someone. It can mean 'this', 'this one', 'this way', or 'here'.",
+    "formation": "こちら / こちら + の + Person/Thing",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "こちらは田中さんです。",
+        "romanization": "Kochira wa Tanaka-san desu.",
+        "translation": "This is Mr./Ms. Tanaka."
+      },
+      {
+        "sentence": "こちらのレストランは美味しいです。",
+        "romanization": "Kochira no resutoran wa oishii desu.",
+        "translation": "This restaurant is delicious."
+      },
+      {
+        "sentence": "こちらへどうぞ。",
+        "romanization": "Kochira e douzo.",
+        "translation": "Please come this way."
+      },
+      {
+        "sentence": "こちらの方がいいですか、それともあちらの方がいいですか？",
+        "romanization": "Kochira no hou ga ii desu ka, sore to mo achira no hou ga ii desu ka?",
+        "translation": "Is this one better, or is that one better?"
+      }
+    ]
+  },
+  {
+    "id": "ja_さっき_79",
+    "language": "ja",
+    "pattern": "さっき～",
+    "title": "さっき～ (sakki～)",
+    "shortExplanation": "Refers to a short time ago or just now.",
+    "longExplanation": "The word さっき (sakki) is an adverb used to express that something happened or was done a short time ago or just now. It can be combined with verbs or other phrases to convey that meaning.",
+    "formation": "さっき + verb / さっき + phrase",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "さっき電話がありました。",
+        "romanization": "Sakki denwa ga arimashita.",
+        "translation": "There was a phone call just now."
+      },
+      {
+        "sentence": "さっき部屋を掃除しました。",
+        "romanization": "Sakki heya wo souji shimashita.",
+        "translation": "I cleaned the room a short while ago."
+      },
+      {
+        "sentence": "さっき彼に会いました。",
+        "romanization": "Sakki kare ni aimashita.",
+        "translation": "I met him just now."
+      },
+      {
+        "sentence": "さっきのニュースを見ましたか？",
+        "romanization": "Sakki no nyuusu wo mimashita ka?",
+        "translation": "Did you watch the news a short time ago?"
+      }
+    ]
+  },
+  {
+    "id": "ja_すぐに_80",
+    "language": "ja",
+    "pattern": "すぐに～",
+    "title": "すぐに～ (sugu ni～)",
+    "shortExplanation": "Immediately or right away; used to express promptness or quickness.",
+    "longExplanation": "The すぐに～ grammar point is used to express an action happening immediately or right away. It often indicates promptness or quickness and can be used with both verbs and adjectives.",
+    "formation": "すぐに + Verb/Adjective",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "友達が来たら、すぐに電話をかけてください。",
+        "romanization": "Tomodachi ga kitara, sugu ni denwa wo kakete kudasai.",
+        "translation": "When my friend arrives, please call me right away."
+      },
+      {
+        "sentence": "そのニュースを聞いたら、すぐに会社に行きました。",
+        "romanization": "Sono nyuusu wo kiitara, sugu ni kaisha ni ikimashita.",
+        "translation": "Upon hearing that news, I went to the company immediately."
+      },
+      {
+        "sentence": "彼女はすぐに泣き出した。",
+        "romanization": "Kanojo wa sugu ni nakidashita.",
+        "translation": "She started crying right away."
+      },
+      {
+        "sentence": "教室に入ると、先生はすぐに授業を始めた。",
+        "romanization": "Kyoushitsu ni hairu to, sensei wa sugu ni jugyou wo hajimeta.",
+        "translation": "As soon as I entered the classroom, the teacher started the lesson immediately."
+      }
+    ]
+  },
+  {
+    "id": "ja_ぜんぜん_81",
+    "language": "ja",
+    "pattern": "ぜんぜん～",
+    "title": "ぜんぜん～ (zenzen～)",
+    "shortExplanation": "Used to express 'not at all' or 'completely' in negative sentences.",
+    "longExplanation": "The ぜんぜん grammar point is used to emphasize a negative statement and can be translated as 'not at all' or 'completely (in negative sense)'. It is commonly used with negative verbs or negative forms of adjectives, placed before the negative part.",
+    "formation": "ぜんぜん + [Negative verb/adjective]",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼はぜんぜん話さない。",
+        "romanization": "Kare wa zenzen hanasanai.",
+        "translation": "He doesn't talk at all."
+      },
+      {
+        "sentence": "この部屋はぜんぜん暗くない。",
+        "romanization": "Kono heya wa zenzen kurakunai.",
+        "translation": "This room is not dark at all."
+      },
+      {
+        "sentence": "彼女はぜんぜん疲れていない。",
+        "romanization": "Kanojo wa zenzen tsukarete inai.",
+        "translation": "She is not tired at all."
+      },
+      {
+        "sentence": "その映画はぜんぜん面白くなかった。",
+        "romanization": "Sono eiga wa zenzen omoshirokunakatta.",
+        "translation": "That movie was not interesting at all."
+      }
+    ]
+  },
+  {
+    "id": "ja_そして_82",
+    "language": "ja",
+    "pattern": "そして、～",
+    "title": "そして、～ (soshite、～)",
+    "shortExplanation": "Used to connect two sentences; 'and then', 'and'.",
+    "longExplanation": "The そして grammar point is used to connect two sentences or ideas, expressing a sequence of events or actions. It is commonly translated to 'and then' or simply 'and' in English.",
+    "formation": "Sentence 1 + そして + Sentence 2",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "朝起きて、そして宿題をしました。",
+        "romanization": "Asa okite, soshite shukudai wo shimashita.",
+        "translation": "I woke up in the morning and then did my homework."
+      },
+      {
+        "sentence": "コーヒーを飲んで、そして新聞を読みました。",
+        "romanization": "Koohii wo nonde, soshite shinbun wo yomimashita.",
+        "translation": "I drank coffee and then read the newspaper."
+      },
+      {
+        "sentence": "家を出発しました。そして、駅へ行きました。",
+        "romanization": "Ie wo shuppatsu shimashita. Soshite, eki e ikimashita.",
+        "translation": "I left my house and then went to the station."
+      },
+      {
+        "sentence": "彼はゲームをした。そして、テレビを見ました。",
+        "romanization": "Kare wa geemu wo shita. Soshite, terebi wo mimashita.",
+        "translation": "He played games and then watched TV."
+      }
+    ]
+  },
+  {
+    "id": "ja_そちら_83",
+    "language": "ja",
+    "pattern": "そちら～",
+    "title": "そちら～ (sochira～)",
+    "shortExplanation": "Indicates a direction or person in moderate distance; 'that way', 'that person'.",
+    "longExplanation": "The そちら grammar point is used to refer to a direction or a person that is moderate distance from both the speaker and listener, often closer to the listener. It can be translated as 'that way', 'that person', or 'that side'. This is distinct from あちら, used for things far from both speaker and listener.",
+    "formation": "そちら [alone] / そちら + の + Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "そちらのレストランはどうですか？",
+        "romanization": "Sochira no resutoran wa dou desu ka?",
+        "translation": "How is that restaurant over there?"
+      },
+      {
+        "sentence": "そちらの方、お名前を教えていただけますか？",
+        "romanization": "Sochira no kata, onamae o oshiete itadakemasu ka?",
+        "translation": "Could you tell me the name of that person over there?"
+      },
+      {
+        "sentence": "そちらに行く途中で駅があります。",
+        "romanization": "Sochira ni iku tochuu de eki ga arimasu.",
+        "translation": "There is a station on the way to that direction."
+      },
+      {
+        "sentence": "そちらのかばん、私のと似ていますね。",
+        "romanization": "Sochira no kaban, watashi no to niteimasu ne.",
+        "translation": "That bag over there looks similar to mine."
+      }
+    ]
+  },
+  {
+    "id": "ja_それから_84",
+    "language": "ja",
+    "pattern": "それから、～",
+    "title": "それから、～ (sorekara、～)",
+    "shortExplanation": "Meaning 'after that', 'and then' or 'then', indicating sequence of events.",
+    "longExplanation": "The それから grammar point is used to describe the sequence of events or actions, indicating that one action or event takes place after another. It can be translated as 'after that', 'and then', or 'then' in English. It can be used with verbs, adjectives, and nouns but should be placed between two clauses.",
+    "formation": "Clause 1 + それから + Clause 2",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "コーヒーを飲んで、それから家を出ました。",
+        "romanization": "Koohii o nonde, sorekara ie o demashita.",
+        "translation": "I drank coffee, and then I left the house."
+      },
+      {
+        "sentence": "買い物をして、それから映画を見に行きました。",
+        "romanization": "Kaimono o shite, sorekara eiga o mini ikimashita.",
+        "translation": "I went shopping, and then I went to watch a movie."
+      },
+      {
+        "sentence": "彼女は勉強をして、それから寝ました。",
+        "romanization": "Kanojo wa benkyou o shite, sorekara nemashita.",
+        "translation": "She studied, and then she went to sleep."
+      },
+      {
+        "sentence": "パーティーに行って、それから友達と話しました。",
+        "romanization": "Paatii ni itte, sorekara tomodachi to hanashimashita.",
+        "translation": "I went to the party, and then I talked with my friends."
+      }
+    ]
+  },
+  {
+    "id": "ja_だいたい_85",
+    "language": "ja",
+    "pattern": "だいたい〜",
+    "title": "だいたい〜 (daitai〜)",
+    "shortExplanation": "Expresses 'roughly', 'approximately', or 'almost'.",
+    "longExplanation": "The だいたい〜 (daitai〜) grammar point is used to express a rough estimate or generalization, meaning 'roughly', 'approximately', or 'almost' in English. It can be used before numbers, amounts, or percentages to show that the value is not exact.",
+    "formation": "だいたい + Number/Amount/Percentage",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "だいたい１００人がパーティーに参加しました。",
+        "romanization": "Daitai hyaku-nin ga paatii ni sanka shimashita.",
+        "translation": "Approximately 100 people attended the party."
+      },
+      {
+        "sentence": "彼女はだいたい２時間でその仕事を終えます。",
+        "romanization": "Kanojo wa daitai ni-jikan de sono shigoto o oemasu.",
+        "translation": "She finishes that work in roughly two hours."
+      },
+      {
+        "sentence": "だいたい８０％の生徒が試験に合格しました。",
+        "romanization": "Daitai hachijuu-paasento no seito ga shiken ni goukaku shimashita.",
+        "translation": "About 80% of the students passed the exam."
+      },
+      {
+        "sentence": "今日はだいたい３０度の暑さです。",
+        "romanization": "Kyou wa daitai sanjuu-do no atsusa desu.",
+        "translation": "Today is almost 30 degrees hot."
+      }
+    ]
+  },
+  {
+    "id": "ja_たいてい_86",
+    "language": "ja",
+    "pattern": "たいてい～",
+    "title": "たいてい～ (taitei～)",
+    "shortExplanation": "Used for expressing 'usually', 'mostly', or 'generally'.",
+    "longExplanation": "The たいてい grammar point is used to describe a situation that occurs frequently or under normal circumstances. It can be translated as 'usually', 'mostly', or 'generally' in English. It is often used with verbs, but can also be used with adjectives and nouns.",
+    "formation": "たいてい + Verb/い-Adjective/な-Adjective/Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "たいてい朝８時に起きます。",
+        "romanization": "Taitei asa hachi-ji ni okimasu.",
+        "translation": "I usually wake up at 8 o'clock in the morning."
+      },
+      {
+        "sentence": "彼はたいてい遅刻します。",
+        "romanization": "Kare wa taitei chikoku shimasu.",
+        "translation": "He is usually late."
+      },
+      {
+        "sentence": "この店の商品はたいてい安いです。",
+        "romanization": "Kono mise no shouhin wa taitei yasui desu.",
+        "translation": "The items at this store are usually cheap."
+      },
+      {
+        "sentence": "たいていの人はその映画が好きです。",
+        "romanization": "Taitei no hito wa sono eiga ga suki desu.",
+        "translation": "Most people like that movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_だから_87",
+    "language": "ja",
+    "pattern": "だから、～",
+    "title": "だから、～ (dakara、～)",
+    "shortExplanation": "Expresses a reason or cause; 'because', 'so', 'therefore'.",
+    "longExplanation": "The だから grammar point is used to connect two sentences and express a reason or cause for the second sentence. It is typically used with nouns or な-adjectives, and can be translated as 'because', 'so', or 'therefore' in English. For verbs/い-adjectives, the form is usually ～から (not だから).",
+    "formation": "Noun + だから / な-Adjective + だから",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "雨だから、傘を持って行きましょう。",
+        "romanization": "Ame dakara, kasa wo motte ikimashou.",
+        "translation": "Because it's raining, let's bring an umbrella."
+      },
+      {
+        "sentence": "このケーキは有名だから、みんなが食べたいです。",
+        "romanization": "Kono keeki wa yuumei dakara, minna ga tabetai desu.",
+        "translation": "Because this cake is famous, everyone wants to eat it."
+      },
+      {
+        "sentence": "彼は病気だから、学校に行けません。",
+        "romanization": "Kare wa byouki dakara, gakkou ni ikemasen.",
+        "translation": "Because he is sick, he cannot go to school."
+      },
+      {
+        "sentence": "彼女は学生だから、このレストランで割引があります。",
+        "romanization": "Kanojo wa gakusei dakara, kono resutoran de waribiki ga arimasu.",
+        "translation": "Because she is a student, there is a discount at this restaurant."
+      }
+    ]
+  },
+  {
+    "id": "ja_たりたり_88",
+    "language": "ja",
+    "pattern": "～たり、～たり",
+    "title": "～たり、～たり します (〜tari, 〜tari shimasu)",
+    "shortExplanation": "Used to list multiple actions or states; 'do things like', 'and'.",
+    "longExplanation": "The ～たり、～たり します grammar point is used to list multiple actions or states without fully enumerating them. It can imply that there are more items in the list and can be translated as 'do things like', 'and', 'among other things', or 'and so on' in English. It is formed by attaching たり to the casual past tense of the verb, followed by します.",
+    "formation": "Verb-casual-past + たり + Verb-casual-past + たり + します",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "休日には、映画を見たり、友達と遊んだりします。",
+        "romanization": "Kyuujitsu ni wa, eiga wo mitari, tomodachi to asondari shimasu.",
+        "translation": "On holidays, I do things like watch movies and hang out with friends."
+      },
+      {
+        "sentence": "彼は歌ったり、踊ったり、ピアノを弾いたりします。",
+        "romanization": "Kare wa utattari, odottari, piano wo hikitari shimasu.",
+        "translation": "He sings, dances, plays the piano, among other things."
+      },
+      {
+        "sentence": "このレストランでは、寿司を食べたり、刺身を食べたりします。",
+        "romanization": "Kono resutoran de wa, sushi wo tabetari, sashimi wo tabetari shimasu.",
+        "translation": "At this restaurant, you can eat sushi, sashimi, and so on."
+      },
+      {
+        "sentence": "彼女は毎朝、ジョギングしたり、ヨガをしたりします。",
+        "romanization": "Kanojo wa maiasa, joggingu shitari, yoga wo shitari shimasu.",
+        "translation": "Every morning, she does things like jogging and yoga."
+      }
+    ]
+  },
+  {
+    "id": "ja_だれ_89",
+    "language": "ja",
+    "pattern": "だれ～",
+    "title": "だれ～ (dare～)",
+    "shortExplanation": "Asking 'who' in a sentence, used to inquire about someone's identity or to clarify who is being referred to.",
+    "longExplanation": "The だれ〜 grammar point is used to ask about the identity of someone in a sentence. It can be translated as 'who' or 'whom' in English. It is often used with the particle が, は, or を, but can also be combined with other particles depending on the context.",
+    "formation": "だれ + appropriate particle (が, は or を)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "だれがその本を買いましたか。",
+        "romanization": "Dare ga sono hon o kaimashita ka.",
+        "translation": "Who bought that book?"
+      },
+      {
+        "sentence": "だれを待っていますか。",
+        "romanization": "Dare o matteimasu ka.",
+        "translation": "Whom are you waiting for?"
+      },
+      {
+        "sentence": "だれがそのリンゴを食べましたか。",
+        "romanization": "Dare ga sono ringo o tabemashita ka.",
+        "translation": "Who ate that apple?"
+      },
+      {
+        "sentence": "だれが鍵を持っていますか。",
+        "romanization": "Dare ga kagi o motteimasu ka.",
+        "translation": "Who has the key?"
+      }
+    ]
+  }
+]

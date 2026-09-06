@@ -55,7 +55,7 @@ export class WordPopupComponent implements OnDestroy {
     this.translation.getSupportedTargetLanguages().map(lang => ({
       value: lang.code,
       label: lang.name,
-      icon: lang.flag
+      iconUrl: lang.flagUrl
     }))
   );
 
@@ -188,6 +188,11 @@ export class WordPopupComponent implements OnDestroy {
     return lang ? lang.flag : '🌐';
   }
 
+  getSelectedLangFlagUrl(): string {
+    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === this.targetLang());
+    return lang?.flagUrl || 'https://hatscripts.github.io/circle-flags/flags/gb.svg';
+  }
+
   translateAll(): void {
     const meanings = this.entry()?.meanings;
     if (!meanings) return;
@@ -263,6 +268,11 @@ export class WordPopupComponent implements OnDestroy {
   getFlag(code: string): string {
     const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === code);
     return lang ? lang.flag : '🌐';
+  }
+
+  getFlagUrl(code: string): string {
+    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === code);
+    return lang?.flagUrl || 'https://hatscripts.github.io/circle-flags/flags/gb.svg';
   }
 
   onSheetClosed(): void {

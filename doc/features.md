@@ -1,13 +1,13 @@
 # Feature Specifications & Deep Dive
 
-This document details the functional specifications, algorithms, and business logic governing each major feature in **LinguaTube**.
+This document details the functional specifications, algorithms, and business logic governing each major feature in **Voca** (formerly LinguaTube).
 
 ---
 
 ## 1. Universal Video Player & Controls
 
 ### 1.1. URL Ingestion & Parsing
-LinguaTube accepts arbitrary YouTube video URLs:
+Voca accepts arbitrary YouTube video URLs:
 - Standard: `https://www.youtube.com/watch?v=VIDEO_ID`
 - Shortened: `https://youtu.be/VIDEO_ID`
 - Embedded: `https://www.youtube.com/embed/VIDEO_ID`
@@ -15,9 +15,9 @@ LinguaTube accepts arbitrary YouTube video URLs:
 
 ### 1.2. Playback Architecture
 - Powered by `YoutubeService`, wrapping the official YouTube IFrame Player API.
-- Custom UI overlay replaces default YouTube player chrome, avoiding clutter and visual distractions.
+- Custom UI overlay replaces default YouTube player chrome, eliminating clutter and visual distractions.
 - **Auto-Pause on Hover / Click**:
-  When a user hovers over or clicks an interactive subtitle word to read its definition, video playback pauses automatically to prevent the learner from falling behind.
+  When a user hovers over or clicks an interactive subtitle word to inspect its definition, video playback pauses automatically to prevent the learner from falling behind.
 
 ### 1.3. Controls & Interaction Matrix
 | Action | Desktop Shortcut | Mobile Gesture | UI Element |
@@ -27,15 +27,26 @@ LinguaTube accepts arbitrary YouTube video URLs:
 | **Seek $\pm 10$s** | `j` / `l` | Double Tap Far Left/Right | — |
 | **Volume Up / Down** | `Up` / `Down` arrows | Swipe Up / Down (Right side) | Bottom bar volume slider |
 | **Toggle Subtitles** | `c` | Tap CC Button | CC button in bottom bar |
+| **Toggle Dual Subtitles** | — | Tap Languages Button | Languages button in bottom bar |
+| **Dual Sub Menu** | Right-click Dual Sub | — | Quick language picker modal with circle flags |
 | **Toggle Fullscreen** | `f` | Pinch Out / Rotate | Bottom bar fullscreen button |
 | **Playback Speed** | `Shift` + `<` / `>` | — | Speed dropdown (0.5x – 2x) |
+
+### 1.4. Draggable Fullscreen Subtitles
+When in fullscreen mode, subtitles are rendered in `FullscreenSubtitleComponent`:
+- **Centered Drag Handle Bar**: A horizontal pill handle bar allows users to drag subtitles to any vertical position (`--sub-y: 8%` to `85%`).
+- **Smooth Pointer Capture**: Uses `PointerEvent` tracking with `requestAnimationFrame` updates to ensure 60fps responsiveness across mobile and desktop.
+- **Magnetic Snap Points**:
+  - Dragging near the top snaps smoothly to `12%`.
+  - Dragging near the bottom snaps to `82%`.
+  - Tapping without dragging automatically toggles between top and bottom.
 
 ---
 
 ## 2. Interactive Subtitles & Tokenization Engine
 
 ### 2.1. Sticky Subtitle Synchronization Algorithm
-Standard subtitle displays flicker or disappear during small natural pauses in speech. LinguaTube implements a **Sticky Subtitle** algorithm:
+Standard subtitle displays flicker or disappear during small natural pauses in speech. Voca implements a **Sticky Subtitle** algorithm:
 1. Performs an $O(\log n)$ binary search (`findActiveCue`) to find the cue matching `currentTime`.
 2. If no active cue matches (e.g. speech gap), `findStickyCue` locates the most recent ended cue within a $0.1$s tolerance window.
 3. The cue remains visible until the next subtitle segment begins or playback advances beyond a maximum threshold.
@@ -45,7 +56,13 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
 - **Japanese (`ja`)**:
   - Analyzed by `@patdx/kuromoji` using IPAdic dictionaries loaded on demand via CDN.
   - Generates token surface forms, base dictionary forms, parts of speech, and Hiragana readings.
-  - Provides dual display modes: **Furigana** (`<ruby>漢<rt>かん</rt></ruby>`) and **Hepburn Romaji** (`getJapaneseRomaji`).
+  - **5 Reading Display Modes**:
+    1. `native`: Clean Japanese script.
+    2. `annotated`: Ruby Furigana (`<ruby>漢<rt>かん</rt></ruby>`).
+    3. `reading`: Kana reading only.
+    4. `annotatedRomanized`: Kanji with Hepburn Romaji annotations.
+    5. `romanized`: Hepburn Romaji only.
+  - **Height & Baseline Alignment (Zero-Shift Ruby)**: When reading annotations are enabled, words without reading text (e.g. kana-only words, English words, numbers, or unannotated kanji) are wrapped in `<ruby>` with an invisible spacer `<rt class="rt-empty">&#160;</rt>`. This guarantees 100% identical card height and uniform baseline alignment across all words in the sentence, eliminating jagged jumps.
 - **Chinese (`zh`)**:
   - Segmented using `Intl.Segmenter('zh', { granularity: 'word' })`.
   - Pinyin annotations generated via `pinyin-pro` with tone diacritics (e.g. `nǐ hǎo`).
@@ -53,10 +70,12 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
   - Space-delimited and segment-analyzed via `Intl.Segmenter('ko')`.
   - Romanization computed using `hangul-romanization`.
 - **English (`en`)**:
-  - Segmented into word tokens and punctuation boundaries.
+  - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en')`.
 
-### 2.3. Custom Subtitle File Import
-Learners can import local files (`.srt` or `.vtt`) via `SubtitleUploadComponent`, which parses timestamps and formats text into standard `SubtitleCue` models.
+### 2.3. Subtitle Customization & Vocabulary Highlighting
+- **Four Size Modes**: `small`, `medium`, `large`, and `xlarge`, dynamically responsive across mobile, tablet, and desktop layouts.
+- **Vocabulary Mastery Indicators**: Interactive subtitle words reflect mastery state (`word--new`, `word--learning`, `word--known`) in both standard list/banner and fullscreen overlays.
+- **Auto-Scroll & Manual Override**: Active cue autoscrolling pauses during user interaction (3s debounce) to ensure smooth browsing of full transcripts.
 
 ---
 
@@ -89,7 +108,9 @@ graph TD
 
 ## 4. Dual-Language Subtitles
 
-- Displays the **learning language** on top and the learner's **native UI language** underneath.
+- Displays the **learning language** on top and the learner's **target translation language** underneath.
+- **Supported Target Languages**: English (`en`), Vietnamese (`vi`), Japanese (`ja`), Korean (`ko`), Chinese (`zh`).
+- **Quick Selection Menu**: Right-click the dual-sub button or open player settings to select target translation language with high-fidelity circle flag SVGs.
 - **Batch Translation Engine**: Subtitle texts are chunked into batches of 5 and translated via Lingva / Google Translate GTX.
 - **Quality Assurance**: If $< 80\%$ of segments translate successfully, caching is refused to prevent bad data persistence.
 - **Permanent Caching**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`) and indexed in D1.
@@ -105,16 +126,16 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
                  │       LEARNER CLICKS WORD      │
                  └───────────────┬────────────────┘
                                  │
-                     Query /api/dict Endpoint
+                      Query /api/dict Endpoint
                                  │
-     ┌───────────────────────────┼───────────────────────────┐
-     ▼                           ▼                           ▼
-[ JAPANESE ]                [ CHINESE ]                 [ KOREAN ]
-Jotoba API (primary)        MDBG Dictionary Scraper     Naver Dict EnKo / KoVi
-Jisho.org API (fallback)    Glosbe Chinese-Vietnamese   National Institute (KRDict)
-Mazii API (Vietnamese)
-     │                           │                           │
-     └───────────────────────────┼───────────────────────────┘
+      ┌──────────────────────────┼──────────────────────────┐
+      ▼                          ▼                          ▼
+ [ JAPANESE ]               [ CHINESE ]                [ KOREAN ]
+ Jotoba API (primary)       MDBG Scraper               Naver Dict EnKo / KoVi
+ Jisho.org (fallback)       Glosbe Chinese-Vietnamese  KRDict (National Inst)
+ Mazii (Vietnamese)
+      │                          │                          │
+      └──────────────────────────┼──────────────────────────┘
                                  │
                     No Direct Bilingual Match?
                                  ▼
@@ -123,7 +144,8 @@ Mazii API (Vietnamese)
                      Normalized DictionaryEntry
 ```
 
-- **Negative Caching**: Empty results are cached in an in-memory `Set` to prevent hammering external dictionary APIs for typos or non-dictionary words.
+- **Word Popup UI**: Positioned next to the clicked word with audio pronunciation button, part of speech tags, definitions, and language switcher with circle flags.
+- **Negative Caching**: Empty results are cached in an in-memory `Set` to prevent hammering external dictionary APIs.
 - **Persistence**: Results cached in Cloudflare KV for 7 days.
 
 ---
@@ -138,8 +160,8 @@ Mazii API (Vietnamese)
   - **English**: CEFR A1 through C2 grammar rules (`grammar-en.ts`).
 - **Split Pattern Handling**:
   Recognizes split correlative pairs (e.g. `虽然...但是...`, `not only...but also...`, `either...or...`).
-- **Lazy Loading**:
-  Large grammar datasets are code-split and loaded dynamically via `import()` only when the learner activates that language.
+- **Dynamic Translation Packs**:
+  Grammar definitions are translated across 16 combinations (JA, KO, ZH, EN into VI, ZH, KO, JA) plus native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`).
 
 ---
 
@@ -175,3 +197,22 @@ Every saved word retains `sourceSentence`, ensuring learners always review vocab
   - Milestones at 7, 30, and 100 days reward an extra streak freeze.
 - **PocketBase Server Cron (`streaks.pb.js`)**:
   A server-side webhook checks active streaks daily, consuming freezes or resetting streaks if inactive for $>1$ day.
+
+---
+
+## 9. Playlist & Study Queue Architecture
+
+- **Multi-Source Playlists**: Supports user-created custom playlists, curated Community Playlists (e.g., JLPT/TOPIK/HSK listening collections), and PocketBase cloud sync.
+- **Responsive Video Screen Presentation**:
+  - **Desktop Unified Sidebar (`.unified-sidebar`)**: Houses a segmented control tab switcher toggling between `Playlist (N)` and `Vocabulary (N)`. Uses `.hidden` styling instead of template recreation to eliminate layout shifts when switching tabs. When a playlist has only 1 video, the playlist tab is retained on desktop to allow playlist management (editing, sharing, closing, or navigating).
+  - **Mobile Playlist Bar (`.mobile-playlist-card`) & YouTube-Style Bottom Sheet**:
+    - Sits directly below the video player as a sleek, non-expanding compact bar (~48px) displaying playlist title, author, index/total, and quick action buttons (Share, Loop, Shuffle, Chevron).
+    - **Zero Layout Shift (0% CLS)**: Tapping the bar or chevron opens a modal `<app-bottom-sheet>` instead of expanding in-flow. The video player and subtitles beneath it remain stationary and completely undisturbed.
+    - Inside the bottom sheet, the user can reorder videos (cdkDrag if owner), switch videos, toggle loop/shuffle, share, or open individual video options. Selecting a video automatically closes the sheet and navigates to the video.
+  - **Navigation Guarding**: Playlist previous (`canPlayPrev`) and next (`canPlayNext`) actions are disabled when `videos.length <= 1` (unless playlist loop mode is toggled), preventing dead interactions.
+- **Server-Side Recommendation Engine ("Dành cho bạn" / "For You")**:
+  - Automatically queries PocketBase with targeted server-side filtering (`visibility="published" && language="${lang}" && video_count >= 2`).
+  - Ranked on the server by `-is_featured, -save_count, -updated` to prioritize curated and popular community content while filtering out single-video test spam.
+  - Automatically re-fetches when learning language changes and caches results in memory per language.
+  - Falls back to `video_count >= 1` if a new language does not yet have multi-video collections.
+

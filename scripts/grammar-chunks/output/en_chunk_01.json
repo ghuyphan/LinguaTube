@@ -1,0 +1,970 @@
+{
+  "vi": {
+    "en_a1_01": {
+      "title": "am / is / are - Các dạng của động từ to be ở thì hiện tại",
+      "shortExplanation": "Động từ 'to be' thì hiện tại: I đi với am; he/she/it đi với is; you/we/they đi với are; mang nghĩa 'thì, là, ở'.",
+      "longExplanation": "'To be' là động từ cơ bản và quan trọng nhất trong tiếng Anh, mang nghĩa là 'thì, là, ở' hoặc dùng để liên kết chủ ngữ với tính từ, danh từ chỉ đặc điểm, trạng thái hay nghề nghiệp. Ở thì hiện tại đơn, 'to be' có ba dạng chia theo chủ ngữ:\n• 'am': Chỉ đi với đại từ ngôi thứ nhất số ít 'I'.\n• 'is': Đi với ngôi thứ ba số ít (he, she, it, danh từ số ít hoặc danh từ không đếm được).\n• 'are': Đi với ngôi thứ hai và các ngôi số nhiều (you, we, they, danh từ số nhiều).",
+      "formation": "Chủ ngữ + am / is / are (+ Danh từ / Tính từ / Cụm giới từ)",
+      "examples": [
+        {
+          "translation": "Tôi đang đói."
+        },
+        {
+          "translation": "Cô ấy là bác sĩ."
+        },
+        {
+          "translation": "Họ đã sẵn sàng."
+        }
+      ]
+    },
+    "en_a1_02": {
+      "title": "Phủ định của động từ to be: am not / isn't / aren't",
+      "shortExplanation": "Thêm 'not' vào sau động từ to be để tạo câu phủ định; dạng viết tắt: isn't (= is not), aren't (= are not), I'm not.",
+      "longExplanation": "Để tạo câu phủ định với động từ 'to be', ta chỉ cần thêm phó từ phủ định 'not' ngay sau 'am', 'is' hoặc 'are'. Trong giao tiếp thường ngày và văn phong thân mật, các dạng viết tắt thường được sử dụng:\n• is not → isn't\n• are not → aren't\n• am not → viết tắt thành I'm not (chú ý: trong tiếng Anh chuẩn không có dạng 'amn't').",
+      "formation": "Chủ ngữ + am / is / are + not (+ Danh từ / Tính từ)",
+      "examples": [
+        {
+          "translation": "Tôi không phải là học sinh."
+        },
+        {
+          "translation": "Anh ấy không thấy mệt."
+        },
+        {
+          "translation": "Chúng tôi chưa sẵn sàng."
+        }
+      ]
+    },
+    "en_a1_03": {
+      "title": "Câu hỏi với động từ to be: Am I? / Is she? / Are they?",
+      "shortExplanation": "Đảo động từ to be lên trước chủ ngữ để tạo câu hỏi Có/Không; với câu hỏi có từ để hỏi: Từ để hỏi + to be + chủ ngữ.",
+      "longExplanation": "Để tạo câu hỏi với động từ 'to be', ta đảo động từ 'am / is / are' lên đứng trước chủ ngữ (Ví dụ: She is → Is she?).\n• Câu hỏi Có/Không (Yes/No questions): Am / Is / Are + Chủ ngữ...?\n• Câu hỏi có từ để hỏi: Từ để hỏi (Where, What, Who,...) + am / is / are + Chủ ngữ...?\n• Câu trả lời ngắn: Yes, + Đại từ + to be. / No, + Đại từ + to be + not.",
+      "formation": "Am / Is / Are + Chủ ngữ...? hoặc Từ để hỏi + am / is / are + Chủ ngữ...?",
+      "examples": [
+        {
+          "translation": "Bạn có phải là học sinh không?"
+        },
+        {
+          "translation": "Cái đó có đắt không?"
+        },
+        {
+          "translation": "Họ đang ở đâu?"
+        }
+      ]
+    },
+    "en_a1_04": {
+      "title": "Câu trả lời ngắn: Yes, I am. / No, she isn't.",
+      "shortExplanation": "Trả lời ngắn với to be: câu khẳng định bắt buộc dùng dạng đầy đủ (Yes, I am; không viết tắt 'Yes, I'm'); câu phủ định có thể viết tắt.",
+      "longExplanation": "Khi trả lời các câu hỏi Yes/No với động từ 'to be', ta sử dụng câu trả lời ngắn gồm: Yes/No + đại từ nhân xưng + động từ to be.\n• Với câu trả lời khẳng định (Yes): Bắt buộc dùng dạng đầy đủ của to be, không được phép viết tắt (Đúng: Yes, I am. / Sai: Yes, I'm.; Đúng: Yes, she is. / Sai: Yes, she's.).\n• Với câu trả lời phủ định (No): Thông thường sử dụng dạng viết tắt (Ví dụ: No, I'm not. / No, she isn't. / No, they aren't.).",
+      "formation": "Khẳng định: Yes, + Đại từ + am / is / are. | Phủ định: No, + Đại từ + am not / isn't / aren't.",
+      "examples": [
+        {
+          "translation": "Cô ấy đã sẵn sàng chưa? — Vâng, cô ấy sẵn sàng rồi."
+        },
+        {
+          "translation": "Họ có phải là bạn của bạn không? — Không, họ không phải."
+        }
+      ]
+    },
+    "en_a1_05": {
+      "title": "Mạo từ bất định: a / an",
+      "shortExplanation": "Đứng trước danh từ đếm được số ít khi được nhắc đến lần đầu; 'a' đứng trước phát âm phụ âm, 'an' đứng trước phát âm nguyên âm.",
+      "longExplanation": "'a' và 'an' là mạo từ bất định, đặt trước danh từ đếm được số ít khi đối tượng đó chưa xác định hoặc được nhắc tới lần đầu tiên. Việc dùng 'a' hay 'an' phụ thuộc hoàn toàn vào âm thanh mở đầu của từ đứng liền sau, không dựa vào chữ cái viết:\n• Dùng 'a' trước từ bắt đầu bằng một phụ âm: a book, a cat, a university (bắt đầu bằng âm bán nguyên âm /juː/).\n• Dùng 'an' trước từ bắt đầu bằng một nguyên âm: an apple, an hour (âm 'h' câm, bắt đầu bằng nguyên âm /aʊ/), an honest person.\n• Không dùng 'a / an' trước danh từ số nhiều hoặc danh từ không đếm được.",
+      "formation": "a + từ bắt đầu bằng phụ âm / an + từ bắt đầu bằng nguyên âm + Danh từ đếm được số ít",
+      "examples": [
+        {
+          "translation": "Tôi đã nhìn thấy một con mèo trong vườn."
+        },
+        {
+          "translation": "Cô ấy là một kỹ sư."
+        },
+        {
+          "translation": "Việc đó đã mất một tiếng đồng hồ."
+        }
+      ]
+    },
+    "en_a1_06": {
+      "title": "Mạo từ xác định: the",
+      "shortExplanation": "Dùng trước danh từ khi cả người nói và người nghe đều biết rõ đối tượng đang được nói đến; dùng cho vật là duy nhất hoặc dạng so sánh nhất.",
+      "longExplanation": "'the' là mạo từ xác định trong tiếng Anh, có thể đứng trước cả danh từ số ít, số nhiều và danh từ không đếm được khi đối tượng đã được xác định cụ thể. Các trường hợp phổ biến dùng 'the':\n1. Đối tượng đã được nhắc đến trước đó: I saw a cat. The cat was black.\n2. Sự vật duy nhất trong vũ trụ hoặc tự nhiên: the sun (mặt trời), the moon (mặt trăng), the earth (trái đất).\n3. Rõ ràng qua ngữ cảnh nói chuyện: Close the window, please. (cửa sổ trong phòng).\n4. Đi kèm với tính từ so sánh nhất hoặc số thứ tự: the best, the biggest, the first.",
+      "formation": "the + Danh từ (số ít, số nhiều hoặc không đếm được)",
+      "examples": [
+        {
+          "translation": "Bộ phim mà chúng ta đã xem thật tuyệt vời."
+        },
+        {
+          "translation": "Bạn có thể chuyền cho tôi lọ muối được không?"
+        }
+      ]
+    },
+    "en_a1_07": {
+      "title": "Không dùng mạo từ (Mạo từ số không)",
+      "shortExplanation": "Không dùng mạo từ trước tên riêng, tên ngôn ngữ, môn thể thao, hoặc khi nói về danh từ mang tính khái quát chung.",
+      "longExplanation": "Trong tiếng Anh, có nhiều trường hợp danh từ không đi kèm bất kỳ mạo từ nào (a, an hay the). Các trường hợp điển hình gồm:\n• Tên riêng (người, địa danh, quốc gia): John, London, Russia, Vietnam.\n• Ngôn ngữ: English, Spanish, Vietnamese.\n• Môn thể thao và trò chơi: football, basketball, chess.\n• Thức ăn, đồ uống khi nói chung: I love coffee, She drinks milk.\n• Khái niệm trừu tượng chung chung: Life is short. Love is blind.\n• Danh từ số nhiều chỉ loài hoặc nhóm đối tượng nói chung: Dogs are friendly.",
+      "formation": "Động từ / Giới từ + Danh từ (không có mạo từ)",
+      "examples": [
+        {
+          "translation": "Cô ấy nói tiếng Tây Ban Nha."
+        },
+        {
+          "translation": "Anh ấy chơi bóng rổ mỗi ngày."
+        }
+      ]
+    },
+    "en_a1_08": {
+      "title": "Thì hiện tại đơn - Câu khẳng định",
+      "shortExplanation": "Diễn tả thói quen, chân lý, sự thật hiển nhiên. Khi chủ ngữ là ngôi thứ ba số ít, động từ thêm đuôi -s hoặc -es.",
+      "longExplanation": "Thì hiện tại đơn (Present Simple) được dùng để diễn tả thói quen, hành động lặp đi lặp lại thường xuyên, sự thật hiển nhiên hoặc chân lý khách quan.\n• Quy tắc chia động từ:\n- Với chủ ngữ I / you / we / they và danh từ số nhiều: dùng động từ nguyên mẫu không chia.\n- Với chủ ngữ he / she / it và danh từ số ít (ngôi thứ ba số ít): thêm đuôi '-s' hoặc '-es' vào sau động từ.\n• Quy tắc thêm đuôi '-s / -es':\n- Đa số động từ: thêm '-s' (works, plays).\n- Động từ kết thúc bằng -o, -ch, -sh, -s, -ss, -x: thêm '-es' (goes, watches, washes).\n- Động từ kết thúc bằng một phụ âm + y: đổi '-y' thành '-ies' (study → studies, try → tries).",
+      "formation": "Chủ ngữ (I/you/we/they) + Động từ nguyên mẫu | Chủ ngữ (he/she/it) + Động từ thêm -s/-es",
+      "examples": [
+        {
+          "translation": "Tôi uống cà phê mỗi buổi sáng."
+        },
+        {
+          "translation": "Cô ấy làm việc trong một bệnh viện."
+        },
+        {
+          "translation": "Trái Đất quay quanh Mặt Trời."
+        }
+      ]
+    },
+    "en_a1_09": {
+      "title": "Thì hiện tại đơn - Câu phủ định: don't / doesn't",
+      "shortExplanation": "Dùng trợ động từ 'don't' hoặc 'doesn't' kết hợp với động từ nguyên mẫu không chia.",
+      "longExplanation": "Để tạo câu phủ định trong thì hiện tại đơn với động từ thường, ta mượn trợ động từ 'do / does' thêm 'not', theo sau luôn là động từ ở dạng nguyên mẫu:\n• Chủ ngữ I / you / we / they + don't (do not) + động từ nguyên mẫu.\n• Chủ ngữ he / she / it + doesn't (does not) + động từ nguyên mẫu.\nLưu ý quan trọng: Sau 'doesn't', động từ chính đã trở về dạng nguyên mẫu, không thêm -s hay -es nữa (Đúng: He doesn't like / Sai: He doesn't likes).",
+      "formation": "Chủ ngữ (I/you/we/they) + don't + Động từ nguyên mẫu | Chủ ngữ (he/she/it) + doesn't + Động từ nguyên mẫu",
+      "examples": [
+        {
+          "translation": "Tôi không ăn thịt."
+        },
+        {
+          "translation": "Anh ấy không nói tiếng Pháp."
+        },
+        {
+          "translation": "Họ không làm việc ở đây."
+        }
+      ]
+    },
+    "en_a1_10": {
+      "title": "Thì hiện tại đơn - Câu hỏi: Do you? / Does she?",
+      "shortExplanation": "Đảo trợ động từ Do hoặc Does lên trước chủ ngữ; với câu hỏi có từ để hỏi: Từ để hỏi + do/does + chủ ngữ + động từ nguyên mẫu.",
+      "longExplanation": "Để đặt câu hỏi trong thì hiện tại đơn với động từ thường, ta đảo trợ động từ 'Do' hoặc 'Does' lên trước chủ ngữ và động từ chính giữ ở dạng nguyên mẫu:\n• Câu hỏi Có/Không (Yes/No questions):\n- Do + I/you/we/they + động từ nguyên mẫu...?\n- Does + he/she/it + động từ nguyên mẫu...?\n• Câu hỏi có từ để hỏi (Wh-questions): Từ để hỏi (Where, What, When,...) + do / does + chủ ngữ + động từ nguyên mẫu...?",
+      "formation": "Do / Does + Chủ ngữ + Động từ nguyên mẫu...? hoặc Từ để hỏi + do / does + Chủ ngữ + Động từ nguyên mẫu...?",
+      "examples": [
+        {
+          "translation": "Bạn có nói tiếng Nga không?"
+        },
+        {
+          "translation": "Cô ấy có sống ở gần đây không?"
+        },
+        {
+          "translation": "Bạn làm việc ở đâu?"
+        }
+      ]
+    },
+    "en_a1_11": {
+      "title": "Động từ chỉ trạng thái (Stative verbs) - Không dùng ở thì tiếp diễn",
+      "shortExplanation": "Các động từ chỉ trạng thái, cảm xúc, nhận thức không được chia ở thì tiếp diễn (dùng 'I know', không dùng 'I am knowing').",
+      "longExplanation": "Động từ chỉ trạng thái (Stative verbs) là những động từ miêu tả trạng thái, cảm xúc, quá trình tư duy hoặc sự sở hữu thay vì một hành động thể chất. Các động từ này thông thường không được chia ở các thì tiếp diễn (-ing):\n• Nhận thức & Suy nghĩ: know (biết), believe (tin), understand (hiểu), remember (nhớ), forget (quên).\n• Cảm xúc & Nguyện vọng: love (yêu), hate (ghét), like (thích), want (muốn), need (cần), prefer (thích hơn).\n• Giác quan: see (nhìn thấy), hear (nghe thấy), smell (có mùi), taste (có vị).\n• Tồn tại & Sở hữu: belong (thuộc về), contain (chứa đựng), seem (dường như), appear (có vẻ).",
+      "formation": "Chủ ngữ + Động từ chỉ trạng thái ở thì đơn giản (không dùng dạng tiếp diễn -ing)",
+      "examples": [
+        {
+          "translation": "Tôi hiểu ý bạn. (Không dùng: I am understanding)"
+        },
+        {
+          "translation": "Cô ấy rất thích sô-cô-la. (Không dùng: is loving)"
+        }
+      ]
+    },
+    "en_a1_12": {
+      "title": "Đại từ nhân xưng: I, you, he, she, it, we, they",
+      "shortExplanation": "Chủ ngữ trong câu tiếng Anh bắt buộc phải có mặt; phân biệt đại từ làm chủ ngữ (I, you, he,...) và đại từ làm tân ngữ (me, you, him,...).",
+      "longExplanation": "Trong tiếng Anh, một câu hoàn chỉnh luôn bắt buộc phải có chủ ngữ rõ ràng (không thể lược bỏ đại từ chủ ngữ như trong tiếng Việt hay tiếng Nhật/Hàn).\n• Đại từ làm chủ ngữ (đứng trước động từ): I (tôi), you (bạn/các bạn), he (anh ấy), she (cô ấy), it (nó), we (chúng tôi), they (họ).\n• Đại từ làm tân ngữ (đứng sau động từ hoặc giới từ): me, you, him, her, it, us, them (Ví dụ: Tell him, help me, look at us).",
+      "formation": "Đại từ chủ ngữ + Động từ | Động từ / Giới từ + Đại từ tân ngữ",
+      "examples": [
+        {
+          "translation": "Cô ấy là giáo viên."
+        },
+        {
+          "translation": "Hãy nói cho anh ấy biết sự thật."
+        },
+        {
+          "translation": "Bạn có thể giúp tôi được không?"
+        }
+      ]
+    },
+    "en_a1_13": {
+      "title": "Tính từ sở hữu: my, your, his, her, its, our, their",
+      "shortExplanation": "Đứng trước danh từ để chỉ quyền sở hữu ('của tôi, của bạn,...'); hình thức không thay đổi theo số lượng của danh từ phía sau.",
+      "longExplanation": "Tính từ sở hữu (Possessive adjectives) đứng ngay trước danh từ để xác định ai là người sở hữu đối tượng đó:\n• my (của tôi), your (của bạn/các bạn), his (của anh ấy), her (của cô ấy), its (của nó), our (của chúng tôi), their (của họ).\n• Điểm lưu ý quan trọng: Phân biệt 'its' (tính từ sở hữu, không có dấu nháy đơn) và 'it's' (dạng viết tắt của it is hoặc it has).\n• Tính từ sở hữu không thay đổi hình thức dù danh từ theo sau là số ít hay số nhiều: my friend (một người bạn của tôi) / my friends (những người bạn của tôi).",
+      "formation": "Tính từ sở hữu (my / your / his / her / its / our / their) + Danh từ",
+      "examples": [
+        {
+          "translation": "Đây là điện thoại của tôi."
+        },
+        {
+          "translation": "Con chó của họ rất dễ thương."
+        },
+        {
+          "translation": "Con mèo bị thương ở bàn chân của nó."
+        }
+      ]
+    },
+    "en_a1_14": {
+      "title": "Danh từ số nhiều",
+      "shortExplanation": "Quy tắc thêm -s hoặc -es vào sau danh từ số ít; các biến đổi đuôi -y, -f/-fe và các trường hợp số nhiều bất quy tắc.",
+      "longExplanation": "Khi chuyển danh từ đếm được từ dạng số ít sang số nhiều trong tiếng Anh, ta áp dụng các quy tắc sau:\n• Quy tắc chung: Thêm '-s' vào sau danh từ (cat → cats, book → books).\n• Thêm '-es': Khi danh từ tận cùng bằng -s, -ss, -sh, -ch, -x, -o (box → boxes, watch → watches, tomato → tomatoes).\n• Tận cùng bằng 'nguyên âm + y': Thêm '-s' (boy → boys, day → days).\n• Tận cùng bằng 'phụ âm + y': Đổi y thành '-ies' (city → cities, baby → babies).\n• Tận cùng bằng '-f' hoặc '-fe': Đổi thành '-ves' (knife → knives, leaf → leaves, wife → wives).\n• Dạng số nhiều bất quy tắc: child → children, man → men, woman → women, tooth → teeth, foot → feet, mouse → mice, person → people, sheep → sheep, fish → fish.",
+      "formation": "Danh từ số ít + s / es / ies / ves (hoặc dạng biến đổi bất quy tắc)",
+      "examples": [
+        {
+          "translation": "một chiếc xe buýt → hai chiếc xe buýt"
+        },
+        {
+          "translation": "một đứa trẻ → nhiều đứa trẻ"
+        }
+      ]
+    },
+    "en_a1_15": {
+      "title": "Đại từ chỉ định: This / that / these / those",
+      "shortExplanation": "This/these dùng cho đối tượng ở gần; That/those dùng cho đối tượng ở xa; this/that đi với số ít, these/those đi với số nhiều.",
+      "longExplanation": "Các từ chỉ định trong tiếng Anh được dùng để chỉ rõ người hoặc vật dựa theo cự ly khoảng cách và số lượng:\n• 'this' (cái này / người này): Chỉ đối tượng số ít ở vị trí gần người nói.\n• 'these' (những cái này / những người này): Chỉ đối tượng số nhiều ở vị trí gần người nói.\n• 'that' (cái kia / người kia): Chỉ đối tượng số ít ở vị trí xa người nói hoặc sự việc vừa được nhắc đến.\n• 'those' (những cái kia / những người kia): Chỉ đối tượng số nhiều ở vị trí xa người nói.\nNgoài ra, chúng còn được dùng để chỉ thời gian: this week (tuần này), that year (năm đó).",
+      "formation": "This / That + Danh từ số ít (hoặc động từ số ít) | These / Those + Danh từ số nhiều (hoặc động từ số nhiều)",
+      "examples": [
+        {
+          "translation": "Đây là chiếc túi của tôi."
+        },
+        {
+          "translation": "Đôi giày đằng kia đắt tiền."
+        },
+        {
+          "translation": "Cái kia là cái gì vậy?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "en_a1_01": {
+      "title": "am / is / are - be动词的现在时形式",
+      "shortExplanation": "be动词现在时形式：I 搭配 am；he/she/it 搭配 is；you/we/they 搭配 are；意为“是、在”或表状态。",
+      "longExplanation": "be动词是英语中最核心且最基础的动词，常译为“是”、“在”或作为连系动词连接主语和表语（形容词、名词等）。在一般现在时中，be动词随主语的人称和数分为三种形式：\n• 'am'：仅用于第一人称单数 'I'。\n• 'is'：用于第三人称单数（he、she、it 以及单数可数名词或不可数名词）。\n• 'are'：用于第二人称及各复数人称（you、we、they 以及复数名词）。",
+      "formation": "主语 + am / is / are (+ 名词 / 形容词 / 介词短语)",
+      "examples": [
+        {
+          "translation": "我饿了。"
+        },
+        {
+          "translation": "她是一名医生。"
+        },
+        {
+          "translation": "他们准备好了。"
+        }
+      ]
+    },
+    "en_a1_02": {
+      "title": "be动词的否定句：am not / isn't / aren't",
+      "shortExplanation": "在be动词后直接加 'not' 构成否定；缩略形式为 isn't (= is not)、aren't (= are not)、I'm not。",
+      "longExplanation": "be动词的否定句构成非常规则，只需在 'am'、'is'、'are' 之后添加否定词 'not' 即可。在日常交际和口语中，通常使用缩略形式：\n• is not 缩写为 isn't\n• are not 缩写为 aren't\n• am not 在标准英语中没有 'amn't' 这种形式，而是与主语缩写为 I'm not（特殊例外）。",
+      "formation": "主语 + am / is / are + not (+ 名词 / 形容词)",
+      "examples": [
+        {
+          "translation": "我不是学生。"
+        },
+        {
+          "translation": "他不累。"
+        },
+        {
+          "translation": "我们还没准备好。"
+        }
+      ]
+    },
+    "en_a1_03": {
+      "title": "be动词的疑问句：Am I? / Is she? / Are they?",
+      "shortExplanation": "将be动词提至主语前构成一般疑问句；特殊疑问句为：疑问词 + be动词 + 主语。",
+      "longExplanation": "含有be动词的句子在变疑问句时，需将 'am / is / are' 置于主语之前（例如：She is → Is she?）。\n• 一般疑问句：Am / Is / Are + 主语...？\n• 特殊疑问句：特殊疑问词（Where, What, Who 等）+ am / is / are + 主语...？\n• 简略回答：Yes, 主语代词 + be动词. / No, 主语代词 + be动词 + not.",
+      "formation": "Am / Is / Are + 主语...? 或 疑问词 + am / is / are + 主语...?",
+      "examples": [
+        {
+          "translation": "你是学生吗？"
+        },
+        {
+          "translation": "这个贵吗？"
+        },
+        {
+          "translation": "他们在哪里？"
+        }
+      ]
+    },
+    "en_a1_04": {
+      "title": "简略回答：Yes, I am. / No, she isn't.",
+      "shortExplanation": "be动词问句的简略回答：肯定回答必须使用完整形式（如 Yes, I am；不可缩写为 Yes, I'm）；否定回答常使用缩略形式。",
+      "longExplanation": "回答以be动词开头的疑问句时，通常使用简略回答，结构为：Yes/No + 人称代词 + be动词。\n• 肯定回答：be动词必须用完整形式，绝对不可缩写（例如：Yes, I am. 正确 / Yes, I'm. 错误；Yes, she is. 正确 / Yes, she's. 错误）。\n• 否定回答：通常使用缩略形式（例如：No, I'm not. / No, she isn't. / No, they aren't.）。",
+      "formation": "肯定：Yes, + 代词 + am / is / are. | 否定：No, + 代词 + am not / isn't / aren't.",
+      "examples": [
+        {
+          "translation": "她准备好了吗？——是的，她准备好了。"
+        },
+        {
+          "translation": "他们是你的朋友吗？——不，他们不是。"
+        }
+      ]
+    },
+    "en_a1_05": {
+      "title": "不定冠词：a / an",
+      "shortExplanation": "置于单数可数名词前，表示泛指或初次提及；以辅音音素开头用 'a'，以元音音素开头用 'an'。",
+      "longExplanation": "'a' 和 'an' 是不定冠词，置于单数可数名词之前，用于泛指某类人或事物中的一个，或者初次提及的对象。选用 'a' 还是 'an' 取决于紧随其后的单词的发音（音素），而非拼写字母：\n• 'a' 用于以辅音音素开头的单词前：a book、a car、a university（首音为辅音/半元音 /juː/）。\n• 'an' 用于以元音音素开头的单词前：an apple、an orange、an hour（字母 h 不发音，以元音 /aʊ/ 开头）、an honest person。\n• 不可数名词及复数名词前不可使用 a/an。",
+      "formation": "a + 辅音音素开头的词 / an + 元音音素开头的词 + 单数可数名词",
+      "examples": [
+        {
+          "translation": "我看见花园里有一只猫。"
+        },
+        {
+          "translation": "她是一名工程师。"
+        },
+        {
+          "translation": "这花了一个小时。"
+        }
+      ]
+    },
+    "en_a1_06": {
+      "title": "定冠词：the",
+      "shortExplanation": "用于说话双方心知肚明的特定对象，或世上独一无二的事物、最高级等。",
+      "longExplanation": "'the' 是定冠词，可修饰单数名词、复数名词及不可数名词，表示特指。主要用法包括：\n1. 前文已经提到过的人或物：I saw a cat. The cat was black.\n2. 世界上独一无二的事物：the sun（太阳）、the moon（月亮）、the earth（地球）。\n3. 结合上下文或现场语境双方心知肚明的对象：Close the window, please.（请关上窗户）。\n4. 与形容词最高级和序数词连用：the best（最好的）、the first（第一）。",
+      "formation": "the + 名词（单数、复数或不可数）",
+      "examples": [
+        {
+          "translation": "我们看的那部电影太精彩了。"
+        },
+        {
+          "translation": "你能把盐递给我吗？"
+        }
+      ]
+    },
+    "en_a1_07": {
+      "title": "零冠词：不使用冠词的情况",
+      "shortExplanation": "专有名词、语言、运动项目，以及表示泛指的不可数名词或复数名词前通常不加冠词。",
+      "longExplanation": "在英语中，名词前不加任何冠词（a, an, the）的现象称为零冠词。主要情形包括：\n• 专有名词（人名、城市名、国名）：John、London、Russia、China。\n• 语言名称：English、Spanish、Chinese。\n• 球类运动与棋类游戏：football、basketball、chess。\n• 泛指的饮食与物质名词：I love coffee, She drinks milk.\n• 泛指的抽象概念：Life is short. Love is blind.\n• 泛指某一类人或事物的复数名词：Dogs are friendly.",
+      "formation": "动词 / 介词 + 名词（不加冠词）",
+      "examples": [
+        {
+          "translation": "她说西班牙语。"
+        },
+        {
+          "translation": "他每天都打篮球。"
+        }
+      ]
+    },
+    "en_a1_08": {
+      "title": "一般现在时：肯定句",
+      "shortExplanation": "表示经常性习惯、普遍真理或客观事实；主语为第三人称单数时动词需加 -s 或 -es。",
+      "longExplanation": "一般现在时（Present Simple）用于表示经常性、规律性的动作，客观事实以及自然规律。\n• 动词形式规则：\n- 主语为 I / you / we / they 或复数名词：动词使用原形。\n- 主语为 he / she / it 或单数名词（第三人称单数）：动词末尾加 '-s' 或 '-es'。\n• 动词加 -s / -es 的拼写规则：\n- 大多数动词：直接加 '-s'（works, plays）。\n- 以 -o, -ch, -sh, -s, -ss, -x 结尾的动词：加 '-es'（goes, watches, washes）。\n- 以“辅音字母 + y”结尾的动词：变 y 为 '-ies'（study → studies, try → tries）。",
+      "formation": "主语 (I/you/we/they) + 动词原形 | 主语 (he/she/it) + 动词原形加 -s/-es",
+      "examples": [
+        {
+          "translation": "我每天早晨都喝咖啡。"
+        },
+        {
+          "translation": "她在一家医院工作。"
+        },
+        {
+          "translation": "地球绕着太阳运转。"
+        }
+      ]
+    },
+    "en_a1_09": {
+      "title": "一般现在时：否定句 (don't / doesn't)",
+      "shortExplanation": "借助助动词 'don't' 或 'doesn't' 后接动词原形构成否定句。",
+      "longExplanation": "在一般现在时中，实义动词的否定句需要借助助动词 do / does 与 not 结合，后接动词原形：\n• 主语为 I / you / we / they 时：主语 + don't (do not) + 动词原形。\n• 主语为 he / she / it（第三人称单数）时：主语 + doesn't (does not) + 动词原形。\n特别注意：在 doesn't 之后，动词必须还原为原形，不能再加 -s 或 -es（正确：He doesn't like / 错误：He doesn't likes）。",
+      "formation": "主语 (I/you/we/they) + don't + 动词原形 | 主语 (he/she/it) + doesn't + 动词原形",
+      "examples": [
+        {
+          "translation": "我不吃肉。"
+        },
+        {
+          "translation": "他不会说法语。"
+        },
+        {
+          "translation": "他们不在这里工作。"
+        }
+      ]
+    },
+    "en_a1_10": {
+      "title": "一般现在时：疑问句 (Do you? / Does she?)",
+      "shortExplanation": "将助动词 Do 或 Does 提至主语前；特殊疑问句为：疑问词 + do/does + 主语 + 动词原形。",
+      "longExplanation": "一般现在时中对实义动词提问时，将助动词 Do 或 Does 置于主语之前，谓语动词使用原形：\n• 一般疑问句：\n- Do + I/you/we/they + 动词原形...？\n- Does + he/she/it + 动词原形...？\n• 特殊疑问句：特殊疑问词（Where, What, When 等）+ do / does + 主语 + 动词原形...？",
+      "formation": "Do / Does + 主语 + 动词原形...? 或 疑问词 + do / does + 主语 + 动词原形...?",
+      "examples": [
+        {
+          "translation": "你会说俄语吗？"
+        },
+        {
+          "translation": "她住在附近吗？"
+        },
+        {
+          "translation": "你在哪里工作？"
+        }
+      ]
+    },
+    "en_a1_11": {
+      "title": "状态动词：通常不用于进行时的动词",
+      "shortExplanation": "表示心理状态、情感或感官的动词通常不用于进行时（使用 'I know'，不可用 'I am knowing'）。",
+      "longExplanation": "状态动词（Stative verbs）用于表示某种持续的状态、知觉、情感或所有关系，而非具体的动作。这类动词通常不能用于现在进行时或任何进行时态：\n• 认知与观点：know（知道）、believe（相信）、understand（理解）、remember（记得）、forget（忘记）。\n• 情感与愿望：love（爱）、hate（讨厌）、like（喜欢）、want（想要）、need（需要）、prefer（更喜欢）。\n• 感官与知觉：see（看见）、hear（听见）、smell（闻起来）、taste（尝起来）。\n• 存在与所有：belong（属于）、contain（包含）、seem（似乎）、appear（显得）。",
+      "formation": "主语 + 状态动词（使用一般时态，不用进行时态 -ing 形式）",
+      "examples": [
+        {
+          "translation": "我理解你的意思。（不可说：I am understanding）"
+        },
+        {
+          "translation": "她很喜欢巧克力。（不可说：is loving）"
+        }
+      ]
+    },
+    "en_a1_12": {
+      "title": "人称代词：I, you, he, she, it, we, they",
+      "shortExplanation": "英语句子必须有明确的主语；区分作主语的主格（I, you, he...）与作宾语的宾格（me, you, him...）。",
+      "longExplanation": "在英语中，完整的陈述句必须包含明确的主语，不能随意省略代词主语。\n• 主格代词（在句中作主语，置于动词前）：I（我）、you（你/你们）、he（他）、she（她）、it（它）、we（我们）、they（他们）。\n• 宾格代词（作动词或介词的宾语，置于动词或介词后）：me、you、him、her、it、us、them（例如：Tell him, Listen to me, Help us）。",
+      "formation": "主格代词 + 动词 | 动词 / 介词 + 宾格代词",
+      "examples": [
+        {
+          "translation": "她是一名教师。"
+        },
+        {
+          "translation": "把真相告诉他。"
+        },
+        {
+          "translation": "你能帮我一下吗？"
+        }
+      ]
+    },
+    "en_a1_13": {
+      "title": "形容词性物主代词：my, your, his, her, its, our, their",
+      "shortExplanation": "置于名词前表示所属关系（“我的”、“你的”等）；形式不随所修饰名词的单复数改变。",
+      "longExplanation": "形容词性物主代词用于指明物品的归属，必须放在名词前面使用：\n• my（我的）、your（你的/你们的）、his（他的）、her（她的）、its（它的）、our（我们的）、their（他们的）。\n• 重要辨析：区分 'its'（物主代词，无撇号）与 'it's'（it is 或 it has 的缩写，有撇号）。\n• 形容词性物主代词本身没有单复数变化：my friend（我的一个朋友）/ my friends（我的朋友们）中 'my' 保持不变。",
+      "formation": "形容词性物主代词 (my / your / his / her / its / our / their) + 名词",
+      "examples": [
+        {
+          "translation": "这是我的手机。"
+        },
+        {
+          "translation": "他们的狗很可爱。"
+        },
+        {
+          "translation": "那只猫弄伤了它的爪子。"
+        }
+      ]
+    },
+    "en_a1_14": {
+      "title": "名词复数形式",
+      "shortExplanation": "规则变化在词尾加 -s 或 -es；另有 -y、-f/-fe 结尾的变化及不规则复数变化形式。",
+      "longExplanation": "英语可数名词表示两个或两个以上时须使用复数形式：\n• 一般规则：在词尾直接加 '-s'（cat → cats、book → books）。\n• 以 -s, -ss, -sh, -ch, -x, -o 结尾：加 '-es'（box → boxes、watch → watches、tomato → tomatoes）。\n• “元音字母 + y”结尾：直接加 '-s'（boy → boys、day → days）。\n• “辅音字母 + y”结尾：变 y 为 '-ies'（city → cities、baby → babies）。\n• 以 -f 或 -fe 结尾：变 -f/-fe 为 '-ves'（knife → knives、leaf → leaves、wife → wives）。\n• 常见不规则复数：child → children、man → men、woman → women、tooth → teeth、foot → feet、mouse → mice、person → people、sheep → sheep、fish → fish。",
+      "formation": "单数名词 + s / es / ies / ves（或不规则复数形式）",
+      "examples": [
+        {
+          "translation": "一辆公共汽车 → 两辆公共汽车"
+        },
+        {
+          "translation": "一个孩子 → 许多孩子"
+        }
+      ]
+    },
+    "en_a1_15": {
+      "title": "指示代词：This / that / these / those",
+      "shortExplanation": "this/these 指代较近的人或事物；that/those 指代较远的人或事物；this/that 接单数，these/those 接复数。",
+      "longExplanation": "指示代词用于指代特定的人或事物，依据空间或时间上的远近以及数量的单复数进行区分：\n• 'this'（这，这个）：指代距离说话人较近的单数对象。\n• 'these'（这些）：指代距离说话人较近的复数对象。\n• 'that'（那，那个）：指代距离说话人较远的单数对象，或前文提及的事物。\n• 'those'（那些）：指代距离说话人较远的复数对象。\n在时间表达中也经常使用：this week（本周）、that year（那一年）。",
+      "formation": "This / That + 单数名词（或单数动词）| These / Those + 复数名词（或复数动词）",
+      "examples": [
+        {
+          "translation": "这是我的包。"
+        },
+        {
+          "translation": "那些鞋子很贵。"
+        },
+        {
+          "translation": "那是什么？"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "en_a1_01": {
+      "title": "am / is / are - be動詞の現在形",
+      "shortExplanation": "be動詞の現在形：Iにはam、he/she/itにはis、you/we/theyにはareを用い、「〜である」「〜にいる・ある」を表します。",
+      "longExplanation": "be動詞は英語で最も基本的かつ重要な動詞であり、主語と名詞・形容詞を結んで状態を表したり、「〜である」「〜にいる・ある」という意味を表します。現在形では、主語の人称や数に応じて3つの形を使い分けます：\n• 'am'：一人称単数の 'I' のみに接続します。\n• 'is'：三人称単数（he、she、it、単数名詞、不可算名詞）に接続します。\n• 'are'：二人称および複数（you、we、they、複数名詞）に接続します。",
+      "formation": "主語 + am / is / are (+ 名詞 / 形容詞 / 前置詞句)",
+      "examples": [
+        {
+          "translation": "私はお腹が空いています。"
+        },
+        {
+          "translation": "彼女は医師です。"
+        },
+        {
+          "translation": "彼らは準備ができています。"
+        }
+      ]
+    },
+    "en_a1_02": {
+      "title": "be動詞の否定文：am not / isn't / aren't",
+      "shortExplanation": "be動詞の直後に 'not' を置いて否定を表します。短縮形は isn't、aren't、I'm not です。",
+      "longExplanation": "be動詞の否定文を作るには、'am'、'is'、'are' の直後に否定語の 'not' を置きます。会話や親しい間柄の文章では短縮形が広く用いられます：\n• is not → isn't\n• are not → aren't\n• am not は 'amn't' とは短縮せず、主語と短縮して 'I'm not' とします（例外的な重要ルール）。",
+      "formation": "主語 + am / is / are + not (+ 名詞 / 形容詞)",
+      "examples": [
+        {
+          "translation": "私は学生ではありません。"
+        },
+        {
+          "translation": "彼は疲れていません。"
+        },
+        {
+          "translation": "私たちは準備ができていません。"
+        }
+      ]
+    },
+    "en_a1_03": {
+      "title": "be動詞の疑問文：Am I? / Is she? / Are they?",
+      "shortExplanation": "be動詞を主語の前に置いて疑問文を作ります。疑問詞がある場合は「疑問詞 + be動詞 + 主語」となります。",
+      "longExplanation": "be動詞を含む文を疑問文にするには、be動詞（am / is / are）を主語の前に移動させます（例：She is → Is she?）。\n• 一般疑問文（Yes/No疑問文）：Am / Is / Are + 主語...?\n• 疑問詞疑問文：疑問詞（Where, What, Who など）+ am / is / are + 主語...?\n• 短縮の答え方：Yes, 代名詞 + be動詞. / No, 代名詞 + be動詞 + not.",
+      "formation": "Am / Is / Are + 主語...? または 疑問詞 + am / is / are + 主語...?",
+      "examples": [
+        {
+          "translation": "あなたは学生ですか？"
+        },
+        {
+          "translation": "それは高価ですか？"
+        },
+        {
+          "translation": "彼らはどこにいますか？"
+        }
+      ]
+    },
+    "en_a1_04": {
+      "title": "短い返答：Yes, I am. / No, she isn't.",
+      "shortExplanation": "be動詞の質問に対する短い答え：肯定文では短縮形を使えず完全な形で答えます（Yes, I am は可、Yes, I'm は不可）。否定文では短縮形が使われます。",
+      "longExplanation": "be動詞のYes/No疑問文に簡潔に答える場合、代名詞とbe動詞を組み合わせて返答します。\n• 肯定の返答（Yes）：be動詞は必ず完全な形で言い、短縮形は使えません（正：Yes, I am. / 誤：Yes, I'm.；正：Yes, she is. / 誤：Yes, she's.）。\n• 否定の返答（No）：通常は短縮形を用います（例：No, I'm not. / No, she isn't. / No, they aren't.）。",
+      "formation": "肯定：Yes, + 代名詞 + am / is / are. | 否定：No, + 代名詞 + am not / isn't / aren't.",
+      "examples": [
+        {
+          "translation": "彼女は準備ができていますか？——はい、できています。"
+        },
+        {
+          "translation": "彼らはあなたの友達ですか？——いいえ、違います。"
+        }
+      ]
+    },
+    "en_a1_05": {
+      "title": "不定冠詞：a / an",
+      "shortExplanation": "単数可算名詞の前に置き、特定されていない1つのものを表します。子音の音の前には 'a'、母音の音の前には 'an' を用います。",
+      "longExplanation": "'a' と 'an' は不定冠詞と呼ばれ、不特定の単数可算名詞を初めて言及する際にその前に置かれます。どちらを使うかは綴りの文字ではなく、直後の単語の「発音（音）」によって決まります：\n• 'a'：子音の音で始まる単語の前（例：a book, a car, a university ※頭文字の発音は半母音 /juː/ で子音扱い）。\n• 'an'：母音の音で始まる単語の前（例：an apple, an hour ※hが無音で母音 /aʊ/ から発音される、an honest man）。\n• 複数名詞や数えられない名詞（不可算名詞）の前にはつけられません。",
+      "formation": "a + 子音の音で始まる語 / an + 母音の音で始まる語 + 単数可算名詞",
+      "examples": [
+        {
+          "translation": "私は庭で1匹の猫を見かけました。"
+        },
+        {
+          "translation": "彼女はエンジニアです。"
+        },
+        {
+          "translation": "1時間かかりました。"
+        }
+      ]
+    },
+    "en_a1_06": {
+      "title": "定冠詞：the",
+      "shortExplanation": "話し手と聞き手双方がどれのことか特定できる名詞の前に置きます。唯一無二のものや最上級などにも用いられます。",
+      "longExplanation": "'the' は定冠詞と呼ばれ、単数名詞・複数名詞・不可算名詞のいずれにも接続でき、「その〜」と共通認識できる特定の対象を指します。主な使いどころ：\n1. 前にすでに述べられた名詞を再び指すとき：I saw a cat. The cat was black.\n2. 世の中に1つしか存在しないもの：the sun（太陽）、the moon（月）、the earth（地球）。\n3. その場の文脈や状況からどの対象か明らかなとき：Close the window, please.（窓を閉めてください）。\n4. 形容詞の最上級や序数詞とともに用いるとき：the best、the first。",
+      "formation": "the + 名詞（単数・複数・不可算）",
+      "examples": [
+        {
+          "translation": "私たちが見た映画は素晴らしかったです。"
+        },
+        {
+          "translation": "お塩を取っていただけますか？"
+        }
+      ]
+    },
+    "en_a1_07": {
+      "title": "無冠詞：冠詞をつけない用法",
+      "shortExplanation": "固有名詞、言語名、スポーツ、一般的な総称を表す名詞などの前には a、an、the をつけません。",
+      "longExplanation": "英語では、名詞の前に冠詞（a, an, the）を置かない「無冠詞」のルールがあります。主な場合は以下の通りです：\n• 固有名詞（人名、都市名、国名）：John, London, Russia, Japan。\n• 言語名：English, Spanish, Japanese。\n• スポーツ競技やゲーム：football, basketball, chess。\n• 一般論として語る飲食物や物質：I love coffee, She drinks tea.\n• 抽象概念の総称：Life is short. Love is blind.\n• 総称を表す複数名詞：Dogs are friendly（犬というものは人懐っこい動物だ）。",
+      "formation": "動詞 / 前置詞 + 名詞（冠詞なし）",
+      "examples": [
+        {
+          "translation": "彼女はスペイン語を話します。"
+        },
+        {
+          "translation": "彼は毎日バスケットボールをします。"
+        }
+      ]
+    },
+    "en_a1_08": {
+      "title": "現在形：肯定文",
+      "shortExplanation": "日頃の習慣や普遍の真理、現在の事実を表します。主語が三人称単数の場合は動詞に -s または -es をつけます。",
+      "longExplanation": "現在形（Present Simple）は、日頃の習慣、定期的な動作、普遍の真理や確定した予定を表す時制です。\n• 動詞の形のルール：\n- 主語が I / you / we / they や複数名詞の場合：動詞の原形をそのまま使用します。\n- 主語が he / she / it や単数名詞（三人称単数）の場合：動詞の末尾に '-s' または '-es' をつけます（三単現のs）。\n• -s / -es のつけ方：\n- 大半の動詞：語尾に '-s' を追加（works, plays）。\n- 語尾が -o, -ch, -sh, -s, -ss, -x の動詞：'-es' を追加（goes, watches, washes）。\n- 「子音字 ＋ y」で終わる動詞：y を i に変えて '-es'（study → studies, try → tries）。",
+      "formation": "主語 (I/you/we/they) + 動詞の原形 | 主語 (he/she/it) + 動詞語尾に -s/-es",
+      "examples": [
+        {
+          "translation": "私は毎朝コーヒーを飲みます。"
+        },
+        {
+          "translation": "彼女は病院で働いています。"
+        },
+        {
+          "translation": "地球は太陽の周りを回っています。"
+        }
+      ]
+    },
+    "en_a1_09": {
+      "title": "現在形：否定文 (don't / doesn't)",
+      "shortExplanation": "助動詞 'don't' または 'doesn't' の直後に動詞の原形を続けて否定文を作ります。",
+      "longExplanation": "一般動詞の現在形を否定文にする際は、助動詞 do / does に not をつけた短縮形（don't / doesn't）を動詞の前に置き、動詞は必ず原形にします：\n• 主語が I / you / we / they の場合：don't (do not) + 動詞の原形。\n• 主語が he / she / it（三人称単数）の場合：doesn't (does not) + 動詞の原形。\n重要な注意点：doesn't を用いた場合、動詞の語尾にあった -s や -es は不要となり、必ず原形に戻ります（正：He doesn't like / 誤：He doesn't likes）。",
+      "formation": "主語 (I/you/we/they) + don't + 動詞の原形 | 主語 (he/she/it) + doesn't + 動詞の原形",
+      "examples": [
+        {
+          "translation": "私は肉を食べません。"
+        },
+        {
+          "translation": "彼はフランス語を話しません。"
+        },
+        {
+          "translation": "彼らはここでは働いていません。"
+        }
+      ]
+    },
+    "en_a1_10": {
+      "title": "現在形：疑問文 (Do you? / Does she?)",
+      "shortExplanation": "助動詞 Do または Does を主語の前に置き、動詞は原形にします。疑問詞疑問文は「疑問詞 + do/does + 主語 + 動詞の原形」です。",
+      "longExplanation": "一般動詞の現在形を疑問文にする際は、助動詞 Do または Does を主語の前に置き、本動詞は原形にします：\n• Yes/No疑問文：\n- Do + I/you/we/they + 動詞の原形...?\n- Does + he/she/it + 動詞の原形...?\n• 疑問詞疑問文：疑問詞（Where, What, When など）+ do / does + 主語 + 動詞の原形...?",
+      "formation": "Do / Does + 主語 + 動詞の原形...? または 疑問詞 + do / does + 主語 + 動詞の原形...?",
+      "examples": [
+        {
+          "translation": "あなたはロシア語を話しますか？"
+        },
+        {
+          "translation": "彼女は近くに住んでいますか？"
+        },
+        {
+          "translation": "あなたはどこで働いていますか？"
+        }
+      ]
+    },
+    "en_a1_11": {
+      "title": "状態動詞：進行形にできない動詞",
+      "shortExplanation": "状態や感情、思考、知覚を表す動詞は原則として進行形（-ing）にできません（'I know' と言い、'I am knowing' とは言いません）。",
+      "longExplanation": "状態動詞（Stative verbs）は、具体的な動作ではなく、一定期間継続する状態、心理活動、知覚、所有などを表す動詞です。これらの動詞は原則として現在進行形などの進行形（be + -ing）にできません：\n• 思考・認知：know（知っている）、believe（信じる）、understand（理解している）、remember（覚えている）、forget（忘れる）。\n• 感情・願望：love（愛している）、hate（嫌う）、like（好む）、want（欲しい）、need（必要とする）、prefer（〜の方を好む）。\n• 知覚・感覚：see（見える）、hear（聞こえる）、smell（匂いがする）、taste（味がする）。\n• 存在・所属：belong（所属する）、contain（含む）、seem（〜のように思える）。",
+      "formation": "主語 + 状態動詞（基本時制で用い、進行形 -ing にはしない）",
+      "examples": [
+        {
+          "translation": "あなたの言うことが分かります。（誤：I am understanding）"
+        },
+        {
+          "translation": "彼女はチョコレートが大好きです。（誤：is loving）"
+        }
+      ]
+    },
+    "en_a1_12": {
+      "title": "人称代名詞：I, you, he, she, it, we, they",
+      "shortExplanation": "英語では主語を省略できません。主語となる主格（I, you, he...）と、動詞や前置詞の目的語となる目的格（me, you, him...）を区別します。",
+      "longExplanation": "日本語と異なり、英語の文では命令文などを除いて必ず明示的な主語が必要です（'I' などの主語を省略することはできません）。人称代名詞には主格と目的格の使い分けがあります：\n• 主格（動詞の前に置き、文の主語になる）：I（私）、you（あなた/あなたたち）、he（彼）、she（彼女）、it（それ）、we（私たち）、they（彼ら/それら）。\n• 目的格（動詞や前置詞の直後に置き、目的語になる）：me、you、him、her、it、us、them（例：Tell him, Listen to me, Can you help us?）。",
+      "formation": "主格代名詞 + 動詞 | 動詞 / 前置詞 + 目的格代名詞",
+      "examples": [
+        {
+          "translation": "彼女は教師です。"
+        },
+        {
+          "translation": "彼に真実を話しなさい。"
+        },
+        {
+          "translation": "私を手伝っていただけますか？"
+        }
+      ]
+    },
+    "en_a1_13": {
+      "title": "所有格の形容詞：my, your, his, her, its, our, their",
+      "shortExplanation": "名詞の直前に置いて「〜の」という所有を表します。後ろの名詞が単数か複数かによって形が変わることはありません。",
+      "longExplanation": "所有格の形容詞（所有限定詞）は、名詞の前に置いて所有者や所属関係を表します：\n• my（私の）、your（あなたの/あなたたちの）、his（彼の）、her（彼女の）、its（それの）、our（私たちの）、their（彼らの/それらの）。\n• 重要な区別：所有を表す 'its'（アポストロフィなし）と、it is の短縮形である 'it's'（アポストロフィあり）を混同しないようにしましょう。\n• 後続の名詞が単数でも複数でも形は変わりません（例：my friend / my friends どちらも同じ 'my'）。",
+      "formation": "所有格形容詞 (my / your / his / her / its / our / their) + 名詞",
+      "examples": [
+        {
+          "translation": "これは私のスマートフォンです。"
+        },
+        {
+          "translation": "彼らの犬は可愛いです。"
+        },
+        {
+          "translation": "その猫は足を怪我しました。"
+        }
+      ]
+    },
+    "en_a1_14": {
+      "title": "名詞の複数形",
+      "shortExplanation": "規則変化では語尾に -s または -es をつけます。-y や -f/-fe で終わる単語の変化や、不規則に変化する名詞もあります。",
+      "longExplanation": "英語の数えられる名詞（可算名詞）が2つ以上ある場合、複数形にします：\n• 基本ルール：名詞の語尾に '-s' をつける（cat → cats, book → books）。\n• 語尾が -s, -ss, -sh, -ch, -x, -o の場合：'-es' をつける（box → boxes, watch → watches, tomato → tomatoes）。\n• 「母音字 ＋ y」で終わる場合：そのまま '-s' をつける（boy → boys, day → days）。\n• 「子音字 ＋ y」で終わる場合：y を i に変えて '-es'（city → cities, baby → babies）。\n• 語尾が -f または -fe の場合：-ves に変える（knife → knives, leaf → leaves, wife → wives）。\n• 代表的な不規則変化名詞：child → children, man → men, woman → women, tooth → teeth, foot → feet, mouse → mice, person → people, sheep → sheep, fish → fish。",
+      "formation": "単数名詞 + s / es / ies / ves（または不規則変化形）",
+      "examples": [
+        {
+          "translation": "バス1台 → バス2台"
+        },
+        {
+          "translation": "子ども1人 → たくさんの子どもたち"
+        }
+      ]
+    },
+    "en_a1_15": {
+      "title": "指示代名詞：This / that / these / those",
+      "shortExplanation": "話し手に近いものを指す this/these（これ/これら）と、遠いものを指す that/those（あれ/あれら）。単数には this/that、複数には these/those を用います。",
+      "longExplanation": "指示代名詞は、話し手からの距離（空間的または時間的）と数量（単数か複数か）に応じて使い分けます：\n• 'this'（これ、この人）：話し手の近くにある単数の対象。\n• 'these'（これら、この人たち）：話し手の近くにある複数の対象。\n• 'that'（あれ、それ、あの人）：話し手から離れた位置にある単数の対象、または既出の内容。\n• 'those'（あれら、それら、あの人たち）：話し手から離れた位置にある複数の対象。\nまた、時間的な近さや遠さを表す際にも用いられます：this week（今週）、that year（あの年）。",
+      "formation": "This / That + 単数名詞（または単数動詞）| These / Those + 複数名詞（または複数動詞）",
+      "examples": [
+        {
+          "translation": "これは私のカバンです。"
+        },
+        {
+          "translation": "あの靴は高いです。"
+        },
+        {
+          "translation": "あれは何ですか？"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "en_a1_01": {
+      "title": "am / is / are - be동사의 현재형",
+      "shortExplanation": "be동사의 현재형: I에는 am, he/she/it에는 is, you/we/they에는 are를 쓰며, '~이다', '~에 있다'를 나타냅니다.",
+      "longExplanation": "be동사는 영어에서 가장 기본적이고 핵심적인 동사로, 주어와 명사 또는 형용사를 연결하여 상태를 나타내거나 '~이다', '~에 있다'라는 의미를 나타냅니다. 현재 시제에서는 주어의 인칭과 수에 따라 세 가지 형태로 활용합니다:\n• 'am': 1인칭 단수인 'I'에만 쓰입니다.\n• 'is': 3인칭 단수(he, she, it, 단수 가산명사, 불가산명사)에 쓰입니다.\n• 'are': 2인칭 및 복수 주어(you, we, they, 복수 명사)에 쓰입니다.",
+      "formation": "주어 + am / is / are (+ 명사 / 형용사 / 전치사구)",
+      "examples": [
+        {
+          "translation": "배가 고파요."
+        },
+        {
+          "translation": "그녀는 의사입니다."
+        },
+        {
+          "translation": "그들은 준비가 되었습니다."
+        }
+      ]
+    },
+    "en_a1_02": {
+      "title": "be동사의 부정문: am not / isn't / aren't",
+      "shortExplanation": "be동사 바로 뒤에 'not'을 붙여 부정문을 만듭니다. 축약형은 isn't, aren't, I'm not입니다.",
+      "longExplanation": "be동사의 부정문은 'am', 'is', 'are' 바로 뒤에 부정어 'not'을 붙여 만듭니다. 일상 대화나 편안한 문체에서는 주로 축약형을 사용합니다:\n• is not → isn't\n• are not → aren't\n• am not은 'amn't'로 줄이지 않고, 주어와 결합하여 'I'm not'으로 축약합니다(예외적인 주요 규칙).",
+      "formation": "주어 + am / is / are + not (+ 명사 / 형용사)",
+      "examples": [
+        {
+          "translation": "저는 학생이 아닙니다."
+        },
+        {
+          "translation": "그는 피곤하지 않습니다."
+        },
+        {
+          "translation": "우리는 준비되지 않았습니다."
+        }
+      ]
+    },
+    "en_a1_03": {
+      "title": "be동사의 의문문: Am I? / Is she? / Are they?",
+      "shortExplanation": "be동사를 주어 앞으로 도치시켜 의문문을 만듭니다. 의문사가 있는 경우 '의문사 + be동사 + 주어' 순서로 씁니다.",
+      "longExplanation": "be동사가 포함된 문장을 의문문으로 만들 때는 be동사(am / is / are)를 주어 앞으로 이동시킵니다(예: She is → Is she?).\n• 일반의문문(Yes/No 의문문): Am / Is / Are + 주어...?\n• 의문사 의문문: 의문사(Where, What, Who 등) + am / is / are + 주어...?\n• 간결한 대답: Yes, 대명사 주어 + be동사. / No, 대명사 주어 + be동사 + not.",
+      "formation": "Am / Is / Are + 주어...? 또는 의문사 + am / is / are + 주어...?",
+      "examples": [
+        {
+          "translation": "당신은 학생입니까?"
+        },
+        {
+          "translation": "그것은 비쌉니까?"
+        },
+        {
+          "translation": "그들은 어디에 있습니까?"
+        }
+      ]
+    },
+    "en_a1_04": {
+      "title": "짧은 대답: Yes, I am. / No, she isn't.",
+      "shortExplanation": "be동사 의문문에 대한 짧은 대답: 긍정 대답에서는 축약형을 쓸 수 없으며 온전한 형태로 써야 합니다(Yes, I am O / Yes, I'm X). 부정 대답에서는 축약형을 씁니다.",
+      "longExplanation": "be동사로 묻는 질문에 짧게 답할 때는 'Yes/No + 인칭대명사 + be동사' 형태를 취합니다.\n• 긍정 대답(Yes): 반드시 be동사의 완전한 형태를 사용해야 하며, 절대 축약형을 쓸 수 없습니다(옳음: Yes, I am. / 틀림: Yes, I'm.; 옳음: Yes, she is. / 틀림: Yes, she's.).\n• 부정 대답(No): 일반적으로 축약형을 씁니다(예: No, I'm not. / No, she isn't. / No, they aren't.).",
+      "formation": "긍정: Yes, + 대명사 + am / is / are. | 부정: No, + 대명사 + am not / isn't / aren't.",
+      "examples": [
+        {
+          "translation": "그녀는 준비가 되었나요? — 네, 되었습니다."
+        },
+        {
+          "translation": "그들은 당신의 친구들인가요? — 아니요, 아닙니다."
+        }
+      ]
+    },
+    "en_a1_05": {
+      "title": "부정관사: a / an",
+      "shortExplanation": "셀 수 있는 단수 명사 앞에 붙여 정해지지 않은 하나를 나타냅니다. 자음 소리 앞에는 'a', 모음 소리 앞에는 'an'을 씁니다.",
+      "longExplanation": "'a'와 'an'은 부정관사로서, 특정되지 않은 셀 수 있는 단수 명사를 처음 언급할 때 사용합니다. 'a'와 'an'의 구별은 철자 표기가 아닌 바로 뒤에 오는 단어의 '첫 발음(음소)'에 의해 결정됩니다:\n• 'a': 자음 소리로 시작하는 단어 앞(예: a book, a car, a university - 철자는 모음이지만 발음이 반모음/자음인 /juː/로 시작).\n• 'an': 모음 소리로 시작하는 단어 앞(예: an apple, an hour - h가 묵음이라 모음 /aʊ/로 시작, an honest man).\n• 복수 명사나 셀 수 없는 명사(불가산명사) 앞에는 쓰지 않습니다.",
+      "formation": "a + 자음 소리로 시작하는 단어 / an + 모음 소리로 시작하는 단어 + 셀 수 있는 단수 명사",
+      "examples": [
+        {
+          "translation": "정원에서 고양이 한 마리를 보았습니다."
+        },
+        {
+          "translation": "그녀는 엔지니어입니다."
+        },
+        {
+          "translation": "한 시간 걸렸습니다."
+        }
+      ]
+    },
+    "en_a1_06": {
+      "title": "정관사: the",
+      "shortExplanation": "대화하는 사람 모두가 무엇인지 알고 있는 특정한 대상을 가리킬 때 명사 앞에 붙입니다. 세상에 유일한 것, 최상급 등에도 쓰입니다.",
+      "longExplanation": "'the'는 정관사로서 단수 명사, 복수 명사, 셀 수 없는 명사 앞에 두루 쓰이며, 이미 특정된 대상('그 ~')을 가리킵니다. 주요 용법:\n1. 앞에서 이미 언급된 대상을 다시 가리킬 때: I saw a cat. The cat was black.\n2. 세상에 하나밖에 없는 유일한 대상: the sun(태양), the moon(달), the earth(지구).\n3. 대화 맥락이나 상황상 어느 것인지 알 수 있을 때: Close the window, please.(창문 좀 닫아주세요).\n4. 형용사의 최상급이나 서수 앞: the best(최고의), the first(첫 번째의).",
+      "formation": "the + 명사(단수, 복수, 불가산 명사)",
+      "examples": [
+        {
+          "translation": "우리가 본 영화는 정말 훌륭했습니다."
+        },
+        {
+          "translation": "소금 좀 건네주시겠어요?"
+        }
+      ]
+    },
+    "en_a1_07": {
+      "title": "무관사: 관사를 쓰지 않는 경우",
+      "shortExplanation": "고유명사, 언어, 스포츠, 일반적인 총칭을 나타내는 명사 앞에는 a, an, the를 붙이지 않습니다.",
+      "longExplanation": "영어에서는 명사 앞에 관사(a, an, the)를 쓰지 않는 '무관사' 용법이 있습니다. 대표적인 경우는 다음과 같습니다:\n• 고유명사(인명, 도시, 국가 이름): John, London, Russia, Korea.\n• 언어 이름: English, Spanish, Korean.\n• 구기 종목 및 스포츠, 게임: football, basketball, chess.\n• 일반적인 의미의 음식 및 음료: I love coffee, She drinks milk.\n• 막연한 총칭으로서의 추상 개념: Life is short. Love is blind.\n• 종류 전체를 총칭하는 복수 명사: Dogs are friendly(개는 친근한 동물이다).",
+      "formation": "동사 / 전치사 + 명사(관사 없음)",
+      "examples": [
+        {
+          "translation": "그녀는 스페인어를 합니다."
+        },
+        {
+          "translation": "그는 매일 농구를 합니다."
+        }
+      ]
+    },
+    "en_a1_08": {
+      "title": "단순 현재 시제: 긍정문",
+      "shortExplanation": "일상적인 습관, 보편적 진리, 현재의 사실을 나타냅니다. 3인칭 단수가 주어일 때 동사 끝에 -s 또는 -es를 붙입니다.",
+      "longExplanation": "단순 현재 시제(Present Simple)는 일상적인 습관, 반복되는 일과, 과학적 사실이나 불변의 진리를 나타낼 때 씁니다.\n• 동사 형태 활용:\n- 주어가 I / you / we / they 및 복수 명사일 때: 동사원형을 그대로 씁니다.\n- 주어가 he / she / it 및 단수 명사(3인칭 단수)일 때: 동사원형 끝에 '-s' 또는 '-es'를 붙입니다.\n• -s / -es 표기 규칙:\n- 대부분의 동사: '-s'를 붙임(works, plays).\n- -o, -ch, -sh, -s, -ss, -x로 끝나는 동사: '-es'를 붙임(goes, watches, washes).\n- '자음 + y'로 끝나는 동사: y를 i로 고치고 '-es'를 붙임(study → studies, try → tries).",
+      "formation": "주어 (I/you/we/they) + 동사원형 | 주어 (he/she/it) + 동사원형에 -s/-es",
+      "examples": [
+        {
+          "translation": "저는 매일 아침 커피를 마십니다."
+        },
+        {
+          "translation": "그녀는 병원에서 일합니다."
+        },
+        {
+          "translation": "지구는 태양 주위를 돕니다."
+        }
+      ]
+    },
+    "en_a1_09": {
+      "title": "단순 현재 시제: 부정문 (don't / doesn't)",
+      "shortExplanation": "조동사 'don't' 또는 'doesn't' 뒤에 동사원형을 붙여 부정문을 만듭니다.",
+      "longExplanation": "일반동사의 현재 시제 부정문은 조동사 do / does 뒤에 not을 붙인 형태(don't / doesn't)를 사용하며, 뒤따르는 본동사는 반드시 동사원형이어야 합니다:\n• 주어가 I / you / we / they일 때: don't (do not) + 동사원형.\n• 주어가 he / she / it(3인칭 단수)일 때: doesn't (does not) + 동사원형.\n주의할 점: doesn't 뒤에 오는 동사는 이미 원형으로 환원되었으므로 -s나 -es를 다시 붙이지 않습니다(옳음: He doesn't like / 틀림: He doesn't likes).",
+      "formation": "주어 (I/you/we/they) + don't + 동사원형 | 주어 (he/she/it) + doesn't + 동사원형",
+      "examples": [
+        {
+          "translation": "저는 고기를 먹지 않습니다."
+        },
+        {
+          "translation": "그는 프랑스어를 하지 못합니다."
+        },
+        {
+          "translation": "그들은 여기서 일하지 않습니다."
+        }
+      ]
+    },
+    "en_a1_10": {
+      "title": "단순 현재 시제: 의문문 (Do you? / Does she?)",
+      "shortExplanation": "조동사 Do 또는 Does를 주어 앞으로 보내고 동사원형을 씁니다. 의문사 의문문은 '의문사 + do/does + 주어 + 동사원형' 형태입니다.",
+      "longExplanation": "일반동사의 현재 시제 의문문은 조동사 Do 또는 Does를 주어 앞으로 도치시키며, 본동사는 항상 원형을 씁니다:\n• 일반의문문(Yes/No 의문문):\n- Do + I/you/we/they + 동사원형...?\n- Does + he/she/it + 동사원형...?\n• 의문사 의문문: 의문사(Where, What, When 등) + do / does + 주어 + 동사원형...?",
+      "formation": "Do / Does + 주어 + 동사원형...? 또는 의문사 + do / does + 주어 + 동사원형...?",
+      "examples": [
+        {
+          "translation": "러시아어를 할 줄 아십니까?"
+        },
+        {
+          "translation": "그녀는 근처에 사나요?"
+        },
+        {
+          "translation": "어디에서 일하십니까?"
+        }
+      ]
+    },
+    "en_a1_11": {
+      "title": "상태동사: 진행형으로 쓸 수 없는 동사",
+      "shortExplanation": "상태, 감정, 인식 등을 나타내는 동사는 원칙적으로 진행형(-ing)으로 쓰지 않습니다('I know'로 쓰며 'I am knowing'은 불가).",
+      "longExplanation": "상태동사(Stative verbs)는 일시적인 신체 동작이 아니라, 감정, 심리 상태, 감각, 인지 과정, 소유 관계 등의 지속적인 상태를 나타내는 동사입니다. 이러한 동사는 원칙적으로 현재진행형 등의 진행형(be + -ing)으로 쓰지 않습니다:\n• 인지 및 사고: know(알다), believe(믿다), understand(이해하다), remember(기억하다), forget(잊다).\n• 감정 및 바람: love(사랑하다), hate(싫어하다), like(좋아하다), want(원하다), need(필요로 하다), prefer(더 좋아하다).\n• 지각 및 감각: see(보이다), hear(들리다), smell(냄새가 나다), taste(맛이 나다).\n• 소유 및 존재: belong(속하다), contain(포함하다), seem(~처럼 보이다).",
+      "formation": "주어 + 상태동사(단순 시제로 쓰며, 진행형 -ing 형태 불가)",
+      "examples": [
+        {
+          "translation": "당신 말을 이해합니다. (틀린 표현: I am understanding)"
+        },
+        {
+          "translation": "그녀는 초콜릿을 매우 좋아합니다. (틀린 표현: is loving)"
+        }
+      ]
+    },
+    "en_a1_12": {
+      "title": "인칭대명사: I, you, he, she, it, we, they",
+      "shortExplanation": "영어 문장에서는 주어를 생략할 수 없으며 명시해야 합니다. 주어 역할을 하는 주격(I, you, he...)과 목적어 역할을 하는 목적격(me, you, him...)을 구별합니다.",
+      "longExplanation": "한국어와 달리 영어 문장에서는 명령문 등을 제외하고는 주어를 임의로 생략할 수 없으므로, 반드시 명확한 주어 대명사를 밝혀 써야 합니다.\n• 주격 대명사(동사 앞에 위치하여 주어로 쓰임): I(나), you(너/너희들), he(그), she(그녀), it(그것), we(우리), they(그들/그것들).\n• 목적격 대명사(동사나 전치사 뒤에 위치하여 목적어로 쓰임): me, you, him, her, it, us, them(예: Tell him, Help me, Listen to us).",
+      "formation": "주격 대명사 + 동사 | 동사 / 전치사 + 목적격 대명사",
+      "examples": [
+        {
+          "translation": "그녀는 선생님입니다."
+        },
+        {
+          "translation": "그에게 진실을 말해 주세요."
+        },
+        {
+          "translation": "저를 좀 도와주실 수 있나요?"
+        }
+      ]
+    },
+    "en_a1_13": {
+      "title": "소유격 형용사: my, your, his, her, its, our, their",
+      "shortExplanation": "명사 바로 앞에 붙어 '~의'라는 소유 관계를 나타냅니다. 뒤에 오는 명사의 수(단수/복수)에 따라 형태가 변하지 않습니다.",
+      "longExplanation": "소유격 형용사(소유한정사)는 명사 앞에 놓여 해당 대상의 소유자나 소속을 밝혀 줍니다:\n• my(나의), your(너의/너희들의), his(그의), her(그녀의), its(그것의), our(우리의), their(그들의/그것들의).\n• 중요한 구별: 소유를 나타내는 'its'(아포스트로피 없음)와 it is의 축약형인 'it's'(아포스트로피 있음)를 절대 혼동하지 않아야 합니다.\n• 뒤따르는 명사가 단수이든 복수이든 형태가 달라지지 않습니다(예: my friend / my friends 모두 동일하게 'my' 사용).",
+      "formation": "소유격 형용사 (my / your / his / her / its / our / their) + 명사",
+      "examples": [
+        {
+          "translation": "이것은 제 휴대전화입니다."
+        },
+        {
+          "translation": "그들의 강아지는 귀엽습니다."
+        },
+        {
+          "translation": "그 고양이는 발을 다쳤습니다."
+        }
+      ]
+    },
+    "en_a1_14": {
+      "title": "명사의 복수형",
+      "shortExplanation": "기본 규칙은 명사 끝에 -s 또는 -es를 붙이는 것이며, -y, -f/-fe 어미 변화와 불규칙 복수형이 있습니다.",
+      "longExplanation": "영어에서 셀 수 있는 명사(가산명사)가 둘 이상일 때는 복수형으로 표기합니다:\n• 기본 규칙: 명사 끝에 '-s'를 붙임(cat → cats, book → books).\n• -s, -ss, -sh, -ch, -x, -o로 끝나는 경우: '-es'를 붙임(box → boxes, watch → watches, tomato → tomatoes).\n• '모음 + y'로 끝나는 경우: 그대로 '-s'를 붙임(boy → boys, day → days).\n• '자음 + y'로 끝나는 경우: y를 i로 고치고 '-es'를 붙임(city → cities, baby → babies).\n• -f 또는 -fe로 끝나는 경우: 이를 '-ves'로 바꿈(knife → knives, leaf → leaves, wife → wives).\n• 주요 불규칙 복수형 명사: child → children, man → men, woman → women, tooth → teeth, foot → feet, mouse → mice, person → people, sheep → sheep, fish → fish.",
+      "formation": "단수 명사 + s / es / ies / ves (또는 불규칙 복수형)",
+      "examples": [
+        {
+          "translation": "버스 한 대 → 버스 두 대"
+        },
+        {
+          "translation": "아이 한 명 → 많은 아이들"
+        }
+      ]
+    },
+    "en_a1_15": {
+      "title": "지시대명사: This / that / these / those",
+      "shortExplanation": "가까운 대상을 가리키는 this/these(이것/이것들)와 먼 대상을 가리키는 that/those(저것/저것들). 단수는 this/that, 복수는 these/those를 씁니다.",
+      "longExplanation": "지시대명사는 화자로부터의 물리적 또는 시간적 거리, 그리고 수(단수/복수)에 따라 대상을 가리킬 때 씁니다:\n• 'this'(이것, 이 사람): 화자와 가까운 거리에 있는 단수 대상.\n• 'these'(이것들, 이 사람들): 화자와 가까운 거리에 있는 복수 대상.\n• 'that'(저것, 그것, 저 사람): 화자로부터 멀리 떨어진 단수 대상 또는 이미 언급된 내용.\n• 'those'(저것들, 그것들, 저 사람들): 화자로부터 멀리 떨어진 복수 대상.\n시간 개념에도 자주 활용됩니다: this week(이번 주), that year(그해).",
+      "formation": "This / That + 단수 명사(또는 단수 동사) | These / Those + 복수 명사(또는 복수 동사)",
+      "examples": [
+        {
+          "translation": "이것은 제 가방입니다."
+        },
+        {
+          "translation": "저 신발들은 비쌉니다."
+        },
+        {
+          "translation": "저것은 무엇입니까?"
+        }
+      ]
+    }
+  }
+}

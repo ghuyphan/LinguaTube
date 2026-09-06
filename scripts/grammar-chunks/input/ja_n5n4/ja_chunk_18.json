@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ja_んです_119",
+    "language": "ja",
+    "pattern": "～んです",
+    "title": "～んです (〜n desu)",
+    "shortExplanation": "Provide an explanation or reason; 'it is that', 'the thing is', 'the reason is'.",
+    "longExplanation": "The ～んです grammar point is used to provide an explanation or reason for a situation or action. It can be translated as 'it is that', 'the thing is', or 'the reason is' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + んです, い-Adjective + んです, な-Adjective + なんです, Noun + なんです",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "遅れたんですが、電車が遅れました。",
+        "romanization": "Okuretan desuga, densha ga okuremashita.",
+        "translation": "I was late because the train was delayed."
+      },
+      {
+        "sentence": "疲れたんです。",
+        "romanization": "Tsukareta n desu.",
+        "translation": "I'm tired (that's why)."
+      },
+      {
+        "sentence": "彼は優しいんです。",
+        "romanization": "Kare wa yasashii n desu.",
+        "translation": "The thing is, he is kind."
+      },
+      {
+        "sentence": "宿題が多いんです。",
+        "romanization": "Shukudai ga ooi n desu.",
+        "translation": "The reason is I have a lot of homework."
+      }
+    ]
+  },
+  {
+    "id": "ja_文Aそのうえ_120",
+    "language": "ja",
+    "pattern": "文A。そのうえ",
+    "title": "文A。そのうえ 文B。",
+    "shortExplanation": "Shows additional information; 'furthermore', 'besides', 'in addition'.",
+    "longExplanation": "This grammar point is used to connect two sentences, where the first sentence 文A provides some information, and the second sentence 文B adds additional related information. It can be translated as 'furthermore', 'besides', or 'in addition' in English.",
+    "formation": "Sentence A + そのうえ + Sentence B + 。",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "このソフトウェアは使いやすい。そのうえ、価格も手ごろだ。",
+        "romanization": "Kono sofutouea wa tsukaiyasui. Sono ue, kakaku mo tegoro da.",
+        "translation": "This software is easy to use. Furthermore, the price is reasonable."
+      },
+      {
+        "sentence": "彼女は美人だ。そのうえ、頭もいい。",
+        "romanization": "Kanojo wa bijin da. Sono ue, atama mo ii.",
+        "translation": "She is beautiful. In addition, she is smart."
+      },
+      {
+        "sentence": "この映画は面白い。そのうえ、俳優たちの演技も素晴らしい。",
+        "romanization": "Kono eiga wa omoshiroi. Sono ue, haiyuutachi no engi mo subarashii.",
+        "translation": "This movie is interesting. Besides, the actors' performances are also great."
+      },
+      {
+        "sentence": "東京はたくさんの観光スポットがある。そのうえ、美味しいレストランも多い。",
+        "romanization": "Toukyou wa takusan no kankou supotto ga aru. Sono ue, oishii resutoran mo oi.",
+        "translation": "Tokyo has many sightseeing spots. In addition, there are many delicious restaurants."
+      }
+    ]
+  },
+  {
+    "id": "ja_文Aそれで_121",
+    "language": "ja",
+    "pattern": "文A。それで",
+    "title": "文A。それで 文B (Bun A. Sorede Bun B)",
+    "shortExplanation": "Used to connect two sentences; 'So', 'That's why', 'Therefore'.",
+    "longExplanation": "The grammar point 文A。それで 文B is used to connect two sentences and show that the second sentence (文B) is a result or consequence of the first sentence (文A). It can be translated as 'so', 'that's why', or 'therefore' in English.",
+    "formation": "Sentence A。それで Sentence B。",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "今日は暑いです。それで、エアコンをつけました。",
+        "romanization": "Kyou wa atsui desu. Sorede, eakon wo tsukemashita.",
+        "translation": "It is hot today. So, I turned on the air conditioner."
+      },
+      {
+        "sentence": "電車が遅れました。それで、仕事に遅れてしまいました。",
+        "romanization": "Densha ga okuremashita. Sorede, shigoto ni okurete shimaimashita.",
+        "translation": "The train was delayed. That's why I was late for work."
+      },
+      {
+        "sentence": "彼は疲れている。それで、早く寝ることにした。",
+        "romanization": "Kare wa tsukarete iru. Sorede, hayaku neru koto ni shita.",
+        "translation": "He is tired. Therefore, he decided to go to bed early."
+      },
+      {
+        "sentence": "試験に合格しました。それで、友達とお祝いパーティーを開きました。",
+        "romanization": "Shiken ni goukaku shimashita. Sorede, tomodachi to oiwai paatii wo hirakimashita.",
+        "translation": "I passed the exam. So, I held a celebration party with friends."
+      }
+    ]
+  },
+  {
+    "id": "ja_文Aそれに_122",
+    "language": "ja",
+    "pattern": "文A。それに",
+    "title": "文A。それに 文B (Bun A. Soreni Bun B)",
+    "shortExplanation": "Express 'in addition to; besides,' used to include additional information.",
+    "longExplanation": "This grammar point 文A。それに 文B is used to express an additional statement on what was mentioned earlier. It can be translated as 'in addition to,' 'besides,' or 'on top of that,' in English. It connects two sentences by highlighting supplementary information, opinions, or reasons.",
+    "formation": "Sentence A + それに + Sentence B",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は頭がいい。それに、スポーツも得意だ。",
+        "romanization": "Kare wa atama ga ii. Soreni, supo-tsu mo tokui da.",
+        "translation": "He is smart. In addition, he is good at sports."
+      },
+      {
+        "sentence": "このケーキはおいしい。それに、値段も安い。",
+        "romanization": "Kono keeki wa oishii. Soreni, nedan mo yasui.",
+        "translation": "This cake is delicious. Besides, the price is also cheap."
+      },
+      {
+        "sentence": "私は日本語が話せます。それに、韓国語も話せます。",
+        "romanization": "Watashi wa nihongo ga hanasemasu. Soreni, kankokugo mo hanasemasu.",
+        "translation": "I can speak Japanese. On top of that, I can also speak Korean."
+      },
+      {
+        "sentence": "彼女は美人だ。それに、性格もいい。",
+        "romanization": "Kanojo wa bijin da. Soreni, seikaku mo ii.",
+        "translation": "She is beautiful. In addition, she has a good personality."
+      }
+    ]
+  },
+  {
+    "id": "ja_文Aだから_123",
+    "language": "ja",
+    "pattern": "文A。だから",
+    "title": "文A。だから 文B (Bun A. Dakara Bun B)",
+    "shortExplanation": "Express reason or cause; 'because', 'so', 'therefore'.",
+    "longExplanation": "The 文A。だから 文B grammar point is used to indicate that the reason or cause of an action or event expressed in the second sentence (文B) is a result or consequence of the situation described in the first sentence (文A). It can be translated as 'because', 'so', or 'therefore' in English.",
+    "formation": "Sentence A + だから + Sentence B",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日は試験だ。だから今日勉強しなければならない。",
+        "romanization": "Ashita wa shiken da. Dakara kyou benkyou shinakereba naranai.",
+        "translation": "Tomorrow is the exam, so I have to study today."
+      },
+      {
+        "sentence": "この料理は簡単だ。だから初心者でも作れる。",
+        "romanization": "Kono ryouri wa kantan da. Dakara shoshinsha demo tsukureru.",
+        "translation": "This dish is simple, so even beginners can make it."
+      },
+      {
+        "sentence": "彼は病気だ。だから今日学校を休む。",
+        "romanization": "Kare wa byouki da. Dakara kyou gakkou wo yasumu.",
+        "translation": "He is sick, so he will take a day off from school today."
+      },
+      {
+        "sentence": "駅まで遠い。だからタクシーで行ったほうがいい。",
+        "romanization": "Eki made tooi. Dakara takushii de itta hou ga ii.",
+        "translation": "The station is far, so it's better to go by taxi."
+      }
+    ]
+  }
+]

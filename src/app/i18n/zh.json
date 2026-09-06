@@ -27,7 +27,8 @@
         "placeholder": "粘贴YouTube链接或视频ID...",
         "invalid": "请输入有效的YouTube链接",
         "cancel": "取消",
-        "load": "加载"
+        "load": "加载",
+        "paste": "粘贴"
     },
     "header": {
         "words": "词汇",
@@ -60,6 +61,7 @@
         "closeVideo": "关闭视频",
         "resume": "继续播放",
         "normal": "正常",
+        "off": "关闭",
         "hint": "粘贴YouTube链接开始学习。我们会自动获取字幕。"
     },
     "subtitle": {
@@ -94,6 +96,7 @@
         "video": "视频",
         "cost": "消耗",
         "yourBalance": "你的余额",
+        "securityCheck": "真人验证",
         "generate": "生成",
         "languageMismatch": "学习语言不匹配",
         "languageMismatchMessage": "没有{{requested}}字幕。正在使用{{detected}}。",
@@ -135,7 +138,11 @@
         "nativeCaptionsFree": "普通视频免费吗？",
         "nativeCaptionsFreeDesc": "是的！已有YouTube字幕的视频完全免费，永不扣除AI积分。",
         "allCreditsAvailable": "额度已满",
-        "depletedNotice": "您已用完3个AI积分。带YouTube字幕的普通视频依然完全免费！"
+        "depletedNotice": "您已用完3个AI积分。带YouTube字幕的普通视频依然完全免费！",
+        "translationFailed": "翻译失败，请重试。",
+        "readingHint": "在文字上方显示发音指南",
+        "grammarHint": "突出显示语法结构和模式",
+        "dualSubsHint": "显示双语翻译字幕"
     },
     "vocab": {
         "title": "词汇本",
@@ -175,7 +182,11 @@
         "saved": "已保存",
         "saveWord": "保存词汇",
         "close": "关闭",
-        "translateTo": "翻译为"
+        "translateTo": "翻译为",
+        "translateAll": "翻译所有释义",
+        "all": "全部",
+        "failed": "失败",
+        "retry": "重试"
     },
     "grammar": {
         "mode": "语法",
@@ -299,7 +310,10 @@
         "onStreak": "您已连续学习 {{count}} 天！",
         "howItWorks": "如何运作",
         "howToExtend": "每天练习即可延长连续天数。如果一天未练习且未使用保护，连续天数将重置为0。",
-        "freezeExplanation": "如果您忘记练习，连续保护会自动保护您的连续天数。您还有 {{count}} 个保护。"
+        "freezeExplanation": "如果您忘记练习，连续保护会自动保护您的连续天数。您还有 {{count}} 个保护。",
+        "reached": "你已达成",
+        "days": "天！",
+        "saved": "连续记录已保护！❄️"
     },
     "history": {
         "title": "历史",
@@ -398,7 +412,9 @@
         "nowPlaying": "正在播放",
         "continueStudying": "继续学习",
         "resume": "继续",
-        "browseByLanguage": "按语言浏览"
+        "browseByLanguage": "按语言浏览",
+        "loopOn": "已开启循环",
+        "shuffleOn": "已开启随机"
     },
     "common": {
         "loading": "加载中...",
@@ -407,7 +423,9 @@
         "off": "关闭",
         "back": "返回",
         "undo": "撤销",
-        "retry": "重试"
+        "retry": "重试",
+        "close": "关闭",
+        "clear": "清除"
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",

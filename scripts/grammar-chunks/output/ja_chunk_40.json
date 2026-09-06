@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_A_2": {
+      "title": "A かたわら B (A katawara B)",
+      "shortExplanation": "Diễn tả việc vừa làm công việc chính A, vừa đồng thời làm thêm việc B; 'bên cạnh việc...', 'vừa... vừa...'.",
+      "longExplanation": "Mẫu ngữ pháp '～かたわら' (chữ Hán là 傍ら) được dùng để biểu thị rằng bên cạnh công việc, bổn phận hoặc hoạt động chính A (thường mang tính nghề nghiệp, học tập lâu dài), chủ ngữ còn thực hiện thêm một hoạt động B khác một cách song song. Thường được dịch là 'bên cạnh...', 'ngoài công việc... thì còn...', 'vừa... vừa...'. Mẫu câu này mang sắc thái trang trọng, thường dùng trong văn viết hoặc giới thiệu tiểu sử, hoạt động cá nhân.",
+      "formation": "Động từ thể từ điển + かたわら | Danh từ + のかたわら",
+      "examples": [
+        {
+          "translation": "Bên cạnh công việc chính, anh ấy còn theo học đại học."
+        },
+        {
+          "translation": "Bên cạnh việc là sinh viên, tôi còn làm thêm tại một nhà hàng."
+        },
+        {
+          "translation": "Bên cạnh công việc bác sĩ, cô ấy còn vẽ tranh như một niềm đam mê."
+        },
+        {
+          "translation": "Bên cạnh công việc, anh ấy còn tích cực tham gia các hoạt động tình nguyện."
+        }
+      ]
+    },
+    "ja_A_3": {
+      "title": "A かれ B かれ (A kare B kare)",
+      "shortExplanation": "Biểu thị ý dù là A hay B, dù trong trường hợp nào thì kết quả hay hành động vẫn không đổi; 'dù... hay...', 'bất kể... hay...'.",
+      "longExplanation": "Mẫu ngữ pháp '～AかれBかれ' là một dạng quán ngữ cổ mang tính văn chương, dùng để nối hai từ ngữ có ý nghĩa đối lập nhằm diễn tả rằng dù rơi vào trường hợp A hay trường hợp B thì sự việc vẫn diễn ra hoặc giữ nguyên bản chất như vậy ('dù... hay...', 'không ít thì nhiều', 'sớm hay muộn'). Thường gặp nhất với thân từ tính từ đuôi い (như 多かれ少なかれ, 早かれ遅かれ), đôi khi cũng được kết hợp mang tính quán ngữ với danh từ hoặc động từ.",
+      "formation": "Tính từ đuôi い bỏ い + かれ + Tính từ đuôi い bỏ い + かれ (Quán ngữ) | Danh từ + かれ + Danh từ + かれ | Động từ thể thông thường + かれ + Động từ thể thông thường + かれ",
+      "examples": [
+        {
+          "translation": "Dù là mùa đông hay mùa hè, ngày nào tôi cũng chạy bộ."
+        },
+        {
+          "translation": "Dù anh ấy có đến hay không đến thì bữa tiệc vẫn sẽ bắt đầu."
+        },
+        {
+          "translation": "Dù thắng hay thua, việc tham gia vào trận đấu mới là điều quan trọng."
+        },
+        {
+          "translation": "Dù trời mưa hay tuyết rơi, tôi không bao giờ bỏ việc dắt chó đi dạo."
+        }
+      ]
+    },
+    "ja_A_4": {
+      "title": "A だの B だの (A dano B dano)",
+      "shortExplanation": "Dùng để liệt kê các sự vật, hành động làm ví dụ (thường mang sắc thái phàn nàn, ngán ngẩm); 'nào là... nào là...', 'nào... nào...'.",
+      "longExplanation": "Mẫu ngữ pháp '～だの～だの' được dùng để liệt kê hàng loạt các sự vật, lý do hoặc hành động tương tự nhau ('nào là... nào là...'). Điểm đặc trưng của mẫu câu này là thường mang sắc thái bất mãn, phàn nàn, phê phán hoặc ngán ngẩm của người nói trước những điều phiền toái được liệt kê. Thường dùng trong khẩu ngữ giao tiếp hàng ngày.",
+      "formation": "Danh từ + だの + Danh từ + だの | Động từ/Tính từ thể thông thường + だの + Động từ/Tính từ thể thông thường + だの",
+      "examples": [
+        {
+          "translation": "Cậu ấy lúc nào cũng nào là đi muộn, nào là quên việc, thật là đau đầu."
+        },
+        {
+          "translation": "Cô ấy thường tiêu tiền vào nào là quần áo mới, nào là mỹ phẩm."
+        },
+        {
+          "translation": "Theo lời anh ấy kể thì có vẻ anh ấy thích nào là âm nhạc, nào là phim ảnh, nào là sách báo."
+        },
+        {
+          "translation": "Tôi muốn cho con trẻ thỏa thích những thứ chúng thích, nào là bánh kẹo, nào là đồ chơi không giới hạn."
+        }
+      ]
+    },
+    "ja_A_5": {
+      "title": "A であれ B であれ (A deare B deare)",
+      "shortExplanation": "Biểu thị ý dù là A hay B thì nhận định hoặc kết quả vẫn bình đẳng, không thay đổi; 'cho dù là A hay B', 'dù là... hay...'.",
+      "longExplanation": "Mẫu ngữ pháp 'A であれ B であれ' (dạng liên kết của trợ động từ khẳng định である) đi kèm các cặp từ tương phản hoặc cùng nhóm để nhấn mạnh rằng dù trong trường hợp A hay trường hợp B thì kết quả, quy định hay tính chất phía sau đều áp dụng như nhau, không có sự phân biệt hay ngoại lệ ('cho dù là A hay B', 'bất kể là... hay...'). Mẫu này thuộc phong cách văn viết trang trọng, mang tính khái quát cao.",
+      "formation": "Danh từ 1 + であれ + Danh từ 2 + であれ | Tính từ đuôi な (thân từ) + であれ + Tính từ đuôi な (thân từ) + であれ",
+      "examples": [
+        {
+          "translation": "Cho dù là mưa hay tuyết thì trận đấu cũng không bị hủy bỏ."
+        },
+        {
+          "translation": "Dù là nam hay nữ thì cũng đều cần được đối xử bình đẳng."
+        },
+        {
+          "translation": "Dù giàu sang hay nghèo khó, hạnh phúc thực sự không thể mua được bằng tiền."
+        },
+        {
+          "translation": "Dù là người có kinh nghiệm hay người mới bắt đầu, ai cũng có thể tận hưởng trò chơi này."
+        }
+      ]
+    },
+    "ja_A_6": {
+      "title": "A というか B というか (A to iu ka B to iu ka)",
+      "shortExplanation": "Diễn tả sự phân vân khi tìm từ ngữ thích hợp để mô tả sự việc; 'nói là A hay nói là B...', 'chẳng biết nên gọi là A hay B'.",
+      "longExplanation": "Mẫu ngữ pháp 'A というか B というか' được dùng khi người nói cảm thấy băn khoăn, do dự không biết nên dùng từ ngữ nào (A hay B) để miêu tả chính xác trạng thái, tính chất hoặc cảm xúc của mình về sự vật, sự việc ('nói là A hay là B đây...', 'chẳng biết nên gọi là A hay B'). Vế sau thường kết luận bằng một nhận định mang tính khái quát hoặc đánh giá tổng thể (thường đi với とにかく, いずれにせよ).",
+      "formation": "Từ/Mệnh đề A + というか + Từ/Mệnh đề B + というか (kết hợp với Danh từ, Tính từ, Động từ thể thông thường)",
+      "examples": [
+        {
+          "translation": "Anh ấy nói là vô lễ cũng đúng, mà nói là thẳng thắn cũng được, tóm lại là tính cách rất rõ ràng."
+        },
+        {
+          "translation": "Bộ phim này nói là thú vị hay kỳ lạ đây, tóm lại là nó mang một bầu không khí rất huyền bí."
+        },
+        {
+          "translation": "Những bức tranh của anh ấy nói là tuyệt vời hay đáng kinh ngạc đây, thực sự rất đáng để xem."
+        },
+        {
+          "translation": "Bộ trang phục của cô ấy nói là dễ thương hay sặc sỡ đây, tóm lại là rất thu hút ánh nhìn của mọi người."
+        }
+      ]
+    },
+    "ja_A_7": {
+      "title": "A とも B とも (A tomo B tomo)",
+      "shortExplanation": "Nêu ra hai khả năng hoặc đối tượng để biểu thị ý 'dù là A hay B', 'chẳng rõ là A hay B', hoặc 'cả A lẫn B'.",
+      "longExplanation": "Mẫu ngữ pháp 'A とも B とも' dùng để liên kết hai sự vật, tình huống hoặc đối tượng nhằm biểu thị rằng sự việc có thể là A hoặc B, hoặc không thể phán định rạch ròi giữa A và B ('dù là A hay B', 'không biết là A hay B'). Thường kết hợp với các cách nói phán đoán, thời gian hoặc cụm từ phủ định như '〜言えない / つかない'.",
+      "formation": "Danh từ + とも + Danh từ + とも | Thể thông thường + とも + Thể thông thường + とも",
+      "examples": [
+        {
+          "translation": "Dù là một quyết định sáng suốt hay là sai lầm thì thời gian sẽ cho chúng ta câu trả lời về kết quả."
+        },
+        {
+          "translation": "Anh ấy đã nhiều năm nay không nói chuyện với cả cha lẫn anh trai mình."
+        },
+        {
+          "translation": "Tôi dự định đi xem phim, hoặc là với bạn gái hoặc là với bạn bè."
+        },
+        {
+          "translation": "Trò chơi này đòi hỏi sự kiên nhẫn nhiều đến mức không thể chỉ gọi đơn thuần là thời gian hay công sức."
+        }
+      ]
+    },
+    "ja_A_8": {
+      "title": "A にしろ B にしろ (A nishiro B nishiro)",
+      "shortExplanation": "Nêu ra hai khả năng tương phản hoặc khác biệt để chỉ ra rằng dù là trường hợp nào thì phán đoán hay hành động vẫn không thay đổi; 'cho dù là A hay B', 'dù là... hay...'.",
+      "longExplanation": "Mẫu ngữ pháp 'A にしろ B にしろ' (dạng mệnh lệnh cổ của 'にする') dùng để đưa ra hai trường hợp hoặc khả năng đối lập nhau, nhằm khẳng định rằng dù chọn phương án A hay phương án B thì nhận định, lời khuyên hay hành động ở vế sau vẫn giữ nguyên tính đúng đắn ('cho dù là A hay là B thì cũng...'). Mẫu này dùng linh hoạt cả trong văn nói trang trọng lẫn văn viết.",
+      "formation": "Danh từ + にしろ + Danh từ + にしろ | Thể thông thường (Động từ / Tính từ đuôi い / Tính từ đuôi な) + にしろ + Thể thông thường + にしろ",
+      "examples": [
+        {
+          "translation": "Cho dù là trời nóng hay trời lạnh thì ngày nào bạn cũng nên vận động thể dục."
+        },
+        {
+          "translation": "Dù đỗ hay trượt, tôi cũng đã nỗ lực hết sức mình rồi."
+        },
+        {
+          "translation": "Dù bận rộn hay rảnh rỗi, bạn cũng nên biết quý trọng thời gian."
+        },
+        {
+          "translation": "Cho dù là thùng to hay thùng nhỏ, xin hãy chuyển tất cả những chiếc hộp đó tới đây."
+        }
+      ]
+    },
+    "ja_A_9": {
+      "title": "A にせよ B にせよ (A ni seyo B ni seyo)",
+      "shortExplanation": "Văn phong trang trọng biểu thị ý dù là khả năng A hay B thì nhận định, quyết định ở vế sau vẫn đúng; 'cho dù là A hay B', 'bất kể là... hay...'.",
+      "longExplanation": "Mẫu ngữ pháp 'A にせよ B にせよ' mang tính văn viết trang trọng hơn so với '～にしろ～にしろ', dùng để nêu lên hai trường hợp hoặc phương án lựa chọn nhằm nhấn mạnh rằng dù tình huống thực tế rơi vào A hay B thì sự việc, quan điểm ở vế sau hoàn toàn không bị ảnh hưởng ('dù là A hay B', 'cho dù là... hay...'). Thường dùng trong văn luận, các bài báo hoặc bài phát biểu chỉn chu.",
+      "formation": "Danh từ + にせよ + Danh từ + にせよ | Thể thông thường (Động từ / Tính từ) + にせよ + Thể thông thường + にせよ",
+      "examples": [
+        {
+          "translation": "Cho dù là mưa hay tuyết thì trận đấu cũng sẽ không bị hoãn."
+        },
+        {
+          "translation": "Dù là anh ấy hay cô ấy thì cũng nên có một người đi."
+        },
+        {
+          "translation": "Dù là thành quả hay nỗ lực thì cả hai đều đóng vai trò quan trọng."
+        },
+        {
+          "translation": "Cho dù là mùa xuân hay mùa thu, tôi vẫn luôn yêu thích các loài hoa."
+        }
+      ]
+    },
+    "ja_A_10": {
+      "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
+      "shortExplanation": "Diễn tả ý dù trong hoàn cảnh hay trạng thái A hay B thì cũng đều xảy ra tình trạng đó; 'dù... hay...', 'khi... cũng như khi...'.",
+      "longExplanation": "Mẫu ngữ pháp '～AにつけBにつけ' ghép đôi hai từ hoặc mệnh đề mang ý nghĩa tương phản (thường là cảm xúc như vui/buồn, hành động như cười/khóc, thời điểm như ngày/đêm) để diễn tả rằng dù trong trường hợp A hay trường hợp B thì cảm xúc, trạng thái hay hành động phía sau đều luôn luôn như vậy ('dù là lúc... hay lúc...', 'khi vui cũng như khi buồn'). Mẫu câu này mang âm hưởng trang trọng và gợi nhiều cảm xúc.",
+      "formation": "Động từ thể từ điển + につけ + Động từ thể từ điển + につけ | Tính từ đuôi い + につけ + Tính từ đuôi い + につけ | Danh từ + につけ + Danh từ + につけ",
+      "examples": [
+        {
+          "translation": "Ở anh ấy, dù là lúc cười hay lúc khóc cũng đều vô cùng quyến rũ."
+        },
+        {
+          "translation": "Dù là lúc vui hay lúc buồn, anh ấy đều luôn luôn lắng nghe âm nhạc."
+        },
+        {
+          "translation": "Dù là vào ban ngày hay ban đêm, phong cảnh nơi này đều tuyệt đẹp."
+        },
+        {
+          "translation": "Dù khi vui sướng hay lúc đau buồn, cô ấy vẫn luôn ở bên động viên nâng đỡ tôi."
+        }
+      ]
+    },
+    "ja_A_11": {
+      "title": "A のやら B のやら (A no yara B no yara)",
+      "shortExplanation": "Diễn tả sự hoang mang, băn khoăn khi không thể biết rõ là rơi vào trường hợp A hay B; 'chẳng biết là A hay B', 'không biết là... hay...'.",
+      "longExplanation": "Mẫu ngữ pháp 'A のやら B のやら' (kết hợp của trợ từ の và trợ từ nghi vấn thể hiện sự mập mờ やら) được dùng khi người nói rơi vào trạng thái bối rối, không thể phán đoán hay xác định rõ ràng sự thực là A hay là B ('chẳng biết là... hay là...', 'không rõ là... hay...'). Vế sau hầu như luôn đi kèm các từ biểu thị sự không rõ ràng hoặc băn khoăn như 'わからない', 'はっきりしない', '気になって仕方がない'.",
+      "formation": "Động từ/Tính từ thể thông thường + のやら + Động từ/Tính từ thể thông thường + のやら | Tính từ đuôi な + なのやら | Danh từ + なのやら (hoặc のやら)",
+      "examples": [
+        {
+          "translation": "Tôi chẳng thể hiểu nổi là anh ấy đang tức giận hay đang buồn rầu nữa."
+        },
+        {
+          "translation": "Tôi bồn chồn đứng ngồi không yên vì chẳng biết kết quả thi là tốt hay xấu."
+        },
+        {
+          "translation": "Tôi chẳng biết được rốt cuộc là cô ấy thích tôi hay ghét tôi nữa."
+        },
+        {
+          "translation": "Vẫn chưa rõ ràng là anh ấy có thực sự đi hay là không đi."
+        }
+      ]
+    },
+    "ja_Noun1_12": {
+      "title": "Danh từ 1 + が + Danh từ 1 + なら、 Danh từ 2 + も + Danh từ 2 + だ (A ga A nara, B mo B da)",
+      "shortExplanation": "Diễn tả sự tương xứng hoặc song hành giữa hai đối tượng; 'nếu A là A thì B cũng là B', 'A đã thế thì B cũng chẳng kém'.",
+      "longExplanation": "Cấu trúc 'Danh từ 1 が Danh từ 1 なら、Danh từ 2 も Danh từ 2 だ' dùng sự lặp lại danh từ để nhấn mạnh tính chất tương xứng, đối xứng hoặc cùng loại giữa hai đối tượng ('nếu A đã mang bản chất như vậy thì B cũng tương tự như thế', 'nếu coi A là thế thì B cũng là thế'). Cấu trúc này thường mang sắc thái phản biện, khẳng định sự công bằng hoặc tương quan đối trọng giữa hai bên.",
+      "formation": "Danh từ 1 + が + (lặp lại Danh từ 1) + なら、Danh từ 2 + も + (lặp lại Danh từ 2) + だ",
+      "examples": [
+        {
+          "translation": "Nếu ác quỷ đúng là ác quỷ, thì con người cũng tàn nhẫn chẳng kém gì con người."
+        },
+        {
+          "translation": "Nếu anh ta là giám đốc, thì tôi đây cũng là giám đốc."
+        },
+        {
+          "translation": "Nếu ngươi là chiến binh, thì ta đây cũng là chiến binh."
+        },
+        {
+          "translation": "Nếu chuột hamster được coi là thú cưng, thì mèo đương nhiên cũng là thú cưng."
+        }
+      ]
+    },
+    "ja_Noun1_13": {
+      "title": "Danh từ 1 + も + Danh từ 1 + なら、Danh từ 2 + も + Danh từ 2 + だ (A mo A nara, B mo B da)",
+      "shortExplanation": "Diễn tả ý cả hai bên đều có khuyết điểm hoặc đặc điểm kỳ lạ như nhau; 'A đã thế thì B cũng vậy', 'cả A lẫn B đều chẳng vừa'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 も Danh từ 1 なら、Danh từ 2 も Danh từ 2 だ' đặt hai đối tượng song song để chỉ ra rằng cả bên thứ nhất lẫn bên thứ hai đều có những biểu hiện, khuyết điểm hoặc đặc tính cực đoan tương tự nhau ('A cũng chẳng ra sao mà B cũng chẳng vừa', 'nói A đã vậy thì B cũng thế'). Cấu trúc này thường hàm ý phê phán nhẹ nhàng, ngán ngẩm trước cả hai bên, hoặc nêu bật nét đặc thù riêng biệt của từng phía.",
+      "formation": "Danh từ 1 + も + (lặp lại Danh từ 1) + なら、Danh từ 2 + も + (lặp lại Danh từ 2) + だ",
+      "examples": [
+        {
+          "translation": "Cậu cũng có cái sai của cậu, mà tôi thì cũng chẳng vừa gì."
+        },
+        {
+          "translation": "Mùa hè thì khắc nghiệt kiểu mùa hè, mà mùa đông thì cũng giá buốt chẳng kém."
+        },
+        {
+          "translation": "Tokyo có cái nét lạ của Tokyo, mà Osaka thì cũng độc đáo chẳng kém gì Osaka."
+        },
+        {
+          "translation": "Chó có cái tính bướng của chó, mà mèo thì cũng đỏng đảnh chẳng kém gì mèo."
+        }
+      ]
+    },
+    "ja_Noun_14": {
+      "title": "Danh từ 1 + あっての + Danh từ 2 (A atte no B)",
+      "shortExplanation": "Nhấn mạnh Danh từ 2 chỉ có thể tồn tại được là nhờ có nền tảng hoặc sự hiện diện của Danh từ 1; 'chính nhờ có A mới có B', 'có A rồi mới có B'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + あっての + Danh từ 2' dùng để nhấn mạnh rằng Danh từ 2 có được, tồn tại được và có ý nghĩa là hoàn toàn dựa trên cơ sở, sự hỗ trợ hoặc sự tồn tại của Danh từ 1 ('chính nhờ có A mới có B', 'không có A thì B cũng chẳng tồn tại'). Cấu trúc này thể hiện lòng biết ơn sâu sắc, sự trân trọng cội nguồn hoặc nhấn mạnh điều kiện tiên quyết mang tính sống còn.",
+      "formation": "Danh từ 1 + あっての + Danh từ 2",
+      "examples": [
+        {
+          "translation": "Chính nhờ có gia đình thì mới có được tôi của ngày hôm nay."
+        },
+        {
+          "translation": "Kinh doanh chỉ có thể tồn tại được là nhờ có khách hàng."
+        },
+        {
+          "translation": "Thành công chỉ đến khi có sự luyện tập không ngừng."
+        },
+        {
+          "translation": "Công việc chỉ có ý nghĩa khi ta có một sức khỏe tốt."
+        }
+      ]
+    },
+    "ja_Noun_15": {
+      "title": "Danh từ + かたがた (Noun kata gata)",
+      "shortExplanation": "Diễn tả việc thực hiện một hành động chính đồng thời nhân tiện kết hợp làm một việc khác; 'nhân tiện...', 'tiện thể...', 'kết hợp...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + かたがた' (chữ Hán là 傍ら / 方々) là một cách diễn đạt trang trọng, dùng khi người nói muốn thực hiện hai mục đích trong cùng một chuyến đi hoặc hành động: vừa làm việc A, vừa nhân tiện thực hiện thêm việc B ('nhân tiện...', 'tiện thể kết hợp...'). Cấu trúc này hay xuất hiện trong thư từ thương mại, lời chào hỏi trang trọng hoặc thăm hỏi xã giao (như お見舞いかたがた, ご挨拶かたがた, 散歩かたがた).",
+      "formation": "Danh từ (động danh từ chỉ hành vi di chuyển/giao tiếp) + かたがた",
+      "examples": [
+        {
+          "translation": "Nhân chuyến đi công tác đến Tokyo, tôi đã tiện thể ghé thăm một người bạn."
+        },
+        {
+          "translation": "Nhân dịp đi tham quan ngắm cảnh, tôi đã mua vài món quà lưu niệm."
+        },
+        {
+          "translation": "Tiện lúc đi dạo, tôi đã nhặt rác xung quanh."
+        },
+        {
+          "translation": "Kết hợp lúc học bài, tôi đã lắng nghe một vài bản nhạc."
+        }
+      ]
+    },
+    "ja_Noun_16": {
+      "title": "Danh từ + がてら (Noun gatera)",
+      "shortExplanation": "Diễn tả việc nhân tiện thực hiện một hành động di chuyển thì kết hợp làm luôn một việc khác; 'tiện thể...', 'nhân tiện...', 'sẵn tiện...'.",
+      "longExplanation": "Hậu tố ngữ pháp '～がてら' kết hợp trực tiếp với danh từ chỉ hành động di chuyển (như đi dạo, mua sắm, lái xe...) hoặc động từ thể ます bỏ ます để biểu thị việc tận dụng cơ hội đang làm việc chính đó để tiện thể thực hiện thêm một hành động khác ('nhân tiện...', 'tiện thể...'). Cấu trúc này thường dùng tự nhiên trong sinh hoạt hàng ngày, có thể đi kèm trợ từ に thành '～がてらに'.",
+      "formation": "Danh từ (chỉ hành động di chuyển) + がてら (hoặc がてらに) | Động từ thể ます bỏ ます + がてら",
+      "examples": [
+        {
+          "translation": "Tiện lúc đi dạo, tôi đã hái vài bông hoa ở công viên gần nhà."
+        },
+        {
+          "translation": "Nhân tiện đi mua sắm, tôi đã ghé qua thăm một người bạn."
+        },
+        {
+          "translation": "Tiện chuyến đi du lịch, cô ấy đã tranh thủ học thêm một ngôn ngữ mới."
+        },
+        {
+          "translation": "Tiện lúc lái xe dạo mát, tôi đã nghe thử album ca nhạc mới."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_A_2": {
+      "title": "A かたわら B (A katawara B)",
+      "shortExplanation": "表示在从事本职工作或主要活动A的同时，兼做另一项活动B；“一边……一边……”、“在……之余”。",
+      "longExplanation": "句型“～かたわら”（汉字写作“傍ら”）用于表示在从事某项长期、主要的本业或职责（如职业、学业等）的同时，兼顾进行另一项活动。常译为“一边从事……一边做……”、“在……之余兼做……”。该句型常用于较为正式的书面语、新闻报道或个人经历介绍中，强调两项活动都在持续进行。",
+      "formation": "动词辞书形 + かたわら | 名词 + のかたわら",
+      "examples": [
+        {
+          "translation": "他一边工作，一边还在上大学。"
+        },
+        {
+          "translation": "我在求学之余，还在一家餐厅做兼职。"
+        },
+        {
+          "translation": "她作为医生的同时，还出于兴趣从事绘画创作。"
+        },
+        {
+          "translation": "他一边工作，一边还积极参加志愿者活动。"
+        }
+      ]
+    },
+    "ja_A_3": {
+      "title": "A かれ B かれ (A kare B kare)",
+      "shortExplanation": "表示无论是A还是B，无论在何种情况下都一样；“无论……还是……”、“不论……还是……”。",
+      "longExplanation": "句型“～AかれBかれ”是一种带有文语色彩或古风的惯用句型，通常将两个具有相反或相对含义的词并列，表示“无论是A还是B，两种情况都包含在内，结果或态度并无二致”（“不论……还是……”）。最常见于一类形容词词干（如“多かれ少なかれ/或多或少”、“早かれ遅かれ/迟早”），在旧式用法或固定搭配中也可与名词或动词连用。",
+      "formation": "一类形容词词干 + かれ + 一类形容词词干 + かれ（惯用搭配） | 名词 + かれ + 名词 + かれ | 动词普通形 + かれ + 动词普通形 + かれ",
+      "examples": [
+        {
+          "translation": "不管是冬天还是夏天，我每天都坚持慢跑。"
+        },
+        {
+          "translation": "不管他来还是不来，聚会都会照常开始。"
+        },
+        {
+          "translation": "不论输赢，参加比赛本身才是最重要的。"
+        },
+        {
+          "translation": "不管是下雨还是下雪，遛狗这件事我都从不落下。"
+        }
+      ]
+    },
+    "ja_A_4": {
+      "title": "A だの B だの (A dano B dano)",
+      "shortExplanation": "用于列举同类事物或行为（常带有抱怨、不满或无可奈何的语气）；“又是……又是……”、“什么……啦……啦”。",
+      "longExplanation": "句型“～だの～だの”用于列举具有代表性的事例（常列举两项或更多）。其最大特点是往往伴随着说话人的不满、抱怨、厌烦或无可奈何的情绪，觉得事情繁琐或令人头疼。多用于口语交流中，常译为“又是……又是……”、“又是说……又是说……”、“什么……啦，什么……啦”。",
+      "formation": "名词 + だの + 名词 + だの | 动词/形容词普通形 + だの + 动词/形容词普通形 + だの",
+      "examples": [
+        {
+          "translation": "他总是又是迟到又是忘工作，真让人头疼。"
+        },
+        {
+          "translation": "她经常把钱花在买新衣服啦、买化妆品啦之类的事情上。"
+        },
+        {
+          "translation": "据他自己说，他似乎喜欢音乐啦、电影啦、书本之类的东西。"
+        },
+        {
+          "translation": "我想无限制地给孩子们他们喜欢的点心啦、玩具啦等等。"
+        }
+      ]
+    },
+    "ja_A_5": {
+      "title": "A であれ B であれ (A deare B deare)",
+      "shortExplanation": "表示无论是A还是B，后面的情况或结论都同样适用；“无论是A还是B”、“不论是A还是B”。",
+      "longExplanation": "句型“A であれ B であれ”由断定助动词“である”演变而来，常将成对的反义词或同类词并列，表示在任何一种情况下结论或原则都完全相同，没有任何区别或例外（“无论是……还是……”、“不论是……还是……”）。属于庄重的书面语表达，多用于议论文、演讲或原则性声明中。",
+      "formation": "名词1 + であれ + 名词2 + であれ | 二类形容词词干 + であれ + 二类形容词词干 + であれ",
+      "examples": [
+        {
+          "translation": "无论是下雨还是下雪，比赛都不会中止。"
+        },
+        {
+          "translation": "无论是男性还是女性，都应当受到平等的对待。"
+        },
+        {
+          "translation": "无论是富有还是贫穷，真正的幸福都是金钱买不到的。"
+        },
+        {
+          "translation": "不论是有经验者还是新手，都能享受这款游戏的乐趣。"
+        }
+      ]
+    },
+    "ja_A_6": {
+      "title": "A というか B というか (A to iu ka B to iu ka)",
+      "shortExplanation": "表示不知道该说是A好还是说是B好，难以准确形容；“说是A呢还是说是B呢”、“该说是……还是……”。",
+      "longExplanation": "句型“A というか B というか”用于说话人在寻找贴切的词语来描述某种情况或感受时，觉得两种说法都沾边、都不完全准确，因而感到犹豫（“说是A好呢，还是说是B好呢……”、“该说是……还是该说是……”）。后半句常伴随“とにかく（总之）”等词语，给出自己的总体印象。",
+      "formation": "词语/分句A + というか + 词语/分句B + というか（接名词、形容词、动词等普通形）",
+      "examples": [
+        {
+          "translation": "他该说是无礼呢，还是该说是直接呢，总之性格非常直率明了。"
+        },
+        {
+          "translation": "这部电影说是很有趣呢，还是该说古怪呢，总之有一种不可思议的氛围。"
+        },
+        {
+          "translation": "他的画作该说是绝妙呢，还是令人惊叹呢，确实非常值得一看。"
+        },
+        {
+          "translation": "她的衣服说是可爱呢，还是说太扎眼呢，总之非常引人注目。"
+        }
+      ]
+    },
+    "ja_A_7": {
+      "title": "A とも B とも (A tomo B tomo)",
+      "shortExplanation": "列举两种可能性或对象，表示“无论是A还是B”、“不论是A还是B”或难以断定其一。",
+      "longExplanation": "句型“A とも B とも”用于并列列举两种可能的情形、事物或对象，表示“不论是A还是B”，或者说明两者兼具、难以明确界定（“无论是A还是B”、“难以说是A还是B”）。常与表示无法判断的表达（如“〜言えない”、“〜つかない”）或表示交由未来判断的句子连用。",
+      "formation": "名词 + とも + 名词 + とも | 普通形 + とも + 普通形 + とも",
+      "examples": [
+        {
+          "translation": "无论是有魄力的决断还是失误，时间最终都会告诉我们答案吧。"
+        },
+        {
+          "translation": "不管是和父亲还是和哥哥，他都已经好几年没有说过话了。"
+        },
+        {
+          "translation": "我打算去看电影，要么是跟女朋友要么是跟朋友一起去。"
+        },
+        {
+          "translation": "这款游戏所需要的毅力，难以单纯用时间或努力来衡量。"
+        }
+      ]
+    },
+    "ja_A_8": {
+      "title": "A にしろ B にしろ (A nishiro B nishiro)",
+      "shortExplanation": "列举两个对立或不同的例子，表示无论哪种情况后项结论或做法都不变；“无论是A还是B”、“不论……还是……”。",
+      "longExplanation": "句型“A にしろ B にしろ”常列举相反或相关的两种情况，表示即便是前项这两种不同的情形，后项的判断、建议或事实也毫不动摇，完全适用（“无论是……还是……”、“不论……还是……”）。既可用于较正式的会话，也可用于文章写作。",
+      "formation": "名词 + にしろ + 名词 + にしろ | 动词/形容词普通形 + にしろ + 动词/形容词普通形 + にしろ",
+      "examples": [
+        {
+          "translation": "不管天气热还是冷，每天都应该进行适度运动。"
+        },
+        {
+          "translation": "无论是合格还是落榜，我都已经竭尽全力了。"
+        },
+        {
+          "translation": "不论是忙碌还是闲暇，都应当珍惜时间。"
+        },
+        {
+          "translation": "不管大箱子还是小箱子，请把那些箱子全都搬到这里来。"
+        }
+      ]
+    },
+    "ja_A_9": {
+      "title": "A にせよ B にせよ (A ni seyo B ni seyo)",
+      "shortExplanation": "书面语表达，表示无论是A还是B，后项事实或主张都不受影响；“无论……还是……”、“不论……还是……”。",
+      "longExplanation": "句型“A にせよ B にせよ”比“～にしろ～にしろ”更具书面语色彩，用于列举两种可能性或选择项，强调无论处于A还是B的状态，后项的结论、观点或决定都保持不变（“无论是……还是……”、“即使是……抑或是……”）。常见于评论文、公文或正式发言中。",
+      "formation": "名词 + にせよ + 名词 + にせよ | 动词/形容词普通形 + にせよ + 动词/形容词普通形 + にせよ",
+      "examples": [
+        {
+          "translation": "无论是下雨还是下雪，比赛都不会中止。"
+        },
+        {
+          "translation": "无论由他去还是由她去，总该由一个人前往。"
+        },
+        {
+          "translation": "不论是结果还是付出的努力，二者都至关重要。"
+        },
+        {
+          "translation": "不管是春天还是秋天，我都非常喜欢花卉。"
+        }
+      ]
+    },
+    "ja_A_10": {
+      "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
+      "shortExplanation": "并列相对的情形或心境，表示无论是处于A还是B的状态都同样如此；“无论……还是……”、“每当……或是……的时候”。",
+      "longExplanation": "句型“～AにつけBにつけ”通常将具有相反或对比意义的词语（如喜怒哀乐、日夜、哭笑等）并列使用，表示无论是处于情况A还是处于情况B，后项的心情、状态或行为都始终如一（“无论是在……还是在……的时候”、“或……或……”）。带有较浓厚的情感色彩和书面语文雅气息。",
+      "formation": "动词辞书形 + につけ + 动词辞书形 + につけ | 一类形容词 + につけ + 一类形容词 + につけ | 名词 + につけ + 名词 + につけ",
+      "examples": [
+        {
+          "translation": "对他而言，不论是笑还是哭，都散发着十足的魅力。"
+        },
+        {
+          "translation": "无论是高兴还是悲伤的时候，他总是在听音乐。"
+        },
+        {
+          "translation": "不论是在白天还是在夜晚，这里的景色都美不胜收。"
+        },
+        {
+          "translation": "无论是欣喜还是悲伤的时刻，她总是一直在背后默默支持着我。"
+        }
+      ]
+    },
+    "ja_A_11": {
+      "title": "A のやら B のやら (A no yara B no yara)",
+      "shortExplanation": "表示情况不明确，说话人困惑于到底是A还是B；“不知是A还是B”、“真搞不懂是……还是……”。",
+      "longExplanation": "句型“A のやら B のやら”由形式名词“の”与带有疑问困惑语气的助词“やら”组合而成，用于表达说话人面对两种可能性时感到捉摸不透、无从判断（“不知是……还是……”、“搞不清究竟是……还是……”）。后半句几乎总是与“わからない（不知道）”、“はっきりしない（不清楚）”、“見当がつかない（摸不着头脑）”等表达相呼应。",
+      "formation": "动词/一类形容词普通形 + のやら + 动词/一类形容词普通形 + のやら | 二类形容词词干 + なのやら | 名词 + なのやら（或 のやら）",
+      "examples": [
+        {
+          "translation": "我真搞不清楚他到底是在生气还是在难过。"
+        },
+        {
+          "translation": "真不知道考试成绩是好是坏，心里惦记着放不下。"
+        },
+        {
+          "translation": "我真不知道她到底是喜欢我还是讨厌我。"
+        },
+        {
+          "translation": "他到底去还是不去，到现在也没个准信。"
+        }
+      ]
+    },
+    "ja_Noun1_12": {
+      "title": "名词1 + が + 名词1 + なら、 名词2 + も + 名词2 + だ (A ga A nara, B mo B da)",
+      "shortExplanation": "通过重复名词表示两者的对称或对等关系；“如果A算得上是A，那么B也是B”、“既然A如此，B也不例外”。",
+      "longExplanation": "句型“名词1 が 名词1 なら、名词2 も 名词2 だ”通过重复两个名词，强调两者在性质、立场或程度上具有同等的对等性或相称性（“如果说A是如此，那B也同样如此”、“A要是算作A，那B同样也是B”）。常用于带有修辞色彩的辩驳、对比或对立抗衡的语境中。",
+      "formation": "名词1 + が + （重复名词1） + なら、名词2 + も + （重复名词2） + だ",
+      "examples": [
+        {
+          "translation": "如果说鬼魅残酷无情，那么人类也同样残酷得不相上下。"
+        },
+        {
+          "translation": "如果他是社长，那我也是社长。"
+        },
+        {
+          "translation": "如果你自诩为战士，那我也是堂堂正正的战士。"
+        },
+        {
+          "translation": "如果仓鼠算作宠物，那么猫当然也是宠物。"
+        }
+      ]
+    },
+    "ja_Noun1_13": {
+      "title": "名词1 + も + 名词1 + なら、名词2 + も + 名词2 + だ (A mo A nara, B mo B da)",
+      "shortExplanation": "并列指出两者都有问题或各有其极端特点；“A固然有不对，B也半斤八两”、“A是如此，B也一样”。",
+      "longExplanation": "句型“名词1 も 名词1 なら、名词2 も 名词2 だ”将两个事物或人物并列，表示双方都存在类似的问题、缺点或各具不可思议的鲜明特点（“A固然不像话，B也彼此彼此”、“A也是有不是之处，B也同样好不到哪去”）。通常带有对双方都予以批评、无奈叹息或客观对比的语感。",
+      "formation": "名词1 + も + （重复名词1） + なら、名词2 + も + （重复名词2） + だ",
+      "examples": [
+        {
+          "translation": "你固然有不对的地方，但我也是彼此彼此。"
+        },
+        {
+          "translation": "夏天固然热得不像话，冬天也同样冷得要命。"
+        },
+        {
+          "translation": "东京固然有东京的奇特之处，大阪也同样有大阪的风味。"
+        },
+        {
+          "translation": "狗固然有狗的脾气，猫也同样有猫的个性。"
+        }
+      ]
+    },
+    "ja_Noun_14": {
+      "title": "名词1 + あっての + 名词2 (A atte no B)",
+      "shortExplanation": "强调正因为有了名词1的存在作为基础，名词2才得以成立；“正因为有了……才会有……”、“有了……才有……”。",
+      "longExplanation": "句型“名词1 + あっての + 名词2”用于强调名词1是名词2不可或缺的前提、基础或恩惠来源，如果没有名词1，名词2就根本无法成立或失去意义（“正因为有了A才有B”、“全仰仗A才有B”）。常带有强烈的感恩、珍视之情，或用于阐明至关重要的决定性条件。",
+      "formation": "名词1 + あっての + 名词2",
+      "examples": [
+        {
+          "translation": "正因为有了家人的支持，才有了今天的我。"
+        },
+        {
+          "translation": "企业经营全仰仗顾客的支持才能成立。"
+        },
+        {
+          "translation": "正因为有了刻苦的练习，才迎来了成功。"
+        },
+        {
+          "translation": "只有拥有了健康，工作才具有意义。"
+        }
+      ]
+    },
+    "ja_Noun_15": {
+      "title": "名词 + かたがた (Noun kata gata)",
+      "shortExplanation": "表示借做某事之便顺带做另一件事（较为郑重的表达）；“顺便……”、“借……之便”。",
+      "longExplanation": "句型“名词 + かたがた”（汉字多作“方々”）是一种较为庄重的表达方式，表示借着进行前项主要行动（通常伴随出行或拜访）的机会，顺便兼顾完成另一件事（“顺便……”、“借……之便顺带……”）。常用于商务书信、社交问候或看望致意（如“お礼かたがた/顺便致谢”、“ご挨拶かたがた/顺道问候”）。",
+      "formation": "名词（带有动作性的名词） + かたがた",
+      "examples": [
+        {
+          "translation": "借着去东京出差之便，我顺道去见了一位朋友。"
+        },
+        {
+          "translation": "观光游览的同时，我顺便买了些当地特产。"
+        },
+        {
+          "translation": "散步的时候，我顺手拾捡了垃圾。"
+        },
+        {
+          "translation": "在学习的同时，我也顺便听了听音乐。"
+        }
+      ]
+    },
+    "ja_Noun_16": {
+      "title": "名词 + がてら (Noun gatera)",
+      "shortExplanation": "表示借进行移动性动作的机会顺便做另一件事；“顺便……”、“借……之便”。",
+      "longExplanation": "句型“～がてら”接在表示移动的动作性名词（如散步、购物、兜风等）或动词连用形后，表示利用进行该动作的大好机会，顺道把另一件事也一起做了（“顺便……”、“借……的机会顺带……”）。属于日常口语和常用书面表达，后面常可加助词“に”构成“～がてらに”。",
+      "formation": "名词（表示移动的动作性名词） + がてら（或 がてらに） | 动词连用形（ます形去掉ます） + がてら",
+      "examples": [
+        {
+          "translation": "借着散步的机会，我在附近的公园里摘了几朵花。"
+        },
+        {
+          "translation": "去买东西顺便去拜访了朋友。"
+        },
+        {
+          "translation": "她借着旅行之便，学习了一门新的语言。"
+        },
+        {
+          "translation": "趁着开车兜风，我顺便听了新出的专辑。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_A_2": {
+      "title": "A かたわら B (A katawara B)",
+      "shortExplanation": "본업이나 주된 활동 A를 하는 한편, 다른 일 B도 병행함을 나타내며, '~하는 한편', '~하는 곁에서'라는 뜻입니다.",
+      "longExplanation": "문형 '～かたわら'(한자로는 傍ら)는 직업이나 학업 등 본업인 주된 활동을 지속하면서, 그와 병행하여 또 다른 활동이나 일을 함께 하고 있음을 나타내는 표현입니다('~하는 한편', '~하는 곁에서', '~하는 틈틈이'). 격식 있는 문어체나 인물의 경력, 활동 소개 등에서 자주 쓰입니다.",
+      "formation": "동사 사전형 + かたわら | 명사 + のかたわら",
+      "examples": [
+        {
+          "translation": "그는 직장 생활을 하는 한편, 대학에 다니고 있다."
+        },
+        {
+          "translation": "저는 학생 신분인 한편, 식당에서 아르바이트를 하고 있습니다."
+        },
+        {
+          "translation": "그녀는 의사로 일하는 한편, 취미로 그림을 그리고 있다."
+        },
+        {
+          "translation": "그는 본업을 하는 한편, 자원봉사 활동에도 적극적으로 참여하고 있다."
+        }
+      ]
+    },
+    "ja_A_3": {
+      "title": "A かれ B かれ (A kare B kare)",
+      "shortExplanation": "A이든 B이든 상관없이 둘 다 해당하거나 변함없음을 나타내며, '~하든 ~하든', '~이든 ~이든'이라는 뜻입니다.",
+      "longExplanation": "문형 '～AかれBかれ'는 다소 고풍스럽거나 문어적인 관용 표현으로, 서로 대립하거나 대비되는 두 어구를 나열하여 'A이든 B이든 어느 쪽이든 마찬가지다'라는 의미를 나타냅니다('~하든 ~하든', '~이든 ~이든'). 주로 い형용사 어간과 결합한 관용구(예: 多かれ少なかれ, 早かれ遅かれ)로 가장 많이 쓰이며, 고어투나 강조 표현으로 명사나 동사와 결합하기도 합니다.",
+      "formation": "い형용사 어간 + かれ + い형용사 어간 + かれ(관용 표현) | 명사 + かれ + 명사 + かれ | 동사 보통형 + かれ + 동사 보통형 + かれ",
+      "examples": [
+        {
+          "translation": "겨울이든 여름이든 매일 조깅을 한다."
+        },
+        {
+          "translation": "그가 오든 오지 않든 파티는 시작한다."
+        },
+        {
+          "translation": "이기든 지든 시합에 출전하는 것이 중요하다."
+        },
+        {
+          "translation": "비가 오든 눈이 내리든 반려견 산책은 거르지 않는다."
+        }
+      ]
+    },
+    "ja_A_4": {
+      "title": "A だの B だの (A dano B dano)",
+      "shortExplanation": "사물이나 동작을 예로 나열할 때 쓰이며(주로 불만이나 불평, 지겨움의 뉘앙스를 띰), '~니 ~니', '~네 ~네'라는 뜻입니다.",
+      "longExplanation": "문형 '～だの～だの'는 여러 가지 사물이나 이유, 행동을 나열하여 제시할 때 쓰이는 구어 표현입니다('~니 ~니', '~라느니 ~라느니'). 주로 화자의 불만, 불평, 비판적인 시선이나 귀찮아하는 감정이 담겨 있는 경우가 많으며, 사소하거나 성가신 일들을 줄줄이 늘어놓을 때 자주 사용됩니다.",
+      "formation": "명사 + だの + 명사 + だの | 동사/형용사 보통형 + だの + 동사/형용사 보통형 + だの",
+      "examples": [
+        {
+          "translation": "그는 늘 지각이니, 일을 잊어버렸다느니 해서 곤란하다."
+        },
+        {
+          "translation": "그녀는 새 옷이니, 화장품이니 하는 것들에 돈을 자주 쓴다."
+        },
+        {
+          "translation": "그 사람 말로는 음악이니 영화니 책이니 하는 것들을 좋아하는 모양이다."
+        },
+        {
+          "translation": "아이들에게는 과자니 장난감이니 좋아하는 것을 마음껏 사주고 싶다."
+        }
+      ]
+    },
+    "ja_A_5": {
+      "title": "A であれ B であれ (A deare B deare)",
+      "shortExplanation": "A이든 B이든 상관없이 뒤의 내용이 똑같이 적용됨을 나타내며, 'A이든 B이든', 'A이건 B이건'이라는 뜻입니다.",
+      "longExplanation": "문형 'A であれ B であれ'는 단정의 조동사 'である'에서 온 문어적 표현으로, 주로 대립되는 한 쌍의 명사나 형용동사를 나열하여 'A이든 B이든 어느 쪽이든 상관없이 동일한 사실이나 원칙이 적용된다'는 점을 강조합니다('A이든 B이든', 'A이건 B이건'). 논설문, 격식 있는 연설, 공적 발표 등에서 자주 쓰입니다.",
+      "formation": "명사1 + であれ + 명사2 + であれ | な형용사 어간 + であれ + な형용사 어간 + であれ",
+      "examples": [
+        {
+          "translation": "비가 오든 눈이 오든 시합은 취소되지 않는다."
+        },
+        {
+          "translation": "남자이든 여자이든 평등하게 대우받아야 한다."
+        },
+        {
+          "translation": "부유하든 가난하든 진정한 행복은 돈으로 살 수 없다."
+        },
+        {
+          "translation": "유경험자이든 초보자이든 이 게임은 즐길 수 있다."
+        }
+      ]
+    },
+    "ja_A_6": {
+      "title": "A というか B というか (A to iu ka B to iu ka)",
+      "shortExplanation": "어느 쪽으로 표현해야 할지 망설여질 때 쓰이며, 'A라고 해야 할지 B라고 해야 할지', '~랄까 ~랄까'라는 뜻입니다.",
+      "longExplanation": "문형 'A というか B というか'는 대상을 정확하게 묘사할 적절한 표현을 찾지 못해 'A라고 해야 할지, 아니면 B라고 해야 할지' 망설이는 화자의 심리를 나타내는 표현입니다('~라고 할까 ~라고 할까', '~랄지 ~랄지'). 뒤이어 'とにかく(어쨌든)', 'いずれにせよ(어찌 되었든)'와 같은 표현과 호응하여 전체적인 인상이나 결론을 짓는 경우가 많습니다.",
+      "formation": "어구/절 A + というか + 어구/절 B + というか (명사, 형용사, 동사 보통형 등에 폭넓게 접속)",
+      "examples": [
+        {
+          "translation": "그는 무례하다고 해야 할지, 직설적이라고 해야 할지, 어쨌든 성격이 아주 분명하다."
+        },
+        {
+          "translation": "이 영화는 재미있다고 해야 할지, 기묘하다고 해야 할지, 어쨌든 신기한 분위기가 있다."
+        },
+        {
+          "translation": "그의 그림은 훌륭하다고 해야 할지, 놀랍다고 해야 할지, 정말로 볼 가치가 있다."
+        },
+        {
+          "translation": "그녀의 옷은 귀엽다고 해야 할지, 화려하다고 해야 할지, 어쨌든 사람들의 눈길을 끈다."
+        }
+      ]
+    },
+    "ja_A_7": {
+      "title": "A とも B とも (A tomo B tomo)",
+      "shortExplanation": "두 가지 가능성이나 대상을 나열하여 'A인지 B인지', 'A이든 B이든' 분간하기 어렵거나 둘 다에 해당함을 나타냅니다.",
+      "longExplanation": "문형 'A とも B とも'는 두 가지 상황이나 가능성, 대상 등을 병렬로 제시하여 'A인지 B인지 명확히 단정하기 어렵다'거나 'A이든 B이든 상관없이 둘 다'라는 의미를 나타내는 표현입니다('A인지 B인지', '~라고도 ~라고도'). 주로 뒤에 판단을 유보하거나 '〜と言えない(말할 수 없다)', '〜つかない(판단할 수 없다)'와 같은 표현과 자주 어울립니다.",
+      "formation": "명사 + とも + 명사 + とも | 보통형 + とも + 보통형 + とも",
+      "examples": [
+        {
+          "translation": "현명한 결단이었는지 실수였는지는 시간이 지나면 결과가 알려주겠지요."
+        },
+        {
+          "translation": "그는 아버지와도 형과도 벌써 몇 년째 말을 섞지 않고 있다."
+        },
+        {
+          "translation": "그녀와든 친구와든 영화를 보러 갈 생각입니다."
+        },
+        {
+          "translation": "이 게임에는 단순한 시간이나 노력이라고는 말할 수 없을 만큼의 끈기가 필요하다."
+        }
+      ]
+    },
+    "ja_A_8": {
+      "title": "A にしろ B にしろ (A nishiro B nishiro)",
+      "shortExplanation": "대비되는 두 가지 상황을 들어, 어느 쪽이든 뒤의 판단이나 행동에는 변함이 없음을 나타내며, '~이든 ~이든', '~하든 ~하든'이라는 뜻입니다.",
+      "longExplanation": "문형 'A にしろ B にしろ'는 서로 대립하거나 상이한 두 가지 사실이나 가정을 나열하여, 'A의 경우이든 B의 경우이든 상관없이 뒤의 판단, 조언, 결과는 달라지지 않는다'는 점을 나타냅니다('~이든 ~이든', '~하든 ~하든 간에'). 구어와 문어 모두에서 널리 사용됩니다.",
+      "formation": "명사 + にしろ + 명사 + にしろ | 동사/형용사 보통형 + にしろ + 동사/형용사 보통형 + にしろ",
+      "examples": [
+        {
+          "translation": "덥든 춥든 매일 운동을 해야 합니다."
+        },
+        {
+          "translation": "합격하든 불합격하든 최선을 다했습니다."
+        },
+        {
+          "translation": "바쁘든 한가하든 시간을 소중히 여겨야 합니다."
+        },
+        {
+          "translation": "크든 작든 그 상자들은 전부 여기로 옮겨 주세요."
+        }
+      ]
+    },
+    "ja_A_9": {
+      "title": "A にせよ B にせよ (A ni seyo B ni seyo)",
+      "shortExplanation": "격식 있는 문어체로, A이든 B이든 상관없이 뒤의 사실이나 주장이 확고함을 나타내며, '~이든 ~이든', '~하든 ~하든'이라는 뜻입니다.",
+      "longExplanation": "문형 'A にせよ B にせよ'는 '～にしろ～にしろ'보다 한층 더 격식 있고 딱딱한 문어체 표현입니다. 두 가지 선택지나 상황을 열거하여, 'A의 경우이든 B의 경우이든 개의치 않고 뒤의 결론이나 판단은 달라지지 않는다'는 점을 나타냅니다('~이든 ~이든 간에', '~하든 ~하든'). 논설문이나 공식적인 담화 등에서 자주 활용됩니다.",
+      "formation": "명사 + にせよ + 명사 + にせよ | 동사/형용사 보통형 + にせよ + 동사/형용사 보통형 + にせよ",
+      "examples": [
+        {
+          "translation": "비가 오든 눈이 내리든 시합은 중지하지 않는다."
+        },
+        {
+          "translation": "그 사람이든 그녀이든 누군가 한 명은 가야 한다."
+        },
+        {
+          "translation": "성과이든 노력이든 둘 다 중요하다."
+        },
+        {
+          "translation": "봄이든 가을이든 나는 꽃을 좋아한다."
+        }
+      ]
+    },
+    "ja_A_10": {
+      "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
+      "shortExplanation": "대비되는 상황이나 감정을 들어, A의 경우이든 B의 경우이든 언제나 그러함을 나타내며, '~하든 ~하든', '~때에도 ~때에도'라는 뜻입니다.",
+      "longExplanation": "문형 '～AにつけBにつけ'는 기쁨과 슬픔, 웃음과 울음, 낮과 밤처럼 서로 대비되는 감정이나 상태를 나타내는 어구를 짝지어, 'A일 때도 B일 때도 어느 상황에서나 항상 그러하다'는 점을 표현합니다('~할 때나 ~할 때나', '~이든 ~이든'). 감성적이거나 격조 있는 문맥에서 자주 사용됩니다.",
+      "formation": "동사 사전형 + につけ + 동사 사전형 + につけ | い형용사 + につけ + い형용사 + につけ | 명사 + につけ + 명사 + につけ",
+      "examples": [
+        {
+          "translation": "그는 웃을 때나 울 때나 대단히 매력적이다."
+        },
+        {
+          "translation": "기쁠 때든 슬플 때든 그는 언제나 음악을 듣고 있다."
+        },
+        {
+          "translation": "낮이든 밤이든 이 경치는 아름답다."
+        },
+        {
+          "translation": "기쁠 때나 슬플 때나 그녀는 언제나 내 곁을 지탱해 준다."
+        }
+      ]
+    },
+    "ja_A_11": {
+      "title": "A のやら B のやら (A no yara B no yara)",
+      "shortExplanation": "두 가지 가능성 사이에서 갈피를 잡지 못할 때 쓰이며, 'A인지 B인지 (모르겠다)', '~는지 ~는지'라는 뜻입니다.",
+      "longExplanation": "문형 'A のやら B のやら'는 명사화 조사 'の'와 불확실·의문의 뉘앙스를 나타내는 'やら'가 결합한 표현으로, 대상이 A인지 B인지 분간할 수 없어 당혹스럽거나 판단이 서지 않는 화자의 심정을 나타냅니다('~인지 ~인지 모르겠다'). 뒤에는 주로 'わからない(모르겠다)', 'はっきりしない(분명하지 않다)' 등 판단 불가의 표현이 호응합니다.",
+      "formation": "동사/い형용사 보통형 + のやら + 동사/い형용사 보통형 + のやら | な형용사 어간 + なのやら | 명사 + なのやら(또는 のやら)",
+      "examples": [
+        {
+          "translation": "그가 화가 난 것인지 슬픈 것인지 나는 잘 모르겠다."
+        },
+        {
+          "translation": "시험 결과가 좋을지 나쁠지 신경이 쓰여서 견딜 수가 없다."
+        },
+        {
+          "translation": "그녀가 나를 좋아하는 건지 싫어하는 건지 모르겠다."
+        },
+        {
+          "translation": "그가 정말로 갈 것인지 안 갈 것인지 분명하지 않다."
+        }
+      ]
+    },
+    "ja_Noun1_12": {
+      "title": "명사1 + が + 명사1 + なら、 명사2 + も + 명사2 + だ (A ga A nara, B mo B da)",
+      "shortExplanation": "명사를 반복하여 두 대상이 대등하거나 상응함을 나타내며, 'A가 A라면 B도 B다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 が 명사1 なら、명사2 も 명사2 だ'는 두 개의 명사를 각각 반복 제시하여, 'A가 진정 그러한 존재라면 B 역시 못지않게 대등한 존재다'라는 병렬적 대응이나 맞대응 관계를 수사적으로 강조하는 표현입니다('A가 A라면 B도 B다'). 반박하거나 동등한 입장을 내세울 때 자주 쓰입니다.",
+      "formation": "명사1 + が + (명사1 반복) + なら、명사2 + も + (명사2 반복) + だ",
+      "examples": [
+        {
+          "translation": "도깨비가 도깨비답다면 인간 역시 인간답게 잔혹하다."
+        },
+        {
+          "translation": "그 사람이 사장이라면 나 역시 사장이다."
+        },
+        {
+          "translation": "네놈이 전사라면 나 또한 전사다."
+        },
+        {
+          "translation": "햄스터가 반려동물이라면 고양이 역시 반려동물이다."
+        }
+      ]
+    },
+    "ja_Noun1_13": {
+      "title": "명사1 + も + 명사1 + なら、명사2 + も + 명사2 + だ (A mo A nara, B mo B da)",
+      "shortExplanation": "양쪽 모두 문제가 있거나 저마다 유별난 특성이 있음을 나타내며, 'A도 A지만 B도 B다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 も 명사1 なら、명사2 も 명사2 だ'는 두 대상을 대등하게 나열하여, 'A도 문제가 있지만 상대방인 B 역시 만만치 않게 문제가 있다'거나 '양쪽 모두 제각기 유별나다'라는 점을 지적하는 표현입니다('A도 A지만 B도 B다', 'A도 그렇고 B도 마찬가지다'). 주로 양측 모두를 비판하거나 어이없어하는 뉘앙스를 띱니다.",
+      "formation": "명사1 + も + (명사1 반복) + なら、명사2 + も + (명사2 반복) + だ",
+      "examples": [
+        {
+          "translation": "너도 너지만 나 역시 잘못이 있다."
+        },
+        {
+          "translation": "여름도 혹독하지만 겨울 역시 만만치 않다."
+        },
+        {
+          "translation": "도쿄도 도쿄지만 오사카 역시 오사카 나름의 독특함이 있다."
+        },
+        {
+          "translation": "개도 개지만 고양이 역시 만만치 않다."
+        }
+      ]
+    },
+    "ja_Noun_14": {
+      "title": "명사1 + あっての + 명사2 (A atte no B)",
+      "shortExplanation": "명사1이 존재하기에 비로소 명사2가 성립될 수 있음을 강조하며, '~가 있기에 비로소 존재하는 ~', '~가 있어야 비로소 가능한 ~'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + あっての + 명사2'는 명사1이 명사2의 존립을 위한 필수불가결한 기반이나 전제 조건임을 강조하는 표현입니다('A가 있기에 비로소 B가 있다', 'A 덕분에 존재하는 B'). 명사1에 대한 깊은 감사, 존중의 마음을 담거나, 근본적인 토대의 중요성을 역설할 때 주로 사용됩니다.",
+      "formation": "명사1 + あっての + 명사2",
+      "examples": [
+        {
+          "translation": "가족이 있기에 비로소 지금의 제가 있는 것입니다."
+        },
+        {
+          "translation": "고객이 있기에 비로소 비즈니스가 성립합니다."
+        },
+        {
+          "translation": "피나는 연습이 있었기에 비로소 얻은 성공입니다."
+        },
+        {
+          "translation": "건강이 뒷받침되어야 일도 비로소 가능한 법입니다."
+        }
+      ]
+    },
+    "ja_Noun_15": {
+      "title": "명사 + かたがた (Noun kata gata)",
+      "shortExplanation": "어떤 일을 하는 김에 다른 일도 겸해서 함을 나타내는 격식 있는 표현으로, '~하는 겸', '~할 겸해서'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + かたがた'는 이동이나 방문 등의 주된 목적을 수행하면서 다른 목적도 함께 겸하여 달성할 때 쓰이는 다소 격식 있는 문어적 표현입니다('~할 겸', '~하는 김에 겸사겸사'). 주로 비즈니스 서신, 문안 인사, 안부 방문 등 예의를 갖추어야 하는 상황에서 자주 쓰입니다(예: ご挨拶かたがた, お礼かたがた).",
+      "formation": "명사(동작성 명사) + かたがた",
+      "examples": [
+        {
+          "translation": "도쿄로 출장을 간 김에 겸사겸사 친구를 만나러 갔다."
+        },
+        {
+          "translation": "관광도 할 겸 기념품을 샀습니다."
+        },
+        {
+          "translation": "산책을 겸해서 쓰레기를 주웠다."
+        },
+        {
+          "translation": "공부도 할 겸 음악을 들었다."
+        }
+      ]
+    },
+    "ja_Noun_16": {
+      "title": "명사 + がてら (Noun gatera)",
+      "shortExplanation": "이동을 동반하는 주된 행동을 하는 김에 다른 일도 겸해서 함을 나타내며, '~하는 김에', '~겸'이라는 뜻입니다.",
+      "longExplanation": "문형 '～がてら'는 주로 산책, 쇼핑, 드라이브 등 이동을 수반하는 동작성 명사나 동사 연용형(ます형 어간)에 접속하여, '주된 활동을 하는 기회를 살려 그 김에 다른 행동도 함께 한다'는 뜻을 나타냅니다('~하는 김에', '~겸'). 일상적인 대화에서 널리 쓰이며 조사 'に'를 붙여 '～がてらに' 형태로도 자주 사용됩니다.",
+      "formation": "명사(이동성 명사) + がてら(또는 がてらに) | 동사 ます형 어간 + がてら",
+      "examples": [
+        {
+          "translation": "산책하는 김에 근처 공원에서 꽃을 꺾었습니다."
+        },
+        {
+          "translation": "쇼핑을 하러 간 김에 친구를 만나러 갔습니다."
+        },
+        {
+          "translation": "그녀는 여행을 하는 김에 새로운 언어를 공부했다."
+        },
+        {
+          "translation": "드라이브를 하는 김에 새 앨범을 들었다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_A_2": {
+      "title": "A かたわら B (A katawara B)",
+      "shortExplanation": "本業や主な活動をする一方で、別の活動も並行して行っていることを表します。「〜する一方で」「〜のかたわら」。",
+      "longExplanation": "「～かたわら」は、職業や学業など中心となる本業や社会的役割（A）を続けながら、それと並行して別の活動や仕事（B）にも携わっていることを表す文型です。「〜する一方で」「〜の合間に」という意味を表し、長期的・継続的な活動について述べる際に用いられます。人物紹介や略歴などのやや改まった文脈でよく使われます。",
+      "formation": "動詞辞書形 ＋ かたわら ｜ 名詞 ＋ のかたわら",
+      "examples": [
+        {
+          "translation": "彼は仕事をするかたわら、大学に通っている。"
+        },
+        {
+          "translation": "私は学生のかたわら、レストランでアルバイトをしている。"
+        },
+        {
+          "translation": "彼女は医者のかたわら、趣味で絵を描いている。"
+        },
+        {
+          "translation": "彼は仕事をするかたわら、ボランティア活動にも積極的に参加している。"
+        }
+      ]
+    },
+    "ja_A_3": {
+      "title": "A かれ B かれ (A kare B kare)",
+      "shortExplanation": "AであってもBであっても、どちらの場合も該当することを示します。「〜であれ〜であれ」「〜につけ〜につけ」。",
+      "longExplanation": "「～AかれBかれ」は、古風あるいは文語的な慣用表現で、対立・対比する2つの事柄を並べて「AであってもBであっても、どちらの場合でも同様である」という意味を表します。「多かれ少なかれ」「早かれ遅かれ」「良かれ悪しかれ」のようにい形容詞の語幹に付く慣用句が一般的ですが、強調や古風な言い回しとして名詞や動詞に接続して用いられることもあります。",
+      "formation": "い形容詞語幹 ＋ かれ ＋ い形容詞語幹 ＋ かれ（慣用表現） ｜ 名詞 ＋ かれ ＋ 名詞 ＋ かれ ｜ 動詞普通形 ＋ かれ ＋ 動詞普通形 ＋ かれ",
+      "examples": [
+        {
+          "translation": "冬かれ夏かれ、毎日ジョギングする。"
+        },
+        {
+          "translation": "彼が来るかれ来ないかれ、パーティーは始める。"
+        },
+        {
+          "translation": "勝つかれ負けるかれ、試合に出ることが大事だ。"
+        },
+        {
+          "translation": "雨かれ雪かれ、犬の散歩は欠かさない。"
+        }
+      ]
+    },
+    "ja_A_4": {
+      "title": "A だの B だの (A dano B dano)",
+      "shortExplanation": "例を並べて列挙する表現で、不満や非難、あきれた気持ちを含んで用いられることが多いです。「〜だの〜だの」「〜とか〜とか」。",
+      "longExplanation": "「～だの～だの」は、同類の事柄や理由、動作などをいくつか並べて例示する話し言葉の文型です。「〜とか〜とか」と似ていますが、多くの場合、話し手の不満、愚痴、非難、あきれなどの否定的な感情や、うんざりしたニュアンスを伴って用いられます。",
+      "formation": "名詞 ＋ だの ＋ 名詞 ＋ だの ｜ 動詞・形容詞普通形 ＋ だの ＋ 動詞・形容詞普通形 ＋ だの",
+      "examples": [
+        {
+          "translation": "彼はいつも遅刻だの、仕事を忘れるだので困る。"
+        },
+        {
+          "translation": "彼女は新しい服だの、化粧品だのによくお金を使います。"
+        },
+        {
+          "translation": "彼が言うには、音楽だの映画だの本だのが好きらしい。"
+        },
+        {
+          "translation": "子供にはお菓子だの、おもちゃだの、好きなものを限りなく与えてあげたい。"
+        }
+      ]
+    },
+    "ja_A_5": {
+      "title": "A であれ B であれ (A deare B deare)",
+      "shortExplanation": "AであってもBであっても、どちらの場合にも同じことが当てはまることを表します。「〜であっても〜であっても」「〜であれ〜であれ」。",
+      "longExplanation": "「A であれ B であれ」は、対比的な名詞やな形容詞語幹などを並べ、「Aの場合であってもBの場合であっても、その違いに関わらず同じ条件や結論が成り立つ」と述べる硬い表現です。書面語や演説などで好んで用いられ、例外を認めない普遍的な原則や方針を示す際によく使われます。",
+      "formation": "名詞1 ＋ であれ ＋ 名詞2 ＋ であれ ｜ な形容詞語幹 ＋ であれ ＋ な形容詞語幹 ＋ であれ",
+      "examples": [
+        {
+          "translation": "雨であれ雪であれ、試合は中止にならない。"
+        },
+        {
+          "translation": "男であれ女であれ、平等に扱われるべきだ。"
+        },
+        {
+          "translation": "豊かであれ貧乏であれ、真の幸福は金では買えない。"
+        },
+        {
+          "translation": "経験者であれ初心者であれ、このゲームは楽しめる。"
+        }
+      ]
+    },
+    "ja_A_6": {
+      "title": "A というか B というか (A to iu ka B to iu ka)",
+      "shortExplanation": "どちらの言葉で表現すべきか判断に迷う気持ちを表します。「〜と言うべきか〜と言うべきか」「〜というか〜というか」。",
+      "longExplanation": "「A というか B というか」は、ある物事の様子や感情などを表現する際に、Aとも言えるしBとも言えるため、どちらの言い方がより適切なのか決めかねている話し手のニュアンスを表す文型です。「〜と言うべきか〜と言うべきか」という意味になり、後続文には「とにかく」「いずれにしても」などの言葉を伴って全体の感想をまとめることが多いです。",
+      "formation": "語句・節A ＋ というか ＋ 語句・節B ＋ というか（名詞・形容詞・動詞普通形などに幅広く接続）",
+      "examples": [
+        {
+          "translation": "彼は無礼というか、直接的というか、とにかくはっきりしている。"
+        },
+        {
+          "translation": "この映画は面白いというか、変というか、とにかく不思議な雰囲気がある。"
+        },
+        {
+          "translation": "彼の絵は素晴らしいというか、驚くべきというか、本当に見る価値がある。"
+        },
+        {
+          "translation": "彼女の服はかわいいというか、派手というか、とにかく人目を引く。"
+        }
+      ]
+    },
+    "ja_A_7": {
+      "title": "A とも B とも (A tomo B tomo)",
+      "shortExplanation": "2つの可能性や対象を並べ、「AともBともつかない」「AであれBであれ」という意味を表します。",
+      "longExplanation": "「A とも B とも」は、2つの可能性や対象を並べて提示し、「AであるかBであるか区別・断定がつかない」あるいは「Aの場合もBの場合も同様である」という意味を表す文型です。後ろに「〜言えない」「〜つかない」などの判断を保留・否定する表現を伴ったり、結果を成り行きに任せる表現が続いたりすることが多いです。",
+      "formation": "名詞 ＋ とも ＋ 名詞 ＋ とも ｜ 普通形 ＋ とも ＋ 普通形 ＋ とも",
+      "examples": [
+        {
+          "translation": "決断とも誤りとも、結果は時間が教えてくれるでしょう。"
+        },
+        {
+          "translation": "彼は父とも兄とも、もう何年も話していない。"
+        },
+        {
+          "translation": "彼女とも友達とも映画を見に行くつもりです。"
+        },
+        {
+          "translation": "このゲームには時間とも努力とも言えないほどの根気が必要です。"
+        }
+      ]
+    },
+    "ja_A_8": {
+      "title": "A にしろ B にしろ (A nishiro B nishiro)",
+      "shortExplanation": "対立する2つの事柄を例に挙げ、どちらの場合であっても結論や方針は変わらないことを表します。「〜にしても〜にしても」「〜であれ〜であれ」。",
+      "longExplanation": "「A にしろ B にしろ」は、対立的あるいは異なる2つの事態を仮定または提示し、「Aの場合であっても、あるいはBの場合であっても、そのどちらにも関係なく同じ結論や義務、判断が当てはまる」と述べる文型です。日常会話から改まった文章まで幅広く用いられます。",
+      "formation": "名詞 ＋ にしろ ＋ 名詞 ＋ にしろ ｜ 動詞・形容詞普通形 ＋ にしろ ＋ 動詞・形容詞普通形 ＋ にしろ",
+      "examples": [
+        {
+          "translation": "暑いにしろ寒いにしろ、毎日運動するべきです。"
+        },
+        {
+          "translation": "合格するにしろ不合格になるにしろ、最善を尽くしました。"
+        },
+        {
+          "translation": "忙しいにしろ暇にしろ、時間を大切にすべきです。"
+        },
+        {
+          "translation": "大きいにしろ小さいにしろ、その箱は全部ここに運んでください。"
+        }
+      ]
+    },
+    "ja_A_9": {
+      "title": "A にせよ B にせよ (A ni seyo B ni seyo)",
+      "shortExplanation": "改まった書き言葉で、AであってもBであっても後続の判断や事実に変わりがないことを表します。「〜にしても〜にしても」「〜であれ〜であれ」。",
+      "longExplanation": "「A にせよ B にせよ」は、「～にしろ～にしろ」よりも硬い書き言葉の表現で、2つの可能性や事態を提示し、「Aの場合であってもBの場合であっても、いずれにしても同様の結論や状況が成り立つ」と述べる文型です。論説文や公的な演説などで好んで用いられます。",
+      "formation": "名詞 ＋ にせよ ＋ 名詞 ＋ にせよ ｜ 動詞・形容詞普通形 ＋ にせよ ＋ 動詞・形容詞普通形 ＋ にせよ",
+      "examples": [
+        {
+          "translation": "雨にせよ雪にせよ、試合は中止しない。"
+        },
+        {
+          "translation": "彼にせよ彼女にせよ、誰か一人が行くべきだ。"
+        },
+        {
+          "translation": "成果にせよ努力にせよ、どちらも重要だ。"
+        },
+        {
+          "translation": "春にせよ秋にせよ、私は花が好きだ。"
+        }
+      ]
+    },
+    "ja_A_10": {
+      "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
+      "shortExplanation": "対照的な状況や心情を並べ、「Aの時もBの時もいつも同様である」という意味を表します。「〜につけても〜につけても」。",
+      "longExplanation": "「～AにつけBにつけ」は、喜びと悲しみ、笑いと涙、昼と夜のように対比的な事柄や感情を表す語を並べ、「Aの時であってもBの時であっても、どちらの場合にも常に同じ状態や行動が当てはまる」と述べる表現です。情緒的で品のある言い回しとして用いられます。",
+      "formation": "動詞辞書形 ＋ につけ ＋ 動詞辞書形 ＋ につけ ｜ い形容詞 ＋ につけ ＋ い形容詞 ＋ につけ ｜ 名詞 ＋ につけ ＋ 名詞 ＋ につけ",
+      "examples": [
+        {
+          "translation": "彼には笑うにつけ泣くにつけ、とても魅力的だ。"
+        },
+        {
+          "translation": "嬉しいにつけ悲しいにつけ、彼はいつも音楽を聴いている。"
+        },
+        {
+          "translation": "日中につけ夜間につけ、この景色は美しい。"
+        },
+        {
+          "translation": "喜びにつけ悲しみにつけ、彼女はいつも私を支えてくれる。"
+        }
+      ]
+    },
+    "ja_A_11": {
+      "title": "A のやら B のやら (A no yara B no yara)",
+      "shortExplanation": "どちらなのか分からず当惑している気持ちを表します。「〜のか〜のか（分からない）」「〜のやら〜のやら」。",
+      "longExplanation": "「A のやら B のやら」は、提示された2つの可能性のうち実際にはどちらであるのか判別がつかず、話し手が困惑・疑問を抱いている様子を表す文型です。「〜のか〜のか見当がつかない」という意味になり、文末には「分からない」「はっきりしない」「見当がつかない」などの表現が続きます。",
+      "formation": "動詞・い形容詞普通形 ＋ のやら ＋ 動詞・い形容詞普通形 ＋ のやら ｜ な形容詞語幹 ＋ なのやら ｜ 名詞 ＋ なのやら（または のやら）",
+      "examples": [
+        {
+          "translation": "彼が怒っているのやら、悲しいのやら、私には分からない。"
+        },
+        {
+          "translation": "試験の結果が良いのやら悪いのやら、気になって仕方がない。"
+        },
+        {
+          "translation": "彼女が私を好きなのやら嫌いなのやら、わからない。"
+        },
+        {
+          "translation": "彼が本当に行くのやら行かないのやら、はっきりしない。"
+        }
+      ]
+    },
+    "ja_Noun1_12": {
+      "title": "名詞1 ＋ が ＋ 名詞1 ＋ なら、 名詞2 ＋ も ＋ 名詞2 ＋ だ (A ga A nara, B mo B da)",
+      "shortExplanation": "同一の名詞を反復して2つの事柄の同等性や対等な関係を表します。「AがAならBもBだ」。",
+      "longExplanation": "「名詞1 が 名詞1 なら、名詞2 も 名詞2 だ」は、2つの名詞をそれぞれ繰り返すことによって、「Aがまさにそのような性質のものであるなら、対するBも同等にそのような性質のものである」と、両者の対等性、相応性、または拮抗する関係を修辞的に強調する文型です。反論や対抗意識を述べる際にもよく用いられます。",
+      "formation": "名詞1 ＋ が ＋（名詞1の反復）＋ なら、名詞2 ＋ も ＋（名詞2の反復）＋ だ",
+      "examples": [
+        {
+          "translation": "鬼が鬼なら、人間も人間だ。"
+        },
+        {
+          "translation": "彼が社長なら、私も社長だ。"
+        },
+        {
+          "translation": "貴様が戦士なら、俺も戦士だ。"
+        },
+        {
+          "translation": "ハムスターがペットなら、猫もペットだ。"
+        }
+      ]
+    },
+    "ja_Noun1_13": {
+      "title": "名詞1 ＋ も ＋ 名詞1 ＋ なら、名詞2 ＋ も ＋ 名詞2 ＋ だ (A mo A nara, B mo B da)",
+      "shortExplanation": "双方ともに問題点や特異な点があることをあきれや批判を込めて表します。「AもAならBもBだ」。",
+      "longExplanation": "「名詞1 も 名詞1 なら、名詞2 も 名詞2 だ」は、2つの対象を並べて「Aの側にも相当な非や特異な点があるが、それに対するBの側も同様に問題があり、どっちもどっちである」と、両者に対してあきれや批判的な気持ちを含んで述べる文型です。お互いに極端な性質を持っていることを対比する際にも使われます。",
+      "formation": "名詞1 ＋ も ＋（名詞1の反復）＋ なら、名詞2 ＋ も ＋（名詞2の反復）＋ だ",
+      "examples": [
+        {
+          "translation": "君も君なら、私も私だ。"
+        },
+        {
+          "translation": "夏も夏なら、冬も冬だ。"
+        },
+        {
+          "translation": "東京も東京なら、大阪も大阪だ。"
+        },
+        {
+          "translation": "犬も犬なら、猫も猫だ。"
+        }
+      ]
+    },
+    "ja_Noun_14": {
+      "title": "名詞1 ＋ あっての ＋ 名詞2 (A atte no B)",
+      "shortExplanation": "名詞1が存在するからこそ名詞2が成り立つという、不可欠な前提関係を強調します。「〜があってこその〜」「〜があるからこその〜」。",
+      "longExplanation": "「名詞1 ＋ あっての ＋ 名詞2」は、名詞1が名詞2にとって不可欠な基盤・条件・恩恵であり、名詞1がなければ名詞2も存在し得ないという強い依存・前提関係を表す文型です。「AがあってこそのBだ」という意味になり、深い感謝の念や、基本となる土台の大切さを強調する際によく用いられます。",
+      "formation": "名詞1 ＋ あっての ＋ 名詞2",
+      "examples": [
+        {
+          "translation": "家族あっての私です。"
+        },
+        {
+          "translation": "お客様あってのビジネスです。"
+        },
+        {
+          "translation": "練習あっての成功です。"
+        },
+        {
+          "translation": "健康あっての仕事です。"
+        }
+      ]
+    },
+    "ja_Noun_15": {
+      "title": "名詞 ＋ かたがた (Noun kata gata)",
+      "shortExplanation": "ある行動をする機会を利用して、別の目的も兼ねて行うことを表す改まった表現です。「〜を兼ねて」「〜のついでに」。",
+      "longExplanation": "「名詞 ＋ かたがた」は、移動や訪問を伴う行為を表す名詞に付き、1つの行動の中で主たる目的を果たしつつ、別の目的も合わせて果たすことを述べる改まった表現です。「〜を兼ねて」「〜のついでに」という意味になり、手紙文やビジネスでの挨拶、お礼、お見舞いなどの社交的な場面でよく用いられます。",
+      "formation": "名詞（動作性名詞） ＋ かたがた",
+      "examples": [
+        {
+          "translation": "東京へ出張のかたがた、友人に会いに行った。"
+        },
+        {
+          "translation": "観光のかたがた、お土産を買いました。"
+        },
+        {
+          "translation": "散歩のかたがた、ゴミを拾った。"
+        },
+        {
+          "translation": "学習のかたがた、音楽を聞いた。"
+        }
+      ]
+    },
+    "ja_Noun_16": {
+      "title": "名詞 ＋ がてら (Noun gatera)",
+      "shortExplanation": "移動を伴う主たる行動の機会を利用して、別の行動もついでに行うことを表します。「〜のついでに」「〜を兼ねて」。",
+      "longExplanation": "「～がてら」は、散歩や買い物、ドライブなどの移動を伴う動作性名詞や動詞の連用形に接続し、その主たる活動を行う機会を利用して別の行為もついでに済ませることを表す文型です。「〜のついでに」「〜を兼ねて」という意味になり、日常的な場面で自然によく使われます。助詞「に」を伴って「～がてらに」の形をとることもあります。",
+      "formation": "名詞（移動を表す動作性名詞） ＋ がてら（または がてらに） ｜ 動詞ます形語幹 ＋ がてら",
+      "examples": [
+        {
+          "translation": "散歩がてらに、近くの公園で花を摘みました。"
+        },
+        {
+          "translation": "買い物がてら、友達に会いに行きました。"
+        },
+        {
+          "translation": "彼女は旅行がてら、新しい言語を勉強しました。"
+        },
+        {
+          "translation": "ドライブがてら、新しいアルバムを聞きました。"
+        }
+      ]
+    }
+  }
+}

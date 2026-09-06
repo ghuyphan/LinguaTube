@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Noun_32": {
+      "title": "Danh từ + でなくてなんだろう (〜de nakute nandarou)",
+      "shortExplanation": "Câu hỏi tu từ mang tính khẳng định mạnh mẽ; 'nếu không phải là... thì là gì nữa', 'chính là... chứ còn gì nữa'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + でなくてなんだろう' là một câu hỏi tu từ mang sắc thái cảm thán và khẳng định cực kỳ mạnh mẽ của người nói ('nếu đây không phải là... thì là cái gì nữa?'). Người nói bày tỏ niềm tin tuyệt đối rằng sự việc, hiện tượng đó chắc chắn chính là danh từ được nhắc đến mà không thể là điều gì khác. Thường kết hợp với các danh từ trừu tượng mang tính cảm xúc cao như tình yêu (愛), sự thật (真実), kỳ tích (奇跡), số phận (運命).",
+      "formation": "Danh từ + でなくてなんだろう (hoặc でなくて何だろうか)",
+      "examples": [
+        {
+          "translation": "Nếu đây không phải là sự thật thì là gì nữa chứ."
+        },
+        {
+          "translation": "Anh ấy không phải là người lãnh đạo thì còn ai vào đây nữa."
+        },
+        {
+          "translation": "Nếu đây không phải là tình yêu thì còn là gì nữa."
+        },
+        {
+          "translation": "Đây không phải là nhà hàng tuyệt vời nhất thì còn là gì nữa chứ."
+        }
+      ]
+    },
+    "ja_Noun_33": {
+      "title": "Danh từ + ではあるまいし (~dewa aru maishi)",
+      "shortExplanation": "Diễn tả ý phủ định một lý do hay tình huống không có thực để đưa ra lời khuyên, phê phán; 'có phải là... đâu mà', 'đâu còn là... nữa'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + ではあるまいし' được dùng để bác bỏ một giả định, lý do hoặc tình huống không có thực ('đâu phải là... đâu mà'), từ đó đưa ra nhận định, lời khuyên giải, sự nhắc nhở hoặc phê phán đối phương ở vế sau ('không cần phải...', 'đừng có... như vậy'). Đây là cách nói trang trọng, mang tính văn viết hơn so với dạng khẩu ngữ thông dụng là '～じゃあるまいし'.",
+      "formation": "Danh từ + ではあるまいし (khẩu ngữ: じゃあるまいし)",
+      "examples": [
+        {
+          "translation": "Cô ấy đâu phải là ca sĩ chuyên nghiệp đâu mà, đòi hỏi sự hoàn hảo thì quả là quá khắt khe."
+        },
+        {
+          "translation": "Cậu ấy đâu còn là trẻ con nữa đâu mà ăn toàn sô-cô-la như thế, tôi thấy thật chẳng nên chút nào."
+        },
+        {
+          "translation": "Anh ta đâu phải là bác sĩ đâu mà, không cần thiết phải tọc mạch soi mói tình trạng sức khỏe của bạn."
+        },
+        {
+          "translation": "Chiếc nhẫn này đâu phải là đồ đắt tiền gì đâu mà, dẫu có làm rơi cũng chẳng sao cả."
+        }
+      ]
+    },
+    "ja_Noun_34": {
+      "title": "Danh từ 1 + と + Danh từ 2 + を兼ねて (Noun to Noun o kanete)",
+      "shortExplanation": "Biểu thị một người hoặc một vật đảm nhiệm đồng thời cả hai vai trò, chức năng hoặc mục đích; 'kiêm cả... lẫn...', 'vừa là... vừa là...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + と + Danh từ 2 + を兼ねて' (hoặc dạng vị ngữ là を兼ねる / を兼ねている) xuất phát từ động từ 兼ねる (kiêm nhiệm, gộp làm một), dùng để diễn đạt rằng một đối tượng, sự vật hoặc hành động đảm đương đồng thời cả hai chức vụ, vai trò hoặc mục đích khác nhau ('kiêm cả A lẫn B', 'vừa là A vừa là B'). Thường áp dụng cho chức vụ nghề nghiệp, công năng sử dụng của đồ vật, không gian hoặc các mục đích hành động song hành.",
+      "formation": "Danh từ 1 + と + Danh từ 2 + を兼ねて (hoặc を兼ねる / を兼ねている)",
+      "examples": [
+        {
+          "translation": "Bố tôi kiêm nhiệm cả chức giám đốc lẫn trưởng phòng kế toán."
+        },
+        {
+          "translation": "Cô ấy vừa là giáo viên âm nhạc vừa kiêm luôn nghệ sĩ dương cầm."
+        },
+        {
+          "translation": "Căn phòng này kiêm luôn cả phòng ngủ lẫn phòng làm việc."
+        },
+        {
+          "translation": "Anh ấy vừa làm cha vừa làm mẹ để chăm sóc cho các con."
+        }
+      ]
+    },
+    "ja_Noun_35": {
+      "title": "Danh từ 1 + といい + Danh từ 2 + といい (〜to ii〜to ii)",
+      "shortExplanation": "Đưa ra hai sự vật tiêu biểu cùng loại để đánh giá, khen ngợi hoặc phàn nàn về tổng thể; 'dù là A hay B thì...', 'cả A lẫn B đều...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + といい + Danh từ 2 + といい' được dùng để nêu ra hai ví dụ tiêu biểu, đại diện trong cùng một nhóm chủ đề nhằm đưa ra lời nhận xét, đánh giá chung về toàn thể đối tượng ('nhìn vào A hay nhìn vào B cũng đều...', 'cả A lẫn B đều...'). Vế sau luôn đi kèm nhận định đánh giá của người nói, có thể là khen ngợi tán thưởng (như 素晴らしい, 完璧だ) hoặc phàn nàn chê trách (như 困ったものだ, 最悪だ).",
+      "formation": "Danh từ 1 + といい + Danh từ 2 + といい + [Đánh giá / Nhận xét]",
+      "examples": [
+        {
+          "translation": "Dù là món ăn hay các địa điểm du lịch của Nhật Bản thì tất cả đều vô cùng tuyệt vời."
+        },
+        {
+          "translation": "Dù là lòng tốt hay thể lực, anh ấy thực sự là một người bạn đời lý tưởng."
+        },
+        {
+          "translation": "Cả rạp chiếu phim lẫn công viên của thị trấn này, già trẻ gái trai ai nấy đều có thể tận hưởng."
+        },
+        {
+          "translation": "Cả giọng hát lẫn kỹ năng vũ đạo của anh ấy đều hoàn hảo."
+        }
+      ]
+    },
+    "ja_Noun_36": {
+      "title": "Danh từ 1 + という + Danh từ 2 (~to iu~)",
+      "shortExplanation": "Dùng để gọi tên, định danh hoặc giải thích Danh từ 2 bằng tên gọi Danh từ 1; 'có tên là...', 'gọi là...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + という + Danh từ 2' dùng để xác định, định danh hoặc gọi tên một đối tượng cụ thể. Danh từ 1 là tên riêng, danh xưng hoặc nội dung định nghĩa, còn Danh từ 2 là danh từ chung chỉ chủng loại (người, sách, thành phố, công ty...). Cấu trúc này dịch là 'người/vật có tên gọi là...', 'cái gọi là...'. Thường dùng khi người nói muốn giới thiệu hoặc làm rõ một cái tên mà đối phương có thể chưa biết rõ.",
+      "formation": "Danh từ 1 (tên gọi / danh xưng) + という + Danh từ 2 (chủng loại)",
+      "examples": [
+        {
+          "translation": "Người có tên là Hayao Miyazaki là một đạo diễn phim hoạt hình nổi tiếng."
+        },
+        {
+          "translation": "Người phụ nữ được gọi là bạn gái đó đối xử với anh ấy rất nghiêm khắc."
+        },
+        {
+          "translation": "Thành phố tên là Tokyo về đêm cũng vô cùng náo nhiệt."
+        },
+        {
+          "translation": "Tôi rất thích cuốn sách có tựa đề là 'Harry Potter'."
+        }
+      ]
+    },
+    "ja_Noun_37": {
+      "title": "Danh từ + というところだ (Noun to iu tokoro da)",
+      "shortExplanation": "Đưa ra ước lượng hoặc đánh giá đại khái về mức độ, tỷ lệ; 'khoảng chừng...', 'đại khái vào tầm...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + というところだ' (kết câu cũng có thể dùng というところだろう hoặc というところです) được dùng khi người nói muốn ước lượng hoặc đưa ra một đánh giá, phán đoán đại khái về một con số, mức độ, tỷ lệ hoặc tiến độ ('khoảng chừng...', 'đại khái là...', 'vào tầm...'). Thường đi kèm với các từ chỉ số lượng, phần trăm, phân số hoặc mức độ tương đối.",
+      "formation": "Danh từ (chỉ số lượng / mức độ / tỷ lệ) + というところだ (hoặc というところだろう / というところです)",
+      "examples": [
+        {
+          "translation": "Số thí sinh thi đỗ trong kỳ thi lần này ước chừng khoảng một nửa."
+        },
+        {
+          "translation": "Thực lực của anh ấy đại khái vào tầm 80%."
+        },
+        {
+          "translation": "Số người tán thành kế hoạch này khoảng chừng 70%."
+        },
+        {
+          "translation": "Đối với ý kiến của trưởng phòng, cá nhân tôi đồng tình vào khoảng 90%."
+        }
+      ]
+    },
+    "ja_Noun_38": {
+      "title": "Danh từ + というもの (~ to iu mono)",
+      "shortExplanation": "Đề cập đến bản chất chung, đặc tính vốn có hoặc chân lý phổ quát của một đối tượng; 'cái gọi là...', 'bản chất của... là...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + というもの' (thường dùng ở dạng chủ đề というものは) được dùng khi muốn nói về bản chất chung, quy luật tất yếu hoặc đặc tính phổ quát của đối tượng, sự vật hay nhóm đối tượng được nhắc đến ('cái gọi là...', 'đã là... thì bản chất là...'). Mẫu câu này thường dùng để đúc kết những chiêm nghiệm, chân lý hoặc định nghĩa chung mang tính khái quát cao.",
+      "formation": "Danh từ + というもの (thường dùng: Danh từ + というものは)",
+      "examples": [
+        {
+          "translation": "Đã là trẻ con thì ngày nào cũng chơi đùa rất nhiều."
+        },
+        {
+          "translation": "Sinh viên đại học thường dành rất nhiều thời gian cho việc nghiên cứu."
+        },
+        {
+          "translation": "Bản chất văn hóa Nhật Bản là sự pha trộn giữa nét truyền thống và điều mới mẻ."
+        },
+        {
+          "translation": "Cái gọi là chia ly thì bao giờ cũng là điều đau buồn."
+        }
+      ]
+    },
+    "ja_Noun_39": {
+      "title": "Danh từ + といったところだ (Noun to itta tokoro da)",
+      "shortExplanation": "Đánh giá mức độ, số lượng tối đa chỉ đạt tới một giới hạn nhất định; 'nhiều nhất cũng chỉ...', 'cùng lắm cũng chỉ vào khoảng...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + といったところだ' được dùng để ước lượng và chỉ ra mức trần, giới hạn cao nhất của một sự vật, hiện tượng ('nhiều nhất cũng chỉ tầm...', 'cùng lắm cũng chỉ...', 'ở mức... là cùng'). Người nói có sắc thái cho rằng con số hay mức độ đó không phải là quá nhiều, không vượt qua ngưỡng được đề cập. Thường đi kèm với các phó từ như せいぜい (cùng lắm), 多くても (nhiều nhất cũng chỉ).",
+      "formation": "Danh từ (số lượng / mức độ) + といったところだ (hoặc といったところです)",
+      "examples": [
+        {
+          "translation": "Trình độ tiếng Anh của anh ấy cùng lắm cũng chỉ ở mức sơ cấp."
+        },
+        {
+          "translation": "Vốn từ vựng tiếng Nhật của tôi nhiều nhất cũng chỉ vào khoảng 1.000 từ."
+        },
+        {
+          "translation": "Quãng đường anh ấy có thể chạy bộ mỗi ngày nhiều nhất cũng chỉ khoảng 5 cây số."
+        },
+        {
+          "translation": "Số lượng nhân viên của công ty đó cùng lắm cũng chỉ rơi vào khoảng 20 người."
+        }
+      ]
+    },
+    "ja_Noun_40": {
+      "title": "Danh từ 1 + といわず + Danh từ 2 + といわず (A to iwazu B to iwazu)",
+      "shortExplanation": "Biểu thị sự việc diễn ra trên toàn bộ mọi trường hợp mà không phân biệt giữa A và B; 'bất kể là A hay B', 'không kể... hay...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + といわず + Danh từ 2 + といわず' bắt nguồn từ việc 'không chỉ nói riêng A hay riêng B', dùng để nhấn mạnh rằng một sự việc, hành động hay trạng thái áp dụng trên phạm vi toàn diện, triệt để mà không có sự phân biệt nào giữa hai đối tượng tương phản hoặc liên quan ('bất kể là A hay B', 'chẳng kể... hay...', 'bất luận ngày hay đêm'). Thường kết hợp với các cặp từ đối lập như ngày/đêm, đông/hè, già/trẻ, hoặc các bộ phận cơ thể (tay/chân).",
+      "formation": "Danh từ 1 + といわず + Danh từ 2 + といわず + [Vế câu diễn tả sự bao quát/toàn bộ]",
+      "examples": [
+        {
+          "translation": "Bất kể là mùa đông hay mùa hè, anh ấy lúc nào cũng ăn kem."
+        },
+        {
+          "translation": "Không phân biệt già hay trẻ, tất cả mọi người đều có thể tận hưởng sự kiện đó."
+        },
+        {
+          "translation": "Bất kể là đàn ông hay phụ nữ, bất kỳ ai cũng sẽ yêu thích bộ phim này."
+        },
+        {
+          "translation": "Bất kể thứ Hai hay thứ Ba, cửa hàng đó ngày nào cũng đông khách."
+        }
+      ]
+    },
+    "ja_Noun_41": {
+      "title": "Danh từ + ときたら (〜tokitara)",
+      "shortExplanation": "Đưa ra một chủ đề để bày tỏ cảm xúc mạnh mẽ (thường là phàn nàn, ngán ngẩm hoặc tấm tắc khen ngợi); 'nhắc đến...', 'nói về... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + ときたら' được dùng để nêu bật một đối tượng, sự vật làm chủ đề bàn luận nhằm bộc lộ cảm xúc mạnh mẽ của người nói đối với đối tượng đó ('nhắc đến... thì thật là...', 'nói về... thì...'). Đa số trường hợp dùng để bày tỏ sự bất mãn, phàn nàn, ngán ngẩm hoặc chê trách trước những thói xấu hay điều bất tiện (như thái độ, hành vi). Đôi khi cấu trúc này cũng dùng để biểu thị sự tấm tắc khen ngợi trước một điều vượt trội.",
+      "formation": "Danh từ + ときたら + [Nhận xét mang sắc thái cảm xúc mạnh mẽ]",
+      "examples": [
+        {
+          "translation": "Cứ nhắc đến món sushi là anh ấy lại chẳng ăn được món nào cả."
+        },
+        {
+          "translation": "Hễ cứ gặp phải bài toán là cô ấy lại luôn lúng túng chịu thua."
+        },
+        {
+          "translation": "Nói về món burger của quán đó thì thực sự ngon tuyệt vời."
+        },
+        {
+          "translation": "Cái thái độ thường ngày của anh ta thì thật là khiến người ta ngán ngẩm hết chỗ nói."
+        }
+      ]
+    },
+    "ja_Noun_42": {
+      "title": "Danh từ + とは比べものにならない (~to wa kurabemono ni naranai)",
+      "shortExplanation": "Nhấn mạnh sự chênh lệch quá lớn về trình độ, quy mô hoặc tính chất; 'không thể so sánh với...', 'vượt trội hơn hẳn so với...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + とは比べものにならない' (hoặc dạng định ngữ bổ nghĩa cho danh từ là 比べものにならないほど / 比べものにならない + Danh từ) được dùng để nhấn mạnh khoảng cách hoặc sự chênh lệch quá xa giữa hai đối tượng, đến mức không thể nào đặt lên bàn cân để so sánh được ('hoàn toàn không thể so sánh được với...', 'vượt trội hơn hẳn so với...'). Thường dùng khi một bên áp đảo hoàn toàn về mặt chất lượng, tốc độ, quy mô, trình độ.",
+      "formation": "Danh từ + とは比べものにならない (dạng bổ nghĩa: とは比べものにならないほど + Tính từ/Động từ)",
+      "examples": [
+        {
+          "translation": "Tốc độ của chiếc xe mới hoàn toàn không thể so sánh được với chiếc xe cũ."
+        },
+        {
+          "translation": "Trình độ tiếng Anh siêu việt của anh ấy thì tôi chẳng thể nào so bì được."
+        },
+        {
+          "translation": "Công nghệ của Nhật Bản vượt trội đến mức các quốc gia khác không thể nào sánh kịp."
+        },
+        {
+          "translation": "Thiệt hại của trận động đất lần này lớn đến mức không thể so sánh được với lần trước."
+        }
+      ]
+    },
+    "ja_Noun_43": {
+      "title": "Danh từ 1 + ともあろう + Danh từ 2 (~tomoarou~)",
+      "shortExplanation": "Chỉ trích hoặc bày tỏ sự kinh ngạc trước hành vi không xứng đáng với địa vị, cương vị của một người; 'đường đường là... thế mà lại...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + ともあろう + Danh từ 2' (trong đó Danh từ 1 là chức vụ, danh phận, cương vị xã hội cao quý hoặc có trách nhiệm lớn; Danh từ 2 thường là 者, 人, 方) được dùng để phê phán, trách móc hoặc bày tỏ sự ngỡ ngàng, thất vọng khi một người có cương vị như vậy lại làm ra hành vi sai trái, đáng xấu hổ hoặc không hề tương xứng với vị thế của mình ('đường đường là một... thế mà lại...', 'ở cương vị... mà lại làm ra hành động như thế').",
+      "formation": "Danh từ 1 (địa vị / chức vụ / danh xưng) + ともあろう + Danh từ 2 (người: 者 / 人 / 方) + が / は",
+      "examples": [
+        {
+          "translation": "Đường đường là một người thầy giáo thế mà lại phạm phải sai lầm như vậy thật không thể tin nổi."
+        },
+        {
+          "translation": "Đường đường là một người trưởng thành thì không được phép cư xử như con nít."
+        },
+        {
+          "translation": "Đường đường là một vị giám đốc thế mà lại nói ra những lời thô lỗ như vậy thật đáng kinh ngạc."
+        },
+        {
+          "translation": "Đường đường là một vận động viên chuyên nghiệp thế mà lại đi muộn trận đấu thì thật khó chấp nhận."
+        }
+      ]
+    },
+    "ja_Noun_44": {
+      "title": "Danh từ + ともなると (〜to mo naru to)",
+      "shortExplanation": "Diễn tả khi một thời điểm đặc biệt, vị thế hay cấp độ nào đó đến thì tình hình sẽ thay đổi rõ rệt; 'hễ cứ đến...', 'một khi đã là... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + ともなると' (kết hợp với danh từ chỉ thời gian, mùa lễ hội, độ tuổi hoặc vị thế đặc biệt) dùng để nhấn mạnh rằng một khi đã bước vào thời điểm, giai đoạn hay cương vị đó thì tình hình sẽ biến chuyển rõ rệt so với bình thường ('hễ cứ đến thời điểm đó là...', 'một khi đã lên đến mức... thì...'). Vế sau thường miêu tả một trạng thái tất yếu, tự nhiên nảy sinh hoặc sự thay đổi cục diện đáng chú ý.",
+      "formation": "Danh từ + ともなると | Động từ thể thông thường + ともなると",
+      "examples": [
+        {
+          "translation": "Hễ cứ đến dịp Giáng sinh là khắp phố phường lại lung linh rực rỡ ánh đèn."
+        },
+        {
+          "translation": "Một khi đứa trẻ đã tự giác nhận lỗi của mình thì câu chuyện lại hoàn toàn khác rồi."
+        },
+        {
+          "translation": "Cứ đến kỳ nghỉ hè là bãi biển lại đông nghịt khách du lịch."
+        },
+        {
+          "translation": "Cứ vào tuần thi cử là thư viện lại đông đúc hơn hẳn ngày thường."
+        }
+      ]
+    },
+    "ja_Noun_45": {
+      "title": "Danh từ + ともなれば (〜to mo nareba)",
+      "shortExplanation": "Nhấn mạnh một khi đã bước vào tình huống, thời điểm hay vị thế đó thì đương nhiên sẽ nảy sinh kết quả tương ứng; 'một khi đã là...', 'nếu đã đến lúc... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + ともなれば' (dạng điều kiện của động từ なる kết hợp với trợ từ nhấn mạnh とも) dùng để nhấn mạnh rằng một khi đã đạt đến một vị thế, giai đoạn, bước ngoặt hoặc tình huống quan trọng nào đó thì tất yếu sẽ kéo theo những thay đổi, trách nhiệm hoặc cảm xúc tương xứng ('một khi đã là...', 'nếu đến mức... thì...'). Thường dùng với các sự kiện lớn trong đời (kết hôn, thi cử, lên chức) hoặc các bước chuyển biến đáng kể.",
+      "formation": "Danh từ + ともなれば | Động từ thể thông thường + ともなれば",
+      "examples": [
+        {
+          "translation": "Một khi đã bước vào kỳ thi thì hầu hết mọi người ai cũng đều cảm thấy căng thẳng."
+        },
+        {
+          "translation": "Nếu anh ấy trở thành người lãnh đạo thì hiệu suất của toàn đội chắc chắn sẽ còn nâng cao hơn nữa."
+        },
+        {
+          "translation": "Hễ cứ đến kỳ nghỉ hè là các điểm du lịch lúc nào cũng nườm nượp du khách."
+        },
+        {
+          "translation": "Một khi đã tiến tới hôn nhân thì có rất nhiều vấn đề không thể chỉ giải quyết bằng tình yêu của hai người."
+        }
+      ]
+    },
+    "ja_Noun_46": {
+      "title": "Danh từ + と相まって (~ to aimatte)",
+      "shortExplanation": "Diễn tả nhiều yếu tố kết hợp, tác động qua lại lẫn nhau để tạo nên một hiệu quả hay kết quả nổi bật; 'kết hợp với...', 'cùng với...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + と相まって' xuất phát từ động từ 相まつ (hòa quyện, tác động qua lại), dùng để diễn tả rằng hai hay nhiều yếu tố, điều kiện cùng kết hợp lại, bổ trợ và cộng hưởng với nhau để tạo ra một kết quả hoặc hiệu ứng vô cùng rõ rệt ('cộng hưởng cùng với...', 'kết hợp với...', 'hòa quyện cùng...'). Thường đi với cấu trúc 'AとBとが相まって' (A kết hợp cùng với B) hoặc 'AがBと相まって' (A cùng hòa vào B) để miêu tả thành công, cảnh sắc tuyệt đẹp hoặc hương vị thơm ngon.",
+      "formation": "Danh từ + と相まって (thường có dạng: Danh từ 1 と Danh từ 2 とが相まって / Danh từ 1 が Danh từ 2 と相まって)",
+      "examples": [
+        {
+          "translation": "Cùng với thời tiết đẹp hỗ trợ, buổi dã ngoại đã thành công rực rỡ."
+        },
+        {
+          "translation": "Nhờ sự nỗ lực kết hợp cùng với may mắn, anh ấy đã thi đỗ kỳ thi."
+        },
+        {
+          "translation": "Hòa quyện cùng dầu hướng dương và tỏi, món ăn này thực sự rất thơm ngon."
+        },
+        {
+          "translation": "Nhờ công nghệ mới kết hợp cùng với kinh nghiệm dày dặn, chúng tôi đã khắc phục được vấn đề này."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Noun_32": {
+      "title": "名词 + でなくてなんだろう (〜de nakute nandarou)",
+      "shortExplanation": "强烈的反问修辞，表示绝对肯定的断言；“不是……又是什么呢”、“正是……”。",
+      "longExplanation": "句型“名词 + でなくてなんだろう”是一种语气极其强烈的反问句式，通过反问“如果这不是……那还会是什么呢”来表达说话人毫不动摇的强烈主观断定，深信该事物毫无疑问就是该名词所指的内容（“正是……”、“不是……又是什么呢”）。多带有浓厚的感叹色彩，常与“愛（爱）”、“真実（真相）”、“奇跡（奇迹）”、“運命（命运）”等具有高度概括性或情感色彩的抽象名词搭配使用。",
+      "formation": "名词 + でなくてなんだろう（或 でなくて何だろうか）",
+      "examples": [
+        {
+          "translation": "这不是真相又是什么呢。"
+        },
+        {
+          "translation": "他不是领袖又是什么呢。"
+        },
+        {
+          "translation": "这不是爱又是什么呢。"
+        },
+        {
+          "translation": "这不是最顶级的餐厅又是什么呢。"
+        }
+      ]
+    },
+    "ja_Noun_33": {
+      "title": "名词 + ではあるまいし (~dewa aru maishi)",
+      "shortExplanation": "否定某种非事实的前提，表示责备、劝告或无可奈何；“又不是……”、“并不会是……”。",
+      "longExplanation": "句型“名词 + ではあるまいし”用于断定并否定某种假设、身份或理由（“又不是……”、“并不会是……”），以此为前提在后项表达对对方行为的责怪、劝诫、提醒或不满，认为对方不该那样做或没必要大惊小怪。相比于口语中极为常用的“～じゃあるまいし”，“～ではあるまいし”语气更庄重、典雅，多用于书面或正式语境。",
+      "formation": "名词 + ではあるまいし（口语多用：じゃあるまいし）",
+      "examples": [
+        {
+          "translation": "她又不是职业歌手，要求十全十美未免太苛刻了。"
+        },
+        {
+          "translation": "他又不是小孩子了，吃那么多巧克力我觉得实在不太好。"
+        },
+        {
+          "translation": "他又不是医生，根本没必要打听你的健康状况。"
+        },
+        {
+          "translation": "这枚戒指又不是什么昂贵之物，就算掉了也没什么大不了的。"
+        }
+      ]
+    },
+    "ja_Noun_34": {
+      "title": "名词1 + と + 名词2 + を兼ねて (Noun to Noun o kanete)",
+      "shortExplanation": "表示一个人或事物同时兼具两种职责、身份、功能或目的；“兼任……和……”、“既作为……又作为……”。",
+      "longExplanation": "句型“名词1 + と + 名词2 + を兼ねて”（在句尾也常作“〜を兼ねる / 〜を兼ねている”）源自他动词“兼ねる”（兼顾、兼任），用于表示某人或某物同时承担两种身份、职务，或者兼具两种功能与目的（“兼任A与B”、“既作为A又兼作B”）。常用于介绍职业兼职、多功能空间或设施、以及兼顾多重目的的行为。",
+      "formation": "名词1 + と + 名词2 + を兼ねて（或 を兼ねる / を兼ねている）",
+      "examples": [
+        {
+          "translation": "父亲兼任社长和财务部长两职。"
+        },
+        {
+          "translation": "她身兼音乐教师和钢琴家双重身份。"
+        },
+        {
+          "translation": "这个房间兼作卧室和书房。"
+        },
+        {
+          "translation": "他一人兼充父母双重角色，悉心照料着孩子。"
+        }
+      ]
+    },
+    "ja_Noun_35": {
+      "title": "名词1 + といい + 名词2 + といい (〜to ii〜to ii)",
+      "shortExplanation": "列举两项代表性事物，对整体做出高度评价、赞叹或批评感慨；“无论是……还是……”、“不论是……还是……”。",
+      "longExplanation": "句型“名词1 + といい + 名词2 + といい”通过列举同类或同一主题中具有代表性的两个例子（A和B），来对整体的性质、状态进行全面的综合评价（“无论是A还是B，都……”、“不论是A还是B”）。后项通常接续说话人的主观评价，既可用于赞美、钦佩（如“素晴らしい/棒”、“完璧だ/完美”），也可用于不满、感叹或批评（如“あきれる/让人无语”）。",
+      "formation": "名词1 + といい + 名词2 + といい + [综合评价 / 述部]",
+      "examples": [
+        {
+          "translation": "无论是日本的美食还是观光胜地，样样都令人赞不绝口。"
+        },
+        {
+          "translation": "不论是他温柔的性格还是充沛的体力，他都是一位理想的伴侣。"
+        },
+        {
+          "translation": "这座小镇无论是电影院还是公园，男女老少都能乐在其中。"
+        },
+        {
+          "translation": "无论是他的唱功还是舞蹈技巧，都堪称完美。"
+        }
+      ]
+    },
+    "ja_Noun_36": {
+      "title": "名词1 + という + 名词2 (~to iu~)",
+      "shortExplanation": "用于明确指称、命名或定义事物；“名叫……的……”、“所谓的……”。",
+      "longExplanation": "句型“名词1 + という + 名词2”用于具体指明事物或人物的名称与属性。前面的“名词1”通常是专有名词、人名、作品名或特指称谓，后面的“名词2”则是表示类别的普通名词（如人、城市、书、店等）。常译为“名叫……的……”、“叫作……的……”、“……这样的……”，常用于向对方介绍对方可能不熟悉的人或事物。",
+      "formation": "名词1（专有名词 / 名称） + という + 名词2（类别名词）",
+      "examples": [
+        {
+          "translation": "名叫宫崎骏的人是一位著名的动画导演。"
+        },
+        {
+          "translation": "那位被称为他恋人的女性对他非常严厉。"
+        },
+        {
+          "translation": "东京这座城市即使到了夜晚也很热闹。"
+        },
+        {
+          "translation": "我很喜欢名为《哈利·波特》的这本书。"
+        }
+      ]
+    },
+    "ja_Noun_37": {
+      "title": "名词 + というところだ (Noun to iu tokoro da)",
+      "shortExplanation": "对数量、比例或程度做出大致估算或评估；“大致在……左右”、“大概是……”。",
+      "longExplanation": "句型“名词 + というところだ”（句尾常作“〜というところだろう”或“〜というところです”）用于对数量、比例、进展或水平程度做出大致的估量、评估或推测（“大致在……左右”、“大约是……”、“差不多就是……的程度”）。常接在表示数字、百分比、比率或相对程度的名词之后。",
+      "formation": "名词（表示数量 / 比例 / 程度） + というところだ（或 というところだろう / というところです）",
+      "examples": [
+        {
+          "translation": "这次考试的及格人数大概有一半左右吧。"
+        },
+        {
+          "translation": "他的实力大致发挥了八成左右。"
+        },
+        {
+          "translation": "赞成这个方案的人大概占七成左右。"
+        },
+        {
+          "translation": "对于科长的意见，以我个人来说赞同度大概在90%左右吧。"
+        }
+      ]
+    },
+    "ja_Noun_38": {
+      "title": "名词 + というもの (~ to iu mono)",
+      "shortExplanation": "阐述该类事物的本质属性、普遍特征或规律；“所谓……（就是）……”、“……这种东西往往……”。",
+      "longExplanation": "句型“名词 + というもの”（最常以主题形式“～というものは”出现）用于从普遍性、普遍规律的角度来阐述某类人或事物的内在本质、共同特征或普遍属性（“所谓的……就是……”、“凡是……往往……”）。常用于归纳一般规律、抒发人生感悟或提出带有普遍性常理的论断。",
+      "formation": "名词 + というもの（常作：名词 + というものは）",
+      "examples": [
+        {
+          "translation": "小孩子这种天性，每天就是尽情地玩耍。"
+        },
+        {
+          "translation": "所谓大学生，就是要把大量时间投入到学术研究中。"
+        },
+        {
+          "translation": "所谓的日本文化，是传统事物与崭新事物的交相融合。"
+        },
+        {
+          "translation": "所谓的离别，总归是一件令人悲伤的事。"
+        }
+      ]
+    },
+    "ja_Noun_39": {
+      "title": "名词 + といったところだ (Noun to itta tokoro da)",
+      "shortExplanation": "表示程度或数量的上限，带有“充其量不过如此”的语气；“充其量也就是……”、“顶多是……”。",
+      "longExplanation": "句型“名词 + といったところだ”用于指出数量、水平或程度所能达到的最高限度，含有“即使往高了估算，充其量也不过就是这个程度”（“充其量也就是……”、“顶多不过……”、“也就是……上下”）的语感。说话人通常认为该数值或程度并不算高，常与副词“せいぜい（顶多）”、“多くても（最多也就）”呼应使用。",
+      "formation": "名词（数量 / 水平 / 程度） + といったところだ（或 といったところです）",
+      "examples": [
+        {
+          "translation": "他的英语水平充其量也就是初级阶段。"
+        },
+        {
+          "translation": "我的日语词汇量顶多也就1000个词左右。"
+        },
+        {
+          "translation": "他每天跑步的极限顶多也就是5公里左右。"
+        },
+        {
+          "translation": "那家公司的员工充其量也就20人左右。"
+        }
+      ]
+    },
+    "ja_Noun_40": {
+      "title": "名词1 + といわず + 名词2 + といわず (A to iwazu B to iwazu)",
+      "shortExplanation": "表示不分彼此、毫无例外地全都如此；“无论是……还是……”、“不论……还是……”。",
+      "longExplanation": "句型“名词1 + といわず + 名词2 + といわず”意为“不单说是A还是B，二者都毫无分别”，用来强调某种状态或行为在整个范围内全面存在，不分A还是B，一律同样适用（“无论是A还是B都……”、“不论……还是……”）。常与成对的反义词或并列概念（如昼夜、冬夏、老幼、男女、身体各部位等）搭配使用，突出其无一例外、全面覆盖。",
+      "formation": "名词1 + といわず + 名词2 + といわず + [表示全面、无一例外的后文]",
+      "examples": [
+        {
+          "translation": "无论是冬天还是夏天，他总是吃着冰淇淋。"
+        },
+        {
+          "translation": "无论年长还是年轻，所有人都能在这场活动中尽享乐趣。"
+        },
+        {
+          "translation": "不论男女，任何人都会喜欢这部电影吧。"
+        },
+        {
+          "translation": "不管是周一还是周二，那家店每天都顾客盈门。"
+        }
+      ]
+    },
+    "ja_Noun_41": {
+      "title": "名词 + ときたら (〜tokitara)",
+      "shortExplanation": "提起某话题并对其抒发强烈的情感（多为不满、埋怨、无奈，偶作赞叹）；“说起……（可真是）……”、“提起……”。",
+      "longExplanation": "句型“名词 + ときたら”用于提起一个特定的话题或人物，随后对其抒发说话人强烈的感情（“提起……可真是……”、“说起……简直……”）。绝大多数情况下带有说话人的责备、不满、厌烦或无可奈何的情绪（常用于批评某人的态度、当今年轻人等），少数情况下也可用于表达极度的感叹或赞美。属于口语色彩较浓的表达。",
+      "formation": "名词 + ときたら + [带有强烈主观情绪的后述评价]",
+      "examples": [
+        {
+          "translation": "一说到寿司，他就什么都吃不下了。"
+        },
+        {
+          "translation": "一遇到数学难题，她总是束手无策。"
+        },
+        {
+          "translation": "要说起那家店的汉堡包，那可真是太美味了。"
+        },
+        {
+          "translation": "提起他平时那种态度，可真叫人头疼无奈。"
+        }
+      ]
+    },
+    "ja_Noun_42": {
+      "title": "名词 + とは比べものにならない (~to wa kurabemono ni naranai)",
+      "shortExplanation": "强调两者差距悬殊，根本无法相提并论；“与……无法相比”、“根本不能同……相提并论”。",
+      "longExplanation": "句型“名词 + とは比べものにならない”（修饰其他成分时亦常作“～とは比べものにならないほど / ～とは比べものにならない＋名词”）用于强调两件事物在质量、性能、规模、程度等方面差距极大，一方具有压倒性优势或截然不同，以至于根本无法放在一起比较（“远非……可比”、“同……相比不可同日而语”）。",
+      "formation": "名词 + とは比べものにならない（修饰副词形式：とは比べものにならないほど）",
+      "examples": [
+        {
+          "translation": "新车的速度与旧车相比根本不可同日而语。"
+        },
+        {
+          "translation": "他的英语流利程度与我相比根本无法相提并论。"
+        },
+        {
+          "translation": "日本的技术先进程度是其他国家所无法企及的。"
+        },
+        {
+          "translation": "这次地震的受灾程度与上一次相比根本不能相提并论。"
+        }
+      ]
+    },
+    "ja_Noun_43": {
+      "title": "名词1 + ともあろう + 名词2 (~tomoarou~)",
+      "shortExplanation": "对具备崇高地位或身份者做出不相称的行为表示批评、谴责或震惊；“堂堂一个……竟然……”。",
+      "longExplanation": "句型“名词1 + ともあろう + 名词2”（前项“名词1”通常是具有较高社会地位、职业声誉或重大责任的称谓，如“先生/老师”、“社長/社长”、“大人/成年人”；后项“名词2”多为“者”、“人”）用于表达说话人的强烈震惊、责备或失望，认为以对方那样令人尊敬或责任重大的崇高身份，理应具备相称的操守，却竟然做出了极其不得体、令人遗憾的可耻行为（“堂堂一个……竟然做出这种事”、“身为……怎么能……”）。",
+      "formation": "名词1（崇高身份 / 职业头衔） + ともあろう + 名词2（者 / 人 / 方） + が / は",
+      "examples": [
+        {
+          "translation": "堂堂一位老师，竟然会犯下如此低级的错误。"
+        },
+        {
+          "translation": "堂堂一个成年人，绝不应该表现得像个孩子一样。"
+        },
+        {
+          "translation": "堂堂一位公司社长，竟然会说出如此失礼的话来。"
+        },
+        {
+          "translation": "堂堂一名职业选手，参加比赛竟然还会迟到，实在不可思议。"
+        }
+      ]
+    },
+    "ja_Noun_44": {
+      "title": "名词 + ともなると (〜to mo naru to)",
+      "shortExplanation": "强调一旦到了某种特殊时期、阶段或地位，情况就会发生显著变化；“一旦到了……（就）……”、“一成为……”。",
+      "longExplanation": "句型“名词 + ともなると”（接在表示特殊时期、节庆、年龄或特殊身份地位的名词之后，亦可接动词普通形）用于强调一旦达到了某种特殊的阶段、重要时刻或相应高度，事态或周围环境就会发生与平常截然不同的显著变化（“一旦到了……的时候就会……”、“只要一上升到……层面就……”）。后项多陈述随之而来的必然现象、自然产生的明显变化。",
+      "formation": "名词 + ともなると | 动词普通形 + ともなると",
+      "examples": [
+        {
+          "translation": "一旦到了圣诞节，整座城市看起来都闪闪发光。"
+        },
+        {
+          "translation": "孩子要是能主动承认自己的过错，那性质可就不一样了。"
+        },
+        {
+          "translation": "一到暑假，海边到处挤满了观光游客。"
+        },
+        {
+          "translation": "一到考试周，图书馆就比平时更加拥挤不堪。"
+        }
+      ]
+    },
+    "ja_Noun_45": {
+      "title": "名词 + ともなれば (〜to mo nareba)",
+      "shortExplanation": "强调一旦到了某种重要关头、地位或特殊阶段，就会理所当然地产生相应变化；“一旦到了……（就）……”、“要是成为……”。",
+      "longExplanation": "句型“名词 + ともなれば”（由动词“なる”的假定形与副助词“とも”复合而成）用于强调一旦上升到了某个重大阶段、关键时刻或特殊身份地位，就必然会伴随产生相应的心理状态、环境变化或严峻考验（“一旦到了……阶段，就理所当然会……”、“若是到了……关头”）。常用于人生大事（如结婚、大考、升职等）或具有决定性意义的阶段转变。",
+      "formation": "名词 + ともなれば | 动词普通形 + ともなれば",
+      "examples": [
+        {
+          "translation": "一旦面临考试，绝大多数人都会感到紧张。"
+        },
+        {
+          "translation": "要是他当上了领队，团队的整体表现肯定会进一步提升吧。"
+        },
+        {
+          "translation": "一到了暑假，各处的旅游胜地总是游人如织。"
+        },
+        {
+          "translation": "一旦谈及结婚，往往有许多事情光凭两个人彼此相爱是无法解决的。"
+        }
+      ]
+    },
+    "ja_Noun_46": {
+      "title": "名词 + と相まって (~ to aimatte)",
+      "shortExplanation": "表示多种因素相互结合、产生协同效应或相辅相成；“与……相结合”、“加上……的作用”。",
+      "longExplanation": "句型“名词 + と相まって”（源自古语动词“相まつ”，意为相互配合、交织作用）用于表示两项或多项有利因素、条件相互结合，产生协同增强效应，从而带来了极其显著的积极效果或美好结果（“再加上……的配合”、“与……相互交织/相辅相成”）。常以“AとB（と）が相まって”或“AがBと相まって”的形式出现，多用于形容风景绝美、料理绝妙、事业大获成功等。",
+      "formation": "名词 + と相まって（常见形式：名词1 と 名词2（与）が相まって ｜ 名词1 が 名词2 と相まって）",
+      "examples": [
+        {
+          "translation": "再加上风和日丽的好天气，野餐取得了极大的成功。"
+        },
+        {
+          "translation": "自身的努力加上运气的相助，他顺利通过了考试。"
+        },
+        {
+          "translation": "向日葵油与大蒜的风味相得益彰，这道菜非常美味。"
+        },
+        {
+          "translation": "新技术与丰富经验相辅相成，使我们成功攻克了这一难题。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Noun_32": {
+      "title": "명사 + でなくてなんだろう (〜de nakute nandarou)",
+      "shortExplanation": "강한 반어적 표현으로 절대적인 확신과 단정을 나타내며, '~이 아니고 무엇이겠는가', '바로 ~가 아니고 무엇이랴'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + でなくてなんだろう'는 '이것이 명사가 아니라면 과연 무엇이란 말인가'라는 강한 반어 의문 형식을 빌려, 화자가 해당 대상이나 현상이 그 명사임에 틀림없다고 절대적으로 확신하고 단정함을 감탄조로 나타내는 표현입니다('~이 아니고 무엇이겠는가', '바로 ~다'). 주로 '사랑(愛)', '진실(真実)', '기적(奇跡)', '운명(運命)' 등 감정이나 가치 평가를 담은 추상명사와 결합하여 문학적이거나 감동적인 어조를 형성합니다.",
+      "formation": "명사 + でなくてなんだろう(또는 でなくて何だろうか)",
+      "examples": [
+        {
+          "translation": "이것이 진실이 아니고 무엇이겠는가."
+        },
+        {
+          "translation": "그가 리더가 아니고 누구이겠는가."
+        },
+        {
+          "translation": "이것이 사랑이 아니고 무엇이겠는가."
+        },
+        {
+          "translation": "이것이 최고의 레스토랑이 아니고 무엇이겠는가."
+        }
+      ]
+    },
+    "ja_Noun_33": {
+      "title": "명사 + ではあるまいし (~dewa aru maishi)",
+      "shortExplanation": "어떤 사실이나 신분이 아님을 전제로 충고·비판·타이름을 나타내며, '~도 아니고', '~인 것도 아닌데'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + ではあるまいし'는 '명사인 것도 아닌데 왜 그러는가'라는 뜻으로, 사실과 다른 상황이나 신분을 부정하며 상대방의 태도나 행동에 대해 핀잔, 비판, 충고, 안도 등을 나타낼 때 사용됩니다('~도 아니고', '~인 것도 아니니까'). 일상 구어체에서 흔히 쓰이는 '～じゃあるまいし'에 비해 한층 격식 있고 정중하며 문어적인 뉘앙스를 풍깁니다.",
+      "formation": "명사 + ではあるまいし(구어: じゃあるまいし)",
+      "examples": [
+        {
+          "translation": "그녀가 프로 가수도 아니고, 완벽함을 요구하는 것은 너무 가혹하다."
+        },
+        {
+          "translation": "그가 어린아이도 아니고, 그렇게 초콜릿만 먹는 것은 좀 그렇다고 생각한다."
+        },
+        {
+          "translation": "그가 의사도 아닌데, 당신의 건강 상태를 꼬치꼬치 캘 필요는 없다."
+        },
+        {
+          "translation": "이 반지가 값비싼 물건도 아니고, 떨어뜨린다 해도 별일 아니다."
+        }
+      ]
+    },
+    "ja_Noun_34": {
+      "title": "명사1 + と + 명사2 + を兼ねて (Noun to Noun o kanete)",
+      "shortExplanation": "한 대상이 두 가지 역할, 직책, 목적 또는 기능을 겸함을 나타내며, '~와 ~를 겸하여', '~와 ~를 겸해서'라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + と + 명사2 + を兼ねて'(술어형으로는 '～を兼ねる / ～を兼ねている')는 동사 '兼ねる(겸하다)'에서 파생된 표현으로, 한 인물이나 사물이 두 가지 서로 다른 역할, 직책, 목적, 기능을 동시에 맡거나 수행함을 나타냅니다('~와 ~를 겸하여', '~이자 ~를 겸하다'). 직무의 겸임, 공간이나 물건의 다목적 활용, 둘 이상의 목적을 한 번에 달성하는 행위 등에 자주 쓰입니다.",
+      "formation": "명사1 + と + 명사2 + を兼ねて(또는 を兼ねる / を兼ねている)",
+      "examples": [
+        {
+          "translation": "아버지는 사장과 경리부장을 겸하고 계십니다."
+        },
+        {
+          "translation": "그녀는 음악 교사와 피아니스트를 겸하고 있습니다."
+        },
+        {
+          "translation": "이 방은 침실과 서재를 겸하고 있습니다."
+        },
+        {
+          "translation": "그는 아버지이자 어머니 역할을 겸하여 아이를 돌보고 있다."
+        }
+      ]
+    },
+    "ja_Noun_35": {
+      "title": "명사1 + といい + 명사2 + といい (〜to ii〜to ii)",
+      "shortExplanation": "대표적인 두 가지 대상을 들어 전체에 대한 감탄·평가·불만을 나타내며, '~로 보나 ~로 보나', '~도 그렇고 ~도 그렇고'라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + といい + 명사2 + といい'는 동일한 범주나 주제에서 대표적인 두 가지 사례를 제시하여, 전체 대상에 대해 종합적인 평가나 소감을 나타낼 때 쓰입니다('A로 보나 B로 보나', 'A도 그렇고 B도 그렇고 다 마찬가지로 ~하다'). 뒷부분에는 칭찬이나 감탄(예: 훌륭하다, 완벽하다)뿐만 아니라, 불평이나 한탄, 비판의 평가가 이어지기도 합니다.",
+      "formation": "명사1 + といい + 명사2 + といい + [종합적 평가/서술]",
+      "examples": [
+        {
+          "translation": "일본의 음식도 그렇고 관광지도 그렇고, 모든 것이 훌륭합니다."
+        },
+        {
+          "translation": "그의 다정함으로 보나 체력으로 보나, 그는 이상적인 파트너다."
+        },
+        {
+          "translation": "이 마을의 영화관으로 보나 공원으로 보나, 남녀노소 누구나 즐길 수 있다."
+        },
+        {
+          "translation": "그의 가창력도 그렇고 댄스 실력도 그렇고 완벽하다."
+        }
+      ]
+    },
+    "ja_Noun_36": {
+      "title": "명사1 + という + 명사2 (~to iu~)",
+      "shortExplanation": "명사2의 명칭이나 정의를 명사1로 구체적으로 지정하여 나타내며, '~라는 ~', '~라고 하는 ~'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + という + 명사2'는 사물, 인물, 장소 등의 구체적인 이름이나 명칭(명사1)을 밝혀 그 범주나 종류(명사2)를 규정하고 설명할 때 쓰이는 표현입니다('~라는 ~', '~라고 하는 ~'). 상대방이 잘 모르거나 처음 언급되는 고유명사, 책 제목, 사람 이름 등을 소개할 때 자주 사용됩니다.",
+      "formation": "명사1(고유명칭/이름) + という + 명사2(종류/일반명사)",
+      "examples": [
+        {
+          "translation": "미야자키 하야오라는 사람은 유명한 애니메이션 감독입니다."
+        },
+        {
+          "translation": "그 연인이라고 하는 여성은 그에게 매우 엄격합니다."
+        },
+        {
+          "translation": "도쿄라는 도시는 밤에도 번화합니다."
+        },
+        {
+          "translation": "저는 '해리 포터'라는 책을 좋아합니다."
+        }
+      ]
+    },
+    "ja_Noun_37": {
+      "title": "명사 + というところだ (Noun to iu tokoro da)",
+      "shortExplanation": "수량, 비율, 정도 등에 대한 대략적인 어림이나 평가를 나타내며, '대략 ~ 정도이다', '~ 수준이라고 볼 수 있다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + というところだ'(추측형인 '～というところだろう' 또는 정중형 '～というところです'로도 자주 쓰임)는 수량, 비율, 정도, 진척 상황 등에 대해 화자가 대략적으로 가늠하거나 어림잡아 평가할 때 쓰이는 표현입니다('대략 ~ 정도이다', '~쯤이다', '~ 수준이라고 볼 수 있다'). 주로 백분율, 분수, 수량 명사와 함께 쓰여 대체적인 기준치나 도달 수준을 제시합니다.",
+      "formation": "명사(수량/비율/정도) + というところだ(또는 というところだろう / というところです)",
+      "examples": [
+        {
+          "translation": "이번 시험 합격자는 대략 절반 정도일 것이다."
+        },
+        {
+          "translation": "그의 실력은 80% 정도라고 볼 수 있다."
+        },
+        {
+          "translation": "이 계획에 찬성하는 사람은 대략 70% 정도이다."
+        },
+        {
+          "translation": "과장님의 의견에 대해서 제 개인적으로는 90% 정도 동의하는 편입니다."
+        }
+      ]
+    },
+    "ja_Noun_38": {
+      "title": "명사 + というもの (~ to iu mono)",
+      "shortExplanation": "해당 대상의 본질적인 속성이나 보편적인 특징·법칙을 일반화하여 말하며, '~라는 것은', '~이란'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + というもの'(주로 주제를 나타내는 '～というものは' 형태로 쓰임)는 해당 명사가 속한 범주 전체의 본질적인 성향, 보편적인 속성, 일반적인 법칙에 대해 진술할 때 쓰입니다('~라는 것은', '~이란 본래'). 일반적인 상식, 보편적 진리, 삶의 이치 등을 총괄하여 정의하거나 단정할 때 널리 쓰입니다.",
+      "formation": "명사 + というもの(주로 명사 + というものは)",
+      "examples": [
+        {
+          "translation": "어린이라는 것은 매일 신나게 뛰어노는 법입니다."
+        },
+        {
+          "translation": "대학생이라는 것은 연구에 많은 시간을 쏟는 법입니다."
+        },
+        {
+          "translation": "일본 문화라는 것은 전통적인 것과 새로운 것이 융합되어 있습니다."
+        },
+        {
+          "translation": "이별이라는 것은 언제나 슬픈 법입니다."
+        }
+      ]
+    },
+    "ja_Noun_39": {
+      "title": "명사 + といったところだ (Noun to itta tokoro da)",
+      "shortExplanation": "수량이나 수준의 상한선을 나타내며, '기껏해야 ~ 정도이다', '잘해야 ~ 수준이다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + といったところだ'는 수량이나 수준, 정도의 최고 한도를 나타내며, '많아야 이 정도 수준에 불과하다'라는 뉘앙스를 담아 평가할 때 쓰입니다('기껏해야 ~ 수준이다', '많아 봐야 ~ 정도이다'). 주로 'せいぜい(기껏해야)', '多くても(많아도)' 등의 부사와 어울려 대상의 한계치나 평범한 수준을 가늠할 때 자주 쓰입니다.",
+      "formation": "명사(수량/수준/정도) + といったところだ(또는 といったところです)",
+      "examples": [
+        {
+          "translation": "그의 영어 실력은 기껏해야 초급 수준이다."
+        },
+        {
+          "translation": "나의 일본어 어휘력은 많아 봐야 1,000단어 정도이다."
+        },
+        {
+          "translation": "그가 매일 달릴 수 있는 거리는 기껏해야 5킬로미터 정도이다."
+        },
+        {
+          "translation": "그 회사의 직원은 많아 봐야 20명 수준이다."
+        }
+      ]
+    },
+    "ja_Noun_40": {
+      "title": "명사1 + といわず + 명사2 + といわず (A to iwazu B to iwazu)",
+      "shortExplanation": "A와 B의 구분 없이 전면적으로 모두 그러함을 나타내며, '~이든 ~이든 가릴 것 없이', '~고 뭐고 할 것 없이'라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + といわず + 명사2 + といわず'는 'A라고 하거나 B라고 하거나 따질 것 없이 둘 다'라는 뜻으로, 두 가지 대조적이거나 연관된 대상을 들어 그 사이의 구별 없이 전면적이고 전반적으로 적용됨을 강조하는 표현입니다('~이든 ~이든 할 것 없이', '~ 가릴 것 없이 전부'). 주로 계절(여름/겨울), 시간(낮/밤), 성별(남/녀), 연령(노/소) 등의 대립쌍과 자주 결합합니다.",
+      "formation": "명사1 + といわず + 명사2 + といわず + [전면적 사실을 나타내는 뒷문장]",
+      "examples": [
+        {
+          "translation": "겨울이든 여름이든 가릴 것 없이 그는 언제나 아이스크림을 먹는다."
+        },
+        {
+          "translation": "노인이든 젊은이든 할 것 없이 모든 사람이 그 이벤트를 즐길 수 있습니다."
+        },
+        {
+          "translation": "남자든 여자든 가릴 것 없이 누구나 이 영화를 즐길 것입니다."
+        },
+        {
+          "translation": "월요일이든 화요일이든 할 것 없이 그 가게는 매일 붐빕니다."
+        }
+      ]
+    },
+    "ja_Noun_41": {
+      "title": "명사 + ときたら (〜tokitara)",
+      "shortExplanation": "어떤 화제를 꺼내며 강한 불만·비판·답답함(간혹 감탄)의 감정을 나타내며, '~로 말할 것 같으면', '~에 대해 말하자면'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + ときたら'는 대화에서 특정 대상이나 인물을 화제로 끌어올린 후, 그에 대해 화자가 느끼는 강한 감정을 토로할 때 쓰이는 구어적 표현입니다('~로 말하자면 정말이지...', '~에 대해 말하자면'). 대개의 경우 비판, 불평, 답답함, 어처구니없음 등 부정적인 감정을 나타낼 때 많이 쓰이지만(예: 그의 태도, 요즘 젊은이들 등), 드물게는 강한 칭찬이나 감탄을 표현할 때도 사용됩니다.",
+      "formation": "명사 + ときたら + [강한 감정이 담긴 서술]",
+      "examples": [
+        {
+          "translation": "초밥으로 말하자면 그는 아무것도 먹지 못한다."
+        },
+        {
+          "translation": "수학 문제에 대해 말하자면 그녀는 늘 쩔쩔맨다."
+        },
+        {
+          "translation": "그 가게의 햄버거로 말할 것 같으면 정말이지 아주 맛있다."
+        },
+        {
+          "translation": "그의 평소 태도로 말할 것 같으면 정말 골칫거리다."
+        }
+      ]
+    },
+    "ja_Noun_42": {
+      "title": "명사 + とは比べものにならない (~to wa kurabemono ni naranai)",
+      "shortExplanation": "격차가 너무 커서 아예 비교 자체가 되지 않음을 강조하며, '~와는 비교가 되지 않는다', '~와는 비교도 안 된다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + とは比べものにならない'(수식형으로는 '～とは比べものにならないほど')는 두 대상 간의 실력, 규모, 속도, 품질 등의 차이가 너무나 압도적이어서 서로 맞비교하는 것 자체가 불가능할 정도로 큰 차이가 남을 강조할 때 쓰입니다('~와는 비교가 안 된다', '~와는 천지 차이다'). 한쪽이 월등히 뛰어나거나 피해·영향 등이 훨씬 막대할 때 주로 사용됩니다.",
+      "formation": "명사 + とは比べものにならない(부사 수식형: とは比べものにならないほど)",
+      "examples": [
+        {
+          "translation": "새 차의 속도는 구형 차와는 비교가 되지 않는다."
+        },
+        {
+          "translation": "그의 유창한 영어 실력은 나와는 비교도 안 된다."
+        },
+        {
+          "translation": "일본의 기술력은 다른 나라와는 비교가 되지 않는다."
+        },
+        {
+          "translation": "이번 지진의 피해는 지난번과는 비교도 안 될 정도로 크다."
+        }
+      ]
+    },
+    "ja_Noun_43": {
+      "title": "명사1 + ともあろう + 명사2 (~tomoarou~)",
+      "shortExplanation": "높은 지위나 신분에 걸맞지 않은 행동을 한 것에 대해 비판·질책·경악을 나타내며, '명색이 ~인 자가', '체면에 ~인 사람이'라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + ともあろう + 명사2'(명사1은 사회적 지위나 책임, 명예가 따르는 신분·직책이며, 명사2는 주로 '者', '人' 등이 옴)는 '그토록 대단하고 모범이 되어야 할 신분을 가진 사람임에도 불구하고, 그 위상에 전혀 어울리지 않는 부끄러운 짓을 저질렀다'라며 강한 실망, 질책, 어이없음을 나타낼 때 쓰입니다('명색이 ~인 사람이 어떻게 그런 일을...', '체면에 ~나 되는 자가').",
+      "formation": "명사1(지위/직책/신분) + ともあろう + 명사2(者 / 人) + が / は",
+      "examples": [
+        {
+          "translation": "명색이 선생님이나 되는 자가 그런 어처구니없는 실수를 하다니."
+        },
+        {
+          "translation": "명색이 어른인 자가 어린아이처럼 굴어서는 안 된다."
+        },
+        {
+          "translation": "체면에 사장이나 되는 사람이 그런 무례한 말을 하다니."
+        },
+        {
+          "translation": "명색이 프로 선수나 되는 자가 시합에 지각을 하다니 말도 안 된다."
+        }
+      ]
+    },
+    "ja_Noun_44": {
+      "title": "명사 + ともなると (〜to mo naru to)",
+      "shortExplanation": "어떤 특별한 시기·단계·신분에 이르면 상황이 평소와 달라짐을 나타내며, '~쯤 되면', '~가 되면 당연히'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + ともなると'는 계절, 명절, 연령, 특별한 지위나 단계에 도달하면, 평소와는 현격히 다른 상태나 현상이 자연스럽게 나타남을 강조할 때 쓰는 표현입니다('~쯤 되면', '~가 되면 으레'). 뒷문장에는 그러한 시기나 상황이 되었을 때 필연적으로 따르는 두드러진 변화나 당연한 결과가 이어집니다.",
+      "formation": "명사 + ともなると | 동사 보통형 + ともなると",
+      "examples": [
+        {
+          "translation": "크리스마스쯤 되면 온 거리가 반짝반짝 빛나 보입니다."
+        },
+        {
+          "translation": "아이가 스스로의 잘못을 인정하게 되면 이야기가 달라지지요."
+        },
+        {
+          "translation": "여름방학쯤 되면 해변은 관광객들로 넘쳐납니다."
+        },
+        {
+          "translation": "시험 기간쯤 되면 도서관은 평소보다 훨씬 혼잡해집니다."
+        }
+      ]
+    },
+    "ja_Noun_45": {
+      "title": "명사 + ともなれば (〜to mo nareba)",
+      "shortExplanation": "어떤 중대한 국면·단계·지위에 이르게 되면 당연히 그에 상응하는 결과나 변화가 따름을 나타내며, '~쯤 되면', '~가 되면 당연히'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + ともなれば'는 동사 'なる'의 가정형(ば)에 강조의 조사가 결합된 표현으로, 어떤 중요한 국면, 시험, 인생의 고비, 높은 직책에 이르게 되면 그에 걸맞은 긴장감, 책임, 변화가 자연스럽게 뒤따름을 강조할 때 사용됩니다('~쯤 되면 당연히', '~가 되면 으레'). 주로 결혼, 수험, 승진 등 중대한 전환점에 자주 쓰입니다.",
+      "formation": "명사 + ともなれば | 동사 보통형 + ともなれば",
+      "examples": [
+        {
+          "translation": "시험쯤 되면 대부분의 사람이 긴장하기 마련이다."
+        },
+        {
+          "translation": "그가 리더가 된다면 팀의 역량은 더욱 향상될 것입니다."
+        },
+        {
+          "translation": "여름방학쯤 되면 관광지는 늘 사람들로 넘쳐난다."
+        },
+        {
+          "translation": "결혼쯤 되면 단지 두 사람이 서로 사랑하는 것만으로는 해결되지 않는 사정도 많다."
+        }
+      ]
+    },
+    "ja_Noun_46": {
+      "title": "명사 + と相まって (~ to aimatte)",
+      "shortExplanation": "둘 이상의 요소가 서로 어우러지거나 결합하여 더 큰 상승효과를 냄을 나타내며, '~와 맞물려', '~와 어우러져'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + と相まって'는 고어 동사 '相まつ(서로 어우러지다, 조화를 이루다)'에서 유래한 표현으로, 두 가지 이상의 요인이나 조건이 서로 결합하고 상호작용하여 한층 더 뚜렷한 효과나 상승 작용(시너지)을 낳음을 나타냅니다('~와 어우러져', '~와 맞물려', '~와 상호 상승작용을 일으켜'). 흔히 'AとB(と)が相まって' 또는 'AがBと相まって' 형태로 쓰이며, 경치의 아름다움, 음식의 풍미, 사업의 큰 성공 등을 묘사할 때 자주 쓰입니다.",
+      "formation": "명사 + と相まって(흔히 명사1 と 명사2(と)が相まって / 명사1 が 명사2 と相まって)",
+      "examples": [
+        {
+          "translation": "화창한 날씨와 맞물려 피크닉은 대성공이었습니다."
+        },
+        {
+          "translation": "노력에 운까지 어우러져 그는 시험에 합격했습니다."
+        },
+        {
+          "translation": "해바라기유와 마늘의 풍미가 어우러져 이 요리는 매우 맛있다."
+        },
+        {
+          "translation": "새로운 기술과 축적된 경험이 맞물려 우리는 이 문제를 극복할 수 있었습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Noun_32": {
+      "title": "名詞 ＋ でなくてなんだろう (〜de nakute nandarou)",
+      "shortExplanation": "強い反語表現で「まさに〜にほかならない」という確信や賛美を表します。「〜でなくて何だろう」「まさに〜だ」。",
+      "longExplanation": "「名詞 ＋ でなくてなんだろう」は、「これがその名詞でなければ、一体何だというのか」という強い反語の形式を用いて、話し手が「これこそまさにその名詞そのものである」と確信・賛美・強調する文型です。「愛」「真実」「奇跡」「運命」などの感情や価値観に関わる抽象名詞に付くことが多く、感嘆や情熱を込めた改まった表現や文学的・演説的な表現として用いられます。「〜でなくて何だろうか」の形でも用いられます。",
+      "formation": "名詞 ＋ でなくてなんだろう（または でなくて何だろうか）",
+      "examples": [
+        {
+          "translation": "これが真実でなくてなんだろう。"
+        },
+        {
+          "translation": "彼がリーダーでなくてなんだろう。"
+        },
+        {
+          "translation": "これが愛でなくてなんだろう。"
+        },
+        {
+          "translation": "これが最高のレストランでなくてなんだろう。"
+        }
+      ]
+    },
+    "ja_Noun_33": {
+      "title": "名詞 ＋ ではあるまいし (~dewa aru maishi)",
+      "shortExplanation": "「〜ではないのだから」と理由や前提を否定し、非難・忠告・なだめを表します。「〜ではあるまいし」「〜じゃあるまいし」。",
+      "longExplanation": "「名詞 ＋ ではあるまいし」は、「決してその名詞の立場や状況ではないのだから」と事実でない前提を打ち消し、それにふさわしくない相手の言動に対して不満・非難・忠告・あきれを表明したり、あるいは「心配することはない」となだめたりする文型です。日常会話で多用される「〜じゃあるまいし」の改まった言い方（文語的表現）であり、主に書き言葉や丁寧な場面で用いられます。",
+      "formation": "名詞 ＋ ではあるまいし（話し言葉：じゃあるまいし）",
+      "examples": [
+        {
+          "translation": "彼女はプロの歌手ではあるまいし、完璧を求めるのは酷だ。"
+        },
+        {
+          "translation": "彼は子供ではあるまいし、そんなにチョコレートばかり食べるのはどうかと思う。"
+        },
+        {
+          "translation": "彼は医者ではあるまいし、あなたの健康状態を詮索する必要はない。"
+        },
+        {
+          "translation": "この指輪は高価なものではあるまいし、落としても大したことはない。"
+        }
+      ]
+    },
+    "ja_Noun_34": {
+      "title": "名詞1 ＋ と ＋ 名詞2 ＋ を兼ねて (Noun to Noun o kanete)",
+      "shortExplanation": "1つの人や物が2つの役割・職務・目的・機能を同時に果たすことを表します。「〜と〜を兼ねて」「〜と〜を兼ねる」。",
+      "longExplanation": "「名詞1 ＋ と ＋ 名詞2 ＋ を兼ねて」（述語としては「〜を兼ねる／〜を兼ねている」）は、動詞「兼ねる」に由来し、1人の人物が2つの役職や役割を同時に担当したり、1つの物や場所が2つの目的や機能を併せ持ったりすることを表す文型です。「〜と〜の両方の役割を持って」「〜と〜を兼務して」という意味で、役職の兼務、多目的な部屋や設備の用途説明、2つの目的を同時に果たす行為などに用いられます。",
+      "formation": "名詞1 ＋ と ＋ 名詞2 ＋ を兼ねて（または を兼ねる ｜ を兼ねている）",
+      "examples": [
+        {
+          "translation": "お父さんは社長と経理部長を兼ねています。"
+        },
+        {
+          "translation": "彼女は音楽教師とピアニストを兼ねています。"
+        },
+        {
+          "translation": "この部屋は寝室と書斎を兼ねています。"
+        },
+        {
+          "translation": "彼は父と母を兼ねて子どもの世話をしている。"
+        }
+      ]
+    },
+    "ja_Noun_35": {
+      "title": "名詞1 ＋ といい ＋ 名詞2 ＋ といい (〜to ii〜to ii)",
+      "shortExplanation": "代表的な2つの例を挙げて、全体に対する評価や感想を述べます。「〜といい〜といい」「〜を見ても〜を見ても」。",
+      "longExplanation": "「名詞1 ＋ といい ＋ 名詞2 ＋ といい」は、同じテーマや全体の中から代表的な例を2つ取り上げ、「AにしてもBにしても、どれをとっても同様に〜である」と全体に対する総合的な評価・感想を強調する文型です。後続節には話し手の主観的な判断・評価が続き、称賛や賛美（「素晴らしい」「完璧だ」など）にも、不満やあきれ、批判の気持ちを表す場合にも用いられます。",
+      "formation": "名詞1 ＋ といい ＋ 名詞2 ＋ といい ＋ ［評価・感想］",
+      "examples": [
+        {
+          "translation": "日本の食べ物といい観光地といい、すべてが素晴らしいです。"
+        },
+        {
+          "translation": "彼の優しさといい、体力といい、彼は理想的なパートナーだ。"
+        },
+        {
+          "translation": "この町の映画館といい、公園といい、老若男女が楽しめる。"
+        },
+        {
+          "translation": "彼の歌唱力といい、ダンスのスキルといい、完璧だ。"
+        }
+      ]
+    },
+    "ja_Noun_36": {
+      "title": "名詞1 ＋ という ＋ 名詞2 (~to iu~)",
+      "shortExplanation": "名詞1という名称や内容によって名詞2を特定・定義します。「〜という〜」「〜と呼ばれる〜」。",
+      "longExplanation": "「名詞1 ＋ という ＋ 名詞2」は、人名・地名・作品名などの名称（名詞1）を挙げて、それがどのような部類や概念の事物（名詞2）であるかを特定・定義・説明する文型です。「〜という名前の〜」「〜と呼ばれる〜」という意味を表し、相手がまだ知らない可能性がある事物を紹介したり、改めて対象を明示したりする際に日常会話から文章語まで幅広く用いられます。",
+      "formation": "名詞1（名称・固有名詞） ＋ という ＋ 名詞2（種類・一般名詞）",
+      "examples": [
+        {
+          "translation": "宮崎駿という人は有名なアニメーション監督です。"
+        },
+        {
+          "translation": "その恋人という女性は彼にとても厳しいです。"
+        },
+        {
+          "translation": "東京という都市は夜も賑やかです。"
+        },
+        {
+          "translation": "私は「ハリーポッター」という本が好きです。"
+        }
+      ]
+    },
+    "ja_Noun_37": {
+      "title": "名詞 ＋ というところだ (Noun to iu tokoro da)",
+      "shortExplanation": "数量・割合・程度などの大体の見当や評価を示します。「およそ〜といったところだ」「せいぜい〜という段階だ」。",
+      "longExplanation": "「名詞 ＋ というところだ」（推量形「〜というところだろう」や丁寧形「〜というところです」も多用される）は、数量・割合・進行度・到達水準などについて、話し手がおおよその見当や評価を下す文型です。「だいたい〜くらいだ」「多くても〜といったレベルだ」という意味を表し、割合（〜割、〜％）や数量詞、段階を表す名詞に付いて用いられます。",
+      "formation": "名詞（数量・割合・程度） ＋ というところだ（または というところだろう ｜ というところです）",
+      "examples": [
+        {
+          "translation": "今回の試験の合格者は半数というところだろう。"
+        },
+        {
+          "translation": "彼の力は80％というところだ。"
+        },
+        {
+          "translation": "このプランに賛成の人は7割というところだ。"
+        },
+        {
+          "translation": "課長の意見には、私としては90％というところでしょう。"
+        }
+      ]
+    },
+    "ja_Noun_38": {
+      "title": "名詞 ＋ というもの (~ to iu mono)",
+      "shortExplanation": "その名詞が持つ本質的な性質や普遍的な傾向・通則を提示します。「〜というものは」「〜とは」。",
+      "longExplanation": "「名詞 ＋ というもの」（通常は主題提示の「〜というものは」の形で用いられる）は、その事物の本質的な性質、通則、普遍的な特徴を取り上げ、「そもそも〜とはそういう性質のものだ」と一般化して語る文型です。「〜というものは」と提示することで、単なる個別的事象ではなく、そのカテゴリー全体に共通する真理・常識・人生訓などを述べる際に用いられます。",
+      "formation": "名詞 ＋ というもの（通常は：名詞 ＋ というものは）",
+      "examples": [
+        {
+          "translation": "子供というものは、毎日たくさん遊びます。"
+        },
+        {
+          "translation": "大学生というものは研究に時間をたくさんかけます。"
+        },
+        {
+          "translation": "日本文化というものは伝統的なものと新しいものが混ざっています。"
+        },
+        {
+          "translation": "別れというものはいつも悲しいものです。"
+        }
+      ]
+    },
+    "ja_Noun_39": {
+      "title": "名詞 ＋ といったところだ (Noun to itta tokoro da)",
+      "shortExplanation": "数量や水準の上限・限度を示し、「最高でもその程度だ」というニュアンスを表します。「せいぜい〜くらいだ」「多くても〜といったところだ」。",
+      "longExplanation": "「名詞 ＋ といったところだ」は、数量や能力、進行の度合いなどについて、「最高に見積もってもだいたいこの程度にとどまる」「それ以上にはならない」と限度や上限を評価して述べる文型です。「せいぜい〜だ」「多くても〜くらいだ」という控えめなニュアンスを含み、「せいぜい」「多くても」などの副詞とともに用いられることが多くあります。",
+      "formation": "名詞（数量・程度・段階） ＋ といったところだ（または といったところです）",
+      "examples": [
+        {
+          "translation": "彼の英語レベルは初級といったところだ。"
+        },
+        {
+          "translation": "私の日本語の語彙は1000語といったところだ。"
+        },
+        {
+          "translation": "彼が毎日ランニングできるのは5キロといったところだ。"
+        },
+        {
+          "translation": "その会社の従業員は20人といったところだ。"
+        }
+      ]
+    },
+    "ja_Noun_40": {
+      "title": "名詞1 ＋ といわず ＋ 名詞2 ＋ といわず (A to iwazu B to iwazu)",
+      "shortExplanation": "区別なく全体すべてにその事態が当てはまることを表します。「〜といい〜といい区別なく」「〜も〜もすべて」。",
+      "longExplanation": "「名詞1 ＋ といわず ＋ 名詞2 ＋ といわず」は、「Aと言わずBと言わず、その区別なく両方ともすべて」という意味で、ある状態や行為が例外なく全体に及んでいることを強調する文型です。季節（夏／冬）、時間（昼／夜）、老若男女、身体の部位（手／足）など、対比的な2つの名詞を並べて「どれもこれもすべて同様だ」と包括的に述べる際に用いられます。",
+      "formation": "名詞1 ＋ といわず ＋ 名詞2 ＋ といわず ＋ ［全体に行き渡る叙述］",
+      "examples": [
+        {
+          "translation": "冬といわず夏といわず、彼はいつもアイスクリームを食べます。"
+        },
+        {
+          "translation": "老いといわず若きといわず、全ての人がそのイベントを楽しめます。"
+        },
+        {
+          "translation": "男といわず女といわず、誰もがこの映画を楽しむでしょう。"
+        },
+        {
+          "translation": "月といわず火といわず、あの店は毎日混んでいます。"
+        }
+      ]
+    },
+    "ja_Noun_41": {
+      "title": "名詞 ＋ ときたら (〜tokitara)",
+      "shortExplanation": "話題を取り上げて強い感情（主に不満・非難・あきれ、時には強い賞賛）を述べます。「〜ときたら」「〜について言えば」。",
+      "longExplanation": "「名詞 ＋ ときたら」は、身近な人物や事柄を話題として提示し、それに対して話し手が抱く強い感情を吐露する文型です。多くは不満・非難・あきれ・困惑といった批判的な気持ちを表す場面で用いられますが（「最近の若い者ときたら」「あいつの態度ときたら」など）、まれに並外れた美味しさや素晴らしさに感嘆・賛美する文脈でも用いられます。口語的なニュアンスを伴います。",
+      "formation": "名詞 ＋ ときたら ＋ ［感情を込めた評価・描写］",
+      "examples": [
+        {
+          "translation": "寿司ときたら、彼は何も食べられない。"
+        },
+        {
+          "translation": "数学の問題ときたら、彼女はいつも困っている。"
+        },
+        {
+          "translation": "あの店のハンバーガーときたら、本当に美味しい。"
+        },
+        {
+          "translation": "彼のいつもの態度ときたら、本当に困ったものだ。"
+        }
+      ]
+    },
+    "ja_Noun_42": {
+      "title": "名詞 ＋ とは比べものにならない (~to wa kurabemono ni naranai)",
+      "shortExplanation": "2つの事物に圧倒的な差があり、比較の対象にすらならないことを表します。「〜とは比較にならない」「〜とは比べようがない」。",
+      "longExplanation": "「名詞 ＋ とは比べものにならない」（修飾表現として「〜とは比べものにならないほど」も頻出）は、能力、規模、性能、被害などの差が極めて大きく、一方が他方を圧倒しており、到底並べて比べることすらできない状態を強調する文型です。「〜とは比較にならない」「〜の比ではない」という意味を表し、隔絶した優劣やスケールの違いを述べる際に用いられます。",
+      "formation": "名詞 ＋ とは比べものにならない（連用修飾形：とは比べものにならないほど）",
+      "examples": [
+        {
+          "translation": "新しい車の速さは古い車とは比べものにならない。"
+        },
+        {
+          "translation": "彼の英語のうまさは私とは比べものにならない。"
+        },
+        {
+          "translation": "日本の技術は他の国とは比べものにならない。"
+        },
+        {
+          "translation": "今回の地震の被害は前回とは比べものにならない。"
+        }
+      ]
+    },
+    "ja_Noun_43": {
+      "title": "名詞1 ＋ ともあろう ＋ 名詞2 (~tomoarou~)",
+      "shortExplanation": "高い地位や立場にふさわしくない不適切な言動に対して、強い非難やあきれを表します。「〜ほどの立場の人が」「〜ともあろう者が」。",
+      "longExplanation": "「名詞1 ＋ ともあろう ＋ 名詞2」（名詞1には社会的責任や高い評価を伴う立場・身分・職名が入り、名詞2には「者」「人」などが来る）は、「そのように尊敬されるべき・責任ある立場にある立派な人物が、それに全くふさわしくない恥ずべき不祥事や失敗をするとは」と、強い非難・失望・驚きを込めて述べる文型です。「〜たる者が」「〜ほどの人物が」という意味を表し、不祥事やモラル欠如を叱責する際に用いられます。",
+      "formation": "名詞1（地位・身分・役職） ＋ ともあろう ＋ 名詞2（者 ｜ 人 ｜ 方） ＋ が ｜ は",
+      "examples": [
+        {
+          "translation": "先生ともあろう者が、そんな間違いをするなんて。"
+        },
+        {
+          "translation": "大人ともあろう者が子供みたいにふるまってはいけない。"
+        },
+        {
+          "translation": "社長ともあろう人がそんな失礼なことを言うなんて。"
+        },
+        {
+          "translation": "プロの選手ともあろう者が、試合に遅刻するなんて。"
+        }
+      ]
+    },
+    "ja_Noun_44": {
+      "title": "名詞 ＋ ともなると (〜to mo naru to)",
+      "shortExplanation": "特別な時期・段階・立場になると、普段とは異なる状況が生じることを表します。「〜ともなると」「〜の時期になるとやはり」。",
+      "longExplanation": "「名詞 ＋ ともなると」（名詞のほか動詞普通形にも接続する）は、季節や特別な行事、年齢、高い地位や特別な段階に至ると、普段とは明確に異なった事態や変化が生じることを表す文型です。「〜という段階・時期になると当然」「〜ともなればやはり」という意味合いを持ち、後続節にはその状況に伴って自然に生じる顕著な変化や必然的な現象が述べられます。",
+      "formation": "名詞 ＋ ともなると ｜ 動詞普通形 ＋ ともなると",
+      "examples": [
+        {
+          "translation": "クリスマスともなると、街中がきらきらと輝いて見えます。"
+        },
+        {
+          "translation": "子供が自分の過ちを認めるともなると、話は別ですね。"
+        },
+        {
+          "translation": "夏休みともなると、海辺は観光客で溢れかえります。"
+        },
+        {
+          "translation": "試験週間ともなると、図書館はいつもより混雑します。"
+        }
+      ]
+    },
+    "ja_Noun_45": {
+      "title": "名詞 ＋ ともなれば (〜to mo nareba)",
+      "shortExplanation": "重要な段階や立場に至ると、当然それに伴う変化や事態が生じることを表します。「〜となればやはり」「〜の段階に至れば」。",
+      "longExplanation": "「名詞 ＋ ともなれば」（名詞のほか動詞普通形にも接続する）は、動詞「なる」の仮定形を用いた表現で、人生の重大な局面や特別な地位、大きなイベントなどの段階に達すると、それにふさわしい相応の緊張感・責任・変化が当然のように生じることを強調する文型です。「〜という身分・状況になれば当然」「〜の段階に至ればやはり」という意味を表し、結婚や試験、昇進などの節目によく用いられます。",
+      "formation": "名詞 ＋ ともなれば ｜ 動詞普通形 ＋ ともなれば",
+      "examples": [
+        {
+          "translation": "試験ともなれば、大抵の人が緊張するものです。"
+        },
+        {
+          "translation": "彼がリーダーともなれば、チームの性能はさらに向上するでしょう。"
+        },
+        {
+          "translation": "夏休みともなれば、観光地はいつも人であふれている。"
+        },
+        {
+          "translation": "結婚ともなれば、ただ二人が愛し合っているだけではすまされない事情も多い。"
+        }
+      ]
+    },
+    "ja_Noun_46": {
+      "title": "名詞 ＋ と相まって (~ to aimatte)",
+      "shortExplanation": "複数の要素が互いに作用し合い、相乗効果を生み出すことを表します。「〜と作用し合って」「〜と相まって一層」。",
+      "longExplanation": "「名詞 ＋ と相まって」は、動詞「相まつ（互いに作用し合う、結びつく）」に由来し、2つ以上の要素や条件が互いに重なり合い、組み合わさることで、より際立った効果や優れた結果（相乗効果）をもたらすことを表す文型です。「〜と影響し合って」「〜が加わって一層」という意味を表し、「AとB（と）が相まって」「AがBと相まって」の形で、自然の美しさ、料理の風味、事業の成功などを格調高く描写する際によく用いられます。",
+      "formation": "名詞 ＋ と相まって（「名詞1 と 名詞2（と）が相まって」または「名詞1 が 名詞2 と相まって」）",
+      "examples": [
+        {
+          "translation": "天気の良さと相まって、ピクニックは大成功でした。"
+        },
+        {
+          "translation": "努力と運と相まって、彼は試験に合格しました。"
+        },
+        {
+          "translation": "ひまわり油とガーリックと相まって、この料理は美味しいです。"
+        },
+        {
+          "translation": "新しい技術と経験と相まって、私たちはこの問題を克服できました。"
+        }
+      ]
+    }
+  }
+}

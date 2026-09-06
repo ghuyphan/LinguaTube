@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_조차_112",
+    "language": "ko",
+    "pattern": "~조차",
+    "title": "~조차 [jocha] (Even)",
+    "shortExplanation": "Expresses 'even' or 'to the extent that', reinforcing a strong emphasis or unexpected inclusion.",
+    "longExplanation": "'~조차 [jocha]' is used in Korean to stress that something is included to an extreme degree or under surprising circumstances. It often conveys a sense of unexpectedness or limits reached.",
+    "formation": "Noun + 조차",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그는 돈조차 너무 좋아해서 친구들에게 돈을 빌려주지 않아요.",
+        "romanization": "Geuneun donjocha neomu joahaseo chingudeurege doneul billyeojugi anhayo.",
+        "translation": "He likes money so much that he doesn't even lend money to his friends."
+      },
+      {
+        "sentence": "저는 이번 주말에는 집에서 나가는 것조차 귀찮아요.",
+        "romanization": "Jeoneun ibeon jumaleneun jibeseo naganeun geotjocha gwicheonhayo.",
+        "translation": "This weekend, I even find going out of the house annoying."
+      },
+      {
+        "sentence": "이번 시험은 너무 어려워서 문제를 읽는 것조차 어려웠어요.",
+        "romanization": "Ibeon siheomeun neomu eoryeowoseo munjeleul ilgneun geotjocha eoryeowosseoyo.",
+        "translation": "This exam was so hard that even reading the problems was difficult."
+      },
+      {
+        "sentence": "가게에 사람이 너무 많아서 메뉴를 선택하는 것조차 힘들었어요.",
+        "romanization": "Gagee sarami neomu manaseo menyureul seontaekhaneun geotjocha himdeureosseoyo.",
+        "translation": "There were so many people in the store that even choosing the menu was difficult."
+      }
+    ]
+  },
+  {
+    "id": "ko_존재하다_113",
+    "language": "ko",
+    "pattern": "~존재하다",
+    "title": "~존재하다 [jonjaehada] (To exist)",
+    "shortExplanation": "'존재하다' is used to express the existence or presence of someone or something.",
+    "longExplanation": "'존재하다 [jonjaehada]' is a Korean verb that indicates that someone or something exists or is present. It can be used for concrete objects, people, or even abstract concepts like hope, ideas, or problems. In its present form, it becomes '존재해요.'",
+    "formation": "(Noun/Subject) + 존재하다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "영화 속에 존재하는 그런 판타지 세계가 현실에서도 존재하길 바래요.",
+        "romanization": "Yeonghwa soge jonjaehaneun geureon pantaji segye-ga hyeonsil-eseodo jonjaehagil baraeyo.",
+        "translation": "I hope that such a fantasy world that exists in the movie also exists in reality."
+      },
+      {
+        "sentence": "사랑이 과연 영원히 존재하는 건지 모르겠어요.",
+        "romanization": "Sarangi gwayeon yeongwonhi jonjaehaneun geonji moreugesseoyo.",
+        "translation": "I am not sure if love really exists forever."
+      },
+      {
+        "sentence": "이 세상에 완벽한 사람이 존재하는지 의심스러워요.",
+        "romanization": "I sesang-e wanbyeokhan sarami jonjaehaneunji uisimseureowoyo.",
+        "translation": "I doubt that a perfect person exists in this world."
+      },
+      {
+        "sentence": "이 방에는 저 말고 다른 사람들이 존재하지 않아요.",
+        "romanization": "I bange-neun jeo malgo dareun saramdeuri jonjaehaji anhayo.",
+        "translation": "Except for me, no other people exist in this room."
+      }
+    ]
+  },
+  {
+    "id": "ko_줄_114",
+    "language": "ko",
+    "pattern": "~줄",
+    "title": "~줄 알다 [jul alda] (Thought that)",
+    "shortExplanation": "'~줄 알다' is used to express an assumption or expectation that turns out to be incorrect.",
+    "longExplanation": "'~줄 알다' is a Korean grammar pattern used when the speaker assumed or expected something to be a certain way, only to find that the reality was different. It is often translated as 'I thought that...' and conveys a sense of surprise or disappointment when the expectation does not match the outcome.",
+    "formation": "Verb/Adjective + 줄 알다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "날씨가 좋을 줄 알았는데, 갑자기 비가 와서 실망했어요.",
+        "romanization": "Nalssiga joheul jul alatneunde, gapjagi biga waseo silmanghaesseoyo.",
+        "translation": "I thought the weather would be nice, but it suddenly started raining and I was disappointed."
+      },
+      {
+        "sentence": "그 사람이 나를 좋아할 줄 알았는데, 아니었어요.",
+        "romanization": "Geu sarami nareul joahal jul alatneunde, anieosseoyo.",
+        "translation": "I thought that person liked me, but that was not the case."
+      },
+      {
+        "sentence": "시험 문제가 어려울 줄 알았는데, 생각보다 쉬웠어요.",
+        "romanization": "Siheom munjega eoryeoul jul alatneunde, saenggakboda swiweosseoyo.",
+        "translation": "I thought the test questions would be difficult, but they were easier than I expected."
+      },
+      {
+        "sentence": "진행이 늦을 줄 알았는데, 빨리 끝났어요.",
+        "romanization": "Jinhaengi neujeul jul alatneunde, ppalli kkeutnasseoyo.",
+        "translation": "I thought the proceedings would be slow, but they ended quickly."
+      }
+    ]
+  },
+  {
+    "id": "ko_즉시_115",
+    "language": "ko",
+    "pattern": "~즉시",
+    "title": "~즉시 [jeukshi] (Immediately, at once)",
+    "shortExplanation": "Used to indicate that something happens immediately or without delay.",
+    "longExplanation": "'~즉시 [jeukshi]' is an adverb in Korean used to express that an action occurs immediately after a preceding event. It emphasizes the immediacy of the subsequent action, similar to 'as soon as' or 'the moment' in English.",
+    "formation": "Verb + (으)ㄹ/ㄴ + 즉시",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그녀가 방에 들어온 즉시, 저는 선물을 주려고 했어요.",
+        "romanization": "Geunyeoga bange deureoon jeukshi, jeoneun seonmureul juryeogo haesseoyo.",
+        "translation": "As soon as she entered the room, I intended to give her a gift."
+      },
+      {
+        "sentence": "메시지를 받으면 즉시 반응해야 합니다, 그렇지 않으면 그 사람은 기다리게 됩니다.",
+        "romanization": "Mesijireul bateumyeon jeukshi baneunghaeya hamnida, geureohji anheumyeon geu sarameun gidarige doebnida.",
+        "translation": "You should respond immediately upon receiving a message, otherwise that person will be left waiting."
+      },
+      {
+        "sentence": "그날 밤, 그녀가 보고서를 완료할 즉시 확인했어요.",
+        "romanization": "Geunal bam, geunyeoga bogoseoreul wanryohal jeukshi hwaginhaesseoyo.",
+        "translation": "That night, I confirmed it as soon as she finished her report."
+      },
+      {
+        "sentence": "회의가 끝난 즉시, 사진을 찍으러 갔어요.",
+        "romanization": "Hoeuiga kkeutnan jeukshi, sajineul jjigeureo gasseoyo.",
+        "translation": "I went to take a picture immediately as soon as the meeting ended."
+      }
+    ]
+  },
+  {
+    "id": "ko_지_116",
+    "language": "ko",
+    "pattern": "~지",
+    "title": "~지 않다 [ji anta] (Negative form)",
+    "shortExplanation": "Negates the action implied by the verb; equivalent to 'not' in English.",
+    "longExplanation": "The grammar point '~지 않다 [ji anta]' is the standard and polite way to convert a verb into its negative form in Korean. By attaching '지 않다' to the verb stem, it changes the meaning to indicate that the action is not performed. This form is commonly used in both formal and casual contexts.",
+    "formation": "Verb-stem + 지 않다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "나는 오늘 학교에 가지 않았어요, 왜냐하면 비가 너무 많이 와서 출근이 불가능했어요.",
+        "romanization": "Naneun oneul hakgyo-e gaji anhasseoyo, waenyahamyeon biga neomu mani wasseo chulgeuni bulganeunghaesseoyo.",
+        "translation": "I did not go to school today because it rained so much that going was impossible."
+      },
+      {
+        "sentence": "저는 일반적으로 고기를 먹지 않아요, 왜냐하면 나는 채식주의자이기 때문입니다.",
+        "romanization": "Jeoneun ilbanjeogeuro gogireul meokji anhayo, waenyahamyeon naneun chaesikjuuijaigi ttaemunibnida.",
+        "translation": "I generally do not eat meat because I am a vegetarian."
+      },
+      {
+        "sentence": "민지는 그 영화를 보지 않았어요, 왜냐하면 그녀는 그것이 너무 무서워하기 때문입니다.",
+        "romanization": "Minjineun geu yeonghwareul boji anhasseoyo, waenyahamyeon geunyeoneun geugeosi neomu museowohagi ttaemunibnida.",
+        "translation": "Minji did not watch that movie because she finds it too scary."
+      },
+      {
+        "sentence": "그들은 내 생일 파티에 오지 않았어요, 왜냐하면 그들은 바빴기 때문입니다.",
+        "romanization": "Geudeureun nae saengil patie oji anhasseoyo, waenyahamyeon geudeureun bappatgi ttaemunibnida.",
+        "translation": "They did not come to my birthday party because they were busy."
+      }
+    ]
+  },
+  {
+    "id": "ko_지_117",
+    "language": "ko",
+    "pattern": "~지",
+    "title": "~지 않아도 되다 [ji anado dweda] (Do not have to)",
+    "shortExplanation": "Indicates that something does not have to be done or is not necessary.",
+    "longExplanation": "'~지 않아도 되다 [ji anado dweda]' is used when you want to express that there is no obligation or necessity to do something. It emphasizes the optional nature of an action or state.",
+    "formation": "Verb stem + 지 않아도 되다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "너무 걱정하지 않아도 돼, 모든 것이 잘 될 거야.",
+        "romanization": "Neomu geokjeonghaji anado dwae, modeun geosi jal doel geoya.",
+        "translation": "You don't have to worry too much; everything will be fine."
+      },
+      {
+        "sentence": "지금 당장 먹지 않아도 돼, 나중에 먹어도 괜찮아.",
+        "romanization": "Jigeum dangjang meokji anado dwae, najunge meogeodo gwaenchanha.",
+        "translation": "You don't have to eat right now; you can eat later."
+      },
+      {
+        "sentence": "다른 사람들이 하는 것을 따라하지 않아도 돼, 너 자신을 믿어.",
+        "romanization": "Dareun saramdeuli haneun geoseul ttarahaji anado dwae, neo jasineul mideo.",
+        "translation": "You don't have to follow what others are doing; believe in yourself."
+      },
+      {
+        "sentence": "어디로 가지 않아도 돼, 집에서 편하게 쉬어.",
+        "romanization": "Eodiro gaji anado dwae, jibeseo pyeonhage swieo.",
+        "translation": "You don't have to go anywhere; just rest comfortably at home."
+      }
+    ]
+  },
+  {
+    "id": "ko_지_118",
+    "language": "ko",
+    "pattern": "~지",
+    "title": "~지 않을까 [ji anheulkka] (Perhaps)",
+    "shortExplanation": "Used to express a guess, supposition, or conjecture; 'perhaps', 'maybe'.",
+    "longExplanation": "'~지 않을까 [ji anheulkka]' is a common ending in Korean used to express an educated guess or prediction. It is similar to saying 'perhaps,' 'maybe,' or 'I wonder if...' in English, based on the speaker's available information.",
+    "formation": "Verb stem + 지 않을까",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "오늘 밤에 비가 오지 않을까 싶어요, 하늘이 완전히 회색이니까.",
+        "romanization": "Oneul bame biga oji anheulkka sip-eoyo, haneul-i wanjeonhi hoesaeg-inikka.",
+        "translation": "I think it might rain tonight since the sky is completely gray."
+      },
+      {
+        "sentence": "그녀가 내 생각을 하고 있지 않을까 궁금해요, 오랜만에 만났으니까.",
+        "romanization": "Geunyeoga nae saenggag-eul hago itji anheulkka gung-geumhaeyo, oraenman-e mannat-eunikka.",
+        "translation": "I wonder if she is thinking about me since we met after a long time."
+      },
+      {
+        "sentence": "내일 시험이 취소되지 않을까 기대해요, 어제는 너무 늦게 공부했으니까.",
+        "romanization": "Naeil siheom-i chwisodoejji anh-eulkka gidaehaeyo, eojeneun neomu neutge gongbuhaess-eunikka.",
+        "translation": "I wonder if tomorrow's exam might get canceled because I stayed up too late studying yesterday."
+      },
+      {
+        "sentence": "지금 집에 가면 아빠가 저녁을 만들어 놓지 않을까 생각해요, 오늘은 제 생일이니까.",
+        "romanization": "Jigeum jib-e gamyeon appa-ga jeonyeog-eul mandeul-eo nohji anheulkka saenggaghaeyo, oneul-eun je saeng-il-inikka.",
+        "translation": "I wonder if my dad might have prepared dinner if I go home now, since it's my birthday today."
+      }
+    ]
+  },
+  {
+    "id": "ko_지만_119",
+    "language": "ko",
+    "pattern": "~지만",
+    "title": "~지만 [jimyeon] (But, however)",
+    "shortExplanation": "Used to express contrast or contradiction; 'but', 'however'.",
+    "longExplanation": "'~지만 [jimyeon]' is a conjunction used in Korean to connect two clauses where the second clause presents a contrast or unexpected result compared to the first. It is similar to 'but' or 'however' in English.",
+    "formation": "Verb stem + 지만",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "오늘의 날씨는 흐리지만, 기분은 매우 좋아요.",
+        "romanization": "Oneul-ui nalssineun heulijiman, gibuneun maeu joayo.",
+        "translation": "Even though today's weather is cloudy, I feel very good."
+      },
+      {
+        "sentence": "그 영화는 재미없었지만, 그 배우의 연기는 훌륭했어요.",
+        "romanization": "Geu yeonghwaneun jaemiopseotjiman, geu baeuui yeongineun hulryunghaesseoyo.",
+        "translation": "Although the movie wasn't interesting, the actor's performance was great."
+      },
+      {
+        "sentence": "고기를 좋아하지만, 가끔 비건 음식을 먹습니다.",
+        "romanization": "Gogireul johahajiman, gaggeum bigeon eumsigeul meogseumnida.",
+        "translation": "I like meat, but sometimes I eat vegan food."
+      },
+      {
+        "sentence": "아들은 친절하지만, 때때로 소심해집니다.",
+        "romanization": "Adeureun chinjeolhajiman, ttaettaero sosimhaejibnida.",
+        "translation": "My son is kind, but sometimes he becomes timid."
+      }
+    ]
+  },
+  {
+    "id": "ko_지요_120",
+    "language": "ko",
+    "pattern": "~지요",
+    "title": "~지요 [jiyo] (~right?, isn't it?)",
+    "shortExplanation": "Used to echo or affirm the argument; '~right?', 'isn't it?'.",
+    "longExplanation": "The ending '~지요 [jiyo]' is used in Korean to echo or affirm the statement preceding it. This is similar to English phrases like 'right?' or 'isn't it?'. The speaker uses this ending to seek agreement or affirmation from the listener. It is usually used in declarative or interrogative sentences and can be used in both formal and informal contexts.",
+    "formation": "Stem verb/adjective + 지요",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "오늘 날씨가 정말 좋지요, 태양이 환하게 빛나고, 바람도 시원하니까요.",
+        "romanization": "Oneul nalssiga jeongmal jotjiyo, taeyangi hwanhage bitnago, baramdo siwonhanikkayo.",
+        "translation": "The weather today is really nice, right? The sun is shining brightly, and the wind is refreshing."
+      },
+      {
+        "sentence": "새로 오픈한 그 카페의 커피가 맛있지요, 한 번 가 볼 만하다고 생각해요.",
+        "romanization": "Saero openhan geu kapeui keopi-ga matitjiyo, hanbeon ga bol mandahago saenggakhaeyo.",
+        "translation": "The coffee at the newly opened café is delicious, right? I think it's worth a visit."
+      },
+      {
+        "sentence": "강아지가 정말 귀엽지요, 매일 보고 싶어져요.",
+        "romanization": "Gangajiga jeongmal gwiyeopjiyo, maeil bogo sipheojyeoyo.",
+        "translation": "The puppy is really cute, right? I want to see it every day."
+      },
+      {
+        "sentence": "우리 아이가 키가 크지요, 아빠를 닮아서 그런 것 같아요.",
+        "romanization": "Uri aiga kiga keutjiyo, appa-reul dalma-seo geureon geot gatayo.",
+        "translation": "Our child is really tall, right? I think it is because he looks like his father."
+      }
+    ]
+  },
+  {
+    "id": "ko_진_121",
+    "language": "ko",
+    "pattern": "~진",
+    "title": "~진 않다 [jin anta] (Not really)",
+    "shortExplanation": "This pattern is used when something is not exactly or not demonstrably true.",
+    "longExplanation": "The ~진 않다 [jin anta] form is used when describing a condition or situation that is not fully or exactly as described by the preceding adjective or verb. It is equivalent to the English expressions 'not really', 'not quite', 'not necessarily', or 'not exactly'. The level of negation is softer than the standard negative form and is often used when the speaker does not want to fully agree or disagree.",
+    "formation": "Adjective/Verb stem + 진 않다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그 곳은 많이 더워지진 않지만, 여름에는 항상 습해요.",
+        "romanization": "Geu goseun mani deowojijin antjiman, yeoreumeun hangsang seubhaeyo.",
+        "translation": "It doesn't get very hot there, but it is always humid in summer."
+      },
+      {
+        "sentence": "나는 그녀를 좋아하진 않아도 그녀의 사고 방식을 존경해요.",
+        "romanization": "Naneun geunyeoreul johahajin anado, geunyeoui sago bangsigeul jongyeonghaeyo.",
+        "translation": "I don't particularly like her, but I respect her way of thinking."
+      },
+      {
+        "sentence": "요즘 너무 바빠서 체육관에 자주 가지 않아도, 집에서 운동은 해요.",
+        "romanization": "Yojeum neomu bappaseo cheyukgane jaju gaji anado, jibeseo undongeun haeyo.",
+        "translation": "I am too busy these days to go to the gym regularly, but I do exercise at home."
+      },
+      {
+        "sentence": "이 식당은 꼭 기억에 남을 정도는 아니지만, 음식은 맛있어요.",
+        "romanization": "I sikdangeun kkok gieoge nameul jeongdoneun anijiman, eumsigeun masisseoyo.",
+        "translation": "This restaurant may not be particularly memorable, but the food is delicious."
+      }
+    ]
+  },
+  {
+    "id": "ko_처럼_122",
+    "language": "ko",
+    "pattern": "~처럼",
+    "title": "~처럼 [cheoreom] (Like, as if)",
+    "shortExplanation": "Used to express similarities or comparisons; 'like', 'as if'.",
+    "longExplanation": "'~처럼 [cheoreom]' is a postposition used to indicate that something is similar to or behaves in the same manner as the mentioned subject or object. It conveys a sense of comparison or simile, similar to 'like' or 'as if' in English.",
+    "formation": "Noun/Verb + 처럼",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그녀는 나비처럼 춤을 춰요, 그녀의 리듬감과 움직임은 정말 아름다워요.",
+        "romanization": "Geunyeoneun nabicheoreom chumeul chwoyo, geunyeoui rideumgamgwa umjigimeun jeongmal areumdawoyo.",
+        "translation": "She dances like a butterfly; her sense of rhythm and movements are really beautiful."
+      },
+      {
+        "sentence": "아버지는 항상 든든한 나무처럼 가족을 지켜줘요.",
+        "romanization": "Abeojineun hangsang deundeunhan namucheoreom gajogeul jikyeojwoyo.",
+        "translation": "My father always protects the family like a sturdy tree."
+      },
+      {
+        "sentence": "그는 배가 고파서 사자처럼 고기를 먹었어요.",
+        "romanization": "Geuneun baega gopaseo sajacheoreom gogireul meogeosseoyo.",
+        "translation": "He was so hungry, he ate the meat like a lion."
+      },
+      {
+        "sentence": "진실이 들키자, 그가 마치 쥐를 잡은 고양이처럼 미소를 지었어.",
+        "romanization": "Jinsili deultkija, geuga machi jwireul jabeun goyangicheoreom misoreul jieosseo.",
+        "translation": "When the truth was exposed, he smiled as if he were a cat that had caught a mouse."
+      }
+    ]
+  },
+  {
+    "id": "ko_아서어서_123",
+    "language": "ko",
+    "pattern": "~아서/어서",
+    "title": "~아서/어서 [aseo/eoseo] (So, therefore)",
+    "shortExplanation": "Used to connect two clauses and show that the second clause is the result of the first; 'so', 'therefore'.",
+    "longExplanation": "The ending '-아서/어서' is used in Korean to express cause and effect. It connects two clauses in a sentence where the second clause is the result or effect of what is described in the first clause. It is often translated as 'so' or 'therefore' in English, conveying a sense of consequence or reason.",
+    "formation": "Verb stem + 아/어서",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 배가 너무 고파서 밥을 두 그릇이나 먹었어요.",
+        "romanization": "Jeoneun baega neomu gopaseo babeul du geureusina meogeosseoyo.",
+        "translation": "I was so hungry that I ate two bowls of rice."
+      },
+      {
+        "sentence": "친구가 너무 늦게 와서 영화가 이미 시작했어요.",
+        "romanization": "Chinguga neomu neutge wasseo, yeonghwaga imi sijakhaesseoyo.",
+        "translation": "Because my friend came too late, the movie had already started."
+      },
+      {
+        "sentence": "수업이 너무 어려워서 공부를 많이 했어요.",
+        "romanization": "Sueobi neomu eoryeowoseo, gongbureul mani haesseoyo.",
+        "translation": "The class was so difficult that I studied a lot."
+      },
+      {
+        "sentence": "날씨가 너무 추워서 집에만 있었어요.",
+        "romanization": "Nalssiga neomu chuweoseo, jibeoman isseosseoyo.",
+        "translation": "The weather was so cold that I just stayed at home."
+      }
+    ]
+  },
+  {
+    "id": "ko_것_124",
+    "language": "ko",
+    "pattern": "~것",
+    "title": "~것 같다 [geot gatda] (Seems like)",
+    "shortExplanation": "Expresses the speaker's guess or inference about a situation based on some evidence.",
+    "longExplanation": "The construction '~것 같다' is used in Korean to express a guess or inference about a situation. The speaker uses it when they have some evidence or basis for their inference, even if the situation is not directly observable. It is equivalent to saying 'seems like' or 'appears to be' in English.",
+    "formation": "Verb/Adjective stem + (으)ㄴ/는 + 것 같(아요)",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "나는 오늘 아침부터 배가 아파. 아마 매운 음식을 먹어서 아픈 것 같아요.",
+        "romanization": "Naneun oneul achimbuteo baega apa. Ama maeun eumsigeul meogeoseo apeun geot gatayo.",
+        "translation": "I've had a stomachache since this morning. It seems like it's because I ate spicy food."
+      },
+      {
+        "sentence": "그녀가 갑자기 분위기가 달라진 것 같아요. 무슨 일이 있었는지 아는 사람이 없어요.",
+        "romanization": "Geunyeoga gapjagi bunwigiga dallajin geot gatayo. Museun iri isseossneunji aneun sarami eopseoyo.",
+        "translation": "She seems to have suddenly changed her mood. No one knows what happened."
+      },
+      {
+        "sentence": "어제 비가 왔는데 오늘은 반짝반짝한 것 같아요.",
+        "romanization": "Eoje biga watneunde oneureun banjjak banjjakhan geot gatayo.",
+        "translation": "It rained yesterday, but today it seems to be sparkling."
+      },
+      {
+        "sentence": "밖에 사람들이 없는 것 같아요. 모두 어디로 갔는지 모르겠어요.",
+        "romanization": "Bakke saramdeuli eomneun geot gatayo. Modu eodiro gassneunji moreugesseoyo.",
+        "translation": "It seems like there's no one outside. I don't know where everyone has gone."
+      }
+    ]
+  },
+  {
+    "id": "ko_커녕_125",
+    "language": "ko",
+    "pattern": "~커녕",
+    "title": "~커녕 [keonyeong] (Let alone, far from)",
+    "shortExplanation": "Used to express an idea contrary to expectation; 'let alone', 'far from'.",
+    "longExplanation": "'~커녕 [keonyeong]' is a connector used in Korean to indicate that a certain expectation is not met—in fact, the reality is far from that expectation. It is often translated as 'let alone' or 'far from' in English and is used when one thing is not done, let alone something even more unlikely or difficult.",
+    "formation": "Noun or clause + 커녕",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "지영이는 한국어를 통해 간단한 대화를 나누는 것 커녕, '안녕하세요' 정도밖에 하지 못해요.",
+        "romanization": "Jiyeongineun hangugeo-reul tonghae gandanhan daehwareul nanuneun geot keonyeong, 'annyeonghaseyo' jeongdo bakke haji mot haeyo.",
+        "translation": "Far from having a simple conversation in Korean, Jiyoung can barely say 'hello'."
+      },
+      {
+        "sentence": "나는 주말에 책을 읽을 시간이 있다 커녕, 집안일에 치여서 어려워요.",
+        "romanization": "Naneun jumare chaekeul ilgeul sigani itda keonyeong, jibanire chiyeoseo eoryeowoyo.",
+        "translation": "Far from having time to read a book on the weekend, I'm overwhelmed by housework."
+      },
+      {
+        "sentence": "성진이는 시험 공부를 마치고 잔다 커녕, 게임을 하다가 밤새우기도 해요.",
+        "romanization": "Seongjineun siheom gongbureul machigo janda keonyeong, geimeul hadaga bamsaeugido haeyo.",
+        "translation": "Far from going to sleep after studying for the exam, Seongjin often stays up all night playing games."
+      },
+      {
+        "sentence": "그녀는 살을 빼려는 것 커녕, 매일 밤마다 간식을 먹어요.",
+        "romanization": "Geunyeoneun sareul bbaeryeoneun geot keonyeong, maeil bammada gansigeul meogeoyo.",
+        "translation": "Far from trying to lose weight, she eats snacks every night."
+      }
+    ]
+  },
+  {
+    "id": "ko_게_126",
+    "language": "ko",
+    "pattern": "~게",
+    "title": "~게 되다 [ge gatda] (Become, end up)",
+    "shortExplanation": "Means 'to become' or 'to end up' and is used to express the result of a change or transformation.",
+    "longExplanation": "The construction '~게 되다' is used in Korean to indicate the end result of a change or transformation, often due to certain circumstances beyond the speaker's control. It is comparable to saying 'to become', 'to get', or 'to end up' in English.",
+    "formation": "Verb or adjective stem + 게 되다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "어제 친구들과 멀리서 축구를 했는데, 너무 피곤해져서 지금은 잠밖에 잘 수 없겠어요.",
+        "romanization": "Eoje chingudeulgwa meolliseo chuggureul haenneunde, neomu pigonhaejyeoseo jigeumeun jambakke jal su eopgesseoyo.",
+        "translation": "I played soccer with my friends yesterday and became so tired that now I think I can only sleep."
+      },
+      {
+        "sentence": "그는 열심히 공부해서 성공적으로 비즈니스맨이 되었어요.",
+        "romanization": "Geuneun yeolsimhi gongbuhaseo seonggongjeok-euro bijeuniseumani doeosseoyo.",
+        "translation": "He studied hard and successfully became a businessman."
+      },
+      {
+        "sentence": "그 책을 읽고 나서 고뇌에 빠지게 되었어요.",
+        "romanization": "Geu chaegeul ikgo naseo gonoe-e ppajige doeosseoyo.",
+        "translation": "After reading that book, I ended up falling into deep distress."
+      },
+      {
+        "sentence": "긴 시간 동안 추위에 노출되어 우리의 건강이 나빠지게 되었어요.",
+        "romanization": "Gin sigan dongan chuwie nochuldoeeo uriui geongangi nappajige doeosseoyo.",
+        "translation": "We were exposed to the cold for so long that our health ended up deteriorating."
+      }
+    ]
+  }
+]

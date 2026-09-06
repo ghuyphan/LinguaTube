@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_하자_148",
+    "language": "ko",
+    "pattern": "~하자",
+    "title": "~하자 [haja] (Upon doing, as soon as)",
+    "shortExplanation": "Indicates that the second action happens immediately after the first action is completed.",
+    "longExplanation": "'~하자 [haja]' is a connector in Korean that conveys immediacy: once the action in the first clause is done, the action in the second clause occurs right away. It is similar to 'as soon as' in English.",
+    "formation": "Verb stem + 하자",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "문을 열자마자 강아지가 들어왔어요.",
+        "romanization": "Muneul yeoljamaja gangajiga deureowasseoyo.",
+        "translation": "As soon as I opened the door, the dog came in."
+      },
+      {
+        "sentence": "길을 건너자마자 바로 택시를 탔어요.",
+        "romanization": "Gireul geonneojamaja baro taeksireul tasseoyo.",
+        "translation": "I got in a taxi right after I crossed the street."
+      },
+      {
+        "sentence": "비가 오자마자 우산을 썼어요.",
+        "romanization": "Biga ojamaja usaneul sseosseoyo.",
+        "translation": "As soon as it started to rain, I put up my umbrella."
+      },
+      {
+        "sentence": "책을 덮자마자 잠이 왔어요.",
+        "romanization": "Chaekeul deopjamaja jami wasseoyo.",
+        "translation": "As soon as I closed the book, I felt sleepy."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_149",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 것이다 [hal geotida] (Will, shall)",
+    "shortExplanation": "Used to express the speaker's future prediction or plan.",
+    "longExplanation": "The grammar point '~할 것이다 [hal geotida]' is a future tense form that indicates a prediction or intention. Formed by the verb stem plus '할 것이다', it translates to 'will' or 'shall' in English. It is used when the speaker predicts a future occurrence or announces a plan.",
+    "formation": "Verb stem + ~할 것이다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "내일은 비가 올 것이다. 그래서 우산을 가져가야 할 것이다.",
+        "romanization": "Naeireun biga ol geotida. Geuraeseo usaneul gajyeogaya hal geotida.",
+        "translation": "It will rain tomorrow, so I should bring an umbrella."
+      },
+      {
+        "sentence": "강아지를 키울 것이다. 그래서 강아지 용품을 사야 할 것이다.",
+        "romanization": "Gangajireul kiul geotida. Geuraeseo gangaji yongpumeul saya hal geotida.",
+        "translation": "I will raise a puppy, so I should buy puppy supplies."
+      },
+      {
+        "sentence": "다음 주에 한국에서 콘서트에 갈 것이다. 그래서 티켓을 예매할 것이다.",
+        "romanization": "Daeum jue hangug-eseo konseoteue gal geotida. Geuraeseo tikeseul yemaehal geotida.",
+        "translation": "I will go to a concert in Korea next week, so I should book a ticket."
+      },
+      {
+        "sentence": "내년에 대학원에 진학할 것이다. 그래서 세부 계획을 세울 것이다.",
+        "romanization": "Naenyeone daehagwone jinhakhal geotida. Geuraeseo sebu gyehoegeul se-eul geotida.",
+        "translation": "I will go to graduate school next year, so I should make a detailed plan."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_150",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 때마다 [hal ttaemada] (Every time when)",
+    "shortExplanation": "Used to express 'every time when' or 'whenever'.",
+    "longExplanation": "'~할 때마다 [hal ttaemada]' is used when something happens each time a certain action or event occurs. It emphasizes a recurring event or repetitive situation following that action.",
+    "formation": "Verb (dictionary form) + 할 때마다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그는 국수를 먹을 때마다 그녀를 떠올리곤 해요. 그녀가 국수를 좋아했으니까요.",
+        "romanization": "Geuneun guksureul meogeul ttaemada geunyeoreul tteoolligon haeyo. Geunyeoga guksureul joahaesseunikka-yo.",
+        "translation": "Every time he eats noodles, he thinks of her, because she loved noodles."
+      },
+      {
+        "sentence": "나는 집에 돌아올 때마다 강아지가 나를 맞이해서 너무 행복해요.",
+        "romanization": "Naneun jibe doraol ttaemada gangajiga nareul majihaseo neomu haengbokhaeyo.",
+        "translation": "Every time I come home, I'm so happy because my puppy greets me."
+      },
+      {
+        "sentence": "그녀는 그를 볼 때마다 심장이 빠르게 뛰기 시작합니다.",
+        "romanization": "Geunyeoneun geureul bol ttaemada simjangi ppaleuge ttwigi sijakhamnida.",
+        "translation": "Every time she sees him, her heart starts to beat faster."
+      },
+      {
+        "sentence": "할머니는 제가 방문할 때마다 특별한 간식을 만들어 주셔서 항상 기대돼요.",
+        "romanization": "Halmeonineun jega bangmunhal ttaemada teukbyeolhan gansigeul mandeureo jusyeoseo hangsang gidaedwaeyo.",
+        "translation": "Every time I visit, my grandmother makes a special snack, so I always look forward to it."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_151",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 만하다 [hal manhada] (Worth doing)",
+    "shortExplanation": "Used to indicate that something is worth doing or trying.",
+    "longExplanation": "'~할 만하다 [hal manhada]' expresses the worthiness or value of doing an action. It often follows a verb stem. It can be used to suggest that an activity or item is meaningful, beneficial, or simply worth a try.",
+    "formation": "Verb stem + 할 만하다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "이 영화를 보는 것은 시간을 낭비하는 게 아니라 꽤 가치 있었어요. 볼 만한 영화였거든요.",
+        "romanization": "I yeonghwareul boneun geoseun siganeul nangbihaneun ge anira kkwae gachi isseosseoyo. Bol manhan yeonghwayeotgeodeunyo.",
+        "translation": "Watching this movie wasn't a waste of time; it was quite valuable because it was worth seeing."
+      },
+      {
+        "sentence": "그 책은 내용이 풍부해서 읽을 만했어요.",
+        "romanization": "Geu chaegeun naeyongi pungbuhaseo ilg-eul manhaesseoyo.",
+        "translation": "That book was rich in content and was worth reading."
+      },
+      {
+        "sentence": "저 아파트에 살아 볼 만해요. 교통이 편리하고 시설이 잘 갖춰져 있거든요.",
+        "romanization": "Jeo apateue sarabo-l manhaeyo. Gyotongi pyeonrihago siseli jal gatchwojyeo itgeodeunyo.",
+        "translation": "It's worth trying to live in that apartment since transportation is convenient and it has good facilities."
+      },
+      {
+        "sentence": "이 카메라는 좀 비싸지만, 품질이 좋으니 살 만해요.",
+        "romanization": "I kamera-neun jom bissajiman, pumjili joeunigi sal manhaeyo.",
+        "translation": "Although this camera is a bit expensive, it’s worth buying because it has great quality."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_152",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 수 있다 [hal su itda] (Can do)",
+    "shortExplanation": "Used to express possibility or ability; 'can do' something.",
+    "longExplanation": "'~할 수 있다 [hal su itda]' indicates that someone is capable of or has the possibility to perform an action, effectively meaning 'can'. It is often used for skills or situations where something is feasible.",
+    "formation": "Verb stem + -(으)ㄹ 수 있다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 한국어를 조금 할 수 있어요, 그래서 한국에 관심이 많아졌어요.",
+        "romanization": "Jeoneun hangugeoreul jogeum hal su isseoyo, geuraeseo hanguge gwansimi manhajyeosseoyo.",
+        "translation": "I can speak a little Korean, so I became very interested in Korea."
+      },
+      {
+        "sentence": "당신이 생각한 대로 할 수 있어요. 당신이 그 일을 제일 잘 아니까 믿을게요.",
+        "romanization": "Dangsini saenggakhan daero hal su isseoyo. Dangsini geu ireul jeil jal anikka mideulgeyo.",
+        "translation": "You can do it as you think best, since you know that job the most."
+      },
+      {
+        "sentence": "이것은 누구나 쉽게 할 수 있는 일이니 너무 걱정 마세요.",
+        "romanization": "Igeoseun nuguna swipge hal su inneun irini neomu geokjeong maseyo.",
+        "translation": "Anyone can do this easily, so there's no need to worry."
+      },
+      {
+        "sentence": "주말에 시간이 있으면 제가 차를 고칠 수 있어요.",
+        "romanization": "Jumale sigani isseumyeon jega chareul gochil su isseoyo.",
+        "translation": "If I have time on the weekend, I can fix the car."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_153",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 수 없다 [hal su eopda] (Cannot do)",
+    "shortExplanation": "Used to express inability or impossibility; 'cannot do'.",
+    "longExplanation": "'~할 수 없다 [hal su eopda]' means that the subject does not have the capacity or possibility to perform a certain action, i.e., 'cannot' do it in current circumstances. It emphasizes the impossibility or lack of ability.",
+    "formation": "Verb stem + -(으)ㄹ 수 없다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "지금 너무 바빠서 친구들과 식사할 수 없어요.",
+        "romanization": "Jigeum neomu bappaseo chingudeulgwa siksahal su eopseoyo.",
+        "translation": "I'm so busy right now that I cannot eat with my friends."
+      },
+      {
+        "sentence": "그녀는 수영을 잘 못해서 혼자서 물에 들어갈 수 없어요.",
+        "romanization": "Geunyeoneun suyeongeul jal mothaeseo honjaseo mure deureogal su eopseoyo.",
+        "translation": "She isn't good at swimming, so she can't go into the water alone."
+      },
+      {
+        "sentence": "저는 예술 감각이 없어서 그림을 잘 그릴 수 없어요.",
+        "romanization": "Jeoneun yesul gamgagi eopseoseo geurimeul jal geuril su eopseoyo.",
+        "translation": "I don't have an artistic sense, so I cannot draw well."
+      },
+      {
+        "sentence": "이 영화는 너무 무서워서 저는 다시 볼 수 없어요.",
+        "romanization": "I yeonghwaneun neomu museowoseo jeoneun dasi bol su eopseoyo.",
+        "translation": "This movie is so scary that I can't watch it again."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_154",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 줄 알다 [hal jul alda] (Know how to)",
+    "shortExplanation": "Used to express that one knows how to do something or has the skill/knowledge to do it.",
+    "longExplanation": "The phrase '~할 줄 알다 [hal jul alda]' signifies that someone has learned or can perform an action or process, translating to 'know how to (do something)' in English. It focuses on practical skill or capability rather than mere theoretical knowledge.",
+    "formation": "Verb stem + (으)ㄹ 줄 알다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 피아노 칠 줄 알아요. 하지만 전문가는 아니에요.",
+        "romanization": "Jeoneun piano chil jul arayo. Hajiman jeonmunganeun anieyo.",
+        "translation": "I know how to play the piano, but I'm not a professional."
+      },
+      {
+        "sentence": "우리 아이는 이제 스스로 신발 신을 줄 알아요.",
+        "romanization": "Uri aineun ije seuseuro sinbal sineul jul arayo.",
+        "translation": "Our child now knows how to put on their shoes by themselves."
+      },
+      {
+        "sentence": "철수는 항상 새로운 것을 배우는 방법을 잘 알더라고요.",
+        "romanization": "Cheolsuneun hangsang saeroun geoseul baeuneun bangbeobeul jal aldereogoyo.",
+        "translation": "Cheolsu always seems to know how to learn new things."
+      },
+      {
+        "sentence": "누나는 요리를 잘할 줄 알아서, 늘 맛있는 음식을 만들어 줘요.",
+        "romanization": "Nunaneun yorireul jalhal jul araseo, neul masinneun eumsigeul mandeureo jwoyo.",
+        "translation": "My older sister knows how to cook well, so she always makes delicious food."
+      }
+    ]
+  },
+  {
+    "id": "ko_할지라도_155",
+    "language": "ko",
+    "pattern": "~할지라도",
+    "title": "~할지라도 [haljirado] (Even if)",
+    "shortExplanation": "This grammar point in Korean is used to express 'even if' or 'no matter how'.",
+    "longExplanation": "The '~할지라도 [haljirado]' grammar pattern is used in Korean to indicate a hypothetical situation similar to 'even if' or 'no matter how' in English. It is used before verbs (or adjectives) to express a condition, concession, or possibility contrary to reality or expectation.",
+    "formation": "Verb (Stem) + (으)ㄹ지라도",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "어떤 문제가 생길지라도 저는 항상 최선을 다해 일을 끝낼 거예요.",
+        "romanization": "Eotteon munjega saenggiljirado jeoneun hangsang choeseoneul dahae ireul kkeutnael geoyeyo.",
+        "translation": "No matter what problems arise, I will always do my best to finish the work."
+      },
+      {
+        "sentence": "내일 비가 오는지라도 난 외출할 거예요.",
+        "romanization": "Naeil biga oneunjirado nan oechulhal geoyeyo.",
+        "translation": "Even if it rains tomorrow, I will go out."
+      },
+      {
+        "sentence": "네가 그런 일을 당한 적이 있을지라도 동정하지 않아.",
+        "romanization": "Nega geureon ireul danghan jeogi isseuljirado dongjeonghaji anha.",
+        "translation": "Even if you have been through such a situation, I do not sympathize."
+      },
+      {
+        "sentence": "비용이 높을지라도 최고의 품질을 보장하기 위해 비싼 재료를 사용합니다.",
+        "romanization": "Biyongi nopeuljirado choegoui pumjireul bojanghagi wihae bissan jaeryoreul sayonghamnida.",
+        "translation": "Even if the cost is high, we use expensive materials to ensure the highest quality."
+      }
+    ]
+  },
+  {
+    "id": "ko_든지_156",
+    "language": "ko",
+    "pattern": "~든지",
+    "title": "~든지 ~든지 [deunji deunji] (Whether ... or)",
+    "shortExplanation": "This grammar point is used to express 'whether ... or', indicating two (or more) possibilities.",
+    "longExplanation": "The pattern '~든지 ~든지' in Korean lists multiple possibilities or choices. It translates closely to 'whether ... or' in English. It is often used in daily conversation to show that no matter which option happens or is chosen, the outcome or decision remains consistent.",
+    "formation": "Verb (Stem) + 든지 + Verb (Stem) + 든지",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그녀가 오늘 밤에 도착하든지 내일 아침에 도착하든지, 우리는 그녀를 기다려야 해요.",
+        "romanization": "Geunyeoga oneul bam-e dochakhadeunji naeil achim-e dochakhadeunji, urineun geunyeoreul gidaryeoya haeyo.",
+        "translation": "Whether she arrives tonight or tomorrow morning, we have to wait for her."
+      },
+      {
+        "sentence": "이 일을 해결하든지 미루든지, 결정은 당신이 해야 해요.",
+        "romanization": "I ireul haegyeolhadeunji mirudeunji, gyeoljeongeun dangsini haeya haeyo.",
+        "translation": "Whether you solve this issue or postpone it, the decision is yours."
+      },
+      {
+        "sentence": "우리가 이기든지 지든지, 최선을 다하는 것이 중요해요.",
+        "romanization": "Uriga igideunji jideunji, choeseoneul dahaneun geosi jungyohaeyo.",
+        "translation": "Whether we win or lose, doing our best is what's important."
+      },
+      {
+        "sentence": "그가 참석하든지 참석하지 않든지, 회의는 예정대로 진행됩니다.",
+        "romanization": "Geuga chamseokhadeunji chamseokhaji anteunji, hoeineun yejeongdaero jinaengdoebnida.",
+        "translation": "Whether he attends or not, the meeting will proceed as scheduled."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_157",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 텐데 [hal tende] (Probably will)",
+    "shortExplanation": "Used to express a prediction or expectation that something will occur in the future.",
+    "longExplanation": "'~할 텐데 [hal tende]' is a common ending in Korean that expresses a prediction or expectation that a certain event, situation, or behavior is likely to occur. It can also convey regret when referring to a likely outcome that did not happen. It is formed by taking the verb stem plus (으)ㄹ 텐데.",
+    "formation": "Verb stem + (으)ㄹ 텐데",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "내일 비가 올 텐데, 우산을 가져가는 것이 좋습니다.",
+        "romanization": "Naeil biga ol tende, usaneul gajyeoganeun geosi johseumnida.",
+        "translation": "It's probably going to rain tomorrow, so it would be good to bring an umbrella."
+      },
+      {
+        "sentence": "지금 출발하면 시간에 맞출 텐데, 너무 늦게 도착하면 안 돼요.",
+        "romanization": "Jigeum chulbalhamyeon sigane majchul tende, neomu neujge dochakhamyeon an dwaeyo.",
+        "translation": "If we leave now, we will probably make it on time, so we can't arrive too late."
+      },
+      {
+        "sentence": "그의 성적은 좋으니 그는 장학금을 받을 텐데.",
+        "romanization": "Geuui seongjeogeun joheuni geuneun janghakgeumeul badeul tende.",
+        "translation": "His grades are good, so he will probably receive a scholarship."
+      },
+      {
+        "sentence": "친구가 도와줬다면 문제를 해결할 텐데, 혼자서는 힘들어요.",
+        "romanization": "Chinguga dowajwotdamyeon munjeleul haegyeolhal tende, honjaseoneun himdeureoyo.",
+        "translation": "If my friend had helped me, I would have probably solved the problem, but it's hard on my own."
+      }
+    ]
+  },
+  {
+    "id": "ko_함께_158",
+    "language": "ko",
+    "pattern": "~함께",
+    "title": "~함께 [hamkke] (Together with)",
+    "shortExplanation": "Used to indicate doing something together with someone or something.",
+    "longExplanation": "'~함께 [hamkke]' is a phrase in Korean that implies doing an activity 'together with' someone or something. It shows a simultaneous action or condition, similar to 'together with' in English. Commonly used with nouns.",
+    "formation": "Noun + 함께",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "나는 오늘 친구들과 함께 영화를 봤어요. 영화가 정말 재미있었고 모두가 즐거웠어요.",
+        "romanization": "Naneun oneul chingudeulgwa hamkke yeonghwareul bwasseoyo. Yeonghwaga jeongmal jaemiisseotgo moduga jeulgeowosseoyo.",
+        "translation": "I watched a movie with my friends today. The movie was really fun, and everyone was happy."
+      },
+      {
+        "sentence": "나는 어머니와 함께 시장에 갔어요, 그리고 정말 많은 것을 샀어요.",
+        "romanization": "Naneun eomeoniwa hamkke sijange gasseoyo, geurigo jeongmal maneun geoseul sasseoyo.",
+        "translation": "I went to the market with my mother, and I bought so many things."
+      },
+      {
+        "sentence": "나는 친구와 함께 여행을 갔고, 그곳에서 정말 멋진 사진을 찍었어요.",
+        "romanization": "Naneun chingugwa hamkke yeohaengeul gatgo, geugoseseo jeongmal meotjin sajineul jjigeosseoyo.",
+        "translation": "I went on a trip with my friend, and we took some really awesome photos there."
+      },
+      {
+        "sentence": "나는 동생과 함께 공원에서 놀았어요. 우리는 정말로 신기한 동물들을 봤어요.",
+        "romanization": "Naneun dongsenggwa hamkke gongwoneseo nolasseoyo. Urineun jeongmallo singihan dongmuldeureul bwasseoyo.",
+        "translation": "I played in the park with my younger brother. We saw some really interesting animals."
+      }
+    ]
+  },
+  {
+    "id": "ko_해_159",
+    "language": "ko",
+    "pattern": "~해",
+    "title": "~해 보다 [hae boda] (Try to do)",
+    "shortExplanation": "Indicates the speaker's attempt or experience of doing something.",
+    "longExplanation": "'~해 보다 [hae boda]' is used when a speaker expresses trying or experiencing something, often for the first time. It is typically formed with the verb stem plus '아/어 보다.' It can be translated as 'to try (doing something)' in English.",
+    "formation": "Verb stem + 아/어 보다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 한 번 한국어로 토론을 해 보려고 합니다. 그러나 어려워서 연습이 필요해요.",
+        "romanization": "Jeoneun han beon hangugeoro toroneul hae boryeogo hamnida. Geureona eoryeowoseo yeonseubi piryohaeyo.",
+        "translation": "I'm trying to debate in Korean for the first time, but it's difficult, so I need practice."
+      },
+      {
+        "sentence": "많은 사람들이 한국 음식을 한 번 해 보라고 해서, 오늘은 김치찌개를 만들어 봤어요.",
+        "romanization": "Manheun saramdeuri hanguk eumsigeul han beon hae borago haeseo, oneureun gimchijjigaereul mandeureo bwasseoyo.",
+        "translation": "Many people told me to try making Korean food, so today I tried making kimchi stew."
+      },
+      {
+        "sentence": "새로운 프로그램을 사용해 보려고 했지만, 너무 복잡해서 포기했어요.",
+        "romanization": "Saeroun peurogeuraemeul sayonghae boryeogo haessjiman, neomu bokjabhaeseo pogihaesseoyo.",
+        "translation": "I tried to use a new program, but it was too complicated, so I gave up."
+      },
+      {
+        "sentence": "나는 나이가 들어도 새로운 경험을 해 보는 것을 좋아해요. 그래서 자주 여행을 가 보려고 합니다.",
+        "romanization": "Naneun naiga deureodo saeroun gyeongheomeul hae boneun geoseul joahaeyo. Geuraeseo jaju yeohaengeul ga boryeogo hamnida.",
+        "translation": "Even as I get older, I like trying new experiences, so I plan to travel frequently."
+      }
+    ]
+  },
+  {
+    "id": "ko_해_160",
+    "language": "ko",
+    "pattern": "~해",
+    "title": "~해 주다 [hae juda] (Do for someone)",
+    "shortExplanation": "Used to express an action done for someone else's benefit.",
+    "longExplanation": "'~해 주다 [hae juda]' indicates that the subject does or did something for the benefit of another person. Commonly used in polite speech to express that an action is done for someone else. It can also show gratitude or a request.",
+    "formation": "Verb stem + 아/어 주다 (하다 → 해 + 주다)",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 어머니가 아프셔서 저녁 식사를 해 주었어요.",
+        "romanization": "Jeoneun eomeoni-ga apeusyeoseo jeonyeok siksareul hae jueosseoyo.",
+        "translation": "I made dinner for my mother because she was sick."
+      },
+      {
+        "sentence": "친구가 시험 공부를 도와 주어서 고맙다고 말했어요.",
+        "romanization": "Chinguga siheom gongbureul dowa jueoseo gomapdago malhaesseoyo.",
+        "translation": "I told my friend 'thank you' for helping me study for the exam."
+      },
+      {
+        "sentence": "선생님이 질문에 대해 자세히 설명해 주셔서 이해가 잘 되었어요.",
+        "romanization": "Seonsaengnim-i jilmun-e daehae jasehi seolmyeonghae jusyeoseo ihaega jal doeeosseoyo.",
+        "translation": "The teacher explained my question in detail, so I understood it well."
+      },
+      {
+        "sentence": "동생이 방 청소를 도와줄 거라고 말했어요.",
+        "romanization": "Dongsengi bang cheongso-reul dowajul georago malhaesseoyo.",
+        "translation": "My younger sibling said he would help me clean the room."
+      }
+    ]
+  },
+  {
+    "id": "ko_해야겠다_161",
+    "language": "ko",
+    "pattern": "~해야겠다",
+    "title": "~해야겠다 [haeyagetda] (Should do)",
+    "shortExplanation": "Expresses the speaker’s intention or resolution to do something.",
+    "longExplanation": "The phrase '~해야겠다 [haeyagetda]' shows the speaker's firm decision or determination to do something. It often translates to 'I should,' 'I ought to,' or 'I must' in English, highlighting the importance or necessity of the action.",
+    "formation": "Verb stem + 아/어야 겠다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "당신이 그 일을 계속 대처하지 않으면, 제가 뭔가를 해야겠어요.",
+        "romanization": "Dangsini geu ireul gyesok daecheohaji anheumyeon, jega mwongareul haeyagesseoyo.",
+        "translation": "If you keep neglecting that issue, I should do something."
+      },
+      {
+        "sentence": "이런 실수를 반복하지 않으려면 더 많이 연습해야겠어요.",
+        "romanization": "Ireon silsureul banbokhaji anheuryeomyeon deo mani yeonseubhaeyagesseoyo.",
+        "translation": "I should practice more so that I won't repeat this kind of mistake."
+      },
+      {
+        "sentence": "우리는 팀원들과의 의사소통을 개선하기 위해 더 많이 노력해야겠어요.",
+        "romanization": "Urineun timweondeulgwaui uisasotongeul gaeseonhagi wihae deo mani noryeokhaeyagesseoyo.",
+        "translation": "We should try harder to improve communication with our team members."
+      },
+      {
+        "sentence": "이번 시험을 통과하려면 더 열심히 공부해야겠어요.",
+        "romanization": "Ibeon siheomeul tonggwaharyeomyeon deo yeolsimhi gongbuhaeyagesseoyo.",
+        "translation": "I should study harder to pass this exam."
+      }
+    ]
+  },
+  {
+    "id": "ko_해서는_162",
+    "language": "ko",
+    "pattern": "~해서는",
+    "title": "~해서는 안 되다 [haeseoneun an dweda] (Must not do)",
+    "shortExplanation": "Shows prohibition or something that must not be done.",
+    "longExplanation": "In Korean, '~해서는 안 되다 [haeseoneun an dweda]' indicates an action that is prohibited. It is used with action verbs to form negative commands or strong advice, meaning 'must not' or 'should not' do something. More common in formal contexts or rule statements.",
+    "formation": "Verb stem + 아/어서는 안 되다 (하다 → 해서는 안 되다)",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "그 문서를 복사해서는 안 돼요. 그것은 기업의 기밀입니다.",
+        "romanization": "Geu munseoreul boksahaeseoneun an dwaeyo. Geugeoseun gieobui gimil-ibnida.",
+        "translation": "You must not copy that document. It's the company's confidential information."
+      },
+      {
+        "sentence": "어려운 상황에서 거짓말을 해서는 안 됩니다. 그것은 신뢰를 깨뜨릴 수 있어요.",
+        "romanization": "Eoryeoun sanghwangeseo geojitmareul haeseoneun an doebnida. Geugeoseun sinryeoreul kkaetteuril su isseoyo.",
+        "translation": "You must not lie in a difficult situation. It could break trust."
+      },
+      {
+        "sentence": "시험에서 부정행위를 해서는 안 됩니다. 그것은 당신의 성적을 망칠 것입니다.",
+        "romanization": "Siheomeseo bujeonghaengwireul haeseoneun an doebnida. Geugeoseun dangsinui seongjeogeul mangchil geos-ibnida.",
+        "translation": "You must not cheat in the exam. It will ruin your grades."
+      },
+      {
+        "sentence": "친구를 배반해서는 안 됩니다. 그것은 소중한 관계를 깨뜨릴 것입니다.",
+        "romanization": "Chingureul baebanhaeseoneun an doebnida. Geugeoseun sojunghan gwangyereul kkaetteuril geos-ibnida.",
+        "translation": "You must not betray your friend. It will destroy a precious relationship."
+      }
+    ]
+  }
+]

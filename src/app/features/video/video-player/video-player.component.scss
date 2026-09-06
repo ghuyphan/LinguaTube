@@ -1477,6 +1477,15 @@ $transition-normal: 0.25s ease;
       font-size: 0.78125rem;
       color: rgba(255, 255, 255, 0.65);
 
+      .menu-item-flag {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        margin-right: 0.25rem;
+      }
+
       .menu-item-value {
         font-weight: 400;
         max-width: 110px;
@@ -1540,6 +1549,13 @@ $transition-normal: 0.25s ease;
 
     .option-label {
       flex: 1;
+
+      .lang-flag {
+        margin-right: 0.35rem;
+        font-size: 1.05rem;
+        display: inline-block;
+        vertical-align: -1px;
+      }
     }
 
     .option-with-icon {
@@ -1551,8 +1567,9 @@ $transition-normal: 0.25s ease;
       .option-flag {
         width: 18px;
         height: 18px;
-        border-radius: 2px;
+        border-radius: 50%;
         object-fit: cover;
+        flex-shrink: 0;
       }
 
       .option-icon {

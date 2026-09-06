@@ -302,7 +302,7 @@ export class TranslationService implements OnDestroy {
      */
     getSupportedTargetLanguages(): Array<{ code: string, name: string, flag: string, flagUrl: string }> {
         return [
-            { code: 'en', name: 'English', flag: '🇺🇸', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/us.svg' },
+            { code: 'en', name: 'English', flag: '🇬🇧', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' },
             { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/vn.svg' },
             { code: 'ja', name: '日本語', flag: '🇯🇵', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
             { code: 'ko', name: '한국어', flag: '🇰🇷', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },

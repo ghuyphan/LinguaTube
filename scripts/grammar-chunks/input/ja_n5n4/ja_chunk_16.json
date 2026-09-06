@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_たりたり_89",
+    "language": "ja",
+    "pattern": "～たり～たり",
+    "title": "～たり～たり (〜tari 〜tari)",
+    "shortExplanation": "Used to list multiple actions or states; 'doing things like', 'and so on', 'etc.'",
+    "longExplanation": "The ～たり～たり grammar point is used to list two or more actions or states, without specifying their order or importance. It implies that these actions or states are representative examples, and there may be others. This construction is useful for describing general or habitual actions.",
+    "formation": "Verb-ta + り + next verb-ta + り, い-Adjective + かったり + next verb-ta + り, な-Adjective + だったり + next verb-ta + り, Noun + だったり + next verb-ta + り",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "週末は映画を観たり、本を読んだりする。",
+        "romanization": "Shuumatsu wa eiga wo mitari, hon wo yondari suru.",
+        "translation": "On weekends, I do things like watching movies and reading books."
+      },
+      {
+        "sentence": "彼女は料理が上手だったり、歌がうまかったりする。",
+        "romanization": "Kanojo wa ryouri ga jouzu dattari, uta ga umakattari suru.",
+        "translation": "She is good at things like cooking and singing."
+      },
+      {
+        "sentence": "このリゾートではスキーをしたり、温泉に入ったりできる。",
+        "romanization": "Kono rizooto de wa sukii wo shitari, onsen ni haittari dekiru.",
+        "translation": "At this resort, you can do things like skiing and going to hot springs."
+      },
+      {
+        "sentence": "この地域の天気は暑かったり、寒かったりする。",
+        "romanization": "Kono chiiki no tenki wa atsukattari, samukattari suru.",
+        "translation": "The weather in this area can be hot or cold."
+      }
+    ]
+  },
+  {
+    "id": "ja_だろう_90",
+    "language": "ja",
+    "pattern": "～だろう",
+    "title": "～だろう (〜darou)",
+    "shortExplanation": "Express probability, likelihood or certainty; 'probably', 'maybe', 'I think'.",
+    "longExplanation": "The ～だろう grammar point is used to express probability, likelihood, or certainty about a situation or event. It can be translated as 'probably', 'maybe', or 'I think' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + だろう, い-Adjective (drop い) + だろう, な-Adjective + だろう, Noun + だろう",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日は晴れるだろう。",
+        "romanization": "Ashita wa hareru darou.",
+        "translation": "It will probably be sunny tomorrow."
+      },
+      {
+        "sentence": "彼は忙しいだろう。",
+        "romanization": "Kare wa isogashii darou.",
+        "translation": "He is probably busy."
+      },
+      {
+        "sentence": "この本は面白いだろう。",
+        "romanization": "Kono hon wa omoshiroi darou.",
+        "translation": "This book is probably interesting."
+      },
+      {
+        "sentence": "彼女は先生だろう。",
+        "romanization": "Kanojo wa sensei darou.",
+        "translation": "She is probably a teacher."
+      }
+    ]
+  },
+  {
+    "id": "ja_っていう_91",
+    "language": "ja",
+    "pattern": "～っていう",
+    "title": "～っていう (〜tte iu)",
+    "shortExplanation": "Used to quote, define, or specify a noun.",
+    "longExplanation": "The ～っていう grammar point is used for quoting, defining, or specifying a noun. It can be translated as 'called', 'that is to say', or 'I mean' in English. This expression is similar to ～という, but it is more casual and commonly used in spoken conversations.",
+    "formation": "Noun/Adjective/Verb + っていう + Noun",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "ピザっていう料理が大好きです。",
+        "romanization": "Piza tte iu ryouri ga daisuki desu.",
+        "translation": "I love the dish called pizza."
+      },
+      {
+        "sentence": "彼っていう男性はすごく面白いです。",
+        "romanization": "Kare tte iu dansei wa sugoku omoshiroi desu.",
+        "translation": "That man (called ‘kare’) is really interesting."
+      },
+      {
+        "sentence": "この映画っていうのは本当に感動的だよ。",
+        "romanization": "Kono eiga tte iu no wa hontou ni kandouteki da yo.",
+        "translation": "This movie, I mean, is really touching."
+      },
+      {
+        "sentence": "彼女が言っているっていう店はここではない。",
+        "romanization": "Kanojo ga itte iru tte iu mise wa koko de wa nai.",
+        "translation": "The store she's talking about, I mean, is not here."
+      }
+    ]
+  },
+  {
+    "id": "ja_で_92",
+    "language": "ja",
+    "pattern": "～で",
+    "title": "～で (〜de)",
+    "shortExplanation": "Indicates the means, method, or place.",
+    "longExplanation": "The ～で grammar point is used to indicate the means or method used to perform an action, or to specify the place where an action took place. It is typically used with verbs and comes after a noun.",
+    "formation": "Noun + ～で",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "私は自転車で学校に行きます。",
+        "romanization": "Watashi wa jitensha de gakkou ni ikimasu.",
+        "translation": "I go to school by bicycle."
+      },
+      {
+        "sentence": "彼は日本語で手紙を書いた。",
+        "romanization": "Kare wa nihongo de tegami wo kaita.",
+        "translation": "He wrote a letter in Japanese."
+      },
+      {
+        "sentence": "鉛筆で絵を描きました。",
+        "romanization": "Enpitsu de e wo kakimashita.",
+        "translation": "I drew a picture with a pencil."
+      },
+      {
+        "sentence": "レストランで昼食を食べました。",
+        "romanization": "Resutoran de chuushoku wo tabemashita.",
+        "translation": "I had lunch at a restaurant."
+      }
+    ]
+  },
+  {
+    "id": "ja_でしょう_93",
+    "language": "ja",
+    "pattern": "～でしょう",
+    "title": "～でしょう (〜deshou)",
+    "shortExplanation": "A conjecture or probability; 'probably', 'I think', 'it seems'.",
+    "longExplanation": "The ～でしょう grammar point is used to indicate a conjecture or probability. It can be translated as 'probably', 'I think', or 'it seems' in English. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-ますstem + でしょう, い-Adjective + でしょう, な-Adjective + でしょう, Noun + でしょう",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日は晴れでしょう。",
+        "romanization": "Ashita wa hare deshou.",
+        "translation": "It will probably be sunny tomorrow."
+      },
+      {
+        "sentence": "彼は元気でしょう。",
+        "romanization": "Kare wa genki deshou.",
+        "translation": "He is probably fine."
+      },
+      {
+        "sentence": "この本は面白いでしょう。",
+        "romanization": "Kono hon wa omoshiroi deshou.",
+        "translation": "This book is probably interesting."
+      },
+      {
+        "sentence": "彼女は医者でしょう。",
+        "romanization": "Kanojo wa isha deshou.",
+        "translation": "She is probably a doctor."
+      }
+    ]
+  },
+  {
+    "id": "ja_てはいけない_94",
+    "language": "ja",
+    "pattern": "～てはいけない",
+    "title": "～てはいけない (〜te wa ikenai)",
+    "shortExplanation": "Expresses prohibition; 'must not', 'cannot'.",
+    "longExplanation": "The ～てはいけない grammar point is used to express strict prohibition or something that must not be done. It can be translated as 'must not', 'cannot', or 'should not' in English. It is formed by adding て-form of a verb followed by はいけない.",
+    "formation": "Verb-て-form + はいけない",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "公園でたばこを吸ってはいけない。",
+        "romanization": "Kouen de tabako o sutte wa ikenai.",
+        "translation": "You must not smoke in the park."
+      },
+      {
+        "sentence": "ここで写真を撮ってはいけない。",
+        "romanization": "Koko de shashin o totte wa ikenai.",
+        "translation": "You cannot take pictures here."
+      },
+      {
+        "sentence": "図書館で大きな声を出してはいけない。",
+        "romanization": "Toshokan de ookina koe o dashite wa ikenai.",
+        "translation": "You must not speak loudly in the library."
+      },
+      {
+        "sentence": "バスの中で立っている人に席を譲ってはいけない。(Note: Unusual in real life, but grammatically correct.)",
+        "romanization": "Basu no naka de tatteiru hito ni seki o yuzutte wa ikenai.",
+        "translation": "You should not give up your seat to someone standing on the bus. (Note: Odd in actual social context, but valid grammar.)"
+      }
+    ]
+  },
+  {
+    "id": "ja_てもいい_95",
+    "language": "ja",
+    "pattern": "～てもいい",
+    "title": "～てもいい (〜temo ii)",
+    "shortExplanation": "To give or ask permission; 'it's okay to', 'may', 'can'.",
+    "longExplanation": "The ～てもいい grammar point is used to give or ask for permission to do something. It can be translated as 'it's okay to', 'may', or 'can' in English. The formation is derived by adding てもいい after the て-form of a verb.",
+    "formation": "Verb-て form + もいい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "ここで写真を撮ってもいいですか。",
+        "romanization": "Koko de shashin wo tottemo ii desu ka?",
+        "translation": "Is it okay to take a photo here?"
+      },
+      {
+        "sentence": "このリンゴを食べてもいいですか。",
+        "romanization": "Kono ringo wo tabetemo ii desu ka.",
+        "translation": "May I eat this apple?"
+      },
+      {
+        "sentence": "試験が終わったら、帰ってもいいです。",
+        "romanization": "Shiken ga owattara, kaettemo ii desu.",
+        "translation": "You can go home after the exam is over."
+      },
+      {
+        "sentence": "今夜友達と遊んでもいい。",
+        "romanization": "Kon'ya tomodachi to asondemo ii.",
+        "translation": "It's okay to play with friends tonight."
+      }
+    ]
+  },
+  {
+    "id": "ja_てもでも_96",
+    "language": "ja",
+    "pattern": "～ても/でも",
+    "title": "～ても/でも (〜te mo/demo)",
+    "shortExplanation": "Expresses 'even if' or 'even though'; used to convey contradiction or contrast.",
+    "longExplanation": "The ～ても/でも grammar point is used to express 'even if' or 'even though' in a sentence, showing the idea of contradiction or contrast. The formation of ても differs depending on whether it is used with a verb, い-adjective, or な-adjective. For nouns, でも is used.",
+    "formation": "Verb-て-form + も, い-Adjective (-い) + くても, な-Adjective + でも, Noun + でも",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "雨が降っても、学校に行きます。",
+        "romanization": "Ame ga futte mo, gakkou ni ikimasu.",
+        "translation": "Even if it rains, I will go to school."
+      },
+      {
+        "sentence": "この部屋が汚くても、掃除しないつもりです。",
+        "romanization": "Kono heya ga kitanakute mo, souji shinai tsumori desu.",
+        "translation": "Even if this room is dirty, I don't intend to clean it."
+      },
+      {
+        "sentence": "その映画が面白くなくても、見ます。",
+        "romanization": "Sono eiga ga omoshirokunakute mo, mimasu.",
+        "translation": "Even if that movie is not interesting, I will watch it."
+      },
+      {
+        "sentence": "彼女が病気でも、働きます。",
+        "romanization": "Kanojo ga byouki demo, hatarakimasu.",
+        "translation": "Even if she is sick, she will work."
+      }
+    ]
+  },
+  {
+    "id": "ja_といい_97",
+    "language": "ja",
+    "pattern": "～といい",
+    "title": "～といい (〜to ii)",
+    "shortExplanation": "Express a wish or hope; 'I hope', 'it would be good if'.",
+    "longExplanation": "The ～といい grammar point is used to express a wish or hope for a certain situation or outcome. It can be translated as 'I hope', 'it would be good if', or 'it would be nice if' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + といい, い-Adjective + といい, な-Adjective + だといい, Noun + だといい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日晴れるといいね。",
+        "romanization": "Ashita hareru to ii ne.",
+        "translation": "I hope it will be sunny tomorrow."
+      },
+      {
+        "sentence": "この試験に合格するといい。",
+        "romanization": "Kono shiken ni goukaku suru to ii.",
+        "translation": "I hope to pass this exam."
+      },
+      {
+        "sentence": "彼が元気だといいな。",
+        "romanization": "Kare ga genki da to ii na.",
+        "translation": "I hope he is doing well."
+      },
+      {
+        "sentence": "そのレストランが美味しいといいですね。",
+        "romanization": "Sono resutoran ga oishii to ii desu ne.",
+        "translation": "It would be nice if that restaurant is delicious."
+      }
+    ]
+  },
+  {
+    "id": "ja_という_98",
+    "language": "ja",
+    "pattern": "～という",
+    "title": "～という (〜to iu) Noun",
+    "shortExplanation": "Used to define or explain a noun more specifically.",
+    "longExplanation": "The ～という grammar point is used to define or explain a noun more specifically. It is often translated as 'called', 'named', or 'that is to say' in English. It can be used with nouns, な-adjectives, and adjectival verbs.",
+    "formation": "Noun + という + Noun, な-Adjective + という + Noun, Adjectival Verb + という + Noun",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は日本語が流暢なアメリカ人という人です。",
+        "romanization": "Kare wa nihongo ga ryuuchou na amerikajin to iu hito desu.",
+        "translation": "He is an American who speaks fluent Japanese."
+      },
+      {
+        "sentence": "昨日、美味しかったというケーキを食べました。",
+        "romanization": "Kinou, oishikatta to iu keeki wo tabemashita.",
+        "translation": "Yesterday, I ate a cake that was said to be delicious."
+      },
+      {
+        "sentence": "有名な歌手という彼女は、たくさんのファンがいます。",
+        "romanization": "Yuumei na kashu to iu kanojo wa, takusan no fan ga imasu.",
+        "translation": "She, who is called a famous singer, has many fans."
+      },
+      {
+        "sentence": "環境に優しいという製品が人気があります。",
+        "romanization": "Kankyou ni yasashii to iu seihin ga ninki ga arimasu.",
+        "translation": "Products that are said to be environmentally friendly are popular."
+      }
+    ]
+  },
+  {
+    "id": "ja_どういう_99",
+    "language": "ja",
+    "pattern": "どういう",
+    "title": "どういう Noun (dou iu Noun)",
+    "shortExplanation": "Asking for clarification or more information about a noun; 'what kind of', 'what sort of'.",
+    "longExplanation": "The どういう Noun grammar point is used to ask for more information or clarification about a specific noun. It can be translated as 'what kind of' or 'what sort of' in English. The formation is simply using どういう followed by the noun in question.",
+    "formation": "どういう + Noun",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "どういう仕事をしていますか？",
+        "romanization": "Dou iu shigoto wo shite imasu ka?",
+        "translation": "What kind of work do you do?"
+      },
+      {
+        "sentence": "どういう映画が好きですか？",
+        "romanization": "Dou iu eiga ga suki desu ka?",
+        "translation": "What kind of movies do you like?"
+      },
+      {
+        "sentence": "どういう服を着たいですか？",
+        "romanization": "Dou iu fuku wo kitai desu ka?",
+        "translation": "What kind of clothes do you want to wear?"
+      },
+      {
+        "sentence": "どういう理由で遅れましたか？",
+        "romanization": "Dou iu riyuu de okuremashita ka?",
+        "translation": "What sort of reason caused you to be late?"
+      }
+    ]
+  },
+  {
+    "id": "ja_と思う_100",
+    "language": "ja",
+    "pattern": "～と思う",
+    "title": "～と思う (〜to omou)",
+    "shortExplanation": "Express one's thoughts or opinions; 'I think', 'I believe'.",
+    "longExplanation": "The ～と思う grammar point is used to express one's thoughts or opinions on a particular subject or situation. It can be translated as 'I think' or 'I believe' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + と思う, い-Adjective + と思う, な-Adjective + だと思う, Noun + だと思う",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日晴れると思います。",
+        "romanization": "Ashita hareru to omoimasu.",
+        "translation": "I think it will be sunny tomorrow."
+      },
+      {
+        "sentence": "この映画は面白いと思う。",
+        "romanization": "Kono eiga wa omoshiroi to omou.",
+        "translation": "I think this movie is interesting."
+      },
+      {
+        "sentence": "彼は親切だと思います。",
+        "romanization": "Kare wa shinsetsu da to omoimasu.",
+        "translation": "I think he is kind."
+      },
+      {
+        "sentence": "鈴木さんは先生だと思う。",
+        "romanization": "Suzuki-san wa sensei da to omou.",
+        "translation": "I think Suzuki-san is a teacher."
+      }
+    ]
+  },
+  {
+    "id": "ja_という_101",
+    "language": "ja",
+    "pattern": "～という",
+    "title": "～という (〜to iu)",
+    "shortExplanation": "Used to quote, express hearsay or define something.",
+    "longExplanation": "The ～という grammar point is used to quote someone's words, express something you heard or read from someone else, or define and clarify the subject. It can be translated as 'called', 'that', or 'it is said'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + という, い-Adjective + という, な-Adjective + という, Noun + という",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は「好きだ」と言った。",
+        "romanization": "Kare wa 'suki da' to itta.",
+        "translation": "He said 'I like you'."
+      },
+      {
+        "sentence": "その映画は面白いという評判があります。",
+        "romanization": "Sono eiga wa omoshiroi to iu hyouban ga arimasu.",
+        "translation": "The movie has a reputation for being interesting."
+      },
+      {
+        "sentence": "日本には富士山という高い山があります。",
+        "romanization": "Nihon ni wa Fujisan to iu takai yama ga arimasu.",
+        "translation": "In Japan, there is a tall mountain called Mount Fuji."
+      },
+      {
+        "sentence": "彼女は難しい仕事をしているという話です。",
+        "romanization": "Kanojo wa muzukashii shigoto o shiteiru to iu hanashi desu.",
+        "translation": "I heard she is doing a difficult job."
+      }
+    ]
+  },
+  {
+    "id": "ja_ないといけない_102",
+    "language": "ja",
+    "pattern": "～ないといけない",
+    "title": "～ないといけない (〜nai to ikenai)",
+    "shortExplanation": "Express a necessity; 'must', 'have to', 'need to'.",
+    "longExplanation": "The ～ないといけない grammar point is used to express a sense of necessity or obligation, similar to 'must', 'have to', or 'need to' in English. This structure is formed by using the negative form of the verb (ending in ない) followed by といけない.",
+    "formation": "Verb-negative + といけない",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日試験があるから、今夜勉強しないといけない。",
+        "romanization": "Ashita shiken ga aru kara, kon'ya benkyou shinai to ikenai.",
+        "translation": "I have an exam tomorrow, so I have to study tonight."
+      },
+      {
+        "sentence": "９時に出発しないといけない。",
+        "romanization": "Ku-ji ni shuppatsu shinai to ikenai.",
+        "translation": "We must leave at 9 o'clock."
+      },
+      {
+        "sentence": "風邪をひかないように、手をよく洗わないといけない。",
+        "romanization": "Kaze o hikanai you ni, te o yoku arawanai to ikenai.",
+        "translation": "To avoid catching a cold, we have to wash our hands well."
+      },
+      {
+        "sentence": "この仕事は明日までに終わらないといけない。",
+        "romanization": "Kono shigoto wa ashita made ni owaranai to ikenai.",
+        "translation": "This work must be finished by tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "ja_なきゃいけない_103",
+    "language": "ja",
+    "pattern": "～なきゃいけない",
+    "title": "～なきゃいけない (〜nakya ikenai)",
+    "shortExplanation": "Express a necessity or obligation; 'must', 'have to'.",
+    "longExplanation": "The ～なきゃいけない grammar point is used to express a sense of necessity or obligation, similar to saying 'must' or 'have to' in English. It is a casual and more colloquial form of the ～なければいけない grammar point. The formation is different for verbs, but it is not used with い-adjectives, な-adjectives, or nouns.",
+    "formation": "Verb-casual (negative form without い) + なきゃいけない",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日までに宿題を終わらなきゃいけない。",
+        "romanization": "Ashita made ni shukudai wo owaranakya ikenai.",
+        "translation": "I have to finish my homework by tomorrow."
+      },
+      {
+        "sentence": "もうすぐ出かけるから、急いで準備しなきゃいけない。",
+        "romanization": "Mou sugu dekakeru kara, isoide junbi shinakya ikenai.",
+        "translation": "We're leaving soon, so I have to hurry and get ready."
+      },
+      {
+        "sentence": "このプロジェクトは来週提出しなきゃいけない。",
+        "romanization": "Kono purojekuto wa raishuu teishutsu shinakya ikenai.",
+        "translation": "I must submit this project by next week."
+      },
+      {
+        "sentence": "電車に乗る前に、切符を買わなきゃいけない。",
+        "romanization": "Densha ni noru mae ni, kippu wo kawanakya ikenai.",
+        "translation": "I have to buy a ticket before getting on the train."
+      }
+    ]
+  }
+]

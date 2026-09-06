@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_하면서도_35",
+    "language": "ko",
+    "pattern": "~하면서도",
+    "title": "~하면서도 [hamyeonseodo] (While, although)",
+    "shortExplanation": "Used to express a contradictory situation or event occurring at the same time; 'while', 'although'.",
+    "longExplanation": "'~하면서도 [hamyeonseodo]' is a conjunction used in Korean to indicate two actions or states happening simultaneously, with an aspect of contradiction or conflicting elements. It's like saying 'although' or 'even when' in English, and it implies that despite the first action, the second one still occurs. It can be used to show an inconsistency between what is expected and what really happens.",
+    "formation": "Verb-stem + ~하면서도",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그녀는 회사에서 바쁘게 일하면서도 항상 일찍 집에 가서 아이들과 식사를 함께해요.",
+        "romanization": "Geunyeoneun hoesaeseo bappeuge ilhamyeonseodo hangsang iljjik jibe gaseo aideulgwa siksa-reul hamkkehaeyo.",
+        "translation": "Even as she works hard at the company, she always goes home early to have meals with her children."
+      },
+      {
+        "sentence": "저는 공부에 집중하면서도 친구들과 소통하는 데에는 어려움이 있어요.",
+        "romanization": "Jeoneun gongbue jipjunghamyeonseodo chingudeulgwa sotonghaneun deeneun eoryeoumi isseoyo.",
+        "translation": "While focusing on my studies, I find it difficult to communicate with my friends."
+      },
+      {
+        "sentence": "그는 연인과 행복하게 지내면서도, 그녀가 항상 곁에 없을 때를 두려워해요.",
+        "romanization": "Geuneun yeoningwa haengbokhage jinaemyeonseodo, geunyeoga hangsang gyeote eopseul ttaereul duryeowohaeyo.",
+        "translation": "Even as he spends happy moments with his lover, he fears the times when she is not by his side."
+      },
+      {
+        "sentence": "어머니는 항상 건강에 신경을 쓰면서도, 자신의 건강은 항상 무시하곤 해요.",
+        "romanization": "Eomeonineun hangsang geongange singyeongeul sseumyeonseodo, jasinui geongangeun hangsang musihagon haeyo.",
+        "translation": "While mom always takes care of others’ health, she tends to ignore her own health."
+      }
+    ]
+  },
+  {
+    "id": "ko_하면_36",
+    "language": "ko",
+    "pattern": "~하면",
+    "title": "~하면 할수록 [hamyeon halsurok] (The more... the more)",
+    "shortExplanation": "Used to express a correlation between two actions or situations; 'the more... the more'.",
+    "longExplanation": "The '~하면 할수록 [hamyeon halsurok]' grammar point is used to express a correlation between two things. The first clause shows what is increasing or decreasing, while the second clause shows the result. This pattern emphasizes that as one event or situation increases or decreases, a related event or situation also increases or decreases—much like the English expression 'the more... the more'.",
+    "formation": "Verb + 면, Verb + 수록",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "이것을 연습하면 연습할수록 더 잘해져서, 계속 연습하면 제가 마스터할 수 있을 거예요.",
+        "romanization": "Igeoseul yeonseubhamyeon yeonseubhalsurok deo jalhaejeoseo, gyesok yeonseubhamyeon jega maseuteo hal su isseul geoyeyo.",
+        "translation": "The more I practice this, the better I get; so if I keep practicing, I could master it."
+      },
+      {
+        "sentence": "날씨가 추워지면 추워질수록 더 많은 사람들이 옷가게에 들렀어요.",
+        "romanization": "Nalssiga chuwojimyeon chuwojilsurok deo manheun saramdeuri otgage deulleosseoyo.",
+        "translation": "The colder the weather gets, the more people stop by the clothing store."
+      },
+      {
+        "sentence": "나는 한국어를 공부하면 공부할수록 그 언어에 대해 더 알고 싶어져요.",
+        "romanization": "Naneun hangugeoreul gongbuhamyeon gongbuhalsurok geu eoneoe daehae deo algo sipheojyeoyo.",
+        "translation": "The more I study Korean, the more I want to know about the language."
+      },
+      {
+        "sentence": "이 도시에 살면 살수록 더 많은 볼거리와 할 것들이 있는 걸 알게 됐어요.",
+        "romanization": "I dosiye salsumyeon salsurok deo manheun bolgeoriwa hal geosdeuli issneun geol alge dwaesseoyo.",
+        "translation": "The longer I live in this city, the more I find there is to see and do."
+      }
+    ]
+  },
+  {
+    "id": "ko_하자마자_37",
+    "language": "ko",
+    "pattern": "~하자마자",
+    "title": "~하자마자 [hajamaja] (As soon as)",
+    "shortExplanation": "Used to express 'as soon as' or 'right after' something has happened.",
+    "longExplanation": "'~하자마자 [hajamaja]' is a conjugation used in Korean to indicate an action that is immediately followed by another action with no gap in between. Essentially, it means 'as soon as' or 'right after.'",
+    "formation": "Verb stem + 하자마자",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "학교에 도착하자마자 그는 수업에 바로 들어갔습니다.",
+        "romanization": "Hakgyoe dochakhajamaja geuneun sueobe baro deuleogassseubnida.",
+        "translation": "As soon as he arrived at school, he went straight to class."
+      },
+      {
+        "sentence": "저는 공항에 도착하자마자 택시를 불렀어요.",
+        "romanization": "Jeoneun gonghang-e dochakhajamaja taeksileul bulleosseoyo.",
+        "translation": "As soon as I arrived at the airport, I called a taxi."
+      },
+      {
+        "sentence": "그녀는 일어나자마자 커피를 만들었습니다.",
+        "romanization": "Geunyeoneun ileonajamaja keopireul mandeuleosseubnida.",
+        "translation": "As soon as she woke up, she made coffee."
+      },
+      {
+        "sentence": "회사에서 퇴근하자마자 집에 바로 가서 쉬었어요.",
+        "romanization": "Hoesaeseo toeguenhajamaja jibe baro gaseo swieosseoyo.",
+        "translation": "As soon as I got off work, I went straight home and rested."
+      }
+    ]
+  },
+  {
+    "id": "ko_해서_38",
+    "language": "ko",
+    "pattern": "~해서",
+    "title": "~해서 그런지 [haeseo geureonji] (Perhaps because)",
+    "shortExplanation": "Used to express a supposition, assumption, or speculation; 'perhaps because', 'maybe due to'.",
+    "longExplanation": "'~해서 그런지 [haeseo geureonji]' is commonly used in Korean to indicate a speculative cause-and-effect relationship or supposition. It is generally translated as 'perhaps because' or 'maybe due to' and is used when the speaker is not completely certain about the cause but speculates based on observable evidence.",
+    "formation": "Verb/Adjective + 해서 그런지",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "오늘은 날씨가 좋아서 그런지 사람들이 많이 활동하는 것을 볼 수 있었습니다.",
+        "romanization": "Oneureun nalssiga johaseo geureonji saramdeuri mani hwaldonghaneun geoseul bol su isseosseubnida.",
+        "translation": "Perhaps because the weather is nice today, I could see a lot of people being active."
+      },
+      {
+        "sentence": "그녀는 어제 다치고 나서 그런지 오늘은 엄청 조심스럽게 걸어갔습니다.",
+        "romanization": "Geunyeoneun eoje dachigo naseo geureonji oneureun eomcheong josimseureopge georeogassseubnida.",
+        "translation": "Maybe because she got hurt yesterday, she walked very carefully today."
+      },
+      {
+        "sentence": "어제 짜장면을 너무 많이 먹었나 봐요. 오늘은 배가 아파서 그런지 컨디션이 좋지 않아요.",
+        "romanization": "Eoje jjajangmyeoneul neomu mani meogeossnabwayo. Oneureun baegi apaseo geureonji keondisyeoni joji anhayo.",
+        "translation": "Perhaps because I ate too much black bean noodles yesterday, I don't feel well today."
+      },
+      {
+        "sentence": "나는 꿈에서 그녀를 만났어서 그런지 오늘은 그녀가 계속 생각나요.",
+        "romanization": "Naneun kkumeseo geunyeoreul mannasseo geureonji oneureun geunyeoga gyesok saenggaknayo.",
+        "translation": "Maybe because I met her in my dream, I keep thinking about her today."
+      }
+    ]
+  },
+  {
+    "id": "ko_하여서는_39",
+    "language": "ko",
+    "pattern": "~하여서는",
+    "title": "~하여서는 안 되다 [hayeoseoneun an dweda] (Must not)",
+    "shortExplanation": "Used to express prohibition or strong advice against doing something, which can be translated as 'must not' or 'should not'.",
+    "longExplanation": "'~하여서는 안 되다 [hayeoseoneun an dweda]' is a grammar form used to indicate that something should not or must not occur. It is often used when giving strong advice or setting prohibitions, highlighting the negative consequences of the action.",
+    "formation": "Verb stem + 아/어/여 + 하여서는 안 되다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "학생들이라고 해서 수업에 늦게 오는 것은 절대로 하여서는 안 되다.",
+        "romanization": "Haksaengdeulirago haeseo sueobe neuje oneun geoseun jeoldaero hayeoseoneun an dweda.",
+        "translation": "Just because they are students, they absolutely must not come to class late."
+      },
+      {
+        "sentence": "의사로서 환자에 대한 사항을 외부에 누설하는 것을 하여서는 안 되다.",
+        "romanization": "Uisaroseo hwanjae daehan sahangeul oebue nuseolhaneun geoseul hayeoseoneun an dweda.",
+        "translation": "As a doctor, you must not leak patient information to the outside."
+      },
+      {
+        "sentence": "내일 시험 때문에 밤을 새운다고 해서는 안 돼요. 건강이 먼저예요.",
+        "romanization": "Naeil siheom ttaemune bameul saeundago haeseoneun an dwaeyo. Geongangi meonjeoyeyo.",
+        "translation": "You must not stay up all night because of tomorrow's exam. Health comes first."
+      },
+      {
+        "sentence": "다른 사람에게 피해를 주는 행동을 하여서는 안 되다.",
+        "romanization": "Dareun saramege pihaereul juneun haengdong-eul hayeoseoneun an dweda.",
+        "translation": "You must not engage in actions that harm others."
+      }
+    ]
+  },
+  {
+    "id": "ko_한테는_40",
+    "language": "ko",
+    "pattern": "~한테는",
+    "title": "~한테는 [hanteneun] (To, for someone)",
+    "shortExplanation": "Used to indicate the target or recipient of an action, similar to 'to' or 'for' in English.",
+    "longExplanation": "'~한테는 [hanteneun]' is a construction in Korean used when the speaker wants to specify the recipient or target of an action. It is similar to 'to' or 'for' in English and is often used to single out someone in contrast to others.",
+    "formation": "Noun + 한테는",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "제 언니한테는 선물을 사려고 왔어요. 제 친구한테는 이메일로 메시지를 보낼 예정입니다.",
+        "romanization": "Je eonni-hanteneun seonmureul saryeogo wasseoyo. Je chingu-hanteneun imeiro mesijireul bonael yejeongimnida.",
+        "translation": "I came here to shop for a gift for my older sister. I plan to send a message to my friend by email."
+      },
+      {
+        "sentence": "아버지한테는 이 사실을 아직 알리지 않았어요. 언니에게만 이야기했어요.",
+        "romanization": "Abeoji-hanteneun i sasileul ajik alliji anasseoyo. Eonni-egeman iyagihasseoyo.",
+        "translation": "I have not yet told my father about this; I only told my older sister."
+      },
+      {
+        "sentence": "아이들한테는 단순한 언어로 설명해야 해요. 너무 복잡하면 이해할 수 없어요.",
+        "romanization": "Aideul-hanteneun dansunhan eoneoro seolmyeonghaeya haeyo. Neomu bokjabhamyeon ihaehal su eopseoyo.",
+        "translation": "You need to explain in simple language to children; if it’s too complex, they won’t understand."
+      },
+      {
+        "sentence": "그는 엄마한테는 항상 친절하지만, 아빠한테는 무례해요.",
+        "romanization": "Geuneun eomma-hanteneun hangsang chinjeolhajiman, abba-hanteneun muryehaeyo.",
+        "translation": "He is always kind to his mom, but he is rude to his dad."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_41",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 만하다 [hal manhada] (Worth doing)",
+    "shortExplanation": "Used to express the worthiness of doing something.",
+    "longExplanation": "'~할 만하다 [hal manhada]' is used to indicate that something is worth the effort, time, or cost invested in it. It can be translated as 'worth doing' or 'worth it' in English, expressing a subjective assessment of value.",
+    "formation": "Verb stem + 할 만하다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "요리 공부를 계속하는 게 어렵지만, 맛있는 음식을 자주 먹을 수 있게 되니까 할 만해요.",
+        "romanization": "Yori gongbureul gyesokhaneun ge eoryeopjiman, masitneun eumsigeul jaju meogeul su itge doenikka hal manhaeyo.",
+        "translation": "Continuing to study cooking is difficult, but it’s worth it because I get to eat delicious food often."
+      },
+      {
+        "sentence": "이 작품은 비싸기는 하지만, 아름다운 디자인과 고품질로 볼 때 사는 것이 할 만해요.",
+        "romanization": "I jakpumeun bissagineun hajiman, areumdaun dijain-gwa gopumjillo bol ttae saneun geosi hal manhaeyo.",
+        "translation": "This item is expensive, but considering its beautiful design and high quality, it’s worth buying."
+      },
+      {
+        "sentence": "긴 시간을 기다리는 것은 힘들지만, 그 결과가 좋으면 할 만합니다.",
+        "romanization": "Gin siganeul gidarineun geoseun himdeuljiman, geu gyeolgwaga joheumyeon hal manhamnida.",
+        "translation": "Waiting for a long time is tough, but if the result is good, it’s worth it."
+      },
+      {
+        "sentence": "이 영화는 별로 재미있지 않기 때문에 보는 것이 할 만하지 않아요.",
+        "romanization": "I yeonghwaneun byeollo jaemiitji anhgi ttaemune boneun geosi hal manhaji anhayo.",
+        "translation": "This movie isn’t very interesting, so it’s not worth watching."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_42",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 수밖에 없다 [hal subakke eopda] (Have no choice but to)",
+    "shortExplanation": "Used to express that there is no other option but to do what is mentioned.",
+    "longExplanation": "'~할 수밖에 없다 [hal subakke eopda]' is used when there is no alternative but to perform the action mentioned. It implies that circumstances force one to act in a certain way.",
+    "formation": "Verb (in dictionary form) + 수밖에 없다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "비가 오니까 우산을 가지고 갈 수밖에 없어요.",
+        "romanization": "Biga onikka usaneul gajigo gal subakke eopseoyo.",
+        "translation": "Since it’s raining, I have no choice but to bring an umbrella."
+      },
+      {
+        "sentence": "시험이 있기 때문에 공부를 계속할 수밖에 없어요.",
+        "romanization": "Siheomi itgi ttaemune gongbureul gyesokhal subakke eopseoyo.",
+        "translation": "Because there is an exam, I have no choice but to keep studying."
+      },
+      {
+        "sentence": "그녀가 그렇게 말했으니까, 나는 그녀를 신뢰할 수밖에 없었어요.",
+        "romanization": "Geunyeoga geureoke malhaessnika, naneun geunyeoreul sinroehal subakke eopseosseoyo.",
+        "translation": "Since she said so, I had no choice but to trust her."
+      },
+      {
+        "sentence": "지금 돈이 없어서 이렇게 저렴한 물건밖에 살 수 없어요.",
+        "romanization": "Jigeum doni eopseoseo ireoke jeoryeomhan mulgeonbakke sal su eopseoyo.",
+        "translation": "I don’t have money now, so I have no choice but to buy such cheap items."
+      }
+    ]
+  },
+  {
+    "id": "ko_해_43",
+    "language": "ko",
+    "pattern": "~해",
+    "title": "~해 갈수록 [hae galsurok] (Increasingly, as time goes on)",
+    "shortExplanation": "Used to describe a situation where a condition progressively intensifies or becomes more serious.",
+    "longExplanation": "The '~해 갈수록 [hae galsurok]' expression indicates that as time passes, a particular state or condition gradually becomes more intense or worsens. It can be used with both verbs and adjectives, similar to saying 'increasingly' or 'the more... the more' in English.",
+    "formation": "Verb/Adjective stem + -을수록 / -ㄹ수록",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "날씨가 추워질수록 감기에 걸리는 사람이 많아지는 것 같아요.",
+        "romanization": "Nalssiga chuwojilsurok gamgie geollineun sarami manhajineun geot gatayo.",
+        "translation": "The colder the weather gets, the more people seem to catch a cold."
+      },
+      {
+        "sentence": "그녀는 알수록 더 매력적인 사람이에요.",
+        "romanization": "Geunyeoneun alsurok deo maeryeokjeogin saram-ieyo.",
+        "translation": "The more I get to know her, the more attractive she becomes."
+      },
+      {
+        "sentence": "책을 읽을수록 나의 사고력이 향상되는 것 같아요.",
+        "romanization": "Chaegeul ilgeulsurok naui sagoryeogi hyangsangdoeneun geot gatayo.",
+        "translation": "The more I read, the more I feel my thinking ability improves."
+      },
+      {
+        "sentence": "저는 집에 있을수록 외로워져서, 밖에 나가고 싶어요.",
+        "romanization": "Jeoneun jibe isseulsurok werowojyeoseo, bakk-e nagago sipeoyo.",
+        "translation": "The longer I stay at home, the lonelier I become; so I feel like going out."
+      }
+    ]
+  },
+  {
+    "id": "ko_해_44",
+    "language": "ko",
+    "pattern": "~해",
+    "title": "~해 보아야 [hae boaya] (Should try and see)",
+    "shortExplanation": "Used to suggest that somebody should try something out in order to know or understand it.",
+    "longExplanation": "'~해 보아야 [hae boaya]' is used when suggesting that one should try something to truly understand or experience it. In English, it is similar to saying 'you should try and see.'",
+    "formation": "Verb stem + 해 보아야",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "음식이 신선한지 아는 방법은 먹어 보아야 해요.",
+        "romanization": "Eumsigi sinseonhanji aneun bangbeobeun meogeoboaya haeyo.",
+        "translation": "The way to know if the food is fresh is to try eating it."
+      },
+      {
+        "sentence": "이 옷이 어떤지 아는 방법은 입어 보아야 해요.",
+        "romanization": "I ot-i eotteonji aneun bangbeobeun ibeoboaya haeyo.",
+        "translation": "The way to know how these clothes fit is to try them on."
+      },
+      {
+        "sentence": "이 책이 재미있는지 아는 방법은 읽어 보아야 해요.",
+        "romanization": "I chaegi jaemiitji aneun bangbeobeun ilgeo boaya haeyo.",
+        "translation": "The way to know if this book is interesting is to try reading it."
+      },
+      {
+        "sentence": "이 스포츠가 얼마나 재미있는지 아는 방법은 직접 해 보아야 해요.",
+        "romanization": "I seupocheuga eolmana jaemiinneunji aneun bangbeobeun jikjeop haeboaya haeyo.",
+        "translation": "The way to know how fun this sport is is by trying it out yourself."
+      }
+    ]
+  },
+  {
+    "id": "ko_해오다_45",
+    "language": "ko",
+    "pattern": "~해오다",
+    "title": "~해오다 [haeoda] (Continue doing something until now)",
+    "shortExplanation": "Used to express an ongoing action from the past up to the present moment.",
+    "longExplanation": "'해오다 [haeoda]' is used to denote an action that started in the past and continues until now. It literally means 'have been doing' and is often used to express a continuous habit, an ongoing action, or a series of actions over an extended period.",
+    "formation": "Verb + 아/어/해 + 오다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "나는 어렸을 때부터 피아노를 쳐오고 있어요.",
+        "romanization": "Naneun eoryeot taebuteo pianoreul chyeo-ogo isseoyo.",
+        "translation": "I have been playing the piano since I was young."
+      },
+      {
+        "sentence": "우리는 그 사업을 시작한 지 5년 동안 일해오고 있습니다.",
+        "romanization": "Urineun geu saeobeul sijakhan ji 5nyeon dongan ilhaeoogo issseumnida.",
+        "translation": "We have been working on that business for five years since we started."
+      },
+      {
+        "sentence": "세계 여행을 꿈꾸며 돈을 아껴오고 있어요.",
+        "romanization": "Segye yeohaengeul kkumkkumyeo doneul akkyeo-ogo isseoyo.",
+        "translation": "I have been saving money while dreaming of a world tour."
+      },
+      {
+        "sentence": "우리는 친구가 왔을 때부터 함께 이야기해오고 있어요.",
+        "romanization": "Urineun chinguga wasseul ttaebuteo hamkke iyagihae-ogo isseoyo.",
+        "translation": "We have been telling stories together since our friend arrived."
+      }
+    ]
+  },
+  {
+    "id": "ko_했건만_46",
+    "language": "ko",
+    "pattern": "~했건만",
+    "title": "~했건만 [haetgeonman] (But, however)",
+    "shortExplanation": "Used to express contrast or contradiction; 'but', 'however'.",
+    "longExplanation": "The '~했건만 [haetgeonman]' form is used to express a contrasting situation or contradiction. It can be translated as 'but', 'nevertheless', or 'however' and is used when the speaker wants to present a fact or circumstance that conflicts with what was previously stated.",
+    "formation": "Verb + 았/었/했건만",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "저는 많이 노력했건만, 시험에 떨어졌습니다.",
+        "romanization": "Jeoneun mani noryeokhaetgeonman, siheome ddeoleojyeossseubnida.",
+        "translation": "I put in a lot of effort, but I failed the exam."
+      },
+      {
+        "sentence": "친구는 어제 왔건만, 오늘은 못 왔습니다.",
+        "romanization": "Chinguneun eoje watgeonman, oneureun mot watseubnida.",
+        "translation": "My friend came yesterday, but he couldn’t make it today."
+      },
+      {
+        "sentence": "음식은 맛있었건만, 가격이 너무 비쌌습니다.",
+        "romanization": "Eumsikeun masisseotgeonman, gagyeogi neomu bissassseubnida.",
+        "translation": "The food was delicious, but it was too expensive."
+      },
+      {
+        "sentence": "그녀는 예쁘다고 했건만, 저는 그렇게 생각하지 않았습니다.",
+        "romanization": "Geunyeoneun yeppeudago haetgeonman, jeoneun geureohge saenggakaji anhaetseubnida.",
+        "translation": "She said she was pretty, but I didn't think so."
+      }
+    ]
+  },
+  {
+    "id": "ko_했기_47",
+    "language": "ko",
+    "pattern": "~했기",
+    "title": "~했기 때문에 [haetgi ttaemune] (Because)",
+    "shortExplanation": "Used to express reason or cause, equivalent to 'Because' in English.",
+    "longExplanation": "'~했기 때문에 [haetgi ttaemune]' is used to give a reason or cause. It refers retrospectively to an action or situation in the past that explains a present condition or outcome.",
+    "formation": "Action Verb in Past Tense + 했기 때문에",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "어제 늦게 잤기 때문에 오늘 아침에 일어나기 힘들었어요.",
+        "romanization": "Eoje neutge jatgi ttaemune oneul achime ileonagi himdeureosseoyo.",
+        "translation": "Because I went to bed late last night, it was hard for me to wake up this morning."
+      },
+      {
+        "sentence": "미세먼지 농도가 높아서 창문을 열지 않았기 때문에 방이 더워졌어요.",
+        "romanization": "Mise meonjiga nongdoga nopaseo changmuneul yeolji anhatgi ttaemune bangi deowojyeosseoyo.",
+        "translation": "Because the fine dust concentration was high, I didn't open the window and the room got hot."
+      },
+      {
+        "sentence": "많은 공부를 했기 때문에 시험에서 좋은 점수를 받았어요.",
+        "romanization": "Manneun gongbureul haetgi ttaemune siheomeseo joheun jeomsureul badasseoyo.",
+        "translation": "Because I studied a lot, I got a good score on the exam."
+      },
+      {
+        "sentence": "비가 왔기 때문에 운동화가 젖었어요.",
+        "romanization": "Biga watgi ttaemune undonghwaga jeojeosseoyo.",
+        "translation": "Because it rained, my sneakers got wet."
+      }
+    ]
+  },
+  {
+    "id": "ko_했기에_48",
+    "language": "ko",
+    "pattern": "~했기에",
+    "title": "~했기에 [haetgie] (Because)",
+    "shortExplanation": "Used to indicate the reason or cause; 'because' or 'since'.",
+    "longExplanation": "`~했기에 [haetgie]` is a conjunction that connects two sentences by showing that the first is the cause or reason for the second. It emphasizes that one situation exists because of another, equivalent to 'because' or 'since' in English.",
+    "formation": "Verb + 했기에",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그녀는 학문을 아주 좋아했기에, 대학에서 교수가 되었어요.",
+        "romanization": "Geunyeoneun hakmuneul aju joahaetgie, daehageseo gyosuga doeeosseoyo.",
+        "translation": "She became a professor at the university because she really loved academics."
+      },
+      {
+        "sentence": "저는 갈비를 많이 먹었기에, 지금 배가 너무 불러요.",
+        "romanization": "Jeoneun galbireul manhi meogeotgie, jigeum baega neomu bulleoyo.",
+        "translation": "I ate a lot of ribs, so now I am very full."
+      },
+      {
+        "sentence": "오늘 일찍 일어났기에, 출근할 시간에 늦지 않았어요.",
+        "romanization": "Oneul iljjik ileonatgie, chulgeunhal sigane neujji anhasseoyo.",
+        "translation": "I woke up early today, so I was not late for work."
+      },
+      {
+        "sentence": "그는 개인적인 문제 때문에 스트레스를 받았기에, 단체 활동에 참여하지 않았어요.",
+        "romanization": "Geuneun gaeinjeogin munje ttaemune seuteureseureul badatgie, danche hwaldonge chamyeohaji anhasseoyo.",
+        "translation": "He did not participate in the group activity because he was stressed due to personal issues."
+      }
+    ]
+  },
+  {
+    "id": "ko_했더니_49",
+    "language": "ko",
+    "pattern": "~했더니",
+    "title": "~했더니 [haetdeoni] (And then)",
+    "shortExplanation": "Used to express the progression of actions or events, indicating a consequential relationship.",
+    "longExplanation": "The '~했더니 [haetdeoni]' expression is used in Korean to show that after an action or event, an unexpected or revealing result followed. It can be translated as 'and then' or 'so' in English.",
+    "formation": "Verb + 았/었더니",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그녀에게 전화했더니 그녀는 바빠서 전화를 받을 수 없다고 했어요.",
+        "romanization": "Geunyeoege jeonhwahaetdeoni geunyeoneun bappaseo jeonhwareul badeul su eopsdago haesseoyo.",
+        "translation": "I called her and then she said she was too busy to answer the call."
+      },
+      {
+        "sentence": "저는 버스에서 내렸더니 지갑을 잃어버렸다는 것을 깨달았어요.",
+        "romanization": "Jeoneun beoseueseo naeryeotdeoni jigabeul ilheobeoryeotdaneun geoseul kkaedalatseoyo.",
+        "translation": "I got off the bus and then realized that I had lost my wallet."
+      },
+      {
+        "sentence": "나는 책을 읽었더니 창문 밖에 비가 오고 있는 것을 봤어요.",
+        "romanization": "Naneun chaeg-eul ilgeotdeoni changmun bakke biga ogo issneun geoseul bwasseoyo.",
+        "translation": "I was reading a book and then I saw that it was raining outside the window."
+      },
+      {
+        "sentence": "약을 먹었더니 기분이 좋아졌어요.",
+        "romanization": "Yageul meogeotdeoni gibuni johajyeosseoyo.",
+        "translation": "I took a pill and then I felt better."
+      }
+    ]
+  }
+]

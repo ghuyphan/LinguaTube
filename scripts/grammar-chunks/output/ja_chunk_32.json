@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_っこない_73": {
+      "title": "～っこない (〜kkonai)",
+      "shortExplanation": "Diễn tả sự phủ định mạnh mẽ, khẳng định tuyệt đối không thể nào xảy ra một việc gì đó; 'tuyệt đối không thể...', 'làm sao mà... được', 'không đời nào...'.",
+      "longExplanation": "Mẫu ngữ pháp '～っこない' được gắn vào thân động từ (thể ます bỏ ます) để diễn tả sự phán đoán hoặc xác tín mang tính chủ quan của người nói rằng một sự việc tuyệt đối không thể xảy ra, hoặc hoàn toàn không có khả năng thực hiện được ('không đời nào', 'làm sao mà... được'). Cấu trúc này thường được dùng trong văn nói thân mật hàng ngày giữa những người thân quen, mang sắc thái phủ định dứt khoát.",
+      "formation": "Động từ thể ます (bỏ ます) + っこない",
+      "examples": [
+        {
+          "translation": "Tuyết rơi dày thế này thì làm sao mà kịp đến trường được."
+        },
+        {
+          "translation": "Anh ấy không biết bơi nên tuyệt đối không thể nào bơi sang được bờ bên kia của hồ bơi."
+        },
+        {
+          "translation": "Cô ấy rất nhát gan nên không đời nào lại dám đi ra công viên một mình vào ban đêm."
+        },
+        {
+          "translation": "Trong khoảng thời gian ngắn ngủi này thì làm sao mà đọc hết được cả cuốn sách đó."
+        }
+      ]
+    },
+    "ja_つつ_74": {
+      "title": "～つつ (〜tsutsu)",
+      "shortExplanation": "Diễn tả hai hành động diễn ra đồng thời ('vừa... vừa...') hoặc diễn tả sự tương phản mang tính nghịch cảm ('mặc dù... nhưng...').",
+      "longExplanation": "Mẫu ngữ pháp '～つつ' gắn vào thân động từ (thể ます bỏ ます) mang hai ý nghĩa chính trong văn phong trang trọng, văn viết: (1) Diễn tả hai hành động diễn ra cùng một lúc tương tự như 'ながら', thường hành động đi sau つつ là hành động phụ kèm theo hành động chính ở vế sau. (2) Diễn tả ý nghịch đảo, nhượng bộ, tương đương với 'つつも' hoặc 'ながらも' ('dù biết thế nhưng vẫn...', 'tuy rằng...'), thường đi với các động từ chỉ tâm lý, nhận thức như '思う', '知る', '感じる'.",
+      "formation": "Động từ thể ます (bỏ ます) + つつ",
+      "examples": [
+        {
+          "translation": "Anh ấy vừa xem tivi vừa làm bài tập về nhà."
+        },
+        {
+          "translation": "Dù nghĩ dạo này bận rộn nhưng tôi vẫn tiếp tục tập thể dục mỗi ngày."
+        },
+        {
+          "translation": "Dù rơi nước mắt, cô ấy vẫn mỉm cười nói lời tạm biệt."
+        },
+        {
+          "translation": "Mặc cho bị ướt mưa, anh ấy vẫn tiếp tục cất bước đi."
+        }
+      ]
+    },
+    "ja_つつある_75": {
+      "title": "～つつある (〜tsutsu aru)",
+      "shortExplanation": "Diễn tả một sự biến đổi đang dần dần diễn ra theo một chiều hướng nào đó; 'đang dần dần...', 'đang trong quá trình...'.",
+      "longExplanation": "Mẫu ngữ pháp '～つつある' gắn vào sau thân động từ (thể ます bỏ ます) biểu thị một quá trình biến đổi, phát triển đang liên tục diễn ra từng bước một theo thời gian ('đang dần dần...', 'đang trên đà...'). Thường kết hợp với các động từ chỉ sự thay đổi như '変わる', '増える', '減る', '回復する', '進行する'. Đây là cách diễn đạt mang tính trang trọng, thường xuất hiện trên tin tức, báo chí, bài nghiên cứu hoặc văn bản chính luận.",
+      "formation": "Động từ thể ます (bỏ ます) + つつある",
+      "examples": [
+        {
+          "translation": "Hiện tượng nóng lên toàn cầu đang dần tiếp diễn."
+        },
+        {
+          "translation": "Thị trấn này đang phát triển một cách nhanh chóng."
+        },
+        {
+          "translation": "Lũ trẻ đang dần khôn lớn từng ngày."
+        },
+        {
+          "translation": "Tình hình kinh tế đang dần hồi phục."
+        }
+      ]
+    },
+    "ja_っぱなし_76": {
+      "title": "～っぱなし (〜ppanashi)",
+      "shortExplanation": "Diễn tả việc cứ để nguyên một trạng thái làm xong mà không xử lý tiếp theo lẽ thường, hoặc duy trì liên tục một hành động; 'cứ để nguyên...', 'suốt không ngừng'.",
+      "longExplanation": "Mẫu ngữ pháp '～っぱなし' (biến âm từ 放し - はなし) được gắn vào sau thân động từ (thể ます bỏ ます) để diễn tả việc một hành động đã diễn ra nhưng sau đó lại để mặc nguyên như vậy, không dọn dẹp hay xử lý tiếp theo lẽ thường (ví dụ: mở cửa sổ rồi để mặc, bật đèn rồi cứ thế đi ngủ). Nó thường đi kèm sắc thái phàn nàn, trách móc hoặc tiếc nuối của người nói. Ngoài ra, nó cũng có thể biểu thị một hành vi hoặc trạng thái mệt mỏi tiếp diễn liên tục không nghỉ (như: 立ちっぱなし - đứng suốt cả ngày).",
+      "formation": "Động từ thể ます (bỏ ます) + っぱなし (+ だ / にする / で)",
+      "examples": [
+        {
+          "translation": "Cứ để mở cửa sổ suốt làm cho căn phòng bị lạnh cóng."
+        },
+        {
+          "translation": "Anh ấy thích nghe nhạc nên lúc nào cũng cắm tai nghe suốt như vậy."
+        },
+        {
+          "translation": "Đứa trẻ cứ vứt đồ chơi bừa bãi trên sàn nhà mà không chịu dọn dẹp."
+        },
+        {
+          "translation": "Tối qua vì bận rộn nên tôi cứ để nguyên tivi mở rồi ngủ quên mất."
+        }
+      ]
+    },
+    "ja_っぽい_77": {
+      "title": "～っぽい (〜ppoi)",
+      "shortExplanation": "Diễn tả vẻ ngoài, cảm giác hoặc tính chất hơi hướng giống một thứ gì đó, hoặc dễ nổi cáu/hay quên; 'có vẻ...', 'nhìn như...', 'hơi có tính chất...'.",
+      "longExplanation": "Hậu tố '～っぽい' là cách nói khẩu ngữ thân mật kết hợp với danh từ, tính từ hoặc thân động từ để biểu thị: (1) Mang cảm giác, diện mạo hoặc phong thái giống như sự vật/người đó dù bản chất không phải (ví dụ: 大人っぽい - chững chạc như người lớn, 子供っぽい - trẻ con); (2) Mang tính chất hoặc màu sắc thiên về phía đó (ví dụ: 白っぽい - ngả trắng, 油っぽい - nhiều dầu mỡ); (3) Rất dễ có xu hướng lặp lại một hành vi nào đó (ví dụ: 怒りっぽい - hay cáu giận, 忘れっぽい - hay quên).",
+      "formation": "Danh từ + っぽい | Động từ thể ます (bỏ ます) + っぽい | Tính từ đuôi い (bỏ い) + っぽい | Tính từ đuôi な (bỏ な) + っぽい",
+      "examples": [
+        {
+          "translation": "Cô ấy đang mặc bộ trang phục trông rất người lớn và chững chạc."
+        },
+        {
+          "translation": "Lời giải thích này trông có vẻ hơi khó hiểu."
+        },
+        {
+          "translation": "Anh ấy đang mang một vẻ mặt trông có vẻ mệt mỏi."
+        },
+        {
+          "translation": "Căn phòng này đem lại cảm giác hơi lành lạnh."
+        }
+      ]
+    },
+    "ja_ていられない_78": {
+      "title": "～ていられない (〜te irarenai)",
+      "shortExplanation": "Diễn tả việc tình thế bức bách khiến bản thân không thể cứ tiếp tục làm một hành động hay giữ nguyên một trạng thái nào đó; 'không thể tiếp tục... được nữa', 'không thể cứ mãi...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ていられない' là dạng phủ định khả năng của '～ている' ('đang làm gì'), gắn vào động từ thể て. Mẫu câu này được dùng khi người nói cảm thấy hoàn cảnh quá cấp bách, bận rộn hoặc tâm lý bức xúc, không thể kiên nhẫn để tiếp tục duy trì hành động hay trạng thái đó thêm được nữa ('không thể cứ ngồi chơi được', 'không thể nín nhịn mãi được'). Vế sau thường dẫn tới một hành động dứt khoát hoặc phản ứng ngay lập tức.",
+      "formation": "Động từ thể て + いられない",
+      "examples": [
+        {
+          "translation": "Đang bận rộn như thế này thì tôi không thể nào cứ cố đi chơi được."
+        },
+        {
+          "translation": "Trời quá lạnh nên tôi không thể nào cứ tiếp tục đứng đợi ở ngoài trời được nữa."
+        },
+        {
+          "translation": "Vấn đề này rất hệ trọng nên chúng ta không thể cứ khoanh tay bỏ mặc như thế được."
+        },
+        {
+          "translation": "Tôi không thể chịu nổi thái độ của cô ấy nên không thể cứ im lặng mãi được."
+        }
+      ]
+    },
+    "ja_てかなわない_79": {
+      "title": "～てかなわない (〜te kanawanai)",
+      "shortExplanation": "Diễn tả một cảm giác, cảm xúc hoặc trạng thái khó chịu quá mức đến nỗi bản thân không thể nào chịu đựng nổi; 'không tài nào chịu nổi', 'vô cùng khó chịu'.",
+      "longExplanation": "Mẫu ngữ pháp '～てかなわない' (với かなわない bắt nguồn từ động từ 叶う - đáp ứng, đọ lại) diễn tả một trạng thái, hoàn cảnh bất lợi hoặc một cảm giác bức bối, phiền hà tới mức người nói không thể nào chống đỡ hay chịu đựng nổi ('không tài nào chịu thấu', 'bực không chịu nổi'). Mẫu câu này thường đi cùng các tính từ diễn tả sự khó chịu, phiền toái hoặc tiêu cực như '暑い', 'うるさい', '不便だ', '失礼だ'.",
+      "formation": "Tính từ đuôi い (bỏ い) + くてかなわない | Tính từ đuôi な + でかなわない | Động từ thể て + かなわない",
+      "examples": [
+        {
+          "translation": "Trời nóng nực thế này thì không tài nào chịu nổi."
+        },
+        {
+          "translation": "Lời lẽ của anh ta quá đỗi thô lỗ khiến tôi không thể nào chịu thấu."
+        },
+        {
+          "translation": "Bộ phim quá đỗi xúc động khiến tôi không tài nào nguôi ngoai hay quên đi được."
+        },
+        {
+          "translation": "Nụ cười của cô ấy rạng rỡ quá đỗi khiến tôi muốn choáng ngợp."
+        }
+      ]
+    },
+    "ja_てからでないと_80": {
+      "title": "～てからでないと (〜te kara denai to)",
+      "shortExplanation": "Diễn tả điều kiện tiên quyết: nếu chưa hoàn thành xong việc phía trước thì tuyệt đối không thể thực hiện được việc phía sau; 'chỉ sau khi... mới...', 'nếu chưa... thì không thể...'.",
+      "longExplanation": "Mẫu ngữ pháp '～てからでないと' (hoặc '～てからでなければ') gắn vào sau động từ thể て để nhấn mạnh một điều kiện bắt buộc tiên quyết. Vế sau của cấu trúc này hầu như luôn luôn đi với dạng phủ định hoặc câu mang nghĩa tiêu cực, bất khả thi ('không thể làm', 'khó lòng thực hiện'). Ý nghĩa là: chừng nào việc A chưa được hoàn tất thỏa đáng thì hoàn toàn không có cách nào làm được việc B.",
+      "formation": "Động từ thể て + からでないと / からでなければ",
+      "examples": [
+        {
+          "translation": "Nếu chưa làm bài tập về nhà xong thì con không được đi chơi đâu."
+        },
+        {
+          "translation": "Phải ăn cơm xong thì mới được ăn món tráng miệng."
+        },
+        {
+          "translation": "Nếu chưa mua vé thì không thể vào xem phim được."
+        },
+        {
+          "translation": "Chỉ sau khi kỳ thi kết thúc thì tôi mới có thể xin nghỉ phép được."
+        }
+      ]
+    },
+    "ja_てこそ_81": {
+      "title": "～てこそ (〜te koso)",
+      "shortExplanation": "Nhấn mạnh rằng chính nhờ hành động hoặc điều kiện đó mà mới tạo nên ý nghĩa hoặc kết quả thực sự; 'chính vì/nhờ... mới thật sự...', 'chỉ khi... mới...'.",
+      "longExplanation": "Trợ từ nhấn mạnh 'こそ' khi kết hợp với thể て ('～てこそ') được dùng để nhấn mạnh điều kiện thiết yếu mang tính tích cực: chỉ khi thực sự bắt tay vào làm việc gì, trải qua chuyện gì thì một ý nghĩa, giá trị thực sự hay kết quả mong đợi mới phát huy hoặc được thấu hiểu ('chỉ khi làm... thì mới thực sự có ý nghĩa', 'phải trải qua... thì mới...'). Vế sau thường là những nhận định mang tính khẳng định về giá trị hoặc năng lực.",
+      "formation": "Động từ thể て + こそ | Tính từ đuôi い (bỏ い) + くてこそ | Tính từ đuôi な + でこそ | Danh từ + でこそ",
+      "examples": [
+        {
+          "translation": "Chỉ khi học hành chăm chỉ thì mới có thể thi đỗ được."
+        },
+        {
+          "translation": "Phải thành thật với chính mình thì mới có thể thấu hiểu được cảm xúc của đối phương."
+        },
+        {
+          "translation": "Phải có sự yên tĩnh thì tâm hồn mới thực sự được lắng đọng và bình an."
+        },
+        {
+          "translation": "Chính vì là bạn bè nên việc giúp đỡ lẫn nhau là điều đương nhiên."
+        }
+      ]
+    },
+    "ja_でしょうがない_82": {
+      "title": "～でしょうがない (〜deshou ga nai)",
+      "shortExplanation": "Diễn tả một cảm xúc, cảm giác tự nhiên trào dâng vô cùng mãnh liệt đến mức không kìm nén được; 'vô cùng...', 'hết sức...', 'không chịu nổi'.",
+      "longExplanation": "Mẫu ngữ pháp '～でしょうがない' (hoặc '～てしょうがない', '～て仕様がない') được dùng để biểu thị một cảm xúc, cảm giác bản năng hoặc trạng thái thể chất trào dâng mãnh liệt từ bên trong mà bản thân không thể kiềm chế hay kiểm soát được ('vô cùng lo lắng', 'nhớ da diết', 'buồn chán hết sức'). Thường kết hợp với các từ chỉ cảm xúc (bất an, vui mừng, cô đơn) hoặc cảm giác sinh lý (đau, buồn ngủ, đói).",
+      "formation": "Tính từ đuôi い (bỏ い) + くてしょうがない | Tính từ đuôi な + でしょうがない / ではしょうがない | Động từ thể て + しょうがない",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi rảnh rỗi đến mức phát chán cả người."
+        },
+        {
+          "translation": "Kỳ thi sắp đến gần rồi nên tôi cảm thấy vô cùng bất an và bồn chồn."
+        },
+        {
+          "translation": "Đầu tôi đau đến mức không tài nào chịu nổi, tôi muốn xin về sớm."
+        },
+        {
+          "translation": "Tôi cứ bứt rứt không thôi vì tò mò về tựa game mới ra mắt."
+        }
+      ]
+    },
+    "ja_でたまらない_83": {
+      "title": "～でたまらない (〜de tamaranai)",
+      "shortExplanation": "Diễn tả cảm giác, cảm xúc hoặc ham muốn mãnh liệt đến mức không thể nào kìm nén hay chịu đựng được; 'vô cùng...', '...không chịu nổi', '...đến phát điên'.",
+      "longExplanation": "Mẫu ngữ pháp '～でたまらない' (với たまらない bắt nguồn từ 堪える - chịu đựng, kham nổi) gắn sau thể て của tính từ hoặc động từ. Cấu trúc này dùng để diễn đạt trạng thái mà một cảm xúc tâm lý, cảm giác thể xác hoặc khao khát nào đó dâng trào tới mức tột cùng, khiến người nói không thể nào chịu đựng nổi hay kìm nén thêm được nữa ('thèm ăn không chịu nổi', 'yêu vô cùng', 'nóng bức không kham nổi'). Khác với '～てかなわない' (vốn mang tính chán ghét, phiền hà), '～でたまらない' có thể dùng cho cả cảm xúc tích cực (vui mừng, yêu thích) lẫn tiêu cực (đau đớn, lo lắng).",
+      "formation": "Tính từ đuôi い (bỏ い) + くてたまらない | Tính từ đuôi な + でたまらない | Động từ thể て + たまらない",
+      "examples": [
+        {
+          "translation": "Cái nóng này thực sự là nóng bức không tài nào chịu nổi."
+        },
+        {
+          "translation": "Tôi thích cô ấy nhiều đến mức không kìm lòng được."
+        },
+        {
+          "translation": "Căn phòng này lạnh buốt đến mức không chịu nổi."
+        },
+        {
+          "translation": "Cứ nhìn thấy thái độ của anh ta là tôi lại tức giận không chịu được."
+        }
+      ]
+    },
+    "ja_でならない_84": {
+      "title": "～でならない (〜de naranai)",
+      "shortExplanation": "Diễn tả một cảm xúc, cảm nghĩ tự nhiên nảy sinh từ tận đáy lòng mà không cách nào kìm nén lại được; 'vô cùng...', 'không sao ngăn được cảm giác...'.",
+      "longExplanation": "Mẫu ngữ pháp '～でならない' (hoặc '～てならない') biểu thị một trạng thái tâm lý, cảm xúc nảy sinh một cách hoàn toàn tự nhiên và bất giác chiếm lấy tâm trí mà người nói không thể nào kiểm soát hay gạt đi được ('không hiểu sao cứ thấy lo lắng khôn nguôi', 'tiếc nuối vô cùng'). Cấu trúc này thường đi với các động từ, tính từ biểu thị sự tự phát hoặc cảm xúc như '気になる' (bận tâm), '思える' (cảm thấy), '心配だ' (lo lắng), '残念だ' (tiếc nuối), '不思議だ' (kỳ lạ). Mang văn phong trang trọng, biểu cảm sâu sắc hơn so với 'しょうがない'.",
+      "formation": "Tính từ đuôi い (bỏ い) + くてならない | Tính từ đuôi な + でならない | Động từ thể て + ならない",
+      "examples": [
+        {
+          "translation": "Tôi không sao kìm nén nổi sự thán phục trước diễn xuất tuyệt vời của anh ấy."
+        },
+        {
+          "translation": "Tôi không thể nào ngừng lo lắng và bồn chồn chờ đợi kết quả thông báo đỗ đạt."
+        },
+        {
+          "translation": "Bạn tôi đã chuyển nhà đi rồi, lòng tôi thấy cô đơn trống trải vô cùng."
+        },
+        {
+          "translation": "Lần đầu tiên đi du lịch nước ngoài nên trong lòng tôi thấy bất an vô cùng."
+        }
+      ]
+    },
+    "ja_でばかりはいられない_85": {
+      "title": "～でばかりはいられない (〜de bakari wa irarenai)",
+      "shortExplanation": "Diễn tả việc không thể cứ mãi đắm chìm trong một hành động, trạng thái đó mà cần phải làm việc khác quan trọng hơn; 'không thể cứ mãi...', 'đâu thể chỉ... mãi được'.",
+      "longExplanation": "Mẫu ngữ pháp '～でばかりはいられない' (hoặc '～てばかりはいられない') kết hợp phó từ nhấn mạnh 'ばかり' (chỉ toàn) với dạng phủ định khả năng của いる ('はいられない'). Mẫu câu này biểu thị nhận thức của người nói rằng không thể cứ mãi đắm chìm hay duy trì một việc gì đó (như nghỉ ngơi, ỷ lại, than vãn, vui chơi) mãi được, mà cần phải thức tỉnh, gánh vác trách nhiệm hoặc bắt tay vào làm những việc quan trọng tiếp theo.",
+      "formation": "Động từ thể て + ばかりはいられない | Tính từ đuôi い (bỏ い) + くてばかりはいられない | Tính từ đuôi な + でばかりはいられない | Danh từ + でばかりはいられない",
+      "examples": [
+        {
+          "translation": "Tôi không thể cứ trông chờ người khác giúp đỡ mãi như thế này được."
+        },
+        {
+          "translation": "Mình đâu thể chỉ toàn chọn những công việc mình yêu thích để làm mãi được."
+        },
+        {
+          "translation": "Tôi không thể cứ sống dựa dẫm mãi vào bố mẹ được."
+        },
+        {
+          "translation": "Không thể cứ nghỉ ngơi mãi được. Phải bắt tay vào làm việc thôi."
+        }
+      ]
+    },
+    "ja_ではないか_86": {
+      "title": "～ではないか (〜de wa nai ka)",
+      "shortExplanation": "Dùng để khẳng định mạnh mẽ, gợi ý đồng thuận, hoặc bộc lộ sự bất ngờ phát hiện; 'chẳng phải là... hay sao?', 'không phải là... sao!'.",
+      "longExplanation": "Mẫu câu '～ではないか' (trong khẩu ngữ thường là '～じゃないか' hoặc '～ではないですか') đứng ở cuối câu mang các sắc thái biểu cảm phong phú: (1) Đưa ra ý kiến hoặc khẳng định một cách mạnh mẽ, nhằm lôi kéo sự đồng tình từ phía người nghe ('chẳng phải là... hay sao'); (2) Dùng như một câu hỏi tu từ để nhắc nhở hoặc trách móc nhẹ nhàng; (3) Biểu thị sự kinh ngạc, ngạc nhiên thú vị khi bất ngờ phát hiện ra một sự thật ngoài dự kiến ('ô kìa, chẳng phải là... đây sao!').",
+      "formation": "Động từ thể thông thường + ではないか | Tính từ đuôi い + ではないか | Tính từ đuôi な (bỏ だ) + ではないか | Danh từ (bỏ だ) + ではないか",
+      "examples": [
+        {
+          "translation": "Cậu ấy chẳng phải là một sinh viên ưu tú hay sao?"
+        },
+        {
+          "translation": "Món ăn này chẳng phải rất ngon đó sao!"
+        },
+        {
+          "translation": "Bạn là bạn bè của cô ấy cơ mà, chẳng phải vậy sao?"
+        },
+        {
+          "translation": "Ngày mai được nghỉ mà, đúng không nào?"
+        }
+      ]
+    },
+    "ja_てはならない_87": {
+      "title": "～てはならない (〜te wa naranai)",
+      "shortExplanation": "Diễn tả sự nghiêm cấm mang tính mệnh lệnh hoặc nguyên tắc đạo đức, luật pháp; 'không được...', 'tuyệt đối không được...'.",
+      "longExplanation": "Mẫu ngữ pháp '～てはならない' gắn vào sau động từ thể て để diễn tả lệnh cấm nghiêm khắc mang tính nguyên tắc, luật định hoặc chuẩn mực đạo đức xã hội ('tuyệt đối không được phép làm điều đó'). Mẫu câu này mang văn phong trang trọng, nghiêm túc và uy nghiêm, thường được dùng trong các điều luật, quy định, biển cảnh báo công cộng hoặc những lời căn dặn mang tính luân thường đạo lý, không dùng cho những mệnh lệnh vụn vặt cá nhân trong đời sống thường ngày.",
+      "formation": "Động từ thể て + はならない",
+      "examples": [
+        {
+          "translation": "Tuyệt đối không được hút thuốc ở đây."
+        },
+        {
+          "translation": "Không được tiết lộ bí mật này cho người khác."
+        },
+        {
+          "translation": "Không được phép đi vào căn phòng này."
+        },
+        {
+          "translation": "Tuyệt đối không được lái xe sau khi đã uống rượu bia."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_っこない_73": {
+      "title": "～っこない (〜kkonai)",
+      "shortExplanation": "表示强烈的否定，坚信某事绝不可能发生或极难实现；“绝不可能……”、“怎么也不可能……”、“哪能……”。",
+      "longExplanation": "句型“～っこない”接在动词连用形（ます形去掉ます）之后，表示说话人基于主观判断强烈断定某事绝无可能发生，或无论如何也做不到（“绝对不可能……”、“怎么也做不到……”）。该句型语气坚决，常用于日常口语及熟人之间的交谈中，带有较强的主观否定色彩。",
+      "formation": "动词连用形（ます形去掉ます） + っこない",
+      "examples": [
+        {
+          "translation": "下了这么大的雪，怎么可能赶得上去学校呢。"
+        },
+        {
+          "translation": "他不会游泳，绝对不可能游到游泳池的对面。"
+        },
+        {
+          "translation": "她非常胆小，绝对不可能一个人晚上去公园。"
+        },
+        {
+          "translation": "在这么短的时间内，绝对不可能把那本书全部读完。"
+        }
+      ]
+    },
+    "ja_つつ_74": {
+      "title": "～つつ (〜tsutsu)",
+      "shortExplanation": "表示两个动作同时进行（“一边……一边……”），或表示前后情况相互对立、矛盾（“虽然……但是……”、“尽管……却……”）。",
+      "longExplanation": "句型“～つつ”接在动词连用形（ます形去掉ます）之后，属于较书面、正式的表达，主要有两种用法：(1) 表示两个动作同时进行，相当于“ながら”（“一边……一边……”），通常后项动词为主动作；(2) 表示逆折转折，常接在表示心理活动的动词（如“思う”、“知る”等）之后，相当于“～つつも”或“～ながらも”（“虽然心里想着……，但实际上却……”、“明知……却依然……”）。",
+      "formation": "动词连用形（ます形去掉ます） + つつ",
+      "examples": [
+        {
+          "translation": "他一边看着电视，一边做作业。"
+        },
+        {
+          "translation": "虽说最近觉得很忙，但我每天仍坚持锻炼身体。"
+        },
+        {
+          "translation": "她虽然流着泪，却依然微笑着道别。"
+        },
+        {
+          "translation": "尽管被雨淋湿着，他还是继续向前走着。"
+        }
+      ]
+    },
+    "ja_つつある_75": {
+      "title": "～つつある (〜tsutsu aru)",
+      "shortExplanation": "表示某种变化或事态正在逐步进行中；“正在不断……”、“正逐步处于……的过程中”。",
+      "longExplanation": "句型“～つつある”接在动词连用形（ます形去掉ます）之后，属于书面语，表示某种状态或变化正在逐步、持续地发生（“正逐渐……”、“正不断……”）。常与表示增减、变化、进展等瞬间或持续变化的动词搭配使用，如“回復する”（恢复）、“変化する”（变化）、“増加する”（增加）、“発展する”（发展）等，常见于新闻报道、学术文章及正式演说中。",
+      "formation": "动词连用形（ます形去掉ます） + つつある",
+      "examples": [
+        {
+          "translation": "全球变暖正在不断加剧。"
+        },
+        {
+          "translation": "这座城镇正在迅速发展。"
+        },
+        {
+          "translation": "孩子们正在一天天长大。"
+        },
+        {
+          "translation": "经济正在逐步复苏。"
+        }
+      ]
+    },
+    "ja_っぱなし_76": {
+      "title": "～っぱなし (〜ppanashi)",
+      "shortExplanation": "表示本该妥善处理的动作完成后却放置不管任由其维持原状，或某一动作、状态持续不断；“一直放置不管”、“一直……着”。",
+      "longExplanation": "句型“～っぱなし”（由动词“放す”演变而来）接在动词连用形（ます形去掉ます）之后，主要表示以下两种含义：(1) 完成了某动作后，本应进行后续清理或处理，却放任不管，一直维持该状态不变（例如：开着窗户没关、电视开着就睡了），往往含有说话人的不满、责备或遗憾之情；(2) 某一动作或状态持续不断、没有间歇（如：立ちっぱなし 一直站着）。",
+      "formation": "动词连用形（ます形去掉ます） + っぱなし (+ だ / にする / で)",
+      "examples": [
+        {
+          "translation": "一直开着窗户没关，弄得房间变冷了。"
+        },
+        {
+          "translation": "他喜欢听音乐，总是戴着耳机一直不摘下来。"
+        },
+        {
+          "translation": "孩子把玩具扔在地板上不管，没有收拾。"
+        },
+        {
+          "translation": "昨晚因为太忙太累，电视一直开着就睡着了。"
+        }
+      ]
+    },
+    "ja_っぽい_77": {
+      "title": "～っぽい (〜ppoi)",
+      "shortExplanation": "表示带有某种倾向、感觉或具有某种性质；“有点儿像……”、“显得……”、“带……倾向”。",
+      "longExplanation": "后缀“～っぽい”属于日常会话中的口语表达，接在名词、形容词词干或动词连用形之后，主要用于：(1) 表示具有某种气质、外貌或感觉，但本质并非如此（例如：大人っぽい 像大人般成熟、子供っぽい 孩子气）；(2) 表示带有某种颜色、味道或状态倾向（例如：白っぽい 偏白、油っぽい 油腻）；(3) 表示容易反复产生某种情绪或行为习惯（例如：怒りっぽい 容易发怒、忘れっぽい 健忘）。",
+      "formation": "名词 + っぽい | 动词连用形（ます形去掉ます） + っぽい | 一类形容词词干（去掉い） + っぽい | 二类形容词词干 + っぽい",
+      "examples": [
+        {
+          "translation": "她穿着一套看起来很成熟的大人风格的衣服。"
+        },
+        {
+          "translation": "这个解释听起来似乎有点难懂。"
+        },
+        {
+          "translation": "他脸上带着一副看起来很疲惫的表情。"
+        },
+        {
+          "translation": "这个房间给人一种冷清清、凉飕飕的感觉。"
+        }
+      ]
+    },
+    "ja_ていられない_78": {
+      "title": "～ていられない (〜te irarenai)",
+      "shortExplanation": "表示由于客观状况紧迫或心理无法容忍，不能再继续保持某种状态或动作；“无法继续……下去”、“不能一直……了”。",
+      "longExplanation": "句型“～ていられない”是动词持续体“～ている”的可能否定形，接在动词て形之后。表示由于时间紧迫、情况危急，或者在心理上无法忍耐，说话人觉得不能再慢吞吞地继续维持当下的动作或状态了（“不能再这么等下去了”、“哪能一直玩下去呢”）。通常暗示必须立刻采取行动改变现状。",
+      "formation": "动词て形 + いられない",
+      "examples": [
+        {
+          "translation": "明明这么忙，我可不能硬要顾着玩耍。"
+        },
+        {
+          "translation": "天气太冷了，我实在没办法一直在外面等下去。"
+        },
+        {
+          "translation": "这个问题非常重大，绝不能放任不管。"
+        },
+        {
+          "translation": "我无法忍受她的态度，做不到一直保持沉默。"
+        }
+      ]
+    },
+    "ja_てかなわない_79": {
+      "title": "～てかなわない (〜te kanawanai)",
+      "shortExplanation": "表示某种状况、感觉或情感程度极高，达到了令人无法忍受、难以承受的地步；“……得受不了”、“……得吃不消”。",
+      "longExplanation": "句型“～てかなわない”（“かなわない”源自“敵わない”，意为匹敌、抵挡）接在形容词或动词的て形之后，主要用于抱怨某种麻烦、不快的状况或者过于强烈的情感，达到了令人难以抵挡、无法忍受的程度（“受不了”、“苦不堪言”）。通常与表示负面、困扰或生理/心理不适的词语连用，如“暑い”（热）、“うるさい”（吵闹）、“不便だ”（不便）等。",
+      "formation": "一类形容词词干（去掉い） + くてかなわない | 二类形容词 + でかなわない | 动词て形 + かなわない",
+      "examples": [
+        {
+          "translation": "这么热的天气，真是让人受不了。"
+        },
+        {
+          "translation": "他的话太失礼了，实在让人无法忍受。"
+        },
+        {
+          "translation": "这部电影太感人了，让我久久无法忘怀、难以释怀。"
+        },
+        {
+          "translation": "她的笑容实在太耀眼了，耀眼得令人无法直视。"
+        }
+      ]
+    },
+    "ja_てからでないと_80": {
+      "title": "～てからでないと (〜te kara denai to)",
+      "shortExplanation": "表示前置的必要前提条件，即在前面的动作未完成之前，绝不能做或无法实现后面的事情；“只有在……之后才……”、“如果不先……就无法……”。",
+      "longExplanation": "句型“～てからでないと”（或“～てからでなければ”）接在动词て形之后，用来明确提出后项动作成立所必不可少的前提条件。句末后项几乎总是与否定形式、可能否定形或表示负面结果的表达相呼应，表示“如果前项事情不先办妥，后项的事情就根本做不成或无法实现”（“必须先……之后才能……”）。",
+      "formation": "动词て形 + からでないと / からでなければ",
+      "examples": [
+        {
+          "translation": "如果不先做好作业，就不能去玩。"
+        },
+        {
+          "translation": "只有在吃完饭之后，才能吃甜点。"
+        },
+        {
+          "translation": "必须先买了票，才能看电影。"
+        },
+        {
+          "translation": "必须等考试结束之后，才能请假休息。"
+        }
+      ]
+    },
+    "ja_てこそ_81": {
+      "title": "～てこそ (〜te koso)",
+      "shortExplanation": "强调只有做到了某件事或具备了某项条件，才真正具有意义或才能产生成果；“只有……才算真正……”、“正是因为……才……”。",
+      "longExplanation": "强调助词“こそ”与动词て形（或形容词、名词连接形式）结合而成的句型“～てこそ”，用于强烈强调前提条件的重要性。表示“只有实际体验了、做到了某件事之后，才真正算得上…… / 才能体会到其真正价值”（“唯有……才真正……”）。后项多接表示评价、意义、能力或必然结果的句子，带有说话人深刻的体会或劝谕口吻。",
+      "formation": "动词て形 + こそ | 一类形容词词干（去掉い） + くてこそ | 二类形容词 + でこそ | 名词 + でこそ",
+      "examples": [
+        {
+          "translation": "只有用功读书，才能通过考试。"
+        },
+        {
+          "translation": "只有坦率真诚，才能理解对方的心意。"
+        },
+        {
+          "translation": "正是因为安静，心灵才得以平静。"
+        },
+        {
+          "translation": "正因为是朋友，互相帮助才是理所当然的。"
+        }
+      ]
+    },
+    "ja_でしょうがない_82": {
+      "title": "～でしょうがない (〜deshou ga nai)",
+      "shortExplanation": "表示某种感情、感觉或身体反应极其强烈，说话人无法自控；“……得不得了”、“极度……”、“不由得……”。",
+      "longExplanation": "句型“～でしょうがない”（亦作“～てしょうがない”、“～て仕様がない”）接在动词、形容词的て形之后，表示某种自然涌现的内心情感、生理感觉或欲望极其强烈，达到了自己难以控制或压抑的地步（“……得受不了”、“极度……”）。常用于表达悲伤、不安、喜悦、寂寞等心理状态，或疼痛、口渴、困倦等生理感受。",
+      "formation": "一类形容词词干（去掉い） + くてしょうがない | 二类形容词 + でしょうがない / ではしょうがない | 动词て形 + しょうがない",
+      "examples": [
+        {
+          "translation": "今天闲得不得了，无聊透顶。"
+        },
+        {
+          "translation": "马上就要考试了，我心里不安得不得了。"
+        },
+        {
+          "translation": "头疼得受不了，我想早点回家休息。"
+        },
+        {
+          "translation": "我对那款新游戏好奇得不得了，一直念念不忘。"
+        }
+      ]
+    },
+    "ja_でたまらない_83": {
+      "title": "～でたまらない (〜de tamaranai)",
+      "shortExplanation": "表示生理上的感觉、内心情感或愿望极其强烈，令人无法忍受或抑制；“……得不得了”、“……得难以忍受”、“非常……”。",
+      "longExplanation": "句型“～でたまらない”（“たまらない”源于“堪る”，意为忍耐、容忍）接在形容词或动词的て形之后，表示某种生理感受（如冷、热、疼、痒）、心理情感（如喜欢、高兴、后悔、悲伤）或欲望极其强烈，以至于说话人无法忍耐或抑制（“……得受不了”、“非常想……”）。与多含反感厌烦的“～てかなわない”相比，“～でたまらない”既可用于消极痛苦的感受，也可用于喜悦、喜爱等积极强烈的情感。",
+      "formation": "一类形容词词干（去掉い） + くてたまらない | 二类形容词 + でたまらない | 动词て形 + たまらない",
+      "examples": [
+        {
+          "translation": "这种燥热天气真是热得让人受不了。"
+        },
+        {
+          "translation": "我非常喜欢她，喜欢得不可自拔。"
+        },
+        {
+          "translation": "这个房间冷得让人受不了。"
+        },
+        {
+          "translation": "看着他的态度，我气得火冒三丈、难以忍耐。"
+        }
+      ]
+    },
+    "ja_でならない_84": {
+      "title": "～でならない (〜de naranai)",
+      "shortExplanation": "表示某种由衷自然产生的情感或心绪不由自主地涌上心头，自己难以抑制；“不由得……起来”、“不由自主地感到……”、“……得不得了”。",
+      "longExplanation": "句型“～でならない”（或“～てならない”）接在形容词或动词的て形之后，表示某种情感或想法完全出于自然萌发，在内心深处挥之不去、无法克制（“情不自禁地……”、“禁不住……”）。通常与表示心理活动、自然发自内心的感觉或自发态动词连用，如“心配だ”（担忧）、“残念だ”（遗憾）、“気になる”（挂念）、“思える”（觉得）、“不思議だ”（不可思议）等。语气较为书面、典雅，多用于表达内心深切的感受。",
+      "formation": "一类形容词词干（去掉い） + くてならない | 二类形容词 + でならない | 动词て形 + ならない",
+      "examples": [
+        {
+          "translation": "他的精湛演技令人由衷地赞叹不已。"
+        },
+        {
+          "translation": "我心里一直惦记着发榜结果，不由自主地焦躁不安。"
+        },
+        {
+          "translation": "朋友搬家离开了，我心里感到无比的寂寞。"
+        },
+        {
+          "translation": "这是我第一次去海外旅行，心里由衷感到忐忑不安。"
+        }
+      ]
+    },
+    "ja_でばかりはいられない_85": {
+      "title": "～でばかりはいられない (〜de bakari wa irarenai)",
+      "shortExplanation": "表示不能一直耽于某种行为或停留在某种状态中，必须面对现实采取其他行动；“不能老是……”、“哪能一直……下去”。",
+      "longExplanation": "句型“～でばかりはいられない”（亦作“～てばかりはいられない”）将表示限定、频繁的“ばかり”（净是、老是）与“～てはいられない”（不能一直……）结合。表示说话人意识到不能总是沉溺于某种单一的行为或依赖某种状态（如一味休息、依赖他人、沉浸在悲伤或玩乐中），而是必须振作起来，承担起应负的责任并采取必要的下一步行动（“不能只顾着……，还得……”）。",
+      "formation": "动词て形 + ばかりはいられない | 一类形容词词干（去掉い） + くてばかりはいられない | 二类形容词 + でばかりはいられない | 名词 + でばかりはいられない",
+      "examples": [
+        {
+          "translation": "我不能老是让别人帮我，总得自己独立。"
+        },
+        {
+          "translation": "哪能只挑自己喜欢的工作做呢。"
+        },
+        {
+          "translation": "我绝不能一辈子老指望着依赖父母。"
+        },
+        {
+          "translation": "不能一直光顾着休息，也该干活了。"
+        }
+      ]
+    },
+    "ja_ではないか_86": {
+      "title": "～ではないか (〜de wa nai ka)",
+      "shortExplanation": "用于强烈断定、征求对方赞同或表示意外发现时的感叹；“难道不是……吗？”、“这不正是……吗！”。",
+      "longExplanation": "句型“～ではないか”（口语中常作“～じゃないか”或“～ではないですか”）置于句末，语气随语调和语境而变化，主要有以下用法：(1) 强硬或明确地阐述自己的见解，带有促使对方赞同的语气（“难道不是……吗”）；(2) 用于反问以提醒、劝阻或轻微责备对方；(3) 伴随着升调或感叹语气，表示对眼前意外发现的事实感到惊讶或赞叹（“这不是……吗！”）。",
+      "formation": "动词普通形 + ではないか | 一类形容词 + ではないか | 二类形容词词干 + ではないか | 名词 + ではないか",
+      "examples": [
+        {
+          "translation": "他难道不是一名优秀的学生吗？"
+        },
+        {
+          "translation": "这道菜这不是很美味嘛！"
+        },
+        {
+          "translation": "你不就是她的朋友嘛。"
+        },
+        {
+          "translation": "明天不是放假休息吗？"
+        }
+      ]
+    },
+    "ja_てはならない_87": {
+      "title": "～てはならない (〜te wa naranai)",
+      "shortExplanation": "表示强烈的规劝、严格的禁令或社会伦理原则上的禁止；“绝不能……”、“不许……”、“切不可……”。",
+      "longExplanation": "句型“～てはならない”接在动词て形之后，属于非常严谨、庄重的书面语表达。用于依据法律法令、社会公序良俗或道德规范，发布严肃的禁令和告诫（“严禁……”、“决不可……”）。它带有权威性和约束力，常用于法律条文、规章制度、公开告示、警示标语以及教诲演讲中，通常不用于日常生活中的私人小事劝阻。",
+      "formation": "动词て形 + はならない",
+      "examples": [
+        {
+          "translation": "此处严禁吸烟。"
+        },
+        {
+          "translation": "切不可将秘密泄露给他人。"
+        },
+        {
+          "translation": "不得擅自进入这个房间。"
+        },
+        {
+          "translation": "绝不可酒后驾车。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_っこない_73": {
+      "title": "～っこない (〜kkonai)",
+      "shortExplanation": "어떤 일이 일어날 가능성이 전혀 없거나 절대 불가능함을 강하게 단정하여 나타내며, '도저히 ~할 리 없다', '절대 ~할 수 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～っこない'는 동사의 연용형(ます형 어간)에 접속하여, 어떤 일이 일어날 가능성이 전혀 없거나 어떤 행위를 도저히 해낼 수 없다고 화자가 강하게 단정할 때 사용합니다('절대 ~할 리 없다', '도저히 ~할 수 없다'). 주로 친한 사이의 일상 회화에서 강한 주관적 확신을 담아 부정할 때 쓰이는 구어체 표현입니다.",
+      "formation": "동사 ます형 어간 + っこない",
+      "examples": [
+        {
+          "translation": "눈이 이렇게나 많이 내리고 있으니, 학교에 제시간에 갈 수 있을 리 없다."
+        },
+        {
+          "translation": "그는 수영을 못하기 때문에, 수영장 반대편까지 헤엄쳐 갈 수 있을 리 없다."
+        },
+        {
+          "translation": "그녀는 겁이 아주 많아서, 혼자 밤에 공원에 갈 리가 없다."
+        },
+        {
+          "translation": "이 짧은 시간 안에 그 책을 전부 읽는 건 도저히 불가능하다."
+        }
+      ]
+    },
+    "ja_つつ_74": {
+      "title": "～つつ (〜tsutsu)",
+      "shortExplanation": "두 가지 동작이 동시에 진행됨을 나타내거나('~하면서'), 앞뒤 내용이 상반되는 역접을 나타냅니다('~하면서도', '~인 줄 알면서도').",
+      "longExplanation": "문법 패턴 '～つつ'는 동사의 연용형(ます형 어간)에 접속하여 쓰이는 격식 있는 문어체 표현으로, 크게 두 가지 용법이 있습니다. 첫째, 두 동작이 동시에 진행됨을 나타내어 '~하면서'라는 뜻을 나타냅니다(동시 동작). 둘째, 주로 '思う(생각하다)', '知る(알다)' 등 심리나 인식을 나타내는 동사와 함께 쓰여, 머리로는 알거나 생각하면서도 실제 행동은 그렇지 못함을 나타내는 역접의 의미('~하면서도', '~이지만')를 나타냅니다.",
+      "formation": "동사 ます형 어간 + つつ",
+      "examples": [
+        {
+          "translation": "그는 TV를 보면서 숙제를 하고 있었습니다."
+        },
+        {
+          "translation": "요즘 바쁘다고 생각하면서도, 매일 운동을 계속하고 있습니다."
+        },
+        {
+          "translation": "그녀는 눈물을 흘리면서도, 미소 지으며 이별을 고했다."
+        },
+        {
+          "translation": "비에 젖으면서도 그는 계속 걸어갔습니다."
+        }
+      ]
+    },
+    "ja_つつある_75": {
+      "title": "～つつある (〜tsutsu aru)",
+      "shortExplanation": "어떤 변화나 사태가 현재 점진적으로 진행되고 있는 과정임을 나타내며, '점점 ~해 가고 있다', '~하는 중이다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～つつある'는 동사의 연용형(ます형 어간)에 접속하여, 어떤 상태의 변화나 사태의 진전이 현재 진행 과정에 있음을 나타내는 문어체 표현입니다('점점 ~해 가고 있다', '~하는 추세에 있다'). 주로 '変化する(변화하다)', '回復する(회복되다)', '発展する(발전하다)' 등 변화를 나타내는 동사와 함께 쓰이며, 뉴스, 신문 기사, 논문 등 격식 있는 자리에서 자주 사용됩니다.",
+      "formation": "동사 ます형 어간 + つつある",
+      "examples": [
+        {
+          "translation": "지구 온난화는 계속 진행되고 있다."
+        },
+        {
+          "translation": "이 도시는 급속히 발전해 가고 있다."
+        },
+        {
+          "translation": "아이들은 성장해 가고 있다."
+        },
+        {
+          "translation": "경기가 점차 회복되고 있다."
+        }
+      ]
+    },
+    "ja_っぱなし_76": {
+      "title": "～っぱなし (〜ppanashi)",
+      "shortExplanation": "어떤 동작을 한 뒤 마땅히 해야 할 뒷처리를 하지 않고 방치해 둔 상태이거나, 어떤 상태나 동작이 멈추지 않고 계속됨을 나타내며, '~한 채로 내버려 둠', '계속 ~함'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～っぱなし'는 동사의 연용형(ます형 어간)에 접속하여 쓰이며, 크게 두 가지 의미를 가집니다. 첫째, 어떤 행위를 한 후에 마땅히 원상 복구하거나 정리정돈해야 함에도 불구하고 그대로 방치해 둔 상태를 나타냅니다(예: 창문을 열어 둔 채 둠, 불을 켜 둔 채 잠듦). 이때 화자의 불만, 질책, 후회의 뉘앙스가 포함되는 경우가 많습니다. 둘째, '立ちっぱなし(계속 서 있음)', 'しゃべりっぱなし(계속 떠들어 댐)'처럼 어떤 상태나 동작이 쉬지 않고 장시간 계속 지속되는 상황을 나타냅니다.",
+      "formation": "동사 ます형 어간 + っぱなし (+ だ / にする / で)",
+      "examples": [
+        {
+          "translation": "창문을 열어 둔 채로 방치해서 방이 추워져 버렸다."
+        },
+        {
+          "translation": "그는 음악 듣는 것을 좋아해서 항상 이어폰을 낀 채로 있습니다."
+        },
+        {
+          "translation": "아이는 장난감을 바닥에 내팽개쳐 둔 채 치우지 않았다."
+        },
+        {
+          "translation": "어젯밤에는 너무 바빠서 TV를 켜 둔 채로 잠들어 버렸다."
+        }
+      ]
+    },
+    "ja_っぽい_77": {
+      "title": "～っぽい (〜ppoi)",
+      "shortExplanation": "그러한 경향, 느낌, 성질을 띠고 있음을 나타내며, '~같은 느낌이 들다', '~스러운 면이 있다', '~하기 쉽다'라는 뜻입니다.",
+      "longExplanation": "접미사 '～っぽい'는 명사, 형용사 어간, 동사의 연용형(ます형 어간)에 결합하여 쓰이는 구어 표현으로, 다음과 같은 뉘앙스를 나타냅니다. 첫째, 본질은 그렇지 않지만 겉모습이나 풍기는 분위기가 그러함을 나타냅니다(예: 大人っぽい 어른스러움, 子供っぽい 유치하고 아이 같음). 둘째, 어떤 색상이나 성질의 기운을 띠고 있음을 나타냅니다(예: 白っぽい 하얗다시피 함, 油っぽい 기름기가 많음). 셋째, 성향이나 버릇으로서 어떤 동작이나 감정을 쉽게 일으킴을 나타냅니다(예: 怒りっぽい 화를 잘 냄, 忘れっぽい 잘 잊어버림).",
+      "formation": "명사 + っぽい | 동사 ます형 어간 + っぽい | い형용사 어간(い 탈락) + っぽい | な형용사 어간 + っぽい",
+      "examples": [
+        {
+          "translation": "그녀는 어른스러운 옷을 입고 있다."
+        },
+        {
+          "translation": "이 설명은 이해하기 어려워 보인다."
+        },
+        {
+          "translation": "그는 지쳐 보이는 얼굴을 하고 있다."
+        },
+        {
+          "translation": "이 방은 어쩐지 쌀쌀한 느낌이 든다."
+        }
+      ]
+    },
+    "ja_ていられない_78": {
+      "title": "～ていられない (〜te irarenai)",
+      "shortExplanation": "시간적 여유가 없거나 감정적으로 견딜 수 없어서 어떤 상태나 동작을 계속 유지할 수 없음을 나타내며, '더 이상 ~하고 있을 수 없다', '계속 ~할 수만은 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ていられない'는 동작의 지속을 나타내는 '～ている'의 가능 부정형으로, 동사의 て형에 결합합니다. 시간적 여유가 전혀 없거나, 상황이 매우 급박하거나, 혹은 심리적으로 더 이상 참을 수 없어서 어떤 동작이나 상태를 계속 유지할 수 없음을 나타냅니다('가만히 보고만 있을 수 없다', '~하고만 있을 순 없다'). 따라서 현 상황을 바꾸기 위해 즉각 다른 행동으로 옮겨야 한다는 뉘앙스를 강하게 풍깁니다.",
+      "formation": "동사 て형 + いられない",
+      "examples": [
+        {
+          "translation": "이렇게 바쁜데 억지로 놀고만 있을 수는 없다."
+        },
+        {
+          "translation": "너무 추워서 밖에서 계속 기다리고 있을 수가 없다."
+        },
+        {
+          "translation": "이 문제는 중요하기 때문에 그대로 방치해 둘 수 없다."
+        },
+        {
+          "translation": "그녀의 태도를 참을 수 없어서 입 다물고 가만히 있을 수가 없다."
+        }
+      ]
+    },
+    "ja_てかなわない_79": {
+      "title": "～てかなわない (〜te kanawanai)",
+      "shortExplanation": "어떤 상태나 감정의 정도가 지나쳐서 도저히 견딜 수 없거나 참기 힘들 때 쓰이며, '너무 ~해서 못 견디겠다', '~해서 죽겠다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～てかなわない'는 '감당하다, 당해내다'를 뜻하는 동사 '敵う(かなう)'의 부정형에서 유래한 표현으로, 형용사나 동사의 て형에 결합합니다. 감정, 감각 또는 외부 상황이 너무 고통스럽거나 성가셔서 도저히 참아내거나 감당할 수 없다는 불만과 곤혹스러움을 나타냅니다('너무 ~해서 감당이 안 된다', '~해서 못 견디겠다'). 주로 '暑い(덥다)', 'うるさい(시끄럽다)', '面倒だ(귀찮다)' 등 부정적이거나 불편한 상태를 나타내는 어휘와 자주 쓰입니다.",
+      "formation": "い형용사 어간(い 탈락) + くてかなわない | な형용사 + でかなわない | 동사 て형 + かなわない",
+      "examples": [
+        {
+          "translation": "이렇게 더워서는 정말 못 견디겠다."
+        },
+        {
+          "translation": "그의 이야기는 너무 무례해서 견딜 수가 없다."
+        },
+        {
+          "translation": "영화가 너무나 감동적이어서 잊혀지지 않아 미칠 지경이다."
+        },
+        {
+          "translation": "그녀의 미소가 너무 눈부셔서 견딜 수 없을 정도다."
+        }
+      ]
+    },
+    "ja_てからでないと_80": {
+      "title": "～てからでないと (〜te kara denai to)",
+      "shortExplanation": "앞의 행위나 조건이 완료된 뒤가 아니면 뒤의 일을 진행하거나 달성할 수 없음을 나타내며, '~하고 나서가 아니면', '~하지 않고서는'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～てからでないと'(또는 '～てからでなければ')는 동사의 て형에 접속하여, 뒤에 오는 사태나 행위가 성립하기 위한 필수불가결한 전제 조건을 나타냅니다. 뒷문장에는 거의 항상 부정 표현이나 불가능을 나타내는 표현이 와서, '앞의 행위를 먼저 끝마치지 않고서는 뒤의 일을 할 수 없다'라는 엄격한 조건을 강조합니다.",
+      "formation": "동사 て형 + からでないと / からでなければ",
+      "examples": [
+        {
+          "translation": "숙제를 하고 나서가 아니면 놀러 갈 수 없습니다."
+        },
+        {
+          "translation": "식사를 하고 나서가 아니면 디저트를 먹을 수 없습니다."
+        },
+        {
+          "translation": "표를 사고 나서가 아니면 영화를 볼 수 없습니다."
+        },
+        {
+          "translation": "시험이 끝나고 나서가 아니면 휴가를 낼 수 없습니다."
+        }
+      ]
+    },
+    "ja_てこそ_81": {
+      "title": "～てこそ (〜te koso)",
+      "shortExplanation": "그 행위를 하거나 해당 조건을 갖추어야 비로소 진정한 의미와 가치가 생김을 강조하며, '비로소 ~해야만', '~하고 나서야 비로소'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～てこそ'는 강조의 조사 'こそ'가 동사의 て형(또는 형용사/명사의 활용형)에 결합한 형태로, '그 동작이나 조건을 실제로 행하고 나서야 비로소 본래의 가치나 진정한 결실을 맺을 수 있다'는 점을 강하게 강조합니다('~해야 비로소', '~하고서야 진정한 ~이다'). 뒷문장에는 '初めて〜できる(비로소 ~할 수 있다)', '意味がある(의미가 있다)', '当然だ(당연하다)' 등 그 가치와 의의를 긍정적으로 평가하는 내용이 주로 이어집니다.",
+      "formation": "동사 て형 + こそ | い형용사 어간(い 탈락) + くてこそ | な형용사 + でこそ | 명사 + でこそ",
+      "examples": [
+        {
+          "translation": "공부를 해야만 비로소 시험에 합격할 수 있다."
+        },
+        {
+          "translation": "솔직해져야 비로소 상대방의 마음을 이해할 수 있습니다."
+        },
+        {
+          "translation": "조용해야만 비로소 마음이 안정된다."
+        },
+        {
+          "translation": "친구이기 때문에 비로소 서로 돕는 것이 당연하다."
+        }
+      ]
+    },
+    "ja_でしょうがない_82": {
+      "title": "～でしょうがない (〜deshou ga nai)",
+      "shortExplanation": "감정이나 감각, 신체적 느낌이 억누를 수 없을 만큼 몹시 강하게 일어남을 나타내며, '너무 ~해서 어쩔 수가 없다', '~해 미치겠다', '~해 죽겠다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～でしょうがない'(또는 '～てしょうがない', '～て仕様がない')는 동사나 형용사의 て형에 결합하여, 내부에서 자연스럽게 솟구쳐 오르는 감정, 감각, 생리적 욕구가 너무 강렬하여 스스로 억누르거나 제어할 수 없는 상태임을 나타냅니다('너무 ~해서 참을 수가 없다', '~해서 미치겠다'). 주로 불안, 기쁨, 걱정 등의 심리 상태나 졸림, 통증 등의 감각을 나타내는 어휘와 자주 쓰이며, 회화체에서 널리 쓰입니다.",
+      "formation": "い형용사 어간(い 탈락) + くてしょうがない | な형용사 + でしょうがない / ではしょうがない | 동사 て형 + しょうがない",
+      "examples": [
+        {
+          "translation": "오늘은 한가해서 견딜 수가 없다."
+        },
+        {
+          "translation": "시험이 다가오니까 불안해서 어쩔 수가 없다."
+        },
+        {
+          "translation": "머리가 너무 아파서 견딜 수가 없으니 조퇴하고 싶다."
+        },
+        {
+          "translation": "새로운 게임이 너무 궁금해서 신경이 쓰여 견딜 수가 없다."
+        }
+      ]
+    },
+    "ja_でたまらない_83": {
+      "title": "～でたまらない (〜de tamaranai)",
+      "shortExplanation": "억누를 수 없을 만큼 감정이나 감각, 욕구가 극도에 달하여 참을 수 없음을 나타내며, '너무 ~해서 견딜 수가 없다', '~해 죽겠다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～でたまらない'는 '참다, 견디다'를 뜻하는 동사 '堪る(たまる)'의 부정형에서 파생된 표현으로, 형용사나 동사의 て형에 결합합니다. 신체적 감각(더위, 추위, 가려움), 내면의 감정(기쁨, 그리움, 분노), 또는 강한 욕구가 한계에 달하여 스스로 억누르거나 견디기 힘든 상태를 나타냅니다('너무 ~해서 견딜 수가 없다'). 주로 1인칭 화자의 직접적인 실감에 사용되며, '～てかなわない'와 달리 긍정적인 감정(너무 좋다, 너무 기쁘다)에도 폭넓게 사용됩니다.",
+      "formation": "い형용사 어간(い 탈락) + くてたまらない | な형용사 + でたまらない | 동사 て형 + たまらない",
+      "examples": [
+        {
+          "translation": "이 더위는 정말 너무 더워서 참을 수가 없다."
+        },
+        {
+          "translation": "그녀를 너무 좋아해서 견딜 수가 없다."
+        },
+        {
+          "translation": "이 방은 너무 추워서 견딜 수가 없다."
+        },
+        {
+          "translation": "그의 태도를 보고 있자니 화가 나서 견딜 수가 없다."
+        }
+      ]
+    },
+    "ja_でならない_84": {
+      "title": "～でならない (〜de naranai)",
+      "shortExplanation": "내면 깊은 곳에서 어떤 감정이나 생각이 자연스럽게 솟구쳐 올라 스스로 억누를 수 없음을 나타내며, '어찌할 수 없이 ~하다', '너무나도 ~하다', '자꾸만 ~한 생각이 들다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～でならない'(또는 '～てならない')는 형용사나 동사의 て형에 결합하여, 어떤 감정이나 생각이 본인의 의지와 상관없이 마음속 깊은 곳에서 자연발생적으로 우러나와 억누를 길이 없음을 나타내는 문어체적 표현입니다('도무지 ~해서 견딜 수 없다', '자꾸만 ~하게 느껴진다'). 주로 '心配だ(걱정스럽다)', '残念だ(유감스럽다)', '不思議だ(신기하다)', '気になる(신경 쓰이다)', '思える(생각되다)' 등 자발적 감정이나 인식을 나타내는 말과 결합하여 깊은 심정을 나타냅니다.",
+      "formation": "い형용사 어간(い 탈락) + くてならない | な형용사 + でならない | 동사 て형 + ならない",
+      "examples": [
+        {
+          "translation": "그의 연기가 너무나도 훌륭해서 감탄을 금할 수 없다."
+        },
+        {
+          "translation": "합격자 발표가 신경이 쓰여서 견딜 수가 없다."
+        },
+        {
+          "translation": "친구가 이사를 가 버려서 몹시 쓸쓸하기 그지없다."
+        },
+        {
+          "translation": "첫 해외여행이라 너무나도 불안하다."
+        }
+      ]
+    },
+    "ja_でばかりはいられない_85": {
+      "title": "～でばかりはいられない (〜de bakari wa irarenai)",
+      "shortExplanation": "언제까지나 그 상태에만 머물러 있거나 한 가지 일만 계속하고 있을 수는 없음을 나타내며, '마냥 ~하고만 있을 수는 없다', '~하기만 할 수는 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～でばかりはいられない'(또는 '～てばかりはいられない')는 한정이나 반복을 뜻하는 'ばかり(오직, 마냥)'와 지속의 부정인 '～てはいられない(~하고 있을 수는 없다)'가 합쳐진 형태입니다. 슬픔에 젖어 있거나, 쉬거나, 남에게 의존하는 등의 한 가지 상태에만 언제까지고 머물러 있을 수는 없으며, 이제는 현실을 직시하고 다음 행동이나 책임을 다해야 한다는 자각과 결의를 나타냅니다('마냥 ~만 하고 있을 순 없다').",
+      "formation": "동사 て형 + ばかりはいられない | い형용사 어간(い 탈락) + くてばかりはいられない | な형용사 + でばかりはいられない | 명사 + でばかりはいられない",
+      "examples": [
+        {
+          "translation": "언제까지나 도움을 받기만 하고 있을 수는 없다."
+        },
+        {
+          "translation": "좋아하는 일만 골라서 하고 있을 수는 없다."
+        },
+        {
+          "translation": "부모님에게 의지하기만 하고 있을 수는 없다."
+        },
+        {
+          "translation": "쉬고만 있을 수는 없다. 일도 해야지."
+        }
+      ]
+    },
+    "ja_ではないか_86": {
+      "title": "～ではないか (〜de wa nai ka)",
+      "shortExplanation": "자신의 의견을 강하게 주장하거나 상대방의 동의를 구할 때, 또는 새로운 사실을 발견하고 놀라움을 표할 때 쓰이며, '~이지 않은가', '~아닌가!'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ではないか'(구어에서는 '～じゃないか' 또는 정중형 '～ではないですか')는 문장 끝에 붙어 화자의 주관적 태도를 나타내며, 맥락에 따라 다음과 같이 쓰입니다. 첫째, 자신의 생각이나 주장을 강하게 내세우며 상대방의 동의를 구할 때 씁니다('~이지 않은가?'). 둘째, 상대방의 잘못이나 놓친 부분을 가볍게 지적하거나 따질 때 씁니다. 셋째, 미처 생각지 못했던 사실이나 물건을 우연히 발견하고 감탄이나 놀라움을 나타낼 때 쓰입니다('이것 봐, ~잖아!').",
+      "formation": "동사 보통형 + ではないか | い형용사 + ではないか | な형용사 어간 + ではないか | 명사 + ではないか",
+      "examples": [
+        {
+          "translation": "그는 우수한 학생이지 않은가?"
+        },
+        {
+          "translation": "이 요리 맛있지 않은가!"
+        },
+        {
+          "translation": "당신은 그녀의 친구이지 않은가."
+        },
+        {
+          "translation": "내일은 쉬는 날이지 않은가."
+        }
+      ]
+    },
+    "ja_てはならない_87": {
+      "title": "～てはならない (〜te wa naranai)",
+      "shortExplanation": "법률, 규정, 사회적 도덕이나 원칙에 의거하여 어떤 행위를 엄격히 금지함을 나타내며, '결코 ~해서는 안 된다', '~하면 안 된다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～てはならない'는 동사의 て형에 결합하여, 법률이나 규칙, 혹은 사회적 통념 및 윤리적 기준에 비추어 볼 때 어떤 행위가 용납되지 않음을 엄격히 금지하는 문어체 표현입니다('절대로 ~해서는 안 된다'). 매우 단호하고 권위 있는 어조를 띠며, 법령, 공공 규정, 행동 강령, 훈계 등에서 널리 사용됩니다. 일상적인 개인 간의 가벼운 금지에는 '～てはいけない'를 씁니다.",
+      "formation": "동사 て형 + はならない",
+      "examples": [
+        {
+          "translation": "이곳에서 담배를 피워서는 안 된다."
+        },
+        {
+          "translation": "비밀을 남에게 말해서는 안 된다."
+        },
+        {
+          "translation": "이 방에 들어가서는 안 된다."
+        },
+        {
+          "translation": "음주 운전을 해서는 안 된다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_っこない_73": {
+      "title": "～っこない (〜kkonai)",
+      "shortExplanation": "「絶対に〜できるはずがない」「いくら何でも〜するわけがない」と、強い確信をもって可能性を全否定する表現です。",
+      "longExplanation": "「～っこない」は動詞の連用形（ます形語幹）に接続し、話し手の主観的な強い確信に基づいて「絶対に〜するはずがない」「到底〜できっこない」と可能性を完全に否定する表現です。日常会話や親しい間柄でのくだけた口語表現としてよく使われ、客観的な根拠というよりは話し手の強い気持ちや判断が前面に出ます。",
+      "formation": "動詞ます形語幹 ＋ っこない",
+      "examples": [
+        {
+          "translation": "こんなに雪が降っているんだから、学校に間に合いっこない。"
+        },
+        {
+          "translation": "彼は泳げないので、プールの向こう側に泳いで行きっこない。"
+        },
+        {
+          "translation": "彼女はとても怖がりなので、一人で夜の公園に行きっこない。"
+        },
+        {
+          "translation": "この短い時間で、その本を全部読むことはできっこない。"
+        }
+      ]
+    },
+    "ja_つつ_74": {
+      "title": "～つつ (〜tsutsu)",
+      "shortExplanation": "二つの動作が並行して同時に行われていること（「〜しながら」）や、前後の事柄が矛盾・相反していること（逆接「〜けれども」）を表すやや改まった表現です。",
+      "longExplanation": "「～つつ」は動詞の連用形（ます形語幹）に接続し、主に書き言葉や改まった場面で用いられる表現です。主な用法として、①二つの動作が同時並行して行われることを表す「〜しながら（同時進行）」、②心の中で思っていることと実際の行動が矛盾していることを表す逆接の「〜けれども／〜と思いながらも（逆接）」の二つがあります。逆接用法では「思う」「知る」などの心理動詞とともによく用いられます。",
+      "formation": "動詞ます形語幹 ＋ つつ",
+      "examples": [
+        {
+          "translation": "彼はテレビを見つつ、宿題をしていました。"
+        },
+        {
+          "translation": "最近忙しいと思いつつ、毎日運動を続けています。"
+        },
+        {
+          "translation": "彼女は泣きつつ、笑顔で別れを告げた。"
+        },
+        {
+          "translation": "雨に濡れつつ、彼は歩き続けました。"
+        }
+      ]
+    },
+    "ja_つつある_75": {
+      "title": "～つつある (〜tsutsu aru)",
+      "shortExplanation": "ある変化や事態が今まさに継続して進んでいる過程にあることを表し、「次第に〜してきている」「〜という方向へ変化しつつある」という意味を表す硬い表現です。",
+      "longExplanation": "「～つつある」は動詞の連用形（ます形語幹）に接続し、ある変化の過程が現在進行形として進んでいることを表す硬い書き言葉です。「暖かくなる」「回復する」「増加する」「発展する」といった変化を表す動詞に接続し、事態が少しずつその方向へ動いている実態を客観的・公式的に述べる際に用いられます。ニュースや論説文で多用されます。",
+      "formation": "動詞ます形語幹 ＋ つつある",
+      "examples": [
+        {
+          "translation": "地球温暖化は進行しつつある。"
+        },
+        {
+          "translation": "この町は急速に発展しつつある。"
+        },
+        {
+          "translation": "子供たちは成長しつつある。"
+        },
+        {
+          "translation": "景気が回復しつつある。"
+        }
+      ]
+    },
+    "ja_っぱなし_76": {
+      "title": "～っぱなし (〜ppanashi)",
+      "shortExplanation": "本来なら後始末や次の動作をすべきなのに、そのまま放置している状態を表したり、ある動作や状態が途切れずずっと続いていることを表します。",
+      "longExplanation": "「～っぱなし」は動詞の連用形（ます形語幹）に接続し、「〜したまま放置する」という意味を表す口語表現です。通常であれば片付けたり元の状態に戻したりすべき後処置を怠り、そのままの状態が続いていることに対して、非難・不満・反省などの感情を込めて使われることが多くあります（例：出しっぱなし、つけっぱなし）。また、「立ちっぱなし」「歩きっぱなし」のように、ある動作や負荷のかかる状態が休みなく継続していることを表す用法もあります。",
+      "formation": "動詞ます形語幹 ＋ っぱなし （＋ だ／にする／で）",
+      "examples": [
+        {
+          "translation": "窓を開けっぱなしにして、部屋が寒くなってしまった。"
+        },
+        {
+          "translation": "彼は音楽を聴くのが好きで、いつもイヤホンをつけっぱなしです。"
+        },
+        {
+          "translation": "子供はおもちゃを床に置きっぱなしで、片付けなかった。"
+        },
+        {
+          "translation": "昨夜は忙しかったので、テレビをつけっぱなしにして寝てしまった。"
+        }
+      ]
+    },
+    "ja_っぽい_77": {
+      "title": "～っぽい (〜ppoi)",
+      "shortExplanation": "その性質、傾向、感じを強く帯びていることを表し、「〜のように見える」「〜の感じがする」「〜しやすい」という意味を表すくだけた表現です。",
+      "longExplanation": "「～っぽい」は名詞、形容詞語幹、動詞の連用形（ます形語幹）に付く接尾辞で、親しい間柄のくだけた会話でよく使われます。主に①本来はそうではないが外見や雰囲気がそれに似ている（「大人っぽい」「子供っぽい」）、②そのような色合いや性質を帯びている（「白っぽい」「油っぽい」「安っぽい」）、③ある感情や行動を起こしやすい性格・傾向にある（「怒りっぽい」「忘れっぽい」）といったニュアンスを表します。",
+      "formation": "名詞 ＋ っぽい ｜ 動詞ます形語幹 ＋ っぽい ｜ い形容詞語幹 ＋ っぽい ｜ な形容詞語幹 ＋ っぽい",
+      "examples": [
+        {
+          "translation": "彼女は大人っぽい服を着ている。"
+        },
+        {
+          "translation": "この説明は分かりにくっぽい。"
+        },
+        {
+          "translation": "彼は疲れたっぽい顔をしている。"
+        },
+        {
+          "translation": "この部屋は寒っぽい感じがする。"
+        }
+      ]
+    },
+    "ja_ていられない_78": {
+      "title": "～ていられない (〜te irarenai)",
+      "shortExplanation": "状況が逼迫していたり精神的に耐えられなかったりして、ある動作をこれ以上続けたりその状態のままでいたりすることができないことを表します。",
+      "longExplanation": "「～ていられない」は動詞のて形に接続し、「〜ている」の可能否定「〜ていられる」の否定形です。時間的・精神的な余裕がないため、あるいは事態が急を告げているために、ある動作や状態をのんびりと継続することができないという切迫した気持ちを表します（例：「待っていられない」「黙っていられない」）。現状を打破するために直ちに行動を起こさなければならないという意思や焦燥感が含まれます。",
+      "formation": "動詞て形 ＋ いられない",
+      "examples": [
+        {
+          "translation": "こんなに忙しいのに、無理に遊んでいられない。"
+        },
+        {
+          "translation": "寒すぎて、外で待っていられない。"
+        },
+        {
+          "translation": "この問題は重要だから、放っておいていられない。"
+        },
+        {
+          "translation": "彼女の態度が我慢できず、黙っていられない。"
+        }
+      ]
+    },
+    "ja_てかなわない_79": {
+      "title": "～てかなわない (〜te kanawanai)",
+      "shortExplanation": "ある事態や感情の程度が甚だしく、我慢できない、やりきれないという迷惑や苦痛の気持ちを表し、「〜で我慢できない」「〜でたまらない」という意味を表します。",
+      "longExplanation": "「～てかなわない」は形容詞や動詞のて形に接続し、「敵わない（対抗できない・太刀打ちできない）」という語源の通り、ある状態や事態が極端で我慢の限界を超えているという強い困惑や不満、苦痛を表す表現です。「暑くてかなわない」「うるさくてかなわない」「不便でかなわない」のように、話し手にとって不快・迷惑な状況に対して用いられるのが一般的です。",
+      "formation": "い形容詞語幹 ＋ くてかなわない ｜ な形容詞 ＋ でかなわない ｜ 動詞て形 ＋ かなわない",
+      "examples": [
+        {
+          "translation": "こんなに暑くてかなわない。"
+        },
+        {
+          "translation": "彼の話は失礼すぎてかなわない。"
+        },
+        {
+          "translation": "映画があまりに感動的で、忘れられなくてかなわない。"
+        },
+        {
+          "translation": "彼女の笑顔がまぶしくてかなわない。"
+        }
+      ]
+    },
+    "ja_てからでないと_80": {
+      "title": "～てからでないと (〜te kara denai to)",
+      "shortExplanation": "前の事柄を完了した後でなければ、後ろの事柄を行うことができない（実現しない）という前提条件を表し、「〜した上でなければ」「〜してからでなければ」という意味を表します。",
+      "longExplanation": "「～てからでないと」（あるいは「〜てからでなければ」）は動詞のて形に接続し、後項の事柄を行うための絶対的な前提条件・順序を提示する表現です。後項には「〜できない」「〜わけにはいかない」といった否定的な意味を表す文が必ず続き、「まず前項の動作を完了させない限り、後項の実現はあり得ない」という強い制約を表します。",
+      "formation": "動詞て形 ＋ からでないと ／ からでなければ",
+      "examples": [
+        {
+          "translation": "宿題をしてからでないと、遊びに行けません。"
+        },
+        {
+          "translation": "食事をしてからでないと、デザートを食べられません。"
+        },
+        {
+          "translation": "チケットを買ってからでないと、映画を見られません。"
+        },
+        {
+          "translation": "試験が終わってからでないと、休みを取れません。"
+        }
+      ]
+    },
+    "ja_てこそ_81": {
+      "title": "～てこそ (〜te koso)",
+      "shortExplanation": "その行為を実際にしてはじめて、あるいはその条件が揃ってはじめて本来の意義や価値が生まれることを強調し、「〜してはじめて本当の〜と言える」という意味を表します。",
+      "longExplanation": "「～てこそ」は動詞のて形などに強調のとりたて助詞「こそ」が接続した構文で、「それを実際に行ってはじめて」「その条件が満たされてはじめて、真価を発揮する／本来の意義がある」ということを力説する表現です。後項には「意味がある」「一人前と言える」「相手の気持ちがわかる」のように、努力や経験を経て得られる積極的な評価や成果が述べられることが多くあります。",
+      "formation": "動詞て形 ＋ こそ ｜ い形容詞語幹 ＋ くてこそ ｜ な形容詞 ＋ でこそ ｜ 名詞 ＋ でこそ",
+      "examples": [
+        {
+          "translation": "勉強してこそ、テストに合格できる。"
+        },
+        {
+          "translation": "素直になってこそ、相手の気持ちが分かります。"
+        },
+        {
+          "translation": "静かでこそ、心が落ち着く。"
+        },
+        {
+          "translation": "友達でこそ、お互いに助け合うのは当然だ。"
+        }
+      ]
+    },
+    "ja_でしょうがない_82": {
+      "title": "～でしょうがない (〜deshou ga nai)",
+      "shortExplanation": "ある感情や感覚、生理的欲求が自然と強く湧き上がり、自分では抑えられない状態を表し、「非常に〜だ」「〜でたまらない」という意味を表す口語的な表現です。",
+      "longExplanation": "「～でしょうがない」（あるいは「〜てしょうがない」）は形容詞や動詞のて形に接続し、「仕様がない（方法がない）」という言葉通り、自発的に湧き起こる感情や生理的欲求、身体的感覚が非常に強烈で、理性や意志では抑えようがない状態を表す表現です。「不安で（しょうがない）」「気になって（しょうがない）」「痛くて（しょうがない）」のように用いられ、話し手の切実な実感を伝えます。",
+      "formation": "い形容詞語幹 ＋ くてしょうがない ｜ な形容詞 ＋ で（は）しょうがない ｜ 動詞て形 ＋ しょうがない",
+      "examples": [
+        {
+          "translation": "今日は暇で(は)しょうがない。"
+        },
+        {
+          "translation": "試験が近いから不安でしょうがない。"
+        },
+        {
+          "translation": "頭が痛くてしょうがないから、早退したい。"
+        },
+        {
+          "translation": "新しいゲームが気になってしょうがない。"
+        }
+      ]
+    },
+    "ja_でたまらない_83": {
+      "title": "～でたまらない (〜de tamaranai)",
+      "shortExplanation": "ある感情や身体的感覚、欲求が極めて強烈で、我慢することができない状態を表し、「非常に〜だ」「〜て我慢できない」という意味を表します。",
+      "longExplanation": "「～でたまらない」は形容詞や動詞のて形に接続し、「堪える（我慢する）」の否定形から成り立っています。身体的な感覚（暑い、痛い、喉が渇いた）や内面的な感情（嬉しい、好きだ、悔しい）、強い願望（〜したくてたまらない）が極限に達し、これ以上我慢できない、抑えきれない状態を表します。迷惑や苦痛に偏る「〜てかなわない」とは異なり、「〜てたまらない」は喜びや好意などの肯定的な強い感情にも自然に使うことができます。",
+      "formation": "い形容詞語幹 ＋ くてたまらない ｜ な形容詞 ＋ でたまらない ｜ 動詞て形 ＋ たまらない",
+      "examples": [
+        {
+          "translation": "この暑さは本当に暑くてたまらない。"
+        },
+        {
+          "translation": "彼女のことが好きでたまらない。"
+        },
+        {
+          "translation": "この部屋は寒くてたまらない。"
+        },
+        {
+          "translation": "彼の態度を見ていると、腹が立ってたまらない。"
+        }
+      ]
+    },
+    "ja_でならない_84": {
+      "title": "～でならない (〜de naranai)",
+      "shortExplanation": "ある感情や思いが心の中から自然と湧き上がってきて、それを理性や意志で抑えることができない状態を表し、「思えて仕方がない」「非常に〜だ」という意味を表す文語的な表現です。",
+      "longExplanation": "「～でならない」（あるいは「〜てならない」）は形容詞や動詞のて形に接続し、ある感情や思考が心の底から自発的に湧き起こり、自分の意志ではどうしても抑えることができない状態を表すやや硬い表現です。主観的な強い感情を表しますが、「心配でならない」「残念でならない」「思えてならない」「気になってならない」のように自発動詞や心理形容詞と結びつくことが多く、理屈ではなく自然とそう感じられてしまうというニュアンスを含みます。",
+      "formation": "い形容詞語幹 ＋ くてならない ｜ な形容詞 ＋ でならない ｜ 動詞て形 ＋ ならない",
+      "examples": [
+        {
+          "translation": "彼の演技が素晴らしくてならない。"
+        },
+        {
+          "translation": "合格発表が気になってならない。"
+        },
+        {
+          "translation": "友達が引っ越してしまって、寂しくてならない。"
+        },
+        {
+          "translation": "初めての海外旅行で、不安でならない。"
+        }
+      ]
+    },
+    "ja_でばかりはいられない_85": {
+      "title": "～でばかりはいられない (〜de bakari wa irarenai)",
+      "shortExplanation": "いつまでもその動作を続けたりその状態に甘んじたりしているわけにはいかないという自戒や決意を表し、「ずっと〜しているわけにはいかない」「〜ばかりしている状態から脱しなければならない」という意味を表します。",
+      "longExplanation": "「～でばかりはいられない」（あるいは「〜てばかりはいられない」）は、限定を表す「ばかり」と「〜てはいられない」が結びついた構文です。悲しみに暮れたり、他人に甘えたり、休んだりといった一つの状態にいつまでも留まり続けることは許されない、現実に立ち向かって次の行動や義務を果たさなければならないという、強い自戒や気持ちの切り替えを表現します。",
+      "formation": "動詞て形 ＋ ばかりはいられない ｜ い形容詞語幹 ＋ くてばかりはいられない ｜ な形容詞 ＋ でばかりはいられない ｜ 名詞 ＋ でばかりはいられない",
+      "examples": [
+        {
+          "translation": "いつも助けてもらってばかりはいられない。"
+        },
+        {
+          "translation": "好きな仕事ばかりしてはいられない。"
+        },
+        {
+          "translation": "親に頼ってばかりはいられない。"
+        },
+        {
+          "translation": "休んでばかりはいられない。仕事もしなくちゃ。"
+        }
+      ]
+    },
+    "ja_ではないか_86": {
+      "title": "～ではないか (〜de wa nai ka)",
+      "shortExplanation": "自分の意見や主張を相手に強く主張したり同意を求めたりする用法や、意外な事実を発見して驚き・感嘆を表す用法があり、「〜ではないか」「〜じゃないか」という意味を表します。",
+      "longExplanation": "「～ではないか」（口語では「〜じゃないか」）は文末に用いられ、文脈やイントネーションによって多様なニュアンスを表します。主な用法として、①話し手の強い主張・意見を述べ相手に同意を促す用法（「〜ではないか」）、②相手への注意喚起や軽い非難・詰問の用法、③予想外の事実に直面して驚きや感動、新発見の喜びを声に出す詠嘆の用法（「〜ではないか！」）があります。",
+      "formation": "動詞普通形 ＋ ではないか ｜ い形容詞 ＋ ではないか ｜ な形容詞語幹 ＋ ではないか ｜ 名詞 ＋ ではないか",
+      "examples": [
+        {
+          "translation": "彼は優秀な学生ではないか。"
+        },
+        {
+          "translation": "この料理は美味しいではないか。"
+        },
+        {
+          "translation": "あなたは彼女の友達ではないか。"
+        },
+        {
+          "translation": "明日は休みではないか。"
+        }
+      ]
+    },
+    "ja_てはならない_87": {
+      "title": "～てはならない (〜te wa naranai)",
+      "shortExplanation": "法律や規則、道徳的な観点から「決して〜してはいけない」と強い禁止を命じる表現で、「〜してはだめだ」の格式高く厳格な言い方です。",
+      "longExplanation": "「～てはならない」は動詞のて形に接続し、法律、社会規範、道徳的責任などに基づき、強い義務感をもってある行為を厳格に禁止する硬い表現です。「〜してはいけない」に比べて非常に重々しく格式のある文体で、公的な規則・標語、法律の条文、訓戒、論文や演説などで多用されます。個人の私的な日常会話における軽い注意にはあまり用いられません。",
+      "formation": "動詞て形 ＋ はならない",
+      "examples": [
+        {
+          "translation": "ここでタバコを吸ってはならない。"
+        },
+        {
+          "translation": "秘密を他人に話してはならない。"
+        },
+        {
+          "translation": "この部屋に入ってはならない。"
+        },
+        {
+          "translation": "飲酒運転をしてはならない。"
+        }
+      ]
+    }
+  }
+}

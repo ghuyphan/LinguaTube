@@ -6,6 +6,8 @@
 
 .icon {
     flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
     // Softer, friendlier stroke
     stroke-width: 1.5;
     stroke-linecap: round;
@@ -15,15 +17,13 @@
     &.icon--heart-filled,
     &.icon--star-filled,
     &.icon--fire,
-    &.icon--bookmark-filled,
-    &.icon--languages {
+    &.icon--bookmark-filled {
         fill: currentColor;
     }
 
     &.icon--heart-filled,
     &.icon--star-filled,
-    &.icon--google,
-    &.icon--languages {
+    &.icon--google {
         stroke: none;
     }
 }

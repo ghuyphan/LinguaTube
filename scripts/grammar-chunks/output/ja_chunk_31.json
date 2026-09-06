@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_くせに_58": {
+      "title": "～くせに (〜kuse ni)",
+      "shortExplanation": "Biểu thị sự trách móc, mỉa mai hoặc khinh khi khi một người làm điều trái ngược với thân phận, khả năng hay lời nói của mình; 'thế mà lại', 'vậy mà', 'mặc dù... nhưng mà...'.",
+      "longExplanation": "Mẫu ngữ pháp '～くせに' được sử dụng để thể hiện sự bất mãn, chê trách, mỉa mai hoặc coi thường đối với ai đó khi hành động hay tình trạng của họ mâu thuẫn hoàn toàn với địa vị, lời nói hay bản chất vốn có của họ. Cấu trúc này thường dùng trong văn nói thân mật hoặc khẩu ngữ hàng ngày và mang sắc thái chỉ trích khá gay gắt. Chủ ngữ ở hai vế thường phải là cùng một người hoặc nhóm đối tượng và người nói thường không dùng để tự nói về mình (trừ trường hợp tự trào).",
+      "formation": "Động từ thể thông thường + くせに | Tính từ đuôi い + くせに | Tính từ đuôi な + な / の + くせに | Danh từ + の + くせに",
+      "examples": [
+        {
+          "translation": "Anh ấy lúc nào cũng đến muộn, thế mà lại ghét bị người khác bắt phải đợi."
+        },
+        {
+          "translation": "Miệng thì nói xin lỗi, vậy mà lại tiếp tục lặp lại đúng điều tương tự."
+        },
+        {
+          "translation": "Anh ấy tuy cao ráo thế mà chơi bóng rổ lại dở tệ."
+        },
+        {
+          "translation": "Quán này nổi tiếng là thế mà dịch vụ lại quá tệ."
+        }
+      ]
+    },
+    "ja_ことから_59": {
+      "title": "～ことから (〜koto kara)",
+      "shortExplanation": "Biểu thị nguyên cớ, căn cứ hoặc nguồn gốc để đưa ra một phán đoán, kết luận hoặc đặt tên gọi; 'chính vì do...', 'từ chỗ... mà', 'bởi vì... nên'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことから' được dùng để nêu lên lý do, căn cứ hoặc khởi nguồn thực tế dẫn tới một kết luận, sự phán đoán, tên gọi hoặc sự biến chuyển của một sự việc ('bắt nguồn từ thực tế là...'). Thường dùng trong các văn bản mang tính trang trọng, báo chí, văn viết hay thuyết minh giải thích nguồn gốc, lai lịch.",
+      "formation": "Động từ thể thông thường + ことから | Tính từ đuôi い + ことから | Tính từ đuôi な + なことから | Danh từ + であることから / のことから",
+      "examples": [
+        {
+          "translation": "Chính nhờ tập thể dục hàng ngày nên cơ thể anh ấy rất khỏe mạnh."
+        },
+        {
+          "translation": "Do dịch vụ của quán này rất tốt nên lúc nào cũng đông khách."
+        },
+        {
+          "translation": "Từ chỗ cô ấy rất tốt bụng nên ai ai cũng quý mến cô."
+        },
+        {
+          "translation": "Bởi vì danh tiếng của công ty đó rất tốt nên nơi đây rất được ưa chuộng làm điểm đến xin việc."
+        }
+      ]
+    },
+    "ja_ことに_60": {
+      "title": "～ことに (〜koto ni)",
+      "shortExplanation": "Biểu thị cảm xúc, sự ngạc nhiên, xúc động hay phẫn nộ trước một sự việc; 'thật là... biết bao', 'ngạc nhiên/tức giận trước việc...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことに' được dùng để nhấn mạnh cảm xúc, tâm trạng hoặc phản ứng chủ quan của người nói đối với một sự tình hoặc sự kiện nào đó. Mẫu này có thể đứng ở vế trước làm trạng ngữ nêu cảm xúc (dạng: Tính từ / Động từ + ことに, như 驚いたことに - thật ngạc nhiên là...), hoặc đứng sau mệnh đề trần thuật một sự việc để làm đối tượng cho động từ chỉ cảm xúc ở vế sau (như ...ことに驚いた / 感動した - ngạc nhiên / cảm động trước việc...).",
+      "formation": "Động từ thể thông thường + ことに | Tính từ đuôi い + ことに | Tính từ đuôi な + なことに",
+      "examples": [
+        {
+          "translation": "Tôi đã vô cùng ngạc nhiên trước việc anh ấy đột ngột về nước."
+        },
+        {
+          "translation": "Tôi rất xúc động trước việc cô ấy giành giải nhất."
+        },
+        {
+          "translation": "Tôi bực mình trước việc anh ta lúc nào cũng đi muộn."
+        },
+        {
+          "translation": "Tôi đã không nhận ra việc cô ấy xinh đẹp đến nhường này."
+        }
+      ]
+    },
+    "ja_ことになっている_61": {
+      "title": "～ことになっている (〜koto ni natte iru)",
+      "shortExplanation": "Diễn tả quy định, quy tắc, tập quán xã hội hoặc kế hoạch dự định đã được ấn định; 'được quy định là...', 'theo luật/kế hoạch thì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ことになっている' diễn tả một sự việc đã được quyết định thành quy định, luật lệ, thỏa thuận của tập thể, tập quán xã hội hoặc một kế hoạch đã định sẵn từ trước mà các cá nhân phải tuân theo. Cấu trúc này nhấn mạnh tính khách quan của quy định hoặc kế hoạch đó, không phụ thuộc vào ý chí chủ quan tức thời của bản thân người nói.",
+      "formation": "Động từ thể thông thường + ことになっている | Tính từ đuôi い + ことになっている | Tính từ đuôi な + である / だという + ことになっている | Danh từ + である / だという + ことになっている",
+      "examples": [
+        {
+          "translation": "Ở Nhật Bản, việc lái xe bên tay trái được quy định thành luật."
+        },
+        {
+          "translation": "Theo quy định của công ty, nhân viên phải mặc đồng phục."
+        },
+        {
+          "translation": "Cô ấy theo kế hoạch sẽ tổ chức đám cưới vào ngày mai."
+        },
+        {
+          "translation": "Sản phẩm này được công nhận là có chất lượng cao."
+        }
+      ]
+    },
+    "ja_さえば_62": {
+      "title": "～さえ～ば (〜sae ~ba)",
+      "shortExplanation": "Diễn tả điều kiện duy nhất cần thiết, chỉ cần đáp ứng được điều kiện đó thì mọi chuyện khác đều ổn thỏa; 'chỉ cần... là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～さえ～ば' được dùng để nhấn mạnh một điều kiện tối thiểu hoặc duy nhất: chỉ cần điều kiện đó được thỏa mãn thì các yếu tố khác đều không còn là vấn đề, và kết quả mong muốn ở vế sau sẽ diễn ra. Cấu trúc có thể đi với danh từ ('Danh từ + さえ + Động từ thể điều kiện') hoặc động từ ('Động từ thể ます bỏ ます + さえすれば').",
+      "formation": "Danh từ + さえ + Thể điều kiện (ば) | Động từ thể ます (bỏ ます) + さえすれば / さえあれば",
+      "examples": [
+        {
+          "translation": "Chỉ cần có tiền là tôi thấy hạnh phúc rồi."
+        },
+        {
+          "translation": "Chỉ cần thi đỗ là tôi có thể tốt nghiệp."
+        },
+        {
+          "translation": "Chỉ cần tôi ăn nhiều rau là mẹ sẽ vui lòng."
+        },
+        {
+          "translation": "Chỉ cần được chi trả tiền đi lại là tôi sẵn sàng đi bất cứ đâu."
+        }
+      ]
+    },
+    "ja_ざるを得ない_63": {
+      "title": "～ざるを得ない (〜zaru wo enai)",
+      "shortExplanation": "Diễn tả tình thế bắt buộc, dù không muốn nhưng vì hoàn cảnh khách quan đành phải làm; 'đành phải...', 'buộc phải...', 'không thể không...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ざるを得ない' được dùng để diễn tả việc chủ ngữ không còn sự lựa chọn nào khác ngoài việc phải thực hiện một hành động nào đó, do áp lực từ hoàn cảnh, lý trí hoặc quy luật khách quan, dù trong lòng bản thân thực sự không hề muốn làm ('không đặng đừng'). Lưu ý cách chia: động từ chia về thể phủ định ない, bỏ ない thêm ざるを得ない; riêng động từ する chuyển thành せざるを得ない.",
+      "formation": "Động từ thể ない (bỏ ない) + ざるを得ない (Riêng する → せざるを得ない)",
+      "examples": [
+        {
+          "translation": "Công việc này sắp đến hạn chót rồi nên tôi đành phải làm thêm giờ."
+        },
+        {
+          "translation": "Vì tàu điện bị trễ nên tôi buộc phải đi taxi."
+        },
+        {
+          "translation": "Dù chưa hoàn toàn bị thuyết phục bởi lời giải thích của cô ấy, nhưng trước mắt tôi đành phải tin."
+        },
+        {
+          "translation": "Trong tình thế này, chúng tôi không thể không lập lại kế hoạch mới."
+        }
+      ]
+    },
+    "ja_ずにはいられない_64": {
+      "title": "～ずにはいられない (〜zu ni wa irarenai)",
+      "shortExplanation": "Diễn tả cảm xúc, ham muốn hay sự thôi thúc nội tâm quá mãnh liệt không thể kìm nén được; 'không thể không...', 'không kìm lòng được mà...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ずにはいられない' được dùng để diễn tả một cảm xúc, phản xạ tự nhiên hay sự thôi thúc từ bên trong mạnh đến mức chủ ngữ không thể nào kiềm chế hoặc kìm nén lại được, buộc phải thực hiện hành động đó ('không thể không làm', 'không chịu đựng nổi nếu không làm'). Lưu ý cách chia: động từ chuyển về thể phủ định ない, bỏ ない thêm ずにはいられない; riêng động từ する trở thành せずにはいられない.",
+      "formation": "Động từ thể ない (bỏ ない) + ずにはいられない (Riêng する → せずにはいられない)",
+      "examples": [
+        {
+          "translation": "Cứ hễ nghe bài hát này là tôi lại không kìm lòng được mà cất tiếng hát theo."
+        },
+        {
+          "translation": "Nhìn thấy cô ấy khóc, tôi không thể không an ủi cô ấy."
+        },
+        {
+          "translation": "Cuốn tiểu thuyết này cuốn hút đến mức tôi không thể ngừng đọc được."
+        },
+        {
+          "translation": "Cứ đứng trước món ăn ngon là anh ấy không thể nào cưỡng lại được mà phải ăn."
+        }
+      ]
+    },
+    "ja_そうにない_65": {
+      "title": "～そうにない (〜sou ni nai)",
+      "shortExplanation": "Diễn tả phán đoán chủ quan rằng một sự việc hầu như không có khả năng xảy ra; 'khó lòng...', 'dường như không thể...', 'không có vẻ gì là sẽ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～そうにない' (hoặc dạng nhấn mạnh hơn là '～そうにもない') là dạng phủ định của trợ động từ phỏng đoán '～そうだ'. Dùng để người nói đưa ra nhận định, đánh giá dựa trên tình hình thực tế rằng một hành động hoặc biến chuyển nào đó rất khó có khả năng xảy ra, triển vọng là vô cùng mong manh. Gắn vào thân động từ (thể ます bỏ ます) hoặc thân tính từ.",
+      "formation": "Động từ thể ます (bỏ ます) + そうにない | Tính từ đuôi い (bỏ い) + そうにない | Tính từ đuôi な + そうにない",
+      "examples": [
+        {
+          "translation": "Cơn mưa này dường như không có vẻ gì là sẽ tạnh."
+        },
+        {
+          "translation": "Có vẻ như anh ấy khó lòng mà đỗ kỳ thi này được."
+        },
+        {
+          "translation": "Món ăn này trông không có vẻ gì là ngon cả."
+        },
+        {
+          "translation": "Căn phòng này nhìn không có vẻ gì là sạch sẽ."
+        }
+      ]
+    },
+    "ja_たかと思ったら_66": {
+      "title": "～たかと思ったら (〜ta ka to omottara)",
+      "shortExplanation": "Diễn tả một sự việc diễn ra gần như ngay tức khắc sau một hành động khác khiến người nói bất ngờ; 'vừa mới... thì đã...', 'ngỡ là... ai ngờ đã...'.",
+      "longExplanation": "Mẫu ngữ pháp '～たかと思ったら' (hoặc dạng tương đương '～たと思うと') được dùng khi một sự việc vừa mới chớm xảy ra thì sự việc tiếp theo đã xảy ra gần như đồng thời, khiến người nói cảm thấy vô cùng bất ngờ hoặc ngạc nhiên trước tốc độ diễn tiến quá nhanh chóng của sự việc. Vế sau miêu tả sự việc bất ngờ đã xảy ra trong thực tế, không dùng câu mang tính ý chí, mệnh lệnh hay cầu khiến.",
+      "formation": "Động từ thể た + かと思ったら / かと思うと",
+      "examples": [
+        {
+          "translation": "Vừa mới bấm gọi điện thoại thì cô ấy đã lập tức nhấc máy."
+        },
+        {
+          "translation": "Vừa mới cất cánh xong thì chiếc máy bay đã bắt đầu rung lắc."
+        },
+        {
+          "translation": "Vừa mới bước ra ngoài đi chợ thì trời đã đổ mưa."
+        },
+        {
+          "translation": "Cứ ngỡ là vừa hoàn thành xong việc thì cấp trên lại giao thêm việc mới."
+        }
+      ]
+    },
+    "ja_たきり_67": {
+      "title": "～たきり (〜takiri)",
+      "shortExplanation": "Diễn tả một hành động sau khi diễn ra thì trạng thái đó cứ kéo dài liên tục và không hề lặp lại hay có tin tức gì nữa; 'kể từ sau khi... thì suốt', 'sau đó bặt vô âm tín'.",
+      "longExplanation": "Mẫu ngữ pháp '～たきり' (hoặc dạng nhấn mạnh '～たきり～ない') được gắn sau động từ thể quá khứ (thể た) để diễn tả việc một hành động đã diễn ra một lần trong quá khứ, nhưng kể từ thời điểm đó cho tới nay, trạng thái sau hành động đó vẫn kéo dài liên tục mà không có thêm sự tiến triển hay lặp lại nào khác ('kể từ đó đến nay bặt tăm', 'mới làm một lần rồi thôi hẳn'). Thường mang sắc thái tiếc nuối hoặc bất an vì sự việc không diễn ra như kỳ vọng thông thường.",
+      "formation": "Động từ thể た + きり (thường đi cùng dạng phủ định ở vế sau)",
+      "examples": [
+        {
+          "translation": "Kể từ sau khi nghỉ việc ở công ty, anh ấy bặt vô âm tín không hề liên lạc gì nữa."
+        },
+        {
+          "translation": "Sáng qua tôi gửi thư điện tử đi mà từ đó đến nay vẫn chưa thấy hồi âm."
+        },
+        {
+          "translation": "Kể từ lần đi biển hồi còn nhỏ, thấm thoát đã 20 năm trôi qua rồi."
+        },
+        {
+          "translation": "Kể từ sau khi chia tay cô ấy, tôi cũng không còn nghĩ về cô ấy nữa."
+        }
+      ]
+    },
+    "ja_だけあって_68": {
+      "title": "～だけあって (〜dake atte)",
+      "shortExplanation": "Diễn tả sự khen ngợi, tán thưởng khi một kết quả hoàn toàn xứng đáng với danh tiếng, năng lực hay nỗ lực; 'quả đúng là...', 'chẳng trách mà...'.",
+      "longExplanation": "Mẫu ngữ pháp '～だけあって' (hoặc dạng '～だけのことはある') được dùng để đưa ra lời khen ngợi, đánh giá cao, biểu thị rằng kết quả, chất lượng hay biểu hiện nhận được là hoàn toàn tương xứng với năng lực, danh tiếng, giá trị hoặc quá trình rèn luyện vốn có ('đúng như kỳ vọng đối với...'). Vế sau luôn mang ý nghĩa tích cực, khâm phục, không dùng cho sự chê bai hay kết quả tồi tệ.",
+      "formation": "Động từ thể thông thường + だけあって | Tính từ đuôi い + だけあって | Tính từ đuôi な + なだけあって | Danh từ + だけあって",
+      "examples": [
+        {
+          "translation": "Quả đúng là tiếng Nhật giỏi, anh ấy có thể nói chuyện trôi chảy hệt như người bản xứ."
+        },
+        {
+          "translation": "Chẳng trách nhà hàng này lại nổi tiếng đến thế, món ăn thực sự rất ngon."
+        },
+        {
+          "translation": "Đúng là người dày dặn kinh nghiệm, cô ấy đã giải quyết vấn đề đó một cách vô cùng dễ dàng."
+        },
+        {
+          "translation": "Xứng danh là một học sinh ưu tú, điểm thi của cậu ấy lúc nào cũng rất cao."
+        }
+      ]
+    },
+    "ja_だけましだ_69": {
+      "title": "～だけましだ (〜dake mashi da)",
+      "shortExplanation": "Biểu thị sự tự an ủi rằng dù tình cảnh hiện tại chưa phải là lý tưởng nhưng vẫn còn tốt chán so với tình huống tồi tệ hơn; 'vẫn còn may là...', 'dù sao cũng đỡ hơn...'.",
+      "longExplanation": "Mẫu ngữ pháp '～だけましだ' được dùng khi so sánh tình huống hiện tại với một kịch bản tồi tệ hoặc tồi tệ nhất có thể xảy ra. Mặc dù thực tế hiện tại chưa hoàn toàn làm người nói hài lòng hoặc vẫn có điều bất tiện, nhưng xét cho cùng thì vẫn còn cứu vãn được, vẫn còn may mắn và đỡ hơn rất nhiều so với trường hợp tồi tệ hơn ('vẫn còn an ủi là...', 'còn đỡ hơn là...').",
+      "formation": "Động từ thể thông thường + だけましだ | Tính từ đuôi い + だけましだ | Tính từ đuôi な + なだけましだ | Danh từ + なだけましだ / であるだけましだ",
+      "examples": [
+        {
+          "translation": "Chỉ thất bại thôi vẫn còn là may, may mà chưa dẫn đến chuyện gì nghiêm trọng hơn."
+        },
+        {
+          "translation": "Chỉ bị muộn thôi thì vẫn còn đỡ chán, dù sao vẫn hơn là hoàn toàn không đến được."
+        },
+        {
+          "translation": "Có được căn phòng nhỏ vẫn còn là may, dù sao vẫn tốt hơn là chẳng có chỗ ở nào."
+        },
+        {
+          "translation": "Anh ấy không kết hôn vẫn còn là may mắn, suýt chút nữa thì mọi chuyện rắc rối to rồi."
+        }
+      ]
+    },
+    "ja_たところ_70": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "Diễn tả việc sau khi thực hiện một hành động nào đó thì nhận thấy một kết quả, phản ứng hoặc phát hiện ra một sự thật mới; 'sau khi... thì thấy...'.",
+      "longExplanation": "Mẫu ngữ pháp '～たところ' gắn sau động từ thể quá khứ (thể た) để biểu thị việc sau khi thử làm hoặc vừa tiến hành một hành động nào đó, thì kết quả thực tế, phản hồi từ đối phương hay một sự việc khách quan nào đó đã bất ngờ hiện ra ('sau khi thử hỏi/làm thì phát hiện ra rằng...'). Vế sau thường là mệnh đề trần thuật miêu tả một sự thật khách quan hoặc một phát hiện mới, không dùng câu mang ý chí hay mệnh lệnh.",
+      "formation": "Động từ thể た + ところ",
+      "examples": [
+        {
+          "translation": "Sau khi dọn dẹp xong thì căn phòng đã trở nên sạch đẹp hơn hẳn."
+        },
+        {
+          "translation": "Sau khi hỏi anh ấy thì dường như anh ấy cũng không biết câu trả lời."
+        },
+        {
+          "translation": "Vừa mới nộp bài tập xong thì thầy giáo đã phát hiện ra chỗ sai."
+        },
+        {
+          "translation": "Sau khi ăn trưa xong, tôi cảm thấy trong người khoan khoái hơn hẳn."
+        }
+      ]
+    },
+    "ja_たとたん_71": {
+      "title": "～たとたん (〜ta totan)",
+      "shortExplanation": "Diễn tả một sự việc bất ngờ xảy ra ngay đúng thời điểm một hành động vừa mới diễn ra xong; 'ngay khi vừa... thì lập tức...', 'đúng vào lúc...'.",
+      "longExplanation": "Mẫu ngữ pháp '～たとたん' (hoặc '～たとたんに') gắn sau động từ thể quá khứ (thể た) để biểu thị rằng ngay đúng khoảnh khắc một hành động vừa dứt điểm thì một sự việc khác đã đột ngột xảy ra. Sự việc ở vế sau thường là biến cố bất ngờ ngoài tầm kiểm soát của người nói, do đó không dùng câu thể hiện ý chí, mục đích hay mệnh lệnh.",
+      "formation": "Động từ thể た + とたん / とたんに",
+      "examples": [
+        {
+          "translation": "Vừa mở cửa ra một cái thì trời bỗng đổ cơn mưa."
+        },
+        {
+          "translation": "Ngay lúc vừa bấm gọi điện thoại thì máy bỗng hết pin."
+        },
+        {
+          "translation": "Đúng khoảnh khắc vừa gặp lại cô ấy thì bài hát kỷ niệm chợt vang lên."
+        },
+        {
+          "translation": "Ngay khi bài thi vừa kết thúc, tôi mới có thể thở phào nhẹ nhõm."
+        }
+      ]
+    },
+    "ja_だらけ_72": {
+      "title": "～だらけ (〜darake)",
+      "shortExplanation": "Diễn tả tình trạng đầy rẫy, ngập tràn những thứ không mong muốn, dơ bẩn hoặc tiêu cực khắp bề mặt hay không gian; 'toàn là...', 'đầy rẫy...'.",
+      "longExplanation": "Mẫu ngữ pháp '～だらけ' được gắn trực tiếp sau danh từ để biểu thị rằng một bề mặt, không gian hay một chỉnh thể nào đó bị bao phủ, ngập tràn hoặc dày đặc bởi một thứ gì đó. Hầu như luôn mang ý nghĩa tiêu cực, dùng cho những thứ không sạch sẽ, không như ý muốn hoặc mang tính sai sót, khuyết điểm (như rác rưởi, nếp nhăn, vết thương, lỗi sai...). Khác với '～まみれ' (chỉ dùng cho chất lỏng, bụi bẩn dính bết lên bề mặt), '～だらけ' dùng được cho cả các khái niệm trừu tượng như lỗi sai hay nợ nần.",
+      "formation": "Danh từ + だらけ (+ だ / の + Danh từ)",
+      "examples": [
+        {
+          "translation": "Phòng của anh ấy toàn là rác rưởi."
+        },
+        {
+          "translation": "Bãi biển này đầy rẫy đá lởm chởm nên rất khó bơi."
+        },
+        {
+          "translation": "Gương mặt của ông ấy hằn đầy những nếp nhăn."
+        },
+        {
+          "translation": "Quả táo này đầy những vết sâu cắn."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_くせに_58": {
+      "title": "～くせに (〜kuse ni)",
+      "shortExplanation": "表示对某人做出与其身份、能力或所说之话相违背的行为表达指责、不满或蔑视；“明明……却……”。",
+      "longExplanation": "句型“～くせに”用于对某人做出与其自身身份、地位、立场、能力或先前的言行完全不符甚至相悖的举动表达强烈的指责、不满、蔑视或讽刺之意。多用于非正式口语交际中，带有明显的负面贬义色彩。前后两项的主语原则上必须为同一个人或群体，且说话人通常不用来指责自己（自嘲时除外）。",
+      "formation": "动词普通形 + くせに | い形容词 + くせに | な形容词 + な / の + くせに | 名词 + の + くせに",
+      "examples": [
+        {
+          "translation": "他自己总是迟到，却讨厌让别人等他。"
+        },
+        {
+          "translation": "嘴上说着不好意思，却又在重蹈覆辙。"
+        },
+        {
+          "translation": "他个子明明挺高，篮球却打得很烂。"
+        },
+        {
+          "translation": "这家店明明很有名，服务却很差。"
+        }
+      ]
+    },
+    "ja_ことから_59": {
+      "title": "～ことから (〜koto kara)",
+      "shortExplanation": "表示做出某种判断、得出结论或命名的根据、起因或理由；“因为……”、“从……来看”、“由……可知”。",
+      "longExplanation": "句型“～ことから”用于说明某种事实、特征、由头构成了得出结论、做出判断、产生名称或某种状态变化的理由与依据（“源于……这一事实”）。常用于书面语、新闻报道以及解释事物来历、名称由来的说明性文体中，语气客观严谨。",
+      "formation": "动词普通形 + ことから | い形容词 + ことから | な形容词 + なことから | 名词 + であることから / のことから",
+      "examples": [
+        {
+          "translation": "因为他每天都坚持运动，所以身体很健壮。"
+        },
+        {
+          "translation": "由于这家店服务周到，所以总是座无虚席。"
+        },
+        {
+          "translation": "她为人非常亲切热心，因此受到大家的喜爱。"
+        },
+        {
+          "translation": "由于那家公司口碑极佳，所以作为就职去向非常受欢迎。"
+        }
+      ]
+    },
+    "ja_ことに_60": {
+      "title": "～ことに (〜koto ni)",
+      "shortExplanation": "表示对某件事态或结果所产生的强烈主观情感或心理反应；“对……感到……”、“令人……的是”。",
+      "longExplanation": "句型“～ことに”用于强调说话人对某种状况、事实或结果产生的主观情感反应（如惊讶、感动、愤怒等）。该句型既可以放在句首作情态状语（如“驚いたことに”令人吃惊的是），也可以接在事实从句之后，作为后项表示情感体验的动词（如驚く、感動する、腹が立つ等）的对象，表示“对某事感到……”。",
+      "formation": "动词普通形 + ことに | い形容词 + ことに | な形容词 + なことに",
+      "examples": [
+        {
+          "translation": "对他突然回国这件事，我感到十分惊讶。"
+        },
+        {
+          "translation": "得知她赢得了冠军，我深受感动。"
+        },
+        {
+          "translation": "对于他总是迟到这件事，我感到十分恼火。"
+        },
+        {
+          "translation": "我之前竟然没有察觉到她是如此美丽。"
+        }
+      ]
+    },
+    "ja_ことになっている_61": {
+      "title": "～ことになっている (〜koto ni natte iru)",
+      "shortExplanation": "表示法律法规、社会公约、组织规定或既定安排；“规定……”、“按规定要……”、“预定……”。",
+      "longExplanation": "句型“～ことになっている”用于表达已经确立的规则、制度、社会习俗、法律规章或既定的日程安排。它强调该决定是客观存在的外部约束，并非说话人个人的即时主观意志，所有人通常都需要遵守或按此执行。",
+      "formation": "动词普通形 + ことになっている | い形容词 + ことになっている | な形容词 + である / だという + ことになっている | 名词 + である / だという + ことになっている",
+      "examples": [
+        {
+          "translation": "在日本，规定车辆要靠左行驶。"
+        },
+        {
+          "translation": "按照公司规章，上班要穿制服。"
+        },
+        {
+          "translation": "按照安排，她明天将举行婚礼。"
+        },
+        {
+          "translation": "这款商品被公认为拥有高品质。"
+        }
+      ]
+    },
+    "ja_さえば_62": {
+      "title": "～さえ～ば (〜sae ~ba)",
+      "shortExplanation": "表示只要满足了这一最低限度的唯一条件，其他事情便不成问题；“只要……就……”。",
+      "longExplanation": "句型“～さえ～ば”用于强调只要满足了某一个特定或最低限度的充分条件，其他的一切就都能迎刃而解，后项所期望的结果或状态就能顺利实现。既可以接在名词后表示“只要有……”，也可以接在动词连用形后表示“只要做了……”。",
+      "formation": "名词 + さえ + 假定形（ば） | 动词连用形（ます形去掉ます） + さえすれば / さえあれば",
+      "examples": [
+        {
+          "translation": "只要有钱，我就感到很幸福。"
+        },
+        {
+          "translation": "只要考试合格，就能够毕业。"
+        },
+        {
+          "translation": "只要我多吃蔬菜，妈妈就会很高兴。"
+        },
+        {
+          "translation": "只要能帮我报销交通费，我去哪里都可以。"
+        }
+      ]
+    },
+    "ja_ざるを得ない_63": {
+      "title": "～ざるを得ない (〜zaru wo enai)",
+      "shortExplanation": "表示迫于客观形势或常理，尽管本心并不愿意，也别无选择只能去做；“不得不……”、“只得……”。",
+      "longExplanation": "句型“～ざるを得ない”表示虽然说话人主观上并不想做某事，但迫于客观事实、形势所迫或常识常理，除此以外别无他法，只能硬着头皮去做。接续方式为动词ない形去掉ない加“ざるを得ない”，特例为“する”变为“せざるを得ない”。具有较为郑重、偏书面语的语感。",
+      "formation": "动词ない形（去掉ない） + ざるを得ない（“する”变为“せざるを得ない”）",
+      "examples": [
+        {
+          "translation": "这项工作截稿期将近，不得不加班。"
+        },
+        {
+          "translation": "由于电车延误，只好乘坐了出租车。"
+        },
+        {
+          "translation": "虽然对她的解释心存疑虑，但眼下不得不先相信她。"
+        },
+        {
+          "translation": "在这种情况下，不得不重新制定新计划。"
+        }
+      ]
+    },
+    "ja_ずにはいられない_64": {
+      "title": "～ずにはいられない (〜zu ni wa irarenai)",
+      "shortExplanation": "表示内心的某种强烈感情、冲动或本能无法自我克制；“忍不住要……”、“不由得……”、“不能不……”。",
+      "longExplanation": "句型“～ずにはいられない”表示某种由内而发的冲动、情绪或自然反应极其强烈，以至于凭理智无论如何也无法压抑或克制，自然而然地付诸行动。接续方式为动词ない形去掉ない加“ずにはいられない”，特例为“する”变为“せずにはいられない”。多用于第一人称表达自身的不可遏制之情；若用于第三人称，通常后接“～ようだ”或“～らしい”等推测表达。",
+      "formation": "动词ない形（去掉ない） + ずにはいられない（“する”变为“せずにはいられない”）",
+      "examples": [
+        {
+          "translation": "一听到这首歌，我就忍不住要跟着唱起来。"
+        },
+        {
+          "translation": "看到她哭泣的样子，我就不由得想要去安慰她。"
+        },
+        {
+          "translation": "这部小说太有意思了，让人忍不住一口气读下去。"
+        },
+        {
+          "translation": "他一面对美食，就忍不住一定要尝一尝。"
+        }
+      ]
+    },
+    "ja_そうにない_65": {
+      "title": "～そうにない (〜sou ni nai)",
+      "shortExplanation": "表示根据当前情况判断，某事发生或实现的几率极低；“看起来不会……”、“几乎不可能……”、“难以……”。",
+      "longExplanation": "句型“～そうにない”（亦可加强语气为“～そうにもない”）是样态助动词“～そうだ”的否定形式。说话人根据亲眼所见的迹象或当前形势做出推测，认为某种动作或状态发生、实现的可能性极小，希望十分渺茫。接在动词连用形（ます形去掉ます）或形容词词干之后。",
+      "formation": "动词连用形（ます形去掉ます） + そうにない | い形容词词干 + そうにない | な形容词词干 + そうにない",
+      "examples": [
+        {
+          "translation": "这场雨看起来一时半会儿停不下来。"
+        },
+        {
+          "translation": "看起来他很难通过这次考试。"
+        },
+        {
+          "translation": "这道菜看着并不怎么好吃。"
+        },
+        {
+          "translation": "这个房间看起来不大可能干净整洁。"
+        }
+      ]
+    },
+    "ja_たかと思ったら_66": {
+      "title": "～たかと思ったら (〜ta ka to omottara)",
+      "shortExplanation": "表示前一个动作刚发生，紧接着瞬间发生了下一个动作，令说话人感到意外和迅速；“刚一……就……”、“以为刚……却已经……”。",
+      "longExplanation": "句型“～たかと思ったら”（亦常作“～たと思うと”）用于表示前项动作或变化刚告一段落，后项的事态就紧接着接踵而至，其转换速度之快令说话人感到惊讶或出乎预料。后项陈述客观发生的既成事实，不能使用祈使、命令或意志表达。",
+      "formation": "动词た形 + かと思ったら / かと思うと",
+      "examples": [
+        {
+          "translation": "刚把电话拨过去，她就立刻接听了。"
+        },
+        {
+          "translation": "刚一起飞，飞机就开始颠簸起来。"
+        },
+        {
+          "translation": "刚出门去买东西，天就下起雨来了。"
+        },
+        {
+          "translation": "刚以为工作做完了，上司就又拿来了额外的工作。"
+        }
+      ]
+    },
+    "ja_たきり_67": {
+      "title": "～たきり (〜takiri)",
+      "shortExplanation": "表示做了某事之后，其后续状态就一直持续着，再也没有发生预期的变化或后续行动；“自从……之后就一直没有……”。",
+      "longExplanation": "句型“～たきり”接在动词过去形（た形）之后，表示前项动作发生后，某种状态就一直原封不动地持续下去，本该随之发生的变化或期待的进展却再也没有出现（常与后项的否定形式呼应，如“〜たきり〜ない”）。常带有说话人因音信全无或事态停滞而产生的遗憾、担忧之感。",
+      "formation": "动词た形 + きり（后项常搭配否定形式）",
+      "examples": [
+        {
+          "translation": "他自从辞职离开公司后，就一直音信全无。"
+        },
+        {
+          "translation": "昨天早上把邮件发出去后，到现在也没有收到任何回复。"
+        },
+        {
+          "translation": "小时候去过一次海边之后，一晃已经过去二十年了。"
+        },
+        {
+          "translation": "自从和她分手之后，我就再也没有想起过她。"
+        }
+      ]
+    },
+    "ja_だけあって_68": {
+      "title": "～だけあって (〜dake atte)",
+      "shortExplanation": "表示某事物的实际表现或结果与其名声、能力或所处地位完全相称，值得称道；“不愧是……”、“正因为……果然名不虚传”。",
+      "longExplanation": "句型“～だけあって”（亦常作“～だけのことはある”）用于表达高度评价或赞赏，表示某种结果、表现或水平与前项所具备的名气、特长、资历或地位完全相符，让人由衷赞叹“果然名不虚传”。后项必须是对正面、积极成果的评价，不能用于负面贬义的语境中。",
+      "formation": "动词普通形 + だけあって | い形容词 + だけあって | な形容词 + なだけあって | 名词 + だけあって",
+      "examples": [
+        {
+          "translation": "他不愧日语很好，能够像日本人一样流利地交流。"
+        },
+        {
+          "translation": "这家餐厅真不愧名气很大，菜肴非常美味。"
+        },
+        {
+          "translation": "她不愧经验丰富，轻而易举地就解决了那个难题。"
+        },
+        {
+          "translation": "他不愧是优秀的学生，考试成绩总是名列前茅。"
+        }
+      ]
+    },
+    "ja_だけましだ_69": {
+      "title": "～だけましだ (〜dake mashi da)",
+      "shortExplanation": "表示现状虽然并不令人十分满意，但比起更糟糕的恶果来已经算值得庆幸；“还算好的”、“总比……强”。",
+      "longExplanation": "句型“～だけましだ”用于将当前处境与可能发生的更恶劣、更严峻的事态进行对比。说话人承认当前的状况虽称不上理想甚至有所遗憾，但考虑到最坏的结果并没有发生，心里感到自我宽慰，觉得“不幸中的万幸”、“总算还可以接受”。",
+      "formation": "动词普通形 + だけましだ | い形容词 + だけましだ | な形容词 + なだけましだ | 名词 + なだけましだ / であるだけましだ",
+      "examples": [
+        {
+          "translation": "只是失败了已经算好的了，幸好没有引发更严重的后果。"
+        },
+        {
+          "translation": "只是迟到总比根本来不了强，还算值得庆幸。"
+        },
+        {
+          "translation": "房间虽小但总算有得住，总比完全没有地方住要好。"
+        },
+        {
+          "translation": "他没结婚就算万幸了，差点儿可就惹出大麻烦了。"
+        }
+      ]
+    },
+    "ja_たところ_70": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "表示做了某项动作之后，随之得到了某种结果、反应或有了新的发现；“……之后发现……”、“一……结果……”。",
+      "longExplanation": "句型“～たところ”接在动词过去形（た形）之后，表示尝试或完成了前项动作后，后项随之出现了某种客观的结果、对方的反馈或崭新的事实发现。后项为客观陈述句，叙述已知的结果或事实，不能包含说话人的意志、推测或命令请求。",
+      "formation": "动词た形 + ところ",
+      "examples": [
+        {
+          "translation": "打扫了一番之后，房间变得干净整洁多了。"
+        },
+        {
+          "translation": "向他询问了一下，他似乎也不知道那个问题的答案。"
+        },
+        {
+          "translation": "刚把作业交上去，老师就挑出了里面的错误。"
+        },
+        {
+          "translation": "吃了午饭之后，心情感觉好多了。"
+        }
+      ]
+    },
+    "ja_たとたん_71": {
+      "title": "～たとたん (〜ta totan)",
+      "shortExplanation": "表示在前一个动作刚完成的一瞬间，紧接着突然发生了意料之外的事态；“刚一……就立刻……”、“正当……的时候猛然……”。",
+      "longExplanation": "句型“～たとたん”（亦常作“～たとたんに”）接在动词过去形（た形）之后，强调在前项动作结束的电光石火般的同一瞬间，后项的事态骤然发生。后项往往是令说话人始料未及的突发变化或客观事态，不能使用带有说话人意志、打算或祈使命令的表达。",
+      "formation": "动词た形 + とたん / とたんに",
+      "examples": [
+        {
+          "translation": "刚把门一打开，就突然下起雨来。"
+        },
+        {
+          "translation": "刚一把电话打过去，电池就没电关机了。"
+        },
+        {
+          "translation": "一见到她的那一瞬间，耳边就响起了那首承载着回忆的歌曲。"
+        },
+        {
+          "translation": "考试一结束，立刻就轻松了下来。"
+        }
+      ]
+    },
+    "ja_だらけ_72": {
+      "title": "～だらけ (〜darake)",
+      "shortExplanation": "表示表面或空间里充斥、布满了大量令人不快、肮脏或负面的事物；“满是……”、“全是……”、“净是……”。",
+      "longExplanation": "句型“～だらけ”直接接在名词之后，表示某一场所、物体表面或整体布满、充斥着某种事物。在感情色彩上绝大多数用于消极、负面、肮脏或充满瑕疵的事物（如垃圾、皱纹、伤口、错误、泥垢等），表达说话人厌恶、不悦或遗憾的评价。修饰名词时用“～だらけの＋名词”，句尾可用“～だらけだ”。",
+      "formation": "名词 + だらけ (+ だ / の + 名词)",
+      "examples": [
+        {
+          "translation": "他的房间里满是垃圾。"
+        },
+        {
+          "translation": "这片海滩到处都是礁石，很难游泳。"
+        },
+        {
+          "translation": "他的脸上布满了皱纹。"
+        },
+        {
+          "translation": "这个苹果上全是被虫子咬出的洞。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_くせに_58": {
+      "title": "～くせに (〜kuse ni)",
+      "shortExplanation": "자신의 신분, 능력, 처지나 앞선 말과 어긋나는 행동을 하는 사람을 비난하거나 얕잡아 볼 때 쓰이며, '주제에', '~인데도 (불구하고)'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～くせに'는 어떤 대상이 자신의 신분, 처지, 능력, 또는 평소의 언행과 모순되거나 상반되는 태도를 보일 때, 이에 대한 강한 비난, 불만, 힐난 또는 멸시의 감정을 담아 비꼴 때 사용하는 표현입니다. 회화체에서 매우 자주 쓰이며 비판적이고 거친 뉘앙스를 띱니다. 앞뒤 문장의 주어는 원칙적으로 동일인이어야 하며, 화자 자신을 가리킬 때는 자조적인 맥락을 제외하고는 잘 쓰지 않습니다.",
+      "formation": "동사 보통형 + くせに | い형용사 + くせに | な형용사 + な / の + くせに | 명사 + の + くせに",
+      "examples": [
+        {
+          "translation": "그는 언제나 지각하면서 자기가 기다리는 것은 싫어한다."
+        },
+        {
+          "translation": "미안하다고 말하는 주제에 또 똑같은 짓을 반복하고 있다."
+        },
+        {
+          "translation": "그는 키가 큰 주제에 농구를 못한다."
+        },
+        {
+          "translation": "이 가게는 유명한 주제에 서비스가 형편없다."
+        }
+      ]
+    },
+    "ja_ことから_59": {
+      "title": "～ことから (〜koto kara)",
+      "shortExplanation": "어떤 판단이나 결론, 명명, 계기의 근거나 이유를 나타내며, '~라는 점에서', '~것으로 미루어', '~때문에'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ことから'는 어떠한 객관적인 사실이나 특징이 계기나 근거가 되어 어떤 판단, 결론, 변화, 또는 이름이 붙게 되었음을 설명할 때 쓰입니다. '~라는 사실로부터 비롯되어'라는 뉘앙스를 지니며, 신문 기사나 설명문 등 문어적이고 격식 있는 문맥에서 이유와 원인을 객관적으로 기술할 때 널리 활용됩니다.",
+      "formation": "동사 보통형 + ことから | い형용사 + ことから | な형용사 + なことから | 명사 + であることから / のことから",
+      "examples": [
+        {
+          "translation": "그는 매일 운동을 하는 것으로부터 몸이 건강합니다."
+        },
+        {
+          "translation": "이 가게는 서비스가 좋다는 점에서 항상 붐빕니다."
+        },
+        {
+          "translation": "그녀는 친절하다는 점에서 모든 사람에게 호감을 사고 있습니다."
+        },
+        {
+          "translation": "그 회사는 평판이 좋다는 점에서 취업처로서 인기가 많습니다."
+        }
+      ]
+    },
+    "ja_ことに_60": {
+      "title": "～ことに (〜koto ni)",
+      "shortExplanation": "어떤 상황이나 일의 결과에 대해 느끼는 주관적인 감정이나 심리적 반응을 나타내며, '~한 것에', '~것에 대해'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ことに'는 어떤 사태나 사실에 대해 화자가 느끼는 놀라움, 감동, 분노 등의 주관적인 감정 반응을 강조할 때 사용됩니다. 문두에서 감정 형용사 뒤에 붙어 '놀랍게도(驚いたことに)', '유감스럽게도(残念なことに)'처럼 부사적으로 쓰이기도 하며, 예문에서처럼 사실을 나타내는 절 뒤에 붙어 뒤에 이어지는 감정 동사(놀라다, 감동하다, 화나다 등)의 대상으로서 '~한 사실에 대해'라는 뜻을 나타내기도 합니다.",
+      "formation": "동사 보통형 + ことに | い형용사 + ことに | な형용사 + なことに",
+      "examples": [
+        {
+          "translation": "그가 갑자기 귀국한다는 사실에 놀랐다."
+        },
+        {
+          "translation": "그녀가 우승한 것에 감동했다."
+        },
+        {
+          "translation": "그가 언제나 지각하는 것에 화가 난다."
+        },
+        {
+          "translation": "그녀가 이렇게 아름답다는 것에 미처 알아채지 못했다."
+        }
+      ]
+    },
+    "ja_ことになっている_61": {
+      "title": "～ことになっている (〜koto ni natte iru)",
+      "shortExplanation": "규칙, 규정, 사회적 관습 또는 이미 정해진 예정이나 일정을 나타내며, '~하기로 되어 있다', '~하는 것으로 정해져 있다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ことになっている'는 규칙, 법률, 교칙, 사회적 관습 또는 조직 차원에서 결정된 일정이나 계획 등을 나타냅니다. 화자 개인의 즉흥적인 의지가 아니라, 이미 객관적으로 정해져 있어서 따라야 하는 방침이나 규칙임을 완곡하고 객관적인 어조로 전달할 때 사용됩니다.",
+      "formation": "동사 보통형 + ことになっている | い형용사 + ことになっている | な형용사 + である / だという + ことになっている | 명사 + である / だという + ことになっている",
+      "examples": [
+        {
+          "translation": "일본에서는 좌측으로 운전하기로 되어 있습니다."
+        },
+        {
+          "translation": "회사 규칙상 유니폼을 착용하기로 되어 있다."
+        },
+        {
+          "translation": "그녀는 내일 결혼하기로 되어 있습니다."
+        },
+        {
+          "translation": "이 상품은 고품질인 것으로 인정받고 있습니다."
+        }
+      ]
+    },
+    "ja_さえば_62": {
+      "title": "～さえ～ば (〜sae ~ba)",
+      "shortExplanation": "그 조건 하나만 충족되면 다른 것은 문제가 되지 않음을 나타내며, '오직 ~만 ~하면', '단지 ~만 하면'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～さえ～ば'는 그것 하나만 충족되면 다른 모든 것이 문제없이 해결되거나 원하는 결과가 성립된다는 유일하고 결정적인 최소한의 조건을 제시할 때 쓰입니다. 명사에 붙어 '명사 + さえ + 가정형(ば)'으로 쓰이거나, 동사의 ます형 어간에 결합하여 '동사 어간 + さえすれば' 등의 형태로 자주 활용됩니다.",
+      "formation": "명사 + さえ + 가정형(ば) | 동사 ます형 어간 + さえすれば / さえあれば",
+      "examples": [
+        {
+          "translation": "돈만 있으면 행복합니다."
+        },
+        {
+          "translation": "시험에 합격하기만 하면 졸업할 수 있습니다."
+        },
+        {
+          "translation": "채소만 많이 먹으면 어머니는 기뻐하십니다."
+        },
+        {
+          "translation": "교통비만 지급받을 수 있다면 어디든 가겠습니다."
+        }
+      ]
+    },
+    "ja_ざるを得ない_63": {
+      "title": "～ざるを得ない (〜zaru wo enai)",
+      "shortExplanation": "자신의 본심은 원하지 않지만 객관적인 사정상 다른 선택의 여지가 없음을 나타내며, '~하지 않을 수 없다', '어쩔 수 없이 ~해야 한다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ざるを得ない'는 화자의 내심이나 기분으로는 하고 싶지 않지만, 주변 상황이나 객관적인 제약, 이성적 판단으로 인해 달리 대안이 없어 어쩔 수 없이 그 행동을 할 수밖에 없음을 나타내는 문어체 표현입니다. 동사의 ない형에서 ない를 떼어내고 'ざるを得ない'를 붙이며, 불규칙 동사 'する'는 'せざるを得ない'로 변화합니다.",
+      "formation": "동사 ない형(ない 탈락) + ざるを得ない (단, する는 せざるを得ない)",
+      "examples": [
+        {
+          "translation": "이 일은 마감 기한이 얼마 남지 않아서 잔업을 하지 않을 수 없다."
+        },
+        {
+          "translation": "전철이 지연되었기 때문에 어쩔 수 없이 택시를 타야 했다."
+        },
+        {
+          "translation": "그녀의 설명이 납득되지는 않았지만, 우선은 믿을 수밖에 없다."
+        },
+        {
+          "translation": "이러한 상황에서는 새로운 계획을 다시 세우지 않을 수 없다."
+        }
+      ]
+    },
+    "ja_ずにはいられない_64": {
+      "title": "～ずにはいられない (〜zu ni wa irarenai)",
+      "shortExplanation": "마음속에서 솟구치는 강한 감정이나 충동을 억누를 수 없음을 나타내며, '~하지 않고는 못 배기다', '~하지 않고는 견딜 수 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ず에는いられない'는 어떤 자극이나 감정의 복받침으로 인해 자신의 이성으로 행동을 억제할 수 없어 무심코 그렇게 해버리고 마는 내적 충동을 표현합니다. 주로 화자 자신의 통제하기 힘든 감정이나 행동을 말할 때 쓰이며, 동사의 ない형에서 ない를 떼어내고 'ずにはいられない'를 접속합니다(불규칙 동사 'する'는 'せずにはいられない').",
+      "formation": "동사 ない형(ない 탈락) + ずにはいられない (단, する는 せず에는いられない)",
+      "examples": [
+        {
+          "translation": "이 노래를 들으면 노래하지 않고는 못 배긴다."
+        },
+        {
+          "translation": "그녀가 울고 있는 것을 보면 위로하지 않고는 견딜 수 없다."
+        },
+        {
+          "translation": "이 소설은 매우 흥미진진해서 읽지 않고는 못 배긴다."
+        },
+        {
+          "translation": "그는 맛있는 요리를 눈앞에 두면 먹지 않고는 못 배긴다."
+        }
+      ]
+    },
+    "ja_そうにない_65": {
+      "title": "～そうにない (〜sou ni nai)",
+      "shortExplanation": "현재 상황이나 징조로 보아 어떤 일이나 동작이 실현될 가능성이 매우 희박함을 나타내며, '~할 것 같지 않다', '~할 기미가 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～そうにない'(강조형: ～そうにもない)는 양태 조동사 '～そうだ'의 부정 표현으로, 현재 눈앞의 징조나 정황을 바탕으로 판단했을 때 어떤 사태나 동작이 일어날 가능성이 극히 낮아 보인다는 화자의 주관적 추측을 나타냅니다. 동사의 ます형 어간 또는 형용사 어간에 접속합니다.",
+      "formation": "동사 ます형 어간 + そうにない | い형용사 어간 + そうにない | な형용사 어간 + そうにない",
+      "examples": [
+        {
+          "translation": "이 비는 그칠 것 같지 않다."
+        },
+        {
+          "translation": "그가 시험에 합격할 것 같지 않다."
+        },
+        {
+          "translation": "이 요리는 맛있어 보이지 않는다."
+        },
+        {
+          "translation": "이 방은 깨끗해 보이지 않는다."
+        }
+      ]
+    },
+    "ja_たかと思ったら_66": {
+      "title": "～たかと思ったら (〜ta ka to omottara)",
+      "shortExplanation": "앞의 동작이 일어나자마자 거의 동시에 다음 사태가 발생하여 그 빠른 속도에 놀람을 나타내며, '~했는가 싶더니', '~하자마자 바로'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～たかと思ったら'(동의 표현: ～たと思うと)는 앞선 행위나 상태 변화가 막 일어났다 싶은 찰나에 곧바로 뒤이어 다음 상황이 잇따라 발생함을 나타냅니다. 사태가 전개되는 속도가 예상보다 너무 빨라 화자가 뜻밖이라 느끼거나 놀라워하는 뉘앙스를 담고 있습니다. 뒷문장에는 객관적으로 일어난 사실이 오며 의지나 명령 표현은 올 수 없습니다.",
+      "formation": "동사 た형 + かと思ったら / かと思うと",
+      "examples": [
+        {
+          "translation": "전화를 걸었는가 싶더니 곧바로 그녀가 받았다."
+        },
+        {
+          "translation": "이륙했는가 싶더니 비행기가 흔들리기 시작했다."
+        },
+        {
+          "translation": "쇼핑하러 나갔는가 싶더니 비가 내리기 시작했다."
+        },
+        {
+          "translation": "일이 끝났는가 싶더니 상사가 추가 업무를 가져왔다."
+        }
+      ]
+    },
+    "ja_たきり_67": {
+      "title": "～たきり (〜takiri)",
+      "shortExplanation": "과거에 어떤 행위를 한 이후로 그 상태가 줄곧 이어지며 기대했던 후속 사태가 일어나지 않음을 나타내며, '~한 이래로 줄곧', '~한 채 (소식이 없다)'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～たきり'는 동사의 과거형(た형)에 결합하여, 과거의 특정 행동이 행해진 것을 마지막으로 그 상태가 계속 유지된 채 그 후 기대되었던 동작이나 사태가 전혀 일어나지 않고 있음을 나타냅니다. 후속절에는 흔히 부정 표현(～ない)이 동반되어 연락이 두절되었거나 일이 진척되지 않는 것에 대한 아쉬움이나 우려를 담아냅니다.",
+      "formation": "동사 た형 + きり (후속절에 주로 부정 표현 동반)",
+      "examples": [
+        {
+          "translation": "그는 회사를 그만둔 이래로 아무런 연락이 없다."
+        },
+        {
+          "translation": "어제 아침에 메일을 보낸 채로 아직 답장이 없다."
+        },
+        {
+          "translation": "어릴 적에 바다에 갔던 이래로 벌써 20년이 되었다."
+        },
+        {
+          "translation": "그녀와 헤어진 뒤로는 그녀에 대해 생각하지 않게 되었다."
+        }
+      ]
+    },
+    "ja_だけあって_68": {
+      "title": "～だけあって (〜dake atte)",
+      "shortExplanation": "명성, 능력, 노력 등에 걸맞게 뛰어난 결과나 상태가 나타남을 칭찬하며, '과연 ~답게', '~인 만큼'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～だけあって'(유사 표현: ～だけのことはある)는 어떤 대상이 지닌 명성, 실력, 지위, 배경에 아주 잘 부합하는 훌륭한 결과나 행동을 보였을 때, 그에 대한 칭찬과 감탄을 담아 표현하는 문형입니다. '과연 그 이름에 걸맞게'라는 뉘앙스로 뒷문장에는 긍정적이고 뛰어난 평가가 이어지며, 부정적인 상황에는 쓰이지 않습니다.",
+      "formation": "동사 보통형 + だけあって | い형용사 + だけあって | な형용사 + なだけあって | 명사 + だけあって",
+      "examples": [
+        {
+          "translation": "그는 일본어를 잘하는 만큼 일본인처럼 능숙하게 말할 수 있다."
+        },
+        {
+          "translation": "이 레스토랑은 유명한 만큼 요리가 대단히 맛있다."
+        },
+        {
+          "translation": "그녀는 경험이 풍부한 만큼 그 문제를 간단히 해결할 수 있었다."
+        },
+        {
+          "translation": "그는 우수한 학생인 만큼 언제나 시험 점수가 높다."
+        }
+      ]
+    },
+    "ja_だけましだ_69": {
+      "title": "～だけましだ (〜dake mashi da)",
+      "shortExplanation": "현재 상황이 비록 완벽하거나 만족스럽지는 않지만 더 나쁜 최악의 경우보다는 낫다고 위안을 삼을 때 쓰이며, '~인 것만 해도 다행이다', '~인 것만으로도 어디냐'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～だけましだ'는 현재 직면한 상태가 비록 불만족스럽거나 결함이 있더라도, 일어날 수 있었던 훨씬 더 험악하고 나쁜 사태와 비교했을 때 '그나마 이 정도인 것만 해도 불행 중 다행이다'라며 위안을 삼는 심정을 나타냅니다. 최소한의 긍정적인 면을 찾아 스스로를 다독일 때 자주 쓰입니다.",
+      "formation": "동사 보통형 + だけましだ | い형용사 + だけましだ | な형용사 + なだけましだ | 명사 + なだけましだ / であるだけましだ",
+      "examples": [
+        {
+          "translation": "실패로 끝난 것만 해도 다행이다. 더 심각한 사태가 되지 않아서 다행이었다."
+        },
+        {
+          "translation": "지각이라도 한 게 다행이다. 아예 못 오는 것보다는 낫다."
+        },
+        {
+          "translation": "작은 방이라도 있는 것만으로 어디냐. 방이 아예 없는 것보다는 낫다."
+        },
+        {
+          "translation": "그가 결혼하지 않은 것만 해도 다행이다. 큰일 날 뻔했어."
+        }
+      ]
+    },
+    "ja_たところ_70": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "어떤 동작을 해 보았더니 그 결과로 새로운 사실을 알게 되거나 어떠한 결과가 생겨났음을 나타내며, '~했더니', '~해 보았더니'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～たところ'는 동사의 과거형(た형)에 접속하여, 어떤 행동을 실행한 결과 상대방의 반응이나 새로운 사실, 또는 객관적인 결과가 나타났음을 전달할 때 사용됩니다. 후속절에는 그 행위를 통해 직접 확인하거나 알게 된 객관적인 사실이 서술되며, 화자의 의지나 명령, 권유 표현은 오지 않습니다.",
+      "formation": "동사 た형 + ところ",
+      "examples": [
+        {
+          "translation": "청소를 했더니 방이 훨씬 깨끗해졌습니다."
+        },
+        {
+          "translation": "그에게 물어보았더니 그 질문의 답은 모르는 것 같습니다."
+        },
+        {
+          "translation": "숙제를 제출했더니 선생님께서 틀린 곳을 찾아내셨습니다."
+        },
+        {
+          "translation": "점심을 먹었더니 기분이 좋아졌습니다."
+        }
+      ]
+    },
+    "ja_たとたん_71": {
+      "title": "～たとたん (〜ta totan)",
+      "shortExplanation": "어떤 행위가 일어난 바로 그 찰나의 순간에 예상치 못한 사태가 갑자기 발생함을 나타내며, '~하자마자', '~한 순간에'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～たとたん'(또는 ～たとたんに)은 동사의 과거형(た형)에 접속하여, 앞선 동작이 완료된 바로 그 찰나의 순간에 거의 동시에 후속 사태가 돌발적으로 일어남을 나타냅니다. 뒷문장에는 주로 화자가 제어할 수 없는 돌발적이고 예기치 못한 객관적 사실이나 변화가 서술되며, 화자의 의지나 명령, 의도적인 행동은 올 수 없습니다.",
+      "formation": "동사 た형 + とたん / とたんに",
+      "examples": [
+        {
+          "translation": "문을 열자마자 비가 내리기 시작했다."
+        },
+        {
+          "translation": "전화를 걸자마자 배터리가 나갔다."
+        },
+        {
+          "translation": "그녀를 만난 순간 추억의 노래가 흘러나왔다."
+        },
+        {
+          "translation": "시험이 끝나자마자 긴장이 풀리고 편안해졌다."
+        }
+      ]
+    },
+    "ja_だらけ_72": {
+      "title": "～だらけ (〜darake)",
+      "shortExplanation": "불결하거나 바람직하지 못한 부정적인 것들이 표면이나 공간에 가득 차 있음을 나타내며, '~투성이', '온통 ~뿐'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～だらけ'는 명사 바로 뒤에 붙어, 어떤 장소나 표면 또는 전체가 바람직하지 않은 부정적이고 불쾌한 것(쓰레기, 먼지, 주름, 상처, 빚, 실수 등)으로 가득 덮여 있거나 널려 있는 상태를 나타냅니다. 대부분 부정적인 뉘앙스로 쓰이며, 명사를 수식할 때는 '～だらけの + 명사', 문말에서는 '～だらけだ'의 형태를 취합니다.",
+      "formation": "명사 + だらけ (+ だ / の + 명사)",
+      "examples": [
+        {
+          "translation": "그의 방은 쓰레기투성이다."
+        },
+        {
+          "translation": "이 해변은 온통 바위투성이여서 수영하기 힘들다."
+        },
+        {
+          "translation": "그의 얼굴은 주름투성이다."
+        },
+        {
+          "translation": "이 사과는 온통 벌레 먹은 자국투성이다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_くせに_58": {
+      "title": "～くせに (〜kuse ni)",
+      "shortExplanation": "その人の身分・立場・能力や言動と矛盾する好ましくない行為をしていることに対して、非難・不満・軽蔑の気持ちを表し、「〜のくせに」「〜であるのに」という意味を表します。",
+      "longExplanation": "「～くせに」は、ある人物が自分の立場・能力・前言などから当然期待されることとは正反対の行動をとることに対して、話し手が強い不満や非難、呆れ、軽蔑の感情を込めて述べる表現です。主にくだけた会話表現で用いられ、批判的なニュアンスを帯びます。前後の節の主語は同一人物である必要があり、原則として話し手自身のことには用いません（自虐の場合を除く）。口語では「〜くせして」という形も使われます。",
+      "formation": "動詞普通形 ＋ くせに ｜ い形容詞 ＋ くせに ｜ な形容詞 ＋ な／の ＋ くせに ｜ 名詞 ＋ の ＋ くせに",
+      "examples": [
+        {
+          "translation": "彼はいつも遅刻してくるくせに、自分が待たされるのが嫌いだ。"
+        },
+        {
+          "translation": "悪いなと言ってるくせに、また同じことを繰り返している。"
+        },
+        {
+          "translation": "彼は背が高いくせに、バスケが下手だ。"
+        },
+        {
+          "translation": "この店は有名なのくせに、サービスが悪い。"
+        }
+      ]
+    },
+    "ja_ことから_59": {
+      "title": "～ことから (〜koto kara)",
+      "shortExplanation": "ある判断や結論、名前の由来、事態の発生などの根拠やきっかけを表し、「〜という事実から」「〜が原因で」という意味を表します。",
+      "longExplanation": "「～ことから」は、客観的な事実や特徴を根拠として、何らかの判断を下したり、命名の由来を説明したり、新たな事態が生じたりした理由を述べる文型です。「〜ということがきっかけとなって」という因果関係を客観的に叙述する際に用いられ、ニュース報道や論文、説明文などの硬い文章で頻繁に使われます。",
+      "formation": "動詞普通形 ＋ ことから ｜ い形容詞 ＋ ことから ｜ な形容詞 ＋ なことから ｜ 名詞 ＋ であることから／のことから",
+      "examples": [
+        {
+          "translation": "彼は毎日運動することから、体が丈夫です。"
+        },
+        {
+          "translation": "この店のサービスがいいことから、いつも混んでいます。"
+        },
+        {
+          "translation": "彼女は親切なことから、みんなに好かれています。"
+        },
+        {
+          "translation": "その会社の評判が良いことから、就職先として人気があります。"
+        }
+      ]
+    },
+    "ja_ことに_60": {
+      "title": "～ことに (〜koto ni)",
+      "shortExplanation": "ある事態や結果に対して抱く強い主観的感情や心理的反応を表し、「〜することに（驚く／腹が立つ）」「〜なことには」という意味を表します。",
+      "longExplanation": "「～ことに」は、ある出来事や事実に対して話し手が抱く感情や心の動き（驚き、感動、怒り、感慨など）を際立たせる文型です。文頭に置いて「驚いたことに」「残念なことに」のように感情を先に提示する用法と、本項の例文のように事実を表す節の後に接続して「〜という事態に対して（感情を抱く）」という感情の対象を表す用法があります。",
+      "formation": "動詞普通形 ＋ ことに ｜ い形容詞 ＋ ことに ｜ な形容詞 ＋ なことに",
+      "examples": [
+        {
+          "translation": "彼が急に帰国することに驚いた。"
+        },
+        {
+          "translation": "彼女が優勝したことに感動した。"
+        },
+        {
+          "translation": "彼がいつも遅刻することに腹が立つ。"
+        },
+        {
+          "translation": "彼女がこんなに美しいことに気がつかなかった。"
+        }
+      ]
+    },
+    "ja_ことになっている_61": {
+      "title": "～ことになっている (〜koto ni natte iru)",
+      "shortExplanation": "規則・法律・社会的な慣習、またはあらかじめ決まっている予定や取り決めを表し、「〜と決まっている」「〜という予定・規則だ」という意味を表します。",
+      "longExplanation": "「～ことになっている」は、集団のルールや法律、社会的なマナー・慣習、あるいは前もって決められた予定などを述べる文型です。話し手個人の主観的な意志ではなく、周囲の合意や客観的な規則によってすでに定まっている事柄であることを客観的・婉曲的に伝える際に用いられます。",
+      "formation": "動詞普通形 ＋ ことになっている ｜ い形容詞 ＋ ことになっている ｜ な形容詞 ＋ である／だという ＋ ことになっている ｜ 名詞 ＋ である／だという ＋ ことになっている",
+      "examples": [
+        {
+          "translation": "日本では、左側を運転することになっています。"
+        },
+        {
+          "translation": "会社の規則では、制服を着ることになっている。"
+        },
+        {
+          "translation": "彼女は明日結婚することになっています。"
+        },
+        {
+          "translation": "この商品は高品質だということになっています。"
+        }
+      ]
+    },
+    "ja_さえば_62": {
+      "title": "～さえ～ば (〜sae ~ba)",
+      "shortExplanation": "その条件一つさえ満たされれば、他のことは問題なく成立することを表し、「〜だけで」「〜さえすれば」という意味を表します。",
+      "longExplanation": "「～さえ～ば」は、最低限その一つの条件さえ整えば、他の条件はどうであれ後続の事態や望ましい結果が成立することを強調する文型です。名詞に接続して「名詞＋さえ＋仮定形（あれば・いればなど）」とする形や、動詞の連用形に接続して「動詞ます形語幹＋さえすれば」とする形が代表的です。",
+      "formation": "名詞 ＋ さえ ＋ 仮定形（ば） ｜ 動詞ます形語幹 ＋ さえすれば／さえあれば",
+      "examples": [
+        {
+          "translation": "お金さえあれば、幸せです。"
+        },
+        {
+          "translation": "試験に合格しさえすれば、卒業できます。"
+        },
+        {
+          "translation": "野菜さえたくさん食べれば、母は喜びます。"
+        },
+        {
+          "translation": "交通費さえ支払ってもらえれば、どこへでも行きます。"
+        }
+      ]
+    },
+    "ja_ざるを得ない_63": {
+      "title": "～ざるを得ない (〜zaru wo enai)",
+      "shortExplanation": "本心ではやりたくないが、客観的な状況や立場から判断してそうするよりほかに方法がないことを表し、「〜しないわけにはいかない」「どうしても〜せざるを得ない」という意味を表します。",
+      "longExplanation": "「～ざるを得ない」は、話し手自身の積極的な意志によるものではなく、周囲の状況や義理、客観的な情勢から判断して、他に選択肢がないため不本意ながらその行為を行わなければならないことを表すやや硬い文語的表現です。動詞の未然形（ない形語幹）に接続し、「する」は「せざるを得ない」となる不規則変化に注意が必要です。",
+      "formation": "動詞ない形語幹 ＋ ざるを得ない（「する」は「せざるを得ない」）",
+      "examples": [
+        {
+          "translation": "この仕事は締め切りが近いので、残業せざるを得ない。"
+        },
+        {
+          "translation": "電車が遅れたため、タクシーに乗るざるを得なかった。"
+        },
+        {
+          "translation": "彼女の説明が納得できなかったが、とりあえず信じざるを得ない。"
+        },
+        {
+          "translation": "この状況では、新しい計画を立て直さざるを得ない。"
+        }
+      ]
+    },
+    "ja_ずにはいられない_64": {
+      "title": "～ずにはいられない (〜zu ni wa irarenai)",
+      "shortExplanation": "感情や欲求、内なる衝動を抑えることができず、自然とそうしてしまう様子を表し、「どうしても〜してしまう」「〜せずにはいられない」という意味を表します。",
+      "longExplanation": "「～ずにはいられない」は、ある状況に直面したときに湧き上がる激しい感情や生理的欲求を理性でコントロールすることができず、思わずその行為をしてしまうという主観的な衝動を表す文型です。原則として話し手自身の心情を述べる際に用いられ、三人称の主語の場合は「〜ようだ」「〜らしい」などを伴うことが一般的です。動詞の未然形（ない形語幹）に接続し、「する」は「せずにはいられない」となります。",
+      "formation": "動詞ない形語幹 ＋ ずにはいられない（「する」は「せずにはいられない」）",
+      "examples": [
+        {
+          "translation": "この曲を聞くと、歌わずにはいられない。"
+        },
+        {
+          "translation": "彼女が泣いているのを見ると、慰めずにはいられない。"
+        },
+        {
+          "translation": "この小説は面白いので、読まずにはいられない。"
+        },
+        {
+          "translation": "彼はおいしい料理を前にすると、食べずにはいられない。"
+        }
+      ]
+    },
+    "ja_そうにない_65": {
+      "title": "～そうにない (〜sou ni nai)",
+      "shortExplanation": "現状や様子から判断して、その動作や事態が起こる可能性が極めて低いことを表し、「〜しそうにもない」「とても〜とは思えない」という意味を表します。",
+      "longExplanation": "「～そうにない」（強調形は「〜そうにもない」）は、様態の助動詞「〜そうだ」の否定形で、現在の様子や周囲の兆候から推測して、ある事態の実現する可能性がほとんどない、見込みが薄いと話し手が判断した際に用いる文型です。動詞の連用形（ます形語幹）や形容詞の語幹に接続します。",
+      "formation": "動詞ます形語幹 ＋ そうにない ｜ い形容詞語幹 ＋ そうにない ｜ な形容詞語幹 ＋ そうにない",
+      "examples": [
+        {
+          "translation": "この雨は止みそうにない。"
+        },
+        {
+          "translation": "彼が試験に合格しそうにない。"
+        },
+        {
+          "translation": "この料理がおいしそうにない。"
+        },
+        {
+          "translation": "この部屋はきれいそうにない。"
+        }
+      ]
+    },
+    "ja_たかと思ったら_66": {
+      "title": "～たかと思ったら (〜ta ka to omottara)",
+      "shortExplanation": "ある事態が起きた直後、間髪を容れずに次の事態が発生したことに対する驚きを表し、「〜したと思ったらすぐに」「〜するやいなや」という意味を表します。",
+      "longExplanation": "「～たかと思ったら」（「〜たと思うと」も同義）は、前項の動作や変化が起こって間もないうちに、ほとんど同時に後項の事態が連続して生じたことを表す文型です。事態の推移があまりにも素早いことに対する話し手の驚きや意外性のニュアンスが含まれます。後続節には客観的な事実が述べられ、話し手の意志や命令・働きかけの表現は使われません。",
+      "formation": "動詞た形 ＋ かと思ったら／かと思うと",
+      "examples": [
+        {
+          "translation": "電話をかけたかと思ったら、すぐに彼女が出た。"
+        },
+        {
+          "translation": "離陸したかと思ったら、飛行機が揺れ始めた。"
+        },
+        {
+          "translation": "買い物に行ったかと思ったら、雨が降ってきた。"
+        },
+        {
+          "translation": "仕事を終わったかと思ったら、上司が追加の仕事を持ってきた。"
+        }
+      ]
+    },
+    "ja_たきり_67": {
+      "title": "～たきり (〜takiri)",
+      "shortExplanation": "ある過去の行為が行われたのを最後に、その状態がずっと続き、期待されるその後の変化や連絡がないことを表し、「〜したきり（その後何もない）」「〜したまま」という意味を表します。",
+      "longExplanation": "「～たきり」は、動詞のた形に接続し、ある行為が過去に一度行われて以来、その結果生じた状態がそのまま継続し、当然起こるはずの次の行動や連絡が全く途絶えていることを表す文型です。後続節には「〜ない」といった否定表現が来ることが多く、音信不通や停滞に対する不満・心配・残念といった感情が込められます。",
+      "formation": "動詞た形 ＋ きり（後続節に否定表現を伴うことが多い）",
+      "examples": [
+        {
+          "translation": "彼は会社を辞めたきり、連絡がない。"
+        },
+        {
+          "translation": "昨日の朝、メールを送ったきり、返事がない。"
+        },
+        {
+          "translation": "子供のころ海に行ったきりで、もう20年になる。"
+        },
+        {
+          "translation": "彼女と別れたきり、彼女のことを考えなくなった。"
+        }
+      ]
+    },
+    "ja_だけあって_68": {
+      "title": "～だけあって (〜dake atte)",
+      "shortExplanation": "ある立場・名声・能力や努力にふさわしく、期待どおりの素晴らしい結果や状態であることを賞賛し、「さすが〜だけあって」「〜にふさわしく」という意味を表します。",
+      "longExplanation": "「～だけあって」（類義表現に「〜だけのことはある」）は、対象が持つ高い能力、資格、知名度、努力の度合いなどに相応して、期待通りの優れた成果や能力が発揮されていることを褒め称えたり感心したりする際に用いる文型です。「〜という名声・理由に恥じない」というニュアンスを含み、後続節には必ず肯定的な良い評価が来ます。マイナスの結果には用いられません。",
+      "formation": "動詞普通形 ＋ だけあって ｜ い形容詞 ＋ だけあって ｜ な形容詞 ＋ なだけあって ｜ 名詞 ＋ だけあって",
+      "examples": [
+        {
+          "translation": "彼は日本語が上手だけあって、日本人のように話すことができる。"
+        },
+        {
+          "translation": "このレストランは有名だけあって、料理がとても美味しい。"
+        },
+        {
+          "translation": "彼女は経験豊富なだけあって、その問題を簡単に解決できた。"
+        },
+        {
+          "translation": "彼は優秀な学生だけあって、いつもテストの点数が高い。"
+        }
+      ]
+    },
+    "ja_だけましだ_69": {
+      "title": "～だけましだ (〜dake mashi da)",
+      "shortExplanation": "現状は決して理想的・十分ではないものの、もっと悪い最悪の事態と比べればまだ救いがあることを表し、「〜だけまだいい」「不幸中の幸いだ」という意味を表します。",
+      "longExplanation": "「～だけましだ」は、不満や問題がある現状を受け入れつつも、起こり得たより深刻で最悪な事態と比較して、「それと比べればこの程度で済んでまだ救われている、ましな方だ」と自らを慰めたり納得させたりする際に用いる文型です。",
+      "formation": "動詞普通形 ＋ だけましだ ｜ い形容詞 ＋ だけましだ ｜ な形容詞 ＋ なだけましだ ｜ 名詞 ＋ なだけましだ／であるだけましだ",
+      "examples": [
+        {
+          "translation": "失敗するだけましだ。もっと大変なことにならなくてよかった。"
+        },
+        {
+          "translation": "遅れるだけましだ。来られないよりはいい。"
+        },
+        {
+          "translation": "小さな部屋だけましだ。全く部屋がないよりはいい。"
+        },
+        {
+          "translation": "彼が結婚しないだけましだ。大変なことになるところだったよ。"
+        }
+      ]
+    },
+    "ja_たところ_70": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "ある行為を行ってみた結果、新しい事実が判明したり、予想外の反応や結果が生じたりしたことを表し、「〜してみたら」「〜した結果」という意味を表します。",
+      "longExplanation": "「～たところ」は、動詞のた形に接続し、前項の行為を契機として、どのような結果や相手の反応、あるいは客観的な事実が得られたかを報告・叙述する文型です。後続節にはその行為によって発見された客観的事実が述べられ、話し手の意志や命令・依頼などの主観的な表現は使われません。",
+      "formation": "動詞た形 ＋ ところ",
+      "examples": [
+        {
+          "translation": "掃除したところ、部屋がずっとキレイになりました。"
+        },
+        {
+          "translation": "彼に聞いたところ、その質問の答えは分からないみたいです。"
+        },
+        {
+          "translation": "宿題を出したところ、先生が間違いを見つけました。"
+        },
+        {
+          "translation": "昼ごはんを食べたところ、気分が良くなりました。"
+        }
+      ]
+    },
+    "ja_たとたん_71": {
+      "title": "～たとたん (〜ta totan)",
+      "shortExplanation": "ある動作が行われたまさにその瞬間に、予期せぬ別の事態が突発的に起こることを表し、「〜した瞬間に」「〜するやいなや」という意味を表します。",
+      "longExplanation": "「～たとたん」（「〜たとたんに」も同様）は、動詞のた形に接続し、前項の動作が完了したまさにその一瞬に、それに引き続いて突発的な出来事や変化が発生したことを表す文型です。後続節には話者のコントロールできない偶発的・突発的な事態が述べられるため、話者の意志的な行為や命令・希望などの表現は用いられません。",
+      "formation": "動詞た形 ＋ とたん／とたんに",
+      "examples": [
+        {
+          "translation": "ドアを開けたとたん、雨が降り始めた。"
+        },
+        {
+          "translation": "電話をかけたとたん、バッテリーが切れた。"
+        },
+        {
+          "translation": "彼女に会ったとたん、思い出の歌が流れた。"
+        },
+        {
+          "translation": "テストが終わったとたん、リラックスできた。"
+        }
+      ]
+    },
+    "ja_だらけ_72": {
+      "title": "～だらけ (〜darake)",
+      "shortExplanation": "表面や空間が一面に汚いものや好ましくないもので覆われ、たくさんある様子を表し、「〜だらけだ」「〜まみれだ」という意味を表します。",
+      "longExplanation": "「～だらけ」は名詞に直接接続し、ある場所や物の表面、あるいは全体が、視覚的・心理的に不快で望ましくないもの（ゴミ、埃、シワ、傷、間違い、借金など）で一面に満ちている状態を表す文型です。原則としてマイナス評価の事柄に対して用いられ、名詞を修飾するときは「〜だらけの＋名詞」、文末では「〜だらけだ」の形になります。",
+      "formation": "名詞 ＋ だらけ（＋ だ／の ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "彼の部屋はゴミだらけだ。"
+        },
+        {
+          "translation": "このビーチは岩だらけで泳ぎにくい。"
+        },
+        {
+          "translation": "彼の顔はしわだらけだ。"
+        },
+        {
+          "translation": "このリンゴは虫食いだらけだ。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Nounをくださる_14",
+    "language": "ja",
+    "pattern": "Nounをくださる",
+    "title": "Nounをくださる",
+    "shortExplanation": "Used to express someone doing something as a favor or for the benefit of the speaker.",
+    "longExplanation": "The grammar point 'Nounをくださる' is a polite expression used to say that someone is giving or doing something for the benefit of the speaker. It is often used when referring to people who have a higher social status or when expressing gratitude for their actions.",
+    "formation": "Noun + を + くださる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "先生が資料をくださった。",
+        "romanization": "Sensei ga shiryou wo kudasatta.",
+        "translation": "The teacher gave me the materials."
+      },
+      {
+        "sentence": "お母さんがおやつをくださる。",
+        "romanization": "Okaasan ga oyatsu wo kudasaru.",
+        "translation": "My mother gives me snacks."
+      },
+      {
+        "sentence": "上司がアドバイスをくださいました。",
+        "romanization": "Joushi ga adobaisu wo kudasaimashita.",
+        "translation": "My boss gave me advice."
+      },
+      {
+        "sentence": "友達がプレゼントをくださった。",
+        "romanization": "Tomodachi ga purezento wo kudasatta.",
+        "translation": "My friend gave me a present."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_15",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を くれる (Noun wo kureru)",
+    "shortExplanation": "Expresses that someone gives a thing to the speaker or someone close to the speaker.",
+    "longExplanation": "The grammar point Noun を くれる is used to express when someone (other than the speaker) gives something to the speaker or someone close to the speaker. The giver is the subject, and the receiver is the speaker or someone close to the speaker. くれる indicates that the action of giving 'favors' the speaker or someone close to the speaker.",
+    "formation": "Giver + が + Receiver + に + Noun + を + くれる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "友達が私にプレゼントをくれました。",
+        "romanization": "Tomodachi ga watashi ni purezento wo kuremashita.",
+        "translation": "My friend gave me a present."
+      },
+      {
+        "sentence": "彼が私に花をくれた。",
+        "romanization": "Kare ga watashi ni hana wo kureta.",
+        "translation": "He gave me flowers."
+      },
+      {
+        "sentence": "先生が私に本をくれました。",
+        "romanization": "Sensei ga watashi ni hon wo kuremashita.",
+        "translation": "The teacher gave me a book."
+      },
+      {
+        "sentence": "お母さんが弟にお菓子をくれました。",
+        "romanization": "Okaasan ga otouto ni okashi wo kuremashita.",
+        "translation": "Mom gave my little brother some sweets."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_16",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を さしあげる (Noun wo sashiageru)",
+    "shortExplanation": "A polite way of expressing to give something.",
+    "longExplanation": "The grammar point Noun を さしあげる is used to say that you are giving something to someone in a polite way. When offering something to a person of higher status, this expression is used. It is used in conjunction with a noun and replaces the regular verb あげる (ageru) to give.",
+    "formation": "Noun + を + さしあげる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "先生に本をさしあげます。",
+        "romanization": "Sensei ni hon wo sashiagemasu.",
+        "translation": "I will give a book to the teacher."
+      },
+      {
+        "sentence": "お母さんに花をさしあげたいです。",
+        "romanization": "Okaasan ni hana wo sashiagetai desu.",
+        "translation": "I want to give flowers to my mother."
+      },
+      {
+        "sentence": "お客様にお茶をさしあげましょう。",
+        "romanization": "Okyakusama ni ocha wo sashiagemashou.",
+        "translation": "Let's offer tea to the guest."
+      },
+      {
+        "sentence": "先輩にプレゼントをさしあげたら、喜んでいました。",
+        "romanization": "Senpai ni purezento wo sashiagetara, yorokonde imashita.",
+        "translation": "When I gave a present to my senior, they were delighted."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_17",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun もらう (Noun wo morau)",
+    "shortExplanation": "To receive or get something from someone; 'to receive', 'to get'.",
+    "longExplanation": "The もらう (morau) grammar point is used to express the action of receiving or getting something from someone. It usually emphasizes that the action was done for you or you were the beneficiary of the action. The formation requires a noun followed by the particle を (wo) before 'もらう'.",
+    "formation": "Noun + を + もらう",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "友達からプレゼントをもらいました。",
+        "romanization": "Tomodachi kara purezento wo moraimashita.",
+        "translation": "I received a gift from my friend."
+      },
+      {
+        "sentence": "先生にアドバイスをもらいました。",
+        "romanization": "Sensei ni adobaisu wo moraimashita.",
+        "translation": "I got advice from my teacher."
+      },
+      {
+        "sentence": "お父さんからお小遣いをもらう。",
+        "romanization": "Otousan kara okozukai wo morau.",
+        "translation": "To receive an allowance from one's father."
+      },
+      {
+        "sentence": "彼女に手紙をもらった。",
+        "romanization": "Kanojo ni tegami wo moratta.",
+        "translation": "I got a letter from her."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_18",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + 中 (Noun + ちゅう)",
+    "shortExplanation": "Express 'in the middle of', 'during', or 'in the process of'.",
+    "longExplanation": "The 中 (ちゅう) grammar point is used to express that something is in the middle of, during, or in the process of happening. It is attached to a noun to convey this meaning (e.g., 勉強中, 仕事中, 会議中). It is also sometimes read as じゅう depending on the word (e.g., 授業中).",
+    "formation": "Noun + 中 (ちゅう)",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は仕事中です。",
+        "romanization": "Kare wa shigotochuu desu.",
+        "translation": "He is in the middle of work."
+      },
+      {
+        "sentence": "試験中、携帯電話を使ってはいけません。",
+        "romanization": "Shiken chuu, keitai denwa wo tsukatte wa ikemasen.",
+        "translation": "During the exam, you must not use your mobile phone."
+      },
+      {
+        "sentence": "映画を観ている最中に、彼は泣き始めました。",
+        "romanization": "Eiga o mite iru saichuu ni, kare wa naki hajimemashita.",
+        "translation": "In the middle of watching the movie, he started to cry."
+      },
+      {
+        "sentence": "彼女は今勉強中です。",
+        "romanization": "Kanojo wa ima benkyouchuu desu.",
+        "translation": "She is currently studying."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_19",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb させられる (Verb-saserareru)",
+    "shortExplanation": "Express the passive causative form; 'to be made to', 'to be forced to'.",
+    "longExplanation": "The Verb させられる grammar point is the passive causative form of the verb. It is used to describe a situation where someone or something causes or forces another person to do something. This construction of passive causative is useful to show that the action was not done voluntarily by the person.",
+    "formation": "Group 1 Verb: Replace ～う with ～わせられる, Group 2 Verb: Replace ～る with ～させられる, Group 3 Verb: する → させられる, くる → こさせられる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "子供たちは先生に宿題をやらせられました。",
+        "romanization": "Kodomo-tachi wa sensei ni shukudai wo yaraseraremashita.",
+        "translation": "The children were made to do their homework by the teacher."
+      },
+      {
+        "sentence": "彼は会社にもっと働かせられた。",
+        "romanization": "Kare wa kaisha ni motto hatarakaserareta.",
+        "translation": "He was forced to work more by the company."
+      },
+      {
+        "sentence": "私は友達にその機密を話させられました。",
+        "romanization": "Watashi wa tomodachi ni sono kimitsu o hanasaseraremashita.",
+        "translation": "I was made to reveal that secret by my friend."
+      },
+      {
+        "sentence": "怪我をした選手は、コーチに休ませられました。",
+        "romanization": "Kega wo shita senshu wa, kouchi ni yasumaseraremashita.",
+        "translation": "The injured player was forced to rest by the coach."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_20",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb させる (Verb-saseru)",
+    "shortExplanation": "Expresses 'to make someone do something', 'to let someone do something', or 'to cause someone to do something'.",
+    "longExplanation": "The ～させる verb form is used to describe causing or allowing someone to do something. It can be translated as 'to make someone do something', 'to let someone do something', or 'to cause someone to do something' in English. The formation of the ～させる form depends on the verb it is attached to.",
+    "formation": "Group 1 Verbs: Change the last hiragana to ～せる, Group 2 Verbs: Remove ～る and add ～させる, Group 3 Verbs: する → させる, くる → こさせる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "先生が生徒に宿題をさせました。",
+        "romanization": "Sensei ga seito ni shukudai o sasemashita.",
+        "translation": "The teacher made the students do homework."
+      },
+      {
+        "sentence": "母が私に部屋を掃除させました。",
+        "romanization": "Haha ga watashi ni heya o souji sasemashita.",
+        "translation": "My mother made me clean my room."
+      },
+      {
+        "sentence": "彼女にピアノを弾かせてあげました。",
+        "romanization": "Kanojo ni piano o hikasete agemashita.",
+        "translation": "I let her play the piano."
+      },
+      {
+        "sentence": "上司は彼にそのプログラムを作らせました。",
+        "romanization": "Joushi wa kare ni sono puroguramu o tsukurasemashita.",
+        "translation": "The boss made him create the program."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_21",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb た ことがある (Verb ta koto ga aru)",
+    "shortExplanation": "Expresses the experience of having done something in the past.",
+    "longExplanation": "The ～たことがある grammar point is used to express the experience of having done an action in the past. It indicates that the speaker has had the experience of doing something at least once before. It is formed by adding ことがある to the た-form of the verb.",
+    "formation": "Verb-た-form + ことがある",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "日本に行ったことがあります。",
+        "romanization": "Nihon ni itta koto ga arimasu.",
+        "translation": "I have been to Japan before."
+      },
+      {
+        "sentence": "寿司を食べたことがありますか？",
+        "romanization": "Sushi wo tabeta koto ga arimasu ka?",
+        "translation": "Have you ever eaten sushi before?"
+      },
+      {
+        "sentence": "彼はマラソンを走ったことがあります。",
+        "romanization": "Kare wa marason wo hashitta koto ga arimasu.",
+        "translation": "He has experienced running a marathon."
+      },
+      {
+        "sentence": "私はスカイダイビングをしたことがありません。",
+        "romanization": "Watashi wa sukaidaibingu wo shita koto ga arimasen.",
+        "translation": "I have never experienced skydiving."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_22",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb た ときに (Verb た ときに)",
+    "shortExplanation": "Express an action or event that occurred at a specific time in the past; 'when', 'at the time'.",
+    "longExplanation": "The たときに grammar point is used to express an action that happened at a specific time in the past, usually with a focus on a specific event or moment. It can be translated as 'when' or 'at the time' in English. This grammar point requires a verb in its た-form followed by ときに to indicate the time at which the action occurred.",
+    "formation": "Verb-た + ときに",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "映画を見たときに、泣きました。",
+        "romanization": "Eiga wo mita toki ni, nakimashita.",
+        "translation": "When I watched the movie, I cried."
+      },
+      {
+        "sentence": "彼に初めて会ったときに、遅刻していました。",
+        "romanization": "Kare ni hajimete atta toki ni, chikoku shite imashita.",
+        "translation": "When I first met him, he was late."
+      },
+      {
+        "sentence": "日本へ行ったときに、たくさんの写真を撮りました。",
+        "romanization": "Nihon e itta toki ni, takusan no shashin wo torimashita.",
+        "translation": "When I went to Japan, I took a lot of photos."
+      },
+      {
+        "sentence": "友達が家に来たときに、ゲームをしました。",
+        "romanization": "Tomodachi ga ie ni kita toki ni, geemu wo shimashita.",
+        "translation": "When my friend came to my house, we played games."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_23",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb た ところ (Verb ta tokoro)",
+    "shortExplanation": "Expresses the situation right after an action has taken place.",
+    "longExplanation": "The たところ grammar point is used to describe a situation that occurs right after an action has taken place. It is often translated as 'just now', 'right after', or 'when'. The formation is relatively simple as it only requires the verb in its た form (past tense) followed by ところ.",
+    "formation": "Verb (た form) + ところ",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "ドアを開けたところ、猫が飛び出してきた。",
+        "romanization": "Doa wo aketa tokoro, neko ga tobidashite kita.",
+        "translation": "When I opened the door, a cat came jumping out."
+      },
+      {
+        "sentence": "電話を切ったところ、また鳴った。",
+        "romanization": "Denwa wo kitta tokoro, mata natta.",
+        "translation": "Right after I hung up the phone, it rang again."
+      },
+      {
+        "sentence": "宿題を終わらせたところで、友達から連絡が来た。",
+        "romanization": "Shukudai wo owaraseta tokoro de, tomodachi kara renraku ga kita.",
+        "translation": "Just as I finished my homework, I got a message from my friend."
+      },
+      {
+        "sentence": "買い物をして帰ったところ、財布を失くしたことに気づいた。",
+        "romanization": "Kaimono wo shite kaetta tokoro, saifu wo nakushita koto ni kizuita.",
+        "translation": "After shopping and returning home, I realized I had lost my wallet."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_24",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb たほうがいい (〜ta hou ga ii)",
+    "shortExplanation": "Used to give advice or make a suggestion to someone - 'it's better if...'.",
+    "longExplanation": "The たほうがいい grammar point is used to give advice or make a suggestion to someone. It can be translated as 'it's better if...', 'should', or 'it's a good idea to'. It is formed by conjugating the verb into the past tense (た-form) and adding ほうがいい.",
+    "formation": "Verb (past tense) + ほうがいい",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "早く寝たほうがいい。",
+        "romanization": "Hayaku neta hou ga ii.",
+        "translation": "It's better if you go to bed early."
+      },
+      {
+        "sentence": "もっと勉強したほうがいい。",
+        "romanization": "Motto benkyou shita hou ga ii.",
+        "translation": "You should study more."
+      },
+      {
+        "sentence": "病気の時は、薬を飲んだほうがいい。",
+        "romanization": "Byouki no toki wa, kusuri wo nonda hou ga ii.",
+        "translation": "It's a good idea to take medicine when you're sick."
+      },
+      {
+        "sentence": "コーヒーを飲まないほうがいい。",
+        "romanization": "Koohii wo nomanai hou ga ii.",
+        "translation": "It's better if you don't drink coffee."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_25",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ために (tame ni)",
+    "shortExplanation": "Used to describe the purpose or reason for an action; 'for the sake of', 'in order to', 'because of'.",
+    "longExplanation": "The ために (tame ni) grammar point is used to express either the purpose of doing something (in which case it translates to 'for the sake of' or 'in order to') or the cause/reason for a situation (in which case it translates to 'because of'). Typically, we use the dictionary form of the verb (e.g., 合格する) for the 'in order to' meaning. For an adjective or noun, attach ために appropriately (い-Adjective + ために, な-Adjective + な + ために, Noun + の + ために).",
+    "formation": "1) Verb (dictionary form) + ために (purpose)\n2) い-Adjective + ために (reason)\n3) な-Adjective + な + ために (reason)\n4) Noun + の + ために (reason)",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "試験に合格するために、毎日勉強しています。",
+        "romanization": "Shiken ni goukaku suru tame ni, mainichi benkyou shiteimasu.",
+        "translation": "I study every day in order to pass the exam."
+      },
+      {
+        "sentence": "健康のために、毎日運動しなければなりません。",
+        "romanization": "Kenkou no tame ni, mainichi undou shinakereba narimasen.",
+        "translation": "For the sake of health, I must exercise daily."
+      },
+      {
+        "sentence": "仕事が忙しいために、友達と会う時間がありません。",
+        "romanization": "Shigoto ga isogashii tame ni, tomodachi to au jikan ga arimasen.",
+        "translation": "Because my work is busy, I don't have time to meet friends."
+      },
+      {
+        "sentence": "雨が降ったために、試合が中止されました。",
+        "romanization": "Ame ga futta tame ni, shiai ga chuushi saremashita.",
+        "translation": "The game was canceled because of the rain."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_26",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb つもり (〜tsumori)",
+    "shortExplanation": "Express the intention, plan, or determination to do something; 'I intend to', 'I plan to', 'I'm determined to'.",
+    "longExplanation": "The ～つもり grammar point is used to express the intention, plan, or determination to do something. It can be translated as 'I intend to', 'I plan to', or 'I'm determined to' in English. It is used with verbs in the casual form.",
+    "formation": "Verb-casual + つもり",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日、友達に会うつもりです。",
+        "romanization": "Ashita, tomodachi ni au tsumori desu.",
+        "translation": "I plan to meet my friend tomorrow."
+      },
+      {
+        "sentence": "今夜、晩ご飯を作るつもりです。",
+        "romanization": "Konya, bangohan o tsukuru tsumori desu.",
+        "translation": "I intend to cook dinner tonight."
+      },
+      {
+        "sentence": "来年、留学するつもりです。",
+        "romanization": "Rainen, ryuugaku suru tsumori desu.",
+        "translation": "I plan to study abroad next year."
+      },
+      {
+        "sentence": "この週末、山に登るつもりです。",
+        "romanization": "Kono shuumatsu, yama ni noboru tsumori desu.",
+        "translation": "I'm determined to climb the mountain this weekend."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_27",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb てあげる (Verb te ageru)",
+    "shortExplanation": "Used to express doing something for someone; 'do something for someone'.",
+    "longExplanation": "The てあげる grammar point is used to express that the speaker or someone other than the listener is doing something for someone else. It shows that the action is being done as a favor or out of kindness. This grammar point is used with verbs in their て-form, followed by あげる.",
+    "formation": "Verb-て form + あげる",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "友達が疲れていたから、荷物を持ってあげた。",
+        "romanization": "Tomodachi ga tsukareteita kara, nimotsu o motte ageta.",
+        "translation": "Since my friend was tired, I carried their luggage for them."
+      },
+      {
+        "sentence": "弟は宿題がわからなかったので、手伝ってあげた。",
+        "romanization": "Otouto wa shukudai ga wakaranakatta node, tetsudatte ageta.",
+        "translation": "My younger brother couldn't understand the homework, so I helped him."
+      },
+      {
+        "sentence": "彼女が遅れそうだったから、駅まで迎えに行ってあげた。",
+        "romanization": "Kanojo ga okuresou datta kara, eki made mukae ni itte ageta.",
+        "translation": "She was running late, so I went to pick her up at the station."
+      },
+      {
+        "sentence": "犬はのどが渇いたそうだったので、水を飲ませてあげた。",
+        "romanization": "Inu wa nodo ga kawaita sou datta node, mizu o nomasete ageta.",
+        "translation": "The dog seemed thirsty, so I gave it water to drink."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_28",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb て ある (Verb-te aru)",
+    "shortExplanation": "Indicates that an action has been done and its result is still in effect.",
+    "longExplanation": "The ～てある grammar point is used to express that an action has been done and its result remains in effect. It indicates that the action was intentionally performed and its effect continues. The formation is done by conjugating the verb into its て-form and then adding ある.",
+    "formation": "Verb-て form + ある",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "窓が開けてある。",
+        "romanization": "Mado ga akete aru.",
+        "translation": "The window has been opened (and remains open)."
+      },
+      {
+        "sentence": "宿題がもう終わってある。",
+        "romanization": "Shukudai ga mou owatte aru.",
+        "translation": "The homework has already been done (and remains that way)."
+      },
+      {
+        "sentence": "洗濯物が全部干してある。",
+        "romanization": "Sentakumono ga zenbu hoshite aru.",
+        "translation": "The laundry has been hung up to dry (and remains that way)."
+      },
+      {
+        "sentence": "この部屋はきれいに掃除してある。",
+        "romanization": "Kono heya wa kirei ni souji shite aru.",
+        "translation": "This room has been cleaned (and remains clean)."
+      }
+    ]
+  }
+]

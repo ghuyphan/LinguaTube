@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Verb_122": {
+      "title": "Động từ thể ます + そうもない (〜sou mo nai)",
+      "shortExplanation": "Biểu thị khả năng xảy ra của sự việc là vô cùng thấp; 'khó lòng mà...', 'hầu như không có vẻ gì là...', 'chắc là không thể nào...'.",
+      "longExplanation": "Mẫu ngữ pháp '～そうもない' được gắn vào sau thân động từ thể ます (bỏ ます) để diễn tả phán đoán chủ quan của người nói rằng khả năng một sự việc, hành động xảy ra là cực kỳ thấp, gần như không thể nào thực hiện được ('khó lòng mà...', 'chắc là chẳng thể nào...'). Cấu trúc này tương tự như '～そうにない', nhưng việc sử dụng trợ từ 'も' tạo nên sắc thái phủ định mạnh mẽ hơn, nhấn mạnh sự khó khăn hoặc gần như tuyệt vọng.",
+      "formation": "Động từ thể ます (bỏ ます) + そうもない",
+      "examples": [
+        {
+          "translation": "Có vẻ như tôi khó lòng mà hoàn thành xong công việc trong ngày hôm nay."
+        },
+        {
+          "translation": "Cơn mưa này dường như khó lòng mà tạnh được."
+        },
+        {
+          "translation": "Anh ấy dường như khó lòng mà giữ đúng lời hứa."
+        },
+        {
+          "translation": "Vấn đề hóc búa này khó lòng mà giải quyết được."
+        }
+      ]
+    },
+    "ja_Verb_123": {
+      "title": "Động từ + そばから (〜soba kara)",
+      "shortExplanation": "Diễn tả hành động vừa mới làm xong thì sự việc khác lại xảy ra ngay lập tức, thường mang sắc thái bất lực, lặp đi lặp lại; 'vừa mới... thì lại... ngay'.",
+      "longExplanation": "Mẫu ngữ pháp '～そばから' (N1) kết hợp với động từ ở thể từ điển hoặc thể た để diễn tả rằng một hành động vừa mới được thực hiện xong thì ngay lập tức một sự việc hay hành vi đối nghịch, gây cản trở khác lại xảy ra, và tình trạng này thường lặp đi lặp lại nhiều lần. Thường được dịch là 'vừa mới... xong là lại...', 'hễ... là ngay lập tức...'. Mẫu câu này thường dùng để bộc lộ sự ngán ngẩm, tiếc công sức hoặc bất lực của người nói khi nỗ lực bị uổng phí.",
+      "formation": "Động từ thể từ điển / thể た + そばから",
+      "examples": [
+        {
+          "translation": "Vừa mới dọn dẹp xong là lũ trẻ lại bày bừa ra ngay."
+        },
+        {
+          "translation": "Vừa mới hoàn thành xong công việc thì công việc mới lại ập đến."
+        },
+        {
+          "translation": "Vừa giải quyết xong chuyện đó thì vấn đề khác lại nảy sinh."
+        },
+        {
+          "translation": "Vừa mới chợp mắt một cái thì chuông điện thoại lại reo."
+        }
+      ]
+    },
+    "ja_Verb_124": {
+      "title": "Động từ thể た + が最後 (〜ta ga saigo)",
+      "shortExplanation": "Nhấn mạnh một khi hành động đã xảy ra thì sẽ dẫn đến hậu quả không thể cứu vãn; 'một khi đã... thì coi như xong', 'lỡ mà... thì hết cách'.",
+      "longExplanation": "Mẫu ngữ pháp '～たが最後' (N1) kết hợp với động từ ở thể た (thể quá khứ) để diễn tả rằng một khi hành động hay sự việc nào đó đã trót xảy ra thì sẽ kéo theo một hệ quả mang tính tất yếu, không thể cứu vãn hay đảo ngược được tình thế ('một khi đã... thì coi như xong', 'hễ mà lỡ... thì hết đường quay lại'). Vế sau hầu như luôn luôn là một kết cục tiêu cực, tồi tệ hoặc mất kiểm soát.",
+      "formation": "Động từ thể た + が最後",
+      "examples": [
+        {
+          "translation": "Một khi anh ấy đã nổi giận thì không một ai có thể cản nổi."
+        },
+        {
+          "translation": "Một khi đã lỡ bắt đầu chơi trò này thì tôi cắm đầu chơi suốt cả đêm."
+        },
+        {
+          "translation": "Một khi cô ấy đã bước ra khỏi phòng là cô ấy không bao giờ quay lại nữa."
+        },
+        {
+          "translation": "Một khi tôi đã bước qua cây cầu đó, thì đó cũng chính là lần từ biệt cuối cùng."
+        }
+      ]
+    },
+    "ja_Verb_125": {
+      "title": "Động từ thể た + ことにしてください (~ ta koto ni shite kudasai)",
+      "shortExplanation": "Yêu cầu đối phương hãy xem như hoặc giả vờ như một sự việc đã diễn ra; 'xin hãy coi như là...', 'hãy vờ như...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Động từ thể た + ことにしてください' bắt nguồn từ cấu trúc '～ことにする' (quyết định xem như, giả định là), dùng để nhờ vả hoặc yêu cầu đối phương hành xử, đối đãi như thể một việc gì đó đã hoàn tất hoặc đã xảy ra theo một cách nhất định (cho dù thực tế có thể không phải vậy). Cách diễn đạt này thường được dùng vì mục đích dàn xếp êm đẹp, giữ bí mật hoặc tránh tranh cãi, phiền phức trong giao tiếp.",
+      "formation": "Động từ thể た + ことにしてください",
+      "examples": [
+        {
+          "translation": "Xin hãy coi như là bạn đã quên chuyện ngày hôm qua đi nhé."
+        },
+        {
+          "translation": "Xin đừng nói với ai là tôi đã đến đây, hãy xem như đây là một bí mật nhé."
+        },
+        {
+          "translation": "Xin hãy vờ như bạn nghĩ rằng anh ấy đã nhầm lẫn đi."
+        },
+        {
+          "translation": "Xin hãy xem như là cô ấy đã về nhà rồi nhé."
+        }
+      ]
+    },
+    "ja_Verb_126": {
+      "title": "Động từ thể たら + Động từ thể た + で (~ tara ~ tade)",
+      "shortExplanation": "Diễn tả việc nếu làm thì lại có nỗi khổ hay phiền toái của việc làm, đằng nào cũng nảy sinh vấn đề; 'nếu làm... thì cũng phiền, mà không làm... thì cũng dở'.",
+      "longExplanation": "Mẫu ngữ pháp 'Động từ thể たら + cùng Động từ thể た + で' được dùng để diễn tả rằng cho dù sự việc có xảy ra hay không xảy ra thì phía nào cũng sẽ kéo theo những vấn đề, phiền toái hoặc mối bận tâm riêng ('làm thì cũng dở mà không làm thì cũng dở', 'có... thì lại phát sinh nỗi khổ của có...'). Thường được sử dụng theo cấu trúc song song 'AたらAたで～、AなかったらAなかったで～' để bộc lộ thế tiến thoái lưỡng nan của người nói.",
+      "formation": "Động từ thể た + ら + Động từ thể た (lặp lại) + で",
+      "examples": [
+        {
+          "translation": "Nếu đi thì cũng vất vả, mà nếu không đi thì khéo lại hối hận."
+        },
+        {
+          "translation": "Nếu mua thì hết tiền, mà nếu không mua thì sau này lại thèm muốn."
+        },
+        {
+          "translation": "Nếu nấu thì ăn không hết, mà nếu không nấu thì lại đói bụng."
+        },
+        {
+          "translation": "Đi du lịch thì mệt người, mà ở nhà thì lại thấy buồn chán."
+        }
+      ]
+    },
+    "ja_Verb_127": {
+      "title": "Động từ thể たら + きりがない (tara kiri ga nai)",
+      "shortExplanation": "Diễn tả việc nếu bắt đầu làm gì thì sẽ tiếp diễn vô tận không có hồi kết; 'nếu... thì không có điểm dừng', 'nếu... thì biết đến bao giờ mới xong'.",
+      "longExplanation": "Mẫu ngữ pháp '～たらきりがない' (kiri viết bằng chữ Hán là 限り - giới hạn) kết hợp động từ thể たら để biểu thị rằng nếu bắt đầu làm một việc gì đó thì những rắc rối, đòi hỏi hoặc hành động ấy sẽ cứ thế tiếp diễn mãi không bao giờ dứt ('nếu mà... thì chẳng biết đến bao giờ mới xong', 'hễ mà... thì không có hồi kết'). Thường mang hàm ý tiêu cực, nhằm khuyên ngăn người khác không nên nhượng bộ, không nên tiếp tục hoặc cần phải biết dừng lại đúng lúc.",
+      "formation": "Động từ thể た + ら + きりがない",
+      "examples": [
+        {
+          "translation": "Cái động cơ này cứ sửa xong là lại hỏng ngay, nếu cứ sửa tiếp thì chẳng bao giờ dứt được."
+        },
+        {
+          "translation": "Một khi đã bắt đầu uống thì uống mãi không có điểm dừng."
+        },
+        {
+          "translation": "Nếu cứ cho cô ấy mượn tiền thì sẽ chẳng bao giờ có hồi kết đâu."
+        },
+        {
+          "translation": "Một khi đã bắt đầu nghe anh ấy kể chuyện thì không biết bao giờ mới hết."
+        }
+      ]
+    },
+    "ja_Verb_128": {
+      "title": "Động từ thể たら + 最後 (〜tara saigo)",
+      "shortExplanation": "Diễn tả một khi đã làm gì thì sẽ dẫn đến tình trạng không thể dừng lại hoặc không thể cứu vãn; 'một khi đã... thì coi như xong', 'hễ mà... thì không thể dứt ra được'.",
+      "longExplanation": "Mẫu ngữ pháp '～たら最後' (N1) kết hợp với động từ ở dạng điều kiện thể たら để nhấn mạnh rằng một khi hành động hoặc sự việc đã trót xảy ra thì tình thế sẽ trở nên không thể đảo ngược, không thể kiềm chế hay cứu vãn được nữa ('một khi đã... thì coi như xong', 'hễ mà lỡ... thì hết cách'). Có ý nghĩa và cách dùng tương tự như '～たが最後', thường đi kèm với những kết quả tiêu cực, mất kiểm soát hoặc không lối thoát ở vế sau.",
+      "formation": "Động từ thể た + ら最後",
+      "examples": [
+        {
+          "translation": "Một khi đã bắt đầu chơi trò chơi này thì bạn sẽ quên bẵng cả thời gian trôi."
+        },
+        {
+          "translation": "Anh ấy một khi đã bắt đầu uống một cốc bia thì sẽ không thể nào dừng lại được."
+        },
+        {
+          "translation": "Cuốn sách này một khi đã bắt đầu đọc thì tôi đọc một mạch cho đến hết."
+        },
+        {
+          "translation": "Một khi đã chọc giận anh ấy thì khó lòng mà được tha thứ đấy nhé."
+        }
+      ]
+    },
+    "ja_Verb_129": {
+      "title": "Động từ 1 thể ます + つ + Động từ 2 thể ます + つ (tsu... tsu...)",
+      "shortExplanation": "Diễn tả hai hành động mang tính đối ứng hoặc luân phiên lặp đi lặp lại nhiều lần; 'lúc thì... lúc thì...', 'vừa... vừa...'.",
+      "longExplanation": "Mẫu ngữ pháp '～つ～つ' (N1) kết hợp với thân động từ thể ます (bỏ ます) của hai động từ thường mang tính đối lập, tương hỗ hoặc song hành (như 押しつ押されつ - chen chúc xô đẩy, 持ちつ持たれつ - tương trợ lẫn nhau) để diễn tả hai hành động luân phiên tiếp diễn qua lại liên tục ('hết... lại...', 'vừa... vừa...'). Đây là lối diễn đạt mang đậm phong cách văn viết cổ điển, văn học hoặc mang tính thành ngữ trang trọng.",
+      "formation": "Động từ 1 thể ます (bỏ ます) + つ + Động từ 2 thể ます (bỏ ます) + つ",
+      "examples": [
+        {
+          "translation": "Từ sáng đến tối hết làm việc lại học bài luân phiên, tôi mệt lử cả người."
+        },
+        {
+          "translation": "Anh ấy vừa nói vừa cười rất vui vẻ."
+        },
+        {
+          "translation": "Lũ trẻ vừa ăn vừa chơi đùa."
+        },
+        {
+          "translation": "Tôi đã trải qua thời gian hết đọc lại viết."
+        }
+      ]
+    },
+    "ja_Verb_130": {
+      "title": "Động từ thể て + からというもの (te kara to iu mono)",
+      "shortExplanation": "Diễn tả kể từ sau một mốc sự kiện mang tính bước ngoặt, một trạng thái mới đã kéo dài liên tục cho đến nay; 'kể từ sau khi... thì suốt từ đó đến nay...'.",
+      "longExplanation": "Mẫu ngữ pháp '～てからというもの' (N1) kết hợp với động từ ở thể て để diễn tả rằng kể từ sau khi một sự kiện quan trọng hay bước ngoặt nào đó xảy ra, một tình trạng hoặc thay đổi lớn đã liên tục kéo dài suốt từ thời điểm đó cho tới tận bây giờ ('kể từ sau khi... là suốt từ đó đến nay...'). Khác với '～てから' thông thường, mẫu này nhấn mạnh sự biến đổi sâu sắc và tính tiếp diễn liên tục của trạng thái mới so với trước kia.",
+      "formation": "Động từ thể て + からというもの",
+      "examples": [
+        {
+          "translation": "Kể từ sau khi chia tay cô ấy, thời gian tôi ở một mình đã tăng lên."
+        },
+        {
+          "translation": "Kể từ khi có con đến nay, tôi không còn chút thời gian rảnh rỗi nào nữa."
+        },
+        {
+          "translation": "Kể từ sau khi bắt đầu công việc mới, ngày nào tôi cũng bận rộn."
+        },
+        {
+          "translation": "Kể từ khi vào đại học đến giờ, tôi không còn thời gian để chơi thể thao nữa."
+        }
+      ]
+    },
+    "ja_Verb_131": {
+      "title": "Động từ thể て + こそ (te koso)",
+      "shortExplanation": "Nhấn mạnh chỉ khi thực hiện hành động đó thì mới có ý nghĩa hoặc mới đạt được kết quả, nhận thức sâu sắc; 'chính nhờ làm... mới...', 'chỉ khi... mới thực sự...'.",
+      "longExplanation": "Mẫu ngữ pháp '～てこそ' (N1) kết hợp với động từ ở thể て cùng trợ từ nhấn mạnh 'こそ' để khẳng định rằng hành động đứng trước chính là điều kiện thiết yếu, tiên quyết nhất để một nhận thức, giá trị hoặc kết quả có thể thành hình ('chính nhờ... thì mới thực sự hiểu được', 'chỉ khi tự mình... thì mới có ý nghĩa'). Vế sau thường mang ý nghĩa tích cực, thể hiện sự thấu hiểu, trưởng thành hoặc đạt được thành quả.",
+      "formation": "Động từ thể て + こそ",
+      "examples": [
+        {
+          "translation": "Chính nhờ thực tế sử dụng thì mới hiểu hết được giá trị của nó."
+        },
+        {
+          "translation": "Chỉ khi tự mình trải nghiệm thì mới học được những điều quan trọng."
+        },
+        {
+          "translation": "Chính nhờ nếm trải thất bại thì mới thấu hiểu được hương vị của thành công."
+        },
+        {
+          "translation": "Chỉ khi nỗ lực hết mình thì mới có thể gặt hái được thành tựu."
+        }
+      ]
+    },
+    "ja_Verb_132": {
+      "title": "Động từ thể て + は (～te wa)",
+      "shortExplanation": "Diễn tả hành động hễ cứ xảy ra là lại dẫn đến một kết quả lặp đi lặp lại, hoặc hai hành động luân phiên xoay vòng; 'hễ cứ... là lại...', 'cứ... rồi lại...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ては' (N1) kết hợp với động từ ở thể て để diễn tả: 1) Một hành động hoặc tình huống hễ cứ diễn ra thì kéo theo một hệ quả quen thuộc lặp đi lặp lại ('hễ cứ... là lại...'); 2) Hai hành vi luân phiên lặp lại như một vòng lặp không hồi kết theo dạng '～ては～、～ては～' ('cứ làm cái này rồi lại làm cái kia'). Thường dùng với ngữ điệu ngán ngẩm hoặc miêu tả nhịp sống, thói quen xoay vòng liên tục.",
+      "formation": "Động từ thể て + は",
+      "examples": [
+        {
+          "translation": "Hễ cứ gặp cô ấy là tôi lại luôn cảm thấy hồi hộp, căng thẳng."
+        },
+        {
+          "translation": "Căn phòng này cứ dọn xong là lại bề bộn, cứ thu dọn gọn gàng là lại bừa bãi."
+        },
+        {
+          "translation": "Cuộc sống của tôi cứ tập thể dục xong rồi lại ăn, ăn xong lại tập thể dục cứ thế tiếp diễn."
+        },
+        {
+          "translation": "Chuỗi ngày của tôi cứ học rồi lại ngủ, ngủ dậy rồi lại học."
+        }
+      ]
+    },
+    "ja_Verb_133": {
+      "title": "Động từ 1 thể て + は + Động từ 2 (~ te wa ~)",
+      "shortExplanation": "Diễn tả quy luật hoặc thói quen cứ hễ mỗi lần làm hành động 1 thì lại tiếp tục làm hành động 2; 'cứ mỗi khi... là lại...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Động từ 1 thể て + は + Động từ 2' được sử dụng để diễn đạt một chu kỳ thói quen hay quy luật hành vi lặp đi lặp lại: cứ mỗi khi hành động thứ nhất diễn ra thì người nói (hoặc chủ ngữ) lại tiến hành hành động thứ hai ('cứ mỗi lần... là lại...', 'hễ... là làm...'). Mẫu này nhấn mạnh tính quy luật, tính thường xuyên của một chuỗi hành động nối tiếp nhau trong đời sống.",
+      "formation": "Động từ 1 thể て + は + Động từ 2",
+      "examples": [
+        {
+          "translation": "Cứ mỗi lần đi làm trên tàu xe là tôi lại đọc sách điện tử."
+        },
+        {
+          "translation": "Cứ mỗi khi bạn bè đến phòng chơi là chúng tôi lại cùng nhau chơi game."
+        },
+        {
+          "translation": "Cứ mỗi lần anh ấy uống rượu là tôi lại ngăn không cho anh ấy lái xe."
+        },
+        {
+          "translation": "Cứ mỗi khi sáng tác xong một bài hát mới là tôi thu âm ngay lập tức."
+        }
+      ]
+    },
+    "ja_Verb_134": {
+      "title": "Động từ thể て + までも (~ temademo)",
+      "shortExplanation": "Diễn tả việc sẵn sàng làm đến cả mức cực đoan hoặc chấp nhận đánh đổi để đạt được mục đích; 'thậm chí đến mức phải... thì cũng...', 'dù có phải... đi chăng nữa'.",
+      "longExplanation": "Mẫu ngữ pháp '～てまでも' (hoặc '～てまで') là một mẫu N1 nhấn mạnh mức độ cực đoan của hành động đứng trước. Cấu trúc này diễn tả quyết tâm hoặc sự sẵn sàng chấp nhận hy sinh, đánh đổi bằng một hành vi vượt mức thông thường (như bớt xén giấc ngủ, chịu khổ cực, phạm pháp...) để đạt bằng được mục đích ở vế sau ('thậm chí đến mức phải... tôi cũng sẵn sàng', 'dù có phải... đi chăng nữa'). Trợ từ 'も' tăng thêm mức độ nhấn mạnh tính bất thường của hành vi.",
+      "formation": "Động từ thể て + までも (hoặc てまで)",
+      "examples": [
+        {
+          "translation": "Để thi đỗ kỳ thi, thậm chí đến mức phải cắt bớt giờ ngủ tôi cũng học."
+        },
+        {
+          "translation": "Nếu có thể kết hôn cùng cô ấy, dù có phải chịu bất cứ gian khổ nào tôi cũng muốn tích cóp tiền bạc."
+        },
+        {
+          "translation": "Vì muốn làm việc tại công ty này, dù phải mất nhiều giờ đi lại tôi cũng sẽ đi làm."
+        },
+        {
+          "translation": "Nếu là vì sự hồi phục của anh ấy, dù có phải làm bất cứ điều gì tôi cũng muốn hết lòng hỗ trợ."
+        }
+      ]
+    },
+    "ja_Verb_135": {
+      "title": "Động từ thể て + みせる (te miseru)",
+      "shortExplanation": "Hành động thực tế để chứng minh năng lực cho người khác thấy, hoặc thể hiện quyết tâm mạnh mẽ; 'làm... cho mà xem', 'chứng minh bằng hành động'.",
+      "longExplanation": "Mẫu ngữ pháp '～てみせる' kết hợp động từ thể て với động từ 'みせる' (見せる - cho xem). Cấu trúc này có hai ý nghĩa chính: 1) Thực hiện một hành động trước mắt người khác để chứng minh hoặc thị phạm năng lực của mình ('làm cho xem', 'thực hiện mẫu cho thấy'); 2) Bày tỏ ý chí, quyết tâm mãnh liệt của bản thân rằng nhất định sẽ làm được điều gì đó để người khác phải công nhận ('tôi nhất định sẽ làm được cho mà xem!').",
+      "formation": "Động từ thể て + みせる",
+      "examples": [
+        {
+          "translation": "Anh ấy đã giải câu đố đó cho mọi người xem."
+        },
+        {
+          "translation": "Tôi sẽ làm công việc này để chứng minh cho mọi người thấy là tôi làm được."
+        },
+        {
+          "translation": "Cô ấy đã nỗ lực học tập hết mình để chứng minh quyết tâm thi đỗ kỳ thi."
+        },
+        {
+          "translation": "Anh ấy đã nhảy xuống để chứng tỏ cho mọi người thấy mình chẳng sợ hãi điều gì."
+        }
+      ]
+    },
+    "ja_Verb_136": {
+      "title": "Động từ thể て + やまない (te yamanai)",
+      "shortExplanation": "Đi kèm các động từ chỉ cảm xúc, nguyện vọng để diễn tả tâm tư sâu sắc, tha thiết không bao giờ nguôi dứt; 'khôn nguôi...', 'hết lòng...', 'không ngừng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～てやまない' (N1, bắt nguồn từ động từ 止む - dừng, dứt) kết hợp với các động từ thể hiện cảm xúc, tình cảm hoặc tâm tư sâu nặng từ đáy lòng (như 願う - cầu mong, 祈る - cầu nguyện, 愛する - yêu thương, 尊敬する - kính trọng, 期待する - kỳ vọng). Cấu trúc này dùng để bộc lộ rằng tình cảm hay mong ước ấy vô cùng mãnh liệt, tha thiết và kéo dài liên tục, không bao giờ phai nhạt hay ngơi nghỉ ('tha thiết cầu chúc...', 'không nguôi yêu thương...', 'luôn một lòng kính trọng...'). Thường dùng trong các phát biểu chính thức, lời chúc trang trọng hoặc văn chương trữ tình.",
+      "formation": "Động từ thể て + やまない (thường đi với các động từ cảm xúc: 祈る, 願う, 愛する, 尊敬する, 期待する...)",
+      "examples": [
+        {
+          "translation": "Lòng tôi luôn hướng về mẹ khôn nguôi."
+        },
+        {
+          "translation": "Anh ấy yêu thương cô ấy hết lòng khôn xiết."
+        },
+        {
+          "translation": "Anh ấy luôn dành sự kính trọng sâu sắc không ngừng đối với văn hóa Nhật Bản."
+        },
+        {
+          "translation": "Tôi tha thiết cầu chúc cho sự thành công của cô ấy."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Verb_122": {
+      "title": "动词连用形 + そうもない (〜sou mo nai)",
+      "shortExplanation": "表示可能性极低或几乎没有实现的指望；“很难……”、“看来不可能……”、“几乎没有……的可能”。",
+      "longExplanation": "句型“～そうもない”接在动词连用形（ます形去掉ます）之后，用于表达说话人根据当前情况做出的主观推测，表示某事发生的可能性极低，几乎不可能会实现（“很难……”、“眼看不能……”、“绝不可能……”）。与“～そうにない”相比，助词“も”的加入进一步强化了否定语气，表达出更为绝望、彻底的低可能性。",
+      "formation": "动词连用形（ます形去掉ます） + そうもない",
+      "examples": [
+        {
+          "translation": "看来今天之内很难把工作完成了。"
+        },
+        {
+          "translation": "雨看起来一点也没有要停的样子。"
+        },
+        {
+          "translation": "他看来很难会遵守约定。"
+        },
+        {
+          "translation": "这个复杂的难题看来很难得到解决。"
+        }
+      ]
+    },
+    "ja_Verb_123": {
+      "title": "动词 + そばから (〜soba kara)",
+      "shortExplanation": "表示刚做完某一动作，立刻又发生另一件事，通常暗含重复发生且令人无奈、懊恼的语气；“刚……就又……”、“随……随……”。",
+      "longExplanation": "句型“～そばから”接在动词辞书形或た形之后，表示某种行为刚刚完成，紧接着又出现了相反或破坏性的动作，而且这种情况往往反复发生（“刚……就立刻又……”、“随收拾随弄乱”）。通常带有说话人感到前功尽弃、徒劳无功、无可奈何或焦躁不满的感情色彩，不能用于一次性的普通自然现象。",
+      "formation": "动词辞书形 / た形 + そばから",
+      "examples": [
+        {
+          "translation": "刚打扫完房间，孩子们就又给弄乱了。"
+        },
+        {
+          "translation": "刚做完手头的工作，新的工作就接踵而至了。"
+        },
+        {
+          "translation": "刚解决掉那个问题，马上又冒出了别的问题。"
+        },
+        {
+          "translation": "刚一入睡，电话就响了起来。"
+        }
+      ]
+    },
+    "ja_Verb_124": {
+      "title": "动词た形 + が最後 (〜ta ga saigo)",
+      "shortExplanation": "强调一旦发生了某种情况，就会产生无法挽回的后果；“一旦……就彻底完了”、“要是……可就全完了”。",
+      "longExplanation": "句型“～たが最後”接在动词た形之后，用于假设或陈述一旦发生某种行为或事件，局势便会变得无法收拾、不可逆转（“一旦……就彻底完了”、“只要……就再无挽回的余地”）。后项通常接续极其严重、消极的不良后果，或者陷入完全无法控制的事态。",
+      "formation": "动词た形 + が最後",
+      "examples": [
+        {
+          "translation": "他一旦发火，谁也拦不住他。"
+        },
+        {
+          "translation": "一旦开始玩这个游戏，我就玩了整整一个晚上停不下来。"
+        },
+        {
+          "translation": "她一旦走出了房间，就再也没有回来过。"
+        },
+        {
+          "translation": "我一旦迈过了那座桥，就成了永诀。"
+        }
+      ]
+    },
+    "ja_Verb_125": {
+      "title": "动词た形 + ことにしてください (~ ta koto ni shite kudasai)",
+      "shortExplanation": "请求对方当作某事已经发生或权当处于某种状态；“请当作已经……”、“请权当……”。",
+      "longExplanation": "句型“～たことにしてください”由“～ことにする”（权当、当作）派生而来，接在动词た形之后，用于请求对方在态度或处理方式上假定某件事已经发生或既成事实（即便实际情况并非如此）。常用于为了息事宁人、保密或省去不必要的麻烦而采取的变通说法（“请全当已经……吧”、“就当……处理吧”）。",
+      "formation": "动词た形 + ことにしてください",
+      "examples": [
+        {
+          "translation": "昨天的事，请您就当作已经忘了吧。"
+        },
+        {
+          "translation": "请不要告诉任何人我来过这里，就当成我们之间的秘密吧。"
+        },
+        {
+          "translation": "请您权当是他自己弄错了就好。"
+        },
+        {
+          "translation": "就请当作她已经回家了吧。"
+        }
+      ]
+    },
+    "ja_Verb_126": {
+      "title": "动词た形 + ら + 动词た形 + で (~ tara ~ tade)",
+      "shortExplanation": "表示即便实现了或做了某事，也自有其相应的麻烦或困扰，横竖都不省心；“真要是……了倒也……”。",
+      "longExplanation": "句型“动词た形 + ら + 动词た形 + で”用于说明：即使前项如愿发生或采取了某种行动，也会随之带来该种情况特有的麻烦、负担或问题（“真去做了也有做的事后麻烦”）。常与否定形式“～なかったら～なかったで”并列使用，形成“做也有做的烦恼，不做也有不做的为难”，淋漓尽致地展现出进退两难的心态。",
+      "formation": "动词た形 + ら + （同一）动词た形 + で",
+      "examples": [
+        {
+          "translation": "真要是去了吧也有去的辛苦，可要是不去吧又觉得会后悔。"
+        },
+        {
+          "translation": "要是买了钱包就空了，可要是没买以后又心心念念想买。"
+        },
+        {
+          "translation": "要是做了饭吧又吃不完，可要是不做吧肚子又饿。"
+        },
+        {
+          "translation": "要是出门去旅行吧容易累，可要是待在家里又闲得无聊。"
+        }
+      ]
+    },
+    "ja_Verb_127": {
+      "title": "动词た形 + ら + きりがない (tara kiri ga nai)",
+      "shortExplanation": "表示一旦开了头就会没完没了、永无止境；“要是……就没个完”、“一……就没完没了”。",
+      "longExplanation": "句型“～たらきりがない”（“きり”对应汉字“限/切り”，意为界限、尽头）接在动词た形+ら之后，表示如果一旦开始做某件事，其引发的麻烦、要求或后果就会接连不断、永无停歇（“要是……可就没底了”、“要是……就没完没了”）。通常用于消极负面的语境，暗示应当适可而止或干脆不要轻易破例开头。",
+      "formation": "动词た形 + ら + きりがない",
+      "examples": [
+        {
+          "translation": "这台发动机修好了又立刻坏，要是修下去可就没完没了了。"
+        },
+        {
+          "translation": "一旦开喝起来就没完没了、停不下来。"
+        },
+        {
+          "translation": "要是借钱给她的话，可就没个底了。"
+        },
+        {
+          "translation": "一旦听他唠叨起来，那就没完没了了。"
+        }
+      ]
+    },
+    "ja_Verb_128": {
+      "title": "动词た形 + ら最後 (〜tara saigo)",
+      "shortExplanation": "表示一旦做出某种举动，便会陷入无法自拔或不可挽回的境地；“一旦……就彻底完了”、“只要一……就停不下来”。",
+      "longExplanation": "句型“～たら最後”接在动词た形+ら之后，用于表示一旦某种行为发生，局势就将彻底走向不可逆转、无法遏制或无法收拾的结局（“一旦……就再也停不下来”、“要是……可就无可挽回了”）。与“～たが最後”用法基本相同，后项多伴随失控、沉迷或灾难性的后果。",
+      "formation": "动词た形 + ら最後",
+      "examples": [
+        {
+          "translation": "这个游戏一旦开始玩，就会彻底忘记时间的流逝。"
+        },
+        {
+          "translation": "他一旦开喝起一杯啤酒，就再也停不下来了。"
+        },
+        {
+          "translation": "这本书一旦开始读，我就忍不住一口气读完了。"
+        },
+        {
+          "translation": "你要是惹他发了火，那可就很难得到他的原谅了。"
+        }
+      ]
+    },
+    "ja_Verb_129": {
+      "title": "动词连用形 + つ + 动词连用形 + つ (tsu... tsu...)",
+      "shortExplanation": "表示两个动作交替反复进行，常搭配成对的反义或相关动词；“时而……时而……”、“一会儿……一会儿……”。",
+      "longExplanation": "句型“～つ～つ”接在两个动词连用形（ます形去掉ます）之后，用于表示两个动作交替进行、反复出现（“时而……时而……”、“又……又……”）。常常与成对的反义动词、相对动词搭配形成固定惯用表达（如“持ちつ持たれつ/互相帮助”、“押しつ押されつ/拥挤不堪”），属于具有文语色彩、文雅庄重的书面语表达。",
+      "formation": "动词1连用形（去掉ます） + つ + 动词2连用形（去掉ます） + つ",
+      "examples": [
+        {
+          "translation": "从早到晚一会儿工作一会儿学习，真是把我累坏了。"
+        },
+        {
+          "translation": "他一边说一边笑，玩得十分开心。"
+        },
+        {
+          "translation": "孩子们边吃边玩。"
+        },
+        {
+          "translation": "我一会儿阅读一会儿写作，就这样度过了一整天。"
+        }
+      ]
+    },
+    "ja_Verb_130": {
+      "title": "动词て形 + からというもの (te kara to iu mono)",
+      "shortExplanation": "表示自从发生某事之后，一种全新的状态便一直持续至今；“自从……以来一直……”、“自从……之后就……”。",
+      "longExplanation": "句型“～てからというもの”接在动词て形之后，用于强调自从某个转折性的重大事件发生之后，生活或环境便发生了深刻变化，且这种新状态一直稳定持续到了今天（“自从……之后就一直……”）。与普通的“～てから”相比，该句型更加突显该事件作为分水岭的里程碑意义，以及事后状态长期的持续性。",
+      "formation": "动词て形 + からというもの",
+      "examples": [
+        {
+          "translation": "自从和她分手之后，我一个人独处的时间变多了。"
+        },
+        {
+          "translation": "自从孩子出生以后，自己的自由时间就荡然无存了。"
+        },
+        {
+          "translation": "自从换了新工作以来，每天都变得非常忙碌。"
+        },
+        {
+          "translation": "自从上了大学之后，就再也没有时间做运动了。"
+        }
+      ]
+    },
+    "ja_Verb_131": {
+      "title": "动词て形 + こそ (te koso)",
+      "shortExplanation": "强调只有做到了某件事，才算真正具有意义，或才能体会到某种价值；“只有……才……”、“正因为……才真正……”。",
+      "longExplanation": "句型“～てこそ”接在动词て形之后，借助强调用助词“こそ”，表明前项行为是实现后项认知、价值或成果不可或缺的唯一先决条件（“唯有……才真正……”、“只有做到了……才算……”）。后项通常接续表示正面评价、深刻感悟、获得成果或具有积极意义的表达。",
+      "formation": "动词て形 + こそ",
+      "examples": [
+        {
+          "translation": "只有真正实际使用过，才能理解它的真正价值。"
+        },
+        {
+          "translation": "只有亲自去经历，才能学到宝贵的东西。"
+        },
+        {
+          "translation": "唯有经历过失败，才能真正体会到成功的滋味。"
+        },
+        {
+          "translation": "只有付出努力，才能成就一番事业。"
+        }
+      ]
+    },
+    "ja_Verb_132": {
+      "title": "动词て形 + は (～te wa)",
+      "shortExplanation": "表示只要一发生某种动作便屡屡伴随特定结果，或两项动作周而复始反复循环；“每当……就总是……”、“一……就又……”。",
+      "longExplanation": "句型“～ては”接在动词て形之后，主要有两种用法：1）表示“每当……时，就总是会引发某种重复出现的结果”，带有规律性或无奈感；2）以“～ては……、～ては……”的形式，表示两项动作此起彼伏、周而复始地交替反复进行（“一……就……，刚……又……”）。常用于感叹某种无法打破的循环或单调重复的生活状态。",
+      "formation": "动词て形 + は",
+      "examples": [
+        {
+          "translation": "每当见到她，我总是忍不住感到十分紧张。"
+        },
+        {
+          "translation": "这间屋子刚打扫干净就又乱了，刚收拾整齐就又被弄得乱七八糟。"
+        },
+        {
+          "translation": "我一直过着运动完就吃、吃饱了又运动的反复循环生活。"
+        },
+        {
+          "translation": "每天都是学了就睡、睡醒了又学的日子。"
+        }
+      ]
+    },
+    "ja_Verb_133": {
+      "title": "动词1て形 + は + 动词2 (~ te wa ~)",
+      "shortExplanation": "表示一种规律性的习惯动作或反复模式；“每当……就……”、“一……就常常……”。",
+      "longExplanation": "句型“动词1て形 + は + 动词2”用于表达一种固定的行为模式或规律性习惯：每当前项的动作或情境发生时，后项的动作就会紧接着重复出现（“每逢……就会去做……”、“只要……就照例……”）。强调前后两个动作之间形成了稳固的连带关系与反复出现的频率。",
+      "formation": "动词1て形 + は + 动词2",
+      "examples": [
+        {
+          "translation": "每当我上下班通勤时，都会阅读电子书。"
+        },
+        {
+          "translation": "朋友每次一来我房间，我们就会一起打游戏。"
+        },
+        {
+          "translation": "每当他喝了酒，我就会坚决制止他开车。"
+        },
+        {
+          "translation": "我每写出一首新歌，就会立刻录制下来。"
+        }
+      ]
+    },
+    "ja_Verb_134": {
+      "title": "动词て形 + までも (~ temademo)",
+      "shortExplanation": "表示为了达到目的，甚至不惜采取极端手段或付出极大代价；“甚至不惜做到……的地步”、“即使……也……”。",
+      "longExplanation": "句型“～てまでも”（或“～てまで”）接在动词て形之后，用于强调前项行为已经达到了常理之外的极端程度。说话人以此表达为了实现后项的目标或心愿，甚至甘愿做出牺牲、吃尽苦头、乃至采取非常规手段的强烈意志与决心（“即便到了……的地步也要……”、“甚至不惜……也要……”）。助词“も”进一步加剧了语气的极端感。",
+      "formation": "动词て形 + までも（或 てまで）",
+      "examples": [
+        {
+          "translation": "为了通过考试，我甚至不惜削减睡眠时间也要拼命学习。"
+        },
+        {
+          "translation": "只要能和她结婚，哪怕吃尽千辛万苦我也要把钱存下来。"
+        },
+        {
+          "translation": "因为很想在这家公司工作，即使耗费很长时间通勤我也愿意去上班。"
+        },
+        {
+          "translation": "只要是为了他的康复，无论付出何种代价我都愿意全力支持他。"
+        }
+      ]
+    },
+    "ja_Verb_135": {
+      "title": "动词て形 + みせる (te miseru)",
+      "shortExplanation": "通过实际行动展示给别人看，或表达一定要做成的坚定决心；“做给……看”、“一定要……证明给大家看”。",
+      "longExplanation": "句型“～てみせる”接在动词て形之后，主要有两种语义情境：1）当面向他人演示、展示某种高超技巧或能力（“做给别人看”、“示范给……看”）；2）向周围的人展现出不容动摇的坚定决心与自信，誓言自己一定能克服困难达成目标，让质疑的人刮目相看（“一定要做成……给你们瞧瞧”）。",
+      "formation": "动词て形 + みせる",
+      "examples": [
+        {
+          "translation": "他解开了那个智力拼图，当场向大家展示了一番。"
+        },
+        {
+          "translation": "我会亲自把这项工作做好，证明给大家看我有这个能力。"
+        },
+        {
+          "translation": "为了通过考试，她拼命努力学习，向大家展现了她的决心。"
+        },
+        {
+          "translation": "他纵身一跃，以此向大家证明自己什么都不怕。"
+        }
+      ]
+    },
+    "ja_Verb_136": {
+      "title": "动词て形 + やまない (te yamanai)",
+      "shortExplanation": "接在表示情感、愿望的心里动词后，表示由衷且持久不息的强烈感情；“衷心……不已”、“由衷地……”、“……不止”。",
+      "longExplanation": "句型“～てやまない”（“やまない”来源于动词“止む/平息、停止”）接在动词て形之后，通常与表达内心深刻情感、祈愿或敬慕的动词（如“祈る/祈愿”、“願う/祝愿”、“愛する/深爱”、“尊敬する/崇敬”、“期待する/期待”等）搭配使用。用于郑重表达某种发自肺腑的深厚感情或真挚愿望长久持续、永无止息（“由衷地祝愿……”、“深爱不已……”、“无时无刻不在敬仰……”）。具有浓厚的书面语与郑重致辞色彩。",
+      "formation": "动词て形 + やまない（常与 祈る、願う、愛する、尊敬する、期待する 等心里动词搭配）",
+      "examples": [
+        {
+          "translation": "我对母亲的思念之情由衷且从未止息。"
+        },
+        {
+          "translation": "他由衷且深深地爱着她。"
+        },
+        {
+          "translation": "他对日本文化怀着崇敬不已的心情。"
+        },
+        {
+          "translation": "我由衷且殷切地期盼着她能够取得成功。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Verb_122": {
+      "title": "동사 ます형 + そうもない (〜sou mo nai)",
+      "shortExplanation": "어떤 일이 일어날 가능성이 극히 희박함을 나타내며, '~할 것 같지도 않다', '~할 기미가 보이지 않는다'라는 뜻입니다.",
+      "longExplanation": "'～そうもない' 문형은 동사 ます형 어간(연용형)에 접속하여, 화자의 직관이나 상황 판단상 어떤 동작이나 상태가 실현될 가능성이 거의 없음을 단정적으로 나타내는 N1 표현입니다('~할 것 같지도 않다', '~할 턱이 없다'). '～そうにない'와 의미는 유사하지만, 조사 'も'가 결합함으로써 부정의 뉘앙스가 더욱 강해져 실현 불가능성이 더 강조됩니다.",
+      "formation": "동사 ます형(어간) + そうもない",
+      "examples": [
+        {
+          "translation": "오늘 안으로 일을 끝마칠 수 있을 것 같지도 않다."
+        },
+        {
+          "translation": "비가 그칠 기미가 전혀 보이지 않는다."
+        },
+        {
+          "translation": "그가 약속을 지킬 것 같지 않다."
+        },
+        {
+          "translation": "이 어려운 문제는 해결될 기미가 보이지 않는다."
+        }
+      ]
+    },
+    "ja_Verb_123": {
+      "title": "동사 + そばから (〜soba kara)",
+      "shortExplanation": "어떤 행동을 하자마자 곧바로 다른 일이 잇달아 일어나며, 헛수고나 답답함을 동반할 때 씁니다; '~하기가 무섭게', '~하자마자 곧'.",
+      "longExplanation": "'～そばから'는 동사의 사전형이나 た형에 접속하여, 어떤 행동을 끝내기가 무섭게 뒤이어 상반되거나 방해되는 일이 즉시 일어나며 그것이 반복되는 상황을 나타내는 N1 문형입니다('~하기가 무섭게', '~하는 족족 바로'). 주로 공들인 노력이 헛수고가 되거나 밑 빠진 독에 물 붓기 같은 상황에서 화자의 답답함, 허탈함, 불만스러운 심정을 표현할 때 자주 쓰입니다.",
+      "formation": "동사 사전형 / た형 + そばから",
+      "examples": [
+        {
+          "translation": "청소하기가 무섭게 아이들이 어지럽힌다."
+        },
+        {
+          "translation": "일을 끝내자마자 새로운 업무가 밀려들어 왔다."
+        },
+        {
+          "translation": "그것을 해결하자마자 또 다른 문제가 불거져 나왔다."
+        },
+        {
+          "translation": "잠에 들기가 무섭게 전화벨이 울렸다."
+        }
+      ]
+    },
+    "ja_Verb_124": {
+      "title": "동사 た형 + が最後 (〜ta ga saigo)",
+      "shortExplanation": "일단 어떤 행동이나 사건이 일어나면 돌이킬 수 없는 치명적인 결과로 이어짐을 나타내며, '일단 ~했다 하면 끝이다', '한 번 ~했다가는 끝장이다'라는 뜻입니다.",
+      "longExplanation": "'～たが最後'는 동사의 과거형(た형)에 결합하여, 만약 어떤 행위가 실행되거나 사태가 벌어지면 더 이상 되돌릴 수 없는 불가역적인 파국이나 심각한 결과가 뒤따름을 경고하거나 강조하는 N1 문형입니다('한 번 ~했다 하면 그걸로 끝이다'). 후항에는 대개 통제 불능의 사태나 부정적이고 극단적인 결과가 이어집니다.",
+      "formation": "동사 た형 + が最後",
+      "examples": [
+        {
+          "translation": "그는 한 번 화를 냈다 하면 그 누구도 그를 말릴 수가 없습니다."
+        },
+        {
+          "translation": "이 게임을 한 번 시작했다 하면 밤새도록 계속하게 되었다."
+        },
+        {
+          "translation": "그녀는 방을 한 번 나갔다 하면 두 번 다시 돌아오지 않았다."
+        },
+        {
+          "translation": "내가 그 다리를 건넜다 하면, 그것이 마지막 이별이었다."
+        }
+      ]
+    },
+    "ja_Verb_125": {
+      "title": "동사 た형 + ことにしてください (~ ta koto ni shite kudasai)",
+      "shortExplanation": "상대방에게 어떤 일이 이미 일어난 것처럼 간주하거나 모른 척해 달라고 부탁할 때 쓰며, '~한 셈 쳐 주세요', '~한 것으로 해 주세요'라는 뜻입니다.",
+      "longExplanation": "'～たことにしてください' 문형은 사실과 다르더라도 편의상 또는 갈등이나 문제를 피하기 위해, 어떤 일이 이미 발생했거나 완료된 상태인 것처럼 다루어 달라고 상대방에게 정중히 요청할 때 사용합니다('~한 셈 쳐 주세요', '~한 것으로 해 주십시오'). 비밀 유지나 사후 수습 등 원만한 처리를 위해 자주 쓰입니다.",
+      "formation": "동사 た형 + ことにしてください",
+      "examples": [
+        {
+          "translation": "어제 일은 잊어버린 셈 쳐 주세요."
+        },
+        {
+          "translation": "제가 여기 온 것은 아무에게도 말하지 말고, 비밀로 한 셈 쳐 주세요."
+        },
+        {
+          "translation": "그가 실수한 것이라고 생각한 셈 쳐 주세요."
+        },
+        {
+          "translation": "그녀가 돌아간 셈 쳐 주세요."
+        }
+      ]
+    },
+    "ja_Verb_126": {
+      "title": "동사 た형 + ら + 동사 た형 + で (~ tara ~ tade)",
+      "shortExplanation": "그 행동을 하면 하는 대로 그 나름의 고충이나 문제가 있음을 나타내며, '~하면 한 대로', '~하면 하는 대로'라는 뜻입니다.",
+      "longExplanation": "'동사 た형 + ら + 동사 た형 + で' 문형은 어떤 일을 실행하면 실행하는 대로 그에 따른 또 다른 번거로움이나 부작용이 발생함을 나타냅니다. 흔히 부정형과 짝을 지어 '~たら~たで、~なかったら~なかったで'(하면 하는 대로 힘들고, 안 하면 안 하는 대로 문제다) 형태로 자주 쓰여, 이래도 곤란하고 저래도 마땅찮은 진퇴양난의 심경을 표현합니다.",
+      "formation": "동사 た형 + ら + (동일한) 동사 た형 + で",
+      "examples": [
+        {
+          "translation": "가면 간 대로 힘들고, 안 가면 안 간 대로 후회할 것 같다."
+        },
+        {
+          "translation": "사면 산 대로 돈이 없고, 안 사면 안 산 대로 나중에 또 사고 싶어진다."
+        },
+        {
+          "translation": "만들면 만든 대로 다 못 먹고, 안 만들면 안 만든 대로 배가 고프다."
+        },
+        {
+          "translation": "여행을 떠나면 떠난 대로 피곤하고, 집에 있으면 있는 대로 지루하다."
+        }
+      ]
+    },
+    "ja_Verb_127": {
+      "title": "동사 た형 + ら + きりがない (tara kiri ga nai)",
+      "shortExplanation": "어떤 일을 한 번 시작하면 끝도 없이 이어짐을 나타내며, '~하면 끝이 없다', '~하기 시작하면 한도 끝도 없다'라는 뜻입니다.",
+      "longExplanation": "'～たらきりがない'는 동사의 た형+ら에 결합하여, 일단 어떤 행동을 시작하거나 요구를 들어주기 시작하면 그와 관련된 일이나 불만이 꼬리를 물고 끝없이 이어져 멈출 수 없음을 나타내는 N1 문형입니다('~하면 한이 없다', '~하기 시작하면 끝이 안 난다'). 대개 부정적인 일에 쓰이며, 적당한 선에서 멈추거나 애초에 시작하지 말아야 함을 경계하는 뉘앙스를 담고 있습니다.",
+      "formation": "동사 た형 + ら + きりがない",
+      "examples": [
+        {
+          "translation": "이 엔진을 수리하면 금방 또 고장 나니, 고치기 시작하면 끝이 없다."
+        },
+        {
+          "translation": "마시기 시작하면 끝도 없이 마신다."
+        },
+        {
+          "translation": "그녀에게 돈을 빌려주기 시작하면 한도 끝도 없을 것이다."
+        },
+        {
+          "translation": "그의 이야기를 듣기 시작하면 끝이 없다."
+        }
+      ]
+    },
+    "ja_Verb_128": {
+      "title": "동사 た형 + ら最後 (〜tara saigo)",
+      "shortExplanation": "일단 어떤 행동을 시작하면 되돌릴 수 없거나 멈출 수 없게 됨을 나타내며, '일단 ~했다 하면 끝이다', '한 번 ~하면 걷잡을 수 없다'라는 뜻입니다.",
+      "longExplanation": "'～たら最後' 문형은 동사의 た형+ら에 결합하여, 만약 어떤 행동이나 사태가 일어나면 더 이상 이전 상태로 되돌릴 수 없거나 통제가 불가능한 상황에 빠지게 됨을 나타내는 N1 문형입니다('한 번 ~했다 하면 끝장이다', '~하면 그걸로 끝이다'). '～たが最後'와 같은 의미이며, 주로 멈출 수 없는 중독성이나 돌이킬 수 없는 부정적 결말에 대해 경고할 때 씁니다.",
+      "formation": "동사 た형 + ら最後",
+      "examples": [
+        {
+          "translation": "이 게임은 한 번 시작했다 하면 시간 가는 줄을 잊어버리게 됩니다."
+        },
+        {
+          "translation": "그는 맥주 한 잔을 마시기 시작했다 하면 멈출 줄을 모릅니다."
+        },
+        {
+          "translation": "이 책은 한 번 읽기 시작했다 하면 단숨에 끝까지 다 읽어 버렸습니다."
+        },
+        {
+          "translation": "그를 한 번 화나게 만들었다 하면 여간해서는 용서받지 못할 거야."
+        }
+      ]
+    },
+    "ja_Verb_129": {
+      "title": "동사 ます형 + つ + 동사 ます형 + つ (tsu... tsu...)",
+      "shortExplanation": "두 동작이 번갈아 가며 반복됨을 나타내며, '~하기도 하고 ~하기도 하며', '~락 ~락'이라는 뜻입니다.",
+      "longExplanation": "'～つ～つ'는 두 동사의 ます형 어간(연용형)에 접속하여, 대립되거나 연관된 두 가지 동작이 잇달아 번갈아 일어남을 나타내는 고풍스럽고 격식 있는 N1 문형입니다('~하기도 하고 ~하기도 하며', '~거니 ~거니'). 흔히 '持ちつ持たれつ'(상부상조하다), '押しつ押されつ'(밀치락달치락하다)처럼 관용구로 자주 쓰이며, 두 동작을 교대로 거듭하는 모습을 생동감 있게 묘사합니다.",
+      "formation": "동사1 ます형(어간) + つ + 동사2 ます형(어간) + つ",
+      "examples": [
+        {
+          "translation": "아침부터 밤까지 일하기도 하고 공부하기도 하느라 지쳐 버렸다."
+        },
+        {
+          "translation": "그는 이야기하기도 하고 웃기도 하면서 즐겁게 시간을 보내고 있었다."
+        },
+        {
+          "translation": "아이들은 먹기도 하고 놀기도 하고 있었다."
+        },
+        {
+          "translation": "나는 읽기도 하고 쓰기도 하면서 시간을 보냈다."
+        }
+      ]
+    },
+    "ja_Verb_130": {
+      "title": "동사 て형 + からというもの (te kara to iu mono)",
+      "shortExplanation": "어떤 중대한 계기나 사건이 일어난 이후로 지금까지 줄곧 특정한 상태가 지속되고 있음을 나타내며, '~하고 나서부터 줄곧', '~한 이래로 줄곧'이라는 뜻입니다.",
+      "longExplanation": "'～てからというもの' 문형은 동사의 て형에 결합하여, 어떤 전환점이 되는 사건이나 계기가 발생한 이후로 이전과는 확연히 달라진 상태나 생활 변화가 지금까지 계속 이어지고 있음을 강조하는 N1 표현입니다('~하고 난 뒤로는 내내', '~한 이후 줄곧'). 단순한 시간 순서를 나타내는 '～てから'에 비해, 그 사건을 계기로 일어난 지속적인 변화를 감정적으로 강조하는 뉘앙스가 짙습니다.",
+      "formation": "동사 て형 + からというもの",
+      "examples": [
+        {
+          "translation": "그녀와 헤어지고 나서부터 줄곧 혼자 보내는 시간이 늘어났습니다."
+        },
+        {
+          "translation": "아이가 태어나고 나서부터는 자유로운 시간이 없어졌다."
+        },
+        {
+          "translation": "새로운 일을 시작하고 나서부터 매일매일이 바빠졌습니다."
+        },
+        {
+          "translation": "대학교에 들어가고 나서부터 운동할 시간이 없어졌다."
+        }
+      ]
+    },
+    "ja_Verb_131": {
+      "title": "동사 て형 + こそ (te koso)",
+      "shortExplanation": "그 행동을 직접 실천해야 비로소 진정한 가치나 결과를 얻을 수 있음을 강조하며, '~해야 비로소', '~하고서야 비로소'라는 뜻입니다.",
+      "longExplanation": "'～てこそ'는 동사의 て형에 강조의 조사 'こそ'가 결합한 N1 문형으로, 앞선 행위야말로 뒤따르는 깨달음이나 성과를 얻기 위한 절대적인 필수 조건임을 강조합니다('~해야 비로소 ~할 수 있다', '~하고서야 비로소 의미가 있다'). 후항에는 대개 바람직한 결과, 깊은 깨달음, 진정한 가치의 획득을 나타내는 긍정적 표현이 이어집니다.",
+      "formation": "동사 て형 + こそ",
+      "examples": [
+        {
+          "translation": "실제로 사용해 보아야 비로소 그 가치를 이해할 수 있다."
+        },
+        {
+          "translation": "스스로 경험해 보아야 비로소 소중한 것을 배울 수 있다."
+        },
+        {
+          "translation": "실패를 겪어 보아야 비로소 성공의 맛을 알 수 있다."
+        },
+        {
+          "translation": "노력해야 비로소 무언가를 이루어 낼 수 있다."
+        }
+      ]
+    },
+    "ja_Verb_132": {
+      "title": "동사 て형 + は (～te wa)",
+      "shortExplanation": "어떤 행동을 할 때마다 일정한 결과가 되풀이되거나, 두 동작이 다람쥐 챗바퀴 돌듯 반복됨을 나타내며, '~하면 늘', '~했다가는 ~하고'라는 뜻입니다.",
+      "longExplanation": "'～ては' 문형은 동사의 て형에 접속하여 다음을 나타냅니다: 1) 어떤 행동을 할 때마다 예외 없이 동일한 결과나 심리적 반응이 뒤따름('~하면 늘 ~하게 된다'); 2) '~ては~、~ては~'의 형태로 두 동작이나 상태가 번갈아 가며 끝없이 반복됨('~했다가는 ~하고, ~했다가는 ~하고'). 주로 헛수고 같은 반복이나 단조롭고 순환적인 일상을 답답해하거나 자조적인 어조로 말할 때 자주 사용됩니다.",
+      "formation": "동사 て형 + は",
+      "examples": [
+        {
+          "translation": "그녀를 만날 때마다 늘 긴장하고 맙니다."
+        },
+        {
+          "translation": "이 방은 청소하면 어지러워지고, 정리하면 또 흐트러진다."
+        },
+        {
+          "translation": "운동했다가는 먹고, 먹었다가는 운동하는 생활이 이어지고 있다."
+        },
+        {
+          "translation": "공부했다가는 자고, 잤다가는 공부하는 날들의 연속입니다."
+        }
+      ]
+    },
+    "ja_Verb_133": {
+      "title": "동사1 て형 + は + 동사2 (~ te wa ~)",
+      "shortExplanation": "앞선 행동이 일어날 때마다 뒤따라 특정한 행동을 반복해서 행함을 나타내며, '~할 때마다 늘 ~하다', '~하면 으레 ~하다'라는 뜻입니다.",
+      "longExplanation": "'동사1 て형 + は + 동사2' 문형은 일상적인 습관이나 일정한 행동 패턴을 나타냅니다. 즉, 앞의 동작이나 상황이 발생할 때마다 그에 수반하여 뒤의 동작을 규칙적으로 실행함을 표현합니다('~할 때마다 ~한다', '~하면 으레 ~하곤 한다'). 두 행위 사이의 밀접한 연계성과 주기적인 반복성을 보여줍니다.",
+      "formation": "동사1 て형 + は + 동사2",
+      "examples": [
+        {
+          "translation": "출퇴근할 때마다 전자책을 읽고 있습니다."
+        },
+        {
+          "translation": "친구가 방에 놀러 올 때마다 게임을 하곤 합니다."
+        },
+        {
+          "translation": "그가 술을 마실 때마다 운전을 하지 못하도록 말립니다."
+        },
+        {
+          "translation": "새로운 곡을 만들 때마다 바로 녹음합니다."
+        }
+      ]
+    },
+    "ja_Verb_134": {
+      "title": "동사 て형 + までも (~ temademo)",
+      "shortExplanation": "목적을 달성하기 위해 극단적인 수단이나 대가를 감수함을 나타내며, '~하면서까지도', '~하는 극단적인 행동을 해서라도'라는 뜻입니다.",
+      "longExplanation": "'～てまでも'(또는 '～てまで')는 동사의 て형에 접속하여, 보통의 범위를 뛰어넘는 극단적인 수단이나 큰 희생을 감수하면서까지 뒤따르는 목표나 소망을 이루고자 하는 강한 결의를 나타내는 N1 문형입니다('~하면서까지도', '~해서까지'). 조사 'も'가 붙음으로써 '그렇게 극단적인 행동까지 불사하다니'라는 강조의 뉘앙스가 더욱 두드러집니다.",
+      "formation": "동사 て형 + までも (또는 てまで)",
+      "examples": [
+        {
+          "translation": "시험에 합격하기 위해서라면 자는 시간을 줄여 가면서까지도 공부하겠습니다."
+        },
+        {
+          "translation": "그녀와 결혼할 수 있다면 어떤 고생을 해서라도 돈을 모으고 싶다."
+        },
+        {
+          "translation": "이 회사에서 일하고 싶기 때문에, 오랜 시간을 들여 가면서까지 통근하겠습니다."
+        },
+        {
+          "translation": "그의 쾌유를 위해서라면 무슨 짓을 해서라도 곁에서 돕고 싶다."
+        }
+      ]
+    },
+    "ja_Verb_135": {
+      "title": "동사 て형 + みせる (te miseru)",
+      "shortExplanation": "자신의 능력을 행동으로 직접 보여주거나, 반드시 해내겠다는 강한 결의를 드러낼 때 쓰며, '~해 보이다', '~해 내고야 말겠다'라는 뜻입니다.",
+      "longExplanation": "'～てみせる' 문형은 동사의 て형에 보조동사 'みせる(보이다)'가 결합한 표현으로 다음의 두 가지 의미를 지닙니다: 1) 다른 사람 앞에서 실제로 행동을 취하여 기량이나 결과를 실증해 보임('~해 보이다'); 2) 상대방이나 주변 사람들에게 자신의 굳은 의지와 결의를 표명하여 '반드시 해내어 증명해 보이겠다'는 각오를 다질 때 사용합니다('반드시 ~해 보이고 말겠다').",
+      "formation": "동사 て형 + みせる",
+      "examples": [
+        {
+          "translation": "그는 그 퍼즐을 직접 풀어 보였다."
+        },
+        {
+          "translation": "내가 이 일을 해낼 수 있다는 것을 직접 행동으로 보여주겠습니다."
+        },
+        {
+          "translation": "그녀는 시험에 합격하기 위해 열심히 공부하는 모습을 똑똑히 보여주었습니다."
+        },
+        {
+          "translation": "그는 자신이 아무것도 두려워하지 않는다는 듯이 뛰어내려 보였다."
+        }
+      ]
+    },
+    "ja_Verb_136": {
+      "title": "동사 て형 + やまない (te yamanai)",
+      "shortExplanation": "감정이나 기원을 나타내는 심리 동사 뒤에 붙어 마음 깊은 곳에서 우러나오는 감정이 그치지 않음을 나타내며, '진심으로 ~해 마지않다', '간절히 ~해 마지않다'라는 뜻입니다.",
+      "longExplanation": "'～てやまない'는 동사의 て형에 '그치다'라는 뜻의 동사 '止む'의 부정형 'やまない'가 결합한 격조 높은 N1 문형입니다. 주로 '祈る(기도하다)', '願う(바라다)', '愛する(사랑하다)', '尊敬する(존경하다)', '期待する(기대하다)' 등 마음속 깊은 감정이나 소망을 나타내는 동사와 함께 쓰여, 그 감정이 한순간도 멈추지 않고 마음속에서 계속 솟아남을 나타냅니다('진심으로 ~해 마지않다', '간절히 ~해 마지않다'). 기념사, 축사, 문학적 서술 등에서 자주 쓰입니다.",
+      "formation": "동사 て형 + やまない (주로 祈る, 願う, 愛する, 尊敬する, 期待する 등과 결합)",
+      "examples": [
+        {
+          "translation": "나는 어머니를 늘 그리워해 마지않는다."
+        },
+        {
+          "translation": "그는 그녀를 깊이 사랑해 마지않는다."
+        },
+        {
+          "translation": "그는 일본 문화를 깊이 존경해 마지않는다."
+        },
+        {
+          "translation": "그녀의 성공을 간절히 기원해 마지않습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Verb_122": {
+      "title": "動詞ます形 ＋ そうもない (〜sou mo nai)",
+      "shortExplanation": "ある事態が実現する可能性が極めて低いことを表し、「〜しそうにない」「とても〜とは思えない」という意味を表します。",
+      "longExplanation": "「～そうもない」は、動詞のます形（連用形語幹）に接続し、話し手の主観的な観察や判断に基づいて、その動作や現象が実現する可能性が極めて薄いことを表す文型です。「〜そうにない」とほぼ同義ですが、取り立て助詞「も」が含まれることで否定のニュアンスが一段と強調され、「とても〜できる見込みがない」「〜する兆しがまるで見られない」という強い否定的推量を表します。",
+      "formation": "動詞ます形（連用形語幹） ＋ そうもない",
+      "examples": [
+        {
+          "translation": "今日中に仕事を終えそうもない。"
+        },
+        {
+          "translation": "雨が止みそうもない。"
+        },
+        {
+          "translation": "彼が約束を守りそうもない。"
+        },
+        {
+          "translation": "この難しい問題は解決しそうもない。"
+        }
+      ]
+    },
+    "ja_Verb_123": {
+      "title": "動詞 ＋ そばから (〜soba kara)",
+      "shortExplanation": "ある動作を行ってもすぐにそれと対立する事態が次々に起こることを表し、「〜するとすぐに」「〜したそばから」という意味を表します。",
+      "longExplanation": "「～そばから」は、動詞の辞書形やた形に接続し、ある行為を完了させても、直後にそれを打ち消すような別の行為や事態が繰り返し発生することを表す文型です。「〜してもすぐにまた〜する」といういたちごっこのような状態を表し、せっかくの努力が無駄になったり徒労に終わったりすることに対する話し手の困惑・不満・あきれといった感情を伴うことが多く見られます。",
+      "formation": "動詞辞書形 / た形 ＋ そばから",
+      "examples": [
+        {
+          "translation": "掃除をするそばから子供たちが散らかす。"
+        },
+        {
+          "translation": "仕事を終えるそばから新たな仕事が舞い込んできた。"
+        },
+        {
+          "translation": "それを解決するそばからまた別の問題が出てきた。"
+        },
+        {
+          "translation": "眠りにつくそばから電話が鳴った。"
+        }
+      ]
+    },
+    "ja_Verb_124": {
+      "title": "動詞た形 ＋ が最後 (〜ta ga saigo)",
+      "shortExplanation": "いったんある事態が起きてしまったら、もう取り返しがつかない決定的な結果になることを表し、「一度〜したら最後」「もし〜したらそれで終わりだ」という意味を表します。",
+      "longExplanation": "「～たが最後」は、動詞のた形に接続し、ある行為を行ったり事態が発生したりしたならば、その後はもはや後戻りや修正が不可能な深刻な結末に至ることを表すN1の文型です。「〜たら最後」と同様に、後続節には破滅的な結果、取り返しのつかない事態、あるいは歯止めが利かなくなるような強い事態を表す表現が続きます。",
+      "formation": "動詞た形 ＋ が最後",
+      "examples": [
+        {
+          "translation": "彼が一度怒ったが最後、誰も彼を止めることはできません。"
+        },
+        {
+          "translation": "このゲームを始めたが最後、一晩中やり続けた。"
+        },
+        {
+          "translation": "彼女が部屋を出たが最後、二度と戻ってこなかった。"
+        },
+        {
+          "translation": "私がその橋を渡ったが最後、それが最後の別れだった。"
+        }
+      ]
+    },
+    "ja_Verb_125": {
+      "title": "動詞た形 ＋ ことにしてください (~ ta koto ni shite kudasai)",
+      "shortExplanation": "実際とは異なっていても、便宜上ある事態がすでに起きたかのように見なしてほしいと頼む表現で、「〜したという扱いにしてください」「〜したことにしてください」という意味を表します。",
+      "longExplanation": "「～たことにしてください」は、動詞のた形に接続し、実際にはそうでない場合も含めて、便宜上またはトラブル回避のために「その動作がすでに行われた、あるいはそのような状態になった」と見なして対応してほしいと相手に依頼する文型です。秘密を守ったり、角を立てずに穏便に済ませたりする場面でよく用いられます。",
+      "formation": "動詞た形 ＋ ことにしてください",
+      "examples": [
+        {
+          "translation": "昨日のことは忘れたことにしてください。"
+        },
+        {
+          "translation": "私がここに来たことを誰にも言わないで、秘密にしたことにしてください。"
+        },
+        {
+          "translation": "彼が間違えたと思ったことにしてください。"
+        },
+        {
+          "translation": "彼女が帰ったことにしてください。"
+        }
+      ]
+    },
+    "ja_Verb_126": {
+      "title": "動詞た形 ＋ ら ＋ 動詞た形 ＋ で (~ tara ~ tade)",
+      "shortExplanation": "仮にその事態が実現したとしても、それはそれで別の問題や苦労が生じることを表し、「〜したらしたで（大変だ）」という意味を表します。",
+      "longExplanation": "「動詞た形 ＋ ら ＋ 動詞た形 ＋ で」は、仮にある動作を行ったり状況が実現したりしても、それに応じた別の面倒や悩みが生じることを表す文型です。「〜したらしたで…だし、〜しなければしないで…だ」のように肯定と否定を対比させて用いることが多く、どちらの道を選んでもそれぞれ固有の難点や不満が伴うというジレンマやためらいの気持ちを表します。",
+      "formation": "動詞た形 ＋ ら ＋ （同一の）動詞た形 ＋ で",
+      "examples": [
+        {
+          "translation": "行ったら行ったで大変だし、行かなかったら行かなかったで後悔しそうだ。"
+        },
+        {
+          "translation": "買ったら買ったでお金がなくなるし、買わなかったら買わなかったで後で欲しくなる。"
+        },
+        {
+          "translation": "作ったら作ったで食べきれないし、作らなかったら作らなかったでお腹が空く。"
+        },
+        {
+          "translation": "旅行に出かけたら出かけたで疲れるし、家にいたらいたで退屈する。"
+        }
+      ]
+    },
+    "ja_Verb_127": {
+      "title": "動詞た形 ＋ ら ＋ きりがない (tara kiri ga nai)",
+      "shortExplanation": "ある動作や事態を一度始めると限度がなくどこまでも続いてしまうことを表し、「〜したらきりがない」「〜し始めたら際限がない」という意味を表します。",
+      "longExplanation": "「～たらきりがない」は、動詞のた形＋らに接続し、ある行為や要求に一度応じたり始めたりしてしまうと、限度や終わりが見当たらず果てしなく続いてしまうことを表す文型です。「きり（限）」がないことから、主に不満、苦情、要求、出費などの望ましくない事態に対して用いられ、「きりがないからどこかで止めなければならない」という自制や忠告のニュアンスを含みます。",
+      "formation": "動詞た形 ＋ ら ＋ きりがない",
+      "examples": [
+        {
+          "translation": "このエンジンを修理したら、またすぐ壊れて、直したらきりがない。"
+        },
+        {
+          "translation": "飲み始めたらきりがない。"
+        },
+        {
+          "translation": "彼女にお金を貸したら、きりがない。"
+        },
+        {
+          "translation": "彼の話を聞き始めたらきりがない。"
+        }
+      ]
+    },
+    "ja_Verb_128": {
+      "title": "動詞た形 ＋ ら最後 (〜tara saigo)",
+      "shortExplanation": "いったんその事態が起きてしまったら、もう歯止めが利かなくなったり取り返しがつかなくなったりすることを表し、「一度〜したら最後」「ひとたび〜すれば終わりだ」という意味を表します。",
+      "longExplanation": "「～たら最後」は、動詞のた形＋らに接続し、ある行為をひとたび行ったりある事態が発生したりすると、後戻りができなくなったり自己制御が利かなくなったりすることを表す文型です。「〜たが最後」と同義であり、後続には夢中になって止められなくなる様子や、容易には修復できない深刻な結果を表す表現が続きます。",
+      "formation": "動詞た形 ＋ ら最後",
+      "examples": [
+        {
+          "translation": "このゲームを始めたら最後、時間の経つのを忘れてしまいます。"
+        },
+        {
+          "translation": "彼はビールを一杯飲み始めたら最後、止まらなくなります。"
+        },
+        {
+          "translation": "この本を読み始めたら最後、一気に読破してしまいました。"
+        },
+        {
+          "translation": "彼を怒らせたら最後、なかなか許してもらえないよ。"
+        }
+      ]
+    },
+    "ja_Verb_129": {
+      "title": "動詞ます形 ＋ つ ＋ 動詞ます形 ＋ つ (tsu... tsu...)",
+      "shortExplanation": "二つの動作が交互に繰り返されることを表し、「〜たり〜たり」「〜しつ〜しつ」という意味を表します。",
+      "longExplanation": "「～つ～つ」は、動詞のます形（連用形語幹）に接続し、対立的または対照的な関係にある二つの動作が交互に何度も繰り返される様子を表す文語的なN1の文型です。「押しつ押されつ」「持ちつ持たれつ」「行きつ戻りつ」のように慣用的な対句として用いられることが多く、格調高い文章語として動作が交互に展開する情景を生き生きと描写します。",
+      "formation": "動詞1ます形（語幹） ＋ つ ＋ 動詞2ます形（語幹） ＋ つ",
+      "examples": [
+        {
+          "translation": "朝から晩まで働きつ勉強しつで、疲れてしまった。"
+        },
+        {
+          "translation": "彼は話しつ笑いつして楽しんでいた。"
+        },
+        {
+          "translation": "子供たちは食べつ遊びつしていた。"
+        },
+        {
+          "translation": "私は読みつ書きつして過ごした。"
+        }
+      ]
+    },
+    "ja_Verb_130": {
+      "title": "動詞て形 ＋ からというもの (te kara to iu mono)",
+      "shortExplanation": "ある出来事をきっかけとして、それ以来ずっとある状態が続いていることを表し、「〜してからずっと」「〜したのを機に」という意味を表します。",
+      "longExplanation": "「～てからというもの」は、動詞のて形に接続し、ある重大な出来事や転機となる行為を境にして、それ以前とは異なる状態が現在に至るまで一貫して継続していることを強調するN1の文型です。単なる時間の前後関係を表す「～てから」よりも、その変化の大きさや長期的な継続性に焦点が当てられます。",
+      "formation": "動詞て形 ＋ からというもの",
+      "examples": [
+        {
+          "translation": "彼女と別れてからというもの、一人で過ごす時間が増えました。"
+        },
+        {
+          "translation": "子供が生まれてからというもの、自由な時間がなくなった。"
+        },
+        {
+          "translation": "新しい仕事を始めてからというもの、毎日忙しくなりました。"
+        },
+        {
+          "translation": "大学に入ってからというもの、スポーツをする時間がなくなった。"
+        }
+      ]
+    },
+    "ja_Verb_131": {
+      "title": "動詞て形 ＋ こそ (te koso)",
+      "shortExplanation": "その行為を実際に行って初めて本当の価値や効果が生じることを強調し、「〜してはじめて」「〜してこそ意味がある」という意味を表します。",
+      "longExplanation": "「～てこそ」は、動詞のて形に取り立て助詞「こそ」が接続した文型で、前項の行為が後項の認識や成果を得るための必要不可欠な条件であることを強く主張します。「実際に〜してはじめて真価がわかる・成果が出る」という意味合いを持ち、後続節には理解・達成・成長などの前向きで意義深い事態を表す表現が続きます。",
+      "formation": "動詞て形 ＋ こそ",
+      "examples": [
+        {
+          "translation": "実際に使ってこそ、その価値を理解できる。"
+        },
+        {
+          "translation": "自分で経験してこそ、大切なことが学べる。"
+        },
+        {
+          "translation": "失敗してこそ、成功の味がわかる。"
+        },
+        {
+          "translation": "努力してこそ、何かを成し遂げることができる。"
+        }
+      ]
+    },
+    "ja_Verb_132": {
+      "title": "動詞て形 ＋ は (～te wa)",
+      "shortExplanation": "ある動作や事態が生じるたびに決まった結果が繰り返されることや、二つの行為が反復・循環することを表し、「〜しては（いつも〜になる）」「〜したり〜したりする」という意味を表します。",
+      "longExplanation": "「～ては」は、動詞のて形に接続し、①「ある行為をするたびに、決まっていつも同じ結果や心理状態が繰り返される」という条件反復の用法と、②「〜ては…、〜ては…」の形で二つの動作や状態が堂々巡りのように交互に繰り返される循環的動作の用法を持ちます。せっかくの行為が無駄になることへのもどかしさや、変化のない反復的な日常を描写する際によく用いられます。",
+      "formation": "動詞て形 ＋ は",
+      "examples": [
+        {
+          "translation": "彼女に会っては、いつも緊張してしまいます。"
+        },
+        {
+          "translation": "この部屋を掃除しては乱雑になり、片づけては散らかる。"
+        },
+        {
+          "translation": "運動しては食べ、食べては運動する生活が続いている。"
+        },
+        {
+          "translation": "勉強しては寝て、寝ては勉強する日々です。"
+        }
+      ]
+    },
+    "ja_Verb_133": {
+      "title": "動詞1て形 ＋ は ＋ 動詞2 (~ te wa ~)",
+      "shortExplanation": "前項の動作が行われるたびに、それに伴って後項の動作が繰り返し習慣的に行われることを表し、「〜するたびにいつも〜する」という意味を表します。",
+      "longExplanation": "「動詞1て形 ＋ は ＋ 動詞2」は、ある状況や契機（動詞1）が生じるたびに、決まってそれに応じて特定の行為（動詞2）を行うという、反復的・習慣的な行動パターンを表す文型です。日常的なルーティンや、特定の出来事に付随して規則的に生じる行動の連鎖を客観的または描写的に表します。",
+      "formation": "動詞1て形 ＋ は ＋ 動詞2",
+      "examples": [
+        {
+          "translation": "私が通勤しては、電子書籍を読んでいます。"
+        },
+        {
+          "translation": "友達が部屋に来ては、ゲームをしています。"
+        },
+        {
+          "translation": "彼が酒を飲んでは、運転を止めさせています。"
+        },
+        {
+          "translation": "私が新しい曲を作っては、すぐに録音します。"
+        }
+      ]
+    },
+    "ja_Verb_134": {
+      "title": "動詞て形 ＋ までも (~ temademo)",
+      "shortExplanation": "ある目的を達成するためには、通常では考えられないような極端な手段や犠牲を払うことも辞さないことを表し、「〜してまで」「〜という極端なことまでして」という意味を表します。",
+      "longExplanation": "「～てまでも」（または「〜てまで」）は、動詞のて形に接続し、常識的な範囲を超えた極端な行為や過度の負担を敢えて引き受けてでも、何としても目的を果たしたいという強い意志や覚悟を表すN1の文型です。取り立て助詞「も」が加わることで、通常ならそこまではしないような並外れた手段に踏み切るニュアンスがより一層強調されます。",
+      "formation": "動詞て形 ＋ までも（または てまで）",
+      "examples": [
+        {
+          "translation": "試験に合格するために、寝る時間を削ってまでも勉強します。"
+        },
+        {
+          "translation": "彼女と結婚できるなら、どんな苦労をしてまでもお金を貯めたい。"
+        },
+        {
+          "translation": "この会社で働きたいので、長時間かけてまでも通います。"
+        },
+        {
+          "translation": "彼の快復のためなら、何をしてまでも支えたい。"
+        }
+      ]
+    },
+    "ja_Verb_135": {
+      "title": "動詞て形 ＋ みせる (te miseru)",
+      "shortExplanation": "実際にその動作を行って相手に証拠や実力を見せることや、強い意志を持って成し遂げる決意を表し、「〜して見せる」「必ず〜してみせる」という意味を表します。",
+      "longExplanation": "「～てみせる」は、動詞のて形に補助動詞「みせる」が接続した表現で、主に二つの用法を持ちます。①相手の目の前で実際に動作を行って腕前や結果を実証・誇示すること（「やって見せる」「解いて見せる」）。②自分の強い意志や決意を周囲に対して宣言し、「どんな困難があっても必ずやり遂げて結果を示す」という固い覚悟を表すこと（「合格してみせる」「勝ってみせる」）。意気込みや実力の誇示を力強く表明します。",
+      "formation": "動詞て形 ＋ みせる",
+      "examples": [
+        {
+          "translation": "彼はそのパズルを解いてみせた。"
+        },
+        {
+          "translation": "私はこの仕事ができることをやってみせます。"
+        },
+        {
+          "translation": "彼女は試験に合格するために一生懸命勉強してみせました。"
+        },
+        {
+          "translation": "彼は自分が何も恐れていないと跳んでみせた。"
+        }
+      ]
+    },
+    "ja_Verb_136": {
+      "title": "動詞て形 ＋ やまない (te yamanai)",
+      "shortExplanation": "心情や祈りを表す動詞に接続し、心の底から湧き起こる強い感情が絶え間なく続いていることを表し、「心から〜してやまない」「強く〜し続けている」という意味を表します。",
+      "longExplanation": "「～てやまない」は、動詞のて形に「止む」の否定形が接続した格調高い文語的文型です。主に「願う」「祈る」「愛する」「尊敬する」「期待する」「念願する」などの話者の内面的な心理・感情・祈念を表す特定の動詞と共起し、その感情が一過性のものではなく、心の底から湧き上がって止まることがないほど深く強いものであることを表します。スピーチ、挨拶文、改まった文章などで好んで用いられます。",
+      "formation": "動詞て形 ＋ やまない（主に「祈る」「願う」「愛する」「尊敬する」「期待する」などの心情動詞に接続）",
+      "examples": [
+        {
+          "translation": "私は母を思ってやまない。"
+        },
+        {
+          "translation": "彼は彼女を愛してやまない。"
+        },
+        {
+          "translation": "彼は日本の文化を尊敬してやまない。"
+        },
+        {
+          "translation": "彼女の成功を願ってやまない。"
+        }
+      ]
+    }
+  }
+}

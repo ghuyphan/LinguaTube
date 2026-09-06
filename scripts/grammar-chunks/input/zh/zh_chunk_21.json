@@ -1,0 +1,221 @@
+[
+  {
+    "id": "zh_大概的N_317",
+    "language": "zh",
+    "pattern": "大概的 N",
+    "title": "大概的 N (approximate N)",
+    "shortExplanation": "approximate N",
+    "longExplanation": "approximate N. Pinyin: dàgài de N",
+    "formation": "dàgài de N",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "请给我一个大概的数字。",
+        "romanization": "qǐng gěi wǒ yī gè dàgài de shùzì。",
+        "translation": "Please give me an approximate number."
+      }
+    ]
+  },
+  {
+    "id": "zh_大概_318",
+    "language": "zh",
+    "pattern": "大概 #",
+    "title": "大概 # (about #)",
+    "shortExplanation": "about #",
+    "longExplanation": "about #. Pinyin: dàgài #",
+    "formation": "dàgài #",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_偶尔_320",
+    "language": "zh",
+    "pattern": "偶尔",
+    "title": "偶尔 (occasionally)",
+    "shortExplanation": "occasionally",
+    "longExplanation": "occasionally. Pinyin: ǒu'ěr",
+    "formation": "ǒu'ěr",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_由SV_322",
+    "language": "zh",
+    "pattern": "由 S V",
+    "title": "由 S V (V’ed by S)",
+    "shortExplanation": "V’ed by S",
+    "longExplanation": "V’ed by S. Pinyin: yóu S V",
+    "formation": "yóu S V",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_进行_324",
+    "language": "zh",
+    "pattern": "进行",
+    "title": "进行 (to proceed)",
+    "shortExplanation": "to proceed",
+    "longExplanation": "to proceed. Pinyin: jìnxíng",
+    "formation": "jìnxíng",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "10点30分会议继续进行。",
+        "romanization": "10 diǎn30 fēn huìyì jìxù jìnxíng。",
+        "translation": "The meeting will continue to proceed at half past 10."
+      }
+    ]
+  },
+  {
+    "id": "zh_进行O_325",
+    "language": "zh",
+    "pattern": "进行 O",
+    "title": "进行 O (to carry out O)",
+    "shortExplanation": "to carry out O",
+    "longExplanation": "to carry out O. Pinyin: jìnxíng O",
+    "formation": "jìnxíng O",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "进行观察",
+        "romanization": "jìnxíng guānchá",
+        "translation": "carry out an observation"
+      }
+    ]
+  },
+  {
+    "id": "zh_随着N_326",
+    "language": "zh",
+    "pattern": "随着 N",
+    "title": "随着 N (with N (as N happens))",
+    "shortExplanation": "with N (as N happens)",
+    "longExplanation": "with N (as N happens). Pinyin: suízhe N",
+    "formation": "suízhe N",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_够_328",
+    "language": "zh",
+    "pattern": "够",
+    "title": "够 (sufficient)",
+    "shortExplanation": "sufficient",
+    "longExplanation": "sufficient. Pinyin: gòu",
+    "formation": "gòu",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "钱不够。",
+        "romanization": "qián bùgòu。",
+        "translation": "The money is not enough."
+      }
+    ]
+  },
+  {
+    "id": "zh_V够_329",
+    "language": "zh",
+    "pattern": "V 够 (#)",
+    "title": "V 够 (#) (V (and fulfill) #)",
+    "shortExplanation": "V (and fulfill) #",
+    "longExplanation": "V (and fulfill) #. Pinyin: V gòu (#)",
+    "formation": "V gòu (#)",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "睡觉时间太长并不好，一般睡够八小时就可以了。",
+        "romanization": "shuìjiào shíjiān tài cháng bìngbù hǎo， yībān shuì gòu bā xiǎoshí jiù kěyǐ le。",
+        "translation": "It’s not good if [your] sleeping time is too long. Usually it’s enough just to sleep for a good eight hours (lit. sleep to fulfill 8 hours)."
+      }
+    ]
+  },
+  {
+    "id": "zh_够A_330",
+    "language": "zh",
+    "pattern": "够 A",
+    "title": "够 A ((good) enough)",
+    "shortExplanation": "(good) enough",
+    "longExplanation": "(good) enough. Pinyin: gòu A",
+    "formation": "gòu A",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "不用装这些，箱子已经够重的了！",
+        "romanization": "bùyòng zhuāng zhèxiē， xiāngzi yǐjīng gòu zhòng de le！",
+        "translation": "No need to load these, the box is already heavy enough!"
+      }
+    ]
+  },
+  {
+    "id": "zh_以N_331",
+    "language": "zh",
+    "pattern": "以 N",
+    "title": "以 N (with N (speed, standard))",
+    "shortExplanation": "with N (speed, standard)",
+    "longExplanation": "with N (speed, standard). Pinyin: yǐ N",
+    "formation": "yǐ N",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "经理您放心，我一定以最快的速度完成。",
+        "romanization": "jīnglǐ nín fàngxīn， wǒ yīdìng yǐ zuì kuài de sùdù wánchéng。",
+        "translation": "Manager, you can rest assured that I will finish at the fastest speed."
+      }
+    ]
+  },
+  {
+    "id": "zh_以N1为N2_332",
+    "language": "zh",
+    "pattern": "以 N1 为 N2",
+    "title": "以 N1 为 N2 (consider N1 as N2)",
+    "shortExplanation": "consider N1 as N2",
+    "longExplanation": "consider N1 as N2. Pinyin: yǐ N1 wéi N2",
+    "formation": "yǐ N1 wéi N2",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我们应该以历史为镜子。",
+        "romanization": "wǒmen yīnggāi yǐ lìshǐ wéi jìngzi。",
+        "translation": "We should use history as a mirror."
+      }
+    ]
+  },
+  {
+    "id": "zh_以_333",
+    "language": "zh",
+    "pattern": "以",
+    "title": "以 (in order to)",
+    "shortExplanation": "in order to",
+    "longExplanation": "in order to. Pinyin: yǐ",
+    "formation": "yǐ",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "她送来了一份礼物以表示感谢。",
+        "romanization": "tā sòng lái le yī fèn lǐwù yǐ biǎoshì gǎnxiè。",
+        "translation": "She sent a gift to express her gratitude."
+      }
+    ]
+  },
+  {
+    "id": "zh_既然_334",
+    "language": "zh",
+    "pattern": "既然",
+    "title": "既然 (now that)",
+    "shortExplanation": "now that",
+    "longExplanation": "now that. Pinyin: jìrán",
+    "formation": "jìrán",
+    "level": "HSK 4",
+    "examples": []
+  },
+  {
+    "id": "zh_于是_336",
+    "language": "zh",
+    "pattern": "于是……",
+    "title": "于是…… (consequently…)",
+    "shortExplanation": "consequently…",
+    "longExplanation": "consequently…. Pinyin: yúshì……",
+    "formation": "yúshì……",
+    "level": "HSK 4",
+    "examples": []
+  }
+]

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_ないと_70": {
+      "title": "～ないと (〜nai to)",
+      "shortExplanation": "Diễn tả điều kiện phủ định; 'nếu không... thì...'. Thường dẫn tới một kết quả tiêu cực, bất lợi hoặc khó khăn.",
+      "longExplanation": "Mẫu ngữ pháp '～ないと' được dùng để nêu lên điều kiện giả định mang tính phủ định ('nếu không thực hiện hành động đó thì...'), nhấn mạnh rằng nếu hành động đó không được thực hiện thì một kết quả xấu, phiền phức hoặc hệ quả bất lợi tất yếu sẽ xảy ra. Ngoài ra, trong hội thoại hàng ngày, khi đứng ở cuối câu (dạng nói tắt của '〜ないといけない / 〜ないとだめだ'), cấu trúc này còn biểu thị ý nghĩa 'phải làm gì đó'.",
+      "formation": "Động từ thể ない + と",
+      "examples": [
+        {
+          "translation": "Nếu không ăn sáng thì sẽ bị đói bụng."
+        },
+        {
+          "translation": "Nếu không làm bài tập thì sẽ bị giáo viên mắng."
+        },
+        {
+          "translation": "Nếu không sạc pin thì điện thoại sẽ không dùng được nữa."
+        },
+        {
+          "translation": "Nếu không báo cáo vụ tai nạn này thì vấn đề sẽ trở nên nghiêm trọng hơn."
+        }
+      ]
+    },
+    "ja_なぜなら_71": {
+      "title": "～なぜなら (〜nazenara)",
+      "shortExplanation": "Dùng để giải thích nguyên nhân, lý do cho kết luận hoặc sự việc được nêu trước đó; 'bởi vì', 'lý do là vì'.",
+      "longExplanation": "Từ nối '～なぜなら' (hoặc 'なぜならば') được dùng khi người nói đã đưa ra một nhận định, kết luận hoặc kết quả ở câu trước, sau đó muốn giải thích rõ ràng nguyên nhân, lý do dẫn đến điều đó ('sở dĩ như vậy là vì...'). Mẫu câu này thường đi kèm với '〜からだ / 〜からである / 〜から / 〜だから' ở cuối câu để tạo sự hô ứng chặt chẽ về mặt ngữ pháp.",
+      "formation": "Mệnh đề kết quả. なぜなら(ば) + Mệnh đề lý do + から(だ) / だから",
+      "examples": [
+        {
+          "translation": "Tôi rất thích nhà hàng này. Bởi vì đồ ăn ở đây rất ngon."
+        },
+        {
+          "translation": "Cô ấy đã không đỗ kỳ thi. Lý do là vì cô ấy đã không học bài."
+        },
+        {
+          "translation": "Tôi sẽ không đi xem phim đâu. Bởi vì hôm nay tôi bận."
+        },
+        {
+          "translation": "Anh ấy có thể được giao phó dự án này. Bởi vì anh ấy có kinh nghiệm rất phong phú."
+        }
+      ]
+    },
+    "ja_など_72": {
+      "title": "～など (〜nado)",
+      "shortExplanation": "Dùng để liệt kê ví dụ mang tính đại diện, không đầy đủ; 'như là...', 'chẳng hạn như...', 'vân vân'.",
+      "longExplanation": "Trợ từ '～など' được gắn sau danh từ để đưa ra một vài ví dụ tiêu biểu mang tính đại diện, ngụ ý rằng ngoài những sự vật, sự việc được kể ra thì vẫn còn những thứ tương tự khác ('chẳng hạn như... và những thứ khác', 'vân vân'). Mẫu câu này thường xuất hiện dưới dạng 'AやBなど' (những thứ như A và B).",
+      "formation": "Danh từ + など",
+      "examples": [
+        {
+          "translation": "Tôi đã mua cá, hoa quả và những thứ tương tự ở chợ."
+        },
+        {
+          "translation": "Anh ấy có thể nói được các thứ tiếng như tiếng Nhật, tiếng Anh, tiếng Trung."
+        },
+        {
+          "translation": "Ở bảo tàng mỹ thuật, tôi đã xem các tác phẩm như tranh vẽ, điêu khắc."
+        },
+        {
+          "translation": "Cửa hàng này có bán các loại bánh ngọt như bánh mì, bánh kem."
+        }
+      ]
+    },
+    "ja_なんか_73": {
+      "title": "～なんか (〜nanka)",
+      "shortExplanation": "Dạng thân mật của 'など', dùng để đưa ra ví dụ hoặc thể hiện sự xem nhẹ, khiêm tốn hay phủ định mạnh mẽ; 'những thứ như...', 'mấy cái như...'.",
+      "longExplanation": "Trợ từ '～なんか' là dạng khẩu ngữ thân mật của 'など'. Ngoài việc dùng để nêu ví dụ trong giao tiếp hàng ngày, cấu trúc này thường mang sắc thái xem nhẹ, coi thường sự vật, sự việc được nhắc tới ('mấy cái thứ như... chẳng đáng bận tâm'), hoặc thể hiện sự khiêm tốn khi nói về bản thân. Khi kết hợp với thể phủ định, nó nhấn mạnh sự phủ định dứt khoát ('chẳng... chút nào').",
+      "formation": "Danh từ + なんか | Động từ thể thông thường + なんか | Tính từ đuôi い + なんか | Tính từ đuôi な + (な)なんか",
+      "examples": [
+        {
+          "translation": "Tiền bạc thì tôi chẳng cần đâu."
+        },
+        {
+          "translation": "Anh ấy còn chơi được cả những thứ như đàn dương cầm nữa đấy."
+        },
+        {
+          "translation": "Tôi có bận rộn gì đâu chứ!"
+        },
+        {
+          "translation": "Cô ấy chẳng tốt bụng gì đâu."
+        }
+      ]
+    },
+    "ja_において_74": {
+      "title": "～において (〜ni oite)",
+      "shortExplanation": "Dùng trong văn phong trang trọng để chỉ địa điểm, thời gian, lĩnh vực hoặc bối cảnh diễn ra sự việc; 'ở', 'tại', 'trong', 'vào'.",
+      "longExplanation": "Mẫu ngữ pháp '～において' là cách diễn đạt mang tính trang trọng, văn viết (tương đương với trợ từ 'で' trong văn nói), dùng để chỉ rõ địa điểm, không gian, thời kỳ, thời gian, lĩnh vực chuyên môn hay hoàn cảnh mà một sự việc, hành vi hay hiện tượng nào đó diễn ra. Khi bổ nghĩa trực tiếp cho danh từ đứng phía sau, cấu trúc này chuyển thành dạng '〜における + Danh từ'.",
+      "formation": "Danh từ (địa điểm / thời gian / lĩnh vực / bối cảnh) + において (bổ nghĩa cho danh từ: における + Danh từ)",
+      "examples": [
+        {
+          "translation": "Ở Nhật Bản, lễ Obon là một dịp lễ quan trọng để các thành viên trong gia đình sum họp."
+        },
+        {
+          "translation": "Trong cuộc họp, ý kiến của anh ấy là có sức thuyết phục nhất."
+        },
+        {
+          "translation": "Trong lĩnh vực khoa học, các nghiên cứu đang không ngừng tiến triển mỗi ngày."
+        },
+        {
+          "translation": "Ở thời thơ ấu, trẻ em tiếp thu và ghi nhớ mọi thứ với tốc độ rất nhanh."
+        }
+      ]
+    },
+    "ja_にかわって_75": {
+      "title": "～にかわって (〜ni kawatte)",
+      "shortExplanation": "Biểu thị hành động thay thế hoặc đại diện cho một người, một đối tượng khác; 'thay cho...', 'thay mặt cho...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にかわって' (thường viết bằng kanji là '～に代わって / ～に換わって') được dùng khi một người làm việc gì đó để thay thế hoặc đại diện cho người khác, hoặc khi một phương thức, sự vật mới thay thế cho cái cũ vốn có trước đây ('thay cho ai đó', 'thay mặt ai đó'). Khi bổ nghĩa cho danh từ đứng sau, cấu trúc chuyển thành '〜にかわる + Danh từ'.",
+      "formation": "Danh từ + にかわって (bổ nghĩa cho danh từ: にかわる + Danh từ)",
+      "examples": [
+        {
+          "translation": "Vì anh ấy bị ốm nên tôi sẽ tham dự cuộc họp. Tôi sẽ thay mặt anh ấy tham gia cuộc họp."
+        },
+        {
+          "translation": "Mẹ đang bận nên tôi sẽ nấu ăn thay cho mẹ."
+        },
+        {
+          "translation": "Chuyến đi chơi lần này tôi sẽ đi cùng thay cho em gái."
+        },
+        {
+          "translation": "Vì thầy giáo đang đi công tác nên trợ giảng sẽ phụ trách lớp học thay cho thầy."
+        }
+      ]
+    },
+    "ja_にしては_76": {
+      "title": "～にしては (〜ni shite wa)",
+      "shortExplanation": "Biểu thị sự việc không tương xứng hoặc khác với lẽ thông thường so với một tiêu chuẩn, hoàn cảnh cụ thể; 'thế mà', 'so với... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にしては' được dùng khi kết quả, tính chất hay thực tế xảy ra không tương xứng, khác hẳn với điều thông thường người ta dự đoán dựa trên một tiêu chuẩn, thân phận hay điều kiện cụ thể nào đó ('nếu xét theo tiêu chuẩn A thì thực tế lại bất ngờ là B'). Vế sau luôn là nhận định thực tế, không dùng để biểu đạt nguyện vọng hay ý chí của người nói.",
+      "formation": "Động từ thể thông thường + にしては | Tính từ đuôi い + にしては | Tính từ đuôi な (giữ nguyên / である) + にしては | Danh từ + にしては",
+      "examples": [
+        {
+          "translation": "Xét với việc là người mới bắt đầu, cô ấy bơi rất giỏi."
+        },
+        {
+          "translation": "Món sushi này giá rẻ thế mà lại rất ngon."
+        },
+        {
+          "translation": "Anh ấy còn trẻ thế mà lại vô cùng điềm tĩnh, chín chắn."
+        },
+        {
+          "translation": "Người kia dù là người nước ngoài mà tiếng Nhật lại giỏi đến thế."
+        }
+      ]
+    },
+    "ja_にしても_77": {
+      "title": "～にしても (〜ni shitemo)",
+      "shortExplanation": "Biểu thị nhượng bộ giả định; 'cho dù... đi chăng nữa thì...', 'ngay cả khi... thì cũng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にしても' được dùng để diễn tả một điều kiện nhượng bộ giả định hoặc chấp nhận một sự thực nào đó, nhấn mạnh rằng dù cho điều kiện đó có xảy ra hay sự thực đó có đúng đi chăng nữa thì kết luận, thái độ hay hành động ở vế sau vẫn không thay đổi ('dù có là... thì cũng...'). Cấu trúc này thường đi kèm với sắc thái đánh giá, khuyên nhủ hoặc phê phán nhẹ nhàng của người nói.",
+      "formation": "Động từ thể thông thường + にしても | Tính từ đuôi い + にしても | Tính từ đuôi な (である / だ) + にしても | Danh từ (である / だ) + にしても",
+      "examples": [
+        {
+          "translation": "Cho dù trời có mưa đi chăng nữa thì tôi vẫn phải đến trường."
+        },
+        {
+          "translation": "Cho dù cô ấy có đang tức giận thì việc đối thoại cũng không thể tránh khỏi."
+        },
+        {
+          "translation": "Dù nhà hàng này có đắt đỏ thì chất lượng món ăn rất tốt nên vẫn rất đáng thử."
+        },
+        {
+          "translation": "Cho dù anh ấy có là người nổi tiếng đi nữa thì việc bàn tán về đời tư của anh ấy vẫn là thất lễ."
+        }
+      ]
+    },
+    "ja_について_78": {
+      "title": "～について (〜ni tsuite)",
+      "shortExplanation": "Biểu thị chủ đề, đề tài của hành động suy nghĩ, nói năng, nghiên cứu; 'về...', 'về việc...'.",
+      "longExplanation": "Mẫu ngữ pháp '～について' được dùng sau danh từ để nêu lên chủ đề, nội dung hay đối tượng mà một hành động như suy nghĩ (考える), tìm hiểu (調べる), thảo luận (話し合う), viết (書く) hướng tới ('nói/viết/nghĩ về...'). Khi bổ nghĩa trực tiếp cho danh từ đứng phía sau, cấu trúc này chuyển thành dạng '〜についての + Danh từ'.",
+      "formation": "Danh từ + について (bổ nghĩa cho danh từ: についての + Danh từ)",
+      "examples": [
+        {
+          "translation": "Tôi muốn học hỏi và tìm hiểu về văn hóa Nhật Bản."
+        },
+        {
+          "translation": "Chúng ta hãy cùng nhau thảo luận về ý kiến của anh ấy nhé."
+        },
+        {
+          "translation": "Xin hãy giải thích chi tiết cho tôi về vấn đề này."
+        },
+        {
+          "translation": "Chúng ta phải suy nghĩ nghiêm túc về việc giáo dục con cái."
+        }
+      ]
+    },
+    "ja_にとって_79": {
+      "title": "～にとって (〜ni totte)",
+      "shortExplanation": "Biểu thị lập trường, góc nhìn để đưa ra đánh giá, nhận định; 'đối với... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にとって' được dùng sau danh từ chỉ người, tổ chức hay tập thể để nêu rõ rằng nếu đứng từ lập trường, góc độ hay nhận thức của đối tượng đó thì sự việc mang giá trị, ý nghĩa hay cảm nhận như thế nào ('đối với A thì...'). Vế sau thường đi kèm với những từ ngữ biểu thị sự đánh giá, giá trị (quan trọng, cần thiết, khó, dễ, vui mừng...). Khi bổ nghĩa cho danh từ, cấu trúc chuyển thành '〜にとっての + Danh từ'.",
+      "formation": "Danh từ (người / tổ chức / lập trường) + にとって (bổ nghĩa cho danh từ: にとっての + Danh từ)",
+      "examples": [
+        {
+          "translation": "Đối với tôi, sức khỏe là điều quan trọng nhất."
+        },
+        {
+          "translation": "Đối với công ty đó, dự án này mang một ý nghĩa rất quan trọng."
+        },
+        {
+          "translation": "Đối với trẻ con, đồ chơi là những thứ mang lại nhiều niềm vui."
+        },
+        {
+          "translation": "Đối với người nước ngoài, tiếng Nhật là một trong những ngôn ngữ khó học."
+        }
+      ]
+    },
+    "ja_によって_80": {
+      "title": "～によって (〜ni yotte)",
+      "shortExplanation": "Biểu thị nguyên nhân, lý do ('do/vì...'), phương thức, phương tiện ('bằng cách...'), hoặc sự khác biệt tùy theo đối tượng ('tùy vào...').",
+      "longExplanation": "Mẫu ngữ pháp '～によって' là một cấu trúc đa nghĩa rất quan trọng trong tiếng Nhật, được dùng với các ý nghĩa chính: (1) Nêu nguyên nhân, lý do xảy ra sự việc ('do...', 'vì...'); (2) Chỉ phương thức, phương tiện thực hiện ('bằng cách...', 'nhờ vào...'); (3) Chỉ sự biến đổi tương ứng với từng đối tượng hay hoàn cảnh ('tùy thuộc vào...', 'tùy theo...'); (4) Chỉ chủ thể sáng tạo trong câu bị động ('bởi...'). Khi bổ nghĩa trực tiếp cho danh từ, cấu trúc đổi thành '〜による + Danh từ'.",
+      "formation": "Danh từ + によって (bổ nghĩa cho danh từ: による + Danh từ) | Động từ thể thông thường + ことによって",
+      "examples": [
+        {
+          "translation": "Vụ tai nạn đó đã xảy ra do thời tiết xấu."
+        },
+        {
+          "translation": "Tùy thuộc vào thói quen sinh hoạt mà tình trạng sức khỏe sẽ thay đổi."
+        },
+        {
+          "translation": "Thành công của anh ấy là điều đạt được nhờ vào sự nỗ lực."
+        },
+        {
+          "translation": "Kết quả sẽ có sự khác biệt tùy thuộc vào độ khó của kỳ thi."
+        }
+      ]
+    },
+    "ja_によれば_81": {
+      "title": "～によれば (〜ni yoreba)",
+      "shortExplanation": "Dùng để dẫn nguồn thông tin, tin tức được nghe hoặc biết; 'theo...', 'căn cứ theo...'.",
+      "longExplanation": "Mẫu ngữ pháp '～によれば' (tương đương với '～によると') được dùng sau danh từ chỉ nguồn thông tin (như dự báo thời tiết, bài báo, lời của ai đó, kết quả điều tra...) để trích dẫn hoặc truyền đạt lại thông tin thu thập được từ nguồn đó ('theo như... thì...'). Cuối câu hầu như luôn đi kèm với các hình thức biểu thị truyền đạt hoặc phán đoán như '〜そうだ', '〜ということだ', '〜らしい', '〜だろう'.",
+      "formation": "Danh từ (nguồn thông tin) + によれば + Mệnh đề truyền đạt / phán đoán (〜そうだ / 〜ということだ / 〜らしい / 〜だろう)",
+      "examples": [
+        {
+          "translation": "Theo dự báo thời tiết thì ngày mai trời có lẽ sẽ nắng."
+        },
+        {
+          "translation": "Theo lời thầy giáo thì bài tập này dường như khá đơn giản."
+        },
+        {
+          "translation": "Theo kết quả điều tra thì tỷ lệ hút thuốc ở giới trẻ đang giảm đi."
+        },
+        {
+          "translation": "Theo tin từ bài báo thì doanh nghiệp đó dường như đang đứng trước nguy cơ phá sản."
+        }
+      ]
+    },
+    "ja_に対して_82": {
+      "title": "～に対して (～ni taishite)",
+      "shortExplanation": "Biểu thị đối tượng hướng tới của hành động hay thái độ ('đối với...'), hoặc biểu thị sự đối lập, tương phản giữa hai sự việc ('trái ngược với... thì...').",
+      "longExplanation": "Mẫu ngữ pháp '～に対して' có hai cách dùng quan trọng: (1) Chỉ đối tượng mà một hành động, thái độ, cảm xúc hay lời nói hướng đến ('đối với ai đó', 'đáp lại câu hỏi'); (2) Dùng để so sánh, đối chiếu hai sự vật hay hai mệnh đề có đặc điểm trái ngược nhau ('trái ngược với A thì B...'). Khi bổ nghĩa trực tiếp cho danh từ phía sau, cấu trúc chuyển thành '〜に対する + Danh từ'.",
+      "formation": "Danh từ + に対して | Thể thông thường (Tính từ đuôi な giữ nguyên/である + の, Danh từ + な/である + の) + に対して (bổ nghĩa cho danh từ: に対する + Danh từ)",
+      "examples": [
+        {
+          "translation": "Đối với con cái, cha mẹ lúc nào cũng nên dịu dàng ân cần."
+        },
+        {
+          "translation": "Anh ấy đã trả lời một cách thành thật đối với những câu hỏi."
+        },
+        {
+          "translation": "Trái ngược với việc anh Tanaka thành công, anh Satou lại thất bại."
+        },
+        {
+          "translation": "Đối với ý kiến của anh ấy, tôi đã giữ lập trường phản đối."
+        }
+      ]
+    },
+    "ja_に比べて_83": {
+      "title": "～に比べて (〜ni kurabete)",
+      "shortExplanation": "Dùng để so sánh hai sự vật, hiện tượng; 'so với... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に比べて' (bắt nguồn từ động từ 比べる nghĩa là so sánh) được dùng sau danh từ để lấy đối tượng đó làm chuẩn so sánh, qua đó làm nổi bật sự khác biệt về tính chất, mức độ hay trạng thái của đối tượng ở vế sau ('so với A thì B...'). Cấu trúc này cũng có thể dùng ở dạng '〜に比べ' hoặc '〜に比べると'.",
+      "formation": "Danh từ + に比べて | Động từ/Tính từ thể thông thường + のに比べて",
+      "examples": [
+        {
+          "translation": "So với mùa hè thì mùa đông lạnh hơn nhiều."
+        },
+        {
+          "translation": "Quả cà chua này so với những quả cà chua đỏ thì không ngon bằng."
+        },
+        {
+          "translation": "So với tôi thì anh ấy giỏi tiếng Anh hơn."
+        },
+        {
+          "translation": "So với Tokyo thì Kyoto là một thành phố yên tĩnh hơn."
+        }
+      ]
+    },
+    "ja_に関して_84": {
+      "title": "～に関して (〜ni kanshite)",
+      "shortExplanation": "Biểu thị chủ đề, vấn đề hoặc phạm vi liên quan trong văn phong trang trọng; 'về...', 'liên quan đến...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に関して' (dạng trang trọng, quy mô rộng hơn so với '〜について') được dùng sau danh từ để nêu lên chủ đề, vấn đề hay đối tượng mà một thông tin, cuộc điều tra, thảo luận hay nghiên cứu xoay quanh ('về vấn đề...', 'liên quan tới...'). Mẫu này thường dùng nhiều trong các thông báo, báo cáo, bài thuyết trình hoặc hội nghị chính thức. Khi bổ nghĩa trực tiếp cho danh từ phía sau, cấu trúc đổi thành '〜に関する + Danh từ'.",
+      "formation": "Danh từ + に関して (bổ nghĩa cho danh từ: に関する + Danh từ)",
+      "examples": [
+        {
+          "translation": "Việc chú ý giữ gìn đối với vấn đề sức khỏe là rất quan trọng."
+        },
+        {
+          "translation": "Liên quan đến dự án này, anh ấy nắm rõ toàn bộ thông tin chi tiết."
+        },
+        {
+          "translation": "Về các vấn đề môi trường, chúng ta cần phải có trách nhiệm nhiều hơn nữa."
+        },
+        {
+          "translation": "Thông tin liên quan đến vụ việc này vẫn chưa có đầy đủ."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_ないと_70": {
+      "title": "～ないと (〜nai to)",
+      "shortExplanation": "表示假定否定条件，“如果不……的话就……”；后项常接续不良后果或困境。",
+      "longExplanation": "句型“～ないと”接在动词否定形（ない形）后，用于提示假定否定条件，相当于“如果不……的话”。它通常强调若不付诸某种行动，就会必然招致麻烦、负面影响或不良后果。此外，在日常口语中若单独出现在句末（为“〜ないといけない”或“〜ないとだめだ”的省略），则表示“必须做某事”。",
+      "formation": "动词ない形 + と",
+      "examples": [
+        {
+          "translation": "如果不吃早餐的话，肚子就会饿。"
+        },
+        {
+          "translation": "如果不做作业的话，就会被老师训斥。"
+        },
+        {
+          "translation": "如果不充电的话，手机就没法用了。"
+        },
+        {
+          "translation": "如果不把这次事故上报的话，问题就会变得更严重。"
+        }
+      ]
+    },
+    "ja_なぜなら_71": {
+      "title": "～なぜなら (〜nazenara)",
+      "shortExplanation": "用于对前文所述的结论或事实补充说明原因，“之所以……是因为……”、“因为……”。",
+      "longExplanation": "接续词“～なぜなら”（亦可作“なぜならば”）用于在先行句中陈述某种结果、现象或结论后，紧接着在后句引出并阐述其背后的原因或根据（相当于“究其原因在于……”）。在语法搭配上，句尾通常与“〜からだ”、“〜からである”或“〜から”相互呼应，使句子的因果逻辑关系更加明确严谨。",
+      "formation": "句子（结果）。なぜなら（ば） + 理由 + から（だ） / だから",
+      "examples": [
+        {
+          "translation": "我很喜欢这家餐厅。因为这里的饭菜非常可口。"
+        },
+        {
+          "translation": "她没有通过考试。因为她此前根本没有用功学习。"
+        },
+        {
+          "translation": "我不去看电影了。因为我今天很忙。"
+        },
+        {
+          "translation": "可以把这个项目委托给他负责。因为他拥有丰富的经验。"
+        }
+      ]
+    },
+    "ja_など_72": {
+      "title": "～など (〜nado)",
+      "shortExplanation": "用于不完全列举代表性事物，“……等”、“……之类”。",
+      "longExplanation": "副助词“～など”接在名词之后，用于列举具有代表性的事例，借以暗示除了列出的项目之外还有其他同类事物，相当于中文的“……等等”、“……之类的”。在句子中常与助词“や”配合使用，构成“AやBなど”的形式。",
+      "formation": "名词 + など",
+      "examples": [
+        {
+          "translation": "我在市场上买了鱼和水果等等。"
+        },
+        {
+          "translation": "他能说日语、英语、汉语等多种语言。"
+        },
+        {
+          "translation": "在美术馆里，我参观了绘画、雕塑等艺术作品。"
+        },
+        {
+          "translation": "这家店出售面包、蛋糕等点心。"
+        }
+      ]
+    },
+    "ja_なんか_73": {
+      "title": "～なんか (〜nanka)",
+      "shortExplanation": "“など”的口语形式，用于举例，或带有轻视、自谦、强烈否定等感情色彩，“……之类的”、“……这种东西”。",
+      "longExplanation": "副助词“～なんか”是“など”在口语中的随和表达。除了用于随意列举示例之外，它经常带有贬低、轻视某事物的语气，认为其微不足道或不值一提；在涉及自身时常表示谦逊客气；而在否定句中，则能够强化全面否定的语气，表示“绝不……”、“根本不……”。",
+      "formation": "名词 + なんか | 动词普通形 + なんか | い形容词 + なんか | な形容词 + （な）なんか",
+      "examples": [
+        {
+          "translation": "钱这种东西我才不需要呢。"
+        },
+        {
+          "translation": "他连钢琴之类的乐器也会弹。"
+        },
+        {
+          "translation": "我哪有什么忙啊，一点也不忙。"
+        },
+        {
+          "translation": "她可谈不上什么亲切体贴。"
+        }
+      ]
+    },
+    "ja_において_74": {
+      "title": "～において (〜ni oite)",
+      "shortExplanation": "郑重的书面语，表示动作或事件发生的场所、时代、时间、领域或场合，“在……”、“于……”。",
+      "longExplanation": "句型“～において”是一种庄重严谨的书面语表达，相当于口语中的助词“で”。用于指示动作发生或状态存在的具体地点、历史时期、时间阶段、专业领域或特定环境。在句子中直接修饰后续名词时，需转变为“〜における + 名词”的形式。",
+      "formation": "名词（场所 / 时间 / 领域 / 场合） + において（修饰名词时用 における + 名词）",
+      "examples": [
+        {
+          "translation": "在日本，盂兰盆节是全家人团聚的重要节日。"
+        },
+        {
+          "translation": "在会议上，他的意见最具有说服力。"
+        },
+        {
+          "translation": "在科学领域中，各项研究工作每天都在取得进展。"
+        },
+        {
+          "translation": "在幼儿时期，孩子们吸收并记忆事物的能力非常惊人。"
+        }
+      ]
+    },
+    "ja_にかわって_75": {
+      "title": "～にかわって (〜ni kawatte)",
+      "shortExplanation": "表示替代某人或代表某方采取行动，“代替……”、“代表……”、“换作……”。",
+      "longExplanation": "句型“～にかわって”（常写作“～に代わって”或“～に換わって”）接在名词之后，表示某人顶替原本应当出席或行动的人，或者代表他人、某个组织去执行某事；亦可表示新事物代替旧事物发挥效用。修饰后续名词时，需使用“〜にかわる + 名词”的形式。",
+      "formation": "名词 + にかわって（修饰名词时用 にかわる + 名词）",
+      "examples": [
+        {
+          "translation": "因为他生病了，所以由我来出席会议。我将代替他出席这次会议。"
+        },
+        {
+          "translation": "母亲很忙，所以我代替母亲做饭。"
+        },
+        {
+          "translation": "这次旅行换作我和大家一起去，代替了我妹妹。"
+        },
+        {
+          "translation": "由于老师出差不在，助教将代替老师负责这堂课。"
+        }
+      ]
+    },
+    "ja_にしては_76": {
+      "title": "～にしては (〜ni shite wa)",
+      "shortExplanation": "表示实际情况与由某个前提或标准所预期的不一致，“就……而言却……”、“照……来说却出乎意料”。",
+      "longExplanation": "句型“～にしては”以某种身份、条件或事实作为评价基准，指出其实际表现或状态与该基准通常所应有的水准并不相称，带有出乎意料或感到意外的评价语气（相当于“明明是……却……”、“就……来说算挺不错/反常”）。后项通常陈述客观事实或评价，不能接表示说话人意愿、愿望或命令的语句。",
+      "formation": "动词普通形 + にしては | い形容词 + にしては | な形容词（词干 / である） + にしては | 名词 + にしては",
+      "examples": [
+        {
+          "translation": "作为初学者来说，她游泳游得真棒。"
+        },
+        {
+          "translation": "以这么便宜的价格而言，这顿寿司可以说是相当美味了。"
+        },
+        {
+          "translation": "就他年纪轻轻来说，表现得非常沉稳成熟。"
+        },
+        {
+          "translation": "那个人虽说是外国人，日语却说得相当流利地道。"
+        }
+      ]
+    },
+    "ja_にしても_77": {
+      "title": "～にしても (〜ni shitemo)",
+      "shortExplanation": "表示假定让步，“即使……也……”、“就算……也……”。",
+      "longExplanation": "句型“～にしても”用于提出假定条件或退一步承认某种既成事实，表示即便承认前项的情况成立，后项的结论、态度或行动也丝毫不会改变（相当于“就算是……也仍然……”）。句末常伴随说话人的主观评价、判断、建议或不满之情。",
+      "formation": "动词普通形 + にしても | い形容词 + にしても | な形容词（词干 / である / だ） + にしても | 名词（词干 / である / だ） + にしても",
+      "examples": [
+        {
+          "translation": "就算是下雨，也必须得去学校。"
+        },
+        {
+          "translation": "即便她正在发脾气，沟通交流也是无法回避的。"
+        },
+        {
+          "translation": "就算这家餐厅价钱较贵，但饭菜质量上乘，非常值得推荐。"
+        },
+        {
+          "translation": "就算他很有名气，谈论人家的私生活也是很不礼貌的。"
+        }
+      ]
+    },
+    "ja_について_78": {
+      "title": "～について (〜ni tsuite)",
+      "shortExplanation": "提示思考、陈述、研究或讨论的主题与内容，“关于……”、“就……”。",
+      "longExplanation": "句型“～について”接在名词之后，用于引出交谈、思考、调查、研究或写作等动作所围绕的具体主题、对象或领域，相当于中文的“关于……”、“就……”。若需修饰后续名词，需转变为“〜についての + 名词”的形式。常与“考える”、“話す”、“調べる”等动词搭配。",
+      "formation": "名词 + について（修饰名词时用 についての + 名词）",
+      "examples": [
+        {
+          "translation": "我想深入了解关于日本文化的知识。"
+        },
+        {
+          "translation": "让我们针对他的意见共同讨论一下吧。"
+        },
+        {
+          "translation": "关于这个问题，请详细地跟我讲解一下。"
+        },
+        {
+          "translation": "我们必须认真思考关于孩子们的教育问题。"
+        }
+      ]
+    },
+    "ja_にとって_79": {
+      "title": "～にとって (〜ni totte)",
+      "shortExplanation": "表示评判基准或立场，“对……来说”、“在……看来”。",
+      "longExplanation": "句型“～にとって”接在表示人物、团体或立场的名词之后，表示从该主体的视角或立场出发来看待事物时，所做出的价值评判、感受或衡量（相当于“对……而言”）。后项通常接表示重要性、难易度、利害关系等评价性的词语（如“大切だ”、“必要だ”、“難しい”等）。修饰后续名词时，需变为“〜にとっての + 名词”。",
+      "formation": "名词（人物 / 组织等立场） + にとって（修饰名词时用 にとっての + 名词）",
+      "examples": [
+        {
+          "translation": "对我来说，身体健康是最重要的事情。"
+        },
+        {
+          "translation": "对那家公司而言，这个项目具有十分重要的意义。"
+        },
+        {
+          "translation": "对小孩子们来说，玩具是很有趣的东西。"
+        },
+        {
+          "translation": "对于外国人而言，日语是比较难学的语言之一。"
+        }
+      ]
+    },
+    "ja_によって_80": {
+      "title": "～によって (〜ni yotte)",
+      "shortExplanation": "表示原因理由（“由于……”）、手段方法（“通过……”）、或依情况而异（“根据……”、“因……而异”）。",
+      "longExplanation": "句型“～によって”是日语中用法广泛的核心句型，主要包含以下几种用法：(1) 表示引发某种事态的原因或理由（“由于……”、“因……”）；(2) 表示达成某种结果的手段、方法或途径（“通过……”、“凭借……”）；(3) 表示因情况、条件或对象的不同而产生差异（“根据……”、“因……而不同”）；(4) 在被动句中表示创作者或发明者（“由……”）。修饰后续名词时需变为“〜による + 名词”。",
+      "formation": "名词 + によって（修饰名词时用 による + 名词） | 动词普通形 + ことによって",
+      "examples": [
+        {
+          "translation": "那起事故是由恶劣天气引发的。"
+        },
+        {
+          "translation": "根据生活习惯的不同，健康状况也会发生变化。"
+        },
+        {
+          "translation": "他的成功是凭借勤奋努力换来的。"
+        },
+        {
+          "translation": "结果会因考试难度的不同而有所差异。"
+        }
+      ]
+    },
+    "ja_によれば_81": {
+      "title": "～によれば (〜ni yoreba)",
+      "shortExplanation": "用于引述信息来源或传闻的根据，“根据……”、“据……说”。",
+      "longExplanation": "句型“～によれば”（与“～によると”意思相同）接在表示消息来源的名词（如天气预报、报刊文章、调查数据、某人言论等）之后，用于交代后面信息的出处与依据（相当于“据……称”、“根据……记载”）。句尾通常与表示传闻或推量的句尾表达（如“〜そうだ”、“〜ということだ”、“〜らしい”、“〜だろう”）相呼应。",
+      "formation": "名词（消息来源） + によれば + 传闻/推测表达（〜そうだ / 〜ということだ / 〜らしい / 〜だろう）",
+      "examples": [
+        {
+          "translation": "据天气预报说，明天大概是个晴天。"
+        },
+        {
+          "translation": "据老师讲，这道题目好像挺简单的。"
+        },
+        {
+          "translation": "根据调查显示，年轻人的吸烟率正在下降。"
+        },
+        {
+          "translation": "据报纸报道，那家企业似乎面临着破产的危机。"
+        }
+      ]
+    },
+    "ja_に対して_82": {
+      "title": "～に対して (～ni taishite)",
+      "shortExplanation": "表示动作或态度的指向对象（“对……”、“针对……”），或表示两者鲜明对照（“与……相对”、“相比之下”）。",
+      "longExplanation": "句型“～に対して”主要有两种核心用法：(1) 指示动作、态度、言语或感情所指向的对象（相当于“对待……”、“针对……”）；(2) 用于将两个事物或情况并列对比，突出它们截然相反的特征（相当于“与……相反”、“相较于……”）。当直接修饰后续名词时，需变形为“〜に対する + 名词”。",
+      "formation": "名词 + に対して | 动词/形容词普通形（な形容词+な/である+の、名词+な/である+の） + に対して（修饰名词时用 に対する + 名词）",
+      "examples": [
+        {
+          "translation": "对待孩子们，父母应当始终保持温柔慈爱。"
+        },
+        {
+          "translation": "面对提出的问题，他坦诚地作出了回答。"
+        },
+        {
+          "translation": "与田中先生的成功形成鲜明对比的是，佐藤先生失败了。"
+        },
+        {
+          "translation": "针对他的意见，我采取了反对的立场。"
+        }
+      ]
+    },
+    "ja_に比べて_83": {
+      "title": "～に比べて (〜ni kurabete)",
+      "shortExplanation": "表示以某事物作为基准进行比较，“与……相比”、“比起……”。",
+      "longExplanation": "句型“～に比べて”（源于动词“比べる”）接在名词等之后，用于把某人或某事物作为比较的基准，以此凸显后项事物在性质、程度或特征上的差异与区别（相当于“比起……来说”、“与……相比”）。在表达中也可以使用“〜に比べ”或“〜に比べると”。",
+      "formation": "名词 + に比べて | 动词/形容词普通形 + のに比べて",
+      "examples": [
+        {
+          "translation": "与夏天相比，冬天要寒冷得多。"
+        },
+        {
+          "translation": "这个西红柿比起红透的西红柿来说味道差了些。"
+        },
+        {
+          "translation": "比起我来，他的英语要优秀得多。"
+        },
+        {
+          "translation": "比起东京，京都可以说是一座宁静的城市。"
+        }
+      ]
+    },
+    "ja_に関して_84": {
+      "title": "～に関して (〜ni kanshite)",
+      "shortExplanation": "郑重的书面语，引出涉及的话题或内容领域，“关于……”、“有关……”、“与……有关”。",
+      "longExplanation": "句型“～に関して”是比“〜について”更为郑重、正式的书面语表达，用于引出讨论、调查、研究或说明所涉及的重大主题、议题或广阔范畴（相当于“关于……”、“涉及到……的事项”）。多见于正式公文、新闻报道、调查报告或学术论文中。修饰后续名词时，需转变为“〜に関する + 名词”的形式。",
+      "formation": "名词 + に関して（修饰名词时用 に関する + 名词）",
+      "examples": [
+        {
+          "translation": "关于健康方面，多加留意是非常重要的。"
+        },
+        {
+          "translation": "关于这个项目，他了解所有的具体细节。"
+        },
+        {
+          "translation": "有关环境问题，我们必须承担起更多的责任。"
+        },
+        {
+          "translation": "关于这起事件的信息目前还不够充分。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_ないと_70": {
+      "title": "～ないと (〜nai to)",
+      "shortExplanation": "부정의 가정을 나타내며, '~하지 않으면'이라는 뜻으로 뒤에 곤란한 상황이나 부정적인 결과가 이어집니다.",
+      "longExplanation": "'～ないと'는 동사의 부정형(ない형)에 접속하여 '만약 ~하지 않으면'이라는 부정의 가정 조건을 나타내는 표현입니다. 그 행동을 실행하지 않을 경우 곤란한 상황이나 불리한 결과가 필연적으로 일어남을 나타낼 때 사용됩니다. 또한 일상 회화에서 문장 끝에 단독으로 쓰일 때는 '~ないといけない(〜하지 않으면 안 된다)'의 생략형으로 '~해야 한다'는 의무나 당위를 나타냅니다.",
+      "formation": "동사 ない형 + と",
+      "examples": [
+        {
+          "translation": "아침 식사를 하지 않으면 배가 고프다."
+        },
+        {
+          "translation": "숙제를 하지 않으면 선생님께 혼난다."
+        },
+        {
+          "translation": "충전을 하지 않으면 휴대전화를 쓸 수 없게 된다."
+        },
+        {
+          "translation": "이 사고를 보고하지 않으면 문제가 커진다."
+        }
+      ]
+    },
+    "ja_なぜなら_71": {
+      "title": "～なぜなら (〜nazenara)",
+      "shortExplanation": "앞서 진술한 결과나 결론에 대해 그 이유나 까닭을 덧붙여 설명할 때 쓰이며, '왜냐하면 ~때문이다'라는 뜻입니다.",
+      "longExplanation": "'～なぜなら'(또는 なぜならば)는 앞선 문장에서 결과, 결론, 혹은 어떤 상황을 먼저 제시한 뒤, 그러한 상황이 일어난 구체적인 원인이나 이유를 뒤이어 설명할 때 사용하는 접속 표현입니다. 문장의 끝부분에는 주로 이유를 나타내는 '~からだ(때문이다)', '~からである', '~から' 등이 짝을 이루어 호응합니다.",
+      "formation": "문장(결과). なぜなら(ば) + 이유 + から(だ) / だから",
+      "examples": [
+        {
+          "translation": "이 음식점을 정말 좋아한다. 왜냐하면 음식이 맛있기 때문이다."
+        },
+        {
+          "translation": "그녀는 시험에 합격하지 못했다. 왜냐하면 공부를 하지 않았기 때문이다."
+        },
+        {
+          "translation": "나는 영화를 보러 가지 않는다. 왜냐하면 오늘은 바쁘기 때문이다."
+        },
+        {
+          "translation": "그에게 이 프로젝트를 맡길 수 있다. 왜냐하면 경험이 풍부하기 때문이다."
+        }
+      ]
+    },
+    "ja_など_72": {
+      "title": "～など (〜nado)",
+      "shortExplanation": "대표적인 사물을 불완전하게 열거할 때 쓰이며, '~등', '~따위'라는 뜻입니다.",
+      "longExplanation": "'～など'는 명사 뒤에 붙어 몇 가지 대표적인 예시를 들어 보이며, 언급된 것 외에도 동종의 사물이나 상황이 더 존재함을 나타내는 부조사입니다. 우리말의 '~등', '~따위'에 해당하며, 일상적으로 'AやBなど(A와 B 등)'의 형태로 널리 사용됩니다.",
+      "formation": "명사 + など",
+      "examples": [
+        {
+          "translation": "생선, 과일 등을 시장에서 샀습니다."
+        },
+        {
+          "translation": "그는 일본어, 영어, 중국어 등을 말할 수 있습니다."
+        },
+        {
+          "translation": "미술관에서는 회화, 조각 등의 작품을 보았습니다."
+        },
+        {
+          "translation": "이 가게에서는 빵, 케이크 등의 과자류를 팔고 있습니다."
+        }
+      ]
+    },
+    "ja_なんか_73": {
+      "title": "～なんか (〜nanka)",
+      "shortExplanation": "'～など'의 구어체 표현으로, 가볍게 예시를 들거나 대상을 낮추어 봄(경시), 겸양, 강한 부정을 나타내며 '~따위', '~같은 건'이라는 뜻입니다.",
+      "longExplanation": "'～なんか'는 'など'의 친근하고 편안한 회화체 표현입니다. 단순히 예시를 드는 것 외에도, 대상이 대단치 않다고 여겨 가볍게 보거나 무시하는 태도('~따위', '~따위의 것')를 드러낼 때 주로 쓰입니다. 자신이나 자신의 소유에 대해 언급할 때는 겸손을 나타내며, 부정적인 술어와 결합하여 '결코 ~가 아니다'라는 강한 부정의 뉘앙스를 나타냅니다.",
+      "formation": "명사 + なんか | 동사 보통형 + なんか | い형용사 + なんか | な형용사 + (な)なんか",
+      "examples": [
+        {
+          "translation": "돈 따위는 필요 없다."
+        },
+        {
+          "translation": "그는 피아노 같은 것도 칠 줄 압니다."
+        },
+        {
+          "translation": "바쁘기는 무슨, 전혀 바쁘지 않아."
+        },
+        {
+          "translation": "그녀는 결코 친절하지 않다."
+        }
+      ]
+    },
+    "ja_において_74": {
+      "title": "～において (〜ni oite)",
+      "shortExplanation": "격식 있는 문어체 표현으로, 어떤 동작이나 현상이 일어나는 장소, 시대, 시간, 분야, 상황을 나타내며 '~에서', '~에 있어서'라는 뜻입니다.",
+      "longExplanation": "'～において'는 구어의 조사 'で'에 해당하는 정중하고 격식 있는 문어체 표현입니다. 동작이나 사건이 일어나는 구체적인 장소나 무대, 시대나 특정 시기, 학술이나 활동의 분야, 또는 처해 있는 상황을 제시할 때 사용합니다. 뒤에 오는 명사를 직접 수식할 때는 '～における + 명사'의 형태로 바뀝니다.",
+      "formation": "명사(장소/시대/시간/분야/상황) + において (명사 수식 시: における + 명사)",
+      "examples": [
+        {
+          "translation": "일본에서 오봉은 가족들이 모이는 소중한 행사입니다."
+        },
+        {
+          "translation": "회의에서 그의 의견이 가장 설득력이 있었습니다."
+        },
+        {
+          "translation": "과학 분야에서 연구가 나날이 진척되고 있습니다."
+        },
+        {
+          "translation": "유년기에 아이들은 매우 빠른 기세로 사물을 익힙니다."
+        }
+      ]
+    },
+    "ja_にかわって_75": {
+      "title": "～にかわって (〜ni kawatte)",
+      "shortExplanation": "다른 사람을 대신하거나 대표하여 어떤 역할을 수행함을 나타내며, '~를 대신하여', '~를 대표하여'라는 뜻입니다.",
+      "longExplanation": "'～にかわって'(한자 표기: に代わって / に換わって)는 본래 그 일을 해야 할 사람을 대신하여 행동하거나, 다른 사람이나 집단을 대표하여 역할을 수행할 때 쓰는 문법입니다. 또한 기존의 사물이나 제도를 새로운 것이 대체할 때도 사용됩니다. 뒤의 명사를 수식할 때는 '～にかわる + 명사' 형태가 됩니다.",
+      "formation": "명사 + にかわって (명사 수식 시: にかわる + 명사)",
+      "examples": [
+        {
+          "translation": "그가 아파서 제가 회의에 참석하게 되었습니다. 제가 그를 대신하여 회의에 참석합니다."
+        },
+        {
+          "translation": "어머니께서 바쁘셔서 제가 어머니를 대신하여 요리를 합니다."
+        },
+        {
+          "translation": "이번 여행은 여동생을 대신해 제가 함께 갑니다."
+        },
+        {
+          "translation": "선생님께서 출장 중이셔서 조교가 선생님을 대신하여 수업을 담당합니다."
+        }
+      ]
+    },
+    "ja_にしては_76": {
+      "title": "～にしては (〜ni shite wa)",
+      "shortExplanation": "어떤 기준이나 조건에서 일반적으로 예상되는 것과 실제가 다를 때 쓰이며, '~치고는', '~치고'라는 뜻입니다.",
+      "longExplanation": "'～にしては'는 어떤 구체적인 사실이나 자격, 조건을 기준으로 제시하고, 그 기준으로부터 통상적으로 기대되거나 예상되는 바와 실제 상황이 어긋나 의외라는 느낌을 나타내는 표현입니다. 우리말의 '~치고는'에 해당하며, 화자의 놀라움이나 평가가 담깁니다. 뒷부분에는 화자의 의지나 희망을 나타내는 표현은 오지 않습니다.",
+      "formation": "동사 보통형 + にしては | い형용사 + にしては | な형용사(어간 / である) + にしては | 명사 + にしては",
+      "examples": [
+        {
+          "translation": "초보자 치고는 그녀는 수영을 무척 잘한다."
+        },
+        {
+          "translation": "이 초밥은 가격이 저렴한 것 치고는 대단히 맛있다."
+        },
+        {
+          "translation": "그는 젊은 나이 치고는 매우 침착하다."
+        },
+        {
+          "translation": "저 사람은 외국인 치고는 일본어를 잘한다."
+        }
+      ]
+    },
+    "ja_にしても_77": {
+      "title": "～にしても (〜ni shitemo)",
+      "shortExplanation": "양보의 가정을 나타내며, '~라고 하더라도', '~한다 해도'라는 뜻입니다.",
+      "longExplanation": "'～にしても'는 앞의 조건이나 사실을 한 걸음 양보하여 인정한다 하더라도, 뒤에 이어지는 판단이나 결론, 취해야 할 행동에는 변함이 없음을 나타내는 양보 표현입니다. 우리말의 '~라고 하더라도', '~한다 해도'에 해당하며, 종종 화자의 평가, 비판, 단호한 입장 등이 뒤따릅니다.",
+      "formation": "동사 보통형 + にしても | い형용사 + にしても | な형용사(어간 / である / だ) + にしても | 명사(어간 / である / だ) + にしても",
+      "examples": [
+        {
+          "translation": "비가 온다고 하더라도 학교에는 가야만 합니다."
+        },
+        {
+          "translation": "그녀가 화가 나 있다 하더라도 대화는 피할 수 없다."
+        },
+        {
+          "translation": "이 식당이 비싸다고 하더라도 요리의 질이 좋아서 추천합니다."
+        },
+        {
+          "translation": "그가 유명하다고 하더라도 그의 사생활에 대해 이야기하는 것은 실례이다."
+        }
+      ]
+    },
+    "ja_について_78": {
+      "title": "～について (〜ni tsuite)",
+      "shortExplanation": "생각이나 발언, 조사, 연구 등의 주제나 대상을 나타내며 '~에 대해서', '~에 관해서'라는 뜻입니다.",
+      "longExplanation": "'～について'는 명사 뒤에 붙어 생각하다(考える), 이야기하다(話す), 조사하다(調べる), 연구하다(研究する) 등의 행위가 다루고 있는 구체적인 화제나 대상, 테마를 제시할 때 쓰이는 대표적인 문법입니다. 우리말의 '~에 대하여', '~에 관하여'에 해당하며, 뒤의 명사를 수식할 때는 '～についての + 명사' 형태를 취합니다.",
+      "formation": "명사 + について (명사 수식 시: についての + 명사)",
+      "examples": [
+        {
+          "translation": "일본 문화에 대해서 배우고 싶습니다."
+        },
+        {
+          "translation": "그의 의견에 대해서 함께 이야기해 봅시다."
+        },
+        {
+          "translation": "이 문제에 대해 자세히 알려 주세요."
+        },
+        {
+          "translation": "아이들의 교육에 관해 생각하지 않으면 안 됩니다."
+        }
+      ]
+    },
+    "ja_にとって_79": {
+      "title": "～にとって (〜ni totte)",
+      "shortExplanation": "평가나 판단의 기준이 되는 입장이나 대상을 나타내며, '~에게 있어서', '~의 입장에서 보면'이라는 뜻입니다.",
+      "longExplanation": "'～にとって'는 사람이나 단체, 특정 입장 뒤에 붙어 그 사람의 시각이나 입장에서 사물을 바라보았을 때 어떤 가치나 평가가 내려지는지를 나타내는 문법입니다. 우리말의 '~에게(있어서)', '~의 입장에서 보면'에 해당하며, 뒤에는 주로 중요성, 가치, 난이도 등을 나타내는 형용사나 명사(소중하다, 중요하다, 어렵다 등)가 따릅니다. 명사를 수식할 때는 '～にとっての + 명사' 형태가 됩니다.",
+      "formation": "명사(인물/단체/입장) + にとって (명사 수식 시: にとっての + 명사)",
+      "examples": [
+        {
+          "translation": "나에게 있어서 건강은 가장 소중한 것입니다."
+        },
+        {
+          "translation": "저 회사에게 있어 이 프로젝트는 중요한 의미가 있습니다."
+        },
+        {
+          "translation": "아이들에게 있어서 장난감은 즐거운 것입니다."
+        },
+        {
+          "translation": "외국인에게 있어서 일본어는 어려운 언어 중 하나입니다."
+        }
+      ]
+    },
+    "ja_によって_80": {
+      "title": "～によって (〜ni yotte)",
+      "shortExplanation": "원인이나 이유('~로 인해'), 수단이나 방법('~를 통해'), 또는 차이나 변화의 조건('~에 따라')을 나타냅니다.",
+      "longExplanation": "'～によって'는 다양한 의미를 지닌 중요한 문법으로: (1) 어떤 사태가 일어난 원인이나 이유를 나타낼 때('~로 인해', '~ 때문에'), (2) 목표를 달성하는 수단이나 방법을 나타낼 때('~에 의해', '~를 통해서'), (3) 대상이나 조건에 따라 차이가 생김을 나타낼 때('~에 따라', '~마다'), (4) 수동문에서 발명자나 창작자를 나타낼 때('~에 의해') 사용됩니다. 뒤의 명사를 수식할 때는 '～による + 명사' 형태가 됩니다.",
+      "formation": "명사 + によって (명사 수식 시: による + 명사) | 동사 보통형 + ことによって",
+      "examples": [
+        {
+          "translation": "그 사고는 악천후로 인해 발생했다."
+        },
+        {
+          "translation": "생활 습관에 따라 건강 상태가 달라집니다."
+        },
+        {
+          "translation": "그의 성공은 노력에 의해 얻어진 것이다."
+        },
+        {
+          "translation": "결과는 시험의 난이도에 따라 달라집니다."
+        }
+      ]
+    },
+    "ja_によれば_81": {
+      "title": "～によれば (〜ni yoreba)",
+      "shortExplanation": "정보의 출처나 근거를 제시할 때 쓰이며, '~에 의하면', '~에 따르면'이라는 뜻입니다.",
+      "longExplanation": "'～によれば'('～によると'와 동의어)는 일기예보, 신문 기사, 조사 결과, 다른 사람의 발언 등 얻은 정보의 출처를 밝힐 때 쓰는 표현입니다. 우리말의 '~에 의하면', '~에 따르면'에 해당하며, 문장 끝에는 전문(전해 들음)이나 추측을 나타내는 '~そうだ(라고 한다)', '~ということだ(라는 것이다)', '~らしい(~인 모양이다)' 등의 표현이 주로 호응합니다.",
+      "formation": "명사(정보 출처) + によれば + 전문·추측 표현(〜そうだ / 〜ということだ / 〜らしい / 〜だろう)",
+      "examples": [
+        {
+          "translation": "일기예보에 따르면 내일은 맑을 것입니다."
+        },
+        {
+          "translation": "선생님 말씀에 의하면 이 문제는 간단하다고 합니다."
+        },
+        {
+          "translation": "조사에 따르면 젊은이들의 흡연율이 줄어들고 있다고 합니다."
+        },
+        {
+          "translation": "신문 기사에 의하면 그 기업은 도산 위기에 처해 있는 모양입니다."
+        }
+      ]
+    },
+    "ja_に対して_82": {
+      "title": "～に対して (～ni taishite)",
+      "shortExplanation": "태도나 동작이 향하는 대상('~에 대해')을 나타내거나, 두 사실의 뚜렷한 대조('~에 반해')를 나타냅니다.",
+      "longExplanation": "'～に対して'는 크게 두 가지 용법으로 쓰입니다. 첫째, 어떤 태도나 행동, 질문 등이 향하는 대상을 가리킬 때 쓰입니다('~에 대하여', '~를 향해'). 둘째, 두 가지 사실이나 인물을 나란히 놓고 상반되는 성질이나 차이를 대비시킬 때 사용됩니다('~에 반하여', '~와는 달리'). 뒤에 오는 명사를 수식할 때는 '～に対する + 명사' 형태가 됩니다.",
+      "formation": "명사 + に対して | 보통형(な형용사+な/である+の, 명사+な/である+の) + に対して (명사 수식 시: に対する + 명사)",
+      "examples": [
+        {
+          "translation": "아이들에 대해서 부모는 언제나 다정해야 합니다."
+        },
+        {
+          "translation": "그는 질문에 대해 솔직하게 대답했습니다."
+        },
+        {
+          "translation": "다나카 씨가 성공한 데 반해 사토 씨는 실패했습니다."
+        },
+        {
+          "translation": "그의 의견에 대해서 저는 반대 입장을 취했습니다."
+        }
+      ]
+    },
+    "ja_に比べて_83": {
+      "title": "～に比べて (〜ni kurabete)",
+      "shortExplanation": "어떤 대상을 비교의 기준으로 삼을 때 쓰이며, '~에 비해', '~에 비해서'라는 뜻입니다.",
+      "longExplanation": "'～に比べて'는 비교를 나타내는 동사 '比べる'에서 비롯된 표현으로, 어떤 인물이나 사물을 비교의 기준으로 세워 뒤따르는 대상의 차이나 성질, 정도의 차이를 부각시킬 때 쓰입니다. 우리말의 '~에 비해', '~와 비교해서'에 해당하며, '～に比べ', '～に比べると'와도 바꾸어 쓸 수 있습니다.",
+      "formation": "명사 + に比べて | 동사/형용사 보통형 + のに比べて",
+      "examples": [
+        {
+          "translation": "여름에 비해 겨울은 춥습니다."
+        },
+        {
+          "translation": "이 토마토는 빨간 토마토에 비해서 맛이 없습니다."
+        },
+        {
+          "translation": "그는 나에 비해 영어를 잘합니다."
+        },
+        {
+          "translation": "도쿄에 비해 교토는 조용한 도시입니다."
+        }
+      ]
+    },
+    "ja_に関して_84": {
+      "title": "～に関して (〜ni kanshite)",
+      "shortExplanation": "격식 있는 문어체 표현으로 어떤 주제나 관련된 범위를 나타내며, '~에 관해서', '~에 관련하여'라는 뜻입니다.",
+      "longExplanation": "'～に関して'는 '～について'보다 격식 있고 정중한 문어체 표현으로, 어떤 문제나 화제, 연관된 폭넓은 범위를 제시할 때 쓰입니다. 우리말의 '~에 관하여', '~와 관련하여'에 해당하며, 조사, 연구, 발표, 뉴스, 공문서 등 공식적인 자리에서 자주 활용됩니다. 뒤에 오는 명사를 수식할 때는 '～に関する + 명사' 형태가 됩니다.",
+      "formation": "명사 + に関して (명사 수식 시: に関する + 명사)",
+      "examples": [
+        {
+          "translation": "건강에 관해서 주의를 기울이는 것은 매우 중요합니다."
+        },
+        {
+          "translation": "이 프로젝트에 관해서는 그가 모든 세부 사항을 알고 있습니다."
+        },
+        {
+          "translation": "환경 문제에 관해서 우리는 좀 더 책임감을 가져야 합니다."
+        },
+        {
+          "translation": "이 사건에 관한 정보는 아직 충분하지 않습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_ないと_70": {
+      "title": "～ないと (〜nai to)",
+      "shortExplanation": "否定の仮定条件を表し、「もし〜しなければ」「〜しないと」という意味で、後には不都合な結果や困った事態が続きます。",
+      "longExplanation": "「～ないと」は、動詞のナイ形に接続して、「もしその動作を行わなければ」という否定の条件を表す表現です。その行為を行わないと、好ましくない結果や困った事態が必然的に生じることを述べる際に用いられます。また、日常会話において文末で用いられる場合は、「〜ないといけない」「〜ないとだめだ」の省略表現として、「〜しなければならない」という義務や必要性を表します。",
+      "formation": "動詞ナイ形 ＋ と",
+      "examples": [
+        {
+          "translation": "朝食を食べないと、お腹が空きます。"
+        },
+        {
+          "translation": "宿題をしないと、先生に怒られます。"
+        },
+        {
+          "translation": "充電をしないと、電話が使えなくなります。"
+        },
+        {
+          "translation": "この事故を報告しないと、問題が大きくなります。"
+        }
+      ]
+    },
+    "ja_なぜなら_71": {
+      "title": "～なぜなら (〜nazenara)",
+      "shortExplanation": "先に述べた結果や結論に対してその理由や原因を説明する接続表現で、「なぜなら〜からだ」「理由は〜だからだ」という意味を表します。",
+      "longExplanation": "「～なぜなら」（改まった表現では「なぜならば」）は、前の文で結果や判断、結論を述べた後、それに引き続いて「なぜそのような事態になったのか」という理由や根拠を明確に説明するために用いられる接続表現です。文末には通常「〜からだ」「〜からである」「〜から」などが呼応して、論理的な理由づけを行います。",
+      "formation": "文（結果）。なぜなら（ば） ＋ 理由 ＋ から（だ）／だから",
+      "examples": [
+        {
+          "translation": "このレストランが大好きです。なぜなら料理が美味しいからです。"
+        },
+        {
+          "translation": "彼女は試験に合格しませんでした。なぜなら勉強しなかったからです。"
+        },
+        {
+          "translation": "私は映画を見に行きません。なぜなら今日は忙しいからです。"
+        },
+        {
+          "translation": "彼はこのプロジェクトを任せられます。なぜなら経験が豊富だからです。"
+        }
+      ]
+    },
+    "ja_など_72": {
+      "title": "～など (〜nado)",
+      "shortExplanation": "代表的な例をいくつか挙げて、他にも同種の物事があることを示す表現で、「〜など」「〜といったもの」という意味を表します。",
+      "longExplanation": "「～など」は、名詞などに付いて代表的な例をいくつか示し、挙げられたもの以外にも同類のものがまだ存在することを含みとして表す副助詞です。すべてを網羅して挙げるのではなく一部を例示する際に用いられ、「AやBなど」の形で頻繁に使われます。",
+      "formation": "名詞 ＋ など",
+      "examples": [
+        {
+          "translation": "魚、果物などを市場で買いました。"
+        },
+        {
+          "translation": "彼は日本語、英語、中国語などを話せます。"
+        },
+        {
+          "translation": "美術館では絵画、彫刻などの作品を見ました。"
+        },
+        {
+          "translation": "この店ではパン、ケーキなどのお菓子を売っています。"
+        }
+      ]
+    },
+    "ja_なんか_73": {
+      "title": "～なんか (〜nanka)",
+      "shortExplanation": "「など」のくだけた口語表現で、例示のほか、物事を軽視・謙遜したり、強く否定したりする気持ちを表し、「〜など」「〜なんて」という意味になります。",
+      "longExplanation": "「～なんか」は、助詞「など」の口語的で親しい表現です。日常会話で例を挙げる際によく使われるほか、対象を「たいしたことではない」と見下したり軽んじたりするニュアンスや、自分自身をへりくだって言う謙遜の意を含みます。また、否定文と結びつくことで「決して〜ではない」と否定の気持ちを強調します。",
+      "formation": "名詞 ＋ なんか | 動詞普通形 ＋ なんか | い形容詞 ＋ なんか | な形容詞 ＋ (な)なんか",
+      "examples": [
+        {
+          "translation": "お金なんかいらない。"
+        },
+        {
+          "translation": "彼はピアノなんかも弾けます。"
+        },
+        {
+          "translation": "忙しいなんかじゃないよ。"
+        },
+        {
+          "translation": "彼女は親切なんかじゃない。"
+        }
+      ]
+    },
+    "ja_において_74": {
+      "title": "～において (〜ni oite)",
+      "shortExplanation": "動作や事態が生じる場所、時代、時間、分野、状況などを表す改まった表現で、「〜で」「〜において」という意味を表します。",
+      "longExplanation": "「～において」は、話し言葉の助詞「で」に相当する改まった書き言葉の文型です。動作や現象が起きる具体的な場所、時代や時間、学問・活動の分野、あるいは特定の場面や状況を取り上げる際に用いられます。後ろに続く名詞を修飾する際には「〜における＋名詞」の形をとります。",
+      "formation": "名詞（場所・時代・時間・分野・状況） ＋ において（名詞修飾：〜における ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "日本において、お盆は家族が集まる大切な行事です。"
+        },
+        {
+          "translation": "会議において、彼の意見が一番説得力がありました。"
+        },
+        {
+          "translation": "科学の分野において、研究が日々進んでいます。"
+        },
+        {
+          "translation": "幼少期において、子供たちは勢いよく物を覚えます。"
+        }
+      ]
+    },
+    "ja_にかわって_75": {
+      "title": "～にかわって (〜ni kawatte)",
+      "shortExplanation": "本来の担当者や人に代わって行動したり、代理を務めたりすることを表し、「〜の代わりに」「〜を代表して」という意味を表します。",
+      "longExplanation": "「～にかわって」（漢字では「〜に代わって」「〜に換わって」）は、名詞に接続して、本来その行為を行うべき人に代わって別の人が代理として行動することや、以前のものに代わって新しいものがその役割を果たすことを表す文型です。後ろの名詞を修飾するときは「〜にかわる＋名詞」の形になります。",
+      "formation": "名詞 ＋ にかわって（名詞修飾：〜にかわる ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "彼が病気なので、私が会議に出席することになりました。私が彼にかわって会議に出席します。"
+        },
+        {
+          "translation": "母は忙しいので、私が母にかわって料理を作ります。"
+        },
+        {
+          "translation": "今度の旅行は妹にかわって、私が一緒に行きます。"
+        },
+        {
+          "translation": "先生が出張中でいないので、助手が先生にかわってクラスを担当します。"
+        }
+      ]
+    },
+    "ja_にしては_76": {
+      "title": "～にしては (〜ni shite wa)",
+      "shortExplanation": "ある基準や条件から当然予想されることとは異なっていることを表し、「〜の基準から考えると意外にも」「〜のわりには」という意味を表します。",
+      "longExplanation": "「～にしては」は、具体的な事実や立場、条件を前提の基準として提示し、そこから通常予想される標準的な結果や水準と実際の様子が食い違っており、意外であるという評価や驚きを表す文型です。後ろには話し手の希望や意志を表す文は来ず、客観的な事実や評価が述べられます。",
+      "formation": "動詞普通形 ＋ にしては | い形容詞 ＋ にしては | な形容詞（語幹／である） ＋ にしては | 名詞 ＋ にしては",
+      "examples": [
+        {
+          "translation": "彼女は初心者にしては、上手に水泳ができます。"
+        },
+        {
+          "translation": "このお寿司は安いにしては、とても美味しいです。"
+        },
+        {
+          "translation": "彼は若いにしては、とても落ち着いています。"
+        },
+        {
+          "translation": "あの人は外国人にしては、日本語がうまいです。"
+        }
+      ]
+    },
+    "ja_にしても_77": {
+      "title": "～にしても (〜ni shitemo)",
+      "shortExplanation": "仮定や譲歩を表し、「たとえ〜だとしても」「〜という場合であっても」という意味を表します。",
+      "longExplanation": "「～にしても」は、ある条件や事実を一歩譲って認めたとしても、それによって話し手の判断や態度、後続の結論が変わることはないという譲歩の気持ちを表す文型です。「たとえ〜であってもやはり……」と述べるときに用いられ、批判や不満、義務的な判断などが続くことが多くあります。",
+      "formation": "動詞普通形 ＋ にしても | い形容詞 ＋ にしても | な形容詞（語幹／である／だ） ＋ にしても | 名詞（語幹／である／だ） ＋ にしても",
+      "examples": [
+        {
+          "translation": "雨が降るにしても、学校へ行かなければなりません。"
+        },
+        {
+          "translation": "彼女が怒っているにしても、話し合いは避けられません。"
+        },
+        {
+          "translation": "このレストランが高いにしても、料理の質がよくておすすめです。"
+        },
+        {
+          "translation": "彼が有名だにしても、彼の私生活について話すのは失礼です。"
+        }
+      ]
+    },
+    "ja_について_78": {
+      "title": "～について (〜ni tsuite)",
+      "shortExplanation": "思考、発話、調査、研究などの対象や話題を取り上げて提示する表現で、「〜に関して」「〜のことを」という意味を表します。",
+      "longExplanation": "「～について」は、名詞に接続して、話す、考える、調べる、書くなどの行為が向けられる具体的なテーマや対象・話題を提示する文型です。日常会話から公の場まで幅広く使われます。後ろに続く名詞を修飾する際には「〜についての＋名詞」という形をとります。",
+      "formation": "名詞 ＋ について（名詞修飾：〜についての ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "日本の文化について学びたいです。"
+        },
+        {
+          "translation": "彼の意見について話し合いましょう。"
+        },
+        {
+          "translation": "この問題について詳しく教えてください。"
+        },
+        {
+          "translation": "子供たちの教育について考えなければなりません。"
+        }
+      ]
+    },
+    "ja_にとって_79": {
+      "title": "～にとって (〜ni totte)",
+      "shortExplanation": "評価や判断の立場・基準となる対象を示し、「〜の立場から考えると」「〜には」という意味を表します。",
+      "longExplanation": "「～にとって」は、人や組織などの名詞に接続して、その立場や視点から見た場合にどのような価値や意味、重要性を持つか、どう評価されるかを述べる文型です。後ろには「大切だ」「重要だ」「難しい」「必要だ」などの価値判断や評価を表す語句が続くのが特徴です。名詞を修飾するときは「〜にとっての＋名詞」の形になります。",
+      "formation": "名詞（人・組織・立場） ＋ にとって（名詞修飾：〜にとっての ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "私にとって、健康は一番大切なことです。"
+        },
+        {
+          "translation": "あの会社にとって、このプロジェクトは重要な意味があります。"
+        },
+        {
+          "translation": "子供たちにとって、おもちゃは楽しいものです。"
+        },
+        {
+          "translation": "外国人にとって、日本語は難しい言語の一つです。"
+        }
+      ]
+    },
+    "ja_によって_80": {
+      "title": "～によって (〜ni yotte)",
+      "shortExplanation": "原因・理由（〜のために）、手段・方法（〜を使って）、または対応・相違（〜に応じて・〜次第で）を表します。",
+      "longExplanation": "「～によって」は多様な用法を持つ重要な文型で、主に次の意味を表します。(1) 事態を引き起こした原因や理由（「〜のために」）、(2) 行為や目的を達成するための手段・方法（「〜を使って」「〜の方法で」）、(3) 条件や場合によってそれぞれ異なること（「〜によってそれぞれ違う」「〜次第で」）、(4) 受身文における創造者・行為の主体。後ろの名詞を修飾する場合は「〜による＋名詞」の形をとります。",
+      "formation": "名詞 ＋ によって（名詞修飾：〜による ＋ 名詞） | 動詞普通形 ＋ ことによって",
+      "examples": [
+        {
+          "translation": "その事故は悪天候によって引き起こされました。"
+        },
+        {
+          "translation": "生活習慣によって、健康状態が変わります。"
+        },
+        {
+          "translation": "彼の成功は努力によって得られたものです。"
+        },
+        {
+          "translation": "結果は試験の難易度によって異なります。"
+        }
+      ]
+    },
+    "ja_によれば_81": {
+      "title": "～によれば (〜ni yoreba)",
+      "shortExplanation": "情報や伝聞の出所・根拠を示す表現で、「〜の話では」「〜によると」という意味を表します。",
+      "longExplanation": "「～によれば」（「〜によると」とほぼ同義）は、ニュース、天気予報、新聞記事、調査結果、人の話など、得られた情報の出所や根拠を提示する文型です。「〜から得た情報では」という意味を表し、文末には伝聞や推量を表す「〜そうだ」「〜ということだ」「〜らしい」「〜だろう」などの表現が呼応して用いられます。",
+      "formation": "名詞（情報の出所） ＋ によれば ＋ 伝聞・推量の表現（〜そうだ／〜ということだ／〜らしい／〜だろう）",
+      "examples": [
+        {
+          "translation": "天気予報によれば、明日は晴れるでしょう。"
+        },
+        {
+          "translation": "先生によれば、この問題は簡単だそうです。"
+        },
+        {
+          "translation": "調査によれば、若者の喫煙率が減っているということです。"
+        },
+        {
+          "translation": "新聞記事によれば、その企業は倒産の危機にあるらしいです。"
+        }
+      ]
+    },
+    "ja_に対して_82": {
+      "title": "～に対して (～ni taishite)",
+      "shortExplanation": "行為や感情が向けられる相手・対象（「〜に向かって」）や、二つの事柄の対比（「〜と比べて一方は」）を表します。",
+      "longExplanation": "「～に対して」は、主に2つの用法を持つ文型です。(1) 態度、動作、感情、働きかけの向けられる対象や相手を提示する用法（「〜を対象として」「〜に向かって」）。(2) 2つの人・物事や状況を取り上げ、それらが著しく対照的・対比的であることを示す用法（「〜であるのとは違って」「〜に反して」）。後ろの名詞を修飾する際には「〜に対する＋名詞」の形をとります。",
+      "formation": "名詞 ＋ に対して | 普通形（な形容詞＋な／である＋の、名詞＋な／である＋の） ＋ に対して（名詞修飾：〜に対する ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "子供たちに対して、親は常にやさしくあるべきです。"
+        },
+        {
+          "translation": "彼は質問に対して正直に答えました。"
+        },
+        {
+          "translation": "田中さんは成功したのに対して、佐藤さんは失敗しました。"
+        },
+        {
+          "translation": "彼の意見に対して、私は反対の立場を取りました。"
+        }
+      ]
+    },
+    "ja_に比べて_83": {
+      "title": "～に比べて (〜ni kurabete)",
+      "shortExplanation": "物事を比較する基準を示し、「〜と比較して」「〜よりも」という意味を表します。",
+      "longExplanation": "「～に比べて」は、動詞「比べる」から派生した文型で、ある人や事物、事態を比較の基準として取り上げ、それと引き比べることで後項の性質や程度、状態の相違を際立たせて述べる際に用いられます。「〜に比べ」「〜に比べると」という形でも同様の意味で使われます。",
+      "formation": "名詞 ＋ に比べて | 動詞・形容詞普通形 ＋ のに比べて",
+      "examples": [
+        {
+          "translation": "夏に比べて、冬は寒いです。"
+        },
+        {
+          "translation": "このトマトは赤いトマトに比べて美味しくないです。"
+        },
+        {
+          "translation": "彼は私に比べて英語が上手です。"
+        },
+        {
+          "translation": "東京に比べて、京都は静かな町です。"
+        }
+      ]
+    },
+    "ja_に関して_84": {
+      "title": "～に関して (〜ni kanshite)",
+      "shortExplanation": "取り上げる話題や関連する事柄を提示する改まった表現で、「〜について」「〜に関連して」という意味を表します。",
+      "longExplanation": "「～に関して」は、「〜について」よりも改まった硬い表現で、あるテーマや内容、関連する幅広い領域を話題として取り上げる際に用いられます。調査、研究、報告書、公の議論、ニュースなどで頻繁に使われます。後ろに続く名詞を修飾する際には「〜に関する＋名詞」の形をとります。",
+      "formation": "名詞 ＋ に関して（名詞修飾：〜に関する ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "健康に関して気を付けることが大切です。"
+        },
+        {
+          "translation": "このプロジェクトに関しては、彼がすべての詳細を知っています。"
+        },
+        {
+          "translation": "環境問題に関して、私たちはもっと責任を持たなければなりません。"
+        },
+        {
+          "translation": "この事件に関しての情報はまだ十分ではありません。"
+        }
+      ]
+    }
+  }
+}

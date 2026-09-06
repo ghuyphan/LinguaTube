@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_わけではない_163": {
+      "title": "～わけではない (〜wake dewa nai)",
+      "shortExplanation": "Diễn tả sự phủ định một phần, mang ý nghĩa 'không hẳn là...', 'không nhất thiết là...', 'không phải là...' hoặc 'không có nghĩa là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～わけではない' được dùng để phủ định một phần của một phán đoán, sự suy đoán hay nhận định chung nào đó ('không hẳn là...', 'không nhất thiết là...'). Cấu trúc này làm rõ rằng dù tình hình có vẻ như vậy, hoặc thông thường mọi người sẽ nghĩ như thế, nhưng thực tế không hoàn toàn tuyệt đối hoặc không nhất định phải như vậy. Thường đi kèm với các phó từ như '必ずしも' (chưa hẳn), '特に' (đặc biệt), '全部' (toàn bộ).",
+      "formation": "Động từ thể thông thường + わけではない | Tính từ đuôi い + わけではない | Tính từ đuôi な + なわけではない (hoặc であるわけではない) | Danh từ + なわけではない (hoặc であるわけではない / というわけではない)",
+      "examples": [
+        {
+          "translation": "Không phải là cậu ấy không học bài, nhưng thành tích lại không tốt lắm."
+        },
+        {
+          "translation": "Không hẳn là nhà hàng này đắt, nhưng để đến ăn mỗi ngày thì hơi tốn kém đấy."
+        },
+        {
+          "translation": "Không phải là cô ấy không tốt bụng, nhưng đôi khi cách nói chuyện hơi gay gắt."
+        },
+        {
+          "translation": "Không phải là anh ấy bận rộn, mà có vẻ như anh ấy chưa biết cách quản lý thời gian hiệu quả."
+        }
+      ]
+    },
+    "ja_わけにはいかない_164": {
+      "title": "～わけにはいかない (〜wake ni wa ikanai)",
+      "shortExplanation": "Diễn tả việc không thể làm một điều gì đó vì lý do đạo đức, trách nhiệm, nghĩa vụ xã hội hoặc tâm lý; 'không thể...', 'không thể nào... được'.",
+      "longExplanation": "Mẫu ngữ pháp '～わけにはいかない' đi sau động từ thể từ điển để biểu thị rằng về mặt năng lực thì có thể làm được, nhưng do rào cản đạo đức, bổn phận, trách nhiệm xã hội, danh dự hoặc hoàn cảnh xung quanh nên bản thân không thể, không được phép làm điều đó ('không thể nào làm như thế được'). Mẫu câu này thể hiện sự kìm nén hoặc quyết tâm tuân thủ quy chuẩn của người nói.",
+      "formation": "Động từ thể từ điển + わけにはいかない",
+      "examples": [
+        {
+          "translation": "Vì kỳ thi sắp đến gần rồi nên tôi không thể cứ mải chơi được."
+        },
+        {
+          "translation": "Vì anh Tanaka đang đợi nên tôi không thể nào đến muộn được."
+        },
+        {
+          "translation": "Vì các con, tôi không thể nào từ bỏ công việc này được."
+        },
+        {
+          "translation": "Vấn đề này rất quan trọng nên chúng ta không thể cứ thế làm ngơ được."
+        }
+      ]
+    },
+    "ja_をきっかけに_165": {
+      "title": "～をきっかけに (〜wo kikkake ni)",
+      "shortExplanation": "Diễn tả một sự kiện, thời điểm hay cơ duyên nào đó trở thành khởi đầu, động lực hoặc bước ngoặt dẫn tới sự thay đổi, phát triển tiếp theo; 'nhân dịp...', 'từ cơ duyên...', 'nhờ có...'.",
+      "longExplanation": "Mẫu ngữ pháp '～をきっかけに' (khi bổ nghĩa danh từ dùng '～をきっかけにした / とした'; cũng có thể dùng '～をきっかけにして / として') kết hợp với danh từ để biểu thị rằng một biến cố, sự việc, cuộc gặp gỡ hay trải nghiệm nào đó đóng vai trò là động lực, ngòi nổ hoặc bước ngoặt làm nảy sinh một hành động mới, một thói quen mới hoặc sự thay đổi lớn trong cuộc sống ('nhân dịp...', 'từ bước ngoặt...', 'nhờ cơ duyên...'). Mẫu câu này thường dùng khi kể lại quá trình dẫn đến một sự chuyển biến tích cực hoặc quan trọng.",
+      "formation": "Danh từ + をきっかけに (hoặc をきっかけにして / をきっかけとして)",
+      "examples": [
+        {
+          "translation": "Kể từ bước ngoặt kết hôn, anh ấy đã bắt đầu nghiêm túc nỗ lực trong công việc."
+        },
+        {
+          "translation": "Nhờ cơ duyên gặp gỡ hôm ấy, chúng tôi đã trở thành bạn bè của nhau."
+        },
+        {
+          "translation": "Lấy cảm hứng từ buổi hòa nhạc đó, cô ấy đã quyết định dấn thân vào con đường âm nhạc."
+        },
+        {
+          "translation": "Nhân cơ hội đi du học, kỹ năng ngoại ngữ của tôi đã tiến bộ vượt bậc."
+        }
+      ]
+    },
+    "ja_をとして_166": {
+      "title": "～を～として (〜wo〜toshite)",
+      "shortExplanation": "Diễn tả việc coi, lấy hoặc xem một đối tượng nào đó như một vai trò, tư cách, mục đích hay tiêu chuẩn nhất định; 'lấy... làm...', 'xem... như...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を～として' (khi bổ nghĩa cho danh từ có dạng '～を～とする' hoặc '～を～とした') dùng để biểu thị việc xác định danh từ thứ nhất theo vai trò, tư cách, mục đích, lập trường hoặc nền tảng của danh từ thứ hai ('lấy A làm B', 'coi A là B', 'với tư cách B'). Cấu trúc này thường xuất hiện trong văn viết, văn phong trang trọng, các bản kế hoạch hay giới thiệu vai trò.",
+      "formation": "Danh từ 1 + を + Danh từ 2 + として (bổ nghĩa danh từ: とする + Danh từ / とした + Danh từ)",
+      "examples": [
+        {
+          "translation": "Anh ấy đang làm việc với nghề nghiệp là giáo viên."
+        },
+        {
+          "translation": "Cô ấy đã đón nhận vai trò là người lãnh đạo."
+        },
+        {
+          "translation": "Chúng tôi tin tưởng anh ấy như một người bạn đồng hành thân thiết."
+        },
+        {
+          "translation": "Nghệ sĩ này sáng tạo tác phẩm dựa trên nền tảng là truyền thống."
+        }
+      ]
+    },
+    "ja_を中心に_167": {
+      "title": "～を中心に (〜wo chuushin ni)",
+      "shortExplanation": "Biểu thị việc lấy một sự vật, hiện tượng, con người hoặc địa điểm làm trọng tâm, tâm điểm của một hoạt động hay phạm vi; 'lấy... làm trung tâm', 'chủ yếu xoay quanh...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を中心に' (chữ Hán là 中心 - trung tâm) kết hợp với danh từ để diễn tả rằng hành động, sự việc hoặc phạm vi đang nói đến được triển khai với sự tập trung chủ yếu vào đối tượng đó ('lấy... làm trung tâm', 'tập trung vào...', 'chủ yếu xoay quanh...'). Đối tượng đứng trước có thể là một nhân vật quan trọng, một chủ đề cốt lõi, một địa điểm trọng yếu hoặc nhóm người chủ chốt.",
+      "formation": "Danh từ + を中心に (hoặc を中心にして / を中心として; bổ nghĩa danh từ: を中心とした + Danh từ / を中心とする + Danh từ)",
+      "examples": [
+        {
+          "translation": "Sự kiện này được mọi người yêu thích chủ yếu xoay quanh các hoạt động âm nhạc."
+        },
+        {
+          "translation": "Công việc của anh ấy được tiến hành chủ yếu tại khu vực Tokyo làm trọng tâm."
+        },
+        {
+          "translation": "Cô ấy đang viết một cuốn sách tập trung vào chủ đề sức khỏe."
+        },
+        {
+          "translation": "Các nghiên cứu gần đây đang được tiến hành với trọng tâm là bảo vệ môi trường."
+        }
+      ]
+    },
+    "ja_を問わず_168": {
+      "title": "～を問わず (〜wo towazu)",
+      "shortExplanation": "Diễn tả việc một sự việc, quy định hay điều kiện được áp dụng chung mà không bị ảnh hưởng, không phân biệt hay câu nệ bởi yếu tố nào đó; 'bất kể...', 'không phân biệt...', 'không màng đến...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を問わず' (chữ Hán là 問 - vấn, nghĩa là không hỏi đến, không tra xét đến) kết hợp với danh từ chỉ các phạm trù có sự phân chia hoặc các cặp từ đối lập (như tuổi tác, giới tính, quốc tịch, ngày đêm, trong ngoài...) để biểu thị rằng điều đó áp dụng cho mọi đối tượng một cách bình đẳng, hoàn toàn không phân biệt hay phụ thuộc vào điều kiện đó ('bất kể...', 'không phân biệt...'). Thường dùng trong các thông báo tuyển dụng, thể lệ tham gia hoặc văn phong thông báo chính thức.",
+      "formation": "Danh từ + を問わず",
+      "examples": [
+        {
+          "translation": "Sự kiện này không phân biệt tuổi tác, ai cũng có thể tham gia được."
+        },
+        {
+          "translation": "Siêu thị này bất kể là ngày Chủ nhật hay không thì ngày nào cũng mở cửa."
+        },
+        {
+          "translation": "Bất kể trời nóng hay lạnh, mỗi buổi sáng cô ấy đều đi dạo bộ."
+        },
+        {
+          "translation": "Giám đốc đối xử bình đẳng với tất cả nhân viên bất kể quốc tịch."
+        }
+      ]
+    },
+    "ja_を込めて_169": {
+      "title": "～を込めて (〜wo komete)",
+      "shortExplanation": "Diễn tả việc thực hiện một hành động bằng tất cả tấm lòng, tình cảm, sự nhiệt thành hoặc tâm nguyện chân thành; 'với tất cả...', 'chan chứa...', 'đong đầy...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を込めて' (chữ Hán là 込める - đong đầy, dồn hết vào; bổ nghĩa danh từ dùng '～を込めた') đi cùng các danh từ biểu thị cảm xúc, tình cảm hoặc ý nguyện (như tình yêu, lòng biết ơn, tâm huyết, lời chúc phúc, nỗi buồn...) để diễn tả việc người nói gửi gắm, dồn trọn vẹn tình cảm sâu sắc đó vào hành động của mình ('gửi gắm tình cảm vào...', 'với trọn vẹn lòng...'). Thường dùng khi làm một món đồ, viết thư, tặng quà hay cống hiến hết sức mình.",
+      "formation": "Danh từ (chỉ tình cảm, cảm xúc, tâm nguyện) + を込めて (bổ nghĩa danh từ: を込めた + Danh từ)",
+      "examples": [
+        {
+          "translation": "Tôi đã nấu món ăn này với tất cả tình yêu thương."
+        },
+        {
+          "translation": "Tôi đã viết một bức thư cảm ơn gửi tới thầy cô với trọn vẹn lòng biết ơn."
+        },
+        {
+          "translation": "Anh ấy đã dồn hết toàn bộ sức lực chiến đấu cho tới khoảnh khắc cuối cùng."
+        },
+        {
+          "translation": "Cô ấy đã nói lời từ biệt với bạn mình với nỗi buồn khôn xiết đong đầy trong tim."
+        }
+      ]
+    },
+    "ja_を通じて_170": {
+      "title": "～を通じて (〜wo tsuujite)",
+      "shortExplanation": "Diễn tả phương tiện, trung gian gián tiếp ('thông qua...'); hoặc diễn tả một trạng thái, hành động kéo dài liên tục trong suốt một khoảng thời gian ('suốt trong...').",
+      "longExplanation": "Mẫu ngữ pháp '～を通じて' (chữ Hán là 通 - thông qua; có thể dùng tương tự như '～を通して'; bổ nghĩa danh từ dùng '～を通じた') có hai ý nghĩa chính: (1) Chỉ phương tiện, phương thức hoặc người trung gian gián tiếp mà qua đó đạt được thông tin, mối quan hệ hay sự việc ('thông qua...', 'nhờ qua...'); (2) Đi với danh từ chỉ thời gian để biểu thị một hành động hay trạng thái diễn ra liên tục, không ngắt quãng trong suốt toàn bộ khoảng thời gian đó ('suốt cả...', 'trong suốt...').",
+      "formation": "Danh từ + を通じて (bổ nghĩa danh từ: を通じた + Danh từ)",
+      "examples": [
+        {
+          "translation": "Tôi liên lạc với bạn bè thông qua mạng internet."
+        },
+        {
+          "translation": "Anh ấy làm việc chăm chỉ, miệt mài trong suốt cả ngày."
+        },
+        {
+          "translation": "Sự kiện này sẽ được tổ chức xuyên suốt trong dịp cuối tuần."
+        },
+        {
+          "translation": "Loài hoa đó nở rộ trong suốt cả mùa xuân."
+        }
+      ]
+    },
+    "ja_を頼りに_171": {
+      "title": "～を頼りに (〜wo tayori ni)",
+      "shortExplanation": "Diễn tả việc nương tựa, dựa vào một người, vật hay thông tin nào đó như một điểm tựa, manh mối hoặc nguồn trợ lực duy nhất để tiến hành hành động; 'nhờ cậy vào...', 'dựa vào...', 'nhờ vào...'.",
+      "longExplanation": "Mẫu ngữ pháp '～を頼りに' (chữ Hán là 頼る - trông cậy, nương tựa; có thể dùng '～を頼りにして'; bổ nghĩa danh từ dùng '～を頼りにした') kết hợp với danh từ chỉ đối tượng (người, bản đồ, ký ức, manh mối, sức mạnh...) đóng vai trò là chỗ dựa, sự trợ giúp hoặc cơ sở dẫn đường để thực hiện một hành động nào đó ('dựa vào...', 'trông cậy vào...', 'lấy... làm chỗ dựa'). Thường dùng trong tình huống gặp khó khăn, thiếu thốn thông tin hoặc khi phải nương nhờ vào sự giúp đỡ của người khác.",
+      "formation": "Danh từ + を頼りに (hoặc を頼りにして; bổ nghĩa danh từ: を頼りにした + Danh từ)",
+      "examples": [
+        {
+          "translation": "Cô ấy đang đi du lịch dựa vào tấm bản đồ để dò đường."
+        },
+        {
+          "translation": "Rất nhiều người đang sinh sống dựa vào sức lực và sự bảo bọc của anh ấy."
+        },
+        {
+          "translation": "Trong dự án lần này, chúng tôi rất trông cậy vào kỹ năng của bạn."
+        },
+        {
+          "translation": "Anh ấy đã cố gắng giải quyết vấn đề bằng cách nương nhờ sự giúp đỡ từ bạn bè."
+        }
+      ]
+    },
+    "ja_一方_172": {
+      "title": "～一方 (〜ippou)",
+      "shortExplanation": "Diễn tả sự so sánh, đối lập giữa hai mặt của một vấn đề, hoặc hai hành động/trạng thái diễn ra song song cùng lúc; 'mặt khác...', 'ngược lại...', 'vừa... lại vừa...'.",
+      "longExplanation": "Mẫu ngữ pháp '～一方' (thường dùng dưới dạng '～一方で') dùng để liên kết hai vế câu nhằm nêu bật hai khía cạnh đối lập, tương phản của cùng một sự vật, hiện tượng, con người; hoặc diễn tả hai sự việc, hành động cùng diễn ra đồng thời song song ('một mặt thì..., mặt khác thì...', 'trái lại...', 'đồng thời...'). Mẫu câu này giúp tạo nên cái nhìn đa chiều, khách quan và toàn diện.",
+      "formation": "Động từ thể thông thường + 一方(で) | Tính từ đuôi い + 一方(で) | Tính từ đuôi な + な / である一方(で) | Danh từ + である一方(で)",
+      "examples": [
+        {
+          "translation": "Trong khi công nghệ ngày càng tiến bộ, thì mặt khác cuộc sống con người lại càng trở nên bận rộn hơn."
+        },
+        {
+          "translation": "Trong khi tiếng Nhật ngày một tiến bộ thì ngược lại, tôi có cảm giác khả năng tiếng Anh của mình đang bị giảm sút."
+        },
+        {
+          "translation": "Món ăn này tuy ngon nhưng mặt khác thì giá lại hơi đắt một chút."
+        },
+        {
+          "translation": "Anh ấy tuy hiền từ nhưng mặt khác cũng có những khía cạnh rất nghiêm khắc."
+        }
+      ]
+    },
+    "ja_一方だ_173": {
+      "title": "～一方だ (〜ippou da)",
+      "shortExplanation": "Diễn tả một tình trạng, xu hướng đang liên tục tiếp diễn và biến đổi không ngừng theo một chiều hướng nhất định (thường là xu hướng tiêu cực hoặc gia tăng); 'càng ngày càng...', 'ngày một...'.",
+      "longExplanation": "Mẫu ngữ pháp '～一方だ' đi sau động từ thể từ điển biểu thị sự biến đổi (như 増える, 減る, 悪化する, 上達する...) để diễn tả một xu hướng đang liên tục phát triển mạnh mẽ theo một chiều hướng duy nhất mà không có dấu hiệu dừng lại ('càng ngày càng...', 'cứ tiếp tục... mãi'). Cấu trúc này thường được dùng nhiều nhất với những biến chuyển xấu hoặc đáng lo ngại, nhưng cũng có thể dùng cho sự tiến triển không ngừng.",
+      "formation": "Động từ thể từ điển (chỉ sự biến đổi) + 一方だ",
+      "examples": [
+        {
+          "translation": "Dân số thế giới cứ tiếp tục tăng lên không ngừng."
+        },
+        {
+          "translation": "Tình hình an ninh trật tự của thị trấn này ngày càng xấu đi."
+        },
+        {
+          "translation": "Tiếng Nhật của tôi ngày một tiến bộ không ngừng."
+        },
+        {
+          "translation": "Hễ bước sang mùa hè là thời tiết cứ càng lúc càng trở nên nắng nóng gay gắt."
+        }
+      ]
+    },
+    "ja_上で_174": {
+      "title": "～上で (〜ue de)",
+      "shortExplanation": "Diễn tả việc làm một hành động trước như một bước chuẩn bị, điều kiện tiên quyết rồi mới thực hiện hành động tiếp theo; 'sau khi...', 'sau khi đã...'.",
+      "longExplanation": "Mẫu ngữ pháp '～上で' kết hợp với động từ thể quá khứ た hoặc danh từ (đi với の) để biểu thị rằng sau khi đã hoàn thành một hành động, xem xét kỹ lưỡng hoặc chuẩn bị xong xuôi điều gì đó thì mới chuyển sang bước tiếp theo hoặc đưa ra phán đoán, quyết định ('sau khi đã làm... rồi mới...'). Hành động vế trước là tiền đề quan trọng và có chủ ý của người nói để đưa ra hành động ở vế sau.",
+      "formation": "Động từ thể た + 上で | Danh từ + の上で",
+      "examples": [
+        {
+          "translation": "Sau khi đã tiến hành điều tra kỹ lưỡng, chúng ta hãy cùng đưa ra kết luận nhé."
+        },
+        {
+          "translation": "Sau khi kết thúc quá trình tìm việc, tôi mới quyết định xem có tiếp tục học lên cao hay không."
+        },
+        {
+          "translation": "Sau khi mặc thử, tôi mới cân nhắc xem có nên mua bộ quần áo này hay không."
+        },
+        {
+          "translation": "Sau khi lắng nghe ý kiến của những người có kinh nghiệm, chúng ta hãy cùng quyết định phương hướng của dự án nhé."
+        }
+      ]
+    },
+    "ja_上に_175": {
+      "title": "～上に (〜ue ni)",
+      "shortExplanation": "Diễn tả ý nghĩa cộng thêm, gia tăng theo cùng một chiều hướng (cùng tốt hoặc cùng xấu); 'không những... mà còn...', 'hơn nữa...', 'thêm vào đó...'.",
+      "longExplanation": "Mẫu ngữ pháp '～上に' dùng để bổ sung thêm một đặc điểm, tình trạng hay sự việc khác cùng chiều hướng đánh giá với vế trước ('không chỉ... mà còn...', 'đã... lại còn...'). Cần lưu ý rằng hai vế trước và sau '上に' luôn phải đồng nhất về mặt tích cực hoặc tiêu cực: nếu vế trước là điều tốt thì vế sau cũng là điều tốt; nếu vế trước là điều xấu thì vế sau cũng là điều xấu, không dùng để nối hai vế tương phản nhau.",
+      "formation": "Động từ thể thông thường + 上に | Tính từ đuôi い + 上に | Tính từ đuôi な + な上に (hoặc である上に) | Danh từ + の上に (hoặc である上に)",
+      "examples": [
+        {
+          "translation": "Anh ấy không chỉ thông minh mà hơn nữa còn rất giỏi thể thao."
+        },
+        {
+          "translation": "Chiếc váy này không chỉ đẹp mà giá cả lại còn rất rẻ nữa."
+        },
+        {
+          "translation": "Cô ấy không chỉ dịu dàng, tốt bụng mà còn nấu ăn rất ngon."
+        },
+        {
+          "translation": "Ông ấy không chỉ là giám đốc công ty mà còn là một nhà văn vô cùng nổi tiếng."
+        }
+      ]
+    },
+    "ja_上は_176": {
+      "title": "～上は (～ue wa)",
+      "shortExplanation": "Diễn tả ý chí, quyết tâm hoặc nghĩa vụ tất yếu sau khi một tình huống hay sự việc đã được quyết định; 'một khi đã... thì...', 'đã... thì phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～上は' (gần nghĩa với '～以上は', '～からには') đi kèm với động từ để diễn tả rằng một khi tình thế đã diễn ra như vậy, hoặc một khi đã hạ quyết tâm/nhận lời thì việc thực hiện hành động tiếp theo là điều đương nhiên, mang tính trách nhiệm và nghĩa vụ tất yếu ('một khi đã... thì đương nhiên phải...'). Vế sau thường thể hiện ý chí, quyết tâm cao độ, nghĩa vụ, phán đoán tất yếu (thường đi với ～べきだ, ～つもりだ, ～なければならない, ～う/よう).",
+      "formation": "Động từ thể thông thường (thường là thể た hoặc thể từ điển) + 上は",
+      "examples": [
+        {
+          "translation": "Một khi đã thi đỗ rồi thì chúng ta hãy mở tiệc ăn mừng thôi nào."
+        },
+        {
+          "translation": "Một khi đã nhận công việc này, tôi dự định sẽ hoàn thành nó cho tới cùng."
+        },
+        {
+          "translation": "Đã được khen là tốt bụng như thế thì tôi sẽ giúp đỡ bạn một tay."
+        },
+        {
+          "translation": "Một khi đã thích đồ ngọt thì chắc chắn bạn sẽ rất mê món tráng miệng này đấy."
+        }
+      ]
+    },
+    "ja_以上_177": {
+      "title": "～以上 (〜ijou)",
+      "shortExplanation": "Diễn tả ý nghĩa 'một khi đã... thì đương nhiên...', biểu thị điều kiện tiền đề dẫn đến một nghĩa vụ, quyết tâm, trách nhiệm hay phán đoán tất yếu; 'đã... thì phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～以上' (hoặc '～以上は') dùng để nhấn mạnh rằng dựa trên một sự thật hiển nhiên, một lời hứa, hay một lập trường/thân phận đã được xác lập, người đó đương nhiên phải gánh vác trách nhiệm, đưa ra phán đoán dứt khoát hoặc thực hiện hành động tương ứng ('một khi đã... thì đương nhiên...'). Vế sau thường đi kèm các hình thức biểu thị nghĩa vụ, mệnh lệnh, yêu cầu hoặc quyết tâm như '～べきだ', '～なければならない', '～たい', '～つもりだ'.",
+      "formation": "Động từ thể thông thường + 以上(は) | Tính từ đuôi い + 以上(は) | Tính từ đuôi な + である以上(は) | Danh từ + である以上(は)",
+      "examples": [
+        {
+          "translation": "Một khi anh ấy đã bận rộn như thế thì dù tôi có đến giúp chắc cũng chỉ hoài công vô ích mà thôi."
+        },
+        {
+          "translation": "Một khi đã hứa thì phải có trách nhiệm giữ lời."
+        },
+        {
+          "translation": "Một khi hạn chót đã cận kề thì chúng ta phải dốc toàn lực làm việc."
+        },
+        {
+          "translation": "Một khi cô ấy đã là sinh viên đại học thì việc học hành phải được ưu tiên hàng đầu."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_わけではない_163": {
+      "title": "～わけではない (〜wake dewa nai)",
+      "shortExplanation": "表示部分否定，意为“并不是……”、“并非……”、“并不意味着……”。",
+      "longExplanation": "句型“～わけではない”用于对某种普遍看法、对方的推测或表面看起来顺理成章的结论进行部分否定，说明情况并不像想象的那样绝对或极端（“并不是说……”、“并非……”、“并不意味着……”）。常与“必ずしも（未必）”、“全部（全部）”、“特に（特别）”等副词搭配使用，表达委婉客观的语气。",
+      "formation": "动词普通形 + わけではない | 一类形容词 + わけではない | 二类形容词词干 + な / である + わけではない | 名词 + な / である / という + わけではない",
+      "examples": [
+        {
+          "translation": "并不是他不学习，只是成绩不太好。"
+        },
+        {
+          "translation": "并不是说这家餐厅很贵，但要是每天都来吃的话还是有点贵呢。"
+        },
+        {
+          "translation": "并不是她不温柔，只是有时说话语气有点冲。"
+        },
+        {
+          "translation": "并不是他有多忙，而是他似乎不太懂得合理利用时间。"
+        }
+      ]
+    },
+    "ja_わけにはいかない_164": {
+      "title": "～わけにはいかない (〜wake ni wa ikanai)",
+      "shortExplanation": "表示出于常理、社会道德、人情或责任感等原因而“不能做某事”；“不能……”、“绝不能……”、“无法……”。",
+      "longExplanation": "句型“～わけにはいかない”接在动词辞书形之后，表示从能力上来说虽然可以做到，但在情理、社会公德、责任义务或人际关系等制约下，在心理或道义上绝对不能、不允许那样做（“不能……”、“绝不能……”、“无法……”）。体现了说话人出于道德约束或责任担当而做出的自觉克制。",
+      "formation": "动词辞书形 + わけにはいかない",
+      "examples": [
+        {
+          "translation": "快要考试了，我绝不能顾着玩。"
+        },
+        {
+          "translation": "田中先生正在等着，我可绝不能迟到。"
+        },
+        {
+          "translation": "为了孩子们，我无论如何也不能辞掉这份工作。"
+        },
+        {
+          "translation": "这个问题十分重要，我们绝不能视而不见。"
+        }
+      ]
+    },
+    "ja_をきっかけに_165": {
+      "title": "～をきっかけに (〜wo kikkake ni)",
+      "shortExplanation": "表示以某事为契机、诱因、开端或转折点，从而引发了后续的行动或变化；“以……为契机”、“借……之机”。",
+      "longExplanation": "句型“～をきっかけに”（亦可作“～をきっかけにして / として”；修饰名词时用“～をきっかけにした / とした”）接在名词之后，表示某次具体的事件、经历、相遇或客观情境成为了促成后续新行动、新习惯或生活重大转变的“契机”或“转折点”（“以……为契机”、“借……的机会”、“因……而起”）。常用于叙述发生积极转变或迎来人生新阶段的过程。",
+      "formation": "名词 + をきっかけに（或 をきっかけにして / をきっかけとして）",
+      "examples": [
+        {
+          "translation": "以结婚为契机，他开始认真努力地工作了。"
+        },
+        {
+          "translation": "借由那次相遇，我们成为了朋友。"
+        },
+        {
+          "translation": "受那场音乐会的启发，她决定走上音乐之路。"
+        },
+        {
+          "translation": "以出国留学为契机，我的外语水平得到了提升。"
+        }
+      ]
+    },
+    "ja_をとして_166": {
+      "title": "～を～として (〜wo〜toshite)",
+      "shortExplanation": "表示把某事物当作、作为某种角色、目的、基础或资格；“把……作为……”、“以……为……”。",
+      "longExplanation": "句型“～を～として”（作定语修饰名词时用“～を～とする”或“～を～とした”）接在两个名词之间，表示将前项名词确定为后项名词所指的角色、身份、目的、基准或定位（“把A当作/作为B”、“以A为B”）。常用于正式陈述、书面语、组织规划或阐述目标等庄重语境。",
+      "formation": "名词1 + を + 名词2 + として（修饰名词：とする + 名词 / とした + 名词）",
+      "examples": [
+        {
+          "translation": "他把教师作为自己的职业在工作。"
+        },
+        {
+          "translation": "她接受了把队长作为自己的职责。"
+        },
+        {
+          "translation": "我们把他作为同伴而深受信赖。"
+        },
+        {
+          "translation": "这位艺术家以传统为基础创作作品。"
+        }
+      ]
+    },
+    "ja_を中心に_167": {
+      "title": "～を中心に (〜wo chuushin ni)",
+      "shortExplanation": "表示以某人、某物、某地域或某议题为核心或重点；“以……为中心”、“以……为主”。",
+      "longExplanation": "句型“～を中心に”（亦可作“～を中心にして / として”；作定语时用“～を中心とした / とする”）接在名词之后，表示某项活动、讨论、工作或现象是以该名词为主要核心、重点或核心区域展开的（“以……为中心”、“围绕……展开”、“以……为主”）。常用于新闻报道、学术调研、商务策划以及描述地理分布或团队运作。",
+      "formation": "名词 + を中心に（或 を中心にして / を中心として；修饰名词：を中心とした + 名词 / を中心とする + 名词）",
+      "examples": [
+        {
+          "translation": "这个活动以音乐为中心，深受大家喜爱。"
+        },
+        {
+          "translation": "他的工作主要以东京为中心开展。"
+        },
+        {
+          "translation": "她正围绕健康这一核心主题在写书。"
+        },
+        {
+          "translation": "最近的研究主要以环境保护为核心而展开。"
+        }
+      ]
+    },
+    "ja_を問わず_168": {
+      "title": "～を問わず (〜wo towazu)",
+      "shortExplanation": "表示不受某一条件或差别的限制与区别，一律同等对待；“不论……”、“不管……”、“不分……”、“与……无关”。",
+      "longExplanation": "句型“～を問わず”（汉字写作“問わず”，意为不过问、不追究）接在名词之后，该名词通常是包含差异、范围或成对相反意义的概念（如年龄、性别、国籍、昼夜、季节、有无经验等），表示不论该条件如何均一视同仁，毫无限制或区分（“不论……”、“不问……”、“不受……限制”）。常用于招聘简章、活动公告及规则说明等正式书面语中。",
+      "formation": "名词 + を問わず",
+      "examples": [
+        {
+          "translation": "这项活动不分年龄，任何人都可以参加。"
+        },
+        {
+          "translation": "这家超市不论周日与否，每天都营业。"
+        },
+        {
+          "translation": "不论严寒酷暑，她每天早晨都坚持散步。"
+        },
+        {
+          "translation": "社长不问国籍，对所有员工一律平等对待。"
+        }
+      ]
+    },
+    "ja_を込めて_169": {
+      "title": "～を込めて (〜wo komete)",
+      "shortExplanation": "表示将某种深厚的情感、心意、祈愿或全部精力倾注在某种行为之中；“倾注……”、“怀着……”、“饱含……”。",
+      "longExplanation": "句型“～を込めて”（动词“込める”意为倾注、融入；作定语时用“～を込めた”）接在表示心意、情感、祝福、愿望或精力的名词之后（如爱、感激、祈愿、心血、真诚等），表示怀着极其诚挚、深切的情感去做某件事，将其全部倾注在行动或作品中（“怀着全部的爱/谢意”、“倾注心血……”）。常用于烹饪、赠礼、写信或表达敬意等温馨真挚的场景。",
+      "formation": "名词（表示情感、心意、祈愿） + を込めて（修饰名词：を込めた + 名词）",
+      "examples": [
+        {
+          "translation": "我满怀爱意地做了这道菜。"
+        },
+        {
+          "translation": "我怀着深深的感激之情给老师写了一封感谢信。"
+        },
+        {
+          "translation": "他竭尽全力战斗到了最后一刻。"
+        },
+        {
+          "translation": "她满含悲伤地向朋友道出了告别的话语。"
+        }
+      ]
+    },
+    "ja_を通じて_170": {
+      "title": "～を通じて (〜wo tsuujite)",
+      "shortExplanation": "表示以某事物、媒介或人作为中间手段（“通过……”）；或者表示在某一整个时间段内持续不断（“整个……期间”、“历经……”）。",
+      "longExplanation": "句型“～を通じて”（汉字写作“通じて”；作定语时用“～を通じた”）主要有两种用法：① 作为间接的手段、媒介、渠道或中介人，借此实现交流、获取情报或开展活动（“通过……”、“经由……”）；② 接在表示时间、时期的名词之后，表示某种状态或行为贯穿整个时间段，从头到尾持续不断（“贯穿整个……”、“整整……”）。",
+      "formation": "名词 + を通じて（修饰名词：を通じた + 名词）",
+      "examples": [
+        {
+          "translation": "我通过网络与朋友保持联络。"
+        },
+        {
+          "translation": "他整整一天都在勤勉地工作。"
+        },
+        {
+          "translation": "该活动将在整个周末期间持续举办。"
+        },
+        {
+          "translation": "那种花在整个春季期间都会盛开。"
+        }
+      ]
+    },
+    "ja_を頼りに_171": {
+      "title": "～を頼りに (〜wo tayori ni)",
+      "shortExplanation": "表示依靠、凭借某人、某物或微弱的线索作为指引和依靠来进行某事；“依靠……”、“凭借……”、“以……为线索/依靠”。",
+      "longExplanation": "句型“～を頼りに”（源自动词“頼る”，意为依靠、依赖；亦可作“～を頼りにして”；作定语时用“～を頼りにした”）接在名词之后，表示将某人、某物、某种力量或线索（如地图、微光、记忆、朋友的帮助等）作为自己行动的支柱、指南或依靠，以此来解决问题或达成目标（“依靠……”、“凭借……”、“以……为依靠”）。常用于在处于未知、困境或线索微弱时向前摸索的情境。",
+      "formation": "名词 + を頼りに（或 を頼りにして；修饰名词：を頼りにした + 名词）",
+      "examples": [
+        {
+          "translation": "她凭借着一张地图在旅行。"
+        },
+        {
+          "translation": "许多人依靠他的力量维持着生活。"
+        },
+        {
+          "translation": "在这个项目中，我们非常仰仗你的专业技能。"
+        },
+        {
+          "translation": "他试图依靠朋友的帮助来解决问题。"
+        }
+      ]
+    },
+    "ja_一方_172": {
+      "title": "～一方 (〜ippou)",
+      "shortExplanation": "表示同一事物的两个相对立或不同的侧面，或两件并行发展的事态；“一方面……另一方面……”，“同时又……”。",
+      "longExplanation": "句型“～一方”（常作“～一方で”）接在普通形之后，主要用于对比同一事物、人物或局势所具有的两种截然不同、甚至是相反的特征与侧面（“一方面……另一方面却……”），也可以表示在某一种倾向发展的同时，伴随着另一件事态的并行发生（“与此同时……”）。常用于议论文、新闻评论或分析事物两面性的语境中。",
+      "formation": "动词普通形 + 一方（で） | 一类形容词 + 一方（で） | 二类形容词 + な / である一方（で） | 名词 + である一方（で）",
+      "examples": [
+        {
+          "translation": "技术在不断进步，而另一方面生活却变得越来越忙碌了。"
+        },
+        {
+          "translation": "日语在不断进步的同时，我总觉得自己的英语能力反而下降了。"
+        },
+        {
+          "translation": "这道菜虽然很好吃，但另一方面价格也有点贵。"
+        },
+        {
+          "translation": "他虽然为人温柔，但另一方面也有严厉的一面。"
+        }
+      ]
+    },
+    "ja_一方だ_173": {
+      "title": "～一方だ (〜ippou da)",
+      "shortExplanation": "表示某种事态或倾向一直朝着一个方向不断发展、持续加剧；“不断……”、“越来越……”、“一直……”。",
+      "longExplanation": "句型“～一方だ”接在表示状态变化的动词辞书形（如“増える”、“減る”、“悪化する”、“高くなる”等）之后，表示某种倾向或事态单向发展、毫无停歇或逆转之势（“不断……”、“日趋……”、“越来越……”）。绝大多数情况下用于描述不良事态、危机或令人担忧的恶化趋势，强调这种单一走向的持续性。",
+      "formation": "动词辞书形（表示变化的动词） + 一方だ",
+      "examples": [
+        {
+          "translation": "世界人口一直在持续增加。"
+        },
+        {
+          "translation": "这个小镇的治安每况愈下，日趋恶化。"
+        },
+        {
+          "translation": "我的日语水平一直在不断提升。"
+        },
+        {
+          "translation": "一到夏天，酷热天气就愈演愈烈。"
+        }
+      ]
+    },
+    "ja_上で_174": {
+      "title": "～上で (〜ue de)",
+      "shortExplanation": "表示在做完前项动作、完成必要的前提准备之后，再进行后项的决定或行为；“在……之后”、“在做完……的基础上”。",
+      "longExplanation": "句型“～上で”接在动词た形或“名词+の上で”之后，表示把前项动作或充分准备作为前提条件，在充分了解情况、进行确认或完成前项之后，再做出后项的决定、判断或行动（“在……之后再……”、“在……的基础上……”）。强调前项是有意识、有步骤的必要前提，常用于正式的商务或决断场合。",
+      "formation": "动词た形 + 上で | 名词 + の上で",
+      "examples": [
+        {
+          "translation": "在完成调查之后，我们再得出结论吧。"
+        },
+        {
+          "translation": "在结束求职活动之后，我再决定是否继续升学。"
+        },
+        {
+          "translation": "试穿过之后，我再考虑要不要买这件衣服。"
+        },
+        {
+          "translation": "在听取了有经验者的意见之后，我们再决定项目的方向吧。"
+        }
+      ]
+    },
+    "ja_上に_175": {
+      "title": "～上に (〜ue ni)",
+      "shortExplanation": "表示在某种状态或特征的基础上再加上同类性质的事物；“不仅……而且……”、“既……又……”、“加上……”。",
+      "longExplanation": "句型“～上に”接在修饰词的连体形或普通形之后，表示在某种已有的情况、优点或缺点的基础上，同方向进一步叠加同性质的其他条件（“不仅……而且……”、“加上……”）。前后两项在评价上必须保持同向一致，即“既好又好”或“既坏又坏”，不能用于前后相反的对比。",
+      "formation": "动词普通形 + 上に | 一类形容词 + 上に | 二类形容词词干 + な上に（或 である上に） | 名词 + の上に（或 である上に）",
+      "examples": [
+        {
+          "translation": "他不仅脑子聪明，而且还擅长体育运动。"
+        },
+        {
+          "translation": "这件连衣裙不仅漂亮，而且价格也很实惠。"
+        },
+        {
+          "translation": "她不仅温柔体贴，而且厨艺也很棒。"
+        },
+        {
+          "translation": "他不仅是公司社长，同时也是一位著名作家。"
+        }
+      ]
+    },
+    "ja_上は_176": {
+      "title": "～上は (～ue wa)",
+      "shortExplanation": "表示既然事已至此、做出了某种决定或处于某种境地，就必须承担起责任或下定决心行动；“既然……就……”、“既然已经……就必须……”。",
+      "longExplanation": "句型“～上は”（与“～以上は”、“～からには”意义相近）接在动词普通形（多用过去时た形或辞书形）之后，表示事情既然已经成为定局，或者自己既然已经做出承诺与决定，后续就必须抱有强烈的责任感与觉悟去履行（“既然已经……就应当/必须……”）。后项多伴随强烈的意志、决心、义务或要求（常搭配“〜つもりだ”、“〜べきだ”、“〜なければならない”、“〜よう”等）。",
+      "formation": "动词普通形（常用た形或辞书形） + 上は",
+      "examples": [
+        {
+          "translation": "既然已经通过了考试，那就开个派对庆祝吧。"
+        },
+        {
+          "translation": "既然接下了这份工作，我就打算坚持到底、全力做好。"
+        },
+        {
+          "translation": "既然被夸奖热情善良，那我就来帮帮你吧。"
+        },
+        {
+          "translation": "既然喜欢吃甜食，那你一定会喜欢这款甜点的。"
+        }
+      ]
+    },
+    "ja_以上_177": {
+      "title": "～以上 (〜ijou)",
+      "shortExplanation": "表示既然处于某种前置立场、承诺或事实之下，就理所当然地具有某种义务或决心；“既然……就……”、“既然已经……就应当……”。",
+      "longExplanation": "句型“～以上”（亦常作“～以上は”）接在普通形（名词和二类形容词常接“である”）之后，表示以某个已成既定事实的前提、承诺、身份或立场为理由，后项理所当然地应当采取负责任的行动或得出必然的决断（“既然……就必须……”、“既然是……就应当……”）。后句通常伴有表达义务、决心、劝告、推断的句尾表达（如“〜べきだ”、“〜なければならない”、“〜たい”等）。",
+      "formation": "动词普通形 + 以上（は） | 一类形容词 + 以上（は） | 二类形容词 + である以上（は） | 名词 + である以上（は）",
+      "examples": [
+        {
+          "translation": "既然他那么忙，就算我去帮忙恐怕也是白费力气吧。"
+        },
+        {
+          "translation": "既然做出了承诺，就理应信守诺言。"
+        },
+        {
+          "translation": "既然截止日期临近，就必须全力以赴地工作。"
+        },
+        {
+          "translation": "她既然身为大学生，就理应把学业放在优先位置。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_わけではない_163": {
+      "title": "～わけではない (〜wake dewa nai)",
+      "shortExplanation": "부분 부정을 나타내며, '반드시 ~인 것은 아니다', '~라는 뜻은 아니다', '~한 것은 아니다'라는 의미입니다.",
+      "longExplanation": "문법 패턴 '～わけではない'는 상대방의 짐작이나 일반적인 생각, 전면적인 단정을 부분적으로 부정할 때 사용되며, '반드시 ~인 것은 아니다', '꼭 ~라는 뜻은 아니다'라는 의미를 나타냅니다. 겉보기에는 그렇게 보일 수 있으나 실제로는 완전히 그렇지는 않다는 뉘앙스를 전달하며, 주로 '必ずしも(반드시)', '特に(특별히)' 등의 부사와 호응하여 자주 쓰입니다.",
+      "formation": "동사 보통형 + わけではない | い형용사 + わけではない | な형용사 어간 + な / である + わけではない | 명사 + な / である / という + わけではない",
+      "examples": [
+        {
+          "translation": "그가 공부를 안 하는 것은 아니지만, 성적이 그리 좋지 않다."
+        },
+        {
+          "translation": "이 식당이 비싼 건 아니지만, 매일 다니기에는 조금 부담스럽네."
+        },
+        {
+          "translation": "그녀가 상냥하지 않은 것은 아니지만, 가끔 말투가 매서울 때가 있다."
+        },
+        {
+          "translation": "그가 바쁜 것은 아니지만, 시간을 능숙하게 쓰지 못하고 있는 것 같다."
+        }
+      ]
+    },
+    "ja_わけにはいかない_164": {
+      "title": "～わけにはいかない (〜wake ni wa ikanai)",
+      "shortExplanation": "도덕적 규범, 사회적 통념, 책임감이나 심리적 이유 등으로 인해 '차마 ~할 수는 없다', '~할 수는 없다'라는 의미를 나타냅니다.",
+      "longExplanation": "문법 패턴 '～わけにはいかない'는 동사 사전형에 결합하여, 능력상으로는 실행할 수 있으나 도덕성, 사회적 의무, 입장, 책임감 또는 인간관계 때문에 그렇게 해서는 안 되거나 차마 그렇게 할 수 없음을 나타냅니다('차마 ~할 수는 없다', '~할 수 없다'). 외적 규범이나 스스로의 도리상 허용되지 않는 행동을 자제하는 강한 심리적 제약을 표현합니다.",
+      "formation": "동사 사전형 + わけにはいかない",
+      "examples": [
+        {
+          "translation": "시험이 코앞이라 놀고만 있을 수는 없다."
+        },
+        {
+          "translation": "다나카 씨가 기다리고 있으니 늦을 수는 없다."
+        },
+        {
+          "translation": "아이들을 위해서라도 이 일을 그만둘 수는 없다."
+        },
+        {
+          "translation": "이 문제는 중요하기 때문에 무시할 수는 없다."
+        }
+      ]
+    },
+    "ja_をきっかけに_165": {
+      "title": "～をきっかけに (〜wo kikkake ni)",
+      "shortExplanation": "어떤 사건이나 계기가 동기 또는 전환점이 되어 새로운 행동이나 변화가 일어남을 나타내며, '~을 계기로', '~을 시발점으로'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～をきっかけに'(또는 '～をきっかけにして / として'; 명사 수식 시 '～をきっかけにした / とした')는 명사 뒤에 붙어, 특정 사건, 만남, 경험 등이 동기 부여나 결정적인 전환점이 되어 새로운 일이나 큰 변화가 시작되었음을 나타냅니다('~을 계기로', '~을 전환점으로 삼아'). 주로 인생의 전환기나 새로운 습관의 형성, 긍정적인 발전 과정을 회고하며 설명할 때 자주 사용됩니다.",
+      "formation": "명사 + をきっかけに (또는 をきっかけにして / をきっかけとして)",
+      "examples": [
+        {
+          "translation": "결혼을 계기로 그는 진지하게 일에 매진하기 시작했다."
+        },
+        {
+          "translation": "그 만남을 계기로 우리는 친구가 되었습니다."
+        },
+        {
+          "translation": "콘서트를 계기로 그녀는 음악의 길로 나아가기로 결심했습니다."
+        },
+        {
+          "translation": "유학을 계기로 제 외국어 실력이 향상되었습니다."
+        }
+      ]
+    },
+    "ja_をとして_166": {
+      "title": "～を～として (〜wo〜toshite)",
+      "shortExplanation": "어떤 대상을 특정한 역할, 목적, 자격, 기준으로 삼음을 나타내며, '~을/를 ~로 삼아', '~을/를 ~로서'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～を～として'(명사를 수식할 때는 '～を～とする', '～を～とした')는 첫 번째 명사를 두 번째 명사가 나타내는 역할, 신분, 자격, 목적 또는 기본 바탕으로 설정하거나 간주함을 나타냅니다('~을 ~로 삼아', '~을 ~로서'). 공적인 서술, 발표, 기획서 등 격식 있는 문맥에서 자주 사용됩니다.",
+      "formation": "명사1 + を + 명사2 + として (명사 수식: とする + 명사 / とした + 명사)",
+      "examples": [
+        {
+          "translation": "그는 교사를 직업으로 삼아 일하고 있습니다."
+        },
+        {
+          "translation": "그녀는 리더를 자신의 역할로서 받아들였습니다."
+        },
+        {
+          "translation": "우리는 그를 동료로서 신뢰하고 있습니다."
+        },
+        {
+          "translation": "이 예술가는 전통을 기반으로 삼아 작품을 만듭니다."
+        }
+      ]
+    },
+    "ja_を中心に_167": {
+      "title": "～を中心に (〜wo chuushin ni)",
+      "shortExplanation": "특정 인물, 사물, 지역, 주제 등을 가장 중요한 핵심이나 초점으로 삼음을 나타내며, '~을/를 중심으로', '~을/를 위주로'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～を中心に'(명사를 수식할 때는 '～を中心とした', '～を中心とする')는 명사 뒤에 붙어, 해당 명사가 나타내는 인물, 사물, 장소, 과제 등이 전체 활동이나 사태 전개의 가장 중요한 핵심이자 주축이 됨을 나타냅니다('~을 중심으로', '~을 위주로'). 뉴스 보도, 학술 보고, 비즈니스 계획 등에서 초점 대상을 명확히 밝힐 때 널리 쓰입니다.",
+      "formation": "명사 + を中心に (또는 を中心にして / を中心として; 명사 수식: を中心とした + 명사 / を中心とする + 명사)",
+      "examples": [
+        {
+          "translation": "이 행사는 음악을 중심으로 많은 이들이 즐기고 있습니다."
+        },
+        {
+          "translation": "그의 업무는 도쿄를 중심으로 이루어지고 있습니다."
+        },
+        {
+          "translation": "그녀는 건강을 중심으로 책을 쓰고 있습니다."
+        },
+        {
+          "translation": "최근 연구는 환경 보호를 중심으로 진행되고 있다."
+        }
+      ]
+    },
+    "ja_を問わず_168": {
+      "title": "～を問わず (〜wo towazu)",
+      "shortExplanation": "특정 조건이나 구분에 구애받지 않고 평등하게 적용됨을 나타내며, '~을/를 불문하고', '~에 관계없이', '~를 막론하고'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～を問わず'(한자로는 問わず, 묻지 않는다는 뜻)는 차이나 대립적인 범주를 포함하는 명사(연령, 성별, 국적, 계절, 주야, 경험 유무 등) 뒤에 붙어, 그러한 조건에 구애되거나 차별을 두지 않고 모두에게 동등하게 적용됨을 나타냅니다('~을 불문하고', '~에 상관없이', '~를 막론하고'). 모집 요강, 행사 안내, 공적 규칙을 명시하는 문맥에서 널리 쓰입니다.",
+      "formation": "명사 + を問わず",
+      "examples": [
+        {
+          "translation": "이 행사는 연령을 불문하고 누구나 참가할 수 있습니다."
+        },
+        {
+          "translation": "이 슈퍼는 일요일을 막론하고 매일 영업합니다."
+        },
+        {
+          "translation": "그녀는 덥든 춥든 상관없이 매일 아침 산책을 합니다."
+        },
+        {
+          "translation": "사장님은 국적을 불문하고 모든 사원을 평등하게 대하고 있습니다."
+        }
+      ]
+    },
+    "ja_を込めて_169": {
+      "title": "～を込めて (〜wo komete)",
+      "shortExplanation": "특정한 감정, 정성, 마음, 기원 등을 어떤 행동이나 제작물에 듬뿍 담아서 행함을 나타내며, '~을/를 담아', '~을/를 기울여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～を込めて'(동사 '込める'는 쏟아 넣다, 깃들게 하다는 뜻; 명사를 수식할 때는 '～を込めた')는 사랑, 감사, 정성, 기원, 슬픔 등 감정이나 마음을 나타내는 명사 뒤에 붙어, 그 깊은 마음을 전심전력으로 행동이나 말, 작품에 불어넣음을 나타냅니다('마음을 담아', '정성을 담아', '온 힘을 기울여'). 편지를 쓰거나 요리를 하고 선물을 건네는 등 정성을 다하는 장면에 자주 쓰입니다.",
+      "formation": "명사(감정, 마음, 소원 등을 나타냄) + を込めて (명사 수식: を込めた + 명사)",
+      "examples": [
+        {
+          "translation": "사랑을 듬뿍 담아 요리를 만들었습니다."
+        },
+        {
+          "translation": "감사의 마음을 담아 선생님께 감사의 편지를 썼습니다."
+        },
+        {
+          "translation": "그는 온 힘을 다해 마지막 순간까지 싸웠습니다."
+        },
+        {
+          "translation": "그녀는 슬픔을 담아 친구에게 작별의 말을 전했습니다."
+        }
+      ]
+    },
+    "ja_を通じて_170": {
+      "title": "～を通じて (〜wo tsuujite)",
+      "shortExplanation": "어떤 매개체나 수단을 거쳐서 이루어짐('~을 통해(서)'); 또는 특정 기간 전체에 걸쳐 지속됨('~ 내내', '~을 통틀어')을 나타냅니다.",
+      "longExplanation": "문법 패턴 '～を通じて'(명사를 수식할 때는 '～を通じた')는 크게 두 가지 용법으로 쓰입니다. ① 어떤 수단, 매체, 방법 또는 중개인을 거쳐 간접적으로 무언가를 달성하거나 정보를 얻음을 나타냅니다('~을 통해', '~을 거쳐'). ② 사계절, 1년 등 시간이나 기간을 나타내는 명사 뒤에 붙어, 그 기간 내내 어떤 상태나 동작이 쉼 없이 지속됨을 나타냅니다('~ 내내', '~에 걸쳐').",
+      "formation": "명사 + を通じて (명사 수식: を通じた + 명사)",
+      "examples": [
+        {
+          "translation": "인터넷을 통해 친구들과 연락을 주고받습니다."
+        },
+        {
+          "translation": "그는 하루 종일 내내 열심히 일하고 있습니다."
+        },
+        {
+          "translation": "이 행사는 주말 내내 개최됩니다."
+        },
+        {
+          "translation": "그 꽃은 봄 내내 피어 있습니다."
+        }
+      ]
+    },
+    "ja_を頼りに_171": {
+      "title": "～を頼りに (〜wo tayori ni)",
+      "shortExplanation": "특정 사람, 사물, 정보나 단서 등을 의지하거나 도움의 발판으로 삼아 행동함을 나타내며, '~을/를 의지하여', '~을/를 단서로 삼아', '~에 기대어'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～を頼りに'(동사 '頼る'에서 유래; '～を頼りにして'로도 사용; 명사 수식 시 '～を頼りにした')는 명사 뒤에 결합하여, 특정 인물, 사물, 힘, 지도, 기억, 단서 등을 유일한 지지대나 안내자, 해결의 실마리로 삼아 행동함을 나타냅니다('~을 의지하여', '~을 길잡이 삼아', '~의 도움을 받아'). 주로 길을 찾거나 곤경을 헤쳐 나갈 때 의지할 대상을 표현합니다.",
+      "formation": "명사 + を頼りに (또는 を頼りにして; 명사 수식: を頼りにした + 명사)",
+      "examples": [
+        {
+          "translation": "그녀는 지도를 길잡이 삼아 여행을 하고 있다."
+        },
+        {
+          "translation": "많은 사람이 그의 힘에 의지하여 생활하고 있다."
+        },
+        {
+          "translation": "이번 프로젝트에서는 자네의 능력을 크게 의지하고 있네."
+        },
+        {
+          "translation": "그는 친구의 도움에 기대어 문제를 해결하려고 했다."
+        }
+      ]
+    },
+    "ja_一方_172": {
+      "title": "～一方 (〜ippou)",
+      "shortExplanation": "동일한 사물이나 인물의 상반된 두 가지 측면을 대비하거나, 두 가지 일이 동시에 병행함을 나타내며, '한편으로는', '다른 한편으로는', '~하는 반면에'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～一方'(자주 '～一方で'의 형태로 쓰임)는 보통형 뒤에 연결되어, 한 사물이나 인물, 상황이 지닌 대조적이고 상반된 두 측면을 대비하여 제시하거나('한쪽으로는 ~하지만 다른 한편으로는 ~하다'), 어떤 일이 진행되는 동시에 또 다른 일이 병행하여 일어남을 나타냅니다('~하는 한편으로'). 객관적 분석이나 논설문에서 다각적인 시각을 드러낼 때 자주 쓰입니다.",
+      "formation": "동사 보통형 + 一方(で) | い형용사 + 一方(で) | な형용사 + な / である一方(で) | 명사 + である一方(で)",
+      "examples": [
+        {
+          "translation": "기술이 진보하는 한편, 생활은 점점 더 바빠지고 있다."
+        },
+        {
+          "translation": "일본어가 능숙해지는 반면, 영어 실력은 떨어지고 있는 듯한 느낌이 든다."
+        },
+        {
+          "translation": "이 요리는 맛있는 반면에 가격이 조금 비쌉니다."
+        },
+        {
+          "translation": "그는 다정한 한편으로 엄격한 면도 있다."
+        }
+      ]
+    },
+    "ja_一方だ_173": {
+      "title": "～一方だ (〜ippou da)",
+      "shortExplanation": "어떤 상태나 사태의 변화가 멈추지 않고 한쪽 방향으로만 계속 진행됨을 나타내며, '계속 ~하기만 하다', '점점 더 ~해질 뿐이다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～一方だ'는 변화를 나타내는 동사의 사전형(増える, 減る, 悪化する 등) 뒤에 붙어, 어떤 경향이나 상황이 한 방향으로만 끊임없이 치닫고 있음을 나타냅니다('계속 ~하기만 하다', '갈수록 ~해질 뿐이다'). 대개 부정적이거나 우려스러운 사태가 악화일로를 걷고 있을 때 자주 사용되지만, 단순한 수치 증가나 변화가 지속될 때도 쓰입니다.",
+      "formation": "동사 사전형(변화를 나타내는 동사) + 一方だ",
+      "examples": [
+        {
+          "translation": "세계 인구는 계속 늘어나기만 한다."
+        },
+        {
+          "translation": "이 마을의 치안은 갈수록 악화되기만 한다."
+        },
+        {
+          "translation": "나의 일본어 실력은 계속 향상되기만 한다."
+        },
+        {
+          "translation": "여름이 되면 더위가 갈수록 심해지기만 한다."
+        }
+      ]
+    },
+    "ja_上で_174": {
+      "title": "～上で (〜ue de)",
+      "shortExplanation": "앞의 행동이나 준비를 선행 조건으로 완료한 다음에 다음 행동이나 결정을 내림을 나타내며, '~한 뒤에', '~하고 나서'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～上で'는 동사의 과거형(た형) 또는 '명사 + の上で' 뒤에 결합하여, 어떤 행동을 사전에 충분히 행하거나 검토, 확인을 마친 것을 전제 조건으로 삼아 비로소 다음 행동이나 판단을 진행함을 나타냅니다('~한 다음에', '~한 바탕 위에서'). 두 행위 간의 전후 관계와 선행 행동의 중요성을 강조하는 격식 있는 표현입니다.",
+      "formation": "동사 た형 + 上で | 명사 + の上で",
+      "examples": [
+        {
+          "translation": "조사를 실시한 뒤에 결론을 내립시다."
+        },
+        {
+          "translation": "취업 활동을 끝낸 뒤에 진학할지 어떨지 결정하겠습니다."
+        },
+        {
+          "translation": "입어 본 뒤에 이 옷을 살지 말지 생각하겠습니다."
+        },
+        {
+          "translation": "경험자의 의견을 들은 뒤에 프로젝트의 방향성을 결정합시다."
+        }
+      ]
+    },
+    "ja_上に_175": {
+      "title": "～上に (〜ue ni)",
+      "shortExplanation": "어떤 사실이나 상태에 더하여 같은 방향의 조건이 덧붙여짐을 나타내며, '~한 데다가', '~뿐만 아니라'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～上に'는 보통형 또는 명사/형용사의 연체형 뒤에 붙어, 이미 존재하는 상태나 사실에 같은 성격(긍정적이면 긍정적, 부정적이면 부정적)의 다른 내용이 추가로 겹침을 나타냅니다('~한 데다가', '~일 뿐만 아니라 더욱이'). 앞뒤 문장의 뉘앙스가 일관되게 좋은 점끼리 혹은 나쁜 점끼리 결합되어야 한다는 특징이 있습니다.",
+      "formation": "동사 보통형 + 上に | い형용사 + 上に | な형용사 + な上に (또는 である上に) | 명사 + の上に (또는 である上に)",
+      "examples": [
+        {
+          "translation": "그는 머리가 좋은 데다가 운동도 잘합니다."
+        },
+        {
+          "translation": "이 드레스는 아름다운 데다가 가격도 저렴합니다."
+        },
+        {
+          "translation": "그녀는 다정한 데다가 요리도 잘합니다."
+        },
+        {
+          "translation": "그는 사장인 데다가 유명한 작가이기도 하다."
+        }
+      ]
+    },
+    "ja_上は_176": {
+      "title": "～上は (～ue wa)",
+      "shortExplanation": "이미 상황이 그렇게 정해지거나 결심한 이상 당연히 그에 상응하는 책임과 각오를 가지고 행동해야 함을 나타내며, '~한 이상은', '~하게 된 바에는'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～上は'('～以上は', '～から에는'와 유사한 의미)는 동사 보통형(주로 과거 완료의 た형이나 사전형) 뒤에 결합하여, 사태가 이미 그렇게 결정되었거나 본인이 맡기로 결심한 이상 그에 따르는 마땅한 의무나 책임을 다해야 한다는 단호한 결의를 나타냅니다('~한 이상은', '~하게 된 바에는 마땅히'). 후항에는 화자의 강한 의지, 각오, 의무, 당연한 판단을 나타내는 표현(～べきだ, ～つもりだ, ～なければならない 등)이 호응합니다.",
+      "formation": "동사 보통형(주로 た형이나 사전형) + 上は",
+      "examples": [
+        {
+          "translation": "시험에 합격한 이상은 파티를 열자."
+        },
+        {
+          "translation": "이 일을 맡은 이상은 끝까지 해낼 생각이다."
+        },
+        {
+          "translation": "친절하다는 말을 들은 이상은 도와주도록 하지."
+        },
+        {
+          "translation": "단것을 좋아하는 이상은 이 디저트가 분명 마음에 들 것입니다."
+        }
+      ]
+    },
+    "ja_以上_177": {
+      "title": "～以上 (〜ijou)",
+      "shortExplanation": "어떤 기정사실, 약속, 입장이나 신분 등을 전제로 하여 '기왕 ~한 이상은 당연히 ~해야 한다'라는 필연적 결의나 의무를 나타냅니다.",
+      "longExplanation": "문법 패턴 '～以上'(자주 '～以上は'로도 쓰임)은 보통형(명사 및 な형용사는 'である') 뒤에 붙어, 이미 확정된 사실이나 신분, 약속 등을 전제 조건으로 내세우며 '상황이 그러한 이상은 당연히 마땅한 조치를 취하거나 의무를 다해야 한다'는 강한 결단과 도리를 나타냅니다('~인 이상은', '~한 이상'). 뒤따르는 문장에는 강한 의무나 권유, 결심을 나타내는 표현(～べきだ, ～なければならない, ～つもりだ 등)이 주로 옵니다.",
+      "formation": "동사 보통형 + 以上(は) | い형용사 + 以上(は) | な형용사 + である以上(は) | 명사 + である以上(は)",
+      "examples": [
+        {
+          "translation": "그가 바쁜 이상, 도와주러 가 봤자 헛수고일 것이다."
+        },
+        {
+          "translation": "약속을 한 이상은 지켜야 마땅하다."
+        },
+        {
+          "translation": "마감일이 가까워진 이상 전력으로 일해야만 한다."
+        },
+        {
+          "translation": "그녀는 대학생인 이상 공부가 최우선시되어야 한다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_わけではない_163": {
+      "title": "～わけではない (〜wake dewa nai)",
+      "shortExplanation": "全面的・絶対的な肯定を和らげて部分的に否定する表現で、「必ずしも〜とは言えない」「〜というわけではない」という意味を表します。",
+      "longExplanation": "「～わけではない」は、相手の推測や世間一般の思い込み、あるいは状況から当然予想される事柄に対して、「完全にそうであるとは限らない」と一部を否定する文型です（「必ずしも〜ではない」「〜という意味ではない」）。全体を完全に否定するのではなく、事実を正確に伝えたり、断定を避けて婉曲に述べたりする際によく用いられ、「必ずしも」「特に」「すべて」などの副詞と共起することが多いです。",
+      "formation": "動詞普通形 ＋ わけではない ｜ い形容詞 ＋ わけではない ｜ な形容詞語幹＋な / である ＋ わけではない ｜ 名詞＋な / である / という ＋ わけではない",
+      "examples": [
+        {
+          "translation": "彼が勉強しないわけではないが、成績があまり良くない。"
+        },
+        {
+          "translation": "このレストランが高いわけではないけど、毎日通うには少し高いね。"
+        },
+        {
+          "translation": "彼女が優しくないわけではないが、時々話し方がきついことがある。"
+        },
+        {
+          "translation": "彼が忙しいわけではないが、時間を上手に使えていないようだ。"
+        }
+      ]
+    },
+    "ja_わけにはいかない_164": {
+      "title": "～わけにはいかない (〜wake ni wa ikanai)",
+      "shortExplanation": "社会的規範や道徳、義理、責任感などの理由から、「〜するわけにはいかない」「〜することはできない」という強い自制や禁止の気持ちを表します。",
+      "longExplanation": "「～わけにはいかない」は動詞の辞書形に接続し、能力的に不可能なのではなく、常識や倫理観、責任、人間関係のしがらみ、社会的な立場などの理由によって「心理的・道義的にそうすることはできない」と述べる文型です。自身の立場や責任を踏まえ、ある行動を控える強い抑制や義務感を表します。",
+      "formation": "動詞辞書形 ＋ わけにはいかない",
+      "examples": [
+        {
+          "translation": "試験が近いから、遊ぶわけにはいかない。"
+        },
+        {
+          "translation": "田中さんが待っているので、遅れるわけにはいかない。"
+        },
+        {
+          "translation": "子供たちのために、この仕事を辞めるわけにはいかない。"
+        },
+        {
+          "translation": "この問題は重要だから、無視するわけにはいかない。"
+        }
+      ]
+    },
+    "ja_をきっかけに_165": {
+      "title": "～をきっかけに (〜wo kikkake ni)",
+      "shortExplanation": "ある出来事や機会が動機や転機となって、新しい行動や変化が始まることを表し、「〜を動機・契機として」という意味を表します。",
+      "longExplanation": "「～をきっかけに」（「〜をきっかけにして」「〜をきっかけとして」の形も用いられ、名詞修飾では「〜をきっかけにした / とした＋名詞」）は名詞に接続し、ある具体的な出来事、出会い、体験などが引き金や転機となって、それまでと異なる新しい行動を起こしたり、生活や環境に大きな変化が生じたりしたことを述べる文型です。人生の転換点や新しい取り組みの始まりを説明する際によく使われます。",
+      "formation": "名詞 ＋ をきっかけに（または をきっかけにして / をきっかけとして）",
+      "examples": [
+        {
+          "translation": "結婚をきっかけに、彼は真剣に仕事を頑張り始めた。"
+        },
+        {
+          "translation": "あの出会いをきっかけに、私たちは友達になりました。"
+        },
+        {
+          "translation": "コンサートをきっかけに、彼女は音楽の道に進むことを決めました。"
+        },
+        {
+          "translation": "留学をきっかけに、私の外国語スキルが向上しました。"
+        }
+      ]
+    },
+    "ja_をとして_166": {
+      "title": "～を～として (〜wo〜toshite)",
+      "shortExplanation": "ある物や人を、特定の役割、資格、目的、基盤などに位置づけることを表し、「〜を〜と見なして」「〜を〜の役割・資格として」という意味を表します。",
+      "longExplanation": "「～を～として」（名詞を修飾する場合は「〜を〜とする＋名詞」「〜を〜とした＋名詞」）は、名詞1を名詞2が示す役割、目的、資格、基準、基盤などに設定して行動や判断を行うことを表す文型です（「AをBとして扱う」「AをBと位置づける」）。方針や役割分担、目標などを公式・明確に述べる公的な場面や文章語でよく使われます。",
+      "formation": "名詞1 ＋ を ＋ 名詞2 ＋ として（連体修飾：とする＋名詞 / とした＋名詞）",
+      "examples": [
+        {
+          "translation": "彼は教師を職業として働いています。"
+        },
+        {
+          "translation": "彼女はリーダーを役割として受け入れました。"
+        },
+        {
+          "translation": "私たちは彼を仲間として信頼しています。"
+        },
+        {
+          "translation": "このアーティストは伝統を基盤として作品を作ります。"
+        }
+      ]
+    },
+    "ja_を中心に_167": {
+      "title": "～を中心に (〜wo chuushin ni)",
+      "shortExplanation": "ある物・人・地域・テーマなどを活動や事態の最も重要な中心・重点とすることを表し、「〜を中心として」「〜を主として」という意味を表します。",
+      "longExplanation": "「～を中心に」（「〜を中心にして」「〜を中心として」、名詞修飾では「〜を中心とした / とする＋名詞」）は名詞に接続し、その人や物、場所、課題などが全体の中で最も主要な核・焦点となって物事が展開していることを表す文型です（「〜を核にして」「〜を重点的に」）。報道、論文、ビジネス、地域や組織の動向を客観的に説明する際によく用いられます。",
+      "formation": "名詞 ＋ を中心に（または を中心にして / を中心として；連体修飾：を中心とした＋名詞 / を中心とする＋名詞）",
+      "examples": [
+        {
+          "translation": "このイベントは音楽を中心に楽しまれています。"
+        },
+        {
+          "translation": "彼の仕事は東京を中心に行われています。"
+        },
+        {
+          "translation": "彼女は健康を中心に本を書いています。"
+        },
+        {
+          "translation": "最近の研究は環境保護を中心に行われている。"
+        }
+      ]
+    },
+    "ja_を問わず_168": {
+      "title": "～を問わず (〜wo towazu)",
+      "shortExplanation": "条件や違い、区別に関係なく、すべてに一律に当てはまることを表し、「〜に関係なく」「〜を問題にしないで」という意味を表します。",
+      "longExplanation": "「～を問わず」（漢字では「問わず」）は名詞に接続し、年齢、性別、国籍、昼夜、経験の有無、天候など、対立や幅・差異を含む概念を問題にせず、どの条件であっても一律に適用されることを表す文型です（「〜に関わりなく」「〜の区別なく」）。求人広告やイベントの参加条件、公共の案内文など、改まった文章や公的な表現で頻繁に用いられます。",
+      "formation": "名詞 ＋ を問わず",
+      "examples": [
+        {
+          "translation": "このイベントは、年齢を問わず、誰でも参加できます。"
+        },
+        {
+          "translation": "このスーパーは、日曜日を問わず、毎日開いています。"
+        },
+        {
+          "translation": "彼女は、暑さ寒さを問わず、毎朝散歩をしています。"
+        },
+        {
+          "translation": "社長は、国籍を問わず、すべての社員を平等に扱っています。"
+        }
+      ]
+    },
+    "ja_を込めて_169": {
+      "title": "～を込めて (〜wo komete)",
+      "shortExplanation": "愛情、感謝、祈りなどの強い感情や心をある行為に十分に注ぎ込むことを表し、「〜の気持ちを込めて」「〜を十分に含ませて」という意味を表します。",
+      "longExplanation": "「～を込めて」（名詞を修飾するときは「〜を込めた＋名詞」）は、愛、感謝、真心、祈り、願い、力などの感情や意図を表す名詞に接続し、その気持ちや情熱を余すところなくその行動や制作物の中に注ぎ込んで行うことを表す文型です（「心を込めて」「気持ちを込めて」）。手紙を書く、料理を作る、プレゼントを贈る、全力を尽くすなど、真摯な思いを伝える場面で広く使われます。",
+      "formation": "名詞（感情・心・祈りなどを表す語） ＋ を込めて（連体修飾：を込めた＋名詞）",
+      "examples": [
+        {
+          "translation": "愛を込めて料理を作りました。"
+        },
+        {
+          "translation": "感謝を込めて先生にお礼の手紙を書きました。"
+        },
+        {
+          "translation": "彼は全力を込めて最後の瞬間まで戦いました。"
+        },
+        {
+          "translation": "彼女は悲しみを込めて友達へ別れの言葉を伝えました。"
+        }
+      ]
+    },
+    "ja_を通じて_170": {
+      "title": "～を通じて (〜wo tsuujite)",
+      "shortExplanation": "手段や仲介・媒介となるものを経由することを表す用法（「〜を介して」「〜によって」）と、ある期間の最初から最後までずっと続くことを表す用法（「〜の期間ずっと」）の二つの意味を表します。",
+      "longExplanation": "「～を通じて」（名詞を修飾するときは「〜を通じた＋名詞」）には主に二つの用法があります。①手段・仲介者・媒体などを経て何かが行われることを表す用法（「〜を仲介として」「〜を手段として」）。②特定の期間を表す名詞（一年、四季、一日など）に付き、その期間の初めから終わりまで継続してその状態や行為が続いていることを表す用法（「〜の間ずっと」）。文脈によって「手段・媒介」か「全期間の継続」かを判断します。",
+      "formation": "名詞 ＋ を通じて（連体修飾：を通じた＋名詞）",
+      "examples": [
+        {
+          "translation": "インターネットを通じて友達と連絡を取ります。"
+        },
+        {
+          "translation": "彼は一日を通じて熱心に働いています。"
+        },
+        {
+          "translation": "このイベントは週末を通じて開催されます。"
+        },
+        {
+          "translation": "その花は春を通じて咲いています。"
+        }
+      ]
+    },
+    "ja_を頼りに_171": {
+      "title": "～を頼りに (〜wo tayori ni)",
+      "shortExplanation": "人や物、記憶や手がかりなどを頼るべき支えや道しるべとして行動することを表し、「〜をあてにして」「〜を手がかり・支えにして」という意味を表します。",
+      "longExplanation": "「～を頼りに」（「〜を頼りにして」「〜を頼りとして」、名詞修飾では「〜を頼りにした＋名詞」）は名詞に接続し、人、物、地図、微かな記憶や光、手がかりなどを自分を導く支えや助けとして、何らかの行動や問題解決を行うことを表す文型です（「〜を支えとして」「〜を頼みとして」）。困難な状況や見通しの立たない場面で、何かを頼って前進する様子を表す際によく用いられます。",
+      "formation": "名詞 ＋ を頼りに（または を頼りにして；連体修飾：を頼りにした＋名詞）",
+      "examples": [
+        {
+          "translation": "彼女は地図を頼りに旅行をしている。"
+        },
+        {
+          "translation": "多くの人が彼の力を頼りに生活している。"
+        },
+        {
+          "translation": "このプロジェクトでは、君のスキルを頼りにしています。"
+        },
+        {
+          "translation": "彼は友達の助けを頼りに問題を解決しようとした。"
+        }
+      ]
+    },
+    "ja_一方_172": {
+      "title": "～一方 (〜ippou)",
+      "shortExplanation": "ある事柄について対照的な二つの側面を述べたり、ある事態が進むと同時に別の事態も並行して起こっていることを表し、「一方で」「その反面」という意味を表します。",
+      "longExplanation": "「～一方」（「～一方で」の形も頻繁に使われます）は、普通形に接続し、同一の人物、物事、現象が持っている二つの対照的・矛盾する側面を並べて対比する文型です（「〜である反面」「〜の一方で」）。また、一つの事態が進行しているのと同時に別の事態も並行して起きている状況を表す際にも使われます。物事を多角的・客観的に分析して述べる論説文などで重宝される表現です。",
+      "formation": "動詞普通形 ＋ 一方（で） ｜ い形容詞 ＋ 一方（で） ｜ な形容詞語幹＋な / である ＋ 一方（で） ｜ 名詞＋である ＋ 一方（で）",
+      "examples": [
+        {
+          "translation": "技術が進化する一方、生活が忙しくなっている。"
+        },
+        {
+          "translation": "日本語が上達する一方、英語力が下がっている気がする。"
+        },
+        {
+          "translation": "この料理は美味しい一方、ちょっと高いです。"
+        },
+        {
+          "translation": "彼は優しい一方、厳しい面もある。"
+        }
+      ]
+    },
+    "ja_一方だ_173": {
+      "title": "～一方だ (〜ippou da)",
+      "shortExplanation": "事態や状況の変化が止まらず、一定の一方向へ進み続けていることを表し、「ますます〜していくばかりだ」「〜する傾向が進む」という意味を表します。",
+      "longExplanation": "「～一方だ」は、変化を表す動詞の辞書形（増える、悪化する、進む、低下するなど）に接続し、ある傾向や状態の変化が歯止めなく一つの方向に向かって進み続けていることを表す文型です（「〜するばかりだ」「どんどん〜していく」）。多くは事態の悪化や懸念される傾向の加速に対して用いられますが、客観的な増減やスキルの向上などにも用いられます。",
+      "formation": "動詞辞書形（変化を表す動詞） ＋ 一方だ",
+      "examples": [
+        {
+          "translation": "世界の人口は増える一方だ。"
+        },
+        {
+          "translation": "この町の治安は悪化する一方だ。"
+        },
+        {
+          "translation": "僕の日本語は上達する一方だ。"
+        },
+        {
+          "translation": "夏になると、暑さが厳しくなる一方だ。"
+        }
+      ]
+    },
+    "ja_上で_174": {
+      "title": "～上で (〜ue de)",
+      "shortExplanation": "前項の行為を前提や準備として完了させた後に、次の行動や判断を行うことを表し、「〜してから」「〜した結果に基づいて」という意味を表します。",
+      "longExplanation": "「～上で」は、動詞のた形または「名詞＋の上で」に接続し、まず前項の行為（確認、相談、調査、熟考など）を条件や前提として済ませた後、その結果を踏まえて後項の決定や行動へ進むことを表す文型です（「〜した上で判断する」「〜した後に」）。単なる時間の前後関係ではなく、前項が後項のための不可欠な準備・手続きであることを強調する改まった表現です。",
+      "formation": "動詞た形 ＋ 上で ｜ 名詞＋の上で",
+      "examples": [
+        {
+          "translation": "調査を行った上で、結論を出しましょう。"
+        },
+        {
+          "translation": "就職活動を終えた上で、進学するかどうか決めます。"
+        },
+        {
+          "translation": "試着した上で、この服を買うかどうか考えます。"
+        },
+        {
+          "translation": "経験者の意見を聞いた上で、プロジェクトの方向性を決定しましょう。"
+        }
+      ]
+    },
+    "ja_上に_175": {
+      "title": "～上に (〜ue ni)",
+      "shortExplanation": "ある状態や事実に加えて、さらに同じ評価の事柄が重なることを表し、「〜だけでなく、さらに」「〜に加えて」という意味を表します。",
+      "longExplanation": "「～上に」は、普通形（な形容詞＋な/である、名詞＋の/である）に接続し、前項の状況や性質に加えて、さらに同種の事態や評価がプラスされることを表す文型です（「〜であるだけでなく」「その上」）。前項と後項は必ず評価の方向性が一致（良いこと＋良いこと、または悪いこと＋悪いこと）する必要があり、対比には用いられません。",
+      "formation": "動詞普通形 ＋ 上に ｜ い形容詞 ＋ 上に ｜ な形容詞語幹＋な上に（または である上に） ｜ 名詞＋の上に（または である上に）",
+      "examples": [
+        {
+          "translation": "彼は頭がいい上に、スポーツも得意です。"
+        },
+        {
+          "translation": "このドレスは美しい上に、値段も安いです。"
+        },
+        {
+          "translation": "彼女は優しい上に、料理も上手です。"
+        },
+        {
+          "translation": "彼は社長の上に、有名な作家でもある。"
+        }
+      ]
+    },
+    "ja_上は_176": {
+      "title": "～上は (～ue wa)",
+      "shortExplanation": "事態がすでに決まった以上、強い責任や覚悟を持って相応の行動をすべきであることを表し、「〜である以上は」「〜となったからには」という意味を表します。",
+      "longExplanation": "「～上は」（「〜以上は」「〜からには」とほぼ同義）は、動詞の普通形（特にた形）に接続し、ある事実や決定、事態が確定したことを受けて、「そうである以上は当然、責任や覚悟を持って行動しなければならない」という話し手の強い決意や義務感を述べる文型です。後項には「〜つもりだ」「〜べきだ」「〜なければならない」「〜う／よう」など、強い意志、覚悟、義務を表す表現が続きます。",
+      "formation": "動詞普通形（主にた形・辞書形） ＋ 上は",
+      "examples": [
+        {
+          "translation": "試験に合格した上は、パーティーを開こう。"
+        },
+        {
+          "translation": "この仕事を引き受けた上は、最後までやり遂げるつもりだ。"
+        },
+        {
+          "translation": "親切だと言われた上は、手伝ってあげよう。"
+        },
+        {
+          "translation": "甘いものが好きな上は、このデザートをきっと気に入るでしょう。"
+        }
+      ]
+    },
+    "ja_以上_177": {
+      "title": "～以上 (〜ijou)",
+      "shortExplanation": "ある事実や約束、立場などを前提として、「そうである以上は当然〜すべきだ」という強い義務や決意を表し、「〜であるからには」「〜する以上は」という意味を表します。",
+      "longExplanation": "「～以上」（「〜以上は」の形も頻繁に使われます）は、普通形（名詞やな形容詞は「である」）に接続し、既に確定している事実、約束、立場、身分などを前提として挙げ、「その状況であるからには、当然相応の責任を果たすべきだ」「当然そうなるはずだ」という話し手の強い主張、覚悟、義務感を述べる文型です（「〜からには」「〜のうえは」）。後項には「〜べきだ」「〜なければならない」「〜つもりだ」などの表現が呼応することが多いです。",
+      "formation": "動詞普通形 ＋ 以上（は） ｜ い形容詞 ＋ 以上（は） ｜ な形容詞＋である以上（は） ｜ 名詞＋である以上（は）",
+      "examples": [
+        {
+          "translation": "彼は忙しい以上、手伝いに行っても無駄だろう。"
+        },
+        {
+          "translation": "約束した以上、守るべきだ。"
+        },
+        {
+          "translation": "締め切りが近い以上、全力で仕事をしなければならない。"
+        },
+        {
+          "translation": "彼女は大学生である以上、勉強が優先されるべきだ。"
+        }
+      ]
+    }
+  }
+}

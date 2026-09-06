@@ -1,0 +1,1262 @@
+import json
+import re
+import os
+
+data = {
+  "vi": {
+    "ja_もかまわず_148": {
+      "title": "～もかまわず (〜mo kamawazu)",
+      "shortExplanation": "Diễn tả hành động được thực hiện mà không bận tâm, không để ý đến những ánh nhìn xung quanh, thời gian hay hiểm nguy; 'không màng đến...', 'bất chấp...', 'mặc kệ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～もかまわず' (bắt nguồn từ động từ 構う mang nghĩa bận tâm, để ý) kết hợp với danh từ hoặc động từ thể từ điển (kèm の) để biểu thị việc ai đó hành động một cách thản nhiên, hoàn toàn phớt lờ những yếu tố mà thông thường mọi người sẽ phải bận lòng (như ánh mắt người xung quanh, thời gian, thời tiết, sự nguy hiểm...). Mẫu câu này thường dùng để miêu tả hành vi của người khác hơn là của chính bản thân, đôi khi mang sắc thái ngạc nhiên hoặc phê phán nhẹ đối với sự thiếu tế nhị hay liều lĩnh đó.",
+      "formation": "Danh từ + もかまわず | Động từ thể từ điển + のもかまわず",
+      "examples": [
+        {
+          "translation": "Anh ấy nói chuyện rất to, chẳng màng gì đến những người xung quanh."
+        },
+        {
+          "translation": "Cô ấy cứ thong thả tiếp tục đọc sách mà chẳng để ý gì đến thời gian."
+        },
+        {
+          "translation": "Anh ấy mặc kệ thời tiết giá lạnh mà vẫn tập thể dục ngoài trời."
+        },
+        {
+          "translation": "Bất chấp nguy hiểm, cô ấy đã lao vào đám cháy để cứu người."
+        }
+      ]
+    },
+    "ja_ものか_149": {
+      "title": "～ものか (〜mono ka)",
+      "shortExplanation": "Diễn tả sự phủ định mạnh mẽ, dứt khoát hoặc kiên quyết từ chối; 'tuyệt đối không...', 'đời nào lại...', 'không đời nào', 'làm sao mà... được'.",
+      "longExplanation": "Mẫu ngữ pháp '～ものか' (trong khẩu ngữ thân mật thường biến âm thành '～もんか', nữ giới hoặc người nói lịch sự có thể dùng '～ものですか' / '～もんですか') kết hợp với thể thông thường để biểu thị sự phủ định hoặc cự tuyệt vô cùng kiên quyết của người nói ('tuyệt đối không bao giờ...', 'đời nào lại...'). Mẫu câu này mang giọng điệu phản vấn gay gắt, thể hiện ý chí mạnh mẽ rằng chuyện đó không bao giờ có thể xảy ra hoặc bản thân nhất quyết không bao giờ chấp nhận làm như thế.",
+      "formation": "Động từ thể thông thường + ものか | Tính từ đuôi い + ものか | Tính từ đuôi な + なものか | Danh từ + なものか",
+      "examples": [
+        {
+          "translation": "Chuyện như thế thì đời nào tôi lại muốn làm chứ!"
+        },
+        {
+          "translation": "Công việc như thế này thì ai mà thèm nhận cơ chứ! (Chắc chắn chẳng ai nhận đâu!)"
+        },
+        {
+          "translation": "Ai đời lại đi nhờ anh ta giúp đỡ cơ chứ! (Tuyệt đối không bao giờ!)"
+        },
+        {
+          "translation": "Vào ngày giá rét thế này mà bảo ra ngoài chơi thì làm sao mà nổi chứ!"
+        }
+      ]
+    },
+    "ja_ものがある_150": {
+      "title": "～ものがある (〜mono ga aru)",
+      "shortExplanation": "Diễn tả cảm xúc, ấn tượng mạnh mẽ hoặc một phẩm chất khiến người nói cảm nhận sâu sắc; 'có cảm giác...', 'có gì đó thật...', 'khiến người ta cảm thấy...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ものがある' kết hợp với thể thông thường của động từ hoặc tính từ (tính từ đuôi な đi với 'な') để biểu thị rằng sự việc, đối tượng có một đặc tính, sức lôi cuốn hoặc giá trị đặc biệt nào đó khiến người nói cảm nhận rất sâu sắc, không thể xem nhẹ ('thực sự có điều gì đó khiến người ta...', 'có cảm giác...'). Mẫu câu này thường đi cùng với những từ ngữ biểu thị sự xúc động, suy ngẫm, hoặc đánh giá sâu sắc (như 心を打たれる, 考えさせられる...).",
+      "formation": "Động từ thể thông thường + ものがある | Tính từ đuôi い + ものがある | Tính từ đuôi な + なものがある",
+      "examples": [
+        {
+          "translation": "Bài phát biểu của anh ấy có điều gì đó thật sự chạm đến trái tim người nghe."
+        },
+        {
+          "translation": "Bộ phim này có những điều khiến người xem phải suy ngẫm sâu xa."
+        },
+        {
+          "translation": "Những điều anh ấy nói cũng có phần rất có lý."
+        },
+        {
+          "translation": "Cuộc sống mỗi ngày quá đỗi bận rộn này có cái gì đó khiến người ta cảm thấy ngột ngạt."
+        }
+      ]
+    },
+    "ja_ものだ_151": {
+      "title": "～ものだ (〜mono da)",
+      "shortExplanation": "Diễn tả chân lý, bản chất tự nhiên của sự vật, lẽ thường tình hoặc chuẩn mực đạo đức xã hội; 'vốn là...', 'thường là...', 'là lẽ đương nhiên', 'nên...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ものだ' (khi đi với thể từ điển của động từ hoặc tính từ) diễn tả những quy luật tự nhiên, chân lý phổ quát, đạo lý hoặc lẽ thường tình trong xã hội mà mọi người ngầm hiểu và công nhận ('vốn dĩ là...', 'con người ta thường...'). Ngoài ra, nó còn dùng để khuyên răn một cách gián tiếp về việc nên làm theo chuẩn mực đạo đức ('đã là... thì nên...'). (Lưu ý: Mẫu này còn có nghĩa diễn tả hồi tưởng kỷ niệm quá khứ khi đi với thể た, hoặc biểu cảm cảm thán sâu sắc).",
+      "formation": "Động từ thể từ điển + ものだ | Tính từ đuôi い + ものだ | Tính từ đuôi な + なものだ",
+      "examples": [
+        {
+          "translation": "Khi còn trẻ thì người ta thường hay vui chơi thỏa thích là lẽ tự nhiên."
+        },
+        {
+          "translation": "Một khi đã hứa thì vốn dĩ phải giữ lời."
+        },
+        {
+          "translation": "Khi có khách đến nhà thì việc pha trà mời khách là điều đương nhiên."
+        },
+        {
+          "translation": "Đời người vốn dĩ là phải dũng cảm đối mặt với khó khăn."
+        }
+      ]
+    },
+    "ja_ものだから_152": {
+      "title": "～ものだから (〜mono dakara)",
+      "shortExplanation": "Đưa ra lý do, nguyên nhân mang tính giải thích, biện bạch hoặc trần tình về hoàn cảnh; 'bởi vì...', 'tại vì... đấy mà', 'do là vì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ものだから' (trong khẩu ngữ thường nói tắt thành '～もんだから') kết hợp với thể thông thường (tính từ đuôi な và danh từ đi với 'な') để giải thích nguyên nhân, lý do cho một tình trạng, sự việc hoặc hành động ('bởi vì...', 'tại vì... mà'). Cấu trúc này thường được dùng với sắc thái biện bạch, giải thích tình huống bất khả kháng, phân bua lý do cá nhân hoặc tìm kiếm sự thấu hiểu từ phía người nghe.",
+      "formation": "Động từ thể thông thường + ものだから | Tính từ đuôi い + ものだから | Tính từ đuôi な + なものだから | Danh từ + なものだから",
+      "examples": [
+        {
+          "translation": "Vì kỳ thi đã cận kề rồi nên ngày nào tôi cũng phải chăm chỉ học bài."
+        },
+        {
+          "translation": "Nhà hàng này rất được ưa chuộng, vì thế nếu không đặt trước thì có lẽ chẳng còn chỗ đâu."
+        },
+        {
+          "translation": "Vì cậu ấy còn trẻ nên vẫn chưa tích lũy được nhiều kinh nghiệm."
+        },
+        {
+          "translation": "Hôm nay trời lạnh nên chúng ta hãy mang theo găng tay nhé."
+        }
+      ]
+    },
+    "ja_ものではない_153": {
+      "title": "～ものではない (〜mono dewa nai)",
+      "shortExplanation": "Diễn tả lời khuyên răn, nhắc nhở hoặc cấm đoán dựa trên chuẩn mực đạo đức xã hội và phép lịch sự; 'không nên...', 'không được làm...', 'ai lại làm thế'.",
+      "longExplanation": "Mẫu ngữ pháp '～ものではない' (dạng lịch sự là '～ものではありません', văn nói thân mật là '～もんじゃない') kết hợp với thể từ điển của động từ để đưa ra lời khuyên răn, răn dạy hoặc nghiêm cấm mang tính đạo lý, luân thường đạo lý và quy tắc ứng xử trong xã hội ('không nên làm...', 'không được phép...'). Cấu trúc này không mang tính ép buộc theo luật pháp cá nhân mà xuất phát từ việc hành vi đó không phù hợp với chuẩn mực văn minh hoặc cách cư xử của một con người đàng hoàng.",
+      "formation": "Động từ thể từ điển + ものではない / ものではありません",
+      "examples": [
+        {
+          "translation": "Không bao giờ được phép ăn nói những lời lẽ như thế đâu nhé!"
+        },
+        {
+          "translation": "Ở nơi công cộng thì không nên lớn tiếng quát tháo, làm ồn."
+        },
+        {
+          "translation": "Tuyệt đối không được tiết lộ bí mật của cậu ấy cho người khác biết đâu đấy."
+        },
+        {
+          "translation": "Chơi ở nơi an toàn thì được, chứ chốn hiểm nguy thì tuyệt đối không nên chơi."
+        }
+      ]
+    },
+    "ja_ものなら_154": {
+      "title": "～ものなら (〜mono nara)",
+      "shortExplanation": "Diễn tả một giả định khó hoặc không thể thực hiện được trong thực tế, kèm theo mong muốn tha thiết; 'giá như có thể...', 'nếu như có thể... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ものなら' kết hợp với động từ thể khả năng để đưa ra một điều kiện giả định mà trên thực tế rất khó thực hiện hoặc gần như không thể xảy ra, và vế sau bày tỏ nguyện vọng, ước muốn vô cùng cháy bỏng của người nói nếu điều đó thành hiện thực ('giá như có thể... thì tôi muốn...', 'nếu mà làm được thì...'). Cấu trúc này chứa đựng tâm trạng khao khát hoặc tiếc nuối sâu sắc.",
+      "formation": "Động từ thể khả năng + ものなら",
+      "examples": [
+        {
+          "translation": "Giá mà có thể về được thì tôi muốn quay về nước ngay lúc này."
+        },
+        {
+          "translation": "Nếu có thể làm được, tôi rất muốn thử đi du lịch vòng quanh thế giới một chuyến."
+        },
+        {
+          "translation": "Giá như có thể làm lại cuộc đời, tôi muốn được quay trở lại thời thơ ấu."
+        },
+        {
+          "translation": "Miễn sao có thể khỏe lại được thì bất kỳ loại thuốc nào tôi cũng sẵn sàng thử."
+        }
+      ]
+    },
+    "ja_ものの_155": {
+      "title": "～ものの、～ (〜mono no、～)",
+      "shortExplanation": "Nối hai vế câu diễn tả sự tương phản, thừa nhận vế trước là sự thật nhưng vế sau lại không diễn ra như kỳ vọng; 'mặc dù... nhưng...', 'dẫu biết là... thế nhưng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ものの' kết hợp với thể thông thường của động từ, tính từ hoặc danh từ (kèm である) để liên kết hai vế đối lập mang tính nghịch cảnh ('mặc dù... nhưng...'). Người nói thừa nhận sự thật ở vế trước là đúng, tuy nhiên thực tế ở vế sau lại diễn ra trái ngược hoặc không đạt được kết quả tương xứng như điều người ta thường kỳ vọng từ sự thật đó. Mẫu này thường mang sắc thái tiếc nuối, thất vọng hoặc bất mãn nhẹ.",
+      "formation": "Động từ thể thông thường + ものの | Tính từ đuôi い + ものの | Tính từ đuôi な + なものの (hoặc であるものの) | Danh từ + であるものの",
+      "examples": [
+        {
+          "translation": "Mặc dù đã dậy từ rất sớm nhưng tôi vẫn không kịp chuyến xe buýt."
+        },
+        {
+          "translation": "Căn phòng này tuy rộng rãi thật đấy nhưng đồ đạc lại quá ít ỏi."
+        },
+        {
+          "translation": "Cô ấy tuy xinh đẹp nhưng tính tình lại chẳng ra sao."
+        },
+        {
+          "translation": "Dù anh ấy là một ca sĩ nổi tiếng nhưng buổi hòa nhạc lại chẳng có mấy người đến xem."
+        }
+      ]
+    },
+    "ja_もばも_156": {
+      "title": "～も～ば～も～ (〜mo〜ba〜mo〜)",
+      "shortExplanation": "Liệt kê song song nhiều đặc điểm, phẩm chất hoặc hành động cùng tồn tại; 'vừa... lại vừa...', 'đã... lại còn...', 'cũng có... mà cũng có...'.",
+      "longExplanation": "Mẫu ngữ pháp '～も～ば～も～' (kết hợp trợ từ 'も' với thể điều kiện '～ば' và tiếp tục nối với 'も') dùng để liệt kê đồng thời hai hay nhiều yếu tố, tính chất, khả năng tương đồng hoặc bổ sung cho nhau của cùng một chủ thể ('vừa A lại vừa B', 'đã A lại còn B'). Cấu trúc này thường dùng để khen ngợi toàn diện (như vừa rẻ vừa ngon, vừa học giỏi vừa chơi thể thao cừ) hoặc để nêu lên sự đa dạng của các mặt đối lập cùng tồn tại (như cuộc đời có lúc vui cũng có lúc buồn).",
+      "formation": "Danh từ + も + Động từ/Tính từ thể điều kiện (ば) + Danh từ + も + Động từ/Tính từ",
+      "examples": [
+        {
+          "translation": "Cậu ấy vừa học giỏi mà chơi thể thao cũng rất cừ khôi."
+        },
+        {
+          "translation": "Nhà hàng này giá cả vừa rẻ mà đồ ăn lại vừa ngon miệng."
+        },
+        {
+          "translation": "Cô ấy vừa biết chơi đàn dương cầm lại vừa biết đánh đàn ghi-ta."
+        },
+        {
+          "translation": "Ở đời, có những lúc vui vẻ thì cũng có những khi gian nan, cay đắng."
+        }
+      ]
+    },
+    "ja_も同然だ_157": {
+      "title": "～も同然だ (〜mo douzen da)",
+      "shortExplanation": "Diễn tả một sự vật, hiện tượng trên thực tế hầu như không có gì khác biệt so với một trạng thái nào đó; 'chẳng khác nào...', 'gần như là...', 'coi như là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～も同然だ' (từ chữ Hán 同然 - đồng nhiên, coi như nhau) kết hợp với danh từ, động từ thể thông thường (đặc biệt là thể た hoặc thể ない) để biểu thị rằng tuy trên danh nghĩa hoặc hình thức có thể chưa hoàn toàn 100% giống hệt, nhưng xét về bản chất và tình hình thực tế thì gần như không có sự khác biệt nào ('gần như là...', 'chẳng khác gì...', 'coi như là... rồi'). Cấu trúc này thường dùng để nhấn mạnh mức độ tương đồng sâu sắc hoặc sự bất mãn, chê trách trước một thực trạng tiêu cực.",
+      "formation": "Danh từ + も同然だ | Động từ thể thông thường + も同然だ",
+      "examples": [
+        {
+          "translation": "Tôi quen biết anh ấy lâu năm rồi, nên thân thiết chẳng khác nào người trong gia đình."
+        },
+        {
+          "translation": "Ngày nào cũng đi muộn như thế thì coi như chẳng đến còn hơn."
+        },
+        {
+          "translation": "Cô ấy và tôi là bạn thanh mai trúc mã, thân thiết chẳng khác gì chị em ruột thịt."
+        },
+        {
+          "translation": "Lương bổng ít ỏi thế này thì chẳng khác nào đi làm không công."
+        }
+      ]
+    },
+    "ja_やらやら_158": {
+      "title": "～やら～やら (〜yara〜yara)",
+      "shortExplanation": "Liệt kê tiêu biểu nhiều sự vật, hành động, trạng thái một cách lộn xộn hoặc dồn dập; 'nào là... nào là...', 'nào... nào...'.",
+      "longExplanation": "Mẫu ngữ pháp '～やら～やら' kết hợp với danh từ, động từ thể thông thường hoặc tính từ để liệt kê không đầy đủ các đối tượng, sự việc hoặc tính chất ('nào là A nào là B...'). Mẫu này thường tạo cảm giác sự việc, đồ vật xuất hiện quá nhiều, dồn dập, bừa bộn hoặc lộn xộn khiến người nói cảm thấy bối rối, vất vả, choáng ngợp hoặc khó kiểm soát hết được mọi thứ.",
+      "formation": "Danh từ + やら + Danh từ + やら | Động từ thể thông thường + やら | Tính từ đuôi い + やら | Tính từ đuôi な + やら",
+      "examples": [
+        {
+          "translation": "Nào là bài tập về nhà, nào là dọn dẹp phòng ốc, có bao nhiêu là việc phải làm."
+        },
+        {
+          "translation": "Tôi đã mua đủ loại thực phẩm, nào là rau củ nào là hoa quả."
+        },
+        {
+          "translation": "Cô ấy vừa hát hay, lại còn biết nhảy múa nữa, thực sự là vô cùng đa tài."
+        },
+        {
+          "translation": "Trong cửa hàng bày biện đủ thứ, nào là túi xách, nào là giày dép rồi cả phụ kiện trang sức nữa."
+        }
+      ]
+    },
+    "ja_ようがない_159": {
+      "title": "～ようがない (〜you ga nai)",
+      "shortExplanation": "Diễn tả việc hoàn toàn không có cách nào, không có phương tiện hay biện pháp nào để thực hiện hành động; 'không có cách nào để...', 'không thể nào... nổi', 'hết cách...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ようがない' (dạng lịch sự là '～ようがありません', dạng bổ nghĩa cho danh từ là '～ようのない') kết hợp với thân động từ thể ます (bỏ ます) để biểu thị rằng dù có muốn làm đi chăng nữa thì cũng hoàn toàn bế tắc, không có bất kỳ phương pháp, cách thức hay cơ hội nào để thực hiện được hành động đó ('hoàn toàn không có cách nào...', 'không tài nào mà... được'). Cấu trúc này thường đi kèm cảm giác bất lực, tiếc nuối hoặc than thở trước sự việc không thể cứu vãn.",
+      "formation": "Động từ thể ます (bỏ ます) + ようがない / よう가ありません",
+      "examples": [
+        {
+          "translation": "Tôi không biết thông tin liên lạc của anh ấy, nên chẳng có cách nào để giúp đỡ được."
+        },
+        {
+          "translation": "Hỏng nặng đến mức này rồi thì hết cách sửa chữa rồi."
+        },
+        {
+          "translation": "Vì hoàn toàn không có bằng chứng nên chẳng thể nào chứng minh anh ta là thủ phạm được."
+        },
+        {
+          "translation": "Bất ngờ bị bắt chuyện bằng tiếng Anh khiến tôi chẳng biết phải đáp lại ra sao, đành chịu không sao trả lời nổi."
+        }
+      ]
+    },
+    "ja_よりほかない_160": {
+      "title": "～よりほかない (〜yori hoka nai)",
+      "shortExplanation": "Diễn tả tình thế không còn sự lựa chọn nào khác ngoài việc đành phải thực hiện hành động đó; 'chỉ còn cách...', 'đành phải...', 'không còn lựa chọn nào khác ngoài...'.",
+      "longExplanation": "Mẫu ngữ pháp '～よりほかない' (hoặc các biến thể như '～よりほかはない', '～よりない', '～ほかない') kết hợp với thể từ điển của động từ để biểu thị rằng trong hoàn cảnh hiện tại, mọi lối thoát hoặc phương án khác đều không khả thi, do đó chủ thể không còn bất kỳ sự lựa chọn hay giải pháp nào khác ngoài việc chấp nhận thực hiện hành động đó ('chỉ còn nước...', 'buộc phải...', 'chẳng còn cách nào ngoài...'). Mẫu câu này thường mang sắc thái bất đắc dĩ, ngậm ngùi chấp nhận thực tế.",
+      "formation": "Động từ thể từ điển + よりほかない / よりほかはない",
+      "examples": [
+        {
+          "translation": "Kỳ thi đã cận kề rồi nên tôi chỉ còn cách cắm đầu vào học thôi."
+        },
+        {
+          "translation": "Cơn cảm lạnh chuyển biến nặng nên tôi đành phải đi ngủ sớm."
+        },
+        {
+          "translation": "Xe buýt mãi không thấy tới nên đành phải đi bộ thôi."
+        },
+        {
+          "translation": "Vì chẳng có tiền nên tôi không còn cách nào khác ngoài việc mua đồ rẻ tiền."
+        }
+      ]
+    },
+    "ja_わけがない_161": {
+      "title": "～わけがない (〜wake ga nai)",
+      "shortExplanation": "Diễn tả sự phán đoán phủ định tuyệt đối dựa trên lý lẽ hoặc căn cứ xác thực; 'chắc chắn không thể nào...', 'làm sao mà... có thể xảy ra được', 'lẽ nào lại...'.",
+      "longExplanation": "Mẫu ngữ pháp '～わけがない' (trong văn nói thân mật có thể dùng '～わけない', dạng lịch sự là '～わけがありません') kết hợp với thể thông thường (tính từ đuôi な đi với 'な', danh từ đi với 'の') để biểu thị sự phủ định hoàn toàn mang tính logic và chắc chắn tuyệt đối của người nói ('làm sao có chuyện...', 'tuyệt đối không thể nào...'). Dựa trên một lý do, sự thật hoặc căn cứ rõ ràng, người nói tin chắc 100% rằng sự việc đó không thể nào xảy ra.",
+      "formation": "Động từ thể thông thường + わけがない | Tính từ đuôi い + わけがない | Tính từ đuôi な + なわけがない | Danh từ + のわけがない",
+      "examples": [
+        {
+          "translation": "Anh ấy đang bị thương nên làm sao mà có thể thắng trận đấu được cơ chứ."
+        },
+        {
+          "translation": "Một kẻ suốt ngày chỉ toàn nói dối thì làm sao mà tôi có thể tin tưởng được."
+        },
+        {
+          "translation": "Cô ấy bận rộn như thế thì đời nào lại đến dự bữa tiệc này."
+        },
+        {
+          "translation": "Hôm qua tôi ngủ li bì suốt cả ngày, làm sao mà biết được vụ việc đó chứ."
+        }
+      ]
+    },
+    "ja_わけだ_162": {
+      "title": "～わけだ (〜wake da)",
+      "shortExplanation": "Diễn tả kết luận tất yếu, sự vỡ lẽ hoặc lý do hợp logic sau khi đã hiểu rõ nguyên nhân; 'thảo nào...', 'hóa ra là...', 'chẳng trách...'.",
+      "longExplanation": "Mẫu ngữ pháp '～わけだ' (dạng lịch sự là '～わけです') kết hợp với thể thông thường (tính từ đuôi な và danh từ đi với 'な' hoặc 'である') để biểu thị rằng một sự việc, tình trạng xảy ra là một kết quả hoàn toàn tự nhiên, hợp lý và tất yếu theo lẽ thường sau khi đã nắm rõ nguyên cớ ('thảo nào...', 'hóa ra là vì thế...', 'đương nhiên là...'). Người nói thường dùng mẫu câu này khi ngộ ra, vỡ lẽ bản chất sự việc ('À, thảo nào mà lại như vậy'). Ngoài ra, nó cũng dùng để tóm tắt kết luận hợp lý từ một tiền đề.",
+      "formation": "Động từ thể thông thường + わけだ | Tính từ đuôi い + わけだ | Tính từ đuôi な + なわけだ | Danh từ + なわけだ (hoặc であるわけだ)",
+      "examples": [
+        {
+          "translation": "Hóa ra lý do cô ấy đến muộn là vì chuyến tàu bị trễ."
+        },
+        {
+          "translation": "Tiết học thú vị như thế, thảo nào mà mọi người ai cũng chăm chú lắng nghe."
+        },
+        {
+          "translation": "Anh ấy bận rộn đến mức đó, hèn chi hầu như chẳng có lấy một ngày nghỉ."
+        },
+        {
+          "translation": "Câu hỏi này khó đến vậy, thảo nào mà tôi chẳng hiểu gì cả."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_もかまわず_148": {
+      "title": "～もかまわず (〜mo kamawazu)",
+      "shortExplanation": "表示完全不顾及周围人的眼光、时间、天气或危险等，依然若无其事地采取行动；“不顾……”、“不管……”、“毫无顾忌地……”。",
+      "longExplanation": "句型“～もかまわず”（来源于动词“構う”，意为介意、在乎）接在名词或动词辞书形（加“の”）之后，表示行动者完全不顾及或不在意周围的视线、客观阻碍、恶劣条件或潜在危险，毫不犹豫或肆无忌惮地做出某种举动（“不顾……”、“全然不顾……”、“不管……”）。多用于客观描述第三者的行为，往往带有说话人对此举动感到意外、吃惊甚至略带责备或批评的语气。",
+      "formation": "名词 + もかまわず | 动词辞书形 + のもかまわず",
+      "examples": [
+        {
+          "translation": "他完全不顾周围的人，扯着嗓门大声说话。"
+        },
+        {
+          "translation": "她丝毫不管时间有多晚，依旧不紧不慢地继续看书。"
+        },
+        {
+          "translation": "他全然不顾严寒的天气，依然在室外坚持锻炼。"
+        },
+        {
+          "translation": "她不顾自身危险，毅然冲进火场救人。"
+        }
+      ]
+    },
+    "ja_ものか_149": {
+      "title": "～ものか (〜mono ka)",
+      "shortExplanation": "表示强烈的否定、断然拒绝或反驳；“绝不……”、“怎么可能……”、“哪会……”、“绝没有……”。",
+      "longExplanation": "句型“～ものか”（口语中常音变为“～もんか”，郑重形式为“～ものですか／～もんですか”）接在各词类普通形之后，以反问的形式表达说话人坚决的否定、断然拒绝或强烈的反驳心情（“决不会……”、“哪里会……”、“难道会……吗，绝不！”）。常含有情感上的抵触、不屑或坚定意志，坚决表示绝不去做某事或绝不赞同某种观点与判断。",
+      "formation": "动词普通形 + ものか | 一类形容词（い形容词） + ものか | 二类形容词（な形容词）词干 + なものか | 名词 + な东西／なものか",
+      "examples": [
+        {
+          "translation": "那种事情，我怎么可能会想去做呢！"
+        },
+        {
+          "translation": "这样的苦活累活，谁会愿意接手啊！（绝没有人接手！）"
+        },
+        {
+          "translation": "谁会去求他帮忙啊！（我绝不可能向他求助！）"
+        },
+        {
+          "translation": "在这么冷的天气里到外头玩耍，怎么可能办得到嘛！"
+        }
+      ]
+    },
+    "ja_ものがある_150": {
+      "title": "～ものがある (〜mono ga aru)",
+      "shortExplanation": "表示某事具有让人深刻感受到的性质或特质，给人留下强烈深刻的印象；“有……之处”、“让人感到……”、“确实有令人……的地方”。",
+      "longExplanation": "句型“～ものがある”接在动词普通形、一类形容词（い形容词）或二类形容词（な形容词+な）之后，表示某事物具有某种不容忽视的特质、价值或情感力量，使说话人从心底深切地体会或感受到（“确实有让人……的地方”、“深有……之感”）。常与表达感触、评价或心理反应的词语（如心を打たれる、考えさせられる等）搭配使用。",
+      "formation": "动词普通形 + ものがある | 一类形容词（い形容词） + ものがある | 二类形容词（な形容词）词干 + なものがある",
+      "examples": [
+        {
+          "translation": "他的演讲中确实有深深打动人心的地方。"
+        },
+        {
+          "translation": "这部电影有许多发人深省、引人深思之处。"
+        },
+        {
+          "translation": "他所说的话确实也有几分道理。"
+        },
+        {
+          "translation": "每天都忙得不可开交的生活，确实让人感到有些窒息压抑。"
+        }
+      ]
+    },
+    "ja_ものだ_151": {
+      "title": "～ものだ (〜mono da)",
+      "shortExplanation": "表示客观真理、自然规律、社会常理或理应如此的伦理道德规范；“按理应当……”、“本来就……”、“通常是……”。",
+      "longExplanation": "句型“～ものだ”接在动词辞书形、形容词之后，用来阐述事物的本质属性、普遍真理、世间常识或社会通则（“本来就该……”、“人总是……”）。此外，也可用于基于社会公德或道德规范对人提出劝告或警示，指出做人处事理应遵守的原则。（注：接动词过去时“た形”时表示对往事的怀念回顾；接感情词语时表示由衷的感叹）。",
+      "formation": "动词辞书形 + ものだ | 一类形容词（い形容词） + ものだ | 二类形容词（な形容词）词干 + なものだ",
+      "examples": [
+        {
+          "translation": "年轻的时候本来就该多玩乐、多体验。"
+        },
+        {
+          "translation": "既然许下了承诺，理所当然就应当信守承诺。"
+        },
+        {
+          "translation": "客人来访的时候，端茶倒水本就是常礼。"
+        },
+        {
+          "translation": "人生本来就是应当勇于直面各种困难的。"
+        }
+      ]
+    },
+    "ja_ものだから_152": {
+      "title": "～ものだから (〜mono dakara)",
+      "shortExplanation": "用于向对方说明原因、理由，常带有申辩、辩解或说明客观情由的语气；“因为……”、“由于……嘛”、“主要是因为……”。",
+      "longExplanation": "句型“～ものだから”（口语中常略为“～もんだから”）接在各词类的普通形之后（二类形容词和名词接“な”），用于向对方解释导致某种结果或采取某种行动的个人缘由或客观背景（“因为……嘛”、“由于……的原因”）。语气上多带有辩解、申明理由或寻求对方理解的柔和态度，说明事情发生也是事出有因、情非得已。",
+      "formation": "动词普通形 + ものだから | 一类形容词（い形容词） + ものだから | 二类形容词（な形容词）词干 + なものだから | 名词 + なものだから",
+      "examples": [
+        {
+          "translation": "因为考试迫在眉睫了，所以我每天都在努力用功。"
+        },
+        {
+          "translation": "这家餐厅人气实在是太高了，如果不提前预约的话可能根本没有座位。"
+        },
+        {
+          "translation": "因为他还很年轻，所以尚未积累足够丰富的人生经验。"
+        },
+        {
+          "translation": "今天外头天气实在太冷了，咱们还是把手套带上吧。"
+        }
+      ]
+    },
+    "ja_ものではない_153": {
+      "title": "～ものではない (〜mono dewa nai)",
+      "shortExplanation": "基于社会公德、常识或做人道义，提出严厉的劝诫、告诫或轻微的禁止；“不应当……”、“不能……”、“哪能……”。",
+      "longExplanation": "句型“～ものではない”（口语缩略为“～もんじゃない”，礼貌体为“～ものではありません”）接在动词辞书形之后，表示根据普遍的道德标准、社会公德或常识性礼仪，某项行为是不妥当或不应该做的，用于规劝、训诫或告诫他人（“不应该……”、“不可以……”、“做人哪能……”）。通常不用于强制性的法律禁令，而是出于道义和常理层面的良言相劝。",
+      "formation": "动词辞书形 + ものではない / ものではありません",
+      "examples": [
+        {
+          "translation": "怎么能说出那样轻率无礼的话来呢！"
+        },
+        {
+          "translation": "在公共场合是不应该大声喧哗叫嚷的。"
+        },
+        {
+          "translation": "绝不应该把他的个人秘密随便泄露给别人。"
+        },
+        {
+          "translation": "在安全的地方玩玩倒无妨，但绝不可以跑到危险的地方去玩耍。"
+        }
+      ]
+    },
+    "ja_ものなら_154": {
+      "title": "～ものなら (〜mono nara)",
+      "shortExplanation": "表示对极难实现或实际上不可能的事做出假定，后项表达强烈的愿望或企图；“如果能够……的话，真想……”、“要是能……”。",
+      "longExplanation": "句型“～ものなら”常接在动词可能形之后，表示假定一种在现实中很难实现或几乎不可能发生的理想情况，后项则紧跟着表达说话人由衷而强烈的愿望、期待或意志（“要是能……的话该多好”、“如果真能够……的话，真想……”）。语境中往往蕴含着现实无法如愿的无奈、遗憾或极其迫切的心情。",
+      "formation": "动词可能形 + ものなら",
+      "examples": [
+        {
+          "translation": "要是真能回去的话，我现在真想立刻飞回祖国。"
+        },
+        {
+          "translation": "如果真能做得到的话，我真想去环游世界一周看看。"
+        },
+        {
+          "translation": "人生要是能重新来过，我真想回到无忧无虑的童年时代。"
+        },
+        {
+          "translation": "只要能恢复健康，哪怕是任何药物我都愿意试一试。"
+        }
+      ]
+    },
+    "ja_ものの_155": {
+      "title": "～ものの、～ (〜mono no、～)",
+      "shortExplanation": "表示转折关系，承认前项事实成立，但后项却出现了出人意料、不尽人意或与之相反的结果；“虽然……但是……”、“虽说……可是……”。",
+      "longExplanation": "句型“～ものの”接在各词类的普通形之后（名词接“であるものの”，二类形容词接“な／であるものの”），用于连接转折关系的两个分句（“虽说……但是……”、“尽管……却……”）。说话人首先承认前半句的事实是真实的，但紧接着指出后半句并没有产生理应出现的结果，反而呈现出令人遗憾、不相称或出乎意料的消极状况。",
+      "formation": "动词普通形 + ものの | 一类形容词（い形容词） + ものの | 二类形容词（な形容词）词干 + なものの（或 であるものの） | 名词 + であるものの",
+      "examples": [
+        {
+          "translation": "虽然起了个大早，但最后还是没能赶上公共汽车。"
+        },
+        {
+          "translation": "这间屋子虽然挺宽敞的，可是家具却少得可怜。"
+        },
+        {
+          "translation": "她虽然容貌出众，性格却十分恶劣。"
+        },
+        {
+          "translation": "尽管他是一位知名歌手，但演唱会上却没来多少观众。"
+        }
+      ]
+    },
+    "ja_もばも_156": {
+      "title": "～も～ば～も～ (〜mo〜ba〜mo〜)",
+      "shortExplanation": "并列举出兼具的多种性质、特点或动作；“既……又……”、“不但……而且……”、“也有……也有……”。",
+      "longExplanation": "句型“～も～ば～も～”将助词“も”与假定形“～ば”相结合，用于并列列举同一事物或人所同时兼具的两个或两个以上的事项、特征或能力（“既……又……”、“不仅……而且还……”）。既可以用于全面赞扬某种兼收并蓄的优点（如物美价廉、能文能武），也可以用于列举并存的各种不同境遇或喜怒哀乐。",
+      "formation": "名词 + も + 动词／形容词假定形（ば形） + 名词 + も + 动词／形容词",
+      "examples": [
+        {
+          "translation": "他既擅长学习功课，又擅长体育运动。"
+        },
+        {
+          "translation": "这家餐厅既价格公道实惠，味道又非常鲜美。"
+        },
+        {
+          "translation": "她不仅会弹奏钢琴，还会弹奏吉他。"
+        },
+        {
+          "translation": "人生中既有欢乐欢畅的时刻，也有艰辛痛苦的日子。"
+        }
+      ]
+    },
+    "ja_も同然だ_157": {
+      "title": "～も同然だ (〜mo douzen da)",
+      "shortExplanation": "表示虽然在形式或名义上并不完全一样，但实际上几乎毫无二致；“跟……几乎一样”、“几乎等于……”、“无异于……”。",
+      "longExplanation": "句型“～も同然だ”（汉字写作“同然”，意为相同、同样）接在名词、动词普通形（尤其是过去时“た形”或否定形“ない形”）之后，表示某事物在实质、效果或现态上与某种极端状况几乎没有任何区别（“跟……没什么两样”、“可以说就等于……”、“无异于……”）。常用于强调两者关系非同寻常的亲近，或用于表达对某种不理想状态的强烈不满与讽刺。",
+      "formation": "名词 + も同然だ | 动词普通形 + も同然だ",
+      "examples": [
+        {
+          "translation": "我和他交情匪浅，相处得就像一家人一样。"
+        },
+        {
+          "translation": "天天迟到成这样，跟根本没来几乎没有什么区别。"
+        },
+        {
+          "translation": "她和我是青梅竹马的发小，关系亲密得宛如亲姐妹一般。"
+        },
+        {
+          "translation": "拿这么点微薄的薪水，简直就跟白干活没什么两样。"
+        }
+      ]
+    },
+    "ja_やらやら_158": {
+      "title": "～やら～やら (〜yara〜yara)",
+      "shortExplanation": "列举多个并存的事项、动作或状态，常带有繁杂、杂乱或应接不暇的语气；“又是……又是……”、“一会儿……一会儿……”、“……啦……啦”。",
+      "longExplanation": "句型“～やら～やら”接在名词、动词普通形或形容词之后，用于不完全列举若干代表性的事物、动作或情况（“又是……又是……”、“……啦……啦”）。其语感往往暗含着头绪繁多、杂乱无章或事情堆积在一起让人忙不过来、应接不暇的心情，常用于表达事务繁重、物品繁杂或情绪百感交集。",
+      "formation": "名词 + やら + 名词 + やら | 动词普通形 + やら | 一类形容词（い形容词） + やら | 二类形容词（な形容词）词干 + やら",
+      "examples": [
+        {
+          "translation": "又是写作业又是大扫除，手头要忙的事情实在太多了。"
+        },
+        {
+          "translation": "我买了各种各样的食品，蔬菜啦水果啦应有尽有。"
+        },
+        {
+          "translation": "她又是擅长唱歌，又是擅长跳舞，真是一位多才多艺的人才。"
+        },
+        {
+          "translation": "店里摆满了包包啦、鞋子啦、首饰配件等各种琳琅满目的商品。"
+        }
+      ]
+    },
+    "ja_ようがない_159": {
+      "title": "～ようがない (〜you ga nai)",
+      "shortExplanation": "表示即使想做也完全没有任何方法、手段或可能去实现；“无法……”、“想……也没办法……”、“根本没有办法……”。",
+      "longExplanation": "句型“～ようがない”（礼貌体为“～ようがありません”，修饰名词时为“～ようのない”）接在动词连用形（即ます形去掉ます）之后，表示由于缺乏手段、信息、条件或事态已无可挽回，导致无论怎么想做都根本无法实施该动作（“毫无办法……”、“无法实现……”、“无从……”）。语气中常带有无可奈何、束手无策的叹息与绝望感。",
+      "formation": "动词连用形（ます形去掉ます） + ようがない / ようがありません",
+      "examples": [
+        {
+          "translation": "因为不知道他的联系方式，所以想帮他也无从帮起。"
+        },
+        {
+          "translation": "损坏到了这般地步，已经彻底没法修好了。"
+        },
+        {
+          "translation": "由于完全没有真凭实据，根本无法证明他就是凶手。"
+        },
+        {
+          "translation": "突然被人用英语搭话，我一时不知该如何回答，根本无法作答。"
+        }
+      ]
+    },
+    "ja_よりほかない_160": {
+      "title": "～よりほかない (〜yori hoka nai)",
+      "shortExplanation": "表示别无他法，处于无可奈何的境地，只能采取该行动；“只能……”、“唯有……”、“除了……别无他法”。",
+      "longExplanation": "句型“～よりほかない”（也可作“～よりほかはない”、“～よりない”、“～ほかない”）接在动词辞书形之后，表示在当前的现实条件或困境下，不存在其他任何替代手段或选择余地，除了采取该做法之外别无他路（“只有……”、“不得不……”、“只好……”）。常常带有无可奈何、不得不向现实低头的妥协和决断语气。",
+      "formation": "动词辞书形 + よりほかない / よりほかはない",
+      "examples": [
+        {
+          "translation": "考试迫在眉睫，除了埋头苦读别无他法。"
+        },
+        {
+          "translation": "感冒非常严重，只能早点上床睡觉了。"
+        },
+        {
+          "translation": "公共汽车一直不来，只好步行走着去了。"
+        },
+        {
+          "translation": "囊中羞涩没有钱，唯有购买便宜货了。"
+        }
+      ]
+    },
+    "ja_わけがない_161": {
+      "title": "～わけがない (〜wake ga nai)",
+      "shortExplanation": "基于客观事实或情理逻辑进行断定，表示绝无可能；“绝不可能……”、“根本不会……”、“哪有可能会……”。",
+      "longExplanation": "句型“～わけがない”（口语中常作“～わけない”，礼貌体为“～わけがありません”）接在各词类的普通形之后（二类形容词接“な”，名词接“の”），表示说话人依据客观情由、常理或已知前提，断定某事在情理上是绝对不可能发生的（“怎么可能……”、“绝不会……”）。具有极高的确定性和逻辑推断色彩，坚信事实决非如此。",
+      "formation": "动词普通形 + わけがない | 一类形容词（い形容词） + わけがない | 二类形容词（な形容词）词干 + なわけがない | 名词 + のわけがない",
+      "examples": [
+        {
+          "translation": "他受了重伤，怎么可能会赢下这场比赛呢。"
+        },
+        {
+          "translation": "对于一个谎话连篇的人，我怎么可能会去信任他。"
+        },
+        {
+          "translation": "她那么繁忙，绝不可能跑来参加这个派对。"
+        },
+        {
+          "translation": "昨天我一整天都在睡觉，怎么可能会知道那起事件呢。"
+        }
+      ]
+    },
+    "ja_わけだ_162": {
+      "title": "～わけだ (〜wake da)",
+      "shortExplanation": "表示了解原因后恍然大悟，指出某种结果在情理之中是理所当然的；“难怪……”、“怪不得……”、“原来是这么回事”。",
+      "longExplanation": "句型“～わけだ”（礼貌体为“～わけです”）接在各词类的普通形之后（二类形容词和名词接“な”或“である”），表示在得知事实或由头后，对某一结果豁然开朗，确认其符合逻辑与情理（“难怪……”、“怪不得……”、“也就是说……”）。常用于说话人对某件事的前因后果恍然大悟时，感叹“原来如此，怪不得会发展成这样”。",
+      "formation": "动词普通形 + わけだ | 一类形容词（い形容词） + わけだ | 二类形容词（な形容词）词干 + なわけだ | 名词 + なわけだ（或 であるわけだ）",
+      "examples": [
+        {
+          "translation": "她之所以迟到，原来是因为电车晚点了啊。"
+        },
+        {
+          "translation": "课讲得那么生动有趣，怪不得大家都听得那么专心致志。"
+        },
+        {
+          "translation": "他工作如此繁忙，难怪平时几乎连休息的日子都没有。"
+        },
+        {
+          "translation": "这道题目这么难，怪不得我完全摸不着头脑。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_もかまわず_148": {
+      "title": "～もかまわず (〜mo kamawazu)",
+      "shortExplanation": "주변 사람들의 시선이나 시간, 추위, 위험 등을 전혀 신경 쓰거나 개의치 않고 어떤 행동을 함을 나타내며, '~도 아랑곳하지 않고', '~도 개의치 않고', '~에 상관없이'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～もかまわず'(동사 '構う'의 부정형에서 유래)는 명사 또는 동사 사전형(＋の)에 접속하여, 일반적인 경우라면 마땅히 신경 써야 할 주변의 눈치, 시간, 날씨, 위험 등을 전혀 개의치 않고 거리낌 없이 행동에 옮김을 나타냅니다('~도 아랑곳하지 않고', '~도 개의치 않고'). 주로 제3자의 행동을 묘사할 때 쓰이며, 때로는 그 무모함이나 배려 없는 태도에 대한 놀라움이나 비판적인 뉘앙스를 담기도 합니다.",
+      "formation": "명사 + もかまわず | 동사 사전형 + のもかまわず",
+      "examples": [
+        {
+          "translation": "그는 주변 사람들도 아랑곳하지 않고 큰 소리로 이야기했습니다."
+        },
+        {
+          "translation": "그녀는 시간도 개의치 않고 느긋하게 계속 책을 읽었습니다."
+        },
+        {
+          "translation": "그는 추위도 아랑곳하지 않고 밖에서 운동을 했습니다."
+        },
+        {
+          "translation": "그녀는 위험도 마다하지 않고 화재 속으로 뛰어들어 구하러 갔습니다."
+        }
+      ]
+    },
+    "ja_ものか_149": {
+      "title": "～ものか (〜mono ka)",
+      "shortExplanation": "강한 부정이나 단호한 거절, 반박을 나타내며, '절대로 ~할 리가 없다', '내가 ~할 것 같냐', '어찌 ~하겠는가'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ものか'(구어체에서는 '～もんか'로 자주 변형되며, 정중한 형태로는 '～ものですか/～もんですか'를 씀)는 각 품사의 보통형에 접속하여, 화자의 강한 반박이나 절대로 그렇게 하지 않겠다는 단호한 거절 및 부정을 반어적인 어조로 나타냅니다('절대로 ~하지 않겠다', '~할 턱이 있나', '~하겠는가'). 특정 제안이나 상황에 대한 강한 반발심, 불쾌감, 혹은 결코 용납할 수 없다는 결연한 의지를 드러낼 때 씁니다.",
+      "formation": "동사 보통형 + ものか | い형용사 + ものか | な형용사 어간 + なものか | 명사 + なものか",
+      "examples": [
+        {
+          "translation": "그런 일을 내가 하고 싶어 할 리가 있겠어!"
+        },
+        {
+          "translation": "이런 일을 대체 누가 맡겠는가! (아무도 맡지 않는다!)"
+        },
+        {
+          "translation": "누가 그 사람에게 도움을 청하겠어! (절대로 요청하지 않는다!)"
+        },
+        {
+          "translation": "이렇게 추운 날에 밖에서 놀다니, 무리일 수밖에 없지!"
+        }
+      ]
+    },
+    "ja_ものがある_150": {
+      "title": "～ものがある (〜mono ga aru)",
+      "shortExplanation": "대상이나 상황에 깊은 인상이나 감정을 불러일으키는 면이 있음을 나타내며, '~한 데가 있다', '~한 점이 있다', '어딘가 깊이 ~하게 느껴지다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ものがある'는 동사 보통형, い형용사, な형용사(+な) 뒤에 접속하여, 대상이나 상황에 화자의 마음을 강하게 움직이거나 깊이 느끼게 만드는 특별한 성질이나 요소가 분명히 존재함을 나타냅니다('~한 구석이 있다', '~한 면이 있다', '참으로 ~하게 느껴진다'). 주로 감동, 사색, 평가 등 심리적인 반응을 유발하는 어구(心を打たれる, 考えさせられる 등)와 함께 자주 사용됩니다.",
+      "formation": "동사 보통형 + ものがある | い형용사 + ものがある | な형용사 어간 + なものがある",
+      "examples": [
+        {
+          "translation": "그의 연설에는 심금을 울리는 무언가가 있다."
+        },
+        {
+          "translation": "이 영화에는 깊이 생각하게 만드는 무언가가 있다."
+        },
+        {
+          "translation": "그가 하는 말에도 일리가 있는 구석이 있다."
+        },
+        {
+          "translation": "매일 지나치게 바쁜 생활에는 어딘가 숨이 막히는 듯한 면이 있다."
+        }
+      ]
+    },
+    "ja_ものだ_151": {
+      "title": "～ものだ (〜mono da)",
+      "shortExplanation": "사물의 본질, 일반적인 상식, 자연스러운 법칙이나 당연히 지켜야 할 도리를 나타내며, '~하기 마련이다', '~하는 법이다', '당연히 ~해야 한다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ものだ'는 동사 사전형이나 형용사 뒤에 접속하여, 보편적인 진리나 인간 사회의 일반적인 상식, 자연의 섭리, 또는 마땅히 지켜야 할 사회적 도리나 규범을 나타냅니다('원래 ~하는 법이다', '~하기 마련이다', '~하는 것이 도리다'). 또한 사회 통념에 근거하여 상대방에게 훈계하거나 조언하는 뉘앙스로도 쓰입니다. (참고: 동사의 과거형인 'た형' 뒤에 오면 과거에 대한 회상을, 감탄문에서는 깊은 감회를 나타내기도 합니다).",
+      "formation": "동사 사전형 + ものだ | い형용사 + ものだ | な형용사 어간 + なものだ",
+      "examples": [
+        {
+          "translation": "젊을 때에는 실컷 놀기 마련이다."
+        },
+        {
+          "translation": "약속을 했으면 당연히 지켜야 하는 법이다."
+        },
+        {
+          "translation": "손님이 오면 으레 차를 대접하는 법이다."
+        },
+        {
+          "translation": "인생이란 으레 곤경에 당당히 맞서야 하는 법이다."
+        }
+      ]
+    },
+    "ja_ものだから_152": {
+      "title": "～ものだから (〜mono dakara)",
+      "shortExplanation": "이유나 원인을 상대방에게 해명하거나 변명할 때 주로 쓰이며, '~하는 바람에', '~이기 때문에 말이지요', '~라서'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ものだから'(구어체에서는 '～もんだから'로 축약됨)는 각 품사의 보통형(な형용사와 명사는 'な' 접속)에 이어져, 어떤 결과나 행동에 이르게 된 원인이나 불가피한 사정을 설명하거나 변명조로 늘어놓을 때 쓰입니다('~하는 바람에', '~인 까닭에'). 상대방에게 자신의 사정을 이해해 달라는 뉘앙스가 담겨 있어 개인적인 변명이나 완곡한 사유 설명에 자주 활용됩니다.",
+      "formation": "동사 보통형 + ものだから | い형용사 + ものだから | な형용사 어간 + なものだから | 명사 + なものだから",
+      "examples": [
+        {
+          "translation": "시험이 코앞으로 다가온 탓에 매일 공부하고 있습니다."
+        },
+        {
+          "translation": "이 식당은 인기가 워낙 많은 까닭에 예약하지 않으면 자리가 없을지도 모릅니다."
+        },
+        {
+          "translation": "그는 아직 워낙 젊은 탓에 많은 경험을 쌓지 못했다."
+        },
+        {
+          "translation": "오늘은 날씨가 무척 추운 편이니 장갑을 챙겨서 갑시다."
+        }
+      ]
+    },
+    "ja_ものではない_153": {
+      "title": "～ものではない (〜mono dewa nai)",
+      "shortExplanation": "사회적 상식, 도덕 규범, 예의에 비추어 볼 때 어떤 행동을 해서는 안 됨을 훈계하거나 조언하며, '~해서는 안 된다', '~하는 게 아니다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ものではない'(구어에서는 '～もんじゃない', 정중형은 '～ものではありません')는 동사 사전형 뒤에 접속하여, 일반적인 사회 통념, 도덕적 가치관, 예절에 근거하여 어떤 행동을 하는 것이 온당하지 않거나 해서는 안 됨을 훈계하거나 타이르는 표현입니다('~하는 게 아니다', '~해서는 안 된다'). 개인적인 강제가 아니라 인간으로서 마땅히 지켜야 할 도리를 바탕으로 권고하거나 금지할 때 사용합니다.",
+      "formation": "동사 사전형 + ものではない / ものではありません",
+      "examples": [
+        {
+          "translation": "그런 무례한 말을 함부로 입에 담는 게 아닙니다."
+        },
+        {
+          "translation": "공공장소에서 큰 소리로 고함치는 것은 삼가야 마땅합니다."
+        },
+        {
+          "translation": "다른 사람에게 그의 비밀을 발설해서는 안 됩니다."
+        },
+        {
+          "translation": "안전한 곳에서 노는 것은 괜찮지만, 위험한 장소에서 노는 것은 절대 안 될 일이다."
+        }
+      ]
+    },
+    "ja_ものなら_154": {
+      "title": "～ものなら (〜mono nara)",
+      "shortExplanation": "현실적으로 실현하기 어렵거나 불가능한 상황을 가정하며, 간절한 바람이나 희망을 나타낼 때 쓰여 '만약 ~할 수만 있다면', '~할 수 있다면 정말이지'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ものなら'는 주로 동사의 가능형 뒤에 접속하여, 현실적으로는 실현 가능성이 희박하거나 거의 불가능한 일을 가정한 뒤, '만약 그렇게 할 수만 있다면 꼭 그렇게 하고 싶다'라는 화자의 간절한 소망이나 의지, 안타까움을 표현합니다('만약 ~할 수 있다면', '~할 수만 있다면야').",
+      "formation": "동사 가능형 + ものなら",
+      "examples": [
+        {
+          "translation": "돌아갈 수만 있다면 지금 당장이라도 고국으로 돌아가고 싶다."
+        },
+        {
+          "translation": "할 수만 있다면 세계 일주를 꼭 한번 해보고 싶다."
+        },
+        {
+          "translation": "다시 시작할 수만 있다면 어린 시절로 되돌아가고 싶다."
+        },
+        {
+          "translation": "건강을 되찾을 수만 있다면 어떤 약이라도 시험해 보고 싶다."
+        }
+      ]
+    },
+    "ja_ものの_155": {
+      "title": "～ものの、～ (〜mono no、～)",
+      "shortExplanation": "앞의 사실을 인정하면서도 뒤에는 그에 어울리지 않거나 기대와 어긋나는 결과가 이어짐을 나타내며, '~하기는 하지만', '~이기는 하나'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ものの'는 각 품사의 보통형(명사는 であるものの, な형용사는 なものの／であるものの)에 접속하여 역접의 관계를 나타냅니다('~하기는 하지만', '~이기는 하지만 그래도'). 앞 절의 사실을 그대로 인정은 하되, 뒷 절에는 그 사실로부터 마땅히 예상되는 결과와는 달리 아쉽거나 기대에 못 미치는 뜻밖의 상황이 발생했음을 서술할 때 주로 사용됩니다.",
+      "formation": "동사 보통형 + ものの | い형용사 + ものの | な형용사 어간 + なものの (또는 であるものの) | 명사 + であるものの",
+      "examples": [
+        {
+          "translation": "일찍 일어나기는 했지만, 버스 시간을 맞추지 못했습니다."
+        },
+        {
+          "translation": "이 방은 넓기는 하지만 가구가 너무 적습니다."
+        },
+        {
+          "translation": "그녀는 미인이기는 하지만 성격이 좋지 않습니다."
+        },
+        {
+          "translation": "그는 유명한 가수이기는 하지만 콘서트에 관객이 별로 오지 않았습니다."
+        }
+      ]
+    },
+    "ja_もばも_156": {
+      "title": "～も～ば～も～ (〜mo〜ba〜mo〜)",
+      "shortExplanation": "하나의 대상이 지닌 여러 가지 성질, 능력, 행동을 나란히 나열하며, '~도 하고 ~도 하다', '~하기도 하고 ~하기도 하다', '~도 있는가 하면 ~도 있다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～も～ば～も～'는 조사 'も'와 가정형 '～ば'를 조합하여, 동일한 주체나 사물이 동시에 겸비하고 있는 여러 특성, 행동, 상태를 병렬적으로 열거할 때 씁니다('~도 하고 ~도 하다', '~이기도 하고 ~이기도 하다'). 장점을 두루 갖추었음을 칭찬할 때(공부도 잘하고 운동도 잘함, 가격도 저렴하고 맛도 좋음)뿐만 아니라, 상반되는 다양한 상황이 공존함을 나타낼 때(즐거울 때도 있고 힘들 때도 있음)도 널리 쓰입니다.",
+      "formation": "명사 + も + 동사/형용사 가정형(ば형) + 명사 + も + 동사/형용사",
+      "examples": [
+        {
+          "translation": "그는 공부도 잘하는 데다가 운동도 잘합니다."
+        },
+        {
+          "translation": "이 식당은 가격도 저렴하고 맛도 훌륭합니다."
+        },
+        {
+          "translation": "그녀는 피아노도 칠 줄 알고 기타도 잘 칩니다."
+        },
+        {
+          "translation": "인생에는 즐거운 때도 있는가 하면 괴롭고 힘든 때도 있는 법이다."
+        }
+      ]
+    },
+    "ja_も同然だ_157": {
+      "title": "～も同然だ (〜mo douzen da)",
+      "shortExplanation": "형식적으로는 다를지 몰라도 실제 상황이나 본질상 거의 차이가 없음을 나타내며, '~나 다름없다', '~나 마찬가지다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～も同然だ'(한자로는 同然)는 명사나 동사의 보통형(주로 과거형 た나 부정형 ない) 뒤에 접속하여, 비록 엄밀한 명목이나 형식상으로는 완전히 일치하지 않더라도 실제 효과나 실질적인 면에서는 그 상태와 거의 다를 바가 없음을 강조합니다('~나 다름없다', '~와 마찬가지다'). 친밀한 관계를 강조할 때나 불만족스럽고 부정적인 상황을 꼬집어 지적할 때 자주 쓰입니다.",
+      "formation": "명사 + も同然だ | 동사 보통형 + も同然だ",
+      "examples": [
+        {
+          "translation": "그와는 오랜 세월 알고 지낸 사이라서 가족이나 다름없습니다."
+        },
+        {
+          "translation": "매일 지각을 일삼는다면 안 온 것이나 마찬가지다."
+        },
+        {
+          "translation": "그녀와 나는 소꿉친구라서 친자매나 다름없는 사이입니다."
+        },
+        {
+          "translation": "이렇게 적은 월급을 받는다면 공짜로 일해 주는 것이나 다름없다."
+        }
+      ]
+    },
+    "ja_やらやら_158": {
+      "title": "～やら～やら (〜yara〜yara)",
+      "shortExplanation": "여러 가지 사물, 행동, 상태 등을 번잡하게 나열하며, '~며 ~며', '~느니 ~느니', '~하랴 ~하랴'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～やら～やら'는 명사, 동사 보통형, 형용사 뒤에 접속하여, 여러 대상이나 사태를 대표적으로 열거할 때 씁니다('~며 ~며', '~라든가 ~라든가'). 단순히 나열하는 것뿐만 아니라, 할 일이 너무 많아 복잡하고 어수선하거나 정신이 없는 상황, 혹은 여러 감정이 뒤섞여 어찌할 바를 모르는 심정을 생생하게 드러낼 때 자주 쓰입니다.",
+      "formation": "명사 + やら + 명사 + やら | 동사 보통형 + やら | い형용사 + やら | な형용사 어간 + やら",
+      "examples": [
+        {
+          "translation": "숙제하랴 청소하랴, 해야 할 일이 산더미처럼 많다."
+        },
+        {
+          "translation": "야채며 과일이며 온갖 다양한 먹거리를 샀습니다."
+        },
+        {
+          "translation": "그녀는 노래도 잘 부르며 춤도 잘 추며 정말로 다재다능하다."
+        },
+        {
+          "translation": "가게에는 가방이며 신발이며 액세서리 등이 다양하게 진열되어 있다."
+        }
+      ]
+    },
+    "ja_ようがない_159": {
+      "title": "～ようがない (〜you ga nai)",
+      "shortExplanation": "그렇게 하고 싶어도 수단이나 방법이 전혀 없어서 도저히 할 수 없음을 나타내며, '~할 방법이 없다', '~하려야 할 수가 없다', '도저히 ~할 수 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ようがない'(정중형은 '～ようがありません', 명사 수식형은 '～ようのない')는 동사의 ます형 어간 뒤에 접속하여, 어떤 행동을 실행하고 싶어도 수단, 방법, 정보, 상황이 갖추어지지 않아 물리적·현실적으로 도저히 불가능함을 나타냅니다('~할 방법이 없다', '~하려야 할 길이 없다'). 어쩔 도리가 없어 손을 쓸 수 없는 무력감과 체념의 뉘앙스를 강하게 풍깁니다.",
+      "formation": "동사 ます형 어간 + ようがない / ようがありません",
+      "examples": [
+        {
+          "translation": "그의 연락처를 모르기 때문에 도와주려야 도와줄 방법이 없다."
+        },
+        {
+          "translation": "이 정도로 망가져 버렸다면 이제는 고치려야 고칠 방법이 없다."
+        },
+        {
+          "translation": "증거가 전혀 없기 때문에 그가 범인이라고 증명할 방법이 없다."
+        },
+        {
+          "translation": "갑자기 영어로 말을 걸어와서 뭐라고 대답해야 할지 몰라 대답할 수가 없었다."
+        }
+      ]
+    },
+    "ja_よりほかない_160": {
+      "title": "～よりほかない (〜yori hoka nai)",
+      "shortExplanation": "다른 대안이나 선택의 여지가 없어 오직 그 행동을 취할 수밖에 없음을 나타내며, '~할 수밖에 없다', '~하는 것 외에는 다른 방법이 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～よりほかない'(유사 표현으로 '～よりほかはない', '～よりない', '～ほかない' 등)는 동사 사전형 뒤에 접속하여, 주어진 상황에서 취할 수 있는 다른 방책이나 선택지가 전혀 없기 때문에 부득이하게 그 행동을 선택해야만 함을 나타냅니다('~할 수밖에 없다', '~하는 길밖에 없다'). 어쩔 수 없이 내린 결정에 대한 체념이나 불가피성의 뉘앙스를 담고 있습니다.",
+      "formation": "동사 사전형 + よりほかない / よりほかはない",
+      "examples": [
+        {
+          "translation": "시험이 얼마 남지 않았으니 열심히 공부하는 수밖에 없다."
+        },
+        {
+          "translation": "감기가 심해서 일찍 잠자리에 드는 수밖에 없습니다."
+        },
+        {
+          "translation": "버스가 오지 않으니 걸어가는 수밖에 없다."
+        },
+        {
+          "translation": "돈이 없기 때문에 싼 것을 살 수밖에 없다."
+        }
+      ]
+    },
+    "ja_わけがない_161": {
+      "title": "～わけがない (〜wake ga nai)",
+      "shortExplanation": "객관적인 이유나 도리, 상식에 비추어 볼 때 도저히 그럴 리가 없음을 단언하며, '~할 리가 없다', '~할 턱이 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～わけがない'(구어에서는 '～わけない', 정중형은 '～わけがありません')는 각 품사의 보통형(な형용사는 な, 명사는 の 접속) 뒤에 붙어, 화자가 명백한 근거나 전후 사정, 이치에 비추어 볼 때 어떤 상황이 일어나는 것은 논리적으로 절대로 불가능하다고 확신을 갖고 강하게 부정할 때 씁니다('~할 리가 없다', '~할 턱이 없다').",
+      "formation": "동사 보통형 + わけがない | い형용사 + わけがない | な형용사 어간 + なわけがない | 명사 + のわけがない",
+      "examples": [
+        {
+          "translation": "그가 부상을 입었으니 시합에서 이길 수 있을 리가 없다."
+        },
+        {
+          "translation": "거짓말만 일삼는 사람을 믿을 리가 있겠는가."
+        },
+        {
+          "translation": "그녀는 워낙 바쁘기 때문에 이 파티에 올 리가 없다."
+        },
+        {
+          "translation": "어제는 하루 종일 잠만 잤는데, 내가 그 사건을 알고 있을 턱이 없다."
+        }
+      ]
+    },
+    "ja_わけだ_162": {
+      "title": "～わけだ (〜wake da)",
+      "shortExplanation": "사정이나 원인을 알게 된 후 당연한 결과로서 납득하거나 깨달았음을 나타내며, '어쩐지 ~하더라니', '~한 셈이다', '그렇기 때문에 당연히 ~하다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～わけだ'(정중형은 '～わけです')는 각 품사의 보통형(な형용사와 명사는 'な' 또는 'である' 접속) 뒤에 붙어, 전후 사정이나 이유를 파악하고 난 뒤 '과연 그렇기 때문에 그런 결과가 나오는 것이 지극히 당연하다'라며 무릎을 탁 치듯 납득하고 이해했음을 나타냅니다('어쩐지 ~하더라니', '과연 ~한 이유가 있었군', '~한 셈이다').",
+      "formation": "동사 보통형 + わけだ | い형용사 + わけだ | な형용사 어간 + なわけだ | 명사 + なわけだ (또는 であるわけだ)",
+      "examples": [
+        {
+          "translation": "그녀가 늦은 것은 전철이 연착되었기 때문이었군요."
+        },
+        {
+          "translation": "수업이 무척 재미있었으니, 다들 그렇게 열심히 들었던 것이로군요."
+        },
+        {
+          "translation": "그는 너무나 바쁘기 때문에 휴일이 거의 없는 셈입니다."
+        },
+        {
+          "translation": "이 문제가 이렇게 어려우니 전혀 이해하지 못하는 것도 당연하네요."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_もかまわず_148": {
+      "title": "～もかまわず (〜mo kamawazu)",
+      "shortExplanation": "周囲の視線や時間、危険などを全く気にかけず、平気で物事を行うことを表し、「〜も気にしないで」「〜を無視して」という意味を表します。",
+      "longExplanation": "「～もかまわず」は、動詞「構う（気にする、配慮する）」の否定形から派生した文型で、名詞や動詞辞書形（＋の）に接続します。通常であれば配慮すべき周囲の迷惑や視線、時間、天候、危険などを完全に無視して行動する様子を表します（「〜も気にせず」「〜もお構いなしに」）。話し手自身の行動に用いることは少なく、主に第三者の行動に対して意外感や呆れ、批判的な気持ちを込めて客観的に描写する際に用いられます。",
+      "formation": "名詞 ＋ もかまわず | 動詞辞書形 ＋ のもかまわず",
+      "examples": [
+        {
+          "translation": "彼は周りの人の迷惑も気にせず、大声で話しました。"
+        },
+        {
+          "translation": "彼女は時間を気にかけることもなく、ゆっくりと本を読み続けました。"
+        },
+        {
+          "translation": "彼は寒さも物ともせず、外で運動しました。"
+        },
+        {
+          "translation": "彼女は危険を顧みず、火事の中に飛び込んで助けに行きました。"
+        }
+      ]
+    },
+    "ja_ものか_149": {
+      "title": "～ものか (〜mono ka)",
+      "shortExplanation": "強い否定や反論、断固たる拒絶の意志を表し、「絶対に〜ない」「〜するものか（断じてあり得ない）」という意味を表します。",
+      "longExplanation": "「～ものか」（口語形では「〜もんか」、丁寧形では「〜ものですか／〜もんですか」）は、各品詞の普通形に接続し、相手の意見やある状況に対する強い反発、断固とした否定や拒絶の気持ちを反語的に表す文型です。「決して〜しない」「絶対に〜であるはずがない」という話者の強い感情や意志、憤りを表現する際に用いられます。",
+      "formation": "動詞普通形 ＋ ものか | い形容詞 ＋ ものか | な形容詞語幹 ＋ なものか | 名詞 ＋ なものか",
+      "examples": [
+        {
+          "translation": "そんなこと、僕が絶対にやりたいはずがない。"
+        },
+        {
+          "translation": "こんな仕事を、一体誰が引き受けるものか（誰も引き受けない）。"
+        },
+        {
+          "translation": "誰が彼なんかに助けを求めるものか（絶対に求めない）。"
+        },
+        {
+          "translation": "こんなに寒い日に外で遊ぶなんて、無理に決まっているだろう。"
+        }
+      ]
+    },
+    "ja_ものがある_150": {
+      "title": "～ものがある (〜mono ga aru)",
+      "shortExplanation": "ある対象や状況に人の心を強く動かす要素や深い感慨があり、「〜と感じられる要素がある」「実に〜だ」という意味を表します。",
+      "longExplanation": "「～ものがある」は、動詞普通形、い形容詞、な形容詞（＋な）に接続し、その対象に話し手が強く心を動かされたり、深く感銘を受けたりする特徴・性質がはっきりと存在することを表す文型です（「強く〜と感じられる」「〜という深い感慨がある」）。話し手の主観的な強い実感や評価を込めて述べるときに用いられ、「心を打たれる」「考えさせられる」など感情や評価を表す語句とよく呼応します。",
+      "formation": "動詞普通形 ＋ ものがある | い形容詞 ＋ ものがある | な形容詞語幹 ＋ なものがある",
+      "examples": [
+        {
+          "translation": "彼のスピーチには深く心を打たれるものがある。"
+        },
+        {
+          "translation": "この映画には深く考えさせられるものがある。"
+        },
+        {
+          "translation": "彼の言うことにも一理あると感じさせられる点がある。"
+        },
+        {
+          "translation": "毎日忙しすぎる生活には少し息苦しさを感じさせるものがある。"
+        }
+      ]
+    },
+    "ja_ものだ_151": {
+      "title": "～ものだ (〜mono da)",
+      "shortExplanation": "物事の本質や一般的常識、自然な心理法則、または当然守るべき倫理道徳を表し、「本来〜するのが当然だ」「〜するものだ」という意味を表します。",
+      "longExplanation": "「～ものだ」は、動詞の辞書形や形容詞に接続し、世間一般の常識、社会通念、事物の普遍的な真理や性質、あるいは人間として当然守るべき道徳的義務を表す文型です（「本来〜するのが当たり前だ」「普通は〜するものだ」）。一般論として述べられるため、特定の個人への直接的な命令ではなく、社会的な良識に基づいた教訓や一般的な心得を諭す際によく用いられます。（※動詞のた形に接続すると過去の習慣の回想を表し、感嘆表現としても用いられます）。",
+      "formation": "動詞辞書形 ＋ ものだ | い形容詞 ＋ ものだ | な形容詞語幹 ＋ なものだ",
+      "examples": [
+        {
+          "translation": "若い時はたくさん遊ぶのが当然だ。"
+        },
+        {
+          "translation": "約束をしたからには、守るのが当たり前だ。"
+        },
+        {
+          "translation": "お客さんが来たら、お茶を出すのが礼儀というものだ。"
+        },
+        {
+          "translation": "人生とは本来、困難に立ち向かうべきものだ。"
+        }
+      ]
+    },
+    "ja_ものだから_152": {
+      "title": "～ものだから (〜mono dakara)",
+      "shortExplanation": "相手に理由や原因を説明・釈明する際に用いられ、「〜だから」「〜という事情があって」という意味を表します。",
+      "longExplanation": "「～ものだから」（口語では「〜もんだから」）は、普通形（な形容詞・名詞は「〜な」）に接続し、ある行動や結果に至った個人的な事情や理由を相手に説明したり、言い訳・弁解を述べたりする文型です（「〜というわけで」「〜なものですから」）。単に客観的な原因を述べるだけでなく、「実はこういう事情がありまして」と相手の理解や同情を求める柔らかいニュアンスを含みます。",
+      "formation": "動詞普通形 ＋ ものだから | い形容詞 ＋ ものだから | な形容詞語幹 ＋ なものだから | 名詞 ＋ なものだから",
+      "examples": [
+        {
+          "translation": "試験が間近に迫っているものですから、毎日必死に勉強しています。"
+        },
+        {
+          "translation": "このレストランは非常に人気があるものですから、予約しないと席がないかもしれません。"
+        },
+        {
+          "translation": "彼はまだ若いため、十分な経験を積んでいないのです。"
+        },
+        {
+          "translation": "今日はかなり寒いですから、手袋を持って出かけましょう。"
+        }
+      ]
+    },
+    "ja_ものではない_153": {
+      "title": "～ものではない (〜mono dewa nai)",
+      "shortExplanation": "一般的な道徳や常識、礼儀の観点から「〜するべきではない」「〜してはならない」と相手を戒めたり忠告したりする文型です。",
+      "longExplanation": "「～ものではない」（丁寧形は「〜ものではありません」、口語形は「〜もんじゃない」）は、動詞の辞書形に接続し、社会通念や常識、倫理道徳に照らし合わせて、ある行為を行うことが不適切であり、慎むべきであることを諭す文型です（「〜するべきではない」「〜してはならない」）。個人の単なる命令ではなく、人間としての道理や一般的な良識に基づいて相手に忠告・禁止を促す際に用いられます。",
+      "formation": "動詞辞書形 ＋ ものではない／ものではありません",
+      "examples": [
+        {
+          "translation": "そのような無礼なことを口にするべきではありません。"
+        },
+        {
+          "translation": "公共の場所で大声を出すべきではありません。"
+        },
+        {
+          "translation": "他人に彼の秘密を漏らすものではありません。"
+        },
+        {
+          "translation": "安全な場所で遊ぶのは構いませんが、危険な場所で遊ぶべきではありません。"
+        }
+      ]
+    },
+    "ja_ものなら_154": {
+      "title": "～ものなら (〜mono nara)",
+      "shortExplanation": "実際には実現が極めて困難または不可能な事柄を仮定し、「もしできるものなら〜したい」と強い希望や願望を表します。",
+      "longExplanation": "「～ものなら」は、主に動詞の可能形に接続し、現実的には実現する可能性が極めて低い、あるいは不可能なことを仮定した上で、「もしそれが可能であるならば、ぜひ〜したい」という話し手の切実な願望や強い意志を述べる文型です（「もし〜できるものなら」「〜できることなら」）。現実には叶わないことへのもどかしさや強い憧れ、後悔の念などが色濃く含まれます。",
+      "formation": "動詞可能形 ＋ ものなら",
+      "examples": [
+        {
+          "translation": "帰れるものなら、今すぐにでも故郷の国へ帰りたい。"
+        },
+        {
+          "translation": "実現できるものなら、世界一周旅行をしてみたい。"
+        },
+        {
+          "translation": "人生をやり直せるものなら、幼い子供の頃に戻りたい。"
+        },
+        {
+          "translation": "元気になれるものなら、どんな薬であっても試したい。"
+        }
+      ]
+    },
+    "ja_ものの_155": {
+      "title": "～ものの、～ (〜mono no、～)",
+      "shortExplanation": "前件の事実を認めた上で、後件にそれから予想される結果とは異なる不満足な事態や対比が続くことを表し、「〜だが」「〜とはいうものの」という意味を表します。",
+      "longExplanation": "「～ものの」は、各品詞の普通形に接続し、確定した前件の事実を肯定しつつも、後件ではその前提から当然期待・予想される結果に至らなかったり、不相応な状態にとどまったりする逆接の文型です（「〜のは事実だが、実際は〜」「〜とはいうものの」）。話し手の落胆や期待外れ、遺憾のニュアンスを伴うことが多く、文章語や改まった会話でよく用いられます。",
+      "formation": "動詞普通形 ＋ ものの | い形容詞 ＋ ものの | な形容詞語幹 ＋ なものの（または であるものの） | 名詞 ＋ であるものの",
+      "examples": [
+        {
+          "translation": "早起きはしたものの、結局バスには間に合いませんでした。"
+        },
+        {
+          "translation": "この部屋は広々としているものの、家具がほとんど置かれていません。"
+        },
+        {
+          "translation": "彼女は美しいものの、性格に難があります。"
+        },
+        {
+          "translation": "彼は有名な歌手であるものの、コンサートにはあまり観客が集まりませんでした。"
+        }
+      ]
+    },
+    "ja_もばも_156": {
+      "title": "～も～ば～も～ (〜mo〜ba〜mo〜)",
+      "shortExplanation": "同一の事物や人物が持つ複数の性質や行動を並列して挙げ、「〜もあれば〜もある」「〜もするし〜もする」という意味を表します。",
+      "longExplanation": "「～も～ば～も～」は、助詞「も」と仮定形「〜ば」を呼応させて、ある対象が併せ持つ複数の長所や特徴、あるいは共存する多様な状況を並列・列挙して述べる文型です（「〜も〜し、〜も〜だ」「〜もあれば〜もある」）。二つの要素が揃っていることを強調し、多才さや好条件を褒め称える文脈や、人生の様々な局面を述べる際によく用いられます。",
+      "formation": "名詞 ＋ も ＋ 動詞・形容詞仮定形（ば形） ＋ 名詞 ＋ も ＋ 動詞・形容詞",
+      "examples": [
+        {
+          "translation": "彼は勉強もできればスポーツも優秀だ。"
+        },
+        {
+          "translation": "このレストランは値段も安ければ味も申し分ない。"
+        },
+        {
+          "translation": "彼女はピアノも弾けばギターも弾きこなす。"
+        },
+        {
+          "translation": "人生には楽しい時もあれば、辛く苦しい時もある。"
+        }
+      ]
+    },
+    "ja_も同然だ_157": {
+      "title": "～も同然だ (〜mo douzen da)",
+      "shortExplanation": "厳密・形式的には同一でなくても、実質的な状態や結果から見ればほとんど同じであることを表し、「〜とほとんど同じだ」「〜も同様だ」という意味を表します。",
+      "longExplanation": "「～も同然だ」は、名詞や動詞普通形（特に「〜た」「〜ていない」など）に接続し、形式や建前の上では完全に同じとは言えないものの、実際の効果や実質的な実態を考慮すればそれとほとんど差がない状態であることを強調する文型です（「〜も同然だ」「〜と変わらない」）。親しい間柄を強調する肯定的な文脈のほか、不満や呆れを表す批判的な文脈でも頻繁に用いられます。",
+      "formation": "名詞 ＋ も同然だ | 動詞普通形 ＋ も同然だ",
+      "examples": [
+        {
+          "translation": "彼とは付き合いが長いため、家族も同然の間柄です。"
+        },
+        {
+          "translation": "毎日遅刻するようでは、出席していないも同然です。"
+        },
+        {
+          "translation": "彼女と私は幼なじみであり、実の姉妹も同然の仲です。"
+        },
+        {
+          "translation": "これほど少ない給料では、ただ働きをしているのも同然だ。"
+        }
+      ]
+    },
+    "ja_やらやら_158": {
+      "title": "～やら～やら (〜yara〜yara)",
+      "shortExplanation": "さまざまな事柄や動作、状態を非限定的に次々と並べ挙げ、「〜やら〜やら（たくさんあって整理がつかない）」という意味を表します。",
+      "longExplanation": "「～やら～やら」は、名詞、動詞普通形、形容詞に接続し、同類の物事や動作、感情などを代表例として例示・列挙する文型です（「〜や〜など」「〜たり〜たり」）。単なる並列にとどまらず、物が散乱していたり、やるべきことが立て続けに多くて混乱していたり、様々な思いが交錯して整理がつかないといった、煩雑さや慌ただしさのニュアンスを伴います。",
+      "formation": "名詞 ＋ やら ＋ 名詞 ＋ やら | 動詞普通形 ＋ やら | い形容詞 ＋ やら | な形容詞語幹 ＋ やら",
+      "examples": [
+        {
+          "translation": "宿題やら掃除やら、やらなければならないことが山積みだ。"
+        },
+        {
+          "translation": "野菜やら果物やら、いろいろな食材を買い込みました。"
+        },
+        {
+          "translation": "彼女は歌が上手やら踊りもできるやらで、実に多才だ。"
+        },
+        {
+          "translation": "お店にはバッグやら靴やらアクセサリーやらが所狭しと並んでいる。"
+        }
+      ]
+    },
+    "ja_ようがない_159": {
+      "title": "～ようがない (〜you ga nai)",
+      "shortExplanation": "そうしたくても手段や方法が全く存在せず、どうすることもできない状態を表し、「〜する方法がない」「〜しようにもできない」という意味を表します。",
+      "longExplanation": "「～ようがない」（丁寧形は「〜ようがありません」、名詞修飾形は「〜ようのない」）は、動詞のます形語幹に接続し、その行為を行いたい意志があっても、手段や可能性、条件が完全に欠落しているため実行不可能であることを表す文型です（「〜する手段がない」「どうにも〜できない」）。手の施しようがない事態に対する無力感や強い諦めの感情を伴って用いられます。",
+      "formation": "動詞ます形語幹 ＋ ようがない／ようがありません",
+      "examples": [
+        {
+          "translation": "彼の連絡先が分からないため、助けようにも方法がありません。"
+        },
+        {
+          "translation": "ここまで破損してしまうと、もはや修理のしようがありません。"
+        },
+        {
+          "translation": "証拠が皆無であるため、彼が犯人であることを証明しようがありません。"
+        },
+        {
+          "translation": "不意に英語で話しかけられ、何と答えるべきか分からず返答のしようがなかった。"
+        }
+      ]
+    },
+    "ja_よりほかない_160": {
+      "title": "～よりほかない (〜yori hoka nai)",
+      "shortExplanation": "他に選択肢や解決策がなく、その行動をとる以外に道がないことを表し、「〜するしかない」「〜のほかに方法がない」という意味を表します。",
+      "longExplanation": "「～よりほかない」（類義表現に「〜よりほかはない」「〜よりない」「〜ほかない」）は、動詞の辞書形に接続し、置かれた状況において他の手段や選択肢が尽きており、その行動をとる以外に道が残されていないことを表す文型です（「〜するしかない」「ただ〜するだけだ」）。他に手立てがないことに対する消極的な諦めや、やむを得ず受け入れる決断のニュアンスを含みます。",
+      "formation": "動詞辞書形 ＋ よりほかない／よりほかはない",
+      "examples": [
+        {
+          "translation": "試験が間近に迫っている以上、勉強するよりほかにありません。"
+        },
+        {
+          "translation": "風邪の症状がひどいので、早く寝るよりほかない。"
+        },
+        {
+          "translation": "バスが来ない以上、歩いて向かうよりほかにない。"
+        },
+        {
+          "translation": "お金がないのだから、安い品物を買うよりほかない。"
+        }
+      ]
+    },
+    "ja_わけがない_161": {
+      "title": "～わけがない (〜wake ga nai)",
+      "shortExplanation": "道理や客観的事実から考えて、絶対にそうであるはずがないと強く否定し、「〜はずがない」「〜わけはない」という意味を表します。",
+      "longExplanation": "「～わけがない」（口語形は「〜わけない」、丁寧形は「〜わけがありません」）は、普通形（な形容詞は「〜な」、名詞は「〜の」）に接続し、明確な根拠や前後の状況、道理から論理的に判断して、その事態が成立することは絶対にあり得ないと確信を持って全否定する文型です（「〜するはずがない」「〜である道理がない」）。話し手の強い確信と断定の語気を伴います。",
+      "formation": "動詞普通形 ＋ わけがない | い形容詞 ＋ わけがない | な形容詞語幹 ＋ なわけがない | 名詞 ＋ のわけがない",
+      "examples": [
+        {
+          "translation": "彼が負傷している以上、試合に勝てるはずがありません。"
+        },
+        {
+          "translation": "嘘ばかりついている人物を、信用できるわけがありません。"
+        },
+        {
+          "translation": "彼女は多忙を極めているので、このパーティーに来るはずがありません。"
+        },
+        {
+          "translation": "昨日は一日中眠っていたのですから、その事件を知っているわけがありません。"
+        }
+      ]
+    },
+    "ja_わけだ_162": {
+      "title": "～わけだ (〜wake da)",
+      "shortExplanation": "理由や背景を知って納得し、その結果になるのが当然であると理解したことを表し、「なるほど〜のはずだ」「道理で〜なわけだ」という意味を表します。",
+      "longExplanation": "「～わけだ」（丁寧形は「〜わけです」）は、普通形（な形容詞・名詞は「〜な」または「〜である」）に接続し、原因や事情を理解した結果、「なるほど、それならそうなるのも当然だ」と論理的な帰結として深く納得・合点がいったことを表す文型です（「道理で〜なわけだ」「そういう事情なら〜のも納得だ」）。疑問や違和感の理由が判明した際の腑に落ちた気持ちを表すのによく用いられます。",
+      "formation": "動詞普通形 ＋ わけだ | い形容詞 ＋ わけだ | な形容詞語幹 ＋ なわけだ | 名詞 ＋ なわけだ（または であるわけだ）",
+      "examples": [
+        {
+          "translation": "彼女が遅刻したのは、電車が遅延したからだったのですね。"
+        },
+        {
+          "translation": "授業がとても面白かったからこそ、皆が熱心に耳を傾けていたわけですね。"
+        },
+        {
+          "translation": "彼は多忙を極めているのですから、休日がほとんどないのも納得がいきます。"
+        },
+        {
+          "translation": "この問題がこれほど難しいのですから、全く理解できないのも道理です。"
+        }
+      ]
+    }
+  }
+}
+
+output_path = "/Users/huyphan/Downloads/web-app/lingua-tube/scripts/grammar-chunks/output/ja_chunk_37.json"
+input_path = "/Users/huyphan/Downloads/web-app/lingua-tube/scripts/grammar-chunks/input/ja/ja_chunk_37.json"
+
+with open(input_path, 'r', encoding='utf-8') as f:
+    input_items = json.load(f)
+
+input_ids = [item['id'] for item in input_items]
+print(f"Total input patterns: {len(input_ids)}")
+
+expected_langs = ['vi', 'zh', 'ko', 'ja']
+for lang in expected_langs:
+    if lang not in data:
+        raise ValueError(f"Missing language {lang}")
+    for pid in input_ids:
+        if pid not in data[lang]:
+            raise ValueError(f"Missing pattern {pid} in language {lang}")
+        obj = data[lang][pid]
+        for field in ['title', 'shortExplanation', 'longExplanation', 'formation', 'examples']:
+            if field not in obj or not obj[field]:
+                raise ValueError(f"Empty or missing field '{field}' in {lang}.{pid}")
+        if len(obj['examples']) != 4:
+            raise ValueError(f"Expected 4 examples in {lang}.{pid}, got {len(obj['examples'])}")
+        for i, ex in enumerate(obj['examples']):
+            if 'translation' not in ex or not ex['translation'].strip():
+                raise ValueError(f"Missing translation in {lang}.{pid}.examples[{i}]")
+
+# Check for accidental English words in explanations or formations
+english_words_pattern = re.compile(r'\b(verb|noun|adjective|plain|casual|dictionary|express|indicates|shows|means|ought|should|must|not|have|choice|way|possible|because|since|due|although|contrast|both|and|either|or|things|like|cannot|culprit|evidence)\b', re.IGNORECASE)
+
+warning_count = 0
+for lang in expected_langs:
+    for pid in input_ids:
+        obj = data[lang][pid]
+        for field in ['shortExplanation', 'longExplanation', 'formation']:
+            text = obj[field]
+            matches = english_words_pattern.findall(text)
+            if matches:
+                print(f"WARNING: English words found in {lang}.{pid}.{field}: {matches}")
+                warning_count += 1
+
+if warning_count == 0:
+    print("Zero English words found! Verification passed perfectly.")
+
+with open(output_path, 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print(f"Successfully wrote {output_path}")

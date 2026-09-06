@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_V来V去_457",
+    "language": "zh",
+    "pattern": "V 来 V 去",
+    "title": "V 来 V 去 (V around)",
+    "shortExplanation": "V around",
+    "longExplanation": "V around. Pinyin: V lái V qù",
+    "formation": "V lái V qù",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "小狗追着自己的尾巴， 在草地上跑来跑去。",
+        "romanization": "xiǎogǒu zhuī zhe zìjǐ de wěiba， zài cǎo dìshang pǎo lái pǎo qù。",
+        "translation": "The dog chased his tail and ran around on the grass."
+      }
+    ]
+  },
+  {
+    "id": "zh_要不不然要不然_458",
+    "language": "zh",
+    "pattern": "要不/不然/要不然",
+    "title": "要不/不然/要不然 (otherwise)",
+    "shortExplanation": "otherwise",
+    "longExplanation": "otherwise. Pinyin: yàobù/ bùrán/ yàobùrán",
+    "formation": "yàobù/ bùrán/ yàobùrán",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "还好碰见你了，要不/不然/要不然我今天肯定要迟到了。",
+        "romanization": "háihǎo pèngjiàn nǐ le， yàobù/ bùrán/ yàobùrán wǒ jīntiān kěndìng yào chí dàoliǎo。",
+        "translation": "Fortunately, I ran into you, otherwise I must have been late today."
+      }
+    ]
+  },
+  {
+    "id": "zh_要不不然要不然_459",
+    "language": "zh",
+    "pattern": "要不/不然/要不然",
+    "title": "要不/不然/要不然 (why not try)",
+    "shortExplanation": "why not try",
+    "longExplanation": "why not try. Pinyin: yàobù/ bùrán/ yàobùrán",
+    "formation": "yàobù/ bùrán/ yàobùrán",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "今天太晚了，要不/不然/要不然你明天再走吧。",
+        "romanization": "jīntiān tài wǎn le， yàobù/ bùrán/ yàobùrán nǐ míngtiān zài zǒu ba。",
+        "translation": "It’s too late today, why don’t (you) leave tomorrow instead?"
+      }
+    ]
+  },
+  {
+    "id": "zh_彼此V_460",
+    "language": "zh",
+    "pattern": "彼此 V",
+    "title": "彼此 V (each other)",
+    "shortExplanation": "each other",
+    "longExplanation": "each other. Pinyin: bǐcǐ V",
+    "formation": "bǐcǐ V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "好朋友应该彼此帮助。",
+        "romanization": "hǎopéngyou yīnggāi bǐcǐ bāngzhù。",
+        "translation": "Good friends should help each other."
+      }
+    ]
+  },
+  {
+    "id": "zh_彼此_461",
+    "language": "zh",
+    "pattern": "彼此",
+    "title": "彼此 ((pronoun for 2 people))",
+    "shortExplanation": "(pronoun for 2 people)",
+    "longExplanation": "(pronoun for 2 people). Pinyin: bǐcǐ",
+    "formation": "bǐcǐ",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我们彼此的爱好相同。",
+        "romanization": "wǒmen bǐcǐ de àihào xiāngtóng。",
+        "translation": "We (us two) have the same hobbies."
+      }
+    ]
+  },
+  {
+    "id": "zh_彼此彼此_462",
+    "language": "zh",
+    "pattern": "彼此彼此",
+    "title": "彼此彼此 (about the same)",
+    "shortExplanation": "about the same",
+    "longExplanation": "about the same. Pinyin: bǐcǐbǐcǐ",
+    "formation": "bǐcǐbǐcǐ",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "咱们俩彼此彼此， 我画得比你好不了多少。",
+        "romanization": "zánmen liǎ bǐcǐbǐcǐ， wǒ huà dé bǐ nǐhǎo bùliǎo duōshao。",
+        "translation": "We (the two of us) are pretty much the same, I can't paint much better than you."
+      }
+    ]
+  },
+  {
+    "id": "zh_算_463",
+    "language": "zh",
+    "pattern": "算",
+    "title": "算 (counts as)",
+    "shortExplanation": "counts as",
+    "longExplanation": "counts as. Pinyin: suàn",
+    "formation": "suàn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这钱就算我借给你的，将来你有了的时候再还我。",
+        "romanization": "zhè qián jiùsuàn wǒ jiègěi nǐ de， jiānglái nǐ yǒule de shíhou zài hái wǒ。",
+        "translation": "Let’s just say that the money is loaned to you, you can pay me back when you have [more money]."
+      }
+    ]
+  },
+  {
+    "id": "zh_V了掉算了_464",
+    "language": "zh",
+    "pattern": "V 了/掉 算了",
+    "title": "V 了/掉 算了 (might as well V)",
+    "shortExplanation": "might as well V",
+    "longExplanation": "might as well V. Pinyin: V le/ diào suànle",
+    "formation": "V le/ diào suànle",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "不就是一个空瓶子吗？扔掉算了。",
+        "romanization": "bù jiùshì yī gè kōng píngzi ma？ rēngdiào suànle。",
+        "translation": "Isn't it just an empty bottle? Might as well throw it away."
+      }
+    ]
+  },
+  {
+    "id": "zh_作为N_465",
+    "language": "zh",
+    "pattern": "作为 N",
+    "title": "作为 N (as N)",
+    "shortExplanation": "as N",
+    "longExplanation": "as N. Pinyin: zuòwéi N",
+    "formation": "zuòwéi N",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "作为大作家、大学问家，鲁迅对吃很讲究。",
+        "romanization": "zuòwéi dà zuòjiā、 dàxué wèn jiā， Lǔ Xùn duì chī hěn jiǎngjiu。",
+        "translation": "As a great writer and a great intellectual, Lu Xun is very particular about eating."
+      }
+    ]
+  },
+  {
+    "id": "zh_曾经_466",
+    "language": "zh",
+    "pattern": "曾经",
+    "title": "曾经 (once)",
+    "shortExplanation": "once",
+    "longExplanation": "once. Pinyin: céngjīng",
+    "formation": "céngjīng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "孔子曾经带着学生周游各国14年，传播他的思想。",
+        "romanization": "Kǒngzǐ céngjīng dài zhe xuésheng zhōuyóu gèguó14 nián， chuánbō tā de sīxiǎng。",
+        "translation": "Confucius once took students around the country for 14 years, spreading his thoughts."
+      }
+    ]
+  },
+  {
+    "id": "zh_毕竟_467",
+    "language": "zh",
+    "pattern": "毕竟",
+    "title": "毕竟 (after all)",
+    "shortExplanation": "after all",
+    "longExplanation": "after all. Pinyin: bìjìng",
+    "formation": "bìjìng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "虽然我们遇到了很多困难，但毕竟完成了任务。",
+        "romanization": "suīrán wǒmen yù dàoliǎo hěn duō kùnnan， dàn bìjìng wánchéng le rènwu。",
+        "translation": "Although we have encountered a lot of difficulties, we have completed the task after all."
+      }
+    ]
+  },
+  {
+    "id": "zh_逐渐_468",
+    "language": "zh",
+    "pattern": "逐渐",
+    "title": "逐渐 (gradually)",
+    "shortExplanation": "gradually",
+    "longExplanation": "gradually. Pinyin: zhújiàn",
+    "formation": "zhújiàn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "食物越来越少，老人不得不逐渐限制猴子的食量。",
+        "romanization": "shíwù yuèláiyuè shǎo， lǎorén bùdébù zhújiàn xiànzhì hóuzi de shíliàng。",
+        "translation": "With less and less food, the elderly have to gradually limit the amount of food they eat."
+      }
+    ]
+  },
+  {
+    "id": "zh_或许_469",
+    "language": "zh",
+    "pattern": "或许",
+    "title": "或许 (maybe)",
+    "shortExplanation": "maybe",
+    "longExplanation": "maybe. Pinyin: huòxǔ",
+    "formation": "huòxǔ",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "虽然以前她不支持你，但或许这次会有变化。",
+        "romanization": "suīrán yǐqián tā bù zhīchí nǐ， dàn huòxǔ zhè cì huì yǒu biànhuà。",
+        "translation": "Although she did not support you before, maybe this time things will change."
+      }
+    ]
+  },
+  {
+    "id": "zh_V过来_470",
+    "language": "zh",
+    "pattern": "V 过来",
+    "title": "V 过来 (V and recover)",
+    "shortExplanation": "V and recover",
+    "longExplanation": "V and recover. Pinyin: V guòlái",
+    "formation": "V guòlái",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "过了半天，脑子才清醒过来。",
+        "romanization": "guò le bàntiān， nǎozi cái qīngxǐng guòlái。",
+        "translation": "My head cleared up only after a long time,"
+      }
+    ]
+  },
+  {
+    "id": "zh_V得过来V不过来_471",
+    "language": "zh",
+    "pattern": "V 得过来 / V 不过来",
+    "title": "V 得过来 / V 不过来 (can finish V / cannot finish V)",
+    "shortExplanation": "can finish V / cannot finish V",
+    "longExplanation": "can finish V / cannot finish V. Pinyin: V dé guòlái / V bùguò lái",
+    "formation": "V dé guòlái / V bùguò lái",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "天上的星星那么多，谁数得过来呀？",
+        "romanization": "tiānshàng de xīngxing nàme duō， shéi shǔ dé guòlái ya？",
+        "translation": "There are so many stars in the sky, who can count them (out)?"
+      }
+    ]
+  }
+]

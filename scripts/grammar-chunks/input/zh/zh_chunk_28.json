@@ -1,0 +1,251 @@
+[
+  {
+    "id": "zh_N似的_441",
+    "language": "zh",
+    "pattern": "N 似的",
+    "title": "N 似的 (like N)",
+    "shortExplanation": "like N",
+    "longExplanation": "like N. Pinyin: N shìde",
+    "formation": "N shìde",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我不敢相信这是真的，好像做梦似的。",
+        "romanization": "wǒ bù gǎn xiāngxìn zhè shì zhēn de， hǎoxiàng zuòmèng shìde。",
+        "translation": "I can't believe this is true, it seems like a dream."
+      }
+    ]
+  },
+  {
+    "id": "zh_A得什么似的_442",
+    "language": "zh",
+    "pattern": "A 得什么似的",
+    "title": "A 得什么似的 (so A (to an extreme))",
+    "shortExplanation": "so A (to an extreme)",
+    "longExplanation": "so A (to an extreme). Pinyin: A dé shénme shìde",
+    "formation": "A dé shénme shìde",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他背着重重的电脑包挤地铁，下班回到家累得什么似的。",
+        "romanization": "tā bèi zhuózhòng zhòng de diànnǎo bāo jǐ dìtiě， xiàbān huídào jiā lèi dé shénme shìde。",
+        "translation": "He squeezed into the [crowded] subway with [his] heavy computer bag, and he was so tired when he got home from work."
+      }
+    ]
+  },
+  {
+    "id": "zh_纷纷V_443",
+    "language": "zh",
+    "pattern": "纷纷 V",
+    "title": "纷纷 V (V in quick succession)",
+    "shortExplanation": "V in quick succession",
+    "longExplanation": "V in quick succession. Pinyin: fēnfēn V",
+    "formation": "fēnfēn V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "要下雨了， 路上的人纷纷往家里跑。",
+        "romanization": "yào xiàyǔ le， lùshang de rén fēnfēn wǎng jiālǐ pǎo。",
+        "translation": "It’s going to rain, and people on the road are running home (one after another in quick succession)."
+      }
+    ]
+  },
+  {
+    "id": "zh_瞎_444",
+    "language": "zh",
+    "pattern": "瞎",
+    "title": "瞎 (blind)",
+    "shortExplanation": "blind",
+    "longExplanation": "blind. Pinyin: xiā",
+    "formation": "xiā",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "一天， 他让士兵们去找一头大象和一些出生时眼晴就瞎了的人回来。",
+        "romanization": "yī tiān， tā ràng shìbīng men qù zhǎo yītóu dàxiàng hé yīxiē chūshēng shí yǎn qíng jiù xiā le de rén huílai。",
+        "translation": "One day, he asked the soldiers to find an elephant and some people who were blind when they were born."
+      }
+    ]
+  },
+  {
+    "id": "zh_瞎_445",
+    "language": "zh",
+    "pattern": "瞎",
+    "title": "瞎 (thoughtlessly)",
+    "shortExplanation": "thoughtlessly",
+    "longExplanation": "thoughtlessly. Pinyin: xiā",
+    "formation": "xiā",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他会想办法的，你就别替他瞎担心了。",
+        "romanization": "tā huì xiǎng bànfǎ de， nǐ jiù bié tì tā xiā dānxīn le。",
+        "translation": "He will find a way, you don't (thoughtlessly) worry about him."
+      }
+    ]
+  },
+  {
+    "id": "zh_分别_446",
+    "language": "zh",
+    "pattern": "分别",
+    "title": "分别 (to separate)",
+    "shortExplanation": "to separate",
+    "longExplanation": "to separate. Pinyin: fēnbié",
+    "formation": "fēnbié",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "分别是暂时的，我们以后一定会再见。",
+        "romanization": "fēnbié shì zànshí de， wǒmen yǐhòu yīdìng huì zàijiàn。",
+        "translation": "The separation is temporary. We will definitely see each other again in the future."
+      }
+    ]
+  },
+  {
+    "id": "zh_分别_447",
+    "language": "zh",
+    "pattern": "分别",
+    "title": "分别 (difference)",
+    "shortExplanation": "difference",
+    "longExplanation": "difference. Pinyin: fēnbié",
+    "formation": "fēnbié",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我不知道这两种做法有什么分别。",
+        "romanization": "wǒ bù zhīdào zhè liǎng zhǒng zuòfǎ yǒu shénme fēnbié。",
+        "translation": "I don't know the difference between the two approaches."
+      }
+    ]
+  },
+  {
+    "id": "zh_分别_448",
+    "language": "zh",
+    "pattern": "分别",
+    "title": "分别 (separately)",
+    "shortExplanation": "separately",
+    "longExplanation": "separately. Pinyin: fēnbié",
+    "formation": "fēnbié",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我分别找两个人打听了这件事，他们的说法都是一样的。",
+        "romanization": "wǒ fēnbié zhǎo liǎng gèrén dǎting le zhè jiàn shì， tāmen de shuōfa dōu shì yīyàng de。",
+        "translation": "I asked two people (separately) to ask about this, and they all said the same thing."
+      }
+    ]
+  },
+  {
+    "id": "zh_分别_449",
+    "language": "zh",
+    "pattern": "分别",
+    "title": "分别 (respectively)",
+    "shortExplanation": "respectively",
+    "longExplanation": "respectively. Pinyin: fēnbié",
+    "formation": "fēnbié",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "砂岩和砾岩分别是砂和砾石固结的产物。",
+        "romanization": "shāyán hé lìyán fēnbié shì shā hé lìshí gù jié de chǎnwù。",
+        "translation": "Sandstone and conglomerate are the consolidated equivalent of sand and gravel, respectively."
+      }
+    ]
+  },
+  {
+    "id": "zh_根_450",
+    "language": "zh",
+    "pattern": "根",
+    "title": "根 ((measure word))",
+    "shortExplanation": "(measure word)",
+    "longExplanation": "(measure word). Pinyin: gēn",
+    "formation": "gēn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "摸到尾巴的盲人说大象像一根绳子。",
+        "romanization": "mō dào wěiba de mángrén shuō dàxiàng xiàng yī gēn shéngzi。",
+        "translation": "The blind man who touched the tail said that the elephant is like a rope."
+      }
+    ]
+  },
+  {
+    "id": "zh_根_451",
+    "language": "zh",
+    "pattern": "根",
+    "title": "根 (root)",
+    "shortExplanation": "root",
+    "longExplanation": "root. Pinyin: gēn",
+    "formation": "gēn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这棵树的根又粗又长。",
+        "romanization": "zhè kē shù de gēn yòu cū yòu cháng。",
+        "translation": "The root of this tree is thick and long."
+      }
+    ]
+  },
+  {
+    "id": "zh_便_452",
+    "language": "zh",
+    "pattern": "便",
+    "title": "便 (then)",
+    "shortExplanation": "then",
+    "longExplanation": "then. Pinyin: biàn",
+    "formation": "biàn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "楼上新买了一架钢琴，我们家便多了一些不安静。",
+        "romanization": "lóushàng xīn mǎi le yī jià gāngqín， wǒmen jiā biàn duō le yīxiē bù ānjìng。",
+        "translation": "A new piano was bought upstairs, and then there were more noise (lit. unquiet) [heard] in our home."
+      }
+    ]
+  },
+  {
+    "id": "zh_倒反倒_453",
+    "language": "zh",
+    "pattern": "倒/反倒",
+    "title": "倒/反倒 (contrary to logic)",
+    "shortExplanation": "contrary to logic",
+    "longExplanation": "contrary to logic. Pinyin: dǎo/ fǎndào",
+    "formation": "dǎo/ fǎndào",
+    "level": "HSK 5",
+    "examples": []
+  },
+  {
+    "id": "zh_倒_455",
+    "language": "zh",
+    "pattern": "倒",
+    "title": "倒 (despite all)",
+    "shortExplanation": "despite all",
+    "longExplanation": "despite all. Pinyin: dǎo",
+    "formation": "dǎo",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "质量倒是挺好，就是价格太贵了。",
+        "romanization": "zhìliàng dàoshi tǐnghǎo， jiùshì jiàgé tài guì le。",
+        "translation": "(Despite all) the quality is (actually) pretty good, it’s just that the price is too expensive."
+      }
+    ]
+  },
+  {
+    "id": "zh_倒_456",
+    "language": "zh",
+    "pattern": "倒",
+    "title": "倒 (for crying out loud)",
+    "shortExplanation": "for crying out loud",
+    "longExplanation": "for crying out loud. Pinyin: dǎo",
+    "formation": "dǎo",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "你倒是说说看，这件事你不负责谁负责？",
+        "romanization": "nǐ dàoshi shuōshuo kàn， zhè jiàn shì nǐ bù fùzé shéi fùzé？",
+        "translation": "Now you tell us, for crying out loud, if you’re not responsible for this, then who is?"
+      }
+    ]
+  }
+]

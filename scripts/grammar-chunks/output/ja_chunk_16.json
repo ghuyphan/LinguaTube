@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_たりたり_89": {
+      "title": "～たり～たり (〜tari 〜tari)",
+      "shortExplanation": "Dùng để liệt kê một số hành động, trạng thái tiêu biểu hoặc diễn tả sự thay đổi luân phiên; 'lúc thì... lúc thì...', 'làm những việc như... và...'.",
+      "longExplanation": "Mẫu ngữ pháp '～たり～たり' dùng để liệt kê hai hoặc nhiều hành động, trạng thái mang tính đại diện mà không theo thứ tự thời gian hay mức độ quan trọng. Cấu trúc này hàm ý ngoài những hành động, trạng thái được kể ra thì còn có những điều khác nữa. Cuối câu thường kết thúc bằng động từ 'する' (hoặc 'です' khi liệt kê tính từ/danh từ). Ngoài ra, khi đi với tính từ hoặc trạng thái đối lập, mẫu này còn diễn tả sự thay đổi luân phiên ('lúc thì... lúc thì...').",
+      "formation": "Động từ thể た + り + Động từ thể た + り + する / Tính từ đuôi い (bỏ い) + かったり / Tính từ đuôi な + だったり / Danh từ + だったり",
+      "examples": [
+        {
+          "translation": "Cuối tuần tôi thường làm những việc như xem phim, đọc sách."
+        },
+        {
+          "translation": "Cô ấy có những điểm như nấu ăn giỏi, hát cũng hay."
+        },
+        {
+          "translation": "Ở khu nghỉ dưỡng này, bạn có thể làm những hoạt động như trượt tuyết, tắm suối nước nóng."
+        },
+        {
+          "translation": "Thời tiết ở vùng này lúc thì nóng, lúc thì lạnh."
+        }
+      ]
+    },
+    "ja_だろう_90": {
+      "title": "～だろう (〜darou)",
+      "shortExplanation": "Diễn tả sự suy đoán, phỏng đoán không chắc chắn ở thể thông thường; 'có lẽ', 'chắc là'.",
+      "longExplanation": "Mẫu ngữ pháp '～だろう' là thể thông thường (thể ngắn) của '～でしょう', dùng để diễn đạt sự suy đoán, phỏng đoán của người nói về một sự việc, hiện tượng hoặc trạng thái nào đó dựa trên suy nghĩ chủ quan hoặc căn cứ nhất định. Thường đi kèm với các phó từ chỉ xác suất như 'たぶん' (có lẽ), 'きっと' (chắc chắn). Ngoài ra, khi lên giọng ở cuối câu, nó còn dùng để hỏi ý kiến hoặc xác nhận với người nghe trong giao tiếp thân mật.",
+      "formation": "Động từ thể thông thường + だろう / Tính từ đuôi い + だろう / Tính từ đuôi な (bỏ だ) + だろう / Danh từ + だろう",
+      "examples": [
+        {
+          "translation": "Ngày mai có lẽ trời sẽ nắng."
+        },
+        {
+          "translation": "Anh ấy chắc là đang bận."
+        },
+        {
+          "translation": "Cuốn sách này chắc là thú vị lắm."
+        },
+        {
+          "translation": "Cô ấy có lẽ là giáo viên."
+        }
+      ]
+    },
+    "ja_っていう_91": {
+      "title": "～っていう (〜tte iu)",
+      "shortExplanation": "Cách nói khẩu ngữ, thân mật của '～という', dùng để gọi tên, định nghĩa hoặc trích dẫn; 'gọi là...', 'nghe nói là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～っていう' là hình thức nói tắt, thân mật trong văn nói hàng ngày của '～という'. Nó được sử dụng để gọi tên một đối tượng, định nghĩa một khái niệm ('cái gọi là...'), hoặc đưa ra chủ đề của câu chuyện. Ngoài ra, nó cũng dùng để truyền đạt lại thông tin nghe được hoặc nhấn mạnh một chủ đề nói đến.",
+      "formation": "Danh từ / Động từ / Tính từ (thể thông thường) + っていう + Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi rất thích món ăn gọi là pizza."
+        },
+        {
+          "translation": "Người đàn ông ấy thật là thú vị."
+        },
+        {
+          "translation": "Bộ phim này thực sự rất cảm động đấy."
+        },
+        {
+          "translation": "Cửa hàng mà cô ấy đang nhắc tới không phải ở đây."
+        }
+      ]
+    },
+    "ja_で_92": {
+      "title": "～で (〜de)",
+      "shortExplanation": "Trợ từ chỉ phương tiện, cách thức, công cụ hoặc địa điểm diễn ra hành động; 'bằng...', 'ở/tại...'.",
+      "longExplanation": "Trợ từ '～で' là một trong những trợ từ cơ bản nhất trong tiếng Nhật, mang nhiều ý nghĩa tùy thuộc vào ngữ cảnh:\n1. Chỉ phương tiện đi lại, công cụ, vật liệu hoặc ngôn ngữ sử dụng để thực hiện hành động ('bằng', 'bằng cách').\n2. Chỉ địa điểm, nơi chốn diễn ra một hành động cụ thể ('ở', 'tại').\nTrợ từ này luôn đứng ngay sau danh từ.",
+      "formation": "Danh từ (phương tiện / công cụ / địa điểm) + で",
+      "examples": [
+        {
+          "translation": "Tôi đến trường bằng xe đạp."
+        },
+        {
+          "translation": "Anh ấy đã viết thư bằng tiếng Nhật."
+        },
+        {
+          "translation": "Tôi đã vẽ tranh bằng bút chì."
+        },
+        {
+          "translation": "Tôi đã ăn trưa ở nhà hàng."
+        }
+      ]
+    },
+    "ja_でしょう_93": {
+      "title": "～でしょう (〜deshou)",
+      "shortExplanation": "Diễn tả sự suy đoán, phỏng đoán lịch sự của người nói; 'có lẽ', 'chắc là'.",
+      "longExplanation": "Mẫu ngữ pháp '～でしょう' là hình thức lịch sự dùng để biểu thị sự suy đoán, phỏng đoán về một sự việc, hiện tượng hoặc trạng thái chưa rõ ràng, thường xuất hiện trong dự báo thời tiết hoặc giao tiếp lịch sự. Thường đi cùng các phó từ như 'たぶん' (có lẽ). Khi lên giọng ở cuối câu, cấu trúc này dùng để hỏi ý kiến hoặc tìm kiếm sự đồng tình từ đối phương một cách nhã nhặn ('...phải không?').",
+      "formation": "Động từ thể thông thường + でしょう / Tính từ đuôi い + でしょう / Tính từ đuôi な (bỏ だ) + でしょう / Danh từ + でしょう",
+      "examples": [
+        {
+          "translation": "Ngày mai có lẽ trời sẽ nắng."
+        },
+        {
+          "translation": "Anh ấy chắc là vẫn khỏe mạnh."
+        },
+        {
+          "translation": "Cuốn sách này chắc là thú vị lắm."
+        },
+        {
+          "translation": "Cô ấy có lẽ là bác sĩ."
+        }
+      ]
+    },
+    "ja_てはいけない_94": {
+      "title": "～てはいけない (〜te wa ikenai)",
+      "shortExplanation": "Biểu thị sự cấm đoán, không được phép làm một hành động nào đó; 'không được', 'không được phép'.",
+      "longExplanation": "Mẫu ngữ pháp '～てはいけない' (hoặc dạng lịch sự '～てはいけません') dùng để diễn đạt sự cấm đoán rõ ràng, nghiêm khắc từ phía người nói, quy tắc chung, luật pháp hoặc nội quy nơi công cộng. Dịch nghĩa là 'không được...', 'không được phép...'. Trong văn nói thân mật hàng ngày, cấu trúc này thường được rút gọn thành '～ちゃいけない' hoặc '～じゃいけない'.",
+      "formation": "Động từ thể て + はいけない / はいけません",
+      "examples": [
+        {
+          "translation": "Không được hút thuốc trong công viên."
+        },
+        {
+          "translation": "Không được chụp ảnh ở đây."
+        },
+        {
+          "translation": "Không được nói lớn tiếng trong thư viện."
+        },
+        {
+          "translation": "Không được nhường ghế cho người đang đứng trên xe buýt."
+        }
+      ]
+    },
+    "ja_てもいい_95": {
+      "title": "～てもいい (〜temo ii)",
+      "shortExplanation": "Biểu thị sự cho phép hoặc xin phép làm một việc gì đó; '...cũng được', 'có thể...'.",
+      "longExplanation": "Mẫu ngữ pháp '～てもいい' (dạng lịch sự là '～てもいいです') dùng để cho phép người khác làm một việc gì đó ('làm... cũng được/được phép làm...'). Khi thêm 'か' ở cuối câu thành dạng câu hỏi ('～てもいいですか'), cấu trúc này dùng để xin phép đối phương một cách lịch sự ('tôi có thể... được không?'). Trong trường hợp động từ có dạng て kết thúc bằng で, ta kết hợp thành '～でもいい'.",
+      "formation": "Động từ thể て + もいい / もいいです / もいいですか",
+      "examples": [
+        {
+          "translation": "Tôi có thể chụp ảnh ở đây được không?"
+        },
+        {
+          "translation": "Tôi ăn quả táo này có được không?"
+        },
+        {
+          "translation": "Sau khi thi xong, các bạn có thể về nhà."
+        },
+        {
+          "translation": "Tối nay đi chơi với bạn bè cũng được."
+        }
+      ]
+    },
+    "ja_てもでも_96": {
+      "title": "～ても/でも (〜te mo/demo)",
+      "shortExplanation": "Diễn tả điều kiện nghịch giả định; 'cho dù... cũng...', 'dù... đi chăng nữa'.",
+      "longExplanation": "Mẫu ngữ pháp '～ても/でも' dùng để thiết lập mối quan hệ điều kiện nghịch, biểu thị rằng cho dù giả định ở vế trước có xảy ra thì hành động, trạng thái hoặc kết quả ở vế sau vẫn diễn ra bình thường mà không bị ảnh hưởng. Tùy thuộc vào từ loại kết hợp mà có các biến thể: động từ thể て + も, tính từ đuôi い đổi thành '～くても', tính từ đuôi な và danh từ đi với '～でも'.",
+      "formation": "Động từ thể て + も / Tính từ đuôi い (bỏ い) + くても / Tính từ đuôi な + でも / Danh từ + でも",
+      "examples": [
+        {
+          "translation": "Dù trời có mưa tôi vẫn sẽ đi học."
+        },
+        {
+          "translation": "Dù căn phòng này có bẩn, tôi cũng không có ý định dọn dẹp."
+        },
+        {
+          "translation": "Dù bộ phim đó không hay, tôi vẫn sẽ xem."
+        },
+        {
+          "translation": "Dù cô ấy có bị ốm, cô ấy vẫn làm việc."
+        }
+      ]
+    },
+    "ja_といい_97": {
+      "title": "～といい (〜to ii)",
+      "shortExplanation": "Diễn tả mong ước, nguyện vọng hoặc lời chúc; 'mong là...', 'ước gì...', 'giá mà... thì tốt'.",
+      "longExplanation": "Mẫu ngữ pháp '～といい' dùng để bày tỏ mong muốn, hy vọng một điều gì đó tốt đẹp sẽ xảy ra trong tương lai đối với bản thân hoặc người khác. Thường đi kèm các trợ từ tình thái cuối câu như 'ね', 'な' ('～といいね', '～といいな') để thể hiện cảm xúc nhẹ nhàng, hoặc '～といいですね' trong giao tiếp lịch sự để chúc mừng hoặc hy vọng điều tốt lành cho đối phương.",
+      "formation": "Động từ thể thông thường + といい / Tính từ đuôi い + といい / Tính từ đuôi な + だといい / Danh từ + だといい",
+      "examples": [
+        {
+          "translation": "Mong là ngày mai trời sẽ đẹp nhỉ."
+        },
+        {
+          "translation": "Ước gì mình sẽ thi đỗ kỳ thi này."
+        },
+        {
+          "translation": "Mong là anh ấy vẫn khỏe mạnh."
+        },
+        {
+          "translation": "Nhà hàng đó mà ngon thì tốt biết mấy nhỉ."
+        }
+      ]
+    },
+    "ja_という_98": {
+      "title": "～という + Danh từ (〜to iu + Danh từ)",
+      "shortExplanation": "Bổ nghĩa cho danh từ, dùng để định nghĩa, gọi tên hoặc giải thích nội dung cụ thể; 'gọi là...', 'mang danh là...', 'nghe nói là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～という + Danh từ' dùng để định nghĩa, xác định rõ hoặc bổ nghĩa cho danh từ đứng sau. Nó có thể dùng để nêu tên gọi của sự vật, người hay sự việc ('người gọi là...'), hoặc giải thích nội dung, thực chất hay tiếng tăm của đối tượng ('sản phẩm được cho là thân thiện với môi trường').",
+      "formation": "Thể thông thường (Danh từ / Động từ / Tính từ) + という + Danh từ",
+      "examples": [
+        {
+          "translation": "Anh ấy là người Mỹ nói tiếng Nhật rất lưu loát."
+        },
+        {
+          "translation": "Hôm qua tôi đã ăn chiếc bánh ngọt mà mọi người khen là rất ngon."
+        },
+        {
+          "translation": "Cô ấy, người được biết đến là ca sĩ nổi tiếng, có rất nhiều người hâm mộ."
+        },
+        {
+          "translation": "Những sản phẩm được cho là thân thiện với môi trường đang rất được ưa chuộng."
+        }
+      ]
+    },
+    "ja_どういう_99": {
+      "title": "どういう + Danh từ (dou iu + Danh từ)",
+      "shortExplanation": "Dùng để hỏi thông tin chi tiết, tính chất hoặc nội dung cụ thể của danh từ đi sau; '...như thế nào', 'loại... nào'.",
+      "longExplanation": "Cấu trúc liên thể từ 'どういう + Danh từ' dùng để hỏi về tính chất, chủng loại, trạng thái hoặc nội dung chi tiết của một danh từ nào đó. Cấu trúc này tương tự như 'どんな + Danh từ', nhưng 'どういう' thường hướng đến việc yêu cầu người nghe giải thích rõ ràng hơn về ý nghĩa, lý do hoặc bản chất của sự việc ('loại công việc như thế nào', 'lý do gì').",
+      "formation": "どういう + Danh từ",
+      "examples": [
+        {
+          "translation": "Bạn đang làm công việc như thế nào?"
+        },
+        {
+          "translation": "Bạn thích thể loại phim như thế nào?"
+        },
+        {
+          "translation": "Bạn muốn mặc loại trang phục như thế nào?"
+        },
+        {
+          "translation": "Vì lý do gì mà bạn đến muộn vậy?"
+        }
+      ]
+    },
+    "ja_と思う_100": {
+      "title": "～と思う (〜to omou)",
+      "shortExplanation": "Bày tỏ suy nghĩ, ý kiến hoặc phán đoán chủ quan của người nói; 'tôi nghĩ rằng...', 'tôi cho là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～と思う' (kính ngữ: '～と思います') dùng để bày tỏ suy nghĩ, quan điểm cá nhân hoặc phỏng đoán của người nói về một sự việc, tình huống nào đó. Việc dùng cấu trúc này giúp câu nói trở nên mềm mỏng, khiêm tốn và lịch sự hơn so với việc khẳng định tuyệt đối. Mệnh đề đứng trước 'と思う' luôn ở thể thông thường (普通形).",
+      "formation": "Động từ thể thông thường + と思う / Tính từ đuôi い + と思う / Tính từ đuôi な + だと思う / Danh từ + だと思う",
+      "examples": [
+        {
+          "translation": "Tôi nghĩ ngày mai trời sẽ nắng."
+        },
+        {
+          "translation": "Tôi nghĩ bộ phim này rất thú vị."
+        },
+        {
+          "translation": "Tôi nghĩ anh ấy là người tốt bụng."
+        },
+        {
+          "translation": "Tôi nghĩ anh Suzuki là giáo viên."
+        }
+      ]
+    },
+    "ja_という_101": {
+      "title": "～という (〜to iu)",
+      "shortExplanation": "Dùng để trích dẫn lời nói, truyền đạt thông tin nghe được hoặc định nghĩa, gọi tên; 'nói rằng...', 'nghe nói là...', 'gọi là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～という' có ba chức năng ngữ pháp chủ yếu:\n1. Trích dẫn trực tiếp hoặc gián tiếp lời nói, ý kiến của ai đó ('nói rằng...').\n2. Truyền đạt lại thông tin, dư luận hoặc tin đồn được nghe thấy ('có lời đồn rằng...', 'nghe nói là...').\n3. Dùng để nêu tên gọi, định nghĩa một danh từ ('được gọi là...').\nTừ đứng trước 'という' chia ở thể thông thường.",
+      "formation": "Thể thông thường (Động từ / Tính từ / Danh từ) + という",
+      "examples": [
+        {
+          "translation": "Anh ấy đã nói rằng 'Anh thích em'."
+        },
+        {
+          "translation": "Bộ phim đó có tiếng là rất hay."
+        },
+        {
+          "translation": "Ở Nhật Bản có ngọn núi cao gọi là núi Phú Sĩ."
+        },
+        {
+          "translation": "Nghe nói là cô ấy đang làm một công việc khó khăn."
+        }
+      ]
+    },
+    "ja_ないといけない_102": {
+      "title": "～ないといけない (〜nai to ikenai)",
+      "shortExplanation": "Diễn tả tính tất yếu, bổn phận hoặc nghĩa vụ cần phải làm; 'phải...', 'cần phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ないといけない' (kính ngữ: '～ないといけません') dùng để diễn đạt việc người nói có nghĩa vụ, trách nhiệm hoặc tính tất yếu phải thực hiện một hành động nào đó ('nếu không làm thì không được'). Mẫu này thường dùng nhiều trong văn nói thường nhật khi nhắc nhở bản thân hoặc người khác về việc cần phải làm.",
+      "formation": "Động từ thể ない + といけない / といけません",
+      "examples": [
+        {
+          "translation": "Vì ngày mai có bài thi nên tối nay tôi phải học bài."
+        },
+        {
+          "translation": "Chúng ta phải xuất phát lúc 9 giờ."
+        },
+        {
+          "translation": "Để không bị cảm cúm, chúng ta phải rửa tay thật sạch."
+        },
+        {
+          "translation": "Công việc này phải hoàn thành trước ngày mai."
+        }
+      ]
+    },
+    "ja_なきゃいけない_103": {
+      "title": "～なきゃいけない (〜nakya ikenai)",
+      "shortExplanation": "Cách nói thân mật trong văn nói hàng ngày chỉ nghĩa vụ, sự cần thiết; 'phải...', 'phải làm... mới được'.",
+      "longExplanation": "Mẫu ngữ pháp '～なきゃいけない' là hình thức rút gọn mang tính khẩu ngữ, thân mật của '～なければいけない'. Cấu trúc này dùng để diễn đạt nghĩa vụ, bổn phận hoặc việc bắt buộc phải làm trong cuộc sống hàng ngày. Trong giao tiếp thực tế, nó còn hay được lược bỏ phần đuôi chỉ còn '～なきゃ' (ví dụ: '行かなきゃ' - phải đi thôi).",
+      "formation": "Động từ thể ない (bỏ い) + なきゃいけない / なきゃいけません",
+      "examples": [
+        {
+          "translation": "Tôi phải làm xong bài tập về nhà trước ngày mai."
+        },
+        {
+          "translation": "Sắp phải ra ngoài rồi nên tôi phải nhanh chóng chuẩn bị."
+        },
+        {
+          "translation": "Dự án này phải nộp vào tuần sau."
+        },
+        {
+          "translation": "Trước khi lên tàu điện, tôi phải mua vé."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_たりたり_89": {
+      "title": "～たり～たり (〜tari 〜tari)",
+      "shortExplanation": "用于列举具有代表性的动作或状态，或表示交替反复；'又……又……'、'有时……有时……'、'做做……啦，做做……啦'。",
+      "longExplanation": "句型'～たり～たり'用于从多个动作或状态中挑选出两到三个具有代表性的例子进行不完全列举，不强调先后顺序，暗示除了列举出的项目之外还有其他事情。句尾通常接动词'する'（与形容词或名词搭配时也可接'です'）。当连接正反两方面的内容时，还可表示两种状态交替出现（'时而……时而……'）。",
+      "formation": "动词た形 + り + 动词た形 + り + する / 一类形容词（去掉 い）+ かったり / 二类形容词词干 + だったり / 名词 + だったり",
+      "examples": [
+        {
+          "translation": "周末我做做看电影、读读书之类的事情。"
+        },
+        {
+          "translation": "她既擅长做饭，唱歌也很拿手。"
+        },
+        {
+          "translation": "在这个度假村，可以滑雪、泡温泉等。"
+        },
+        {
+          "translation": "这个地区的天气忽冷忽热（时而炎热，时而寒冷）。"
+        }
+      ]
+    },
+    "ja_だろう_90": {
+      "title": "～だろう (〜darou)",
+      "shortExplanation": "表示说话人的推测或判断（普通体/简体）；'大概……吧'、'恐怕……吧'。",
+      "longExplanation": "句型'～だろう'是礼貌体'～でしょう'对应的普通体（简体）形式，用于表达说话人对某种事态、状况的主观推测或判断，相当于汉语中的'大概……吧'、'也许……吧'。常与'たぶん'（大概）、'きっと'（一定）等副词呼应使用。在句尾读升调时，也可用于熟人之间寻求对方同意或确认事实。",
+      "formation": "动词普通形 + だろう / 一类形容词普通形 + だろう / 二类形容词词干 + だろう / 名词 + だろう",
+      "examples": [
+        {
+          "translation": "明天大概会放晴吧。"
+        },
+        {
+          "translation": "他大概很忙吧。"
+        },
+        {
+          "translation": "这本书应该挺有趣的吧。"
+        },
+        {
+          "translation": "她大概是老师吧。"
+        }
+      ]
+    },
+    "ja_っていう_91": {
+      "title": "～っていう (〜tte iu)",
+      "shortExplanation": "用于日常口语，是'～という'的随和口语形式，表示称谓、定义或引用；'叫作……的'、'所谓的……'。",
+      "longExplanation": "句型'～っていう'是'～という'在口语中的音变形式，语气非常随和亲切。常用于向对方介绍某事物名称（'叫……的'）、对某概念进行定义与解释（'所谓的……'），或者作为话题引出某人某事。也可以用来转述他人所说的话或听到的传闻。",
+      "formation": "普通体（名词 / 动词 / 形容词） + っていう + 名词",
+      "examples": [
+        {
+          "translation": "我非常喜欢叫作披萨的料理。"
+        },
+        {
+          "translation": "他那个人真是有趣极了。"
+        },
+        {
+          "translation": "这部电影，真的很令人感动呢。"
+        },
+        {
+          "translation": "她所说的那家店并不是这里。"
+        }
+      ]
+    },
+    "ja_で_92": {
+      "title": "～で (〜de)",
+      "shortExplanation": "格助词，表示动作进行的场所，或动作所使用的手段、方法、工具、材料；'在……'、'用……'、'乘……'。",
+      "longExplanation": "格助词'～で'用法十分广泛，主要包括两大核心功能：\n1. 接在交通工具、工具、手段、语言或原材料名词后，表示实施某项动作的手段或方式，相当于汉语的'用……'、'乘/坐……'、'以……'。\n2. 接在场所名词后，表示动态行为发生的具体地点，相当于汉语的'在……'。",
+      "formation": "名词（手段 / 工具 / 交通工具 / 场所） + で",
+      "examples": [
+        {
+          "translation": "我骑自行车去上学。"
+        },
+        {
+          "translation": "他用日语写了信。"
+        },
+        {
+          "translation": "我用铅笔画了画。"
+        },
+        {
+          "translation": "我在餐馆吃了午饭。"
+        }
+      ]
+    },
+    "ja_でしょう_93": {
+      "title": "～でしょう (〜deshou)",
+      "shortExplanation": "表示礼貌的推测或确认；'大概……吧'、'……吧'。",
+      "longExplanation": "句型'～でしょう'是表示推测的敬体（礼貌体）形式，常用于天气预报、新闻报道或日常礼貌交流中，表示说话人依据现有情况所做出的较为委婉客观的推断。常与'たぶん'（大概）等推测副词连用。如果句尾读升调，则用于礼貌地向听话人征求赞同或确认事实（'……对吧？'）。",
+      "formation": "动词普通形 + でしょう / 一类形容词普通形 + でしょう / 二类形容词词干 + でしょう / 名词 + でしょう",
+      "examples": [
+        {
+          "translation": "明天大概会放晴吧。"
+        },
+        {
+          "translation": "他应该挺有精神的吧。"
+        },
+        {
+          "translation": "这本书应该很有意思吧。"
+        },
+        {
+          "translation": "她大概是医生吧。"
+        }
+      ]
+    },
+    "ja_てはいけない_94": {
+      "title": "～てはいけない (〜te wa ikenai)",
+      "shortExplanation": "表示禁止，强调不得做某事；'不能……'、'不可以……'、'不许……'。",
+      "longExplanation": "句型'～てはいけない'（敬体为'～てはいけません'）用于明确表达禁止，指示某人不得实施某项行为。常用于公共场所的规章制度、法律法规或长辈对晚辈的告诫与训示中。口语中常简略为'～ちゃいけない'或'～じゃいけない'。",
+      "formation": "动词て形 + はいけない / はいけません",
+      "examples": [
+        {
+          "translation": "不可以在公园里吸烟。"
+        },
+        {
+          "translation": "这里不能拍照。"
+        },
+        {
+          "translation": "在图书馆里不可以大声喧哗。"
+        },
+        {
+          "translation": "不能在公交车上给站着的人让座。"
+        }
+      ]
+    },
+    "ja_てもいい_95": {
+      "title": "～てもいい (〜temo ii)",
+      "shortExplanation": "表示许可或请求许可；'可以……'、'……也可以'。",
+      "longExplanation": "句型'～てもいい'（敬体为'～てもいいです'）用于向对方给予许可，表示允许做某事（'可以……'）。如果句尾加上疑问助词'か'变成'～てもいいですか'，则表示礼貌地征求对方许可或同意（'我可以……吗？'）。如果动词て形为'～で'结尾，则接续为'～でもいい'。",
+      "formation": "动词て形 + もいい / もいいです / もいいですか",
+      "examples": [
+        {
+          "translation": "可以在这里拍照吗？"
+        },
+        {
+          "translation": "我可以吃这个苹果吗？"
+        },
+        {
+          "translation": "考试结束后就可以回去了。"
+        },
+        {
+          "translation": "今晚可以和朋友一起出去玩。"
+        }
+      ]
+    },
+    "ja_てもでも_96": {
+      "title": "～ても/でも (〜te mo/demo)",
+      "shortExplanation": "表示让步条件或逆接假定；'即使……也……'、'就算……也……'。",
+      "longExplanation": "句型'～ても/でも'用于表示逆接假定条件，即无论前项的条件或事态如何成立，后项的结果或行为都不会受到影响，仍然照常发生或成立。相当于汉语中的'即使……也……'、'就算……也……'。连接形式为：动词て形加'も'；一类形容词将词尾'い'变为'くても'；二类形容词与名词后接'でも'。",
+      "formation": "动词て形 + も / 一类形容词（去掉 い）+ くても / 二类形容词词干 + でも / 名词 + でも",
+      "examples": [
+        {
+          "translation": "即使下雨，我也要去上学。"
+        },
+        {
+          "translation": "就算这个房间很脏，我也不打算打扫。"
+        },
+        {
+          "translation": "即使那部电影没意思，我也会看。"
+        },
+        {
+          "translation": "即使她生病了，也依然会工作。"
+        }
+      ]
+    },
+    "ja_といい_97": {
+      "title": "～といい (〜to ii)",
+      "shortExplanation": "表示说话人的愿望、期盼或对对方的祝福；'要是……就好了'、'希望……'。",
+      "longExplanation": "句型'～といい'用于表达说话人对某件事态或结果的愿望、期盼，相当于汉语中的'要是……就好了'、'但愿……'。句尾常搭配终助词'ね'、'な'（'～といいね'、'～といいな'）来抒发内心的祈愿；在礼貌表达中常使用'～といいですね'，用于向对方表达美好的祝愿或期待。",
+      "formation": "动词普通形 + といい / 一类形容词普通形 + といい / 二类形容词词干 + だといい / 名词 + だといい",
+      "examples": [
+        {
+          "translation": "明天要是能放晴就好了呢。"
+        },
+        {
+          "translation": "希望能通过这次考试。"
+        },
+        {
+          "translation": "但愿他身体健康（好好的）。"
+        },
+        {
+          "translation": "那家餐厅要是好吃就太好了呢。"
+        }
+      ]
+    },
+    "ja_という_98": {
+      "title": "～という + 名词 (〜to iu + 名词)",
+      "shortExplanation": "修饰名词，用于对名词进行具体说明、定义或转述传闻；'叫作……的'、'所谓的……'、'据说是……的'。",
+      "longExplanation": "句型'～という + 名词'用于对后接的名词进行详细界定、说明或补充其内容。它可以用来提示人、事物或地点的称谓（'叫……的人/物'），也可以用于转述某种评价、名声或传闻（'据说是……的产品'），相当于汉语中的'所谓的……'、'被称为……的'。",
+      "formation": "普通体（名词 / 动词 / 形容词） + という + 名词",
+      "examples": [
+        {
+          "translation": "他是一位日语讲得很流利的美国人。"
+        },
+        {
+          "translation": "昨天我吃了据说是很美味的蛋糕。"
+        },
+        {
+          "translation": "作为著名歌手的她拥有众多粉丝。"
+        },
+        {
+          "translation": "号称环保的产品很受欢迎。"
+        }
+      ]
+    },
+    "ja_どういう_99": {
+      "title": "どういう + 名词 (dou iu + 名词)",
+      "shortExplanation": "询问后项名词的性质、种类、内容或理由；'什么样的……'、'怎样的……'。",
+      "longExplanation": "句型'どういう + 名词'作为连体词使用，用于就后接名词的具体内容、性质、种类或原委向对方寻求更详尽的说明与解释，相当于汉语中的'什么样的……'、'怎样的……'。虽然与'どんな'含义相近，但'どういう'更加侧重于探求背后的原因、理由或实质内涵（例如：どういう理由、どういう意味）。",
+      "formation": "どういう + 名词",
+      "examples": [
+        {
+          "translation": "你做的是什么样的工作？"
+        },
+        {
+          "translation": "你喜欢什么类型的电影？"
+        },
+        {
+          "translation": "你想穿什么样的衣服？"
+        },
+        {
+          "translation": "你是出于什么原因迟到的？"
+        }
+      ]
+    },
+    "ja_と思う_100": {
+      "title": "～と思う (〜to omou)",
+      "shortExplanation": "表达说话人自己的意见、看法或主观推测；'我认为……'、'我觉得……'、'我想……'。",
+      "longExplanation": "句型'～と思う'（敬体为'～と思います'）用于陈述说话人自己的观点、思考、感想或主观判断。在日语交流中，经常使用此句型来避免语气过于武断或绝对，使表达更为委婉谦和。接在'と思う'前面的从句必须使用普通体（简体）。",
+      "formation": "动词普通形 + と思う / 一类形容词普通形 + と思う / 二类形容词词干 + だと思う / 名词 + だと思う",
+      "examples": [
+        {
+          "translation": "我觉得明天会放晴。"
+        },
+        {
+          "translation": "我认为这部电影很有趣。"
+        },
+        {
+          "translation": "我觉得他为人很热心善良。"
+        },
+        {
+          "translation": "我认为铃木先生是老师。"
+        }
+      ]
+    },
+    "ja_という_101": {
+      "title": "～という (〜to iu)",
+      "shortExplanation": "用于引用言论、传述传闻或对事物进行称谓和定义；'说是……'、'叫作……'、'据说……'。",
+      "longExplanation": "句型'～という'在日语中具有多种重要语法功能：\n1. 引用：直接或间接引用他人所说的话或思想内容（'说……'）。\n2. 传闻与评价：表达从他人处听说的信息、名声或传闻（'据说……'、'有着……的名声'）。\n3. 称谓与定义：说明人名、物名或概念（'叫作……的'）。\n前面接动词、形容词或名词的普通体。",
+      "formation": "普通体（动词 / 一类形容词 / 二类形容词 / 名词） + という",
+      "examples": [
+        {
+          "translation": "他说了句'喜欢你'。"
+        },
+        {
+          "translation": "那部电影有传闻说很有趣。"
+        },
+        {
+          "translation": "日本有一座名叫富士山的高山。"
+        },
+        {
+          "translation": "听人说她正在做一份很难的工作。"
+        }
+      ]
+    },
+    "ja_ないといけない_102": {
+      "title": "～ないといけない (〜nai to ikenai)",
+      "shortExplanation": "表示必须做某事，表达义务或客观必要性；'必须……'、'不得不……'、'得……'。",
+      "longExplanation": "句型'～ないといけない'（敬体为'～ないといけません'）用于表达实施某项行为的必要性或义务，字面意思是'如果不做的话就不行'，相当于汉语中的'必须……'、'得……'、'非……不可'。常用于日常口语会话中，提醒自己或他人应当完成某事。",
+      "formation": "动词ない形 + といけない / といけません",
+      "examples": [
+        {
+          "translation": "因为明天有考试，所以今晚必须学习。"
+        },
+        {
+          "translation": "必须在9点出发。"
+        },
+        {
+          "translation": "为了不感冒，必须把手好好洗干净。"
+        },
+        {
+          "translation": "这项工作必须在明天之前完成。"
+        }
+      ]
+    },
+    "ja_なきゃいけない_103": {
+      "title": "～なきゃいけない (〜nakya ikenai)",
+      "shortExplanation": "口语中表示必须做某事的随和表达（是'～なければいけない'的简略说法）；'必须……'、'得……'。",
+      "longExplanation": "句型'～なきゃいけない'是日常口语中'～なければいけない'的缩略形式，表示说话人面临的义务、责任或迫切需要去做某事，相当于汉语中的'必须……'、'得……'。在极其随意的会话中，常常直接省略后半部分，单用'～なきゃ'来表达（例如：'早く行かなきゃ'——得快点走了）。",
+      "formation": "动词ない形（去掉 い） + なきゃいけない / なきゃいけません",
+      "examples": [
+        {
+          "translation": "明天之前必须把作业做完。"
+        },
+        {
+          "translation": "马上就要出门了，所以得赶快准备。"
+        },
+        {
+          "translation": "这个项目必须在下周提交。"
+        },
+        {
+          "translation": "在乘电车之前，必须先买车票。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_たりたり_89": {
+      "title": "～たり～たり (〜tari 〜tari)",
+      "shortExplanation": "대표적인 동작이나 상태를 나열하거나 교대를 나타내며, '~하거나 ~하거나', '~하기도 하고 ~하기도 하다'의 뜻입니다.",
+      "longExplanation": "'～たり～たり' 문형은 여러 동작이나 상태 중에서 대표적인 몇 가지를 예시로 들어 나열할 때 사용합니다. 순서나 경중에 상관없이 불완전하게 열거하는 표현으로, 그 밖에도 다른 동작이나 상태가 있을 수 있음을 암시합니다. 문말에는 주로 'する'가 이어지며, 상반되는 형용사나 상태와 함께 쓰여 '때로는 ~하고 때로는 ~하다(왔다 갔다 하다)'라는 번갈아 일어남을 나타내기도 합니다.",
+      "formation": "동사 た형 + り + 동사 た형 + り + する / い형용사 어간 + かったり / な형용사 어간 + だったり / 명사 + だったり",
+      "examples": [
+        {
+          "translation": "주말에는 영화를 보거나 책을 읽거나 합니다."
+        },
+        {
+          "translation": "그녀는 요리를 잘하기도 하고, 노래를 잘 부르기도 합니다."
+        },
+        {
+          "translation": "이 리조트에서는 스키를 타거나 온천에 들어가거나 할 수 있습니다."
+        },
+        {
+          "translation": "이 지역의 날씨는 덥기도 하고 춥기도 합니다(오락가락합니다)."
+        }
+      ]
+    },
+    "ja_だろう_90": {
+      "title": "～だろう (〜darou)",
+      "shortExplanation": "말하는 이의 추측이나 짐작을 보통형(반말)으로 나타내며, '~일 것이다', '~겠지', '아마 ~일 테지'의 뜻입니다.",
+      "longExplanation": "'～だろう' 문형은 정중형인 '～でしょう'에 대응하는 보통형(반말/구어) 표현으로, 어떤 일이나 상태에 대한 화자의 주관적인 추측이나 짐작을 나타냅니다. 한국어의 '~겠지', '~일 것이다', '아마 ~일 테지'에 해당합니다. 'たぶん(아마)', 'きっと(분명)' 등의 부사와 자주 호응합니다. 또한 문말 억양을 올려 말할 경우, 친한 사이에서 상대방의 동의를 구하거나 확인할 때 쓰입니다.",
+      "formation": "동사 보통형 + だろう / い형용사 + だろう / な형용사 어간 + だろう / 명사 + だろう",
+      "examples": [
+        {
+          "translation": "내일은 날이 맑겠지."
+        },
+        {
+          "translation": "그는 바쁘겠지."
+        },
+        {
+          "translation": "이 책은 재미있겠지."
+        },
+        {
+          "translation": "그녀는 선생님이겠지."
+        }
+      ]
+    },
+    "ja_っていう_91": {
+      "title": "～っていう (〜tte iu)",
+      "shortExplanation": "'～という'의 일상 구어체 표현으로, 명칭을 부르거나 대상을 정의·인용할 때 쓰이며, '~라는', '~라고 하는'의 뜻입니다.",
+      "longExplanation": "'～っていう' 문형은 '～という'가 일상 회화에서 축약되어 사용되는 친근한 구어체 표현입니다. 사람이나 사물의 명칭을 소개하거나('~라는'), 어떤 개념이나 화제를 정의하고 제시할 때('~라고 하는 것은'), 또는 전해 들은 말을 인용할 때 사용됩니다.",
+      "formation": "보통형(명사 / 동사 / 형용사) + っていう + 명사",
+      "examples": [
+        {
+          "translation": "피자라는 요리를 아주 좋아합니다."
+        },
+        {
+          "translation": "그 남자라는 사람은 정말 재미있습니다."
+        },
+        {
+          "translation": "이 영화라는 건 정말 감동적이야."
+        },
+        {
+          "translation": "그녀가 말하고 있다는 가게는 여기가 아니다."
+        }
+      ]
+    },
+    "ja_で_92": {
+      "title": "～で (〜de)",
+      "shortExplanation": "수단, 방법, 도구, 재료를 나타내거나 동작이 이루어지는 장소를 나타내는 격조사로, '~로/으로', '~에서'의 뜻입니다.",
+      "longExplanation": "격조사 '～で'는 주로 다음과 같은 두 가지 핵심 용법으로 사용됩니다.\n1. 수단·도구·방법: 교통수단, 도구, 언어, 재료 등을 나타내어 어떤 행위를 하는 수단임을 나타냅니다(한국어의 '~로/으로').\n2. 동작의 장소: 어떤 동작이나 행위가 실제로 일어나는 장소를 나타냅니다(한국어의 '~에서').",
+      "formation": "명사(수단 / 도구 / 장소) + で",
+      "examples": [
+        {
+          "translation": "저는 자전거로 학교에 갑니다."
+        },
+        {
+          "translation": "그는 일본어로 편지를 썼다."
+        },
+        {
+          "translation": "연필로 그림을 그렸습니다."
+        },
+        {
+          "translation": "레스토랑에서 점심을 먹었습니다."
+        }
+      ]
+    },
+    "ja_でしょう_93": {
+      "title": "～でしょう (〜deshou)",
+      "shortExplanation": "정중한 어조로 추측이나 짐작을 나타내며, '~이겠지요', '~일 것입니다', '아마 ~겠죠'의 뜻입니다.",
+      "longExplanation": "'～でしょう' 문형은 정중한 태도로 어떤 사태나 상황을 추측하여 말할 때 사용하는 정중형(경어) 표현입니다. 일기예보나 뉴스, 정중한 대화에서 자주 쓰이며, 'たぶん(아마)' 등의 부사와 호응합니다. 또한 문말 억양을 올려 말하면 듣는 이에게 부드럽게 동의를 구하거나 확인을 나타내는 표현이 됩니다.",
+      "formation": "동사 보통형 + でしょう / い형용사 + でしょう / な형용사 어간 + でしょう / 명사 + でしょう",
+      "examples": [
+        {
+          "translation": "내일은 날이 맑겠지요."
+        },
+        {
+          "translation": "그는 건강하겠지요(잘 지내겠지요)."
+        },
+        {
+          "translation": "이 책은 재미있겠지요."
+        },
+        {
+          "translation": "그녀는 의사이겠지요."
+        }
+      ]
+    },
+    "ja_てはいけない_94": {
+      "title": "～てはいけない (〜te wa ikenai)",
+      "shortExplanation": "행동의 금지를 나타내며, '~해서는 안 된다', '~하면 안 된다'의 뜻입니다.",
+      "longExplanation": "'～てはいけない'(정중형은 '～てはいけません') 문형은 어떤 행위를 엄격히 금지하거나 제한할 때 사용하는 표현입니다. 공공장소의 규칙, 법률, 교칙 등을 안내하거나 윗사람이 아랫사람에게 주의를 줄 때 자주 쓰입니다. 일상 회화에서는 축약되어 '～ちゃいけない', '～じゃいけない'의 형태로도 많이 쓰입니다.",
+      "formation": "동사 て형 + はいけない / はいけません",
+      "examples": [
+        {
+          "translation": "공원에서 담배를 피워서는 안 된다."
+        },
+        {
+          "translation": "여기서 사진을 찍어서는 안 된다."
+        },
+        {
+          "translation": "도서관에서 큰 소리를 내서는 안 된다."
+        },
+        {
+          "translation": "버스 안에서 서 있는 사람에게 자리를 양보해서는 안 된다."
+        }
+      ]
+    },
+    "ja_てもいい_95": {
+      "title": "～てもいい (〜temo ii)",
+      "shortExplanation": "행동에 대한 허가를 주거나 허가를 구할 때 쓰이며, '~해도 좋다', '~해도 되다'의 뜻입니다.",
+      "longExplanation": "'～てもいい'(정중형은 '～てもいいです') 문형은 어떤 행동을 하도록 허가하거나 허용할 때 사용합니다. 의문형인 '～てもいいですか'로 쓰이면 상대방에게 공손하게 허락이나 양해를 구하는 표현이 됩니다(한국어의 '~해도 됩니까? / ~해도 될까요?'). 동사의 て형이 'で'로 끝나는 경우에는 '～でもいい'로 접속합니다.",
+      "formation": "동사 て형 + もいい / もいいです / もいいですか",
+      "examples": [
+        {
+          "translation": "여기서 사진을 찍어도 됩니까?"
+        },
+        {
+          "translation": "이 사과를 먹어도 될까요?"
+        },
+        {
+          "translation": "시험이 끝나면 돌아가도 좋습니다(집에 가도 됩니다)."
+        },
+        {
+          "translation": "오늘 밤 친구와 놀아도 된다."
+        }
+      ]
+    },
+    "ja_てもでも_96": {
+      "title": "～ても/でも (〜te mo/demo)",
+      "shortExplanation": "역접 가정 조건을 나타내며, '~해도', '~하더라도', '~이더라도'의 뜻입니다.",
+      "longExplanation": "'～ても/でも' 문형은 앞 절의 조건이나 상황이 성립하더라도 뒷 절의 사태나 행동이 이에 영향받지 않고 일어남을 나타내는 양보·역접 가정 표현입니다. 한국어의 '~해도', '~하더라도', '~이더라도'에 해당합니다. 동사는 て형에 'も', い형용사는 '～くても', な형용사와 명사는 '～でも'에 접속합니다.",
+      "formation": "동사 て형 + も / い형용사 어간 + くても / な형용사 어간 + でも / 명사 + でも",
+      "examples": [
+        {
+          "translation": "비가 내리더라도 학교에 갑니다."
+        },
+        {
+          "translation": "이 방이 더럽더라도 청소하지 않을 생각입니다."
+        },
+        {
+          "translation": "그 영화가 재미없더라도 보겠습니다."
+        },
+        {
+          "translation": "그녀는 아프더라도 일합니다."
+        }
+      ]
+    },
+    "ja_といい_97": {
+      "title": "～といい (〜to ii)",
+      "shortExplanation": "희망, 소원 또는 상대방에 대한 바람이나 축복을 나타내며, '~하면 좋겠다', '~했으면 좋겠다'의 뜻입니다.",
+      "longExplanation": "'～といい' 문형은 특정 상황이나 결과가 실현되기를 바라는 마음이나 소망을 나타낼 때 사용합니다. 문말에 종조사 'ね', 'な'를 붙여 '～といいね', '～といいな' 형태로 화자 자신의 바람을 독백이나 가벼운 대화로 표현하거나, '～といいですね' 형태로 상대방에게 정중하게 호응 및 축복의 뜻을 전할 때 널리 쓰입니다.",
+      "formation": "동사 보통형 + といい / い형용사 + といい / な형용사 어간 + だといい / 명사 + だといい",
+      "examples": [
+        {
+          "translation": "내일 날씨가 맑으면 좋겠네."
+        },
+        {
+          "translation": "이 시험에 합격하면 좋겠다."
+        },
+        {
+          "translation": "그가 건강하면 좋겠는데."
+        },
+        {
+          "translation": "그 레스토랑이 맛있으면 좋겠네요."
+        }
+      ]
+    },
+    "ja_という_98": {
+      "title": "～という + 명사 (〜to iu + 명사)",
+      "shortExplanation": "명사를 수식하여 구체적인 정의, 명칭, 내용 또는 소문을 나타내며, '~라는', '~라고 하는'의 뜻입니다.",
+      "longExplanation": "'～という + 명사' 문형은 뒤따르는 명사의 구체적인 명칭이나 내용, 성격 또는 전해 들은 평판을 설명할 때 사용합니다. 한국어의 '~라는', '~라고 하는'에 해당하며, 사물이나 사람의 이름뿐만 아니라 소문이나 평가를 덧붙여 명사를 한정하는 역할을 합니다.",
+      "formation": "보통형(명사 / 동사 / 형용사) + という + 명사",
+      "examples": [
+        {
+          "translation": "그는 일본어가 유창한 미국인이라는 사람입니다."
+        },
+        {
+          "translation": "어제 맛있다고 소문난 케이크를 먹었습니다."
+        },
+        {
+          "translation": "유명한 가수라는 그녀는 많은 팬을 보유하고 있습니다."
+        },
+        {
+          "translation": "환경 친화적이라고 하는 제품이 인기를 끌고 있습니다."
+        }
+      ]
+    },
+    "ja_どういう_99": {
+      "title": "どういう + 명사 (dou iu + 명사)",
+      "shortExplanation": "뒤에 오는 명사의 성질, 종류, 내용이나 이유를 물을 때 쓰이며, '어떤...', '어떠한...'의 뜻입니다.",
+      "longExplanation": "'どういう + 명사' 연체사 표현은 뒤따르는 명사에 대한 구체적인 설명, 성격, 종류 또는 배경 사유를 물어볼 때 사용합니다. 한국어의 '어떤 ~', '어떠한 ~'에 해당합니다. 'どんな'와 유사하지만, 'どういう'는 의미, 내용, 이유 등의 실질적인 내막을 구체적으로 캐물을 때(예: どういう意味, どういう理由) 더욱 자주 쓰입니다.",
+      "formation": "どういう + 명사",
+      "examples": [
+        {
+          "translation": "어떤 일을 하고 계십니까?"
+        },
+        {
+          "translation": "어떤 영화를 좋아합니까?"
+        },
+        {
+          "translation": "어떠한 옷을 입고 싶습니까?"
+        },
+        {
+          "translation": "어떤 이유로 늦었습니까?"
+        }
+      ]
+    },
+    "ja_と思う_100": {
+      "title": "～と思う (〜to omou)",
+      "shortExplanation": "말하는 이의 생각, 의견, 주관적인 판단을 나타내며, '~라고 생각하다', '~인 것 같다'의 뜻입니다.",
+      "longExplanation": "'～と思う'(정중형은 '～と思います') 문형은 어떤 일이나 상황에 대한 화자 자신의 생각, 감상, 의견 또는 판단을 표명할 때 사용합니다. 일본어에서는 단정적인 어조를 피하고 부드럽고 완곡하게 의견을 전달하기 위해 일상적으로 매우 빈번하게 사용됩니다. 'と思う' 앞에는 반드시 보통형이 접속합니다.",
+      "formation": "동사 보통형 + と思う / い형용사 + と思う / な형용사 어간 + だと思う / 명사 + だと思う",
+      "examples": [
+        {
+          "translation": "내일 날이 맑을 거라고 생각합니다."
+        },
+        {
+          "translation": "이 영화는 재미있다고 생각해."
+        },
+        {
+          "translation": "그는 친절한 사람이라고 생각합니다."
+        },
+        {
+          "translation": "스즈키 씨는 선생님이라고 생각해."
+        }
+      ]
+    },
+    "ja_という_101": {
+      "title": "～という (〜to iu)",
+      "shortExplanation": "말이나 생각을 인용하거나, 전해 들은 소문·정보 또는 명칭을 정의할 때 쓰이며, '~라고 말하다', '~라는', '~라고 하는'의 뜻입니다.",
+      "longExplanation": "'～という' 문형은 다음과 같은 주요 용법으로 사용됩니다.\n1. 인용: 누군가의 발언이나 생각을 직접 또는 간접적으로 인용할 때('~라고 말했다').\n2. 전언 및 평판: 다른 사람에게서 들은 소문이나 세간의 평가를 전달할 때('~라는 평판/소문이 있다').\n3. 명칭 및 정의: 사람이나 사물의 이름을 붙이거나 정의할 때('~라고 하는').\n앞에는 보통형이 접속합니다.",
+      "formation": "보통형(동사 / 형용사 / 명사) + という",
+      "examples": [
+        {
+          "translation": "그는 '좋아해'라고 말했다."
+        },
+        {
+          "translation": "그 영화는 재미있다는 평판이 있습니다."
+        },
+        {
+          "translation": "일본에는 후지산이라는 높은 산이 있습니다."
+        },
+        {
+          "translation": "그녀는 어려운 일을 하고 있다는 이야기입니다(소문입니다)."
+        }
+      ]
+    },
+    "ja_ないといけない_102": {
+      "title": "～ないといけない (〜nai to ikenai)",
+      "shortExplanation": "의무나 필요성을 나타내며, '~해야 한다', '~하지 않으면 안 된다'의 뜻입니다.",
+      "longExplanation": "'～ないといけない'(정중형은 '～ないといけません') 문형은 어떤 행동을 반드시 해야 하는 의무나 상황적 필요성을 나타낼 때 사용합니다. '그렇게 하지 않으면 안 된다'라는 조건과 금지가 결합된 표현으로, 일상 대화에서 자신이나 상대방이 해야 할 일을 언급할 때 매우 자주 쓰입니다.",
+      "formation": "동사 ない형 + といけない / といけません",
+      "examples": [
+        {
+          "translation": "내일 시험이 있어서 오늘 밤 공부해야 한다."
+        },
+        {
+          "translation": "9시에 출발해야 한다."
+        },
+        {
+          "translation": "감기에 걸리지 않도록 손을 잘 씻어야 한다."
+        },
+        {
+          "translation": "이 일은 내일까지 끝내야 한다."
+        }
+      ]
+    },
+    "ja_なきゃいけない_103": {
+      "title": "～なきゃいけない (〜nakya ikenai)",
+      "shortExplanation": "'～なければいけない'의 일상 구어 축약형으로, 의무나 당위성을 나타내며 '~해야 한다', '~하지 않으면 안 된다'의 뜻입니다.",
+      "longExplanation": "'～なきゃいけない' 문형은 '～なければいけない'가 일상 대화에서 축약되어 쓰이는 친근한 구어체 표현입니다. 마땅히 해야 하는 의무나 상황적으로 꼭 해야 하는 일을 편하게 이야기할 때 씁니다. 더 나아가 일상 회화에서는 뒷부분을 생략하고 '～なきゃ'만으로도 매우 빈번하게 사용됩니다(예: '빨리 가야 해' -> '早く行かなきゃ').",
+      "formation": "동사 ない형(어미 い 탈락) + なきゃいけない / なきゃいけません",
+      "examples": [
+        {
+          "translation": "내일까지 숙제를 끝내야 한다."
+        },
+        {
+          "translation": "곧 나가야 하니까 서둘러 준비해야 한다."
+        },
+        {
+          "translation": "이 프로젝트는 다음 주까지 제출해야 한다."
+        },
+        {
+          "translation": "전철을 타기 전에 표를 사야 한다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_たりたり_89": {
+      "title": "～たり～たり (〜tari 〜tari)",
+      "shortExplanation": "複数の動作や状態の中から代表的な例を並べて挙げたり、交互に繰り返すことを表し、「〜したり〜したりする」「〜かったり〜かったりする」という意味を表します。",
+      "longExplanation": "「～たり～たり」は、多くの動作や状態の中から代表的なものを2、3挙げて並べる不完全列挙の文法表現です。動作の順序や軽重は問わず、「他にも同様のことがある」というニュアンスを含みます。文末には通常「する」を伴います。また、対照的な形容詞や動詞を並べることで、状態が交互に入れ替わること（「暑かったり寒かったりする」など）を表すこともできます。",
+      "formation": "動詞た形 ＋ り ＋ 動詞た形 ＋ り ＋ する ／ い形容詞語幹 ＋ かったり ／ な形容詞語幹 ＋ だったり ／ 名詞 ＋ だったり",
+      "examples": [
+        {
+          "translation": "週末は映画を観たり、本を読んだりする。"
+        },
+        {
+          "translation": "彼女は料理が上手だったり、歌がうまかったりする。"
+        },
+        {
+          "translation": "このリゾートではスキーをしたり、温泉に入ったりできる。"
+        },
+        {
+          "translation": "この地域の天気は暑かったり、寒かったりする。"
+        }
+      ]
+    },
+    "ja_だろう_90": {
+      "title": "～だろう (〜darou)",
+      "shortExplanation": "話し手の推量や判断を普通体（くだけた表現）で表し、「おそらく〜だろう」「〜だろうと思う」という意味を表します。",
+      "longExplanation": "「～だろう」は、丁寧体「〜でしょう」の普通体（常体）の形で、話し手が不確定な事態や状況について推測・判断して述べる推量表現です。「たぶん」「きっと」などの推量を表す副詞とともに用いられることが多くあります。また、文末を上昇調（上がり目）で発音することで、親しい間柄で相手の同意を求めたり確認したりする際にも用いられます。",
+      "formation": "動詞普通形 ＋ だろう ／ い形容詞普通形 ＋ だろう ／ な形容詞語幹 ＋ だろう ／ 名詞 ＋ だろう",
+      "examples": [
+        {
+          "translation": "明日は晴れるだろう。"
+        },
+        {
+          "translation": "彼は忙しいだろう。"
+        },
+        {
+          "translation": "この本は面白いだろう。"
+        },
+        {
+          "translation": "彼女は先生だろう。"
+        }
+      ]
+    },
+    "ja_っていう_91": {
+      "title": "～っていう (〜tte iu)",
+      "shortExplanation": "「～という」のくだけた口語表現で、名称を挙げたり、定義・引用・話題提示をしたりする際に用いられ、「〜という」という意味を表します。",
+      "longExplanation": "「～っていう」は、「～という」が口語で音変化したくだけた日常会話表現です。聞き手が知らないと思われる事物や人の名前を紹介する際（「〜という名前の」）や、事柄を定義・話題提示する際（「〜というのは」）、あるいは伝聞や引用を述べる際によく用いられます。",
+      "formation": "普通形（名詞／動詞／形容詞） ＋ っていう ＋ 名詞",
+      "examples": [
+        {
+          "translation": "ピザっていう料理が大好きです。"
+        },
+        {
+          "translation": "彼っていう男性はすごく面白いです。"
+        },
+        {
+          "translation": "この映画っていうのは本当に感動的だよ。"
+        },
+        {
+          "translation": "彼女が言っているっていう店はここではない。"
+        }
+      ]
+    },
+    "ja_で_92": {
+      "title": "～で (〜de)",
+      "shortExplanation": "動作が行われる場所や、動作に用いる手段・方法・道具・材料などを表す格助詞で、「〜で」「〜を使って」という意味を表します。",
+      "longExplanation": "格助詞「～で」は、文脈に応じて多様な文法機能を担います。主な用法として以下のものがあります。\n1. 手段・方法・道具・材料：移動手段（乗り物）、使用する道具、言語、材料などを表し、その手段を用いて動作を行うことを示します。\n2. 動作の場所：具体的な動作や行為が行われる活動の場所を示します。",
+      "formation": "名詞（手段／道具／場所など） ＋ で",
+      "examples": [
+        {
+          "translation": "私は自転車で学校に行きます。"
+        },
+        {
+          "translation": "彼は日本語で手紙を書いた。"
+        },
+        {
+          "translation": "鉛筆で絵を描きました。"
+        },
+        {
+          "translation": "レストランで昼食を食べました。"
+        }
+      ]
+    },
+    "ja_でしょう_93": {
+      "title": "～でしょう (〜deshou)",
+      "shortExplanation": "話し手の丁寧な推量や推測を表し、「おそらく〜だろう」「〜でしょう」という意味を表します。",
+      "longExplanation": "「～でしょう」は、丁寧体（敬体）で事態を推量・推測して述べる表現です。天気予報やニュース報道、改まった会話などで頻繁に用いられ、「たぶん」「きっと」などの副詞とよく呼応します。文末を上げて発音すると、相手に同意を求めたり確認を促したりする表現（確認要求）になります。",
+      "formation": "動詞普通形 ＋ でしょう ／ い形容詞普通形 ＋ でしょう ／ な形容詞語幹 ＋ でしょう ／ 名詞 ＋ でしょう",
+      "examples": [
+        {
+          "translation": "明日は晴れでしょう。"
+        },
+        {
+          "translation": "彼は元気でしょう。"
+        },
+        {
+          "translation": "この本は面白いでしょう。"
+        },
+        {
+          "translation": "彼女は医者でしょう。"
+        }
+      ]
+    },
+    "ja_てはいけない_94": {
+      "title": "～てはいけない (〜te wa ikenai)",
+      "shortExplanation": "禁止を表し、その行為をしてはならないことを指示・警告する表現で、「〜してはいけない／いけません」という意味を表します。",
+      "longExplanation": "「～てはいけない」（丁寧形は「～てはいけません」）は、ある行為を行うことを明確に禁じる禁止表現です。公共の場所のルールや規則、法律、または目上の人が目下の人に対して注意や指示を与える際によく使われます。日常会話では「〜ちゃいけない」「〜じゃいけない」と縮約されることもあります。",
+      "formation": "動詞て形 ＋ はいけない／はいけません",
+      "examples": [
+        {
+          "translation": "公園でたばこを吸ってはいけない。"
+        },
+        {
+          "translation": "ここで写真を撮ってはいけない。"
+        },
+        {
+          "translation": "図書館で大きな声を出してはいけない。"
+        },
+        {
+          "translation": "バスの中で立っている人に席を譲ってはいけない。"
+        }
+      ]
+    },
+    "ja_てもいい_95": {
+      "title": "～てもいい (〜temo ii)",
+      "shortExplanation": "許可を与えたり、許可を求めたりする表現で、「〜してもかまわない」「〜してもよい」という意味を表します。",
+      "longExplanation": "「～てもいい」（丁寧形は「～てもいいです」）は、ある行為を行うことを許可・容認する文法表現です。文末に助詞「か」を伴った疑問形「～てもいいですか」にすることで、相手に対して丁寧に許可を求める表現になります。動詞のて形が濁点（〜で）で終わる動詞には「〜でもいい」と接続します。",
+      "formation": "動詞て形 ＋ もいい／もいいです／もいいですか",
+      "examples": [
+        {
+          "translation": "ここで写真を撮ってもいいですか。"
+        },
+        {
+          "translation": "このリンゴを食べてもいいですか。"
+        },
+        {
+          "translation": "試験が終わったら、帰ってもいいです。"
+        },
+        {
+          "translation": "今夜友達と遊んでもいい。"
+        }
+      ]
+    },
+    "ja_てもでも_96": {
+      "title": "～ても/でも (〜te mo/demo)",
+      "shortExplanation": "逆接の確定条件または仮定条件を表し、「たとえ〜であっても」「〜としても」という意味を表します。",
+      "longExplanation": "「～ても／でも」は、前件の事態や条件が成立しても、後件の内容がそれに左右されず成立することを表す逆接の譲歩・条件表現です。「たとえ〜であっても、やはり〜だ」という強いニュアンスを持ちます。動詞はて形に「も」、い形容詞は「〜くても」、な形容詞と名詞は「〜でも」に接続します。",
+      "formation": "動詞て形 ＋ も ／ い形容詞語幹 ＋ くても ／ な形容詞語幹 ＋ でも ／ 名詞 ＋ でも",
+      "examples": [
+        {
+          "translation": "雨が降っても、学校に行きます。"
+        },
+        {
+          "translation": "この部屋が汚くても、掃除しないつもりです。"
+        },
+        {
+          "translation": "その映画が面白くなくても、見ます。"
+        },
+        {
+          "translation": "彼女が病気でも、働きます。"
+        }
+      ]
+    },
+    "ja_といい_97": {
+      "title": "～といい (〜to ii)",
+      "shortExplanation": "話し手の希望や願い、あるいは相手に対する好意的な祈り・期待を表し、「〜であることを望む」「〜だとよい」という意味を表します。",
+      "longExplanation": "「～といい」は、望ましい事態や結果が実現することを願う気持ちを表す文法表現です。文末に終助詞「ね」「な」を伴った「〜といいね」「〜といいな」の形で独り言や親しい人への共感・希望として使われたり、丁寧な「〜といいですね」の形で相手への祈念や思いやりを伝える挨拶的な表現としても多用されます。",
+      "formation": "動詞普通形 ＋ といい ／ い形容詞普通形 ＋ といい ／ な形容詞語幹 ＋ だといい ／ 名詞 ＋ だといい",
+      "examples": [
+        {
+          "translation": "明日晴れるといいね。"
+        },
+        {
+          "translation": "この試験に合格するといい。"
+        },
+        {
+          "translation": "彼が元気だといいな。"
+        },
+        {
+          "translation": "そのレストランが美味しいといいですね。"
+        }
+      ]
+    },
+    "ja_という_98": {
+      "title": "～という ＋ 名詞 (〜to iu ＋ 名詞)",
+      "shortExplanation": "名詞を修飾して、その具体的な名称・定義・内容や評判・伝聞を説明し、「〜という〜」という意味を表します。",
+      "longExplanation": "「～という ＋ 名詞」は、後続する名詞の内容を具体的に規定・説明する連体修飾の表現です。事物や人物の名称・肩書を提示する用法（「〜という名前の」）のほか、その対象に関する評判・伝聞・実質的な内容を補足して説明する際（「〜といわれている製品」など）に幅広く用いられます。",
+      "formation": "普通形（名詞／動詞／形容詞） ＋ という ＋ 名詞",
+      "examples": [
+        {
+          "translation": "彼は日本語が流暢なアメリカ人という人です。"
+        },
+        {
+          "translation": "昨日、美味しかったというケーキを食べました。"
+        },
+        {
+          "translation": "有名な歌手という彼女は、たくさんのファンがいます。"
+        },
+        {
+          "translation": "環境に優しいという製品が人気があります。"
+        }
+      ]
+    },
+    "ja_どういう_99": {
+      "title": "どういう ＋ 名詞 (dou iu ＋ 名詞)",
+      "shortExplanation": "後続する名詞の性質・種類・内容・理由などを尋ねる連体詞的表現で、「どんな〜」「どのような〜」という意味を表します。",
+      "longExplanation": "「どういう ＋ 名詞」は、後続の名詞について詳細な情報や説明、具体的な内容・理由を尋ねる際に用いる疑問表現です。「どんな」と意味合いが似ていますが、「どういう」は理由や意味、内実を論理的に説明してもらいたい場合（「どういう理由」「どういう意味」など）により多く用いられる傾向があります。",
+      "formation": "どういう ＋ 名詞",
+      "examples": [
+        {
+          "translation": "どういう仕事をしていますか？"
+        },
+        {
+          "translation": "どういう映画が好きですか？"
+        },
+        {
+          "translation": "どういう服を着たいですか？"
+        },
+        {
+          "translation": "どういう理由で遅れましたか？"
+        }
+      ]
+    },
+    "ja_と思う_100": {
+      "title": "～と思う (〜to omou)",
+      "shortExplanation": "話し手の考え・意見・感想や主観的な判断を表し、「〜と考える」「〜と思う」という意味を表します。",
+      "longExplanation": "「～と思う」（丁寧形は「～と思います」）は、ある事柄についての話し手自身の思考や意見、判断を述べる最も代表的な文法表現です。断定的な言いまわしを避け、表現を和らげて控えめに伝える働きもあります。「と思う」の直前は常に普通形（常体）が接続します。",
+      "formation": "動詞普通形 ＋ と思う ／ い形容詞普通形 ＋ と思う ／ な形容詞語幹 ＋ だと思う ／ 名詞 ＋ だと思う",
+      "examples": [
+        {
+          "translation": "明日晴れると思います。"
+        },
+        {
+          "translation": "この映画は面白いと思う。"
+        },
+        {
+          "translation": "彼は親切だと思います。"
+        },
+        {
+          "translation": "鈴木さんは先生だと思う。"
+        }
+      ]
+    },
+    "ja_という_101": {
+      "title": "～という (〜to iu)",
+      "shortExplanation": "発言や思考内容の引用、伝聞や世間の評判、あるいは人や事物の名称提示を表し、「〜と言う」「〜という評判だ」「〜という名前の」という意味を表します。",
+      "longExplanation": "「～という」は、多面的な機能を持つ重要な文型です。\n1. 引用：他者の発言や思考内容を直接・間接に引用する用法。\n2. 伝聞・評判：聞き及んだ情報や世間の噂・評価を述べる用法（「〜という話だ」「〜という評判がある」）。\n3. 名称・定義：事物や人の名前を提示したり定義づけたりする用法。\n接続は原則として普通形に接続します。",
+      "formation": "普通形（動詞／形容詞／名詞） ＋ という",
+      "examples": [
+        {
+          "translation": "彼は「好きだ」と言った。"
+        },
+        {
+          "translation": "その映画は面白いという評判があります。"
+        },
+        {
+          "translation": "日本には富士山という高い山があります。"
+        },
+        {
+          "translation": "彼女は難しい仕事をしているという話です。"
+        }
+      ]
+    },
+    "ja_ないといけない_102": {
+      "title": "～ないといけない (〜nai to ikenai)",
+      "shortExplanation": "義務や必要性を表し、その行為をしなければならないことを述べ、「〜しなければならない」という意味を表します。",
+      "longExplanation": "「～ないといけない」（丁寧形は「～ないといけません」）は、「もし〜しないと都合が悪い・通用しない」という論理から転じて、義務や必要性、当然すべき行為を表す文法表現です。日常会話で自己の予定や義務、他者への助言を述べる際によく用いられます。",
+      "formation": "動詞ない形 ＋ といけない／といけません",
+      "examples": [
+        {
+          "translation": "明日試験があるから、今夜勉強しないといけない。"
+        },
+        {
+          "translation": "９時に出発しないといけない。"
+        },
+        {
+          "translation": "風邪をひかないように、手をよく洗わないといけない。"
+        },
+        {
+          "translation": "この仕事は明日までに終わらないといけない。"
+        }
+      ]
+    },
+    "ja_なきゃいけない_103": {
+      "title": "～なきゃいけない (〜nakya ikenai)",
+      "shortExplanation": "「～なければいけない」の口語的・くだけた縮約表現で、義務や必然性を表し、「〜しなければならない」という意味を表します。",
+      "longExplanation": "「～なきゃいけない」は、「～なければいけない」の「なければ」が口語で「なきゃ」に変化した日常会話表現です。しなければならない義務や予定、差し迫った必要性を親しい相手に伝える際に非常によく用いられます。さらに日常会話では文末の「いけない」を省略して「〜なきゃ（例：早く行かなきゃ）」だけで済ませることも一般的です。",
+      "formation": "動詞ない形（語尾の「い」を除く） ＋ なきゃいけない／なきゃいけません",
+      "examples": [
+        {
+          "translation": "明日までに宿題を終わらなきゃいけない。"
+        },
+        {
+          "translation": "もうすぐ出かけるから、急いで準備しなきゃいけない。"
+        },
+        {
+          "translation": "このプロジェクトは来週提出しなきゃいけない。"
+        },
+        {
+          "translation": "電車に乗る前に、切符を買わなきゃいけない。"
+        }
+      ]
+    }
+  }
+}

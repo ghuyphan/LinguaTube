@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_总算_553",
+    "language": "zh",
+    "pattern": "总算",
+    "title": "总算 (finally)",
+    "shortExplanation": "finally",
+    "longExplanation": "finally. Pinyin: zǒngsuàn",
+    "formation": "zǒngsuàn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "虽然这家宾馆不太好，但总算有个睡觉的地方了。",
+        "romanization": "suīrán zhè jiā bīnguǎn bùtàihǎo， dàn zǒngsuàn yǒu gè shuìjiào de dìfang le。",
+        "translation": "Although this hotel is not very good, there is finally a place to sleep."
+      }
+    ]
+  },
+  {
+    "id": "zh_V下来_554",
+    "language": "zh",
+    "pattern": "V 下来",
+    "title": "V 下来 (V down)",
+    "shortExplanation": "V down",
+    "longExplanation": "V down. Pinyin: V xiàlai",
+    "formation": "V xiàlai",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "你的论文大概什么时候发表？定下来了吗？",
+        "romanization": "nǐ de lùnwén dàgài shénmeshíhou fābiǎo？ dìng xiàlai le ma？",
+        "translation": "When will your paper be published? Have you decided (lit. decided down)?"
+      }
+    ]
+  },
+  {
+    "id": "zh_舍得_555",
+    "language": "zh",
+    "pattern": "舍得",
+    "title": "舍得 (willing (to to let go))",
+    "shortExplanation": "willing (to to let go)",
+    "longExplanation": "willing (to to let go). Pinyin: shěde",
+    "formation": "shěde",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "把你最喜欢的玩具送给小朋友，你舍得吗？",
+        "romanization": "bǎ nǐ zuì xǐhuan de wánjù sònggěi xiǎopéngyǒu， nǐ shěde ma？",
+        "translation": "Give your favorite toys to children, are you willing (to let go)?"
+      }
+    ]
+  },
+  {
+    "id": "zh_舍不得_556",
+    "language": "zh",
+    "pattern": "舍不得",
+    "title": "舍不得 (unwilling (to to let go))",
+    "shortExplanation": "unwilling (to to let go)",
+    "longExplanation": "unwilling (to to let go). Pinyin: shěbude",
+    "formation": "shěbude",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "有些人舍不得把钱花在有意思的事情上。",
+        "romanization": "yǒuxiērén shěbude bǎ qián huā zài yǒuyìsi de shìqing shàng。",
+        "translation": "Some people are reluctant to spend money on fun things."
+      }
+    ]
+  },
+  {
+    "id": "zh_从此_557",
+    "language": "zh",
+    "pattern": "从此",
+    "title": "从此 (since then)",
+    "shortExplanation": "since then",
+    "longExplanation": "since then. Pinyin: cóngcǐ",
+    "formation": "cóngcǐ",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "从此李白刻苦用功，最后成了一位伟大的诗人。",
+        "romanization": "cóngcǐ Lǐ Bái kèkǔ yònggōng， zuìhòu chéngle yī wèi wěidà de shīrén。",
+        "translation": "Since then, Li Bai has worked hard and finally became a great poet."
+      }
+    ]
+  },
+  {
+    "id": "zh_假设_558",
+    "language": "zh",
+    "pattern": "假设……",
+    "title": "假设…… (suppose …)",
+    "shortExplanation": "suppose …",
+    "longExplanation": "suppose …. Pinyin: jiǎshè……",
+    "formation": "jiǎshè……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "假设你的钱用完了呢？你该怎么办呢？",
+        "romanization": "jiǎshè nǐ de qián yòng wánle ne？ nǐ gāi zěnmebàn ne？",
+        "translation": "Suppose your money is running out? What would you do?"
+      }
+    ]
+  },
+  {
+    "id": "zh_假设_559",
+    "language": "zh",
+    "pattern": "假设",
+    "title": "假设 (supposition)",
+    "shortExplanation": "supposition",
+    "longExplanation": "supposition. Pinyin: jiǎshè",
+    "formation": "jiǎshè",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "您当年的假设已经被证明是对的。",
+        "romanization": "nín dāngnián de jiǎshè yǐjīng bèi zhèngmíng shì duì de。",
+        "translation": "Your assumptions for the year have been proven to be correct."
+      }
+    ]
+  },
+  {
+    "id": "zh_堆_560",
+    "language": "zh",
+    "pattern": "堆",
+    "title": "堆 (a pile, a heap)",
+    "shortExplanation": "a pile, a heap",
+    "longExplanation": "a pile, a heap. Pinyin: duī",
+    "formation": "duī",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "工厂旁边有一个建筑材料堆。",
+        "romanization": "gōngchǎng pángbiān yǒu yī gè jiànzhù cáiliào duī。",
+        "translation": "There is a pile of building materials next to the factory."
+      }
+    ]
+  },
+  {
+    "id": "zh_堆_561",
+    "language": "zh",
+    "pattern": "堆",
+    "title": "堆 (to pile, to heap)",
+    "shortExplanation": "to pile, to heap",
+    "longExplanation": "to pile, to heap. Pinyin: duī",
+    "formation": "duī",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "这些零件怎么都堆在这儿啊？",
+        "romanization": "zhèxiē língjiàn zěnme dōu duī zài zhèr ā？",
+        "translation": "How are these parts piled up here?"
+      }
+    ]
+  },
+  {
+    "id": "zh_不如NA_562",
+    "language": "zh",
+    "pattern": "不如 N A",
+    "title": "不如 N A (not as A as N)",
+    "shortExplanation": "not as A as N",
+    "longExplanation": "not as A as N. Pinyin: bùrú N A",
+    "formation": "bùrú N A",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "三家的营业额加起来还不如他一家高。",
+        "romanization": "sān jiāde yíngyè'é jiā qilai háibùrú tā yījiā gāo。",
+        "translation": "The turnover of the three companies is not as high as his family."
+      }
+    ]
+  },
+  {
+    "id": "zh_与其不如_563",
+    "language": "zh",
+    "pattern": "(与其)……不如……",
+    "title": "(与其)……不如…… (rather than… it’s better to)",
+    "shortExplanation": "rather than… it’s better to",
+    "longExplanation": "rather than… it’s better to. Pinyin: ( yǔqí)…… bùrú……",
+    "formation": "( yǔqí)…… bùrú……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "与其待在家里，不如去外边走走。",
+        "romanization": "yǔqí dài zài jiālǐ， bùrú qù wàibian zǒu zǒu。",
+        "translation": "Instead of staying at home, it is better to go outside."
+      }
+    ]
+  },
+  {
+    "id": "zh_干脆V_564",
+    "language": "zh",
+    "pattern": "干脆 V",
+    "title": "干脆 V (simply, quick and dirty)",
+    "shortExplanation": "simply, quick and dirty",
+    "longExplanation": "simply, quick and dirty. Pinyin: gāncuì V",
+    "formation": "gāncuì V",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "许多亲朋好友建议他干脆把另三家书店挤垮。",
+        "romanization": "xǔduō qīnpénghǎoyǒu jiànyì tā gāncuì bǎ lìng sān jiā shūdiàn jǐkuǎ。",
+        "translation": "Many relatives and friends suggested that he simply “squeeze out” the other three bookstores, [quick and dirty]. [That its, drive them out of their business.]"
+      }
+    ]
+  },
+  {
+    "id": "zh_干脆_565",
+    "language": "zh",
+    "pattern": "干脆",
+    "title": "干脆 (decisive)",
+    "shortExplanation": "decisive",
+    "longExplanation": "decisive. Pinyin: gāncuì",
+    "formation": "gāncuì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我求他帮忙，他答应得很干脆。",
+        "romanization": "wǒ qiú tā bāngmáng， tā dāying dehěn gāncuì。",
+        "translation": "I asked him for help, and he readily agreed."
+      }
+    ]
+  },
+  {
+    "id": "zh_万一_566",
+    "language": "zh",
+    "pattern": "万一",
+    "title": "万一 (in the unlikely case where)",
+    "shortExplanation": "in the unlikely case where",
+    "longExplanation": "in the unlikely case where. Pinyin: wànyī",
+    "formation": "wànyī",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "如果鸡蛋都放在一个篮子里，万一不小心就有可能全部打碎。",
+        "romanization": "rúguǒ jīdàn dōu fàng zài yī gè lánzi lǐ， wànyī bù xiǎoxīn jiù yǒukěnéng quánbù dǎsuì。",
+        "translation": "If all [your] eggs are placed in one basket, should an accident happen they would all be crushed."
+      }
+    ]
+  },
+  {
+    "id": "zh_万一_567",
+    "language": "zh",
+    "pattern": "万一",
+    "title": "万一 (unlikely case, mishap)",
+    "shortExplanation": "unlikely case, mishap",
+    "longExplanation": "unlikely case, mishap. Pinyin: wànyī",
+    "formation": "wànyī",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "不怕一万，就怕万一。",
+        "romanization": "bùpà yī wàn， jiù pà wànyī。",
+        "translation": "We’re not afraid of the usual, just the unexpected mishap."
+      }
+    ]
+  }
+]

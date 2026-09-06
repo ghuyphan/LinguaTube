@@ -28,7 +28,7 @@ export class GrammarPopupComponent {
             const open = this.isOpen();
             const uiLang = this.i18n.currentLanguage();
 
-            if (p && open && uiLang !== 'en' && p.language !== uiLang) {
+            if (p && open && uiLang !== 'en') {
                 this.grammar.loadTranslation(p.language, uiLang);
             }
         });
@@ -40,7 +40,7 @@ export class GrammarPopupComponent {
         if (!p) return null;
 
         const uiLang = this.i18n.currentLanguage();
-        if (uiLang === 'en' || p.language === uiLang) return p;
+        if (uiLang === 'en') return p;
 
         // Reactive tracking: automatically re-evaluates whenever a translation pack finishes loading
         this.grammar.loadedTranslations();

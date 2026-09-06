@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_わけではない_163",
+    "language": "ja",
+    "pattern": "～わけではない",
+    "title": "～わけではない (〜wake dewa nai)",
+    "shortExplanation": "Not necessarily; it doesn't mean that ~.",
+    "longExplanation": "The ～わけではない grammar point is used to express that something is not necessarily the case or 'it doesn’t mean that...' It negates a broad assumption or generalization.",
+    "formation": "Verb-plain + わけではない, い-Adjective + わけではない, な-Adjective + だわけではない, Noun + だわけではない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼が勉強しないわけではないが、成績があまり良くない。",
+        "romanization": "Kare ga benkyou shinai wake dewa nai ga, seiseki ga amari yoku nai.",
+        "translation": "It's not that he doesn't study, but his grades aren't very good."
+      },
+      {
+        "sentence": "このレストランが高いわけではないけど、毎日通うには少し高いね。",
+        "romanization": "Kono resutoran ga takai wake dewa nai kedo, mainichi kayou ni wa sukoshi takai ne.",
+        "translation": "It's not that this restaurant is expensive, but it's a bit too pricey to go there every day."
+      },
+      {
+        "sentence": "彼女が優しくないわけではないが、時々話し方がきついことがある。",
+        "romanization": "Kanojo ga yasashikunai wake dewa nai ga, tokidoki hanashikata ga kitsui koto ga aru.",
+        "translation": "It's not that she's unkind, but sometimes her manner of speaking can be harsh."
+      },
+      {
+        "sentence": "彼が忙しいわけではないが、時間を上手に使えていないようだ。",
+        "romanization": "Kare ga isogashii wake dewa nai ga, jikan o jouzu ni tsukaete inai you da.",
+        "translation": "It's not that he's busy; he just doesn't seem to use his time effectively."
+      }
+    ]
+  },
+  {
+    "id": "ja_わけにはいかない_164",
+    "language": "ja",
+    "pattern": "～わけにはいかない",
+    "title": "～わけにはいかない (〜wake ni wa ikanai)",
+    "shortExplanation": "Expresses that one cannot (or must not) do something due to responsibility, social pressure, etc.",
+    "longExplanation": "The ～わけにはいかない grammar point is used to express that you cannot afford to do something or are not allowed to do it. It often implies a sense of responsibility, moral/social obligation, or external pressure that prevents you from doing it.",
+    "formation": "Verb-dictionary form + わけにはいかない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "試験が近いから、遊ぶわけにはいかない。",
+        "romanization": "Shiken ga chikai kara, asobu wake ni wa ikanai.",
+        "translation": "Since the exam is close, I can't afford to just play around."
+      },
+      {
+        "sentence": "田中さんが待っているので、遅れるわけにはいかない。",
+        "romanization": "Tanaka-san ga matteiru node, okureru wake ni wa ikanai.",
+        "translation": "Mr. Tanaka is waiting, so I absolutely must not be late."
+      },
+      {
+        "sentence": "子供たちのために、この仕事を辞めるわけにはいかない。",
+        "romanization": "Kodomo-tachi no tame ni, kono shigoto o yameru wake ni wa ikanai.",
+        "translation": "For the sake of my kids, I can't afford to quit this job."
+      },
+      {
+        "sentence": "この問題は重要だから、無視するわけにはいかない。",
+        "romanization": "Kono mondai wa juuyou dakara, mushi suru wake ni wa ikanai.",
+        "translation": "This issue is important, so I can't simply ignore it."
+      }
+    ]
+  },
+  {
+    "id": "ja_をきっかけに_165",
+    "language": "ja",
+    "pattern": "～をきっかけに",
+    "title": "～をきっかけに (〜wo kikkake ni)",
+    "shortExplanation": "Indicates that something serves as a trigger or starting point for another action/event.",
+    "longExplanation": "「～をきっかけに」 is used with a noun to show that an event, thing, or situation became a trigger or motive that led to a new development or action. It translates as 'taking ... as an opportunity,' 'due to ...,' or 'inspired by ...'.",
+    "formation": "Noun + をきっかけに",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "結婚をきっかけに、彼は真剣に仕事を頑張り始めた。",
+        "romanization": "Kekkon o kikkake ni, kare wa shinken ni shigoto o ganbarihajimeta.",
+        "translation": "Getting married was the catalyst for him to start working seriously."
+      },
+      {
+        "sentence": "あの出会いをきっかけに、私たちは友達になりました。",
+        "romanization": "Ano deai o kikkake ni, watashitachi wa tomodachi ni narimashita.",
+        "translation": "That encounter led us to become friends."
+      },
+      {
+        "sentence": "コンサートをきっかけに、彼女は音楽の道に進むことを決めました。",
+        "romanization": "Konsaato o kikkake ni, kanojo wa ongaku no michi ni susumu koto o kimemashita.",
+        "translation": "Inspired by the concert, she decided to pursue music."
+      },
+      {
+        "sentence": "留学をきっかけに、私の外国語スキルが向上しました。",
+        "romanization": "Ryuugaku o kikkake ni, watashi no gaikokugo sukiru ga koujou shimashita.",
+        "translation": "Studying abroad gave me the chance to improve my foreign language skills."
+      }
+    ]
+  },
+  {
+    "id": "ja_をとして_166",
+    "language": "ja",
+    "pattern": "～を～として",
+    "title": "～を～として (〜wo〜toshite)",
+    "shortExplanation": "Express 'as', 'in the capacity of', or 'taking something as...'.",
+    "longExplanation": "The grammar pattern 「～を～として」 is used with nouns to indicate taking one thing 'as' or 'in the role of' another. It shows how a certain noun is being viewed or utilized.",
+    "formation": "Noun1 + を + Noun2 + として",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は教師を職業として働いています。",
+        "romanization": "Kare wa kyoushi o shokugyou toshite hataraite imasu.",
+        "translation": "He works as a teacher."
+      },
+      {
+        "sentence": "彼女はリーダーを役割として受け入れました。",
+        "romanization": "Kanojo wa riidaa o yakuwari toshite ukeiremashita.",
+        "translation": "She accepted the role of leader."
+      },
+      {
+        "sentence": "私たちは彼を仲間として信頼しています。",
+        "romanization": "Watashitachi wa kare o nakama toshite shinrai shite imasu.",
+        "translation": "We trust him as one of our own (a close companion)."
+      },
+      {
+        "sentence": "このアーティストは伝統を基盤として作品を作ります。",
+        "romanization": "Kono aatisuto wa dentou o kiban toshite sakuhin o tsukurimasu.",
+        "translation": "This artist creates works with tradition as the foundation."
+      }
+    ]
+  },
+  {
+    "id": "ja_を中心に_167",
+    "language": "ja",
+    "pattern": "～を中心に",
+    "title": "～を中心に (〜wo chuushin ni)",
+    "shortExplanation": "Indicates that something is centered around or focused on a main topic or area.",
+    "longExplanation": "「～を中心に」 is used with nouns to show that an action or situation is mainly or primarily about the specified noun. It can be translated as 'centered on', 'focusing on', or 'with ... as the main focus'.",
+    "formation": "Noun + を中心に",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "このイベントは音楽を中心に楽しまれています。",
+        "romanization": "Kono ibento wa ongaku o chuushin ni tanoshimarete imasu.",
+        "translation": "This event is mainly enjoyed for its music."
+      },
+      {
+        "sentence": "彼の仕事は東京を中心に行われています。",
+        "romanization": "Kare no shigoto wa Toukyou o chuushin ni okonawarete imasu.",
+        "translation": "His work is primarily conducted in and around Tokyo."
+      },
+      {
+        "sentence": "彼女は健康を中心に本を書いています。",
+        "romanization": "Kanojo wa kenkou o chuushin ni hon o kaite imasu.",
+        "translation": "She’s writing a book focusing on health."
+      },
+      {
+        "sentence": "最近の研究は環境保護を中心に行われている。",
+        "romanization": "Saikin no kenkyuu wa kankyou hogo o chuushin ni okonawarete iru.",
+        "translation": "Recent research is being carried out with a primary focus on environmental protection."
+      }
+    ]
+  },
+  {
+    "id": "ja_を問わず_168",
+    "language": "ja",
+    "pattern": "～を問わず",
+    "title": "～を問わず (〜wo towazu)",
+    "shortExplanation": "Means 'regardless of' or 'irrespective of'.",
+    "longExplanation": "「～を問わず」 is used to express that something applies or is available without any distinction regarding the stated nouns/conditions. It means 'regardless of...' or 'irrespective of...'.",
+    "formation": "Noun + を問わず",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "このイベントは、年齢を問わず、誰でも参加できます。",
+        "romanization": "Kono ibento wa, nenrei o towazu, dare demo sanka dekimasu.",
+        "translation": "This event is open to everyone, regardless of age."
+      },
+      {
+        "sentence": "このスーパーは、日曜日を問わず、毎日開いています。",
+        "romanization": "Kono suupaa wa, nichiyoubi o towazu, mainichi aite imasu.",
+        "translation": "This supermarket is open every day, regardless of Sunday."
+      },
+      {
+        "sentence": "彼女は、暑さ寒さを問わず、毎朝散歩をしています。",
+        "romanization": "Kanojo wa, atsusa samusa o towazu, maiasa sanpo o shite imasu.",
+        "translation": "She takes a walk every morning, no matter the heat or cold."
+      },
+      {
+        "sentence": "社長は、国籍を問わず、すべての社員を平等に扱っています。",
+        "romanization": "Shachou wa, kokuseki o towazu, subete no shain o byoudou ni atsukatte imasu.",
+        "translation": "The company president treats all employees equally, regardless of nationality."
+      }
+    ]
+  },
+  {
+    "id": "ja_を込めて_169",
+    "language": "ja",
+    "pattern": "～を込めて",
+    "title": "～を込めて (〜wo komete)",
+    "shortExplanation": "To express that something is done with a certain feeling, intention, or emotion.",
+    "longExplanation": "The ～を込めて grammar point is used to express that an action is done with a certain feeling, intention or emotion. It can be translated as 'with' or 'filled with' in English. ～を込めて is typically used with feelings or emotions that the speaker wishes to convey through their actions.",
+    "formation": "Feeling/emotion/intention Noun + を + 込めて + Verb",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "愛を込めて料理を作りました。",
+        "romanization": "Ai wo komete ryouri wo tsukurimashita.",
+        "translation": "I cooked the meal with love."
+      },
+      {
+        "sentence": "感謝を込めて先生にお礼の手紙を書きました。",
+        "romanization": "Kansha wo komete sensei ni orei no tegami wo kakimashita.",
+        "translation": "I wrote a thank-you letter to my teacher, filled with gratitude."
+      },
+      {
+        "sentence": "彼は全力を込めて最後の瞬間まで戦いました。",
+        "romanization": "Kare wa zenryoku wo komete saigo no shunkan made tatakaimashita.",
+        "translation": "He fought until the last moment with all his strength."
+      },
+      {
+        "sentence": "彼女は悲しみを込めて友達へ別れの言葉を伝えました。",
+        "romanization": "Kanojo wa kanashimi wo komete tomodachi e wakare no kotoba wo tsutaemashita.",
+        "translation": "She conveyed her farewell words to her friend with sadness."
+      }
+    ]
+  },
+  {
+    "id": "ja_を通じて_170",
+    "language": "ja",
+    "pattern": "～を通じて",
+    "title": "～を通じて (〜wo tsuujite)",
+    "shortExplanation": "Expresses 'through', 'throughout', or 'during'.",
+    "longExplanation": "The ～を通じて grammar point is used to express actions or conditions that occur through or throughout a specific period, medium, or method. It can be translated as 'through', 'throughout', or 'during' in English. It is formed by attaching 'を通じて' to a noun that represents time, place, or method.",
+    "formation": "Noun + を通じて",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "インターネットを通じて友達と連絡を取ります。",
+        "romanization": "Intaanetto wo tsuujite tomodachi to renraku wo torimasu.",
+        "translation": "I keep in touch with my friends through the internet."
+      },
+      {
+        "sentence": "彼は一日を通じて熱心に働いています。",
+        "romanization": "Kare wa ichinichi wo tsuujite nesshin ni hataraite imasu.",
+        "translation": "He works diligently throughout the day."
+      },
+      {
+        "sentence": "このイベントは週末を通じて開催されます。",
+        "romanization": "Kono ibento wa shuumatsu wo tsuujite kaisai saremasu.",
+        "translation": "This event will take place throughout the weekend."
+      },
+      {
+        "sentence": "その花は春を通じて咲いています。",
+        "romanization": "Sono hana wa haru wo tsuujite saiteimasu.",
+        "translation": "The flowers bloom throughout the spring."
+      }
+    ]
+  },
+  {
+    "id": "ja_を頼りに_171",
+    "language": "ja",
+    "pattern": "～を頼りに",
+    "title": "～を頼りに (〜wo tayori ni)",
+    "shortExplanation": "To rely on or depend on something or someone.",
+    "longExplanation": "The ～を頼りに grammar point is used to express that someone is relying on or depending on something or someone. It can be translated as 'to rely on', 'to depend on', or 'counting on' in English. This phrase is used with nouns (people or objects) that act as a source of support or help.",
+    "formation": "Noun + を頼りに",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼女は地図を頼りに旅行をしている。",
+        "romanization": "Kanojo wa chizu wo tayori ni ryokou wo shite iru.",
+        "translation": "She is traveling relying on a map."
+      },
+      {
+        "sentence": "多くの人が彼の力を頼りに生活している。",
+        "romanization": "Ooku no hito ga kare no chikara wo tayori ni seikatsu shite iru.",
+        "translation": "Many people are living depending on his strength."
+      },
+      {
+        "sentence": "このプロジェクトでは、君のスキルを頼りにしています。",
+        "romanization": "Kono purojekuto de wa, kimi no sukiru wo tayori ni shiteimasu.",
+        "translation": "In this project, we are counting on your skills."
+      },
+      {
+        "sentence": "彼は友達の助けを頼りに問題を解決しようとした。",
+        "romanization": "Kare wa tomodachi no tasuke wo tayori ni mondai wo kaiketsu shiyou to shita.",
+        "translation": "He tried to solve the problem relying on his friend's help."
+      }
+    ]
+  },
+  {
+    "id": "ja_一方_172",
+    "language": "ja",
+    "pattern": "～一方",
+    "title": "～一方 (〜ippou)",
+    "shortExplanation": "Indicates that while one action or situation is happening, another action or situation is also occurring or is in contrast.",
+    "longExplanation": "The ～一方 grammar point is used to express that while one action or situation is taking place, another is occurring at the same time or in contrast. The clauses connected by 一方 often show simultaneous actions, opposing characteristics, or parallel developments.",
+    "formation": "Verb-casual + 一方(で), い-Adjective + 一方(で), な-Adjective + な/である一方(で), Noun + である一方(で)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "技術が進化する一方、生活が忙しくなっている。",
+        "romanization": "Gijutsu ga shinka suru ippou, seikatsu ga isogashiku natte iru.",
+        "translation": "While technology advances, life is getting busier."
+      },
+      {
+        "sentence": "日本語が上達する一方、英語力が下がっている気がする。",
+        "romanization": "Nihongo ga joutatsu suru ippou, eigo-ryoku ga sagatte iru ki ga suru.",
+        "translation": "While my Japanese improves, I feel like my English ability is declining."
+      },
+      {
+        "sentence": "この料理は美味しい一方、ちょっと高いです。",
+        "romanization": "Kono ryouri wa oishii ippou, chotto takai desu.",
+        "translation": "While this dish is delicious, it’s a bit expensive."
+      },
+      {
+        "sentence": "彼は優しい一方、厳しい面もある。",
+        "romanization": "Kare wa yasashii ippou, kibishii men mo aru.",
+        "translation": "While he is kind, he also has a strict side."
+      }
+    ]
+  },
+  {
+    "id": "ja_一方だ_173",
+    "language": "ja",
+    "pattern": "～一方だ",
+    "title": "～一方だ (〜ippou da)",
+    "shortExplanation": "Expresses that a situation or condition is continuing to increase or decrease in one direction.",
+    "longExplanation": "The ～一方だ grammar point is used when something is trending in a single direction over time, often increasing or worsening. It emphasizes that the tendency keeps going in one direction.",
+    "formation": "Verb-dictionary form + 一方だ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "世界の人口は増える一方だ。",
+        "romanization": "Sekai no jinkou wa fueru ippou da.",
+        "translation": "The world's population continues to increase."
+      },
+      {
+        "sentence": "この町の治安は悪化する一方だ。",
+        "romanization": "Kono machi no chian wa akka suru ippou da.",
+        "translation": "Public safety in this town is getting worse and worse."
+      },
+      {
+        "sentence": "僕の日本語は上達する一方だ。",
+        "romanization": "Boku no nihongo wa joutatsu suru ippou da.",
+        "translation": "My Japanese keeps improving."
+      },
+      {
+        "sentence": "夏になると、暑さが厳しくなる一方だ。",
+        "romanization": "Natsu ni naru to, atsusa ga kibishiku naru ippou da.",
+        "translation": "As summer arrives, it just keeps getting hotter."
+      }
+    ]
+  },
+  {
+    "id": "ja_上で_174",
+    "language": "ja",
+    "pattern": "～上で",
+    "title": "～上で (〜ue de)",
+    "shortExplanation": "Used to express that something is done after or on the basis of something else; 'after', 'upon'.",
+    "longExplanation": "The ～上で grammar point is used to indicate that an action or decision is made after another action or condition, or based on certain information. It can be translated as 'after doing something' or 'on the basis of...'.",
+    "formation": "Verb-ますstem + 上で, Noun + の上で",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "調査を行った上で、結論を出しましょう。",
+        "romanization": "Chousa wo okonatta ue de, ketsuron wo dashimashou.",
+        "translation": "Let's draw a conclusion after conducting the investigation."
+      },
+      {
+        "sentence": "就職活動を終えた上で、進学するかどうか決めます。",
+        "romanization": "Shuushoku katsudou wo oeta ue de, shingaku suru ka dou ka kimemasu.",
+        "translation": "I will decide whether to continue my studies after finishing my job hunting."
+      },
+      {
+        "sentence": "試着した上で、この服を買うかどうか考えます。",
+        "romanization": "Shichaku shita ue de, kono fuku wo kau ka dou ka kangaemasu.",
+        "translation": "I'll think about whether to buy these clothes after trying them on."
+      },
+      {
+        "sentence": "経験者の意見を聞いた上で、プロジェクトの方向性を決定しましょう。",
+        "romanization": "Keiken sha no iken wo kiita ue de, purojekuto no houkousei wo kettei shimashou.",
+        "translation": "Let's decide the direction of the project after listening to those with experience."
+      }
+    ]
+  },
+  {
+    "id": "ja_上に_175",
+    "language": "ja",
+    "pattern": "～上に",
+    "title": "～上に (〜ue ni)",
+    "shortExplanation": "Express 'in addition to', 'besides', 'not only... but also'.",
+    "longExplanation": "The ～上に grammar point is used to indicate that there is an additional piece of information or situation besides the first one. It can be translated as 'in addition to', 'besides', or 'not only... but also'. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-plain + 上に, い-Adjective + 上に, な-Adjective + な上に, Noun + の上に",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は頭がいい上に、スポーツも得意です。",
+        "romanization": "Kare wa atama ga ii ue ni, supo-tsu mo tokui desu.",
+        "translation": "In addition to being smart, he is also good at sports."
+      },
+      {
+        "sentence": "このドレスは美しい上に、値段も安いです。",
+        "romanization": "Kono doresu wa utsukushii ue ni, nedan mo yasui desu.",
+        "translation": "This dress is not only beautiful but also affordable."
+      },
+      {
+        "sentence": "彼女は優しい上に、料理も上手です。",
+        "romanization": "Kanojo wa yasashii ue ni, ryouri mo jouzu desu.",
+        "translation": "Besides being kind, she is also good at cooking."
+      },
+      {
+        "sentence": "彼は社長の上に、有名な作家でもある。",
+        "romanization": "Kare wa shachou no ue ni, yuumei na sakka demo aru.",
+        "translation": "Not only is he a company president, but he is also a famous writer."
+      }
+    ]
+  },
+  {
+    "id": "ja_上は_176",
+    "language": "ja",
+    "pattern": "～上は",
+    "title": "～上は (～ue wa)",
+    "shortExplanation": "Expresses 'now that', 'since', or 'once'.",
+    "longExplanation": "The ～上は grammar point is used to express that since a certain condition or situation exists, a certain action or result follows. It can be translated as 'now that', 'since', or 'once' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + 上は, い-Adjective + 上は, な-Adjective + な上は, Noun + の上は",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "試験に合格した上は、パーティーを開こう。",
+        "romanization": "Shiken ni goukaku shita ue wa, paatii wo hirakou.",
+        "translation": "Now that I've passed the exam, let's have a party."
+      },
+      {
+        "sentence": "この仕事を引き受けた上は、最後までやり遂げるつもりだ。",
+        "romanization": "Kono shigoto wo hikiuketa ue wa, saigo made yaritogeru tsumori da.",
+        "translation": "Now that I have taken on this job, I intend to see it through to the end."
+      },
+      {
+        "sentence": "親切だと言われた上は、手伝ってあげよう。",
+        "romanization": "Shinsetsu da to iwareta ue wa, tetsudatte ageyou.",
+        "translation": "Since you said I'm kind, I'll help you out."
+      },
+      {
+        "sentence": "甘いものが好きな上は、このデザートをきっと気に入るでしょう。",
+        "romanization": "Amai mono ga suki na ue wa, kono dezaato wo kitto ki ni iru deshou.",
+        "translation": "Now that you like sweets, you'll surely enjoy this dessert."
+      }
+    ]
+  },
+  {
+    "id": "ja_以上_177",
+    "language": "ja",
+    "pattern": "～以上",
+    "title": "～以上 (〜ijou)",
+    "shortExplanation": "Expresses 'since' or 'as long as' in a conditional context.",
+    "longExplanation": "The ～以上 grammar point is used to express a condition or requirement, and it can be translated as 'since', 'as long as', or 'if'. It often emphasizes that if a certain condition is met, a certain action or consequence will follow.",
+    "formation": "Verb-casual + 以上, い-Adjective + 以上, な-Adjective + な以上, Noun + の以上",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は忙しい以上、手伝いに行っても無駄だろう。",
+        "romanization": "Kare wa isogashii ijou, tetsudai ni itte mo muda darou.",
+        "translation": "Since he's busy, it would be pointless to try helping him."
+      },
+      {
+        "sentence": "約束した以上、守るべきだ。",
+        "romanization": "Yakusoku shita ijou, mamoru beki da.",
+        "translation": "Since I made a promise, I should keep it."
+      },
+      {
+        "sentence": "締め切りが近い以上、全力で仕事をしなければならない。",
+        "romanization": "Shimekiri ga chikai ijou, zenryoku de shigoto wo shinakereba naranai.",
+        "translation": "As long as the deadline is near, I have to work with all my might."
+      },
+      {
+        "sentence": "彼女は大学生である以上、勉強が優先されるべきだ。",
+        "romanization": "Kanojo wa daigakusei de aru ijou, benkyou ga yuusen sareru beki da.",
+        "translation": "Since she's a college student, studying should be her priority."
+      }
+    ]
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_VOV得A_107",
+    "language": "zh",
+    "pattern": "V O V 得 A",
+    "title": "V O V 得 A ((using adverbs))",
+    "shortExplanation": "(using adverbs)",
+    "longExplanation": "(using adverbs). Pinyin: V O V dé A",
+    "formation": "V O V dé A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "姐姐唱歌唱得很好。",
+        "romanization": "jiějie chànggē chàng dehěn hǎo。",
+        "translation": "My (older) sister sings brilliantly."
+      }
+    ]
+  },
+  {
+    "id": "zh_VOV得比NA_108",
+    "language": "zh",
+    "pattern": "V (O V) 得 比 N A",
+    "title": "V (O V) 得 比 N A (V (O) more A than N)",
+    "shortExplanation": "V (O) more A than N",
+    "longExplanation": "V (O) more A than N. Pinyin: V (O V) dé bǐ N A",
+    "formation": "V (O V) dé bǐ N A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "他学(汉语学)得比我快。",
+        "romanization": "tā xué( Hànyǔ xué) dé bǐ wǒ kuài。",
+        "translation": "He learns (Chinese) more quickly than I do."
+      }
+    ]
+  },
+  {
+    "id": "zh_比NVOV得A_109",
+    "language": "zh",
+    "pattern": "比 N V (O V) 得 A",
+    "title": "比 N V (O V) 得 A (V (O) more A than N)",
+    "shortExplanation": "V (O) more A than N",
+    "longExplanation": "V (O) more A than N. Pinyin: bǐ N V (O V) dé A",
+    "formation": "bǐ N V (O V) dé A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "他比我学(汉语学)得快。",
+        "romanization": "tā bǐ wǒ xué( Hànyǔ xué) dé kuài。",
+        "translation": "He learns (Chinese) more quickly than I do."
+      }
+    ]
+  },
+  {
+    "id": "zh_V着O_110",
+    "language": "zh",
+    "pattern": "V 着 O",
+    "title": "V 着 O (V-ing O)",
+    "shortExplanation": "V-ing O",
+    "longExplanation": "V-ing O. Pinyin: V zhe O",
+    "formation": "V zhe O",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "他们穿着西服。",
+        "romanization": "tāmen chuānzhuó xīfú。",
+        "translation": "They are wearing suites."
+      }
+    ]
+  },
+  {
+    "id": "zh_没V着O_111",
+    "language": "zh",
+    "pattern": "没 V 着 O",
+    "title": "没 V 着 O (not V-ing O)",
+    "shortExplanation": "not V-ing O",
+    "longExplanation": "not V-ing O. Pinyin: méi V zhe O",
+    "formation": "méi V zhe O",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "他没拿着铅笔。",
+        "romanization": "tā méi ná zhe qiānbǐ。",
+        "translation": "He’s not holding a pencil."
+      }
+    ]
+  },
+  {
+    "id": "zh_N不是吗_112",
+    "language": "zh",
+    "pattern": "N 不是……吗？",
+    "title": "N 不是……吗？ (is N not…)",
+    "shortExplanation": "is N not…",
+    "longExplanation": "is N not…. Pinyin: N bùshì…… ma？",
+    "formation": "N bùshì…… ma？",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你不是北京人吗？",
+        "romanization": "nǐ bùshì Běijīngrén ma？",
+        "translation": "Aren’t you a Beijinger?"
+      }
+    ]
+  },
+  {
+    "id": "zh_往DIRECTIONV_113",
+    "language": "zh",
+    "pattern": "往 DIRECTION V",
+    "title": "往 DIRECTION V (V toward DIRECTION)",
+    "shortExplanation": "V toward DIRECTION",
+    "longExplanation": "V toward DIRECTION. Pinyin: wǎng DIRECTION V",
+    "formation": "wǎng DIRECTION V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "从这儿一直往东走。",
+        "romanization": "cóng zhèr yīzhí wǎng dōng zǒu。",
+        "translation": "Walk straight toward the east from here."
+      }
+    ]
+  },
+  {
+    "id": "zh_V过_114",
+    "language": "zh",
+    "pattern": "V 过",
+    "title": "V 过 (V’ed before)",
+    "shortExplanation": "V’ed before",
+    "longExplanation": "V’ed before. Pinyin: V guò",
+    "formation": "V guò",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我去过中国。",
+        "romanization": "wǒ qù guò Zhōngguó。",
+        "translation": "I've been to China."
+      }
+    ]
+  },
+  {
+    "id": "zh_没有V过_115",
+    "language": "zh",
+    "pattern": "没有 V 过",
+    "title": "没有 V 过 (haven’t V’ed)",
+    "shortExplanation": "haven’t V’ed",
+    "longExplanation": "haven’t V’ed. Pinyin: méiyǒu V guò",
+    "formation": "méiyǒu V guò",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "他们没有来过我家。",
+        "romanization": "tāmen méiyǒu lái guò wǒ jiā。",
+        "translation": "They have never been to my place."
+      }
+    ]
+  },
+  {
+    "id": "zh_虽然但是_116",
+    "language": "zh",
+    "pattern": "虽然……但是",
+    "title": "虽然……但是 (although…)",
+    "shortExplanation": "although…",
+    "longExplanation": "although…. Pinyin: suīrán…… dànshì",
+    "formation": "suīrán…… dànshì",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "虽然是晴天，但是还是很冷。",
+        "romanization": "suīrán shì qíngtiān， dànshì háishi hěn lěng。",
+        "translation": "Even though it's sunny, it's still cold."
+      }
+    ]
+  },
+  {
+    "id": "zh_V过次O_117",
+    "language": "zh",
+    "pattern": "V 过 # 次 O",
+    "title": "V 过 # 次 O (V’ed O # times)",
+    "shortExplanation": "V’ed O # times",
+    "longExplanation": "V’ed O # times. Pinyin: V guò # cì O",
+    "formation": "V guò # cì O",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "他们坐过三次飞机。",
+        "romanization": "tāmen zuò guò sāncì fēijī。",
+        "translation": "They have taken a plane three times."
+      }
+    ]
+  },
+  {
+    "id": "zh_V过PLACE次_118",
+    "language": "zh",
+    "pattern": "V 过 PLACE # 次",
+    "title": "V 过 PLACE # 次 (V’ed to PLACE # times)",
+    "shortExplanation": "V’ed to PLACE # times",
+    "longExplanation": "V’ed to PLACE # times. Pinyin: V guò PLACE # cì",
+    "formation": "V guò PLACE # cì",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我们来过三次中国。",
+        "romanization": "wǒmen lái guò sāncì Zhōngguó。",
+        "translation": "We have been to China three times."
+      }
+    ]
+  },
+  {
+    "id": "zh_TIME就要V了_119",
+    "language": "zh",
+    "pattern": "TIME (就) 要 V 了",
+    "title": "TIME (就) 要 V 了 (about to V in TIME)",
+    "shortExplanation": "about to V in TIME",
+    "longExplanation": "about to V in TIME. Pinyin: TIME ( jiù) yào V le",
+    "formation": "TIME ( jiù) yào V le",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "下个星期我们(就)要考试了。",
+        "romanization": "xiàgèxīngqī wǒmen( jiù) yào kǎoshì le。",
+        "translation": "We are about to have an exam in just a week."
+      }
+    ]
+  },
+  {
+    "id": "zh_都TIMEAV了_120",
+    "language": "zh",
+    "pattern": "都 TIME/A/V 了",
+    "title": "都 TIME/A/V 了 (It’s already TIME, is already A, has already V’ed)",
+    "shortExplanation": "It’s already TIME, is already A, has already V’ed",
+    "longExplanation": "It’s already TIME, is already A, has already V’ed. Pinyin: dōu TIME/A/V le",
+    "formation": "dōu TIME/A/V le",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "都8点了，快点儿起床吧。",
+        "romanization": "dōu8 diǎn le， kuàidiǎnr qǐchuáng ba。",
+        "translation": "It’s already 8, get up quick!"
+      }
+    ]
+  },
+  {
+    "id": "zh_V好_121",
+    "language": "zh",
+    "pattern": "V 好",
+    "title": "V 好 (done V-ing)",
+    "shortExplanation": "done V-ing",
+    "longExplanation": "done V-ing. Pinyin: V hǎo",
+    "formation": "V hǎo",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "饭还没做好，请你等一会儿。",
+        "romanization": "fàn hái méi zuò hǎo， qǐng nǐděng yīhuìr。",
+        "translation": "The food is not cooked yet, please wait awhile."
+      }
+    ]
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_てまで_88",
+    "language": "ja",
+    "pattern": "～てまで",
+    "title": "～てまで (〜te made)",
+    "shortExplanation": "Express the extent someone goes in order to achieve something; 'to the point of', 'even', 'so far as to'.",
+    "longExplanation": "The ～てまで grammar point is used to convey the extent someone goes to achieve something, highlighting the action one takes or the sacrifice one makes for a certain purpose. It can be translated as 'to the point of', 'even', or 'so far as to' in English. It is used with verbs, not adjectives or nouns.",
+    "formation": "Verb-て form + まで",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は試験に合格するために、徹夜してまで勉強しました。",
+        "romanization": "Kare wa shiken ni gōkaku suru tame ni, tetsuya shite made benkyō shimashita.",
+        "translation": "He studied to the point of staying up all night in order to pass the exam."
+      },
+      {
+        "sentence": "この商品がほしかったので、朝早く起きてまで並んで買いました。",
+        "romanization": "Kono shōhin ga hoshikatta node, asa hayaku okite made narande kaimashita.",
+        "translation": "I wanted this product so much that I went so far as to get up early and wait in line to buy it."
+      },
+      {
+        "sentence": "彼女は彼を助けるために、お金を借りてまで手術代を払いました。",
+        "romanization": "Kanojo wa kare o tasukeru tame ni, okane o karite made shujutsudai o haraimashita.",
+        "translation": "In order to help him, she even borrowed money to pay for the surgery."
+      },
+      {
+        "sentence": "部長はそのプロジェクトを成功させるために、休日も働いてまで取り組んでいます。",
+        "romanization": "Buchō wa sono purojekuto o seikō saseru tame ni, kyūjitsu mo hataraite made torikunde imasu.",
+        "translation": "The manager is even working on holidays to make the project a success."
+      }
+    ]
+  },
+  {
+    "id": "ja_て当然だ_89",
+    "language": "ja",
+    "pattern": "～て当然だ",
+    "title": "～て当然だ (〜te tōzen da)",
+    "shortExplanation": "Expresses that something is natural or expected.",
+    "longExplanation": "The ～て当然だ grammar point is used to express that something is natural, obvious, or expected under the circumstances. It can be translated as 'it's natural that', 'as expected', or 'no wonder' in English.",
+    "formation": "Verb-て form + 当然だ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は毎日勉強しているから、試験に合格して当然だ。",
+        "romanization": "Kare wa mainichi benkyō shite iru kara, shiken ni gōkaku shite tōzen da.",
+        "translation": "Since he studies every day, it's only natural that he passes the exam."
+      },
+      {
+        "sentence": "そのレストランは料理が美味しいので、予約がいっぱいになって当然だ。",
+        "romanization": "Sono resutoran wa ryōri ga oishii node, yoyaku ga ippai ni natte tōzen da.",
+        "translation": "Because that restaurant’s food is delicious, no wonder its reservations are always full."
+      },
+      {
+        "sentence": "彼女は毎晩練習しているので、上手になって当然だ。",
+        "romanization": "Kanojo wa maiban renshū shite iru node, jōzu ni natte tōzen da.",
+        "translation": "She practices every night, so it's natural that she becomes skilled."
+      },
+      {
+        "sentence": "彼は仕事で成功していて、お金持ちになって当然だ。",
+        "romanization": "Kare wa shigoto de seikō shite ite, okanemochi ni natte tōzen da.",
+        "translation": "He has succeeded at his job, so it's only natural that he's become wealthy."
+      }
+    ]
+  },
+  {
+    "id": "ja_というものだ_90",
+    "language": "ja",
+    "pattern": "～というものだ",
+    "title": "～というものだ (〜to iu mono da)",
+    "shortExplanation": "Expressing a general rule or common sense.",
+    "longExplanation": "The ～というものだ grammar point is used to emphasize a general rule, a piece of common sense, or an indisputable fact. It often appears in comments or observations about something commonly accepted as true.",
+    "formation": "Sentence + というものだ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "若者の熱情は尊敬に値するというものだ。",
+        "romanization": "Wakamono no netsujō wa sonkei ni ataisuru to iu mono da.",
+        "translation": "The passion of young people is something that deserves respect."
+      },
+      {
+        "sentence": "勉強は一日でもサボれば遅れるというものだ。",
+        "romanization": "Benkyō wa ichinichi demo saboreba okureru to iu mono da.",
+        "translation": "If you skip even a day of studying, you'll fall behind—that's just how it is."
+      },
+      {
+        "sentence": "成功するためには困難に立ち向かうというものだ。",
+        "romanization": "Seikō suru tame ni wa konnan ni tachimukau to iu mono da.",
+        "translation": "To succeed, one must face difficulties—that's just the way it is."
+      },
+      {
+        "sentence": "友情はお金で買えないというものだ。",
+        "romanization": "Yūjō wa okane de kaenai to iu mono da.",
+        "translation": "It is said that friendship cannot be bought with money."
+      }
+    ]
+  },
+  {
+    "id": "ja_どうにかないものか_91",
+    "language": "ja",
+    "pattern": "どうにか～ないものか",
+    "title": "どうにか～ないものか (dō ni ka ~ nai mono ka)",
+    "shortExplanation": "Express a strong desire or wish for something to be possible.",
+    "longExplanation": "どうにか～ないものか is used to express a strong desire or wish for something to be resolved or made possible. It translates roughly as 'isn't there some way...?', 'can't we somehow...?', or 'is there no way...?'",
+    "formation": "どうにか + Verb-negative form + ないものか",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "どうにかこの仕事を終わらせないものか。",
+        "romanization": "Dō ni ka kono shigoto o owarasenai mono ka.",
+        "translation": "Isn't there some way to finish this job?"
+      },
+      {
+        "sentence": "どうにか次の試験で合格しないものか。",
+        "romanization": "Dō ni ka tsugi no shiken de gōkaku shinai mono ka.",
+        "translation": "Can't we somehow pass the next exam?"
+      },
+      {
+        "sentence": "どうにか込んでいる電車に乗れないものか。",
+        "romanization": "Dō ni ka konde iru densha ni norenai mono ka.",
+        "translation": "Is there no way to get on the crowded train somehow?"
+      },
+      {
+        "sentence": "どうにか彼女と仲直りしないものか。",
+        "romanization": "Dō ni ka kanojo to nakanaori shinai mono ka.",
+        "translation": "Isn't there some way to make up with her?"
+      }
+    ]
+  },
+  {
+    "id": "ja_とおり_92",
+    "language": "ja",
+    "pattern": "～とおり",
+    "title": "～とおり (〜toori)",
+    "shortExplanation": "Express doing something as instructed or describing how something matches a rule or guideline; 'as', 'according to'.",
+    "longExplanation": "The ～とおり grammar point is used to express doing something exactly as instructed or describing how something matches a guideline or is exactly as one heard/expected. It can be translated as 'as', 'according to', or 'the same way...'.",
+    "formation": "Verb-casual + とおり, い-Adjective + とおり, な-Adjective + だとおり, Noun + だとおり",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "先生が言ったとおりに宿題をしました。",
+        "romanization": "Sensei ga itta tōri ni shukudai o shimashita.",
+        "translation": "I did my homework exactly as the teacher said."
+      },
+      {
+        "sentence": "この地図のとおりに歩いてください。",
+        "romanization": "Kono chizu no tōri ni aruite kudasai.",
+        "translation": "Please walk according to this map."
+      },
+      {
+        "sentence": "彼はいつもルールどおりに遊びます。",
+        "romanization": "Kare wa itsumo rūru-dōri ni asobimasu.",
+        "translation": "He always plays by the rules."
+      },
+      {
+        "sentence": "その道路は昼間と同じくらい夜も賑やかだというとおりでした。",
+        "romanization": "Sono dōro wa hiruma to onaji kurai yoru mo nigiyaka da to iu tōri deshita.",
+        "translation": "As I heard, that street was just as lively at night as it is in the daytime."
+      }
+    ]
+  },
+  {
+    "id": "ja_とか_93",
+    "language": "ja",
+    "pattern": "～とか",
+    "title": "～とか (〜to ka)",
+    "shortExplanation": "Used to list examples or express uncertainty; 'such as', 'like', 'or something like that'.",
+    "longExplanation": "The ～とか grammar point can be used to list examples or express a somewhat vague mention of items/activities. It can be translated as 'such as', 'like', or 'or something like that'.",
+    "formation": "Verb-casual + とか, い-Adjective + とか, な-Adjective + だとか, Noun + だとか",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "休日は映画を見るとか、買い物に行くとかして過ごします。",
+        "romanization": "Kyūjitsu wa eiga o miru to ka, kaimono ni iku to ka shite sugoshimasu.",
+        "translation": "On my days off, I do things like watch movies or go shopping."
+      },
+      {
+        "sentence": "彼女はオーストラリアとかニュージーランドとかに行きたがっています。",
+        "romanization": "Kanojo wa Ōsutoraria to ka Nyūjīrando to ka ni ikitagatte imasu.",
+        "translation": "She wants to go to places like Australia or New Zealand."
+      },
+      {
+        "sentence": "今日の天気は晴れたり、曇ったりとかだそうです。",
+        "romanization": "Kyō no tenki wa hare tari, kumottari to ka da sō desu.",
+        "translation": "I heard today’s weather is something like sunny at times, cloudy at times."
+      },
+      {
+        "sentence": "彼は野球をしたり、サッカーをしたりとかしています。",
+        "romanization": "Kare wa yakyū o shitari, sakkā o shitari to ka shite imasu.",
+        "translation": "He spends his time playing baseball and soccer and such."
+      }
+    ]
+  },
+  {
+    "id": "ja_ところ_94",
+    "language": "ja",
+    "pattern": "～ところ",
+    "title": "～ところ (〜tokoro)",
+    "shortExplanation": "Express a specific point in time or state; 'when', 'just about', or 'in the middle of'.",
+    "longExplanation": "The ～ところ grammar point is used to describe a specific point in time or stage of action. Depending on the verb tense, it can mean 'just about to do something', 'in the middle of doing something', or 'just did something'.",
+    "formation": "Verb-casual + ところ, い-Adjective + ところ, な-Adjective + なところ, Noun + のところ",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "出かけるところです。",
+        "romanization": "Dekakeru tokoro desu.",
+        "translation": "I'm just about to go out."
+      },
+      {
+        "sentence": "映画を見ているところです。",
+        "romanization": "Eiga o mite iru tokoro desu.",
+        "translation": "I'm in the middle of watching a movie."
+      },
+      {
+        "sentence": "おいしいところで食事をするつもりです。",
+        "romanization": "Oishii tokoro de shokuji o suru tsumori desu.",
+        "translation": "I plan to have a meal at a good (tasty) place."
+      },
+      {
+        "sentence": "彼は忙しいところを手伝ってくれました。",
+        "romanization": "Kare wa isogashii tokoro o tetsudatte kuremashita.",
+        "translation": "He helped me when he himself was busy."
+      }
+    ]
+  },
+  {
+    "id": "ja_どころか_95",
+    "language": "ja",
+    "pattern": "～どころか",
+    "title": "～どころか (〜dokoro ka)",
+    "shortExplanation": "Express 'far from', 'not just', 'not only', or 'to say nothing of'.",
+    "longExplanation": "The ～どころか grammar point is used to emphasize that reality is far from what one might expect or that something is not only one way, but actually goes beyond it. It can be translated as 'far from', 'not just', or 'to say nothing of'.",
+    "formation": "Verb-casual + どころか, い-Adjective + どころか, な-Adjective + どころか, Noun + どころか",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は歌が上手どころか、プロの歌手みたいだ。",
+        "romanization": "Kare wa uta ga jōzu dokoro ka, puro no kashu mitai da.",
+        "translation": "Far from just being good at singing, he sounds like a professional singer."
+      },
+      {
+        "sentence": "この料理はおいしいどころか、最高の味だ。",
+        "romanization": "Kono ryōri wa oishii dokoro ka, saikō no aji da.",
+        "translation": "This dish is not just delicious, it’s absolutely the best."
+      },
+      {
+        "sentence": "彼女はただの友達どころか、私の親友だ。",
+        "romanization": "Kanojo wa tada no tomodachi dokoro ka, watashi no shin’yū da.",
+        "translation": "She’s far from just a friend; she’s my best friend."
+      },
+      {
+        "sentence": "彼は英語ができるどころか、他の3つの言語も話せる。",
+        "romanization": "Kare wa eigo ga dekiru dokoro ka, hoka no mittsu no gengo mo hanaseru.",
+        "translation": "Not only can he speak English, he also speaks three other languages."
+      }
+    ]
+  },
+  {
+    "id": "ja_どころではない_96",
+    "language": "ja",
+    "pattern": "～どころではない",
+    "title": "～どころではない (〜dokoro de wa nai)",
+    "shortExplanation": "Not the time/place for; far from; can't possibly.",
+    "longExplanation": "The ～どころではない grammar point is used to express that circumstances make it impossible or inappropriate to do something—there’s a much bigger issue at hand. It can also mean ‘far from’ in a figurative sense.",
+    "formation": "Verb-casual + どころではない, い-Adjective + どころではない, な-Adjective + どころではない, Noun + どころではない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼の失敗を笑うどころではない。私たちも同じミスをしている。",
+        "romanization": "Kare no shippai o warau dokoro de wa nai. Watashitachi mo onaji misu o shite iru.",
+        "translation": "This is not the time to laugh at his mistakes—we’re making the same ones."
+      },
+      {
+        "sentence": "病気で寝ている時は、遊ぶどころではない。",
+        "romanization": "Byōki de nete iru toki wa, asobu dokoro de wa nai.",
+        "translation": "When you’re sick in bed, it's far from the time to play around."
+      },
+      {
+        "sentence": "試験が近いので、映画を見るどころではない。",
+        "romanization": "Shiken ga chikai node, eiga o miru dokoro de wa nai.",
+        "translation": "Since the exam is coming up, I can’t possibly watch a movie."
+      },
+      {
+        "sentence": "仕事が忙しすぎて、旅行なんて考えるどころではない。",
+        "romanization": "Shigoto ga isogashisugite, ryokō nante kangaeru dokoro de wa nai.",
+        "translation": "I'm way too busy with work to even think about going on a trip."
+      }
+    ]
+  },
+  {
+    "id": "ja_としたら_97",
+    "language": "ja",
+    "pattern": "～としたら",
+    "title": "～としたら (〜to shitara)",
+    "shortExplanation": "Express a hypothetical situation; 'if', 'suppose', 'assuming'.",
+    "longExplanation": "The ～としたら grammar point is used to express a hypothetical situation or assumption. It can be translated as 'if', 'suppose', or 'assuming' in English. The formation differs depending on whether it’s used with verbs, adjectives, or nouns.",
+    "formation": "Verb-casual + としたら, い-Adjective + としたら, な-Adjective + だとしたら, Noun + だとしたら",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "明日雨が降るとしたら、傘を持っていきましょう。",
+        "romanization": "Ashita ame ga furu to shitara, kasa o motte ikimashō.",
+        "translation": "If it rains tomorrow, let’s bring umbrellas."
+      },
+      {
+        "sentence": "このケーキが美味しくないとしたら、誰も食べないだろう。",
+        "romanization": "Kono kēki ga oishikunai to shitara, dare mo tabenai darō.",
+        "translation": "If this cake isn’t tasty, probably no one will eat it."
+      },
+      {
+        "sentence": "彼が病気だとしたら、早めに病院へ行かないといけません。",
+        "romanization": "Kare ga byōki da to shitara, hayame ni byōin e ikanai to ikemasen.",
+        "translation": "If he is sick, he needs to go to the hospital soon."
+      },
+      {
+        "sentence": "彼女が学生だとしたら、このレストランは割引があるでしょう。",
+        "romanization": "Kanojo ga gakusei da to shitara, kono resutoran wa waribiki ga aru deshō.",
+        "translation": "If she’s a student, there’s probably a discount at this restaurant."
+      }
+    ]
+  },
+  {
+    "id": "ja_としても_98",
+    "language": "ja",
+    "pattern": "～としても",
+    "title": "～としても (〜to shite mo)",
+    "shortExplanation": "Even if, despite, although",
+    "longExplanation": "The ～としても grammar point is used to say ‘even if...’ or ‘even assuming that...’, often followed by a conclusion or stance. It’s similar to ～ても, but puts more emphasis on the hypothetical assumption or viewpoint.",
+    "formation": "Verb-casual + としても, い-Adjective + としても, な-Adjective + だとしても, Noun + だとしても",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "雨が降るとしても、レースは中止しません。",
+        "romanization": "Ame ga furu to shite mo, rēsu wa chūshi shimasen.",
+        "translation": "Even if it rains, we won't cancel the race."
+      },
+      {
+        "sentence": "このケーキが美味しくないとしても、私は食べるつもりです。",
+        "romanization": "Kono kēki ga oishikunai to shite mo, watashi wa taberu tsumori desu.",
+        "translation": "Even if this cake isn't delicious, I plan on eating it."
+      },
+      {
+        "sentence": "彼女が遅刻するとしても、私たちは待ち続けます。",
+        "romanization": "Kanojo ga chikoku suru to shite mo, watashitachi wa machitsuzukemasu.",
+        "translation": "Even if she is late, we will keep waiting."
+      },
+      {
+        "sentence": "忙しいだとしても、友達との約束は守りたい。",
+        "romanization": "Isogashii da to shite mo, tomodachi to no yakusoku wa mamoritai.",
+        "translation": "Even if I'm busy, I want to keep my promise to my friend."
+      }
+    ]
+  },
+  {
+    "id": "ja_とともに_99",
+    "language": "ja",
+    "pattern": "～と～ともに",
+    "title": "～と～ともに (〜to 〜tomoni)",
+    "shortExplanation": "Expresses 'together with' or 'along with'; used to describe two events or actions happening simultaneously or in parallel.",
+    "longExplanation": "The ～と～ともに grammar point is used to express that two events or actions are happening simultaneously or in parallel. It is translated as 'together with' or 'along with' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + とともに, い-Adjective + とともに, な-Adjective + とともに, Noun + とともに",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼が来るとともに、パーティーが始まりました。",
+        "romanization": "Kare ga kuru to tomoni, paatii ga hajimarimashita.",
+        "translation": "The party started as soon as he arrived."
+      },
+      {
+        "sentence": "季節が変わるとともに、服のファッションも変わります。",
+        "romanization": "Kisetsu ga kawaru to tomoni, fuku no fasshon mo kawarimasu.",
+        "translation": "As the seasons change, clothing fashion also changes."
+      },
+      {
+        "sentence": "成長とともに、いろいろな経験を積むことが大切です。",
+        "romanization": "Seichou to tomoni, iroirona keiken wo tsumu koto ga taisetsu desu.",
+        "translation": "As you grow, it is important to gain various experiences."
+      },
+      {
+        "sentence": "技術の進歩とともに、便利なアプリが増えています。",
+        "romanization": "Gijutsu no shinpo to tomoni, benrina apuri ga fueteimasu.",
+        "translation": "With the advancement of technology, the number of convenient apps is increasing."
+      }
+    ]
+  },
+  {
+    "id": "ja_とは限らない_100",
+    "language": "ja",
+    "pattern": "～とは限らない",
+    "title": "～とは限らない (〜to wa kagiranai)",
+    "shortExplanation": "Expresses that something is not necessarily true; 'not always', 'not necessarily'.",
+    "longExplanation": "The ～とは限らない grammar point is used to express that something is not necessarily true or does not always occur. It can be translated as 'not always' or 'not necessarily' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + とは限らない, い-Adjective + とは限らない, な-Adjective + だとは限らない, Noun + だとは限らない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "いつも勉強しているとは限らない。",
+        "romanization": "Itsumo benkyou shite iru to wa kagiranai.",
+        "translation": "It's not always true that I'm studying."
+      },
+      {
+        "sentence": "高い商品がいいとは限らない。",
+        "romanization": "Takai shouhin ga ii to wa kagiranai.",
+        "translation": "Expensive products are not necessarily good."
+      },
+      {
+        "sentence": "彼が正しいとは限らない。",
+        "romanization": "Kare ga tadashii to wa kagiranai.",
+        "translation": "It's not necessarily true that he is right."
+      },
+      {
+        "sentence": "雨が降るとは限らない。",
+        "romanization": "Ame ga furu to wa kagiranai.",
+        "translation": "It's not necessarily going to rain."
+      }
+    ]
+  },
+  {
+    "id": "ja_ないことはない_101",
+    "language": "ja",
+    "pattern": "～ないことはない",
+    "title": "～ないことはない (〜nai koto wa nai)",
+    "shortExplanation": "Express that something is not impossible, meaning it is possible or could be done.",
+    "longExplanation": "The ～ないことはない grammar point is used to express a double negative, meaning that something is not impossible, implying that it is possible or could be done. Essentially, it downplays the possibility or ability to do something but still acknowledges that it's possible.",
+    "formation": "Verb-ないform + ことはない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼が来ないことはない。",
+        "romanization": "Kare ga konai koto wa nai.",
+        "translation": "It's not that he won't come (it's possible that he will come)."
+      },
+      {
+        "sentence": "あの問題が解けないことはない。",
+        "romanization": "Ano mondai ga tokenai koto wa nai.",
+        "translation": "It's not impossible to solve that problem (it can be solved)."
+      },
+      {
+        "sentence": "その仕事が難しくないことはない。",
+        "romanization": "Sono shigoto ga muzukashikunai koto wa nai.",
+        "translation": "That job is not without difficulty (it has some difficulties)."
+      },
+      {
+        "sentence": "彼女が正しくないことはない。",
+        "romanization": "Kanojo ga tadashikunai koto wa nai.",
+        "translation": "It's not impossible that she is right (she could be right)."
+      }
+    ]
+  },
+  {
+    "id": "ja_ないこともない_102",
+    "language": "ja",
+    "pattern": "～ないこともない",
+    "title": "～ないこともない (〜nai koto mo nai)",
+    "shortExplanation": "Used to express an action or state is 'not impossible', but emphasizes reluctance or doubt.",
+    "longExplanation": "The ～ないこともない grammar point is used to express that something is not impossible, but the speaker is reluctant, has doubts, or deems it as a less favorable option. It can be translated as 'not that one can't', 'not that it's impossible', or 'it's not out of the question'.",
+    "formation": "Verb-ないForm + こともない, い-adjective + こともない",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この問題は解けないこともないけど、難しいです。",
+        "romanization": "Kono mondai wa tokenai koto mo nai kedo, muzukashii desu.",
+        "translation": "It's not that I can't solve this problem, but it's difficult."
+      },
+      {
+        "sentence": "彼に会わないこともないが、あまり話す時間がない。",
+        "romanization": "Kare ni awanai koto mo nai ga, amari hanasu jikan ga nai.",
+        "translation": "It's not that I can't meet him, but there's not much time to talk."
+      },
+      {
+        "sentence": "お金がないこともないけれど、節約した方がいい。",
+        "romanization": "O-kane ga nai koto mo nai keredo, setsuyaku shita hou ga ii.",
+        "translation": "It's not that I don't have money, but it's better to save."
+      },
+      {
+        "sentence": "このゲームが面白くないこともないが、他のゲームの方が楽しい。",
+        "romanization": "Kono geemu ga omoshirokunai koto mo nai ga, hoka no geemu no hou ga tanoshii.",
+        "translation": "It's not that this game isn't interesting, but other games are more fun."
+      }
+    ]
+  }
+]

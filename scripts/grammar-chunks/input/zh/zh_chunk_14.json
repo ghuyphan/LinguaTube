@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_O不没被叫让SV_198",
+    "language": "zh",
+    "pattern": "O + 不/没 + 被/叫/让 + S + V",
+    "title": "O + 不/没 + 被/叫/让 + S + V (O is not V’ed by S)",
+    "shortExplanation": "O is not V’ed by S",
+    "longExplanation": "O is not V’ed by S. Pinyin: O + bù/ méi + bèi/ jiào/ ràng + S + V",
+    "formation": "O + bù/ méi + bèi/ jiào/ ràng + S + V",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "问题还没有被解决呢。",
+        "romanization": "wèntí hái méiyǒu bèi jiějué ne。",
+        "translation": "The problem has not been solved yet."
+      }
+    ]
+  },
+  {
+    "id": "zh_只有才_199",
+    "language": "zh",
+    "pattern": "只有……才……",
+    "title": "只有……才…… (only if)",
+    "shortExplanation": "only if",
+    "longExplanation": "only if. Pinyin: zhǐyǒu…… cái……",
+    "formation": "zhǐyǒu…… cái……",
+    "level": "HSK 3",
+    "examples": [
+      {
+        "sentence": "只有写完作业，才能看电视。",
+        "romanization": "zhǐyǒu xiěwán zuòyè， cáinéng kàn diànshì。",
+        "translation": "You can watch TV only if you finish your homework."
+      }
+    ]
+  },
+  {
+    "id": "zh_不仅也还而且_200",
+    "language": "zh",
+    "pattern": "不仅……也/还/而且……",
+    "title": "不仅……也/还/而且…… (Not only… but also…)",
+    "shortExplanation": "Not only… but also…",
+    "longExplanation": "Not only… but also…. Pinyin: bùjǐn…… yě/ hái/ érqiě……",
+    "formation": "bùjǐn…… yě/ hái/ érqiě……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我不仅看过《泰坦尼克号》，也看过《诺丁山》。",
+        "romanization": "wǒ bùjǐn kàn guò《 Tàitǎnníkè Hào》， yě kàn guò《 nuò dīng shān》。",
+        "translation": "I have not only seen Titanic, but also Notting Hill."
+      }
+    ]
+  },
+  {
+    "id": "zh_不仅S1S2也_201",
+    "language": "zh",
+    "pattern": "不仅 S1……，S2 也……",
+    "title": "不仅 S1……，S2 也…… (Not only S1…, S2 also…)",
+    "shortExplanation": "Not only S1…, S2 also…",
+    "longExplanation": "Not only S1…, S2 also…. Pinyin: bùjǐn S1……，S2 yě……",
+    "formation": "bùjǐn S1……，S2 yě……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "不仅马克看过《诺丁山》，我也看过《诺丁山》。",
+        "romanization": "bùjǐn Mǎkè kàn guò《 nuò dīng shān》， wǒ yě kàn guò《 nuò dīng shān》。",
+        "translation": "Not only did Mark see Notting Hill, I also saw Notting Hill."
+      }
+    ]
+  },
+  {
+    "id": "zh_从来不V_202",
+    "language": "zh",
+    "pattern": "从来不 V",
+    "title": "从来不 V (never V)",
+    "shortExplanation": "never V",
+    "longExplanation": "never V. Pinyin: cóngláibù V",
+    "formation": "cóngláibù V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我中午从来不睡觉。",
+        "romanization": "wǒ zhōngwǔ cóngláibù shuìjiào。",
+        "translation": "I never sleep at noon."
+      }
+    ]
+  },
+  {
+    "id": "zh_从来没VA过_203",
+    "language": "zh",
+    "pattern": "从来没 V/A 过",
+    "title": "从来没 V/A 过 (never have V’ed, never have been A)",
+    "shortExplanation": "never have V’ed, never have been A",
+    "longExplanation": "never have V’ed, never have been A. Pinyin: cóngláiméi V/A guò",
+    "formation": "cóngláiméi V/A guò",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他爸爸妈妈从来没这么高兴过。",
+        "romanization": "tā bàba māma cóngláiméi zhème gāoxìng guò。",
+        "translation": "His father and mother have never been so happy."
+      }
+    ]
+  },
+  {
+    "id": "zh_刚刚刚V_204",
+    "language": "zh",
+    "pattern": "刚/刚刚 V",
+    "title": "刚/刚刚 V (just V’ed)",
+    "shortExplanation": "just V’ed",
+    "longExplanation": "just V’ed. Pinyin: gāng/ gānggang V",
+    "formation": "gāng/ gānggang V",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "我上个月刚结婚。",
+        "romanization": "wǒ shànggèyuè gāng jiéhūn。",
+        "translation": "I just got married last month."
+      }
+    ]
+  },
+  {
+    "id": "zh_刚VDURATION_205",
+    "language": "zh",
+    "pattern": "刚 + V + DURATION",
+    "title": "刚 + V + DURATION (have V’ed for just DURATION)",
+    "shortExplanation": "have V’ed for just DURATION",
+    "longExplanation": "have V’ed for just DURATION. Pinyin: gāng + V + DURATION",
+    "formation": "gāng + V + DURATION",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "他刚来一个月。",
+        "romanization": "tā gāng lái yī gè yuè。",
+        "translation": "He’s been [lit. come] here for just a month."
+      }
+    ]
+  },
+  {
+    "id": "zh_刚才_206",
+    "language": "zh",
+    "pattern": "刚才",
+    "title": "刚才 (moments ago)",
+    "shortExplanation": "moments ago",
+    "longExplanation": "moments ago. Pinyin: gāngcái",
+    "formation": "gāngcái",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "刚才我收到了一封电子邮件。",
+        "romanization": "gāngcái wǒ shōu dàoliǎo yī fēng diànzǐyóujiàn。",
+        "translation": "I just received an email."
+      }
+    ]
+  },
+  {
+    "id": "zh_即使也_207",
+    "language": "zh",
+    "pattern": "即使……也……",
+    "title": "即使……也…… (even if…, still…)",
+    "shortExplanation": "even if…, still…",
+    "longExplanation": "even if…, still…. Pinyin: jíshǐ…… yě……",
+    "formation": "jíshǐ…… yě……",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "即使冬天很冷，他也每天去操场跑步。",
+        "romanization": "jíshǐ dōngtiān hěn lěng， tā yě měitiān qù cāochǎng pǎobù。",
+        "translation": "Even if it’s very cold in winter, he still goes to the playground to job every day."
+      }
+    ]
+  },
+  {
+    "id": "zh_在N上_208",
+    "language": "zh",
+    "pattern": "(在) N 上",
+    "title": "(在) N 上 (with regard to N)",
+    "shortExplanation": "with regard to N",
+    "longExplanation": "with regard to N. Pinyin: ( zài) N shàng",
+    "formation": "( zài) N shàng",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "在爱好上，我更像我妈妈。",
+        "romanization": "zài àihào shàng， wǒ gèng xiàng wǒ māma。",
+        "translation": "In terms of hobbies, I am more like my mother."
+      }
+    ]
+  },
+  {
+    "id": "zh_正好_209",
+    "language": "zh",
+    "pattern": "正好",
+    "title": "正好 (just right)",
+    "shortExplanation": "just right",
+    "longExplanation": "just right. Pinyin: zhènghǎo",
+    "formation": "zhènghǎo",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "衣服大小正好。",
+        "romanization": "yīfu dàxiǎo zhènghǎo。",
+        "translation": "The clothes are just the right size."
+      }
+    ]
+  },
+  {
+    "id": "zh_V得正好_210",
+    "language": "zh",
+    "pattern": "V 得正好",
+    "title": "V 得正好 (V’ed at just the right time)",
+    "shortExplanation": "V’ed at just the right time",
+    "longExplanation": "V’ed at just the right time. Pinyin: V dé zhènghǎo",
+    "formation": "V dé zhènghǎo",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "你来得正好。",
+        "romanization": "nǐ láide zhènghǎo。",
+        "translation": "You came at just the right time."
+      }
+    ]
+  },
+  {
+    "id": "zh_NN差不多_211",
+    "language": "zh",
+    "pattern": "N & N 差不多",
+    "title": "N & N 差不多 (N & N are about the same)",
+    "shortExplanation": "N & N are about the same",
+    "longExplanation": "N & N are about the same. Pinyin: N & N chàbuduō",
+    "formation": "N & N chàbuduō",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这辆车的颜色和那辆车的颜色差不多。",
+        "romanization": "zhè liàng chē de yánsè hé nà liàng chē de yánsè chàbuduō。",
+        "translation": "The color of this car is similar to the color of that car."
+      }
+    ]
+  },
+  {
+    "id": "zh_差不多_212",
+    "language": "zh",
+    "pattern": "差不多 #",
+    "title": "差不多 # (about #)",
+    "shortExplanation": "about #",
+    "longExplanation": "about #. Pinyin: chàbuduō #",
+    "formation": "chàbuduō #",
+    "level": "HSK 4",
+    "examples": [
+      {
+        "sentence": "这台电脑差不多5000块。",
+        "romanization": "zhè tái diànnǎo chàbuduō5000 kuài。",
+        "translation": "This computer is about 5,000 yuan."
+      }
+    ]
+  }
+]

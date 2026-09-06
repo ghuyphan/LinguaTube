@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_せいで_25": {
+      "title": "～せいで (〜sei de)",
+      "shortExplanation": "Dùng để chỉ nguyên nhân dẫn đến một kết quả tiêu cực, đáng tiếc; 'tại vì...', 'do... mà (hóa ra tồi tệ)'.",
+      "longExplanation": "Mẫu ngữ pháp '～せいで' dùng để diễn tả nguyên nhân hoặc lý do dẫn đến một kết quả xấu, tiêu cực hoặc không mong muốn. Cấu trúc này thường mang sắc thái trách móc, đổ lỗi hoặc than phiền ('tại vì...', 'chỉ vì...'). Khi muốn nêu nguyên nhân ở giữa câu thì dùng '～せいで', còn khi kết thúc câu ở vị trí vị ngữ thì dùng '～せいだ' hoặc '～せいです'.",
+      "formation": "Động từ thể thông thường + せいで | Tính từ đuôi い + せいで | Tính từ đuôi な + なせいで | Danh từ + のせいで",
+      "examples": [
+        {
+          "translation": "Trận đấu đã bị hủy bỏ do trời mưa."
+        },
+        {
+          "translation": "Vì anh ấy đến muộn mà mọi người đều phải chờ đợi."
+        },
+        {
+          "translation": "Kỳ nghỉ của tôi đã bị hỏng bét vì bị ốm."
+        },
+        {
+          "translation": "Do công việc bận rộn lại thiếu ngủ nên tôi không thể tập trung được."
+        }
+      ]
+    },
+    "ja_せてください_26": {
+      "title": "～せてください (〜sete kudasai)",
+      "shortExplanation": "Dùng để xin phép đối phương cho mình được thực hiện một hành động nào đó; 'xin hãy cho phép tôi...', 'hãy để tôi...'.",
+      "longExplanation": "Mẫu câu '～（さ）せてください' là dạng yêu cầu lịch sự sử dụng thể sai khiến kết hợp với '～てください'. Người nói dùng mẫu này để xin phép người nghe cho phép bản thân mình (hoặc người thuộc phe mình) được thực hiện một hành động cụ thể nào đó. Nó thể hiện thái độ khiêm tốn và tôn trọng đối phương.",
+      "formation": "Động từ thể sai khiến dạng て (～せて / ～させて) + ください",
+      "examples": [
+        {
+          "translation": "Xin hãy cho phép tôi giải thích lại một lần nữa."
+        },
+        {
+          "translation": "Xin hãy cho phép tôi về nhà."
+        },
+        {
+          "translation": "Xin hãy cho tôi xem cuốn sách đó."
+        },
+        {
+          "translation": "Xin hãy cho phép tôi đợi ở đây."
+        }
+      ]
+    },
+    "ja_そのために_27": {
+      "title": "～そのために (〜sono tame ni)",
+      "shortExplanation": "Liên từ dùng để nêu mục đích hoặc lý do cho hành động tiếp theo; 'vì mục đích đó', 'để làm được điều đó', 'chính vì thế'.",
+      "longExplanation": "Liên từ 'そのために' được đặt ở đầu câu thứ hai nhằm chỉ ra rằng nội dung của câu thứ hai là hành động, biện pháp hoặc nỗ lực được thực hiện nhằm đạt được mục tiêu hay mục đích đã nêu ở câu thứ nhất ('để làm được điều đó, ...'). Đôi khi nó cũng dùng để chỉ nguyên nhân ('chính vì lý do đó, ...').",
+      "formation": "Câu 1 (Mục đích / Mục tiêu) + 。そのために、 + Câu 2 (Hành động / Biện pháp)",
+      "examples": [
+        {
+          "translation": "Để thi đỗ, tôi học bài mỗi ngày. Vì mục đích đó, tôi cố gắng ngủ sớm dậy sớm."
+        },
+        {
+          "translation": "Tôi muốn có một cuộc sống lành mạnh. Vì thế, tôi đến phòng tập để rèn luyện sức khỏe."
+        },
+        {
+          "translation": "Để bảo vệ môi trường, chúng tôi đang nỗ lực tái chế. Vì mục đích đó, chúng tôi phân loại rác trước khi vứt."
+        },
+        {
+          "translation": "Tôi muốn tìm một công việc mới. Vì thế, tôi đang viết sơ yếu lý lịch và ứng tuyển."
+        }
+      ]
+    },
+    "ja_その結果_28": {
+      "title": "～その結果 (〜sono kekka)",
+      "shortExplanation": "Biểu thị kết quả tự nhiên hoặc hậu quả sinh ra từ sự việc trước đó; 'kết quả là...', 'hậu quả là...'.",
+      "longExplanation": "Liên từ 'その結果' (kết quả là...) dùng để kết nối hai sự việc có mối quan hệ nguyên nhân - kết quả, trong đó câu thứ nhất nêu ra nguyên nhân, sự việc đã xảy ra, và câu thứ hai nêu kết quả hoặc hậu quả tất yếu dẫn đến từ sự việc đó. Cấu trúc này thường xuất hiện trong văn viết hoặc phong cách diễn đạt mang tính khách quan, trang trọng.",
+      "formation": "Câu 1 (Hành động / Tình huống) + 。その結果、 + Câu 2 (Kết quả)",
+      "examples": [
+        {
+          "translation": "Cô ấy đã luyện tập mỗi ngày. Kết quả là cô ấy đã thắng trận đấu."
+        },
+        {
+          "translation": "Công ty đã bị phá sản. Hậu quả là anh ấy bị mất việc."
+        },
+        {
+          "translation": "Chúng tôi đã đến muộn. Kết quả là chúng tôi đã không bắt kịp chuyến tàu."
+        },
+        {
+          "translation": "Anh ấy đã lơ là việc học. Kết quả là anh ấy đã thi trượt."
+        }
+      ]
+    },
+    "ja_それと_29": {
+      "title": "～それと～ (〜sore to〜)",
+      "shortExplanation": "Dùng để bổ sung thêm một sự vật, sự việc hoặc hành động khác; 'và', 'còn nữa', 'thêm vào đó'.",
+      "longExplanation": "Liên từ 'それと' (dạng nói tắt của 'それから' hoặc 'それに') dùng trong hội thoại hàng ngày để bổ sung thêm một nội dung, hạng mục hoặc sự việc khác ngoài những điều đã nêu trước đó. Nó thường đứng ở đầu câu thứ hai hoặc đặt giữa hai vế để liên kết.",
+      "formation": "Vế 1 / Câu 1 + 。それと、 + Vế 2 / Câu 2",
+      "examples": [
+        {
+          "translation": "Tôi định đi mua sắm. Và còn nữa, tôi cũng phải ghé qua bưu điện nữa."
+        },
+        {
+          "translation": "Hôm nay tôi đã làm món taco. Thêm vào đó, tôi cũng làm cả món salad nữa."
+        },
+        {
+          "translation": "Trước khi ra ngoài hãy dọn phòng nhé. Và hãy nhớ vứt rác đi nữa."
+        },
+        {
+          "translation": "Anh ấy nói được tiếng Pháp. Thêm vào đó, anh ấy cũng nói được cả tiếng Tây Ban Nha."
+        }
+      ]
+    },
+    "ja_それとも_30": {
+      "title": "～？それとも～？ (～? sore tomo ～?)",
+      "shortExplanation": "Dùng để đưa ra hai phương án lựa chọn trong câu hỏi; 'hay là...', 'hoặc là...'.",
+      "longExplanation": "Liên từ 'それとも' dùng trong câu hỏi lựa chọn nhằm đưa ra hai sự việc, hành động hoặc trạng thái đối lập/khác biệt để người nghe chọn một trong hai. Mẫu câu này thường liên kết hai câu nghi vấn ('A? Hay là B?').",
+      "formation": "Câu hỏi A + ？それとも + Câu hỏi B + ？",
+      "examples": [
+        {
+          "translation": "Cậu uống cà phê nhé? Hay là uống hồng trà?"
+        },
+        {
+          "translation": "Bộ phim này hay? Hay là chán?"
+        },
+        {
+          "translation": "Anh ấy là người Nhật Bản? Hay là người nước ngoài?"
+        },
+        {
+          "translation": "Chúng mình đi ăn sushi nhé? Hay là đi ăn mì ramen?"
+        }
+      ]
+    },
+    "ja_だけしか_31": {
+      "title": "～だけしか (～dake shika)",
+      "shortExplanation": "Nhấn mạnh tính duy nhất, ít ỏi hoặc thiếu thốn; 'chỉ có...', 'chỉ duy nhất... (ngoài ra không còn)' đi kèm với động từ phủ định.",
+      "longExplanation": "Mẫu ngữ pháp '～だけしか' kết hợp hai trợ từ giới hạn 'だけ' và 'しか' nhằm tăng cường nhấn mạnh sự ít ỏi, khan hiếm hoặc hạn chế của số lượng/đối tượng được nhắc đến. Vị ngữ theo sau luôn luôn ở thể phủ định, diễn tả cảm giác người nói cho rằng số lượng đó là quá ít hoặc không đủ.",
+      "formation": "Danh từ / Từ chỉ số lượng + だけしか + Động từ thể phủ định",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi chỉ học được vẻn vẹn có 1 tiếng đồng hồ."
+        },
+        {
+          "translation": "Anh ấy chỉ ăn mỗi món cà ri mà thôi."
+        },
+        {
+          "translation": "Anh Tanaka chỉ mời duy nhất có 5 người."
+        },
+        {
+          "translation": "Nhà hàng đó chỉ bán mỗi rau củ."
+        }
+      ]
+    },
+    "ja_だけど_32": {
+      "title": "だけど (dakedo)",
+      "shortExplanation": "Liên từ biểu thị quan hệ tương phản, đối lập trong giao tiếp thân mật; 'nhưng', 'tuy nhiên'.",
+      "longExplanation": "Liên từ 'だけど' (dạng rút gọn của 'だけれども') dùng phổ biến trong khẩu ngữ hàng ngày để nối hai mệnh đề hoặc hai câu có ý nghĩa tương phản, mâu thuẫn nhau ('nhưng mà...', 'tuy nhiên...'). Nó có thể đứng ở đầu câu thứ hai ('Câu 1. だけど、Câu 2') hoặc nối trực tiếp giữa hai vế trong một câu (thường rút ngắn thành '～けど').",
+      "formation": "Câu 1 + だけど / けど + Câu 2 | Câu 1 + 。だけど、 + Câu 2",
+      "examples": [
+        {
+          "translation": "Tôi đã thi đỗ rồi, nhưng vẫn phải tiếp tục học tập."
+        },
+        {
+          "translation": "Căn phòng này rộng rãi, nhưng tiền thuê nhà lại đắt."
+        },
+        {
+          "translation": "Anh ấy rất hiền, nhưng thỉnh thoảng cũng nghiêm khắc."
+        },
+        {
+          "translation": "Tôi muốn nấu bữa sáng, nhưng lại không có thời gian."
+        }
+      ]
+    },
+    "ja_たて_33": {
+      "title": "～たて (～tate)",
+      "shortExplanation": "Diễn tả một hành động vừa mới hoàn thành xong và trạng thái vẫn còn tươi mới, nóng hổi; 'vừa mới... xong'.",
+      "longExplanation": "Hậu tố '～たて' gắn vào thân động từ (thể ます bỏ ます) để diễn tả rằng một hành động vừa mới kết thúc cách đây rất ngắn, sản phẩm hoặc trạng thái do hành động đó tạo ra vẫn còn rất mới mẻ, tươi ngon hoặc nguyên vẹn (như bánh mì vừa mới nướng xong, cơm vừa mới nấu xong). Khi bổ nghĩa cho danh từ, cấu trúc sẽ dùng dạng '～たての + Danh từ'.",
+      "formation": "Động từ thể ます (bỏ ます) + たて (+ の + Danh từ / + で)",
+      "examples": [
+        {
+          "translation": "Bánh mì này vừa mới nướng xong nên vẫn còn ấm nóng."
+        },
+        {
+          "translation": "Cơm hộp bento vừa mới làm xong ăn rất ngon."
+        },
+        {
+          "translation": "Chiếc áo sơ mi vừa mới giặt xong có mùi thơm rất dễ chịu."
+        },
+        {
+          "translation": "Cô ấy đã cho những loại rau củ vừa mới thái vào món salad."
+        }
+      ]
+    },
+    "ja_たとえても_34": {
+      "title": "～たとえ～ても (〜tatoe〜temo)",
+      "shortExplanation": "Biểu thị giả định nghịch; 'dù cho... đi chăng nữa thì vẫn...', 'cho dẫu... thì cũng...'.",
+      "longExplanation": "Cấu trúc 'たとえ～ても' dùng để đưa ra một tình huống giả định mang tính nhượng bộ, nhấn mạnh rằng cho dù điều kiện giả định đó có xảy ra đi nữa thì kết quả, hành động hoặc quyết tâm ở vế sau vẫn không hề thay đổi. Phó từ 'たとえ' đặt ở đầu mệnh đề để báo trước sắc thái giả thiết.",
+      "formation": "たとえ + Động từ thể て + も | たとえ + Tính từ đuôi い (bỏ い) + くても | たとえ + Tính từ đuôi な / Danh từ + でも (hoặc であっても)",
+      "examples": [
+        {
+          "translation": "Dù trời có mưa đi chăng nữa thì chúng ta cũng hãy ra ngoài nhé."
+        },
+        {
+          "translation": "Dù anh ấy có tức giận đi nữa thì chúng ta hãy nói ra sự thật."
+        },
+        {
+          "translation": "Dù trời có lạnh thì tôi vẫn muốn đi dạo bộ."
+        },
+        {
+          "translation": "Dù cho anh ta có là người nổi tiếng đi chăng nữa thì tôi cũng chẳng có chút hứng thú nào."
+        }
+      ]
+    },
+    "ja_たところ_35": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "Diễn tả sau khi thử làm hoặc vừa làm xong một việc thì nhận ra, phát hiện hoặc xuất hiện một kết quả; 'sau khi... thì thấy/xảy ra...'.",
+      "longExplanation": "Mẫu ngữ pháp '～たところ' gắn sau động từ thể た để diễn tả rằng sau khi thực hiện một hành động nào đó thì nhận được một kết quả, một phản ứng hoặc phát hiện ra một sự thật mới ngoài dự kiến. Vế sau của mẫu câu này thường là những sự việc bất ngờ, không thuộc ý chí chủ quan có chủ đích của người nói.",
+      "formation": "Động từ thể た + ところ",
+      "examples": [
+        {
+          "translation": "Vừa làm xong bài tập thì giáo viên lại giao thêm một bài nữa."
+        },
+        {
+          "translation": "Khi gặp người bạn, anh ấy đã nói với tôi rằng sắp đi nước ngoài."
+        },
+        {
+          "translation": "Vừa mới ăn cơm xong thì có điện thoại gọi đến."
+        },
+        {
+          "translation": "Sau khi dọn dẹp lại bàn làm việc, tôi đã tìm thấy mẩu giấy ghi chú mà mình đã quên mất."
+        }
+      ]
+    },
+    "ja_たとたん_36": {
+      "title": "～たとたん (〜ta totan)",
+      "shortExplanation": "Diễn tả sự việc xảy ra gần như ngay tức khắc sau khi một hành động vừa dứt; 'ngay khi vừa...', 'vừa mới... thì ngay lập tức'.",
+      "longExplanation": "Mẫu ngữ pháp '～たとたん' (hoặc '～たとたんに') gắn sau động từ thể た để biểu thị rằng ngay khoảnh khắc một hành động vừa diễn ra xong thì một sự việc tiếp theo bất ngờ ập đến gần như đồng thời. Vế sau thường miêu tả những biến đổi đột ngột ngoài dự kiến của người nói, không dùng cho câu thể hiện ý chí, mệnh lệnh hay nhờ vả.",
+      "formation": "Động từ thể た + とたん (hoặc とたんに)",
+      "examples": [
+        {
+          "translation": "Vừa mới mở cửa ra một cái là con mèo đã phóng chạy mất."
+        },
+        {
+          "translation": "Vừa mới bấm gọi điện thoại thì máy đã hết pin."
+        },
+        {
+          "translation": "Ngay khoảnh khắc trời vừa đổ mưa, mọi người đều đồng loạt giương ô."
+        },
+        {
+          "translation": "Vừa mới gặp tôi, nụ cười trên mặt anh ấy đã vụt tắt."
+        }
+      ]
+    },
+    "ja_たびに_37": {
+      "title": "～たびに (〜tabi ni)",
+      "shortExplanation": "Diễn tả cứ mỗi khi một hành động hoặc sự việc xảy ra thì luôn luôn kèm theo một sự việc khác; 'mỗi lần...', 'cứ mỗi khi...'.",
+      "longExplanation": "Mẫu ngữ pháp '～たびに' (hoặc '～たび') đi với động từ thể từ điển hoặc danh từ + の, dùng để diễn tả quy luật lặp đi lặp lại: cứ mỗi lần sự việc A xảy ra thì sự việc B cũng tất yếu xảy ra theo. Mẫu này không dùng cho những hiện tượng hiển nhiên theo chu kỳ tự nhiên mà nhấn mạnh cảm xúc hoặc thói quen của con người.",
+      "formation": "Động từ thể từ điển + たびに | Danh từ + のたびに",
+      "examples": [
+        {
+          "translation": "Mỗi lần gặp cô ấy, trái tim tôi lại rộn ràng."
+        },
+        {
+          "translation": "Cứ mỗi khi trời mưa, những kỷ niệm thân thương ngày xưa lại ùa về."
+        },
+        {
+          "translation": "Mỗi khi nghe bài hát này, lòng tôi lại ngập tràn cảm giác hạnh phúc."
+        },
+        {
+          "translation": "Mỗi lần tôi về đến nhà, chú mèo lại chạy ra đón."
+        }
+      ]
+    },
+    "ja_だものだ_38": {
+      "title": "～だものだ (〜da mono da)",
+      "shortExplanation": "Dùng để biện bạch, giải thích lý do một cách chủ quan; 'tại vì... cơ mà', 'bởi vì... mà lại' (thường gặp dạng ～ものだから / ～んだもの).",
+      "longExplanation": "Mẫu ngữ pháp '～ものだから' (hoặc '～んだもの / ～ものだ') dùng trong khẩu ngữ để trần tình, giải thích lý do mang tính chủ quan hoặc viện cớ phân bua cho một hành động, trạng thái nào đó. Nó mang sắc thái 'bởi vì thực tế là như thế, không thể khác được' nhằm mong đối phương thông cảm.",
+      "formation": "Động từ thể thông thường + んだものだから / んだもの | Tính từ đuôi い + んだものだから / んだもの | Tính từ đuôi な + なんだものだから / なんだもの | Danh từ + なんだものだから / なんだもの",
+      "examples": [
+        {
+          "translation": "Tại mệt quá cơ mà, nên tôi muốn nghỉ ngơi."
+        },
+        {
+          "translation": "Vì bụng đói cồn cào rồi nên tôi muốn ăn một cái gì đó."
+        },
+        {
+          "translation": "Tại vì bận quá cơ mà, nên tôi không thể đến được."
+        },
+        {
+          "translation": "Bởi vì anh ấy tốt bụng như thế cơ mà, nên ai cũng quý mến anh ấy."
+        }
+      ]
+    },
+    "ja_ちゃった_39": {
+      "title": "～ちゃった (〜chatta)",
+      "shortExplanation": "Dạng khẩu ngữ thân mật của '～てしまった', biểu thị hành động lỡ xảy ra gây tiếc nuối hoặc đã hoàn thành xong xuôi; 'lỡ... mất rồi', 'xong mất rồi'.",
+      "longExplanation": "Mẫu câu '～ちゃった' (và '～じゃった') là cách nói rút gọn rất phổ biến trong đàm thoại hàng ngày của '～てしまった' (và '～でしまった'). Cấu trúc này dùng để diễn tả sự tiếc nuối, ân hận hoặc bất cẩn khi vô tình làm điều gì đó không mong muốn ('lỡ... mất rồi'), hoặc diễn tả một hành động đã được làm xong hoàn toàn.",
+      "formation": "Động từ thể て (bỏ て) + ちゃった | Động từ thể で (bỏ で) + じゃった (Ví dụ: 食べてしまった → 食べちゃった, 飲んでしまった → 飲んじゃった)",
+      "examples": [
+        {
+          "translation": "Tôi lỡ để quên đồ mất rồi."
+        },
+        {
+          "translation": "Tôi ngủ quên mất nên đã bị muộn giờ."
+        },
+        {
+          "translation": "Tôi đã lỡ ăn sạch cả cái bánh kem rồi."
+        },
+        {
+          "translation": "Tôi vốn định không nói ra đâu, thế mà lại lỡ buột miệng nói ra mất rồi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_せいで_25": {
+      "title": "～せいで (〜sei de)",
+      "shortExplanation": "表示导致消极、不好或令人遗憾的结果的原因；'都怪……'、'因为……（导致不好结果）'。",
+      "longExplanation": "句型'～せいで'用于表示引起令人不满、消极或不幸后果的原因或理由，常带有责怪、怨恨或遗憾的语气（相当于汉语的'都怪……'、'由于……导致'）。在句中作状语时使用'～せいで'，用于句末作结句时使用'～せいだ'或'～せいです'。",
+      "formation": "动词普通形 + せいで | い形容词 + せいで | な形容词 + なせいで | 名词 + のせいで",
+      "examples": [
+        {
+          "translation": "因为下雨，比赛被取消了。"
+        },
+        {
+          "translation": "都怪他迟到，让大家一直等着。"
+        },
+        {
+          "translation": "因为生病，假期全搞砸了。"
+        },
+        {
+          "translation": "工作太忙导致睡眠不足，根本无法集中注意力。"
+        }
+      ]
+    },
+    "ja_せてください_26": {
+      "title": "～せてください (〜sete kudasai)",
+      "shortExplanation": "请求对方允许自己做某事（使役请求）；'请让我……'、'请允许我……'。",
+      "longExplanation": "句型'～（さ）せてください'由动词使役形的て形加上'ください'构成，用于向上级或对方请求许可，允许自己（或自己一方的人）进行某项动作。这是一种礼貌而谦逊的请求表达方式。",
+      "formation": "动词使役形て形 (～せて / ～させて) + ください",
+      "examples": [
+        {
+          "translation": "请允许我再解释一次。"
+        },
+        {
+          "translation": "请让我回家吧。"
+        },
+        {
+          "translation": "请让我看一下那本书。"
+        },
+        {
+          "translation": "请允许我在这里等候。"
+        }
+      ]
+    },
+    "ja_そのために_27": {
+      "title": "～そのために (〜sono tame ni)",
+      "shortExplanation": "承接前项的目的或目标，引出后项采取的行动或措施；'为此'、'为了那个目的'。",
+      "longExplanation": "接续词'そのために'常用于句首，指示前文提到的目标、意图或原因，后文接着叙述为实现该目的而付诸的具体行动、手段或产生的状态。常译为'为此'、'为了实现这一目标'。",
+      "formation": "句子1（目标/目的） + 。そのために、 + 句子2（行动/措施）",
+      "examples": [
+        {
+          "translation": "为了通过考试，我每天都在学习。为此，我尽量早睡早起。"
+        },
+        {
+          "translation": "我想过上健康的生活。为此，我去健身房锻炼身体。"
+        },
+        {
+          "translation": "为了保护环境，我们正在推进资源回收利用。为此，我们做好垃圾分类后再丢弃。"
+        },
+        {
+          "translation": "我想找一份新工作。为此，我正在写简历并提交应聘。"
+        }
+      ]
+    },
+    "ja_その結果_28": {
+      "title": "～その結果 (〜sono kekka)",
+      "shortExplanation": "引出前项动作或事态所导致的最终结果；'结果……'、'其结果是……'。",
+      "longExplanation": "接续词'その結果'用于连接具有因果关系的两个句子，前项交代起因、行为或事态背景，后项客观陈述其直接导向的结局或后果（无论好坏）。常用于书面语或较为庄重的解说语境中。",
+      "formation": "句子1（行为/事态） + 。その結果、 + 句子2（结果）",
+      "examples": [
+        {
+          "translation": "她每天都刻苦练习。结果赢得了比赛。"
+        },
+        {
+          "translation": "公司破产了。结果他失去了工作。"
+        },
+        {
+          "translation": "我们迟到了。结果没能赶上电车。"
+        },
+        {
+          "translation": "他荒废了学业。结果考试不及格。"
+        }
+      ]
+    },
+    "ja_それと_29": {
+      "title": "～それと～ (〜sore to〜)",
+      "shortExplanation": "用于在已知事项的基础上追加补充另一事项；'还有……'、'以及……'。",
+      "longExplanation": "接续词'それと'是口语中非常常用的表达，常位于第二句话的开头，用于在前面已经提及的事物、事项或动作之上，追加补充新的信息，相当于汉语的'还有'、'加上'、'以及'。",
+      "formation": "事项/句子1 + 。それと、 + 事项/句子2",
+      "examples": [
+        {
+          "translation": "我打算去买东西。还有，我也得去一趟邮局。"
+        },
+        {
+          "translation": "今天我做了塔可卷饼。另外，还做了沙拉。"
+        },
+        {
+          "translation": "出门前请把房间打扫一下。还有，请把垃圾倒了。"
+        },
+        {
+          "translation": "他会说法语。不仅如此，他还会说西班牙语。"
+        }
+      ]
+    },
+    "ja_それとも_30": {
+      "title": "～？それとも～？ (～? sore tomo ～?)",
+      "shortExplanation": "用于在疑问句中提出两项选择，供对方选取其一；'还是……？'、'或者……？'。",
+      "longExplanation": "接续词'それとも'用于连接两个具有选择关系的疑问句，列出两种可能性或方案供对方挑选，相当于汉语的'还是……？'、'或者说……？'。常用于口语和日常交流中。",
+      "formation": "疑问句A + ？それとも + 疑问句B + ？",
+      "examples": [
+        {
+          "translation": "喝咖啡吗？还是喝红茶？"
+        },
+        {
+          "translation": "这部电影有趣吗？还是无聊？"
+        },
+        {
+          "translation": "他是日本人？还是外国人？"
+        },
+        {
+          "translation": "去吃寿司吗？还是去吃拉面？"
+        }
+      ]
+    },
+    "ja_だけしか_31": {
+      "title": "～だけしか (～dake shika)",
+      "shortExplanation": "双重限定，强烈强调数量极少或范围极其狭窄（后接否定）；'仅有……'、'只……'。",
+      "longExplanation": "句型'～だけしか'将表示限定的'だけ'与表示排他的'しか'重叠使用，后项必须搭配否定形式动词，用来极力强调数量之少、程度之低或范围之窄，往往带有说话人感到不足、遗憾或吃惊的主观色彩。",
+      "formation": "名词 / 数量词 + だけしか + 动词否定形",
+      "examples": [
+        {
+          "translation": "今天我只学了一个小时。"
+        },
+        {
+          "translation": "他只吃咖喱，别的什么都不吃。"
+        },
+        {
+          "translation": "田中只邀请了区区五个人。"
+        },
+        {
+          "translation": "那家餐厅只卖蔬菜。"
+        }
+      ]
+    },
+    "ja_だけど_32": {
+      "title": "だけど (dakedo)",
+      "shortExplanation": "表示转折或对比关系的口语接续词；'但是'、'可是'、'虽然……但是……'。",
+      "longExplanation": "接续词'だけど'（'だけれども'的简体口语形式）用于连接两个意思相反、相对立或互有矛盾的句子或分句。常在日常对话中放在第二句句首表示'可是'、'但是'；在同一个句子内部连接前后两项时，经常直接使用'～けど'。",
+      "formation": "句子1 + だけど / けど + 句子2 | 句子1 + 。だけど、 + 句子2",
+      "examples": [
+        {
+          "translation": "虽然考试及格了，但还是得继续学习。"
+        },
+        {
+          "translation": "这个房间挺宽敞，但是房租很贵。"
+        },
+        {
+          "translation": "他性格很温柔，但有时也很严厉。"
+        },
+        {
+          "translation": "想做早饭，可是没有时间。"
+        }
+      ]
+    },
+    "ja_たて_33": {
+      "title": "～たて (～tate)",
+      "shortExplanation": "表示某动作刚刚完成，其产生的成果或状态依然十分新鲜；'刚……好的'、'新……的'。",
+      "longExplanation": "语法'～たて'接在动词连用形（ます形词干）之后，表示某个动作刚刚完成不久，其呈现出的状态最新鲜、最完好。常用于烹饪、洗涤等动作（如'刚烤好的'、'刚做好的'、'刚洗好的'）。修饰名词时使用'～たての + 名词'。",
+      "formation": "动词连用形（去ます） + たて (+ の + 名词 / + で)",
+      "examples": [
+        {
+          "translation": "这个面包是刚烤出炉的，还是热乎的。"
+        },
+        {
+          "translation": "现做好的便当非常美味。"
+        },
+        {
+          "translation": "刚洗好的衬衫闻起来香香的。"
+        },
+        {
+          "translation": "她把刚切好的新鲜蔬菜放进了沙拉里。"
+        }
+      ]
+    },
+    "ja_たとえても_34": {
+      "title": "～たとえ～ても (〜tatoe〜temo)",
+      "shortExplanation": "表示即使出现极端假定情况，后项结论或意志也毫不改变；'即使……也……'、'就算……也……'。",
+      "longExplanation": "句型'たとえ～ても'用于表示让步假定。副词'たとえ'置于句首，与后接的表示让步的'～ても / ～でも'相呼应，强调哪怕出现前项假设的极端情况或条件，后项既定的事实、判断、意志或结果也绝不发生动摇或改变。",
+      "formation": "たとえ + 动词て形 + も | たとえ + い形容词词干（去い） + くても | たとえ + な形容词词干 / 名词 + でも（或 であっても）",
+      "examples": [
+        {
+          "translation": "就算下雨，我们也出门吧。"
+        },
+        {
+          "translation": "哪怕他会发火，我们也要把实情说出来。"
+        },
+        {
+          "translation": "就算天气很冷，我也想去散散步。"
+        },
+        {
+          "translation": "就算他很有名，我也对他毫无兴趣。"
+        }
+      ]
+    },
+    "ja_たところ_35": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "表示做了某动作之后，得知了某种结果、反应或有了新发现；'……之后发现'、'刚……就……'。",
+      "longExplanation": "句型'～たところ'接在动词た形之后，表示做完某动作之后，得知了相应的结果、外界的反应，或者发现了某种此前不知道的事实。后项通常叙述客观出现的情况、意外的发展或新得到的情报，不受说话人主观意志控制。",
+      "formation": "动词た形 + ところ",
+      "examples": [
+        {
+          "translation": "刚做完作业，老师就又留了一道课题。"
+        },
+        {
+          "translation": "和朋友见面后，他告诉我他要去国外了。"
+        },
+        {
+          "translation": "刚吃完饭，电话就响了。"
+        },
+        {
+          "translation": "整理了桌子后，找到了之前遗忘的备忘条。"
+        }
+      ]
+    },
+    "ja_たとたん_36": {
+      "title": "～たとたん (〜ta totan)",
+      "shortExplanation": "表示前项动作刚一发生或完成的瞬间，紧接着发生了意想不到的事；'刚一……就立刻……'、'一……就……'。",
+      "longExplanation": "句型'～たとたん'（或'～たとたんに'）接在动词た形之后，表示前一个动作刚结束的刹那，几乎同时发生了后一项事态。后项通常是出乎意料的偶然事件或突发状态变化，不能使用表示命令、劝诱或说话人主观意志的表达。",
+      "formation": "动词た形 + とたん（或 とたんに）",
+      "examples": [
+        {
+          "translation": "刚一把门打开，猫就跑了出去。"
+        },
+        {
+          "translation": "刚拨通电话，手机就没电关机了。"
+        },
+        {
+          "translation": "天一刚开始下雨，大家就立刻撑起了伞。"
+        },
+        {
+          "translation": "一见到我，他脸上的笑容立刻就消失了。"
+        }
+      ]
+    },
+    "ja_たびに_37": {
+      "title": "～たびに (〜tabi ni)",
+      "shortExplanation": "表示每当发生某件事时，总是无一例外地伴随同一种情况或心情；'每当……就……'、'每次……都……'。",
+      "longExplanation": "句型'～たびに'接在动词辞书形（原形）或'名词 + の'之后，表示某种事情反复发生，每次发生时都会伴随同样的后续反应或心理状态（相当于汉语的'每逢……就……'、'每次……都……'）。通常不用于描述日升日落等自然周期的日常必然规律。",
+      "formation": "动词辞书形 + たびに | 名词 + のたびに",
+      "examples": [
+        {
+          "translation": "每次见到她，我的心都会欢快地跳动。"
+        },
+        {
+          "translation": "每当下雨，那些令人怀念的回忆就会涌上心头。"
+        },
+        {
+          "translation": "每当听这首歌，心情就会变得很幸福。"
+        },
+        {
+          "translation": "每次我回到家，猫咪都会跑出来迎接我。"
+        }
+      ]
+    },
+    "ja_だものだ_38": {
+      "title": "～だものだ (〜da mono da)",
+      "shortExplanation": "用于主观申辩、陈述理由或借口，以博得对方理解；'因为……嘛'、'毕竟是因为……'（多用～ものだから）。",
+      "longExplanation": "句型'～ものだから'（口语中也常作'～んだもの'或'～もの'）用于陈述事情发生的客观理由或主观辩解，带有撒娇、解释或为自己的行为找由头以期得到对方谅解的语气。常译为'因为……嘛'、'由于……没办法呀'。",
+      "formation": "动词普通形 + んだものだから / んだもの | い形容词 + んだものだから / んだもの | な形容词 + なんだものだから / なんだもの | 名词 + なんだものだから / なんだもの",
+      "examples": [
+        {
+          "translation": "因为太累了嘛，所以想休息一下。"
+        },
+        {
+          "translation": "肚子实在太饿了嘛，所以想吃点东西。"
+        },
+        {
+          "translation": "因为实在太忙了嘛，所以去不了。"
+        },
+        {
+          "translation": "毕竟他人那么热心善良，大家都喜欢他。"
+        }
+      ]
+    },
+    "ja_ちゃった_39": {
+      "title": "～ちゃった (〜chatta)",
+      "shortExplanation": "动词'～てしまった'的口语简略形式，表示不经意做错了某事而感到遗憾、后悔，或表示动作彻底完成；'不小心……了'、'……光了'。",
+      "longExplanation": "句型'～ちゃった'（浊音为'～じゃった'）是'～てしまった / ～でしまった'在日常口语会话中的缩略表达。常用于表示因疏忽大意或情不自禁而发生了不可挽回、令人遗憾懊恼的事情（'不小心……了'），也可以表示某动作彻底完成或消耗殆尽（'……完了'）。",
+      "formation": "动词て形（去掉て） + ちゃった | 动词で形（去掉で） + じゃった（例如：食べてしまった → 食べちゃった、飲んでしまった → 飲んじゃった）",
+      "examples": [
+        {
+          "translation": "我不小心把东西给落下了。"
+        },
+        {
+          "translation": "睡过头了，结果迟到了。"
+        },
+        {
+          "translation": "我把蛋糕全给吃光了。"
+        },
+        {
+          "translation": "本来不打算说的，结果还是给说漏嘴了。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_せいで_25": {
+      "title": "～せいで (〜sei de)",
+      "shortExplanation": "부정적이거나 유감스러운 결과의 원인을 나타내며, '~ 탓에', '~ 때문에'라는 뜻입니다.",
+      "longExplanation": "'～せいで'는 나쁜 결과나 유감스러운 일, 피해 등이 발생했을 때 그 원인이나 핑계를 나타내는 문법입니다. 주로 원망, 비난, 후회의 뉘앙스를 담아 '모두 ~ 탓에', '~ 때문에'의 의미로 사용됩니다. 문장 중간에서는 '～せいで', 문장 끝에서 서술어로 쓰일 때는 '～せいだ' 또는 '～せいです'의 형태로 쓰입니다.",
+      "formation": "동사 보통형 + せいで | い형용사 + せいで | な형용사 + なせいで | 명사 + のせいで",
+      "examples": [
+        {
+          "translation": "비 때문에 시합이 취소되었습니다."
+        },
+        {
+          "translation": "그가 지각하는 바람에 모두가 기다려야 했습니다."
+        },
+        {
+          "translation": "병 때문에 휴일을 완전히 망쳐 버렸다."
+        },
+        {
+          "translation": "일이 바빠 잠이 부족한 탓에 집중할 수가 없다."
+        }
+      ]
+    },
+    "ja_せてください_26": {
+      "title": "～せてください (〜sete kudasai)",
+      "shortExplanation": "상대방에게 자신이 어떤 행동을 하도록 허락을 구할 때 쓰이며, '제가 ~하게 해 주세요', '~하도록 허락해 주세요'라는 뜻입니다.",
+      "longExplanation": "'～（さ）せてください'는 동사의 사역형 て형에 'ください'가 결합한 문형으로, 상대방에게 허가를 정중하게 요청하여 자신이 그 행동을 할 수 있도록 해 달라고 부탁할 때 사용합니다. 겸양과 공손함의 뉘앙스를 담고 있습니다.",
+      "formation": "동사 사역형 て형 (～せて / ～させて) + ください",
+      "examples": [
+        {
+          "translation": "다시 한번 설명하게 해 주십시오."
+        },
+        {
+          "translation": "집에 돌아가게 해 주세요."
+        },
+        {
+          "translation": "그 책을 보여 주세요 (보게 해 주세요)."
+        },
+        {
+          "translation": "여기서 기다리게 해 주세요."
+        }
+      ]
+    },
+    "ja_そのために_27": {
+      "title": "～そのために (〜sono tame ni)",
+      "shortExplanation": "앞 문장의 목적이나 목표를 받아 뒤 문장의 실천 행동을 나타내며, '그것을 위해서', '그 목적을 위해', '그러기 위해'라는 뜻입니다.",
+      "longExplanation": "접속사 'そのために'는 앞 문장에서 제시된 목적, 목표 또는 이유를 가리키며, 뒤 문장에서는 그 목적을 달성하기 위한 구체적인 수단이나 행동, 조치를 연결할 때 사용합니다. 한국어의 '그러기 위해서', '그것을 위해', '그 때문에'에 해당합니다.",
+      "formation": "문장 1 (목적/목표) + 。そのために、 + 문장 2 (행동/수단)",
+      "examples": [
+        {
+          "translation": "시험에 합격하기 위해 매일 공부하고 있습니다. 그러기 위해 일찍 자고 일찍 일어나도록 노력하고 있습니다."
+        },
+        {
+          "translation": "건강한 생활을 하고 싶다. 그것을 위해 헬스장에 다니며 운동하고 있다."
+        },
+        {
+          "translation": "환경을 지키기 위해 재활용에 힘쓰고 있습니다. 그러기 위해 쓰레기를 분리수거해서 버리고 있습니다."
+        },
+        {
+          "translation": "새로운 직장을 찾고 싶다. 그러기 위해 이력서를 작성하여 지원하고 있다."
+        }
+      ]
+    },
+    "ja_その結果_28": {
+      "title": "～その結果 (〜sono kekka)",
+      "shortExplanation": "앞선 행동이나 사태로 인해 일어난 결과를 나타내며, '그 결과', '그 결과로서'라는 뜻입니다.",
+      "longExplanation": "접속사 'その結果'는 인과 관계를 나타내는 표현으로, 앞 문장에서 원인이 되는 행동이나 사태를 말하고, 뒤 문장에서 그로 인해 초래된 결과나 결말을 객관적으로 서술할 때 사용합니다. 긍정적인 결과와 부정적인 결과 모두에 쓰이며, 다소 격식 있는 표현입니다.",
+      "formation": "문장 1 (행동/사태) + 。その結果、 + 문장 2 (결과)",
+      "examples": [
+        {
+          "translation": "그녀는 매일 연습했다. 그 결과 시합에서 이겼다."
+        },
+        {
+          "translation": "회사가 도산했다. 그 결과 그는 일자리를 잃었다."
+        },
+        {
+          "translation": "우리는 지각했다. 그 결과 전철을 타지 못했다."
+        },
+        {
+          "translation": "그는 공부를 게을리했다. 그 결과 시험에 떨어졌다."
+        }
+      ]
+    },
+    "ja_それと_29": {
+      "title": "～それと～ (〜sore to〜)",
+      "shortExplanation": "앞선 내용에 다른 항목이나 사실을 덧붙여 나타내며, '그리고', '그에 더해', '또'라는 뜻입니다.",
+      "longExplanation": "접속사 'それと'는 일상 회화에서 자주 쓰이는 표현으로, 이미 언급한 사물이나 동작, 사건 외에 새로운 내용을 추가로 덧붙여 나열할 때 사용합니다. 문두에 놓여 '그리고 또', '거기에 더해'라는 의미로 화제를 이어 나갑니다.",
+      "formation": "항목/문장 1 + 。それと、 + 항목/문장 2",
+      "examples": [
+        {
+          "translation": "쇼핑하러 갈 생각입니다. 그리고 우체국에도 가야 해요."
+        },
+        {
+          "translation": "오늘은 타코를 만들었습니다. 그리고 샐러드도 만들었습니다."
+        },
+        {
+          "translation": "외출하기 전에 방을 청소해 주세요. 그리고 쓰레기도 버려 주세요."
+        },
+        {
+          "translation": "그는 프랑스어를 할 줄 압니다. 게다가 스페인어도 할 줄 압니다."
+        }
+      ]
+    },
+    "ja_それとも_30": {
+      "title": "～？それとも～？ (～? sore tomo ～?)",
+      "shortExplanation": "두 가지 선택지를 제시하여 상대방에게 묻는 의문 표현으로, '아니면', '그렇지 않으면'이라는 뜻입니다.",
+      "longExplanation": "접속사 'それとも'는 선택 의문문에서 두 가지 대안이나 가능성을 나열하여 상대방에게 선택을 물을 때 사용합니다. 'A인가요? 아니면 B인가요?'의 형태로 쓰여 양자택일을 요구하는 뉘앙스를 갖습니다.",
+      "formation": "의문문 A + ？それとも + 의문문 B + ？",
+      "examples": [
+        {
+          "translation": "커피 마실래? 아니면 홍차 마실래?"
+        },
+        {
+          "translation": "이 영화는 재미있어? 아니면 지루해?"
+        },
+        {
+          "translation": "그 사람은 일본인이야? 아니면 외국인이야?"
+        },
+        {
+          "translation": "초밥 먹으러 갈래? 아니면 라멘 먹으러 갈래?"
+        }
+      ]
+    },
+    "ja_だけしか_31": {
+      "title": "～だけしか (～dake shika)",
+      "shortExplanation": "한정의 표현을 중복 사용하여 수량이나 범위가 매우 적음을 강조하며, 뒤에 부정형이 와서 '오직 ~밖에', '~만을'이라는 뜻입니다.",
+      "longExplanation": "'～だけしか'는 한정을 나타내는 'だけ'와 배타적 부정을 나타내는 'しか'를 겹쳐 사용하여, 그 수량이나 범위가 턱없이 적거나 부족함을 강하게 강조하는 문법입니다. 뒤에는 반드시 부정형 동사가 호응하며, '오직 그것밖에 하지 못했다/없다'라는 아쉬움이나 불만의 뉘앙스를 갖습니다.",
+      "formation": "명사 / 수량사 + だけしか + 동사 부정형",
+      "examples": [
+        {
+          "translation": "오늘은 고작 1시간밖에 공부하지 못했다."
+        },
+        {
+          "translation": "그는 오직 카레밖에 먹지 않는다."
+        },
+        {
+          "translation": "다나카 씨는 겨우 5명밖에 초대하지 않았다."
+        },
+        {
+          "translation": "저 레스토랑에서는 채소밖에 팔지 않는다."
+        }
+      ]
+    },
+    "ja_だけど_32": {
+      "title": "だけど (dakedo)",
+      "shortExplanation": "앞뒤 내용의 대조나 역접을 나타내는 구어 접속사로, '하지만', '그렇지만', '~이지만'이라는 뜻입니다.",
+      "longExplanation": "접속사 'だけど'는 'だけれども'의 편안한 구어체 표현으로, 앞선 내용과 상반되거나 대조적인 사실을 이어받을 때 사용합니다. 문장 처음에 놓여 '하지만', '그렇지만'의 뜻으로 쓰이거나, 한 문장 내에서 두 절을 연결할 때는 'だ'가 탈락하여 '～けど'의 형태로 자주 쓰입니다.",
+      "formation": "문장 1 + だけど / けど + 문장 2 | 문장 1 + 。だけど、 + 문장 2",
+      "examples": [
+        {
+          "translation": "시험에 합격했지만, 아직 공부해야만 한다."
+        },
+        {
+          "translation": "이 방은 넓지만, 집세가 비쌉니다."
+        },
+        {
+          "translation": "그는 다정하지만, 때로는 엄격합니다."
+        },
+        {
+          "translation": "아침밥을 만들고 싶지만 시간이 없다."
+        }
+      ]
+    },
+    "ja_たて_33": {
+      "title": "～たて (～tate)",
+      "shortExplanation": "동작이 막 완료되어 그 상태가 매우 신선하고 따끈따끈함을 나타내며, '갓 ~한', '막 ~한'이라는 뜻입니다.",
+      "longExplanation": "'～たて'는 동사의 ます형 어간 뒤에 붙어, 어떤 동작이 막 끝나서 그 결과물이나 상태가 아주 신선하고 새로운 상태임을 나타내는 표현입니다. 요리나 세탁 등과 관련된 동사(焼く, 作る, 洗う 등)와 자주 결합하며, 명사를 수식할 때는 '～たての + 명사'의 형태로 쓰입니다.",
+      "formation": "동사 ます형 (ます 탈락) + たて (+ の + 명사 / + で)",
+      "examples": [
+        {
+          "translation": "이 빵은 갓 구워내서 아직 따뜻합니다."
+        },
+        {
+          "translation": "갓 만든 도시락이 맛있다."
+        },
+        {
+          "translation": "갓 세탁한 셔츠에서 좋은 냄새가 난다."
+        },
+        {
+          "translation": "그녀는 갓 썬 채소를 샐러드에 넣었습니다."
+        }
+      ]
+    },
+    "ja_たとえても_34": {
+      "title": "～たとえ～ても (〜tatoe〜temo)",
+      "shortExplanation": "가정 양보를 나타내며, '설령 ~하더라도', '비록 ~일지라도'라는 뜻입니다.",
+      "longExplanation": "'たとえ～ても'는 어떤 극단적인 상황이나 조건을 가정하더라도, 뒤에 따르는 결과나 결심, 상황은 변함없이 그대로 유지됨을 강조하는 양보 가정 표현입니다. 부사 'たとえ'가 문두에 와서 뒤의 '~ても/～でも'와 호응합니다.",
+      "formation": "たとえ + 동사 て형 + も | たとえ + い형용사 어간(い 탈락) + くても | たとえ + な형용사 / 명사 + でも (또는 であっても)",
+      "examples": [
+        {
+          "translation": "설령 비가 내릴지라도 외출합시다."
+        },
+        {
+          "translation": "설령 그가 화를 낼지라도 진실을 말합시다."
+        },
+        {
+          "translation": "비록 날씨가 춥더라도 산책을 가고 싶다."
+        },
+        {
+          "translation": "설령 그가 유명인이라 할지라도 그에게 관심이 없습니다."
+        }
+      ]
+    },
+    "ja_たところ_35": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "어떤 동작을 한 결과 새로운 사실을 알게 되거나 뜻밖의 상황이 발생했음을 나타내며, '~했더니', '~해 보았더니'라는 뜻입니다.",
+      "longExplanation": "'～たところ'는 동사의 과거형(た형) 뒤에 접속하여, 어떤 행동을 직접 시도하거나 완료한 뒤에 예상치 못했던 결과, 상대방의 반응, 또는 새로운 사실을 발견하게 되었음을 나타냅니다. 뒷문장에는 화자의 의지가 아닌 객관적인 상황이나 전개가 이어집니다.",
+      "formation": "동사 た형 + ところ",
+      "examples": [
+        {
+          "translation": "숙제를 다 끝냈더니 선생님께서 과제를 하나 더 내주셨다."
+        },
+        {
+          "translation": "친구를 만났더니 그가 해외로 간다고 말했다."
+        },
+        {
+          "translation": "식사를 다 마쳤을 때 마침 전화가 걸려 왔다."
+        },
+        {
+          "translation": "책상을 정리했더니 잊고 있었던 메모를 발견했다."
+        }
+      ]
+    },
+    "ja_たとたん_36": {
+      "title": "～たとたん (〜ta totan)",
+      "shortExplanation": "어떤 동작이 일어난 바로 그 순간 뜻밖의 일이 연이어 일어남을 나타내며, '~하자마자', '~한 순간'이라는 뜻입니다.",
+      "longExplanation": "'～たとたん' (또는 '～たとたんに')은 동사의 과거형(た형)에 접속하여, 앞의 동작이 끝남과 거의 동시에 예상치 못했던 일이나 갑작스러운 변화가 일어났음을 나타냅니다. 후건에는 의지, 권유, 명령 표현을 쓸 수 없으며, 놀라움이나 우발적인 상황이 옵니다.",
+      "formation": "동사 た형 + とたん (또는 とたんに)",
+      "examples": [
+        {
+          "translation": "문을 열자마자 고양이가 뛰쳐나갔다."
+        },
+        {
+          "translation": "전화를 걸자마자 배터리가 다 닳았다."
+        },
+        {
+          "translation": "비가 내리기 시작하자마자 모두 우산을 썼다."
+        },
+        {
+          "translation": "그를 만나자마자 그의 미소가 사라졌다."
+        }
+      ]
+    },
+    "ja_たびに_37": {
+      "title": "～たびに (〜tabi ni)",
+      "shortExplanation": "어떤 동작이나 일이 일어날 때마다 항상 같은 일이 뒤따름을 나타내며, '~할 때마다', '~마다'라는 뜻입니다.",
+      "longExplanation": "'～たびに'는 동사의 사전형(기본형)이나 '명사 + の' 뒤에 붙어, 어떤 사건이나 계기가 있을 때마다 예외 없이 동일한 행동, 심리적 반응, 사태가 되풀이됨을 나타내는 문법입니다. 자연 현상과 같은 일상적인 당연한 주기보다는 특정한 계기에 따른 규칙성을 강조합니다.",
+      "formation": "동사 사전형 + たびに | 명사 + のたびに",
+      "examples": [
+        {
+          "translation": "그녀를 만날 때마다 마음이 설렌다."
+        },
+        {
+          "translation": "비가 내릴 때마다 그리운 추억이 되살아난다."
+        },
+        {
+          "translation": "이 노래를 들을 때마다 행복한 기분이 든다."
+        },
+        {
+          "translation": "집에 돌아올 때마다 고양이가 마중을 나와 준다."
+        }
+      ]
+    },
+    "ja_だものだ_38": {
+      "title": "～だものだ (〜da mono da)",
+      "shortExplanation": "주관적인 이유나 핑계를 대며 상대방의 이해를 구할 때 쓰이며, '~인걸', '~이기 때문인걸'이라는 뜻입니다 (주로 ～ものだから 형태).",
+      "longExplanation": "'～ものだから' (또는 '～んだもの', '～もの')는 회화에서 자신의 행동이나 사정에 대한 이유, 핑계를 변명조로 설명할 때 사용됩니다. '어쩔 수 없이 ~하기 때문에'라는 뉘앙스를 담아 상대방에게 양해나 동정을 구할 때 흔히 쓰입니다.",
+      "formation": "동사 보통형 + んだものだから / んだもの | い형용사 + んだものだから / んだもの | な형용사 + なんだものだから / なんだもの | 명사 + なんだものだから / なんだもの",
+      "examples": [
+        {
+          "translation": "지쳤는걸요, 좀 쉬고 싶어요."
+        },
+        {
+          "translation": "배가 고픈걸 어떡해요, 뭐라도 좀 먹고 싶어요."
+        },
+        {
+          "translation": "워낙 바쁜걸요, 갈 수가 없어요."
+        },
+        {
+          "translation": "그는 워낙 친절한걸요, 누구나 그를 좋아해요."
+        }
+      ]
+    },
+    "ja_ちゃった_39": {
+      "title": "～ちゃった (〜chatta)",
+      "shortExplanation": "'～てしまった'의 구어적 축약형으로, 부주의로 인한 실수나 후회 또는 동작의 완료를 나타내며, '~해 버렸다', '~해 버리고 말았다'라는 뜻입니다.",
+      "longExplanation": "'～ちゃった' (탁음 뒤에서는 '～じゃった')는 일상 회화에서 '～てしまった / ～でしまった'를 줄여서 말하는 친근한 구어 표현입니다. 뜻하지 않게 어떤 실수를 저질러 버렸을 때의 후회나 안타까움을 표현하거나, 어떤 행위를 완전히 끝마쳐 버렸음을 나타낼 때 사용합니다.",
+      "formation": "동사 て형 (て 탈락) + ちゃった | 동사 で형 (で 탈락) + じゃった (예: 食べてしまった → 食べちゃった, 飲んでしまった → 飲んじゃった)",
+      "examples": [
+        {
+          "translation": "물건을 깜빡 두고 와 버렸다."
+        },
+        {
+          "translation": "늦잠을 자서 지각해 버렸다."
+        },
+        {
+          "translation": "케이크를 전부 다 먹어 버렸다."
+        },
+        {
+          "translation": "말하지 않으려고 했는데, 그만 말해 버렸다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_せいで_25": {
+      "title": "～せいで (〜sei de)",
+      "shortExplanation": "好ましくない結果や残念な事態を引き起こした原因・理由を表し、「〜のせいで」「〜が原因で」という意味を表します。",
+      "longExplanation": "「～せいで」は、悪い結果や不都合な出来事、被害などが生じた原因を表す文法です。非難や後悔、恨み言などのニュアンスを含み、「〜が原因で（悪い結果になった）」と言いたいときに用いられます。文末では「〜せいだ」「〜せいです」の形をとります。",
+      "formation": "動詞普通形 ＋ せいで | い形容詞 ＋ せいで | な形容詞 ＋ なせいで | 名詞 ＋ のせいで",
+      "examples": [
+        {
+          "translation": "雨のせいで試合が中止になりました。"
+        },
+        {
+          "translation": "彼の遅刻のせいで、みんな待たされました。"
+        },
+        {
+          "translation": "病気のせいで休日が台無しになった。"
+        },
+        {
+          "translation": "仕事が忙しくて寝不足なせいで、集中できない。"
+        }
+      ]
+    },
+    "ja_せてください_26": {
+      "title": "～せてください (〜sete kudasai)",
+      "shortExplanation": "相手に許可を求めて、自分（または身内）にその動作をさせてもらう丁寧な依頼表現で、「〜させてください」という意味を表します。",
+      "longExplanation": "「～（さ）せてください」は、動詞の使役形のて形に「ください」を接続させた形で、相手に対して自分の希望する行動を許可してもらうよう丁寧に頼む表現です。相手に敬意を払い、謙虚にお願いする場面でよく用いられます。",
+      "formation": "動詞使役形て形（～せて／～させて） ＋ ください",
+      "examples": [
+        {
+          "translation": "もう一度説明させてください。"
+        },
+        {
+          "translation": "帰らせてください。"
+        },
+        {
+          "translation": "その本を見せてください。"
+        },
+        {
+          "translation": "ここで待たせてください。"
+        }
+      ]
+    },
+    "ja_そのために_27": {
+      "title": "～そのために (〜sono tame ni)",
+      "shortExplanation": "前文で述べた目的や目標を受けて、それを実現するための行動や手段を述べ、「そのために」「その目的のために」という意味を表します。",
+      "longExplanation": "接続詞「そのために」は、前に提示された目的・目標や理由を指し示し、後続の文でその目的を果たすためにどのような行動や努力、対策をとっているかを接続して述べる表現です。「〜を実現するために、これを行う」という前後の関係を明確にします。",
+      "formation": "文1（目的・目標） ＋ 。そのために、 ＋ 文2（手段・行動）",
+      "examples": [
+        {
+          "translation": "試験に合格するために、毎日勉強しています。そのために、早く寝て早く起きるようにしています。"
+        },
+        {
+          "translation": "健康的な生活を送りたい。そのために、ジムに通って運動しています。"
+        },
+        {
+          "translation": "環境を守るために、リサイクルに取り組んでいます。そのために、ゴミを分別して捨てています。"
+        },
+        {
+          "translation": "新しい仕事を見つけたい。そのために、履歴書を書いて応募しています。"
+        }
+      ]
+    },
+    "ja_その結果_28": {
+      "title": "～その結果 (〜sono kekka)",
+      "shortExplanation": "前述の事柄や行動によってもたらされた結末・結果を客観的に述べ、「その結果」「その結果として」という意味を表します。",
+      "longExplanation": "接続詞「その結果」は、文と文をつなぎ、前の文で述べられた原因・契機・出来事を受けて、その影響でどのような結果や結末が生じたのかを後続の文で述べる表現です。良い結果にも悪い結果にも使われ、客観的な説明や改まった文章でよく用いられます。",
+      "formation": "文1（行為・事態） ＋ 。その結果、 ＋ 文2（結果）",
+      "examples": [
+        {
+          "translation": "彼女は毎日練習した。その結果、試合に勝った。"
+        },
+        {
+          "translation": "会社が倒産した。その結果、彼は仕事を失った。"
+        },
+        {
+          "translation": "私たちは遅刻した。その結果、電車に乗れなかった。"
+        },
+        {
+          "translation": "彼は勉強を怠った。その結果、試験に落ちた。"
+        }
+      ]
+    },
+    "ja_それと_29": {
+      "title": "～それと～ (〜sore to〜)",
+      "shortExplanation": "前に述べた事柄に加えて、別の事柄や項目を付け足すときに用いられ、「それと」「それに加えて」という意味を表します。",
+      "longExplanation": "接続詞「それと」は、日常の会話で頻繁に使われるくだけた表現で、すでに話題に出した事柄や物事のほかに、もう一つの要素や追加の用件・項目を並列して付け加える際に用いられます。「それから」「それに」と近い意味を持ちます。",
+      "formation": "項目／文1 ＋ 。それと、 ＋ 項目／文2",
+      "examples": [
+        {
+          "translation": "買い物に行くつもりです。それと、郵便局にも行かなくては。"
+        },
+        {
+          "translation": "今日はタコスを作りました。それと、サラダも作りました。"
+        },
+        {
+          "translation": "出かける前に、部屋を掃除してください。それと、ゴミを捨ててください。"
+        },
+        {
+          "translation": "彼はフランス語が話せます。それと、スペイン語も話せます。"
+        }
+      ]
+    },
+    "ja_それとも_30": {
+      "title": "～？それとも～？ (～? sore tomo ～?)",
+      "shortExplanation": "二つの事柄や選択肢を提示して相手に選ばせる選択疑問の表現で、「それとも」「あるいは」という意味を表します。",
+      "longExplanation": "接続詞「それとも」は、主に二者択一の疑問文において用いられ、二つの異なる選択肢や可能性を並べて相手にどちらかを選ばせる際に使用します。「Aですか？ それともBですか？」のように、疑問文をつなぐ働きをします。",
+      "formation": "疑問文A ＋ ？それとも ＋ 疑問文B ＋ ？",
+      "examples": [
+        {
+          "translation": "コーヒーを飲む？それとも紅茶を飲む？"
+        },
+        {
+          "translation": "この映画は面白い？それともつまらない？"
+        },
+        {
+          "translation": "彼は日本人だ？それとも外国人だ？"
+        },
+        {
+          "translation": "寿司を食べに行く？それともラーメンを食べに行く？"
+        }
+      ]
+    },
+    "ja_だけしか_31": {
+      "title": "～だけしか (～dake shika)",
+      "shortExplanation": "限定を表す助詞を重ねて数量や範囲の少なさ・不十分さを強く強調し、後続の否定表現と呼応して「〜だけしか…ない」という意味を表します。",
+      "longExplanation": "「～だけしか」は、限定の「だけ」と排他を表す「しか」を組み合わせた表現で、後続に否定の述語（動詞の否定形など）を伴います。取り上げた数量や対象がきわめて少なく、それ以外にはないことに対する不足感、不満、残念な気持ちを強く強調します。",
+      "formation": "名詞／数量詞 ＋ だけしか ＋ 動詞否定形",
+      "examples": [
+        {
+          "translation": "今日は1時間だけしか勉強できなかった。"
+        },
+        {
+          "translation": "彼はカレーだけしか食べない。"
+        },
+        {
+          "translation": "田中さんは5人だけしか招待しなかった。"
+        },
+        {
+          "translation": "あのレストランでは野菜だけしか売っていない。"
+        }
+      ]
+    },
+    "ja_だけど_32": {
+      "title": "だけど (dakedo)",
+      "shortExplanation": "前後の事柄が対立・矛盾することを表すくだけた逆接の接続詞で、「だが」「けれども」「しかし」という意味を表します。",
+      "longExplanation": "接続詞「だけど」は、「だけれども」が簡略化された日常会話でよく使われる口語表現です。前の事柄に対して予想と異なることや反対の事柄を後続の文で述べる際に用いられます。文頭に置かれて「だけど、〜」とするほか、文中で「〜けど」の形で節をつなぐこともしばしばあります。",
+      "formation": "文1 ＋ だけど／けど ＋ 文2 | 文1 ＋ 。だけど、 ＋ 文2",
+      "examples": [
+        {
+          "translation": "試験に合格したけど、まだ勉強しなければならない。"
+        },
+        {
+          "translation": "この部屋は広いけど、家賃が高いです。"
+        },
+        {
+          "translation": "彼は優しいけど、時々厳しいです。"
+        },
+        {
+          "translation": "朝ごはんは作りたいけど、時間がない。"
+        }
+      ]
+    },
+    "ja_たて_33": {
+      "title": "～たて (～tate)",
+      "shortExplanation": "ある動作やすべきことが終わったばかりで、その状態がきわめて新鮮・生々しいことを表し、「〜したばかりの」という意味を表します。",
+      "longExplanation": "「～たて」は、動詞の連用形（ます形語幹）に接続し、その動作が完了した直後で、出来上がった物や状態がまだ新しく温かみや鮮度を保っていることを表します。料理や洗濯などに関する動詞（焼く、作る、炊く、洗うなど）とよく結びつき、名詞を修飾するときは「〜たての＋名詞」の形をとります。",
+      "formation": "動詞連用形（ます形語幹） ＋ たて（＋の＋名詞／＋で）",
+      "examples": [
+        {
+          "translation": "このパンは焼きたてで、まだ温かいです。"
+        },
+        {
+          "translation": "作りたてのお弁当が美味しい。"
+        },
+        {
+          "translation": "洗いたてのシャツはいい匂いがする。"
+        },
+        {
+          "translation": "彼女は切りたての野菜をサラダに入れました。"
+        }
+      ]
+    },
+    "ja_たとえても_34": {
+      "title": "～たとえ～ても (〜tatoe〜temo)",
+      "shortExplanation": "仮定の条件を提示し、たとえそれが成立しても結論や意志が変わらないことを表し、「たとえ〜ても」「仮に〜だとしても」という意味を表します。",
+      "longExplanation": "「～たとえ～ても」は、譲歩の仮定条件を表す構文です。副詞「たとえ」を文頭に置き、述語の「〜ても／〜でも」と呼応させることで、「仮に前項のような極端な事態が起きても、後項の事実・決意・判断には何の影響も及ばない」という強い意志や確定性を表します。",
+      "formation": "たとえ ＋ 動詞て形 ＋ も | たとえ ＋ い形容詞語幹（「い」を除く） ＋ くても | たとえ ＋ な形容詞語幹／名詞 ＋ でも（または であっても）",
+      "examples": [
+        {
+          "translation": "たとえ雨が降っても、出かけましょう。"
+        },
+        {
+          "translation": "たとえ彼が怒っても、本当のことを言いましょう。"
+        },
+        {
+          "translation": "たとえ寒くても、散歩に行きたい。"
+        },
+        {
+          "translation": "たとえ彼が有名であっても、彼には興味がありません。"
+        }
+      ]
+    },
+    "ja_たところ_35": {
+      "title": "～たところ (〜ta tokoro)",
+      "shortExplanation": "ある動作を行った結果、新たな事実や思いがけない状況が分かったことを表し、「〜したら」「〜した結果」という意味を表します。",
+      "longExplanation": "「～たところ」は、動詞のた形に接続し、ある行動を実際にとってみた結果、どういう状況になったか、どのような反応や新たな事実が判明したかを客観的に述べる文法です。後続の文には、話し手の意志による行動ではなく、自然に生じた出来事や知った事実が来ます。",
+      "formation": "動詞た形 ＋ ところ",
+      "examples": [
+        {
+          "translation": "宿題をしたところ、先生からもう一つ課題が出された。"
+        },
+        {
+          "translation": "友達に会ったところ、彼が海外に行くと言った。"
+        },
+        {
+          "translation": "食事を食べ終わったところ、電話がかかってきた。"
+        },
+        {
+          "translation": "机を整理したところ、忘れていたメモが見つかった。"
+        }
+      ]
+    },
+    "ja_たとたん_36": {
+      "title": "～たとたん (〜ta totan)",
+      "shortExplanation": "ある動作や変化が起きたまさにその瞬間に、思いがけない次の事態が発生することを表し、「〜した瞬間に」「〜するとすぐに」という意味を表します。",
+      "longExplanation": "「～たとたん（に）」は、動詞のた形に接続し、先行する動作や出来事が完了した直後、ほとんど同時に予期しない変化や事態が生じることを表します。後続の文には、話し手の意志的な行為ではなく、突発的・偶然に起こった現象や驚きの出来事が続きます。",
+      "formation": "動詞た形 ＋ とたん（に）",
+      "examples": [
+        {
+          "translation": "ドアを開けたとたん、猫が逃げ出した。"
+        },
+        {
+          "translation": "電話をかけたとたん、電池が切れた。"
+        },
+        {
+          "translation": "雨が降り始めたとたん、みんなが傘をさした。"
+        },
+        {
+          "translation": "彼に会ったとたん、彼の笑顔が消えた。"
+        }
+      ]
+    },
+    "ja_たびに_37": {
+      "title": "～たびに (〜tabi ni)",
+      "shortExplanation": "その動作や出来事が起こるたびに、いつも決まって同じことが繰り返されることを表し、「〜する時はいつも」「〜ごとに」という意味を表します。",
+      "longExplanation": "「～たびに」は、動詞の辞書形（基本形）または「名詞＋の」に接続し、ある行為や契機が生じる機会ごとに、常に例外なく同一の事態・感情・反応が引き起こされることを表します。自然現象や日常的な周期（毎朝起きる等）には使わず、特定の出来事に付随する反復性を表します。",
+      "formation": "動詞辞書形 ＋ たびに | 名詞 ＋ のたびに",
+      "examples": [
+        {
+          "translation": "彼女に会うたびに、心が弾む。"
+        },
+        {
+          "translation": "雨が降るたびに、懐かしい思い出がよみがえる。"
+        },
+        {
+          "translation": "この歌を聴くたびに、幸せな気分になる。"
+        },
+        {
+          "translation": "家に帰るたびに、猫が出迎えてくれる。"
+        }
+      ]
+    },
+    "ja_だものだ_38": {
+      "title": "～だものだ (〜da mono da)",
+      "shortExplanation": "理由や言い訳を主観的に述べ、相手に事情を納得・理解してもらおうとする表現で、「〜なんだから」「〜ものだから」という意味を表します。",
+      "longExplanation": "「～ものだから」（口語では「〜んだもの」「〜もの」など）は、自分の都合や行動に対する理由・言い訳を弁解がましく述べたり、相手の理解や同情を求めたりする際に用いられる表現です。「どうしても〜なのだから仕方がない」という主観的なニュアンスを含みます。",
+      "formation": "動詞普通形 ＋ んだものだから／んだもの | い形容詞 ＋ んだものだから／んだもの | な形容詞語幹 ＋ なんだものだから／んだもの | 名詞 ＋ なんだものだから／んだもの",
+      "examples": [
+        {
+          "translation": "疲れたんだものだから、休みたい。"
+        },
+        {
+          "translation": "お腹が空いたんだものだから、何か食べたい。"
+        },
+        {
+          "translation": "忙しいんだものだから、来られない。"
+        },
+        {
+          "translation": "彼は親切なんだものだから、誰も彼が好きだ。"
+        }
+      ]
+    },
+    "ja_ちゃった_39": {
+      "title": "～ちゃった (〜chatta)",
+      "shortExplanation": "「〜てしまった」のくだけた口語表現で、意図せず失敗したことへの後悔や遺憾、あるいは動作の完全な終了を表し、「〜してしまった」という意味を表します。",
+      "longExplanation": "「～ちゃった」（濁音は「〜じゃった」）は、会話で非常によく使われる「〜てしまった／〜でしまった」の縮約形です。不注意や思わぬ成り行きで望ましくない事態になってしまったときの残念・後悔の気持ち（「うっかり〜してしまった」）や、動作を完全にやり終えたことをくだけた調子で表します。",
+      "formation": "動詞て形（「て」を除く） ＋ ちゃった | 動詞で形（「で」を除く） ＋ じゃった（例：食べてしまった → 食べちゃった、飲んでしまった → 飲んじゃった）",
+      "examples": [
+        {
+          "translation": "忘れ物をしちゃった。"
+        },
+        {
+          "translation": "寝坊して遅刻しちゃった。"
+        },
+        {
+          "translation": "ケーキを全部食べちゃった。"
+        },
+        {
+          "translation": "言わないつもりだったけど、言っちゃった。"
+        }
+      ]
+    }
+  }
+}

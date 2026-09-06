@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_だれか_90",
+    "language": "ja",
+    "pattern": "だれか〜",
+    "title": "だれか〜 (dareka〜)",
+    "shortExplanation": "Indicates 'someone' or something done or possessed by 'someone'.",
+    "longExplanation": "The grammar point だれか〜 is used to suggest that something is done by, possessed by, or related to 'someone', usually when the actual person is unidentified or not important. It can be used with verbs, adjectives, or nouns.",
+    "formation": "だれか + Verb, だれか + Adjective, だれか + Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "だれかがドアをノックしました。",
+        "romanization": "Dareka ga doa wo nokku shimashita.",
+        "translation": "Someone knocked on the door."
+      },
+      {
+        "sentence": "だれかが私の傘を盗みました。",
+        "romanization": "Dareka ga watashi no kasa wo nusumimashita.",
+        "translation": "Someone stole my umbrella."
+      },
+      {
+        "sentence": "だれか助けてください。",
+        "romanization": "Dareka tasukete kudasai.",
+        "translation": "Someone, please help."
+      },
+      {
+        "sentence": "だれかのせいで、電気がきれました。",
+        "romanization": "Dareka no sei de, denki ga kiremashita.",
+        "translation": "Because of someone, the electricity went out."
+      }
+    ]
+  },
+  {
+    "id": "ja_だれでも_91",
+    "language": "ja",
+    "pattern": "だれでも～",
+    "title": "だれでも～ (dare demo～)",
+    "shortExplanation": "Used to express 'anyone' or 'everyone'; 'no matter who'.",
+    "longExplanation": "The grammar point だれでも is used to emphasize that something applies to everyone or anyone, regardless of who they are. It can be translated as 'anyone', 'everyone', or 'no matter who' in English. It is used in sentences to show that a certain situation, characteristic, or condition applies to all people.",
+    "formation": "だれでも + Verb/Adjective/Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "だれでもこのゲームができます。",
+        "romanization": "Dare demo kono geemu ga dekimasu.",
+        "translation": "Anyone can play this game."
+      },
+      {
+        "sentence": "だれでも疲れることがあります。",
+        "romanization": "Dare demo tsukareru koto ga arimasu.",
+        "translation": "Everyone gets tired sometimes."
+      },
+      {
+        "sentence": "だれでも無料でこのイベントに参加できます。",
+        "romanization": "Dare demo muryou de kono ibento ni sanka dekimasu.",
+        "translation": "Anyone can participate in this event for free."
+      },
+      {
+        "sentence": "だれでもこの町の観光スポットを楽しむことができます。",
+        "romanization": "Dare demo kono machi no kankou supotto wo tanoshimu koto ga dekimasu.",
+        "translation": "No matter who you are, you can enjoy the sightseeing spots in this town."
+      }
+    ]
+  },
+  {
+    "id": "ja_だれもないです_92",
+    "language": "ja",
+    "pattern": "だれも～ないです",
+    "title": "だれも～ないです (dare mo ~ nai desu)",
+    "shortExplanation": "Express 'nobody' or 'no one' in a negative sentence.",
+    "longExplanation": "The grammar point だれも～ないです is used to express the idea of 'nobody' or 'no one' in a negative sentence. だれも is followed by the negative form of a verb or adjective, often using the polite ないです form.",
+    "formation": "だれも + Verb-negative form (ないです), だれも + い-Adjective-negative form (ないです), だれも + な-Adjective-negative form (じゃないです)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "だれも知らないです。",
+        "romanization": "Daremo shiranai desu.",
+        "translation": "Nobody knows."
+      },
+      {
+        "sentence": "だれも来ないです。",
+        "romanization": "Daremo konai desu.",
+        "translation": "Nobody is coming."
+      },
+      {
+        "sentence": "彼女はだれも好きじゃないです。",
+        "romanization": "Kanojo wa daremo suki ja nai desu.",
+        "translation": "She doesn't like anyone."
+      },
+      {
+        "sentence": "ここにはだれもいないです。",
+        "romanization": "Koko ni wa daremo inai desu.",
+        "translation": "There is nobody here."
+      }
+    ]
+  },
+  {
+    "id": "ja_だれもません_93",
+    "language": "ja",
+    "pattern": "だれも～ません",
+    "title": "だれも～ません (daremo ~masen)",
+    "shortExplanation": "Express 'nobody' or 'no one' in negative sentences.",
+    "longExplanation": "The grammar point だれも is used in combination with a negative form of the verb, usually ません, to express the idea of 'nobody' or 'no one' doing something. It is used with questions or statements and can be translated as 'nobody' or 'no one' in English.",
+    "formation": "だれも + Verb-negative (ません)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "だれも秘密を知りません。",
+        "romanization": "Daremo himitsu wo shirimasen.",
+        "translation": "No one knows the secret."
+      },
+      {
+        "sentence": "だれもその質問に答えませんでした。",
+        "romanization": "Daremo sono shitsumon ni kotaemasen deshita.",
+        "translation": "Nobody answered that question."
+      },
+      {
+        "sentence": "だれも彼を助けてあげません。",
+        "romanization": "Daremo kare wo tasukete agemasen.",
+        "translation": "Nobody will help him."
+      },
+      {
+        "sentence": "だれもその映画を見たがりません。",
+        "romanization": "Daremo sono eiga wo mitagarimasen.",
+        "translation": "No one wants to watch that movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_どう_94",
+    "language": "ja",
+    "pattern": "～どう",
+    "title": "～どう しますか。 (～dou shimasu ka.)",
+    "shortExplanation": "Asking for someone's opinion or decision; 'what will you do?', 'how will you handle it?'.",
+    "longExplanation": "The ～どうしますか grammar point is used to ask for someone's opinion, decision, or course of action in a specific situation. It can be translated as 'what will you do?' or 'how will you handle it?' in English. This grammar point is formed by attaching どうしますか to the end of a sentence.",
+    "formation": "Situation + どうしますか",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "雨が降っているので、どうしますか？",
+        "romanization": "Ame ga futte iru node, dou shimasu ka?",
+        "translation": "It's raining, so what will you do?"
+      },
+      {
+        "sentence": "この問題について、どうしますか？",
+        "romanization": "Kono mondai ni tsuite, dou shimasu ka?",
+        "translation": "What are you going to do about this issue?"
+      },
+      {
+        "sentence": "彼が来なかったら、どうしますか？",
+        "romanization": "Kare ga konakattara, dou shimasu ka?",
+        "translation": "If he doesn't come, what will you do?"
+      },
+      {
+        "sentence": "進路を決める時、どうしますか？",
+        "romanization": "Shinro wo kimeru toki, dou shimasu ka?",
+        "translation": "What will you do when choosing your career path?"
+      }
+    ]
+  },
+  {
+    "id": "ja_どうですか_95",
+    "language": "ja",
+    "pattern": "～どうですか。",
+    "title": "～どうですか。 (〜dou desu ka.)",
+    "shortExplanation": "Asking for opinions or suggestions; 'how about', 'what do you think of'.",
+    "longExplanation": "The ～どうですか grammar point is used to ask for someone's opinion or suggestion on something. It can be translated as 'how about' or 'what do you think of' in English. This expression is neither casual nor super-formal, and can be used in various situations.",
+    "formation": "Noun + は/が + どうですか / Verb-casual + の + どうですか / い-Adjective + どうですか / な-Adjective + な + どうですか",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "この映画はどうですか？",
+        "romanization": "Kono eiga wa dou desu ka?",
+        "translation": "How about this movie? / What do you think of this movie?"
+      },
+      {
+        "sentence": "晩ご飯に寿司を食べるのはどうですか？",
+        "romanization": "Bangohan ni sushi wo taberu no wa dou desu ka?",
+        "translation": "How about eating sushi for dinner?"
+      },
+      {
+        "sentence": "この部屋は広いと思いますが、どうですか？",
+        "romanization": "Kono heya wa hiroi to omoimasu ga, dou desu ka?",
+        "translation": "I think this room is spacious, what do you think?"
+      },
+      {
+        "sentence": "新しい会社の要件が厳しいですね。鈴木さん、転職するならどうですか？",
+        "romanization": "Atarashii kaisha no youken ga kibishii desu ne. Suzuki-san, tenshoku suru nara dou desu ka?",
+        "translation": "The new company's requirements are strict, aren't they? Suzuki-san, how about changing jobs if that's the case?"
+      }
+    ]
+  },
+  {
+    "id": "ja_どうやって_96",
+    "language": "ja",
+    "pattern": "どうやって～",
+    "title": "どうやって～ (douyatte～)",
+    "shortExplanation": "Ask 'how' something is done or how to do something.",
+    "longExplanation": "The grammar point どうやって is used to ask how something is done or how to do something, and is translated as 'how' in English. It is often used in combination with verbs to inquire about the method or process someone goes through to complete a task or action.",
+    "formation": "どうやって + Verb-casual",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どうやってお寿司を作りますか？",
+        "romanization": "Douyatte o-sushi wo tsukurimasu ka?",
+        "translation": "How do you make sushi?"
+      },
+      {
+        "sentence": "どうやって日本語を勉強しましたか？",
+        "romanization": "Douyatte nihongo wo benkyou shimashita ka?",
+        "translation": "How did you study Japanese?"
+      },
+      {
+        "sentence": "どうやってこの問題を解決しますか？",
+        "romanization": "Douyatte kono mondai wo kaiketsu shimasu ka?",
+        "translation": "How do you solve this problem?"
+      },
+      {
+        "sentence": "どうやって駅に行きますか？",
+        "romanization": "Douyatte eki ni ikimasu ka?",
+        "translation": "How do you go to the station?"
+      }
+    ]
+  },
+  {
+    "id": "ja_どう_97",
+    "language": "ja",
+    "pattern": "～どう",
+    "title": "～どう 言いますか。 (〜dou iimasu ka.)",
+    "shortExplanation": "Asking for the way to say something; 'how do you say'.",
+    "longExplanation": "The ～どう言いますか grammar point is used to ask someone how to express something in a particular language or the appropriate way to say it. It can be translated as 'how do you say' in English.",
+    "formation": "Word/Phrase + は [language]でどう言いますか / Word/Phrase + をどう言いますか",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "「ありがとう」は英語でどう言いますか。",
+        "romanization": "「Arigatou」wa eigo de dou iimasu ka.",
+        "translation": "How do you say 'thank you' in English?"
+      },
+      {
+        "sentence": "この言葉を日本語でどう言いますか。",
+        "romanization": "Kono kotoba wo nihongo de dou iimasu ka.",
+        "translation": "How do you say this word in Japanese?"
+      },
+      {
+        "sentence": "「すみません」はフランス語でどう言いますか。",
+        "romanization": "「Sumimasen」wa furansugo de dou iimasu ka.",
+        "translation": "How do you say 'excuse me' in French?"
+      },
+      {
+        "sentence": "その表現をスペイン語でどう言いますか。",
+        "romanization": "Sono hyougen wo supeingo de dou iimasu ka.",
+        "translation": "How do you say that expression in Spanish?"
+      }
+    ]
+  },
+  {
+    "id": "ja_とき_98",
+    "language": "ja",
+    "pattern": "～とき",
+    "title": "～とき (〜toki)",
+    "shortExplanation": "Expresses the time when something happens, 'when', 'at the time'.",
+    "longExplanation": "The ～とき grammar point is used to express the time when something happens or happened. It can be translated as 'when' or 'at the time' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + とき / い-Adjective + とき / な-Adjective + なとき / Noun + のとき",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "公園で遊ぶとき、帽子をかぶりましょう。",
+        "romanization": "Kouen de asobu toki, boushi wo kaburimashou.",
+        "translation": "When playing in the park, let's wear a hat."
+      },
+      {
+        "sentence": "このりんごが赤いとき、食べごろです。",
+        "romanization": "Kono ringo ga akai toki, tabegoro desu.",
+        "translation": "This apple is ready to eat when it is red."
+      },
+      {
+        "sentence": "私が勉強するとき、家族は静かにしてくれます。",
+        "romanization": "Watashi ga benkyou suru toki, kazoku wa shizuka ni shite kuremasu.",
+        "translation": "When I am studying, my family keeps quiet for me."
+      },
+      {
+        "sentence": "子供のとき、よくおばあちゃんの家に遊びに行きました。",
+        "romanization": "Kodomo no toki, yoku obaachan no ie ni asobi ni ikimashita.",
+        "translation": "When I was a child, I often went to play at my grandmother's house."
+      }
+    ]
+  },
+  {
+    "id": "ja_ときどき_99",
+    "language": "ja",
+    "pattern": "ときどき～",
+    "title": "ときどき～ (tokidoki～)",
+    "shortExplanation": "Used to indicate the frequency of an event; 'sometimes', 'occasionally', 'now and then'.",
+    "longExplanation": "The grammar point ときどき is an adverb used to describe an event or action that occurs occasionally or at irregular intervals. It can be translated as 'sometimes', 'occasionally', or 'now and then' in English. It is often used to indicate that the speaker cannot predict the exact time when a certain event occurs.",
+    "formation": "ときどき + Verb/Adjective/Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼はときどきケーキを作ります。",
+        "romanization": "Kare wa tokidoki keeki o tsukurimasu.",
+        "translation": "He sometimes makes cakes."
+      },
+      {
+        "sentence": "ときどき雨が降るので、傘を持って行ったほうがいいです。",
+        "romanization": "Tokidoki ame ga furu node, kasa o motte itta hou ga ii desu.",
+        "translation": "It occasionally rains, so it's better to bring an umbrella."
+      },
+      {
+        "sentence": "私はときどきこの店で買い物をします。",
+        "romanization": "Watashi wa tokidoki kono mise de kaimono o shimasu.",
+        "translation": "I shop at this store now and then."
+      },
+      {
+        "sentence": "彼女はときどき遅刻します。",
+        "romanization": "Kanojo wa tokidoki chikoku shimasu.",
+        "translation": "She is sometimes late."
+      }
+    ]
+  },
+  {
+    "id": "ja_どこ_100",
+    "language": "ja",
+    "pattern": "どこ～",
+    "title": "どこ～ (doko～)",
+    "shortExplanation": "Express 'where', used with question words for asking about locations.",
+    "longExplanation": "The どこ～ grammar point is used to express 'where', primarily for asking about locations or places. It is often combined with question words such as どこへ (doko e), どこで (doko de), and どこに (doko ni) to ask about destinations, locations of actions, and existence, respectively.",
+    "formation": "どこ + question particle",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "駅はどこですか？",
+        "romanization": "Eki wa doko desu ka?",
+        "translation": "Where is the station?"
+      },
+      {
+        "sentence": "どこで映画を見ましたか？",
+        "romanization": "Doko de eiga wo mimashita ka?",
+        "translation": "Where did you watch the movie?"
+      },
+      {
+        "sentence": "どこに住んでいますか？",
+        "romanization": "Doko ni sunde imasu ka?",
+        "translation": "Where do you live?"
+      },
+      {
+        "sentence": "どこへ行きたいですか？",
+        "romanization": "Doko e ikitai desu ka?",
+        "translation": "Where do you want to go?"
+      }
+    ]
+  },
+  {
+    "id": "ja_どこか_101",
+    "language": "ja",
+    "pattern": "どこか～",
+    "title": "どこか～ (dokoka～)",
+    "shortExplanation": "Expresses 'somewhere', used when the specific location is unknown or uncertain.",
+    "longExplanation": "The grammar point どこか is used when the speaker wants to express that something is happening or located 'somewhere', but the exact location is either unknown or uncertain. It can be used by itself or combined with other words.",
+    "formation": "どこか + (Particle, if needed) + Verb/Noun/Adjective",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どこかで財布をなくしました。",
+        "romanization": "Dokoka de saifu wo nakushimashita.",
+        "translation": "I lost my wallet somewhere."
+      },
+      {
+        "sentence": "今日はどこかに行きたいです。",
+        "romanization": "Kyou wa dokoka ni ikitai desu.",
+        "translation": "I want to go somewhere today."
+      },
+      {
+        "sentence": "どこか安いレストランがありますか？",
+        "romanization": "Dokoka yasui resutoran ga arimasu ka?",
+        "translation": "Is there a cheap restaurant somewhere?"
+      },
+      {
+        "sentence": "どこか静かな場所で勉強したい。",
+        "romanization": "Dokoka shizuka na basho de benkyou shitai.",
+        "translation": "I want to study in a quiet place somewhere."
+      }
+    ]
+  },
+  {
+    "id": "ja_どこでも_102",
+    "language": "ja",
+    "pattern": "どこでも～",
+    "title": "どこでも～ (dokodemo～)",
+    "shortExplanation": "Express 'anywhere' or 'everywhere' in Japanese.",
+    "longExplanation": "The grammar point どこでも is used to express 'anywhere' or 'everywhere' in Japanese. It is usually used in sentences to indicate that an action or situation could happen or exist in any location.",
+    "formation": "Simply use the word どこでも in the sentence as an adverb to indicate 'anywhere' or 'everywhere'.",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どこでも好きな場所で勉強できます。",
+        "romanization": "Dokodemo sukina basho de benkyou dekimasu.",
+        "translation": "You can study anywhere you like."
+      },
+      {
+        "sentence": "このノートパソコンは便利なので、どこでもインターネットが使えます。",
+        "romanization": "Kono nootopasokon wa benri nano de, dokodemo intaanetto ga tsukaemasu.",
+        "translation": "This laptop is convenient, so you can use the internet anywhere."
+      },
+      {
+        "sentence": "彼はどこでも寝ることができます。",
+        "romanization": "Kare wa dokodemo neru koto ga dekimasu.",
+        "translation": "He can sleep anywhere."
+      },
+      {
+        "sentence": "彼女はどこでも歌うのが大好きです。",
+        "romanization": "Kanojo wa dokodemo utau no ga daisuki desu.",
+        "translation": "She loves singing anywhere."
+      }
+    ]
+  },
+  {
+    "id": "ja_どこにも_103",
+    "language": "ja",
+    "pattern": "どこにも",
+    "title": "どこにも + Verb + ないです (doko ni mo + Verb + nai desu)",
+    "shortExplanation": "Express that an action cannot be performed anywhere or something cannot be found anywhere.",
+    "longExplanation": "The grammar point どこにも + Verb + ないです is used to express that an action cannot be performed anywhere or something cannot be found anywhere. It is used with a negative verb conjugation (ない-form) and highlights the unavailability or impossibility of finding or doing something in any location.",
+    "formation": "どこにも + Verb in ない-form + です",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どこにも傘が売ってないです。",
+        "romanization": "Doko ni mo kasa ga uttenai desu.",
+        "translation": "Umbrellas are not sold anywhere."
+      },
+      {
+        "sentence": "彼はどこにも見つけられないです。",
+        "romanization": "Kare wa doko ni mo mitsukerarenai desu.",
+        "translation": "He cannot be found anywhere."
+      },
+      {
+        "sentence": "どこにも勉強できる場所がないです。",
+        "romanization": "Doko ni mo benkyou dekiru basho ga nai desu.",
+        "translation": "There is no place to study anywhere."
+      },
+      {
+        "sentence": "どこにも美味しいビーガン料理がないです。",
+        "romanization": "Doko ni mo oishii bi-gan ryouri ga nai desu.",
+        "translation": "There are no delicious vegan dishes anywhere."
+      }
+    ]
+  },
+  {
+    "id": "ja_どこにも_104",
+    "language": "ja",
+    "pattern": "どこにも",
+    "title": "どこにも + Verb + ません (doko ni mo + Verb + masen)",
+    "shortExplanation": "Express 'not anywhere' or 'nowhere' with a negative verb.",
+    "longExplanation": "The どこにも～ません grammar point is used to express that something doesn't exist, appear, or happen anywhere. It means 'not anywhere' or 'nowhere' when used with a negative verb. The formation is quite simple as you just need to add どこにも before the negative verb.",
+    "formation": "どこにも + Verb-negative",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "どこにもあの猫がいません。",
+        "romanization": "Doko ni mo ano neko ga imasen.",
+        "translation": "The cat is not anywhere."
+      },
+      {
+        "sentence": "どこにもお金を置いていません。",
+        "romanization": "Doko ni mo okane wo oiteimasen.",
+        "translation": "I didn't put the money anywhere."
+      },
+      {
+        "sentence": "この町にはどこにも美味しいラーメン屋がありません。",
+        "romanization": "Kono machi ni wa doko ni mo oishii raamenya ga arimasen.",
+        "translation": "There are no delicious ramen shops anywhere in this town."
+      },
+      {
+        "sentence": "どこにも彼女の名前が書いていません。",
+        "romanization": "Doko ni mo kanojo no namae ga kaiteimasen.",
+        "translation": "Her name is not written anywhere."
+      }
+    ]
+  }
+]

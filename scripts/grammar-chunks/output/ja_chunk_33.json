@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_てまで_88": {
+      "title": "～てまで (〜te made)",
+      "shortExplanation": "Diễn tả việc sẵn sàng làm một hành động cực đoan, quá mức hoặc chấp nhận hy sinh để đạt được mục đích; 'đến mức...', 'thậm chí đến mức...'.",
+      "longExplanation": "Mẫu ngữ pháp '～てまで' gắn vào sau động từ thể て để diễn tả việc người nói hoặc một ai đó chấp nhận thực hiện một hành vi cực đoan, vượt qua chuẩn mực thông thường, hoặc phải đánh đổi, hy sinh ('thậm chí đến mức...', 'không tiếc... để...'). Cấu trúc này thường thể hiện sự ngạc nhiên, cảm phục, nghi ngại hoặc phê phán trước sự trả giá quá lớn để đạt được một mục tiêu nào đó.",
+      "formation": "Động từ thể て + まで",
+      "examples": [
+        {
+          "translation": "Để thi đỗ kỳ thi, anh ấy đã học đến mức thức trắng cả đêm."
+        },
+        {
+          "translation": "Vì quá muốn có món đồ này, tôi thậm chí đã dậy từ sáng sớm để xếp hàng mua."
+        },
+        {
+          "translation": "Để cứu anh ấy, cô ấy thậm chí đã đi vay tiền để trả chi phí phẫu thuật."
+        },
+        {
+          "translation": "Để dự án thành công, trưởng phòng thậm chí đi làm cả vào ngày nghỉ để dốc sức thực hiện."
+        }
+      ]
+    },
+    "ja_て当然だ_89": {
+      "title": "～て当然だ (〜te tōzen da)",
+      "shortExplanation": "Diễn tả một kết quả hay sự việc là hiển nhiên, lẽ tất yếu theo logic hoặc quy luật thông thường; 'đương nhiên là...', 'là điều dĩ nhiên'.",
+      "longExplanation": "Mẫu ngữ pháp '～て当然だ' (cũng thường dùng là '～て当たり前だ') gắn vào sau động từ thể て, tính từ thể て để diễn tả một sự việc, hành động hay kết quả là hoàn toàn tự nhiên, hợp lý và hiển nhiên theo lẽ thường dựa trên nguyên nhân hay tiền đề trước đó ('đương nhiên là...', 'tất nhiên là phải vậy'). Thường dùng khi người nói khẳng định kết quả đó là xứng đáng hoặc không có gì đáng ngạc nhiên.",
+      "formation": "Động từ thể て + 当然だ | Tính từ đuôi い (bỏ い) + くて当然だ | Tính từ đuôi な + で当然だ",
+      "examples": [
+        {
+          "translation": "Cậu ấy ngày nào cũng học bài chăm chỉ nên thi đỗ là điều đương nhiên."
+        },
+        {
+          "translation": "Vì món ăn của nhà hàng đó rất ngon nên kín chỗ đặt trước là chuyện đương nhiên."
+        },
+        {
+          "translation": "Cô ấy tối nào cũng chăm chỉ luyện tập nên tiến bộ và trở nên giỏi giang là lẽ đương nhiên."
+        },
+        {
+          "translation": "Anh ấy gặt hái thành công trong sự nghiệp nên trở nên giàu có là điều dĩ nhiên."
+        }
+      ]
+    },
+    "ja_というものだ_90": {
+      "title": "～というものだ (〜to iu mono da)",
+      "shortExplanation": "Diễn tả một nhận định mang tính bản chất, chân lý hiển nhiên hoặc đạo lý phổ biến trong xã hội; 'quả đúng là...', 'chính là lẽ...', 'thật đúng là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～というものだ' dùng để khẳng định một chân lý, đạo lý thông thường, hoặc thể hiện cảm xúc, quan điểm sâu sắc của người nói rằng một điều gì đó đúng là như vậy theo lẽ tự nhiên ('đó mới thực sự là...', 'quả đúng là...'). Thường xuất hiện trong các câu bình luận, khái quát mang tính đúc kết về quy luật cuộc sống hoặc lẽ đời.",
+      "formation": "Thể thông thường + というものだ | Tính từ đuôi な + (だ / である) + というものだ | Danh từ + (だ / である) + というものだ",
+      "examples": [
+        {
+          "translation": "Nhiệt huyết của tuổi trẻ quả thực là điều rất đáng được tôn trọng."
+        },
+        {
+          "translation": "Việc học tập thì chỉ cần lười biếng dù chỉ một ngày là sẽ tụt lại phía sau, đó là lẽ tự nhiên."
+        },
+        {
+          "translation": "Muốn chạm tay tới thành công thì phải dũng cảm đương đầu với khó khăn, đó là quy luật tất yếu."
+        },
+        {
+          "translation": "Người ta thường nói tình bạn chân chính quả thực là thứ không thể mua được bằng tiền."
+        }
+      ]
+    },
+    "ja_どうにかないものか_91": {
+      "title": "どうにか～ないものか (dō ni ka ~ nai mono ka)",
+      "shortExplanation": "Diễn tả nguyện vọng tha thiết hoặc trăn trở tìm cách xoay xở giải quyết một tình thế khó khăn; 'liệu có cách nào... không nhỉ?', 'giá mà có cách nào...'.",
+      "longExplanation": "Cấu trúc 'どうにか～ないものか' (kết hợp từ 'どうにか' - bằng cách nào đó với dạng phủ định '～ないものか / ないものだろうか') dùng để bày tỏ tâm trạng trăn trở, băn khoăn và mong mỏi tha thiết tìm ra hướng giải quyết cho một tình huống khó khăn, nan giải ('chẳng lẽ không còn cách nào sao?', 'liệu có cách nào để... không?'). Mẫu câu thể hiện khát khao biến điều tưởng chừng bất khả thi thành khả thi.",
+      "formation": "どうにか + Động từ thể phủ định (thể ない) + (もの) か / ないものだろうか",
+      "examples": [
+        {
+          "translation": "Liệu có cách nào để hoàn thành xong công việc này không nhỉ?"
+        },
+        {
+          "translation": "Không biết có cách nào để đỗ trong kỳ thi tới không nhỉ?"
+        },
+        {
+          "translation": "Chẳng lẽ không có cách nào chen lên được chuyến tàu điện đang đông nghịt người này sao?"
+        },
+        {
+          "translation": "Liệu có cách nào để làm lành và hàn gắn lại mối quan hệ với cô ấy không nhỉ?"
+        }
+      ]
+    },
+    "ja_とおり_92": {
+      "title": "～とおり (〜toori)",
+      "shortExplanation": "Diễn tả hành động được thực hiện đúng theo chỉ dẫn, quy định hoặc sự việc diễn ra y hệt như đã nghe, đã dự liệu; 'đúng như...', 'theo như...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とおり' (hoặc '～どおり') biểu thị sự trùng khớp chính xác, diễn tả một hành động hoặc trạng thái diễn ra y hệt, không sai lệch chút nào so với sự hướng dẫn, dự tính, quy tắc hoặc lời nói trước đó ('theo đúng như...', 'y như...'). Khi ghép trực tiếp sau danh từ, từ này thường bị biến âm thành '～どおり' (ví dụ: 予定どおり - đúng như dự định, ルールどおり - đúng theo luật lệ).",
+      "formation": "Động từ thể từ điển / thể た + とおり (に) | Danh từ + のとおり (に) / Danh từ + どおり (に) | Thể thông thường + というとおり",
+      "examples": [
+        {
+          "translation": "Tôi đã làm bài tập về nhà đúng y như lời giáo viên đã dặn dò."
+        },
+        {
+          "translation": "Xin vui lòng đi theo đúng chỉ dẫn trên tấm bản đồ này."
+        },
+        {
+          "translation": "Cậu ấy lúc nào cũng tuân thủ và chơi đúng theo luật lệ."
+        },
+        {
+          "translation": "Con phố đó quả đúng như lời đồn, ban đêm cũng nhộn nhịp sầm uất chẳng kém gì ban ngày."
+        }
+      ]
+    },
+    "ja_とか_93": {
+      "title": "～とか (〜to ka)",
+      "shortExplanation": "Dùng để liệt kê vài ví dụ đại diện, hoặc diễn tả thông tin mơ hồ, nghe kể chưa chắc chắn; 'như là... hoặc là...', 'nghe nói là... hay sao ấy'.",
+      "longExplanation": "Trợ từ '～とか' được dùng rất phổ biến trong văn nói giao tiếp thường ngày với hai công dụng chính: (1) Liệt kê một vài ví dụ tiêu biểu trong số nhiều sự vật, hoạt động tương tự ('nào là... nào là...', 'chẳng hạn như...'); (2) Đưa ra thông tin một cách ướm chừng, không chắc chắn hoặc dẫn lại điều nghe ngóng được mà bản thân chưa kiểm chứng rõ ràng ('nghe đâu là...', 'thấy bảo là...'). Cấu trúc thường lặp lại theo dạng '～とか～とか'.",
+      "formation": "Động từ thể thông thường + とか | Tính từ đuôi い + とか | Tính từ đuôi な + だとか | Danh từ + だとか",
+      "examples": [
+        {
+          "translation": "Vào những ngày nghỉ, tôi thường thư giãn bằng những việc như xem phim hoặc đi mua sắm chẳng hạn."
+        },
+        {
+          "translation": "Cô ấy đang rất muốn đi du lịch đến những nơi như Úc hay New Zealand chẳng hạn."
+        },
+        {
+          "translation": "Nghe nói thời tiết hôm nay lúc thì nắng ráo, lúc lại có mây mù hay sao ấy."
+        },
+        {
+          "translation": "Anh ấy thường chơi các môn thể thao như bóng chày hay bóng đá chẳng hạn."
+        }
+      ]
+    },
+    "ja_ところ_94": {
+      "title": "～ところ (〜tokoro)",
+      "shortExplanation": "Diễn tả thời điểm, giai đoạn cụ thể của hành động (sắp sửa làm, đang làm dở, vừa mới làm xong) hoặc chỉ tình huống, hoàn cảnh; 'đúng lúc...', 'đang trong lúc...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ところ' mang ý nghĩa tùy thuộc vào thể của động từ đi kèm: (1) Động từ thể từ điển + ところ: vừa đúng lúc sắp sửa thực hiện hành động; (2) Động từ thể ている + ところ: đang ở chính giữa lúc thực hiện hành động; (3) Động từ thể た + ところ: vừa mới hoàn tất hành động trong tích tắc. Ngoài ra, khi kết hợp với tính từ hoặc danh từ, cấu trúc này còn biểu thị tình huống, thời điểm hoặc hoàn cảnh cụ thể ('vào lúc đang bận rộn', 'trong lúc nguy cấp').",
+      "formation": "Động từ thể từ điển / thể ている / thể た + ところ | Tính từ đuôi い + ところ | Tính từ đuôi な + なところ | Danh từ + のところ",
+      "examples": [
+        {
+          "translation": "Tôi vừa đúng lúc chuẩn bị bước chân ra ngoài."
+        },
+        {
+          "translation": "Tôi đang trong lúc theo dõi dở bộ phim."
+        },
+        {
+          "translation": "Tôi dự định sẽ dùng bữa tại một quán ăn ngon."
+        },
+        {
+          "translation": "Anh ấy đã nhiệt tình giúp đỡ tôi ngay trong lúc bản thân đang vô cùng bận rộn."
+        }
+      ]
+    },
+    "ja_どころか_95": {
+      "title": "～どころか (〜dokoro ka)",
+      "shortExplanation": "Diễn tả thực tế hoàn toàn trái ngược hoặc vượt xa so với mức độ được đề cập ở vế trước; 'đâu chỉ...', 'nói gì đến...', 'chẳng những không... mà trái lại còn...'.",
+      "longExplanation": "Mẫu ngữ pháp '～どころか' dùng để nhấn mạnh sự cách biệt rất lớn giữa thực tế và điều người ta dự đoán hay kỳ vọng. Cấu trúc có hai sắc thái chính: (1) Thực tế vượt xa hơn hẳn mức độ tưởng tượng, mang tính tích cực hoặc bất ngờ ('đâu chỉ dừng ở mức hát hay mà giọng hát cứ như ca sĩ thực thụ'); (2) Thực tế hoàn toàn ngược lại theo hướng tiêu cực ('chẳng những không khá hơn mà trái lại bệnh tình còn trầm trọng thêm').",
+      "formation": "Động từ thể thông thường + どころか | Tính từ đuôi い + どころか | Tính từ đuôi な + どころか | Danh từ + どころか",
+      "examples": [
+        {
+          "translation": "Anh ấy đâu chỉ đơn thuần là hát hay, nghe cứ như một ca sĩ chuyên nghiệp vậy."
+        },
+        {
+          "translation": "Món ăn này chẳng những ngon miệng mà hương vị còn đạt đến mức tuyệt hảo."
+        },
+        {
+          "translation": "Cô ấy đâu phải chỉ là bạn bè xã giao bình thường, cô ấy là người bạn thân nhất của tôi đấy."
+        },
+        {
+          "translation": "Anh ấy đâu chỉ thành thạo tiếng Anh, anh ấy còn có thể nói trôi chảy 3 ngôn ngữ khác nữa."
+        }
+      ]
+    },
+    "ja_どころではない_96": {
+      "title": "～どころではない (〜dokoro de wa nai)",
+      "shortExplanation": "Diễn tả tình huống cấp bách, bận rộn hoặc nan giải đến mức không còn tâm trí, thời gian hay điều kiện để làm việc gì; 'không phải lúc...', 'tâm trí đâu mà...'.",
+      "longExplanation": "Mẫu ngữ pháp '～どころではない' biểu thị tình trạng hiện tại quá bận rộn, căng thẳng hoặc gặp phải vấn đề nghiêm trọng đến nỗi người nói không có đủ điều kiện, thời gian hoặc tâm trạng để thực hiện một hành động nào đó ('đây đâu phải lúc để...', 'làm sao mà thảnh thơi... được'). Mẫu câu này thường dùng để từ chối một lời đề nghị giải trí hoặc bộc lộ áp lực nặng nề trong hoàn cảnh thực tế.",
+      "formation": "Động từ thể thông thường + どころではない | Tính từ đuôi い + どころではない | Tính từ đuôi な + どころではない | Danh từ + どころではない",
+      "examples": [
+        {
+          "translation": "Bây giờ đâu phải là lúc cười nhạo sai lầm của anh ấy, chính chúng ta cũng đang mắc lỗi tương tự đây này."
+        },
+        {
+          "translation": "Khi đang ốm liệt giường thế này thì tâm trí đâu mà chơi bời cho được."
+        },
+        {
+          "translation": "Kỳ thi đã cận kề trước mắt nên tôi chẳng còn đầu óc đâu mà xem phim nữa."
+        },
+        {
+          "translation": "Công việc ngập đầu quá bận rộn khiến tôi thậm chí không dám nghĩ đến chuyện đi du lịch."
+        }
+      ]
+    },
+    "ja_としたら_97": {
+      "title": "～としたら (〜to shitara)",
+      "shortExplanation": "Đưa ra một giả định hoặc tình huống giả tưởng để làm tiền đề đưa ra phán đoán, hành động tương ứng; 'giả sử nếu...', 'nếu như là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～としたら' (hoặc '～とすれば') dùng để thiết lập một điều kiện giả định trong tâm tưởng ('giả sử rằng...', 'nếu quả thật là...'). Người nói đặt một tình huống vào vị trí đã xảy ra hoặc là sự thật, từ đó đưa ra suy luận, phán đoán, hoặc phương án xử lý tiếp theo ở vế sau. So với liên từ điều kiện 'たら' thông thường, 'としたら' nhấn mạnh rõ nét hơn tính chất giả định suy lý của người nói.",
+      "formation": "Động từ thể thông thường + としたら | Tính từ đuôi い + としたら | Tính từ đuôi な + だとしたら | Danh từ + だとしたら",
+      "examples": [
+        {
+          "translation": "Giả sử nếu ngày mai trời đổ mưa thì chúng ta hãy mang theo ô nhé."
+        },
+        {
+          "translation": "Nếu chiếc bánh này mà không ngon thì chắc hẳn sẽ chẳng có ai ăn đâu."
+        },
+        {
+          "translation": "Nếu quả đúng là anh ấy bị bệnh thì phải nhanh chóng đi đến bệnh viện khám thôi."
+        },
+        {
+          "translation": "Giả định rằng cô ấy là học sinh, sinh viên thì nhà hàng này chắc sẽ có chương trình giảm giá đấy."
+        }
+      ]
+    },
+    "ja_としても_98": {
+      "title": "～としても (〜to shite mo)",
+      "shortExplanation": "Đưa ra một giả định mang tính nhượng bộ, diễn tả ý dù điều đó có xảy ra đi nữa thì kết quả hay lập trường ở vế sau vẫn không thay đổi; 'dẫu cho... thì cũng...', 'cho dù...'.",
+      "longExplanation": "Mẫu ngữ pháp '～としても' (cũng như '～にしても') đưa ra một điều kiện giả tưởng mang tính nhượng bộ sâu sắc ('ngay cả khi giả sử là...', 'dẫu cho có... thì cũng...'). Vế sau luôn khẳng định một lập trường, quyết định, đánh giá hoặc sự thật vững vàng, hoàn toàn không bị lay chuyển hay chi phối bởi điều kiện giả định phía trước. So với '～ても', mẫu câu này mang tính lý luận và giả thiết mạnh mẽ hơn.",
+      "formation": "Động từ thể thông thường + としても | Tính từ đuôi い + としても | Tính từ đuôi な + だとしても | Danh từ + だとしても",
+      "examples": [
+        {
+          "translation": "Dẫu cho trời có đổ mưa đi chăng nữa thì cuộc đua cũng tuyệt đối không bị hủy bỏ."
+        },
+        {
+          "translation": "Cho dù chiếc bánh này có không ngon đi nữa thì tôi vẫn dự định sẽ ăn hết nó."
+        },
+        {
+          "translation": "Dù cho cô ấy có đến muộn đi chăng nữa thì chúng tôi vẫn kiên nhẫn tiếp tục đợi."
+        },
+        {
+          "translation": "Dẫu cho có bận rộn đến mấy đi nữa thì tôi vẫn muốn giữ trọn vẹn lời hứa với bạn bè."
+        }
+      ]
+    },
+    "ja_とともに_99": {
+      "title": "～と～ともに (〜to 〜tomoni)",
+      "shortExplanation": "Diễn tả hai sự việc diễn ra đồng thời, sự biến đổi kéo theo song hành, hoặc 'cùng với' ai đó/cái gì đó; 'cùng với...', 'đồng thời với...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とともに' (chữ Hán: 共に) là cách diễn đạt mang tính trang trọng với các nét nghĩa cơ bản: (1) Biểu thị mối quan hệ biến đổi tương quan: sự biến chuyển ở vế trước kéo theo sự đổi thay tương ứng ở vế sau ('cùng với sự thay đổi của thời gian/mùa màng...'); (2) Diễn tả hai hành động hoặc sự kiện xảy ra đồng thời tại một thời điểm ('vừa đúng lúc... thì đồng thời...'); (3) Biểu thị sự đồng hành cùng với một đối tượng ('cùng chung với ai đó').",
+      "formation": "Động từ thể từ điển + とともに | Danh từ + とともに | Tính từ đuôi い + とともに | Tính từ đuôi な + (である) とともに",
+      "examples": [
+        {
+          "translation": "Bữa tiệc đã chính thức bắt đầu cùng lúc với sự xuất hiện của anh ấy."
+        },
+        {
+          "translation": "Cùng với sự chuyển giao của các mùa trong năm, xu hướng thời trang trang phục cũng đổi thay theo."
+        },
+        {
+          "translation": "Cùng với quá trình khôn lớn trưởng thành, việc tích lũy nhiều trải nghiệm sống đa dạng là điều rất đỗi quan trọng."
+        },
+        {
+          "translation": "Cùng với sự tiến bộ vượt bậc của công nghệ, số lượng ứng dụng tiện ích ngày càng gia tăng không ngừng."
+        }
+      ]
+    },
+    "ja_とは限らない_100": {
+      "title": "～とは限らない (〜to wa kagiranai)",
+      "shortExplanation": "Biểu thị sự phủ định một phần, khẳng định một nhận định hay quy luật thông thường không phải lúc nào cũng đúng 100%; 'không hẳn là...', 'chưa chắc đã...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とは限らない' là cấu trúc biểu thị sự phủ định một phần điển hình trong tiếng Nhật. Nó được dùng để lưu ý rằng những quan niệm, định kiến hay suy đoán thông thường tuy có vẻ hợp lý nhưng không phải lúc nào cũng chính xác trong mọi hoàn cảnh, luôn luôn có ngoại lệ ('chưa hẳn đã...', 'không nhất thiết là...'). Cấu trúc thường đi kèm với các phó từ mang tính tuyệt đối như '必ずしも' (không hẳn), 'いつも' (không phải lúc nào cũng), '全部' (không phải tất cả).",
+      "formation": "Động từ thể thông thường + とは限らない | Tính từ đuôi い + とは限らない | Tính từ đuôi な + (だ) とは限らない | Danh từ + (だ) とは限らない",
+      "examples": [
+        {
+          "translation": "Không hẳn là lúc nào tôi cũng cắm đầu vào học bài đâu."
+        },
+        {
+          "translation": "Mặt hàng đắt tiền chưa chắc đã là hàng hóa chất lượng tốt."
+        },
+        {
+          "translation": "Chưa chắc những điều anh ấy nói đã hoàn toàn đúng đắn."
+        },
+        {
+          "translation": "Trời âm u thế này nhưng không nhất thiết là chắc chắn sẽ có mưa đâu."
+        }
+      ]
+    },
+    "ja_ないことはない_101": {
+      "title": "～ないことはない (〜nai koto wa nai)",
+      "shortExplanation": "Sử dụng dạng phủ định kép để đưa ra lời khẳng định nhẹ nhàng, dè dặt rằng điều đó vẫn có khả năng xảy ra; 'không phải là không...', 'cũng có thể...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ないことはない' kết hợp hai tầng phủ định để diễn đạt một sự khẳng định ngầm mang tính chất dè dặt, khiêm tốn hoặc không muốn nói quá dứt khoát ('không hẳn là hoàn toàn không...', 'nếu cố gắng thì vẫn làm được'). Người nói không khẳng định chắc nịch mà dùng lối nói này để ngầm xác nhận rằng khả năng hoặc điều kiện để thực hiện điều đó vẫn hoàn toàn tồn tại.",
+      "formation": "Động từ thể ない + ことはない | Tính từ đuôi い (bỏ い) + くないことはない | Tính từ đuôi な + でない / じゃないことはない | Danh từ + でない / じゃないことはない",
+      "examples": [
+        {
+          "translation": "Không phải là anh ấy sẽ không đến đâu (anh ấy vẫn có thể sẽ đến đấy)."
+        },
+        {
+          "translation": "Bài toán hóc búa đó không phải là không thể giải được (vẫn có cách giải được)."
+        },
+        {
+          "translation": "Công việc đó không phải là không có điểm khó khăn (nó cũng tồn tại những thử thách nhất định)."
+        },
+        {
+          "translation": "Không thể nói là cô ấy không đúng (cô ấy hoàn toàn có lý đấy chứ)."
+        }
+      ]
+    },
+    "ja_ないこともない_102": {
+      "title": "～ないこともない (〜nai koto mo nai)",
+      "shortExplanation": "Diễn tả ý không phải là hoàn toàn không thể làm được, nhưng bản thân có phần ngập ngừng, miễn cưỡng hoặc thấy có trở ngại; 'không phải là không thể... nhưng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ないこともない' (nhấn mạnh thêm bằng trợ từ 'も') mang sắc thái dè dặt và ngập ngừng rõ rệt hơn '～ないことはない'. Mẫu câu này biểu thị rằng việc đó tuy không phải là hoàn toàn bất khả thi, nhưng người nói cảm thấy không thực sự hào hứng, có phần gượng ép hoặc e ngại trước một khó khăn nào đó ('không phải là không làm được nhưng mà...'). Vế sau thường đi kèm với các liên từ tương phản như 'けれど', 'が', 'でも' để phân trần về lý do do dự.",
+      "formation": "Động từ thể ない + こともない | Tính từ đuôi い (bỏ い) + くないこともない | Tính từ đuôi な + でない / じゃないこともない | Danh từ + でない / じゃないこともない",
+      "examples": [
+        {
+          "translation": "Bài toán này không phải là tôi không giải được, thế nhưng nó thực sự rất hóc búa."
+        },
+        {
+          "translation": "Không phải là tôi không thể đến gặp anh ấy, nhưng mà ngặt nỗi không có nhiều thời gian để trò chuyện."
+        },
+        {
+          "translation": "Không phải là tôi hoàn toàn hết tiền, nhưng mà lúc này tiết kiệm vẫn là thượng sách."
+        },
+        {
+          "translation": "Trò chơi này không phải là không hay, thế nhưng những trò khác chơi vẫn cuốn hút hơn nhiều."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_てまで_88": {
+      "title": "～てまで (〜te made)",
+      "shortExplanation": "表示为了达到某种目的而不惜采取极端、反常的手段或付出过度的代价；“甚至……”、“甚至不惜……”。",
+      "longExplanation": "句型“～てまで”接在动词て形之后，表示为了实现某一目的，竟然不惜采取超出常理的极端手段，甚至付出巨大的牺牲或沉重代价（“甚至不惜……”、“到了……的地步”）。该句型往往带有强烈的语气色彩，常用于表达说话人的吃惊、敬佩，或是质疑与批评（暗示这样做有失常理、代价过大）。",
+      "formation": "动词て形 + まで",
+      "examples": [
+        {
+          "translation": "为了通过考试，他甚至不惜彻夜通宵用功学习。"
+        },
+        {
+          "translation": "因为太想要这件商品了，我甚至一大早起来排队去购买。"
+        },
+        {
+          "translation": "为了救治他，她甚至不惜四处借钱来支付昂贵的手术费。"
+        },
+        {
+          "translation": "部长为了促成那个项目的成功，甚至在节假日也加班加点全力投入工作。"
+        }
+      ]
+    },
+    "ja_て当然だ_89": {
+      "title": "～て当然だ (〜te tōzen da)",
+      "shortExplanation": "表示在某种情理、前因或客观条件下，出现这一结果是理所应当、顺理成章的；“理所当然”、“自然是……”。",
+      "longExplanation": "句型“～て当然だ”（常与“～て当たり前だ”同义互换）接在动词て形、形容词连用形等之后，表示根据前面的原因、努力或事实依据，产生相应的结果是完全符合逻辑与情理的，谁看都觉得毫无意外（“……是理所当然的”、“自然会这样”）。常用于肯定努力应有的回报，或指出因果必然性。",
+      "formation": "动词て形 + 当然だ | 一类形容词词干（去掉い） + くて当然だ | 二类形容词 + で当然だ",
+      "examples": [
+        {
+          "translation": "他每天都在刻苦学习，考试能够及格是理所当然的。"
+        },
+        {
+          "translation": "那家餐厅的饭菜味道极好，预约名额爆满也是理所当然的。"
+        },
+        {
+          "translation": "她每天晚上都在认真练习，技术变得熟练出色是理所当然的。"
+        },
+        {
+          "translation": "他在事业上取得了巨大成功，成为富翁也是顺理成章的。"
+        }
+      ]
+    },
+    "ja_というものだ_90": {
+      "title": "～というものだ (〜to iu mono da)",
+      "shortExplanation": "表示依据常理、人情或客观公理所作出的评价、感慨或本质断定；“这才真正是……”、“正是所谓……”。",
+      "longExplanation": "句型“～というものだ”用于表达说话人立足于社会公认的常识、道理或客观规律，对某事物的本质作出深刻评价、断定或抒发强烈感慨（“这才真正称得上是……”、“所谓的……正是如此”）。常用于对事物本质进行凝练概括，或引出具有人生哲理意味的普遍法则。",
+      "formation": "普通形 + というものだ | 二类形容词词干 / だ / である + というものだ | 名词 / だ / である + というものだ",
+      "examples": [
+        {
+          "translation": "年轻人的这份热忱，确实是值得令人肃然起敬的。"
+        },
+        {
+          "translation": "学业这回事哪怕懈怠偷懒一天也会落后，这是不争的常理。"
+        },
+        {
+          "translation": "想要获得成功就必须勇于直面困难，这才是通往成功的必然法则。"
+        },
+        {
+          "translation": "真正的友谊是金钱无论如何也买不来的，事实正是如此。"
+        }
+      ]
+    },
+    "ja_どうにかないものか_91": {
+      "title": "どうにか～ないものか (dō ni ka ~ nai mono ka)",
+      "shortExplanation": "表示面对棘手困难的处境时，强烈期盼能设法解决或出现转机；“难道就没有办法……吗”、“要是能设法……该多好”。",
+      "longExplanation": "句型“どうにか～ないものか”（由表示设法、千方百计的副词“どうにか”与否定疑问结构“～ないものか / ないものだろうか”构成）用于在面临难以化解的窘境或重大挑战时，表达说话人迫切希望寻得解决之策、促成良好结果的焦急与希冀之情（“难道就不能想办法……吗”、“真希望能设法解决……”）。",
+      "formation": "どうにか + 动词ない形 + (もの) か / ないものだろうか",
+      "examples": [
+        {
+          "translation": "难道就没有什么办法能尽快把这项繁重的工作做完吗？"
+        },
+        {
+          "translation": "要是能想个办法在接下来的考试中顺利合格该有多好啊。"
+        },
+        {
+          "translation": "面对如此拥挤的电车，难道就没有什么办法能挤上去吗？"
+        },
+        {
+          "translation": "难道就没有什么途径能想办法和她重归于好吗？"
+        }
+      ]
+    },
+    "ja_とおり_92": {
+      "title": "～とおり (〜toori)",
+      "shortExplanation": "表示后项的行为或事态发展完全符合前项的指示、规定、预期或传言；“正如……”、“按照……那样”。",
+      "longExplanation": "句型“～とおり（～どおり）”用于表示某一动作的进行或事态的展开，与之前听到的传闻、给出的指示、制定的规则或原本的预期丝毫不差、完全吻合（“正如……所说”、“按照……那样”）。动词多接辞书形或た形；直接接在名词后时，名词常发生连浊音变为“～どおり”（如：予定どおり、規則どおり），也可使用“名词 + のとおり”的形式。",
+      "formation": "动词辞书形 / た形 + とおり（に） | 名词 + のとおり（に） / 名词 + どおり（に） | 普通形 + というとおり",
+      "examples": [
+        {
+          "translation": "我完全遵照老师之前嘱咐的那样做完了家庭作业。"
+        },
+        {
+          "translation": "请严格按照这份地图所指引的路线前行。"
+        },
+        {
+          "translation": "他玩游戏时一向严格遵守规则、按部就班。"
+        },
+        {
+          "translation": "那条街道正如传闻所说的那样，夜晚也和白天一样热闹非凡。"
+        }
+      ]
+    },
+    "ja_とか_93": {
+      "title": "～とか (〜to ka)",
+      "shortExplanation": "用于列举具有代表性的同类事物或动作，或含糊委婉地陈述听来的非确切信息；“……啦、……啦”、“听说……之类的”。",
+      "longExplanation": "助词“～とか”在日常口语中极为常用，主要包含两大功能：① 用于列举具有代表性的事例（“诸如……或……等”、“……啦……啦”），常用“～とか～とか”的并列形式；② 接在句末或词后，用于模糊化地陈述从别处听闻的传言，或当自己把握不足时避免过于武断地下定论（“据说是……什么的”）。语气亲切随和。",
+      "formation": "动词普通形 + とか | い形容词 + とか | な形容词 + だとか | 名词 + だとか",
+      "examples": [
+        {
+          "translation": "休息日我通常是通过看看电影、或者逛街买买东西之类的来度过时光。"
+        },
+        {
+          "translation": "她很想去诸如澳大利亚或是新西兰这类风景优美的地方旅游。"
+        },
+        {
+          "translation": "听说今天的天气好像是一会儿放晴、一会儿转阴之类的。"
+        },
+        {
+          "translation": "他平时总是在打打棒球、踢踢足球什么的。"
+        }
+      ]
+    },
+    "ja_ところ_94": {
+      "title": "～ところ (〜tokoro)",
+      "shortExplanation": "表示动作所处的具体时间阶段（正要发生、正在进行、刚刚完毕），或表示特定的处境、场合；“正要……之时”、“正在……”。",
+      "longExplanation": "形式名词“～ところ”依据接续的动词时态与词类具有精细的分工：① 动词辞书形 + ところ：表示动作正打算开始的紧要关头（“正要……”）；② 动词ている + ところ：表示动作正处于持续进行的高潮阶段（“正在……之中”）；③ 动词た形 + ところ：表示动作刚刚完结不久的瞬刻（“刚……完”）。此外，与形容词或名词结合时，常用于寒暄语中指代某种特定的场合与处境（如“百忙之中”、“紧要关头”）。",
+      "formation": "动词辞书形 / ている形 / た形 + ところ | い形容词 + ところ | な形容词 + なところ | 名词 + のところ",
+      "examples": [
+        {
+          "translation": "我正打算准备出门。"
+        },
+        {
+          "translation": "我此时此刻正在观看着电影。"
+        },
+        {
+          "translation": "我打算在一家味道可口的餐馆里用餐。"
+        },
+        {
+          "translation": "他在自己百忙之中还特意赶来协助我。"
+        }
+      ]
+    },
+    "ja_どころか_95": {
+      "title": "～どころか (〜dokoro ka)",
+      "shortExplanation": "表示实际情况与前述的设想相距甚远，或程度远远超乎寻常；“何止……简直……”、“别说……反倒……”。",
+      "longExplanation": "句型“～どころか”用于强烈推翻或否定先前的预设与低估，强调事实的实际程度截然不同。主要有两种情感色彩：① 实际程度远远高于前项基准（“何止是……简直是更上一层楼”）；② 实际情况与美好期望完全背道而驰，甚至滑向极其负面的深渊（“不仅没……反倒变本加厉”）。",
+      "formation": "动词普通形 + どころか | い形容词 + どころか | な形容词 + どころか | 名词 + どころか",
+      "examples": [
+        {
+          "translation": "他何止是歌唱得好，听起来简直就像专业歌唱家一样震撼。"
+        },
+        {
+          "translation": "这道美味佳肴何止是可口，其滋味简直达到了登峰造极的水准。"
+        },
+        {
+          "translation": "她哪里只是普通的泛泛之交，她可是我推心置腹的至交挚友。"
+        },
+        {
+          "translation": "他何止是精通英语，甚至还能自如地使用另外三门外语进行交流。"
+        }
+      ]
+    },
+    "ja_どころではない_96": {
+      "title": "～どころではない (〜dokoro de wa nai)",
+      "shortExplanation": "表示因局势严峻、异常繁忙或身处逆境，根本没有心思、时间或余力去从事某事；“哪有心思……”、“根本不是……的时候”。",
+      "longExplanation": "句型“～どころではない”用于强调当前面临的情势极其紧迫、工作极为繁杂，或遇到了极其严峻的困难，从而使得当事人在时间、精力或心境上，全然无法顾及某项原本平常或惬意的举动（“哪有那个闲情雅致……”、“根本谈不上……”）。常用于推辞邀请或吐露自身所承受的巨大压力。",
+      "formation": "动词普通形 + どころではない | い形容词 + どころではない | な形容词 + どころではない | 名词 + どころではない",
+      "examples": [
+        {
+          "translation": "眼下根本不是取笑他失误的时候，我们自己也正犯着同样的低级错误呢。"
+        },
+        {
+          "translation": "重病卧床休养之际，哪里还会有什么心思去到处游玩呢。"
+        },
+        {
+          "translation": "大考已经迫在眉睫，我根本没有心思去看什么电影。"
+        },
+        {
+          "translation": "手头的工作实在繁忙得不可开交，根本谈不上抽空考虑外出旅游的事。"
+        }
+      ]
+    },
+    "ja_としたら_97": {
+      "title": "～としたら (〜to shitara)",
+      "shortExplanation": "假定某种情况或事实成立，以此为前提进行推断或提出对策；“假如……”、“要是……的话”。",
+      "longExplanation": "句型“～としたら”（与“～とすれば”含义相近）用于在思维中设定一个假设性前提条件（“如果假设……是真的”、“倘若出现……的情况”），并以此为基准，在后项引出相应的推理结论、应对措施或个人主张。相比于一般的假定助词“たら”，它更加突显出说话人主观设立纯粹假设的逻辑推导色彩。",
+      "formation": "动词普通形 + としたら | い形容词 + としたら | な形容词 + だとしたら | 名词 + だとしたら",
+      "examples": [
+        {
+          "translation": "假如说明天下雨的话，我们就带上雨伞一同出发吧。"
+        },
+        {
+          "translation": "要是这个蛋糕当真不好吃的话，恐怕任谁也不会愿意动嘴品尝吧。"
+        },
+        {
+          "translation": "如果他真的是身体抱恙生病了，就必须尽早送往医院就诊才行。"
+        },
+        {
+          "translation": "假设她是学生身份的话，在这家餐厅应当能享受到学生优惠折扣吧。"
+        }
+      ]
+    },
+    "ja_としても_98": {
+      "title": "～としても (〜to shite mo)",
+      "shortExplanation": "设定某种假设性的让步前提，表示即便那种设想属实，后项的结论、意志或事实也绝不改变；“即使……也……”、“就算……也……”。",
+      "longExplanation": "句型“～としても”（与“～にしても”用法相近）用于提出一个强有力的假定性让步条件（“哪怕退一步假设是……”、“就算真的会……”）。后项紧跟说话人坚定不移的意志、主张或必然的客观事实，表明其绝不会因前项假定情况的发生而发生丝毫动摇或改变。比一般的让步句型“～ても”更具假设意味。",
+      "formation": "动词普通形 + としても | い形容词 + としても | な形容词 + だとしても | 名词 + だとしても",
+      "examples": [
+        {
+          "translation": "即使天空中下起大雨，比赛也绝不会因此而中止。"
+        },
+        {
+          "translation": "就算这个蛋糕并不美味，我也决意要把属于自己的那份吃完。"
+        },
+        {
+          "translation": "哪怕她会迟到赴约，我们大家也会一直耐心等待下去。"
+        },
+        {
+          "translation": "即便日常工作再怎么忙碌，我也一定要信守与朋友立下的诺言。"
+        }
+      ]
+    },
+    "ja_とともに_99": {
+      "title": "～と～ともに (〜to 〜tomoni)",
+      "shortExplanation": "表示伴随前项事态的转变而后项也同步发生改变，或表示两者同时发生、共同行动；“随着……”、“与……同时”。",
+      "longExplanation": "句型“～とともに”（汉字写作“共に”）属于书面语色彩较浓的郑重句型，涵盖以下几大主要用法：① 比例伴随：随着前项事物的推移或演变，后项也随之同步发生联动变化（“伴随着……”、“随着……”）；② 同时生起：表示两个事件在同一时刻并发（“在……的同时”）；③ 共同参与：表示与某人或某群体一道行动（“同……一起”）。",
+      "formation": "动词辞书形 + とともに | 名词 + とともに | い形容词 + とともに | な形容词 + (である) とともに",
+      "examples": [
+        {
+          "translation": "伴随着他的如期到来，宴会活动也正式拉开了帷幕。"
+        },
+        {
+          "translation": "随着一年四季时令的更迭，人们服装的流行风尚也在不断悄然转变。"
+        },
+        {
+          "translation": "伴随着人生的成长历程，广泛积累多方面的经验阅历是至关重要的。"
+        },
+        {
+          "translation": "随着科学技术的飞速进步，各种便捷好用的手机应用程序正如雨后春笋般不断涌现。"
+        }
+      ]
+    },
+    "ja_とは限らない_100": {
+      "title": "～とは限らない (〜to wa kagiranai)",
+      "shortExplanation": "表示部分否定，指出普遍认可的规律、常识或预期并非百分之百成立；“未必……”、“不一定……”。",
+      "longExplanation": "句型“～とは限らない”是日语中经典的“部分否定”表达方式，用于表明某种看似顺理成章的普遍共识、预判或常识在现实中绝非绝对化，往往存在不可忽视的例外（“并不一定……”、“不见得全都……”）。句中经常与副词“必ずしも（未必）”、“いつも（总是）”、“すべて（全盘）”等互相呼应使用。",
+      "formation": "动词普通形 + とは限らない | い形容词 + とは限らない | な形容词 + （だ）とは限らない | 名词 + （だ）とは限らない",
+      "examples": [
+        {
+          "translation": "我可不一定随时随地都一直埋头苦读呢。"
+        },
+        {
+          "translation": "标价高昂的名贵商品，并不见得品质就一定十全十美。"
+        },
+        {
+          "translation": "他的观点与主张并不一定次次都是正确无误的。"
+        },
+        {
+          "translation": "天色纵使看起来阴沉，也未必就意味着一定会降雨。"
+        }
+      ]
+    },
+    "ja_ないことはない_101": {
+      "title": "～ないことはない (〜nai koto wa nai)",
+      "shortExplanation": "通过双重否定句式委婉消极地表达肯定，暗示事情并非全无可能；“并不是不……”、“也不是不行”。",
+      "longExplanation": "句型“～ないことはない”利用两个否定形式的重叠（双重否定），以一种极其委婉、留有余地的方式表达对某一动作或性质的微弱肯定（“要说完全不……倒也并非如此”、“努力一下的话倒也能做得到”）。说话人刻意避免做出武断自信的直接断言，而是谨慎地承认客观上依然具备一定的可能性与可行性。",
+      "formation": "动词ない形 + ことはない | 一类形容词词干（去掉い） + くないことはない | 二类形容词 + でない / じゃないことはない | 名词 + でない / じゃないことはない",
+      "examples": [
+        {
+          "translation": "他倒也并不是绝不可能来赴约（他还是很有可能前来的）。"
+        },
+        {
+          "translation": "那道难题也并不是完全解不出来（费些工夫还是能够攻克的）。"
+        },
+        {
+          "translation": "那份工作倒也不是毫无难度（多少还是存在一些挑战性的）。"
+        },
+        {
+          "translation": "倒也不能说她的判断完全没有道理（她可能确实是正确的）。"
+        }
+      ]
+    },
+    "ja_ないこともない_102": {
+      "title": "～ないこともない (〜nai koto mo nai)",
+      "shortExplanation": "表示并非完全做不到或绝无可能，但说话人内心带有顾虑、勉强或迟疑之意；“倒也不是不……但……”。",
+      "longExplanation": "句型“～ないこともない”由于助词“も”的介入，比起“～ないことはない”，更加侧重突出说话人的犹疑不决、勉为其难或不情愿的态度（“真要让我做的话倒也不是绝对办不到，只是实在有些勉强”）。后半句往往自然衔接“けれど”、“が”等转折连词，进一步陈述内心的顾虑、阻碍或附加的严苛条件。",
+      "formation": "动词ない形 + こともない | 一类形容词词干（去掉い） + くないこともない | 二类形容词 + でない / じゃないこともない | 名词 + でない / じゃないこともない",
+      "examples": [
+        {
+          "translation": "这道题我倒也不是完全解不出来，只是真的十分棘手难解。"
+        },
+        {
+          "translation": "去与他会面谈谈倒也不是绝对不行，只是手头实在抽不出太多深入交谈的时间。"
+        },
+        {
+          "translation": "手头倒也不是真的囊空如洗，只不过眼下还是厉行节约些更为稳妥。"
+        },
+        {
+          "translation": "这款游戏倒也并非枯燥无味，只是相比之下别的游戏玩起来更带劲些。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_てまで_88": {
+      "title": "～てまで (〜te made)",
+      "shortExplanation": "어떤 목적을 달성하기 위해 상식을 벗어난 극단적인 행동이나 과도한 희생을 치름을 나타내며, '~하면서까지', '~하기까지 해서'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～てまで'는 동사의 て형에 접속하여, 특정 목적을 이루기 위해 상식적인 수준을 초과하는 극단적인 수단을 취하거나 큰 부담과 희생을 감수함을 나타냅니다('~하면서까지', '~하기까지 해서'). 화자의 놀라움, 비판, 혹은 그에 상응하는 비장한 각오나 강한 의지를 전달할 때 주로 사용됩니다.",
+      "formation": "동사 て형 + まで",
+      "examples": [
+        {
+          "translation": "그는 시험에 합격하기 위해 밤을 새우기까지 하며 공부했습니다."
+        },
+        {
+          "translation": "이 상품을 너무나 갖고 싶었기에 아침 일찍 일어나기까지 해서 줄을 서서 샀습니다."
+        },
+        {
+          "translation": "그녀는 그를 돕기 위해 빚을 내기까지 해서 수술비를 지불했습니다."
+        },
+        {
+          "translation": "부장님은 그 프로젝트를 성공시키기 위해 휴일에도 일하기까지 하며 매진하고 있습니다."
+        }
+      ]
+    },
+    "ja_て当然だ_89": {
+      "title": "～て当然だ (〜te tōzen da)",
+      "shortExplanation": "앞선 이유나 전제 조건으로 볼 때 그러한 결과가 나타나는 것이 지극히 당연하고 마땅함을 나타내며, '~하는 것이 당연하다', '~한 게 마땅하다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～て当然だ'(동의 표현으로 '～て当たり前だ')는 동사의 て형 및 형용사 접속형에 연결되어, 앞서 언급된 이유나 노력, 배경으로 보아 그 결과가 일어나는 것은 논리적·상식적으로 너무나 자연스럽고 마땅하다는 화자의 확신을 나타냅니다('~하는 것이 당연하다', '~하는 게 당연한 일이다').",
+      "formation": "동사 て형 + 当然だ | い형용사 어간(い 탈락) + くて当然だ | な형용사 + で当然だ",
+      "examples": [
+        {
+          "translation": "그는 매일같이 성실하게 공부하고 있으니 시험에 합격하는 것이 당연합니다."
+        },
+        {
+          "translation": "그 레스토랑은 음식이 워낙 훌륭하기에 예약이 꽉 차는 것은 당연합니다."
+        },
+        {
+          "translation": "그녀는 매일 밤 열심히 연습하고 있으니 실력이 능숙해지는 것이 당연합니다."
+        },
+        {
+          "translation": "그는 본업에서 큰 성공을 거두었으니 부자가 되는 것은 당연한 일입니다."
+        }
+      ]
+    },
+    "ja_というものだ_90": {
+      "title": "～というものだ (〜to iu mono da)",
+      "shortExplanation": "보편적인 상식, 도리, 또는 사물의 본질에 비추어 화자의 감회나 주장을 강하게 단정할 때 쓰이며, '진정 ~라는 것이다', '~하는 법이다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～というものだ'는 일반적인 사회적 상식, 인생의 진리, 도덕적 법칙에 근거하여 '진정 그것이야말로 ~라고 불러야 마땅하다'라거나 '참으로 ~라는 것이다'라고 깊은 감회나 확신을 담아 단정할 때 사용합니다('진정 ~라고 할 수 있다', '~하는 법이다'). 삶의 교훈이나 사물의 본질을 평가할 때 쓰입니다.",
+      "formation": "보통형 + というものだ | な형용사 어간 (だ / である) + というものだ | 명사 (だ / である) + というものだ",
+      "examples": [
+        {
+          "translation": "젊은이들의 뜨거운 열정은 참으로 존경받을 만한 가치가 있는 법입니다."
+        },
+        {
+          "translation": "공부란 하루라도 게으름을 피우면 뒤처지게 마련인 법입니다."
+        },
+        {
+          "translation": "성공에 도달하기 위해서는 난관에 꿋꿋이 맞서야 하는 법입니다."
+        },
+        {
+          "translation": "진정한 우정이란 결코 돈으로 살 수 없는 법입니다."
+        }
+      ]
+    },
+    "ja_どうにかないものか_91": {
+      "title": "どうにか～ないものか (dō ni ka ~ nai mono ka)",
+      "shortExplanation": "난처하고 어려운 상황을 마주하여 어떻게든 해결책을 찾고 실현되기를 간절히 바라는 마음을 나타내며, '어떻게든 ~할 방법이 없을까', '부디 ~할 수 없을까'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 'どうにか～ないものか'는 '어떻게든'을 의미하는 부사 'どうにか'와 부정 의문 형식인 '～ないものか / ないものだろうか'가 어우러져, 현실적으로 풀기 어려운 문제나 답답한 국면에서 '무슨 수를 써서라도 해결할 방법이 없을까', '부디 그렇게 될 수는 없는 것일까'라는 화자의 간절한 염원과 고뇌를 드러냅니다.",
+      "formation": "どうにか + 동사 ない형 + (もの) か / ないものだろうか",
+      "examples": [
+        {
+          "translation": "어떻게든 이 힘든 업무를 끝마칠 방법이 없을까요?"
+        },
+        {
+          "translation": "어떻게 해서든 다음 시험에서 합격할 수 있는 방법은 없을까요?"
+        },
+        {
+          "translation": "이렇게 발 디딜 틈 없이 꽉 찬 만원 전철에 어떻게든 탈 수 있는 방법이 없을까요?"
+        },
+        {
+          "translation": "어떻게든 그녀와 오해를 풀고 화해할 방법이 없을까요?"
+        }
+      ]
+    },
+    "ja_とおり_92": {
+      "title": "～とおり (〜toori)",
+      "shortExplanation": "앞선 지시, 규정, 예상, 전언의 내용과 조금도 틀림없이 똑같이 행동하거나 실현됨을 나타내며, '~대로', '~한 바와 같이'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～とおり(～どおり)'는 어떤 사태의 진행이나 사람의 행위가 기존의 안내, 방침, 소문, 기대와 완전히 일치하여 한 치의 오차도 없이 이루어짐을 나타냅니다('~대로', '~한 그대로'). 동사의 사전형이나 た형에 연결되며, 명사에 직접 붙을 때는 연탁 현상으로 '～どおり'(예: 予定どおり, ルールどおり)로 발음되거나 '명사 + のとおり' 형태로 접속합니다.",
+      "formation": "동사 사전형 / た형 + とおり (に) | 명사 + のとおり (に) / 명사 + どおり (に) | 보통형 + というとおり",
+      "examples": [
+        {
+          "translation": "선생님께서 말씀해 주신 그대로 숙제를 충실히 해갔습니다."
+        },
+        {
+          "translation": "이 지도에 표시된 길 안내대로 걸어가 주시기 바랍니다."
+        },
+        {
+          "translation": "그는 언제나 정해진 규칙대로 올바르게 게임을 즐깁니다."
+        },
+        {
+          "translation": "그 거리는 소문으로 듣던 바 그대로 낮 못지않게 밤에도 무척 활기찼습니다."
+        }
+      ]
+    },
+    "ja_とか_93": {
+      "title": "～とか (〜to ka)",
+      "shortExplanation": "여러 대상이나 동작 중 대표적인 예를 나열하거나, 불확실한 전언을 조심스럽게 완곡히 말할 때 쓰이며, '~라든가 ~라든가', '~라던가'라는 뜻입니다.",
+      "longExplanation": "조사 '～とか'는 일상 구어 회화에서 대단히 빈번하게 쓰이는 표현으로 두 가지 주요 용법이 있습니다: ① 동류의 사물이나 행동 중에서 몇 가지 대표적인 예시를 불완전하게 열거할 때 사용하며('~라든가 ~라든가', '~등'); ② 전해 들은 소문이나 완전히 확신할 수 없는 사실을 단정을 피해 완곡하고 조심스럽게 언급할 때 사용합니다('~라던가 하는 것 같다').",
+      "formation": "동사 보통형 + とか | い형용사 + とか | な형용사 + だとか | 명사 + だとか",
+      "examples": [
+        {
+          "translation": "휴일에는 영화를 본다든가 쇼핑을 하러 간다든가 하며 한가롭게 보냅니다."
+        },
+        {
+          "translation": "그녀는 호주라든가 뉴질랜드 같은 해외 휴양지로 여행을 가고 싶어 합니다."
+        },
+        {
+          "translation": "오늘 날씨는 맑았다가 흐려졌다 한다는 것 같습니다."
+        },
+        {
+          "translation": "그는 평소에 야구를 한다든가 축구를 한다든가 하며 운동을 즐깁니다."
+        }
+      ]
+    },
+    "ja_ところ_94": {
+      "title": "～ところ (〜tokoro)",
+      "shortExplanation": "동작이 일어나는 구체적인 시간적 국면(직전, 진행 중, 직후)이나 특정 상황·처지를 나타내며, '막 ~하려던 참', '~하는 중'이라는 뜻입니다.",
+      "longExplanation": "형식명사 '～ところ'는 접속하는 동사의 시제와 어형에 따라 세밀한 시간적 단계를 나타냅니다: ① 동사 사전형 + ところ: 바로 지금 막 시작하려는 찰나('막 ~하려던 참이다'); ② 동사 ている형 + ところ: 그 동작이 한창 진행 중인 순간('한창 ~하고 있는 중이다'); ③ 동사 た형 + ところ: 막 동작이 끝난 직후('방금 막 ~한 참이다'). 또한 형용사나 명사와 결합하여 인사말 등에서 특정한 상황이나 계제(예: 바쁘신 와중에)를 뜻하기도 합니다.",
+      "formation": "동사 사전형 / ている형 / た형 + ところ | い형용사 + ところ | な형용사 + なところ | 명사 + のところ",
+      "examples": [
+        {
+          "translation": "지금 막 문밖으로 외출하려던 참입니다."
+        },
+        {
+          "translation": "지금 한창 흥미진진하게 영화를 감상하고 있는 중입니다."
+        },
+        {
+          "translation": "맛있는 식당에서 식사를 할 계획입니다."
+        },
+        {
+          "translation": "그는 본인도 무척 바쁜 와중에도 기꺼이 저를 도와주었습니다."
+        }
+      ]
+    },
+    "ja_どころか_95": {
+      "title": "～どころか (〜dokoro ka)",
+      "shortExplanation": "실제 상황이 앞서 언급한 가정이나 기대와 완전히 동떨어져 있거나 그 수준을 훨씬 능가함을 강조하며, '~커녕', '~는 고사하고', '~정도가 아니라'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～どころか'는 앞선 전제나 예상 기준을 정면으로 부정하며 현실의 격차가 대단히 큼을 강조할 때 사용합니다. 주로 두 가지 맥락으로 쓰입니다: ① 실제의 수준이 예상치를 압도적으로 뛰어넘어 훌륭함을 나타낼 때('~정도가 아니라 오히려 프로 수준이다'); ② 기대했던 바람직한 상태와는 정반대로 훨씬 더 심각하거나 악화된 상태임을 강조할 때('~커녕 오히려 더 나빠졌다').",
+      "formation": "동사 보통형 + どころか | い형용사 + どころか | な형용사 + どころか | 명사 + どころか",
+      "examples": [
+        {
+          "translation": "그는 노래를 잘 부르는 정도가 아니라 흡사 프로 가수처럼 훌륭합니다."
+        },
+        {
+          "translation": "이 요리는 맛있기는커녕 그야말로 최상의 감동적인 맛입니다."
+        },
+        {
+          "translation": "그녀는 그저 단순한 친구이기는커녕 둘도 없는 소중한 절친입니다."
+        },
+        {
+          "translation": "그는 영어를 할 줄 아는 정도가 아니라 다른 3개 외국어도 유창하게 구사합니다."
+        }
+      ]
+    },
+    "ja_どころではない_96": {
+      "title": "～どころではない (〜dokoro de wa nai)",
+      "shortExplanation": "상황이 너무나 긴박하거나 바빠서 다른 행동을 할 만한 시간적·정신적 여유가 전혀 없음을 나타내며, '~할 때가 아니다', '~할 여유가 전혀 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～どころではない'는 목전의 처지가 몹시 급박하거나 심각하고 지나치게 바빠서, 일상적인 행동을 하거나 무언가를 즐길 만한 시간적·경제적·심리적 여유가 전혀 없음을 호소할 때 사용합니다('~할 계제가 아니다', '~할 정신이 없다'). 상대방의 여유로운 권유를 정중히 거절하거나 자신의 궁박한 현실을 강조할 때 흔히 쓰입니다.",
+      "formation": "동사 보통형 + どころではない | い형용사 + どころではない | な형용사 + どころではない | 명사 + どころではない",
+      "examples": [
+        {
+          "translation": "지금 그의 실수를 비웃고 있을 때가 아닙니다. 우리 또한 똑같은 잘못을 범하고 있습니다."
+        },
+        {
+          "translation": "병으로 자리에 누워 앓고 있을 때에는 한가롭게 놀 수 있는 상황이 아닙니다."
+        },
+        {
+          "translation": "시험이 바로 코앞으로 다가왔기에 영화나 보고 있을 계제가 아닙니다."
+        },
+        {
+          "translation": "일이 눈코 뜰 새 없이 너무 바빠서 여행 따위는 꿈조차 꿀 수 없는 처지입니다."
+        }
+      ]
+    },
+    "ja_としたら_97": {
+      "title": "～としたら (〜to shitara)",
+      "shortExplanation": "어떤 상황을 가상의 전제로 설정하여 그에 따른 판단, 추론, 대책을 제시할 때 쓰이며, '만약 ~라고 가정한다면', '~라면'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～としたら'(유사 표현: '～とすれば')는 머릿속에서 특정 사실이나 가상의 사건을 조건으로 전제하고('만약 ~라고 가정한다면', '가령 ~라는 게 사실이라면'), 그 조건이 충족될 때 뒤따르게 될 귀결, 해결책, 또는 개인적 판단을 이끌어 낼 때 사용합니다. 단순 접속형인 '～たら'에 비해 가상적 추론의 성격이 뚜렷합니다.",
+      "formation": "동사 보통형 + としたら | い형용사 + としたら | な형용사 + だとしたら | 명사 + だとしたら",
+      "examples": [
+        {
+          "translation": "만약 내일 비가 내린다고 가정한다면 우산을 미리 챙겨서 갑시다."
+        },
+        {
+          "translation": "만약 이 케이크가 맛이 없다고 한다면 아무도 손을 대지 않겠지요."
+        },
+        {
+          "translation": "만약 그가 정말로 아픈 것이라면 서둘러 병원에 가보아야 합니다."
+        },
+        {
+          "translation": "그녀가 학생 신분이라고 한다면 이 식당에서 학생 할인을 받을 수 있을 것입니다."
+        }
+      ]
+    },
+    "ja_としても_98": {
+      "title": "～としても (〜to shite mo)",
+      "shortExplanation": "가상의 역접 양보 조건을 설정하여 설령 그 전제가 실현된다 하더라도 후항의 의지나 사실은 변하지 않음을 나타내며, '설령 ~라 하더라도', '~라 할지라도'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～としても'(유사 표현: '～にしても')는 어떤 극단적이거나 불리한 가정을 양보 조건으로 내세우면서('설령 ~라고 양보해 보더라도', '가령 ~라 할지라도'), 그 가설이 성립하든 안 하든 화자의 확고한 신념, 태도, 또는 객관적인 결론은 조금도 흔들리지 않음을 강조할 때 씁니다. 일반적인 양보 표현인 '～ても'보다 가상의 느낌이 한층 부각됩니다.",
+      "formation": "동사 보통형 + としても | い형용사 + としても | な형용사 + だとしても | 명사 + だとしても",
+      "examples": [
+        {
+          "translation": "설령 빗방울이 떨어진다고 하더라도 경기 레이스는 절대 취소되지 않습니다."
+        },
+        {
+          "translation": "가령 이 케이크가 입에 맞지 않는다 하더라도 저는 다 먹을 작정입니다."
+        },
+        {
+          "translation": "그녀가 설사 늦게 도착한다고 하더라도 저희는 끝까지 기다릴 것입니다."
+        },
+        {
+          "translation": "설령 눈코 뜰 새 없이 바쁘다고 할지라도 소중한 친구와의 약속은 꼭 지키고 싶습니다."
+        }
+      ]
+    },
+    "ja_とともに_99": {
+      "title": "～と～ともに (〜to 〜tomoni)",
+      "shortExplanation": "앞선 사태의 변화에 발맞추어 후항도 비례하여 변화하거나, 두 사건이 동시에 발생함, 또는 '함께'를 나타내며, '~와 함께', '~함에 따라', '~와 동시에'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～とともに'(한자 표기: 共に)는 문어체적이며 격식을 갖춘 정중한 표현으로 다음의 중심 의미를 지닙니다: ① 비례적 변화: 앞선 현상이 진전됨에 따라 뒤의 현상도 나란히 맞물려 변해 감을 나타냄('~함에 따라', '~와 더불어'); ② 동시 발생: 두 가지 사태가 거의 같은 순간에 일어남을 나타냄('~함과 동시에'); ③ 동반 행위: 어떤 대상과 한데 어울려 행동함을 나타냄('~와 함께').",
+      "formation": "동사 사전형 + とともに | 명사 + とともに | い형용사 + とともに | な형용사 + (である) とともに",
+      "examples": [
+        {
+          "translation": "그가 현장에 도착함과 동시에 활기찬 파티의 막이 올랐습니다."
+        },
+        {
+          "translation": "사계절이 차례로 바뀜에 따라 사람들의 옷차림 유행도 발맞추어 변해 갑니다."
+        },
+        {
+          "translation": "나이를 먹고 성장함에 발맞추어 다채로운 경험을 차곡차곡 쌓는 것은 매우 중요합니다."
+        },
+        {
+          "translation": "첨단 기술의 눈부신 진보와 더불어 일상을 돕는 편리한 앱들이 끊임없이 늘어나고 있습니다."
+        }
+      ]
+    },
+    "ja_とは限らない_100": {
+      "title": "～とは限らない (〜to wa kagiranai)",
+      "shortExplanation": "일반적인 상식이나 예측이 언제나 100% 진실은 아니라는 '부분 부정'을 나타내며, '반드시 ~인 것은 아니다', '꼭 ~하다고는 할 수 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～とは限らない'는 전형적인 부분 부정 구문으로, 세간에서 흔히 통용되는 상식이나 선입견, 그럴듯한 추측에 대해 '언제나 그러한 것은 아니며 예외가 존재할 수 있다'는 신중한 반론을 제기할 때 쓰입니다('꼭 ~하다고는 볼 수 없다', '반드시 ~인 것은 아니다'). 흔히 '必ずしも(반드시)', 'いつも(언제나)', 'すべて(전부)' 등의 부사와 호응합니다.",
+      "formation": "동사 보통형 + とは限らない | い형용사 + とは限らない | な형용사 + (だ) とは限らない | 명사 + (だ) とは限らない",
+      "examples": [
+        {
+          "translation": "내가 언제나 온종일 공부만 파고들고 있다고는 단정할 수 없습니다."
+        },
+        {
+          "translation": "가격표가 비싸게 붙은 상품이 꼭 품질까지 우수하다고는 할 수 없습니다."
+        },
+        {
+          "translation": "그 사람이 주장하는 바가 언제나 반드시 옳다고는 볼 수 없습니다."
+        },
+        {
+          "translation": "먹구름이 잔뜩 끼었다고 해서 반드시 비가 내린다고는 단정할 수 없습니다."
+        }
+      ]
+    },
+    "ja_ないことはない_101": {
+      "title": "～ないことはない (〜nai koto wa nai)",
+      "shortExplanation": "이중 부정을 통하여 결코 불가능한 것은 아니라는 소극적이고 완곡한 긍정을 나타내며, '안 ~하는 것은 아니다', '~하지 못할 것도 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ないことはない'는 부정형 두 개를 겹쳐 쓴 이중 부정 구문입니다. 단도직입적인 강한 긍정을 피하고, '전혀 불가능하거나 배제된 것은 아니며, 마음먹고 노력한다면 충분히 가능한 여지가 있다'는 점을 조심스럽고 완곡하게 승인할 때 씁니다('~하지 않는 것은 아니다', '~못할 것도 없다').",
+      "formation": "동사 ない형 + ことはない | い형용사 어간(い 탈락) + くないことはない | な형용사 + でない / じゃないことはない | 명사 + でない / じゃないことはない",
+      "examples": [
+        {
+          "translation": "그가 모임에 오지 않는다는 법은 없습니다 (올 가능성도 충분히 있습니다)."
+        },
+        {
+          "translation": "그 어려운 문제가 도저히 풀리지 않는 것은 아닙니다 (노력하면 풀 수 있습니다)."
+        },
+        {
+          "translation": "그 업무가 까다롭지 않은 것은 아닙니다 (어느 정도의 고충은 분명히 따릅니다)."
+        },
+        {
+          "translation": "그녀의 주장이 옳지 않다고 단정할 수는 없습니다 (그녀의 말이 맞을 수도 있습니다)."
+        }
+      ]
+    },
+    "ja_ないこともない_102": {
+      "title": "～ないこともない (〜nai koto mo nai)",
+      "shortExplanation": "절대 불가능하거나 안 되는 것은 아니지만, 내심 망설여지거나 내키지 않는 유보적인 태도를 나타내며, '안 ~할 것도 없지만...', '~못할 것도 없지만...'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ないこともない'는 조사 'も'가 결합되어, '～ないことはない'에 비해 화자의 주저함이나 곤혹스러움, 내키지 않는 마음이 한결 강하게 묻어나는 표현입니다('하고자 한다면 못할 것도 없겠지만 솔직히 내키지는 않는다'). 뒤이어 'けれど(하지만)', 'が(그렇지만)' 등의 역접 접속사를 동반하여 마음에 걸리는 장애물이나 핑계를 밝히는 것이 자연스럽습니다.",
+      "formation": "동사 ない형 + こともない | い형용사 어간(い 탈락) + くないこともない | な형용사 + でない / じゃないこともない | 명사 + でない / じゃないこともない",
+      "examples": [
+        {
+          "translation": "이 문제가 결코 풀 수 없는 것은 아니지만 솔직히 무척이나 어렵습니다."
+        },
+        {
+          "translation": "그를 만나지 못할 것도 없지만 깊이 있는 이야기를 나눌 시간이 너무 부족합니다."
+        },
+        {
+          "translation": "수중에 돈이 전혀 없는 것은 아니지만 그래도 아껴 쓰는 편이 훨씬 현명합니다."
+        },
+        {
+          "translation": "이 게임이 재미없는 것은 아니지만 솔직히 다른 게임들이 훨씬 더 흥미진진합니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_てまで_88": {
+      "title": "～てまで (〜te made)",
+      "shortExplanation": "ある目的を達成するために、普通では考えられない極端な手段をとったり大きな犠牲を払ったりすることを表し、「〜してまで」「〜という極端なことまでして」という意味を表します。",
+      "longExplanation": "「～てまで」は動詞のて形に接続し、ある目的を果たすために、通常の限度や常識の範囲をはるかに超えた極端な行動に踏み切ることや、過大な犠牲・負担を払うことを表します。「そこまでして…するのか」という話し手の驚き・非難・疑問の感情、あるいは「何としてでも…を成し遂げたい」という並々ならぬ強い決意を込めて用いられます。",
+      "formation": "動詞て形 ＋ まで",
+      "examples": [
+        {
+          "translation": "彼は試験に合格するために、徹夜してまで勉強しました。"
+        },
+        {
+          "translation": "この商品がほしかったので、朝早く起きてまで並んで買いました。"
+        },
+        {
+          "translation": "彼女は彼を助けるために、お金を借りてまで手術代を払いました。"
+        },
+        {
+          "translation": "部長はそのプロジェクトを成功させるために、休日も働いてまで取り組んでいます。"
+        }
+      ]
+    },
+    "ja_て当然だ_89": {
+      "title": "～て当然だ (〜te tōzen da)",
+      "shortExplanation": "理由や前提となる状況から考えて、その結果が生じるのは至極当たり前・自然なことであると判断して述べる表現で、「〜するのは当然だ」「〜して当たり前だ」という意味を表します。",
+      "longExplanation": "「～て当然だ」（類義表現に「～て当たり前だ」）は、動詞のて形や形容詞の接続形に接続し、前提となる努力や原因に照らし合わせれば、その結果に至るのは極めて自然であり、誰が見ても当然の道理であることを表します。努力に見合った妥当な成果を肯定的に評価するときや、自然の因果関係を強調する場面で用いられます。",
+      "formation": "動詞て形 ＋ 当然だ ｜ い形容詞語幹 ＋ くて当然だ ｜ な形容詞 ＋ で当然だ",
+      "examples": [
+        {
+          "translation": "彼は毎日勉強しているから、試験に合格して当然だ。"
+        },
+        {
+          "translation": "そのレストランは料理が美味しいので、予約がいっぱいになって当然だ。"
+        },
+        {
+          "translation": "彼女は毎晩練習しているので、上手になって当然だ。"
+        },
+        {
+          "translation": "彼は仕事で成功していて、お金持ちになって当然だ。"
+        }
+      ]
+    },
+    "ja_というものだ_90": {
+      "title": "～というものだ (〜to iu mono da)",
+      "shortExplanation": "一般的な常識や人生の道理、物事の本質に照らし、「本当にそれこそが〜だ」「まさに〜と呼ぶべきだ」と強い実感や確信を込めて評価・断定する表現です。",
+      "longExplanation": "「～というものだ」は、世間一般の常識、道理、または客観的な事実に基づき、話し手が「それこそが真の〜というものだ」「まさに〜と考えるのが当然だ」と深く納得したり、感慨を込めて主張・断定したりする際に用いられます。人生の真理や教訓、あるいは物事の本質を感慨深く語り聞かせるような文脈でよく使われます。",
+      "formation": "普通形 ＋ というものだ ｜ な形容詞語幹（だ／である） ＋ というものだ ｜ 名詞（だ／である） ＋ というものだ",
+      "examples": [
+        {
+          "translation": "若者の熱情は尊敬に値するというものだ。"
+        },
+        {
+          "translation": "勉強は一日でもサボれば遅れるというものだ。"
+        },
+        {
+          "translation": "成功するためには困難に立ち向かうというものだ。"
+        },
+        {
+          "translation": "友情はお金で買えないというものだ。"
+        }
+      ]
+    },
+    "ja_どうにかないものか_91": {
+      "title": "どうにか～ないものか (dō ni ka ~ nai mono ka)",
+      "shortExplanation": "困難な局面や思い通りにならない事態に直面し、「何とかして解決する方法はないだろうか」「どうにか実現してほしい」と強く願う気持ちを表します。",
+      "longExplanation": "「どうにか～ないものか」は、副詞「どうにか（何とかして）」に動詞の否定形と終助詞的な「ものか（だろうか）」が結びついた表現です。容易には解決できない厳しい状況や思い通りにいかない現実に対して、「何らかの手段を尽くして打破できないものか」「何としても良い方向へ向かってほしい」と、解決策を必死に模索し祈るような話し手のもどかしい強い願望を表します。",
+      "formation": "どうにか ＋ 動詞ない形 ＋ （もの）か／ないものだろうか",
+      "examples": [
+        {
+          "translation": "どうにかこの仕事を終わらせないものか。"
+        },
+        {
+          "translation": "どうにか次の試験で合格しないものか。"
+        },
+        {
+          "translation": "どうにか込んでいる電車に乗れないものか。"
+        },
+        {
+          "translation": "どうにか彼女と仲直りしないものか。"
+        }
+      ]
+    },
+    "ja_とおり_92": {
+      "title": "～とおり (〜toori)",
+      "shortExplanation": "前もって示された指示、規則、予想、発言などの内容と寸分違わず同じように物事を行う、またはその通りになることを表し、「〜と同じように」「〜に従って」という意味を表します。",
+      "longExplanation": "「～とおり（～どおり）」は、前に示された指示、計画、規則、あるいは前評判・予想などと全く同じ状態や動作であることを表します。動詞の辞書形・た形に接続するほか、名詞に直接接続する場合は連濁して「～どおり（予定どおり、規則どおり等）」となるか、「名詞＋のとおり」の形で用いられます。",
+      "formation": "動詞辞書形／た形 ＋ とおり（に） ｜ 名詞 ＋ のとおり（に）／名詞 ＋ どおり（に） ｜ 普通形 ＋ というとおり",
+      "examples": [
+        {
+          "translation": "先生が言ったとおりに宿題をしました。"
+        },
+        {
+          "translation": "この地図のとおりに歩いてください。"
+        },
+        {
+          "translation": "彼はいつもルールどおりに遊びます。"
+        },
+        {
+          "translation": "その道路は昼間と同じくらい夜も賑やかだというとおりでした。"
+        }
+      ]
+    },
+    "ja_とか_93": {
+      "title": "～とか (〜to ka)",
+      "shortExplanation": "同類の動作や事柄から代表的な例を並べて挙げたり、不確かな伝聞や推測を断定を避けて柔らかく述べたりする際に用いる口語表現です。",
+      "longExplanation": "「～とか」は親しい間柄の日常会話で多用される表現で、主に二つの用法があります。①同類の動作・事物の中から代表的なものをいくつか例として不完全に列挙する「〜とか〜とか（〜や〜など）」、②人から伝え聞いた不確かな情報や記憶を、断定を避けて柔らかく伝える「〜だとか（〜ということだ／〜らしい）」の用法です。会話の調子を和らげる働きを持ちます。",
+      "formation": "動詞普通形 ＋ とか ｜ い形容詞 ＋ とか ｜ な形容詞 ＋ だとか ｜ 名詞 ＋ だとか",
+      "examples": [
+        {
+          "translation": "休日は映画を見るとか、買い物に行くとかして過ごします。"
+        },
+        {
+          "translation": "彼女はオーストラリアとかニュージーランドとかに行きたがっています。"
+        },
+        {
+          "translation": "今日の天気は晴れたり、曇ったりとかだそうです。"
+        },
+        {
+          "translation": "彼は野球をしたり、サッカーをしたりとかしています。"
+        }
+      ]
+    },
+    "ja_ところ_94": {
+      "title": "～ところ (〜tokoro)",
+      "shortExplanation": "動作が今どの段階にあるか（直前・最中・直後）という時間的局面や、特定の状況・場面を表し、「〜するところだ」「〜している最中だ」「〜したばかりだ」という意味を表します。",
+      "longExplanation": "「～ところ」は、接続する動詞の活用形によって動作の時間的プロセスを精密に描き分ける形式名詞表現です。①動詞辞書形＋ところ（直前：「今まさに〜しようとしている局面」）、②動詞ている形＋ところ（進行中：「今まさに〜している最中」）、③動詞た形＋ところ（直後：「たった今〜し終えた直後」）を表します。また、形容詞や名詞に接続して「お忙しいところ」「危ないところ」のように、特定の状況や折を表す挨拶・慣用表現としても多用されます。",
+      "formation": "動詞辞書形／ている形／た形 ＋ ところ ｜ い形容詞 ＋ ところ ｜ な形容詞 ＋ なところ ｜ 名詞 ＋ のところ",
+      "examples": [
+        {
+          "translation": "出かけるところです。"
+        },
+        {
+          "translation": "映画を見ているところです。"
+        },
+        {
+          "translation": "おいしいところで食事をするつもりです。"
+        },
+        {
+          "translation": "彼は忙しいところを手伝ってくれました。"
+        }
+      ]
+    },
+    "ja_どころか_95": {
+      "title": "～どころか (〜dokoro ka)",
+      "shortExplanation": "前に挙げた事柄の程度にとどまらず、実際はそれをはるかに超えていること、または期待とは正反対の事態であることを強調する表現です。",
+      "longExplanation": "「～どころか」は、話し手や聞き手が想定した基準・程度を強く否定し、現実はそれとはかけ離れた極端な状態にあることを際立たせる表現です。①「〜どころか、それをはるかに上回る素晴らしいレベルだ」と想定以上の高さを強調する用法（「上手どころかプロ並みだ」）と、②「〜どころか、全く逆の悪い状態だ」と事態の深刻さ・期待外れを強調する用法（「治るどころか悪化した」）の両面で用いられます。",
+      "formation": "動詞普通形 ＋ どころか ｜ い形容詞 ＋ どころか ｜ な形容詞 ＋ どころか ｜ 名詞 ＋ どころか",
+      "examples": [
+        {
+          "translation": "彼は歌が上手どころか、プロの歌手みたいだ。"
+        },
+        {
+          "translation": "この料理はおいしいどころか、最高の味だ。"
+        },
+        {
+          "translation": "彼女はただの友達どころか、私の親友だ。"
+        },
+        {
+          "translation": "彼は英語ができるどころか、他の3つの言語も話せる。"
+        }
+      ]
+    },
+    "ja_どころではない_96": {
+      "title": "～どころではない (〜dokoro de wa nai)",
+      "shortExplanation": "目下の状況が極めて逼迫・多忙・深刻であるため、とてもその行為をする時間的・精神的・経済的なゆとりがないことを表し、「〜している場合ではない」「とても〜どころではない」という意味を表します。",
+      "longExplanation": "「～どころではない」は、現在直面している事態が非常に切迫していたり、仕事に追われていたりと重大な局面にあるため、のんびりと特定の行動をとったり楽しんだりする心のゆとりや時間・お金が全くないことを表します。「今は〜している場合ではない」「そんなことを考えている余裕はない」と、誘いを断ったり切羽詰まった現状を訴えたりする際に頻繁に用いられます。",
+      "formation": "動詞普通形 ＋ どころではない ｜ い形容詞 ＋ どころではない ｜ な形容詞 ＋ どころではない ｜ 名詞 ＋ どころではない",
+      "examples": [
+        {
+          "translation": "彼の失敗を笑うどころではない。私たちも同じミスをしている。"
+        },
+        {
+          "translation": "病気で寝ている時は、遊ぶどころではない。"
+        },
+        {
+          "translation": "試験が近いので、映画を見るどころではない。"
+        },
+        {
+          "translation": "仕事が忙しすぎて、旅行なんて考えるどころではない。"
+        }
+      ]
+    },
+    "ja_としたら_97": {
+      "title": "～としたら (〜to shitara)",
+      "shortExplanation": "ある事柄を仮定・想定の条件として設定し、「もし〜だと仮定すれば」とその場合の判断、推量、意志などを述べる表現です。",
+      "longExplanation": "「～としたら」は、ある事柄や状況を事実として頭の中で仮定・想定し、「もし〜という前提が成り立つなら」「仮に〜という事態が起きるとすれば」という枠組みのもとで、後件において判断、推量、あるいは対策・意見などを述べる際に用いられます。一般的な条件表現「〜たら」に比べ、話し手が仮定の前提条件を意識的に設定するニュアンスが強く出ます。",
+      "formation": "動詞普通形 ＋ としたら ｜ い形容詞 ＋ としたら ｜ な形容詞 ＋ だとしたら ｜ 名詞 ＋ だとしたら",
+      "examples": [
+        {
+          "translation": "明日雨が降るとしたら、傘を持っていきましょう。"
+        },
+        {
+          "translation": "このケーキが美味しくないとしたら、誰も食べないだろう。"
+        },
+        {
+          "translation": "彼が病気だとしたら、早めに病院へ行かないといけません。"
+        },
+        {
+          "translation": "彼女が学生だとしたら、このレストランは割引があるでしょう。"
+        }
+      ]
+    },
+    "ja_としても_98": {
+      "title": "～としても (〜to shite mo)",
+      "shortExplanation": "仮定の逆接・譲歩条件を提示し、「たとえ〜と仮定しても、後件の結論や意志・事実は揺らがない」ということを表し、「たとえ〜としても」「〜だとしても」という意味を表します。",
+      "longExplanation": "「～としても」は、仮にその事態が真実であると譲歩・想定したとしても、後件で述べる話し手の強い意志、判断、あるいは客観的な結論が左右されたり覆ったりすることはないという確固たる態度を表します。「〜ても」に比べて「もしそうだと仮定した場合であっても」という仮定・前提の意識がより色濃く打ち出される表現です。",
+      "formation": "動詞普通形 ＋ としても ｜ い形容詞 ＋ としても ｜ な形容詞 ＋ だとしても ｜ 名詞 ＋ だとしても",
+      "examples": [
+        {
+          "translation": "雨が降るとしても、レースは中止しません。"
+        },
+        {
+          "translation": "このケーキが美味しくないとしても、私は食べるつもりです。"
+        },
+        {
+          "translation": "彼女が遅刻するとしても、私たちは待ち続けます。"
+        },
+        {
+          "translation": "忙しいだとしても、友達との約束は守りたい。"
+        }
+      ]
+    },
+    "ja_とともに_99": {
+      "title": "～と～ともに (〜to 〜tomoni)",
+      "shortExplanation": "一方の変化に伴って他方も並行して変化していくことや、二つの事柄が同時に行われること、あるいは「〜と一緒に」を表す硬い表現です。",
+      "longExplanation": "「～とともに（共に）」は、主に書き言葉や改まった場面で用いられる表現で、以下の主要な意味を持ちます。①一方の変化に比例・連動して他方も変化していくことを表す「〜に伴って／〜につれて（比例変化）」、②二つの事柄がほぼ同じ瞬間に生起することを表す「〜と同時に」、③人や事柄と行動を共にする「〜と一緒に」を表します。",
+      "formation": "動詞辞書形 ＋ とともに ｜ 名詞 ＋ とともに ｜ い形容詞 ＋ とともに ｜ な形容詞（である） ＋ とともに",
+      "examples": [
+        {
+          "translation": "彼が来るとともに、パーティーが始まりました。"
+        },
+        {
+          "translation": "季節が変わるとともに、服のファッションも変わります。"
+        },
+        {
+          "translation": "成長とともに、いろいろな経験を積むことが大切です。"
+        },
+        {
+          "translation": "技術の進歩とともに、便利なアプリが増えています。"
+        }
+      ]
+    },
+    "ja_とは限らない_100": {
+      "title": "～とは限らない (〜to wa kagiranai)",
+      "shortExplanation": "一般的に当然と考えられている常識や予測が、100%常に当てはまるわけではないという「部分否定」を表し、「必ずしも〜とは言えない」「〜とは決まっていない」という意味を表します。",
+      "longExplanation": "「～とは限らない」は、部分否定を表す代表的な構文です。世間一般の常識、思い込み、あるいは確率の高い推測に対して「例外もあり得る」「いつでも絶対にそうだとは断定できない」と慎重に述べる際に用いられます。「必ずしも」「いつも」「すべて」などの副詞と呼応して多用され、物事を決めつけずに柔軟な見方を示すニュアンスを持ちます。",
+      "formation": "動詞普通形 ＋ とは限らない ｜ い形容詞 ＋ とは限らない ｜ な形容詞（だ） ＋ とは限らない ｜ 名詞（だ） ＋ とは限らない",
+      "examples": [
+        {
+          "translation": "いつも勉強しているとは限らない。"
+        },
+        {
+          "translation": "高い商品がいいとは限らない。"
+        },
+        {
+          "translation": "彼が正しいとは限らない。"
+        },
+        {
+          "translation": "雨が降るとは限らない。"
+        }
+      ]
+    },
+    "ja_ないことはない_101": {
+      "title": "～ないことはない (〜nai koto wa nai)",
+      "shortExplanation": "二重否定を用いて「絶対に〜ないとは言えない」「可能かと言われれば可能だ」と、控えめに消極的な肯定を表す表現です。",
+      "longExplanation": "「～ないことはない」は、否定形に「〜ことはない」を重ねた二重否定の構文です。断定的な強い肯定を避け、「努力や条件次第ではできないわけではない」「可能性がゼロというわけではない」と消極的に肯定する際に用いられます。話し手の謙虚さや、少し含みを持たせた慎重な判断を表します。",
+      "formation": "動詞ない形 ＋ ことはない ｜ い形容詞語幹 ＋ くないことはない ｜ な形容詞 ＋ でない／じゃないことはない ｜ 名詞 ＋ でない／じゃないことはない",
+      "examples": [
+        {
+          "translation": "彼が来ないことはない。"
+        },
+        {
+          "translation": "あの問題が解けないことはない。"
+        },
+        {
+          "translation": "その仕事が難しくないことはない。"
+        },
+        {
+          "translation": "彼女が正しくないことはない。"
+        }
+      ]
+    },
+    "ja_ないこともない_102": {
+      "title": "～ないこともない (〜nai koto mo nai)",
+      "shortExplanation": "「絶対にできないというわけではないが…」と消極的に可能性を認めつつも、ためらいや難色、気乗りしないニュアンスを込めて述べる表現です。",
+      "longExplanation": "「～ないこともない」は、助詞「も」が加わることで、「～ないことはない」よりもさらにためらいや消極的な態度、あるいは「どうしてもと言うならできなくもないが、あまり気は進まない」という含みを持たせた表現です。後件には「〜が」「〜けれど」などの逆接表現が続き、気が進まない理由や困難な事情が付け加えられるのが極めて自然です。",
+      "formation": "動詞ない形 ＋ こともない ｜ い形容詞語幹 ＋ くないこともない ｜ な形容詞 ＋ でない／じゃないこともない ｜ 名詞 ＋ でない／じゃないこともない",
+      "examples": [
+        {
+          "translation": "この問題は解けないこともないけど、難しいです。"
+        },
+        {
+          "translation": "彼に会わないこともないが、あまり話す時間がない。"
+        },
+        {
+          "translation": "お金がないこともないけれど、節約した方がいい。"
+        },
+        {
+          "translation": "このゲームが面白くないこともないが、他のゲームの方が楽しい。"
+        }
+      ]
+    }
+  }
+}

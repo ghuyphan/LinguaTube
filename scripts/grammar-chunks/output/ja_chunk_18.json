@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_んです_119": {
+      "title": "～んです (〜n desu)",
+      "shortExplanation": "Dùng để giải thích lý do, bối cảnh hoặc nhấn mạnh thông tin; 'là vì...', 'thực ra là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～んです' (dạng thông thường thân mật là '～んだ', văn viết là '～のだ') dùng để đưa ra lời giải thích, phân trần lý do cho một tình huống, trạng thái hoặc hành động đã đề cập trước đó. Cấu trúc này biểu thị việc người nói muốn chia sẻ bối cảnh, lý do cụ thể nhằm tạo sự thấu hiểu và gắn kết với người nghe. Kết hợp với thể thông thường của động từ và tính từ đuôi い; còn tính từ đuôi な và danh từ thì thêm 'な' trước 'んです'.",
+      "formation": "Động từ thể thông thường + んです / Tính từ đuôi い + んです / Tính từ đuôi な + なんです / Danh từ + なんです",
+      "examples": [
+        {
+          "translation": "Tôi đến muộn là do tàu điện bị trễ chuyến."
+        },
+        {
+          "translation": "Tôi thấy mệt (nên mới thế này)."
+        },
+        {
+          "translation": "Thực ra anh ấy rất tốt bụng."
+        },
+        {
+          "translation": "Lý do là bài tập về nhà nhiều quá."
+        }
+      ]
+    },
+    "ja_文Aそのうえ_120": {
+      "title": "文A。そのうえ 文B。",
+      "shortExplanation": "Dùng để bổ sung thêm thông tin cùng chiều tích cực hoặc tiêu cực; 'hơn nữa', 'thêm vào đó'.",
+      "longExplanation": "Liên từ 'そのうえ' (viết chữ Hán là 'その上') được đặt ở đầu câu B nhằm bổ sung thêm thông tin, đặc điểm hoặc tình huống liên quan đến điều đã được nêu ở câu A. Cấu trúc thường dùng khi cả hai câu đều cùng mang một tính chất (cùng khen ngợi hoặc cùng chê trách), nhấn mạnh sự cộng dồn các yếu tố; tương đương với 'hơn nữa', 'thêm vào đó', 'đã vậy lại còn...'.",
+      "formation": "Câu A。 + そのうえ (その上)、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Phần mềm này rất dễ sử dụng. Hơn nữa, giá cả cũng phải chăng."
+        },
+        {
+          "translation": "Cô ấy là một người đẹp. Thêm vào đó, lại còn thông minh."
+        },
+        {
+          "translation": "Bộ phim này rất hay. Đã vậy, diễn xuất của các diễn viên cũng tuyệt vời."
+        },
+        {
+          "translation": "Tokyo có rất nhiều điểm tham quan. Hơn nữa, các nhà hàng ngon cũng nhiều."
+        }
+      ]
+    },
+    "ja_文Aそれで_121": {
+      "title": "文A。それで 文B (Bun A. Sorede Bun B)",
+      "shortExplanation": "Biểu thị quan hệ nhân quả tự nhiên giữa hai câu; 'vì vậy', 'do đó', 'thế là'.",
+      "longExplanation": "Mẫu liên từ '文A。それで 文B' dùng để nối hai câu, trong đó câu A nêu ra nguyên nhân, lý do hoặc tiền đề, còn câu B trình bày kết quả, hệ quả diễn ra tự nhiên theo sau. Thường dùng trong hội thoại hàng ngày khi thuật lại sự việc, sự tình; tương đương với 'vì vậy', 'thế nên', 'do đó', 'thế là'. Lưu ý câu B thường là kết quả khách quan hoặc sự việc đã xảy ra, không dùng để biểu đạt mệnh lệnh hay ý chí cưỡng ép.",
+      "formation": "Câu A。 + それで、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Hôm nay trời nóng. Vì vậy, tôi đã bật máy điều hòa."
+        },
+        {
+          "translation": "Tàu điện bị trễ. Thế nên, tôi đã bị muộn giờ làm."
+        },
+        {
+          "translation": "Anh ấy đang mệt mỏi. Do đó, anh ấy quyết định đi ngủ sớm."
+        },
+        {
+          "translation": "Tôi đã đỗ kỳ thi. Vì thế, tôi đã mở tiệc chúc mừng cùng bạn bè."
+        }
+      ]
+    },
+    "ja_文Aそれに_122": {
+      "title": "文A。それに 文B (Bun A. Soreni Bun B)",
+      "shortExplanation": "Dùng để liệt kê, bổ sung thêm thông tin hoặc lý lẽ; 'hơn nữa', 'thêm vào đó', 'vả lại'.",
+      "longExplanation": "Liên từ 'それに' dùng để nối hai câu, bổ sung thêm một sự việc, đặc điểm hoặc lý do mới vào điều đã được nêu ở câu trước. Cấu trúc thường dùng khi người nói muốn đưa ra thêm chứng cứ, lý lẽ nhằm củng cố cho nhận định chung, mang nghĩa 'hơn nữa', 'thêm vào đó', 'vả lại'. Khác với liên từ chỉ nhân quả, 'それに' đơn thuần biểu thị sự tích lũy và liệt kê song song các thông tin.",
+      "formation": "Câu A。 + それに、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Anh ấy thông minh. Hơn nữa, thể thao cũng rất cừ."
+        },
+        {
+          "translation": "Chiếc bánh ngọt này rất ngon. Thêm vào đó, giá cả lại rẻ."
+        },
+        {
+          "translation": "Tôi có thể nói tiếng Nhật. Hơn thế nữa, tôi cũng nói được tiếng Hàn."
+        },
+        {
+          "translation": "Cô ấy xinh đẹp. Thêm vào đó, tính tình cũng rất tốt."
+        }
+      ]
+    },
+    "ja_文Aだから_123": {
+      "title": "文A。だから 文B (Bun A. Dakara Bun B)",
+      "shortExplanation": "Nối hai câu diễn tả nguyên nhân dẫn đến phán đoán, hành động; 'cho nên', 'vì thế', 'do đó'.",
+      "longExplanation": "Mẫu liên từ '文A。だから 文B' dùng để diễn tả mối quan hệ nguyên nhân - kết quả mang tính chủ quan hoặc logic rõ ràng. Câu A nêu ra lý do, tiền đề, và câu B đưa ra kết luận, hành động, phán đoán, lời khuyên hoặc đề xuất của người nói dựa trên lý do đó. Trong giao tiếp hàng ngày, 'だから' rất quen thuộc và có thể đi kèm với các câu biểu thị ý chí, rủ rê hay yêu cầu ở vế sau.",
+      "formation": "Câu A。 + だから、 + Câu B。",
+      "examples": [
+        {
+          "translation": "Ngày mai có bài thi. Cho nên hôm nay tôi phải học bài."
+        },
+        {
+          "translation": "Món ăn này rất đơn giản. Vì vậy ngay cả người mới bắt đầu cũng làm được."
+        },
+        {
+          "translation": "Cậu ấy bị ốm. Do đó hôm nay cậu ấy nghỉ học."
+        },
+        {
+          "translation": "Đến ga tàu khá xa. Vì thế đi bằng taxi thì tốt hơn."
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A その上 B (A sono ue B)",
+      "shortExplanation": "Nối hai mệnh đề/câu diễn tả sự bổ sung thêm một đặc điểm cùng chiều; 'hơn nữa', 'thêm vào đó'.",
+      "longExplanation": "Cấu trúc 'A その上 B' (sono ue) được dùng để kết nối hai mệnh đề hoặc hai câu, trong đó B bổ sung thêm thông tin, đặc điểm cùng chiều tích cực hoặc tiêu cực với A. Mẫu câu này nhấn mạnh sự cộng dồn các yếu tố làm nổi bật tính chất của sự việc, tương đương với 'hơn nữa', 'thêm vào đó', 'đã vậy lại còn...'. Có thể dùng trong cả văn nói trang trọng lẫn văn viết.",
+      "formation": "Mệnh đề/Câu A + その上 (そのうえ) + Mệnh đề/Câu B",
+      "examples": [
+        {
+          "translation": "Anh ấy thông minh. Hơn nữa, thể thao cũng rất giỏi."
+        },
+        {
+          "translation": "Quán cà phê này có bầu không khí tuyệt vời. Thêm vào đó, đồ ăn cũng rất ngon."
+        },
+        {
+          "translation": "Căn hộ này gần nhà ga. Hơn nữa, tiền thuê nhà cũng rẻ."
+        },
+        {
+          "translation": "Cô ấy có năng lực trong công việc. Thêm vào đó, cô ấy có thể hòa hợp với bất kỳ ai."
+        }
+      ]
+    },
+    "ja_うちに_1": {
+      "title": "～うちに (〜uchi ni)",
+      "shortExplanation": "Diễn tả tranh thủ làm việc gì đó khi trạng thái chưa đổi, hoặc việc gì đó xảy ra trong một khoảng thời gian; 'trong khi', 'nhân lúc', 'trước khi'.",
+      "longExplanation": "Mẫu ngữ pháp '～うちに' có hai cách dùng chính: (1) Tranh thủ làm một hành động nào đó trong lúc trạng thái vẫn còn đang tiếp diễn, trước khi điều kiện thay đổi (mang ý nghĩa 'nhân lúc', 'trong khi còn...', 'trước khi...'); (2) Trong khoảng thời gian một trạng thái hay hành động đang diễn ra thì có một biến đổi khác tự nhiên xảy đến ('trong lúc đang... thì...'). Cấu trúc kết hợp với động từ (thể từ điển, thể ている, thể ない), tính từ đuôi い, tính từ đuôi な (giữ な), và danh từ (đi với の).",
+      "formation": "Động từ thể từ điển / thể ている / thể ない + うちに / Tính từ đuôi い + うちに / Tính từ đuôi な + なうちに / Danh từ + のうちに",
+      "examples": [
+        {
+          "translation": "Trong lúc còn trẻ, việc trải nghiệm nhiều điều là rất quan trọng."
+        },
+        {
+          "translation": "Tranh thủ khi trời chưa mưa, chúng ta hãy đi mua sắm nào."
+        },
+        {
+          "translation": "Hãy ăn khi đồ ăn còn nóng nhé."
+        },
+        {
+          "translation": "Trong kỳ nghỉ, tôi muốn lên kế hoạch cho chuyến du lịch."
+        }
+      ]
+    },
+    "ja_うとした_2": {
+      "title": "～うとした (〜uto shita)",
+      "shortExplanation": "Diễn tả việc vừa toan tính, định làm gì thì có trở ngại xảy ra khiến không thực hiện được; 'định... thì...', 'vừa toan...'.",
+      "longExplanation": "Mẫu câu '～（よ）うとした（g/けれど）' dùng để diễn tả khoảnh khắc người nói hoặc chủ ngữ vừa chuẩn bị, toan tính thực hiện một hành động nào đó thì ngay lúc đó có một sự cố, trở ngại hoặc lý do bất ngờ xuất hiện cản trở, khiến hành động không thành công hoặc không thể tiếp tục. Cấu trúc được tạo thành bằng cách chia động từ sang thể ý chí rồi kết hợp với 'とした'.",
+      "formation": "Động từ thể ý chí (〜よう / 〜おう) + とした (が / けれど)",
+      "examples": [
+        {
+          "translation": "Tôi vừa định nhấc máy thì đối phương đã cúp máy mất rồi."
+        },
+        {
+          "translation": "Anh ấy đã định nói thật to nhưng lại không thể thốt nên lời."
+        },
+        {
+          "translation": "Tôi đã định làm bánh gato nhưng nguyên liệu lại không đủ."
+        },
+        {
+          "translation": "Cô ấy đã toan bơi nhưng sợ hãi nên không thể xuống nước."
+        }
+      ]
+    },
+    "ja_おかげで_3": {
+      "title": "～おかげで (〜okagede)",
+      "shortExplanation": "Diễn tả nguyên nhân dẫn đến kết quả tốt đẹp, thể hiện sự cảm kích, biết ơn; 'nhờ có', 'nhờ vào'.",
+      "longExplanation": "Mẫu ngữ pháp '～おかげで' dùng để chỉ ra nguyên nhân, lý do đem lại một kết quả tích cực, tốt đẹp hoặc may mắn, đồng thời bộc lộ tâm trạng biết ơn, cảm kích đối với sự giúp đỡ hay yếu tố thuận lợi đó ('nhờ có...', 'nhờ ơn...'). Trong một số ngữ cảnh mỉa mai, cấu trúc cũng có thể dùng để châm biếm một hậu quả xấu do ai đó gây ra. Kết hợp với thể thông thường của động từ và tính từ đuôi い, tính từ đuôi な đi với 'な', danh từ đi với 'の'.",
+      "formation": "Động từ thể thông thường + おかげで / Tính từ đuôi い + おかげで / Tính từ đuôi な + なおかげで / Danh từ + のおかげで",
+      "examples": [
+        {
+          "translation": "Nhờ có mẹ mà tôi đã khỏe mạnh trở lại."
+        },
+        {
+          "translation": "Nhờ sự giúp đỡ của thầy cô mà tôi đã đỗ kỳ thi."
+        },
+        {
+          "translation": "Nhờ việc học tiếng Nhật mà tôi đã có thể hiểu được bộ phim này."
+        },
+        {
+          "translation": "Nhờ thời tiết nắng đẹp mà chuyến dã ngoại đã rất vui."
+        }
+      ]
+    },
+    "ja_かけ_4": {
+      "title": "～かけ (〜kake)",
+      "shortExplanation": "Diễn tả hành động đang làm dở dang chưa hoàn thành; 'đang... dở', 'dở dang'.",
+      "longExplanation": "Mẫu ngữ pháp '～かけ' (thường gặp dưới dạng '～かけの + Danh từ' hoặc '～かけだ') được ghép vào thân động từ thể ます để diễn tả một hành động đã bắt đầu tiến hành nhưng bị dừng lại giữa chừng và chưa hoàn tất, tức là ở trạng thái làm dở dang. Thường dùng cho các hành vi như ăn dở, đọc dở, làm dở dang... Tương đương với 'đang... dở', 'chưa xong'.",
+      "formation": "Động từ thể ます (bỏ ます) + かけ (だ / の + Danh từ)",
+      "examples": [
+        {
+          "translation": "Anh ấy đang ăn dở bữa cơm."
+        },
+        {
+          "translation": "Cuốn sách này tôi đang đọc dở, vẫn chưa đọc xong."
+        },
+        {
+          "translation": "Căn phòng này mới dọn dẹp dở dang, vẫn chưa ngăn nắp."
+        },
+        {
+          "translation": "Dự án mới bắt đầu triển khai dở chừng, dự kiến sẽ hoàn thành vào tuần tới."
+        }
+      ]
+    },
+    "ja_かなあ_5": {
+      "title": "～かなあ (〜kanaa)",
+      "shortExplanation": "Thể hiện sự băn khoăn, tự hỏi với chính mình hoặc mong muốn nhẹ nhàng; 'liệu có... không nhỉ', 'không biết là...'.",
+      "longExplanation": "Trợ từ kết thúc câu '～かなあ' (dạng kéo dài của '～かな') dùng trong độc thoại hoặc giao tiếp thân mật để biểu đạt sự nghi vấn, băn khoăn, không chắc chắn về một sự việc hoặc thể hiện mong ước nhẹ nhàng của bản thân ('liệu... có được không nhỉ', 'không biết là...'). Cấu trúc đi với thể thông thường của động từ, tính từ đuôi い; còn với tính từ đuôi な và danh từ thì thường đi trực tiếp với từ căn hoặc kết hợp với 'だ'.",
+      "formation": "Động từ thể thông thường + かなあ / Tính từ đuôi い + かなあ / Tính từ đuôi な (từ căn / だ) + かなあ / Danh từ (+ だ) + かなあ",
+      "examples": [
+        {
+          "translation": "Không biết ngày mai trời có nắng không nhỉ."
+        },
+        {
+          "translation": "Món súp này không biết có cay không nhỉ."
+        },
+        {
+          "translation": "Không biết anh ấy có phải người trầm tính không nhỉ."
+        },
+        {
+          "translation": "Không biết cô ấy có phải là bác sĩ không nhỉ."
+        }
+      ]
+    },
+    "ja_ないで_6": {
+      "title": "～ないで (〜naide)",
+      "shortExplanation": "Diễn tả làm một việc mà không thực hiện một việc khác đi kèm; 'mà không...', 'không làm... mà...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ないで' (động từ thể ない kết hợp với trợ từ 'で') dùng để diễn tả trạng thái thực hiện hành động chính ở vế sau mà bỏ qua hoặc không thực hiện hành động ở vế trước, tương đương với 'mà không...', 'không làm A mà làm B'. Nó biểu thị trạng thái đi kèm của chủ ngữ khi tiến hành hành động tiếp theo.",
+      "formation": "Động từ thể ない + で",
+      "examples": [
+        {
+          "translation": "Tôi đã gọi điện thoại mà không gặp mặt trực tiếp."
+        },
+        {
+          "translation": "Tôi đã rời nhà mà không chờ trời đổ mưa."
+        },
+        {
+          "translation": "Tôi đã biết được bí mật đó mà không hỏi bất kỳ ai."
+        },
+        {
+          "translation": "Tôi đã đi đến nhà ga mà không biết mình đã bị muộn."
+        }
+      ]
+    },
+    "ja_からにかけて_7": {
+      "title": "～から～にかけて (〜kara 〜ni kakete)",
+      "shortExplanation": "Biểu thị khoảng thời gian hoặc không gian trải dài từ điểm này đến điểm kia một cách đại khái; 'từ... đến...', 'suốt từ... qua...'.",
+      "longExplanation": "Mẫu ngữ pháp '～から～にかけて' dùng để chỉ một khoảng thời gian, không gian hoặc phạm vi mang tính đại khái, mờ nhạt từ điểm bắt đầu đến điểm kết thúc (không phân định ranh giới cứng nhắc như '～から～まで'). Thường biểu thị sự việc, hiện tượng diễn ra liên tục hoặc rải rác trong suốt phạm vi đó; tương đương với 'từ... đến...', 'suốt từ khoảng... đến khoảng...'.",
+      "formation": "Danh từ (thời gian / địa điểm / phạm vi) + から + Danh từ + にかけて",
+      "examples": [
+        {
+          "translation": "Tôi làm việc trong khoảng từ 8 giờ sáng đến 5 giờ chiều."
+        },
+        {
+          "translation": "Khu vực này hẹp trải dài từ phía bắc đến phía nam."
+        },
+        {
+          "translation": "Từ độ tuổi 10 đến 20, sự phát triển diễn ra rất nhanh chóng."
+        },
+        {
+          "translation": "Mùa hè năm nay, mưa nhiều suốt từ tháng 6 đến tháng 8."
+        }
+      ]
+    },
+    "ja_かわりに_8": {
+      "title": "～かわりに (〜kawari ni)",
+      "shortExplanation": "Diễn tả sự thay thế, đánh đổi hoặc bù lại; 'thay vì', 'thay cho', 'đổi lại'.",
+      "longExplanation": "Mẫu ngữ pháp '～かわりに' có hai ý nghĩa chính: (1) Làm việc này thay thế cho việc khác ('thay vì làm A thì làm B', 'thay mặt cho A'); (2) Bù đắp, đánh đổi ('tuy có mặt này nhưng đổi lại thì...'). Kết hợp với thể thông thường của động từ và tính từ đuôi い; tính từ đuôi な đi với 'な', danh từ đi với 'の'.",
+      "formation": "Động từ thể thông thường + かわりに / Tính từ đuôi い + かわりに / Tính từ đuôi な + なかわりに / Danh từ + のかわりに",
+      "examples": [
+        {
+          "translation": "Thay vì xem phim, tôi đã đọc sách."
+        },
+        {
+          "translation": "Hãy uống nước thay vì uống rượu bia nhé."
+        },
+        {
+          "translation": "Tôi muốn nuôi mèo thay vì nuôi chó."
+        },
+        {
+          "translation": "Thay vì đi tàu điện, tôi đã quyết định đi bằng xe đạp."
+        }
+      ]
+    },
+    "ja_きり_9": {
+      "title": "～きり (〜kiri)",
+      "shortExplanation": "Diễn tả sau khi làm việc gì thì trạng thái giữ nguyên không đổi, hoặc chỉ duy nhất; 'kể từ khi... thì không...', 'chỉ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～きり' có hai ý nghĩa nổi bật: (1) Đi sau động từ thể quá khứ (thể た), diễn tả sau khi thực hiện hành động đó thì trạng thái sự việc giữ nguyên như vậy, suốt từ đó đến nay không hề diễn ra thêm lần nào nữa hoặc không có sự biến chuyển tiếp theo (vế sau thường mang nghĩa phủ định, tương đương 'kể từ sau khi... thì bặt vô âm tín / không hề... nữa'); (2) Đi sau danh từ hoặc số từ để chỉ sự giới hạn duy nhất ('chỉ có').",
+      "formation": "Động từ thể た + きり (hoặc Động từ thể て + きり) / Danh từ + きり",
+      "examples": [
+        {
+          "translation": "Anh ấy ra ngoài suốt từ lúc đó đến giờ vẫn chưa về."
+        },
+        {
+          "translation": "Sau khi uống cà phê hôm qua, tôi chẳng uống thêm thứ gì nữa."
+        },
+        {
+          "translation": "Kể từ sau khi tốt nghiệp, tôi chưa từng gặp lại cô ấy."
+        },
+        {
+          "translation": "Kể từ lần xem bộ phim đó, tôi vẫn luôn muốn xem lại lần nữa."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_んです_119": {
+      "title": "～んです (〜n desu)",
+      "shortExplanation": "用于解释说明理由、背景或强调语气；'是因为……'、'其实是……'。",
+      "longExplanation": "句型'～んです'（口语简体为'～んだ'，书面语为'～のだ'）用于对某种情况、现状或原因进行解释、说明或提供背景信息，语气带有向对方说明因由或寻求理解的情感。动词、い形容词接普通形后接'んです'；な形容词和名词在接'んです'时需将词尾变为'な'（即'～なんです'）。",
+      "formation": "动词普通形 + んです / い形容词普通形 + んです / な形容词词干 + なんです / 名词 + なんです",
+      "examples": [
+        {
+          "translation": "我迟到了，是因为电车晚点了。"
+        },
+        {
+          "translation": "我是太累了（所以才这样的）。"
+        },
+        {
+          "translation": "其实他是一个很温柔的人。"
+        },
+        {
+          "translation": "是因为作业太多了。"
+        }
+      ]
+    },
+    "ja_文Aそのうえ_120": {
+      "title": "文A。そのうえ 文B。",
+      "shortExplanation": "用于承接前文并递进补充相关信息；'而且'、'再加上'、'更兼'。",
+      "longExplanation": "接续词'そのうえ'（写作'その上'）位于后句句首，用于在句A所叙述的事实或特征之上，进一步追加同性质的事项或补充信息。它通常用于同向递进，即前项和后项同为褒义（优点叠加）或同为贬义（缺点叠加），相当于汉语的'而且'、'再加上'、'不仅如此还……'。",
+      "formation": "句子A。 + そのうえ (その上)、 + 句子B。",
+      "examples": [
+        {
+          "translation": "这款软件很好用。而且，价格也很实惠。"
+        },
+        {
+          "translation": "她是个大美人。不仅如此，头脑也很聪明。"
+        },
+        {
+          "translation": "这部电影很有趣。再加上，演员们的演技也十分精彩。"
+        },
+        {
+          "translation": "东京有很多观光景点。而且，美味的餐馆也很多。"
+        }
+      ]
+    },
+    "ja_文Aそれで_121": {
+      "title": "文A。それで 文B (Bun A. Sorede Bun B)",
+      "shortExplanation": "表示顺接因果关系，后项为自然产生的结果；'因此'、'所以'、'于是'。",
+      "longExplanation": "接续词'それで'位于句首连接两句话，表示句子A是原因、前提或背景，句子B是其自然引发的结果或随之发生的事态。常用于日常对话或叙述事情的前因后果，相当于汉语的'因此'、'所以'、'于是'。需要注意的是，后句通常是既成事实或自然的结果，一般不用于表示命令、请求或强烈的个人意志。",
+      "formation": "句子A。 + それで、 + 句子B。",
+      "examples": [
+        {
+          "translation": "今天天气很热。所以，我打开了空调。"
+        },
+        {
+          "translation": "电车晚点了。因此，我上班迟到了。"
+        },
+        {
+          "translation": "他很疲惫。于是，决定早点睡觉。"
+        },
+        {
+          "translation": "我通过了考试。所以，和朋友们举办了庆祝派对。"
+        }
+      ]
+    },
+    "ja_文Aそれに_122": {
+      "title": "文A。それに 文B (Bun A. Soreni Bun B)",
+      "shortExplanation": "用于追加并列的事项、理由或情况；'而且'、'再加上'、'此外'。",
+      "longExplanation": "接续词'それに'置于句首连接两句话，用于在前文所述内容的基础上，进一步追加并列的同类事实、特征或理由，以增强说服力或使描述更加全面。相当于汉语的'而且'、'此外'、'再加上'。与表示因果的接续词不同，'それに'侧重于事项的累加与递进补充。",
+      "formation": "句子A。 + それに、 + 句子B。",
+      "examples": [
+        {
+          "translation": "他很聪明。而且，运动也很在行。"
+        },
+        {
+          "translation": "这款蛋糕很好吃。此外，价格也很便宜。"
+        },
+        {
+          "translation": "我会说日语。再加上，我还会说韩语。"
+        },
+        {
+          "translation": "她是个美女。而且，性格也很好。"
+        }
+      ]
+    },
+    "ja_文Aだから_123": {
+      "title": "文A。だから 文B (Bun A. Dakara Bun B)",
+      "shortExplanation": "表示明确的因果关系，引出判断、结论或主观主张；'所以'、'因此'。",
+      "longExplanation": "接续词'だから'连接两个句子，将前句A作为理由、根据，在后句B中引出说话人的结论、行动、判断、建议或意志。与单纯陈述客观结果的'それで'相比，'だから'的后句常常可以接说话人的主观意图、愿望、劝诱或命令，相当于汉语的'所以'、'因此'。",
+      "formation": "句子A。 + だから、 + 句子B。",
+      "examples": [
+        {
+          "translation": "明天有考试。所以今天必须学习。"
+        },
+        {
+          "translation": "这道菜很简单。因此就算是新手也能做。"
+        },
+        {
+          "translation": "他生病了。所以今天向学校请假。"
+        },
+        {
+          "translation": "到车站挺远的。因此最好坐出租车去。"
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A その上 B (A sono ue B)",
+      "shortExplanation": "用于连接两个分句或句子，递进追加同性质的信息；'而且'、'再加上'、'更兼'。",
+      "longExplanation": "句型'A その上 B'用于连接两个分句或句子，表示在事项A的基础之上，进一步叠加具有相同倾向（均为优点或均为缺点）的事项B。它强调程度的累加与递进，相当于汉语中的'不仅……而且……'、'再加上'、'而且还……'。既可用于书面语，也可用于偏正式的口语表达。",
+      "formation": "分句/句子A + その上 (そのうえ) + 分句/句子B",
+      "examples": [
+        {
+          "translation": "他头脑聪明。而且，体育也很擅长。"
+        },
+        {
+          "translation": "这家咖啡馆气氛很好。再加上，饭菜也很美味。"
+        },
+        {
+          "translation": "这间公寓离车站很近。而且，房租也很便宜。"
+        },
+        {
+          "translation": "她工作能力出众。此外，跟谁都能相处融洽。"
+        }
+      ]
+    },
+    "ja_うちに_1": {
+      "title": "～うちに (〜uchi ni)",
+      "shortExplanation": "表示趁着某种状态尚未改变而做某事，或在某期间内发生了某事；'趁着……'、'在……期间'、'在……之前'。",
+      "longExplanation": "句型'～うちに'主要有两种用法：(1) 表示趁着某种状态尚未发生变化或某个时间段尚未结束，抓紧时间做某事，相当于'趁着……'、'在……之前'；(2) 表示在持续某种状态的过程中不知不觉发生了某种变化或事态，相当于'在……的过程中'。接续时，动词接辞书形、ている形或ない形；い形容词接原形；な形容词接'～な'；名词接'～の'。",
+      "formation": "动词辞书形 / ている形 / ない形 + うちに / い形容词 + うちに / な形容词词干 + なうちに / 名词 + のうちに",
+      "examples": [
+        {
+          "translation": "趁着年轻，多体验各种各样的事情是很重要的。"
+        },
+        {
+          "translation": "趁着还没下雨，去买东西吧。"
+        },
+        {
+          "translation": "趁菜还热，赶紧吃吧。"
+        },
+        {
+          "translation": "我想在假期期间制定旅行计划。"
+        }
+      ]
+    },
+    "ja_うとした_2": {
+      "title": "～うとした (〜uto shita)",
+      "shortExplanation": "表示正打算做某事或尝试做某事，但由于某种妨碍未能实现；'正打算……却……'、'正要……'。",
+      "longExplanation": "句型'～（よ）うとした（が/けれど）'用于表达当事人正准备实行某项动作，或试图做某事时，突然出现某种阻碍、意外或因客观原因导致该动作无法实现、中断。由动词意志形（～よう / ～おう）加上'とした'构成，后文往往紧接转折词'が'或'けれど'来陈述受阻的情况。",
+      "formation": "动词意志形 (～よう / ～おう) + とした (が / けれど)",
+      "examples": [
+        {
+          "translation": "我刚打算接电话，对方却已经挂断了。"
+        },
+        {
+          "translation": "他打算大声说话，但话到嘴边却说不出来。"
+        },
+        {
+          "translation": "我本来打算做蛋糕，但原料不够了。"
+        },
+        {
+          "translation": "她正打算游泳，却因害怕而不敢下水。"
+        }
+      ]
+    },
+    "ja_おかげで_3": {
+      "title": "～おかげで (〜okagede)",
+      "shortExplanation": "表示由于某种原因而带来了积极良好的结果，带有感谢之意；'多亏了……'、'托……的福'。",
+      "longExplanation": "句型'～おかげで'（多亏、托福）用于表达某种原因、恩惠或他人的帮助带来了令人满意、积极正面的好结果，常伴随说话人的感谢与庆幸之情。（在讽刺语境下也可用于指责他人造成的糟糕后果）。接续方面，动词和い形容词接普通形，な形容词接词尾'な'，名词后接助词'の'。",
+      "formation": "动词普通形 + おかげで / い形容词 + おかげで / な形容词词干 + なおかげで / 名词 + のおかげで",
+      "examples": [
+        {
+          "translation": "多亏了妈妈，我恢复了健康。"
+        },
+        {
+          "translation": "多亏了老师的帮助，我通过了考试。"
+        },
+        {
+          "translation": "多亏学了日语，我才能理解这部电影。"
+        },
+        {
+          "translation": "托放晴天气的福，野餐非常开心。"
+        }
+      ]
+    },
+    "ja_かけ_4": {
+      "title": "～かけ (〜kake)",
+      "shortExplanation": "表示动作刚开始进行或进行到一半中途停顿、尚未完成；'做了一半'、'刚开始……'。",
+      "longExplanation": "句型'～かけ'连接在动词ます形词干之后（常作'～かけの＋名词'或'～かけだ'），用于表示某个动作已经开始但中途停下、尚未全部完成的状态，相当于汉语的'刚开始……'、'做到一半还未完成'、'……到中途'。例如'食べかけ'（吃了一半）、'読みかけ'（读到中途）。",
+      "formation": "动词ます形去掉ます + かけ (だ / の + 名词)",
+      "examples": [
+        {
+          "translation": "他的饭刚吃到一半。"
+        },
+        {
+          "translation": "这本书我读到一半，还没有读完。"
+        },
+        {
+          "translation": "这个房间打扫了一半，还没有收拾整齐。"
+        },
+        {
+          "translation": "项目刚开始推进，预计下周可以完工。"
+        }
+      ]
+    },
+    "ja_かなあ_5": {
+      "title": "～かなあ (〜kanaa)",
+      "shortExplanation": "用于自言自语或随口询问，表达不确定、推测或隐约的期盼；'……吧'、'不知道会不会……呢'。",
+      "longExplanation": "句尾助词'～かなあ'（为'～かな'的拉长形式，语气更加轻柔悠长）常用于自言自语或非正式对话中，表达说话人内心的疑问、不确定、猜测或淡淡的愿望，相当于汉语中的'不知道……呢'、'会不会……呀'、'大概……吧'。动词、い形容词接普通形，な形容词和名词接词干或接普通形后加'かなあ'。",
+      "formation": "动词普通形 + かなあ / い形容词 + かなあ / な形容词词干 (+ だ) + かなあ / 名词 (+ だ) + かなあ",
+      "examples": [
+        {
+          "translation": "不知道明天会不会放晴呢。"
+        },
+        {
+          "translation": "这个汤不知道辣不辣呢。"
+        },
+        {
+          "translation": "不知道他是不是个安静的人呢。"
+        },
+        {
+          "translation": "不知道她是不是医生呢。"
+        }
+      ]
+    },
+    "ja_ないで_6": {
+      "title": "～ないで (〜naide)",
+      "shortExplanation": "表示不做某事就进行后项动作（伴随状态）；'不……而……'、'在没……的情况下'。",
+      "longExplanation": "句型'～ないで'由动词ない形后接助词'で'构成，表示在不做前项动作的状态下，进行后项的主要动作，相当于汉语中的'不……就……'、'没有做……而……'。它体现的是后项动作发生时所伴随的一种否定状态。",
+      "formation": "动词ない形 + で",
+      "examples": [
+        {
+          "translation": "我没有见面就打了那通电话。"
+        },
+        {
+          "translation": "我没有等下雨就走出了家门。"
+        },
+        {
+          "translation": "我没有向任何人打听就得知了那个秘密。"
+        },
+        {
+          "translation": "我不知道已经迟到了，直接前往了车站。"
+        }
+      ]
+    },
+    "ja_からにかけて_7": {
+      "title": "～から～にかけて (〜kara 〜ni kakete)",
+      "shortExplanation": "表示时间、空间或范围从起点大致延伸到终点（边界相对模糊）；'从……到……'、'由……至……'。",
+      "longExplanation": "句型'～から～にかけて'用于表示时间、空间或某种数值的大致范围。与界限明确具体的'～から～まで'相比，'～にかけて'表示起讫界限相对模糊、连绵不绝的过程或区域，常伴随在这一范围内断断续续或持续发生的状态，相当于汉语的'从……到……'、'由……至……的一带/期间'。",
+      "formation": "名词 (时间/场所/范围) + から + 名词 + にかけて",
+      "examples": [
+        {
+          "translation": "我在上午8点到下午5点之间工作。"
+        },
+        {
+          "translation": "这个地区从北向南一带地势狭窄。"
+        },
+        {
+          "translation": "从10岁到20岁期间生长发育很快。"
+        },
+        {
+          "translation": "今年夏天，从6月到8月期间雨水很多。"
+        }
+      ]
+    },
+    "ja_かわりに_8": {
+      "title": "～かわりに (〜kawari ni)",
+      "shortExplanation": "表示代替、替代或作为补偿与交换；'代替'、'作为……的补偿/代偿'、'而不是'。",
+      "longExplanation": "句型'～かわりに'（代わり）主要有两种用法：(1) 表示作为替代，不做前项而做后项，或由某人替代另一个人，相当于'代替……'、'而不做……'；(2) 表示前后两项存在补偿、抵消或代价关系（虽然有A的好处，但代价是B；或者虽然有A的不足，但作为补偿有B）。接续时，动词和い形容词接普通形，な形容词接'～な'，名词接'～の'。",
+      "formation": "动词普通形 + かわりに / い形容词 + かわりに / な形容词词干 + なかわりに / 名词 + のかわりに",
+      "examples": [
+        {
+          "translation": "我没有看电影，而是读了一本书。"
+        },
+        {
+          "translation": "请多喝水来代替喝酒。"
+        },
+        {
+          "translation": "我想养猫来代替养狗。"
+        },
+        {
+          "translation": "为了不坐电车，我决定骑自行车去。"
+        }
+      ]
+    },
+    "ja_きり_9": {
+      "title": "～きり (〜kiri)",
+      "shortExplanation": "表示自从做了某事之后，其状态一直持续没有再次发生变化；'自……之后一直没有……'、'仅仅'。",
+      "longExplanation": "句型'～きり'主要有两种用法：(1) 接在动词た形后，表示在发生某动作之后，其状态就一直维持不变，之后预想中的后续动作再未发生（后句多为否定式，表示'自从……之后就一直没有……'）；(2) 接在数量词或名词后，表示限定唯一，相当于'仅仅……'、'只有……'（常带有单独、孤立的感触，如'二人きり'两人独处）。",
+      "formation": "动词た形 + きり（亦可接动词て形 + きり） / 名词 + きり",
+      "examples": [
+        {
+          "translation": "他出门之后就一直没有回来。"
+        },
+        {
+          "translation": "昨天喝了咖啡之后，我什么都没喝过。"
+        },
+        {
+          "translation": "毕业之后，我就再也没见过她。"
+        },
+        {
+          "translation": "自从看了那部电影之后，我一直很想再看一遍。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_んです_119": {
+      "title": "～んです (〜n desu)",
+      "shortExplanation": "이유나 사정을 설명하거나 상황의 배경을 강조할 때 쓰이며, '~한 것입니다', '~하거든요'라는 뜻입니다.",
+      "longExplanation": "'～んです' 문형은 상대방에게 어떤 상황이나 행동에 대한 이유, 사정, 배경을 설명하거나 강조하여 전달할 때 사용됩니다. 구어 반말형인 '～んだ'나 문어체인 '～のだ'와 같은 의미이며, 대화에서 상황을 친절하게 풀어서 설명하거나 양해를 구할 때 자주 쓰입니다. 동사와 い형용사의 보통형 뒤에 붙으며, な형용사와 명사는 보통형 현재 긍정형에서 'だ' 대신 'な'를 붙여 '～なんです'의 형태로 접속합니다.",
+      "formation": "동사 보통형 + んです / い형용사 + んです / な형용사 어간 + なんです / 명사 + なんです",
+      "examples": [
+        {
+          "translation": "늦었습니다만, 전철이 연착되었습니다."
+        },
+        {
+          "translation": "피곤해서 그렇습니다."
+        },
+        {
+          "translation": "그는 사실 매우 친절합니다."
+        },
+        {
+          "translation": "숙제가 많아서 그렇습니다."
+        }
+      ]
+    },
+    "ja_文Aそのうえ_120": {
+      "title": "文A。そのうえ 文B。",
+      "shortExplanation": "앞의 내용에 새로운 정보를 덧붙이는 접속 표현으로, '게다가', '더욱이', '그 위에'라는 뜻입니다.",
+      "longExplanation": "접속사 'そのうえ(その上)'는 앞 문장 A에서 제시한 내용에 더하여 뒷문장 B에서 관련된 정보나 사실을 추가로 덧붙일 때 사용합니다. 앞뒤 문장이 대등하게 같은 성격(긍정적인 점에 긍정적인 점을 추가하거나, 부정적인 점에 부정적인 점을 추가)을 띠며, 한국어의 '게다가', '더군다나', '그뿐만 아니라'에 해당합니다.",
+      "formation": "문장 A。 + そのうえ (その上)、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "이 소프트웨어는 사용하기 쉽습니다. 게다가 가격도 적당합니다."
+        },
+        {
+          "translation": "그녀는 미인입니다. 게다가 머리도 좋습니다."
+        },
+        {
+          "translation": "이 영화는 재미있습니다. 게다가 배우들의 연기도 훌륭합니다."
+        },
+        {
+          "translation": "도쿄는 관광 명소가 많습니다. 더욱이 맛있는 식당도 많습니다."
+        }
+      ]
+    },
+    "ja_文Aそれで_121": {
+      "title": "文A。それで 文B (Bun A. Sorede Bun B)",
+      "shortExplanation": "앞뒤 문장의 자연스러운 인과관계를 나타내며, '그래서', '그 때문에', '그러므로'라는 뜻입니다.",
+      "longExplanation": "'それで'는 앞 문장 A를 원인이나 이유, 계기로 삼아 뒷문장 B에서 자연스럽게 일어난 결과나 상황을 연결하는 접속사입니다. 일상 대화에서 전후 사정을 설명하거나 사건의 경과를 이야기할 때 자주 쓰이며, 한국어의 '그래서', '그리하여', '그 때문에'에 해당합니다. 뒷문장에는 주로 기정사실이나 자연스러운 결과가 오며, 권유나 명령 표현은 잘 오지 않습니다.",
+      "formation": "문장 A。 + それで、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "오늘은 덥습니다. 그래서 에어컨을 켰습니다."
+        },
+        {
+          "translation": "전철이 늦었습니다. 그래서 출근에 늦고 말았습니다."
+        },
+        {
+          "translation": "그는 피곤해하고 있다. 그래서 일찍 자기로 했다."
+        },
+        {
+          "translation": "시험에 합격했습니다. 그래서 친구들과 축하 파티를 열었습니다."
+        }
+      ]
+    },
+    "ja_文Aそれに_122": {
+      "title": "文A。それに 文B (Bun A. Soreni Bun B)",
+      "shortExplanation": "앞의 내용에 다른 사실이나 이유를 덧붙여 나열할 때 쓰이며, '게다가', '더구나', '거기에다'라는 뜻입니다.",
+      "longExplanation": "접속사 'それに'는 앞 문장 A에서 말한 내용에 덧붙여 또 다른 사항, 특징, 이유 등을 첨가하여 나열할 때 사용합니다. 앞 문장의 내용을 보강하거나 더욱 강조하는 뉘앙스를 지니며, 한국어의 '게다가', '더욱이', '거기에'에 해당합니다. 단순한 인과관계가 아니라 병렬적인 정보의 추가를 나타냅니다.",
+      "formation": "문장 A。 + それに、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "그는 머리가 좋다. 게다가 운동도 잘한다."
+        },
+        {
+          "translation": "이 케이크는 맛있다. 거기에다 가격도 싸다."
+        },
+        {
+          "translation": "저는 일본어를 할 수 있습니다. 게다가 한국어도 할 수 있습니다."
+        },
+        {
+          "translation": "그녀는 미인이다. 게다가 성격도 좋다."
+        }
+      ]
+    },
+    "ja_文Aだから_123": {
+      "title": "文A。だから 文B (Bun A. Dakara Bun B)",
+      "shortExplanation": "앞 문장의 이유나 근거에 따라 뒤 문장의 판단이나 행동을 이끌어내며, '그러니까', '그래서'라는 뜻입니다.",
+      "longExplanation": "접속사 'だから'는 앞 문장 A를 이유나 근거로 삼아, 뒷문장 B에서 화자의 판단, 결론, 행동, 권유 등을 이끌어낼 때 사용합니다. 'それで'가 객관적인 결과의 서술에 주로 쓰이는 반면, 'だから'는 뒷부분에 말하는 사람의 의지나 권유, 주장, 명령 등이 올 수 있습니다. 한국어의 '그러니까', '그래서'에 해당합니다.",
+      "formation": "문장 A。 + だから、 + 문장 B。",
+      "examples": [
+        {
+          "translation": "내일은 시험이다. 그러니까 오늘 공부해야만 한다."
+        },
+        {
+          "translation": "이 요리는 간단하다. 그래서 초보자라도 만들 수 있다."
+        },
+        {
+          "translation": "그는 아프다. 그래서 오늘 학교를 쉰다."
+        },
+        {
+          "translation": "역까지 멀다. 그러니까 택시를 타고 가는 편이 좋다."
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A その上 B (A sono ue B)",
+      "shortExplanation": "앞의 내용에 동질적인 사항을 덧붙여 강조할 때 쓰이며, '게다가', '더욱이', '그 위에'라는 뜻입니다.",
+      "longExplanation": "'A その上 B' 문형은 두 절이나 문장을 연결하여, 선행 사항 A에 더해 동일한 성격(장점 위에 장점, 혹은 단점 위에 단점)의 새로운 정보 B를 덧붙일 때 사용합니다. 어떤 상황이나 성질이 중첩되어 한층 더 두드러짐을 나타내며, 한국어의 '게다가', '더군다나', '그뿐만 아니라'에 해당합니다.",
+      "formation": "절/문장 A + その上 (そのうえ) + 절/문장 B",
+      "examples": [
+        {
+          "translation": "그는 머리가 좋다. 게다가 운동도 잘한다."
+        },
+        {
+          "translation": "이 카페는 분위기가 좋다. 게다가 음식도 맛있다."
+        },
+        {
+          "translation": "이 아파트는 역에서 가깝다. 더욱이 집세도 싸다."
+        },
+        {
+          "translation": "그녀는 일을 잘한다. 게다가 누구와도 금방 친해진다."
+        }
+      ]
+    },
+    "ja_うちに_1": {
+      "title": "～うちに (〜uchi ni)",
+      "shortExplanation": "어떤 상태가 변하기 전에 무엇을 하거나 그 사이에 변화가 일어남을 나타내며, '~하는 동안에', '~하기 전에', '~할 때'라는 뜻입니다.",
+      "longExplanation": "'～うちに' 문형은 크게 두 가지 의미로 쓰입니다: (1) 어떤 상황이나 상태가 지속되는 동안(변하기 전)에 기회를 놓치지 않고 어떤 동작을 행함을 나타낼 때('~하는 동안에', '~하기 전에', '채 ~하기 전에'); (2) 어떤 상태가 이어지는 과정에서 생각지 못한 변화가 자연스럽게 일어났음을 나타낼 때('~하고 있는 사이에'). 동사 사전형·ている형·ない형, い형용사, な형용사(+な), 명사(+の) 뒤에 접속합니다.",
+      "formation": "동사 사전형 / ている형 / ない형 + うちに / い형용사 + うちに / な형용사 어간 + なうちに / 명사 + のうちに",
+      "examples": [
+        {
+          "translation": "젊었을 때 다양한 경험을 해 두는 것이 중요합니다."
+        },
+        {
+          "translation": "비가 내리지 않는 동안에 장을 보러 가자."
+        },
+        {
+          "translation": "음식이 따뜻할 때 먹읍시다."
+        },
+        {
+          "translation": "휴일 동안에 여행 계획을 세우고 싶습니다."
+        }
+      ]
+    },
+    "ja_うとした_2": {
+      "title": "～うとした (〜uto shita)",
+      "shortExplanation": "막 어떤 행동을 하려고 하던 찰나에 방해나 차질이 생겨 하지 못했음을 나타내며, '~하려고 했으나', '~하려던 참이었는데'라는 뜻입니다.",
+      "longExplanation": "'～（よ）うとした（が/けれど）' 문형은 어떤 행동이나 동작을 막 개시하려고 시도하던 바로 그 순간에 예기치 못한 방해나 이유가 생겨 결국 그 동작을 완수하지 못했거나 중단되었음을 나타냅니다. 동사의 의지형에 'とした'를 붙여 형성하며, 뒤에는 주로 역접의 '가'나 'けれど'가 이어져 실패한 상황이나 좌절된 배경을 설명합니다.",
+      "formation": "동사 의지형 (～よう / ～おう) + とした (が / けれど)",
+      "examples": [
+        {
+          "translation": "전화를 받으려고 했지만 상대방이 끊어 버렸습니다."
+        },
+        {
+          "translation": "그는 큰 소리로 말하려고 했으나 말이 나오지 않았습니다."
+        },
+        {
+          "translation": "케이크를 만들려고 했지만 재료가 부족했습니다."
+        },
+        {
+          "translation": "그녀는 수영을 하려고 했으나 무서워서 물에 들어가지 못했습니다."
+        }
+      ]
+    },
+    "ja_おかげで_3": {
+      "title": "～おかげで (〜okagede)",
+      "shortExplanation": "어떤 원인이나 도움 덕분에 좋은 결과가 생겼음을 나타내며 감사의 뉘앙스를 담아, '~덕분에', '~덕택에'라는 뜻입니다.",
+      "longExplanation": "'～おかげで' 문형은 사람의 도움, 은혜, 유리한 조건 등이 원인이 되어 긍정적이고 바람직한 결과가 생겼을 때 감사나 다행스러움을 담아 사용하는 표현입니다(반어적으로 탓을 돌릴 때도 쓰입니다). 한국어의 '~덕분에', '~덕택에'에 해당합니다. 동사와 い형용사 보통형, な형용사(+な), 명사(+の) 뒤에 접속합니다.",
+      "formation": "동사 보통형 + おかげで / い형용사 + おかげで / な형용사 어간 + なおかげで / 명사 + のおかげで",
+      "examples": [
+        {
+          "translation": "어머니 덕분에 저는 건강해졌습니다."
+        },
+        {
+          "translation": "선생님의 도움 덕분에 시험에 합격했습니다."
+        },
+        {
+          "translation": "일본어 공부 덕분에 이 영화를 이해할 수 있었습니다."
+        },
+        {
+          "translation": "화창한 날씨 덕분에 소풍이 즐거웠습니다."
+        }
+      ]
+    },
+    "ja_かけ_4": {
+      "title": "～かけ (〜kake)",
+      "shortExplanation": "어떤 동작을 하다가 중간에 멈추어 아직 끝나지 않은 상태를 나타내며, '하다 만', '~하던 중'이라는 뜻입니다.",
+      "longExplanation": "'～かけ' 문형은 동사의 ます형 어간에 붙어(주로 '～かけの + 명사' 또는 '～かけだ' 형태), 어떤 행동이 이미 시작되었으나 중간에 중단되어 아직 완전히 끝나지 않은 미완성 상태를 나타냅니다. 한국어의 '하다 만', '~하던 중인', '~하려다 만'에 해당합니다. (예: 食べかけ 먹다 만 것, 読みかけ 읽다 만 것).",
+      "formation": "동사 ます형 어간 + かけ (だ / の + 명사)",
+      "examples": [
+        {
+          "translation": "그는 밥을 먹다 만 상태입니다."
+        },
+        {
+          "translation": "이 책은 읽다 만 상태여서 아직 다 읽지 못했습니다."
+        },
+        {
+          "translation": "이 방은 청소를 하다 말아서 아직 정돈되지 않았습니다."
+        },
+        {
+          "translation": "프로젝트는 진행 중인 상태이며 다음 주에 완료될 예정입니다."
+        }
+      ]
+    },
+    "ja_かなあ_5": {
+      "title": "～かなあ (〜kanaa)",
+      "shortExplanation": "혼잣말이나 가벼운 의문, 소망을 나타내며, '~일까', '~할까', '~인지 모르겠네'라는 뜻입니다.",
+      "longExplanation": "종조사 '～かなあ'는 주로 혼잣말이나 격식 없는 편한 대화에서 쓰이며, 어떤 사실에 대해 확신이 서지 않아 혼자 의문을 품거나 막연한 추측, 완곡한 바람을 나타낼 때 사용합니다. 한국어의 '~일까', '~하려나', '~인가 모르겠네'에 해당합니다. 동사와 い형용사 보통형, な형용사 어간(또는 だ), 명사(또는 だ) 뒤에 결합합니다.",
+      "formation": "동사 보통형 + かなあ / い형용사 + かなあ / な형용사 어간 (+ だ) + かなあ / 명사 (+ だ) + かなあ",
+      "examples": [
+        {
+          "translation": "내일 날씨가 맑으려나."
+        },
+        {
+          "translation": "이 수프 매울까?"
+        },
+        {
+          "translation": "그는 조용한 사람일까?"
+        },
+        {
+          "translation": "그녀는 의사일까?"
+        }
+      ]
+    },
+    "ja_ないで_6": {
+      "title": "～ないで (〜naide)",
+      "shortExplanation": "앞의 행동을 하지 않은 상태로 뒤의 행동을 함을 나타내며, '~하지 않고', '~하지 않은 채'라는 뜻입니다.",
+      "longExplanation": "'～ないで' 문형은 동사의 ない형에 조사 'で'가 붙어 형성되며, 선행 동작을 행하지 않은 부수적 상태를 유지하면서 후행의 주된 동작을 실행함을 나타냅니다. 한국어의 '~하지 않고', '~하지 않은 채(로)'에 해당합니다.",
+      "formation": "동사 ない형 + で",
+      "examples": [
+        {
+          "translation": "만나지 않고 그 전화를 걸었습니다."
+        },
+        {
+          "translation": "비가 내리기를 기다리지 않고 집을 나섰습니다."
+        },
+        {
+          "translation": "아무에게도 묻지 않고 그 비밀을 알게 되었습니다."
+        },
+        {
+          "translation": "늦는 줄도 모른 채 역으로 향했습니다."
+        }
+      ]
+    },
+    "ja_からにかけて_7": {
+      "title": "～から～にかけて (〜kara 〜ni kakete)",
+      "shortExplanation": "시간이나 공간, 범위의 대략적인 시작점부터 끝점까지를 나타내며, '~부터 ~에 걸쳐(서)'라는 뜻입니다.",
+      "longExplanation": "'～から～にかけて' 문형은 시간이나 장소, 범위의 대략적인 시작점과 끝점을 나타내는 표현입니다. 경계선이 명확하게 구분되는 '～から～まで'와 달리, 그 범위의 경계가 다소 모호하고 전체에 걸쳐서 어떤 상태나 현상이 지속되거나 산발적으로 이어짐을 나타냅니다. 한국어의 '~부터 ~에 걸쳐(서)'에 해당합니다.",
+      "formation": "명사 (시간/장소/범위) + から + 명사 + にかけて",
+      "examples": [
+        {
+          "translation": "오전 8시부터 오후 5시에 걸쳐 일하고 있습니다."
+        },
+        {
+          "translation": "이 지역은 북쪽에서 남쪽에 걸쳐 폭이 좁습니다."
+        },
+        {
+          "translation": "10세부터 20세에 걸쳐 성장이 빠릅니다."
+        },
+        {
+          "translation": "올여름은 6월부터 8월에 걸쳐 비가 많았습니다."
+        }
+      ]
+    },
+    "ja_かわりに_8": {
+      "title": "～かわりに (〜kawari ni)",
+      "shortExplanation": "다른 것으로 대신하거나 대가·보상 관계를 나타내며, '~대신에', '~하는 한편'이라는 뜻입니다.",
+      "longExplanation": "'～かわりに' 문형은 크게 두 가지로 쓰입니다: (1) 어떤 일이나 대상을 다른 것으로 대체함을 나타낼 때('~대신에', '~하지 않고'); (2) 대가나 보상의 관계를 나타내어 한쪽의 장단점에 대응하는 다른 성질이 있음을 보일 때('~하는 대신에', '~하는 대가로'). 동사와 い형용사 보통형, な형용사(+な), 명사(+の) 뒤에 접속합니다.",
+      "formation": "동사 보통형 + かわりに / い형용사 + かわりに / な형용사 어간 + なかわりに / 명사 + のかわりに",
+      "examples": [
+        {
+          "translation": "영화를 보는 대신에 책을 읽었습니다."
+        },
+        {
+          "translation": "술을 마시는 대신 물을 드셔 주세요."
+        },
+        {
+          "translation": "개 대신에 고양이를 기르고 싶습니다."
+        },
+        {
+          "translation": "전철을 이용하지 않는 대신 자전거로 가기로 했습니다."
+        }
+      ]
+    },
+    "ja_きり_9": {
+      "title": "～きり (〜kiri)",
+      "shortExplanation": "어떤 동작을 한 뒤 그 상태가 계속 이어져 다음 동작이나 변화가 없음을 나타내며, '~한 이래', '~한 채(로)'라는 뜻입니다.",
+      "longExplanation": "'～きり' 문형은 크게 두 가지 의미로 사용됩니다: (1) 동사의 과거형(た형) 뒤에 접속하여, 어떤 행동이 일어난 이후 그 상태가 그대로 지속되어 예상되는 다음 행동이나 변화가 일어나지 않음을 나타냅니다(주로 뒷문장에 부정적인 결과나 부정문이 와서 '~한 이후로 줄곧 ~하지 않다'라는 의미가 됨); (2) 명사나 수량사 뒤에 붙어 오직 그것뿐임을 나타내는 한정의 의미('단둘이서', '오직 ~뿐')로 쓰입니다.",
+      "formation": "동사 た형 + きり (또는 동사 て형 + きり) / 명사 + きり",
+      "examples": [
+        {
+          "translation": "그는 나간 채로 돌아오지 않습니다."
+        },
+        {
+          "translation": "어제 커피를 마신 이후로 아무것도 마시지 않았습니다."
+        },
+        {
+          "translation": "졸업한 이래 그녀를 만나지 못했습니다."
+        },
+        {
+          "translation": "그 영화를 본 이래 다시 한번 보고 싶다고 생각하고 있습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_んです_119": {
+      "title": "～んです (〜n desu)",
+      "shortExplanation": "理由や事情を説明したり、状況の背景を強調したりする表現で、「〜のです」「〜わけです」という意味を表します。",
+      "longExplanation": "「～んです」（書き言葉の「～のだ」、くだけた口語の「～んだ」の丁寧な表現）は、相手に対してある事態や行動の理由・原因・事情を説明したり、背景にある情報を強調して伝えたりするときに用いる文法です。相手との共感や理解を促すニュアンスを含みます。動詞・い形容詞の普通形にそのまま接続し、な形容詞や名詞の現在肯定形には「だ」の代わりに「な」をつけて「～なんです」の形をとります。",
+      "formation": "動詞普通形 ＋ んです / い形容詞普通形 ＋ んです / な形容詞語幹 ＋ なんです / 名詞 ＋ なんです",
+      "examples": [
+        {
+          "translation": "遅れたんですが、電車が遅れました。"
+        },
+        {
+          "translation": "疲れたんです。"
+        },
+        {
+          "translation": "彼は優しいんです。"
+        },
+        {
+          "translation": "宿題が多いんです。"
+        }
+      ]
+    },
+    "ja_文Aそのうえ_120": {
+      "title": "文A。そのうえ 文B。",
+      "shortExplanation": "前の文の内容にさらに別の情報を付け加える接続表現で、「それに加えて」「さらに」「おまけに」という意味を表します。",
+      "longExplanation": "「そのうえ（その上）」は、文Aで述べた事柄に加えて、同じ方向性（良いことには良いこと、悪いことには悪いこと）の新しい事実や情報を文Bで付け足す接続詞です。「それに加えて」「さらに」「おまけに」などの意味を持ち、事態の累積や強調を表します。",
+      "formation": "文A。 ＋ そのうえ（その上）、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "このソフトウェアは使いやすい。そのうえ、価格も手ごろだ。"
+        },
+        {
+          "translation": "彼女は美人だ。そのうえ、頭もいい。"
+        },
+        {
+          "translation": "この映画は面白い。そのうえ、俳優たちの演技も素晴らしい。"
+        },
+        {
+          "translation": "東京はたくさんの観光スポットがある。そのうえ、美味しいレストランも多い。"
+        }
+      ]
+    },
+    "ja_文Aそれで_121": {
+      "title": "文A。それで 文B (Bun A. Sorede Bun B)",
+      "shortExplanation": "前後の文の因果関係を表し、「だから」「その結果」「そういうわけで」という意味を表します。",
+      "longExplanation": "「それで」は、文Aを原因・理由・きっかけとして、その結果として生じた事態や自然な帰結を文Bで述べる順接の接続詞です。日常会話や出来事の経緯を説明するときによく用いられ、「そのため」「そういうわけで」「その結果」などのニュアンスを持ちます。後続の文には自然な結果や過去の事実が来ることが多く、命令や強い働きかけの文にはあまり用いられません。",
+      "formation": "文A。 ＋ それで、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "今日は暑いです。それで、エアコンをつけました。"
+        },
+        {
+          "translation": "電車が遅れました。それで、仕事に遅れてしまいました。"
+        },
+        {
+          "translation": "彼は疲れている。それで、早く寝ることにした。"
+        },
+        {
+          "translation": "試験に合格しました。それで、友達とお祝いパーティーを開きました。"
+        }
+      ]
+    },
+    "ja_文Aそれに_122": {
+      "title": "文A。それに 文B (Bun A. Soreni Bun B)",
+      "shortExplanation": "前の文の内容に別の事柄や理由を付け足す接続表現で、「さらに」「そのうえ」「おまけに」という意味を表します。",
+      "longExplanation": "「それに」は、文Aで述べた事柄に対して、さらに別の事実、特徴、根拠などを並列的に付け加える接続詞です。自分の意見や描写を補強・強調する際によく用いられ、「さらに」「そのうえ」「加えて」などのニュアンスを持ちます。原因と結果を示すのではなく、同類の情報の追加を表す点に特徴があります。",
+      "formation": "文A。 ＋ それに、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "彼は頭がいい。それに、スポーツも得意だ。"
+        },
+        {
+          "translation": "このケーキはおいしい。それに、値段も安い。"
+        },
+        {
+          "translation": "私は日本語が話せます。それに、韓国語も話せます。"
+        },
+        {
+          "translation": "彼女は美人だ。それに、性格もいい。"
+        }
+      ]
+    },
+    "ja_文Aだから_123": {
+      "title": "文A。だから 文B (Bun A. Dakara Bun B)",
+      "shortExplanation": "前の文を理由・根拠として後の文で結論や主張を導く接続表現で、「だから」「したがって」「そういう理由で」という意味を表します。",
+      "longExplanation": "「だから」は、文Aで理由・根拠を述べ、それを受けた文Bで判断・行動・提案・意志などを導く順接の接続詞です。「それで」が客観的な成り行きを述べるのに対し、「だから」の後ろには話者の強い意志、推量、提案、働きかけ（指示や勧誘）なども自然に続くことができます。",
+      "formation": "文A。 ＋ だから、 ＋ 文B。",
+      "examples": [
+        {
+          "translation": "明日は試験だ。だから今日勉強しなければならない。"
+        },
+        {
+          "translation": "この料理は簡単だ。だから初心者でも作れる。"
+        },
+        {
+          "translation": "彼は病気だ。だから今日学校を休む。"
+        },
+        {
+          "translation": "駅まで遠い。だからタクシーで行ったほうがいい。"
+        }
+      ]
+    },
+    "ja_A_0": {
+      "title": "A その上 B (A sono ue B)",
+      "shortExplanation": "前述の事柄にさらに同方向の情報を付け加える表現で、「それに加えて」「さらに」「おまけに」という意味を表します。",
+      "longExplanation": "「A その上 B」は、文や節Aで述べた内容に対して、さらに同じ性質（良いことには良いこと、悪いことには悪いこと）の情報Bを付け足して強調する接続表現です。単に並列するだけでなく、事態がさらに重なるニュアンスを持ち、書き言葉から改まった口語まで広く用いられます。",
+      "formation": "節/文A ＋ その上（そのうえ） ＋ 節/文B",
+      "examples": [
+        {
+          "translation": "彼は頭が良い。その上、スポーツも得意だ。"
+        },
+        {
+          "translation": "このカフェは雰囲気がいい。その上、料理も美味しい。"
+        },
+        {
+          "translation": "このアパートは駅に近い。その上、家賃も安い。"
+        },
+        {
+          "translation": "彼女は仕事ができる。その上、誰とでも仲良くなれる。"
+        }
+      ]
+    },
+    "ja_うちに_1": {
+      "title": "～うちに (〜uchi ni)",
+      "shortExplanation": "ある状態が変化する前にその行動をすること、またはある状態が続いている間に別の事態が生じることを表し、「〜の間に」「〜ない前に」という意味を表します。",
+      "longExplanation": "「～うちに」には主に2つの用法があります。(1) ある状況や状態が変化してしまう前に、機会を逃さず何かを行うことを表す用法（「〜の間にしておく」「〜ない前にする」）；(2) ある状態が続いている時間の間に、予期せぬ変化や別の事態が自然と起こることを表す用法（「〜している間に…になった」）。動詞の辞書形・ている形・ない形、い形容詞、な形容詞（＋な）、名詞（＋の）に接続します。",
+      "formation": "動詞辞書形 / ている形 / ない形 ＋ うちに / い形容詞 ＋ うちに / な形容詞語幹 ＋ なうちに / 名詞 ＋ のうちに",
+      "examples": [
+        {
+          "translation": "若いうちに、いろいろな経験をしておくことが大切です。"
+        },
+        {
+          "translation": "雨が降っていないうちに、買い物に行こう。"
+        },
+        {
+          "translation": "料理が熱いうちに食べましょう。"
+        },
+        {
+          "translation": "休みのうちに、旅行の計画を立てたいです。"
+        }
+      ]
+    },
+    "ja_うとした_2": {
+      "title": "～うとした (〜uto shita)",
+      "shortExplanation": "まさにその動作を行おうとした直前に妨げが入り、実現しなかったことを表し、「〜しようとしたが」「〜する直前だったが」という意味を表します。",
+      "longExplanation": "「～（よ）うとした（が／けれど）」は、ある動作を開始しようと試みたり、直前まで準備したりしていたものの、予期せぬ障害や事情によってその動作が途中で妨げられたり、実行できなかったりした事態を表す文法です。動詞の意向形（意志形）に「とした」を接続し、後には「が」や「けれど」などの逆接が続くのが一般的です。",
+      "formation": "動詞意向形（意志形） ＋ とした（が／けれど）",
+      "examples": [
+        {
+          "translation": "電話に出ようとしたが、相手は切ってしまった。"
+        },
+        {
+          "translation": "彼は大声で話そうとしたが、言葉が出なかった。"
+        },
+        {
+          "translation": "ケーキを作ろうとしたが、材料が足りなかった。"
+        },
+        {
+          "translation": "彼女は泳ごうとしたが、怖くて水に入れなかった。"
+        }
+      ]
+    },
+    "ja_おかげで_3": {
+      "title": "～おかげで (〜okagede)",
+      "shortExplanation": "人の恩恵や有利な原因によって良い結果になったことを表し、感謝の意を込めて「〜のおかげで」「〜に助けられて」という意味を表します。",
+      "longExplanation": "「～おかげで」は、誰かの助力や好都合な条件・事態が原因となって、望ましい良い結果がもたらされたときに感謝や安堵の気持ちを込めて用いる文法です（皮肉として悪い結果を他人のせいにする際にも使われます）。動詞・い形容詞の普通形、な形容詞（＋な）、名詞（＋の）に接続します。",
+      "formation": "動詞普通形 ＋ おかげで / い形容詞 ＋ おかげで / な形容詞語幹 ＋ なおかげで / 名詞 ＋ のおかげで",
+      "examples": [
+        {
+          "translation": "お母さんのおかげで、私は元気になりました。"
+        },
+        {
+          "translation": "先生の助けのおかげで、試験に合格しました。"
+        },
+        {
+          "translation": "日本語の勉強のおかげで、この映画が理解できました。"
+        },
+        {
+          "translation": "晴れた天気のおかげで、ピクニックが楽しかったです。"
+        }
+      ]
+    },
+    "ja_かけ_4": {
+      "title": "～かけ (〜kake)",
+      "shortExplanation": "動作が始まってまだ途中であり、完了していない状態を表し、「〜しかけて途中の」「〜しかけの」という意味を表します。",
+      "longExplanation": "「～かけ」（主に「～かけの＋名詞」や「～かけだ」の形をとる）は、動詞のます形語幹に接続して、ある動作をやり始めて途中のままであったり、完了せずに中断していたりする状態を表す表現です。「やりかけ」「食べかけ」「読みかけ」のように、まだ終わっていない事柄を示します。",
+      "formation": "動詞ます形語幹 ＋ かけ（だ／の＋名詞）",
+      "examples": [
+        {
+          "translation": "彼は食事を食べかけです。"
+        },
+        {
+          "translation": "この本は読みかけで、まだ終わっていません。"
+        },
+        {
+          "translation": "この部屋は掃除しかけで、まだ片づいていません。"
+        },
+        {
+          "translation": "プロジェクトは進行しかけで、来週には完了する予定です。"
+        }
+      ]
+    },
+    "ja_かなあ_5": {
+      "title": "～かなあ (〜kanaa)",
+      "shortExplanation": "独り言や親しい間柄で、不確かさ・疑問や淡い願望を表し、「〜だろうか」「〜かな」という意味を表します。",
+      "longExplanation": "終助詞「～かなあ」（「かな」を伸ばした形）は、主に独り言や親しい相手との気軽な会話において、ある事柄に対して確信が持てず疑問に思ったり、控えめな推量や願望をつぶやいたりする際に用いられます。「〜だろうか」「〜かしら」という自問の気持ちを表します。動詞・い形容詞の普通形、な形容詞や名詞に接続します。",
+      "formation": "動詞普通形 ＋ かなあ / い形容詞 ＋ かなあ / な形容詞語幹 (＋ だ) ＋ かなあ / 名詞 (＋ だ) ＋ かなあ",
+      "examples": [
+        {
+          "translation": "明日晴れるかなあ。"
+        },
+        {
+          "translation": "このスープ、辛いかなあ。"
+        },
+        {
+          "translation": "彼は静かだかなあ。"
+        },
+        {
+          "translation": "彼女は医者だかなあ。"
+        }
+      ]
+    },
+    "ja_ないで_6": {
+      "title": "～ないで (〜naide)",
+      "shortExplanation": "前の動作を行わない状態で後ろの動作を行うことを表し、「〜せずに」「〜しないで」という意味を表します。",
+      "longExplanation": "「～ないで」は、動詞のない形に助詞「で」が接続した形で、本来行われるはずの動作や予期される動作を行わない状態（付帯状況）のまま、主となる後続の動作を実行することを表します。「〜せずに」「〜しないまま」と言い換えることができます。",
+      "formation": "動詞ない形 ＋ で",
+      "examples": [
+        {
+          "translation": "会わないでその電話をかけました。"
+        },
+        {
+          "translation": "雨が降るのを待たないで、家を出ました。"
+        },
+        {
+          "translation": "誰にも聞かないで、その秘密を知りました。"
+        },
+        {
+          "translation": "遅れることを知らないで、駅に向かいました。"
+        }
+      ]
+    },
+    "ja_からにかけて_7": {
+      "title": "～から～にかけて (〜kara 〜ni kakete)",
+      "shortExplanation": "時間や空間、範囲の大まかな始まりから終わりまでを表し、「〜から〜の間」「〜から〜にわたって」という意味を表します。",
+      "longExplanation": "「～から～にかけて」は、時や場所、数量などのおおよその範囲を示す文法です。境界線がはっきりとした区切りを示す「〜から〜まで」と異なり、始点と終点の境界が緩やかで、その範囲全体にわたって状態や事態が継続的または断続的に及んでいることを表します。",
+      "formation": "名詞（時・場所・範囲） ＋ から ＋ 名詞 ＋ にかけて",
+      "examples": [
+        {
+          "translation": "午前８時から午後５時にかけて働いています。"
+        },
+        {
+          "translation": "この地域は、北から南にかけて狭いです。"
+        },
+        {
+          "translation": "１０歳から２０歳にかけて成長が早いです。"
+        },
+        {
+          "translation": "今年の夏は、６月から８月にかけて雨が多かった。"
+        }
+      ]
+    },
+    "ja_かわりに_8": {
+      "title": "～かわりに (〜kawari ni)",
+      "shortExplanation": "別の物事で代用すること、または補償や交換条件を表し、「〜の代わりに」「〜をしないで別のことを」という意味を表します。",
+      "longExplanation": "「～かわりに」には主に2つの用法があります。(1) ある行動や人・物に代えて別の行動や人・物で代用することを表す用法（「〜をしないで別のことをする」「〜の代理として」）；(2) 一方の事柄に対して見返りや代償、埋め合わせの関係があることを表す用法（「〜という良い点がある一方で」「〜する代わりに」）。動詞・い形容詞の普通形、な形容詞（＋な）、名詞（＋の）に接続します。",
+      "formation": "動詞普通形 ＋ かわりに / い形容詞 ＋ かわりに / な形容詞語幹 ＋ なかわりに / 名詞 ＋ のかわりに",
+      "examples": [
+        {
+          "translation": "映画を見るかわりに、本を読んだ。"
+        },
+        {
+          "translation": "お酒を飲むかわりに、水を飲んでください。"
+        },
+        {
+          "translation": "犬のかわりに、猫を飼いたいです。"
+        },
+        {
+          "translation": "電車を使わないかわりに、自転車で行くことにしました。"
+        }
+      ]
+    },
+    "ja_きり_9": {
+      "title": "～きり (〜kiri)",
+      "shortExplanation": "ある動作が行われた後、その状態がずっと続いて次の変化や動作が起こらないことを表し、「〜したきり」「〜したまま」という意味を表します。",
+      "longExplanation": "「～きり」には主に2つの用法があります。(1) 動詞の過去形（た形）に接続し、その動作が行われて以来、状態がそのまま続いて予想される次の事態が起こらないことを表す用法（後続文には否定文が来ることが多く、「〜したきり…ない」「〜したままその後の変化がない」という意味になります）；(2) 名詞や数量詞に接続して、それ以外にはないという限定を表す用法（「二人きり」「これっきり」など）。",
+      "formation": "動詞た形 ＋ きり（または動詞て形 ＋ きり） / 名詞 ＋ きり",
+      "examples": [
+        {
+          "translation": "彼は出かけたきり帰ってきません。"
+        },
+        {
+          "translation": "昨日コーヒーを飲んだきり、何も飲まなかった。"
+        },
+        {
+          "translation": "卒業したきり、彼女に会っていません。"
+        },
+        {
+          "translation": "その映画を見たきり、もう一度見たいと思っています。"
+        }
+      ]
+    }
+  }
+}

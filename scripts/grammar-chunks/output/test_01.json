@@ -1,0 +1,170 @@
+{
+  "vi": {
+    "ja_て_69": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "Diễn tả hành động đang diễn ra tại thời điểm nói hoặc trạng thái đang tiếp diễn; 'đang làm...'.",
+      "longExplanation": "Mẫu ngữ pháp ～ています dùng để diễn tả một hành động đang diễn ra tại thời điểm nói, tương đương với 'đang (làm gì)' trong tiếng Việt. Tùy theo nhóm động từ (động từ nhóm 1, nhóm 2 hay động từ bất quy tắc) mà cách biến đổi sang thể て sẽ khác nhau, nhưng đều kết hợp theo cấu trúc: Động từ thể て + います.",
+      "formation": "Động từ thể て + います",
+      "examples": [
+        {
+          "translation": "Bây giờ tôi đang nghe nhạc."
+        },
+        {
+          "translation": "Bố tôi đang đọc báo."
+        },
+        {
+          "translation": "Cô ấy đang học tiếng Anh."
+        },
+        {
+          "translation": "Bọn trẻ đang chơi trong công viên."
+        }
+      ]
+    },
+    "ja_に_122": {
+      "title": "～に あげます (〜 ni agemasu)",
+      "shortExplanation": "Dùng để diễn tả hành động tặng hoặc cho ai đó món đồ gì; 'cho', 'tặng'.",
+      "longExplanation": "Mẫu ngữ pháp ～にあげます được sử dụng khi người nói (hoặc người cùng phía với người nói) tặng hoặc cho ai đó một món đồ, nhấn mạnh hành động được thực hiện vì lợi ích của người nhận. Trong cấu trúc này, trợ từ 'に' đứng sau người nhận, theo sau là danh từ chỉ vật đi với trợ từ 'を' và động từ あげます.",
+      "formation": "Người nhận + に + Vật/Tân ngữ + を + あげます",
+      "examples": [
+        {
+          "translation": "Tôi đã tặng một cuốn sách cho bạn của mình."
+        },
+        {
+          "translation": "Chúng ta hãy tặng quà cho anh ấy nhé."
+        },
+        {
+          "translation": "Tôi sẽ tặng hoa cho thầy cô giáo."
+        },
+        {
+          "translation": "Tôi muốn tặng sô-cô-la cho mẹ."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_て_69": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "表示正在进行的动作或持续的状态；'正在……'、'在做……'。",
+      "longExplanation": "句型'～ています'用于表达动作目前正在发生或持续进行，相当于汉语中的'正在做……'或'在做……'。虽然一段动词、五段动词以及不规则动词变化为て形的方式各有不同，但接续均为：动词て形 + います。",
+      "formation": "动词て形 + います",
+      "examples": [
+        {
+          "translation": "我现在正在听音乐。"
+        },
+        {
+          "translation": "爸爸正在看报纸。"
+        },
+        {
+          "translation": "她正在学习英语。"
+        },
+        {
+          "translation": "孩子们正在公园里玩耍。"
+        }
+      ]
+    },
+    "ja_に_122": {
+      "title": "～に あげます (〜 ni agemasu)",
+      "shortExplanation": "用于表示给某人某物；'给……'、'赠送'。",
+      "longExplanation": "句型'～にあげます'用于说话人（或说话人一方的人）向他人给予、赠送物品，强调该行为是为接受者的利益而进行的。接续方式为在接受物品的对象后加助词'に'，物品后加助词'を'，最后加上动词'あげます'。",
+      "formation": "接受者 + に + 物品 + を + あげます",
+      "examples": [
+        {
+          "translation": "我送给朋友一本书。"
+        },
+        {
+          "translation": "我们送给他一份礼物吧。"
+        },
+        {
+          "translation": "我打算送花给老师。"
+        },
+        {
+          "translation": "我想给妈妈送巧克力。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_て_69": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "현재 진행 중인 동작이나 지속 중인 상태를 나타내며, '~하고 있다', '~하는 중이다'의 뜻입니다.",
+      "longExplanation": "'～ています' 문형은 어떤 동작이 현재 진행 중이거나 계속되고 있음을 나타낼 때 사용하며, 한국어의 '~하고 있다', '~하는 중이다'에 해당합니다. 1그룹(5단) 동사, 2그룹(1단) 동사, 3그룹(불규칙) 동사에 따라 て형 변형 규칙은 다르지만, 모두 '동사 て형 + います' 형태로 접속합니다.",
+      "formation": "동사 て형 + います",
+      "examples": [
+        {
+          "translation": "지금 음악을 듣고 있습니다."
+        },
+        {
+          "translation": "아버지는 신문을 읽고 계십니다."
+        },
+        {
+          "translation": "그녀는 영어를 공부하고 있습니다."
+        },
+        {
+          "translation": "아이들은 공원에서 놀고 있습니다."
+        }
+      ]
+    },
+    "ja_に_122": {
+      "title": "～に あげます (〜 ni agemasu)",
+      "shortExplanation": "누군가에게 무언가를 주는 행위를 나타내며, '~에게 주다'라는 뜻입니다.",
+      "longExplanation": "'～にあげます' 문형은 화자(또는 화자 측의 사람)가 다른 사람에게 물건을 주거나 선물할 때 사용하며, 그 행위가 받는 사람을 위한 것임을 나타냅니다. 물건을 받는 대상 뒤에 조사 'に'를 붙이고, 건네는 물건 뒤에 'を', 그리고 동사 'あげます'를 연결합니다.",
+      "formation": "받는 사람 + に + 물건/목적어 + を + あげます",
+      "examples": [
+        {
+          "translation": "저는 친구에게 책을 주었습니다."
+        },
+        {
+          "translation": "그에게 선물을 줍시다."
+        },
+        {
+          "translation": "선생님께 꽃을 드립니다."
+        },
+        {
+          "translation": "어머니께 초콜릿을 드리고 싶습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_て_69": {
+      "title": "～て います (～te imasu)",
+      "shortExplanation": "現在進行している動作や継続している行為を表し、「〜している」「〜しているところだ」という意味を表します。",
+      "longExplanation": "「～ています」は、ある動作が今まさに行われていることや、進行・継続中であることを表す文法表現です。動詞の種類（1グループ／五段動詞、2グループ／一段動詞、3グループ／不規則動詞）によって「て形」の作り方は異なりますが、いずれも「動詞 て形 ＋ います」の形で接続します。",
+      "formation": "動詞 て形 + います",
+      "examples": [
+        {
+          "translation": "今、音楽を聞いています。"
+        },
+        {
+          "translation": "父は新聞を読んでいます。"
+        },
+        {
+          "translation": "彼女は英語を勉強しています。"
+        },
+        {
+          "translation": "子どもたちは公園で遊んでいます。"
+        }
+      ]
+    },
+    "ja_に_122": {
+      "title": "～に あげます (〜 ni agemasu)",
+      "shortExplanation": "人に対して物を与える・プレゼントする行為を表し、「〜に（物を）あげる」という意味です。",
+      "longExplanation": "「～にあげます」は、話し手（または身内）が他の人に対して物を差し出したりプレゼントしたりする際に用いる表現です。その行為が相手の利益になることを表します。物を受け取る相手の後ろに助詞「に」を置き、渡す物の後ろに助詞「を」、そして動詞「あげます」を続けます。",
+      "formation": "相手 + に + 物 + を + あげます",
+      "examples": [
+        {
+          "translation": "私は友達に本をあげました。"
+        },
+        {
+          "translation": "彼にプレゼントをあげましょう。"
+        },
+        {
+          "translation": "先生に花をあげます。"
+        },
+        {
+          "translation": "お母さんにチョコレートをあげたいです。"
+        }
+      ]
+    }
+  }
+}

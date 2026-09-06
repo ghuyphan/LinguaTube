@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_ないではいられない_103": {
+      "title": "～ないではいられない (〜nai de wa irarenai)",
+      "shortExplanation": "Diễn tả cảm xúc, thôi thúc hoặc hành động tự nhiên trào dâng mãnh liệt đến mức không thể kìm nén hay kiềm chế được; 'không thể không...', 'không kìm được mà...', 'đành phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ないではいられない' (dạng khẩu ngữ là '～ないじゃいられない') kết hợp với động từ thể ない để biểu thị một thôi thúc nội tâm, cảm xúc hoặc phản xạ tự nhiên của con người mạnh mẽ đến mức không có cách nào kiềm giữ hay ngăn lại được ('không thể nào không làm', 'không kìm lòng được mà...'). Dù về mặt lý trí có thể không muốn hoặc biết là không nên, nhưng người nói vẫn không thể ngừng hành động đó. Chủ ngữ thường là ngôi thứ nhất (người nói); nếu dùng cho ngôi thứ ba thì câu thường kết thúc bằng các cách nói phỏng đoán, suy diễn như '〜ようだ', '〜らしい', '〜そうだ'.",
+      "formation": "Động từ thể ない + ではいられない / じゃいられない (Lưu ý: する chuyển thành しないではいられない hoặc せずにはいられない)",
+      "examples": [
+        {
+          "translation": "Bộ phim này quá đỗi cảm động khiến tôi không kìm được nước mắt."
+        },
+        {
+          "translation": "Cứ mỗi lần nhìn thấy nụ cười của cô ấy là tôi lại không thể không bật cười."
+        },
+        {
+          "translation": "Căn phòng này lạnh buốt giá nên tôi không thể nào ngừng run rẩy được."
+        },
+        {
+          "translation": "Câu chuyện của anh ấy tuy rất tẻ nhạt, nhưng tôi vẫn không kìm lòng được mà lắng nghe."
+        }
+      ]
+    },
+    "ja_ながら_104": {
+      "title": "～ながら (〜nagara)",
+      "shortExplanation": "Diễn tả hai hành động diễn ra song song cùng một lúc do cùng một chủ thể thực hiện; 'vừa... vừa...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ながら' gắn vào thân động từ (thể ます bỏ ます) để biểu thị hai hành động diễn ra đồng thời trong cùng một khoảng thời gian bởi cùng một chủ thể. Trong đó, hành động đi trước 'ながら' là hành động phụ mang tính kèm theo, còn hành động ở vế sau mới là hành động chính của người nói.",
+      "formation": "Động từ thể ます (bỏ ます) + ながら",
+      "examples": [
+        {
+          "translation": "Tôi vừa xem tivi vừa làm bài tập về nhà."
+        },
+        {
+          "translation": "Cô ấy vừa nấu ăn vừa cất tiếng hát."
+        },
+        {
+          "translation": "Trên tàu điện có rất nhiều người vừa đứng vừa đọc sách."
+        },
+        {
+          "translation": "Tôi vừa đi bộ vừa sử dụng điện thoại thông minh."
+        }
+      ]
+    },
+    "ja_にあたり_105": {
+      "title": "～にあたり (〜ni atari)",
+      "shortExplanation": "Diễn tả thời điểm quan trọng, mang tính bước ngoặt, mở đầu cho một sự kiện hoặc dịp trọng đại; 'nhân dịp...', 'khi bước vào...', 'trước thềm...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にあたり' (hoặc '～にあたって') kết hợp với danh từ hoặc động từ thể từ điển, dùng để nhấn mạnh một thời điểm trọng đại, một sự kiện đặc biệt, một khởi đầu mới hay cột mốc mang tính bước ngoặt (như khai mạc, xuất phát, kết hôn, nhập học, khởi nghiệp...). Vế sau thường thể hiện sự chuẩn bị chu đáo, quyết tâm, lời chào hỏi trang trọng, lời chúc mừng hoặc các thủ tục cần thiết. Đây là cách diễn đạt rất trang trọng, thường xuất hiện trong các bài phát biểu, diễn văn hoặc văn bản thông báo chính thức.",
+      "formation": "Danh từ + にあたり / にあたって | Động từ thể từ điển + にあたり / にあたって",
+      "examples": [
+        {
+          "translation": "Nhân dịp nhập học, xin quý vị vui lòng chuẩn bị đầy đủ các giấy tờ cần thiết."
+        },
+        {
+          "translation": "Trước thềm năm mới, có rất nhiều người đặt ra những mục tiêu và hoài bão cho bản thân."
+        },
+        {
+          "translation": "Nhân dịp kết hôn, hai bên gia đình cùng tổ chức một buổi lễ vô cùng trang trọng."
+        },
+        {
+          "translation": "Khi bắt đầu một công việc mới, việc chuẩn bị kỹ lưỡng là điều vô cùng cần thiết."
+        }
+      ]
+    },
+    "ja_において_106": {
+      "title": "～において (〜ni oite)",
+      "shortExplanation": "Chỉ địa điểm, thời gian, lĩnh vực hoặc bối cảnh diễn ra một hành động, sự kiện; 'ở', 'tại', 'trong', 'về mặt...'.",
+      "longExplanation": "Mẫu ngữ pháp '～において' kết hợp với danh từ, là dạng văn phong trang trọng của trợ từ 'で' hoặc 'に'. Cấu trúc này được dùng để chỉ rõ địa điểm, phạm vi không gian, thời điểm lịch sử, lĩnh vực nghiên cứu, hoặc bối cảnh mà một hiện tượng, sự việc nào đó phát sinh hoặc được thực hiện ('ở...', 'tại...', 'trong lĩnh vực...'). Khi bổ nghĩa cho danh từ đi sau, cấu trúc này chuyển thành dạng '～における + Danh từ'. Thường xuất hiện trong các bản tin thời sự, văn kiện hành chính, báo cáo khoa học và các bài diễn văn trang trọng.",
+      "formation": "Danh từ + において (bổ nghĩa danh từ: Danh từ + における + Danh từ)",
+      "examples": [
+        {
+          "translation": "Tại trường đại học này, các lớp học tiếng Anh là những lớp được yêu thích nhất."
+        },
+        {
+          "translation": "Trong công trình nghiên cứu của anh ấy, đã có những phát hiện mới mang tính đột phá."
+        },
+        {
+          "translation": "Tại ngày hội thể thao, anh ấy đã thi đấu vô cùng xuất sắc."
+        },
+        {
+          "translation": "Về vấn đề môi trường, mọi người đều cần phải có trách nhiệm và hành động đúng đắn."
+        }
+      ]
+    },
+    "ja_にかかわらず_107": {
+      "title": "～にかかわらず (〜ni kakawarazu)",
+      "shortExplanation": "Diễn tả việc một sự việc vẫn xảy ra hoặc được thực hiện mà không bị ảnh hưởng, chi phối bởi điều kiện hay tình huống phía trước; 'bất kể...', 'không phân biệt...', 'dù... hay không...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にかかわらず' (chữ Hán: '～に関わらず') đi cùng với động từ, tính từ hoặc danh từ biểu thị rằng một hành động, kết quả hay trạng thái phía sau luôn diễn ra bình thường, hoàn toàn không bị chi phối hay phụ thuộc vào điều kiện, mức độ, tình trạng được nêu ở vế trước. Thường đi cùng với các từ ngữ mang tính đối lập (có hay không, tốt hay xấu, làm hay không làm) hoặc các danh từ biểu thị độ chênh lệch, biến đổi (thời tiết, tuổi tác, giới tính, quốc tịch).",
+      "formation": "Động từ thể từ điển / thể ない + にかかわらず | Tính từ đuôi い + にかかわらず | Tính từ đuôi な (hoặc である) + にかかわらず | Danh từ + にかかわらず",
+      "examples": [
+        {
+          "translation": "Bất kể thời tiết thế nào, trận đấu hôm nay vẫn sẽ được tiến hành."
+        },
+        {
+          "translation": "Bất kể tuổi tác ra sao, ông ấy vẫn không ngừng học hỏi những điều mới mẻ."
+        },
+        {
+          "translation": "Dù công việc đó có khó khăn hay không, cô ấy vẫn tiếp tục nỗ lực hết mình."
+        },
+        {
+          "translation": "Không phân biệt đã có kinh nghiệm hay chưa, bất kỳ ai cũng đều có thể tham gia chương trình này."
+        }
+      ]
+    },
+    "ja_にかけては_108": {
+      "title": "～にかけては (〜ni kakete wa)",
+      "shortExplanation": "Nhấn mạnh một lĩnh vực, kỹ năng hoặc khía cạnh cụ thể mà một đối tượng có năng lực vượt trội hơn người khác; 'riêng về khoản...', 'nói về mặt...', 'nếu xét về...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にかけては' gắn vào sau danh từ để chỉ ra một lĩnh vực chuyên môn, kỹ năng, sở trường hoặc khía cạnh cụ thể mà một ai đó (hoặc sự vật nào đó) đạt trình độ xuất sắc, không hề thua kém bất kỳ ai ('nói về mặt...', 'riêng về khoản... thì đứng số một'). Vế sau hầu như luôn mang hàm ý đánh giá tích cực hoặc thể hiện sự tự tin, khẳng định năng lực vượt trội (như 'không thua ai', 'là giỏi nhất', 'vô cùng tinh tường').",
+      "formation": "Danh từ + にかけては",
+      "examples": [
+        {
+          "translation": "Riêng về tay nghề nấu ăn thì cô ấy chẳng chịu thua bất kỳ ai."
+        },
+        {
+          "translation": "Nói về thị trấn này thì quán của anh ấy bán món mì ramen ngon nhất."
+        },
+        {
+          "translation": "Nếu xét về kiến thức âm nhạc thì anh ấy là người am hiểu nhất trong số chúng tôi."
+        },
+        {
+          "translation": "Riêng về khoản thể thao thì môn thi đấu nào anh ấy cũng đều chơi rất cừ khôi."
+        }
+      ]
+    },
+    "ja_にしたがって_109": {
+      "title": "～にしたがって (〜ni shitagatte)",
+      "shortExplanation": "Diễn tả (1) một sự biến đổi này diễn ra kéo theo sự biến đổi khác tương ứng ('càng... càng...', 'cùng với đà...'), hoặc (2) làm theo một quy tắc, chỉ dẫn ('tuân theo...', 'theo như...').",
+      "longExplanation": "Mẫu ngữ pháp '～にしたがって' gắn vào động từ thể từ điển hoặc danh từ có hai ý nghĩa căn bản: (1) Biểu thị mối quan hệ tương quan đồng biến: khi sự việc ở vế trước thay đổi theo một chiều hướng nào đó, thì sự việc ở vế sau cũng tự nhiên thay đổi tương ứng theo chiều hướng đó ('cùng với việc...', 'càng... thì càng...'). (2) Biểu thị sự tuân thủ, thuận theo một quy định, kế hoạch, chỉ dẫn hoặc người có thẩm quyền ('làm đúng theo...', 'tuân thủ theo...').",
+      "formation": "Động từ thể từ điển + にしたがって | Danh từ + にしたがって",
+      "examples": [
+        {
+          "translation": "Cùng với quá trình sinh trưởng, những chiếc lá của loài cây này ngày càng to ra."
+        },
+        {
+          "translation": "Xin hãy lắp ráp đồ nội thất theo đúng sách hướng dẫn."
+        },
+        {
+          "translation": "Cùng với tuổi tác tăng lên, thể lực của con người sẽ dần suy giảm."
+        },
+        {
+          "translation": "Thông thường, khi vận động thì nhịp tim cũng sẽ tăng lên tương ứng."
+        }
+      ]
+    },
+    "ja_にしたら_110": {
+      "title": "～にしたら (〜ni shitara)",
+      "shortExplanation": "Đứng trên lập trường, góc nhìn hoặc hoàn cảnh của một người nào đó để phỏng đoán, đồng cảm hoặc nhận định về sự việc; 'đối với...', 'nếu đứng ở góc độ của... mà nói'.",
+      "longExplanation": "Mẫu ngữ pháp '～にしたら' (đồng nghĩa với '～にすれば', '～にしてみれば', '～にしても') gắn trực tiếp vào danh từ hoặc đại từ chỉ người. Cấu trúc này dùng khi người nói đặt mình vào vị trí, tâm thế, góc nhìn hoặc hoàn cảnh của đối tượng đó để đồng cảm, đưa ra sự phỏng đoán hoặc phán xét xem họ sẽ cảm thấy hoặc suy nghĩ như thế nào ('đối với người đó mà nói thì...', 'nếu ở vào hoàn cảnh của...'). Vế sau thường kết thúc bằng các cách nói phỏng đoán như '〜だろう', '〜かもしれない', hoặc nêu lên một cảm nhận chủ quan.",
+      "formation": "Danh từ + にしたら | Đại từ + にしたら",
+      "examples": [
+        {
+          "translation": "Đứng ở góc độ của anh ấy mà nói, có lẽ anh ấy muốn được về nhà sớm."
+        },
+        {
+          "translation": "Đối với lũ trẻ, câu chuyện này có thể sẽ rất nhàm chán."
+        },
+        {
+          "translation": "Đối với tôi mà nói, tôi thấy món quà đó vô cùng tuyệt vời."
+        },
+        {
+          "translation": "Đứng trên lập trường của cô ấy, chắc hẳn cô ấy chẳng hề thích bộ phim này đâu."
+        }
+      ]
+    },
+    "ja_にしろにしろ_111": {
+      "title": "～にしろ～にしろ (〜ni shiro 〜ni shiro)",
+      "shortExplanation": "Nêu ra hai khả năng hoặc trường hợp tiêu biểu, đối lập để nhấn mạnh rằng dù rơi vào trường hợp nào đi chăng nữa thì kết quả hay hành động phía sau vẫn không thay đổi; 'dù là... hay là...', 'cho dù... hay...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にしろ～にしろ' (hoặc '～にせよ～にせよ') đưa ra hai ví dụ mang tính đối lập hoặc hai lựa chọn khác nhau để khẳng định rằng dù chọn phương án nào hay tình huống nào xảy ra đi chăng nữa, thì sự việc, kết luận hay thái độ ở vế sau vẫn giữ nguyên không có gì khác biệt ('cho dù là A hay là B thì cũng...'). Vế sau thường là một phán đoán khách quan, một lời khuyên, yêu cầu hoặc kết luận dứt khoát.",
+      "formation": "Động từ thể thông thường + にしろ | Tính từ đuôi い + にしろ | Tính từ đuôi な (hoặc である) + にしろ | Danh từ (hoặc である) + にしろ",
+      "examples": [
+        {
+          "translation": "Dù đi hay không đi, xin hãy quyết định sớm giùm tôi."
+        },
+        {
+          "translation": "Cho dù anh ấy có đến hay không đến, chúng ta cũng hãy bắt đầu bữa tiệc đi thôi."
+        },
+        {
+          "translation": "Dù trời có mưa hay không mưa, tốt hơn hết là bạn nên mang theo ô."
+        },
+        {
+          "translation": "Dù nhà hàng này đắt hay rẻ thì đồ ăn ở đây vẫn rất ngon."
+        }
+      ]
+    },
+    "ja_につけにつけ_112": {
+      "title": "～につけ～につけ (〜ni tsuke 〜ni tsuke)",
+      "shortExplanation": "Nêu ra các trường hợp để diễn tả rằng cứ mỗi khi gặp trường hợp nào thì cũng đều có chung một cảm xúc, nhận thức hay trạng thái; 'mỗi lần... hay mỗi lần...', 'dù là... hay là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～につけ～につけ' được dùng khi đưa ra hai sự việc, sự vật đối lập hoặc cùng loại (như vui hay buồn, tốt hay xấu, xuân hay thu...) để diễn tả rằng trong bất kỳ tình huống nào trong số đó, người nói cũng luôn nảy sinh cùng một cảm xúc, suy nghĩ hoặc sự việc tương tự ('cứ mỗi khi gặp A hay mỗi khi gặp B thì đều...'). Vế sau hầu như luôn là những động từ chỉ cảm xúc nội tâm, sự xúc động hoặc suy nghĩ tự nhiên trào dâng.",
+      "formation": "Động từ thể thông thường + につけ | Tính từ đuôi い + につけ | Tính từ đuôi な + につけ | Danh từ + につけ",
+      "examples": [
+        {
+          "translation": "Dù là đi ra nước ngoài hay là học tập, tôi đều vấp phải rào cản ngôn ngữ."
+        },
+        {
+          "translation": "Mỗi khi nói chuyện với anh ấy hay mỗi khi lắng nghe suy nghĩ của anh ấy, tôi đều phải kinh ngạc trước kiến thức sâu rộng của anh."
+        },
+        {
+          "translation": "Mỗi lần chơi đùa hay mỗi lần đi dạo trong công viên này, tôi đều nhớ lại thời thơ ấu của mình."
+        },
+        {
+          "translation": "Dù là vào mùa xuân hay mùa thu, anh ấy cũng đều đến thăm lại trường cũ."
+        }
+      ]
+    },
+    "ja_につれて_113": {
+      "title": "～につれて (〜ni tsurete)",
+      "shortExplanation": "Diễn tả một sự việc, trạng thái biến đổi kéo theo sự biến đổi dần dần của một sự việc khác theo tỷ lệ tương ứng; 'càng... càng...', 'cùng với đà...', 'theo sự...'.",
+      "longExplanation": "Mẫu ngữ pháp '～につれて' kết hợp với động từ thể từ điển (chỉ sự biến đổi như '進む', '高まる', '増える', '近づく'...) hoặc danh từ diễn tả hành động/quá trình để chỉ sự tương quan biến đổi tỉ lệ thuận hoặc tự nhiên: khi một yếu tố tiến triển theo thời gian hoặc mức độ thì yếu tố kia cũng tự nhiên biến chuyển dần dần theo ('càng... thì càng...', 'cùng với sự...'). Cấu trúc này thường nhấn mạnh vào tính biến đổi tự nhiên, khách quan của sự vật hiện tượng.",
+      "formation": "Động từ thể từ điển + につれて | Danh từ + につれて",
+      "examples": [
+        {
+          "translation": "Càng lớn tuổi, chúng ta càng phải chú ý giữ gìn sức khỏe hơn."
+        },
+        {
+          "translation": "Cùng với sự tiến lại gần của mùa xuân, nhiệt độ cũng ấm dần lên."
+        },
+        {
+          "translation": "Càng học nhiều, tôi lại càng dần hiểu ra mọi điều."
+        },
+        {
+          "translation": "Cùng với kinh nghiệm ngày càng phong phú, sự tự tin cũng dần dần tăng lên."
+        }
+      ]
+    },
+    "ja_にともなって_114": {
+      "title": "～にともなって (〜ni tomonatte)",
+      "shortExplanation": "Diễn tả một sự việc phát sinh cùng lúc hoặc là hệ quả tất yếu đi kèm với một sự việc, biến đổi khác; 'đi cùng với...', 'kéo theo...', 'do... nên...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にともなって' (chữ Hán: '～に伴って') gắn vào danh từ hoặc động từ thể thông thường, dùng để biểu thị rằng khi một biến đổi, sự kiện lớn hay tình huống nào đó xảy ra thì một sự kiện, hệ quả khác cũng đồng thời nảy sinh hoặc biến đổi theo ('cùng với...', 'kéo theo sự...'). Cấu trúc này mang sắc thái trang trọng, thường được sử dụng trong các bản tin kinh tế, xã hội, bài báo cáo để phân tích mối quan hệ nhân quả mang tính quy mô hoặc sự biến chuyển toàn diện.",
+      "formation": "Danh từ + にともなって | Động từ thể thông thường + にともなって",
+      "examples": [
+        {
+          "translation": "Cùng với sự gia tăng dân số, tình trạng ùn tắc giao thông cũng ngày một trầm trọng hơn."
+        },
+        {
+          "translation": "Đi cùng với thời điểm giao mùa, con người ta rất dễ bị ốm hoặc mệt mỏi."
+        },
+        {
+          "translation": "Cùng với đà tăng trưởng của nền kinh tế, cơ hội việc làm chắc chắn cũng sẽ tăng lên."
+        },
+        {
+          "translation": "Do việc anh ấy được thăng chức nên cả gia đình đã quyết định chuyển nhà."
+        }
+      ]
+    },
+    "ja_にほかならない_115": {
+      "title": "～にほかならない (〜ni hoka naranai)",
+      "shortExplanation": "Nhấn mạnh khẳng định chắc chắn một sự việc, nguyên nhân hay bản chất chính là điều đó chứ tuyệt đối không phải là điều gì khác; 'chính là...', 'không gì khác ngoài...', 'chẳng qua chỉ là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にほかならない' (chữ Hán: '～に他ならない') kết hợp với danh từ, tính từ hoặc động từ thể thông thường, dùng để đưa ra sự phán đoán hoặc khẳng định dứt khoát rằng nguyên nhân cốt lõi, lý do duy nhất hoặc bản chất đích thực của sự việc chính là điều đó, không thể là một nguyên nhân nào khác ('không có gì khác ngoài...', 'chính là vì...'). Đây là cách nói mang tính quả quyết, trang trọng, thường xuất hiện trong các bài luận văn, văn chính luận hoặc phát biểu đanh thép.",
+      "formation": "Danh từ + にほかならない | Động từ thể thông thường + (から)にほかならない | Tính từ đuôi い + (から)にほかならない | Tính từ đuôi な + である(から)にほかならない",
+      "examples": [
+        {
+          "translation": "Thành công của anh ấy không gì khác ngoài chính sự nỗ lực không ngừng."
+        },
+        {
+          "translation": "Cơn đau nhức này chẳng qua chính là do cái lạnh mà thôi."
+        },
+        {
+          "translation": "Nguyên nhân thất bại của anh ta không gì khác ngoài sự tự mãn kiêu ngạo."
+        },
+        {
+          "translation": "Nụ cười của cô ấy chẳng qua chính là vẻ rạng rỡ toát ra từ tâm hồn."
+        }
+      ]
+    },
+    "ja_にもかかわらず_116": {
+      "title": "～にもかかわらず (〜ni mo kakawarazu)",
+      "shortExplanation": "Diễn tả một kết quả hoặc hành động xảy ra hoàn toàn trái ngược với điều đương nhiên được suy ra từ tiền đề phía trước; 'mặc dù... nhưng...', 'dẫu cho... vậy mà...'.",
+      "longExplanation": "Mẫu ngữ pháp '～にもかかわらず' (chữ Hán: '～にも関わらず') gắn vào động từ, tính từ hoặc danh từ biểu thị sự đối lập mang tính nghịch lý: dù trong tình huống hay điều kiện bất lợi ở vế trước (được kỳ vọng sẽ dẫn đến một kết quả nhất định), nhưng thực tế ở vế sau lại diễn ra điều hoàn toàn trái ngược, gây bất ngờ hoặc khâm phục ('mặc dù... thế nhưng vẫn...'). Đây là cách diễn đạt khá trang trọng, văn phong nghiêm túc hơn so với '〜のに'.",
+      "formation": "Động từ thể thông thường + にもかかわらず | Tính từ đuôi い + にもかかわらず | Tính từ đuôi な / Danh từ + であるにもかかわらず (hoặc Danh từ + にもかかわらず)",
+      "examples": [
+        {
+          "translation": "Mặc dù rất bận rộn nhưng anh ấy vẫn tập thể dục đều đặn mỗi ngày."
+        },
+        {
+          "translation": "Dù trời đang mưa nhưng cô ấy vẫn ra ngoài đi dạo."
+        },
+        {
+          "translation": "Chiếc xe ô tô dù đã cũ kỹ vậy mà vẫn chạy rất êm và tốt."
+        },
+        {
+          "translation": "Mặc dù kết quả không được tốt nhưng anh ấy vẫn không ngừng nỗ lực cố gắng."
+        }
+      ]
+    },
+    "ja_により_117": {
+      "title": "～により (〜ni yori)",
+      "shortExplanation": "Chỉ nguyên nhân, phương tiện, phương pháp, căn cứ hoặc chủ thể của hành động; 'do...', 'bằng cách...', 'thông qua...', 'theo như...'.",
+      "longExplanation": "Mẫu ngữ pháp '～により' (hoặc '～によって') kết hợp với danh từ, mang nhiều ý nghĩa tùy thuộc vào ngữ cảnh trong văn phong trang trọng, viết văn: (1) Chỉ nguyên nhân, lý do dẫn đến một sự việc, biến cố ('do...', 'bởi vì...'); (2) Chỉ phương pháp, phương tiện, cách thức để đạt được mục đích ('nhờ...', 'bằng phương pháp...'); (3) Chỉ căn cứ, tiêu chuẩn phán đoán ('dựa theo...', 'căn cứ vào...'); (4) Chỉ chủ thể tạo ra tác phẩm trong câu bị động ('bởi nhà văn X...', 'do tổ chức Y thực hiện...'). Dạng bổ nghĩa danh từ là '～による + Danh từ'.",
+      "formation": "Danh từ + により (bổ nghĩa danh từ: Danh từ + による + Danh từ)",
+      "examples": [
+        {
+          "translation": "Vụ tai nạn này xảy ra là do sự bất cẩn và thiếu chú ý của người tài xế."
+        },
+        {
+          "translation": "Bộ phim đó được chuyển thể và sản xuất dựa trên cuốn tiểu thuyết."
+        },
+        {
+          "translation": "Tên tội phạm đã bị bắt giữ bởi lực lượng cảnh sát."
+        },
+        {
+          "translation": "Sự tăng trưởng của công ty đã thành hiện thực là nhờ vào nỗ lực hết mình của toàn thể nhân viên."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_ないではいられない_103": {
+      "title": "～ないではいられない (〜nai de wa irarenai)",
+      "shortExplanation": "表示某种强烈的情感、冲动或本能反应难以自控，忍不住要做某事；“忍不住……”、“不由得……”、“不能不……”。",
+      "longExplanation": "句型“～ないではいられない”（口语中常说成“～ないじゃいられない”）接在动词未然形（ない形）之后，表示当事人内心涌起强烈的感情、冲动或生理反应，在心理或生理上无论如何也无法压抑、克制住自己的行为（“忍不住要……”、“不由得……”）。主语通常为第一人称；若用于第三人称，句尾常接“～ようだ”、“～らしい”等推测或情态表达。",
+      "formation": "动词未然形（ない形） + ではいられない / じゃいられない（注：“する”变为“しないではいられない”或“せずにはいられない”）",
+      "examples": [
+        {
+          "translation": "这部电影实在太感人了，让我忍不住流下了眼泪。"
+        },
+        {
+          "translation": "一看到她的笑容，我就忍不住笑了起来。"
+        },
+        {
+          "translation": "这个房间太冷了，冻得我忍不住直打哆嗦。"
+        },
+        {
+          "translation": "他的故事虽然枯燥无趣，但我还是忍不住想要听下去。"
+        }
+      ]
+    },
+    "ja_ながら_104": {
+      "title": "～ながら (〜nagara)",
+      "shortExplanation": "表示同一主体同时进行两项动作；“一边……一边……”。",
+      "longExplanation": "句型“～ながら”接在动词连用形（ます形去掉ます）之后，表示同一个动作主体在同一时间段内同时进行两个动作（“一边……一边……”）。其中，连接在“ながら”前面的动作通常为伴随性、次要的动作，而后项动词所表示的才是主要的动作。",
+      "formation": "动词连用形（ます形去掉ます） + ながら",
+      "examples": [
+        {
+          "translation": "我一边看电视，一边做作业。"
+        },
+        {
+          "translation": "她一边哼着歌，一边做着料理。"
+        },
+        {
+          "translation": "电车里有很多人一边站着一边看书。"
+        },
+        {
+          "translation": "我一边走着路，一边玩着智能手机。"
+        }
+      ]
+    },
+    "ja_にあたり_105": {
+      "title": "～にあたり (〜ni atari)",
+      "shortExplanation": "表示在面临重要事件、特殊时刻或关键起点之际；“在……之际”、“值此……之时”、“正当……之际”。",
+      "longExplanation": "句型“～にあたり”（或“～にあたって”）接在名词或动词辞书形之后，表示在面临某件重要的开端、转折点、重大事件或活动之际（如开学、结婚、就职、新年等）。后项通常伴随致辞、问候、决心、注意事项或准备工作。此表达具有较高的正式度和郑重感，广泛应用于仪式演讲、商务文书和正式通告之中。",
+      "formation": "名词 + にあたり / にあたって | 动词辞书形 + にあたり / にあたって",
+      "examples": [
+        {
+          "translation": "入学之际，请提前准备好所需的文件资料。"
+        },
+        {
+          "translation": "值此新年之际，很多人都会树立起新一年的抱负。"
+        },
+        {
+          "translation": "在喜结良缘之际，两家举行了隆重而庄严的仪式。"
+        },
+        {
+          "translation": "在开展新的工作之际，前期的充分准备是必不可少的。"
+        }
+      ]
+    },
+    "ja_において_106": {
+      "title": "～において (〜ni oite)",
+      "shortExplanation": "表示动作、事件发生的场所、时间、领域或背景，相当于书面语中的“在……”、“于……”、“关于……方面”。",
+      "longExplanation": "句型“～において”接在名词之后，是助词“で”或“に”的书面语郑重表达，用于明确指出事件、行为发生的具体场所、时代背景、历史阶段，或某项活动所涉及的研究领域、范围（“在……之中”、“在……方面”、“于……”）。修饰后续名词时需变为“～における＋名词”的形式。广泛用于新闻报道、学术论文、公文演讲等正式庄重的语境中。",
+      "formation": "名词 + において（修饰名词时用：名词 + における + 名词）",
+      "examples": [
+        {
+          "translation": "在这所大学里，英语课程是最受欢迎的。"
+        },
+        {
+          "translation": "在他的研究中有了全新的重大发现。"
+        },
+        {
+          "translation": "在运动会上，他表现得格外活跃出彩。"
+        },
+        {
+          "translation": "在环境问题方面，每个人都应当承担起责任并付诸行动。"
+        }
+      ]
+    },
+    "ja_にかかわらず_107": {
+      "title": "～にかかわらず (〜ni kakawarazu)",
+      "shortExplanation": "表示后项的实行或结果不受前项条件、情况的左右或影响；“不论……”、“不管……”、“不论……与否”。",
+      "longExplanation": "句型“～にかかわらず”（汉字写为“～に関わらず”）接在动词、形容词或名词之后，表示后项的行为、状态或决定完全不受前项条件、情况、程度的制约与影响（“不管……都……”、“不论……与否”）。前项常接具有正反对立意义的词语（做或不做、好或坏、有无）或者包含幅度和差异的名词（如天气、年龄、国籍、性别等）。",
+      "formation": "动词辞书形 / ない形 + にかかわらず | い形容词 + にかかわらず | な形容词（或 である） + にかかわらず | 名词 + にかかわらず",
+      "examples": [
+        {
+          "translation": "不论天气如何，今天的比赛都会照常举行。"
+        },
+        {
+          "translation": "不论年龄多大，他始终坚持不断地学习新知识。"
+        },
+        {
+          "translation": "不管那份工作难度如何，她都始终坚持努力做好。"
+        },
+        {
+          "translation": "不论有无经验，任何人都可以使用并参与这个项目。"
+        }
+      ]
+    },
+    "ja_にかけては_108": {
+      "title": "～にかけては (〜ni kakete wa)",
+      "shortExplanation": "突出强调在某一特定领域、技能或方面拥有卓越超群的才能；“在……方面”、“论……的话”、“谈到……的话”。",
+      "longExplanation": "句型“～にかけては”接在名词之后，用于特意指出某人或某事物在某一特定技能、技艺、知识、专长领域表现极为出众（“在……方面”、“论起……来没人比得上”）。后项多伴随带有极高评价的词句，如“誰にも負けない（不输给任何人）”、“一番（最……）”、“得意（擅长）”等，表达对其卓越才能的由衷肯定或自豪。",
+      "formation": "名词 + にかけては",
+      "examples": [
+        {
+          "translation": "论烹饪手艺的话，她绝不输给任何人。"
+        },
+        {
+          "translation": "论这个小镇的话，他的店卖的拉面是最好吃的。"
+        },
+        {
+          "translation": "谈到音乐知识，在我们当中他是最了如指掌的。"
+        },
+        {
+          "translation": "在体育运动方面，他无论什么项目都非常拿手。"
+        }
+      ]
+    },
+    "ja_にしたがって_109": {
+      "title": "～にしたがって (〜ni shitagatte)",
+      "shortExplanation": "表示（1）伴随着前项的变化，后项也相应地发生比例变化（“随着……”、“越……越……”）；（2）遵从、按照既定的规则或指示行事（“按照……”、“遵循……”）。",
+      "longExplanation": "句型“～にしたがって”接在动词辞书形或名词之后，主要有两种核心用法：(1) 表示伴随性变化，即随着前项事物的变化、进展，后项事物也随之发生同方向或相应的程度变化（“随着……”、“伴随……”）；(2) 表示服从或遵照某种规则、计划、指示或要求行事（“按照……”、“遵照……”）。",
+      "formation": "动词辞书形 + にしたがって | 名词 + にしたがって",
+      "examples": [
+        {
+          "translation": "随着不断生长，这株植物的叶子会变得越来越大。"
+        },
+        {
+          "translation": "请按照说明书来组装家具。"
+        },
+        {
+          "translation": "随着年龄的增长，人的体力也会逐渐下降。"
+        },
+        {
+          "translation": "通常情况下，随着运动量的增加，心率也会相应上升。"
+        }
+      ]
+    },
+    "ja_にしたら_110": {
+      "title": "～にしたら (〜ni shitara)",
+      "shortExplanation": "站在某人的立场、角度或处境来设身处地进行推测或体会；“对……来说”、“从……的角度来看”、“要是站在……的立场上”。",
+      "longExplanation": "句型“～にしたら”（同义表达有“～にすれば”、“～にしてみれば”、“～にしても”）接在表示人的名词或代词之后，表示说话人站在该当事人的角度、立场或处境上，换位思考并推测其内心的感受、想法或心情（“对……而言”、“站在……的角度来看”）。后项句尾常常带有“～だろう”、“～かもしれない”等推测或情态表达。",
+      "formation": "名词 + にしたら | 代词 + にしたら",
+      "examples": [
+        {
+          "translation": "从他的角度来看，大概很想早点回家吧。"
+        },
+        {
+          "translation": "对孩子们来说，这个故事或许很无聊。"
+        },
+        {
+          "translation": "对我来说，我觉得那份礼物非常棒。"
+        },
+        {
+          "translation": "站在她的立场来看，恐怕不会喜欢这部电影吧。"
+        }
+      ]
+    },
+    "ja_にしろにしろ_111": {
+      "title": "～にしろ～にしろ (〜ni shiro 〜ni shiro)",
+      "shortExplanation": "列举出对立或并列的两种情况，表示无论属于哪一种，后项的结论或态度都毫无改变；“无论……还是……”、“不管是……还是……”。",
+      "longExplanation": "句型“～にしろ～にしろ”（书面语中常为“～にせよ～にせよ”）通过列举两个相互对立、对照的选项或同类情况，强调无论前项属于哪一种情形，后项的事态、判断、结论或要求都始终保持不变（“不论是……还是……都……”）。后项常伴随判断、建议、命令或既定事实。",
+      "formation": "动词普通形 + にしろ | い形容词 + にしろ | な形容词（或 である） + にしろ | 名词（或 である） + にしろ",
+      "examples": [
+        {
+          "translation": "不管去还是不去，都请尽快做决定。"
+        },
+        {
+          "translation": "不论他来还是不来，我们都把派对开始吧。"
+        },
+        {
+          "translation": "不管下不下雨，最好都还是把雨伞带上。"
+        },
+        {
+          "translation": "这家餐厅无论价格贵还是便宜，菜肴都非常美味。"
+        }
+      ]
+    },
+    "ja_につけにつけ_112": {
+      "title": "～につけ～につけ (〜ni tsuke 〜ni tsuke)",
+      "shortExplanation": "列举并列或相对的两种情况，表示无论在何种情况下都会自然引起相同的情感或思绪；“每当……或者……的时候总会……”、“不论……还是……”。",
+      "longExplanation": "句型“～につけ～につけ”接在动词、形容词或名词之后，通过列举两个对照或并列的代表性事例（如善恶、悲喜、春秋等），强调无论在哪种场合下，心中都会油然而生同一种感受、感慨或同样的反应（“无论是……还是……，都会……”）。后项往往紧接表示心理感受、回忆、感慨或无法自已的情感表达。",
+      "formation": "动词普通形 + につけ | い形容词 + につけ | な形容词 + につけ | 名词 + につけ",
+      "examples": [
+        {
+          "translation": "无论去国外还是自己学习，我总是会遭遇语言的障碍。"
+        },
+        {
+          "translation": "每当和他交谈，或是每当听到他的想法时，我都会为他博学多识而惊叹不已。"
+        },
+        {
+          "translation": "在这个公园里无论是玩耍还是散步，都会让我不禁回想起自己的童年时光。"
+        },
+        {
+          "translation": "不管是到了春天还是秋天，他都会回去探访母校。"
+        }
+      ]
+    },
+    "ja_につれて_113": {
+      "title": "～につれて (〜ni tsurete)",
+      "shortExplanation": "表示伴随着一方在程度、时间或阶段上的逐步变化，另一方也相应地发生自然演变；“随着……”、“越……越……”。",
+      "longExplanation": "句型“～につれて”接在动词辞书形或名词之后，表示前项事物在时间推移、程度加深或阶段发展的同时，后项事物也随之自然而然地发生同方向或相应的比例变化（“随着……逐渐……”）。前项常搭配表示变化过程的动词（如“近づく”、“増える”、“進む”等）或动作性名词，多用于客观叙述自然的演进与变化过程。",
+      "formation": "动词辞书形 + につれて | 名词 + につれて",
+      "examples": [
+        {
+          "translation": "随着年龄的增长，我们必须越来越注重身体健康。"
+        },
+        {
+          "translation": "随着春天的临近，气温也逐渐回升了。"
+        },
+        {
+          "translation": "随着不断地深入学习，渐渐地就能够弄明白了。"
+        },
+        {
+          "translation": "随着经验的不断积累，自信心也逐渐建立起来了。"
+        }
+      ]
+    },
+    "ja_にともなって_114": {
+      "title": "～にともなって (〜ni tomonatte)",
+      "shortExplanation": "表示随着某重大变化或事件的发生，另一事态作为伴随现象或结果也随之产生；“随着……”、“伴随着……”、“由……所引起的”。",
+      "longExplanation": "句型“～にともなって”（汉字为“～に伴って”）接在名词或动词普通形之后，表示某个重大的事件、社会现象或整体性变化发生时，另一项事态作为伴随现象、联带反应或结果也同时发生或逐步加剧（“伴随……”、“随着……的发生而……”）。此表达具有较强的郑重语感，常用于社会、经济、自然等宏观层面的现象分析、新闻报道和学术调查之中。",
+      "formation": "名词 + にともなって | 动词普通形 + にともなって",
+      "examples": [
+        {
+          "translation": "伴随着人口的不断增加，交通拥堵也在日益加剧。"
+        },
+        {
+          "translation": "随着季节的交替变换，人的身体往往容易出现不适。"
+        },
+        {
+          "translation": "伴随着经济的增长，就业机会想必也会不断增多吧。"
+        },
+        {
+          "translation": "随着他的升迁，我们全家决定搬家了。"
+        }
+      ]
+    },
+    "ja_にほかならない_115": {
+      "title": "～にほかならない (〜ni hoka naranai)",
+      "shortExplanation": "强烈断定某事的根本原因或本质正是该事物，绝无其他可能；“无非是……”、“正是……”、“不外乎是……”。",
+      "longExplanation": "句型“～にほかならない”（汉字为“～に他ならない”）接在名词、动词或形容词普通形之后，用于做出十分强烈的绝对断定，指出某项结果的唯一核心原因、本质或真相正是前项所指，绝非其他（“不外乎……”、“无非正是……”）。具有郑重、果断的书面语气，常用于政论文、评论文和正式演讲之中。",
+      "formation": "名词 + にほかならない | 动词普通形 + （から）にほかならない | い形容词 + （从/から）にほかならない | な形容词 + である（から）にほかならない",
+      "examples": [
+        {
+          "translation": "他的成功不外乎是他努力拼搏的结果。"
+        },
+        {
+          "translation": "这阵疼痛无非就是严寒天气所造成的。"
+        },
+        {
+          "translation": "他失败的原因无非正是因为盲目自满。"
+        },
+        {
+          "translation": "她的笑容无非正是她内心阳光开朗的体现。"
+        }
+      ]
+    },
+    "ja_にもかかわらず_116": {
+      "title": "～にもかかわらず (〜ni mo kakawarazu)",
+      "shortExplanation": "表示尽管存在前项的情况或条件，后项却产生了与之相反、出乎意料的事实；“尽管……却……”、“虽然……但是依然……”。",
+      "longExplanation": "句型“～にもかかわらず”（汉字为“～にも関わらず”）接在动词、形容词或名词之后，表示转折关系。通常前项提出了一个理应产生某种结果的前提或不利条件，而后项却出现了完全相反、意料之外的行为或结果（“尽管……却依然……”、“虽然……但毫无顾虑地……”）。相比于口语中的“～のに”，此句型语气更显正式、庄重与客观。",
+      "formation": "动词普通形 + にもかかわらず | い形容词 + にもかかわらず | な形容词 / 名词 + であるにもかかわらず（口语中也可直接 名词 + にもかかわらず）",
+      "examples": [
+        {
+          "translation": "尽管非常繁忙，他每天却依然坚持锻炼身体。"
+        },
+        {
+          "translation": "尽管天空下着雨，她还是出去散步了。"
+        },
+        {
+          "translation": "这辆汽车虽然很旧，却依然开得很好。"
+        },
+        {
+          "translation": "尽管成绩不尽如人意，他依然坚持不懈地继续努力。"
+        }
+      ]
+    },
+    "ja_により_117": {
+      "title": "～により (〜ni yori)",
+      "shortExplanation": "表示原因、手段、依据或被动句的行为主体；“由于……”、“通过……”、“根据……”、“由……所……”。",
+      "longExplanation": "句型“～により”（或“～によって”）接在名词之后，属于正式的书面表达，主要包含以下核心用法：(1) 表示导致某种后果的原因或理由（“由于……”、“因……”）；(2) 表示达成某目的所采用的手段、途径或方法（“通过……”、“凭借……”）；(3) 表示判断或处理事情的依据（“根据……”）；(4) 在被动句中引出创作、发明的行为主体（“由……所制作／发明”）。修饰后续名词时需用“～による＋名词”的形式。",
+      "formation": "名词 + により（修饰名词时用：名词 + による + 名词）",
+      "examples": [
+        {
+          "translation": "这起事故是由于司机的粗心大意而引起的。"
+        },
+        {
+          "translation": "那部电影是根据小说改编制作而成的。"
+        },
+        {
+          "translation": "罪犯已经被警方逮捕归案。"
+        },
+        {
+          "translation": "公司的发展壮大是通过全体员工的不懈努力而得以实现的。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_ないではいられない_103": {
+      "title": "～ないではいられない (〜nai de wa irarenai)",
+      "shortExplanation": "어떤 감정이나 충동, 자연스러운 반응을 억누르지 못하고 자신도 모르게 어떠한 행동을 하게 됨을 나타내며, '~하지 않고는 못 배기다', '~하지 않을 수 없다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ないではいられない'(구어체로는 '～ないじゃいられない')는 동사의 ない형에 접속하여, 내면에서 솟구치는 강한 감정, 충동, 신체적 반응 등을 이성적으로 억누르거나 참지 못하고 결국 그 행동을 하고 마는 상태를 나타냅니다('~하지 않고는 견딜 수 없다', '~하지 않을 수 없다'). 주어는 원칙적으로 화자 자신(1인칭)이며, 3인칭의 심정을 나타낼 때는 문말에 '~ようだ(인 것 같다)', '~らしい(인 모양이다)' 등의 추측 표현을 동반합니다.",
+      "formation": "동사 ない형 + ではいられない / じゃいられない (참고: する는 しないではいられない 또는 せずにはいられない)",
+      "examples": [
+        {
+          "translation": "이 영화는 너무나 감동적이어서 눈물을 흘리지 않고는 견딜 수 없었다."
+        },
+        {
+          "translation": "그녀의 미소를 보면 절로 웃지 않고는 못 배긴다."
+        },
+        {
+          "translation": "이 방은 너무 추워서 몸을 떨지 않고는 견딜 수 없다."
+        },
+        {
+          "translation": "그의 이야기는 지루하지만, 듣지 않고는 못 배기겠다."
+        }
+      ]
+    },
+    "ja_ながら_104": {
+      "title": "～ながら (〜nagara)",
+      "shortExplanation": "동일한 주체가 두 가지 동작을 동시에 병행하여 행함을 나타내며, '~하면서'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～ながら'는 동사의 연용형(ます형 어간)에 접속하여, 한 주체가 두 가지 동작을 동시에 병행할 때 사용합니다('~하면서', '~겸해서'). 이때 'ながら' 앞의 동작은 부수적·보조적인 동작이며, 뒤에 오는 동작이 중심이 되는 본동작을 나타냅니다.",
+      "formation": "동사 ます형 어간 + ながら",
+      "examples": [
+        {
+          "translation": "TV를 보면서 숙제를 하고 있습니다."
+        },
+        {
+          "translation": "그녀는 노래를 부르면서 요리를 만들고 있었습니다."
+        },
+        {
+          "translation": "전철 안에서 서서 책을 읽고 있는 사람이 많습니다."
+        },
+        {
+          "translation": "나는 걸어가면서 스마트폰을 사용하고 있습니다."
+        }
+      ]
+    },
+    "ja_にあたり_105": {
+      "title": "～にあたり (〜ni atari)",
+      "shortExplanation": "어떤 특별하거나 중요한 일, 행사를 맞이하는 시점이나 그에 앞서서의 계기를 나타내며, '~함에 있어서', '~에 즈음하여', '~을 맞이하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～にあたり'(또는 '～にあたって')는 명사나 동사의 사전형에 접속하여, 입학, 결혼, 개업, 신년 등 새롭고 특별하거나 중대한 국면, 행사를 맞이하는 결정적 시점을 나타냅니다('~에 즈음하여', '~함에 있어서'). 뒤에는 그에 따르는 인사말, 결의, 주의사항, 필요한 사전 준비 등의 내용이 주로 이어집니다. 주로 연설문, 축사, 공식 문서 등 정중하고 격식 있는 자리에 널리 쓰입니다.",
+      "formation": "명사 + にあたり / にあたって | 동사 사전형 + にあたり / にあたって",
+      "examples": [
+        {
+          "translation": "입학에 즈음하여 필요한 서류를 준비해 주십시오."
+        },
+        {
+          "translation": "신년을 맞이하여 포부를 세우는 사람이 많습니다."
+        },
+        {
+          "translation": "결혼을 맞이하여 양가는 소중한 의식을 치릅니다."
+        },
+        {
+          "translation": "새로운 일을 시작함에 있어서 사전 준비가 필요합니다."
+        }
+      ]
+    },
+    "ja_において_106": {
+      "title": "～において (〜ni oite)",
+      "shortExplanation": "어떤 일이나 행위가 일어나는 장소, 시대, 분야, 상황 등을 격식 있게 나타내며, '~에서', '~에 있어서', '~에 관하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～において'는 명사에 접속하여, 조사 'で'나 'に'를 문어적이고 격식 있게 표현하는 문형입니다. 동작이나 사건이 일어나는 구체적인 장소, 시대적 배경, 연구 분야, 상황 등을 나타냅니다('~에서', '~에 있어서'). 뒤의 명사를 수식할 때는 '～における + 명사'의 형태를 취합니다. 뉴스 보도, 논문, 공문서, 공식 연설 등 공적인 성격의 딱딱한 문장에 자주 사용됩니다.",
+      "formation": "명사 + において (명사 수식 시: 명사 + における + 명사)",
+      "examples": [
+        {
+          "translation": "이 대학교에서 영어 수업이 가장 인기가 있습니다."
+        },
+        {
+          "translation": "그의 연구에서 새로운 발견이 있었습니다."
+        },
+        {
+          "translation": "운동회에서 그는 눈부신 대활약을 펼쳤습니다."
+        },
+        {
+          "translation": "환경 문제에 있어서는 모두가 책임을 지고 행동해야 합니다."
+        }
+      ]
+    },
+    "ja_にかかわらず_107": {
+      "title": "～にかかわらず (〜ni kakawarazu)",
+      "shortExplanation": "앞의 조건, 상황, 차이 등에 구애받거나 영향을 받지 않고 뒤의 내용이 성립함을 나타내며, '~에 상관없이', '~에 관계없이', '~를 불문하고'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～にかかわらず'(한자로는 '～に関わらず')는 동사, 형용사, 명사에 접속하여, 앞선 사실이나 조건, 상황의 유무·차이에 전혀 좌우되지 않고 뒤의 사태나 행위가 항상 성립함을 나타냅니다('~에 상관없이', '~에 관계없이'). 앞에는 대립되는 쌍(유무, 좋고 나쁨 등)이나 폭과 차이를 지닌 명사(날씨, 연령, 성별, 국적 등)가 자주 옵니다.",
+      "formation": "동사 사전형 / ない형 + にかかわらず | い형용사 + にかかわらず | な형용사(또는 である) + にかかわらず | 명사 + にかかわらず",
+      "examples": [
+        {
+          "translation": "날씨에 상관없이 오늘의 경기는 진행됩니다."
+        },
+        {
+          "translation": "그는 나이에 관계없이 새로운 것을 계속해서 배우고 있습니다."
+        },
+        {
+          "translation": "그 일이 어려운지 어떤지에 상관없이, 그녀는 꾸준히 노력을 계속했다."
+        },
+        {
+          "translation": "경험의 유무에 관계없이 이 프로그램은 누구라도 이용할 수 있습니다."
+        }
+      ]
+    },
+    "ja_にかけては_108": {
+      "title": "～にかけては (〜ni kakete wa)",
+      "shortExplanation": "어떤 특정한 기술, 분야, 방면에 있어서 누구에게도 뒤지지 않을 만큼 뛰어난 능력을 지니고 있음을 강조하며, '~에 있어서는', '~에 관해서는', '~에 걸쳐서는'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～にかけては'는 명사에 접속하여, 어떤 특정한 능력, 기술, 지식 분야나 방면을 콕 집어 그 부분에 있어서 뛰어난 실력이나 우위를 지니고 있음을 강조할 때 사용합니다('~에 있어서는', '~에 관한 한'). 후속 절에는 주로 긍정적이고 높은 평가를 담은 표현('누구에게도 지지 않는다', '가장 뛰어나다', '자신이 있다' 등)이 뒤따릅니다.",
+      "formation": "명사 + にかけては",
+      "examples": [
+        {
+          "translation": "요리 솜씨에 있어서는 그녀는 누구에게도 뒤지지 않습니다."
+        },
+        {
+          "translation": "이 마을에 있어서는 그의 가게가 가장 맛있는 라면을 팝니다."
+        },
+        {
+          "translation": "음악 지식에 관해서는 그가 우리 중에서 가장 해박합니다."
+        },
+        {
+          "translation": "스포츠에 있어서는 그는 어떤 종목이든 잘합니다."
+        }
+      ]
+    },
+    "ja_にしたがって_109": {
+      "title": "～にしたがって (〜ni shitagatte)",
+      "shortExplanation": "(1) 어떤 일의 변화에 비례하여 다른 일도 점차 변화함을 나타내거나('~함에 따라', '~함과 동시에'), (2) 규칙이나 지시 등에 순응하여 행함을 나타냅니다('~에 따라서').",
+      "longExplanation": "문법 패턴 '～にしたがって'는 동사의 사전형이나 명사에 접속하여 크게 두 가지 의미를 나타냅니다. 첫째, 어떤 현상이나 상태가 한 방향으로 진행·변화함에 수반하여 다른 현상도 비례적으로 함께 변해가는 과정을 나타냅니다('~함에 따라', '~함에 수반하여'). 둘째, 정해진 방침, 규칙, 지침, 지시 등을 그대로 순종하거나 따르는 것을 나타냅니다('~에 따라서', '~대로').",
+      "formation": "동사 사전형 + にしたがって | 명사 + にしたがって",
+      "examples": [
+        {
+          "translation": "성장함에 따라 이 식물의 잎이 커집니다."
+        },
+        {
+          "translation": "설명서에 따라서 가구를 조립해 주십시오."
+        },
+        {
+          "translation": "나이가 들어감에 따라 사람의 체력은 저하됩니다."
+        },
+        {
+          "translation": "운동함에 따라 심박수가 증가하는 것이 일반적입니다."
+        }
+      ]
+    },
+    "ja_にしたら_110": {
+      "title": "～にしたら (〜ni shitara)",
+      "shortExplanation": "특정 인물의 입장이나 처지에 서서 생각해보거나 추측할 때 쓰이며, '~의 입장에서 보면', '~에게 있어서는'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～にしたら'(유사 표현: '～にすれば', '～にしてみれば')는 사람을 나타내는 명사나 대명사에 접속하여, 다른 사람의 입장이나 처지에 역지사지로 서서 그 사람의 심정이나 생각을 헤아리고 추측할 때 사용합니다('~의 입장에서 보면', '~에게는'). 뒤에는 흔히 화자의 주관적인 추측이나 짐작을 나타내는 표현('~だろう', '~かもしれない' 등)이 이어집니다.",
+      "formation": "명사 + にしたら | 대명사 + にしたら",
+      "examples": [
+        {
+          "translation": "그의 입장에서 보면 일찍 집에 가고 싶을 것이다."
+        },
+        {
+          "translation": "아이들의 입장에서 보면 이 이야기는 지루할지도 모른다."
+        },
+        {
+          "translation": "나로서는 그 선물이 아주 훌륭하다고 생각합니다."
+        },
+        {
+          "translation": "그녀의 입장에서 보면 이 영화를 좋아하지 않을 것입니다."
+        }
+      ]
+    },
+    "ja_にしろにしろ_111": {
+      "title": "～にしろ～にしろ (〜ni shiro 〜ni shiro)",
+      "shortExplanation": "상반되거나 나란히 대등한 두 가지 경우를 예로 들어, 어느 쪽이든 상관없이 뒤의 결론이나 행동은 변함없음을 나타내며, '~이든 ~이든', '~하든 ~하든'이라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～にしろ～にしろ'(격식 있는 표현: '～にせよ～にせよ')는 두 가지 대조적인 선택지나 사례를 제시하여, 그중 어느 쪽을 택하든 혹은 어느 쪽의 상황이 벌어지든 간에 후속 절의 판단, 결론, 요구 사항 등에는 아무런 영향이 없음을 나타냅니다('~이든 ~이든 간에', '~하든 안 하든'). 뒤에는 주로 판단이나 충고, 결정, 요청 등이 이어집니다.",
+      "formation": "동사 보통형 + にしろ | い형용사 + にしろ | な형용사(또는 である) + にしろ | 명사(또는 である) + にしろ",
+      "examples": [
+        {
+          "translation": "가든 안 가든 빨리 결정해 주십시오."
+        },
+        {
+          "translation": "그가 오든 안 오든 파티는 시작합시다."
+        },
+        {
+          "translation": "비가 오든 안 오든 우산을 가지고 가는 편이 좋습니다."
+        },
+        {
+          "translation": "이 식당이 비싸든 싸든 간에 요리는 맛있습니다."
+        }
+      ]
+    },
+    "ja_につけにつけ_112": {
+      "title": "～につけ～につけ (〜ni tsuke 〜ni tsuke)",
+      "shortExplanation": "대비되거나 나란한 두 가지 경우를 들어, 어느 경우에 직면하더라도 언제나 같은 감정이나 생각이 듦을 나타내며, '~할 때마다 혹은 ~할 때마다', '~이든 ~이든 간에'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～につけ～につけ'는 동사, 형용사, 명사에 접속하여, 기쁨과 슬픔, 좋음과 나쁨, 봄과 가을 등 대비되는 두 상황을 예로 들어, 어느 경우를 맞닥뜨리더라도 매번 한결같이 마음속에 어떤 감정이나 생각, 회상이 자연스럽게 떠오름을 나타냅니다('~할 때나 ~할 때나 언제나'). 뒤에는 주로 마음의 움직임이나 감정, 감상을 나타내는 표현이 이어집니다.",
+      "formation": "동사 보통형 + につけ | い형용사 + につけ | な형용사 + につけ | 명사 + につけ",
+      "examples": [
+        {
+          "translation": "외국에 갈 때나 공부를 할 때나 늘 언어의 장벽에 부딪힌다."
+        },
+        {
+          "translation": "그와 이야기를 나눌 때나 그의 생각을 들을 때나, 그의 지식에 늘 놀라움을 금치 못한다."
+        },
+        {
+          "translation": "이 공원에서 놀 때나 산책할 때나 어릴 적 시절이 떠오른다."
+        },
+        {
+          "translation": "봄이든 가을이든 그는 늘 모교를 방문한다."
+        }
+      ]
+    },
+    "ja_につれて_113": {
+      "title": "～につれて (〜ni tsurete)",
+      "shortExplanation": "한쪽의 단계나 정도가 점차 변화·진행됨에 따라 다른 한쪽도 그에 비례하여 자연스럽게 변화함을 나타내며, '~함에 따라', '~함에 수반하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～につれて'는 동사의 사전형이나 명사에 접속하여, 시간이 흐르거나 어떤 상태가 점차 진행·변화함에 따라 다른 사태 역시 이에 상응하여 자연스럽게 변해가는 과정을 나타냅니다('~함에 따라서', '~할수록'). 주로 변화를 나타내는 동사(예: '進む', '近づく', '増える' 등)와 함께 사용되며, 자연적이고 불가피한 인과적 변화 과정을 서술할 때 자주 쓰입니다.",
+      "formation": "동사 사전형 + につれて | 명사 + につれて",
+      "examples": [
+        {
+          "translation": "나이를 먹어감에 따라 건강에 각별히 신경을 써야 합니다."
+        },
+        {
+          "translation": "봄이 다가옴에 따라 기온이 올라간다."
+        },
+        {
+          "translation": "공부를 해나감에 따라 차츰 이해할 수 있게 된다."
+        },
+        {
+          "translation": "경험이 늘어남에 따라 자신감도 생겨난다."
+        }
+      ]
+    },
+    "ja_にともなって_114": {
+      "title": "～にともなって (〜ni tomonatte)",
+      "shortExplanation": "어떤 중요한 사태나 변화가 일어남에 따라 다른 일이 동시에 부수적으로 일어나거나 결과로서 유발됨을 나타내며, '~에 수반하여', '~에 따라', '~함과 동시에'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～にともなって'(한자로는 '～に伴って')는 명사나 동사의 보통형에 접속하여, 어떤 사회적 사건이나 중요한 현상, 전반적인 변화가 일어남과 동시에 그에 수반되는 다른 결과나 변화가 뒤따라 발생함을 나타냅니다('~에 수반하여', '~에 동반하여'). 주로 경제, 사회, 환경 등 거시적인 변화나 인과 관계를 나타낼 때 격식 있는 문맥에서 자주 사용됩니다.",
+      "formation": "명사 + にともなって | 동사 보통형 + にともなって",
+      "examples": [
+        {
+          "translation": "인구가 증가함에 수반하여 교통 체증도 악화되고 있습니다."
+        },
+        {
+          "translation": "환절기에 동반하여 몸 상태가 나빠지기 쉬워집니다."
+        },
+        {
+          "translation": "경제 성장에 수반하여 고용 기회도 늘어날 것입니다."
+        },
+        {
+          "translation": "그의 승진에 따라 이사를 하게 되었습니다."
+        }
+      ]
+    },
+    "ja_にほかならない_115": {
+      "title": "～にほかならない (〜ni hoka naranai)",
+      "shortExplanation": "어떤 결과나 사태의 원인이나 본질이 다름 아닌 바로 그것이라고 강하게 단정하여 나타내며, '다름 아닌 ~이다', '~에 지나지 않는다'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～にほかならない'(한자로는 '～に他ならない')는 명사나 보통형에 접속하여, 어떤 사태의 근본적인 이유나 본질이 다른 것이 아니라 바로 그것이라고 화자가 확신을 갖고 강하게 단정할 때 사용합니다('다름 아닌 바로 ~이다', '~에 틀림없다'). 논설문이나 공식 연설 등에서 확고한 결론이나 주장을 단정적으로 나타낼 때 널리 쓰입니다.",
+      "formation": "명사 + にほかならない | 동사 보통형 + (から)にほかならない | い형용사 + (から)にほかならない | な형용사 + である(から)にほかならない",
+      "examples": [
+        {
+          "translation": "그의 성공은 다름 아닌 끊임없는 노력 덕분이다."
+        },
+        {
+          "translation": "이 통증은 다름 아닌 추위 때문이다."
+        },
+        {
+          "translation": "그의 실패 원인은 다름 아닌 자만심 때문이다."
+        },
+        {
+          "translation": "그녀의 미소는 다름 아닌 밝음 그 자체이다."
+        }
+      ]
+    },
+    "ja_にもかかわらず_116": {
+      "title": "～にもかかわらず (〜ni mo kakawarazu)",
+      "shortExplanation": "앞의 불리하거나 당연한 전제 조건에도 불구하고, 그로부터 당연히 예상되는 결과와는 반대되는 일이 일어남을 나타내며, '~임에도 불구하고', '~인데도'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～にもかかわらず'(한자로는 '～にも関わらず')는 동사, 형용사, 명사에 접속하여, 앞선 상황이나 조건(흔히 불리하거나 장애가 되는 요인)에 영향을 받지 않고, 그로부터 상식적으로 예상되는 결과와는 정반대되는 사태나 행동이 전개됨을 나타냅니다('~임에도 불구하고', '~인데도 불구하고'). 구어의 '～のに'보다 격식 있고 딱딱한 문어적 표현입니다.",
+      "formation": "동사 보통형 + にもかかわらず | い형용사 + にもかかわらず | な형용사 / 명사 + であるにもかかわらず (또는 명사 + にもかかわらず)",
+      "examples": [
+        {
+          "translation": "바쁨에도 불구하고 그는 매일 운동을 하고 있습니다."
+        },
+        {
+          "translation": "비가 내리고 있음에도 불구하고 그녀는 산책을 나갔습니다."
+        },
+        {
+          "translation": "차가 오래되었음에도 불구하고 아직 잘 달립니다."
+        },
+        {
+          "translation": "결과가 좋지 않음에도 불구하고 그는 끊임없이 계속 노력했습니다."
+        }
+      ]
+    },
+    "ja_により_117": {
+      "title": "～により (〜ni yori)",
+      "shortExplanation": "원인이나 이유, 수단이나 방법, 근거, 또는 수동문의 행위 주체를 격식 있게 나타내며, '~로 인해', '~에 의해', '~을 통하여'라는 뜻입니다.",
+      "longExplanation": "문법 패턴 '～により'(또는 '～によって')는 명사에 접속하여, 문어적이고 격식 있는 문맥에서 다음과 같은 다양한 용법을 나타냅니다. 첫째, 사건이나 사태를 발생시킨 원인이나 이유를 나타냅니다('~로 인해', '~에 의하여'). 둘째, 어떤 일을 이루기 위한 수단이나 방법을 나타냅니다('~을 통해', '~로써'). 셋째, 행동이나 판단의 근거를 나타냅니다('~에 따라', '~에 의거하여'). 넷째, 창작물 등의 수동문에서 행위의 주체를 나타냅니다('~에 의해'). 뒤의 명사를 수식할 때는 '～による + 명사' 형태를 취합니다.",
+      "formation": "명사 + により (명사 수식 시: 명사 + による + 명사)",
+      "examples": [
+        {
+          "translation": "이 사고는 운전자의 부주의로 인해 일어났습니다."
+        },
+        {
+          "translation": "그 영화는 소설에 의해 제작되었습니다."
+        },
+        {
+          "translation": "범인은 경찰에 의해 체포되었습니다."
+        },
+        {
+          "translation": "회사의 성장은 직원들의 노력에 의해 실현되었습니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_ないではいられない_103": {
+      "title": "～ないではいられない (〜nai de wa irarenai)",
+      "shortExplanation": "感情や衝動、生理的な欲求などが抑えられず、自然と〜してしまうことを表し、「どうしても〜せずにはいられない」「〜することを抑えられない」という意味を表します。",
+      "longExplanation": "「～ないではいられない」（口語では「〜ないじゃいられない」）は、動詞のない形に接続し、話し手の抑えきれない感情や強い衝動、やむを得ない欲求によって「どうしても〜してしまう」「〜せずには我慢できない」という状態を表す表現です。理屈や意志の力では感情や行動をコントロールできないニュアンスを含みます。原則として話し手自身の感情や行動について述べますが、三人称を主語にする場合は「〜ようだ」「〜らしい」などの推量表現を伴うのが一般的です。",
+      "formation": "動詞ない形 ＋ ではいられない／じゃいられない（「する」は「しないではいられない」または「せずにはいられない」）",
+      "examples": [
+        {
+          "translation": "この映画はとても感動的で、泣かないではいられなかった。"
+        },
+        {
+          "translation": "彼女の笑顔を見ると、笑わないではいられない。"
+        },
+        {
+          "translation": "この部屋はとても寒いので、震えないではいられない。"
+        },
+        {
+          "translation": "彼の話はつまらないが、聞かないではいられない。"
+        }
+      ]
+    },
+    "ja_ながら_104": {
+      "title": "～ながら (〜nagara)",
+      "shortExplanation": "同一の主語が二つの動作を並行して同時に行うことを表し、「〜しながら」という意味を表します。",
+      "longExplanation": "「～ながら」は動詞の連用形（ます形語幹）に接続し、一人の人物が二つの動作を同時並行して行うことを表す文型です（「〜しながら」）。この文型では、「ながら」の前に来る動詞が副次的・付随的な動作を表し、後ろに来る述語が主たる中心的な動作を表します。",
+      "formation": "動詞ます形語幹 ＋ ながら",
+      "examples": [
+        {
+          "translation": "テレビを見ながら宿題をしています。"
+        },
+        {
+          "translation": "彼女は歌いながら料理を作っていました。"
+        },
+        {
+          "translation": "電車の中で立ちながら本を読んでいる人が多いです。"
+        },
+        {
+          "translation": "僕は歩きながらスマホを使っています。"
+        }
+      ]
+    },
+    "ja_にあたり_105": {
+      "title": "～にあたり (〜ni atari)",
+      "shortExplanation": "新しいことや重要な節目・行事を始める・迎える機会に際して述べる表現で、「〜に際して」「〜を迎えるにあたって」という意味を表します。",
+      "longExplanation": "「～にあたり」（または「～にあたって」）は、名詞や動詞の辞書形に接続し、入学、結婚、開業、新年など、人生や事業における特別な節目や重要な出来事・行事を迎えたり始めたりする重要なタイミングを表す改まった表現です。後続の文には、その機会に向けた心構え、挨拶、準備すべき事項、決意などが続きます。式典のスピーチや公式文書、ビジネスレターなどで頻繁に用いられます。",
+      "formation": "名詞 ＋ にあたり／にあたって ｜ 動詞辞書形 ＋ にあたり／にあたって",
+      "examples": [
+        {
+          "translation": "入学にあたり、必要な書類を準備してください。"
+        },
+        {
+          "translation": "新年にあたり、抱負を立てる人が多いです。"
+        },
+        {
+          "translation": "結婚にあたり、両家は大切な儀式を行います。"
+        },
+        {
+          "translation": "新しい仕事を始めるにあたり、準備が必要です。"
+        }
+      ]
+    },
+    "ja_において_106": {
+      "title": "～において (〜ni oite)",
+      "shortExplanation": "動作や出来事が行われる場所、時代、分野、状況などを表す硬い表現で、「〜で」「〜において」という意味を表します。",
+      "longExplanation": "「～において」は名詞に接続し、助詞「で」や「に」に相当する改まった書き言葉の文型です。出来事や行為が展開する場所、時代、領域、状況、観点などを客観的かつ厳粛に提示する際に用いられます（「〜で」「〜の分野で」）。後続の名詞を修飾する際には「～における＋名詞」の形をとります。ニュース報道、論文、公的文書、式典のスピーチなどの改まった場面で多用されます。",
+      "formation": "名詞 ＋ において（名詞修飾形：名詞 ＋ における ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "この大学において、英語のクラスが一番人気があります。"
+        },
+        {
+          "translation": "彼の研究において新しい発見がありました。"
+        },
+        {
+          "translation": "運動会において、彼は大活躍しました。"
+        },
+        {
+          "translation": "環境問題においては、みんなが責任を持って行動すべきです。"
+        }
+      ]
+    },
+    "ja_にかかわらず_107": {
+      "title": "～にかかわらず (〜ni kakawarazu)",
+      "shortExplanation": "前の条件や状況、差異などに左右・影響されることなく、後の事柄が成立することを表し、「〜に関係なく」「〜を問わず」という意味を表します。",
+      "longExplanation": "「～にかかわらず」（漢字表記では「～に関わらず」）は、動詞、形容詞、名詞に接続し、前項で示された条件や事態、区別などに一切影響を受けることなく、後項の行為や状態が一様に成立することを表す文型です（「〜に関係なく」「〜を問わず」）。前項には、対立する概念（有無、良し悪し、するかしないかなど）や、幅や変化を含む名詞（天候、年齢、性別、国籍など）がよく用いられます。",
+      "formation": "動詞辞書形／ない形 ＋ にかかわらず ｜ い形容詞 ＋ にかかわらず ｜ な形容詞（または である） ＋ にかかわらず ｜ 名詞 ＋ にかかわらず",
+      "examples": [
+        {
+          "translation": "天気にかかわらず、今日の試合は行われます。"
+        },
+        {
+          "translation": "彼は年齢にかかわらず、新しいことを学び続けています。"
+        },
+        {
+          "translation": "その仕事が難しいかどうかにかかわらず、彼女は努力し続けた。"
+        },
+        {
+          "translation": "経験の有無にかかわらず、このプログラムは誰でも利用できます。"
+        }
+      ]
+    },
+    "ja_にかけては_108": {
+      "title": "～にかけては (〜ni kakete wa)",
+      "shortExplanation": "ある特定の分野や技術、能力において人並み外れて優れていることを強調して表し、「〜のことに関しては」「〜の腕前では」という意味を表します。",
+      "longExplanation": "「～にかけては」は名詞に接続し、ある特定の技術、能力、知識、専門分野などを取り上げ、「その方面においては誰よりも優れている」「他に引けを取らない」と高く評価・強調する文型です。後続の文には「誰にも負けない」「一番詳しい」「得意だ」といった、能力の高さや自信を肯定的に評価する表現が来ることが特徴です。",
+      "formation": "名詞 ＋ にかけては",
+      "examples": [
+        {
+          "translation": "料理の腕前にかけては、彼女は誰にも負けません。"
+        },
+        {
+          "translation": "この町にかけては、彼の店が一番おいしいラーメンを売っています。"
+        },
+        {
+          "translation": "音楽の知識にかけては、彼は私たちの中で一番詳しいです。"
+        },
+        {
+          "translation": "スポーツにかけては、彼はどんな競技も得意です。"
+        }
+      ]
+    },
+    "ja_にしたがって_109": {
+      "title": "～にしたがって (〜ni shitagatte)",
+      "shortExplanation": "①一方の変化に伴って他方も次第に変化していくこと（「〜するにつれて」「〜に伴って」）、または②規則や指示・順序にそのまま従うこと（「〜のとおりに」）を表します。",
+      "longExplanation": "「～にしたがって」は、動詞の辞書形や名詞に接続し、主に二つの用法を持ちます。第一に、一方の事態が変化・進行するのに応じて、もう一方の事態も連動して次第に変化していく比例的な相関関係を表します（「〜につれて」「〜とともに」）。第二に、指示、規則、方針、計画などに忠実に順応・準拠して行動することを表します（「〜の指示通りに」「〜に従順に」）。",
+      "formation": "動詞辞書形 ＋ にしたがって ｜ 名詞 ＋ にしたがって",
+      "examples": [
+        {
+          "translation": "成長にしたがって、この植物の葉が大きくなります。"
+        },
+        {
+          "translation": "説明書にしたがって、家具を組み立ててください。"
+        },
+        {
+          "translation": "年齢にしたがって、人の体力は低下します。"
+        },
+        {
+          "translation": "運動にしたがって、心拍数が増加することが一般的です。"
+        }
+      ]
+    },
+    "ja_にしたら_110": {
+      "title": "～にしたら (〜ni shitara)",
+      "shortExplanation": "ある人物の立場や境遇に身を置いて考えたり、心情を推測したりする際に用い、「〜の立場からすれば」「〜にとっては」という意味を表します。",
+      "longExplanation": "「～にしたら」（同義表現として「〜にすれば」「〜にしてみれば」）は、人物を表す名詞や代名詞に接続し、その人の立場や状況に身を置き換えて考え、相手がどのように感じ、考えているかを推し量る文型です（「〜の立場から見れば」「〜にとってみれば」）。後続の文には、「〜だろう」「〜かもしれない」などの推量や判断を表す表現がよく用いられます。",
+      "formation": "名詞 ＋ にしたら ｜ 代名詞 ＋ にしたら",
+      "examples": [
+        {
+          "translation": "彼にしたら、早く帰りたいだろう。"
+        },
+        {
+          "translation": "子供たちにしたら、この話はつまらないかもしれない。"
+        },
+        {
+          "translation": "私にしたら、そのプレゼントは素晴らしいと思います。"
+        },
+        {
+          "translation": "彼女にしたら、この映画が好きではないでしょう。"
+        }
+      ]
+    },
+    "ja_にしろにしろ_111": {
+      "title": "～にしろ～にしろ (〜ni shiro 〜ni shiro)",
+      "shortExplanation": "対照的・並列的な二つの例を挙げ、どちらの場合であっても結論や状況に変わりがないことを表し、「〜にしても〜にしても」「〜であれ〜であれ」という意味を表します。",
+      "longExplanation": "「～にしろ～にしろ」（改まった表現では「〜にせよ〜にせよ」）は、動詞、形容詞、名詞に接続し、対立する二つの選択肢や代表的な例を並べて、「どちらの場合であっても」「AであってもBであっても」後の事柄や話し手の判断・態度・結論には何の影響もなく同一であることを表す文型です。後続の文には、助言、決定、判断、促しなどが続くことが多いです。",
+      "formation": "動詞普通形 ＋ にしろ ｜ い形容詞 ＋ にしろ ｜ な形容詞（または である） ＋ にしろ ｜ 名詞（または である） ＋ にしろ",
+      "examples": [
+        {
+          "translation": "行くにしろ行かないにしろ、早く決めてください。"
+        },
+        {
+          "translation": "彼が来るにしろ来ないにしろ、パーティーは始めましょう。"
+        },
+        {
+          "translation": "雨が降るにしろ降らないにしろ、傘を持って行ったほうがいいです。"
+        },
+        {
+          "translation": "このレストランが高いにしろ安いにしろ、料理は美味しいです。"
+        }
+      ]
+    },
+    "ja_につけにつけ_112": {
+      "title": "～につけ～につけ (〜ni tsuke 〜ni tsuke)",
+      "shortExplanation": "対照的・並列的な事柄を挙げ、どちらの場合においても自然と同じ感情や感慨が湧き起こることを表し、「〜のときも〜のときも」「〜につけても〜につけても」という意味を表します。",
+      "longExplanation": "「～につけ～につけ」は、動詞、形容詞、名詞に接続し、対照的な二つの事態（良し悪し、悲喜、春秋など）を例示して、「そのどちらの場合においても、いつも決まって同様の感情・感慨・思いが心の中に湧き起こる」ことを表す文型です。後続節には、心の中に自然と生じる感情、感慨、回想などを表す表現が続くことが典型的です。",
+      "formation": "動詞普通形 ＋ につけ ｜ い形容詞 ＋ につけ ｜ な形容詞 ＋ につけ ｜ 名詞 ＋ につけ",
+      "examples": [
+        {
+          "translation": "外国へ行くにつけ、勉強するにつけ、言葉の壁にぶつかる。"
+        },
+        {
+          "translation": "彼と話すにつけ、彼が考えるにつけ、彼の知識に驚かされる。"
+        },
+        {
+          "translation": "この公園で遊ぶにつけ、散歩するにつけ、子供時代を思い出す。"
+        },
+        {
+          "translation": "春につけ、秋につけ、彼は母校を訪れる。"
+        }
+      ]
+    },
+    "ja_につれて_113": {
+      "title": "～につれて (〜ni tsurete)",
+      "shortExplanation": "一方の事態が時間の経過や程度に応じて変化・進行するのに伴って、他方も自然に連動して変化していくことを表し、「〜するのに伴ってだんだんと」「〜とともに」という意味を表します。",
+      "longExplanation": "「～につれて」は動詞の辞書形や名詞に接続し、前項が時間とともに変化・進行していくプロセスに応じて、後項もそれに比例するように自然と変化していく様子を表す文型です（「〜するに従って次第に」）。前項には「近づく」「増える」「年をとる」など、時間的推移や段階的な変化を表す動詞がよく用いられ、人為的な命令や意志ではなく自然な推移・変化を表します。",
+      "formation": "動詞辞書形 ＋ につれて ｜ 名詞 ＋ につれて",
+      "examples": [
+        {
+          "translation": "年を取るにつれて、健康に気をつけなければなりません。"
+        },
+        {
+          "translation": "春が近づくにつれて、気温が上がる。"
+        },
+        {
+          "translation": "勉強するにつれて、だんだん分かるようになる。"
+        },
+        {
+          "translation": "経験が増えるにつれて、自信もついてくる。"
+        }
+      ]
+    },
+    "ja_にともなって_114": {
+      "title": "～にともなって (〜ni tomonatte)",
+      "shortExplanation": "ある事態や変化が起こるのに伴い、別の事態が同時に生じたり結果として引き起こされたりすることを表し、「〜に伴って」「〜とともに」という意味を表します。",
+      "longExplanation": "「～にともなって」（漢字表記では「〜に伴って」）は、名詞や動詞の普通形に接続し、大規模な変化、社会現象、重大な出来事などが生じることと連動して、別の事態が付随的に発生したり影響が波及したりする因果的・伴随的関係を表す硬い表現です。主に社会、経済、自然環境などのマクロな変化について論じるニュースや論文、公式な報告書などでよく用いられます。",
+      "formation": "名詞 ＋ にともなって ｜ 動詞普通形 ＋ にともなって",
+      "examples": [
+        {
+          "translation": "人口が増えるにともなって、交通渋滞も悪化しています。"
+        },
+        {
+          "translation": "季節の変わり目にともなって、体調を崩しやすくなります。"
+        },
+        {
+          "translation": "経済の成長にともなって、雇用の機会も増えるでしょう。"
+        },
+        {
+          "translation": "彼の昇進にともなって、引っ越しをすることになりました。"
+        }
+      ]
+    },
+    "ja_にほかならない_115": {
+      "title": "～にほかならない (〜ni hoka naranai)",
+      "shortExplanation": "ある事柄の理由や本質がまさにそれであり、それ以外の何物でもないと強く断定して表し、「まさに〜である」「〜以外の何物でもない」という意味を表します。",
+      "longExplanation": "「～にほかならない」（漢字表記では「〜に他ならない」）は、名詞や普通形に接続し、話し手がある事態や結果の根本的な理由・原因・本質を「それ以外の何物でもなく、まさにそれである」と強い確信をもって断定的に述べる表現です。論説文、意見表明、演説などで自らの強い主張や結論を強調する際に用いられる硬い文型です。",
+      "formation": "名詞 ＋ にほかならない ｜ 動詞普通形 ＋ （から）にほかならない ｜ い形容詞 ＋ （から）にほかならない ｜ な形容詞 ＋ である（から）にほかならない",
+      "examples": [
+        {
+          "translation": "彼の成功は努力にほかならない。"
+        },
+        {
+          "translation": "この痛みは寒さにほかならない。"
+        },
+        {
+          "translation": "彼の失敗の原因は慢心にほかならない。"
+        },
+        {
+          "translation": "彼女の笑顔は明るさにほかならない。"
+        }
+      ]
+    },
+    "ja_にもかかわらず_116": {
+      "title": "～にもかかわらず (〜ni mo kakawarazu)",
+      "shortExplanation": "前項の状況や事実から当然予想されることとは正反対の結果が生じることを表し、「〜であるのに」「〜という悪条件にも負けず」という意味を表します。",
+      "longExplanation": "「～にもかかわらず」（漢字表記では「〜にも関わらず」）は、動詞、形容詞、名詞に接続し、前項で示された事実や状況（障害や悪条件など）があるにもかかわらず、そこから当然予想される結果とは相容れない意外な事態や行動が後項で生じることを表す逆接の文型です（「〜なのに」「〜という状況下であっても」）。口語の「〜のに」に比べて改まった硬い文章語として使われます。",
+      "formation": "動詞普通形 ＋ にもかかわらず ｜ い形容詞 ＋ にもかかわらず ｜ な形容詞／名詞 ＋ であるにもかかわらず（または 名詞 ＋ にもかかわらず）",
+      "examples": [
+        {
+          "translation": "忙しいにもかかわらず、彼は毎日運動しています。"
+        },
+        {
+          "translation": "雨が降っているにもかかわらず、彼女は散歩に行きました。"
+        },
+        {
+          "translation": "車が古いにもかかわらず、まだよく走ります。"
+        },
+        {
+          "translation": "結果が良くないにもかかわらず、彼は頑張り続けました。"
+        }
+      ]
+    },
+    "ja_により_117": {
+      "title": "～により (〜ni yori)",
+      "shortExplanation": "原因・理由、手段・方法、根拠、受身文の動作主などを表す改まった表現で、「〜によって」「〜が原因で」「〜の方法で」という意味を表します。",
+      "longExplanation": "「～により」（または「〜によって」）は名詞に接続し、多様な客観的事態を格調高く説明する書き言葉の文型です。主な用法として、①事故や事態を引き起こした原因・理由（「〜が原因で」）、②目標達成のための手段・方法・媒介（「〜の方法で」「〜を通じて」）、③判断や決定の基準・根拠（「〜を根拠として」）、④受身文における創作・発見などの動作主（「〜の手によって」）などがあります。後続の名詞を修飾する場合は「～による＋名詞」となります。",
+      "formation": "名詞 ＋ により（名詞修飾形：名詞 ＋ による ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "この事故は運転手の不注意により起こりました。"
+        },
+        {
+          "translation": "その映画は小説により制作されました。"
+        },
+        {
+          "translation": "犯人は警察により逮捕されました。"
+        },
+        {
+          "translation": "会社の成長は従業員の努力により実現しました。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Noun_30",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun と～ (Noun to～)",
+    "shortExplanation": "Express 'with', 'and' or 'together with' when connecting nouns.",
+    "longExplanation": "The Noun と grammar point is used to express a connection between two or more nouns, indicating 'with', 'and', or 'together with' in English. It functions as a particle that is used to simply list multiple items or express companionship.",
+    "formation": "Noun1 + と + Noun2",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "リンゴとバナナを買いました。",
+        "romanization": "Ringo to banana wo kaimashita.",
+        "translation": "I bought apples and bananas."
+      },
+      {
+        "sentence": "友達と映画を見に行きます。",
+        "romanization": "Tomodachi to eiga wo mi ni ikimasu.",
+        "translation": "I will go to watch a movie with my friend."
+      },
+      {
+        "sentence": "父と母と一緒に旅行しました。",
+        "romanization": "Chichi to haha to issho ni ryokou shimashita.",
+        "translation": "I traveled together with my father and mother."
+      },
+      {
+        "sentence": "彼と彼女は結婚しました。",
+        "romanization": "Kare to kanojo wa kekkon shimashita.",
+        "translation": "He and she got married."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_31",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に～ (Noun ni～)",
+    "shortExplanation": "Express a specific direction, target or purpose; 'to', 'toward', 'for'.",
+    "longExplanation": "The 'Noun に' grammar point is used to express a specific direction, target, or purpose in relation to a noun. It can be translated as 'to', 'toward', or 'for' in English. The に particle is added directly after the noun which indicates direction, target or purpose.",
+    "formation": "Noun + に",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼女にプレゼントをあげました。",
+        "romanization": "Kanojo ni purezento wo agemashita.",
+        "translation": "I gave a present to her."
+      },
+      {
+        "sentence": "日本に行きます。",
+        "romanization": "Nihon ni ikimasu.",
+        "translation": "I am going to Japan."
+      },
+      {
+        "sentence": "6時に集合しましょう。",
+        "romanization": "Roku-ji ni shuugou shimashou.",
+        "translation": "Let's meet at 6 o'clock."
+      },
+      {
+        "sentence": "友達に手紙を書きます。",
+        "romanization": "Tomodachi ni tegami wo kakimasu.",
+        "translation": "I will write a letter to my friend."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_32",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に 帰ります (Noun ni kaerimasu)",
+    "shortExplanation": "Express going back or returning to a place: 'to return to', 'to go back to'.",
+    "longExplanation": "The grammar point 'Noun に 帰ります' is used to express physically going back or returning to a specific place. It can be translated as 'to go back to' or 'to return to' in English. The particle に indicates the destination of the return.",
+    "formation": "Noun + に + 帰ります",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "夏休みが終わったら、学校に帰ります。",
+        "romanization": "Natsuyasumi ga owattara, gakkou ni kaerimasu.",
+        "translation": "When summer vacation ends, I'll go back to school."
+      },
+      {
+        "sentence": "買い物を終えたら、家に帰ります。",
+        "romanization": "Kaimono o oetara, ie ni kaerimasu.",
+        "translation": "After finishing shopping, I will go back home."
+      },
+      {
+        "sentence": "今週末、実家に帰ります。",
+        "romanization": "Konshuumatsu, jikka ni kaerimasu.",
+        "translation": "I'm going back to my parents' home this weekend."
+      },
+      {
+        "sentence": "友達と旅行に行ったあと、東京に帰ります。",
+        "romanization": "Tomodachi to ryokou ni itta ato, Toukyou ni kaerimasu.",
+        "translation": "After traveling with my friend, I'll return to Tokyo."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_33",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に します (Noun ni shimasu)",
+    "shortExplanation": "Express a choice or decision; 'choose', 'decide on'.",
+    "longExplanation": "The に します grammar point is used to express making a choice or decision. It can be translated as 'choose' or 'decide on' in English. It is often used in situations where someone has to make a selection or decide on something, such as ordering food at a restaurant or deciding on a vacation destination.",
+    "formation": "Noun + に します",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今日の昼ご飯は寿司にします。",
+        "romanization": "Kyou no hirugohan wa sushi ni shimasu.",
+        "translation": "I'll choose sushi for today's lunch."
+      },
+      {
+        "sentence": "この靴を買うか迷っていますが、赤い色の方にします。",
+        "romanization": "Kono kutsu wo kau ka mayotteimasu ga, akai iro no hou ni shimasu.",
+        "translation": "I was hesitating about which shoes to buy, but I'll go with the red ones."
+      },
+      {
+        "sentence": "休みの日に何をするか決めた。映画館に行くことにします。",
+        "romanization": "Yasumi no hi ni nani wo suru ka kimeta. Eigakan ni iku koto ni shimasu.",
+        "translation": "I've decided what to do on my day off. I'll go to the movie theater."
+      },
+      {
+        "sentence": "フランス語とスペイン語のどちらを勉強するか悩んだが、フランス語にします。",
+        "romanization": "Furansugo to Supeingo no dochira wo benkyou suru ka nayanda ga, Furansugo ni shimasu.",
+        "translation": "I was torn between studying French and Spanish, but I decided on French."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_34",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に なります (Noun ni narimasu)",
+    "shortExplanation": "Expresses change or becoming something; 'to become', 'to turn into', 'to be'.",
+    "longExplanation": "The grammar point Noun に なります is used to express a change or transformation into something else, or to indicate that something 'becomes', 'turns into', or simply 'is' something. It is commonly used with nouns.",
+    "formation": "Noun + に + なります",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼は医者になります。",
+        "romanization": "Kare wa isha ni narimasu.",
+        "translation": "He will become a doctor."
+      },
+      {
+        "sentence": "この茶色の葉が赤になります。",
+        "romanization": "Kono chairo no ha ga aka ni narimasu.",
+        "translation": "These brown leaves will turn red."
+      },
+      {
+        "sentence": "料理が冷めたら、美味しくなくなります。",
+        "romanization": "Ryouri ga sametara, oishikunaku narimasu.",
+        "translation": "When the dish cools down, it becomes less delicious."
+      },
+      {
+        "sentence": "来年、東京オリンピックになります。",
+        "romanization": "Rainen, Toukyou Orinpikku ni narimasu.",
+        "translation": "Next year, it will be the Tokyo Olympics."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_35",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に 来ます (Noun ni kimasu)",
+    "shortExplanation": "Used to express coming to a place.",
+    "longExplanation": "The grammar point Noun に 来ます is used to indicate that someone or something comes to a specific place. The noun before に indicates the destination or place, while the verb 来ます expresses the action of coming. (Similarly, 'Noun に 行きます' means 'go to [Noun],' and 'Noun に 帰ります' means 'return to [Noun].')",
+    "formation": "Noun + に + 来ます (kimasu)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "友達が私の家に来ます。",
+        "romanization": "Tomodachi ga watashi no ie ni kimasu.",
+        "translation": "My friend will come to my house."
+      },
+      {
+        "sentence": "今晩、父が駅に迎えに来ます。",
+        "romanization": "Konban, chichi ga eki ni mukae ni kimasu.",
+        "translation": "Tonight, my father will come to pick me up at the station."
+      },
+      {
+        "sentence": "明日、先生が学校に来ます。",
+        "romanization": "Ashita, sensei ga gakkou ni kimasu.",
+        "translation": "Tomorrow, the teacher will come to school."
+      },
+      {
+        "sentence": "有名な歌手がこの街に来ます。",
+        "romanization": "Yuumei na kashu ga kono machi ni kimasu.",
+        "translation": "A famous singer will come to this town."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_36",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun に 行きます (Noun ni ikimasu)",
+    "shortExplanation": "Used to express going to a location.",
+    "longExplanation": "The Noun に 行きます grammar point is used to express going to a specific location. This structure requires a noun (indicating the destination) followed by に and the verb 行きます, which means 'to go'.",
+    "formation": "Noun + に + 行きます",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "学校に行きます。",
+        "romanization": "Gakkou ni ikimasu.",
+        "translation": "I will go to school."
+      },
+      {
+        "sentence": "明日、スーパーに行きます。",
+        "romanization": "Ashita, suupaa ni ikimasu.",
+        "translation": "I will go to the supermarket tomorrow."
+      },
+      {
+        "sentence": "週末に映画館に行きます。",
+        "romanization": "Shuumatsu ni eigakan ni ikimasu.",
+        "translation": "I will go to the movie theater on the weekend."
+      },
+      {
+        "sentence": "夏休みに海に行きます。",
+        "romanization": "Natsu yasumi ni umi ni ikimasu.",
+        "translation": "I will go to the sea during the summer vacation."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_37",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun の あとで (Noun no atode)",
+    "shortExplanation": "Expresses the order of events; 'after', 'later than'.",
+    "longExplanation": "The の あとで grammar point is used to express the order of events, specifying that an action occurs after or later than the noun mentioned. It translates to 'after' or 'later than' in English. This structure is simply formed by attaching の あとで to the noun.",
+    "formation": "Noun + の + あとで",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "朝ご飯のあとで、歯を磨きます。",
+        "romanization": "Asagohan no atode, ha wo migakimasu.",
+        "translation": "After breakfast, I brush my teeth."
+      },
+      {
+        "sentence": "映画のあとで、レストランで夕食を食べました。",
+        "romanization": "Eiga no atode, resutoran de yuushoku o tabemashita.",
+        "translation": "After the movie, we ate dinner at a restaurant."
+      },
+      {
+        "sentence": "会議のあとで、上司と話し合います。",
+        "romanization": "Kaigi no atode, joushi to hanashiaimasu.",
+        "translation": "I will discuss with my boss after the meeting."
+      },
+      {
+        "sentence": "晩ご飯のあとで、散歩に行きました。",
+        "romanization": "Bangohan no atode, sanpo ni ikimashita.",
+        "translation": "After dinner, I went for a walk."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_38",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun の 前に (Noun no mae ni)",
+    "shortExplanation": "Used to describe a location or position 'in front of' a noun.",
+    "longExplanation": "The grammar point Noun の 前に is used to describe a location or position 'in front of' a noun. It is formed by adding の 前に after the noun it refers to. (Note that 'Noun の 前に' can also mean 'before [Noun]' in time contexts, but these examples focus on physical location.)",
+    "formation": "Noun + の + 前に",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "駅の前にコンビニがあります。",
+        "romanization": "Eki no mae ni konbini ga arimasu.",
+        "translation": "There is a convenience store in front of the station."
+      },
+      {
+        "sentence": "家の前に車を止めてください。",
+        "romanization": "Ie no mae ni kuruma wo tomete kudasai.",
+        "translation": "Please park the car in front of the house."
+      },
+      {
+        "sentence": "私の前に彼が立っていました。",
+        "romanization": "Watashi no mae ni kare ga tatte imashita.",
+        "translation": "He was standing in front of me."
+      },
+      {
+        "sentence": "ホテルの前にタクシーが来た。",
+        "romanization": "Hoteru no mae ni takushii ga kita.",
+        "translation": "A taxi came in front of the hotel."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_39",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun は～ (Noun wa〜)",
+    "shortExplanation": "Used to mark the topic of a sentence; 'as for', 'speaking of'.",
+    "longExplanation": "The は (wa) particle is used to indicate the topic of a sentence. It is usually translated as 'as for', 'speaking of', or it simply marks what the sentence is about. This is different from が (ga), which marks the subject of a verb.",
+    "formation": "Noun + は",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "私は日本の料理が好きです。",
+        "romanization": "Watashi wa Nihon no ryouri ga suki desu.",
+        "translation": "As for me, I like Japanese cuisine."
+      },
+      {
+        "sentence": "彼は英語が上手です。",
+        "romanization": "Kare wa eigo ga jouzu desu.",
+        "translation": "As for him, he is good at English."
+      },
+      {
+        "sentence": "この本は面白いです。",
+        "romanization": "Kono hon wa omoshiroi desu.",
+        "translation": "As for this book, it's interesting."
+      },
+      {
+        "sentence": "今日は暑いですね。",
+        "romanization": "Kyou wa atsui desu ne.",
+        "translation": "Speaking of today, it's hot, isn't it?"
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_40",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun も〜 (Noun mo~)",
+    "shortExplanation": "Indicates that the action or state is the same for multiple items or people; 'also', 'as well'.",
+    "longExplanation": "The も grammar point is used after a noun to indicate that the action or state is the same for multiple items or people. It means 'also', 'as well', or 'too' in English. も often replaces は or が in the sentence to show that the same statement applies to this additional noun.",
+    "formation": "Noun + も",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "私も日本語を勉強しています。",
+        "romanization": "Watashi mo nihongo wo benkyou shiteimasu.",
+        "translation": "I am also studying Japanese."
+      },
+      {
+        "sentence": "彼もケーキが好きです。",
+        "romanization": "Kare mo keeki ga suki desu.",
+        "translation": "He also likes cake."
+      },
+      {
+        "sentence": "東京も大阪も観光スポットがたくさんあります。",
+        "romanization": "Toukyou mo Oosaka mo kankou supotto ga takusan arimasu.",
+        "translation": "There are many tourist spots in both Tokyo and Osaka."
+      },
+      {
+        "sentence": "この映画もあの映画も面白かった。",
+        "romanization": "Kono eiga mo ano eiga mo omoshirokatta.",
+        "translation": "Both this movie and that movie were interesting."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_41",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun や Noun など～ (Noun ya Noun nado)",
+    "shortExplanation": "Lists items or examples but not exhaustively; 'such as', 'like', 'and so on'.",
+    "longExplanation": "The や...など grammar point is used to list a few items or examples that belong to a similar category or context, but it is not exhaustive. It can be translated as 'such as', 'like', or 'and so on' in English. This grammar pattern is used with nouns.",
+    "formation": "Noun1 + や + Noun2 + など",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼は野菜や果物などを食べるのが好きです。",
+        "romanization": "Kare wa yasai ya kudamono nado o taberu no ga suki desu.",
+        "translation": "He likes to eat things like vegetables and fruits."
+      },
+      {
+        "sentence": "日本の都市や東京、大阪などに行きたいです。",
+        "romanization": "Nihon no toshi ya Toukyou, Oosaka nado ni ikitai desu.",
+        "translation": "I want to go to Japanese cities such as Tokyo, Osaka, and so on."
+      },
+      {
+        "sentence": "彼女は猫や犬など動物が好きです。",
+        "romanization": "Kanojo wa neko ya inu nado doubutsu ga suki desu.",
+        "translation": "She likes animals like cats, dogs, and so on."
+      },
+      {
+        "sentence": "この本屋では漫画や小説などたくさんの本が売られています。",
+        "romanization": "Kono honya de wa manga ya shousetsu nado takusan no hon ga urarete imasu.",
+        "translation": "In this bookstore, many books such as manga and novels are sold."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_42",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を〜 (Noun wo〜)",
+    "shortExplanation": "Indicates the direct object of a verb.",
+    "longExplanation": "The を (wo) particle is used to mark the direct object of a verb in a sentence. It shows the noun that the action (verb) is performed on. The particle を is usually pronounced as 'o' in spoken Japanese.",
+    "formation": "Noun + を + Verb",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "私は本を読みます。",
+        "romanization": "Watashi wa hon wo yomimasu.",
+        "translation": "I read a book."
+      },
+      {
+        "sentence": "彼はケーキを食べました。",
+        "romanization": "Kare wa keeki wo tabemashita.",
+        "translation": "He ate a cake."
+      },
+      {
+        "sentence": "母はコーヒーを飲むのが好きです。",
+        "romanization": "Haha wa koohii wo nomu no ga suki desu.",
+        "translation": "My mother likes to drink coffee."
+      },
+      {
+        "sentence": "友達が私のペンを使いました。",
+        "romanization": "Tomodachi ga watashi no pen wo tsukaimashita.",
+        "translation": "My friend used my pen."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_43",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb た あとで (ta ato de)",
+    "shortExplanation": "Indicates an action that takes place after another action.",
+    "longExplanation": "The たあとで grammar point is used to indicate that one action takes place after another action is completed. It means 'after' or 'after doing' in English. The formation is created with the た form (past tense) of a verb, followed by あとで (ato de).",
+    "formation": "Verb-た form + あとで",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "宿題をしたあとで、テレビを見ました。",
+        "romanization": "Shukudai wo shita ato de, terebi wo mimashita.",
+        "translation": "After doing my homework, I watched TV."
+      },
+      {
+        "sentence": "朝ごはんを食べたあとで、歯を磨きます。",
+        "romanization": "Asagohan wo tabeta ato de, ha wo migakimasu.",
+        "translation": "After eating breakfast, I brush my teeth."
+      },
+      {
+        "sentence": "仕事が終わったあとで、ジムに行く予定です。",
+        "romanization": "Shigoto ga owatta ato de, jimu ni iku yotei desu.",
+        "translation": "After finishing work, I plan to go to the gym."
+      },
+      {
+        "sentence": "映画を見たあとで、カフェでコーヒーを飲みました。",
+        "romanization": "Eiga wo mita ato de, kafe de koohii wo nomimashita.",
+        "translation": "After watching the movie, I drank coffee at a cafe."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_44",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb たいです (taidesu)",
+    "shortExplanation": "Express desire or want to do something; 'I want to', 'I would like to'.",
+    "longExplanation": "The たいです grammar point is used to express the speaker's desire or want to perform a certain action. It can be translated as 'I want to' or 'I would like to' in English. The formation differs depending on whether the verb is a る-verb or an う-verb.",
+    "formation": "る-Verb: Remove る and add たいです, う-Verb: Replace the final verb character with the ～い form and add たいです, Exception: する becomes したいです",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "私は寿司を食べたいです。",
+        "romanization": "Watashi wa sushi wo tabetai desu.",
+        "translation": "I want to eat sushi."
+      },
+      {
+        "sentence": "彼は日本に行きたいです。",
+        "romanization": "Kare wa Nihon ni ikitai desu.",
+        "translation": "He wants to go to Japan."
+      },
+      {
+        "sentence": "彼女は英語を勉強したいです。",
+        "romanization": "Kanojo wa eigo wo benkyou shitai desu.",
+        "translation": "She wants to study English."
+      },
+      {
+        "sentence": "子供たちは遊びたいです。",
+        "romanization": "Kodomo-tachi wa asobitai desu.",
+        "translation": "The children want to play."
+      }
+    ]
+  }
+]

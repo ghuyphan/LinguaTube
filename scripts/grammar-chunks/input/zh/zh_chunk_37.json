@@ -1,0 +1,251 @@
+[
+  {
+    "id": "zh_难怪怪不得_584",
+    "language": "zh",
+    "pattern": "难怪/怪不得",
+    "title": "难怪/怪不得 (no wonder)",
+    "shortExplanation": "no wonder",
+    "longExplanation": "no wonder. Pinyin: nánguài/ guàibude",
+    "formation": "nánguài/ guàibude",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "你的抽屉真乱，难怪/怪不得总是找不到东西。",
+        "romanization": "nǐ de chōuti zhēn luàn， nánguài/ guàibude zǒngshì zhǎobudào dōngxi。",
+        "translation": "Your drawer is really messy, no wonder you can never find [your] things."
+      }
+    ]
+  },
+  {
+    "id": "zh_难怪怪不得_585",
+    "language": "zh",
+    "pattern": "难怪/怪不得",
+    "title": "难怪/怪不得 (understandable)",
+    "shortExplanation": "understandable",
+    "longExplanation": "understandable. Pinyin: nánguài/ guàibude",
+    "formation": "nánguài/ guàibude",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他从来不操心孩子的事。这也难怪/怪不得，他那么忙，哪儿有时间啊。",
+        "romanization": "tā cóngláibù cāoxīn háizi de shì。 zhè yě nánguài/ guàibude， tā nàme máng， nǎr yǒu shíjiān ā。",
+        "translation": "He never concerns [himself] with his children’s problems (lit. matters). But that’s no surprise. He’s so busy, how could he find the time?"
+      }
+    ]
+  },
+  {
+    "id": "zh_与其倒不如_586",
+    "language": "zh",
+    "pattern": "与其……(倒)不如……",
+    "title": "与其……(倒)不如…… (Instead of… it’s better to…)",
+    "shortExplanation": "Instead of… it’s better to…",
+    "longExplanation": "Instead of… it’s better to…. Pinyin: yǔqí……( dǎo) bùrú……",
+    "formation": "yǔqí……( dǎo) bùrú……",
+    "level": "HSK 5",
+    "examples": []
+  },
+  {
+    "id": "zh_总之_588",
+    "language": "zh",
+    "pattern": "总之",
+    "title": "总之 (In short)",
+    "shortExplanation": "In short",
+    "longExplanation": "In short. Pinyin: zǒngzhī",
+    "formation": "zǒngzhī",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我想去上海、南京，杭州……总之想去南方转转。",
+        "romanization": "wǒ xiǎng qù Shàng Hǎi、 Nánjīng， Hángzhōu…… zǒngzhī xiǎng qù nánfāng zhuànzhuan。",
+        "translation": "I want to go to Shanghai, Nanjing, Hangzhou... In short, I want to go south."
+      }
+    ]
+  },
+  {
+    "id": "zh_V过_589",
+    "language": "zh",
+    "pattern": "V 过",
+    "title": "V 过 (V away)",
+    "shortExplanation": "V away",
+    "longExplanation": "V away. Pinyin: V guò",
+    "formation": "V guò",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他转过身，一句话也不说。",
+        "romanization": "tā zhuàn guò shēn， yījùhuà yě bù shuō。",
+        "translation": "He turned (his body) away, and didn’t say a word."
+      }
+    ]
+  },
+  {
+    "id": "zh_V过_590",
+    "language": "zh",
+    "pattern": "V 过",
+    "title": "V 过 (V over, V by)",
+    "shortExplanation": "V over, V by",
+    "longExplanation": "V over, V by. Pinyin: V guò",
+    "formation": "V guò",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "短短的几分钟里，我的脑子里闪过了很多想法。",
+        "romanization": "duǎn duǎn de jǐ fēnzhōng lǐ， wǒ de nǎozi lǐ shǎnguò le hěn duō xiǎngfǎ。",
+        "translation": "In as little as a few minutes, many thoughts flashed by my mind."
+      }
+    ]
+  },
+  {
+    "id": "zh_V开_591",
+    "language": "zh",
+    "pattern": "V 开",
+    "title": "V 开 (V open)",
+    "shortExplanation": "V open",
+    "longExplanation": "V open. Pinyin: V kāi",
+    "formation": "V kāi",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "猴子突然站了起来，张开手臂抱住了管理员。",
+        "romanization": "hóuzi tūrán zhàn le qilai， zhāngkāi shǒubì bào zhù le guǎnlǐyuán。",
+        "translation": "The monkey suddenly stood up and opened his arm and hugged the zookeeper."
+      }
+    ]
+  },
+  {
+    "id": "zh_赶快_592",
+    "language": "zh",
+    "pattern": "赶快",
+    "title": "赶快 (quickly, urgently)",
+    "shortExplanation": "quickly, urgently",
+    "longExplanation": "quickly, urgently. Pinyin: gǎnkuài",
+    "formation": "gǎnkuài",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我下个月要搬家， 得赶快找房子。",
+        "romanization": "wǒ xiàgèyuè yào bānjiā， dé gǎnkuài zhǎo fángzi。",
+        "translation": "I have to move next month, I have to find housing quickly."
+      }
+    ]
+  },
+  {
+    "id": "zh_片_593",
+    "language": "zh",
+    "pattern": "片",
+    "title": "片 (a piece of)",
+    "shortExplanation": "a piece of",
+    "longExplanation": "a piece of. Pinyin: piàn",
+    "formation": "piàn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "天上飘着一片云。",
+        "romanization": "tiānshàng piāo zhe yīpiàn yún。",
+        "translation": "There is a cloud in the sky."
+      }
+    ]
+  },
+  {
+    "id": "zh_片_594",
+    "language": "zh",
+    "pattern": "片",
+    "title": "片 (a wave of)",
+    "shortExplanation": "a wave of",
+    "longExplanation": "a wave of. Pinyin: piàn",
+    "formation": "piàn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "同学们听了，发出一片热烈的欢呼声。",
+        "romanization": "tóngxué men tīng le， fāchū yīpiàn rèliè de huānhū shēng。",
+        "translation": "The students listened and gave a (wave of) warm cheer."
+      }
+    ]
+  },
+  {
+    "id": "zh_根本negative_595",
+    "language": "zh",
+    "pattern": "根本 + negative",
+    "title": "根本 + negative (at all)",
+    "shortExplanation": "at all",
+    "longExplanation": "at all. Pinyin: gēnběn + negative",
+    "formation": "gēnběn + negative",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "我发现自己根本读不懂考试题。",
+        "romanization": "wǒ fāxiàn zìjǐ gēnběn dú bù dǒng kǎoshì tí。",
+        "translation": "I found myself unable to read the exam questions at all."
+      }
+    ]
+  },
+  {
+    "id": "zh_根本_596",
+    "language": "zh",
+    "pattern": "根本",
+    "title": "根本 (root cause, fundamental)",
+    "shortExplanation": "root cause, fundamental",
+    "longExplanation": "root cause, fundamental. Pinyin: gēnběn",
+    "formation": "gēnběn",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "教育是国家的根本。",
+        "romanization": "jiàoyù shì guójiā de gēnběn。",
+        "translation": "Education is the foundation of the country."
+      }
+    ]
+  },
+  {
+    "id": "zh_根本肯定_597",
+    "language": "zh",
+    "pattern": "根本 肯定",
+    "title": "根本 肯定 (completely)",
+    "shortExplanation": "completely",
+    "longExplanation": "completely. Pinyin: gēnběn kěndìng",
+    "formation": "gēnběn kěndìng",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "事情已经根本解决了。",
+        "romanization": "shìqing yǐjīng gēnběn jiějué le。",
+        "translation": "Things have been completely (lit. from the root) solved."
+      }
+    ]
+  },
+  {
+    "id": "zh_根本就是_598",
+    "language": "zh",
+    "pattern": "根本(就)是",
+    "title": "根本(就)是 (simply)",
+    "shortExplanation": "simply",
+    "longExplanation": "simply. Pinyin: gēnběn( jiù) shì",
+    "formation": "gēnběn( jiù) shì",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "他根本就是在故意找我们的麻烦。",
+        "romanization": "tā gēnběn jiùshì zài gùyì zhǎo wǒmen de máfan。",
+        "translation": "He is simply trying to make trouble for us."
+      }
+    ]
+  },
+  {
+    "id": "zh_除非否则_599",
+    "language": "zh",
+    "pattern": "除非……否则……",
+    "title": "除非……否则…… (unless)",
+    "shortExplanation": "unless",
+    "longExplanation": "unless. Pinyin: chúfēi…… fǒuzé……",
+    "formation": "chúfēi…… fǒuzé……",
+    "level": "HSK 5",
+    "examples": [
+      {
+        "sentence": "除非再给我一个星期，否则我们无法完成任务。",
+        "romanization": "chúfēi zài gěi wǒ yī gè xīngqī， fǒuzé wǒmen wúfǎ wánchéng rènwu。",
+        "translation": "Unless you give me another week, (otherwise) we can't complete the task."
+      }
+    ]
+  }
+]

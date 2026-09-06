@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_A_0": {
+      "title": "A が いちばん～ (A ga ichiban～)",
+      "shortExplanation": "Biểu thị mức độ cao nhất (so sánh nhất); 'nhất', '...nhất trong số'.",
+      "longExplanation": "Mẫu ngữ pháp 'A が いちばん～' được dùng để diễn tả cấp so sánh nhất hoặc mức độ cao nhất của một tính chất, đặc điểm trong một phạm vi xác định. Cấu trúc này thường kết hợp với tính từ hoặc động từ để nhấn mạnh A là đối tượng vượt trội nhất so với các đối tượng còn lại.",
+      "formation": "Danh từ + が + いちばん + Tính từ/Động từ",
+      "examples": [
+        {
+          "translation": "Trong số này, tôi thích sushi nhất."
+        },
+        {
+          "translation": "Cô ấy bơi nhanh nhất trong lớp."
+        },
+        {
+          "translation": "Ở thị trấn này, công viên này là đẹp nhất."
+        },
+        {
+          "translation": "Trong các loại đồ uống, tôi thích hồng trà nhất."
+        }
+      ]
+    },
+    "ja_AけれどもB_1": {
+      "title": "A。けれども、～B。(A. Keredomo,~ B.)",
+      "shortExplanation": "Dùng để biểu thị sự tương phản giữa hai câu hoặc mệnh đề; 'nhưng', 'tuy nhiên'.",
+      "longExplanation": "Mẫu câu 'A。けれども、～B。' dùng để diễn tả mối quan hệ đối lập hoặc tương phản giữa sự việc A và sự việc B. 'けれども' là liên từ đặt ở đầu câu sau nhằm chỉ ra rằng nội dung câu B đi ngược lại với dự đoán hoặc trái ngược với thực tế được nêu ở câu A.",
+      "formation": "Câu A + 。けれども、 + Câu B",
+      "examples": [
+        {
+          "translation": "Hôm nay trời nắng. Tuy nhiên, trời lại lạnh."
+        },
+        {
+          "translation": "Cô ấy ồn ào. Nhưng mà lại rất thú vị."
+        },
+        {
+          "translation": "Bộ phim đó dài. Nhưng không hề nhàm chán."
+        },
+        {
+          "translation": "Anh ấy giỏi thể thao. Tuy nhiên, việc học thì lại kém."
+        }
+      ]
+    },
+    "ja_AしかしB_2": {
+      "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
+      "shortExplanation": "Biểu thị sự đối lập, tương phản rõ rệt giữa hai câu; 'tuy nhiên', 'nhưng'.",
+      "longExplanation": "Mẫu câu 'A。しかし、～B。' sử dụng liên từ 'しかし' đặt ở đầu câu thứ hai để diễn tả sự đối lập hoặc chuyển ý mạnh mẽ so với câu thứ nhất. Mẫu này mang sắc thái trang trọng, lịch sự, thường xuất hiện trong văn viết hoặc các bài phát biểu chỉn chu.",
+      "formation": "Câu A + 。しかし、 + Câu B",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi bận. Tuy nhiên, nếu có thời gian thì cùng uống cà phê nhé."
+        },
+        {
+          "translation": "Bộ phim đó rất thú vị. Nhưng mà lại quá dài."
+        },
+        {
+          "translation": "Anh ấy đã mệt. Tuy nhiên, anh ấy vẫn hoàn thành bài tập về nhà."
+        },
+        {
+          "translation": "Căn phòng hơi chật. Tuy nhiên, nó lại nằm ở vị trí thuận tiện."
+        }
+      ]
+    },
+    "ja_AじゃB_3": {
+      "title": "A。じゃ、～B。(A. Ja, ~B.)",
+      "shortExplanation": "Đưa ra quyết định, gợi ý hoặc chuyển ý dựa trên tình huống trước đó; 'vậy thì', 'thế thì'.",
+      "longExplanation": "Mẫu câu 'A。じゃ、～B。' dùng phổ biến trong khẩu ngữ thân mật hàng ngày để đưa ra phán đoán, quyết định hoặc đề xuất tiếp theo dựa trên bối cảnh đã nêu ở câu A. 'じゃ' là dạng nói ngắn gọn, thân mật của 'では' hoặc 'それじゃ'.",
+      "formation": "Câu A + 。じゃ、 + Câu B",
+      "examples": [
+        {
+          "translation": "Không kịp giờ xem phim rồi. Thế thì để lần sau đi nhé."
+        },
+        {
+          "translation": "Đói bụng rồi. Vậy thì mình đi nhà hàng ăn đi."
+        },
+        {
+          "translation": "Tàu điện bị trễ rồi. Thế thì đi bằng xe buýt thôi."
+        },
+        {
+          "translation": "Cái áo sơ mi này đắt quá. Vậy thì mua cái khác đi."
+        }
+      ]
+    },
+    "ja_AそれじゃB_4": {
+      "title": "A。それじゃ、～B。(A. Soreja,~B.)",
+      "shortExplanation": "Nối hai câu để đưa ra phản ứng hoặc đề xuất tương ứng với tình huống; 'thế thì', 'vậy thì trong trường hợp đó'.",
+      "longExplanation": "Mẫu câu 'A。それじゃ、～B。' dùng để liên kết hai câu hoặc hai ý, trong đó câu A nêu ra bối cảnh, tiền đề, còn câu B thể hiện hành động tiếp nối hoặc phản ứng tương ứng. 'それじゃ' là cách nói rút gọn tự nhiên trong hội thoại của 'それでは'.",
+      "formation": "Câu A + 。それじゃ、 + Câu B",
+      "examples": [
+        {
+          "translation": "Hôm nay là ngày nghỉ. Vậy thì chúng ta hãy cùng đi xem phim nhé."
+        },
+        {
+          "translation": "Mất điện rồi. Thế thì hãy dùng nến thôi."
+        },
+        {
+          "translation": "Nhà hàng đông đúc quá. Vậy thì chúng ta hãy ăn ở chỗ khác nhé."
+        },
+        {
+          "translation": "Nghe nói ngày mai trời mưa. Thế thì hãy hủy chuyến dã ngoại thôi."
+        }
+      ]
+    },
+    "ja_AそれではB_5": {
+      "title": "A。それでは、～B。(A. Soredewa,~B.)",
+      "shortExplanation": "Chuyển ý hoặc đưa ra hành động tiếp theo dựa trên tình huống trước đó; 'vậy thì', 'nếu vậy thì'.",
+      "longExplanation": "Mẫu câu 'A。それでは、～B。' sử dụng liên từ lịch sự 'それでは' để chuyển tiếp hoặc dẫn dắt sang một hành động, quyết định mới dựa trên thông tin đã nêu ở câu A. Mẫu này mang sắc thái trang nhã, lịch thiệp hơn so với 'じゃ' hay 'それじゃ'.",
+      "formation": "Câu A + 。それでは、 + Câu B",
+      "examples": [
+        {
+          "translation": "Hôm nay là ngày nghỉ. Vậy thì chúng ta hãy đi xem phim đi."
+        },
+        {
+          "translation": "Cái bánh mì này đã cũ rồi. Nếu vậy thì hãy bỏ nó đi nhé."
+        },
+        {
+          "translation": "Trời đã bắt đầu mưa rồi. Vậy thì chúng mình cùng chơi trong nhà nhé."
+        },
+        {
+          "translation": "Tôi thấy đói bụng rồi. Vậy thì chúng ta cùng đi ăn món gì đó đi."
+        }
+      ]
+    },
+    "ja_A_6": {
+      "title": "A では、～B (A dewa, ~B)",
+      "shortExplanation": "Giới hạn phạm vi hoặc chủ đề để đưa ra nhận xét, so sánh; 'trong số A thì...', 'xét về A thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'A では、～B' dùng để nêu ra một phạm vi, thể loại hoặc lĩnh vực A (đóng vai trò là chủ đề bàn luận), sau đó đưa ra phán đoán, sở thích hoặc sự so sánh nổi bật ở mệnh đề B ('Trong số A thì...', 'Xét về A thì...').",
+      "formation": "Danh từ A + では、 + Chủ ngữ + Vị ngữ B",
+      "examples": [
+        {
+          "translation": "Trong các loại hoa quả, tôi thích táo nhất."
+        },
+        {
+          "translation": "Trong các môn thể thao, bóng đá là môn được yêu thích nhất."
+        },
+        {
+          "translation": "Theo như thời tiết hôm nay, có vẻ trời sắp mưa."
+        },
+        {
+          "translation": "Về nấu nướng, tôi nấu món Nhật giỏi nhất."
+        }
+      ]
+    },
+    "ja_AでもB_7": {
+      "title": "A。でも、～B。(A. Demo, ~B)",
+      "shortExplanation": "Diễn tả sự tương phản hoặc nội dung trái ngược giữa hai câu; 'nhưng', 'tuy nhiên'.",
+      "longExplanation": "Mẫu câu 'A。でも、～B。' dùng liên từ 'でも' ở đầu câu thứ hai để diễn tả sự đối lập hoặc diễn biến bất ngờ so với những gì được nói ở câu A. Đây là liên từ khẩu ngữ rất thông dụng và tự nhiên trong đời sống hàng ngày.",
+      "formation": "Câu A + 。でも、 + Câu B",
+      "examples": [
+        {
+          "translation": "Hôm qua trời lạnh. Nhưng hôm nay thì ấm áp."
+        },
+        {
+          "translation": "Anh ấy bận rộn. Nhưng vẫn có thời gian đi chơi với bạn bè."
+        },
+        {
+          "translation": "Tôi đã đỗ kỳ thi. Nhưng tôi vẫn đang tiếp tục học tập."
+        },
+        {
+          "translation": "Cô ấy rất nổi tiếng. Nhưng lại vô cùng khiêm tốn."
+        }
+      ]
+    },
+    "ja_Aと_8": {
+      "title": "Aと Bと どちら～ (A to B to dochira~)",
+      "shortExplanation": "Hỏi lựa chọn hoặc so sánh giữa hai đối tượng A và B; 'giữa A và B thì bên nào/cái nào... hơn?'.",
+      "longExplanation": "Mẫu ngữ pháp 'Aと Bと どちら～' dùng để so sánh hai sự vật, đối tượng hoặc phương án (A và B), sau đó hỏi đối phương xem cái nào hơn, thích cái nào hơn hoặc lựa chọn bên nào. 'どちら' là đại từ nghi vấn lịch sự mang nghĩa 'bên nào / cái nào'.",
+      "formation": "Aと + Bと + どちら + が/を/で + Động từ/Tính từ/Danh từ + か",
+      "examples": [
+        {
+          "translation": "Giữa táo và quýt, bạn thích loại nào hơn?"
+        },
+        {
+          "translation": "Nên đi bằng tàu điện hay xe buýt thì tốt hơn?"
+        },
+        {
+          "translation": "Bạn nghĩ váy liền màu đỏ hay màu xanh hợp với tôi hơn?"
+        },
+        {
+          "translation": "Giữa chiếc máy ảnh này và chiếc máy ảnh kia, chiếc nào dễ dùng hơn?"
+        }
+      ]
+    },
+    "ja_AとBと_9": {
+      "title": "AとBと どっち〜 (A to B to docchi〜)",
+      "shortExplanation": "Dùng trong giao tiếp thân mật để hỏi lựa chọn giữa hai đối tượng A và B; 'A hay B', 'cái nào hơn?'.",
+      "longExplanation": "Mẫu câu 'AとBと どっち〜' là cách nói khẩu ngữ thân mật của 'AとBとどちら', thường dùng giữa bạn bè, người thân để hỏi xem đối phương lựa chọn hoặc yêu thích phương án nào giữa hai đối tượng A và B. Mẫu này cũng có thể dùng ở dạng 'AかBか どっち〜'.",
+      "formation": "Aと + Bと + どっち + が/を + Động từ/Tính từ (+ か/？)",
+      "examples": [
+        {
+          "translation": "Cà phê với hồng trà, bạn thích cái nào hơn?"
+        },
+        {
+          "translation": "Phim ảnh với âm nhạc, bạn thích giải trí với cái nào hơn?"
+        },
+        {
+          "translation": "Áo sơ mi đỏ với áo sơ mi xanh, bạn sẽ mua cái nào?"
+        },
+        {
+          "translation": "Tiếng Nhật với tiếng Hàn, bạn muốn học tiếng nào hơn?"
+        }
+      ]
+    },
+    "ja_A_10": {
+      "title": "A は B が〜 (A wa B ga〜)",
+      "shortExplanation": "Nêu chủ đề A và miêu tả đặc điểm, thuộc tính hoặc khả năng B của đối tượng đó; 'A thì B...'.",
+      "longExplanation": "Cấu trúc 'A は B が〜' là mẫu câu vị ngữ miêu tả đặc trưng cơ bản trong tiếng Nhật. Trợ từ 'は' đưa ra chủ đề lớn A của câu, còn trợ từ 'が' xác định đặc điểm, bộ phận, khả năng hoặc đối tượng tiếp nhận cảm xúc B, theo sau là tính từ hoặc động từ miêu tả tính chất đó.",
+      "formation": "A は (Chủ đề) + B が (Bộ phận/Thuộc tính/Đối tượng) + Tính từ/Động từ",
+      "examples": [
+        {
+          "translation": "Cô ấy có mái tóc dài."
+        },
+        {
+          "translation": "Nhà hàng này có bầu không khí rất tuyệt."
+        },
+        {
+          "translation": "Tôi thích bữa sáng nhất."
+        },
+        {
+          "translation": "Anh ấy rất giỏi tiếng Anh."
+        }
+      ]
+    },
+    "ja_A_11": {
+      "title": "A は B より～ (A wa B yori～)",
+      "shortExplanation": "So sánh hơn giữa hai đối tượng; 'A ... hơn B'.",
+      "longExplanation": "Mẫu ngữ pháp 'A は B より～' được dùng để so sánh hai sự vật, hiện tượng hoặc người (A và B). Trong đó, A là chủ thể được đánh giá có mức độ tính chất cao hơn so với tiêu chuẩn so sánh B đi kèm với trợ từ 'より'. Theo sau thường là một tính từ biểu thị phẩm chất so sánh.",
+      "formation": "A は + B より + Tính từ/Động từ",
+      "examples": [
+        {
+          "translation": "Nước trái cây này ngọt hơn nước trái cây kia."
+        },
+        {
+          "translation": "Mùa hè nóng hơn mùa đông."
+        },
+        {
+          "translation": "Cô ấy chạy nhanh hơn tôi."
+        },
+        {
+          "translation": "Siêu thị rẻ hơn cửa hàng tiện lợi."
+        }
+      ]
+    },
+    "ja_A_12": {
+      "title": "A より B のほうが～ (A yori B no hou ga ～)",
+      "shortExplanation": "So sánh giữa hai đối tượng, nhấn mạnh phía B hơn phía A; 'so với A thì B ... hơn'.",
+      "longExplanation": "Mẫu ngữ pháp 'A より B のほうが～' dùng để so sánh hai sự vật hoặc phương án. 'A より' đóng vai trò là tiêu chuẩn so sánh ('so với A'), còn 'B のほうが' nhấn mạnh rằng chính phía B mới là bên có tính chất vượt trội hơn. Cấu trúc kết hợp được với cả tính từ đuôi い và tính từ đuôi な.",
+      "formation": "A + より + B + のほうが + Tính từ",
+      "examples": [
+        {
+          "translation": "So với pizza thì hamburger ngon hơn."
+        },
+        {
+          "translation": "So với mùa hè thì mùa đông lạnh hơn."
+        },
+        {
+          "translation": "So với ở đây thì ở đằng kia yên tĩnh hơn."
+        },
+        {
+          "translation": "So với ô tô thì tàu điện chạy nhanh hơn."
+        }
+      ]
+    },
+    "ja_いAdjective_13": {
+      "title": "Tính từ đuôi い + く + Động từ (i-Keiyoushi ku + Doushi)",
+      "shortExplanation": "Biến tính từ đuôi い thành phó từ để bổ nghĩa cho động từ đứng sau; 'làm gì một cách...'.",
+      "longExplanation": "Cấu trúc biến đổi tính từ đuôi い sang dạng liên dụng bằng cách bỏ đuôi 'い' và thêm 'く'. Hình thức này đóng vai trò như một phó từ để bổ nghĩa cho động từ đi liền sau đó, miêu tả trạng thái, cách thức hoặc mức độ diễn ra của hành động (tương tự như 'làm một cách nhanh chóng', 'ngon lành', v.v.).",
+      "formation": "Tính từ đuôi い (bỏ い) + く + Động từ",
+      "examples": [
+        {
+          "translation": "Anh ấy đã chạy thật nhanh."
+        },
+        {
+          "translation": "Tôi đã thưởng thức món ăn này một cách ngon lành."
+        },
+        {
+          "translation": "Cô ấy nói chuyện rất dịu dàng."
+        },
+        {
+          "translation": "Mẹ tôi đang bận rộn làm việc."
+        }
+      ]
+    },
+    "ja_いAdjective_14": {
+      "title": "Tính từ đuôi い + くします (i-Keiyoushi ku shimasu)",
+      "shortExplanation": "Biểu thị việc tác động có chủ ý để biến đổi trạng thái của đối tượng; 'làm cho... trở nên'.",
+      "longExplanation": "Mẫu ngữ pháp kết hợp dạng liên dụng của tính từ đuôi い (bỏ 'い' thêm 'く') với động từ 'します' (làm). Cấu trúc này diễn tả việc tác động có chủ đích lên đối tượng nhằm làm cho đối tượng đó biến đổi sang trạng thái mới theo tính chất của tính từ. Khác với 'なります' (tự biến đổi tự nhiên), 'します' nhấn mạnh sự tác động từ con người.",
+      "formation": "Tân ngữ + を + Tính từ đuôi い (bỏ い) + くします",
+      "examples": [
+        {
+          "translation": "Tôi sẽ làm cho căn phòng sáng sủa hơn."
+        },
+        {
+          "translation": "Tôi sẽ làm cho tâm trạng của bạn mình vui vẻ hơn."
+        },
+        {
+          "translation": "Để công việc trở nên dễ dàng, tôi sẽ tăng tốc cách làm."
+        },
+        {
+          "translation": "Tôi sẽ làm cho món ăn trở nên ngon hơn."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_A_0": {
+      "title": "A が いちばん～ (A ga ichiban～)",
+      "shortExplanation": "表示在某个范围内处于最高程度（最高级）；'最……'、'居于首位'。",
+      "longExplanation": "句型'A が いちばん～'用于在特定的范围或群体中表达最高程度或等级，相当于汉语中的'最……'。通常后接形容词或动词，通过与其他事物或人的比较，凸显出A在该性质或动作上程度最高。",
+      "formation": "名词 + が + いちばん (一番) + 形容词/动词",
+      "examples": [
+        {
+          "translation": "在这些当中，我最喜欢寿司。"
+        },
+        {
+          "translation": "她是班里游泳游得最快的。"
+        },
+        {
+          "translation": "在这个镇上，这个公园最漂亮。"
+        },
+        {
+          "translation": "在所有饮料中，我最喜欢红茶。"
+        }
+      ]
+    },
+    "ja_AけれどもB_1": {
+      "title": "A。けれども、～B。(A. Keredomo,~ B.)",
+      "shortExplanation": "用于表示前后两个句子之间的转折或对照；'但是'、'然而'。",
+      "longExplanation": "句型'A。けれども、～B。'用于表达句子A与句子B之间的转折、对照或矛盾关系，相当于汉语中的'但是'、'可是'或'然而'。'けれども'作为接续词置于后句句首，引出与前句内容相反或出乎意料的陈述。",
+      "formation": "句子A + 。けれども、 + 句子B",
+      "examples": [
+        {
+          "translation": "今天天气晴朗。但是很冷。"
+        },
+        {
+          "translation": "她很吵闹。不过挺有趣的。"
+        },
+        {
+          "translation": "那部电影很长。但是并不无聊。"
+        },
+        {
+          "translation": "他擅长运动。然而不擅长学习。"
+        }
+      ]
+    },
+    "ja_AしかしB_2": {
+      "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
+      "shortExplanation": "表示前后两句之间的鲜明对比或对立转折；'但是'、'然而'。",
+      "longExplanation": "句型'A。然而、～B。'（A。しかし、～B。）通过在第二句句首使用接续词'しかし'，来表达后句内容与前句形成鲜明的对立或转折。相较于'でも'，'しかし'语气更为严肃、正式，广泛应用于书面语、正式演讲或郑重的对话中。",
+      "formation": "句子A + 。しかし、 + 句子B",
+      "examples": [
+        {
+          "translation": "今天我很忙。但是如果有时间的话，一起喝杯咖啡吧。"
+        },
+        {
+          "translation": "那部电影很有意思。但是太长了。"
+        },
+        {
+          "translation": "他很疲倦。然而还是完成了作业。"
+        },
+        {
+          "translation": "房间虽然狭小。但是位于便利的地方。"
+        }
+      ]
+    },
+    "ja_AじゃB_3": {
+      "title": "A。じゃ、～B。(A. Ja, ~B.)",
+      "shortExplanation": "根据前述情况做出决定、提议或转换话题；'那么'、'既然如此'。",
+      "longExplanation": "句型'A。じゃ、～B。'常用于日常口语会话中，表示根据前句A提及的情况或信息，在后句B做出判断、决定、提议或采取后续行动，相当于汉语中的'那么'、'那'或'既然这样'。'じゃ'是接续词'では'或'それじゃ'的口语随和形式。",
+      "formation": "句子A + 。じゃ、 + 句子B",
+      "examples": [
+        {
+          "translation": "没时间看电影了。那么，下次再去吧。"
+        },
+        {
+          "translation": "肚子饿了。那么，去餐馆吃饭吧。"
+        },
+        {
+          "translation": "电车晚点了。那就坐公交车去吧。"
+        },
+        {
+          "translation": "这件衬衫太贵了。那么，买别的吧。"
+        }
+      ]
+    },
+    "ja_AそれじゃB_4": {
+      "title": "A。それじゃ、～B。(A. Soreja,~B.)",
+      "shortExplanation": "连接前后两句，根据前句情况提出相应对策或建议；'那么'、'既然那样'。",
+      "longExplanation": "句型'A。それじゃ、～B。'用于连接两个句子，前句A陈述某种情境或前提，后句B则针对该情境提出相应的反应、对策或结论。'それじゃ'是'それでは'在日常口语对话中的简略形式，口吻自然亲切。",
+      "formation": "句子A + 。それじゃ、 + 句子B",
+      "examples": [
+        {
+          "translation": "今天休息。那么，去看电影吧。"
+        },
+        {
+          "translation": "停电了。既然这样，就用蜡烛吧。"
+        },
+        {
+          "translation": "餐馆很拥挤。那么，我们在别的地方吃吧。"
+        },
+        {
+          "translation": "听说明天会下雨。既然那样，野餐就取消吧。"
+        }
+      ]
+    },
+    "ja_AそれではB_5": {
+      "title": "A。それでは、～B。(A. Soredewa,~B.)",
+      "shortExplanation": "承接前文情况引出后续行动、结论或转换；'那么'、'既然如此'。",
+      "longExplanation": "句型'A。それでは、～B。'使用较郑重的接续词'それでは'将两句话顺畅连接。根据前句A提及的事实或情况，在后句B引出相应的判断、后续行动或提议。相比于日常口语中的'じゃ'或'それじゃ'，'それでは'显得更为规范礼貌。",
+      "formation": "句子A + 。それでは、 + 句子B",
+      "examples": [
+        {
+          "translation": "今天休息。那么，去看电影吧。"
+        },
+        {
+          "translation": "这个面包已经不新鲜了。既然如此，就扔掉吧。"
+        },
+        {
+          "translation": "下起雨来了。那么，我们在室内玩吧。"
+        },
+        {
+          "translation": "肚子饿了。那么，我们去吃点东西吧。"
+        }
+      ]
+    },
+    "ja_A_6": {
+      "title": "A では、～B (A dewa, ~B)",
+      "shortExplanation": "限定范围或话题并提出评价、比较；'在A中'、'就A而言'。",
+      "longExplanation": "句型'A では、～B'将名词A设定为特定的话题、领域或比较范围，并在后半部分B中阐明在该范围内的最爱、突出特征或判断，相当于汉语中的'在A当中……'或'就A来说……'。",
+      "formation": "名词A + では、 + 主语 + 谓语B",
+      "examples": [
+        {
+          "translation": "在水果当中，我最喜欢苹果。"
+        },
+        {
+          "translation": "在体育运动中，足球最受欢迎。"
+        },
+        {
+          "translation": "看今天的天气，好像要下雨。"
+        },
+        {
+          "translation": "在烹饪方面，我最拿手的是日本料理。"
+        }
+      ]
+    },
+    "ja_AでもB_7": {
+      "title": "A。でも、～B。(A. Demo, ~B)",
+      "shortExplanation": "表示两个句子之间的转折或对照；'但是'、'可是'。",
+      "longExplanation": "句型'A。でも、～B。'通过在后句句首使用接续词'でも'，来表达与前句A相反、对照或出乎意料的内容，相当于汉语中的'但是'、'可是'。这是日常会话中最常用的转折接续词之一，语气自然亲切。",
+      "formation": "句子A + 。でも、 + 句子B",
+      "examples": [
+        {
+          "translation": "昨天很冷。但是今天很暖和。"
+        },
+        {
+          "translation": "他很忙。可是还有时间和朋友一起玩。"
+        },
+        {
+          "translation": "考试及格了。不过我还在继续学习。"
+        },
+        {
+          "translation": "她很有名。但是非常谦虚。"
+        }
+      ]
+    },
+    "ja_Aと_8": {
+      "title": "Aと Bと どちら～ (A to B to dochira~)",
+      "shortExplanation": "用于在A和B两者之间进行比较并询问偏好或选择；'A和B哪一个……'。",
+      "longExplanation": "句型'Aと Bと どちら～'用于在两个选项A与B之间进行对比，询问对方更偏好哪一个、哪一个更合适或哪一个程度更高。'どちら'为表示两选一的礼貌疑问词，相当于汉语中的'哪一方'或'哪一个'。",
+      "formation": "Aと + Bと + どちら + が/を/で + 动词/形容词/名词 + か",
+      "examples": [
+        {
+          "translation": "苹果和橘子，你更喜欢哪一个？"
+        },
+        {
+          "translation": "应该坐电车还是坐公交车去呢？"
+        },
+        {
+          "translation": "你觉得红色的连衣裙和蓝色的连衣裙，哪一件更适合我？"
+        },
+        {
+          "translation": "这部相机和那部相机，哪一部更容易使用？"
+        }
+      ]
+    },
+    "ja_AとBと_9": {
+      "title": "AとBと どっち〜 (A to B to docchi〜)",
+      "shortExplanation": "口语中用于在二者之间询问选择；'A和B哪一个'、'A还是B'。",
+      "longExplanation": "句型'AとBと どっち〜'是'AとBとどちら'的口语随意表达，常用于朋友、家人之间的随和交流，询问在两个选项A与B之中更倾向于哪一个。亦可简化表达为'AかBか どっち〜'。",
+      "formation": "Aと + Bと + どっち + が/を + 动词/形容词 (+ か/？)",
+      "examples": [
+        {
+          "translation": "咖啡和红茶，你更喜欢哪一个？"
+        },
+        {
+          "translation": "电影和音乐，你更喜欢哪种享受方式？"
+        },
+        {
+          "translation": "红色衬衫和蓝色衬衫，你买哪一件？"
+        },
+        {
+          "translation": "日语和韩语，你想学哪一门？"
+        }
+      ]
+    },
+    "ja_A_10": {
+      "title": "A は B が〜 (A wa B ga〜)",
+      "shortExplanation": "以A为大主题，描写其具体特征、属性或能力B；'A的B很……'、'A在B方面……'。",
+      "longExplanation": "句型'A は B が〜'是日语中极具代表性的主谓谓语句结构。助词'は'引出整个句子的大主题A，助词'が'则提示A的具体部分、属性、能力或喜好B，后接形容词或动词加以描述。常用于描写人或事物的外貌、特征、能力以及情感对象。",
+      "formation": "A は (主题) + B が (部位/属性/对象) + 形容词/动词",
+      "examples": [
+        {
+          "translation": "她的头发很长。"
+        },
+        {
+          "translation": "这家餐馆氛围很好。"
+        },
+        {
+          "translation": "我最喜欢吃早饭。"
+        },
+        {
+          "translation": "他擅长英语。"
+        }
+      ]
+    },
+    "ja_A_11": {
+      "title": "A は B より～ (A wa B yori～)",
+      "shortExplanation": "表示两项之间的比较；'A比B更……'。",
+      "longExplanation": "句型'A は B より～'用于在两者（A与B）之间进行比较。助词'より'接在作为比较基准的事物B之后，表示主体A在某种性质或动作程度上超过B，相当于汉语中的'A比B更……'。",
+      "formation": "A は + B より + 形容词/动词",
+      "examples": [
+        {
+          "translation": "这种果汁比那种果汁更甜。"
+        },
+        {
+          "translation": "夏天比冬天热。"
+        },
+        {
+          "translation": "她跑得比我快。"
+        },
+        {
+          "translation": "超市比便利店便宜。"
+        }
+      ]
+    },
+    "ja_A_12": {
+      "title": "A より B のほうが～ (A yori B no hou ga ～)",
+      "shortExplanation": "比较两项，强调B比A程度更深；'比起A，B更加……'。",
+      "longExplanation": "句型'A より B のほうが～'用于比较两个事物或情境。'A より'表示比较的基准（比起A），'B のほうが'则强调B这一方在性质或程度上更加突出，相当于汉语中的'比起A，B更……'。后续接各类形容词。",
+      "formation": "A + より + B + のほうが + 形容词",
+      "examples": [
+        {
+          "translation": "比起披萨，汉堡更好吃。"
+        },
+        {
+          "translation": "比起夏天，冬天更冷。"
+        },
+        {
+          "translation": "比起这里，那里更安静。"
+        },
+        {
+          "translation": "比起汽车，电车更快。"
+        }
+      ]
+    },
+    "ja_いAdjective_13": {
+      "title": "い形容词连用形（〜く）+ 动词 (i-keiyoushi ku + doushi)",
+      "shortExplanation": "将い形容词转化为副词形态以修饰后续动词；'……地（做某事）'。",
+      "longExplanation": "该语法点将い形容词的词尾'い'变为'く'，使其连用形发挥副词的作用，用来修饰后面的动词，描述动作进行的方式、状态或性质，相当于汉语中的'……地（做某事）'（如'飞快地'、'温柔地'等）。",
+      "formation": "い形容词词干 (去掉词尾い) + く + 动词",
+      "examples": [
+        {
+          "translation": "他跑得很快。"
+        },
+        {
+          "translation": "我津津有味地吃完了这道菜。"
+        },
+        {
+          "translation": "她温柔地说话。"
+        },
+        {
+          "translation": "妈妈正忙碌地工作着。"
+        }
+      ]
+    },
+    "ja_いAdjective_14": {
+      "title": "い形容词 + くします (i-keiyoushi ku shimasu)",
+      "shortExplanation": "表示通过人为作用使事物转变为某种状态；'使……变得……'、'把……弄成……'。",
+      "longExplanation": "将い形容词的词尾'い'变为'く'后接续动词'します'，用于表达人为、有意识地对某对象施加影响，使其变成该形容词所描述的状态或性质。相当于汉语中的'把……弄得/做得……'或'使……变得……'。与表示自然变化的'〜くなります'相对，本句型强调主观意图与人为行动。",
+      "formation": "宾语 + を + い形容词词干 (去掉词尾い) + くします",
+      "examples": [
+        {
+          "translation": "把房间弄得更亮一些。"
+        },
+        {
+          "translation": "让朋友的心情变得愉快起来。"
+        },
+        {
+          "translation": "为了让工作变得更简单，把处理方法加快。"
+        },
+        {
+          "translation": "把食物做得更加美味。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_A_0": {
+      "title": "A が いちばん～ (A ga ichiban～)",
+      "shortExplanation": "최상급을 나타내며, '가장', '제일'이라는 뜻입니다.",
+      "longExplanation": "'A が いちばん～' 문형은 특정 범위나 집단 내에서 최고 수준이나 으뜸임을 나타내는 최상급 표현으로, 한국어의 '가장 ~하다', '제일 ~하다'에 해당합니다. 다양한 형용사나 동사와 함께 쓰여 다른 대상들과 비교할 때 A가 으뜸임을 강조합니다.",
+      "formation": "명사 + が + いちばん (一番) + 형용사/동사",
+      "examples": [
+        {
+          "translation": "이 중에서 초밥을 가장 좋아합니다."
+        },
+        {
+          "translation": "그녀는 반에서 제일 빠르게 수영할 수 있습니다."
+        },
+        {
+          "translation": "이 마을에서는 이 공원이 가장 아름답습니다."
+        },
+        {
+          "translation": "음료 중에서는 홍차를 제일 좋아합니다."
+        }
+      ]
+    },
+    "ja_AけれどもB_1": {
+      "title": "A。けれども、～B。(A. Keredomo,~ B.)",
+      "shortExplanation": "두 문장 사이의 역접이나 대조를 나타내며, '하지만', '그렇지만'이라는 뜻입니다.",
+      "longExplanation": "'A。けれども、～B。' 문형은 앞 문장 A와 뒤 문장 B의 내용이 서로 상반되거나 대조적일 때 사용하는 접속 표현으로, 한국어의 '하지만', '그렇지만', '그러나'에 해당합니다. 'けれども'가 뒷문장의 맨 앞에 쓰여 앞선 내용과 반대되는 결과를 이끕니다.",
+      "formation": "문장 A + 。けれども、 + 문장 B",
+      "examples": [
+        {
+          "translation": "오늘은 날씨가 맑다. 하지만 춥습니다."
+        },
+        {
+          "translation": "그녀는 시끄럽다. 그렇지만 재미있습니다."
+        },
+        {
+          "translation": "그 영화는 길었다. 하지만 지루하지 않았다."
+        },
+        {
+          "translation": "그는 운동을 잘한다. 그러나 공부는 서툴다."
+        }
+      ]
+    },
+    "ja_AしかしB_2": {
+      "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
+      "shortExplanation": "앞뒤 두 문장의 대조나 역접을 나타내며, '그러나', '하지만'이라는 뜻입니다.",
+      "longExplanation": "'A。しかし、～B。' 문형은 두 번째 문장 처음에 접속사 'しかし'를 사용하여 앞 문장의 내용과 대립되거나 모순되는 내용을 이어받을 때 사용합니다. 'でも'보다 격식 있고 정중한 뉘앙스를 지니며, 문어체나 공적인 담화에서 자주 쓰입니다.",
+      "formation": "문장 A + 。しかし、 + 문장 B",
+      "examples": [
+        {
+          "translation": "오늘은 바쁘다. 그러나 시간이 있다면 커피를 마시자."
+        },
+        {
+          "translation": "그 영화는 재미있었다. 하지만 너무 길었다."
+        },
+        {
+          "translation": "그는 피곤했다. 그러나 숙제를 끝냈다."
+        },
+        {
+          "translation": "방은 좁습니다. 하지만 편리한 곳에 있습니다."
+        }
+      ]
+    },
+    "ja_AじゃB_3": {
+      "title": "A。じゃ、～B。(A. Ja, ~B.)",
+      "shortExplanation": "앞선 상황을 바탕으로 판단, 제안, 결정을 내릴 때 쓰이며, '그럼', '그렇다면'이라는 뜻입니다.",
+      "longExplanation": "'A。じゃ、～B。' 문형은 회화체에서 앞 문장 A에서 제시된 상황이나 조건에 따라 뒤 문장 B에서 새로운 판단, 제안, 행동을 취할 때 사용합니다. '그럼', '그러면'에 해당하며, 'では'나 'それじゃ'의 구어적이고 친근한 축약 표현입니다.",
+      "formation": "문장 A + 。じゃ、 + 문장 B",
+      "examples": [
+        {
+          "translation": "영화 볼 시간이 없다. 그럼 다음에 가자."
+        },
+        {
+          "translation": "배가 고프다. 그럼 식당에 가자."
+        },
+        {
+          "translation": "전철이 연착됐다. 그럼 버스로 가자."
+        },
+        {
+          "translation": "이 셔츠는 비싸다. 그럼 다른 것을 사자."
+        }
+      ]
+    },
+    "ja_AそれじゃB_4": {
+      "title": "A。それじゃ、～B。(A. Soreja,~B.)",
+      "shortExplanation": "두 문장을 연결하여 앞선 상황에 따른 대응이나 제안을 나타내며, '그렇다면', '그럼'이라는 뜻입니다.",
+      "longExplanation": "'A。それじゃ、～B。' 문형은 앞 문장 A에서 상황이나 배경을 제시하고, 뒤 문장 B에서 그에 따른 행동이나 결정을 이어받을 때 사용합니다. 'それでは'의 구어체 표현으로 일상 대화에서 자연스럽게 자주 쓰입니다.",
+      "formation": "문장 A + 。それじゃ、 + 문장 B",
+      "examples": [
+        {
+          "translation": "오늘은 쉬는 날입니다. 그렇다면 영화를 보러 갑시다."
+        },
+        {
+          "translation": "전기가 나갔다. 그럼 양초를 씁시다."
+        },
+        {
+          "translation": "식당이 붐비고 있습니다. 그렇다면 다른 곳에서 먹읍시다."
+        },
+        {
+          "translation": "내일은 비가 올 모양이다. 그럼 소풍은 취소합시다."
+        }
+      ]
+    },
+    "ja_AそれではB_5": {
+      "title": "A。それでは、～B。(A. Soredewa,~B.)",
+      "shortExplanation": "앞선 상황을 바탕으로 전환하거나 다음 행동을 나타내며, '그렇다면', '그러면'이라는 뜻입니다.",
+      "longExplanation": "'A。それでは、～B。' 문형은 앞 문장 A의 상황이나 사실을 이어받아 뒤 문장 B에서 적절한 판단, 제안, 전환된 행동을 나타낼 때 쓰는 정중한 접속 표현입니다. 구어적 표현인 'じゃ'나 'それじゃ'에 비해 격식을 차린 점잖은 어조를 띱니다.",
+      "formation": "문장 A + 。それでは、 + 문장 B",
+      "examples": [
+        {
+          "translation": "오늘은 쉬는 날이다. 그렇다면 영화를 보러 가자."
+        },
+        {
+          "translation": "이 빵은 이미 오래되었습니다. 그러면 버립시다."
+        },
+        {
+          "translation": "비가 내리기 시작했다. 그렇다면 실내에서 놀자."
+        },
+        {
+          "translation": "배가 고프네요. 그러면 무언가 먹으러 갑시다."
+        }
+      ]
+    },
+    "ja_A_6": {
+      "title": "A では、～B (A dewa, ~B)",
+      "shortExplanation": "범위나 화제를 한정하여 비교나 평가를 나타내며, '~에서는', '~에 있어서는'이라는 뜻입니다.",
+      "longExplanation": "'A では、～B' 문형은 명사 A를 화제나 특정 범위, 분야로 한정한 뒤, 그 범위 안에서의 선호, 특징, 비교 등을 뒷부분 B에서 서술할 때 쓰입니다. 한국어의 '~에서는', '~에 있어서는'에 해당합니다.",
+      "formation": "명사 A + では、 + 주어 + 서술어 B",
+      "examples": [
+        {
+          "translation": "과일 중에서는 사과를 가장 좋아합니다."
+        },
+        {
+          "translation": "스포츠에서는 축구가 가장 인기가 있습니다."
+        },
+        {
+          "translation": "오늘 날씨로 보아 비가 올 것 같습니다."
+        },
+        {
+          "translation": "요리 중에서는 일식을 가장 자신 있게 잘합니다."
+        }
+      ]
+    },
+    "ja_AでもB_7": {
+      "title": "A。でも、～B。(A. Demo, ~B)",
+      "shortExplanation": "두 문장의 상반되는 내용이나 대조를 나타내며, '하지만', '그렇지만'이라는 뜻입니다.",
+      "longExplanation": "'A。でも、～B。' 문형은 뒷문장 시작 부분에 접속사 'でも'를 사용하여 앞 문장 A와 대립되거나 예상 밖의 내용을 연결할 때 사용합니다. 일상 구어체에서 가장 흔하게 쓰이는 자연스러운 역접 접속 표현입니다.",
+      "formation": "문장 A + 。でも、 + 문장 B",
+      "examples": [
+        {
+          "translation": "어제는 추웠다. 하지만 오늘은 따뜻합니다."
+        },
+        {
+          "translation": "그는 바쁘다. 그렇지만 친구들과 놀 시간이 있다."
+        },
+        {
+          "translation": "시험에 합격했다. 하지만 여전히 공부를 계속하고 있습니다."
+        },
+        {
+          "translation": "그녀는 유명하다. 하지만 매우 겸손합니다."
+        }
+      ]
+    },
+    "ja_Aと_8": {
+      "title": "Aと Bと どちら～ (A to B to dochira~)",
+      "shortExplanation": "A와 B 두 가지 대상을 비교하여 어느 쪽을 선호하는지 물을 때 쓰이며, 'A와 B 중 어느 쪽이 ~합니까?'라는 뜻입니다.",
+      "longExplanation": "'Aと Bと どちら～' 문형은 두 개의 선택지 A와 B를 두고, 어느 쪽이 더 좋거나 적합한지 상대방의 선택이나 의견을 물어볼 때 사용하는 정중한 비교 의문 표현입니다. 'どちら'는 둘 중 하나를 가리키는 정중한 의문사입니다.",
+      "formation": "Aと + Bと + どちら + が/を/で + 동사/형용사/명사 + か",
+      "examples": [
+        {
+          "translation": "사과와 귤 중 어느 쪽을 더 좋아합니까?"
+        },
+        {
+          "translation": "전철과 버스 중 어느 것으로 가야 합니까?"
+        },
+        {
+          "translation": "빨간 원피스와 파란 원피스 중 어느 쪽이 더 잘 어울린다고 생각합니까?"
+        },
+        {
+          "translation": "이 카메라와 저 카메라 중 어느 쪽이 더 사용하기 편합니까?"
+        }
+      ]
+    },
+    "ja_AとBと_9": {
+      "title": "AとBと どっち〜 (A to B to docchi〜)",
+      "shortExplanation": "친근한 일상 대화에서 두 가지 중 어느 쪽인지 물을 때 쓰이며, 'A랑 B 중 어느 쪽/어떤 거'라는 뜻입니다.",
+      "longExplanation": "'AとBと どっち〜' 문형은 'AとBとどちら'의 반말 및 친근한 구어체 표현으로, 친구나 가까운 사이에서 둘 중 어느 쪽을 고를지 가볍게 물을 때 사용합니다. 'AかBか どっち〜' 형태로도 자주 쓰입니다.",
+      "formation": "Aと + Bと + どっち + が/を + 동사/형용사 (+ か/？)",
+      "examples": [
+        {
+          "translation": "커피랑 홍차 중 어느 쪽이 좋아?"
+        },
+        {
+          "translation": "영화랑 음악 중 어떤 걸 즐겨?"
+        },
+        {
+          "translation": "빨간 셔츠랑 파란 셔츠 중 어느 걸 살 거야?"
+        },
+        {
+          "translation": "일본어랑 한국어 중 어느 쪽을 공부하고 싶어?"
+        }
+      ]
+    },
+    "ja_A_10": {
+      "title": "A は B が〜 (A wa B ga〜)",
+      "shortExplanation": "주제 A를 제시하고 그에 속한 특징, 부분, 능력인 B를 묘사하며, 'A는 B가 ~하다'라는 뜻입니다.",
+      "longExplanation": "'A は B が〜' 문형은 일본어의 대표적인 이중주어(대주어-소주어) 구조입니다. 조사 'は'로 문장 전체의 화제나 대상 A를 제시하고, 조사 'が'로 A의 구체적인 신체 부위, 속성, 기호, 능력인 B를 지정하여 형용사나 동사로 서술합니다.",
+      "formation": "A は (주제) + B が (부분/속성/대상) + 형용사/동사",
+      "examples": [
+        {
+          "translation": "그녀는 머리카락이 깁니다."
+        },
+        {
+          "translation": "이 식당은 분위기가 좋습니다."
+        },
+        {
+          "translation": "저는 아침 식사를 가장 좋아합니다."
+        },
+        {
+          "translation": "그는 영어를 잘합니다."
+        }
+      ]
+    },
+    "ja_A_11": {
+      "title": "A は B より～ (A wa B yori～)",
+      "shortExplanation": "두 대상을 비교하여 우위를 나타내며, 'A는 B보다 ~하다'라는 뜻입니다.",
+      "longExplanation": "'A は B 보다～' 문형은 두 대상 A와 B를 비교할 때 사용하는 기본 비교 구문입니다. 비교 기준이 되는 대상 B 뒤에 조사 'より(~보다)'를 붙여, 주어인 A가 B보다 성질이나 상태, 동작의 정도가 더 큼을 나타냅니다.",
+      "formation": "A は + B より + 형용사/동사",
+      "examples": [
+        {
+          "translation": "이 주스는 저 주스보다 답니다."
+        },
+        {
+          "translation": "여름은 겨울보다 덥습니다."
+        },
+        {
+          "translation": "그녀는 나보다 빨리 달립니다."
+        },
+        {
+          "translation": "슈퍼마켓은 편의점보다 저렴합니다."
+        }
+      ]
+    },
+    "ja_A_12": {
+      "title": "A より B のほうが～ (A yori B no hou ga ～)",
+      "shortExplanation": "두 대상을 비교하여 B 쪽이 더 우세함을 강조하며, 'A보다 B 쪽이 더 ~하다'라는 뜻입니다.",
+      "longExplanation": "'A より B のほうが～' 문형은 두 개의 대상이나 상태를 비교할 때 사용합니다. 'A 보다'를 비교 기준으로 삼고, 'B のほうが'로 B 쪽이 해당 성질이나 상태에서 더 두드러짐을 강조합니다. 한국어의 'A보다 B 쪽이 더 ~하다'에 해당합니다.",
+      "formation": "A + より + B + のほうが + 형용사",
+      "examples": [
+        {
+          "translation": "피자보다 햄버거 쪽이 더 맛있습니다."
+        },
+        {
+          "translation": "여름보다 겨울 쪽이 더 춥습니다."
+        },
+        {
+          "translation": "여기보다 그쪽이 더 조용합니다."
+        },
+        {
+          "translation": "자동차보다 전철 쪽이 더 빠릅니다."
+        }
+      ]
+    },
+    "ja_いAdjective_13": {
+      "title": "い형용사 연용형(〜く) + 동사 (i-keiyoushi ku + doushi)",
+      "shortExplanation": "い형용사를 부사형으로 바꾸어 뒤에 오는 동사를 수식하며, '~게 (동사하다)'라는 뜻입니다.",
+      "longExplanation": "이 문형은 い형용사의 어미 'い'를 'く'로 바꾸어 부사적인 용법(연용형)으로 활용하는 방법입니다. 뒤에 오는 동사를 수식하여 동작이 어떠한 상태나 방식으로 행해지는지를 나타내며, 한국어의 '~게', '~히'에 해당합니다.",
+      "formation": "い형용사 (어미 い 탈락) + く + 동사",
+      "examples": [
+        {
+          "translation": "그는 빠르게 달렸습니다."
+        },
+        {
+          "translation": "이 요리를 맛있게 먹었습니다."
+        },
+        {
+          "translation": "그녀는 상냥하게 이야기합니다."
+        },
+        {
+          "translation": "어머니는 바쁘게 일하고 계십니다."
+        }
+      ]
+    },
+    "ja_いAdjective_14": {
+      "title": "い형용사 + く합니다/くします (i-keiyoushi ku shimasu)",
+      "shortExplanation": "인위적인 작용을 가해 대상을 어떤 상태로 변화시킴을 나타내며, '~게 하다', '~게 만들다'라는 뜻입니다.",
+      "longExplanation": "이 문형은 い형용사의 어미 'い'를 'く'로 바꾼 뒤 타동사 'します(하다)'를 연결하여, 의도적으로 어떤 대상에 작용을 가해 그 형용사의 상태로 변화시키는 것을 나타냅니다. 자연스러운 변화를 나타내는 '~くなります'와 대조되며, 한국어의 '~게 하다', '~게 만들다'에 해당합니다.",
+      "formation": "목적어 + を + い형용사 (어미 い 탈락) + く합니다/くします",
+      "examples": [
+        {
+          "translation": "방을 밝게 만듭니다."
+        },
+        {
+          "translation": "친구의 기분을 즐겁게 해 줍니다."
+        },
+        {
+          "translation": "일이 간단해지도록 방식을 빠르게 합니다."
+        },
+        {
+          "translation": "음식을 맛있게 만듭니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_A_0": {
+      "title": "A が いちばん～ (A ga ichiban～)",
+      "shortExplanation": "ある範囲の中で最も程度が高いこと（最上級）を表し、「一番〜」「もっとも〜」という意味を表します。",
+      "longExplanation": "「A が いちばん～」は、ある特定の範囲や集団の中で、Aが最もその性質や状態、動作の度合いが高いこと（最上級）を表す文法表現です。様々な形容詞や動詞とともに用いられ、他のものと比較して最高位であることを示します。",
+      "formation": "名詞 + が + いちばん (一番) + 形容詞/動詞",
+      "examples": [
+        {
+          "translation": "この中で、寿司が一番好きです。"
+        },
+        {
+          "translation": "彼女はクラスで一番速く泳げます。"
+        },
+        {
+          "translation": "この町では、この公園が一番きれいです。"
+        },
+        {
+          "translation": "飲み物の中では、紅茶が一番好きです。"
+        }
+      ]
+    },
+    "ja_AけれどもB_1": {
+      "title": "A。けれども、～B。(A. Keredomo,~ B.)",
+      "shortExplanation": "前後の文の逆接・対比を表し、「しかし」「だが」「けれども」という意味を表します。",
+      "longExplanation": "「A。けれども、～B。」は、文Aの事実や前提に対して、予想されることとは反対の内容や対立する内容を文Bで述べる逆接の接続表現です。「けれども」は文頭に置かれ、口語からやや改まった場面まで幅広く使われます。",
+      "formation": "文A + 。けれども、 + 文B",
+      "examples": [
+        {
+          "translation": "今日は晴れている。けれども、寒いです。"
+        },
+        {
+          "translation": "彼女はうるさい。けれども、面白いです。"
+        },
+        {
+          "translation": "その映画は長かった。けれども、退屈じゃなかった。"
+        },
+        {
+          "translation": "彼は運動が得意だ。けれども、勉強は苦手だ。"
+        }
+      ]
+    },
+    "ja_AしかしB_2": {
+      "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
+      "shortExplanation": "前文と対立・矛盾する内容を後文で述べる逆接の表現で、「しかし」「だが」という意味を表します。",
+      "longExplanation": "「A。しかし、～B。」は、文Aの述べる内容に対して、反対の事実や予想外の展開を文Bで述べる逆接の接続詞「しかし」を用いた表現です。「でも」に比べて改まった硬い響きがあり、文章語や改まった会話でもよく用いられます。",
+      "formation": "文A + 。しかし、 + 文B",
+      "examples": [
+        {
+          "translation": "今日は忙しい。しかし、時間があるなら、コーヒーを飲もう。"
+        },
+        {
+          "translation": "その映画は面白かった。しかし、長すぎました。"
+        },
+        {
+          "translation": "彼は疲れていた。しかし、宿題を終わらせた。"
+        },
+        {
+          "translation": "部屋は狭いです。しかし、便利な場所にあります。"
+        }
+      ]
+    },
+    "ja_AじゃB_3": {
+      "title": "A。じゃ、～B。(A. Ja, ~B.)",
+      "shortExplanation": "前述の状況を受けて判断・提案・行動を表す口語表現で、「それなら」「では」という意味を表します。",
+      "longExplanation": "「A。じゃ、～B。」は、文Aで提示された状況や情報をもとに、文Bで次の行動の決定や提案、話題の転換を行う際に用いる日常会話のくだけた表現です。「では」や「それじゃ」のくだけた口語形にあたります。",
+      "formation": "文A + 。じゃ、 + 文B",
+      "examples": [
+        {
+          "translation": "映画は時間がない。じゃ、また今度行こう。"
+        },
+        {
+          "translation": "お腹がすいた。じゃ、レストランに行こう。"
+        },
+        {
+          "translation": "電車が遅れた。じゃ、バスで行こう。"
+        },
+        {
+          "translation": "このシャツは高い。じゃ、別のを買おう。"
+        }
+      ]
+    },
+    "ja_AそれじゃB_4": {
+      "title": "A。それじゃ、～B。(A. Soreja,~B.)",
+      "shortExplanation": "前文の状況を受けて、それに応じた判断や提案を述べる接続表現で、「それなら」「それでは」という意味を表します。",
+      "longExplanation": "「A。それじゃ、～B。」は、先行する文Aで述べられた状況や条件を受けて、文Bでそれに対応する判断、提案、結論を述べる接続表現です。「それでは」の日常会話における口語的な形です。",
+      "formation": "文A + 。それじゃ、 + 文B",
+      "examples": [
+        {
+          "translation": "今日は休みです。それじゃ、映画を観に行きましょう。"
+        },
+        {
+          "translation": "電気が切れた。それじゃ、ろうそくを使いましょう。"
+        },
+        {
+          "translation": "レストランが混んでいます。それじゃ、別の場所で食べましょう。"
+        },
+        {
+          "translation": "明日は雨が降るらしい。それじゃ、ピクニックは中止しましょう。"
+        }
+      ]
+    },
+    "ja_AそれではB_5": {
+      "title": "A。それでは、～B。(A. Soredewa,~B.)",
+      "shortExplanation": "前文の状況を受けて次の行動や結論、場面の転換を導く表現で、「それでは」「それなら」という意味を表します。",
+      "longExplanation": "「A。それでは、～B。」は、先行する発言や状況Aを前提として受け止め、後続の文Bで新たな行動の開始、判断、提案を導き出す接続表現です。「じゃ」「それじゃ」よりも丁寧で改まった語感があり、丁寧な会話や改まった席でも用いられます。",
+      "formation": "文A + 。それでは、 + 文B",
+      "examples": [
+        {
+          "translation": "今日は休みだ。それでは、映画を見に行こう。"
+        },
+        {
+          "translation": "このパンはもう古いです。それでは、捨てましょう。"
+        },
+        {
+          "translation": "雨が降ってきた。それでは、室内で遊ぼう。"
+        },
+        {
+          "translation": "お腹が空いた。それでは、何か食べに行きましょう。"
+        }
+      ]
+    },
+    "ja_A_6": {
+      "title": "A では、～B (A dewa, ~B)",
+      "shortExplanation": "ある範囲や基準、話題を限定して比較や評価を述べる表現で、「〜においては」「〜の中では」という意味を表します。",
+      "longExplanation": "「A では、～B」は、名詞Aを比較の基準や枠組み、特定の分野・範囲として提示し、その中における特徴、評価、最上級の事実などを文Bで述べる文法表現です。「〜の中では」「〜の点では」という意味合いを表します。",
+      "formation": "名詞A + では、 + 主語 + 述語B",
+      "examples": [
+        {
+          "translation": "果物では、リンゴが一番好きです。"
+        },
+        {
+          "translation": "スポーツでは、サッカーが一番人気です。"
+        },
+        {
+          "translation": "今日の天気では、雨が降りそうです。"
+        },
+        {
+          "translation": "料理では、和食が一番得意です。"
+        }
+      ]
+    },
+    "ja_AでもB_7": {
+      "title": "A。でも、～B。(A. Demo, ~B)",
+      "shortExplanation": "前文の内容と反対・対照的な事柄を後文で述べる日常的な逆接表現で、「でも」「しかし」という意味を表します。",
+      "longExplanation": "「A。でも、～B。」は、文Aの事実や前提に対して、それに反する事柄や予想外の展開を文Bで述べる逆接の表現です。「でも」は日常会話で最も頻繁に用いられるくだけた接続詞で、自然な対話に適しています。",
+      "formation": "文A + 。でも、 + 文B",
+      "examples": [
+        {
+          "translation": "昨日は寒かった。でも、今日は暖かいです。"
+        },
+        {
+          "translation": "彼は忙しい。でも、友達と遊ぶ時間がある。"
+        },
+        {
+          "translation": "試験に合格した。でも、まだ勉強を続けています。"
+        },
+        {
+          "translation": "彼女は有名だ。でも、とても謙虚です。"
+        }
+      ]
+    },
+    "ja_Aと_8": {
+      "title": "Aと Bと どちら～ (A to B to dochira~)",
+      "shortExplanation": "2つの選択肢（AとB）を比較して、どちらが良いか・好きかを尋ねる表現で、「AとBとどちらが〜ですか」という意味を表します。",
+      "longExplanation": "「Aと Bと どちら～」は、二つの物事や選択肢AとBを並列し、どちらがより優れているか、どちらを好むかなどを尋ねる丁寧な比較疑問表現です。「どちら」は二者択一を表す丁寧な疑問詞です。",
+      "formation": "Aと + Bと + どちら + が/を/で + 動詞/形容詞/名詞 + か",
+      "examples": [
+        {
+          "translation": "りんごとみかんとどちらが好きですか。"
+        },
+        {
+          "translation": "電車とバスとどちらで行くべきですか。"
+        },
+        {
+          "translation": "赤いワンピースと青いワンピースとどちらが似合うと思いますか。"
+        },
+        {
+          "translation": "このカメラとあのカメラとどちらのほうが使いやすいですか。"
+        }
+      ]
+    },
+    "ja_AとBと_9": {
+      "title": "AとBと どっち〜 (A to B to docchi〜)",
+      "shortExplanation": "二者択一を親しい相手に尋ねる日常会話のくだけた表現で、「AとBとどっちが〜」という意味を表します。",
+      "longExplanation": "「AとBと どっち〜」は、「AとBとどちら〜」のくだけた口語形（話し言葉）です。友人や家族など親しい間柄で、二つの選択肢の中からどちらを選ぶか、どちらが好みかを気軽に尋ねる際に用いられます。「AかBか どっち〜」と言われることもあります。",
+      "formation": "Aと + Bと + どっち + が/を + 動詞/形容詞 (+ か/？)",
+      "examples": [
+        {
+          "translation": "コーヒーと紅茶とどっちが好き？"
+        },
+        {
+          "translation": "映画と音楽とどっちを楽しむ？"
+        },
+        {
+          "translation": "赤いシャツと青いシャツとどっちを買う？"
+        },
+        {
+          "translation": "日本語と韓国語とどっちを勉強したい？"
+        }
+      ]
+    },
+    "ja_A_10": {
+      "title": "A は B が〜 (A wa B ga〜)",
+      "shortExplanation": "主題Aを提示し、その部分や性質・能力・特徴であるBを説明・描写する構文で、「AはBが〜だ」という意味を表します。",
+      "longExplanation": "「A は B が〜」は、文全体の主題（大主語）を「Aは」で提示し、その対象の身体の一部分や属性、能力、嗜好などの具体的な特徴（小主語）を「Bが」で示して形容詞や動詞で描写する日本語の基本構文です（有題文・いわゆる象の鼻構文）。",
+      "formation": "A は (主題) + B が (部分/属性/対象) + 形容詞/動詞",
+      "examples": [
+        {
+          "translation": "彼女は髪が長いです。"
+        },
+        {
+          "translation": "このレストランは雰囲気が良いです。"
+        },
+        {
+          "translation": "私は朝ごはんが一番好きです。"
+        },
+        {
+          "translation": "彼は英語が得意です。"
+        }
+      ]
+    },
+    "ja_A_11": {
+      "title": "A は B より～ (A wa B yori～)",
+      "shortExplanation": "2つの事物を比較し、AがBよりも程度が高いことを表す表現で、「AはBより〜だ」という意味を表します。",
+      "longExplanation": "「A は B より～」は、二つの事物AとBを比較する際の基本的な文型です。比較の基準となる対象Bに助詞「より」を付け、主語であるAの方がBよりもその性質や状態の度合いが上であることを表します。",
+      "formation": "A は + B より + 形容詞/動詞",
+      "examples": [
+        {
+          "translation": "このジュースはあのジュースより甘いです。"
+        },
+        {
+          "translation": "夏は冬より暑いです。"
+        },
+        {
+          "translation": "彼女は私より速く走ります。"
+        },
+        {
+          "translation": "スーパーはコンビニより安いです。"
+        }
+      ]
+    },
+    "ja_A_12": {
+      "title": "A より B のほうが～ (A yori B no hou ga ～)",
+      "shortExplanation": "2つのものを比較し、Bの方が程度が上であることを強調する表現で、「AよりBのほうが〜だ」という意味を表します。",
+      "longExplanation": "「A より B のほうが～」は、二者間で比較を行い、Aを基準（〜より）として、Bの方（〜のほうが）がよりその形容詞の表す性質や状態の度合いが勝っていることを際立たせる文法表現です。い形容詞・な形容詞のどちらにも接続します。",
+      "formation": "A + より + B + のほうが + 形容詞",
+      "examples": [
+        {
+          "translation": "ピザよりハンバーガーのほうが美味しい。"
+        },
+        {
+          "translation": "夏より冬のほうが寒い。"
+        },
+        {
+          "translation": "ここよりそこのほうが静かです。"
+        },
+        {
+          "translation": "車より電車のほうが速い。"
+        }
+      ]
+    },
+    "ja_いAdjective_13": {
+      "title": "い形容詞連用形（〜く）＋ 動詞 (i-keiyoushi ku + doushi)",
+      "shortExplanation": "い形容詞を副詞的に用いて後続の動詞を修飾し、動作の様子や状態を表す表現です。",
+      "longExplanation": "い形容詞の語尾「い」を「く」に変えた連用形を用いて、後ろに続く動詞を修飾する用法です。動作がどのような状態・様子で行われるか（様態）を説明します。",
+      "formation": "い形容詞語幹 (語尾「い」を除く) + く + 動詞",
+      "examples": [
+        {
+          "translation": "彼は速く走りました。"
+        },
+        {
+          "translation": "この料理は美味しく食べました。"
+        },
+        {
+          "translation": "彼女は優しく話します。"
+        },
+        {
+          "translation": "母は忙しく仕事をしています。"
+        }
+      ]
+    },
+    "ja_いAdjective_14": {
+      "title": "い形容詞連用形（〜く）＋ します (i-keiyoushi ku shimasu)",
+      "shortExplanation": "人為的な働きかけによって対象をある状態に変化させることを表し、「〜くする」「〜く変える」という意味を表します。",
+      "longExplanation": "い形容詞の語尾「い」を「く」に変えた連用形に動詞「します」を接続させることで、意志や人為的な働きかけによって対象の状態をその形容詞の性質に変化させる（他動的な変化）ことを表します。自然な変化を表す「〜くなります」と対比されます。",
+      "formation": "目的語 + を + い形容詞語幹 (語尾「い」を除く) + くします",
+      "examples": [
+        {
+          "translation": "部屋を明るくします。"
+        },
+        {
+          "translation": "友達の気分を楽しくします。"
+        },
+        {
+          "translation": "仕事が簡単になるように、やり方を早くします。"
+        },
+        {
+          "translation": "食べ物を美味しくします。"
+        }
+      ]
+    }
+  }
+}

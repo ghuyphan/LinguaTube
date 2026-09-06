@@ -1,0 +1,251 @@
+[
+  {
+    "id": "zh_况且_691",
+    "language": "zh",
+    "pattern": "况且",
+    "title": "况且 (besides)",
+    "shortExplanation": "besides",
+    "longExplanation": "besides. Pinyin: kuàngqiě",
+    "formation": "kuàngqiě",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "这套房子交通方便，附近有书店，况且房租又不贵，真是再合适不过了。",
+        "romanization": "zhè tào fángzi jiāotōng fāngbiàn， fùjìn yǒu shūdiàn， kuàngqiě fángzū yòu bù guì， zhēnshi zài héshì bùguò le。",
+        "translation": "This apartment has convenient transportation, a bookstore nearby. And besides, the rent is not expensive. It's perfect."
+      }
+    ]
+  },
+  {
+    "id": "zh_大TIME_692",
+    "language": "zh",
+    "pattern": "大 TIME",
+    "title": "大 TIME ((emphasize on TIME))",
+    "shortExplanation": "(emphasize on TIME)",
+    "longExplanation": "(emphasize on TIME). Pinyin: dà TIME",
+    "formation": "dà TIME",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "那辆汽车大白天被人偷走了。",
+        "romanization": "nà liàng qìchē dàbáitiān bèi rén tōu zǒu le。",
+        "translation": "The car was stolen in broad daylight."
+      }
+    ]
+  },
+  {
+    "id": "zh_与其V倒不如V_693",
+    "language": "zh",
+    "pattern": "(与其) V 倒不如 V",
+    "title": "(与其) V 倒不如 V (rather than V, it’s better to V)",
+    "shortExplanation": "rather than V, it’s better to V",
+    "longExplanation": "rather than V, it’s better to V. Pinyin: ( yǔqí) V dǎo bùrú V",
+    "formation": "( yǔqí) V dǎo bùrú V",
+    "level": "HSK 6",
+    "examples": []
+  },
+  {
+    "id": "zh_以免_695",
+    "language": "zh",
+    "pattern": "以免",
+    "title": "以免 (为了避免)",
+    "shortExplanation": "为了避免",
+    "longExplanation": "为了避免. Pinyin: yǐmiǎn",
+    "formation": "yǐmiǎn",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "感冒时应尽量少去公共场所，以免传染别人。",
+        "romanization": "gǎnmào shí yīng jǐnliàng shǎo qù gōnggòng chǎngsuǒ， yǐmiǎn chuánrǎn biéren。",
+        "translation": "When you have a cold, you should go to public places as little as possible so as not to infect others."
+      }
+    ]
+  },
+  {
+    "id": "zh_嫌_696",
+    "language": "zh",
+    "pattern": "嫌",
+    "title": "嫌 (dislike, have a strong negative opinion about)",
+    "shortExplanation": "dislike, have a strong negative opinion about",
+    "longExplanation": "dislike, have a strong negative opinion about. Pinyin: xián",
+    "formation": "xián",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "大家都嫌这个旅行计划不够合理。",
+        "romanization": "dàjiā dōu xián zhège lǚxíng jìhuà bùgòu hélǐ。",
+        "translation": "Everyone feels (badly) that travel plan is unreasonable."
+      }
+    ]
+  },
+  {
+    "id": "zh_动不动就V_697",
+    "language": "zh",
+    "pattern": "动不动就 V",
+    "title": "动不动就 V (on a whim)",
+    "shortExplanation": "on a whim",
+    "longExplanation": "on a whim. Pinyin: dòngbudòng jiù V",
+    "formation": "dòngbudòng jiù V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他最近工作忙、压力大，动不动就着急、发脾气。",
+        "romanization": "tā zuìjìn gōngzuò máng、 yālì dà， dòngbudòng jiù zháojí、 fāpíqì。",
+        "translation": "He's been busy and stressed recently. He gets angry on a whim."
+      }
+    ]
+  },
+  {
+    "id": "zh_甲乙丙丁_698",
+    "language": "zh",
+    "pattern": "甲乙丙丁",
+    "title": "甲乙丙丁 (A, B, C, D (series))",
+    "shortExplanation": "A, B, C, D (series)",
+    "longExplanation": "A, B, C, D (series). Pinyin: jiǎyǐ bǐng dīng",
+    "formation": "jiǎyǐ bǐng dīng",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "甲、乙、丙、丁是一个序列，相当于英文的A、B、C、D。",
+        "romanization": "jiǎ、 yǐ、 bǐng、 dīng shì yī gè xùliè， xiāngdāngyú Yīngwén deA、B、C、D。",
+        "translation": "A, B, C and D are sequences equivalent to A, B, C and D in English."
+      }
+    ]
+  },
+  {
+    "id": "zh_加以V_699",
+    "language": "zh",
+    "pattern": "加以 V",
+    "title": "加以 V (proceed with V)",
+    "shortExplanation": "proceed with V",
+    "longExplanation": "proceed with V. Pinyin: jiāyǐ V",
+    "formation": "jiāyǐ V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "对于你的意见和建议，我们会认真加以研究。",
+        "romanization": "duìyú nǐ de yìjiàn hé jiànyì， wǒmen huì rènzhēn jiāyǐ yánjiū。",
+        "translation": "As for your opinions and suggestions, we will carefully (conduct a) study."
+      }
+    ]
+  },
+  {
+    "id": "zh_大大远远V_700",
+    "language": "zh",
+    "pattern": "大大/远远 V",
+    "title": "大大/远远 V (V by far)",
+    "shortExplanation": "V by far",
+    "longExplanation": "V by far. Pinyin: dàdà/ yuǎnyuǎn V",
+    "formation": "dàdà/ yuǎnyuǎn V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "你的能力大大/远远超出了我们的想象。",
+        "romanization": "nǐ de nénglì dàdà/ yuǎnyuǎn chāochū le wǒmen de xiǎngxiàng。",
+        "translation": "Your abilities exceeded our imagination by far."
+      }
+    ]
+  },
+  {
+    "id": "zh_远远不没VA_701",
+    "language": "zh",
+    "pattern": "远远 + 不/没 + V/A",
+    "title": "远远 + 不/没 + V/A (far from V-ing, far from A)",
+    "shortExplanation": "far from V-ing, far from A",
+    "longExplanation": "far from V-ing, far from A. Pinyin: yuǎnyuǎn + bù/ méi + V/A",
+    "formation": "yuǎnyuǎn + bù/ méi + V/A",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "你现在的知识、能力都远远不能胜任你理想中的工作。",
+        "romanization": "nǐ xiànzài de zhīshi、 nénglì dōu yuǎnyuǎn bùnéng shèngrèn nǐ lǐxiǎng zhòngdì gōngzuò。",
+        "translation": "Your current knowledge and abilities are far from [sufficient for you to be] competent for your ideal job."
+      }
+    ]
+  },
+  {
+    "id": "zh_紧缩句_702",
+    "language": "zh",
+    "pattern": "紧缩句",
+    "title": "紧缩句 ((omitting “if” words))",
+    "shortExplanation": "(omitting “if” words)",
+    "longExplanation": "(omitting “if” words). Pinyin: jǐnsuō jù",
+    "formation": "jǐnsuō jù",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "站住！(要是) 不站住，我就开枪了。",
+        "romanization": "zhànzhù！( yàoshi) bù zhànzhù， wǒ jiù kāiqiāng le。",
+        "translation": "Stop! If you don't stop, I'll shoot."
+      }
+    ]
+  },
+  {
+    "id": "zh_特意_703",
+    "language": "zh",
+    "pattern": "特意",
+    "title": "特意 (on purpose)",
+    "shortExplanation": "on purpose",
+    "longExplanation": "on purpose. Pinyin: tèyì",
+    "formation": "tèyì",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "那一年我出差去天津，特意绕道北京，去了趟圆明园。",
+        "romanization": "nà yī nián wǒ chūchāi qù Tiānjīn， tèyì ràodào Běijīng， qù le tàng Yuánmíngyuán。",
+        "translation": "That year, I went to Tianjin on business. On purpose, I made a detour to Beijing and went to Yuanmingyuan."
+      }
+    ]
+  },
+  {
+    "id": "zh_即将_704",
+    "language": "zh",
+    "pattern": "即将",
+    "title": "即将 (about)",
+    "shortExplanation": "about",
+    "longExplanation": "about. Pinyin: jíjiāng",
+    "formation": "jíjiāng",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "我们已经完成了学业，即将走上工作岗位，开始人生新的一页。",
+        "romanization": "wǒmen yǐjīng wánchéng le xuéyè， jíjiāng zǒu shàng gōngzuò gǎngwèi， kāishǐ rénshēng xīn de yī yè。",
+        "translation": "We have finished our studies and about to go to work and start a new page in our lives."
+      }
+    ]
+  },
+  {
+    "id": "zh_能V就V_705",
+    "language": "zh",
+    "pattern": "能 + V + 就 + V",
+    "title": "能 + V + 就 + V (V if possible)",
+    "shortExplanation": "V if possible",
+    "longExplanation": "V if possible. Pinyin: néng + V + jiù + V",
+    "formation": "néng + V + jiù + V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "这个手机没用多久，能修就修，尽量别换新的。",
+        "romanization": "zhège shǒujī méiyòng duōjiǔ， néng xiū jiù xiū， jǐnliàng bié huànxīn de。",
+        "translation": "This mobile phone hasn’t been used for long. If it can be repaired, (then) repair it. Try not to replace it."
+      }
+    ]
+  },
+  {
+    "id": "zh_别说_706",
+    "language": "zh",
+    "pattern": "别说",
+    "title": "别说 (let alone)",
+    "shortExplanation": "let alone",
+    "longExplanation": "let alone. Pinyin: bié shuō",
+    "formation": "bié shuō",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "晚上看书别说蜡烛了，就是灯油也要节省着用。",
+        "romanization": "wǎnshang kànshū bié shuō làzhú le， jiùshì dēng yóu yě yào jiéshěng zhe yòng。",
+        "translation": "When [I] read at night, let alone candles, I had to scrooge even on the lamp oil."
+      }
+    ]
+  }
+]

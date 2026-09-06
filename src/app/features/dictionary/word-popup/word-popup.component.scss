@@ -62,6 +62,14 @@
         font-size: 1rem;
     }
 
+    .lang-flag-img {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+    }
+
     app-icon {
         color: var(--text-muted);
     }
@@ -348,6 +356,14 @@
 
 .translation-flag {
     font-size: 1rem;
+}
+
+.translation-flag-img {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .meaning-tags {

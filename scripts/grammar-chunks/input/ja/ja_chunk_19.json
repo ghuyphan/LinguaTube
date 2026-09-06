@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_くせに_10",
+    "language": "ja",
+    "pattern": "～くせに",
+    "title": "～くせに (〜kuse ni)",
+    "shortExplanation": "Used to express criticism or disapproval; 'even though', 'despite', 'in spite of'.",
+    "longExplanation": "The ～くせに grammar point is used to express criticism or disapproval in a sentence. It can be translated as 'even though', 'despite', or 'in spite of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + くせに, い-Adjective + くせに, な-Adjective + な/のくせに, Noun + のくせに",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼はお金持ちのくせに、ケチです。",
+        "romanization": "Kare wa okanemochi no kuse ni, kechi desu.",
+        "translation": "Even though he's rich, he's stingy."
+      },
+      {
+        "sentence": "この部屋が汚いくせに、文句を言うな。",
+        "romanization": "Kono heya ga kitanai kuse ni, monku wo iu na.",
+        "translation": "Don't complain even though this room is dirty. (criticizing)"
+      },
+      {
+        "sentence": "彼は暇なくせに、手伝ってくれません。",
+        "romanization": "Kare wa hima na kuse ni, tetsudatte kuremasen.",
+        "translation": "Even though he's free, he won't help me."
+      },
+      {
+        "sentence": "彼女は美人なくせに、デートが続かない。",
+        "romanization": "Kanojo wa bijin na kuse ni, deeto ga tsudzukanai.",
+        "translation": "Even though she's beautiful, she can't keep a date going."
+      }
+    ]
+  },
+  {
+    "id": "ja_くらい_11",
+    "language": "ja",
+    "pattern": "～くらい",
+    "title": "～くらい (〜kurai)",
+    "shortExplanation": "Expresses an approximate quantity or degree; 'about', 'approximately', or 'to the extent of'.",
+    "longExplanation": "The ～くらい grammar point is used to express an approximate quantity, degree, or extent. It can be translated as 'about', 'approximately', or 'to the extent of' in English. The formation is straightforward and can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-casual + くらい, い-Adjective + くらい, な-Adjective + くらい, Noun + くらい",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "１０分くらい待ちましょう。",
+        "romanization": "Juppun kurai machimashou.",
+        "translation": "Let's wait for about 10 minutes."
+      },
+      {
+        "sentence": "彼女はその映画を５回くらい見ました。",
+        "romanization": "Kanojo wa sono eiga wo go-kai kurai mimashita.",
+        "translation": "She watched that movie about five times."
+      },
+      {
+        "sentence": "その本は面白いくらい難しいです。",
+        "romanization": "Sono hon wa omoshiroi kurai muzukashii desu.",
+        "translation": "That book is so difficult that it’s interesting."
+      },
+      {
+        "sentence": "この部屋はきれいなくらい広いです。",
+        "romanization": "Kono heya wa kirei na kurai hiroi desu.",
+        "translation": "This room is spacious to the extent of being beautiful."
+      }
+    ]
+  },
+  {
+    "id": "ja_くらいはない_12",
+    "language": "ja",
+    "pattern": "～くらい～は～ない",
+    "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
+    "shortExplanation": "Express the least one can do; 'at least', 'the least', 'no less than'.",
+    "longExplanation": "The ～くらい～は～ない grammar point is used to emphasize the minimum expectation in a situation or the least one can do. It can be translated as 'at least', 'the least', or 'no less than' in English. The formation differs depending on whether it is used with a verb or an adjective.",
+    "formation": "Verb-casual (non-past) + くらい + は + Verb-casual (negative), Adjective (non-past) + くらい + は + Adjective (negative)",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "週に一度くらいはジムに行かないと。",
+        "romanization": "Shuu ni ichido kurai wa jimu ni ikanai to.",
+        "translation": "I have to go to the gym at least once a week."
+      },
+      {
+        "sentence": "毎日くらいは歯を磨かないと。",
+        "romanization": "Mainichi kurai wa ha wo migakanai to.",
+        "translation": "I have to brush my teeth at least every day."
+      },
+      {
+        "sentence": "この問題くらいは解決しないと。",
+        "romanization": "Kono mondai kurai wa kaiketsu shinai to.",
+        "translation": "I have to solve at least this problem."
+      },
+      {
+        "sentence": "彼女が泣いているくらいなら慰めないと。",
+        "romanization": "Kanojo ga naite iru kurai nara nagusamenai to.",
+        "translation": "If she is crying that much, I should at least try to comfort her."
+      }
+    ]
+  },
+  {
+    "id": "ja_こそ_13",
+    "language": "ja",
+    "pattern": "～こそ",
+    "title": "～こそ (〜koso)",
+    "shortExplanation": "Emphasizes the importance or uniqueness of something or someone; 'precisely', 'exactly', 'it is...', 'of all...'.",
+    "longExplanation": "The ～こそ grammar point is used to emphasize the importance, uniqueness, or the most suitable thing or person in a specific situation. It can be translated as 'precisely', 'exactly', or 'it is...' in English. In practice, it most often appears after a noun (e.g. 今日こそ), or with verbs in the て-form (e.g. 頑張ってこそ).",
+    "formation": "Noun + こそ, (Verb-て + こそ)",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "今日こそ勉強しなければなりません。",
+        "romanization": "Kyou koso benkyou shinakereba narimasen.",
+        "translation": "Today, of all days, I must study."
+      },
+      {
+        "sentence": "あなたこそ私の一番の友達です。",
+        "romanization": "Anata koso watashi no ichiban no tomodachi desu.",
+        "translation": "You are precisely my best friend."
+      },
+      {
+        "sentence": "お金がないことこそ幸せの秘訣ではないか。",
+        "romanization": "O-kane ga nai koto koso shiawase no hiketsu de wa nai ka.",
+        "translation": "Isn't not having money exactly the key to happiness?"
+      },
+      {
+        "sentence": "彼こそまさにプロの歌手のように歌える。",
+        "romanization": "Kare koso masani puro no kashu no you ni utaeru.",
+        "translation": "He can sing precisely like a professional singer."
+      }
+    ]
+  },
+  {
+    "id": "ja_こと_14",
+    "language": "ja",
+    "pattern": "～こと",
+    "title": "～こと (〜koto)",
+    "shortExplanation": "Express an action in a nominal (noun-like) form or state fact or experience.",
+    "longExplanation": "The ～こと grammar point is used to turn a verb or verb phrase into a noun or noun phrase. This allows the verb to be talked about as a general concept, fact, or experience. The formation varies slightly depending on whether it is used with a verb or a verb phrase.",
+    "formation": "Verb-plain form + こと, Verb-phrase in plain form + こと",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "日本語を話すことができます。",
+        "romanization": "Nihongo wo hanasu koto ga dekimasu.",
+        "translation": "I can speak Japanese."
+      },
+      {
+        "sentence": "毎日運動することは健康に良いです。",
+        "romanization": "Mainichi undou suru koto wa kenkou ni ii desu.",
+        "translation": "Exercising every day is good for your health."
+      },
+      {
+        "sentence": "彼はピアノを弾くことが大好きです。",
+        "romanization": "Kare wa piano wo hiku koto ga daisuki desu.",
+        "translation": "He loves to play the piano."
+      },
+      {
+        "sentence": "映画を見ることに時間を使いたくない。",
+        "romanization": "Eiga wo miru koto ni jikan wo tsukai takunai.",
+        "translation": "I don't want to spend time watching movies."
+      }
+    ]
+  },
+  {
+    "id": "ja_ことだ_15",
+    "language": "ja",
+    "pattern": "～ことだ",
+    "title": "～ことだ (〜koto da)",
+    "shortExplanation": "Expresses advice or recommendation; 'should', 'it is important', 'it is necessary'.",
+    "longExplanation": "The ～ことだ grammar point is used to express a piece of advice or recommendation to someone. It can be translated as 'should', 'it is important', or 'it is necessary' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-ますstem + ことだ, い-Adjective + ことだ, な-Adjective + なことだ, Noun + のことだ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "毎日運動することだ。",
+        "romanization": "Mainichi undou suru koto da.",
+        "translation": "You should exercise every day."
+      },
+      {
+        "sentence": "健康のために、野菜をたくさん食べることだ。",
+        "romanization": "Kenkou no tame ni, yasai wo takusan taberu koto da.",
+        "translation": "For your health, you should eat lots of vegetables."
+      },
+      {
+        "sentence": "勉強しているとき、静かな場所を選ぶことだ。",
+        "romanization": "Benkyou shiteiru toki, shizuka na basho wo erabu koto da.",
+        "translation": "When studying, you should choose a quiet place."
+      },
+      {
+        "sentence": "辞書を使って、新しい言葉を覚えることだ。",
+        "romanization": "Jisho wo tsukatte, atarashii kotoba wo oboeru koto da.",
+        "translation": "You should use a dictionary to learn new words."
+      }
+    ]
+  },
+  {
+    "id": "ja_ことにしている_16",
+    "language": "ja",
+    "pattern": "～ことにしている",
+    "title": "～ことにしている (〜koto ni shite iru)",
+    "shortExplanation": "Express a personal rule or habit; 'I make it a rule to', 'I always make sure to'.",
+    "longExplanation": "The ～ことにしている grammar point is used to express a personal rule, habit, or decision that the speaker has made for themselves. It can be translated as 'I make it a rule to' or 'I always make sure to' in English. This grammar point is formed by attaching ことにしている to the casual form of a verb.",
+    "formation": "Verb-casual + ことにしている",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "毎日運動することにしている。",
+        "romanization": "Mainichi undou suru koto ni shite iru.",
+        "translation": "I make it a rule to exercise every day."
+      },
+      {
+        "sentence": "夜遅くまで働かないことにしている。",
+        "romanization": "Yoru osoku made hatarakanai koto ni shite iru.",
+        "translation": "I make it a rule not to work late into the night."
+      },
+      {
+        "sentence": "食事の後、歯を磨くことにしている。",
+        "romanization": "Shokuji no ato, ha wo migaku koto ni shite iru.",
+        "translation": "I always make sure to brush my teeth after meals."
+      },
+      {
+        "sentence": "会議には必ず10分前に着くことにしている。",
+        "romanization": "Kaigi ni wa kanarazu juppun mae ni tsuku koto ni shite iru.",
+        "translation": "I always make sure to arrive 10 minutes early for meetings."
+      }
+    ]
+  },
+  {
+    "id": "ja_ことになっている_17",
+    "language": "ja",
+    "pattern": "～ことになっている",
+    "title": "～ことになっている (〜koto ni natte iru)",
+    "shortExplanation": "Describes something that is decided, arranged, or expected.",
+    "longExplanation": "The ～ことになっている grammar point is used to express that something has been decided or arranged, or is expected as a rule or custom. It can be translated as 'it is decided that...', 'it is arranged that...', or 'it is expected to...' in English. The formation is used with verbs in their dictionary form.",
+    "formation": "Verb-dictionary form + ことになっている",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "この会社では、20時には仕事を終えることになっている。",
+        "romanization": "Kono kaisha de wa, 20-ji ni shigoto o oeru koto ni natte iru.",
+        "translation": "In this company, it is decided that work will end at 8 pm."
+      },
+      {
+        "sentence": "日本では、18歳以上の人が選挙に投票することになっている。",
+        "romanization": "Nihon de wa, 18-sai ijou no hito ga senkyo ni touhyou suru koto ni natte iru.",
+        "translation": "In Japan, it is decided that people 18 years old and above will vote in elections."
+      },
+      {
+        "sentence": "学校では、制服を着ることになっている。",
+        "romanization": "Gakkou de wa, seifuku o kiru koto ni natte iru.",
+        "translation": "At school, it is decided that students will wear uniforms."
+      },
+      {
+        "sentence": "田中さんが今回のプロジェクトリーダーになることになっている。",
+        "romanization": "Tanaka-san ga konkai no purojekuto riidaa ni naru koto ni natte iru.",
+        "translation": "It is decided that Tanaka will be the project leader this time."
+      }
+    ]
+  },
+  {
+    "id": "ja_ことはが_18",
+    "language": "ja",
+    "pattern": "～ことは…が",
+    "title": "～ことは…が (～koto wa... ga)",
+    "shortExplanation": "Indicates that while something may be true or valid, there is another contrasting point.",
+    "longExplanation": "The ～ことは…が grammar point is used to express that although something might be true, there is another point or fact that is being contrasted with it. It can be translated as 'it may be true but...', 'it is that... however...', etc. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + ことは + が, い-Adjective + ことは + が, な-Adjective + だ + ことは + が, Noun + だ + ことは + が",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "この映画は面白いことは面白いが、ちょっと長すぎる。",
+        "romanization": "Kono eiga wa omoshiroi koto wa omoshiroi ga, chotto naga-sugiru.",
+        "translation": "This movie may be interesting, but it is a bit too long."
+      },
+      {
+        "sentence": "彼は親切なことは親切だが、少し無口だ。",
+        "romanization": "Kare wa shinsetsu na koto wa shinsetsu da ga, sukoshi mukuchi da.",
+        "translation": "He may be kind, but he is a bit quiet."
+      },
+      {
+        "sentence": "このゲームは難しいことは難しいが、やめられない。",
+        "romanization": "Kono geemu wa muzukashii koto wa muzukashii ga, yamerarenai.",
+        "translation": "This game may be difficult, but I can't stop playing."
+      },
+      {
+        "sentence": "彼女は美しいことは美しいが、ちょっと高飛車だ。",
+        "romanization": "Kanojo wa utsukushii koto wa utsukushii ga, chotto koubisha da.",
+        "translation": "She may be beautiful, but she is a bit arrogant."
+      }
+    ]
+  },
+  {
+    "id": "ja_ことはない_19",
+    "language": "ja",
+    "pattern": "～ことはない",
+    "title": "～ことはない (〜koto wa nai)",
+    "shortExplanation": "Expresses that something doesn't need to be done or there's no occasion to do it; 'don't have to', 'not necessary'.",
+    "longExplanation": "The ～ことはない grammar point is used to express that doing something is not necessary, or there's no occasion to do it. It implies that although a certain action might not be needed, it does not mean it is forbidden. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-dictionary form + ことはない, い-Adjective + ことはない, な-Adjective + であることはない, Noun + であることはない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "お金があるから、無理に貯金することはない。",
+        "romanization": "Okane ga aru kara, muri ni chokin suru koto wa nai.",
+        "translation": "Since I have enough money, there's no need to force myself to save."
+      },
+      {
+        "sentence": "この本は簡単だから、辞書を使うことはない。",
+        "romanization": "Kono hon wa kantan dakara, jisho wo tsukau koto wa nai.",
+        "translation": "Since this book is easy, there's no need to use a dictionary."
+      },
+      {
+        "sentence": "彼女は海外旅行に行きたくなければ、行くことはない。",
+        "romanization": "Kanojo wa kaigai ryokou ni ikitakunakereba, iku koto wa nai.",
+        "translation": "If she doesn't want to go on an overseas trip, she doesn't have to go."
+      },
+      {
+        "sentence": "寒くなければ、コートを着ることはない。",
+        "romanization": "Samukunakereba, kooto wo kiru koto wa nai.",
+        "translation": "If it's not cold, there's no need to wear a coat."
+      }
+    ]
+  },
+  {
+    "id": "ja_さ_20",
+    "language": "ja",
+    "pattern": "～さ",
+    "title": "～さ (〜sa)",
+    "shortExplanation": "Express the degree or extent of a quality; '-ness', 'degree of'.",
+    "longExplanation": "The ～さ grammar point is used to express the degree or extent of a certain quality or characteristic. It is often translated as '-ness' or 'degree of' in English. The formation differs depending on whether it is used with an い-adjective or a な-adjective.",
+    "formation": "い-Adjective (drop い) + さ, な-Adjective + さ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "この料理は辛さが強い。",
+        "romanization": "Kono ryouri wa karasa ga tsuyoi.",
+        "translation": "The spiciness of this dish is strong."
+      },
+      {
+        "sentence": "彼女の美しさは皆に憧れられる。",
+        "romanization": "Kanojo no utsukushisa wa mina ni akogarerareru.",
+        "translation": "Her beauty is admired by everyone."
+      },
+      {
+        "sentence": "山田さんの親切さで、困っている人を助けてくれる。",
+        "romanization": "Yamada-san no shinsetsusa de, komatte iru hito wo tasukete kureru.",
+        "translation": "Yamada-san's kindness helps people in trouble."
+      },
+      {
+        "sentence": "この部屋の広さは十分だと思う。",
+        "romanization": "Kono heya no hirosa wa juubun da to omou.",
+        "translation": "I think the size of this room is enough."
+      }
+    ]
+  },
+  {
+    "id": "ja_さえ_21",
+    "language": "ja",
+    "pattern": "～さえ",
+    "title": "～さえ (～sae)",
+    "shortExplanation": "Emphasizes a specific item or action; 'even', 'if only', 'as long as'.",
+    "longExplanation": "The ～さえ grammar point is used to emphasize a specific item, person, or action, implying that it alone is sufficient, remarkable, or an exception. It can be translated as 'even', 'if only', or 'as long as' in English. The formation differs slightly depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Noun + さえ, Verb-casual + さえ, い-Adjective + さえ, な-Adjective + でさえ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "お金さえあれば、世界中を旅行できる。",
+        "romanization": "Okane sae areba, sekaijuu wo ryokou dekiru.",
+        "translation": "If only I have money, I can travel around the world."
+      },
+      {
+        "sentence": "彼は英語さえ話せれば、その仕事ができるだろう。",
+        "romanization": "Kare wa eigo sae hanasereba, sono shigoto ga dekiru darou.",
+        "translation": "As long as he can speak English, he can do that job."
+      },
+      {
+        "sentence": "彼女は頭がいいだけでなく、運動も上手だ。テニスさえできる。",
+        "romanization": "Kanojo wa atama ga ii dake denaku, undou mo jouzu da. Tenisu sae dekiru.",
+        "translation": "Not only is she smart, she is also good at sports. She can even play tennis."
+      },
+      {
+        "sentence": "明るい場所で本を読むのが好きだ。部屋の電気さえつけなくても大丈夫だ。",
+        "romanization": "Akarui basho de hon wo yomu no ga suki da. Heya no denki sae tsukenakute mo daijoubu da.",
+        "translation": "I like reading books in bright places. I'm fine even if I don't turn on the room light."
+      }
+    ]
+  },
+  {
+    "id": "ja_しかない_22",
+    "language": "ja",
+    "pattern": "～しかない",
+    "title": "～しかない (〜shika nai)",
+    "shortExplanation": "Express the idea of 'only', 'no other option but', 'nothing else but'.",
+    "longExplanation": "The ～しかない grammar point is used to emphasize that there are no other options or possibilities, and the subject must follow a specified action or state. It can be translated as 'only', 'no other option but', or 'nothing else but' in English.",
+    "formation": "Verb-casual + しかない, い-Adjective + しかない, な-Adjective + しかない, Noun + しかない",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "この問題を解決する方法は一つしかない。",
+        "romanization": "Kono mondai wo kaiketsu suru houhou wa hitotsu shika nai.",
+        "translation": "There is only one way to solve this problem."
+      },
+      {
+        "sentence": "彼が出て行ったら、泣くしかない。",
+        "romanization": "Kare ga dete ittara, naku shika nai.",
+        "translation": "If he leaves, there's nothing else to do but cry."
+      },
+      {
+        "sentence": "彼女にはあと一月しかない。",
+        "romanization": "Kanojo ni wa ato ichigatsu shika nai.",
+        "translation": "She has only one month left."
+      },
+      {
+        "sentence": "僕には君を信じるしかない。",
+        "romanization": "Boku ni wa kimi wo shinjiru shika nai.",
+        "translation": "I have no choice but to trust you."
+      }
+    ]
+  },
+  {
+    "id": "ja_すこしもない_23",
+    "language": "ja",
+    "pattern": "すこしも〜ない",
+    "title": "すこしも〜ない (sukoshimo~nai)",
+    "shortExplanation": "Express a negative state or action; 'not at all', 'none whatsoever'.",
+    "longExplanation": "The すこしも〜ない grammar point is used to emphasize a negative state or action, indicating that something does not exist or happen even a little bit. It can be translated as 'not at all', 'none whatsoever', or 'not one bit' in English. This expression is used with negative verbs.",
+    "formation": "すこしも + Verb-negative",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼はすこしも悲しそうに見えません。",
+        "romanization": "Kare wa sukoshimo kanashisou ni miemasen.",
+        "translation": "He doesn't look sad at all."
+      },
+      {
+        "sentence": "この部屋はすこしも寒くない。",
+        "romanization": "Kono heya wa sukoshimo samukunai.",
+        "translation": "This room is not cold at all."
+      },
+      {
+        "sentence": "彼女はすこしも心配していない。",
+        "romanization": "Kanojo wa sukoshimo shinpai shite inai.",
+        "translation": "She is not worried at all."
+      },
+      {
+        "sentence": "まったく知らない人と話すのは怖い。",
+        "romanization": "Mattaku shiranai hito to hanasu no wa kowai.",
+        "translation": "It's scary to talk to someone I don't know at all."
+      }
+    ]
+  },
+  {
+    "id": "ja_ずに_24",
+    "language": "ja",
+    "pattern": "～ずに",
+    "title": "～ずに (〜zu ni)",
+    "shortExplanation": "Express 'without doing' something or 'not doing' something.",
+    "longExplanation": "The ～ずに grammar point is used to express the meaning of not doing something or doing an action without doing another action first. It is similar to the negative ないで form (～ないで) but ～ずに is considered slightly more formal.",
+    "formation": "Verb-ない form (Remove ない) + ずに",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は笑わずに話を聞いていました。",
+        "romanization": "Kare wa warawazu ni hanashi wo kiiteimashita.",
+        "translation": "He was listening to the story without laughing."
+      },
+      {
+        "sentence": "食べずに寝るのは良くないです。",
+        "romanization": "Tabezu ni neru no wa yokunai desu.",
+        "translation": "It's not good to go to bed without eating."
+      },
+      {
+        "sentence": "コーヒーを飲まずに仕事を始めました。",
+        "romanization": "Koohii wo nomazu ni shigoto wo hajimemashita.",
+        "translation": "I started working without drinking coffee."
+      },
+      {
+        "sentence": "誰にも言わずに出かけました。",
+        "romanization": "Dare ni mo iwazu ni dekakemashita.",
+        "translation": "I went out without telling anyone."
+      }
+    ]
+  }
+]

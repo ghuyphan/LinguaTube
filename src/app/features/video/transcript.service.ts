@@ -211,15 +211,21 @@ export class TranscriptService {
     // 1. Check client-side memory cache first (fastest)
     if (this.transcriptCache.has(cacheKey)) {
       const cached = this.transcriptCache.get(cacheKey)!;
-      log('Memory cache hit:', { videoId, lang, cues: cached.length });
-      this.state.set({ status: 'complete', language: lang, source: 'native', cues: cached });
-      return of(cached);
+      const isDevMock = cached.some(c => c.text?.includes('LinguaTubeへようこそ') || c.text?.includes('Vocaへようこそ') || c.text?.includes('LinguaTube') || c.text?.includes('Voca, your'));
+      if (isDevMock && videoId !== 'demo' && videoId !== 'test') {
+        this.transcriptCache.delete(cacheKey);
+      } else {
+        log('Memory cache hit:', { videoId, lang, cues: cached.length });
+        this.state.set({ status: 'complete', language: lang, source: 'native', cues: cached });
+        return of(cached);
+      }
     }
 
     // 2. Check IndexedDB persistent cache
     return from(this.persistentCache.get(videoId, lang)).pipe(
       switchMap(cachedData => {
-        if (cachedData) {
+        const isDevMock = cachedData?.cues?.some(c => c.text?.includes('LinguaTubeへようこそ') || c.text?.includes('Vocaへようこそ') || c.text?.includes('LinguaTube') || c.text?.includes('Voca, your'));
+        if (cachedData && (!isDevMock || videoId === 'demo' || videoId === 'test')) {
           log('IndexedDB cache hit:', { videoId, lang, cues: cachedData.cues.length });
           // Populate memory cache too
           this.transcriptCache.set(cacheKey, cachedData.cues);
@@ -231,6 +237,10 @@ export class TranscriptService {
           });
           return of(cachedData.cues);
         }
+        if (isDevMock) {
+          this.persistentCache.delete(videoId, lang);
+        }
+
 
         // 3. Fetch from API
         log('Cache miss, fetching from API:', { videoId, lang });

@@ -1,0 +1,922 @@
+{
+  "vi": {
+    "en_a2_22": {
+      "title": "Câu hỏi đuôi: ...isn't it? / ...do you? / ...haven't they?",
+      "shortExplanation": "Dùng ở cuối câu trần thuật để xác nhận thông tin hoặc tìm kiếm sự đồng tình từ người nghe; có nghĩa là 'phải không?', 'đúng không?'.",
+      "longExplanation": "Câu hỏi đuôi được sử dụng để xác nhận lại thông tin hoặc kiểm tra xem người nghe có đồng ý với mình hay không.\nQuy tắc cơ bản:\n• Mệnh đề chính khẳng định → phần đuôi phủ định (ví dụ: Bạn thích nhạc jazz, đúng không?).\n• Mệnh đề chính phủ định → phần đuôi khẳng định (ví dụ: Bạn không thích phim kinh dị, phải không?).\nTrợ động từ trong phần đuôi phải tương ứng với thì và chủ ngữ của mệnh đề chính.\nNgữ điệu:\n• Xuống giọng ở cuối (↘): người nói mong đợi sự xác nhận hoặc đồng tình (thực chất không phải câu hỏi mới).\n• Lên giọng ở cuối (↗): người nói thực sự muốn hỏi vì chưa chắc chắn về thông tin.",
+      "formation": "Khẳng định: Mệnh đề khẳng định + , + trợ động từ phủ định + đại từ chủ ngữ?\nPhủ định: Mệnh đề phủ định + , + trợ động từ khẳng định + đại từ chủ ngữ?",
+      "examples": [
+        {
+          "translation": "Hôm nay trời đẹp thật đấy, phải không?"
+        },
+        {
+          "translation": "Bạn không thích phim kinh dị, đúng không?"
+        },
+        {
+          "translation": "Cô ấy biết bơi, phải không nào?"
+        }
+      ]
+    },
+    "en_a2_23": {
+      "title": "have got - Diễn tả sự sở hữu (tiếng Anh - Anh)",
+      "shortExplanation": "Thường dùng trong văn phong khẩu ngữ tiếng Anh - Anh để diễn tả sự sở hữu hoặc mối quan hệ; tương đương với 'có'.",
+      "longExplanation": "Cấu trúc have got là dạng diễn đạt thân mật rất phổ biến trong tiếng Anh - Anh để chỉ sự sở hữu, tương đương nghĩa với động từ have.\nCác thể câu:\n• Khẳng định: Chủ ngữ + have got / 've got hoặc has got / 's got.\n• Phủ định: Chủ ngữ + haven't got hoặc hasn't got (không cần mượn trợ động từ do/does).\n• Nghi vấn: Have / Has + chủ ngữ + got...? (trả lời ngắn: Yes, I have. / No, I haven't.).\nLưu ý: Chỉ dùng ở thì hiện tại; trong quá khứ chỉ dùng had (không dùng had got để chỉ sở hữu).",
+      "formation": "Khẳng định: Chủ ngữ + have got / has got + Danh từ\nPhủ định: Chủ ngữ + haven't got / hasn't got + Danh từ\nNghi vấn: Have / Has + Chủ ngữ + got + Danh từ?",
+      "examples": [
+        {
+          "translation": "Tôi có hai người anh trai."
+        },
+        {
+          "translation": "Bạn có biết mấy giờ rồi không?"
+        },
+        {
+          "translation": "Cô ấy không có đồng tiền mặt nào cả."
+        }
+      ]
+    },
+    "en_a2_24": {
+      "title": "Trạng từ chỉ cách thức: quickly, carefully, well, hard, fast",
+      "shortExplanation": "Dùng để bổ nghĩa cho động từ, mô tả hành động diễn ra như thế nào; thường đứng sau động từ hoặc tân ngữ.",
+      "longExplanation": "Trạng từ chỉ cách thức mô tả cách thức một hành động được thực hiện.\nQuy tắc cấu tạo:\n• Đa số được hình thành bằng cách thêm hậu tố -ly vào sau tính từ: quick → quickly (nhanh nhẹn), careful → carefully (cẩn thận), slow → slowly (chậm chạp).\nCác trường hợp đặc biệt (bất quy tắc):\n• good → well (tốt, giỏi; không dùng goodly).\n• fast → fast (nhanh; không có dạng fastly).\n• hard → hard (chăm chỉ, vất vả; từ hardly mang nghĩa hoàn toàn khác là 'hầu như không').\n• late → late (muộn, trễ; từ lately mang nghĩa là 'dạo gần đây').\nVị trí trong câu: Thường đứng sau động từ hoặc sau tân ngữ trực tiếp (ví dụ: She speaks English well). Không đặt trạng từ vào giữa động từ và tân ngữ.",
+      "formation": "Tính từ + -ly (hoặc các dạng bất quy tắc)\nVị trí: Động từ + Trạng từ HOẶC Động từ + Tân ngữ + Trạng từ",
+      "examples": [
+        {
+          "translation": "Anh ấy đã giải thích điều đó một cách rõ ràng."
+        },
+        {
+          "translation": "Cô ấy đã chạy rất nhanh."
+        },
+        {
+          "translation": "Họ đã làm việc chăm chỉ suốt cả ngày."
+        }
+      ]
+    },
+    "en_a2_25": {
+      "title": "Trạng từ chỉ tần suất và vị trí trong câu",
+      "shortExplanation": "Diễn tả mức độ thường xuyên của hành động (always, usually, often, sometimes, rarely, never); đứng trước động từ thường, sau động từ to be và trợ động từ.",
+      "longExplanation": "Trạng từ chỉ tần suất được dùng để nói về mức độ thường xuyên xảy ra của một hành động.\nCác từ phổ biến theo mức độ giảm dần:\nalways (luôn luôn 100%) → usually (thường xuyên 90%) → often (thường 70%) → sometimes (đôi khi 50%) → occasionally (thỉnh thoảng 30%) → rarely / seldom (hiếm khi 10%) → never (không bao giờ 0%).\nQuy tắc vị trí trong câu:\n• Đứng trước động từ thường: She always drinks tea.\n• Đứng sau động từ to be: He is always late.\n• Đứng sau trợ động từ đầu tiên: She has never been to Italy.\nCác cụm trạng từ chỉ tần suất dài hơn như every day, once a week, twice a month thường được đặt ở cuối câu.",
+      "formation": "Chủ ngữ + Trạng từ tần suất + Động từ thường\nChủ ngữ + Động từ to be / Trợ động từ + Trạng từ tần suất",
+      "examples": [
+        {
+          "translation": "Tôi thường thức dậy lúc 7 giờ."
+        },
+        {
+          "translation": "Cô ấy không bao giờ đi làm muộn."
+        },
+        {
+          "translation": "Họ gặp nhau mỗi tuần một lần."
+        }
+      ]
+    },
+    "en_a2_26": {
+      "title": "Trật tự của tính từ trước danh từ",
+      "shortExplanation": "Khi nhiều tính từ cùng bổ nghĩa cho một danh từ, chúng phải tuân theo một thứ tự chuẩn định sẵn trước danh từ.",
+      "longExplanation": "Khi sử dụng nhiều tính từ trước một danh từ trong tiếng Anh, các tính từ cần tuân theo thứ tự phân loại chặt chẽ:\n1. Quan điểm, ý kiến đánh giá (Opinion: lovely, beautiful, nice)\n2. Kích thước (Size: big, small, tall)\n3. Tuổi thọ, độ cũ mới (Age: old, young, new)\n4. Hình dáng (Shape: round, square)\n5. Màu sắc (Color: red, blue, green)\n6. Nguồn gốc, xuất xứ (Origin: Italian, French, Vietnamese)\n7. Chất liệu (Material: leather, wooden, plastic)\n8. Mục đích sử dụng (Purpose: writing, sleeping)\n→ Đi kèm theo sau là Danh từ chính.\nVí dụ: a small beautiful old square brown French wooden writing desk (một chiếc bàn viết bằng gỗ của Pháp màu nâu hình vuông cổ đẹp nhỏ nhắn).",
+      "formation": "Ý kiến + Kích thước + Tuổi tác + Hình dáng + Màu sắc + Nguồn gốc + Chất liệu + Mục đích + Danh từ",
+      "examples": [
+        {
+          "translation": "một ngôi nhà tranh nhỏ nhắn, cổ kính và đáng yêu"
+        },
+        {
+          "translation": "một chiếc xe thể thao lớn màu đỏ của Ý"
+        }
+      ]
+    },
+    "en_b1_01": {
+      "title": "Thì hiện tại hoàn thành - Cấu trúc và cách dùng",
+      "shortExplanation": "Diễn tả hành động xảy ra trong quá khứ nhưng có liên hệ mật thiết hoặc kết quả ở hiện tại; 'đã làm...'.",
+      "longExplanation": "Thì hiện tại hoàn thành liên kết một hành động trong quá khứ với hiện tại.\nCông thức: Chủ ngữ + have / has + Quá khứ phân từ (động từ thêm -ed hoặc cột 3 trong bảng động từ bất quy tắc).\nBa cách dùng cơ bản:\n1. Trải nghiệm trong đời (không nêu rõ thời gian cụ thể): I have visited Tokyo (Tôi từng đến Tokyo).\n2. Kết quả còn lưu lại ở hiện tại: I have lost my keys (Tôi đã làm mất chìa khóa - hiện tại vẫn chưa tìm thấy).\n3. Hành động bắt đầu trong quá khứ và vẫn đang tiếp diễn: She has lived here for 5 years (Cô ấy đã sống ở đây được 5 năm).",
+      "formation": "Khẳng định: Chủ ngữ + have / has + Quá khứ phân từ\nPhủ định: Chủ ngữ + haven't / hasn't + Quá khứ phân từ\nNghi vấn: Have / Has + Chủ ngữ + Quá khứ phân từ?",
+      "examples": [
+        {
+          "translation": "Bạn đã bao giờ ăn sushi chưa?"
+        },
+        {
+          "translation": "Tôi vừa mới làm xong bài tập về nhà."
+        },
+        {
+          "translation": "Cô ấy vẫn chưa gọi điện."
+        }
+      ]
+    },
+    "en_b1_02": {
+      "title": "ever / never / already / yet / just - Các dấu hiệu nhận biết thì hiện tại hoàn thành",
+      "shortExplanation": "Các phó từ đặc trưng đi kèm thì hiện tại hoàn thành để nhấn mạnh thời điểm, trải nghiệm hoặc mức độ hoàn tất của hành động.",
+      "longExplanation": "Các phó từ này chỉ rõ tính chất thời gian trong thì hiện tại hoàn thành:\n• ever (từng, đã bao giờ): dùng trong câu nghi vấn hỏi về trải nghiệm đời người. Vị trí: đứng trước quá khứ phân từ.\n• never (chưa bao giờ): mang nghĩa phủ định tuyệt đối. Vị trí: đứng trước quá khứ phân từ (không cần thêm not vào câu).\n• already (đã... rồi): chỉ hành động đã xảy ra sớm hơn dự kiến. Vị trí: đứng trước quá khứ phân từ hoặc ở cuối câu.\n• yet (chưa / đã... chưa): dùng trong câu hỏi ('đã... chưa?') và câu phủ định ('vẫn chưa'). Vị trí: luôn đứng ở cuối câu.\n• just (vừa mới): chỉ hành động vừa mới kết thúc trong chốc lát. Vị trí: đứng trước quá khứ phân từ.",
+      "formation": "Chủ ngữ + have / has + ever / never / already / just + Quá khứ phân từ\nChủ ngữ + haven't / hasn't + Quá khứ phân từ + yet\nHave / Has + Chủ ngữ + ever + Quá khứ phân từ?\nHave / Has + Chủ ngữ + Quá khứ phân từ + yet?",
+      "examples": [
+        {
+          "translation": "Bạn đã từng đến Scotland bao giờ chưa?"
+        },
+        {
+          "translation": "Tôi chưa bao giờ ăn món ốc sên cả."
+        },
+        {
+          "translation": "Tôi đã xem bộ phim đó rồi."
+        }
+      ]
+    },
+    "en_b1_03": {
+      "title": "So sánh thì hiện tại hoàn thành và thì quá khứ đơn - Điểm khác biệt cốt lõi",
+      "shortExplanation": "Hiện tại hoàn thành nhấn mạnh kết quả hoặc trải nghiệm liên quan tới hiện tại (không rõ thời gian), quá khứ đơn diễn tả sự việc đã kết thúc ở một mốc thời gian xác định.",
+      "longExplanation": "Đây là một trong những điểm khác biệt quan trọng nhất trong ngữ pháp tiếng Anh.\n• Hiện tại hoàn thành: Hành động có mối liên hệ mật thiết với hiện tại, không chỉ rõ thời điểm cụ thể trong quá khứ. Ví dụ: I've lost my wallet (Tôi đã đánh mất ví - điều quan trọng là hiện tại tôi đang không có ví).\n• Quá khứ đơn: Hành động đã chấm dứt hoàn toàn trong quá khứ, luôn đi kèm hoặc ngụ ý một thời điểm quá khứ cụ thể xác định (như yesterday, last week, in 2020). Ví dụ: I lost my wallet yesterday (Hôm qua tôi đã đánh mất ví - hành động gắn liền với mốc ngày hôm qua).",
+      "formation": "Hiện tại hoàn thành: Chủ ngữ + have / has + Quá khứ phân từ (không có mốc thời gian cụ thể trong quá khứ)\nQuá khứ đơn: Chủ ngữ + Động từ quá khứ (kèm mốc thời gian quá khứ xác định)",
+      "examples": [
+        {
+          "translation": "Tôi đã gặp giám đốc mới rồi."
+        },
+        {
+          "translation": "Tôi đã gặp ông ấy vào thứ Ba tuần trước."
+        }
+      ]
+    },
+    "en_b1_04": {
+      "title": "Thì hiện tại hoàn thành kết hợp với for và since",
+      "shortExplanation": "Dùng để nói về hành động bắt đầu từ quá khứ và vẫn đang kéo dài tới hiện tại; for đi với khoảng thời gian, since đi với mốc thời gian.",
+      "longExplanation": "Trong thì hiện tại hoàn thành, for và since được sử dụng để trả lời cho câu hỏi 'Bao lâu?' (How long...?):\n• for (trong suốt, được): đi kèm với một khoảng thời gian kéo dài (ví dụ: for two days, for a year, for a long time, for ages).\n• since (từ khi, từ mốc): đi kèm với một mốc thời điểm xác định bắt đầu hành động trong quá khứ hoặc một mệnh đề quá khứ đơn (ví dụ: since Monday, since 2015, since I was a child).\nCâu hỏi về thời gian thực hiện hành động luôn bắt đầu bằng: How long + have / has + chủ ngữ + quá khứ phân từ...?",
+      "formation": "Chủ ngữ + have / has + Quá khứ phân từ + for + Khoảng thời gian\nChủ ngữ + have / has + Quá khứ phân từ + since + Mốc thời gian / Mệnh đề quá khứ đơn",
+      "examples": [
+        {
+          "translation": "Cô ấy đã làm việc ở đây được mười năm rồi."
+        },
+        {
+          "translation": "Tôi quen biết anh ấy từ hồi học đại học."
+        }
+      ]
+    },
+    "en_b1_05": {
+      "title": "Thì hiện tại hoàn thành tiếp diễn: have been + V-ing",
+      "shortExplanation": "Nhấn mạnh vào quá trình kéo dài liên tục của hành động từ quá khứ đến hiện tại, hoặc giải thích dấu vết để lại ở hiện tại.",
+      "longExplanation": "Thì hiện tại hoàn thành tiếp diễn nhấn mạnh vào độ dài thời gian hoặc tính chất liên tục chưa dừng lại của một hành động.\nCấu trúc: Chủ ngữ + have / has been + Động từ đuôi -ing.\nĐặc điểm chính:\n1. Nhấn mạnh quá trình liên tục (thường trả lời câu hỏi 'How long?'): I've been waiting for an hour (Tôi đã đợi suốt một tiếng đồng hồ rồi).\n2. Giải thích kết quả hoặc trạng thái quan sát được ở hiện tại: You look tired - have you been running? (Trông bạn mệt thế - vừa mới chạy bộ à?).\nPhân biệt với thì hiện tại hoàn thành đơn:\n• Hiện tại hoàn thành đơn nhấn mạnh kết quả hoặc sự hoàn tất: I've read 50 pages (Tôi đã đọc xong 50 trang).\n• Hiện tại hoàn thành tiếp diễn nhấn mạnh vào tiến trình của hành động: I've been reading all evening (Tôi đã ngồi đọc sách suốt cả buổi tối).",
+      "formation": "Khẳng định: Chủ ngữ + have / has been + Động từ đuôi -ing\nPhủ định: Chủ ngữ + haven't / hasn't been + Động từ đuôi -ing\nNghi vấn: Have / Has + Chủ ngữ + been + Động từ đuôi -ing?",
+      "examples": [
+        {
+          "translation": "Tôi đã và đang học tiếng Anh được hai năm rồi."
+        },
+        {
+          "translation": "Sao tay anh lấm lem thế kia? — Tôi vừa sửa xe xong."
+        }
+      ]
+    },
+    "en_b1_06": {
+      "title": "Thì quá khứ tiếp diễn: was/were + V-ing",
+      "shortExplanation": "Diễn tả hành động đang diễn ra tại một thời điểm xác định trong quá khứ hoặc làm nền cho sự việc khác; 'lúc đó đang làm...'.",
+      "longExplanation": "Thì quá khứ tiếp diễn được dùng để nói về một hành động đang trong quá trình xảy ra tại một thời điểm cụ thể trong quá khứ.\nCấu trúc: Chủ ngữ + was / were + Động từ đuôi -ing (was đi với I/he/she/it; were đi với you/we/they).\nCác trường hợp sử dụng chính:\n1. Hành động đang xảy ra tại một thời điểm chính xác trong quá khứ: At 9pm I was having dinner (Lúc 9 giờ tối qua tôi đang ăn tối).\n2. Hành động nền đang diễn ra thì có một hành động khác xen vào: I was walking when it started to rain (Tôi đang đi bộ thì trời bắt đầu đổ mưa).\n3. Hai hành động diễn ra song song cùng một lúc trong quá khứ: While she was cooking, he was watching TV (Trong khi cô ấy đang nấu ăn thì anh ấy đang xem ti-vi).",
+      "formation": "Khẳng định: Chủ ngữ + was / were + Động từ đuôi -ing\nPhủ định: Chủ ngữ + wasn't / weren't + Động từ đuôi -ing\nNghi vấn: Was / Were + Chủ ngữ + Động từ đuôi -ing?",
+      "examples": [
+        {
+          "translation": "Lúc tôi rời khỏi nhà thì trời đang mưa."
+        },
+        {
+          "translation": "Bạn đang làm gì vào lúc 7 giờ tối hôm qua vậy?"
+        }
+      ]
+    },
+    "en_b1_07": {
+      "title": "So sánh thì quá khứ đơn và quá khứ tiếp diễn - Hành động nền và sự việc xen vào",
+      "shortExplanation": "Quá khứ tiếp diễn làm nền cho hành động dài đang diễn ra, quá khứ đơn dùng cho sự việc ngắn hơn đột ngột xen vào.",
+      "longExplanation": "Sự kết hợp điển hình trong quá khứ: một hành động dài đang diễn ra làm bối cảnh nền (dùng thì quá khứ tiếp diễn) thì một hành động ngắn khác bất ngờ chen ngang (dùng thì quá khứ đơn).\nCác liên từ chỉ thời gian thường gặp:\n• when (khi, vào lúc): thường đi liền trước mệnh đề chia ở thì quá khứ đơn để chỉ sự việc xen vào đột ngột: She was sleeping when the alarm went off (Cô ấy đang ngủ thì chuông báo thức reo lên).\n• while / as (trong khi, khi): thường đi liền trước mệnh đề chia ở thì quá khứ tiếp diễn để diễn tả hành động nền kéo dài: While I was watching TV, the power went out (Trong khi tôi đang xem ti-vi thì bị mất điện).",
+      "formation": "Mệnh đề quá khứ tiếp diễn + when + Mệnh đề quá khứ đơn\nWhile + Mệnh đề quá khứ tiếp diễn + , + Mệnh đề quá khứ đơn",
+      "examples": [
+        {
+          "translation": "Cô ấy đang tắm thì điện thoại bất ngờ đổ chuông."
+        },
+        {
+          "translation": "Trong khi ông ấy đang phát biểu, có người đã ngủ gật."
+        }
+      ]
+    },
+    "en_b1_08": {
+      "title": "Câu điều kiện loại 0: If + Hiện tại đơn, Hiện tại đơn - Chân lý và quy luật tự nhiên",
+      "shortExplanation": "Diễn tả chân lý, quy luật tự nhiên hoặc sự thật hiển nhiên luôn đúng; 'nếu... thì luôn...'.",
+      "longExplanation": "Câu điều kiện loại 0 (Zero conditional) được dùng để phát biểu các sự thật khoa học, quy luật tự nhiên, hoặc thói quen luôn dẫn đến một kết quả tất yếu.\nCấu trúc: If + Mệnh đề hiện tại đơn, Mệnh đề hiện tại đơn.\nĐặc điểm: Cả hai mệnh đề đều chia ở thì hiện tại đơn vì hành động ở mệnh đề chính luôn xảy ra khi điều kiện được thỏa mãn.\nCó thể thay liên từ If bằng When mà ý nghĩa không đổi: When you mix red and blue, you get purple (Khi pha màu đỏ với màu xanh lam, bạn sẽ được màu tím).",
+      "formation": "If / When + Chủ ngữ + Động từ thì hiện tại đơn + , + Chủ ngữ + Động từ thì hiện tại đơn",
+      "examples": [
+        {
+          "translation": "Nếu bạn làm nóng băng, nó sẽ tan chảy."
+        },
+        {
+          "translation": "Nếu trời mưa, đường sá sẽ bị ướt."
+        }
+      ]
+    },
+    "en_b1_09": {
+      "title": "Câu điều kiện loại 1: If + Hiện tại đơn, will - Tình huống có thật ở tương lai",
+      "shortExplanation": "Diễn tả một sự việc hoặc tình huống hoàn toàn có thể xảy ra trong tương lai nếu điều kiện được đáp ứng.",
+      "longExplanation": "Câu điều kiện loại 1 (First conditional) diễn tả một điều kiện có thật, có khả năng cao sẽ xảy ra trong hiện tại hoặc tương lai, cùng với kết quả tương ứng.\nCấu trúc: If + Mệnh đề hiện tại đơn, Chủ ngữ + will + Động từ nguyên mẫu.\nLưu ý quan trọng:\n• Mệnh đề điều kiện (chứa if) chia ở thì hiện tại đơn, tuyệt đối không dùng will.\n• Trong mệnh đề chính, ngoài will còn có thể sử dụng các động từ khiếm khuyết khác như can, may, might, should để thể hiện các mức độ khả năng hoặc lời khuyên.\n• Có thể đảo mệnh đề chính lên trước mà không cần dùng dấu phẩy ngăn cách: I'll stay home if it rains.",
+      "formation": "If + Chủ ngữ + Động từ thì hiện tại đơn + , + Chủ ngữ + will / can / may + Động từ nguyên mẫu",
+      "examples": [
+        {
+          "translation": "Nếu cô ấy học hành chăm chỉ, cô ấy sẽ thi đỗ."
+        },
+        {
+          "translation": "Nếu bạn cần giúp đỡ, tôi có thể đến."
+        }
+      ]
+    },
+    "en_b1_10": {
+      "title": "Câu điều kiện loại 2: If + Quá khứ đơn, would - Tình huống giả định trái ngược với hiện tại",
+      "shortExplanation": "Diễn tả giả định về một sự việc không có thật hoặc không thể xảy ra ở hiện tại hoặc tương lai; 'giá như... thì sẽ...'.",
+      "longExplanation": "Câu điều kiện loại 2 (Second conditional) được sử dụng để giả định về một tình huống trái ngược với thực tế ở hiện tại, hoặc một viễn cảnh rất khó xảy ra trong tương lai.\nCấu trúc: If + Mệnh đề quá khứ đơn, Chủ ngữ + would + Động từ nguyên mẫu.\nQuy tắc ngữ pháp cần ghi nhớ:\n• Trong mệnh đề điều kiện (if), động từ to be theo truyền thống và trong văn phong trang trọng thường được chia là were cho tất cả các ngôi (kể cả I, he, she, it): If I were you... (Nếu tôi là bạn...).\n• Mệnh đề chính dùng would (hoặc could, might) + động từ nguyên mẫu để chỉ kết quả giả định.",
+      "formation": "If + Chủ ngữ + Động từ thì quá khứ đơn + , + Chủ ngữ + would / could + Động từ nguyên mẫu",
+      "examples": [
+        {
+          "translation": "Nếu trúng số, tôi sẽ đi du lịch vòng quanh thế giới."
+        },
+        {
+          "translation": "Nếu tôi cao hơn, tôi đã chơi bóng rổ rồi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "en_a2_22": {
+      "title": "反意疑问句（附加疑问句）：...isn't it? / ...do you? / ...haven't they?",
+      "shortExplanation": "用于陈述句后寻求确认或求证；相当于汉语中的'……是吗？'、'……对吧？'。",
+      "longExplanation": "反意疑问句（附加疑问句）由陈述句加上简短的疑问尾句构成，主要用于向对方求证事实或寻求赞同。\n核心规则：\n• 前肯后否：陈述部分为肯定句，疑问尾句用否定形式（例：你喜欢爵士乐，对吧？）。\n• 前否后肯：陈述部分为否定句，疑问尾句用肯定形式（例：你不喜欢恐怖片，是吗？）。\n疑问尾句中的助动词（包括系动词、助动词或情态动词）必须与陈述部分的时态及主语人称保持一致，且尾句主语须用相应的人称代词。\n语调特点：\n• 降调（↘）：说话人倾向于确认事实或寻求附和，并非真正询问。\n• 升调（↗）：说话人对事实并不确信，属于真正的提问。",
+      "formation": "肯定句：肯定陈述句 + , + 否定形式助动词 + 代词主语？\n否定句：否定陈述句 + , + 肯定形式助动词 + 代词主语？",
+      "examples": [
+        {
+          "translation": "今天天气真不错，对吧？"
+        },
+        {
+          "translation": "你不喜欢看恐怖电影，是吗？"
+        },
+        {
+          "translation": "她会游泳，不是吗？"
+        }
+      ]
+    },
+    "en_a2_23": {
+      "title": "have got - 表所属/拥有（英式口语）",
+      "shortExplanation": "英式英语中常用于口语表达拥有或具备某物；相当于动词 have，'有'。",
+      "longExplanation": "have got 在英式英语口语中极为常用，用来表示所属关系或拥有，其含义完全等同于普通的 have。\n句型结构：\n• 肯定式：主语 + have got / has got（常缩写为 've got / 's got）。\n• 否定式：主语 + haven't got / hasn't got（无需借助助动词 do/does）。\n• 疑问式：Have / Has + 主语 + got...?（简略回答：Yes, I have. / No, I haven't.）。\n注意：该结构仅用于一般现在时表示所属；在过去时中直接使用 had，不可使用 had got 表示所属。",
+      "formation": "肯定句：主语 + have got / has got + 名词\n否定句：主语 + haven't got / hasn't got + 名词\n疑问句：Have / Has + 主语 + got + 名词？",
+      "examples": [
+        {
+          "translation": "我有两个哥哥。"
+        },
+        {
+          "translation": "你知道现在几点了吗？"
+        },
+        {
+          "translation": "她身上没带任何现金。"
+        }
+      ]
+    },
+    "en_a2_24": {
+      "title": "方式副词：quickly, carefully, well, hard, fast",
+      "shortExplanation": "用于修饰动词，说明动作以何种方式进行；通常位于动词或宾语之后。",
+      "longExplanation": "方式副词用于描述动作进行的方式、状态或特点。\n构成规则：\n• 大多数方式副词由形容词后加后缀 -ly 构成：quick → quickly（快速地）、careful → carefully（仔细地）、slow → slowly（缓慢地）。\n特殊与不规则变化：\n• good → well（好地；没有 goodly 这种形式）。\n• fast → fast（快速地；形容词与副词同形，无 fastly）。\n• hard → hard（努力地、猛烈地；hardly 为另一个词，意为'几乎不'）。\n• late → late（迟、晚；lately 为另一个词，意为'最近、近来'）。\n句中位置：通常位于动词之后，或位于动词的宾语之后（例：She speaks English well）。切忌将副词放在动词与直接宾语之间。",
+      "formation": "形容词 + -ly（或不规则同形副词）\n句中位置：动词 + 副词 或 动词 + 宾语 + 副词",
+      "examples": [
+        {
+          "translation": "他把事情解释得很清楚。"
+        },
+        {
+          "translation": "她跑得很快。"
+        },
+        {
+          "translation": "他们一整天都在辛勤工作。"
+        }
+      ]
+    },
+    "en_a2_25": {
+      "title": "频度副词及其在句中的位置",
+      "shortExplanation": "用于表达动作发生的频繁程度；常位于实义动词之前、系动词及助动词之后。",
+      "longExplanation": "频度副词用来表达某件事或某个动作发生的频率高低。\n常见频度副词（频率从高到低）：\nalways（总是 100%）→ usually（通常 90%）→ often（经常 70%）→ sometimes（有时 50%）→ occasionally（偶尔 30%）→ rarely / seldom（罕见、极少 10%）→ never（从不 0%）。\n句中位置规则：\n• 位于实义动词（行为动词）之前：She always drinks tea.\n• 位于系动词 be 之后：He is always late.\n• 位于助动词或情态动词之后：She has never been to Italy.\n注：短语形式的频度表达（如 every day, once a week, twice a month 等）通常放在句末。",
+      "formation": "主语 + 频度副词 + 实义动词\n主语 + 系动词/助动词 + 频度副词",
+      "examples": [
+        {
+          "translation": "我通常早上7点起床。"
+        },
+        {
+          "translation": "她上班从不迟到。"
+        },
+        {
+          "translation": "他们每周见一次面。"
+        }
+      ]
+    },
+    "en_a2_26": {
+      "title": "名词前多个形容词的排列顺序",
+      "shortExplanation": "当多个形容词共同修饰一个名词时，必须遵循固定的前后排列先后顺序。",
+      "longExplanation": "在英语中，当名词前面出现两个或两个以上的修饰性形容词时，通常遵循严格的先后排列顺序：\n1. 观点/主观评价（Opinion：lovely, beautiful）\n2. 尺寸/大小（Size：big, small）\n3. 年龄/新旧（Age：old, young, new）\n4. 形状（Shape：round, square）\n5. 颜色（Color：red, brown）\n6. 来源/产地（Origin：Italian, French）\n7. 质地/材料（Material：leather, wooden）\n8. 用途/功能（Purpose：writing, sports）\n→ 最后接中心名词。\n例：a small beautiful old square brown French wooden writing desk（一张精致小巧、年代久远、方形棕色的法国木质写字台）。",
+      "formation": "观点 + 大小 + 新旧 + 形状 + 颜色 + 产地 + 材料 + 用途 + 中心名词",
+      "examples": [
+        {
+          "translation": "一座可爱小巧的古朴小屋"
+        },
+        {
+          "translation": "一辆红色的大号意大利跑车"
+        }
+      ]
+    },
+    "en_b1_01": {
+      "title": "现在完成时 - 形式与用法",
+      "shortExplanation": "强调过去发生的动作对现在产生的影响、结果，或过去的经历与持续状态；'已经……'、'曾经……'。",
+      "longExplanation": "现在完成时用于将过去的动作或状态与现在联系起来。\n基本构成：主语 + have / has + 动词过去分词（规则动词加 -ed，不规则动词需单独记忆变化）。\n三大核心用法：\n1. 人生经历（不提及具体时间）：表示过去是否有过某项体验，如 I have visited Tokyo（我去过东京）。\n2. 对现在造成的结果或影响：强调过去发生的事在当下产生的状态，如 I have lost my keys（我把钥匙弄丢了，现在手里没有钥匙）。\n3. 持续到现在的动作或状态：动作起于过去，一直延续至今，如 She has lived here for 5 years（她在这里住了5年）。",
+      "formation": "肯定句：主语 + have / has + 过去分词\n否定句：主语 + haven't / hasn't + 过去分词\n疑问句：Have / Has + 主语 + 过去分词？",
+      "examples": [
+        {
+          "translation": "你吃过寿司吗？"
+        },
+        {
+          "translation": "我刚刚做完家庭作业。"
+        },
+        {
+          "translation": "她还没有打电话来。"
+        }
+      ]
+    },
+    "en_b1_02": {
+      "title": "ever / never / already / yet / just - 现在完成时标志副词",
+      "shortExplanation": "与现在完成时连用的常用时间副词，用于强调人生体验、提前完成或刚发生的状态。",
+      "longExplanation": "这些副词是现在完成时中最典型的标志词，各自有着固定的用法与位置：\n• ever（曾经）：常用于疑问句中询问是否有某种人生经历。位置：置于过去分词之前。\n• never（从不、从未）：表示全盘否定的经历。位置：置于过去分词之前（句中不再加 not）。\n• already（已经）：强调事情比预期更早发生。位置：常位于过去分词前，亦可置于句末。\n• yet（还、已经）：常用于否定句（表示'尚未、还没'）与疑问句（表示'已经……了吗'）。位置：通常置于句末。\n• just（刚刚）：表示动作在极短的片刻之前刚发生。位置：置于过去分词之前。",
+      "formation": "主语 + have / has + ever / never / already / just + 过去分词\n主语 + haven't / hasn't + 过去分词 + yet\nHave / Has + 主语 + ever + 过去分词？\nHave / Has + 主语 + 过去分词 + yet？",
+      "examples": [
+        {
+          "translation": "你曾经去过苏格兰吗？"
+        },
+        {
+          "translation": "我从没吃过蜗牛。"
+        },
+        {
+          "translation": "我已经看过那部电影了。"
+        }
+      ]
+    },
+    "en_b1_03": {
+      "title": "现在完成时与一般过去时的区别 - 核心差异",
+      "shortExplanation": "现在完成时强调动作与现在的关联及影响（不提及具体过去时间）；一般过去时仅表示过去明确时间发生并已结束的事实。",
+      "longExplanation": "这是英语语法中最关键的区别之一。\n• 现在完成时：动作发生在过去，但重点在于对现在的影响或结果，句中不能带有表示具体的过去时间状语。例如：I've lost my wallet（我的钱包丢了——核心在于当下我现在手里没钱包）。\n• 一般过去时：动作在过去已经彻底发生并结束，通常带有明确的过去时间状语（如 yesterday, last night, in 2019 等）或存在具体的过去语境。例如：I lost my wallet yesterday（我昨天把钱包丢了——强调事件发生在昨天这个具体时间）。",
+      "formation": "现在完成时：主语 + have / has + 过去分词（无具体过去时间点）\n一般过去时：主语 + 动词过去式（常带具体过去时间状语）",
+      "examples": [
+        {
+          "translation": "我已经见过新来的主管了。"
+        },
+        {
+          "translation": "我上周二见到了他。"
+        }
+      ]
+    },
+    "en_b1_04": {
+      "title": "现在完成时与 for 及 since 的搭配用法",
+      "shortExplanation": "用于表达动作从过去某时开始一直持续到当下；for 后接时间段，since 后接时间点。",
+      "longExplanation": "在现在完成时中，for 和 since 是回答'多久了？'（How long...?）的核心引导词：\n• for（长达、计有）：后接表示持续长度的一段时间（例如：for two days, for a year, for a long time, for ages）。\n• since（自……以来、从……起）：后接一个明确的历史起始时间点，或是由一般过去时引导的时间状语从句（例如：since Monday, since 2015, since I was a child）。\n询问动作持续时间的疑问句型为：How long + have / has + 主语 + 过去分词...?",
+      "formation": "主语 + have / has + 过去分词 + for + 时间段\n主语 + have / has + 过去分词 + since + 时间点/一般过去时从句",
+      "examples": [
+        {
+          "translation": "她在这里工作已经有十年了。"
+        },
+        {
+          "translation": "我和他从大学时代起就认识了。"
+        }
+      ]
+    },
+    "en_b1_05": {
+      "title": "现在完成进行时：have been + 动词现在分词(-ing)",
+      "shortExplanation": "强调动作从过去持续到现在的过程、时长，或解释当前眼前的结果；'一直在做……'。",
+      "longExplanation": "现在完成进行时着重强调动作的延续性、未完成性或长时间的过程。\n基本构成：主语 + have / has been + 动词现在分词（-ing 形式）。\n核心特点：\n1. 强调过程的持续性（回答'持续了多久？'）：I've been waiting for an hour（我已经等了整整一个小时了）。\n2. 用于解释眼前的直观结果或状态：You look tired - have you been running?（你看起来很累——刚才跑步去了吗？）。\n与现在完成时（简单式）的区别：\n• 现在完成时强调结果与完成度：I've read 50 pages（我已经读了50页——看重成效）。\n• 现在完成进行时强调动作的过程本身：I've been reading all evening（我整个晚上都在看书——看重投入的时间与持续动作）。",
+      "formation": "肯定句：主语 + have / has been + 动词现在分词(-ing)\n否定句：主语 + haven't / hasn't been + 动词现在分词(-ing)\n疑问句：Have / Has + 主语 + been + 动词现在分词(-ing)？",
+      "examples": [
+        {
+          "translation": "我已经学了整整两年的英语了。"
+        },
+        {
+          "translation": "你的手怎么脏兮兮的？——我刚才一直在修车。"
+        }
+      ]
+    },
+    "en_b1_06": {
+      "title": "过去进行时：was/were + 动词现在分词(-ing)",
+      "shortExplanation": "表示在过去某一具体时刻或某一段时间内正在进行的动作；'那时正在做……'。",
+      "longExplanation": "过去进行时用于表达过去某个特定时间点上正在发生或持续的动作。\n构成公式：主语 + was / were + 动词现在分词（-ing 形式）。单数主语用 was，复数及第二人称用 were。\n核心用法场景：\n1. 过去某一具体时刻正在发生的动作：At 9pm I was having dinner（昨晚9点我正在吃晚饭）。\n2. 作为背景动作被另一突发动作打断：I was walking when it started to rain（我正在散步，突然下起了雨）。\n3. 过去同时进行的两个平行对比动作：While she was cooking, he was watching TV（她做饭的时候，他正在看电视）。",
+      "formation": "肯定句：主语 + was / were + 动词现在分词(-ing)\n否定句：主语 + wasn't / weren't + 动词现在分词(-ing)\n疑问句：Was / Were + 主语 + 动词现在分词(-ing)？",
+      "examples": [
+        {
+          "translation": "我出门的时候天正下着雨。"
+        },
+        {
+          "translation": "昨天晚上7点你在做什么呢？"
+        }
+      ]
+    },
+    "en_b1_07": {
+      "title": "一般过去时与过去进行时 - 背景动作与插曲事件",
+      "shortExplanation": "过去进行时用于描绘持续发生的长背景动作，一般过去时用于表达突发插入的短动作。",
+      "longExplanation": "这是讲述过去故事时的经典句式搭配：一个持续进行的长动作作为背景（用过去进行时），中间被一个短暂突发的动作打断（用一般过去时）。\n常用连词规则：\n• when（当……时）：通常引导一般过去时从句，表示突发介入的短暂事件：She was sleeping when the alarm went off（她正睡着，闹钟突然响了）。\n• while / as（正当……之际）：通常引导过去进行时从句，用于交代持续的背景动作：While I was watching TV, the power went out（我正在看电视，突然停电了）。",
+      "formation": "过去进行时分句 + when + 一般过去时分句\nWhile + 过去进行时分句 + , + 一般过去时分句",
+      "examples": [
+        {
+          "translation": "她正在洗澡，电话突然响了起来。"
+        },
+        {
+          "translation": "在他发表演讲的时候，有人睡着了。"
+        }
+      ]
+    },
+    "en_b1_08": {
+      "title": "零级条件句：If + 一般现在时，一般现在时 - 客观真理与规律",
+      "shortExplanation": "用于叙述客观真理、科学事实或自然规律；'只要……就必然……'。",
+      "longExplanation": "零级条件句（Zero Conditional）用于表达科学定律、客观规律或无可置疑的事实常识。在这些情况下，只要前提条件满足，结果就必然百分之百发生。\n句型公式：If + 一般现在时从句，一般现在时主句。\n核心特点：从句与主句均采用一般现在时，因为两件事属于因果必然关系。\n在零级条件句中，连词 if 通常可以与 when 相互替换而意思保持不变：When you mix red and blue, you get purple（将红蓝两色混合时，就会得到紫色）。",
+      "formation": "If / When + 主语 + 动词一般现在时 + , + 主语 + 动词一般现在时",
+      "examples": [
+        {
+          "translation": "如果给冰加热，它就会融化。"
+        },
+        {
+          "translation": "如果下雨，街道就会变湿。"
+        }
+      ]
+    },
+    "en_b1_09": {
+      "title": "第一类条件句：If + 一般现在时，will - 真实的将来可能",
+      "shortExplanation": "表示在将来现实生活中完全有可能发生的事情或条件；'如果……就会……'。",
+      "longExplanation": "第一类条件句（First Conditional）用于表达在现在或将来极有可能成真、符合现实的假设及可能导致的结果。\n句型结构：If + 一般现在时从句，主语 + will + 动词原形。\n核心规则：\n• 主将从现：条件从句（if从句）必须使用一般现在时，绝对不可使用 will；主句则使用一般将来时。\n• 主句中的 will 也可以根据需要替换为情态动词 can, may, might, should 等，以表达不同的情态语气或建议。\n• 主句与从句位置可以互换，若主句在前则中间无需加逗号：I'll stay home if it rains。",
+      "formation": "If + 主语 + 动词一般现在时 + , + 主语 + will / can / may + 动词原形",
+      "examples": [
+        {
+          "translation": "如果她用功学习，她就会通过考试。"
+        },
+        {
+          "translation": "如果你需要帮忙，我可以过来。"
+        }
+      ]
+    },
+    "en_b1_10": {
+      "title": "第二类条件句：If + 一般过去时，would - 与现在事实相反的虚拟假设",
+      "shortExplanation": "用于假想与现在或将来事实相反的情况，或可能性极小的事情；'要是……就会……'。",
+      "longExplanation": "第二类条件句（Second Conditional，即对现在的虚拟语气）用于表达与现在客观事实相反的纯粹设想，或在将来几乎不太可能实现的假设情况。\n句型公式：If + 一般过去时从句，主语 + would + 动词原形。\n核心要点：\n• 从句谓语采用一般过去时。如果是系动词 be，在传统规范英语中无论人称单复数一律使用 were（如 If I were you...）。\n• 主句使用情态动词过去式 would / could / might + 动词原形，表达假定推导出的结果。",
+      "formation": "If + 主语 + 动词一般过去时 + , + 主语 + would / could + 动词原形",
+      "examples": [
+        {
+          "translation": "如果我中了彩票，我就会去环游世界。"
+        },
+        {
+          "translation": "要是我再长高一点，我就会去打篮球了。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "en_a2_22": {
+      "title": "付加疑問文：...isn't it? / ...do you? / ...haven't they?",
+      "shortExplanation": "平叙文の末尾につけて確認や同意を求める表現。「～ですよね？」「～でしょう？」の意味。",
+      "longExplanation": "付加疑問文は、相手に事実を確認したり、同意を求めたりする際に文末に付け加えられる表現です。日本語の「～ですよね？」「～じゃないですか？」に相当します。\n基本ルール：\n• 前が肯定文なら後ろは否定の疑問尾句（例：ジャズが好きなんですよね？）。\n• 前が否定文なら後ろは肯定の疑問尾句（例：ホラー映画は好きじゃないんですよね？）。\n尾句で使う助動詞（またはbe動詞・助動詞）は、主文の時制および主語と一致させ、主語には代名詞を用います。\nイントネーションによるニュアンスの違い：\n• 語尾を下げる（↘）：単なる同意・確認（ほぼ相手の同意を確信している場合）。\n• 語尾を上げる（↗）：本当の質問（確信がなく、事実を確かめたい場合）。",
+      "formation": "肯定文：肯定の平叙文 + , + 否定の助動詞 + 主語の代名詞？\n否定文：否定の平叙文 + , + 肯定の助動詞 + 主語の代名詞？",
+      "examples": [
+        {
+          "translation": "いいお天気ですね？"
+        },
+        {
+          "translation": "ホラー映画は好きじゃないんですよね？"
+        },
+        {
+          "translation": "彼女は泳げますよね？"
+        }
+      ]
+    },
+    "en_a2_23": {
+      "title": "have got - 所有を表す表現（イギリス英語口語）",
+      "shortExplanation": "主にイギリス英語の日常会話で所有を表す表現。一般動詞 have と同じく「～を持っている」「～がある」という意味。",
+      "longExplanation": "have got は、主にイギリス英語の口語でよく用いられる所有表現で、意味は動詞 have（持っている）と同じです。\n文の構成：\n• 肯定文：主語 + have got / has got（短縮形：'ve got / 's got）。\n• 否定文：主語 + haven't got / hasn't got（do や does の助動詞を補う必要はありません）。\n• 疑問文：Have / Has + 主語 + got ...?（短い返答：Yes, I have. / No, I haven't.）。\n注意点：この形は現在時制のみで使用されます。過去の所有を表す場合は had got ではなく単に had を用います。",
+      "formation": "肯定文：主語 + have got / has got + 名詞\n否定文：主語 + haven't got / hasn't got + 名詞\n疑問文：Have / Has + 主語 + got + 名詞？",
+      "examples": [
+        {
+          "translation": "私には兄（弟）が2人います。"
+        },
+        {
+          "translation": "今何時かわかりますか？"
+        },
+        {
+          "translation": "彼女は現金をまったく持っていません。"
+        }
+      ]
+    },
+    "en_a2_24": {
+      "title": "様態の副詞：quickly, carefully, well, hard, fast",
+      "shortExplanation": "動作がどのように行われるかを詳しく説明する副詞。通常、動詞または目的語の後に置かれます。",
+      "longExplanation": "様態の副詞は、ある動作がどのような方法や様子で行われるかを表す修飾語です。\n作り方のルール：\n• 多くの副詞は形容詞の語尾に -ly を付けて作ります：quick → quickly（素早く）、careful → carefully（注意深く）、slow → slowly（ゆっくりと）。\n例外および不規則変化：\n• good → well（上手に、よく；goodlyとは言いません）。\n• fast → fast（速く；形容詞と同形で、fastlyとは言いません）。\n• hard → hard（熱心に、激しく；hardlyは「ほとんど～ない」という全く別の単語になります）。\n• late → late（遅く；latelyは「最近」という意味の別単語です）。\n文中の位置：通常は動詞の直後、または目的語の直後に置かれます（例：She speaks English well）。動詞と目的語の間に副詞を挟まないよう注意しましょう。",
+      "formation": "形容詞 + -ly（または不規則形）\n語順：動詞 + 副詞 または 動詞 + 目的語 + 副詞",
+      "examples": [
+        {
+          "translation": "彼はそれを分かりやすく説明してくれました。"
+        },
+        {
+          "translation": "彼女は速く走りました。"
+        },
+        {
+          "translation": "彼らは一日中一生懸命に働きました。"
+        }
+      ]
+    },
+    "en_a2_25": {
+      "title": "頻度を表す副詞と文中の位置",
+      "shortExplanation": "動作が行われる頻度・回数を表す副詞。一般動詞の前、be動詞や助動詞の後に配置します。",
+      "longExplanation": "頻度を表す副詞は、ある動作がどれくらいの頻度で行われるかを示す単語です。\n代表的な単語（頻度の高い順）：\nalways（いつも 100%）→ usually（普段は、たいてい 90%）→ often（よく、しばしば 70%）→ sometimes（時々 50%）→ occasionally（たまに 30%）→ rarely / seldom（めったに～ない 10%）→ never（決して～ない 0%）。\n文中での配置ルール：\n• 一般動詞の前：She always drinks tea.\n• be動詞の後：He is always late.\n• 助動詞（haveなど）の後：She has never been to Italy.\nなお、every day, once a week, twice a month などのまとまった副詞句は通常文末に置きます。",
+      "formation": "主語 + 頻度副詞 + 一般動詞\n主語 + be動詞/助動詞 + 頻度副詞",
+      "examples": [
+        {
+          "translation": "私は普段7時に起きます。"
+        },
+        {
+          "translation": "彼女は仕事に決して遅刻しません。"
+        },
+        {
+          "translation": "彼らは週に一度会っています。"
+        }
+      ]
+    },
+    "en_a2_26": {
+      "title": "名詞の前における形容詞の語順",
+      "shortExplanation": "複数の形容詞が1つの名詞を修飾する際、決まった順序に従って並べるルール。",
+      "longExplanation": "英語では、1つの名詞の前に複数の形容詞を重ねて修飾する場合、配置順序に厳格なルールが存在します：\n1. 意見・評価（Opinion：lovely, beautiful）\n2. 大きさ・サイズ（Size：big, small）\n3. 年齢・新旧（Age：old, new, young）\n4. 形状・形（Shape：round, square）\n5. 色（Color：red, brown）\n6. 出身・原産地（Origin：Italian, French）\n7. 素材・材料（Material：leather, wooden）\n8. 目的・用途（Purpose：writing, sports）\n→ 最後に被修飾名詞が来ます。\n例：a small beautiful old square brown French wooden writing desk（小さくて美しい、年代物の正方形で茶色いフランス製木製ライティングデスク）。",
+      "formation": "意見 + 大きさ + 新旧 + 形状 + 色 + 産地 + 素材 + 目的 + 名詞",
+      "examples": [
+        {
+          "translation": "小さくて愛らしい古風なコテージ"
+        },
+        {
+          "translation": "大きな赤いイタリア製スポーツカー"
+        }
+      ]
+    },
+    "en_b1_01": {
+      "title": "現在完了形 - 構造と用法",
+      "shortExplanation": "過去の出来事と現在とのつながりを表す時制。「～したことがある」「～してしまった」「ずっと～している」。",
+      "longExplanation": "現在完了形は、過去に行われた動作や状態を現在の視点と結びつけて述べる文法形式です。\n基本公式：主語 + have / has + 過去分詞（規則動詞は -ed、不規則動詞は個別の変化形）。\n代表的な3つの用法：\n1. 経験（具体的な過去の時は示さない）：これまでの人生での経験を表す（例：I have visited Tokyo / 東京を訪れたことがある）。\n2. 完了・結果（現在の状態に直結）：過去の出来事の結果が現在に残っていることを表す（例：I have lost my keys / 鍵を失くしてしまった、今も持っていない）。\n3. 継続（過去から現在まで続いている）：過去に始まり今も続いている動作・状態（例：She has lived here for 5 years / 彼女はここに5年間住んでいる）。",
+      "formation": "肯定文：主語 + have / has + 過去分詞\n否定文：主語 + haven't / hasn't + 過去分詞\n疑問文：Have / Has + 主語 + 過去分詞？",
+      "examples": [
+        {
+          "translation": "今までに寿司を食べたことがありますか？"
+        },
+        {
+          "translation": "ちょうど宿題を終えたところです。"
+        },
+        {
+          "translation": "彼女からはまだ電話がありません。"
+        }
+      ]
+    },
+    "en_b1_02": {
+      "title": "ever / never / already / yet / just - 現在完了形の特徴的な副詞",
+      "shortExplanation": "現在完了形と一緒に用いられ、経験や完了のタイミングを強調する定番の副詞群。",
+      "longExplanation": "これらの副詞は、現在完了形の文において動作のタイミングやニュアンスを具体的に伝える役割を持ちます：\n• ever（今までに、かつて）：主に疑問文でこれまでの経験を尋ねる時に使用。位置：過去分詞の直前。\n• never（一度も～ない）：強い否定の経験を表す。位置：過去分詞の直前（文中に not は不要）。\n• already（すでに、もう）：予期していたよりも早く完了したことを示す。位置：過去分詞の前、または文末。\n• yet（まだ、もう）：否定文では「まだ～ない」、疑問文では「もう～しましたか」を表す。位置：文末に置くのが原則。\n• just（ちょうど、たった今）：動作がほんの少し前に完了したことを示す。位置：過去分詞の直前。",
+      "formation": "主語 + have / has + ever / never / already / just + 過去分詞\n主語 + haven't / hasn't + 過去分詞 + yet\nHave / Has + 主語 + ever + 過去分詞？\nHave / Has + 主語 + 過去分詞 + yet？",
+      "examples": [
+        {
+          "translation": "これまでにスコットランドへ行ったことがありますか？"
+        },
+        {
+          "translation": "私は一度もエスカルゴを食べたことがありません。"
+        },
+        {
+          "translation": "その映画はもう見ました。"
+        }
+      ]
+    },
+    "en_b1_03": {
+      "title": "現在完了形と過去形の違い - 本質的な相違点",
+      "shortExplanation": "現在完了形は現在とのつながりや結果を重視（過去の特定時は示さない）；過去形は過去の特定時点で完結した事実を表す。",
+      "longExplanation": "これは英語文法において最も重要な違いの一つです。\n• 現在完了形：過去の出来事と「現在」との結びつきを表し、過去の具体的な時点（yesterday など）は明示しません。例：I've lost my wallet（財布を失くしてしまった——大事なのは「今財布を持っていない」という現在の状態です）。\n• 過去形：過去の決まった時点で完全に終了した過去の事実を表し、特定の過去の時（yesterday, last week, in 2019 など）を伴うか前提とします。例：I lost my wallet yesterday（昨日財布を失くした——過去の特定の時点に焦点があります）。",
+      "formation": "現在完了形：主語 + have / has + 過去分詞（特定の過去時制の語句は不可）\n過去形：主語 + 動詞の過去形（特定の過去時制の副詞句を伴う）",
+      "examples": [
+        {
+          "translation": "新しい責任者にお会いしました。"
+        },
+        {
+          "translation": "この前の火曜日に彼と会いました。"
+        }
+      ]
+    },
+    "en_b1_04": {
+      "title": "現在完了形における for と since の用法",
+      "shortExplanation": "過去から現在まで継続している動作・状態を表す表現。for は期間、since は起点を伴います。",
+      "longExplanation": "現在完了形の「継続用法」において、for と since は「どのくらいの期間～しているか」（How long...?）に答えるための不可欠な表現です：\n• for（～の間）：動作が続いている時間の長さ・期間を表す名詞を伴います（例：for two days, for a year, for a long time, for ages）。\n• since（～以来、～から）：過去の明確な始まりの時点、または過去形の節を伴います（例：since Monday, since 2015, since I was a child）。\n継続期間を尋ねる疑問文：How long + have / has + 主語 + 過去分詞...?（例：How long have you known her?）。",
+      "formation": "主語 + have / has + 過去分詞 + for + 期間を表す名詞\n主語 + have / has + 過去分詞 + since + 起点の時点 / 過去形の節",
+      "examples": [
+        {
+          "translation": "彼女はここで10年間働いています。"
+        },
+        {
+          "translation": "大学時代からの知り合いです。"
+        }
+      ]
+    },
+    "en_b1_05": {
+      "title": "現在完了進行形：have been + 現在分詞(-ing)",
+      "shortExplanation": "過去から現在まである動作が絶え間なく続いていることや、その行為が現在の状態を引き起こしていることを表す。「ずっと～し続けている」。",
+      "longExplanation": "現在完了進行形は、動作の継続時間やプロセスそのものに焦点を当てます。\n公式：主語 + have / has been + 現在分詞（動詞の -ing 形）。\n主な特徴：\n1. 行為の継続期間の強調（「どれくらいの間？」に答える）：I've been waiting for an hour（1時間ずっと待っています）。\n2. 現在目に見える結果の理由を説明する：You look tired - have you been running?（疲れているようだけど、走っていたの？）。\n現在完了形（単純形）との違い：\n• 現在完了形は「結果や完了」を重視：I've read 50 pages（50ページ読み終えた——完了・達成）。\n• 現在完了進行形は「動作の過程そのもの」を重視：I've been reading all evening（一晩中ずっと本を読んでいた——プロセスの継続）。",
+      "formation": "肯定文：主語 + have / has been + 現在分詞(-ing)\n否定文：主語 + haven't / hasn't been + 現在分詞(-ing)\n疑問文：Have / Has + 主語 + been + 現在分詞(-ing)？",
+      "examples": [
+        {
+          "translation": "私は2年間英語を勉強し続けています。"
+        },
+        {
+          "translation": "どうして手が汚れているの？ —— 車の修理をしていたんだ。"
+        }
+      ]
+    },
+    "en_b1_06": {
+      "title": "過去進行形：was/were + 現在分詞(-ing)",
+      "shortExplanation": "過去のある特定の時点で「～している最中だった」という動作の進行を表す時制。",
+      "longExplanation": "過去進行形は、過去の決まった一時点において進行中だった動作を表します。\n公式：主語 + was / were + 現在分詞（動詞の -ing 形）。単数主語には was、複数および二人称には were を用います。\n主な用法：\n1. 過去の特定の一時点で進行中だった動作：At 9pm I was having dinner（昨晩の午後9時、私は夕食を食べているところでした）。\n2. 他の出来事によって遮られた背景的な動作：I was walking when it started to rain（歩いている最中に雨が降り出しました）。\n3. 過去に同時に並行して行われていた動作：While she was cooking, he was watching TV（彼女が料理をしている間、彼はテレビを見ていました）。",
+      "formation": "肯定文：主語 + was / were + 現在分詞(-ing)\n否定文：主語 + wasn't / weren't + 現在分詞(-ing)\n疑問文：Was / Were + 主語 + 現在分詞(-ing)？",
+      "examples": [
+        {
+          "translation": "私が家を出たとき、雨が降っていました。"
+        },
+        {
+          "translation": "昨日の7時には何をしていましたか？"
+        }
+      ]
+    },
+    "en_b1_07": {
+      "title": "過去形と過去進行形の対比 - 背景動作と割り込みの出来事",
+      "shortExplanation": "過去進行形で背景となる長めの動作を表し、過去形でそこに割り込んできた突発的な短い出来事を表します。",
+      "longExplanation": "過去の物語を語る際の典型的な構文パターンです。背景として進行していた長い動作（過去進行形）の途中で、突然別の短い出来事が発生して割り込みます（過去形）。\n接続詞の使い分け：\n• when（～した時）：通常、過去形の節を導き、割り込んできた出来事を表します：She was sleeping when the alarm went off（目覚まし時計が鳴った時、彼女は眠っていました）。\n• while / as（～している間）：通常、過去進行形の節を導き、継続中の背景動作を表します：While I was watching TV, the power went out（テレビを見ている最中に停電が起きました）。",
+      "formation": "過去進行形の節 + when + 過去形の節\nWhile + 過去進行形の節 + , + 過去形の節",
+      "examples": [
+        {
+          "translation": "彼女がお風呂に入っていた時に電話が鳴りました。"
+        },
+        {
+          "translation": "彼がスピーチをしている最中に、誰かが居眠りをしてしまいました。"
+        }
+      ]
+    },
+    "en_b1_08": {
+      "title": "ゼロ条件文：If + 現在形, 現在形 - 科学的事実や自然法則",
+      "shortExplanation": "科学的真理、自然の法則、一般的な事実を表す条件文。「～すると必ず～になる」。",
+      "longExplanation": "ゼロ条件文（Zero Conditional）は、自然の法則や科学的事実、普遍の真理など、ある条件が満たされれば必ず同じ結果が伴う事柄を述べる際に用いられます。\n構文：If + 現在形の節, 現在形の主節。\n特徴：条件節も帰結節も両方とも現在形を用います。これは、普遍的・恒常的な因果関係を表すためです。\nこの構文では if の代わりに when（～するとき）を用いても同じ意味になります：When you mix red and blue, you get purple（赤と青を混ぜると紫色になります）。",
+      "formation": "If / When + 主語 + 動詞の現在形 + , + 主語 + 動詞の現在形",
+      "examples": [
+        {
+          "translation": "氷を温めると溶けます。"
+        },
+        {
+          "translation": "雨が降れば、通りは濡れます。"
+        }
+      ]
+    },
+    "en_b1_09": {
+      "title": "第1条件文：If + 現在形, will - 未来の現実的な可能性",
+      "shortExplanation": "未来において実現する可能性が十分にある現実的な条件と結果を表す。「もし～なら、～するだろう」。",
+      "longExplanation": "第1条件文（First Conditional）は、将来起こる可能性が極めて高い現実的な事態を想定して、その結果を述べる構文です。\n公式：If + 現在形の節, 主語 + will + 動詞の原形。\n重要な注意点：\n• 時・条件を表す副詞節の中では、未来のことでも will ではなく現在形を用います（主節は will + 原形）。\n• 主節では will の代わりに、文脈に応じて can, may, might, should などの助動詞を用いることもできます。\n• 節の順番は前後を入れ替えることが可能で、主節が先に来る場合はカンマを置きません：I'll stay home if it rains。",
+      "formation": "If + 主語 + 動詞の現在形 + , + 主語 + will / can / may + 動詞の原形",
+      "examples": [
+        {
+          "translation": "一生懸命勉強すれば、彼女は試験に合格するでしょう。"
+        },
+        {
+          "translation": "手助けが必要なら、私が行くことができます。"
+        }
+      ]
+    },
+    "en_b1_10": {
+      "title": "第2条件文（仮定法過去）：If + 過去形, would - 現在の事実に反する仮定",
+      "shortExplanation": "現在の事実とは異なる空想や、実現の可能性が極めて低い仮定を表す。「もし～なら、～するのに」。",
+      "longExplanation": "第2条件文（仮定法過去 / Second Conditional）は、現在の事実とは正反対の状況を空想したり、将来実現する見込みがほとんどない事柄を仮定する際に使います。\n公式：If + 過去形の節, 主語 + would + 動詞の原形。\n文法のポイント：\n• if節の中の動詞には過去形を用います。be動詞を用いる場合、伝統的・規範的な文法では主語の人称に関わらず were を用いるのが一般的です（例：If I were you... / もし私があなたなら）。\n• 主節には would（または could / might）+ 動詞の原形を置き、実現し得ない仮想の結果を表します。",
+      "formation": "If + 主語 + 動詞の過去形 + , + 主語 + would / could + 動詞の原形",
+      "examples": [
+        {
+          "translation": "もし宝くじに当たったら、世界中を旅するのに。"
+        },
+        {
+          "translation": "もしもっと背が高ければ、バスケットボールをするのに。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "en_a2_22": {
+      "title": "부가의문문: ...isn't it? / ...do you? / ...haven't they?",
+      "shortExplanation": "평서문 뒤에 덧붙여 상대방에게 확인이나 동의를 구할 때 쓰이며, '~그렇죠?', '~맞지요?'의 뜻입니다.",
+      "longExplanation": "부가의문문은 평서문 끝에 짧은 의문 형태를 덧붙여 상대방에게 사실을 확인하거나 동의를 유도할 때 사용하는 문법입니다.\n기본 규칙:\n• 앞 문장이 긍정문이면 뒤에는 부정 의문문（예: 당신은 재즈를 좋아하죠, 그렇지 않나요?）.\n• 앞 문장이 부정문이면 뒤에는 긍정 의문문（예: 당신은 공포 영화를 안 좋아하죠, 맞나요?）.\n덧붙는 꼬리 부분의 조동사(또는 be동사)는 앞문장의 시제와 주어에 일치해야 하며, 주어 자리는 반드시 인칭대명사를 사용합니다.\n억양에 따른 차이:\n• 억양을 내릴 때(↘): 이미 확신하고 있으며 단순한 동의나 확인을 구할 때.\n• 억양을 올릴 때(↗): 확신이 없어 상대방의 대답을 실제로 묻고자 할 때.",
+      "formation": "긍정문: 긍정 평서문 + , + 부정 조동사 + 주어 대명사?\n부정문: 부정 평서문 + , + 긍정 조동사 + 주어 대명사?",
+      "examples": [
+        {
+          "translation": "날씨가 정말 좋네요, 그렇지 않나요?"
+        },
+        {
+          "translation": "당신은 공포 영화를 좋아하지 않죠, 맞나요?"
+        },
+        {
+          "translation": "그녀는 수영을 할 수 있죠, 그렇지 않나요?"
+        }
+      ]
+    },
+    "en_a2_23": {
+      "title": "have got - 소유 표현 (영국식 구어)",
+      "shortExplanation": "주로 영국식 영어 회화에서 소유나 관계를 나타낼 때 쓰이며, 일반동사 have와 마찬가지로 '~을 가지고 있다', '~이 있다'의 뜻입니다.",
+      "longExplanation": "have got은 영국 영어 구어체에서 소유를 나타낼 때 자주 쓰이는 표현으로, 일반동사 have와 동일한 의미를 지닙니다.\n문장 형태:\n• 긍정문: 주어 + have got / has got (축약형: 've got / 's got).\n• 부정문: 주어 + haven't got / hasn't got (do나 does 같은 조동사를 쓰지 않음).\n• 의문문: Have / Has + 주어 + got ...? (단답: Yes, I have. / No, I haven't.).\n주의 사항: 현재시제에서만 소유의 뜻으로 쓰이며, 과거의 소유를 나타낼 때는 had got이 아니라 일반동사 had를 씁니다.",
+      "formation": "긍정문: 주어 + have got / has got + 명사\n부정문: 주어 + haven't got / hasn't got + 명사\n의문문: Have / Has + 주어 + got + 명사?",
+      "examples": [
+        {
+          "translation": "저는 형제가 두 명 있습니다."
+        },
+        {
+          "translation": "지금 몇 시인지 아시나요?"
+        },
+        {
+          "translation": "그녀는 현금이 전혀 없습니다."
+        }
+      ]
+    },
+    "en_a2_24": {
+      "title": "양태부사(방식부사): quickly, carefully, well, hard, fast",
+      "shortExplanation": "동작이 어떻게 이루어지는지 설명하며, 주로 동사 뒤나 목적어 뒤에 위치합니다.",
+      "longExplanation": "양태부사(방식부사)는 어떤 동작이나 행동이 어떠한 방식과 모양새로 일어나는지 구체적으로 설명해 주는 부사입니다.\n형태 규칙:\n• 대부분의 부사는 형용사 끝에 -ly를 붙여 만듭니다: quick → quickly (빠르게), careful → carefully (조심스럽게), slow → slowly (느리게).\n불규칙 및 주의해야 할 예외:\n• good → well (잘, 훌륭하게; goodly라는 형태는 쓰지 않음).\n• fast → fast (빨리; 형용사와 형태가 같으며 fastly는 없음).\n• hard → hard (열심히, 세게; hardly는 '거의 ~않다'라는 완전히 다른 의미임).\n• late → late (늦게; lately는 '최근에'라는 뜻의 다른 단어임).\n문장 속 위치: 주로 동사 뒤 또는 목적어 뒤에 옵니다 (예: She speaks English well). 동사와 목적어 사이에 부사를 끼워 넣지 않도록 주의해야 합니다.",
+      "formation": "형용사 + -ly (또는 불규칙 형태)\n어순: 동사 + 부사 또는 동사 + 목적어 + 부사",
+      "examples": [
+        {
+          "translation": "그는 그것을 명확하게 설명했습니다."
+        },
+        {
+          "translation": "그녀는 빠르게 달렸습니다."
+        },
+        {
+          "translation": "그들은 하루 종일 열심히 일했습니다."
+        }
+      ]
+    },
+    "en_a2_25": {
+      "title": "빈도부사와 문장 내 위치",
+      "shortExplanation": "어떤 동작이 얼마나 자주 일어나는지 나타내며, 일반동사 앞, be동사와 조동사 뒤에 위치합니다.",
+      "longExplanation": "빈도부사는 어떤 일이나 행위가 얼마나 주기적이고 빈번하게 일어나는지 나타내는 말입니다.\n주요 빈도부사 (빈도 순):\nalways (항상 100%) → usually (보통, 대개 90%) → often (자주 70%) → sometimes (가끔 50%) → occasionally (때때로 30%) → rarely / seldom (거의 ~않다 10%) → never (결코 ~않다 0%).\n문장 속 위치 공식:\n• 일반동사 앞: She always drinks tea.\n• be동사 뒤: He is always late.\n• 첫 번째 조동사 뒤: She has never been to Italy.\n참고로 every day, once a week, twice a month와 같은 부사구는 주로 문장의 맨 끝에 놓입니다.",
+      "formation": "주어 + 빈도부사 + 일반동사\n주어 + be동사/조동사 + 빈도부사",
+      "examples": [
+        {
+          "translation": "저는 보통 7시에 일어납니다."
+        },
+        {
+          "translation": "그녀는 직장에 절대 늦지 않습니다."
+        },
+        {
+          "translation": "그들은 일주일에 한 번 만납니다."
+        }
+      ]
+    },
+    "en_a2_26": {
+      "title": "명사 앞 형용사의 어순",
+      "shortExplanation": "여러 형용사가 하나의 명사를 수식할 때 정해진 일정한 순서에 따라 나열해야 합니다.",
+      "longExplanation": "영어에서 여러 개의 형용사가 하나의 명사를 앞에서 꾸며줄 때는 정해진 엄격한 배열 순서를 따릅니다:\n1. 주관적 의견/평가 (Opinion: lovely, beautiful)\n2. 크기/사이즈 (Size: big, small)\n3. 나이/신구 (Age: old, new, young)\n4. 모양/형태 (Shape: round, square)\n5. 색상 (Color: red, brown)\n6. 출처/국적 (Origin: Italian, French)\n7. 재료/물질 (Material: leather, wooden)\n8. 목적/용도 (Purpose: writing, sports)\n→ 마지막에 중심 명사가 위치합니다.\n예: a small beautiful old square brown French wooden writing desk (작고 아름답고 오래된 사각형의 갈색 프랑스산 원목 책상).",
+      "formation": "의견 + 크기 + 신구 + 모양 + 색상 + 출처 + 재료 + 용도 + 명사",
+      "examples": [
+        {
+          "translation": "사랑스럽고 작고 아담한 오래된 오두막"
+        },
+        {
+          "translation": "크고 빨간 이탈리아산 스포츠카"
+        }
+      ]
+    },
+    "en_b1_01": {
+      "title": "현재완료 - 형태와 용법",
+      "shortExplanation": "과거에 일어난 일이 현재와 밀접하게 연관되어 있거나 영향을 미칠 때 쓰이며, '~한 적이 있다', '~해 버렸다', '계속 ~해 왔다'의 뜻입니다.",
+      "longExplanation": "현재완료 시제는 과거의 동작이나 사건을 현재와 연결하여 표현하는 시제입니다.\n기본 형태: 주어 + have / has + 과거분사 (규칙 동사는 -ed, 불규칙 동사는 고유 과거분사형).\n대표적인 3대 용법:\n1. 경험 (구체적인 과거 시점 없음): 살아오면서 겪어본 경험 (예: I have visited Tokyo / 나는 도쿄를 방문해 본 적이 있다).\n2. 완료 및 결과: 과거의 일이 끝나 그 영향이 현재까지 남아 있음 (예: I have lost my keys / 열쇠를 잃어버렸다 - 지금도 열쇠가 없음).\n3. 계속: 과거에 시작된 동작이나 상태가 현재까지 지속됨 (예: She has lived here for 5 years / 그녀는 여기서 5년째 살고 있다).",
+      "formation": "긍정문: 주어 + have / has + 과거분사\n부정문: 주어 + haven't / hasn't + 과거분사\n의문문: Have / Has + 주어 + 과거분사?",
+      "examples": [
+        {
+          "translation": "스시를 먹어본 적이 있나요?"
+        },
+        {
+          "translation": "방금 숙제를 다 끝냈습니다."
+        },
+        {
+          "translation": "그녀는 아직 연락하지 않았습니다."
+        }
+      ]
+    },
+    "en_b1_02": {
+      "title": "ever / never / already / yet / just - 현재완료의 주요 부사 표현",
+      "shortExplanation": "현재완료와 함께 쓰여 경험의 유무나 동작의 완료 시점을 나타내는 대표적인 시간 부사들입니다.",
+      "longExplanation": "이 부사들은 현재완료 시제에서 동작이 발생한 맥락과 뉘앙스를 분명하게 전달합니다:\n• ever (여태껏, 이제까지): 주로 의문문에서 경험을 물어볼 때 사용. 위치: 과거분사 바로 앞.\n• never (한 번도 ~않다): 결코 겪어본 적 없는 부정적 경험. 위치: 과거분사 바로 앞 (문장에 not을 추가하지 않음).\n• already (이미, 벌써): 예상보다 일찍 동작이 완료되었음을 강조. 위치: 과거분사 앞 또는 문장 끝.\n• yet (아직, 벌써): 부정문에서는 '아직 ~않다', 의문문에서는 '벌써 ~했는가'. 위치: 주로 문장의 맨 끝.\n• just (방금, 막): 동작이 아주 최근에 갓 끝났음을 의미. 위치: 과거분사 바로 앞.",
+      "formation": "주어 + have / has + ever / never / already / just + 과거분사\n주어 + haven't / hasn't + 과거분사 + yet\nHave / Has + 주어 + ever + 과거분사?\nHave / Has + 주어 + 과거분사 + yet?",
+      "examples": [
+        {
+          "translation": "스코틀랜드에 가본 적이 있으신가요?"
+        },
+        {
+          "translation": "저는 달팽이 요리를 한 번도 먹어본 적이 없습니다."
+        },
+        {
+          "translation": "저는 그 영화를 이미 보았습니다."
+        }
+      ]
+    },
+    "en_b1_03": {
+      "title": "현재완료 vs 과거시제 - 결정적 차이점",
+      "shortExplanation": "현재완료는 현재와의 연결고리와 현재의 결과에 초점을 맞추며(구체적 과거 시점 없음), 과거시제는 과거의 특정 시점에 이미 끝난 사실만을 나타냅니다.",
+      "longExplanation": "영어 문법에서 가장 혼동하기 쉽고 중요한 핵심 차이점입니다.\n• 현재완료: 과거에 발생한 일이 '현재'와 직접적인 관련을 맺고 있을 때 쓰이며, 명확한 과거 시점 부사는 함께 쓸 수 없습니다. 예: I've lost my wallet (지갑을 잃어버렸다 - 지금도 지갑이 없다는 현재 상태가 핵심입니다).\n• 과거시제: 과거의 특정 시점에 완료되어 현재와 분리된 과거의 사건을 나타내며, 명확한 과거 시점(yesterday, last week, in 2019 등)을 나타내는 부사와 함께 쓰입니다. 예: I lost my wallet yesterday (나는 어제 지갑을 잃어버렸다 - 어제 일어난 단발적 과거 사실에 집중합니다).",
+      "formation": "현재완료: 주어 + have / has + 과거분사 (구체적 과거 시점 부사 제외)\n과거시제: 주어 + 과거형 동사 (구체적 과거 시점 부사 수반)",
+      "examples": [
+        {
+          "translation": "새로 오신 이사님을 만나 뵈었습니다."
+        },
+        {
+          "translation": "지난주 화요일에 그를 만났습니다."
+        }
+      ]
+    },
+    "en_b1_04": {
+      "title": "현재완료와 for 및 since의 결합",
+      "shortExplanation": "과거에 시작되어 현재까지 이어져 오는 지속 기간을 나타내며, for는 기간, since는 시작 시점을 동반합니다.",
+      "longExplanation": "현재완료의 계속 용법에서 for와 since는 '~한 지 얼마나 되었는가?'(How long...?)라는 질문에 답할 때 필수적으로 쓰입니다:\n• for (~동안): 지속된 시간의 길이/기간을 나타내는 명사구와 함께 쓰입니다 (예: for two days, for a year, for a long time, for ages).\n• since (~이래로, ~이후로): 동작이 시작된 과거의 구체적 시점이나 과거시제 절과 함께 쓰입니다 (예: since Monday, since 2015, since I was a child).\n기간을 묻는 질문: How long + have / has + 주어 + 과거분사...?",
+      "formation": "주어 + have / has + 과거분사 + for + 기간\n주어 + have / has + 과거분사 + since + 과거 시점 / 과거시제 절",
+      "examples": [
+        {
+          "translation": "그녀는 이곳에서 10년 동안 일해 왔습니다."
+        },
+        {
+          "translation": "저는 대학교 때부터 그를 알고 지냈습니다."
+        }
+      ]
+    },
+    "en_b1_05": {
+      "title": "현재완료진행: have been + 현재분사(-ing)",
+      "shortExplanation": "과거부터 현재까지 동작이 쉬지 않고 이어져 오고 있음을 강조하거나, 현재 보이는 결과의 원인을 설명할 때 쓰이며, '줄곧 ~해 오고 있다'의 뜻입니다.",
+      "longExplanation": "현재완료진행 시제는 동작의 지속성, 진행 과정 자체에 초점을 맞춥니다.\n공식: 주어 + have / has been + 현재분사(동사원형-ing).\n주요 특징:\n1. 동작의 지속 시간 강조 ('얼마나 오래?'라는 질문에 대응): I've been waiting for an hour (한 시간 동안 줄곧 기다리고 있다).\n2. 현재 눈에 보이는 모습이나 결과의 원인 설명: You look tired - have you been running? (피곤해 보이는데, 달리기라도 하고 왔니?).\n현재완료 단순형과의 차이:\n• 현재완료 단순형은 결과와 완료를 강조: I've read 50 pages (50쪽을 다 읽었다 - 결과 중심).\n• 현재완료진행형은 동작의 지속 과정에 집중: I've been reading all evening (저녁 내내 계속 책을 읽고 있었다 - 과정 중심).",
+      "formation": "긍정문: 주어 + have / has been + 현재분사(-ing)\n부정문: 주어 + haven't / hasn't been + 현재분사(-ing)\n의문문: Have / Has + 주어 + been + 현재분사(-ing)?",
+      "examples": [
+        {
+          "translation": "저는 2년째 영어를 계속 공부해 오고 있습니다."
+        },
+        {
+          "translation": "손이 왜 이렇게 더러워요? — 차를 고치고 있었거든요."
+        }
+      ]
+    },
+    "en_b1_06": {
+      "title": "과거진행: was/were + 현재분사(-ing)",
+      "shortExplanation": "과거의 특정한 시점에 한창 진행 중이던 동작을 나타내며, '그때 ~하고 있었다', '~하던 중이었다'의 뜻입니다.",
+      "longExplanation": "과거진행 시제는 과거의 어느 한 시점에 어떤 동작이 진행되고 있었음을 묘사할 때 사용됩니다.\n형태: 주어 + was / were + 현재분사(동사원형-ing). 단수 주어에는 was, 복수 및 2인칭 주어에는 were를 씁니다.\n주요 쓰임새:\n1. 과거 특정 시점에 진행 중이던 일: At 9pm I was having dinner (어젯밤 9시에 나는 저녁을 먹고 있었다).\n2. 다른 사건에 의해 끼어들기를 당한 배경 동작: I was walking when it started to rain (걷고 있던 중에 비가 내리기 시작했다).\n3. 과거에 동시에 진행되던 병렬 동작: While she was cooking, he was watching TV (그녀가 요리하는 동안 그는 TV를 보고 있었다).",
+      "formation": "긍정문: 주어 + was / were + 현재분사(-ing)\n부정문: 주어 + wasn't / weren't + 현재분사(-ing)\n의문문: Was / Were + 주어 + 현재분사(-ing)?",
+      "examples": [
+        {
+          "translation": "내가 집을 나섰을 때 비가 내리고 있었습니다."
+        },
+        {
+          "translation": "어제 7시에 무엇을 하고 계셨습니까?"
+        }
+      ]
+    },
+    "en_b1_07": {
+      "title": "과거시제 vs 과거진행 - 배경 동작과 끼어든 사건",
+      "shortExplanation": "과거진행은 진행 중이던 배경 동작을 나타내고, 과거시제는 그 도중에 불쑥 일어난 돌발 사건을 나타냅니다.",
+      "longExplanation": "과거에 있었던 일을 서술할 때 쓰이는 대표적인 문장 구성입니다: 길게 진행 중이던 배경 행위(과거진행) 중에, 짧고 돌발적인 다른 사건(과거시제)이 끼어드는 형태입니다.\n접속사의 쓰임:\n• when (~했을 때): 주로 순간적으로 끼어든 사건을 나타내는 과거시제 절과 결합합니다: She was sleeping when the alarm went off (알람이 울렸을 때 그녀는 자고 있었다).\n• while / as (~하는 동안에): 진행 중이던 배경 행위를 나타내는 과거진행 절과 결합합니다: While I was watching TV, the power went out (TV를 보고 있던 중에 정전이 되었다).",
+      "formation": "과거진행 절 + when + 과거시제 절\nWhile + 과거진행 절 + , + 과거시제 절",
+      "examples": [
+        {
+          "translation": "그녀가 목욕을 하고 있을 때 전화벨이 울렸습니다."
+        },
+        {
+          "translation": "그가 연설을 하는 동안 누군가가 잠이 들었습니다."
+        }
+      ]
+    },
+    "en_b1_08": {
+      "title": "조건문 0유형: If + 현재시제, 현재시제 - 과학적 사실과 자연 법칙",
+      "shortExplanation": "과학적 사실, 자연의 법칙, 일반적인 진리를 나타내며, '~하면 (언제나) ~한다'의 뜻입니다.",
+      "longExplanation": "0형 조건문(Zero Conditional)은 과학적 법칙, 불변의 진리, 당연한 인과관계를 말할 때 쓰입니다. 조건이 충족되면 결과가 언제나 예외 없이 필연적으로 발생합니다.\n공식: If + 현재시제 절, 현재시제 주절.\n특징: 보편적 진리를 나타내므로 조건절과 주절 모두 현재시제를 씁니다.\n이 유형에서는 if 대신 when을 바꾸어 써도 의미가 동일합니다: When you mix red and blue, you get purple (빨간색과 파란색을 섞으면 보라색이 된다).",
+      "formation": "If / When + 주어 + 현재시제 동사 + , + 주어 + 현재시제 동사",
+      "examples": [
+        {
+          "translation": "얼음에 열을 가하면 녹습니다."
+        },
+        {
+          "translation": "비가 오면 거리가 젖습니다."
+        }
+      ]
+    },
+    "en_b1_09": {
+      "title": "조건문 1유형: If + 현재시제, will - 미래의 현실적 가능성",
+      "shortExplanation": "미래에 충분히 일어날 가능성이 있는 현실적인 조건과 그에 따른 결과를 나타내며, '만약 ~한다면 ~할 것이다'의 뜻입니다.",
+      "longExplanation": "1형 조건문(First Conditional)은 현재나 미래에 일어날 가능성이 높은 실제적인 상황을 가정하고 그 결과를 예측할 때 씁니다.\n기본 공식: If + 현재시제 절, 주어 + will + 동사원형.\n핵심 유의점:\n• 조건절(if절)에서는 미래의 일이라도 will을 쓰지 않고 반드시 현재시제를 사용합니다.\n• 주절에서는 will 대신 맥락에 따라 can, may, might, should 등의 조동사를 대신 쓸 수 있습니다.\n• 주절과 조건절의 위치는 서로 바꿀 수 있으며, 주절이 문두에 올 때는 쉼표를 붙이지 않습니다: I'll stay home if it rains.",
+      "formation": "If + 주어 + 현재시제 동사 + , + 주어 + will / can / may + 동사원형",
+      "examples": [
+        {
+          "translation": "그녀가 열심히 공부한다면 시험에 합격할 것입니다."
+        },
+        {
+          "translation": "도움이 필요하시다면 제가 갈 수 있습니다."
+        }
+      ]
+    },
+    "en_b1_10": {
+      "title": "조건문 2유형(가정법 과거): If + 과거시제, would - 현재 사실의 반대 가정",
+      "shortExplanation": "현재의 사실과 반대되는 상상이나 실현 가능성이 매우 희박한 일을 가정할 때 쓰이며, '만약 ~라면 ~할 텐데'의 뜻입니다.",
+      "longExplanation": "2형 조건문(가정법 과거 / Second Conditional)은 현재의 실제 사실과 반대되는 가상의 상황을 상상하거나, 실현될 가능성이 극히 희박한 일을 표현할 때 사용합니다.\n기본 공식: If + 과거시제 절, 주어 + would + 동사원형.\n문법적 핵심:\n• if조건절의 동사는 과거형을 씁니다. be동사의 경우 격식체나 표준 문법에서는 주어의 인칭에 상관없이 were를 쓰는 것이 원칙입니다 (예: If I were you... / 내가 너라면).\n• 주절에는 would(또는 could / might) + 동사원형을 사용하여 현재에는 불가능한 가상적 결과를 나타냅니다.",
+      "formation": "If + 주어 + 과거시제 동사 + , + 주어 + would / could + 동사원형",
+      "examples": [
+        {
+          "translation": "만약 복권에 당첨된다면 전 세계를 여행할 텐데."
+        },
+        {
+          "translation": "내가 키가 더 컸다면 농구를 할 텐데."
+        }
+      ]
+    }
+  }
+}

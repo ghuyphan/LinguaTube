@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_Noun_107",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を経て (〜wo hete)",
+    "shortExplanation": "Expresses the idea of 'through' or 'via'; going through some process or phase.",
+    "longExplanation": "The を経て grammar point is used to express the concept of going through some process, phase, place, or period of time as a means of achieving something or reaching some end point. It can be literally translated as 'through' or 'via' in English, and can be used both literally and metaphorically.",
+    "formation": "Noun + を経て",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は苦労を経て成功を手に入れた。",
+        "romanization": "Kare wa kurō o hete seikō o te ni ireta.",
+        "translation": "He achieved success through hardships."
+      },
+      {
+        "sentence": "彼女はニューヨークを経て日本に帰国した。",
+        "romanization": "Kanojo wa Nyūyōku o hete Nihon ni kikoku shita.",
+        "translation": "She returned to Japan via New York."
+      },
+      {
+        "sentence": "私達は長い議論を経て決定を下した。",
+        "romanization": "Watashitachi wa nagai giron o hete kettei o kudashita.",
+        "translation": "We made a decision through a long discussion."
+      },
+      {
+        "sentence": "多くの修練を経て、彼は達人のレベルになった。",
+        "romanization": "Ōku no shuren o hete, kare wa tatsujin no reberu ni natta.",
+        "translation": "Through a lot of training, he reached a master's level."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_108",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を踏まえて (〜wo fumaete)",
+    "shortExplanation": "Based on; taking into account; in light of",
+    "longExplanation": "The verb 踏まえる (fumaeru) means 'to be based on' or 'to take into consideration'. When ～を踏まえて is connected with a noun, it implies that actions or decisions are made based on or taking into account the noun. It also expresses looking at a situation from the standpoint of the noun before proceeding to the following action.",
+    "formation": "Noun + を踏まえて",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "過去の結果を踏まえて、新たな計画を立てました。",
+        "romanization": "Kako no kekka o fumaete, aratana keikaku o tatemashita.",
+        "translation": "Based on previous results, we have made a new plan."
+      },
+      {
+        "sentence": "現地の文化を踏まえて、プレゼンテーションを準備します。",
+        "romanization": "Genchi no bunka o fumaete, purezentēshon o junbi shimasu.",
+        "translation": "I will prepare a presentation taking into account the local culture."
+      },
+      {
+        "sentence": "教師の意見を踏まえて、規則を変更しました。",
+        "romanization": "Kyōshi no iken o fumaete, kisoku o henkō shimashita.",
+        "translation": "We changed the rules in light of the teachers' opinions."
+      },
+      {
+        "sentence": "最新の研究結果を踏まえて、新しい薬が開発されました。",
+        "romanization": "Saishin no kenkyū kekka o fumaete, atarashii kusuri ga kaihatsu saremashita.",
+        "translation": "Considering the latest research findings, a new medicine has been developed."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_109",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun を限りに (Noun wo kagiri ni)",
+    "shortExplanation": "Expresses the idea of 'as of', 'with', or 'from', indicating the end of something or a point of change.",
+    "longExplanation": "The grammar point Noun を限りに is used to indicate the end point of something or a point of change from that time onward. The noun preceding this expression usually refers to a point in time, signifying that something ends or changes starting at that point.",
+    "formation": "Noun + を限りに",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "今年度を限りに、この大学での教授活動を終えるつもりです。",
+        "romanization": "Konnendo o kagiri ni, kono daigaku de no kyouju katsudou o oeru tsumori desu.",
+        "translation": "I intend to end my teaching activities at this university as of this academic year."
+      },
+      {
+        "sentence": "今日を限りに、タバコを吸うのをやめます。",
+        "romanization": "Kyou o kagiri ni, tabako o suu no o yamemasu.",
+        "translation": "As of today, I will stop smoking."
+      },
+      {
+        "sentence": "3月31日を限りに、会社を退職します。",
+        "romanization": "3-gatsu 31-nichi o kagiri ni, kaisha o taishoku shimasu.",
+        "translation": "I will leave the company as of March 31."
+      },
+      {
+        "sentence": "来週を限りに、この番組は終了します。",
+        "romanization": "Raishuu o kagiri ni, kono bangumi wa shuuryou shimasu.",
+        "translation": "This program will end as of next week."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_110",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun 並み (~nami)",
+    "shortExplanation": "Indicates 'like' or 'as' something or someone; 'equivalent to', 'around'.",
+    "longExplanation": "The Noun 並み grammar point is used to show a comparison, often translated as 'like' or 'equivalent to'. It can also indicate approximate quantity or extent, similar to 'around'.",
+    "formation": "Noun + 並み",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼はプロのボクサー並みの力を持っています。",
+        "romanization": "Kare wa puro no bokusaa nami no chikara o motte imasu.",
+        "translation": "He has power equivalent to a professional boxer."
+      },
+      {
+        "sentence": "彼女の料理の腕前はレストラン並みです。",
+        "romanization": "Kanojo no ryouri no udemae wa resutoran nami desu.",
+        "translation": "Her cooking skills are like those of a restaurant."
+      },
+      {
+        "sentence": "このエリアの夏は砂漠並みの暑さです。",
+        "romanization": "Kono eria no natsu wa sabaku nami no atsusa desu.",
+        "translation": "The summer heat in this area is like a desert."
+      },
+      {
+        "sentence": "今日の仕事は社長並みの忙しさだった。",
+        "romanization": "Kyou no shigoto wa shachou nami no isogashisa datta.",
+        "translation": "Today's work was as busy as a president's."
+      }
+    ]
+  },
+  {
+    "id": "ja_Noun_111",
+    "language": "ja",
+    "pattern": "Noun",
+    "title": "Noun + 前提で (Noun + zentei de)",
+    "shortExplanation": "Expresses a condition or requirement for something to be established: 'on the assumption that', 'under the condition of'.",
+    "longExplanation": "The Noun + 前提で grammar point is used to define the premise, assumption, or requirement necessary for some event or action. It translates to 'on the assumption that', 'under the condition of', or 'with the understanding that'. The following clause is based on that premise.",
+    "formation": "Noun + 前提で",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "説明できる英語力がある前提で、この仕事を引き受けてください。",
+        "romanization": "Setsumei dekiru eigo-ryoku ga aru zentei de, kono shigoto o hikiukete kudasai.",
+        "translation": "Please take on this job on the assumption that you have enough English skills to explain."
+      },
+      {
+        "sentence": "彼が一緒に行く前提で、旅行の計画を立てました。",
+        "romanization": "Kare ga issho ni iku zentei de, ryokou no keikaku o tatemashita.",
+        "translation": "I planned the trip on the assumption that he would go together."
+      },
+      {
+        "sentence": "成功する前提で、このプロジェクトを進めています。",
+        "romanization": "Seikou suru zentei de, kono purojekuto o susumete imasu.",
+        "translation": "We are moving forward with this project on the assumption that we will succeed."
+      },
+      {
+        "sentence": "雨が降らない前提で、ピクニックの準備をしました。",
+        "romanization": "Ame ga furanai zentei de, pikunikku no junbi o shimashita.",
+        "translation": "I prepared for the picnic under the condition that it wouldn't rain."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verbる_112",
+    "language": "ja",
+    "pattern": "Verbる",
+    "title": "Verbる / Noun(である) + 限り(は) (kagiri (wa))",
+    "shortExplanation": "Expresses 'as long as', 'while this condition is true'.",
+    "longExplanation": "This grammar is used to express that something holds true as long as a particular condition remains in effect. When using a noun, it can appear as Noun(である) + 限り(は). With a verb, use the dictionary form + 限り(は).",
+    "formation": "Verb-dictionary form + 限り(は)\nNoun(である) + 限り(は)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "私が生きている限りは、あなたを支えます。",
+        "romanization": "Watashi ga ikite iru kagiri wa, anata o sasaemasu.",
+        "translation": "As long as I'm alive, I will support you."
+      },
+      {
+        "sentence": "子供が学校に通っている限り、私たちは彼らを守ります。",
+        "romanization": "Kodomo ga gakkou ni kayotte iru kagiri, watashitachi wa karera o mamorimasu.",
+        "translation": "As long as the kids are going to school, we will protect them."
+      },
+      {
+        "sentence": "能力がある限り、最善を尽くします。",
+        "romanization": "Nouryoku ga aru kagiri, saizen o tsukushimasu.",
+        "translation": "I will do my best as long as I have the ability."
+      },
+      {
+        "sentence": "あなたがここにいる限り、私は安心です。",
+        "romanization": "Anata ga koko ni iru kagiri, watashi wa anshin desu.",
+        "translation": "As long as you're here, I feel safe."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_113",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb がてら (~ gatera)",
+    "shortExplanation": "Expresses doing something while doing another; 'while', 'on the occasion of'.",
+    "longExplanation": "The ～がてら grammar point is used to express doing something else in the middle of or on the occasion of another activity. Often used with verbs of movement or activities that easily combine with a second action.",
+    "formation": "Verb (dictionary or -ます stem) + がてら",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "散歩がてらに郵便局へ行った。",
+        "romanization": "Sanpo gatera ni yūbinkyoku e itta.",
+        "translation": "I went to the post office while taking a walk."
+      },
+      {
+        "sentence": "買い物がてらに友達に会いに行った。",
+        "romanization": "Kaimono gatera ni tomodachi ni ai ni itta.",
+        "translation": "I went to see a friend while doing some shopping."
+      },
+      {
+        "sentence": "ジョギングがてらに新聞を買いに行った。",
+        "romanization": "Jogingu gatera ni shinbun o kai ni itta.",
+        "translation": "I went to buy a newspaper while jogging."
+      },
+      {
+        "sentence": "公園でピクニックがてら読書をした。",
+        "romanization": "Kōen de pikunikku gatera dokusho o shita.",
+        "translation": "I read a book while having a picnic in the park."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_114",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb こそすれ (~koso sure)",
+    "shortExplanation": "Often used in the pattern 'Xこそすれ、Y〜ない', meaning 'One might do X, but definitely not Y'.",
+    "longExplanation": "Verb-ますstem + こそすれ is typically used to emphasize that while someone might certainly do or be X, there's no way they would do or be Y. The sentence that follows is usually a strong negative, denying the possibility of Y.",
+    "formation": "Verb-ますstem + こそすれ、(絶対に)～ない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は友達を助けこそすれ、自分を卑下することはありません。",
+        "romanization": "Kare wa tomodachi o tasuke koso sure, jibun o higesuru koto wa arimasen.",
+        "translation": "He might help his friends, but he never belittles himself."
+      },
+      {
+        "sentence": "彼女は料理こそすれ、掃除はほとんどしない。",
+        "romanization": "Kanojo wa ryōri koso sure, sōji wa hotondo shinai.",
+        "translation": "She might cook, but she rarely cleans."
+      },
+      {
+        "sentence": "私の兄は勉強こそすれ、遊ぶ時間がほとんどない。",
+        "romanization": "Watashi no ani wa benkyō koso sure, asobu jikan ga hotondo nai.",
+        "translation": "He might study a lot, but he barely has time to have fun."
+      },
+      {
+        "sentence": "母は働きこそすれ、自分のために時間を使うことはほとんどない。",
+        "romanization": "Haha wa hataraki koso sure, jibun no tame ni jikan o tsukau koto wa hotondo nai.",
+        "translation": "My mother might work a lot, but she hardly spends any time on herself."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_115",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb させられる (~saserareru)",
+    "shortExplanation": "Expresses 'being forced to do something' or 'being made to do something'.",
+    "longExplanation": "The させられる grammar point is used to express the passive causative form in Japanese. This form is used when you are forced or made to do something by someone or something else. It's a combination of causative and passive form, and it often implies having been made to do something against one's will.",
+    "formation": "Verb-casual (non-past) + させられる",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼に無理やり飲ませられた。",
+        "romanization": "Kare ni muriyari nomaserareta.",
+        "translation": "He forced me to drink against my will."
+      },
+      {
+        "sentence": "私は父に勉強させられました。",
+        "romanization": "Watashi wa chichi ni benkyō saseraremashita.",
+        "translation": "My father made me study."
+      },
+      {
+        "sentence": "子供たちは毎日ピアノを弾かせられる。",
+        "romanization": "Kodomo-tachi wa mainichi piano o hikaserareru.",
+        "translation": "The kids are made to play the piano every day."
+      },
+      {
+        "sentence": "私たちは強制的に早起きさせられました。",
+        "romanization": "Watashitachi wa kyōsei-teki ni hayaoki saseraremashita.",
+        "translation": "We were forcibly made to wake up early."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_116",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ざるを得ない (~ zaru wo enai)",
+    "shortExplanation": "'Cannot but', 'have no choice but to', 'forced to'",
+    "longExplanation": "The Verb ざるを得ない construction is used when the subject is compelled or forced to do something out of necessity, leaving no other choice. It conveys the idea of 'cannot but...' or 'have no choice but...' in English.",
+    "formation": "Verb-dictionary form + ざるを得ない (する → せざるを得ない)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この仕事が嫌ならもう辞めざるを得ない。",
+        "romanization": "Kono shigoto ga iya nara mō yamezaru o enai.",
+        "translation": "If you hate this job, you have no choice but to quit."
+      },
+      {
+        "sentence": "試験が近いので、夜遅くまで勉強せざるを得ない。",
+        "romanization": "Shiken ga chikai no de, yoru osoku made benkyō sezaru o enai.",
+        "translation": "The exam is near, so I have no choice but to study late into the night."
+      },
+      {
+        "sentence": "涙が止まらない。泣かざるを得ない。",
+        "romanization": "Namida ga tomaranai. Nakazaru o enai.",
+        "translation": "My tears won't stop. I can't help but cry."
+      },
+      {
+        "sentence": "先生の命令だから、従わざるを得ない。",
+        "romanization": "Sensei no meirei dakara, shitagawazaru o enai.",
+        "translation": "It's the teacher's order, so I have no choice but to comply."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_117",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ずじまい (~zu jimai)",
+    "shortExplanation": "Expressing regret for not having done something; not being able to; missing the chance to do it.",
+    "longExplanation": "The grammar point ～ずじまい (~zu jimai) is used to express regret for not doing something, not being able to do it, or not getting the chance to do it. It highlights an action that ultimately never happened, despite intentions or opportunities.",
+    "formation": "Verb-ない form (remove ない) + ずじまい",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "日本へ来たのに、一度も富士山を見ずじまいで帰国してしまった。",
+        "romanization": "Nihon e kita noni, ichidomo Fuji-san o mizu jimai de kikoku shite shimatta.",
+        "translation": "I came to Japan but ended up going home without ever getting to see Mt. Fuji."
+      },
+      {
+        "sentence": "出張のため、彼女に会わずじまいだった。",
+        "romanization": "Shucchō no tame, kanojo ni awazu jimai datta.",
+        "translation": "Because I was on a business trip, I ended up not meeting her."
+      },
+      {
+        "sentence": "昨日は疲れすぎて、宿題をせずじまいだ。",
+        "romanization": "Kinō wa tsukare-sugite, shukudai o sezu jimai da.",
+        "translation": "I was too tired yesterday and ended up not doing my homework."
+      },
+      {
+        "sentence": "着物を買ったが、結局、一度も着ずじまいだ。",
+        "romanization": "Kimono o katta ga, kekkyoku, ichido mo kizu jimai da.",
+        "translation": "I bought a kimono, but in the end, I never got the chance to wear it."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_118",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ずとも (〜zu tomo)",
+    "shortExplanation": "Means 'Even without doing (X), (Y) can still happen'.",
+    "longExplanation": "The ～ずとも grammar point is used to express that, even if something isn't done, the desired result can still be achieved or the situation remains unaffected. It can be translated as 'even without' or 'even if not'.",
+    "formation": "Verb-negative stem + ずとも",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "朝ごはんを食べずとも、働くことができます。",
+        "romanization": "Asagohan o tabezu tomo, hataraku koto ga dekimasu.",
+        "translation": "Even without eating breakfast, I can work."
+      },
+      {
+        "sentence": "車がなくとも、バスで行くことができます。",
+        "romanization": "Kuruma ga nakutomo, basu de iku koto ga dekimasu.",
+        "translation": "Even without a car, you can go by bus."
+      },
+      {
+        "sentence": "お金がなくとも、幸せになれる。",
+        "romanization": "Okane ga nakutomo, shiawase ni nareru.",
+        "translation": "Even without money, one can be happy."
+      },
+      {
+        "sentence": "インターネットがなくとも、情報を得る方法はいくつかあります。",
+        "romanization": "Intānetto ga nakutomo, jōhō o eru hōhō wa ikutsu ka arimasu.",
+        "translation": "Even without the internet, there are several ways to obtain information."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_119",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ずにはおかない (~zuni wa okanai)",
+    "shortExplanation": "Expresses 'cannot help but...', 'will definitely...', or 'must do something'.",
+    "longExplanation": "The ずにはおかない grammar point conveys the sentiment of an inevitable action or a strong emotional compulsion. It can mean 'I can’t let it pass without doing X' or 'I definitely will do X'.",
+    "formation": "Verb-ない form (remove ない) + ずにはおかない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼が困っていると聞いたら、助けずにはおかない。",
+        "romanization": "Kare ga komatte iru to kiitara, tasukezuni wa okanai.",
+        "translation": "If I hear he is in trouble, I cannot help but assist him."
+      },
+      {
+        "sentence": "食事の準備がこのままだと、手伝わずにはおかないだろう。",
+        "romanization": "Shokuji no junbi ga kono mama da to, tetsudawazuni wa okanai darō.",
+        "translation": "If the meal prep stays like this, I won't be able to stop myself from helping."
+      },
+      {
+        "sentence": "この問題が解決しないなら、改善策を考えずにはおかない。",
+        "romanization": "Kono mondai ga kaiketsu shinai nara, kaizen-saku o kangaezuni wa okanai.",
+        "translation": "If this issue isn't resolved, I can't help but think of a solution."
+      },
+      {
+        "sentence": "彼女が泣いているのを見たら、慰めずにはおかない。",
+        "romanization": "Kanojo ga naite iru no o mitara, nagusamezuni wa okanai.",
+        "translation": "When I see her crying, I cannot help but comfort her."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_120",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb ずにはすまない (Verb zuni wa sumanai)",
+    "shortExplanation": "'Cannot do without...', 'unavoidable', 'have to'.",
+    "longExplanation": "The grammar point ずにはすまない is used when something must be done due to social/moral obligation, necessity, or rules. It implies that there is no way around taking that action.",
+    "formation": "Verb-ない form (remove ない) + ずにはすまない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "この問題を解決しないと、社会全体が影響を受けるので、解決せずにはすまない。",
+        "romanization": "Kono mondai o kaiketsu shinai to, shakai zentai ga eikyō o ukeru node, kaiketsu sezu ni wa sumanai.",
+        "translation": "Since this issue will affect the entire society if not resolved, we cannot do without solving it."
+      },
+      {
+        "sentence": "これは子供たちの未来を思うと、教育改革を行わずにはすまないことだ。",
+        "romanization": "Kore wa kodomo-tachi no mirai o omou to, kyōiku kaikaku o okonawazu ni wa sumanai koto da.",
+        "translation": "For the sake of the children’s future, we cannot avoid carrying out educational reforms."
+      },
+      {
+        "sentence": "この件については、彼に謝らずにはすまない。",
+        "romanization": "Kono ken ni tsuite wa, kare ni ayamarazu ni wa sumanai.",
+        "translation": "Regarding this matter, I can’t do without apologizing to him."
+      },
+      {
+        "sentence": "結婚式に出席するなら、プレゼントを渡さずにはすまない。",
+        "romanization": "Kekkonshiki ni shusseki suru nara, purezento o watasazu ni wa sumanai.",
+        "translation": "If you attend a wedding, you have to bring a gift."
+      }
+    ]
+  },
+  {
+    "id": "ja_Verb_121",
+    "language": "ja",
+    "pattern": "Verb",
+    "title": "Verb そうにない (Verb sou ni nai)",
+    "shortExplanation": "Expresses unlikelihood or that something does not seem likely to happen.",
+    "longExplanation": "The そうにない grammar point is typically formed from the verb’s ます-stem plus そうにない, and is used to express that something seems unlikely to happen or that someone seems unlikely to do something.",
+    "formation": "Verb-ますstem + そうにない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼はそんなに早く走れそうにない。",
+        "romanization": "Kare wa sonna ni hayaku hashire sō ni nai.",
+        "translation": "He doesn't seem likely to run that fast."
+      },
+      {
+        "sentence": "この書類を明日までに終わりそうにない。",
+        "romanization": "Kono shorui o ashita made ni owarisō ni nai.",
+        "translation": "It doesn’t seem like I’ll be able to finish these documents by tomorrow."
+      },
+      {
+        "sentence": "今日雨が降りそうにない。",
+        "romanization": "Kyō ame ga furisō ni nai.",
+        "translation": "It doesn't look like it will rain today."
+      },
+      {
+        "sentence": "彼女は間違えそうにない。",
+        "romanization": "Kanojo wa machigae sō ni nai.",
+        "translation": "She doesn’t seem likely to make a mistake."
+      }
+    ]
+  }
+]

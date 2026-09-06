@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_ついでに_40",
+    "language": "ja",
+    "pattern": "～ついでに",
+    "title": "～ついでに (〜tsuide ni)",
+    "shortExplanation": "Do something while or after completing another action; 'while', 'by the way'.",
+    "longExplanation": "The ～ついでに grammar point is used to express doing something 'on the occasion of' another action. It can mean 'while you're at it', 'by the way', or 'in passing'.",
+    "formation": "Verb (dictionary or た-form) + ついでに, Noun + の + ついでに, or Verb-て form + いる + ついでに",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "買い物に行くついでに、郵便局で手紙を出しましょう。",
+        "romanization": "Kaimono ni iku tsuide ni, yuubinkyoku de tegami wo dashimashou.",
+        "translation": "Let's drop off a letter at the post office while going shopping."
+      },
+      {
+        "sentence": "図書館で本を借りたついでに、友達に会いました。",
+        "romanization": "Toshokan de hon wo karita tsuide ni, tomodachi ni aimashita.",
+        "translation": "I met my friend while borrowing a book from the library."
+      },
+      {
+        "sentence": "日本に来たついでに、有名な観光地を訪れたいです。",
+        "romanization": "Nihon ni kita tsuide ni, yuumei na kankouchi wo otozuretai desu.",
+        "translation": "While visiting Japan, I'd like to see some famous tourist spots."
+      },
+      {
+        "sentence": "映画館に行ったついでに、新作のポスターを見ました。",
+        "romanization": "Eigakan ni itta tsuide ni, shinsaku no posutaa wo mimashita.",
+        "translation": "While going to the movie theater, I saw a poster for a new film."
+      }
+    ]
+  },
+  {
+    "id": "ja_っけ_41",
+    "language": "ja",
+    "pattern": "～っけ？",
+    "title": "～っけ？ (〜kke?)",
+    "shortExplanation": "Used to express that one is trying to recall some information.",
+    "longExplanation": "The ～っけ？ grammar point is added at the end of a sentence when the speaker is trying to recall something or confirm a memory. It can be used with verbs, adjectives, or nouns in casual form.",
+    "formation": "Verb-casual + っけ?, い-Adjective + かったっけ?, な-Adjective/Noun + だっけ?",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は何時に来るっけ？",
+        "romanization": "Kare wa nanji ni kuru kke?",
+        "translation": "What time is he coming again?"
+      },
+      {
+        "sentence": "この映画、面白かったっけ？",
+        "romanization": "Kono eiga, omoshirokatta kke?",
+        "translation": "Was this movie interesting?"
+      },
+      {
+        "sentence": "彼女は学生だっけ？",
+        "romanization": "Kanojo wa gakusei dakke?",
+        "translation": "She was a student, right?"
+      },
+      {
+        "sentence": "すし屋はどこだっけ？",
+        "romanization": "Sushiya wa doko dakke?",
+        "translation": "Where was the sushi place again?"
+      }
+    ]
+  },
+  {
+    "id": "ja_っぱい_42",
+    "language": "ja",
+    "pattern": "～っぱい",
+    "title": "～っぱい (〜ppai)",
+    "shortExplanation": "Expresses fullness or completeness; 'full', 'full of', 'filled with'.",
+    "longExplanation": "The ～っぱい grammar point is used to convey that something is filled or packed with something else. Commonly used as 『Noun + でいっぱい』 (e.g., 荷物でいっぱい) to mean 'full of X'.",
+    "formation": "Noun + で + いっぱい (Note: written as いっぱい, read as 'ippai')",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "部屋が荷物でいっぱいです。",
+        "romanization": "Heya ga nimotsu de ippai desu.",
+        "translation": "The room is full of luggage."
+      },
+      {
+        "sentence": "彼女は笑顔でいっぱいでした。",
+        "romanization": "Kanojo wa egao de ippai deshita.",
+        "translation": "She was full of smiles."
+      },
+      {
+        "sentence": "彼は仕事でいっぱいです。",
+        "romanization": "Kare wa shigoto de ippai desu.",
+        "translation": "He is completely busy with work."
+      },
+      {
+        "sentence": "公園は花でいっぱいです。",
+        "romanization": "Kouen wa hana de ippai desu.",
+        "translation": "The park is filled with flowers."
+      }
+    ]
+  },
+  {
+    "id": "ja_っぱなし_43",
+    "language": "ja",
+    "pattern": "～っぱなし",
+    "title": "～っぱなし (〜ppanashi)",
+    "shortExplanation": "Indicate a state where an action is left as is (unchanged or unfinished).",
+    "longExplanation": "The ～っぱなし grammar point is used to express that an action happened and was left in that state, unattended or unchanged. It is formed by taking the ます-stem of a verb and adding ～っぱなし.",
+    "formation": "Verb-ますstem + っぱなし",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "窓を開けっぱなしにすると、虫が入ってくる。",
+        "romanization": "Mado o akeppanashi ni suru to, mushi ga haitte kuru.",
+        "translation": "If you leave the window open, bugs will come in."
+      },
+      {
+        "sentence": "洗濯物を干しっぱなしで、雨に濡れた。",
+        "romanization": "Sentakumono o hoshippanashi de, ame ni nureta.",
+        "translation": "I left the laundry hanging out, and it got wet in the rain."
+      },
+      {
+        "sentence": "彼はドアを開けっぱなしにして出かけた。",
+        "romanization": "Kare wa doa o akeppanashi ni shite dekaketa.",
+        "translation": "He went out leaving the door open."
+      },
+      {
+        "sentence": "テレビをつけっぱなしにして寝てしまった。",
+        "romanization": "Terebi o tsukeppanashi ni shite nete shimatta.",
+        "translation": "I fell asleep with the TV left on."
+      }
+    ]
+  },
+  {
+    "id": "ja_つまり_44",
+    "language": "ja",
+    "pattern": "～つまり",
+    "title": "～つまり (〜tsumari)",
+    "shortExplanation": "Summarizing, restating, or clarifying a point: 'in other words', 'that is to say'.",
+    "longExplanation": "The ～つまり grammar point is used to restate or clarify in a concise way what has been said. It can be translated as 'in other words', 'that is to say', or 'in short'.",
+    "formation": "Sentence A + つまり + Sentence B (rephrasing)",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は大学の教授です。つまり、専門家です。",
+        "romanization": "Kare wa daigaku no kyouju desu. Tsumari, senmonka desu.",
+        "translation": "He is a university professor. In other words, he is an expert."
+      },
+      {
+        "sentence": "今日は土曜日だ。つまり、明日は日曜日だ。",
+        "romanization": "Kyou wa doyoubi da. Tsumari, ashita wa nichiyoubi da.",
+        "translation": "Today is Saturday. That is to say, tomorrow is Sunday."
+      },
+      {
+        "sentence": "山田さんは友達のお姉さんです。つまり、私たちの知り合いです。",
+        "romanization": "Yamada-san wa tomodachi no oneesan desu. Tsumari, watashitachi no shiriai desu.",
+        "translation": "Ms. Yamada is my friend's older sister. In short, she's someone we know."
+      },
+      {
+        "sentence": "彼女はフランス出身です。つまり、フランス語が話せます。",
+        "romanization": "Kanojo wa Furansu shusshin desu. Tsumari, Furansugo ga hanasemasu.",
+        "translation": "She is from France. In other words, she can speak French."
+      }
+    ]
+  },
+  {
+    "id": "ja_つもりでした_45",
+    "language": "ja",
+    "pattern": "～つもりでした",
+    "title": "～つもりでした (〜tsumori deshita)",
+    "shortExplanation": "Expressing a past intention or plan; 'was planning to', 'meant to'.",
+    "longExplanation": "The ～つもりでした grammar point is used to express a past intention or plan that did not happen, or a past belief that turned out incorrect. It can be translated as 'was planning to', 'intended to', or 'meant to'.",
+    "formation": "Verb-casual (dictionary form) + つもりでした",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "昨日は友達に会うつもりでしたが、風邪を引いてしまいました。",
+        "romanization": "Kinou wa tomodachi ni au tsumori deshita ga, kaze o hiite shimaimashita.",
+        "translation": "I was planning to meet my friend yesterday, but I caught a cold."
+      },
+      {
+        "sentence": "映画を見るつもりでしたが、時間がなくなりました。",
+        "romanization": "Eiga o miru tsumori deshita ga, jikan ga nakunarimashita.",
+        "translation": "I intended to watch a movie, but I ran out of time."
+      },
+      {
+        "sentence": "彼らが来るつもりでしたが、電話でキャンセルされました。",
+        "romanization": "Karera ga kuru tsumori deshita ga, denwa de kyanseru saremashita.",
+        "translation": "They were supposed to come, but they canceled by phone."
+      },
+      {
+        "sentence": "この本を読むつもりでしたが、もう読み終わっていました。",
+        "romanization": "Kono hon o yomu tsumori deshita ga, mou yomiowatte imashita.",
+        "translation": "I meant to read this book, but I realized I'd already finished it."
+      }
+    ]
+  },
+  {
+    "id": "ja_てくれと_46",
+    "language": "ja",
+    "pattern": "～てくれと",
+    "title": "～てくれと (〜te kureto)",
+    "shortExplanation": "Quote someone's request (telling someone to do something).",
+    "longExplanation": "The ～てくれと grammar point is used when quoting a request or command made by someone else. It literally means 'someone said “please do …”'. Typically used as 「～てくれと頼む/言う」 to indicate being asked or told to do something.",
+    "formation": "Verb-て form + くれと (言う / 頼む / 伝える, etc.)",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "電話をかけてくれと言われました。",
+        "romanization": "Denwa o kakete kureto iwaremashita.",
+        "translation": "I was told to make a phone call."
+      },
+      {
+        "sentence": "この荷物を運んでくれと頼まれました。",
+        "romanization": "Kono nimotsu o hakonde kureto tanomaremashita.",
+        "translation": "I was asked to carry this luggage."
+      },
+      {
+        "sentence": "最後まで待ってくれとお願いされました。",
+        "romanization": "Saigo made matte kureto onegai saremashita.",
+        "translation": "I was asked to wait until the end."
+      },
+      {
+        "sentence": "休んでくれと言われました。",
+        "romanization": "Yasunde kureto iwaremashita.",
+        "translation": "I was told to please take a rest."
+      }
+    ]
+  },
+  {
+    "id": "ja_てごらん_47",
+    "language": "ja",
+    "pattern": "～てごらん",
+    "title": "～てごらん (〜te goran)",
+    "shortExplanation": "Suggest or invite someone to try doing something; 'Why don't you try...'.",
+    "longExplanation": "The ～てごらん grammar point is used to gently suggest or invite someone to try doing something. It is softer and more casual than ～てみて, and is used among friends or family.",
+    "formation": "Verb-て form + ごらん",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "そのゲームをやってごらん。",
+        "romanization": "Sono geemu o yatte goran.",
+        "translation": "Why don't you try playing that game?"
+      },
+      {
+        "sentence": "彼に話してごらん。",
+        "romanization": "Kare ni hanashite goran.",
+        "translation": "Try talking to him."
+      },
+      {
+        "sentence": "新しいレシピを作ってごらん。",
+        "romanization": "Atarashii reshipi o tsukutte goran.",
+        "translation": "Why don't you try making a new recipe?"
+      },
+      {
+        "sentence": "そのドレスを着てごらん。",
+        "romanization": "Sono doresu o kite goran.",
+        "translation": "Try putting on that dress."
+      }
+    ]
+  },
+  {
+    "id": "ja_ですから_48",
+    "language": "ja",
+    "pattern": "ですから～",
+    "title": "ですから～ (desu kara)",
+    "shortExplanation": "Expresses reason or cause; 'because', 'since', 'so'.",
+    "longExplanation": "The ですから grammar point is used to indicate the reason or cause for a statement, often in polite speech. It can be translated as 'because', 'since', or 'so'.",
+    "formation": "Sentence A + ですから + Sentence B",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "今日は寒いですから、コートを着てください。",
+        "romanization": "Kyou wa samui desu kara, kooto o kite kudasai.",
+        "translation": "It's cold today, so please wear a coat."
+      },
+      {
+        "sentence": "この映画は面白いですから、ぜひ見てください。",
+        "romanization": "Kono eiga wa omoshiroi desu kara, zehi mite kudasai.",
+        "translation": "This movie is interesting, so please watch it."
+      },
+      {
+        "sentence": "明日は休みですから、ゆっくり休んでください。",
+        "romanization": "Ashita wa yasumi desu kara, yukkuri yasunde kudasai.",
+        "translation": "Tomorrow is a day off, so please take your time to rest."
+      },
+      {
+        "sentence": "彼は親切ですから、手伝ってくれるでしょう。",
+        "romanization": "Kare wa shinsetsu desu kara, tetsudatte kureru deshou.",
+        "translation": "He's kind, so he'll probably help you."
+      }
+    ]
+  },
+  {
+    "id": "ja_てはじめて_49",
+    "language": "ja",
+    "pattern": "～てはじめて",
+    "title": "～てはじめて (〜te hajimete)",
+    "shortExplanation": "Realization or action done for the first time; 'only after', 'not until'.",
+    "longExplanation": "The ～てはじめて grammar point indicates that something is realized or happens for the first time only after another action is completed. It can be translated as 'only after' or 'not until'.",
+    "formation": "Verb-て form + はじめて",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "海外に行ってはじめて、日本の良さが分かりました。",
+        "romanization": "Kaigai ni itte hajimete, Nihon no yosa ga wakarimashita.",
+        "translation": "Only after going abroad did I realize how great Japan is."
+      },
+      {
+        "sentence": "彼女と別れてはじめて、彼女の大切さに気づいた。",
+        "romanization": "Kanojo to wakarete hajimete, kanojo no taisetsusa ni kizuita.",
+        "translation": "I realized her importance only after breaking up with her."
+      },
+      {
+        "sentence": "大学を卒業してはじめて、学生時代の楽しさが分かった。",
+        "romanization": "Daigaku o sotsugyou shite hajimete, gakusei jidai no tanoshisa ga wakatta.",
+        "translation": "I understood how fun my student days were only after graduating from university."
+      },
+      {
+        "sentence": "子供ができてはじめて、親の気持ちが分かった。",
+        "romanization": "Kodomo ga dekite hajimete, oya no kimochi ga wakatta.",
+        "translation": "I understood how parents feel only after I had a child."
+      }
+    ]
+  },
+  {
+    "id": "ja_てほしい_50",
+    "language": "ja",
+    "pattern": "～てほしい",
+    "title": "～てほしい (〜te hoshii)",
+    "shortExplanation": "Express a desire for someone else to do something; 'I want you to do...'.",
+    "longExplanation": "The ～てほしい grammar point is used to express a desire that someone else perform an action. It is formed by attaching ほしい to the て-form of a verb. It can be translated as 'I want you to...' in English.",
+    "formation": "Verb-て form + ほしい",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "子供にもっと勉強してほしい。",
+        "romanization": "Kodomo ni motto benkyou shite hoshii.",
+        "translation": "I want my child to study more."
+      },
+      {
+        "sentence": "彼に私に電話してほしい。",
+        "romanization": "Kare ni watashi ni denwa shite hoshii.",
+        "translation": "I want him to call me."
+      },
+      {
+        "sentence": "友達に手伝ってほしい。",
+        "romanization": "Tomodachi ni tetsudatte hoshii.",
+        "translation": "I want my friend to help me."
+      },
+      {
+        "sentence": "彼女に明日ここに来てほしい。",
+        "romanization": "Kanojo ni ashita koko ni kite hoshii.",
+        "translation": "I want her to come here tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "ja_ても_51",
+    "language": "ja",
+    "pattern": "～ても",
+    "title": "～ても (〜temo)",
+    "shortExplanation": "'Even if', 'even though', or 'although'.",
+    "longExplanation": "The ～ても grammar point expresses that even if a certain condition holds, the outcome or situation doesn't change. It can be translated as 'even if' or 'even though'.",
+    "formation": "Verb-て form + も, い-Adjective (～く) + ても, な-Adjective/Noun (～で) + も",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "雨が降っても、運動会は開催されます。",
+        "romanization": "Ame ga futte mo, undoukai wa kaisai saremasu.",
+        "translation": "Even if it rains, the sports festival will be held."
+      },
+      {
+        "sentence": "忙しくても、毎日勉強する時間を作る。",
+        "romanization": "Isogashikute mo, mainichi benkyou suru jikan o tsukuru.",
+        "translation": "Even though I'm busy, I make time to study every day."
+      },
+      {
+        "sentence": "高くても、良い品質のものを買います。",
+        "romanization": "Takakute mo, yoi hinshitsu no mono o kaimasu.",
+        "translation": "Even if it's expensive, I'll buy something of good quality."
+      },
+      {
+        "sentence": "彼女が有名人でも、私は彼女のことを知らない。",
+        "romanization": "Kanojo ga yuumeijin demo, watashi wa kanojo no koto o shiranai.",
+        "translation": "Even if she's famous, I don't know her."
+      }
+    ]
+  },
+  {
+    "id": "ja_といいなあ_52",
+    "language": "ja",
+    "pattern": "～といいなあ",
+    "title": "～といいなあ (〜to ii naa)",
+    "shortExplanation": "Express a wish or hope; 'it would be nice if', 'I hope that'.",
+    "longExplanation": "The ～といいなあ grammar point is used to express a wish or hope for something to happen or to be in a certain way. It can be translated as 'it would be nice if' or 'I hope that' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + といいなあ, い-Adjective + といいなあ, な-Adjective + だといいなあ, Noun + だといいなあ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "明日晴れるといいなあ。",
+        "romanization": "Ashita hareru to ii naa.",
+        "translation": "I hope it's sunny tomorrow."
+      },
+      {
+        "sentence": "この試験に合格するといいなあ。",
+        "romanization": "Kono shiken ni goukaku suru to ii naa.",
+        "translation": "I hope I pass this exam."
+      },
+      {
+        "sentence": "彼女が元気だといいなあ。",
+        "romanization": "Kanojo ga genki da to ii naa.",
+        "translation": "I hope she is doing well."
+      },
+      {
+        "sentence": "彼が新しい仕事が見つかるといいなあ。",
+        "romanization": "Kare ga atarashii shigoto ga mitsukaru to ii naa.",
+        "translation": "I hope he finds a new job."
+      }
+    ]
+  },
+  {
+    "id": "ja_という_53",
+    "language": "ja",
+    "pattern": "～という",
+    "title": "～という (〜to iu)",
+    "shortExplanation": "Used for quoting, defining, or giving an example; 'called', 'that is to say', 'like'.",
+    "longExplanation": "The ～という grammar point is used to quote, define, or give an example of something. It can be translated as 'called', 'that is to say', or 'like' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Noun + という + Noun, Verb-casual + という + Noun, い-Adjective + という + Noun, な-Adjective + という + Noun",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "本屋で「ハリー・ポッター」という本を買いました。",
+        "romanization": "Hon'ya de 'Harry Potter' to iu hon o kaimashita.",
+        "translation": "I bought a book called 'Harry Potter' at the bookstore."
+      },
+      {
+        "sentence": "昨日、美味しいというケーキを食べました。",
+        "romanization": "Kinou, oishii to iu keeki o tabemashita.",
+        "translation": "Yesterday, I ate a cake that is said to be delicious."
+      },
+      {
+        "sentence": "彼はとても親切だという評判です。",
+        "romanization": "Kare wa totemo shinsetsu da to iu hyouban desu.",
+        "translation": "He has a reputation for being very kind."
+      },
+      {
+        "sentence": "今年の夏、東京にある「ディズニーランド」というテーマパークに行きたいです。",
+        "romanization": "Kotoshi no natsu, Toukyou ni aru 'Disneyland' to iu teema paaku ni ikitai desu.",
+        "translation": "I want to go to a theme park called 'Disneyland' in Tokyo this summer."
+      }
+    ]
+  },
+  {
+    "id": "ja_ということだ_54",
+    "language": "ja",
+    "pattern": "～ということだ",
+    "title": "～ということだ (〜to iu koto da)",
+    "shortExplanation": "Express a conclusion or hearsay; 'I heard', 'it means', 'it can be said'.",
+    "longExplanation": "The ～ということだ grammar point is used to express a conclusion, summary, or hearsay about a certain situation or statement. It can be translated as 'I heard', 'it means', or 'it can be said' in English. This grammar point is often used with verbs, adjectives, and nouns.",
+    "formation": "Verb-casual + ということだ, い-Adjective + ということだ, な-Adjective + だということだ, Noun + だということだ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は来週結婚するということだ。",
+        "romanization": "Kare wa raishuu kekkon suru to iu koto da.",
+        "translation": "I heard that he is getting married next week."
+      },
+      {
+        "sentence": "この試験は難しいということだ。",
+        "romanization": "Kono shiken wa muzukashii to iu koto da.",
+        "translation": "It means this exam is difficult."
+      },
+      {
+        "sentence": "彼女が引っ越したということだ。",
+        "romanization": "Kanojo ga hikkoshita to iu koto da.",
+        "translation": "I heard that she has moved."
+      },
+      {
+        "sentence": "彼は仕事がうまくいかないだということだ。",
+        "romanization": "Kare wa shigoto ga umaku ikanai da to iu koto da.",
+        "translation": "It can be said that his work is not going well."
+      }
+    ]
+  }
+]

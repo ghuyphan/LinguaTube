@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_最中に_130",
+    "language": "ja",
+    "pattern": "～最中に",
+    "title": "～最中に (～saichuu ni)",
+    "shortExplanation": "In the middle of / while doing something.",
+    "longExplanation": "The ～最中に grammar point is used to indicate that something happens during the middle of an action or situation. It can be translated as 'in the middle of' or 'while' in English. It often involves appending 最中に to a verb in 〜ている form or a noun plus の.",
+    "formation": "Verb-て form + いる + 最中に, Noun + の + 最中に",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "昼寝をしている最中に電話が鳴った。",
+        "romanization": "Hirune o shiteiru saichuu ni denwa ga natta.",
+        "translation": "The phone rang while I was taking a nap."
+      },
+      {
+        "sentence": "料理を作っている最中に火事が起こった。",
+        "romanization": "Ryouri o tsukutteiru saichuu ni kaji ga okotta.",
+        "translation": "A fire broke out in the middle of cooking."
+      },
+      {
+        "sentence": "会議の最中に急な用事で出なければならなかった。",
+        "romanization": "Kaigi no saichuu ni kyuu na youji de denakereba naranakatta.",
+        "translation": "I had to leave during the meeting because of an urgent matter."
+      },
+      {
+        "sentence": "試験の最中に地震が起こった。",
+        "romanization": "Shiken no saichuu ni jishin ga okotta.",
+        "translation": "An earthquake occurred during the exam."
+      }
+    ]
+  },
+  {
+    "id": "ja_決してない_131",
+    "language": "ja",
+    "pattern": "決して～ない",
+    "title": "決して～ない (kesshite ~ nai)",
+    "shortExplanation": "Express 'never', 'by no means', or 'not at all' when negating a statement.",
+    "longExplanation": "The 決して～ない grammar point is used to emphasize a negative statement or action. It can be translated as 'never', 'by no means', or 'not at all'. This grammar point must be paired with a negative verb form to maintain its negative meaning.",
+    "formation": "決して + Verb (negative form)",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は決して遅刻しない。",
+        "romanization": "Kare wa kesshite chikoku shinai.",
+        "translation": "He never arrives late."
+      },
+      {
+        "sentence": "この秘密を決して誰にも言わないでください。",
+        "romanization": "Kono himitsu o kesshite darenimo iwanai de kudasai.",
+        "translation": "Please never tell this secret to anyone."
+      },
+      {
+        "sentence": "決して諦めないで、最後までがんばりましょう。",
+        "romanization": "Kesshite akiramenai de, saigo made ganbarimashou.",
+        "translation": "Never give up and keep trying until the end."
+      },
+      {
+        "sentence": "彼女は決して嘘をつかない人です。",
+        "romanization": "Kanojo wa kesshite uso o tsukanai hito desu.",
+        "translation": "She is a person who never lies."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_0",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A あるいは B (A aruiwa B)",
+    "shortExplanation": "Indicates alternatives; 'A or B', 'either A or B'.",
+    "longExplanation": "The あるいは grammar point is used to show alternatives or options, similar to 'A or B' or 'either A or B' in English. It highlights the possibility of more than one option in a situation. It can be used with verbs, adjectives, and nouns.",
+    "formation": "Phrase A + あるいは + Phrase B",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "今日は映画を見るあるいはショッピングをする予定です。",
+        "romanization": "Kyou wa eiga wo miru aruiwa shoppingu wo suru yotei desu.",
+        "translation": "Today, I plan to either watch a movie or go shopping."
+      },
+      {
+        "sentence": "彼女は英語あるいはドイツ語で話すことができます。",
+        "romanization": "Kanojo wa eigo aruiwa doitsugo de hanasu koto ga dekimasu.",
+        "translation": "She can speak either English or German."
+      },
+      {
+        "sentence": "僕らはコーヒーあるいは紅茶を飲むのが好きです。",
+        "romanization": "Bokura wa koohii aruiwa koucha wo nomu no ga suki desu.",
+        "translation": "We like to drink either coffee or tea."
+      },
+      {
+        "sentence": "この仕事は正社員あるいは契約社員として働くことができます。",
+        "romanization": "Kono shigoto wa seishain aruiwa keiyaku shain toshite hataraku koto ga dekimasu.",
+        "translation": "You can work as either a full-time employee or a contract employee in this job."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aおまけに_1",
+    "language": "ja",
+    "pattern": "A。おまけに",
+    "title": "A。おまけに B。(~omake ni)",
+    "shortExplanation": "Expresses that in addition to A, there is also B; 'moreover', 'besides', 'not only', 'but also'.",
+    "longExplanation": "The A。おまけに B。grammar point is used to express that in addition to the first statement A, there is also the second statement B which often emphasizes the negative aspect or difficulty of the situation. It can be translated as 'moreover', 'besides', 'not only', or 'but also' in English. The formation is used with two sentences, placing おまけに between those two sentences.",
+    "formation": "Sentence A + おまけに  + Sentence B",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は遅刻した。おまけに宿題も忘れた。",
+        "romanization": "Kare wa chikoku shita. Omake ni shukudai mo wasureta.",
+        "translation": "He was late. Moreover, he forgot his homework."
+      },
+      {
+        "sentence": "このアパートは狭い。おまけに家賃が高い。",
+        "romanization": "Kono apaato wa semai. Omake ni yachin ga takai.",
+        "translation": "This apartment is small. Besides, the rent is high."
+      },
+      {
+        "sentence": "彼女は仕事が忙しい。おまけに子供も小さい。",
+        "romanization": "Kanojo wa shigoto ga isogashii. Omake ni kodomo mo chiisai.",
+        "translation": "She is busy with work. Not only that, her children are also small."
+      },
+      {
+        "sentence": "昨日は雨が降った。おまけに風も強かった。",
+        "romanization": "Kinou wa ame ga futta. Omake ni kaze mo tsuyokatta.",
+        "translation": "Yesterday it rained. In addition, the wind was strong."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aさて_2",
+    "language": "ja",
+    "pattern": "A。さて",
+    "title": "A。さて B。(A. Sate B.)",
+    "shortExplanation": "Indicates a sudden change or shift in the topic or situation; 'now then', 'well', 'so'.",
+    "longExplanation": "The さて grammar point is used to indicate a sudden change or shift in the topic or situation. It often expresses a sense of moving on to the next topic or action, acting as a connector between sentences. It can be loosely translated as 'now then', 'well', or 'so' in English.",
+    "formation": "A + さて + B",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "今日の仕事が終わった。さて、これから帰るか。",
+        "romanization": "Kyou no shigoto ga owatta. Sate, kore kara kaeru ka.",
+        "translation": "Today's work is done. Now then, shall we go home?"
+      },
+      {
+        "sentence": "話がちょっと長くなったね。さて、もっと喜美子さんのことを教えてください。",
+        "romanization": "Hanashi ga chotto nagaku natta ne. Sate, motto Kimiko-san no koto wo oshiete kudasai.",
+        "translation": "The conversation got a bit lengthy. Well, please tell me more about Kimiko."
+      },
+      {
+        "sentence": "映画を見て楽しかった。さて、何を食べに行こう。",
+        "romanization": "Eiga wo mite tanoshikatta. Sate, nani wo tabe ni ikou.",
+        "translation": "Watching the movie was fun. So, what shall we go eat?"
+      },
+      {
+        "sentence": "マラソンが終わった！さて、少し休んでからシャワーを浴びよう。",
+        "romanization": "Marason ga owatta! Sate, sukoshi yasunde kara shawaa wo abiyou.",
+        "translation": "The marathon is over! Now then, let's rest a bit and then take a shower."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aしかも_3",
+    "language": "ja",
+    "pattern": "A。しかも",
+    "title": "A。しかも B。(A. Shikamo B.)",
+    "shortExplanation": "Expressing additional information; 'moreover', 'besides', 'furthermore'.",
+    "longExplanation": "The しかも grammar point is used to express additional information, supplementing or emphasizing what was mentioned before. It can be translated as 'moreover', 'besides', or 'furthermore' in English. Both A and B are independent statements, and しかも is used to connect them.",
+    "formation": "Statement A + 。しかも + Statement B。",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "この料理は美味しいです。しかも、安いです。",
+        "romanization": "Kono ryouri wa oishii desu. Shikamo, yasui desu.",
+        "translation": "This dish is delicious. Moreover, it is cheap."
+      },
+      {
+        "sentence": "彼は優秀な学生です。しかも、スポーツが得意です。",
+        "romanization": "Kare wa yuushuu na gakusei desu. Shikamo, supootsu ga tokui desu.",
+        "translation": "He is an excellent student. Besides, he is good at sports."
+      },
+      {
+        "sentence": "彼女は歌が上手です。しかも、ダンスも上手です。",
+        "romanization": "Kanojo wa uta ga jouzu desu. Shikamo, dansu mo jouzu desu.",
+        "translation": "She is good at singing. Furthermore, she is also good at dancing."
+      },
+      {
+        "sentence": "このカフェは雰囲気がいいです。しかも、コーヒーも美味しいです。",
+        "romanization": "Kono kafe wa fun'iki ga ii desu. Shikamo, koohii mo oishii desu.",
+        "translation": "This cafe has a nice atmosphere. Moreover, the coffee is also delicious."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aしたがって_4",
+    "language": "ja",
+    "pattern": "A。したがって",
+    "title": "A。したがって B。(A. Shitagatte B.)",
+    "shortExplanation": "Express a cause-and-effect relationship; 'therefore', 'consequently', 'so'.",
+    "longExplanation": "The したがって grammar point is used to express a cause-and-effect relationship between two sentences, where 'A' is the cause and 'B' is the effect, result or conclusion. It can be translated as 'therefore', 'consequently', or 'so' in English.",
+    "formation": "A + したがって + B",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "今日は雨が降っています。したがって、傘を持って行きましょう。",
+        "romanization": "Kyou wa ame ga futteimasu. Shitagatte, kasa wo motte ikimashou.",
+        "translation": "It is raining today. Therefore, let's bring an umbrella."
+      },
+      {
+        "sentence": "彼は忙しいです。したがって、彼に連絡するのはやめましょう。",
+        "romanization": "Kare wa isogashii desu. Shitagatte, kare ni renraku suru no wa yamemashou.",
+        "translation": "He is busy. Consequently, let's not contact him."
+      },
+      {
+        "sentence": "そのレストランは人気があります。したがって、予約しないと席がないかもしれません。",
+        "romanization": "Sono resutoran wa ninki ga arimasu. Shitagatte, yoyaku shinai to seki ga nai kamoshiremasen.",
+        "translation": "That restaurant is popular. Therefore, there might be no seats if you don't make a reservation."
+      },
+      {
+        "sentence": "試験が近いです。したがって、勉強に集中しましょう。",
+        "romanization": "Shiken ga chikai desu. Shitagatte, benkyou ni shuuchuu shimashou.",
+        "translation": "The exam is coming up soon. Consequently, let's focus on studying."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_5",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A すなわち B。 (A sunawachi B)",
+    "shortExplanation": "Express that A is equivalent to B; 'in other words', 'namely', 'that is to say'.",
+    "longExplanation": "The grammar point A すなわち B is used to express that two phrases are equivalent or that the second phrase is further explanation, clarification or the true meaning of the first phrase. This can be translated as 'in other words', 'namely', or 'that is to say' in English.",
+    "formation": "Phrase A + すなわち + Phrase B",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "私は立派な成果を出したい、すなわち、成功したいのです。",
+        "romanization": "Watashi wa rippana seika wo dashitai, sunawachi, seikou shitai no desu.",
+        "translation": "I want to achieve great results, in other words, I want to succeed."
+      },
+      {
+        "sentence": "彼は言葉に詰まった、すなわち、何も言えなかった。",
+        "romanization": "Kare wa kotoba ni tsumatta, sunawachi, nani mo ienakatta.",
+        "translation": "He was at a loss for words, that is to say, he couldn't say anything."
+      },
+      {
+        "sentence": "彼女は自分の目標に向かって努力し続けている、すなわち、彼女は非常に頑張っている。",
+        "romanization": "Kanojo wa jibun no mokuhyou ni mukatte doryoku shi tsudzukete iru, sunawachi, kanojo wa hijou ni ganbatte iru.",
+        "translation": "She keeps working hard towards her goals, namely, she is trying very hard."
+      },
+      {
+        "sentence": "この店はお客様の満足を一番大事にしています、すなわち、サービスが良いということです。",
+        "romanization": "Kono mise wa okyakusama no manzoku o ichiban daiji ni shiteimasu, sunawachi, saabisu ga yoi to iu koto desu.",
+        "translation": "This store values customer satisfaction above all else, in other words, it has good service."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aすると_6",
+    "language": "ja",
+    "pattern": "A。すると",
+    "title": "A。すると B。(~suruto)",
+    "shortExplanation": "Indicates that when action A is done, action or event B follows; 'then', 'when', 'if'.",
+    "longExplanation": "The A。すると B。grammar point is used to express that when action A is done or takes place, action or event B follows. It can be translated as 'then', 'when', or 'if' in English. It is used to show a natural consequence or result of action A.",
+    "formation": "A (Sentence) + すると + B (Sentence)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "電話をかけると、彼女が出ました。",
+        "romanization": "Denwa wo kakeru to, kanojo ga demashita.",
+        "translation": "When I made the phone call, she answered."
+      },
+      {
+        "sentence": "このボタンを押すと、ドアが開きます。",
+        "romanization": "Kono botan wo osu to, doa ga hirakimasu.",
+        "translation": "If you press this button, the door will open."
+      },
+      {
+        "sentence": "コンビニに行くと、たまたま友達に会いました。",
+        "romanization": "Konbini ni iku to, tamatama tomodachi ni aimashita.",
+        "translation": "When I went to the convenience store, I happened to meet my friend."
+      },
+      {
+        "sentence": "彼が家を出ると、すぐに雨が降り始めました。",
+        "romanization": "Kare ga ie wo deru to, sugu ni ame ga furihajimemashita.",
+        "translation": "As soon as he left the house, it started to rain."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aそういえば_7",
+    "language": "ja",
+    "pattern": "A。そういえば",
+    "title": "A。そういえば B。(~souieba)",
+    "shortExplanation": "Recalling something related to A; 'speaking of which', 'by the way', 'now that you mention it'.",
+    "longExplanation": "The A。そういえば B。grammar point is used when something related to A is recalled or brought up. It can be translated as 'speaking of which', 'by the way', or 'now that you mention it' in English. It is commonly used to connect two related topics or ideas in a conversation and indicates a change of focus. The formation consists of two clauses: the first being A and the second being B, with 'そういえば' in between as a connector.",
+    "formation": "A + そういえば + B",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "映画。そういえば、彼は映画館で働いているんだ。",
+        "romanization": "Eiga. Souieba, kare wa eigakan de hataraite irun da.",
+        "translation": "Movies. Speaking of which, he works at a movie theater."
+      },
+      {
+        "sentence": "山田さん。そういえば、彼女は今週末旅行しています。",
+        "romanization": "Yamada-san. Souieba, kanojo wa konshuumatsu ryokou shite imasu.",
+        "translation": "Ms. Yamada. By the way, she is traveling this weekend."
+      },
+      {
+        "sentence": "そのレストラン。そういえば、次の週末そこでパーティーがあるんだ。",
+        "romanization": "Sono resutoran. Souieba, tsugi no shuumatsu soko de paatii ga arun da.",
+        "translation": "That restaurant. Now that you mention it, there's a party there next weekend."
+      },
+      {
+        "sentence": "寒い。そういえば、明日雪が降るらしいよ。",
+        "romanization": "Samui. Souieba, ashita yuki ga furu rashii yo.",
+        "translation": "It's cold. Speaking of which, it seems like it will snow tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aそこで_8",
+    "language": "ja",
+    "pattern": "A。そこで",
+    "title": "A。そこで B。(~sokode)",
+    "shortExplanation": "Expresses 'therefore' or 'because of that'.",
+    "longExplanation": "The A。そこで B。grammar point is used to describe the reason for an action or situation in the A part and the result or decision made in the B part. It can be translated as 'therefore' or 'because of that' in English.",
+    "formation": "A + そこで + B",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "明日は試験があります。そこで今晩勉強しようと思います。",
+        "romanization": "Ashita wa shiken ga arimasu. Soko de konban benkyou shiyou to omoimasu.",
+        "translation": "There is an exam tomorrow. Therefore, I plan to study tonight."
+      },
+      {
+        "sentence": "このレストランは混んでいます。そこで別の場所でランチを食べましょう。",
+        "romanization": "Kono resutoran wa kondeimasu. Soko de betsu no basho de ranchi wo tabemashou.",
+        "translation": "This restaurant is crowded. Therefore, let's eat lunch at a different place."
+      },
+      {
+        "sentence": "彼女はアレルギーがある。そこで彼女のために別の料理を作ります。",
+        "romanization": "Kanojo wa arerugii ga aru. Soko de kanojo no tame ni betsu no ryouri wo tsukurimasu.",
+        "translation": "She has an allergy. Therefore, I'll cook a different dish for her."
+      },
+      {
+        "sentence": "傘を持っていない。そこで雨が止むまで待ちます。",
+        "romanization": "Kasa wo motte inai. Soko de ame ga yamu made machimasu.",
+        "translation": "I don't have an umbrella. Therefore, I'll wait until the rain stops."
+      }
+    ]
+  },
+  {
+    "id": "ja_AそれがB_9",
+    "language": "ja",
+    "pattern": "A。それがB。",
+    "title": "A。それがB。(~sorega)",
+    "shortExplanation": "Expressing 'that's exactly what A is; in other words, B'.",
+    "longExplanation": "The grammar point A。それがB。can be used to restate or clarify that B is precisely what A means. It emphasizes the essence or definition of A by stating B. It can be translated as 'that’s what A is,' 'that is precisely A/B,' or 'in other words, B.'",
+    "formation": "A (Statement)。それが B (Restatement or explanation of A)。",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は勉強ができる。それが天才というものだ。",
+        "romanization": "Kare wa benkyou ga dekiru. Sore ga tensai to iu mono da.",
+        "translation": "He can study well. That's what you call a genius."
+      },
+      {
+        "sentence": "美味しい料理を作る。それが私の趣味なんです。",
+        "romanization": "Oishii ryouri wo tsukuru. Sore ga watashi no shumi nan desu.",
+        "translation": "I make delicious food. That's my hobby."
+      },
+      {
+        "sentence": "彼女は私を助けてくれる。それが友達というものだ。",
+        "romanization": "Kanojo wa watashi wo tasukete kureru. Sore ga tomodachi to iu mono da.",
+        "translation": "She helps me. That's what a friend is."
+      },
+      {
+        "sentence": "一人で長い旅をする。それが自由というものだ。",
+        "romanization": "Hitori de nagai tabi wo suru. Sore ga jiyuu to iu mono da.",
+        "translation": "Traveling alone for a long time. That's what freedom is."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aそれで_10",
+    "language": "ja",
+    "pattern": "A。それで",
+    "title": "A。それで B。 (~sore de)",
+    "shortExplanation": "Express a sequence of events or cause-and-effect; 'and then', 'so', 'because of that'.",
+    "longExplanation": "The A。それで B。grammar point is used to connect two sentences or events, expressing a sequence of events or explaining the reason for the second event based on the first event. Essentially, it means 'and then', 'so', or 'because of that' in English.",
+    "formation": "Sentence A +。それで+ Sentence B。",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "昨日は雨が降っていた。それで公園に行かなかった。",
+        "romanization": "Kinou wa ame ga futte ita. Sore de kouen ni ikanakatta.",
+        "translation": "It was raining yesterday. So, I didn't go to the park."
+      },
+      {
+        "sentence": "試験に落ちた。それで再試験を受けなければならない。",
+        "romanization": "Shiken ni ochita. Sore de sai shiken wo ukenakereba naranai.",
+        "translation": "I failed the exam. So, I have to take a re-exam."
+      },
+      {
+        "sentence": "部屋が寒かった。それで暖房をつけた。",
+        "romanization": "Heya ga samukatta. Sore de danbou wo tsuketa.",
+        "translation": "The room was cold. So, I turned on the heater."
+      },
+      {
+        "sentence": "今日は休みだ。それで映画を見に行く。",
+        "romanization": "Kyou wa yasumi da. Sore de eiga wo mi ni iku.",
+        "translation": "Today is a holiday. So, I'm going to watch a movie."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aそれでも_11",
+    "language": "ja",
+    "pattern": "A。それでも",
+    "title": "A。それでも B。(~sore demo)",
+    "shortExplanation": "Expresses 'even so', 'nevertheless', 'still', or 'but'; used to contrast two statements.",
+    "longExplanation": "The A。それでも B。grammar point is used to show a contrast between two statements. The first statement (A) presents a situation, and the second statement (B) presents an action or thought that might be unexpected or contrary to the initial situation. It can be translated as 'even so', 'nevertheless', 'still', or 'but' in English.",
+    "formation": "A (situation) + 。それでも + B (action or thought)",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "今日は日曜日です。それでも、仕事に行かなければなりません。",
+        "romanization": "Kyou wa nichiyoubi desu. Sore demo, shigoto ni ikanakereba narimasen.",
+        "translation": "Today is Sunday. Nevertheless, I have to go to work."
+      },
+      {
+        "sentence": "彼は若いです。それでも、経験が豊富です。",
+        "romanization": "Kare wa wakai desu. Sore demo, keiken ga houfu desu.",
+        "translation": "He is young. Even so, he has a lot of experience."
+      },
+      {
+        "sentence": "雨が降っています。それでも、散歩に行きたいです。",
+        "romanization": "Ame ga futteimasu. Sore demo, sanpo ni ikitai desu.",
+        "translation": "It's raining. Still, I want to go for a walk."
+      },
+      {
+        "sentence": "試験の結果が悪かったです。それでも、諦めません。",
+        "romanization": "Shiken no kekka ga warukatta desu. Sore demo, akiramenai.",
+        "translation": "The exam results were bad. But I won't give up."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aそれなのに_12",
+    "language": "ja",
+    "pattern": "A。それなのに",
+    "title": "A。それなのに B。(~sorenanoni)",
+    "shortExplanation": "Express contrast or a contradiction between two situations or facts; 'even though', 'despite', 'but still'.",
+    "longExplanation": "The A。それなのにB。grammar point is used to express contrast, contradiction or unexpectedness between two situations or facts. It can be translated as 'even though', 'despite', or 'but still' in English. The formation is simple, with A and B representing the two contrasting or contradicting statements.",
+    "formation": "A。それなのに B。",
+    "level": "JLPT N2",
+    "examples": [
+      {
+        "sentence": "彼は頭がいい。それなのに、試験に落ちた。",
+        "romanization": "Kare wa atama ga ii. Sore nanoni, shiken ni ochita.",
+        "translation": "He is smart. Despite that, he failed the exam."
+      },
+      {
+        "sentence": "私は早く起きた。それなのに、バスに遅れた。",
+        "romanization": "Watashi wa hayaku okita. Sore nanoni, basu ni okureta.",
+        "translation": "I woke up early. Even so, I was late for the bus."
+      },
+      {
+        "sentence": "昨日は晴れていた。それなのに、彼は傘を持っていた。",
+        "romanization": "Kinou wa harete ita. Sore nanoni, kare wa kasa wo motte ita.",
+        "translation": "It was sunny yesterday. Despite that, he had an umbrella."
+      },
+      {
+        "sentence": "彼女は運動が苦手だ。それなのに、マラソンを走ることにした。",
+        "romanization": "Kanojo wa undou ga nigate da. Sore nanoni, marason wo hashiru koto ni shita.",
+        "translation": "She is not good at sports. Nevertheless, she decided to run a marathon."
+      }
+    ]
+  }
+]

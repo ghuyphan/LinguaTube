@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_ごとく_182": {
+      "title": "～ごとく (〜gotoku)",
+      "shortExplanation": "Diễn tả sự so sánh ví von mang tính văn chương cổ kính; 'như thể...', 'giống như...', 'hệt như...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ごとく' (thể liên từ/phó từ của '～ごとし' [如し]) là cách diễn đạt trang trọng, mang đậm phong cách văn viết cổ điển hoặc văn học, dùng để ví von, so sánh một hành động hay trạng thái với một sự vật, hiện tượng khác ('như thể là...', 'hệt như...'). Vế sau thường bổ nghĩa cho động từ, tính từ theo sau như một trạng từ.",
+      "formation": "Động từ thể thông thường (+ かの) / Động từ thể た / Động từ thể từ điển (+ が) + ごとく | Danh từ + (の) + ごとく",
+      "examples": [
+        {
+          "translation": "Anh ấy trông như thể đang bay lượn như một chú chim."
+        },
+        {
+          "translation": "Anh ấy ngủ say như thể đã chết."
+        },
+        {
+          "translation": "Cô ấy được tôn sùng hệt như một thần tượng."
+        },
+        {
+          "translation": "Anh ấy chạy nhanh vun vút như một cơn gió."
+        }
+      ]
+    },
+    "ja_こととて_183": {
+      "title": "～こととて (〜koto tote)",
+      "shortExplanation": "Diễn tả nguyên nhân, lý do trong văn cảnh trang trọng, lịch sự hoặc thư từ; 'vì...', 'do...', 'bởi lẽ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～こととて' (N1) là cách diễn đạt trang trọng mang phong cách văn viết cổ điển hoặc thư tín trang nhã. Cấu trúc này dùng để nêu lên một hoàn cảnh, lý do đặc biệt dẫn đến một phán đoán, hành động, hoặc thường dùng để trình bày lý do nhằm mong nhận được sự thông cảm, châm chước, tha thứ từ đối phương ('vì lý do là... nên mong được lượng thứ').",
+      "formation": "Động từ thể thông thường + こととて | Danh từ + の (hoặc である) + こととて | Tính từ đuôi な + な (hoặc である) + こととて | Tính từ đuôi い + こととて",
+      "examples": [
+        {
+          "translation": "Vì quyết tâm dốc toàn bộ tài sản để thắng kiện, anh ấy đã ủy thác cho luật sư."
+        },
+        {
+          "translation": "Vì ngày mai có kỳ thi quan trọng nên đêm nay tôi sẽ đi ngủ sớm."
+        },
+        {
+          "translation": "Bởi lẽ thành bại của dự án này ảnh hưởng tới tương lai công ty nên tôi sẽ dốc hết sức mình."
+        },
+        {
+          "translation": "Vì anh ấy là người của công chúng nên quyền riêng tư càng cần được bảo vệ."
+        }
+      ]
+    },
+    "ja_ずにすんだ_184": {
+      "title": "～ずにすんだ (〜zuni sunda)",
+      "shortExplanation": "Diễn tả việc may mắn tránh được hoặc không cần phải làm một điều phiền toái, tổn thất; 'may mà không phải...', 'tránh được việc...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ずにすんだ' (dạng quá khứ của '～ずにすむ') kết hợp với động từ ở thể phủ định 'ず' (tương đương với ないで) cùng động từ '済む' (kết thúc, giải quyết xong ổn thỏa). Cấu trúc này dùng để diễn tả sự nhẹ nhõm, may mắn khi bản thân đã tránh được một phiền toái, thiệt hại, hoặc không cần phải thực hiện một nghĩa vụ hay việc khó khăn nào đó mà mọi chuyện vẫn diễn ra êm xuôi ('may mà không phải...', 'tránh khỏi cảnh...').",
+      "formation": "Động từ thể ない (bỏ ない) + ずにすんだ (Động từ する chuyển thành せずにすんだ)",
+      "examples": [
+        {
+          "translation": "May mà anh ấy đã không gây ra tai nạn."
+        },
+        {
+          "translation": "Tôi đã may mắn không phải phẫu thuật."
+        },
+        {
+          "translation": "May mà trời đã không đổ mưa."
+        },
+        {
+          "translation": "Tôi đã tránh được việc phải nộp phạt."
+        }
+      ]
+    },
+    "ja_だろうとなかろうと_185": {
+      "title": "～だろうとなかろうと (〜darou to nakarou to)",
+      "shortExplanation": "Diễn tả dù sự việc có tồn tại/xảy ra hay không thì hành động hay phán đoán vẫn không thay đổi; 'dù có... hay không...', 'bất kể... hay không...'.",
+      "longExplanation": "Mẫu ngữ pháp '～だろうとなかろうと' (N1) đặt hai khả năng khẳng định và phủ định song hành để khẳng định rằng: dù tình huống ở vế trước có xảy ra hay không, có đúng hay không thì lập trường, quyết định hay kết quả ở vế sau vẫn kiên định và không hề bị lay chuyển ('bất kể có... hay không chăng nữa thì...').",
+      "formation": "Động từ thể thông thường / Tính từ đuôi い / Tính từ đuôi な / Danh từ + だろうとなかろうと",
+      "examples": [
+        {
+          "translation": "Dù bài thi có khó hay không, tôi cũng sẽ dốc toàn lực cố gắng."
+        },
+        {
+          "translation": "Bất kể anh ấy có đến hay không, chúng ta vẫn sẽ bắt đầu."
+        },
+        {
+          "translation": "Dù công việc này có thú vị hay không, tôi vẫn sẽ tiếp tục làm."
+        },
+        {
+          "translation": "Dù anh ấy có tán thành hay không, chúng tôi vẫn sẽ tiến hành."
+        }
+      ]
+    },
+    "ja_つもりだ_186": {
+      "title": "～つもりだ (〜tsumori da)",
+      "shortExplanation": "Diễn tả dự định, ý định của người nói về một hành động trong tương lai; 'dự định...', 'tính...'.",
+      "longExplanation": "Mẫu ngữ pháp '～つもりだ' kết hợp với động từ ở thể từ điển hoặc thể phủ định ない để biểu thị kế hoạch, dự định hoặc ý định chủ quan của bản thân người nói ('dự định làm gì', 'tính làm gì'). Nếu chủ ngữ là người khác thì thường dùng kèm theo cách nói gián tiếp như '～と言っている' hay '～ようだ'.",
+      "formation": "Động từ thể từ điển / Động từ thể ない + つもりだ (hoặc つもりです)",
+      "examples": [
+        {
+          "translation": "Ngày mai tôi dự định sẽ dậy sớm."
+        },
+        {
+          "translation": "Tôi dự định sẽ học tiếng Nhật."
+        },
+        {
+          "translation": "Anh ấy đã nói rằng có dự định đi du học."
+        },
+        {
+          "translation": "Tôi tính sẽ đi du lịch cùng gia đình vào cuối tuần tới."
+        }
+      ]
+    },
+    "ja_つもりで_187": {
+      "title": "～つもりで (〜tsumori de)",
+      "shortExplanation": "Diễn tả ý định, tâm thế hoặc quyết tâm khi thực hiện một hành động; 'với ý định...', 'với tâm thế như thể...'.",
+      "longExplanation": "Mẫu ngữ pháp '～つもりで' kết hợp với động từ ở thể từ điển, thể た hoặc 'Danh từ + の' để diễn tả tâm thế, quyết tâm hoặc mục đích khi làm một hành động nào đó ('với ý định...', 'với quyết tâm...'). Ngoài ra, nó còn mang nghĩa coi như một trạng thái nào đó dù thực tế không hẳn như vậy ('với tâm niệm như thể là...', 'xem như là...').",
+      "formation": "Động từ thể từ điển / Động từ thể た / Danh từ + の + つもりで",
+      "examples": [
+        {
+          "translation": "Tôi đang học tiếng Nhật với ý định sẽ sinh sống tại Nhật Bản."
+        },
+        {
+          "translation": "Anh ta đánh bạc với tâm thế sẵn sàng mất trắng tất cả."
+        },
+        {
+          "translation": "Tôi sẽ học hết sức mình với quyết tâm đỗ kỳ thi ngày mai."
+        },
+        {
+          "translation": "Anh ấy đã đi ngủ sớm với ý định sẽ thức dậy thật sớm."
+        }
+      ]
+    },
+    "ja_ではすまない_188": {
+      "title": "～ではすまない (〜dewa sumanai)",
+      "shortExplanation": "Diễn tả việc sự việc nghiêm trọng đến mức chỉ dừng lại ở cách giải quyết hay hành động đó là không thể xong xuôi; 'chỉ... thì không xong đâu', 'không thể chỉ... là được'.",
+      "longExplanation": "Mẫu ngữ pháp '～ではすまない' (N1) được dùng khi người nói khẳng định mạnh mẽ rằng một vấn đề hay hậu quả nghiêm trọng không thể chỉ giải quyết êm đẹp bằng một hành vi đơn giản hay biện pháp qua loa ở vế trước ('không thể chỉ... là xong'). Mẫu này thường kết hợp với 'だけ' thành '～だけではすまない', hàm ý bắt buộc phải chịu trách nhiệm lớn hơn, bồi thường thích đáng hoặc nhận hình phạt nghiêm khắc hơn.",
+      "formation": "Động từ thể từ điển / Danh từ / Tính từ + ではすまない (thường dùng: Danh từ / Động từ + だけではすまない)",
+      "examples": [
+        {
+          "translation": "Không thể chỉ xin lỗi suông là xong được. Phải có hành động cụ thể nào đó."
+        },
+        {
+          "translation": "Vấn đề này không thể chỉ thảo luận suông là xong. Cần phải có kế hoạch cụ thể."
+        },
+        {
+          "translation": "Thất bại của anh ta không thể chỉ nhắc nhở là xong. Anh ta phải chịu trách nhiệm cho việc đó."
+        },
+        {
+          "translation": "Sai lầm này không thể chỉ đền bù bằng tiền là xong. Để lấy lại lòng tin, phải thành tâm xin lỗi."
+        }
+      ]
+    },
+    "ja_とあって_189": {
+      "title": "～とあって (〜to atte)",
+      "shortExplanation": "Diễn tả nguyên nhân là một hoàn cảnh hay dịp đặc biệt dẫn đến một kết quả tất nhiên tương ứng; 'vì là dịp...', 'chính vì... nên...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とあって' (N1) được dùng để nêu lên một sự kiện, thời điểm hoặc hoàn cảnh đặc biệt khác ngày thường (như ngày khai trương, dịp nghỉ lễ, sinh nhật...), và chính vì bối cảnh đặc biệt đó nên kết quả hay tình trạng ở vế sau diễn ra là điều hoàn toàn đương nhiên ('vì đúng vào dịp...', 'do hoàn cảnh đặc biệt là...'). Thường dùng trong văn phong phóng sự, tường thuật hoặc miêu tả khách quan.",
+      "formation": "Danh từ / Động từ thể thông thường + とあって",
+      "examples": [
+        {
+          "translation": "Vì đang là kỳ nghỉ xuân nên công viên đông nghẹt trẻ em."
+        },
+        {
+          "translation": "Do đúng vào thời điểm trước kỳ thi nên thư viện chật ních học sinh, sinh viên."
+        },
+        {
+          "translation": "Vì là ngày khai trương nên trước cửa hàng có rất nhiều người xếp hàng."
+        },
+        {
+          "translation": "Vì đúng vào ngày sinh nhật anh ấy nên bạn bè đã lên kế hoạch tổ chức một bữa tiệc bất ngờ."
+        }
+      ]
+    },
+    "ja_とあれば_190": {
+      "title": "～とあれば (〜to areba)",
+      "shortExplanation": "Diễn tả điều kiện hay tiền đề đặc biệt mà nếu đúng như vậy thì đương nhiên sẽ làm hoặc sẵn sàng làm; 'nếu quả thực là...', 'nếu là vì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～とあれば' (N1) được dùng để đưa ra một điều kiện, hoàn cảnh hoặc tiền đề đặc biệt, ngụ ý rằng: nếu quả thực rơi vào tình huống hay điều kiện đó thì việc thực hiện hành động ở vế sau là hoàn toàn tất yếu hoặc bản thân sẵn sàng dốc lòng làm ('nếu là vì...', 'nếu đúng là... thì nhất định'). Thường biểu lộ quyết tâm cao độ hoặc phản ứng tự nhiên của con người trước một hoàn cảnh đặc thù.",
+      "formation": "Động từ thể thông thường / Tính từ đuôi い / Tính từ đuôi な (だ) / Danh từ (だ) + とあれば",
+      "examples": [
+        {
+          "translation": "Nếu quả thực là miễn phí thì ai cũng muốn sử dụng."
+        },
+        {
+          "translation": "Hễ bài hát này cất lên là anh ấy chắc chắn sẽ bắt đầu nhảy múa."
+        },
+        {
+          "translation": "Nếu ngày mai là ngày nghỉ thì đêm nay tôi có thể thức khuya được rồi."
+        },
+        {
+          "translation": "Nếu có anh ấy tham gia thì sự kiện này chắc chắn sẽ thành công."
+        }
+      ]
+    },
+    "ja_といえども_191": {
+      "title": "～といえども (〜to iedomo)",
+      "shortExplanation": "Diễn tả sự nhượng bộ trong phong cách trang trọng; 'dù là...', 'ngay cả... đi chăng nữa thì...'.",
+      "longExplanation": "Mẫu ngữ pháp '～といえども' (N1) là cách diễn đạt trang trọng bắt nguồn từ văn viết cổ điển (nghĩa là 'cho dù có nói là...'). Mẫu này thừa nhận một sự thật, thân phận, hoặc danh xưng hiển nhiên ở vế trước, nhưng vế sau lại đưa ra một thực tế tương phản hoặc ngoại lệ không như mong đợi ('dù có là... đi chăng nữa thì...', 'ngay cả... cũng không ngoại lệ'). Thường dùng sau danh từ chỉ chuyên gia, trẻ em, người có địa vị cao hoặc hoàn cảnh đặc thù.",
+      "formation": "Danh từ + といえども | Động từ thể thông thường + といえども | Tính từ + といえども",
+      "examples": [
+        {
+          "translation": "Dù anh ấy có là thiên tài đi chăng nữa thì cũng có lúc mắc sai lầm."
+        },
+        {
+          "translation": "Chiếc máy tính này dẫu là đồ mới nhưng vẫn có trục trặc."
+        },
+        {
+          "translation": "Dẫu đã là mùa xuân nhưng vẫn còn những ngày giá lạnh."
+        },
+        {
+          "translation": "Dù cô ấy là người tôi thích nhất đi chăng nữa thì điều gì tôi ghét vẫn cứ là ghét."
+        }
+      ]
+    },
+    "ja_といったらありはしない_192": {
+      "title": "～といったらありはしない (〜to ittara ari wa shinai)",
+      "shortExplanation": "Cảm thán mức độ cực kỳ cao của một sự việc, không từ ngữ nào tả xiết; 'không gì sánh bằng', 'hết chỗ nói', 'vô cùng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～といったらありはしない' (N1) là quán ngữ mang sắc thái cảm thán mạnh mẽ, dùng để biểu thị mức độ cực độ của một trạng thái hay tính chất, đến mức trên đời không có từ ngữ hay thước đo nào diễn tả hết được ('...đến mức không sao kể xiết', 'cực kỳ...'). Thường đi cùng danh từ phái sinh từ tính từ dạng '～さ' hoặc trực tiếp với tính từ.",
+      "formation": "Danh từ (thường là Tính từ đuôi さ) / Tính từ đuôi い / Tính từ đuôi な + といったらありはしない",
+      "examples": [
+        {
+          "translation": "Trình độ tiếng Anh giỏi giang của anh ấy quả thật không gì sánh nổi."
+        },
+        {
+          "translation": "Món tráng miệng này ngon đến mức không lời nào tả xiết."
+        },
+        {
+          "translation": "Đứa trẻ đó thông minh đến độ không ai bì kịp."
+        },
+        {
+          "translation": "Vẻ đẹp của cô ấy quả thực tuyệt trần, khó có gì sánh bằng."
+        }
+      ]
+    },
+    "ja_といったらありゃしない_193": {
+      "title": "～といったらありゃしない (〜to ittara arya shinai)",
+      "shortExplanation": "Cách nói khẩu ngữ nhấn mạnh mức độ tột cùng của sự việc; 'hết chỗ nói', 'vô cùng...', 'không tưởng tượng nổi'.",
+      "longExplanation": "Mẫu ngữ pháp '～といったらありゃしない' (N1) là dạng biến âm khẩu ngữ thân mật của '～といったらありはしない' ('ありは' biến âm thành 'ありゃ'). Mẫu câu này được dùng trong văn nói hàng ngày để cảm thán, nhấn mạnh mức độ của sự việc, cảm xúc đã lên tới đỉnh điểm, không gì diễn tả nổi ('...không biết chừng nào mà kể', 'cực kỳ...'). Thường bộc lộ cảm xúc khen ngợi hết lời hoặc than thở, ngán ngẩm.",
+      "formation": "Động từ thể thông thường / Tính từ đuôi い / Tính từ đuôi な (だ) / Danh từ (だ) + といったらありゃしない",
+      "examples": [
+        {
+          "translation": "Mì ramen của quán đó ngon đến mức hết chỗ nói."
+        },
+        {
+          "translation": "Tay nghề nấu ăn của cô ấy khéo léo đến mức không tưởng tượng nổi."
+        },
+        {
+          "translation": "Cái lạnh của mùa đông năm nay buốt giá đến mức khó lòng chịu nổi."
+        },
+        {
+          "translation": "Cuốn tiểu thuyết đó hấp dẫn đến mức không thể nào rời mắt được."
+        }
+      ]
+    },
+    "ja_といったらない_194": {
+      "title": "～といったらない (〜to ittara nai)",
+      "shortExplanation": "Nhấn mạnh mức độ cực kỳ cao của sự việc, không gì sánh bằng; 'không kể xiết', 'hết chỗ nói', 'cực kỳ...'.",
+      "longExplanation": "Mẫu ngữ pháp '～といったらない' (N1) được dùng để nhấn mạnh tính chất, cảm xúc hoặc trạng thái đã đạt đến đỉnh điểm, cao đến mức không còn lời lẽ nào có thể lột tả trọn vẹn ('...không biết chừng nào mà kể', 'cực độ...', 'không gì sánh nổi'). Xuất phát từ ý 'nếu phải nói về mức độ đó thì không có từ ngữ nào để tả'. Dùng được cho cả trạng thái tích cực lẫn tiêu cực.",
+      "formation": "Tính từ đuôi い / Tính từ đuôi な (だ) / Danh từ (だ) + といったらない",
+      "examples": [
+        {
+          "translation": "Hôm nay trời lạnh buốt không thể nào tả xiết."
+        },
+        {
+          "translation": "Món ăn cô ấy nấu ngon đến mức không gì sánh bằng."
+        },
+        {
+          "translation": "Đứa bé này thông minh đến độ không ai bì kịp."
+        },
+        {
+          "translation": "Tính lười biếng của anh ta quả thật là hết thuốc chữa."
+        }
+      ]
+    },
+    "ja_ときている_195": {
+      "title": "～ときている (〜to kite iru)",
+      "shortExplanation": "Nhấn mạnh một tình cảnh, điều kiện đặc thù (thường bất lợi) khiến kết quả sau đó là điều tất yếu; 'đã... lại còn...', 'vốn đã... nên...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ときている' (N1) được dùng để nêu bật một sự thật, hoàn cảnh hay tính chất đặc thù (thường mang tính tiêu cực hoặc bất lợi) làm tiền đề hiển nhiên, từ đó dẫn đến kết quả tất yếu hoặc tình thế khó xử ở vế sau ('vì vốn dĩ đã... nên không ngạc nhiên khi...', 'ngặt nỗi là...'). Thường đi kèm với các liên từ chỉ nguyên nhân, điều kiện tăng cấp như '～ので', '～だけに', '～から', '～うえに'.",
+      "formation": "Động từ thể thông thường / Tính từ đuôi い / Tính từ đuôi な (だ) / Danh từ (だ) + ときている",
+      "examples": [
+        {
+          "translation": "Vì công việc vốn dĩ đã vô cùng bận rộn nên tôi mãi chẳng thể nghỉ ngơi được."
+        },
+        {
+          "translation": "Chính vì tình hình kinh tế vốn đã ảm đạm nên công ty mới công bố sa thải hàng loạt."
+        },
+        {
+          "translation": "Giữa lúc đi du lịch lại bị mất trộm hành lý thì còn tâm trạng đâu mà tận hưởng chuyến đi nữa."
+        },
+        {
+          "translation": "Đã cận kề ngày thi rồi mà bài tập lại còn chất đống như núi, thật là khốn khổ."
+        }
+      ]
+    },
+    "ja_ところを_196": {
+      "title": "～ところを (〜tokoro wo)",
+      "shortExplanation": "Diễn tả một sự việc bất ngờ chen ngang đúng vào thời điểm hoặc hoàn cảnh không thuận lợi; 'đúng lúc đang... thì...', 'trong lúc... mà lại...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ところを' (N1) được dùng khi một sự việc hay hành vi bất ngờ chen ngang vào đúng thời điểm, bối cảnh hay trạng thái nhạy cảm ở vế trước ('đúng vào lúc đang...', 'trong lúc... thì bị...'). Thường mang sắc thái sự việc xen vào gây bất ngờ, bất tiện, khó chịu hoặc trớ trêu. Ngoài ra, trong văn giao tiếp trang trọng và thư từ, cấu trúc này còn dùng để mở lời xin lỗi hoặc cảm ơn một cách lịch sự khi đối phương bận rộn (như 'お忙しいところを...').",
+      "formation": "Động từ thể ている / Động từ thể ý chí + としている / Danh từ + の / Tính từ đuôi い / Tính từ đuôi な + な + ところを",
+      "examples": [
+        {
+          "translation": "Đúng lúc tôi đang xem phim thì bị mất điện, xung quanh tối đen như mực."
+        },
+        {
+          "translation": "Đúng lúc tôi đang ăn ngon lành thì anh ta giành mất sạch."
+        },
+        {
+          "translation": "Đúng lúc máy bay đang chuẩn bị cất cánh thì động cơ đột nhiên ngừng hoạt động."
+        },
+        {
+          "translation": "Đúng lúc cô ấy đang bực tức thì tôi lại lỡ miệng buông lời trêu đùa."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_ごとく_182": {
+      "title": "～ごとく (〜gotoku)",
+      "shortExplanation": "表示比喻或类似，具有浓厚的书面语及典雅色彩；“如同……”、“仿佛……一般”、“像……一样”。",
+      "longExplanation": "句型“～ごとく”源自古文助动词“ごとし（如し）”的连用形，属于庄重、典雅的书面文语，用于以某种事物作比喻，形象地修饰后续的动作或状态（“如同……一般”、“像……一样地……”）。后续常接续动词或形容词起副词性修饰作用。",
+      "formation": "动词普通形（＋かの） / 动词た形 ＋ ごとく ｜ 名词 ＋ （の） ＋ ごとく",
+      "examples": [
+        {
+          "translation": "他看上去仿佛像鸟儿一样在飞翔。"
+        },
+        {
+          "translation": "他熟睡着，宛如死去了一般。"
+        },
+        {
+          "translation": "她如同偶像一般受人崇拜。"
+        },
+        {
+          "translation": "他如疾风般奔跑飞驰。"
+        }
+      ]
+    },
+    "ja_こととて_183": {
+      "title": "～こととて (〜koto tote)",
+      "shortExplanation": "表示原因、理由，多用于正式书面语、书信或致歉语境；“因为……”、“由于……”。",
+      "longExplanation": "句型“～こととて”属于格调高雅庄重的书面文语，常见于公文、商务书信或正式交际中。该句型用于陈述引发后项结果或某种应对措施的原因与前提（“由于……的缘故”），后项常用于说明采取的慎重行动，或用于说明特殊原委以请求对方给予体谅、包涵与谅解。",
+      "formation": "动词普通形 ＋ こととて ｜ 名词 ＋ の（或 である） ＋ こととて ｜ な形容词 ＋ な（或 である） ＋ こととて ｜ い形容词 ＋ こととて",
+      "examples": [
+        {
+          "translation": "由于为了打赢官司打算投入全部家产，他便聘请了律师。"
+        },
+        {
+          "translation": "因明天有重要考试，我今晚打算早点休息。"
+        },
+        {
+          "translation": "由于该项目的成功关乎公司的未来，我必将全力以赴。"
+        },
+        {
+          "translation": "正因为他是公众人物，其个人隐私才更应当受到保护。"
+        }
+      ]
+    },
+    "ja_ずにすんだ_184": {
+      "title": "～ずにすんだ (〜zuni sunda)",
+      "shortExplanation": "表示幸好不必做某事，或庆幸避免了某种损失与糟糕局面；“免去了……”、“幸亏没……就解决了”。",
+      "longExplanation": "句型“～ずにすんだ”是“～ずにすむ”的过去时，由否定文语形式“ず”（相当于“ないで”）加上表示了结、解决的“済む”构成。常带有庆幸、宽慰的语气，表示原本预料中可能需要承担的劳苦、损失或不良后果，最终由于某种幸运的情况而得以避免，事情得以顺利解决（“幸免于……”、“幸亏没……就过去了”）。",
+      "formation": "动词ない形（去ない） ＋ ずにすんだ（「する」变为「せずにすんだ」）",
+      "examples": [
+        {
+          "translation": "幸好他没有酿成交通事故。"
+        },
+        {
+          "translation": "我幸免于做手术。"
+        },
+        {
+          "translation": "幸亏天没有下雨。"
+        },
+        {
+          "translation": "我免于缴纳罚款。"
+        }
+      ]
+    },
+    "ja_だろうとなかろうと_185": {
+      "title": "～だろうとなかろうと (〜darou to nakarou to)",
+      "shortExplanation": "表示无论前项情况存在与否，后项的态度或事实都不受影响；“无论是否……”、“不管……还是不……”。",
+      "longExplanation": "句型“～だろうとなかろうと”由推量形式“～だろうと”与否定推量“～なかろうと”对举构成，用于表达无论前述的正面或负面情况是否成立，说话人的决心、行动或既成事实都决不动摇或改变（“无论……还是不……都……”、“不管是否存在……都……”）。",
+      "formation": "动词普通形 / い形容词 / な形容词词干 / 名词 ＋ だろうとなかろうと",
+      "examples": [
+        {
+          "translation": "不管考试难还是不难，我都会拼尽全力。"
+        },
+        {
+          "translation": "无论他来还是不来，我们都会按时开始。"
+        },
+        {
+          "translation": "不管这份工作有趣与否，我都会继续做下去。"
+        },
+        {
+          "translation": "无论他赞成与否，我们都会推进下去。"
+        }
+      ]
+    },
+    "ja_つもりだ_186": {
+      "title": "～つもりだ (〜tsumori da)",
+      "shortExplanation": "表示说话人的主观打算、意图或计划；“打算……”、“准备……”。",
+      "longExplanation": "句型“～つもりだ”接在动词辞书形或ない形之后，用于表达说话人自身已决定好的主观打算、计划或实施某行为的意愿（“打算做……”、“不打算做……”）。主语通常为第一人称；若表示第三人称的打算，通常需后续“～と言っている”或“～ようだ”等引述或推测表达。",
+      "formation": "动词辞书形 / 动词ない形 ＋ つもりだ（或 つもりです）",
+      "examples": [
+        {
+          "translation": "我打算明天早点起床。"
+        },
+        {
+          "translation": "我打算学习日语。"
+        },
+        {
+          "translation": "他说过打算去留学。"
+        },
+        {
+          "translation": "我打算下周末和家人去旅行。"
+        }
+      ]
+    },
+    "ja_つもりで_187": {
+      "title": "～つもりで (〜tsumori de)",
+      "shortExplanation": "表示带着某种意图、心态或决心去做某事；“抱着……的打算”、“怀着……的心态”。",
+      "longExplanation": "句型“～つもりで”接在动词辞书形、た形或“名词＋の”之后，用于表明当事人实施某一行为时所抱有的意向、心态或坚定决心（“抱着……的打算”、“下定……的决心”）。此外，也可以表示现实并非完全如此，但心理上姑且当作如此来采取行动（“权当……一样地”）。",
+      "formation": "动词辞书形 / 动词た形 / 名词 ＋ の ＋ つもりで",
+      "examples": [
+        {
+          "translation": "我怀着将来在日本定居的打算学习日语。"
+        },
+        {
+          "translation": "他抱着倾家荡产的觉悟孤注一掷去赌博。"
+        },
+        {
+          "translation": "我怀着明天一定要考过的决心拼命学习。"
+        },
+        {
+          "translation": "他怀着明天早起的心思早早地睡下了。"
+        }
+      ]
+    },
+    "ja_ではすまない_188": {
+      "title": "～ではすまない (〜dewa sumanai)",
+      "shortExplanation": "表示事态严重，仅凭表面敷衍的做法或程度绝不能善罢甘休；“光……可解决不了”、“单凭……是交代不过去的”。",
+      "longExplanation": "句型“～ではすまない”接在动词辞书形、名词等之后（常与“だけ”呼应成“～だけではすまない”），用于强烈断定事态性质严重，仅靠简单的口头道歉、口头提醒或轻微赔偿绝对无法了结或获得原谅（“单单……是过不了关的”、“绝不是……就能解决的”）。暗示当事人必须承担更沉重的责任、受到处分或付出更大代价。",
+      "formation": "动词辞书形 / 名词 / 形容词 ＋ ではすまない（常与「だけ」连用，构成「～だけではすまない」）",
+      "examples": [
+        {
+          "translation": "光是口头道歉是解决不了问题的，必须采取实质行动。"
+        },
+        {
+          "translation": "这个问题绝非单凭议论就能了结，必须有具体的计划。"
+        },
+        {
+          "translation": "他的失误绝不是口头提醒一下就能完事的，他应当承担相应责任。"
+        },
+        {
+          "translation": "这次过失绝不是赔钱就能了事的。为了挽回信赖，必须由衷地赔罪。"
+        }
+      ]
+    },
+    "ja_とあって_189": {
+      "title": "～とあって (〜to atte)",
+      "shortExplanation": "表示处于某种特殊的场合或时期，因而自然出现了后项相应的情形；“正值……”、“由于处于……的特殊时期”。",
+      "longExplanation": "句型“～とあって”接在名词或动词普通形之后，用于提出一个引人注目的特殊时机、事件或背景（如节假日、新店开张等），后项随之描述在该特殊背景下顺理成章出现的繁荣景象或必然结果（“正因为是……所以……”、“由于正值……特殊时机”）。多用于新闻报道或客观叙述。",
+      "formation": "名词 / 动词普通形 ＋ とあって",
+      "examples": [
+        {
+          "translation": "正值春假，公园里挤满了小孩子们。"
+        },
+        {
+          "translation": "正逢考前时期，图书馆里满是自习的学生。"
+        },
+        {
+          "translation": "因为是开业首日，那家店门前排起了长队。"
+        },
+        {
+          "translation": "正逢他的生日，朋友们策划了一场惊喜派对。"
+        }
+      ]
+    },
+    "ja_とあれば_190": {
+      "title": "～とあれば (〜to areba)",
+      "shortExplanation": "表示如果是出于某种特殊条件或前提，就必定会采取后项行动；“如果说是为了……”、“既然是……的话”。",
+      "longExplanation": "句型“～とあれば”用于提出一个特殊的前提假设，表示如果确实存在该特殊情况或前提，人们自然就会产生后项的行动、强烈愿望或决心（“如果是……的话，那肯定……”、“既然是……就必定会……”）。常用于表达为了达成某个特殊目的甘愿付出一切，或者某种条件触发的必然反应。",
+      "formation": "动词普通形 / い形容词 / な形容词（词干 / だ） / 名词（だ） ＋ とあれば",
+      "examples": [
+        {
+          "translation": "如果说是免费的话，谁都想要利用一下。"
+        },
+        {
+          "translation": "只要播放这首曲子，他就必定会跳起舞来。"
+        },
+        {
+          "translation": "既然明天是休息日，今晚就可以熬夜熬得很晚了。"
+        },
+        {
+          "translation": "只要有他参加，这场活动肯定会大获成功的。"
+        }
+      ]
+    },
+    "ja_といえども_191": {
+      "title": "～といえども (〜to iedomo)",
+      "shortExplanation": "表示转折或让步，具有庄重的书面语色彩；“虽说……”、“即使是……也……”。",
+      "longExplanation": "句型“～といえども”源自古典文语“と言へども”，属于格调庄重的书面文语。接在名词、动词或形容词之后，用于承认前项所具备的事实、资格或特殊身份，但后项紧接着指出并不符合常理期待的转折事实（“即便是……也……”、“虽说确实是……但……”）。常用于强调即使是专家、名流或特殊时期，也不能超脱于常理之外。",
+      "formation": "名词 / 动词普通形 / 形容词 ＋ といえども",
+      "examples": [
+        {
+          "translation": "虽说他是天才，但也有失手犯错的时候。"
+        },
+        {
+          "translation": "这台电脑虽说是崭新的，但依然存在故障。"
+        },
+        {
+          "translation": "虽说已是春天，但依然有寒冷的天气。"
+        },
+        {
+          "translation": "哪怕她是我最钟爱的人，讨厌的事情我依旧无法接受。"
+        }
+      ]
+    },
+    "ja_といったらありはしない_192": {
+      "title": "～といったらありはしない (〜to ittara ari wa shinai)",
+      "shortExplanation": "极度强调事物的程度深重，到了无法用语言形容的地步；“……得不得了”、“无可比拟”、“难以形容”。",
+      "longExplanation": "句型“～といったらありはしない”是表示强烈感叹的强调句型，字面意为“如果要说起那份……，根本无处寻得”，意指其性质或状态之甚世所罕见，已达到无以复加的地步（“……得无以复加”、“别提有多……了”）。前项多接“形容词词干＋さ”等形式，可用于赞美，也可用于表达反感或震惊。",
+      "formation": "名词（常为形容词词干＋さ） / い形容词 / な形容词 ＋ といったらありはしない",
+      "examples": [
+        {
+          "translation": "他英语水平之高超，简直无以复加。"
+        },
+        {
+          "translation": "这道甜点的美味程度简直妙不可言。"
+        },
+        {
+          "translation": "那孩子的聪明劲儿真是无人能及。"
+        },
+        {
+          "translation": "她的美貌绝伦，简直无可比拟。"
+        }
+      ]
+    },
+    "ja_といったらありゃしない_193": {
+      "title": "～といったらありゃしない (〜to ittara arya shinai)",
+      "shortExplanation": "口语中极度强调事物的夸张程度；“别提有多……了”、“简直……得要命”。",
+      "longExplanation": "句型“～といったらありゃしない”是“～といったらありはしない”在口语中的约音形式（“ありは”音变为“ありゃ”）。主要用于日常口语会话中，强烈感叹某种状态或程度达到了极致（“别提多……了”、“真是……得不得了”）。多伴随说话人赞叹、惊讶、嫌弃或不胜烦扰等强烈的口头情绪。",
+      "formation": "动词普通形 / い形容词 / な形容词（词干 / だ） / 名词（だ） ＋ といったらありゃしない",
+      "examples": [
+        {
+          "translation": "那家店的拉面别提有多好吃了。"
+        },
+        {
+          "translation": "她的厨艺好得简直没话说。"
+        },
+        {
+          "translation": "这个冬天的严寒真是冷得让人吃不消。"
+        },
+        {
+          "translation": "那部小说简直有趣得不得了。"
+        }
+      ]
+    },
+    "ja_といったらない_194": {
+      "title": "～といったらない (〜to ittara nai)",
+      "shortExplanation": "强调程度达到了难以言表的极限；“别提有多……了”、“……得不得了”。",
+      "longExplanation": "句型“～といったらない”接在形容词或名词之后，字面意为“如果要说起那份……，连用以形容的言辞都没有”，用于极度强调某种感觉、情绪或状态达到了难以言表的极点（“别提多……了”、“真是……到了极点”）。无论用于喜悦、赞叹等正面情感，还是用于严寒、懒散等负面状态，都能生动传达说话人的强烈震撼。",
+      "formation": "い形容词 / な形容词（だ） / 名词（だ） ＋ といったらない",
+      "examples": [
+        {
+          "translation": "今天真是冷得要命。"
+        },
+        {
+          "translation": "她做的饭菜之美味，简直妙不可言。"
+        },
+        {
+          "translation": "这孩子简直聪明绝顶。"
+        },
+        {
+          "translation": "他的懒散劲儿真是让人没眼看。"
+        }
+      ]
+    },
+    "ja_ときている_195": {
+      "title": "～ときている (〜to kite iru)",
+      "shortExplanation": "突出强调某种显而易见或极端的状况（多为不利局面），作为后项必然结果的前提；“本就……”、“正因为……”。",
+      "longExplanation": "句型“～ときている”用于特意指出某种显著的状况、属性或特殊事实作为前提条件（通常带有负面消极、棘手无奈的语感），以此引出后项必然发生的困局或理所当然的举动（“本来就……偏偏又……”、“正因为情况已经……难怪会……”）。句尾常与“～ので”、“～だけに”、“～から”、“～うえに”等接续助词呼应使用。",
+      "formation": "动词普通形 / い形容词 / な形容词（词干 / だ） / 名词（だ） ＋ ときている",
+      "examples": [
+        {
+          "translation": "本来工作就极其繁忙，所以根本休不了假。"
+        },
+        {
+          "translation": "正因为经济形势本就萧条，公司才宣布了大规模裁员。"
+        },
+        {
+          "translation": "偏偏在旅途中行李被盗了，哪里还有心思享受旅行。"
+        },
+        {
+          "translation": "本就临近考试，偏又作业堆积如山，真是苦不堪言。"
+        }
+      ]
+    },
+    "ja_ところを_196": {
+      "title": "～ところを (〜tokoro wo)",
+      "shortExplanation": "表示正处于某种动作进行中、特定状态或尴尬关头时，发生了不凑巧的干扰或意外；“正当……的时候”、“在……之际却偏偏……”。",
+      "longExplanation": "句型“～ところを”用于表明前项正处于进行中的动作、特定场面或敏感时刻，而后项突然发生意外事件或行为介入，使得时机显得极不凑巧、令人扫兴或充满戏剧性转折（“正……的时候，却突然……”、“在……关头偏偏……”）。在商务礼仪与社交用语中，也常用于在对方繁忙之际表示客套致歉（如“お忙しいところを”在您百忙之中打扰）。",
+      "formation": "动词ている形 / 动词意志形＋としている / 名词＋の / い形容词 / な形容词＋な ＋ ところを",
+      "examples": [
+        {
+          "translation": "正看着电影的时候突然停电，四周一片漆黑。"
+        },
+        {
+          "translation": "我正吃得津津有味的时候，却被他一把全抢走了。"
+        },
+        {
+          "translation": "飞机正要起飞的紧要关头，引擎却突然熄火了。"
+        },
+        {
+          "translation": "偏偏在她正生气的时候，我却不合时宜地开了个玩笑。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_ごとく_182": {
+      "title": "～ごとく (〜gotoku)",
+      "shortExplanation": "비유나 유사성을 나타내는 격식 있는 문어적 표현으로, '마치 ~처럼', '~하듯이'라는 뜻입니다.",
+      "longExplanation": "'～ごとく'는 고어 조동사 'ごとし(如し)'의 연용형에서 유래한 격식 높은 문어체 표현입니다. 어떤 동작이나 상태를 다른 대상에 빗대어 비유적으로 묘사할 때 사용되며('마치 ~처럼', '~와 같이'), 주로 뒤이어 오는 동사나 형용사를 부사적으로 수식합니다.",
+      "formation": "동사 보통형(+かの) / 동사 과거형(た형) ＋ ごとく ｜ 명사 ＋ (の) ＋ ごとく",
+      "examples": [
+        {
+          "translation": "그는 마치 새처럼 날고 있는 것처럼 보였다."
+        },
+        {
+          "translation": "그는 죽은 듯이 깊이 잠들어 있었다."
+        },
+        {
+          "translation": "그녀는 아이돌처럼 추앙받고 있다."
+        },
+        {
+          "translation": "그는 바람처럼 내달렸다."
+        }
+      ]
+    },
+    "ja_こととて_183": {
+      "title": "～こととて (〜koto tote)",
+      "shortExplanation": "격식 있는 문어체에서 사정이나 원인을 나타내며, '~이므로', '~한 까닭에'라는 뜻입니다.",
+      "longExplanation": "'～こととて'는 격식 있는 문어체나 비즈니스 서한 등에서 주로 사용되며, 어떤 행동이나 판단의 배경이 되는 특별한 이유나 사정을 나타내는 N1 문형입니다('~이기에', '~한 탓에'). 특히 상대방에게 부득이한 사정을 설명하고 양해나 용서를 구할 때, 혹은 중대한 판단을 내릴 때 자주 쓰입니다.",
+      "formation": "동사 보통형 ＋ こととて ｜ 명사 ＋ の(또는 である) ＋ こととて ｜ な형용사 ＋ な(또는 である) ＋ こととて ｜ い형용사 ＋ こととて",
+      "examples": [
+        {
+          "translation": "그는 재판에서 이기기 위해 전 재산을 바치기로 한 터라, 변호사에게 의뢰했다."
+        },
+        {
+          "translation": "내일 중요한 시험이 있는 까닭에, 오늘 밤은 일찍 자려고 합니다."
+        },
+        {
+          "translation": "이 프로젝트의 성공이 회사의 미래를 좌우하는 일인 만큼, 전력을 다하겠습니다."
+        },
+        {
+          "translation": "그가 유명인인 만큼 사생활은 마땅히 보호받아야 한다."
+        }
+      ]
+    },
+    "ja_ずにすんだ_184": {
+      "title": "～ずにすんだ (〜zuni sunda)",
+      "shortExplanation": "번거로운 일이나 불행한 사태를 겪지 않고 무사히 넘어갔음을 나타내며, '다행히 ~하지 않고 끝났다', '~을 면했다'라는 뜻입니다.",
+      "longExplanation": "'～ずにすんだ'는 '～ずにすむ'의 과거형으로, 부정 표현 '～ず(に)'(～ないで에 해당)와 문제가 해결됨을 뜻하는 '済む'가 결합한 N1 문형입니다. 겪지 않아도 될 번거로움이나 손실, 고통 등을 겪지 않고 다행스럽게 해결되어 안도하는 뉘앙스를 나타냅니다('다행히 ~하지 않고 넘어갔다', '~을 면할 수 있었다').",
+      "formation": "동사 ない형(ない 탈락) ＋ ずにすんだ (「する」는 「せずにすんだ」)",
+      "examples": [
+        {
+          "translation": "그는 사고를 일으키지 않고 무사히 넘어갔다."
+        },
+        {
+          "translation": "나는 다행히 수술을 받지 않고 끝났다."
+        },
+        {
+          "translation": "다행히 비가 내리지 않고 지나갔다."
+        },
+        {
+          "translation": "벌금을 내지 않고 해결되었다."
+        }
+      ]
+    },
+    "ja_だろうとなかろうと_185": {
+      "title": "～だろうとなかろうと (〜darou to nakarou to)",
+      "shortExplanation": "앞의 조건이 긍정이든 부정이든 관계없이 뒤의 행동이나 태도가 변함없음을 나타내며, '~이든 아니든', '~하든 안 하든 간에'라는 뜻입니다.",
+      "longExplanation": "'～だろうとなかろうと'는 추측의 '～だろうと'와 부정 추측의 '～なかろうと'를 나란히 제시하여, 전항의 사태나 조건이 성립하든 성립하지 않든 간에 화자의 결심, 방침, 사실에는 아무런 영향을 주지 않음을 단호하게 나타내는 N1 문형입니다('~이든 아니든 간에', '~하든 안 하든 상관없이').",
+      "formation": "동사 보통형 / い형용사 / な형용사 / 명사 ＋ だろうとなかろうと",
+      "examples": [
+        {
+          "translation": "시험이 어렵든 어렵지 않든 전력을 다해 임하겠습니다."
+        },
+        {
+          "translation": "그가 오든 안 오든 우리는 시작하겠습니다."
+        },
+        {
+          "translation": "이 일이 재미있든 없든 나는 계속할 것입니다."
+        },
+        {
+          "translation": "그가 찬성하든 안 하든 우리는 진행하겠습니다."
+        }
+      ]
+    },
+    "ja_つもりだ_186": {
+      "title": "～つもりだ (〜tsumori da)",
+      "shortExplanation": "화자의 의도나 계획을 나타내며, '~할 생각이다', '~할 계획이다'라는 뜻입니다.",
+      "longExplanation": "'～つもりだ'는 동사의 사전형이나 부정형(ない형)에 접속하여, 어떤 행동을 하거나 하지 않겠다는 화자의 주관적인 의도나 계획, 작정을 나타내는 기본 문형입니다('~할 셈이다', '~할 생각이다'). 주어가 3인칭일 때는 '～と言っている'나 '～らしい' 등의 전언·추측 표현을 덧붙여 사용합니다.",
+      "formation": "동사 사전형 / 동사 ない형 ＋ つもりだ(또는 つもりです)",
+      "examples": [
+        {
+          "translation": "내일은 일찍 일어날 생각입니다."
+        },
+        {
+          "translation": "저는 일본어를 공부할 생각입니다."
+        },
+        {
+          "translation": "그는 유학을 갈 생각이라고 말했다."
+        },
+        {
+          "translation": "나는 다음 주말에 가족과 여행을 갈 작정이다."
+        }
+      ]
+    },
+    "ja_つもりで_187": {
+      "title": "～つもりで (〜tsumori de)",
+      "shortExplanation": "어떤 의도나 마음가짐, 각오를 품고 행동함을 나타내며, '~할 작정으로', '~할 생각으로'라는 뜻입니다.",
+      "longExplanation": "'～つもりで'는 동사의 사전형이나 과거형(た형), 또는 '명사+の'에 접속하여, 어떤 행위를 행할 때 품은 구체적인 의도나 심적 각오, 태도를 나타내는 문형입니다('~할 셈으로', '~할 마음가짐으로'). 또한 실제로는 그렇지 않더라도 심리적으로 그렇게 간주하고 행동할 때도 쓰입니다('~한 셈 치고').",
+      "formation": "동사 사전형 / 동사 과거형(た형) / 명사 ＋ の ＋ つもりで",
+      "examples": [
+        {
+          "translation": "나는 일본에서 살 생각으로 일본어를 공부하고 있습니다."
+        },
+        {
+          "translation": "그는 모든 것을 잃을 각오로 도박을 했습니다."
+        },
+        {
+          "translation": "내일 시험에 꼭 합격하겠다는 각오로 열심히 공부하겠습니다."
+        },
+        {
+          "translation": "그는 일찍 일어날 생각으로 일찍 잠자리에 들었습니다."
+        }
+      ]
+    },
+    "ja_ではすまない_188": {
+      "title": "～ではすまない (〜dewa sumanai)",
+      "shortExplanation": "사태가 심각하여 단순한 조치나 행동만으로는 결코 해결되거나 용서받을 수 없음을 나타내며, '~만으로는 끝나지 않는다', '~로 끝날 문제가 아니다'라는 뜻입니다.",
+      "longExplanation": "'～ではすまない'는 동사 사전형이나 명사 등에 접속하여(흔히 '～だけではすまない'의 형태), 사태의 심각성 때문에 전항의 가벼운 대처나 사과만으로는 결코 문제를 무마할 수 없음을 강조하는 N1 문형입니다('~만으로는 해결되지 않는다', '~하는 것으로는 어림없다'). 반드시 더 중대한 책임을 지거나 합당한 대가를 치러야 함을 시사합니다.",
+      "formation": "동사 사전형 / 명사 / 형용사 ＋ ではすまない (주로 '～だけではすまない' 형태로 사용)",
+      "examples": [
+        {
+          "translation": "단지 사과하는 것만으로는 끝나지 않는다. 무언가 행동을 취해야 한다."
+        },
+        {
+          "translation": "이 문제는 토론만으로는 해결되지 않는다. 구체적인 계획이 필요하다."
+        },
+        {
+          "translation": "그의 실패는 주의를 주는 것만으로는 끝나지 않는다. 그는 그 책임을 져야 한다."
+        },
+        {
+          "translation": "이번 실수는 돈만으로는 해결되지 않는다. 신뢰를 되찾기 위해 진심으로 사죄해야 한다."
+        }
+      ]
+    },
+    "ja_とあって_189": {
+      "title": "～とあって (〜to atte)",
+      "shortExplanation": "특별한 사정이나 시기이기에 당연히 그에 걸맞은 상황이 일어남을 나타내며, '~라는 특별한 상황이라', '~인지라'라는 뜻입니다.",
+      "longExplanation": "'～とあって'는 명사나 보통형에 접속하여, 평소와 다른 특별한 계기나 사정(봄방학, 개업일 등)을 이유로 들어, 그에 따른 특별한 현상이나 당연한 결과가 수반됨을 나타내는 N1 문형입니다('~라는 특별한 상황이어서', '~인 까닭에'). 주로 객관적인 상황 묘사나 기사문 등에서 널리 쓰입니다.",
+      "formation": "명사 / 동사 보통형 ＋ とあって",
+      "examples": [
+        {
+          "translation": "봄방학이라 공원은 아이들로 가득 차 있다."
+        },
+        {
+          "translation": "시험 직전인지라 도서관은 학생들로 붐비고 있다."
+        },
+        {
+          "translation": "개업 첫날인지라 그 가게에는 많은 사람이 줄을 서 있었다."
+        },
+        {
+          "translation": "그의 생일인지라 친구들은 깜짝 파티를 계획했다."
+        }
+      ]
+    },
+    "ja_とあれば_190": {
+      "title": "～とあれば (〜to areba)",
+      "shortExplanation": "그러한 특별한 조건이나 상황이라면 당연히 그렇게 하겠다는 뜻으로, '~라면', '~라고 한다면'이라는 뜻입니다.",
+      "longExplanation": "'～とあれば'는 특별한 상황이나 전제 조건을 제시하여, 만약 그러한 사정이라면 마땅히 그렇게 행동하거나 기꺼이 그 일에 동참하겠다는 각오와 의지를 나타내는 N1 문형입니다('~하는 일이라면', '~라고 한다면 기꺼이'). 특정 조건이 갖추어졌을 때 일어나는 자연스러운 반응이나 강력한 결의를 드러냅니다.",
+      "formation": "동사 보통형 / い형용사 / な형용사(だ) / 명사(だ) ＋ とあれば",
+      "examples": [
+        {
+          "translation": "무료라고 한다면 누구라도 이용하고 싶어 할 것입니다."
+        },
+        {
+          "translation": "이 노래가 흘러나온다면 그는 반드시 춤을 추기 시작할 것입니다."
+        },
+        {
+          "translation": "내일이 휴일이라고 한다면 오늘 밤은 늦게까지 깨어 있을 수 있습니다."
+        },
+        {
+          "translation": "그가 참가한다고 한다면 이 행사는 분명 성공할 것입니다."
+        }
+      ]
+    },
+    "ja_といえども_191": {
+      "title": "～といえども (〜to iedomo)",
+      "shortExplanation": "격식 있는 양보 표현으로, '비록 ~라 할지라도', '~라 하더라도'라는 뜻입니다.",
+      "longExplanation": "'～といえども'는 고어 표현에서 유래한 격식 높은 문어체 문형으로, 전항의 특별한 자격이나 명칭, 사실을 인정하면서도, 그 통념에서 당연히 기대되는 바와는 달리 예외적인 현실이나 반대 상황이 존재함을 나타내는 N1 문형입니다('비록 ~라 해도', '아무리 ~라 할지라도').",
+      "formation": "명사 / 동사 보통형 / 형용사 ＋ といえども",
+      "examples": [
+        {
+          "translation": "그가 비록 천재라 할지라도 실수를 할 때가 있습니다."
+        },
+        {
+          "translation": "이 컴퓨터가 비록 새것이라 할지라도 문제는 있습니다."
+        },
+        {
+          "translation": "비록 봄이라 해도 아직 추운 날이 있습니다."
+        },
+        {
+          "translation": "그녀가 비록 내가 가장 좋아하는 사람이라 할지라도 싫은 것은 싫습니다."
+        }
+      ]
+    },
+    "ja_といったらありはしない_192": {
+      "title": "～といったらありはしない (〜to ittara ari wa shinai)",
+      "shortExplanation": "어떤 정도가 말로 다 표현할 수 없을 정도로 극심함을 나타내며, '이루 말할 수 없다', '이만저만이 아니다'라는 뜻입니다.",
+      "longExplanation": "'～といったらありはしない'는 어떤 성질이나 상태의 정도가 너무나 극단적이어서 세상 어떤 말로도 다 표현할 길이 없음을 감탄과 함께 강조하는 N1 문형입니다('~하기 짝이 없다', '~하기가 이를 데 없다'). 주로 '형용사 어간+さ' 형태의 명사나 형용사에 결합하여 극도의 놀라움이나 감탄을 나타냅니다.",
+      "formation": "명사(주로 형용사 어간＋さ) / い형용사 / な형용사 ＋ といったらありはしない",
+      "examples": [
+        {
+          "translation": "그의 뛰어난 영어 실력은 이루 말할 수가 없다."
+        },
+        {
+          "translation": "이 디저트의 맛이란 정말이지 형언할 수 없을 정도로 훌륭하다."
+        },
+        {
+          "translation": "그 아이의 영특함이란 이루 다 말할 수 없을 지경이다."
+        },
+        {
+          "translation": "그녀의 아름다움은 그야말로 눈이 부실 정도이다."
+        }
+      ]
+    },
+    "ja_といったらありゃしない_193": {
+      "title": "～といったらありゃしない (〜to ittara arya shinai)",
+      "shortExplanation": "구어체에서 어떤 상태의 극심함을 강조하는 표현으로, '이루 말할 수 없다', '말도 못하게 ~하다'라는 뜻입니다.",
+      "longExplanation": "'～といったらありゃしない'는 '～といったらありはしない'의 구어적 축약형(ありは -> ありゃ)으로, 일상 회화에서 어떤 상태나 성질의 정도가 상상을 뛰어넘을 정도로 대단함을 감탄을 담아 강조할 때 쓰는 N1 문형입니다('말도 못하게 ~하다', '~하기가 이루 다 말할 수 없다'). 극찬이나 감탄은 물론 불평, 한탄 등 화자의 격한 감정을 나타낼 때 두루 쓰입니다.",
+      "formation": "동사 보통형 / い형용사 / な형용사(だ) / 명사(だ) ＋ といったらありゃしない",
+      "examples": [
+        {
+          "translation": "그 집 라멘은 말도 못하게 맛있다."
+        },
+        {
+          "translation": "그녀의 요리 솜씨는 기가 막히게 훌륭하다."
+        },
+        {
+          "translation": "이번 겨울 추위는 견디기 힘들 정도로 혹독하다."
+        },
+        {
+          "translation": "그 소설은 둘이 읽다 하나 죽어도 모를 만큼 재미있다."
+        }
+      ]
+    },
+    "ja_といったらない_194": {
+      "title": "～といったらない (〜to ittara nai)",
+      "shortExplanation": "어떤 정도나 감정이 극에 달해 말로 다 표현할 수 없음을 나타내며, '~하기 짝이 없다', '이루 말할 수 없다'라는 뜻입니다.",
+      "longExplanation": "'～といったらない'는 형용사나 명사에 접속하여, 어떤 성질이나 상태, 감정의 정도가 극도에 달하여 말로는 도저히 다 표현할 수 없을 지경임을 나타내는 N1 문형입니다('말할 수 없이 ~하다', '그지없다'). '그 정도를 말하자면 끝이 없다(말이 안 나온다)'는 뉘앙스로, 기쁨이나 칭찬뿐만 아니라 극심한 추위, 게으름 등 부정적인 상황을 강조할 때도 널리 쓰입니다.",
+      "formation": "い형용사 / な형용사(だ) / 명사(だ) ＋ といったらない",
+      "examples": [
+        {
+          "translation": "오늘은 말도 못하게 춥다."
+        },
+        {
+          "translation": "그녀의 요리는 더할 나위 없이 맛있다."
+        },
+        {
+          "translation": "이 아이의 똑똑함은 정말이지 혀를 내두를 정도이다."
+        },
+        {
+          "translation": "그의 게으름은 이루 말할 수가 없다."
+        }
+      ]
+    },
+    "ja_ときている_195": {
+      "title": "～ときている (〜to kite iru)",
+      "shortExplanation": "두드러진 상황이나 불리한 조건을 부각하여 당연한 결과를 이끌어내며, '원래 ~한 데다가', '~인 상황이다 보니'라는 뜻입니다.",
+      "longExplanation": "'～ときている'는 어떤 두드러진 상태나 특성, 불리한 상황을 전제로 내세워, '사정이 이러하니 뒤의 결과가 일어나는 것도 당연하다'라는 뉘앙스를 나타내는 N1 문형입니다('원래 ~한 형편이다 보니', '~한 처지라서'). 대체로 부정적이거나 곤란한 맥락에서 쓰이며, '～ので', '～だけに', '～から', '～うえに' 등과 호응하여 원인이나 가중되는 사정을 강조합니다.",
+      "formation": "동사 보통형 / い형용사 / な형용사(だ) / 명사(だ) ＋ ときている",
+      "examples": [
+        {
+          "translation": "일이 워낙 바쁜 상황이다 보니 도무지 휴가를 낼 수가 없습니다."
+        },
+        {
+          "translation": "경기가 워낙 나쁜 상황인 만큼 회사가 대규모 감원을 발표했다."
+        },
+        {
+          "translation": "여행지에서 짐을 도난당한 처지이니 여행을 즐길 기분이 전혀 아니다."
+        },
+        {
+          "translation": "시험이 코앞인 데다가 과제도 산더미처럼 많아서 정말 힘들다."
+        }
+      ]
+    },
+    "ja_ところを_196": {
+      "title": "～ところを (〜tokoro wo)",
+      "shortExplanation": "어떤 동작이 진행 중이거나 특정한 상황에 있을 때 예기치 못한 일이 끼어듦을 나타내며, '한창 ~하던 차에', '~인 상황인데도'라는 뜻입니다.",
+      "longExplanation": "'～ところを'는 어떤 행위가 한창 진행 중이거나 특정한 상황·심리 상태에 놓여 있는 바로 그 타이밍에, 얄궂게도 다른 사건이 끼어들거나 방해를 받는 모습을 나타내는 N1 문형입니다('한창 ~하고 있을 때', '~인 와중에'). 시기상 부적절하거나 곤란한 일이 불쑥 일어났음을 강조할 때 쓰이며, 비즈니스 인사말(お忙しいところを 등)에서 상대방의 상황을 배려하여 양해를 구할 때도 널리 활용됩니다.",
+      "formation": "동사 ている형 / 동사 의지형＋としている / 명사＋の / い형용사 / な형용사＋な ＋ ところを",
+      "examples": [
+        {
+          "translation": "한창 영화를 보고 있던 참에 정전이 되어 온통 깜깜해졌다."
+        },
+        {
+          "translation": "맛있게 먹고 있던 와중에 그가 전부 가로채 가 버렸다."
+        },
+        {
+          "translation": "비행기가 막 이륙하려던 참에 갑자기 엔진이 멈춰 섰다."
+        },
+        {
+          "translation": "그녀가 화를 내고 있는 와중에 나는 엉뚱하게 농담을 던져 버렸다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_ごとく_182": {
+      "title": "～ごとく (〜gotoku)",
+      "shortExplanation": "比喩を表す改まった文語的表現で、「まるで〜のように」「〜のごとく」という意味を表します。",
+      "longExplanation": "「～ごとく」は、文語助動詞「ごとし（如し）」の連用形で、改まった硬い文章語として用いられます。ある動作や状態を他のものに例えて比喩的に修飾し、「まるで〜のように」「〜の通りに」という意味を表します。副詞として後続の動詞や形容詞などを修飾します。",
+      "formation": "動詞普通形（＋かの） / 動詞た形 ＋ ごとく ｜ 名詞 ＋ （の） ＋ ごとく",
+      "examples": [
+        {
+          "translation": "彼はまるで鳥のように飛んでいるかのように見えた。"
+        },
+        {
+          "translation": "彼はまるで死んだかのように深く眠り込んでいた。"
+        },
+        {
+          "translation": "彼女はまるでアイドルのように人々から崇拝されている。"
+        },
+        {
+          "translation": "彼は疾風のごとく素早く駆け抜けた。"
+        }
+      ]
+    },
+    "ja_こととて_183": {
+      "title": "～こととて (〜koto tote)",
+      "shortExplanation": "改まった文章語で理由や事情を表し、「〜のことなので」「〜だから」という意味を表します。",
+      "longExplanation": "「～こととて」は、手紙や公的な文章などで用いられる格調高い文語的表現です。「〜という事情があるため」「〜のことゆえ」と原因や前提となる事情を述べ、後続節ではその事情に配慮した行動をとったり、相手に対して理解や容赦、配慮を求めたりする文脈で多く用いられます。",
+      "formation": "動詞普通形 ＋ こととて ｜ 名詞 ＋ の（または である） ＋ こととて ｜ な形容詞 ＋ な（または である） ＋ こととて ｜ い形容詞 ＋ こととて",
+      "examples": [
+        {
+          "translation": "彼は裁判に勝つために全財産を投じる覚悟であることから、弁護士に依頼した。"
+        },
+        {
+          "translation": "明日は重要な試験を控えているため、今夜は早く就寝することにします。"
+        },
+        {
+          "translation": "このプロジェクトの成否は会社の命運に関わる重大事であるゆえ、全力を尽くします。"
+        },
+        {
+          "translation": "彼が著名人であるという事情はあるにせよ、プライバシーは保護されるべきだ。"
+        }
+      ]
+    },
+    "ja_ずにすんだ_184": {
+      "title": "～ずにすんだ (〜zuni sunda)",
+      "shortExplanation": "望ましくない事態や負担を負うことなく無事に済んだことを表し、「〜しないで済んだ」「〜しなくてよかった」という意味を表します。",
+      "longExplanation": "「～ずにすんだ」は、動詞の否定形「〜ず（に）」に「済む（問題が解決する・収まる）」の過去形が結合した文型です。本来なら発生する恐れがあった好ましくない事態、労力、損失などを免れることができ、胸をなでおろす安堵の気持ちを込めて「〜せずに解決した」「〜しなくて済んだ」という意味を表します。",
+      "formation": "動詞ない形（ないを除く） ＋ ずにすんだ（「する」は「せずにすんだ」）",
+      "examples": [
+        {
+          "translation": "彼は事故を起こすこともなく無事に済んだ。"
+        },
+        {
+          "translation": "私は手術を受けずに解決した。"
+        },
+        {
+          "translation": "幸い雨に降られずに済んだ。"
+        },
+        {
+          "translation": "罰金を支払わずに済んでほっとした。"
+        }
+      ]
+    },
+    "ja_だろうとなかろうと_185": {
+      "title": "～だろうとなかろうと (〜darou to nakarou to)",
+      "shortExplanation": "前項の事態が肯定であれ否定であれ関係なく、後項の方針や行動が変わらないことを表し、「〜であろうとなかろうと」「〜であってもなくても」という意味を表します。",
+      "longExplanation": "「～だろうとなかろうと」は、推量・意志の「〜だろうと」と否定推量「〜なかろうと」を並立させ、前項の状況や条件が成立しようとしまいと、それとは無関係に話し手の決意や事態の進行が微動だにしないことを強調する表現です。「〜であれ否定であれ関係なく」「〜であろうがなかろうが」という意味を表します。",
+      "formation": "動詞普通形 / い形容詞 / な形容詞 / 名詞 ＋ だろうとなかろうと",
+      "examples": [
+        {
+          "translation": "試験が難しいかどうかにかかわらず、全力を尽くして頑張ります。"
+        },
+        {
+          "translation": "彼が来ようと来まいと、私たちは開始します。"
+        },
+        {
+          "translation": "この仕事が面白いかどうかにかかわらず、私は継続します。"
+        },
+        {
+          "translation": "彼が賛成しようと反対しようと、私たちは進行させます。"
+        }
+      ]
+    },
+    "ja_つもりだ_186": {
+      "title": "～つもりだ (〜tsumori da)",
+      "shortExplanation": "話し手の意図や計画を表し、「〜する予定だ」「〜する気である」という意味を表します。",
+      "longExplanation": "「～つもりだ」は、動詞の辞書形またはない形に接続し、ある行為を行おう（あるいは行わないでおこう）とする話し手自身の主観的な意図、計画、意志を表す文型です。「〜する気でいる」「〜する予定だ」という意味を表します。主語が三人称の場合は、「〜と言っている」「〜らしい」などの表現を伴って用いられます。",
+      "formation": "動詞辞書形 / 動詞ない形 ＋ つもりだ（または つもりです）",
+      "examples": [
+        {
+          "translation": "明日は早起きをする予定です。"
+        },
+        {
+          "translation": "私は日本語を学習する意志を持っています。"
+        },
+        {
+          "translation": "彼は留学する予定であると話した。"
+        },
+        {
+          "translation": "私は来週末に家族と旅行に行く計画を立てている。"
+        }
+      ]
+    },
+    "ja_つもりで_187": {
+      "title": "～つもりで (〜tsumori de)",
+      "shortExplanation": "ある意図や心構え、覚悟を持って行動することを表し、「〜する気持ちで」「〜する気構えで」という意味を表します。",
+      "longExplanation": "「～つもりで」は、動詞の辞書形やた形、名詞などに接続し、その行為を行うにあたって抱いている意図、心構え、あるいは覚悟を伴う心理状態を表す文型です。「〜する決意を持って」「〜する意図で」という意味を表します。また、客観的には事実と異なっていても、気持ちの上ではそう仮定して行動する際（「〜した気になって」）にも用いられます。",
+      "formation": "動詞辞書形 / 動詞た形 / 名詞 ＋ の ＋ つもりで",
+      "examples": [
+        {
+          "translation": "私は将来日本で暮らす気構えで日本語を勉強しています。"
+        },
+        {
+          "translation": "彼は全財産を失っても構わないという覚悟で賭け事をしました。"
+        },
+        {
+          "translation": "明日の試験に絶対に合格する意気込みで一生懸命勉強します。"
+        },
+        {
+          "translation": "彼は明朝早起きする目的で早めに就寝しました。"
+        }
+      ]
+    },
+    "ja_ではすまない_188": {
+      "title": "～ではすまない (〜dewa sumanai)",
+      "shortExplanation": "事態の深刻さゆえに、その程度の行為や対処だけでは許容・解決されないことを表し、「〜だけでは許されない」「〜では解決しない」という意味を表します。",
+      "longExplanation": "「～ではすまない」は、問題の重大性や社会的責任の重さを強調し、単なる言葉の謝罪や軽い措置だけでは責任を果たしたことにならず、事態を収拾することは到底不可能であるという強い判断を表す文型です。「〜だけで終わらせることはできない」「〜では済まされない」という意味で、より重い処分や本格的な補償、責任追及が不可避であることを示します。",
+      "formation": "動詞辞書形 / 名詞 / 形容詞 ＋ ではすまない（主に「〜だけではすまない」の形で用いる）",
+      "examples": [
+        {
+          "translation": "ただ口頭で謝罪するだけでは済まされない。何か具体的な行動を起こすべきだ。"
+        },
+        {
+          "translation": "この問題は単に議論を重ねるだけで片付くものではない。具体的な行動計画が必要だ。"
+        },
+        {
+          "translation": "彼の犯した過ちは口頭注意だけで済む問題ではない。彼は責任を取るべきだ。"
+        },
+        {
+          "translation": "この過失は金銭の補償だけで解決できるものではない。信頼を取り戻すには誠心誠意の謝罪が不可欠だ。"
+        }
+      ]
+    },
+    "ja_とあって_189": {
+      "title": "～とあって (〜to atte)",
+      "shortExplanation": "普段とは異なる特別な状況や事情であるため、当然それにふさわしい結果が生じていることを表し、「〜という特別な状況なので」「〜だからこそ」という意味を表します。",
+      "longExplanation": "「～とあって」は、特別な行事や時期、状況（春休み、開店日など）を理由として挙げ、その特別な事情があるからこそ、後続のような盛況や結果が生じるのは当然であるという因果関係を客観的に描写する文型です。「〜という事情があるため」と状況を説明・報道する際によく用いられます。",
+      "formation": "名詞 / 動詞普通形 ＋ とあって",
+      "examples": [
+        {
+          "translation": "春休みという特別な時期であるため、公園は子供たちで溢れている。"
+        },
+        {
+          "translation": "試験直前という事情もあり、図書館は学生で混み合っている。"
+        },
+        {
+          "translation": "オープン初日ということもあって、その店には大勢の客が列を作っていた。"
+        },
+        {
+          "translation": "彼の誕生日という特別な日なので、友人たちはサプライズパーティーを企画した。"
+        }
+      ]
+    },
+    "ja_とあれば_190": {
+      "title": "～とあれば (〜to areba)",
+      "shortExplanation": "もしそのような特別な条件や状況であるなら当然そうする・そうなることを表し、「〜というなら」「〜のためなら」という意味を表します。",
+      "longExplanation": "「～とあれば」は、「もし〜という特別な事態や条件であるならば」という前提を提示し、その状況下であれば進んでその行為をする、あるいは当然そうなるだろうという話し手の強い意欲や必然的な判断を表す文型です。「〜のためならば喜んで〜する」「〜という条件であるなら何でもする」といったニュアンスを伴います。",
+      "formation": "動詞普通形 / い形容詞 / な形容詞（だ） / 名詞（だ） ＋ とあれば",
+      "examples": [
+        {
+          "translation": "無料であるというなら、誰でも利用したいと思うはずです。"
+        },
+        {
+          "translation": "この曲が流れると決まっているなら、彼は間違いなく踊り出します。"
+        },
+        {
+          "translation": "明日が休みであるというなら、今夜は夜更かししても差し支えありません。"
+        },
+        {
+          "translation": "彼が参加してくれるというのなら、この催しはきっと成功するに違いありません。"
+        }
+      ]
+    },
+    "ja_といえども_191": {
+      "title": "～といえども (〜to iedomo)",
+      "shortExplanation": "改まった逆接・譲歩の表現で、「〜であっても」「いくら〜とはいっても」という意味を表します。",
+      "longExplanation": "「～といえども」は、古語の「と言へども」に由来する硬い文章語的表現です。前項で特別な身分、優れた能力、客観的事実などを提示してそれを認めつつも、後項ではその通念から期待されることとは異なる現実や限界を述べる文型です。「いくら〜であっても例外ではない」「〜とはいっても〜だ」という譲歩・逆接を表します。",
+      "formation": "名詞 / 動詞普通形 / 形容詞 ＋ といえども",
+      "examples": [
+        {
+          "translation": "彼がいくら天才であろうとも、過ちを犯すことはあります。"
+        },
+        {
+          "translation": "このパソコンがいくら新品だといっても、不具合は存在します。"
+        },
+        {
+          "translation": "暦の上では春とはいっても、まだ冷え込む日があります。"
+        },
+        {
+          "translation": "彼女がいくら最も愛しい人であろうとも、嫌なものは嫌です。"
+        }
+      ]
+    },
+    "ja_といったらありはしない_192": {
+      "title": "～といったらありはしない (〜to ittara ari wa shinai)",
+      "shortExplanation": "程度が極端で言葉では言い尽くせないほど甚だしいことを表し、「この上なく〜だ」「〜といったらこの上ない」という意味を表します。",
+      "longExplanation": "「～といったらありはしない」は、ある状態や性質の度合いが非常に極端であり、「それを言葉で言い表そうとしても、他に比べるものがないほどである」と強調する慣用的な文型です。「〜と言ったら、それ以上のものはない」「言葉に尽くせないほど〜だ」という強い感嘆・強調を表し、驚きや称賛、呆れなどの感情を込めて用いられます。",
+      "formation": "名詞（主に「形容詞語幹＋さ」） / い形容詞 / な形容詞 ＋ といったらありはしない",
+      "examples": [
+        {
+          "translation": "彼の英語の堪能さといったら、他に並ぶものがないほどだ。"
+        },
+        {
+          "translation": "このスイーツの美味しさといったら、言葉に尽くせないほど素晴らしい。"
+        },
+        {
+          "translation": "その子の頭の回転の速さといったら、驚くべきものがある。"
+        },
+        {
+          "translation": "彼女の美しさといったら、息をのむほどである。"
+        }
+      ]
+    },
+    "ja_といったらありゃしない_193": {
+      "title": "～といったらありゃしない (〜to ittara arya shinai)",
+      "shortExplanation": "口語で極端な程度を強調する表現で、「言葉にできないほど〜だ」「この上なく〜だ」という意味を表します。",
+      "longExplanation": "「～といったらありゃしない」は、「～といったらありはしない」の「ありは」が口語的に縮約されて「ありゃ」となった話し言葉の表現です。日常会話において、ある性質や状態の度合いが並外れて甚だしく、到底言葉では言い表せないほど極端であることを強調します。称賛や感嘆だけでなく、呆れや不満、愚痴などの感情を強く込めて多用されます。",
+      "formation": "動詞普通形 / い形容詞 / な形容詞（だ） / 名詞（だ） ＋ といったらありゃしない",
+      "examples": [
+        {
+          "translation": "その店のラーメンの美味しさといったら、言葉に尽くせないほどだ。"
+        },
+        {
+          "translation": "彼女の料理の腕前は、驚くほど見事なものだ。"
+        },
+        {
+          "translation": "今年の冬の寒さは、耐え難いほど厳しい。"
+        },
+        {
+          "translation": "その小説は、夢中になるほど面白い。"
+        }
+      ]
+    },
+    "ja_といったらない_194": {
+      "title": "～といったらない (〜to ittara nai)",
+      "shortExplanation": "その程度が極限に達していて言葉では言い表せないことを強調し、「言葉にできないほど〜だ」「この上なく〜だ」という意味を表します。",
+      "longExplanation": "「～といったらない」は、感情や状態の度合いが最高潮・極限に達しており、「それを言葉で言い表そうとしても、適切な表現が見当たらないほど甚だしい」という強調の気持ちを表す文型です。「〜といったらない（言葉がない）」という表現構造から生じたもので、素晴らしさや喜びだけでなく、寒さやだらしなさ、憤りなど様々な極端な状態を描写する際に用いられます。",
+      "formation": "い形容詞 / な形容詞（だ） / 名詞（だ） ＋ といったらない",
+      "examples": [
+        {
+          "translation": "今日は言葉にできないほど凍える寒さだ。"
+        },
+        {
+          "translation": "彼女の料理の美味しさといったら、この上ない。"
+        },
+        {
+          "translation": "この子の聡明さといったら、目を見張るものがある。"
+        },
+        {
+          "translation": "彼のだらしなさといったら、呆れて言葉も出ないほどだ。"
+        }
+      ]
+    },
+    "ja_ときている_195": {
+      "title": "～ときている (〜to kite iru)",
+      "shortExplanation": "ある際立った状況や不利な条件を理由・前提として取り上げ、「〜という状況なのだから当然〜だ」という意味を表します。",
+      "longExplanation": "「～ときている」は、取り立てて目立つ性質や特別な状況（多くは困難・不都合・マイナスな条件）を提示し、「〜という事情なのだから、後項のような結果になるのも無理はない」という必然的な帰結を導く文型です。日常的な語感があり、「〜ので」「〜だけに」「〜から」「〜うえに」などの表現と結びついて理由や重なる悪条件を強調します。",
+      "formation": "動詞普通形 / い形容詞 / な形容詞（だ） / 名詞（だ） ＋ ときている",
+      "examples": [
+        {
+          "translation": "仕事が非常に多忙な状況であるため、なかなか休みを取ることができません。"
+        },
+        {
+          "translation": "景気が悪化している折だけに、会社は大規模な人員削減を発表した。"
+        },
+        {
+          "translation": "旅先で荷物を盗まれるという災難に遭ったのだから、旅行を楽しむどころではない。"
+        },
+        {
+          "translation": "試験が間近に迫っている上に課題も山積みで、本当に大変だ。"
+        }
+      ]
+    },
+    "ja_ところを_196": {
+      "title": "～ところを (〜tokoro wo)",
+      "shortExplanation": "ある動作の最中や特定の状態にあるちょうどその時に、予期せぬ出来事が割り込むことを表し、「〜している最中に」「〜という状況なのに」という意味を表します。",
+      "longExplanation": "「～ところを」は、ある行為や状態が進行中であるまさにその瞬間、あるいは特定の状況にあるタイミングをとらえて、不都合な事態や割り込み、妨害が生じたことを表す文型です。「〜の最中だったのに」「〜という折に」と、タイミングの悪さや皮肉な展開を浮き彫りにします。また、改まった挨拶（「お忙しいところを恐縮ですが」など）で相手の状況に配慮する際にも多用されます。",
+      "formation": "動詞ている形 / 動詞意向形＋としている / 名詞＋の / い形容詞 / な形容詞＋な ＋ ところを",
+      "examples": [
+        {
+          "translation": "ちょうど映画に没頭している最中に、停電で部屋が真っ暗になった。"
+        },
+        {
+          "translation": "美味しく味わって食べていたところを、彼に全部奪い取られてしまった。"
+        },
+        {
+          "translation": "飛行機がまさに離陸しようとしていたその瞬間に、突如エンジンが停止した。"
+        },
+        {
+          "translation": "彼女が腹を立てている最悪のタイミングで、私は冗談を口にしてしまった。"
+        }
+      ]
+    }
+  }
+}

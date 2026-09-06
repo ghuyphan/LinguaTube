@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_なんでも_120": {
+      "title": "なんでも～ (nandemo～)",
+      "shortExplanation": "Diễn tả ý 'bất cứ thứ gì', 'cái gì cũng'; biểu thị phạm vi toàn bộ không giới hạn.",
+      "longExplanation": "'なんでも' là từ kết hợp giữa từ nghi vấn 'なに' (cái gì) và trợ từ 'でも' (dù là / cũng), mang nghĩa 'bất cứ thứ gì', 'cái gì cũng', 'dù là gì đi nữa'. Cấu trúc này được dùng để chỉ sự bao hàm toàn bộ đối với sự vật, sự việc, không phân biệt hay kén chọn. Trong câu, nó có thể kết hợp linh hoạt với động từ, tính từ hoặc danh từ.",
+      "formation": "なんでも + Động từ / Tính từ / Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi có thể ăn bất cứ thứ gì, nên bạn gọi món gì cũng được."
+        },
+        {
+          "translation": "Nếu bạn không kén chọn gì thì tôi xin giới thiệu cuốn sách này."
+        },
+        {
+          "translation": "Chúng tôi đang tìm kiếm một nhân viên có thể làm được mọi việc."
+        },
+        {
+          "translation": "Ở nhà ăn này, món nào dọn ra cũng vừa ngon vừa rẻ."
+        }
+      ]
+    },
+    "ja_なんと_121": {
+      "title": "～なんと 言いますか。 (〜nan to iimasu ka.)",
+      "shortExplanation": "Dùng để hỏi tên gọi, cách nói hoặc cách diễn đạt của một sự vật, sự việc; '(cái này) gọi là gì vậy?'.",
+      "longExplanation": "Mẫu câu '～なんと言いますか' là dạng câu hỏi lịch sự dùng khi người nói muốn biết tên gọi, từ vựng hoặc cách diễn đạt của một đồ vật, sự việc, hiện tượng cụ thể. Cấu trúc gồm từ nghi vấn 'なん' (gì), trợ từ trích dẫn 'と' (rằng, là) và động từ '言います' (nói/gọi) ở thể nghi vấn.",
+      "formation": "Danh từ + は / が + なんと言いますか",
+      "examples": [
+        {
+          "translation": "Loài hoa này gọi là gì vậy?"
+        },
+        {
+          "translation": "Món ăn này gọi là gì vậy?"
+        },
+        {
+          "translation": "Ở Nhật Bản, cái này được gọi là gì?"
+        },
+        {
+          "translation": "Tên của bộ phim đó gọi là gì vậy?"
+        }
+      ]
+    },
+    "ja_に_122": {
+      "title": "～に あげます (〜 ni agemasu)",
+      "shortExplanation": "Dùng để diễn tả hành động tặng hoặc cho ai đó món đồ gì; 'cho', 'tặng'.",
+      "longExplanation": "Mẫu ngữ pháp ～にあげます được sử dụng khi người nói (hoặc người cùng phía với người nói) tặng hoặc cho ai đó một món đồ, nhấn mạnh hành động được thực hiện vì lợi ích của người nhận. Trong cấu trúc này, trợ từ 'に' đứng sau người nhận, theo sau là danh từ chỉ vật đi với trợ từ 'を' và động từ あげます.",
+      "formation": "Người nhận + に + Vật/Tân ngữ + を + あげます",
+      "examples": [
+        {
+          "translation": "Tôi đã tặng một cuốn sách cho bạn của mình."
+        },
+        {
+          "translation": "Chúng ta hãy tặng quà cho anh ấy nhé."
+        },
+        {
+          "translation": "Tôi sẽ tặng hoa cho thầy cô giáo."
+        },
+        {
+          "translation": "Tôi muốn tặng sô-cô-la cho mẹ."
+        }
+      ]
+    },
+    "ja_に_123": {
+      "title": "～に もらいます (〜ni moraimasu)",
+      "shortExplanation": "Diễn tả việc nhận được đồ vật hoặc nhận được sự giúp đỡ, hành động từ ai đó; 'nhận từ...', 'được... (làm cho)'.",
+      "longExplanation": "Mẫu ngữ pháp ～にもらいます được sử dụng khi người nói (hoặc người cùng phía với người nói) nhận một món đồ hay lợi ích từ người khác. Trợ từ 'に' (hoặc đôi khi là 'から') đứng sau người trao tặng/người thực hiện hành động. Khi đi với danh từ chỉ vật thì dùng 'Vật + を + もらいます', còn khi đi với động từ thể て ('～てもらいます') thì mang nghĩa nhờ ai đó làm gì cho mình hoặc nhận được hành động có lợi từ ai.",
+      "formation": "Người trao/Người làm + に + Vật + を + もらいます / Động từ thể て + もらいます",
+      "examples": [
+        {
+          "translation": "Tôi đã nhận được quà từ bạn bè."
+        },
+        {
+          "translation": "Tôi đã nhận được lời khuyên từ thầy giáo."
+        },
+        {
+          "translation": "Tôi đã được bà viết thư cho."
+        },
+        {
+          "translation": "Tôi đã được em trai giúp làm bài tập về nhà."
+        }
+      ]
+    },
+    "ja_の_124": {
+      "title": "～の (〜no)",
+      "shortExplanation": "Trợ từ nối các danh từ chỉ sở hữu, thuộc tính, vị trí, nguồn gốc hoặc danh từ hóa mệnh đề; 'của', 'ở'.",
+      "longExplanation": "Trợ từ 'の' là một trong những trợ từ cơ bản và quan trọng nhất trong tiếng Nhật, dùng để nối hai danh từ với nhau (Danh từ 1 + の + Danh từ 2). Danh từ 1 đóng vai trò bổ nghĩa cho Danh từ 2, có thể chỉ quyền sở hữu ('của'), nguồn gốc xuất xứ, địa điểm ('ở'), vật liệu, hoặc thể loại. Ngoài ra, 'の' còn được dùng để thay thế danh từ đã nhắc đến ở trước hoặc dùng để danh từ hóa một mệnh đề/động từ.",
+      "formation": "Danh từ 1 + の + Danh từ 2",
+      "examples": [
+        {
+          "translation": "Đây là chiếc cặp của tôi."
+        },
+        {
+          "translation": "Cô ấy đang mang một chiếc túi xách màu đỏ."
+        },
+        {
+          "translation": "Anh ấy có một căn phòng sạch sẽ."
+        },
+        {
+          "translation": "Thời tiết ở Tokyo rất nóng."
+        }
+      ]
+    },
+    "ja_はたいへんです_125": {
+      "title": "～はたいへんです (〜wa taihen desu)",
+      "shortExplanation": "Diễn tả một việc gì đó rất vất vả, gian nan hoặc khó khăn; '... rất vất vả / gian nan'.",
+      "longExplanation": "Cấu trúc '～はたいへんです' dùng để diễn tả rằng một công việc, hoàn cảnh hoặc hành động nào đó rất vất vả, khó khăn, đòi hỏi nhiều công sức hoặc gây ra mệt mỏi, áp lực cho người thực hiện. Khi chủ ngữ là một hành động, ta dùng dạng 'Động từ thể từ điển + のはたいへんです' (danh từ hóa hành động).",
+      "formation": "Danh từ / Động từ thể từ điển + の + はたいへんです",
+      "examples": [
+        {
+          "translation": "Việc nhớ chữ Hán rất là vất vả."
+        },
+        {
+          "translation": "Công việc này rất vất vả."
+        },
+        {
+          "translation": "Việc hiểu rõ về các nhà ga ở Nhật Bản thật sự rất khó khăn."
+        },
+        {
+          "translation": "Khi cô ấy bị ốm, cuộc sống rất khó khăn, vất vả."
+        }
+      ]
+    },
+    "ja_ほとんど_126": {
+      "title": "ほとんど〜 (hotondo〜)",
+      "shortExplanation": "Phó từ chỉ số lượng hoặc mức độ; trong câu khẳng định mang nghĩa 'hầu như, phần lớn', trong câu phủ định mang nghĩa 'hầu như không'.",
+      "longExplanation": "'ほとんど' là phó từ hoặc danh từ chỉ mức độ, tỷ lệ rất cao đạt gần mức tuyệt đối. Đi với câu khẳng định: biểu thị 'hầu hết', 'phần lớn', 'gần như hoàn toàn'. Đi với câu phủ định: biểu thị 'hầu như không...'. Khi bổ nghĩa cho danh từ, cấu trúc dùng dạng 'ほとんどの + Danh từ'.",
+      "formation": "ほとんど + Động từ / Tính từ hoặc ほとんどの + Danh từ",
+      "examples": [
+        {
+          "translation": "Cô ấy hầu như không nói được tiếng Anh."
+        },
+        {
+          "translation": "Hầu hết mọi người đều đã tham dự bữa tiệc."
+        },
+        {
+          "translation": "Chúng tôi hầu như không học gì mà vẫn đỗ kỳ thi."
+        },
+        {
+          "translation": "Tôi đã đọc gần xong cuốn sách này rồi."
+        }
+      ]
+    },
+    "ja_まあまあ_127": {
+      "title": "まあまあ～ (maa maa～)",
+      "shortExplanation": "Diễn tả mức độ trung bình, tàm tạm, không quá tốt nhưng cũng không quá tệ; 'tàm tạm', 'cũng được', 'kha khá'.",
+      "longExplanation": "'まあまあ' là một phó từ hoặc tính từ đuôi な biểu thị mức độ trung bình, vừa phải. Nó dùng để đánh giá sự vật, sự việc ở mức chấp nhận được, không hẳn là xuất sắc hay hoàn hảo nhưng cũng không đến mức tồi tệ ('tàm tạm', 'cũng tàm tạm', 'tương đối'). Ngoài ra trong hội thoại, 'まあまあ' còn dùng để khuyên can, xoa dịu người khác ('thôi nào, bình tĩnh lại nào').",
+      "formation": "まあまあ + Tính từ / Động từ / Danh từ + です",
+      "examples": [
+        {
+          "translation": "Tay nghề nấu nướng của anh ấy ở mức tàm tạm."
+        },
+        {
+          "translation": "Thời tiết hôm nay cũng tàm tạm nhỉ."
+        },
+        {
+          "translation": "Bộ phim đó xem cũng khá là thú vị."
+        },
+        {
+          "translation": "Tôi nghĩ giọng hát của cô ấy cũng khá hay đấy."
+        }
+      ]
+    },
+    "ja_まだ_128": {
+      "title": "まだ〜 (mada〜)",
+      "shortExplanation": "Biểu thị một trạng thái vẫn đang tiếp diễn ('vẫn'), hoặc một hành động chưa xảy ra tính đến thời điểm hiện tại ('chưa').",
+      "longExplanation": "'まだ' là một phó từ chỉ thời gian và trạng thái rất thường gặp trong tiếng Nhật. Đi với câu khẳng định: diễn tả một trạng thái hoặc tình trạng vẫn đang tiếp tục kéo dài chưa thay đổi, dịch là 'vẫn / vẫn còn'. Đi với câu phủ định: diễn tả một hành động hoặc sự việc dự kiến xảy ra nhưng tới thời điểm hiện tại vẫn chưa xảy ra, dịch là 'vẫn chưa / chưa'.",
+      "formation": "まだ + Động từ thể phủ định (chưa) / まだ + Tính từ / Danh từ / Động từ thể tiếp diễn (vẫn còn)",
+      "examples": [
+        {
+          "translation": "Tôi vẫn chưa ăn cơm trưa."
+        },
+        {
+          "translation": "Anh Yamada vẫn chưa đến."
+        },
+        {
+          "translation": "Căn phòng này vẫn còn nóng."
+        },
+        {
+          "translation": "Anh ấy vẫn chưa phải là học sinh."
+        }
+      ]
+    },
+    "ja_まだないです_129": {
+      "title": "まだ〜ないです (mada 〜 nai desu)",
+      "shortExplanation": "Dùng để diễn đạt lịch sự rằng một hành động hay sự việc vẫn chưa diễn ra hoặc chưa hoàn thành; 'vẫn chưa...'.",
+      "longExplanation": "Cấu trúc 'まだ〜ないです' kết hợp phó từ 'まだ' (chưa) với động từ ở thể phủ định thông thường (thể ない) cộng với 'です' để tạo thành câu phủ định mang tính lịch sự nhưng mềm mại, thân thiện hơn thể '～ません'. Nó dùng để chỉ một hành động dự kiến thực hiện nhưng tại thời điểm nói vẫn chưa được thực hiện hay hoàn thành (thường gặp dưới dạng 'まだ〜ていないです').",
+      "formation": "まだ + Động từ thể ない + です (hoặc まだ + Động từ thể ていない + です)",
+      "examples": [
+        {
+          "translation": "Tôi vẫn chưa làm bài tập về nhà."
+        },
+        {
+          "translation": "Anh ấy vẫn chưa đến."
+        },
+        {
+          "translation": "Bộ phim vẫn chưa bắt đầu."
+        },
+        {
+          "translation": "Chúng tôi vẫn chưa ăn bữa tối."
+        }
+      ]
+    },
+    "ja_まだません_130": {
+      "title": "まだ～ません (mada ~masen)",
+      "shortExplanation": "Diễn đạt trang trọng, chuẩn mực rằng một hành động chưa hoàn thành hoặc chưa từng diễn ra; 'vẫn chưa...'.",
+      "longExplanation": "Mẫu ngữ pháp 'まだ～ません' là dạng phủ định lịch sự chuẩn mực dùng để diễn tả một hành động hoặc trạng thái chưa được thực hiện tính đến thời điểm hiện tại. Thông thường, đối với các hành động có tính hoàn thành, mẫu câu này kết hợp ở dạng tiếp diễn phủ định: 'まだ + Động từ thể ていません' (vẫn chưa làm...) hoặc 'まだ + Động từ thể たことがありません' (vẫn chưa từng làm...).",
+      "formation": "まだ + Động từ thể ます (phủ định: ません / ていません)",
+      "examples": [
+        {
+          "translation": "Tôi vẫn chưa ăn bữa trưa."
+        },
+        {
+          "translation": "Bài tập về nhà vẫn chưa xong."
+        },
+        {
+          "translation": "Tôi vẫn chưa từng đi Tokyo lần nào."
+        },
+        {
+          "translation": "Anh ấy vẫn chưa đến."
+        }
+      ]
+    },
+    "ja_もう_131": {
+      "title": "もう～ (mou～)",
+      "shortExplanation": "Phó từ biểu thị một hành động đã diễn ra ('đã'), không tiếp diễn nữa ('không... nữa'), hoặc sắp tới thời điểm ('sắp').",
+      "longExplanation": "'もう' là phó từ đa năng trong tiếng Nhật với nhiều tầng nghĩa phụ thuộc vào ngữ cảnh: 1. Với câu khẳng định quá khứ/hoàn thành: biểu thị việc gì đó đã hoàn tất ('đã... rồi'). 2. Với câu phủ định: biểu thị sự chấm dứt, không còn tiếp tục làm việc gì nữa ('không còn... nữa'). 3. Khi kết hợp cùng từ chỉ thời gian hoặc 'もうすぐ': biểu thị thời điểm đã cận kề ('sắp'). 4. Ngoài ra còn mang nghĩa số lượng bổ sung ('thêm một chút nữa', ví dụ: もう一杯).",
+      "formation": "もう + Động từ (quá khứ / phủ định) / Tính từ / Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi đã ăn cơm trưa rồi."
+        },
+        {
+          "translation": "Tôi sẽ không làm việc ở đây nữa."
+        },
+        {
+          "translation": "Sắp đến kỳ nghỉ hè rồi nhỉ."
+        },
+        {
+          "translation": "Như vậy đã là đủ rồi."
+        }
+      ]
+    },
+    "ja_もうすぐ_132": {
+      "title": "もうすぐ〜 (mou sugu~)",
+      "shortExplanation": "Diễn tả một sự việc hay hành động sắp sửa diễn ra trong một khoảng thời gian rất ngắn nữa; 'sắp', 'chẳng mấy chốc'.",
+      "longExplanation": "'もうすぐ' là phó từ chỉ thời gian, kết hợp giữa 'もう' (đã gần) và 'すぐ' (ngay lập tức), dùng để biểu thị một sự việc, hiện tượng hoặc hành động nào đó sắp sửa xảy ra trong tương lai rất gần. Cấu trúc thường đi cùng động từ chia ở thì hiện tại/tương lai hoặc đi kèm danh từ chỉ sự kiện, mốc thời gian.",
+      "formation": "もうすぐ + Động từ / Danh từ + です",
+      "examples": [
+        {
+          "translation": "Mùa xuân sắp đến rồi."
+        },
+        {
+          "translation": "Sắp đến sinh nhật của cô ấy rồi."
+        },
+        {
+          "translation": "Kỳ thi sắp kết thúc rồi."
+        },
+        {
+          "translation": "Chắc là mưa sẽ sớm tạnh thôi."
+        }
+      ]
+    },
+    "ja_もっと_133": {
+      "title": "もっと〜 (motto〜)",
+      "shortExplanation": "Phó từ biểu thị sự gia tăng về mức độ, số lượng hoặc phẩm chất so với hiện tại hoặc một tiêu chuẩn nào đó; 'hơn nữa', 'thêm nữa'.",
+      "longExplanation": "'もっと' là phó từ chỉ mức độ, dùng để nhấn mạnh sự thay đổi theo hướng gia tăng hơn nữa về mức độ, số lượng, cường độ hoặc kích thước so với trạng thái hiện có hoặc so với một mốc so sánh. Nó có thể đứng trước động từ, tính từ đuôi い hoặc tính từ đuôi な.",
+      "formation": "もっと + Động từ / Tính từ đuôi い / Tính từ đuôi な (な) / Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi phải học nhiều hơn nữa."
+        },
+        {
+          "translation": "Tôi muốn đổi chiếc túi này sang kích cỡ lớn hơn."
+        },
+        {
+          "translation": "Tôi muốn làm việc ở một nơi yên tĩnh hơn."
+        },
+        {
+          "translation": "Cô ấy muốn bản thân trở nên giỏi hơn nữa."
+        }
+      ]
+    },
+    "ja_よく_134": {
+      "title": "よく～ (yoku ~)",
+      "shortExplanation": "Phó từ biểu thị tần suất cao ('thường xuyên'), mức độ kỹ càng hoặc khả năng làm tốt một việc gì đó ('giỏi', 'tốt', 'kỹ').",
+      "longExplanation": "'よく' là phó từ biến đổi từ tính từ 'よい/いい' (tốt), có hai nhóm nghĩa chính trong tiếng Nhật: 1. Tần suất cao: Biểu thị một hành động xảy ra thường xuyên, đều đặn ('thường', 'hay làm gì'). 2. Mức độ, phẩm chất tốt hoặc kỹ lưỡng: Biểu thị việc làm một cách thấu đáo, thuần thục hoặc đáng khen ngợi ('làm tốt', 'hiểu rõ', 'ngắm kỹ'). Điển hình như câu khen ngợi 'よくできました' (Làm tốt lắm!).",
+      "formation": "よく + Động từ",
+      "examples": [
+        {
+          "translation": "Anh ấy rất chăm chỉ học hành."
+        },
+        {
+          "translation": "Cô ấy thường xuyên nấu ăn."
+        },
+        {
+          "translation": "Ngày xưa tôi thường hay chơi với những người bạn cũ."
+        },
+        {
+          "translation": "Bạn đã làm rất tốt!"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_なんでも_120": {
+      "title": "なんでも～ (nandemo～)",
+      "shortExplanation": "表示“无论什么”、“什么都”；全面肯定，指代没有任何限制的全部事物。",
+      "longExplanation": "“なんでも”由疑问词“なに”（什么）和表示提示、包含的助词“でも”复合而成，表示“无论什么”、“任何东西”。它用于表达不加限定的全称肯定，在句子中可修饰动词、形容词或名词，表达毫无挑剔或无一例外的情况。",
+      "formation": "なんでも + 动词 / 形容词 / 名词",
+      "examples": [
+        {
+          "translation": "我什么都能吃，所以点什么都没问题。"
+        },
+        {
+          "translation": "如果什么都可以的话，我推荐这本书。"
+        },
+        {
+          "translation": "我们正在寻找一位什么都会做的工作人员。"
+        },
+        {
+          "translation": "在这家食堂里，端上来的任何料理都既美味又便宜。"
+        }
+      ]
+    },
+    "ja_なんと_121": {
+      "title": "～なんと 言いますか。 (〜nan to iimasu ka.)",
+      "shortExplanation": "用于询问某事物的名称、叫法或表达方式；“……叫什么？”、“……怎么说？”。",
+      "longExplanation": "句型“～なんと言いますか”是一种礼貌的提问表达，用于询问某事物的名称、称呼或者用某种语言应该如何表达。由疑问词“なん”（什么）、表示引用内容的助词“と”以及动词“言います”（说、称呼）的疑问形式构成。",
+      "formation": "名词 + は / が + なんと言いますか",
+      "examples": [
+        {
+          "translation": "这种花叫什么名字？"
+        },
+        {
+          "translation": "这道菜叫什么？"
+        },
+        {
+          "translation": "在日本这个叫作什么？"
+        },
+        {
+          "translation": "那部电影的名字叫什么？"
+        }
+      ]
+    },
+    "ja_に_122": {
+      "title": "～に あげます (〜 ni agemasu)",
+      "shortExplanation": "用于表示给某人某物；'给……'、'赠送'。",
+      "longExplanation": "句型'～にあげます'用于说话人（或说话人一方的人）向他人给予、赠送物品，强调该行为是为接受者的利益而进行的。接续方式为在接受物品的对象后加助词'に'，物品后加助词'を'，最后加上动词'あげます'。",
+      "formation": "接受者 + に + 物品 + を + あげます",
+      "examples": [
+        {
+          "translation": "我送给朋友一本书。"
+        },
+        {
+          "translation": "我们送给他一份礼物吧。"
+        },
+        {
+          "translation": "我打算送花给老师。"
+        },
+        {
+          "translation": "我想给妈妈送巧克力。"
+        }
+      ]
+    },
+    "ja_に_123": {
+      "title": "～に もらいます (〜ni moraimasu)",
+      "shortExplanation": "表示从某人那里得到某物或得到某人的帮助；“从……得到”、“得到……给做……”。",
+      "longExplanation": "句型“～にもらいます”用于表示说话人（或说话人一方的人）从他人那里接受物品或恩惠。接受来源（动作给予者）后加助词“に”（有时也可用“から”）。若是接受具体物品，接续为“物品 + を + もらいます”；若动作给予者为自己做某事，则接动词て形构成为“～てもらいます”，表示请某人为自己做事或得到他人的帮助。",
+      "formation": "给予者 + に + 物品 + を + もらいます / 动词て形 + もらいます",
+      "examples": [
+        {
+          "translation": "我从朋友那里收到了礼物。"
+        },
+        {
+          "translation": "我得到了老师的建议。"
+        },
+        {
+          "translation": "我让奶奶给我写了封信。"
+        },
+        {
+          "translation": "我让弟弟帮我做了作业。"
+        }
+      ]
+    },
+    "ja_の_124": {
+      "title": "～の (〜no)",
+      "shortExplanation": "连接名词，表示所属、属性、产地、位置等；相当于汉语的“的”。",
+      "longExplanation": "助词“の”是日语中最核心的格助词之一，主要用于连接前后两个名词（名词1 + の + 名词2），表示所属关系（某人的）、属性、位置、所属机构或产地等，起修饰后项名词的作用。此外，“の”还可以用来代替前面提到过的名词，或者接在用言连体形后使从句名词化。",
+      "formation": "名词1 + の + 名词2",
+      "examples": [
+        {
+          "translation": "这是我的包。"
+        },
+        {
+          "translation": "她拿着一个红色的包。"
+        },
+        {
+          "translation": "他有一个干净的房间。"
+        },
+        {
+          "translation": "东京的天气很热。"
+        }
+      ]
+    },
+    "ja_はたいへんです_125": {
+      "title": "～はたいへんです (〜wa taihen desu)",
+      "shortExplanation": "表示某事非常辛苦、艰难或不容易；“……很辛苦”、“……很不容易”。",
+      "longExplanation": "句型“～はたいへんです”用于表达某项工作、动作或某种生活处境十分艰难、劳累，需要付出巨大的精力和辛劳。主语既可以是普通名词（如生活、工作），也可以是动词原形通过加“の”名词化后的动词短语，表示“做某事很辛苦/很难”。",
+      "formation": "名词 / 动词辞书形 + の + はたいへんです",
+      "examples": [
+        {
+          "translation": "记住汉字非常辛苦。"
+        },
+        {
+          "translation": "这份工作很辛苦。"
+        },
+        {
+          "translation": "要弄懂日本的车站是一件很不容易的事。"
+        },
+        {
+          "translation": "她生病的时候，生活非常艰辛。"
+        }
+      ]
+    },
+    "ja_ほとんど_126": {
+      "title": "ほとんど〜 (hotondo〜)",
+      "shortExplanation": "副词或名词，表示比例或程度极高；肯定句中表示“几乎、大部分”，否定句中表示“几乎不……”。",
+      "longExplanation": "“ほとんど”可用作副词或名词，表示事物的数量、程度非常接近完全状态。在肯定语境中，表示“大部分”、“几乎全部”；在修饰否定形式时，则表示“几乎没有……”、“几乎不……”。修饰名词时，常用“ほとんどの + 名词”的接续方式。",
+      "formation": "ほとんど + 动词 / 形容词 或 ほとんどの + 名词",
+      "examples": [
+        {
+          "translation": "她几乎不会说英语。"
+        },
+        {
+          "translation": "大多数人都参加了派对。"
+        },
+        {
+          "translation": "我们几乎没怎么学习就通过了考试。"
+        },
+        {
+          "translation": "这本书我几乎读完了。"
+        }
+      ]
+    },
+    "ja_まあまあ_127": {
+      "title": "まあまあ～ (maa maa～)",
+      "shortExplanation": "表示程度适中，不好也不坏；“还可以”、“过得去”、“马马虎虎”。",
+      "longExplanation": "“まあまあ”作为副词或な形容词使用，表示水平、状态或程度处于中等，既没有特别出色，但也没有很差，属于尚可接受的范围，相当于汉语中的“还可以”、“马马虎虎”、“一般般”。在口语中，它也可以作为感叹词用于劝解他人、平息争端（“好啦好啦”、“算了算了”）。",
+      "formation": "まあまあ + 形容词 / 动词 / 名词 + です",
+      "examples": [
+        {
+          "translation": "他的烹饪手艺马马虎虎。"
+        },
+        {
+          "translation": "今天的天气还算过得去吧。"
+        },
+        {
+          "translation": "那部电影挺有意思的，还可以。"
+        },
+        {
+          "translation": "我觉得她歌唱得还算不错。"
+        }
+      ]
+    },
+    "ja_まだ_128": {
+      "title": "まだ〜 (mada〜)",
+      "shortExplanation": "表示状态仍在持续（“还”、“仍”），或某动作尚未发生（“还未”、“还没”）。",
+      "longExplanation": "“まだ”是日语中常用的时间副词。与肯定形式连用时，表示某种状态、性质仍在持续存在，相当于汉语的“还”、“依然”（例如：房间还很热）。与否定形式连用时，表示预期的动作或状态在现阶段尚未完成或发生，相当于汉语的“还没”、“尚未”（例如：还没吃午饭、山田先生还没来）。",
+      "formation": "まだ + 动词否定形（还没） / まだ + 形容词 / 名词 / 动词持续态（仍然、还在）",
+      "examples": [
+        {
+          "translation": "我还没吃午饭。"
+        },
+        {
+          "translation": "山田先生还没来。"
+        },
+        {
+          "translation": "这个房间还很热。"
+        },
+        {
+          "translation": "他现在还不是学生。"
+        }
+      ]
+    },
+    "ja_まだないです_129": {
+      "title": "まだ〜ないです (mada 〜 nai desu)",
+      "shortExplanation": "礼貌地表达某动作或事情尚未发生或尚未完成；“还没……”、“尚未……”。",
+      "longExplanation": "句型“まだ〜ないです”将副词“まだ”（尚未）与动词的否定形式（ない形）后加“です”结合，表达动作在现阶段尚未实施或未达到完成状态。这种表达比硬性的“～ません”略显柔和、日常，常在口语中用于陈述某事“还没有做”或“还没发生”（常见形式如“まだ〜ていないです”）。",
+      "formation": "まだ + 动词ない形 + です（或 まだ + 动词ていない形 + です）",
+      "examples": [
+        {
+          "translation": "我还没做作业。"
+        },
+        {
+          "translation": "他还没来。"
+        },
+        {
+          "translation": "电影还没开始。"
+        },
+        {
+          "translation": "我们还没吃晚饭。"
+        }
+      ]
+    },
+    "ja_まだません_130": {
+      "title": "まだ～ません (mada ~masen)",
+      "shortExplanation": "礼貌、规范地表示某事尚未发生或某动作未完成；“还没……”、“尚未……”。",
+      "longExplanation": "句型“まだ～ません”是日语中标准礼貌体（敬体）的否定表达，用来表示原本预期要发生的动作或状态截至目前为止尚未完成或实现。在实际应用中，如果表达“尚未处于完成状态”，通常采用“まだ + 动词ていません”的形式；如果表示尚未经历过某事，则用“まだ + 动词たことがありません”。",
+      "formation": "まだ + 动词ます形否定（ません / ていません）",
+      "examples": [
+        {
+          "translation": "还没吃午饭。"
+        },
+        {
+          "translation": "作业还没做完。"
+        },
+        {
+          "translation": "我还从没去过东京。"
+        },
+        {
+          "translation": "他还没来。"
+        }
+      ]
+    },
+    "ja_もう_131": {
+      "title": "もう～ (mou～)",
+      "shortExplanation": "副词，表示动作已完成（“已经”）、不再继续（“不再……”）或快要来临（“快要……”）。",
+      "longExplanation": "“もう”是日语中极为常用的副词，主要包含以下几种用法：1. 与过去时或完成态连用：表示事情已经发生或动作已经完成，相当于“已经”。2. 与否定形式连用：表示不再继续某种行为或状态，相当于“不再……”。3. 与时间词或“すぐ”连用：表示时间紧迫或某事即将到来，相当于“马上、快要”。4. 表示数量上的增加（如：もう一度、もう一杯，意为“再……”）。",
+      "formation": "もう + 动词（过去式/否定式） / 形容词 / 名词",
+      "examples": [
+        {
+          "translation": "我已经吃过午饭了。"
+        },
+        {
+          "translation": "我不再在这里工作了。"
+        },
+        {
+          "translation": "马上就是暑假了呢。"
+        },
+        {
+          "translation": "已经足够了。"
+        }
+      ]
+    },
+    "ja_もうすぐ_132": {
+      "title": "もうすぐ〜 (mou sugu~)",
+      "shortExplanation": "表示某事或动作在很短的时间内即将发生；“马上”、“快要”、“不久”。",
+      "longExplanation": "“もうすぐ”是由表示接近的“もう”与表示即刻的“すぐ”结合而成的副词，用于表示某个动作、事件或状态在不久的将来马上就要发生或到来。后项通常接动词（辞书形或ます形）或者表示节日、日期的名词句。",
+      "formation": "もうすぐ + 动词 / 名词 + です",
+      "examples": [
+        {
+          "translation": "春天马上就要来了。"
+        },
+        {
+          "translation": "快到她的生日了。"
+        },
+        {
+          "translation": "考试马上就要结束了。"
+        },
+        {
+          "translation": "雨大概很快就会停了吧。"
+        }
+      ]
+    },
+    "ja_もっと_133": {
+      "title": "もっと〜 (motto〜)",
+      "shortExplanation": "副词，表示在现有程度或基准的基础上进一步增加；“更加”、“更”、“进一步”。",
+      "longExplanation": "“もっと”是表示程度加深的副词，常用于在现状或某一基准之上，追求或体现更高一层的数量、程度或品质。相当于汉语中的“更加”、“更……一些”。它可以直接修饰动词、い形容词或な形容词。",
+      "formation": "もっと + 动词 / い形容词 / な形容词（な）",
+      "examples": [
+        {
+          "translation": "必须更加努力学习。"
+        },
+        {
+          "translation": "我想把这个包换成更大一点的尺寸。"
+        },
+        {
+          "translation": "我想在更安静的地方工作。"
+        },
+        {
+          "translation": "她希望能变得更加熟练出色。"
+        }
+      ]
+    },
+    "ja_よく_134": {
+      "title": "よく～ (yoku ~)",
+      "shortExplanation": "副词，表示频度高（“经常、常常”），或表示程度深、做得好（“充分地、很好地”）。",
+      "longExplanation": "“よく”是由形容词“よい／いい”（好）连用形转化而来的副词，主要有两种核心用法：1. 表示动作发生的频率很高，相当于汉语中的“经常”、“往往”、“常常”。2. 表示动作的程度深、做得出色或仔细，相当于“很好地”、“充分地”、“仔细地”。例如在称赞别人时常用的“よくできました”（做得很好！真棒！）。",
+      "formation": "よく + 动词",
+      "examples": [
+        {
+          "translation": "他经常用功学习。"
+        },
+        {
+          "translation": "她经常做饭。"
+        },
+        {
+          "translation": "我以前经常和老朋友们一起玩。"
+        },
+        {
+          "translation": "做得非常好！"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_なんでも_120": {
+      "title": "なんでも～ (nandemo～)",
+      "shortExplanation": "'무엇이든', '어떤 것이라도', '다'라는 뜻으로, 제한 없이 모든 것을 긍정할 때 사용합니다.",
+      "longExplanation": "'なんでも'는 의문사 'なに(무엇)'에 조사 'でも(라도)'가 결합한 표현으로, '무엇이든', '어떤 것이라도', '다'라는 의미를 나타냅니다. 대상을 특별히 가리지 않고 포괄적으로 허용하거나 긍정할 때 쓰이며, 문장 안에서 동사, 형용사, 명사와 함께 폭넓게 쓰입니다.",
+      "formation": "なんでも + 동사 / 형용사 / 명사",
+      "examples": [
+        {
+          "translation": "무엇이든 먹을 수 있으니까, 무엇을 주문해도 괜찮습니다."
+        },
+        {
+          "translation": "어떤 것이라도 괜찮다면, 이 책을 추천합니다."
+        },
+        {
+          "translation": "무엇이든 잘하는 직원을 찾고 있습니다."
+        },
+        {
+          "translation": "이 식당에서는 어떤 요리든 맛있고 저렴하게 나옵니다."
+        }
+      ]
+    },
+    "ja_なんと_121": {
+      "title": "～なんと 言いますか。 (〜nan to iimasu ka.)",
+      "shortExplanation": "사물의 이름이나 표현 방식을 물을 때 사용하며, '~은/는 뭐라고 합니까?', '~라고 말합니까?'라는 뜻입니다.",
+      "longExplanation": "'～なんと言いますか'는 어떤 대상의 이름, 호칭 또는 특정 언어로 어떻게 말하는지 물어볼 때 사용하는 정중한 의문 표현입니다. 의문사 'なん(무엇)'과 인용 조사 'と(~라고)', 그리고 동사 '言います(말합니다)'의 의문형 '～か'가 결합하여 만들어진 형태입니다.",
+      "formation": "명사 + は / が + なんと言いますか",
+      "examples": [
+        {
+          "translation": "이 꽃은 뭐라고 부릅니까?"
+        },
+        {
+          "translation": "이 요리는 뭐라고 합니까?"
+        },
+        {
+          "translation": "일본에서는 이것을 뭐라고 말합니까?"
+        },
+        {
+          "translation": "그 영화의 이름은 뭐라고 합니까?"
+        }
+      ]
+    },
+    "ja_に_122": {
+      "title": "～に あげます (〜 ni agemasu)",
+      "shortExplanation": "누군가에게 무언가를 주는 행위를 나타내며, '~에게 주다'라는 뜻입니다.",
+      "longExplanation": "'～にあげます' 문형은 화자(또는 화자 측의 사람)가 다른 사람에게 물건을 주거나 선물할 때 사용하며, 그 행위가 받는 사람을 위한 것임을 나타냅니다. 물건을 받는 대상 뒤에 조사 'に'를 붙이고, 건네는 물건 뒤에 'を', 그리고 동사 'あげます'를 연결합니다.",
+      "formation": "받는 사람 + に + 물건/목적어 + を + あげます",
+      "examples": [
+        {
+          "translation": "저는 친구에게 책을 주었습니다."
+        },
+        {
+          "translation": "그에게 선물을 줍시다."
+        },
+        {
+          "translation": "선생님께 꽃을 드립니다."
+        },
+        {
+          "translation": "어머니께 초콜릿을 드리고 싶습니다."
+        }
+      ]
+    },
+    "ja_に_123": {
+      "title": "～に もらいます (〜ni moraimasu)",
+      "shortExplanation": "다른 사람에게서 물건을 받거나 어떤 도움·동작을 받는 것을 나타내며, '~에게(서) 받다', '~해 받다(해주다)'라는 뜻입니다.",
+      "longExplanation": "'～에게(서) 받다'를 나타내는 '～にもらいます' 문형은 화자(또는 화자 측 사람)가 다른 사람으로부터 물건이나 혜택, 도움을 받을 때 사용합니다. 물건이나 동작을 주는 상대방 뒤에 조사 'に'(또는 'から')를 붙이며, 물건을 받을 때는 '물건 + を + もらいます', 동작을 제공받을 때는 동사 て형에 연결하여 '동사 て형 + もらいます(~해 받다/도움을 받다)' 형태로 나타냅니다.",
+      "formation": "주는 사람 + に + 물건/명사 + を + もらいます / 동사 て형 + もらいます",
+      "examples": [
+        {
+          "translation": "친구에게 선물을 받았습니다."
+        },
+        {
+          "translation": "선생님께 조언을 받았습니다."
+        },
+        {
+          "translation": "할머니께서 편지를 써 주셨습니다."
+        },
+        {
+          "translation": "남동생에게 숙제를 도움받았습니다."
+        }
+      ]
+    },
+    "ja_の_124": {
+      "title": "～の (〜no)",
+      "shortExplanation": "명사와 명사를 연결하여 소유, 소속, 속성, 위치 등을 나타내며, 한국어의 '~의'에 해당합니다.",
+      "longExplanation": "조사 'の'는 일본어의 가장 기본적인 격조사 중 하나로, 두 명사를 연결하여(명사1 + の + 명사2) 앞의 명사가 뒤의 명사를 수식하도록 만듭니다. 소유(~의 것), 소속, 속성, 위치, 출처 등 다양한 관계를 나타내며, 한국어의 '~의'에 해당합니다. 또한 앞서 언급된 명사를 대신하거나 절을 명사화할 때도 사용됩니다.",
+      "formation": "명사1 + の + 명사2",
+      "examples": [
+        {
+          "translation": "이것은 제 가방입니다."
+        },
+        {
+          "translation": "그녀는 빨간 가방을 가지고 있습니다."
+        },
+        {
+          "translation": "그는 깨끗한 방이 있습니다."
+        },
+        {
+          "translation": "도쿄의 날씨는 덥습니다."
+        }
+      ]
+    },
+    "ja_はたいへんです_125": {
+      "title": "～はたいへんです (〜wa taihen desu)",
+      "shortExplanation": "어떤 일이나 상황이 몹시 힘들고 고되거나 벅차다는 것을 나타내며, '~은/는 힘듭니다', '~은/는 고생스럽습니다'라는 뜻입니다.",
+      "longExplanation": "'～はたいへんです' 문형은 어떤 일, 동작, 또는 생활 환경이 많은 노력과 수고를 필요로 하여 육체적·정신적으로 몹시 힘들거나 벅찰 때 사용합니다. 주어 자리에 일반 명사가 올 수도 있고, 동사 사전형에 'の'를 붙여 명사화한 형태('동사 사전형 + のはたいへんです')가 올 수도 있습니다.",
+      "formation": "명사 / 동사 사전형 + の + はたいへんです",
+      "examples": [
+        {
+          "translation": "한자를 외우는 것은 참 힘듭니다."
+        },
+        {
+          "translation": "이 일은 힘듭니다."
+        },
+        {
+          "translation": "일본의 역에 대해 이해하는 것은 어렵고 복잡합니다."
+        },
+        {
+          "translation": "그녀는 아플 때 생활이 몹시 힘듭니다."
+        }
+      ]
+    },
+    "ja_ほとんど_126": {
+      "title": "ほとんど〜 (hotondo〜)",
+      "shortExplanation": "수량이나 정도가 대다수에 이름 또는 거의 완전에 가까움을 나타내며, 긍정문에서는 '거의', '대부분', 부정문에서는 '거의 ~않다'라는 뜻입니다.",
+      "longExplanation": "'ほとんど'는 부사 또는 명사로 쓰여 사물의 수량, 정도, 비율이 완전한 상태에 매우 근접함을 나타냅니다. 긍정문과 결합하면 '거의 다', '대부분'이라는 뜻이 되고, 부정문과 결합하면 '거의 ~하지 않다'라는 의미가 됩니다. 명사를 수식할 때는 보통 'ほとんどの + 명사' 형태로 연결합니다.",
+      "formation": "ほとんど + 동사 / 형용사 또는 ほとんどの + 명사",
+      "examples": [
+        {
+          "translation": "그녀는 영어를 거의 하지 못합니다."
+        },
+        {
+          "translation": "대부분의 사람들이 파티에 참석했습니다."
+        },
+        {
+          "translation": "저희는 거의 공부를 안 하고 시험에 합격했습니다."
+        },
+        {
+          "translation": "이 책은 거의 다 읽었습니다."
+        }
+      ]
+    },
+    "ja_まあまあ_127": {
+      "title": "まあまあ～ (maa maa～)",
+      "shortExplanation": "상태나 수준이 아주 좋지도 않고 나쁘지도 않은 보통 상태임을 나타내며, '그럭저럭', '그런대로', '보통'이라는 뜻입니다.",
+      "longExplanation": "'まあまあ'는 부사 또는 형동사(な형용사)로 사용되어 어떤 대상의 수준, 실력, 상황 등이 특별히 뛰어나지는 않지만 나쁘지도 않아 그럭저럭 합격선에 해당함을 나타냅니다. 한국어의 '그럭저럭', '그런대로 괜찮은', '그저 그런'에 해당합니다. 또한 회화에서 흥분한 상대를 진정시킬 때 '자자, 진정해'라는 뉘앙스의 감탄사로도 쓰입니다.",
+      "formation": "まあまあ + 형용사 / 동사 / 명사 + です",
+      "examples": [
+        {
+          "translation": "그의 요리 솜씨는 그럭저럭 괜찮은 편입니다."
+        },
+        {
+          "translation": "오늘 날씨는 그런대로 괜찮네요."
+        },
+        {
+          "translation": "그 영화는 그럭저럭 재미있었습니다."
+        },
+        {
+          "translation": "그녀의 노래는 제법 잘 부르는 편이라고 생각합니다."
+        }
+      ]
+    },
+    "ja_まだ_128": {
+      "title": "まだ〜 (mada〜)",
+      "shortExplanation": "상태가 계속 이어지고 있음('아직 ~이다')이나, 어떤 동작이 현재까지 이루어지지 않았음('아직 ~않다')을 나타냅니다.",
+      "longExplanation": "'まだ'는 시간 및 상태를 나타내는 대표적인 부사입니다. 긍정 표현과 함께 쓰이면 기존의 상태나 상황이 변하지 않고 유지되고 있음을 나타내어 '아직', '여전히'라는 뜻이 됩니다 (예: 방이 아직 덥다). 부정 표현과 함께 쓰이면 당연히 완료되었거나 예상했던 동작이 아직 이루어지지 않았음을 나타내어 '아직 ~하지 않았다', '아직 ~가 아니다'라는 뜻이 됩니다.",
+      "formation": "まだ + 동사 부정형(아직 ~않다) / まだ + 형용사 / 명사 / 동사 진행형(아직 ~이다)",
+      "examples": [
+        {
+          "translation": "점심밥은 아직 먹지 않았습니다."
+        },
+        {
+          "translation": "야마다 씨는 아직 오지 않았습니다."
+        },
+        {
+          "translation": "이 방은 아직 덥습니다."
+        },
+        {
+          "translation": "그는 아직 학생이 아닙니다."
+        }
+      ]
+    },
+    "ja_まだないです_129": {
+      "title": "まだ〜ないです (mada 〜 nai desu)",
+      "shortExplanation": "어떤 동작이나 일이 아직 일어나지 않았거나 완료되지 않았음을 정중하게 나타내며, '아직 ~하지 않았습니다'라는 뜻입니다.",
+      "longExplanation": "'まだ〜ないです' 문형은 부사 'まだ(아직)'와 동사의 부정형(ない형)에 'です'를 결합한 형태입니다. 정중하면서도 구어에서 자연스럽고 부드러운 느낌을 주며, 예상되었던 동작이나 완료되었어야 할 행위가 현재 시점까지 끝나지 않았음을 나타냅니다. 특히 '동사 て형 + いないです(~하고 있지 않습니다/아직 안 했습니다)' 형태로 매우 자주 쓰입니다.",
+      "formation": "まだ + 동사 ない형 + です (또는 まだ + 동사 ていない형 + です)",
+      "examples": [
+        {
+          "translation": "아직 숙제를 안 했습니다."
+        },
+        {
+          "translation": "그는 아직 오지 않았습니다."
+        },
+        {
+          "translation": "영화는 아직 시작하지 않았습니다."
+        },
+        {
+          "translation": "저희는 아직 저녁을 먹지 않았습니다."
+        }
+      ]
+    },
+    "ja_まだません_130": {
+      "title": "まだ～ません (mada ~masen)",
+      "shortExplanation": "어떤 동작이나 일이 아직 완료되지 않았음을 정중한 높임말로 나타내며, '아직 ~하지 않았습니다'라는 뜻입니다.",
+      "longExplanation": "'まだ～ません'은 일본어의 표준 정중체(합니다체) 부정 표현으로, 기대되었거나 당연히 이루어졌어야 할 동작이 현재까지 완료되지 않았음을 나타냅니다. 주로 동작이 아직 이루어지지 않은 결과를 나타낼 때는 'まだ + 동사 て형 + いません(~하지 않았습니다)' 형태로 쓰이며, 경험이 없음을 나타낼 때는 'まだ + 동사 た형 + ことがありません(~한 적이 없습니다)' 형태로 쓰입니다.",
+      "formation": "まだ + 동사 ます형 부정（ません / ていません）",
+      "examples": [
+        {
+          "translation": "점심밥을 아직 먹지 않았습니다."
+        },
+        {
+          "translation": "숙제가 아직 끝나지 않았습니다."
+        },
+        {
+          "translation": "도쿄에는 아직 가 본 적이 없습니다."
+        },
+        {
+          "translation": "그는 아직 오지 않았습니다."
+        }
+      ]
+    },
+    "ja_もう_131": {
+      "title": "もう～ (mou～)",
+      "shortExplanation": "동작이나 사태가 이미 끝났음('이미', '벌써')이나, 더 이상 지속되지 않음('이제는 ~않다'), 또는 곧 임박했음('곧')을 나타냅니다.",
+      "longExplanation": "'もう'는 문맥과 서술어에 따라 다양한 의미를 나타내는 부사입니다. 1. 과거형·완료형과 결합할 때: 이미 어떤 행위나 사건이 완료되었음을 나타내어 '벌써', '이미'라는 뜻이 됩니다. 2. 부정형과 결합할 때: 어떤 행위나 상태를 더 이상 반복·지속하지 않음을 나타내어 '더 이상 (~않다)', '이제 (~않다)'라는 뜻이 됩니다. 3. 시간적 표현이나 'すぐ'와 결합할 때: 어떤 시점에 매우 가까워졌음을 나타내어 '이제 곧', '머지않아'라는 뜻이 됩니다. 4. 수량 표현 앞에 붙어 '하나 더', '한 번 더'의 의미를 나타내기도 합니다.",
+      "formation": "もう + 동사(과거형/부정형) / 형용사 / 명사",
+      "examples": [
+        {
+          "translation": "벌써 점심밥을 먹었습니다."
+        },
+        {
+          "translation": "이제 여기서는 일하지 않는다."
+        },
+        {
+          "translation": "이제 곧 여름방학이네요."
+        },
+        {
+          "translation": "이제 충분합니다."
+        }
+      ]
+    },
+    "ja_もうすぐ_132": {
+      "title": "もうすぐ〜 (mou sugu~)",
+      "shortExplanation": "어떤 일이나 동작이 아주 가까운 시간 안에 일어날 것임을 나타내며, '곧', '머지않아', '이제 곧'이라는 뜻입니다.",
+      "longExplanation": "'もうすぐ'는 '곧, 즉시'를 뜻하는 'すぐ'에 'もう'가 붙어 시간적 근접성을 강조하는 부사로, 어떤 사건, 계절, 동작 등이 머지않은 가까운 미래에 곧 실현되려 함을 나타냅니다. 술어로는 미래 또는 현재형 동사나 시기·행사를 나타내는 명사문이 주로 이어집니다.",
+      "formation": "もうすぐ + 동사 / 명사 + です",
+      "examples": [
+        {
+          "translation": "곧 봄이 옵니다."
+        },
+        {
+          "translation": "이제 곧 그녀의 생일입니다."
+        },
+        {
+          "translation": "곧 시험이 끝난다."
+        },
+        {
+          "translation": "이제 곧 비가 그치겠지요."
+        }
+      ]
+    },
+    "ja_もっと_133": {
+      "title": "もっと〜 (motto〜)",
+      "shortExplanation": "현재의 상태나 기준보다 수량, 빈도, 정도가 한층 더함을 나타내며, '더', '더욱', '한층'이라는 뜻입니다.",
+      "longExplanation": "'もっと'는 어떤 기준이나 현재 상태에 비해 수량, 정도, 크기, 성질 등이 한 단계 더 높아지거나 많아짐을 나타내는 정도 부사입니다. 한국어의 '더', '더욱', '더 많이'에 해당하며, 동사, い형용사, な형용사를 앞에서 직접 수식합니다.",
+      "formation": "もっと + 동사 / い형용사 / な형용사(な)",
+      "examples": [
+        {
+          "translation": "더 공부해야 합니다."
+        },
+        {
+          "translation": "이 가방을 더 큰 사이즈로 바꾸고 싶습니다."
+        },
+        {
+          "translation": "더 조용한 곳에서 일하고 싶습니다."
+        },
+        {
+          "translation": "그녀는 더 능숙해지고 싶어 합니다."
+        }
+      ]
+    },
+    "ja_よく_134": {
+      "title": "よく～ (yoku ~)",
+      "shortExplanation": "빈도가 높음('자주', '종종') 또는 행위를 훌륭하게·철저히 해냄('잘', '충분히')을 나타냅니다.",
+      "longExplanation": "'よく'는 형용사 'よい／いい(좋다)'의 연용형에서 비롯된 부사로, 크게 두 가지 의미로 사용됩니다. 1. 빈도: 어떤 동작이나 일이 자주 일어남을 나타내어 '자주', '늘', '흔히'라는 뜻이 됩니다. 2. 정도 및 솜씨: 어떤 행위를 뛰어나게 잘하거나 충분하고 철저하게 행함을 나타내어 '잘', '충분히', '자세히'라는 뜻이 됩니다. 칭찬할 때 쓰는 'よくできました(참 잘했어요!)'가 대표적입니다.",
+      "formation": "よく + 동사",
+      "examples": [
+        {
+          "translation": "그는 공부를 자주 열심히 합니다."
+        },
+        {
+          "translation": "그녀는 요리를 자주 만듭니다."
+        },
+        {
+          "translation": "옛 친구들과 자주 어울려 놀았습니다."
+        },
+        {
+          "translation": "참 잘했습니다!"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_なんでも_120": {
+      "title": "なんでも～ (nandemo～)",
+      "shortExplanation": "「何でも」「すべて」という意味を表し、限定せず全面的に対象を受け入れる・肯定する際に用います。",
+      "longExplanation": "「なんでも」は疑問詞「なに」に助詞「でも」が付いた語で、「どんなものでも」「すべて」「制限なく何であっても」という意味を表します。選択肢を限定せず、何であっても差し支えない・可能であるという状況を述べるときに動詞、形容詞、名詞などとともに広く用いられます。",
+      "formation": "なんでも + 動詞 / 形容詞 / 名詞",
+      "examples": [
+        {
+          "translation": "何でも食べられるから、何を頼んでも大丈夫です。"
+        },
+        {
+          "translation": "何でもよければ、この本をおすすめします。"
+        },
+        {
+          "translation": "何でもできるスタッフを探しています。"
+        },
+        {
+          "translation": "この食堂では、何でも美味しくて安い料理が出されます。"
+        }
+      ]
+    },
+    "ja_なんと_121": {
+      "title": "～なんと 言いますか。 (〜nan to iimasu ka.)",
+      "shortExplanation": "物や事柄の名前・呼び方、または表現の仕方を尋ねるときに用い、「〜を何と言いますか」「〜の名前は何ですか」という意味を表します。",
+      "longExplanation": "「～なんと言いますか」は、相手にある物の名前や言葉の言い方を丁寧に尋ねる表現です。疑問詞「なん」、引用の助詞「と」、動詞「言います」に疑問の終助詞「か」が結びついた形です。日本語での呼び方が分からないときや、外国語での表現を質問する際によく使われます。",
+      "formation": "名詞 + は / が + なんと言いますか",
+      "examples": [
+        {
+          "translation": "この花は何と言いますか。"
+        },
+        {
+          "translation": "この料理は何と言いますか。"
+        },
+        {
+          "translation": "日本でこれは何と言いますか。"
+        },
+        {
+          "translation": "その映画の名前は何と言いますか。"
+        }
+      ]
+    },
+    "ja_に_122": {
+      "title": "～に あげます (〜 ni agemasu)",
+      "shortExplanation": "人に対して物を与える・プレゼントする行為を表し、「〜に（物を）あげる」という意味です。",
+      "longExplanation": "「～にあげます」は、話し手（または身内）が他の人に対して物を差し出したりプレゼントしたりする際に用いる表現です。その行為が相手の利益になることを表します。物を受け取る相手の後ろに助詞「に」を置き、渡す物の後ろに助詞「を」、そして動詞「あげます」を続けます。",
+      "formation": "相手 + に + 物 + を + あげます",
+      "examples": [
+        {
+          "translation": "私は友達に本をあげました。"
+        },
+        {
+          "translation": "彼にプレゼントをあげましょう。"
+        },
+        {
+          "translation": "先生に花をあげます。"
+        },
+        {
+          "translation": "お母さんにチョコレートをあげたいです。"
+        }
+      ]
+    },
+    "ja_に_123": {
+      "title": "～に もらいます (〜ni moraimasu)",
+      "shortExplanation": "人から物を受け取ったり、恩恵となる行為をしてもらったりすることを表し、「〜から（物を）もらう」「〜に（〜して）もらう」という意味を表します。",
+      "longExplanation": "「～にもらいます」は、話し手（または身内）が他者から物やアドバイス、あるいは親切な行為・恩恵を受け取ることを表す表現です。授与者（相手）の後ろに助詞「に」（または「から」）を置き、物を受ける場合は「相手 ＋ に ＋ 物 ＋ を ＋ もらいます」、行為を受ける場合は「動詞て形 ＋ もらいます」という形で接続します。",
+      "formation": "相手 + に + 物 + を + もらいます / 動詞 て形 + もらいます",
+      "examples": [
+        {
+          "translation": "友達にプレゼントをもらいました。"
+        },
+        {
+          "translation": "先生にアドバイスをもらいました。"
+        },
+        {
+          "translation": "おばあさんに手紙を書いてもらいました。"
+        },
+        {
+          "translation": "弟に宿題を手伝ってもらいました。"
+        }
+      ]
+    },
+    "ja_の_124": {
+      "title": "～の (〜no)",
+      "shortExplanation": "名詞と名詞を結びつけ、所有、所属、性質、所在などの修飾関係を表します。「〜の」に当たります。",
+      "longExplanation": "助詞「の」は、名詞と名詞を連結して前項が後項の名詞を修飾する働きをする格助詞です。所有（私の本）、所属（会社の同僚）、属性・性質、所在や産地など、多様な関係を表します。また、既出の名詞の代用（代名詞的用法）や用言の後ろに付いて名詞化する用法（準体助詞）としても用いられます。",
+      "formation": "名詞1 + の + 名詞2",
+      "examples": [
+        {
+          "translation": "これは私の鞄です。"
+        },
+        {
+          "translation": "彼女は赤いバッグを持っています。"
+        },
+        {
+          "translation": "彼はきれいな部屋があります。"
+        },
+        {
+          "translation": "東京の天気は暑いです。"
+        }
+      ]
+    },
+    "ja_はたいへんです_125": {
+      "title": "～はたいへんです (〜wa taihen desu)",
+      "shortExplanation": "ある事柄や行為が多大な労力や苦労を要し、つらい・困難であることを表します。「〜は大変です」「〜は苦労が多い」という意味です。",
+      "longExplanation": "「～はたいへんです」は、ある仕事や状況、または特定の行為を行うことが肉体的・精神的に厳しく、苦労や負担が大きいことを述べる表現です。主語には名詞が直接入るほか、動詞辞書形に準体助詞「の」を付けて名詞化した形（〜するのは大変です）もよく用いられます。",
+      "formation": "名詞 / 動詞 辞書形 + の + はたいへんです",
+      "examples": [
+        {
+          "translation": "漢字を覚えるのは大変です。"
+        },
+        {
+          "translation": "この仕事は大変です。"
+        },
+        {
+          "translation": "日本の駅のことを理解するのは大変です。"
+        },
+        {
+          "translation": "彼女は病気の時、生活は大変です。"
+        }
+      ]
+    },
+    "ja_ほとんど_126": {
+      "title": "ほとんど〜 (hotondo〜)",
+      "shortExplanation": "数量や割合、程度が全体に極めて近いことを表します。肯定文では「大部分」「ほぼすべて」、否定文では「めったに〜ない」「ほとんど〜ない」という意味になります。",
+      "longExplanation": "「ほとんど」は副詞または名詞として用いられ、分量や程度が100％に極めて近い状態を表します。肯定の文脈では「大半」「ほぼ全部」「もう少しで完了する」という意味を表し、否定の表現（〜ない）と呼応すると「ごくわずかしか〜ない」「ほとんど〜しない」という意味になります。名詞を修飾する場合は「ほとんどの＋名詞」の形をとります。",
+      "formation": "ほとんど + 動詞 / 形容詞、または ほとんどの + 名詞",
+      "examples": [
+        {
+          "translation": "彼女はほとんど英語を話せません。"
+        },
+        {
+          "translation": "ほとんどの人がパーティーに出席しました。"
+        },
+        {
+          "translation": "私たちはほとんど勉強しないでテストに合格しました。"
+        },
+        {
+          "translation": "この本はほとんど読み終わりました。"
+        }
+      ]
+    },
+    "ja_まあまあ_127": {
+      "title": "まあまあ～ (maa maa～)",
+      "shortExplanation": "程度や状態が特段優れても悪くもなく、中くらいであることを表し、「可もなく不可もなく」「ひとまず合格点である」という意味です。",
+      "longExplanation": "「まあまあ」は副詞やな形容詞として用いられ、品質、能力、状態などが最高ではないものの、それなりに満足・納得できる中間的なレベルにあることを表します。「一応満足できる」「悪くはない」というニュアンスを持ちます。また会話において、興奮している相手をなだめるときの間投詞（「まあまあ、落ち着いて」）としても用いられます。",
+      "formation": "まあまあ + 形容詞 / 動詞 / 名詞 + です",
+      "examples": [
+        {
+          "translation": "彼の料理の腕前はまあまあです。"
+        },
+        {
+          "translation": "今日の天気はまあまあですね。"
+        },
+        {
+          "translation": "あの映画はまあまあ面白かったです。"
+        },
+        {
+          "translation": "彼女の歌はまあまあ上手だと思います。"
+        }
+      ]
+    },
+    "ja_まだ_128": {
+      "title": "まだ〜 (mada〜)",
+      "shortExplanation": "状態が以前のまま継続していること（「依然として」）、またはある動作が現在に至るまで実現していないこと（「未完了」）を表します。",
+      "longExplanation": "「まだ」は時間や状態の継続・未完了を表す副詞です。肯定の表現とともに用いる場合は、過去から続く状態が今なお継続していることを表し（「まだ暑い」など）、否定の表現（〜ない／〜ません）とともに用いる場合は、予定・予想されていた事柄が現在までに完了・発生していないことを表します（「まだ食べていない」など）。",
+      "formation": "まだ + 動詞否定形（未完了） / まだ + 形容詞 / 名詞 / 動詞継続形（状態継続）",
+      "examples": [
+        {
+          "translation": "昼ご飯はまだ食べていません。"
+        },
+        {
+          "translation": "山田さんはまだ来ていません。"
+        },
+        {
+          "translation": "この部屋はまだ暑いです。"
+        },
+        {
+          "translation": "彼はまだ学生じゃないです。"
+        }
+      ]
+    },
+    "ja_まだないです_129": {
+      "title": "まだ〜ないです (mada 〜 nai desu)",
+      "shortExplanation": "ある動作や事態がまだ起きていないこと、完了していないことを丁寧に表し、「まだ〜していない」という意味を表します。",
+      "longExplanation": "「まだ〜ないです」は、副詞「まだ」に動詞の普通形否定（ない形）＋丁寧の「です」を組み合わせた文型です。「〜ません」と同等の丁寧さを持ちつつ、日常会話においてやや親しみやすく柔らかなニュアンスを与えます。動作が未完了であることや、これから行われる予定の行為が現在まだ実施されていないことを示します（多くの場合「まだ〜ていないです」の形で継続・結果の未完了を表します）。",
+      "formation": "まだ + 動詞 ない形 + です（または まだ + 動詞 ていない + です）",
+      "examples": [
+        {
+          "translation": "まだ宿題をしていないです。"
+        },
+        {
+          "translation": "彼はまだ来ないです。"
+        },
+        {
+          "translation": "映画はまだ始まっていないです。"
+        },
+        {
+          "translation": "私たちはまだ夕食を食べていないです。"
+        }
+      ]
+    },
+    "ja_まだません_130": {
+      "title": "まだ～ません (mada ~masen)",
+      "shortExplanation": "ある動作や経験が現在までに完了していない・実現していないことを丁寧な敬体で表し、「まだ〜していません」という意味を表します。",
+      "longExplanation": "「まだ～ません」は、標準的な丁寧語（ます体）の否定形を用いて、予定されていた事柄や行為が現在まで完了していないことを表す文法表現です。動作がまだ行われておらずその結果状態に達していないことを表す際には、主に「まだ＋動詞ていません」の形で用いられます。また、経験がないことを述べる場合は「まだ＋動詞たことがありません」の形をとります。",
+      "formation": "まだ + 動詞 ます形否定（〜ません / 〜ていません）",
+      "examples": [
+        {
+          "translation": "昼ご飯をまだ食べていません。"
+        },
+        {
+          "translation": "宿題がまだ終わっていません。"
+        },
+        {
+          "translation": "東京にはまだ行ったことがありません。"
+        },
+        {
+          "translation": "彼はまだ来ていません。"
+        }
+      ]
+    },
+    "ja_もう_131": {
+      "title": "もう～ (mou～)",
+      "shortExplanation": "動作や事態が既に完了していること（「既に」）、これ以上続かないこと（「もはや〜ない」）、または時期が迫っていること（「間もなく」）を表します。",
+      "longExplanation": "「もう」は多様な用法を持つ副詞です。1. 過去形・完了形とともに用いられ、動作や事態がすでに済んでいることを表します（「もう食べた」など）。2. 否定表現とともに用いられ、これ以上行為や状態が継続しないことを表します（「もう行かない」など）。3. 「すぐ」や時期を表す言葉とともに用いられ、ある時期が間近に迫っていることを表します（「もうすぐ」など）。4. また、数量の追加（「もう一つ」など）を表す際にも用いられます。",
+      "formation": "もう + 動詞（過去形／否定形） / 形容詞 / 名詞",
+      "examples": [
+        {
+          "translation": "もう昼ごはんを食べました。"
+        },
+        {
+          "translation": "もうここでは働かない。"
+        },
+        {
+          "translation": "もうすぐ夏休みですね。"
+        },
+        {
+          "translation": "もう十分です。"
+        }
+      ]
+    },
+    "ja_もうすぐ_132": {
+      "title": "もうすぐ〜 (mou sugu~)",
+      "shortExplanation": "ある事柄や動作が時間的にごく近い未来に実現・到来することを表し、「間もなく」「今にも」という意味を表します。",
+      "longExplanation": "「もうすぐ」は、事態の発生や完了、あるいは時期の到来までの時間が残りわずかであることを表す時間副詞です。「もう」と「すぐ」が合わさった語で、話している時点からあまり時間を置かずに何かが起こることを予告します。後続には動詞の現在形（未来を表す）や、時期・行事を表す名詞文が続きます。",
+      "formation": "もうすぐ + 動詞 / 名詞 + です",
+      "examples": [
+        {
+          "translation": "もうすぐ春が来ます。"
+        },
+        {
+          "translation": "もうすぐ彼女の誕生日です。"
+        },
+        {
+          "translation": "もうすぐ試験が終わる。"
+        },
+        {
+          "translation": "もうすぐ雨が止むでしょう。"
+        }
+      ]
+    },
+    "ja_もっと_133": {
+      "title": "もっと〜 (motto〜)",
+      "shortExplanation": "現在の状態や基準に比べて、数量・程度・質などがさらに上回ることを表し、「さらに」「より一層」という意味を表します。",
+      "longExplanation": "「もっと」は、現在の水準や比較対象よりも程度や度合い、分量をさらに高める・深めることを表す程度副詞です。願望や要求、努力の継続などを表す文脈でよく用いられ、動詞、い形容詞、な形容詞の前に置いて修飾します。",
+      "formation": "もっと + 動詞 / い形容詞 / な形容詞（な）",
+      "examples": [
+        {
+          "translation": "もっと勉強しなければなりません。"
+        },
+        {
+          "translation": "このかばんをもっと大きいサイズに変えたいです。"
+        },
+        {
+          "translation": "もっと静かな場所で働きたいです。"
+        },
+        {
+          "translation": "彼女はもっと上手になりたいと思っています。"
+        }
+      ]
+    },
+    "ja_よく_134": {
+      "title": "よく～ (yoku ~)",
+      "shortExplanation": "行為の頻度が高いこと（「しばしば」「頻繁に」）、または程度が優れていること・念入りであること（「上手に」「十分に」）を表します。",
+      "longExplanation": "「よく」は形容詞「よい／いい」の連用形から生じた副詞で、主に二つの代表的な用法があります。1. 頻度：動作や事態が繰り返し頻繁に行われることを表し、「いつも」「たびたび」という意味になります。2. 程度・巧拙：動作が巧みであること、または十分・念入りに行われることを表し、「上手に」「詳しく」「しっかりと」という意味になります。称賛の言葉である「よくできました」はその代表例です。",
+      "formation": "よく + 動詞",
+      "examples": [
+        {
+          "translation": "彼はよく勉強します。"
+        },
+        {
+          "translation": "彼女はよく料理を作ります。"
+        },
+        {
+          "translation": "昔の友達とよく遊んでいました。"
+        },
+        {
+          "translation": "よくできました！"
+        }
+      ]
+    }
+  }
+}

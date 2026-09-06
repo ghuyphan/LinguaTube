@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_를_95",
+    "language": "ko",
+    "pattern": "~를",
+    "title": "~를 바탕으로 [reul batageuro] (Based on)",
+    "shortExplanation": "Used to express the basis or foundation upon which something is derived.",
+    "longExplanation": "The phrase '~를 바탕으로' is used to indicate that an action, decision, or creation is based on certain data, facts, or experience. It can be translated as 'on the basis of' or 'based on' in English.",
+    "formation": "Noun + 를 바탕으로",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "연구 결과를 바탕으로 새로운 약을 개발하고 있습니다.",
+        "romanization": "Yeongu gyeolgwareul batageuro saeroun yageul gaebalhago issseumnida.",
+        "translation": "Based on the research results, we are developing a new medicine."
+      },
+      {
+        "sentence": "경험을 바탕으로 나의 미래를 계획하고 있습니다.",
+        "romanization": "Gyeongheomeul batageuro naui miraereul gyehoekhago issseumnida.",
+        "translation": "Based on my experiences, I am planning my future."
+      },
+      {
+        "sentence": "이 아이디어는 과학적인 사실을 바탕으로 생각했습니다.",
+        "romanization": "I aideareun gwahakjeokin sasireul batageuro saenggakhaesseumnida.",
+        "translation": "This idea is based on scientific facts."
+      },
+      {
+        "sentence": "당신의 의견을 바탕으로 회의에서 얘기할 수 있을까요?",
+        "romanization": "Dangsin-ui uigeoneul batageuro, hoeuieseo yaegi-hal su isseulkka-yo?",
+        "translation": "Can we discuss this in the meeting based on your opinion?"
+      }
+    ]
+  },
+  {
+    "id": "ko_를_96",
+    "language": "ko",
+    "pattern": "~를",
+    "title": "~를 통해 [reul tonghae] (Through, by means of)",
+    "shortExplanation": "Used to express the medium or method by which something is done or achieved.",
+    "longExplanation": "'~를 통해' is a postposition used to indicate the means, method, or channel through which an action is performed. It is equivalent to 'through', 'by means of', or 'via' in English.",
+    "formation": "Noun + 를 통해",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "나는 음악을 통해 감정을 표현할 수 있어요.",
+        "romanization": "Naneun eumageul tonghae gamjeongeul pyohyeonhal su isseoyo.",
+        "translation": "I can express my emotions through music."
+      },
+      {
+        "sentence": "우리는 이메일을 통해 그에게 이 메시지를 보냈어요.",
+        "romanization": "Urineun imeireul tonghae, geu-ege i mesijireul bonaesseoyo.",
+        "translation": "We sent him the message through email."
+      },
+      {
+        "sentence": "학생들은 실험을 통해 새로운 지식을 배웠어요.",
+        "romanization": "Haksaengdeureun silheomeul tonghae saeroun jisigeul baewosseoyo.",
+        "translation": "The students learned new knowledge through experimentation."
+      },
+      {
+        "sentence": "그녀는 연습을 통해 그림 그리는 기술을 향상시켰어요.",
+        "romanization": "Geunyeoneun yeonseupeul tonghae, geurim geurineun gisuleul hyangsangshikyeosseoyo.",
+        "translation": "She improved her painting skills through practice."
+      }
+    ]
+  },
+  {
+    "id": "ko_만큼_97",
+    "language": "ko",
+    "pattern": "~만큼",
+    "title": "~만큼 [mankeum] (As much as)",
+    "shortExplanation": "Used to express the amount, level, or extent equivalent to a certain standard; 'as much as', 'as...as'.",
+    "longExplanation": "'~만큼 [mankeum]' is a postposition used in Korean to demonstrate equivalence in extent, amount, or level with a given reference. It is used to compare two things, implying that they have the same level or quantity. It can be interpreted as 'as much as' or 'as...as' in English.",
+    "formation": "Noun/Verb + 만큼",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그는 그의 친구만큼 열심히 일하지 않아요, 그래서 그의 성과는 항상 작아요.",
+        "romanization": "Geuneun geu chingumankeum yeolsimhi ilhaji anhayo, geuraeseo geu seonggwaneun hangsang jagayo.",
+        "translation": "He does not work as hard as his friend, so his performance is always weak."
+      },
+      {
+        "sentence": "나는 배운 만큼 가르칩니다, 그래서 제가 알고 있는 것은 모두 다른 사람들에게 가르쳐 줄 수 있어요.",
+        "romanization": "Naneun baeun mankeum gareuchimnida, geuraeseo jega algo issneun geoseun modu dareun saramdeul-ege gareuchyeo jul su isseoyo.",
+        "translation": "I teach as much as I learn, so I can teach everything I know to others."
+      },
+      {
+        "sentence": "우리는 우리가 할 수 있는 만큼 최선을 다하고 있어요. 다른 사람들이 더 잘하더라도 우리는 걱정하지 않아요.",
+        "romanization": "Urineun uriga hal su issneun mankeum choeseoneul dahago isseoyo. Dareun saramdeul-i deo jalhadeorado urineun geokjeonghaji anhayo.",
+        "translation": "We are doing our best as much as we can. Even if others do better, we don’t worry."
+      },
+      {
+        "sentence": "여행 가서 볼 수 있는 만큼 많은 것을 봤어요. 그래서 많은 추억을 만들었어요.",
+        "romanization": "Yeohaeng gaseo bol su issneun mankeum maneun geoseul bwasseoyo. Geuraeseo maneun chueogeul mandeuleosseoyo.",
+        "translation": "I saw as much as I could on the trip. So I made a lot of memories."
+      }
+    ]
+  },
+  {
+    "id": "ko_마저_98",
+    "language": "ko",
+    "pattern": "~마저",
+    "title": "~마저 [majeo] (Even)",
+    "shortExplanation": "Used to express the unexpected inclusion; 'even'.",
+    "longExplanation": "'~마저 [majeo]' is a postposition used in Korean to express the inclusion of someone or something that is not normally expected. It carries a sense of surprise or disbelief, similar to 'even' in English.",
+    "formation": "Noun + 마저",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "시험이 너무 어려워서 우리 반 학생들 중에 천재인 민수마저 틀렸어요.",
+        "romanization": "Siheomi neomu eoryeowoseo uri ban haksaengdeul jung-e cheonjaein Minsumajeo teullyeosseoyo.",
+        "translation": "The exam was so difficult that even Minsu, a genius among the students in our class, got it wrong."
+      },
+      {
+        "sentence": "집에 늦게 왔더니, 엄마마저 잠들어 있었어요.",
+        "romanization": "Jibe neutge wassdeoni, eommamajeo jamdeureo isseosseoyo.",
+        "translation": "I came home late, and even my mom was asleep."
+      },
+      {
+        "sentence": "오늘은 날씨가 너무 추워서 동물원의 사자마저 숨어버렸어요.",
+        "romanization": "Oneuleun nalssiga neomu chuweoseo dongmulwon-ui sajamajeo sumeobeoryeosseoyo.",
+        "translation": "Today, the weather was so cold that even the lion at the zoo hid."
+      },
+      {
+        "sentence": "그녀는 너무 유명해서 이 작은 마을 사람들마저 그녀를 알고 있어요.",
+        "romanization": "Geunyeoneun neomu yumyeonghaeseo i jageun ma-eul saramdeul majeo geunyeoreul algo isseoyo.",
+        "translation": "She is so famous that even the people in this small village know her."
+      }
+    ]
+  },
+  {
+    "id": "ko_못하다_99",
+    "language": "ko",
+    "pattern": "~못하다",
+    "title": "~못하다 [mothada] (Cannot)",
+    "shortExplanation": "Used to express inability or impossibility; 'cannot'.",
+    "longExplanation": "'~못하다 [mothada]' is used in Korean with action verbs to indicate that the action cannot be performed. It conveys the speaker’s inability or impossibility to carry out the action.",
+    "formation": "Action Verb Stem + 못하다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "제가 솔직히 한국어를 못 하겠어요, 그래서 계속 연습하고 있습니다.",
+        "romanization": "Jega soljikhi hangug-eoleul mothagesseoyo, geuraeseo gyesok yeonseukhago isseoyo.",
+        "translation": "Honestly, I can’t speak Korean well, so I keep practicing."
+      },
+      {
+        "sentence": "이 비 때문에 운동할 수가 없어요, 비가 너무 심하게 내려서 잔디밭이 미끄러워 움직일 수 없어요.",
+        "romanization": "I biga ttaemune undonghal suga eopseoyo, biga neomu simhage naeraseo jandibat-i mikkureowo umjigil su eopseoyo.",
+        "translation": "I can’t exercise in this rain because it’s pouring so hard that the grass is slippery and I can’t move."
+      },
+      {
+        "sentence": "내가 웹 개발자로서 이 문제를 해결할 수가 없어요, 코딩 실력이 부족해서 이해를 못 하겠어요.",
+        "romanization": "Naega web gaebolja-roseo i munjeleul haegyeolhal suga eopseoyo, coding sillyeogi bujokhaeseo ihaereul mothagesseoyo.",
+        "translation": "As a web developer, I can’t solve this problem because my coding skills are lacking."
+      },
+      {
+        "sentence": "그는 금연을 못하고 있어요, 담배를 너무 좋아해서 멈출 수가 없는 것 같아요.",
+        "romanization": "Geuneun geumyeon-eul mothago isseoyo, dambaeleul neomu joahaseo meomchul suga eobsneun geos gatayo.",
+        "translation": "He can’t quit smoking because he likes cigarettes too much."
+      }
+    ]
+  },
+  {
+    "id": "ko_바라다_100",
+    "language": "ko",
+    "pattern": "~바라다",
+    "title": "~바라다 [barada] (Hope to)",
+    "shortExplanation": "Used to express the speaker's hope or wish for something.",
+    "longExplanation": "'~바라다 [barada]' is used after a verb stem to express a personal hope or wish. It conveys that the speaker looks forward to or wishes for a particular outcome in the future.",
+    "formation": "Verb Stem + 바라다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "저는 당신이 사업에서 성공하기를 바라요, 정말로 당신의 노력이 결실을 맺기를 바라요.",
+        "romanization": "Jeoneun dangsin-i sa-eob-eseo seonggonghagil barayo, jeongmallo dangsin-ui noryeog-i gyeolsil-eul matgigil barayo.",
+        "translation": "I hope you succeed in your business; I really hope that your efforts bear fruit."
+      },
+      {
+        "sentence": "우리 모두가 건강하게 살아가기를 바라는 부모님의 마음을 이해할 수 있어요.",
+        "romanization": "Uri moduga geonganghage sal-agagil baraneun bumonim-ui ma-eum-eul ihaehal su isseoyo.",
+        "translation": "I understand the hearts of parents who wish for all of us to live healthily."
+      },
+      {
+        "sentence": "교수님이 저에게 대학원에 진학하기를 바라셨어요, 그러나 저는 아직 준비가 안 돼 있어요.",
+        "romanization": "Gyosunim-i jeoege daehagwon-e jin-hak-hagil barasyeosseoyo, geureona jeoneun ajik junbiga an dwae isseoyo.",
+        "translation": "The professor wished for me to go to grad school, but I'm not ready yet."
+      },
+      {
+        "sentence": "난 한국어를 유창하게 말하게 될 것이라고 바라지만, 아직 많이 배워야 돼요.",
+        "romanization": "Nan hangug-eoreul yuchanghage malhage doel geos-irago barajiman, ajik manhi baewoya dwaeyo.",
+        "translation": "I hope to speak Korean fluently, but I still have a lot to learn."
+      }
+    ]
+  },
+  {
+    "id": "ko_밖에_101",
+    "language": "ko",
+    "pattern": "~밖에",
+    "title": "~밖에 [bakke] (Only, nothing but)",
+    "shortExplanation": "Used to express limitation; 'only', 'nothing but', or 'except'.",
+    "longExplanation": "'~밖에 [bakke]' is used in Korean with negative sentences to indicate that nothing else exists beyond what is mentioned. It emphasizes the limited or exclusive nature of the subject or object.",
+    "formation": "Noun + 밖에 + Negative Verb",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "나는 커피밖에 마시지 않아요, 다른 음료는 전혀 마시지 않아요.",
+        "romanization": "Naneun keopibakke masiji anhayo, dareun eumryoneun jeonhyeo masiji anhayo.",
+        "translation": "I only drink coffee; I do not drink any other beverages at all."
+      },
+      {
+        "sentence": "이 문제를 해결할 수 있는 사람은 저밖에 없어요, 다른 사람들은 전혀 모르겠어요.",
+        "romanization": "I munjeleul haegyeolhal su inneun sarameun jeobakke eopseoyo, dareun saramdeul-eun jeonhyeo moreugesseoyo.",
+        "translation": "I am the only one who can solve this problem; others have no idea."
+      },
+      {
+        "sentence": "그는 치킨밖에 안 먹어서 다른 음식을 먹을 수 없어요.",
+        "romanization": "Geuneun chikinbakke an meogeoseo dareun eumsigeul meogeul su eopseoyo.",
+        "translation": "He eats nothing but chicken, so he can't eat other food."
+      },
+      {
+        "sentence": "이게 남은 마지막 기회밖에 없어서 공부를 더 열심히 해야 해요.",
+        "romanization": "Ige nameun majimak gihoebakke eopseoseo gongbureul deo yeolsimhi haeya haeyo.",
+        "translation": "This is the only last chance left, so I have to study harder."
+      }
+    ]
+  },
+  {
+    "id": "ko_본_102",
+    "language": "ko",
+    "pattern": "~본",
+    "title": "~본 [bon] (Having experienced)",
+    "shortExplanation": "Used to express that the speaker has experienced or done something.",
+    "longExplanation": "'~본 [bon]' is attached to action verbs to indicate that the speaker has experienced or tried that action. It is typically used when sharing personal experiences or anecdotes.",
+    "formation": "Action Verb + 본",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "전 한국어 공부해본 사람으로서 한국어 문법을 가르치는 것이 저의 목표입니다.",
+        "romanization": "Jeon hangug-eo gongbuhaebon saram-euroseo hangug-eo munbeobeul gareuchineun geosi jeoui mogpyoibnida.",
+        "translation": "As someone who has studied Korean, my goal is to teach Korean grammar."
+      },
+      {
+        "sentence": "외국에서 살아본 친구가 생각보다 많아서 행복하다.",
+        "romanization": "Oegugeseo sarabon chingu-ga saenggakboda manhaseo haengbokhada.",
+        "translation": "I’m happy because I have more friends who have lived abroad than I expected."
+      },
+      {
+        "sentence": "코트를 샀는데, 이런 코트는 처음 입어본다.",
+        "romanization": "Koteureul satsneunde, ireon koteuneun cheoeum ibeobonda.",
+        "translation": "I bought a coat, and it’s the first time I’ve worn one like this."
+      },
+      {
+        "sentence": "그리스에 가본 사람이라면, 아테네는 꼭 가봐야 할 도시라고 말할 것입니다.",
+        "romanization": "Geuriseue gabon saram-iramyen, ateneuneun ggok gabwaya hal dosirago malhal geosibnida.",
+        "translation": "If you have been to Greece, you’d say that Athens is a city you must visit."
+      }
+    ]
+  },
+  {
+    "id": "ko_부터가_103",
+    "language": "ko",
+    "pattern": "~부터가",
+    "title": "~부터가 [buteoga] (Starting from)",
+    "shortExplanation": "Indicates that the occurrence of an action or state begins at a certain point, time, or place.",
+    "longExplanation": "'~부터가 [buteoga]' combines '부터' (starting from) with the subject particle '가' to emphasize that things truly begin from that point. It is used to stress that from that moment or place onward, the state or action is in effect.",
+    "formation": "Noun + 부터가",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "나는 아침마다 강의를 듣는데, 오늘부터가 진짜 힘들음을 느꼈어요.",
+        "romanization": "Naneun achimmada gangeureul deudneunde, oneulbuteoga jinjja himdeumeul neukkyeosseoyo.",
+        "translation": "I listen to lectures every morning, and starting from today, I really felt the hardship."
+      },
+      {
+        "sentence": "사랑은 처음부터가 아니라, 서로를 이해하게 되는 순간부터 시작한다.",
+        "romanization": "Sarangeun cheoeumbuteoga anira, seororeul ihaehage doeneun sunganbuteo sijakanda.",
+        "translation": "Love doesn’t start from the very beginning, but from the moment you begin to understand each other."
+      },
+      {
+        "sentence": "그 일은 월요일부터가 진짜 시작이에요.",
+        "romanization": "Geu ireun woryoilbuteoga jinjja sijakieyo.",
+        "translation": "That work really starts from Monday."
+      },
+      {
+        "sentence": "여름 휴가는 다음 주부터가 시작인데, 이미 준비가 돼 있어요.",
+        "romanization": "Yeoreum hyuganeun daeum jubuteoga sijakinde, imi junbiga dwae isseoyo.",
+        "translation": "Summer vacation starts from next week, and I’m already prepared."
+      }
+    ]
+  },
+  {
+    "id": "ko_뿐이다_104",
+    "language": "ko",
+    "pattern": "~뿐이다",
+    "title": "~뿐이다 [ppunida] (Only, just)",
+    "shortExplanation": "Used to indicate 'only' or 'just'.",
+    "longExplanation": "'~뿐이다 [ppunida]' expresses exclusivity by stating that nothing else exists beyond what is mentioned. It is used to emphasize limitation or singularity and is typically found with a negative verb.",
+    "formation": "Noun + 뿐이다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "지금 가진 돈은 오천 원뿐이다. 그래서 먹을 것을 사기엔 부족하다.",
+        "romanization": "Jigeum gajin doneun ocheon wonppunida. Geuraeseo meogeul geoseul sagien bujokhada.",
+        "translation": "All I have now is five thousand won, so it’s not enough to buy food."
+      },
+      {
+        "sentence": "내 친구는 너뿐이다. 그래서 네가 나를 도와주지 않으면 큰일 날 거예요.",
+        "romanization": "Nae chinguneun neoppunida. Geuraeseo nega nareul dowajugi anheumyeon keunil nal geoyeyo.",
+        "translation": "My only friend is you. So if you don't help me, I'm in big trouble."
+      },
+      {
+        "sentence": "방 안에는 텔레비전뿐이다. 다른 가구는 아무것도 없다.",
+        "romanization": "Bang aneneun tellebijeonppunida. Dareun gaguneun amugeotdo eopda.",
+        "translation": "There is only a television in the room; there is no other furniture."
+      },
+      {
+        "sentence": "제 친구들 중에서, 제 이야기를 들어줄 수 있는 사람은 누나뿐이다.",
+        "romanization": "Je chingudeul jungeseo, je yaegireul deureojul su inneun sarameun nunappunida.",
+        "translation": "Among my friends, only my older sister is someone who can listen to my stories."
+      }
+    ]
+  },
+  {
+    "id": "ko_사이에서_105",
+    "language": "ko",
+    "pattern": "~사이에서",
+    "title": "~사이에서 [saieseo] (Between)",
+    "shortExplanation": "Used to indicate 'between' or 'among'.",
+    "longExplanation": "'~사이에서 [saieseo]' is a postposition used in Korean to denote a position within a range or to specify a selection between multiple options. It is used with both tangible objects and abstract choices.",
+    "formation": "Noun + 사이에서",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "어느 색깔을 고를까요? 파란색과 빨간색 사이에서 너무 힘든 선택이에요.",
+        "romanization": "Eoneu saekkareul goreulkka yo? Paran saekkwa bbalgan saek saieseo neomu himdeun seontaegieyo.",
+        "translation": "Which color should I choose? It’s a tough choice between blue and red."
+      },
+      {
+        "sentence": "성수동과 건대 사이에서 카페를 찾고 있어요.",
+        "romanization": "Seongsudonggwa Geondae saieseo kape-reul chatgo isseoyo.",
+        "translation": "I'm looking for a café between Seongsu-dong and Konkuk University."
+      },
+      {
+        "sentence": "올해 여름동안, 둘 사이에서 결정을 내려야 합니다: 여행을 갈지 아니면 집에서 쉴지.",
+        "romanization": "Olhae yeoreum dongan, dul saieseo gyeoljeongeul naeryeoya hamnida: yeohaengeul galji animyeon jibeseo swilji.",
+        "translation": "This summer, I have to decide between two options: whether to travel or to stay home and rest."
+      },
+      {
+        "sentence": "10살과 15살 사이에서 가장 좋아하는 영화를 선택해야 했어요.",
+        "romanization": "Sip sal gwa sip-oship sal saieseo gajang johahaneun yeonghwaleul seontaekhaeya haesseoyo.",
+        "translation": "I had to choose my favorite movie between the ages of 10 and 15."
+      }
+    ]
+  },
+  {
+    "id": "ko_서야_106",
+    "language": "ko",
+    "pattern": "~서야",
+    "title": "~서야 [seoya] (Only after)",
+    "shortExplanation": "Used to indicate that a result is possible only if a preceding action or condition is fulfilled.",
+    "longExplanation": "'~서야 [seoya]' is formed by attaching the ending '-서야' to a verb stem. It expresses that only when the preceding action is done (or the condition is met) can the subsequent result occur.",
+    "formation": "Verb stem + 서야",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "공부를 열심히 해서야 시험에서 좋은 점수를 받을 수 있어요.",
+        "romanization": "Gongbu-reul yeolsimhi haeseoya siheom-eseo joheun jeom-su badeul su isseoyo.",
+        "translation": "You can only get a good score on the test after studying hard."
+      },
+      {
+        "sentence": "나는 집에 돌아와서 커피를 마셔야 일을 할 수 있어요.",
+        "romanization": "Naneun jib-e dorawaseoya keopi-reul masheoya ireul hal su isseoyo.",
+        "translation": "I can only work after I come home and have coffee."
+      },
+      {
+        "sentence": "그녀는 강당에 도착해서야 그녀가 출연할 것임을 깨달았어요.",
+        "romanization": "Geunyeoneun gangdang-e dochakhaseoya geunyeoga chul-yeonhal geos-im-eul kkaedal-ass-eoyo.",
+        "translation": "It was only after she arrived at the lecture hall that she realized she was going to speak."
+      },
+      {
+        "sentence": "부모님에게 전화해서야 어제 일어난 사고에 대해 알게 되었어요.",
+        "romanization": "Bumonim-ege jeonhwahaseoya eoje il-eonan sago-e daehae alge doeeoss-eoyo.",
+        "translation": "It was only after calling my parents that I learned about the accident that happened yesterday."
+      }
+    ]
+  },
+  {
+    "id": "ko_소서_107",
+    "language": "ko",
+    "pattern": "~소서",
+    "title": "~소서 [soseo] (Polite way to apologize for an action)",
+    "shortExplanation": "Used to express apology or regret in a very polite and formal manner.",
+    "longExplanation": "The verb ending '~소서 [soseo]' is an archaic and formal way to apologize or express deep regret. It is typically used in formal or public settings, especially when addressing someone of higher status, to show sincere remorse and respect.",
+    "formation": "Verb stem + ~소서",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "내가 네게 힘들게 하였소서, 이제 나 아닌 다른 사람을 찾아가시오.",
+        "romanization": "Naega nege himdeulge hayeotssoseo, ije na anin dareun saram-eul chajagasyo.",
+        "translation": "I am sorry that I have caused you hardship; now please find someone other than me."
+      },
+      {
+        "sentence": "일을 까먹었소서, 너무 바빠서 정말 기억나지 않았어요.",
+        "romanization": "Ireul kkameogeotssoseo, neomu bappaseo jeongmal gieoknazji anhatssoyo.",
+        "translation": "I am sorry that I forgot the work; I really couldn’t remember because I was too busy."
+      },
+      {
+        "sentence": "그때 과연 말을 잘못 보냈소서, 정말 죄송합니다.",
+        "romanization": "Geuttae gwayeon maleul jalmot bonaetssoseo, jeongmal joesonghamnida.",
+        "translation": "I am sorry that I sent the wrong message at that time; I am truly sorry."
+      },
+      {
+        "sentence": "너무 늦었소서, 지금부터 빨리 하겠습니다.",
+        "romanization": "Neomu neujeotsseoseo, jigeumbuteo ppalli hagetsseumnida.",
+        "translation": "I am sorry that I am too late; I will do it quickly from now on."
+      }
+    ]
+  },
+  {
+    "id": "ko_않게_108",
+    "language": "ko",
+    "pattern": "~않게",
+    "title": "~않게 [anhge] (So as not to)",
+    "shortExplanation": "Used to express doing something in such a way as to prevent a certain outcome.",
+    "longExplanation": "'~않게 [anhge]' is a grammatical construction formed by attaching ‘않게’ to a verb stem. It expresses the speaker’s intention to avoid or prevent an action, situation, or condition from occurring – similar to saying 'so as not to' in English.",
+    "formation": "Verb stem + 않게",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "어떤 문제가 생기지 않게 미리 준비하세요.",
+        "romanization": "Eotteon munjega saenggiji anhge miri junbihaseyo.",
+        "translation": "Prepare in advance so that no problems occur."
+      },
+      {
+        "sentence": "아무도 당황하지 않게 시간을 정확하게 준수해야 합니다.",
+        "romanization": "Amudo danghwanghaji anhge siganeul jeonghwakhage junsuhaeya hamnida.",
+        "translation": "We need to keep time precisely so that no one is flustered."
+      },
+      {
+        "sentence": "늦지 않게 학교에 도착하려면 일찍 출발해야 합니다.",
+        "romanization": "Neujji anhge hakgyoe dochakharyeomyeon iljjik chulbalhaeya hamnida.",
+        "translation": "To arrive at school on time, you should leave early."
+      },
+      {
+        "sentence": "자신을 다치게 하지 않게 조심하려면 안전 지침을 따라야 합니다.",
+        "romanization": "Jasineul dachige haji anhge josimharyeomyeon anjeon gichimeul ddaraya hamnida.",
+        "translation": "To avoid hurting yourself, you should follow the safety guidelines."
+      }
+    ]
+  },
+  {
+    "id": "ko_아어_109",
+    "language": "ko",
+    "pattern": "~아/어",
+    "title": "~아/어 버리다 [a/eo beorida] (To completely)",
+    "shortExplanation": "Used to emphasize that an action is done completely or to its end.",
+    "longExplanation": "The phrase '~아/어 버리다 [a/eo beorida]' attaches to a verb stem to indicate that an action is carried out completely or thoroughly, often adding a sense of finality. Depending on the context, it may express regret, surprise, or relief. This form is common in casual spoken Korean.",
+    "formation": "Verb stem + ~아/어 버리다",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "저는 갑자기 발렌타인 데이 카드를 빠르게 만들어 버렸어요, 그런데 매우 만족스럽습니다.",
+        "romanization": "Jeoneun gapjagi balrentain dei kadeu-reul ppareuge mandeureo beoryeosseoyo, geureonde maeu manjokseureopseumnida.",
+        "translation": "I suddenly made a Valentine’s Day card quickly, and I am very satisfied."
+      },
+      {
+        "sentence": "객실 청소를 기다리다가 결국 나는 그냥 전부 청소해 버렸어요.",
+        "romanization": "Gaesil cheongso-reul gidaridaga gyeolguk naneun geunyang jeonbu cheongsohae beoryeosseoyo.",
+        "translation": "After waiting for the room to be cleaned, I ended up cleaning it all myself."
+      },
+      {
+        "sentence": "나는 돼지고기를 너무 좋아해서 한 번에 다 먹어 버렸어요.",
+        "romanization": "Naneun dwaejigogireul neomu joahaseo han beone da meogeobeoryeosseoyo.",
+        "translation": "I like pork so much that I ate it all at once."
+      },
+      {
+        "sentence": "농담을 너무 심하게 해서 친구가 서운해할까봐 걱정한 나머지, 결국 죄송해 버렸어요.",
+        "romanization": "Nongdameul neomu simhage haeseo chinguga seounhae halkkabwa geokjeonghan nameoji, gyeolguk joesonghae beoryeosseoyo.",
+        "translation": "I made such a harsh joke that, out of worry that my friend might be hurt, I ended up apologizing."
+      }
+    ]
+  }
+]

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Noun_62": {
+      "title": "Danh từ + にもまして (〜ni mo mashite)",
+      "shortExplanation": "Diễn tả sự so sánh vượt trội; 'hơn cả...', 'càng... hơn cả...', 'so với... lại càng... hơn'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + にもまして' được dùng để diễn đạt ý rằng một sự vật, hiện tượng hay mức độ nào đó còn vượt trội hơn, hơn hẳn danh từ được đưa ra làm tiêu chuẩn so sánh ('hơn cả...', 'vượt xa cả...'). Thông thường, bản thân danh từ làm mốc so sánh vốn dĩ đã có mức độ cao hoặc đã rất đáng kể rồi, nhưng sự việc được nói đến ở vế sau lại càng vượt bậc hơn thế. Cũng thường đi kèm với các danh từ chỉ thời gian trong quá khứ như 以前 (trước đây), 去年 (năm ngoái), 昨日 (hôm qua) hoặc từ nghi vấn như 何 (cái gì) để tạo thành '何にもまして' (hơn bất cứ thứ gì).",
+      "formation": "Danh từ + にもまして (hoặc Từ để hỏi + にもまして)",
+      "examples": [
+        {
+          "translation": "Tôi thậm chí còn yêu âm nhạc hơn cả anh ấy."
+        },
+        {
+          "translation": "Kinh nghiệm phong phú của cô ấy vượt xa so với độ tuổi của mình."
+        },
+        {
+          "translation": "Hôm nay trời còn lạnh hơn cả ngày hôm qua."
+        },
+        {
+          "translation": "Tòa nhà này nổi tiếng vì thiết kế tuyệt mỹ còn hơn cả chiều cao của nó."
+        }
+      ]
+    },
+    "ja_Noun_63": {
+      "title": "Danh từ + によらず (～ni yorazu)",
+      "shortExplanation": "Biểu thị sự việc không bị chi phối hay thay đổi bởi điều kiện; 'bất kể...', 'không phụ thuộc vào...', 'không phân biệt...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + によらず' (thể phủ định cổ của による) mang ý nghĩa 'không dựa vào', 'không phụ thuộc vào'. Mẫu này được dùng để biểu thị rằng kết quả, trạng thái hoặc hành động ở vế sau hoàn toàn không bị ảnh hưởng, phân biệt hay thay đổi bởi các điều kiện, sự khác biệt hay yếu tố được nêu ở danh từ đi trước ('bất kể...', 'bất luận...', 'không phụ thuộc vào...'). Thường đi cùng các danh từ mang tính chủng loại, sự khác biệt như 年齢 (tuổi tác), 国籍 (quốc tịch), 理由 (lý do), 季節 (mùa). Mang sắc thái trang trọng, văn viết.",
+      "formation": "Danh từ + によらず",
+      "examples": [
+        {
+          "translation": "Kết quả có lẽ sẽ không thay đổi bất kể thời gian học là bao nhiêu."
+        },
+        {
+          "translation": "Bất kể mùa nào trong năm, khu vực này quanh năm luôn ấm áp."
+        },
+        {
+          "translation": "Đây là sự kiện mà mọi người đều có thể thưởng thức, không phân biệt độ tuổi."
+        },
+        {
+          "translation": "Bất kể quốc tịch nào, ai ai cũng có thể tham gia."
+        }
+      ]
+    },
+    "ja_Noun_64": {
+      "title": "Danh từ + に先駆けて (〜ni sakigakete)",
+      "shortExplanation": "Biểu thị việc đi trước, tiên phong làm một việc gì đó trước người khác; 'tiên phong...', 'đi trước...', 'sớm hơn...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + に先駆けて' (xuất phát từ động từ 先駆ける - tiên phong, dẫn đầu) được dùng để biểu đạt hành động được thực hiện trước những người khác, tổ chức khác hay địa phương khác về mặt thời gian, mang tính dẫn dắt hoặc mở đường cho một trào lưu, sự kiện mới ('tiên phong...', 'đi trước...', 'trước cả...'). Khác với '～に先立って' (chuẩn bị trước khi một sự kiện bắt đầu), '～に先駆けて' nhấn mạnh tính tiên phong, dẫn đầu và mang tính cạnh tranh hoặc đột phá. Thường dùng trong văn viết, báo chí hoặc tin tức trang trọng. Cũng có thể dùng dạng '～に先駆け'.",
+      "formation": "Danh từ + に先駆けて (hoặc に先駆け)",
+      "examples": [
+        {
+          "translation": "Bộ phim này đã được công chiếu tại Mỹ trước cả Nhật Bản."
+        },
+        {
+          "translation": "Anh ấy đã được nghe thông báo đó trước những người xung quanh."
+        },
+        {
+          "translation": "Ông Johnson đã đến hội trường trước các người tham gia khác."
+        },
+        {
+          "translation": "Cô ấy đã có thể tốt nghiệp sớm hơn các bạn cùng khóa."
+        }
+      ]
+    },
+    "ja_Noun_65": {
+      "title": "Danh từ 1 + に即した + Danh từ 2 (A ni sokushita B)",
+      "shortExplanation": "Bổ nghĩa cho danh từ đứng sau, biểu thị sự phù hợp, gắn liền với tiêu chuẩn, thực tế; 'phù hợp với...', 'bám sát...', 'dựa trên...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + に即した + Danh từ 2' (thể liên thể bổ nghĩa danh từ của động từ 即する) được dùng khi muốn diễn đạt rằng Danh từ 2 (như kế hoạch, đối sách, chính sách, hành động) hoàn toàn phù hợp, thích ứng và bám sát vào Danh từ 1 (như thực tế, nguyên tắc, luật pháp, nhu cầu) ('phù hợp với...', 'bám sát vào...', 'dựa trên...'). Mẫu câu này thường dùng trong các bối cảnh trang trọng như chính trị, kinh doanh, giáo dục, pháp luật.",
+      "formation": "Danh từ 1 + に即した + Danh từ 2",
+      "examples": [
+        {
+          "translation": "Cần phải có một cuộc cải cách giáo dục bám sát nhu cầu của xã hội."
+        },
+        {
+          "translation": "Cần phải có những đối sách phù hợp với luật pháp quốc tế."
+        },
+        {
+          "translation": "Chúng ta hãy cùng hành động phù hợp với chính sách của đội ngũ."
+        },
+        {
+          "translation": "Chúng ta phải lập một kế hoạch bám sát vào thực tế."
+        }
+      ]
+    },
+    "ja_Noun_66": {
+      "title": "Danh từ + に即して + Động từ (〜ni sokushite〜)",
+      "shortExplanation": "Đóng vai trò trạng ngữ bổ nghĩa cho động từ, biểu thị hành động theo đúng nguyên tắc, thực tế; 'dựa theo...', 'bám sát...', 'phù hợp với...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + に即して + Động từ' (thể liên dụng của động từ 即する) đóng vai trò trạng ngữ bổ nghĩa cho động từ đứng sau, biểu thị việc tiến hành một hành động, đưa ra quyết định hay phán đoán dựa theo, bám sát và tuân thủ đúng các nguyên tắc, chuẩn mực, hiện thực hoặc quy tắc được nêu ở danh từ đi trước ('dựa theo...', 'bám sát vào...', 'phù hợp với...'). Khác với '～に即した' dùng để bổ nghĩa cho danh từ, '～に即して' dùng để bổ nghĩa trực tiếp cho động từ. Thường xuất hiện trong văn phong kinh doanh, hành chính và văn bản trang trọng.",
+      "formation": "Danh từ + に即して + Động từ",
+      "examples": [
+        {
+          "translation": "Chúng ta hãy cùng hành động tuân thủ theo chính sách của công ty."
+        },
+        {
+          "translation": "Việc đưa ra phán quyết căn cứ theo luật pháp là điều vô cùng quan trọng."
+        },
+        {
+          "translation": "Dựa theo ý kiến của anh ấy, chúng tôi đã thay đổi kế hoạch."
+        },
+        {
+          "translation": "Nếu hành động tuân theo đúng quy tắc thì sẽ không có vấn đề gì phát sinh."
+        }
+      ]
+    },
+    "ja_Noun_67": {
+      "title": "Danh từ + に言わせれば (Noun ni iwasereba)",
+      "shortExplanation": "Dẫn ra nhận định, quan điểm từ góc nhìn của một người; 'theo ý kiến của...', 'dưới góc nhìn của...', 'nếu để... nói thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + に言わせれば' (kết hợp thể sai khiến và thể điều kiện của động từ 言う, mang nghĩa đen là 'nếu để cho ai đó nói') được gắn vào sau danh từ chỉ người hoặc nhóm đối tượng có năng lực suy nghĩ để dẫn ra ý kiến, quan điểm hoặc nhận xét chủ quan từ lập trường của đối tượng đó ('theo ý kiến của...', 'dưới góc nhìn của...', 'nếu nghe... nói thì...'). Thường dùng khi quan điểm đó mang tính chuyên môn, hoặc thể hiện một góc nhìn riêng biệt, đôi khi có phần phê phán hay đối lập với ý kiến chung. Dạng khẩu ngữ tương đương là '～に言わせたら'.",
+      "formation": "Danh từ (chỉ người / đối tượng có tư duy) + に言わせれば (khẩu ngữ: に言わせたら)",
+      "examples": [
+        {
+          "translation": "Theo thầy giáo thì việc học tập mỗi ngày là điều vô cùng quan trọng."
+        },
+        {
+          "translation": "Dưới góc nhìn của anh ấy thì kết hôn sớm sẽ tốt hơn."
+        },
+        {
+          "translation": "Theo lời nhà phê bình thì bộ phim này là tác phẩm xuất sắc nhất năm nay."
+        },
+        {
+          "translation": "Theo bố tôi thì trải nghiệm làm việc ở nước ngoài có giá trị rất lớn."
+        }
+      ]
+    },
+    "ja_Noun_68": {
+      "title": "Danh từ + に限ったことではない (〜ni kagitta koto dewa nai)",
+      "shortExplanation": "Khẳng định sự việc không chỉ giới hạn riêng ở đối tượng được nêu; 'không chỉ riêng...', 'không chỉ giới hạn ở...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + に限ったことではない' (dạng phủ định của に限る kết hợp với danh từ hoá こと) được dùng để nhấn mạnh rằng một vấn đề, hiện tượng, khó khăn hay đặc điểm nào đó không chỉ xảy ra riêng với danh từ đi trước, mà còn đúng hoặc tồn tại phổ biến ở rất nhiều đối tượng, hoàn cảnh, lĩnh vực hay địa phương khác ('không chỉ riêng...', 'không chỉ giới hạn ở...'). Thường dùng trong các bình luận xã hội, thảo luận học thuật hoặc văn phong trang trọng.",
+      "formation": "Danh từ + に限ったことではない (khẩu ngữ: に限ったことじゃない)",
+      "examples": [
+        {
+          "translation": "Vấn đề này không chỉ giới hạn riêng ở Nhật Bản."
+        },
+        {
+          "translation": "Tiếng Anh không chỉ dành riêng cho nước Mỹ."
+        },
+        {
+          "translation": "Hội chứng nghiện điện thoại thông minh không chỉ xuất hiện ở riêng giới trẻ."
+        },
+        {
+          "translation": "Hiện tượng nóng lên toàn cầu không chỉ ảnh hưởng riêng đến con người chúng ta."
+        }
+      ]
+    },
+    "ja_Noun_69": {
+      "title": "Danh từ + に限ったことでもない (~ni kagitta koto demo nai)",
+      "shortExplanation": "Cách diễn đạt uyển chuyển, nhẹ nhàng hơn; 'cũng không hẳn chỉ riêng...', 'chưa chắc chỉ giới hạn ở...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + に限ったことでもない' có ý nghĩa tương tự như '～に限ったことではない', nhưng nhờ sự kết hợp của trợ từ 'でも', câu nói mang sắc thái nhẹ nhàng, mềm mỏng và tế nhị hơn ('cũng không hẳn chỉ riêng...', 'chưa hẳn là chỉ giới hạn ở...'). Người nói ngụ ý rằng ngoài đối tượng được nhắc đến ra thì các phương diện hoặc đối tượng khác cũng hoàn toàn có thể có cùng tính chất như vậy, giúp câu văn bớt tính tuyệt đối hay khẳng định gay gắt.",
+      "formation": "Danh từ + に限ったことでもない",
+      "examples": [
+        {
+          "translation": "Kỳ thi này khó khăn cũng không hẳn chỉ riêng môn toán."
+        },
+        {
+          "translation": "Nét đáng yêu của cô ấy không hẳn chỉ giới hạn ở khuôn mặt. Tôi cũng rất thích tính cách của cô ấy nữa."
+        },
+        {
+          "translation": "Vấn đề đó xảy ra cũng chưa hẳn chỉ riêng ở quốc gia chúng ta."
+        },
+        {
+          "translation": "Sách của tác giả này bán chạy cũng không hẳn chỉ riêng ở Nhật Bản."
+        }
+      ]
+    },
+    "ja_Noun_70": {
+      "title": "Danh từ / Động từ + に限る (~ni kagiru)",
+      "shortExplanation": "Khẳng định một sự vật, hành động là lựa chọn tốt nhất; '...là tốt nhất', 'không gì bằng...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ / Động từ thể từ điển + に限る' được dùng để bày tỏ sự đánh giá, khẳng định hoặc lời khuyên chủ quan của người nói rằng: trong một hoàn cảnh cụ thể, việc đó hoặc thứ đó chính là sự lựa chọn hoàn hảo nhất, tối ưu nhất, không có gì sánh bằng ('...là tốt nhất', 'chẳng gì bằng...', 'cứ... là nhất'). Thường dùng để chia sẻ kinh nghiệm sống cá nhân, lời khuyên nhiệt tình hoặc cảm giác thỏa mãn của bản thân.",
+      "formation": "Danh từ / Động từ thể từ điển + に限る",
+      "examples": [
+        {
+          "translation": "Những lúc thế này thì tâm sự với người nhà là cách tốt nhất."
+        },
+        {
+          "translation": "Vào mùa đông giá lạnh thì uống trà nóng là tuyệt vời nhất."
+        },
+        {
+          "translation": "Khi cơ thể mệt mỏi thì một giấc ngủ ngon là không gì bằng."
+        },
+        {
+          "translation": "Nếu muốn giảm cân thì tập thể dục là phương pháp tốt nhất."
+        }
+      ]
+    },
+    "ja_Noun_71": {
+      "title": "Danh từ 1 + (を)ぬいた + Danh từ 2 (A nuita B)",
+      "shortExplanation": "Biểu thị trạng thái đã loại bỏ, lược bớt một thành phần ra khỏi sự vật; 'đã bỏ...', 'không có...', 'đã rút/loại bớt...'.",
+      "longExplanation": "Cấu trúc 'Danh từ 1 + (を)ぬいた + Danh từ 2' sử dụng thể quá khứ liên thể của động từ 抜く (nối lược, rút bớt, loại bỏ) để bổ nghĩa cho Danh từ 2, biểu thị rằng Danh từ 2 là món ăn, đồ vật hay trạng thái mà trong đó thành phần Danh từ 1 đã được lấy ra, loại bỏ hoặc bỏ qua ('đã bỏ...', 'đã loại bớt...'). Thường dùng phổ biến trong ẩm thực khi yêu cầu hoặc miêu tả món ăn không kèm theo một loại gia vị hay nguyên liệu nào đó (như cà rốt, mù tạt, đường).",
+      "formation": "Danh từ 1 + (を)ぬいた + Danh từ 2",
+      "examples": [
+        {
+          "translation": "Món salad này là món salad đã bỏ cà rốt ra."
+        },
+        {
+          "translation": "Anh ấy đã bỏ đường ra khỏi tách cà phê."
+        },
+        {
+          "translation": "Tôi đã lược bớt muối ra khỏi món ăn."
+        },
+        {
+          "translation": "Cô ấy đã tẩy sạch vết ố trên quần áo."
+        }
+      ]
+    },
+    "ja_Noun_72": {
+      "title": "Danh từ + ぬいて (~nuite)",
+      "shortExplanation": "Diễn tả việc loại trừ hoặc không tính đến một đối tượng; 'ngoại trừ...', 'không tính...', 'bỏ qua...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + (を)ぬいて' (thể て của động từ 抜く, tương đương với 抜きにして / 抜きで) được dùng khi muốn loại trừ một đối tượng, thành viên, khoảng thời gian hay yếu tố cụ thể nào đó ra khỏi tổng thể để nhận xét về toàn bộ phần còn lại ('ngoại trừ...', 'không tính...', 'bỏ qua...'). Thường dùng trong sinh hoạt hằng ngày khi miêu tả sự vắng mặt của ai đó hoặc ngoại trừ một ngoại lệ duy nhất.",
+      "formation": "Danh từ + (を)ぬいて",
+      "examples": [
+        {
+          "translation": "Ngoại trừ anh ấy ra, tất cả chúng tôi đều đã có thể tập hợp đông đủ."
+        },
+        {
+          "translation": "Ngoại trừ thực đơn dành cho trẻ em, tất cả các món của nhà hàng này đều rất ngon."
+        },
+        {
+          "translation": "Công việc hôm nay bận rộn suốt ngoại trừ giờ nghỉ trưa."
+        },
+        {
+          "translation": "Ngoại trừ những ngày nghỉ lễ, ngày nào anh ấy cũng đi làm."
+        }
+      ]
+    },
+    "ja_ぬくnuku_73": {
+      "title": "Động từ thể ます + ぬく (〜nuku)",
+      "shortExplanation": "Diễn tả hành động được kiên trì làm đến cùng hoặc làm một cách triệt để; 'làm đến cùng', 'làm triệt để', 'hết sức... cho tới cùng'.",
+      "longExplanation": "Hậu tố bổ trợ '～ぬく' được gắn vào sau thân động từ thể ます (bỏ ます) để tạo thành động từ ghép, mang hai sắc thái chính: 1) Vượt qua muôn vàn khó khăn, đau khổ hay thử thách để kiên trì thực hiện hành động đến phút cuối cùng ('kiên trì... đến cùng', ví dụ: やりぬく - làm đến cùng, 生きぬく - kiên cường sống sót); 2) Tiến hành một trạng thái hay hành động ở mức độ triệt để, tận cùng ('vô cùng...', 'hết sức... triệt để', ví dụ: 悩みぬく - trăn trở khôn nguôi, 困りぬく - khốn đốn tột cùng). Biểu thị ý chí kiên định hoặc mức độ cực đại của hành động.",
+      "formation": "Động từ thể ます (bỏ ます) + ぬく",
+      "examples": [
+        {
+          "translation": "Anh ấy kiên trì đọc hết cuốn sách suốt cả ngày."
+        },
+        {
+          "translation": "Tôi sẽ kiên trì hoàn thành dự án này cho đến cùng."
+        },
+        {
+          "translation": "Ngày nào cô ấy cũng đến phòng tập và kiên trì hoàn thành trọn vẹn bài tập thể dục."
+        },
+        {
+          "translation": "Chúng tôi sẽ phá giải trò chơi này cho tới cùng."
+        }
+      ]
+    },
+    "ja_Nounのいかんだ_74": {
+      "title": "Danh từ + のいかんだ (Noun no ikan da)",
+      "shortExplanation": "Đứng cuối câu biểu thị kết quả tùy thuộc vào danh từ đi trước; 'tùy thuộc vào...', 'do... quyết định'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんだ' (thường dùng ở dạng vị ngữ cuối câu, hoặc dạng liên kết '～のいかんで') là một cách nói trang trọng, mang tính văn viết cổ, biểu thị rằng kết quả, sự thành bại hay hướng đi của sự việc hoàn toàn tùy thuộc vào nội dung, tình hình hoặc thái độ của danh từ đứng trước ('tùy thuộc vào...', 'do... quyết định', tương đương với '〜次第だ'). Thường kết hợp với các danh từ mang tính biến động như 成果 (thành quả), 態度 (thái độ), 努力 (nỗ lực), 結果 (kết quả). Dạng '～のいかんでは' biểu thị 'tùy theo... mà có thể dẫn đến...'.",
+      "formation": "Danh từ + のいかんだ (hoặc のいかんで / のいかんでは)",
+      "examples": [
+        {
+          "translation": "Chúng ta hãy quyết định tùy thuộc vào việc anh ấy có đến hay không."
+        },
+        {
+          "translation": "Việc có bị lưu ban hay không tùy thuộc vào kết quả của kỳ thi."
+        },
+        {
+          "translation": "Tùy theo thời tiết mà chúng tôi có thể sẽ hủy buổi dã ngoại."
+        },
+        {
+          "translation": "Hành động tiếp theo của chúng ta phụ thuộc vào câu trả lời của anh ấy."
+        }
+      ]
+    },
+    "ja_Noun_75": {
+      "title": "Danh từ + のいかんでは (Noun no ikan de wa)",
+      "shortExplanation": "Biểu thị rằng tùy thuộc vào tình huống mà có thể xảy ra kết quả tương ứng; 'tùy thuộc vào...', 'tùy theo... mà có thể...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんでは' (kết hợp với trợ từ は mang nghĩa nhấn mạnh hoặc nêu giả định) được dùng để biểu thị rằng tùy thuộc vào tình trạng, kết quả hay mức độ của danh từ đi trước mà ở vế sau có thể dẫn đến một biến đổi, hành động hoặc kết quả tương ứng ('tùy thuộc vào...', 'tùy theo... mà có thể...'). Vế sau câu thường đi kèm các cách nói suy đoán, khả năng hoặc cảnh báo như '～かもしれない' (có lẽ), '～こともある' (cũng có khi), '～決まる' (được quyết định). Là dạng câu văn viết trang trọng trong công văn, thông báo hoặc phát biểu chính thức.",
+      "formation": "Danh từ + のいかんでは",
+      "examples": [
+        {
+          "translation": "Tùy thuộc vào kết quả của kỳ thi mà việc có nhận được giấy báo nhập học đại học hay không sẽ được định đoạt."
+        },
+        {
+          "translation": "Tùy theo tình hình thời tiết, chúng tôi có thể sẽ hoãn buổi dã ngoại."
+        },
+        {
+          "translation": "Tùy thuộc vào tình hình giao thông, tôi có thể sẽ đến muộn."
+        },
+        {
+          "translation": "Tùy thuộc vào tình hình kinh tế, tương lai của công ty sẽ được định đoạt."
+        }
+      ]
+    },
+    "ja_Noun_76": {
+      "title": "Danh từ + のいかんにかかわらず (Noun no ikan ni kakawarazu)",
+      "shortExplanation": "Biểu thị sự việc không bị ảnh hưởng bởi tình hình hay kết quả; 'bất kể... thế nào', 'bất luận... ra sao', 'không màng đến...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんにかかわらず' (cũng dùng dạng '～のいかんによらず') là cách nói trang trọng, diễn tả ý rằng bất kể nội dung, tình trạng, lý do hay kết quả của danh từ đứng trước có như thế nào đi chăng nữa, thì sự việc, hành động hay nguyên tắc ở vế sau vẫn luôn không đổi và được tiến hành một cách nhất quán ('bất kể... thế nào', 'bất luận... ra sao', 'không phụ thuộc vào...'). Khác với '～にかかわらず' thông thường, việc thêm 'のいかん' làm cho câu văn mang tính pháp lý, hành chính và vô cùng trang trọng.",
+      "formation": "Danh từ + のいかんにかかわらず (hoặc のいかんによらず)",
+      "examples": [
+        {
+          "translation": "Bất kể kết quả thế nào, anh ấy cũng không hề hối hận về quyết định của mình."
+        },
+        {
+          "translation": "Bất kể tuổi tác ra sao, bất kỳ ai cũng đều có thể học tập."
+        },
+        {
+          "translation": "Bất kể đã có kinh nghiệm hay chưa, điều quan trọng là phải bắt đầu."
+        },
+        {
+          "translation": "Bất kể thời tiết ra sao, chuyến đi bộ đường dài vẫn diễn ra theo đúng kế hoạch."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Noun_62": {
+      "title": "名词 + にもまして (〜ni mo mashite)",
+      "shortExplanation": "表示程度甚至超过前者；“比……更加”、“更加……”、“甚至胜过……”。",
+      "longExplanation": "句型“名词 + にもまして”用于对比，表示后项事物的性质、程度甚至超过了作为基准的前项名词（“比……更加”、“甚至胜过……”）。通常前项事物本身的程度就已经非常显著或不同寻常，而说话人强调后项的事态还要更胜一筹。常与表示过去时间的词（如“以前”、“去年”、“昨日”）结合表示“比起以往更加……”，也常与疑问词“何”搭配构成“何にもまして”，表示“比任何事物都……”、“最……”。",
+      "formation": "名词 + にもまして（或 疑问词 + にもまして）",
+      "examples": [
+        {
+          "translation": "比起他，我甚至更加热爱音乐。"
+        },
+        {
+          "translation": "她的经验之丰富，远超其实际年龄。"
+        },
+        {
+          "translation": "今天比昨天还要寒冷。"
+        },
+        {
+          "translation": "这座大楼因其优美的设计而闻名，其名气甚至胜过了高度本身。"
+        }
+      ]
+    },
+    "ja_Noun_63": {
+      "title": "名词 + によらず (～ni yorazu)",
+      "shortExplanation": "表示事态不受某种条件或差异的左右；“不论……”、“不管……”、“不依……”。",
+      "longExplanation": "句型“名词 + によらず”源自“による”的否定连用形，用于表示后项的结果、状态或规则不受前项名词所涉及的条件、区别、标准等要素的左右与限制，一律同样适用或保持不变（“不论……”、“不管……”、“不拘……”）。常与“年齢（年龄）”、“国籍（国籍）”、“理由（理由）”、“季節（季节）”等表示差异或种类的名词搭配使用。属于书面语色彩较浓的庄重表达。",
+      "formation": "名词 + によらず",
+      "examples": [
+        {
+          "translation": "不论学习时间长短，结果大概都不会有所改变吧。"
+        },
+        {
+          "translation": "不论哪个季节，这个地区始终都很温暖。"
+        },
+        {
+          "translation": "这是一场不论年龄大小、大家都能乐在其中的活动。"
+        },
+        {
+          "translation": "不论国籍为何，任何人都可以参加。"
+        }
+      ]
+    },
+    "ja_Noun_64": {
+      "title": "名词 + に先駆けて (〜ni sakigakete)",
+      "shortExplanation": "表示走在其他人或事物的前面抢先采取行动；“先于……”、“比……更早”、“作为先驱……”。",
+      "longExplanation": "句型“名词 + に先駆けて”源自他动词“先駆ける”（领跑、开风气之先），用于表示在时间上领先于其他人物、团体、竞争对手或国家地区，率先开创、试行或实施某项举措（“先于……”、“走在……之前”）。与侧重于事前筹备的“～に先立って”相比，“～に先駆けて”更鲜明地强调开创性、先驱性以及领先于竞争对手的语感。也可以使用“～に先駆け”的形式，常出现于新闻报道、商业企划和正式公文中。",
+      "formation": "名词 + に先駆けて（或 に先駆け）",
+      "examples": [
+        {
+          "translation": "这部电影先于日本在美国上映。"
+        },
+        {
+          "translation": "他比周围的人更早一步听到了那个消息发表。"
+        },
+        {
+          "translation": "约翰逊先生先于其他与会人员到达了会场。"
+        },
+        {
+          "translation": "她比同班同学更早一步完成了学业并毕业。"
+        }
+      ]
+    },
+    "ja_Noun_65": {
+      "title": "名词1 + に即した + 名词2 (A ni sokushita B)",
+      "shortExplanation": "作定语修饰后续名词，表示符合并贴近实际、规则或要求；“符合……的”、“依据……的”、“贴近……的”。",
+      "longExplanation": "句型“名词1 + に即した + 名词2”是动词“即する”（紧密贴合、依据）的连体修饰形式，用于表示名词2（通常是计划、对策、改革、行动、方针等）紧密贴合前项名词1所代表的现实情况、法律规则、社会需求或指导原则（“符合……的”、“切合……的”、“依据……的”）。属于公文、论文、商务或新闻中极其常见的正式文体。",
+      "formation": "名词1 + に即した + 名词2",
+      "examples": [
+        {
+          "translation": "我们需要一项贴合社会需求的教育改革。"
+        },
+        {
+          "translation": "应当采取符合国际法的应对措施。"
+        },
+        {
+          "translation": "大家行动起来，要符合团队的方针政策。"
+        },
+        {
+          "translation": "我们必须制定出切合实际的计划。"
+        }
+      ]
+    },
+    "ja_Noun_66": {
+      "title": "名词 + に即して + 动词 (〜ni sokushite〜)",
+      "shortExplanation": "作状语修饰后续动词，表示紧跟现实或按照规则行动；“依据……”、“按照……”、“结合……”。",
+      "longExplanation": "句型“名词 + に即して + 动词”是动词“即する”的连用形，在句中充当状语修饰后续动词，表示严格遵循某种准则、依据客观事实或切合实际情况来做出决断、执行行动（“依据……”、“按照……”、“结合……而……”）。与修饰名词的“～に即した”相对应，“～に即して”专用于修饰动词谓语。常用于商业决策、法律适用、学术研讨及公文通知等庄重语境。",
+      "formation": "名词 + に即して + 动词",
+      "examples": [
+        {
+          "translation": "让我们按照公司的方针政策来行动吧。"
+        },
+        {
+          "translation": "依据法律做出判断是至关重要的。"
+        },
+        {
+          "translation": "我们根据他的意见调整了方案。"
+        },
+        {
+          "translation": "只要按照规则行事，就不会出现问题。"
+        }
+      ]
+    },
+    "ja_Noun_67": {
+      "title": "名词 + に言わせれば (Noun ni iwasereba)",
+      "shortExplanation": "从某人的立场或角度引述其意见或看法；“在……看来”、“按……的说法”、“要是听……说”。",
+      "longExplanation": "句型“名词 + に言わせれば”由动词“言う”的使役形加假定形构成（字面意思为“要是让某人说的话”），接在指代人物或团体的名词后，用于从该人的独特立场、视角或专业身份出发引述其主观观点或评价（“在……看来”、“按……的说法”、“在……眼里”）。常用于引述专家的权威见解，或者表达该人特有的看法（有时带有些许主观独断或与常人相异的色彩）。口语中也常说“～に言わせたら”。",
+      "formation": "名词（指人或具备意志的团体） + に言わせれば（口语常作：に言わせたら）",
+      "examples": [
+        {
+          "translation": "在老师看来，每天坚持学习至关重要。"
+        },
+        {
+          "translation": "按他的看法，他觉得早点结婚比较好。"
+        },
+        {
+          "translation": "在影评人看来，这部电影堪称今年最佳影片。"
+        },
+        {
+          "translation": "在父亲看来，在海外工作的经历非常有价值。"
+        }
+      ]
+    },
+    "ja_Noun_68": {
+      "title": "名词 + に限ったことではない (〜ni kagitta koto dewa nai)",
+      "shortExplanation": "强调某种现象或问题并非仅存在于某单一事物；“不仅限于……”、“不单是……”、“并非只有……如此”。",
+      "longExplanation": "句型“名词 + に限ったことではない”通过否定“限于该名词”，用来明确指出某种情况、社会问题、特性或事态绝非只局限于前项所提及的特定对象，在其他范围、人群、地区或领域中同样广泛存在（“不仅限于……”、“并不单单是……才有的事”）。常用于社会评论、现象分析或议论文中，用于纠正他人狭隘片面的看法。",
+      "formation": "名词 + に限ったことではない（口语常作：に限ったことじゃない）",
+      "examples": [
+        {
+          "translation": "这个问题绝不仅限于日本。"
+        },
+        {
+          "translation": "英语的使用绝不仅限于美国。"
+        },
+        {
+          "translation": "智能手机成瘾绝非仅限于年轻人。"
+        },
+        {
+          "translation": "全球变暖的影响绝不仅限于我们人类。"
+        }
+      ]
+    },
+    "ja_Noun_69": {
+      "title": "名词 + に限ったことでもない (~ni kagitta koto demo nai)",
+      "shortExplanation": "委婉指出并不单单局限于某一方面；“也不见得只局限于……”、“倒也不仅仅是……”。",
+      "longExplanation": "句型“名词 + に限ったことでもない”与“～に限ったことではない”意义基本相同，但由于助词“でも”的加入，语气更加委婉、柔和且富有余地（“倒也不见得只局限于……”、“也不单单是……”）。说话人委婉暗示除了前项提及的对象外，其他事物或方面同样存在类似的情况，从而避免过于生硬绝对的断言。",
+      "formation": "名词 + に限ったことでもない",
+      "examples": [
+        {
+          "translation": "这场考试难度大，倒也不仅仅体现在数学一科上。"
+        },
+        {
+          "translation": "她的可爱之处倒也不仅仅在于长相，我也很喜欢她的性格。"
+        },
+        {
+          "translation": "发生那种问题，倒也不见得只局限于我们国家。"
+        },
+        {
+          "translation": "这位作家的书热销，倒也不仅仅局限于日本。"
+        }
+      ]
+    },
+    "ja_Noun_70": {
+      "title": "名词 / 动词 + に限る (~ni kagiru)",
+      "shortExplanation": "主观断定某种做法或事物是最佳选择；“最好不过”、“莫过于……”、“当属第一”。",
+      "longExplanation": "句型“名词 / 动词辞书形 + に限る”用于表达说话人强烈的个人经验、主观判断或热心建议，断言在某种特定情境下，该事物或该做法无疑是最佳、最有效的选择，没有比这更好的了（“……最好不过”、“莫过于……”、“当属第一”）。多用于日常生活经验的交流、抒发感叹或给人提出生活建议。",
+      "formation": "名词 / 动词辞书形 + に限る",
+      "examples": [
+        {
+          "translation": "这种时候，向家人倾诉是最好的办法。"
+        },
+        {
+          "translation": "在寒冷的冬日里，喝上一杯热茶再惬意不过了。"
+        },
+        {
+          "translation": "疲劳的时候，好好睡一觉是最好的补药。"
+        },
+        {
+          "translation": "要想减肥，运动无疑是最好的途径。"
+        }
+      ]
+    },
+    "ja_Noun_71": {
+      "title": "名词1 + (を)ぬいた + 名词2 (A nuita B)",
+      "shortExplanation": "表示剔除、省去某种成分后的事物；“去掉了……的……”、“不加……的……”、“抽出了……的……”。",
+      "longExplanation": "句型“名词1 + (を)ぬいた + 名词2”使用动词“抜く”（抽出、拔掉、去除、免去）的连体修饰形，用来修饰后面的名词2，表示该事物是剔除、去掉了某种特定成分、配料或杂质（名词1）之后的状态（“去掉了……的……”、“不含……的……”）。在日常餐饮、料理制作中非常多见，常用于表示免去某种佐料或配菜（如去芥末、去胡萝卜、去糖等）。",
+      "formation": "名词1 + (を)ぬいた + 名词2",
+      "examples": [
+        {
+          "translation": "这份沙拉是去掉了胡萝卜的沙拉。"
+        },
+        {
+          "translation": "他喝咖啡时不加糖（把糖去掉了）。"
+        },
+        {
+          "translation": "我在做菜时去掉了盐。"
+        },
+        {
+          "translation": "她去掉了衣服上的污渍。"
+        }
+      ]
+    },
+    "ja_Noun_72": {
+      "title": "名词 + ぬいて (~nuite)",
+      "shortExplanation": "表示将某项特定对象排除在整体之外；“除去……”、“除了……之外”、“不算……”。",
+      "longExplanation": "句型“名词 + (を)ぬいて”是动词“抜く”（免除、排除）的连用て形（相当于“〜抜きにして / 〜抜きで”），用于从全体讨论范围中剔除某个特定的人物、项目、时间或部分，并对剩余的全部事物做出陈述或评价（“除了……之外”、“除去……不算”）。常用于日常叙述某人缺席，或者除某项特例之外其余全部如此的语境。",
+      "formation": "名词 + (を)ぬいて",
+      "examples": [
+        {
+          "translation": "除了他以外，我们所有人全都到齐了。"
+        },
+        {
+          "translation": "这家餐厅除了儿童套餐之外，所有的菜品都非常美味。"
+        },
+        {
+          "translation": "今天的工作除了午休时间外一直都很忙碌。"
+        },
+        {
+          "translation": "除了休假日，他每天都在工作。"
+        }
+      ]
+    },
+    "ja_ぬくnuku_73": {
+      "title": "动词连用形 + ぬく (〜nuku)",
+      "shortExplanation": "表示坚持把动作进行到底或彻底做到极致；“……到底”、“坚决……下去”、“彻底……”。",
+      "longExplanation": "复合动词后缀“～ぬく”接在动词连用形（ます形去掉ます）后，主要有两种用法：1）表示顶住艰难困苦、克服一切阻碍坚持将动作进行到底、贯彻终始（“……到底”、“坚持……下去”，如“やり抜く/坚持做到底”、“生き抜く/坚强地活下去”）；2）表示将某种心理状态或动作程度彻底发挥到极致（“极其……”、“极度……”，如“悩み抜く/苦恼至极”、“困り抜く/作难至极”）。体现出坚韧的意志力和极高的完成度。",
+      "formation": "动词ます形（去掉ます） + ぬく",
+      "examples": [
+        {
+          "translation": "他整整一天都坚持把整本书读完了。"
+        },
+        {
+          "translation": "我一定会把这个项目坚持完成到底。"
+        },
+        {
+          "translation": "她每天都去健身房，坚持把所有的锻炼项目彻底做完。"
+        },
+        {
+          "translation": "我们一定会将这款游戏彻底通关解开。"
+        }
+      ]
+    },
+    "ja_Nounのいかんだ_74": {
+      "title": "名词 + のいかんだ (Noun no ikan da)",
+      "shortExplanation": "位于句尾表示结果完全取决于前项；“取决于……”、“全看……如何”。",
+      "longExplanation": "句型“名词 + のいかんだ”（或连用形“～のいかんで”）源自文言疑问副词“如何（いかん）”，位于句末充当述语，用于庄重地表示事态的成败、决定或最终发展完全取决于前项名词所体现的情形、努力、态度或结果（“取决于……”、“全看……如何”，相当于书面语中的“〜次第だ”）。常与“結果（结果）”、“態度（态度）”、“成績（成绩）”、“理由（理由）”等具有不确定性或可变性的名词搭配。若为假定可能则常用“～のいかんでは”。",
+      "formation": "名词 + のいかんだ（或 のいかんで / のいかんでは）",
+      "examples": [
+        {
+          "translation": "就看他来不来再做决定吧。"
+        },
+        {
+          "translation": "是否留级完全取决于考试的结果。"
+        },
+        {
+          "translation": "视天气情况如何，野餐可能会取消。"
+        },
+        {
+          "translation": "我们接下来的行动取决于他的回答。"
+        }
+      ]
+    },
+    "ja_Noun_75": {
+      "title": "名词 + のいかんでは (Noun no ikan de wa)",
+      "shortExplanation": "表示视前项的具体情况不同而可能会产生某种结果；“根据……的情况不同可能会……”、“视……如何而可能……”。",
+      "longExplanation": "句型“名词 + のいかんでは”接在表示条件、状态或进展的名词后，通过副助词“は”强化假设前提，表示视该事项的具体情况、程度或发展方向不同，后项有可能会出现某种相应的结果或采取特定的对应措施（“根据……的情况不同可能会……”、“视……如何而定”）。后项谓语常常伴随“〜かもしれない（也许）”、“〜こともある（也有可能）”等表示推测或可能性的表达。属于庄重的公文与政论语体。",
+      "formation": "名词 + のいかんでは",
+      "examples": [
+        {
+          "translation": "能否获得大学入学许可，取决于这次考试的成绩如何。"
+        },
+        {
+          "translation": "视天气状况如何，野餐有可能会延期。"
+        },
+        {
+          "translation": "视交通状况如何，有时可能会迟到。"
+        },
+        {
+          "translation": "根据经济形势的好坏，公司的未来将被决定。"
+        }
+      ]
+    },
+    "ja_Noun_76": {
+      "title": "名词 + のいかんにかかわらず (Noun no ikan ni kakawarazu)",
+      "shortExplanation": "表示完全不受前项状况或结果的影响；“不论……如何”、“不管……怎样”、“无论……与否”。",
+      "longExplanation": "句型“名词 + のいかんにかかわらず”（同义表达为“～のいかんによらず”）是由文言词“いかん”与“かかわらず”构成的极具庄重感的文言句式，表示不论前项名词所涉及的事态、理由、好坏或结果究竟如何，后项的原则、行动或状态都完全不受其左右与影响，始终一律照常进行或同样成立（“不论……如何”、“不管……怎样”、“无论……与否”）。多用于法律条文、官方公告、正式声明或严谨的学术议论文中。",
+      "formation": "名词 + のいかんにかかわらず（或 のいかんによらず）",
+      "examples": [
+        {
+          "translation": "不论结果如何，他都没有后悔自己的决定。"
+        },
+        {
+          "translation": "不论年龄大小，任何人都完全能够坚持学习。"
+        },
+        {
+          "translation": "不论经验有无，重要的是迈出开始的第一步。"
+        },
+        {
+          "translation": "不论天气如何，徒步活动都将按原计划举行。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Noun_62": {
+      "title": "명사 + にもまして (〜ni mo mashite)",
+      "shortExplanation": "어떤 대상보다 정도가 더 심하거나 뛰어남을 나타내며, '~보다도 더', '~이상으로'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + にもまして'는 비교 기준이 되는 명사보다 후항의 상태나 정도가 한층 더 심하거나 뛰어넘음을 강조할 때 쓰이는 표현입니다('~보다도 더', '~이상으로'). 통상 비교 대상인 명사 자체도 이미 상당한 수준이거나 대단한 상태인데, 후항은 그 수준을 한층 능가한다는 뉘앙스를 담고 있습니다. '以前(이전)', '去年(작년)', '昨日(어제)' 등 과거의 시점을 나타내는 명사와 결합하여 이전보다 정도가 더 심해졌음을 나타내거나, 의문사 '何'와 결합한 '何にもまして(그 무엇보다도)'의 형태로도 자주 쓰입니다.",
+      "formation": "명사 + にもまして(또는 의문사 + にもまして)",
+      "examples": [
+        {
+          "translation": "저는 그 사람보다도 더 음악을 사랑합니다."
+        },
+        {
+          "translation": "그녀는 나이 이상으로 경험이 풍부합니다."
+        },
+        {
+          "translation": "오늘은 어제보다도 더 춥습니다."
+        },
+        {
+          "translation": "이 빌딩은 높은 것 이상으로 아름다운 설계로 유명합니다."
+        }
+      ]
+    },
+    "ja_Noun_63": {
+      "title": "명사 + によらず (～ni yorazu)",
+      "shortExplanation": "어떤 조건이나 차이에 영향을 받지 않음을 나타내며, '~에 관계없이', '~를 불문하고', '~에 상관없이'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + によらず'는 'による(따르다/의하다)'의 고풍스러운 부정형 표현으로, 후항의 결과나 상황이 앞의 명사로 제시된 조건, 구분, 수량, 차이 등에 좌우되지 않고 언제나 변함없이 일정하게 성립함을 나타냅니다('~에 관계없이', '~를 불문하고', '~에 따르지 않고'). 주로 '年齢(연령)', '国籍(국적)', '季節(계절)', '理由(이유)' 등 차이나 구분을 나타내는 명사와 함께 쓰이며, 문어적이고 격식 있는 어조를 띱니다.",
+      "formation": "명사 + によらず",
+      "examples": [
+        {
+          "translation": "공부 시간에 관계없이 결과는 변하지 않을 것입니다."
+        },
+        {
+          "translation": "계절에 상관없이 이 지역은 항상 따뜻합니다."
+        },
+        {
+          "translation": "연령을 불문하고 모두가 즐길 수 있는 행사입니다."
+        },
+        {
+          "translation": "국적에 관계없이 누구라도 참가할 수 있습니다."
+        }
+      ]
+    },
+    "ja_Noun_64": {
+      "title": "명사 + に先駆けて (〜ni sakigakete)",
+      "shortExplanation": "다른 대상보다 먼저 선구적으로 앞서 행동함을 나타내며, '~에 앞서', '~보다 먼저', '~를 선도하여'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + に先駆けて'는 동사 '先駆ける(선도하다, 앞장서다)'에서 유래한 표현으로, 다른 인물, 조직, 지역, 경쟁자보다 시기적으로 앞서서 새로운 시도나 행동을 솔선수범하여 행함을 나타냅니다('~에 앞서', '~보다 먼저', '~에 선구하여'). 단순히 사전 준비를 뜻하는 '～に先立って'와 달리, 다른 대상보다 한발 앞서 나아가는 '선구자적 성격'이나 '독자적인 선도성'을 강조하는 뉘앙스가 강합니다. '～に先駆け'의 형태로도 쓰이며, 뉴스 보도나 공식적인 문맥에서 자주 사용됩니다.",
+      "formation": "명사 + に先駆けて(또는 に先駆け)",
+      "examples": [
+        {
+          "translation": "이 영화는 일본에 앞서 미국에서 개봉되었습니다."
+        },
+        {
+          "translation": "그는 주변 사람들보다 앞서 그 발표를 들었다."
+        },
+        {
+          "translation": "존슨 씨는 다른 참가자들에 앞서 회장에 도착했습니다."
+        },
+        {
+          "translation": "그녀는 동급생들보다 먼저 졸업할 수 있었습니다."
+        }
+      ]
+    },
+    "ja_Noun_65": {
+      "title": "명사1 + に即した + 명사2 (A ni sokushita B)",
+      "shortExplanation": "뒤의 명사를 수식하여 원칙이나 현실에 꼭 들어맞음을 나타내며, '~에 입각한', '~에 부합하는', '~에 따른'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + に即した + 명사2'는 동사 '即する(꼭 들어맞다, 입각하다)'의 연체수식형으로, 뒤에 오는 명사2(계획, 대책, 방침, 개혁, 행동 등)가 앞의 명사1(현실, 사실, 규칙, 사회적 요구 등)에 충실히 부합하고 그것을 기준으로 삼고 있음을 나타냅니다('~에 입각한', '~에 부합하는', '~에 부응하는'). 비즈니스, 법률, 정책 입안 등 격식 있고 공적인 맥락에서 매우 빈번하게 사용됩니다.",
+      "formation": "명사1 + に即した + 명사2",
+      "examples": [
+        {
+          "translation": "사회의 요구에 부합하는 교육 개혁이 필요하다."
+        },
+        {
+          "translation": "국제법에 입각한 대응을 취해야 한다."
+        },
+        {
+          "translation": "팀의 방침에 입각한 행동을 취합시다."
+        },
+        {
+          "translation": "현실에 입각한 계획을 세워야 한다."
+        }
+      ]
+    },
+    "ja_Noun_66": {
+      "title": "명사 + に即して + 동사 (〜ni sokushite〜)",
+      "shortExplanation": "뒤의 동사를 수식하여 규칙이나 현실에 맞추어 행동함을 나타내며, '~에 입각하여', '~에 맞추어', '~에 따라'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + に即して + 동사'는 동사 '即する'의 연용형(부사적 용법)으로, 사실, 현실, 규칙, 방침 등의 기준에 꼭 들어맞도록 준수하며 어떤 행동을 하거나 판단을 내림을 나타냅니다('~에 입각하여', '~에 따라', '~에 맞추어'). 뒤의 명사를 수식하는 '～に即した'와 짝을 이루며, '～に即して'는 뒤에 오는 서술어 동사를 직접 수식합니다. 기업의 방침 준수, 법률적 판단, 공식적인 행정 업무 등 격식 있는 맥락에서 자주 쓰입니다.",
+      "formation": "명사 + に即して + 동사",
+      "examples": [
+        {
+          "translation": "회사의 방침에 입각하여 행동합시다."
+        },
+        {
+          "translation": "법률에 입각하여 판단을 내리는 것이 중요합니다."
+        },
+        {
+          "translation": "그의 의견에 맞추어 계획을 변경했습니다."
+        },
+        {
+          "translation": "규칙에 입각하여 행동한다면 문제는 일어나지 않습니다."
+        }
+      ]
+    },
+    "ja_Noun_67": {
+      "title": "명사 + に言わせれば (Noun ni iwasereba)",
+      "shortExplanation": "특정 인물의 입장이나 시각에서 의견을 밝힐 때 쓰이며, '~의 입장에서 말하자면', '~가 말하기를', '~의 생각으로는'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + に言わせれば'는 동사 '言う(말하다)'의 사역 가정형(직역하면 '누구에게 말하게 한다면')에서 유래한 표현으로, 특정 인물이나 대상의 독특한 관점, 입장, 또는 전문적인 시각에서 바라본 주관적인 견해나 평가를 제시할 때 쓰입니다('~의 입장에서 말하자면', '~의 말에 따르면', '~의 생각으로는'). 전문가의 독자적인 평가를 인용하거나, 일반적인 견해와는 사뭇 다른 해당 인물만의 소신을 드러낼 때 자주 쓰입니다. 구어에서는 '～に言わせたら'로도 자주 쓰입니다.",
+      "formation": "명사(인물 등) + に言わせれば(구어: に言わせたら)",
+      "examples": [
+        {
+          "translation": "선생님의 입장에서 말하자면 매일 공부하는 것이 중요하다고 한다."
+        },
+        {
+          "translation": "그의 생각으로는 일찍 결혼하는 편이 낫다고 한다."
+        },
+        {
+          "translation": "평론가의 말에 따르면 이 영화는 올해 최고의 영화라고 한다."
+        },
+        {
+          "translation": "아버지의 생각으로는 해외에서 일한 경험은 대단히 가치가 있다."
+        }
+      ]
+    },
+    "ja_Noun_68": {
+      "title": "명사 + に限ったことではない (〜ni kagitta koto dewa nai)",
+      "shortExplanation": "특정 대상에만 국한되지 않고 두루 해당됨을 나타내며, '~에 국한된 일이 아니다', '~만의 문제가 아니다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + に限ったことではない'는 어떤 현상, 문제점, 특성 등이 앞의 명사 하나에만 한정되는 특수한 사안이 아니라, 다른 대상, 지역, 세대, 분야 등에서도 공통적으로 널리 나타나는 일임을 단정적으로 밝힐 때 쓰는 표현입니다('~에 국한된 일이 아니다', '~만의 문제가 아니다'). 편견이나 오해를 바로잡거나 사회적 현상의 보편성을 논할 때 자주 사용되며, 구어에서는 '～に限ったことじゃない'로도 쓰입니다.",
+      "formation": "명사 + に限ったことではない(구어: に限ったことじゃない)",
+      "examples": [
+        {
+          "translation": "이 문제는 일본에만 국한된 일이 아니다."
+        },
+        {
+          "translation": "영어는 미국에만 국한된 것이 아니다."
+        },
+        {
+          "translation": "스마트폰 중독은 젊은이들에게만 국한된 일이 아니다."
+        },
+        {
+          "translation": "지구 온난화는 우리 인간에게만 국한된 일이 아니다."
+        }
+      ]
+    },
+    "ja_Noun_69": {
+      "title": "명사 + に限ったことでもない (~ni kagitta koto demo nai)",
+      "shortExplanation": "부드럽고 완곡하게 한정되지 않음을 나타내며, '~에만 국한된 일도 아니다', '~만 그런 것도 아니다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + に限ったことでもない'는 '～に限ったことではない'와 기본적인 의미는 같으나, 조사 'でも'가 첨가되어 어조가 한층 완곡하고 부드러워진 표현입니다('~에만 한정된 일도 아니다', '~만 그런 것도 아니다'). 전면에 내세운 명사뿐만 아니라 다른 측면이나 대상에서도 마찬가지 상황이 발생함을 부드럽게 시사하여, 지나치게 단정적인 어조를 피하고 객관성을 유지할 때 쓰입니다.",
+      "formation": "명사 + に限ったことでもない",
+      "examples": [
+        {
+          "translation": "이번 시험이 어려운 것은 수학에만 국한된 일도 아니다."
+        },
+        {
+          "translation": "그녀가 귀여운 것은 얼굴에만 국한된 일도 아니다. 성격도 마음에 든다."
+        },
+        {
+          "translation": "그런 문제가 일어나는 것은 우리 나라에만 국한된 일도 아니다."
+        },
+        {
+          "translation": "이 작가의 책이 잘 팔리는 것은 일본에만 국한된 일도 아니다."
+        }
+      ]
+    },
+    "ja_Noun_70": {
+      "title": "명사 / 동사 + に限る (~ni kagiru)",
+      "shortExplanation": "특정 상황에서 그 대상이나 방법이 최선임을 나타내며, '~이 최고다', '~가 제일이다', '~만 한 것이 없다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 / 동사 사전형 + に限る'는 화자의 주관적인 판단, 경험, 또는 확신을 바탕으로 특정 상황에서는 그 대상이나 행위가 가장 이상적이고 최고의 선택임을 나타낼 때 쓰입니다('~이 최고다', '~가 제일이다', '~에 비할 것이 없다'). 개인적인 스트레스 해소법, 계절 음식 추천, 삶의 노하우나 조언을 건넬 때 일상적으로 매우 자주 쓰이는 친근한 표현입니다.",
+      "formation": "명사 / 동사 사전형 + に限る",
+      "examples": [
+        {
+          "translation": "이럴 때는 가족에게 털어놓는 것이 최고다."
+        },
+        {
+          "translation": "추운 겨울에는 따뜻한 차가 제일이다."
+        },
+        {
+          "translation": "피곤할 때는 푹 자는 것이 최고다."
+        },
+        {
+          "translation": "다이어트를 하려면 운동이 제일이다."
+        }
+      ]
+    },
+    "ja_Noun_71": {
+      "title": "명사1 + (を)ぬいた + 명사2 (A nuita B)",
+      "shortExplanation": "특정 성분이나 요소를 제외하고 뺀 사물을 나타내며, '~을 뺀 ~', '~를 제거한 ~'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + (を)ぬいた + 명사2'는 동사 '抜く(빼다, 뽑다, 제거하다)'의 연체형을 사용하여 뒤의 명사2를 수식하는 표현으로, 어떤 물건이나 요리에서 특정한 재료, 성분, 얼룩(명사1) 등을 빼내거나 제외한 상태의 것을 나타냅니다('~을 뺀 ~', '~를 제외한 ~'). 특히 요리나 음료 주문 시 특정 재료나 조미료를 넣지 않고 조리한 음식을 설명할 때 일상적으로 널리 쓰입니다.",
+      "formation": "명사1 + (を)ぬいた + 명사2",
+      "examples": [
+        {
+          "translation": "이 샐러드는 당근을 뺀 샐러드입니다."
+        },
+        {
+          "translation": "그는 커피에서 설탕을 뺐다."
+        },
+        {
+          "translation": "나는 요리에서 소금을 뺐다."
+        },
+        {
+          "translation": "그녀는 옷에서 얼룩을 뺐다."
+        }
+      ]
+    },
+    "ja_Noun_72": {
+      "title": "명사 + ぬいて (~nuite)",
+      "shortExplanation": "전체 중에서 특정 대상을 제외함을 나타내며, '~을 제외하고', '~를 빼고', '~를 빼놓고'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + (を)ぬいて'는 동사 '抜く'의 て형으로, '～抜きにして / ～抜きで'와 마찬가지로 전체 범위에서 특정한 인물, 항목, 시간 등의 대상을 제외하고 나머지 전체에 대해 서술할 때 쓰입니다('~을 제외하고', '~를 빼고'). 특정인이 결석하거나 유일한 예외 항목이 있는 상황 등을 일상적으로 서술할 때 널리 사용됩니다.",
+      "formation": "명사 + (を)ぬいて",
+      "examples": [
+        {
+          "translation": "우리는 그 사람을 제외하고 전원이 모일 수 있었습니다."
+        },
+        {
+          "translation": "이 레스토랑은 어린이 메뉴를 빼고는 전부 맛있습니다."
+        },
+        {
+          "translation": "오늘 업무는 점심시간을 제외하고 줄곧 바빴습니다."
+        },
+        {
+          "translation": "휴일을 빼고 그는 매일 일합니다."
+        }
+      ]
+    },
+    "ja_ぬくnuku_73": {
+      "title": "동사 ます형 + ぬく (~nuku)",
+      "shortExplanation": "어려움을 극복하고 끝까지 해내거나 극진히 행함을 나타내며, '끝까지 ~해내다', '철저히 ~하다'라는 뜻입니다.",
+      "longExplanation": "보조동사적 접미사 '～ぬく'는 동사 ます형 어간(연용형)에 결합하여 복합동사를 형성하며, 크게 두 가지 의미를 나타냅니다. 1) 수많은 고난이나 시련을 견뎌내고 끝까지 어떤 행위를 완수함을 나타냅니다('끝까지 ~해내다', '~해 통하다'. 예: やり抜く 끝까지 해내다, 生き抜く 꿋꿋이 살아남다). 2) 어떤 동작이나 심리 상태를 극도의 한계까지 철저하게 행함을 나타냅니다('철저히 ~하다', '극도로 ~하다'. 예: 悩み抜く 몹시 고민하다, 困り抜く 대단히 곤란해하다). 강한 의지와 끈기를 나타내는 문형입니다.",
+      "formation": "동사 ます형(어간) + ぬく",
+      "examples": [
+        {
+          "translation": "그는 하루 종일 책을 끝까지 읽어낸다."
+        },
+        {
+          "translation": "나는 이 프로젝트를 끝까지 완수해 내겠다."
+        },
+        {
+          "translation": "그녀는 매일 헬스장에 가서 운동을 끝까지 해낸다."
+        },
+        {
+          "translation": "우리는 이 게임을 끝까지 풀어낼 것이다."
+        }
+      ]
+    },
+    "ja_Nounのいかんだ_74": {
+      "title": "명사 + のいかんだ (Noun no ikan da)",
+      "shortExplanation": "문말에서 결과가 앞의 상황에 전적으로 달려 있음을 나타내며, '~에 달려 있다', '~여하에 달려 있다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + のいかんだ'(또는 연결형인 '～のいかんで')는 문어적인 한자어 '如何(이칸)'에서 유래한 정중하고 격식 있는 표현으로, 일의 성패, 결정, 향후 전개가 앞의 명사가 나타내는 상황, 태도, 노력, 결과 등에 전적으로 좌우됨을 나타냅니다('~에 달려 있다', '~여하에 달려 있다', '~여하에 따라 결정된다'). 일상 표현인 '〜次第だ'의 매우 격식 있는 문어체 형태이며, '結果(결과)', '態度(태도)', '努力(노력)', '業績(실적)' 등의 명사와 함께 자주 사용됩니다.",
+      "formation": "명사 + のいかんだ(또는 のいかんで / のいかんでは)",
+      "examples": [
+        {
+          "translation": "그가 오는지의 여하에 따라 결정하자."
+        },
+        {
+          "translation": "시험 결과 여하에 따라 유급 여부가 결정됩니다."
+        },
+        {
+          "translation": "날씨 여하에 따라서는 소풍을 취소할 수도 있습니다."
+        },
+        {
+          "translation": "그의 답변 여하에 따라 우리의 다음 행동이 결정된다."
+        }
+      ]
+    },
+    "ja_Noun_75": {
+      "title": "명사 + のいかんでは (Noun no ikan de wa)",
+      "shortExplanation": "앞선 조건의 전개에 따라 어떤 결과가 발생할 수도 있음을 나타내며, '~여하에 따라서는', '~에 따라서는'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + のいかんでは'는 앞의 명사가 나타내는 사태의 진행 상황이나 조건의 차이에 따라, 뒤에 그에 상응하는 특정한 결과가 생기거나 조치가 취해질 수 있음을 나타내는 문어 표현입니다('~여하에 따라서는', '~에 따라서는'). 문말에는 주로 '～かもしれない(〜할지도 모른다)', '～こともある(〜할 수도 있다)' 등 추측이나 가능성을 나타내는 서술어가 빈번히 호응합니다. 공식 문서나 격식 있는 담화에서 주로 사용됩니다.",
+      "formation": "명사 + のいかんでは",
+      "examples": [
+        {
+          "translation": "시험 결과 여하에 따라서는 대학 입학 허가를 받을 수 있을지가 결정됩니다."
+        },
+        {
+          "translation": "날씨 여하에 따라서는 소풍을 연기할지도 모릅니다."
+        },
+        {
+          "translation": "교통 사정 여하에 따라서는 늦어질 수도 있습니다."
+        },
+        {
+          "translation": "경제 상황 여하에 따라 회사의 미래가 결정됩니다."
+        }
+      ]
+    },
+    "ja_Noun_76": {
+      "title": "명사 + のいかんにかかわらず (Noun no ikan ni kakawarazu)",
+      "shortExplanation": "앞의 상태나 결과에 상관없이 일정하게 성립함을 나타내며, '~여하에 관계없이', '~여하를 불문하고'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + のいかんにかかわらず'(동의 표현: '～のいかんによらず')는 앞선 명사가 나타내는 결과, 상태, 이유, 사정 등이 어떠하든 간에 그것에 전혀 구애받거나 영향을 받지 않고, 뒤의 방침, 규칙, 행동이 일률적으로 변함없이 적용되거나 실행됨을 나타내는 격식 높은 문어 표현입니다('~여하에 관계없이', '~여하를 불문하고'). 일반적인 '～にかかわらず'에 비해 한층 더 공적이고 엄숙하며 규정적인 뉘앙스를 지닙니다.",
+      "formation": "명사 + のいかんにかかわらず(또는 のいかんによらず)",
+      "examples": [
+        {
+          "translation": "결과 여하에 관계없이 그는 결정을 후회하지 않았다."
+        },
+        {
+          "translation": "연령 여하에 관계없이 어떤 사람이라도 배움은 가능합니다."
+        },
+        {
+          "translation": "경험 여하를 불문하고 시작하는 것이 중요합니다."
+        },
+        {
+          "translation": "날씨 여하에 관계없이 하이킹은 예정대로 진행됩니다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Noun_62": {
+      "title": "名詞 ＋ にもまして (〜ni mo mashite)",
+      "shortExplanation": "基準となるものよりもさらに程度が上回っていることを強調し、「〜以上に」「〜にも増して」という意味を表します。",
+      "longExplanation": "「名詞 ＋ にもまして」は、比較の基準となる名詞を取り上げ、後項の事態や性質の程度がそれをさらに上回っていることを強調する文型です。基準となる名詞自体も元々高い程度や通常と異なる状態であることが多く、後項は「それよりもさらに一段と〜だ」という強い強調のニュアンスを持ちます。「以前」「去年」「昨日」などの過去の時点を表す名詞に付いて以前の状態と比較したり、疑問詞「何」と結びついた慣用表現「何にもまして（何よりも一番に）」の形でも多用されます。",
+      "formation": "名詞 ＋ にもまして（または 疑問詞 ＋ にもまして）",
+      "examples": [
+        {
+          "translation": "私は彼にもまして、音楽を愛しています。"
+        },
+        {
+          "translation": "彼女は年齢にもまして、経験豊富です。"
+        },
+        {
+          "translation": "今日は昨日にもまして寒いです。"
+        },
+        {
+          "translation": "このビルは高さにもまして、美しい設計が有名です。"
+        }
+      ]
+    },
+    "ja_Noun_63": {
+      "title": "名詞 ＋ によらず (～ni yorazu)",
+      "shortExplanation": "前項の条件や差異に左右されないことを表し、「〜に関係なく」「〜にかかわらず」「〜を問わず」という意味を表します。",
+      "longExplanation": "「名詞 ＋ によらず」は、動詞「による」の古風な否定形を用いた文型で、前項に挙げられた条件・基準・差異・区別などに拘束されたり左右されたりすることなく、後項の結果や状態が一律に成立・適用されることを表します。「〜に関係なく」「〜にかかわらず」という意味で、「年齢」「国籍」「性別」「理由」「天候」「季節」など多様な区分や選択肢を持つ名詞に多く接続します。改まった場面や公的な規則・文書などで用いられる硬い文章語的表現です。",
+      "formation": "名詞 ＋ によらず",
+      "examples": [
+        {
+          "translation": "結果は勉強時間によらず変わらないでしょう。"
+        },
+        {
+          "translation": "季節によらず、この地域は常に暖かいです。"
+        },
+        {
+          "translation": "年齢によらず、皆が楽しめるイベントです。"
+        },
+        {
+          "translation": "国籍によらず、誰でも参加できます。"
+        }
+      ]
+    },
+    "ja_Noun_64": {
+      "title": "名詞 ＋ に先駆けて (〜ni sakigakete)",
+      "shortExplanation": "他よりも時期的に先んじて新しい試みや行動を起こすことを表し、「〜より先に」「〜に先立って（率先して）」という意味を表します。",
+      "longExplanation": "「名詞 ＋ に先駆けて」は、動詞「先駆ける（他より先に行う・流行の先頭に立つ）」に由来し、他の人・団体・競合・地域などに先んじて、いち早く新しい行動や公開・開発・事業などを始めることを表す文型です。単なる事前の準備段階を表す「〜に先立って」と異なり、他者よりも一歩リードして先陣を切るという「先駆的・率先的」なニュアンスを強く帯びます。「〜に先駆け」の形でも用いられ、ニュース報道やビジネス・公式文書などの改まった文脈で広く使われます。",
+      "formation": "名詞 ＋ に先駆けて（または に先駆け）",
+      "examples": [
+        {
+          "translation": "この映画は日本に先駆けて、アメリカで公開されました。"
+        },
+        {
+          "translation": "彼は周りの人々に先駆けて、その発表を聞いた。"
+        },
+        {
+          "translation": "ジョンソンさんは他の参加者に先駆けて、会場に到着しました。"
+        },
+        {
+          "translation": "彼女は同級生に先駆けて卒業することができました。"
+        }
+      ]
+    },
+    "ja_Noun_65": {
+      "title": "名詞1 ＋ に即した ＋ 名詞2 (A ni sokushita B)",
+      "shortExplanation": "後ろの名詞を修飾し、現実や規則などの基準にぴったり合致していることを表します。「〜に即した」「〜に合致した」「〜に基づいた」。",
+      "longExplanation": "「名詞1 ＋ に即した ＋ 名詞2」は、動詞「即する（適合する・基準に従う）」の連体形を用いた文型で、名詞2（計画・方針・対策・教育・行動など）が、名詞1（現実・事実・規則・社会のニーズなど）にぴったりと寄り添い、合致していることを表します。「〜に合致した」「〜に基づいた」「〜に沿った」という意味で、ビジネス・行政・教育・法規などの公的な論説文や方針説明で多用される改まった硬い表現です。",
+      "formation": "名詞1 ＋ に即した ＋ 名詞2",
+      "examples": [
+        {
+          "translation": "社会のニーズに即した教育改革が必要だ。"
+        },
+        {
+          "translation": "国際法に即した対応をとるべきだ。"
+        },
+        {
+          "translation": "チームのポリシーに即した行動を取りましょう。"
+        },
+        {
+          "translation": "現実に即した計画を立てなければならない。"
+        }
+      ]
+    },
+    "ja_Noun_66": {
+      "title": "名詞 ＋ に即して ＋ 動詞 (〜ni sokushite〜)",
+      "shortExplanation": "後ろの動詞を修飾し、事実や規則・方針に沿って行動することを表します。「〜に即して」「〜に基づいて」「〜に従って」。",
+      "longExplanation": "「名詞 ＋ に即して ＋ 動詞」は、動詞「即する」の連用形（副詞的用法）を用いた文型で、前項に挙げられた事実・現実・規則・方針などにしっかりと沿い、それに適合させるようにして後項の動作や判断を行うことを表します。「〜に沿って」「〜に基づいて」「〜に従って」という意味で、名詞を修飾する「〜に即した」に対して、本表現は述語動詞を修飾します。ビジネス、行政、裁判、公式発表などの改まった場面で多用されます。",
+      "formation": "名詞 ＋ に即して ＋ 動詞",
+      "examples": [
+        {
+          "translation": "会社のポリシーに即して行動しましょう。"
+        },
+        {
+          "translation": "法律に即して判断を下すことが重要です。"
+        },
+        {
+          "translation": "彼の意見に即して、プランを変更しました。"
+        },
+        {
+          "translation": "ルールに即して行動すれば、問題は起きません。"
+        }
+      ]
+    },
+    "ja_Noun_67": {
+      "title": "名詞 ＋ に言わせれば (Noun ni iwasereba)",
+      "shortExplanation": "ある人物の立場や見解から意見を述べることを表し、「〜の意見では」「〜の立場から言えば」という意味を表します。",
+      "longExplanation": "「名詞 ＋ に言わせれば」は、動詞「言う」の使役形と仮定形を組み合わせた文型で、人物を表す名詞に接続し、「その人の立場や考え方から意見を述べさせてもらうならば」という前提で主観的な主張や見解・評価を提示する際に用いられます。「〜の立場から言えば」「〜の意見によれば」という意味で、専門家ならではの厳しい指摘や、世間一般とは異なるその人特有の持論・批評を述べる場面でよく使われます。会話では「〜に言わせたら」の形も多用されます。",
+      "formation": "名詞（人物など） ＋ に言わせれば（話し言葉：に言わせたら）",
+      "examples": [
+        {
+          "translation": "先生に言わせれば、毎日勉強することが重要だと言う。"
+        },
+        {
+          "translation": "彼に言わせれば、早く結婚する方がいいと思っている。"
+        },
+        {
+          "translation": "評論家に言わせれば、この映画は今年の最高の映画だそうだ。"
+        },
+        {
+          "translation": "父に言わせれば、海外で働く経験はとても価値がある。"
+        }
+      ]
+    },
+    "ja_Noun_68": {
+      "title": "名詞 ＋ に限ったことではない (〜ni kagitta koto dewa nai)",
+      "shortExplanation": "その事態や特徴が提示された名詞だけに限定されるものではないことを表し、「〜だけに限らない」「〜だけに当てはまるわけではない」という意味を表します。",
+      "longExplanation": "「名詞 ＋ に限ったことではない」は、問題・現象・傾向・特徴などが、前項に挙げられた特定の名詞だけに当てはまるのではなく、他の人々・国・分野・状況などにも広く共通して見られる事柄であることを断定的に示す文型です。「〜だけに限定されたことではない」「〜だけに限った話ではない」という意味で、視野を広げたり、偏見や誤解を正したりする論説文や社会的な議論で多用されます。会話では「〜に限ったことじゃない」の形も用いられます。",
+      "formation": "名詞 ＋ に限ったことではない（話し言葉：に限ったことじゃない）",
+      "examples": [
+        {
+          "translation": "この問題は日本に限ったことではない。"
+        },
+        {
+          "translation": "英語はアメリカに限ったことではない。"
+        },
+        {
+          "translation": "スマホの依存症は若者に限ったことではない。"
+        },
+        {
+          "translation": "地球温暖化は我々人間に限ったことではない。"
+        }
+      ]
+    },
+    "ja_Noun_69": {
+      "title": "名詞 ＋ に限ったことでもない (~ni kagitta koto demo nai)",
+      "shortExplanation": "語感を和らげて限定的ではないことを示し、「〜だけに限った話でもない」「〜だけのこととも言えない」という意味を表します。",
+      "longExplanation": "「名詞 ＋ に限ったことでもない」は、「〜に限ったことではない」と実質的な意味は同様ですが、助詞「でも」を用いることで断定の響きを和らげ、より穏やかで控えめな語調で提示する文型です。「〜だけに当てはまるわけでもない」「〜に限ったこととも言えない」という意味で、提示された名詞以外の面や対象にも同様の状況が十分に当てはまることを婉曲に示唆する際に用いられます。",
+      "formation": "名詞 ＋ に限ったことでもない",
+      "examples": [
+        {
+          "translation": "この試験が難しいのは、数学に限ったことでもない。"
+        },
+        {
+          "translation": "彼女が可愛いのは顔だけに限ったことでもない。性格も好きだ。"
+        },
+        {
+          "translation": "その問題が起こるのは、我々の国に限ったことでもない。"
+        },
+        {
+          "translation": "この作家の本が売れているのは日本に限ったことでもない。"
+        }
+      ]
+    },
+    "ja_Noun_70": {
+      "title": "名詞 ／ 動詞 ＋ に限る (~ni kagiru)",
+      "shortExplanation": "特定の状況においてそれが最善・最高であると断定し、「〜が一番だ」「〜に如くはない」という意味を表します。",
+      "longExplanation": "「名詞 ／ 動詞辞書形 ＋ に限る」は、話し手の主観的な確信・経験・実感を基にして、「ある特定の状況や条件においては、それが最も優れており、他の何よりも素晴らしい」と推奨・断定する文型です。「〜が一番だ」「〜が最高だ」「〜に越したことはない」という意味で、日常会話において生活の知恵やおすすめ、リフレッシュ法などを熱意を込めて語る際によく使われます。",
+      "formation": "名詞 ／ 動詞辞書形 ＋ に限る",
+      "examples": [
+        {
+          "translation": "こういう時には家族に話すに限る。"
+        },
+        {
+          "translation": "寒い冬には温かいお茶に限る。"
+        },
+        {
+          "translation": "疲れたときは、よい睡眠に限る。"
+        },
+        {
+          "translation": "ダイエットするなら、運動に限る。"
+        }
+      ]
+    },
+    "ja_Noun_71": {
+      "title": "名詞1 ＋ (を)ぬいた ＋ 名詞2 (A nuita B)",
+      "shortExplanation": "特定の成分や要素を取り除いた物であることを表し、「〜を省いた〜」「〜を取り除いた〜」という意味を表します。",
+      "longExplanation": "「名詞1 ＋ (を)ぬいた ＋ 名詞2」は、動詞「抜く（不要なものや特定の成分を取り出す・省く）」の連体形を用いて後ろの名詞2を修飾し、名詞2が、特定の具材・成分・添加物・汚れなど（名詞1）を除去したり入れないようにしたりしたものであることを表す文型です。「〜を抜いた〜」「〜を除いた〜」という意味で、料理の具材抜き（ワサビ抜き、人参抜きなど）や、不純物・シミの除去など日常生活で幅広く用いられます。",
+      "formation": "名詞1 ＋ (を)ぬいた ＋ 名詞2",
+      "examples": [
+        {
+          "translation": "このサラダはにんじんをぬいたサラダです。"
+        },
+        {
+          "translation": "彼はコーヒーから砂糖をぬいた。"
+        },
+        {
+          "translation": "私は料理から塩をぬいた。"
+        },
+        {
+          "translation": "彼女は服からシミをぬいた。"
+        }
+      ]
+    },
+    "ja_Noun_72": {
+      "title": "名詞 ＋ ぬいて (~nuite)",
+      "shortExplanation": "全体の中から特定の対象や時間を除外することを表し、「〜を除いて」「〜を抜きにして」という意味を表します。",
+      "longExplanation": "「名詞 ＋ (を)ぬいて」は、動詞「抜く」のて形を用いた表現で、「〜抜きにして」「〜を除外して」と同様に、全体の中から特定の人・項目・時間などを省き、それ以外の全体について状況を述べる文型です。「〜を除いて」「〜を抜きにして」という意味を表し、特定の人物の不在や、ある一つの例外を除いた全体の特徴を語る際に用いられます。",
+      "formation": "名詞 ＋ (を)ぬいて",
+      "examples": [
+        {
+          "translation": "私たちは、彼ぬいて全員が集まることができました。"
+        },
+        {
+          "translation": "このレストランはお子様メニューをぬいてすべてが美味しい。"
+        },
+        {
+          "translation": "今日の仕事は昼休みをぬいて忙しかった。"
+        },
+        {
+          "translation": "休暇の日をぬいて、毎日彼は働きます。"
+        }
+      ]
+    },
+    "ja_ぬくnuku_73": {
+      "title": "動詞ます形 ＋ ぬく (~nuku)",
+      "shortExplanation": "最後までやり遂げることや、徹底的にその状態に至ることを表し、「最後まで〜し通す」「徹底的に〜する」という意味を表します。",
+      "longExplanation": "「動詞ます形（連用形語幹） ＋ ぬく」は、動詞の後ろに付いて複合動詞を作る文型で、主に2つの用法があります。①苦難や困難・長時間の負担に耐えながら、最後まで強い意志を持って動作を完遂することを表します（「やり抜く」「生き抜く」「走り抜く」など）。②ある状態や心理的動作を極限・限界まで徹底的に行い尽くすことを表します（「悩み抜く」「困り抜く」「考え抜く」など）。粘り強い意志や行為の徹底性を強調する表現です。",
+      "formation": "動詞ます形（連用形語幹） ＋ ぬく",
+      "examples": [
+        {
+          "translation": "彼は一日中本を読みぬく。"
+        },
+        {
+          "translation": "私はこのプロジェクトを終わらせぬく。"
+        },
+        {
+          "translation": "彼女は毎日ジムに行き、エクササイズを終わりぬく。"
+        },
+        {
+          "translation": "私たちはこのゲームを解きぬく。"
+        }
+      ]
+    },
+    "ja_Nounのいかんだ_74": {
+      "title": "名詞 ＋ のいかんだ (Noun no ikan da)",
+      "shortExplanation": "文末で事態の成り行きや決定がその内容次第であることを表し、「〜次第だ」「〜によって決まる」という意味を表します。",
+      "longExplanation": "「名詞 ＋ のいかんだ」（または接続形「〜のいかんで」）は、漢語「如何（いかん）」を用いた改まった文語的表現で、文末で述語となり、事態の成否・方向性・決定が、前項の名詞が示す事情・結果・努力・態度などのあり方に全面的にかかっていることを表します。「〜次第だ」「〜によって左右される」という意味で、「結果」「業績」「態度」「努力」など成り行きが変わり得る名詞に接続します。条件や可能性を示す場合は「〜のいかんでは」の形も用いられます。",
+      "formation": "名詞 ＋ のいかんだ（または のいかんで ｜ のいかんでは）",
+      "examples": [
+        {
+          "translation": "彼が来るのいかんで決めよう。"
+        },
+        {
+          "translation": "試験の結果のいかんで留年が決まります。"
+        },
+        {
+          "translation": "天気のいかんでは、ピクニックをキャンセルします。"
+        },
+        {
+          "translation": "彼の回答のいかんで、我々の次の行動が決まる。"
+        }
+      ]
+    },
+    "ja_Noun_75": {
+      "title": "名詞 ＋ のいかんでは (Noun no ikan de wa)",
+      "shortExplanation": "前項の状況や結果次第で、ある事態が生じる可能性があることを表し、「〜次第では」「〜によっては」という意味を表します。",
+      "longExplanation": "「名詞 ＋ のいかんでは」は、前項の名詞が示す条件や成り行きのあり方次第によって、後項に一定の結果が生じたり特定の対応が取られたりする可能性があることを表す文型です。「〜次第では」「〜の成り行きによっては」という意味を表し、文末には「〜かもしれない」「〜こともある」といった可能性や推量を表す表現が結びつくことが多く見られます。公的な通知やビジネスの契約・方針などで用いられる硬い文章語です。",
+      "formation": "名詞 ＋ のいかんでは",
+      "examples": [
+        {
+          "translation": "試験の結果のいかんでは、大学の入学許可を得られるかどうかが決まります。"
+        },
+        {
+          "translation": "天気のいかんでは、ピクニックを延期するかもしれません。"
+        },
+        {
+          "translation": "交通事情のいかんでは、遅れることがあります。"
+        },
+        {
+          "translation": "経済の状況のいかんでは、会社の将来は決まります。"
+        }
+      ]
+    },
+    "ja_Noun_76": {
+      "title": "名詞 ＋ のいかんにかかわらず (Noun no ikan ni kakawarazu)",
+      "shortExplanation": "前項の状況や結果に左右されず一律に行われることを表し、「〜がどうであるかに関係なく」「〜にかかわらず」という意味を表します。",
+      "longExplanation": "「名詞 ＋ のいかんにかかわらず」（同義表現：「〜のいかんによらず」）は、前項の名詞が示す理由・結果・状況・成否などがどうであるかに関係なく、それに拘束されたり左右されたりすることなく、後項の方針・事態・規則が一律に変わらず実行・適用されることを表す文型です。「〜の如何に関係なく」「〜にかかわらず」という意味で、通常の「〜にかかわらず」よりも一段と改まった公式的・規約的な響きを持ち、法規・公的約款・声明文などで用いられます。",
+      "formation": "名詞 ＋ のいかんにかかわらず（または のいかんによらず）",
+      "examples": [
+        {
+          "translation": "結果のいかんにかかわらず、彼は決定を後悔しなかった。"
+        },
+        {
+          "translation": "年齢のいかんにかかわらず、どんな人でも学ぶことは可能です。"
+        },
+        {
+          "translation": "経験のいかんにかかわらず、始めることが大切です。"
+        },
+        {
+          "translation": "天候のいかんにかかわらず、ハイキングは予定通りに行われます。"
+        }
+      ]
+    }
+  }
+}

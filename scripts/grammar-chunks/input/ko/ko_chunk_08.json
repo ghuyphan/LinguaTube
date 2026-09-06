@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_을를_26",
+    "language": "ko",
+    "pattern": "~을/를",
+    "title": "~을/를 빼다 [eul/reul ppaeda] (Except for)",
+    "shortExplanation": "Used to mean 'except for' or 'excluding', showing an exclusion from a group or set.",
+    "longExplanation": "'~을/를 빼다 [eul/reul ppaeda]' is used in Korean to indicate that something is excluded from a given group, set, or situation. It can be translated as 'except for' or 'aside from.'",
+    "formation": "Noun + 을/를 빼다",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "그는 아무것도 하지 않았어요, 그림 그리는 것을 빼고 말이죠.",
+        "romanization": "Geuneun amugeotdo haji anhasseoyo, geurim geurineun geoseul ppaego marijyo.",
+        "translation": "He didn't do anything except for drawing pictures."
+      },
+      {
+        "sentence": "모든 학생이 방과 후에 운동을 했어요, 제가 아팠던 것을 빼고 말이죠.",
+        "romanization": "Modeun haksaengi banggwa hue undongeul haesseoyo, jega apatteon geoseul ppaego marijyo.",
+        "translation": "All the students exercised after school except for me, because I was sick."
+      },
+      {
+        "sentence": "저는 모든 과일을 좋아해요, 체리를 빼고요.",
+        "romanization": "Jeoneun modeun gwaireul joahaeyo, cherireul ppaego-yo.",
+        "translation": "I like all fruits except for cherries."
+      },
+      {
+        "sentence": "지금까지 모든 영화를 다 봤어요, 코미디를 빼고요.",
+        "romanization": "Jigeumkkaji modeun yeonghwareul da bwasseoyo, komidireul ppaegoyo.",
+        "translation": "So far, I've watched every type of movie except comedies."
+      }
+    ]
+  },
+  {
+    "id": "ko_을를_27",
+    "language": "ko",
+    "pattern": "~을/를",
+    "title": "~을/를 수 있다 [eul/reul su itda] (Can, possible)",
+    "shortExplanation": "Expresses the ability or possibility to perform an action: 'can', 'be able to'.",
+    "longExplanation": "'~을/를 수 있다 [eul/reul su itda]' is used to indicate that the subject is capable of or that it is possible to perform the action of the verb. It is commonly translated as 'can' or 'be able to' in English.",
+    "formation": "Verb stem + (으)ㄹ 수 있다",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "우리는 이 문제를 해결할 수 있어요. 모두 함께 협력하면 충분히 가능하다고 생각해요.",
+        "romanization": "Urineun i munjeleul haegyeolhal su isseoyo. Modu hamkke hyeomnyeokhamyeon chungbunhi ganeunghadago saenggakhaeyo.",
+        "translation": "We can solve this problem. I believe it's totally possible if we all cooperate."
+      },
+      {
+        "sentence": "나는 내일 그 회의에 참석할 수 있을 것 같아요, 다행히 다른 일정이 없거든요.",
+        "romanization": "Naneun naeil geu hoeuie chamseokhal su isseul geot gatayo, dahenghi dareun iljeongi eopgeodeunyo.",
+        "translation": "I think I can attend that meeting tomorrow, fortunately I don’t have any other schedule."
+      },
+      {
+        "sentence": "당신이 수영을 배우면 언젠가 자유자재로 수영할 수 있을 거예요, 노력하면 가능합니다.",
+        "romanization": "Dangshini suyeongeul baeumyeon eonjenga jayujajaero suyeonghal su isseul geoyeyo, noryeokhamyeon ganeunghamnida.",
+        "translation": "If you learn how to swim, you'll be able to swim freely someday. If you work at it, it’s possible."
+      },
+      {
+        "sentence": "그는 한국어를 열심히 공부하면 TOPIK 시험을 패스할 수 있을 것입니다, 그리고 꼭 성공할 거예요.",
+        "romanization": "Geuneun hangugeoreul yeolsimhi gongbuhamyeon TOPIK siheomeul paeseuhal su isseul geosimnida, geurigo ggok seonggonghal geoyeyo.",
+        "translation": "If he studies Korean diligently, he will be able to pass the TOPIK exam, and he'll definitely succeed."
+      }
+    ]
+  },
+  {
+    "id": "ko_을를_28",
+    "language": "ko",
+    "pattern": "~을/를",
+    "title": "~을/를 통해 [eul/reul tonghae] (Through, via)",
+    "shortExplanation": "Used to show the medium or channel through which something is done or achieved.",
+    "longExplanation": "'~을/를 통해 [eul/reul tonghae]' indicates that something is accomplished, communicated, or obtained by means of a certain method, channel, or medium. It corresponds to 'through' or 'via' in English.",
+    "formation": "Noun + 을/를 통해",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "저는 한국어를 드라마를 통해 배웠어요. 그래서 표현을 좀 더 자연스럽게 익혔어요.",
+        "romanization": "Jeoneun hangugeoreul deuramareul tonghae baeweosseoyo. Geuraeseo pyohyeoneul jom deo jayeonseureopge ikhyeosseoyo.",
+        "translation": "I learned Korean through dramas, so I picked up more natural expressions."
+      },
+      {
+        "sentence": "우리는 이메일을 통해 회의 일정을 조정했어요. 시간 관리가 훨씬 효율적이더라고요.",
+        "romanization": "Urineun imeireul tonghae hoeui iljeongeul jojeonghaesseoyo. Sigan gwalliga hwolssin hyoyuljeogideoragoyo.",
+        "translation": "We adjusted the meeting schedule via email. Time management was much more efficient that way."
+      },
+      {
+        "sentence": "그는 음악을 통해 감정을 표현하곤 해요. 음악은 그에게 가장 좋은 소통 수단이에요.",
+        "romanization": "Geuneun eumageul tonghae gamjeongeul pyohyeonhagon haeyo. Eumageun geuege gajang jo-eun sotong sudanieyo.",
+        "translation": "He often expresses his emotions through music. Music is the best communication method for him."
+      },
+      {
+        "sentence": "사진을 통해 우리는 다른 사람들의 일상생활을 이해하고 공감할 수 있어요.",
+        "romanization": "Sajineul tonghae urineun dareun saramdeuri ilsaengsaenghwareul ihaehago gonggamhal su isseoyo.",
+        "translation": "Through photos, we can understand and empathize with other people's daily lives."
+      }
+    ]
+  },
+  {
+    "id": "ko_을까_29",
+    "language": "ko",
+    "pattern": "~을까",
+    "title": "~을까 [eulkka] (Shall we?)",
+    "shortExplanation": "Used to make a suggestion or proposal—'Shall we?', 'How about...?'.",
+    "longExplanation": "'~을까 [eulkka]' is used in Korean to propose an idea or action to someone, similar to asking 'Shall we...?' or 'How about...?' in English. It’s casual and frequently used among friends or peers.",
+    "formation": "Verb stem + 을까",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "우리 이번 주말에 캠핑을 가볼까?",
+        "romanization": "Uri ibeon jumare kaemping-eul gabolkka?",
+        "translation": "Shall we go camping this weekend?"
+      },
+      {
+        "sentence": "내일 영화를 볼까?",
+        "romanization": "Naeil yeonghwareul bolkka?",
+        "translation": "Shall we watch a movie tomorrow?"
+      },
+      {
+        "sentence": "오늘 저녁에 식당에서 저녁을 먹을까?",
+        "romanization": "Oneul jeonyeoge sikdang-eseo jeonyeogeul meogeulkka?",
+        "translation": "Shall we have dinner at a restaurant tonight?"
+      },
+      {
+        "sentence": "학원 끝나고 나서 같이 공부할까?",
+        "romanization": "Hakwon geutnago naseo gachi gongbuhalkka?",
+        "translation": "Shall we study together after the academy?"
+      }
+    ]
+  },
+  {
+    "id": "ko_을래_30",
+    "language": "ko",
+    "pattern": "~을래",
+    "title": "~을래 [eullae] (Want to)",
+    "shortExplanation": "Expresses the speaker’s intention or will, often in casual speech: 'want to'.",
+    "longExplanation": "'~을래 [eullae]' is an informal Korean sentence ending that conveys the speaker’s desire or intention to do something. It also functions like a suggestion when speaking with friends or close acquaintances, and can be translated as 'I want to...' or 'I'm going to...'.",
+    "formation": "Verb stem + 을래",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "나는 오늘 밤 영화 보러 갈래. 너도 같이 갈래?",
+        "romanization": "Naneun oneul bam yeonghwa boreo gallae. Neodo gachi gallae?",
+        "translation": "I want to go watch a movie tonight. Do you want to come too?"
+      },
+      {
+        "sentence": "저는 집에서 저녁을 먹을래요. 외식하는 것보다 집밥이 더 좋아요.",
+        "romanization": "Jeoneun jib-eseo jeonyeogeul meogeullae-yo. Oesikhaneun geotboda jibbab-i deo joayo.",
+        "translation": "I want to eat dinner at home. I like home-cooked meals more than eating out."
+      },
+      {
+        "sentence": "나는 이번 주말에 친구들과 등산 갈래. 좀 운동도 해야 할 것 같아서.",
+        "romanization": "Naneun ibeon jumare chingudeulgwa deungsan gallae. Jom undongdo haeya hal geot gataseo.",
+        "translation": "I want to go hiking with friends this weekend. I feel like I need some exercise."
+      },
+      {
+        "sentence": "나는 내일부터 다이어트를 시작할래. 최근에 살이 많이 찐 것 같아요.",
+        "romanization": "Naneun naeilbuteo daieoteureul sijakhallae. Choegene sal-i mani jjin geot gatayo.",
+        "translation": "I want to start a diet from tomorrow. I think I've gained some weight lately."
+      }
+    ]
+  },
+  {
+    "id": "ko_을지라도_31",
+    "language": "ko",
+    "pattern": "~을지라도",
+    "title": "~을지라도 [euljirado] (Even if)",
+    "shortExplanation": "Emphasizes that the main clause remains true regardless of the condition in the subordinate clause.",
+    "longExplanation": "'~을지라도 [euljirado]' translates to 'even if' in English. It is used to specify that no matter the condition introduced by the subordinate clause, the main clause still holds. It emphasizes determination or inevitability despite obstacles.",
+    "formation": "Verb stem + 을지라도",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "문제가 어려울지라도 포기하지 마세요. 결국에는 해결할 수 있을 거예요.",
+        "romanization": "Munjega eoryeouljirado pogihaji maseyo. Gyeolgugeneun haegyeolhal su isseul geoyeyo.",
+        "translation": "Even if the problem is difficult, don’t give up. You’ll be able to solve it eventually."
+      },
+      {
+        "sentence": "이 책이 비쌀지라도 꼭 필요해서 반드시 사야겠어요.",
+        "romanization": "I chaegi bissaljirado ggok piryohaseo bandeusi sayagesseoyo.",
+        "translation": "Even if this book is expensive, I really need it, so I'll definitely buy it."
+      },
+      {
+        "sentence": "시험이 어려울지라도 열심히 공부하면 분명 성과가 있을 거예요.",
+        "romanization": "Siheomi eoryeouljirado yeolsimhi gongbuhamyeon bunmyeong seonggwaga isseul geoyeyo.",
+        "translation": "Even if the test is difficult, if you study hard, you’ll surely see results."
+      },
+      {
+        "sentence": "날씨가 추울지라도 친구들과 약속이 있으니 꼭 나가야 해요.",
+        "romanization": "Nalssiga chuwuljirado chingudeulgwa yaksogi issni kkok nagaya haeyo.",
+        "translation": "Even if the weather is cold, I have a promise with friends, so I must go out."
+      }
+    ]
+  },
+  {
+    "id": "ko_을지언정_32",
+    "language": "ko",
+    "pattern": "~을지언정",
+    "title": "~을지언정 [euljieonjeong] (Even if, even though)",
+    "shortExplanation": "Used to mean 'even if' or 'even though,' emphasizing a strong concession or unexpected contrast.",
+    "longExplanation": "'~을지언정 [euljieonjeong]' is a Korean grammar structure that expresses a concession or contrast. It conveys the idea of 'even if' or 'even though.' Despite the condition stated, the speaker insists on or highlights another fact or determination. It emphasizes that regardless of the possible negative or contrasting scenario, something remains important or unchanged.",
+    "formation": "(Adjective/Verb stem) + 을지언정 / (Noun + 이) + 을지언정",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "시험에 떨어질지언정 목표를 향해 계속 노력하는 것이 중요합니다.",
+        "romanization": "Siheome tteoreojiljieonjeong mokpyoreul hyanghae gyesok noryeokhaneun geosi jungyohamnida.",
+        "translation": "Even if you fail the exam, it's important to keep striving toward your goal."
+      },
+      {
+        "sentence": "벌써 봄이 왔을지언정 아직 날씨가 많이 춥네요.",
+        "romanization": "Beolsseo bomi wasseuljieonjeong ajik nalssiga mani chumneyo.",
+        "translation": "Even though spring has already come, the weather is still very cold."
+      },
+      {
+        "sentence": "방이 클지언정 정리하지 않으면 엉망이 될 거예요.",
+        "romanization": "Bangi keuljieonjeong jeongrihaji anheumyeon eongmangi doel geoyeyo.",
+        "translation": "Even if the room is big, if you don't tidy up, it will become a mess."
+      },
+      {
+        "sentence": "그녀에게 전화할지언정 그녀가 받을지 안 받을지는 모르겠어요.",
+        "romanization": "Geunyeoege jeonhwahaljieonjeong geunyeoga badeulji an badeuljineun moreugesseoyo.",
+        "translation": "Even if I call her, I don't know whether she'll answer or not."
+      }
+    ]
+  },
+  {
+    "id": "ko_이_33",
+    "language": "ko",
+    "pattern": "~이",
+    "title": "~이 되다 [i doeda] (Become)",
+    "shortExplanation": "Used to indicate a change or transformation: 'become'.",
+    "longExplanation": "'~이 되다 [i doeda]' is a common expression in Korean indicating the transformation or shift from one state to another, often with nouns. It can refer to changes in jobs, positions, relationships, states, etc. It basically carries the meaning of 'become' in English when attached to a noun followed by '이'.",
+    "formation": "Noun + 이 되다",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "가을이 되니까 날씨가 추워져서 니트웨어가 꼭 필요하다고 느끼게 돼요.",
+        "romanization": "Gaeuri doeni-kka nalssiga chuwojyeoseo niteuweoga kkok pilyohadago neukkige dwaeyo.",
+        "translation": "As it becomes autumn and the weather gets colder, I feel the need for knitwear."
+      },
+      {
+        "sentence": "학부생 때는 변호사가 되고 싶었는데, 대학원에서는 교수가 되고 싶다는 생각이 들었어요.",
+        "romanization": "Hakbusaeng ttaeneun byeonhosaga doego sipeonneunde, daehagwon-eseoneun gyosuga doego sipdaneun saenggagi deureosseoyo.",
+        "translation": "When I was an undergraduate, I wanted to become a lawyer, but in graduate school, I began thinking I want to be a professor."
+      },
+      {
+        "sentence": "친구들과 함께 공부를 하니까 점점 더 좋은 학생이 되고 있어요.",
+        "romanization": "Chingudeulgwa hamkke gongbureul hanikka jeomjeom deo joeun haksaeng-i doego isseoyo.",
+        "translation": "Studying together with my friends, I am gradually becoming a better student."
+      },
+      {
+        "sentence": "얼굴에 난 흠집이 결국 큰 흉터가 되었어요.",
+        "romanization": "Eolgure nan heumjibi gyeolguk keun hyungteoga doeeosseoyo.",
+        "translation": "The scratch on my face ended up becoming a big scar."
+      }
+    ]
+  },
+  {
+    "id": "ko_이나_34",
+    "language": "ko",
+    "pattern": "~이나",
+    "title": "~이나 ~ [ina] (Either... or...)",
+    "shortExplanation": "Used to offer or list multiple options or possibilities, similar to 'either... or...'.",
+    "longExplanation": "'~이나 ~' is used in Korean to give alternatives or options, much like 'either... or...' in English. It can introduce two or more nouns, verbs, or phrases. The construction often appears as 'Noun1 + 이나 + Noun2 + (하)나 + Verb/Adjective', offering multiple choices.",
+    "formation": "Noun1 + 이나 + Noun2 (…)",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "우리는 주말에 영화를 보러 가거나, 집에서 게임이나 할 거예요.",
+        "romanization": "Urineun jumare yeonghwareul boreo gageona, jib-eseo geim-ina hal geoyeyo.",
+        "translation": "We will either go watch a movie this weekend or just play games at home."
+      },
+      {
+        "sentence": "커피나 차나 마시면서 좀 쉬고 싶어요.",
+        "romanization": "Keopina chana masimyeonseo jom swigo sipeoyo.",
+        "translation": "I want to relax while having either coffee or tea."
+      },
+      {
+        "sentence": "오늘이나 내일이나 아무 때나 괜찮아요.",
+        "romanization": "Oneulina naeilirina amu ttaena gwaenchanayo.",
+        "translation": "Either today or tomorrow is fine with me."
+      },
+      {
+        "sentence": "이번 달에는 여행을 가거나, 아니면 집에서 책이나 읽으면서 쉬려고 해요.",
+        "romanization": "Ibeon dal-eneun yeohaengeul gageona, animyeon jib-eseo chaeg-ina ilgeumyeonseo swiryeogo haeyo.",
+        "translation": "This month, I plan to either go traveling or relax at home reading books."
+      }
+    ]
+  },
+  {
+    "id": "ko_이라도_35",
+    "language": "ko",
+    "pattern": "~이라도",
+    "title": "~이라도 [irado] (At least, even if)",
+    "shortExplanation": "Used to express 'at least' or 'even if it's just...', showing a minimal or second-best option.",
+    "longExplanation": "'~이라도 [irado]' is used in Korean to indicate a compromise, lesser option, or minimal requirement. It often conveys 'at least' or 'even if it's only…'. It can suggest that the speaker would settle for something, even if it’s not ideal.",
+    "formation": "Noun or verb stem + (이)라도",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "이 비싼 가격에도 불구하고 저기 음식이라도 사 먹어야겠어요. 안 먹으면 힘이 없을 테니까요.",
+        "romanization": "I bissan gagyeogedo bulguhago jeogi eumsigirado sa meogeoyagesseoyo. An meogeumyeon himi eopseul tenikkayo.",
+        "translation": "Even though it's expensive, I must at least buy that food over there. If I don’t eat, I’ll have no energy."
+      },
+      {
+        "sentence": "오늘 일정이 아주 바쁘지만, 저녁이라도 제대로 먹어야 할 것 같아요.",
+        "romanization": "Oneul iljeongi aju bappeujiman, jeonyeogirado jedaero meogeoya hal geot gatayo.",
+        "translation": "My schedule is really busy today, but I should at least eat a proper dinner."
+      },
+      {
+        "sentence": "그의 성격이 별로지만 일이라도 잘해서 팀에서 중요한 사람이에요.",
+        "romanization": "Geuui seonggyeogi byeollojiman irirado jalhaeseo tim-eseo jungyohan saram-ieyo.",
+        "translation": "Even though his personality isn’t great, he’s good at his work, so he’s important to the team."
+      },
+      {
+        "sentence": "시험이 어렵다고 해도 돌아가는 상황이라도 어느 정도 파악은 해야겠어요.",
+        "romanization": "Siheomi eoryeobdago haedo doraganeun sanghwangirado eoneu jeongdo paageun haeyagesseoyo.",
+        "translation": "Even if they say the test is difficult, I should at least keep up with what’s going on."
+      }
+    ]
+  },
+  {
+    "id": "ko_이랑_36",
+    "language": "ko",
+    "pattern": "~이랑",
+    "title": "~이랑 [irang] (And, with)",
+    "shortExplanation": "Used to mean 'and' or 'with' when linking nouns in casual speech.",
+    "longExplanation": "'~이랑 [irang]' is an informal connective in Korean, roughly equivalent to 'and' or 'with.' It can link people, objects, or concepts, and is very common in spoken language. It’s less formal than other conjunctions like '~하고' or '~와/과.'",
+    "formation": "Noun + 이랑 + Noun",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "오늘 친구랑 영화를 보러 갔어요.",
+        "romanization": "Oneul chingurang yeonghwareul boreo gasseoyo.",
+        "translation": "Today I went to watch a movie with a friend."
+      },
+      {
+        "sentence": "저는 커피랑 케이크를 주문했어요.",
+        "romanization": "Jeoneun keopirang keikeureul jumunhaesseoyo.",
+        "translation": "I ordered coffee and cake."
+      },
+      {
+        "sentence": "언니랑 저는 같은 옷을 입었어요.",
+        "romanization": "Eonni-rang jeoneun gateun oseul ibeosseoyo.",
+        "translation": "My older sister and I wore the same clothes."
+      },
+      {
+        "sentence": "아빠랑 엄마는 서울에서 살고 계세요.",
+        "romanization": "Apparang eommaneun Seoureseo salgo gyeseyo.",
+        "translation": "My dad and mom live in Seoul."
+      }
+    ]
+  },
+  {
+    "id": "ko_이래_37",
+    "language": "ko",
+    "pattern": "~이래",
+    "title": "~이래 [irae] (Since)",
+    "shortExplanation": "Used to mark the starting point of an event in the past and its continuation to the present: 'since'.",
+    "longExplanation": "'~이래 [irae]' marks a starting point in the past from which a situation has continued until now. It’s similar to 'since' in English. It typically follows a verb in past tense that indicates when the action or event began.",
+    "formation": "Past tense Verb + 이래",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "제가 태어난 이래 이렇게 추운 겨울은 처음이에요.",
+        "romanization": "Jega taeeonan irae ireoke chuun gyeoureun cheoeum-ieyo.",
+        "translation": "This is the coldest winter I've experienced since I was born."
+      },
+      {
+        "sentence": "그가 학교를 졸업한 이래로 처음 만났어요.",
+        "romanization": "Geuga hakgyoreul joleobhan iraero cheoeum mannasseoyo.",
+        "translation": "This is the first time I’ve seen him since he graduated."
+      },
+      {
+        "sentence": "이사 온 이래로 친구를 못 사귀어서 좀 외로워요.",
+        "romanization": "Isa on iraero chingureul mot sagwyeoseo jom oerowoyo.",
+        "translation": "I've been a bit lonely since I moved here because I haven't made any friends."
+      },
+      {
+        "sentence": "퇴근한 이래 계속 바빠서 쉬지 못했어요.",
+        "romanization": "Toegeunhan irae gyesok bappaseo swiji mothaesseoyo.",
+        "translation": "Since I got off work, I’ve been busy and haven’t been able to rest."
+      }
+    ]
+  },
+  {
+    "id": "ko_이므로_38",
+    "language": "ko",
+    "pattern": "~이므로",
+    "title": "~이므로 [imyeo] (Because, so)",
+    "shortExplanation": "Used to indicate a reason or cause: 'because', 'so'.",
+    "longExplanation": "'~이므로 [imyeo]' is a conjunctive form used in Korean to indicate cause or reason, roughly meaning 'because' or 'so.' It typically follows a noun, adjective, or verb, showing that the preceding clause is the reason for what follows.",
+    "formation": "Noun + (이)므로 / Adjective/Verb stem + (으)므로",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "오늘 비가 오므로 우산을 가져왔어요.",
+        "romanization": "Oneul biga omuro usaneul gajyeowasseoyo.",
+        "translation": "Because it’s raining today, I brought an umbrella."
+      },
+      {
+        "sentence": "그녀는 좋은 성적을 받았으므로 모두가 놀랐어요.",
+        "romanization": "Geunyeoneun joheun seongjeogeul badasseumuro moduga nollasseoyo.",
+        "translation": "Because she got such good grades, everyone was surprised."
+      },
+      {
+        "sentence": "이 작업은 어렵므로 조심해서 해야 합니다.",
+        "romanization": "I jageobeun eoryeowumuro josimhaseo haeya hamnida.",
+        "translation": "Because this work is difficult, you must do it carefully."
+      },
+      {
+        "sentence": "상황이 심각하므로 내일로 치료를 미루지 마세요.",
+        "romanization": "Sanghwangi simgakhamuro naeillo chiryoreul miruji maseyo.",
+        "translation": "Because the situation is serious, don’t postpone treatment until tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "ko_이어서_39",
+    "language": "ko",
+    "pattern": "~이어서",
+    "title": "~이어서 [ieoseo] (And then, so) — (Using ~아/어서)",
+    "shortExplanation": "Often appears as ~아/어서 in modern usage to link clauses in sequence (and then) or cause/effect (so).",
+    "longExplanation": "The expression '~이어서 [ieoseo]' can literally mean 'continuing on from that,' but in modern usage the closely related connectors '~아/어서' also cover 'and then' or 'so' functions in Korean. These examples show how one action or event naturally leads to another, or how one reason leads to a result.",
+    "formation": "Action Verb + -아/어서 (depending on the verb stem’s final vowel)",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "저는 오늘 일찍 집에 와서 책을 읽었어요. 그리고 나서 바로 잠들었어요.",
+        "romanization": "Jeoneun oneul iljjik jibe waseo chaeg-eul ilgeosseoyo. Geurigo naseo baro jamdeureosseoyo.",
+        "translation": "I came home early today and read a book. Then I immediately fell asleep."
+      },
+      {
+        "sentence": "오늘 아침에 비가 와서 나가기 힘들었고, 그래서 집에서 쉬었어요.",
+        "romanization": "Oneul achime biga waseo nagagi himdeureotgo, geuraeseo jibeseo swieosseoyo.",
+        "translation": "It rained this morning, so it was hard to go out, so I rested at home."
+      },
+      {
+        "sentence": "친구를 만나러 갔는데, 맛있는 음식을 같이 먹었어요.",
+        "romanization": "Chingureul mannareo ganneunde, masinneun eumsigeul gachi meogeosseoyo.",
+        "translation": "I went to meet a friend, and we ate some delicious food together."
+      },
+      {
+        "sentence": "고양이를 봤는데 너무 귀여워서 사진을 찍었어요.",
+        "romanization": "Goyangireul bwatneunde neomu gwiyeowoseo sajineul jjigeosseoyo.",
+        "translation": "I saw a cat, and it was so cute that I took a photo."
+      }
+    ]
+  },
+  {
+    "id": "ko_이지만_40",
+    "language": "ko",
+    "pattern": "~이지만",
+    "title": "~이지만 [ijiman] (But, however)",
+    "shortExplanation": "Used to show contrast or contradiction between two clauses: 'but', 'however'.",
+    "longExplanation": "'~이지만 [ijiman]' is a Korean conjunctive form meaning 'but' or 'however.' The clause before ~이지만 states a fact or quality, and the clause after it presents a contrasting or conflicting fact. This structure emphasizes the difference or contradiction between them.",
+    "formation": "Noun/Verb/Adjective + 이지만",
+    "level": "Korean 2",
+    "examples": [
+      {
+        "sentence": "날씨가 정말 좋지만, 외출할 시간이 없어요.",
+        "romanization": "Nalssiga jeongmal jojiman, oechulhal sigani eopseoyo.",
+        "translation": "The weather is really nice, but I have no time to go out."
+      },
+      {
+        "sentence": "저는 피자를 좋아하지만, 다이어트 때문에 먹을 수 없어요.",
+        "romanization": "Jeoneun pijareul joahajiman, daieoteu ttaemune meogeul su eopseoyo.",
+        "translation": "I like pizza, but I can't eat it because of my diet."
+      },
+      {
+        "sentence": "이 노래는 유명하지만, 저는 별로 좋아하지 않아요.",
+        "romanization": "I noraeneun yumyeonghajiman, jeoneun byeollo joahaji anhayo.",
+        "translation": "This song is famous, but I don't really like it."
+      },
+      {
+        "sentence": "친구가 저에게 돈을 준다고 약속했지만, 아직 못 받았어요.",
+        "romanization": "Chinguga jeoege doneul jundago yaksokhaetjiman, ajik mot badasseoyo.",
+        "translation": "My friend promised to give me money, but I still haven't received it."
+      }
+    ]
+  }
+]

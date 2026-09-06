@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_할_104",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 리가 없다 [hal riga eopda] (There's no way that)",
+    "shortExplanation": "Used to express impossibility or disbelief in a certain action or state.",
+    "longExplanation": "'~할 리가 없다 [hal riga eopda]' is a Korean grammar point used to express the speaker's disbelief or assertion that something is impossible or cannot be the case. It translates to 'there's no way that' in English, signifying that the speaker strongly believes a certain action or situation cannot or will not occur.",
+    "formation": "Verb (in dictionary form) + 할 리가 없다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "그가 거짓말을 할 리가 없어요, 그는 정직한 사람이니까요.",
+        "romanization": "Geuga geojitmareul hal riga eopseoyo, geuneun jeongjighan salam-ikka.",
+        "translation": "There's no way he would lie, because he is an honest person."
+      },
+      {
+        "sentence": "지금 그렇게 어두운데 외출할 리가 없어요, 위험하니까요.",
+        "romanization": "Jigeum geuleohge eodu-unde oechulhal riga eopseoyo, wiheomhanikka.",
+        "translation": "There's no way I'm going out now since it's so dark, because it's dangerous."
+      },
+      {
+        "sentence": "저런 큰 일을 혼자 해낼 리가 없어요, 도와주지 않으면 가능성이 없어요.",
+        "romanization": "Jeoleon keun il-eul honja haenael riga eopseoyo, dowajujianheumyeon ganeungseong-i eopseoyo.",
+        "translation": "There's no way I can handle such a big task alone; without help, it won't be possible."
+      },
+      {
+        "sentence": "그녀가 나를 싫어할 리가 없어요, 우리는 최고의 친구니까요.",
+        "romanization": "Geunyeoga naleul silheohal riga eopseoyo, ulineun choegoui chingunikka.",
+        "translation": "There's no way she would dislike me, because we are the best of friends."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_105",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 때마다 [hal ttaemada] (Every time when)",
+    "shortExplanation": "Used to indicate repetition; 'every time when' or 'whenever'.",
+    "longExplanation": "'~할 때마다 [hal ttaemada]' is a conjunction used in Korean to indicate an action or state that repeatedly happens whenever a certain condition or situation occurs. It conveys a sense of regular occurrence, akin to 'every time when' or 'whenever' in English. It is used to emphasize the consistent and repetitive nature of an action or state in relation to a specific situation.",
+    "formation": "Verb in dictionary form + 할 때마다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "나는 책을 읽을 때마다 새로운 지식을 얻게 됩니다, 그래서 저는 많이 읽는 것을 좋아합니다.",
+        "romanization": "Naneun chaeg-eul ilgeul ttaemada saeroun jisigeul eotge doepnida, geureoseo jeoneun mani ilgneun geoseul joahamnida.",
+        "translation": "Every time I read a book, I gain new knowledge, so I like reading a lot."
+      },
+      {
+        "sentence": "그는 연습할 때마다 더 나은 성과를 얻을 수 있습니다, 그는 항상 최선을 다하고 있습니다.",
+        "romanization": "Geuneun yeonseubhal ttaemada deo naeun seonggwaleul eoteul su issseumnida, geuneun hangsang choeseoneul dahago issseumnida.",
+        "translation": "Every time he practices, he can achieve better results; he is always doing his best."
+      },
+      {
+        "sentence": "오빠를 만날 때마다 로맨틱한 영화를 보러 갑니다, 그래서 저희는 항상 행복합니다.",
+        "romanization": "Oppareul mannal ttaemada romaentikhan yeonghwareul boreo gamnida, geureoseo jeohui neun hangsang haengbokhamnida.",
+        "translation": "Every time I meet my older brother, we go to watch a romantic movie, so we are always happy."
+      },
+      {
+        "sentence": "우리는 축구를 할 때마다 친구들과 많은 재미를 느낍니다, 우리는 축구를 정말 좋아합니다.",
+        "romanization": "Urineun chukgureul hal ttaemada chingudeulgwa manheun jaemireul neukkimnida, urineun chukgureul jeongmal joahamnida.",
+        "translation": "Every time we play soccer, we have a lot of fun with our friends; we really love soccer."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_106",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 힘이 없다 [hal himi eopda] (Don't have the strength/energy to)",
+    "shortExplanation": "This phrase is used to express that one doesn't have the strength or energy to do something.",
+    "longExplanation": "The phrase '~할 힘이 없다 [hal himi eopda]' is commonly used in Korean to demonstrate the absence of capability, energy, or strength to perform a particular action. It is typically used to express physical or emotional fatigue that hinders one's ability to carry out a task.",
+    "formation": "Verb(원형) + 할 힘이 없다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "일이 너무 많아서 더 이상 할 힘이 없어요. 하루에 적어도 8시간은 쉬어야 할 것 같아요.",
+        "romanization": "Il-i neomu manhaseo deo isang hal himi eopseoyo. Haru-e jeogeodo 8sigan-eun swieoya hal geot gatayo.",
+        "translation": "I have so much work that I don’t have the strength to do any more. I think I need to rest at least 8 hours a day."
+      },
+      {
+        "sentence": "어제 밤에 잠을 거의 못 잤어서 오늘은 더 이상 일할 힘이 없어요.",
+        "romanization": "Eoje bam-e jam-eul geoi mos jass-eoseo oneul-eun deo isang ilhal himi eopseoyo.",
+        "translation": "I barely slept last night, so I don’t have the strength to work today."
+      },
+      {
+        "sentence": "일주일 동안 운동을 하루도 빠트리지 않고 했더니 몸이 아파서 더 이상 운동할 힘이 없어요.",
+        "romanization": "Ilju-il dong-an undong-eul harudo ppatteuriji anko haessdeoni mom-i apaseo deo isang undonghal himi eopseoyo.",
+        "translation": "I exercised every day for a week, and now my body is so sore that I don’t have the strength to exercise anymore."
+      },
+      {
+        "sentence": "이번 주 동안 시험 공부에 너무 힘들게 해서 더 이상 공부할 힘이 없어요.",
+        "romanization": "Ibeon ju dong-an siheom gongbu-e neomu himdeulge haeseo deo isang gongbureul himi eopseoyo.",
+        "translation": "I studied so hard for the exams this week that I don’t have the strength to study any further."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_107",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 것 같다 [hal geot gatda] (Seems like, feels like)",
+    "shortExplanation": "Used to express prediction, expectation, or intuition; 'seems like', 'feels like'.",
+    "longExplanation": "'~할 것 같다 [hal geot gatda]' is a sentence-ending expression in Korean used to predict or express an expectation or feeling about a future event. The speaker uses this form to share an opinion or intuition based on observations. It is translated as 'seems like' or 'feels like' in English.",
+    "formation": "Verb stem + 을/ㄹ + 것 같다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "오늘은 비가 올 것 같아, 위에 먹구름이 가득 끼었어.",
+        "romanization": "Oneureun biga ol geot gata, wi-e meokgureum-i gadeuk kkyeosseo.",
+        "translation": "It seems like it will rain today; the sky is filled with dark clouds."
+      },
+      {
+        "sentence": "그녀가 너를 좋아할 것 같아, 항상 너에게 웃음짓는 걸 보니까.",
+        "romanization": "Geunyeoga neoreul joahal geot gata, hangsang neoege useumjineun geol bonikka.",
+        "translation": "It seems like she likes you—she always smiles at you."
+      },
+      {
+        "sentence": "내일 시험이 어려울 것 같아, 범위가 너무 넓어.",
+        "romanization": "Naeil siheomi eoryeoul geot gata, beomwigwa neomu neolbeo.",
+        "translation": "It seems like tomorrow’s test will be difficult because the scope is too wide."
+      },
+      {
+        "sentence": "나는 이번 프로젝트를 성공할 것 같아, 모두가 열심히 준비하고 있으니까.",
+        "romanization": "Naneun ibeon peurojekteureul seonggonghal geot gata, moduga yeolsimhi junbihago isseunikka.",
+        "translation": "I think this project will be successful since everyone is preparing so hard."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_108",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 것이다 [hal geosida] (Will)",
+    "shortExplanation": "Used to express that an event will occur in the future.",
+    "longExplanation": "'~할 것이다 [hal geosida]' is a future tense marker in Korean. It is attached to the end of a verb to indicate that something is going to or will happen. It can also express the speaker’s wish, intention, or prediction regarding a future event.",
+    "formation": "Verb Stem + ~(으)ㄹ 것이다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "눈이 계속 이렇게 오면 학교가 내일은 문을 닫을 것이다.",
+        "romanization": "Nuni gyesok ireohge omyeon hakgyoga naeireun muneul dateul geosida.",
+        "translation": "If it keeps snowing like this, the school will close tomorrow."
+      },
+      {
+        "sentence": "체육대회가 다가오므로 우리들은 더 열심히 연습할 것이다.",
+        "romanization": "Cheyukdaehoe-ga dagao-myeoseo urideureun deo yeolsimhi yeonseuphal geosida.",
+        "translation": "As the sports meet approaches, we will practice harder."
+      },
+      {
+        "sentence": "지난 학기보다 이번 학기 성적이 더 좋을 것이다.",
+        "romanization": "Jinan hakgiboda ibeon hakgi seongjeogi deo joheul geosida.",
+        "translation": "This semester's grades will be better than last semester's."
+      },
+      {
+        "sentence": "오늘 밤에 별이 많이 보일 것이다.",
+        "romanization": "Oneul bame byeoli mani boil geosida.",
+        "translation": "A lot of stars will be visible tonight."
+      }
+    ]
+  },
+  {
+    "id": "ko_할_109",
+    "language": "ko",
+    "pattern": "~할",
+    "title": "~할 줄 알다 [hal jul alda] (Know how to)",
+    "shortExplanation": "Used to express 'know how to' or 'the ability to do something'.",
+    "longExplanation": "'~할 줄 알다 [hal jul alda]' is a grammatical expression used to convey the ability or knowledge of how to do something. When attached to a verb stem, it indicates that someone knows how to perform that action. It is often used in conversation to ask or assert one’s ability.",
+    "formation": "Verb stem + -ㄹ/을 줄 알다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "저는 한국어를 얼마나 잘하냐고요? 음, 가장 기본적인 대화를 할 줄 알아요.",
+        "romanization": "Jeoneun hangugeoreul eolmana jalhanyagoyo? Eum, gajang gibonjeogin daehwareul hal jul alayo.",
+        "translation": "How well do I know Korean? Well, I know how to have even the most basic conversations."
+      },
+      {
+        "sentence": "우리 아이가 피아노를 칠 줄 알아서, 항상 연주를 들려줄 때가 가장 행복해요.",
+        "romanization": "Uri aiga piano-reul chil jul alaseo, hangsang yeonjureul deullyeojul ttaega gajang haengbokhaeyo.",
+        "translation": "Our child knows how to play the piano, so I'm happiest when they perform for us."
+      },
+      {
+        "sentence": "너는 어떻게 요리를 할 줄 알았어? 식사는 정말 맛있었어.",
+        "romanization": "Neoneun eotteoke yorireul hal jul alatseo? Siksaneun jeongmal masisseosseo.",
+        "translation": "How did you learn to cook? The meal was really delicious."
+      },
+      {
+        "sentence": "저는 컴퓨터 프로그래밍을 할 줄 알아요, 그래서 여러 가지 문제를 해결할 수 있어요.",
+        "romanization": "Jeoneun keompyuteo peurogeuraeming-eul hal jul alayo, geuraeseo yeoreo gaji munjeleul haegyeolhal su isseoyo.",
+        "translation": "I know how to do computer programming, so I can solve various problems."
+      }
+    ]
+  },
+  {
+    "id": "ko_할지라도_110",
+    "language": "ko",
+    "pattern": "~할지라도",
+    "title": "~할지라도 [haljirado] (Even if)",
+    "shortExplanation": "Used to express 'even if', 'even though', or 'regardless of'.",
+    "longExplanation": "'~할지라도 [haljirado]' is a conjugation form used to express that, even if a certain condition or circumstance exists, the outcome in the second clause remains true. It is often used in hypothetical or speculative situations.",
+    "formation": "Verb in future tense form + 지라도",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "얼마나 바빠서 시간이 없을지라도, 매일 운동하는 것이 중요해요.",
+        "romanization": "Eolmana bappaseo sigani eopseuljirado, maeil undonghaneun geozi jungyohaeyo.",
+        "translation": "Even if you are so busy that you have no time, exercising every day is important."
+      },
+      {
+        "sentence": "맛이 얼마나 좋을지라도, 건강에 해로운 음식은 피해야 해요.",
+        "romanization": "Masi eolmana joheuljirado, geongange haeroun eumsigeun pihaeya haeyo.",
+        "translation": "Even if something tastes really good, you must avoid food that is harmful to your health."
+      },
+      {
+        "sentence": "어려울지라도, 계속 연습하면 결국에는 성공할 수 있을 거예요.",
+        "romanization": "Eoryeouljirado, gyesok yeonseuphamyeon gyeolgugeneun seonggonghal su isseul geoyeyo.",
+        "translation": "Even if it’s difficult, if you keep practicing, you will eventually succeed."
+      },
+      {
+        "sentence": "비가 오고 있을지라도, 오늘은 외출할 계획이에요.",
+        "romanization": "Biga ogo isseuljirado, oneuleun oechulhal gyehoegieyo.",
+        "translation": "Even if it’s raining, I plan to go out today."
+      }
+    ]
+  },
+  {
+    "id": "ko_할지언정_111",
+    "language": "ko",
+    "pattern": "~할지언정",
+    "title": "~할지언정 [haljieonjeong] (Regardless of whether)",
+    "shortExplanation": "Used to express 'regardless of whether', 'no matter what', or 'even if'. It shows that even if a condition exists, it will not affect the speaker's decision or action.",
+    "longExplanation": "'~할지언정 [haljieonjeong]' is used to indicate that regardless of a certain condition or situation in the first clause, the outcome or decision in the main clause remains unchanged. It is similar to 'whether or not' or 'no matter what' in English.",
+    "formation": "Verb + ~ㄹ지언정",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "문제가 어렵다 할지언정 끝까지 풀어 볼 것이다.",
+        "romanization": "Munjega eoryeopda haljieonjeong kkeutkkaji pureo bol geosida.",
+        "translation": "Regardless of whether the problem is difficult, I will try to solve it to the end."
+      },
+      {
+        "sentence": "그녀가 나를 싫어한다 할지언정 나는 그녀를 계속 사랑할 것이다.",
+        "romanization": "Geunyeoga nareul silheohanda haljieonjeong naneun geunyeoreul gyesok saranghal geosida.",
+        "translation": "Regardless of whether she dislikes me, I will continue to love her."
+      },
+      {
+        "sentence": "날씨가 차갑다 할지언정 우리는 계속 걸어가야 합니다.",
+        "romanization": "Nalssiga chagapda haljieonjeong urineun gyesok georeogaya hamnida.",
+        "translation": "Regardless of whether the weather is cold, we have to keep walking."
+      },
+      {
+        "sentence": "시험이 어렵다 할지언정 저는 공부를 계속해야 해요.",
+        "romanization": "Siheomi eoryeopda haljieonjeong jeoneun gongbureul gyesokhaeya haeyo.",
+        "translation": "Regardless of whether the exam is difficult, I have to keep studying."
+      }
+    ]
+  },
+  {
+    "id": "ko_함에_112",
+    "language": "ko",
+    "pattern": "~함에",
+    "title": "~함에 있어 [hame isseo] (In terms of)",
+    "shortExplanation": "This pattern is used to indicate 'in terms of', 'when it comes to', or 'with respect to'.",
+    "longExplanation": "'~함에 있어' is used when explaining a standard or point of view on which a judgment is made. It is equivalent to 'in terms of', 'when it comes to', or 'in the context of' in English. This form is often used in sentences that express opinions or subjective views from a particular perspective.",
+    "formation": "Verb stem + -ㅁ + 에 있어",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "식량 생산함에 있어 아직 많은 문제점이 있습니다, 그러므로 우리는 새로운 변화의 필요성을 느껴야 합니다.",
+        "romanization": "Sigryang saengsan-ham-e iss-eo ajig manheun munjejeom-i issseumnida, geuleomulo ulineun saeloun byeonhwa-ui pil-yoseong-eul neuggyeoya hamnida.",
+        "translation": "In terms of food production, there are still many problems; therefore, we need to recognize the need for new changes."
+      },
+      {
+        "sentence": "사랑함에 있어 솔직함이 가장 중요한 요소 중 하나라고 생각합니다.",
+        "romanization": "Salang-ham-e iss-eo soljigham-i gajang jung-yohan yoso jung hanalago saenggakhabnida.",
+        "translation": "In terms of love, I believe honesty is one of the most important factors."
+      },
+      {
+        "sentence": "환경보호함에 있어 각 사람의 작은 노력이 큰 변화를 가져옵니다.",
+        "romanization": "Hwangyeong boho-ham-e iss-eo gak salam-ui jag-eun nolyeog-i keun byeonhwa leul gajyeo-omnida.",
+        "translation": "In terms of environmental protection, each person's small effort brings about great change."
+      },
+      {
+        "sentence": "팀워크함에 있어서는 그녀가 우리 팀에서 가장 중요한 사람입니다.",
+        "romanization": "Timweokeu-ham-e iss-eoseoneun geunyeoga uli tim-eseo gajang jung-yohan salam-ibnida.",
+        "translation": "In terms of teamwork, she is the most important person on our team."
+      }
+    ]
+  },
+  {
+    "id": "ko_해_113",
+    "language": "ko",
+    "pattern": "~해",
+    "title": "~해 보이다 [hae boida] (Look/seem to be)",
+    "shortExplanation": "Used to express an observation or opinion about how someone or something appears or seems.",
+    "longExplanation": "'~해 보이다 [hae boida]' is used in Korean to describe how someone or something appears based on personal observation. It combines an adjective or descriptive verb (in dictionary form) with 보이다 to express a subjective judgment—equivalent to 'look/seem to be' in English.",
+    "formation": "Adjective/Descriptive verb (dictionary form) + 보이다",
+    "level": "Korean 5",
+    "examples": [
+      {
+        "sentence": "그 여자는 정말 행복해 보이던데요, 항상 웃는 얼굴로 사람들을 인사했어요.",
+        "romanization": "Geu yeojaneun jeongmal haengbokhae boiddeondeyo, hangsang utneun eolgullo saramdeureul insahayeoss-eoyo.",
+        "translation": "That woman seemed really happy; she always greeted people with a smiling face."
+      },
+      {
+        "sentence": "이 음식은 맛있어 보여서 바로 주문했어요.",
+        "romanization": "I eumsik-eun masisseo boyeoseo baro jumunhaesseoyo.",
+        "translation": "This food looked delicious, so I ordered it right away."
+      },
+      {
+        "sentence": "그의 표정으로 봐서는 정말로 슬픈 일이 생긴 것 같아 보였어요.",
+        "romanization": "Geuui pyojeong-eulo bwaseoneun jeongmallo seulpeun il-i saeng-gin geot gat-a boyeoss-eoyo.",
+        "translation": "Judging by his expression, it seemed like something really sad had happened."
+      },
+      {
+        "sentence": "벚꽃이 만발한 이 공원은 진짜 아름다워 보여요.",
+        "romanization": "Beotkkot-i manbalhan i gong-woneun jinjja areumdawo boyeoyo.",
+        "translation": "This park, full of blooming cherry blossoms, looks truly beautiful."
+      }
+    ]
+  },
+  {
+    "id": "ko_게다가_0",
+    "language": "ko",
+    "pattern": "~게다가",
+    "title": "~게다가 [gedaga] (Moreover, besides)",
+    "shortExplanation": "This grammar point is used to introduce an additional point or detail that strengthens the previous statement.",
+    "longExplanation": "`~게다가 [gedaga]` is a conjunctive adverb in Korean. It is used to add further information or details to a previously mentioned point, similar to 'moreover' or 'besides' in English. It implies that the subsequent information is an additional detail rather than a completely separate point.",
+    "formation": "Clause1 + 게다가 + Clause2",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그 카페는 커피 맛이 아주 좋고, 게다가 분위기도 좋아서 자주 가요.",
+        "romanization": "Geu kape-neun keopi masi aju jo-go, gedaga bunwigi-do jo-a-seo ja-ju ga-yo.",
+        "translation": "I often go to that cafe because not only is the coffee really good, but the atmosphere is also nice."
+      },
+      {
+        "sentence": "오늘은 비가 오고, 게다가 추워서 나가기 싫어요.",
+        "romanization": "Oneul-eun bi-ga o-go, gedaga chu-wo-seo na-ga-gi si-reo-yo.",
+        "translation": "Today, it's raining and, besides, it's cold so I don't want to go out."
+      },
+      {
+        "sentence": "그는 성격이 참 좋고, 게다가 똑똑해서 사람들이 많이 좋아해요.",
+        "romanization": "Geu-neun seonggyeogi cham jo-go, gedaga ttokttok-hae-seo saram-deul-i ma-ni jo-a-hae-yo.",
+        "translation": "He has a very good personality and, moreover, he is smart, so many people like him."
+      },
+      {
+        "sentence": "이 식당은 음식이 맛있고, 게다가 가격도 저렴해서 자주 찾아가요.",
+        "romanization": "I sikdang-eun eumsik-i masit-go, gedaga gyeog-do jeo-ryeom-hae-seo ja-ju cha-ja-ga-yo.",
+        "translation": "The food at this restaurant is delicious and, in addition, the prices are cheap, so I visit often."
+      }
+    ]
+  },
+  {
+    "id": "ko_거니와_1",
+    "language": "ko",
+    "pattern": "~거니와",
+    "title": "~거니와 [geoniwa] (And, besides)",
+    "shortExplanation": "Used to add an additional reason or explanation, equivalent to 'and' or 'besides' in English, though it is more literary.",
+    "longExplanation": "`~거니와 [geoniwa]` is a conjunctive particle used in Korean to connect two clauses, providing an extra reason or detail. It is similar in function to 'and' or 'besides' in English. This construction is more formal or literary and is less common in everyday speech.",
+    "formation": "Clause1 (adjective/verb stem) + 거니와 + Clause2",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "이것은 비싸거니와 내가 원하는 모양도 아니에요.",
+        "romanization": "Igeoseun bissageoniwa naega wonhaneun moyang-do anieyo.",
+        "translation": "This is not only expensive but also not the style I want."
+      },
+      {
+        "sentence": "나는 책 읽거니와 영화도 좋아해서 주말마다 항상 바빠요.",
+        "romanization": "Naneun chaek ilkkeoniwa yeonghwado joahaseo jumalmada hangsang bappayo.",
+        "translation": "I not only enjoy reading books but also like movies, so I'm always busy on weekends."
+      },
+      {
+        "sentence": "이 상품은 품질이 낮거니와 서비스도 엉망이에요.",
+        "romanization": "I sangpumeun pumjili najgeoniwa seobiseudo eongmang-ieyo.",
+        "translation": "This product is of poor quality and, besides, the service is also a mess."
+      },
+      {
+        "sentence": "그 영화는 재미있거니와 감동적이에요.",
+        "romanization": "Geu yeonghwaneun jaemiitgeoniwa gamdongjieyo.",
+        "translation": "That movie is not only entertaining but also moving."
+      }
+    ]
+  },
+  {
+    "id": "ko_것만은_2",
+    "language": "ko",
+    "pattern": "~것만은",
+    "title": "~것만은 [geot man-eun] (But / At least)",
+    "shortExplanation": "This construction is used to emphasize that one particular aspect is an exception, often contrasting with expectations.",
+    "longExplanation": "The `~것만은` construction in Korean is used to highlight that despite other circumstances, one specific aspect does not follow the expected result. It is often used in a contrasting or contradictory context to stress that, if nothing else, this one thing is different.",
+    "formation": "Verb/Adjective (in past form) + -(ㄴ/은) + 것만은",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그녀는 공부를 열심히 했는데, 학교에서 점수가 좋지 않은 것만은 이해할 수 없어요.",
+        "romanization": "Geunyeoneun gongbureul yeolsimhi haetneunde, hakgyoeseo jeomsuga jotji anheun geotman-eun ihaehal su eopsseoyo.",
+        "translation": "She studied hard, but I can't understand why her scores at school aren't good."
+      },
+      {
+        "sentence": "어젯밤에 잠을 많이 잤는데, 아직도 피곤한 것만은 이해하기 어려워요.",
+        "romanization": "Eojjeotbame jameul manhi jassneunde, ajikdo pigonhan geotman-eun ihaehagi eoryeowoyo.",
+        "translation": "I slept a lot last night, but I still can't understand why I'm tired."
+      },
+      {
+        "sentence": "우리 팀이 열심히 노력했는데, 게임에서 지는 것만은 너무 아쉬워요.",
+        "romanization": "Uri timi yeolsimhi noryeokhaetneunde, geimeseo jineun geotman-eun neomu ashuwoyo.",
+        "translation": "Our team worked hard, but it's such a shame that we lost the game."
+      },
+      {
+        "sentence": "나는 매일 운동을 했는데, 체중이 늘어난 것만은 실망스러워요.",
+        "romanization": "Naneun maeil undongeul haetneunde, chejungi neureonan geotman-eun silmangseureowoyo.",
+        "translation": "I exercised every day, but I'm disappointed that my weight increased."
+      }
+    ]
+  },
+  {
+    "id": "ko_과와_3",
+    "language": "ko",
+    "pattern": "~과/와",
+    "title": "~과/와 같이 [gwa/wa gachi] (Like, as if)",
+    "shortExplanation": "Used to express a comparison, similarity, or analogy, equivalent to 'like' or 'as if' in English.",
+    "longExplanation": "`~과/와 같이 [gwa/wa gachi]` is an expression used in Korean to draw a comparison or analogy, showing that one thing is similar to another. It is equivalent to saying 'like' or 'as if' in English and helps in visualizing or emphasizing the resemblance between two things.",
+    "formation": "Noun + 과/와 같이",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "지난 주말은 봄과 같이 따뜻했어요. 하지만 이번 주말은 겨울과 같이 너무 추웠어요.",
+        "romanization": "Jinan jumal-eun bomgwa gachi ttatteushaess-eoyo. Hajiman ibeon jumal-eun gyeoulgwa gachi neomu chuweoss-eoyo.",
+        "translation": "Last weekend was warm like spring, but this weekend was as cold as winter."
+      },
+      {
+        "sentence": "그 그림은 사진과 같이 생생해 보여요, 그래서 그가 대단한 화가라는 것을 알 수 있어요.",
+        "romanization": "Geu geurim-eun sajingwa gachi saengsaenghae boyeoyo, geuraeseo geuga daedanhan hwaga-raneun geos-eul al su iss-eoyo.",
+        "translation": "That painting is vivid like a photograph, so you can tell that he is a great artist."
+      },
+      {
+        "sentence": "오늘은 여름과 같이 더웠어요, 그래서 아이스크림을 먹었어요.",
+        "romanization": "Oneul-eun yeoleumgwa gachi deowoss-eoyo, geulaeseo aiseukeulim-eul meogeoss-eoyo.",
+        "translation": "Today was hot like summer, so I ate ice cream."
+      },
+      {
+        "sentence": "독서는 운동과 같이, 마음을 건강하게 해주는 활동이에요.",
+        "romanization": "Dogseo-neun undonggwa gachi, ma-eum-eul geonganghage haejuneun hwaldong-ieyo.",
+        "translation": "Reading is like exercise; it's an activity that keeps the mind healthy."
+      }
+    ]
+  },
+  {
+    "id": "ko_나마저_4",
+    "language": "ko",
+    "pattern": "~나마저",
+    "title": "~나마저 [namajeo] (Even)",
+    "shortExplanation": "Used to express surprise or emphasis, indicating that even the unexpected subject or object is included.",
+    "longExplanation": "`~나마저 [namajeo]` is a postpositional particle in Korean that emphasizes an unexpected inclusion, similar to 'even' in English. It highlights that the subject or object in question surpasses normal expectations.",
+    "formation": "Noun + 나마저",
+    "level": "Korean 6",
+    "examples": [
+      {
+        "sentence": "그녀는 학교에서 가장 어려운 수업도 쉽게 이해하는데, 이 수업 나마저 이해하는 걸 보니 그녀는 정말 대단해요.",
+        "romanization": "Geunyeoneun hakgyoeseo gajang eoryeoun sueobdo swipge ihaehaneunde, i sueob namajeo ihaehaneun geol boni geunyeoneun jeongmal daedanhaeyo.",
+        "translation": "She easily understands even the hardest classes at school, so seeing her grasp this subject, she's truly amazing."
+      },
+      {
+        "sentence": "나는 보통 친구들과 잘 지내는데, 그 친구 나마저 저를 싫어하는 것 같아서 상처받았어요.",
+        "romanization": "Naneun botong chingudeulgwa jal jinaende, geu chingu namajeo jeoreul silheohaneun geot gataseo sangcheobadasseoyo.",
+        "translation": "I usually get along well with my friends, but I was hurt because even that friend seems to dislike me."
+      },
+      {
+        "sentence": "다른 사람들은 다 반대했지만, 그는 한 사람이라도 지지하는 중요성을 알았어요. 그런데 그 사람 나마저 반대하자 기분이 나빴어요.",
+        "romanization": "Dareun saramdeureun da bandaehaetjiman, geuneun han saramirado jijihaneun jungyoseongeul arasseoyo. Geureonde geu saram namajeo bandaehaja gibuni nappasseoyo.",
+        "translation": "Everyone else opposed it, but he recognized the importance of having even one supporter. However, when even that person opposed, he felt bad."
+      },
+      {
+        "sentence": "책상 위에 있는 모든 물건들을 봤는데, 그 물건 나마저 찾지 못했어요.",
+        "romanization": "Chaeksang wie inneun modeun mulgeondeureul bwatneunde, geu mulgeon namajeo chatji mothaesseoyo.",
+        "translation": "I looked at every single item on the desk, but I couldn't even find that item."
+      }
+    ]
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_の_85",
+    "language": "ja",
+    "pattern": "～の～",
+    "title": "～の～ (〜no 〜)",
+    "shortExplanation": "Indicates possession, attribution, or connection between two nouns.",
+    "longExplanation": "The ～の～ grammar point is used to show the relationship between two nouns in Japanese. It can be translated as 'of', 'in', or 'the' in English. This grammar point is used to indicate possession, attribution, or connection between the two nouns.",
+    "formation": "Noun1 + の + Noun2",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "これは私の傘です。",
+        "romanization": "Kore wa watashi no kasa desu.",
+        "translation": "This is my umbrella."
+      },
+      {
+        "sentence": "あのビルは東京の有名な観光スポットです。",
+        "romanization": "Ano biru wa Toukyou no yuumei na kankou supotto desu.",
+        "translation": "That building is a famous tourist spot in Tokyo."
+      },
+      {
+        "sentence": "彼は部長の秘書です。",
+        "romanization": "Kare wa buchou no hisho desu.",
+        "translation": "He is the chief's secretary."
+      },
+      {
+        "sentence": "彼女は音楽の先生です。",
+        "romanization": "Kanojo wa ongaku no sensei desu.",
+        "translation": "She is a music teacher."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばかり_86",
+    "language": "ja",
+    "pattern": "～ばかり",
+    "title": "～ばかり (〜bakari)",
+    "shortExplanation": "Expresses 'only', 'nothing but', 'always', 'just'.",
+    "longExplanation": "The ～ばかり grammar point is used to express that something is only, nothing but, always, or just a certain way. It emphasizes the repeated or continuous nature of an action or state. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-ますstem + ばかり, い-Adjective + ばかり, な-Adjective + ばかり, Noun + ばかり",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼はゲームばかりしている。",
+        "romanization": "Kare wa geemu bakari shite iru.",
+        "translation": "He is always playing games."
+      },
+      {
+        "sentence": "この部屋は綺麗なものばかりだ。",
+        "romanization": "Kono heya wa kirei na mono bakari da.",
+        "translation": "This room has nothing but clean things."
+      },
+      {
+        "sentence": "彼女は勉強ばかりしていて、遊んでいる暇がない。",
+        "romanization": "Kanojo wa benkyou bakari shite ite, asonde iru hima ga nai.",
+        "translation": "She is always studying and has no time to play."
+      },
+      {
+        "sentence": "彼の話は嘘ばかりで、信じることができない。",
+        "romanization": "Kare no hanashi wa uso bakari de, shinjiru koto ga dekinai.",
+        "translation": "His words are nothing but lies, and I cannot believe them."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばかりか_87",
+    "language": "ja",
+    "pattern": "～ばかりか",
+    "title": "～ばかりか (〜bakarika) ～も (mo)",
+    "shortExplanation": "Not only... but also; more than just; not just",
+    "longExplanation": "The grammar point ～ばかりか ～も is used to emphasize that something is not limited to only one thing, but also includes another thing. It can be translated as 'not only... but also', 'more than just', or 'not just' in English. This expression is typically used with verbs, adjectives, and nouns.",
+    "formation": "Verb-casual + ばかりか/も, い-Adjective + ばかりか/も, な-Adjective + だ + ばかりか/も, Noun + だ + ばかりか/も",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼女は英語ばかりか、フランス語も話せます。",
+        "romanization": "Kanojo wa eigo bakarika, furansugo mo hanasemasu.",
+        "translation": "Not only can she speak English, but she can also speak French."
+      },
+      {
+        "sentence": "このレストランは味が良いばかりか、サービスも素晴らしい。",
+        "romanization": "Kono resutoran wa aji ga yoi bakarika, saabisu mo subarashii.",
+        "translation": "Not only does this restaurant have great taste, but the service is also wonderful."
+      },
+      {
+        "sentence": "パーティは楽しかったばかりか、料理も美味しかった。",
+        "romanization": "Paatii wa tanoshikatta bakarika, ryouri mo oishikatta.",
+        "translation": "Not only was the party fun, but the food was also delicious."
+      },
+      {
+        "sentence": "彼は頭がいいばかりか、スポーツも得意だ。",
+        "romanization": "Kare wa atama ga ii bakarika, supootsu mo tokui da.",
+        "translation": "Not only is he smart, but he is also good at sports."
+      }
+    ]
+  },
+  {
+    "id": "ja_はずだ_88",
+    "language": "ja",
+    "pattern": "～はずだ",
+    "title": "～はずだ (〜hazu da)",
+    "shortExplanation": "Expresses an expectation, 'should' or 'it is supposed to'.",
+    "longExplanation": "The ～はずだ grammar point is used to express an expectation or belief that something is true, even if it has not been confirmed. It can be translated as 'should', 'it is supposed to', or 'ought to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + はずだ, い-Adjective + はずだ, な-Adjective + なはずだ, Noun + のはずだ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼はもう着いたはずだ。",
+        "romanization": "Kare wa mou tsuita hazu da.",
+        "translation": "He should have arrived by now."
+      },
+      {
+        "sentence": "この薬を飲むと、痛みがなくなるはずだ。",
+        "romanization": "Kono kusuri wo nomu to, itami ga nakunaru hazu da.",
+        "translation": "If you take this medicine, the pain should go away."
+      },
+      {
+        "sentence": "明日は晴れるはずだ。",
+        "romanization": "Ashita wa hareru hazu da.",
+        "translation": "It is supposed to be sunny tomorrow."
+      },
+      {
+        "sentence": "彼女は元気なはずだ。",
+        "romanization": "Kanojo wa genki na hazu da.",
+        "translation": "She is supposed to be well."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばのに_89",
+    "language": "ja",
+    "pattern": "～ば～のに",
+    "title": "～ば～のに (〜ba 〜noni)",
+    "shortExplanation": "Expresses regret or dissatisfaction; 'if only', 'wish'.",
+    "longExplanation": "The ～ば～のに grammar point is used to express regret or dissatisfaction about a situation that didn't happen or to express a contrary view of the actual situation. It can be translated as 'if only' or 'wish' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-ば form + ～のに, い-Adjective-ば form + ～のに, な-Adjective + であれば + ～のに, Noun + であれば + ～のに",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "もっと早く来れば、電車に間に合ったのに。",
+        "romanization": "Motto hayaku kureba, densha ni maniatta noni.",
+        "translation": "If only I had come earlier, I would have made it to the train."
+      },
+      {
+        "sentence": "もっと勉強すれば、試験に合格したのに。",
+        "romanization": "Motto benkyou sureba, shiken ni goukaku shita noni.",
+        "translation": "I wish I had studied more, I would have passed the exam."
+      },
+      {
+        "sentence": "彼女がもっと優しければ、彼と上手くいくのに。",
+        "romanization": "Kanojo ga motto yasashikereba, kare to umaku iku noni.",
+        "translation": "If only she were kinder, she would get along with him."
+      },
+      {
+        "sentence": "日本語が上手であれば、この本が読めるのに。",
+        "romanization": "Nihongo ga jouzu de areba, kono hon ga yomeru noni.",
+        "translation": "I wish I were good at Japanese, then I could read this book."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばほど_90",
+    "language": "ja",
+    "pattern": "～ば～ほど",
+    "title": "～ば～ほど (〜ba 〜hodo)",
+    "shortExplanation": "Expresses 'the more ~, the more ~'; a proportional relationship between two phrases.",
+    "longExplanation": "The ～ば～ほど grammar point is used to express a proportional relationship between two phrases, meaning 'the more A, the more B'. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
+    "formation": "Verb-casual + ば + Verb-casual + ほど, い-Adjective + ば + い-Adjective + ほど, な-Adjective + であれば + な-Adjective + ほど",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "早く起きれば起きるほど、時間がたくさんある。",
+        "romanization": "Hayaku okireba okiru hodo, jikan ga takusan aru.",
+        "translation": "The earlier you wake up, the more time you have."
+      },
+      {
+        "sentence": "練習すればするほど、上達します。",
+        "romanization": "Renshuu sureba suru hodo, joutatsu shimasu.",
+        "translation": "The more you practice, the more you will improve."
+      },
+      {
+        "sentence": "料理が美味しければ美味しいほど、皆が喜びます。",
+        "romanization": "Ryouri ga oishikereba oishii hodo, mina ga yorokobimasu.",
+        "translation": "The more delicious the food is, the happier everyone will be."
+      },
+      {
+        "sentence": "日本語が上手であれば上手なほど、日本の生活が楽になります。",
+        "romanization": "Nihongo ga jouzu de areba jouzu na hodo, Nihon no seikatsu ga raku ni narimasu.",
+        "translation": "The better your Japanese is, the easier life in Japan will be."
+      }
+    ]
+  },
+  {
+    "id": "ja_はもちろんも_91",
+    "language": "ja",
+    "pattern": "～はもちろん～も",
+    "title": "～はもちろん～も (〜wa mochiron 〜mo)",
+    "shortExplanation": "Used for emphasizing that not only one thing but also another thing is included. It means 'not only... but also' or 'of course... and...'.",
+    "longExplanation": "The ～はもちろん～も grammar point is used to emphasize that not only the first thing mentioned is included, but also the second thing. It can be translated as 'not only... but also' or 'of course... and...' in English. This grammar phrase can be used with nouns.",
+    "formation": "Noun1 + はもちろん + Noun2 + も",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は数学はもちろん、英語も得意です。",
+        "romanization": "Kare wa suugaku wa mochiron, eigo mo tokui desu.",
+        "translation": "Not only is he good at math, but he is also good at English."
+      },
+      {
+        "sentence": "このレストランは和食はもちろん、洋食も美味しいです。",
+        "romanization": "Kono resutoran wa washoku wa mochiron, youshoku mo oishii desu.",
+        "translation": "This restaurant not only has delicious Japanese food but also delicious Western food."
+      },
+      {
+        "sentence": "私の趣味は音楽はもちろん、読書も大好きです。",
+        "romanization": "Watashi no shumi wa ongaku wa mochiron, dokusho mo daisuki desu.",
+        "translation": "My hobbies are not only listening to music, but I also love reading."
+      },
+      {
+        "sentence": "東京は観光はもちろん、ビジネスも盛んです。",
+        "romanization": "Toukyou wa kankou wa mochiron, bijinesu mo sakan desu.",
+        "translation": "Tokyo is not only famous for sightseeing but also has a thriving business scene."
+      }
+    ]
+  },
+  {
+    "id": "ja_ばよかった_92",
+    "language": "ja",
+    "pattern": "～ばよかった",
+    "title": "～ばよかった (〜ba yokatta)",
+    "shortExplanation": "Express a sense of regret; 'I wish', 'it would have been better if'.",
+    "longExplanation": "The ～ばよかった grammar point is used to express a sense of regret or to convey that one wishes something had been done differently. It can be translated as 'I wish' or 'it would have been better if' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
+    "formation": "Verb-ば-form + よかった, い-Adjective-く + ばよかった, な-Adjective + ならよかった",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "もっと早く起きればよかった。",
+        "romanization": "Motto hayaku okireba yokatta.",
+        "translation": "I wish I had woken up earlier."
+      },
+      {
+        "sentence": "昨日のパーティーに行けばよかった。",
+        "romanization": "Kinou no paatii ni ikeba yokatta.",
+        "translation": "I wish I had gone to yesterday's party."
+      },
+      {
+        "sentence": "もっと安いものを買えばよかった。",
+        "romanization": "Motto yasui mono wo kaeba yokatta.",
+        "translation": "I wish I had bought something cheaper."
+      },
+      {
+        "sentence": "あの時、もっと勉強すればよかった。",
+        "romanization": "Ano toki, motto benkyou sureba yokatta.",
+        "translation": "I wish I had studied more at that time."
+      }
+    ]
+  },
+  {
+    "id": "ja_ふりをする_93",
+    "language": "ja",
+    "pattern": "～ふりをする",
+    "title": "～ふりをする (〜furi wo suru)",
+    "shortExplanation": "Pretending or acting as if; 'pretend', 'act like'.",
+    "longExplanation": "The ～ふりをする grammar point is used to express that someone is pretending or acting as if they are doing something, feeling a certain way, or possessing a certain quality. It can be translated as 'pretend' or 'act like' in English. The formation is the same for verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb (dictionary form) + ふりをする, い-Adjective + ふりをする, な-Adjective + ふりをする, Noun + ふりをする",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は知らないふりをしました。",
+        "romanization": "Kare wa shiranai furi wo shimashita.",
+        "translation": "He pretended not to know."
+      },
+      {
+        "sentence": "彼女は病気のふりをして、学校を休みました。",
+        "romanization": "Kanojo wa byouki no furi wo shite, gakkou wo yasumimashita.",
+        "translation": "She pretended to be sick and skipped school."
+      },
+      {
+        "sentence": "彼は嬉しいふりをしていますが、本当は悲しいです。",
+        "romanization": "Kare wa ureshii furi wo shiteimasu ga, hontou wa kanashii desu.",
+        "translation": "He is pretending to be happy, but he is actually sad."
+      },
+      {
+        "sentence": "彼女はリーダーのふりをして、チームを率いました。",
+        "romanization": "Kanojo wa riidaa no furi wo shite, chiimu wo hikimashita.",
+        "translation": "She pretended to be a leader and led the team."
+      }
+    ]
+  },
+  {
+    "id": "ja_べきだ_94",
+    "language": "ja",
+    "pattern": "～べきだ",
+    "title": "～べきだ (〜beki da)",
+    "shortExplanation": "Express an obligation or something that should be done (mainly with verbs).",
+    "longExplanation": "The ～べきだ grammar point is used to express a sense of obligation or to indicate something that should be done. In modern Japanese, it is almost always used with verbs in the dictionary form. In English, it can be translated as 'should' or 'ought to'.",
+    "formation": "Verb-dictionary form + べきだ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "勉強するべきだ。",
+        "romanization": "Benkyou suru beki da.",
+        "translation": "You should study."
+      },
+      {
+        "sentence": "早く寝るべきだ。",
+        "romanization": "Hayaku neru beki da.",
+        "translation": "You should sleep early."
+      },
+      {
+        "sentence": "静かにするべきだ。",
+        "romanization": "Shizuka ni suru beki da.",
+        "translation": "You should be quiet."
+      },
+      {
+        "sentence": "彼に謝るべきだ。",
+        "romanization": "Kare ni ayamaru beki da.",
+        "translation": "You should apologize to him."
+      }
+    ]
+  },
+  {
+    "id": "ja_ほど_95",
+    "language": "ja",
+    "pattern": "～ほど～",
+    "title": "～ほど～ (〜hodo〜)",
+    "shortExplanation": "Expresses the degree or extent; 'about', 'to the extent', 'as much as'.",
+    "longExplanation": "The ～ほど grammar point is used to express the degree or extent of something. It can be translated as 'about', 'to the extent', or 'as much as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + ほど, い-Adjective + ほど, な-Adjective + ほど, Noun + ほど",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼女は私ほど速く走ることができません。",
+        "romanization": "Kanojo wa watashi hodo hayaku hashiru koto ga dekimasen.",
+        "translation": "She cannot run as fast as me."
+      },
+      {
+        "sentence": "このケーキはあのケーキほど美味しくない。",
+        "romanization": "Kono keeki wa ano keeki hodo oishikunai.",
+        "translation": "This cake is not as delicious as that cake."
+      },
+      {
+        "sentence": "日本ほど四季がはっきりしている国はない。",
+        "romanization": "Nihon hodo shiki ga hakkiri shite iru kuni wa nai.",
+        "translation": "There is no country with as distinct seasons as Japan."
+      },
+      {
+        "sentence": "東京は大阪ほど人が多くない。",
+        "romanization": "Toukyou wa Oosaka hodo hito ga ookunai.",
+        "translation": "Tokyo does not have as many people as Osaka."
+      }
+    ]
+  },
+  {
+    "id": "ja_ますように_96",
+    "language": "ja",
+    "pattern": "～ますように",
+    "title": "～ますように (〜masu you ni)",
+    "shortExplanation": "Used to express a wish or hope for oneself or someone else.",
+    "longExplanation": "The ～ますように grammar point is used to express a wish or hope. It is often used as a closing phrase in letters or messages, and can be applied to both oneself and others. The phrase is typically used with the ます form of the verb, with the final る replaced by ように.",
+    "formation": "Verb-ます form, remove final る + ように",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "明日のテストで良い点をとりますように。",
+        "romanization": "Ashita no tesuto de ii ten wo torimasu you ni.",
+        "translation": "I hope I get good grades on tomorrow's test."
+      },
+      {
+        "sentence": "彼が無事に帰ってきますように。",
+        "romanization": "Kare ga buji ni kaette kimasu you ni.",
+        "translation": "I hope he comes back safely."
+      },
+      {
+        "sentence": "みんなが健康でいられますように。",
+        "romanization": "Minna ga kenkou de iraremasu you ni.",
+        "translation": "I hope everyone stays healthy."
+      },
+      {
+        "sentence": "彼女に幸せになりますように。",
+        "romanization": "Kanojo ni shiawase ni narimasu you ni.",
+        "translation": "I hope she becomes happy."
+      }
+    ]
+  },
+  {
+    "id": "ja_まったくない_97",
+    "language": "ja",
+    "pattern": "まったく～ない",
+    "title": "まったく～ない (mattaku ~nai)",
+    "shortExplanation": "Completely not; not at all.",
+    "longExplanation": "The まったく～ない grammar point is used to express that something is not the case at all, or to emphasize the negativity of a situation or action. It is used with negative forms of verbs, い-adjectives, and な-adjectives. It can be translated as 'completely not' or 'not at all' in English.",
+    "formation": "まったく + Verb-negative, まったく + い-Adjective-negative, まったく + な-Adjective-negative",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は、まったく覚えていない。",
+        "romanization": "Kare wa, mattaku oboete inai.",
+        "translation": "He doesn't remember at all."
+      },
+      {
+        "sentence": "この部屋はまったく暖かくない。",
+        "romanization": "Kono heya wa mattaku atatakakunai.",
+        "translation": "This room is not warm at all."
+      },
+      {
+        "sentence": "彼女はまったく遅れていない。",
+        "romanization": "Kanojo wa mattaku okurete inai.",
+        "translation": "She is not late at all."
+      },
+      {
+        "sentence": "これはまったく便利ではない。",
+        "romanization": "Kore wa mattaku benri de wa nai.",
+        "translation": "This is not convenient at all."
+      }
+    ]
+  },
+  {
+    "id": "ja_まで_98",
+    "language": "ja",
+    "pattern": "～まで",
+    "title": "～まで (〜made)",
+    "shortExplanation": "Express 'until', 'up to', or 'as far as' to indicate the end point of an action or range.",
+    "longExplanation": "The ～まで grammar point is used to express the end point, limit, or extent of an action or range in terms of time, space, or quantity. It can be translated as 'until', 'up to', or 'as far as' in English. The formation depends on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + まで, い-Adjective + まで, な-Adjective + まで, Noun + まで",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "10時まで働きます。",
+        "romanization": "Ju-ji made hatarakimasu.",
+        "translation": "I will work until 10 o'clock."
+      },
+      {
+        "sentence": "東京まで電車で行きます。",
+        "romanization": "Toukyou made densha de ikimasu.",
+        "translation": "I will go by train as far as Tokyo."
+      },
+      {
+        "sentence": "彼は疲れるまで走りました。",
+        "romanization": "Kare wa tsukareru made hashirimashita.",
+        "translation": "He ran until he got tired."
+      },
+      {
+        "sentence": "5ページまで読んでください。",
+        "romanization": "Go-peeji made yonde kudasai.",
+        "translation": "Please read up to page 5."
+      }
+    ]
+  },
+  {
+    "id": "ja_まま_99",
+    "language": "ja",
+    "pattern": "～まま",
+    "title": "～まま (〜mama)",
+    "shortExplanation": "Expresses the state or condition remaining unchanged.",
+    "longExplanation": "The 〜まま grammar point is used to indicate that a state or condition remains unchanged or continues as it is, without any change or intervention. It can be used with verbs, い-adjectives, な-adjectives, and nouns to express the idea of something being left, kept, or maintained in its current state.",
+    "formation": "Verb-ます stem + まま, い-Adjective + まま, な-Adjective + なまま, Noun + のまま",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "部屋の窓を開けたまま寝ました。",
+        "romanization": "Heya no mado wo aketa mama nemashita.",
+        "translation": "I slept with the window of the room open."
+      },
+      {
+        "sentence": "熱いままのコーヒーを飲んで、舌を焦がしました。",
+        "romanization": "Atsui mama no koohii wo nonde, shita wo kogashimashita.",
+        "translation": "I drank the coffee while it was still hot and burned my tongue."
+      },
+      {
+        "sentence": "彼は忙しいなまま、休みの日も仕事をしています。",
+        "romanization": "Kare wa isogashii na mama, yasumi no hi mo shigoto wo shiteimasu.",
+        "translation": "He continues to be busy, working even on his days off."
+      },
+      {
+        "sentence": "彼女は故郷にいるまま、外国に行かないで仕事を見つけた。",
+        "romanization": "Kanojo wa furusato ni iru mama, gaikoku ni ikanaide shigoto wo mitsuketa.",
+        "translation": "She found a job without going abroad, staying in her hometown."
+      }
+    ]
+  }
+]

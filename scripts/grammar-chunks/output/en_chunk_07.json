@@ -1,0 +1,850 @@
+{
+  "vi": {
+    "en_b2_14": {
+      "title": "wish + Quá khứ đơn - Ước muốn trái ngược với thực tế ở hiện tại",
+      "shortExplanation": "Dùng để diễn tả mong ước về một điều không có thật hoặc trái ngược với thực tế ở hiện tại; 'ước gì', 'giá như'.",
+      "longExplanation": "Cấu trúc 'wish + thì quá khứ đơn' (tương đương câu điều kiện loại hai / giả định thức) diễn tả ước muốn thay đổi một tình huống ở hiện tại nhưng không thể thực hiện được hoặc trái với thực tế. Đối với động từ to be, dùng 'were' cho tất cả các ngôi trong ngữ cảnh trang trọng, mặc dù 'was' cũng thường gặp trong giao tiếp thân mật.",
+      "formation": "Chủ ngữ 1 + wish / wishes + (that) + Chủ ngữ 2 + Động từ (thì quá khứ đơn) / were",
+      "examples": [
+        {
+          "translation": "Giá như tôi có thể nói tiếng Anh tốt hơn."
+        },
+        {
+          "translation": "Cô ấy ước gì mình được sống ở một đất nước ấm áp hơn."
+        }
+      ]
+    },
+    "en_b2_15": {
+      "title": "wish + Quá khứ hoàn thành - Sự tiếc nuối về một việc trong quá khứ",
+      "shortExplanation": "Diễn tả sự hối tiếc hoặc tiếc nuối về một sự việc đã xảy ra hoặc không xảy ra trong quá khứ; 'giá như lúc đó...'.",
+      "longExplanation": "Cấu trúc 'wish + thì quá khứ hoàn thành' (tương đương câu điều kiện loại ba / giả định thức quá khứ) được dùng để bày tỏ sự ân hận, nuối tiếc về những hành động hoặc sự kiện trong quá khứ mà hiện tại không thể nào thay đổi được.",
+      "formation": "Chủ ngữ 1 + wish / wishes + (that) + Chủ ngữ 2 + had + Động từ phân từ hai",
+      "examples": [
+        {
+          "translation": "Giá như lúc nãy tôi không ăn nhiều đến thế."
+        },
+        {
+          "translation": "Cô ấy ước gì mình đã chấp nhận lời đề nghị công việc đó."
+        }
+      ]
+    },
+    "en_b2_16": {
+      "title": "wish + would - Mong muốn ai đó thay đổi hành vi hoặc tình huống chuyển biến",
+      "shortExplanation": "Dùng để diễn tả sự khó chịu, phiền lòng và mong muốn ai đó thay đổi hành vi hoặc mong một hoàn cảnh sớm chuyển biến.",
+      "longExplanation": "Cấu trúc 'wish + would + động từ nguyên thể' được dùng khi người nói cảm thấy bực mình, bất lực hoặc sốt ruột trước hành vi của người khác hay một hoàn cảnh hiện tại, và tha thiết mong muốn đối phương thay đổi hoặc tình huống đó biến chuyển. Lưu ý: Không dùng cấu trúc này khi chủ ngữ của hai mệnh đề là cùng một người (thay vào đó dùng wish + thì quá khứ đơn hoặc could).",
+      "formation": "Chủ ngữ 1 + wish / wishes + (that) + Chủ ngữ 2 + would + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Ước gì bạn chịu lắng nghe tôi nói."
+        },
+        {
+          "translation": "Ước gì trời tạnh mưa."
+        }
+      ]
+    },
+    "en_b2_17": {
+      "title": "Mệnh đề quan hệ xác định và Mệnh đề quan hệ không xác định",
+      "shortExplanation": "Mệnh đề xác định giúp định danh rõ danh từ (không có dấu phẩy), còn mệnh đề không xác định chỉ bổ sung thông tin phụ (được ngăn cách bởi dấu phẩy).",
+      "longExplanation": "1. Mệnh đề quan hệ xác định: Không dùng dấu phẩy, cung cấp thông tin thiết yếu để phân biệt chính xác người hoặc vật đang được nói đến; nếu lược bỏ mệnh đề này câu sẽ không trọn vẹn nghĩa; có thể dùng đại từ quan hệ that thay thế cho who hoặc which.\n2. Mệnh đề quan hệ không xác định: Được ngăn cách bằng dấu phẩy, chỉ bổ sung thêm thông tin phụ cho một danh từ đã rõ ràng; nếu bỏ đi thì câu vẫn giữ nguyên ý nghĩa cốt lõi; tuyệt đối không dùng đại từ that để thay thế.",
+      "formation": "Mệnh đề xác định: Danh từ + đại từ quan hệ (who / which / that) + mệnh đề | Mệnh đề không xác định: Danh từ riêng / xác định, + đại từ quan hệ (who / which), + mệnh đề",
+      "examples": [
+        {
+          "translation": "Bộ phim mà tôi kể với bạn sẽ được chiếu vào tối nay."
+        },
+        {
+          "translation": "Chị gái tôi, người hiện đang sống ở Paris, sẽ đến thăm vào tuần tới."
+        }
+      ]
+    },
+    "en_b2_18": {
+      "title": "Vị trí của giới từ trong mệnh đề quan hệ",
+      "shortExplanation": "Trong giao tiếp thân mật giới từ thường đứng ở cuối mệnh đề, còn trong văn phong trang trọng giới từ đứng trước đại từ quan hệ (whom / which).",
+      "longExplanation": "Vị trí của giới từ trong mệnh đề quan hệ phụ thuộc vào tính chất văn phong:\n1. Văn phong thân mật, khẩu ngữ: Giới từ thường được đặt ở cuối mệnh đề quan hệ (ví dụ: the house I grew up in), và đại từ quan hệ có thể được lược bỏ hoặc thay bằng that / who.\n2. Văn phong trang trọng, văn viết: Giới từ được đảo lên trước đại từ quan hệ (ví dụ: the house in which I grew up).\nLưu ý quan trọng: Ngay sau giới từ chỉ được phép dùng đại từ 'whom' (chỉ người) và 'which' (chỉ vật), tuyệt đối không dùng 'that' hay 'who'.",
+      "formation": "Khẩu ngữ: Danh từ + (đại từ quan hệ) + Mệnh đề + Giới từ | Trang trọng: Danh từ + Giới từ + whom / which + Mệnh đề",
+      "examples": [
+        {
+          "translation": "Dự án tôi đang làm việc vô cùng thú vị."
+        },
+        {
+          "translation": "Dự án mà tôi đang làm việc vô cùng thú vị."
+        }
+      ]
+    },
+    "en_b2_19": {
+      "title": "Liên từ và từ nối chỉ kết quả: so... that, such... that, therefore, as a result",
+      "shortExplanation": "Dùng để diễn tả nguyên nhân dẫn đến kết quả; mang nghĩa 'quá... đến nỗi mà' hoặc 'do đó', 'kết quả là'.",
+      "longExplanation": "Các cấu trúc chỉ kết quả phổ biến trong tiếng Anh:\n1. so + tính từ / trạng từ + that: Diễn tả mức độ đến mức dẫn tới kết quả tương ứng (ví dụ: He spoke so quickly that nobody understood).\n2. such + (a / an) + tính từ + danh từ + that: Tương tự như cấu trúc so... that nhưng kết hợp cùng cụm danh từ (ví dụ: It was such a long film that I fell asleep).\n3. Các trạng từ và cụm từ liên kết chỉ kết quả giữa các câu: therefore (do đó), consequently (hệ quả là), as a result (kết quả là), hence / thus (vì vậy). Những từ này thường đứng sau dấu chấm phẩy hoặc dấu chấm và đi kèm dấu phẩy.",
+      "formation": "so + Tính từ / Trạng từ + that + Mệnh đề | such + (a / an) + Tính từ + Danh từ + that + Mệnh đề | Mệnh đề 1; therefore / consequently / as a result, + Mệnh đề 2",
+      "examples": [
+        {
+          "translation": "Đó là một cuốn sách hay đến nỗi tôi đã đọc nó hai lần."
+        },
+        {
+          "translation": "Cô ấy đã trễ hạn chót; do đó, cô ấy đã bị mất hợp đồng."
+        }
+      ]
+    },
+    "en_b2_20": {
+      "title": "be used to / get used to + Danh động từ - Đã quen / Dần quen với điều gì",
+      "shortExplanation": "'be used to' diễn tả trạng thái đã quen thuộc với việc gì, còn 'get used to' nhấn mạnh quá trình dần thích nghi, làm quen.",
+      "longExplanation": "1. be used to + Danh động từ (V-ing) / Danh từ: Diễn tả một trạng thái đã quen thuộc, không còn cảm thấy xa lạ hay khó khăn trước một sự việc.\n2. get used to + Danh động từ (V-ing) / Danh từ: Nhấn mạnh quá trình biến đổi và thích nghi, từ chưa quen trở nên quen dần.\nPhân biệt rõ với cấu trúc 'used to + động từ nguyên thể': chỉ thói quen hoặc trạng thái từng xảy ra thường xuyên trong quá khứ nhưng nay đã chấm dứt hoàn toàn.",
+      "formation": "Chủ ngữ + be / get used to + Danh động từ (V-ing) / Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi không quen với việc phải thức dậy sớm như thế này."
+        },
+        {
+          "translation": "Dù mất một thời gian, nhưng cô ấy đã dần quen với hệ thống mới."
+        }
+      ]
+    },
+    "en_b2_21": {
+      "title": "Tương lai trong quá khứ: would / was, were going to",
+      "shortExplanation": "Diễn tả hành động hoặc dự định được nhìn nhận là sẽ xảy ra trong tương lai tính từ một thời điểm trong quá khứ.",
+      "longExplanation": "Thì tương lai trong quá khứ được dùng trong lời trần thuật hoặc câu gián tiếp để diễn tả điều sẽ xảy ra sau mốc thời gian quá khứ:\n1. would + động từ nguyên thể: Dạng quá khứ của will, dùng để tường thuật lời hứa, dự định hoặc phán đoán (ví dụ: She said she would come).\n2. was / were going to + động từ nguyên thể: Thể hiện kế hoạch hoặc ý định đã được trù tính trong quá khứ nhưng thường chưa kịp hoàn tất hoặc bị gián đoạn (ví dụ: He was going to call but forgot).\n3. was / were about to + động từ nguyên thể: Diễn tả một hành động sắp sửa xảy ra ngay tức khắc tại một thời điểm trong quá khứ.",
+      "formation": "Chủ ngữ + would + Động từ nguyên thể | Chủ ngữ + was / were going to + Động từ nguyên thể | Chủ ngữ + was / were about to + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Cô ấy đã hứa rằng cô ấy sẽ có mặt ở đó."
+        },
+        {
+          "translation": "Anh ấy vừa định rời đi thì cô ấy gọi điện đến."
+        }
+      ]
+    },
+    "en_b2_22": {
+      "title": "be to + Động từ nguyên thể - Chỉ thị chính thức, lịch trình sắp đặt và định mệnh",
+      "shortExplanation": "Dùng để truyền đạt mệnh lệnh hoặc chỉ thị trang trọng, kế hoạch chính thức đã định sẵn, hoặc số phận định mệnh trong lời kể.",
+      "longExplanation": "Cấu trúc 'be to + động từ nguyên thể có to' là một dạng thức trang trọng với các nét nghĩa nổi bật:\n1. Mệnh lệnh hoặc quy định pháp lý: Diễn đạt chỉ thị chính thức, yêu cầu nghiêm ngặt (ví dụ: Passengers are to remain seated).\n2. Lịch trình và kế hoạch chính thức: Dùng cho các sự kiện bang giao hoặc cuộc họp lớn đã lên lịch ấn định (ví dụ: The summit is to take place next month).\n3. Định mệnh (thường ở thì quá khứ was / were to): Diễn tả một kết cục hay số phận định sẵn trong văn phong tiểu sử hoặc tự sự (ví dụ: They were never to meet again).",
+      "formation": "Chủ ngữ + am / is / are / was / were + to + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Bạn phải nộp bản báo cáo trước thứ Sáu."
+        },
+        {
+          "translation": "Bà ấy mang định mệnh trở thành một trong những nhà khoa học vĩ đại nhất của thời đại mình."
+        }
+      ]
+    },
+    "en_b2_23": {
+      "title": "ought to - Nghĩa vụ đạo đức và suy đoán hợp lý",
+      "shortExplanation": "Diễn tả bổn phận đạo đức, trách nhiệm nên làm hoặc phán đoán có căn cứ; mang nghĩa 'nên', 'phải'.",
+      "longExplanation": "'ought to' là một trợ động từ bán khuyết thiếu biểu thị bổn phận đạo đức, nghĩa vụ xã hội hoặc suy đoán mang tính logic (mang sắc thái mạnh và khách quan hơn should).\n• Khác với should, ought to luôn đi kèm 'to' trước động từ nguyên thể: ought to do.\n• Thể phủ định: ought not to (viết tắt là oughtn't to).\n• Diễn tả hành động trong quá khứ: cấu trúc 'ought to have + động từ phân từ hai' thể hiện sự trách móc hoặc nuối tiếc về một việc lẽ ra nên làm trong quá khứ nhưng đã không làm.",
+      "formation": "Khẳng định: Chủ ngữ + ought to + Động từ nguyên thể | Phủ định: Chủ ngữ + ought not to + Động từ nguyên thể | Quá khứ: Chủ ngữ + ought to have + Động từ phân từ hai",
+      "examples": [
+        {
+          "translation": "Bạn nên xin lỗi vì những gì bạn đã nói."
+        },
+        {
+          "translation": "Lẽ ra cô ấy nên nói cho chúng tôi biết sớm hơn."
+        }
+      ]
+    },
+    "en_b2_24": {
+      "title": "need - Động từ khuyết thiếu và Động từ thường",
+      "shortExplanation": "'need' vừa đóng vai trò là động từ khuyết thiếu (chủ yếu trong câu phủ định/nghi vấn trang trọng), vừa là động từ thường.",
+      "longExplanation": "'need' trong tiếng Anh có hai cách sử dụng về mặt ngữ pháp:\n1. Động từ khuyết thiếu (chủ yếu dùng trong câu phủ định và nghi vấn ở văn phong trang trọng): Không chia thêm -s ở ngôi thứ ba số ít, không mượn trợ động từ do / does / did, và kết hợp trực tiếp với động từ nguyên thể không to (ví dụ: You needn't worry / Need I explain?).\n2. Động từ thường: Chia theo thì và ngôi như một động từ thông thường, dùng trợ động từ do / does / did trong câu phủ định và nghi vấn, đi kèm động từ nguyên thể có to (ví dụ: She doesn't need to come).",
+      "formation": "Động từ khuyết thiếu: Chủ ngữ + needn't + Động từ nguyên thể | Động từ thường: Chủ ngữ + don't / doesn't / didn't need to + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Bạn không cần phải điền vào cả hai mẫu đơn."
+        },
+        {
+          "translation": "Cô ấy không nhất thiết phải tham dự tất cả các cuộc họp."
+        }
+      ]
+    },
+    "en_b2_25": {
+      "title": "dare - Dám, liều lĩnh (Động từ khuyết thiếu và Động từ thường)",
+      "shortExplanation": "Dùng để diễn tả sự dũng cảm dám làm điều gì, hoặc bộc lộ thái độ phẫn nộ trước hành vi quá đáng; mang nghĩa 'dám'.",
+      "longExplanation": "'dare' mang nghĩa là 'dám làm gì', có thể vận dụng linh hoạt ở hai thể thức ngữ pháp:\n1. Động từ khuyết thiếu: Thường gặp trong câu cảm thán, câu hỏi tu từ hoặc câu phủ định trang trọng. Không biến đổi đuôi theo ngôi, đi trực tiếp với động từ nguyên thể không to (ví dụ: How dare you! / I daren't ask).\n2. Động từ thường: Có đầy đủ các dạng biến đổi ngôi và thì, sử dụng trợ động từ do / does / did khi phủ định hoặc nghi vấn, theo sau là động từ nguyên thể có to (hoặc có thể lược bỏ to trong một số trường hợp) (ví dụ: She didn't dare to look / He dared to challenge the boss).",
+      "formation": "Cảm thán / Khuyết thiếu: How dare + Chủ ngữ + Động từ nguyên thể! | Chủ ngữ + daren't + Động từ nguyên thể | Động từ thường: Chủ ngữ + dare / dares / dared (to) + Động từ nguyên thể",
+      "examples": [
+        {
+          "translation": "Sao bạn dám nói chuyện với tôi bằng giọng điệu đó!"
+        },
+        {
+          "translation": "Cô ấy đã dám thẳng thắn bày tỏ quan điểm của mình."
+        }
+      ]
+    },
+    "en_b2_26": {
+      "title": "Đại từ phản thân: myself, yourself, himself, herself, itself, ourselves, yourselves, themselves",
+      "shortExplanation": "Dùng khi đối tượng thực hiện và đối tượng tiếp nhận hành động là cùng một người, hoặc dùng để nhấn mạnh chính chủ ngữ tự làm.",
+      "longExplanation": "Đại từ phản thân (myself, yourself, himself, herself, itself, ourselves, yourselves, themselves) đảm nhận các chức năng ngữ pháp sau:\n1. Làm tân ngữ phản thân: Khi hành động của chủ thể tác động trực tiếp ngược lại chính bản thân chủ thể đó (ví dụ: He cut himself - Anh ấy tự làm đứt tay mình).\n2. Nhấn mạnh (đồng vị ngữ): Đặt ngay sau danh từ hoặc ở cuối mệnh đề để nhấn mạnh rằng chính người đó tự tay thực hiện hành động mà không cần sự trợ giúp (ví dụ: I did it myself - Chính tôi đã tự làm điều đó).\n3. Cụm từ thành ngữ thông dụng: by oneself (một mình, tự thân), help yourself (hãy tự nhiên / tự phục vụ), enjoy oneself (vui vẻ).",
+      "formation": "Tân ngữ phản thân: Chủ ngữ + Động từ + Đại từ phản thân | Nhấn mạnh: Chủ ngữ (+ Đại từ phản thân) + Động từ + Tân ngữ (+ Đại từ phản thân)",
+      "examples": [
+        {
+          "translation": "Cô ấy đã tự học chơi đàn ghi-ta."
+        },
+        {
+          "translation": "Chiếc máy này tự động tắt."
+        }
+      ]
+    },
+    "en_b2_27": {
+      "title": "Danh từ tập hợp: team, family, committee, government...",
+      "shortExplanation": "Danh từ chỉ một nhóm người hoặc tập thể; động từ có thể chia số ít hoặc số nhiều tùy thuộc vào góc nhìn ngữ nghĩa và biến thể ngôn ngữ.",
+      "longExplanation": "Danh từ tập hợp biểu thị một nhóm gồm nhiều cá nhân họp thành một chỉnh thể (ví dụ: team, family, government, committee, staff, audience, crew, public):\n• Tiếng Anh - Anh: Thường chia động từ ở số nhiều khi người nói hướng sự chú ý đến từng thành viên riêng rẽ trong tập thể (ví dụ: The team are playing well); và chia số ít khi coi cả nhóm là một thể thống nhất.\n• Tiếng Anh - Mỹ: Hầu như luôn coi danh từ tập hợp là một đơn vị đơn lẻ và chia động từ ở ngôi thứ ba số ít (ví dụ: The team is playing well).\nLưu ý ngoại lệ: Danh từ 'police' (cảnh sát) luôn luôn đi cùng động từ số nhiều trong mọi trường hợp.",
+      "formation": "Danh từ tập hợp + Động từ số ít (xem là một tập thể thống nhất / chuẩn Anh - Mỹ) HOẶC Động từ số nhiều (nhấn mạnh từng thành viên / chuẩn Anh - Anh)",
+      "examples": [
+        {
+          "translation": "Chính phủ vừa công bố các biện pháp mới."
+        },
+        {
+          "translation": "Toàn bộ khán giả đều đồng loạt đứng dậy tán thưởng."
+        }
+      ]
+    },
+    "en_b2_28": {
+      "title": "Phân số, số thập phân và biểu thức toán học cơ bản",
+      "shortExplanation": "Quy tắc đọc phân số, số thập phân, tỷ lệ phần trăm và các phép tính toán học cơ bản trong tiếng Anh.",
+      "longExplanation": "Quy ước đọc các biểu thức số học trong tiếng Anh:\n1. Phân số: Tử số đọc bằng số đếm, mẫu số đọc bằng số thứ tự; nếu tử số từ 2 trở lên thì mẫu số phải thêm đuôi số nhiều -s (ví dụ: 1/2 đọc là a half; 1/3 đọc là a third; 1/4 đọc là a quarter; 3/4 đọc là three quarters; 2/3 đọc là two thirds).\n2. Số thập phân: Dấu chấm thập phân được đọc là 'point', các số đứng sau dấu chấm được đọc tuần tự từng chữ số rời rạc (ví dụ: 3.14 đọc là three point one four; 5.7 đọc là five point seven).\n3. Tỷ lệ phần trăm: Số đếm + percent (ví dụ: 25% đọc là twenty-five percent).\n4. Các phép tính số học cơ bản: Phép cộng (+) đọc là plus; phép trừ (-) đọc là minus; phép nhân (×) đọc là times hoặc multiplied by; phép chia (÷) đọc là divided by; dấu bằng (=) đọc là equals hoặc is.",
+      "formation": "Phân số: Số đếm (tử số) + Số thứ tự (mẫu số, thêm -s nếu tử số > 1) | Số thập phân: Số nguyên + point + các chữ số đọc tách rời",
+      "examples": [
+        {
+          "translation": "Ba phần tư số học sinh đã vượt qua kỳ thi."
+        },
+        {
+          "translation": "Tỷ lệ lạm phát đã giảm xuống còn 2,5 phần trăm."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "en_b2_14": {
+      "title": "wish + 一般过去时 - 对现在情况的虚拟愿望",
+      "shortExplanation": "用于表达与现在事实相反、难以实现的愿望或遗憾，意为“要是……就好了”、“但愿”。",
+      "longExplanation": "结构“wish + 一般过去时”属于虚拟语气范畴，动词形式与第二类条件句（虚拟条件句）相同，用来表达说话者希望改变当前的某种现状，但在现实中该愿望无法实现或难以成真。从句中的 be 动词在正式文体中各人称一律使用 were，但在日常口语中 was 也很常见。",
+      "formation": "主语 + wish / wishes + (that) + 主语 + 动词一般过去时 / were",
+      "examples": [
+        {
+          "translation": "要是我的英语能说得更好一些就好了。"
+        },
+        {
+          "translation": "她希望自己能生活在一个气候更温暖的国家。"
+        }
+      ]
+    },
+    "en_b2_15": {
+      "title": "wish + 过去完成时 - 对过去的遗憾与后悔",
+      "shortExplanation": "用于表达对过去已经发生或未发生之事的懊悔与遗憾，意为“要是当时……就好了”。",
+      "longExplanation": "结构“wish + 过去完成时（had + 过去分词）”是对过去事实的虚拟，语法形式与第三类条件句相同。常用来对过去已经无法更改的决定、经历或既成事实表达惋惜与自责。",
+      "formation": "主语 + wish / wishes + (that) + 主语 + had + 动词过去分词",
+      "examples": [
+        {
+          "translation": "真希望我当时没吃那么多。"
+        },
+        {
+          "translation": "她后悔当时没有接受那份工作邀请。"
+        }
+      ]
+    },
+    "en_b2_16": {
+      "title": "wish + would - 表达希望他人改变行为或现状转变",
+      "shortExplanation": "用于表达对他人行为的不满、焦躁，或迫切希望某种令人厌烦的现状发生改变，意为“要是……肯……就好了”。",
+      "longExplanation": "结构“wish + would + 动词原形”通常带有说话者的不耐烦、抱怨或强烈期盼，希望某人能改正令人困扰的举动，或者期盼天气等不受主观控制的客观环境能够转变。注意：主句主语与从句主语相同时通常不使用 would（即不说 I wish I would，而改用 could 或动词过去时）。",
+      "formation": "主语 1 + wish / wishes + (that) + 主语 2 + would + 动词原形",
+      "examples": [
+        {
+          "translation": "真希望你能听听我说话。"
+        },
+        {
+          "translation": "但愿雨快点停下来。"
+        }
+      ]
+    },
+    "en_b2_17": {
+      "title": "限制性定语从句与非限制性定语从句",
+      "shortExplanation": "限制性从句用于明确界定先行词（不用逗号），非限制性从句仅补充说明附加信息（用逗号隔开）。",
+      "longExplanation": "1. 限制性定语从句：不用逗号隔开，是主句意思不可或缺的组成部分，用于具体明确所指的人或事物；若将其删去，主句语义将不明确；关系代词可使用 that 替代 who 或 which。\n2. 非限制性定语从句：通常用逗号与主句隔开，仅对已知或特定的先行词提供附加说明；若将其删去，主句的核心意义依然完整清晰；在此结构中绝对不能使用关系代词 that 代替 who 或 which。",
+      "formation": "限制性：先行词 + 关系代词 (who / which / that) + 从句 | 非限制性：先行词, + 关系代词 (who / which), + 从句",
+      "examples": [
+        {
+          "translation": "我和你提过的那部电影今晚放映。"
+        },
+        {
+          "translation": "我姐姐目前住在巴黎，她下周要来看我。"
+        }
+      ]
+    },
+    "en_b2_18": {
+      "title": "定语从句中介词的位置与搭配规则",
+      "shortExplanation": "日常口语中介词通常留在从句末尾，而在正式文体与书面语中介词前置于关系代词（whom / which）之前。",
+      "longExplanation": "定语从句中介词的位置主要取决于语体风格：\n1. 非正式口语：介词通常保留在从句末尾（例如：the house I grew up in），此时引导从句的关系代词常可省略或由 that 充当。\n2. 正式文体与书面语：介词移至关系代词之前（例如：the house in which I grew up）。\n关键规则：介词紧随其后时，指人只能使用宾格 whom，指物只能使用 which，绝对不能使用 that 或 who。",
+      "formation": "口语形式：先行词 + (关系代词) + 从句 + 介词 | 正式形式：先行词 + 介词 + whom / which + 从句",
+      "examples": [
+        {
+          "translation": "我正在参与的这个项目非常吸引人。"
+        },
+        {
+          "translation": "我目前正在参与的该项目非常引人入胜。"
+        }
+      ]
+    },
+    "en_b2_19": {
+      "title": "结果连词与连接词：so... that, such... that, therefore, as a result",
+      "shortExplanation": "用于表达因某种原因而导致的结果，意为“如此……以至于……”、“因此”、“结果”。",
+      "longExplanation": "英语中表达因果结果的典型句型与连接副词：\n1. so + 形容词 / 副词 + that 从句：强调程度之深以致产生某种结果（例如：He spoke so quickly that nobody understood）。\n2. such + (a / an) + 形容词 + 名词 + that 从句：语义与 so... that 相同，但核心修饰对象为名词短语（例如：It was such a long film that I fell asleep）。\n3. 句子之间的连接副词：therefore（因此）、consequently（结果）、as a result（结果是）、hence / thus（因而）。通常置于分号或句号之后，并后跟逗号。",
+      "formation": "so + 形容词 / 副词 + that + 从句 | such + (a / an) + 形容词 + 名词 + that + 从句 | 句子 1; therefore / consequently / as a result, + 句子 2",
+      "examples": [
+        {
+          "translation": "那是本非常精彩的书，以至于我读了两次。"
+        },
+        {
+          "translation": "她错过了截止日期，因此失去了那份合同。"
+        }
+      ]
+    },
+    "en_b2_20": {
+      "title": "be used to / get used to + 动名词 - 习惯于 / 逐渐习惯于",
+      "shortExplanation": "“be used to”表示已经对某事习以为常，“get used to”强调从不习惯到习惯的适应过程。",
+      "longExplanation": "1. be used to + 动名词 (V-ing) / 名词：表示主语已处于对某事物习惯、熟谙的状态（此处 to 为介词，故后接动名词或名词）。\n2. get used to + 动名词 (V-ing) / 名词：侧重于“逐渐适应、开始习惯”这一动态过渡与心理转变。\n辨析重点：务必与“used to + 动词原形”（过去常常做某事但现在已不做）区分开来，二者语法结构与含义截然不同。",
+      "formation": "主语 + be / get used to + 动名词 (V-ing) / 名词",
+      "examples": [
+        {
+          "translation": "我还不太习惯起得这么早。"
+        },
+        {
+          "translation": "虽然花了些时间，但她已经适应了新系统。"
+        }
+      ]
+    },
+    "en_b2_21": {
+      "title": "过去将来时：would / was, were going to",
+      "shortExplanation": "立足于过去某一时刻来看待将要发生的动作或打算，常用于间接引语或叙事文学中。",
+      "longExplanation": "过去将来时用于叙述从过去特定时间点眺望未来所呈现的动作或状态：\n1. would + 动词原形：情态助动词 will 的过去形式，常在间接引语中转述过去所作出的承诺、决定或预判（例如：She said she would come）。\n2. was / were going to + 动词原形：表示过去曾拟定好的计划或打算，但常常暗示该计划因故未达成或受阻（例如：He was going to call but forgot）。\n3. was / were about to + 动词原形：表示在过去那一瞬间“正打算、刚要”做某事，却被突发状况打断。",
+      "formation": "主语 + would + 动词原形 | 主语 + was / were going to + 动词原形 | 主语 + was / were about to + 动词原形",
+      "examples": [
+        {
+          "translation": "她答应过她一定会到场的。"
+        },
+        {
+          "translation": "他正打算离开，这时她打来了电话。"
+        }
+      ]
+    },
+    "en_b2_22": {
+      "title": "be to + 动词不定式 - 官方指令、既定日程与宿命安排",
+      "shortExplanation": "用于传达正式指令、规章要求、预先安排的官方活动，或叙事中不可避免的命运结局。",
+      "longExplanation": "“be 动词 + to 动词不定式”为正式书面语结构，具有以下核心含义：\n1. 官方指令与规章要求：表示上级指示、规则条例或严肃要求（例如：Passengers are to remain seated - 乘客须保持就座）。\n2. 正式计划与日程安排：用于正式公布的重大日程或协议（例如：The summit is to take place next month - 峰会定于下月举行）。\n3. 注定的命运（通常用过去式 was / were to）：在传记或历史叙事中描述不可改变的命中注定（例如：They were never to meet again - 他们此后注定再未相遇）。",
+      "formation": "主语 + am / is / are / was / were + to + 动词原形",
+      "examples": [
+        {
+          "translation": "你必须在周五前提交这份报告。"
+        },
+        {
+          "translation": "她注定将成为那个时代最伟大的科学家之一。"
+        }
+      ]
+    },
+    "en_b2_23": {
+      "title": "ought to - 道德义务与合情推断",
+      "shortExplanation": "表示道义责任、社会规劝或合乎逻辑的必然期望，意为“应当”、“理应”。",
+      "longExplanation": "情态动词“ought to”强调客观道义上的规范、职责或合情合理的逻辑推论，语意比 should 更加正式且严肃。\n• 形式特点：必须携带不定式符号 to，接动词原形（ought to do）。\n• 否定形式：ought not to（缩写为 oughtn't to）。\n• 指向过去：“ought to have + 过去分词”表示“过去本应该做某事却未做”，含有责备、批评或追悔的意味。",
+      "formation": "肯定句：主语 + ought to + 动词原形 | 否定句：主语 + ought not to + 动词原形 | 过去式：主语 + ought to have + 动词过去分词",
+      "examples": [
+        {
+          "translation": "你理应为你所说的话道歉。"
+        },
+        {
+          "translation": "她本来应该早点告诉我们的。"
+        }
+      ]
+    },
+    "en_b2_24": {
+      "title": "need - 情态动词与实义动词的用法",
+      "shortExplanation": "“need”兼具情态动词（主要用于正式否定句和疑问句）与普通实义动词双重属性。",
+      "longExplanation": "“need”在英语语法中具有两种不同的语法功能与句式结构：\n1. 作为情态动词：主要用于正式文体的否定句和疑问句。第三人称单数不加 -s，否定句无需借助助动词（使用 needn't），后接不带 to 的动词原形（例如：You needn't worry / Need I explain?）。\n2. 作为实义动词：具有常规动词的一切屈折变化（第三人称单数加 -s），否定与疑问句借用 do / does / did，后接带 to 的动词不定式（例如：She doesn't need to come）。",
+      "formation": "情态动词：主语 + needn't + 动词原形 | 实义动词：主语 + don't / doesn't / didn't need to + 动词原形",
+      "examples": [
+        {
+          "translation": "你不需要把两份表格都填写好。"
+        },
+        {
+          "translation": "她不必参加每一次会议。"
+        }
+      ]
+    },
+    "en_b2_25": {
+      "title": "dare - 敢于、竟敢（情态动词与实义动词）",
+      "shortExplanation": "用于表示有胆量做某事，或在感叹句中表达强烈的愤怒与谴责，意为“敢”、“竟敢”。",
+      "longExplanation": "“dare”意为“敢于”、“竟敢”，具备情态动词与实义动词两种形态：\n1. 作为情态动词：常见于修辞疑问句、感叹句及否定句中。无人称数的变化，后面直接跟不带 to 的动词原形（例如：How dare you! / I daren't ask）。\n2. 作为实义动词：遵循常规动词变化规则，否定句与疑问句借助 do / does / did，后接带 to（有时亦可省略 to）的不定式（例如：She didn't dare to look / He dared to challenge the boss）。",
+      "formation": "感叹 / 情态：How dare + 主语 + 动词原形! | 主语 + daren't + 动词原形 | 实义动词：主语 + dare / dares / dared (to) + 动词原形",
+      "examples": [
+        {
+          "translation": "你竟敢这样跟我说话！"
+        },
+        {
+          "translation": "她敢于公开表达自己的观点。"
+        }
+      ]
+    },
+    "en_b2_26": {
+      "title": "反身代词：myself, yourself, himself, herself, itself, ourselves, yourselves, themselves",
+      "shortExplanation": "用于动作作用于自身时充当宾语，或置于名词后以强调亲自独立完成某事。",
+      "longExplanation": "反身代词（myself, yourself, himself, herself, itself, ourselves, yourselves, themselves）在句中主要发挥以下语法功能：\n1. 充当反身宾语：当谓语动词的承受者与施动主语为同一主体时，必须使用反身代词作宾语（例如：He cut himself - 他割伤了自己）。\n2. 充当同位语表示强调：紧跟在主语之后或置于句末，强调“亲自、独立”完成该动作，不假外力（例如：I did it myself - 这是我亲手做的）。\n3. 常见固定词组：by oneself（独自一人、独立地）、help yourself（请自便、请随意享用）、enjoy oneself（尽情玩乐）。",
+      "formation": "作宾语：主语 + 动词 + 反身代词 | 作强调：主语 (+ 反身代词) + 谓语 + 宾语 (+ 反身代词)",
+      "examples": [
+        {
+          "translation": "她是自学弹吉他的。"
+        },
+        {
+          "translation": "这台机器会自动关机。"
+        }
+      ]
+    },
+    "en_b2_27": {
+      "title": "集合名词的主谓一致：team, family, committee, government...",
+      "shortExplanation": "指代由多名成员构成的集体名词；根据着眼于整体还是各个成员，谓语动词可单可复。",
+      "longExplanation": "集合名词（如 team, family, government, committee, staff, audience, crew, public 等）指代若干个体构成的群体：\n• 英式英语：灵活根据语境判定。当强调群体中各个成员的个体行为时，谓语动词常用复数形式（例如：The team are playing well）；若将整个组织视作单一整体时则用单数形式。\n• 美式英语：倾向于将集合名词统一视作单一实体，绝大多数情况下一律搭配单数动词（例如：The team is playing well）。\n特别注意：“police”（警方）在任何英语变体中均被视作复数，必须搭配复数动词。",
+      "formation": "集合名词 + 单数谓语动词（视为统一实体 / 美式偏好）或 复数谓语动词（着眼于各个成员 / 英式偏好）",
+      "examples": [
+        {
+          "translation": "政府公布了新的应对举措。"
+        },
+        {
+          "translation": "全场观众都起立欢呼鼓掌。"
+        }
+      ]
+    },
+    "en_b2_28": {
+      "title": "分数、小数与基本数学运算表达规则",
+      "shortExplanation": "英语中分数、小数、百分数以及基础四则算术运算的正确读法与句式表达规则。",
+      "longExplanation": "英语中各类数词与数学表达的规范读法：\n1. 分数表达：分子采用基数词，分母采用序数词；若分子大于 1，分母序数词必须加复数后缀 -s（例如：1/2 读作 a half；1/3 读作 a third；1/4 读作 a quarter；3/4 读作 three quarters；2/3 读作 two thirds）。\n2. 小数表达：小数点读作“point”，小数点后的所有数字依次单个独立读出（例如：3.14 读作 three point one four；5.7 读作 five point seven）。\n3. 百分比表达：基数词 + percent（例如：25% 读作 twenty-five percent）。\n4. 基础四则运算：加法符号（+）读作 plus，减法符号（-）读作 minus，乘法符号（×）读作 times 或 multiplied by，除法符号（÷）读作 divided by，等号（=）读作 equals 或 is。",
+      "formation": "分数：基数词（分子）+ 序数词（分母，分子>1时加-s） | 小数：整数 + point + 各个数字逐位独立读出",
+      "examples": [
+        {
+          "translation": "四分之三的学生通过了这次考试。"
+        },
+        {
+          "translation": "通货膨胀率下降至百分之二点五。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "en_b2_14": {
+      "title": "wish + 過去形 - 現在の事実に反する願望（仮定法過去）",
+      "shortExplanation": "現在の事実とは異なる、実現不可能な願望や後悔を表し、「〜ならいいのに」「〜であればいいのに」という意味を表します。",
+      "longExplanation": "「wish ＋ 動詞の過去形」は仮定法過去を用いた文法構造で、話し手が現在の状況を変えたいと望みつつも、それが現実には不可能・困難であることを表現します。動詞の形は仮定法過去（条件文第2種）と同一であり、be動詞を用いる場合は格式ばった文体では主語に関わらず「were」が標準とされます（日常会話では「was」も広く使われます）。",
+      "formation": "主語 + wish / wishes + (that) + 主語 + 動詞の過去形 / were",
+      "examples": [
+        {
+          "translation": "もっと上手に英語が話せたらいいのに。"
+        },
+        {
+          "translation": "彼女はもっと暖かい国に住んでいればいいのにと思っている。"
+        }
+      ]
+    },
+    "en_b2_15": {
+      "title": "wish + 過去完了形 - 過去の事実に反する後悔（仮定法過去完了）",
+      "shortExplanation": "過去に起こった（または起こらなかった）出来事に対する後悔や痛恨の思いを表し、「〜していればよかったのに」という意味を表します。",
+      "longExplanation": "「wish ＋ 過去完了形（had ＋ 過去分詞）」は仮定法過去完了の構文であり、もはややり直すことのできない過去の行為や出来事に対する悔恨や残念な気持ちを表します。仮定法第3種の条件節と同じ形をとります。",
+      "formation": "主語 + wish / wishes + (that) + 主語 + had + 動詞の過去分詞",
+      "examples": [
+        {
+          "translation": "あんなにたくさん食べなければよかったのに。"
+        },
+        {
+          "translation": "彼女はその仕事のオファーを受けておけばよかったと後悔している。"
+        }
+      ]
+    },
+    "en_b2_16": {
+      "title": "wish + would - 他人の行動改善や状況の好転を求める表現",
+      "shortExplanation": "他人の迷惑な言動に対する苛立ちや不満、あるいは天候など現状が好転することを強く願う気持ちを表し、「〜してくれたらいいのに」という意味を表します。",
+      "longExplanation": "「wish ＋ would ＋ 動詞の原形」は、相手の行動を改めさせたいという不満やもどかしさ、あるいは天候や状況が変わってほしいという強い願望を表します。原則として主語と従属節の主語が同一人物である場合には用いません（自身の願望の場合は wish ＋ 過去形または could を用います）。",
+      "formation": "主語 1 + wish / wishes + (that) + 主語 2 + would + 動詞の原形",
+      "examples": [
+        {
+          "translation": "私の言うことをちゃんと聞いてくれたらいいのに。"
+        },
+        {
+          "translation": "雨がやんでくれたらいいのに。"
+        }
+      ]
+    },
+    "en_b2_17": {
+      "title": "制限用法と非制限用法（関係詞節の機能差）",
+      "shortExplanation": "制限用法はどの先行詞かを特定・限定し（カンマなし）、非制限用法はすでにはっきりしている先行詞に補足説明を加えます（カンマあり）。",
+      "longExplanation": "1. 制限用法（限定用法）：カンマを置かずに用い、話し手と聞き手がどの人物・事物を指しているのかを特定するために不可欠な情報を提供します。この節を省くと文意が成り立たなくなります。関係代名詞に that を使用することが可能です。\n2. 非制限用法（継続用法）：先行詞の直後にカンマを伴って置かれ、すでに特定されている人物・事物に対して補足的な情報を付け加えます。この節を取り除いても文の主要な意味は成立します。関係代名詞に that を用いることはできません。",
+      "formation": "制限用法: 先行詞 + 関係代名詞 (who / which / that) + 節 | 非制限用法: 先行詞, + 関係代名詞 (who / which), + 節",
+      "examples": [
+        {
+          "translation": "私が話したあの映画が今夜上映されます。"
+        },
+        {
+          "translation": "パリに住んでいる私の姉が、来週訪ねてくる予定です。"
+        }
+      ]
+    },
+    "en_b2_18": {
+      "title": "関係詞節における前置詞の位置と使い分け",
+      "shortExplanation": "日常会話では前置詞を節の末尾に置き、改まった文体や書面では関係代名詞（whom / which）の直前に前置します。",
+      "longExplanation": "関係詞節内における前置詞の配置様式は文体によって区別されます：\n1. 口語・日常会話：前置詞を節の末尾に残します（例: the house I grew up in）。この場合、関係代名詞は省略されるか that や who が用いられます。\n2. 形式張った文体・書面：前置詞を関係代名詞の前に置きます（例: the house in which I grew up）。\n重要規則：前置詞の直後には、人を指す場合は目的格の whom、物を指す場合は which のみが使用可能です。that や主格の who を前置詞直後に置くことはできません。",
+      "formation": "口語表現: 先行詞 + (関係代名詞) + 節 + 前置詞 | 格式表現: 先行詞 + 前置詞 + whom / which + 節",
+      "examples": [
+        {
+          "translation": "私が今取り組んでいるプロジェクトはとても面白い。"
+        },
+        {
+          "translation": "私が現在従事しているプロジェクトは実に興味深いものです。"
+        }
+      ]
+    },
+    "en_b2_19": {
+      "title": "結果を表す接続詞・接続表現：so... that, such... that, therefore, as a result",
+      "shortExplanation": "ある原因から生じた結果を表し、「非常に〜なので…」「したがって」「その結果」という意味を表します。",
+      "longExplanation": "結果を導く英語の代表的な構文および接続副詞：\n1. so ＋ 形容詞／副詞 ＋ that 節：程度を強調し「あまりに〜なので…だ」という結果を導きます（例: He spoke so quickly that nobody understood）。\n2. such ＋ (a / an) ＋ 形容詞 ＋ 名詞 ＋ that 節：意味は so... that と同じですが、名詞句を修飾する形で用いられます（例: It was such a long film that I fell asleep）。\n3. 文と文をつなぐ接続副詞：therefore（したがって）、consequently（結果として）、as a result（その結果）、hence / thus（それゆえに）。通常はピリオドやセミコロンの後に置かれ、直後にカンマを伴います。",
+      "formation": "so + 形容詞 / 副詞 + that + 節 | such + (a / an) + 形容詞 + 名詞 + that + 節 | 文 1; therefore / consequently / as a result, + 文 2",
+      "examples": [
+        {
+          "translation": "それはとても素晴らしい本だったので、私は2回も読みました。"
+        },
+        {
+          "translation": "彼女は締め切りに間に合わなかったため、その結果契約を失ってしまいました。"
+        }
+      ]
+    },
+    "en_b2_20": {
+      "title": "be used to / get used to + 動名詞 - 〜に慣れている／慣れる",
+      "shortExplanation": "「be used to」は何かにすでに慣れている状態を表し、「get used to」は次第に慣れていく適応過程を表します。",
+      "longExplanation": "1. be used to ＋ 動名詞 (V-ing) ／ 名詞：対象に「慣れている」という現在の状態を表します（ここでの to は前置詞であるため、後ろには動名詞または名詞が続きます）。\n2. get used to ＋ 動名詞 (V-ing) ／ 名詞：不慣れな段階から「徐々に慣れていく」「適応する」という変化の過程を強調します。\n注意すべき混同：過去の習慣や状態を表す「used to ＋ 動詞の原形」（かつて〜したものだ）とは構文的にも意味的にも全く異なるため明確に区別しましょう。",
+      "formation": "主語 + be / get used to + 動名詞 (V-ing) / 名詞",
+      "examples": [
+        {
+          "translation": "私はこんなに早く起きるのには慣れていません。"
+        },
+        {
+          "translation": "時間はかかりましたが、彼女は新しいシステムに慣れました。"
+        }
+      ]
+    },
+    "en_b2_21": {
+      "title": "過去未来：would / was, were going to",
+      "shortExplanation": "過去のある時点を基準にして、その後に起きる予定だった動作や意図を表し、間接話法や物語文で使われます。",
+      "longExplanation": "過去の視点から将来を見据える「過去における未来」の表現形式：\n1. would ＋ 動詞の原形：助動詞 will の過去形で、過去の発言や約束、予測を間接話法で伝える際に多用されます（例: She said she would come）。\n2. was / were going to ＋ 動詞の原形：過去の時点で予定・意図していた事柄を表しますが、実際には実現しなかったり中断されたりしたニュアンスを伴うことがよくあります（例: He was going to call but forgot）。\n3. was / were about to ＋ 動詞の原形：過去において「まさに〜しようとしていた」という直前の緊迫した状況を表します。",
+      "formation": "主語 + would + 動詞の原形 | 主語 + was / were going to + 動詞の原形 | 主語 + was / were about to + 動詞の原形",
+      "examples": [
+        {
+          "translation": "彼女はそこに行くと約束してくれました。"
+        },
+        {
+          "translation": "彼がまさに立ち去ろうとしていたその時、彼女から電話がかかってきた。"
+        }
+      ]
+    },
+    "en_b2_22": {
+      "title": "be to + 不定詞 - 公式な指令・義務・予定・運命",
+      "shortExplanation": "公的な指示や規則、あらかじめ取り決められた予定、または物語文における宿命を表します。",
+      "longExplanation": "「be動詞 ＋ to不定詞」構文は格式の高い文体で用いられ、以下の主な用法を持ちます：\n1. 公式な命令・義務：公的な規則や上位からの正式な指示を表します（例: Passengers are to remain seated - 乗客は着席していなければならない）。\n2. 公式な予定：公の協議や合意によって定められた将来の計画を表します（例: The summit is to take place next month - 首脳会談は来月開催される予定である）。\n3. 運命（主に過去形 was / were to）：伝記や物語の記述において「〜する運命にあった」という避けられない結末を表します（例: They were never to meet again - 二人は二度と再会することはなかった）。",
+      "formation": "主語 + am / is / are / was / were + to + 動詞の原形",
+      "examples": [
+        {
+          "translation": "金曜日までにレポートを提出しなければなりません。"
+        },
+        {
+          "translation": "彼女は同時代における最も偉大な科学者の一人となる運命にあった。"
+        }
+      ]
+    },
+    "en_b2_23": {
+      "title": "ought to - 道徳的義務と論理的当然性",
+      "shortExplanation": "道義的な責任や当然なすべきこと、または道理に適った推測を表し、「〜すべきである」「〜するはずだ」という意味を表します。",
+      "longExplanation": "「ought to」は客観的な道徳規範や社会通念、論理的な必然性に基づく助動詞的表現です（should よりも客観的で重い響きを持ちます）。\n• 形態の特徴：常に to を伴い、後ろに動詞の原形をとります（ought to do）。\n• 否定形：ought not to（短縮形 oughtn't to）。\n• 過去の行為：「ought to have ＋ 過去分詞」の形で「過去に〜すべきだったのに（実際はしなかった）」という不作為に対する非難や遺憾の念を表します。",
+      "formation": "肯定: 主語 + ought to + 動詞の原形 | 否定: 主語 + ought not to + 動詞の原形 | 過去: 主語 + ought to have + 動詞の過去分詞",
+      "examples": [
+        {
+          "translation": "あなたは自分の言ったことについて謝罪すべきです。"
+        },
+        {
+          "translation": "彼女はもっと早く私たちに伝えておくべきでした。"
+        }
+      ]
+    },
+    "en_b2_24": {
+      "title": "need - 助動詞と本動詞（一般動詞）の文法機能",
+      "shortExplanation": "「need」には否定文・疑問文で使われる助動詞としての用法と、通常の一般動詞としての用法の2種類があります。",
+      "longExplanation": "英語の「need」は文脈や文体によって2つの異なる文法クラスに属します：\n1. 助動詞としての need（主に格式ばった否定文や疑問文で用いられる）：三人称単数現在形の -s を付けず、助動詞 do の助けを借りずに用いられ、後ろには直接動詞の原形（原形不定詞）が続きます（例: You needn't worry / Need I explain?）。\n2. 一般動詞としての need：主語や時制に応じて語形変化し（三人称単数で -s を付加）、否定や疑問には do / does / did を用い、目的語として to不定詞をとります（例: She doesn't need to come）。",
+      "formation": "助動詞: 主語 + needn't + 動詞の原形 | 一般動詞: 主語 + don't / doesn't / didn't need to + 動詞の原形",
+      "examples": [
+        {
+          "translation": "両方の用紙に記入する必要はありません。"
+        },
+        {
+          "translation": "彼女はすべての会議に出席する必要はありません。"
+        }
+      ]
+    },
+    "en_b2_25": {
+      "title": "dare - あえて〜する・よくも〜できる（助動詞と一般動詞）",
+      "shortExplanation": "思い切って行動する勇気や、反語・憤りの表現で「よくも〜できる」「あえて〜する」という意味を表します。",
+      "longExplanation": "「dare」は「思い切って〜する」「あえて〜する」という意味を表し、助動詞と一般動詞の双方の性質を持ちます：\n1. 助動詞としての用法：修辞疑問文、感嘆文、否定文で多く用いられます。主語の活用変化はなく、直後に動詞の原形が接続します（例: How dare you! / I daren't ask）。\n2. 一般動詞としての用法：通常の規則に従って時制や人称変化を行い、否定や疑問には do / does / did を伴い、後ろには to不定詞（文脈により原形不定詞）をとります（例: She didn't dare to look / He dared to challenge the boss）。",
+      "formation": "感嘆 / 助動詞: How dare + 主語 + 動詞の原形! | 主語 + daren't + 動詞の原形 | 一般動詞: 主語 + dare / dares / dared (to) + 動詞の原形",
+      "examples": [
+        {
+          "translation": "よくも私に向かってそんな口が利けたものね！"
+        },
+        {
+          "translation": "彼女は恐れずに堂々と自分の意見を述べた。"
+        }
+      ]
+    },
+    "en_b2_26": {
+      "title": "再帰代名詞：myself, yourself, himself, herself, itself, ourselves, yourselves, themselves",
+      "shortExplanation": "動作の対象が主語自身に向かう場合や、他人に頼らず自力で行ったことを強調する際に用います。",
+      "longExplanation": "再帰代名詞（myself, yourself, himself, herself, itself, ourselves, yourselves, themselves）は文中で以下の主要な役割を果たします：\n1. 再帰的用法（目的語）：主語の行った動作が主語自身に向けられるとき、動詞や前置詞の目的語として用います（例: He cut himself - 彼は誤って自分の手を切った）。\n2. 強調的用法（同格）：主語や目的語の直後あるいは文末に置かれ、「他ならぬ自分自身で」「自ら」行ったことを際立たせます（例: I did it myself - 私自身が独力でやりました）。\n3. 頻出慣用句：by oneself（一人で、独力で）、help yourself（ご自由にどうぞ／ご自由にお取りください）、enjoy oneself（楽しく過ごす）。",
+      "formation": "目的語用法: 主語 + 動詞 + 再帰代名詞 | 強調用法: 主語 (+ 再帰代名詞) + 動詞 + 目的語 (+ 再帰代名詞)",
+      "examples": [
+        {
+          "translation": "彼女は独学でギターを習得しました。"
+        },
+        {
+          "translation": "その機械は自動的に電源が切れます。"
+        }
+      ]
+    },
+    "en_b2_27": {
+      "title": "集合名詞の単数・複数の一致：team, family, committee, government...",
+      "shortExplanation": "人や物の集まりを表す集合名詞で、1つのまとまりとみなすか構成員個々を指すかによって単数・複数の動詞を使い分けます。",
+      "longExplanation": "集合名詞（team, family, government, committee, staff, audience, crew, public など）は複数の構成員からなる集団を表します：\n• イギリス英語：集団内の個々のメンバーに意識を向けることが多く、複数動詞をとることが一般的です（例: The team are playing well）。集団全体を1つの単位として捉える場合は単数動詞も用いられます。\n• アメリカ英語：原則として集団全体を1つの単位とみなす傾向が強く、通常は単数動詞を用います（例: The team is playing well）。\n注意すべき例外：「police」（警察）はどの英語圏でも常に複数扱いであり、必ず複数動詞と組み合わせます。",
+      "formation": "集合名詞 + 単数動詞（全体をひとまとまりとする場合／米語的傾向）または 複数動詞（構成員一人一人に焦点を当てる場合／英語的傾向）",
+      "examples": [
+        {
+          "translation": "政府は新たな政策を発表した。"
+        },
+        {
+          "translation": "観客は総立ちになって熱狂していた。"
+        }
+      ]
+    },
+    "en_b2_28": {
+      "title": "分数・小数および基本的な計算式の表現ルール",
+      "shortExplanation": "英語における分数、小数、パーセンテージ、ならびに四則演算記号の正確な読み方と構文ルール。",
+      "longExplanation": "英語における数値や算術記号の標準的な読み上げ規則：\n1. 分数の読み方：分子を基数（通常の数詞）、分母を序数（順序数詞）で読みます。分子が2以上の場合は、分母の序数詞に複数形の -s を付けます（例: 1/2 は a half、1/3 は a third、1/4 は a quarter、3/4 は three quarters、2/3 は two thirds）。\n2. 小数の読み方：小数点は「point」と発音し、小数点以下の数字は1桁ずつ個別に読み上げます（例: 3.14 は three point one four、5.7 は five point seven）。\n3. パーセンテージ：基数 ＋ percent（例: 25% は twenty-five percent）。\n4. 四則演算の記号：加算（＋）は plus、減算（−）は minus、乗算（×）は times または multiplied by、除算（÷）は divided by、等号（＝）は equals または is と読みます。",
+      "formation": "分数: 基数（分子）+ 序数（分母、分子が2以上なら複数形の-s） | 小数: 整数 + point + 各桁の数字を個別に発音",
+      "examples": [
+        {
+          "translation": "生徒の4分の3が試験に合格しました。"
+        },
+        {
+          "translation": "インフレ率は2.5パーセントに低下しました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "en_b2_14": {
+      "title": "wish + 과거 시제 - 현재 사실에 반대되는 소망 (가정법 과거)",
+      "shortExplanation": "현재 사실과 반대되거나 실현되기 어려운 소망, 아쉬움을 나타내며 '~라면 좋을 텐데'라는 뜻을 나타냅니다.",
+      "longExplanation": "'wish + 동사의 과거형'은 가정법 과거 구문으로, 현재의 상황을 바꾸고 싶지만 현실적으로 실현 불가능하거나 어려운 소망을 표현합니다. 동사의 형태는 가정법 과거(제2유형 조건문)와 동일하게 과거형을 쓰며, be동사의 경우 격식체에서는 주어의 인칭과 무관하게 'were'를 사용하는 것이 원칙입니다 (일상 구어체에서는 'was'도 널리 쓰입니다).",
+      "formation": "주어 + wish / wishes + (that) + 주어 + 동사의 과거형 / were",
+      "examples": [
+        {
+          "translation": "영어를 더 잘할 수 있으면 좋을 텐데."
+        },
+        {
+          "translation": "그녀는 더 따뜻한 나라에서 살고 있다면 좋을 텐데 하고 바란다."
+        }
+      ]
+    },
+    "en_b2_15": {
+      "title": "wish + 과거완료 시제 - 과거 일에 대한 후회와 유감 (가정법 과거완료)",
+      "shortExplanation": "과거에 이미 일어났거나 일어나지 않은 일에 대한 후회나 아쉬움을 나타내며 '~했더라면 좋았을 텐데'라는 뜻을 나타냅니다.",
+      "longExplanation": "'wish + 과거완료(had + 과거분사)' 구문은 가정법 과거완료로, 이미 지나가 버려 되돌릴 수 없는 과거의 행동이나 사건에 대해 후회와 유감을 나타낼 때 쓰입니다. 제3유형 가정법 조건문의 조건절과 동일한 형태를 취합니다.",
+      "formation": "주어 + wish / wishes + (that) + 주어 + had + 동사의 과거분사",
+      "examples": [
+        {
+          "translation": "그렇게 많이 먹지 말았어야 했는데."
+        },
+        {
+          "translation": "그녀는 그 일자리 제안을 수락했더라면 좋았을 텐데 하고 아쉬워한다."
+        }
+      ]
+    },
+    "en_b2_16": {
+      "title": "wish + would - 타인의 행동 변화나 상황 개선을 바라는 표현",
+      "shortExplanation": "다른 사람의 불쾌한 행동에 대한 불만이나 짜증, 또는 특정 상황이 바뀌기를 바라는 간절한 마음을 나타내며 '~해주면 좋을 텐데'라는 뜻을 나타냅니다.",
+      "longExplanation": "'wish + would + 동사 원형' 구문은 상대방의 마음에 들지 않는 행동을 고쳐 주기를 바라는 불만 섞인 요구나 날씨 등 외부 상황이 바뀌기를 희망할 때 쓰입니다. 원칙적으로 주절과 종속절의 주어가 동일 인물일 때는 사용하지 않습니다 (자신의 능력이나 의지라면 wish + 과거 시제 또는 could를 씁니다).",
+      "formation": "주어 1 + wish / wishes + (that) + 주어 2 + would + 동사 원형",
+      "examples": [
+        {
+          "translation": "제발 내 말을 좀 들어주면 좋겠어."
+        },
+        {
+          "translation": "비가 그쳤으면 좋겠다."
+        }
+      ]
+    },
+    "en_b2_17": {
+      "title": "제한적 용법과 계속적 용법 (관계사절의 기능 비교)",
+      "shortExplanation": "제한적 용법은 대상을 특정하여 한정하고(쉼표 없음), 계속적 용법은 이미 명확한 대상에 부가 정보를 덧붙입니다(쉼표 있음).",
+      "longExplanation": "1. 제한적 용법(한정적 용법): 쉼표 없이 선행사를 직접 수식하며, 대화 상대방에게 가리키는 대상을 분명히 특정해 주는 필수 정보입니다. 이 절을 생략하면 문장의 온전한 의미가 성립하지 않습니다. 관계대명사 that으로 who나 which를 대체할 수 있습니다.\n2. 계속적 용법(비제한적 용법): 선행사 뒤에 쉼표를 두고 추가적인 부연 설명을 제공합니다. 이 절을 생략해도 문장의 핵심 의미는 그대로 유지됩니다. 이 구문에서는 관계대명사 that을 절대 사용할 수 없습니다.",
+      "formation": "제한적 용법: 선행사 + 관계대명사 (who / which / that) + 절 | 계속적 용법: 선행사, + 관계대명사 (who / which), + 절",
+      "examples": [
+        {
+          "translation": "내가 너에게 말했던 그 영화가 오늘 밤에 상영된다."
+        },
+        {
+          "translation": "파리에 살고 있는 우리 누나는 다음 주에 방문할 예정이다."
+        }
+      ]
+    },
+    "en_b2_18": {
+      "title": "관계사절에서의 전치사 위치와 결합 규칙",
+      "shortExplanation": "일상 구어체에서는 전치사를 관계사절 끝에 두며, 격식 있는 문체에서는 관계대명사(whom / which) 바로 앞으로 전치시킵니다.",
+      "longExplanation": "관계사절 안에서 전치사의 배치는 문체에 따라 구별됩니다:\n1. 일상 구어체 및 비격식체: 전치사를 관계사절의 끝에 그대로 남겨 둡니다 (예: the house I grew up in). 이때 관계대명사는 생략되거나 that 또는 who가 쓰입니다.\n2. 격식체 및 문어체: 전치사를 관계대명사 앞으로 이동시킵니다 (예: the house in which I grew up).\n중요 규칙: 전치사 바로 뒤에는 사람일 때 목적격 whom, 사물일 때 which만 올 수 있으며, that이나 who는 전치사 바로 뒤에 결코 쓸 수 없습니다.",
+      "formation": "구어체: 선행사 + (관계대명사) + 절 + 전치사 | 격식체: 선행사 + 전치사 + whom / which + 절",
+      "examples": [
+        {
+          "translation": "내가 지금 참여하고 있는 프로젝트는 대단히 흥미진진하다."
+        },
+        {
+          "translation": "제가 현재 관여하고 있는 그 프로젝트는 매우 흥미롭습니다."
+        }
+      ]
+    },
+    "en_b2_19": {
+      "title": "결과를 나타내는 접속사와 연결어: so... that, such... that, therefore, as a result",
+      "shortExplanation": "특정 원인으로 인한 결과를 표현하며 '너무 ~해서 …하다' 또는 '따라서', '그 결과'라는 의미를 나타냅니다.",
+      "longExplanation": "영어에서 결과를 이끄는 대표적인 구문 및 접속부사:\n1. so + 형용사 / 부사 + that 절: 정도를 강조하여 '매우 ~해서 그 결과 …하다'를 나타냅니다 (예: He spoke so quickly that nobody understood).\n2. such + (a / an) + 형용사 + 명사 + that 절: 의미는 so... that과 같으나 명사구를 핵심으로 수식합니다 (예: It was such a long film that I fell asleep).\n3. 문장 간의 접속부사: therefore(그러므로), consequently(그 결과), as a result(결과적으로), hence / thus(따라서). 주로 마침표나 세미콜론 뒤에 콤마와 함께 쓰여 문장 간의 인과관계를 완성합니다.",
+      "formation": "so + 형용사 / 부사 + that + 절 | such + (a / an) + 형용사 + 명사 + that + 절 | 문장 1; therefore / consequently / as a result, + 문장 2",
+      "examples": [
+        {
+          "translation": "그 책은 너무나 훌륭해서 나는 두 번이나 읽었다."
+        },
+        {
+          "translation": "그녀는 마감 기한을 놓쳤고, 그 결과 계약을 잃게 되었다."
+        }
+      ]
+    },
+    "en_b2_20": {
+      "title": "be used to / get used to + 동명사 - ~에 익숙하다 / ~에 익숙해지다",
+      "shortExplanation": "'be used to'는 이미 익숙해져 있는 상태를 나타내고, 'get used to'는 점차 익숙해져 가는 적응 과정을 나타냅니다.",
+      "longExplanation": "1. be used to + 동명사 (V-ing) / 명사: 어떤 환경이나 대상에 이미 익숙해진 상태를 의미합니다 (여기서 to는 전치사이므로 뒤에 명사나 동명사가 옵니다).\n2. get used to + 동명사 (V-ing) / 명사: 낯설었던 상태에서 점차 적응하고 익숙해지는 과정과 변화를 나타냅니다.\n혼동 주의: 과거의 규칙적 습관이나 지속적 상태를 나타내는 'used to + 동사 원형'(과거에 ~하곤 했다, 지금은 아니다)과는 형태와 의미가 완전히 다르므로 혼동하지 않도록 주의해야 합니다.",
+      "formation": "주어 + be / get used to + 동명사 (V-ing) / 명사",
+      "examples": [
+        {
+          "translation": "저는 이렇게 일찍 일어나는 것에 익숙하지 않습니다."
+        },
+        {
+          "translation": "시간이 좀 걸리긴 했지만, 그녀는 새로운 시스템에 익숙해졌습니다."
+        }
+      ]
+    },
+    "en_b2_21": {
+      "title": "과거미래: would / was, were going to",
+      "shortExplanation": "과거의 특정 시점을 기준으로 바라보았을 때 향후 일어날 예정이었던 동작이나 계획을 나타내며, 간접화법이나 서술문에서 쓰입니다.",
+      "longExplanation": "과거 시점에서 미래를 전망하는 '과거미래' 표현 방식:\n1. would + 동사 원형: 조동사 will의 과거형으로, 과거의 약속, 발언, 예상을 간접화법으로 전달할 때 흔히 사용됩니다 (예: She said she would come).\n2. was / were going to + 동사 원형: 과거에 하려고 계획하고 의도했던 일이었으나, 실행하지 못했거나 중단되었음을 암시할 때 주로 쓰입니다 (예: He was going to call but forgot).\n3. was / were about to + 동사 원형: 과거의 그 순간 '막 ~하려던 참이었다'는 직전의 긴박한 상황을 표현합니다.",
+      "formation": "주어 + would + 동사 원형 | 주어 + was / were going to + 동사 원형 | 주어 + was / were about to + 동사 원형",
+      "examples": [
+        {
+          "translation": "그녀는 그곳에 오겠다고 약속했다."
+        },
+        {
+          "translation": "그가 막 떠나려던 찰나에 그녀에게서 전화가 걸려왔다."
+        }
+      ]
+    },
+    "en_b2_22": {
+      "title": "be to + 부정사 - 공식 지시, 예정, 운명",
+      "shortExplanation": "공식적인 명령이나 규정, 공식적으로 정해진 일정, 또는 서술문에서의 피할 수 없는 운명을 나타냅니다.",
+      "longExplanation": "'be동사 + to부정사' 구문은 격식체에서 쓰이며 다음과 같은 주요 의미를 지닙니다:\n1. 공식 지시 및 의무: 공식 규정이나 상부 지시에 의해 마땅히 지켜야 할 사항을 나타냅니다 (예: Passengers are to remain seated - 승객 여러분은 착석 상태를 유지하셔야 합니다).\n2. 공식적인 예정: 공적인 협의나 공표를 통해 정해진 미래의 계획을 나타냅니다 (예: The summit is to take place next month - 정상회담은 다음 달에 열릴 예정이다).\n3. 운명(주로 과거형 was / were to): 전기나 역사 서술문에서 '~할 운명이었다'라는 불가피한 결말을 표현합니다 (예: They were never to meet again - 그들은 다시는 만나지 못할 운명이었다).",
+      "formation": "주어 + am / is / are / was / were + to + 동사 원형",
+      "examples": [
+        {
+          "translation": "금요일까지 보고서를 제출해야 합니다."
+        },
+        {
+          "translation": "그녀는 당대 가장 위대한 과학자 중 한 명이 될 운명이었다."
+        }
+      ]
+    },
+    "en_b2_23": {
+      "title": "ought to - 도덕적 의무와 당연한 논리적 추론",
+      "shortExplanation": "도덕적 책무, 마땅한 도리 또는 논리적인 기대를 나타내며 '~해야 한다', '~하는 것이 마땅하다'라는 뜻을 나타냅니다.",
+      "longExplanation": "'ought to'는 조동사적 표현으로, 사회적 통념이나 도덕적 규범에 따른 마땅한 의무, 혹은 상식에 비추어 당연한 이치에 따른 추론을 나타냅니다 (should보다 객관적이고 강한 당위성을 지닙니다).\n• 형태상 특징: should와 달리 항상 to를 동반하여 'ought to + 동사 원형' 형태로 쓰입니다.\n• 부정형: ought not to (축약형 oughtn't to).\n• 과거 표현: 'ought to have + 과거분사'는 과거에 마땅히 했어야 했는데 하지 않은 일에 대한 질책이나 후회를 나타냅니다.",
+      "formation": "긍정: 주어 + ought to + 동사 원형 | 부정: 주어 + ought not to + 동사 원형 | 과거: 주어 + ought to have + 동사의 과거분사",
+      "examples": [
+        {
+          "translation": "당신은 자신이 한 말에 대해 사과해야 마땅합니다."
+        },
+        {
+          "translation": "그녀는 우리에게 더 일찍 말했어야 했습니다."
+        }
+      ]
+    },
+    "en_b2_24": {
+      "title": "need - 조동사와 일반동사의 문법적 기능",
+      "shortExplanation": "'need'는 격식 있는 부정문/의문문에 쓰이는 조동사로서의 용법과 보통의 일반동사로서의 용법을 모두 지닙니다.",
+      "longExplanation": "'need'는 문맥과 어조에 따라 두 가지 문법 체계로 사용됩니다:\n1. 조동사로서의 need (주로 격식체 부정문과 의문문): 3인칭 단수 현재형 -s가 붙지 않고, do/does 등의 보조 없이 쓰이며, to 없이 동사 원형이 곧바로 이어집니다 (예: You needn't worry / Need I explain?).\n2. 일반동사로서의 need: 3인칭 단수(-s) 등 일반적인 동사 굴절 변화를 모두 따르고, 부정문과 의문문에서 do / does / did를 빌려 쓰며, 목적어로 to부정사를 취합니다 (예: She doesn't need to come).",
+      "formation": "조동사: 주어 + needn't + 동사 원형 | 일반동사: 주어 + don't / doesn't / didn't need to + 동사 원형",
+      "examples": [
+        {
+          "translation": "두 양식을 모두 작성하실 필요는 없습니다."
+        },
+        {
+          "translation": "그녀가 모든 회의에 참석할 필요는 없다."
+        }
+      ]
+    },
+    "en_b2_25": {
+      "title": "dare - 감히 ~하다, 도전하다 (조동사 및 일반동사)",
+      "shortExplanation": "용기를 내어 감히 행동하거나, 분노의 감탄문에서 강한 항의를 나타내며 '감히 ~하다'라는 뜻을 나타냅니다.",
+      "longExplanation": "'dare'는 '~할 용기가 있다, 감히 ~하다'라는 의미로 조동사와 일반동사 두 가지 품사적 기능을 갖습니다:\n1. 조동사 용법: 주로 수사의문문, 감탄문, 부정문에서 사용됩니다. 주어에 따른 인칭 변화가 없고 바로 뒤에 동사 원형이 옵니다 (예: How dare you! / I daren't ask).\n2. 일반동사 용법: 일반 동사 변화 규칙을 따르며 부정문이나 의문문에서 do / does / did를 쓰고 뒤에 to부정사(때로는 원형부정사)를 연결합니다 (예: She didn't dare to look / He dared to challenge the boss).",
+      "formation": "감탄 / 조동사: How dare + 주어 + 동사 원형! | 주어 + daren't + 동사 원형 | 일반동사: 주어 + dare / dares / dared (to) + 동사 원형",
+      "examples": [
+        {
+          "translation": "네가 어떻게 감히 나한테 그런 식으로 말할 수가 있어!"
+        },
+        {
+          "translation": "그녀는 두려워하지 않고 자신의 의견을 솔직하게 표현했다."
+        }
+      ]
+    },
+    "en_b2_26": {
+      "title": "재귀대명사: myself, yourself, himself, herself, itself, ourselves, yourselves, themselves",
+      "shortExplanation": "동작의 대상이 주어 자신에게 돌아올 때 목적어로 쓰이거나, 남의 도움 없이 스스로 했음을 강조할 때 씁니다.",
+      "longExplanation": "재귀대명사(myself, yourself, himself, herself, itself, ourselves, yourselves, themselves)는 문장 내에서 다음과 같은 핵심 기능을 담당합니다:\n1. 재귀 용법(목적어): 주어가 행한 동작이 주어 자신에게 미칠 때 동사나 전치사의 목적어 자리에 씁니다 (예: He cut himself - 그는 칼에 손을 베었다).\n2. 강조 용법: 주어나 목적어 바로 뒤 또는 문장 끝에 놓여 '직접, 스스로'라는 의미를 강조하며, 생략하더라도 문장의 문법적 완성도에는 영향을 주지 않습니다 (예: I did it myself - 내가 직접 그걸 해냈다).\n3. 주요 관용 표현: by oneself(혼자서, 자력으로), help yourself(마음껏 드세요), enjoy oneself(즐거운 시간을 보내다).",
+      "formation": "목적어 용법: 주어 + 동사 + 재귀대명사 | 강조 용법: 주어 (+ 재귀대명사) + 동사 + 목적어 (+ 재귀대명사)",
+      "examples": [
+        {
+          "translation": "그녀는 독학으로 기타를 배웠다."
+        },
+        {
+          "translation": "그 기계는 자동으로 꺼진다."
+        }
+      ]
+    },
+    "en_b2_27": {
+      "title": "집합명사의 수 일치: team, family, committee, government...",
+      "shortExplanation": "개별 구성원들로 이루어진 집단을 지칭하는 명사로, 하나의 유기적 개체로 보는지 구성원 개개인으로 보는지에 따라 동사의 수를 결정합니다.",
+      "longExplanation": "집합명사(team, family, government, committee, staff, audience, crew, public 등)는 여러 사람으로 구성된 하나의 단체를 나타냅니다:\n• 영국식 영어: 집단 내부의 개별 구성원들에게 초점을 맞추어 복수 동사를 쓰는 경향이 강합니다 (예: The team are playing well). 집단 전체를 하나의 덩어리로 볼 때는 단수 동사도 사용합니다.\n• 미국식 영어: 집단 전체를 하나의 단일 단위로 인식하여 거의 대부분 단수 동사를 사용합니다 (예: The team is playing well).\n주의할 예외: 'police'(경찰)는 어느 영어권에서나 항상 복수로 취급되므로 반드시 복수 동사를 씁니다.",
+      "formation": "집합명사 + 단수 동사 (전체를 하나의 단일 개체로 간주할 때 / 미국식 경향) 또는 복수 동사 (개별 구성원들의 활동에 초점을 둘 때 / 영국식 경향)",
+      "examples": [
+        {
+          "translation": "정부는 새로운 정책 방안을 발표했다."
+        },
+        {
+          "translation": "관객들은 모두 기립하여 환호했다."
+        }
+      ]
+    },
+    "en_b2_28": {
+      "title": "분수, 소수 및 기초 수학 연산의 표현 규칙",
+      "shortExplanation": "영어에서 분수, 소수, 백분율 및 기본 사칙연산 기호를 정확하게 읽고 표현하는 문법 규칙입니다.",
+      "longExplanation": "영어의 수치 및 수학 연산 표현에 관한 표준 규칙:\n1. 분수 읽는 법: 분자는 기수(일반 숫자), 분모는 서수(순서 숫자)로 읽습니다. 분자가 2 이상이면 분모 서수에 복수형 -s를 붙입니다 (예: 1/2은 a half, 1/3은 a third, 1/4은 a quarter, 3/4은 three quarters, 2/3은 two thirds).\n2. 소수 읽는 법: 소수점은 'point'로 발음하며, 소수점 뒤의 숫자는 각 자리별로 한 자리씩 낱개로 읽습니다 (예: 3.14는 three point one four, 5.7은 five point seven).\n3. 백분율: 기수 + percent (예: 25%는 twenty-five percent).\n4. 사칙연산 기호: 덧셈(+)은 plus, 뺄셈(-)은 minus, 곱셈(×)은 times 또는 multiplied by, 나눗셈(÷)은 divided by, 등호(=)는 equals 또는 is로 읽습니다.",
+      "formation": "분수: 기수(분자) + 서수(분모, 분자>1일 때 -s 추가) | 소수: 정수 + point + 소수점 이하 자리별 낱개 발음",
+      "examples": [
+        {
+          "translation": "학생들의 4분의 3이 시험에 합격했다."
+        },
+        {
+          "translation": "인플레이션율은 2.5퍼센트로 떨어졌다."
+        }
+      ]
+    }
+  }
+}

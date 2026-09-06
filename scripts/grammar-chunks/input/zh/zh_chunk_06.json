@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_就_77",
+    "language": "zh",
+    "pattern": "就",
+    "title": "就 (just V then)",
+    "shortExplanation": "just V then",
+    "longExplanation": "just V then. Pinyin: jiù",
+    "formation": "jiù",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你不想去，就在家休息吧。",
+        "romanization": "nǐ bùxiǎng qù， jiù zài jiā xiūxi ba。",
+        "translation": "If you don't want to go, just rest at home then."
+      }
+    ]
+  },
+  {
+    "id": "zh_还A_78",
+    "language": "zh",
+    "pattern": "还 A",
+    "title": "还 A (somewhat A)",
+    "shortExplanation": "somewhat A",
+    "longExplanation": "somewhat A. Pinyin: hái A",
+    "formation": "hái A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "昨天的考试还好。",
+        "romanization": "zuótiān de kǎoshì háihǎo。",
+        "translation": "Yesterday’s test was so-so (lit. somewhat OK)."
+      }
+    ]
+  },
+  {
+    "id": "zh_有点儿A_79",
+    "language": "zh",
+    "pattern": "有点儿 A",
+    "title": "有点儿 A (a bit A)",
+    "shortExplanation": "a bit A",
+    "longExplanation": "a bit A. Pinyin: yǒudiǎnr A",
+    "formation": "yǒudiǎnr A",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "今天天气有点儿冷。",
+        "romanization": "jīntiān tiānqì yǒudiǎnr lěng。",
+        "translation": "It's a bit cold today."
+      }
+    ]
+  },
+  {
+    "id": "zh_怎么_80",
+    "language": "zh",
+    "pattern": "怎么",
+    "title": "怎么 (how come)",
+    "shortExplanation": "how come",
+    "longExplanation": "how come. Pinyin: zěnme",
+    "formation": "zěnme",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你怎么不高兴?",
+        "romanization": "nǐ zěnme bù gāoxìng?",
+        "translation": "How come you’re unhappy?"
+      }
+    ]
+  },
+  {
+    "id": "zh_NMM都_81",
+    "language": "zh",
+    "pattern": "N M M 都",
+    "title": "N M M 都 (every N)",
+    "shortExplanation": "every N",
+    "longExplanation": "every N. Pinyin: N M M dōu",
+    "formation": "N M M dōu",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "同学个个都很高兴。",
+        "romanization": "tóngxué gègè dōu hěn gāoxìng。",
+        "translation": "Every student is very happy."
+      }
+    ]
+  },
+  {
+    "id": "zh_因为所以_82",
+    "language": "zh",
+    "pattern": "因为……所以……",
+    "title": "因为……所以…… (because… so…)",
+    "shortExplanation": "because… so…",
+    "longExplanation": "because… so…. Pinyin: yīnwèi…… suǒyǐ……",
+    "formation": "yīnwèi…… suǒyǐ……",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "因为不好吃，所以我不吃。",
+        "romanization": "yīnwèi bùhǎo chī， suǒyǐ wǒ bù chī。",
+        "translation": "Because it’s not tasty, so I won’t eat it."
+      }
+    ]
+  },
+  {
+    "id": "zh_还V_83",
+    "language": "zh",
+    "pattern": "还 V",
+    "title": "还 V (still V-ing)",
+    "shortExplanation": "still V-ing",
+    "longExplanation": "still V-ing. Pinyin: hái V",
+    "formation": "hái V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "八点了，他还在睡觉。",
+        "romanization": "bā diǎn le， tā hái zài shuìjiào。",
+        "translation": "It’s 8, he’s still sleeping."
+      }
+    ]
+  },
+  {
+    "id": "zh_还没V_84",
+    "language": "zh",
+    "pattern": "还没 V",
+    "title": "还没 V (still haven’t V’ed)",
+    "shortExplanation": "still haven’t V’ed",
+    "longExplanation": "still haven’t V’ed. Pinyin: hái méi V",
+    "formation": "hái méi V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你怎么还没吃饭？",
+        "romanization": "nǐ zěnme hái méi chīfàn？",
+        "translation": "How come you still haven’t eaten?"
+      }
+    ]
+  },
+  {
+    "id": "zh_TIME就V_85",
+    "language": "zh",
+    "pattern": "TIME 就 V",
+    "title": "TIME 就 V (V as early as TIME)",
+    "shortExplanation": "V as early as TIME",
+    "longExplanation": "V as early as TIME. Pinyin: TIME jiù V",
+    "formation": "TIME jiù V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "同学们七点半就来教室了。",
+        "romanization": "tóngxué men qī diǎn bàn jiù lái jiàoshì le。",
+        "translation": "The students got to the classroom as early as 7:30."
+      }
+    ]
+  },
+  {
+    "id": "zh_N1离N2DISTANCE_86",
+    "language": "zh",
+    "pattern": "N1 离 N2 DISTANCE",
+    "title": "N1 离 N2 DISTANCE (N1 is DISTANCE away from N2)",
+    "shortExplanation": "N1 is DISTANCE away from N2",
+    "longExplanation": "N1 is DISTANCE away from N2. Pinyin: N1 lí N2 DISTANCE",
+    "formation": "N1 lí N2 DISTANCE",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "学校离机场20多公里。",
+        "romanization": "xuéxiào lí jīchǎng20 duō gōnglǐ。",
+        "translation": "The school is over 20 km away from the airport."
+      }
+    ]
+  },
+  {
+    "id": "zh_呢_87",
+    "language": "zh",
+    "pattern": "……呢!",
+    "title": "……呢! ((adding emphasis))",
+    "shortExplanation": "(adding emphasis)",
+    "longExplanation": "(adding emphasis). Pinyin: …… ne!",
+    "formation": "…… ne!",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "他还在学习呢！",
+        "romanization": "tā hái zài xuéxí ne！",
+        "translation": "He is still studying!"
+      }
+    ]
+  },
+  {
+    "id": "zh_好吗_88",
+    "language": "zh",
+    "pattern": "……好吗?",
+    "title": "……好吗? (…okay?)",
+    "shortExplanation": "…okay?",
+    "longExplanation": "…okay?. Pinyin: …… hǎo ma?",
+    "formation": "…… hǎo ma?",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你明天下午给我打电话好吗？",
+        "romanization": "nǐ míngtiān xiàwǔ gěi wǒ dǎdiànhuà hǎo ma？",
+        "translation": "Call me tomorrow afternoon, okay?"
+      }
+    ]
+  },
+  {
+    "id": "zh_再V_89",
+    "language": "zh",
+    "pattern": "再 V",
+    "title": "再 V (again)",
+    "shortExplanation": "again",
+    "longExplanation": "again. Pinyin: zài V",
+    "formation": "zài V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "你再看一下这本书吧。",
+        "romanization": "nǐ zài kàn yīxià zhè běn shū ba。",
+        "translation": "Take another look at this book."
+      }
+    ]
+  },
+  {
+    "id": "zh_再V_90",
+    "language": "zh",
+    "pattern": "再 V",
+    "title": "再 V (then)",
+    "shortExplanation": "then",
+    "longExplanation": "then. Pinyin: zài V",
+    "formation": "zài V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "让我想想再告诉你。",
+        "romanization": "ràng wǒ xiǎng xiǎng zài gàosu nǐ。",
+        "translation": "Let me think about it, then I’ll let you know."
+      }
+    ]
+  },
+  {
+    "id": "zh_TIME再V_91",
+    "language": "zh",
+    "pattern": "TIME 再 V",
+    "title": "TIME 再 V (V only until TIME)",
+    "shortExplanation": "V only until TIME",
+    "longExplanation": "V only until TIME. Pinyin: TIME zài V",
+    "formation": "TIME zài V",
+    "level": "HSK 2",
+    "examples": [
+      {
+        "sentence": "我明天再去。",
+        "romanization": "wǒ míngtiān zài qù。",
+        "translation": "I’ll go (only until) tomorrow."
+      }
+    ]
+  }
+]

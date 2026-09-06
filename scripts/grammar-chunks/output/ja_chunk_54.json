@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_ながらに_212": {
+      "title": "～ながらに (～nagara ni)",
+      "shortExplanation": "Diễn tả trạng thái giữ nguyên vẹn như lúc ban đầu hoặc trong một tình trạng nhất định; 'giữ nguyên...', 'từ khi...', 'trong...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ながらに' (thường gặp ở dạng '～ながらにして') là cách diễn đạt trang trọng trong văn viết, dùng để diễn tả một trạng thái, tính chất vốn có được giữ nguyên vẹn, không thay đổi từ một thời điểm bắt đầu hoặc đang trong một trạng thái cảm xúc, tâm thế cụ thể nào đó. Mẫu này chủ yếu đi kèm với một số danh từ hoặc động từ cố định tạo thành các quán dụng ngữ như: '生まれながらに' (từ lúc lọt lòng, bẩm sinh), '涙ながらに' (trong nước mắt, giàn giụa nước mắt), '昔ながらに' (y như ngày xưa, nguyên vẹn nét cổ truyền), '子供ながらに' (dù thân là con trẻ nhưng...).",
+      "formation": "Cụm từ cố định: Danh từ / Động từ thể ます (bỏ ます) + ながらに (thường gặp: 生まれながらに, 涙ながらに, 昔ながらに, 子供ながらに...)",
+      "examples": [
+        {
+          "translation": "Cô ấy bẩm sinh từ lúc lọt lòng đã sở hữu khả năng cảm âm tuyệt vời."
+        },
+        {
+          "translation": "Dù vẫn còn là một đứa trẻ, cậu ấy đã thấu hiểu được cuộc trò chuyện của người lớn."
+        },
+        {
+          "translation": "Cô ấy đã giãi bày sự thật trong giàn giụa nước mắt."
+        },
+        {
+          "translation": "Chúng tôi rất trân trọng lễ hội truyền thống được lưu truyền vẹn nguyên nét xưa từ thời xa xưa."
+        }
+      ]
+    },
+    "ja_ながらの_213": {
+      "title": "～ながらの + Danh từ (〜nagara no Noun)",
+      "shortExplanation": "Bổ nghĩa cho danh từ phía sau để diễn tả hành động hay trạng thái diễn ra đồng thời; 'vừa... vừa...', 'trong lúc...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ながらの' kết hợp với động từ để tạo thành cụm bổ nghĩa cho danh từ phía sau, diễn tả hai hành động hoặc trạng thái diễn ra song song cùng một lúc. Mẫu này thường dịch là 'vừa làm việc này vừa làm việc kia' hoặc 'tiến hành việc này trong khi đang làm việc kia' (ví dụ: 'テレビを見ながらの夕食' nghĩa là 'bữa tối vừa ăn vừa xem ti vi').",
+      "formation": "Động từ thể ます (bỏ ます) + ながら + の + Danh từ",
+      "examples": [
+        {
+          "translation": "Bữa tối vừa ăn vừa xem ti vi có lẽ sẽ rất vui đối với lũ trẻ."
+        },
+        {
+          "translation": "Vừa lái xe vừa xem bản đồ là hành vi rất nguy hiểm."
+        },
+        {
+          "translation": "Vừa đi dạo vừa trò chuyện có thể giúp tâm trạng thoải mái, thư giãn."
+        },
+        {
+          "translation": "Vừa nghe nhạc vừa học bài có thể giúp nâng cao khả năng tập trung."
+        }
+      ]
+    },
+    "ja_ながらも_214": {
+      "title": "～ながらも (〜nagara mo)",
+      "shortExplanation": "Diễn tả sự đối lập, tương phản giữa hai vế; 'dù... nhưng...', 'tuy... nhưng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～ながらも' (N1) được dùng để liên kết hai vế có tính chất tương phản, nhấn mạnh rằng dù trong tình trạng hay hoàn cảnh ở vế trước, kết quả hay hành động ở vế sau lại diễn ra khác hẳn so với điều thông thường người ta dự đoán hay kỳ vọng ('tuy... nhưng...', 'mặc dù... thế nhưng...'). Có thể đi với động từ, tính từ hoặc danh từ.",
+      "formation": "Động từ thể ます (bỏ ます) / Tính từ đuôi い / Tính từ đuôi な / Danh từ (hoặc Danh từ + であり) + ながらも",
+      "examples": [
+        {
+          "translation": "Dù nghèo khó nhưng anh ấy vẫn đang sống một cuộc đời vô cùng hạnh phúc."
+        },
+        {
+          "translation": "Tuy bận rộn nhưng ngày nào tôi cũng tập thể dục."
+        },
+        {
+          "translation": "Dù đang mang bệnh nhưng anh ấy vẫn tiếp tục công việc của mình."
+        },
+        {
+          "translation": "Mặc cho trời đang đổ mưa, anh ấy vẫn ra ngoài đi dạo."
+        }
+      ]
+    },
+    "ja_なくはない_215": {
+      "title": "～なくはない (〜naku wa nai)",
+      "shortExplanation": "Phủ định kép diễn tả ý khẳng định dè dặt, e dè; 'không phải là không...', 'cũng có thể... nhưng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～なくはない' sử dụng hai lần phủ định để biểu thị sự khẳng định một cách nhẹ nhàng, dè dặt hoặc miễn cưỡng. Mẫu câu này ám chỉ rằng sự việc không hẳn là hoàn toàn bất khả thi hay hoàn toàn không có, nhưng người nói không dám khẳng định chắc chắn hoặc không cảm thấy tự tin 100% ('không phải là không thể...', 'cũng không hẳn là không...').",
+      "formation": "Động từ thể ない (bỏ ない) + なくはない | Tính từ đuôi い (bỏ い) + くなくはない | Tính từ đuôi な / Danh từ + ではなくはない",
+      "examples": [
+        {
+          "translation": "Để hoàn thành việc đó không phải là không khó."
+        },
+        {
+          "translation": "Nói chuyện với anh ta thì tôi cũng không phải là hoàn toàn không sợ."
+        },
+        {
+          "translation": "Không phải là tôi không có thời gian để đi xem phim."
+        },
+        {
+          "translation": "Thuyết trình bằng tiếng Nhật không phải là không khó, nhưng không phải là không làm được."
+        }
+      ]
+    },
+    "ja_なくもない_216": {
+      "title": "～なくもない (〜naku mo nai)",
+      "shortExplanation": "Biểu thị khả năng hoặc sự cân nhắc một cách dè dặt; 'cũng không hẳn là không...', 'không phải là không thể...'.",
+      "longExplanation": "Mẫu ngữ pháp '～なくもない' là cách nói phủ định kép thể hiện sự đồng tình, khả năng hoặc xu hướng một cách ngập ngừng, e dè. Mẫu này ngụ ý rằng tuy điều đó không phải là lựa chọn tối ưu hay chắc chắn nhất, nhưng người nói vẫn thấy có thể chấp nhận được, không loại trừ khả năng thực hiện ('cũng không phải là không xem xét...', 'cũng có thể tính tới...').",
+      "formation": "Động từ thể ない (bỏ ない) + なくもない | Tính từ đuôi い (bỏ い) + くなくもない | Tính từ đuôi な / Danh từ + ではなくもない",
+      "examples": [
+        {
+          "translation": "Nếu anh ấy sắp quay lại ngay thì việc đứng đợi một chút cũng không hẳn là không được."
+        },
+        {
+          "translation": "Nếu cuốn sách này thực sự có ích thì mua nó cũng không phải là một ý kiến tồi."
+        },
+        {
+          "translation": "Nếu thời tiết đẹp thì việc chúng ta đi dã ngoại cũng không phải là không thể."
+        },
+        {
+          "translation": "Nếu dự án đó thành công thì việc được thăng chức cũng không phải là điều bất khả thi."
+        }
+      ]
+    },
+    "ja_ならなりに_217": {
+      "title": "～なら～なりに",
+      "shortExplanation": "Biểu thị sự tương xứng, phù hợp với điều kiện hoặc thân phận đó; 'nếu là... thì sẽ theo cách của...'.",
+      "longExplanation": "Mẫu ngữ pháp '～なら～なりに' lặp lại cùng một danh từ hoặc tính từ, dùng để diễn tả rằng tuy ở trong điều kiện hay hoàn cảnh đó (thường là có hạn chế hoặc đặc thù), đối tượng vẫn có được phong cách, nét hay hoặc sự nỗ lực tương xứng, phù hợp với hoàn cảnh riêng của mình ('nếu đã là... thì sẽ có cái hay/cách làm theo kiểu của...'). Mang sắc thái tích cực chấp nhận và trân trọng thực tại.",
+      "formation": "Danh từ / Tính từ + なら + (cùng Danh từ / Tính từ đó) + なりに",
+      "examples": [
+        {
+          "translation": "Vì cậu ấy vẫn là người mới bắt đầu nên cậu ấy đang nỗ lực hết mình theo đúng cách của một người mới bắt đầu."
+        },
+        {
+          "translation": "Món ăn này nếu mà cay thì nó lại có độ ngon riêng theo kiểu cay của nó."
+        },
+        {
+          "translation": "Người đó tuy có kỳ quặc nhưng lại thú vị theo nét kỳ quặc của riêng mình."
+        },
+        {
+          "translation": "Thị trấn này tuy nhỏ bé nhưng lại vui tươi theo cách của một thị trấn nhỏ."
+        }
+      ]
+    },
+    "ja_には及ばない_218": {
+      "title": "～には及ばない (〜ni wa oyobanai)",
+      "shortExplanation": "Diễn tả không cần thiết phải làm đến mức như vậy; 'không cần thiết phải...', 'không đến mức phải...'.",
+      "longExplanation": "Mẫu ngữ pháp '～には及ばない' (N1) được dùng để biểu thị rằng một hành động, nỗ lực hay sự lo lắng nào đó là không cần thiết, làm như vậy là thái quá hoặc không đáng phải bỏ công sức đến mức đó ('không cần phải...', 'chưa đến mức phải...'). Thường dùng để khuyên nhủ hoặc nhận định khách quan về mức độ của hành động.",
+      "formation": "Động từ thể từ điển / Danh từ + には及ばない",
+      "examples": [
+        {
+          "translation": "Không cần thiết phải bay hạng thương gia đâu, đi hạng phổ thông là đủ rồi."
+        },
+        {
+          "translation": "Không cần đến mức mỗi lần gặp mặt đều phải mang quà tặng đâu."
+        },
+        {
+          "translation": "Vấn đề đó chưa đến mức phải đi hỏi thầy giáo, bạn có thể tự mình giải quyết được mà."
+        },
+        {
+          "translation": "Chỉ vì một lỗi sai nhỏ nhặt mà dùng những lời lẽ cay nghiệt đến thế thì thật không đáng chút nào."
+        }
+      ]
+    },
+    "ja_に堪えない_219": {
+      "title": "～に堪えない (～ni taenai)",
+      "shortExplanation": "Diễn tả tình trạng tồi tệ, dở tệ đến mức không thể chịu đựng nổi; 'không thể chịu nổi', 'không nỡ nhìn/nghe', 'không đáng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に堪えない' (N1) được dùng khi một sự vật, hiện tượng quá dở, quá phản cảm, vụng về hoặc bi thương đến mức người khác không thể chịu đựng nổi việc chứng kiến, lắng nghe hay đọc nó ('không thể chịu nổi', 'không nỡ nghe/xem'). Thường cố định đi với các động từ tri giác như '見る' (xem), '聞く' (nghe), '読む' (đọc).",
+      "formation": "Động từ thể từ điển / Danh từ + に堪えない (thường gặp: 見るに堪えない, 聞くに堪えない, 読むに堪えない)",
+      "examples": [
+        {
+          "translation": "Trò đùa của anh ta thật dở tệ đến mức không thể nào nghe nổi."
+        },
+        {
+          "translation": "Bộ phim đó làm tệ đến mức người ta không nỡ xem tiếp."
+        },
+        {
+          "translation": "Cuốn tiểu thuyết này tẻ nhạt đến mức không thể nào đọc nổi."
+        },
+        {
+          "translation": "Hành vi của anh ta chướng mắt đến mức không nỡ nhìn."
+        }
+      ]
+    },
+    "ja_に堪える_220": {
+      "title": "～に堪える (～ni taeru)",
+      "shortExplanation": "Diễn tả đối tượng có chất lượng tốt, đủ giá trị đáng để thưởng thức hay đánh giá; 'đáng để...', 'xứng đáng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に堪える' là dạng khẳng định tương phản với '～に堪えない'. Cấu trúc này dùng để khẳng định một tác phẩm hay đối tượng đạt chất lượng tốt, có chiều sâu hoặc giá trị thỏa đáng để người ta xem, nghe, đọc, thưởng thức hay phê bình ('đáng để...', 'bõ công...'). Thường đi với các động từ tri giác và thưởng thức như '見る', '聞く', '読む', '鑑賞する', '評価する'.",
+      "formation": "Động từ thể từ điển / Danh từ + に堪える (thường gặp: 見るに堪える, 聞くに堪える, 読むに堪える)",
+      "examples": [
+        {
+          "translation": "Giọng hát của anh ấy rất hay, rất đáng để lắng nghe."
+        },
+        {
+          "translation": "Cuốn tiểu thuyết này có nội dung sâu sắc, rất đáng để đọc."
+        },
+        {
+          "translation": "Bộ phim kia là một kiệt tác xuất sắc rất đáng để xem."
+        },
+        {
+          "translation": "Ý kiến của anh ấy có giá trị lớn, rất xứng đáng để lấy làm tài liệu tham khảo."
+        }
+      ]
+    },
+    "ja_に耐える_221": {
+      "title": "～に耐える (～ni taeru)",
+      "shortExplanation": "Diễn tả sức chịu đựng gian khổ, áp lực hoặc ngoại lực mạnh mẽ; 'chịu đựng được...', 'chống chịu được...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に耐える' (chữ Hán là 耐 - nại trong nhẫn nại, chịu đựng) dùng để diễn tả khả năng kiên trì chịu đựng nỗi đau đớn, khổ cực, áp lực tinh thần hoặc sức bền chống chịu các tác động vật lý, ngoại lực khắc nghiệt (như động đất, bão gió, tải trọng lớn) mà không bị suy sụp hay hư hỏng ('chịu đựng được...', 'chống chọi được...').",
+      "formation": "Danh từ + に耐える",
+      "examples": [
+        {
+          "translation": "Anh ấy đã kiên cường chịu đựng qua khóa tu luyện vô cùng gian khổ."
+        },
+        {
+          "translation": "Cây cầu này có khả năng chống chịu được những cơn gió mạnh dữ dội."
+        },
+        {
+          "translation": "Cô ấy đã dũng cảm chịu đựng nỗi đau đớn cùng cực."
+        },
+        {
+          "translation": "Tòa nhà này có khả năng chống chịu được các trận động đất."
+        }
+      ]
+    },
+    "ja_に至った_222": {
+      "title": "～に至った (〜ni itatta)",
+      "shortExplanation": "Diễn tả kết cục hoặc giai đoạn cuối cùng sau một quá trình diễn tiến; 'đã đi đến...', 'dẫn tới...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に至った' (dạng quá khứ của '～に至る') dùng để biểu thị kết cục, kết luận hoặc mức độ trạng thái cuối cùng đạt được sau một chuỗi diễn biến, quá trình hoặc sự việc trải qua nhiều giai đoạn ('đã dẫn tới...', 'đã đi đến mức...'). Thường biểu thị một bước ngoặt trọng đại, một kết quả mang tính bước ngoặt hoặc một tình thế nghiêm trọng.",
+      "formation": "Danh từ / Động từ thể từ điển + に至った (hoặc に至る)",
+      "examples": [
+        {
+          "translation": "Sau chuỗi ngày không ngừng khổ luyện, cuối cùng anh ấy đã trở thành một nghệ sĩ ghi-ta chuyên nghiệp."
+        },
+        {
+          "translation": "Trong quá trình tiến hành điều tra, chúng tôi đã đi đến một kết luận vô cùng đáng kinh ngạc."
+        },
+        {
+          "translation": "Vấn đề này cuối cùng đã dẫn tới một cuộc xung đột mang tầm quốc tế."
+        },
+        {
+          "translation": "Trải qua muôn vàn thất bại, cuối cùng tôi đã đi đến được thành công."
+        }
+      ]
+    },
+    "ja_に越したことはない_223": {
+      "title": "～に越したことはない (〜ni koshita koto wa nai)",
+      "shortExplanation": "Khẳng định một điều gì đó là lý tưởng nhất, tốt nhất; 'không gì tốt bằng...', '...vẫn là tốt nhất'.",
+      "longExplanation": "Mẫu ngữ pháp '～に越したことはない' (N1) bắt nguồn từ động từ '越す' (vượt qua), mang nghĩa đen là 'không có gì vượt qua được điều này'. Cấu trúc này dùng để nhấn mạnh rằng một phương án, hành động hay trạng thái nào đó là sự lựa chọn tối ưu, an toàn và hoàn hảo nhất ('không gì tốt bằng...', 'nếu được như vậy thì không có gì bằng', '...vẫn là yên tâm nhất').",
+      "formation": "Động từ thể từ điển / Tính từ đuôi い / Tính từ đuôi な (hoặc である) / Danh từ (hoặc である) + に越したことはない",
+      "examples": [
+        {
+          "translation": "Việc chuẩn bị sớm thì không có gì tốt bằng."
+        },
+        {
+          "translation": "Không gì tuyệt vời hơn việc sử dụng những nguyên liệu tươi ngon."
+        },
+        {
+          "translation": "Lái xe an toàn thì lúc nào cũng là điều tốt nhất."
+        },
+        {
+          "translation": "Duy trì một lối sống lành mạnh thì không gì bằng."
+        }
+      ]
+    },
+    "ja_に難くない_224": {
+      "title": "～に難くない (～ni katakunai)",
+      "shortExplanation": "Diễn tả việc có thể dễ dàng suy đoán, thấu hiểu trong văn phong trang trọng; 'không khó để...', 'dễ dàng...'.",
+      "longExplanation": "Mẫu ngữ pháp '～に難くない' (đọc là にかたくない) là cách diễn đạt trang trọng trong văn viết hoặc phát biểu chính thức, dùng để diễn tả rằng dựa trên tình hình hay bối cảnh khách quan, người nói hoàn toàn có thể dễ dàng hình dung, thấu hiểu, cảm nhận được tâm trạng hay lý do của sự việc ('không khó để tưởng tượng/thấu hiểu/cảm nhận...'). Thường đi kèm với các danh từ hoặc động từ như '想像' (tưởng tượng), '理解' (thấu hiểu), '察する' (cảm thông/đoán biết).",
+      "formation": "Động từ thể từ điển / Danh từ + に難くない (thường gặp: 想像に難くない, 理解に難くない, 察するに難くない)",
+      "examples": [
+        {
+          "translation": "Không khó để hình dung được niềm hân hoan to lớn của anh ấy."
+        },
+        {
+          "translation": "Thật không khó để thấu hiểu việc kết quả này đã khiến cô ấy thất vọng đến mức nào."
+        },
+        {
+          "translation": "Cảm giác tức giận của anh ấy là điều mà người ta hoàn toàn không khó để cảm thông."
+        },
+        {
+          "translation": "Không khó để mường tượng được lý do vì sao tình cảnh như thế này lại xảy ra."
+        }
+      ]
+    },
+    "ja_のは_225": {
+      "title": "～のは + Danh từ + ぐらいのものだ (〜no wa Noun gurai no mono da)",
+      "shortExplanation": "Diễn tả chỉ duy nhất đối tượng đó là phù hợp hoặc ngoại lệ; 'chỉ có...', 'chẳng qua chỉ là...'.",
+      "longExplanation": "Mẫu ngữ pháp '～のは + Danh từ + ぐらいのものだ' (hoặc くらいのものだ) được dùng để nhấn mạnh tính duy nhất hoặc hạn định cùng cực của một sự việc, ngụ ý rằng ngoại trừ danh từ được nêu ra thì không còn cái nào khác thỏa mãn hoặc đáng kể ('thứ duy nhất... chỉ là...', 'cùng lắm chỉ có thể coi là...'). Thường mang sắc thái đánh giá tiêu cực, bất đắc dĩ hoặc hạ thấp mức độ sự việc.",
+      "formation": "Động từ thể thông thường / Tính từ đuôi い / Tính từ đuôi な (+ な) + のは + Danh từ + ぐらいのものだ (hoặc くらいのものだ)",
+      "examples": [
+        {
+          "translation": "Đọc cuốn tiểu thuyết này chẳng qua cũng chỉ là một cách để giết thời gian mà thôi."
+        },
+        {
+          "translation": "Điểm ưng ý duy nhất trong bữa tối nay may ra chỉ có món bánh pizza."
+        },
+        {
+          "translation": "Xem bộ phim này chẳng qua chỉ là một sự lãng phí thời gian mà thôi."
+        },
+        {
+          "translation": "Nói chuyện với anh ta thì chỉ rước thêm bực bội và căng thẳng mà thôi."
+        }
+      ]
+    },
+    "ja_ばものを_226": {
+      "title": "～ば～ものを (～ba～mono o)",
+      "shortExplanation": "Diễn tả sự tiếc nuối, hối hận hoặc trách cứ về một cơ hội đã bỏ lỡ; 'giá mà... thì đã... rồi'.",
+      "longExplanation": "Mẫu ngữ pháp '～ば～ものを' (N1) là cách nói biểu thị sự nuối tiếc sâu sắc, thất vọng hoặc gián tiếp trách móc về một kết quả không như mong đợi. Vế trước đưa ra một giả thiết giả định trái với thực tế trong quá khứ, vế sau dùng 'ものを' để diễn đạt rằng đáng lẽ sự việc đã có thể diễn ra tốt đẹp, thế nhưng trên thực tế lại trái ngược ('giá mà... thì đã... đằng này lại...', 'nếu chịu... thì đâu đến nỗi...').",
+      "formation": "Động từ thể điều kiện ば / Tính từ đuôi い (ければ) / Tính từ đuôi な・Danh từ (なら / であれば) + Động từ thể た (hoặc thể thông thường) + ものを",
+      "examples": [
+        {
+          "translation": "Giá mà chịu dậy sớm hơn thì tôi đã chẳng bị muộn giờ rồi."
+        },
+        {
+          "translation": "Nếu cố gắng nỗ lực hơn nữa thì cậu ấy đã thi đỗ kỳ thi rồi, đằng này lại bỏ cuộc."
+        },
+        {
+          "translation": "Giá như có đủ tiền thì tôi đã mua một chiếc xe ô tô mới rồi."
+        },
+        {
+          "translation": "Nếu có bạn bè thì tôi đã cùng nhau đi chơi thật vui rồi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_ながらに_212": {
+      "title": "～ながらに (～nagara ni)",
+      "shortExplanation": "表示保持原有的状态或处于某种特定情境中；“保持原样”、“自……以来”、“在……之中”。",
+      "longExplanation": "句型“～ながらに”（常用形式为“～ながらにして”）多用于较庄重的文语表达，表示某种状态从最初开始便一直保持不变，或者始终处于某种特定的情境与状态之中。该句型常用于固定的习惯搭配中，如“生まれながらに”（天生、打从出生起）、“涙ながらに”（流着泪、满含热泪地）、“昔ながらに”（保留着旧时的面貌）、“子供ながらに”（虽然还是个孩子，却……）等。",
+      "formation": "固定惯用搭配：名词 / 动词ます形词干 ＋ ながらに（常见搭配：生まれながらに、涙ながらに、昔ながらに、子供ながらに 等）",
+      "examples": [
+        {
+          "translation": "她天生就拥有出色的音准感。"
+        },
+        {
+          "translation": "他虽然只是个孩子，却能听懂大人们的谈话。"
+        },
+        {
+          "translation": "她满含热泪地倾诉着事情的真相。"
+        },
+        {
+          "translation": "我们一直悉心守护着从古流传至今、仍保留原貌的传统节日。"
+        }
+      ]
+    },
+    "ja_ながらの_213": {
+      "title": "～ながらの + 名词 (〜nagara no Noun)",
+      "shortExplanation": "修饰后续名词，表示伴随某个动作同时进行的动作或状态；“一边……一边……”、“在……中的……”。",
+      "longExplanation": "句型“～ながらの”接在动词ます形词干后，用于连体修饰后续的名词，表示后项事物是在伴随前项动作的同时进行的（“一边做某事一边进行的某事”）。例如“テレビを見ながらの夕食”表示“一边看电视一边吃的晚餐”。",
+      "formation": "动词ます形词干 ＋ ながら ＋ の ＋ 名词",
+      "examples": [
+        {
+          "translation": "一边看电视一边吃晚餐，对孩子们来说大概会很有趣吧。"
+        },
+        {
+          "translation": "一边看地图一边开车是非常危险的。"
+        },
+        {
+          "translation": "一边散步一边交谈能让人放松身心。"
+        },
+        {
+          "translation": "一边听音乐一边学习或许能够提高专注力。"
+        }
+      ]
+    },
+    "ja_ながらも_214": {
+      "title": "～ながらも (〜nagara mo)",
+      "shortExplanation": "表示转折，意为“虽然……但是……”、“尽管……却……”。",
+      "longExplanation": "句型“～ながらも”属于N1级转折表达，用于连接两个具有对比反差的事项，强调实际发生的事实与从前项状态通常所预料的情况相反（“尽管处于……的状态，但却……”、“虽然……却依然……”）。可接续动词、形容词或名词。",
+      "formation": "动词ます形词干 / い形容词 / な形容词（直接接续或保留な） / 名词（直接接续或接であり） ＋ ながらも",
+      "examples": [
+        {
+          "translation": "他虽然生活清贫，却过着幸福的生活。"
+        },
+        {
+          "translation": "尽管平时工作繁忙，我每天依然坚持锻炼身体。"
+        },
+        {
+          "translation": "虽然身患疾病，但他仍然坚持继续工作。"
+        },
+        {
+          "translation": "尽管天空正下着雨，他还是出门去散步了。"
+        }
+      ]
+    },
+    "ja_なくはない_215": {
+      "title": "～なくはない (〜naku wa nai)",
+      "shortExplanation": "双重否定表示委婉或有所保留的肯定；“并非不……”、“也不是不……”。",
+      "longExplanation": "句型“～なくはない”通过双重否定构成委婉或略带勉强的肯定语气，表示某件事虽然算不上首选、理想或者十拿九稳，但也绝非完全不可能或毫无此意（“并非完全不……”、“倒也不是不行”）。常带有说话人留有余地、不愿把话说得过满的语感。",
+      "formation": "动词ない形（去ない） ＋ なくはない ｜ い形容词（去い） ＋ くなくはない ｜ な形容词 / 名词 ＋ ではなくはない",
+      "examples": [
+        {
+          "translation": "要想把它做完，倒也并非不难。"
+        },
+        {
+          "translation": "去和他搭话，我也不是完全不怕。"
+        },
+        {
+          "translation": "要说去看电影的时间，我也并非抽不出来。"
+        },
+        {
+          "translation": "用日语作演讲倒也不是不可能，但也绝非易事。"
+        }
+      ]
+    },
+    "ja_なくもない_216": {
+      "title": "～なくもない (〜naku mo nai)",
+      "shortExplanation": "双重否定表示委婉许可或不排除可能性；“也不是不可以……”、“也并非不……”。",
+      "longExplanation": "句型“～なくもない”属于双重否定表达，用于委婉地表示某种看法、态度或行动方案尚在可考虑的范围之内，虽然算不上积极热衷，但也并不坚决排斥（“倒也不是不行”、“也不是没有这种可能”）。相较于“～なくはない”，其语气更为随意，常用于表示轻微的倾向或不情愿的赞同。",
+      "formation": "动词ない形（去ない） ＋ なくもない ｜ い形容词（去い） ＋ くなくはない ｜ な形容词 / 名词 ＋ ではなくはない",
+      "examples": [
+        {
+          "translation": "如果他马上就回来的话，等他一会儿倒也不是不可以。"
+        },
+        {
+          "translation": "如果这本书真的有用的话，买下来倒也未尝不可。"
+        },
+        {
+          "translation": "如果天气好的话，我们去野餐也未始不可。"
+        },
+        {
+          "translation": "如果那个项目取得成功，获得晋升也并非没有可能。"
+        }
+      ]
+    },
+    "ja_ならなりに_217": {
+      "title": "～なら～なりに",
+      "shortExplanation": "表示具备与该条件相符的方式或独有价值；“若是……便有其相应的……”。",
+      "longExplanation": "句型“～なら～なりに”重复相同的名词或形容词，用于表达某事物虽处于特定条件或局限之中，但却具备与其身份、状态或特性相适应的表现、努力或独特风味（“既然是……，就会以符合……的方式去努力/展现其优点”）。多带有对现状积极认可与欣赏的语感。",
+      "formation": "名词 / 形容词 ＋ なら ＋ （同一名词 / 形容词） ＋ なりに",
+      "examples": [
+        {
+          "translation": "他虽然还是个初学者，但也在以初学者应有的方式全力努力着。"
+        },
+        {
+          "translation": "这道菜如果说辣的话，倒也辣得别有一番风味。"
+        },
+        {
+          "translation": "那个人虽然有些古怪，但也有着其独特怪异之处所带来的有趣。"
+        },
+        {
+          "translation": "这座城镇虽然小，但也自有其属于小城镇的别样乐趣。"
+        }
+      ]
+    },
+    "ja_には及ばない_218": {
+      "title": "～には及ばない (〜ni wa oyobanai)",
+      "shortExplanation": "表示没有必要做到那种地步；“用不着……”、“不必……”。",
+      "longExplanation": "句型“～には及ばない”属于N1级句型，用于指出某项行动、过度的操劳或过激的应对是完全没有必要的，事情尚没有发展到需要采取那般手段的严重程度（“用不着做到……”、“不必特地……”）。常用于劝慰他人或表明客观判断。",
+      "formation": "动词辞书形 / 名词 ＋ には及ばない",
+      "examples": [
+        {
+          "translation": "用不着非去坐头等舱，经济舱就已经足够了。"
+        },
+        {
+          "translation": "用不着每次见面都非得带礼物去。"
+        },
+        {
+          "translation": "那个问题还不至于去请教老师，你自己就能解决。"
+        },
+        {
+          "translation": "仅仅因为一点小小的失误，用不着说出那么刻薄过分的话吧。"
+        }
+      ]
+    },
+    "ja_に堪えない_219": {
+      "title": "～に堪えない (～ni taenai)",
+      "shortExplanation": "表示某种事物糟糕、惨烈得令人不忍目睹或难以忍受；“不堪……”、“不忍……”。",
+      "longExplanation": "句型“～に堪えない”表示某事物、某种表现或惨状实在太过拙劣、粗俗或凄惨，以至于让人无法忍耐继续看、听或读下去（“不堪入目”、“不堪入耳”、“不忍卒读”）。常与视听知觉动词搭配，形成“見るに堪えない”、“聞くに堪えない”、“読むに堪えない”等固定短语。",
+      "formation": "动词辞书形 / 名词 ＋ に堪えない（常与「見る」「聞く」「読む」等动词连用）",
+      "examples": [
+        {
+          "translation": "他讲的笑话低俗拙劣，简直不堪入耳。"
+        },
+        {
+          "translation": "那部电影制作得太糟糕了，简直不堪入目。"
+        },
+        {
+          "translation": "这部小说枯燥乏味得让人不忍卒读。"
+        },
+        {
+          "translation": "他的种种恶劣行为让人看不下去。"
+        }
+      ]
+    },
+    "ja_に堪える_220": {
+      "title": "～に堪える (～ni taeru)",
+      "shortExplanation": "表示某事物具备足够的水准或价值，值得品味或经得起评价；“值得……”、“经得起……”。",
+      "longExplanation": "句型“～に堪える”是“～に堪えない”的肯定形式，用于评价某部作品或事物具备高度的价值、深度或水准，完全值得人们去仔细阅读、观赏、倾听或认真批判（“值得一读/看/听”、“经得起推敲/检验”）。常与“見る”、“聞く”、“読む”、“鑑賞する”等动词连用。",
+      "formation": "动词辞书形 / 名词 ＋ に堪える（常与「見る」「聞く」「読む」「鑑賞する」等动词连用）",
+      "examples": [
+        {
+          "translation": "他的歌声十分动听，很值得一听。"
+        },
+        {
+          "translation": "这部小说内容充实深刻，非常值得一读。"
+        },
+        {
+          "translation": "那部电影是一部值得反复观赏的杰作。"
+        },
+        {
+          "translation": "他的意见极具参考价值，完全值得借鉴。"
+        }
+      ]
+    },
+    "ja_に耐える_221": {
+      "title": "～に耐える (～ni taeru)",
+      "shortExplanation": "表示承受痛苦、严酷考验或抵御外部巨大力量；“经受住……”、“耐受……”。",
+      "longExplanation": "句型“～に耐える”（汉字写作“耐”）着重表示顽强忍受肉体上的痛苦、精神上的折磨或生活上的严苛考验，亦可表示建筑物或物体能够承受强烈的风暴、地震或巨大冲击等物理外力而不致毁损（“经受住考验”、“抵御得住……”）。",
+      "formation": "名词 ＋ に耐える",
+      "examples": [
+        {
+          "translation": "他顽强地经受住了严酷的修行训练。"
+        },
+        {
+          "translation": "这座桥梁能够经受得住强风的袭击。"
+        },
+        {
+          "translation": "她坚韧地忍受住了巨大的痛苦。"
+        },
+        {
+          "translation": "这栋建筑物能够经受住地震的考验。"
+        }
+      ]
+    },
+    "ja_に至った_222": {
+      "title": "～に至った (〜ni itatta)",
+      "shortExplanation": "表示事物经过一系列发展后最终达到的结果或阶段；“达到了……”、“以至于……”。",
+      "longExplanation": "句型“～に至った”是“～に至る”的过去时态，用于陈述某件事物在历经多番过程、曲折或一系列演变之后，最终发展到了某个决定性的阶段、局势或得出了某种结论（“最终导致了……”、“终于达到了……的境地”）。多用于指代具有重大意义的结果或严重的局势。",
+      "formation": "名词 / 动词辞书形 ＋ に至った（或 に至る）",
+      "examples": [
+        {
+          "translation": "经过反复刻苦的练习，他最终成为了一名专业吉他手。"
+        },
+        {
+          "translation": "随着调查的不断深入，最终得出了一个令人惊愕的结论。"
+        },
+        {
+          "translation": "这个问题最终激化，演变成了国际性的对抗。"
+        },
+        {
+          "translation": "在历经了无数次失败之后，我终于走向了成功。"
+        }
+      ]
+    },
+    "ja_に越したことはない_223": {
+      "title": "～に越したことはない (〜ni koshita koto wa nai)",
+      "shortExplanation": "表示某种做法或状态最为理想、再好不过；“最好不过……”、“莫过于……”。",
+      "longExplanation": "句型“～に越したことはない”源自古语动词“越す”（超越），字面意思是“没有什么能够超越这一状态”。该句型用于表达某件事情无疑是最稳妥、最妥当、最理想的方案（“当然还是……最好”、“能……自是再好不过”）。",
+      "formation": "动词辞书形 / い形容词 / な形容词（或 である） / 名词（或 である） ＋ に越したことはない",
+      "examples": [
+        {
+          "translation": "早做准备当然是再好不过的了。"
+        },
+        {
+          "translation": "使用新鲜的食材比什么都好。"
+        },
+        {
+          "translation": "安全驾驶终究是最为重要的。"
+        },
+        {
+          "translation": "过上健康的生活自然是最好不过的。"
+        }
+      ]
+    },
+    "ja_に難くない_224": {
+      "title": "～に難くない (～ni katakunai)",
+      "shortExplanation": "书面语中表示根据情理不难推知或理解；“不难……”、“完全可以……”。",
+      "longExplanation": "句型“～に难くない”（读作 にかたくない）是典雅庄重的书面语表达，用于表示根据当前的客观事实或情境，完全可以轻而易举地推测、体察或理解对方的心理或事情的缘由（“不难想象”、“不难理解”、“完全可以体察”）。常与“想像”、“察する”、“理解”等词搭配使用。",
+      "formation": "动词辞书形 / 名词 ＋ に難くない（常与「想像」「察する」「理解」等词连用）",
+      "examples": [
+        {
+          "translation": "他心中的喜悦是完全不难想象的。"
+        },
+        {
+          "translation": "这个结果让她深感失望，这一点完全不难理解。"
+        },
+        {
+          "translation": "对于他愤怒的心情，人们完全不难体察。"
+        },
+        {
+          "translation": "之所以会发生这种局面，其原因是不难想象的。"
+        }
+      ]
+    },
+    "ja_のは_225": {
+      "title": "～のは + 名词 + ぐらいのものだ (〜no wa Noun gurai no mono da)",
+      "shortExplanation": "表示除了该事物之外别无其他；“充其量只有……”、“顶多也就是……罢了”。",
+      "longExplanation": "句型“～のは + 名词 + ぐらいのものだ”（亦可作 くらいのものだ）用于表示在某种情境下，满足条件或值得一提的仅仅只有该名词而已，除此以外别无长物（“唯一能称得上……的也就只有……”、“充其量不过是……罢了”）。常带有略显无奈、轻视或消极评价的感触。",
+      "formation": "动词普通形 / い形容词 / な形容词（＋な） ＋ のは ＋ 名词 ＋ ぐらいのものだ（或 くらいのものだ）",
+      "examples": [
+        {
+          "translation": "读这本小说充其量也就是打发时间罢了。"
+        },
+        {
+          "translation": "今晚这顿晚饭里唯一算得上不错的，大概也就只有披萨了。"
+        },
+        {
+          "translation": "看这部电影顶多也就是在浪费时间罢了。"
+        },
+        {
+          "translation": "和他说话除了徒增压力之外，根本起不到任何作用。"
+        }
+      ]
+    },
+    "ja_ばものを_226": {
+      "title": "～ば～ものを (～ba～mono o)",
+      "shortExplanation": "对已经发生的事态表达遗憾、惋惜或埋怨；“要是早……就好了，却偏偏……”。",
+      "longExplanation": "句型“～ば～ものを”是N1级虚拟反实语气表达，用于针对已经成为事实的遗憾结果，表达“如果当时采取了某种做法，本来可以得到良好结果，然而实际却并非如此”的深切惋惜、悔恨或间接的责备与抱怨（“要是早……的话本可以……的，可偏偏却……”）。",
+      "formation": "动词假定形（ば形） / い形容词（ければ） / な形容词・名词（なら / であれば） ＋ 动词た形（或普通形） ＋ ものを",
+      "examples": [
+        {
+          "translation": "要是早点起床的话，本来就不会迟到了的。"
+        },
+        {
+          "translation": "要是再加把劲的话，原本就能通过考试的，真可惜。"
+        },
+        {
+          "translation": "要是手头有钱的话，我早就买新车了。"
+        },
+        {
+          "translation": "要是当时有朋友在的话，本来就可以一起开心地玩耍了。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_ながらに_212": {
+      "title": "～ながらに (～nagara ni)",
+      "shortExplanation": "처음부터의 상태나 특정 상황을 그대로 유지하고 있음을 나타내며, '~인 채로', '~로부터', '~속에서'라는 뜻입니다.",
+      "longExplanation": "'～ながらに'(주로 '～ながらにして'의 형태로도 쓰임)는 격식 있는 문어체 표현으로, 어떤 상태나 성질이 출발점부터 변함없이 그대로 유지되고 있거나 특정한 심경이나 정황 속에 머물러 있음을 나타냅니다. '生まれながらに'(태어나면서부터, 선천적으로), '涙ながらに'(눈물을 흘리며, 눈물로), '昔ながらに'(옛 모습 그대로), '子供ながらに'(어린 나이임에도) 등 관용적으로 정형화된 어구로 주로 쓰입니다.",
+      "formation": "관용적 고정 표현: 명사 / 동사 ます형 어간 ＋ ながらに (자주 쓰이는 표현: 生まれながらに, 涙ながらに, 昔ながらに, 子供ながらに 등)",
+      "examples": [
+        {
+          "translation": "그녀는 태어나면서부터 뛰어난 절대음감을 지니고 있다."
+        },
+        {
+          "translation": "그는 어린아이임에도 어른들의 대화를 온전히 이해하고 있었다."
+        },
+        {
+          "translation": "그녀는 눈물을 흘리며 진실을 호소했다."
+        },
+        {
+          "translation": "우리는 옛 모습 그대로 전해 내려오는 전통 축제를 소중히 지켜나가고 있다."
+        }
+      ]
+    },
+    "ja_ながらの_213": {
+      "title": "～ながらの + 명사 (〜nagara no Noun)",
+      "shortExplanation": "후속 명사를 수식하여 어떤 동작과 동시에 이루어지는 상태를 나타내며, '~하면서 하는...', '~하는 와중의...'라는 뜻입니다.",
+      "longExplanation": "'～ながらの'는 동사 ます형 어간에 결합하여 뒤이어 오는 명사를 연체 수식하는 문형입니다. 앞의 동작을 진행하는 것과 동시에 이루어지는 행위나 상태를 나타냅니다(예: 'テレビを見ながらの夕食'은 'TV를 보면서 먹는 저녁 식사'라는 뜻). '~하면서 하는 [명사]'의 의미로 해석됩니다.",
+      "formation": "동사 ます형 어간 ＋ ながら ＋ の ＋ 명사",
+      "examples": [
+        {
+          "translation": "TV를 보면서 먹는 저녁 식사는 아이들에게 무척 즐거운 시간일 것이다."
+        },
+        {
+          "translation": "지도를 보면서 운전하는 것은 매우 위험합니다."
+        },
+        {
+          "translation": "산책을 하면서 나누는 대화는 기분을 편안하게 해 줍니다."
+        },
+        {
+          "translation": "음악을 들으면서 공부하는 것은 집중력을 높여줄지도 모릅니다."
+        }
+      ]
+    },
+    "ja_ながらも_214": {
+      "title": "～ながらも (〜nagara mo)",
+      "shortExplanation": "두 사태의 대조나 역접을 나타내며, '~이면서도', '~하지만'이라는 뜻입니다.",
+      "longExplanation": "'～ながらも'는 N1급 역접 접속 표현으로, 앞선 상태나 조건에서 당연히 예상되는 결과와는 상반되는 사태나 행동이 뒤따를 때 쓰입니다('~임에도 불구하고', '~이기는 하지만 여전히'). 동사, 형용사, 명사에 폭넓게 결합합니다.",
+      "formation": "동사 ます형 어간 / い형용사 / な형용사 / 명사(또는 명사＋であり) ＋ ながらも",
+      "examples": [
+        {
+          "translation": "그는 가난하면서도 행복한 삶을 살아가고 있다."
+        },
+        {
+          "translation": "나는 바쁜 나날 속에서도 매일 운동을 거르지 않고 있습니다."
+        },
+        {
+          "translation": "병을 앓고 있으면서도 그는 묵묵히 일을 계속해 나갔다."
+        },
+        {
+          "translation": "비가 내리는 궂은 날씨임에도 그는 산책을 나섰다."
+        }
+      ]
+    },
+    "ja_なくはない_215": {
+      "title": "～なくはない (〜naku wa nai)",
+      "shortExplanation": "이중 부정을 통해 완곡하게 긍정의 뉘앙스를 풍기며, '아주 ~하지 않은 것은 아니다', '~할 수도 있다'라는 뜻입니다.",
+      "longExplanation": "'～なくはない'는 이중 부정 형식을 빌려 다소 소극적이거나 조심스러운 긍정을 나타내는 표현입니다. 최선이거나 완벽히 보장된 것은 아니지만, 결코 전면 불가능하거나 전혀 생각이 없는 것은 아님을 나타냅니다('전혀 ~하지 않은 것은 아니다', '~하지 못할 것도 없다'). 말끝을 흐리거나 단정을 피하고자 할 때 자주 사용됩니다.",
+      "formation": "동사 ない형(ない 탈락) ＋ なくはない ｜ い형용사(い 탈락) ＋ くなくはない ｜ な형용사 / 명사 ＋ ではなくはない",
+      "examples": [
+        {
+          "translation": "그것을 끝마치는 것이 어렵지 않다고는 할 수 없다."
+        },
+        {
+          "translation": "그에게 말을 거는 것이 내심 전혀 두렵지 않은 것은 아니다."
+        },
+        {
+          "translation": "영화를 보러 갈 시간이 전혀 없는 것은 아니다."
+        },
+        {
+          "translation": "일본어로 강연하는 것이 결코 쉽지는 않겠지만 불가능한 것만은 아니다."
+        }
+      ]
+    },
+    "ja_なくもない_216": {
+      "title": "～なくもない (〜naku mo nai)",
+      "shortExplanation": "이중 부정을 통해 미약한 긍정이나 여지를 나타내며, '~하지 못할 것도 없다', '~할 수도 있다'라는 뜻입니다.",
+      "longExplanation": "'～なくもない'는 이중 부정을 사용하여 어떤 방안이나 가능성을 완전히 배제하지 않고 고려할 수 있음을 완곡하게 내비치는 표현입니다. 적극적으로 선호하지는 않더라도 '그것도 나쁘지 않다'거나 '그렇게 할 수도 있다'는 뉘앙스를 전달합니다('~하지 못할 것도 없다', '~아닌 것도 아니다').",
+      "formation": "동사 ない형(ない 탈락) ＋ なくもない ｜ い형용사(い 탈락) ＋ くなくはない ｜ な형용사 / 명사 ＋ ではなくはない",
+      "examples": [
+        {
+          "translation": "그가 금방 돌아온다면 잠시 기다리지 못할 것도 없다."
+        },
+        {
+          "translation": "이 책이 실질적으로 도움이 된다면 구매하는 것도 나쁘지는 않다."
+        },
+        {
+          "translation": "날씨가 화창하다면 피크닉을 가는 것도 불가능하지만은 않다."
+        },
+        {
+          "translation": "그 프로젝트가 성공한다면 승진도 전혀 불가능한 이야기만은 아니다."
+        }
+      ]
+    },
+    "ja_ならなりに_217": {
+      "title": "～なら～なりに",
+      "shortExplanation": "그 조건이나 분수에 걸맞은 고유한 가치나 방식을 나타내며, '~라면 ~대로', '~에 걸맞게'라는 뜻입니다.",
+      "longExplanation": "'～なら～なりに'는 동일한 명사나 형용사를 거듭 사용하여, 비록 제약이나 특수한 상황이 있더라도 그 조건에 걸맞은 나름의 방식, 노력 또는 독특한 매력이 존재함을 나타내는 문형입니다('~라면 ~에 어울리게 나름대로'). 주어진 현실을 긍정적으로 받아들이고 평가하는 뉘앙스를 지닙니다.",
+      "formation": "명사 / 형용사 ＋ なら ＋ (동일 명사 / 형용사) ＋ なりに",
+      "examples": [
+        {
+          "translation": "그는 아직 초보자이지만 초보자 나름대로 최선을 다해 힘쓰고 있다."
+        },
+        {
+          "translation": "이 요리는 맵다면 매운 대로 나름의 깊은 감칠맛이 있다."
+        },
+        {
+          "translation": "저 사람은 특이하다면 특이한 대로 독특하고 재미있는 구석이 있다."
+        },
+        {
+          "translation": "이 마을은 작다면 작은 대로 아기자기한 즐거움이 있다."
+        }
+      ]
+    },
+    "ja_には及ばない_218": {
+      "title": "～には及ばない (〜ni wa oyobanai)",
+      "shortExplanation": "그렇게까지 할 필요가 없음을 나타내며, '~할 것까지는 없다', '~에는 미치지 못한다'라는 뜻입니다.",
+      "longExplanation": "'～에는及ばない'는 어떤 행위나 과도한 노력을 굳이 들일 필요가 없거나 그 정도까지 나아갈 사안이 아님을 나타내는 N1급 문형입니다('~할 필요까지는 없다', '~하기에는 이르지 않는다'). 상대방을 진정시키거나 객관적인 불필요성을 지적할 때 쓰입니다.",
+      "formation": "동사 사전형 / 명사 ＋ には及ばない",
+      "examples": [
+        {
+          "translation": "일등석을 탈 것까지는 없고, 이코노미석으로도 충분하다."
+        },
+        {
+          "translation": "만날 때마다 굳이 매번 선물을 챙겨갈 필요는 없다."
+        },
+        {
+          "translation": "그 문제는 선생님께 여쭤볼 것까지도 없이 스스로 해결할 수 있다."
+        },
+        {
+          "translation": "사소한 실수 하나 때문에 그렇게까지 신랄한 폭언을 쓸 것까지는 없을 텐데."
+        }
+      ]
+    },
+    "ja_に堪えない_219": {
+      "title": "～に堪えない (～ni taenai)",
+      "shortExplanation": "지나치게 엉망이거나 처참하여 차마 보거나 들을 수 없음을 나타내며, '차마 ~할 수 없다', '~하기에 견딜 수 없다'라는 뜻입니다.",
+      "longExplanation": "'～に堪えない'는 사태나 작품, 태도가 너무나 엉망이거나 비참하여 도저히 그것을 보고 듣거나 읽어줄 수 없음을 나타내는 표현입니다('차마 눈 뜨고 볼 수 없다', '차마 귀담아들을 수 없다'). 주로 '見る', '聞く', '読む' 등의 지각 동사와 결합하여 고정적으로 쓰입니다.",
+      "formation": "동사 사전형 / 명사 ＋ に堪えない (주로 見るに堪えない, 聞くに堪えない, 読むに堪えない의 형태로 쓰임)",
+      "examples": [
+        {
+          "translation": "그의 썰렁한 농담은 차마 민망해서 귀담아들어 줄 수가 없다."
+        },
+        {
+          "translation": "그 영화는 완성도가 너무나 조잡하여 차마 눈 뜨고 볼 수가 없을 정도다."
+        },
+        {
+          "translation": "이 소설은 내용이 지루하기 짝이 없어서 차마 끝까지 읽어줄 수가 없다."
+        },
+        {
+          "translation": "그의 무례한 행동거지는 정말이지 눈 뜨고 봐줄 수가 없다."
+        }
+      ]
+    },
+    "ja_に堪える_220": {
+      "title": "～に堪える (～ni taeru)",
+      "shortExplanation": "충분한 가치나 완성도를 지녀 감상이나 평가를 받을 만함을 나타내며, '~할 만한 가치가 있다'라는 뜻입니다.",
+      "longExplanation": "'～に堪える'는 '～に堪えない'의 긍정형으로, 어떤 작품이나 대상이 훌륭한 품격과 깊이를 갖추고 있어 정성껏 감상하거나 면밀히 평가할 가치가 충분함을 나타내는 표현입니다('볼만한 가치가 있다', '감상에 견딜 만하다'). 주로 '見る', '聞く', '読む', '鑑賞する' 등의 동사와 결합합니다.",
+      "formation": "동사 사전형 / 명사 ＋ に堪える (주로 見るに堪える, 聞くに堪える, 読むに堪える의 형태로 쓰임)",
+      "examples": [
+        {
+          "translation": "그의 가창력은 대단하여 충분히 귀담아들을 만한 가치가 있다."
+        },
+        {
+          "translation": "이 소설은 내용이 알차서 정독할 만한 훌륭한 가치가 있다."
+        },
+        {
+          "translation": "저 영화는 두고두고 감상할 만한 훌륭한 명작이다."
+        },
+        {
+          "translation": "그의 고견은 충분히 귀담아듣고 참고할 만하다."
+        }
+      ]
+    },
+    "ja_に耐える_221": {
+      "title": "～に耐える (～ni taeru)",
+      "shortExplanation": "고통이나 시련, 혹은 외부의 강한 물리적 힘을 꿋꿋이 견뎌냄을 나타내며, '~을 견디다', '~에 견뎌내다'라는 뜻입니다.",
+      "longExplanation": "'～に耐える'(한자는 耐)는 극심한 육체적 고통, 정신적 시련, 고난 등을 불굴의 의지로 묵묵히 버텨내거나, 강한 비바람, 지진 등 외부의 물리적 충격에 파손되지 않고 견뎌내는 것을 나타내는 문형입니다('~을 견뎌내다', '~에 버티다').",
+      "formation": "명사 ＋ に耐える",
+      "examples": [
+        {
+          "translation": "그는 혹독하기 짝이 없는 수행을 꿋꿋이 견뎌냈다."
+        },
+        {
+          "translation": "이 다리는 거센 강풍에도 충분히 견딜 수 있도록 설계되어 있다."
+        },
+        {
+          "translation": "그녀는 극심한 슬픔과 고통을 눈물겹게 견뎌냈다."
+        },
+        {
+          "translation": "이 건축물은 강력한 지진에도 끄떡없이 견뎌낼 수 있습니다."
+        }
+      ]
+    },
+    "ja_に至った_222": {
+      "title": "～に至った (〜ni itatta)",
+      "shortExplanation": "여러 과정이나 사태의 진전 끝에 도달한 최종 결과나 국면을 나타내며, '~에 이르렀다', '~에 도달했다'라는 뜻입니다.",
+      "longExplanation": "'～に至った'는 '～に至る'의 과거형으로, 어떤 사건이나 사태가 다양한 우여곡절과 과정을 거친 끝에 최종적으로 중대한 결론, 국면 혹은 심각한 상황에 도달했음을 나타내는 N1 문형입니다('마침내 ~에 이르렀다', '~라는 결론에 다다랐다').",
+      "formation": "명사 / 동사 사전형 ＋ に至った(또는 に至る)",
+      "examples": [
+        {
+          "translation": "그는 뼈를 깎는 연습을 거듭한 끝에 마침내 프로 기타리스트의 경지에 이르렀다."
+        },
+        {
+          "translation": "조사를 심도 있게 진행해 나가는 과정에서 놀라운 결론에 이르렀다."
+        },
+        {
+          "translation": "이 갈등은 마침내 국제적인 대립으로까지 번져 이에 이르게 되었다."
+        },
+        {
+          "translation": "수많은 뼈아픈 실패를 거친 끝에 비로소 눈부신 성공에 이르렀다."
+        }
+      ]
+    },
+    "ja_に越したことはない_223": {
+      "title": "～に越したことはない (〜ni koshita koto wa nai)",
+      "shortExplanation": "그 상태나 방법이 가장 바람직하고 최선임을 나타내며, '~하는 것이 가장 좋다', '~해서 나쁠 것은 없다'라는 뜻입니다.",
+      "longExplanation": "'～に越したことはない'는 '넘어서다'라는 뜻의 동사 '越す'에서 유래하여, 글자 그대로 '이것을 능가하는 것은 없다'는 뉘앙스를 담고 있습니다. 어떤 행위나 상태가 가장 안전하고 이상적이며 바람직함을 강조할 때 사용됩니다('~하는 편이 가장 좋다', '~해서 손해 볼 것은 전혀 없다').",
+      "formation": "동사 사전형 / い형용사 / な형용사(또는 である) / 명사(또는 である) ＋ に越したことはない",
+      "examples": [
+        {
+          "translation": "미리미리 서둘러 준비하는 것이 가장 좋은 법이다."
+        },
+        {
+          "translation": "음식에는 신선한 식재료를 사용하는 것보다 더 좋은 것은 없다."
+        },
+        {
+          "translation": "안전 운전을 최우선으로 하는 것이 언제나 가장 바람직하다."
+        },
+        {
+          "translation": "규칙적이고 건강한 생활을 영위하는 것이 가장 좋다."
+        }
+      ]
+    },
+    "ja_に難くない_224": {
+      "title": "～に難くない (～ni katakunai)",
+      "shortExplanation": "격식 있는 문어체에서 상황으로 보아 쉽게 헤아릴 수 있음을 나타내며, '어렵지 않게 ~할 수 있다'라는 뜻입니다.",
+      "longExplanation": "'～に難くない'(발음: にかたくない)는 격식 있는 문어체 표현으로, 객관적인 상황이나 전후 사정으로 미루어 볼 때 상대방의 심경이나 사태의 정황을 짐작하거나 이해하는 것이 전혀 어렵지 않음을 나타냅니다('어렵지 않게 상상할 수 있다', '충분히 짐작이 간다'). 주로 '想像', '察する', '理解' 등의 어휘와 함께 쓰입니다.",
+      "formation": "동사 사전형 / 명사 ＋ に難くない (주로 想像に難くない, 理解に難くない, 察するに難くない 등으로 쓰임)",
+      "examples": [
+        {
+          "translation": "그가 얼마나 뛸 듯이 기뻐했을지는 어렵지 않게 상상할 수 있다."
+        },
+        {
+          "translation": "이 결과가 그녀를 얼마나 크게 실망시켰을지는 충분히 이해하고도 남는다."
+        },
+        {
+          "translation": "그가 분통을 터뜨리는 심정은 넉넉히 짐작하고도 남는다."
+        },
+        {
+          "translation": "이러한 사태가 발생하게 된 경위는 어렵지 않게 짐작할 수 있다."
+        }
+      ]
+    },
+    "ja_のは_225": {
+      "title": "～のは + 명사 + ぐらいのものだ (〜no wa Noun gurai no mono da)",
+      "shortExplanation": "오직 그 대상만이 유일하게 해당함을 나타내며, '~한 것은 고작 ~뿐이다', '~해 봐야 겨우 ~정도이다'라는 뜻입니다.",
+      "longExplanation": "'～のは + 명사 + ぐらいのものだ'(또는 くらいのものだ)는 어떤 상황에서 조건을 만족하거나 언급할 만한 가치가 있는 것이 오직 그 대상 하나에 불과함을 나타내는 한정 표현입니다('~한 것은 겨우 ... 정도에 지나지 않는다'). 다소 부정적이거나 체념 섞인 평가, 평가절하의 어조를 띨 때가 많습니다.",
+      "formation": "동사 보통형 / い형용사 / な형용사(＋な) ＋ のは ＋ 명사 ＋ ぐらいのものだ(또는 くらいのものだ)",
+      "examples": [
+        {
+          "translation": "이 소설을 읽는 것은 기껏해야 심심풀이 정도에 지나지 않는다."
+        },
+        {
+          "translation": "오늘 저녁 식사 중에서 그나마 괜찮았던 것은 고작 피자 정도뿐이었다."
+        },
+        {
+          "translation": "이 영화를 보는 것은 한갓 시간 낭비에 불과할 뿐이다."
+        },
+        {
+          "translation": "그와 대화를 나누는 것은 스트레스만 가중시킬 뿐이다."
+        }
+      ]
+    },
+    "ja_ばものを_226": {
+      "title": "～ば～ものを (～ba～mono o)",
+      "shortExplanation": "과거의 지나간 일에 대해 진한 아쉬움, 후회, 원망을 나타내며, '~했더라면 좋았을 텐데'라는 뜻입니다.",
+      "longExplanation": "'～ば～ものを'는 N1급 반사실적 가정 표현으로, 이미 돌이킬 수 없게 된 유감스러운 결과에 대해 '만약 ~했더라면 좋은 결과가 있었을 텐데, 그러지 않아서 안타깝다'라는 깊은 후회나 아쉬움, 혹은 상대방에 대한 원망 섞인 비난을 나타냅니다('~했더라면 좋았을 것을').",
+      "formation": "동사 가정형(ば형) / い형용사(ければ) / な형용사·명사(なら / であれば) ＋ 동사 과거형(た형) ＋ ものを",
+      "examples": [
+        {
+          "translation": "일찍 일어나기만 했더라면 지각하지 않았을 텐데."
+        },
+        {
+          "translation": "조금만 더 진득하게 노력했더라면 시험에 합격했을 텐데 아쉽다."
+        },
+        {
+          "translation": "돈이 넉넉히 있었더라면 새 차를 샀을 텐데 그러지 못했다."
+        },
+        {
+          "translation": "친구가 곁에 있었더라면 함께 즐겁게 어울려 놀았을 텐데."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_ながらに_212": {
+      "title": "～ながらに (～nagara ni)",
+      "shortExplanation": "初めからの状態やある状態をそのまま保ち続けていることを表し、「〜のまま」「〜の状態で」という意味を表します。",
+      "longExplanation": "「～ながらに」（主に「～ながらにして」の形でも用いられる）は、改まった文章語的な表現で、ある状態や性質が出発点から変化することなくそのまま保持されていることや、ある感情・情勢の中に身を置いたままであることを表します。「生まれながらに（生まれつき）」「涙ながらに（涙を流しながら）」「昔ながらに（昔のまま変わらず）」「子供ながらに（子供であるのに）」など、特定の語と結びついた慣用的な表現として定着しています。",
+      "formation": "慣用的固定表現：名詞 / 動詞ます形語幹 ＋ ながらに（主な慣用句：生まれながらに、涙ながらに、昔ながらに、子供ながらに など）",
+      "examples": [
+        {
+          "translation": "彼女は生まれつき類まれな優れた音感を持っている。"
+        },
+        {
+          "translation": "彼はまだ子供でありながらも大人の会話の内容をしっかりと理解していた。"
+        },
+        {
+          "translation": "彼女は涙を流しながら必死に真実を訴えた。"
+        },
+        {
+          "translation": "私たちは昔からの姿を色濃く残して受け継がれている伝統の祭りを大切にしている。"
+        }
+      ]
+    },
+    "ja_ながらの_213": {
+      "title": "～ながらの ＋ 名詞 (〜nagara no Noun)",
+      "shortExplanation": "後続の名詞を修飾し、ある動作と同時に行われる状態を表し、「〜しながらの…」という意味を表します。",
+      "longExplanation": "「～ながらの」は、動詞のます形語幹などに接続して後続の名詞を連体修飾し、前項の動作を行いつつ同時並行で進行する事柄を表す文型です。「テレビを見ながらの夕食（テレビを見つつ食べる夕食）」のように、二つの動作が重なり合う状況を名詞句として表現する際に用いられます。",
+      "formation": "動詞ます形語幹 ＋ ながら ＋ の ＋ 名詞",
+      "examples": [
+        {
+          "translation": "テレビを見つつ食べる夕食は、子供たちにとってきっと楽しい時間だろう。"
+        },
+        {
+          "translation": "地図を見ながら車を運転する行為は非常に危険です。"
+        },
+        {
+          "translation": "散歩を楽しみながら交わす会話は、心身を大いにリラックスさせてくれます。"
+        },
+        {
+          "translation": "音楽を聴きながら勉強することは、集中力をより高めてくれるかもしれません。"
+        }
+      ]
+    },
+    "ja_ながらも_214": {
+      "title": "～ながらも (〜nagara mo)",
+      "shortExplanation": "前項の状況と対比される意外な事実を表し、「〜であるけれど」「〜にもかかわらず」という意味を表します。",
+      "longExplanation": "「～ながらも」は、逆接を表すN1レベルの文型で、前項の客観的な状態や制約から通常予想される結果とは反する事態や行動が後項に生じることを表します（「〜という状態ではあるが、それでも…」）。動詞、い形容詞、な形容詞、名詞に幅広く接続します。",
+      "formation": "動詞ます形語幹 / い形容詞辞書形 / な形容詞語幹 / 名詞（または 名詞＋であり） ＋ ながらも",
+      "examples": [
+        {
+          "translation": "彼は貧しい暮らしでありながらも、心豊かな幸せな生活を送っている。"
+        },
+        {
+          "translation": "私は多忙な身でありながらも、毎日欠かさず運動を続けています。"
+        },
+        {
+          "translation": "病気の身でありながらも、彼は休むことなく懸命に仕事を続けました。"
+        },
+        {
+          "translation": "激しい雨が降っているにもかかわらず、彼は散歩に出かけて行った。"
+        }
+      ]
+    },
+    "ja_なくはない_215": {
+      "title": "～なくはない (〜naku wa nai)",
+      "shortExplanation": "二重否定によって控えめな肯定や含みを持たせ、「〜ないわけではない」「〜することも不可能ではない」という意味を表します。",
+      "longExplanation": "「～なくはない」は、否定を二度重ねることにより、積極的・全面的ではないものの、消極的・控えめに肯定する気持ちを表す文型です。「完全に否定するわけではない」「可能性が全くないわけではない」というニュアンスを含み、断定を避けて控えめに意見を述べたい場面で用いられます。",
+      "formation": "動詞ない形（ないを除く） ＋ なくはない ｜ い形容詞語幹 ＋ くなくはない ｜ な形容詞語幹 / 名詞 ＋ ではなくはない",
+      "examples": [
+        {
+          "translation": "それをやり遂げるのは決して難しくないわけではない。"
+        },
+        {
+          "translation": "彼に自分から話しかけるのは、内心怖くないわけではない。"
+        },
+        {
+          "translation": "映画を観に行くための時間が全くないというわけではない。"
+        },
+        {
+          "translation": "日本語で学術講演を行うことは、決して容易ではないが可能ではある。"
+        }
+      ]
+    },
+    "ja_なくもない_216": {
+      "title": "～なくもない (〜naku mo nai)",
+      "shortExplanation": "二重否定によって消極的な可能性や余地を示し、「〜ないこともない」「〜してもよい」という意味を表します。",
+      "longExplanation": "「～なくもない」は、二重否定の形式を用いて「完全に無理だというわけではない」「状況次第では選択肢としてあり得る」と消極的な肯定的態度や許容を表す文型です。「～なくはない」に比べてやや柔軟で、「まあ、それでもいいかもしれない」といった妥協や考慮の余地を含みます。",
+      "formation": "動詞ない形（ないを除く） ＋ なくもない ｜ い形容詞語幹 ＋ くなくはない ｜ な形容詞語幹 / 名詞 ＋ ではなくはない",
+      "examples": [
+        {
+          "translation": "彼が間もなく戻ってくるというのなら、少し待たないこともない。"
+        },
+        {
+          "translation": "この書籍が本当に実務の役に立つなら、購入しても悪くはない。"
+        },
+        {
+          "translation": "天候に恵まれるのであれば、ピクニックに出かけるのもやぶさかではない。"
+        },
+        {
+          "translation": "そのプロジェクトが無事に成功を収めれば、昇進の道も全くあり得ない話ではない。"
+        }
+      ]
+    },
+    "ja_ならなりに_217": {
+      "title": "～なら～なりに",
+      "shortExplanation": "その条件や立場にふさわしい相応のやり方や良さがあることを表し、「〜ならそれにふさわしく」という意味を表します。",
+      "longExplanation": "「～なら～なりに」は、同一の名詞や形容詞を反復して用い、たとえ制約や特殊な条件があったとしても、その立場や状況に応じた独自の努力、工夫、あるいは味わいがあることを表す文型です。現状を前向きに受け止め、その枠組みの中での価値を認めるニュアンスを伴います。",
+      "formation": "名詞 / 形容詞 ＋ なら ＋ （同一の名詞・形容詞） ＋ なりに",
+      "examples": [
+        {
+          "translation": "彼はまだ初心者ではあるが、初心者なりに懸命に努力を重ねている。"
+        },
+        {
+          "translation": "この料理は辛いなら辛いなりに、独特の深い美味しさがある。"
+        },
+        {
+          "translation": "あの人は変わっているなら変わっているなりに、他にはない面白さがある。"
+        },
+        {
+          "translation": "この街は小規模なら小規模なりに、アットホームな楽しさにあふれている。"
+        }
+      ]
+    },
+    "ja_には及ばない_218": {
+      "title": "～には及ばない (〜ni wa oyobanai)",
+      "shortExplanation": "そこまで過剰にする必要がないことを表し、「〜するまでもない」「〜する必要はない」という意味を表します。",
+      "longExplanation": "「～には及ばない」は、動詞辞書形や名詞に接続し、ある行為や過度な配慮・努力を行う必要性が全くないこと、あるいはそこまでの大げさな事態には至っていないことを表すN1文型です。「〜するまでもない」「わざわざ〜するには及ばない」という意味で、相手をなだめたり客観的な判断を示したりする際に用いられます。",
+      "formation": "動詞辞書形 / 名詞 ＋ には及ばない",
+      "examples": [
+        {
+          "translation": "わざわざファーストクラスを利用するまでもない、エコノミークラスで十分だ。"
+        },
+        {
+          "translation": "会うたびに毎回律儀に手土産を持っていく必要などありません。"
+        },
+        {
+          "translation": "その程度の些細な問題なら先生に尋ねるまでもなく、自分自身で解決できます。"
+        },
+        {
+          "translation": "ほんの小さな失敗に対して、そこまで辛辣な言葉を浴びせるには及ばないだろう。"
+        }
+      ]
+    },
+    "ja_に堪えない_219": {
+      "title": "～に堪えない (～ni taenai)",
+      "shortExplanation": "ひどすぎて見聞きするのが耐えられない状態を表し、「見る／聞く／読むに耐えない」という意味を表します。",
+      "longExplanation": "「～に堪えない」は、事態や作品、態度などがあまりにも拙劣、無残、あるいは不快であるため、それを見たり聞いたり読んだりすることに耐えられない気持ちを表す文型です。主に「見るに堪えない」「聞くに堪えない」「読むに堪えない」などの慣用表現として定着しています（※なお、「感謝に堪えない」「感激に堪えない」のように感情名詞に付く場合は、抑えきれないほど強い感情を表す丁寧な表現となります）。",
+      "formation": "動詞辞書形 / 名詞 ＋ に堪えない（主に「見る」「聞く」「読む」などの動詞と結びつく）",
+      "examples": [
+        {
+          "translation": "彼の冗談はあまりにも下品で、とても聞くに堪えないものだった。"
+        },
+        {
+          "translation": "その映画は出来栄えがあまりに粗悪で、最後まで見るに堪えないほどだった。"
+        },
+        {
+          "translation": "この小説はストーリーが退屈すぎて、途中で読むに堪えなくなった。"
+        },
+        {
+          "translation": "彼の卑劣な振る舞いは、周りから見ていて本当に見るに堪えない。"
+        }
+      ]
+    },
+    "ja_に堪える_220": {
+      "title": "～に堪える (～ni taeru)",
+      "shortExplanation": "十分に鑑賞や評価に値する優れた価値があることを表し、「〜する価値が十分にある」という意味を表します。",
+      "longExplanation": "「～に堪える」は、「～に堪えない」の肯定形であり、対象となる作品や事柄が優れた水準や深みを備えており、しっかりと見たり聞いたり読んだり、あるいは批判や鑑賞に耐えうるだけの価値があることを表します。「見るに堪える」「聞くに堪える」「鑑賞に堪える」などの形で用いられます。",
+      "formation": "動詞辞書形 / 名詞 ＋ に堪える（主に「見る」「聞く」「読む」「鑑賞する」などの動詞と結びつく）",
+      "examples": [
+        {
+          "translation": "彼の歌声は非常に素晴らしく、じっくりと聞くに堪える実力がある。"
+        },
+        {
+          "translation": "この小説は読み応えがあり、大人の鑑賞に十分に耐える秀作だ。"
+        },
+        {
+          "translation": "あの映画は何度見返しても感動できる、鑑賞に堪える名作である。"
+        },
+        {
+          "translation": "彼の建設的な意見は、十分に検討し参考にするに堪えるものだ。"
+        }
+      ]
+    },
+    "ja_に耐える_221": {
+      "title": "～に耐える (～ni taeru)",
+      "shortExplanation": "苦痛や過酷な試練、または外部からの強い物理的圧力に持ちこたえることを表し、「〜に耐え忍ぶ」「〜に持ちこたえる」という意味を表します。",
+      "longExplanation": "「～に耐える」（漢字は「耐」を用いる）は、肉体的な苦痛や精神的な辛さ、過酷な試練をじっと我慢して持ちこたえること、あるいは強風や地震などの激しい物理的衝撃に破壊されることなく耐え抜くことを表す文型です。「試練に耐える」「重圧に耐える」「地震に耐える」などのように用いられます。",
+      "formation": "名詞 ＋ に耐える",
+      "examples": [
+        {
+          "translation": "彼は過酷を極めた厳しい修行の日々をじっと耐え抜いた。"
+        },
+        {
+          "translation": "この橋梁は猛烈な強風の吹き付けにも十分に持ちこたえられる構造だ。"
+        },
+        {
+          "translation": "彼女は胸を引き裂かれるような苦しみにじっと耐え忍んだ。"
+        },
+        {
+          "translation": "この建造物は巨大地震の強い揺れにも耐えることができる。"
+        }
+      ]
+    },
+    "ja_に至った_222": {
+      "title": "～に至った (〜ni itatta)",
+      "shortExplanation": "様々な経過を経て最終的な結果や段階に到達したことを表し、「〜という結末になった」「〜に至った」という意味を表します。",
+      "longExplanation": "「～に至った」は、「～に至る」の過去形で、一連の出来事、経過、あるいは多くの曲折を経た結果として、最終的に重大な局面、結論、または事態にまで到達したことを表す文型です。重大な決断や結末、あるいは深刻な事態に立ち至ったことを述べる際に用いられます。",
+      "formation": "名詞 / 動詞辞書形 ＋ に至った（または に至る）",
+      "examples": [
+        {
+          "translation": "彼は弛まぬ練習を積み重ねた末に、ついにプロのギタリストの地位に至った。"
+        },
+        {
+          "translation": "粘り強く調査を進める過程で、思いもよらない驚くべき結論に至った。"
+        },
+        {
+          "translation": "この対立問題はエスカレートし、ついに国際的な紛争に至った。"
+        },
+        {
+          "translation": "幾多の苦い失敗を乗り越えて、ようやく確固たる成功に至った。"
+        }
+      ]
+    },
+    "ja_に越したことはない_223": {
+      "title": "～に越したことはない (〜ni koshita koto wa nai)",
+      "shortExplanation": "それが最も安全で望ましい状態であることを表し、「〜であるのが一番良い」「〜に越したことはない」という意味を表します。",
+      "longExplanation": "「～に越したことはない」は、動詞「越す（勝る・上回る）」を打ち消した形で、「これを超えるものはない」という原義から、ある行為や条件を満たすことが最も安全・確実で理想的であることを表すN1文型です。「当然そうあるべきだ」「そうであるのが一番無難で望ましい」と述べる際に用いられます。",
+      "formation": "動詞辞書形 / い形容詞辞書形 / な形容詞（または である） / 名詞（または である） ＋ に越したことはない",
+      "examples": [
+        {
+          "translation": "何事も前もって早めに準備を整えておくのに越したことはない。"
+        },
+        {
+          "translation": "料理には新鮮な旬の食材を使用するに越したことはない。"
+        },
+        {
+          "translation": "車を運転する際は、常に安全運転を心がけるに越したことはない。"
+        },
+        {
+          "translation": "規則正しい健康的な生活習慣を送るに越したことはない。"
+        }
+      ]
+    },
+    "ja_に難くない_224": {
+      "title": "～に難くない (～ni katakunai)",
+      "shortExplanation": "状況から容易に推察や理解ができることを表す硬い文章語で、「〜するのは難しくない」「容易に〜できる」という意味を表します。",
+      "longExplanation": "「～に難くない」（読み：にかたくない）は、改まった格調高い文章語で、客観的な情勢や事態から判断して、相手の心情や事態の背景を推し量ったり理解したりすることが極めて容易であることを表します。主に「想像に難くない」「察するに難くない」「理解に難くない」などの定型表現として用いられます。",
+      "formation": "動詞辞書形 / 名詞 ＋ に難くない（主に「想像」「察する」「理解」などと結びつく）",
+      "examples": [
+        {
+          "translation": "目標を達成した彼の歓喜の大きさは、想像するに全く難くない。"
+        },
+        {
+          "translation": "この不本意な結果が彼女をひどく失望させたことは、容易に理解できる。"
+        },
+        {
+          "translation": "彼があれほど激怒した胸の内は、察するに難くない。"
+        },
+        {
+          "translation": "このような憂慮すべき事態が引き起こされた理由は、容易に想像がつく。"
+        }
+      ]
+    },
+    "ja_のは_225": {
+      "title": "～のは ＋ 名詞 ＋ ぐらいのものだ (〜no wa Noun gurai no mono da)",
+      "shortExplanation": "該当するものがそれ一つだけであることを表し、「〜なのは…くらいのものだ」「せいぜい…だけだ」という意味を表します。",
+      "longExplanation": "「～のは ＋ 名詞 ＋ ぐらいのものだ」（または「くらいのものだ」）は、ある状況において取り立てて言及するに値するもの、あるいは条件を満たすものがその名詞ただ一つしか存在しないことを強調する表現です。「唯一…だけだ」「せいぜい…程度にすぎない」という限定を表し、往々にして不満や過小評価、諦めの気持ちが込められます。",
+      "formation": "動詞普通形 / い形容詞 / な形容詞（＋な） ＋ のは ＋ 名詞 ＋ ぐらいのものだ（または くらいのものだ）",
+      "examples": [
+        {
+          "translation": "この退屈な小説を読む価値など、せいぜい時間つぶし程度のものである。"
+        },
+        {
+          "translation": "今夜の夕食の中で辛うじて満足できたのはピザくらいのものだった。"
+        },
+        {
+          "translation": "この駄作の映画をわざわざ観るなど、単なる時間の無駄遣いというものだ。"
+        },
+        {
+          "translation": "彼と議論を交わしたところで、余計なストレスがたまるくらいのものだ。"
+        }
+      ]
+    },
+    "ja_ばものを_226": {
+      "title": "～ば～ものを (～ba～mono o)",
+      "shortExplanation": "過去の事態に対して強い後悔や遺憾、不満の念を表し、「〜していればよかったのに」という意味を表します。",
+      "longExplanation": "「～ば～ものを」は、過去に生じた好ましくない結果に対して、「もし〜していれば好結果が得られたはずなのに、実際にはそうしなかった」という強い後悔、惜別の念、または相手への非難やもどかしさを表すN1文型です。反実仮想の形式をとり、事態の残念さを強く訴えかけます。",
+      "formation": "動詞仮定形（ば形） / い形容詞（ければ） / な形容詞・名詞（なら / であれば） ＋ 動詞た形（または普通形） ＋ ものを",
+      "examples": [
+        {
+          "translation": "もっと早く起きさえしていれば、遅刻などせずに済んだものを。"
+        },
+        {
+          "translation": "もう少し粘り強く頑張っていれば、無事に試験に合格できたものを。"
+        },
+        {
+          "translation": "手元に十分な資金がありさえすれば、憧れの新車を購入できたものを。"
+        },
+        {
+          "translation": "一緒に過ごす仲間がいさえすれば、楽しく遊んで過ごせたものを。"
+        }
+      ]
+    }
+  }
+}

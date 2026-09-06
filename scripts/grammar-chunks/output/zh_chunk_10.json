@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_又又_138": {
+      "title": "又……又…… (Vừa... lại vừa...)",
+      "shortExplanation": "Dùng để liên kết hai tính từ hoặc động từ cùng tính chất, biểu thị hai đặc điểm hoặc hành động cùng tồn tại đồng thời; 'vừa... lại vừa...'.",
+      "longExplanation": "Cấu trúc liên từ/phó từ sóng đôi '又……又……' dùng để nối hai đặc tính, trạng thái hoặc hành động cùng tồn tại ở một chủ thể. Hai từ hoặc cụm từ đi sau '又' thường thuộc cùng một từ loại (thường là tính từ hoặc động từ) và phải nhất quán về mặt sắc thái nghĩa (cùng mang ý tích cực khen ngợi hoặc cùng mang ý tiêu cực chê bai, ví dụ: '又大又甜' - vừa to vừa ngọt, '又累又渴' - vừa mệt vừa khát; không thể kết hợp một đặc điểm tốt với một đặc điểm xấu). Tương đương với 'vừa... vừa...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 又 + Tính từ 1 / Động từ 1 + 又 + Tính từ 2 / Động từ 2",
+      "examples": [
+        {
+          "translation": "Quả dưa hấu này vừa to lại vừa ngọt."
+        }
+      ]
+    },
+    "zh_V1着V2_139": {
+      "title": "Động từ 1 + 着 + (Tân ngữ 1 + ) Động từ 2 (Hành động 1 làm phương thức/trạng thái kèm theo cho hành động 2: vừa... vừa...)",
+      "shortExplanation": "Dùng hai động từ liên tiếp với '着' đặt sau động từ thứ nhất để biểu thị hành động hoặc trạng thái 1 đóng vai trò là phương thức, tư thế kèm theo khi tiến hành hành động chính 2.",
+      "longExplanation": "Trong cấu trúc liên động 'Động từ 1 + 着 + (Tân ngữ 1 + ) Động từ 2 (+ Tân ngữ 2)', trợ từ động thái '着' đi kèm hành động thứ nhất biểu thị trạng thái đang diễn ra hoặc tư thế, phương thức mà nhờ đó hành động thứ hai (hành động trọng tâm) được tiến hành. Ví dụ: '站着说话' (đứng nói chuyện), '听着音乐看书' (nghe nhạc đọc sách), '吃着苹果写作业' (vừa ăn táo vừa làm bài tập). Hành động 1 đóng vai trò làm trạng ngữ chỉ phương thức hoặc tình thái cho động từ chính 2.",
+      "formation": "Chủ ngữ + Động từ 1 + 着 + (Tân ngữ 1 + ) Động từ 2 + (Tân ngữ 2)",
+      "examples": [
+        {
+          "translation": "Em trai vừa ăn táo vừa làm bài tập."
+        }
+      ]
+    },
+    "zh_A了_140": {
+      "title": "Tính từ + 了 (Biến chuyển trạng thái: đã... rồi, trở nên...)",
+      "shortExplanation": "Trợ từ ngữ khí '了' đứng cuối cụm tính từ biểu thị trạng thái đã có sự thay đổi, phát sinh tình huống mới; 'đã... rồi', 'trở nên... hơn'.",
+      "longExplanation": "Khi trợ từ ngữ khí '了' đặt sau tính từ (hoặc cụm tính từ), nó biểu thị sự biến chuyển trạng thái (hiện tượng thay đổi, xuất hiện tình huống hoặc đặc điểm mới so với trước đó). Chẳng hạn: '天气冷了' (trời trở lạnh rồi - trước đó không lạnh), '身体好了' (sức khỏe đã tốt lên rồi), '好一些了' (đã đỡ hơn một chút rồi). '了' ở đây là trợ từ ngữ khí biểu thị biến hóa tình thế, không phải trợ từ động thái hoàn thành.",
+      "formation": "Chủ ngữ + (Phó từ mức độ + ) Tính từ + 了",
+      "examples": [
+        {
+          "translation": "Hôm qua uống thuốc cảm, bây giờ đã đỡ hơn một chút rồi."
+        }
+      ]
+    },
+    "zh_V了_141": {
+      "title": "Động từ / Cụm động từ + 了 (Biến chuyển tình huống mới: trước đây không... nay đã... rồi)",
+      "shortExplanation": "Trợ từ ngữ khí '了' đứng cuối câu biểu thị một tình huống hoặc khả năng mới xuất hiện (trước đây chưa từng hoặc không thể làm, nhưng nay thì đã làm/có thể làm được rồi).",
+      "longExplanation": "Trợ từ ngữ khí '了' đặt ở cuối câu vị ngữ động từ dùng để biểu thị sự thay đổi tình huống, sự ra đời của một trạng thái hoặc năng lực mới so với trước kia (trước đây không diễn ra, nhưng hiện tại bắt đầu diễn ra). Đặc biệt khi kết hợp với động từ năng nguyện (như 可以, 能, 会) hoặc mốc thời gian '现在' (bây giờ), câu mang nghĩa 'bây giờ đã có thể / đã bắt đầu... rồi' (ví dụ: '我可以穿漂亮的裙子了' - Bây giờ tôi đã có thể mặc váy đẹp rồi - ngụ ý trước đây vì lý do nào đó như béo hay trời lạnh mà không mặc được). Cần phân biệt với '了' biểu thị hoàn thành động tác.",
+      "formation": "(Thời gian + ) Chủ ngữ + (Động từ năng nguyện + ) Động từ + (Tân ngữ + ) 了",
+      "examples": [
+        {
+          "translation": "Bây giờ tôi đã có thể mặc váy đẹp rồi."
+        }
+      ]
+    },
+    "zh_越来越A了_142": {
+      "title": "越来越 + Tính từ + (了) (Càng ngày càng...)",
+      "shortExplanation": "Phó từ '越来越' đi trước tính từ (thường kèm '了' ở cuối câu) để biểu thị mức độ của tính chất, đặc điểm tăng dần theo thời gian; 'ngày càng...', 'càng ngày càng...'.",
+      "longExplanation": "Cấu trúc '越来越 + Tính từ + (了)' dùng để diễn tả mức độ phát triển lũy tiến của trạng thái hoặc tính chất theo thời gian, tương đương với 'càng ngày càng...', 'ngày càng...' trong tiếng Việt. Trợ từ ngữ khí '了' ở cuối câu thường được dùng kèm để chỉ rõ sự biến chuyển tăng dần của trạng thái. Lưu ý: sau '越来越' tuyệt đối không dùng thêm các phó từ chỉ mức độ khác như '很', '非常', '太', '十分' (không nói *越来越很帅).",
+      "formation": "Chủ ngữ + (Thời gian + ) 越来越 + Tính từ + (了)",
+      "examples": [
+        {
+          "translation": "Dạo này cậu càng ngày càng đẹp trai đấy."
+        }
+      ]
+    },
+    "zh_V得RESULT_143": {
+      "title": "Động từ + 得 + Bổ ngữ kết quả (Bổ ngữ khả năng khẳng định: có thể... được)",
+      "shortExplanation": "Dùng trợ từ '得' chen giữa động từ và bổ ngữ kết quả để tạo thành bổ ngữ khả năng dạng khẳng định, biểu thị có đủ điều kiện hoặc năng lực để đạt được kết quả của hành động.",
+      "longExplanation": "Bổ ngữ khả năng trong tiếng Trung được dùng để biểu thị trong điều kiện chủ quan hoặc khách quan nhất định, hành động có thể đạt được một kết quả nào đó hay không. Ở dạng khẳng định, trợ từ '得' được chèn vào giữa động từ và bổ ngữ kết quả: 'Động từ + 得 + Bổ ngữ kết quả' (ví dụ: 看得清楚 - nhìn rõ được, 听得懂 - nghe hiểu được, 做得完 - làm xong được). Khi mang tân ngữ, tân ngữ thường đặt sau bổ ngữ khả năng hoặc chuyển lên đầu câu làm chủ đề.",
+      "formation": "Chủ ngữ + Động từ + 得 + Bổ ngữ kết quả + (Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi có thể nhìn rõ chữ Hán đó."
+        }
+      ]
+    },
+    "zh_V得DIRECTION_144": {
+      "title": "Động từ + 得 + Bổ ngữ phương hướng (Bổ ngữ khả năng phương hướng: có thể... lên/vào/lại được)",
+      "shortExplanation": "Dùng trợ từ '得' chen giữa động từ và bổ ngữ phương hướng để biểu thị có khả năng thực hiện hành động theo một phương hướng nhất định.",
+      "longExplanation": "Khi trợ từ '得' được đặt giữa động từ và bổ ngữ phương hướng (đơn như 来, 去; hoặc phức như 上来, 下去, 出来, 进去...), cấu trúc này tạo thành bổ ngữ khả năng chỉ phương hướng dạng khẳng định, biểu thị chủ thể có đủ khả năng hoặc điều kiện để tiến hành động tác theo hướng đó (ví dụ: 上得来 - có thể lên đây được, 进得去 - có thể vào trong được, 爬得上去 - có thể leo lên được). Thường dùng trong câu hỏi nghi vấn với '吗' hoặc khẳng định năng lực.",
+      "formation": "Chủ ngữ + Động từ + 得 + Bổ ngữ phương hướng + (Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tòa nhà cao như vậy, bạn có leo lên được (đây) không?"
+        }
+      ]
+    },
+    "zh_V不result_145": {
+      "title": "Động từ + 不 + Bổ ngữ kết quả (Bổ ngữ khả năng phủ định: không thể... được)",
+      "shortExplanation": "Dùng phó từ phủ định '不' chèn vào giữa động từ và bổ ngữ kết quả để biểu thị không thể đạt được kết quả của hành động do thiếu điều kiện hoặc năng lực.",
+      "longExplanation": "Đây là dạng phủ định của bổ ngữ khả năng trong tiếng Trung. Bằng cách đặt '不' vào giữa động từ và bổ ngữ kết quả ('Động từ + 不 + Bổ ngữ kết quả'), cấu trúc biểu thị rằng vì thiếu điều kiện chủ quan hoặc khách quan mà không thể thực hiện hành động để dẫn đến kết quả mong muốn (ví dụ: 找不到 - không tìm thấy được, 看不清 - nhìn không rõ, 听不懂 - nghe không hiểu, 做不完 - làm không xong). Trong giao tiếp hàng ngày, dạng phủ định này được sử dụng phổ biến hơn nhiều so với dạng khẳng định 'Động từ + 得 + Bổ ngữ kết quả'.",
+      "formation": "Chủ ngữ + Động từ + 不 + Bổ ngữ kết quả + (Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi không tìm thấy quán ăn ngon nào cả."
+        }
+      ]
+    },
+    "zh_V不direction_146": {
+      "title": "Động từ + 不 + Bổ ngữ phương hướng (Bổ ngữ khả năng phủ định với phương hướng: không thể... lên/qua/vào được)",
+      "shortExplanation": "Dùng phó từ phủ định '不' chèn vào giữa động từ và bổ ngữ phương hướng để biểu thị không thể tiến hành hành động theo một phương hướng nhất định do gặp trở ngại hoặc thiếu sức lực.",
+      "longExplanation": "Cấu trúc 'Động từ + 不 + Bổ ngữ phương hướng' là dạng phủ định của bổ ngữ khả năng chỉ phương hướng. Khi có vật cản khách quan (như quá cao, quá hẹp, quá xa) hoặc năng lực chủ quan không đủ (như mệt mỏi, sợ hãi), người nói sử dụng cấu trúc này để diễn đạt rằng không thể di chuyển theo hướng đó được (ví dụ: 上不去 - không lên được, 进不去 - không vào được, 过不去 - không qua được, 回不来 - không về được). Tương đương với 'không... lên/vào/về... được' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 不 + Bổ ngữ phương hướng + (Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tòa nhà cao quá, tôi không leo lên nổi."
+        }
+      ]
+    },
+    "zh_N呢_147": {
+      "title": "Danh từ + 呢？ (Hỏi vị trí, tung tích: ...đâu rồi?)",
+      "shortExplanation": "Trợ từ ngữ khí '呢' đi trực tiếp sau danh từ hoặc đại từ trong câu hỏi tĩnh lược để hỏi về vị trí, tung tích của người hoặc vật ('...đâu rồi?').",
+      "longExplanation": "Khi trợ từ ngữ khí '呢' đi trực tiếp sau một danh từ, cụm danh từ hoặc đại từ mà không có động từ vị ngữ, nó tạo thành câu hỏi tĩnh lược đặc biệt dùng để truy tìm tung tích hoặc vị trí hiện tại của đối tượng đó, tương đương với '... ở đâu rồi?', '... đâu rồi?' trong tiếng Việt (ví dụ: '你的书呢？' = Sách của bạn đâu rồi?, '我妈妈呢？' = Mẹ tôi đâu rồi?). Nghĩa này tương đương với mẫu câu hỏi hoàn chỉnh '... 在哪儿？'.",
+      "formation": "Danh từ / Đại từ + 呢？",
+      "examples": [
+        {
+          "translation": "Sách của cậu đâu rồi?"
+        }
+      ]
+    },
+    "zh_刚V_148": {
+      "title": "刚 + Động từ (Phó từ: vừa mới...)",
+      "shortExplanation": "Phó từ '刚' đứng trước động từ để biểu thị hành động hoặc tình huống vừa mới xảy ra cách đây không lâu; 'vừa...', 'vừa mới...'.",
+      "longExplanation": "Phó từ '刚' (gāng) đặt ngay trước động từ hoặc cụm vị ngữ để chỉ hành động hoặc sự việc xảy ra trong khoảng thời gian rất gần với thời điểm nói hoặc thời điểm được đề cập (mang tính cảm nhận chủ quan của người nói rằng thời gian vừa trôi qua rất ngắn). Vì '刚' là phó từ, nó bắt buộc phải đứng sau chủ ngữ và đứng ngay trước động từ (không thể đứng trước chủ ngữ như danh từ chỉ thời gian '刚才'). Phía sau động từ thường kết hợp với các bổ ngữ kết quả như '完', '好', '到' (ví dụ: 刚做完 - vừa làm xong, 刚来 - vừa mới đến).",
+      "formation": "Chủ ngữ + 刚 + Động từ + (Bổ ngữ kết quả + Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Con trai vừa mới làm xong bài tập."
+        }
+      ]
+    },
+    "zh_刚才_149": {
+      "title": "刚才 (Danh từ thời gian: vừa nãy, lúc nãy, vừa rồi)",
+      "shortExplanation": "Danh từ chỉ thời gian '刚才' chỉ khoảng thời gian ngắn trước thời điểm nói ('vừa nãy', 'lúc nãy'); có thể đứng trước hoặc sau chủ ngữ.",
+      "longExplanation": "Khác với phó từ '刚', '刚才' (gāngcái) là một danh từ chỉ thời gian, dùng để chỉ một mốc hoặc khoảng thời gian khách quan vừa mới trôi qua cách đây vài phút hoặc trong chốc lát trước thời điểm hiện tại. Vì mang tính chất của danh từ thời gian, '刚才' có thể đứng trước chủ ngữ ở đầu câu ('刚才 + Chủ ngữ...') hoặc đứng sau chủ ngữ ('Chủ ngữ + 刚才...'). Nó cũng có thể kết hợp với phó từ chỉ trạng thái đang diễn ra như '在' ('刚才在做作业' - lúc nãy đang làm bài tập) hoặc đứng độc lập để trả lời câu hỏi về thời gian.",
+      "formation": "刚才 + Chủ ngữ + Vị ngữ / Chủ ngữ + 刚才 + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Vừa nãy con trai đang làm bài tập."
+        }
+      ]
+    },
+    "zh_V了DURATIONO_150": {
+      "title": "Động từ + 了 + Thời lượng + Tân ngữ (Bổ ngữ thời lượng: hành động đã diễn ra trong bao lâu và đã kết thúc)",
+      "shortExplanation": "Dùng bổ ngữ thời lượng đứng sau 'Động từ + 了' để biểu thị hành động đã kéo dài trong một khoảng thời gian nhất định trong quá khứ và hiện tại đã kết thúc.",
+      "longExplanation": "Khi muốn biểu thị khoảng thời gian mà một hành động diễn ra khi động từ có mang tân ngữ, tiếng Trung sử dụng cấu trúc bổ ngữ thời lượng: 'Động từ + 了 + Thời lượng + (的 + ) Tân ngữ'. Lưu ý quan trọng: vì cuối câu KHÔNG có trợ từ '了' thứ hai, cấu trúc này nhấn mạnh rằng hành động đó đã diễn ra trong khoảng thời gian đó và HIỆN TẠI ĐÃ HOÀN TOÀN KẾT THÚC, không còn tiếp diễn nữa (ví dụ: '我们坐了一个小时公共汽车' - Chúng tôi đã đi xe buýt suốt một tiếng đồng hồ, ngụ ý hiện tại đã xuống xe, không còn ngồi nữa). Cần phân biệt rõ với cấu trúc có thêm '了' ở cuối câu biểu thị hành động vẫn đang tiếp tục.",
+      "formation": "Chủ ngữ + Động từ + 了 + Thời lượng + (的 + ) Tân ngữ",
+      "examples": [
+        {
+          "translation": "Chúng tôi đã đi xe buýt suốt một tiếng đồng hồ."
+        }
+      ]
+    },
+    "zh_V了DURATIONO了_151": {
+      "title": "Động từ + 了 + Thời lượng + Tân ngữ + 了 (Đã làm gì được bao lâu rồi và vẫn đang tiếp tục)",
+      "shortExplanation": "Dùng hai chữ '了' (một sau động từ, một ở cuối câu) kết hợp với bổ ngữ thời lượng để biểu thị hành động đã kéo dài được một khoảng thời gian và hiện tại vẫn đang tiếp tục diễn ra.",
+      "longExplanation": "Khác với cấu trúc chỉ có một chữ '了' sau động từ, mẫu câu 'Động từ + 了 + Thời lượng + Tân ngữ + 了' sử dụng đồng thời cả trợ từ động thái '了' (sau động từ) và trợ từ ngữ khí '了' (cuối câu). Sự xuất hiện của '了' cuối câu đóng vai trò then chốt: nó biểu thị sự kéo dài liên tục của hành động tính từ quá khứ cho đến thời điểm nói và HIỆN TẠI VẪN ĐANG TIẾP TỤC, trong tương lai có thể còn tiếp diễn nữa (ví dụ: '我学习了一年汉语了' = Tôi đã học tiếng Trung được một năm rồi - ngụ ý hiện tại vẫn đang theo học, chưa dừng lại). Tương đương với thì hiện tại hoàn thành tiếp diễn trong ngữ pháp.",
+      "formation": "Chủ ngữ + Động từ + 了 + Thời lượng + (的 + ) Tân ngữ + 了",
+      "examples": [
+        {
+          "translation": "Tôi đã học tiếng Trung được một năm rồi (và hiện vẫn đang học tiếp)."
+        }
+      ]
+    },
+    "zh_对N感兴趣有兴趣_152": {
+      "title": "对 + Danh từ + 感兴趣 / 有兴趣 (Có hứng thú / yêu thích đối với...)",
+      "shortExplanation": "Dùng giới từ '对' để dẫn ra đối tượng mà chủ ngữ nảy sinh hứng thú, sở thích hoặc sự quan tâm; 'có hứng thú với...', 'quan tâm đến...'.",
+      "longExplanation": "Cấu trúc giới từ '对 + Danh từ + 感兴趣 / 有兴趣' dùng để biểu thị sự quan tâm, niềm say mê hoặc sự thích thú của người nói đối với một lĩnh vực, sự vật, con người hoặc hoạt động nào đó. Trong đó, '对' là giới từ mang nghĩa 'đối với/với', đi kèm danh từ làm trạng ngữ đứng trước cụm '感兴趣' (cảm thấy hứng thú) hoặc '有兴趣' (có hứng thú). Nếu muốn biểu thị mức độ hứng thú (rất thích, cực kỳ quan tâm), phó từ mức độ (như 很, 非常, 极, 不太) phải đặt TRƯỚC '感兴趣' hoặc '有兴趣', không đặt trước '对' (ví dụ: 对中国电影很感兴趣; dạng phủ định là '对……不感兴趣 / 没有兴趣').",
+      "formation": "Chủ ngữ + 对 + Danh từ (Đối tượng) + (Phó từ mức độ + ) 感兴趣 / 有兴趣",
+      "examples": [
+        {
+          "translation": "Họ có hứng thú với phim điện ảnh Trung Quốc."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_又又_138": {
+      "title": "又……又……（〜でもあり〜でもある・また〜でまた〜）",
+      "shortExplanation": "同じ性質や動作が同時に並存していることを表し、「〜でもあり〜でもある」「また〜でまた〜」という意味を表します。",
+      "longExplanation": "「又……又……」は、同一の主語が持つ2つの性質、状態、または動作が同時に存在することを表す並列の呼応表現です。「又」の後には通常、同じ品詞（形容詞または動詞）が続き、かつ評価やニュアンス（良い意味同士、あるいは悪い意味同士）が一致している必要があります（例：「又大又甜」＝大きくて甘い、「又累又渴」＝疲れていて喉も渇いた）。肯定的な特徴と否定的な特徴を混在させて使うことはできません。日本語の「〜でもあり〜でもある」「〜だし〜でもある」に相当します。",
+      "formation": "主語 ＋ 又 ＋ 形容詞1 / 動詞1 ＋ 又 ＋ 形容詞2 / 動詞2",
+      "examples": [
+        {
+          "translation": "このスイカは大きくて甘いです。"
+        }
+      ]
+    },
+    "zh_V1着V2_139": {
+      "title": "動詞1 ＋ 着 ＋ （目的語1 ＋ ）動詞2（動作1を付帯状況・様態として動作2を行う：〜しながら〜する）",
+      "shortExplanation": "動詞1の後にアスペクト助詞「着」を置き、動作1の持続状態を付帯状況（姿勢・手段・背景）として主たる動作2を行うことを表します。",
+      "longExplanation": "「動詞1 ＋ 着 ＋ （目的語1 ＋ ）動詞2」は、2つの動詞が連続する連動文の一種です。動作1に「着」を付加してその動作・状態を持続させ、それが動作2（主要な動作）の付帯状況（どのような姿勢・手段・状態で行うか）を表す連用修飾語（様態副詞語）として機能します（例：「站着说」＝立ったまま話す、「听着音乐做作业」＝音楽を聴きながら宿題をする、「吃着苹果写作业」＝リンゴを食べながら宿題をする）。日本語の「〜しながら〜する」「〜した状態で〜する」に相当します。",
+      "formation": "主語 ＋ 動詞1 ＋ 着 ＋ （目的語1 ＋ ）動詞2 ＋ （目的語2）",
+      "examples": [
+        {
+          "translation": "弟はリンゴを食べながら宿題をしています。"
+        }
+      ]
+    },
+    "zh_A了_140": {
+      "title": "形容詞 ＋ 了（事態の変化：〜になった・〜くなってきた）",
+      "shortExplanation": "形容詞の後に語気助詞「了」を置き、以前の状態から新たな状態へと変化したこと（事態の変化）を表します。",
+      "longExplanation": "形容詞の後に文末の語気助詞「了」を置くことで、「以前とは異なり、新たな状態が生じた」「〜になった」という状態の変化を表します（例：「天气冷了」＝天気が寒くなった、「身体好一些了」＝体調が少し良くなった）。ここでの「了」は完了を表すアスペクト助詞ではなく、状況や状態の推移・変化を表す語気助詞です。日本語の「〜になった」「〜くなってきた」に相当します。",
+      "formation": "主語 ＋ （程度副詞 ＋ ）形容詞 ＋ 了",
+      "examples": [
+        {
+          "translation": "昨日風邪薬を飲んだので、今は少し良くなりました。"
+        }
+      ]
+    },
+    "zh_V了_141": {
+      "title": "動詞句 ＋ 了（事態の変化：以前は〜しなかったが今は〜するようになった）",
+      "shortExplanation": "文末の語気助詞「了」を用いて、以前とは状況が変わり、新たにその動作を行うようになった（または行えるようになった）という事態の変化を表します。",
+      "longExplanation": "動詞述語文の文末に置かれる語気助詞「了」は、「以前はその動作をしなかった（あるいはできなかった）が、状況が変わって現在はするようになった・できるようになった」という新事態の発生や変化を表します。特に「现在（いま）」や能願動詞（可以、能、会など）とともに用いられると、「今では〜できるようになった」「もう〜するようになった」という変化のニュアンスが強調されます（例：「我可以穿漂亮的裙子了」＝以前は着られなかったが、今は綺麗なスカートが着られるようになった）。動作の完了を表す助詞「了」と区別されます。",
+      "formation": "（時間 ＋ ）主語 ＋ （助動詞 ＋ ）動詞 ＋ （目的語 ＋ ）了",
+      "examples": [
+        {
+          "translation": "今では綺麗なスカートを着られるようになりました。"
+        }
+      ]
+    },
+    "zh_越来越A了_142": {
+      "title": "越来越 ＋ 形容詞 ＋ （了）（ますます〜になる・だんだん〜になる）",
+      "shortExplanation": "副詞「越来越」を形容詞の前に置き（文末に「了」を伴うことが多い）、時間の経過とともにその性質や程度の度合いが増していくことを表します。",
+      "longExplanation": "「越来越 ＋ 形容詞 ＋ （了）」は、時間の経過に伴って状態や性質の程度が次第に深まり、高まっていく変化（逓増・累加）を表す表現です。文末の語気助詞「了」は事態の変化を強調します。注意点として、「越来越」自体が程度の高まりを表すため、「很」「非常」「太」などの程度副詞を重ねて用いることはできません（誤り例：*越来越很帅）。日本語の「ますます〜になる」「だんだん〜になる」に相当します。",
+      "formation": "主語 ＋ （時間 ＋ ）越来越 ＋ 形容詞 ＋ （了）",
+      "examples": [
+        {
+          "translation": "最近あなたはますますかっこよくなりましたね。"
+        }
+      ]
+    },
+    "zh_V得RESULT_143": {
+      "title": "動詞 ＋ 得 ＋ 結果補語（可能補語の肯定形：〜して…できる）",
+      "shortExplanation": "動詞と結果補語の間に構造助詞「得」を挟み、客観的または主観的な条件によってその結果を達成できることを表す可能補語の肯定形です。",
+      "longExplanation": "可能補語は、主観的または客観的な条件・能力により、動作がある結果に至ることができるかどうかを表す中国語独特の文法形式です。その肯定形は「動詞 ＋ 得 ＋ 結果補語」の形を取り、「〜して（結果に至ることが）できる」「〜しきれる」という意味を表します（例：「看得清楚」＝はっきり見える、「听得懂」＝聞いて理解できる、「做得到」＝やり遂げられる）。目的語を伴う場合は、補語の後ろに置くか、文頭に話題化して置きます。",
+      "formation": "主語 ＋ 動詞 ＋ 得 ＋ 結果補語 ＋ （目的語）",
+      "examples": [
+        {
+          "translation": "私はあの漢字がはっきりと見えます。"
+        }
+      ]
+    },
+    "zh_V得DIRECTION_144": {
+      "title": "動詞 ＋ 得 ＋ 方向補語（可能補語肯定形：〜して上がって来られる・入っていけるなど）",
+      "shortExplanation": "動詞と方向補語の間に助詞「得」を挟み、ある方向へ動作を行って移動できる能力や条件があることを表します。",
+      "longExplanation": "動詞と方向補語（「来」「去」などの単純方向補語、または「上来」「进去」などの複合方向補語）の間に「得」を挟むことで、「ある方向へ向かってその動作を行うことができる」という可能補語の肯定形式を構成します（例：「上得来」＝上がって来られる、「进得去」＝入っていける、「回得来」＝戻って来られる）。ビルが高くて登れるか尋ねる際や、ある空間に入り込めるかなどを述べる場面で多用されます。",
+      "formation": "主語 ＋ 動詞 ＋ 得 ＋ 方向補語 ＋ （目的語）",
+      "examples": [
+        {
+          "translation": "建物がこんなに高いですが、上がって来られますか？"
+        }
+      ]
+    },
+    "zh_V不result_145": {
+      "title": "動詞 ＋ 不 ＋ 結果補語（可能補語の否定形：〜して…できない・〜しきれない）",
+      "shortExplanation": "動詞と結果補語の間に否定副詞「不」を挟み、能力や条件が伴わないためにその動作結果を達成できないことを表します。",
+      "longExplanation": "「動詞 ＋ 不 ＋ 結果補語」は可能補語の否定形式です。能力不足や客観的条件の制約により、「動作を行ってもその結果に至ることができない」「〜しきれない」という不可能の意を表します（例：「找不到」＝見つけられない、「听不懂」＝聞いて理解できない、「看不清」＝はっきり見えない、「做不完」＝やり切れない）。中国語の日常会話において、可能補語は肯定形よりもこの否定形の方がはるかに高い頻度で使用されます。",
+      "formation": "主語 ＋ 動詞 ＋ 不 ＋ 結果補語 ＋ （目的語）",
+      "examples": [
+        {
+          "translation": "私は良いレストランが見つけられません。"
+        }
+      ]
+    },
+    "zh_V不direction_146": {
+      "title": "動詞 ＋ 不 ＋ 方向補語（可能補語否定形：〜して上がっていけない・入っていけないなど）",
+      "shortExplanation": "動詞と方向補語の間に否定副詞「不」を挟み、障害や体力不足などの理由である方向へ移動・動作することができないことを表します。",
+      "longExplanation": "「動詞 ＋ 不 ＋ 方向補語」は、移動の方向を表す可能補語の否定形式です。客観的な障害（高すぎる、狭すぎる、閉まっているなど）や主観的な制限（疲労、体力不足、恐怖など）により、その方向へ向かう動作が遂行できないことを表します（例：「上不去」＝上がっていけない、「进不去」＝入っていけない、「过不去」＝渡っていけない、「回不来」＝帰って来られない）。日本語の「〜していけない」「〜して来られない」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 不 ＋ 方向補語 ＋ （目的語）",
+      "examples": [
+        {
+          "translation": "建物が高すぎて、私は上がっていけません。"
+        }
+      ]
+    },
+    "zh_N呢_147": {
+      "title": "名詞 ＋ 呢？（所在・所在地の問いかけ：〜はどこですか？・〜は？）",
+      "shortExplanation": "名詞や代名詞の直後に語気助詞「呢」を添えて述語を省略した疑問文を作り、人や物の所在（どこにあるか・どこにいるか）を尋ねます。",
+      "longExplanation": "名詞や代名詞の直後に語気助詞「呢」を付加する省略疑問文の形式で、人や物の行方・居場所を尋ねる用法です。「〜在哪儿？（〜はどこにありますか/いますか）」の簡潔な口語表現として非常に頻繁に使われます（例：「你的书呢？」＝あなたの本はどこ？、「小王呢？」＝王さんはどこ？）。日本語の「〜は？」「〜はどこですか？」に相当します。",
+      "formation": "名詞 / 代名詞 ＋ 呢？",
+      "examples": [
+        {
+          "translation": "あなたの本はどこですか？"
+        }
+      ]
+    },
+    "zh_刚V_148": {
+      "title": "刚 ＋ 動詞（副詞：〜したばかり・たった今〜した）",
+      "shortExplanation": "副詞「刚」を動詞の前に置き、その動作や出来事が起きてから間もないこと（たった今〜した、〜したばかり）を表します。",
+      "longExplanation": "「刚」は動詞の直前に置かれる副詞で、動作や事態が起きてから時間があまり経過していないこと（話し手の主観として時間が短いと感じていること）を表します。副詞であるため、必ず主語の後ろ・動詞の直前に置かれ、文頭（主語の前）に置くことはできません（時間名詞「刚才」との文法上の大きな相違点）。動詞の後ろに「完」「好」「到」などの結果補語を伴って「〜し終わったばかりだ」と述べる形が典型例です（例：「刚做完」＝終えたばかり、「刚来」＝来たばかり）。日本語の「〜したばかり」「ちょうど〜したところ」に相当します。",
+      "formation": "主語 ＋ 刚 ＋ 動詞 ＋ （結果補語 ＋ 目的語）",
+      "examples": [
+        {
+          "translation": "息子は宿題を終えたばかりです。"
+        }
+      ]
+    },
+    "zh_刚才_149": {
+      "title": "刚才（時間名詞：さっき・先ほど）",
+      "shortExplanation": "時間名詞「刚才」は発話時点の直前の客観的な時間（さっき、先ほど）を指し、主語の前にも後ろにも置くことができます。",
+      "longExplanation": "副詞の「刚」とは異なり、「刚才」は客観的な直前の時間を指す「時間名詞」です。話している時点からほんの少し前の過去（数分前から直前）を指し、日本語の「さっき」「先ほど」に相当します。時間名詞であるため文法的な位置の自由度が高く、主語の前（文頭）にも主語の後ろにも置くことができます（例：「刚才他在做作业」も「他刚才在做作业」も可）。また、「在＋動詞」と共起して「さっき〜していたところだった」と過去の進行状態を表すことも可能です。",
+      "formation": "刚才 ＋ 主語 ＋ 述語 / 主語 ＋ 刚才 ＋ 述語",
+      "examples": [
+        {
+          "translation": "さっき息子は宿題をしていました。"
+        }
+      ]
+    },
+    "zh_V了DURATIONO_150": {
+      "title": "動詞 ＋ 了 ＋ 時量補語 ＋ 目的語（時量補語：〜の間…した・過去の動作の継続時間と終了）",
+      "shortExplanation": "動詞の直後にアスペクト助詞「了」と動作の継続時間（時量補語）を置き、動作が一定時間継続し、現在はすでに終了したことを表します。",
+      "longExplanation": "「動詞 ＋ 了 ＋ 時量補語 ＋ （的 ＋ ）目的語」は、ある動作がどのくらいの時間続いたか（動作の継続時間）を表す時量補語の基本構文です。非常に重要な文法ポイントとして、文末に2つ目の「了」がない場合、その動作は「過去にその時間行われ、現在はすでに終了している（今も続いているわけではない）」ことを明確に表します（例：「我们坐了一个小时公共汽车」＝私たちはバスに1時間乗った。現在はすでに降りている）。文末にも「了」を伴って「今もなお継続中である」ことを表す構文との区別に注意が必要です。",
+      "formation": "主語 ＋ 動詞 ＋ 了 ＋ 時量補語 ＋ （的 ＋ ）目的語",
+      "examples": [
+        {
+          "translation": "私たちはバスに1時間乗りました。"
+        }
+      ]
+    },
+    "zh_V了DURATIONO了_151": {
+      "title": "動詞 ＋ 了 ＋ 時量補語 ＋ 目的語 ＋ 了（動作の継続：〜の間…していて今も継続中である）",
+      "shortExplanation": "動詞の後ろと文末の双方に「了」を置くことで、動作が過去からその期間継続しており、現在もなお進行・継続中であることを表します。",
+      "longExplanation": "「動詞 ＋ 了 ＋ 時量補語 ＋ （的 ＋ ）目的語 ＋ 了」は、動詞の直後のアスペクト助詞「了」と文末の語気助詞「了」が呼応する重要構文です。文末の「了」が存在することにより、「その動作が過去から始まり、その時間の間ずっと継続しており、話している現在もなお続いていて今後も継続する見込みである」ことを明確に表します（例：「我学习了一年汉语了」＝私は中国語を勉強して1年になり、今も勉強を続けている）。文末に「了」がない「すでに動作が終了した」構文との対比は、中国語検定やHSKでも最頻出の文法事項です。",
+      "formation": "主語 ＋ 動詞 ＋ 了 ＋ 時量補語 ＋ （的 ＋ ）目的語 ＋ 了",
+      "examples": [
+        {
+          "translation": "私は中国語を1年間勉強しており、（今も）勉強を続けています。"
+        }
+      ]
+    },
+    "zh_对N感兴趣有兴趣_152": {
+      "title": "对 ＋ 名詞 ＋ 感兴趣 / 有兴趣（介詞構文：〜に興味がある・関心がある）",
+      "shortExplanation": "介詞（前置詞）「对」を用いて対象を導き、「〜に対して興味・関心を持っている」という意味を表します。",
+      "longExplanation": "「对 ＋ 名詞 ＋ 感兴趣 / 有兴趣」は、ある分野、事柄、活動に対して関心や愛好の気持ちを抱いていることを表す基本構文です。介詞「对」が興味の対象（名詞句）を導いて前置修飾語（状語）となり、「感兴趣（興味を感じる）」または「有兴趣（興味がある）」を修飾します。程度の高さを表す副詞（很、非常、特别など）は「对」の前ではなく、必ず「感兴趣 / 有兴趣」の直前に置かれます（例：「对中国电影很感兴趣」）。否定形は「对……不感兴趣」または「对……没有兴趣」となります。日本語の「〜に興味がある」「〜に関心がある」に相当します。",
+      "formation": "主語 ＋ 对 ＋ 名詞（対象） ＋ （程度副詞 ＋ ）感兴趣 / 有兴趣",
+      "examples": [
+        {
+          "translation": "彼らは中国映画に興味を持っています。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_又又_138": {
+      "title": "又……又…… (~하기도 하고 ~하기도 하다, 또 ~하고 또 ~하다)",
+      "shortExplanation": "두 가지 성질이나 동작이 동시에 병존함을 나타내며, '~하기도 하고 ~하기도 하다', '~하고 또 ~하다'의 의미를 나타냅니다.",
+      "longExplanation": "‘又……又……’는 한 주체에 두 가지 성질, 상태, 혹은 동작이 동시에 존재함을 나타내는 병렬 호응 구조입니다. ‘又’ 뒤에는 주로 같은 품사(형용사 또는 동사)가 오며, 감정적 색채나 뉘앙스(긍정적인 것끼리 또는 부정적인 것끼리)가 일치해야 합니다(예: ‘又大又甜’ - 크고도 달다, ‘又累又渴’ - 피곤하기도 하고 목이 마르기도 하다). 긍정적인 의미와 부정적인 의미를 섞어서 쓸 수 없습니다. 한국어의 '~하기도 하고 ~하기도 하다', '~하면서 또 ~하다'에 해당합니다.",
+      "formation": "주어 + 又 + 형용사1 / 동사1 + 又 + 형용사2 / 동사2",
+      "examples": [
+        {
+          "translation": "이 수박은 크기도 하고 달기도 합니다."
+        }
+      ]
+    },
+    "zh_V1着V2_139": {
+      "title": "동사1 + 着 + (목적어1 + ) 동사2 (동작1을 부대상황/방식으로 하여 동작2를 진행함: ~한 채로 ~하다, ~하면서 ~하다)",
+      "shortExplanation": "첫 번째 동사 뒤에 동태조사 '着'을 붙여, 동작1의 지속 상태를 수단·자세·부대상황으로 삼아 주된 동작2를 행함을 나타냅니다.",
+      "longExplanation": "‘동사1 + 着 + (목적어1 + ) 동사2’는 연동문의 한 형태로, 동사1 뒤에 동태조사 ‘着’을 결합하여 첫 번째 동작이나 상태가 지속되는 가운데 두 번째 주동작(동사2)을 수행함을 나타냅니다. 즉 동작1이 동작2의 방식, 자세, 부대상황을 설명하는 상황어 역할을 합니다(예: ‘站着说话’ - 서서 말하다, ‘听着音乐看书’ - 음악을 들으며 책을 읽다, ‘吃着苹果写作业’ - 사과를 먹으면서 숙제를 하다). 한국어의 '~한 채로 ~하다', '~하면서 ~하다'에 대응합니다.",
+      "formation": "주어 + 동사1 + 着 + (목적어1 + ) 동사2 + (목적어2)",
+      "examples": [
+        {
+          "translation": "남동생은 사과를 먹으면서 숙제를 하고 있습니다."
+        }
+      ]
+    },
+    "zh_A了_140": {
+      "title": "형용사 + 了 (상태의 변화: ~해졌다, ~하게 되었다)",
+      "shortExplanation": "형용사 뒤에 어기조사 '了'를 사용하여 이전 상태와 달라진 새로운 상태나 변화가 발생했음을 나타냅니다.",
+      "longExplanation": "형용사(또는 정도부사가 붙은 형용사구) 뒤에 어기조사 '了'가 오면, 과거의 상태에서 새로운 상태로 바뀌었음(사태의 변화)을 나타냅니다. 예를 들어 ‘天气冷了’(날씨가 추워졌다 - 이전엔 춥지 않았음), ‘身体好一些了’(몸이 좀 나아졌다)처럼 이전과 비교하여 어떤 성질이나 상태의 전환을 표현합니다. 이는 동작의 완료가 아닌 사태나 국면의 변화를 나타내는 어기조사의 대표적 용법입니다. 한국어의 '~해졌다', '~하게 되었다'에 대응합니다.",
+      "formation": "주어 + (정도부사 + ) 형용사 + 了",
+      "examples": [
+        {
+          "translation": "어제 감기약을 먹어서 지금은 좀 나아졌습니다."
+        }
+      ]
+    },
+    "zh_V了_141": {
+      "title": "동사구 + 了 (상황의 변화: 이전에는 하지 않았거나 못했으나 이제는 ~하게 되다)",
+      "shortExplanation": "문장 끝의 어기조사 '了'를 사용하여 이전과 상황이 달라져 이제 그 동작을 하게 되었거나 할 수 있게 되었음을 나타냅니다.",
+      "longExplanation": "동사 술어문 문말에 쓰이는 어기조사 ‘了’는 이전 상태에서 벗어나 새로운 동작이나 상황이 개시되었음(사태의 변화)을 나타냅니다. 즉 ‘이전에는 하지 않았거나 할 수 없었지만, 지금은 하게 되었다/할 수 있게 되었다’는 의미를 갖습니다. 특히 ‘现在(지금)’이나 능원동사(可以, 能, 会 등)와 함께 쓰여 ‘이제는 ~할 수 있게 되었다’, ‘이제 ~한다’라는 변화를 뚜렷하게 전달합니다(예: ‘现在我可以穿漂亮的裙子了’ - 전에는 입지 못했지만 이제는 예쁜 치마를 입을 수 있게 되었다). 동작의 완료를 나타내는 동태조사 ‘了’와 구별됩니다.",
+      "formation": "(시간 + ) 주어 + (능원동사 + ) 동사 + (목적어 + ) 了",
+      "examples": [
+        {
+          "translation": "이제 저는 예쁜 치마를 입을 수 있게 되었습니다."
+        }
+      ]
+    },
+    "zh_越来越A了_142": {
+      "title": "越来越 + 형용사 + (了) (점점 더 ~해지다, 갈수록 ~하다)",
+      "shortExplanation": "부사 '越来越'를 형용사 앞에 사용하여 시간이 흐름에 따라 그 성질이나 정도가 점차 심화됨을 나타냅니다.",
+      "longExplanation": "‘越来越 + 형용사 + (了)’ 구조는 시간의 경과에 따라 상태나 성질의 정도가 점진적으로 심화되거나 고조됨을 나타내는 구문입니다. 문장 끝의 어기조사 ‘了’는 상태의 변화를 더욱 명확히 해 줍니다. 주의할 점은 ‘越来越’ 자체가 이미 점증적인 정도를 포함하고 있으므로 뒤에 ‘很’, ‘非常’, ‘太’와 같은 정도부사를 중복해서 쓸 수 없다는 것입니다(오문: *越来越很帅). 한국어의 '갈수록 ~하다', '점점 더 ~해지다'에 해당합니다.",
+      "formation": "주어 + (시간 + ) 越来越 + 형용사 + (了)",
+      "examples": [
+        {
+          "translation": "너 요즘 점점 더 잘생겨지는구나."
+        }
+      ]
+    },
+    "zh_V得RESULT_143": {
+      "title": "동사 + 得 + 결과보어 (가능보어 긍정형: ~해서 …할 수 있다)",
+      "shortExplanation": "동사와 결과보어 사이에 구조조사 '得'를 넣어, 조건이나 능력상 동작을 통해 해당 결과를 실현할 수 있음을 나타내는 가능보어의 긍정형입니다.",
+      "longExplanation": "중국어의 가능보어는 주관적 능력이나 객관적 조건에 따라 동작이 어떤 결과에 도달할 수 있는지 여부를 나타냅니다. 긍정형은 동사와 결과보어 사이에 '得'를 삽입하여 ‘동사 + 得 + 결과보어’ 형태를 취하며, ‘~해서 (결과를) 이룰 수 있다’는 뜻을 가집니다 (예: ‘看得清楚’ - 똑똑히 볼 수 있다, ‘听得懂’ - 알아들을 수 있다, ‘做得到’ - 해낼 수 있다). 목적어가 있을 때는 보어 뒤에 두거나 문장 앞으로 화제화하여 놓습니다.",
+      "formation": "주어 + 동사 + 得 + 결과보어 + (목적어)",
+      "examples": [
+        {
+          "translation": "저는 저 한자가 또렷하게 잘 보입니다."
+        }
+      ]
+    },
+    "zh_V得DIRECTION_144": {
+      "title": "동사 + 得 + 방향보어 (방향 가능보어 긍정형: ~하여 올라올/들어갈 수 있다)",
+      "shortExplanation": "동사와 방향보어 사이에 '得'를 넣어, 어떤 방향으로 동작을 진행하여 이동할 수 있는 능력이나 조건이 됨을 나타냅니다.",
+      "longExplanation": "동사와 방향보어(단순방향보어 ‘来/去’ 또는 복합방향보어 ‘上来/进去’ 등) 사이에 구조조사 ‘得’를 결합하면 방향을 나타내는 가능보어 긍정형이 됩니다. 주관적 체력이나 객관적 환경이 허락되어 해당 방향으로 이동하는 동작을 해낼 수 있음을 나타냅니다(예: ‘上得来’ - 올라올 수 있다, ‘进得去’ - 들어갈 수 있다, ‘爬得上去’ - 기어올라갈 수 있다). 의문조사 ‘吗’와 결합하여 가능 여부를 묻는 의문문으로도 자주 사용됩니다.",
+      "formation": "주어 + 동사 + 得 + 방향보어 + (목적어)",
+      "examples": [
+        {
+          "translation": "건물이 이렇게 높은데, 당신은 올라올 수 있겠어요?"
+        }
+      ]
+    },
+    "zh_V不result_145": {
+      "title": "동사 + 不 + 결과보어 (가능보어 부정형: ~해서 …할 수 없다)",
+      "shortExplanation": "동사와 결과보어 사이에 부정부사 '不'를 넣어, 능력이나 상황의 제약으로 인해 그 결과에 도달할 수 없음을 나타냅니다.",
+      "longExplanation": "‘동사 + 不 + 결과보어’는 가능보어의 부정 형식입니다. 주관적 능력이나 객관적 조건이 미치지 못하여 동작을 해도 그 결과를 실현할 수 없을 때 사용됩니다(예: ‘找不到’ - 찾을 수 없다/못 찾겠다, ‘看不清’ - 잘 보이지 않는다, ‘听不懂’ - 알아듣지 못한다, ‘做不完’ - 다 끝낼 수 없다). 일상 회화에서 가능보어는 긍정형보다 이 부정형이 훨씬 더 빈번하게 쓰입니다.",
+      "formation": "주어 + 동사 + 不 + 결과보어 + (목적어)",
+      "examples": [
+        {
+          "translation": "저는 좋은 식당을 찾을 수가 없습니다."
+        }
+      ]
+    },
+    "zh_V不direction_146": {
+      "title": "동사 + 不 + 방향보어 (방향 가능보어 부정형: ~하여 올라갈/들어갈 수 없다)",
+      "shortExplanation": "동사와 방향보어 사이에 부정부사 '不'를 결합하여, 장애나 체력적 한계 등으로 인해 해당 방향으로 이동할 수 없음을 나타냅니다.",
+      "longExplanation": "‘동사 + 不 + 방향보어’는 방향보어를 사용한 가능보어의 부정 형식입니다. 공간적 장애(너무 높음, 좁음 등)나 주관적 신체 조건(피로, 힘 부족 등)으로 인해 특정 방향으로 향하는 이동 동작을 완수할 수 없음을 나타냅니다(예: ‘上不去’ - 올라갈 수 없다/못 올라가겠다, ‘进不去’ - 들어갈 수 없다, ‘过不去’ - 건너갈 수 없다, ‘回不来’ - 돌아올 수 없다). 한국어의 '~하여 갈/올 수 없다'에 해당합니다.",
+      "formation": "주어 + 동사 + 不 + 방향보어 + (목적어)",
+      "examples": [
+        {
+          "translation": "건물이 너무 높아서 저는 올라갈 수가 없습니다."
+        }
+      ]
+    },
+    "zh_N呢_147": {
+      "title": "명사 + 呢? (소재·행방의 질문: ~은/는 어디에 있나요?, ~은/는요?)",
+      "shortExplanation": "명사나 대명사 바로 뒤에 어기조사 '呢'를 붙여 술어를 생략한 의문문을 만들어 사람이나 사물의 행방과 위치를 묻습니다.",
+      "longExplanation": "명사 또는 대명사 뒤에 어기조사 ‘呢’를 직접 붙인 생략 의문문 구조로, 어떤 대상의 현재 소재나 위치를 묻는 표현입니다. 이는 ‘~在哪儿？(~은 어디에 있습니까?)’와 같은 의미를 갖는 간결하고 친근한 구어체 표현입니다(예: ‘你的书呢？’ - 네 책은 어디 있니?, ‘爸爸呢？’ - 아빠는 어디 계셔?). 한국어의 '~은/는 어디 있나요?', '~은/는요?'에 대응합니다.",
+      "formation": "명사 / 대명사 + 呢?",
+      "examples": [
+        {
+          "translation": "너의 책은 어디에 있니?"
+        }
+      ]
+    },
+    "zh_刚V_148": {
+      "title": "刚 + 동사 (부사: 방금 ~했다, 막 ~한 참이다)",
+      "shortExplanation": "부사 '刚'을 동사 앞에 두어, 어떤 동작이나 사건이 일어난 지 얼마 되지 않았음(방금, 막)을 나타냅니다.",
+      "longExplanation": "‘刚’은 동사 바로 앞에 쓰이는 시간 부사로, 동작이나 사건이 일어난 시점이 말하는 시점(또는 기준 시점)으로부터 얼마 지나지 않았음(화자의 주관적 느낌상 시간이 매우 짧음)을 나타냅니다. 부사이므로 반드시 주어 뒤, 동사 바로 앞에 와야 하며 문장 맨 앞(주어 앞)에는 올 수 없습니다(시간명사인 ‘刚才’와의 핵심적 차이점). 동사 뒤에 ‘完’, ‘好’ 등의 결과보어와 자주 결합하여 ‘막 ~을 끝마쳤다’는 의미로 쓰입니다(예: ‘刚做完’ - 막 다 했다, ‘刚到’ - 방금 도착했다). 한국어의 '방금 ~했다', '막 ~했다'에 대응합니다.",
+      "formation": "주어 + 刚 + 동사 + (결과보어 + 목적어)",
+      "examples": [
+        {
+          "translation": "아들이 방금 숙제를 다 끝냈습니다."
+        }
+      ]
+    },
+    "zh_刚才_149": {
+      "title": "刚才 (시간명사: 방금, 아까, 조금 전)",
+      "shortExplanation": "시간명사 '刚才'는 말하는 시점 직전의 짧은 시간(아까, 조금 전)을 가리키며, 주어 앞이나 뒤에 모두 놓일 수 있습니다.",
+      "longExplanation": "부사인 ‘刚’과 달리 ‘刚才’는 품사가 ‘시간명사’입니다. 말하는 시점으로부터 얼마 떨어지지 않은 객관적인 직전의 과거 시점(몇 분 전, 조금 전)을 가리키며, 한국어의 ‘아까’, ‘조금 전’, ‘방금’에 해당합니다. 시간명사이기 때문에 문장 내 위치가 자유로워 주어 앞(문두)이나 주어 뒤에 모두 위치할 수 있습니다(예: ‘刚才儿子在做作业’ / ‘儿子刚才在做作业’ 둘 다 가능). 또한 ‘在 + 동사’와 결합하여 ‘아까 ~하고 있었다’와 같이 과거 특정 시점에 진행 중이던 동작을 서술할 때도 자주 쓰입니다.",
+      "formation": "刚才 + 주어 + 술어 / 주어 + 刚才 + 술어",
+      "examples": [
+        {
+          "translation": "조금 전(아까)에 아들은 숙제를 하고 있었습니다."
+        }
+      ]
+    },
+    "zh_V了DURATIONO_150": {
+      "title": "동사 + 了 + 시량보어 + 목적어 (시량보어: ~동안 …을 했다, 과거 동작의 지속 시간과 완료)",
+      "shortExplanation": "동사 뒤에 동태조사 '了'와 동작 지속 시간(시량보어)을 놓아, 과거에 어떤 동작이 일정 시간 동안 지속되었고 현재는 이미 종료되었음을 나타냅니다.",
+      "longExplanation": "‘동사 + 了 + 시량보어 + (的 + ) 목적어’는 목적어가 있는 동작이 얼마 동안 지속되었는지를 표현하는 시량보어 구문입니다. 매우 중요한 문법적 특징은, 문장 끝에 두 번째 ‘了’가 없기 때문에 해당 동작이 과거에 그 시간 동안 지속된 후 ‘현재는 이미 종료되었음’을 나타낸다는 점입니다 (예: ‘我们坐了一个小时公共汽车’ - 우리는 한 시간 동안 버스를 탔다. 지금은 이미 버스에서 내렸음을 의미함). 문장 끝에도 ‘了’가 붙어 ‘현재까지도 동작이 계속 진행 중임’을 나타내는 구문과 엄격히 구별해야 합니다.",
+      "formation": "주어 + 동사 + 了 + 시량보어 + (的 + ) 목적어",
+      "examples": [
+        {
+          "translation": "우리는 한 시간 동안 버스를 탔습니다."
+        }
+      ]
+    },
+    "zh_V了DURATIONO了_151": {
+      "title": "동사 + 了 + 시량보어 + 목적어 + 了 (동작의 지속: ~동안 …을 해오고 있으며 지금도 계속하고 있다)",
+      "shortExplanation": "동사 뒤와 문장 끝에 모두 '了'를 사용하여, 과거부터 해당 기간 동안 지속되어 온 동작이 현재까지도 계속 이어지고 있음을 나타냅니다.",
+      "longExplanation": "‘동사 + 了 + 시량보어 + (的 + ) 목적어 + 了’ 구문은 동사 뒤의 동태조사 ‘了’와 문말의 어기조사 ‘了’가 함께 쓰이는 구조입니다. 문장 끝에 있는 ‘了’가 결정적인 역할을 하여, 과거에 시작된 동작이 해당 시간 동안 지속되어 왔을 뿐만 아니라 ‘말하는 현재 시점에서도 그 동작이 중단되지 않고 계속 진행 중임’을 나타냅니다 (예: ‘我学习了一年汉语了’ - 나는 중국어를 1년 동안 공부해 오고 있고 지금도 계속 배우는 중이다). 문말에 ‘了’가 없는 완료 구문과 대비되는 대표적인 동작 지속형 표현입니다.",
+      "formation": "주어 + 동사 + 了 + 시량보어 + (的 + ) 목적어 + 了",
+      "examples": [
+        {
+          "translation": "저는 중국어를 1년 동안 공부해 왔고 (지금도) 계속 배우고 있습니다."
+        }
+      ]
+    },
+    "zh_对N感兴趣有兴趣_152": {
+      "title": "对 + 명사 + 感兴趣 / 有兴趣 (개사 구문: ~에 흥미가 있다, 관심을 가지다)",
+      "shortExplanation": "개사(전치사) '对'로 대상을 이끌어 '〜에 대해 흥미·관심이 있다'는 의미를 나타냅니다.",
+      "longExplanation": "‘对 + 명사 + 感兴趣 / 有兴趣’ 구문은 어떤 대상, 분야, 사물, 활동 등에 대해 관심이나 호감을 가지고 있음을 표현할 때 사용됩니다. 개사 ‘对’가 대상(명사)을 이끌어 상황어(부사어)를 형성하고, 뒤이어 ‘感兴趣’(흥미를 느끼다) 또는 ‘有兴趣’(흥미가 있다)를 수식합니다. ‘아주’, ‘매우’ 등 정도를 강조할 때 부사(很, 非常, 特别 등)는 ‘对’ 앞이 아니라 반드시 ‘感兴趣/有兴趣’ 바로 앞에 놓아야 합니다(예: ‘对中国电影很感兴趣’). 부정형은 ‘对……不感兴趣’ 또는 ‘对……没有兴趣’입니다. 한국어의 '~에 흥미가 있다', '~에 관심이 있다'에 해당합니다.",
+      "formation": "주어 + 对 + 명사(대상) + (정도부사 + ) 感兴趣 / 有兴趣",
+      "examples": [
+        {
+          "translation": "그들은 중국 영화에 관심(흥미)이 있습니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_又又_138": {
+      "title": "又……又……（表示并列关系：既……又……）",
+      "shortExplanation": "用于连接两个性质相同、感情色彩一致的形容词或动词，表示几种状态、特点或动作同时存在。",
+      "longExplanation": "“又……又……”是汉语中常用的并列关联短语，用在同一主语后，连接两个并列的谓词性词语（多为单音节或双音节形容词、动词），表示两种特征、状态或动作同时并存。要求前后两项在感情色彩上保持一致，即同为褒义（如“又大又圆”、“又唱又跳”）或同为贬义（如“又脏又乱”），不能一褒一贬。口语中极为常用。",
+      "formation": "主语 + 又 + 形容词1 / 动词1 + 又 + 形容词2 / 动词2",
+      "examples": [
+        {
+          "translation": "这个西瓜又大又甜。"
+        }
+      ]
+    },
+    "zh_V1着V2_139": {
+      "title": "动词1 + 着 + （宾语1 + ）动词2（连动句：动作1作为动作2的方式或伴随状态）",
+      "shortExplanation": "动词1后加动态助词“着”，表示动作1所呈现的状态作为动作2的伴随状态、姿态或方式。",
+      "longExplanation": "在连动句式“动词1 + 着 + （宾语1 + ）动词2 + （宾语2）”中，“动词1 + 着”处于状语的位置，表示进行主要动作（动词2）时所采取的姿态、方式或伴随的背景状态。例如：“站着听课”（站着是听课的姿态）、“看着电视吃晚饭”（看电视是吃晚饭时的伴随活动）、“吃着苹果写作业”（吃苹果是写作业时的伴随动作）。动词1往往是次要的伴随动作，而动词2是主要的中心动作。",
+      "formation": "主语 + 动词1 + 着 + （宾语1 + ）动词2 + （宾语2）",
+      "examples": [
+        {
+          "translation": "弟弟吃着苹果写作业。"
+        }
+      ]
+    },
+    "zh_A了_140": {
+      "title": "形容词 + 了（语气助词：表示状态的变化与新情况的出现）",
+      "shortExplanation": "形容词后加句尾语气助词“了”，表示事物的性质或状态发生了转变，出现了新的情况。",
+      "longExplanation": "在“形容词 + 了”结构中，“了”是句末语气助词，主要用于表示事态的转化、新情况的发生或性质状态的推移（从“非A”转变为“A”）。例如：“天热了”（之前不热，现在变热了）、“衣服小了”（变小了）、“病好一些了”（病情好转）。此处的“了”不同于动词后的动态助词“了”，它关照的是全局状态的变化与更新。",
+      "formation": "主语 + （程度副词 + ）形容词 + 了",
+      "examples": [
+        {
+          "translation": "昨天吃了感冒药，现在好一些了。"
+        }
+      ]
+    },
+    "zh_V了_141": {
+      "title": "动词短语 + 了（句末语气助词：表示情况变化，过去未做/不能做而现在开始做/能做）",
+      "shortExplanation": "句末语气助词“了”用于动词句后，表示客观情况发生了改变，出现过去不曾有或不能进行的新行为、新状态。",
+      "longExplanation": "处于句末的语气助词“了”表事态变化（变动语气），说明事物发生转变、出现新局面。当用于包含能愿动词（如“可以”、“能”）或时间词“现在”的动词句末时，强调“以前不具有该条件或不做某事，而如今情况改变，开始做或能够做某事了”。例如：“现在我可以穿漂亮的裙子了”（暗示此前因身材、天气或其它原因无法穿，现在条件具备，可以穿了）。",
+      "formation": "（时间 + ）主语 + （能愿动词 + ）动词 + （宾语 + ）了",
+      "examples": [
+        {
+          "translation": "现在我可以穿漂亮的裙子了。"
+        }
+      ]
+    },
+    "zh_越来越A了_142": {
+      "title": "越来越 + 形容词 + （了）（副词短语：表示程度随时间逐渐加深）",
+      "shortExplanation": "副词短语“越来越”用于形容词前，表示事物或性状的程度随着时间的推移而不断加深或递增。",
+      "longExplanation": "“越来越 + 形容词 + （了）”表示程度随时间的发展而呈渐进式增长，句尾常带语气助词“了”以呼应状态的转变与发展。使用时须特别注意：“越来越”本身已具备强烈的程度属性，其后不能再与“很”、“非常”、“十分”、“太”等程度副词连用（如不可说成“*越来越很帅”）。",
+      "formation": "主语 + （时间 + ）越来越 + 形容词 + （了）",
+      "examples": [
+        {
+          "translation": "你最近越来越帅了。"
+        }
+      ]
+    },
+    "zh_V得RESULT_143": {
+      "title": "动词 + 得 + 结果补语（可能补语肯定式：能够达到某种结果）",
+      "shortExplanation": "在动词和结果补语之间插入结构助词“得”，构成可能补语的肯定形式，表示客观条件具备或主观能力允许达到该结果。",
+      "longExplanation": "可能补语用于说明在主客观条件制约下，某项动作能否实现预期的结果或趋向。其肯定形式是在动词与结果补语（如“清楚”、“懂”、“完”、“见”等）之间插入助词“得”，构成“动词 + 得 + 结果补语”，意为“能做到某事/能达到某种效果”（如“看得清楚”、“听得懂”、“做得完”）。若带宾语，宾语通常置于补语之后，亦可提前至句首作话题。",
+      "formation": "主语 + 动词 + 得 + 结果补语 + （宾语）",
+      "examples": [
+        {
+          "translation": "我看得清楚那个汉字。"
+        }
+      ]
+    },
+    "zh_V得DIRECTION_144": {
+      "title": "动词 + 得 + 趋向补语（趋向可能补语肯定式：能够向某方向移动/完成趋向）",
+      "shortExplanation": "在动词与趋向补语之间插入结构助词“得”，表示在特定条件下能够沿着某一空间方向完成动作位移。",
+      "longExplanation": "在“动词 + 得 + 趋向补语”句式中，趋向补语可以是单纯趋向补语（来、去）或复合趋向补语（上来、下去、进去、出来等）。该结构表示主观能力或客观条件允许施事者朝某一方向完成位移或动作趋向（如“上得来”、“回得去”、“爬得上去”）。常用在肯定句或带“吗”的疑问句中，询问或说明是否有能力克服高度、距离、空间等障碍到达某处。",
+      "formation": "主语 + 动词 + 得 + 趋向补语 + （宾语）",
+      "examples": [
+        {
+          "translation": "楼这么高，你上得来吗？"
+        }
+      ]
+    },
+    "zh_V不result_145": {
+      "title": "动词 + 不 + 结果补语（可能补语否定式：无法达到某种结果）",
+      "shortExplanation": "在动词和结果补语之间插入否定词“不”，表示因能力或客观条件不足而无法实现动作的结果。",
+      "longExplanation": "“动词 + 不 + 结果补语”是可能补语的否定形式，用于表示在主观能力或客观条件的制约下，动作无法产生预期的结果。例如：“找不到”（无法找到）、“看不清”（无法看清）、“听不懂”（无法听懂）、“做不完”（无法做完）。在现代汉语日常口语中，可能补语的否定形式使用频率远高于肯定形式（常用来表达客观困难或能力受限）。",
+      "formation": "主语 + 动词 + 不 + 结果补语 + （宾语）",
+      "examples": [
+        {
+          "translation": "我找不到好饭馆。"
+        }
+      ]
+    },
+    "zh_V不direction_146": {
+      "title": "动词 + 不 + 趋向补语（趋向可能补语否定式：无法向某方向移动）",
+      "shortExplanation": "在动词与趋向补语之间插入否定副词“不”，表示因障碍、距离或体力不济而无法沿某一方向完成动作位移。",
+      "longExplanation": "“动词 + 不 + 趋向补语”是趋向可能补语的否定形式。用于说明受到外部客观阻碍（如高度过高、入口过小、道路阻断）或自身主观限制（如体力透支、恐高）时，动作无法朝向某一空间方向行进或延伸。常见搭配如“上不去”（无法向上到达）、“进不去”（无法进入）、“过不去”（无法通过）、“回不来”（无法返回）。",
+      "formation": "主语 + 动词 + 不 + 趋向补语 + （宾语）",
+      "examples": [
+        {
+          "translation": "楼太高了，我上不去。"
+        }
+      ]
+    },
+    "zh_N呢_147": {
+      "title": "名词 + 呢？（省略疑问句：询问处所、下落）",
+      "shortExplanation": "名词或代词后直接加句末语气助词“呢”，构成独词省略问句，用于寻找人或事物的下落与处所。",
+      "longExplanation": "在汉语中，“名词/代词 + 呢？”是一种极具口语特色的省略疑问句。在没有上文语境指引的特定场合下，它专门用来询问某人或某物在哪里、下落何处，语义相当于完整疑问句“……在哪儿？”（例如：“你的书呢？”＝你的书在哪儿？；“钥匙呢？”＝钥匙去哪儿了？）。简洁生动，是日常交际中寻找物品或找人时最常用的句型之一。",
+      "formation": "名词 / 代词 + 呢？",
+      "examples": [
+        {
+          "translation": "你的书呢？"
+        }
+      ]
+    },
+    "zh_刚V_148": {
+      "title": "刚 + 动词（时间副词：表示动作或情况刚发生不久）",
+      "shortExplanation": "时间副词“刚”置于动词前作状语，表示动作发生或完成的时间距离说话时极近；“刚刚”、“才”。",
+      "longExplanation": "“刚”是时间副词，必须放在主语之后、动词之前作状语，用以表示动作行为发生或完成距离说话时（或某一基准时间）不久，强调说话人主观上感觉时间很短。动词后常与结果补语（如“完”、“到”、“好”）搭配使用（例如：“刚做完”、“刚走到”）。注意语法差异：“刚”是副词，不可置于主语前，也不能作定语；这与时间名词“刚才”有严格区别。",
+      "formation": "主语 + 刚 + 动词 + （结果补语 + 宾语）",
+      "examples": [
+        {
+          "translation": "儿子刚做完作业。"
+        }
+      ]
+    },
+    "zh_刚才_149": {
+      "title": "刚才（时间名词：指说话前不久的极短时间）",
+      "shortExplanation": "时间名词“刚才”指说话前不久的一小段时间（刚才、刚刚那会儿）；位置灵活，可置于主语前或主语后。",
+      "longExplanation": "“刚才”属于时间名词，用来指称说话之前不久的那个客观时间点或短暂时段（相当于“方才”、“刚才那阵子”）。由于具备名词属性，它在句中作时间状语时位置较为灵活，既可以放在主语前（如“刚才儿子在做作业”），也可以放在主语后（如“儿子刚才在做作业”），甚至可以作定语修饰名词（如“刚才的事”）。此外，它常与表示动作进行或持续的标记（如“在”）共现，指过去刚才正在发生的事情。",
+      "formation": "刚才 + 主语 + 谓语 / 主语 + 刚才 + 谓语",
+      "examples": [
+        {
+          "translation": "刚才儿子在做作业。"
+        }
+      ]
+    },
+    "zh_V了DURATIONO_150": {
+      "title": "动词 + 了 + 时量补语 + 宾语（时量补语：表示动作持续了多长时间且已结束）",
+      "shortExplanation": "动词后接动态助词“了”及时量补语（表示时间的长度），说明动作持续了某段时间，且该动作目前已经结束。",
+      "longExplanation": "在“动词 + 了 + 时量补语 + （的 + ）宾语”句式中，时量补语置于动词和带“的”的宾语之间，用于说明动作持续进行的时间总量。该句式的一个核心语法特征在于：句末没有第二个“了”，这明确标示该动作行为在过去持续了这一时间段后目前已经彻底结束，不再延续到说话之时（例如：“我们坐了一个小时公共汽车”，表示坐公交车这个动作已结束，现已下车）。这与句末带“了”表“动作仍在持续”的句型形成鲜明对比。",
+      "formation": "主语 + 动词 + 了 + 时量补语 + （的 + ）宾语",
+      "examples": [
+        {
+          "translation": "我们坐了一个小时公共汽车。"
+        }
+      ]
+    },
+    "zh_V了DURATIONO了_151": {
+      "title": "动词 + 了 + 时量补语 + 宾语 + 了（双“了”句：表示动作已持续某段时间且仍在进行）",
+      "shortExplanation": "动词后与句末同时使用“了”，表示动作从过去开始持续到说话时已有某一时长，并且目前仍在继续进行。",
+      "longExplanation": "在“动词 + 了 + 时量补语 + （的 + ）宾语 + 了”这一著名的双“了”句型中，动词后的动态助词“了”表示动作经历的时间量，而句末的语气助词“了”则具有“累积至今、仍在延续”的语法意义。它表明该动作不仅已经持续了时量补语所指示的时间，而且在说话的当下并没有终止，还在继续进行中（例如：“我学习了一年汉语了”，说明学汉语已有1年时间，且目前依然在学，今后还可能继续学下去）。此句型在HSK及现代汉语教学中是区分“动作结束”与“动作持续”的核心标杆。",
+      "formation": "主语 + 动词 + 了 + 时量补语 + （的 + ）宾语 + 了",
+      "examples": [
+        {
+          "translation": "我学习了一年汉语了。"
+        }
+      ]
+    },
+    "zh_对N感兴趣有兴趣_152": {
+      "title": "对 + 名词 + 感兴趣 / 有兴趣（介词短语：对某事物产生兴趣或爱好）",
+      "shortExplanation": "介词“对”引出兴趣指向的对象，表示对某人、某事、某领域抱有兴趣或探求欲望。",
+      "longExplanation": "“对 + 名词 + 感兴趣 / 有兴趣”是现代汉语中表示爱好与兴趣取向的经典介宾短语句式。其中介词“对”引进关涉对象（事物、领域或活动），整个介宾短语作状语置于“感兴趣”（动宾式离合词）或“有兴趣”之前。若需要表达程度，程度副词（如“很”、“非常”、“特别”、“极其”）必须修饰“感兴趣/有兴趣”本身，置于其前，不可放在“对”之前（例如须说“对中国电影很感兴趣”，不可说“*很对中国电影感兴趣”）。否定形式为“对……不感兴趣”或“对……没有兴趣”。",
+      "formation": "主语 + 对 + 名词（对象） + （程度副词 + ）感兴趣 / 有兴趣",
+      "examples": [
+        {
+          "translation": "他们对中国电影感兴趣。"
+        }
+      ]
+    }
+  }
+}

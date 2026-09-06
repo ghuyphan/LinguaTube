@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_해야_163",
+    "language": "ko",
+    "pattern": "~해야",
+    "title": "~해야 하다 [haeya hada] (Have to do)",
+    "shortExplanation": "Expresses obligation or necessity (have to, must, need to).",
+    "longExplanation": "'~해야 하다 [haeya hada]' indicates a strong necessity or obligation to carry out an action. It often translates to 'have to,' 'must,' or 'need to' in English, showing that there is no other choice but to do the mentioned action.",
+    "formation": "Verb stem + 아/어야 하다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "집에 가야 하니까 약속을 취소해야 해요. 아니면 지각할 것 같아요.",
+        "romanization": "Jibe gaya hanikka yaksogeul chwisohaeya haeyo. Animyeon jigakhal geot gatayo.",
+        "translation": "I have to cancel the appointment because I need to go home. Otherwise, I'll be late."
+      },
+      {
+        "sentence": "저는 내일 시험이 있어서 오늘 밤에 공부해야 해요. 공부하지 않으면 좋은 점수를 얻을 수 없을 것 같아요.",
+        "romanization": "Jeoneun naeil siheomi isseoseo oneul bame gongbuhaeya haeyo. Gongbuhaji anheumyeon joeun jeomsureul eodeul su eopseul geot gatayo.",
+        "translation": "I have an exam tomorrow, so I have to study tonight. If I don't study, I don't think I can get a good score."
+      },
+      {
+        "sentence": "이번 주말에 아빠가 병원에 가야 하니까 제가 돌봐야 해요.",
+        "romanization": "Ibeon jumal-e appaga byeongwone gaya hanikka jega dolbwaya haeyo.",
+        "translation": "My dad has to go to the hospital this weekend, so I have to take care of him."
+      },
+      {
+        "sentence": "세계 평화를 위해서는 모든 나라가 함께 노력해야 해요.",
+        "romanization": "Segye pyeonghwareul wihaeseoneun modeun naraga hamkke noryeokhaeya haeyo.",
+        "translation": "For world peace, every country has to make an effort together."
+      }
+    ]
+  },
+  {
+    "id": "ko_했더니_164",
+    "language": "ko",
+    "pattern": "~했더니",
+    "title": "~했더니 [haetdeoni] (After doing)",
+    "shortExplanation": "Used to express an unexpected result or surprise after doing an action.",
+    "longExplanation": "'~했더니 [haetdeoni]' is a grammar point used to describe a discovery or unexpected outcome that follows right after the speaker performed a certain action. It can imply some causal relationship, but it mainly highlights the speaker's surprise or the unanticipated result that happened immediately after an action.",
+    "formation": "Verb in Past Tense + 더니",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "나는 오늘 아침에 일찍 일어났더니, 두통이 더 심해졌어요.",
+        "romanization": "Naneun oneul achime iljik ireonatdeoni, dutongi deo simhaejyeosseoyo.",
+        "translation": "I woke up early this morning, and to my surprise, my headache got worse."
+      },
+      {
+        "sentence": "그녀에게 전화를 했더니, 이미 집에 와 있더라고요.",
+        "romanization": "Geunyeoege jeonhwareul haetdeoni, imi jibe wa itdeoragoyo.",
+        "translation": "I called her, and surprisingly, she was already at home."
+      },
+      {
+        "sentence": "나는 저녁을 먹고 숙제를 했더니, 어떻게 벌써 12시가 됐어요?",
+        "romanization": "Naneun jeonyeogeul meokgo sukjereul haetdeoni, eotteoke beolsseo 12si-ga dwaesseoyo?",
+        "translation": "I ate dinner and did my homework—how on earth is it already midnight?"
+      },
+      {
+        "sentence": "나는 신발을 가게에서 샀더니, 집에 돌아왔을 때 발이 아팠어요.",
+        "romanization": "Naneun sinbaleul gageeseo sasseodeoni, jibe dorawasseul ttae bali apasseoyo.",
+        "translation": "I bought shoes from the store, but when I got home, my feet hurt to my surprise."
+      }
+    ]
+  },
+  {
+    "id": "ko_했었다_165",
+    "language": "ko",
+    "pattern": "~했었다",
+    "title": "~했었다 [haesseotda] (Had done)",
+    "shortExplanation": "Used to express an action that was completed in the past.",
+    "longExplanation": "'~했었다 [haesseotda]' is a past-perfect-like expression in Korean, adding a sense of completion or “used to” nuance to something that happened previously. It can show that one action was finished in the past before another event took place, or that a repeated action/condition existed but does not continue anymore.",
+    "formation": "Verb in past tense + 었다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "결혼하기 전에 여행을 많이 갔었어요. 그런데 아이들이 생기고 나서는 자주 못 가게 되었어요.",
+        "romanization": "Gyeolhonhagi jeone yeohaengeul mani gasseosseoyo. Geureonde aideuri saenggigo naseoneun jaju mot gage doeeosseoyo.",
+        "translation": "I had gone on many trips before I got married. But after having children, I couldn't go as often."
+      },
+      {
+        "sentence": "그때 그 청춘을 돌이켜보니 정말 행복했었다는 것을 깨닫게 됐어요.",
+        "romanization": "Geuttae geu cheongchuneul dorikyeoboni jeongmal haengbokhaesseotdaneun geoseul kkaedatge dwaesseoyo.",
+        "translation": "Looking back at those youthful days, I realized that I had been truly happy."
+      },
+      {
+        "sentence": "어머니가 오셨을 때 이미 저녁 식사를 끝냈었어요.",
+        "romanization": "Eomeoniga osyeosseul ttae imi jeonyeok siksareul kkeutnaesseosseoyo.",
+        "translation": "When my mother came, I had already finished dinner."
+      },
+      {
+        "sentence": "당신이 도착했을 때 비행기는 이미 출발했었어요.",
+        "romanization": "Dangsini dochakhaesseul ttae bihaenggineun imi chulbalhaesseosseoyo.",
+        "translation": "By the time you arrived, the plane had already taken off."
+      }
+    ]
+  },
+  {
+    "id": "ko_했으면_166",
+    "language": "ko",
+    "pattern": "~했으면",
+    "title": "~했으면 좋겠다 [haesseumyeon jotgetda] (I wish, I hope)",
+    "shortExplanation": "Used to express wishing or hoping for a situation to happen.",
+    "longExplanation": "'~했으면 좋겠다 [haesseumyeon jotgetda]' is commonly used to express a personal wish or hope for some future or hypothetical situation. It can be translated as 'I wish...' or 'I hope...' in English. The speaker desires the action or state described by the verb.",
+    "formation": "Verb + 았/었으면 좋겠다 (or 했으면 좋겠다)",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "이번 시험에 합격했으면 좋겠어요. 그래야 제 꿈을 이룰 수 있어요.",
+        "romanization": "Ibeon siheome hapgyeokhaesseumyeon jotgetseoyo. Geuraeya je kkumeul irul su isseoyo.",
+        "translation": "I hope I pass this exam. Only then can I achieve my dream."
+      },
+      {
+        "sentence": "내일 날씨가 좋았으면 좋겠어요. 그래야 바깥에서 놀 수 있으니까요.",
+        "romanization": "Naeil nalssiga johasseumyeon jotgetseoyo. Geuraeya bakkateseo nol su issnikkayo.",
+        "translation": "I wish the weather would be good tomorrow. Then we can play outside."
+      },
+      {
+        "sentence": "그녀가 행복했으면 좋겠어요. 그녀는 많은 시련을 겪었거든요.",
+        "romanization": "Geunyeoga haengbokhaesseumyeon jotgetseoyo. Geunyeoneun manheun siryeoneul gyeok-eosseogeodeunyo.",
+        "translation": "I hope she can be happy. She has been through a lot."
+      },
+      {
+        "sentence": "우리 팀이 이겼으면 좋겠어요. 우리는 열심히 연습했거든요.",
+        "romanization": "Uri timi igyeosseumyeon jotgetseoyo. Urineun yeolsimhi yeonseuphaetgeodeunyo.",
+        "translation": "I hope our team wins. We've practiced really hard."
+      }
+    ]
+  },
+  {
+    "id": "ko_했을_167",
+    "language": "ko",
+    "pattern": "~했을",
+    "title": "~했을 때 [haesseul ttae] (When someone did)",
+    "shortExplanation": "Expresses 'when someone did' or 'at the time when something was done'.",
+    "longExplanation": "'~했을 때 [haesseul ttae]' is used to indicate a moment in the past when an action happened. It can sometimes introduce a second clause that describes a related event or reaction. In English, it roughly translates as 'when (someone) did something' or 'at the time that (something) occurred.'",
+    "formation": "Verb in past tense + 을/를 + 때 (했을 때)",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저희 집에 왔을 때 엄마가 저녁을 준비하고 있었어요.",
+        "romanization": "Jeohui jibe wasseul ttae eommaga jeonyeogeul junbihago isseosseoyo.",
+        "translation": "When I arrived home, my mom was preparing dinner."
+      },
+      {
+        "sentence": "그 영화를 보았을 때 진짜 많이 울었어요.",
+        "romanization": "Geu yeonghwaleul boasseul ttae jinjja manhi ureosseoyo.",
+        "translation": "When I watched that movie, I cried a lot."
+      },
+      {
+        "sentence": "해외로 이사했을 때 처음엔 많이 힘들었어요.",
+        "romanization": "Haeoero isahaesseul ttae cheoeumen manhi himdeureosseoyo.",
+        "translation": "When I moved abroad, it was very difficult at first."
+      },
+      {
+        "sentence": "졸업했을 때 부모님이 정말 자랑스러워하셨어요.",
+        "romanization": "Joleobhaesseul ttae bumonimi jeongmal jarangseureowohasyeosseoyo.",
+        "translation": "When I graduated, my parents were really proud."
+      }
+    ]
+  },
+  {
+    "id": "ko_했을_168",
+    "language": "ko",
+    "pattern": "~했을",
+    "title": "~했을 텐데 [haesseul tende] (Would have)",
+    "shortExplanation": "Used to express a hypothetical past scenario or regret.",
+    "longExplanation": "'~했을 텐데 [haesseul tende]' is used for hypotheticals or regrets about something that did not happen in the past. It often appears with '만약 ~았/었더라면 (if I had done something)' or implies 'I would have...' or 'It would have been...' in English.",
+    "formation": "Verb stem + 았/었을 텐데",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "알았다면 그런 결정을 하지 않았을 텐데, 결국 많은 시간과 노력을 낭비했습니다.",
+        "romanization": "Alatdamyeon geureon gyeoljeongeul haji anhasseul tende, gyeolguk manheun sigangwa noryeogeul nangbihaesseumnida.",
+        "translation": "If I'd known, I wouldn't have made that decision; in the end, I wasted a lot of time and effort."
+      },
+      {
+        "sentence": "서둘렀다면 그 기회를 잡을 수 있었을 텐데, 지금은 너무 늦었어요.",
+        "romanization": "Seodulleossdamyeon geu gihoereul jabeul su isseosseul tende, jigeumeun neomu neujeosseoyo.",
+        "translation": "If I had hurried, I would have been able to seize that opportunity, but now it's too late."
+      },
+      {
+        "sentence": "그때 그녀에게 말했다면 다르게 됐을 텐데, 하지만 그런 일은 하지 못했어요.",
+        "romanization": "Geuttae geunyeoege malhaetdamyeon dareuge dwaesseul tende, hajiman geureon ireun haji mothaesseoyo.",
+        "translation": "If I had spoken to her then, things would have turned out differently, but I never did."
+      },
+      {
+        "sentence": "그렇게 열심히 일했다면 성공했을 텐데, 그래도 나는 내 선택에 만족합니다.",
+        "romanization": "Geureoke yeolsimhi ilhaetdamyeon seonggonghaesseul tende, geuraedo naneun nae seontaege manjokhamnida.",
+        "translation": "If I had worked that hard, I would have succeeded, but I'm still content with my choices."
+      }
+    ]
+  },
+  {
+    "id": "ko_했지만_169",
+    "language": "ko",
+    "pattern": "~했지만",
+    "title": "~했지만 [haetjiman] (Did, but)",
+    "shortExplanation": "Connects two contrasting ideas in the past; 'did, but'.",
+    "longExplanation": "'~했지만 [haetjiman]' is used to show a contrast or unexpected result between two past actions/conditions, comparable to 'did, but' or 'although' in English. It often indicates the second clause contradicts or does not live up to the expectation set by the first clause.",
+    "formation": "Verb in past tense + 지만",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "저는 어제 공부를 많이 했지만 시험에서 성적이 좋지 않았어요.",
+        "romanization": "Jeoneun eoje gongbureul manhi haetjiman siheomeseo seongjeogi johji anasseoyo.",
+        "translation": "I studied a lot yesterday, but my test score wasn’t very good."
+      },
+      {
+        "sentence": "그는 힘들게 일했지만 노력이 제대로 인정되지 않았어요.",
+        "romanization": "Geuneun himdeulge ilhaetjiman noryeogi jedaero injeongdoeji anasseoyo.",
+        "translation": "He worked really hard, but his efforts were not properly recognized."
+      },
+      {
+        "sentence": "나는 그것을 지금 막 마쳤지만 정말로 힘들었어요.",
+        "romanization": "Naneun geugeoseul jigeum mak machyeotjiman jeongmallo himdeureosseoyo.",
+        "translation": "I just finished it, but it was really difficult."
+      },
+      {
+        "sentence": "우리는 정말 빨리 달렸지만 버스를 잡지 못했어요.",
+        "romanization": "Urineun jeongmal ppalli dallyeotjiman beoseureul japji moshaesseoyo.",
+        "translation": "We ran really fast, but we couldn't catch the bus."
+      }
+    ]
+  },
+  {
+    "id": "ko_했다_170",
+    "language": "ko",
+    "pattern": "~했다",
+    "title": "~했다 [haetda] (Did, past tense)",
+    "shortExplanation": "Marks an action as completed in the past; 'did'.",
+    "longExplanation": "'~했다 [haetda]' is a standard past-tense form in Korean, equivalent to saying 'I did (something)' in English. It simply indicates that the action is finished and took place in the past.",
+    "formation": "Verb stem + 했다",
+    "level": "Korean 3",
+    "examples": [
+      {
+        "sentence": "어제 이해가 안 되던 문제를 결국 풀었다. 정말 기쁘다.",
+        "romanization": "Eoje ihaega an dwoedon munjeleul gyeolguk pulleotda. Jeongmal gippeuda.",
+        "translation": "I finally solved the problem that I didn't understand yesterday. I’m really happy."
+      },
+      {
+        "sentence": "우리는 이번 이벤트를 성공적으로 마무리했다. 다들 힘들었지만 보람이 있었다.",
+        "romanization": "Urineun ibeon ibenteureul seonggongjeogeuro mamurihaetda. Dadeul himdeureotjiman boram-i isseotda.",
+        "translation": "We successfully finished this event. It was hard on everyone, but it was rewarding."
+      },
+      {
+        "sentence": "나는 어제 공부를 많이 했다. 오늘은 조금 쉬어야겠다.",
+        "romanization": "Naneun eoje gongbureul manhi haetda. Oneureun jogeum swieoyagedda.",
+        "translation": "I studied a lot yesterday. I should rest a bit today."
+      },
+      {
+        "sentence": "지난 주말에 친구들과 쇼핑을 가서 재미있는 옷을 많이 샀다.",
+        "romanization": "Jinan jumal-e chingudeulgwa syopingeul gaseo jaemiinneun oseul manhi satda.",
+        "translation": "I went shopping with my friends last weekend and bought a lot of interesting clothes."
+      }
+    ]
+  },
+  {
+    "id": "ko_거든요_0",
+    "language": "ko",
+    "pattern": "~거든요",
+    "title": "~거든요 [geodeunyo] (You see; Explaining)",
+    "shortExplanation": "Used for explaining or giving background information to the listener.",
+    "longExplanation": "'~거든요 [geodeunyo]' is a grammar point used in Korean when the speaker wants to provide additional information or background to the listener, usually as an explanation or justification. It is common in spoken language and indicates that the speaker believes the listener may not know or might be surprised by this information.",
+    "formation": "Verb + 거든요 / Adjective + 거든요",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 오래전에 학교를 다녔거든요, 그래서 현재 교육 시스템이 어떻게 바뀌었는지 잘 모르겠어요.",
+        "romanization": "Jeoneun oraejeone hakgyoreul danyeotgeodeunyo, geuraeseo hyeonjae gyoyuk siseutemi eotteoke bakkwinji jal moreugesseoyo.",
+        "translation": "You see, I attended school a long time ago, so I don't really know how the current educational system has changed."
+      },
+      {
+        "sentence": "제가 지각한 것은 버스가 늦었거든요, 그래서 시간을 맞추지 못했어요.",
+        "romanization": "Jega jigakhan geoseun beoseuga neujeotgeodeunyo, geuraeseo siganeul matchuji mothaesseoyo.",
+        "translation": "The reason I was late is because the bus was delayed, so I couldn't make it on time."
+      },
+      {
+        "sentence": "저는 커피를 마시지 않아요. 커피에 카페인이 많이 들어있거든요, 그래서 잠을 잘 못 자요.",
+        "romanization": "Jeoneun keopireul masiji anhayo. Keopie kapeini mani deureoitgeodeunyo, geuraeseo jameul jal mot jayo.",
+        "translation": "I don't drink coffee. You see, coffee contains a lot of caffeine, so I can't sleep well."
+      },
+      {
+        "sentence": "하루 종일 집에 있어서 지루해요. 날씨가 너무 춥거든요, 그래서 밖에 나갈 수 없어요.",
+        "romanization": "Haru jongil jibe isseoseo jiruhaeyo. Nalssiga neomu chupgeodeunyo, geuraeseo bakke nagal su eopseoyo.",
+        "translation": "I'm bored staying in the house all day. You see, it's really cold outside, so I can't go out."
+      }
+    ]
+  },
+  {
+    "id": "ko_게_1",
+    "language": "ko",
+    "pattern": "~게",
+    "title": "~게 되다 [ge dweda] (End up doing)",
+    "shortExplanation": "Used to express an action or state that ends up happening due to certain circumstances or changes.",
+    "longExplanation": "'~게 되다 [ge dweda]' is used when an action or situation comes about because of a certain circumstance or influence, often unexpectedly or unintentionally. It often implies a change from an initial plan or a passive result of external factors.",
+    "formation": "Verb stem + 게 되다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "저는 공부에 집중하다가 잠이 들게 되었어요. 참 기분이 이상해요.",
+        "romanization": "Jeoneun gongbue jipjunghadaga jami deul-ge doeeosseoyo. Cham gibuni isanghaeyo.",
+        "translation": "I ended up falling asleep while concentrating on my studies. It feels weird."
+      },
+      {
+        "sentence": "처음에는 일주일 동안 한국어를 배우려고 했는데, 나중에는 한 달 동안 배우게 되었어요.",
+        "romanization": "Cheoeumeneun ilju-il dongan hangugeoreul baeuryeogo haetneunde, najungeneun han dal dongan baeuge doeeosseoyo.",
+        "translation": "At first, I planned to learn Korean for just a week, but in the end, I ended up studying it for a month."
+      },
+      {
+        "sentence": "우리는 원래 여름에 결혼하려고 했지만, 결국 겨울에 결혼하게 되었어요.",
+        "romanization": "Urineun wonrae yeoreume gyeolhonharyeogo haetjiman, gyeolguk gyeoure gyeolhonhage doeeosseoyo.",
+        "translation": "We originally intended to get married in the summer, but we ended up having the wedding in the winter."
+      },
+      {
+        "sentence": "처음에는 회사에서 너무 많이 일하게 되었어요, 그래서 가족을 자주 볼 수가 없었어요.",
+        "romanization": "Cheoeumeneun hoesaeseo neomu mani ilhage doeeosseoyo, geuraeseo gajogeul jaju bol suga eopseosseoyo.",
+        "translation": "At first, I ended up working too much at the company, so I couldn't see my family often."
+      }
+    ]
+  },
+  {
+    "id": "ko_게_2",
+    "language": "ko",
+    "pattern": "~게",
+    "title": "~게 하다 [ge hada] (Make/let someone do)",
+    "shortExplanation": "Used to express that someone causes or allows another person to do something.",
+    "longExplanation": "'~게 하다' indicates that an action occurs because someone made, let, allowed, or caused it to happen. It can show compulsion, permission, encouragement, etc., depending on context.",
+    "formation": "Verb stem + 게 하다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "세탁기 가격이 너무 비싸서 가게 주인이 저에게 할인을 해 주어서 사게 해주었어요.",
+        "romanization": "Setakgi gakyegi neomu bissaseo gage juini jeoege halineul hae jueoseo sage haeju-eosseoyo.",
+        "translation": "The washing machine was so expensive that the store owner gave me a discount and made it possible for me to buy it."
+      },
+      {
+        "sentence": "그녀는 저를 기쁘게 해서 더욱 열심히 활동하게 했습니다.",
+        "romanization": "Geunyeoneun jeoreul gippeuge haeseo deouk yeolsimhi hwaldonghage haetseumnida.",
+        "translation": "She made me happy and motivated me to be more active."
+      },
+      {
+        "sentence": "어머니는 제가 영어를 배울 수 있도록 도서관에 데려가 주셨어요.",
+        "romanization": "Eomeonineun jega yeongeoreul baeul su itdorok doseogwane deryeoga jusyeosseoyo.",
+        "translation": "My mother took me to the library so that I could learn English."
+      },
+      {
+        "sentence": "우리 팀원들은 저를 승진하게 하는 데 도움을 주었습니다.",
+        "romanization": "Uri tim-wondeureun jeoreul seungjinhage haneun de doumeul ju-eosseumnida.",
+        "translation": "Our team members helped me get promoted."
+      }
+    ]
+  },
+  {
+    "id": "ko_게_3",
+    "language": "ko",
+    "pattern": "~게",
+    "title": "~게 해서는 안 되다 [ge haeseoneun an dweda] (Shouldn't make/let someone do)",
+    "shortExplanation": "Used to convey that one shouldn’t make or allow someone to do something.",
+    "longExplanation": "'~게 해서는 안 되다' expresses the idea that it is wrong or not allowed to make or let someone do a certain action. It often implies an admonition or rule for proper conduct.",
+    "formation": "Verb stem + 게 해서는 안 되다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "자기 시험에만 집중하게 해서는 안 돼요. 다른 사람들의 공부도 신경 써야 해요.",
+        "romanization": "Jagi siheomeman jipjunghage haeseoneun an dwaeyo. Dareun saramdeurui gongbudo singyeong sseoya haeyo.",
+        "translation": "You shouldn't make them focus only on their own tests. They should also care about others' studies."
+      },
+      {
+        "sentence": "계획을 먼저 확인하지 않고 진행하게 해서는 안 됩니다.",
+        "romanization": "Gyehoeg-eul meonjeo hwaginhaji anko jinhaenghage haeseoneun an doemnida.",
+        "translation": "You shouldn't let it proceed without checking the plan first."
+      },
+      {
+        "sentence": "어린이들을 TV 시청만 하게 해서는 안 됩니다. 독서 등 다른 활동도 필요해요.",
+        "romanization": "Eorinideureul TV sicheongman hage haeseoneun an doemnida. Dokseo deung dareun hwaldongdo pillyohaeyo.",
+        "translation": "You shouldn't just let children watch TV. They need other activities like reading as well."
+      },
+      {
+        "sentence": "고객을 오래 기다리게 해서는 안 됩니다. 서비스가 빨라야 해요.",
+        "romanization": "Gogaegeul orae gidarige haeseoneun an doemnida. Seobiseuga pparaya haeyo.",
+        "translation": "You shouldn't make customers wait for a long time. The service should be quick."
+      }
+    ]
+  },
+  {
+    "id": "ko_겠다_4",
+    "language": "ko",
+    "pattern": "겠다",
+    "title": "겠다 [getda] (will, guess, hope, wish)",
+    "shortExplanation": "A verb ending used to express ‘will’ (future), ‘guess’ (conjecture), or a strong wish or hope.",
+    "longExplanation": "'겠다 [getda]' is a versatile verb ending in Korean that can express the speaker’s future intention (‘will’), their inference or guess (‘must be…’ / ‘probably’), or a strong desire/wish depending on context. It often appears with first-person statements or in concluding inferences.",
+    "formation": "Verb stem + 겠다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "오늘 밤에는 비가 오겠어요. 구름이 짙고 어두워 보여요.",
+        "romanization": "Oneul bamenen biga ogesseoyo. Gureumi jitgo eoduweo boyeoyo.",
+        "translation": "It will probably rain tonight. The clouds look thick and dark."
+      },
+      {
+        "sentence": "그분이 저한테 화를 내시겠네요. 제가 지시를 따르지 않았거든요.",
+        "romanization": "Geubuni jeohante hwareul naesigesseyo. Jega jisireul ttareuji anhassgeodeunyo.",
+        "translation": "He will probably get angry with me because I didn’t follow his instructions."
+      },
+      {
+        "sentence": "이 책을 다 읽으면 한국어를 더 잘 알게 되겠어요. 새로운 단어나 문법이 많이 들어 있어요.",
+        "romanization": "I chaegeul da ilgeumyeon hangugeoreul deo jal alge doegesseoyo. Saeroun daneona munbeopi mani deureo isseoyo.",
+        "translation": "I guess I'll know Korean better once I finish this book. It has a lot of new vocabulary and grammar points."
+      },
+      {
+        "sentence": "다음 주가 되면 저는 새로운 스포츠 클럽에 가입하겠어요. 뭔가 새로운 활동을 시작하고 싶거든요.",
+        "romanization": "Daum ju-ga doemyeon jeoneun saeroun seupocheu keullebe gaiphagesseoyo. Mwonga saeroun hwaldongeul sijakhago sipgeodeunyo.",
+        "translation": "When next week comes, I will join a new sports club. I want to start something new."
+      }
+    ]
+  },
+  {
+    "id": "ko_고_5",
+    "language": "ko",
+    "pattern": "~고",
+    "title": "~고 말다 [go malda] (Ended up doing)",
+    "shortExplanation": "Emphasizes an unexpected or often undesirable result: ‘ended up doing.’",
+    "longExplanation": "'~고 말다 [go malda]' highlights that an action concluded in a certain way, often with a sense of regret, inevitability, or simply an unexpected final outcome. It can be translated as ‘ended up …ing’ or ‘finally ….’",
+    "formation": "Verb stem + 고 말다",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "오랜 시간을 기다렸는데, 결국 혼자 먹고 말았어요. 친구들이 오지 않았거든요.",
+        "romanization": "Oraen siganeul gidaryeotneunde, gyeolguk honja meokgo marasseoyo. Chingudeuri oji anhassgeodeunyo.",
+        "translation": "I waited for a long time but ended up eating alone since my friends didn’t come."
+      },
+      {
+        "sentence": "제가 어제 너무 늦게 잠드는 바람에 결국 지각하고 말았어요.",
+        "romanization": "Jega eoje neomu neutge jamdeuneun barame gyeolguk jigakago marasseoyo.",
+        "translation": "Because I went to sleep so late yesterday, I ended up being late."
+      },
+      {
+        "sentence": "그는 공부를 계속 미루다가 결국 시험에서 떨어지고 말았어요.",
+        "romanization": "Geuneun gongbureul gyesok mirudaga gyeolguk siheomeseo tteoreojigo marasseoyo.",
+        "translation": "He kept putting off studying and in the end, he failed the exam."
+      },
+      {
+        "sentence": "열심히 달렸지만 결국 첫 번째 자리를 얻지 못하고 말았어요.",
+        "romanization": "Yeolsimhi dallyeotjiman gyeolguk cheot beonjjae jarireul eotji mothago marasseoyo.",
+        "translation": "I ran really hard, but in the end, I didn’t get first place."
+      }
+    ]
+  },
+  {
+    "id": "ko_고_6",
+    "language": "ko",
+    "pattern": "~고",
+    "title": "~고 보니 [go boni] (After doing, I noticed)",
+    "shortExplanation": "Expresses that a realization or discovery is made after doing something.",
+    "longExplanation": "The form '~고 보니' is used when one notices or realizes something new after completing an action. It often implies that the speaker did not expect this outcome before the action was done.",
+    "formation": "Verb stem + 고 보니",
+    "level": "Korean 4",
+    "examples": [
+      {
+        "sentence": "그림을 다 그리고 보니 정말 재미있었어요.",
+        "romanization": "Geurimeul da geurigo boni jeongmal jaemiisseosseoyo.",
+        "translation": "After finishing the drawing, I realized it was really fun."
+      },
+      {
+        "sentence": "고향에 돌아가고 보니 옛날 추억이 많이 떠올랐어요.",
+        "romanization": "Gohyange doragago boni yetnal chu-eogi manhi tteoollasseoyo.",
+        "translation": "After going back to my hometown, a lot of old memories came to mind."
+      },
+      {
+        "sentence": "친구와 이별하고 보니 그의 소중함을 더 크게 느꼈어요.",
+        "romanization": "Chinguwa ibyeolhago boni geuui sojunghameul deo keuge neukkyeosseoyo.",
+        "translation": "After parting ways with my friend, I realized even more how precious he was."
+      },
+      {
+        "sentence": "책을 다 읽고 보니 배울 점이 정말 많았어요.",
+        "romanization": "Chaeg-eul da ilggo boni baeul jeomi jeongmal manasseoyo.",
+        "translation": "After I finished reading the book, I realized there was a lot to learn."
+      }
+    ]
+  }
+]

@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_就_77": {
+      "title": "就 (Thì, vậy thì [kết luận, giải pháp tự nhiên theo hoàn cảnh])",
+      "shortExplanation": "Phó từ '就' đặt trước động từ trong vế sau để đưa ra giải pháp, kết luận hoặc hành động hợp lý dựa trên tiền đề; 'thì...', 'vậy thì...'.",
+      "longExplanation": "'就' (jiù) là phó từ đa năng trong tiếng Trung. Trong kết cấu câu liên kết điều kiện hoặc tình huống giả định (thường ngầm chứa hoặc đi kèm với '要是/如果...'), '就' đứng trước vị ngữ ở phân câu sau để biểu thị: dựa vào tình hình ở phân câu trước mà đưa ra quyết định, lời khuyên hoặc kết quả tự nhiên tất yếu ('nếu... thì...'). Khi kết hợp với trợ từ ngữ khí '吧' ở cuối câu, nó mang sắc thái gợi ý, dàn xếp nhẹ nhàng.",
+      "formation": "(Điều kiện / Tình huống + ) 就 + Động từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Bạn không muốn đi thì ở nhà nghỉ ngơi đi."
+        }
+      ]
+    },
+    "zh_还A_78": {
+      "title": "还 + Tính từ (Cũng tạm, tàm tạm [đạt mức chấp nhận được])",
+      "shortExplanation": "Phó từ '还' đứng trước tính từ biểu thị mức độ chấp nhận được, không quá xuất sắc nhưng vừa đủ, tàm tạm; 'cũng tạm', 'tương đối'.",
+      "longExplanation": "'还' (hái) khi đứng trước một số tính từ mang nghĩa tích cực (như 好, 行, 可以, 不错) có tác dụng giảm nhẹ mức độ khẳng định, biểu thị sự việc đạt ở mức trung bình, có thể chấp nhận được hoặc miễn cưỡng thông qua chứ chưa thật sự nổi bật hay hoàn hảo. Cụm '还好' thường được dịch là 'cũng tạm', 'cũng ổn', 'tàm tạm'.",
+      "formation": "Chủ ngữ + 还 + Tính từ",
+      "examples": [
+        {
+          "translation": "Kỳ thi hôm qua cũng tạm ổn."
+        }
+      ]
+    },
+    "zh_有点儿A_79": {
+      "title": "有点儿 + Tính từ (Hơi... một chút [mang sắc thái không hài lòng, không như ý])",
+      "shortExplanation": "Cụm phó từ '有点儿' đứng trước tính từ để biểu thị mức độ nhẹ nhưng thường hàm ý phàn nàn, tiêu cực hoặc không vừa ý; 'hơi...', 'có chút...'.",
+      "longExplanation": "'有点儿' (yǒudiǎnr, phương nam thường nói là 有点 yǒudiǎn) làm trạng ngữ đứng trước tính từ hoặc động từ tâm lý, biểu thị mức độ nhẹ ('hơi...'). Điểm ngữ pháp mấu chốt là cấu trúc này thường dùng cho những trạng thái tiêu cực, phiền phức hoặc không như ý muốn của người nói (như 冷 - lạnh, 累 - mệt, 贵 - đắt). Cần phân biệt với '一点儿' (yīdiǎnr) thường đứng sau tính từ để so sánh (冷一点儿 = lạnh hơn một chút) hoặc đứng trước danh từ để chỉ số lượng ít (一点儿水 = một chút nước).",
+      "formation": "Chủ ngữ + 有点儿 + Tính từ / Động từ tâm lý",
+      "examples": [
+        {
+          "translation": "Thời tiết hôm nay hơi lạnh."
+        }
+      ]
+    },
+    "zh_怎么_80": {
+      "title": "怎么 (Sao, làm sao mà, sao lại... [hỏi nguyên nhân kèm sắc thái ngạc nhiên, thắc mắc])",
+      "shortExplanation": "Đại từ nghi vấn '怎么' đứng trước vị ngữ để hỏi nguyên nhân hoặc lý do, thường hàm chứa sự ngạc nhiên, thắc mắc hoặc băn khoăn; 'sao...', 'sao lại...'.",
+      "longExplanation": "'怎么' (zěnme) là đại từ nghi vấn đa năng. Khi đứng trước vị ngữ (động từ hoặc tính từ) để hỏi về nguyên nhân của một hiện tượng hay tình huống, nó mang nghĩa 'sao lại', 'làm sao mà', 'thế nào mà'. Khác với '为什么' chỉ dùng để hỏi lý do một cách khách quan thuần túy, '怎么' thường biểu thị sự ngạc nhiên của người nói trước một sự việc bất thường, không ngờ tới hoặc không hợp lẽ thường (ví dụ: 你怎么不吃？ - Sao bạn lại không ăn?).",
+      "formation": "Chủ ngữ + 怎么 + Vị ngữ (Động từ / Tính từ / Đoản ngữ phủ định)?",
+      "examples": [
+        {
+          "translation": "Sao bạn lại không vui thế?"
+        }
+      ]
+    },
+    "zh_NMM都_81": {
+      "title": "Danh từ + Lượng từ trùng điệp + 都 (Từng... đều, ai nấy đều, mỗi một... đều)",
+      "shortExplanation": "Lượng từ được lặp lại (trùng điệp) đi kèm phó từ '都' để nhấn mạnh ý nghĩa toàn thể, mang nghĩa 'mỗi một...', 'từng cái/người một đều...'.",
+      "longExplanation": "Trong tiếng Trung, phần lớn đơn âm tiết lượng từ có thể trùng điệp theo hình thức 'AA' (như 个个 - từng người/cái một, 张张 - từng tờ một, 本本 - từng cuốn một). Khi lượng từ trùng điệp đứng sau danh từ hoặc làm chủ ngữ, nó mang ý nghĩa 'mỗi một', 'tất cả không sót ai/cái nào'. Do biểu thị phạm vi toàn bộ, vị ngữ phía sau hầu như luôn phải đi kèm với phó từ tổng quát '都' (đều).",
+      "formation": "(Danh từ + ) Lượng từ trùng điệp + 都 + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Các bạn học ai nấy đều rất vui vẻ."
+        }
+      ]
+    },
+    "zh_因为所以_82": {
+      "title": "因为……所以…… (Bởi vì... cho nên... [quan hệ nhân quả])",
+      "shortExplanation": "Cặp liên từ hô ứng biểu thị quan hệ nhân quả; '因为' dẫn xuất nguyên nhân, '所以' dẫn xuất kết quả; 'bởi vì... nên...'.",
+      "longExplanation": "'因为……所以……' (yīnwèi... suǒyǐ...) là cấu trúc liên từ cơ bản và chuẩn mực nhất dùng để liên kết câu phức biểu thị mối quan hệ nhân quả trong tiếng Trung. Mệnh đề đứng sau '因为' giải thích nguồn cơn, lý do phát sinh sự việc; mệnh đề đứng sau '所以' đưa ra kết quả, hệ quả tương ứng từ lý do đó. Trong khẩu ngữ, đôi khi một trong hai từ có thể được lược bỏ, nhưng dùng đầy đủ cả cặp sẽ làm câu văn mạch lạc, rõ ràng.",
+      "formation": "因为 + Nguyên nhân / Lý do, 所以 + Kết quả",
+      "examples": [
+        {
+          "translation": "Bởi vì không ngon nên tôi không ăn."
+        }
+      ]
+    },
+    "zh_还V_83": {
+      "title": "还 + Động từ (Vẫn còn, vẫn đang [tiếp diễn hành động hoặc trạng thái])",
+      "shortExplanation": "Phó từ '还' đứng trước động từ để biểu thị hành động hoặc trạng thái vốn có từ trước vẫn tiếp tục diễn ra, chưa dừng lại; 'vẫn còn...', 'vẫn đang...'.",
+      "longExplanation": "'还' (hái) là phó từ chỉ sự tiếp diễn của động tác hoặc trạng thái. Khi đặt trước động từ (thường kết hợp với '在' hoặc '着' để tạo thành '还在' hoặc '还...着'), nó biểu thị một hành động bắt đầu từ quá khứ đến thời điểm hiện tại vẫn đang tiếp diễn, chưa kết thúc như dự tính hoặc vượt quá kỳ vọng của người nói (ví dụ: 八点了，他还在睡觉 - Đã 8 giờ rồi mà anh ấy vẫn còn đang ngủ).",
+      "formation": "Chủ ngữ + 还 (+ 在) + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tám giờ rồi mà cậu ấy vẫn còn đang ngủ."
+        }
+      ]
+    },
+    "zh_还没V_84": {
+      "title": "还没(有) + Động từ (Vẫn chưa... [hành động chưa diễn ra tính đến hiện tại])",
+      "shortExplanation": "Kết hợp giữa phó từ '还' và từ phủ định '没(有)' đứng trước động từ để biểu thị hành động đến nay vẫn chưa xảy ra hoặc chưa hoàn thành; 'vẫn chưa...'.",
+      "longExplanation": "'还没' (hái méi, dạng đầy đủ là 还没有 hái méiyǒu) là cấu trúc phủ định thời gian rất thông dụng trong tiếng Trung. Nó diễn tả một hành động, sự việc mà người nói kỳ vọng hoặc dự đoán lẽ ra đã phải hoàn thành, nhưng tính đến thời điểm nói thì vẫn chưa hề diễn ra (ví dụ: 还没来 - vẫn chưa đến, 还没吃 - vẫn chưa ăn). Phủ định với '还没' luôn hàm ý hành động có thể sẽ diễn ra sau thời điểm nói.",
+      "formation": "Chủ ngữ + 还没(有) + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Sao bạn vẫn chưa ăn cơm thế?"
+        }
+      ]
+    },
+    "zh_TIME就V_85": {
+      "title": "Từ chỉ thời gian + 就 + Động từ (Mới... đã... [nhấn mạnh thời gian sớm, nhanh chóng])",
+      "shortExplanation": "Phó từ '就' đứng sau từ chỉ thời gian để nhấn mạnh hành động diễn ra sớm, nhanh hoặc thuận lợi hơn dự kiến; 'mới... đã...', 'ngay từ...'.",
+      "longExplanation": "Trong tiếng Trung, phó từ '就' (jiù) đặt sau cụm từ chỉ thời gian và trước động từ mang sắc thái chủ quan của người nói, nhằm nhấn mạnh hành động, sự việc diễn ra vào thời điểm rất sớm, nhanh chóng hoặc sớm hơn mức bình thường (ví dụ: 他六点就起床了 - Mới 6 giờ anh ấy đã thức dậy rồi). Cuối câu thường có trợ từ ngữ khí '了' để biểu thị sự việc đã hoàn thành. Cấu trúc này đối lập trực tiếp với phó từ '才' (nhấn mạnh thời gian muộn, chậm chạp).",
+      "formation": "Chủ ngữ + Từ chỉ thời gian + 就 + Động từ (+ Tân ngữ) (+ 了)",
+      "examples": [
+        {
+          "translation": "Mới bảy rưỡi mà các bạn học đã đến lớp rồi."
+        }
+      ]
+    },
+    "zh_N1离N2DISTANCE_86": {
+      "title": "Địa điểm 1 + 离 + Địa điểm 2 + Khoảng cách (Cách... bao xa [biểu thị khoảng cách không gian])",
+      "shortExplanation": "Giới từ '离' dùng để biểu thị khoảng cách không gian giữa hai địa điểm; 'địa điểm 1 cách địa điểm 2 một khoảng cách...'.",
+      "longExplanation": "'离' (lí) là giới từ dùng để xác định khoảng cách không gian (hoặc thời gian) tương đối giữa hai mốc tham chiếu. Cấu trúc chuẩn là 'Địa điểm 1 + 离 + Địa điểm 2 + Từ chỉ cự ly' (như 远 - xa, 近 - gần, hoặc số đo khoảng cách cụ thể: 20多公里 - hơn 20 cây số). Giới từ '离' đi cùng mốc chuẩn (Địa điểm 2) để làm trạng ngữ chỉ khoảng cách bổ nghĩa cho vị ngữ.",
+      "formation": "Địa điểm 1 + 离 + Địa điểm 2 + Khoảng cách (Số từ + Lượng từ / 远 / 近)",
+      "examples": [
+        {
+          "translation": "Trường học cách sân bay hơn 20 km."
+        }
+      ]
+    },
+    "zh_呢_87": {
+      "title": "……呢! (Trợ từ ngữ khí: ...cơ đấy!, ...đấy! [nhấn mạnh tình huống, nhắc nhở chú ý])",
+      "shortExplanation": "Trợ từ ngữ khí '呢' đặt ở cuối câu trần thuật hoặc câu tiếp diễn để khẳng định sự việc đang diễn ra và thu hút sự chú ý của người nghe; '...đấy!', '...cơ đấy!'.",
+      "longExplanation": "'呢' (ne) là trợ từ ngữ khí đặt ở cuối câu khẳng định (thường đi kèm với các từ chỉ sự tiếp diễn như '在', '正', '还在'). Nó có tác dụng tăng cường ngữ khí khẳng định, xác thực một tình trạng đang tiếp diễn trước mắt, đồng thời gây chú ý, nhắc nhở hoặc thông báo cho người nghe biết một sự thật cụ thể với sắc thái tình cảm rõ nét (ví dụ: 他还在学习呢！ - Cậu ấy vẫn đang học bài đấy nhé!).",
+      "formation": "Câu trần thuật (thường có 在 / 还在) + 呢！",
+      "examples": [
+        {
+          "translation": "Cậu ấy vẫn còn đang học bài đấy nhé!"
+        }
+      ]
+    },
+    "zh_好吗_88": {
+      "title": "……好吗? (Có được không?, được không? [trưng cầu ý kiến, đề nghị nhã nhặn])",
+      "shortExplanation": "Cụm hỏi ý kiến '好吗？' đặt ở cuối câu để thăm dò ý kiến, đề xuất hoặc nhờ vả một cách hòa nhã, lịch sự; 'được không?', 'nhé?'.",
+      "longExplanation": "'……好吗？' (hǎo ma?) là hình thức câu hỏi chính phản/nghi vấn phụ thêm đặt ở cuối câu cầu khiến hoặc trần thuật. Mẫu câu này được người nói sử dụng khi đưa ra một kế hoạch, đề xuất, yêu cầu hoặc nhờ vả, nhằm thăm dò và trưng cầu sự đồng ý của đối phương một cách lịch sự, nhã nhặn và tôn trọng (tương tự như '好不好？' hay '行吗？').",
+      "formation": "Câu cầu khiến / Đề xuất + 好吗？",
+      "examples": [
+        {
+          "translation": "Chiều mai bạn gọi điện thoại cho tôi được không?"
+        }
+      ]
+    },
+    "zh_再V_89": {
+      "title": "再 + Động từ (Lại, nữa, thêm một lần nữa [hành động lặp lại chưa xảy ra hoặc trong tương lai])",
+      "shortExplanation": "Phó từ '再' đứng trước động từ để biểu thị hành động sẽ lặp lại hoặc tiếp tục trong tương lai, hoặc yêu cầu đối phương làm lại việc gì; 'lại...', 'nữa'.",
+      "longExplanation": "'再' (zài) là phó từ chỉ sự lặp lại của hành động. Điểm ngữ pháp căn bản trong tiếng Trung là '再' dùng cho hành động sẽ lặp lại trong tương lai hoặc hành động chưa phát sinh (ví dụ: 再见 - hẹn gặp lại, 再看一次 - xem lại một lần nữa), khác biệt hoàn toàn với '又' (dùng cho hành động đã lặp lại trong quá khứ). Cấu trúc '再 + Động từ' cũng thường xuất hiện trong câu cầu khiến để yêu cầu ai đó thực hiện lại một hành động.",
+      "formation": "Chủ ngữ + 再 + Động từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Bạn xem lại cuốn sách này một chút đi."
+        }
+      ]
+    },
+    "zh_再V_90": {
+      "title": "Hành động 1 + 再 + Hành động 2 (Xong rồi mới..., rồi hãy... [thứ tự hành động])",
+      "shortExplanation": "Phó từ '再' đứng trước động từ thứ hai để biểu thị hành động sau chỉ được tiến hành sau khi hành động trước hoàn thành; '...rồi mới...', '...rồi hãy...'.",
+      "longExplanation": "'再' (zài) ngoài nghĩa lặp lại còn được dùng để biểu thị trình tự trước sau của hai hành động. Trong chuỗi liên tiếp 'Hành động 1 + 再 + Hành động 2', phó từ '再' đứng trước động từ ở vế sau để nhấn mạnh rằng hành động thứ hai sẽ chỉ diễn ra sau khi hành động hoặc điều kiện thứ nhất đã được hoàn tất hoặc giải quyết xong (ví dụ: 吃完饭再走 = ăn cơm xong rồi hẵng đi, 想想再告诉你 = nghĩ kỹ rồi mới nói cho bạn biết).",
+      "formation": "Hành động 1 (Động từ 1) + 再 + Hành động 2 (Động từ 2)",
+      "examples": [
+        {
+          "translation": "Để tôi suy nghĩ đã rồi mới nói cho bạn biết."
+        }
+      ]
+    },
+    "zh_TIME再V_91": {
+      "title": "Từ chỉ thời gian + 再 + Động từ (Đến... mới làm, để... rồi hãy... [trì hoãn đến thời điểm xác định])",
+      "shortExplanation": "Phó từ '再' đặt sau từ chỉ thời gian để biểu thị việc hoãn hành động lại và chờ đến thời điểm đó mới thực hiện; 'đến... rồi hãy...', 'để... mới...'.",
+      "longExplanation": "Kết cấu 'Từ chỉ thời gian + 再 + Động từ' dùng để biểu thị sự trì hoãn một hành động, quyết định không làm ngay lúc này mà đợi đến một thời điểm cụ thể trong tương lai mới bắt đầu thực hiện (ví dụ: 我明天再去 = Đến mai tôi mới đi / Để ngày mai tôi hãy đi). Phó từ '再' ở đây mang sắc thái hoãn lại một kế hoạch hoặc dời hành động sang một thời điểm thích hợp hơn.",
+      "formation": "Chủ ngữ + Từ chỉ thời gian + 再 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Ngày mai tôi mới đi (Để mai tôi hãy đi)."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_就_77": {
+      "title": "就（それなら〜・じゃあ〜［条件に基づく帰結・判断］）",
+      "shortExplanation": "前節の条件や状況を受けて、「それなら〜」「〜なら〜する」と結論・解決策・次の行動を述べる副詞表現です。",
+      "longExplanation": "「就」（jiù）は前節の前提や状況（「要是／如果〜」など）を受けて、後節の動詞の前に置かれ、「それなら〜する」「〜すればよい」と自然な成り行きや決定、提案を導く副詞です。文末の語気助詞「吧」と併用されることが多く、その場合は「それなら〜しよう／〜しなさい」と柔らかく提案・指示するニュアンスになります。",
+      "formation": "（条件・状況 ＋ ）就 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "行きたくないなら、家で休んでいなさい。"
+        }
+      ]
+    },
+    "zh_还A_78": {
+      "title": "还 ＋ 形容詞（まあまあ〜・割と〜［許容範囲・一応満足］）",
+      "shortExplanation": "副詞「还」を肯定的な意味の形容詞の前に置き、「まあまあ〜」「割と〜」「一応〜」と、水準に達していて許容できる程度であることを表します。",
+      "longExplanation": "「还」（hái）は形容詞（主に「好」「行」「不错」など）の直前に置かれ、程度が最高とは言えないものの、一応合格点であることや、まあ許容できる範囲にあることを示します。過度の期待はしていないが「悪くはない」「まあまあだ」という控えめな満足感や評価を表す際に日常的によく使われます。",
+      "formation": "主語 ＋ 还 ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "昨日のテストはまあまあ良かったです。"
+        }
+      ]
+    },
+    "zh_有点儿A_79": {
+      "title": "有点儿 ＋ 形容詞（少し〜・ちょっと〜［好ましくないニュアンス］）",
+      "shortExplanation": "副詞句「有点儿」を形容詞の前に置き、「少し〜」「ちょっと〜」と好ましくない・不満な状態を表します。",
+      "longExplanation": "「有点儿」（yǒudiǎnr、南部方言では「有点」とも言う）は形容詞や心理動詞の直前に置かれ、好ましくない事態、不都合、不満、わずらわしさなどの消極的なニュアンスを含めて「少し〜だ」「ちょっと〜だ」と述べる表現です（例：有点儿累＝少し疲れた、有点儿贵＝ちょっと高い）。一方、単に客観的な差を表す「一点儿」は形容詞の後ろに置かれる（贵一点儿＝もう少し高い）ため、語順と意味の違いに注意が必要です。",
+      "formation": "主語 ＋ 有点儿 ＋ 形容詞 / 心理動詞",
+      "examples": [
+        {
+          "translation": "今日の天気は少し寒いです。"
+        }
+      ]
+    },
+    "zh_怎么_80": {
+      "title": "怎么（どうして・なぜ［驚き・怪訝を表す疑問副詞］）",
+      "shortExplanation": "述語の前に置いて原因や理由を尋ねる疑問代名詞で、話し手の驚きやいぶかしさ、怪訝なニュアンスを含みます。",
+      "longExplanation": "「怎么」（zěnme）は述語（動詞や形容詞、否定表現など）の直前に置かれ、事態の原因や理由を尋ねる用法を持ちます。客観的に理由そのものを問う「为什么」と比べ、「どうして〜なのか」「なぜ〜なのか」と、予想外の事態や常識に反する状況に対する話し手の驚き・不審・当惑の気持ちが強く込められるのが特徴です。",
+      "formation": "主語 ＋ 怎么 ＋ 述語（動詞 / 形容詞 / 否定表現）？",
+      "examples": [
+        {
+          "translation": "どうして機嫌が悪いの？"
+        }
+      ]
+    },
+    "zh_NMM都_81": {
+      "title": "名詞 ＋ 量詞重畳 ＋ 都（どれもみんな〜・誰も彼も〜［全称強調］）",
+      "shortExplanation": "量詞を重ね型（AA）にして「都」と呼応させ、「どの〜もみな」「一人ひとりみんな」と例外なくすべてそうであることを強調します。",
+      "longExplanation": "中国語の単音節量詞は重ね型（个个、张张、本本など）にすることで、「どの〜もすべて」「一人ひとり／一つひとつ残らず」という全称の意味を表すことができます。名詞の後ろに置かれて主語を強調する形をとり、全体に例外がないことを示すため、述語の前には必ず呼応の副詞「都」が伴います。",
+      "formation": "（名詞 ＋ ）量詞の重ね型 ＋ 都 ＋ 述語",
+      "examples": [
+        {
+          "translation": "クラスメイトは誰も彼もみんなとても嬉しそうです。"
+        }
+      ]
+    },
+    "zh_因为所以_82": {
+      "title": "因为……所以……（〜だから、それで〜［原因と結果の呼応構文］）",
+      "shortExplanation": "原因・理由を導く接続詞「因为」と、結果・結論を導く「所以」が呼応し、「〜だから〜なのだ」という因果関係を表します。",
+      "longExplanation": "「因为……所以……」（yīnwèi... suǒyǐ...）は中国語における最も代表的な因果関係を表す複文の呼応形式です。前節の「因为」に続けて理由や原因を述べ、後節の「所以」に続けてその結果や導かれる結論を提示します。日常会話では「因为」や「所以」のどちらか一方が省略されることもありますが、両者を揃えることで論理関係が明確に伝わります。",
+      "formation": "因为 ＋ 原因・理由，所以 ＋ 結果・結論",
+      "examples": [
+        {
+          "translation": "美味しくないので、私は食べません。"
+        }
+      ]
+    },
+    "zh_还V_83": {
+      "title": "还 ＋ 動詞（まだ〜している・依然として〜している［動作・状態の継続］）",
+      "shortExplanation": "副詞「还」を動詞の前に置き、以前から続いている動作や状態が現在も依然として継続していることを表します。",
+      "longExplanation": "「还」（hái）は動詞の直前（進行を表す「在」などを伴うことが多い）に置かれ、すでに終わっているべき時間になっても動作や状態が依然として続いていることを表す副詞です。「まだ〜している」「依然として〜している」という意味になり、話し手の「もう〜してもよい時間なのに」という軽い意外性や不満の気持ちが含まれることもあります。",
+      "formation": "主語 ＋ 还（＋ 在） ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "もう8時なのに、彼はまだ寝ています。"
+        }
+      ]
+    },
+    "zh_还没V_84": {
+      "title": "还没 ＋ 動詞（まだ〜していない［未完了・未発生］）",
+      "shortExplanation": "副詞「还」と否定詞「没（有）」が連なり、現時点に至るまでその動作が行われていない・完了していないことを表します。",
+      "longExplanation": "「还没」（hái méi、または「还没有」hái méiyǒu）は動詞の前に置かれ、ある動作や事態が基準の時点（現在など）になっても「まだ行われていない」「まだ済んでいない」という未完了の状態を表します。当然終わっているはずのことや、近いうちに実現が期待される事柄に対して使われることが多く、「まだ〜していない」という意味になります。",
+      "formation": "主語 ＋ 还没（有） ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "どうしてまだご飯を食べていないのですか？"
+        }
+      ]
+    },
+    "zh_TIME就V_85": {
+      "title": "時間詞 ＋ 就 ＋ 動詞（早くも〜にはもう〜した［発生の早さの強調］）",
+      "shortExplanation": "副詞「就」を時間詞の後ろに置き、動作や事態の発生が「早い」「迅速である」という話し手の主観的強調を表します。",
+      "longExplanation": "「就」（jiù）を時間を表す語句の後ろ、動詞の直前に置くことで、ある行為や出来事が通常の予想よりも「早く行われた」「あっという間に発生した」という主観的なニュアンスを表します（例：他五点就来了＝彼は5時にはもう来ていた）。過去の事態であれば文末に完了の「了」を伴うのが一般的です。これに対して「遅さ」を強調する場合は「才」を用います。",
+      "formation": "主語 ＋ 時間詞 ＋ 就 ＋ 動詞（＋ 目的語）（＋ 了）",
+      "examples": [
+        {
+          "translation": "生徒たちは7時半には早くも教室に来ていました。"
+        }
+      ]
+    },
+    "zh_N1离N2DISTANCE_86": {
+      "title": "場所1 ＋ 离 ＋ 場所2 ＋ 距離（〜から…離れている［空間的な距離］）",
+      "shortExplanation": "介詞「离」を用いて2つの場所の間の隔たりを示し、「場所1は場所2から〜（の距離だけ）離れている」と距離を表します。",
+      "longExplanation": "「离」（lí）は二つの地点間の空間的な隔たり（または二つの時点の時間的隔たり）を表す前置詞（介詞）です。「場所1 ＋ 离 ＋ 場所2 ＋ 距離・形容詞」の構造をとり、基準点2からの隔たりを具体的に示します。距離部分には具体的な数値（〜公里、〜米など）のほか、「很远」（とても遠い）や「很近」（とても近い）といった形容詞もよく置かれます。",
+      "formation": "場所1 ＋ 离 ＋ 場所2 ＋ 距離（数量詞 / 远 / 近）",
+      "examples": [
+        {
+          "translation": "学校は空港から20キロ以上離れています。"
+        }
+      ]
+    },
+    "zh_呢_87": {
+      "title": "……呢!（語気助詞：〜しているんだよ！・〜だよ！［事実の強調・注意喚起］）",
+      "shortExplanation": "平叙文や進行を表す文の末尾に置く語気助詞「呢」で、事態が現在進行中であることを力説し、聞き手に注意を促します。",
+      "longExplanation": "文末の語気助詞「呢」（ne）は、肯定文（特に「在」「正在」「还」を伴う動作の持続を表す文）の末尾に置かれ、事実が今まさにその状態にあることを強調して相手に知らせる役割を果たします。話し手が相手の注意を引きつけ、「ほら、まだ〜しているんだよ！」「〜なのだよ！」と確認・主張する感情が込められます。",
+      "formation": "平叙文（在 / 还在 を含む文） ＋ 呢！",
+      "examples": [
+        {
+          "translation": "彼はまだ勉強している最中なんですよ！"
+        }
+      ]
+    },
+    "zh_好吗_88": {
+      "title": "……好吗？（〜でいいですか？・〜してくれますか？［提案・依頼の同意伺い］）",
+      "shortExplanation": "文末に「好吗？」を付け、自分の提案やお願いに対して相手の意向や同意を優しく尋ねる表現です。",
+      "longExplanation": "「……好吗？」（hǎo ma?）は提案、勧誘、依頼を表す文の最後に付加される疑問形式です。話し手が自らの意向やお願い事を述べた上で、「これでよろしいですか？」「〜してくれますか？」と相手の意見や都合を伺う、とても柔らかく丁寧な語気を作ります（「好不好？」「行不行？」とほぼ同様の機能）。",
+      "formation": "提案・依頼・勧誘の文 ＋ 好吗？",
+      "examples": [
+        {
+          "translation": "明日の午後、私に電話をかけてもらえますか？"
+        }
+      ]
+    },
+    "zh_再V_89": {
+      "title": "再 ＋ 動詞（もう一度〜する・また〜する［将来の反復・再度の実行］）",
+      "shortExplanation": "副詞「再」を動詞の前に置き、将来に向けた動作の繰り返しや再度の実行を表します（日本語の「もう一度〜する」「また〜する」に相当）。",
+      "longExplanation": "「再」（zài）は動詞の直前に置かれ、これから行われる動作や行為が再び繰り返されることを表す副詞です。中国語では「過去にすでに繰り返された」ことを表す「又」とは厳密に使い分けられ、「再」は「これからの未来においてもう一度行う」場合や、相手に再度の実行を促す依頼・勧誘の文脈で用いられます（例：再来一次＝もう一度やる）。",
+      "formation": "主語 ＋ 再 ＋ 動詞（＋ 目的語 / 補語）",
+      "examples": [
+        {
+          "translation": "この本をもう一度見てみてください。"
+        }
+      ]
+    },
+    "zh_再V_90": {
+      "title": "動作1 ＋ 再 ＋ 動作2（〜してから〜する・そのあとで〜する［順序の接続］）",
+      "shortExplanation": "後続の動詞の前に副詞「再」を置き、先の動作が終わった後で初めて次の動作を行うという「順序」を表します。",
+      "longExplanation": "「再」（zài）は動作の反復だけでなく、複数の動作の前後順序を表す用法を持ちます。「動詞1 ＋ 再 ＋ 動詞2」という連結形式において、第1の動作や準備が完了したことを前提として、「そのあとで初めて第2の動作を実行する」という意味合いを表します（例：做完作业再看电视＝宿題を終えてからテレビを見る）。",
+      "formation": "動作1 ＋ 再 ＋ 動作2",
+      "examples": [
+        {
+          "translation": "少し考えさせてから、あなたに伝えます。"
+        }
+      ]
+    },
+    "zh_TIME再V_91": {
+      "title": "時間詞 ＋ 再 ＋ 動詞（〜になってから〜する・〜まで延期する［時期の先送り］）",
+      "shortExplanation": "時間詞の後に副詞「再」を置き、動作の実行を特定の日時に先送りにして「〜になってから〜する」ことを表します。",
+      "longExplanation": "「時間詞 ＋ 再 ＋ 動詞」の構文は、ある動作を今すぐ行わず、明記された時間まで延期し、その時になってから実行することを表します（例：我明天再去＝今は行かず、明日になってから行きます）。副詞「再」が持つ「その時が来てから着手する」という順序・留保のニュアンスが強調される表現です。",
+      "formation": "主語 ＋ 時間詞 ＋ 再 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "私は明日になってから行きます（明日行くことにします）。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_就_77": {
+      "title": "就 (그러면, 그렇다면 [상황에 따른 귀결·해결책])",
+      "shortExplanation": "앞 문장의 상황이나 조건을 받아 후속 절의 동사 앞에 놓여 '그러면 ~하다', '그렇다면 ~해라'와 같이 자연스러운 결론이나 해결책을 이끄는 부사입니다.",
+      "longExplanation": "'就'(jiù)는 앞선 상황이나 가정 조건(주로 '如果/要是'와 호응하거나 생략됨)을 바탕으로, 뒷절에서 그에 따른 당연한 결론, 결정, 조언을 제시할 때 쓰입니다. 문말 어기조사 '吧'와 함께 쓰이면 '그렇다면 ~해라', '그럼 ~하자'처럼 부드러운 권유나 제안의 뉘앙스를 나타냅니다.",
+      "formation": "(조건/상황 + ) 就 + 동사(+ 목적어)",
+      "examples": [
+        {
+          "translation": "가기 싫으면 그냥 집에서 쉬어."
+        }
+      ]
+    },
+    "zh_还A_78": {
+      "title": "还 + 형용사 (그럭저럭 ~하다, 그런대로 ~하다)",
+      "shortExplanation": "부사 '还'가 형용사 앞에 놓여 기준이나 기대에 어느 정도 부합하여 그럭저럭 받아들일 만함을 나타냅니다.",
+      "longExplanation": "'还'(hái)는 주로 긍정적 의미의 형용사(好, 行, 不错 등) 앞에 쓰여 아주 뛰어나지는 않지만 봐줄 만하거나 어느 정도 만족할 만한 수준임을 나타냅니다. 완벽하지는 않아도 '그럭저럭 괜찮다', '그런대로 볼만하다'와 같이 겸손하거나 무난한 평가를 전할 때 널리 쓰입니다.",
+      "formation": "주어 + 还 + 형용사",
+      "examples": [
+        {
+          "translation": "어제 시험은 그럭저럭 괜찮았어요."
+        }
+      ]
+    },
+    "zh_有点儿A_79": {
+      "title": "有点儿 + 형용사 (조금 ~하다, 약간 ~하다 [부정적·불만족])",
+      "shortExplanation": "부사어 '有点儿'이 형용사 앞에 놓여 화자의 마음에 들지 않거나 부정적인 상황에 대해 '약간 ~하다', '조금 ~하다'라는 뉘앙스를 나타냅니다.",
+      "longExplanation": "'有点儿'(yǒudiǎnr, 구어에서는 '有点'으로도 자주 축약됨)은 형용사나 심리동사 앞에 위치하여 미미한 정도를 나타냅니다. 특징적인 점은 대체로 춥거나(冷), 피곤하거나(累), 비싼(贵) 상황처럼 화자에게 불만족스럽거나 불편한 감정을 자아내는 소극적·부정적 문맥에 주로 쓰인다는 점입니다. 객관적 수량이나 비교 차이를 나타내며 형용사 뒤에 놓이는 '一点儿'(예: 便宜一点儿 - 좀 더 싸다)과 구별해야 합니다.",
+      "formation": "주어 + 有点儿 + 형용사 / 심리동사",
+      "examples": [
+        {
+          "translation": "오늘 날씨가 좀 춥네요."
+        }
+      ]
+    },
+    "zh_怎么_80": {
+      "title": "怎么 (어째서, 왜 [놀라움·의아함을 담은 이유 질문])",
+      "shortExplanation": "술어 앞에 위치하여 원인이나 이유를 묻는 의문대명사로, 화자의 놀라움, 의아함, 뜻밖이라는 뉘앙스를 담고 있습니다.",
+      "longExplanation": "'怎么'(zěnme)는 동사나 형용사 등 술어 앞에 쓰여 '어째서', '왜', '무슨 이유로'라는 뜻으로 이유를 묻습니다. 단순하고 객관적인 원인을 묻는 '为什么'와 달리, '怎么'는 기대와 다르거나 예상 밖의 일에 대해 고개를 갸웃거리며 놀라거나 의아해하는 주관적 감정이 짙게 묻어나는 특징이 있습니다.",
+      "formation": "주어 + 怎么 + 술어(동사 / 형용사 / 부정 표현)?",
+      "examples": [
+        {
+          "translation": "너 왜 기분이 안 좋아?"
+        }
+      ]
+    },
+    "zh_NMM都_81": {
+      "title": "명사 + 양사 중첩 + 都 (하나하나 모두 ~, 저마다 다 ~)",
+      "shortExplanation": "양사를 중첩(AA)하고 부사 '都'와 호응시켜 '모두 다', '하나하나 남김없이 ~하다'라는 전칭 강조를 나타냅니다.",
+      "longExplanation": "중국어에서 단음절 양사는 '个个'(하나하나/사람마다), '天天'(날마다), '张张'(장마다)처럼 겹쳐 써서 '모든', '각각의'라는 전체 포괄의 의미를 나타낼 수 있습니다. 명사 뒤에 놓이거나 단독으로 주어 역할을 하며, 예외 없이 전부 그러함을 나타내므로 술어 앞에는 반드시 포괄 부사인 '都'가 함께 쓰입니다.",
+      "formation": "(명사 + ) 양사 중첩 + 都 + 술어",
+      "examples": [
+        {
+          "translation": "학생들 모두가 다 매우 기뻐합니다."
+        }
+      ]
+    },
+    "zh_因为所以_82": {
+      "title": "因为……所以…… (왜냐하면 ~하기 때문에, 그래서 ~하다 [인과 관계])",
+      "shortExplanation": "원인을 이끄는 접속사 '因为'와 결과를 이끄는 '所以'가 짝을 이루어 '원인 때문에 결과가 발생하다'라는 명확한 인과 관계를 나타냅니다.",
+      "longExplanation": "'因为……所以……'(yīnwèi... suǒyǐ...)는 중국어의 가장 표준적인 인과 복문 호응 구문입니다. '因为'가 이끄는 앞 절에서 사태의 원인이나 동기를 제시하고, '所以'가 이끄는 뒷 절에서 그에 따른 필연적인 결과나 결론을 밝힙니다. 구어에서는 둘 중 하나를 생략하기도 하지만, 완전한 호응 형식을 갖추면 논리적인 인과 흐름이 분명해집니다.",
+      "formation": "因为 + 원인/이유, 所以 + 결과",
+      "examples": [
+        {
+          "translation": "맛이 없기 때문에 나는 안 먹는다."
+        }
+      ]
+    },
+    "zh_还V_83": {
+      "title": "还 + 동사 (아직도 ~하고 있다, 여전히 ~하다 [동작·상태 지속])",
+      "shortExplanation": "부사 '还'가 동사 앞에 놓여 이전부터 진행되던 동작이나 상태가 기준 시점에도 끝나지 않고 여전히 계속됨을 나타냅니다.",
+      "longExplanation": "'还'(hái)는 동작이나 상태의 지속을 나타내는 부사입니다. 동사 앞(진행을 나타내는 '在'와 자주 결합하여 '还在'의 형태를 취함)에 놓여, 행동이 멈추지 않고 그대로 이어지고 있음을 나타냅니다. 특히 시간 표현과 함께 쓰일 때 '벌써 ~인데도 아직까지 ~하고 있다'처럼 예상이나 기대보다 늦게까지 지속되고 있음을 강조합니다.",
+      "formation": "주어 + 还 (+ 在) + 동사(+ 목적어)",
+      "examples": [
+        {
+          "translation": "8시인데 그는 아직도 자고 있다."
+        }
+      ]
+    },
+    "zh_还没V_84": {
+      "title": "还没 + 동사 (아직 ~하지 않았다 [미완료·미발생])",
+      "shortExplanation": "부사 '还'와 부정사 '没(有)'가 동사 앞에 결합하여 어떤 동작이 기준 시점까지 아직 이루어지지 않았음을 나타냅니다.",
+      "longExplanation": "'还没'(hái méi, 온전한 형태는 '还没有')은 동사 앞에 놓여 마땅히 이루어졌거나 기대했던 행동이 말하는 시점까지 아직 실행되지 않았음을 나타내는 표현입니다. 단순히 행동을 안 했다는 사실만 밝히는 '没'에 비해, '还'가 결합됨으로써 '진작 했어야 하는데 아직까지 안 하고 있다' 또는 '앞으로 할 예정이다'라는 시간적 여운과 기대를 내포합니다.",
+      "formation": "주어 + 还没(有) + 동사(+ 목적어)",
+      "examples": [
+        {
+          "translation": "너 왜 아직도 밥을 안 먹었니?"
+        }
+      ]
+    },
+    "zh_TIME就V_85": {
+      "title": "시간사 + 就 + 동사 (벌써 ~에 ~했다 [이른 시간·신속함 강조])",
+      "shortExplanation": "시간 표현 뒤에 부사 '就'를 붙여 동작이 예상이나 기준보다 '이르다', '빠르다'는 화자의 주관적 강조를 나타냅니다.",
+      "longExplanation": "'就'(jiù)가 시간사 뒤, 동사 앞에 오면 화자가 보기에 어떤 일이나 행동이 통상적인 기준이나 예상보다 매우 일찍, 신속하게 일어났음을 강조합니다. 한국어로는 '벌써 ~에 ~했다', '~부터 이미 ~했다'에 해당합니다. 이미 일어난 일일 경우 문말에 변화·완료의 '了'를 함께 쓰는 경우가 많으며, 늦음을 나타내는 '才'와 대조를 이룹니다.",
+      "formation": "주어 + 시간사 + 就 + 동사(+ 목적어)(+ 了)",
+      "examples": [
+        {
+          "translation": "학생들은 일찍이 7시 반에 벌써 교실에 왔습니다."
+        }
+      ]
+    },
+    "zh_N1离N2DISTANCE_86": {
+      "title": "장소1 + 离 + 장소2 + 거리 (A는 B에서 ~ 떨어져 있다 [공간적 거리])",
+      "shortExplanation": "개사(전치사) '离'를 사용하여 두 지점 사이의 공간적 거리를 나타내며, '장소1은 장소2로부터 (얼마나) 떨어져 있다'를 뜻합니다.",
+      "longExplanation": "'离'(lí)는 기준이 되는 지점이나 시점으로부터의 거리와 격차를 나타내는 전치사입니다. '장소1 + 离 + 장소2 + 거리/정도'의 형태로 쓰여 두 장소 사이의 물리적 거리를 표현합니다. 서술어 부분에는 구체적인 수치(예: 20多公里 - 20여 킬로미터)가 오거나 '很远'(아주 멀다), '很近'(아주 가깝다)과 같은 형용사가 사용됩니다.",
+      "formation": "장소1 + 离 + 장소2 + 거리(수사 + 양사 / 远 / 近)",
+      "examples": [
+        {
+          "translation": "학교는 공항에서 20여 킬로미터 떨어져 있습니다."
+        }
+      ]
+    },
+    "zh_呢_87": {
+      "title": "……呢! (어기조사: ~하고 있는걸!, ~하고 있단 말이야! [상황 강조·주의 환기])",
+      "shortExplanation": "평서문이나 진행문 끝에 붙는 어기조사 '呢'로, 상황이 지속되고 있음을 강조하여 상대방의 주의를 환기시킵니다.",
+      "longExplanation": "문말 어기조사 '呢'(ne)는 긍정 진술문(특히 '在', '还在' 등 동작의 지속을 나타내는 부사와 함께 쓰임) 끝에 놓여, 현재 상황이 사실 그대로 진행 중임을 확인하고 강조하는 작용을 합니다. 듣는 사람에게 '그는 지금 여전히 ~하고 있단 말이야!'처럼 어떤 사실을 일깨워 주거나 주의를 환기시키는 생동감 있는 감정 어기를 담아냅니다.",
+      "formation": "평서문(주로 在 / 还在 수반) + 呢!",
+      "examples": [
+        {
+          "translation": "그는 아직도 공부하고 있단 말이야!"
+        }
+      ]
+    },
+    "zh_好吗_88": {
+      "title": "……好吗? (~해도 될까요?, ~해 줄래요? [동의 구하기·정중한 제안])",
+      "shortExplanation": "문장 끝에 '好吗?'를 덧붙여 자신의 제안이나 부탁에 대해 상대방의 동의와 의향을 정중하게 묻는 표현입니다.",
+      "longExplanation": "'……好吗?'(hǎo ma?)는 청유문이나 명령문, 제안문 끝에 부가되는 의문 형식입니다. 일방적으로 지시하거나 요구하지 않고, '그렇게 해도 괜찮겠습니까?', '~해 주실 수 있나요?'와 같이 상대방의 의사를 존중하며 부드럽고 다정하게 허락이나 동의를 구할 때 널리 쓰입니다.",
+      "formation": "제안 / 요청 문장 + 好吗?",
+      "examples": [
+        {
+          "translation": "내일 오후에 나한테 전화 좀 해 줄래?"
+        }
+      ]
+    },
+    "zh_再V_89": {
+      "title": "再 + 동사 (다시 ~하다, 한 번 더 ~하다 [미래 동작의 반복])",
+      "shortExplanation": "부사 '再'가 동사 앞에 위치하여 앞으로 일어날 동작의 반복이나, 상대방에게 동작을 다시 하도록 권유할 때 '다시 ~하다'를 뜻합니다.",
+      "longExplanation": "'再'(zài)는 동사 앞에서 동작의 재시도나 반복을 나타내는 부사입니다. 이미 지나간 과거의 반복을 나타내는 '又'와 달리, '再'는 아직 실행되지 않은 미래의 반복 또는 상대방에게 한 번 더 행동할 것을 요청·제안하는 맥락에서 사용됩니다(예: 再看一遍 - 다시 한 번 보다, 再见 - 또 만나요).",
+      "formation": "주어 + 再 + 동사(+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "이 책을 한 번 더 살펴보세요."
+        }
+      ]
+    },
+    "zh_再V_90": {
+      "title": "동작1 + 再 + 동작2 (~하고 나서 ~하다, 그런 다음 ~하다 [순서 표현])",
+      "shortExplanation": "뒤따르는 동사 앞에 부사 '再'를 써서, 앞선 동작이나 상황이 완료된 이후에 비로소 다음 동작을 진행함을 나타냅니다.",
+      "longExplanation": "'再'(zài)는 행동의 순차적 연결을 나타내는 부사 기능도 합니다. '동작1 + 再 + 동작2' 구조에서 앞선 행동(동작1)이 먼저 완결되거나 정리된 후, 그 뒤에 이어 비로소 다음 행동(동작2)을 취함을 의미합니다(예: 吃完饭再走 - 밥 다 먹고 나서 가다). 한국어로는 '~하고 나서 ~하다', '~한 뒤에 비로소 ~하다'로 해석됩니다.",
+      "formation": "동작1 + 再 + 동작2",
+      "examples": [
+        {
+          "translation": "내가 좀 생각해 보고 나서 너한테 알려줄게."
+        }
+      ]
+    },
+    "zh_TIME再V_91": {
+      "title": "시간사 + 再 + 동사 (~에 가서야 ~하다, ~가 되어서야 비로소 ~하다 [동작의 연기])",
+      "shortExplanation": "시간사 뒤에 부사 '再'를 두어 행동을 지금 당장 하지 않고 특정 시점까지 미루어 두었다가 그때 행함을 나타냅니다.",
+      "longExplanation": "'시간사 + 再 + 동사' 구문은 어떤 행위를 당장 하지 않고 유보해 두었다가 지정된 시간이 되어서야 비로소 실행에 옮김을 뜻합니다(예: 我明天再去 - 나는 내일이나 되어서 갈 것이다 / 내일 가겠다). 동작의 시점을 미래의 특정 때로 미루어 정하는 뉘앙스를 자연스럽게 전달합니다.",
+      "formation": "주어 + 시간사 + 再 + 동사(+ 목적어)",
+      "examples": [
+        {
+          "translation": "저는 내일이 되어서야 갈 거예요 (내일 갈게요)."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_就_77": {
+      "title": "就（副词：表示顺理成章的决断或结论）",
+      "shortExplanation": "副词“就”置于动词前，承接上文所提出的前提、假设或情况，引出顺理成章的决定、结论或建议；相当于“那就……”。",
+      "longExplanation": "“就”（jiù）用在复句的后一分句动词前，承接前一分句所表达的前提或条件（常与“要是”、“如果”等假设连词呼应，但假设连词常可省略），表示基于上述情况得出的必然结果、决定或解决办法。句末搭配语气助词“吧”时，常用于提出合情合理的建议或劝慰，语气委婉柔和。",
+      "formation": "（条件/假设 + ）就 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "你不想去的话，就在家休息吧。"
+        }
+      ]
+    },
+    "zh_还A_78": {
+      "title": "还 + 形容词（副词：表示尚可、勉强过得去）",
+      "shortExplanation": "副词“还”置于具有积极意义的形容词前，表示程度虽然不高但达到了基本要求，勉强让人满意；相当于“还算……”、“还挺……”。",
+      "longExplanation": "“还”（hái）用在部分褒义或中性形容词（如“好”、“行”、“可以”、“不错”等）之前，起到弱化肯定语气的作用。表示事物虽未达到十分理想的高度，但整体上尚可接受、能够凑合或令人基本满意。例如“还好”相当于“还算顺利/过得去”，“还行”相当于“马马虎虎”。",
+      "formation": "主语 + 还 + 形容词",
+      "examples": [
+        {
+          "translation": "昨天的考试还算过得去（考得还行）。"
+        }
+      ]
+    },
+    "zh_有点儿A_79": {
+      "title": "有点儿 + 形容词（副词短语：稍微、略微［多含不如意之意］）",
+      "shortExplanation": "副词短语“有点儿”充当状语修饰形容词，表示程度不深，多用于表达不如意、不合心意或消极的情感；相当于“有点……”。",
+      "longExplanation": "“有点儿”（yǒudiǎnr，口语中也常省作“有点”）作状语置于形容词或心理动词前，表示说话人感觉程度较轻，但通常带有消极、不顺心、抱怨或微词等主观色彩（如：有点儿累、有点儿贵、有点儿冷）。需要注意将其与放在形容词后表示比较差量的“一点儿”（如：冷一点儿）以及修饰名词表示微少数量的“一点儿”（如：一点儿钱）相区别。",
+      "formation": "主语 + 有点儿 + 形容词 / 心理动词",
+      "examples": [
+        {
+          "translation": "今天天气有点儿冷。"
+        }
+      ]
+    },
+    "zh_怎么_80": {
+      "title": "怎么（疑问代词：询问原因，带有惊讶或不解语气）",
+      "shortExplanation": "疑问代词“怎么”置于谓语前询问事由或原因，常带有惊讶、奇怪、不解或关切等主观色彩；相当于“怎么会……”、“为何……”。",
+      "longExplanation": "“怎么”（zěnme）作为疑问代词，除了询问方式（怎么走、怎么做）外，还常置于动词、形容词或否定词前询问事态的原因或理由。与单纯客观测寻原因的“为什么”相比，“怎么”更侧重于表达说话人对意外情况的惊奇、困惑、意外或关切语气（例如：“你怎么不来？”暗含“你应该来却没来，感到很奇怪”的心态）。",
+      "formation": "主语 + 怎么 + 谓语（动词 / 形容词 / 否定短语）？",
+      "examples": [
+        {
+          "translation": "你怎么不高兴呀？"
+        }
+      ]
+    },
+    "zh_NMM都_81": {
+      "title": "名词 + 量词重叠 + 都（量词重叠表全称：个个/人人/本本都……）",
+      "shortExplanation": "单音节量词重叠（AA式）与副词“都”呼应，表示“每一个”、“全都不例外”，强调无一遗漏。",
+      "longExplanation": "汉语中多数单音节量词可以重叠使用（如：个个、张张、件件、本本），重叠后具有“每一”、“各个”的全称普适意义，表示没有例外。当量词重叠式位于名词之后充当主语时，后面的谓语前通常必须搭配总括副词“都”来呼应，强化全员具备某种特征或状态的语气。",
+      "formation": "（名词 + ）量词重叠 + 都 + 谓语",
+      "examples": [
+        {
+          "translation": "同学们个个都非常高兴。"
+        }
+      ]
+    },
+    "zh_因为所以_82": {
+      "title": "因为……所以……（关联词：表因果关系）",
+      "shortExplanation": "表示因果关系的典型关联词，“因为”引出原由或根据，“所以”引出相应的结果或推论；相当于“因为……因此/所以……”。",
+      "longExplanation": "“因为……所以……”（yīnwèi... suǒyǐ...）是汉语因果复句中最基本、最常用的配对关联词语。通常前一分句使用“因为”交代产生某种情况的理由、客观原因或事实根据，后一分句使用“所以”顺理成章地引出由此引发的后果、结论或行动。在实际口语交流中，有时二者可单用其一，但成对使用时因果脉络最为清晰完整。",
+      "formation": "因为 + 原因，所以 + 结果",
+      "examples": [
+        {
+          "translation": "因为不好吃，所以我不想吃。"
+        }
+      ]
+    },
+    "zh_还V_83": {
+      "title": "还 + 动词（副词：表示动作或状态的持续）",
+      "shortExplanation": "副词“还”置于动词前，表示先前的动作或状态仍在继续进行、尚未终结；相当于“仍然”、“依旧”。",
+      "longExplanation": "“还”（hái）用在动词（常与表示进行的“在”连用构成“还在”）前面，说明某个从过去开始的动作或状态跨越了时间界限，在当前参考时间点仍未停止或改变。常常与时间短语搭配，用以提示某种情况超出了一般的时间预期（例如：“都八点了，他还在睡觉”暗示“理应起床却仍在睡”）。",
+      "formation": "主语 + 还（+ 在） + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "都八点钟了，他还在睡觉呢。"
+        }
+      ]
+    },
+    "zh_还没V_84": {
+      "title": "还没 + 动词（副词结构：表示动作尚未实现或完成）",
+      "shortExplanation": "副词“还”与否定副词“没（有）”连用置于动词前，表示预期或应该发生的事情截至目前为止尚未完成；相当于“尚未……”。",
+      "longExplanation": "“还没”（hái méi，全称“还没有”）放在动词谓语前，表示某个动作行为或变化在预期的基准时间内尚未发生。与单纯的“没 + 动词”相比，“还没”蕴含着强烈的时态期待感，即说话人潜意识里认为该动作在将来某个时刻可能会实现或理应实现，因而常带有催促、询问或提示的语气。",
+      "formation": "主语 + 还没（有） + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "你怎么到现在还没吃午饭呢？"
+        }
+      ]
+    },
+    "zh_TIME就V_85": {
+      "title": "时间词 + 就 + 动词（副词：强调时间早、速度快）",
+      "shortExplanation": "副词“就”紧接在表示时间的词语之后修饰动词，强调说话人主观上认为动作发生得早、进行得迅速；相当于“早在……就已……”。",
+      "longExplanation": "副词“就”（jiù）置于时间状语之后、动词之前，带有强烈的说话人主观情感色彩，用以突出动作行为发生的时间比预料或通常情况要早得多、来得快（例如：“他五点就起床了”强调起得很早）。用于陈述过去发生的事情时，句尾常常搭配语气助词“了”。此用法在语义上与强调动作发生迟缓、费时的“才”形成鲜明对照。",
+      "formation": "主语 + 时间词 + 就 + 动词（+ 宾语）（+ 了）",
+      "examples": [
+        {
+          "translation": "同学们早在七点半就来到教室了。"
+        }
+      ]
+    },
+    "zh_N1离N2DISTANCE_86": {
+      "title": "处所1 + 离 + 处所2 + 距离（介词：表示空间距离的间隔）",
+      "shortExplanation": "介词“离”引出作为参照基准的处所，用于说明两个地点之间的空间距离（或相隔的远近）；相当于“相距……”。",
+      "longExplanation": "“离”（lí）是表示空间或时间距离相隔的前置介词。常用句型为“处所1 + 离 + 处所2 + 距离/远近形容词”，其中“处所2”为空间参照的原点。谓语部分可以接具体的数量短语（如：20多公里、五百米），也可以用形容词“远”、“近”等来表示相对的距离程度。该结构在日常指路与距离说明中极为常见。",
+      "formation": "处所名词1 + 离 + 处所名词2 + 具体距离数量词 / 远 / 近",
+      "examples": [
+        {
+          "translation": "学校距离机场有二十多公里远。"
+        }
+      ]
+    },
+    "zh_呢_87": {
+      "title": "……呢！（语气助词：表示持续与确证强调）",
+      "shortExplanation": "置于陈述句句末的语气助词“呢”，用于强调动作或状态仍在持续进行，提示对方注意某种事实；相当于“……着呢！”。",
+      "longExplanation": "语气助词“呢”（ne）置于句尾，常与句中的副词“还”、“在”、“正在”等相配合，表示动作行为或某种状态正在持续发展。除了增强陈述肯定的语气之外，“呢”还带有鲜明的主观感情色彩，意在提醒听话人关注眼前的实际情形，起到澄清、证实或引起对方警觉与重视的作用。",
+      "formation": "陈述句（常含 还/在/正 ） + 呢！",
+      "examples": [
+        {
+          "translation": "他还正在用功学习呢！"
+        }
+      ]
+    },
+    "zh_好吗_88": {
+      "title": "……好吗？（附加疑问：征询同意与温和提议）",
+      "shortExplanation": "置于祈使句或建议句句末，用于委婉征求对方的同意、配合或意见；相当于“好不好？”、“行吗？”。",
+      "longExplanation": "“……好吗？”（hǎo ma?）是汉语中用于表达商量、建议或请求的常用句尾格式。说话人在提出自己的想法、要求或约定之后加上“好吗？”，能够极大程度地弱化祈使语气，体现出对听话人意愿的尊重与关照，使语气变得非常亲切、礼貌而客气。回答时通常可用“好的”、“行”或“不行”来应对。",
+      "formation": "陈述建议 / 请求句 + 好吗？",
+      "examples": [
+        {
+          "translation": "你明天下午抽空给我打个电话好吗？"
+        }
+      ]
+    },
+    "zh_再V_89": {
+      "title": "再 + 动词（副词：表示动作在未来的重复或又一次进行）",
+      "shortExplanation": "副词“再”置于动词前，表示尚未发生或将来动作的重复、继续；相当于“再一次”、“又一次”。",
+      "longExplanation": "“再”（zài）作为表示动作重复的副词，其关键语法特征在于指向“未来”或“尚未实现”的行为（如：再来、再见、再想想）。它常用于祈使句中，表示请求、建议或要求对方重新做某事、再尝试一次。在现代汉语中，“再”严格区别于用于表示“已然重复（过去已发生）”的副词“又”。",
+      "formation": "主语 + 再 + 动词（+ 宾语 / 补语）",
+      "examples": [
+        {
+          "translation": "你把这本书再仔细看一遍吧。"
+        }
+      ]
+    },
+    "zh_再V_90": {
+      "title": "动作1 + 再 + 动作2（副词：表示前后相承的先后顺序）",
+      "shortExplanation": "副词“再”置于后一个动词前，表示前一动作或条件完成之后，接着才进行下一个动作；相当于“……然后才……”。",
+      "longExplanation": "副词“再”（zài）常用于连续动作句中表示承接顺序。在“动作短语1 + 再 + 动作2”结构中，“再”强调动作2的发生必须以动作1的完成或实现为前提条件，即“先完成第一件事，随后才着手做第二件事”。在日常对话中，常用来表达暂缓行事、等待适当时机（例如：“商量好再做决定”）。",
+      "formation": "动作短语1 + 再 + 动词谓语2",
+      "examples": [
+        {
+          "translation": "让我先考虑考虑，然后再告诉你。"
+        }
+      ]
+    },
+    "zh_TIME再V_91": {
+      "title": "时间词 + 再 + 动词（副词：将动作推迟到特定时间执行）",
+      "shortExplanation": "时间词后加副词“再”，表示暂时搁置当前行动，推迟到指定的时间才去进行；相当于“等到……再……”。",
+      "longExplanation": "“时间词 + 再 + 动词”结构表示说话人有意将某项行动延期，此时此刻暂不采取行动，而是保留至未来的某个具体时间节点才付诸实践（例如：“我明天再去”意味着今天先不去，延期至明日再行动）。副词“再”在此处起到了暂缓、延宕并衔接未来动作的作用。",
+      "formation": "主语 + 时间词 + 再 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "我打算等到明天再去。"
+        }
+      ]
+    }
+  }
+}

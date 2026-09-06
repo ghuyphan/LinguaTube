@@ -1,0 +1,470 @@
+{
+  "vi": {
+    "en_c2_13": {
+      "title": "Cụm động từ nguyên mẫu thay thế cho mệnh đề phụ",
+      "shortExplanation": "Sử dụng cụm động từ nguyên mẫu thay thế cho mệnh đề phụ nhằm giúp câu văn cô đọng và trang trọng hơn.",
+      "longExplanation": "Cấu trúc tân ngữ phức (tân ngữ đi kèm động từ nguyên mẫu) thường được dùng để thay thế cho một mệnh đề phụ hoàn chỉnh:\n• Động từ chỉ ý muốn, yêu cầu + tân ngữ + động từ nguyên mẫu có 'to': chẳng hạn câu 'Tôi muốn cô ấy ở lại'.\n• Sau các động từ giác quan và sai khiến (như nhìn thấy, nghe thấy, cho phép, bắt buộc, nhờ vả): dùng động từ nguyên mẫu không có 'to' ở thể chủ động, ví dụ: 'Tôi thấy cô ấy rời đi', 'Cô ấy làm anh ấy khóc', 'Hãy để tôi giúp'.\n• Trong câu bị động với các động từ sai khiến: bắt buộc phải dùng động từ nguyên mẫu có 'to', ví dụ: 'Anh ấy bị bắt phải trả tiền'.\n• Cấu trúc với các động từ chỉ vẻ ngoài hoặc phỏng đoán (như dường như, hóa ra, chứng minh là) + động từ nguyên mẫu có 'to': ví dụ 'Cô ấy dường như đã biết', 'Anh ấy tình cờ có mặt ở đó'.",
+      "formation": "Chủ ngữ + Động từ + Tân ngữ + Động từ nguyên mẫu (có 'to' / không 'to') hoặc Chủ ngữ + Động từ tình thái / phỏng đoán + Động từ nguyên mẫu có 'to'",
+      "examples": [
+        {
+          "translation": "Tôi cần bạn ký vào tài liệu này."
+        },
+        {
+          "translation": "Cô ấy bị bắt buộc phải xin lỗi công khai."
+        },
+        {
+          "translation": "Anh ấy dường như đã quên hết mọi thứ."
+        }
+      ]
+    },
+    "en_c2_14": {
+      "title": "Thì tương lai hoàn thành tiếp diễn",
+      "shortExplanation": "Diễn tả một hành động kéo dài liên tục cho đến một mốc thời điểm xác định trong tương lai.",
+      "longExplanation": "Thì tương lai hoàn thành tiếp diễn nhấn mạnh vào khoảng thời gian hoặc tính liên tục của một hành động sẽ diễn ra cho đến một thời điểm cụ thể trong tương lai. Cấu trúc này thường trả lời cho câu hỏi 'Tính đến lúc đó thì hành động đã kéo dài được bao lâu?'.\nThường được sử dụng kèm các từ chỉ thời gian như 'tính đến lúc', 'trong khoảng thời gian', 'khi': ví dụ 'Tính đến thứ Hai, cô ấy sẽ làm việc cho dự án này được ba tuần liên tục'.",
+      "formation": "Chủ ngữ + will have been + Động từ thêm đuôi '-ing'",
+      "examples": [
+        {
+          "translation": "Tính đến năm sau, tôi sẽ học tiếng Anh được tròn năm năm."
+        },
+        {
+          "translation": "Khi chúng tôi đến nơi, cô ấy sẽ đã chờ đợi suốt hai tiếng đồng hồ rồi."
+        }
+      ]
+    },
+    "en_c2_15": {
+      "title": "Sự hòa hợp các thì trong câu phức",
+      "shortExplanation": "Quy tắc phối hợp thì giữa mệnh đề chính và mệnh đề phụ khi động từ chính ở thì quá khứ.",
+      "longExplanation": "Trong câu phức, động từ của mệnh đề phụ phải phù hợp về mặt thời gian với động từ của mệnh đề chính.\nNếu động từ ở mệnh đề chính chia ở thì quá khứ, động từ mệnh đề phụ sẽ lùi về quá khứ một bậc:\n• Thì hiện tại đơn lùi thành thì quá khứ đơn (ví dụ: anh ấy nói điều đó là sự thật).\n• Thì quá khứ đơn lùi thành thì quá khứ hoàn thành (ví dụ: cô ấy nói cô ấy đã thấy nó).\n• Thì hiện tại hoàn thành lùi thành thì quá khứ hoàn thành (ví dụ: anh ấy nói anh ấy đã hoàn thành).\n• Các trợ động từ và động từ khuyết thiếu lùi về quá khứ tương ứng (will đổi thành would, can đổi thành could, may đổi thành might, is đổi thành was).\n*Lưu ý ngoại lệ: Giữ nguyên thì hiện tại đơn khi mệnh đề phụ diễn tả một chân lý khách quan, một sự thật khoa học hiển nhiên.",
+      "formation": "Mệnh đề chính (thì quá khứ) + Mệnh đề phụ (động từ lùi về thì quá khứ tương ứng)",
+      "examples": [
+        {
+          "translation": "Anh ấy nói với tôi rằng anh ấy đã sống ở đó nhiều năm rồi."
+        },
+        {
+          "translation": "Cô ấy nói rằng Trái Đất quay quanh Mặt Trời."
+        }
+      ]
+    },
+    "en_c2_16": {
+      "title": "Liên từ kết hợp (Liên từ đẳng lập)",
+      "shortExplanation": "Các liên từ dùng để nối kết các từ, cụm từ hoặc mệnh đề độc lập có cương vị ngữ pháp ngang nhau.",
+      "longExplanation": "Liên từ kết hợp dùng để kết nối các thành phần ngữ pháp bình đẳng trong câu. Có 7 liên từ cơ bản trong tiếng Anh:\n• for: mang nghĩa 'vì/bởi vì' (trang trọng, dùng giải thích lý do): 'Cô ấy rời đi, vì cô ấy đã mệt'.\n• and: mang nghĩa 'và' (bổ sung, thêm vào).\n• nor: mang nghĩa 'cũng không' (nối mệnh đề mang tính phủ định, có đảo ngữ): 'Cô ấy không gọi điện, mà cũng chẳng viết thư'.\n• but: mang nghĩa 'nhưng' (diễn tả sự đối lập, tương phản).\n• or: mang nghĩa 'hoặc' (lựa chọn thay thế).\n• yet: mang nghĩa 'tuy vậy/nhưng mà' (tương phản, sắc thái trang trọng hơn 'but').\n• so: mang nghĩa 'cho nên/vì vậy' (chỉ kết quả, hệ quả).",
+      "formation": "Mệnh đề độc lập + Dấu phẩy (,) + Liên từ kết hợp (for, and, nor, but, or, yet, so) + Mệnh đề độc lập",
+      "examples": [
+        {
+          "translation": "Cô ấy đã rất mệt mỏi, tuy vậy cô ấy vẫn tiếp tục làm việc."
+        },
+        {
+          "translation": "Cậu ấy đã không học bài, mà cũng không đến lớp."
+        }
+      ]
+    },
+    "en_c2_17": {
+      "title": "Liên từ phụ thuộc",
+      "shortExplanation": "Các liên từ dùng để mở đầu mệnh đề phụ và liên kết mệnh đề phụ với mệnh đề chính theo các mối quan hệ ngữ nghĩa logic.",
+      "longExplanation": "Liên từ phụ thuộc dùng để dẫn xuất một mệnh đề phụ và liên kết nó với mệnh đề chính, làm rõ mối quan hệ logic giữa hai mệnh đề.\nPhân loại theo ý nghĩa ngữ pháp:\n• Thời gian: khi, trong khi, sau khi, trước khi, cho đến khi, ngay khi, bất cứ khi nào...\n• Nguyên nhân, lý do: bởi vì, do chỗ, xét thấy, xét việc...\n• Điều kiện: nếu, trừ khi, miễn là, với điều kiện là, phòng khi, giả sử...\n• Mục đích: để mà, cốt để, nhằm mục đích...\n• Nhượng bộ, tương phản: mặc dù, dẫu cho, trong khi đó, tuy nhiên...",
+      "formation": "Liên từ phụ thuộc + Mệnh đề phụ + Dấu phẩy (,) + Mệnh đề chính hoặc Mệnh đề chính + Liên từ phụ thuộc + Mệnh đề phụ",
+      "examples": [
+        {
+          "translation": "Xét thấy hạn chót đã qua, chúng tôi đã hủy bỏ cuộc họp."
+        },
+        {
+          "translation": "Để phòng ngừa cô ấy quên, anh ấy đã gửi cho cô ấy một lời nhắc nhở."
+        }
+      ]
+    },
+    "en_c2_18": {
+      "title": "Dấu phẩy, dấu chấm phẩy và dấu hai chấm",
+      "shortExplanation": "Quy tắc sử dụng dấu phẩy, dấu chấm phẩy và dấu hai chấm để liên kết các mệnh đề và liệt kê các thành phần trong câu.",
+      "longExplanation": "Các quy tắc sử dụng dấu câu chuẩn xác trong tiếng Anh:\n• Dấu phẩy (,): Đặt trước các liên từ kết hợp khi nối hai mệnh đề độc lập; đặt sau các từ hoặc ngữ mở đầu câu (ví dụ: 'Tuy nhiên, cô ấy quyết định ở lại'); dùng để ngăn cách các từ trong chuỗi liệt kê (bao gồm cả dấu phẩy Oxford đặt ngay trước liên từ 'và' cuối cùng).\n• Dấu chấm phẩy (;): Dùng để nối liền hai mệnh đề độc lập có liên quan chặt chẽ về ngữ nghĩa mà không cần dùng đến từ nối (ví dụ: 'Cô ấy mệt mỏi; cô ấy đi ngủ').\n• Dấu hai chấm (:): Dùng để mở đầu cho một danh sách liệt kê, một lời giải thích chi tiết bổ sung, hoặc một câu trích dẫn.",
+      "formation": "Mệnh đề độc lập + Dấu phẩy (,) + Liên từ kết hợp + Mệnh đề độc lập hoặc Mệnh đề độc lập + Dấu chấm phẩy (;) + Mệnh đề độc lập hoặc Mệnh đề chính + Dấu hai chấm (:) + Danh sách / Phần giải thích",
+      "examples": [
+        {
+          "translation": "Tuy nhiên, các kết quả thu được vẫn chưa đủ để kết luận; cần phải tiến hành nghiên cứu thêm."
+        },
+        {
+          "translation": "Công ty có ba ưu tiên hàng đầu: hiệu quả, đổi mới và tính bền vững."
+        }
+      ]
+    },
+    "en_c2_19": {
+      "title": "Dấu gạch ngang dài, dấu nháy đơn và dấu ngoặc kép",
+      "shortExplanation": "Quy tắc sử dụng dấu gạch ngang dài để nhấn mạnh, dấu nháy đơn trong dạng viết tắt và sở hữu cách, cùng dấu ngoặc kép khi trích dẫn.",
+      "longExplanation": "Các quy tắc sử dụng dấu gạch ngang, dấu nháy đơn và ngoặc kép:\n• Dấu gạch ngang dài (—): Dùng để chen vào giữa câu một thành phần bổ chú hoặc giải thích nhằm tạo điểm nhấn mạnh mẽ hơn so với dấu phẩy (ví dụ: 'Giải pháp này — dù tốn kém — đã chứng minh được hiệu quả').\n• Dấu nháy đơn ('): Dùng trong các dạng viết tắt rút gọn (như viết tắt của đại từ và trợ động từ: it's, don't, they're) và dùng trong sở hữu cách của danh từ (ví dụ: sách của John, kết quả của các học sinh).\n• Dấu ngoặc kép: Dùng để dẫn lời nói trực tiếp hoặc trích dẫn nguyên văn (tiếng Anh-Mỹ thường chuộng dấu ngoặc kép kép \" \", tiếng Anh-Anh thường dùng dấu ngoặc kép đơn ' ').",
+      "formation": "Thành phần câu + Dấu gạch ngang dài (—) + Thành phần bổ chú / Giải thích + Dấu gạch ngang dài (—) hoặc Từ viết tắt / Danh từ + Dấu nháy đơn (') + Thành phần sở hữu hoặc Dấu ngoặc kép (\" \") + Lời dẫn trực tiếp",
+      "examples": [
+        {
+          "translation": "Dự án đó — được khởi động vào năm 2020 — đã vượt qua mọi kỳ vọng."
+        },
+        {
+          "translation": "Việc kiểm tra các cài đặt của nó trước khi sử dụng là rất quan trọng."
+        }
+      ]
+    },
+    "en_c2_20": {
+      "title": "Câu hỏi gián tiếp trong văn bản học thuật",
+      "shortExplanation": "Trong văn phong học thuật, câu hỏi trực tiếp thường được chuyển đổi thành câu hỏi gián tiếp với trật tự từ của một mệnh đề trần thuật.",
+      "longExplanation": "Trong các văn bản mang tính học thuật và nghiên cứu, câu hỏi trực tiếp thường được thay thế bằng câu hỏi gián tiếp (mệnh đề nghi vấn) để giữ giọng văn khách quan, trang trọng và lịch sự.\nCâu hỏi gián tiếp đóng vai trò như một mệnh đề phụ với trật tự từ thông thường (chủ ngữ đứng trước động từ, không đảo trợ động từ lên trước và không mượn trợ động từ do/does/did như trong câu hỏi trực tiếp).\nCác từ dẫn xuất thường gặp: các từ mang nghĩa 'liệu rằng / có hay không' và các từ để hỏi (cái gì, ở đâu, khi nào, như thế nào, tại sao, cái nào).\nVí dụ chuyển đổi: 'Dữ liệu này cho thấy điều gì?' → 'Vấn đề cốt lõi là dữ liệu này cho thấy điều gì'.",
+      "formation": "Mệnh đề chính + Từ để hỏi / Liệu rằng + Chủ ngữ + Vị ngữ (Động từ chia theo thì)",
+      "examples": [
+        {
+          "translation": "Tôi tự hỏi liệu giả thuyết này có chính xác hay không."
+        },
+        {
+          "translation": "Nghiên cứu này xem xét cách thức mạng xã hội tác động đến hành vi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "en_c2_13": {
+      "title": "不定式短语代替从句",
+      "shortExplanation": "使用动词不定式短语替代宾语从句或状语从句，使句子结构更加紧凑精炼。",
+      "longExplanation": "复合宾语结构（宾语 + 动词不定式）常用于替代由从属连词引导的完整从句：\n• 表示意愿、要求的动词 + 宾语 + 动词不定式（带 'to'）：例如表达'想要某人留下'。\n• 在感官动词与使役动词（如看见、听见、注视、让、迫使等）后：主动语态中省略 'to'，使用不带 'to' 的动词原形，例如'看见她离开'、'使他哭泣'、'让我来帮忙'。\n• 使役动词变为被动语态时：必须恢复使用带 'to' 的不定式，例如'他被迫付款'。\n• 主语补足语结构（接在看似、显得、碰巧、证明是等表象动词后）+ 带 'to' 的不定式：例如'她似乎知情'、'他碰巧在场'。",
+      "formation": "主语 + 谓语动词 + 宾语 + 动词不定式（带 'to' / 不带 'to'）或 主语 + 表象动词 + 动词不定式（带 'to'）",
+      "examples": [
+        {
+          "translation": "我需要你在这份文件上签字。"
+        },
+        {
+          "translation": "她被迫公开道歉。"
+        },
+        {
+          "translation": "他似乎把一切都忘了。"
+        }
+      ]
+    },
+    "en_c2_14": {
+      "title": "将来完成进行时",
+      "shortExplanation": "强调某一动作持续进行，一直延续到未来某一特定时刻的时间长度。",
+      "longExplanation": "将来完成进行时用于着重强调某一动作持续至未来某个时间点的时间长度或不间断性，通常回答'到那时为止已经进行了多久？'这一问题。\n常与表示时间界限或持续时长的状语连用（如'到……为止'、'持续……时间'、'当……时'）：例如'到下周一为止，她参与该项目的工作就满三周了'。",
+      "formation": "主语 + will have been + 动词现在分词（'-ing' 形式）",
+      "examples": [
+        {
+          "translation": "到明年，我学习英语就满五年了。"
+        },
+        {
+          "translation": "等我们到达时，她就已经等了两个小时了。"
+        }
+      ]
+    },
+    "en_c2_15": {
+      "title": "时态呼应（复合句中的时态一致）",
+      "shortExplanation": "复合句中从句谓语动词根据主句过去时态进行的相应时态调整与呼应。",
+      "longExplanation": "在主从复合句中，从句的谓语动词时态须受主句动词时态的制约。\n当主句谓语动词使用过去时态时，从句动词通常需要向过去推移一个时态（时态后退）：\n• 一般现在时变为一般过去时（例如：他说那是真的）。\n• 一般过去时变为过去完成时（例如：她说她曾见过）。\n• 现在完成时变为过去完成时（例如：他说他已经完成了）。\n• 情态动词与助动词相应变为过去式（will 变为 would，can 变为 could，may 变为 might，is 变为 was 等）。\n*注意例外：当从句表述客观真理、科学事实或普遍规律时，时态不作改变，依然保持一般现在时。",
+      "formation": "主句（一般过去时） + 从句（相应后退的过去时态动词）",
+      "examples": [
+        {
+          "translation": "他告诉我他在那里已经住了很多年。"
+        },
+        {
+          "translation": "她说地球绕着太阳转。"
+        }
+      ]
+    },
+    "en_c2_16": {
+      "title": "并列连词",
+      "shortExplanation": "连接语法地位平等的单词、短语或独立分句的连词。",
+      "longExplanation": "并列连词用于连接句中具有同等语法地位和结构的成分。英语中最常见的7个基础并列连词：\n• for：意为'因为'（较正式，用于补充说明理由）：例如'她离开了，因为她累了'。\n• and：意为'和、并且'（表示并列与递进补充）。\n• nor：意为'也不'（连接否定分句，后接倒装语序）：例如'她没有打电话，也没有写信'。\n• but：意为'但是'（表示转折对比）。\n• or：意为'或者'（表示选择）。\n• yet：意为'然而、尽管如此'（比 but 更具书面语色彩的转折）。\n• so：意为'因此、所以'（表示结果）。",
+      "formation": "独立分句 + 逗号（,） + 并列连词（for, and, nor, but, or, yet, so） + 独立分句",
+      "examples": [
+        {
+          "translation": "她虽然很累，然而依然坚持工作。"
+        },
+        {
+          "translation": "他既没有复习功课，也没有去上课。"
+        }
+      ]
+    },
+    "en_c2_17": {
+      "title": "从属连词",
+      "shortExplanation": "用于引导从句并阐明从句与主句之间各种逻辑关系的连词。",
+      "longExplanation": "从属连词用于引导状语从句或名词性从句，表明从句与主句之间的逻辑从属关系。\n按表达语义分类：\n• 时间关系：当……时、在……期间、在……之后、在……之前、直到……、一旦……、一……就……、无论何时等\n• 原因关系：因为、既然、鉴于、考虑到等\n• 条件关系：如果、除非、只要、在……条件下、以防万一、假设等\n• 目的关系：为了、以便、唯恐、免得等\n• 让步与对比关系：虽然、尽管、而/反之、然而等",
+      "formation": "从属连词 + 从属从句 + 逗号（,） + 主句 或 主句 + 从属连词 + 从属从句",
+      "examples": [
+        {
+          "translation": "鉴于截止日期已过，我们取消了会议。"
+        },
+        {
+          "translation": "唯恐她遗忘，他给她发了一份提醒。"
+        }
+      ]
+    },
+    "en_c2_18": {
+      "title": "逗号、分号与冒号的用法",
+      "shortExplanation": "掌握英文标点符号中逗号、分号与冒号在连接分句、引出列表及解释说明时的规范用法。",
+      "longExplanation": "英文标点符号的核心用法规则：\n• 逗号（,）：位于连接两个独立分句的并列连词前；位于句首状语或引导短语之后（例如：'然而，她决定留下'）；用于项的列举与分隔（包括位于最后一个并列词之前的牛津逗号）。\n• 分号（;）：用于在无需连词的情况下，直接连接两个在语义上联系紧密的独立分句（例如：'她累了；她上床睡觉了'）。\n• 冒号（:）：用于引出清单列表、进一步的阐释说明或直接引用语。",
+      "formation": "独立分句 + 逗号（,） + 并列连词 + 独立分句 或 独立分句 + 分号（;） + 独立分句 或 完整句子 + 冒号（:） + 列表 / 解释说明",
+      "examples": [
+        {
+          "translation": "然而，结果并不确凿；仍需开展进一步的研究。"
+        },
+        {
+          "translation": "该公司拥有三大重点目标：效率、创新与可持续性。"
+        }
+      ]
+    },
+    "en_c2_19": {
+      "title": "破折号、撇号与引号的用法",
+      "shortExplanation": "掌握英文中破折号强调插入语、撇号表示缩写及所有格、以及引号用于直接引语的规范用法。",
+      "longExplanation": "破折号、撇号及引号的用法准则：\n• 破折号（—）：用于分隔并突显句中的插入语或补充说明，其强调语气比逗号更为强烈（例如：'该方案——尽管造价昂贵——被证明是行之有效的'）。\n• 撇号（'）：用于单词的缩写形式（如 it's 代替 it is，don't，they're 等）；以及用于名词所有格（如约翰的书、学生们的分数）。\n• 引号：用于标示直接引语或精确引文（美式英语习惯使用双引号 \" \"，英式英语则更常用单引号 ' '）。",
+      "formation": "原句成分 + 破折号（—） + 插入语/补充成分 + 破折号（—） 或 缩写词 / 名词 + 撇号（'） + 所有格成分 或 引号（\" \"） + 直接引语",
+      "examples": [
+        {
+          "translation": "该项目——于2020年启动——超越了所有的预期。"
+        },
+        {
+          "translation": "在使用之前检查它的各项设置是非常重要的。"
+        }
+      ]
+    },
+    "en_c2_20": {
+      "title": "学术文本中的间接疑问句",
+      "shortExplanation": "在学术写作中，直接疑问句通常转换为使用陈述语序的间接疑问句（疑问从句）。",
+      "longExplanation": "在学术论文与学术文本中，为保持客观严谨、正式庄重的文风，通常避免使用直接疑问句，而采用间接疑问句（名词性从句）来表述问题。\n间接疑问句属于从属分句，遵循陈述句的标准语序（即'主语 + 谓语'，不进行主谓倒装，也不借助助动词构成疑问语序）。\n常用引导词包括：表示'是否'的引导词，以及各类疑问词（什么、何处、何时、如何、为何、哪个等）。\n转换示例：'这组数据说明了什么？' → '核心问题在于这组数据说明了什么'。",
+      "formation": "主句 + 疑问词 / 是否引导词 + 主语 + 谓语动词（陈述语序）",
+      "examples": [
+        {
+          "translation": "我想知道该假设是否正确。"
+        },
+        {
+          "translation": "这项研究探讨了社交媒体如何对行为产生影响。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "en_c2_13": {
+      "title": "従属節の代用となる不定詞句",
+      "shortExplanation": "従属節の代わりに不定詞句を用いることで、文を簡潔かつ論理的に表現します。",
+      "longExplanation": "複合目的語（目的語 ＋ 不定詞）などの構文を用いることで、接続詞で始まる従属節を簡潔に置き換えることができます：\n• 願望や要求を表す動詞 ＋ 目的語 ＋ 'to' 不定詞：例えば「彼女に残ってほしい」を表す構文など。\n• 知覚動詞や使役動詞（見る、聞く、見守る、〜させる、してもらう等）の後：能動態では 'to' のない原形不定詞を用います（例：「彼女が去るのを見た」「彼を泣かせた」「手伝わせてください」）。\n• 使役動詞を受身形にする場合：'to' 不定詞を補う必要があります（例：「彼は支払いを余儀なくされた」）。\n• 推量や外見を表す動詞（〜のようだ、たまたま〜である、〜だと判明する等）＋ 'to' 不定詞：例えば「彼女は知っているようだ」「彼は偶然そこに居合わせた」などの表現になります。",
+      "formation": "主語 + 動詞 + 目的語 + 不定詞（'to' 不定詞 / 原形不定詞）または 主語 + 推量・外見動詞 + 'to' 不定詞",
+      "examples": [
+        {
+          "translation": "あなたにこの書類へ署名していただく必要があります。"
+        },
+        {
+          "translation": "彼女は公の場で謝罪させられました。"
+        },
+        {
+          "translation": "彼はすべてのことを忘れてしまったようでした。"
+        }
+      ]
+    },
+    "en_c2_14": {
+      "title": "未来完了進行形",
+      "shortExplanation": "未来のある時点まで動作が継続していることを表し、その時点までの継続期間の長さを強調します。",
+      "longExplanation": "未来完了進行形は、過去または現在から始まった動作が未来の特定の時点まで継続していることを表し、特に「その時点でどれくらいの期間続いているか」という継続の長さを強調する際に用いられます。\n「〜までに」「〜の間」「〜するとき」といった時間や期限を表す表現とともに用いられることが多く、例えば「月曜日の時点で、彼女はこのプロジェクトに3週間取り組み続けていることになります」のように使われます。",
+      "formation": "主語 + will have been + 動詞の現在分詞（'-ing' 形）",
+      "examples": [
+        {
+          "translation": "来年で、私は英語を学び続けて5年になります。"
+        },
+        {
+          "translation": "私たちが到着する頃には、彼女は2時間待ち続けていることになります。"
+        }
+      ]
+    },
+    "en_c2_15": {
+      "title": "時制の一致",
+      "shortExplanation": "主節の動詞が過去形の場合、従属節の動詞も原則として過去の時制へ繰り下げる規則です。",
+      "longExplanation": "複文において、従属節の述語動詞の時制は主節の動詞の時制に連動して変化します。\n主節の動詞が過去時制である場合、従属節の動詞は一段階過去の時制へと一致（バックシフト）させます：\n• 現在形 → 過去形（例：「彼はそれが真実だと言った」）\n• 過去形 → 過去完了形（例：「彼女はそれを見たと言った」）\n• 現在完了形 → 過去完了形（例：「彼は終えたと言った」）\n• 助動詞も過去形へ変化（will は would に、can は could に、may は might に、is は was に変化）\n※例外規則：不変の真理や科学的事実を述べる場合は、主節が過去形であっても時制の一致を行わず現在形を維持します。",
+      "formation": "主節（過去時制） + 従属節（連動して過去時制へ繰り下げた動詞）",
+      "examples": [
+        {
+          "translation": "彼は何年もの間そこに住んでいたと私に話してくれました。"
+        },
+        {
+          "translation": "彼女は地球が太陽の周りを回っていると言いました。"
+        }
+      ]
+    },
+    "en_c2_16": {
+      "title": "等位接続詞",
+      "shortExplanation": "文法上対等な関係にある単語、句、独立節同士を結びつける接続詞です。",
+      "longExplanation": "等位接続詞は、文の中で対等な資格を持つ文法要素を結びつけます。英語における主要な7つの等位接続詞：\n• for：というのも〜だから（フォーマルな理由説明）：例「彼女は立ち去った、疲れていたからである」\n• and：そして、〜と（情報の追加・並列）\n• nor：〜もまた…ない（否定の追加。節を導く場合は主語と動詞が倒置されます）：例「彼女は電話もしなかったし、手紙も書かなかった」\n• but：しかし（対比・逆接）\n• or：または、あるいは（選択）\n• yet：それにもかかわらず、だが（but よりも改まった逆接表現）\n• so：したがって、それで（結果・帰結）",
+      "formation": "独立節 + コンマ（,） + 等位接続詞（for, and, nor, but, or, yet, so） + 独立節",
+      "examples": [
+        {
+          "translation": "彼女は疲れていましたが、それでも仕事を続けました。"
+        },
+        {
+          "translation": "彼は勉強もしなかったし、授業にも出席しませんでした。"
+        }
+      ]
+    },
+    "en_c2_17": {
+      "title": "従属接続詞",
+      "shortExplanation": "主節に従属する節を導き、主節との論理的な関係性を表す接続詞です。",
+      "longExplanation": "従属接続詞は、主節に対して従属的な役割を持つ節を導き、文と文の間に論理的な関係を与えます。\n表す意味による分類：\n• 時：〜のとき、〜する間、〜した後に、〜する前に、〜までずっと、いったん〜すると、〜するとすぐに、〜するときはいつでも 等\n• 理由・原因：〜だから、〜である以上、〜を考慮すると、〜にかんがみて 等\n• 条件：もし〜なら、〜でない限り、〜という条件で、〜である限り、〜の場合に備えて、仮に〜としたら 等\n• 目的：〜するために、〜しないように 等\n• 譲歩・対比：〜であるけれども、〜にもかかわらず、その一方で、〜である反面 等",
+      "formation": "従属接続詞 + 従属節 + コンマ（,） + 主節 または 主節 + 従属接続詞 + 従属節",
+      "examples": [
+        {
+          "translation": "締め切りが過ぎてしまったことを受けて、私たちは会議を中止しました。"
+        },
+        {
+          "translation": "彼女が忘れてしまわないように、彼はリマインダーを送りました。"
+        }
+      ]
+    },
+    "en_c2_18": {
+      "title": "コンマ、セミコロン、コロンの語法",
+      "shortExplanation": "独立節の接続、リストの提示、補足説明を行う際のコンマ、セミコロン、コロンの正確な用法です。",
+      "longExplanation": "英語における主要な約物（句読点）の用法ルール：\n• コンマ（,）：独立節同士を結ぶ等位接続詞の前、文頭の導入語句や接続副詞の後（例：「しかしながら、彼女は残ることに決めました」）、語句の列挙（最後の並列語の直前に置くオックスフォード・コンマを含む）に用いられます。\n• セミコロン（;）：接続詞を介さずに、意味的に密接に関連する2つの独立節を直接つなぎます（例：「彼女は疲れていました。そのため彼女は床に就きました」）。\n• コロン（:）：項目の列挙、詳しい説明や言い換え、または引用文を導入する際に用いられます。",
+      "formation": "独立節 + コンマ（,） + 等位接続詞 + 独立節 または 独立節 + セミコロン（;） + 独立節 または 主文 + コロン（:） + 列挙項目 / 説明文",
+      "examples": [
+        {
+          "translation": "しかしながら、結果は決定的なものではありませんでした。さらなる研究が必要です。"
+        },
+        {
+          "translation": "その会社には3つの優先課題があります：効率性、革新性、そして持続可能性です。"
+        }
+      ]
+    },
+    "en_c2_19": {
+      "title": "ダッシュ、アポストロフィ、引用符の語法",
+      "shortExplanation": "文中の挿入句を強調するダッシュ、短縮形や所有格を表すアポストロフィ、直接話法を導く引用符の用法です。",
+      "longExplanation": "ダッシュ、アポストロフィ、引用符の使い分けと規則：\n• ダッシュ（—）：コンマよりも強い調子で挿入句や補足説明を際立たせるために用いられます（例：「その解決策は――費用はかかったものの――効果的であることが証明された」）。\n• アポストロフィ（'）：短縮形を表す場合（例：it's や don't、they're など）や、名詞の所有格を表す場合（例：ジョンの本、生徒たちの成績）に用いられます。\n• 引用符（クォーテーションマーク）：直接話法や語句の引用に用いられます（アメリカ英語では主に二重引用符 \" \"、イギリス英語では一重引用符 ' ' が好まれます）。",
+      "formation": "文構成要素 + ダッシュ（—） + 挿入語句・補足説明 + ダッシュ（—） または 短縮形 / 名詞 + アポストロフィ（'） + 所有格 または 引用符（\" \"） + 直接話法",
+      "examples": [
+        {
+          "translation": "そのプロジェクトは――2020年に立ち上げられたものですが――すべての予想を上回りました。"
+        },
+        {
+          "translation": "使用する前にその設定を確認することが重要です。"
+        }
+      ]
+    },
+    "en_c2_20": {
+      "title": "学術的テキストにおける間接疑問文",
+      "shortExplanation": "学術論文や専門的文書では、直接疑問文を避け、平叙文の語順を持つ間接疑問文（名詞節）を用います。",
+      "longExplanation": "学術的な文章やフォーマルな文書では、直接的な疑問文の代わりに間接疑問文（名詞節として機能する節）を用いることで、客観的で洗練された論述を行います。\n間接疑問文は従属節であるため、通常の平叙文と同じ語順（主語 ＋ 動詞）をとり、疑問文のような倒置や助動詞の補正を行いません。\n主な導入語句には、「〜かどうか」を表す接続詞や、各種の疑問詞（何、どこ、いつ、どのように、なぜ、どれ 等）が用いられます。\n書き換えの例：「このデータは何を示しているか？」→「問題はこのデータが何を示しているかである」。",
+      "formation": "主節 + 疑問詞 / 接続詞 + 主語 + 動詞（平叙文の語順）",
+      "examples": [
+        {
+          "translation": "その仮説が正しいかどうか疑問に思います。"
+        },
+        {
+          "translation": "本研究では、ソーシャルメディアが行動にどのような影響を与えるかを検証しています。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "en_c2_13": {
+      "title": "종속절을 대신하는 부정사구",
+      "shortExplanation": "종속절 대신 부정사구를 활용하여 문장을 더 간결하고 명확하게 표현합니다.",
+      "longExplanation": "복합 목적어 구문(목적어 + 부정사)은 접속사로 연결되는 종속절을 간결하게 대체할 수 있습니다:\n• 소망 및 요구 동사 + 목적어 + 'to' 부정사: 예컨대 '그녀가 머물기를 바란다'와 같은 문장 구조입니다.\n• 지각동사 및 사역동사(보다, 듣다, 지켜보다, 시키다, 허락하다 등) 뒤: 능동태에서는 'to'가 없는 원형부정사를 사용합니다(예: '그녀가 떠나는 것을 보았다', '그를 울게 만들었다', '내가 돕게 해달라').\n• 사역동사가 수동태로 쓰일 때: 반드시 'to' 부정사로 전환해야 합니다(예: '그는 돈을 지불해야만 했다').\n• 외양 및 추측을 나타내는 동사(~인 것 같다, 우연히 ~하다, ~임이 밝혀지다 등) + 'to' 부정사: 예컨대 '그녀는 알고 있는 것 같다', '그는 우연히 그곳에 있었다'와 같이 쓰입니다.",
+      "formation": "주어 + 동사 + 목적어 + 부정사('to' 부정사 / 원형부정사) 또는 주어 + 추측·외양 동사 + 'to' 부정사",
+      "examples": [
+        {
+          "translation": "당신이 이 문서에 서명해 주셔야 합니다."
+        },
+        {
+          "translation": "그녀는 공개적으로 사과를 해야만 했습니다."
+        },
+        {
+          "translation": "그는 모든 것을 잊어버린 것 같았습니다."
+        }
+      ]
+    },
+    "en_c2_14": {
+      "title": "미래완료진행형",
+      "shortExplanation": "미래의 특정 시점까지 동작이 계속 이어짐을 나타내며, 그 시점까지의 지속 기간을 강조합니다.",
+      "longExplanation": "미래완료진행형은 미래의 특정 기준 시점까지 어떤 행동이나 사건이 계속해서 진행되고 있음을 나타내며, 주로 '그때가 되면 얼마나 오랫동안 지속되어 왔는가?'에 대한 답을 제공합니다.\n'~까지는', '~동안', '~할 때'와 같이 기한이나 지속 시간을 나타내는 표현과 자주 함께 사용됩니다. 예를 들어 '월요일이 되면 그녀는 이 프로젝트를 진행한 지 3주째가 됩니다'와 같은 문장에 쓰입니다.",
+      "formation": "주어 + will have been + 동사 현재분사('-ing' 형태)",
+      "examples": [
+        {
+          "translation": "내년이 되면 저는 영어를 공부해 온 지 5년이 됩니다."
+        },
+        {
+          "translation": "우리가 도착할 때쯤이면, 그녀는 이미 2시간 동안 기다리고 있는 셈이 될 것입니다."
+        }
+      ]
+    },
+    "en_c2_15": {
+      "title": "시제의 일치",
+      "shortExplanation": "주절의 동사가 과거시제일 때, 종속절의 동사 시제도 이에 맞추어 과거 관련 시제로 일치시키는 규칙입니다.",
+      "longExplanation": "복문에서 종속절의 동사 시제는 주절 동사의 시제와 시간적으로 일치해야 합니다.\n주절의 동사가 과거형일 경우, 종속절의 시제는 한 단계 이전 과거 시제로 후퇴합니다:\n• 현재시제 → 과거시제 (예: 그는 그것이 사실이라고 말했다)\n• 과거시제 → 과거완료시제 (예: 그녀는 그것을 본 적이 있다고 말했다)\n• 현재완료시제 → 과거완료시제 (예: 그는 이미 끝마쳤다고 말했다)\n• 조동사도 과거형으로 변경 (will은 would로, can은 could로, may는 might로, is는 was 등으로 변경)\n*예외 사항: 종속절의 내용이 보편적인 진리나 과학적 사실인 경우에는 주절의 시제와 관계없이 현재시제를 유지합니다.",
+      "formation": "주절(과거시제) + 종속절(규칙에 맞춰 과거로 후퇴한 동사)",
+      "examples": [
+        {
+          "translation": "그는 그곳에서 오랫동안 살아왔었다고 나에게 말했습니다."
+        },
+        {
+          "translation": "그녀는 지구가 태양 주위를 돈다고 말했습니다."
+        }
+      ]
+    },
+    "en_c2_16": {
+      "title": "등위접속사",
+      "shortExplanation": "문법적으로 대등한 단어, 구, 또는 독립절을 이어주는 접속사입니다.",
+      "longExplanation": "등위접속사는 문장 안에서 동등한 문법적 자격을 갖춘 구성 요소들을 연결합니다. 영어의 7대 대표 등위접속사：\n• for: 왜냐하면 ~이므로 (격식 있는 문맥에서의 이유 설명): '그녀는 떠났다, 왜냐하면 지쳤기 때문이다'\n• and: 그리고, ~와 (정보의 덧붙임 및 나열)\n• nor: ~도 또한 아니다 (부정의 추가. 절을 이끌 때 뒤의 주어와 동사가 도치됨): '그녀는 전화도 하지 않았고, 편지를 쓰지도 않았다'\n• but: 그러나, 하지만 (대조 및 역접)\n• or: 또는, 혹은 (선택)\n• yet: 그럼에도 불구하고, 하지만 (but보다 격식 있는 역접 표현)\n• so: 그래서, 따라서 (결과 및 귀결)",
+      "formation": "독립절 + 쉼표(,) + 등위접속사(for, and, nor, but, or, yet, so) + 독립절",
+      "examples": [
+        {
+          "translation": "그녀는 피곤했지만, 그럼에도 계속해서 일했습니다."
+        },
+        {
+          "translation": "그는 공부도 하지 않았고, 수업에 출석하지도 않았습니다."
+        }
+      ]
+    },
+    "en_c2_17": {
+      "title": "종속접속사",
+      "shortExplanation": "주절에 종속되는 부사절 등을 이끌며, 주절과의 논리적인 의미 관계를 나타내는 접속사입니다.",
+      "longExplanation": "종속접속사는 주절에 종속되는 절을 이끌어 두 절 사이의 긴밀한 논리적 관계를 맺어 줍니다.\n의미 및 기능별 분류：\n• 시간：~할 때, ~하는 동안, ~한 후에, ~하기 전에, ~할 때까지, 일단 ~하면, ~하자마자, ~할 때마다 등\n• 이유 및 원인：~때문에, ~이므로, ~라는 점을 고려하면, ~을 감안할 때 등\n• 조건：만약 ~라면, ~하지 않는 한, ~라는 조건으로, ~하는 한, ~할 경우에 대비하여, 가령 ~라면 등\n• 목적：~하기 위하여, ~하지 않도록 등\n• 양보 및 대조：비록 ~일지라도, ~에도 불구하고, 반면에, 한편 등",
+      "formation": "종속접속사 + 종속절 + 쉼표(,) + 주절 또는 주절 + 종속접속사 + 종속절",
+      "examples": [
+        {
+          "translation": "마감 기한이 지난 것을 감안하여, 저희는 회의를 취소했습니다."
+        },
+        {
+          "translation": "그녀가 잊어버리지 않도록, 그는 그녀에게 알림을 보냈습니다."
+        }
+      ]
+    },
+    "en_c2_18": {
+      "title": "쉼표, 세미콜론, 콜론의 용법",
+      "shortExplanation": "절의 연결, 목록 제시, 상세 설명에 활용되는 쉼표, 세미콜론, 콜론의 문장부호 표기 규칙입니다.",
+      "longExplanation": "영어 문장부호의 올바른 활용 규칙：\n• 쉼표(,): 두 독립절을 연결하는 등위접속사 앞, 문두의 도입 어구 또는 연결 부사 뒤(예: '그러나, 그녀는 머물기로 결정했습니다'), 그리고 항목의 나열(마지막 접속사 바로 앞에 두는 옥스퍼드 콤마 포함)에 쓰입니다.\n• 세미콜론(;): 접속사 없이 의미상 밀접하게 연결된 두 독립절을 직접 이어줄 때 사용합니다(예: '그녀는 피곤했습니다; 그녀는 잠자리에 들었습니다').\n• 콜론(:): 열거형 목록, 구체적인 부연 설명, 또는 인용구를 이끌어 낼 때 사용합니다.",
+      "formation": "독립절 + 쉼표(,) + 등위접속사 + 독립절 또는 독립절 + 세미콜론(;) + 독립절 또는 완전한 절 + 콜론(:) + 나열 목록 / 설명",
+      "examples": [
+        {
+          "translation": "그러나 결과는 명확하지 않았으며, 추가적인 연구가 요구됩니다."
+        },
+        {
+          "translation": "그 기업에는 세 가지 핵심 우선과제가 있습니다: 효율성, 혁신, 그리고 지속가능성입니다."
+        }
+      ]
+    },
+    "en_c2_19": {
+      "title": "대시, 아포스트로피, 따옴표의 용법",
+      "shortExplanation": "삽입구를 강조하는 대시, 축약형 및 소유격을 나타내는 아포스트로피, 직접 인용에 쓰이는 따옴표의 활용 규칙입니다.",
+      "longExplanation": "대시, 아포스트로피, 따옴표의 표기 원칙과 용법：\n• 대시(—): 쉼표보다 강한 어조로 문장 중간에 삽입구문이나 보충 설명을 두드러지게 나타낼 때 사용합니다(예: '그 해결책은 — 비록 비용은 많이 들었지만 — 효과적임이 입증되었다').\n• 아포스트로피('): 단어의 축약형(예: it's, don't, they're 등)을 표기할 때, 그리고 명사의 소유격(예: 존의 책, 학생들의 성적)을 나타낼 때 사용합니다.\n• 따옴표(인용부호): 직접화법이나 특정 인용 문구를 표기할 때 사용합니다(미국식 영어에서는 큰따옴표 \" \", 영국식 영어에서는 작은따옴표 ' '를 주로 사용합니다).",
+      "formation": "문장 성분 + 대시(—) + 삽입 어구/보충 설명 + 대시(—) 또는 축약형 / 명사 + 아포스트로피(') + 소유격 또는 따옴표(\" \") + 직접 인용문",
+      "examples": [
+        {
+          "translation": "그 프로젝트는 — 2020년에 시작되었는데 — 모든 기대를 뛰어넘었습니다."
+        },
+        {
+          "translation": "사용하기 전에 기기의 설정을 확인하는 것이 중요합니다."
+        }
+      ]
+    },
+    "en_c2_20": {
+      "title": "학술 텍스트에서의 간접의문문",
+      "shortExplanation": "학술적인 글쓰기에서는 직접의문문 대신 평서문 어순을 따르는 간접의문문(명사절)을 주로 사용합니다.",
+      "longExplanation": "학술 논문이나 연구 보고서와 같은 학술적 텍스트에서는 객관성과 격식을 유지하기 위해 직접 질문하는 형태 대신 간접의문문(명사절 역할을 하는 의문절)으로 전환하여 기술합니다.\n간접의문문은 종속절의 형태를 취하므로 의문문의 도치나 조동사의 개입 없이 일반 평서문의 어순(주어 + 동사)을 그대로 따릅니다.\n주요 유도어로는 '~인지 아닌지'를 나타내는 접속사 및 각종 의문사(무엇, 어디, 언제, 어떻게, 왜, 어느 것 등)가 사용됩니다.\n전환 예시: '이 데이터는 무엇을 보여주는가?' → '핵심적인 질문은 이 데이터가 무엇을 보여주는가이다'.",
+      "formation": "주절 + 의문사 / 접속사 + 주어 + 동사 (평서문 어순)",
+      "examples": [
+        {
+          "translation": "그 가설이 옳은지 여부에 대해 의구심이 듭니다."
+        },
+        {
+          "translation": "이 연구는 소셜 미디어가 행동에 어떠한 영향을 미치는지 살펴봅니다."
+        }
+      ]
+    }
+  }
+}

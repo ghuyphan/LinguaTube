@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ko_부터_15",
+    "language": "ko",
+    "pattern": "부터",
+    "title": "부터 [buteo] (From)",
+    "shortExplanation": "Used to indicate the starting point in time or space; 'from'.",
+    "longExplanation": "'부터' indicates the starting point of an action, period, or range in Korean. It translates to 'from' in English. It is frequently used with time expressions (e.g., '오늘부터' = 'from today').",
+    "formation": "Noun + 부터",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "나는 오늘부터 다이어트를 시작할 거예요, 그래서 단 것은 더 이상 먹지 않을 거예요.",
+        "romanization": "Naneun oneulbuteo daieoteureul sijakhal geoyeyo, geuraeseo dan geoseun deo isang meokji anheul geoyeyo.",
+        "translation": "I’ll start dieting from today, so I won’t eat sweets anymore."
+      },
+      {
+        "sentence": "어린이부터 어른까지 모두 이 영화를 즐길 수 있어요.",
+        "romanization": "Eorinibuteo eoreunkkaji modu i yeonghwareul jeulgil su isseoyo.",
+        "translation": "Everyone from children to adults can enjoy this movie."
+      },
+      {
+        "sentence": "우리는 내일부터 다시 일을 시작해야 해요, 그러니 오늘은 푹 쉬세요.",
+        "romanization": "Urineun naeilbuteo dashi ireul sijakhaya haeyo, geureoni oneureun puk swiseyo.",
+        "translation": "We have to start work again from tomorrow, so get plenty of rest today."
+      },
+      {
+        "sentence": "나는 작년 여름부터 한국어를 공부하기 시작했어요, 그래서 이제 조금은 할 수 있어요.",
+        "romanization": "Naneun jaknyeon yeoreumbuteo hangugeoreul gongbuhagi sijakhaesseoyo, geuraeseo ije jogeumeun hal su isseoyo.",
+        "translation": "I started studying Korean from last summer, so now I can speak a little."
+      }
+    ]
+  },
+  {
+    "id": "ko_까지_16",
+    "language": "ko",
+    "pattern": "까지",
+    "title": "까지 [kkaji] (Until, up to)",
+    "shortExplanation": "Used to mark the endpoint or limit in time, space, amount, or degree.",
+    "longExplanation": "'까지' is a postposition that indicates the limit or endpoint of a range in Korean, similar to 'until' or 'up to' in English. It is widely used with time expressions (e.g., '내일까지' = 'until tomorrow'), as well as physical locations or quantities.",
+    "formation": "Noun + 까지",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "첫 번째 학기는 총 여섯 달 동안이에요. 즉, 1월부터 6월까지입니다.",
+        "romanization": "Cheot beonjjae hakgineun chong yeoseot dal dongan-ieyo. Jik, irwolbuteo yugwolkkajiimnida.",
+        "translation": "The first semester lasts for six months, that is, from January until June."
+      },
+      {
+        "sentence": "저는 매일 아침 일찍 일어나서 밤 10시까지 일합니다.",
+        "romanization": "Jeoneun maeil achim iljjik ireonaseo bam yeolsotsikkaji ilhamnida.",
+        "translation": "I wake up early every morning and work until 10 p.m."
+      },
+      {
+        "sentence": "오늘은 돈이 오천 원까지밖에 없어서 저녁을 거르게 됐어요.",
+        "romanization": "Oneureun doni ocheon won-kkajibakke eopseoseo jeonyeogeul georeuge dwaesseoyo.",
+        "translation": "I only had up to 5,000 won today, so I ended up skipping dinner."
+      },
+      {
+        "sentence": "지금까지 한 일을 포함해서 모든 내용을 보고서에 적어주세요.",
+        "romanization": "Jigeumkkaji han ireul pohamhaeseo modeun naeyongeul bogoseoe jeogeojuseyo.",
+        "translation": "Please include everything you’ve done up until now in the report."
+      }
+    ]
+  },
+  {
+    "id": "ko_아어여서_17",
+    "language": "ko",
+    "pattern": "아/어/여서",
+    "title": "아/어/여서 [a/eo/yeoseo] (Because, since)",
+    "shortExplanation": "Used to denote a reason or cause, similar to 'because' or 'since' in English.",
+    "longExplanation": "'아/어/여서' is a conjunctive ending that indicates the reason or cause of the following clause. It is attached directly to the verb or adjective stem to show why something happened.",
+    "formation": "Verb/Adjective Stem + 아/어/여서",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "밖에 비가 와서 감기에 걸렸어요, 그래서 학교에 못 갔어요.",
+        "romanization": "Bakke biga waseo gamgie geollyeosseoyo, geuraeseo hakgyoe mot gasseoyo.",
+        "translation": "Because it rained outside, I caught a cold, so I couldn’t go to school."
+      },
+      {
+        "sentence": "그는 배가 고파서 간식을 준비했어요.",
+        "romanization": "Geuneun baega gopaseo gansigeul junbihaesseoyo.",
+        "translation": "Because he was hungry, I prepared a snack."
+      },
+      {
+        "sentence": "영화를 보느라고 시간이 없어서 숙제를 전혀 못 했어요.",
+        "romanization": "Yeonghwareul boneurago sigani eopseoseo sukjereul jeonhyeo mot haesseoyo.",
+        "translation": "Since I was watching a movie and didn’t have time, I couldn’t do any homework."
+      },
+      {
+        "sentence": "수업이 어렵다고 생각해서 매일 열심히 공부하고 있어요.",
+        "romanization": "Sueobi eoryeopdago saenggakhaeseo maeil yeolsimhi gongbuhago isseoyo.",
+        "translation": "Because I think the class is difficult, I study hard every day."
+      }
+    ]
+  },
+  {
+    "id": "ko_으면eumyeonIfwhen_18",
+    "language": "ko",
+    "pattern": "(으)면 [(eu)myeon] (If, when)",
+    "title": "(으)면 [(eu)myeon] (If, when)",
+    "shortExplanation": "This is generally used to express 'if' or 'when'. It's employed to present conditions and the possible consequences of those conditions.",
+    "longExplanation": "(으)면 [(eu)myeon] is a conditional ending in Korean attached to a verb or adjective stem. It can mean 'if', 'when', or 'in case'. This grammar point sets up a condition in the (으)면-clause, and the main clause explains the result or consequence that follows from that condition.",
+    "formation": "Verb/Adjective stem + (으)면",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "시간이 있으면, 저는 매일 한국어를 공부하고 싶어요.",
+        "romanization": "Sigani isseumyeon, jeoneun maeil hangugeoreul gongbuhago sip-eoyo.",
+        "translation": "If I have time, I want to study Korean every day."
+      },
+      {
+        "sentence": "날씨가 좋으면 나는 산에 등산하러 갈 거야.",
+        "romanization": "Nalssiga joheumyeon naneun sane deungsanhareo gal geoya.",
+        "translation": "If the weather is good, I will go hiking in the mountains."
+      },
+      {
+        "sentence": "피곤하면 일찍 자는 것이 좋아요.",
+        "romanization": "Pigonhamyeon iljjik janeun geosi joayo.",
+        "translation": "If you are tired, it's good to sleep early."
+      },
+      {
+        "sentence": "이 테스트를 통과하면, 나는 학교에 입학할 수 있어요.",
+        "romanization": "I teseuteureul tonggwahamyeon, naneun hakgyoe ibhakhal su isseoyo.",
+        "translation": "If I pass this test, I can enter school."
+      }
+    ]
+  },
+  {
+    "id": "ko_너무_19",
+    "language": "ko",
+    "pattern": "너무",
+    "title": "너무 [neomu] (Too, very)",
+    "shortExplanation": "Used to express a high degree or extent; 'too', 'very'.",
+    "longExplanation": "'너무 [neomu]' is an adverb in Korean that emphasizes a strong degree or intensity of something. It can mean 'too (much)' or 'very', highlighting that something goes beyond the norm or is extremely so. It typically modifies verbs or adjectives.",
+    "formation": "너무 + Adjective/Verb",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "이것은 너무 맛있어서 제가 모두 먹어버렸어요. 다른 사람들을 위해 남겨두지 못했습니다.",
+        "romanization": "Igeoseun neomu masisseoseo jega modu meogeobeoryeosseoyo. Dareun saramdeureul wihae namgyeoduji moshaessseumnida.",
+        "translation": "This was so delicious that I ate it all; I couldn't leave any for others."
+      },
+      {
+        "sentence": "이 영화는 너무 재미있어서 저는 이미 세 번이나 봤어요. 아직도 다시 보고 싶어요.",
+        "romanization": "I yeonghwaneun neomu jaemiisseoseo jeoneun imi se beonina bwasseoyo. Ajikdo dasi bogo sip-eoyo.",
+        "translation": "This movie is so fun that I've already watched it three times, and I still want to watch it again."
+      },
+      {
+        "sentence": "그녀가 너무 예뻐서 저는 매일 그녀를 볼 수 있으면 좋겠어요, 하지만 그녀는 저를 몰라요.",
+        "romanization": "Geunyeoga neomu yeppeoseo jeoneun maeil geunyeoreul bol su isseumyeon johgess-eoyo, hajiman geunyeoneun jeoreul mollayo.",
+        "translation": "She is so pretty that I wish I could see her every day, but she doesn't know me."
+      },
+      {
+        "sentence": "피자가 너무 맛있어서 저는 매주 먹어요, 하지만 이제부터는 조금 줄여야 될 것 같아요.",
+        "romanization": "Pijaga neomu masisseoseo jeoneun maeju meogeoyo, hajiman ijebuteoneun jogeum julyeoya doel geot gatayo.",
+        "translation": "The pizza is so delicious that I eat it every week, but I think I should cut down a bit from now on."
+      }
+    ]
+  },
+  {
+    "id": "ko_많이_20",
+    "language": "ko",
+    "pattern": "많이",
+    "title": "많이 [manhi] (A lot)",
+    "shortExplanation": "Used to express a large quantity, frequency, or degree; 'a lot', 'many', 'much'.",
+    "longExplanation": "'많이 [manhi]' is an adverb that indicates a large amount, frequency, or degree. It can be used with verbs, adjectives, and sometimes nouns (in certain constructions). It's similar to 'a lot' or 'much' in English.",
+    "formation": "Verb + 많이",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 친구가 많이 필요해서 항상 사람들을 만나러 다니는 편이에요.",
+        "romanization": "Jeoneun chinguga manhi piryohaeseo hangsang saramdeureul mannareo danineun pyeon-ieyo.",
+        "translation": "I need a lot of friends, so I tend to go out to meet people."
+      },
+      {
+        "sentence": "그 영화를 봤어요? 저는 많이 웃었어요!",
+        "romanization": "Geu yeonghwareul bwasseoyo? Jeoneun manhi useosseoyo!",
+        "translation": "Have you seen that movie? I laughed a lot!"
+      },
+      {
+        "sentence": "요즘 일이 많이 바빠서 휴가를 가고 싶어요.",
+        "romanization": "Yojeum ili manhi bappaseo hyugareul gago sip-eoyo.",
+        "translation": "I've been very busy at work these days, so I want to go on vacation."
+      },
+      {
+        "sentence": "그녀는 항상 많이 운동해서 건강해 보이세요.",
+        "romanization": "Geunyeoneun hangsang manhi undonghaeseo geonganghae boiseyo.",
+        "translation": "She always exercises a lot, so she looks healthy."
+      }
+    ]
+  },
+  {
+    "id": "ko_조금_21",
+    "language": "ko",
+    "pattern": "조금",
+    "title": "조금 [jogeum] (A little)",
+    "shortExplanation": "Used to indicate a small amount or degree; 'a little', 'a bit'.",
+    "longExplanation": "'조금 [jogeum]' is an adverb that describes a small or modest amount or degree. It's similar to 'a little' or 'a bit' in English. It can be used with verbs to reduce intensity, or with adjectives to lessen the strength of a description.",
+    "formation": "조금 + Verb/Adjective",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "기분이 안 좋아요. 조금 쉴 필요가 있어요.",
+        "romanization": "Gibuni an joayo. Jogeum swil piryoga isseoyo.",
+        "translation": "I'm not feeling well. I need to rest a bit."
+      },
+      {
+        "sentence": "방이 조금 어둡습니다. 불을 켜주세요.",
+        "romanization": "Bangi jogeum eodubseumnida. Bureul kyeojuseyo.",
+        "translation": "The room is a bit dark. Please turn on the light."
+      },
+      {
+        "sentence": "짐이 너무 무거워요. 조금 줄여야 할 것 같아요.",
+        "romanization": "Jim-i neomu mugeowoyo. Jogeum julyeoya hal geot gatayo.",
+        "translation": "The luggage is too heavy. I think I need to cut it down a bit."
+      },
+      {
+        "sentence": "그녀는 한국어를 조금 알아요, 그래서 간단한 대화는 가능해요.",
+        "romanization": "Geunyeoneun hangugeoreul jogeum arayo, geuraeseo gandanhan daehwaneun ganeunghaeyo.",
+        "translation": "She knows a little Korean, so simple conversation is possible."
+      }
+    ]
+  },
+  {
+    "id": "ko_다_22",
+    "language": "ko",
+    "pattern": "다",
+    "title": "다 [da] (All, entirely)",
+    "shortExplanation": "Used to express the entirety or completeness of an action or state.",
+    "longExplanation": "'다 [da]' here functions as an adverb meaning 'all' or 'entirely.' It emphasizes the complete or total aspect of an action or state. In other words, everything is done or used up, or everyone/everything is involved.",
+    "formation": "Verb/Adjective + 다 (adverb usage)",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 한국어를 공부하는 책을 다 읽었어요, 그래서 이제 뭐 읽을지 모르겠어요.",
+        "romanization": "Jeoneun hangugeoreul gongbuhaneun chaekeul da ilgeosseoyo, geuraeseo ije mwo ilgeulji moreugesseoyo.",
+        "translation": "I read all the books about studying Korean, so now I don't know what else to read."
+      },
+      {
+        "sentence": "우리 영화를 다 보고 나서야 집에 돌아갔어요.",
+        "romanization": "Uri yeonghwareul da bogo nasaya jibe doragasseoyo.",
+        "translation": "We only went home after watching the entire movie."
+      },
+      {
+        "sentence": "그녀는 한국에 오면서 한국 음식을 다 좋아한다고 말했어요.",
+        "romanization": "Geunyeoneun hanguke omyeonseo hanguk eumsigeul da joahandago malhaesseoyo.",
+        "translation": "She said she likes all Korean food after coming to Korea."
+      },
+      {
+        "sentence": "이번 주 식료품을 다 사 왔어요, 그래서 주방에는 빈 칸이 하나도 없어요.",
+        "romanization": "Ibeon ju sigryopumeul da sa wasseoyo, geuraeseo jubang-eneun bin kani hanado eopseoyo.",
+        "translation": "I bought all the groceries this week, so there's not a single empty space in the kitchen."
+      }
+    ]
+  },
+  {
+    "id": "ko_으는데eunneundeButhowever_23",
+    "language": "ko",
+    "pattern": "(으)ㄴ/는데 [(eu)n/neunde] (But, however)",
+    "title": "(으)ㄴ/는데 [(eu)n/neunde] (But, however)",
+    "shortExplanation": "Used to express contrast or contradiction; 'but', 'however'.",
+    "longExplanation": "'(으)ㄴ/는데' is used to express a contrast or introduce background information. It's similar to 'but' or 'however' in English, but can also be used for transitions or providing context. For verbs in the present tense, use '는데', while for descriptive verbs (adjectives), the form can be '(으)ㄴ데'.",
+    "formation": "Verb/Adjective + (으)ㄴ/는데",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "오늘 날씨가 좋은데, 저는 집에만 있고 싶어요.",
+        "romanization": "Oneul nalssiga joheunde, jeoneun jibeman itgo sip-eoyo.",
+        "translation": "The weather is nice today, but I just want to stay home."
+      },
+      {
+        "sentence": "그는 매우 친절한데, 가끔은 너무 솔직해서 상처를 줄 때가 있어요.",
+        "romanization": "Geuneun maeu chinjeolhande, gakkeumeun neomu soljikhaeseo sangcheoreul jul ttaega isseoyo.",
+        "translation": "He's very kind, but sometimes he's so honest that he can hurt people."
+      },
+      {
+        "sentence": "저는 한국어 공부를 오래 했는데도 불구하고 아직 많이 부족해요.",
+        "romanization": "Jeoneun hangugeo gongbureul orae haetneundedo bulguhago ajik manhi bujokhaeyo.",
+        "translation": "I've studied Korean for a long time, but I'm still lacking a lot."
+      },
+      {
+        "sentence": "이 옷은 예쁜데, 제 스타일이 아니에요.",
+        "romanization": "I oseun yeppeunde, je seutairi anieyo.",
+        "translation": "This outfit is pretty, but it's not my style."
+      }
+    ]
+  },
+  {
+    "id": "ko_아어야_24",
+    "language": "ko",
+    "pattern": "아/어야",
+    "title": "아/어야 해요 [a/eoya haeyo] (Have to do)",
+    "shortExplanation": "Used to express necessity or obligation; 'have to', 'must', 'should'.",
+    "longExplanation": "'아/어야 해요' is used when you must or need to do something. It conveys a strong sense of requirement or obligation, similar to 'have to' or 'must' in English. The exact form (아, 어, or 여) depends on the final vowel of the verb stem.",
+    "formation": "Verb stem + 아/어/여 + 야 해요",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "이렇게 많은 공부가 있으니까, 우리는 빨리 시작해야 해요. 그렇지 않으면 시간이 부족해서 모든 것을 끝낼 수 없어요.",
+        "romanization": "Ireohke manheun gongbuga issnikka, urineun ppalli sijakhaeya haeyo. Geureohji anheumyeon sigani bujokhaeseo modeun geoseul kkeutnael su eopseoyo.",
+        "translation": "Since there's so much to study, we have to start quickly. Otherwise, we'll run out of time and won't be able to finish everything."
+      },
+      {
+        "sentence": "주말에 시험이 있으므로 저는 지금부터 준비해야 해요. 그만큼 공부하지 않으면 시험에 실패할 수 있어요.",
+        "romanization": "Jumare siheomi isseumuro jeoneun jigeumbuteo junbihaeya haeyo. Geumankeum gongbuhaji anheumyeon siheome silpaehal su isseoyo.",
+        "translation": "Because I have an exam this weekend, I have to prepare from now on. If I don't study enough, I might fail."
+      },
+      {
+        "sentence": "내일 회사에 아침 일찍 가야 해요. 중요한 회의가 있어서 꼭 참석해야 해요.",
+        "romanization": "Naeil hoesa-e achim iljjik gaya haeyo. Jungyohan hoeuiga isseoseo kkok chamseokhaeya haeyo.",
+        "translation": "I have to go to the office early tomorrow morning. There's an important meeting I must attend."
+      },
+      {
+        "sentence": "여름에는 SPF가 중요하니까, 밖에 나가기 전에 자외선 차단제를 발라야 해요. 안 그러면 피부가 상할 수 있어요.",
+        "romanization": "Yeoreumeneun SPFga jungyohanikka, bakke nagagi jeone jaweseon chadanje-reul ballaya haeyo. An geureomyeon pibuga sanghal su isseoyo.",
+        "translation": "Since SPF is important in the summer, you have to apply sunscreen before going out. Otherwise, your skin might get damaged."
+      }
+    ]
+  },
+  {
+    "id": "ko_안_25",
+    "language": "ko",
+    "pattern": "안",
+    "title": "안 [an] (Negation before verb/adjective)",
+    "shortExplanation": "Used to negate verbs and adjectives in Korean; equivalent to 'not'.",
+    "longExplanation": "'안 [an]' is an adverb that goes in front of a verb or adjective to negate it, similar to 'not' in English. It completely flips the meaning of the sentence, stating that the action or state does not happen or does not apply.",
+    "formation": "안 + Verb/Adjective",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "저는 아직 안 자요. 아직 일이 남았어요.",
+        "romanization": "Jeoneun ajik an jayo. Ajik iri namasseoyo.",
+        "translation": "I haven't slept yet. There's still work left."
+      },
+      {
+        "sentence": "내 친구는 연어를 안 먹어요. 그녀는 생선을 좋아하지 않아요.",
+        "romanization": "Nae chinguneun yeoneoreul an meogeoyo. Geunyeoneun saengseoneul joahaji anhayo.",
+        "translation": "My friend doesn't eat salmon. She doesn't like fish."
+      },
+      {
+        "sentence": "너는 그 영화를 안 봤어요? 정말 재미있어요, 꼭 봐야 해요.",
+        "romanization": "Neoneun geu yeonghwareul an bwasseoyo? Jeongmal jaemiisseoyo, kkok bwaya haeyo.",
+        "translation": "You haven't seen that movie? It's really good; you must watch it."
+      },
+      {
+        "sentence": "제가 그 사람을 진짜 안 좋아해요, 그는 항상 거짓말을 하니까요.",
+        "romanization": "Jega geu sarameul jinjja an joahaeyo, geuneun hangsang geojitmareul hanikkayo.",
+        "translation": "I really don't like that person because he always tells lies."
+      }
+    ]
+  },
+  {
+    "id": "ko_못_26",
+    "language": "ko",
+    "pattern": "못",
+    "title": "못 [mot] (Can't, not able to)",
+    "shortExplanation": "Used to express inability or impossibility; 'can't', 'not able to'.",
+    "longExplanation": "'못 [mot]' is a Korean adverb used to indicate an inability or impossibility to do something. This can be a physical inability, a matter of circumstance, or a lack of permission. It corresponds to 'can't' or 'not able to' in English and is placed directly before the verb.",
+    "formation": "못 + Verb",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "오늘은 너무 피곤해서 저는 일찍 잠을 못 잤어요.",
+        "romanization": "Oneureun neomu pigonhaeseo jeoneun iljjik jameul mot jasseoyo.",
+        "translation": "Today I was so tired that I couldn't go to sleep early."
+      },
+      {
+        "sentence": "그녀는 많이 걱정하고 스트레스를 받아서 밥을 못 먹었어요.",
+        "romanization": "Geunyeoneun manhi geokjeonghago seuteureseureul badaseo babeul mot meogeosseoyo.",
+        "translation": "She was so worried and stressed that she couldn't eat."
+      },
+      {
+        "sentence": "비가 너무 많이 와서 우리는 놀이공원에 갈 수가 없었어요.",
+        "romanization": "Biga neomu mani waseo urineun noligongweone gal suga eopseosseoyo.",
+        "translation": "Because it rained so much, we couldn't go to the amusement park."
+      },
+      {
+        "sentence": "저는 너무 늦게 와서 회의에 참석을 못 했어요.",
+        "romanization": "Jeoneun neomu neujge waseo hoeuie chamseogeul mot haesseoyo.",
+        "translation": "I arrived too late, so I couldn't attend the meeting."
+      }
+    ]
+  },
+  {
+    "id": "ko_아어여_27",
+    "language": "ko",
+    "pattern": "아/어/여",
+    "title": "아/어/여 보다 [a/eo/yeo boda] (Try doing)",
+    "shortExplanation": "Expresses an attempt or an experience of doing something; 'try doing'.",
+    "longExplanation": "'아/어/여 보다' is used in Korean to show that one attempts or experiences a certain action. It is attached to an action verb stem, while the final verb '보다' takes the tense. It can also be used to describe having done something at least once in the past (an experience).",
+    "formation": "Action verb + 아/어/여 보다",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "이 문제를 어떻게 해결할지 모르겠으면, 제 방식대로 한 번 해보아요.",
+        "romanization": "I munjereul eotteoke haegyeolhalji moreugesseumyeon, je bangsikdaero han beon haeboayo.",
+        "translation": "If you don't know how to solve this problem, you should try doing it my way."
+      },
+      {
+        "sentence": "김치를 만들어 본 적이 없다면, 한 번 시도해 보세요. 정말 쉽고 재미있어요.",
+        "romanization": "Kimchireul mandeureo bon jeogi eopdamyeon, han beon sidohae boseyo. Jeongmal swipgo jaemi isseoyo.",
+        "translation": "If you've never tried making kimchi, give it a go. It's really easy and fun."
+      },
+      {
+        "sentence": "예전에 한국어를 배워 보았지만, 전혀 기억이 안 나요.",
+        "romanization": "Yejeone hangugeoreul baewo boassjiman, jeonhyeo gieogi an nayo.",
+        "translation": "I've tried to learn Korean before, but I don't remember anything."
+      },
+      {
+        "sentence": "이 방법으로 공부해 보았는데, 결과가 아주 좋았어요.",
+        "romanization": "I bangbeobeuro gongbuhae boassneunde, gyeolgwa ga aju joasseoyo.",
+        "translation": "I tried studying this way, and the results were very good."
+      }
+    ]
+  },
+  {
+    "id": "ko_지금_28",
+    "language": "ko",
+    "pattern": "지금",
+    "title": "지금 [jigeum] (Now)",
+    "shortExplanation": "Used to refer to 'now' or the 'current moment'.",
+    "longExplanation": "'지금 [jigeum]' means 'now' or 'at this moment' in English. It indicates that the speaker is referring to the immediate present. It can be used before verbs or at the start of a sentence to emphasize current time.",
+    "formation": "지금 (often used at the start of a clause or right before the verb)",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "지금 학교에 가야 해요. 수업이 곧 시작될 거예요.",
+        "romanization": "Jigeum hakgyoe gaya haeyo. Sueopi got sijakdoel geoyeyo.",
+        "translation": "I have to go to school now. The class is about to start."
+      },
+      {
+        "sentence": "지금 비가 오고 있어요. 우산을 가져가는 게 좋을 것 같아요.",
+        "romanization": "Jigeum biga ogo isseoyo. Usaneul gajyeoganeun ge joh-eul geot gatayo.",
+        "translation": "It's raining now. It would be a good idea to take an umbrella."
+      },
+      {
+        "sentence": "지금 숙제를 하고 있어요. 나중에 전화할게요.",
+        "romanization": "Jigeum sukjereul hago isseoyo. Najunge jeonhwahalgeyo.",
+        "translation": "I'm doing my homework now. I'll call you later."
+      },
+      {
+        "sentence": "지금 저희 집에 오시면 식사를 같이 할 수 있어요.",
+        "romanization": "Jigeum jeoheui jib-e osimyeon siksareul gachi hal su isseoyo.",
+        "translation": "If you come to my house now, we can have a meal together."
+      }
+    ]
+  },
+  {
+    "id": "ko_이미_29",
+    "language": "ko",
+    "pattern": "이미",
+    "title": "이미 [imi] (Already)",
+    "shortExplanation": "Used to express an action that has already taken place.",
+    "longExplanation": "'이미 [imi]' is an adverb meaning 'already'. It is used when an action or situation has occurred before the current moment or earlier than expected. It emphasizes that something is not new or pending, but has taken place beforehand.",
+    "formation": "이미 + Verb",
+    "level": "Korean 1",
+    "examples": [
+      {
+        "sentence": "너는 이미 그 영화를 보았기 때문에, 또 보러 가는 게 무슨 의미가 있나요?",
+        "romanization": "Neoneun imi geu yeonghwareul boassgi ttaemune, tto boreo ganeun ge museun uimiga innayo?",
+        "translation": "Since you've already seen that movie, what's the point of going again?"
+      },
+      {
+        "sentence": "저는 이미 저녁을 먹었으니, 당신은 혼자 저녁을 드세요.",
+        "romanization": "Jeoneun imi jeonyeogeul meogeosseuni, dangsineun honja jeonyeogeul deuseyo.",
+        "translation": "I have already eaten dinner, so you should have dinner on your own."
+      },
+      {
+        "sentence": "작년에 이미 그 회사 주식을 팔았기 때문에, 이제는 아무런 손실도 없어요.",
+        "romanization": "Jaknyeone imi geu hoesa jusigeul palassgi ttaemune, ijeneun amureon sonsildo eopseoyo.",
+        "translation": "Since I already sold that company's stock last year, there's no loss now."
+      },
+      {
+        "sentence": "이곳에 왔을 때, 해는 이미 떠 있었어요.",
+        "romanization": "Igose wasseul ttae, haeneun imi tteo isseosseoyo.",
+        "translation": "When I came here, the sun had already risen."
+      }
+    ]
+  }
+]

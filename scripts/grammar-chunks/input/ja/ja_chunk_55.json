@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_びた_227",
+    "language": "ja",
+    "pattern": "～びた",
+    "title": "～びた (～bita)",
+    "shortExplanation": "A suffix meaning “looking or seeming like ~” (often appears with nouns/adjectives).",
+    "longExplanation": "The suffix ～びた attaches to certain words to mean “to have the look/feel of ~.” Common examples include 大人びた (adult-like), 古びた (old/worn), 田舎びた (countrified). It expresses that someone or something appears or has become like that noun/adjective.",
+    "formation": "[Noun/Adjective stem] + びた (forms a 連体形 modifier, e.g., 大人びた人 “an adult-like person”)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "大人びた考え方をする子供",
+        "romanization": "Otonabita kangaekata o suru kodomo",
+        "translation": "A child who thinks in a very grown-up way"
+      },
+      {
+        "sentence": "古びたカバンを捨てられない。",
+        "romanization": "Furubita kaban o suterarenai.",
+        "translation": "I can't throw away that old, worn-looking bag."
+      },
+      {
+        "sentence": "田舎びた雰囲気がこの町の魅力だ。",
+        "romanization": "Inakabita fun'iki ga kono machi no miryoku da.",
+        "translation": "The countrified atmosphere is this town’s charm."
+      },
+      {
+        "sentence": "彼女は少し大人びた服装をしている。",
+        "romanization": "Kanojo wa sukoshi otonabita fukusou o shite iru.",
+        "translation": "She’s dressed in a slightly grown-up style."
+      }
+    ]
+  },
+  {
+    "id": "ja_びる_228",
+    "language": "ja",
+    "pattern": "～びる",
+    "title": "～びる (〜biru)",
+    "shortExplanation": "A suffix meaning “to appear/to become ~,” often used with certain adjectives or nouns.",
+    "longExplanation": "The suffix ～びる is used to form verbs meaning 'to become like' or 'to seem like.' Typical examples include 大人びる (to become or behave like an adult), 古びる (to become old or look old), 田舎びる (to become rustic/countrified).",
+    "formation": "Adjective/Noun + びる (to form a verb)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼女は年齢より大人びている。",
+        "romanization": "Kanojo wa nenrei yori otona bite iru.",
+        "translation": "She seems older than her actual age."
+      },
+      {
+        "sentence": "この建物はすっかり古びている。",
+        "romanization": "Kono tatemono wa sukkari furubite iru.",
+        "translation": "This building has become completely old and worn."
+      },
+      {
+        "sentence": "彼は都会育ちなのに、少し田舎びている話し方をする。",
+        "romanization": "Kare wa tokai sodachi na noni, sukoshi inakabite iru hanashikata o suru.",
+        "translation": "Even though he grew up in the city, he speaks in a somewhat country-like way."
+      },
+      {
+        "sentence": "子供が急に大人びる瞬間を見ると驚く。",
+        "romanization": "Kodomo ga kyuu ni otona biru shunkan o miru to odoroku.",
+        "translation": "It’s surprising when you see a child suddenly act grown-up."
+      }
+    ]
+  },
+  {
+    "id": "ja_ぶった_229",
+    "language": "ja",
+    "pattern": "～ぶった",
+    "title": "～ぶった (～butta)",
+    "shortExplanation": "Often appears as a past form of ～ぶる, meaning 'acted/pretended like ~' (or literally 'hit/bashed', depending on context).",
+    "longExplanation": "The verb ～ぶる means 'to act/behave as if one is ~' (e.g., 偉そうにぶる: 'to act all high and mighty'). In its past tense, ～ぶった can describe someone who acted or pretended in a certain way. Be aware that ぶった can also simply be 'hit' (past tense of 打つ/ぶつ) depending on the kanji/spelling, but as a grammar pattern, it’s about 'putting on airs.'",
+    "formation": "Noun/Adjective + ぶる → ぶった (past tense), e.g., 偉そうぶった, 大人ぶった",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は何でも知っているかのようにぶった態度を取る。",
+        "romanization": "Kare wa nandemo shitteiru ka no you ni butta taido o toru.",
+        "translation": "He takes on an attitude as though he knows everything."
+      },
+      {
+        "sentence": "偉そうぶった物言いをされると、少し腹が立つ。",
+        "romanization": "Erasou butta monoii o sareru to, sukoshi hara ga tatsu.",
+        "translation": "It irritates me when he speaks in such a high-and-mighty way."
+      },
+      {
+        "sentence": "彼女は大人ぶった口調で話しているが、実はまだ高校生だ。",
+        "romanization": "Kanojo wa otona butta kuchou de hanashite iru ga, jitsu wa mada koukousei da.",
+        "translation": "She’s speaking in a very grown-up manner, but she’s actually still in high school."
+      },
+      {
+        "sentence": "いい子ぶった態度を取らなくてもいいよ。",
+        "romanization": "Ii ko butta taido o toranakute mo ii yo.",
+        "translation": "You don't have to pretend to be such a goody-goody."
+      }
+    ]
+  },
+  {
+    "id": "ja_ぶって_230",
+    "language": "ja",
+    "pattern": "～ぶって",
+    "title": "～ぶって (〜butte)",
+    "shortExplanation": "Te-form of ～ぶる, meaning 'acting/pretending to be ~'.",
+    "longExplanation": "～ぶる (in te-form: ～ぶって) indicates 'behaving as if one were ~.' This is often used negatively to criticize someone for putting on airs or pretending to know more than they do (e.g., 知ったかぶって 'to act like a know-it-all').",
+    "formation": "Noun/Adjective + ぶる → ぶって (te-form)",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は何でも知ったかぶって話をする。",
+        "romanization": "Kare wa nandemo shittaka butte hanashi o suru.",
+        "translation": "He talks as if he knows everything."
+      },
+      {
+        "sentence": "彼女は何も知らないふりをしてぶっていたが、本当は全部わかっている。",
+        "romanization": "Kanojo wa nanimo shiranai furi o shite butte ita ga, hontou wa zenbu wakatte iru.",
+        "translation": "She was acting like she didn’t know anything, but in reality, she understands it all."
+      },
+      {
+        "sentence": "彼はいつも偉そうぶって周りに指図している。",
+        "romanization": "Kare wa itsumo erasou butte mawari ni sashizu shite iru.",
+        "translation": "He’s always bossing people around as if he’s so important."
+      },
+      {
+        "sentence": "大人ぶっているけど、まだ子供っぽいところがある。",
+        "romanization": "Otona butte iru kedo, mada kodomoppoi tokoro ga aru.",
+        "translation": "He acts grown-up, but he still has some childish traits."
+      }
+    ]
+  },
+  {
+    "id": "ja_ぶり_231",
+    "language": "ja",
+    "pattern": "～ぶり",
+    "title": "～ぶり (〜buri)",
+    "shortExplanation": "Expresses the amount of time elapsed since doing something last.",
+    "longExplanation": "The ～ぶり grammar point is used to express that a certain amount of time has passed since you last did something. It often translates as 'for the first time in ~' or 'after (time period)'.",
+    "formation": "Time expression + ぶり",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "三年ぶりに彼に会いました。",
+        "romanization": "San-nen buri ni kare ni aimashita.",
+        "translation": "I met him for the first time in three years."
+      },
+      {
+        "sentence": "一週間ぶりにジムに行った。",
+        "romanization": "Isshuukan buri ni jimu ni itta.",
+        "translation": "I went to the gym for the first time in a week."
+      },
+      {
+        "sentence": "一ヶ月ぶりに彼からの手紙が来た。",
+        "romanization": "Ikkagetsu buri ni kare kara no tegami ga kita.",
+        "translation": "I received a letter from him for the first time in a month."
+      },
+      {
+        "sentence": "五年ぶりに雪が降った。",
+        "romanization": "Go-nen buri ni yuki ga futta.",
+        "translation": "It snowed for the first time in five years."
+      }
+    ]
+  },
+  {
+    "id": "ja_ぶる_232",
+    "language": "ja",
+    "pattern": "～ぶる",
+    "title": "～ぶる (〜buru)",
+    "shortExplanation": "Used when someone is acting or pretending to be something they are not (often a negative connotation).",
+    "longExplanation": "The ～ぶる grammar point is used when someone pretends or acts like something they aren't. It often has a negative nuance, suggesting insincerity or putting on airs. Common usage includes nouns or descriptive words before ぶる (e.g., 学者ぶる, 偉そうぶる, etc.).",
+    "formation": "Noun / (Adjective stem) + ぶる",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼はあたかも知っているかのように学者ぶる。",
+        "romanization": "Kare wa atakamo shitteiru ka no you ni gakusha buru.",
+        "translation": "He acts like a scholar, as if he knows everything."
+      },
+      {
+        "sentence": "女優ぶるのはやめて、自分自身でいろ。",
+        "romanization": "Joyu buru no wa yamete, jibun jishin de iro.",
+        "translation": "Stop acting like you’re an actress and just be yourself."
+      },
+      {
+        "sentence": "彼女は常にお嬢様ぶっている。",
+        "romanization": "Kanojo wa tsune ni ojou-sama butte iru.",
+        "translation": "She’s always putting on the airs of a refined lady."
+      },
+      {
+        "sentence": "私がいじめられていると無邪気ぶる彼女を見て、怒りがこみ上げた。",
+        "romanization": "Watashi ga ijimerarete iru to mujaki buru kanojo o mite, ikari ga komiageta.",
+        "translation": "Seeing her act innocent while I was being bullied made my anger surge."
+      }
+    ]
+  },
+  {
+    "id": "ja_までだ_233",
+    "language": "ja",
+    "pattern": "～までだ",
+    "title": "～までだ (～made da)",
+    "shortExplanation": "Expresses a limit or extent; 'it's only up to...', 'no more than...'.",
+    "longExplanation": "The ～までだ grammar point is used to emphasize that something goes only up to a certain limit or extent. It can also imply 'it's only this and nothing more.'",
+    "formation": "Verb (dictionary/ない form) + までだ, い-Adjective + までだ, Noun + までだ",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼とは友達までだ。それ以上の関係ではありません。",
+        "romanization": "Kare to wa tomodachi made da. Sore ijou no kankei dewa arimasen.",
+        "translation": "With him, it's only friendship—nothing more."
+      },
+      {
+        "sentence": "飲み放題は9時までだ。それ以降は追加料金が必要だ。",
+        "romanization": "Nomihoudai wa kuji made da. Sore ikou wa tsuika ryoukin ga hitsuyou da.",
+        "translation": "The all-you-can-drink deal is only until nine. After that, there's an extra charge."
+      },
+      {
+        "sentence": "私たちの情報は昨日までだ。それ以降のアップデートはありません。",
+        "romanization": "Watashitachi no jouhou wa kinou made da. Sore ikou no appudeeto wa arimasen.",
+        "translation": "Our information only goes up to yesterday; there are no further updates."
+      },
+      {
+        "sentence": "彼の知識は中学生レベルまでだ。それ以上は理解できない。",
+        "romanization": "Kare no chishiki wa chuugakusei reberu made da. Sore ijou wa rikai dekinai.",
+        "translation": "His knowledge is only at a junior-high level. He can't understand anything more advanced."
+      }
+    ]
+  },
+  {
+    "id": "ja_もなんでもない_234",
+    "language": "ja",
+    "pattern": "～もなんでもない",
+    "title": "～もなんでもない (〜mo nandemonai)",
+    "shortExplanation": "Used to dismiss or negate something’s importance; 'it’s nothing at all', 'it doesn’t matter'.",
+    "longExplanation": "The ～もなんでもない pattern is used to deny or downplay the significance of something. It can mean 'it doesn’t matter at all' or 'it’s no big deal.'",
+    "formation": "Verb-dictionary form + もなんでもない, い-Adjective + もなんでもない, な-Adjective + なもなんでもない, Noun + もなんでもない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "100万円を負けるもなんでもない。",
+        "romanization": "Hyaku man-en o makeru mo nandemonai.",
+        "translation": "Losing a million yen is no big deal at all."
+      },
+      {
+        "sentence": "彼が社長だもなんでもない。",
+        "romanization": "Kare ga shachou da mo nandemonai.",
+        "translation": "It doesn't matter one bit that he's the president."
+      },
+      {
+        "sentence": "あなたが来ないもなんでもない。",
+        "romanization": "Anata ga konai mo nandemonai.",
+        "translation": "It doesn't matter at all if you don't come."
+      },
+      {
+        "sentence": "それが美しいもなんでもない。",
+        "romanization": "Sore ga utsukushii mo nandemonai.",
+        "translation": "It doesn't matter at all whether it's beautiful."
+      }
+    ]
+  },
+  {
+    "id": "ja_ものとして_235",
+    "language": "ja",
+    "pattern": "～ものとして",
+    "title": "～ものとして (～mono to shite)",
+    "shortExplanation": "Indicates an assumption or supposition; 'assuming', 'under the assumption that'.",
+    "longExplanation": "The ～ものとして grammar pattern is used to express a supposition or assumption: 'assuming that ~', 'on the premise that ~'. It often sets up a condition or rule as the basis for some action or decision.",
+    "formation": "Verb-casual + ものとして, い-Adjective + ものとして, な-Adjective + なものとして, Noun + のものとして",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "雨が降るものとして、傘を持って行きました。",
+        "romanization": "Ame ga furu mono to shite, kasa o motte ikimashita.",
+        "translation": "Assuming it would rain, I took an umbrella."
+      },
+      {
+        "sentence": "彼が病気なものとして、代わりに私が出席した。",
+        "romanization": "Kare ga byouki na mono to shite, kawari ni watashi ga shusseki shita.",
+        "translation": "On the assumption that he was sick, I attended in his place."
+      },
+      {
+        "sentence": "このケーキが美味しいものとして、みんなに分けよう。",
+        "romanization": "Kono keeki ga oishii mono to shite, minna ni wakeyou.",
+        "translation": "Let’s share this cake, assuming it’s delicious."
+      },
+      {
+        "sentence": "彼女が学生のものとして、学割を適用しました。",
+        "romanization": "Kanojo ga gakusei no mono to shite, gakuwari o tekiyou shimashita.",
+        "translation": "Assuming she is a student, I applied the student discount."
+      }
+    ]
+  },
+  {
+    "id": "ja_んがために_236",
+    "language": "ja",
+    "pattern": "～んがために",
+    "title": "～んがために (〜n ga tame ni)",
+    "shortExplanation": "Emphasizes the reason or purpose for an action; 'in order to', 'for the sake of'.",
+    "longExplanation": "The ～んがために form is a formal/literary expression meaning 'in order to' or 'for the purpose of.' It attaches to the negative stem (ない-form minus ない) of the verb: e.g., する→せん, 行く→いかん, 保つ→たもたん, etc.",
+    "formation": "Verb-negative stem + んがために",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "健康を保たんがために、毎日運動をしています。",
+        "romanization": "Kenkou o tamotan ga tame ni, mainichi undou o shite imasu.",
+        "translation": "I exercise daily in order to maintain my health."
+      },
+      {
+        "sentence": "合格せんがために、一生懸命勉強します。",
+        "romanization": "Goukaku sen ga tame ni, isshoukenmei benkyou shimasu.",
+        "translation": "I study hard in order to pass."
+      },
+      {
+        "sentence": "明日の試験に備えんがため、今夜は早く寝るつもりです。",
+        "romanization": "Ashita no shiken ni sonaen ga tame, kon'ya wa hayaku neru tsumori desu.",
+        "translation": "I plan to go to bed early so I can prepare for tomorrow’s exam."
+      },
+      {
+        "sentence": "彼女の笑顔を見んがために、毎日会いに行きます。",
+        "romanization": "Kanojo no egao o min ga tame ni, mainichi ai ni ikimasu.",
+        "translation": "I go to see her every day in order to see her smile."
+      }
+    ]
+  },
+  {
+    "id": "ja_んばかりに_237",
+    "language": "ja",
+    "pattern": "～んばかりに",
+    "title": "～んばかりに (〜n bakari ni)",
+    "shortExplanation": "Indicates 'as though about to ~' or 'as if to say ~'.",
+    "longExplanation": "The ～んばかりに form is typically built on the negative stem of a verb (ない-form minus ない: 行か→行かん, 言わ→言わん, 知ら→知らん, etc.) + ばかり. It describes someone’s action or expression as though it were about to happen, or as though conveying a certain meaning without explicitly stating it.",
+    "formation": "Verb-negative stem + ん + ばかりに",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼は何も知らんばかりに、私の質問を無視した。",
+        "romanization": "Kare wa nanimo shir-an bakari ni, watashi no shitsumon o mushi shita.",
+        "translation": "He ignored my question as if he didn’t know anything."
+      },
+      {
+        "sentence": "その子は泣かんばかりに顔をしかめた。",
+        "romanization": "Sono ko wa nakan bakari ni kao o shikameta.",
+        "translation": "The child made a face as if he were about to cry."
+      },
+      {
+        "sentence": "彼女は笑わんばかりに口元を押さえた。",
+        "romanization": "Kanojo wa warawan bakari ni kuchimoto o osaeta.",
+        "translation": "She covered her mouth as though she were about to burst out laughing."
+      },
+      {
+        "sentence": "彼は退屈だと言わんばかりに、ため息を何度もついた。",
+        "romanization": "Kare wa taikutsu da to iwan bakari ni, tameiki o nando mo tsuita.",
+        "translation": "He sighed over and over as if to say he was bored."
+      }
+    ]
+  },
+  {
+    "id": "ja_差し支えない_238",
+    "language": "ja",
+    "pattern": "～差し支えない",
+    "title": "～差し支えない (〜sashitsukaenai)",
+    "shortExplanation": "Indicates no problem or obstacle; 'it’s fine if...', 'there’s no issue'.",
+    "longExplanation": "The ～差し支えない grammar point expresses that doing something (or something occurring) is not a problem and causes no inconvenience. It’s often used in polite or formal situations.",
+    "formation": "Verb-て form + も差し支えない, Noun + が差し支えない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "多少遅くても差し支えないです。",
+        "romanization": "Tashou osokute mo sashitsukaenai desu.",
+        "translation": "It’s no problem if you’re a bit late."
+      },
+      {
+        "sentence": "部屋が少し汚くても差し支えない。",
+        "romanization": "Heya ga sukoshi kitanakute mo sashitsukaenai.",
+        "translation": "It doesn’t matter if the room is slightly messy."
+      },
+      {
+        "sentence": "雨が降っても差し支えない。",
+        "romanization": "Ame ga futte mo sashitsukaenai.",
+        "translation": "It’s not an issue even if it rains."
+      },
+      {
+        "sentence": "彼がここにいることが差し支えないですか？",
+        "romanization": "Kare ga koko ni iru koto ga sashitsukaenai desu ka?",
+        "translation": "Is it okay (no problem) for him to be here?"
+      }
+    ]
+  },
+  {
+    "id": "ja_折に_239",
+    "language": "ja",
+    "pattern": "～折に",
+    "title": "～折に (〜ori ni)",
+    "shortExplanation": "Indicates the time or occasion when something happens; 'when', 'at the time of'.",
+    "longExplanation": "The ～折に grammar point is used in a somewhat formal register to express that one event or action takes place on the occasion of another. It essentially means 'when' or 'at the time of'.",
+    "formation": "Verb-dictionary form + 折に, Verb-た形 + 折に, Noun + の折に",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "父が病気の折に、私は留学していました。",
+        "romanization": "Chichi ga byouki no ori ni, watashi wa ryuugaku shite imashita.",
+        "translation": "When my father was ill, I was studying abroad."
+      },
+      {
+        "sentence": "日本へ行く折に、お土産を買ってきてください。",
+        "romanization": "Nihon e iku ori ni, omiyage o katte kite kudasai.",
+        "translation": "When you go to Japan, please buy souvenirs."
+      },
+      {
+        "sentence": "子供が寝ている折に、静かにしてください。",
+        "romanization": "Kodomo ga nete iru ori ni, shizuka ni shite kudasai.",
+        "translation": "Please be quiet when the child is sleeping."
+      },
+      {
+        "sentence": "彼に会う折に、この手紙を渡してください。",
+        "romanization": "Kare ni au ori ni, kono tegami o watashite kudasai.",
+        "translation": "Please give him this letter when you see him."
+      }
+    ]
+  },
+  {
+    "id": "ja_極まりない_240",
+    "language": "ja",
+    "pattern": "～極まりない",
+    "title": "～極まりない (〜kiwamarinai)",
+    "shortExplanation": "Expresses an extreme state, often negative; 'utterly', 'extremely', 'boundlessly'.",
+    "longExplanation": "The ～極まりない grammar point indicates an extreme or utmost degree, most commonly with a negative nuance (e.g., 失礼極まりない, 危険極まりない). It can sometimes be used for positive contexts, but that usage is less common.",
+    "formation": "な-Adjective（語幹）+ 極まりない, い-Adjective（連用形）+ こと + 極まりない, Noun + の極まりない",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の失礼な態度は極まりない。",
+        "romanization": "Kare no shitsurei na taido wa kiwamarinai.",
+        "translation": "His rude attitude is utterly beyond words."
+      },
+      {
+        "sentence": "その運転は危険極まりない。",
+        "romanization": "Sono unten wa kiken kiwamarinai.",
+        "translation": "That driving is extremely dangerous."
+      },
+      {
+        "sentence": "彼女のわがままぶりは非常識極まりない。",
+        "romanization": "Kanojo no wagamama-buri wa hijoushiki kiwamarinai.",
+        "translation": "Her selfishness is utterly irrational."
+      },
+      {
+        "sentence": "この部屋の汚さは不衛生極まりない。",
+        "romanization": "Kono heya no kitasa wa fueisei kiwamarinai.",
+        "translation": "The filthiness of this room is extremely unsanitary."
+      }
+    ]
+  },
+  {
+    "id": "ja_極まる_241",
+    "language": "ja",
+    "pattern": "～極まる",
+    "title": "～極まる (〜kiwamaru)",
+    "shortExplanation": "Also expresses an extreme degree or state, typically negative.",
+    "longExplanation": "The ～極まる form often appears with な-adjectives: e.g., 失礼極まる, 非常識極まる ('extremely rude/unreasonable'). It's largely synonymous with ～極まりない but tends to appear in set phrases. Both forms are quite formal and emphatic.",
+    "formation": "な-Adjective（語幹）+ 極まる, い-Adjective（連用形）+ こと + 極まる, etc.",
+    "level": "JLPT N1",
+    "examples": [
+      {
+        "sentence": "彼の言動は失礼極まる。",
+        "romanization": "Kare no gendou wa shitsurei kiwamaru.",
+        "translation": "His words and actions are extremely rude."
+      },
+      {
+        "sentence": "その態度は非常識極まる。",
+        "romanization": "Sono taido wa hijoushiki kiwamaru.",
+        "translation": "That behavior is utterly irrational."
+      },
+      {
+        "sentence": "彼女の発言は無責任極まる。",
+        "romanization": "Kanojo no hatsugen wa musekinin kiwamaru.",
+        "translation": "Her remark is extremely irresponsible."
+      },
+      {
+        "sentence": "このような誤解は遺憾極まる。",
+        "romanization": "Kono youna gokai wa ikan kiwamaru.",
+        "translation": "Such a misunderstanding is exceedingly regrettable."
+      }
+    ]
+  }
+]

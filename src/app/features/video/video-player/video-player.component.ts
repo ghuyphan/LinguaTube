@@ -132,7 +132,7 @@ export class VideoPlayerComponent implements OnDestroy {
   isFullscreen = signal(false);
   isVolumeSliderVisible = signal(false);
   isPlayerSettingsOpen = signal(false);
-  playerSettingsView = signal<'main' | 'speed' | 'fontSize'>('main');
+  playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub'>('main');
   isMobile = signal<boolean>(typeof window !== 'undefined' ? (window.innerWidth <= 768 || window.innerHeight <= 500) : false);
   readonly fontSizes = FONT_SIZES;
   volume = signal(100);
@@ -217,6 +217,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // Fullscreen grammar popup state
   fsGrammarPopupVisible = signal(false);
   fsSelectedGrammarPattern = signal<GrammarPattern | null>(null);
+  private wasPlayingBeforeFsGrammar = false;
 
   // Feedback animations
   rewindFeedback = signal(false);
@@ -955,6 +956,33 @@ export class VideoPlayerComponent implements OnDestroy {
     this.showControls();
   }
 
+  openDualSubMenu(event?: MouseEvent): void {
+    event?.stopPropagation();
+    this.playerSettingsView.set('dualSub');
+    this.isPlayerSettingsOpen.set(true);
+    this.clearControlsTimeout();
+    this.showControls();
+  }
+
+  selectDualSubLang(code: string | null): void {
+    if (!code || code === 'off') {
+      this.disableDualSubtitles();
+    } else {
+      this.onLangSelected(code);
+    }
+    this.closePlayerSettings();
+  }
+
+  getTargetLangFlagUrl(code: string): string {
+    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === code);
+    return lang?.flagUrl || 'https://hatscripts.github.io/circle-flags/flags/gb.svg';
+  }
+
+  getTargetLangName(code: string): string {
+    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === code);
+    return lang ? lang.name : code.toUpperCase();
+  }
+
   toggleDualSubtitles(): void {
     if (this.settings.settings().showDualSubtitles) {
       this.disableDualSubtitles();
@@ -1096,7 +1124,8 @@ export class VideoPlayerComponent implements OnDestroy {
     event.stopPropagation();
     const match = this.getFsGrammarMatchForToken(index);
     if (match) {
-      if (this.youtube.intendedPlayingState()) {
+      this.wasPlayingBeforeFsGrammar = this.youtube.isPlaying();
+      if (this.wasPlayingBeforeFsGrammar) {
         this.youtube.pause();
       }
       this.fsSelectedGrammarPattern.set(match.pattern);
@@ -1108,6 +1137,10 @@ export class VideoPlayerComponent implements OnDestroy {
   closeFsGrammarPopup(): void {
     this.fsGrammarPopupVisible.set(false);
     this.fsSelectedGrammarPattern.set(null);
+    if (this.wasPlayingBeforeFsGrammar) {
+      this.youtube.play();
+      this.wasPlayingBeforeFsGrammar = false;
+    }
   }
 
   onFullscreenComponentWordClick(event: { token: Token; context: string; event: MouseEvent }): void {
@@ -1171,6 +1204,11 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   onSubtitlePositionChanged(percent: number): void {
+    const clamped = Math.max(8, Math.min(85, Math.round(percent)));
+    this.settings.settings.update(s => ({ ...s, fullscreenSubtitleYPercent: clamped }));
+  }
+
+  onSubtitlePositionCommitted(percent: number): void {
     this.settings.setFullscreenSubtitleYPercent(percent);
   }
 

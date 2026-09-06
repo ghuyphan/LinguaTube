@@ -1,0 +1,257 @@
+[
+  {
+    "id": "zh_A于V_645",
+    "language": "zh",
+    "pattern": "A 于 V",
+    "title": "A 于 V (A to V)",
+    "shortExplanation": "A to V",
+    "longExplanation": "A to V. Pinyin: A yú V",
+    "formation": "A yú V",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "做决定，需要勇于承担责任。",
+        "romanization": "zuò juédìng， xūyào yǒngyú chéngdān zérèn。",
+        "translation": "To make a decision, you need to be courageous to take responsibility."
+      }
+    ]
+  },
+  {
+    "id": "zh_致使_646",
+    "language": "zh",
+    "pattern": "致使",
+    "title": "致使 (to cause)",
+    "shortExplanation": "to cause",
+    "longExplanation": "to cause. Pinyin: zhìshǐ",
+    "formation": "zhìshǐ",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他的粗心致使试验失败。",
+        "romanization": "tā de cūxīn zhìshǐ shìyàn shībài。",
+        "translation": "His carelessness caused the test to fail."
+      }
+    ]
+  },
+  {
+    "id": "zh_并非_647",
+    "language": "zh",
+    "pattern": "并非",
+    "title": "并非 (not (with emphasis, see “并”4.04.3))",
+    "shortExplanation": "not (with emphasis, see “并”4.04.3)",
+    "longExplanation": "not (with emphasis, see “并”4.04.3). Pinyin: bìngfēi",
+    "formation": "bìngfēi",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "类似小王这样的年轻人并非少数。",
+        "romanization": "lèisì xiǎo wáng zhèyàng de niánqīngrén bìngfēi shǎoshù。",
+        "translation": "Young people like Xiao Wang are not a minority."
+      }
+    ]
+  },
+  {
+    "id": "zh_对N而言_648",
+    "language": "zh",
+    "pattern": "对 N 而言",
+    "title": "对 N 而言 (for N (see 4.05.4 “对……来说”))",
+    "shortExplanation": "for N (see 4.05.4 “对……来说”)",
+    "longExplanation": "for N (see 4.05.4 “对……来说”). Pinyin: duì N éryán",
+    "formation": "duì N éryán",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "对今天的中国而言，经济发展必须坚持走可持续发展的道路。",
+        "romanization": "duì jīntiān de Zhōngguó éryán， jīngjìfāzhǎn bìxū jiānchí zǒu kěchíxùfāzhǎn de dàolù。",
+        "translation": "For today's China, economic development must adhere to the path of sustainable development."
+      }
+    ]
+  },
+  {
+    "id": "zh_有关N_649",
+    "language": "zh",
+    "pattern": "有关 N",
+    "title": "有关 N (about N)",
+    "shortExplanation": "about N",
+    "longExplanation": "about N. Pinyin: yǒuguān N",
+    "formation": "yǒuguān N",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他查阅了大量有关服饰问题的资料。",
+        "romanization": "tā cháyuè le dàliàng yǒuguān fúshì wèntí de zīliào。",
+        "translation": "He consulted a lot of information about clothing issues."
+      }
+    ]
+  },
+  {
+    "id": "zh_和N有关_650",
+    "language": "zh",
+    "pattern": "和 N 有关",
+    "title": "和 N 有关 (related to N)",
+    "shortExplanation": "related to N",
+    "longExplanation": "related to N. Pinyin: hé N yǒuguān",
+    "formation": "hé N yǒuguān",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "中国的语文教学向来重视识字，这固然和汉字的特点有关。",
+        "romanization": "Zhōngguó de yǔwén jiàoxué xiànglái zhòngshì shízì， zhè gùrán hé hànzì de tèdiǎn yǒuguān。",
+        "translation": "Chinese language teaching has always attached importance to literacy, which is of course related to the characteristics of Chinese characters."
+      }
+    ]
+  },
+  {
+    "id": "zh_不瞒你说_651",
+    "language": "zh",
+    "pattern": "不瞒你说",
+    "title": "不瞒你说 (actually)",
+    "shortExplanation": "actually",
+    "longExplanation": "actually. Pinyin: bù mán nǐ shuō",
+    "formation": "bù mán nǐ shuō",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "不瞒你说，对这个问题，我是这样想的。",
+        "romanization": "bù mán nǐ shuō， duì zhège wèntí， wǒ shì zhèyàng xiǎng de。",
+        "translation": "To tell you the truth, regarding this question, this is what I think."
+      }
+    ]
+  },
+  {
+    "id": "zh_说真的说实在的_652",
+    "language": "zh",
+    "pattern": "说真的/说实在的",
+    "title": "说真的/说实在的 (indeed, truthfully)",
+    "shortExplanation": "indeed, truthfully",
+    "longExplanation": "indeed, truthfully. Pinyin: shuō zhēn de/ shuō shízài de",
+    "formation": "shuō zhēn de/ shuō shízài de",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "说真的，这次真是孩子给我上了一课。",
+        "romanization": "shuō zhēn de， zhè cì zhēnshi háizi gěi wǒ shàng le yī kè。",
+        "translation": "Seriously, this time the child really gave me a lesson."
+      }
+    ]
+  },
+  {
+    "id": "zh_通红雪白_653",
+    "language": "zh",
+    "pattern": "通红、雪白",
+    "title": "通红、雪白 (very red, very white)",
+    "shortExplanation": "very red, very white",
+    "longExplanation": "very red, very white. Pinyin: tōnghóng、 xuěbái",
+    "formation": "tōnghóng、 xuěbái",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "我脸憋得通红。",
+        "romanization": "wǒ liǎn biē dé tōnghóng。",
+        "translation": "My face is red from suffocation."
+      }
+    ]
+  },
+  {
+    "id": "zh_说VA就VA_654",
+    "language": "zh",
+    "pattern": "说 V/A 就 V/A",
+    "title": "说 V/A 就 V/A (V without thinking, be A without thinking)",
+    "shortExplanation": "V without thinking, be A without thinking",
+    "longExplanation": "V without thinking, be A without thinking. Pinyin: shuō V/A jiù V/A",
+    "formation": "shuō V/A jiù V/A",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "挺好的工作，怎么说不干就不干了？",
+        "romanization": "tǐnghǎo de gōngzuò， zěnme shuō bù gàn jiù bù gàn le？",
+        "translation": "Very good job, how come you quit just like that (without thinking)?"
+      }
+    ]
+  },
+  {
+    "id": "zh_VA得要命_655",
+    "language": "zh",
+    "pattern": "V/A 得要命",
+    "title": "V/A 得要命 (V so much one could die, so A one could die)",
+    "shortExplanation": "V so much one could die, so A one could die",
+    "longExplanation": "V so much one could die, so A one could die. Pinyin: V/A dé yàomìng",
+    "formation": "V/A dé yàomìng",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "五个小时没碰手机，我空虚得要命。",
+        "romanization": "wǔ gè xiǎoshí méi pèng shǒujī， wǒ kōngxū dé yàomìng。",
+        "translation": "I didn't touch my cell phone for five hours, and I feel so empty [from not having anythnig to do] I could die."
+      }
+    ]
+  },
+  {
+    "id": "zh_以至于_656",
+    "language": "zh",
+    "pattern": "以至 (于)",
+    "title": "以至 (于) (as a result)",
+    "shortExplanation": "as a result",
+    "longExplanation": "as a result. Pinyin: yǐzhì ( yú)",
+    "formation": "yǐzhì ( yú)",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "中国的饮食文化汲收不同国家的优异之处，以至于辉煌至今。",
+        "romanization": "Zhōngguó de yǐnshí wénhuà jí shōu bùtóng guójiā de yōuyì zhī chǔ， yǐzhìyú huīhuáng zhìjīn。",
+        "translation": "China's food culture has absorbed the excellence of different countries, [and] as a result its brilliance [has shone] to this day."
+      }
+    ]
+  },
+  {
+    "id": "zh_即便_657",
+    "language": "zh",
+    "pattern": "即便",
+    "title": "即便 (even if)",
+    "shortExplanation": "even if",
+    "longExplanation": "even if. Pinyin: jíbiàn",
+    "formation": "jíbiàn",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "她最近心情不好，即便有些不讲理，你也要原谅她。",
+        "romanization": "tā zuìjìn xīnqíng bùhǎo， jíbiàn yǒuxiē bù jiǎnglǐ， nǐ yě yào yuánliàng tā。",
+        "translation": "She has a bad mood recently. Even if she is a little unreasonable, you still have to forgive her."
+      }
+    ]
+  },
+  {
+    "id": "zh_所在_658",
+    "language": "zh",
+    "pattern": "所在",
+    "title": "所在 (where … lies)",
+    "shortExplanation": "where … lies",
+    "longExplanation": "where … lies. Pinyin: suǒzài",
+    "formation": "suǒzài",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "培养人是教育的立足点，是教育价值的根本所在，是教育的本体功能。",
+        "romanization": "péiyǎng rén shì jiàoyù de lìzúdiǎn， shì jiàoyù jiàzhí de gēnběn suǒzài， shì jiàoyù de běntǐ gōngnéng。",
+        "translation": "Cultivating people is the foothold of education, is where the foundation of education’s value lies, and the ontological function of education."
+      }
+    ]
+  },
+  {
+    "id": "zh_所在_659",
+    "language": "zh",
+    "pattern": "所在",
+    "title": "所在 (place)",
+    "shortExplanation": "place",
+    "longExplanation": "place. Pinyin: suǒzài",
+    "formation": "suǒzài",
+    "level": "HSK 6",
+    "examples": [
+      {
+        "sentence": "他选择了风景秀美、气候宜人的所在。",
+        "romanization": "tā xuǎnzé le fēngjǐng xiùměi、 qìhòu yírén de suǒzài。",
+        "translation": "He chose a place with beautiful scenery and a pleasant climate."
+      }
+    ]
+  }
+]

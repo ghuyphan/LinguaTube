@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_んです_119",
+    "language": "ja",
+    "pattern": "～んです",
+    "title": "～んです (〜n desu)",
+    "shortExplanation": "Provide an explanation or reason; 'it is that', 'the thing is', 'the reason is'.",
+    "longExplanation": "The ～んです grammar point is used to provide an explanation or reason for a situation or action. It can be translated as 'it is that', 'the thing is', or 'the reason is' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + んです, い-Adjective + んです, な-Adjective + なんです, Noun + なんです",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "遅れたんですが、電車が遅れました。",
+        "romanization": "Okuretan desuga, densha ga okuremashita.",
+        "translation": "I was late because the train was delayed."
+      },
+      {
+        "sentence": "疲れたんです。",
+        "romanization": "Tsukareta n desu.",
+        "translation": "I'm tired (that's why)."
+      },
+      {
+        "sentence": "彼は優しいんです。",
+        "romanization": "Kare wa yasashii n desu.",
+        "translation": "The thing is, he is kind."
+      },
+      {
+        "sentence": "宿題が多いんです。",
+        "romanization": "Shukudai ga ooi n desu.",
+        "translation": "The reason is I have a lot of homework."
+      }
+    ]
+  },
+  {
+    "id": "ja_文Aそのうえ_120",
+    "language": "ja",
+    "pattern": "文A。そのうえ",
+    "title": "文A。そのうえ 文B。",
+    "shortExplanation": "Shows additional information; 'furthermore', 'besides', 'in addition'.",
+    "longExplanation": "This grammar point is used to connect two sentences, where the first sentence 文A provides some information, and the second sentence 文B adds additional related information. It can be translated as 'furthermore', 'besides', or 'in addition' in English.",
+    "formation": "Sentence A + そのうえ + Sentence B + 。",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "このソフトウェアは使いやすい。そのうえ、価格も手ごろだ。",
+        "romanization": "Kono sofutouea wa tsukaiyasui. Sono ue, kakaku mo tegoro da.",
+        "translation": "This software is easy to use. Furthermore, the price is reasonable."
+      },
+      {
+        "sentence": "彼女は美人だ。そのうえ、頭もいい。",
+        "romanization": "Kanojo wa bijin da. Sono ue, atama mo ii.",
+        "translation": "She is beautiful. In addition, she is smart."
+      },
+      {
+        "sentence": "この映画は面白い。そのうえ、俳優たちの演技も素晴らしい。",
+        "romanization": "Kono eiga wa omoshiroi. Sono ue, haiyuutachi no engi mo subarashii.",
+        "translation": "This movie is interesting. Besides, the actors' performances are also great."
+      },
+      {
+        "sentence": "東京はたくさんの観光スポットがある。そのうえ、美味しいレストランも多い。",
+        "romanization": "Toukyou wa takusan no kankou supotto ga aru. Sono ue, oishii resutoran mo oi.",
+        "translation": "Tokyo has many sightseeing spots. In addition, there are many delicious restaurants."
+      }
+    ]
+  },
+  {
+    "id": "ja_文Aそれで_121",
+    "language": "ja",
+    "pattern": "文A。それで",
+    "title": "文A。それで 文B (Bun A. Sorede Bun B)",
+    "shortExplanation": "Used to connect two sentences; 'So', 'That's why', 'Therefore'.",
+    "longExplanation": "The grammar point 文A。それで 文B is used to connect two sentences and show that the second sentence (文B) is a result or consequence of the first sentence (文A). It can be translated as 'so', 'that's why', or 'therefore' in English.",
+    "formation": "Sentence A。それで Sentence B。",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "今日は暑いです。それで、エアコンをつけました。",
+        "romanization": "Kyou wa atsui desu. Sorede, eakon wo tsukemashita.",
+        "translation": "It is hot today. So, I turned on the air conditioner."
+      },
+      {
+        "sentence": "電車が遅れました。それで、仕事に遅れてしまいました。",
+        "romanization": "Densha ga okuremashita. Sorede, shigoto ni okurete shimaimashita.",
+        "translation": "The train was delayed. That's why I was late for work."
+      },
+      {
+        "sentence": "彼は疲れている。それで、早く寝ることにした。",
+        "romanization": "Kare wa tsukarete iru. Sorede, hayaku neru koto ni shita.",
+        "translation": "He is tired. Therefore, he decided to go to bed early."
+      },
+      {
+        "sentence": "試験に合格しました。それで、友達とお祝いパーティーを開きました。",
+        "romanization": "Shiken ni goukaku shimashita. Sorede, tomodachi to oiwai paatii wo hirakimashita.",
+        "translation": "I passed the exam. So, I held a celebration party with friends."
+      }
+    ]
+  },
+  {
+    "id": "ja_文Aそれに_122",
+    "language": "ja",
+    "pattern": "文A。それに",
+    "title": "文A。それに 文B (Bun A. Soreni Bun B)",
+    "shortExplanation": "Express 'in addition to; besides,' used to include additional information.",
+    "longExplanation": "This grammar point 文A。それに 文B is used to express an additional statement on what was mentioned earlier. It can be translated as 'in addition to,' 'besides,' or 'on top of that,' in English. It connects two sentences by highlighting supplementary information, opinions, or reasons.",
+    "formation": "Sentence A + それに + Sentence B",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "彼は頭がいい。それに、スポーツも得意だ。",
+        "romanization": "Kare wa atama ga ii. Soreni, supo-tsu mo tokui da.",
+        "translation": "He is smart. In addition, he is good at sports."
+      },
+      {
+        "sentence": "このケーキはおいしい。それに、値段も安い。",
+        "romanization": "Kono keeki wa oishii. Soreni, nedan mo yasui.",
+        "translation": "This cake is delicious. Besides, the price is also cheap."
+      },
+      {
+        "sentence": "私は日本語が話せます。それに、韓国語も話せます。",
+        "romanization": "Watashi wa nihongo ga hanasemasu. Soreni, kankokugo mo hanasemasu.",
+        "translation": "I can speak Japanese. On top of that, I can also speak Korean."
+      },
+      {
+        "sentence": "彼女は美人だ。それに、性格もいい。",
+        "romanization": "Kanojo wa bijin da. Soreni, seikaku mo ii.",
+        "translation": "She is beautiful. In addition, she has a good personality."
+      }
+    ]
+  },
+  {
+    "id": "ja_文Aだから_123",
+    "language": "ja",
+    "pattern": "文A。だから",
+    "title": "文A。だから 文B (Bun A. Dakara Bun B)",
+    "shortExplanation": "Express reason or cause; 'because', 'so', 'therefore'.",
+    "longExplanation": "The 文A。だから 文B grammar point is used to indicate that the reason or cause of an action or event expressed in the second sentence (文B) is a result or consequence of the situation described in the first sentence (文A). It can be translated as 'because', 'so', or 'therefore' in English.",
+    "formation": "Sentence A + だから + Sentence B",
+    "level": "JLPT N4",
+    "examples": [
+      {
+        "sentence": "明日は試験だ。だから今日勉強しなければならない。",
+        "romanization": "Ashita wa shiken da. Dakara kyou benkyou shinakereba naranai.",
+        "translation": "Tomorrow is the exam, so I have to study today."
+      },
+      {
+        "sentence": "この料理は簡単だ。だから初心者でも作れる。",
+        "romanization": "Kono ryouri wa kantan da. Dakara shoshinsha demo tsukureru.",
+        "translation": "This dish is simple, so even beginners can make it."
+      },
+      {
+        "sentence": "彼は病気だ。だから今日学校を休む。",
+        "romanization": "Kare wa byouki da. Dakara kyou gakkou wo yasumu.",
+        "translation": "He is sick, so he will take a day off from school today."
+      },
+      {
+        "sentence": "駅まで遠い。だからタクシーで行ったほうがいい。",
+        "romanization": "Eki made tooi. Dakara takushii de itta hou ga ii.",
+        "translation": "The station is far, so it's better to go by taxi."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_0",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A その上 B (A sono ue B)",
+    "shortExplanation": "Used to express 'in addition to', 'besides', or 'furthermore' when adding information or making a suggestion.",
+    "longExplanation": "The grammar point A その上 B is used to connect two statements, where B is an additional piece of information, a suggestion or reason that is related to statement A. The expression can be translated as 'in addition to', 'besides', or 'furthermore'.",
+    "formation": "A [sentence/clause] + その上 + B [sentence/clause]",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は頭が良い。その上、スポーツも得意だ。",
+        "romanization": "Kare wa atama ga ii. Sono ue, supootsu mo tokui da.",
+        "translation": "He is smart. In addition, he is also good at sports."
+      },
+      {
+        "sentence": "このカフェは雰囲気がいい。その上、料理も美味しい。",
+        "romanization": "Kono kafe wa fun'iki ga ii. Sono ue, ryouri mo oishii.",
+        "translation": "This cafe has a nice atmosphere. Besides, the food is delicious."
+      },
+      {
+        "sentence": "このアパートは駅に近い。その上、家賃も安い。",
+        "romanization": "Kono apaato wa eki ni chikai. Sono ue, yachin mo yasui.",
+        "translation": "This apartment is close to the station. Furthermore, the rent is also cheap."
+      },
+      {
+        "sentence": "彼女は仕事ができる。その上、誰とでも仲良くなれる。",
+        "romanization": "Kanojo wa shigoto ga dekiru. Sono ue, dare to demo nakayoku nareru.",
+        "translation": "She is competent at work. In addition, she can get along with anyone."
+      }
+    ]
+  },
+  {
+    "id": "ja_うちに_1",
+    "language": "ja",
+    "pattern": "～うちに",
+    "title": "～うちに (〜uchi ni)",
+    "shortExplanation": "Express 'while', 'before', or 'during' a certain condition or situation.",
+    "longExplanation": "The ～うちに grammar point is used to express the idea of doing something while a certain condition or situation is still present or before it changes. It can be translated as 'while', 'before', or 'during' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
+    "formation": "Verb-てform + いる + うちに, い-Adjective + い + うちに, な-Adjective + な + うちに",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "若いうちに、いろいろな経験をしておくことが大切です。",
+        "romanization": "Wakai uchi ni, iroiro na keiken wo shite oku koto ga taisetsu desu.",
+        "translation": "It is important to have various experiences while you are young."
+      },
+      {
+        "sentence": "雨が降っていないうちに、買い物に行こう。",
+        "romanization": "Ame ga futte inai uchi ni, kaimono ni ikou.",
+        "translation": "Let's go shopping before it starts raining."
+      },
+      {
+        "sentence": "料理が熱いうちに食べましょう。",
+        "romanization": "Ryouri ga atsui uchi ni tabemashou.",
+        "translation": "Let's eat while the food is still hot."
+      },
+      {
+        "sentence": "休みのうちに、旅行の計画を立てたいです。",
+        "romanization": "Yasumi no uchi ni, ryokou no keikaku wo tatetai desu.",
+        "translation": "I want to plan a trip during the holidays."
+      }
+    ]
+  },
+  {
+    "id": "ja_うとした_2",
+    "language": "ja",
+    "pattern": "～うとした",
+    "title": "～うとした (〜uto shita)",
+    "shortExplanation": "Express an action someone tried to do but couldn't; 'tried to', 'attempted to'.",
+    "longExplanation": "The ～うとした grammar point is used to express an action that someone tried to do but couldn't complete, for various reasons. The formation differs depending on whether it is used with verbs. This grammar point can be translated as 'tried to' or 'attempted to' in English.",
+    "formation": "Verb-う stem + とした",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "電話に出ようとしたが、相手は切ってしまった。",
+        "romanization": "Denwa ni deyou to shita ga, aite wa kitte shimatta.",
+        "translation": "I tried to answer the phone, but the other person hung up."
+      },
+      {
+        "sentence": "彼は大声で話そうとしたが、言葉が出なかった。",
+        "romanization": "Kare wa oogoe de hanasou to shita ga, kotoba ga denakatta.",
+        "translation": "He tried to speak loudly, but no words came out."
+      },
+      {
+        "sentence": "ケーキを作ろうとしたが、材料が足りなかった。",
+        "romanization": "Keeki wo tsukurou to shita ga, zairyou ga tarinakatta.",
+        "translation": "I tried to make a cake, but I didn't have enough ingredients."
+      },
+      {
+        "sentence": "彼女は泳ごうとしたが、怖くて水に入れなかった。",
+        "romanization": "Kanojo wa oyogou to shita ga, kowakute mizu ni irenakatta.",
+        "translation": "She tried to swim, but she was scared and couldn't get in the water."
+      }
+    ]
+  },
+  {
+    "id": "ja_おかげで_3",
+    "language": "ja",
+    "pattern": "～おかげで",
+    "title": "～おかげで (〜okagede)",
+    "shortExplanation": "Expresses gratitude or shows a positive result due to a certain factor; 'thanks to', 'because of'.",
+    "longExplanation": "The ～おかげで grammar point is used to express gratitude or show a positive outcome resulting from a certain factor, event or person. It can be translated as 'thanks to' or 'because of' in English. The formation is straightforward and can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "formation": "Verb-casual + おかげで, い-Adjective + おかげで, な-Adjective + だおかげで, Noun + のおかげで",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "お母さんのおかげで、私は元気になりました。",
+        "romanization": "Okaasan no okagede, watashi wa genki ni narimashita.",
+        "translation": "Thanks to my mother, I became healthy."
+      },
+      {
+        "sentence": "先生の助けのおかげで、試験に合格しました。",
+        "romanization": "Sensei no tasuke no okagede, shiken ni goukaku shimashita.",
+        "translation": "Thanks to the teacher's help, I passed the exam."
+      },
+      {
+        "sentence": "日本語の勉強のおかげで、この映画が理解できました。",
+        "romanization": "Nihongo no benkyou no okagede, kono eiga ga rikai dekimashita.",
+        "translation": "Thanks to studying Japanese, I was able to understand this movie."
+      },
+      {
+        "sentence": "晴れた天気のおかげで、ピクニックが楽しかったです。",
+        "romanization": "Hareta tenki no okagede, pikunikku ga tanoshikatta desu.",
+        "translation": "Thanks to the sunny weather, the picnic was enjoyable."
+      }
+    ]
+  },
+  {
+    "id": "ja_かけ_4",
+    "language": "ja",
+    "pattern": "～かけ",
+    "title": "～かけ (〜kake)",
+    "shortExplanation": "Expresses the meaning of being in the middle of doing something or of something being partway done.",
+    "longExplanation": "The ～かけ grammar point is used to indicate that something is in the process of being done or is partway completed. This is often used with verbs to describe an action that is not yet finished or is ongoing. The verb should be in its ます-form, and かけ is added after removing the ます.",
+    "formation": "Verb-ますstem + かけ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は食事を食べかけです。",
+        "romanization": "Kare wa shokuji wo tabekake desu.",
+        "translation": "He is in the middle of eating his meal."
+      },
+      {
+        "sentence": "この本は読みかけで、まだ終わっていません。",
+        "romanization": "Kono hon wa yomikake de, mada owatteimasen.",
+        "translation": "This book is partway read, and it is not yet finished."
+      },
+      {
+        "sentence": "この部屋は掃除しかけで、まだ片づいていません。",
+        "romanization": "Kono heya wa soujishikake de, mada kataduiteimasen.",
+        "translation": "This room is partway cleaned, and it's not yet tidied up."
+      },
+      {
+        "sentence": "プロジェクトは進行しかけで、来週には完了する予定です。",
+        "romanization": "Purojekuto wa shinkoushikake de, raishuu ni wa kanryou suru yotei desu.",
+        "translation": "The project is in progress and is scheduled to be completed next week."
+      }
+    ]
+  },
+  {
+    "id": "ja_かなあ_5",
+    "language": "ja",
+    "pattern": "～かなあ",
+    "title": "～かなあ (〜kanaa)",
+    "shortExplanation": "Expressing uncertainty or a mild wish; 'I wonder', 'maybe'.",
+    "longExplanation": "The ～かなあ grammar point is used to express uncertainty or a mild wish. It can be translated as 'I wonder' or 'maybe' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + かなあ, い-Adjective + かなあ, な-Adjective + だかなあ, Noun + だかなあ",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "明日晴れるかなあ。",
+        "romanization": "Ashita hareru kanaa.",
+        "translation": "I wonder if it will be sunny tomorrow."
+      },
+      {
+        "sentence": "このスープ、辛いかなあ。",
+        "romanization": "Kono suupu, karai kanaa.",
+        "translation": "I wonder if this soup is spicy."
+      },
+      {
+        "sentence": "彼は静かだかなあ。",
+        "romanization": "Kare wa shizuka da kanaa.",
+        "translation": "I wonder if he is quiet."
+      },
+      {
+        "sentence": "彼女は医者だかなあ。",
+        "romanization": "Kanojo wa isha da kanaa.",
+        "translation": "I wonder if she is a doctor."
+      }
+    ]
+  },
+  {
+    "id": "ja_ないで_6",
+    "language": "ja",
+    "pattern": "～ないで",
+    "title": "～ないで (〜naide)",
+    "shortExplanation": "Express 'without doing ~' or 'without ~ing'.",
+    "longExplanation": "The ～ないで grammar point is used to express the idea of 'without doing something' or 'without ~ing' in English. It is formed by attaching the ない-form of the verb and adding で (de). This is used for expressing when an action is not taken or avoided, without interfering with the main action.",
+    "formation": "Verb-ない-form + で",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "会わないでその電話をかけました。",
+        "romanization": "Awanai de sono denwa wo kakemashita.",
+        "translation": "I made the phone call without meeting them."
+      },
+      {
+        "sentence": "雨が降るのを待たないで、家を出ました。",
+        "romanization": "Ame ga furu no wo matanai de, ie wo demashita.",
+        "translation": "I left the house without waiting for it to rain."
+      },
+      {
+        "sentence": "誰にも聞かないで、その秘密を知りました。",
+        "romanization": "Dare ni mo kikanai de, sono himitsu wo shirimashita.",
+        "translation": "I found out the secret without asking anyone."
+      },
+      {
+        "sentence": "遅れることを知らないで、駅に向かいました。",
+        "romanization": "Okureru koto wo shiranai de, eki ni mukaimashita.",
+        "translation": "I headed to the station without knowing I was late."
+      }
+    ]
+  },
+  {
+    "id": "ja_からにかけて_7",
+    "language": "ja",
+    "pattern": "～から～にかけて",
+    "title": "～から～にかけて (〜kara 〜ni kakete)",
+    "shortExplanation": "Expresses a range of something, such as time or space; 'from...to', 'between'.",
+    "longExplanation": "The ～から～にかけて grammar point is used to show a range, whether it is a range of time, space, or another measure. It can be translated as 'from...to' or 'between' in English. This grammar point is commonly used with nouns indicating time or place.",
+    "formation": "Noun (time, place, or measure) + から + Noun (time, place or measure) + にかけて",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "午前８時から午後５時にかけて働いています。",
+        "romanization": "Gozen hachiji kara gogo goji ni kakete hataraiteru.",
+        "translation": "I work from 8 am to 5 pm."
+      },
+      {
+        "sentence": "この地域は、北から南にかけて狭いです。",
+        "romanization": "Kono chiiki wa, kita kara minami ni kakete semai desu.",
+        "translation": "This area is narrow from north to south."
+      },
+      {
+        "sentence": "１０歳から２０歳にかけて成長が早いです。",
+        "romanization": "Jussai kara nijussai ni kakete seichou ga hayai desu.",
+        "translation": "Growth is rapid from 10 to 20 years of age."
+      },
+      {
+        "sentence": "今年の夏は、６月から８月にかけて雨が多かった。",
+        "romanization": "Kotoshi no natsu wa, roku gatsu kara hachi gatsu ni kakete ame ga ookatta.",
+        "translation": "This summer, there was a lot of rain from June to August."
+      }
+    ]
+  },
+  {
+    "id": "ja_かわりに_8",
+    "language": "ja",
+    "pattern": "～かわりに",
+    "title": "～かわりに (〜kawari ni)",
+    "shortExplanation": "In place of; instead of; as a substitute for.",
+    "longExplanation": "The ～かわりに grammar point is used to express doing something in place of or as a substitute for something else. It can be translated as 'instead of', 'in place of', or 'as a substitute for' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "formation": "Verb-casual + かわりに, い-Adjective + かわりに, な-Adjective + だかわりに, Noun + だかわりに",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "映画を見るかわりに、本を読んだ。",
+        "romanization": "Eiga wo miru kawari ni, hon wo yonda.",
+        "translation": "Instead of watching a movie, I read a book."
+      },
+      {
+        "sentence": "お酒を飲むかわりに、水を飲んでください。",
+        "romanization": "Osake wo nomu kawari ni, mizu wo nonde kudasai.",
+        "translation": "Please drink water instead of alcohol."
+      },
+      {
+        "sentence": "犬のかわりに、猫を飼いたいです。",
+        "romanization": "Inu no kawari ni, neko wo kaitai desu.",
+        "translation": "I want to keep a cat instead of a dog."
+      },
+      {
+        "sentence": "電車を使わないかわりに、自転車で行くことにしました。",
+        "romanization": "Densha wo tsukawanai kawari ni, jitensha de iku koto ni shimashita.",
+        "translation": "I decided to go by bicycle instead of using the train."
+      }
+    ]
+  },
+  {
+    "id": "ja_きり_9",
+    "language": "ja",
+    "pattern": "～きり",
+    "title": "～きり (〜kiri)",
+    "shortExplanation": "Expresses the idea of 'only', 'since', or 'after'.",
+    "longExplanation": "The ～きり grammar point is used to express the idea of 'only', 'since', or 'after'. It indicates that a certain action or state continues without any change since a specific point in time or after a certain event. It is commonly used with verbs in the past tense, but can also be used with other forms.",
+    "formation": "Verb-past + きり, Verb-てform + きり (less common), Noun + きり",
+    "level": "JLPT N3",
+    "examples": [
+      {
+        "sentence": "彼は出かけたきり帰ってきません。",
+        "romanization": "Kare wa dekaketa kiri kaette kimasen.",
+        "translation": "He went out and hasn't come back since."
+      },
+      {
+        "sentence": "昨日コーヒーを飲んだきり、何も飲まなかった。",
+        "romanization": "Kinou koohii wo nonda kiri, nani mo nomanakatta.",
+        "translation": "I haven't had anything to drink since the coffee I had yesterday."
+      },
+      {
+        "sentence": "卒業したきり、彼女に会っていません。",
+        "romanization": "Sotsugyou shita kiri, kanojo ni atte imasen.",
+        "translation": "I haven't seen her since we graduated."
+      },
+      {
+        "sentence": "その映画を見たきり、もう一度見たいと思っています。",
+        "romanization": "Sono eiga wo mita kiri, mou ichido mitai to omotteimasu.",
+        "translation": "I've wanted to watch that movie again ever since I saw it."
+      }
+    ]
+  }
+]

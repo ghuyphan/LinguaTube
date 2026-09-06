@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ja_A_0",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A が いちばん～ (A ga ichiban～)",
+    "shortExplanation": "Express the superlative degree; 'the most', 'the best', 'the least'.",
+    "longExplanation": "The A が いちばん～ grammar point is used to express a superlative degree or the highest rank. It can be translated as 'the most', 'the best', or 'the least' in English. The formation is used with various adjectives and verbs, and can also be used in comparison with other items or people.",
+    "formation": "Noun + が + いちばん + Adjective/Verb",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "この中で、寿司が一番好きです。",
+        "romanization": "Kono naka de, sushi ga ichiban suki desu.",
+        "translation": "Of all these, I like sushi the most."
+      },
+      {
+        "sentence": "彼女はクラスで一番速く泳げます。",
+        "romanization": "Kanojo wa kurasu de ichiban hayaku oyogemasu.",
+        "translation": "She can swim the fastest in the class."
+      },
+      {
+        "sentence": "この町では、この公園が一番きれいです。",
+        "romanization": "Kono machi de wa, kono kouen ga ichiban kirei desu.",
+        "translation": "In this town, this park is the most beautiful."
+      },
+      {
+        "sentence": "飲み物の中では、紅茶が一番好きです。",
+        "romanization": "Nomimono no naka de wa, koucha ga ichiban suki desu.",
+        "translation": "Among all drinks, I like tea the most."
+      }
+    ]
+  },
+  {
+    "id": "ja_AけれどもB_1",
+    "language": "ja",
+    "pattern": "A。けれども、～B。",
+    "title": "A。けれども、～B。(A. Keredomo,~ B.)",
+    "shortExplanation": "Used to express a contrast between two statements. It can be translated as 'but' or 'however'.",
+    "longExplanation": "The grammar point A。けれども、～B。 is used to express a contrast or contradiction between statement A and statement B. It can be translated as 'but' or 'however' in English. けれども is a conjunction that links two clauses to show there is a conflicting or opposing idea between them.",
+    "formation": "Statement A + けれども、+ Statement B",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今日は晴れている。けれども、寒いです。",
+        "romanization": "Kyou wa harete iru. Keredo mo, samui desu.",
+        "translation": "It is sunny today. However, it is cold."
+      },
+      {
+        "sentence": "彼女はうるさい。けれども、面白いです。",
+        "romanization": "Kanojo wa urusai. Keredo mo, omoshiroi desu.",
+        "translation": "She is noisy. But, she is interesting."
+      },
+      {
+        "sentence": "その映画は長かった。けれども、退屈じゃなかった。",
+        "romanization": "Sono eiga wa nagakatta. Keredo mo, taikutsu janakatta.",
+        "translation": "The movie was long. But, it wasn't boring."
+      },
+      {
+        "sentence": "彼は運動が得意だ。けれども、勉強は苦手だ。",
+        "romanization": "Kare wa undou ga tokui da. Keredo mo, benkyou wa nigate da.",
+        "translation": "He is good at sports. However, he is not good at studying."
+      }
+    ]
+  },
+  {
+    "id": "ja_AしかしB_2",
+    "language": "ja",
+    "pattern": "A。しかし、～B。",
+    "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
+    "shortExplanation": "Expresses contrast or contradiction between two clauses; 'A, but B', 'A, however B'.",
+    "longExplanation": "The grammar point A。しかし、～B。 is used to show contrast or contradiction between two clauses. It can be translated as 'A, but B' or 'A, however B' in English. しかし is placed between two sentences to indicate a contrast between them.",
+    "formation": "Sentence A + しかし + Sentence B.",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今日は忙しい。しかし、時間があるなら、コーヒーを飲もう。",
+        "romanization": "Kyou wa isogashii. Shikashi, jikan ga aru nara, koohii o nomou.",
+        "translation": "I'm busy today. However, if I have time, let's have coffee."
+      },
+      {
+        "sentence": "その映画は面白かった。しかし、長すぎました。",
+        "romanization": "Sono eiga wa omoshirokatta. Shikashi, nagasugimashita.",
+        "translation": "The movie was interesting. But, it was too long."
+      },
+      {
+        "sentence": "彼は疲れていた。しかし、宿題を終わらせた。",
+        "romanization": "Kare wa tsukareteita. Shikashi, shukudai o owaraseta.",
+        "translation": "He was tired. However, he finished his homework."
+      },
+      {
+        "sentence": "部屋は狭いです。しかし、便利な場所にあります。",
+        "romanization": "Heya wa semai desu. Shikashi, benri na basho ni arimasu.",
+        "translation": "The room is small. But, it is in a convenient location."
+      }
+    ]
+  },
+  {
+    "id": "ja_AじゃB_3",
+    "language": "ja",
+    "pattern": "A。じゃ、～B。",
+    "title": "A。じゃ、～B。(A. Ja, ~B.)",
+    "shortExplanation": "Indicates a decision or suggestion; 'well then', 'in that case', 'so'.",
+    "longExplanation": "The A。じゃ、～B。grammar point is used to express a decision, suggestion, or course of action based on a given situation or information. It can be translated as 'well then', 'in that case', or 'so' in English. This grammar works with any form of sentence, whether it's a verb, noun, い-adjective, or な-adjective in both parts (A and B).",
+    "formation": "A: Sentence, B: Sentence (A and B can be any sentence type)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "映画は時間がない。じゃ、また今度行こう。",
+        "romanization": "Eiga wa jikan ga nai. Ja, mata kondo ikou.",
+        "translation": "There's no time for a movie. Well then, let's go another time."
+      },
+      {
+        "sentence": "お腹がすいた。じゃ、レストランに行こう。",
+        "romanization": "Onaka ga suita. Ja, resutoran ni ikou.",
+        "translation": "I'm hungry. In that case, let's go to a restaurant."
+      },
+      {
+        "sentence": "電車が遅れた。じゃ、バスで行こう。",
+        "romanization": "Densha ga okureta. Ja, basu de ikou.",
+        "translation": "The train is late. So, let's go by bus."
+      },
+      {
+        "sentence": "このシャツは高い。じゃ、別のを買おう。",
+        "romanization": "Kono shatsu wa takai. Ja, betsu no o kau.",
+        "translation": "This shirt is expensive. Well then, let's buy a different one."
+      }
+    ]
+  },
+  {
+    "id": "ja_AそれじゃB_4",
+    "language": "ja",
+    "pattern": "A。それじゃ、～B。",
+    "title": "A。それじゃ、～B。(A. Soreja,~B.)",
+    "shortExplanation": "Connect two sentences; 'A, so/in that case, B'",
+    "longExplanation": "The A。それじゃ、～B。grammar point is used to connect two sentences or ideas. It translates to 'A, so/in that case, B' in English. This expression is used when the first sentence (A) creates a situation or context and the second sentence (B) indicates the consequence or response to that situation.",
+    "formation": "Sentence A + 。それじゃ、 + Sentence B",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今日は休みです。それじゃ、映画を観に行きましょう。",
+        "romanization": "Kyou wa yasumi desu. Soreja, eiga wo mi ni ikimashou.",
+        "translation": "Today is a day off. In that case, let's go watch a movie."
+      },
+      {
+        "sentence": "電気が切れた。それじゃ、ろうそくを使いましょう。",
+        "romanization": "Denki ga kireta. Soreja, rousoku wo tsukaimashou.",
+        "translation": "The electricity went out. In that case, let's use candles."
+      },
+      {
+        "sentence": "レストランが混んでいます。それじゃ、別の場所で食べましょう。",
+        "romanization": "Resutoran ga kondeimasu. Soreja, betsu no basho de tabemashou.",
+        "translation": "The restaurant is crowded. In that case, let's eat somewhere else."
+      },
+      {
+        "sentence": "明日は雨が降るらしい。それじゃ、ピクニックは中止しましょう。",
+        "romanization": "Ashita wa ame ga furu rashii. Soreja, pikunikku wa chuushi shimashou.",
+        "translation": "It seems it will rain tomorrow. In that case, let's cancel the picnic."
+      }
+    ]
+  },
+  {
+    "id": "ja_AそれではB_5",
+    "language": "ja",
+    "pattern": "A。それでは、～B。",
+    "title": "A。それでは、～B。(A. Soredewa,~B.)",
+    "shortExplanation": "Express a change in situation; 'then', 'in that case', 'so'.",
+    "longExplanation": "The A。それでは、～B。grammar point is used to express a change in situation or transition from one action to another. It can be translated as 'then', 'in that case', or 'so' in English. The formation consists of two sentences or clauses, with それでは connecting them and reflecting a change based on the previous statement (A).",
+    "formation": "A (Statement) + 。それでは、 + B (Follow-up action or statement)",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "今日は休みだ。それでは、映画を見に行こう。",
+        "romanization": "Kyou wa yasumi da. Sore dewa, eiga wo mi ni ikou.",
+        "translation": "Today is a day off. In that case, let's go see a movie."
+      },
+      {
+        "sentence": "このパンはもう古いです。それでは、捨てましょう。",
+        "romanization": "Kono pan wa mou furui desu. Sore dewa, sutemashou.",
+        "translation": "This bread is already old. Then, let's throw it away."
+      },
+      {
+        "sentence": "雨が降ってきた。それでは、室内で遊ぼう。",
+        "romanization": "Ame ga futtekita. Sore dewa, shitsunai de asobou.",
+        "translation": "It started raining. In that case, let's play indoors."
+      },
+      {
+        "sentence": "お腹が空いた。それでは、何か食べに行きましょう。",
+        "romanization": "Onaka ga suita. Sore dewa, nani ka tabe ni ikimashou.",
+        "translation": "I'm hungry. So, let's go eat something."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_6",
+    "language": "ja",
+    "pattern": "A。",
+    "title": "A。 では、～B。 (A. Dewa, ~B)",
+    "shortExplanation": "Indicates a contrast or comparison between A and B; 'As for A, ~B'.",
+    "longExplanation": "The A では、～B grammar point is used to indicate a contrast or comparison between A and B. It is used to express that 'As for A, ~ B' or 'Regarding A, ~ B'. This grammar structure is often used for contrasting or comparing different subjects/topics.",
+    "formation": "Noun A + では、 + Subject + Predicate B",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "果物では、リンゴが一番好きです。",
+        "romanization": "Kudamono dewa, ringo ga ichiban suki desu.",
+        "translation": "As for fruits, apples are my favorite."
+      },
+      {
+        "sentence": "スポーツでは、サッカーが一番人気です。",
+        "romanization": "Supōtsu dewa, sakkā ga ichiban ninki desu.",
+        "translation": "As for sports, soccer is the most popular."
+      },
+      {
+        "sentence": "今日の天気では、雨が降りそうです。",
+        "romanization": "Kyou no tenki dewa, ame ga furisou desu.",
+        "translation": "As for today's weather, it looks like it will rain."
+      },
+      {
+        "sentence": "料理では、和食が一番得意です。",
+        "romanization": "Ryouri dewa, washoku ga ichiban tokui desu.",
+        "translation": "As for cooking, I am best at Japanese cuisine."
+      }
+    ]
+  },
+  {
+    "id": "ja_AでもB_7",
+    "language": "ja",
+    "pattern": "A。でも、～B。",
+    "title": "A。でも、～B。(A. Demo, ~B)",
+    "shortExplanation": "Used to express contrast between two statements; 'A, but B', 'A, however B'.",
+    "longExplanation": "The A。でも、～B。grammar point is used to express contrast or an unexpected continuation from statement A to statement B. It can be translated as 'A, but B' or 'A, however B' in English. The formation simply places でも at the beginning of the second sentence to show contrast with the first sentence.",
+    "formation": "Clause A + でも + Clause B",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "昨日は寒かった。でも、今日は暖かいです。",
+        "romanization": "Kinou wa samukatta. Demo, kyou wa atatakai desu.",
+        "translation": "Yesterday was cold. But today it's warm."
+      },
+      {
+        "sentence": "彼は忙しい。でも、友達と遊ぶ時間がある。",
+        "romanization": "Kare wa isogashii. Demo, tomodachi to asobu jikan ga aru.",
+        "translation": "He is busy. However, he still has time to hang out with friends."
+      },
+      {
+        "sentence": "試験に合格した。でも、まだ勉強を続けています。",
+        "romanization": "Shiken ni goukaku shita. Demo, mada benkyou wo tsuzuketeimasu.",
+        "translation": "I passed the exam. But I'm still continuing to study."
+      },
+      {
+        "sentence": "彼女は有名だ。でも、とても謙虚です。",
+        "romanization": "Kanojo wa yuumei da. Demo, totemo kenkyo desu.",
+        "translation": "She is famous. However, she's very humble."
+      }
+    ]
+  },
+  {
+    "id": "ja_Aと_8",
+    "language": "ja",
+    "pattern": "Aと",
+    "title": "Aと Bと どちら～ (A to B to dochira~)",
+    "shortExplanation": "Used to ask which of two alternatives is preferred or to compare two things",
+    "longExplanation": "The grammar pattern Aと Bと どちら～ is used to compare two alternatives A and B, and ask which one is preferred, better, or more suitable. It can be used with verbs, adjectives, or nouns.",
+    "formation": "Aと Bと どちら + Verb/Adjective/Noun",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "りんごとみかんとどちらが好きですか。",
+        "romanization": "Ringo to mikan to dochira ga suki desu ka?",
+        "translation": "Which do you like, apples or oranges?"
+      },
+      {
+        "sentence": "電車とバスとどちらで行くべきですか。",
+        "romanization": "Densha to basu to dochira de iku beki desu ka?",
+        "translation": "Should I go by train or bus?"
+      },
+      {
+        "sentence": "赤いワンピースと青いワンピースとどちらが似合うと思いますか。",
+        "romanization": "Akai wanpiisu to aoi wanpiisu to dochira ga niau to omoimasu ka?",
+        "translation": "Which do you think suits me better, the red dress or the blue dress?"
+      },
+      {
+        "sentence": "このカメラとあのカメラとどちらのほうが使いやすいですか。",
+        "romanization": "Kono kamera to ano kamera to dochira no hou ga tsukaiyasui desu ka?",
+        "translation": "Which one is easier to use, this camera or that camera?"
+      }
+    ]
+  },
+  {
+    "id": "ja_AとBと_9",
+    "language": "ja",
+    "pattern": "AとBと",
+    "title": "AとBと どっち〜 (A to B to docchi〜)",
+    "shortExplanation": "Asking which one; 'which', 'A or B'.",
+    "longExplanation": "The  AとBと どっち〜 grammar point is used to ask which one to choose between two options, A and B. It can be translated as 'which', 'A or B' in English. This is often used in casual speech and can be shortened to  AかBか どっち〜.",
+    "formation": "AとBと どっち + Verb, AかBか どっち + Verb",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "コーヒーと紅茶とどっちが好き？",
+        "romanization": "Koohii to koucha to docchi ga suki?",
+        "translation": "Which do you like, coffee or tea?"
+      },
+      {
+        "sentence": "映画と音楽とどっちを楽しむ？",
+        "romanization": "Eiga to ongaku to docchi o tanoshimu?",
+        "translation": "Which do you enjoy, movies or music?"
+      },
+      {
+        "sentence": "赤いシャツと青いシャツとどっちを買う？",
+        "romanization": "Akai shatsu to aoi shatsu to docchi o kau?",
+        "translation": "Which one will you buy, the red shirt or the blue shirt?"
+      },
+      {
+        "sentence": "日本語と韓国語とどっちを勉強したい？",
+        "romanization": "Nihongo to kankokugo to docchi o benkyou shitai?",
+        "translation": "Which do you want to study, Japanese or Korean?"
+      }
+    ]
+  },
+  {
+    "id": "ja_A_10",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A は B が〜 (A wa B ga〜)",
+    "shortExplanation": "Indicates that there is something unique or different about A and describes what is special about it.",
+    "longExplanation": "The A は B が〜 grammar point is used to emphasize the uniqueness or difference of 'A' by describing a characteristic or feature 'B' that is specific to 'A'. This structure is used to convey that there is something notable or special about 'A' when compared to others.",
+    "formation": "A は (Topic) + B が (Characteristic/Feature) + Description/Action",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼女は髪が長いです。",
+        "romanization": "Kanojo wa kami ga nagai desu.",
+        "translation": "What's special about her is that she has long hair."
+      },
+      {
+        "sentence": "このレストランは雰囲気が良いです。",
+        "romanization": "Kono resutoran wa fun'iki ga ii desu.",
+        "translation": "What's great about this restaurant is the atmosphere."
+      },
+      {
+        "sentence": "私は朝ごはんが一番好きです。",
+        "romanization": "Watashi wa asagohan ga ichiban suki desu.",
+        "translation": "What I like the most is breakfast."
+      },
+      {
+        "sentence": "彼は英語が得意です。",
+        "romanization": "Kare wa eigo ga tokui desu.",
+        "translation": "He is particularly good at English."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_11",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A は B より～ (A wa B yori～)",
+    "shortExplanation": "Express a comparison between A and B; 'A is more/less than B'.",
+    "longExplanation": "The A は B より grammar point is used to express a comparison between two items or subjects (A and B). It can be translated as 'A is more/less than B' in English. This structure is followed by an adjective that describes the comparison.",
+    "formation": "A は B より + Adjective",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "このジュースはあのジュースより甘いです。",
+        "romanization": "Kono juusu wa ano juusu yori amai desu.",
+        "translation": "This juice is sweeter than that juice."
+      },
+      {
+        "sentence": "夏は冬より暑いです。",
+        "romanization": "Natsu wa fuyu yori atsui desu.",
+        "translation": "Summer is hotter than winter."
+      },
+      {
+        "sentence": "彼女は私より速く走ります。",
+        "romanization": "Kanojo wa watashi yori hayaku hashirimasu.",
+        "translation": "She runs faster than me."
+      },
+      {
+        "sentence": "スーパーはコンビニより安いです。",
+        "romanization": "Suupaa wa konbini yori yasui desu.",
+        "translation": "The supermarket is cheaper than the convenience store."
+      }
+    ]
+  },
+  {
+    "id": "ja_A_12",
+    "language": "ja",
+    "pattern": "A",
+    "title": "A より B のほうが～ (A yori B no hou ga ～)",
+    "shortExplanation": "Used to compare two items; 'B is more ～ than A'.",
+    "longExplanation": "The grammar point A より B のほうが～ is used to compare two items or situations and indicate that one is more (adjective) than the other. It can be translated as 'B is more ～ than A' in English. It is used with both い-adjectives and な-adjectives.",
+    "formation": "A + より + B + のほうが + Adjective",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "ピザよりハンバーガーのほうが美味しい。",
+        "romanization": "Piza yori hanbaagaa no hou ga oishii.",
+        "translation": "Hamburgers are more delicious than pizza."
+      },
+      {
+        "sentence": "夏より冬のほうが寒い。",
+        "romanization": "Natsu yori fuyu no hou ga samui.",
+        "translation": "Winter is colder than summer."
+      },
+      {
+        "sentence": "ここよりそこのほうが静かです。",
+        "romanization": "Koko yori soko no hou ga shizuka desu.",
+        "translation": "There is quieter than here."
+      },
+      {
+        "sentence": "車より電車のほうが速い。",
+        "romanization": "Kuruma yori densha no hou ga hayai.",
+        "translation": "Trains are faster than cars."
+      }
+    ]
+  },
+  {
+    "id": "ja_いAdjective_13",
+    "language": "ja",
+    "pattern": "い-Adjective",
+    "title": "い-Adjective く + Verb (i-Adjective + ku + Verb)",
+    "shortExplanation": "Used to connect an い-adjective to a verb, modifying the verb (adverbial usage).",
+    "longExplanation": "The い-Adjective + く + Verb grammar point transforms an い-adjective into its adverbial form, describing how the verb is performed. In English, this often corresponds to '-ly' adverbs (e.g., 'quickly', 'slowly').",
+    "formation": "い-Adjective (remove い) + く + Verb",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "彼は速く走りました。",
+        "romanization": "Kare wa hayaku hashirimashita.",
+        "translation": "He ran quickly."
+      },
+      {
+        "sentence": "この料理は美味しく食べました。",
+        "romanization": "Kono ryouri wa oishiku tabemashita.",
+        "translation": "I enjoyed eating this dish."
+      },
+      {
+        "sentence": "彼女は優しく話します。",
+        "romanization": "Kanojo wa yasashiku hanashimasu.",
+        "translation": "She speaks kindly."
+      },
+      {
+        "sentence": "母は忙しく仕事をしています。",
+        "romanization": "Haha wa isogashiku shigoto o shite imasu.",
+        "translation": "My mother is working busily."
+      }
+    ]
+  },
+  {
+    "id": "ja_いAdjective_14",
+    "language": "ja",
+    "pattern": "い-Adjective",
+    "title": "い-Adjective く します (i-Adjective ku shimasu)",
+    "shortExplanation": "Use an い-adjective to express 'to make' or 'to become'.",
+    "longExplanation": "By adding くします to an い-adjective, you express making something (or causing something to become) the quality of that adjective. In English, this often corresponds to phrases like 'make something more ADJECTIVE.'",
+    "formation": "い-Adjective (remove い) + くします",
+    "level": "JLPT N5",
+    "examples": [
+      {
+        "sentence": "部屋を明るくします。",
+        "romanization": "Heya o akaruku shimasu.",
+        "translation": "I will make the room brighter."
+      },
+      {
+        "sentence": "友達の気分を楽しくします。",
+        "romanization": "Tomodachi no kibun o tanoshiku shimasu.",
+        "translation": "I will make my friend’s mood more pleasant."
+      },
+      {
+        "sentence": "仕事が簡単になるように、やり方を早くします。",
+        "romanization": "Shigoto ga kantan ni naru you ni, yarikata o hayaku shimasu.",
+        "translation": "I will make the way of doing things faster so that the work becomes easier."
+      },
+      {
+        "sentence": "食べ物を美味しくします。",
+        "romanization": "Tabemono o oishiku shimasu.",
+        "translation": "I will make the food delicious."
+      }
+    ]
+  }
+]

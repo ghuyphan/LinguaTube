@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ja_Noun_17": {
+      "title": "Số từ + Lượng từ + からある (kara aru)",
+      "shortExplanation": "Dùng sau số từ kèm lượng từ biểu thị số lượng, kích thước, khoảng cách, trọng lượng để nhấn mạnh số lượng đó lớn đến mức 'có tới hơn...', 'trên...', 'không dưới...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Số từ + Lượng từ + からある' (hoặc '～からの' khi bổ nghĩa cho danh từ) đi liền sau các từ chỉ số lượng, chiều dài, trọng lượng, số tầng, số tiền... nhằm nhấn mạnh quy mô, số lượng lớn đến mức đáng kinh ngạc ('có đến hơn...', 'không dưới...', 'trên...'). Thường dùng để biểu thị sự cảm thán, thán phục trước một con số ấn tượng. (Lưu ý: Đối với giá cả, người ta thường dùng '～からする', nhưng với tổng tài sản hoặc con số khổng lồ thì '～からある' cũng được sử dụng).",
+      "formation": "Số từ + Lượng từ + からある (hoặc からの + Danh từ)",
+      "examples": [
+        {
+          "translation": "Bộ sưu tập của anh ấy có tới hơn 500 món."
+        },
+        {
+          "translation": "Tòa nhà này cao tới hơn 40 tầng."
+        },
+        {
+          "translation": "Tài sản của ông ấy lên tới không dưới 1 tỷ yên."
+        },
+        {
+          "translation": "Cuộc chạy marathon này dài tới hơn 10 km."
+        }
+      ]
+    },
+    "ja_Noun_18": {
+      "title": "Danh từ + からすると (kara suru to)",
+      "shortExplanation": "Dùng để đưa ra căn cứ phán đoán hoặc góc nhìn đánh giá; 'xét từ...', 'căn cứ vào...', 'nhìn từ... mà nói'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + からすると' (hoặc '～からすれば', '～からして') dùng sau một danh từ chỉ dấu hiệu, thái độ, dữ liệu hoặc lập trường để đưa ra phán đoán, suy luận hoặc đánh giá dựa trên căn cứ đó ('nhìn từ...', 'căn cứ vào...', 'xét từ... mà nói'). Vế sau thường đi kèm các cách nói suy đoán như '～ようだ', '～はずだ', '～だろう'.",
+      "formation": "Danh từ + からすると / からすれば / からして",
+      "examples": [
+        {
+          "translation": "Xét từ thái độ của anh ấy, có vẻ như anh ấy đang phản đối kế hoạch đó."
+        },
+        {
+          "translation": "Nhìn từ bầu không khí của nhà hàng này thì món ăn chắc chắn cũng rất tuyệt vời."
+        },
+        {
+          "translation": "Căn cứ vào thành tích học tập thì cô ấy hẳn là một người rất chăm học."
+        },
+        {
+          "translation": "Nhìn từ tốc độ tăng trưởng của công ty đó thì trong tương lai có lẽ sẽ thu được lợi nhuận rất lớn."
+        }
+      ]
+    },
+    "ja_Noun_19": {
+      "title": "Danh từ 1 + からの + Danh từ 2 (kara no)",
+      "shortExplanation": "Dùng để bổ nghĩa cho danh từ đứng sau, chỉ xuất xứ, điểm xuất phát hoặc nguồn gốc; 'từ...'.",
+      "longExplanation": "Cấu trúc 'Danh từ 1 + からの + Danh từ 2' là sự kết hợp giữa trợ từ chỉ điểm xuất phát 'から' và trợ từ liên kết danh từ 'の', dùng để bổ nghĩa trực tiếp cho danh từ đứng sau nhằm chỉ rõ nơi xuất phát, nguồn gốc, thời điểm bắt đầu hoặc đối tượng gửi đến ('từ... đến', 'bắt đầu từ...').",
+      "formation": "Danh từ 1 + からの + Danh từ 2",
+      "examples": [
+        {
+          "translation": "Tôi đã nhận được một bức thư gửi từ Nhật Bản."
+        },
+        {
+          "translation": "Anh ấy là một du khách đến từ Tokyo."
+        },
+        {
+          "translation": "Hôm qua có một cuộc điện thoại từ mẹ gọi đến."
+        },
+        {
+          "translation": "Cô ấy là người bạn từ thời đại học của tôi."
+        }
+      ]
+    },
+    "ja_Noun_20": {
+      "title": "Danh từ + から言わせれば (kara iwasereba)",
+      "shortExplanation": "Đứng sau từ chỉ người hoặc đối tượng để nêu quan điểm, ý kiến theo lập trường của họ; 'nếu để... nói thì...', 'dưới góc nhìn của... thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + から言わせれば' (thể sai khiến giả định của 言う, tương tự '～から言えば') dùng để biểu đạt ý kiến, đánh giá hoặc góc nhìn từ lập trường riêng của người hay đối tượng được nói tới ('nếu để... nói thì...', 'theo cách nhìn của... thì...', 'nếu nghe theo tiếng lòng của...'). Thường dùng khi muốn đưa ra một góc nhìn mang tính chủ quan hoặc khác biệt với cách nghĩ thông thường.",
+      "formation": "Danh từ (chỉ người hoặc đối tượng có ý chí/cảm xúc) + から言わせれば / から言えば",
+      "examples": [
+        {
+          "translation": "Dưới góc nhìn của giáo viên thì ngày nào học sinh cũng nên chăm chỉ học bài."
+        },
+        {
+          "translation": "Nếu để bọn trẻ lên tiếng thì chúng muốn có nhiều thời gian vui chơi hơn."
+        },
+        {
+          "translation": "Theo quan điểm của tôi thì kế hoạch đó hoàn toàn khả thi."
+        },
+        {
+          "translation": "Nếu con chó mà biết nói thì hẳn là nó muốn được đi dạo nhiều hơn nữa."
+        }
+      ]
+    },
+    "ja_Noun_21": {
+      "title": "Danh từ + ぐるみ (gurumi)",
+      "shortExplanation": "Đi cùng danh từ chỉ tập thể để diễn tả toàn thể thành viên cùng tham gia vào một việc; 'cùng toàn thể...', 'toàn bộ...'.",
+      "longExplanation": "Hậu tố ngữ pháp '～ぐるみ' (thường gặp dưới dạng '～ぐるみで') gắn vào sau danh từ chỉ tổ chức, tập thể (như gia đình, lớp học, công ty, thị trấn...) để diễn đạt ý tất cả mọi thành viên trong tập thể đó đều cùng tham gia hoặc cùng bị cuốn vào một sự việc ('toàn bộ...', 'cùng với toàn thể...', 'cả...'). Mang tính bao quát toàn diện không bỏ sót ai.",
+      "formation": "Danh từ (chỉ tập thể/tổ chức) + ぐるみ (thường dùng: Danh từ + ぐるみで)",
+      "examples": [
+        {
+          "translation": "Cả gia đình chúng tôi đã cùng nhau đi du lịch."
+        },
+        {
+          "translation": "Toàn thể lớp học đã cùng tham gia chuyến đi dã ngoại."
+        },
+        {
+          "translation": "Đất nước này toàn thể người dân đều đồng lòng ủng hộ dự luật đó."
+        },
+        {
+          "translation": "Anh ấy đã cùng với toàn bộ nhóm bạn của mình tham gia vào câu lạc bộ đó."
+        }
+      ]
+    },
+    "ja_Noun_22": {
+      "title": "Danh từ + こそあれ (koso are)",
+      "shortExplanation": "Thừa nhận vế trước tuy có tồn tại (thường là mặt hạn chế, rủi ro) nhưng vế sau vẫn diễn ra tích cực; 'tuy có... nhưng...', 'dẫu có... đi chăng nữa thì...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + こそあれ' (chữ 'あれ' là thể mệnh lệnh/liên từ cổ của động từ 'ある') là lối diễn đạt trang trọng trong văn viết, dùng để thừa nhận một sự thật hoặc khuyết điểm nào đó ở vế trước ('tuy có...', 'dẫu tồn tại...'), nhưng ngay lập tức khẳng định vế sau không hề bị ảnh hưởng tiêu cực mà vẫn diễn biến tốt đẹp hoặc có giá trị lớn ('tuy có... nhưng...').",
+      "formation": "Danh từ + こそあれ | Tính từ đuôi な (thân từ) + でこそあれ",
+      "examples": [
+        {
+          "translation": "Tuy có một số vấn đề, nhưng dự án vẫn đang tiến triển hết sức thuận lợi."
+        },
+        {
+          "translation": "Dẫu có đôi chút rủi ro, nhưng việc này hoàn toàn xứng đáng để dấn thân thử thách."
+        },
+        {
+          "translation": "Tuy có khuyết điểm, nhưng đề xuất của anh ấy rất thú vị và đáng quan tâm."
+        },
+        {
+          "translation": "Dẫu trong lòng vẫn có lo âu, nhưng bây giờ chính là thời điểm phải hành động."
+        }
+      ]
+    },
+    "ja_Noun_23": {
+      "title": "Danh từ + こそ～が (koso ~ ga)",
+      "shortExplanation": "Nhấn mạnh sự công nhận đối với danh từ đó là đúng hoặc quan trọng, nhưng vế sau nêu lên một khía cạnh đối lập khác; 'chính... thì quả là vậy thật, nhưng...', 'đúng là... nhưng...'.",
+      "longExplanation": "Cấu trúc 'Danh từ + こそ + (mệnh đề khẳng định) + が' dùng trợ từ nhấn mạnh 'こそ' để trước hết khẳng định tính quan trọng hoặc đúng đắn của danh từ đó, sau đó dùng liên từ 'が' để đưa ra một sự thật khác có tính chất tương phản hoặc bổ sung ('đúng là A thì thật sự quan trọng đấy, nhưng...', 'chính A thì đúng là như vậy, thế nhưng...').",
+      "formation": "Danh từ + こそ + Vị ngữ (Động từ / Tính từ) + が",
+      "examples": [
+        {
+          "translation": "Tiền bạc đúng là rất cần thiết thật đấy, nhưng đó không phải là tất cả trong cuộc đời."
+        },
+        {
+          "translation": "Nỗ lực quả thật là điều vô cùng quan trọng, nhưng kết quả cũng không thể bỏ qua."
+        },
+        {
+          "translation": "Sức khỏe đúng là tài sản quý giá nhất, nhưng đôi khi người ta vẫn buộc phải ưu tiên công việc."
+        },
+        {
+          "translation": "Tình yêu đúng là một sức mạnh lớn lao thật, nhưng việc biểu đạt nó ra lại chẳng hề dễ dàng."
+        }
+      ]
+    },
+    "ja_Noun_24": {
+      "title": "Danh từ + こそすれ (koso sure)",
+      "shortExplanation": "Nhấn mạnh chỉ có khả năng vế trước xảy ra, tuyệt đối không có chuyện vế sau; 'chỉ có... chứ tuyệt đối không...', 'họa may có... chứ quyết không...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + こそすれ' (kết hợp giữa trợ từ nhấn mạnh 'こそ' và thể liên từ 'すれ' của động từ 'する') dùng để nhấn mạnh sự đối lập cực đoan giữa hai vế: vế trước (X) có thể xảy ra hoặc có khả năng xảy ra, nhưng vế sau (Y) mang tính phủ định tuyệt đối thì dứt khoát không bao giờ có chuyện đó ('chỉ có thể là X chứ quyết không đời nào có chuyện Y'). Đi sau danh từ hành động (danh từ する) hoặc thân từ động từ.",
+      "formation": "Danh từ (động danh từ) + こそすれ + Vế phủ định (～ない / ～できない) | Động từ thể ます bỏ ます + こそすれ + Vế phủ định",
+      "examples": [
+        {
+          "translation": "Tôi chỉ có biết ơn chứ tuyệt đối không thể nào buông lời trách móc được."
+        },
+        {
+          "translation": "Bận rộn thì có bận thật đấy, chứ tuyệt đối chẳng bao giờ có chuyện buồn chán."
+        },
+        {
+          "translation": "Tôi chỉ có ôm niềm ân hận chứ quyết không thể nào quên được chuyện đó."
+        },
+        {
+          "translation": "Tôi chỉ có nghi ngờ chứ dứt khoát không thể nào tán thành được."
+        }
+      ]
+    },
+    "ja_Noun_25": {
+      "title": "Danh từ + ごとき / ごとく (gotoki / gotoku)",
+      "shortExplanation": "Văn phong văn chương cổ dùng để so sánh ví von; 'như...', 'giống như...'. (ごとき bổ nghĩa cho danh từ, ごとく bổ nghĩa cho động từ, tính từ).",
+      "longExplanation": "Cấu trúc so sánh ví von mang phong cách văn chương cổ điển '～ごとき／～ごとく' (dạng liên thể là 'ごとき' đứng trước danh từ, dạng liên dụng là 'ごとく' đứng trước động từ hoặc tính từ) mang ý nghĩa 'như là...', 'giống hệt như...'. So với 'ようだ' hay 'みたいだ', cấu trúc này mang âm hưởng trang trọng, kịch tính và giàu hình tượng văn học hơn hẳn. (Ngoài ra, ごとき còn có thể dùng để hạ thấp hoặc khiêm nhường).",
+      "formation": "Danh từ + ごとき + Danh từ | Danh từ + ごとく + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Tâm hồn anh ấy thuần khiết hệt như một thiên thần."
+        },
+        {
+          "translation": "Đừng có làm những hành vi độc ác như loài ác quỷ vậy!"
+        },
+        {
+          "translation": "Cô ấy sở hữu một làn da trắng ngần như tuyết."
+        },
+        {
+          "translation": "Anh ấy đã rời đi nhanh thoăn thoắt như một cơn gió."
+        }
+      ]
+    },
+    "ja_Noun_26": {
+      "title": "Danh từ + じゃあるまいし (ja aru mai shi)",
+      "shortExplanation": "Cách nói khẩu ngữ dùng để phê phán, khuyên nhủ hoặc thanh minh; 'đâu phải là... đâu mà...', 'có phải là... đâu cơ chứ'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + じゃあるまいし' (là dạng khẩu ngữ thân mật của '～ではあるまいし') dùng để bác bỏ một lý do hay giả định vô lý, với ngụ ý 'đâu phải là... đâu mà làm thế', 'có phải là... đâu cơ chứ!'. Thường đi kèm với lời khuyên bảo, trách móc, châm biếm hoặc khẳng định rằng thái độ/hành vi đó là hoàn toàn không tương xứng hay không cần thiết.",
+      "formation": "Danh từ + じゃあるまいし (hoặc ではあるまいし)",
+      "examples": [
+        {
+          "translation": "Cậu ấy đâu còn là trẻ con nữa đâu, phải tự mình giải quyết cho ổn thỏa vấn đề đó đi chứ."
+        },
+        {
+          "translation": "Không cần phải vội thế đâu, đâu phải là sắp hết giờ đến nơi rồi đâu mà."
+        },
+        {
+          "translation": "Cậu có phải là huấn luyện viên đâu mà cứ phải lo lắng về kết quả trận đấu làm gì."
+        },
+        {
+          "translation": "Đâu phải là kẹo cứng đâu, cứ thế nuốt luôn cũng chẳng sao đâu."
+        }
+      ]
+    },
+    "ja_Noun_27": {
+      "title": "Danh từ + ずくめ (zukume)",
+      "shortExplanation": "Diễn tả toàn bộ sự vật, hoàn cảnh bị bao trùm hoặc chỉ toàn là một thứ gì đó; 'toàn là...', 'ngập tràn...', 'chỉ rặt...'.",
+      "longExplanation": "Hậu tố ngữ pháp 'Danh từ + ずくめ' dùng để nhấn mạnh trạng thái mà xung quanh hoặc trong một khoảng thời gian chỉ ngập tràn, toàn bộ bao phủ bởi danh từ đó mà không có thứ gì khác xen vào ('toàn là...', 'chỉ rặt những...', 'toàn bộ là...'). Có thể dùng cho cả điều tốt (như 結構ずくめ, 幸せずくめ) lẫn điều xấu (như 失敗ずくめ, 嘘ずくめ) hoặc trạng thái màu sắc, ngoại cảnh (như 黒ずくめ).",
+      "formation": "Danh từ + ずくめ (hoặc ずくめの + Danh từ / ずくめだ)",
+      "examples": [
+        {
+          "translation": "Dạo gần đây anh ấy liên tiếp toàn gặp phải thất bại."
+        },
+        {
+          "translation": "Mùa đông năm nay tuyết rơi liên miên ngập tràn nên thật là vất vả."
+        },
+        {
+          "translation": "Câu chuyện của anh ta chỉ rặt toàn là những lời dối trá."
+        },
+        {
+          "translation": "Công việc hôm nay chỉ toàn là những chuỗi bận rộn không ngơi nghỉ."
+        }
+      ]
+    },
+    "ja_Noun_28": {
+      "title": "Danh từ + だけではすまない (dake dewa sumanai)",
+      "shortExplanation": "Diễn tả ý không thể giải quyết hay dàn xếp ổn thỏa một vấn đề chỉ bằng riêng danh từ đó; 'chỉ... thôi thì không xong đâu', 'không chỉ đơn thuần là... là xong'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + だけではすまない' (dạng phủ định của động từ '済む' - kết thúc, giải quyết xong thỏa đáng) biểu thị rằng tình huống, trách nhiệm hoặc mục tiêu phức tạp đến mức không thể chỉ dựa vào một hành động, sự đền bù hay điều kiện đơn lẻ nào đó mà giải quyết êm thấm được ('chỉ... thôi thì không đủ giải quyết', 'không thể chỉ dừng lại ở... là xong chuyện').",
+      "formation": "Danh từ + だけではすまない (hoặc Động từ thể từ điển / thể て + だけではすまない)",
+      "examples": [
+        {
+          "translation": "Vấn đề nghiêm trọng này chỉ xin lỗi thôi thì không thể giải quyết xong đâu."
+        },
+        {
+          "translation": "Cô ấy đang giận dỗi đấy, chỉ tặng mỗi bánh kẹo thôi thì không êm chuyện được đâu."
+        },
+        {
+          "translation": "Sự thành công của dự án này không thể chỉ dựa vào sự nỗ lực đơn thuần là xong."
+        },
+        {
+          "translation": "Không thể chỉ dừng lại ở việc huy động vốn là xong, mà còn cần có kế hoạch kinh doanh thực tế nữa."
+        }
+      ]
+    },
+    "ja_Noun_29": {
+      "title": "Số từ tối thiểu + たりとも～ない (tari tomo ~ nai)",
+      "shortExplanation": "Đi với lượng từ tối thiểu (như 1 phút, 1 lời, 1 lần...) để phủ định hoàn toàn; 'dù chỉ một... cũng không...', 'ngay cả một... cũng chẳng...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Số từ tối thiểu (thường là 1) + Lượng từ + たりとも + Vế phủ định' là cách diễn đạt mang tính văn chương trang trọng, dùng để nhấn mạnh sự phủ định triệt để ('ngay cả một... cũng tuyệt đối không...'). Vế trước luôn là đơn vị số lượng nhỏ nhất có thể (như 一日, 一秒, 一滴, 一円, 一人), vế sau kết hợp với các động từ ở dạng phủ định để khẳng định không có bất kỳ ngoại lệ hay sự lãng phí nào.",
+      "formation": "Số từ tối thiểu (1 + Lượng từ) + たりとも + Vị ngữ phủ định (～ない / ～ず / ～するな)",
+      "examples": [
+        {
+          "translation": "Đừng có lãng phí dù chỉ một phút một giây nào!"
+        },
+        {
+          "translation": "Anh ta không hé răng nói dù chỉ một lời nào."
+        },
+        {
+          "translation": "Cô ấy chưa từng xem bộ phim đó, dẫu chỉ một lần."
+        },
+        {
+          "translation": "Tôi không giữ bất kỳ tấm ảnh nào về nó, dù chỉ là một tấm."
+        }
+      ]
+    },
+    "ja_Noun_30": {
+      "title": "Danh từ 1 + たる + Danh từ 2 (taru)",
+      "shortExplanation": "Văn phong trang trọng dùng để nhấn mạnh tư cách, thân phận hoặc bổn phận xứng đáng của người ở cương vị đó; 'đã là... thì...', 'với tư cách là...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + たる + Danh từ 2' (chữ 'たる' là dạng liên thể của trợ động từ khẳng định cổ 'たり', bắt nguồn từ 'とあり') là cách diễn đạt rất trang trọng trong văn viết hoặc diễn thuyết. Mẫu này dùng để khẳng định cương vị, thân phận hoặc chức trách cao cả của Danh từ 1 (thường là người lãnh đạo, giáo viên, bác sĩ, bậc cha mẹ...), từ đó đưa ra yêu cầu hoặc tiêu chuẩn đạo đức mà đối tượng Danh từ 2 (thường đi với 者 - người mang tư cách đó) phải noi theo và gánh vác xứng đáng ('đã là người làm... thì phải...', 'xứng danh là...').",
+      "formation": "Danh từ 1 (chỉ thân phận/nghề nghiệp/cương vị) + たる + Danh từ 2 (thường là 者)",
+      "examples": [
+        {
+          "translation": "Đã là một người lãnh đạo thì luôn phải biết nhìn xa trông rộng và hành động tương xứng."
+        },
+        {
+          "translation": "Đã ở cương vị người thầy thì phải làm tấm gương sáng cho học sinh noi theo."
+        },
+        {
+          "translation": "Đã là một người mẹ thì việc yêu thương gia đình là điều hết sức đương nhiên."
+        },
+        {
+          "translation": "Đã mang danh người thầy thuốc thì phải đặt sự an toàn của bệnh nhân lên vị trí ưu tiên hàng đầu."
+        }
+      ]
+    },
+    "ja_Noun_31": {
+      "title": "Danh từ + ですら (desura)",
+      "shortExplanation": "Văn phong trang trọng dùng để nhấn mạnh một trường hợp cực đoan để suy ra những điều khác; 'ngay cả... cũng...', 'ngay đến... cũng...'.",
+      "longExplanation": "Mẫu ngữ pháp 'Danh từ + ですら' là dạng kết hợp giữa trợ động từ phán đoán khẳng định 'で' và phó trợ từ nhấn mạnh 'すら', mang tính chất văn viết trang trọng và nhấn mạnh mạnh mẽ hơn so với 'さえ' hay 'すら' thông thường. Cấu trúc này đưa ra một ví dụ cực đoan, điển hình hoặc hiển nhiên nhất ('ngay cả...', 'ngay đến... mà còn...') để ngụ ý rằng những trường hợp thông thường khác thì khỏi phải nói.",
+      "formation": "Danh từ + ですら",
+      "examples": [
+        {
+          "translation": "Ngày mai có bài thi rồi vậy mà ngay cả sách giáo khoa cậu ấy cũng chẳng buồn đọc."
+        },
+        {
+          "translation": "Vấn đề hóc búa này ngay cả các chuyên gia hàng đầu cũng không giải quyết nổi."
+        },
+        {
+          "translation": "Cô ấy đã bật khóc nức nở, ngay đến cả trong bài phát biểu cuối cùng."
+        },
+        {
+          "translation": "Anh ấy học hành chăm chỉ mỗi ngày, thế nhưng ngay đến cả chữ Hán cơ bản cũng chẳng thể nhớ nổi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ja_Noun_17": {
+      "title": "数量词 + からある (kara aru)",
+      "shortExplanation": "接在表示数量、重量、长度等数量词后，强调数量之多、规模之大；“多达……”、“足有……”、“不下……”。",
+      "longExplanation": "句型“数量词 + からある”（修饰名词时用“～からの”）接在表示重量、距离、数量、高度等数量词之后，用于强调数量庞大、规模可观，带有说话者感叹、惊异的语气，相当于中文的“多达……”、“足足有……”、“不下于……”。（注：表示价格时多用“～からする”，但在强调资产、总额等巨大数字时也可用“～からある”）。",
+      "formation": "数量词 + からある（或 からの ＋ 名词）",
+      "examples": [
+        {
+          "translation": "他的收藏品多达500件以上。"
+        },
+        {
+          "translation": "这座大厦足足有40多层高。"
+        },
+        {
+          "translation": "他的资产多达10亿日元以上。"
+        },
+        {
+          "translation": "这场马拉松赛程长达10公里以上。"
+        }
+      ]
+    },
+    "ja_Noun_18": {
+      "title": "名词 + からすると (kara suru to)",
+      "shortExplanation": "表示根据某一方面作为判断或推测的依据；“从……来看”、“由……判断”。",
+      "longExplanation": "句型“名词 + からすると”（亦常作“～からすれば”、“～からして”）接在表示依据、线索、态度或立场等的名词后，表示以该点为判断、推测或评价的基准（“从……来看”、“由……来判断”）。后项多伴随表示推测、判定的表达，如“～ようだ”、“～はずだ”、“～だろう”等。",
+      "formation": "名词 + からすると / からすれば / からして",
+      "examples": [
+        {
+          "translation": "从他的态度来看，他似乎对那项计划持反对意见。"
+        },
+        {
+          "translation": "从这家餐厅的气氛来判断，饭菜肯定也非常美味。"
+        },
+        {
+          "translation": "从她的成绩来看，她应该是一个非常勤奋好学的人。"
+        },
+        {
+          "translation": "从那家公司的增长率来看，将来应该能够获得巨大的利润。"
+        }
+      ]
+    },
+    "ja_Noun_19": {
+      "title": "名词1 + からの + 名词2 (kara no)",
+      "shortExplanation": "修饰后项名词，表示来源、起点或出处；“来自……的”、“从……来的”。",
+      "longExplanation": "句型“名词1 + からの + 名词2”是由表示起点的助词“から”与连接名词的助词“の”复合而成，用于修饰后项名词，表示事物发生的地点、起点、出处、发信方或开始的时间等（“来自……的……”、“从……寄来的……”）。",
+      "formation": "名词1 + からの + 名词2",
+      "examples": [
+        {
+          "translation": "我收到了来自日本的信件。"
+        },
+        {
+          "translation": "他是一位来自东京的旅客。"
+        },
+        {
+          "translation": "昨天母亲打来了电话。"
+        },
+        {
+          "translation": "她是自大学时期就认识的朋友。"
+        }
+      ]
+    },
+    "ja_Noun_20": {
+      "title": "名词 + から言わせれば (kara iwasereba)",
+      "shortExplanation": "从某人的立场或角度来陈述观点；“在……看来”、“要是让……来说的话”。",
+      "longExplanation": "句型“名词 + から言わせれば”（“言わせる”是动词“言う”的使役态，加假定形“ば”）用于站在该人物或对象的角度表达其看法或主张（“在……看来”、“要是让……来说的话”、“从……的立场而言”）。常用于提出针对某一事物的独到见解或有别于他人的主观看法。",
+      "formation": "名词（人物或拟人化对象） + から言わせれば / から言えば",
+      "examples": [
+        {
+          "translation": "在老师看来，学生理应每天都坚持学习。"
+        },
+        {
+          "translation": "要是让孩子们来说的话，他们希望能有更多玩耍的时间。"
+        },
+        {
+          "translation": "依我看来，那个方案完全是可行的。"
+        },
+        {
+          "translation": "要是狗会说话的话，它肯定想要多去散散步。"
+        }
+      ]
+    },
+    "ja_Noun_21": {
+      "title": "名词 + ぐるみ (gurumi)",
+      "shortExplanation": "接在表示团体、组织的词后，表示全员或整体一起参与某事；“全……一起”、“连同……在内”。",
+      "longExplanation": "后缀“～ぐるみ”（常以“～ぐるみで”的形式出现）接在表示家庭、集体、组织、地区等的名词之后，表示该整体内的全体成员无一例外地共同参与某项行动或卷入某种事态（“全……一起”、“整个……全员”）。常用于“家族ぐるみ（全家一起）”、“町ぐるみ（全镇一起）”等搭配。",
+      "formation": "名词（表示团体/组织的名词） + ぐるみ（常用：名词 + ぐるみで）",
+      "examples": [
+        {
+          "translation": "全家人一起去旅行了。"
+        },
+        {
+          "translation": "全班同学一起去远足了。"
+        },
+        {
+          "translation": "这个国家全体国民都支持那项法案。"
+        },
+        {
+          "translation": "他带着所有的朋友一起参加了那个俱乐部。"
+        }
+      ]
+    },
+    "ja_Noun_22": {
+      "title": "名词 + こそあれ (koso are)",
+      "shortExplanation": "承认前项确实存在（多为不足或负担），但后项依然积极成立；“虽然有……”、“尽管存在……”。",
+      "longExplanation": "句型“名词 + こそあれ”（“あれ”为文语动词“あり”的已然形接续）属于较庄重的书面语表达。前项承认某种负面要素、困难或缺点的存在（“虽然有……”、“尽管存在……”），后项则转折强调整体并未受阻，依然顺利或极有价值。",
+      "formation": "名词 + こそあれ | 形容动词词干 + でこそあれ",
+      "examples": [
+        {
+          "translation": "虽然存在一些问题，但项目整体进展很顺利。"
+        },
+        {
+          "translation": "尽管伴随少许风险，但依然有值得挑战的价值。"
+        },
+        {
+          "translation": "虽然有些缺点，但他的提议依然很有吸引力。"
+        },
+        {
+          "translation": "尽管心中尚有不安，但现在正是采取行动的时候。"
+        }
+      ]
+    },
+    "ja_Noun_23": {
+      "title": "名词 + こそ～が (koso ~ ga)",
+      "shortExplanation": "强调某事物确实极为重要或属实，但随后转折指出另一相对的事实；“确实……，但是……”、“固然……，然而……”。",
+      "longExplanation": "句型“名词 + こそ + （谓语） + が”利用提示助词“こそ”强调前项名词的重要性或无可争辩的真实性，紧接着用转折连词“が”提出另一层对立或需要兼顾的现实（“……固然重要，但是……”、“正因为是……确实如此，然而……”）。",
+      "formation": "名词 + こそ + 谓语（动词/形容词） + が",
+      "examples": [
+        {
+          "translation": "金钱固然必不可少，但那绝非人生的全部。"
+        },
+        {
+          "translation": "努力固然十分重要，但结果同样不容忽视。"
+        },
+        {
+          "translation": "健康固然是宝贵的财富，但有时也不得不以工作为先。"
+        },
+        {
+          "translation": "爱固然是一种力量，但要表达出来却绝非易事。"
+        }
+      ]
+    },
+    "ja_Noun_24": {
+      "title": "名词 + こそすれ (koso sure)",
+      "shortExplanation": "强调只可能存在前项的情况，绝不会发生后项；“只可能……绝不会……”、“虽说会……但决不……”。",
+      "longExplanation": "句型“名词 + こそすれ”（“すれ”为动词“する”的已然形）用于极为强烈的语气对比：肯定前项X有可能发生或属实，但后项紧跟否定形式（如“～ない”、“～できない”等），断然否认后项Y发生的可能性（“只会……绝不会……”、“只有……哪会……”）。常接在带有动作性的名词或动词连用形后。",
+      "formation": "名词（动作性名词） + こそすれ + 否定句 | 动词连用形（ます形去掉ます） + こそすれ + 否定句",
+      "examples": [
+        {
+          "translation": "我对您只有感激，绝不可能说出半句指责的话。"
+        },
+        {
+          "translation": "忙碌固然是有，但也绝不会感到半点无聊。"
+        },
+        {
+          "translation": "我只有悔恨，却无论如何也无法忘怀。"
+        },
+        {
+          "translation": "我心中只有满腹疑问，绝不可能表示赞同。"
+        }
+      ]
+    },
+    "ja_Noun_25": {
+      "title": "名词 + ごとき / ごとく (gotoki / gotoku)",
+      "shortExplanation": "文语色彩浓厚的比喻表达；“宛如……”、“如同……一样”。（ごとき修饰名词，ごとく修饰动词或形容词）。",
+      "longExplanation": "文语比况句型“～ごとき／～ごとく”常用于文学作品、书面语或演说中，表示生动的比喻（“如……一样”、“宛如……”）。其连体修饰名词时用“ごとき”，连用修饰动词或形容词时用“ごとく”。相比于口语中的“ようだ”或“みたいだ”，本句型更具典雅厚重的修辞色彩与戏剧张力。",
+      "formation": "名词 + ごとき + 名词 | 名词 + ごとく + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "他如同天使一般纯洁无瑕。"
+        },
+        {
+          "translation": "休要做出那等如同恶魔般的行径！"
+        },
+        {
+          "translation": "她拥有宛如白雪般白皙细腻的肌肤。"
+        },
+        {
+          "translation": "他犹如一阵疾风般离去了。"
+        }
+      ]
+    },
+    "ja_Noun_26": {
+      "title": "名词 + じゃあるまいし (ja aru mai shi)",
+      "shortExplanation": "口语中用于批评、劝告或辩解，驳斥某种不合情理的举动；“又不是……”、“并不会是……”。",
+      "longExplanation": "句型“名词 + じゃあるまいし”（口语形式，郑重或书面形式为“～ではあるまいし”）用于断然否定某种假设或事实（“又不是……何必这样呢”、“既然并非……就用不着……”）。后项常伴随责备、劝告、讽刺或表明某种反应毫无必要的表达。",
+      "formation": "名词 + じゃあるまいし（书面语：ではあるまいし）",
+      "examples": [
+        {
+          "translation": "他又不是小孩子了，理应妥善解决那个问题。"
+        },
+        {
+          "translation": "没必要这么着急，又不是时间来不及了。"
+        },
+        {
+          "translation": "你又不是总教练，何必为比赛结果瞎操心。"
+        },
+        {
+          "translation": "又不是硬糖，直接吞下去也没关系的。"
+        }
+      ]
+    },
+    "ja_Noun_27": {
+      "title": "名词 + ずくめ (zukume)",
+      "shortExplanation": "表示清一色全都是某种事物，或满是某种状态；“尽是……”、“清一色的……”、“全是……”。",
+      "longExplanation": "接尾词“～ずくめ”接在名词之后，表示某段时期、某种状态或某件物品完全被该事物所填满，没有任何杂质或例外（“尽是……”、“全都是……”、“清一色……”）。既可用于积极愉快的事物（如“いいことずくめ/全是好事”），也可用于消极不顺的事物（如“失敗ずくめ/接连失败”、“嘘ずくめ/满篇谎言”），还可用于外貌穿着（如“黒ずくめ/一袭黑衣”）。",
+      "formation": "名词 + ずくめ（或 ずくめの + 名词 / ずくめだ）",
+      "examples": [
+        {
+          "translation": "他最近接二连三尽是失败。"
+        },
+        {
+          "translation": "今年冬天到处是大雪，真是太不容易了。"
+        },
+        {
+          "translation": "他的话里从头到尾全是谎言。"
+        },
+        {
+          "translation": "今天的工作从早到晚尽是忙碌。"
+        }
+      ]
+    },
+    "ja_Noun_28": {
+      "title": "名词 + だけではすまない (dake dewa sumanai)",
+      "shortExplanation": "表示仅凭某事无法解决问题或了结事态；“光靠……是解决不了的”、“仅仅……是交代不过去的”。",
+      "longExplanation": "句型“名词 + だけではすまない”（“すまない”是动词“済む/解决、了结”的否定形）表示事情性质严重或难度较大，仅仅靠前项所提及的行为、补偿或条件，是无法平息事态或敷衍过去的（“光靠……是远远不够的”、“不能只靠……就算完事”）。",
+      "formation": "名词 + だけではすまない（亦可接：动词辞书形/て形 + だけではすまない）",
+      "examples": [
+        {
+          "translation": "这个问题光道个歉是解决不了的。"
+        },
+        {
+          "translation": "她正在气头上呢，光送点点心可应付不过去。"
+        },
+        {
+          "translation": "这个项目的成功，绝非光靠努力就能达成的。"
+        },
+        {
+          "translation": "光靠筹措资金可不行，切实可行的商业计划同样不可或缺。"
+        }
+      ]
+    },
+    "ja_Noun_29": {
+      "title": "最小数量词 + たりとも～ない (tari tomo ~ nai)",
+      "shortExplanation": "与表示极小单位的数量词搭配，表示强烈的彻底否定；“哪怕……也不……”、“连一个……也不……”。",
+      "longExplanation": "句型“最小数量词（通常为数字‘1’+量词） + たりとも + 否定句”带有浓厚的书面语与训诫色彩。用于前置极微小的数量单位（如一分、一秒、一滴、一人、一言等），后接否定谓语，以斩钉截铁的语气表示全盘否定，强调绝不容许丝毫的妥协或浪费（“哪怕是一……也决不……”、“连一丝一毫也不……”）。",
+      "formation": "最小数量词（1 + 量词） + たりとも + 否定表现（～ない / ～するな）",
+      "examples": [
+        {
+          "translation": "哪怕一分钟也不要虚度！"
+        },
+        {
+          "translation": "他连半个字也不肯说。"
+        },
+        {
+          "translation": "那部电影她连一次都没有看过。"
+        },
+        {
+          "translation": "那张照片我连一张也没有留存。"
+        }
+      ]
+    },
+    "ja_Noun_30": {
+      "title": "名词1 + たる + 名词2 (taru)",
+      "shortExplanation": "书面语表达，强调处于某种崇高身份、地位应有的资格或义务；“作为……者”、“身为……的人”。",
+      "longExplanation": "句型“名词1 + たる + 名词2”（“たる”是文语断定助动词“たり”的连体形，源于“とあり”）属于十分庄重典雅的书面语。常接在表示社会身份、职务、地位的名词后（如领导、教师、医者、父母等），后项名词常接“者（もの）”，用于阐明处于该崇高地位者所应具备的职业操守、道德规范或应尽的本分（“作为……者理应……”、“身为……应当……”）。",
+      "formation": "名词1（身份/职务/地位） + たる + 名词2（常为“者”）",
+      "examples": [
+        {
+          "translation": "身为领导者，应当始终着眼未来并付诸行动。"
+        },
+        {
+          "translation": "作为一名教师，理应为学生树立良好的模范。"
+        },
+        {
+          "translation": "身为一位母亲，爱护家人是理所当然的事情。"
+        },
+        {
+          "translation": "身为医生，应当将患者的安全放在首位来考虑。"
+        }
+      ]
+    },
+    "ja_Noun_31": {
+      "title": "名词 + ですら (desura)",
+      "shortExplanation": "较为庄重的书面强调表达，通过举出极端或理所当然的例子来类推其余；“甚至连……都……”、“哪怕是……也……”。",
+      "longExplanation": "句型“名词 + ですら”是由断定助动词连用形“で”与强调副助词“すら”复合而成的书面语表达。其语气比普通的“さえ”或“すら”更为庄重、沉稳。通过提出一个极端、最基本或最无可争议的事例（“甚至连……都……”、“即使是……也……”），借以暗示其他一般情况自不必多言。",
+      "formation": "名词 + ですら",
+      "examples": [
+        {
+          "translation": "明明明天就要考试了，他却甚至连教科书都懒得看一眼。"
+        },
+        {
+          "translation": "这个难题甚至连专门领域的专家都无法解开。"
+        },
+        {
+          "translation": "她甚至在最后的致辞中都忍不住哭了出来。"
+        },
+        {
+          "translation": "他虽然每天都在学习，但甚至连最基础的汉字都记不住。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ja_Noun_17": {
+      "title": "수량사 + からある (kara aru)",
+      "shortExplanation": "수량, 크기, 무게, 거리 등을 나타내는 말 뒤에 붙어 수량이 매우 많거나 큼을 강조하며, '~나 되는', '~에 달하는', '~이상이나 되는'이라는 뜻입니다.",
+      "longExplanation": "문형 '수량사 + からある'(명사를 수식할 때는 '～からの')는 수량, 길이, 무게, 높이, 규모 등을 나타내는 수량사 뒤에 붙어, 그 수치가 매우 크거나 엄청남을 강조하는 표현입니다('무려 ~나 되는', '~에 달하는', '~이상 되는'). 화자의 놀라움이나 감탄의 뉘앙스를 동반합니다. (참고: 금액·가격을 나타낼 때는 주로 '～からする'를 쓰지만, 자산 규모 등의 큰 숫자에는 '～からある'도 사용됩니다).",
+      "formation": "수량사 + からある(또는 からの + 명사)",
+      "examples": [
+        {
+          "translation": "그의 수집품은 500개나 된다."
+        },
+        {
+          "translation": "이 건물은 40층이나 된다."
+        },
+        {
+          "translation": "그의 재산은 무려 10억 엔에 달한다."
+        },
+        {
+          "translation": "이 마라톤은 코스가 10km나 된다."
+        }
+      ]
+    },
+    "ja_Noun_18": {
+      "title": "명사 + からすると (kara suru to)",
+      "shortExplanation": "어떤 측면이나 기준을 판단의 근거로 삼음을 나타내며, '~로 보아', '~로 보아서는', '~의 관점에서 보면'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + からすると'(또는 '～からすれば', '～からして')는 어떤 태도, 상황, 지표, 입장 등을 판단의 근거로 삼아 추측하거나 평가할 때 사용합니다('~로 보아', '~로 보아서는', '~의 입장에서 보면'). 뒤 문장에는 주로 '～ようだ(듯하다)', '～はずだ(~임에 틀림없다)', '～だろう(~일 것이다)'와 같은 추측이나 판단의 표현이 이어집니다.",
+      "formation": "명사 + からすると / からすれば / からして",
+      "examples": [
+        {
+          "translation": "그의 태도로 보아 그는 그 계획에 반대하고 있는 것 같다."
+        },
+        {
+          "translation": "이 식당의 분위기로 보아서는 요리도 훌륭할 것임에 틀림없다."
+        },
+        {
+          "translation": "그녀의 성적으로 보아 그녀는 매우 학구열이 높은 사람일 것이다."
+        },
+        {
+          "translation": "그 회사의 성장률로 보아서는 미래에 큰 이익을 얻을 수 있을 것이다."
+        }
+      ]
+    },
+    "ja_Noun_19": {
+      "title": "명사1 + からの + 명사2 (kara no)",
+      "shortExplanation": "뒤따르는 명사를 수식하여 출발점, 출처, 기원 등을 나타내며, '~로부터의', '~에서 온'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + からの + 명사2'는 출발점이나 기원을 나타내는 격조사 'から'에 명사 수식 조사 'の'가 결합된 형태로, 뒤의 명사를 수식하여 사물의 발생 장소, 출처, 발신자, 시작 시점 등을 밝히는 표현입니다('~로부터의', '~에서 온', '~부터 시작된').",
+      "formation": "명사1 + からの + 명사2",
+      "examples": [
+        {
+          "translation": "일본에서 온 편지를 받았습니다."
+        },
+        {
+          "translation": "그는 도쿄에서 온 여행자입니다."
+        },
+        {
+          "translation": "어제 어머니로부터 전화가 왔습니다."
+        },
+        {
+          "translation": "그녀는 대학교 때부터의 친구입니다."
+        }
+      ]
+    },
+    "ja_Noun_20": {
+      "title": "명사 + から言わせれば (kara iwasereba)",
+      "shortExplanation": "그 인물이나 대상의 입장에서 의견이나 주장을 말할 때 쓰이며, '~의 입장에서 말하자면', '~가 말하게 한다면'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + から言わせれば'는 동사 '言う'의 사역형에 가정형이 결합된 표현으로, 그 인물이나 대상의 처지나 관점에 서서 주관적인 의견이나 주장을 펼칠 때 사용합니다('~의 입장에서 보자면', '~에게 말하게 한다면', '~의 생각으로는'). 일반적인 생각과는 다른 자신만의 관점이나 해당 대상의 속마음을 대변할 때 자주 쓰입니다.",
+      "formation": "명사(인물이나 의인화된 대상) + から言わせれば / から言えば",
+      "examples": [
+        {
+          "translation": "선생님의 입장에서 말하자면, 매일 공부해야 마땅하다."
+        },
+        {
+          "translation": "아이들의 입장에서 말하자면, 더 많이 놀고 싶을 것이다."
+        },
+        {
+          "translation": "내 입장에서 말하자면, 그 계획은 실행 가능하다."
+        },
+        {
+          "translation": "개의 입장에서 말하자면, 산책을 더 많이 하고 싶을 것이다."
+        }
+      ]
+    },
+    "ja_Noun_21": {
+      "title": "명사 + ぐるみ (gurumi)",
+      "shortExplanation": "집단이나 조직을 나타내는 명사 뒤에 붙어 그 구성원 전체가 함께함을 나타내며, '온 ~가 함께', '~ 전체가', '~를 통틀어'라는 뜻입니다.",
+      "longExplanation": "접미사 문형 '～ぐるみ'(주로 '～ぐるみで' 형태로 쓰임)는 가족, 학급, 마을, 기업 등 집단이나 단체를 나타내는 명사 뒤에 붙어, 그 구성원 전체가 빠짐없이 어떤 행동에 동참하거나 연루됨을 나타냅니다('온 가족이 함께', '마을 전체가', '전원이 다 같이').",
+      "formation": "명사(집단·단체를 나타내는 명사) + ぐるみ(주로: 명사 + ぐるみで)",
+      "examples": [
+        {
+          "translation": "온 가족이 함께 여행을 떠났습니다."
+        },
+        {
+          "translation": "반 전체가 함께 소풍을 갔습니다."
+        },
+        {
+          "translation": "이 나라는 온 국민이 함께 그 법안을 지지하고 있습니다."
+        },
+        {
+          "translation": "그는 친구들과 다 함께 그 클럽에 가입했다."
+        }
+      ]
+    },
+    "ja_Noun_22": {
+      "title": "명사 + こそあれ (koso are)",
+      "shortExplanation": "앞의 부정적이거나 부담스러운 요소를 인정하면서도 뒤의 사실이나 긍정적 결과는 변함없음을 나타내며, '~은 있을지언정', '~은 있지만'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + こそあれ'(고어 'ある'의 이연형에 조사 こそ가 결합된 형태)는 격식 있는 문어체 표현으로, 앞선 문제점이나 리스크 등의 존재를 일단 인정하되('~은 있을지언정', '~은 있으나'), 그것이 뒤의 긍정적인 평가나 진행 상황에 지장을 주지 않음을 역설할 때 쓰입니다.",
+      "formation": "명사 + こそあれ | 나형용사 어간 + でこそあれ",
+      "examples": [
+        {
+          "translation": "문제는 있을지언정 프로젝트는 순조롭게 진행되고 있습니다."
+        },
+        {
+          "translation": "다소의 리스크는 있을지언정 도전할 가치는 충분히 있다."
+        },
+        {
+          "translation": "결점은 있을지언정 그의 제안은 매우 흥미롭다."
+        },
+        {
+          "translation": "불안은 있을지언정 지금이 바로 행동해야 할 때이다."
+        }
+      ]
+    },
+    "ja_Noun_23": {
+      "title": "명사 + こそ～が (koso ~ ga)",
+      "shortExplanation": "그 명사의 중요성이나 가치를 일단 강하게 강조한 뒤, 그에 상반되거나 덧붙이는 사실을 제시하며, '~야말로 ~하지만', '~이야말로 그렇지만'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + こそ + (술어) + が'는 강조 조사 'こそ'를 사용하여 해당 명사의 중요성이나 타당성을 먼저 전적으로 인정한 뒤, 접속조사 'が'를 통해 그에 대비되는 또 다른 현실적인 측면을 제시하는 표현입니다('~야말로 중요하지만', '~이야말로 그렇긴 하지만').",
+      "formation": "명사 + こそ + 술어(동사/형용사) + が",
+      "examples": [
+        {
+          "translation": "돈이야말로 꼭 필요하지만, 그것만이 인생의 전부는 아니다."
+        },
+        {
+          "translation": "노력이야말로 중요하지만 결과 또한 간과할 수 없다."
+        },
+        {
+          "translation": "건강이야말로 보배이지만 때로는 일을 우선할 수밖에 없다."
+        },
+        {
+          "translation": "사랑이야말로 힘이지만 그것을 표현하기란 어렵다."
+        }
+      ]
+    },
+    "ja_Noun_24": {
+      "title": "명사 + こそすれ (koso sure)",
+      "shortExplanation": "앞의 일은 할지언정 결코 뒤의 일은 하지 않음을 강하게 단언하며, '~할지언정 결코 ~하지는 않다', '~은 할망정 결코 ~않다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + こそすれ'는 동사 'する'의 이연형에 강조 조사 'こそ'가 결합된 문형으로, 앞의 상황(X)은 있을 수 있어도 뒤에 이어지는 부정적인 상황(Y)은 결코 일어날 수 없음을 강하게 못 박을 때 씁니다('~할지언정 결코 ~하지는 않다', '~은 할망정 결코 ~않다'). 후항에는 반드시 부정문('～ない', '～できない' 등)이 이어집니다.",
+      "formation": "명사(동작성 명사) + こそすれ + 부정 표현 | 동사 ます형 어간 + こそすれ + 부정 표현",
+      "examples": [
+        {
+          "translation": "감사할지언정 결코 비난 같은 것은 할 수 없습니다."
+        },
+        {
+          "translation": "바쁘기는 할망정 결코 지루할 틈은 없습니다."
+        },
+        {
+          "translation": "후회는 할지언정 잊어버릴 수는 없다."
+        },
+        {
+          "translation": "의심은 품을지언정 결코 찬성할 수는 없다."
+        }
+      ]
+    },
+    "ja_Noun_25": {
+      "title": "명사 + ごとき / ごとく (gotoki / gotoku)",
+      "shortExplanation": "문어적이고 비유적인 표현으로 대상을 빗대어 나타내며, '~와 같은', '~와 같이', '~마치 ~처럼'이라는 뜻입니다.(ごとき는 명사 수식, ごとく는 동사·형용사 수식).",
+      "longExplanation": "문형 '～ごとき／～ごとく'는 고어투의 비유 표현으로 문학 작품이나 격조 높은 문어체에서 대상을 생생하게 비유할 때 쓰입니다('마치 ~와 같은', '~처럼'). 뒤에 명사가 올 때는 연체형인 'ごとき'를 쓰고, 동사나 형용사를 수식할 때는 연용형인 'ごとく'를 씁니다. 'ようだ'나 'みたいだ'에 비해 훨씬 장중하고 고풍스러운 뉘앙스를 풍깁니다.",
+      "formation": "명사 + ごとき + 명사 | 명사 + ごとく + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "그는 천사와 같이 순수하다."
+        },
+        {
+          "translation": "악마와 같은 짓을 하지 마라."
+        },
+        {
+          "translation": "그녀는 눈처럼 하얀 피부를 지니고 있다."
+        },
+        {
+          "translation": "그는 바람과 같이 떠나버렸다."
+        }
+      ]
+    },
+    "ja_Noun_26": {
+      "title": "명사 + じゃあるまいし (ja aru mai shi)",
+      "shortExplanation": "구어체에서 상대방의 부적절한 태도를 나무라거나 충고할 때 쓰이며, '~도 아닌데', '~도 아닌 이상'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + じゃあるまいし'는 '～ではあるまいし'의 구어적 표현으로, '어떤 대상이나 상황이 결코 아닌데 왜 그런 어처구니없는 행동이나 태도를 보이는가'라며 핀잔을 주거나 조언, 불만을 나타낼 때 씁니다('~도 아닌데', '~도 아닌 주제에', '~도 아니면서').",
+      "formation": "명사 + じゃあるまいし(문어체: ではあるまいし)",
+      "examples": [
+        {
+          "translation": "그는 어린애도 아닌데 그 문제를 확실히 해결해야 한다."
+        },
+        {
+          "translation": "서두를 필요 없어, 시간이 촉박한 것도 아니잖아."
+        },
+        {
+          "translation": "감독도 아닌데 시합 결과에 대해 걱정하지 마라."
+        },
+        {
+          "translation": "사탕도 아닌데 그냥 삼켜도 괜찮아."
+        }
+      ]
+    },
+    "ja_Noun_27": {
+      "title": "명사 + ずくめ (zukume)",
+      "shortExplanation": "온통 그것으로만 가득 차 있거나 연속됨을 나타내며, '~투성이', '온통 ~일색', '온통 ~뿐'이라는 뜻입니다.",
+      "longExplanation": "접미사 문형 '명사 + ずくめ'는 어떤 공간, 기간, 상황이 다른 것 없이 오로지 그 명사로만 온통 채워져 있음을 강조하는 표현입니다('온통 ~뿐', '~일색', '~투성이'). 좋은 일(예: いいことずくめ)과 나쁜 일(예: 失敗ずくめ, 嘘ずくめ) 모두에 두루 쓰이며, 복장이나 외관(예: 黒ずくめ)을 나타낼 때도 자주 사용됩니다.",
+      "formation": "명사 + ずくめ(또는 ずくめの + 명사 / ずくめだ)",
+      "examples": [
+        {
+          "translation": "그는 요즘 연속으로 실패투성이다."
+        },
+        {
+          "translation": "이번 겨울은 온통 눈뿐이라 정말 힘들다."
+        },
+        {
+          "translation": "그의 이야기는 온통 거짓말투성이였다."
+        },
+        {
+          "translation": "오늘 하루 일은 온통 바쁨의 연속이었다."
+        }
+      ]
+    },
+    "ja_Noun_28": {
+      "title": "명사 + だけではすまない (dake dewa sumanai)",
+      "shortExplanation": "단지 그것만으로는 문제가 해결되거나 끝나지 않음을 나타내며, '~만으로는 끝나지 않는다', '~만으로는 해결되지 않는다'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + だけではすまない'는 동사 '済む(해결되다, 끝나다)'의 부정형을 사용하여, 사안의 중대함이나 복잡성 때문에 단순한 앞의 행동, 보상, 조건만으로는 사태가 매듭지어지지 않음을 나타내는 표현입니다('~만으로는 넘어갈 수 없다', '~만으로는 해결되지 않는다').",
+      "formation": "명사 + だけではすまない(또는 동사 사전형/て형 + だけではすまない)",
+      "examples": [
+        {
+          "translation": "이 문제는 단순한 사과만으로는 끝나지 않는다."
+        },
+        {
+          "translation": "그녀가 화가 나 있어서 과자를 주는 것만으로는 안 풀려."
+        },
+        {
+          "translation": "이 프로젝트의 성공은 노력만으로는 다 되지 않는다."
+        },
+        {
+          "translation": "자금 조달만으로는 부족하며 실질적인 사업 계획도 필요하다."
+        }
+      ]
+    },
+    "ja_Noun_29": {
+      "title": "최소 수량사 + たりとも～ない (tari tomo ~ nai)",
+      "shortExplanation": "가장 작은 단위의 수량사 뒤에 붙어 전면적인 부정을 나타내며, '단 하나(한 번)라도 ~않다', '단 ~조차도 ~않다'라는 뜻입니다.",
+      "longExplanation": "문형 '최소 수량사(주로 숫자 '1' + 조수사) + たりとも + 부정 표현'은 격식 있고 단호한 문어적 표현으로, 가장 작은 수량 단위(예: 一分, 一秒, 一滴, 一言 등)를 들어 그것조차도 결코 용납하거나 허용하지 않음을 강조하는 완전 부정 표현입니다('단 1...도 ~않다', '단 하나조차 결코 ~하지 않다').",
+      "formation": "최소 수량사(1 + 조수사) + たりとも + 부정형(～ない / ～するな 등)",
+      "examples": [
+        {
+          "translation": "단 1분도 헛되이 보내지 마라."
+        },
+        {
+          "translation": "그는 단 한마디도 말하지 않는다."
+        },
+        {
+          "translation": "그녀는 단 한 번도 그 영화를 본 적이 없다."
+        },
+        {
+          "translation": "나는 그 사진을 단 한 장도 가지고 있지 않다."
+        }
+      ]
+    },
+    "ja_Noun_30": {
+      "title": "명사1 + たる + 명사2 (taru)",
+      "shortExplanation": "높은 신분이나 사회적 지위에 걸맞은 자격이나 사명을 강조하는 격조 높은 문어체 표현으로, '~된 자로서의 ~', '~의 자리에 있는 ~'이라는 뜻입니다.",
+      "longExplanation": "문형 '명사1 + たる + 명사2'(고어 단정 조동사 'たり'의 연체형)는 지도자, 교사, 의사, 부모 등 책임감 있는 사회적 신분이나 직책을 나타내는 명사1 뒤에 붙어, 그 지위에 걸맞은 마땅한 자격, 도덕적 의무, 바람직한 태도를 역설하는 장중한 문어체 표현입니다('~된 자', '~의 위치에 있는 사람'). 명사2로는 주로 '者(もの)'가 자주 쓰입니다.",
+      "formation": "명사1(신분·직책) + たる + 명사2(주로 '者')",
+      "examples": [
+        {
+          "translation": "리더 된 자는 언제나 앞을 내다보고 행동해야 마땅하다."
+        },
+        {
+          "translation": "교사 된 자, 학생들에게 모범을 보여야 한다."
+        },
+        {
+          "translation": "어머니 된 자로서 가족을 사랑하는 것은 당연하다."
+        },
+        {
+          "translation": "의사 된 자라면 환자의 안전을 최우선으로 생각해야 한다."
+        }
+      ]
+    },
+    "ja_Noun_31": {
+      "title": "명사 + ですら (desura)",
+      "shortExplanation": "극단적이거나 가장 기본적인 예를 들어 다른 것은 말할 필요도 없음을 강조하는 문어체 표현으로, '~조차', '~마저'라는 뜻입니다.",
+      "longExplanation": "문형 '명사 + ですら'는 단정의 'で'에 강조 조사 'すら'가 결합된 형태의 격식 있는 문어적 표현입니다. 일반적인 'さえ'나 'すら'보다 더욱 정중하고 무거운 어조로 극단적이거나 가장 기초적인 예시를 들어('~조차', '~마저'), 하물며 다른 일반적인 경우는 더 말할 것도 없음을 강조할 때 사용됩니다.",
+      "formation": "명사 + ですら",
+      "examples": [
+        {
+          "translation": "내일 시험이 있는데 그는 교과서조차 읽지 않는다."
+        },
+        {
+          "translation": "이 문제는 전문가조차 풀지 못한다."
+        },
+        {
+          "translation": "그녀는 마지막 스피치에서조차 울어버리고 말았다."
+        },
+        {
+          "translation": "그는 매일 공부하고 있지만 기본적인 한자조차 외우지 못한다."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ja_Noun_17": {
+      "title": "数量詞 ＋ からある (kara aru)",
+      "shortExplanation": "数量・重さ・長さ・大きさなどを表す語に付き、その数量が非常に多いことや規模が大きいことを強調します。「〜以上もある」「〜に達する」。",
+      "longExplanation": "「数量詞 ＋ からある」（名詞を修飾する場合は「〜からの」）は、重量・距離・数量・階数・金額などの数量を表す語に付き、「少なくともその数以上はある」「その数に達するほど多い」と、数量の多さや大きさに対する驚き・感嘆の気持ちを込めて強調する表現です。「〜以上もある」「〜を下らない」という意味を表します。（※値段には主に「〜からする」を用いますが、資産や巨額の数字には「〜からある」も用いられます）。",
+      "formation": "数量詞 ＋ からある（または からの ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "彼のコレクションは500個からある。"
+        },
+        {
+          "translation": "このビルは40階からある。"
+        },
+        {
+          "translation": "彼の財産は10億円からある。"
+        },
+        {
+          "translation": "このマラソンは10kmからある。"
+        }
+      ]
+    },
+    "ja_Noun_18": {
+      "title": "名詞 ＋ からすると (kara suru to)",
+      "shortExplanation": "ある事柄や立場を根拠・手がかりとして推測や判断を下すことを表します。「〜から見ると」「〜から判断すると」。",
+      "longExplanation": "「名詞 ＋ からすると」（「〜からすれば」「〜からして」とも）は、ある兆候・態度・データ・立場などを判断の基準や手がかりとして取り上げ、「その観点から推測・判断すると」と述べる文型です。「〜から見ると」「〜から判断すると」という意味になり、後項には「〜ようだ」「〜はずだ」「〜だろう」などの推量や判断を表す表現がよく続きます。",
+      "formation": "名詞 ＋ からすると ｜ 名詞 ＋ からすれば ｜ 名詞 ＋ からして",
+      "examples": [
+        {
+          "translation": "彼の態度からすると、彼はその計画に反対しているようだ。"
+        },
+        {
+          "translation": "このレストランの雰囲気からすると、料理もすばらしいはずだ。"
+        },
+        {
+          "translation": "彼女の成績からすると、彼女は非常に勉強熱心な人でしょう。"
+        },
+        {
+          "translation": "その会社の成長率からすると、将来的には大きな利益を得られるでしょう。"
+        }
+      ]
+    },
+    "ja_Noun_19": {
+      "title": "名詞1 ＋ からの ＋ 名詞2 (kara no)",
+      "shortExplanation": "後ろの名詞を修飾して、出発点・出所・起源・発信元などを表します。「〜からの」「〜から届いた」。",
+      "longExplanation": "「名詞1 ＋ からの ＋ 名詞2」は、起点や出所を表す助詞「から」に連体修飾の助詞「の」が付いた形で、後ろの名詞を修飾して、どこから生じたのか、どこから届いたのか、いつからのものなのかという起点や出所・起源を明示する文型です。「〜からの」「〜発信の」という意味を表します。",
+      "formation": "名詞1 ＋ からの ＋ 名詞2",
+      "examples": [
+        {
+          "translation": "日本からの手紙を受け取りました。"
+        },
+        {
+          "translation": "彼は東京からの旅行者です。"
+        },
+        {
+          "translation": "昨日、母からの電話がありました。"
+        },
+        {
+          "translation": "彼女は大学からの友人です。"
+        }
+      ]
+    },
+    "ja_Noun_20": {
+      "title": "名詞 ＋ から言わせれば (kara iwasereba)",
+      "shortExplanation": "その人物や対象の立場・視点から意見や見解を述べる際に用います。「〜の立場から言えば」「〜に言わせたら」。",
+      "longExplanation": "「名詞 ＋ から言わせれば」（「〜に言わせれば」「〜から言えば」とも）は、動詞「言う」の使役形「言わせる」の仮定形を用いた表現で、その人物や対象の固有の視点・立場に立って意見や不満、持論を主張する文型です。「〜の立場から見れば」「〜が口を挟むとすれば」という意味を表し、一般的な見方とは異なる独自の主張を強調する際によく使われます。",
+      "formation": "名詞（人物や擬人化された対象） ＋ から言わせれば ｜ 名詞 ＋ から言えば",
+      "examples": [
+        {
+          "translation": "先生から言わせれば、毎日勉強するべきだ。"
+        },
+        {
+          "translation": "子供たちから言わせれば、もっと遊ぶ時間がほしい。"
+        },
+        {
+          "translation": "僕から言わせれば、そのプランは実行可能だ。"
+        },
+        {
+          "translation": "犬から言わせれば、もっと散歩したいはずだ。"
+        }
+      ]
+    },
+    "ja_Noun_21": {
+      "title": "名詞 ＋ ぐるみ (gurumi)",
+      "shortExplanation": "集団や組織を表す名詞に付き、その構成員全体が一体となって関わっていることを表します。「〜全体で」「〜を挙げて」。",
+      "longExplanation": "「名詞 ＋ ぐるみ」（多くは「〜ぐるみで」の形）は、家族・学校・地域・会社などの集団や組織を表す名詞に付き、その構成員全員が例外なくある行動を共にしたり、巻き込まれたりしている状態を表す表現です。「〜全体で」「〜を挙げて」という意味を表し、「家族ぐるみ」「町ぐるみ」「組織ぐるみ」などの定型的な結びつきでよく用いられます。",
+      "formation": "名詞（集団・組織を表す名詞） ＋ ぐるみ（主に：名詞 ＋ ぐるみで）",
+      "examples": [
+        {
+          "translation": "家族ぐるみで旅行に行きました。"
+        },
+        {
+          "translation": "クラスぐるみで遠足に行きました。"
+        },
+        {
+          "translation": "この国は国民ぐるみでその法案を支持しています。"
+        },
+        {
+          "translation": "彼は友人ぐるみでそのクラブに参加した。"
+        }
+      ]
+    },
+    "ja_Noun_22": {
+      "title": "名詞 ＋ こそあれ (koso are)",
+      "shortExplanation": "前項の欠点や負担の存在を認めつつも、後項の事実や評価に支障がないことを表す硬い表現です。「〜はあるけれど」「〜はあっても」。",
+      "longExplanation": "「名詞 ＋ こそあれ」（「あれ」は古語「あり」の已然形）は、やや改まった硬い文語的表現で、「確かに〜はあるにはあるが、それでも後項には影響しない／依然として価値がある」という意味を表します。前項で多少の欠点・不安・リスクなどの存在を認めた上で、後項で積極的な評価や前進を述べる文脈でよく使われます。",
+      "formation": "名詞 ＋ こそあれ ｜ な形容詞語幹 ＋ でこそあれ",
+      "examples": [
+        {
+          "translation": "問題こそあれ、プロジェクトは順調に進んでいます。"
+        },
+        {
+          "translation": "多少のリスクこそあれ、挑戦する価値はある。"
+        },
+        {
+          "translation": "欠点こそあれ、彼の提案は興味深い。"
+        },
+        {
+          "translation": "不安こそあれ、今が行動するときだ。"
+        }
+      ]
+    },
+    "ja_Noun_23": {
+      "title": "名詞 ＋ こそ～が (koso ~ ga)",
+      "shortExplanation": "名詞の重要性や正当性を強く認めた上で、それに対照的な別の側面や制限を提示します。「〜こそ〜だが」「確かに〜であるが」。",
+      "longExplanation": "「名詞 ＋ こそ～が」は、強調の取り立て助詞「こそ」を用いて「まさに名詞は確かにその通りである・極めて重要である」と前項の価値を強く認めた上で、接続助詞「が」を用いてそれとは対照的な別の事実や事情を提示する構文です。「〜こそ〜だが」「確かに〜であるのは事実だが、しかし」という意味を表します。",
+      "formation": "名詞 ＋ こそ ＋ 述語（動詞／形容詞など） ＋ が",
+      "examples": [
+        {
+          "translation": "お金こそ必要だが、それだけが人生のすべてではない。"
+        },
+        {
+          "translation": "努力こそ大事だが、結果も見逃せない。"
+        },
+        {
+          "translation": "健康こそ宝だが、ときには仕事を優先せざるを得ない。"
+        },
+        {
+          "translation": "愛こそ力だが、表現するのは難しい。"
+        }
+      ]
+    },
+    "ja_Noun_24": {
+      "title": "名詞 ＋ こそすれ (koso sure)",
+      "shortExplanation": "前項のことはあっても、決して後項のことはあり得ないと強く否定します。「〜することはあっても決して〜ない」。",
+      "longExplanation": "「名詞 ＋ こそすれ」（「すれ」は動詞「する」の已然形）は、「前項の可能性はあっても、後項のことは絶対にない」と、2つの事柄を対比させて後項を強く否定する強調表現です。「〜することはあっても決して〜ない」「〜こそすれ〜しない」という意味になり、後項には必ず否定的な表現（〜ない、〜できないなど）が呼応します。動作性名詞や動詞連用形に接続します。",
+      "formation": "名詞（動作性名詞） ＋ こそすれ ＋ 否定表現 ｜ 動詞ます形語幹 ＋ こそすれ ＋ 否定表現",
+      "examples": [
+        {
+          "translation": "感謝こそすれ、非難などできません。"
+        },
+        {
+          "translation": "忙しさこそすれ、退屈することはありません。"
+        },
+        {
+          "translation": "後悔こそすれ、忘れることはできない。"
+        },
+        {
+          "translation": "疑問こそすれ、賛成はできない。"
+        }
+      ]
+    },
+    "ja_Noun_25": {
+      "title": "名詞 ＋ ごとき ／ ごとく (gotoki / gotoku)",
+      "shortExplanation": "文語的な比喩表現で、ある事物や様子を別のものに例えて表します。「〜のような」「〜のように」。（ごときは名詞修飾、ごとくは動詞・形容詞修飾）。",
+      "longExplanation": "「〜ごとき／〜ごとく」（「如し」の連体形「ごとき」・連用形「ごとく」）は、古風で格調高い文語的な比喩表現です。「まるで〜のような」「あたかも〜のように」という意味を表し、名詞を修飾する際には連体形の「ごとき」、動詞や形容詞を修飾する際には連用形の「ごとく」を用います。日常会話の「〜ようだ／〜みたいだ」に比べて、文学的・劇的な響きを持ちます。",
+      "formation": "名詞 ＋ ごとき ＋ 名詞 ｜ 名詞 ＋ ごとく ＋ 動詞／形容詞",
+      "examples": [
+        {
+          "translation": "彼は天使のごとく純粋だ。"
+        },
+        {
+          "translation": "悪魔のごとき行為をするな。"
+        },
+        {
+          "translation": "彼女は雪のごとく白い肌をしている。"
+        },
+        {
+          "translation": "彼は風のごとく去った。"
+        }
+      ]
+    },
+    "ja_Noun_26": {
+      "title": "名詞 ＋ じゃあるまいし (ja aru mai shi)",
+      "shortExplanation": "「〜であるわけではないのに」と相手の過剰な態度や行動をたしなめたり批判したりする口語表現です。「〜でもあるまいし」「〜ではないのだから」。",
+      "longExplanation": "「名詞 ＋ じゃあるまいし」（「〜ではあるまいし」のくだけた口語形）は、「決して〜というわけではないのだから、そのような不相応な行動や過剰な心配をする必要はない」と、相手を批判したり、からかったり、たしなめたりする際に用いられる表現です。後項には「〜するな」「〜すべきだ」などの忠告や非難の言葉がよく続きます。",
+      "formation": "名詞 ＋ じゃあるまいし（改まった言い方：ではあるまいし）",
+      "examples": [
+        {
+          "translation": "彼は子供じゃあるまいし、その問題をしっかりと解決するべきだ。"
+        },
+        {
+          "translation": "急ぐ必要はない、時間じゃあるまいし。"
+        },
+        {
+          "translation": "監督じゃあるまいし、試合の結果について心配するな。"
+        },
+        {
+          "translation": "飴じゃあるまいし、そのまま飲み込んでも大丈夫だよ。"
+        }
+      ]
+    },
+    "ja_Noun_27": {
+      "title": "名詞 ＋ ずくめ (zukume)",
+      "shortExplanation": "その事柄や物ばかりが続いて全体を満たしている状態を表します。「〜ばかり」「〜だらけ」。",
+      "longExplanation": "「名詞 ＋ ずくめ」（接尾辞）は、ある期間や状況、身の回りがその事物や出来事だけで占められ、他の要素が入り込む余地がないほど徹底している様子を表します。「〜ばかり」「〜尽くし」という意味になり、良いこと（結構ずくめ・いいことずくめ）にも悪いこと（失敗ずくめ・嘘ずくめ）にも、また服装などの色（黒ずくめ）にも広く用いられます。",
+      "formation": "名詞 ＋ ずくめ（名詞を修飾する場合は：〜ずくめの ＋ 名詞 ／ 文末では：〜ずくめだ）",
+      "examples": [
+        {
+          "translation": "彼は最近、失敗ずくめだ。"
+        },
+        {
+          "translation": "この冬は雪ずくめで大変だ。"
+        },
+        {
+          "translation": "彼の話は嘘ずくめだった。"
+        },
+        {
+          "translation": "今日の仕事は忙しさずくめだった。"
+        }
+      ]
+    },
+    "ja_Noun_28": {
+      "title": "名詞 ＋ だけではすまない (dake dewa sumanai)",
+      "shortExplanation": "その事柄や行為だけで問題を解決したり事態を収拾したりすることはできないことを表します。「〜だけでは済まされない」「〜だけでは終わらない」。",
+      "longExplanation": "「名詞 ＋ だけではすまない」（動詞「済む」の否定形）は、事態の深刻さや要求される水準が高いため、提示された前項の行為や条件だけでは到底不十分で、それだけで物事を終わらせる・解決することはできないと述べる文型です。「〜だけでは解決しない」「〜だけで済まされる問題ではない」という意味を表します。",
+      "formation": "名詞 ＋ だけではすまない（動詞辞書形／て形 ＋ だけではすまない とも）",
+      "examples": [
+        {
+          "translation": "この問題は謝罪だけではすまない。"
+        },
+        {
+          "translation": "彼女が怒っているから、お菓子をあげただけではすまないよ。"
+        },
+        {
+          "translation": "このプロジェクトの成功は努力だけではすまない。"
+        },
+        {
+          "translation": "資金調達だけではすまない、実際のビジネスプランも必要だ。"
+        }
+      ]
+    },
+    "ja_Noun_29": {
+      "title": "最小数量詞 ＋ たりとも～ない (tari tomo ~ nai)",
+      "shortExplanation": "極めて小さい最小限の数量に付き、それを完全に否定することを強調します。「たとえ〜でも決して〜ない」「わずか〜も〜ない」。",
+      "longExplanation": "「最小数量詞 ＋ たりとも～ない」は、数字の「一」を含む最小単位の数量詞（一分、一秒、一言、一滴、一円など）に接続し、「たとえそのわずかな数量であっても絶対に〜しない」と全面的な否定や厳格な禁止を強く述べる文型です。訓戒や決意などの改まった硬い場面でよく用いられます。",
+      "formation": "最小数量詞（1 ＋ 助数詞） ＋ たりとも ＋ 否定表現（〜ない／〜するな など）",
+      "examples": [
+        {
+          "translation": "一分たりとも無駄にするな。"
+        },
+        {
+          "translation": "彼は一言たりとも話さない。"
+        },
+        {
+          "translation": "彼女は一度たりともその映画を見たことがない。"
+        },
+        {
+          "translation": "私は一枚たりともその写真を持っていない。"
+        }
+      ]
+    },
+    "ja_Noun_30": {
+      "title": "名詞1 ＋ たる ＋ 名詞2 (taru)",
+      "shortExplanation": "高い身分や社会的地位にふさわしい義務や資格・あるべき姿を強調する格調高い表現です。「〜たる資格を持つ〜」「〜としての〜」。",
+      "longExplanation": "「名詞1 ＋ たる ＋ 名詞2」（古語の断定の助動詞「たり」の連体形）は、指導者・教師・医者・親などの責任ある社会的立場・身分を表す名詞1に接続し、「その立場にある者には当然それ相応の義務・資格・誇りが求められる」と強い倫理観や使命感を述べる格調高い文語表現です。名詞2には多くの場合「者（もの）」が続き、「リーダーたる者」「教師たる者」のように用いられます。",
+      "formation": "名詞1（身分・立場・職業） ＋ たる ＋ 名詞2（主に「者」）",
+      "examples": [
+        {
+          "translation": "リーダーたる者は、常に先を見て行動すべきだ。"
+        },
+        {
+          "translation": "教師たる者、学生に模範を示すべきである。"
+        },
+        {
+          "translation": "母たる者、家族を愛するのは当然だ。"
+        },
+        {
+          "translation": "医者たる者、患者の安全を最優先に考えるべきだ。"
+        }
+      ]
+    },
+    "ja_Noun_31": {
+      "title": "名詞 ＋ ですら (desura)",
+      "shortExplanation": "極端な例や最も基本的な事柄を取り上げて他を類推させる改まった強調表現です。「〜でさえ」「〜ですらも」。",
+      "longExplanation": "「名詞 ＋ ですら」は、断定の助動詞連用形「で」に強調の副助詞「すら」が付いた形で、「〜でさえ」よりもやや硬く改まった響きを持つ文型です。極端な例やごく初歩的・当然の事柄を提示し、「そのような極端な場合でさえこうなのだから、他の場合は言うまでもない」と事態の深刻さや意外性を強く印象付ける際に用いられます。",
+      "formation": "名詞 ＋ ですら",
+      "examples": [
+        {
+          "translation": "明日試験があるのに、彼はテキストですら読まない。"
+        },
+        {
+          "translation": "この問題は専門家ですら解けない。"
+        },
+        {
+          "translation": "彼女は最後のスピーチですら泣いてしまった。"
+        },
+        {
+          "translation": "彼は毎日勉強しているが、基本の漢字ですら覚えられない。"
+        }
+      ]
+    }
+  }
+}
