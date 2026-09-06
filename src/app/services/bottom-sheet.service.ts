@@ -39,6 +39,16 @@ export class BottomSheetService {
     // Track when history.back() is called programmatically to ignore the resulting popstate event
     private poppingSheetId: string | null = null;
 
+    // Flag to suppress history.back() when closing a sheet during route navigation
+    private skipHistoryPop = false;
+
+    /**
+     * Skip popping browser history on the next sheet unregister (e.g. during route navigation)
+     */
+    skipNextHistoryPop(): void {
+        this.skipHistoryPop = true;
+    }
+
     /**
      * Get current stack depth (useful for z-index calculation)
      */
@@ -92,6 +102,11 @@ export class BottomSheetService {
 
         // Unlock scroll
         this.bodyScroll.unlock();
+
+        if (this.skipHistoryPop) {
+            popHistory = false;
+            this.skipHistoryPop = false;
+        }
 
         // Pop history entry if it belongs to this sheet and wasn't already popped by back button
         if (popHistory && isPlatformBrowser(this.platformId)) {

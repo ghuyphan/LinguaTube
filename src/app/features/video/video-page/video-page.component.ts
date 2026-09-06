@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, OnDestroy, effect, computed, PLATFORM_ID, DestroyRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID, DestroyRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -38,7 +38,7 @@ import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, Subtitl
   templateUrl: './video-page.component.html',
   styleUrls: ['./video-page.component.scss']
 })
-export class VideoPageComponent implements OnInit, OnDestroy {
+export class VideoPageComponent implements OnInit {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   private platformId = inject(PLATFORM_ID);
@@ -168,6 +168,10 @@ export class VideoPageComponent implements OnInit, OnDestroy {
       } else if (!video) {
         this.seo.resetVideoSeo();
       }
+    });
+
+    this.destroyRef.onDestroy(() => {
+      this.seo.resetVideoSeo();
     });
 
     // Automatically fetch server-side recommended playlists when active language changes
@@ -311,10 +315,6 @@ export class VideoPageComponent implements OnInit, OnDestroy {
         }
       });
     }
-  }
-
-  ngOnDestroy(): void {
-    this.seo.resetVideoSeo();
   }
 
   private async loadVideoFromUrl(videoId: string): Promise<void> {

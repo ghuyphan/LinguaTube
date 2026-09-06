@@ -53,26 +53,32 @@ export class SeoService {
    * Update SEO tags based on active route config
    */
   updateFromCurrentRoute(): void {
-    let route = this.activatedRoute;
-    while (route.firstChild) {
-      route = route.firstChild;
+    try {
+      let route: ActivatedRoute | null = this.router.routerState?.root ?? this.activatedRoute;
+      while (route?.firstChild) {
+        route = route.firstChild;
+      }
+
+      const snapshot = route?.snapshot;
+      const data = (snapshot?.data as RouteSeoData) || {};
+      const routeTitle = (snapshot?.routeConfig?.title as string | undefined) || data?.title;
+
+      const title = routeTitle || DEFAULT_TITLE;
+      const description = data?.description || DEFAULT_DESCRIPTION;
+      const currentPath = (this.router.url || '').split('?')[0];
+      const url = `${BASE_URL}${currentPath}`;
+
+      this.updateTags({
+        title,
+        description,
+        url,
+        imageUrl: DEFAULT_IMAGE,
+        type: 'website',
+        keywords: data?.keywords
+      });
+    } catch (err) {
+      console.warn('[SeoService] Error updating route SEO:', err);
     }
-
-    const data = route.snapshot.data as RouteSeoData;
-    const routeTitle = route.snapshot.routeConfig?.title as string | undefined;
-
-    const title = routeTitle || data?.title || DEFAULT_TITLE;
-    const description = data?.description || DEFAULT_DESCRIPTION;
-    const url = `${BASE_URL}${this.router.url.split('?')[0]}`;
-
-    this.updateTags({
-      title,
-      description,
-      url,
-      imageUrl: DEFAULT_IMAGE,
-      type: 'website',
-      keywords: data?.keywords
-    });
   }
 
   /**

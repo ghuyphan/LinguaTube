@@ -29,6 +29,12 @@ import { formatTime } from '../../../core/utils';
   templateUrl: './subtitle-display.component.html',
   styleUrl: './subtitle-display.component.scss',
   animations: [
+    trigger('subtitleFade', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('150ms ease-out', style({ opacity: 1 }))
+      ])
+    ]),
     trigger('fadeSlide', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(8px)' }),

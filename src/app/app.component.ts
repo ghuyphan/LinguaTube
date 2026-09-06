@@ -764,8 +764,9 @@ export class AppComponent implements OnDestroy {
   }
 
   navigateFromMore(route: string): void {
+    this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    this.router.navigate([route]);
+    void this.router.navigate([route], { replaceUrl: true });
   }
 
   onCommandPaletteSearch(videoId: string): void {
