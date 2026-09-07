@@ -8,8 +8,10 @@ export interface OptionItem {
     label: string;
     example?: string;   // Secondary example text (e.g. "日本語 (にほんご)")
     description?: string;
-    icon?: string;      // Emoji or icon name
+    icon?: string;      // Icon name (e.g. 'sparkles', 'book-open') or emoji
     iconUrl?: string;   // Image URL (for flags)
+    badge?: string;     // Optional status badge text
+    color?: string;     // Color variant ('new' | 'learning' | 'known' | 'ignored')
 }
 
 @Component({
@@ -35,6 +37,11 @@ export class OptionPickerComponent {
 
     // Internal state to track selection until animation completes
     private selectedValue: string | null = null;
+
+    isSvgIcon(icon?: string): boolean {
+        if (!icon) return false;
+        return /^[a-z0-9-]+$/.test(icon);
+    }
 
     selectOption(value: string): void {
         this.selectedValue = value;

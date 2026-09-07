@@ -1,8 +1,11 @@
 <app-bottom-sheet [isOpen]="isOpen()" [title]="i18n.t('study.recentlyAdded') || 'Recently Added'" [showCloseButton]="true" (closed)="closed.emit()">
-    <div class="quick-view">
-        <div class="quick-view-header">
-            <h2>{{ i18n.t('study.recentlyAdded') }}</h2>
-            <span class="count-badge">{{ recentWords().length }}</span>
+    <div class="quick-view-modal">
+        <div class="quick-view-modal__header">
+            <div class="quick-view-modal__title-box">
+                <app-icon name="bookmark-plus" [size]="20" class="quick-view-modal__icon" />
+                <h2 class="quick-view-modal__title">{{ i18n.t('study.recentlyAdded') }}</h2>
+                <span class="count-badge">{{ recentWords().length }}</span>
+            </div>
         </div>
 
         @if (recentWords().length === 0) {
@@ -16,28 +19,37 @@
             </div>
         </div>
         } @else {
-        <ul class="word-list">
-            @for (word of recentWords(); track word.id; let i = $index) {
-            <li class="word-item" [style.--item-index]="i">
-                <div class="word-main">
-                    <span class="word-surface" [class]="'text-' + word.language">
-                        {{ word.word }}
-                    </span>
-                    @if (word.reading || word.pinyin || word.romanization) {
-                    <span class="word-reading">
-                        {{ word.reading || word.pinyin || word.romanization }}
-                    </span>
-                    }
-                </div>
-                <div class="word-meaning">{{ word.meaning }}</div>
-                <div class="word-meta">
-                    <button class="level-badge-btn" [class]="'badge--' + word.level" (click)="openLevelPicker(word.id)">
-                        <span class="level-text">{{ i18n.t('vocab.' + word.level) }}</span>
-                    </button>
-                </div>
-            </li>
-            }
-        </ul>
+        <div class="quick-view-modal__card">
+            <ul class="quick-view-list" role="list">
+                @for (word of recentWords(); track word.id; let isLast = $last) {
+                <li class="quick-view-item">
+                    <div class="quick-view-item__main">
+                        <div class="quick-view-item__header">
+                            <span class="quick-view-item__word" [class]="'text-' + word.language">
+                                {{ word.word }}
+                            </span>
+                            @if (word.reading || word.pinyin || word.romanization) {
+                            <span class="quick-view-item__reading">
+                                {{ word.reading || word.pinyin || word.romanization }}
+                            </span>
+                            }
+                        </div>
+                        @if (word.meaning) {
+                        <p class="quick-view-item__meaning">{{ word.meaning }}</p>
+                        }
+                    </div>
+                    <div class="quick-view-item__actions">
+                        <button type="button" class="level-badge-btn" [class]="'badge--' + word.level" (click)="openLevelPicker(word.id)">
+                            <span class="level-text">{{ i18n.t('vocab.' + word.level) }}</span>
+                        </button>
+                    </div>
+                </li>
+                @if (!isLast) {
+                <div class="quick-view-item__divider"></div>
+                }
+                }
+            </ul>
+        </div>
         }
     </div>
 </app-bottom-sheet>

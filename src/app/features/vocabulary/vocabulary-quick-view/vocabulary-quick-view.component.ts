@@ -37,10 +37,10 @@ export class VocabularyQuickViewComponent {
 
   // Options for level picker
   levelOptions = computed<OptionItem[]>(() => [
-    { value: 'new', label: this.i18n.t('vocab.new') },
-    { value: 'learning', label: this.i18n.t('vocab.learning') },
-    { value: 'known', label: this.i18n.t('vocab.known') },
-    { value: 'ignored', label: this.i18n.t('vocab.ignored') }
+    { value: 'new', label: this.i18n.t('vocab.new'), icon: 'sparkles', color: 'new' },
+    { value: 'learning', label: this.i18n.t('vocab.learning'), icon: 'book-open', color: 'learning' },
+    { value: 'known', label: this.i18n.t('vocab.known'), icon: 'check-circle', color: 'known' },
+    { value: 'ignored', label: this.i18n.t('vocab.ignored'), icon: 'eye-off', color: 'ignored' }
   ]);
 
   openLevelPicker(itemId: string): void {
