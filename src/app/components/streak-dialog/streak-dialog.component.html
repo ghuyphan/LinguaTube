@@ -1,25 +1,29 @@
 <div class="streak-dialog">
-    <!-- Header / Flame -->
-    <div class="streak-header">
-        <app-icon name="fire" [size]="48" class="main-flame" [class.active]="streak.practicedToday()" />
-        <div class="streak-count-large">
-            <span class="count">{{ streak.currentStreak() }}</span>&nbsp;
-            <span class="label">{{ i18n.t('streak.dayStreak') || 'Streak' }}</span>
+    <!-- Header / Hero Section -->
+    <div class="header-section">
+        <div class="streak-hero-icon" [class.is-active]="streak.practicedToday()" [class.has-streak]="streak.currentStreak() > 0">
+            <app-icon name="fire" [size]="38" class="hero-flame" />
         </div>
-        <p class="streak-subtitle">
-            {{ streak.practicedToday() ? (i18n.t('streak.keepItUp') || 'Keep it up!') : (i18n.t('streak.practiceToday')
-            || 'Practice today to keep it going!') }}
-        </p>
+
+        <div class="title-group">
+            <div class="streak-hero-count">
+                <span class="streak-num">{{ streak.currentStreak() }}</span>
+                <span class="streak-label">{{ i18n.t('streak.dayStreak') || 'Streak' }}</span>
+            </div>
+            <p class="streak-subtitle">
+                {{ streak.practicedToday() ? (i18n.t('streak.keepItUp') || 'Keep it up!') : (i18n.t('streak.practiceToday') || 'Practice today to keep it going!') }}
+            </p>
+        </div>
     </div>
 
-    <!-- Week View -->
+    <!-- Week Calendar Strip -->
     <div class="week-view">
         @for (day of weekDays(); track $index) {
         <div class="day-item" [class.today]="day.isToday">
             <span class="day-name">{{ day.day }}</span>
-            <div class="day-circle" [class.active]="day.active" [class.missed]="!day.active && !day.isToday">
+            <div class="day-circle" [class.active]="day.active" [class.is-today]="day.isToday && !day.active" [class.missed]="!day.active && !day.isToday && !day.isFuture" [class.future]="day.isFuture">
                 @if (day.active) {
-                <app-icon name="check" [size]="16" />
+                <app-icon name="check" [size]="14" />
                 }
             </div>
         </div>
@@ -28,23 +32,26 @@
 
     <!-- Stats Grid -->
     <div class="stats-grid">
-        <div class="stat-card highlighted">
-            <app-icon name="fire" [size]="24" />
+        <div class="stat-card" [class.highlighted]="streak.currentStreak() > 0">
+            <div class="stat-icon-wrap stat-icon--fire">
+                <app-icon name="fire" [size]="20" />
+            </div>
             <span class="stat-value">{{ streak.currentStreak() }}</span>
             <span class="stat-label">{{ i18n.t('streak.currentStreak') || 'Current Streak' }}</span>
         </div>
         <div class="stat-card">
-            <app-icon name="trophy" [size]="24" />
+            <div class="stat-icon-wrap stat-icon--trophy">
+                <app-icon name="trophy" [size]="20" />
+            </div>
             <span class="stat-value">{{ streak.longestStreak() }}</span>
             <span class="stat-label">{{ i18n.t('streak.longestStreak') || 'Longest Streak' }}</span>
         </div>
     </div>
 
-    <!-- Freeze Info -->
-    <!-- How it works -->
+    <!-- How it works Info Box -->
     <div class="streak-info-box">
         <div class="info-row">
-            <app-icon name="info" [size]="16" class="info-icon" />
+            <app-icon name="info" [size]="16" class="info-icon info-icon--streak" />
             <div class="info-content">
                 <strong>{{ i18n.t('streak.howItWorks') }}</strong>
                 <p>{{ i18n.t('streak.howToExtend') }}</p>
