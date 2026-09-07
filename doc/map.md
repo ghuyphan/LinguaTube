@@ -311,7 +311,7 @@ sequenceDiagram
 
     User->>Dialog: Click "Upgrade to Pro"
     Dialog->>PayService: createOrder('pro_1m')
-    PayService->>CreateAPI: POST /api/payment/create-order
+    PayService->>CreateAPI: POST /api/payment/create-order (Bearer Token via authInterceptor)
     CreateAPI->>PayOS: Generate Payment Link with HMAC-SHA256
     PayOS-->>CreateAPI: Return orderCode & qrCode URL
     CreateAPI->>KV: Cache order details (TTL 15 min)

@@ -211,7 +211,7 @@ lingua-tube/
 │   │   ├── data/              # Grammar databases (JA, KO, ZH, EN) & translations (ja, ko, vi, zh)
 │   │   ├── features/          # Feature domains (video, dictionary, vocabulary, playlist, history, quiz)
 │   │   ├── i18n/              # UI translation dictionaries (en, vi, ja, ko, zh.json)
-│   │   ├── interceptors/      # HTTP caching & timeout interceptors
+│   │   ├── interceptors/      # HTTP auth, caching & timeout interceptors
 │   │   ├── models/            # TypeScript interfaces & domain types
 │   │   ├── services/          # Cross-cutting services (grammar, translation, streak, etc.)
 │   │   └── shared/            # Shared components (bottom-sheet, icon, command-palette, turnstile)

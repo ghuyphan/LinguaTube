@@ -64,8 +64,8 @@ export async function onRequestPost(context) {
             orderCode,
             amount: plan.amount,
             description,
-            returnUrl: body.returnUrl || 'https://voca.vn/video',
-            cancelUrl: body.cancelUrl || 'https://voca.vn/video'
+            returnUrl: body.returnUrl || 'https://voca.study/video',
+            cancelUrl: body.cancelUrl || 'https://voca.study/video'
         });
 
         return jsonResponse({

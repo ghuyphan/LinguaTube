@@ -274,6 +274,12 @@ Located at `src/app/core/services/payment.service.ts`:
   - Automatic celebration on success: triggers `ToastService.success()`, clears the order state, and re-fetches user diamonds and tier.
   - Exposes `cancelOrder()` for user cancellation or cleanup on dialog close.
 
+### 4.3. HTTP Interceptor Pipeline (`src/app/interceptors/`)
+Configured in `src/main.ts` via `provideHttpClient(withInterceptors([...]))`:
+- **`authInterceptor`**: Automatically attaches PocketBase Bearer token (`Authorization: Bearer <token>`) to all internal `/api/*` endpoints whenever a valid user session exists, while strictly isolating external URLs from token exposure.
+- **`timeoutInterceptor`**: Guards against hung connections with a 30s default timeout (and 120s extended timeout for heavy AI transcription tasks like `/api/transcript` and `/api/dual-subtitles`).
+- **`cacheInterceptor`**: Caches dictionary lookups (5-minute TTL) and deduplicates concurrent in-flight HTTP requests.
+
 ---
 
 ## 5. Internationalization System (`I18nService`)

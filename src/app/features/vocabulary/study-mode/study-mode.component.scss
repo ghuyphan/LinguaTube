@@ -49,11 +49,24 @@
     }
 
     .panel-header__row {
+        display: flex;
+        align-items: center;
         justify-content: space-between;
+        gap: var(--space-xs);
+        width: 100%;
+    }
+
+    .panel-header__left {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+        flex-shrink: 0;
+        white-space: nowrap;
     }
 
     .panel-header__title {
         white-space: nowrap;
+        margin: 0;
     }
 }
 
@@ -70,7 +83,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 6px;
-    margin-top: 2px;
+    margin-top: 4px;
 }
 
 // ============================================

@@ -86,10 +86,10 @@ export async function createPayOsPaymentLink(env, params) {
     // Build data for payOS signature
     const requestData = {
         amount,
-        cancelUrl: cancelUrl || 'https://voca.vn/video',
+        cancelUrl: cancelUrl || 'https://voca.study/video',
         description,
         orderCode,
-        returnUrl: returnUrl || 'https://voca.vn/video'
+        returnUrl: returnUrl || 'https://voca.study/video'
     };
 
     const signatureData = buildPayOsSignatureData(requestData);
