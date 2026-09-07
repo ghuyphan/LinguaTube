@@ -165,12 +165,14 @@ graph TD
   - Shows formation rules, explanations, level badges, and contextual example sentences.
   - Automatically loads multi-language translation packs or native-to-native explanations on demand.
 - **`DictionaryPageComponent` & `DictionaryPanelComponent`**:
-  - Standalone full-screen dictionary search page with isolated reactive signals (`screenQuery`, `screenEntries`).
-  - Supports deep linking via URL query parameter (`/dictionary?q=...`) and vocabulary word click-to-search.
+  - Dual-mode segmented view switching between **Dictionary & Grammar Search** (`activeTab = 'dictionary'`) and **Saved Vocabulary Notebook** (`activeTab = 'vocab'`).
+  - Supports deep linking via URL query parameters (`/dictionary?q=...` for word search, `/dictionary?tab=vocab` for notebook view).
+  - Standalone full-screen dictionary search panel with isolated reactive signals (`screenQuery`, `screenEntries`).
   - Multi-entry disambiguation tabs for queries matching multiple homonyms.
-  - Authentic dictionary audio pronunciation using HTML5 `Audio` elements with animated audio speaker buttons.
+  - Authentic dictionary audio pronunciation via `AudioService` (HTML5 `Audio` elements with animated speaker buttons, zero browser TTS dependencies).
   - Integrated grammar pattern matches from `GrammarService`.
   - Language-scoped search history (`linguatube_recent_searches_${lang}`) and direct SRS level cycling in result headers.
+  - Embedded `VocabularyListComponent` with search, level filter chips (`All`, `New`, `Learning`, `Known`, `Ignored`), inline dictionary audio playback, and export (JSON/Anki) / import capabilities.
 
 ---
 
@@ -181,18 +183,37 @@ graph TD
     - 🟡 **Learning**
     - 🟢 **Known**
     - ⚪ **Ignored**
-  - Inline audio playback, search filtering, and JSON export/import.
+  - Interactive filter chips to narrow word lists by specific mastery levels.
+  - Inline authentic dictionary audio playback button on every card.
+  - Search filtering and JSON export/import.
 - **`StudyPageComponent` & `StudyModeComponent`**:
   - Implements the **SuperMemo-2 (SM-2)** spaced repetition flashcard review deck.
-  - Displays front (target word + sentence context) and back (reading + meaning + examples).
-  - Users rate recall quality from 1 to 5, updating interval, ease factor, and `nextReviewDate`.
+  - Features streamlined, deduplicated start screen with interactive top-level deck selection cards (New, Learning, Known) and session size / reverse mode controls.
+  - **Authentic Dictionary Audio**: Uses app-wide `AudioService` with dictionary MP3 URLs and dictionary-grade neural audio fallback; eliminates synthetic `window.speechSynthesis`.
+  - **Reverse Mode Anti-Spoiler UX**: Hides the target word speaker button and word in prompt sentence when showing meaning first, revealing it clearly upon flipping.
+  - **Study Session Customization**:
+    - "Due Only" toggle when cards are due for SM-2 review today.
+    - Quick-select daily goal pills (`5`, `10`, `15`, `20`, `30` cards) persisting across sessions.
+  - Displays front (target word + sentence context or reverse meaning) and back (reading + meaning + examples).
+  - Users rate recall quality (`Again`, `Hard`, `Good`, `Easy`) via colored action buttons, touch swipe gestures, or keyboard shortcuts (`1`-`4`, `Space`), updating interval, ease factor, and `nextReviewDate`.
+  - Desktop sidebar with circular progress ring (% known), daily goal progress, and SRS mastery breakdown.
 
 ---
 
 ### 3.5. Playlists & History Domains (`playlist/` & `history/`)
-- **`PlaylistPageComponent`**: Lists user-created custom playlists alongside curated Community Playlists (e.g. "Japanese N5 Listening", "Chinese Conversational").
+- **`PlaylistPageComponent`**:
+  - Lists user-created custom playlists alongside curated Community Playlists with responsive view tabs (`Community`, `Featured`, `My Playlists`) and language filtering.
+  - **Stable Mobile Tab Distribution**: Mobile `.view-tabs .filter-chip` uses fixed flex ratios (`flex: 1 1 0px; min-width: 0`) to prevent active tab buttons from expanding or shifting when tapped.
+  - **Curated / Featured Discovery ("Nổi bật")**: Surfaces playlists flagged with `is_featured: true` by moderators, with custom empty states for curated, community, and personal views.
+  - **Playlist Search & Video Management**: Integrated real-time search filtering across title, description, and author, plus track removal (`trash-2`) for owned playlists.
+  - Detail view tracks video watch progress via `HistoryService`, showing green checkmark icons and progress bars on watched items.
 - **`AddToPlaylistDialogComponent`**: Modal sheet to bookmark current video into existing or new playlists.
-- **`HistoryPageComponent`**: Displays watch history, percentage watched, resume timestamps, and options to clear history.
+- **`HistoryPageComponent`**:
+  - Displays watch history, percentage watched, resume timestamps, and options to clear history.
+  - **History Search Bar**: Real-time toolbar search filtering items by video title or channel name.
+  - Features an in-progress **"Continue Learning" (Resume Hero Banner)** for one-tap resumption of unfinished study sessions.
+  - Provides multi-language filtering pills (`All`, `JA`, `ZH`, `KO`, `EN`) via `OptionPickerComponent`.
+  - Clear history confirmation dialog with explanatory warning text and instant Undo toast.
 
 ---
 
@@ -277,8 +298,16 @@ The application styling is organized using modular SCSS located in `src/styles/`
   ```
 
 ### Card & Panel Design Conventions
-- **Clean Surface Architecture**: All cards (`.card`, `.sidebar-card`, `.vocab-panel`, `.dict-panel`, `.playlist-panel`, `.history-panel`) share unified surface tokens: `background: var(--bg-card);`, `border: 1px solid var(--border-color);`, and `border-radius: var(--border-radius-lg);`.
+- **Clean Surface Architecture & Viewport-Capped Lists**: All cards (`.card`, `.sidebar-card`, `.vocab-panel`, `.dict-panel`, `.playlist-panel`, `.history-panel`) share unified surface tokens: `background: var(--bg-card);`, `border: 1px solid var(--border-color);`, and `border-radius: var(--border-radius-lg);`. Cards wrap their contents naturally when items are few (avoiding artificial empty-space stretching or `min-height` voids). When items accumulate, the inner scrollable list containers (`.dict-results`, `.word-list`, `.playlist-list`, `.detail-tracklist`, `.history-content`) enforce viewport-capped `max-height: calc(100vh - 260px)` (and `calc(100dvh - 260px)` on mobile) with internal `overflow-y: auto; scrollbar-width: thin;`, keeping search bars, filters, and header tabs pinned at the top.
 - **Divider-Free Modern Layout**: Card headers (`.panel-header`, `.vocab-header`, `.playlist-header`, `.result-header`) and toolbars do NOT use hard divider lines (`border-bottom: 1px solid var(--border-color)`). Visual hierarchy and clean separation are achieved through consistent whitespace and flex gaps (`var(--space-md)`, `var(--space-sm)`), preventing fragmented card slices.
+- **Unified App Search Bar (`.app-search-box`)**: 36px fixed-height pill input (`border-radius: var(--border-radius-pill)`) with integrated search icon, clear button (`.clear-btn`), and iOS Safari auto-zoom prevention (`font-size: 16px` under `@media (max-width: 480px)`). Shared identically across Dictionary, Vocabulary, History, and Playlist screens.
+- **Unified Filter Chips (`.filter-chip`)**: Standardized 36px height pill buttons with constant `font-weight: 600` and zero font-size/dimension jumps when activated (`.active`). Supports level indicators (`.level-dot`) and badge counts (`.chip-count`).
+- **Dictionary & Vocabulary Symmetry**: Both dictionary results and vocabulary list items share identical design language:
+  - Header word heading with language-specific font family (`text-ja`, `text-zh`, `text-ko`).
+  - Phonetic readings (`.result-reading`, `.vocab-item__reading`) with dedicated `--pinyin` and `--romaji` modifier tags.
+  - Authentic audio playback buttons (`.audio-btn`, `.audio-btn--sm`) with primary accent background tint and pulsing animation during active audio streaming via `AudioService`.
+  - Level pill badges (`.save-badge-btn`, `.level-badge-btn`) cycling seamlessly between `'new'`, `'learning'`, `'known'`, and `'ignored'`.
+  - Empty-state action prompts enabling instant cross-navigation (`searchInDictionary`) to look up and save new words directly.
 
 ### Modal & Bottom Sheet Standardization Conventions
 All modals and sheets throughout Voca (both desktop centered modals and mobile bottom sheets) adhere strictly to unified ergonomics:

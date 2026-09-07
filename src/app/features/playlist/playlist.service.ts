@@ -420,7 +420,7 @@ export class PlaylistService {
             if (!playlist && this.auth.isLoggedIn()) {
                 try {
                     const client = await this.pb.getClient();
-                    const record = await client.collection('playlists').getOne(playlistId);
+                    const record = await client.collection('playlists').getOne(playlistId, { requestKey: null });
                     playlist = mapRecordToPlaylist(record as unknown as Record<string, unknown>);
                 } catch (error) {
                     console.error('[Playlist] Failed to fetch from PocketBase:', error);
@@ -465,7 +465,7 @@ export class PlaylistService {
     async fetchPublicPlaylist(playlistId: string): Promise<Playlist | null> {
         try {
             const client = await this.pb.getClient();
-            const record = await client.collection('playlists').getOne(playlistId);
+            const record = await client.collection('playlists').getOne(playlistId, { requestKey: null });
 
             // Only allow access to public or unlisted playlists
             if (record['visibility'] === 'private') {
@@ -680,7 +680,7 @@ export class PlaylistService {
             await client.collection('playlist_saves').create({
                 user: this.auth.getUserId(),
                 playlist: playlistId
-            });
+            }, { requestKey: null });
 
             // Increment save count on playlist
             const playlist = await this.fetchPublicPlaylist(playlistId);
@@ -704,11 +704,12 @@ export class PlaylistService {
 
             // Find and delete the save record
             const saves = await client.collection('playlist_saves').getList(1, 1, {
-                filter: `user="${this.auth.getUserId()}" && playlist="${playlistId}"`
+                filter: `user="${this.auth.getUserId()}" && playlist="${playlistId}"`,
+                requestKey: null
             });
 
             if (saves.items.length > 0) {
-                await client.collection('playlist_saves').delete(saves.items[0].id);
+                await client.collection('playlist_saves').delete(saves.items[0].id, { requestKey: null });
             }
 
             this.savedPlaylists.set(
@@ -757,7 +758,8 @@ export class PlaylistService {
             const fetchPromise = client.collection('playlists').getList(1, 50, {
                 filter: 'visibility="published"',
                 sort: '-updated',
-                expand: 'user'
+                expand: 'user',
+                requestKey: null
             });
 
             const timeoutPromise = new Promise<never>((_, reject) =>
@@ -803,7 +805,8 @@ export class PlaylistService {
             const fetchPromise = client.collection('playlists').getList(1, limit, {
                 filter: primaryFilter,
                 sort: '-is_featured,-save_count,-updated',
-                expand: 'user'
+                expand: 'user',
+                requestKey: null
             });
 
             const timeoutPromise = new Promise<never>((_, reject) =>
@@ -817,7 +820,8 @@ export class PlaylistService {
                 const fallbackPromise = client.collection('playlists').getList(1, limit, {
                     filter: `visibility="published" && language="${language}"`,
                     sort: '-is_featured,-save_count,-updated',
-                    expand: 'user'
+                    expand: 'user',
+                    requestKey: null
                 });
                 result = await Promise.race([fallbackPromise, timeoutPromise]);
             }

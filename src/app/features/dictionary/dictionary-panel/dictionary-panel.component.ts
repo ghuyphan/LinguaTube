@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, OnDestroy, effect } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, OnDestroy, effect, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -24,6 +24,9 @@ export class DictionaryPanelComponent implements OnDestroy {
   settings = inject(SettingsService);
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
+
+  // Embedded mode (e.g. inside DictionaryPage tabs)
+  embedded = input<boolean>(false);
 
   searchQuery = '';
   lastQuery = '';

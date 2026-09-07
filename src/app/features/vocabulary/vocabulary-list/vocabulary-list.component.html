@@ -14,11 +14,11 @@
     </div>
     }
 
-    <!-- Clean, Streamlined Search Row -->
+    <!-- Clean, Streamlined Search & Filter Row -->
     <div class="vocab-toolbar">
-        <div class="search-box">
+        <div class="app-search-box vocab-search-box">
             <app-icon name="search" [size]="15" class="search-icon" />
-            <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('vocab.search')" class="search-input" spellcheck="false" autocomplete="off" />
+            <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('vocab.search') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" autocomplete="off" />
             @if (searchQuery) {
             <button type="button" class="clear-btn" (click)="clearSearch()" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
                 <app-icon name="x" [size]="13" />
@@ -31,6 +31,49 @@
             <app-icon name="more-vertical" [size]="18" />
         </button>
         }
+    </div>
+
+    <!-- Level Filter Chips (Unified with app-wide filter-chip standard) -->
+    <div class="vocab-level-chips">
+        <button type="button" 
+                class="filter-chip" 
+                [class.active]="selectedLevel() === 'all'"
+                (click)="selectedLevel.set('all')">
+            <span>{{ i18n.t('history.all') || 'All' }}</span>
+            <span class="chip-count">{{ levelCounts().all }}</span>
+        </button>
+        <button type="button" 
+                class="filter-chip" 
+                [class.active]="selectedLevel() === 'new'"
+                (click)="selectedLevel.set('new')">
+            <span class="level-dot new"></span>
+            <span>{{ i18n.t('vocab.new') || 'New' }}</span>
+            <span class="chip-count">{{ levelCounts().new }}</span>
+        </button>
+        <button type="button" 
+                class="filter-chip" 
+                [class.active]="selectedLevel() === 'learning'"
+                (click)="selectedLevel.set('learning')">
+            <span class="level-dot learning"></span>
+            <span>{{ i18n.t('vocab.learning') || 'Learning' }}</span>
+            <span class="chip-count">{{ levelCounts().learning }}</span>
+        </button>
+        <button type="button" 
+                class="filter-chip" 
+                [class.active]="selectedLevel() === 'known'"
+                (click)="selectedLevel.set('known')">
+            <span class="level-dot known"></span>
+            <span>{{ i18n.t('vocab.known') || 'Known' }}</span>
+            <span class="chip-count">{{ levelCounts().known }}</span>
+        </button>
+        <button type="button" 
+                class="filter-chip" 
+                [class.active]="selectedLevel() === 'ignored'"
+                (click)="selectedLevel.set('ignored')">
+            <span class="level-dot ignored"></span>
+            <span>{{ i18n.t('vocab.ignored') || 'Ignored' }}</span>
+            <span class="chip-count">{{ levelCounts().ignored }}</span>
+        </button>
     </div>
 
     <!-- Word list -->
@@ -51,20 +94,30 @@
         <div class="empty-state empty-state--centered">
             @if (vocab.vocabulary().length === 0) {
             <div class="empty-state__icon-box">
-                <app-icon name="book-open" [size]="24" />
+                <app-icon name="book-open" [size]="28" />
             </div>
             <div class="empty-state__text">
                 <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
                 <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
             </div>
+            <button type="button" class="btn btn-primary btn-sm search-in-dict-btn" (click)="searchInDictionary()">
+                <app-icon name="book-open" [size]="14" />
+                <span>{{ i18n.t('dictionary.title') }}</span>
+            </button>
             } @else {
             <div class="empty-state__icon-box">
-                <app-icon name="search" [size]="24" />
+                <app-icon name="search" [size]="28" />
             </div>
             <div class="empty-state__text">
                 <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
                 <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
             </div>
+            @if (searchQuery.trim()) {
+            <button type="button" class="btn btn-primary btn-sm search-in-dict-btn" (click)="searchInDictionary(searchQuery)">
+                <app-icon name="book-open" [size]="14" />
+                <span>{{ i18n.t('dictionary.searchInDict') || 'Tra cứu trong từ điển' }}</span>
+            </button>
+            }
             }
         </div>
         } @else {
@@ -77,9 +130,13 @@
                             {{ item.word }}
                         </span>
                         @if (getItemReading(item); as reading) {
-                        <span class="vocab-item__reading">
-                            {{ reading }}
-                        </span>
+                        <span class="vocab-item__reading">{{ reading }}</span>
+                        }
+                        @if (item.pinyin && item.pinyin !== getItemReading(item)) {
+                        <span class="vocab-item__reading vocab-item__reading--pinyin">{{ item.pinyin }}</span>
+                        }
+                        @if (item.romanization && item.romanization !== getItemReading(item)) {
+                        <span class="vocab-item__reading vocab-item__reading--romaji">{{ item.romanization }}</span>
                         }
                     </div>
                     @if (item.meaning) {
@@ -88,7 +145,16 @@
                 </div>
 
                 <div class="vocab-item__actions" (click)="$event.stopPropagation()">
-                    <!-- Level Pill Badge (click to toggle level) -->
+                    <!-- Authentic Audio Pronunciation Button (Matching Dictionary's audio-btn) -->
+                    <button type="button" 
+                            class="audio-btn audio-btn--sm" 
+                            [class.playing]="audio.isPlaying(item.word)"
+                            (click)="playAudio(item, $event)" 
+                            [title]="i18n.t('study.listen') || 'Listen'">
+                        <app-icon [name]="audio.isPlaying(item.word) ? 'volume-2' : 'volume-1'" [size]="15" />
+                    </button>
+
+                    <!-- Level Pill Badge (Matching Dictionary's save-badge-btn) -->
                     <button type="button" class="level-badge-btn" [class]="'badge--' + item.level"
                         (click)="cycleLevel(item, $event)"
                         [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Change level')">
@@ -111,7 +177,7 @@
     <div class="toast" [class.toast--error]="toastType() === 'error'">
         <app-icon [name]="toastType() === 'error' ? 'alert-circle' : 'check'" [size]="16" />
         <span class="toast__text">{{ toastMessage() }}</span>
-        @if (lastDeletedItem) {
+        @if (lastDeletedItem()) {
         <button type="button" class="toast__undo-btn" (click)="undoDelete()">{{ i18n.t('common.undo') || 'Undo' }}</button>
         }
     </div>

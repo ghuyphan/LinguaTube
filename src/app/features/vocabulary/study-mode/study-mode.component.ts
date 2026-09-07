@@ -1,9 +1,9 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, OnDestroy, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 import { VocabularyService } from '../vocabulary.service';
-import { SettingsService, I18nService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
 import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem } from '../../../models';
 import { formatTime } from '../../../core/utils';
@@ -15,9 +15,6 @@ interface StudyCard {
     showAnswer: boolean;
 }
 
-const DAILY_GOAL_KEY = 'linguatube_daily_goal';
-const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
-
 @Component({
     selector: 'app-study-mode',
     standalone: true,
@@ -27,16 +24,17 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
     styleUrls: ['./study-mode.component.scss']
 })
 export class StudyModeComponent implements OnDestroy {
-    private platformId = inject(PLATFORM_ID);
     vocab = inject(VocabularyService);
     settings = inject(SettingsService);
     i18n = inject(I18nService);
     streak = inject(StreakService);
+    audioService = inject(AudioService);
 
     // Options (reactive signals)
     includeNew = signal(true);
     includeLearning = signal(true);
     includeKnown = signal(false);
+    dueOnly = signal(false);
     reverseMode = signal(false);
     sessionSize = signal<number | 'all'>(10);
 
@@ -53,9 +51,9 @@ export class StudyModeComponent implements OnDestroy {
     elapsedSeconds = signal(0);
     private timerInterval: ReturnType<typeof setInterval> | null = null;
 
-    // Daily goal
-    dailyGoal = signal(10);
-    cardsCompletedToday = signal(0);
+    // Daily goal (shared reactively via VocabularyService)
+    dailyGoal = this.vocab.dailyGoal;
+    cardsCompletedToday = this.vocab.cardsCompletedToday;
 
     // Confetti
     showConfetti = signal(false);
@@ -63,6 +61,10 @@ export class StudyModeComponent implements OnDestroy {
     // Swipe gestures
     touchStartX = 0;
     touchStartY = 0;
+    private touchMoved = false;
+    private isCardTouchActive = false;
+    private lastTouchEndTime = 0;
+    private confettiTimeout: ReturnType<typeof setTimeout> | null = null;
     swipeOffset = signal(0);
     isSwiping = signal(false);
 
@@ -89,9 +91,13 @@ export class StudyModeComponent implements OnDestroy {
         const incNew = this.includeNew();
         const incLearning = this.includeLearning();
         const incKnown = this.includeKnown();
+        const onlyDue = this.dueOnly();
+        const today = new Date();
+        today.setHours(23, 59, 59, 999);
 
         return this.vocab.vocabulary().filter(item => {
             if (item.language !== currentLang) return false;
+            if (onlyDue && item.nextReviewDate && new Date(item.nextReviewDate) > today) return false;
             if (item.level === 'new' && incNew) return true;
             if (item.level === 'learning' && incLearning) return true;
             if (item.level === 'known' && incKnown) return true;
@@ -158,14 +164,14 @@ export class StudyModeComponent implements OnDestroy {
         return Math.min(100, Math.round((done / goal) * 100));
     });
 
-    constructor() {
-        if (isPlatformBrowser(this.platformId)) {
-            this.loadDailyProgress();
-        }
-    }
+    constructor() {}
 
     ngOnDestroy(): void {
         this.stopTimer();
+        if (this.confettiTimeout) {
+            clearTimeout(this.confettiTimeout);
+            this.confettiTimeout = null;
+        }
     }
 
     getCardPrimaryText(item: VocabularyItem): string {
@@ -210,9 +216,7 @@ export class StudyModeComponent implements OnDestroy {
         switch (event.code) {
             case 'Space':
                 event.preventDefault();
-                if (!card.showAnswer) {
-                    this.flipCard();
-                }
+                this.flipCard();
                 break;
             case 'Digit1':
             case 'Numpad1':
@@ -255,19 +259,10 @@ export class StudyModeComponent implements OnDestroy {
         this.sessionSize.set(size);
     }
 
-    playAudio(text: string, lang?: string, event?: Event): void {
+    playAudio(text: string, lang?: string, event?: Event, audioUrl?: string): void {
         if (event) event.stopPropagation();
-        if (!isPlatformBrowser(this.platformId)) return;
-        try {
-            window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            const targetLang = lang || this.currentLanguage();
-            utterance.lang = targetLang === 'ja' ? 'ja-JP' : targetLang === 'zh' ? 'zh-CN' : targetLang === 'ko' ? 'ko-KR' : 'en-US';
-            utterance.rate = 0.88;
-            window.speechSynthesis.speak(utterance);
-        } catch (e) {
-            console.warn('Speech synthesis not available:', e);
-        }
+        const targetLang = (lang || this.currentLanguage()) as SupportedLearningLanguage;
+        void this.audioService.playWord(text, targetLang, audioUrl);
     }
 
     startSession(): void {
@@ -277,9 +272,11 @@ export class StudyModeComponent implements OnDestroy {
         const incNew = this.includeNew();
         const incLearning = this.includeLearning();
         const incKnown = this.includeKnown();
+        const onlyDue = this.dueOnly();
 
         const items = this.vocab.vocabulary().filter(item => {
             if (item.language !== currentLang) return false;
+            if (onlyDue && item.nextReviewDate && new Date(item.nextReviewDate) > today) return false;
             if (item.level === 'new' && incNew) return true;
             if (item.level === 'learning' && incLearning) return true;
             if (item.level === 'known' && incKnown) return true;
@@ -328,40 +325,46 @@ export class StudyModeComponent implements OnDestroy {
     }
 
     flipCard(): void {
-        const cards = this.studyCards();
         const index = this.currentIndex();
+        this.studyCards.update(cards => {
+            const card = cards[index];
+            if (!card) return cards;
+            return cards.map((c, i) => i === index ? { ...c, showAnswer: !c.showAnswer } : c);
+        });
+    }
 
-        if (cards[index] && !cards[index].showAnswer) {
-            cards[index].showAnswer = true;
-            this.studyCards.set([...cards]);
+    onCardClick(_event?: MouseEvent): void {
+        if (this.lastTouchEndTime !== 0 && Date.now() - this.lastTouchEndTime < 400) {
+            return;
         }
+        this.flipCard();
     }
 
     markAnswer(answer: 'wrong' | 'hard' | 'good' | 'easy'): void {
         const card = this.currentCard();
         if (!card) return;
 
-        const stats = this.sessionStats();
-        stats.total++;
-
         // Map answer to SM-2 quality score (0-5)
         // wrong=1, hard=2, good=4, easy=5
         let quality: number;
+        let isCorrect = false;
         if (answer === 'wrong') {
             quality = 1;
-            stats.incorrect++;
         } else if (answer === 'hard') {
             quality = 2;
-            stats.incorrect++;  // Hard counts as needing more practice
         } else if (answer === 'good') {
             quality = 4;
-            stats.correct++;
+            isCorrect = true;
         } else {
             quality = 5;
-            stats.correct++;
+            isCorrect = true;
         }
 
-        this.sessionStats.set({ ...stats });
+        this.sessionStats.update(prev => ({
+            total: prev.total + 1,
+            correct: isCorrect ? prev.correct + 1 : prev.correct,
+            incorrect: !isCorrect ? prev.incorrect + 1 : prev.incorrect
+        }));
 
         // Update vocabulary using SM-2 algorithm
         this.vocab.markReviewedSRS(card.item.id, quality);
@@ -445,111 +448,107 @@ export class StudyModeComponent implements OnDestroy {
     }
 
     // Daily goal methods
-    private loadDailyProgress(): void {
-        try {
-            const today = new Date().toDateString();
-            const stored = localStorage.getItem(DAILY_PROGRESS_KEY);
-
-            if (stored) {
-                const data = JSON.parse(stored);
-                if (data && data.date === today) {
-                    this.cardsCompletedToday.set(Number(data.count) || 0);
-                } else {
-                    // New day, reset progress
-                    this.cardsCompletedToday.set(0);
-                    this.saveDailyProgress();
-                }
-            }
-
-            const goalStored = localStorage.getItem(DAILY_GOAL_KEY);
-            if (goalStored) {
-                const parsedGoal = parseInt(goalStored, 10);
-                if (!isNaN(parsedGoal) && parsedGoal > 0) {
-                    this.dailyGoal.set(parsedGoal);
-                }
-            }
-        } catch (err) {
-            console.warn('[StudyMode] Failed to load daily progress:', err);
-        }
-    }
-
-    private saveDailyProgress(): void {
-        try {
-            const today = new Date().toDateString();
-            localStorage.setItem(DAILY_PROGRESS_KEY, JSON.stringify({
-                date: today,
-                count: this.cardsCompletedToday()
-            }));
-        } catch (err) {
-            console.warn('[StudyMode] Failed to save daily progress:', err);
-        }
+    setDailyGoal(goal: number): void {
+        this.vocab.setDailyGoal(goal);
     }
 
     private incrementDailyProgress(): void {
-        this.cardsCompletedToday.update(c => c + 1);
-        this.saveDailyProgress();
+        this.vocab.incrementDailyProgress();
     }
 
     // Confetti
+    // Confetti
     private triggerConfetti(): void {
         this.showConfetti.set(true);
-        setTimeout(() => {
+        if (this.confettiTimeout) {
+            clearTimeout(this.confettiTimeout);
+        }
+        this.confettiTimeout = setTimeout(() => {
             this.showConfetti.set(false);
+            this.confettiTimeout = null;
         }, 3000);
     }
 
     // Swipe gesture handlers
     onTouchStart(event: TouchEvent): void {
         if (!this.isStudying()) return;
+        if ((event.target as HTMLElement)?.closest('.card-speaker-btn')) {
+            this.isCardTouchActive = false;
+            return;
+        }
+        this.isCardTouchActive = true;
         this.touchStartX = event.touches[0].clientX;
         this.touchStartY = event.touches[0].clientY;
-        this.isSwiping.set(true);
+        this.touchMoved = false;
     }
 
     onTouchMove(event: TouchEvent): void {
-        if (!this.isSwiping()) return;
+        if (!this.isCardTouchActive || (!this.touchStartX && !this.touchStartY)) return;
 
         const currentX = event.touches[0].clientX;
         const currentY = event.touches[0].clientY;
         const deltaX = currentX - this.touchStartX;
         const deltaY = Math.abs(currentY - this.touchStartY);
 
-        // Only track horizontal swipes
-        if (deltaY > 50) {
-            this.isSwiping.set(false);
-            this.swipeOffset.set(0);
-            return;
+        // Movement greater than 10px marks gesture as drag/swipe, not tap
+        if (Math.abs(deltaX) > 10 || deltaY > 10) {
+            this.touchMoved = true;
         }
 
-        // Only allow swipe after card is flipped
+        // Only track horizontal swipe when card is already flipped
         const card = this.currentCard();
         if (card && card.showAnswer) {
-            this.swipeOffset.set(deltaX);
+            if (deltaY > 50) {
+                this.isSwiping.set(false);
+                this.swipeOffset.set(0);
+                return;
+            }
+            if (Math.abs(deltaX) > 10) {
+                this.isSwiping.set(true);
+                this.swipeOffset.set(deltaX);
+            }
         }
     }
 
-    onTouchEnd(): void {
-        if (!this.isSwiping()) return;
-        this.isSwiping.set(false);
+    onTouchEnd(event?: TouchEvent): void {
+        this.lastTouchEndTime = Date.now();
+        if (!this.isCardTouchActive) return;
+        this.isCardTouchActive = false;
 
-        const offset = this.swipeOffset();
-        const threshold = 80;
-
-        const card = this.currentCard();
-        if (!card || !card.showAnswer) {
-            this.swipeOffset.set(0);
+        if ((event?.target as HTMLElement)?.closest('.card-speaker-btn')) {
             return;
         }
 
-        if (offset < -threshold) {
-            // Swipe left = Again
-            this.markAnswer('wrong');
-        } else if (offset > threshold) {
-            // Swipe right = Good
-            this.markAnswer('good');
-        } else {
-            // Reset if not enough swipe
-            this.swipeOffset.set(0);
+        if (this.isSwiping()) {
+            this.isSwiping.set(false);
+
+            const offset = this.swipeOffset();
+            const threshold = 80;
+
+            if (offset < -threshold) {
+                // Swipe left = Again
+                this.markAnswer('wrong');
+                return;
+            } else if (offset > threshold) {
+                // Swipe right = Good
+                this.markAnswer('good');
+                return;
+            } else {
+                // Reset if not enough swipe
+                this.swipeOffset.set(0);
+            }
         }
+
+        // If the user tapped cleanly without dragging, flip the card
+        if (!this.touchMoved) {
+            this.flipCard();
+        }
+    }
+
+    onTouchCancel(): void {
+        this.isCardTouchActive = false;
+        this.isSwiping.set(false);
+        this.swipeOffset.set(0);
+        this.touchMoved = false;
     }
 }

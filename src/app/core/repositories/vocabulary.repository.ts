@@ -8,7 +8,7 @@ export interface IVocabularyRepository {
     getStats(): { total: number; new: number; learning: number; known: number; ignored: number; japanese: number; chinese: number; korean: number };
 
     // Mutations
-    addWord(word: string, meaning: string, language: 'ja' | 'zh' | 'ko' | 'en', reading?: string, pinyin?: string, romanization?: string, sourceSentence?: string): Promise<VocabularyItem>;
+    addWord(word: string, meaning: string, language: 'ja' | 'zh' | 'ko' | 'en', reading?: string, pinyin?: string, romanization?: string, sourceSentence?: string, audio?: string): Promise<VocabularyItem>;
     addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh' | 'ko' | 'en', sourceSentence?: string): Promise<VocabularyItem>;
 
     updateLevel(id: string, level: WordLevel): Promise<void>;

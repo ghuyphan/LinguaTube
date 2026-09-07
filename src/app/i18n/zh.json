@@ -172,7 +172,8 @@
         "importError": "导入失败。请检查文件格式。",
         "filterByLevel": "按级别筛选",
         "changeLevel": "更改级别",
-        "deleteSuccess": "已删除 \"{{word}}\""
+        "deleteSuccess": "已删除 \"{{word}}\"",
+        "addWord": "添加单词"
     },
     "popup": {
         "translationLang": "翻译语言",
@@ -200,8 +201,10 @@
         "subtitle": "无需视频即可查词",
         "typeWord": "输入词汇...",
         "search": "搜索",
+        "searchInDict": "在词典中查询",
         "noResultsFor": "未找到：",
         "tryDifferent": "请尝试其他拼写或搜索词",
+        "recent": "最近",
         "recentSearches": "最近搜索",
         "enterWordAbove": "搜索词汇",
         "enterWordHint": "在上方输入词汇查询释义",
@@ -263,6 +266,7 @@
         "end": "结束",
         "tapToReveal": "点击显示",
         "example": "例句：",
+        "meaning": "意思",
         "again": "再来",
         "hard": "困难",
         "good": "良好",
@@ -275,6 +279,7 @@
         "recentlyAdded": "最近添加",
         "tapWordsHint": "点击字幕中的词汇进行保存",
         "dueToday": "今日待复习",
+        "dueOnly": "仅到期",
         "overdue": "已过期",
         "reverseMode": "反向模式",
         "meaningFirst": "先显示释义",
@@ -327,6 +332,7 @@
         "noFavoritesHint": "点击心形图标收藏视频",
         "clearAll": "清除全部",
         "clearConfirm": "清除所有历史记录？",
+        "clearAllWarning": "这将从您的观看历史记录中永久删除所有视频。",
         "favorites": "收藏",
         "all": "全部",
         "progress": "进度",
@@ -336,16 +342,18 @@
         "videoPlural": "个视频",
         "watchedAgo": "观看于",
         "continueWatching": "继续观看",
+        "resume": "继续观看",
         "removeFromHistory": "移除",
         "itemRemoved": "已从历史记录中移除",
         "clearedAll": "已清除所有历史记录",
         "syncHint": "登录以在设备间同步历史记录",
+        "searchHistory": "搜索历史记录...",
         "justNow": "刚刚"
     },
     "playlist": {
         "title": "播放列表",
         "playlist": "播放列表",
-        "myPlaylists": "我的播放列表",
+        "myPlaylists": "我的",
         "myPlaylist": "你",
         "community": "社区",
         "newPlaylist": "新建播放列表",
@@ -362,6 +370,8 @@
             "myHint": "创建一个开始使用吧！",
             "communityTitle": "暂无社区播放列表",
             "communityHint": "稍后再来查看共享的播放列表",
+            "curatedTitle": "暂无精选播放列表",
+            "curatedHint": "稍后再来查看官方精选的播放列表",
             "noVideosTitle": "暂无视频",
             "noVideosHint": "使用保存按钮添加视频"
         },
@@ -390,6 +400,9 @@
         "moveToTop": "移至顶部",
         "moveToBottom": "移至底部",
         "removeFromPlaylist": "从播放列表中移除",
+        "removeVideo": "移除视频",
+        "videoRemoved": "已移除视频",
+        "searchPlaylists": "搜索播放列表...",
         "videoOptions": "视频选项",
         "visibility": {
             "public": "公开",
@@ -428,7 +441,8 @@
         "undo": "撤销",
         "retry": "重试",
         "close": "关闭",
-        "clear": "清除"
+        "clear": "清除",
+        "search": "搜索..."
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",

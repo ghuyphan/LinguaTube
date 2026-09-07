@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 
 import { VocabularyService } from '../vocabulary.service';
-import { SettingsService, I18nService, AuthService } from '../../../core/services';
+import { SettingsService, I18nService, AuthService, AudioService } from '../../../core/services';
 
 import { VocabularyItem, WordLevel, Token } from '../../../models';
 
@@ -22,6 +22,7 @@ export class VocabularyListComponent implements OnDestroy {
   settings = inject(SettingsService);
   i18n = inject(I18nService);
   readonly auth = inject(AuthService);
+  readonly audio = inject(AudioService);
   private router = inject(Router);
 
   // Inputs & Outputs
@@ -31,6 +32,10 @@ export class VocabularyListComponent implements OnDestroy {
   deleteRequest = output<string>();
   menuRequest = output<void>();
   wordSelect = output<Token>();
+  addWordRequest = output<string | void>();
+
+  // Level filter signal
+  selectedLevel = signal<WordLevel | 'all'>('all');
 
   // Search with debounce (300ms)
   private searchInput = signal('');
@@ -38,7 +43,7 @@ export class VocabularyListComponent implements OnDestroy {
   private searchTimeout: ReturnType<typeof setTimeout> | null = null;
 
   // Last deleted item for undo functionality
-  lastDeletedItem: VocabularyItem | null = null;
+  lastDeletedItem = signal<VocabularyItem | null>(null);
 
   currentLangVocabCount = computed(() => {
     const lang = this.settings.settings().language;
@@ -49,6 +54,23 @@ export class VocabularyListComponent implements OnDestroy {
     );
     return words.size;
   });
+
+  levelCounts = computed(() => {
+    const lang = this.settings.settings().language;
+    const items = this.vocab.vocabulary().filter(w => w.language === lang);
+    return {
+      all: items.length,
+      new: items.filter(w => w.level === 'new').length,
+      learning: items.filter(w => w.level === 'learning').length,
+      known: items.filter(w => w.level === 'known').length,
+      ignored: items.filter(w => w.level === 'ignored').length,
+    };
+  });
+
+  playAudio(item: VocabularyItem, event: Event): void {
+    event.stopPropagation();
+    void this.audio.playWord(item.word, item.language, item.audio);
+  }
 
   cycleLevel(item: VocabularyItem, event: Event): void {
     event.stopPropagation();
@@ -62,6 +84,11 @@ export class VocabularyListComponent implements OnDestroy {
     this.router.navigate(['/dictionary']);
   }
 
+  searchInDictionary(query?: string): void {
+    this.addWordRequest.emit(query || this.searchQuery || undefined);
+    this.openDictionary();
+  }
+
   onWordClick(item: VocabularyItem): void {
     this.wordSelect.emit({
       surface: item.word,
@@ -73,23 +100,24 @@ export class VocabularyListComponent implements OnDestroy {
 
   deleteWordDirect(item: VocabularyItem, event: Event): void {
     event.stopPropagation();
-    this.lastDeletedItem = item;
+    this.lastDeletedItem.set(item);
     this.vocab.deleteWord(item.id);
     this.showToast(this.i18n.t('vocab.deleteSuccess', { word: item.word }) || `Deleted "${item.word}"`, 'success');
   }
 
   undoDelete(): void {
-    if (this.lastDeletedItem) {
+    const item = this.lastDeletedItem();
+    if (item) {
       this.vocab.addWord(
-        this.lastDeletedItem.word,
-        this.lastDeletedItem.meaning,
-        this.lastDeletedItem.language,
-        this.lastDeletedItem.reading,
-        this.lastDeletedItem.pinyin,
-        this.lastDeletedItem.romanization,
-        this.lastDeletedItem.examples?.[0]
+        item.word,
+        item.meaning,
+        item.language,
+        item.reading,
+        item.pinyin,
+        item.romanization,
+        item.examples?.[0]
       );
-      this.lastDeletedItem = null;
+      this.lastDeletedItem.set(null);
       this.toastMessage.set(null);
     }
   }
@@ -110,7 +138,12 @@ export class VocabularyListComponent implements OnDestroy {
   }
 
   clearSearch(): void {
-    this.searchQuery = '';
+    if (this.searchTimeout) {
+      clearTimeout(this.searchTimeout);
+      this.searchTimeout = null;
+    }
+    this.searchInput.set('');
+    this.debouncedSearch.set('');
   }
 
   // Toast notification state
@@ -128,6 +161,12 @@ export class VocabularyListComponent implements OnDestroy {
     // Filter by current language
     const currentLang = this.settings.settings().language;
     items = items.filter(item => item.language === currentLang);
+
+    // Filter by selected level
+    const level = this.selectedLevel();
+    if (level !== 'all') {
+      items = items.filter(item => item.level === level);
+    }
 
     // Use debounced search value
     const query = this.debouncedSearch().toLowerCase();

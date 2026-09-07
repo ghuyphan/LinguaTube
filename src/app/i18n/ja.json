@@ -172,7 +172,8 @@
         "importError": "インポートに失敗しました。ファイル形式を確認してください。",
         "filterByLevel": "レベルで絞り込む",
         "changeLevel": "レベルを変更",
-        "deleteSuccess": "「{{word}}」を削除しました"
+        "deleteSuccess": "「{{word}}」を削除しました",
+        "addWord": "単語を追加"
     },
     "popup": {
         "translationLang": "翻訳言語",
@@ -200,8 +201,10 @@
         "subtitle": "動画なしで単語を調べる",
         "typeWord": "単語を入力...",
         "search": "検索",
+        "searchInDict": "辞書で検索",
         "noResultsFor": "検索結果なし：",
         "tryDifferent": "別のスペルや検索語をお試しください",
+        "recent": "履歴",
         "recentSearches": "最近の検索",
         "enterWordAbove": "単語を検索",
         "enterWordHint": "上に単語を入力して意味を調べる",
@@ -263,6 +266,7 @@
         "end": "終了",
         "tapToReveal": "タップして表示",
         "example": "例文：",
+        "meaning": "意味",
         "again": "もう一度",
         "hard": "難しい",
         "good": "良い",
@@ -275,6 +279,7 @@
         "recentlyAdded": "最近追加した単語",
         "tapWordsHint": "字幕の単語をタップして保存",
         "dueToday": "今日の復習",
+        "dueOnly": "復習期日のみ",
         "overdue": "期限切れ",
         "reverseMode": "逆モード",
         "meaningFirst": "意味を先に表示",
@@ -327,6 +332,7 @@
         "noFavoritesHint": "ハートアイコンをタップして保存",
         "clearAll": "すべて削除",
         "clearConfirm": "履歴をすべて削除しますか？",
+        "clearAllWarning": "視聴履歴からすべての動画を完全に削除します。",
         "favorites": "お気に入り",
         "all": "すべて",
         "progress": "進捗",
@@ -336,16 +342,18 @@
         "videoPlural": "本",
         "watchedAgo": "視聴",
         "continueWatching": "続きを見る",
+        "resume": "再開",
         "removeFromHistory": "削除",
         "itemRemoved": "履歴から削除しました",
         "clearedAll": "すべての履歴を削除しました",
         "syncHint": "ログインしてデバイス間で履歴を同期",
+        "searchHistory": "履歴を検索...",
         "justNow": "たった今"
     },
     "playlist": {
         "title": "プレイリスト",
         "playlist": "プレイリスト",
-        "myPlaylists": "マイプレイリスト",
+        "myPlaylists": "マイリスト",
         "myPlaylist": "あなた",
         "community": "コミュニティ",
         "newPlaylist": "新しいプレイリスト",
@@ -360,8 +368,10 @@
         "empty": {
             "myTitle": "プレイリストはまだありません",
             "myHint": "作成して始めましょう！",
-            "communityTitle": "コミュニティのプレイリストはありません",
-            "communityHint": "共有されたプレイリストを後でチェックしてください",
+            "communityTitle": "コミュニティのプレイリストがありません",
+            "communityHint": "後ほど共有プレイリストをご確認ください",
+            "curatedTitle": "注目のプレイリストがありません",
+            "curatedHint": "後ほどおすすめのプレイリストをご確認ください",
             "noVideosTitle": "動画がありません",
             "noVideosHint": "保存ボタンで動画を追加"
         },
@@ -390,6 +400,9 @@
         "moveToTop": "一番上に移動",
         "moveToBottom": "一番下に移動",
         "removeFromPlaylist": "プレイリストから削除",
+        "removeVideo": "動画を削除",
+        "videoRemoved": "動画を削除しました",
+        "searchPlaylists": "プレイリストを検索...",
         "videoOptions": "動画オプション",
         "visibility": {
             "public": "公開",
@@ -428,7 +441,8 @@
         "undo": "元に戻す",
         "retry": "再試行",
         "close": "閉じる",
-        "clear": "クリア"
+        "clear": "クリア",
+        "search": "検索..."
     },
     "onboarding": {
         "welcomeTitle": "Vocaへようこそ",

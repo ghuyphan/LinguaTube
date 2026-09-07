@@ -4,6 +4,7 @@ import { Playlist, mapRecordToPlaylist } from '../../models';
 import { StorageService } from '../services/storage.service';
 import { PocketBaseService } from '../services/pocketbase.service';
 import { AuthService } from '../services/auth.service';
+import { mergeByTimestamp } from '../../shared/utils/sync.utils';
 
 const PLAYLISTS_STORAGE_KEY = 'linguatube_playlists';
 const PLAYLISTS_TOMBSTONES_KEY = 'linguatube_deleted_playlist_ids';
@@ -19,6 +20,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
 
     readonly playlists = signal<Playlist[]>([]);
     readonly isLoading = signal(false);
+    private isSyncing = false;
 
     constructor() {
         this.loadFromStorage();
@@ -43,7 +45,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         if (this.auth.isLoggedIn()) {
             try {
                 const client = await this.pb.getClient();
-                const record = await client.collection('playlists').getOne(id);
+                const record = await client.collection('playlists').getOne(id, { requestKey: null });
                 return mapRecordToPlaylist(record as unknown as Record<string, unknown>);
             } catch {
                 return null;
@@ -63,9 +65,10 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         if (this.auth.isLoggedIn()) {
             try {
                 const client = await this.pb.getClient();
+                const userId = this.auth.getUserId() || client.authStore.record?.id || (client.authStore.model as { id?: string } | null)?.id;
                 await client.collection('playlists').create({
                     id: playlist.id,
-                    user: this.auth.getUserId(),
+                    user: userId,
                     title: playlist.title,
                     description: playlist.description || '',
                     visibility: playlist.visibility,
@@ -76,7 +79,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                     thumbnail: playlist.thumbnail || '',
                     save_count: 0,
                     is_featured: false
-                });
+                }, { requestKey: null });
 
                 // Mark as synced on success
                 const latest = this.playlists();
@@ -119,7 +122,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                     video_ids: updated.videoIds,
                     video_count: updated.videoCount,
                     thumbnail: updated.thumbnail
-                });
+                }, { requestKey: null });
 
                 // Mark synced on success
                 const latest = this.playlists();
@@ -150,7 +153,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         if (this.auth.isLoggedIn()) {
             try {
                 const client = await this.pb.getClient();
-                await client.collection('playlists').delete(id);
+                await client.collection('playlists').delete(id, { requestKey: null });
                 this.removeDeletionTombstone(id);
             } catch (error) {
                 console.warn('[PlaylistRepo] Failed to delete on server (offline):', error);
@@ -182,16 +185,23 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
     }
 
     private async syncWithRemote(): Promise<void> {
-        if (!this.auth.isLoggedIn()) return;
+        if (!this.auth.isLoggedIn() || this.isSyncing) return;
+
+        this.isSyncing = true;
+        this.isLoading.set(true);
 
         try {
             const client = await this.pb.getClient();
+            const userId = this.auth.getUserId() || client.authStore.record?.id || (client.authStore.model as { id?: string } | null)?.id;
+            if (!userId) {
+                return;
+            }
 
             // 0. Process pending deletion tombstones
             const tombstones = this.getDeletionTombstones();
             for (const tId of tombstones) {
                 try {
-                    await client.collection('playlists').delete(tId);
+                    await client.collection('playlists').delete(tId, { requestKey: null });
                     this.removeDeletionTombstone(tId);
                 } catch {
                     // Item may already be deleted on remote
@@ -205,7 +215,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                 try {
                     await client.collection('playlists').create({
                         id: p.id,
-                        user: this.auth.getUserId(),
+                        user: userId,
                         title: p.title,
                         description: p.description || '',
                         visibility: p.visibility,
@@ -216,7 +226,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                         thumbnail: p.thumbnail || '',
                         save_count: 0,
                         is_featured: false
-                    });
+                    }, { requestKey: null });
                     console.debug('[PlaylistRepo] Pushed unsynced playlist:', p.id);
                 } catch {
                     // Try update if create failed due to unique/existing ID
@@ -230,7 +240,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                             video_ids: p.videoIds,
                             video_count: p.videoCount,
                             thumbnail: p.thumbnail || ''
-                        });
+                        }, { requestKey: null });
                     } catch {
                         // ignore
                     }
@@ -239,8 +249,9 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
 
             // 2. Fetch full list of playlists from server (no 50-item truncation)
             const owned = await client.collection('playlists').getFullList({
-                filter: `user="${this.auth.getUserId()}"`,
-                sort: '-updated'
+                filter: `user="${userId}"`,
+                sort: '-updated',
+                requestKey: null
             });
 
             const activeTombstones = new Set(this.getDeletionTombstones());
@@ -248,17 +259,26 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                 .map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>))
                 .filter(p => !activeTombstones.has(p.id));
 
-            const remoteIds = new Set(remotePlaylists.map(p => p.id));
-            const unsyncedLocal = this.playlists().filter(p => !p.synced && !remoteIds.has(p.id));
-
-            // Combine remote items + unsynced local items
-            const combined = [...remotePlaylists.map(p => ({ ...p, synced: true })), ...unsyncedLocal];
+            // Merge local and remote playlists using timestamp-based strategy
+            const combined = mergeByTimestamp(
+                this.playlists(),
+                remotePlaylists.map(p => ({ ...p, synced: true })),
+                p => p.id,
+                p => new Date(p.updatedAt).getTime()
+            );
 
             this.playlists.set(combined);
             this.saveToStorage(combined);
-            console.debug('[PlaylistRepo] Synced with remote:', remotePlaylists.length, 'remote,', unsyncedLocal.length, 'unsynced local');
+            console.debug('[PlaylistRepo] Synced with remote:', remotePlaylists.length, 'remote, combined:', combined.length);
         } catch (error) {
-            console.error('[PlaylistRepo] Remote sync failed:', error);
+            if ((error as { isAbort?: boolean })?.isAbort) {
+                console.debug('[PlaylistRepo] Remote sync request was aborted');
+            } else {
+                console.error('[PlaylistRepo] Remote sync failed:', error);
+            }
+        } finally {
+            this.isSyncing = false;
+            this.isLoading.set(false);
         }
     }
 

@@ -1,4 +1,5 @@
-<div class="card dict-panel">
+<div class="dict-panel" [class.card]="!embedded()" [class.dict-panel--embedded]="embedded()">
+    @if (!embedded()) {
     <div class="panel-header">
         <div class="panel-header__row">
             <div class="panel-header__left">
@@ -8,16 +9,17 @@
         </div>
         <p class="panel-header__subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
     </div>
+    }
 
     <!-- Search / Filters -->
     <div class="dict-filters">
-        <div class="search-box input-group--icon">
-            <app-icon name="search" [size]="16" class="input-icon" />
+        <div class="app-search-box dict-search-box">
+            <app-icon name="search" [size]="15" class="search-icon" />
             <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('dictionary.typeWord')"
-                class="search-input" (keyup.enter)="search()" aria-label="Dictionary search" />
+                class="search-input" (keyup.enter)="search()" aria-label="Dictionary search" autocomplete="off" spellcheck="false" />
             @if (searchQuery) {
             <button type="button" class="clear-btn" (click)="clearSearch()" aria-label="Clear search">
-                <app-icon name="x" [size]="14" />
+                <app-icon name="x" [size]="13" />
             </button>
             }
         </div>

@@ -32,6 +32,14 @@
                     (click)="toggleDeck('new')"
                     [attr.aria-pressed]="includeNew()"
                     [title]="i18n.t('study.includeNew')">
+                <div class="stat-badge__top">
+                    <app-icon name="plus" [size]="14" class="stat-badge__icon" />
+                    <div class="stat-badge__check" [class.checked]="includeNew()">
+                        @if (includeNew()) {
+                            <app-icon name="check" [size]="10" />
+                        }
+                    </div>
+                </div>
                 <span class="stat-value">{{ deckStats().new }}</span>
                 <span class="stat-label">{{ i18n.t('study.new') }}</span>
             </button>
@@ -41,6 +49,14 @@
                     (click)="toggleDeck('learning')"
                     [attr.aria-pressed]="includeLearning()"
                     [title]="i18n.t('study.includeLearning')">
+                <div class="stat-badge__top">
+                    <app-icon name="fire" [size]="14" class="stat-badge__icon" />
+                    <div class="stat-badge__check" [class.checked]="includeLearning()">
+                        @if (includeLearning()) {
+                            <app-icon name="check" [size]="10" />
+                        }
+                    </div>
+                </div>
                 <span class="stat-value">{{ deckStats().learning }}</span>
                 <span class="stat-label">{{ i18n.t('study.learning') }}</span>
             </button>
@@ -50,6 +66,14 @@
                     (click)="toggleDeck('known')"
                     [attr.aria-pressed]="includeKnown()"
                     [title]="i18n.t('study.reviewKnown')">
+                <div class="stat-badge__top">
+                    <app-icon name="check-circle" [size]="14" class="stat-badge__icon" />
+                    <div class="stat-badge__check" [class.checked]="includeKnown()">
+                        @if (includeKnown()) {
+                            <app-icon name="check" [size]="10" />
+                        }
+                    </div>
+                </div>
                 <span class="stat-value">{{ deckStats().known }}</span>
                 <span class="stat-label">{{ i18n.t('study.known') }}</span>
             </button>
@@ -79,34 +103,29 @@
 
         <!-- Grouped Options Card -->
         <div class="study-options-card">
+            <!-- Daily Goal Selector Row -->
             <div class="study-option-row">
                 <div class="study-option-info">
-                    <div class="study-option-icon study-option-icon--new">
-                        <app-icon name="plus" [size]="16" />
+                    <div class="study-option-icon study-option-icon--goal">
+                        <app-icon name="target" [size]="16" />
                     </div>
-                    <span class="study-option-title">{{ i18n.t('study.includeNew') }}</span>
-                </div>
-                <app-switch [checked]="includeNew()" (checkedChange)="includeNew.set($event)" />
-            </div>
-
-            <div class="study-option-row">
-                <div class="study-option-info">
-                    <div class="study-option-icon study-option-icon--learning">
-                        <app-icon name="fire" [size]="16" />
+                    <div class="study-option-text">
+                        <span class="study-option-title">{{ i18n.t('study.dailyGoal') }}</span>
+                        <span class="study-option-hint">
+                            {{ cardsCompletedToday() }}/{{ dailyGoal() }} {{ i18n.t('study.cards') }}
+                        </span>
                     </div>
-                    <span class="study-option-title">{{ i18n.t('study.includeLearning') }}</span>
                 </div>
-                <app-switch [checked]="includeLearning()" (checkedChange)="includeLearning.set($event)" />
-            </div>
-
-            <div class="study-option-row">
-                <div class="study-option-info">
-                    <div class="study-option-icon study-option-icon--known">
-                        <app-icon name="check-circle" [size]="16" />
-                    </div>
-                    <span class="study-option-title">{{ i18n.t('study.reviewKnown') }}</span>
+                <div class="session-size-pills">
+                    @for (goal of [5, 10, 15, 20, 30]; track goal) {
+                    <button type="button" 
+                            class="size-pill" 
+                            [class.active]="dailyGoal() === goal"
+                            (click)="setDailyGoal(goal)">
+                        {{ goal }}
+                    </button>
+                    }
                 </div>
-                <app-switch [checked]="includeKnown()" (checkedChange)="includeKnown.set($event)" />
             </div>
 
             <!-- Session Size Row -->
@@ -139,6 +158,22 @@
                     </button>
                 </div>
             </div>
+
+            <!-- Due Only Toggle Row (when due cards exist) -->
+            @if (dueToday() > 0) {
+            <div class="study-option-row">
+                <div class="study-option-info">
+                    <div class="study-option-icon study-option-icon--due">
+                        <app-icon name="clock" [size]="16" />
+                    </div>
+                    <div class="study-option-text">
+                        <span class="study-option-title">{{ i18n.t('study.dueOnly') || 'Review Due Only' }}</span>
+                        <span class="study-option-hint">{{ dueToday() }} {{ i18n.t('study.cards') }} {{ i18n.t('study.dueToday') }}</span>
+                    </div>
+                </div>
+                <app-switch [checked]="dueOnly()" (checkedChange)="dueOnly.set($event)" />
+            </div>
+            }
 
             <!-- Reverse Mode Row -->
             <div class="study-option-row">
@@ -206,8 +241,8 @@
         <!-- Flashcard with swipe support -->
         @if (cardViewModel(); as vm) {
         <div class="flashcard" [class.flipped]="vm.showAnswer" [class.swiping]="isSwiping()"
-            [style.--swipe-offset.px]="swipeOffset()" (click)="flipCard()" (touchstart)="onTouchStart($event)"
-            (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd()">
+            [style.--swipe-offset.px]="swipeOffset()" (click)="onCardClick($event)" (touchstart)="onTouchStart($event)"
+            (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)" (touchcancel)="onTouchCancel()">
 
             <!-- Swipe indicators -->
             <div class="swipe-indicator swipe-indicator--left" [class.active]="swipeOffset() < -40">
@@ -224,12 +259,14 @@
                         <span class="badge badge--{{ vm.item.level }}">
                             {{ vm.item.level }}
                         </span>
+                        @if (!reverseMode()) {
                         <button type="button" 
                                 class="card-speaker-btn" 
                                 [title]="i18n.t('study.listen')"
-                                (click)="playAudio(vm.primaryText, vm.item.language, $event)">
+                                (click)="playAudio(vm.primaryText, vm.item.language, $event, vm.item.audio)">
                             <app-icon name="volume-2" [size]="16" />
                         </button>
+                        }
                     </div>
 
                     @if (vm.hasContext) {
@@ -238,10 +275,12 @@
                         <p class="card-context__sentence" [class]="'text-' + vm.item.language">
                             {{ vm.item.sourceSentence }}
                         </p>
+                        @if (!reverseMode()) {
                         <div class="card-context__focus">
                             <span>{{ i18n.t('study.focusWord') }}</span>
                             <strong>{{ vm.item.word }}</strong>
                         </div>
+                        }
                     </div>
                     }
 
@@ -272,7 +311,7 @@
                         <button type="button" 
                                 class="card-speaker-btn" 
                                 [title]="i18n.t('study.listen')"
-                                (click)="playAudio(vm.primaryText, vm.item.language, $event)">
+                                (click)="playAudio(vm.primaryText, vm.item.language, $event, vm.item.audio)">
                             <app-icon name="volume-2" [size]="16" />
                         </button>
                     </div>
@@ -298,8 +337,9 @@
                         <span class="card-reading">{{ vm.reading }}</span>
                         }
                     </div>
-                    <div class="card-meaning">
-                        {{ vm.item.meaning || i18n.t('vocab.noDefinition') }}
+                    <div class="card-meaning card-meaning--reverse">
+                        <span class="card-meaning-label">{{ i18n.t('study.meaning') || 'Meaning' }}:</span>
+                        <span>{{ vm.item.meaning || i18n.t('vocab.noDefinition') }}</span>
                     </div>
                     }
 

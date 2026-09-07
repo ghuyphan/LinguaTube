@@ -1,17 +1,32 @@
-import { Injectable, inject, computed } from '@angular/core';
+import { Injectable, inject, computed, signal, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
 import { OfflineVocabularyRepository } from '../../core/repositories';
+
+const DAILY_GOAL_KEY = 'linguatube_daily_goal';
+const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
 
 @Injectable({
     providedIn: 'root'
 })
 export class VocabularyService {
     private repo = inject(OfflineVocabularyRepository);
+    private platformId = inject(PLATFORM_ID);
 
     // Signals delegated to repo
     readonly vocabulary = this.repo.vocabulary;
     readonly stats = this.repo.stats;
     readonly isSyncing = this.repo.isSyncing; // Expose sync state
+
+    // Shared daily goal state
+    readonly dailyGoal = signal<number>(10);
+    readonly cardsCompletedToday = signal<number>(0);
+
+    constructor() {
+        if (isPlatformBrowser(this.platformId)) {
+            this.loadDailyProgress();
+        }
+    }
 
     // Computed
     readonly lastModified = computed(() => {
@@ -94,9 +109,68 @@ export class VocabularyService {
         reading?: string,
         pinyin?: string,
         romanization?: string,
-        sourceSentence?: string
+        sourceSentence?: string,
+        audio?: string
     ): Promise<VocabularyItem> {
-        return this.repo.addWord(word, meaning, language, reading, pinyin, romanization, sourceSentence);
+        return this.repo.addWord(word, meaning, language, reading, pinyin, romanization, sourceSentence, audio);
+    }
+
+    // Daily Goal & Progress Methods
+    loadDailyProgress(): void {
+        if (!isPlatformBrowser(this.platformId)) return;
+        try {
+            const today = new Date().toDateString();
+            const stored = localStorage.getItem(DAILY_PROGRESS_KEY);
+            if (stored) {
+                const data = JSON.parse(stored);
+                if (data && data.date === today) {
+                    this.cardsCompletedToday.set(Number(data.count) || 0);
+                } else {
+                    this.cardsCompletedToday.set(0);
+                    this.saveDailyProgress();
+                }
+            }
+
+            const goalStored = localStorage.getItem(DAILY_GOAL_KEY);
+            if (goalStored) {
+                const parsedGoal = parseInt(goalStored, 10);
+                if (!isNaN(parsedGoal) && parsedGoal > 0) {
+                    this.dailyGoal.set(parsedGoal);
+                }
+            }
+        } catch (err) {
+            console.warn('[VocabularyService] Failed to load daily progress:', err);
+        }
+    }
+
+    private saveDailyProgress(): void {
+        if (!isPlatformBrowser(this.platformId)) return;
+        try {
+            const today = new Date().toDateString();
+            localStorage.setItem(DAILY_PROGRESS_KEY, JSON.stringify({
+                date: today,
+                count: this.cardsCompletedToday()
+            }));
+        } catch (err) {
+            console.warn('[VocabularyService] Failed to save daily progress:', err);
+        }
+    }
+
+    incrementDailyProgress(): void {
+        this.cardsCompletedToday.update(c => c + 1);
+        this.saveDailyProgress();
+    }
+
+    setDailyGoal(goal: number): void {
+        if (goal <= 0) return;
+        this.dailyGoal.set(goal);
+        if (isPlatformBrowser(this.platformId)) {
+            try {
+                localStorage.setItem(DAILY_GOAL_KEY, goal.toString());
+            } catch (err) {
+                console.warn('[VocabularyService] Failed to save daily goal:', err);
+            }
+        }
     }
 
     updateLevel(id: string, level: WordLevel): void {

@@ -143,14 +143,14 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           <div class="more-menu">
             <!-- Mobile Motivation & AI Credits Quick Bar -->
             <div class="more-menu__stats">
-              <button class="more-stat-card" (click)="showMoreSheet.set(false); showStreakSheet.set(true)">
+              <button class="more-stat-card" (click)="showStreakSheet.set(true)">
                 <app-icon name="fire" [size]="20" class="stat-icon--fire" />
                 <div class="more-stat-info">
                   <span class="more-stat-val">{{ streak.currentStreak() }}</span>
                   <span class="more-stat-lbl">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
                 </div>
               </button>
-              <button class="more-stat-card" (click)="showMoreSheet.set(false); showAiCreditsSheet.set(true)">
+              <button class="more-stat-card" (click)="showAiCreditsSheet.set(true)">
                 <app-icon name="diamond" [size]="20" class="stat-icon--diamond" />
                 <div class="more-stat-info">
                   <span class="more-stat-val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
@@ -195,7 +195,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
             <div class="more-menu__divider"></div>
 
-            <button class="more-menu__item" (click)="showMoreSheet.set(false); showSettingsSheet.set(true)">
+            <button class="more-menu__item" (click)="openSettingsFromMore()">
               <div class="more-menu__item-icon">
                 <app-icon name="settings" [size]="18" />
               </div>
@@ -212,8 +212,8 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           <app-settings-sheet 
             [isOpen]="showSettingsSheet()" 
             (closed)="showSettingsSheet.set(false)" 
-            (openStreak)="showSettingsSheet.set(false); showStreakSheet.set(true)"
-            (openAiCredits)="showSettingsSheet.set(false); showAiCreditsSheet.set(true)"
+            (openStreak)="showStreakSheet.set(true)"
+            (openAiCredits)="showAiCreditsSheet.set(true)"
           />
         }
 
@@ -996,6 +996,7 @@ export class AppComponent implements OnDestroy {
   }
 
   openNewVideo(): void {
+    this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
     if (this.router.url === '/video' && !this.youtube.currentVideo() && !this.youtube.pendingVideoId()) {
       const inputEl = this.document.querySelector('.spotlight-input') as HTMLInputElement | null;
@@ -1005,6 +1006,12 @@ export class AppComponent implements OnDestroy {
       }
     }
     this.showCommandPalette.set(true);
+  }
+
+  openSettingsFromMore(): void {
+    this.sheetService.skipNextHistoryPop();
+    this.showMoreSheet.set(false);
+    this.showSettingsSheet.set(true);
   }
 
   navigateFromMore(route: string): void {

@@ -172,7 +172,8 @@
         "importError": "가져오기 실패. 파일 형식을 확인하세요.",
         "filterByLevel": "레벨별 필터",
         "changeLevel": "레벨 변경",
-        "deleteSuccess": "\"{{word}}\" 삭제됨"
+        "deleteSuccess": "\"{{word}}\" 삭제됨",
+        "addWord": "단어 추가"
     },
     "popup": {
         "translationLang": "번역 언어",
@@ -200,8 +201,10 @@
         "subtitle": "동영상 없이 단어 검색",
         "typeWord": "단어 입력...",
         "search": "검색",
+        "searchInDict": "사전에서 검색",
         "noResultsFor": "검색 결과 없음:",
         "tryDifferent": "다른 철자나 검색어를 시도해 보세요",
+        "recent": "최근",
         "recentSearches": "최근 검색",
         "enterWordAbove": "단어 검색",
         "enterWordHint": "위에 단어를 입력하여 의미를 찾아보세요",
@@ -263,6 +266,7 @@
         "end": "종료",
         "tapToReveal": "탭하여 보기",
         "example": "예문:",
+        "meaning": "의미",
         "again": "다시",
         "hard": "어려움",
         "good": "좋음",
@@ -275,6 +279,7 @@
         "recentlyAdded": "최근 추가됨",
         "tapWordsHint": "자막의 단어를 탭하여 저장",
         "dueToday": "오늘 복습할 카드",
+        "dueOnly": "복습 예정만",
         "overdue": "기한 초과",
         "reverseMode": "역방향 모드",
         "meaningFirst": "뜻 먼저 보기",
@@ -327,6 +332,7 @@
         "noFavoritesHint": "하트 아이콘을 탭하여 저장",
         "clearAll": "모두 삭제",
         "clearConfirm": "모든 기록을 삭제하시겠습니까?",
+        "clearAllWarning": "시청 기록에서 모든 동영상이 영구적으로 삭제됩니다.",
         "favorites": "즐겨찾기",
         "all": "전체",
         "progress": "진행률",
@@ -336,16 +342,18 @@
         "videoPlural": "개",
         "watchedAgo": "시청",
         "continueWatching": "계속 보기",
+        "resume": "이어보기",
         "removeFromHistory": "삭제",
         "itemRemoved": "시청 기록에서 삭제되었습니다",
         "clearedAll": "모든 시청 기록이 삭제되었습니다",
         "syncHint": "기기 간 기록을 동기화하려면 로그인하세요",
+        "searchHistory": "시청 기록 검색...",
         "justNow": "방금"
     },
     "playlist": {
         "title": "재생목록",
         "playlist": "재생목록",
-        "myPlaylists": "내 재생목록",
+        "myPlaylists": "내 목록",
         "myPlaylist": "나",
         "community": "커뮤니티",
         "newPlaylist": "새 재생목록",
@@ -362,6 +370,8 @@
             "myHint": "하나 만들어 시작하세요!",
             "communityTitle": "커뮤니티 재생목록이 없습니다",
             "communityHint": "나중에 공유된 재생목록을 확인하세요",
+            "curatedTitle": "추천 재생목록이 없습니다",
+            "curatedHint": "나중에 추천 재생목록을 확인해 보세요",
             "noVideosTitle": "동영상이 없습니다",
             "noVideosHint": "저장 버튼으로 동영상을 추가하세요"
         },
@@ -390,6 +400,9 @@
         "moveToTop": "맨 위로 이동",
         "moveToBottom": "맨 아래로 이동",
         "removeFromPlaylist": "재생목록에서 삭제",
+        "removeVideo": "동영상 삭제",
+        "videoRemoved": "동영상이 삭제되었습니다",
+        "searchPlaylists": "재생목록 검색...",
         "videoOptions": "동영상 옵션",
         "visibility": {
             "public": "공개",
@@ -428,7 +441,8 @@
         "undo": "실행 취소",
         "retry": "다시 시도",
         "close": "닫기",
-        "clear": "지우기"
+        "clear": "지우기",
+        "search": "검색..."
     },
     "onboarding": {
         "welcomeTitle": "Voca에 오신 것을 환영합니다",

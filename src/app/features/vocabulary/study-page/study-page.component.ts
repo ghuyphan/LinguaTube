@@ -1,13 +1,10 @@
-import { Component, ChangeDetectionStrategy, inject, computed, signal, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { StudyModeComponent } from '../study-mode/study-mode.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService } from '../../../core/services';
-
-const DAILY_GOAL_KEY = 'linguatube_daily_goal';
-const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
 
 @Component({
   selector: 'app-study-page',
@@ -311,7 +308,6 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
   `]
 })
 export class StudyPageComponent {
-  private platformId = inject(PLATFORM_ID);
   private vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
@@ -319,9 +315,9 @@ export class StudyPageComponent {
   // Circle circumference: 2 * PI * radius (42)
   circumference = 2 * Math.PI * 42;
 
-  // Daily goal state
-  dailyGoal = signal(10);
-  cardsCompletedToday = signal(0);
+  // Daily goal state (shared reactively from VocabularyService)
+  dailyGoal = this.vocab.dailyGoal;
+  cardsCompletedToday = this.vocab.cardsCompletedToday;
 
   // Due today count
   dueToday = computed(() => {
@@ -359,36 +355,4 @@ export class StudyPageComponent {
     const percent = this.progressPercent();
     return this.circumference - (percent / 100) * this.circumference;
   });
-
-  constructor() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.loadDailyProgress();
-    }
-  }
-
-  private loadDailyProgress(): void {
-    try {
-      const today = new Date().toDateString();
-      const stored = localStorage.getItem(DAILY_PROGRESS_KEY);
-
-      if (stored) {
-        const data = JSON.parse(stored);
-        if (data && data.date === today) {
-          this.cardsCompletedToday.set(Number(data.count) || 0);
-        } else {
-          this.cardsCompletedToday.set(0);
-        }
-      }
-
-      const goalStored = localStorage.getItem(DAILY_GOAL_KEY);
-      if (goalStored) {
-        const parsedGoal = parseInt(goalStored, 10);
-        if (!isNaN(parsedGoal) && parsedGoal > 0) {
-          this.dailyGoal.set(parsedGoal);
-        }
-      }
-    } catch (err) {
-      console.warn('[StudyPage] Failed to load daily progress:', err);
-    }
-  }
 }

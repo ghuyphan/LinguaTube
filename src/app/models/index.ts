@@ -34,6 +34,7 @@ export interface VocabularyItem {
   romanization?: string;  // Japanese romaji / Korean romanization
   meaning: string;
   language: 'ja' | 'zh' | 'ko' | 'en';
+  audio?: string;
   level: WordLevel;
   examples: string[];
   addedAt: Date;

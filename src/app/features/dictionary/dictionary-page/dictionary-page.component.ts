@@ -27,7 +27,74 @@ import { SettingsService, I18nService } from '../../../core/services';
   template: `
     <div class="page-layout">
       <div class="page-layout__main">
-        <app-dictionary-panel #panel />
+        <!-- Main Dictionary & Vocabulary Panel (Unified card matching playlist-panel & history-panel) -->
+        <div class="card dict-panel">
+          <!-- Panel Header -->
+          <div class="panel-header">
+            <div class="panel-header__row">
+              <div class="panel-header__left">
+                <app-icon [name]="activeTab() === 'dictionary' ? 'book-open' : 'layers'" [size]="20" class="panel-header__icon" />
+                <h2 class="panel-header__title">{{ activeTab() === 'dictionary' ? i18n.t('dictionary.title') : i18n.t('vocab.title') }}</h2>
+              </div>
+              <div class="panel-badges">
+                @if (activeTab() === 'dictionary') {
+                  @if (recentSearches().length > 0) {
+                    <span class="badge badge--primary">{{ recentSearches().length }} {{ i18n.t('dictionary.recent') || 'gần đây' }}</span>
+                  }
+                } @else {
+                  <span class="badge badge--accent">{{ stats().total }} {{ i18n.t('study.cards') }}</span>
+                }
+              </div>
+            </div>
+            <p class="panel-header__subtitle">
+              {{ activeTab() === 'dictionary' ? i18n.t('dictionary.subtitle') : i18n.t('study.subtitle') }}
+            </p>
+          </div>
+
+          <!-- Segmented View Tabs (Unified toolbar inside card, matches playlist & history) -->
+          <div class="dict-toolbar">
+            <div class="view-tabs">
+              <button 
+                type="button" 
+                class="filter-chip" 
+                [class.active]="activeTab() === 'dictionary'"
+                (click)="activeTab.set('dictionary')"
+                [attr.aria-label]="i18n.t('dictionary.title')"
+              >
+                <app-icon name="book-open" [size]="14" />
+                <span class="chip-text">{{ i18n.t('dictionary.title') }}</span>
+              </button>
+              <button 
+                type="button" 
+                class="filter-chip" 
+                [class.active]="activeTab() === 'vocab'"
+                (click)="activeTab.set('vocab')"
+                [attr.aria-label]="i18n.t('vocab.title')"
+              >
+                <app-icon name="layers" [size]="14" />
+                <span class="chip-text">{{ i18n.t('vocab.title') }}</span>
+                @if (stats().total > 0) {
+                  <span class="tab-badge">{{ stats().total }}</span>
+                }
+              </button>
+            </div>
+          </div>
+
+          <!-- Main View Content -->
+          @if (activeTab() === 'dictionary') {
+            <app-dictionary-panel #panel [embedded]="true" />
+          } @else {
+            <app-vocabulary-list 
+              [showHeader]="false"
+              [showMenu]="true"
+              [embedded]="true"
+              (wordSelect)="onVocabWordSelect($event.surface)"
+              (deleteRequest)="onVocabDeleteRequest($event)"
+              (menuRequest)="vocabMenuOpen.set(true)"
+              (addWordRequest)="onAddWordRequest($event)"
+            />
+          }
+        </div>
       </div>
 
       <!-- Desktop sidebar with stats -->
@@ -84,7 +151,7 @@ import { SettingsService, I18nService } from '../../../core/services';
             <div class="recent-list">
               @for (term of recentSearches(); track term) {
                 <div class="recent-chip">
-                  <button type="button" class="recent-term-btn" (click)="searchTerm(term)">
+                  <button type="button" class="recent-term-btn" (click)="onRecentSearchClick(term)">
                     {{ term }}
                   </button>
                   <button
@@ -100,15 +167,6 @@ import { SettingsService, I18nService } from '../../../core/services';
           </div>
         }
       </aside>
-
-      <!-- Mobile: vocabulary list below dictionary -->
-      <div class="vocab-section mobile-only">
-        <app-vocabulary-list 
-          (wordSelect)="searchTerm($event.surface)"
-          (deleteRequest)="onVocabDeleteRequest($event)"
-          (menuRequest)="vocabMenuOpen.set(true)"
-        />
-      </div>
 
     <!-- Vocab Delete Confirmation -->
     <app-confirm-dialog [isOpen]="vocabDeleteOpen()" [title]="i18n.t('vocab.deleteWord')"
@@ -335,12 +393,45 @@ import { SettingsService, I18nService } from '../../../core/services';
         margin: 0 16px;
     }
 
+    /* Unified Toolbar & Tabs inside Dictionary Panel (Matches playlist-toolbar & history-toolbar) */
+    .dict-toolbar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .view-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .tab-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1px 6px;
+        border-radius: var(--border-radius-pill);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        background: var(--bg-secondary);
+        color: var(--text-muted);
+        line-height: 1;
+        margin-left: 2px;
+      }
+
+      .filter-chip.active .tab-badge {
+        background: rgba(var(--accent-primary-rgb), 0.2);
+        color: var(--accent-primary);
+      }
+    }
+
     @media (max-width: 640px) {
         .menu-sheet {
             padding: var(--space-sm) var(--space-sm) calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
         }
 
-        .menu-sheet .menu-option {
+        .menu-action-btn {
             padding: 12px 14px;
             min-height: 52px;
         }
@@ -356,6 +447,7 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
   settings = inject(SettingsService);
   i18n = inject(I18nService);
 
+  activeTab = signal<'dictionary' | 'vocab'>('dictionary');
   private routeSub?: Subscription;
 
   stats = computed(() => {
@@ -367,8 +459,14 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routeSub = this.route.queryParamMap.subscribe(params => {
+      const tab = params.get('tab');
+      if (tab === 'vocab' || tab === 'vocabulary') {
+        this.activeTab.set('vocab');
+      }
+
       const q = params.get('q');
       if (q) {
+        this.activeTab.set('dictionary');
         this.searchTerm(q);
       }
     });
@@ -378,12 +476,31 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
     this.routeSub?.unsubscribe();
   }
 
+  onVocabWordSelect(word: string): void {
+    this.activeTab.set('dictionary');
+    this.searchTerm(word);
+  }
+
+  onRecentSearchClick(term: string): void {
+    this.activeTab.set('dictionary');
+    this.searchTerm(term);
+  }
+
   searchTerm(term: string): void {
     const clean = term?.trim();
     if (!clean) return;
 
     this.dictionary.screenQuery.set(clean);
-    this.panel()?.search(clean);
+    this.dictionary.screenEntries.set([]);
+
+    const p = this.panel();
+    if (p) {
+      p.search(clean);
+    } else {
+      setTimeout(() => {
+        this.panel()?.search(clean);
+      }, 50);
+    }
 
     if (typeof window !== 'undefined' && window.innerWidth < 768) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -392,11 +509,27 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
 
   removeRecentSearch(term: string, event: Event): void {
     event.stopPropagation();
-    this.dictionary.removeRecentSearch(term);
+    this.dictionary.removeRecentSearch(term, this.settings.settings().language);
   }
 
   clearAllRecentSearches(): void {
-    this.dictionary.clearAllRecentSearches();
+    this.dictionary.clearAllRecentSearches(this.settings.settings().language);
+  }
+
+  onAddWordRequest(query?: string | void): void {
+    this.activeTab.set('dictionary');
+    if (query && typeof query === 'string') {
+      const clean = query.trim();
+      if (!clean) return;
+      const p = this.panel();
+      if (p) {
+        p.search(clean);
+      } else {
+        setTimeout(() => {
+          this.panel()?.search(clean);
+        }, 50);
+      }
+    }
   }
 
   // Vocab State

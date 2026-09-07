@@ -26,6 +26,14 @@
     flex-direction: column;
     padding: var(--space-md);
     gap: var(--space-sm);
+
+    &--embedded {
+        padding: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+    }
 }
 
 // ============================================
@@ -34,37 +42,38 @@
 .dict-filters {
     display: flex;
     gap: var(--space-xs);
+    align-items: center;
     padding: 0;
+    width: 100%;
+    margin-bottom: var(--space-xl);
+}
+
+.dict-search-box {
+    flex: 1;
+    min-width: 0;
     width: 100%;
 }
 
-.search-box {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    position: relative;
-    min-width: 0;
-
-    .input-icon {
-        left: 0.875rem;
-    }
-}
-
-.search-input {
-    height: var(--btn-height-md);
-    font-size: 0.9375rem;
-    padding-left: 2.375rem !important;
-    padding-right: 2.375rem !important;
-    border-radius: var(--border-radius-md);
-}
-
 .search-btn {
-    height: var(--btn-height-md);
-    min-width: 5rem;
-    font-size: 0.875rem;
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    box-sizing: border-box;
+    font-size: 0.8125rem;
     font-weight: 600;
     flex-shrink: 0;
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-pill);
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), opacity var(--transition-fast);
+
+    &:active:not(:disabled) {
+        opacity: 0.9;
+    }
 }
 
 // ============================================
@@ -72,6 +81,15 @@
 // ============================================
 .dict-results {
     padding: 0;
+    max-height: calc(100vh - 280px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    padding-right: 2px;
+
+    @media (max-width: 768px) {
+        max-height: calc(100dvh - 260px);
+    }
 }
 
 .loading-state {
@@ -480,11 +498,29 @@
 }
 
 // ============================================
+// EMPTY STATE
+// ============================================
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-2xl) var(--space-md);
+    margin: var(--space-md) 0;
+    gap: var(--space-xs);
+
+    .empty-state__icon-box {
+        margin-bottom: var(--space-sm);
+    }
+}
+
+// ============================================
 // RECENT SEARCHES (MOBILE)
 // ============================================
 .dict-recent {
     padding: 0;
-    margin-top: var(--space-md);
+    margin-top: var(--space-xl);
 }
 
 @media (min-width: 769px) {

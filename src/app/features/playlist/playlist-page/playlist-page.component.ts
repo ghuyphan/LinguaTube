@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, signal, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, computed, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -7,18 +8,20 @@ import { CreatePlaylistDialogComponent } from '../../../shared/components/create
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { I18nService } from '../../../core/services';
+import { HistoryService } from '../../history/history.service';
 import { Playlist, PlaylistLanguage, PlaylistVideo, SUPPORTED_LANGUAGES } from '../../../models';
 
 @Component({
     selector: 'app-playlist-page',
     standalone: true,
-    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, ConfirmDialogComponent, OptionPickerComponent],
+    imports: [CommonModule, FormsModule, IconComponent, CreatePlaylistDialogComponent, ConfirmDialogComponent, OptionPickerComponent],
     templateUrl: './playlist-page.component.html',
     styleUrls: ['./playlist-page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PlaylistPageComponent {
+export class PlaylistPageComponent implements OnDestroy {
     playlistService = inject(PlaylistService);
+    historyService = inject(HistoryService);
     i18n = inject(I18nService);
     private router = inject(Router);
 
@@ -26,6 +29,7 @@ export class PlaylistPageComponent {
     editingPlaylist = signal<Playlist | null>(null);
 
     view = signal<'community' | 'curated' | 'my'>('community');
+    searchQuery = signal<string>('');
 
     // Menu State (dropdown anchored to 3-dots)
     menuOpen = signal(false);
@@ -33,6 +37,25 @@ export class PlaylistPageComponent {
     deleteConfirmationOpen = signal(false);
     selectedPlaylist = signal<Playlist | null>(null);
     toastMessage = signal('');
+    private toastTimeout: ReturnType<typeof setTimeout> | null = null;
+
+    ngOnDestroy(): void {
+        if (this.toastTimeout) {
+            clearTimeout(this.toastTimeout);
+            this.toastTimeout = null;
+        }
+    }
+
+    private triggerToast(message: string): void {
+        this.toastMessage.set(message);
+        if (this.toastTimeout) {
+            clearTimeout(this.toastTimeout);
+        }
+        this.toastTimeout = setTimeout(() => {
+            this.toastMessage.set('');
+            this.toastTimeout = null;
+        }, 3000);
+    }
 
     // Detail View State
     viewingPlaylist = signal<Playlist | null>(null);
@@ -118,6 +141,15 @@ export class PlaylistPageComponent {
         return this.playlists().some(p => p.id === playlist.id);
     }
 
+    getVideoProgress(videoId: string): number {
+        const item = this.historyService.history().find(h => h.video_id === videoId);
+        return item ? item.progress : 0;
+    }
+
+    isWatched(videoId: string): boolean {
+        return this.getVideoProgress(videoId) >= 80;
+    }
+
     isListLoading = computed(() => {
         if (this.view() === 'my') {
             return this.playlistService.isUserPlaylistsLoading() && this.playlists().length === 0;
@@ -136,8 +168,20 @@ export class PlaylistPageComponent {
         }
 
         const filter = this.languageFilter();
-        if (filter === 'all') return list;
-        return list.filter(p => p.language === filter);
+        if (filter !== 'all') {
+            list = list.filter(p => p.language === filter);
+        }
+
+        const q = this.searchQuery().trim().toLowerCase();
+        if (q) {
+            list = list.filter(p =>
+                p.title.toLowerCase().includes(q) ||
+                (p.description && p.description.toLowerCase().includes(q)) ||
+                (p.userName && p.userName.toLowerCase().includes(q))
+            );
+        }
+
+        return list;
     });
 
     constructor() {
@@ -149,13 +193,20 @@ export class PlaylistPageComponent {
     currentPage = signal(1);
     pageSize = 24;
 
+    onSearchChange(query: string): void {
+        this.searchQuery.set(query);
+        this.currentPage.set(1);
+    }
+
     paginatedPlaylists = computed(() => {
         const list = this.currentList();
-        const startIndex = (this.currentPage() - 1) * this.pageSize;
+        const total = Math.max(1, Math.ceil(list.length / this.pageSize));
+        const page = Math.min(Math.max(1, this.currentPage()), total);
+        const startIndex = (page - 1) * this.pageSize;
         return list.slice(startIndex, startIndex + this.pageSize);
     });
 
-    totalPages = computed(() => Math.ceil(this.currentList().length / this.pageSize));
+    totalPages = computed(() => Math.max(1, Math.ceil(this.currentList().length / this.pageSize)));
 
     nextPage(): void {
         if (this.currentPage() < this.totalPages()) {
@@ -217,8 +268,7 @@ export class PlaylistPageComponent {
         if (p) {
             const success = await this.playlistService.copyShareLink(p.id);
             if (success) {
-                this.toastMessage.set(this.i18n.t('playlist.linkCopied') || 'Link copied!');
-                setTimeout(() => this.toastMessage.set(''), 3000);
+                this.triggerToast(this.i18n.t('playlist.linkCopied') || 'Link copied!');
             }
         }
     }
@@ -278,6 +328,7 @@ export class PlaylistPageComponent {
 
     setView(view: 'community' | 'curated' | 'my'): void {
         this.shouldAnimate.set(true);
+        this.currentPage.set(1);
         this.view.set(view);
         this.viewingPlaylist.set(null); // Reset detail view when switching tabs
         if ((view === 'community' || view === 'curated') && this.communityPlaylists().length === 0) {
@@ -310,6 +361,26 @@ export class PlaylistPageComponent {
         this.viewingPlaylist.set(null);
         this.detailVideos.set([]);
         this.detailVideosLoading.set(false);
+    }
+
+    async removeVideoFromPlaylist(videoId: string, event: Event): Promise<void> {
+        event.preventDefault();
+        event.stopPropagation();
+        const p = this.viewingPlaylist();
+        if (!p || !this.isOwner(p)) return;
+
+        try {
+            await this.playlistService.removeVideo(p.id, videoId);
+            this.detailVideos.update(list => list.filter(v => v.videoId !== videoId));
+            const updated = {
+                ...p,
+                videoIds: p.videoIds.filter(id => id !== videoId)
+            };
+            this.viewingPlaylist.set(updated);
+            this.triggerToast(this.i18n.t('playlist.videoRemoved') || 'Video removed from playlist');
+        } catch (err) {
+            console.error('[PlaylistPage] Failed to remove video:', err);
+        }
     }
 
     playAll(): void {
@@ -365,6 +436,7 @@ export class PlaylistPageComponent {
 
     onLanguageFilterChange(value: string): void {
         this.shouldAnimate.set(true);
+        this.currentPage.set(1);
         this.languageFilter.set(value as 'all' | PlaylistLanguage);
         this.showLanguageFilter.set(false);
     }

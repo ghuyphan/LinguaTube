@@ -172,7 +172,8 @@
         "importError": "Failed to import. Check file format.",
         "filterByLevel": "Filter by Level",
         "changeLevel": "Change Level",
-        "deleteSuccess": "Deleted \"{{word}}\""
+        "deleteSuccess": "Deleted \"{{word}}\"",
+        "addWord": "Add Word"
     },
     "popup": {
         "translationLang": "Translation Language",
@@ -200,8 +201,10 @@
         "subtitle": "Look up any word without a video",
         "typeWord": "Type a word...",
         "search": "Search",
+        "searchInDict": "Look up in dictionary",
         "noResultsFor": "No results for",
         "tryDifferent": "Try a different spelling or search term",
+        "recent": "Recent",
         "recentSearches": "Recent Searches",
         "enterWordAbove": "Search for a word",
         "enterWordHint": "Type a word above to look up its meaning",
@@ -263,6 +266,7 @@
         "end": "End",
         "tapToReveal": "Tap to reveal",
         "example": "Example:",
+        "meaning": "Meaning",
         "again": "Again",
         "hard": "Hard",
         "good": "Good",
@@ -275,6 +279,7 @@
         "recentlyAdded": "Recently Added",
         "tapWordsHint": "Tap on words in subtitles to save them",
         "dueToday": "Due Today",
+        "dueOnly": "Due Only",
         "overdue": "Overdue",
         "reverseMode": "Reverse Mode",
         "meaningFirst": "Show meaning first",
@@ -327,6 +332,7 @@
         "noFavoritesHint": "Tap the heart icon to save videos",
         "clearAll": "Clear All",
         "clearConfirm": "Clear all history?",
+        "clearAllWarning": "This will permanently remove all videos from your watch history.",
         "favorites": "Favorites",
         "all": "All",
         "progress": "Progress",
@@ -336,16 +342,18 @@
         "videoPlural": "videos",
         "watchedAgo": "Watched",
         "continueWatching": "Continue",
+        "resume": "Resume",
         "removeFromHistory": "Remove",
         "itemRemoved": "Removed from history",
         "clearedAll": "All history cleared",
         "syncHint": "Sign in to sync history across devices",
+        "searchHistory": "Search history...",
         "justNow": "Just now"
     },
     "playlist": {
         "title": "Playlists",
         "playlist": "Playlist",
-        "myPlaylists": "My Playlists",
+        "myPlaylists": "My Lists",
         "myPlaylist": "You",
         "community": "Community",
         "newPlaylist": "New Playlist",
@@ -362,6 +370,8 @@
             "myHint": "Create one to get started!",
             "communityTitle": "No community playlists",
             "communityHint": "Check back later for shared playlists",
+            "curatedTitle": "No featured playlists",
+            "curatedHint": "Check back later for staff-picked playlists",
             "noVideosTitle": "No videos yet",
             "noVideosHint": "Add videos using the save button"
         },
@@ -390,6 +400,9 @@
         "moveToTop": "Move to top",
         "moveToBottom": "Move to bottom",
         "removeFromPlaylist": "Remove from playlist",
+        "removeVideo": "Remove video",
+        "videoRemoved": "Video removed from playlist",
+        "searchPlaylists": "Search playlists...",
         "videoOptions": "Video Options",
         "visibility": {
             "public": "Public",
@@ -428,7 +441,8 @@
         "undo": "Undo",
         "retry": "Retry",
         "close": "Close",
-        "clear": "Clear"
+        "clear": "Clear",
+        "search": "Search..."
     },
     "onboarding": {
         "welcomeTitle": "Welcome to Voca",

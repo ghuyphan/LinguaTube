@@ -3,7 +3,7 @@ import type PocketBase from 'pocketbase';
 import { IVocabularyRepository } from './vocabulary.repository';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
 import { AuthService, StorageService, PocketBaseService } from '../services';
-import { calculateHash, mergeByTimestamp, processBatch, withRetry } from '../../shared/utils/sync.utils';
+import { calculateHash, mergeByTimestamp, processBatch, sanitizeFilterValue, withRetry } from '../../shared/utils/sync.utils';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 import { generateRandomId } from '../utils';
 
@@ -26,6 +26,7 @@ interface SyncItem {
     romanization?: string;
     meaning: string;
     language: 'ja' | 'zh' | 'ko' | 'en';
+    audio?: string;
     level: WordLevel;
     examples: string[];
     created?: string;
@@ -108,7 +109,8 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         reading?: string,
         pinyin?: string,
         romanization?: string,
-        sourceSentence?: string
+        sourceSentence?: string,
+        audio?: string
     ): Promise<VocabularyItem> {
         const userId = this.auth.user()?.id || 'local';
         const id = this.generateVocabId(userId, word, language);
@@ -124,6 +126,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             romanization: this.normalizeRomanization(language, reading, romanization, word),
             meaning,
             language,
+            audio,
             level: 'new',
             examples: [],
             addedAt: new Date(),
@@ -155,7 +158,8 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             entry.reading,
             entry.pinyin,
             entry.romanization,
-            sourceSentence
+            sourceSentence,
+            entry.audio
         );
     }
 
@@ -451,6 +455,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             romanization: this.normalizeRomanization(item.language, item.reading, item.romanization, item.word),
             meaning: item.meaning,
             language: item.language,
+            audio: item.audio,
             level: item.level,
             examples: item.examples || [],
             updated: item.updatedAt ? new Date(item.updatedAt).toISOString() : undefined,
@@ -477,6 +482,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 romanization: item.romanization,
                 meaning: item.meaning,
                 language: item.language,
+                audio: item.audio || existing?.audio,
                 level: item.level,
                 examples: item.examples,
                 addedAt: item.created ? new Date(item.created) : new Date(),
@@ -502,7 +508,8 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
 
         const records = await client.collection('vocabulary').getFullList({
             filter: `user = "${userId}"`,
-            sort: '-updated'
+            sort: '-updated',
+            requestKey: null
         });
 
         return records.map(record => ({
@@ -567,11 +574,11 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         };
 
         try {
-            await client.collection('vocabulary').create({ ...data, id: item.id });
+            await client.collection('vocabulary').create({ ...data, id: item.id }, { requestKey: null });
         } catch (err: unknown) {
             const status = (err && typeof err === 'object' && 'status' in err) ? (err as { status: number }).status : undefined;
             if (status === 400 || status === 404) {
-                await client.collection('vocabulary').update(item.id, data);
+                await client.collection('vocabulary').update(item.id, data, { requestKey: null });
             } else {
                 throw err;
             }
@@ -584,23 +591,37 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         if (!userId) return;
 
         const records = await client.collection('vocabulary').getFullList({
-            filter: `user = "${userId}" && word = "${word}" && language = "${language}"`
+            filter: `user = "${userId}" && word = "${sanitizeFilterValue(word)}" && language = "${sanitizeFilterValue(language)}"`,
+            requestKey: null
         });
 
         for (const record of records) {
-            await client.collection('vocabulary').delete(record.id);
+            await client.collection('vocabulary').delete(record.id, { requestKey: null });
         }
     }
 
     private generateVocabId(userId: string, word: string, language: string): string {
         const raw = `${userId}|${word.trim().toLowerCase()}|${language}`;
         try {
-            // PocketBase IDs require strictly 15 alphanumeric characters
-            let hash = btoa(encodeURIComponent(raw)).replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-            while (hash.length < 15) {
-                hash += hash + '0';
+            // PocketBase IDs require strictly 15 lowercase alphanumeric characters [a-z0-9]
+            // Dual 32-bit hash mixing (cyrb53-inspired) ensures the full string (including word and lang)
+            // is digested, avoiding prefix-slicing collisions with userId.
+            let h1 = 0xdeadbeef, h2 = 0x41c64e6d;
+            for (let i = 0; i < raw.length; i++) {
+                const ch = raw.charCodeAt(i);
+                h1 = Math.imul(h1 ^ ch, 2654435761);
+                h2 = Math.imul(h2 ^ ch, 1597334677);
             }
-            return hash.slice(0, 15);
+            h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507);
+            h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+            h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
+            h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+            const h3 = Math.imul(h1 ^ h2, 2166136261);
+
+            const p1 = (h1 >>> 0).toString(36).padStart(7, '0');
+            const p2 = (h2 >>> 0).toString(36).padStart(7, '0');
+            const p3 = (h3 >>> 0).toString(36).padStart(7, '0');
+            return (p1 + p2 + p3).slice(0, 15);
         } catch {
             return generateRandomId();
         }

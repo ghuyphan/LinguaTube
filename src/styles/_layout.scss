@@ -389,6 +389,12 @@ body::-webkit-scrollbar {
     .page-layout {
         grid-template-columns: 1fr;
         gap: var(--space-md);
+        align-items: start;
+    }
+
+    .page-layout__main {
+        height: auto;
+        min-height: 0;
     }
 
     .page-layout__sidebar.desktop-only {

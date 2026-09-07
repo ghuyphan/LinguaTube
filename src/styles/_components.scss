@@ -21,26 +21,28 @@
 
 .filter-chip {
     height: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-sm);
-    padding: 0 var(--space-md);
+    gap: 6px;
+    padding: 0 14px;
     font-family: var(--font-sans);
-    font-size: var(--text-sm);
+    font-size: 0.8125rem;
     font-weight: 600;
     line-height: 1;
-    background: var(--bg-card);
+    background: var(--bg-surface);
     color: var(--text-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-pill);
     box-shadow: none;
     cursor: pointer;
-    transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
     white-space: nowrap;
     flex-shrink: 0;
     user-select: none;
-    letter-spacing: 0.01em;
 }
 
 .filter-chips .btn {
@@ -50,13 +52,138 @@
 
 .filter-chip app-icon {
     display: flex;
+    color: var(--text-muted);
 }
 
 .filter-chip.active {
-    background: var(--accent-primary);
-    color: var(--text-inverse);
+    background: rgba(var(--accent-primary-rgb), 0.15);
+    color: var(--accent-primary);
     border-color: var(--accent-primary);
-    box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.25);
+    box-shadow: none;
+
+    app-icon {
+        color: var(--accent-primary);
+    }
+}
+
+.filter-chip {
+    .chip-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1px 6px;
+        border-radius: var(--border-radius-pill);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        background: var(--bg-secondary);
+        color: var(--text-muted);
+        line-height: 1;
+        margin-left: 2px;
+    }
+
+    &.active .chip-count {
+        background: rgba(var(--accent-primary-rgb), 0.2);
+        color: var(--accent-primary);
+    }
+}
+
+.level-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+
+    &.new {
+        background: var(--word-new, #ef4444);
+    }
+    &.learning {
+        background: var(--word-learning, #f59e0b);
+    }
+    &.known {
+        background: var(--word-known, #10b981);
+    }
+    &.ignored {
+        background: var(--text-muted, #9ca3af);
+    }
+}
+
+// ============================================
+// UNIFIED APP SEARCH BOX
+// ============================================
+.app-search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-pill);
+    padding: 0 10px 0 12px;
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+
+    &:focus-within {
+        border-color: var(--accent-primary);
+        background: var(--bg-card);
+    }
+
+    .search-icon {
+        color: var(--text-muted);
+        margin-right: 8px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-input {
+        flex: 1;
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+        border: none;
+        background: transparent;
+        color: var(--text-primary);
+        font-size: 0.8125rem;
+        font-family: inherit;
+        outline: none;
+        padding: 0;
+
+        &::placeholder {
+            color: var(--text-muted);
+        }
+    }
+
+    .clear-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-left: 4px;
+        flex-shrink: 0;
+        transition: color var(--transition-fast), background-color var(--transition-fast);
+
+        &:hover {
+            color: var(--text-primary);
+            background: var(--bg-hover);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .search-input {
+            font-size: 16px; // Prevents iOS Safari auto-zoom on focus
+        }
+    }
 }
 
 @media (hover: hover) {
@@ -69,10 +196,6 @@
     .filter-chip.active:hover {
         background: var(--accent-primary-hover);
     }
-}
-
-.filter-chip:active:not(:disabled) {
-    transform: scale(0.97);
 }
 
 .filter-chips__spacer {
@@ -111,6 +234,8 @@
     border: 1px solid var(--border-color);
     box-shadow: none;
     padding: var(--space-md);
+    height: auto;
+    min-height: 0;
     transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 }
 

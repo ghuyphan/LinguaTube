@@ -44,11 +44,34 @@
         </div>
 
         <div class="toolbar-actions">
+          <div class="app-search-box history-search-box">
+            <app-icon name="search" [size]="14" class="search-icon" />
+            <input type="text" [ngModel]="searchQuery()" (ngModelChange)="searchQuery.set($event)" [placeholder]="i18n.t('history.searchHistory') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" />
+            @if (searchQuery()) {
+              <button type="button" class="clear-btn" (click)="searchQuery.set('')" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
+                <app-icon name="x" [size]="12" />
+              </button>
+            }
+          </div>
+
+          @if (availableLanguages().length > 1) {
+            <button type="button" class="filter-chip filter-chip--lang" (click)="showLanguageFilter.set(true)"
+              [attr.aria-label]="getLanguageLabel()" [title]="getLanguageLabel()">
+              @if (selectedLanguage() !== 'all') {
+                <span class="lang-badge">{{ selectedLanguage().toUpperCase() }}</span>
+              } @else {
+                <app-icon name="languages" [size]="14" />
+              }
+              <span class="chip-text">{{ getLanguageLabel() }}</span>
+              <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
+            </button>
+          }
+
           @if (historyItems().length > 0) {
-            <button type="button" class="btn btn-sm btn-ghost clear-all-btn" (click)="confirmClear()"
+            <button type="button" class="filter-chip clear-all-btn" (click)="confirmClear()"
               [attr.aria-label]="i18n.t('history.clearAll')" [title]="i18n.t('history.clearAll')">
               <app-icon name="trash-2" [size]="14" />
-              <span class="btn-text">{{ i18n.t('history.clearAll') }}</span>
+              <span class="chip-text">{{ i18n.t('history.clearAll') }}</span>
             </button>
           }
         </div>
@@ -56,6 +79,38 @@
 
       <!-- History List -->
       <div class="history-content">
+        <!-- Resume In-Progress Video Banner -->
+        @if (filter() === 'all' && selectedLanguage() === 'all' && inProgressVideo(); as resume) {
+          <div class="resume-hero" (click)="resumeVideo(resume.video_id)">
+            <div class="resume-hero__thumb">
+              <img [src]="resume.thumbnail || getThumbnail(resume.video_id)" [alt]="resume.title" loading="lazy" />
+              <div class="card-play-overlay">
+                <div class="play-icon-circle">
+                  <app-icon name="play" [size]="15" />
+                </div>
+              </div>
+              <div class="resume-progress-bar">
+                <div class="resume-progress-fill" [style.width.%]="resume.progress"></div>
+              </div>
+            </div>
+            <div class="resume-hero__content">
+              <div class="resume-hero__badge">
+                <app-icon name="play" [size]="12" />
+                <span>{{ i18n.t('history.continueWatching') || 'Continue Learning' }}</span>
+                <span class="resume-percent">({{ resume.progress }}%)</span>
+              </div>
+              <h3 class="resume-hero__title" [title]="resume.title">{{ resume.title }}</h3>
+              @if (resume.channel) {
+                <span class="resume-hero__channel">{{ resume.channel }}</span>
+              }
+            </div>
+            <button type="button" class="btn btn-primary btn-sm resume-hero__btn" (click)="resumeVideo(resume.video_id); $event.stopPropagation()">
+              <app-icon name="play" [size]="14" />
+              <span>{{ i18n.t('history.resume') || 'Resume' }}</span>
+            </button>
+          </div>
+        }
+
         <app-history-list
           [items]="filteredItems()"
           [filter]="filter()"
@@ -169,7 +224,7 @@
 <app-confirm-dialog
   [isOpen]="showClearConfirm()"
   [title]="i18n.t('history.clearConfirm')"
-  message=""
+  [message]="i18n.t('history.clearAllWarning') || 'This will permanently remove all videos from your watch history.'"
   [confirmText]="i18n.t('history.clearAll')"
   [cancelText]="i18n.t('vocab.cancel') || 'Cancel'"
   variant="danger"
@@ -182,10 +237,20 @@
 <div class="toast">
   <app-icon name="check" [size]="16" />
   <span class="toast__text">{{ toastMessage() }}</span>
-  @if (lastDeletedItem) {
+  @if (lastDeletedItem()) {
     <button type="button" class="toast__undo-btn" (click)="undoDelete()">
       {{ i18n.t('common.undo') || 'Undo' }}
     </button>
   }
 </div>
 }
+
+<!-- Language Filter Option Picker -->
+<app-option-picker
+  [isOpen]="showLanguageFilter()"
+  [title]="i18n.t('playlist.browseByLanguage') || 'Filter by Language'"
+  [options]="languageFilterOptions()"
+  [value]="selectedLanguage()"
+  (selected)="selectedLanguage.set($event); showLanguageFilter.set(false)"
+  (closed)="showLanguageFilter.set(false)"
+/>

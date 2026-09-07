@@ -37,6 +37,16 @@
                 </div>
 
                 <div class="toolbar-actions">
+                    <div class="app-search-box playlist-search-box">
+                        <app-icon name="search" [size]="14" class="search-icon" />
+                        <input type="text" [ngModel]="searchQuery()" (ngModelChange)="onSearchChange($event)" [placeholder]="i18n.t('playlist.searchPlaylists') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" />
+                        @if (searchQuery()) {
+                        <button type="button" class="clear-btn" (click)="onSearchChange('')" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
+                            <app-icon name="x" [size]="12" />
+                        </button>
+                        }
+                    </div>
+
                     <button type="button" class="filter-chip filter-chip--lang" (click)="showLanguageFilter.set(true)"
                         [attr.aria-label]="getLanguageFilterLabel()" [title]="getLanguageFilterLabel()">
                         @if (languageFilter() !== 'all') {
@@ -149,8 +159,8 @@
                         <app-icon name="list-video" [size]="28" />
                     </div>
                     <div class="empty-state__text" style="align-items: center; text-align: center;">
-                        <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle') : i18n.t('playlist.empty.communityTitle') }}</p>
-                        <p class="empty-state__description">{{ view() === 'my' ? i18n.t('playlist.empty.myHint') : i18n.t('playlist.empty.communityHint') }}</p>
+                        <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle') : (view() === 'curated' ? (i18n.t('playlist.empty.curatedTitle') || 'No featured playlists') : i18n.t('playlist.empty.communityTitle')) }}</p>
+                        <p class="empty-state__description">{{ view() === 'my' ? i18n.t('playlist.empty.myHint') : (view() === 'curated' ? (i18n.t('playlist.empty.curatedHint') || 'Check back later for staff-picked playlists') : i18n.t('playlist.empty.communityHint')) }}</p>
                     </div>
                     @if (view() === 'my') {
                     <button class="btn btn-primary btn-sm" style="margin-top: var(--space-md);" (click)="showCreateDialog.set(true)">
@@ -263,21 +273,42 @@
                     @for (video of detailVideos(); track video.videoId; let i = $index) {
                     <div class="track-row" [style.--item-index]="i" (click)="playSpecificVideo(video.videoId)">
                         <div class="track-index">
-                            <span class="num">{{ i + 1 }}</span>
-                            <app-icon name="play" [size]="14" class="play-icon" />
+                            @if (isWatched(video.videoId)) {
+                                <app-icon name="check" [size]="14" class="watched-icon" />
+                            } @else {
+                                <span class="num">{{ i + 1 }}</span>
+                                <app-icon name="play" [size]="14" class="play-icon" />
+                            }
                         </div>
                         <div class="track-thumb">
                             <img [src]="video.thumbnail" [alt]="video.title" loading="lazy">
                             <div class="track-play-scrim">
                                 <app-icon name="play" [size]="16" />
                             </div>
+                            @if (getVideoProgress(video.videoId); as progress) {
+                                @if (progress > 0) {
+                                    <div class="track-progress-bar">
+                                        <div class="track-progress-fill" [style.width.%]="progress"></div>
+                                    </div>
+                                }
+                            }
                         </div>
                         <div class="track-info">
-                            <h4 class="track-title" [title]="video.title">{{ video.title }}</h4>
+                            <div class="track-title-row">
+                                <h4 class="track-title" [title]="video.title">{{ video.title }}</h4>
+                                @if (isWatched(video.videoId)) {
+                                    <span class="watched-badge">{{ i18n.t('history.watchedAgo') || 'Watched' }}</span>
+                                }
+                            </div>
                             @if (video.channel) {
                             <span class="track-channel">{{ video.channel }}</span>
                             }
                         </div>
+                        @if (isOwner(playlist)) {
+                        <button type="button" class="btn-remove-track" (click)="removeVideoFromPlaylist(video.videoId, $event)" [title]="i18n.t('playlist.removeVideo') || 'Remove video'">
+                            <app-icon name="trash-2" [size]="14" />
+                        </button>
+                        }
                     </div>
                     }
                 </div>

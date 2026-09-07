@@ -172,7 +172,8 @@
         "importError": "Nhập thất bại. Kiểm tra định dạng file.",
         "filterByLevel": "Lọc theo cấp độ",
         "changeLevel": "Đổi cấp độ",
-        "deleteSuccess": "Đã xoá \"{{word}}\""
+        "deleteSuccess": "Đã xoá \"{{word}}\"",
+        "addWord": "Thêm từ"
     },
     "popup": {
         "translationLang": "Ngôn ngữ dịch",
@@ -200,8 +201,10 @@
         "subtitle": "Tra từ mà không cần video",
         "typeWord": "Nhập từ...",
         "search": "Tìm",
+        "searchInDict": "Tra cứu trong từ điển",
         "noResultsFor": "Không tìm thấy",
         "tryDifferent": "Thử cách viết hoặc từ khác",
+        "recent": "Gần đây",
         "recentSearches": "Tìm kiếm gần đây",
         "enterWordAbove": "Tìm kiếm từ",
         "enterWordHint": "Nhập từ ở trên để tra nghĩa",
@@ -263,6 +266,7 @@
         "end": "Kết thúc",
         "tapToReveal": "Chạm để xem",
         "example": "Ví dụ:",
+        "meaning": "Ý nghĩa",
         "again": "Lại",
         "hard": "Khó",
         "good": "Tốt",
@@ -275,6 +279,7 @@
         "recentlyAdded": "Thêm gần đây",
         "tapWordsHint": "Chạm vào từ trong phụ đề để lưu",
         "dueToday": "Cần ôn hôm nay",
+        "dueOnly": "Chỉ từ đến hạn",
         "overdue": "Quá hạn",
         "reverseMode": "Chế độ ngược",
         "meaningFirst": "Hiện nghĩa trước",
@@ -327,6 +332,7 @@
         "noFavoritesHint": "Chạm biểu tượng tim để lưu video",
         "clearAll": "Xóa tất cả",
         "clearConfirm": "Xóa tất cả lịch sử?",
+        "clearAllWarning": "Hành động này sẽ xóa vĩnh viễn toàn bộ video khỏi lịch sử xem của bạn.",
         "favorites": "Yêu thích",
         "all": "Tất cả",
         "progress": "Tiến độ",
@@ -336,16 +342,18 @@
         "videoPlural": "video",
         "watchedAgo": "Đã xem",
         "continueWatching": "Tiếp tục xem",
+        "resume": "Tiếp tục",
         "removeFromHistory": "Xóa",
         "itemRemoved": "Đã xoá khỏi lịch sử",
         "clearedAll": "Đã xoá toàn bộ lịch sử",
         "syncHint": "Đăng nhập để đồng bộ lịch sử trên các thiết bị",
+        "searchHistory": "Tìm kiếm lịch sử...",
         "justNow": "Vừa xong"
     },
     "playlist": {
         "title": "Danh sách phát",
         "playlist": "Danh sách",
-        "myPlaylists": "Danh sách của tôi",
+        "myPlaylists": "Của tôi",
         "myPlaylist": "Bạn",
         "community": "Cộng đồng",
         "newPlaylist": "Tạo danh sách mới",
@@ -362,6 +370,8 @@
             "myHint": "Tạo một danh sách để bắt đầu!",
             "communityTitle": "Chưa có danh sách cộng đồng",
             "communityHint": "Quay lại sau để xem danh sách được chia sẻ",
+            "curatedTitle": "Chưa có danh sách nổi bật",
+            "curatedHint": "Quay lại sau để xem các danh sách được tuyển chọn đặc biệt",
             "noVideosTitle": "Chưa có video",
             "noVideosHint": "Thêm video bằng nút lưu"
         },
@@ -390,6 +400,9 @@
         "moveToTop": "Chuyển lên đầu",
         "moveToBottom": "Chuyển xuống cuối",
         "removeFromPlaylist": "Xóa khỏi danh sách phát",
+        "removeVideo": "Xóa video",
+        "videoRemoved": "Đã xóa video khỏi danh sách",
+        "searchPlaylists": "Tìm kiếm danh sách phát...",
         "videoOptions": "Tùy chọn video",
         "visibility": {
             "public": "Công khai",
@@ -428,7 +441,8 @@
         "undo": "Hoàn tác",
         "retry": "Thử lại",
         "close": "Đóng",
-        "clear": "Xóa"
+        "clear": "Xóa",
+        "search": "Tìm kiếm..."
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",

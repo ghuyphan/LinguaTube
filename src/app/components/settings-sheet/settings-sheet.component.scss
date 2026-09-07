@@ -174,11 +174,15 @@
     }
 }
 
-/* Stats 2-Column Grid inside Account Card */
+/* Stats 2-Column Grid inside Account Card (Desktop only, mobile accesses via More menu) */
 .settings-stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xs);
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 .settings-stat-pill {
