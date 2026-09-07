@@ -461,7 +461,8 @@
         "retry": "再試行",
         "close": "閉じる",
         "clear": "クリア",
-        "search": "検索..."
+        "search": "検索...",
+        "options": "オプション"
     },
     "onboarding": {
         "welcomeTitle": "Vocaへようこそ",

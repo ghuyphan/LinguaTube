@@ -461,7 +461,8 @@
         "retry": "다시 시도",
         "close": "닫기",
         "clear": "지우기",
-        "search": "검색..."
+        "search": "검색...",
+        "options": "옵션"
     },
     "onboarding": {
         "welcomeTitle": "Voca에 오신 것을 환영합니다",

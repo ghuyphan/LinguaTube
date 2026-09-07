@@ -461,7 +461,8 @@
         "retry": "Thử lại",
         "close": "Đóng",
         "clear": "Xóa",
-        "search": "Tìm kiếm..."
+        "search": "Tìm kiếm...",
+        "options": "Tùy chọn"
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",

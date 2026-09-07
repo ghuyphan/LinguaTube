@@ -461,7 +461,8 @@
         "retry": "重试",
         "close": "关闭",
         "clear": "清除",
-        "search": "搜索..."
+        "search": "搜索...",
+        "options": "选项"
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",

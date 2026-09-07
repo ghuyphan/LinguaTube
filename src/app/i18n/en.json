@@ -461,7 +461,8 @@
         "retry": "Retry",
         "close": "Close",
         "clear": "Clear",
-        "search": "Search..."
+        "search": "Search...",
+        "options": "Options"
     },
     "onboarding": {
         "welcomeTitle": "Welcome to Voca",
