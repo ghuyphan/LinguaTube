@@ -457,7 +457,7 @@
     <!-- Mobile: Native YouTube Bottom Sheet -->
     @if (isMobile()) {
     <app-bottom-sheet [isOpen]="isPlayerSettingsOpen()" [title]="i18n.t('player.settings') || 'Settings'" [maxWidth]="'440px'" [showCloseButton]="false"
-      [zIndex]="9999" (closed)="closePlayerSettings()">
+      (closed)="closePlayerSettings()">
       <div class="player-settings-sheet">
         <ng-container *ngTemplateOutlet="playerSettingsTemplate" />
       </div>

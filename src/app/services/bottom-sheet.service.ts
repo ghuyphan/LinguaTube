@@ -218,11 +218,11 @@ export class BottomSheetService {
 
     /**
      * Get z-index for a sheet based on its position in the stack
-     * Base z-index is 1000, each nested sheet adds 10
+     * Base z-index is 1200 (matching --z-modal), each nested sheet adds 10
      */
     getZIndex(sheetId: string): number {
         const stack = this.sheetStack();
         const index = stack.findIndex(s => s.id === sheetId);
-        return 2000 + (index >= 0 ? index * 10 : 0);
+        return 1200 + (index >= 0 ? index * 10 : 0);
     }
 }

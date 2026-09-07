@@ -343,7 +343,7 @@ $transition-normal: 0.25s ease;
     inset: 0;
     width: 100vw;
     height: var(--app-height, 100dvh);
-    z-index: 9998;
+    z-index: var(--z-fullscreen, 1100);
     background: #000;
     border-radius: 0;
   }

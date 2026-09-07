@@ -193,18 +193,21 @@
     --ai-pink: #ff79c6;
     --ai-gradient: linear-gradient(135deg, var(--ai-purple), var(--ai-pink));
 
-    /* Z-index scale */
-    --z-dropdown: 100;
-    --z-sticky: 200;
-    --z-fixed: 300;
-    --z-popover: 600;
-    --z-tooltip: 700;
-    --z-nav: 1000;
-    --z-modal-backdrop: 1150;
-    --z-modal: 1200;
-    --z-toast: 1500;
-    --z-fullscreen: 1600;
-    --z-google-signin: 20000;
+    /* ============================================
+       Z-INDEX ARCHITECTURE (Standardized Scale)
+       ============================================ */
+    --z-sticky: 100;           /* Sticky page toolbars & section headers */
+    --z-fixed: 200;            /* Floating buttons, page controls */
+    --z-dropdown: 500;         /* Dropdowns, speed menu, pickers */
+    --z-popover: 600;          /* Context menus, floating popovers */
+    --z-tooltip: 700;          /* Seek & action hover tooltips */
+    --z-nav: 1000;             /* Global navigation: Desktop Sidebar & Mobile Bottom Nav */
+    --z-fullscreen: 1100;      /* In-app CSS fullscreen video player */
+    --z-modal-backdrop: 1150;  /* Backdrop scrim for modals and sheets */
+    --z-modal: 1200;           /* Bottom-sheets, modals, dialogs, word popups */
+    --z-modal-top: 1300;       /* Command Palette, nested alerts, confirm prompts */
+    --z-google-signin: 20000;  /* 3rd-party auth iframes & onboarding walk-through */
+    --z-toast: 100000;         /* Global HUD notification toasts (always on top) */
 }
 
 [data-theme="dark"] {
