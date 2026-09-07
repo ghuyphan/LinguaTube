@@ -54,6 +54,7 @@ CREATE TABLE IF NOT EXISTS video_languages (
     duration_seconds INTEGER,
     title TEXT,
     channel TEXT,
+    levels TEXT DEFAULT '{}',           -- JSON map of lang -> level (e.g. {"ja":"JLPT N4"})
     created_at INTEGER DEFAULT (strftime('%s', 'now')),
     updated_at INTEGER DEFAULT (strftime('%s', 'now'))
 );

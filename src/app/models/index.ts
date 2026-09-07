@@ -3,6 +3,8 @@ export * from './grammar.model';
 export * from './history.model';
 export * from './playlist.model';
 export * from './language.constants';
+export * from './video-level.model';
+export * from './gamification.model';
 
 export interface SubtitleCue {
   id: string;

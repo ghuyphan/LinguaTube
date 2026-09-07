@@ -282,3 +282,16 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   1. `create-order`: Generates a unique numeric orderCode and builds a payOS VietQR link (`amount=49,000đ` for Pro 1 Month). Caches pending order metadata in Cloudflare KV.
   2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY`. Enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier = 'pro'`, `subscription_expires = now + 30 days`, and sets `diamonds = 20`.
   3. `check-status`: Lightweight polling endpoint for the frontend VietQR modal to detect payment completion in real time.
+
+---
+
+### 3.12. Video Level Classification API
+- **Routes**:
+  - `POST /api/video-level`: Store and update computed difficulty level for a video (`videoId`, `language`, `level`).
+  - `GET /api/video-info`: Now includes `levels: Record<string, string>` map (e.g. `{"ja": "JLPT N4", "en": "CEFR B1"}`) with fast-path metadata regex detection.
+- **Source**: `functions-src/api/video-level.js`, `functions-src/data/video-info-db.js`
+- **Security & Rate Limiting**: Max 60 requests/hour per IP, strict input sanitization (`VALID_LEVEL_REGEX` supporting JLPT N1-N5, HSK 1-6, TOPIK 1-6, CEFR A1-C2).
+- **Storage Strategy**:
+  - Persisted to Cloudflare D1 `video_languages.levels` column as a JSON map.
+  - Cached in Cloudflare KV `video-info:{videoId}` (24-hour TTL) alongside title and duration.
+

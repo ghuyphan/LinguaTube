@@ -8,6 +8,7 @@ import { YoutubeService, SubtitleService, TranscriptService } from '../../featur
 import { VocabularyService } from '../../features/vocabulary';
 import { PlaylistService } from '../../features/playlist/playlist.service';
 import { StreakService } from '../../services/streak.service';
+import { GamificationService } from '../../core/services/gamification.service';
 import { SUPPORTED_LANGUAGES } from '../../models';
 
 @Component({
@@ -29,6 +30,7 @@ export class SidebarComponent {
     transcript = inject(TranscriptService);
     streak = inject(StreakService);
     playlistService = inject(PlaylistService);
+    gamification = inject(GamificationService);
 
     hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !this.router.url.startsWith('/video'));
 
@@ -66,6 +68,7 @@ export class SidebarComponent {
     openCommandPalette = output<void>();
     openStreak = output<void>();
     openAiCredits = output<void>();
+    openAchievements = output<void>();
     showLangPicker = signal(false);
 
     // Learning language options with display info

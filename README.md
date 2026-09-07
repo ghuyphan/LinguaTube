@@ -37,6 +37,8 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 - **Dual-Language Subtitles**: Display learning subtitles alongside translated subtitles in English, Vietnamese, Japanese, Korean, or Chinese with quick flag switching.
 
 ### 📚 Study & Retention Tools
+- **Video Difficulty Level Categorization**: Automatic three-stage hybrid classifier profiles videos into standardized levels: **JLPT N5–N1**, **HSK 1–6**, **TOPIK 1–6**, and **CEFR A1–C2**, combining title fast-path heuristics, speech velocity (CPM/WPM), and 2,400+ grammar patterns with global edge persistence in Cloudflare D1.
+- **Gamification, XP & Achievements**: Earn XP by watching videos (+25 XP), saving vocabulary (+5 XP), reviewing flashcards (+10 XP), and mastering subtitle quizzes (+15 XP). Progress through learner ranks (Novice $\rightarrow$ Grandmaster) and unlock 19 achievement badges across Immersion, Vocabulary, Streaks, SRS, and Quizzes with real-time celebration toasts.
 - **SM-2 Spaced Repetition Flashcards**: Review saved vocabulary with an optimized SuperMemo-2 algorithm featuring real-time interval preview badges (`<10m`, `1d`, `3d`, `6d`), failed card session recycling, audio auto-play, and anti-spoiler peek reading.
 - **Authentic Video Scene Replay & Cloze Practice**: Jump directly from any flashcard back into the exact video scene (`[▶ Watch Scene]`), or practice active recall with Cloze sentence masking.
 - **Gamified Streaks & Freeze Inventory**: Track daily study streaks with streak freeze protections (up to 2 freezes) and milestone rewards.

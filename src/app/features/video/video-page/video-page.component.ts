@@ -20,6 +20,7 @@ import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { PlaylistService } from '../../playlist/playlist.service';
 import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue } from '../../../models';
+import { VideoLevelService } from '../../../core/services/video-level.service';
 
 @Component({
   selector: 'app-video-page',
@@ -53,6 +54,7 @@ export class VideoPageComponent implements OnInit {
   private settings = inject(SettingsService);
   private historyService = inject(HistoryService);
   protected playlistService = inject(PlaylistService);
+  private videoLevel = inject(VideoLevelService);
   i18n = inject(I18nService);
   private seo = inject(SeoService);
   toast = inject(ToastService);
@@ -646,6 +648,25 @@ export class VideoPageComponent implements OnInit {
       this.subtitles.setLanguageState(lang, lang);
       this.subtitles.tokenizeAllCues(lang);
       this.skipNextMismatchDialog = false;
+    }
+
+    // Evaluate difficulty level for video
+    const activeLang = (detected && validLangs.includes(detected))
+      ? (detected as 'ja' | 'zh' | 'ko' | 'en')
+      : (requestedLang as 'ja' | 'zh' | 'ko' | 'en');
+
+    if (currentVideo) {
+      void this.videoLevel.assessLevel(
+        currentVideo.id,
+        activeLang,
+        currentVideo.title,
+        currentVideo.channel,
+        cues
+      ).then(levelInfo => {
+        if (levelInfo) {
+          void this.historyService.updateLevel(currentVideo.id, levelInfo.level);
+        }
+      });
     }
   }
 

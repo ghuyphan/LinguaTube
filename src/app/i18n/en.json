@@ -561,5 +561,113 @@
         "iosStep2": "Scroll down and select 'Add to Home Screen'",
         "iosStep3": "Tap 'Add' in the top-right corner",
         "gotIt": "Got it"
+    },
+    "level": {
+        "beginner": "Beginner",
+        "elementary": "Elementary",
+        "intermediate": "Intermediate",
+        "upper_intermediate": "Upper Intermediate",
+        "advanced": "Advanced",
+        "grammarPoints": "Grammar Patterns",
+        "speechRate": "Speech Rate"
+    },
+    "gamification": {
+        "level": "LEVEL",
+        "toNextLevel": "to next level",
+        "levelUp": "Level Up!",
+        "reachedLevel": "You reached Level",
+        "badgeUnlocked": "Achievement Unlocked",
+        "linguist": "Language Learner",
+        "rank1": "Novice Immersionist",
+        "rank2": "Curious Explorer",
+        "rank3": "Apprentice Miner",
+        "rank4": "Dedicated Scholar",
+        "rank5": "Polyglot Master"
+    },
+    "achievements": {
+        "title": "Achievements & Level",
+        "unlocked": "unlocked",
+        "catAll": "All",
+        "catImmersion": "Immersion",
+        "catVocab": "Vocabulary",
+        "catStreak": "Streak",
+        "catSrs": "Flashcards",
+        "catQuiz": "Quizzes",
+        "watch1": {
+            "title": "First Step",
+            "desc": "Watch your first video with subtitles"
+        },
+        "watch5": {
+            "title": "Binge Watcher",
+            "desc": "Complete 5 learning videos"
+        },
+        "watch25": {
+            "title": "Cinema Scholar",
+            "desc": "Complete 25 learning videos"
+        },
+        "watch100": {
+            "title": "Immersion Legend",
+            "desc": "Complete 100 learning videos"
+        },
+        "vocab1": {
+            "title": "Word Miner",
+            "desc": "Save your first vocabulary word"
+        },
+        "vocab25": {
+            "title": "Lexicon Builder",
+            "desc": "Save 25 vocabulary words"
+        },
+        "vocab100": {
+            "title": "Word Hoarder",
+            "desc": "Save 100 vocabulary words"
+        },
+        "vocab500": {
+            "title": "Living Dictionary",
+            "desc": "Save 500 vocabulary words"
+        },
+        "vocabMaster10": {
+            "title": "True Recall",
+            "desc": "Master 10 words in SRS flashcards"
+        },
+        "streak3": {
+            "title": "Spark",
+            "desc": "Maintain a 3-day learning streak"
+        },
+        "streak7": {
+            "title": "Habit Flame",
+            "desc": "Maintain a 7-day learning streak"
+        },
+        "streak30": {
+            "title": "Unstoppable Blaze",
+            "desc": "Maintain a 30-day learning streak"
+        },
+        "streak100": {
+            "title": "Century Phoenix",
+            "desc": "Maintain a 100-day learning streak"
+        },
+        "srs10": {
+            "title": "Flashcard Novice",
+            "desc": "Review 10 flashcard repetitions"
+        },
+        "srs50": {
+            "title": "Repetition Veteran",
+            "desc": "Review 50 flashcard repetitions"
+        },
+        "srs200": {
+            "title": "Memory Champion",
+            "desc": "Review 200 flashcard repetitions"
+        },
+        "quiz1": {
+            "title": "Sharp Ear",
+            "desc": "Answer 1 subtitle quiz correctly"
+        },
+        "quiz10": {
+            "title": "Subtitle Sleuth",
+            "desc": "Answer 10 subtitle quizzes correctly"
+        },
+        "quiz50": {
+            "title": "Quiz Grandmaster",
+            "desc": "Answer 50 subtitle quizzes correctly"
+        }
     }
 }

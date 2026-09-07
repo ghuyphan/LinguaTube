@@ -561,5 +561,113 @@
         "iosStep2": "向下滚动并选择“添加到主屏幕”",
         "iosStep3": "点击右上角的“添加”",
         "gotIt": "知道了"
+    },
+    "level": {
+        "beginner": "入门",
+        "elementary": "初级",
+        "intermediate": "中级",
+        "upper_intermediate": "中高级",
+        "advanced": "高级",
+        "grammarPoints": "语法模式",
+        "speechRate": "语速"
+    },
+    "gamification": {
+        "level": "等级",
+        "toNextLevel": "距离下一级",
+        "levelUp": "升级！",
+        "reachedLevel": "恭喜达到等级：",
+        "badgeUnlocked": "解锁成就",
+        "linguist": "语言学习者",
+        "rank1": "见习沉浸者",
+        "rank2": "探索者",
+        "rank3": "采词学徒",
+        "rank4": "专注学者",
+        "rank5": "多语大师"
+    },
+    "achievements": {
+        "title": "成就与等级",
+        "unlocked": "已解锁",
+        "catAll": "全部",
+        "catImmersion": "视频沉浸",
+        "catVocab": "生词本",
+        "catStreak": "连续天数",
+        "catSrs": "记忆卡片",
+        "catQuiz": "字幕测验",
+        "watch1": {
+            "title": "第一步",
+            "desc": "完成第一个双语字幕视频学习"
+        },
+        "watch5": {
+            "title": "连播观众",
+            "desc": "完成 5 个学习视频"
+        },
+        "watch25": {
+            "title": "影视学者",
+            "desc": "完成 25 个学习视频"
+        },
+        "watch100": {
+            "title": "沉浸传奇",
+            "desc": "完成 100 个学习视频"
+        },
+        "vocab1": {
+            "title": "采词者",
+            "desc": "生词本添加第一个单词"
+        },
+        "vocab25": {
+            "title": "词汇积累",
+            "desc": "生词本添加 25 个单词"
+        },
+        "vocab100": {
+            "title": "词汇宝库",
+            "desc": "生词本添加 100 个单词"
+        },
+        "vocab500": {
+            "title": "活字典",
+            "desc": "生词本添加 500 个单词"
+        },
+        "vocabMaster10": {
+            "title": "牢固记忆",
+            "desc": "SRS卡片完全掌握 10 个词汇"
+        },
+        "streak3": {
+            "title": "火花",
+            "desc": "保持 3 天连续学习"
+        },
+        "streak7": {
+            "title": "习惯之火",
+            "desc": "保持 7 天连续学习"
+        },
+        "streak30": {
+            "title": "不可阻挡",
+            "desc": "保持 30 天连续学习"
+        },
+        "streak100": {
+            "title": "百日凤凰",
+            "desc": "保持 100 天连续学习"
+        },
+        "srs10": {
+            "title": "卡片新手",
+            "desc": "完成 10 次卡片复习"
+        },
+        "srs50": {
+            "title": "复习老兵",
+            "desc": "完成 50 次卡片复习"
+        },
+        "srs200": {
+            "title": "记忆冠军",
+            "desc": "完成 200 次卡片复习"
+        },
+        "quiz1": {
+            "title": "敏锐之耳",
+            "desc": "正确回答 1 道字幕测验题"
+        },
+        "quiz10": {
+            "title": "字幕侦探",
+            "desc": "正确回答 10 道字幕测验题"
+        },
+        "quiz50": {
+            "title": "测验大师",
+            "desc": "正确回答 50 道字幕测验题"
+        }
     }
 }

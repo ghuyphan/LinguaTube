@@ -390,7 +390,15 @@ import { SettingsService, I18nService } from '../../../core/services';
         margin: 0 16px;
     }
 
-    /* Unified Toolbar & Tabs inside Dictionary Panel (Matches playlist-toolbar & history-toolbar) */
+    /* Unified Main Panel, Toolbar & Tabs (Matches playlist-panel/toolbar & history-panel/toolbar) */
+    .dict-panel {
+      display: flex;
+      flex-direction: column;
+      overflow: visible;
+      height: auto;
+      min-height: 0;
+    }
+
     .dict-toolbar {
       position: sticky;
       top: 0;
@@ -402,7 +410,7 @@ import { SettingsService, I18nService } from '../../../core/services';
       display: flex;
       align-items: center;
       gap: var(--space-sm);
-      margin-bottom: var(--space-md);
+      margin-bottom: var(--space-sm);
     }
 
     .view-tabs {
@@ -430,9 +438,10 @@ import { SettingsService, I18nService } from '../../../core/services';
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
         .dict-toolbar {
             width: 100%;
+            padding: 0 0 var(--space-xs);
 
             .view-tabs {
                 width: 100%;

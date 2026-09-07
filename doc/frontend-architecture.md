@@ -436,3 +436,88 @@ To maintain complete visual, structural, and functional harmony across all prima
 - **Multi-Resolution PWA Icons**: Full suite of 11 raster resolutions rendered via native `sips` in `public/icons/` (`icon-72x72.png` through `icon-512x512.png`, `apple-icon-180.png`, and full-bleed `manifest-icon-*.maskable.png` with 80% safe zone padding).
 - **Universal Application**: Unified across `src/favicon.svg`, `src/assets/icon.svg`, the desktop sidebar header (`sidebar.component.html`), the iOS install sheet (`app.component.ts`), and the Open Graph card (`public/og-image.png`).
 
+---
+
+## 8. Gamification & Video Difficulty Level Frontend Architecture
+
+### 8.1. `GamificationService` (`src/app/core/services/gamification.service.ts`)
+- **Signal-First State**: Maintains reactive state via `readonly userState = signal<UserGamificationState>(...)`.
+- **Derived Computed Metrics**:
+  - `readonly currentLevel = computed(() => this.userState().level)`: Current learner rank.
+  - `readonly currentXp = computed(() => this.userState().xp)`: Total accumulated XP.
+  - `readonly levelTitle = computed(...)`: Rank title (Novice $\rightarrow$ Grandmaster).
+  - `readonly nextLevelXp = computed(...)`: XP needed for next milestone.
+  - `readonly progressPercent = computed(...)`: Linear $0$–$100\%$ progress towards next level.
+  - `readonly achievements = computed(...)`: Full portfolio of 19 achievement records with live unlocked states.
+  - `readonly unlockedCount = computed(...)`: Number of completed milestones.
+- **Action Triggers & XP Gains**:
+  - `recordVideoCompleted()`: Awards $+25$ XP, advances immersion counters, evaluates milestone achievements.
+  - `recordWordSaved()`: Awards $+5$ XP, increments vocab count.
+  - `recordFlashcardReviewed()`: Awards $+10$ XP, increments SRS review count.
+  - `recordQuizCompleted()`: Awards $+15$ XP, increments quiz count.
+  - `recordStreakUpdated(streak)`: Synchronizes streak count and unlocks streak milestones.
+- **Offline-First Persistence**: Optimistically written to `linguatube_gamification` in LocalStorage on every mutation.
+- **Celebration Feedback**: Triggers `ToastService.show({ message, type: 'achievement' })` upon earning new badges or leveling up.
+
+### 8.2. `VideoLevelService` (`src/app/core/services/video-level.service.ts`)
+- **Signal & Cache Store**: Maintains in-memory cache and persists to LocalStorage (`linguatube_video_levels`).
+- **Hybrid Assessment Pipeline**:
+  1. `cached = this.cache[videoId]?.[targetLang]`: Returns cached assessment immediately.
+  2. `detectFastLevel(title, channelTitle, description)`: Quick title regex matching.
+  3. `assessLevel(videoId, targetLang, cues, videoMeta)`:
+     - Scans subtitle tokens with `GrammarService.detectGrammarPatterns()`.
+     - Calculates speech speed in CPM (CJK) or WPM (English).
+     - Derives weighted score and maps to `ProficiencyLevelTier` (`beginner`, `intermediate`, `advanced`, `expert`).
+     - Dispatches asynchronous background persistence to `POST /api/video-level`.
+
+### 8.3. `AchievementsDialogComponent` (`src/app/components/achievements-dialog/`)
+- **Design System & Structure**:
+  - Hosted inside standard `BottomSheetComponent` for seamless mobile and desktop accessibility.
+  - **Level Hero Card**: Large rank icon, level number, level title, and dual progress markers (`current / next XP`).
+  - **Filter Chips**: Segmented category selection (`all`, `immersion`, `vocabulary`, `streak`, `srs`, `quiz`) with unlocked badge counters.
+  - **Achievement Grid**: High-density responsive card layout with tier glow, radial progress borders for locked items, and gold trophy checkmarks for unlocked milestones.
+  - **OnPush Change Detection**: Completely signal-driven without unnecessary zone rerenders.
+
+### 8.4. UI Badges & Visual Tokens
+- **Video Header Pill (`VideoHeaderComponent`)**:
+  - Tier-colored pill badge (`.video-level-pill`) with hover/click trigger.
+  - Dynamic breakdown popover (`.video-level-popover`) detailing framework (JLPT/HSK/TOPIK/CEFR), grammar complexity count, and speech velocity.
+- **History Cards (`HistoryListComponent`)**:
+  - Pill badge (`.level-badge--pill`) visually demarcating difficulty directly on thumbnails and list cards.
+- **Sidebar Header Stats Bar (`SidebarComponent`)**:
+  - Level badge button displaying current user level and trophy icon, with click handler opening the Achievements bottom sheet.
+
+---
+
+## 9. Unified Toolbar, Search Box & Action Button Specifications
+
+To ensure consistent vertical rhythm, heights, and tactile interactions across all main feature views (`/playlist`, `/history`, `/dictionary`, and embedded vocabulary views), the following specifications are strictly enforced:
+
+### 9.1. Vertical Spacing Rhythm
+- **Panel Header $\rightarrow$ Toolbar / Tabs**: `16px` (`var(--space-md)`). Standard across all cards (`.panel-header` margin-bottom).
+- **Segmented Tabs $\rightarrow$ Search Bar**: `12px` (`var(--space-sm)`). Enforced on `.dict-toolbar` above embedded search controls.
+- **Search Bar $\rightarrow$ Content List**: `16px` (`var(--space-md)`). Applied to `.playlist-toolbar`, `.history-toolbar`, and `.dict-filters`.
+- **Search Bar $\rightarrow$ Filter Chips**: `8px` (`var(--space-xs)`). Applied between `.vocab-toolbar` and `.vocab-level-chips` for cohesive grouping.
+- **Filter Chips $\rightarrow$ Content List**: `16px` (`var(--space-md)`). Applied to `.vocab-level-chips` margin-bottom.
+
+### 9.2. Control Dimensions & Geometry
+- **App Search Box (`.app-search-box`)**:
+  - Height: `36px` (`min-height: 36px; max-height: 36px`).
+  - Shape: `border-radius: var(--border-radius-pill)`.
+  - Padding: `0 10px 0 12px`.
+  - Search Icon: `14px` (`app-icon[size="14"]`).
+  - Clear Button Icon: `12px` (`app-icon[size="12"]`).
+- **Pill Buttons (`.filter-chip`, `.create-playlist-btn`, `.search-btn`, `.clear-all-btn`)**:
+  - Height: `36px` (`min-height: 36px; max-height: 36px`).
+  - Shape: `border-radius: var(--border-radius-pill)`.
+  - Padding: `0 14px` (or `0 10px` in compact mobile viewports $\le 768px$).
+  - Font: `0.8125rem`, weight `600`, line-height `1`, gap `6px`.
+- **Circular Action Buttons (`.menu-btn`)**:
+  - Dimensions: `36px` $\times$ `36px`.
+  - Shape: `border-radius: var(--border-radius-pill)`.
+
+### 9.3. Embedded Container Rule
+When feature components (`app-dictionary-panel`, `app-vocabulary-list`) are embedded inside parent page cards:
+- Panels MUST declare `gap: 0;` and `padding: 0;` to prevent compounding flex gaps with child margins.
+- Embedded toolbars MUST declare `position: static; padding: 0; background: transparent; backdrop-filter: none;` to eliminate colliding sticky headers with the top-level page tab bar.
+

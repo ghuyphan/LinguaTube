@@ -2,6 +2,7 @@ import { Injectable, inject, computed, signal, PLATFORM_ID } from '@angular/core
 import { isPlatformBrowser } from '@angular/common';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
 import { OfflineVocabularyRepository } from '../../core/repositories';
+import { GamificationService } from '../../core/services/gamification.service';
 
 const DAILY_GOAL_KEY = 'linguatube_daily_goal';
 const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
@@ -12,6 +13,7 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
 export class VocabularyService {
     private repo = inject(OfflineVocabularyRepository);
     private platformId = inject(PLATFORM_ID);
+    private gamification = inject(GamificationService);
 
     // Signals delegated to repo
     readonly vocabulary = this.repo.vocabulary;
@@ -71,6 +73,7 @@ export class VocabularyService {
         sourceVideoId?: string,
         sourceTimestamp?: number
     ): Promise<VocabularyItem> {
+        this.gamification.addXP(5, 'word_saved');
         return this.repo.addFromDictionary(entry, language, sourceSentence, sourceVideoId, sourceTimestamp);
     }
 
@@ -86,6 +89,7 @@ export class VocabularyService {
         sourceVideoId?: string,
         sourceTimestamp?: number
     ): Promise<VocabularyItem> {
+        this.gamification.addXP(5, 'word_saved');
         return this.repo.addWord(word, meaning, language, reading, pinyin, romanization, sourceSentence, audio, sourceVideoId, sourceTimestamp);
     }
 
@@ -152,10 +156,12 @@ export class VocabularyService {
     }
 
     markReviewed(id: string, correct: boolean): void {
+        this.gamification.addXP(correct ? 10 : 5, 'flashcard_review');
         this.repo.markReviewed(id, correct ? 4 : 1);
     }
 
     markReviewedSRS(id: string, quality: number): void {
+        this.gamification.addXP(quality >= 3 ? 10 : 5, 'flashcard_review');
         this.repo.markReviewed(id, quality);
     }
 

@@ -28,6 +28,7 @@ graph TB
         API_TranslateSingle["/api/translate/[[path]]"]
         API_TranslateBatch["/api/translate/batch"]
         API_VideoInfo["/api/video-info"]
+        API_VideoLevel["/api/video-level"]
         API_Diamonds["/api/diamonds"]
         API_AuthConfig["/api/auth-config"]
         API_PayOrder["/api/payment/create-order"]
@@ -92,6 +93,7 @@ graph TB
     
     API_VideoInfo --> D1
     API_VideoInfo --> KV
+    API_VideoLevel --> D1
 
     API_PayOrder --> PayOS
     API_PayOrder --> KV
@@ -116,6 +118,7 @@ graph TD
     App --> SettingsSheet[SettingsSheetComponent]
     App --> StreakDialog[StreakDialogComponent]
     App --> CreditsDialog[AiCreditsDialogComponent]
+    App --> AchievementsDialog[AchievementsDialogComponent - Gamification & XP]
     App --> Onboarding[OnboardingComponent]
     App --> CommandPalette[CommandPaletteComponent]
     App --> BottomSheet[BottomSheetComponent]
@@ -340,26 +343,95 @@ sequenceDiagram
 
 ---
 
+### 3.5. Video Difficulty Level Classification & Edge Persistence Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Learner
+    participant Player as VideoPageComponent
+    participant LevelService as VideoLevelService
+    participant Grammar as GrammarService
+    participant Edge as /api/video-level Endpoint
+    participant D1 as Cloudflare D1 (video_languages)
+    participant History as HistoryService
+
+    Learner->>Player: Load Video & Subtitles
+    Player->>LevelService: assessLevel(videoId, targetLang, cues, videoMeta)
+    LevelService->>LevelService: Check Local Cache & Title Fast-Path
+    alt Fast-Path / Cache Hit
+        LevelService-->>Player: Return Cached Proficiency Level
+    else Needs Linguistic Assessment
+        LevelService->>LevelService: Calculate Speech Velocity (CPM / WPM)
+        LevelService->>Grammar: Scan Cues with detectGrammarPatterns()
+        Grammar-->>LevelService: Return Matched JLPT/HSK/TOPIK/CEFR Patterns
+        LevelService->>LevelService: Compute Weighted Score (Grammar 70% + Speech 30%)
+        LevelService->>LevelService: Map to Tier (beginner, intermediate, advanced, expert)
+        LevelService->>History: updateLevel(videoId, targetLang, level)
+        LevelService->>Edge: POST /api/video-level { videoId, lang, level, tier }
+        Edge->>Edge: Rate Limiter (60/hr) & Validation
+        Edge->>D1: Update video_languages.levels JSON
+        Edge-->>LevelService: 200 OK { success: true }
+        LevelService-->>Player: Return Resolved LevelInfo
+    end
+    Player->>Player: Update VideoHeaderComponent Badge & Popover Breakdown
+```
+
+---
+
+### 3.6. Gamification Engine & Milestone Unlock Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Learner
+    participant Action as Video / Vocab / Study / Quiz Action
+    participant Gamification as GamificationService
+    participant Toast as ToastService
+    participant Storage as LocalStorage (linguatube_gamification)
+    participant Dialog as AchievementsDialogComponent
+
+    Learner->>Action: Complete Video (>=80%) / Save Word / Review SRS / Pass Quiz
+    Action->>Gamification: recordVideoCompleted() / recordWordSaved() / recordFlashcardReviewed()
+    Gamification->>Gamification: Add Action XP (e.g. +25 XP)
+    Gamification->>Gamification: Recalculate Level: floor(sqrt(XP / 100)) + 1
+    alt Level Increased
+        Gamification->>Toast: show({ type: 'achievement', message: '🎉 Level Up! You reached Level N' })
+    end
+    Gamification->>Gamification: Evaluate 19 Milestone Criteria
+    alt New Achievement Unlocked
+        Gamification->>Gamification: Award Achievement XP Bounty
+        Gamification->>Toast: show({ type: 'achievement', message: '🏆 Unlocked: Badge Name (+XP)' })
+    end
+    Gamification->>Storage: Persist Updated GamificationState (Optimistic)
+    Learner->>Dialog: Open Achievements (from Sidebar Header or Stats Bar)
+    Dialog->>Gamification: Read userState, currentLevel, levelTitle, achievements
+    Dialog-->>Learner: Display Hero XP Banner, Filter Tabs & Unlocked Badges
+```
+
+---
+
 ## 4. Directory & File Responsibility Matrix
 
 | Directory / File | Layer | Primary Responsibility |
 | :--- | :--- | :--- |
-| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Error handler |
+| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Error handler |
 | `public` | Static & Discovery | PWA icons, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`, `og-image.png`, `_headers` |
 | `src/app/core/repositories` | Data Layer | Offline-first sync repositories for Vocab, Streaks, Playlists, History |
-| `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, draggable fullscreen subtitles, controls |
+| `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, draggable fullscreen subtitles, controls, video header level badge |
 | `src/app/features/dictionary` | Linguistics | Multi-provider dictionary lookups, word popup, grammar popup |
 | `src/app/features/vocabulary` | Study / Retention | Vocabulary notebook table, quick view panel, SM-2 flashcard study page |
 | `src/app/features/playlist` | Organization | Custom user playlists and curated community language learning channels |
-| `src/app/features/history` | Analytics | Watch history, resume points, completed learning logs |
+| `src/app/features/history` | Analytics | Watch history, resume points, completed learning logs, video level badges |
 | `src/app/features/quiz` | Assessment | Fill-in-the-blank and interactive vocabulary testing inputs |
+| `src/app/components/achievements-dialog` | UI Shell | Modal dialog displaying XP progression, rank titles, and 19 achievement badges |
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
 | `src/app/data` | Static Data | Large CJK grammar rules |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, auth-config |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, auth-config |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, PocketBase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
-| `functions-src/data` | Edge Storage Access | D1 SQLite queries and R2 S3-compatible bucket reader/writer |
+| `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |
 | `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, unified dict lookup, tokenizers, payment mock |
 | `server/transcripts_cache/` | Dev Cache | Local disk persistence for fetched YouTube transcripts during development |
 | `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via esbuild |

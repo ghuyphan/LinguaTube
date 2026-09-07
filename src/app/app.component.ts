@@ -11,6 +11,7 @@ import { OnboardingComponent } from './components/onboarding/onboarding.componen
 import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
+import { AchievementsDialogComponent } from './components/achievements-dialog/achievements-dialog.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { I18nService, SettingsService, SeoService, PwaService } from './core/services';
 import { YoutubeService, TranscriptService, SubtitleService } from './features/video';
@@ -35,6 +36,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     CommandPaletteComponent,
     StreakDialogComponent,
     AiCreditsDialogComponent,
+    AchievementsDialogComponent,
     ToastComponent
   ],
   template: `
@@ -55,6 +57,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             (openCommandPalette)="showCommandPalette.set(true)"
             (openStreak)="showStreakSheet.set(true)"
             (openAiCredits)="showAiCreditsSheet.set(true)"
+            (openAchievements)="showAchievementsSheet.set(true)"
           />
         }
 
@@ -238,6 +241,17 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             (closed)="showAiCreditsSheet.set(false)"
           >
             <app-ai-credits-dialog (dismissed)="sheetService.closeTop()" />
+          </app-bottom-sheet>
+        }
+
+        @defer (when showAchievementsSheet()) {
+          <app-bottom-sheet
+            [isOpen]="showAchievementsSheet()"
+            [title]="i18n.t('achievements.title') || 'Achievements & Level'"
+            [showCloseButton]="true"
+            (closed)="showAchievementsSheet.set(false)"
+          >
+            <app-achievements-dialog (dismissed)="sheetService.closeTop()" />
           </app-bottom-sheet>
         }
 
@@ -918,6 +932,7 @@ export class AppComponent implements OnDestroy {
   showSettingsSheet = signal(false);
   showStreakSheet = signal(false);
   showAiCreditsSheet = signal(false);
+  showAchievementsSheet = signal(false);
   showUpdateSheet = signal(false);
   showCommandPalette = signal(false);
   showMoreSheet = signal(false);
@@ -942,7 +957,7 @@ export class AppComponent implements OnDestroy {
 
   // Check if any sheet is open (for bottom nav active state)
   anySheetOpen = computed(() =>
-    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet() || this.showMoreSheet()
+    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet() || this.showAchievementsSheet() || this.showMoreSheet()
   );
 
   // Check if current route matches

@@ -561,5 +561,113 @@
         "iosStep2": "Cuộn xuống và chọn 'Thêm vào MH chính'",
         "iosStep3": "Nhấn 'Thêm' ở góc trên bên phải",
         "gotIt": "Đã hiểu"
+    },
+    "level": {
+        "beginner": "Người mới bắt đầu",
+        "elementary": "Sơ cấp",
+        "intermediate": "Trung cấp",
+        "upper_intermediate": "Trung cao cấp",
+        "advanced": "Cao cấp",
+        "grammarPoints": "Mẫu ngữ pháp",
+        "speechRate": "Tốc độ nói"
+    },
+    "gamification": {
+        "level": "CẤP ĐỘ",
+        "toNextLevel": "đến cấp tiếp theo",
+        "levelUp": "Thăng cấp!",
+        "reachedLevel": "Bạn đã đạt Cấp",
+        "badgeUnlocked": "Mở khóa thành tựu",
+        "linguist": "Người học ngôn ngữ",
+        "rank1": "Tập sự đắm mình",
+        "rank2": "Người khám phá",
+        "rank3": "Thợ đào từ vựng",
+        "rank4": "Học giả chăm chỉ",
+        "rank5": "Bậc thầy đa ngôn ngữ"
+    },
+    "achievements": {
+        "title": "Thành tựu & Cấp độ",
+        "unlocked": "đã mở khóa",
+        "catAll": "Tất cả",
+        "catImmersion": "Xem video",
+        "catVocab": "Từ vựng",
+        "catStreak": "Chuỗi ngày",
+        "catSrs": "Thẻ nhớ",
+        "catQuiz": "Câu đố",
+        "watch1": {
+            "title": "Bước đầu tiên",
+            "desc": "Xem video học tập đầu tiên kèm phụ đề"
+        },
+        "watch5": {
+            "title": "Mọt phim",
+            "desc": "Hoàn thành 5 video học tập"
+        },
+        "watch25": {
+            "title": "Học giả điện ảnh",
+            "desc": "Hoàn thành 25 video học tập"
+        },
+        "watch100": {
+            "title": "Huyền thoại đắm mình",
+            "desc": "Hoàn thành 100 video học tập"
+        },
+        "vocab1": {
+            "title": "Thợ đào từ",
+            "desc": "Lưu từ vựng đầu tiên vào sổ tay"
+        },
+        "vocab25": {
+            "title": "Xây dựng vốn từ",
+            "desc": "Lưu 25 từ vựng vào sổ tay"
+        },
+        "vocab100": {
+            "title": "Kho từ vựng",
+            "desc": "Lưu 100 từ vựng vào sổ tay"
+        },
+        "vocab500": {
+            "title": "Từ điển sống",
+            "desc": "Lưu 500 từ vựng vào sổ tay"
+        },
+        "vocabMaster10": {
+            "title": "Ghi nhớ bền vững",
+            "desc": "Thành thạo 10 từ trong thẻ nhớ SRS"
+        },
+        "streak3": {
+            "title": "Tia lửa",
+            "desc": "Duy trì chuỗi học 3 ngày liên tiếp"
+        },
+        "streak7": {
+            "title": "Ngọn lửa thói quen",
+            "desc": "Duy trì chuỗi học 7 ngày liên tiếp"
+        },
+        "streak30": {
+            "title": "Ngọn lửa bùng cháy",
+            "desc": "Duy trì chuỗi học 30 ngày liên tiếp"
+        },
+        "streak100": {
+            "title": "Phượng hoàng trăm ngày",
+            "desc": "Duy trì chuỗi học 100 ngày liên tiếp"
+        },
+        "srs10": {
+            "title": "Tập sự thẻ nhớ",
+            "desc": "Ôn tập 10 lượt thẻ ghi nhớ"
+        },
+        "srs50": {
+            "title": "Chiến binh lặp lại",
+            "desc": "Ôn tập 50 lượt thẻ ghi nhớ"
+        },
+        "srs200": {
+            "title": "Quán quân trí nhớ",
+            "desc": "Ôn tập 200 lượt thẻ ghi nhớ"
+        },
+        "quiz1": {
+            "title": "Đôi tai nhạy bén",
+            "desc": "Trả lời đúng 1 câu hỏi phụ đề"
+        },
+        "quiz10": {
+            "title": "Thám tử phụ đề",
+            "desc": "Trả lời đúng 10 câu hỏi phụ đề"
+        },
+        "quiz50": {
+            "title": "Đại kiện tướng câu đố",
+            "desc": "Trả lời đúng 50 câu hỏi phụ đề"
+        }
     }
 }

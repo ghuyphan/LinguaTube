@@ -3,6 +3,7 @@ import { SubtitleCue } from '../../models';
 import { SubtitleService } from './subtitle.service';
 import { YoutubeService } from './youtube.service';
 import { I18nService } from '../../core/services';
+import { GamificationService } from '../../core/services/gamification.service';
 
 export type QuizMode = 'dictation' | 'translation';
 export type QuizState = 'idle' | 'active' | 'completed';
@@ -28,6 +29,7 @@ export class QuizService {
     private subtitleService = inject(SubtitleService);
     private youtubeService = inject(YoutubeService);
     private i18n = inject(I18nService);
+    private gamification = inject(GamificationService);
 
     // State
     readonly state = signal<QuizState>('idle');
@@ -183,6 +185,7 @@ export class QuizService {
             correct: s.correct + 1,
             streak: s.streak + 1
         }));
+        this.gamification.recordQuizCompleted();
 
         // Auto-advance after delay (tracked for cleanup)
         this.clearPlaybackTimeout();

@@ -4,6 +4,8 @@ import { HistoryItem, VideoInfo } from '../../models';
 import { YoutubeService } from '../video';
 import { OfflineHistoryRepository } from '../../core/repositories';
 import { generateRandomId, getYouTubeThumbnail } from '../../core/utils';
+import { GamificationService } from '../../core/services/gamification.service';
+import { StreakService } from '../../services/streak.service';
 
 /**
  * History Service
@@ -16,6 +18,10 @@ export class HistoryService {
     private platformId = inject(PLATFORM_ID);
     private youtube = inject(YoutubeService);
     private repo = inject(OfflineHistoryRepository);
+    private gamification = inject(GamificationService);
+    private streak = inject(StreakService);
+
+    private completedVideos = new Set<string>();
 
     /** All history items, sorted by watched_at descending */
     readonly history = this.repo.getHistory();
@@ -158,6 +164,27 @@ export class HistoryService {
                 ...item,
                 progress,
                 watched_at: new Date()
+            });
+
+            // Milestone: Completed video (>= 80%) awards XP and counts towards daily streak
+            if (progress >= 80 && !this.completedVideos.has(videoId)) {
+                this.completedVideos.add(videoId);
+                this.gamification.recordVideoCompleted();
+                this.streak.recordActivity();
+            }
+        }
+    }
+
+    /**
+     * Update difficulty level for a video in history
+     */
+    async updateLevel(videoId: string, level: string, levels?: Record<string, string>): Promise<void> {
+        const item = this.getByVideoId(videoId);
+        if (item && item.level !== level) {
+            await this.repo.addToHistory({
+                ...item,
+                level,
+                levels: levels || item.levels
             });
         }
     }

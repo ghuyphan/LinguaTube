@@ -230,6 +230,18 @@
     line-height: 1.2;
 }
 
+.level-badge--pill {
+    padding: 1px 6px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 3px;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+}
+
 .channel-name {
     white-space: nowrap;
     overflow: hidden;

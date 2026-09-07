@@ -33,8 +33,132 @@
 .video-channel {
     font-size: 0.8125rem;
     color: var(--text-muted);
-    display: block;
+    display: inline-block;
     line-height: 1.6;
+}
+
+.video-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.level-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 7px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform var(--transition-fast, 0.15s ease), opacity 0.15s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        opacity: 0.9;
+    }
+
+    &[data-tier="beginner"], &[data-tier="elementary"] {
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    &[data-tier="intermediate"] {
+        background: rgba(59, 130, 246, 0.15);
+        color: #3b82f6;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    &[data-tier="upper_intermediate"] {
+        background: rgba(245, 158, 11, 0.15);
+        color: #f59e0b;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    &[data-tier="advanced"] {
+        background: rgba(168, 85, 247, 0.15);
+        color: #a855f7;
+        border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+}
+
+.level-popover {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 50;
+    width: 220px;
+    padding: 0.75rem;
+    background: var(--bg-card, #1e1e24);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    border-radius: 8px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    animation: popoverFadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 0.8125rem;
+        color: var(--text-primary);
+    }
+
+    &__tier {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        opacity: 0.85;
+
+        &[data-tier="beginner"], &[data-tier="elementary"] { color: #10b981; }
+        &[data-tier="intermediate"] { color: #3b82f6; }
+        &[data-tier="upper_intermediate"] { color: #f59e0b; }
+        &[data-tier="advanced"] { color: #a855f7; }
+    }
+
+    &__stats {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+
+        .stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.75rem;
+
+            .label {
+                color: var(--text-muted);
+            }
+
+            .value {
+                font-weight: 600;
+                color: var(--text-primary);
+            }
+        }
+    }
+}
+
+@keyframes popoverFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .video-actions {

@@ -96,13 +96,19 @@
             @if (!isCollapsed()) {
             <div class="stats-bar">
                 <button class="stats-bar__item" (click)="openStreak.emit()" [class.active]="streak.practicedToday()"
-                    [attr.title]="i18n.t('streak.clickDetails')">
+                    [attr.title]="(i18n.t('streak.dayStreak') || 'Streak') + ': ' + streak.currentStreak()">
                     <app-icon name="fire" [size]="16" class="stat-icon stat-icon--fire" />
                     <span class="stats-bar__val">{{ streak.currentStreak() }}</span>
-                    <span class="stats-bar__label">{{ i18n.t('streak.dayStreak') || 'Streak' }}</span>
                 </button>
                 <div class="stats-bar__divider"></div>
-                <button class="stats-bar__item" (click)="openAiCredits.emit()" [attr.title]="i18n.t('subtitle.aiCredits')">
+                <button class="stats-bar__item" (click)="openAchievements.emit()" 
+                    [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel() + ' (' + gamification.totalXP() + ' XP)'">
+                    <app-icon name="trophy" [size]="16" class="stat-icon stat-icon--trophy" />
+                    <span class="stats-bar__val">Lv.{{ gamification.userLevel() }}</span>
+                </button>
+                <div class="stats-bar__divider"></div>
+                <button class="stats-bar__item" (click)="openAiCredits.emit()" 
+                    [attr.title]="(i18n.t('subtitle.aiCredits') || 'AI Credits') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
                     <app-icon name="diamond" [size]="16" class="stat-icon stat-icon--diamond" />
                     <span class="stats-bar__val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
                 </button>
@@ -111,11 +117,17 @@
             <!-- Collapsed Quick Badges -->
             <div class="collapsed-stats-stack">
                 <button class="collapsed-stat-btn" (click)="openStreak.emit()" [class.active]="streak.practicedToday()"
-                    [attr.title]="i18n.t('streak.clickDetails')">
+                    [attr.title]="(i18n.t('streak.dayStreak') || 'Streak') + ': ' + streak.currentStreak()">
                     <app-icon name="fire" [size]="16" class="stat-icon--fire" />
                     <span>{{ streak.currentStreak() }}</span>
                 </button>
-                <button class="collapsed-stat-btn" (click)="openAiCredits.emit()" [attr.title]="i18n.t('subtitle.aiCredits')">
+                <button class="collapsed-stat-btn" (click)="openAchievements.emit()" 
+                    [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel()">
+                    <app-icon name="trophy" [size]="16" class="stat-icon--trophy" />
+                    <span>{{ gamification.userLevel() }}</span>
+                </button>
+                <button class="collapsed-stat-btn" (click)="openAiCredits.emit()" 
+                    [attr.title]="(i18n.t('subtitle.aiCredits') || 'AI Credits') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
                     <app-icon name="diamond" [size]="16" class="stat-icon--diamond" />
                     <span>{{ transcript.diamonds() }}</span>
                 </button>

@@ -411,7 +411,9 @@ export class OfflineHistoryRepository implements IHistoryRepository {
                     title: sanitizeTitle(item.title),
                     thumbnail: sanitizeThumbnail(item.video_id, item.thumbnail),
                     channel: sanitizeChannel(item.channel),
-                    watched_at: item.watched_at ? new Date(item.watched_at) : new Date()
+                    watched_at: item.watched_at ? new Date(item.watched_at) : new Date(),
+                    level: item.level,
+                    levels: item.levels
                 };
             });
             this.history.set(items);
@@ -444,6 +446,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             watched_at: r.watched_at ? new Date(r.watched_at) : new Date(),
             progress: sanitizeProgress(r.progress),
             is_favorite: !!r.is_favorite,
+            level: typeof r.level === 'string' ? r.level : undefined,
             synced: true
         };
     }

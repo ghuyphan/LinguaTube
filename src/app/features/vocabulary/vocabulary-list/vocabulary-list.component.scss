@@ -25,6 +25,7 @@
         border: none;
         border-radius: 0;
         padding: 0;
+        gap: 0;
         overflow: visible;
         height: auto;
 
@@ -34,13 +35,11 @@
         }
 
         .vocab-toolbar {
-            position: sticky;
-            top: 0;
-            z-index: var(--z-sticky, 100);
-            background: var(--bg-card);
-            padding: var(--space-xs) 0;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            position: static;
+            padding: 0;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            background: transparent;
         }
     }
 }
@@ -113,7 +112,7 @@
     align-items: center;
     gap: var(--space-xs);
     width: 100%;
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs);
     flex-shrink: 0;
 
     .vocab-search-box {
@@ -156,8 +155,8 @@
     gap: 6px;
     overflow-x: auto;
     scrollbar-width: none;
-    padding: 2px 0;
-    margin-bottom: var(--space-sm);
+    padding: 0;
+    margin-bottom: var(--space-md);
     flex-shrink: 0;
 
     &::-webkit-scrollbar {

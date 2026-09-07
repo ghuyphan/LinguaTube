@@ -14,6 +14,8 @@ export interface HistoryItem {
     watched_at: Date;                        // Last watched timestamp
     progress: number;                        // Playback progress (0-100%)
     is_favorite: boolean;                    // Favorited flag
+    level?: string;                          // Computed difficulty level e.g. "JLPT N4"
+    levels?: Record<string, string>;         // Map of lang -> level
     synced?: boolean;                        // Synchronization status
 }
 
@@ -37,6 +39,8 @@ export interface HistoryRecord {
     duration?: number;
     language?: 'ja' | 'zh' | 'ko' | 'en';
     languages?: ('ja' | 'zh' | 'ko' | 'en')[];
+    level?: string;
+    levels?: string | Record<string, string>;
     watched_at: string | Date;
     progress: number;
     is_favorite: boolean;

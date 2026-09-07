@@ -561,5 +561,113 @@
         "iosStep2": "아래로 스크롤하여 '홈 화면에 추가' 선택",
         "iosStep3": "오른쪽 상단의 '추가' 탭",
         "gotIt": "확인"
+    },
+    "level": {
+        "beginner": "입문",
+        "elementary": "초급",
+        "intermediate": "중급",
+        "upper_intermediate": "중고급",
+        "advanced": "고급",
+        "grammarPoints": "문법 패턴",
+        "speechRate": "발화 속도"
+    },
+    "gamification": {
+        "level": "레벨",
+        "toNextLevel": "다음 레벨까지",
+        "levelUp": "레벨 업!",
+        "reachedLevel": "달성한 레벨:",
+        "badgeUnlocked": "업적 달성",
+        "linguist": "언어 학습자",
+        "rank1": "초보 학습자",
+        "rank2": "탐험가",
+        "rank3": "단어 수집가",
+        "rank4": "열정적인 학자",
+        "rank5": "다국어 마스터"
+    },
+    "achievements": {
+        "title": "업적 및 레벨",
+        "unlocked": "달성됨",
+        "catAll": "전체",
+        "catImmersion": "동영상 시청",
+        "catVocab": "어휘",
+        "catStreak": "연속 학습",
+        "catSrs": "플래시카드",
+        "catQuiz": "퀴즈",
+        "watch1": {
+            "title": "첫 걸음",
+            "desc": "자막과 함께 첫 동영상 시청"
+        },
+        "watch5": {
+            "title": "몰입 학습자",
+            "desc": "학습 동영상 5개 완료"
+        },
+        "watch25": {
+            "title": "시네마 학자",
+            "desc": "학습 동영상 25개 완료"
+        },
+        "watch100": {
+            "title": "몰입의 전설",
+            "desc": "학습 동영상 100개 완료"
+        },
+        "vocab1": {
+            "title": "단어 탐색가",
+            "desc": "첫 단어 저장"
+        },
+        "vocab25": {
+            "title": "어휘 빌더",
+            "desc": "단어 25개 저장"
+        },
+        "vocab100": {
+            "title": "단어 수집가",
+            "desc": "단어 100개 저장"
+        },
+        "vocab500": {
+            "title": "살아있는 사전",
+            "desc": "단어 500개 저장"
+        },
+        "vocabMaster10": {
+            "title": "완전한 기억",
+            "desc": "SRS로 단어 10개 마스터"
+        },
+        "streak3": {
+            "title": "불씨",
+            "desc": "3일 연속 학습 유지"
+        },
+        "streak7": {
+            "title": "습관의 불꽃",
+            "desc": "7일 연속 학습 유지"
+        },
+        "streak30": {
+            "title": "타오르는 열정",
+            "desc": "30일 연속 학습 유지"
+        },
+        "streak100": {
+            "title": "백일의 불사조",
+            "desc": "100일 연속 학습 유지"
+        },
+        "srs10": {
+            "title": "카드 초보",
+            "desc": "플래시카드 10회 복습"
+        },
+        "srs50": {
+            "title": "복습 베테랑",
+            "desc": "플래시카드 50회 복습"
+        },
+        "srs200": {
+            "title": "기억의 챔피언",
+            "desc": "플래시카드 200회 복습"
+        },
+        "quiz1": {
+            "title": "밝은 귀",
+            "desc": "자막 퀴즈 1문제 정답"
+        },
+        "quiz10": {
+            "title": "자막 탐정",
+            "desc": "자막 퀴즈 10문제 정답"
+        },
+        "quiz50": {
+            "title": "퀴즈 그랜드마스터",
+            "desc": "자막 퀴즈 50문제 정답"
+        }
     }
 }

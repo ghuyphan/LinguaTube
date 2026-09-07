@@ -315,4 +315,121 @@ Voca features a multi-tiered credit and quota management system designed to bala
   7. Server verifies webhook HMAC signature, checks idempotency via Cloudflare KV (`order_processed:{orderCode}`), upgrades the user's subscription in PocketBase (`subscription_tier = 'pro'`, `diamonds = 20`), and sets expiry timestamp.
   8. Polling or next action detects the new tier, celebrates with confetti/toast, and unlocks Pro benefits immediately.
 
+---
 
+## 12. Video Difficulty Level Categorization & Hybrid Edge Classifier
+
+To help language learners identify content suitable for their proficiency, Voca categorizes videos across standard linguistic frameworks:
+- **Japanese (`ja`)**: JLPT N5 (Beginner) $\rightarrow$ N1 (Mastery)
+- **Chinese (`zh`)**: HSK 1 (Beginner) $\rightarrow$ HSK 6 (Mastery)
+- **Korean (`ko`)**: TOPIK 1 (Beginner) $\rightarrow$ TOPIK 6 (Mastery)
+- **English (`en`)**: CEFR A1 (Beginner) $\rightarrow$ C2 (Mastery)
+
+### 12.1. Three-Stage Hybrid Classification Pipeline
+Evaluating complete video transcripts with heavy morphological tokenizers on every request would cause CPU timeouts on serverless edge workers. Voca uses an optimized three-stage hybrid architecture:
+
+```
+  ┌─────────────────────────────────────────────────────────┐
+  │ 1. Edge & D1 Cache Check                                │
+  │    • Read levels JSON column in D1 video_languages      │
+  │    • Instant O(1) hit for previously assessed videos    │
+  └──────────────────────────┬──────────────────────────────┘
+                             │ Miss
+                             ▼
+  ┌─────────────────────────────────────────────────────────┐
+  │ 2. Fast-Path Title & Channel Regex Matching             │
+  │    • Inspect title, description, and channel keywords   │
+  │    • Matches e.g. "JLPT N3", "HSK 2", "TOPIK II",       │
+  │      "Beginner Korean", "Advanced Japanese"             │
+  │    • Executes on serverless Worker in < 1ms             │
+  └──────────────────────────┬──────────────────────────────┘
+                             │ Not matched in title
+                             ▼
+  ┌─────────────────────────────────────────────────────────┐
+  │ 3. Deep Client-Side Linguistic & Speech Rate Profiling  │
+  │    • Client already segments cues for interactive UI    │
+  │    • Speech Rate CPM/WPM calculation:                   │
+  │      CPM = (Total Characters / Speech Duration Seconds) │
+  │    • Grammar Density: Scans cues against 2,400+ rules   │
+  │      in GrammarService (src/app/data/grammar-*.ts)      │
+  │    • Weighted Tier Scoring & Threshold Mapping          │
+  │    • Saves result to D1 via POST /api/video-level       │
+  └──────────────────────────┬──────────────────────────────┘
+```
+
+### 12.2. Tier Score Weights & Speech Rate CPM Metrics
+- **Speech Speed Thresholds**:
+  - `ja`: Slow $\le 220$ CPM, Normal $221$–$340$ CPM, Fast $> 340$ CPM
+  - `zh`: Slow $\le 160$ CPM, Normal $161$–$260$ CPM, Fast $> 260$ CPM
+  - `ko`: Slow $\le 200$ CPM, Normal $201$–$320$ CPM, Fast $> 320$ CPM
+  - `en`: Slow $\le 110$ WPM, Normal $111$–$160$ WPM, Fast $> 160$ WPM
+- **Difficulty Score Formula**:
+  $$\text{Score} = (\text{Grammar Level Tier} \times 0.7) + (\text{Speech Speed Tier} \times 0.3)$$
+- **Universal Tier Normalization**:
+  - `beginner`: JLPT N5/N4, HSK 1/2, TOPIK 1/2, CEFR A1/A2 (Color: Emerald `#10b981`)
+  - `intermediate`: JLPT N3, HSK 3/4, TOPIK 3/4, CEFR B1 (Color: Blue `#3b82f6`)
+  - `advanced`: JLPT N2, HSK 5, TOPIK 5, CEFR B2 (Color: Purple `#8b5cf6`)
+  - `expert`: JLPT N1, HSK 6, TOPIK 6, CEFR C1/C2 (Color: Amber `#f59e0b`)
+
+### 12.3. UI Integration & Popover Breakdown
+- **Video Header Pill (`VideoHeaderComponent`)**: Displays dynamic tier-colored badge (e.g. `[JLPT N3]`).
+- **Interactive Breakdown Popover**: Clicking the badge reveals:
+  - Difficulty tier label and description.
+  - Number of advanced grammar patterns detected.
+  - Speech velocity (e.g. `278 char/min` or `142 words/min`).
+  - Active proficiency framework badge.
+- **History List Card (`HistoryListComponent`)**: Badges each completed or resumed video with its difficulty pill for rapid browsing.
+
+---
+
+## 13. Gamification, XP Progression & Achievement System
+
+Voca incorporates an engaging, dopamine-positive gamification system designed to reinforce consistent daily immersion without punitive streaks or artificial grind.
+
+### 13.1. XP Engine & Level Curve
+- **Progression Formula**:
+  $$\text{Level} = \left\lfloor\sqrt{\frac{\text{XP}}{100}}\right\rfloor + 1$$
+- **XP Required for Level $N$**:
+  $$\text{XP}_{\text{req}}(N) = (N - 1)^2 \times 100$$
+- **Earning XP Actions**:
+  | Action | XP Reward | Trigger Event |
+  | :--- | :--- | :--- |
+  | **Complete Video** | **+25 XP** | Watching $\ge 80\%$ of video duration (`HistoryService.updateProgress`) |
+  | **Save Vocabulary** | **+5 XP** | Adding a word token to notebook (`VocabularyService.addWord`) |
+  | **Flashcard Review** | **+10 XP** | Submitting SM-2 quality rating in Study Mode (`VocabularyService.markReviewed`) |
+  | **Subtitle Quiz Mastered** | **+15 XP** | Correct answer on in-video subtitle quiz (`QuizService.checkAnswer`) |
+
+### 13.2. Achievement Badges Portfolio (19 Achievements)
+Achievements are organized into 5 core learning categories:
+1. **Immersion (`immersion`)**:
+   - `first_video`: First Steps — Complete your first video (+50 XP)
+   - `video_5`: Video Explorer — Complete 5 videos (+100 XP)
+   - `video_25`: Binge Learner — Complete 25 videos (+250 XP)
+   - `video_100`: Marathon Master — Complete 100 videos (+1000 XP)
+   - `watch_multilang`: Polyglot Pioneer — Watch videos in 3 or more languages (+150 XP)
+2. **Vocabulary (`vocabulary`)**:
+   - `word_1`: Word Collector — Save your first vocabulary word (+25 XP)
+   - `word_25`: Lexicon Builder — Save 25 words (+100 XP)
+   - `word_100`: Vocabulary Master — Save 100 words (+300 XP)
+   - `word_500`: Living Dictionary — Save 500 words (+1000 XP)
+3. **Streaks (`streak`)**:
+   - `streak_3`: Consistency Starter — Maintain a 3-day streak (+50 XP)
+   - `streak_7`: Habit Former — Reach a 7-day streak (+150 XP)
+   - `streak_30`: Unstoppable — Maintain a 30-day streak (+500 XP)
+   - `streak_100`: Streak Legend — Reach a 100-day streak (+2000 XP)
+4. **Spaced Repetition (`srs`)**:
+   - `srs_10`: Memory Spark — Review 10 flashcard cards (+50 XP)
+   - `srs_50`: Recall Champ — Review 50 flashcard cards (+150 XP)
+   - `srs_200`: Spaced Repetition Guru — Review 200 flashcard cards (+500 XP)
+5. **Interactive Quizzes (`quiz`)**:
+   - `quiz_1`: Quick Thinker — Answer your first subtitle quiz (+30 XP)
+   - `quiz_10`: Quiz Prodigy — Complete 10 subtitle quizzes (+100 XP)
+   - `quiz_50`: Sharp Mind — Master 50 subtitle quizzes (+300 XP)
+
+### 13.3. Achievements Dialog (`AchievementsDialogComponent`)
+- **Hero Level Banner**: Displays user's current level title (Novice, Apprentice, Explorer, Scholar, Polyglot, Sage, Master, Grandmaster), total accumulated XP, and an animated radial/linear level progress bar.
+- **Segmented Filter Tabs**: Filter achievements by `All`, `Immersion`, `Vocabulary`, `Streaks`, `Study/SRS`, and `Quizzes` with unlocked counter pills.
+- **Visual Badge States**:
+  - Unlocked: Vibrant tier gradient (Emerald, Blue, Purple, Gold), unlock timestamp, and gold trophy icon.
+  - Locked: High-contrast dark surface, grayscale icon, and real-time numerical progress bar (`current / target`).
+- **Real-Time Celebration**: Unlocking any achievement or leveling up triggers an immediate celebration toast capsule with the badge icon and XP bounty.

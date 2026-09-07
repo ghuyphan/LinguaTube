@@ -561,5 +561,113 @@
         "iosStep2": "下にスクロールして「ホーム画面に追加」を選択",
         "iosStep3": "右上の「追加」をタップ",
         "gotIt": "了解"
+    },
+    "level": {
+        "beginner": "入門",
+        "elementary": "初級",
+        "intermediate": "中級",
+        "upper_intermediate": "中上級",
+        "advanced": "上級",
+        "grammarPoints": "文法パターン",
+        "speechRate": "話速"
+    },
+    "gamification": {
+        "level": "レベル",
+        "toNextLevel": "次のレベルまで",
+        "levelUp": "レベルアップ！",
+        "reachedLevel": "レベルに到達しました：",
+        "badgeUnlocked": "実績を解除しました",
+        "linguist": "言語学習者",
+        "rank1": "見習い学習者",
+        "rank2": "探検者",
+        "rank3": "単語マイナー",
+        "rank4": "熱心な学者",
+        "rank5": "ポリグロットマスター"
+    },
+    "achievements": {
+        "title": "実績とレベル",
+        "unlocked": "解除済み",
+        "catAll": "すべて",
+        "catImmersion": "動画視聴",
+        "catVocab": "語彙",
+        "catStreak": "連続日数",
+        "catSrs": "フラッシュカード",
+        "catQuiz": "クイズ",
+        "watch1": {
+            "title": "第一歩",
+            "desc": "字幕付き動画を初めて視聴する"
+        },
+        "watch5": {
+            "title": "動画ファン",
+            "desc": "学習動画を5本完了する"
+        },
+        "watch25": {
+            "title": "シネマ学者",
+            "desc": "学習動画を25本完了する"
+        },
+        "watch100": {
+            "title": "没頭の伝説",
+            "desc": "学習動画を100本完了する"
+        },
+        "vocab1": {
+            "title": "単語マイナー",
+            "desc": "初めて単語を保存する"
+        },
+        "vocab25": {
+            "title": "語彙構築者",
+            "desc": "単語を25個保存する"
+        },
+        "vocab100": {
+            "title": "単語コレクター",
+            "desc": "単語を100個保存する"
+        },
+        "vocab500": {
+            "title": "生きた辞書",
+            "desc": "単語を500個保存する"
+        },
+        "vocabMaster10": {
+            "title": "完全記憶",
+            "desc": "SRSで10単語を習得する"
+        },
+        "streak3": {
+            "title": "火花",
+            "desc": "3日連続学習を達成する"
+        },
+        "streak7": {
+            "title": "習慣の炎",
+            "desc": "7日連続学習を達成する"
+        },
+        "streak30": {
+            "title": "燃え盛る炎",
+            "desc": "30日連続学習を達成する"
+        },
+        "streak100": {
+            "title": "百日の不死鳥",
+            "desc": "100日連続学習を達成する"
+        },
+        "srs10": {
+            "title": "カード見習い",
+            "desc": "フラッシュカードを10回復習する"
+        },
+        "srs50": {
+            "title": "復習のベテラン",
+            "desc": "フラッシュカードを50回復習する"
+        },
+        "srs200": {
+            "title": "記憶のチャンピオン",
+            "desc": "フラッシュカードを200回復習する"
+        },
+        "quiz1": {
+            "title": "鋭い耳",
+            "desc": "字幕クイズに1問正解する"
+        },
+        "quiz10": {
+            "title": "字幕の名探偵",
+            "desc": "字幕クイズに10問正解する"
+        },
+        "quiz50": {
+            "title": "クイズグランドマスター",
+            "desc": "字幕クイズに50問正解する"
+        }
     }
 }

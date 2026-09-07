@@ -162,4 +162,26 @@ test('payOS: HMAC-SHA256 signature calculation and webhook verification', async 
   assert.equal(isBadSig, false);
 });
 
+test('detectLevelFromMetadata: accurately parses proficiency levels from titles & channels', async () => {
+  const { detectLevelFromMetadata } = await import('../functions-src/data/video-info-db.js');
+
+  // Japanese JLPT
+  assert.deepEqual(detectLevelFromMetadata('Japanese Listening Practice for JLPT N5', 'Learn Japanese'), { lang: 'ja', level: 'JLPT N5' });
+  assert.deepEqual(detectLevelFromMetadata('N2 文法マスター', 'Nihongo Channel'), { lang: 'ja', level: 'JLPT N2' });
+
+  // Chinese HSK
+  assert.deepEqual(detectLevelFromMetadata('HSK 3 Standard Course - Lesson 1', 'ChinesePod'), { lang: 'zh', level: 'HSK 3' });
+  assert.deepEqual(detectLevelFromMetadata('Daily Conversation (HSK 1)', 'Mandarin Corner'), { lang: 'zh', level: 'HSK 1' });
+
+  // Korean TOPIK
+  assert.deepEqual(detectLevelFromMetadata('TOPIK 2 Grammar in Use', 'KoreanClass101'), { lang: 'ko', level: 'TOPIK 2' });
+
+  // English CEFR
+  assert.deepEqual(detectLevelFromMetadata('English for Beginners (CEFR A2)', 'BBC Learning English'), { lang: 'en', level: 'CEFR A2' });
+  assert.deepEqual(detectLevelFromMetadata('Advanced English Podcast - B2 level', 'RealLife English'), { lang: 'en', level: 'CEFR B2' });
+
+  // No level in title
+  assert.equal(detectLevelFromMetadata('Random Cat Video', 'Funny Animals'), null);
+});
+
 

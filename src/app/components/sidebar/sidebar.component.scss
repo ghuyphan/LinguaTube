@@ -493,17 +493,17 @@
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    padding: 4px;
-    gap: 4px;
+    padding: 3px;
+    gap: 2px;
 }
 
 .stats-bar__item {
-    flex: 1;
+    flex: 1 1 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    padding: 0.5rem 0.375rem;
+    padding: 0.5rem 0.25rem;
     background: transparent;
     border: none;
     border-radius: calc(var(--border-radius-md) - 2px);
@@ -548,12 +548,18 @@
     flex-shrink: 0;
 }
 
+.stat-icon--trophy {
+    color: #f59e0b;
+    flex-shrink: 0;
+}
+
 .stats-bar__val {
     font-size: 0.875rem;
     font-weight: 700;
     color: var(--text-primary);
     line-height: 1;
     flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .stats-bar__label {
@@ -579,27 +585,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    width: 2.5rem;
+    gap: 5px;
+    width: 2.75rem;
     height: 2.25rem;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-sm);
+    border-radius: var(--border-radius-md);
     cursor: pointer;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     font-weight: 700;
     color: var(--text-primary);
-    transition: background-color var(--transition-fast);
+    transition: all var(--transition-fast);
 
     @media (hover: hover) {
         &:hover {
             background: var(--bg-hover);
+            border-color: var(--border-color-hover, rgba(255, 255, 255, 0.2));
         }
     }
 
     &.active {
-        border-color: rgba(var(--color-fire-rgb, 245, 158, 11), 0.4);
+        border-color: rgba(var(--color-fire-rgb, 245, 158, 11), 0.35);
         color: var(--color-fire);
+        background: rgba(var(--color-fire-rgb, 245, 158, 11), 0.08);
     }
 }
 

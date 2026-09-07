@@ -17,7 +17,8 @@ import {
     getVideoLanguages,
     saveVideoLanguages,
     getVideoInfoFromKV,
-    saveVideoInfoToKV
+    saveVideoInfoToKV,
+    detectLevelFromMetadata
 } from '../data/video-info-db.js';
 import { getVideoMetadata } from '../middlewares/video-validator.js';
 
@@ -56,14 +57,28 @@ export async function onRequestGet(context) {
         // Only return if we have valid metadata (title). 
         // If innertube.js created the row first, title might be NULL.
         if (d1Result && d1Result.title) {
+            let levels = d1Result.levels || {};
+            if (Object.keys(levels).length === 0) {
+                const detected = detectLevelFromMetadata(d1Result.title, d1Result.channel);
+                if (detected) {
+                    levels[detected.lang] = detected.level;
+                    // Persist auto-detected level in D1
+                    context.waitUntil?.(saveVideoLanguages(db, videoId, d1Result.availableLanguages, d1Result.durationSeconds, d1Result.title, d1Result.channel, d1Result.hasAutoCaptions, levels));
+                }
+            }
+
             const result = {
                 videoId,
                 title: d1Result.title,
                 duration: d1Result.durationSeconds,
                 availableLanguages: d1Result.availableLanguages,
                 hasAutoCaptions: d1Result.hasAutoCaptions,
-                channel: d1Result.channel
+                channel: d1Result.channel,
+                levels
             };
+
+            // Also cache into KV for fast lookups
+            context.waitUntil?.(saveVideoInfoToKV(kv, videoId, result));
 
             return jsonResponse({ ...result, source: 'cache:d1' }, 200, {
                 'X-Cache': 'HIT',
@@ -77,8 +92,16 @@ export async function onRequestGet(context) {
             return jsonResponse({
                 videoId,
                 error: 'Video not found or unavailable',
-                availableLanguages: []
+                availableLanguages: [],
+                levels: {}
             }, 404);
+        }
+
+        // Check for level in title/author
+        const levels = {};
+        const detected = detectLevelFromMetadata(metadata.title, metadata.author_name);
+        if (detected) {
+            levels[detected.lang] = detected.level;
         }
 
         // YouTube oEmbed doesn't provide language info or duration
@@ -89,14 +112,15 @@ export async function onRequestGet(context) {
             duration: null, // oEmbed doesn't provide duration
             availableLanguages: [], // Will be populated when transcripts are fetched
             hasAutoCaptions: false,
-            channel: metadata.author_name
+            channel: metadata.author_name,
+            levels
         };
 
         // Save to D1 (D1 has 100,000 writes/day vs KV's 1,000 writes/day)
         // PRESERVE existing languages if the row already exists (but had missing metadata)
         const existingLangs = d1Result?.availableLanguages || [];
 
-        await saveVideoLanguages(db, videoId, existingLangs, null, metadata.title, metadata.author_name, false);
+        await saveVideoLanguages(db, videoId, existingLangs, null, metadata.title, metadata.author_name, false, levels);
 
         return jsonResponse({ ...result, source: 'youtube' }, 200, {
             'X-Cache': 'MISS',
