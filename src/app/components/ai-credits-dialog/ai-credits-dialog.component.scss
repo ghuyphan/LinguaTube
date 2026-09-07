@@ -138,6 +138,7 @@
 .btn-upgrade {
     width: 100%;
     min-height: 2.75rem;
+    padding: 0.625rem 1.25rem;
     font-size: 0.9375rem;
     font-weight: 700;
     border-radius: var(--border-radius-md);
@@ -149,7 +150,19 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    box-sizing: border-box;
     transition: transform var(--transition-fast), opacity var(--transition-fast);
+
+    app-icon {
+        flex-shrink: 0;
+        display: inline-flex;
+    }
+
+    span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
     &:hover {
         opacity: 0.95;

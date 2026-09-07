@@ -142,7 +142,7 @@
         "nativeCaptionsFreeDesc": "はい！既存のYouTube字幕がある動画は完全無料で、AIクレジットを消費しません。",
         "allCreditsAvailable": "全クレジット利用可能",
         "depletedNotice": "AIクレジット（{{max}}個）をすべて使用しました。YouTube字幕付きの通常動画は引き続き完全無料です！",
-        "upgradeToPro": "Proにアップグレードしてクレジットを増やし、回復を早める",
+        "upgradeToPro": "Proにアップグレード",
         "translationFailed": "翻訳に失敗しました。もう一度お試しください。",
         "readingHint": "文字の上に読み仮名・発音ガイドを表示",
         "grammarHint": "文法構造とパターンをハイライト",
