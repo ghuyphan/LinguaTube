@@ -2,6 +2,7 @@ import { Injectable, signal } from '@angular/core';
 import { IconName } from '../../shared/components/icon/icon.component';
 
 export type ToastType = 'success' | 'error' | 'info' | 'warning';
+export type ToastPosition = 'bottom' | 'top';
 
 export interface ToastAction {
     label: string;
@@ -13,6 +14,7 @@ export interface ToastOptions {
     duration?: number;
     icon?: IconName;
     action?: ToastAction;
+    position?: ToastPosition;
 }
 
 export interface ToastItem {
@@ -22,6 +24,7 @@ export interface ToastItem {
     icon: IconName;
     action?: ToastAction;
     duration: number;
+    position: ToastPosition;
 }
 
 @Injectable({
@@ -44,6 +47,7 @@ export class ToastService {
         const type = options?.type || 'info';
         const icon = options?.icon || this.getDefaultIcon(type);
         const action = options?.action;
+        const position = options?.position || 'bottom';
         // Default duration is 3000ms, or 4500ms if action (e.g. Undo) is present
         const duration = options?.duration ?? (action ? 4500 : 3000);
 
@@ -53,7 +57,8 @@ export class ToastService {
             type,
             icon,
             action,
-            duration
+            duration,
+            position
         };
 
         this.isExiting.set(false);

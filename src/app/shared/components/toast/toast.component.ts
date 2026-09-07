@@ -12,7 +12,12 @@ import { IconComponent } from '../icon/icon.component';
         @if (toastService.currentToast(); as toast) {
             <div 
                 class="toast" 
-                [class]="'toast--' + toast.type"
+                [class.toast--success]="toast.type === 'success'"
+                [class.toast--error]="toast.type === 'error'"
+                [class.toast--warning]="toast.type === 'warning'"
+                [class.toast--info]="toast.type === 'info'"
+                [class.toast--top]="toast.position === 'top'"
+                [class.toast--bottom]="toast.position === 'bottom'"
                 [class.toast--exiting]="toastService.isExiting()"
                 role="status"
                 aria-live="polite"
