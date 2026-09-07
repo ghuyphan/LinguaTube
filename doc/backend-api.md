@@ -27,7 +27,7 @@ Voca uses a dual backend model to maximize both developer productivity and produ
 ### Local Dev Server Highlights (`server/server.js`)
 - **Innertube Client**: Uses `youtubei.js` to fetch real YouTube timed-text tracks directly in local development without needing Cloudflare bindings.
 - **Local Disk Cache with Traversal Defense**: Automatically persists discovered YouTube transcripts to `server/transcripts_cache/{videoId}_{lang}.json` sanitized against path traversal attacks.
-- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/dual-subtitles`, `/api/tokenize-batch/:lang`, `/api/translate`, `/api/translate/batch` (GTX fallback), `/api/auth-config`, `/api/diamonds`, and `/proxy`.
+- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/dual-subtitles`, `/api/tokenize/:lang` (unified `ja`, `zh`, `ko`, `en`), `/api/tokenize-batch/:lang`, `/api/translate/:source/:target/*` (with wildcard slug support), `/api/translate/batch` (GTX fallback), `/api/auth-config`, `/api/diamonds`, and `/proxy/:service/*` (matching the production SSRF-protected proxy).
 
 ---
 
@@ -162,8 +162,8 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   ```
 - **Process**:
   - Checks R2 cache: `translations/{videoId}/{sourceLang}_{targetLang}.json`.
-  - Batch translates subtitle text chunks in groups of 5 using Lingva/GTX.
-  - Requires an 80% translation success rate (`QUALITY_THRESHOLD`) before saving to R2 and D1 `translations_meta`.
+  - Batch translates subtitle text chunks in groups of 25 segments using Lingva/GTX to eliminate 25s Cloudflare Function timeout aborts.
+  - Requires an 80% translation success rate (`QUALITY_THRESHOLD`) before saving to R2 and D1 `translation_meta`.
 
 ---
 
@@ -225,13 +225,23 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   ```json
   {
     "success": true,
-    "diamonds": 3,
-    "maxDiamonds": 3,
-    "nextRegenAt": null,
-    "regenIntervalMs": 1200000
+    "diamonds": 5,
+    "maxDiamonds": 5,
+    "nextRegenAt": 1725732000000,
+    "regenIntervalMs": 900000,
+    "tier": "free",
+    "maxVideoDurationSec": 900
   }
   ```
-- **Regeneration Logic**: Users regenerate 1 Diamond every 20 minutes (`1,200,000ms`) up to a maximum cap of 3.
+- **Multi-Tier Quotas & Regeneration**:
+  | Tier | Max Diamonds | Regen Interval | Max AI Video Duration |
+  | :--- | :--- | :--- | :--- |
+  | **Anonymous** | 3 | 20 minutes | 10 minutes |
+  | **Free** (Signed in) | 5 | 15 minutes | 15 minutes |
+  | **Pro / Premium** | 20 | 5 minutes | 30 minutes |
+- **Quotas & Performance Optimization**:
+  - **Memory-first caching**: Warm edge isolates cache anonymous user diamond status in `memDiamondsCache` with 60s TTL, throttling KV writes to preserve the 1,000 writes/day free limit.
+  - **Admin Token Memoization**: PocketBase admin authentication is memoized in memory for 45 minutes, reducing admin auth requests by 99%.
 
 ---
 
@@ -259,3 +269,16 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - **Network Perimeter Guards**: Blocks private and loopback IP ranges (`127.0.0.0/8`, `10.0.0.0/8`, `192.168.0.0/16`, `172.16.0.0/12`, `localhost`).
   - **Redirect Policy**: Enforces `redirect: 'error'` preventing redirect-based open proxy smuggling.
   - **Timeout & Payload Limits**: Strict 8-second request timeout (`AbortSignal.timeout(8000)`) and maximum 64KB upstream body cap to prevent memory exhaustion.
+
+---
+
+### 3.11. Payment & Webhook APIs (payOS VietQR)
+- **Routes**:
+  - `POST /api/payment/create-order`
+  - `POST /api/payment/webhook`
+  - `GET /api/payment/check-status`
+- **Source**: `functions-src/api/payment/*.js`, `functions-src/providers/payos.js`
+- **Process**:
+  1. `create-order`: Generates a unique numeric orderCode and builds a payOS VietQR link (`amount=49,000đ` for Pro 1 Month). Caches pending order metadata in Cloudflare KV.
+  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY`. Enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier = 'pro'`, `subscription_expires = now + 30 days`, and sets `diamonds = 20`.
+  3. `check-status`: Lightweight polling endpoint for the frontend VietQR modal to detect payment completion in real time.

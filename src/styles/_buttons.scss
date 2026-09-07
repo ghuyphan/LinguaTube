@@ -155,33 +155,8 @@ button {
 }
 
 /* Dark mode for Google Sign-In button (Official Google Identity spec) */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .btn-google {
-        background: #131314;
-        color: #e3e3e3;
-        border-color: #8e918f;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-
-        @media (hover: hover) {
-            &:hover:not(:disabled) {
-                background: #202124;
-                border-color: #a8c7fa;
-                color: #ffffff;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-                transform: translateY(-1px);
-            }
-        }
-
-        &:active:not(:disabled) {
-            background: #303134;
-            border-color: #8e918f;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-            transform: translateY(0);
-        }
-    }
-}
-
-[data-theme="dark"] .btn-google {
+:root[data-theme="dark"] .btn-google,
+:root:not([data-theme="light"]) .btn-google {
     background: #131314;
     color: #e3e3e3;
     border-color: #8e918f;

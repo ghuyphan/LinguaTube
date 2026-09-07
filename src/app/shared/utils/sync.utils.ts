@@ -140,23 +140,3 @@ function sleep(ms: number): Promise<void> {
 export function sanitizeFilterValue(value: string): string {
     return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 }
-
-/**
- * Create a debounced function
- */
-export function debounce<T extends (...args: unknown[]) => void>(
-    fn: T,
-    delayMs: number
-): (...args: Parameters<T>) => void {
-    let timeoutId: ReturnType<typeof setTimeout> | null = null;
-
-    return (...args: Parameters<T>) => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        timeoutId = setTimeout(() => {
-            fn(...args);
-            timeoutId = null;
-        }, delayMs);
-    };
-}

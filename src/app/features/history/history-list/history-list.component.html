@@ -1,6 +1,6 @@
 @if (isLoading() && items().length === 0) {
     <!-- Skeleton loading state -->
-    <div class="skeleton-container">
+    <div class="skeleton-container" role="status" aria-busy="true" aria-hidden="true">
         @for (_ of [1, 2, 3, 4]; track $index) {
         <div class="history-item history-item--skeleton">
             <div class="history-item__thumb skeleton-box"></div>

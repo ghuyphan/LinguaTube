@@ -1,6 +1,8 @@
 import { getJapaneseRomaji } from './japanese-romaji.js';
 import { pinyin } from 'pinyin-pro';
 
+const HTML_TAG_REGEX = /<[^>]+>/g;
+
 /**
  * Unified Dictionary Parsers (Cloudflare Function)
  * Parser functions for various dictionary API sources
@@ -98,41 +100,6 @@ export function parseJotoba(data) {
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
-/**
- * Parse Jotoba Japanese dictionary API response for Japanese monolingual output
- * Used for: ja-ja (Japanese definitions for Japanese words)
- * Jotoba with language: 'Japanese' returns Japanese glosses
- * @param {Object} data - Raw API response from Jotoba
- * @returns {DictEntry[]}
- */
-export function parseJotobaJapanese(data) {
-    if (!data.words || data.words.length === 0) {
-        return [];
-    }
-
-    return data.words.slice(0, 5).map(entry => {
-        const word = entry.reading?.kanji || entry.reading?.kana || '';
-        const reading = entry.reading?.kana || '';
-        const romanization = getJapaneseRomaji(reading, word);
-
-        const definitions = [];
-        entry.senses?.forEach(sense => {
-            if (sense.glosses) {
-                definitions.push(sense.glosses.join('、'));
-            }
-        });
-
-        const partOfSpeech = entry.senses?.[0]?.pos
-            ?.map(p => (typeof p === 'string' ? p : p.Pretty || p.Short || ''))
-            .filter(Boolean)
-            .join(', ') || '';
-
-        const level = entry.common?.jlpt ? parseInt(entry.common.jlpt) : null;
-        const audio = entry.audio?.url || (typeof entry.audio === 'string' ? entry.audio : '') || entry.pitch?.audio || '';
-
-        return { word, reading, romanization, definitions, partOfSpeech, level, ...(audio ? { audio } : {}) };
-    }).filter(e => e.word && e.definitions.length > 0);
-}
 
 /**
  * Parse Mazii Japanese-Vietnamese dictionary API response

@@ -27,6 +27,7 @@ export class AuthService {
 
     readonly user = signal<UserProfile | null>(null);
     readonly isLoggedIn = computed(() => this.user() !== null);
+    readonly subscriptionTier = computed<'free' | 'pro' | 'premium'>(() => this.user()?.subscriptionTier || 'free');
     readonly isInitialized = signal(false);
     readonly isLoggingIn = signal(false);
 
@@ -75,10 +76,6 @@ export class AuthService {
      * Login with Google OAuth
      * Opens a popup for Google authentication
      */
-    prepareOAuthPopup(): OAuthPopup {
-        return this.openOAuthPopup();
-    }
-
     async loginWithGoogle(preopenedPopup: OAuthPopup = null): Promise<UserProfile | null> {
         if (this.isLoggingIn()) return null;
         this.isLoggingIn.set(true);
@@ -120,64 +117,6 @@ export class AuthService {
     }
 
     /**
-     * Login with Email and Password
-     */
-    async loginWithEmail(email: string, password: string): Promise<UserProfile> {
-        try {
-            const client = await this.pb.getClient();
-            const authData = await client.collection('users').authWithPassword(
-                email,
-                password
-            );
-
-            const profile = this.modelToProfile(authData.record);
-            this.user.set(profile);
-            this.loginEvent.next(profile);
-
-            return profile;
-        } catch (error) {
-            console.error('[Auth] Email login failed:', error);
-            throw error;
-        }
-    }
-
-    /**
-     * Register a new user with Email and Password
-     */
-    async register(email: string, password: string, name?: string): Promise<UserProfile> {
-        try {
-            const client = await this.pb.getClient();
-            // Create the user (subscription tier defaults to 'premium' in PocketBase)
-            await client.collection('users').create({
-                email,
-                password,
-                passwordConfirm: password,
-                name: name || email.split('@')[0],
-                subscription_tier: 'premium' // Default all new users to premium
-            });
-
-            // Auto-login after registration
-            return await this.loginWithEmail(email, password);
-        } catch (error) {
-            console.error('[Auth] Registration failed:', error);
-            throw error;
-        }
-    }
-
-    /**
-     * Request password reset email
-     */
-    async requestPasswordReset(email: string): Promise<void> {
-        try {
-            const client = await this.pb.getClient();
-            await client.collection('users').requestPasswordReset(email);
-        } catch (error) {
-            console.error('[Auth] Password reset request failed:', error);
-            throw error;
-        }
-    }
-
-    /**
      * Sign out - clears PocketBase auth store
      */
     signOut(): void {
@@ -215,36 +154,10 @@ export class AuthService {
     }
 
     /**
-     * Manually refresh auth token
-     * Usually not needed - PocketBase auto-refreshes
-     */
-    async refreshToken(): Promise<boolean> {
-        return this.pb.refreshAuth();
-    }
-
-    /**
      * Get subscription tier for the current user
      */
     getSubscriptionTier(): 'free' | 'pro' | 'premium' {
-        return this.user()?.subscriptionTier || 'free';
-    }
-
-    /**
-     * Check if user has an active premium subscription
-     */
-    hasPremiumAccess(): boolean {
-        const user = this.user();
-        if (!user) return false;
-
-        const tier = user.subscriptionTier;
-        if (tier === 'free') return false;
-
-        // Check if subscription is expired
-        if (user.subscriptionExpires && user.subscriptionExpires < new Date()) {
-            return false;
-        }
-
-        return true;
+        return this.subscriptionTier();
     }
 
     private openOrReuseOAuthPopup(url: string, popup: OAuthPopup): Window {

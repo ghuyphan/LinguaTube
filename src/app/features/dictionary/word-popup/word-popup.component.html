@@ -42,7 +42,7 @@
         <div class="popup-body">
             @if (dictionary.isLoading()) {
             <!-- Shimmer skeleton loading -->
-            <div class="popup-shimmer">
+            <div class="popup-shimmer" role="status" aria-busy="true" aria-hidden="true">
                 <div class="shimmer-line">
                     <div class="shimmer-num"></div>
                     <div class="shimmer-text"></div>

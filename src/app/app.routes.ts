@@ -57,5 +57,10 @@ export const routes: Routes = [
         redirectTo: 'explore',
         pathMatch: 'full'
     },
+    {
+        path: 'vocabulary',
+        redirectTo: 'dictionary',
+        pathMatch: 'full'
+    },
     { path: '**', redirectTo: 'video' }
 ];

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, computed, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
-import { I18nService } from '../../../core/services';
+import { I18nService, ToastService } from '../../../core/services';
 import { HistoryService } from '../../history/history.service';
 import { Playlist, PlaylistLanguage, PlaylistVideo, SUPPORTED_LANGUAGES } from '../../../models';
 
@@ -19,10 +19,11 @@ import { Playlist, PlaylistLanguage, PlaylistVideo, SUPPORTED_LANGUAGES } from '
     styleUrls: ['./playlist-page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PlaylistPageComponent implements OnDestroy {
+export class PlaylistPageComponent {
     playlistService = inject(PlaylistService);
     historyService = inject(HistoryService);
     i18n = inject(I18nService);
+    toast = inject(ToastService);
     private router = inject(Router);
 
     showCreateDialog = signal(false);
@@ -36,26 +37,6 @@ export class PlaylistPageComponent implements OnDestroy {
     menuPosition = signal({ top: 0, left: 0 });
     deleteConfirmationOpen = signal(false);
     selectedPlaylist = signal<Playlist | null>(null);
-    toastMessage = signal('');
-    private toastTimeout: ReturnType<typeof setTimeout> | null = null;
-
-    ngOnDestroy(): void {
-        if (this.toastTimeout) {
-            clearTimeout(this.toastTimeout);
-            this.toastTimeout = null;
-        }
-    }
-
-    private triggerToast(message: string): void {
-        this.toastMessage.set(message);
-        if (this.toastTimeout) {
-            clearTimeout(this.toastTimeout);
-        }
-        this.toastTimeout = setTimeout(() => {
-            this.toastMessage.set('');
-            this.toastTimeout = null;
-        }, 3000);
-    }
 
     // Detail View State
     viewingPlaylist = signal<Playlist | null>(null);
@@ -268,7 +249,7 @@ export class PlaylistPageComponent implements OnDestroy {
         if (p) {
             const success = await this.playlistService.copyShareLink(p.id);
             if (success) {
-                this.triggerToast(this.i18n.t('playlist.linkCopied') || 'Link copied!');
+                this.toast.success(this.i18n.t('playlist.linkCopied') || 'Link copied!');
             }
         }
     }
@@ -377,7 +358,7 @@ export class PlaylistPageComponent implements OnDestroy {
                 videoIds: p.videoIds.filter(id => id !== videoId)
             };
             this.viewingPlaylist.set(updated);
-            this.triggerToast(this.i18n.t('playlist.videoRemoved') || 'Video removed from playlist');
+            this.toast.success(this.i18n.t('playlist.videoRemoved') || 'Video removed from playlist');
         } catch (err) {
             console.error('[PlaylistPage] Failed to remove video:', err);
         }

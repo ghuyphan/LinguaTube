@@ -216,26 +216,14 @@
     }
 }
 
-.desktop-only {
-    @media (max-width: 768px), (hover: none) and (pointer: coarse) {
-        display: none !important;
-    }
-}
-
-.mobile-only {
-    @media (min-width: 769px) and (hover: hover) and (pointer: fine) {
-        display: none !important;
-    }
-}
-
 .control-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 36px;
     height: 36px;
-    min-width: 36px !important;
-    min-height: 36px !important;
+    min-width: 36px;
+    min-height: 36px;
     max-width: 36px;
     max-height: 36px;
     aspect-ratio: 1 !important;

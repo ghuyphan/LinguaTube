@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, inject, output, signal, effect, inp
 import { CommonModule } from '@angular/common';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { I18nService } from '../../../core/services';
+import { I18nService, ToastService } from '../../../core/services';
 import { YoutubeService } from '../../video';
 import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
 
@@ -17,6 +17,7 @@ import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
 export class PlaylistPanelComponent {
     private _playlistService = inject(PlaylistService);
     private _i18n = inject(I18nService);
+    private _toast = inject(ToastService);
     protected youtube = inject(YoutubeService);
 
     // Public getters for template binding
@@ -96,6 +97,7 @@ export class PlaylistPanelComponent {
         const success = await this._playlistService.copyShareLink(playlist.id, videoId);
         if (success) {
             this.isCopied.set(true);
+            this._toast.success(this.i18n.t('playlist.linkCopied') || 'Link copied!');
             setTimeout(() => this.isCopied.set(false), 2000);
         }
     }

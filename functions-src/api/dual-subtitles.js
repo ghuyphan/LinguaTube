@@ -22,8 +22,8 @@ const RATE_LIMIT_CONFIG = {
     windowSeconds: 3600,
     keyPrefix: 'dual-subs'
 };
-// Reduced batch size to avoid hitting 429s on Lingva instances
-const BATCH_SIZE = 5;
+// Batch size optimized for Lingva/GTX chunking without timeout
+const BATCH_SIZE = 25;
 const TIMEOUT_MS = 25000; // 25s total timeout (CF limit is 30s)
 const QUALITY_THRESHOLD = 0.8; // 80% success rate required for caching
 

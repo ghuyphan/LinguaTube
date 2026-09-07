@@ -30,13 +30,16 @@ graph TB
         API_VideoInfo["/api/video-info"]
         API_Diamonds["/api/diamonds"]
         API_AuthConfig["/api/auth-config"]
+        API_PayOrder["/api/payment/create-order"]
+        API_PayStatus["/api/payment/check-status"]
+        API_PayWebhook["/api/payment/webhook"]
         API_Proxy["/proxy/[service]"]
     end
 
     subgraph CloudflareData["Cloudflare Infrastructure"]
         D1[(Cloudflare D1 SQLite: video_languages, no_transcript_cache, video_meta)]
         R2[(Cloudflare R2: transcripts/ & translations/)]
-        KV[(Cloudflare KV: ratelimit, tokens, video-info, trbatch)]
+        KV[(Cloudflare KV: ratelimit, tokens, video-info, trbatch, pay_orders)]
     end
 
     subgraph External["External Services & APIs"]
@@ -48,6 +51,7 @@ graph TB
         DictAPIs[Jotoba / Mazii / Naver / MDBG / Glosbe]
         Lingva[Lingva Translate API]
         GoogleGTX[Google Translate GTX]
+        PayOS[payOS VietQR Open Banking API]
     end
 
     subgraph DevServer["Local Development Server (Port 3001)"]
@@ -88,6 +92,14 @@ graph TB
     
     API_VideoInfo --> D1
     API_VideoInfo --> KV
+
+    API_PayOrder --> PayOS
+    API_PayOrder --> KV
+    API_PayStatus --> KV
+    API_PayStatus --> PayOS
+    API_PayWebhook --> KV
+    API_PayWebhook --> PocketHost
+    PayOS -.->|Webhook Notification| API_PayWebhook
 ```
 
 ---
@@ -107,6 +119,7 @@ graph TD
     App --> Onboarding[OnboardingComponent]
     App --> CommandPalette[CommandPaletteComponent]
     App --> BottomSheet[BottomSheetComponent]
+    App --> Toast[ToastComponent - Mobile-Native Status Capsule]
     App --> RouterOutlet[<router-outlet>]
     
     RouterOutlet -->|/video| VideoPage[VideoPageComponent]
@@ -281,11 +294,57 @@ sequenceDiagram
 
 ---
 
+### 3.4. payOS VietQR Pro Upgrade Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User
+    participant Dialog as AiCreditsDialogComponent
+    participant PayService as PaymentService (Client)
+    participant CreateAPI as /api/payment/create-order
+    participant PayOS as payOS Open Banking Gateway
+    participant StatusAPI as /api/payment/check-status
+    participant WebhookAPI as /api/payment/webhook
+    participant KV as Cloudflare KV
+    participant PB as PocketBase Server
+
+    User->>Dialog: Click "Upgrade to Pro"
+    Dialog->>PayService: createOrder('pro_1m')
+    PayService->>CreateAPI: POST /api/payment/create-order
+    CreateAPI->>PayOS: Generate Payment Link with HMAC-SHA256
+    PayOS-->>CreateAPI: Return orderCode & qrCode URL
+    CreateAPI->>KV: Cache order details (TTL 15 min)
+    CreateAPI-->>PayService: Return PaymentOrderInfo
+    PayService-->>Dialog: Display VietQR Card & Start 3s Polling
+    
+    par Banking App Payment & Webhook
+        User->>PayOS: Scan VietQR & Transfer via Banking App
+        PayOS->>WebhookAPI: POST /api/payment/webhook (HMAC Signature)
+        WebhookAPI->>WebhookAPI: Verify HMAC-SHA256 Signature
+        WebhookAPI->>KV: Check Idempotency (order_processed:orderCode)
+        WebhookAPI->>PB: Upgrade User (subscription_tier='pro', diamonds=20)
+        WebhookAPI->>KV: Mark order_processed & update order status to PAID
+    and Client Polling
+        loop Every 3s (up to 5 min)
+            PayService->>StatusAPI: GET /api/payment/check-status?orderCode=...
+            StatusAPI->>KV: Read Order Status
+            StatusAPI-->>PayService: Return status
+        end
+    end
+    
+    PayService-->>Dialog: Order Confirmed PAID
+    PayService->>PayService: Refresh Diamonds & Tier Signals
+    Dialog-->>User: Celebrate & Unlock Pro Quotas
+```
+
+---
+
 ## 4. Directory & File Responsibility Matrix
 
 | Directory / File | Layer | Primary Responsibility |
 | :--- | :--- | :--- |
-| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, SEO (`SeoService`), Error handler |
+| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Error handler |
 | `public` | Static & Discovery | PWA icons, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`, `og-image.png`, `_headers` |
 | `src/app/core/repositories` | Data Layer | Offline-first sync repositories for Vocab, Streaks, Playlists, History |
 | `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, draggable fullscreen subtitles, controls |
@@ -297,11 +356,11 @@ sequenceDiagram
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
 | `src/app/data` | Static Data | Large CJK grammar rules |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, video-info, auth-config |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, auth-config |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, PocketBase token verification, video validator |
-| `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba |
+| `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries and R2 S3-compatible bucket reader/writer |
-| `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, unified dict lookup, and tokenizers |
+| `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, unified dict lookup, tokenizers, payment mock |
 | `server/transcripts_cache/` | Dev Cache | Local disk persistence for fetched YouTube transcripts during development |
 | `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via esbuild |
 | `scripts/merge-translations.js` | Data Pipeline | Merges translated grammar chunks into TypeScript data files |

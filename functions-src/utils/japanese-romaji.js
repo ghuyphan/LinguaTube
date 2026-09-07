@@ -148,7 +148,7 @@ const SMALL_TSU = 'っ';
 const LONG_VOWEL_MARK = 'ー';
 const KANA_TEXT_REGEX = /^[\u3040-\u30FFー\s・。、？！「」『』（）〔〕［］｛｝〈〉《》【】…ー-]+$/u;
 
-function katakanaToHiragana(text) {
+export function katakanaToHiragana(text) {
     return text.replace(/[\u30A1-\u30F6]/g, (match) =>
         String.fromCharCode(match.charCodeAt(0) - 0x60)
     );

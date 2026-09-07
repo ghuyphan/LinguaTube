@@ -3,6 +3,7 @@ import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { filter } from 'rxjs';
+import { getYouTubeThumbnail } from '../utils';
 
 export interface RouteSeoData {
   title?: string;
@@ -93,7 +94,7 @@ export class SeoService {
       ? `${description.slice(0, 150)}... Learn Japanese, Chinese, Korean, or English with interactive subtitles on Voca.`
       : `Watch "${videoTitle}" with interactive dual subtitles, furigana, pinyin, and instant dictionary lookups on Voca.`;
     const videoUrl = `${BASE_URL}/video?v=${videoId}`;
-    const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+    const thumbnailUrl = getYouTubeThumbnail(videoId, 'hqdefault');
 
     this.updateTags({
       title: fullTitle,

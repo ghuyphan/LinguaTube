@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../../../../shared/components/icon/icon.component';
 import { getVolumeIcon } from '../../../../../core/utils';
@@ -52,9 +52,7 @@ export class VideoBottomBarComponent {
   showVolumeSlider = output<void>();
   hideVolumeSlider = output<void>();
 
-  getVolumeIcon(): IconName {
-    return getVolumeIcon(this.volume(), this.isMuted());
-  }
+  readonly volumeIcon = computed<IconName>(() => getVolumeIcon(this.volume(), this.isMuted()));
 
   onVolumeSliderMouseDown(event: MouseEvent) {
     event.stopPropagation();

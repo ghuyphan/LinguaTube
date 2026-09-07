@@ -14,7 +14,7 @@ import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
 import { TranscriptService } from '../transcript.service';
 import { VocabularyService } from '../../vocabulary';
-import { SettingsService, I18nService, SeoService } from '../../../core/services';
+import { SettingsService, I18nService, SeoService, ToastService } from '../../../core/services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
@@ -55,6 +55,7 @@ export class VideoPageComponent implements OnInit {
   protected playlistService = inject(PlaylistService);
   i18n = inject(I18nService);
   private seo = inject(SeoService);
+  toast = inject(ToastService);
 
   showAiConfirmDialog = signal(false);
   aiCaptchaToken = signal<string | null>(null);
@@ -744,6 +745,7 @@ export class VideoPageComponent implements OnInit {
     const success = await this.playlistService.copyShareLink(playlist.id, videoId);
     if (success) {
       this.isShareCopied.set(true);
+      this.toast.success(this.i18n.t('playlist.linkCopied') || 'Link copied!');
       setTimeout(() => this.isShareCopied.set(false), 2000);
     }
   }

@@ -11,6 +11,7 @@ import { OnboardingComponent } from './components/onboarding/onboarding.componen
 import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
+import { ToastComponent } from './shared/components/toast/toast.component';
 import { I18nService, SettingsService, SeoService, PwaService } from './core/services';
 import { YoutubeService, TranscriptService, SubtitleService } from './features/video';
 import { StreakService } from './services/streak.service';
@@ -33,7 +34,8 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     OnboardingComponent,
     CommandPaletteComponent,
     StreakDialogComponent,
-    AiCreditsDialogComponent
+    AiCreditsDialogComponent,
+    ToastComponent
   ],
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
@@ -339,6 +341,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         </div>
       </app-bottom-sheet>
 
+      <app-toast />
     </div>
   `,
   styles: [`
@@ -369,7 +372,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
       .app.has-sidebar .app__content {
         /* Use exact sidebar width - content adjusts smoothly when sidebar toggles */
-        padding-left: 15.625rem; /* Match .sidebar width exactly */
+        padding-left: var(--sidebar-width, 15.75rem); /* Match .sidebar width exactly */
         transition: padding-left 0.3s cubic-bezier(0.2, 0, 0, 1);
         will-change: padding-left;
       }
@@ -535,12 +538,12 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     }
 
     .stat-icon--fire {
-      color: #f59e0b;
+      color: var(--color-fire);
       flex-shrink: 0;
     }
 
     .stat-icon--diamond {
-      color: #60a5fa;
+      color: var(--color-diamond);
       flex-shrink: 0;
     }
 

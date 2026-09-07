@@ -54,6 +54,18 @@ export interface VocabularyItem {
   sourceTimestamp?: number;  // Time in video (seconds)
 }
 
+export interface VocabularyStats {
+  total: number;
+  new: number;
+  learning: number;
+  known: number;
+  ignored: number;
+  japanese: number;
+  chinese: number;
+  korean: number;
+  english: number;
+}
+
 export type WordLevel = 'new' | 'learning' | 'known' | 'ignored';
 
 // Dictionary models

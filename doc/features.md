@@ -34,6 +34,7 @@ Voca accepts arbitrary YouTube video URLs:
 
 ### 1.4. Draggable Fullscreen Subtitles
 When in fullscreen mode, subtitles are rendered in `FullscreenSubtitleComponent`:
+- **Computed `viewTokens` Pre-computation**: Subtitle tokens, reading annotations, display text, and vocabulary mastery levels are pre-calculated in a single `viewTokens = computed(...)` signal per cue change. This eliminates repeated O(N) vocabulary repository method calls and grammar index scans in `@for` template loops during 60fps fullscreen video playback.
 - **Centered Drag Handle Bar**: A horizontal pill handle bar allows users to drag subtitles to any vertical position (`--sub-y: 8%` to `85%`).
 - **Smooth Pointer Capture**: Uses `PointerEvent` tracking with `requestAnimationFrame` updates to ensure 60fps responsiveness across mobile and desktop.
 - **Magnetic Snap Points**:
@@ -115,7 +116,7 @@ graph TD
 - Displays the **learning language** on top and the learner's **target translation language** underneath.
 - **Supported Target Languages**: English (`en`), Vietnamese (`vi`), Japanese (`ja`), Korean (`ko`), Chinese (`zh`).
 - **Quick Selection Menu**: Right-click the dual-sub button or open player settings to select target translation language with high-fidelity circle flag SVGs.
-- **Batch Translation Engine**: Subtitle texts are chunked into batches of 5 and translated via Lingva / Google Translate GTX.
+- **Batch Translation Engine**: Subtitle texts are chunked into batches of 25 segments and translated via Lingva / Google Translate GTX to avoid Cloudflare 25-second serverless timeout aborts.
 - **Quality Assurance**: If $< 80\%$ of segments translate successfully, caching is refused to prevent bad data persistence.
 - **Permanent Caching**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`) and indexed in D1.
 
@@ -176,13 +177,13 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
 
 ## 7. Spaced Repetition (SRS) Vocabulary Notebook
 
-Saved vocabulary items follow the **SuperMemo-2 (SM-2)** algorithm:
+Saved vocabulary items follow the **SuperMemo-2 (SM-2)** algorithm, enhanced with sentence mining, audio pronunciation, and authentic video immersion.
 
-### 7.1. SM-2 Algorithm Formulation
+### 7.1. SM-2 Algorithm Formulation & Interval Previews
 When a user reviews a flashcard and provides a recall quality score $q \in [0, 5]$:
 
 1. **Repetitions & Interval ($I$)**:
-   $$\text{If } q < 3: \quad \text{repetitions} = 0, \quad I = 1 \text{ day}, \quad \text{status} = \text{new}$$
+   $$\text{If } q < 3: \quad \text{repetitions} = 0, \quad I = 0 \text{ days} \ (\text{immediate recycle}), \quad \text{status} = \text{new}$$
    $$\text{If } q \ge 3: \quad \begin{cases} I_1 = 1 \text{ day} & \text{if repetitions} = 0 \\ I_2 = 6 \text{ days} & \text{if repetitions} = 1 \\ I_n = \lceil I_{n-1} \times EF \rceil & \text{if repetitions} \ge 2 \end{cases}$$
 
 2. **Ease Factor ($EF$)**:
@@ -192,11 +193,36 @@ When a user reviews a flashcard and provides a recall quality score $q \in [0, 5
    - `new` $\rightarrow$ `learning` on first successful recall ($q \ge 3$).
    - `learning` $\rightarrow$ `known` once `repetitions >= 3`.
 
-### 7.2. Contextual Sentence Memory
-Every saved word retains `sourceSentence`, ensuring learners always review vocabulary in the context of the authentic video dialogue where it was found.
+4. **Interval Preview Badges on Buttons**:
+   - Using `calculateSRSPreview()`, answer buttons preview their exact calculated schedule in real time:
+     - **Again (1)**: `<10m`
+     - **Hard (2)**: `1d`
+     - **Good (3)**: e.g. `3d` or `6d`
+     - **Easy (4)**: e.g. `6d` or `2w`
 
-### 7.3. 60fps Touch Gesture Optimization
-Flashcard card swiping and flip animations run at full 60fps on mobile by encapsulating card derivations into a single `cardViewModel = computed(...)` signal. This eliminates re-evaluating readings, phonetic annotations, and sentence context templates during rapid pointer moves.
+### 7.2. Session Queue Recycling (Zero Forgotten Cards)
+To guarantee true memory retention, cards rated "Again" ($q < 3$) are **re-queued at the end of the current session**. The session only concludes when all cards have been successfully recalled, eliminating the frustration of ending a session with failed items left unreinforced. A "Review Missed" button is also provided on the completion screen for rapid second-pass review.
+
+### 7.3. Authentic Video Scene Jump
+Every mined card captures `sourceSentence`, `sourceVideoId`, and `sourceTimestamp`. While studying, learners can tap **`[▶ Watch Scene]`** (or press key `V`) to jump directly to the exact millisecond in the authentic YouTube video where the phrase occurred.
+
+### 7.4. Reading Spoiler Prevention & Peek Mode
+To prevent passive phonetic cheating during Kanji/Hanzi recall, furigana and pinyin are **strictly hidden on the front of flashcards by default**, even if globally enabled for video subtitles. Learners who are stuck can click a subtle **"Peek reading"** button (or press `P`) for temporary assistance, while the answer face displays the full phonetic reading alongside the definitions.
+
+### 7.5. Cloze Deletion (Fill-in-the-Blank) Sentence Practice
+When "Cloze Mode" is toggled, the focus word is masked inside the context sentence (`【 ... 】`) on the front of the card. Learners recall the word from its sentence context rather than as an isolated vocabulary token.
+
+### 7.6. Audio Auto-Play on Reveal
+Learners can enable "Auto-play audio" in study settings to have authentic dictionary or TTS audio automatically trigger the moment a flashcard is flipped, training auditory comprehension concurrently with visual recall.
+
+### 7.7. Desktop Live Session Dashboard & Keyboard Ergonomics
+- **Live Sidebar Monitor**: During active study, the desktop sidebar dynamically morphs into an active session monitor displaying cards remaining in queue, live accuracy percentage, elapsed time, and a keyboard shortcuts cheat-sheet (`Space` to flip, `1-4` to grade, `R` to replay audio, `P` to peek, `V` to open scene).
+- **Mobile Swipe Physics**: Enhanced swipe gestures with rotation physics and watermark feedback tags (red "Again" on left swipe, green "Good" on right swipe).
+
+### 7.8. Streamlined Architecture & Memory Optimizations
+- **Shared Reactive State**: Daily goal progress (`goalProgress`) and due-card count calculations (`getDueCountByLanguage`) are unified in `VocabularyService`, eliminating duplicate filter closures between study components and sidebars.
+- **Zero-Wrapper Card Queue**: The study queue directly processes `VocabularyItem` arrays without wrapper object allocations during session initialization, failed-card recycling, or missed-card re-study.
+- **Full Metadata Undo Restoration**: When a user undoes a word deletion from the notebook, all captured sentence context, audio references, source video ID, and timestamp offsets are restored without data loss.
 
 ---
 
@@ -250,5 +276,41 @@ Flashcard card swiping and flip animations run at full 60fps on mobile by encaps
   - **Mobile "More" Menu**: Users can install the PWA directly from the mobile "More" bottom sheet via the "Install App" action row. The button is automatically hidden if the user is already running the app in standalone mode.
   - **Android / Chromium / Desktop**: Triggers the native browser install dialog via `prompt()` and tracks user choice.
   - **iOS Safari Support**: Because iOS does not support programmatic install prompts, clicking "Install App" on iPhone/iPad opens a step-by-step visual bottom sheet guiding the user to tap the Safari Share button and select "Add to Home Screen".
+
+---
+
+## 11. Diamond Credits Multi-Tier Architecture & payOS Payment Integration
+
+Voca features a multi-tiered credit and quota management system designed to balance user delight with edge AI cost sustainability (Gladia STT):
+
+### 11.1. Tier Specifications & Quotas
+| Tier | Trigger / Qualification | Max Credits | Regen Rate | Max AI Video Length | Daily KV Sync Policy |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`anonymous`** | Unauthenticated guest IP | 3 Diamonds | 1 credit / 20 min | $\le 10$ minutes | In-memory cached; throttled KV sync |
+| **`free`** | Authenticated user (default) | 5 Diamonds | 1 credit / 15 min | $\le 15$ minutes | PocketBase record + in-memory cache |
+| **`pro`** / **`premium`**| Active paid subscriber | 20 Diamonds | 1 credit / 5 min | $\le 30$ minutes | PocketBase record + instant sync |
+
+- **Defaulting to Free**: New registered users always default to the `free` tier (awarding 5 diamonds as an onboarding reward). Upgrades to `pro` occur exclusively via verified payment or administrative grant.
+- **Dynamic Cost Scaling**:
+  - $\le 10$ minutes: **1 Diamond credit**
+  - $10$–$20$ minutes: **2 Diamond credits**
+  - $> 20$ minutes: Allowed for `pro` users (up to 30 mins, 3 Diamond credits); rejected with user guidance for free/guest tiers.
+- **Automated Refund on Failure**: If Gladia fails or rejects the audio stream, credits are automatically refunded to the user's account.
+
+### 11.2. Edge Rate Quota & Free KV Optimization (Rule 2)
+- **Edge In-Memory Caching (`memDiamondsCache`)**: Cloudflare Workers maintain an in-memory cache with a 60-second TTL and a 500-entry LRU cap. Repeated credit checks do not touch Cloudflare KV, preserving free-tier write quotas (1,000 writes/day).
+- **Admin Token Memoization**: PocketBase admin authentication tokens are memoized across Worker invocations with a 45-minute lifecycle, reducing redundant authentication requests by $>99\%$.
+
+### 11.3. payOS VietQR Open Banking & Pro Upgrade
+- **Why payOS?**: Zero gateway subscription fees (compared to ApiPay's 100k-150k VND/month fee), official VietQR bank transfer rails, and zero storage of raw banking credentials.
+- **VietQR Payment Flow**:
+  1. User selects "Upgrade to Pro" in `AiCreditsDialogComponent`.
+  2. Frontend calls `/api/payment/create-order` with the chosen plan (`pro_1m` for 49,000 VND or `pro_1y` for 490,000 VND).
+  3. Server signs payment payload with `HMAC-SHA256` using `PAYOS_CHECKSUM_KEY` and creates an official payment link via payOS.
+  4. Frontend displays a responsive VietQR card featuring the generated QR image, payment details, and real-time polling via `PaymentService`.
+  5. User scans with any Vietnamese banking app (Vietcombank, MBBank, Techcombank, etc.).
+  6. Upon transfer settlement, payOS fires a secure webhook to `/api/payment/webhook`.
+  7. Server verifies webhook HMAC signature, checks idempotency via Cloudflare KV (`order_processed:{orderCode}`), upgrades the user's subscription in PocketBase (`subscription_tier = 'pro'`, `diamonds = 20`), and sets expiry timestamp.
+  8. Polling or next action detects the new tier, celebrates with confetti/toast, and unlocks Pro benefits immediately.
 
 

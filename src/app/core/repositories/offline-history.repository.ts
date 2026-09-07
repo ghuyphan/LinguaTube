@@ -4,6 +4,7 @@ import { HistoryItem, HistoryRecord } from '../../models';
 import { StorageService } from '../services/storage.service';
 import { PocketBaseService } from '../services/pocketbase.service';
 import { AuthService } from '../services/auth.service';
+import { getYouTubeThumbnail } from '../utils';
 import type PocketBase from 'pocketbase';
 
 const STORAGE_KEY = 'linguatube_history';
@@ -38,7 +39,7 @@ function sanitizeThumbnail(videoId: string, thumb?: string | null): string {
     if (thumb && /^https?:\/\//i.test(thumb.trim())) {
         return thumb.trim();
     }
-    return `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
+    return getYouTubeThumbnail(videoId, 'mqdefault');
 }
 
 function sanitizeTitle(title?: string | null): string {

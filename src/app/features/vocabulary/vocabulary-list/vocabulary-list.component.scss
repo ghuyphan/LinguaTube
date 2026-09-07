@@ -25,6 +25,23 @@
         border: none;
         border-radius: 0;
         padding: 0;
+        overflow: visible;
+        height: auto;
+
+        .word-list {
+            max-height: none;
+            overflow-y: visible;
+        }
+
+        .vocab-toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: var(--bg-primary);
+            padding: var(--space-xs) 0;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
     }
 }
 
@@ -186,7 +203,7 @@
 
 .vocab-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: var(--space-sm);
     padding: 8px 10px;
@@ -273,6 +290,7 @@
         align-items: center;
         gap: 6px;
         flex-shrink: 0;
+        padding-top: 1px;
     }
 }
 
@@ -294,13 +312,13 @@
 
     &:hover {
         background: var(--accent-primary);
-        color: #fff;
+        color: var(--text-inverse);
         transform: scale(1.06);
     }
 
     &.playing {
         background: var(--accent-primary);
-        color: #fff;
+        color: var(--text-inverse);
         animation: pulseAudio 1.2s infinite ease-in-out;
     }
 }
@@ -403,71 +421,6 @@
     50% { opacity: 0.75; }
 }
 
-// ============================================
-// TOAST NOTIFICATION
-// ============================================
-.toast {
-    position: absolute;
-    bottom: var(--space-sm);
-    left: var(--space-sm);
-    right: var(--space-sm);
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-    padding: 8px 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-md);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-    font-size: 0.75rem;
-    color: var(--text-primary);
-    z-index: 10;
-    animation: toastSlideUp 0.25s ease-out;
-
-    &__text {
-        flex: 1;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    &__undo-btn {
-        background: transparent;
-        border: none;
-        color: var(--accent-primary);
-        font-size: 0.75rem;
-        font-weight: 700;
-        cursor: pointer;
-        padding: 0 4px;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
-@keyframes toastSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes listItemIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
     .vocab-item {
         animation: none !important;
@@ -501,6 +454,8 @@
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
             gap: var(--space-sm);
+            align-items: flex-start;
+            min-height: 52px;
 
             &__word {
                 font-size: 1rem;
@@ -514,17 +469,27 @@
             &__meaning {
                 font-size: 0.8125rem;
             }
+
+            &__actions {
+                padding-top: 2px;
+                gap: 5px;
+            }
         }
     }
 }
 
 @media (max-width: 480px) {
     :host(:not(.sidebar-pane)) .vocab-item {
-        gap: var(--space-sm);
-        padding: 10px 12px;
+        gap: var(--space-xs);
+        padding: 10px 10px;
 
         &__actions {
-            gap: 6px;
+            gap: 4px;
+        }
+
+        .level-badge-btn {
+            min-width: 64px;
+            padding: 2px 6px;
         }
     }
 }

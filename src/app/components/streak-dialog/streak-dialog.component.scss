@@ -34,12 +34,12 @@
     transition: all 0.3s ease;
 
     &.active {
-        background: rgba(var(--warning-rgb), 0.15);
-        box-shadow: 0 0 30px rgba(var(--warning-rgb), 0.2);
+        background: rgba(var(--color-fire-rgb), 0.15);
+        box-shadow: 0 0 30px rgba(var(--color-fire-rgb), 0.2);
 
         .flame-icon {
-            color: var(--warning);
-            filter: drop-shadow(0 0 10px rgba(var(--warning-rgb), 0.5));
+            color: var(--color-fire);
+            filter: drop-shadow(0 0 10px rgba(var(--color-fire-rgb), 0.5));
             animation: flame-pulse 2s infinite ease-in-out;
         }
     }
@@ -124,9 +124,9 @@
         border: 2px solid transparent;
 
         &.active {
-            background: var(--warning);
-            color: white;
-            box-shadow: 0 2px 8px rgba(var(--warning-rgb), 0.3);
+            background: var(--color-fire);
+            color: var(--text-inverse);
+            box-shadow: 0 2px 8px rgba(var(--color-fire-rgb), 0.3);
         }
 
         &.missed {
@@ -136,12 +136,12 @@
 
     &.today {
         .day-name {
-            color: var(--warning);
+            color: var(--color-fire);
             font-weight: 700;
         }
 
         .day-circle {
-            border-color: var(--warning);
+            border-color: var(--color-fire);
             border-width: 2px;
         }
     }
@@ -182,15 +182,15 @@
     }
 
     &.highlighted {
-        background: rgba(var(--warning-rgb), 0.1);
-        border: 1px solid rgba(var(--warning-rgb), 0.2);
+        background: rgba(var(--color-fire-rgb), 0.1);
+        border: 1px solid rgba(var(--color-fire-rgb), 0.2);
 
         app-icon {
-            color: var(--warning);
+            color: var(--color-fire);
         }
 
         .stat-value {
-            color: var(--warning);
+            color: var(--color-fire);
         }
     }
 }

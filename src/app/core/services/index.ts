@@ -9,3 +9,5 @@ export * from './font-loader.service';
 export * from './seo.service';
 export * from './pwa.service';
 export * from './audio.service';
+export * from './toast.service';
+export * from './payment.service';

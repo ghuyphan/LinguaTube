@@ -27,147 +27,105 @@ async function getInnertube() {
     return innertubePromise;
 }
 
-/**
- * POST /api/whisper
- * Transcribe YouTube video using Gladia API
- * Gladia accepts YouTube URLs directly - no audio extraction needed!
- */
-app.post('/api/whisper', async (req, res) => {
-    const { videoId, result_url: providedResultUrl } = req.body;
-    const gladiaKey = process.env.GLADIA_API_KEY;
+// Proxy service configurations (matching Cloudflare Worker)
+const PROXY_SERVICE_CONFIG = {
+    invidious1: {
+        baseUrl: 'https://yewtu.be',
+        methods: ['GET'],
+        accept: 'application/json'
+    },
+    jisho: {
+        baseUrl: 'https://jisho.org',
+        methods: ['GET'],
+        accept: '*/*'
+    },
+    jotoba: {
+        baseUrl: 'https://jotoba.de',
+        methods: ['GET', 'POST'],
+        accept: 'application/json',
+        contentType: 'application/json'
+    },
+    piped1: {
+        baseUrl: 'https://pipedapi.kavin.rocks',
+        methods: ['GET'],
+        accept: 'application/json'
+    }
+};
 
-    if (!gladiaKey) {
-        return res.status(500).json({
-            error: 'GLADIA_API_KEY not set. Get your free key at gladia.io'
+function isInternalHost(hostname) {
+    const patterns = [
+        /^127\./,
+        /^10\./,
+        /^192\.168\./,
+        /^172\.(1[6-9]|2[0-9]|3[01])\./,
+        /^localhost$/i,
+        /^0\.0\.0\.0$/,
+        /^\[::1\]$/,
+    ];
+    return patterns.some(p => p.test(hostname));
+}
+
+/**
+ * ALL /proxy/:service/*
+ * Dev server forwarder for external APIs with SSRF protection
+ */
+app.all('/proxy/:service/*', async (req, res) => {
+    const { service } = req.params;
+    const config = PROXY_SERVICE_CONFIG[service];
+
+    if (!config) {
+        return res.status(400).json({
+            error: `Unknown service: ${service}. Available: ${Object.keys(PROXY_SERVICE_CONFIG).join(', ')}`
         });
     }
 
-    let resultUrl = providedResultUrl;
-
-    // Security: Validate result_url to prevent SSRF and API key leakage
-    if (providedResultUrl) {
-        try {
-            const parsed = new URL(providedResultUrl);
-            if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io') {
-                return res.status(400).json({ error: 'Invalid result_url: must be a gladia.io URL' });
-            }
-        } catch {
-            return res.status(400).json({ error: 'Invalid result_url format' });
-        }
-    }
-
-    if (!resultUrl) {
-        if (!videoId) {
-            return res.status(400).json({ error: 'videoId is required' });
-        }
-
-        const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        console.log(`[Gladia] Starting transcription for: ${youtubeUrl}`);
-
-        try {
-            // Step 1: Submit transcription request to Gladia
-            const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
-                method: 'POST',
-                headers: {
-                    'x-gladia-key': gladiaKey,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    audio_url: youtubeUrl
-                })
-            });
-
-            if (!submitResponse.ok) {
-                const errorData = await submitResponse.json().catch(() => ({}));
-                console.log('[Gladia] Full error:', JSON.stringify(errorData, null, 2));
-                throw new Error(`Gladia submit failed: ${submitResponse.status} - ${JSON.stringify(errorData)}`);
-            }
-
-            const submitData = await submitResponse.json();
-            console.log('[Gladia] Transcription submitted:', submitData.id || 'pending');
-            resultUrl = submitData.result_url;
-
-            if (!resultUrl) {
-                throw new Error('No result_url returned from Gladia');
-            }
-        } catch (error) {
-            console.error('[Gladia] Submit Error:', error.message);
-            return res.status(500).json({ error: error.message });
-        }
-    } else {
-        console.log('[Gladia] Polling existing job:', resultUrl);
+    if (!config.methods.includes(req.method)) {
+        return res.status(405).json({
+            error: `Method ${req.method} not allowed for ${service}`
+        });
     }
 
     try {
-        // Step 2: Poll for results (Gladia is async)
-        // For local dev, we can set a shorter timeout to simulate Cloudflare behavior if we want,
-        // but 20-30s is good to mimic the "return processing" behavior.
-        const startTime = Date.now();
-        const MAX_DURATION_MS = 25000;
-        const pollInterval = 3000;
+        const subPath = req.params[0] || '';
+        const segments = subPath.split('/').filter(seg => seg && seg !== '..' && !seg.startsWith('.'));
+        const targetPath = '/' + segments.join('/');
+        const queryString = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+        const targetUrl = `${config.baseUrl}${targetPath}${queryString}`;
 
-        while (Date.now() - startTime < MAX_DURATION_MS) {
-
-            // Check if we are running out of time
-            if (Date.now() - startTime > 20000) {
-                console.log('[Gladia] Timeout limit reached, returning processing status');
-                return res.json({
-                    status: 'processing',
-                    result_url: resultUrl
-                });
-            }
-
-            await new Promise(resolve => setTimeout(resolve, pollInterval));
-
-            const resultResponse = await fetch(resultUrl, {
-                headers: { 'x-gladia-key': gladiaKey }
-            });
-
-            if (!resultResponse.ok) {
-                console.log(`[Gladia] Poll failed: ${resultResponse.status}`);
-                continue;
-            }
-
-            const resultData = await resultResponse.json();
-
-            if (resultData.status === 'done') {
-                console.log(`[Gladia] Transcription complete!`);
-
-                // Convert Gladia format to our expected format
-                const utterances = resultData.result?.transcription?.utterances || [];
-                const segments = utterances.map((utt, index) => ({
-                    id: index,
-                    text: utt.text?.trim() || '',
-                    start: utt.start || 0,
-                    duration: (utt.end || 0) - (utt.start || 0)
-                }));
-
-                return res.json({
-                    success: true,
-                    language: resultData.result?.transcription?.languages?.[0] || 'unknown',
-                    duration: resultData.result?.metadata?.audio_duration || 0,
-                    segments
-                });
-            }
-
-            if (resultData.status === 'error') {
-                throw new Error(`Gladia transcription error: ${resultData.error_message || 'Unknown'}`);
-            }
-
-            console.log(`[Gladia] Status: ${resultData.status}`);
+        const parsedUrl = new URL(targetUrl);
+        if (isInternalHost(parsedUrl.hostname)) {
+            return res.status(400).json({ error: 'Invalid target: internal hosts not allowed' });
         }
 
-        // If time runs out
-        return res.json({
-            status: 'processing',
-            result_url: resultUrl
-        });
+        const headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Accept': config.accept || 'application/json'
+        };
 
+        if (config.contentType) {
+            headers['Content-Type'] = config.contentType;
+        }
+
+        const fetchOptions = {
+            method: req.method,
+            headers,
+            redirect: 'error'
+        };
+
+        if (req.method === 'POST') {
+            fetchOptions.body = JSON.stringify(req.body);
+        }
+
+        const response = await fetch(targetUrl, fetchOptions);
+        const data = await response.text();
+
+        res.status(response.status);
+        res.set('Content-Type', response.headers.get('Content-Type') || 'application/json');
+        res.set('Access-Control-Allow-Origin', '*');
+        res.send(data);
     } catch (error) {
-        console.error('[Gladia] Error:', error.message);
-        res.status(500).json({
-            error: error.message || 'Transcription failed'
-        });
+        console.error(`[Proxy Local ${service}] Error:`, error.message);
+        res.status(500).json({ error: error.message });
     }
 });
 
@@ -202,12 +160,13 @@ app.post('/api/translate/batch', async (req, res) => {
 });
 
 /**
- * GET /api/translate/:source/:target/:query
- * Translate single text in local development
+ * GET /api/translate/:source/:target/*
+ * Translate single text in local development (supports slashes in query)
  */
-app.get('/api/translate/:source/:target/:query', async (req, res) => {
+app.get('/api/translate/:source/:target/*', async (req, res) => {
     try {
-        const { source, target, query } = req.params;
+        const { source, target } = req.params;
+        const query = req.params[0];
         const translation = await translateWithGtx(query, source, target);
         res.json({ translation });
     } catch (error) {
@@ -539,7 +498,9 @@ app.get('/api/diamonds', (req, res) => {
             diamonds: devDiamonds,
             maxDiamonds: 3,
             nextRegenAt: devDiamonds < 3 ? devLastRegen + DEV_REGEN_INTERVAL_MS : null,
-            regenIntervalMs: DEV_REGEN_INTERVAL_MS
+            regenIntervalMs: DEV_REGEN_INTERVAL_MS,
+            tier: 'free',
+            maxVideoDurationSec: 900
         });
     } catch (err) {
         res.status(200).json({
@@ -550,6 +511,47 @@ app.get('/api/diamonds', (req, res) => {
             regenIntervalMs: DEV_REGEN_INTERVAL_MS
         });
     }
+});
+
+// Local Dev Payment Mock Endpoints
+const devOrders = new Map();
+
+app.post('/api/payment/create-order', (req, res) => {
+    const { planId = 'pro_1m' } = req.body || {};
+    const amount = planId === 'pro_1y' ? 490000 : 49000;
+    const orderCode = Math.floor(Date.now() / 1000) % 90000000 + 10000000;
+    const qrCode = `https://img.vietqr.io/image/970422-VOCA${orderCode}-compact2.png?amount=${amount}&addInfo=VOCA${orderCode}`;
+
+    devOrders.set(orderCode, { status: 'PENDING', amount, createdAt: Date.now() });
+
+    res.json({
+        success: true,
+        orderCode,
+        plan: planId,
+        amount,
+        checkoutUrl: qrCode,
+        qrCode,
+        isMock: true
+    });
+});
+
+app.get('/api/payment/check-status', (req, res) => {
+    const orderCode = parseInt(req.query.orderCode, 10);
+    const order = devOrders.get(orderCode);
+    res.json({
+        success: true,
+        status: order ? order.status : 'PENDING'
+    });
+});
+
+app.post('/api/payment/webhook', (req, res) => {
+    const data = req.body?.data || req.body || {};
+    const orderCode = parseInt(data.orderCode, 10);
+    if (orderCode && devOrders.has(orderCode)) {
+        devOrders.set(orderCode, { ...devOrders.get(orderCode), status: 'PAID' });
+    }
+    devDiamonds = 20; // Top up dev diamonds to 20
+    res.json({ success: true });
 });
 
 // Health check
@@ -1293,11 +1295,18 @@ app.post('/api/dual-subtitles', async (req, res) => {
     });
 });
 
+const segmenters = {
+    zh: new Intl.Segmenter('zh', { granularity: 'word' }),
+    ja: new Intl.Segmenter('ja', { granularity: 'word' }),
+    ko: new Intl.Segmenter('ko', { granularity: 'word' }),
+    en: new Intl.Segmenter('en', { granularity: 'word' })
+};
+
 /**
  * POST /api/tokenize-batch/:lang
  * Batch tokenization for subtitles in local dev
  */
-app.post('/api/tokenize-batch/:lang', async (req, res) => {
+app.post('/api/tokenize-batch/:lang', (req, res) => {
     const { lang } = req.params;
     const { texts } = req.body;
 
@@ -1306,11 +1315,7 @@ app.post('/api/tokenize-batch/:lang', async (req, res) => {
     }
 
     try {
-        let segmenter;
-        if (lang === 'zh') segmenter = zhSegmenter;
-        else if (lang === 'ja') segmenter = jaSegmenter;
-        else if (lang === 'ko') segmenter = koSegmenter;
-
+        const segmenter = segmenters[lang];
         const tokens = texts.map(text => {
             if (!text || typeof text !== 'string') return [];
             if (segmenter) {
@@ -1330,12 +1335,11 @@ app.post('/api/tokenize-batch/:lang', async (req, res) => {
 });
 
 /**
- * POST /api/tokenize/zh
- * Tokenize Chinese text using Intl.Segmenter (built into Node.js)
+ * POST /api/tokenize/:lang
+ * Unified tokenization using Intl.Segmenter (ja, zh, ko, en)
  */
-const zhSegmenter = new Intl.Segmenter('zh', { granularity: 'word' });
-
-app.post('/api/tokenize/zh', async (req, res) => {
+app.post('/api/tokenize/:lang', (req, res) => {
+    const { lang } = req.params;
     const { text } = req.body;
 
     if (!text || typeof text !== 'string') {
@@ -1343,73 +1347,19 @@ app.post('/api/tokenize/zh', async (req, res) => {
     }
 
     try {
-        // Use Intl.Segmenter for word segmentation
-        const segments = [...zhSegmenter.segment(text)];
+        const segmenter = segmenters[lang];
+        if (segmenter) {
+            const segments = [...segmenter.segment(text)];
+            const tokens = segments
+                .filter(seg => seg.isWordLike || seg.segment.trim())
+                .map(seg => ({ surface: seg.segment }));
+            return res.json({ tokens });
+        }
 
-        const tokens = segments
-            .filter(seg => seg.isWordLike || seg.segment.trim())
-            .map(seg => ({ surface: seg.segment }));
-
+        const tokens = text.split(/\s+/).filter(Boolean).map(word => ({ surface: word }));
         res.json({ tokens });
     } catch (error) {
-        console.error('[Tokenize ZH] Error:', error.message);
-        res.status(500).json({ error: error.message });
-    }
-});
-
-/**
- * POST /api/tokenize/ja
- * Tokenize Japanese text using Intl.Segmenter (built into Node.js)
- */
-const jaSegmenter = new Intl.Segmenter('ja', { granularity: 'word' });
-
-app.post('/api/tokenize/ja', async (req, res) => {
-    const { text } = req.body;
-
-    if (!text || typeof text !== 'string') {
-        return res.status(400).json({ error: 'Missing or invalid "text" field' });
-    }
-
-    try {
-        // Use Intl.Segmenter for word segmentation
-        const segments = [...jaSegmenter.segment(text)];
-
-        const tokens = segments
-            .filter(seg => seg.isWordLike || seg.segment.trim())
-            .map(seg => ({ surface: seg.segment }));
-
-        res.json({ tokens });
-    } catch (error) {
-        console.error('[Tokenize JA] Error:', error.message);
-        res.status(500).json({ error: error.message });
-    }
-});
-
-/**
- * POST /api/tokenize/ko
- * Tokenize Korean text using Intl.Segmenter (built into Node.js)
- * Korean is space-delimited, making segmentation straightforward
- */
-const koSegmenter = new Intl.Segmenter('ko', { granularity: 'word' });
-
-app.post('/api/tokenize/ko', async (req, res) => {
-    const { text } = req.body;
-
-    if (!text || typeof text !== 'string') {
-        return res.status(400).json({ error: 'Missing or invalid "text" field' });
-    }
-
-    try {
-        // Use Intl.Segmenter for word segmentation
-        const segments = [...koSegmenter.segment(text)];
-
-        const tokens = segments
-            .filter(seg => seg.isWordLike || seg.segment.trim())
-            .map(seg => ({ surface: seg.segment }));
-
-        res.json({ tokens });
-    } catch (error) {
-        console.error('[Tokenize KO] Error:', error.message);
+        console.error(`[Tokenize ${lang}] Error:`, error.message);
         res.status(500).json({ error: error.message });
     }
 });

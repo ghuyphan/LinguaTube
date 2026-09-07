@@ -14,7 +14,7 @@
             <button class="control-btn" (click)="toggleMute.emit()"
                 [attr.aria-label]="t()('player.mute') || 'Mute (m)'"
                 [title]="t()('player.mute') || 'Mute (m)'">
-                <app-icon [name]="getVolumeIcon()" [size]="18" />
+                <app-icon [name]="volumeIcon()" [size]="18" />
             </button>
             <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
                 <div class="volume-slider-track" (mousedown)="onVolumeSliderMouseDown($event)"
@@ -36,7 +36,7 @@
         <button class="control-btn mobile-only" (click)="toggleMute.emit()"
             [attr.aria-label]="t()('player.mute') || 'Mute (m)'"
             [title]="t()('player.mute') || 'Mute (m)'">
-            <app-icon [name]="getVolumeIcon()" [size]="18" />
+            <app-icon [name]="volumeIcon()" [size]="18" />
         </button>
     </div>
 

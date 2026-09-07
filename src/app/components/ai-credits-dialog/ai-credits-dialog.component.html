@@ -14,7 +14,7 @@
         @if (transcript.diamonds() === 0) {
         <div class="depleted-banner">
             <app-icon name="alert-circle" [size]="16" class="depleted-icon" />
-            <span>{{ i18n.t('subtitle.depletedNotice') || "You've used all 3 AI credits. Videos with existing YouTube captions remain 100% free!" }}</span>
+            <span>{{ i18n.t('subtitle.depletedNotice', { max: transcript.maxDiamonds() }) || "You've used all AI credits. Videos with existing YouTube captions remain 100% free!" }}</span>
         </div>
         }
     </div>
@@ -26,6 +26,14 @@
             <div class="info-content">
                 <strong>{{ i18n.t('subtitle.whatAreThey') }}</strong>
                 <p>{{ i18n.t('subtitle.whatAreTheyDesc') }}</p>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <app-icon name="play-circle" [size]="16" class="info-icon play-icon" />
+            <div class="info-content">
+                <strong>{{ i18n.t('subtitle.videoDurationCost') || 'How many credits per video?' }}</strong>
+                <p>{{ i18n.t('subtitle.videoDurationCostDesc') || 'Videos up to 10 minutes cost 1 credit. Videos between 10 and 20 minutes cost 2 credits (max 20 minutes allowed).' }}</p>
             </div>
         </div>
 
@@ -46,7 +54,42 @@
         </div>
     </div>
 
-    <button class="btn btn-primary credits-dismiss-btn" (click)="dismissed.emit()">
-        {{ i18n.t('subtitle.gotIt') || 'Got it' }}
-    </button>
+    @if (payment.currentOrder(); as order) {
+        <div class="qr-upgrade-card">
+            <div class="qr-header">
+                <h3>Voca Pro (1 Month)</h3>
+                <span class="qr-amount">{{ order.amount | number }} đ</span>
+            </div>
+            <div class="qr-code-wrapper">
+                <img [src]="order.qrCode" alt="VietQR Payment Code" class="qr-code-img" />
+            </div>
+            <div class="qr-instructions">
+                <p>Scan VietQR with any mobile banking app</p>
+                <div class="status-indicator">
+                    @if (payment.isPaid()) {
+                        <span class="status-badge status-paid">
+                            <app-icon name="check-circle" [size]="14" /> Upgraded to Pro!
+                        </span>
+                    } @else {
+                        <span class="status-badge status-waiting">
+                            <span class="spinner-dot"></span> Waiting for transfer...
+                        </span>
+                    }
+                </div>
+            </div>
+            <button class="btn btn-secondary btn-sm" (click)="payment.clearOrder()">Cancel</button>
+        </div>
+    } @else {
+        <div class="dialog-actions">
+            @if (auth.isLoggedIn() && transcript.userTier() !== 'pro' && transcript.userTier() !== 'premium') {
+                <button class="btn btn-upgrade" (click)="startUpgrade('pro_1m')" [disabled]="payment.isCreating()">
+                    <app-icon name="zap" [size]="16" />
+                    <span>{{ payment.isCreating() ? 'Generating QR...' : (i18n.t('subtitle.upgradeToPro') || 'Upgrade to Pro (49k/mo)') }}</span>
+                </button>
+            }
+            <button class="btn btn-primary credits-dismiss-btn" (click)="dismissed.emit()">
+                {{ i18n.t('subtitle.gotIt') || 'Got it' }}
+            </button>
+        </div>
+    }
 </div>

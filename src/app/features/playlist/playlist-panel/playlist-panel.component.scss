@@ -79,18 +79,6 @@
     }
 }
 
-@keyframes listItemIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 // Apply staggered entrance to content when it replaces skeleton
 // BUT exclude drag previews to prevent jumping/transform conflicts
 .playlist-item:not(.playlist-item--skeleton):not(.cdk-drag-preview):not(.cdk-drag-placeholder) {

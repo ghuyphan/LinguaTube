@@ -51,8 +51,8 @@
     --btn-primary-text: #ffffff;
 
     /* Semantic colors */
-    --success: #1cb0f6;
-    --success-rgb: 28, 176, 246;
+    --success: #22c55e;
+    --success-rgb: 34, 197, 94;
     --warning: #ffc800;
     --warning-rgb: 255, 200, 0;
     --error: #ff4b4b;
@@ -87,9 +87,18 @@
 
     /* Gamification & Semantic accents */
     --color-fire: #f59e0b;
+    --color-fire-rgb: 245, 158, 11;
     --color-diamond: #60a5fa;
+    --color-diamond-rgb: 96, 165, 250;
     --success-green: #22c55e;
     --success-green-rgb: 34, 197, 94;
+
+    /* Subscription Tier Gradients */
+    --gradient-pro: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+    --gradient-premium: linear-gradient(135deg, #fde68a 0%, #fca5a5 25%, #c4b5fd 50%, #93c5fd 75%, #60a5fa 100%);
+
+    /* Layout metrics */
+    --sidebar-width: 15.75rem;
 
     /* Spacing scale */
     --space-2xs: 0.25rem;
@@ -121,6 +130,7 @@
     /* Borders & Shadows */
     --border-color: #e5e7eb;
     --border-width: 2px;
+    --border-radius-xs: 8px;
     --border-radius-sm: 12px;
     --border-radius: 16px;
     --border-radius-md: 20px;
@@ -197,11 +207,6 @@
     --z-google-signin: 20000;
 }
 
-:root.standalone-mode {
-    --bottom-nav-height: 4rem;
-    --bottom-nav-safe-area: var(--safe-area-bottom);
-}
-
 [data-theme="dark"] {
     --bg-primary: #0f1117;
     --bg-secondary: #181818;
@@ -226,6 +231,9 @@
     --accent-primary-soft: rgba(255, 107, 107, 0.15);
     --accent-secondary-soft: rgba(168, 85, 247, 0.15);
 
+    --success: #4ade80;
+    --success-rgb: 74, 222, 128;
+
     --word-new: rgba(255, 75, 75, 0.15);
     --word-new-text: #ff6b6b;
     --word-learning: rgba(255, 200, 0, 0.15);
@@ -248,7 +256,9 @@
     --color-grammar: #fbbf24;
     --color-grammar-rgb: 251, 191, 36;
     --color-fire: #fbbf24;
+    --color-fire-rgb: 251, 191, 36;
     --color-diamond: #93c5fd;
+    --color-diamond-rgb: 147, 197, 253;
     --success-green: #4ade80;
     --success-green-rgb: 74, 222, 128;
 

@@ -1141,13 +1141,15 @@ export class VideoPlayerComponent implements OnDestroy {
     const entry = this.fsEntry();
     const lang = this.settings.settings().language;
     const sentence = this.fsSelectedSentence();
+    const videoId = this.youtube.currentVideo()?.id || undefined;
+    const timestamp = this.youtube.currentTime();
 
     if (!word) return;
 
     if (entry) {
-      this.vocab.addFromDictionary(entry, lang, sentence);
+      this.vocab.addFromDictionary(entry, lang, sentence, videoId, timestamp);
     } else {
-      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, word.romanization, sentence);
+      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, word.romanization, sentence, undefined, videoId, timestamp);
     }
 
     this.fsWordSaved.set(true);

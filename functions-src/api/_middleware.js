@@ -9,6 +9,12 @@ import { jsonResponse } from '../utils/utils.js';
 export async function onRequest(context) {
     const { request, next } = context;
 
+    // Fast-path bypass for payment webhook endpoints (payOS server-to-server notifications)
+    const url = new URL(request.url);
+    if (url.pathname.startsWith('/api/payment/webhook')) {
+        return next();
+    }
+
     // Fast-path bot defense check
     const botCheck = checkBot(request);
     if (botCheck.isBot) {

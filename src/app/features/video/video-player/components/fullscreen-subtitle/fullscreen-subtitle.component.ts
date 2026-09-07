@@ -53,32 +53,32 @@ import { VocabularyService } from '../../../../vocabulary';
           <div class="fs-subtitle-content">
             <div class="fs-subtitle-text" [class]="'text-' + language()">
               <!-- Direct text display only if tokenizing AND no tokens yet -->
-              @if (isTokenizing() && tokens().length === 0) {
+              @if (isTokenizing() && viewTokens().length === 0) {
                 <span class="fs-word">{{ cue.text }}</span>
               } @else { 
                 <!-- Interactive token display -->
-                @for (token of tokens(); track token.surface + '-' + $index) {
-                  @if (token.isPunctuation) {
-                    <span class="fs-word fs-word--punctuation">{{ token.surface }}</span>
+                @for (vt of viewTokens(); track vt.surface + '-' + vt.index) {
+                  @if (vt.isPunctuation) {
+                    <span class="fs-word fs-word--punctuation">{{ vt.surface }}</span>
                   } @else {
                     <button type="button"
                       class="fs-word" 
-                      [class.fs-word--saved]="vocab.hasWord(token.surface)"
-                      [class.fs-word--new]="vocab.getWordLevel(token.surface) === 'new'"
-                      [class.fs-word--learning]="vocab.getWordLevel(token.surface) === 'learning'"
-                      [class.fs-word--known]="vocab.getWordLevel(token.surface) === 'known'"
-                      [class.fs-word--grammar]="isGrammarToken($index)" 
-                      [attr.aria-label]="'Look up ' + token.surface"
-                      (click)="onWordClick(token, cue.text, $index, $event)">
+                      [class.fs-word--saved]="vt.isSaved"
+                      [class.fs-word--new]="vt.wordLevel === 'new'"
+                      [class.fs-word--learning]="vt.wordLevel === 'learning'"
+                      [class.fs-word--known]="vt.wordLevel === 'known'"
+                      [class.fs-word--grammar]="vt.isGrammar" 
+                      [attr.aria-label]="'Look up ' + vt.surface"
+                      (click)="onWordClick(vt.token, cue.text, vt.index, $event)">
                       
                       @if (showReadingAnnotation()) {
-                        @if (getReading(token)) {
-                          <ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt></ruby>
+                        @if (vt.reading) {
+                          <ruby>{{ vt.surface }}<rt>{{ vt.reading }}</rt></ruby>
                         } @else {
-                          <ruby>{{ token.surface }}<rt class="rt-empty">&#160;</rt></ruby>
+                          <ruby>{{ vt.surface }}<rt class="rt-empty">&#160;</rt></ruby>
                         }
                       } @else {
-                        {{ getDisplayText(token) }}
+                        {{ vt.displayText }}
                       }
                     </button>
                   }
@@ -147,6 +147,44 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     isTop = computed(() => this.yPercent() < 50);
     isNearBottom = computed(() => this.yPercent() > 68);
     showReadingAnnotation = computed(() => this.settings.showReadingAnnotation(this.language()));
+
+    readonly grammarTokenIndices = computed(() => {
+        const matches = this.grammarMatches();
+        const indices = new Set<number>();
+        for (const match of matches) {
+            for (const idx of match.tokenIndices) {
+                indices.add(idx);
+            }
+        }
+        return indices;
+    });
+
+    readonly viewTokens = computed(() => {
+        const tokens = this.tokens();
+        const grammarIndices = this.grammarTokenIndices();
+        const lang = this.language();
+        const readingOnly = this.settings.useReadingOnly(lang);
+
+        return tokens.map((token, index) => {
+            const isGrammar = grammarIndices.has(index);
+            const wordLevel = this.vocab.getWordLevel(token.surface);
+            const isSaved = wordLevel !== null;
+            const reading = this.settings.getReadingText(lang, token) || undefined;
+            const displayText = readingOnly && reading ? reading : token.surface;
+
+            return {
+                token,
+                index,
+                isPunctuation: token.isPunctuation,
+                surface: token.surface,
+                isGrammar,
+                isSaved,
+                wordLevel,
+                reading,
+                displayText
+            };
+        });
+    });
 
     onHandlePointerDown(event: PointerEvent): void {
         if (event.button !== 0) return;
@@ -241,24 +279,9 @@ export class FullscreenSubtitleComponent implements OnDestroy {
         this.cleanupDragListeners?.();
         this.cleanupDragListeners = null;
     }
-    isGrammarToken(index: number): boolean {
-        return this.grammarMatches().some(match => match.tokenIndices.includes(index));
-    }
-
-    getReading(token: Token): string | undefined {
-        return this.settings.getReadingText(this.language(), token) || undefined;
-    }
-
-    getDisplayText(token: Token): string {
-        if (this.settings.useReadingOnly(this.language())) {
-            return this.getReading(token) || token.surface;
-        }
-
-        return token.surface;
-    }
 
     onWordClick(token: Token, context: string, index: number, event: MouseEvent): void {
-        if (this.isGrammarToken(index)) {
+        if (this.grammarTokenIndices().has(index)) {
             this.grammarClicked.emit({ index, event });
         } else {
             this.wordClicked.emit({ token, context, event });

@@ -1,14 +1,79 @@
 /**
- * Service for managing Diamond Credit System
+ * Service for managing Diamond Credit System with Multi-Tier Support
  */
 
-export const DIAMOND_CONFIG = {
-    regenIntervalMinutes: 20,           // How often diamonds regenerate (20 minutes)
-    regenIntervalMs: 20 * 60 * 1000,   // 20 minutes in ms
-    regenAmount: 1,                    // +1 diamond per interval
-    maxDiamonds: 3,                    // Maximum free diamonds a user can hold
-    cachePrefix: 'diamonds',           // KV cache prefix for anonymous users
+export const TIER_CONFIGS = {
+    anonymous: {
+        tier: 'anonymous',
+        maxDiamonds: 3,
+        regenIntervalMinutes: 20,
+        regenIntervalMs: 20 * 60 * 1000,
+        regenAmount: 1,
+        maxVideoDurationSec: 600, // 10 minutes
+    },
+    free: {
+        tier: 'free',
+        maxDiamonds: 5,
+        regenIntervalMinutes: 15,
+        regenIntervalMs: 15 * 60 * 1000,
+        regenAmount: 1,
+        maxVideoDurationSec: 900, // 15 minutes
+    },
+    pro: {
+        tier: 'pro',
+        maxDiamonds: 20,
+        regenIntervalMinutes: 5,
+        regenIntervalMs: 5 * 60 * 1000,
+        regenAmount: 1,
+        maxVideoDurationSec: 1800, // 30 minutes
+    },
+    premium: {
+        tier: 'premium',
+        maxDiamonds: 20,
+        regenIntervalMinutes: 5,
+        regenIntervalMs: 5 * 60 * 1000,
+        regenAmount: 1,
+        maxVideoDurationSec: 1800, // 30 minutes
+    }
 };
+
+export const DIAMOND_CONFIG = TIER_CONFIGS.anonymous;
+
+export function getTierDiamondConfig(tier = 'free') {
+    return TIER_CONFIGS[tier] || TIER_CONFIGS.free;
+}
+
+// In-memory cache across warm Worker isolates to protect KV write quotas (Rule 2)
+const memDiamondsCache = new Map();
+const MEM_DIAMONDS_TTL_MS = 60 * 1000; // 60s warm memory cache
+
+// In-memory cache for PocketBase admin auth token
+let cachedAdminToken = null;
+let adminTokenExpiresAt = 0;
+
+async function getPocketBaseAdminToken(env) {
+    const now = Date.now();
+    if (cachedAdminToken && now < adminTokenExpiresAt) {
+        return cachedAdminToken;
+    }
+    const pbUrl = env?.PB_URL || env?.POCKETHOST_URL || 'https://voca.pockethost.io';
+    if (!env?.PB_ADMIN_EMAIL || !env?.PB_ADMIN_PASSWORD) {
+        return null;
+    }
+    const authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ identity: env.PB_ADMIN_EMAIL, password: env.PB_ADMIN_PASSWORD })
+    });
+    if (!authRes.ok) {
+        console.error(`[DiamondService] PocketBase admin auth failed: ${authRes.status}`);
+        return null;
+    }
+    const authData = await authRes.json();
+    cachedAdminToken = authData.token;
+    adminTokenExpiresAt = now + 45 * 60 * 1000; // Cache 45 minutes
+    return cachedAdminToken;
+}
 
 export class DiamondService {
     /**
@@ -19,40 +84,56 @@ export class DiamondService {
     }
 
     /**
+     * Determine user tier
+     */
+    resolveTier(user = null) {
+        if (!user) return 'anonymous';
+        const tier = user.subscriptionTier || 'free';
+        if (tier === 'free') return 'free';
+        if (user.subscriptionExpires && new Date(user.subscriptionExpires) < new Date()) {
+            return 'free'; // Subscription expired
+        }
+        return (tier === 'pro' || tier === 'premium') ? tier : 'free';
+    }
+
+    /**
      * Get current diamond count for a user
      * - Authenticated users: Read from PocketBase user record
-     * - Anonymous users: Read from KV (regenerates over time)
+     * - Anonymous users: Read from KV (regenerates over time, throttled to protect quotas)
      * 
      * @param {string} clientId - The IP or identifier for the unauthenticated user
      * @param {Object} [user=null] - The authenticated PocketBase user object
-     * @returns {Promise<{ diamonds: number, nextRegenAt: number | null, maxDiamonds: number, regenIntervalMs: number }>}
+     * @returns {Promise<{ diamonds: number, nextRegenAt: number | null, maxDiamonds: number, regenIntervalMs: number, tier: string, maxVideoDurationSec: number }>}
      */
     async getDiamonds(clientId, user = null) {
+        const tier = this.resolveTier(user);
+        const config = getTierDiamondConfig(tier);
+
         if (user) {
             // Authenticated user
-            let currentDiamonds = user.diamonds ?? DIAMOND_CONFIG.maxDiamonds; // Default to max for new users
+            let currentDiamonds = user.diamonds ?? config.maxDiamonds;
             let lastRegenDate = user.last_diamond_regen ? new Date(user.last_diamond_regen) : new Date();
             let nextRegenAt = null;
             let needsUpdate = false;
 
             // Calculate regeneration if not at max
-            if (currentDiamonds < DIAMOND_CONFIG.maxDiamonds) {
+            if (currentDiamonds < config.maxDiamonds) {
                 const now = new Date();
                 const msSinceLastRegen = now.getTime() - lastRegenDate.getTime();
 
-                if (msSinceLastRegen >= DIAMOND_CONFIG.regenIntervalMs) {
-                    const intervalsPassed = Math.floor(msSinceLastRegen / DIAMOND_CONFIG.regenIntervalMs);
-                    const regeneratedAmount = intervalsPassed * DIAMOND_CONFIG.regenAmount;
-                    currentDiamonds = Math.min(currentDiamonds + regeneratedAmount, DIAMOND_CONFIG.maxDiamonds);
+                if (msSinceLastRegen >= config.regenIntervalMs) {
+                    const intervalsPassed = Math.floor(msSinceLastRegen / config.regenIntervalMs);
+                    const regeneratedAmount = intervalsPassed * config.regenAmount;
+                    currentDiamonds = Math.min(currentDiamonds + regeneratedAmount, config.maxDiamonds);
 
                     // Update last regen time by adding the intervals passed
-                    lastRegenDate = new Date(lastRegenDate.getTime() + (intervalsPassed * DIAMOND_CONFIG.regenIntervalMs));
+                    lastRegenDate = new Date(lastRegenDate.getTime() + (intervalsPassed * config.regenIntervalMs));
                     needsUpdate = true;
                 }
 
                 // Calculate next regen time if still strictly below max
-                if (currentDiamonds < DIAMOND_CONFIG.maxDiamonds) {
-                    nextRegenAt = lastRegenDate.getTime() + DIAMOND_CONFIG.regenIntervalMs;
+                if (currentDiamonds < config.maxDiamonds) {
+                    nextRegenAt = lastRegenDate.getTime() + config.regenIntervalMs;
                 }
             }
 
@@ -61,84 +142,92 @@ export class DiamondService {
                 nextRegenAt,
                 needsUpdate,
                 lastRegenDate, // For passing to consumeDiamond
-                maxDiamonds: DIAMOND_CONFIG.maxDiamonds,
-                regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
+                maxDiamonds: config.maxDiamonds,
+                regenIntervalMs: config.regenIntervalMs,
+                tier,
+                maxVideoDurationSec: config.maxVideoDurationSec
             };
         }
 
-        // Anonymous user (KV Cache)
-        const cacheKey = `${DIAMOND_CONFIG.cachePrefix}:${clientId}`;
+        // Anonymous user (Memory cache first, then KV)
+        const cacheKey = `diamonds:${clientId}`;
+        const now = Date.now();
+
+        // 1. Check in-memory isolate cache
+        const memHit = memDiamondsCache.get(cacheKey);
         let cacheData = null;
 
-        if (this.cacheManager && this.cacheManager.kv) {
+        if (memHit && (now - memHit.cachedAt) < MEM_DIAMONDS_TTL_MS) {
+            cacheData = memHit.data;
+        } else if (this.cacheManager && this.cacheManager.kv) {
             try {
                 const raw = await this.cacheManager.kv.get(cacheKey);
-                if (raw) cacheData = JSON.parse(raw);
+                if (raw) {
+                    cacheData = JSON.parse(raw);
+                    if (memDiamondsCache.size > 500) {
+                        const oldestKey = memDiamondsCache.keys().next().value;
+                        memDiamondsCache.delete(oldestKey);
+                    }
+                    memDiamondsCache.set(cacheKey, { data: cacheData, cachedAt: now });
+                }
             } catch (e) {
                 console.error(`[DiamondService] KV read error: ${e.message}`);
-                // Proceed as if new user on error (to avoid locking them out)
             }
         }
-
-        const now = Date.now();
 
         // New anonymous user
         if (!cacheData) {
             return {
-                diamonds: DIAMOND_CONFIG.maxDiamonds,
+                diamonds: config.maxDiamonds,
                 nextRegenAt: null,
-                maxDiamonds: DIAMOND_CONFIG.maxDiamonds,
-                regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
+                maxDiamonds: config.maxDiamonds,
+                regenIntervalMs: config.regenIntervalMs,
+                tier,
+                maxVideoDurationSec: config.maxVideoDurationSec
             };
         }
 
         let { d: currentDiamonds, l: lastRegenTime } = cacheData;
 
         // Calculate regeneration
-        if (currentDiamonds < DIAMOND_CONFIG.maxDiamonds) {
+        if (currentDiamonds < config.maxDiamonds) {
             const msSinceLastRegen = now - lastRegenTime;
 
-            if (msSinceLastRegen >= DIAMOND_CONFIG.regenIntervalMs) {
-                const intervalsPassed = Math.floor(msSinceLastRegen / DIAMOND_CONFIG.regenIntervalMs);
-                const regeneratedAmount = intervalsPassed * DIAMOND_CONFIG.regenAmount;
-                currentDiamonds = Math.min(currentDiamonds + regeneratedAmount, DIAMOND_CONFIG.maxDiamonds);
-                lastRegenTime = lastRegenTime + (intervalsPassed * DIAMOND_CONFIG.regenIntervalMs);
+            if (msSinceLastRegen >= config.regenIntervalMs) {
+                const intervalsPassed = Math.floor(msSinceLastRegen / config.regenIntervalMs);
+                const regeneratedAmount = intervalsPassed * config.regenAmount;
+                currentDiamonds = Math.min(currentDiamonds + regeneratedAmount, config.maxDiamonds);
+                lastRegenTime = lastRegenTime + (intervalsPassed * config.regenIntervalMs);
 
-                // Opportunistically save to KV (fire and forget)
+                const newCacheData = { d: currentDiamonds, l: lastRegenTime };
+                memDiamondsCache.set(cacheKey, { data: newCacheData, cachedAt: now });
+
+                // Throttled KV write (fire and forget) to preserve KV daily quota
                 if (this.cacheManager && this.cacheManager.kv) {
-                    const newCacheData = { d: currentDiamonds, l: lastRegenTime };
-                    this.cacheManager.kv.put(cacheKey, JSON.stringify(newCacheData), { expirationTtl: 30 * 24 * 60 * 60 }) // 30 days
+                    this.cacheManager.kv.put(cacheKey, JSON.stringify(newCacheData), { expirationTtl: 30 * 24 * 60 * 60 })
                         .catch(e => console.error(`[DiamondService] KV regen update error: ${e.message}`));
                 }
             }
         }
 
-        const nextRegenAt = currentDiamonds < DIAMOND_CONFIG.maxDiamonds
-            ? lastRegenTime + DIAMOND_CONFIG.regenIntervalMs
+        const nextRegenAt = currentDiamonds < config.maxDiamonds
+            ? lastRegenTime + config.regenIntervalMs
             : null;
 
         return {
             diamonds: currentDiamonds,
             nextRegenAt,
-            maxDiamonds: DIAMOND_CONFIG.maxDiamonds,
-            regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
+            maxDiamonds: config.maxDiamonds,
+            regenIntervalMs: config.regenIntervalMs,
+            tier,
+            maxVideoDurationSec: config.maxVideoDurationSec
         };
     }
 
     /**
-     * Consume a diamond for AI transcription
-     * - Authenticated users: Update PocketBase user record
-     * - Anonymous users: Update KV cache
-     * 
-     * @param {string} clientId 
-     * @param {Object} context - Cloudflare execution context for waitUntil
-     * @param {Object} env - Cloudflare environment bindings
-     * @param {Object} [user=null] 
-     * @param {number} [amount=1] - Number of diamonds to consume (e.g. 1 for short, 2 for longer videos)
-     * @returns {Promise<{ success: boolean, reason?: string, requiredDiamonds?: number, diamonds: number, nextRegenAt: number | null, regenIntervalMs: number }>}
+     * Consume diamond(s) for AI transcription
      */
     async consumeDiamond(clientId, context, env, user = null, amount = 1) {
-        // 1. Get current accurate count (including any pending regen)
         const currentData = await this.getDiamonds(clientId, user);
 
         if (currentData.diamonds < amount) {
@@ -148,44 +237,39 @@ export class DiamondService {
                 requiredDiamonds: amount,
                 diamonds: currentData.diamonds,
                 nextRegenAt: currentData.nextRegenAt,
-                regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
+                regenIntervalMs: currentData.regenIntervalMs,
+                tier: currentData.tier
             };
         }
 
         const newDiamondCount = Math.max(0, currentData.diamonds - amount);
         const now = Date.now();
-        // If they were at max, the regen timer starts NOW.
-        // If they were below max, the regen timer continues from lastRegenDate
-        const lastRegenTime = currentData.diamonds === DIAMOND_CONFIG.maxDiamonds
+        const lastRegenTime = currentData.diamonds === currentData.maxDiamonds
             ? now
             : (user ? currentData.lastRegenDate.getTime() : (await this._getRawAnonymousLastRegen(clientId) || now));
 
-        const nextRegenAt = lastRegenTime + DIAMOND_CONFIG.regenIntervalMs;
+        const nextRegenAt = lastRegenTime + currentData.regenIntervalMs;
 
-        // 2. Persist the new state
-        const pbUrl = env?.PB_URL || env?.POCKETHOST_URL || 'https://voca.pockethost.io';
+        // Persist the new state
         if (user) {
-            // Authenticated user -> Update PocketBase via background task
-            if (pbUrl && env.PB_ADMIN_EMAIL && env.PB_ADMIN_PASSWORD) {
-                const updateTask = this._updatePocketBaseUser(
-                    env,
-                    user.id,
-                    newDiamondCount,
-                    new Date(lastRegenTime).toISOString()
-                );
+            const updateTask = this._updatePocketBaseUser(
+                env,
+                user.id,
+                newDiamondCount,
+                new Date(lastRegenTime).toISOString()
+            );
 
-                if (context && context.waitUntil) {
-                    context.waitUntil(updateTask);
-                } else {
-                    await updateTask;
-                }
+            if (context && context.waitUntil) {
+                context.waitUntil(updateTask);
+            } else {
+                await updateTask;
             }
         } else {
-            // Anonymous user -> Update KV Cache
-            if (this.cacheManager && this.cacheManager.kv) {
-                const cacheKey = `${DIAMOND_CONFIG.cachePrefix}:${clientId}`;
-                const newCacheData = { d: newDiamondCount, l: lastRegenTime };
+            const cacheKey = `diamonds:${clientId}`;
+            const newCacheData = { d: newDiamondCount, l: lastRegenTime };
+            memDiamondsCache.set(cacheKey, { data: newCacheData, cachedAt: now });
 
+            if (this.cacheManager && this.cacheManager.kv) {
                 const kvTask = this.cacheManager.kv.put(cacheKey, JSON.stringify(newCacheData), { expirationTtl: 30 * 24 * 60 * 60 });
                 if (context && context.waitUntil) {
                     context.waitUntil(kvTask.catch(e => console.error(`[DiamondCache] consume error: ${e.message}`)));
@@ -199,7 +283,9 @@ export class DiamondService {
             success: true,
             diamonds: newDiamondCount,
             nextRegenAt,
-            regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
+            maxDiamonds: currentData.maxDiamonds,
+            regenIntervalMs: currentData.regenIntervalMs,
+            tier: currentData.tier
         };
     }
 
@@ -209,27 +295,27 @@ export class DiamondService {
     async refundDiamond(clientId, context, env, user = null, amount = 1) {
         try {
             const currentData = await this.getDiamonds(clientId, user);
-            const newDiamondCount = Math.min(DIAMOND_CONFIG.maxDiamonds, currentData.diamonds + amount);
-            const pbUrl = env?.PB_URL || env?.POCKETHOST_URL || 'https://voca.pockethost.io';
+            const newDiamondCount = Math.min(currentData.maxDiamonds, currentData.diamonds + amount);
+
             if (user) {
-                if (pbUrl && env.PB_ADMIN_EMAIL && env.PB_ADMIN_PASSWORD) {
-                    const updateTask = this._updatePocketBaseUser(
-                        env,
-                        user.id,
-                        newDiamondCount,
-                        currentData.lastRegenDate ? currentData.lastRegenDate.toISOString() : new Date().toISOString()
-                    );
-                    if (context && context.waitUntil) {
-                        context.waitUntil(updateTask);
-                    } else {
-                        await updateTask;
-                    }
+                const updateTask = this._updatePocketBaseUser(
+                    env,
+                    user.id,
+                    newDiamondCount,
+                    currentData.lastRegenDate ? currentData.lastRegenDate.toISOString() : new Date().toISOString()
+                );
+                if (context && context.waitUntil) {
+                    context.waitUntil(updateTask);
+                } else {
+                    await updateTask;
                 }
             } else {
+                const cacheKey = `diamonds:${clientId}`;
+                const raw = await this._getRawAnonymousLastRegen(clientId);
+                const newCacheData = { d: newDiamondCount, l: raw || Date.now() };
+                memDiamondsCache.set(cacheKey, { data: newCacheData, cachedAt: Date.now() });
+
                 if (this.cacheManager && this.cacheManager.kv) {
-                    const cacheKey = `${DIAMOND_CONFIG.cachePrefix}:${clientId}`;
-                    const raw = await this._getRawAnonymousLastRegen(clientId);
-                    const newCacheData = { d: newDiamondCount, l: raw || Date.now() };
                     const kvTask = this.cacheManager.kv.put(cacheKey, JSON.stringify(newCacheData), { expirationTtl: 30 * 24 * 60 * 60 });
                     if (context && context.waitUntil) {
                         context.waitUntil(kvTask.catch(e => console.error(`[DiamondCache] refund error: ${e.message}`)));
@@ -238,7 +324,7 @@ export class DiamondService {
                     }
                 }
             }
-            return { success: true, diamonds: newDiamondCount };
+            return { success: true, diamonds: newDiamondCount, maxDiamonds: currentData.maxDiamonds, tier: currentData.tier };
         } catch (err) {
             console.error('[DiamondService] Error refunding diamonds:', err);
             return { success: false, error: err.message };
@@ -246,8 +332,11 @@ export class DiamondService {
     }
 
     async _getRawAnonymousLastRegen(clientId) {
+        const cacheKey = `diamonds:${clientId}`;
+        const memHit = memDiamondsCache.get(cacheKey);
+        if (memHit?.data?.l) return memHit.data.l;
+
         if (!this.cacheManager || !this.cacheManager.kv) return null;
-        const cacheKey = `${DIAMOND_CONFIG.cachePrefix}:${clientId}`;
         try {
             const raw = await this.cacheManager.kv.get(cacheKey);
             if (raw) return JSON.parse(raw).l;
@@ -258,16 +347,11 @@ export class DiamondService {
     async _updatePocketBaseUser(env, userId, diamonds, lastRegenIsoString) {
         const pbUrl = env?.PB_URL || env?.POCKETHOST_URL || 'https://voca.pockethost.io';
         try {
-            // Simple generic approach, abstract this better if more PB operations are needed natively
-            const authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ identity: env.PB_ADMIN_EMAIL, password: env.PB_ADMIN_PASSWORD })
-            });
-
-            if (!authRes.ok) throw new Error('Failed to authenticate as admin');
-            const authData = await authRes.json();
-            const token = authData.token;
+            const token = await getPocketBaseAdminToken(env);
+            if (!token) {
+                console.warn('[DiamondService] Skipping PB user update: admin credentials not configured');
+                return;
+            }
 
             const updateRes = await fetch(`${pbUrl}/api/collections/users/records/${userId}`, {
                 method: 'PATCH',

@@ -32,17 +32,6 @@ export class StreakService {
         milestone?: number;
     } | null>(null);
 
-    constructor() {
-        // Init handled by repo
-    }
-
-    /**
-     * Load streak data
-     */
-    async loadStreak(): Promise<void> {
-        await this.repo.syncWithRemote();
-    }
-
     /**
      * Record activity - called when user completes a study session
      */
@@ -51,13 +40,6 @@ export class StreakService {
         if (result) {
             this.lastActivityResult.set(result);
         }
-    }
-
-    /**
-     * Sync with server manually
-     */
-    async syncWithServer(): Promise<void> {
-        await this.repo.syncWithRemote();
     }
 
     /**

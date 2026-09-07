@@ -7,7 +7,7 @@ import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bo
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { DictionaryService } from '../dictionary.service';
 import { VocabularyService } from '../../vocabulary';
-import { SubtitleService } from '../../video';
+import { SubtitleService, YoutubeService } from '../../video';
 import { SettingsService, I18nService } from '../../../core/services';
 import { TranslationService } from '../../../services';
 import { Token, DictionaryEntry } from '../../../models';
@@ -29,6 +29,7 @@ export class WordPopupComponent implements OnDestroy {
   translation = inject(TranslationService);
   i18n = inject(I18nService);
   subtitles = inject(SubtitleService);
+  youtube = inject(YoutubeService);
 
   selectedWord = input<Token | null>(null);
   currentSentence = input<string>('');
@@ -138,13 +139,15 @@ export class WordPopupComponent implements OnDestroy {
     const entryData = this.entry();
     const lang = this.subtitles.loadedLanguage() || this.settings.settings().language;
     const sentence = this.currentSentence();
+    const videoId = this.youtube.currentVideo()?.id;
+    const timestamp = this.youtube.currentTime();
 
     if (!word) return;
 
     if (entryData) {
-      this.vocab.addFromDictionary(entryData, lang, sentence);
+      this.vocab.addFromDictionary(entryData, lang, sentence, videoId, timestamp);
     } else {
-      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, word.romanization, sentence);
+      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, word.romanization, sentence, undefined, videoId, timestamp);
     }
   }
 

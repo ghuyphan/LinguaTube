@@ -30,11 +30,18 @@
 // Playlist Toolbar & Tabs (Stable, zero layout shift)
 // -------------------------
 .playlist-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-sm);
+    padding: var(--space-xs) 0;
     margin-bottom: var(--space-md);
+    background: var(--bg-primary);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
     .filter-chip {
         height: 36px;
@@ -176,15 +183,6 @@
     flex-direction: column;
     gap: var(--space-xs);
     width: 100%;
-    max-height: calc(100vh - 260px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: thin;
-    padding-right: 2px;
-
-    @media (max-width: 768px) {
-        max-height: calc(100dvh - 260px);
-    }
 
     &.animate-content {
         animation: contentFadeIn 0.25s ease-out;
@@ -621,17 +619,6 @@
 @keyframes contentFadeIn {
     from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes listItemIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {

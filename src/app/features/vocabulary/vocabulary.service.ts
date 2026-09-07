@@ -34,56 +34,10 @@ export class VocabularyService {
         return Date.now();
     });
 
-    readonly recentItems = computed(() => {
-        return [...this.vocabulary()]
-            .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime())
-            .slice(0, 20);
-    });
-
-    readonly reviewQueue = computed(() => {
-        return this.vocabulary()
-            .filter(i => i.level === 'new' || i.level === 'learning')
-            .sort((a, b) => {
-                const aDate = a.nextReviewDate ? new Date(a.nextReviewDate).getTime() : 0;
-                const bDate = b.nextReviewDate ? new Date(b.nextReviewDate).getTime() : 0;
-                return aDate - bDate;
-            });
-    });
-
-    readonly dueForReview = computed(() => {
-        const now = new Date();
-        return this.vocabulary()
-            .filter(i => {
-                if (i.level === 'ignored') return false;
-                if (!i.nextReviewDate) return i.level === 'new';
-                return new Date(i.nextReviewDate) <= now;
-            })
-            .sort((a, b) => {
-                const aDate = a.nextReviewDate ? new Date(a.nextReviewDate).getTime() : 0;
-                const bDate = b.nextReviewDate ? new Date(b.nextReviewDate).getTime() : 0;
-                return aDate - bDate;
-            });
-    });
-
-    readonly statsByLanguage = computed(() => {
-        const vocab = this.vocabulary();
-        const stats = {
-            ja: { total: 0, new: 0, learning: 0, known: 0 },
-            zh: { total: 0, new: 0, learning: 0, known: 0 },
-            ko: { total: 0, new: 0, learning: 0, known: 0 },
-            en: { total: 0, new: 0, learning: 0, known: 0 }
-        };
-
-        for (const item of vocab) {
-            const lang = item.language as 'ja' | 'zh' | 'ko' | 'en';
-            if (stats[lang]) {
-                stats[lang].total++;
-                if (item.level === 'new') stats[lang].new++;
-                if (item.level === 'learning') stats[lang].learning++;
-                if (item.level === 'known') stats[lang].known++;
-            }
-        }
-        return stats;
+    readonly goalProgress = computed(() => {
+        const done = this.cardsCompletedToday();
+        const goal = this.dailyGoal();
+        return goal > 0 ? Math.min(100, Math.round((done / goal) * 100)) : 0;
     });
 
     // Proxy Methods
@@ -98,8 +52,26 @@ export class VocabularyService {
         };
     }
 
-    addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh' | 'ko' | 'en', sourceSentence?: string): Promise<VocabularyItem> {
-        return this.repo.addFromDictionary(entry, language, sourceSentence);
+    getDueCountByLanguage(language: string): number {
+        const today = new Date();
+        today.setHours(23, 59, 59, 999);
+
+        return this.vocabulary().filter(item => {
+            if (item.language !== language) return false;
+            if (item.level === 'ignored') return false;
+            if (!item.nextReviewDate) return true;
+            return new Date(item.nextReviewDate) <= today;
+        }).length;
+    }
+
+    addFromDictionary(
+        entry: DictionaryEntry,
+        language: 'ja' | 'zh' | 'ko' | 'en',
+        sourceSentence?: string,
+        sourceVideoId?: string,
+        sourceTimestamp?: number
+    ): Promise<VocabularyItem> {
+        return this.repo.addFromDictionary(entry, language, sourceSentence, sourceVideoId, sourceTimestamp);
     }
 
     addWord(
@@ -110,9 +82,11 @@ export class VocabularyService {
         pinyin?: string,
         romanization?: string,
         sourceSentence?: string,
-        audio?: string
+        audio?: string,
+        sourceVideoId?: string,
+        sourceTimestamp?: number
     ): Promise<VocabularyItem> {
-        return this.repo.addWord(word, meaning, language, reading, pinyin, romanization, sourceSentence, audio);
+        return this.repo.addWord(word, meaning, language, reading, pinyin, romanization, sourceSentence, audio, sourceVideoId, sourceTimestamp);
     }
 
     // Daily Goal & Progress Methods
@@ -212,21 +186,6 @@ export class VocabularyService {
 
     getByLanguage(language: 'ja' | 'zh' | 'ko' | 'en'): VocabularyItem[] {
         return this.vocabulary().filter(item => item.language === language);
-    }
-
-    getByLevel(level: WordLevel): VocabularyItem[] {
-        return this.vocabulary().filter(item => item.level === level);
-    }
-
-    search(query: string): VocabularyItem[] {
-        const q = query.toLowerCase();
-        return this.vocabulary().filter(item =>
-            item.word.toLowerCase().includes(q) ||
-            item.meaning.toLowerCase().includes(q) ||
-            item.reading?.toLowerCase().includes(q) ||
-            item.pinyin?.toLowerCase().includes(q) ||
-            item.romanization?.toLowerCase().includes(q)
-        );
     }
 
     exportToJSON(): string {

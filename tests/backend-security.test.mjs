@@ -101,3 +101,65 @@ test('verifyTurnstileToken: enforces strict security in production', async () =>
   assert.equal(missingSecretProd.valid, false);
 });
 
+test('DiamondService: tier configurations enforce correct limits', async () => {
+  const { getTierDiamondConfig, TIER_CONFIGS } = await import('../functions-src/services/diamond.service.js');
+
+  const anon = getTierDiamondConfig('anonymous');
+  assert.equal(anon.maxDiamonds, 3);
+  assert.equal(anon.regenIntervalMinutes, 20);
+  assert.equal(anon.maxVideoDurationSec, 600);
+
+  const free = getTierDiamondConfig('free');
+  assert.equal(free.maxDiamonds, 5);
+  assert.equal(free.regenIntervalMinutes, 15);
+  assert.equal(free.maxVideoDurationSec, 900);
+
+  const pro = getTierDiamondConfig('pro');
+  assert.equal(pro.maxDiamonds, 20);
+  assert.equal(pro.regenIntervalMinutes, 5);
+  assert.equal(pro.maxVideoDurationSec, 1800);
+});
+
+test('payOS: HMAC-SHA256 signature calculation and webhook verification', async () => {
+  const { buildPayOsSignatureData, computeHmacSha256, verifyWebhookSignature } = await import('../functions-src/providers/payos.js');
+
+  const sampleData = {
+    orderCode: 123456,
+    amount: 49000,
+    description: 'VOCA123456'
+  };
+
+  const signatureData = buildPayOsSignatureData(sampleData);
+  assert.equal(signatureData, 'amount=49000&description=VOCA123456&orderCode=123456');
+
+  const secretKey = 'test_checksum_key_secret';
+  const signature = await computeHmacSha256(signatureData, secretKey);
+  assert.equal(typeof signature, 'string');
+  assert.equal(signature.length, 64); // SHA-256 hex string is 64 chars
+
+  // Valid webhook payload
+  const validWebhook = {
+    data: sampleData,
+    signature
+  };
+  const isOk = await verifyWebhookSignature(validWebhook, secretKey);
+  assert.equal(isOk, true);
+
+  // Tampered payload
+  const tamperedWebhook = {
+    data: { ...sampleData, amount: 1000 },
+    signature
+  };
+  const isTampered = await verifyWebhookSignature(tamperedWebhook, secretKey);
+  assert.equal(isTampered, false);
+
+  // Tampered signature
+  const badSigWebhook = {
+    data: sampleData,
+    signature: 'bad_signature_value'
+  };
+  const isBadSig = await verifyWebhookSignature(badSigWebhook, secretKey);
+  assert.equal(isBadSig, false);
+});
+
+

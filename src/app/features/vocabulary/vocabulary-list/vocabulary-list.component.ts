@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 
 import { VocabularyService } from '../vocabulary.service';
-import { SettingsService, I18nService, AuthService, AudioService } from '../../../core/services';
+import { SettingsService, I18nService, AuthService, AudioService, ToastService } from '../../../core/services';
 
 import { VocabularyItem, WordLevel, Token } from '../../../models';
 
@@ -13,7 +14,7 @@ import { VocabularyItem, WordLevel, Token } from '../../../models';
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
@@ -21,6 +22,7 @@ export class VocabularyListComponent implements OnDestroy {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
+  toast = inject(ToastService);
   readonly auth = inject(AuthService);
   readonly audio = inject(AudioService);
   private router = inject(Router);
@@ -67,9 +69,35 @@ export class VocabularyListComponent implements OnDestroy {
     };
   });
 
+  // Level picker state
+  readonly levelPickerOpen = signal(false);
+  readonly editingItem = signal<VocabularyItem | null>(null);
+
+  readonly levelOptions = computed<OptionItem[]>(() => [
+    { value: 'new', label: this.i18n.t('vocab.new') || 'New', icon: 'plus-circle', color: 'new' },
+    { value: 'learning', label: this.i18n.t('vocab.learning') || 'Learning', icon: 'clock', color: 'learning' },
+    { value: 'known', label: this.i18n.t('vocab.known') || 'Known', icon: 'check-circle', color: 'known' },
+    { value: 'ignored', label: this.i18n.t('vocab.ignored') || 'Ignored', icon: 'slash', color: 'ignored' },
+  ]);
+
   playAudio(item: VocabularyItem, event: Event): void {
     event.stopPropagation();
     void this.audio.playWord(item.word, item.language, item.audio);
+  }
+
+  openLevelPicker(item: VocabularyItem, event: Event): void {
+    event.stopPropagation();
+    this.editingItem.set(item);
+    this.levelPickerOpen.set(true);
+  }
+
+  onLevelSelected(newLevel: string): void {
+    const item = this.editingItem();
+    if (item && item.level !== newLevel) {
+      this.vocab.updateLevel(item.id, newLevel as WordLevel);
+    }
+    this.levelPickerOpen.set(false);
+    this.editingItem.set(null);
   }
 
   cycleLevel(item: VocabularyItem, event: Event): void {
@@ -102,7 +130,13 @@ export class VocabularyListComponent implements OnDestroy {
     event.stopPropagation();
     this.lastDeletedItem.set(item);
     this.vocab.deleteWord(item.id);
-    this.showToast(this.i18n.t('vocab.deleteSuccess', { word: item.word }) || `Deleted "${item.word}"`, 'success');
+    this.toast.show(this.i18n.t('vocab.deleteSuccess', { word: item.word }) || `Deleted "${item.word}"`, {
+      type: 'success',
+      action: {
+        label: this.i18n.t('common.undo') || 'Undo',
+        action: () => this.undoDelete()
+      }
+    });
   }
 
   undoDelete(): void {
@@ -115,10 +149,12 @@ export class VocabularyListComponent implements OnDestroy {
         item.reading,
         item.pinyin,
         item.romanization,
-        item.examples?.[0]
+        item.sourceSentence || item.examples?.[0],
+        item.audio,
+        item.sourceVideoId,
+        item.sourceTimestamp
       );
       this.lastDeletedItem.set(null);
-      this.toastMessage.set(null);
     }
   }
 
@@ -145,11 +181,6 @@ export class VocabularyListComponent implements OnDestroy {
     this.searchInput.set('');
     this.debouncedSearch.set('');
   }
-
-  // Toast notification state
-  toastMessage = signal<string | null>(null);
-  toastType = signal<'success' | 'error'>('success');
-  private toastTimeout: ReturnType<typeof setTimeout> | null = null;
 
   getItemReading(item: VocabularyItem): string | null {
     return this.settings.getReadingText(item.language, item);
@@ -215,37 +246,18 @@ export class VocabularyListComponent implements OnDestroy {
 
     this.vocab.importFromFile(file)
       .then(() => {
-        this.showToast(this.i18n.t('vocab.importSuccess') || 'Vocabulary imported successfully!', 'success');
+        this.toast.success(this.i18n.t('vocab.importSuccess') || 'Vocabulary imported successfully!');
       })
       .catch(() => {
-        this.showToast(this.i18n.t('vocab.importError') || 'Failed to import. Check file format.', 'error');
+        this.toast.error(this.i18n.t('vocab.importError') || 'Failed to import. Check file format.');
       });
     input.value = '';
-  }
-
-  private showToast(message: string, type: 'success' | 'error'): void {
-    // Clear any existing timeout
-    if (this.toastTimeout) {
-      clearTimeout(this.toastTimeout);
-    }
-
-    this.toastMessage.set(message);
-    this.toastType.set(type);
-
-    // Auto-dismiss after 3 seconds
-    this.toastTimeout = setTimeout(() => {
-      this.toastMessage.set(null);
-    }, 3000);
   }
 
   ngOnDestroy(): void {
     if (this.searchTimeout) {
       clearTimeout(this.searchTimeout);
       this.searchTimeout = null;
-    }
-    if (this.toastTimeout) {
-      clearTimeout(this.toastTimeout);
-      this.toastTimeout = null;
     }
   }
 }

@@ -69,7 +69,7 @@
             <!-- Panel Content Area -->
             <div class="panel-content">
                 @if (isListLoading()) {
-                <div class="playlist-list skeleton-container">
+                <div class="playlist-list skeleton-container" role="status" aria-busy="true" aria-hidden="true">
                     @for (_ of [1,2,3,4]; track $index) {
                     <div class="playlist-item playlist-item--skeleton">
                         <div class="playlist-item__thumb skeleton-box"></div>
@@ -434,14 +434,6 @@
     icon="trash-2"
     (confirmed)="confirmDelete()"
     (cancelled)="cancelDelete()" />
-
-<!-- Toast Notification -->
-@if (toastMessage()) {
-<div class="toast toast--success">
-    <app-icon name="check" [size]="16"></app-icon>
-    <span>{{ toastMessage() }}</span>
-</div>
-}
 
 <!-- Language Option Picker -->
 <app-option-picker [options]="languageFilterOptions" [value]="languageFilter()" [isOpen]="showLanguageFilter()"

@@ -1,7 +1,6 @@
 /* Diamond color palette */
-// Using global tokens instead:
-// $diamond-color -> var(--info)
-// $depleted-color -> var(--warning)
+// Using global tokens:
+// --color-diamond, --color-diamond-rgb
 
 /* Base container */
 .diamond-credits {
@@ -22,8 +21,8 @@
     // margin-top handled by parent gap
 
     &.is-full {
-        background: linear-gradient(135deg, rgba(var(--info-rgb), 0.1) 0%, rgba(var(--info-rgb), 0.02) 100%);
-        border-color: rgba(var(--info-rgb), 0.3);
+        background: linear-gradient(135deg, rgba(var(--color-diamond-rgb), 0.1) 0%, rgba(var(--color-diamond-rgb), 0.02) 100%);
+        border-color: rgba(var(--color-diamond-rgb), 0.3);
     }
 
     &.is-depleted {
@@ -57,7 +56,7 @@
     transition: all var(--transition-fast);
 
     &.filled {
-        color: var(--info);
+        color: var(--color-diamond);
         opacity: 1;
         animation: diamond-pulse 2s ease-in-out infinite;
     }
@@ -110,7 +109,7 @@
         }
 
         .ring-fill {
-            stroke: var(--info);
+            stroke: var(--color-diamond);
             stroke-linecap: round;
             stroke-dasharray: 62.83;
             stroke-dashoffset: calc(62.83 - (62.83 * var(--progress, 0) / 100));
@@ -119,14 +118,14 @@
     }
 
     .progress-icon {
-        color: var(--info);
+        color: var(--color-diamond);
         z-index: 1;
     }
 }
 
 .diamond-status {
     font-size: 0.75rem;
-    color: var(--info);
+    color: var(--color-diamond);
     font-weight: 600;
 }
 
@@ -135,7 +134,7 @@
    ============================================ */
 .variant--compact {
     padding: var(--space-xs) var(--space-sm);
-    background: rgba(var(--info-rgb), 0.15);
+    background: rgba(var(--color-diamond-rgb), 0.15);
     border-radius: var(--border-radius-sm);
 
     .diamond-icons {
@@ -183,7 +182,7 @@
     align-items: center;
     gap: 0.125rem;
     padding: 0.5rem 0;
-    color: var(--info);
+    color: var(--color-diamond);
     cursor: pointer;
     transition: background-color 0.2s ease;
 
@@ -219,7 +218,7 @@
 
     50% {
         transform: scale(1.05);
-        filter: drop-shadow(0 0 4px rgba(var(--info-rgb), 0.3));
+        filter: drop-shadow(0 0 4px rgba(var(--color-diamond-rgb), 0.3));
     }
 }
 
@@ -232,7 +231,7 @@
     50% {
         opacity: 1;
         transform: scale(1.2);
-        filter: drop-shadow(0 0 8px var(--info));
+        filter: drop-shadow(0 0 8px var(--color-diamond));
     }
 
     100% {

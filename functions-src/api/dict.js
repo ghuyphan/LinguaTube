@@ -85,6 +85,9 @@ export async function onRequest(context) {
 
         if (!result) {
             // Negative caching in-memory (avoids wasting KV write quota on misses)
+            if (memNegDictCache.size >= 1000) {
+                memNegDictCache.clear();
+            }
             memNegDictCache.add(negKey);
             return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, {
                 'X-Cache': 'MISS',

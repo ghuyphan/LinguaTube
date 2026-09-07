@@ -1,11 +1,11 @@
 import { Injectable, inject, signal, effect, untracked, computed } from '@angular/core';
 import type PocketBase from 'pocketbase';
 import { IVocabularyRepository } from './vocabulary.repository';
-import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
+import { VocabularyItem, WordLevel, DictionaryEntry, VocabularyStats } from '../../models';
 import { AuthService, StorageService, PocketBaseService } from '../services';
 import { calculateHash, mergeByTimestamp, processBatch, sanitizeFilterValue, withRetry } from '../../shared/utils/sync.utils';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
-import { generateRandomId } from '../utils';
+import { generateRandomId, calculateNextSRSState } from '../utils';
 
 const STORAGE_KEY = 'linguatube_vocabulary';
 const TOMBSTONES_KEY = 'linguatube_deleted_vocab_tombstones';
@@ -39,6 +39,8 @@ interface SyncItem {
     lastReviewedAt?: string;
     nextReviewDate?: string;
     sourceSentence?: string;
+    sourceVideoId?: string;
+    sourceTimestamp?: number;
 }
 
 @Injectable({
@@ -54,10 +56,10 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     readonly isSyncing = signal(false);
 
     // Initial empty stats
-    private readonly initialStats = { total: 0, new: 0, learning: 0, known: 0, ignored: 0, japanese: 0, chinese: 0, korean: 0 };
+    private readonly initialStats: VocabularyStats = { total: 0, new: 0, learning: 0, known: 0, ignored: 0, japanese: 0, chinese: 0, korean: 0, english: 0 };
     
     // Pure computed stats based on reactive vocabulary signal
-    readonly stats = computed(() => {
+    readonly stats = computed<VocabularyStats>(() => {
         const items = this.vocabulary();
         return items.reduce(
             (acc, item) => {
@@ -70,6 +72,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 if (item.language === 'ja') acc.japanese++;
                 else if (item.language === 'zh') acc.chinese++;
                 else if (item.language === 'ko') acc.korean++;
+                else if (item.language === 'en') acc.english++;
                 return acc;
             },
             { ...this.initialStats }
@@ -110,7 +113,9 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         pinyin?: string,
         romanization?: string,
         sourceSentence?: string,
-        audio?: string
+        audio?: string,
+        sourceVideoId?: string,
+        sourceTimestamp?: number
     ): Promise<VocabularyItem> {
         const userId = this.auth.user()?.id || 'local';
         const id = this.generateVocabId(userId, word, language);
@@ -135,7 +140,9 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             easeFactor: 2.5,
             interval: 0,
             repetitions: 0,
-            sourceSentence
+            sourceSentence,
+            sourceVideoId,
+            sourceTimestamp
         };
 
         this.updateLocal([item, ...this.vocabulary()]);
@@ -148,7 +155,13 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         return item;
     }
 
-    async addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh' | 'ko' | 'en', sourceSentence?: string): Promise<VocabularyItem> {
+    async addFromDictionary(
+        entry: DictionaryEntry,
+        language: 'ja' | 'zh' | 'ko' | 'en',
+        sourceSentence?: string,
+        sourceVideoId?: string,
+        sourceTimestamp?: number
+    ): Promise<VocabularyItem> {
         const meaningText = entry.meanings.map(m => m.definition).filter(Boolean).slice(0, 3).join('; ')
             || entry.meanings[0]?.definition || '';
         return this.addWord(
@@ -159,7 +172,9 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             entry.pinyin,
             entry.romanization,
             sourceSentence,
-            entry.audio
+            entry.audio,
+            sourceVideoId,
+            sourceTimestamp
         );
     }
 
@@ -209,40 +224,18 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         if (index === -1) return;
 
         const item = items[index];
-
-        // SM-2 Algorithm
-        let { easeFactor, interval, repetitions } = item;
-        let newLevel: WordLevel = item.level;
-
-        if (quality < 3) {
-            repetitions = 0;
-            interval = 0;
-            newLevel = item.level === 'known' ? 'learning' : 'new';
-        } else {
-            repetitions++;
-            if (repetitions === 1) interval = 1;
-            else if (repetitions === 2) interval = 6;
-            else interval = Math.round(interval * easeFactor);
-
-            easeFactor = Math.max(1.3, easeFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
-
-            if (item.level === 'new') newLevel = 'learning';
-            else if (item.level === 'learning' && repetitions >= 3) newLevel = 'known';
-        }
-
-        const nextReviewDate = new Date();
-        nextReviewDate.setDate(nextReviewDate.getDate() + interval);
+        const nextState = calculateNextSRSState(item, quality);
 
         const updated: VocabularyItem = {
             ...item,
-            level: newLevel,
+            level: nextState.newLevel,
             lastReviewedAt: new Date(),
             updatedAt: new Date(),
             reviewCount: item.reviewCount + 1,
-            easeFactor,
-            interval,
-            repetitions,
-            nextReviewDate
+            easeFactor: nextState.easeFactor,
+            interval: nextState.interval,
+            repetitions: nextState.repetitions,
+            nextReviewDate: nextState.nextReviewDate
         };
 
         const newItems = [...items];
@@ -466,7 +459,9 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             reviewCount: item.reviewCount,
             lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt).toISOString() : undefined,
             nextReviewDate: item.nextReviewDate ? new Date(item.nextReviewDate).toISOString() : undefined,
-            sourceSentence: item.sourceSentence
+            sourceSentence: item.sourceSentence,
+            sourceVideoId: item.sourceVideoId,
+            sourceTimestamp: item.sourceTimestamp
         }));
     }
 
@@ -494,7 +489,9 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 repetitions: item.repetitions ?? existing?.repetitions ?? 0,
                 lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt) : existing?.lastReviewedAt,
                 nextReviewDate: item.nextReviewDate ? new Date(item.nextReviewDate) : existing?.nextReviewDate,
-                sourceSentence: item.sourceSentence ?? existing?.sourceSentence
+                sourceSentence: item.sourceSentence ?? existing?.sourceSentence,
+                sourceVideoId: item.sourceVideoId ?? existing?.sourceVideoId,
+                sourceTimestamp: item.sourceTimestamp ?? existing?.sourceTimestamp
             });
         });
 

@@ -79,8 +79,16 @@ export async function onRequestPost(context) {
             }, 400);
         }
 
-        // Validation
-        const validationError = await validateVideoRequest(cleanVideoId, lang, duration, preferAI ? 'whisper' : 'innertube');
+        // Auth
+        const authResult = await validateAuthToken(request, env);
+        const clientId = getClientIdentifier(request, authResult);
+        const tier = authResult.valid
+            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+            : 'anonymous';
+
+        // Validation (Pro/Premium users get up to 30 minutes for AI transcription)
+        const maxAiDuration = (tier === 'premium' || tier === 'pro') ? 30 * 60 : 20 * 60;
+        const validationError = await validateVideoRequest(cleanVideoId, lang, duration, preferAI ? 'whisper' : 'innertube', preferAI ? maxAiDuration : null);
         if (validationError) {
             return jsonResponse({
                 success: false,
@@ -117,13 +125,6 @@ export async function onRequestPost(context) {
                 }, 400);
             }
         }
-
-        // Auth
-        const authResult = await validateAuthToken(request, env);
-        const clientId = getClientIdentifier(request, authResult);
-        const tier = authResult.valid
-            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
-            : 'anonymous';
 
         // Setup Services
         const db = env.VOCAB_DB;

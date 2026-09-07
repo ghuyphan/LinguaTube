@@ -32,7 +32,9 @@ export async function onRequestGet(context) {
             diamonds: status.diamonds,
             maxDiamonds: status.maxDiamonds,
             nextRegenAt: status.nextRegenAt,
-            regenIntervalMs: status.regenIntervalMs
+            regenIntervalMs: status.regenIntervalMs,
+            tier: status.tier,
+            maxVideoDurationSec: status.maxVideoDurationSec
         }, 200, {
             'Cache-Control': 'no-store, no-cache, must-revalidate'
         });

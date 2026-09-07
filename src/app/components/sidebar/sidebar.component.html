@@ -136,15 +136,15 @@
                 </div>
                 } @else if (auth.isLoggedIn()) {
                 <button class="footer-btn user-settings-row" (click)="openSettings.emit()"
-                    [attr.title]="isCollapsed() ? ((auth.user()?.name || '') + ' (' + (auth.getSubscriptionTier() | uppercase) + ')') : i18n.t('nav.settings')">
-                    <div class="avatar-ring" [class]="'avatar-ring--' + auth.getSubscriptionTier()">
+                    [attr.title]="isCollapsed() ? ((auth.user()?.name || '') + ' (' + (auth.subscriptionTier() | uppercase) + ')') : i18n.t('nav.settings')">
+                    <div class="avatar-ring" [class]="'avatar-ring--' + auth.subscriptionTier()">
                         <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
                     </div>
                     @if (!isCollapsed()) {
                     <div class="user-info-stack">
                         <span class="user-name">{{ auth.user()?.name }}</span>
-                        <span class="badge badge--sm" [class]="'badge--' + auth.getSubscriptionTier()">
-                            {{ auth.getSubscriptionTier() | uppercase }}
+                        <span class="badge badge--sm" [class]="'badge--' + auth.subscriptionTier()">
+                            {{ auth.subscriptionTier() | uppercase }}
                         </span>
                     </div>
                     <app-icon name="settings" [size]="16" class="settings-icon" />

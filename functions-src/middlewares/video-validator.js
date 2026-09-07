@@ -100,7 +100,7 @@ export function isLanguageSupported(lang) {
  * @param {'innertube' | 'whisper'} endpoint - Which endpoint is calling
  * @returns {Promise<{error: string, [key: string]: any} | null>}
  */
-export async function validateVideoRequest(videoId, requestedLang, duration, endpoint = 'innertube') {
+export async function validateVideoRequest(videoId, requestedLang, duration, endpoint = 'innertube', maxDurationOverride = null) {
     // 0. Validate videoId format
     if (!videoId || !/^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
         return {
@@ -119,7 +119,7 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
     }
 
     // 2. Validate duration
-    const maxDuration = MAX_DURATION[endpoint];
+    const maxDuration = maxDurationOverride || MAX_DURATION[endpoint];
     let effectiveDuration = duration;
 
     // For whisper (AI transcription), if client duration is missing or needs verification, attempt server check

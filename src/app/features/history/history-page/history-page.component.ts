@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, computed, signal, OnInit, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialo
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { HistoryListComponent } from '../history-list/history-list.component';
 import { HistoryService } from '../history.service';
-import { I18nService, AuthService } from '../../../core/services';
+import { I18nService, AuthService, ToastService } from '../../../core/services';
 import { HistoryItem, SUPPORTED_LANGUAGES } from '../../../models';
 import { getYouTubeThumbnail } from '../../../core/utils';
 
@@ -28,12 +28,13 @@ type FilterType = 'all' | 'favorites';
   templateUrl: './history-page.component.html',
   styleUrls: ['./history-page.component.scss'],
 })
-export class HistoryPageComponent implements OnInit, OnDestroy {
+export class HistoryPageComponent implements OnInit {
   protected historyService = inject(HistoryService);
   private router = inject(Router);
 
   i18n = inject(I18nService);
   auth = inject(AuthService);
+  toast = inject(ToastService);
 
   filter = signal<FilterType>('all');
   selectedLanguage = signal<string>('all');
@@ -41,17 +42,8 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   showLanguageFilter = signal(false);
   showClearConfirm = signal(false);
 
-  // Toast with undo
-  toastMessage = signal<string | null>(null);
+  // Undo tracking
   lastDeletedItem = signal<HistoryItem | null>(null);
-  private toastTimeout: ReturnType<typeof setTimeout> | null = null;
-
-  ngOnDestroy(): void {
-    if (this.toastTimeout) {
-      clearTimeout(this.toastTimeout);
-      this.toastTimeout = null;
-    }
-  }
 
   historyItems = computed(() => this.historyService.history());
   favorites = computed(() => this.historyService.favorites());
@@ -160,7 +152,7 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   clearAll(): void {
     this.historyService.clearHistory();
     this.showClearConfirm.set(false);
-    this.showToast(this.i18n.t('history.clearedAll') || 'All history cleared');
+    this.toast.success(this.i18n.t('history.clearedAll') || 'All history cleared');
   }
 
   resumeVideo(videoId: string): void {
@@ -169,7 +161,13 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
 
   onItemRemoved(item: HistoryItem): void {
     this.lastDeletedItem.set(item);
-    this.showToast(this.i18n.t('history.itemRemoved') || 'Removed from history');
+    this.toast.show(this.i18n.t('history.itemRemoved') || 'Removed from history', {
+      icon: 'trash-2',
+      action: {
+        label: this.i18n.t('common.undo') || 'Undo',
+        action: () => this.undoDelete()
+      }
+    });
   }
 
   async undoDelete(): Promise<void> {
@@ -177,18 +175,6 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
     if (item) {
       await this.historyService.restoreItem(item);
       this.lastDeletedItem.set(null);
-      this.toastMessage.set(null);
     }
-  }
-
-  private showToast(message: string): void {
-    this.toastMessage.set(message);
-    if (this.toastTimeout) {
-      clearTimeout(this.toastTimeout);
-    }
-    this.toastTimeout = setTimeout(() => {
-      this.toastMessage.set(null);
-      this.lastDeletedItem.set(null);
-    }, 4500);
   }
 }

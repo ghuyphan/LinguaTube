@@ -17,8 +17,8 @@
                     <div class="account-details">
                         <div class="account-name-line">
                             <span class="account-name">{{ auth.user()?.name }}</span>
-                            <span class="badge badge--sm" [class]="'badge--' + auth.getSubscriptionTier()">
-                                {{ auth.getSubscriptionTier() | uppercase }}
+                            <span class="badge badge--sm" [class]="'badge--' + auth.subscriptionTier()">
+                                {{ auth.subscriptionTier() | uppercase }}
                             </span>
                         </div>
                         <span class="account-email">{{ auth.user()?.email }}</span>

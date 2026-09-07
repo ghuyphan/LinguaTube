@@ -10,7 +10,7 @@ function findJsFiles(dir) {
     const items = fs.readdirSync(dir, { withFileTypes: true });
     for (const item of items) {
         const fullPath = path.join(dir, item.name);
-        if (item.isDirectory() && item.name !== '_shared' && item.name !== 'node_modules') {
+        if (item.isDirectory() && item.name !== 'node_modules') {
             entries.push(...findJsFiles(fullPath));
         } else if (item.name.endsWith('.js')) {
             entries.push(fullPath);
@@ -19,30 +19,9 @@ function findJsFiles(dir) {
     return entries;
 }
 
-// Copy directory recursively
-function copyDir(src, dest) {
-    if (!fs.existsSync(src)) return;
-    fs.mkdirSync(dest, { recursive: true });
-    for (const item of fs.readdirSync(src, { withFileTypes: true })) {
-        const srcPath = path.join(src, item.name);
-        const destPath = path.join(dest, item.name);
-        if (item.isDirectory()) {
-            copyDir(srcPath, destPath);
-        } else {
-            fs.copyFileSync(srcPath, destPath);
-        }
-    }
-}
-
 async function build() {
     const srcDir = 'functions-src';
     const outDir = 'functions';
-
-    // Ensure source directory exists (first run: rename functions to functions-src)
-    if (!fs.existsSync(srcDir) && fs.existsSync(outDir)) {
-        console.log('First run: Moving functions/ to functions-src/');
-        fs.renameSync(outDir, srcDir);
-    }
 
     if (!fs.existsSync(srcDir)) {
         console.error('Error: functions-src/ directory not found');
@@ -54,10 +33,6 @@ async function build() {
         fs.rmSync(outDir, { recursive: true });
     }
     fs.mkdirSync(outDir);
-
-    // Copy _shared files (not bundled)
-    console.log('Copying _shared files...');
-    copyDir(`${srcDir}/_shared`, `${outDir}/_shared`);
 
     // In Cloudflare Pages Functions, every file in functions/ is treated as a public HTTP route.
     // Therefore, only route handlers (in api/ and proxy/) must be bundled as entry points.
@@ -81,7 +56,6 @@ async function build() {
                 platform: 'browser',
                 target: 'es2022',
                 outfile,
-                external: ['../_shared/*', '../../_shared/*'],
                 minify: false,
                 conditions: ['worker', 'browser', 'import', 'default'],
                 mainFields: ['browser', 'module', 'main'],

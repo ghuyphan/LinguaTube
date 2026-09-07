@@ -45,23 +45,20 @@
 }
 
 .btn-close-video {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 28px !important;
-    height: 28px !important;
-    min-width: 28px !important;
-    min-height: 28px !important;
-    max-width: 28px !important;
-    max-height: 28px !important;
-    aspect-ratio: 1 / 1 !important;
-    padding: 0 !important;
-    border-radius: 50% !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    padding: 0;
+    border-radius: 50%;
     border: 1px solid var(--border-color);
     background: var(--bg-surface, rgba(0, 0, 0, 0.04));
     color: var(--text-muted);
     cursor: pointer;
-    box-sizing: border-box !important;
+    box-sizing: border-box;
     transition: all var(--transition-fast, 0.15s ease);
 
     &:hover {

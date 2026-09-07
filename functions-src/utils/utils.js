@@ -46,15 +46,6 @@ export function handleOptions(methods = ['GET', 'POST', 'OPTIONS']) {
     });
 }
 
-/**
- * Validate YouTube video ID format
- * @param {string} id - Video ID to validate
- * @returns {boolean} - True if valid 11-character YouTube ID
- */
-export function validateVideoId(id) {
-    if (!id || typeof id !== 'string') return false;
-    return /^[a-zA-Z0-9_-]{11}$/.test(id);
-}
 
 /**
  * Standard error response - sanitizes messages in production
@@ -125,16 +116,6 @@ export function sanitizeLanguage(lang, allowed = ['ja', 'zh', 'ko', 'en']) {
     return allowed.includes(cleaned) ? cleaned : null;
 }
 
-/**
- * Add consistent CORS headers for all responses
- */
-export function addCorsHeaders(response) {
-    const headers = new Headers(response.headers);
-    headers.set('Access-Control-Allow-Origin', '*');
-    headers.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
-    headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    return new Response(response.body, { ...response, headers });
-}
 
 /**
  * Validate text input length
@@ -171,42 +152,6 @@ export function validateBatchSize(items, maxSize = 100) {
     return { valid: true };
 }
 
-/**
- * Verify that text matches expected language
- * Uses Unicode script detection to catch silent fallback to wrong language
- * @param {string} text - Sample text to verify
- * @param {string} expectedLang - Expected language code
- * @returns {boolean} - True if language appears correct
- */
-export function verifyLanguage(text, expectedLang) {
-    if (!text || text.length < 50) return true; // Too short to verify reliably
-
-    const sample = text.slice(0, 1000);
-
-    // Japanese: Hiragana/Katakana presence
-    if (expectedLang === 'ja') {
-        const kanaCount = (sample.match(/[\u3040-\u309F\u30A0-\u30FF]/g) || []).length;
-        return kanaCount > 5;
-    }
-
-    // Korean: Hangul presence
-    if (expectedLang === 'ko') {
-        const hangulCount = (sample.match(/[\uAC00-\uD7AF]/g) || []).length;
-        const kanaCount = (sample.match(/[\u3040-\u309F\u30A0-\u30FF]/g) || []).length;
-        if (kanaCount > hangulCount * 2) return false;
-        return hangulCount > 5;
-    }
-
-    // Chinese: CJK Unified Ideographs but NO Hiragana/Katakana/Hangul
-    if (expectedLang === 'zh') {
-        const hanziCount = (sample.match(/[\u4E00-\u9FFF]/g) || []).length;
-        const kanaCount = (sample.match(/[\u3040-\u309F\u30A0-\u30FF]/g) || []).length;
-        const hangulCount = (sample.match(/[\uAC00-\uD7AF]/g) || []).length;
-        return hanziCount > 10 && kanaCount < 5 && hangulCount < 5;
-    }
-
-    return true; // Default to pass for other languages
-}
 
 // ============================================================================
 // Input Validation

@@ -182,24 +182,21 @@
 }
 
 .spotlight__action-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
-  aspect-ratio: 1 !important;
-  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
   background: var(--accent-primary);
-  color: #ffffff;
-  border: none !important;
-  border-radius: 50% !important;
+  color: var(--text-inverse);
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
   flex-shrink: 0;
-  box-sizing: border-box !important;
+  box-sizing: border-box;
   transition: background var(--transition-fast), transform var(--transition-fast);
 
   @media (hover: hover) {
@@ -212,10 +209,6 @@
   &:active {
     transform: scale(0.95);
   }
-}
-
-.spotlight__paste-btn {
-  display: none;
 }
 
 .spotlight__cancel-btn {

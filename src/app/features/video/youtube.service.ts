@@ -86,8 +86,6 @@ export class YoutubeService {
   /** Guard to prevent concurrent initPlayer calls */
   private pendingInit: Promise<void> | null = null;
 
-  private readonly STORAGE_KEY = 'lingua-tube-last-video';
-
   readonly currentVideo = signal<VideoInfo | null>(null);
   readonly isPlaying = signal(false);
   readonly currentTime = signal(0);
@@ -108,39 +106,6 @@ export class YoutubeService {
   /** Emits when user requests next/prev track via Media Session API */
   readonly nextTrack$ = new Subject<void>();
   readonly previousTrack$ = new Subject<void>();
-
-  /**
-   * Get the last video ID from localStorage (for restoring after page reload)
-   */
-  getLastVideoId(): string | null {
-    try {
-      return localStorage.getItem(this.STORAGE_KEY);
-    } catch {
-      return null;
-    }
-  }
-
-  /**
-   * Save video ID to localStorage
-   */
-  private saveLastVideoId(videoId: string): void {
-    try {
-      localStorage.setItem(this.STORAGE_KEY, videoId);
-    } catch {
-      // localStorage might be unavailable
-    }
-  }
-
-  /**
-   * Clear the last video ID from localStorage
-   */
-  clearLastVideoId(): void {
-    try {
-      localStorage.removeItem(this.STORAGE_KEY);
-    } catch {
-      // localStorage might be unavailable
-    }
-  }
 
   private wasPausedOnLeave = false;
   private isSeeking = false;
@@ -686,7 +651,6 @@ export class YoutubeService {
     this.duration.set(0);
     this.pendingVideoId.set(null);
     this.intendedPlayingState.set(false);
-    this.clearLastVideoId();
   }
   /**
    * Update internal state when video is loaded (reused or new)
@@ -704,9 +668,6 @@ export class YoutubeService {
     };
 
     this.currentVideo.set(video);
-
-    // Persist video ID for page reload recovery
-    this.saveLastVideoId(videoId);
 
     // Initial mute state check
     if (this.player) {

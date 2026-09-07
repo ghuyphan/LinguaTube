@@ -3,6 +3,8 @@
  * Matches PocketBase 'playlists' collection schema
  */
 
+import { getYouTubeThumbnail } from '../core/utils/format.utils';
+
 export type PlaylistVisibility = 'private' | 'unlisted' | 'published';
 export type PlaylistLanguage = 'ja' | 'zh' | 'ko' | 'en';
 
@@ -140,7 +142,7 @@ export function mapRecordToPlaylist(record: PlaylistRecord | Record<string, unkn
         tags: r.tags || [],
         videoIds: r.video_ids || [],
         videoCount: r.video_count || 0,
-        thumbnail: r.thumbnail || (r.video_ids?.[0] ? `https://i.ytimg.com/vi/${r.video_ids[0]}/hqdefault.jpg` : undefined),
+        thumbnail: r.thumbnail || (r.video_ids?.[0] ? getYouTubeThumbnail(r.video_ids[0], 'hqdefault') : undefined),
         saveCount: r.save_count || 0,
         isFeatured: r.is_featured || false,
         createdAt: r.created ? new Date(r.created) : new Date(),

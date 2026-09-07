@@ -396,6 +396,18 @@
         color: var(--word-learning-text);
     }
 
+    &--audio {
+        background: rgba(14, 165, 233, 0.1);
+        border-color: rgba(14, 165, 233, 0.25);
+        color: var(--info);
+    }
+
+    &--cloze {
+        background: rgba(var(--accent-secondary-rgb), 0.1);
+        border-color: rgba(var(--accent-secondary-rgb), 0.25);
+        color: var(--accent-secondary);
+    }
+
     @media (max-width: 480px) {
         width: 1.75rem;
         height: 1.75rem;
@@ -588,6 +600,18 @@
     }
 }
 
+.queue-recycled-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 6px;
+    border-radius: var(--border-radius-pill);
+    background: rgba(239, 68, 68, 0.12);
+    color: var(--error);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
 .session-timer {
     display: inline-flex;
     align-items: center;
@@ -723,6 +747,40 @@
     justify-content: space-between;
 }
 
+.flashcard-top-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.card-video-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.25rem 0.625rem;
+    height: 2rem;
+    border-radius: var(--border-radius-pill);
+    border: 1px solid rgba(var(--accent-primary-rgb), 0.25);
+    background: rgba(var(--accent-primary-rgb), 0.08);
+    color: var(--accent-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+
+    &:hover {
+        background: rgba(var(--accent-primary-rgb), 0.16);
+        border-color: var(--accent-primary);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
 .card-speaker-btn {
     width: 2.25rem;
     height: 2.25rem;
@@ -746,6 +804,33 @@
 
     &:active {
         transform: scale(0.92);
+    }
+}
+
+.btn-peek-reading {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: var(--border-radius-pill);
+    border: 1px dashed var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+
+    &:hover {
+        color: var(--accent-primary);
+        border-color: var(--accent-primary);
+        background: var(--bg-hover);
+    }
+
+    &:active {
+        transform: scale(0.95);
     }
 }
 
@@ -839,6 +924,26 @@
     }
 }
 
+.card-context__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.cloze-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--accent-secondary);
+    background: rgba(var(--accent-secondary-rgb), 0.1);
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
 .card-context__sentence {
     margin: 0;
     color: var(--text-primary);
@@ -894,16 +999,26 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%) scale(0.9);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
+    min-width: 60px;
+    height: 60px;
+    padding: 0 8px;
+    border-radius: var(--border-radius-md);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2px;
     opacity: 0;
     transition: opacity 0.15s ease, transform 0.15s ease;
     pointer-events: none;
     z-index: 20;
+
+    .swipe-indicator__label {
+        font-size: 0.6875rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 
     &--left {
         left: 1rem;
@@ -921,7 +1036,7 @@
 
     &.active {
         opacity: 1;
-        transform: translateY(-50%) scale(1.1);
+        transform: translateY(-50%) scale(1.08);
     }
 
     @media (min-width: 769px) {
@@ -954,10 +1069,10 @@
 .answer-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 6px;
-    min-height: 46px;
-    padding: 0.625rem 0.5rem;
+    min-height: 48px;
+    padding: 0.5rem 0.75rem;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
     cursor: pointer;
@@ -973,10 +1088,42 @@
 
     @media (min-width: 601px) {
         flex-direction: column;
-        gap: 4px;
+        justify-content: center;
+        gap: 6px;
         padding: 0.75rem 0.5rem;
         font-size: 0.8125rem;
-        min-height: 3.5rem;
+        min-height: 3.75rem;
+    }
+
+    .answer-btn__main {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .answer-btn__label {
+        font-size: 0.875rem;
+        font-weight: 700;
+
+        @media (min-width: 601px) {
+            font-size: 0.8125rem;
+        }
+    }
+
+    .answer-btn__meta {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .answer-time {
+        font-size: 0.6875rem;
+        font-weight: 700;
+        padding: 1px 5px;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.08);
+        color: currentColor;
+        line-height: 1.2;
     }
 
     &:hover {
@@ -1177,6 +1324,41 @@
     font-size: 0.8125rem;
     font-weight: 600;
     border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.complete-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    width: 100%;
+    max-width: 320px;
+    margin-top: var(--space-xs);
+}
+
+.review-missed-btn {
+    width: 100%;
+    justify-content: center;
+    gap: var(--space-xs);
+    font-weight: 700;
+    height: 2.75rem;
+}
+
+.complete-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+}
+
+.complete-nav-link {
+    gap: 4px;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+
+    &:hover {
+        color: var(--accent-primary);
+    }
 }
 
 // ============================================

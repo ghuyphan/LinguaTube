@@ -6,7 +6,7 @@
 import * as kuromoji from '@patdx/kuromoji';
 import { pinyin } from 'pinyin-pro';
 import { convert as romanizeKorean } from 'hangul-romanization';
-import { getJapaneseRomaji, isJapaneseKanaText } from './japanese-romaji.js';
+import { getJapaneseRomaji, isJapaneseKanaText, katakanaToHiragana } from './japanese-romaji.js';
 
 // Kanji detection (CJK Unified Ideographs)
 const KANJI_REGEX = /[\u4E00-\u9FFF]/;
@@ -64,14 +64,7 @@ export async function getKuromojiTokenizer() {
     return tokenizerPromise;
 }
 
-/**
- * Convert katakana to hiragana
- */
-export function katakanaToHiragana(str) {
-    return str.replace(/[\u30A1-\u30F6]/g, (match) =>
-        String.fromCharCode(match.charCodeAt(0) - 0x60)
-    );
-}
+export { katakanaToHiragana };
 
 /**
  * Tokenize Japanese text with kuromoji

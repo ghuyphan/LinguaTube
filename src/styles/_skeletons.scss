@@ -1,0 +1,81 @@
+// ============================================
+// UNIFIED SKELETON LOADING SYSTEM
+// Smooth gradient wave shimmer with accessibility & reduced-motion support
+// ============================================
+
+@keyframes skeletonWave {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-box,
+.skeleton-line {
+    background: linear-gradient(
+        90deg,
+        var(--bg-secondary) 0%,
+        var(--bg-hover) 50%,
+        var(--bg-secondary) 100%
+    );
+    background-size: 200% 100%;
+    animation: skeletonWave 1.6s ease-in-out infinite;
+    border-radius: var(--border-radius-sm);
+    will-change: background-position;
+}
+
+// Respect user preferences for reduced motion (vestibular safety)
+@media (prefers-reduced-motion: reduce) {
+    .skeleton-box,
+    .skeleton-line {
+        animation: none !important;
+        background: var(--bg-secondary) !important;
+    }
+}
+
+.skeleton-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.skeleton-line {
+    height: 12px;
+    margin: 0;
+
+    &--title {
+        height: 14px;
+        width: 60%;
+        max-width: 240px;
+        margin-bottom: 6px;
+    }
+
+    &--meta {
+        height: 11px;
+        width: 40%;
+        max-width: 140px;
+    }
+
+    &--badge {
+        height: 18px;
+        width: 44px;
+        border-radius: var(--border-radius-pill);
+    }
+
+    &--circle {
+        border-radius: 50%;
+    }
+
+    &--word {
+        height: 16px;
+        width: 110px;
+        margin-bottom: 6px;
+    }
+
+    &--meaning {
+        height: 12px;
+        width: 170px;
+    }
+}

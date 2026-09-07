@@ -49,6 +49,8 @@ export interface DiamondStatusResponse {
   maxDiamonds: number;
   nextRegenAt: number | null;
   regenIntervalMs?: number;
+  tier?: string;
+  maxVideoDurationSec?: number;
 }
 
 interface RateLimitErrorResponse {
@@ -93,11 +95,13 @@ export class TranscriptService {
   /** Fallback info when server returned different language than requested */
   readonly fallbackInfo = signal<{ requested: string; returned: string } | null>(null);
 
-  /** Diamond credit system - 1 diamond every 20 minutes (up to 3) */
+  /** Diamond credit system - Multi-Tier Support */
   readonly diamonds = signal(3);
   readonly maxDiamonds = signal(3);
   readonly nextRegenAt = signal<number | null>(null);
   readonly regenIntervalMs = signal<number>(20 * 60 * 1000);
+  readonly userTier = signal<string>('anonymous');
+  readonly maxVideoDurationSec = signal<number>(600);
   readonly isDiamondLoading = signal(false);
 
   // Computed helpers for UI
@@ -167,6 +171,12 @@ export class TranscriptService {
           this.nextRegenAt.set(res.nextRegenAt);
           if (res.regenIntervalMs) {
             this.regenIntervalMs.set(res.regenIntervalMs);
+          }
+          if (res.tier) {
+            this.userTier.set(res.tier);
+          }
+          if (res.maxVideoDurationSec) {
+            this.maxVideoDurationSec.set(res.maxVideoDurationSec);
           }
         }
         this.isDiamondLoading.set(false);

@@ -215,13 +215,13 @@
 
     &:hover {
         background: var(--accent-primary);
-        color: #fff;
+        color: var(--text-inverse);
         transform: scale(1.06);
     }
 
     &.playing {
         background: var(--accent-primary);
-        color: #fff;
+        color: var(--text-inverse);
         animation: pulseAudio 1.2s infinite ease-in-out;
     }
 }

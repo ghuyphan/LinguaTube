@@ -37,11 +37,12 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 - **Dual-Language Subtitles**: Display learning subtitles alongside translated subtitles in English, Vietnamese, Japanese, Korean, or Chinese with quick flag switching.
 
 ### 📚 Study & Retention Tools
-- **SM-2 Spaced Repetition Flashcards**: Review saved vocabulary with an optimized SuperMemo-2 algorithm calculating repetition intervals, ease factors, and next review dates.
-- **Contextual Sentence Mining**: Saved words retain the exact sentence context and timestamp from the video where they were encountered.
+- **SM-2 Spaced Repetition Flashcards**: Review saved vocabulary with an optimized SuperMemo-2 algorithm featuring real-time interval preview badges (`<10m`, `1d`, `3d`, `6d`), failed card session recycling, audio auto-play, and anti-spoiler peek reading.
+- **Authentic Video Scene Replay & Cloze Practice**: Jump directly from any flashcard back into the exact video scene (`[▶ Watch Scene]`), or practice active recall with Cloze sentence masking.
 - **Gamified Streaks & Freeze Inventory**: Track daily study streaks with streak freeze protections (up to 2 freezes) and milestone rewards.
 - **Playlists & History**: Organize videos into custom playlists, explore curated community playlists, and resume progress automatically.
 - **Offline-First Persistence**: Operates seamlessly offline with IndexedDB (`lingua-tube-cache`) and LocalStorage, with two-way cloud synchronization to PocketBase.
+- **Diamond Credits & Pro Upgrade**: Sustainable multi-tier quota system (`free` default with 5 credits, 15m regen; `pro` with 20 credits, 5m regen, up to 30m AI video duration) with instant VietQR open banking upgrade via payOS.
 
 ---
 

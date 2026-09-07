@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
-import { I18nService } from '../../core/services';
+import { I18nService, AuthService, PaymentService } from '../../core/services';
 import { DiamondCreditsCardComponent } from '../../shared/components/diamond-credits-card/diamond-credits-card.component';
 import { TranscriptService } from '../../features/video/transcript.service';
 
@@ -15,6 +15,8 @@ import { TranscriptService } from '../../features/video/transcript.service';
 })
 export class AiCreditsDialogComponent implements OnInit {
     readonly i18n = inject(I18nService);
+    readonly auth = inject(AuthService);
+    readonly payment = inject(PaymentService);
     readonly transcript = inject(TranscriptService);
 
     dismissed = output<void>();
@@ -25,5 +27,9 @@ export class AiCreditsDialogComponent implements OnInit {
 
     onRegenCompleted(): void {
         this.transcript.refreshDiamonds();
+    }
+
+    startUpgrade(planId: string = 'pro_1m'): void {
+        this.payment.createOrder(planId).subscribe();
     }
 }

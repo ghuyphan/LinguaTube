@@ -191,7 +191,7 @@
 
       <div class="recent-preview" (click)="resumeVideo(recent.video_id)">
         <div class="recent-preview__thumb">
-          <img [src]="recent.thumbnail || ('https://i.ytimg.com/vi/' + recent.video_id + '/mqdefault.jpg')" [alt]="recent.title" loading="lazy" />
+          <img [src]="recent.thumbnail || getThumbnail(recent.video_id)" [alt]="recent.title" loading="lazy" />
           <div class="card-play-overlay">
             <div class="play-icon-circle">
               <app-icon name="play" [size]="13" />
@@ -231,19 +231,6 @@
   icon="trash-2"
   (confirmed)="clearAll()"
   (cancelled)="showClearConfirm.set(false)" />
-
-<!-- Toast Notification with Undo -->
-@if (toastMessage()) {
-<div class="toast">
-  <app-icon name="check" [size]="16" />
-  <span class="toast__text">{{ toastMessage() }}</span>
-  @if (lastDeletedItem()) {
-    <button type="button" class="toast__undo-btn" (click)="undoDelete()">
-      {{ i18n.t('common.undo') || 'Undo' }}
-    </button>
-  }
-</div>
-}
 
 <!-- Language Filter Option Picker -->
 <app-option-picker

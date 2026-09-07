@@ -88,9 +88,10 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 - **`SidebarComponent`**: Collapsible main navigation supporting compact icon mode and expanded text mode. Displays streak counter and diamond credit badge.
 - **`SettingsSheetComponent`**: Slide-over sheet for adjusting learning languages, Furigana/Pinyin toggles, Romaji display modes, font size, playback speed, and theme.
 - **`StreakDialogComponent`**: Modal displaying 7-day practice activity, streak freeze inventory, and milestone badges.
-- **`AiCreditsDialogComponent`**: Details current Diamond credit count, 20-minute regeneration countdown timer, and Gladia AI limits.
+- **`AiCreditsDialogComponent`**: Interactive diamond quota modal showcasing current credit balance, dynamic tier badge (`Anonymous`, `Free`, `Pro`), dynamic regen timer (5m / 15m / 20m), video duration pricing breakdown ($\le 10$m = 1 credit, $10$–$20$m = 2 credits, $> 20$m Pro-only), "Upgrade to Pro" action, and integrated payOS VietQR payment card with real-time transfer detection.
 - **`OnboardingComponent`**: First-time user walkthrough guiding video selection, language choices, and subtitle interactions.
 - **`CommandPaletteComponent`**: Power-user modal (`Cmd+K` / `Ctrl+K`) for instant navigation, video loading, and action dispatching.
+- **`ToastComponent`**: Root-mounted mobile-native status capsule (`ToastService`), displaying centralized top HUD notifications with spring physics, semantic status icons, and interactive action/undo buttons without frosted glass.
 
 ---
 
@@ -171,7 +172,7 @@ graph TD
   - Multi-entry disambiguation tabs for queries matching multiple homonyms.
   - Authentic dictionary audio pronunciation via `AudioService` (HTML5 `Audio` elements with animated speaker buttons, zero browser TTS dependencies).
   - Integrated grammar pattern matches from `GrammarService`.
-  - Language-scoped search history (`linguatube_recent_searches_${lang}`) and direct SRS level cycling in result headers.
+  - Language-scoped search history (`linguatube_recent_searches_${lang}`) and level option picker bottom-sheet in result headers.
   - Embedded `VocabularyListComponent` with search, level filter chips (`All`, `New`, `Learning`, `Known`, `Ignored`), inline dictionary audio playback, and export (JSON/Anki) / import capabilities.
 
 ---
@@ -184,19 +185,21 @@ graph TD
     - 🟢 **Known**
     - ⚪ **Ignored**
   - Interactive filter chips to narrow word lists by specific mastery levels.
+  - Interactive level badge opening an `<app-option-picker>` bottom sheet to directly select or change mastery status.
+  - Shift-free mobile layout with fixed badge width, top-anchored action group, and automatic suppression of redundant reading chips when identical to surface word.
   - Inline authentic dictionary audio playback button on every card.
   - Search filtering and JSON export/import.
 - **`StudyPageComponent` & `StudyModeComponent`**:
   - Implements the **SuperMemo-2 (SM-2)** spaced repetition flashcard review deck.
-  - Features streamlined, deduplicated start screen with interactive top-level deck selection cards (New, Learning, Known) and session size / reverse mode controls.
-  - **Authentic Dictionary Audio**: Uses app-wide `AudioService` with dictionary MP3 URLs and dictionary-grade neural audio fallback; eliminates synthetic `window.speechSynthesis`.
-  - **Reverse Mode Anti-Spoiler UX**: Hides the target word speaker button and word in prompt sentence when showing meaning first, revealing it clearly upon flipping.
-  - **Study Session Customization**:
-    - "Due Only" toggle when cards are due for SM-2 review today.
-    - Quick-select daily goal pills (`5`, `10`, `15`, `20`, `30` cards) persisting across sessions.
-  - Displays front (target word + sentence context or reverse meaning) and back (reading + meaning + examples).
-  - Users rate recall quality (`Again`, `Hard`, `Good`, `Easy`) via colored action buttons, touch swipe gestures, or keyboard shortcuts (`1`-`4`, `Space`), updating interval, ease factor, and `nextReviewDate`.
-  - Desktop sidebar with circular progress ring (% known), daily goal progress, and SRS mastery breakdown.
+  - Features streamlined start screen with interactive deck toggles (New, Learning, Known), session size pills (`5`, `10`, `20`, `all`), reverse mode, audio auto-play, and cloze mode.
+  - **SM-2 Interval Forecasting**: Grading buttons display real-time calculated intervals via `calculateSRSPreview()` (`<10m`, `1d`, `3d`, `6d`).
+  - **Failed Card Session Recycling**: Cards graded "Again" ($q < 3$) are recycled to the end of the session queue until recalled successfully, preventing incomplete learning.
+  - **Authentic Video Scene Replay**: Captures `sourceVideoId` and `sourceTimestamp` upon saving words from subtitles, providing a 1-click `[▶ Watch Scene]` (shortcut `V`) link back to the exact video moment.
+  - **Anti-Spoiler Front Face & Peek Reading**: Furigana/pinyin are hidden on the front by default to enforce kanji/hanzi recall, with a subtle "Peek reading" button (shortcut `P`) for temporary hints.
+  - **Cloze Deletion Sentence Mode**: Automatically masks the target word (`【 ... 】`) in the context sentence on the front face.
+  - **Auto-Play Audio on Reveal**: Automatically triggers authentic dictionary audio or TTS upon card reveal.
+  - **Dynamic Desktop Sidebar**: Seamlessly transitions from static mastery overview to an active **Live Session Dashboard** showing remaining queue, live accuracy %, elapsed timer, and keyboard shortcuts (`Space`, `1-4`, `R`, `P`, `V`).
+  - **Post-Session Actions**: Confetti celebration, streak extension, and a 1-click "Review Missed (X)" action for failed cards.
 
 ---
 
@@ -259,6 +262,18 @@ private generateVocabId(userId: string, word: string, language: string): string 
 }
 ```
 
+### 4.2. Payment & Subscription Management (`PaymentService`)
+Located at `src/app/core/services/payment.service.ts`:
+- **State Signals**:
+  - `activeOrder`: Signal holding active pending payment order (`PaymentOrderInfo | null`).
+  - `isLoading`: Signal tracking payment creation or status checking in flight.
+  - `isPolling`: Signal indicating background payment resolution polling.
+- **Order Lifecycle & Polling**:
+  - `createOrder(planId)`: Initiates payment with `/api/payment/create-order`, sets active order state, and triggers `pollOrderStatus()`.
+  - `pollOrderStatus(orderCode)`: Polls `/api/payment/check-status` every 3 seconds (up to 5 minutes) until the status resolves to `PAID` or `CANCELLED`.
+  - Automatic celebration on success: triggers `ToastService.success()`, clears the order state, and re-fetches user diamonds and tier.
+  - Exposes `cancelOrder()` for user cancellation or cleanup on dialog close.
+
 ---
 
 ## 5. Internationalization System (`I18nService`)
@@ -281,8 +296,8 @@ private generateVocabId(userId: string, word: string, language: string): string 
 
 The application styling is organized using modular SCSS located in `src/styles/`:
 
-- **`_variables.scss`**: Design tokens, font stacks (system, Noto Sans JP/KR/SC), color palette, spacing, z-index layers.
-- **`_base.scss`**: CSS reset, root typography, scrollbar styling, mobile tap-highlight resets.
+- **`_variables.scss`**: Design tokens, font stacks (system, Noto Sans JP/KR/SC), color palette, spacing, z-index layers. Standardizes `--success` to `#22c55e` across light/dark themes, provides gamification RGB tokens (`--color-fire-rgb`, `--color-diamond-rgb`), tier gradients (`--gradient-pro`, `--gradient-premium`), and radius tokens (`--border-radius-xs: 8px`, `--sidebar-width: 15.75rem`).
+- **`_base.scss` & `_utilities.scss`**: CSS reset, root typography, `@mixin no-scrollbar` / `.no-scrollbar` utility, mobile tap-highlight resets.
 - **`_layout.scss`**: Main grid, sidebar layouts, topbar header, safe area padding (`--bottom-nav-safe-area`, `env(safe-area-inset-bottom)`).
 - **`_components.scss`**: Badges, modals, dialog backdrops, pill tags, buttons.
 - **`_buttons.scss` & `_forms.scss`**: Standardized button variants (primary, secondary, danger, ghost) and input fields.
@@ -298,7 +313,8 @@ The application styling is organized using modular SCSS located in `src/styles/`
   ```
 
 ### Card & Panel Design Conventions
-- **Clean Surface Architecture & Viewport-Capped Lists**: All cards (`.card`, `.sidebar-card`, `.vocab-panel`, `.dict-panel`, `.playlist-panel`, `.history-panel`) share unified surface tokens: `background: var(--bg-card);`, `border: 1px solid var(--border-color);`, and `border-radius: var(--border-radius-lg);`. Cards wrap their contents naturally when items are few (avoiding artificial empty-space stretching or `min-height` voids). When items accumulate, the inner scrollable list containers (`.dict-results`, `.word-list`, `.playlist-list`, `.detail-tracklist`, `.history-content`) enforce viewport-capped `max-height: calc(100vh - 260px)` (and `calc(100dvh - 260px)` on mobile) with internal `overflow-y: auto; scrollbar-width: thin;`, keeping search bars, filters, and header tabs pinned at the top.
+- **Clean Surface Architecture & Single-Document Scrolling**: All cards (`.card`, `.sidebar-card`, `.vocab-panel`, `.dict-panel`, `.playlist-panel`, `.history-panel`) share unified surface tokens: `background: var(--bg-card);`, `border: 1px solid var(--border-color);`, and `border-radius: var(--border-radius-lg);`. Cards wrap their contents naturally when items are few (avoiding artificial empty-space stretching or `min-height` voids).
+- **Single-Document vs Bounded Scrolling Best Practice**: Standalone pages (`/playlist`, `/history`, and full-screen dictionary/vocabulary views) avoid arbitrary `max-height: calc(100vh - 260px)` container scrolling. Instead, toolbars (`.playlist-toolbar`, `.history-toolbar`, `.vocab-toolbar`) are configured as `position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px)`, while the list items flow naturally within the single page document. This prevents nested scroll traps, preserves native mobile touch momentum, and guarantees URL bar collapse behavior. Viewport-bounded scrolling (`overflow-y: auto`) is reserved strictly for embedded panels (`:host-context(.sidebar-pane)` in `VocabularyListComponent` or multi-pane sidebars) where list length must not expand the outer player layout.
 - **Divider-Free Modern Layout**: Card headers (`.panel-header`, `.vocab-header`, `.playlist-header`, `.result-header`) and toolbars do NOT use hard divider lines (`border-bottom: 1px solid var(--border-color)`). Visual hierarchy and clean separation are achieved through consistent whitespace and flex gaps (`var(--space-md)`, `var(--space-sm)`), preventing fragmented card slices.
 - **Unified App Search Bar (`.app-search-box`)**: 36px fixed-height pill input (`border-radius: var(--border-radius-pill)`) with integrated search icon, clear button (`.clear-btn`), and iOS Safari auto-zoom prevention (`font-size: 16px` under `@media (max-width: 480px)`). Shared identically across Dictionary, Vocabulary, History, and Playlist screens.
 - **Unified Filter Chips (`.filter-chip`)**: Standardized 36px height pill buttons with constant `font-weight: 600` and zero font-size/dimension jumps when activated (`.active`). Supports level indicators (`.level-dot`) and badge counts (`.chip-count`).
@@ -308,6 +324,17 @@ The application styling is organized using modular SCSS located in `src/styles/`
   - Authentic audio playback buttons (`.audio-btn`, `.audio-btn--sm`) with primary accent background tint and pulsing animation during active audio streaming via `AudioService`.
   - Level pill badges (`.save-badge-btn`, `.level-badge-btn`) cycling seamlessly between `'new'`, `'learning'`, `'known'`, and `'ignored'`.
   - Empty-state action prompts enabling instant cross-navigation (`searchInDictionary`) to look up and save new words directly.
+
+### Unified Skeleton Loading System (`_skeletons.scss`)
+All asynchronous loading states (History, Playlist, Vocabulary, and Dictionary Word Popup) are standardized through `src/styles/_skeletons.scss`:
+- **Directional Wave Shimmer (`@keyframes skeletonWave`)**: Uses a high-performance linear gradient sweep (`linear-gradient(90deg, rgba(var(--text-primary-rgb), 0.04) 0%, rgba(var(--text-primary-rgb), 0.09) 50%, rgba(var(--text-primary-rgb), 0.04) 100%)`) animating smoothly across `background-position: 200% 0` to `-200% 0` over 1.6 seconds.
+- **Accessibility & Screen Reader Guards**: Skeleton containers enforce `role="status"` and `aria-busy="true"` with `aria-label="Loading..."`, while individual placeholder shapes are marked `aria-hidden="true"`.
+- **Reduced Motion Support**: When `@media (prefers-reduced-motion: reduce)` is detected, the wave shimmer animation is completely disabled (`animation: none`), falling back to a static neutral low-contrast background.
+- **Modular Utility Classes**: Standardizes shapes across the application:
+  - `.skeleton`: Base shimmer block with rounded corners.
+  - `.skeleton-text`: Emulates typographic lines with standard 12px / 16px heights.
+  - `.skeleton-avatar`, `.skeleton-badge`, `.skeleton-btn`: Emulates round avatars, pill chips, and rectangular button shapes.
+  - `.skeleton-card`: Pre-assembled card template mirroring the structural dimensions of `HistoryCard`, `PlaylistCard`, and `VocabItem`.
 
 ### Modal & Bottom Sheet Standardization Conventions
 All modals and sheets throughout Voca (both desktop centered modals and mobile bottom sheets) adhere strictly to unified ergonomics:
@@ -323,6 +350,14 @@ All modals and sheets throughout Voca (both desktop centered modals and mobile b
 - **Frosted Glass Surface**: Container uses `rgba(var(--bg-card-rgb), 0.88)` with `backdrop-filter: blur(20px) saturate(180%)` to provide a native frosted-glass blur over scrolling page content.
 - **Landscape Phone Optimization**: On compact landscape viewports (`max-height: 500px`), the bottom navigation bar is automatically hidden (`display: none !important`), freeing up ~20% vertical space for video playback and synchronized subtitles.
 - **Safe Session Handling**: Tapping the active "Watch" tab while watching a video preserves the current playback state and smoothly scrolls to top rather than resetting the active session.
+
+### Mobile-Native Status Capsule Toast System (`.toast`)
+All transient notification feedback (link copying, playlist changes, deletion with Undo, vocabulary imports, and network errors) is rendered through the centralized `.toast` status capsule:
+- **Mobile-Native Placement**: Positioned fixed at the top center right below the notch/status bar (`top: calc(env(safe-area-inset-top, 0px) + 0.75rem); left: 50%; transform: translateX(-50%)`), completely avoiding bottom navigation, floating action buttons, and mobile virtual keyboards.
+- **Solid Punchy Surface (No Frosted Glass)**: Constructed with a solid opaque dark surface (`#111318`), crisp high-contrast white typography (`font-weight: 700`, `--font-sans`, `letter-spacing: -0.01em`), subtle `1px solid rgba(255, 255, 255, 0.1)` border, and clean drop shadow (`0 8px 24px -4px rgba(0, 0, 0, 0.35)`).
+- **Tactile Spring Dynamics**: Uses native spring physics (`@keyframes mobileToastIn` with `cubic-bezier(0.34, 1.56, 0.64, 1)`) expanding from `scale(0.85)` with subtle spring overshoot, and shrinks out smoothly on dismiss (`@keyframes mobileToastOut`).
+- **First-Class Interactive Actions**: Features `.toast__action-btn` (`border-radius: var(--border-radius-pill); font-weight: 700; background: rgba(255, 255, 255, 0.16)`) with instant touch scale feedback (`transform: scale(0.95)`), enabling one-tap "Undo" across History and Vocabulary removal.
+- **Semantic Indicators**: Dedicated semantic accent colors for success (`var(--success-green, #22c55e)`), error (`var(--error, #ff4b4b)`), warning (`var(--warning, #ffc800)`), and info (`var(--info, #1cb0f6)`).
 
 ---
 

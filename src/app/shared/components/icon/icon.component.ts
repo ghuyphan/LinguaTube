@@ -5,7 +5,7 @@ export type IconName =
     | 'play' | 'pause' | 'skip-back' | 'skip-forward'
     | 'rewind' | 'fast-forward'
     | 'volume-2' | 'volume-x' | 'volume-1' | 'sun' | 'moon'
-    | 'search' | 'plus' | 'check' | 'x' | 'trash-2'
+    | 'search' | 'plus' | 'plus-circle' | 'check' | 'x' | 'trash-2'
     | 'upload' | 'download' | 'file-text' | 'book-open'
     | 'settings' | 'chevron-down' | 'external-link'
     | 'loader' | 'alert-circle' | 'info' | 'bookmark' | 'bookmark-plus' | 'bookmark-filled'
@@ -23,7 +23,7 @@ export type IconName =
     | 'headphones' | 'clipboard-check' | 'coffee'
     | 'graduation-cap-filled' | 'book-open-filled'
     // Audio & utility icons
-    | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'lightbulb' | 'leaf' | 'box' | 'droplet';
+    | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'slash' | 'lightbulb' | 'leaf' | 'box' | 'droplet';
 
 @Component({
     selector: 'app-icon',

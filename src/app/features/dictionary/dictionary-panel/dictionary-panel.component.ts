@@ -3,18 +3,19 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { DictionaryService } from '../dictionary.service';
 import { VocabularyService } from '../../vocabulary';
-import { SettingsService, I18nService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService } from '../../../core/services';
 import { GrammarService } from '../../../services';
-import { DictionaryEntry, WordLevel } from '../../../models';
+import { DictionaryEntry, WordLevel, SupportedLearningLanguage } from '../../../models';
 import { GrammarPattern, SupportedGrammarLang } from '../../../models/grammar.model';
 
 @Component({
   selector: 'app-dictionary-panel',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent],
   templateUrl: './dictionary-panel.component.html',
   styleUrl: './dictionary-panel.component.scss'
 })
@@ -24,6 +25,7 @@ export class DictionaryPanelComponent implements OnDestroy {
   settings = inject(SettingsService);
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
+  audioService = inject(AudioService);
 
   // Embedded mode (e.g. inside DictionaryPage tabs)
   embedded = input<boolean>(false);
@@ -41,8 +43,10 @@ export class DictionaryPanelComponent implements OnDestroy {
   lookupError = signal<string | null>(null);
 
   // Audio Playback state
-  isPlayingAudio = signal(false);
-  private activeAudioElement: HTMLAudioElement | null = null;
+  isPlayingAudio = computed(() => {
+    const entry = this.currentEntry();
+    return entry ? this.audioService.isPlaying(entry.word) : false;
+  });
 
   // Active query subscription to cancel in-flight requests
   private lookupSubscription: Subscription | null = null;
@@ -163,6 +167,32 @@ export class DictionaryPanelComponent implements OnDestroy {
     this.vocab.addFromDictionary(entry, lang);
   }
 
+  // Level picker state
+  readonly levelPickerOpen = signal(false);
+
+  readonly levelOptions = computed<OptionItem[]>(() => [
+    { value: 'new', label: this.i18n.t('vocab.new') || 'New', icon: 'plus-circle', color: 'new' },
+    { value: 'learning', label: this.i18n.t('vocab.learning') || 'Learning', icon: 'clock', color: 'learning' },
+    { value: 'known', label: this.i18n.t('vocab.known') || 'Known', icon: 'check-circle', color: 'known' },
+    { value: 'ignored', label: this.i18n.t('vocab.ignored') || 'Ignored', icon: 'slash', color: 'ignored' },
+  ]);
+
+  openLevelPicker(event?: Event): void {
+    event?.stopPropagation();
+    this.levelPickerOpen.set(true);
+  }
+
+  onLevelSelected(newLevel: string): void {
+    const entry = this.currentEntry();
+    if (entry) {
+      const wordItem = this.vocab.findWord(entry.word);
+      if (wordItem && wordItem.level !== newLevel) {
+        this.vocab.updateLevel(wordItem.id, newLevel as WordLevel);
+      }
+    }
+    this.levelPickerOpen.set(false);
+  }
+
   cycleLevel(event?: Event): void {
     event?.stopPropagation();
     const entry = this.currentEntry();
@@ -184,45 +214,17 @@ export class DictionaryPanelComponent implements OnDestroy {
     }
   }
 
-  playAudio(audioUrl?: string, event?: Event): void {
+  playAudio(entry?: DictionaryEntry | null, event?: Event): void {
     event?.stopPropagation();
-    if (!audioUrl) return;
+    const target = entry || this.currentEntry();
+    if (!target) return;
 
-    if (this.isPlayingAudio()) {
-      this.stopAudio();
-      return;
-    }
-
-    try {
-      this.activeAudioElement = new Audio(audioUrl);
-      this.isPlayingAudio.set(true);
-
-      this.activeAudioElement.onended = () => {
-        this.isPlayingAudio.set(false);
-        this.activeAudioElement = null;
-      };
-
-      this.activeAudioElement.onerror = () => {
-        this.isPlayingAudio.set(false);
-        this.activeAudioElement = null;
-      };
-
-      this.activeAudioElement.play().catch(() => {
-        this.isPlayingAudio.set(false);
-        this.activeAudioElement = null;
-      });
-    } catch {
-      this.isPlayingAudio.set(false);
-      this.activeAudioElement = null;
-    }
+    const lang = this.settings.settings().language as SupportedLearningLanguage;
+    void this.audioService.playWord(target.word, lang, target.audio);
   }
 
   private stopAudio(): void {
-    if (this.activeAudioElement) {
-      this.activeAudioElement.pause();
-      this.activeAudioElement = null;
-    }
-    this.isPlayingAudio.set(false);
+    this.audioService.stopAudio();
   }
 
   private addToRecent(term: string): void {

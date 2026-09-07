@@ -25,9 +25,6 @@ interface UnifiedDictResponse {
 })
 export class DictionaryService {
   readonly isLoading = signal(false);
-  // Kept for backward compatibility
-  readonly lastLookup = signal<DictionaryEntry | null>(null);
-  readonly lastQuery = signal<string>('');
   readonly recentSearches = signal<string[]>([]);
 
   // Dedicated isolated screen persistence (never polluted by subtitle popups)

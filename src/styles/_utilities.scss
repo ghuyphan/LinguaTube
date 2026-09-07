@@ -233,3 +233,19 @@
     width: 20px;
     height: 20px;
 }
+
+/* ============================================
+   SCROLLBAR UTILITIES
+   ============================================ */
+
+@mixin no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.no-scrollbar {
+    @include no-scrollbar;
+}

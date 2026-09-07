@@ -188,6 +188,34 @@
                 </div>
                 <app-switch [checked]="reverseMode()" (checkedChange)="reverseMode.set($event)" />
             </div>
+
+            <!-- Auto-play Audio Row -->
+            <div class="study-option-row">
+                <div class="study-option-info">
+                    <div class="study-option-icon study-option-icon--audio">
+                        <app-icon name="volume-2" [size]="16" />
+                    </div>
+                    <div class="study-option-text">
+                        <span class="study-option-title">{{ i18n.t('study.autoPlayAudio') }}</span>
+                        <span class="study-option-hint">{{ i18n.t('study.autoPlayAudioHint') }}</span>
+                    </div>
+                </div>
+                <app-switch [checked]="autoPlayAudio()" (checkedChange)="setAutoPlayAudio($event)" />
+            </div>
+
+            <!-- Cloze Mode Row -->
+            <div class="study-option-row">
+                <div class="study-option-info">
+                    <div class="study-option-icon study-option-icon--cloze">
+                        <app-icon name="type" [size]="16" />
+                    </div>
+                    <div class="study-option-text">
+                        <span class="study-option-title">{{ i18n.t('study.clozeMode') }}</span>
+                        <span class="study-option-hint">{{ i18n.t('study.clozeModeHint') }}</span>
+                    </div>
+                </div>
+                <app-switch [checked]="clozeMode()" (checkedChange)="setClozeMode($event)" />
+            </div>
         </div>
 
         <!-- Start CTA & Empty State -->
@@ -227,12 +255,17 @@
             </div>
             <span class="progress-text">
                 {{ currentIndex() + 1 }} / {{ studyCards().length }}
+                @if (studyCards().length > initialCardCount()) {
+                    <span class="queue-recycled-pill" [title]="i18n.t('study.inQueue')">
+                        +{{ studyCards().length - initialCardCount() }}
+                    </span>
+                }
             </span>
             <span class="session-timer">
                 <app-icon name="clock" [size]="14" />
                 {{ formatTime(elapsedSeconds()) }}
             </span>
-            <button class="btn btn-ghost btn-sm session-exit-btn" (click)="endSession()" [title]="i18n.t('study.end')">
+            <button class="btn btn-ghost btn-sm session-exit-btn card-action-interactive" (click)="endSession()" [title]="i18n.t('study.end')">
                 <app-icon name="x" [size]="16" />
                 <span class="desktop-only">{{ i18n.t('study.end') }}</span>
             </button>
@@ -245,11 +278,13 @@
             (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)" (touchcancel)="onTouchCancel()">
 
             <!-- Swipe indicators -->
-            <div class="swipe-indicator swipe-indicator--left" [class.active]="swipeOffset() < -40">
+            <div class="swipe-indicator swipe-indicator--left" [class.active]="swipeOffset() < -35">
                 <app-icon name="x" [size]="24" />
+                <span class="swipe-indicator__label">{{ i18n.t('study.again') }}</span>
             </div>
-            <div class="swipe-indicator swipe-indicator--right" [class.active]="swipeOffset() > 40">
+            <div class="swipe-indicator swipe-indicator--right" [class.active]="swipeOffset() > 35">
                 <app-icon name="check" [size]="24" />
+                <span class="swipe-indicator__label">{{ i18n.t('study.good') }}</span>
             </div>
 
             <div class="flashcard__inner">
@@ -259,25 +294,43 @@
                         <span class="badge badge--{{ vm.item.level }}">
                             {{ vm.item.level }}
                         </span>
-                        @if (!reverseMode()) {
-                        <button type="button" 
-                                class="card-speaker-btn" 
-                                [title]="i18n.t('study.listen')"
-                                (click)="playAudio(vm.primaryText, vm.item.language, $event, vm.item.audio)">
-                            <app-icon name="volume-2" [size]="16" />
-                        </button>
-                        }
+                        
+                        <div class="flashcard-top-actions">
+                            @if (vm.sourceVideoId) {
+                            <button type="button"
+                                    class="card-video-btn card-action-interactive"
+                                    [title]="i18n.t('study.watchScene')"
+                                    (click)="openVideoScene(vm.sourceVideoId, vm.sourceTimestamp, $event)">
+                                <app-icon name="play" [size]="13" />
+                                <span>{{ i18n.t('study.watchScene') }}</span>
+                            </button>
+                            }
+
+                            @if (!reverseMode()) {
+                            <button type="button" 
+                                    class="card-speaker-btn card-action-interactive" 
+                                    [title]="i18n.t('study.listen')"
+                                    (click)="playAudio(vm.primaryText, vm.item.language, $event, vm.item.audio)">
+                                <app-icon name="volume-2" [size]="16" />
+                            </button>
+                            }
+                        </div>
                     </div>
 
                     @if (vm.hasContext) {
                     <div class="card-context card-context--front">
-                        <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
+                        <div class="card-context__header">
+                            <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
+                            @if (clozeMode()) {
+                            <span class="cloze-tag">{{ i18n.t('study.clozeMode') }}</span>
+                            }
+                        </div>
                         <p class="card-context__sentence" [class]="'text-' + vm.item.language">
-                            {{ vm.item.sourceSentence }}
+                            {{ vm.maskedSentence }}
                         </p>
-                        @if (!reverseMode()) {
+                        @if (!reverseMode() && !clozeMode()) {
                         <div class="card-context__focus">
-                            <span>{{ i18n.t('study.focusWord') }}</span>
+                            <span>{{ i18n.t('study.focusWord') }}:</span>
                             <strong>{{ vm.item.word }}</strong>
                         </div>
                         }
@@ -289,8 +342,18 @@
                         <span class="card-word" [class]="'text-' + vm.item.language">
                             {{ vm.primaryText }}
                         </span>
-                        @if (vm.showReading) {
+                        
+                        <!-- Front Reading: Hidden by default to prevent spoiler, with peek button -->
+                        @if (vm.showReadingFront) {
                         <span class="card-reading">{{ vm.reading }}</span>
+                        } @else if (vm.hasReading) {
+                        <button type="button" 
+                                class="btn-peek-reading card-action-interactive" 
+                                (click)="togglePeekReading($event)"
+                                [title]="i18n.t('study.peekReading')">
+                            <app-icon name="eye" [size]="13" />
+                            <span>{{ i18n.t('study.peekReading') }}</span>
+                        </button>
                         }
                     </div>
                     } @else {
@@ -308,12 +371,25 @@
                         <span class="badge badge--{{ vm.item.level }}">
                             {{ vm.item.level }}
                         </span>
-                        <button type="button" 
-                                class="card-speaker-btn" 
-                                [title]="i18n.t('study.listen')"
-                                (click)="playAudio(vm.primaryText, vm.item.language, $event, vm.item.audio)">
-                            <app-icon name="volume-2" [size]="16" />
-                        </button>
+
+                        <div class="flashcard-top-actions">
+                            @if (vm.sourceVideoId) {
+                            <button type="button"
+                                    class="card-video-btn card-action-interactive"
+                                    [title]="i18n.t('study.watchScene')"
+                                    (click)="openVideoScene(vm.sourceVideoId, vm.sourceTimestamp, $event)">
+                                <app-icon name="play" [size]="13" />
+                                <span>{{ i18n.t('study.watchScene') }}</span>
+                            </button>
+                            }
+
+                            <button type="button" 
+                                    class="card-speaker-btn card-action-interactive" 
+                                    [title]="i18n.t('study.listen')"
+                                    (click)="playAudio(vm.primaryText, vm.item.language, $event, vm.item.audio)">
+                                <app-icon name="volume-2" [size]="16" />
+                            </button>
+                        </div>
                     </div>
 
                     @if (!reverseMode()) {
@@ -321,7 +397,7 @@
                         <span class="card-word" [class]="'text-' + vm.item.language">
                             {{ vm.primaryText }}
                         </span>
-                        @if (vm.showReading) {
+                        @if (vm.showReadingBack) {
                         <span class="card-reading">{{ vm.reading }}</span>
                         }
                     </div>
@@ -333,7 +409,7 @@
                         <span class="card-word" [class]="'text-' + vm.item.language">
                             {{ vm.primaryText }}
                         </span>
-                        @if (vm.showReading) {
+                        @if (vm.showReadingBack) {
                         <span class="card-reading">{{ vm.reading }}</span>
                         }
                     </div>
@@ -346,35 +422,55 @@
                     @if (vm.hasContext) {
                     <div class="card-sentence">
                         <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
-                        {{ vm.item.sourceSentence }}
+                        <span class="sentence-text">{{ vm.item.sourceSentence }}</span>
                     </div>
                     }
                 </div>
             </div>
         </div>
 
-        <!-- Answer Buttons -->
+        <!-- Answer Buttons with Interval Badges -->
         @if (vm.showAnswer) {
         <div class="answer-buttons">
-            <button class="answer-btn answer-btn--wrong" (click)="markAnswer('wrong')">
-                <app-icon name="x" [size]="18" />
-                <span>{{ i18n.t('study.again') }}</span>
-                <span class="answer-key">1</span>
+            <button class="answer-btn answer-btn--wrong card-action-interactive" (click)="markAnswer('wrong')">
+                <div class="answer-btn__main">
+                    <app-icon name="x" [size]="16" />
+                    <span class="answer-btn__label">{{ i18n.t('study.again') }}</span>
+                </div>
+                <div class="answer-btn__meta">
+                    <span class="answer-time">{{ intervalPreviews().again }}</span>
+                    <span class="answer-key">1</span>
+                </div>
             </button>
-            <button class="answer-btn answer-btn--hard" (click)="markAnswer('hard')">
-                <app-icon name="rotate-ccw" [size]="18" />
-                <span>{{ i18n.t('study.hard') }}</span>
-                <span class="answer-key">2</span>
+            <button class="answer-btn answer-btn--hard card-action-interactive" (click)="markAnswer('hard')">
+                <div class="answer-btn__main">
+                    <app-icon name="rotate-ccw" [size]="16" />
+                    <span class="answer-btn__label">{{ i18n.t('study.hard') }}</span>
+                </div>
+                <div class="answer-btn__meta">
+                    <span class="answer-time">{{ intervalPreviews().hard }}</span>
+                    <span class="answer-key">2</span>
+                </div>
             </button>
-            <button class="answer-btn answer-btn--good" (click)="markAnswer('good')">
-                <app-icon name="check" [size]="18" />
-                <span>{{ i18n.t('study.good') }}</span>
-                <span class="answer-key">3</span>
+            <button class="answer-btn answer-btn--good card-action-interactive" (click)="markAnswer('good')">
+                <div class="answer-btn__main">
+                    <app-icon name="check" [size]="16" />
+                    <span class="answer-btn__label">{{ i18n.t('study.good') }}</span>
+                </div>
+                <div class="answer-btn__meta">
+                    <span class="answer-time">{{ intervalPreviews().good }}</span>
+                    <span class="answer-key">3</span>
+                </div>
             </button>
-            <button class="answer-btn answer-btn--easy" (click)="markAnswer('easy')">
-                <app-icon name="chevron-right" [size]="18" />
-                <span>{{ i18n.t('study.easy') }}</span>
-                <span class="answer-key">4</span>
+            <button class="answer-btn answer-btn--easy card-action-interactive" (click)="markAnswer('easy')">
+                <div class="answer-btn__main">
+                    <app-icon name="chevron-right" [size]="16" />
+                    <span class="answer-btn__label">{{ i18n.t('study.easy') }}</span>
+                </div>
+                <div class="answer-btn__meta">
+                    <span class="answer-time">{{ intervalPreviews().easy }}</span>
+                    <span class="answer-key">4</span>
+                </div>
             </button>
         </div>
 
@@ -446,10 +542,30 @@
         </div>
         }
 
-        <button class="btn btn-primary start-btn" (click)="resetSession()">
-            <app-icon name="rotate-ccw" [size]="16" />
-            <span>{{ i18n.t('study.studyAgain') }}</span>
-        </button>
+        <div class="complete-actions">
+            @if (missedCardIds().size > 0) {
+            <button class="btn btn-secondary review-missed-btn" (click)="reviewMissedCards()">
+                <app-icon name="rotate-ccw" [size]="16" />
+                <span>{{ i18n.t('study.reviewMissed') }} ({{ missedCardIds().size }})</span>
+            </button>
+            }
+
+            <button class="btn btn-primary start-btn" (click)="resetSession()">
+                <app-icon name="play" [size]="16" />
+                <span>{{ i18n.t('study.studyAgain') }}</span>
+            </button>
+
+            <div class="complete-nav-links">
+                <a routerLink="/video" class="btn btn-ghost btn-sm complete-nav-link">
+                    <app-icon name="play" [size]="14" />
+                    <span>{{ i18n.t('nav.watch') }}</span>
+                </a>
+                <a routerLink="/dictionary" [queryParams]="{ tab: 'vocab' }" class="btn btn-ghost btn-sm complete-nav-link">
+                    <app-icon name="book-open" [size]="14" />
+                    <span>{{ i18n.t('nav.vocab') }}</span>
+                </a>
+            </div>
+        </div>
     </div>
     }
 

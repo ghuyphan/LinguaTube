@@ -1,18 +1,19 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AudioService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
 import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem } from '../../../models';
-import { formatTime } from '../../../core/utils';
+import { calculateSRSPreview, formatTime, SRSIntervalPreview } from '../../../core/utils';
 
-import { RouterLink } from '@angular/router';
+const STUDY_AUTOPLAY_KEY = 'linguatube_study_autoplay';
+const STUDY_CLOZE_KEY = 'linguatube_study_cloze';
 
-interface StudyCard {
-    item: VocabularyItem;
-    showAnswer: boolean;
+function escapeRegex(str: string): string {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 @Component({
@@ -24,6 +25,9 @@ interface StudyCard {
     styleUrls: ['./study-mode.component.scss']
 })
 export class StudyModeComponent implements OnDestroy {
+    private platformId = inject(PLATFORM_ID);
+    private router = inject(Router);
+
     vocab = inject(VocabularyService);
     settings = inject(SettingsService);
     i18n = inject(I18nService);
@@ -37,12 +41,18 @@ export class StudyModeComponent implements OnDestroy {
     dueOnly = signal(false);
     reverseMode = signal(false);
     sessionSize = signal<number | 'all'>(10);
+    autoPlayAudio = signal(true);
+    clozeMode = signal(false);
 
-    // State
+    // Active Card State
     isStudying = signal(false);
     isComplete = signal(false);
-    studyCards = signal<StudyCard[]>([]);
+    isAnswerRevealed = signal(false);
+    peekReading = signal(false);
+    studyCards = signal<VocabularyItem[]>([]);
     currentIndex = signal(0);
+    initialCardCount = signal(0);
+    missedCardIds = signal<Set<string>>(new Set());
 
     sessionStats = signal({ total: 0, correct: 0, incorrect: 0 });
 
@@ -51,12 +61,14 @@ export class StudyModeComponent implements OnDestroy {
     elapsedSeconds = signal(0);
     private timerInterval: ReturnType<typeof setInterval> | null = null;
 
-    // Daily goal (shared reactively via VocabularyService)
+    // Daily goal & progress (shared from VocabularyService)
     dailyGoal = this.vocab.dailyGoal;
     cardsCompletedToday = this.vocab.cardsCompletedToday;
+    goalProgress = this.vocab.goalProgress;
 
     // Confetti
     showConfetti = signal(false);
+    private confettiTimeout: ReturnType<typeof setTimeout> | null = null;
 
     // Swipe gestures
     touchStartX = 0;
@@ -64,29 +76,17 @@ export class StudyModeComponent implements OnDestroy {
     private touchMoved = false;
     private isCardTouchActive = false;
     private lastTouchEndTime = 0;
-    private confettiTimeout: ReturnType<typeof setTimeout> | null = null;
     swipeOffset = signal(0);
     isSwiping = signal(false);
 
     currentLanguage = computed(() => this.settings.settings().language);
-
     deckStats = computed(() => this.vocab.getStatsByLanguage(this.currentLanguage()));
 
     // Due today count
-    dueToday = computed(() => {
-        const currentLang = this.currentLanguage();
-        const today = new Date();
-        today.setHours(23, 59, 59, 999);
+    dueToday = computed(() => this.vocab.getDueCountByLanguage(this.currentLanguage()));
 
-        return this.vocab.vocabulary().filter(item => {
-            if (item.language !== currentLang) return false;
-            if (item.level === 'ignored') return false;
-            if (!item.nextReviewDate) return true; // New items are always due
-            return new Date(item.nextReviewDate) <= today;
-        }).length;
-    });
-
-    availableCards = computed(() => {
+    // Filtered available cards based on study preferences
+    readonly filteredAvailableItems = computed(() => {
         const currentLang = this.currentLanguage();
         const incNew = this.includeNew();
         const incLearning = this.includeLearning();
@@ -102,8 +102,10 @@ export class StudyModeComponent implements OnDestroy {
             if (item.level === 'learning' && incLearning) return true;
             if (item.level === 'known' && incKnown) return true;
             return false;
-        }).length;
+        });
     });
+
+    availableCards = computed(() => this.filteredAvailableItems().length);
 
     sessionCardCount = computed(() => {
         const avail = this.availableCards();
@@ -124,23 +126,54 @@ export class StudyModeComponent implements OnDestroy {
     });
 
     readonly cardViewModel = computed(() => {
-        const card = this.currentCard();
-        if (!card) return null;
-        const item = card.item;
-        const reading = this.getCardReading(item);
+        const item = this.currentCard();
+        if (!item) return null;
+        const reading = this.settings.getReadingText(item.language, item);
         const primaryText = this.settings.useReadingOnly(item.language) && reading ? reading : item.word;
-        const showReading = !!reading && reading !== item.word && this.settings.showReadingAnnotation(item.language);
+        const hasReading = !!reading && reading !== item.word;
+        const showReadingBack = hasReading && this.settings.showReadingAnnotation(item.language);
+        const showReadingFront = hasReading && this.peekReading();
         const hasContext = !!item.sourceSentence?.trim();
+        const isFlipped = this.isAnswerRevealed();
+
+        let maskedSentence = item.sourceSentence || '';
+        if (this.clozeMode() && hasContext && item.word) {
+            try {
+                const regex = new RegExp(escapeRegex(item.word), 'gi');
+                maskedSentence = maskedSentence.replace(regex, '【 ... 】');
+            } catch {
+                maskedSentence = item.sourceSentence || '';
+            }
+        }
 
         return {
-            card,
             item,
-            showAnswer: card.showAnswer,
+            showAnswer: isFlipped,
             reading,
             primaryText,
-            showReading,
-            hasContext
+            hasReading,
+            showReadingBack,
+            showReadingFront,
+            hasContext,
+            maskedSentence,
+            sourceVideoId: item.sourceVideoId,
+            sourceTimestamp: item.sourceTimestamp
         };
+    });
+
+    readonly intervalPreviews = computed<SRSIntervalPreview>(() => {
+        const card = this.currentCard();
+        if (!card) return { again: '<10m', hard: '1d', good: '3d', easy: '6d' };
+        return calculateSRSPreview(card);
+    });
+
+    // Session progress for sidebar & header
+    cardsRemainingInQueue = computed(() => Math.max(0, this.studyCards().length - this.currentIndex()));
+
+    sessionAccuracy = computed(() => {
+        const s = this.sessionStats();
+        if (s.total === 0) return 100;
+        return Math.round((s.correct / s.total) * 100);
     });
 
     currentLanguageLabel = computed(() => {
@@ -157,14 +190,18 @@ export class StudyModeComponent implements OnDestroy {
         return this.getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language);
     });
 
-    // Goal progress percentage
-    goalProgress = computed(() => {
-        const done = this.cardsCompletedToday();
-        const goal = this.dailyGoal();
-        return Math.min(100, Math.round((done / goal) * 100));
-    });
-
-    constructor() {}
+    constructor() {
+        if (isPlatformBrowser(this.platformId)) {
+            const storedAutoPlay = localStorage.getItem(STUDY_AUTOPLAY_KEY);
+            if (storedAutoPlay !== null) {
+                this.autoPlayAudio.set(storedAutoPlay === 'true');
+            }
+            const storedCloze = localStorage.getItem(STUDY_CLOZE_KEY);
+            if (storedCloze !== null) {
+                this.clozeMode.set(storedCloze === 'true');
+            }
+        }
+    }
 
     ngOnDestroy(): void {
         this.stopTimer();
@@ -172,32 +209,6 @@ export class StudyModeComponent implements OnDestroy {
             clearTimeout(this.confettiTimeout);
             this.confettiTimeout = null;
         }
-    }
-
-    getCardPrimaryText(item: VocabularyItem): string {
-        const reading = this.getCardReading(item);
-
-        if (this.settings.useReadingOnly(item.language) && reading) {
-            return reading;
-        }
-
-        return item.word;
-    }
-
-    getCardReading(item: VocabularyItem): string | null {
-        return this.settings.getReadingText(item.language, item);
-    }
-
-    showCardReading(item: VocabularyItem): boolean {
-        const reading = this.getCardReading(item);
-
-        return !!reading
-            && reading !== item.word
-            && this.settings.showReadingAnnotation(item.language);
-    }
-
-    hasSentenceContext(item: VocabularyItem): boolean {
-        return !!item.sourceSentence?.trim();
     }
 
     // Keyboard shortcuts
@@ -208,7 +219,6 @@ export class StudyModeComponent implements OnDestroy {
         const card = this.currentCard();
         if (!card) return;
 
-        // Ignore if user is typing in an input
         if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
             return;
         }
@@ -220,32 +230,55 @@ export class StudyModeComponent implements OnDestroy {
                 break;
             case 'Digit1':
             case 'Numpad1':
-                if (card.showAnswer) {
+                if (this.isAnswerRevealed()) {
                     event.preventDefault();
                     this.markAnswer('wrong');
                 }
                 break;
             case 'Digit2':
             case 'Numpad2':
-                if (card.showAnswer) {
+                if (this.isAnswerRevealed()) {
                     event.preventDefault();
                     this.markAnswer('hard');
                 }
                 break;
             case 'Digit3':
             case 'Numpad3':
-                if (card.showAnswer) {
+                if (this.isAnswerRevealed()) {
                     event.preventDefault();
                     this.markAnswer('good');
                 }
                 break;
             case 'Digit4':
             case 'Numpad4':
-                if (card.showAnswer) {
+                if (this.isAnswerRevealed()) {
                     event.preventDefault();
                     this.markAnswer('easy');
                 }
                 break;
+            case 'KeyR': {
+                const vm = this.cardViewModel();
+                if (vm) {
+                    event.preventDefault();
+                    this.playAudio(vm.primaryText, vm.item.language, undefined, vm.item.audio);
+                }
+                break;
+            }
+            case 'KeyP': {
+                if (!this.isAnswerRevealed()) {
+                    event.preventDefault();
+                    this.togglePeekReading();
+                }
+                break;
+            }
+            case 'KeyV': {
+                const vm = this.cardViewModel();
+                if (vm?.sourceVideoId) {
+                    event.preventDefault();
+                    this.openVideoScene(vm.sourceVideoId, vm.sourceTimestamp);
+                }
+                break;
+            }
         }
     }
 
@@ -259,31 +292,43 @@ export class StudyModeComponent implements OnDestroy {
         this.sessionSize.set(size);
     }
 
+    setAutoPlayAudio(enabled: boolean): void {
+        this.autoPlayAudio.set(enabled);
+        if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem(STUDY_AUTOPLAY_KEY, enabled.toString());
+        }
+    }
+
+    setClozeMode(enabled: boolean): void {
+        this.clozeMode.set(enabled);
+        if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem(STUDY_CLOZE_KEY, enabled.toString());
+        }
+    }
+
+    togglePeekReading(event?: Event): void {
+        if (event) event.stopPropagation();
+        this.peekReading.update(v => !v);
+    }
+
     playAudio(text: string, lang?: string, event?: Event, audioUrl?: string): void {
         if (event) event.stopPropagation();
         const targetLang = (lang || this.currentLanguage()) as SupportedLearningLanguage;
         void this.audioService.playWord(text, targetLang, audioUrl);
     }
 
+    openVideoScene(videoId: string, timestamp?: number, event?: Event): void {
+        if (event) event.stopPropagation();
+        const t = Math.floor(timestamp || 0);
+        void this.router.navigate(['/video'], { queryParams: { v: videoId, t } });
+    }
+
     startSession(): void {
-        const currentLang = this.currentLanguage();
+        const items = [...this.filteredAvailableItems()];
+        if (items.length === 0) return;
+
         const today = new Date();
         today.setHours(23, 59, 59, 999);
-        const incNew = this.includeNew();
-        const incLearning = this.includeLearning();
-        const incKnown = this.includeKnown();
-        const onlyDue = this.dueOnly();
-
-        const items = this.vocab.vocabulary().filter(item => {
-            if (item.language !== currentLang) return false;
-            if (onlyDue && item.nextReviewDate && new Date(item.nextReviewDate) > today) return false;
-            if (item.level === 'new' && incNew) return true;
-            if (item.level === 'learning' && incLearning) return true;
-            if (item.level === 'known' && incKnown) return true;
-            return false;
-        });
-
-        if (items.length === 0) return;
 
         // Sort by overdue first, then by level priority
         items.sort((a, b) => {
@@ -303,34 +348,36 @@ export class StudyModeComponent implements OnDestroy {
             return levelOrder[a.level] - levelOrder[b.level];
         });
 
-        // Apply session size limit
         const limit = this.sessionSize();
         const sessionItems = limit === 'all' ? items : items.slice(0, limit);
 
-        this.studyCards.set(sessionItems.map(item => ({
-            item,
-            showAnswer: false
-        })));
+        this.studyCards.set(sessionItems);
 
+        this.initialCardCount.set(sessionItems.length);
+        this.missedCardIds.set(new Set());
         this.currentIndex.set(0);
+        this.isAnswerRevealed.set(false);
+        this.peekReading.set(false);
         this.isStudying.set(true);
         this.isComplete.set(false);
         this.sessionStats.set({ total: 0, correct: 0, incorrect: 0 });
         this.swipeOffset.set(0);
 
-        // Start timer
         this.sessionStartTime.set(new Date());
         this.elapsedSeconds.set(0);
         this.startTimer();
     }
 
     flipCard(): void {
-        const index = this.currentIndex();
-        this.studyCards.update(cards => {
-            const card = cards[index];
-            if (!card) return cards;
-            return cards.map((c, i) => i === index ? { ...c, showAnswer: !c.showAnswer } : c);
-        });
+        const currentlyFlipped = this.isAnswerRevealed();
+        this.isAnswerRevealed.set(!currentlyFlipped);
+
+        if (!currentlyFlipped && this.autoPlayAudio()) {
+            const vm = this.cardViewModel();
+            if (vm) {
+                this.playAudio(vm.primaryText, vm.item.language, undefined, vm.item.audio);
+            }
+        }
     }
 
     onCardClick(_event?: MouseEvent): void {
@@ -344,8 +391,6 @@ export class StudyModeComponent implements OnDestroy {
         const card = this.currentCard();
         if (!card) return;
 
-        // Map answer to SM-2 quality score (0-5)
-        // wrong=1, hard=2, good=4, easy=5
         let quality: number;
         let isCorrect = false;
         if (answer === 'wrong') {
@@ -360,6 +405,15 @@ export class StudyModeComponent implements OnDestroy {
             isCorrect = true;
         }
 
+        // Track missed cards for review missed action
+        if (!isCorrect) {
+            this.missedCardIds.update(set => {
+                const next = new Set(set);
+                next.add(card.id);
+                return next;
+            });
+        }
+
         this.sessionStats.update(prev => ({
             total: prev.total + 1,
             correct: isCorrect ? prev.correct + 1 : prev.correct,
@@ -367,26 +421,56 @@ export class StudyModeComponent implements OnDestroy {
         }));
 
         // Update vocabulary using SM-2 algorithm
-        this.vocab.markReviewedSRS(card.item.id, quality);
+        this.vocab.markReviewedSRS(card.id, quality);
 
         // Update daily progress
-        this.incrementDailyProgress();
+        this.vocab.incrementDailyProgress();
 
-        // Reset swipe
+        // Failed card recycling: append to end of session queue
+        if (answer === 'wrong') {
+            this.studyCards.update(cards => [
+                ...cards,
+                card
+            ]);
+        }
+
         this.swipeOffset.set(0);
 
         // Next card or complete
         if (this.currentIndex() < this.studyCards().length - 1) {
             this.currentIndex.update(i => i + 1);
+            this.isAnswerRevealed.set(false);
+            this.peekReading.set(false);
         } else {
             this.stopTimer();
             this.isStudying.set(false);
             this.isComplete.set(true);
-            // Record activity for streak tracking
             this.streak.recordActivity();
-            // Show confetti
             this.triggerConfetti();
         }
+    }
+
+    reviewMissedCards(): void {
+        const missedIds = this.missedCardIds();
+        if (missedIds.size === 0) return;
+
+        const missedItems = this.vocab.vocabulary().filter(v => missedIds.has(v.id));
+        if (missedItems.length === 0) return;
+
+        this.studyCards.set(missedItems);
+        this.initialCardCount.set(missedItems.length);
+        this.missedCardIds.set(new Set());
+        this.currentIndex.set(0);
+        this.isAnswerRevealed.set(false);
+        this.peekReading.set(false);
+        this.isStudying.set(true);
+        this.isComplete.set(false);
+        this.sessionStats.set({ total: 0, correct: 0, incorrect: 0 });
+        this.swipeOffset.set(0);
+
+        this.sessionStartTime.set(new Date());
+        this.elapsedSeconds.set(0);
+        this.startTimer();
     }
 
     endSession(): void {
@@ -401,7 +485,6 @@ export class StudyModeComponent implements OnDestroy {
         this.startSession();
     }
 
-    // Timer methods
     private startTimer(): void {
         this.timerInterval = setInterval(() => {
             this.elapsedSeconds.update(s => s + 1);
@@ -415,9 +498,7 @@ export class StudyModeComponent implements OnDestroy {
         }
     }
 
-    formatTime(seconds: number): string {
-        return formatTime(seconds);
-    }
+    readonly formatTime = formatTime;
 
     private getReadingDisplayLabel(
         mode: ReadingDisplayMode,
@@ -447,17 +528,10 @@ export class StudyModeComponent implements OnDestroy {
         }
     }
 
-    // Daily goal methods
     setDailyGoal(goal: number): void {
         this.vocab.setDailyGoal(goal);
     }
 
-    private incrementDailyProgress(): void {
-        this.vocab.incrementDailyProgress();
-    }
-
-    // Confetti
-    // Confetti
     private triggerConfetti(): void {
         this.showConfetti.set(true);
         if (this.confettiTimeout) {
@@ -469,10 +543,9 @@ export class StudyModeComponent implements OnDestroy {
         }, 3000);
     }
 
-    // Swipe gesture handlers
     onTouchStart(event: TouchEvent): void {
         if (!this.isStudying()) return;
-        if ((event.target as HTMLElement)?.closest('.card-speaker-btn')) {
+        if ((event.target as HTMLElement)?.closest('.card-action-interactive')) {
             this.isCardTouchActive = false;
             return;
         }
@@ -483,22 +556,19 @@ export class StudyModeComponent implements OnDestroy {
     }
 
     onTouchMove(event: TouchEvent): void {
-        if (!this.isCardTouchActive || (!this.touchStartX && !this.touchStartY)) return;
+        if (!this.isCardTouchActive || !this.touchStartX || !this.touchStartY) return;
 
         const currentX = event.touches[0].clientX;
         const currentY = event.touches[0].clientY;
         const deltaX = currentX - this.touchStartX;
         const deltaY = Math.abs(currentY - this.touchStartY);
 
-        // Movement greater than 10px marks gesture as drag/swipe, not tap
         if (Math.abs(deltaX) > 10 || deltaY > 10) {
             this.touchMoved = true;
         }
 
-        // Only track horizontal swipe when card is already flipped
-        const card = this.currentCard();
-        if (card && card.showAnswer) {
-            if (deltaY > 50) {
+        if (this.isAnswerRevealed()) {
+            if (deltaY > 60) {
                 this.isSwiping.set(false);
                 this.swipeOffset.set(0);
                 return;
@@ -515,31 +585,26 @@ export class StudyModeComponent implements OnDestroy {
         if (!this.isCardTouchActive) return;
         this.isCardTouchActive = false;
 
-        if ((event?.target as HTMLElement)?.closest('.card-speaker-btn')) {
+        if ((event?.target as HTMLElement)?.closest('.card-action-interactive')) {
             return;
         }
 
         if (this.isSwiping()) {
             this.isSwiping.set(false);
-
             const offset = this.swipeOffset();
-            const threshold = 80;
+            const threshold = 75;
 
             if (offset < -threshold) {
-                // Swipe left = Again
                 this.markAnswer('wrong');
                 return;
             } else if (offset > threshold) {
-                // Swipe right = Good
                 this.markAnswer('good');
                 return;
             } else {
-                // Reset if not enough swipe
                 this.swipeOffset.set(0);
             }
         }
 
-        // If the user tapped cleanly without dragging, flip the card
         if (!this.touchMoved) {
             this.flipCard();
         }

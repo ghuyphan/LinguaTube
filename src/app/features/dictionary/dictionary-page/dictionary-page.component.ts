@@ -271,17 +271,9 @@ import { SettingsService, I18nService } from '../../../core/services';
       flex-shrink: 0;
 
       &:hover {
-        background: rgba(199, 62, 58, 0.15);
+        background: var(--accent-primary-soft);
         color: var(--accent-primary);
       }
-    }
-
-    .desktop-only {
-      display: flex;
-    }
-
-    .mobile-only {
-      display: none;
     }
 
     /* Hidden file input for import */

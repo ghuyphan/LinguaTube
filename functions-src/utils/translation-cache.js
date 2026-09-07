@@ -51,50 +51,6 @@ export async function recordTranslation(db, videoId, srcLang, tgtLang, segmentCo
     }
 }
 
-/**
- * Get available translation pairs for a video
- * @param {D1Database} db - D1 database binding
- * @param {string} videoId - YouTube video ID
- * @returns {Promise<Array<{source_lang: string, target_lang: string, segment_count: number}> | null>}
- */
-export async function getAvailableTranslations(db, videoId) {
-    if (!db || !videoId) return null;
-
-    try {
-        const { results } = await db.prepare(`
-            SELECT source_lang, target_lang, segment_count FROM translation_meta 
-            WHERE video_id = ? ORDER BY created_at DESC
-        `).bind(videoId).all();
-
-        return results || [];
-    } catch (err) {
-        console.error('[D1 Translations] getAvailableTranslations error:', err.message);
-        return null;
-    }
-}
-
-/**
- * Quick existence check for a translation pair
- * @param {D1Database} db - D1 database binding
- * @param {string} videoId - YouTube video ID
- * @param {string} srcLang - Source language code
- * @param {string} tgtLang - Target language code
- * @returns {Promise<boolean>}
- */
-export async function hasTranslation(db, videoId, srcLang, tgtLang) {
-    if (!db || !videoId) return false;
-
-    try {
-        const result = await db.prepare(`
-            SELECT 1 FROM translation_meta 
-            WHERE video_id = ? AND source_lang = ? AND target_lang = ?
-        `).bind(videoId, srcLang, tgtLang).first();
-        return !!result;
-    } catch {
-        return false;
-    }
-}
-
 // ============================================================================
 // Cache Freshness
 // ============================================================================

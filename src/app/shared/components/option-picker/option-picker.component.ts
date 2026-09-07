@@ -1,14 +1,14 @@
 import { Component, input, output, ChangeDetectionStrategy, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { IconComponent } from '../icon/icon.component';
+import { IconComponent, IconName } from '../icon/icon.component';
 
 export interface OptionItem {
     value: string;
     label: string;
     example?: string;   // Secondary example text (e.g. "日本語 (にほんご)")
     description?: string;
-    icon?: string;      // Icon name (e.g. 'sparkles', 'book-open') or emoji
+    icon?: IconName | string;      // Icon name (e.g. 'sparkles', 'book-open') or emoji
     iconUrl?: string;   // Image URL (for flags)
     badge?: string;     // Optional status badge text
     color?: string;     // Color variant ('new' | 'learning' | 'known' | 'ignored')

@@ -1,4 +1,5 @@
 import { ErrorHandler, Injectable, inject, NgZone } from '@angular/core';
+import { ToastService } from './toast.service';
 
 /**
  * Global Error Handler
@@ -11,6 +12,7 @@ import { ErrorHandler, Injectable, inject, NgZone } from '@angular/core';
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
     private ngZone = inject(NgZone);
+    private toast = inject(ToastService);
 
     handleError(error: unknown): void {
         // Always log to console for debugging
@@ -37,7 +39,7 @@ export class GlobalErrorHandler implements ErrorHandler {
             // Handle network errors
             if (message.includes('NetworkError') || message.includes('Failed to fetch')) {
                 console.warn('Network error detected');
-                // Could show a toast notification here
+                this.toast.error('Network connection error');
                 return;
             }
 
