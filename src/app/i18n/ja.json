@@ -369,6 +369,7 @@
     },
     "playlist": {
         "title": "プレイリスト",
+        "subtitle": "厳選された動画コレクションを管理・視聴",
         "playlist": "プレイリスト",
         "myPlaylists": "マイリスト",
         "myPlaylist": "あなた",

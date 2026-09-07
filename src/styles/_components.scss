@@ -702,6 +702,7 @@
 .panel-header__row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: var(--space-xs);
     width: 100%;
 }
@@ -774,8 +775,183 @@
     margin-left: auto;
     display: inline-flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: var(--space-xs);
     flex-shrink: 0;
+}
+
+/* ============================================
+   STANDARDIZED CARD PLAY OVERLAY
+   ============================================ */
+.card-play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    z-index: 1;
+
+    .play-icon-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: var(--border-radius-round);
+        background: var(--accent-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transform: scale(0.9);
+        transition: transform var(--transition-fast);
+    }
+}
+
+// Hover trigger on common video card containers
+.playlist-item:hover,
+.history-item:hover,
+.resume-hero:hover,
+.recent-preview:hover,
+.video-card:hover {
+    .card-play-overlay {
+        opacity: 1;
+
+        .play-icon-circle {
+            transform: scale(1);
+        }
+    }
+}
+
+/* ============================================
+   UNIFIED CARD ACTION BUTTONS
+   ============================================ */
+.action-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    border-radius: var(--border-radius-round);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color var(--transition-fast),
+                color var(--transition-fast),
+                border-color var(--transition-fast),
+                transform var(--transition-fast),
+                opacity var(--transition-fast);
+    -webkit-tap-highlight-color: transparent;
+
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+    }
+
+    &:active {
+        transform: scale(0.92);
+    }
+
+    &--surface {
+        background: var(--bg-surface);
+        border-color: var(--border-color);
+        color: var(--text-secondary);
+
+        @media (hover: hover) {
+            &:hover {
+                background: var(--bg-hover);
+                color: var(--text-primary);
+                border-color: rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        &.active {
+            background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.12);
+            border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.3);
+            color: var(--accent-primary);
+        }
+
+        &.btn-copied {
+            background: rgba(var(--success-green-rgb, 34, 197, 94), 0.15);
+            border-color: rgba(var(--success-green-rgb, 34, 197, 94), 0.3);
+            color: var(--success-green);
+        }
+    }
+
+    &--favorite {
+        &.active {
+            color: var(--accent-primary);
+
+            app-icon {
+                filter: drop-shadow(0 0 4px rgba(var(--accent-primary-rgb), 0.35));
+            }
+        }
+
+        &.animating app-icon {
+            animation: heartPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    }
+
+    &--delete {
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(var(--error-rgb), 0.12);
+                color: var(--error);
+                opacity: 1;
+            }
+        }
+
+        &:active {
+            background: rgba(var(--error-rgb), 0.18);
+            color: var(--error);
+            opacity: 1;
+        }
+    }
+
+    &--audio {
+        background: rgba(var(--accent-primary-rgb), 0.1);
+        color: var(--accent-primary);
+
+        @media (hover: hover) {
+            &:hover {
+                background: var(--accent-primary);
+                color: var(--text-inverse);
+                transform: scale(1.06);
+            }
+        }
+
+        &.playing {
+            background: var(--accent-primary);
+            color: var(--text-inverse);
+            animation: pulseAudio 1.2s infinite ease-in-out;
+        }
+    }
+}
+
+@keyframes heartPop {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.35); }
+    60% { transform: scale(0.9); }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulseAudio {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(var(--accent-primary-rgb), 0.4);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 6px rgba(var(--accent-primary-rgb), 0);
+    }
 }
 
 /* ============================================

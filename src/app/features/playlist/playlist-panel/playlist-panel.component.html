@@ -15,25 +15,25 @@
         </div>
 
         <div class="header-actions">
-            <button class="action-btn" [class.active]="isCopied()" [class.btn-copied]="isCopied()"
+            <button type="button" class="action-btn action-btn--surface" [class.active]="isCopied()" [class.btn-copied]="isCopied()"
                 (click)="onShare()" [title]="isCopied() ? 'Link copied!' : i18n.t('playlist.sharePlaylist')"
                 aria-label="Share playlist">
                 <app-icon [name]="isCopied() ? 'check' : 'share'" [size]="15"
                     [class.text-success]="isCopied()"></app-icon>
             </button>
-            <button class="action-btn" [class.active]="playlistService.isLooping()"
+            <button type="button" class="action-btn action-btn--surface" [class.active]="playlistService.isLooping()"
                 (click)="playlistService.toggleLoop()"
                 [title]="playlistService.isLooping() ? i18n.t('playlist.loopOn') : i18n.t('playlist.loopPlaylist')"
                 aria-label="Loop playlist">
                 <app-icon name="repeat" [size]="15"></app-icon>
             </button>
-            <button class="action-btn" [class.active]="playlistService.isShuffled()"
+            <button type="button" class="action-btn action-btn--surface" [class.active]="playlistService.isShuffled()"
                 (click)="playlistService.toggleShuffle()"
                 [title]="playlistService.isShuffled() ? i18n.t('playlist.shuffleOn') : i18n.t('playlist.shufflePlaylist')"
                 aria-label="Shuffle playlist">
                 <app-icon name="shuffle" [size]="15"></app-icon>
             </button>
-            <button class="action-btn close-btn desktop-only" (click)="requestClose.emit()" [title]="i18n.t('playlist.closePlaylist')" aria-label="Close playlist">
+            <button type="button" class="action-btn action-btn--surface close-btn desktop-only" (click)="requestClose.emit()" [title]="i18n.t('playlist.closePlaylist')" aria-label="Close playlist">
                 <app-icon name="x" [size]="15"></app-icon>
             </button>
         </div>
@@ -125,9 +125,9 @@
             </div>
 
             @if (playlist.isOwner) {
-            <button class="item-menu-btn" (click)="openVideoMenu(i, video.videoId, $event)"
-                [attr.aria-label]="i18n.t('playlist.videoOptions')">
-                <app-icon name="more-vertical" [size]="18"></app-icon>
+            <button type="button" class="action-btn item-menu-btn" (click)="openVideoMenu(i, video.videoId, $event)"
+                [attr.aria-label]="i18n.t('playlist.videoOptions')" [title]="i18n.t('playlist.videoOptions')">
+                <app-icon name="more-vertical" [size]="16"></app-icon>
             </button>
             }
         </div>

@@ -401,26 +401,8 @@
 
     // 3-dot menu button
     .item-menu-btn {
-        background: none;
-        border: none;
-        color: var(--text-muted);
-        cursor: pointer;
-        padding: var(--space-xs);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
         opacity: 0;
-        transition: all var(--transition-fast);
         margin-right: -8px;
-
-        @media (hover: hover) {
-            &:hover {
-                background: var(--bg-hover);
-                color: var(--text-primary);
-            }
-        }
 
         // Always visible on touch devices
         @media (hover: none) {

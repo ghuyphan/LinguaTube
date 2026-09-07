@@ -226,32 +226,6 @@
       display: block;
     }
 
-    .card-play-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity var(--transition-fast);
-
-      .play-icon-circle {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background: rgba(var(--accent-primary-rgb), 0.9);
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    &:hover .card-play-overlay {
-      opacity: 1;
-    }
-
     .resume-progress-bar {
       position: absolute;
       bottom: 0;

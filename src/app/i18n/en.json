@@ -369,6 +369,7 @@
     },
     "playlist": {
         "title": "Playlists",
+        "subtitle": "Organize and watch curated collections",
         "playlist": "Playlist",
         "myPlaylists": "My Lists",
         "myPlaylist": "You",

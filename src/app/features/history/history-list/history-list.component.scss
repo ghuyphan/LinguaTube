@@ -151,32 +151,6 @@
         display: block;
     }
 
-    .card-play-overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.35);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity var(--transition-fast);
-        z-index: 1;
-
-        .play-icon-circle {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: var(--accent-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            transform: scale(0.9);
-            transition: transform var(--transition-fast);
-        }
-    }
-
     .duration-badge {
         position: absolute;
         bottom: 4px;
@@ -289,68 +263,11 @@
 }
 
 .action-btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: var(--text-muted);
-    border-radius: var(--border-radius-sm);
-    cursor: pointer;
-    transition:
-        background-color var(--transition-fast),
-        color var(--transition-fast),
-        transform var(--transition-fast);
-    -webkit-tap-highlight-color: transparent;
-
-    @media (hover: hover) {
-        &:hover {
-            background: var(--bg-hover);
-            color: var(--text-primary);
-        }
-    }
-
-    &:active {
-        transform: scale(0.92);
-    }
-
-    &--favorite {
-        &.active {
-            color: var(--accent-primary);
-
-            app-icon {
-                filter: drop-shadow(0 0 4px rgba(var(--accent-primary-rgb), 0.35));
-            }
-        }
-
-        &.animating app-icon {
-            animation: heartPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-    }
-
     &--delete {
         opacity: 0.7; // Visible by default on touch devices
 
         @media (min-width: 769px) {
             opacity: 0; // Hidden on desktop until item hovered
-        }
-
-        @media (hover: hover) {
-            &:hover {
-                background: rgba(var(--error-rgb), 0.1);
-                color: var(--error);
-                opacity: 1;
-            }
-        }
-
-        &:active {
-            background: rgba(var(--error-rgb), 0.15);
-            color: var(--error);
-            opacity: 1;
         }
     }
 }
@@ -462,24 +379,6 @@
         border-width: 0;
         transform: translateX(20px);
         overflow: hidden;
-    }
-}
-
-@keyframes heartPop {
-    0% {
-        transform: scale(1);
-    }
-    30% {
-        transform: scale(1.35);
-    }
-    60% {
-        transform: scale(0.9);
-    }
-    80% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
     }
 }
 

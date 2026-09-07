@@ -14,6 +14,7 @@
                         <span class="badge badge--accent">{{ currentList().length }} {{ i18n.t('playlist.title') }}</span>
                     </div>
                 </div>
+                <p class="panel-header__subtitle">{{ i18n.t('playlist.subtitle') }}</p>
             </div>
 
             <!-- Stable Filter Toolbar (Separates segmented view tabs from actions to prevent layout shift) -->
@@ -134,7 +135,7 @@
 
                         <!-- Actions -->
                         <div class="playlist-item__actions">
-                            <button class="menu-btn" (click)="openMenu(playlist, $event)" title="Options">
+                            <button type="button" class="action-btn" (click)="openMenu(playlist, $event)" [attr.aria-label]="i18n.t('common.options') || 'Options'" [title]="i18n.t('common.options') || 'Options'">
                                 <app-icon name="more-vertical" [size]="16" />
                             </button>
                         </div>
@@ -305,8 +306,8 @@
                             }
                         </div>
                         @if (isOwner(playlist)) {
-                        <button type="button" class="btn-remove-track" (click)="removeVideoFromPlaylist(video.videoId, $event)" [title]="i18n.t('playlist.removeVideo') || 'Remove video'">
-                            <app-icon name="trash-2" [size]="14" />
+                        <button type="button" class="action-btn action-btn--delete" (click)="removeVideoFromPlaylist(video.videoId, $event)" [attr.aria-label]="i18n.t('playlist.removeVideo') || 'Remove video'" [title]="i18n.t('playlist.removeVideo') || 'Remove video'">
+                            <app-icon name="trash-2" [size]="15" />
                         </button>
                         }
                     </div>
@@ -370,10 +371,12 @@
         <div class="card sidebar-card">
             <div class="panel-header">
                 <div class="panel-header__row">
-                    <app-icon name="languages" [size]="18" class="panel-header__icon" />
-                    <h4 class="sidebar-card__title" style="font-size: 0.9375rem; margin-bottom: 0;">
-                        {{ i18n.t('playlist.browseByLanguage') }}
-                    </h4>
+                    <div class="panel-header__left">
+                        <app-icon name="languages" [size]="18" class="panel-header__icon" />
+                        <h3 class="panel-header__title" style="font-size: 0.9375rem;">
+                            {{ i18n.t('playlist.browseByLanguage') }}
+                        </h3>
+                    </div>
                 </div>
             </div>
 

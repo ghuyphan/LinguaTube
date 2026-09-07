@@ -141,8 +141,10 @@ import { SettingsService, I18nService } from '../../../core/services';
           <div class="card sidebar-card">
             <div class="panel-header">
               <div class="panel-header__row">
-                <app-icon name="clock" [size]="18" class="panel-header__icon" />
-                <h4 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('dictionary.recentSearches') }}</h4>
+                <div class="panel-header__left">
+                  <app-icon name="clock" [size]="18" class="panel-header__icon" />
+                  <h3 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('dictionary.recentSearches') }}</h3>
+                </div>
                 <button class="panel-header__link" (click)="clearAllRecentSearches()">
                   {{ i18n.t('dictionary.clearAll') }}
                 </button>

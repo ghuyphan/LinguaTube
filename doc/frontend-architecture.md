@@ -381,6 +381,26 @@ All transient notification feedback (link copying, playlist changes, deletion wi
 - **First-Class Interactive Actions**: Features `.toast__action-btn` (`border-radius: var(--border-radius-pill); font-weight: 700; background: rgba(255, 255, 255, 0.2)`) with instant touch scale feedback (`transform: scale(0.95)`), enabling one-tap "Undo" across History and Vocabulary removal.
 - **Semantic Indicators**: Dedicated semantic accent colors for success (`var(--success-green, #22c55e)`), error (`var(--error, #ff4b4b)`), warning (`var(--warning, #ffc800)`), and info (`var(--info, #1cb0f6)`).
 
+### Unified Card Headers, Action Buttons & Play Overlays
+To maintain visual and functional harmony across all primary views (`Playlist`, `History`, `Dictionary` / `Vocabulary`), all panel cards, subcards, and lists share standardized tokens in `src/styles/_components.scss`:
+- **Panel Header Standard (`.panel-header`)**:
+  - Structured with `.panel-header__row` (enforcing `display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs);`).
+  - Contains `.panel-header__left` with accent-colored icon (`.panel-header__icon`, 20px / 18px) and page/card title (`.panel-header__title`, 1.0625rem / 0.9375rem).
+  - Contains `.panel-badges` aligned to the right (`margin-left: auto`) for item counts and active filters.
+  - Subtitle line (`.panel-header__subtitle`, 0.8125rem muted) standardized across all 3 pages (`playlist.subtitle`, `history.subtitle`, `dictionary.subtitle` / `study.subtitle`) in all 5 supported languages (`en`, `vi`, `ja`, `ko`, `zh`).
+- **Unified Card Action Buttons (`.action-btn`)**:
+  - Consistent dimensions: circular 32px $\times$ 32px (`border-radius: var(--border-radius-round)`), centered flexbox, transparent border and background by default.
+  - Tactile states: smooth hover tint (`background: var(--bg-hover); color: var(--text-primary)`), active depression (`transform: scale(0.92)`).
+  - Modifiers:
+    - `.action-btn--surface`: Subtle card surface background with border (used in panel toolbar action buttons).
+    - `.action-btn--favorite`: Heart toggle with accent glow and playful spring pop animation (`@keyframes heartPop`).
+    - `.action-btn--delete`: Trash removal with soft error red hover background (`rgba(var(--error-rgb), 0.12)`) and color.
+    - `.action-btn--audio`: Pronunciation speaker button with accent tint and rhythmic audio wave pulse animation (`@keyframes pulseAudio`).
+- **Standardized Card Play Overlay (`.card-play-overlay`)**:
+  - Centered over 16:9 thumbnails (`inset: 0; background: rgba(0, 0, 0, 0.35);`).
+  - Standardized 32px circular play icon (`.play-icon-circle`, `background: var(--accent-primary); color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);`).
+  - Smooth hover reveal: fades in from `opacity: 0` to `1` and scales from `0.9` to `1` on card hover across `.playlist-item`, `.history-item`, `.resume-hero`, `.video-card`, and `.recent-preview`.
+
 ---
 
 ## 7. Progressive Web App (PWA) & Mobile Installation

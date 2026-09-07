@@ -102,14 +102,14 @@
                     [attr.aria-label]="i18n.t('history.favorites')"
                     [attr.aria-pressed]="item.is_favorite"
                     [title]="i18n.t('history.favorites')">
-                    <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="18" />
+                    <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="16" />
                 </button>
 
                 <button type="button" class="action-btn action-btn--delete"
                     (click)="onRemoveItem(item, $event)"
                     [attr.aria-label]="i18n.t('history.removeFromHistory')"
                     [title]="i18n.t('history.removeFromHistory')">
-                    <app-icon name="trash-2" [size]="16" />
+                    <app-icon name="trash-2" [size]="15" />
                 </button>
             </div>
         </div>

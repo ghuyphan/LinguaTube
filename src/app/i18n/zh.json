@@ -369,6 +369,7 @@
     },
     "playlist": {
         "title": "播放列表",
+        "subtitle": "管理并观看精选播放列表",
         "playlist": "播放列表",
         "myPlaylists": "我的",
         "myPlaylist": "你",

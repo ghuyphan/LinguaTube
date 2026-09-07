@@ -369,6 +369,7 @@
     },
     "playlist": {
         "title": "Danh sách phát",
+        "subtitle": "Quản lý và xem các bộ sưu tập video",
         "playlist": "Danh sách",
         "myPlaylists": "Của tôi",
         "myPlaylist": "Bạn",

@@ -369,6 +369,7 @@
     },
     "playlist": {
         "title": "재생목록",
+        "subtitle": "엄선된 컬렉션 구성 및 시청",
         "playlist": "재생목록",
         "myPlaylists": "내 목록",
         "myPlaylist": "나",
