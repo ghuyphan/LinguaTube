@@ -484,6 +484,7 @@
         "score": "スコア",
         "streak": "ストリーク",
         "mode": "クイズモード",
+        "short": "クイズ",
         "correctAnswer": "正解",
         "yourAnswer": "あなたの回答",
         "retry": "もう一度",

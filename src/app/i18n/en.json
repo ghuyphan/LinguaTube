@@ -484,6 +484,7 @@
         "score": "Score",
         "streak": "Streak",
         "mode": "Quiz Mode",
+        "short": "Quiz",
         "correctAnswer": "Correct",
         "yourAnswer": "Your answer",
         "retry": "Retry",

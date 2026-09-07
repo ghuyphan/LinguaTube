@@ -484,6 +484,7 @@
         "score": "得分",
         "streak": "连胜",
         "mode": "测验模式",
+        "short": "测验",
         "correctAnswer": "正确答案",
         "yourAnswer": "你的答案",
         "retry": "重试",

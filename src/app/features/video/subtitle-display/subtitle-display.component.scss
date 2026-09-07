@@ -1099,7 +1099,8 @@ ruby rt {
         border-color: var(--accent-primary);
         box-shadow: 0 2px 6px rgba(var(--accent-primary-rgb, 255, 107, 107), 0.3);
 
-        .ctrl-badge {
+        .ctrl-badge,
+        .ctrl-badge-inline {
             background: #ffffff;
             color: var(--accent-primary);
         }
@@ -1151,6 +1152,25 @@ ruby rt {
     font-weight: 600;
     line-height: 18px;
     text-align: center;
+}
+
+.ctrl-badge-inline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    font-size: 0.6875rem;
+    border-radius: 9999px;
+    background: var(--accent-primary);
+    color: white;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: 3px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
 }
 
 /* Typography glyph for font sizing */
@@ -1477,7 +1497,7 @@ ruby rt {
     /* Controls - mobile */
     .subtitle-controls {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr)) 40px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         padding: 8px 10px;
         gap: 6px;
         overflow: visible;
@@ -1486,38 +1506,31 @@ ruby rt {
     .ctrl-btn {
         width: 100%;
         min-width: 0;
-        min-height: 40px;
-        height: 40px;
-        padding: 0 4px;
+        min-height: 38px;
+        height: 38px;
+        padding: 0 6px;
         gap: 4px;
         justify-content: center;
+        border-radius: var(--border-radius-pill, 9999px);
         position: relative;
-
-        &.ctrl-btn--icon-only {
-            width: 40px;
-            min-width: 40px;
-            padding: 0;
-            flex-shrink: 0;
-        }
 
         .ctrl-label {
             display: inline-block;
             font-size: 0.75rem;
-            font-weight: 500;
+            font-weight: 600;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            line-height: 1;
         }
-    }
 
-    .ctrl-badge {
-        top: -4px;
-        right: -4px;
-        min-width: 16px;
-        height: 16px;
-        line-height: 16px;
-        font-size: 0.625rem;
-        padding: 0 4px;
+        .ctrl-badge-inline {
+            min-width: 16px;
+            height: 16px;
+            font-size: 0.5625rem;
+            padding: 0 3px;
+            margin-left: 2px;
+        }
     }
 
     /* State indicators on mobile */
@@ -1703,5 +1716,29 @@ ruby rt {
 
     .subtitle-waiting {
         font-size: 0.75rem;
+    }
+
+    .subtitle-controls {
+        padding: 6px 8px;
+        gap: 4px;
+    }
+
+    .ctrl-btn {
+        min-height: 36px;
+        height: 36px;
+        padding: 0 4px;
+        gap: 3px;
+
+        .ctrl-label {
+            font-size: 0.6875rem;
+        }
+
+        .ctrl-badge-inline {
+            min-width: 15px;
+            height: 15px;
+            font-size: 0.5625rem;
+            padding: 0 2.5px;
+            margin-left: 1px;
+        }
     }
 }
