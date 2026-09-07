@@ -146,17 +146,30 @@
     }
 
     .search-input {
-        flex: 1;
+        flex: 1 1 auto;
         width: 100%;
         min-width: 0;
         height: 100%;
-        border: none;
-        background: transparent;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
         color: var(--text-primary);
         font-size: 0.8125rem;
         font-family: inherit;
-        outline: none;
-        padding: 0;
+        line-height: normal;
+        -webkit-appearance: none;
+        appearance: none;
+
+        &:focus,
+        &:focus-visible {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
 
         &::placeholder {
             color: var(--text-muted);

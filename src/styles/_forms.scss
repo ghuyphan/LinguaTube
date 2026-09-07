@@ -4,7 +4,7 @@
    FORM INPUTS
    ============================================ */
 
-:where(input:not([type="checkbox"]):not([type="radio"]), textarea, select) {
+:where(input:not([type="checkbox"]):not([type="radio"]):not(.search-input):not(.spotlight__input):not(.spotlight-input), textarea, select) {
     font-family: var(--font-sans);
     font-size: 1rem;
     /* 16px prevents iOS zoom */
@@ -41,7 +41,7 @@ textarea {
     resize: vertical;
 }
 
-input:focus,
+input:not(.search-input):not(.spotlight__input):not(.spotlight-input):focus,
 textarea:focus,
 select:focus {
     outline: none;
