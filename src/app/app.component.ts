@@ -145,14 +145,14 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           <div class="more-menu">
             <!-- Mobile Motivation & AI Credits Quick Bar -->
             <div class="more-menu__stats">
-              <button class="more-stat-card" (click)="showStreakSheet.set(true)">
+              <button class="more-stat-card" (click)="openStreakFromMore()">
                 <app-icon name="fire" [size]="20" class="stat-icon--fire" />
                 <div class="more-stat-info">
                   <span class="more-stat-val">{{ streak.currentStreak() }}</span>
                   <span class="more-stat-lbl">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
                 </div>
               </button>
-              <button class="more-stat-card" (click)="showAiCreditsSheet.set(true)">
+              <button class="more-stat-card" (click)="openAiCreditsFromMore()">
                 <app-icon name="diamond" [size]="20" class="stat-icon--diamond" />
                 <div class="more-stat-info">
                   <span class="more-stat-val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
@@ -214,8 +214,8 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           <app-settings-sheet 
             [isOpen]="showSettingsSheet()" 
             (closed)="showSettingsSheet.set(false)" 
-            (openStreak)="showStreakSheet.set(true)"
-            (openAiCredits)="showAiCreditsSheet.set(true)"
+            (openStreak)="openStreakFromSettings()"
+            (openAiCredits)="openAiCreditsFromSettings()"
           />
         }
 
@@ -998,16 +998,33 @@ export class AppComponent implements OnDestroy {
     this.showMoreSheet.update(v => !v);
   }
 
+  openStreakFromMore(): void {
+    this.sheetService.skipNextHistoryPop();
+    this.showMoreSheet.set(false);
+    this.showStreakSheet.set(true);
+  }
+
+  openAiCreditsFromMore(): void {
+    this.sheetService.skipNextHistoryPop();
+    this.showMoreSheet.set(false);
+    this.showAiCreditsSheet.set(true);
+  }
+
+  openStreakFromSettings(): void {
+    this.sheetService.skipNextHistoryPop();
+    this.showSettingsSheet.set(false);
+    this.showStreakSheet.set(true);
+  }
+
+  openAiCreditsFromSettings(): void {
+    this.sheetService.skipNextHistoryPop();
+    this.showSettingsSheet.set(false);
+    this.showAiCreditsSheet.set(true);
+  }
+
   openNewVideo(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    if (this.router.url === '/video' && !this.youtube.currentVideo() && !this.youtube.pendingVideoId()) {
-      const inputEl = this.document.querySelector('.spotlight-input') as HTMLInputElement | null;
-      if (inputEl) {
-        inputEl.focus();
-        return;
-      }
-    }
     this.showCommandPalette.set(true);
   }
 
@@ -1024,6 +1041,7 @@ export class AppComponent implements OnDestroy {
   }
 
   async installAppFromMore(): Promise<void> {
+    this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
     await this.pwa.install();
   }

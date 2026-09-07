@@ -58,13 +58,6 @@ export class SidebarComponent {
     }
 
     onNewVideoClick(): void {
-        if (this.router.url === '/video' && !this.youtube.currentVideo() && !this.youtube.pendingVideoId()) {
-            const inputEl = document.querySelector('.spotlight-input') as HTMLInputElement | null;
-            if (inputEl) {
-                inputEl.focus();
-                return;
-            }
-        }
         this.openCommandPalette.emit();
     }
 
