@@ -38,10 +38,10 @@ export class OnboardingComponent {
     ];
 
     readonly uiLanguages = [
-        { code: 'en' as const, name: 'English', nativeName: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' },
         { code: 'ja' as const, name: 'Japanese', nativeName: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
         { code: 'zh' as const, name: 'Chinese', nativeName: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
         { code: 'ko' as const, name: 'Korean', nativeName: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
+        { code: 'en' as const, name: 'English', nativeName: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' },
         { code: 'vi' as const, name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: 'https://hatscripts.github.io/circle-flags/flags/vn.svg' }
     ];
 
