@@ -60,13 +60,16 @@
                     <div class="panel-header__left">
                         <app-icon name="sparkles" [size]="20" class="panel-header__icon" />
                         <h3 class="panel-header__title">{{ i18n.t('playlist.forYou') }}</h3>
-                        <span class="badge badge--accent">{{ currentLearningLanguage() }}</span>
                     </div>
-                    <button type="button" class="panel-header__link" (click)="openExplore()">
-                        <span>{{ i18n.t('nav.playlists') }}</span>
-                        <app-icon name="arrow-right" [size]="14" />
-                    </button>
+                    <div class="panel-badges">
+                        <span class="badge badge--accent">{{ currentLearningLanguage() }}</span>
+                        <button type="button" class="panel-header__link" (click)="openExplore()">
+                            <span>{{ i18n.t('nav.playlists') }}</span>
+                            <app-icon name="arrow-right" [size]="14" />
+                        </button>
+                    </div>
                 </div>
+                <p class="panel-header__subtitle">{{ i18n.t('playlist.subtitle') }}</p>
             </div>
 
             @if (isFeaturedLoading()) {

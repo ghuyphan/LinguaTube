@@ -169,9 +169,10 @@ export class GestureHandlerService {
     /**
      * Handle touch end event on the overlay
      * @param containerRect - Bounding rect of the video container for zone detection
+     * @param controlsVisible - Whether controls are currently visible
      * @returns GestureEvent or null if buffered / no action taken
      */
-    handleTouchEnd(containerRect: DOMRect): GestureEvent | null {
+    handleTouchEnd(containerRect: DOMRect, controlsVisible = false): GestureEvent | null {
         this.cancelLongPress();
         this.deactivateLongPress();
 
@@ -195,7 +196,7 @@ export class GestureHandlerService {
         }
 
         // Handle tap with spatial zoning
-        return this.handleTap(containerRect);
+        return this.handleTap(containerRect, controlsVisible);
     }
 
     // ========================================
@@ -206,8 +207,9 @@ export class GestureHandlerService {
      * Process tap with spatial zones:
      * - Center (40% width): Instant single-tap (0ms lag, no delay)
      * - Left / Right Wings (30% width each): Double-tap seek with 250ms single-tap buffer
+     * - When controls are already visible: ANY tap outside buttons dismisses immediately (0ms lag)
      */
-    private handleTap(containerRect: DOMRect): GestureEvent | null {
+    private handleTap(containerRect: DOMRect, controlsVisible = false): GestureEvent | null {
         const x = this.touchState.startX - containerRect.left;
         const width = containerRect.width;
         const now = Date.now();
@@ -225,22 +227,12 @@ export class GestureHandlerService {
             zone = 'center';
         }
 
-        // 1. CENTER: Zero-latency instant single tap!
-        if (zone === 'center') {
-            this.clearPendingTap();
-            this.lastTapZone = null;
-            const event: GestureEvent = {
-                type: 'single-tap',
-                data: { zone: 'center' }
-            };
-            this.onGesture?.(event);
-            return event;
-        }
+        // 1. Double-tap detection on wings (prioritized in both states)
+        const isDoubleTap = (zone === 'left' || zone === 'right') &&
+            this.lastTapZone === zone &&
+            (now - this.lastTapTime < 300);
 
-        // 2. WINGS: Double-tap detection
-        const isDoubleTap = this.lastTapZone === zone && (now - this.lastTapTime < 300);
-
-        if (isDoubleTap) {
+        if (isDoubleTap && (zone === 'left' || zone === 'right')) {
             // Second (or third) tap of double-tap sequence!
             this.clearPendingTap();
             this.lastTapTime = now;
@@ -268,7 +260,33 @@ export class GestureHandlerService {
             return event;
         }
 
-        // First tap on a wing: buffer for 250ms before triggering single-tap
+        // 2. If controls are already visible, ANY single tap dismisses immediately (0ms delay)
+        // We preserve lastTapZone and lastTapTime so a rapid second tap on a wing can trigger double-tap seek
+        if (controlsVisible) {
+            this.clearPendingTap();
+            this.lastTapZone = zone !== 'center' ? zone : null;
+            this.lastTapTime = now;
+            const event: GestureEvent = {
+                type: 'single-tap',
+                data: { zone: 'center' }
+            };
+            this.onGesture?.(event);
+            return event;
+        }
+
+        // 3. CENTER: Zero-latency instant single tap when controls are hidden!
+        if (zone === 'center') {
+            this.clearPendingTap();
+            this.lastTapZone = null;
+            const event: GestureEvent = {
+                type: 'single-tap',
+                data: { zone: 'center' }
+            };
+            this.onGesture?.(event);
+            return event;
+        }
+
+        // 4. WINGS when controls are hidden: buffer for 250ms before triggering single-tap
         this.clearPendingTap();
         this.lastTapZone = zone;
         this.lastTapTime = now;

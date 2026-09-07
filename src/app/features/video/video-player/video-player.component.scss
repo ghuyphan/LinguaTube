@@ -434,6 +434,54 @@ $transition-normal: 0.25s ease;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   cursor: default;
+
+  &.touch-only {
+    display: none !important;
+
+    @media (hover: none) and (pointer: coarse) {
+      display: flex !important;
+    }
+  }
+
+  &.hover-only {
+    display: flex !important;
+
+    @media (hover: none) and (pointer: coarse) {
+      display: none !important;
+    }
+  }
+}
+
+.touch-only {
+  display: none !important;
+
+  @media (hover: none) and (pointer: coarse) {
+    display: flex !important;
+  }
+}
+
+.hover-only {
+  display: flex !important;
+
+  @media (hover: none) and (pointer: coarse) {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  display: flex !important;
+
+  @media (hover: none) and (pointer: coarse) {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  display: none !important;
+
+  @media (hover: none) and (pointer: coarse) {
+    display: flex !important;
+  }
 }
 
 .zone {
@@ -853,6 +901,23 @@ $transition-normal: 0.25s ease;
 // ============================================
 
 @media (max-width: $breakpoint-lg) {
+  // Force mobile visibility rules on narrow screens regardless of pointer type
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  .touch-only {
+    display: flex !important;
+  }
+
+  .hover-only {
+    display: none !important;
+  }
+
   .video-container {
     border-radius: 0;
     margin: 0;
@@ -933,6 +998,13 @@ $transition-normal: 0.25s ease;
   .is-fullscreen.video-container {
     margin: 0;
     width: 100%;
+  }
+}
+
+// Fullscreen desktop adjustments
+@media (min-width: #{$breakpoint-lg + 1}) {
+  .is-fullscreen .desktop-only {
+    display: flex !important;
   }
 }
 

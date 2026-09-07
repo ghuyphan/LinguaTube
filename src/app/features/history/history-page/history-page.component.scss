@@ -33,7 +33,7 @@
   gap: var(--space-sm);
   padding: var(--space-xs) 0;
   margin-bottom: var(--space-md);
-  background: var(--bg-primary);
+  background: var(--bg-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -53,7 +53,7 @@
     font-size: 0.8125rem;
     border-radius: var(--border-radius-pill);
     border: 1px solid var(--border-color);
-    background: var(--bg-secondary);
+    background: var(--bg-surface);
     color: var(--text-secondary);
     font-weight: 600;
     cursor: pointer;
@@ -118,7 +118,7 @@
     font-size: 0.8125rem;
     border-radius: var(--border-radius-pill);
     border: 1px solid var(--border-color);
-    background: var(--bg-secondary);
+    background: var(--bg-surface);
     color: var(--text-primary);
     font-weight: 500;
     cursor: pointer;

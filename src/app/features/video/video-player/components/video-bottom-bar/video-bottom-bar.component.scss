@@ -284,3 +284,20 @@
         }
     }
 }
+
+// Scoped visibility rules
+.desktop-only {
+    display: flex !important;
+
+    @media (hover: none) and (pointer: coarse), (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
+        display: none !important;
+    }
+}
+
+.mobile-only {
+    display: none !important;
+
+    @media (hover: none) and (pointer: coarse), (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
+        display: inline-flex !important;
+    }
+}

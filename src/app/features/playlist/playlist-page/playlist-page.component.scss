@@ -21,8 +21,9 @@
     .panel-badges {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         gap: var(--space-xs);
-        margin-top: var(--space-xs);
+        margin-left: auto;
     }
 }
 
@@ -33,7 +34,7 @@
     position: sticky;
     top: 0;
     z-index: var(--z-sticky, 100);
-    background: var(--bg-primary);
+    background: var(--bg-card);
     padding: var(--space-xs) 0;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -52,7 +53,7 @@
         font-size: 0.8125rem;
         border-radius: var(--border-radius-pill);
         border: 1px solid var(--border-color);
-        background: var(--bg-secondary);
+        background: var(--bg-surface);
         color: var(--text-secondary);
         font-weight: 600;
         cursor: pointer;
@@ -151,19 +152,28 @@
     }
 
     .create-playlist-btn {
+        height: 36px;
+        min-height: 36px;
+        max-height: 36px;
+        padding: 0 14px;
+        font-size: 0.8125rem;
         font-weight: 600;
-        color: var(--text-primary);
+        border-radius: var(--border-radius-pill);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+        user-select: none;
+        box-shadow: none;
 
         app-icon {
-            color: var(--accent-primary);
+            color: currentColor;
         }
 
         @media (hover: hover) {
             &:hover {
-                background: var(--bg-hover);
-                border-color: var(--accent-primary);
-                color: var(--accent-primary);
                 transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.3);
             }
         }
     }
@@ -228,7 +238,7 @@
 
     &__thumb {
         position: relative;
-        width: 140px;
+        width: 130px;
         aspect-ratio: 16 / 9;
         border-radius: var(--border-radius-sm);
         background: var(--bg-tertiary);
@@ -1080,20 +1090,14 @@
 
         .view-tabs {
             width: 100%;
-            overflow-x: auto;
-            scrollbar-width: none;
-            padding-bottom: 2px;
             display: flex;
             gap: 6px;
 
-            &::-webkit-scrollbar {
-                display: none;
-            }
-
             .filter-chip {
-                flex: 0 0 auto;
+                flex: 1 1 0px;
+                min-width: 0;
                 justify-content: center;
-                padding: 0 14px;
+                padding: 0 8px;
                 white-space: nowrap;
             }
         }
@@ -1123,7 +1127,8 @@
                 }
             }
 
-            .filter-chip {
+            .filter-chip,
+            .create-playlist-btn {
                 flex: 1 1 0px;
                 min-width: 0;
                 justify-content: center;
@@ -1133,7 +1138,8 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
 
-                .chip-text {
+                .chip-text,
+                .btn-text {
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;

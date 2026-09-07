@@ -90,8 +90,10 @@ import { formatTime } from '../../../core/utils';
           <div class="card sidebar-card">
             <div class="panel-header">
               <div class="panel-header__row">
-                <app-icon name="target" [size]="20" class="panel-header__icon" />
-                <h3 class="panel-header__title">{{ i18n.t('study.learning') }}</h3>
+                <div class="panel-header__left">
+                  <app-icon name="target" [size]="20" class="panel-header__icon" />
+                  <h3 class="panel-header__title">{{ i18n.t('study.learning') }}</h3>
+                </div>
               </div>
               <p class="panel-header__subtitle">{{ stats().total }} {{ i18n.t('study.cards') }} · {{ progressPercent() }}% {{ i18n.t('study.known') }}</p>
             </div>

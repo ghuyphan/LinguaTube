@@ -8,20 +8,18 @@
                     <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
                     <h2 class="panel-header__title">{{ i18n.t('study.title') }}</h2>
                 </div>
-                @if (streak.currentStreak() > 0) {
                 <div class="panel-badges">
+                    <span class="badge badge--primary">{{ availableCards() }} {{ i18n.t('study.cards') }}</span>
+                    <span class="badge badge--accent">{{ currentLanguageLabel() }} • {{ currentReadingDisplayLabel() }}</span>
+                    @if (streak.currentStreak() > 0) {
                     <span class="badge badge--warning">
                         <app-icon name="fire" [size]="12" />
                         <span>{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') }}</span>
                     </span>
+                    }
                 </div>
-                }
             </div>
             <p class="panel-header__subtitle">{{ i18n.t('study.subtitle') }}</p>
-            <div class="study-meta-tags">
-                <span class="badge badge--accent">{{ currentLanguageLabel() }}</span>
-                <span class="badge badge--primary">{{ currentReadingDisplayLabel() }}</span>
-            </div>
         </div>
 
         <!-- Stat Badges (interactive toggles) -->
@@ -308,7 +306,7 @@
 
                             @if (!reverseMode()) {
                             <button type="button" 
-                                    class="card-speaker-btn card-action-interactive" 
+                                    class="action-btn action-btn--audio card-speaker-btn card-action-interactive" 
                                     [title]="i18n.t('study.listen')"
                                     (click)="playAudio(vm.primaryText, vm.item.language, $event, vm.item.audio)">
                                 <app-icon name="volume-2" [size]="16" />
@@ -384,7 +382,7 @@
                             }
 
                             <button type="button" 
-                                    class="card-speaker-btn card-action-interactive" 
+                                    class="action-btn action-btn--audio card-speaker-btn card-action-interactive" 
                                     [title]="i18n.t('study.listen')"
                                     (click)="playAudio(vm.primaryText, vm.item.language, $event, vm.item.audio)">
                                 <app-icon name="volume-2" [size]="16" />

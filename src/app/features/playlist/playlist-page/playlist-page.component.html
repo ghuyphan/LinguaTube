@@ -11,7 +11,10 @@
                         <h2 class="panel-header__title">{{ i18n.t('playlist.title') }}</h2>
                     </div>
                     <div class="panel-badges">
-                        <span class="badge badge--accent">{{ currentList().length }} {{ i18n.t('playlist.title') }}</span>
+                        <span class="badge badge--primary">{{ currentList().length }} {{ i18n.t('playlist.title') }}</span>
+                        @if (featuredPlaylists().length > 0) {
+                            <span class="badge badge--accent">{{ featuredPlaylists().length }} {{ i18n.t('playlist.featured') }}</span>
+                        }
                     </div>
                 </div>
                 <p class="panel-header__subtitle">{{ i18n.t('playlist.subtitle') }}</p>
@@ -59,10 +62,10 @@
                         <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
                     </button>
 
-                    <button type="button" class="filter-chip create-playlist-btn" (click)="showCreateDialog.set(true)"
+                    <button type="button" class="btn btn-primary create-playlist-btn" (click)="showCreateDialog.set(true)"
                         [attr.aria-label]="i18n.t('playlist.newPlaylist')" [title]="i18n.t('playlist.newPlaylist')">
                         <app-icon name="plus" [size]="14" />
-                        <span class="chip-text">{{ i18n.t('playlist.newPlaylist') }}</span>
+                        <span class="btn-text">{{ i18n.t('playlist.newPlaylist') }}</span>
                     </button>
                 </div>
             </div>

@@ -22,13 +22,15 @@ Voca accepts arbitrary YouTube video URLs:
 ### 1.3. Controls & Interaction Matrix
 | Action | Desktop Shortcut | Mobile Gesture | UI Element |
 | :--- | :--- | :--- | :--- |
-| **Play / Pause** | `Space` or `k` | Single Tap Center | Center button / Bottom bar |
-| **Seek $\pm 5$s** | `Left` / `Right` arrows | Double Tap Left / Right | Center $\pm 5$s buttons |
-| **Seek $\pm 10$s** | `j` / `l` | Double Tap Far Left/Right | — |
+| **Toggle Controls Overlay** | — | Single Tap (0ms dismiss when open) | Video container overlay |
+| **Play / Pause** | `Space` or `k` | Single Tap Center Button | Center Play/Pause button |
+| **Seek $\pm 10$s** | `j` / `l` or Arrows | Double Tap Left / Right Wings | Cumulative pill (`+10s, +20s`) & ripple |
+| **Scrubbing Preview** | Hover progress bar | Horizontal Swipe Drag | OSD time delta pill (`-0:15 / 1:45`) |
+| **2x Speed Fast-Forward** | — | Long-Press & Hold | OSD "2x Speed" indicator pill |
 | **Volume Up / Down** | `Up` / `Down` arrows | Swipe Up / Down (Right side) | Bottom bar volume slider |
 | **Toggle Subtitles** | `c` | Tap CC Button | CC button in bottom bar |
 | **Toggle Dual Subtitles** | — | Tap Languages Button | Languages button in bottom bar |
-| **Dual Sub Menu** | Right-click Dual Sub | — | Quick language picker modal with circle flags |
+| **Dual Sub Menu** | Right-click Dual Sub | Long-Press Dual Sub Button | Quick language picker modal with circle flags |
 | **Toggle Fullscreen** | `f` | Pinch Out / Rotate | Bottom bar fullscreen button |
 | **Playback Speed** | `Shift` + `<` / `>` | — | Speed dropdown (0.5x – 2x) |
 

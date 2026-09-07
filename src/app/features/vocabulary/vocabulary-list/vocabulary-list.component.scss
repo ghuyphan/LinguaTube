@@ -37,7 +37,7 @@
             position: sticky;
             top: 0;
             z-index: var(--z-sticky, 100);
-            background: var(--bg-primary);
+            background: var(--bg-card);
             padding: var(--space-xs) 0;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -299,9 +299,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
     border-radius: 50%;
     background: rgba(var(--accent-primary-rgb), 0.1);
     color: var(--accent-primary);
@@ -334,29 +334,21 @@
     }
 }
 
-// Delete action button (subtle hover)
+// Delete action button (unified with .action-btn standard)
 .delete-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: none;
-    background: transparent;
-    color: var(--text-muted);
-    cursor: pointer;
-    opacity: 0.4;
-    transition: all var(--transition-fast);
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius-round);
+    opacity: 0.6;
 
-    &:hover {
-        opacity: 1 !important;
-        background: rgba(var(--error-rgb, 255, 75, 75), 0.1);
-        color: var(--error);
+    @media (hover: hover) {
+        &:hover {
+            opacity: 1 !important;
+        }
     }
 
     @media (hover: none) {
-        opacity: 0.6;
+        opacity: 0.7;
     }
 }
 

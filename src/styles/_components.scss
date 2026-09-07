@@ -67,7 +67,8 @@
 }
 
 .filter-chip {
-    .chip-count {
+    .chip-count,
+    .tab-badge {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -81,9 +82,12 @@
         margin-left: 2px;
     }
 
-    &.active .chip-count {
-        background: rgba(var(--accent-primary-rgb), 0.2);
-        color: var(--accent-primary);
+    &.active {
+        .chip-count,
+        .tab-badge {
+            background: rgba(var(--accent-primary-rgb), 0.2);
+            color: var(--accent-primary);
+        }
     }
 }
 

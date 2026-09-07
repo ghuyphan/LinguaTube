@@ -716,7 +716,7 @@ export class VideoPlayerComponent implements OnDestroy {
     if (!container) return;
 
     const rect = container.getBoundingClientRect();
-    this.gestures.handleTouchEnd(rect);
+    this.gestures.handleTouchEnd(rect, this.areControlsVisible());
   }
 
   /**
@@ -761,10 +761,12 @@ export class VideoPlayerComponent implements OnDestroy {
 
         case 'long-press-start':
           this.longPressActive.set(true);
+          this.showSpeedFeedback(2);
           break;
 
         case 'long-press-end':
           this.longPressActive.set(false);
+          this.showSpeedFeedback(this.currentSpeed());
           break;
       }
     });

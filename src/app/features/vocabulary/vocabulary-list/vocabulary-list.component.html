@@ -1,16 +1,18 @@
 <div class="vocab-panel" [class.embedded]="embedded()">
     <!-- Header (shown only when showHeader() is true) -->
     @if (showHeader()) {
-    <div class="vocab-header">
-        <div class="vocab-header__left">
-            <app-icon name="book-open" [size]="18" class="vocab-header__icon" />
-            <h3 class="vocab-header__title">{{ i18n.t('vocab.title') }}</h3>
-            <span class="vocab-header__count">{{ currentLangVocabCount() }}</span>
+    <div class="panel-header">
+        <div class="panel-header__row">
+            <div class="panel-header__left">
+                <app-icon name="book-open" [size]="18" class="panel-header__icon" />
+                <h3 class="panel-header__title">{{ i18n.t('vocab.title') }}</h3>
+                <span class="badge badge--primary">{{ currentLangVocabCount() }}</span>
+            </div>
+            <button type="button" class="panel-header__link" (click)="openDictionary()" [title]="i18n.t('dictionary.title')">
+                <span>{{ i18n.t('dictionary.title') }}</span>
+                <app-icon name="arrow-right" [size]="13" />
+            </button>
         </div>
-        <button class="vocab-header__link" (click)="openDictionary()" [title]="i18n.t('dictionary.title')">
-            <span>{{ i18n.t('dictionary.title') }}</span>
-            <app-icon name="arrow-right" [size]="13" />
-        </button>
     </div>
     }
 
@@ -149,7 +151,7 @@
                 <div class="vocab-item__actions" (click)="$event.stopPropagation()">
                     <!-- Authentic Audio Pronunciation Button (Matching Dictionary's audio-btn) -->
                     <button type="button" 
-                            class="audio-btn audio-btn--sm" 
+                            class="action-btn action-btn--audio audio-btn--sm" 
                             [class.playing]="audio.isPlaying(item.word)"
                             (click)="playAudio(item, $event)" 
                             [title]="i18n.t('study.listen') || 'Listen'">
@@ -164,7 +166,7 @@
                     </button>
 
                     <!-- Direct Delete Button -->
-                    <button type="button" class="delete-btn" (click)="deleteWordDirect(item, $event)" [title]="i18n.t('vocab.deleteWord') || 'Delete word'">
+                    <button type="button" class="action-btn action-btn--delete delete-btn" (click)="deleteWordDirect(item, $event)" [attr.aria-label]="i18n.t('vocab.deleteWord') || 'Delete word'" [title]="i18n.t('vocab.deleteWord') || 'Delete word'">
                         <app-icon name="trash-2" [size]="14" />
                     </button>
                 </div>

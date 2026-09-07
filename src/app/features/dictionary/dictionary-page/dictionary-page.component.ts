@@ -42,7 +42,10 @@ import { SettingsService, I18nService } from '../../../core/services';
                     <span class="badge badge--primary">{{ recentSearches().length }} {{ i18n.t('dictionary.recent') || 'gần đây' }}</span>
                   }
                 } @else {
-                  <span class="badge badge--accent">{{ stats().total }} {{ i18n.t('study.cards') }}</span>
+                  <span class="badge badge--primary">{{ stats().total }} {{ i18n.t('study.cards') }}</span>
+                  @if (stats().known > 0) {
+                    <span class="badge badge--accent">{{ stats().known }} {{ i18n.t('study.known') }}</span>
+                  }
                 }
               </div>
             </div>
@@ -389,6 +392,13 @@ import { SettingsService, I18nService } from '../../../core/services';
 
     /* Unified Toolbar & Tabs inside Dictionary Panel (Matches playlist-toolbar & history-toolbar) */
     .dict-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-sticky, 100);
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: var(--space-xs) 0;
       display: flex;
       align-items: center;
       gap: var(--space-sm);
@@ -421,6 +431,23 @@ import { SettingsService, I18nService } from '../../../core/services';
     }
 
     @media (max-width: 640px) {
+        .dict-toolbar {
+            width: 100%;
+
+            .view-tabs {
+                width: 100%;
+                display: flex;
+                gap: 6px;
+
+                .filter-chip {
+                    flex: 1 1 0px;
+                    min-width: 0;
+                    justify-content: center;
+                    padding: 0 10px;
+                }
+            }
+        }
+
         .menu-sheet {
             padding: var(--space-sm) var(--space-sm) calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
         }

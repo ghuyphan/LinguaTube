@@ -321,14 +321,14 @@
         }
 
         &__actions {
-            flex-direction: column;
-            justify-content: center;
-            gap: 2px;
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
         }
 
         .action-btn {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
         }
     }
 }

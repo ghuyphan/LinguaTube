@@ -784,10 +784,10 @@
 .card-speaker-btn {
     width: 2.25rem;
     height: 2.25rem;
-    border-radius: var(--border-radius-sm);
-    border: 1px solid var(--border-color);
-    background: var(--bg-surface);
-    color: var(--text-secondary);
+    border-radius: var(--border-radius-round);
+    border: 1px solid transparent;
+    background: rgba(var(--accent-primary-rgb), 0.1);
+    color: var(--accent-primary);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -797,9 +797,10 @@
     touch-action: manipulation;
 
     &:hover {
-        background: var(--bg-hover);
-        color: var(--accent-primary);
+        background: var(--accent-primary);
+        color: var(--text-inverse);
         border-color: var(--accent-primary);
+        transform: scale(1.06);
     }
 
     &:active {

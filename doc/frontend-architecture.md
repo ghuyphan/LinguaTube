@@ -138,7 +138,7 @@ graph TD
     - Drag handler scheduled via `requestAnimationFrame` with pointer capture.
     - Magnetic snap targets at `12%` (top) and `82%` (bottom), and tap-to-toggle.
 - **Interaction Services**:
-  - `GestureHandlerService`: Handles mobile touch gestures (swipe right/left to seek, swipe up/down for volume, double-tap left/right for $\pm 10$s jump).
+  - `GestureHandlerService`: Handles mobile touch gestures (single tap for controls toggle with zero-latency dismissal when controls are showing, double-tap left/right wings for $\pm 10$s seek with feedback pill & ripple, horizontal swipe for scrubbing preview, and long-press for $2\times$ playback speed).
   - `VideoKeyboardShortcutService`: Desktop hotkeys (`Space`, `k`, `Left`/`Right`, `j`/`l`, `Up`/`Down`, `f`, `m`, `c`).
 
 #### SubtitleDisplayComponent (`subtitle-display/`)
@@ -381,13 +381,22 @@ All transient notification feedback (link copying, playlist changes, deletion wi
 - **First-Class Interactive Actions**: Features `.toast__action-btn` (`border-radius: var(--border-radius-pill); font-weight: 700; background: rgba(255, 255, 255, 0.2)`) with instant touch scale feedback (`transform: scale(0.95)`), enabling one-tap "Undo" across History and Vocabulary removal.
 - **Semantic Indicators**: Dedicated semantic accent colors for success (`var(--success-green, #22c55e)`), error (`var(--error, #ff4b4b)`), warning (`var(--warning, #ffc800)`), and info (`var(--info, #1cb0f6)`).
 
-### Unified Card Headers, Action Buttons & Play Overlays
-To maintain visual and functional harmony across all primary views (`Playlist`, `History`, `Dictionary` / `Vocabulary`), all panel cards, subcards, and lists share standardized tokens in `src/styles/_components.scss`:
+### Unified Card Headers, Toolbars, Badges & Action Buttons
+To maintain complete visual, structural, and functional harmony across all primary views (`Playlist`, `History`, `Dictionary` / `Vocabulary`, `Study` / `Flashcards`, and `Video Dashboard`), all panel cards, subcards, and toolbars share standardized design tokens in `src/styles/_components.scss`:
 - **Panel Header Standard (`.panel-header`)**:
   - Structured with `.panel-header__row` (enforcing `display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs);`).
-  - Contains `.panel-header__left` with accent-colored icon (`.panel-header__icon`, 20px / 18px) and page/card title (`.panel-header__title`, 1.0625rem / 0.9375rem).
-  - Contains `.panel-badges` aligned to the right (`margin-left: auto`) for item counts and active filters.
-  - Subtitle line (`.panel-header__subtitle`, 0.8125rem muted) standardized across all 3 pages (`playlist.subtitle`, `history.subtitle`, `dictionary.subtitle` / `study.subtitle`) in all 5 supported languages (`en`, `vi`, `ja`, `ko`, `zh`).
+  - Contains `.panel-header__left` (`display: flex; align-items: center; gap: var(--space-xs);`) with accent-colored icon (`.panel-header__icon`, 20px / 18px) and card title (`.panel-header__title`, 1.0625rem / 0.9375rem).
+  - Contains `.panel-badges` aligned to the right (`margin-left: auto; display: flex; align-items: center; gap: var(--space-xs);`):
+    - Primary count/metric badge: `<span class="badge badge--primary">...</span>` (e.g. total items, due cards).
+    - Secondary metadata badges: `<span class="badge badge--accent">...</span>` (language, readings) and `<span class="badge badge--warning">...</span>` (study streaks).
+    - Action/navigation links: `<a class="panel-header__link">...</a>` aligned cleanly alongside badges.
+  - Subtitle line (`.panel-header__subtitle`, 0.8125rem muted) standardized across all views in all 5 supported languages (`en`, `vi`, `ja`, `ko`, `zh`).
+- **Surface Integrity & Dark-Box Inset Prevention**:
+  - Sticky toolbars positioned inside `.card` containers (`.history-toolbar`, `.playlist-toolbar`, `.dict-toolbar`, and embedded `.vocab-toolbar`) MUST use `background: var(--bg-card); backdrop-filter: blur(12px);` rather than `var(--bg-primary)`.
+  - This prevents the dark inset cutout bug in dark mode where child toolbars with `#0f1117` background clashed with parent card containers (`#212121`).
+- **Segmented View Tabs & Badges (`.filter-chip`)**:
+  - Full-width mobile distribution: View tabs on narrow screens enforce `flex: 1 1 0px; min-width: 0; text-align: center;` so tabs distribute evenly across the toolbar width without awkward right-side gaps.
+  - Standardized tab counter badges: both `.chip-count` and `.tab-badge` share unified pill dimensions, `font-size: 0.6875rem`, `font-weight: 700`, and seamless color transitions.
 - **Unified Card Action Buttons (`.action-btn`)**:
   - Consistent dimensions: circular 32px $\times$ 32px (`border-radius: var(--border-radius-round)`), centered flexbox, transparent border and background by default.
   - Tactile states: smooth hover tint (`background: var(--bg-hover); color: var(--text-primary)`), active depression (`transform: scale(0.92)`).
@@ -395,7 +404,7 @@ To maintain visual and functional harmony across all primary views (`Playlist`, 
     - `.action-btn--surface`: Subtle card surface background with border (used in panel toolbar action buttons).
     - `.action-btn--favorite`: Heart toggle with accent glow and playful spring pop animation (`@keyframes heartPop`).
     - `.action-btn--delete`: Trash removal with soft error red hover background (`rgba(var(--error-rgb), 0.12)`) and color.
-    - `.action-btn--audio`: Pronunciation speaker button with accent tint and rhythmic audio wave pulse animation (`@keyframes pulseAudio`).
+    - `.action-btn--audio`: Pronunciation speaker button with accent tint and rhythmic audio wave pulse animation (`@keyframes pulseAudio`), standardized across Dictionary search results, Vocabulary list items, and Study flashcards.
 - **Standardized Card Play Overlay (`.card-play-overlay`)**:
   - Centered over 16:9 thumbnails (`inset: 0; background: rgba(0, 0, 0, 0.35);`).
   - Standardized 32px circular play icon (`.play-icon-circle`, `background: var(--accent-primary); color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);`).
