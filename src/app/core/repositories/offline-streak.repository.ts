@@ -61,8 +61,9 @@ export class OfflineStreakRepository implements IStreakRepository {
         for (let i = 0; i < 7; i++) {
             const date = new Date(today);
             date.setDate(date.getDate() - i);
-            const dateStr = date.toISOString().split('T')[0];
-            week.push(history.includes(dateStr));
+            const localKey = this.toLocalDateKey(date);
+            const utcKey = date.toISOString().split('T')[0];
+            week.push(history.includes(localKey) || history.includes(utcKey));
         }
 
         return week;
@@ -138,8 +139,15 @@ export class OfflineStreakRepository implements IStreakRepository {
         this.storage.set(HISTORY_KEY, trimmed);
     }
 
+    private toLocalDateKey(date: Date): string {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
     private addToLocalHistory(date: Date) {
-        const dateStr = this.startOfDay(date).toISOString().split('T')[0];
+        const dateStr = this.toLocalDateKey(date);
         const history = this.storage.get<string[]>(HISTORY_KEY) || [];
         if (!history.includes(dateStr)) {
             history.push(dateStr);
