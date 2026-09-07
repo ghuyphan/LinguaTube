@@ -25,7 +25,7 @@ export async function onRequestGet(context) {
         const cacheManager = new CacheManager(cache);
         const diamondService = new DiamondService(cacheManager);
 
-        const status = await diamondService.getDiamonds(clientId, user);
+        const status = await diamondService.getDiamonds(clientId, user, env, context);
 
         return jsonResponse({
             success: true,

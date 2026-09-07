@@ -131,6 +131,7 @@
         "aiCredits": "AI积分",
         "creditsAvailable": "可用额度",
         "ready": "就绪",
+        "regenIn": "{{time}}后 +1",
         "aiCreditsDescription": "AI积分用于支持智能功能，例如为没有字幕的视频生成听写文本。",
         "whatAreThey": "什么是AI积分？",
         "whatAreTheyDesc": "AI积分（钻石）让您可以使用AI来自动为没有字幕的视频生成听写文本。",

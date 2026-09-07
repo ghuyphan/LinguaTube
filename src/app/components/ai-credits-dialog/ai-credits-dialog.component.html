@@ -1,15 +1,26 @@
 <div class="ai-credits-dialog">
     <!-- Header -->
     <div class="header-section">
-        <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
-            [nextRegenAt]="transcript.nextRegenAt()" [regenIntervalMs]="transcript.regenIntervalMs()" variant="card"
-            [showLabel]="false" class="large-diamonds-card" (regenCompleted)="onRegenCompleted()" />
+        <div class="credits-hero-icon" [class.is-depleted]="transcript.diamonds() === 0" [class.is-full]="transcript.diamonds() === transcript.maxDiamonds()">
+            <app-icon name="diamond" [size]="40" class="hero-gem" />
+        </div>
 
         <div class="title-group">
             <h2>{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</h2>
-            <p>{{ transcript.diamonds() }} / {{ transcript.maxDiamonds() }} {{ i18n.t('subtitle.creditsAvailable') ||
-                'Available' }}</p>
+            <div class="credits-count-row">
+                <span class="credits-num">{{ transcript.diamonds() }}</span>
+                <span class="credits-sep">/</span>
+                <span class="credits-total">{{ transcript.maxDiamonds() }}</span>
+                <span class="credits-tag">{{ i18n.t('subtitle.creditsAvailable') || 'Available' }}</span>
+            </div>
         </div>
+
+        @if (transcript.diamonds() < transcript.maxDiamonds() && regenCountdown()) {
+        <div class="regen-pill">
+            <app-icon name="clock" [size]="13" class="regen-icon" />
+            <span>{{ i18n.t('subtitle.regenIn', { time: regenCountdown() }) || ('+1 in ' + regenCountdown()) }}</span>
+        </div>
+        }
 
         @if (transcript.diamonds() === 0) {
         <div class="depleted-banner">

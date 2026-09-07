@@ -47,6 +47,25 @@
     gap: 0.25rem;
 }
 
+.diamond-badge-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+
+    .badge-gem {
+        color: var(--text-muted);
+        opacity: 0.5;
+
+        &.filled {
+            color: var(--color-diamond);
+            opacity: 1;
+        }
+    }
+}
+
 .diamond-gem {
     display: flex;
     align-items: center;

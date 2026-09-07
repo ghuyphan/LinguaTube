@@ -92,7 +92,8 @@ async function verifyPocketBaseToken(token, env) {
                 subscriptionExpires: data.record?.subscription_expires,
                 // Diamond system fields
                 diamonds: data.record?.diamonds,
-                diamondsUpdatedAt: data.record?.diamonds_updated_at
+                last_diamond_regen: data.record?.last_diamond_regen || data.record?.diamonds_updated_at || null,
+                diamondsUpdatedAt: data.record?.last_diamond_regen || data.record?.diamonds_updated_at || null
             }
         };
 

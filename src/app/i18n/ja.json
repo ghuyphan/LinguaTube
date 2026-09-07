@@ -131,6 +131,7 @@
         "aiCredits": "AIクレジット",
         "creditsAvailable": "利用可能なクレジット",
         "ready": "準備完了",
+        "regenIn": "{{time}}後に+1",
         "aiCreditsDescription": "AIクレジットは、字幕のない動画の文字起こしなど、インテリジェントな機能に使用されます。",
         "whatAreThey": "AIクレジットとは？",
         "whatAreTheyDesc": "AIクレジット（ダイヤモンド）を使用すると、AIを使って字幕がない動画を自動文字起こしできます。",

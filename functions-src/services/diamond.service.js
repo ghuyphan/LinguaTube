@@ -103,37 +103,65 @@ export class DiamondService {
      * 
      * @param {string} clientId - The IP or identifier for the unauthenticated user
      * @param {Object} [user=null] - The authenticated PocketBase user object
+     * @param {Object} [env=null] - Cloudflare Worker environment bindings
+     * @param {Object} [context=null] - Cloudflare Worker execution context (for waitUntil)
      * @returns {Promise<{ diamonds: number, nextRegenAt: number | null, maxDiamonds: number, regenIntervalMs: number, tier: string, maxVideoDurationSec: number }>}
      */
-    async getDiamonds(clientId, user = null) {
+    async getDiamonds(clientId, user = null, env = null, context = null) {
         const tier = this.resolveTier(user);
         const config = getTierDiamondConfig(tier);
 
         if (user) {
             // Authenticated user
-            let currentDiamonds = user.diamonds ?? config.maxDiamonds;
-            let lastRegenDate = user.last_diamond_regen ? new Date(user.last_diamond_regen) : new Date();
+            const lastRegenRaw = user.last_diamond_regen || user.diamondsUpdatedAt;
+            let currentDiamonds;
+            let lastRegenDate;
             let nextRegenAt = null;
             let needsUpdate = false;
 
-            // Calculate regeneration if not at max
-            if (currentDiamonds < config.maxDiamonds) {
-                const now = new Date();
-                const msSinceLastRegen = now.getTime() - lastRegenDate.getTime();
+            // If user has never had a regen/consume timestamp recorded, or diamonds was defaulted to 0 on sign-up,
+            // grant them full credits (maxDiamonds for their tier).
+            if (!lastRegenRaw && (user.diamonds === undefined || user.diamonds === null || user.diamonds === 0)) {
+                currentDiamonds = config.maxDiamonds;
+                lastRegenDate = new Date();
+                needsUpdate = true;
+            } else {
+                currentDiamonds = user.diamonds ?? config.maxDiamonds;
+                lastRegenDate = lastRegenRaw ? new Date(lastRegenRaw) : new Date();
 
-                if (msSinceLastRegen >= config.regenIntervalMs) {
-                    const intervalsPassed = Math.floor(msSinceLastRegen / config.regenIntervalMs);
-                    const regeneratedAmount = intervalsPassed * config.regenAmount;
-                    currentDiamonds = Math.min(currentDiamonds + regeneratedAmount, config.maxDiamonds);
-
-                    // Update last regen time by adding the intervals passed
-                    lastRegenDate = new Date(lastRegenDate.getTime() + (intervalsPassed * config.regenIntervalMs));
-                    needsUpdate = true;
-                }
-
-                // Calculate next regen time if still strictly below max
+                // Calculate regeneration if not at max
                 if (currentDiamonds < config.maxDiamonds) {
-                    nextRegenAt = lastRegenDate.getTime() + config.regenIntervalMs;
+                    const now = new Date();
+                    const msSinceLastRegen = now.getTime() - lastRegenDate.getTime();
+
+                    if (msSinceLastRegen >= config.regenIntervalMs) {
+                        const intervalsPassed = Math.floor(msSinceLastRegen / config.regenIntervalMs);
+                        const regeneratedAmount = intervalsPassed * config.regenAmount;
+                        currentDiamonds = Math.min(currentDiamonds + regeneratedAmount, config.maxDiamonds);
+
+                        // Update last regen time by adding the intervals passed
+                        lastRegenDate = new Date(lastRegenDate.getTime() + (intervalsPassed * config.regenIntervalMs));
+                        needsUpdate = true;
+                    }
+
+                    // Calculate next regen time if still strictly below max
+                    if (currentDiamonds < config.maxDiamonds) {
+                        nextRegenAt = lastRegenDate.getTime() + config.regenIntervalMs;
+                    }
+                }
+            }
+
+            if (needsUpdate && env) {
+                const updateTask = this._updatePocketBaseUser(
+                    env,
+                    user.id,
+                    currentDiamonds,
+                    lastRegenDate.toISOString()
+                );
+                if (context && context.waitUntil) {
+                    context.waitUntil(updateTask);
+                } else {
+                    updateTask.catch(() => {});
                 }
             }
 

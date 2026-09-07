@@ -19,32 +19,101 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.75rem;
     width: 100%;
 }
 
-.large-diamonds-card {
-    /* Scale up the existing card slightly for the dialog header */
-    transform: scale(1.1);
+.credits-hero-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(var(--color-diamond-rgb, 59, 130, 246), 0.16) 0%, rgba(var(--color-diamond-rgb, 59, 130, 246), 0.04) 100%);
+    border: 1.5px solid rgba(var(--color-diamond-rgb, 59, 130, 246), 0.3);
+    box-shadow: 0 0 24px rgba(var(--color-diamond-rgb, 59, 130, 246), 0.16);
+    transition: all var(--transition-normal);
+
+    .hero-gem {
+        color: var(--color-diamond, #3b82f6);
+        filter: drop-shadow(0 2px 8px rgba(var(--color-diamond-rgb, 59, 130, 246), 0.4));
+    }
+
+    &.is-full {
+        box-shadow: 0 0 32px rgba(var(--color-diamond-rgb, 59, 130, 246), 0.28);
+    }
+
+    &.is-depleted {
+        background: linear-gradient(135deg, rgba(var(--warning-rgb, 234, 179, 8), 0.16) 0%, rgba(var(--warning-rgb, 234, 179, 8), 0.04) 100%);
+        border-color: rgba(var(--warning-rgb, 234, 179, 8), 0.35);
+        box-shadow: 0 0 20px rgba(var(--warning-rgb, 234, 179, 8), 0.16);
+
+        .hero-gem {
+            color: var(--warning, #eab308);
+            filter: drop-shadow(0 2px 8px rgba(var(--warning-rgb, 234, 179, 8), 0.4));
+        }
+    }
 }
 
 .title-group {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.25rem;
 
     h2 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         font-weight: 700;
         margin: 0;
         color: var(--text-primary);
     }
+}
 
-    p {
-        color: var(--text-secondary);
-        font-size: 1rem;
-        margin: 0;
+.credits-count-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+    font-weight: 600;
+
+    .credits-num {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--text-primary);
+    }
+
+    .credits-sep {
+        opacity: 0.45;
+    }
+
+    .credits-total {
+        font-weight: 700;
+    }
+
+    .credits-tag {
+        margin-left: 0.25rem;
+        font-size: 0.875rem;
         font-weight: 500;
+        color: var(--text-muted);
+    }
+}
+
+.regen-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.3125rem 0.75rem;
+    border-radius: 9999px;
+    background: var(--bg-surface, var(--bg-secondary));
+    border: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-diamond, #3b82f6);
+
+    .regen-icon {
+        opacity: 0.8;
     }
 }
 
