@@ -563,16 +563,21 @@
         "gotIt": "확인"
     },
     "level": {
+        "auto": "자동",
         "beginner": "입문",
         "elementary": "초급",
         "intermediate": "중급",
         "upper_intermediate": "중고급",
+        "upperIntermediate": "중고급",
         "advanced": "고급",
         "grammarPoints": "문법 패턴",
-        "speechRate": "발화 속도"
+        "speechRate": "발화 속도",
+        "filterByLevel": "레벨별 필터",
+        "allLevels": "모든 레벨"
     },
     "gamification": {
         "level": "레벨",
+        "achievements": "업적",
         "toNextLevel": "다음 레벨까지",
         "levelUp": "레벨 업!",
         "reachedLevel": "달성한 레벨:",
@@ -583,6 +588,21 @@
         "rank3": "단어 수집가",
         "rank4": "열정적인 학자",
         "rank5": "다국어 마스터"
+    },
+    "leaderboard": {
+        "title": "글로벌 랭킹",
+        "tabTitle": "리더보드",
+        "subtitle": "전 세계 학습자들과 함께 경쟁하세요",
+        "allLanguages": "모든 언어",
+        "topLearners": "상위 랭킹",
+        "yourRank": "내 순위",
+        "rank": "순위",
+        "learner": "학습자",
+        "xp": "XP",
+        "streak": "연속 일수",
+        "empty": "아직 랭킹 정보가 없습니다",
+        "syncScore": "점수 동기화",
+        "synced": "동기화 완료!"
     },
     "achievements": {
         "title": "업적 및 레벨",

@@ -116,6 +116,9 @@
                             @if (playlist.language) {
                             <span class="lang-badge">{{ playlist.language.toUpperCase() }}</span>
                             }
+                            @if (getPlaylistLevel(playlist); as lvl) {
+                            <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
+                            }
                             <span class="meta-author">{{ playlist.userName || i18n.t('playlist.community') }}</span>
                             <span class="separator">•</span>
                             <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? i18n.t('history.videoSingular') : i18n.t('history.videoPlural') }}</span>
@@ -204,10 +207,12 @@
 </div>
 
 <!-- Add to Playlist Dialog -->
-@if (showAddToPlaylistDialog() && youtube.currentVideo(); as video) {
-<app-add-to-playlist-dialog [isOpen]="showAddToPlaylistDialog()" [videoId]="video.id"
-    (closed)="showAddToPlaylistDialog.set(false)">
-</app-add-to-playlist-dialog>
+@defer (when showAddToPlaylistDialog()) {
+    @if (showAddToPlaylistDialog() && youtube.currentVideo(); as video) {
+    <app-add-to-playlist-dialog [isOpen]="showAddToPlaylistDialog()" [videoId]="video.id"
+        (closed)="showAddToPlaylistDialog.set(false)">
+    </app-add-to-playlist-dialog>
+    }
 }
 
 <!-- Language Mismatch Alert -->

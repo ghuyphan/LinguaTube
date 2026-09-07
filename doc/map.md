@@ -29,6 +29,7 @@ graph TB
         API_TranslateBatch["/api/translate/batch"]
         API_VideoInfo["/api/video-info"]
         API_VideoLevel["/api/video-level"]
+        API_Leaderboard["/api/leaderboard"]
         API_Diamonds["/api/diamonds"]
         API_AuthConfig["/api/auth-config"]
         API_PayOrder["/api/payment/create-order"]
@@ -38,7 +39,7 @@ graph TB
     end
 
     subgraph CloudflareData["Cloudflare Infrastructure"]
-        D1[(Cloudflare D1 SQLite: video_languages, no_transcript_cache, video_meta)]
+        D1[(Cloudflare D1 SQLite: video_languages, leaderboard, no_transcript_cache, video_meta)]
         R2[(Cloudflare R2: transcripts/ & translations/)]
         KV[(Cloudflare KV: ratelimit, tokens, video-info, trbatch, pay_orders)]
     end
@@ -411,24 +412,58 @@ sequenceDiagram
 
 ---
 
+### 3.7. Global Leaderboard Synchronization Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Learner
+    participant Dialog as AchievementsDialogComponent
+    participant Leaderboard as LeaderboardService
+    participant Gamification as GamificationService
+    participant Edge as /api/leaderboard Endpoint
+    participant D1 as Cloudflare D1 (leaderboard)
+    participant Storage as LocalStorage (linguatube_leaderboard_cache)
+
+    Learner->>Dialog: Switch to "Global Ranking" Tab
+    Dialog->>Leaderboard: loadLeaderboard(langFilter)
+    Leaderboard->>Storage: Read Cached Top 50 (Instant Render)
+    Storage-->>Leaderboard: Cached Learner Records
+    Leaderboard-->>Dialog: Display Top 3 Podium & Rankings
+    Leaderboard->>Edge: GET /api/leaderboard?lang=...&userId=...
+    Edge->>D1: Query Top 50 by XP DESC + User Rank
+    D1-->>Edge: Top Learners + User Position
+    Edge-->>Leaderboard: Fresh Leaderboard Data
+    Leaderboard->>Storage: Cache Updated Ranks
+    Leaderboard-->>Dialog: Update Podium & Sticky User Rank Bar
+    opt Background Score Sync (Debounced 30s)
+        Gamification->>Leaderboard: On Level-Up / Significant XP Gain
+        Leaderboard->>Edge: POST /api/leaderboard { xp, level, streak, badges, targetLang }
+        Edge->>D1: UPSERT INTO leaderboard (MAX(xp))
+        Edge-->>Leaderboard: 200 OK { updated: true }
+    end
+```
+
+---
+
 ## 4. Directory & File Responsibility Matrix
 
 | Directory / File | Layer | Primary Responsibility |
 | :--- | :--- | :--- |
-| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Error handler |
+| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Global Leaderboard (`LeaderboardService`), Error handler |
 | `public` | Static & Discovery | PWA icons, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`, `og-image.png`, `_headers` |
 | `src/app/core/repositories` | Data Layer | Offline-first sync repositories for Vocab, Streaks, Playlists, History |
 | `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, draggable fullscreen subtitles, controls, video header level badge |
 | `src/app/features/dictionary` | Linguistics | Multi-provider dictionary lookups, word popup, grammar popup |
 | `src/app/features/vocabulary` | Study / Retention | Vocabulary notebook table, quick view panel, SM-2 flashcard study page |
-| `src/app/features/playlist` | Organization | Custom user playlists and curated community language learning channels |
-| `src/app/features/history` | Analytics | Watch history, resume points, completed learning logs, video level badges |
+| `src/app/features/playlist` | Organization | Custom user playlists, curated community language learning channels, difficulty level badges & filters |
+| `src/app/features/history` | Analytics | Watch history, resume points, completed learning logs, difficulty level badges & filters |
 | `src/app/features/quiz` | Assessment | Fill-in-the-blank and interactive vocabulary testing inputs |
-| `src/app/components/achievements-dialog` | UI Shell | Modal dialog displaying XP progression, rank titles, and 19 achievement badges |
+| `src/app/components/achievements-dialog` | UI Shell | Modal dialog displaying XP progression, rank titles, 19 achievement badges, and Global Leaderboard podium & rankings |
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
 | `src/app/data` | Static Data | Large CJK grammar rules |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, auth-config |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, auth-config |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, PocketBase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |

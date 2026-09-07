@@ -40,6 +40,7 @@ export class CreatePlaylistDialogComponent {
         this.playlist()?.visibility || (this.auth.isLoggedIn() ? 'unlisted' : 'private')
     );
     readonly language = linkedSignal<'ja' | 'zh' | 'ko' | 'en'>(() => this.playlist()?.language || 'ja');
+    readonly level = linkedSignal<string>(() => this.playlist()?.level || '');
     readonly isSubmitting = signal(false);
 
     // Computed
@@ -47,6 +48,70 @@ export class CreatePlaylistDialogComponent {
 
     // Language options
     readonly languages = SUPPORTED_LANGUAGES;
+
+    // Difficulty level options
+    readonly levelOptions = computed(() => {
+        const lang = this.language();
+        const autoLabel = this.i18n.t('level.auto') || 'Auto';
+        const beginner = this.i18n.t('level.beginner') || 'Beginner';
+        const elementary = this.i18n.t('level.elementary') || 'Elementary';
+        const intermediate = this.i18n.t('level.intermediate') || 'Intermediate';
+        const upperIntermediate = this.i18n.t('level.upper_intermediate') || this.i18n.t('level.upperIntermediate') || 'Upper Intermediate';
+        const advanced = this.i18n.t('level.advanced') || 'Advanced';
+
+        if (lang === 'ja') {
+            return [
+                { value: '', label: autoLabel },
+                { value: 'JLPT N5', label: `N5 (${beginner})` },
+                { value: 'JLPT N4', label: `N4 (${elementary})` },
+                { value: 'JLPT N3', label: `N3 (${intermediate})` },
+                { value: 'JLPT N2', label: `N2 (${upperIntermediate})` },
+                { value: 'JLPT N1', label: `N1 (${advanced})` },
+            ];
+        }
+        if (lang === 'zh') {
+            return [
+                { value: '', label: autoLabel },
+                { value: 'HSK 1', label: `HSK 1 (${beginner})` },
+                { value: 'HSK 2', label: `HSK 2 (${elementary})` },
+                { value: 'HSK 3', label: `HSK 3 (${intermediate})` },
+                { value: 'HSK 4', label: `HSK 4 (${upperIntermediate})` },
+                { value: 'HSK 5', label: `HSK 5 (${advanced})` },
+                { value: 'HSK 6', label: `HSK 6 (${advanced}+)` },
+            ];
+        }
+        if (lang === 'ko') {
+            return [
+                { value: '', label: autoLabel },
+                { value: 'TOPIK 1', label: `TOPIK 1 (${beginner})` },
+                { value: 'TOPIK 2', label: `TOPIK 2 (${elementary})` },
+                { value: 'TOPIK 3', label: `TOPIK 3 (${intermediate})` },
+                { value: 'TOPIK 4', label: `TOPIK 4 (${upperIntermediate})` },
+                { value: 'TOPIK 5', label: `TOPIK 5 (${advanced})` },
+                { value: 'TOPIK 6', label: `TOPIK 6 (${advanced}+)` },
+            ];
+        }
+        if (lang === 'en') {
+            return [
+                { value: '', label: autoLabel },
+                { value: 'CEFR A1', label: `A1 (${beginner})` },
+                { value: 'CEFR A2', label: `A2 (${elementary})` },
+                { value: 'CEFR B1', label: `B1 (${intermediate})` },
+                { value: 'CEFR B2', label: `B2 (${upperIntermediate})` },
+                { value: 'CEFR C1', label: `C1 (${advanced})` },
+                { value: 'CEFR C2', label: `C2 (${advanced}+)` },
+            ];
+        }
+
+        return [
+            { value: '', label: autoLabel },
+            { value: 'Beginner', label: beginner },
+            { value: 'Elementary', label: elementary },
+            { value: 'Intermediate', label: intermediate },
+            { value: 'Upper Intermediate', label: upperIntermediate },
+            { value: 'Advanced', label: advanced }
+        ];
+    });
 
     async onSubmit() {
         if (!this.title() || this.isSubmitting()) return;
@@ -58,14 +123,16 @@ export class CreatePlaylistDialogComponent {
                 await this.playlistService.updatePlaylist(this.playlist()!.id, {
                     title: this.title(),
                     visibility: this.visibility(),
-                    language: this.language()
+                    language: this.language(),
+                    level: this.level() || undefined
                 });
                 this.updated.emit();
             } else {
                 await this.playlistService.createPlaylist({
                     title: this.title(),
                     visibility: this.visibility(),
-                    language: this.language()
+                    language: this.language(),
+                    level: this.level() || undefined
                 });
                 this.created.emit();
             }

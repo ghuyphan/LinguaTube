@@ -7,9 +7,9 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
-import { I18nService, ToastService } from '../../../core/services';
+import { I18nService, ToastService, VideoLevelService } from '../../../core/services';
 import { HistoryService } from '../../history/history.service';
-import { Playlist, PlaylistLanguage, PlaylistVideo, SUPPORTED_LANGUAGES } from '../../../models';
+import { Playlist, PlaylistLanguage, PlaylistVideo, ProficiencyLevelTier, SUPPORTED_LANGUAGES } from '../../../models';
 
 @Component({
     selector: 'app-playlist-page',
@@ -22,6 +22,7 @@ import { Playlist, PlaylistLanguage, PlaylistVideo, SUPPORTED_LANGUAGES } from '
 export class PlaylistPageComponent {
     playlistService = inject(PlaylistService);
     historyService = inject(HistoryService);
+    videoLevelService = inject(VideoLevelService);
     i18n = inject(I18nService);
     toast = inject(ToastService);
     private router = inject(Router);
@@ -46,10 +47,22 @@ export class PlaylistPageComponent {
     // Language Filter
     languageFilter = signal<'all' | PlaylistLanguage>('all');
     showLanguageFilter = signal(false);
-    readonly languageFilterOptions = [
+    readonly languageFilterOptions = computed(() => [
         { value: 'all', label: this.i18n.t('playlist.allLanguages') || 'All' },
         ...SUPPORTED_LANGUAGES.map(l => ({ value: l.code, label: l.name, iconUrl: l.flag }))
-    ];
+    ]);
+
+    // Level Filter
+    levelFilter = signal<string>('all');
+    showLevelFilter = signal(false);
+    readonly levelFilterOptions = computed(() => [
+        { value: 'all', label: this.i18n.t('level.allLevels') || 'All Levels' },
+        { value: 'beginner', label: this.i18n.t('level.beginner') || 'Beginner' },
+        { value: 'elementary', label: this.i18n.t('level.elementary') || 'Elementary' },
+        { value: 'intermediate', label: this.i18n.t('level.intermediate') || 'Intermediate' },
+        { value: 'upper_intermediate', label: this.i18n.t('level.upper_intermediate') || this.i18n.t('level.upperIntermediate') || 'Upper Intermediate' },
+        { value: 'advanced', label: this.i18n.t('level.advanced') || 'Advanced' }
+    ]);
 
     // Animation State
     shouldAnimate = signal(this.playlistService.myPlaylists().length === 0);
@@ -153,6 +166,14 @@ export class PlaylistPageComponent {
             list = list.filter(p => p.language === filter);
         }
 
+        const lvl = this.levelFilter();
+        if (lvl !== 'all') {
+            list = list.filter(p => {
+                const resolved = this.getPlaylistLevel(p);
+                return resolved?.tier === lvl;
+            });
+        }
+
         const q = this.searchQuery().trim().toLowerCase();
         if (q) {
             list = list.filter(p =>
@@ -164,6 +185,33 @@ export class PlaylistPageComponent {
 
         return list;
     });
+
+    getPlaylistLevel(playlist: Playlist): { level: string; tier: ProficiencyLevelTier } | null {
+        return this.videoLevelService.resolvePlaylistLevel(playlist);
+    }
+
+    getVideoLevel(video: PlaylistVideo, lang?: string): { level: string; tier: ProficiencyLevelTier } | null {
+        return this.videoLevelService.resolveLevel(
+            video.videoId,
+            lang || this.viewingPlaylist()?.language || 'ja',
+            video.title,
+            video.channel || '',
+            video.level
+        );
+    }
+
+    getLevelFilterLabel(): string {
+        const val = this.levelFilter();
+        const found = this.levelFilterOptions().find(o => o.value === val);
+        return found ? found.label : (this.i18n.t('level.allLevels') || 'All Levels');
+    }
+
+    onLevelFilterChange(value: string): void {
+        this.shouldAnimate.set(true);
+        this.currentPage.set(1);
+        this.levelFilter.set(value);
+        this.showLevelFilter.set(false);
+    }
 
     constructor() {
         void this.playlistService.loadUserPlaylists();

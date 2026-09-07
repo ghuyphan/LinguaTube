@@ -22,9 +22,9 @@ export async function onRequestPost(context) {
 
     // Rate limiting to prevent spamming
     const clientId = getClientIdentifier(request);
-    const rateLimit = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG.max, RATE_LIMIT_CONFIG.windowSeconds, RATE_LIMIT_CONFIG.keyPrefix);
+    const rateLimit = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
     if (!rateLimit.allowed) {
-        return rateLimitResponse(rateLimit);
+        return rateLimitResponse(rateLimit.resetAt);
     }
 
     try {

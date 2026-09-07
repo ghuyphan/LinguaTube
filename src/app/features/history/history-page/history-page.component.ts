@@ -7,7 +7,7 @@ import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialo
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { HistoryListComponent } from '../history-list/history-list.component';
 import { HistoryService } from '../history.service';
-import { I18nService, AuthService, ToastService } from '../../../core/services';
+import { I18nService, AuthService, ToastService, VideoLevelService } from '../../../core/services';
 import { HistoryItem, SUPPORTED_LANGUAGES } from '../../../models';
 import { getYouTubeThumbnail } from '../../../core/utils';
 
@@ -30,6 +30,7 @@ type FilterType = 'all' | 'favorites';
 })
 export class HistoryPageComponent implements OnInit {
   protected historyService = inject(HistoryService);
+  protected videoLevelService = inject(VideoLevelService);
   private router = inject(Router);
 
   i18n = inject(I18nService);
@@ -38,16 +39,18 @@ export class HistoryPageComponent implements OnInit {
 
   filter = signal<FilterType>('all');
   selectedLanguage = signal<string>('all');
+  selectedLevel = signal<string>('all');
   searchQuery = signal<string>('');
   showLanguageFilter = signal(false);
+  showLevelFilter = signal(false);
   showClearConfirm = signal(false);
 
   // Undo tracking
   lastDeletedItem = signal<HistoryItem | null>(null);
 
-  historyItems = computed(() => this.historyService.history());
-  favorites = computed(() => this.historyService.favorites());
-  isLoading = computed(() => this.historyService.isLoading());
+  historyItems = this.historyService.history;
+  favorites = this.historyService.favorites;
+  isLoading = this.historyService.isLoading;
 
   inProgressCount = computed(() =>
     this.historyItems().filter(item => (item.progress || 0) > 0 && (item.progress || 0) < 90).length
@@ -104,11 +107,31 @@ export class HistoryPageComponent implements OnInit {
     return options;
   });
 
+  levelFilterOptions = computed<OptionItem[]>(() => [
+    { value: 'all', label: this.i18n.t('level.allLevels') || 'All Levels', icon: 'medal' },
+    { value: 'beginner', label: this.i18n.t('level.beginner') || 'Beginner' },
+    { value: 'elementary', label: this.i18n.t('level.elementary') || 'Elementary' },
+    { value: 'intermediate', label: this.i18n.t('level.intermediate') || 'Intermediate' },
+    { value: 'upper_intermediate', label: this.i18n.t('level.upper_intermediate') || this.i18n.t('level.upperIntermediate') || 'Upper Intermediate' },
+    { value: 'advanced', label: this.i18n.t('level.advanced') || 'Advanced' },
+  ]);
+
   getLanguageLabel(): string {
     const code = this.selectedLanguage();
     if (code === 'all') return this.i18n.t('playlist.allLanguages') || 'All Languages';
     const match = SUPPORTED_LANGUAGES.find(l => l.code === code);
     return match ? match.name : code.toUpperCase();
+  }
+
+  getLevelLabel(): string {
+    const code = this.selectedLevel();
+    const found = this.levelFilterOptions().find(o => o.value === code);
+    return found ? found.label : (this.i18n.t('level.allLevels') || 'All Levels');
+  }
+
+  onLevelSelected(value: string): void {
+    this.selectedLevel.set(value);
+    this.showLevelFilter.set(false);
   }
 
   getThumbnail(videoId: string): string {
@@ -127,6 +150,19 @@ export class HistoryPageComponent implements OnInit {
           return (item.languages as string[]).includes(lang);
         }
         return item.language === lang;
+      });
+    }
+    const lvl = this.selectedLevel();
+    if (lvl !== 'all') {
+      items = items.filter(item => {
+        const resolved = this.videoLevelService.resolveLevel(
+          item.video_id,
+          item.language || (item.languages?.[0]),
+          item.title,
+          item.channel,
+          item.level
+        );
+        return resolved?.tier === lvl;
       });
     }
     const q = this.searchQuery().trim().toLowerCase();

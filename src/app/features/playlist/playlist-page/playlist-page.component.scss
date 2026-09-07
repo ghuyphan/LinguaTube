@@ -39,10 +39,38 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-sm);
+    flex-direction: column;
+    gap: var(--space-xs);
     margin-bottom: var(--space-md);
+
+    .toolbar-nav-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-sm);
+        width: 100%;
+    }
+
+    .toolbar-filter-row {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+        width: 100%;
+
+        .playlist-search-box {
+            flex: 1 1 260px;
+            min-width: 180px;
+            height: 36px;
+            transition: border-color var(--transition-fast), background-color var(--transition-fast);
+        }
+
+        .filter-chips-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+    }
 
     .filter-chip {
         height: 36px;
@@ -101,80 +129,30 @@
     flex-shrink: 0;
 }
 
-.toolbar-actions {
-    display: flex;
+.create-playlist-btn {
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    padding: 0 14px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-pill);
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    white-space: nowrap;
+    user-select: none;
+    box-shadow: none;
     flex-shrink: 0;
 
-    .playlist-search-box {
-        width: 200px;
-        min-width: 160px;
-        max-width: 260px;
-        flex: 0 0 auto;
-        transition: border-color var(--transition-fast), background-color var(--transition-fast);
-
-        &:focus-within {
-            width: 240px;
-        }
+    app-icon {
+        color: currentColor;
     }
 
-    .filter-chip--lang {
-        padding: 0 12px;
-        color: var(--text-primary);
-
-        .lang-badge {
-            padding: 1px 5px;
-            font-size: 0.625rem;
-            font-weight: 700;
-            background: rgba(var(--accent-primary-rgb), 0.15);
-            color: var(--accent-primary);
-            border-radius: var(--border-radius-sm);
-            line-height: 1;
-        }
-
-        .lang-chevron {
-            color: var(--text-muted);
-            transition: transform var(--transition-fast);
-        }
-
-        @media (hover: hover) {
-            &:hover {
-                background: var(--bg-hover);
-                border-color: var(--border-color-hover, var(--text-muted));
-
-                app-icon,
-                .lang-chevron {
-                    color: var(--text-primary);
-                }
-            }
-        }
-    }
-
-    .create-playlist-btn {
-        height: 36px;
-        min-height: 36px;
-        max-height: 36px;
-        padding: 0 14px;
-        font-size: 0.8125rem;
-        font-weight: 600;
-        border-radius: var(--border-radius-pill);
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        white-space: nowrap;
-        user-select: none;
-        box-shadow: none;
-
-        app-icon {
-            color: currentColor;
-        }
-
-        @media (hover: hover) {
-            &:hover {
-                transform: translateY(-1px);
-                box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.3);
-            }
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.3);
         }
     }
 }
@@ -226,7 +204,7 @@
                 opacity: 1;
             }
 
-            .menu-btn {
+            .action-btn {
                 opacity: 1;
             }
         }
@@ -295,9 +273,11 @@
             color: var(--text-primary);
             line-height: 1.35;
             margin: 0;
-            white-space: nowrap;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            text-overflow: ellipsis;
             transition: color var(--transition-fast);
         }
 
@@ -871,7 +851,8 @@
         padding-right: 2px;
 
         @media (max-width: 768px) {
-            max-height: calc(100dvh - 360px);
+            max-height: none;
+            overflow-y: visible;
         }
 
         .tracklist-header {
@@ -1026,13 +1007,27 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 3px;
+            gap: 4px;
 
-            .track-title-row {
+            .track-title {
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: var(--text-primary);
+                line-height: 1.35;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                margin: 0;
+            }
+
+            .track-meta-row {
                 display: flex;
-                align-items: flex-start;
-                justify-content: space-between;
-                gap: var(--space-xs);
+                align-items: center;
+                gap: 6px;
+                flex-wrap: wrap;
+                font-size: 0.75rem;
+                color: var(--text-secondary);
             }
 
             .watched-badge {
@@ -1049,24 +1044,13 @@
                 flex-shrink: 0;
             }
 
-            .track-title {
-                font-size: 0.875rem;
-                font-weight: 600;
-                color: var(--text-primary);
-                line-height: 1.35;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                margin: 0;
-            }
-
             .track-channel {
                 font-size: 0.75rem;
                 color: var(--text-secondary);
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                max-width: 160px;
             }
         }
     }
@@ -1077,34 +1061,66 @@
 // -------------------------
 @media (max-width: 768px) {
     .playlist-item {
+        gap: 10px;
+        padding: 8px 10px;
+
+        &__thumb {
+            width: 105px;
+        }
+
+        &__content .playlist-item__title {
+            font-size: 0.84375rem;
+            line-height: 1.3;
+        }
+
         .action-btn {
             opacity: 1; // Always visible on touch
         }
     }
 
     .playlist-toolbar {
-        flex-direction: column;
-        align-items: stretch;
         gap: var(--space-xs);
         padding: 0 0 var(--space-xs);
 
-        .view-tabs {
-            width: 100%;
+        .toolbar-nav-row {
             display: flex;
+            align-items: center;
             gap: 6px;
 
-            .filter-chip {
-                flex: 1 1 0px;
+            .view-tabs {
+                flex: 1 1 auto;
                 min-width: 0;
-                justify-content: center;
-                padding: 0 8px;
-                white-space: nowrap;
+                display: flex;
+                gap: 6px;
+
+                .filter-chip {
+                    flex: 1 1 0px;
+                    min-width: 0;
+                    justify-content: center;
+                    padding: 0 8px;
+                    white-space: nowrap;
+
+                    .chip-text {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+            }
+
+            .create-playlist-btn {
+                padding: 0 10px;
+                flex-shrink: 0;
+
+                @media (max-width: 640px) {
+                    .btn-text {
+                        display: none;
+                    }
+                }
             }
         }
 
-        .toolbar-actions {
-            width: 100%;
-            display: flex;
+        .toolbar-filter-row {
             flex-wrap: wrap;
             gap: var(--space-xs);
 
@@ -1113,29 +1129,25 @@
                 max-width: 100% !important;
                 flex: 1 1 100% !important;
                 height: 36px;
-
-                &:focus-within {
-                    width: 100% !important;
-                    max-width: 100% !important;
-                }
             }
 
-            .filter-chip,
-            .create-playlist-btn {
-                flex: 1 1 0px;
-                min-width: 0;
-                justify-content: center;
-                height: 36px;
-                padding: 0 10px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+            .filter-chips-group {
+                width: 100%;
+                display: flex;
+                gap: var(--space-xs);
 
-                .chip-text,
-                .btn-text {
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                .filter-chip {
+                    flex: 1 1 0px;
+                    min-width: 0;
+                    justify-content: center;
+                    padding: 0 8px;
                     white-space: nowrap;
+
+                    .chip-text {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
                 }
             }
         }
@@ -1207,40 +1219,28 @@
     }
 }
 
-@media (max-width: 600px) {
-    .playlist-item {
-        gap: 10px;
-        padding: 8px 10px;
-        border-radius: var(--border-radius-md);
-
-        &__thumb {
-            width: 105px;
-            border-radius: 6px;
-        }
-
-        &__content .playlist-item__title {
-            font-size: 0.84375rem;
-            line-height: 1.3;
-        }
-
-        &__actions .menu-btn {
-            opacity: 1;
-        }
-    }
-}
-
 @media (max-width: 480px) {
     .playlist-item {
         gap: 8px;
         padding: 6px 8px;
+        border-radius: var(--border-radius-md);
 
         &__thumb {
             width: 96px;
+            border-radius: 6px;
         }
 
         &__content .playlist-item__title {
             font-size: 0.8125rem;
             line-height: 1.25;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .playlist-item {
+        &__thumb {
+            width: 82px;
         }
     }
 }

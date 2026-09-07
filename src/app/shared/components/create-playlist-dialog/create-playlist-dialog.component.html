@@ -62,6 +62,19 @@
                 </div>
             </div>
 
+            <!-- Difficulty Level -->
+            <div class="form-group">
+                <label class="form-label">{{ i18n.t('level.filterByLevel') || 'Difficulty Level' }}</label>
+                <div class="level-options">
+                    @for (opt of levelOptions(); track opt.value) {
+                    <button type="button" class="level-option-btn" [class.selected]="level() === opt.value"
+                        (click)="level.set(opt.value)">
+                        <span>{{ opt.label }}</span>
+                    </button>
+                    }
+                </div>
+            </div>
+
             <!-- Actions -->
             <div class="dialog-actions">
                 <button type="button" class="btn btn-ghost dialog-btn" (click)="sheet()?.close()">

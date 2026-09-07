@@ -76,15 +76,15 @@
             <div class="history-item__content">
                 <h3 class="history-item__title" [title]="item.title">{{ item.title }}</h3>
                 <div class="history-item__meta">
-                    @if (item.level) {
-                        <span class="level-badge--pill">{{ item.level }}</span>
-                    }
                     @if (item.languages?.length) {
                         @for (lang of item.languages; track lang) {
                             <span class="lang-badge">{{ lang.toUpperCase() }}</span>
                         }
                     } @else if (item.language) {
                         <span class="lang-badge">{{ item.language.toUpperCase() }}</span>
+                    }
+                    @if (getItemLevel(item); as lvl) {
+                        <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
                     }
 
                     @if (item.channel) {

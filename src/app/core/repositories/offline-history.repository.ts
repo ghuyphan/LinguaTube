@@ -234,7 +234,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
         const newHistory = current.filter(i => i.id !== id);
         this.history.set(newHistory);
-        this.saveToStorage(newHistory);
+        this.saveToStorage(newHistory, true);
 
         // 2. Remote Sync
         if (this.auth.isLoggedIn()) {
@@ -261,7 +261,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             this.addDeletionTombstone(item.video_id);
         }
         this.history.set([]);
-        this.saveToStorage([]);
+        this.saveToStorage([], true);
 
         if (this.auth.isLoggedIn()) {
             try {
@@ -421,12 +421,33 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         }
     }
 
-    private saveToStorage(items: HistoryItem[]): void {
-        const data = {
-            items: items.slice(0, MAX_LOCAL_HISTORY),
-            updatedAt: new Date().toISOString()
+    private saveDebounceTimer: ReturnType<typeof setTimeout> | null = null;
+
+    private saveToStorage(items: HistoryItem[], immediate = false): void {
+        const doSave = () => {
+            const data = {
+                items: items.slice(0, MAX_LOCAL_HISTORY),
+                updatedAt: new Date().toISOString()
+            };
+            this.storage.set(STORAGE_KEY, data);
         };
-        this.storage.set(STORAGE_KEY, data);
+
+        if (immediate) {
+            if (this.saveDebounceTimer) {
+                clearTimeout(this.saveDebounceTimer);
+                this.saveDebounceTimer = null;
+            }
+            doSave();
+            return;
+        }
+
+        if (this.saveDebounceTimer) {
+            clearTimeout(this.saveDebounceTimer);
+        }
+        this.saveDebounceTimer = setTimeout(() => {
+            this.saveDebounceTimer = null;
+            doSave();
+        }, 1500);
     }
 
     private recordToHistoryItem(record: HistoryRecord | Record<string, unknown>): HistoryItem {

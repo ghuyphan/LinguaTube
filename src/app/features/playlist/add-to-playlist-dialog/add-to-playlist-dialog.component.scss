@@ -2,7 +2,7 @@
 // ==============================
 
 .dialog-content.add-playlist-modal {
-    padding: var(--space-md) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+    padding: var(--space-md) var(--space-md) var(--space-lg);
     max-width: 440px;
     margin: 0 auto;
 }

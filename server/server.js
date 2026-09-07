@@ -554,6 +554,61 @@ app.post('/api/payment/webhook', (req, res) => {
     res.json({ success: true });
 });
 
+// Dev Leaderboard
+const devLeaderboard = [
+    { rank: 1, userId: 'seed_1', name: 'Kenji Sato', avatar: '', xp: 14250, level: 12, streak: 42, badgesCount: 14, targetLang: 'ja', country: '🇯🇵' },
+    { rank: 2, userId: 'seed_2', name: 'Elena Rostova', avatar: '', xp: 12890, level: 11, streak: 35, badgesCount: 12, targetLang: 'ko', country: '🇰🇷' },
+    { rank: 3, userId: 'seed_3', name: 'Alexandre Dubois', avatar: '', xp: 11400, level: 10, streak: 28, badgesCount: 11, targetLang: 'zh', country: '🇨🇳' },
+    { rank: 4, userId: 'seed_4', name: 'Min-ho Park', avatar: '', xp: 9850, level: 9, streak: 21, badgesCount: 9, targetLang: 'en', country: '🇬🇧' },
+    { rank: 5, userId: 'seed_5', name: 'Wei Zhang', avatar: '', xp: 8720, level: 8, streak: 19, badgesCount: 8, targetLang: 'ja', country: '🇯🇵' },
+    { rank: 6, userId: 'seed_6', name: 'Sophia Chen', avatar: '', xp: 7640, level: 7, streak: 16, badgesCount: 7, targetLang: 'ko', country: '🇰🇷' },
+    { rank: 7, userId: 'seed_7', name: 'Liam Wilson', avatar: '', xp: 6890, level: 7, streak: 14, badgesCount: 6, targetLang: 'zh', country: '🇨🇳' },
+    { rank: 8, userId: 'seed_8', name: 'Hana Tanaka', avatar: '', xp: 5930, level: 6, streak: 12, badgesCount: 6, targetLang: 'en', country: '🇺🇸' },
+    { rank: 9, userId: 'seed_9', name: 'Mateo Rossi', avatar: '', xp: 5120, level: 5, streak: 10, badgesCount: 5, targetLang: 'ja', country: '🇯🇵' },
+    { rank: 10, userId: 'seed_10', name: 'Ji-won Kim', avatar: '', xp: 4480, level: 5, streak: 9, badgesCount: 5, targetLang: 'zh', country: '🇨🇳' }
+];
+
+app.get('/api/leaderboard', (req, res) => {
+    const lang = req.query.lang;
+    let list = devLeaderboard;
+    if (lang && ['ja', 'ko', 'zh', 'en'].includes(lang)) {
+        list = devLeaderboard.filter(item => item.targetLang === lang);
+        if (list.length === 0) list = devLeaderboard;
+    }
+    const topLearners = list.map((item, idx) => ({ ...item, rank: idx + 1 }));
+    res.json({ success: true, topLearners, userRank: null });
+});
+
+app.post('/api/leaderboard', (req, res) => {
+    const body = req.body || {};
+    const userId = body.guest_id || 'dev_user';
+    const existing = devLeaderboard.find(u => u.userId === userId);
+    const xp = Math.max(0, parseInt(body.xp, 10) || 0);
+    const level = Math.max(1, parseInt(body.level, 10) || 1);
+    if (existing) {
+        existing.xp = Math.max(existing.xp, xp);
+        existing.level = Math.max(existing.level, level);
+        existing.streak = Math.max(existing.streak, parseInt(body.streak, 10) || 0);
+        existing.badgesCount = Math.max(existing.badgesCount, parseInt(body.badges_count, 10) || 0);
+    } else {
+        devLeaderboard.push({
+            rank: devLeaderboard.length + 1,
+            userId,
+            name: body.name || 'Learner',
+            avatar: body.avatar || '',
+            xp,
+            level,
+            streak: parseInt(body.streak, 10) || 0,
+            badgesCount: parseInt(body.badges_count, 10) || 0,
+            targetLang: body.target_lang || 'ja',
+            country: body.country || ''
+        });
+    }
+    devLeaderboard.sort((a, b) => b.xp - a.xp);
+    devLeaderboard.forEach((item, idx) => { item.rank = idx + 1; });
+    res.json({ success: true, updated: true });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({

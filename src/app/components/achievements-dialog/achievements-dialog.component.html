@@ -1,77 +1,244 @@
 <div class="achievements-dialog">
-    <!-- Header / Hero Section (Aligned with Streak & AI Credits dialogs) -->
-    <div class="header-section">
-        <div class="achievements-hero-icon">
-            <app-icon name="trophy" [size]="38" class="hero-trophy" />
-        </div>
-
-        <div class="title-group">
-            <div class="hero-level-badge">
-                <span class="level-tag">Lv.{{ userLevel() }}</span>
-                <h2 class="level-rank">{{ rankTitle() }}</h2>
-            </div>
-            <p class="hero-subtitle">
-                <span class="hero-xp">{{ totalXP() }} XP</span>
-                <span class="hero-dot">&bull;</span>
-                <span class="hero-unlocked">{{ unlockedCount() }}/{{ totalCount }} {{ i18n.t('achievements.unlocked') || 'unlocked' }}</span>
-            </p>
-        </div>
-
-        <!-- Level XP Progress Bar Card -->
-        <div class="level-progress-card">
-            <div class="level-progress-meta">
-                <span class="progress-hint">{{ progressToNext() }}% {{ i18n.t('gamification.toNextLevel') || 'to next level' }}</span>
-                <span class="progress-target">Lv.{{ userLevel() + 1 }}</span>
-            </div>
-            <div class="level-progress-track">
-                <div class="level-progress-fill" [style.width.%]="progressToNext()"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Category Filter Chips -->
-    <div class="category-chips">
-        @for (cat of categories; track cat.id) {
+    <!-- Top View Segmented Bar -->
+    <div class="view-segmented-bar">
         <button
             type="button"
-            class="filter-chip"
-            [class.active]="activeCategory() === cat.id"
-            (click)="setCategory(cat.id)"
+            class="segmented-btn"
+            [class.active]="currentTab() === 'achievements'"
+            (click)="setTab('achievements')"
         >
-            <span>{{ i18n.t(cat.labelKey) || cat.id }}</span>
-            <span class="chip-count">{{ categoryCount(cat.id) }}/{{ categoryTotal(cat.id) }}</span>
+            <app-icon name="trophy" [size]="15" />
+            <span>{{ i18n.t('gamification.achievements') || 'Achievements' }}</span>
         </button>
-        }
+        <button
+            type="button"
+            class="segmented-btn"
+            [class.active]="currentTab() === 'leaderboard'"
+            (click)="setTab('leaderboard')"
+        >
+            <app-icon name="globe" [size]="15" />
+            <span>{{ i18n.t('leaderboard.tabTitle') || i18n.t('leaderboard.title') || 'Leaderboard' }}</span>
+        </button>
     </div>
 
-    <!-- Achievements Grid / List -->
-    <div class="achievements-list">
-        @for (ach of filteredAchievements(); track ach.id) {
-        <div class="achievement-card" [class.unlocked]="ach.unlocked" [attr.data-tier]="ach.tier">
-            <div class="achievement-card__icon-wrap">
-                <app-icon [name]="toIconName(ach.icon)" [size]="22" class="ach-icon" />
+    @if (currentTab() === 'achievements') {
+        <!-- Header / Hero Section (Aligned with Streak & AI Credits dialogs) -->
+        <div class="header-section">
+            <div class="achievements-hero-icon">
+                <app-icon name="trophy" [size]="38" class="hero-trophy" />
             </div>
 
-            <div class="achievement-card__body">
-                <div class="achievement-card__header">
-                    <h4 class="achievement-card__title">{{ i18n.t(ach.titleKey) || ach.id }}</h4>
-                    <span class="achievement-card__reward" [class.is-unlocked]="ach.unlocked">
-                        @if (ach.unlocked) {
-                            <app-icon name="check" [size]="12" class="check-icon" />
-                        }
-                        +{{ ach.xpReward }} XP
-                    </span>
+            <div class="title-group">
+                <div class="hero-level-badge">
+                    <span class="level-tag">Lv.{{ userLevel() }}</span>
+                    <h2 class="level-rank">{{ rankTitle() }}</h2>
                 </div>
-                <p class="achievement-card__desc">{{ i18n.t(ach.descriptionKey) || '' }}</p>
+                <p class="hero-subtitle">
+                    <span class="hero-xp">{{ totalXP() }} XP</span>
+                    <span class="hero-dot">&bull;</span>
+                    <span class="hero-unlocked">{{ unlockedCount() }}/{{ totalCount }} {{ i18n.t('achievements.unlocked') || 'unlocked' }}</span>
+                </p>
+            </div>
 
-                <div class="achievement-card__progress-wrap">
-                    <div class="progress-bar">
-                        <div class="progress-fill" [style.width.%]="(ach.progress / ach.target) * 100"></div>
-                    </div>
-                    <span class="progress-text">{{ ach.progress }}/{{ ach.target }}</span>
+            <!-- Level XP Progress Bar Card -->
+            <div class="level-progress-card">
+                <div class="level-progress-meta">
+                    <span class="progress-hint">{{ progressToNext() }}% {{ i18n.t('gamification.toNextLevel') || 'to next level' }}</span>
+                    <span class="progress-target">Lv.{{ userLevel() + 1 }}</span>
+                </div>
+                <div class="level-progress-track">
+                    <div class="level-progress-fill" [style.width.%]="progressToNext()"></div>
                 </div>
             </div>
         </div>
-        }
-    </div>
+
+        <!-- Category Filter Chips -->
+        <div class="category-chips">
+            @for (cat of categories; track cat.id) {
+            <button
+                type="button"
+                class="filter-chip"
+                [class.active]="activeCategory() === cat.id"
+                (click)="setCategory(cat.id)"
+            >
+                <span>{{ i18n.t(cat.labelKey) || cat.id }}</span>
+                <span class="chip-count">{{ categoryCount(cat.id) }}/{{ categoryTotal(cat.id) }}</span>
+            </button>
+            }
+        </div>
+
+        <!-- Achievements Grid / List -->
+        <div class="achievements-list">
+            @for (ach of filteredAchievements(); track ach.id) {
+            <div class="achievement-card" [class.unlocked]="ach.unlocked" [attr.data-tier]="ach.tier">
+                <div class="achievement-card__icon-wrap">
+                    <app-icon [name]="toIconName(ach.icon)" [size]="22" class="ach-icon" />
+                </div>
+
+                <div class="achievement-card__body">
+                    <div class="achievement-card__header">
+                        <h4 class="achievement-card__title">{{ i18n.t(ach.titleKey) || ach.id }}</h4>
+                        <span class="achievement-card__reward" [class.is-unlocked]="ach.unlocked">
+                            @if (ach.unlocked) {
+                                <app-icon name="check" [size]="12" class="check-icon" />
+                            }
+                            +{{ ach.xpReward }} XP
+                        </span>
+                    </div>
+                    <p class="achievement-card__desc">{{ i18n.t(ach.descriptionKey) || '' }}</p>
+
+                    <div class="achievement-card__progress-wrap">
+                        <div class="progress-bar">
+                            <div class="progress-fill" [style.width.%]="(ach.progress / ach.target) * 100"></div>
+                        </div>
+                        <span class="progress-text">{{ ach.progress }}/{{ ach.target }}</span>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    } @else {
+        <!-- Global Ranking / Leaderboard View -->
+        <div class="leaderboard-view">
+            <!-- Language filter chips -->
+            <div class="leaderboard-filters">
+                @for (flt of langFilters; track flt.code) {
+                    <button
+                        type="button"
+                        class="filter-chip"
+                        [class.active]="leaderboardLang() === flt.code"
+                        (click)="setLeaderboardLang(flt.code)"
+                    >
+                        <span>{{ flt.label }}</span>
+                    </button>
+                }
+            </div>
+
+            <!-- Top 3 Podium -->
+            @if (top3().length >= 3) {
+                <div class="podium-container">
+                    <!-- 2nd Place (Silver) -->
+                    @if (secondPlace(); as silver) {
+                        <div class="podium-col podium-col--second">
+                            <div class="podium-avatar-wrap">
+                                <div class="podium-crown">🥈</div>
+                                <div class="podium-avatar podium-avatar--silver">
+                                    {{ silver.avatar ? '' : silver.name.charAt(0).toUpperCase() }}
+                                    @if (silver.avatar) {
+                                        <img [src]="silver.avatar" [alt]="silver.name" class="avatar-img" />
+                                    }
+                                </div>
+                            </div>
+                            <span class="podium-name" [title]="silver.name">{{ silver.name }}</span>
+                            <span class="podium-xp">{{ silver.xp.toLocaleString() }} XP</span>
+                            <div class="podium-pillar podium-pillar--silver">
+                                <span class="podium-rank-num">2</span>
+                                <span class="podium-level-tag">Lv.{{ silver.level }}</span>
+                            </div>
+                        </div>
+                    }
+
+                    <!-- 1st Place (Gold) -->
+                    @if (firstPlace(); as gold) {
+                        <div class="podium-col podium-col--first">
+                            <div class="podium-avatar-wrap">
+                                <div class="podium-crown gold-crown">👑</div>
+                                <div class="podium-avatar podium-avatar--gold">
+                                    {{ gold.avatar ? '' : gold.name.charAt(0).toUpperCase() }}
+                                    @if (gold.avatar) {
+                                        <img [src]="gold.avatar" [alt]="gold.name" class="avatar-img" />
+                                    }
+                                </div>
+                            </div>
+                            <span class="podium-name" [title]="gold.name">{{ gold.name }}</span>
+                            <span class="podium-xp">{{ gold.xp.toLocaleString() }} XP</span>
+                            <div class="podium-pillar podium-pillar--gold">
+                                <span class="podium-rank-num">1</span>
+                                <span class="podium-level-tag">Lv.{{ gold.level }}</span>
+                            </div>
+                        </div>
+                    }
+
+                    <!-- 3rd Place (Bronze) -->
+                    @if (thirdPlace(); as bronze) {
+                        <div class="podium-col podium-col--third">
+                            <div class="podium-avatar-wrap">
+                                <div class="podium-crown">🥉</div>
+                                <div class="podium-avatar podium-avatar--bronze">
+                                    {{ bronze.avatar ? '' : bronze.name.charAt(0).toUpperCase() }}
+                                    @if (bronze.avatar) {
+                                        <img [src]="bronze.avatar" [alt]="bronze.name" class="avatar-img" />
+                                    }
+                                </div>
+                            </div>
+                            <span class="podium-name" [title]="bronze.name">{{ bronze.name }}</span>
+                            <span class="podium-xp">{{ bronze.xp.toLocaleString() }} XP</span>
+                            <div class="podium-pillar podium-pillar--bronze">
+                                <span class="podium-rank-num">3</span>
+                                <span class="podium-level-tag">Lv.{{ bronze.level }}</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            <!-- Ranks 4+ List -->
+            <div class="ranking-list">
+                @for (learner of remainingLearners(); track learner.userId) {
+                    <div class="ranking-row" [class.is-current-user]="learner.userId === leaderboard.getCurrentUserId()">
+                        <div class="rank-number">#{{ learner.rank }}</div>
+                        <div class="learner-avatar">
+                            {{ learner.avatar ? '' : learner.name.charAt(0).toUpperCase() }}
+                            @if (learner.avatar) {
+                                <img [src]="learner.avatar" [alt]="learner.name" class="avatar-img" />
+                            }
+                        </div>
+                        <div class="learner-info">
+                            <div class="learner-name-line">
+                                <span class="learner-name">{{ learner.name }}</span>
+                                @if (learner.country) {
+                                    <span class="learner-flag">{{ learner.country }}</span>
+                                }
+                            </div>
+                            <div class="learner-meta">
+                                <span class="learner-level-badge">Lv.{{ learner.level }}</span>
+                                @if (learner.streak > 0) {
+                                    <span class="learner-streak">🔥 {{ learner.streak }}</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="learner-score">
+                            <span class="score-value">{{ learner.xp.toLocaleString() }}</span>
+                            <span class="score-label">XP</span>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Sticky User Position Bar -->
+            @if (myRank(); as me) {
+                <div class="my-rank-sticky-bar">
+                    <div class="my-rank-left">
+                        <span class="my-rank-badge">#{{ me.rank }}</span>
+                        <div class="my-avatar">
+                            {{ me.avatar ? '' : (me.name ? me.name.charAt(0).toUpperCase() : 'Y') }}
+                            @if (me.avatar) {
+                                <img [src]="me.avatar" [alt]="me.name" class="avatar-img" />
+                            }
+                        </div>
+                        <div class="my-details">
+                            <span class="my-name">{{ i18n.t('leaderboard.yourRank') || 'Your Rank' }}</span>
+                            <span class="my-sub">Lv.{{ me.level }} • 🔥 {{ me.streak }}d</span>
+                        </div>
+                    </div>
+                    <div class="my-rank-right">
+                        <span class="my-xp">{{ me.xp.toLocaleString() }} XP</span>
+                        <button type="button" class="sync-btn" (click)="refreshLeaderboard()" [title]="i18n.t('leaderboard.syncScore') || 'Sync'">
+                            <app-icon name="refresh-cw" [size]="13" />
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 </div>

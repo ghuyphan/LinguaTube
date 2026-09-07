@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../history.service';
-import { I18nService, AuthService } from '../../../core/services';
-import { HistoryItem } from '../../../models';
+import { I18nService, AuthService, VideoLevelService } from '../../../core/services';
+import { HistoryItem, ProficiencyLevelTier } from '../../../models';
 import { formatTime, getYouTubeThumbnail } from '../../../core/utils';
 
 @Component({
@@ -24,6 +24,7 @@ import { formatTime, getYouTubeThumbnail } from '../../../core/utils';
 })
 export class HistoryListComponent {
     protected historyService = inject(HistoryService);
+    protected videoLevelService = inject(VideoLevelService);
     private router = inject(Router);
     readonly auth = inject(AuthService);
     readonly i18n = inject(I18nService);
@@ -119,5 +120,15 @@ export class HistoryListComponent {
         if (hours < 24) return `${hours}h`;
         if (days < 7) return `${days}d`;
         return new Date(date).toLocaleDateString();
+    }
+
+    getItemLevel(item: HistoryItem): { level: string; tier: ProficiencyLevelTier } | null {
+        return this.videoLevelService.resolveLevel(
+            item.video_id,
+            item.language || (item.languages?.[0]),
+            item.title,
+            item.channel,
+            item.level
+        );
     }
 }

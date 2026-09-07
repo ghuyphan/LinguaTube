@@ -4,6 +4,7 @@
  */
 
 import { getYouTubeThumbnail } from '../core/utils/format.utils';
+import { ProficiencyLevelTier } from './video-level.model';
 
 export type PlaylistVisibility = 'private' | 'unlisted' | 'published';
 export type PlaylistLanguage = 'ja' | 'zh' | 'ko' | 'en';
@@ -19,6 +20,8 @@ export interface Playlist {
     description?: string;
     visibility: PlaylistVisibility;
     language: PlaylistLanguage;
+    level?: string;                    // e.g. "JLPT N4", "HSK 2", "Beginner"
+    tier?: ProficiencyLevelTier;
     tags: string[];
     videoIds: string[];
     videoCount: number;
@@ -40,6 +43,8 @@ export interface PlaylistVideo {
     channel?: string;
     duration?: number;
     position: number;  // Index in playlist (0-based)
+    level?: string;
+    tier?: ProficiencyLevelTier;
 }
 
 /**
@@ -59,6 +64,7 @@ export interface CreatePlaylistInput {
     description?: string;
     visibility?: PlaylistVisibility;
     language?: PlaylistLanguage;
+    level?: string;
     tags?: string[];
 }
 
@@ -106,6 +112,7 @@ export interface PlaylistRecord {
     description?: string;
     visibility?: PlaylistVisibility;
     language?: PlaylistLanguage;
+    level?: string;
     tags?: string[];
     video_ids?: string[];
     video_count?: number;
@@ -139,6 +146,7 @@ export function mapRecordToPlaylist(record: PlaylistRecord | Record<string, unkn
         description: r.description,
         visibility: r.visibility || 'private',
         language: r.language || 'en',
+        level: (r.level as string) || (r['level'] as string) || undefined,
         tags: r.tags || [],
         videoIds: r.video_ids || [],
         videoCount: r.video_count || 0,

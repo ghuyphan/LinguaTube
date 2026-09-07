@@ -2,6 +2,7 @@ import { Component, inject, signal, computed, ChangeDetectionStrategy, output } 
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../shared/components/icon/icon.component';
 import { GamificationService } from '../../core/services/gamification.service';
+import { LeaderboardService } from '../../core/services/leaderboard.service';
 import { I18nService } from '../../core/services/i18n.service';
 import { AchievementCategory } from '../../models/gamification.model';
 
@@ -15,9 +16,13 @@ import { AchievementCategory } from '../../models/gamification.model';
 })
 export class AchievementsDialogComponent {
     gamification = inject(GamificationService);
+    leaderboard = inject(LeaderboardService);
     i18n = inject(I18nService);
 
     dismissed = output<void>();
+
+    // View tab
+    readonly currentTab = signal<'achievements' | 'leaderboard'>('achievements');
 
     readonly activeCategory = signal<'all' | AchievementCategory>('all');
 
@@ -66,5 +71,40 @@ export class AchievementsDialogComponent {
 
     toIconName(icon: string | IconName): IconName {
         return (icon as IconName) || 'trophy';
+    }
+
+    // Leaderboard State & Computeds
+    readonly top3 = computed(() => this.leaderboard.topLearners().slice(0, 3));
+    readonly firstPlace = computed(() => this.top3()[0] || null);
+    readonly secondPlace = computed(() => this.top3()[1] || null);
+    readonly thirdPlace = computed(() => this.top3()[2] || null);
+    readonly remainingLearners = computed(() => this.leaderboard.topLearners().slice(3));
+
+    readonly myRank = this.leaderboard.userRank;
+    readonly isLeaderboardLoading = this.leaderboard.isLoading;
+    readonly leaderboardLang = this.leaderboard.selectedLang;
+
+    readonly langFilters = [
+        { code: 'all', label: 'All' },
+        { code: 'ja', label: 'JA 🇯🇵' },
+        { code: 'ko', label: 'KO 🇰🇷' },
+        { code: 'zh', label: 'ZH 🇨🇳' },
+        { code: 'en', label: 'EN 🇬🇧' }
+    ];
+
+    setTab(tab: 'achievements' | 'leaderboard'): void {
+        this.currentTab.set(tab);
+        if (tab === 'leaderboard') {
+            this.leaderboard.loadLeaderboard();
+        }
+    }
+
+    setLeaderboardLang(code: string): void {
+        this.leaderboard.loadLeaderboard(code);
+    }
+
+    refreshLeaderboard(): void {
+        this.leaderboard.syncMyScore();
+        this.leaderboard.loadLeaderboard();
     }
 }

@@ -20,27 +20,35 @@
                 <p class="panel-header__subtitle">{{ i18n.t('playlist.subtitle') }}</p>
             </div>
 
-            <!-- Stable Filter Toolbar (Separates segmented view tabs from actions to prevent layout shift) -->
+            <!-- Stable Filter Toolbar (Two-row hierarchy: Navigation & CTA on top, Search & Filters below) -->
             <div class="playlist-toolbar">
-                <div class="view-tabs">
-                    <button type="button" class="filter-chip" [class.active]="view() === 'community'" (click)="setView('community')"
-                        [attr.aria-label]="i18n.t('playlist.community')" [title]="i18n.t('playlist.community')">
-                        <app-icon name="globe" [size]="14" />
-                        <span class="chip-text">{{ i18n.t('playlist.community') }}</span>
-                    </button>
-                    <button type="button" class="filter-chip" [class.active]="view() === 'curated'" (click)="setView('curated')"
-                        [attr.aria-label]="i18n.t('playlist.featured')" [title]="i18n.t('playlist.featured')">
-                        <app-icon name="sparkles" [size]="14" />
-                        <span class="chip-text">{{ i18n.t('playlist.featured') }}</span>
-                    </button>
-                    <button type="button" class="filter-chip" [class.active]="view() === 'my'" (click)="setView('my')"
-                        [attr.aria-label]="i18n.t('playlist.myPlaylists')" [title]="i18n.t('playlist.myPlaylists')">
-                        <app-icon name="user" [size]="14" />
-                        <span class="chip-text">{{ i18n.t('playlist.myPlaylists') }}</span>
+                <div class="toolbar-nav-row">
+                    <div class="view-tabs">
+                        <button type="button" class="filter-chip" [class.active]="view() === 'community'" (click)="setView('community')"
+                            [attr.aria-label]="i18n.t('playlist.community')" [title]="i18n.t('playlist.community')">
+                            <app-icon name="globe" [size]="14" />
+                            <span class="chip-text">{{ i18n.t('playlist.community') }}</span>
+                        </button>
+                        <button type="button" class="filter-chip" [class.active]="view() === 'curated'" (click)="setView('curated')"
+                            [attr.aria-label]="i18n.t('playlist.featured')" [title]="i18n.t('playlist.featured')">
+                            <app-icon name="sparkles" [size]="14" />
+                            <span class="chip-text">{{ i18n.t('playlist.featured') }}</span>
+                        </button>
+                        <button type="button" class="filter-chip" [class.active]="view() === 'my'" (click)="setView('my')"
+                            [attr.aria-label]="i18n.t('playlist.myPlaylists')" [title]="i18n.t('playlist.myPlaylists')">
+                            <app-icon name="user" [size]="14" />
+                            <span class="chip-text">{{ i18n.t('playlist.myPlaylists') }}</span>
+                        </button>
+                    </div>
+
+                    <button type="button" class="btn btn-primary create-playlist-btn" (click)="showCreateDialog.set(true)"
+                        [attr.aria-label]="i18n.t('playlist.newPlaylist')" [title]="i18n.t('playlist.newPlaylist')">
+                        <app-icon name="plus" [size]="14" />
+                        <span class="btn-text">{{ i18n.t('playlist.newPlaylist') }}</span>
                     </button>
                 </div>
 
-                <div class="toolbar-actions">
+                <div class="toolbar-filter-row">
                     <div class="app-search-box playlist-search-box">
                         <app-icon name="search" [size]="14" class="search-icon" />
                         <input type="text" [ngModel]="searchQuery()" (ngModelChange)="onSearchChange($event)" [placeholder]="i18n.t('playlist.searchPlaylists') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" />
@@ -51,22 +59,25 @@
                         }
                     </div>
 
-                    <button type="button" class="filter-chip filter-chip--lang" (click)="showLanguageFilter.set(true)"
-                        [attr.aria-label]="getLanguageFilterLabel()" [title]="getLanguageFilterLabel()">
-                        @if (languageFilter() !== 'all') {
-                        <span class="lang-badge">{{ languageFilter().toUpperCase() }}</span>
-                        } @else {
-                        <app-icon name="languages" [size]="14" />
-                        }
-                        <span class="chip-text">{{ getLanguageFilterLabel() }}</span>
-                        <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
-                    </button>
+                    <div class="filter-chips-group">
+                        <button type="button" class="filter-chip filter-chip--lang" (click)="showLanguageFilter.set(true)"
+                            [attr.aria-label]="getLanguageFilterLabel()" [title]="getLanguageFilterLabel()">
+                            @if (languageFilter() !== 'all') {
+                            <span class="lang-badge">{{ languageFilter().toUpperCase() }}</span>
+                            } @else {
+                            <app-icon name="languages" [size]="14" />
+                            }
+                            <span class="chip-text">{{ getLanguageFilterLabel() }}</span>
+                            <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
+                        </button>
 
-                    <button type="button" class="btn btn-primary create-playlist-btn" (click)="showCreateDialog.set(true)"
-                        [attr.aria-label]="i18n.t('playlist.newPlaylist')" [title]="i18n.t('playlist.newPlaylist')">
-                        <app-icon name="plus" [size]="14" />
-                        <span class="btn-text">{{ i18n.t('playlist.newPlaylist') }}</span>
-                    </button>
+                        <button type="button" class="filter-chip filter-chip--level" (click)="showLevelFilter.set(true)"
+                            [attr.aria-label]="getLevelFilterLabel()" [title]="getLevelFilterLabel()">
+                            <app-icon name="medal" [size]="14" />
+                            <span class="chip-text">{{ getLevelFilterLabel() }}</span>
+                            <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -121,6 +132,9 @@
                             <div class="playlist-item__meta">
                                 @if (playlist.language) {
                                 <span class="lang-badge">{{ playlist.language.toUpperCase() }}</span>
+                                }
+                                @if (getPlaylistLevel(playlist); as lvl) {
+                                <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
                                 }
                                 <span class="meta-author">{{ view() === 'my' ? i18n.t('playlist.myPlaylist') : (playlist.userName || i18n.t('playlist.community')) }}</span>
                                 <span class="separator">•</span>
@@ -298,15 +312,18 @@
                             }
                         </div>
                         <div class="track-info">
-                            <div class="track-title-row">
-                                <h4 class="track-title" [title]="video.title">{{ video.title }}</h4>
+                            <h4 class="track-title" [title]="video.title">{{ video.title }}</h4>
+                            <div class="track-meta-row">
+                                @if (getVideoLevel(video, playlist.language); as lvl) {
+                                    <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
+                                }
                                 @if (isWatched(video.videoId)) {
                                     <span class="watched-badge">{{ i18n.t('history.watchedAgo') || 'Watched' }}</span>
                                 }
+                                @if (video.channel) {
+                                    <span class="track-channel">{{ video.channel }}</span>
+                                }
                             </div>
-                            @if (video.channel) {
-                            <span class="track-channel">{{ video.channel }}</span>
-                            }
                         </div>
                         @if (isOwner(playlist)) {
                         <button type="button" class="action-btn action-btn--delete" (click)="removeVideoFromPlaylist(video.videoId, $event)" [attr.aria-label]="i18n.t('playlist.removeVideo') || 'Remove video'" [title]="i18n.t('playlist.removeVideo') || 'Remove video'">
@@ -442,6 +459,12 @@
     (cancelled)="cancelDelete()" />
 
 <!-- Language Option Picker -->
-<app-option-picker [options]="languageFilterOptions" [value]="languageFilter()" [isOpen]="showLanguageFilter()"
+<app-option-picker [options]="languageFilterOptions()" [value]="languageFilter()" [isOpen]="showLanguageFilter()"
     [title]="i18n.t('playlist.filterByLanguage') || 'Filter by Language'" (selected)="onLanguageFilterChange($event)"
     (closed)="showLanguageFilter.set(false)" />
+
+<!-- Level Option Picker -->
+<app-option-picker [options]="levelFilterOptions()" [value]="levelFilter()" [isOpen]="showLevelFilter()"
+    [title]="i18n.t('level.filterByLevel') || 'Filter by Level'" (selected)="onLevelFilterChange($event)"
+    (closed)="showLevelFilter.set(false)" />
+

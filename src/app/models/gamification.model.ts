@@ -25,3 +25,17 @@ export interface UserGamificationState {
     totalVideosWatched: number;
     totalQuizzesCompleted: number;
 }
+
+export interface LeaderboardEntry {
+    rank: number;
+    userId: string;
+    name: string;
+    avatar: string;
+    xp: number;
+    level: number;
+    streak: number;
+    badgesCount: number;
+    targetLang: string;
+    country: string;
+}
+

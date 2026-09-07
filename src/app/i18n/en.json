@@ -563,16 +563,21 @@
         "gotIt": "Got it"
     },
     "level": {
+        "auto": "Auto",
         "beginner": "Beginner",
         "elementary": "Elementary",
         "intermediate": "Intermediate",
         "upper_intermediate": "Upper Intermediate",
+        "upperIntermediate": "Upper Intermediate",
         "advanced": "Advanced",
         "grammarPoints": "Grammar Patterns",
-        "speechRate": "Speech Rate"
+        "speechRate": "Speech Rate",
+        "filterByLevel": "Filter by Level",
+        "allLevels": "All Levels"
     },
     "gamification": {
         "level": "LEVEL",
+        "achievements": "Achievements",
         "toNextLevel": "to next level",
         "levelUp": "Level Up!",
         "reachedLevel": "You reached Level",
@@ -583,6 +588,21 @@
         "rank3": "Apprentice Miner",
         "rank4": "Dedicated Scholar",
         "rank5": "Polyglot Master"
+    },
+    "leaderboard": {
+        "title": "Global Ranking",
+        "tabTitle": "Leaderboard",
+        "subtitle": "Compete with learners around the world",
+        "allLanguages": "All Languages",
+        "topLearners": "Top Learners",
+        "yourRank": "Your Rank",
+        "rank": "Rank",
+        "learner": "Learner",
+        "xp": "XP",
+        "streak": "Streak",
+        "empty": "No rankings available yet",
+        "syncScore": "Sync Score",
+        "synced": "Score synced!"
     },
     "achievements": {
         "title": "Achievements & Level",

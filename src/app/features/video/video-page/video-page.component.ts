@@ -19,7 +19,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { PlaylistService } from '../../playlist/playlist.service';
-import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue } from '../../../models';
+import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier } from '../../../models';
 import { VideoLevelService } from '../../../core/services/video-level.service';
 
 @Component({
@@ -106,6 +106,10 @@ export class VideoPageComponent implements OnInit {
     const lang = this.settings.settings().language;
     return this.vocab.vocabulary().filter(w => w.language === lang).length;
   });
+
+  getPlaylistLevel(playlist: Playlist): { level: string; tier: ProficiencyLevelTier } | null {
+    return this.videoLevel.resolvePlaylistLevel(playlist);
+  }
 
   aiDiamondCost = computed(() => (this.youtube.duration() > 10 * 60 ? 2 : 1));
   isVideoTooLongForAI = computed(() => this.youtube.duration() > 20 * 60);

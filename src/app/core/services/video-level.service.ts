@@ -5,7 +5,8 @@ import {
     SubtitleCue,
     VideoLevelInfo,
     ProficiencyLevelTier,
-    SupportedGrammarLang
+    SupportedGrammarLang,
+    Playlist
 } from '../../models';
 
 const STORAGE_KEY = 'linguatube_video_levels';
@@ -39,6 +40,114 @@ export class VideoLevelService {
      */
     getCachedLevel(videoId: string, lang: string): VideoLevelInfo | null {
         return this.levelCache.get(`${videoId}_${lang}`) || null;
+    }
+
+    /**
+     * Map a level string (e.g. "JLPT N4", "HSK 2", "CEFR B1") to a tier
+     */
+    labelToTier(label: string): ProficiencyLevelTier {
+        return this.buildInfoFromLabel(label, 'title').tier;
+    }
+
+    /**
+     * Synchronously resolves the best known level for a video
+     * Priority:
+     * 1. Explicit level passed in (from item metadata)
+     * 2. Cached in memory or LocalStorage
+     * 3. Metadata regex heuristics from title or channel
+     */
+    resolveLevel(
+        videoId?: string,
+        lang?: string,
+        title = '',
+        channel = '',
+        explicitLevel?: string
+    ): { level: string; tier: ProficiencyLevelTier } | null {
+        if (explicitLevel) {
+            return { level: explicitLevel, tier: this.labelToTier(explicitLevel) };
+        }
+        if (videoId && lang) {
+            const cached = this.getCachedLevel(videoId, lang);
+            if (cached) {
+                return { level: cached.level, tier: cached.tier };
+            }
+        }
+        if (lang && (title || channel)) {
+            const meta = this.detectFromMetadata(title, channel, lang);
+            if (meta) {
+                return { level: meta, tier: this.labelToTier(meta) };
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Resolves difficulty level for a playlist using multiple cascading strategies:
+     * 1. Direct explicit level on the playlist
+     * 2. Heuristics from playlist title and description
+     * 3. Tags matching level markers
+     * 4. Pre-loaded videos if available (PlaylistWithVideos)
+     * 5. Cached video level for constituent videoIds
+     * 6. Default standard level for the target learning language
+     */
+    resolvePlaylistLevel(playlist?: Playlist | null): { level: string; tier: ProficiencyLevelTier } | null {
+        if (!playlist) return null;
+
+        // 1. Direct explicit level or detected from playlist title/description
+        const direct = this.resolveLevel(
+            undefined,
+            playlist.language,
+            playlist.title,
+            playlist.description || '',
+            playlist.level
+        );
+        if (direct) return direct;
+
+        // 2. Check tags
+        if (playlist.tags && playlist.tags.length > 0) {
+            for (const tag of playlist.tags) {
+                const tagMatch = this.resolveLevel(undefined, playlist.language, tag, '', tag);
+                if (tagMatch) return tagMatch;
+            }
+        }
+
+        // 3. Hydrated videos (if available)
+        const withVideos = playlist as unknown as { videos?: { videoId: string; title: string; channel?: string; level?: string }[] };
+        if (Array.isArray(withVideos.videos) && withVideos.videos.length > 0) {
+            for (const v of withVideos.videos) {
+                const vLevel = this.resolveLevel(
+                    v.videoId,
+                    playlist.language,
+                    v.title,
+                    v.channel || '',
+                    v.level
+                );
+                if (vLevel) return vLevel;
+            }
+        }
+
+        // 4. Cached video level for any videoId in playlist.videoIds
+        if (playlist.videoIds && playlist.videoIds.length > 0) {
+            for (const vid of playlist.videoIds) {
+                const cached = this.getCachedLevel(vid, playlist.language);
+                if (cached) return { level: cached.level, tier: cached.tier };
+            }
+        }
+
+        // 5. Default level for language so learning playlist cards always show a clean badge
+        if (playlist.language) {
+            const defaults: Record<string, { level: string; tier: ProficiencyLevelTier }> = {
+                ja: { level: 'JLPT N5', tier: 'beginner' },
+                zh: { level: 'HSK 1', tier: 'beginner' },
+                ko: { level: 'TOPIK 1', tier: 'beginner' },
+                en: { level: 'CEFR A1', tier: 'beginner' }
+            };
+            if (defaults[playlist.language]) {
+                return defaults[playlist.language];
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -288,13 +397,13 @@ export class VideoLevelService {
         } else if (upper.includes('N4') || upper.includes('HSK 2') || upper.includes('A2') || upper.includes('ELEMENTARY')) {
             tier = 'elementary';
             score = 2.0;
-        } else if (upper.includes('N3') || upper.includes('HSK 3') || upper.includes('HSK 4') || upper.includes('B1') || upper.includes('INTERMEDIATE')) {
-            tier = 'intermediate';
-            score = 3.0;
-        } else if (upper.includes('N2') || upper.includes('HSK 5') || upper.includes('B2')) {
+        } else if (upper.includes('UPPER') || upper.includes('N2') || upper.includes('HSK 5') || upper.includes('B2') || upper.includes('TRUNG CAO CẤP')) {
             tier = 'upper_intermediate';
             score = 4.0;
-        } else if (upper.includes('N1') || upper.includes('HSK 6') || upper.includes('C1') || upper.includes('C2') || upper.includes('ADVANCED')) {
+        } else if (upper.includes('N3') || upper.includes('HSK 3') || upper.includes('HSK 4') || upper.includes('B1') || upper.includes('INTERMEDIATE') || upper.includes('TRUNG CẤP')) {
+            tier = 'intermediate';
+            score = 3.0;
+        } else if (upper.includes('N1') || upper.includes('HSK 6') || upper.includes('C1') || upper.includes('C2') || upper.includes('ADVANCED') || upper.includes('CAO CẤP')) {
             tier = 'advanced';
             score = 5.0;
         }

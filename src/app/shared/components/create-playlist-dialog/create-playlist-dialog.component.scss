@@ -2,7 +2,7 @@
 // ==============================
 
 .dialog-content {
-    padding: var(--space-md) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+    padding: var(--space-md) var(--space-md) var(--space-lg);
     max-width: 440px;
     margin: 0 auto;
 }
@@ -233,6 +233,41 @@
             color: var(--accent-primary);
             font-weight: 700;
         }
+    }
+}
+
+// -------------------------
+// Level Options
+// -------------------------
+.level-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.level-option-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-pill);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    &:hover {
+        background: var(--bg-hover);
+        color: var(--text-primary);
+    }
+
+    &.selected {
+        border-color: var(--accent-primary);
+        background: rgba(var(--accent-primary-rgb), 0.12);
+        color: var(--accent-primary);
+        font-weight: 700;
     }
 }
 

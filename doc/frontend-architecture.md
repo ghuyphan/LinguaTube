@@ -205,17 +205,18 @@ graph TD
 
 ### 3.5. Playlists & History Domains (`playlist/` & `history/`)
 - **`PlaylistPageComponent`**:
-  - Lists user-created custom playlists alongside curated Community Playlists with responsive view tabs (`Community`, `Featured`, `My Playlists`) and language filtering.
-  - **Stable Mobile Tab Distribution**: Mobile `.view-tabs .filter-chip` uses fixed flex ratios (`flex: 1 1 0px; min-width: 0`) to prevent active tab buttons from expanding or shifting when tapped.
+  - Lists user-created custom playlists alongside curated Community Playlists with responsive view tabs (`Community`, `Featured`, `My Playlists`), language filtering, and difficulty level filtering (`Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).
+  - **Structured Two-Tier Toolbar**: Two-row hierarchy separating navigation tabs and primary CTA (`+ Create playlist`) on the top row from search input and filter chips (`Language`, `Level`) on the second row, preventing text truncation or button clipping.
+  - **Difficulty Level Badges**: Each playlist card displays a difficulty level badge (`[JLPT N5]`, `[HSK 2]`, etc.) resolved from explicit settings, video cues, constituent videos, or target language defaults.
   - **Curated / Featured Discovery ("Nổi bật")**: Surfaces playlists flagged with `is_featured: true` by moderators, with custom empty states for curated, community, and personal views.
   - **Playlist Search & Video Management**: Integrated real-time search filtering across title, description, and author, plus track removal (`trash-2`) for owned playlists.
   - Detail view tracks video watch progress via `HistoryService`, showing green checkmark icons and progress bars on watched items.
 - **`AddToPlaylistDialogComponent`**: Modal sheet to bookmark current video into existing or new playlists.
 - **`HistoryPageComponent`**:
   - Displays watch history, percentage watched, resume timestamps, and options to clear history.
-  - **History Search Bar**: Real-time toolbar search filtering items by video title or channel name.
+  - **History Search Bar & Filters**: Real-time toolbar search filtering items by video title or channel name, alongside language and proficiency level filtering.
   - Features an in-progress **"Continue Learning" (Resume Hero Banner)** for one-tap resumption of unfinished study sessions.
-  - Provides multi-language filtering pills (`All`, `JA`, `ZH`, `KO`, `EN`) via `OptionPickerComponent`.
+  - Provides multi-language filtering pills (`All`, `JA`, `ZH`, `KO`, `EN`) and level picker via `OptionPickerComponent`.
   - Clear history confirmation dialog with explanatory warning text and instant Undo toast.
 
 ---

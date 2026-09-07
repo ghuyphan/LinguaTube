@@ -563,16 +563,21 @@
         "gotIt": "了解"
     },
     "level": {
+        "auto": "自動",
         "beginner": "入門",
         "elementary": "初級",
         "intermediate": "中級",
         "upper_intermediate": "中上級",
+        "upperIntermediate": "中上級",
         "advanced": "上級",
         "grammarPoints": "文法パターン",
-        "speechRate": "話速"
+        "speechRate": "話速",
+        "filterByLevel": "レベルで絞り込み",
+        "allLevels": "すべてのレベル"
     },
     "gamification": {
         "level": "レベル",
+        "achievements": "実績",
         "toNextLevel": "次のレベルまで",
         "levelUp": "レベルアップ！",
         "reachedLevel": "レベルに到達しました：",
@@ -583,6 +588,21 @@
         "rank3": "単語マイナー",
         "rank4": "熱心な学者",
         "rank5": "ポリグロットマスター"
+    },
+    "leaderboard": {
+        "title": "グローバルランキング",
+        "tabTitle": "ランキング",
+        "subtitle": "世界中の学習者と競い合おう",
+        "allLanguages": "すべての言語",
+        "topLearners": "トップ学習者",
+        "yourRank": "あなたの順位",
+        "rank": "順位",
+        "learner": "学習者",
+        "xp": "XP",
+        "streak": "連続日数",
+        "empty": "ランキングデータがまだありません",
+        "syncScore": "スコア同期",
+        "synced": "同期完了！"
     },
     "achievements": {
         "title": "実績とレベル",

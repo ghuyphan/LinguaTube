@@ -21,30 +21,40 @@
 
       <!-- Stable Filter Toolbar (Matches playlist-page) -->
       <div class="history-toolbar">
-        <div class="view-tabs">
-          <button
-            type="button"
-            class="filter-chip"
-            [class.active]="filter() === 'all'"
-            (click)="filter.set('all')"
-            [attr.aria-label]="i18n.t('history.all')"
-            [title]="i18n.t('history.all')">
-            <app-icon name="list" [size]="14" />
-            <span class="chip-text">{{ i18n.t('history.all') }}</span>
-          </button>
-          <button
-            type="button"
-            class="filter-chip"
-            [class.active]="filter() === 'favorites'"
-            (click)="filter.set('favorites')"
-            [attr.aria-label]="i18n.t('history.favorites')"
-            [title]="i18n.t('history.favorites')">
-            <app-icon name="heart" [size]="14" />
-            <span class="chip-text">{{ i18n.t('history.favorites') }}</span>
-          </button>
+        <div class="toolbar-nav-row">
+          <div class="view-tabs">
+            <button
+              type="button"
+              class="filter-chip"
+              [class.active]="filter() === 'all'"
+              (click)="filter.set('all')"
+              [attr.aria-label]="i18n.t('history.all')"
+              [title]="i18n.t('history.all')">
+              <app-icon name="list" [size]="14" />
+              <span class="chip-text">{{ i18n.t('history.all') }}</span>
+            </button>
+            <button
+              type="button"
+              class="filter-chip"
+              [class.active]="filter() === 'favorites'"
+              (click)="filter.set('favorites')"
+              [attr.aria-label]="i18n.t('history.favorites')"
+              [title]="i18n.t('history.favorites')">
+              <app-icon name="heart" [size]="14" />
+              <span class="chip-text">{{ i18n.t('history.favorites') }}</span>
+            </button>
+          </div>
+
+          @if (historyItems().length > 0) {
+            <button type="button" class="filter-chip clear-all-btn" (click)="confirmClear()"
+              [attr.aria-label]="i18n.t('history.clearAll')" [title]="i18n.t('history.clearAll')">
+              <app-icon name="trash-2" [size]="14" />
+              <span class="chip-text">{{ i18n.t('history.clearAll') }}</span>
+            </button>
+          }
         </div>
 
-        <div class="toolbar-actions">
+        <div class="toolbar-filter-row">
           <div class="app-search-box history-search-box">
             <app-icon name="search" [size]="14" class="search-icon" />
             <input type="text" [ngModel]="searchQuery()" (ngModelChange)="searchQuery.set($event)" [placeholder]="i18n.t('history.searchHistory') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" />
@@ -55,26 +65,27 @@
             }
           </div>
 
-          @if (availableLanguages().length > 1) {
-            <button type="button" class="filter-chip filter-chip--lang" (click)="showLanguageFilter.set(true)"
-              [attr.aria-label]="getLanguageLabel()" [title]="getLanguageLabel()">
-              @if (selectedLanguage() !== 'all') {
-                <span class="lang-badge">{{ selectedLanguage().toUpperCase() }}</span>
-              } @else {
-                <app-icon name="languages" [size]="14" />
-              }
-              <span class="chip-text">{{ getLanguageLabel() }}</span>
+          <div class="filter-chips-group">
+            @if (availableLanguages().length > 1) {
+              <button type="button" class="filter-chip filter-chip--lang" (click)="showLanguageFilter.set(true)"
+                [attr.aria-label]="getLanguageLabel()" [title]="getLanguageLabel()">
+                @if (selectedLanguage() !== 'all') {
+                  <span class="lang-badge">{{ selectedLanguage().toUpperCase() }}</span>
+                } @else {
+                  <app-icon name="languages" [size]="14" />
+                }
+                <span class="chip-text">{{ getLanguageLabel() }}</span>
+                <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
+              </button>
+            }
+
+            <button type="button" class="filter-chip filter-chip--level" (click)="showLevelFilter.set(true)"
+              [attr.aria-label]="getLevelLabel()" [title]="getLevelLabel()">
+              <app-icon name="medal" [size]="14" />
+              <span class="chip-text">{{ getLevelLabel() }}</span>
               <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
             </button>
-          }
-
-          @if (historyItems().length > 0) {
-            <button type="button" class="filter-chip clear-all-btn" (click)="confirmClear()"
-              [attr.aria-label]="i18n.t('history.clearAll')" [title]="i18n.t('history.clearAll')">
-              <app-icon name="trash-2" [size]="14" />
-              <span class="chip-text">{{ i18n.t('history.clearAll') }}</span>
-            </button>
-          }
+          </div>
         </div>
       </div>
 
@@ -241,4 +252,14 @@
   [value]="selectedLanguage()"
   (selected)="selectedLanguage.set($event); showLanguageFilter.set(false)"
   (closed)="showLanguageFilter.set(false)"
+/>
+
+<!-- Level Filter Option Picker -->
+<app-option-picker
+  [isOpen]="showLevelFilter()"
+  [title]="i18n.t('level.filterByLevel') || 'Filter by Level'"
+  [options]="levelFilterOptions()"
+  [value]="selectedLevel()"
+  (selected)="onLevelSelected($event)"
+  (closed)="showLevelFilter.set(false)"
 />

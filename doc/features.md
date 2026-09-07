@@ -371,14 +371,20 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
   - `advanced`: JLPT N2, HSK 5, TOPIK 5, CEFR B2 (Color: Purple `#8b5cf6`)
   - `expert`: JLPT N1, HSK 6, TOPIK 6, CEFR C1/C2 (Color: Amber `#f59e0b`)
 
-### 12.3. UI Integration & Popover Breakdown
+### 12.3. UI Integration & Level Filtering
 - **Video Header Pill (`VideoHeaderComponent`)**: Displays dynamic tier-colored badge (e.g. `[JLPT N3]`).
 - **Interactive Breakdown Popover**: Clicking the badge reveals:
   - Difficulty tier label and description.
   - Number of advanced grammar patterns detected.
   - Speech velocity (e.g. `278 char/min` or `142 words/min`).
   - Active proficiency framework badge.
-- **History List Card (`HistoryListComponent`)**: Badges each completed or resumed video with its difficulty pill for rapid browsing.
+- **Playlist Page Integration (`PlaylistPageComponent`)**:
+  - Playlist cards and individual tracklist rows display level pills (`level-badge--pill`) styled with tier-specific hues.
+  - **Level Filter Dropdown**: Filter playlists by proficiency level (`All Levels`, `Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).
+  - **Create Playlist Dialog**: Allows specifying target difficulty level upon playlist creation.
+- **History Page Integration (`HistoryPageComponent`)**:
+  - **Level Filter Dropdown**: Quickly isolate watch history by difficulty tier.
+  - **Dynamic Level Fallback**: `HistoryListComponent` automatically detects and renders level badges via `VideoLevelService.resolveLevel()` even for legacy history items lacking explicit database levels.
 
 ---
 
@@ -427,9 +433,23 @@ Achievements are organized into 5 core learning categories:
    - `quiz_50`: Sharp Mind — Master 50 subtitle quizzes (+300 XP)
 
 ### 13.3. Achievements Dialog (`AchievementsDialogComponent`)
+- **Dual View Mode**: Segmented tab bar allowing instant switching between **Achievements** and **Global Leaderboard**.
 - **Hero Level Banner**: Displays user's current level title (Novice, Apprentice, Explorer, Scholar, Polyglot, Sage, Master, Grandmaster), total accumulated XP, and an animated radial/linear level progress bar.
 - **Segmented Filter Tabs**: Filter achievements by `All`, `Immersion`, `Vocabulary`, `Streaks`, `Study/SRS`, and `Quizzes` with unlocked counter pills.
 - **Visual Badge States**:
   - Unlocked: Vibrant tier gradient (Emerald, Blue, Purple, Gold), unlock timestamp, and gold trophy icon.
   - Locked: High-contrast dark surface, grayscale icon, and real-time numerical progress bar (`current / target`).
 - **Real-Time Celebration**: Unlocking any achievement or leveling up triggers an immediate celebration toast capsule with the badge icon and XP bounty.
+
+### 13.4. Global Ranking & Leaderboard System (`LeaderboardService`)
+- **Top 3 Podium**:
+  - Elevated central Gold pedestal (👑 #1), flanked by Silver (🥈 #2) and Bronze (🥉 #3).
+  - Glowing avatar halos, level indicators, streak flames, and total XP.
+- **Top 50 Ranking Stream**: Ranks 4 to 50 rendered with rank badges, nationality flags, current levels, active daily streaks, and score counters.
+- **Sticky Current User Anchor Bar**: Persistently shows the logged-in or guest learner's global rank position at the bottom of the dialog, with a one-tap sync button.
+- **Language Filter Chips**: Filter leaderboard rankings by target study language (`All`, `JA 🇯🇵`, `KO 🇰🇷`, `ZH 🇨🇳`, `EN 🇬🇧`).
+- **Offline-First & Guest Support**:
+  - Seed community benchmarks ensure immediate interactivity without network delays or blank states.
+  - Generates deterministic persistent guest IDs for learners browsing without PocketBase accounts.
+  - Automatically syncs XP upon login or level-up events.
+

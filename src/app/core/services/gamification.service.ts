@@ -1,4 +1,4 @@
-import { Injectable, inject, signal, computed, effect } from '@angular/core';
+import { Injectable, inject, signal, computed, effect, untracked } from '@angular/core';
 import {
     Achievement,
     AchievementCategory,
@@ -220,43 +220,46 @@ export class GamificationService {
      * Check achievement conditions and celebrate newly unlocked badges
      */
     private evaluateMilestones(): void {
-        const state = this.rawState();
         const list = this.achievements();
-        let stateChanged = false;
-        const newUnlocked: Record<string, string> = { ...state.unlockedAchievements };
-        const newNotified = [...state.notifiedAchievements];
-        let xpGained = 0;
 
-        for (const ach of list) {
-            if (ach.unlocked && !newUnlocked[ach.id]) {
-                newUnlocked[ach.id] = ach.unlockedAt || new Date().toISOString();
-                xpGained += ach.xpReward;
-                stateChanged = true;
+        untracked(() => {
+            const state = this.rawState();
+            let stateChanged = false;
+            const newUnlocked: Record<string, string> = { ...state.unlockedAchievements };
+            const newNotified = [...state.notifiedAchievements];
+            let xpGained = 0;
+
+            for (const ach of list) {
+                if (ach.unlocked && !newUnlocked[ach.id]) {
+                    newUnlocked[ach.id] = ach.unlockedAt || new Date().toISOString();
+                    xpGained += ach.xpReward;
+                    stateChanged = true;
+                }
+
+                // Toast newly unlocked if not notified yet
+                if (ach.unlocked && !newNotified.includes(ach.id)) {
+                    newNotified.push(ach.id);
+                    stateChanged = true;
+                    const title = this.i18n.t(ach.titleKey) || ach.id;
+                    const toastMsg = `🏆 ${this.i18n.t('gamification.badgeUnlocked') || 'Achievement Unlocked'}: ${title} (+${ach.xpReward} XP)`;
+                    this.toast.show(toastMsg, { type: 'success', icon: 'trophy', duration: 4000 });
+                }
             }
 
-            // Toast newly unlocked if not notified yet
-            if (ach.unlocked && !newNotified.includes(ach.id)) {
-                newNotified.push(ach.id);
-                stateChanged = true;
-                const title = this.i18n.t(ach.titleKey) || ach.id;
-                const toastMsg = `🏆 ${this.i18n.t('gamification.badgeUnlocked') || 'Achievement Unlocked'}: ${title} (+${ach.xpReward} XP)`;
-                this.toast.show(toastMsg, { type: 'success', icon: 'trophy', duration: 4000 });
+            if (stateChanged) {
+                this.rawState.update(prev => {
+                    const updated: UserGamificationState = {
+                        ...prev,
+                        xp: prev.xp + xpGained,
+                        unlockedAchievements: newUnlocked,
+                        notifiedAchievements: newNotified,
+                        level: Math.max(1, Math.floor(Math.sqrt((prev.xp + xpGained) / 100)) + 1)
+                    };
+                    this.saveToStorage(updated);
+                    return updated;
+                });
             }
-        }
-
-        if (stateChanged) {
-            this.rawState.update(prev => {
-                const updated: UserGamificationState = {
-                    ...prev,
-                    xp: prev.xp + xpGained,
-                    unlockedAchievements: newUnlocked,
-                    notifiedAchievements: newNotified,
-                    level: Math.max(1, Math.floor(Math.sqrt((prev.xp + xpGained) / 100)) + 1)
-                };
-                this.saveToStorage(updated);
-                return updated;
-            });
-        }
+        });
     }
 
     private loadFromStorage(): void {

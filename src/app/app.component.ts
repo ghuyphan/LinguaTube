@@ -14,7 +14,7 @@ import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-cred
 import { AchievementsDialogComponent } from './components/achievements-dialog/achievements-dialog.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { I18nService, SettingsService, SeoService, PwaService } from './core/services';
-import { YoutubeService, TranscriptService, SubtitleService } from './features/video';
+import { YoutubeService, TranscriptService } from './features/video';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
@@ -249,6 +249,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             [isOpen]="showAchievementsSheet()"
             [title]="i18n.t('achievements.title') || 'Achievements & Level'"
             [showCloseButton]="true"
+            maxWidth="500px"
             (closed)="showAchievementsSheet.set(false)"
           >
             <app-achievements-dialog (dismissed)="sheetService.closeTop()" />
@@ -791,7 +792,6 @@ export class AppComponent implements OnDestroy {
   settings = inject(SettingsService);
   streak = inject(StreakService);
   transcript = inject(TranscriptService);
-  private subtitles = inject(SubtitleService);
   protected playlistService = inject(PlaylistService);
   protected sheetService = inject(BottomSheetService);
   private swUpdate = inject(SwUpdate);

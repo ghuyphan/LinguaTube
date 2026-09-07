@@ -37,12 +37,13 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 - **Dual-Language Subtitles**: Display learning subtitles alongside translated subtitles in English, Vietnamese, Japanese, Korean, or Chinese with quick flag switching.
 
 ### 📚 Study & Retention Tools
-- **Video Difficulty Level Categorization**: Automatic three-stage hybrid classifier profiles videos into standardized levels: **JLPT N5–N1**, **HSK 1–6**, **TOPIK 1–6**, and **CEFR A1–C2**, combining title fast-path heuristics, speech velocity (CPM/WPM), and 2,400+ grammar patterns with global edge persistence in Cloudflare D1.
+- **Video Difficulty Level Categorization**: Automatic three-stage hybrid classifier profiles videos into standardized levels: **JLPT N5–N1**, **HSK 1–6**, **TOPIK 1–6**, and **CEFR A1–C2**, combining title fast-path heuristics, speech velocity (CPM/WPM), and 2,400+ grammar patterns with global edge persistence in Cloudflare D1. Level badges and filters are integrated directly into **Playlists** and **Watch History**.
 - **Gamification, XP & Achievements**: Earn XP by watching videos (+25 XP), saving vocabulary (+5 XP), reviewing flashcards (+10 XP), and mastering subtitle quizzes (+15 XP). Progress through learner ranks (Novice $\rightarrow$ Grandmaster) and unlock 19 achievement badges across Immersion, Vocabulary, Streaks, SRS, and Quizzes with real-time celebration toasts.
+- **Global Leaderboard & Rankings**: Compete with learners globally on a Top 3 Podium (Gold 👑, Silver 🥈, Bronze 🥉) with ranks #4 to #50, language-filtered benchmarks, and a sticky anchor bar highlighting your live rank.
 - **SM-2 Spaced Repetition Flashcards**: Review saved vocabulary with an optimized SuperMemo-2 algorithm featuring real-time interval preview badges (`<10m`, `1d`, `3d`, `6d`), failed card session recycling, audio auto-play, and anti-spoiler peek reading.
 - **Authentic Video Scene Replay & Cloze Practice**: Jump directly from any flashcard back into the exact video scene (`[▶ Watch Scene]`), or practice active recall with Cloze sentence masking.
 - **Gamified Streaks & Freeze Inventory**: Track daily study streaks with streak freeze protections (up to 2 freezes) and milestone rewards.
-- **Playlists & History**: Organize videos into custom playlists, explore curated community playlists, and resume progress automatically.
+- **Playlists & History with Level Filtering**: Organize videos into custom playlists, filter playlists and watch history by proficiency levels, explore curated community channels, and resume progress automatically.
 - **Offline-First Persistence**: Operates seamlessly offline with IndexedDB (`lingua-tube-cache`) and LocalStorage, with two-way cloud synchronization to PocketBase.
 - **Diamond Credits & Pro Upgrade**: Sustainable multi-tier quota system (`free` default with 5 credits, 15m regen; `pro` with 20 credits, 5m regen, up to 30m AI video duration) with instant VietQR open banking upgrade via payOS.
 

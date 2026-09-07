@@ -12,6 +12,7 @@ import { AuthService } from '../../core/services';
 import { PocketBaseService } from '../../core/services/pocketbase.service';
 import { YoutubeService } from '../video';
 import { OfflinePlaylistRepository } from '../../core/repositories';
+import { VideoLevelService } from '../../core/services/video-level.service';
 import { generateRandomId, getYouTubeThumbnail } from '../../core/utils';
 
 /**
@@ -26,6 +27,7 @@ export class PlaylistService {
     private pb = inject(PocketBaseService);
     private youtube = inject(YoutubeService);
     private repo = inject(OfflinePlaylistRepository);
+    private videoLevel = inject(VideoLevelService);
 
     // ==================== State ====================
 
@@ -141,6 +143,7 @@ export class PlaylistService {
             description: input.description,
             visibility: input.visibility || 'unlisted',
             language: input.language || 'en',
+            level: input.level,
             tags: input.tags || [],
             videoIds: [],
             videoCount: 0,
@@ -296,10 +299,24 @@ export class PlaylistService {
             });
         }
 
+        let levelUpdate: Partial<Playlist> = {};
+        if (!playlist.level) {
+            const detected = this.videoLevel.resolveLevel(
+                videoId,
+                playlist.language,
+                metadata?.title || '',
+                metadata?.channel || ''
+            );
+            if (detected) {
+                levelUpdate = { level: detected.level, tier: detected.tier };
+            }
+        }
+
         await this.updatePlaylist(playlistId, {
             videoIds: updatedVideoIds,
             videoCount: updatedVideoIds.length,
-            thumbnail
+            thumbnail,
+            ...levelUpdate
         });
         console.debug('[Playlist] Video added successfully, new count:', updatedVideoIds.length);
     }

@@ -295,3 +295,19 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - Persisted to Cloudflare D1 `video_languages.levels` column as a JSON map.
   - Cached in Cloudflare KV `video-info:{videoId}` (24-hour TTL) alongside title and duration.
 
+---
+
+### 3.13. Global Leaderboard API
+- **Routes**:
+  - `GET /api/leaderboard`: Fetch top 50 learners (optionally filtered by target language `lang=ja|ko|zh|en`) and calculate exact rank for requesting `userId`.
+  - `POST /api/leaderboard`: Synchronize learner score (XP, level, streak, badges count, target language).
+- **Source**: `functions-src/api/leaderboard.js`
+- **Security & Rate Limiting**:
+  - Rate-limited submission: Max 15 score updates per 10 minutes per client.
+  - Strict input sanitization: Name HTML tags stripped, XP clamped (0–1,000,000), level clamped (1–100), streak clamped (0–10,000).
+  - Monotonic XP progression: Upsert enforces `xp = MAX(leaderboard.xp, excluded.xp)` to prevent downgrades or race condition rollbacks.
+- **Storage & Caching**:
+  - Persisted in Cloudflare D1 `leaderboard` table (`user_id`, `name`, `avatar`, `xp`, `level`, `streak`, `badges_count`, `target_lang`, `country`, `updated_at`).
+  - Edge caching: `Cache-Control: public, max-age=30, s-maxage=60`.
+  - Seed fallback: If D1 is empty or unavailable, returns pre-seeded realistic community benchmarks so learners are never met with an empty screen.
+

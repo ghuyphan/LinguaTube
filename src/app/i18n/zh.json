@@ -563,16 +563,21 @@
         "gotIt": "知道了"
     },
     "level": {
+        "auto": "自动",
         "beginner": "入门",
         "elementary": "初级",
         "intermediate": "中级",
         "upper_intermediate": "中高级",
+        "upperIntermediate": "中高级",
         "advanced": "高级",
         "grammarPoints": "语法模式",
-        "speechRate": "语速"
+        "speechRate": "语速",
+        "filterByLevel": "按难度筛选",
+        "allLevels": "所有级别"
     },
     "gamification": {
         "level": "等级",
+        "achievements": "成就",
         "toNextLevel": "距离下一级",
         "levelUp": "升级！",
         "reachedLevel": "恭喜达到等级：",
@@ -583,6 +588,21 @@
         "rank3": "采词学徒",
         "rank4": "专注学者",
         "rank5": "多语大师"
+    },
+    "leaderboard": {
+        "title": "全球排行榜",
+        "tabTitle": "排行榜",
+        "subtitle": "与全球语言学习者一较高下",
+        "allLanguages": "所有语言",
+        "topLearners": "排行榜",
+        "yourRank": "您的排名",
+        "rank": "排名",
+        "learner": "学习者",
+        "xp": "XP",
+        "streak": "连续天数",
+        "empty": "暂无排名数据",
+        "syncScore": "同步分数",
+        "synced": "已同步！"
     },
     "achievements": {
         "title": "成就与等级",

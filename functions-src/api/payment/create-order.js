@@ -4,8 +4,11 @@
  */
 
 import { validateAuthToken, unauthorizedResponse } from '../../middlewares/auth.js';
+import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../../middlewares/rate-limiter.js';
 import { createPayOsPaymentLink } from '../../providers/payos.js';
 import { jsonResponse, handleOptions } from '../../utils/utils.js';
+
+const RATE_LIMIT_CONFIG = { max: 10, windowSeconds: 600, keyPrefix: 'pay_order' };
 
 export const PLANS = {
     pro_1m: {
@@ -35,6 +38,12 @@ export async function onRequestPost(context) {
         const authResult = await validateAuthToken(request, env);
         if (!authResult.valid || !authResult.user) {
             return unauthorizedResponse('Please sign in to upgrade your subscription');
+        }
+
+        const clientId = getClientIdentifier(request, authResult);
+        const rateLimit = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+        if (!rateLimit.allowed) {
+            return rateLimitResponse(rateLimit.resetAt);
         }
 
         const body = await request.json().catch(() => ({}));
