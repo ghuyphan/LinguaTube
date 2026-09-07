@@ -271,12 +271,12 @@
             <span class="ctrl-label">{{ i18n.t('quiz.mode') }}</span>
         </button>
 
-        <!-- Mobile Options Button (Mobile only) -->
-        <button type="button" class="ctrl-btn mobile-only" (click)="openSubtitleOptions()"
+        <!-- Mobile Options Button (Mobile only, Icon Only) -->
+        <button type="button" class="ctrl-btn ctrl-btn--icon-only mobile-only" (click)="openSubtitleOptions()"
             [disabled]="subtitles.subtitles().length === 0"
+            [attr.aria-label]="i18n.t('vocab.options') || 'Options'"
             [title]="i18n.t('vocab.options') || 'Options'">
             <app-icon name="settings" [size]="16" />
-            <span class="ctrl-label">{{ i18n.t('vocab.options') || 'Options' }}</span>
         </button>
 
         <!-- Font Size Button (Desktop only, Aa glyph) -->
@@ -310,16 +310,18 @@
 
 <!-- Subtitle Options Bottom Sheet (Mobile) -->
 <app-bottom-sheet [isOpen]="showSubtitleOptionsSheet()" [showCloseButton]="true" [title]="i18n.t('subtitle.moreOptions') || 'Subtitle Display Options'" (closed)="closeSubtitleOptions()">
-    <div class="subtitle-options-sheet">
+    <div class="subtitle-options-modal">
         <div class="subtitle-options-header">
-            <app-icon name="settings" [size]="18" />
-            <h3 class="subtitle-options-title">{{ i18n.t('subtitle.moreOptions') || 'Subtitle Display Options' }}</h3>
+            <div class="subtitle-options-title-box">
+                <app-icon name="settings" [size]="20" class="subtitle-options-icon" />
+                <h2 class="subtitle-options-title">{{ i18n.t('subtitle.moreOptions') || 'Subtitle Display Options' }}</h2>
+            </div>
         </div>
 
         <div class="subtitle-options-body">
             <!-- 1. Font Size Segmented Control -->
-            <div class="option-row option-row--vertical">
-                <span class="option-label">{{ i18n.t('subtitle.fontSize') || 'Font Size' }}</span>
+            <div class="options-group">
+                <span class="options-group__label">{{ i18n.t('subtitle.fontSize') || 'Font Size' }}</span>
                 <div class="size-segmented-control">
                     @for (size of fontSizes; track size) {
                     <button type="button" class="size-segment-btn" 
@@ -332,45 +334,62 @@
                 </div>
             </div>
 
-            <!-- 2. Furigana / Reading Toggle (if supported) -->
-            @if (supportsReadingDisplay()) {
-            <div class="option-row">
-                <div class="option-info">
-                    <div class="option-info__header">
-                        <span class="reading-badge-icon reading-badge-icon--sm">{{ getReadingScriptIcon() }}</span>
-                        <span class="option-label">{{ readingModeName() }}</span>
+            <!-- 2. Display Toggles Group Card -->
+            <div class="options-group">
+                <span class="options-group__label">{{ i18n.t('settings.appearance') || 'Display' }}</span>
+                <div class="options-card">
+                    <!-- Furigana / Reading Toggle (if supported) -->
+                    @if (supportsReadingDisplay()) {
+                    <div class="options-item-row">
+                        <div class="options-item-left">
+                            <div class="options-item-icon-box">
+                                <span class="reading-badge-glyph">{{ getReadingScriptIcon() }}</span>
+                            </div>
+                            <div class="options-item-text">
+                                <span class="options-item-title">{{ readingModeName() }}</span>
+                                <span class="options-item-hint">{{ i18n.t('subtitle.readingHint') }}</span>
+                            </div>
+                        </div>
+                        <app-switch [checked]="showReadingAnnotation()" [label]="readingModeName()" (checkedChange)="setReadingEnabled($event)" />
                     </div>
-                    <span class="option-hint">{{ i18n.t('subtitle.readingHint') }}</span>
-                </div>
-                <app-switch [checked]="showReading()" (checkedChange)="toggleReading()" />
-            </div>
-            }
+                    }
 
-            <!-- 3. Grammar Patterns Toggle -->
-            <div class="option-row">
-                <div class="option-info">
-                    <div class="option-info__header">
-                        <app-icon name="book-open" [size]="16" />
-                        <span class="option-label">{{ i18n.t('grammar.mode') }}</span>
-                    </div>
-                    <span class="option-hint">{{ i18n.t('subtitle.grammarHint') }}</span>
-                </div>
-                <app-switch [checked]="grammar.grammarModeEnabled()" (checkedChange)="toggleGrammarMode()" />
-            </div>
+                    @if (supportsReadingDisplay()) {
+                    <div class="options-item-divider"></div>
+                    }
 
-            <!-- 4. Dual Subtitles Toggle (if JA / ZH / KO) -->
-            @if (['ja', 'zh', 'ko'].includes(effectiveLanguage())) {
-            <div class="option-row">
-                <div class="option-info">
-                    <div class="option-info__header">
-                        <app-icon name="languages" [size]="16" />
-                        <span class="option-label">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</span>
+                    <!-- Grammar Patterns Toggle -->
+                    <div class="options-item-row">
+                        <div class="options-item-left">
+                            <div class="options-item-icon-box">
+                                <app-icon name="book-open" [size]="16" />
+                            </div>
+                            <div class="options-item-text">
+                                <span class="options-item-title">{{ i18n.t('grammar.mode') }}</span>
+                                <span class="options-item-hint">{{ i18n.t('subtitle.grammarHint') }}</span>
+                            </div>
+                        </div>
+                        <app-switch [checked]="grammar.grammarModeEnabled()" [label]="i18n.t('grammar.mode')" (checkedChange)="setGrammarMode($event)" />
                     </div>
-                    <span class="option-hint">{{ i18n.t('subtitle.dualSubsHint') }}</span>
+
+                    <!-- Dual Subtitles Toggle (if JA / ZH / KO) -->
+                    @if (['ja', 'zh', 'ko'].includes(effectiveLanguage())) {
+                    <div class="options-item-divider"></div>
+                    <div class="options-item-row">
+                        <div class="options-item-left">
+                            <div class="options-item-icon-box">
+                                <app-icon name="languages" [size]="16" />
+                            </div>
+                            <div class="options-item-text">
+                                <span class="options-item-title">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</span>
+                                <span class="options-item-hint">{{ i18n.t('subtitle.dualSubsHint') }}</span>
+                            </div>
+                        </div>
+                        <app-switch [checked]="settings.settings().showDualSubtitles" [label]="i18n.t('subtitle.dualSubs') || 'Dual Subtitles'" (checkedChange)="setDualSubtitles($event)" />
+                    </div>
+                    }
                 </div>
-                <app-switch [checked]="settings.settings().showDualSubtitles" (checkedChange)="toggleDualSubtitles()" />
             </div>
-            }
         </div>
     </div>
 </app-bottom-sheet>

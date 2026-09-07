@@ -741,8 +741,32 @@ export class SubtitleDisplayComponent implements OnDestroy {
     this.settings.setFontSize(size);
   }
 
+  setReadingEnabled(enabled: boolean): void {
+    this.settings.setReadingDisplayMode(enabled ? 'annotated' : 'native');
+  }
+
+  setGrammarMode(enabled: boolean): void {
+    this.grammar.grammarModeEnabled.set(enabled);
+  }
+
+  setDualSubtitles(enabled: boolean): void {
+    if (enabled) {
+      let target = this.settings.settings().dualSubtitleTargetLang;
+      const sourceLang = this.effectiveLanguage();
+      if (!target || target === sourceLang) {
+        const uiLang = this.i18n.currentLanguage();
+        target = (uiLang !== sourceLang) ? uiLang : (sourceLang === 'en' ? 'ja' : 'en');
+        this.settings.setDualSubtitleTargetLang(target);
+      }
+      this.subtitles.cueTranslations.set(new Map());
+      this.settings.updateSettings({ showDualSubtitles: true });
+    } else {
+      this.settings.updateSettings({ showDualSubtitles: false });
+    }
+  }
+
   toggleDualSubtitles(): void {
-    this.settings.toggleDualSubtitles();
+    this.setDualSubtitles(!this.settings.settings().showDualSubtitles);
   }
 
   getReadingScriptIcon(): string {

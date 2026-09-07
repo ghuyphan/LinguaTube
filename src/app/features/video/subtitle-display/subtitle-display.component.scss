@@ -1086,6 +1086,13 @@ ruby rt {
     position: relative;
     user-select: none;
 
+    &.ctrl-btn--icon-only {
+        width: 36px;
+        min-width: 36px;
+        padding: 0;
+        flex-shrink: 0;
+    }
+
     &.active {
         background: var(--accent-primary);
         color: #ffffff;
@@ -1189,64 +1196,56 @@ ruby rt {
 /* ============================================
    SUBTITLE OPTIONS SHEET (Mobile)
    ============================================ */
-.subtitle-options-sheet {
-    padding: 0 4px 16px;
+.subtitle-options-modal {
+    padding: var(--space-md) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+    max-width: 480px;
+    margin: 0 auto;
 
     .subtitle-options-header {
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: space-between;
         margin-bottom: var(--space-md);
-        color: var(--text-primary);
+        padding-bottom: var(--space-xs);
+        padding-right: 2.5rem;
+
+        .subtitle-options-title-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subtitle-options-icon {
+            color: var(--accent-primary);
+        }
 
         .subtitle-options-title {
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.125rem;
+            font-weight: 800;
+            color: var(--text-primary);
             margin: 0;
+            letter-spacing: -0.01em;
         }
     }
 
     .subtitle-options-body {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: var(--space-md);
     }
 
-    .option-row {
+    .options-group {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 6px 0;
+        flex-direction: column;
+        gap: var(--space-xs);
 
-        &--vertical {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .option-label {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .option-info {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-
-            &__header {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                color: var(--text-primary);
-            }
-
-            .option-hint {
-                font-size: 0.75rem;
-                color: var(--text-muted);
-            }
+        &__label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            padding-left: 2px;
         }
     }
 
@@ -1255,8 +1254,8 @@ ruby rt {
         width: 100%;
         background: var(--bg-surface);
         border: 1px solid var(--border-color);
-        border-radius: var(--border-radius-md, 8px);
-        padding: 3px;
+        border-radius: var(--border-radius-lg);
+        padding: 4px;
         gap: 4px;
 
         .size-segment-btn {
@@ -1266,8 +1265,8 @@ ruby rt {
             justify-content: center;
             gap: 6px;
             padding: 8px 12px;
-            height: 38px;
-            border-radius: calc(var(--border-radius-md, 8px) - 2px);
+            height: 40px;
+            border-radius: calc(var(--border-radius-lg) - 4px);
             border: none;
             background: transparent;
             color: var(--text-secondary);
@@ -1298,7 +1297,7 @@ ruby rt {
                 background: var(--accent-primary);
                 color: #ffffff;
                 font-weight: 600;
-                box-shadow: 0 1px 4px rgba(var(--accent-primary-rgb, 255, 107, 107), 0.3);
+                box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb, 255, 107, 107), 0.35);
             }
 
             &:hover:not(.active) {
@@ -1306,6 +1305,78 @@ ruby rt {
                 color: var(--text-primary);
             }
         }
+    }
+
+    .options-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+    }
+
+    .options-item-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 14px;
+        transition: background var(--transition-fast);
+
+        &:hover {
+            background: var(--bg-hover);
+        }
+    }
+
+    .options-item-left {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm, 10px);
+        min-width: 0;
+        flex: 1;
+    }
+
+    .options-item-icon-box {
+        width: 2rem;
+        height: 2rem;
+        border-radius: var(--border-radius-md);
+        background: rgba(var(--accent-primary-rgb), 0.1);
+        color: var(--accent-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        .reading-badge-glyph {
+            font-weight: 700;
+            font-size: 0.9375rem;
+            line-height: 1;
+        }
+    }
+
+    .options-item-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+    }
+
+    .options-item-title {
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.25;
+    }
+
+    .options-item-hint {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        line-height: 1.3;
+    }
+
+    .options-item-divider {
+        height: 1px;
+        background: var(--border-color);
+        margin: 0 14px;
     }
 }
 
@@ -1406,7 +1477,7 @@ ruby rt {
     /* Controls - mobile */
     .subtitle-controls {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr)) 40px;
         padding: 8px 10px;
         gap: 6px;
         overflow: visible;
@@ -1421,6 +1492,13 @@ ruby rt {
         gap: 4px;
         justify-content: center;
         position: relative;
+
+        &.ctrl-btn--icon-only {
+            width: 40px;
+            min-width: 40px;
+            padding: 0;
+            flex-shrink: 0;
+        }
 
         .ctrl-label {
             display: inline-block;
