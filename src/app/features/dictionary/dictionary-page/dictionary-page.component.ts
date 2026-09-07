@@ -119,21 +119,36 @@ import { SettingsService, I18nService } from '../../../core/services';
     <!-- Vocab Menu Sheet -->
     <app-bottom-sheet [isOpen]="vocabMenuOpen()" [title]="i18n.t('vocab.options') || 'Vocabulary Options'" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
       <div class="menu-sheet">
-        <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
-        <div class="menu-sheet__options">
-          <button type="button" class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
-            <app-icon name="download" [size]="18" />
-            <span>{{ i18n.t('vocab.exportJson') }}</span>
-          </button>
-          <button type="button" class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
-            <app-icon name="download" [size]="18" />
-            <span>{{ i18n.t('vocab.exportAnki') }}</span>
-          </button>
-          <label class="menu-option">
-            <app-icon name="upload" [size]="18" />
-            <span>{{ i18n.t('vocab.import') }}</span>
-            <input type="file" accept=".json" class="hidden-input" (change)="importVocabJSON($event); vocabMenuOpen.set(false)" />
-          </label>
+        <div class="menu-sheet__header">
+          <div class="menu-sheet__title-box">
+            <app-icon name="book-open" [size]="20" class="menu-sheet__header-icon" />
+            <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
+          </div>
+        </div>
+        <div class="menu-sheet__card">
+          <div class="menu-sheet__options">
+            <button type="button" class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
+              <div class="menu-option__icon-box">
+                <app-icon name="download" [size]="18" />
+              </div>
+              <span class="menu-option__label">{{ i18n.t('vocab.exportJson') }}</span>
+            </button>
+            <div class="menu-divider"></div>
+            <button type="button" class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
+              <div class="menu-option__icon-box">
+                <app-icon name="download" [size]="18" />
+              </div>
+              <span class="menu-option__label">{{ i18n.t('vocab.exportAnki') }}</span>
+            </button>
+            <div class="menu-divider"></div>
+            <label class="menu-option">
+              <div class="menu-option__icon-box">
+                <app-icon name="upload" [size]="18" />
+              </div>
+              <span class="menu-option__label">{{ i18n.t('vocab.import') }}</span>
+              <input type="file" accept=".json" class="hidden-input" (change)="importVocabJSON($event); vocabMenuOpen.set(false)" />
+            </label>
+          </div>
         </div>
       </div>
     </app-bottom-sheet>
@@ -218,45 +233,117 @@ import { SettingsService, I18nService } from '../../../core/services';
 
     /* Menu Sheet Styles */
     .menu-sheet {
-        padding: var(--space-md);
+        padding: var(--space-md) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .menu-sheet__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: var(--space-md);
+        padding-bottom: var(--space-xs);
+        padding-right: 2.5rem; /* clearance for sheet-close-btn */
+    }
+
+    .menu-sheet__title-box {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .menu-sheet__header-icon {
+        color: var(--accent-primary);
     }
 
     .menu-sheet__title {
-        font-size: var(--text-md);
-        font-weight: 600;
+        font-size: 1.125rem;
+        font-weight: 800;
         color: var(--text-primary);
-        text-align: center;
-        margin: 0 0 var(--space-md);
+        margin: 0;
+        letter-spacing: -0.01em;
+    }
+
+    .menu-sheet__card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
     }
 
     .menu-sheet__options {
         display: flex;
         flex-direction: column;
-        gap: var(--space-xs);
     }
 
     .menu-option {
         display: flex;
         align-items: center;
         gap: var(--space-md);
-        padding: var(--space-md);
+        padding: 12px 16px;
+        min-height: 52px;
         background: transparent;
         border: none;
-        border-radius: var(--border-radius);
-        font-size: var(--text-base);
+        border-radius: 0;
+        font-size: 0.9375rem;
+        font-weight: 600;
         color: var(--text-primary);
         cursor: pointer;
-        transition: background var(--transition-fast);
+        transition: background-color var(--transition-fast), transform var(--transition-fast);
+        text-align: left;
+        width: 100%;
+        user-select: none;
     }
 
     @media (hover: hover) {
         .menu-option:hover:not(:disabled) {
-            background: var(--bg-secondary);
+            background: var(--bg-hover);
         }
     }
 
-    .menu-option app-icon {
+    .menu-option:active:not(:disabled) {
+        background: var(--bg-secondary);
+        transform: scale(0.99);
+    }
+
+    .menu-option__icon-box {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: var(--border-radius-md);
+        background: var(--bg-hover);
+        border: 1px solid var(--border-color);
         color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all var(--transition-fast);
+    }
+
+    .menu-option__label {
+        flex: 1;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .menu-divider {
+        height: 1px;
+        background: var(--border-color);
+        margin: 0 16px;
+    }
+
+    @media (max-width: 640px) {
+        .menu-sheet {
+            padding: var(--space-sm) var(--space-sm) calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
+        }
+
+        .menu-sheet .menu-option {
+            padding: 12px 14px;
+            min-height: 52px;
+        }
     }
   `]
 })

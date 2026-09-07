@@ -1,40 +1,56 @@
 <app-bottom-sheet [isOpen]="isOpen()" [title]="i18n.t('playlist.saveToPlaylist') || 'Save to Playlist'" [allowBackdropClose]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
-    <div class="dialog-content">
-        <h2 class="dialog-title">{{ i18n.t('playlist.saveToPlaylist') }}</h2>
-
-        <div class="playlists-list">
-            @for (playlist of playlists(); track playlist.id) {
-            <button type="button" class="playlist-item" [class.saved]="isInPlaylist(playlist)"
-                (click)="onTogglePlaylist(playlist)">
-                <div class="playlist-icon">
-                    @if (isInPlaylist(playlist)) {
-                    <app-icon name="check" [size]="18"></app-icon>
-                    } @else {
-                    <app-icon name="list-plus" [size]="18"></app-icon>
-                    }
-                </div>
-                <div class="playlist-info">
-                    <span class="playlist-name">{{ playlist.title }}</span>
-                    <span class="playlist-meta">{{ playlist.videoIds.length }} videos</span>
-                </div>
-            </button>
-            } @empty {
-            <div class="empty-state empty-state--centered">
-                <div class="empty-state__icon-box">
-                    <app-icon name="list-video" [size]="28" />
-                </div>
-                <div class="empty-state__text" style="align-items: center; text-align: center;">
-                    <p class="empty-state__title">{{ i18n.t('playlist.empty.myTitle') }}</p>
-                    <p class="empty-state__description">{{ i18n.t('playlist.empty.myHint') }}</p>
-                </div>
+    <div class="dialog-content add-playlist-modal">
+        <div class="dialog-header">
+            <div class="dialog-header__title-box">
+                <app-icon name="list-plus" [size]="20" class="dialog-header__icon" />
+                <h2 class="dialog-title">{{ i18n.t('playlist.saveToPlaylist') }}</h2>
             </div>
-            }
+        </div>
+
+        <div class="playlists-card">
+            <div class="playlists-list" role="listbox" [attr.aria-label]="i18n.t('playlist.saveToPlaylist') || 'Save to Playlist'">
+                @for (playlist of playlists(); track playlist.id; let isLast = $last) {
+                <button type="button" class="playlist-item" [class.saved]="isInPlaylist(playlist)"
+                    role="option" [attr.aria-selected]="isInPlaylist(playlist)"
+                    (click)="onTogglePlaylist(playlist)">
+                    <div class="playlist-icon" [class.playlist-icon--saved]="isInPlaylist(playlist)">
+                        @if (isInPlaylist(playlist)) {
+                        <app-icon name="check" [size]="18"></app-icon>
+                        } @else {
+                        <app-icon name="list-video" [size]="18"></app-icon>
+                        }
+                    </div>
+                    <div class="playlist-info">
+                        <span class="playlist-name">{{ playlist.title }}</span>
+                        <span class="playlist-meta">{{ playlist.videoIds.length }} {{ i18n.t('playlist.videos') || 'videos' }}</span>
+                    </div>
+                    @if (isInPlaylist(playlist)) {
+                    <div class="playlist-check-badge" aria-hidden="true">
+                        <app-icon name="check" [size]="14" />
+                    </div>
+                    }
+                </button>
+                @if (!isLast) {
+                <div class="playlist-divider"></div>
+                }
+                } @empty {
+                <div class="empty-state empty-state--centered">
+                    <div class="empty-state__icon-box">
+                        <app-icon name="list-video" [size]="28" />
+                    </div>
+                    <div class="empty-state__text" style="align-items: center; text-align: center;">
+                        <p class="empty-state__title">{{ i18n.t('playlist.empty.myTitle') }}</p>
+                        <p class="empty-state__description">{{ i18n.t('playlist.empty.myHint') }}</p>
+                    </div>
+                </div>
+                }
+            </div>
         </div>
 
         <div class="dialog-footer">
-            <button class="btn btn-text create-btn" (click)="openCreateDialog()">
-                <app-icon name="list-plus" [size]="18"></app-icon>
-                {{ i18n.t('playlist.createNew') }}
+            <button type="button" class="create-playlist-btn" (click)="openCreateDialog()">
+                <app-icon name="plus" [size]="18"></app-icon>
+                <span>{{ i18n.t('playlist.createNew') }}</span>
             </button>
         </div>
     </div>

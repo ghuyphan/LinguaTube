@@ -2,10 +2,11 @@
 
 .popup-content {
     position: relative;
+    padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
 }
 
 .popup-header {
-    padding: var(--space-md);
+    padding: var(--space-md) 2.75rem var(--space-sm);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -167,7 +168,7 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .popup-header {
-        padding: var(--space-xs) var(--space-md) var(--space-sm);
+        padding: var(--space-xs) 2.75rem var(--space-sm);
     }
 
     .popup-word {

@@ -266,32 +266,51 @@
 @if (playlistService.currentPlaylist(); as playlist) {
 <app-bottom-sheet [isOpen]="videoMenuOpen()" [title]="i18n.t('playlist.videoOptions') || 'Video Options'" [showCloseButton]="true" (closed)="videoMenuOpen.set(false)">
     <div class="menu-sheet">
-        <h3 class="menu-sheet__title">{{ i18n.t('playlist.videoOptions') }}</h3>
-        <div class="menu-sheet__options">
-            <button class="menu-option" [disabled]="menuVideoIndex() === 0" (click)="moveVideoUp()">
-                <app-icon name="chevron-up" [size]="18"></app-icon>
-                <span>{{ i18n.t('playlist.moveUp') }}</span>
-            </button>
-            <button class="menu-option" [disabled]="menuVideoIndex() >= playlist.videos.length - 1"
-                (click)="moveVideoDown()">
-                <app-icon name="chevron-down" [size]="18"></app-icon>
-                <span>{{ i18n.t('playlist.moveDown') }}</span>
-            </button>
-            <div class="menu-divider"></div>
-            <button class="menu-option" [disabled]="menuVideoIndex() === 0" (click)="moveVideoToTop()">
-                <app-icon name="chevrons-up" [size]="18"></app-icon>
-                <span>{{ i18n.t('playlist.moveToTop') }}</span>
-            </button>
-            <button class="menu-option" [disabled]="menuVideoIndex() >= playlist.videos.length - 1"
-                (click)="moveVideoToBottom()">
-                <app-icon name="chevrons-down" [size]="18"></app-icon>
-                <span>{{ i18n.t('playlist.moveToBottom') }}</span>
-            </button>
-            <div class="menu-divider"></div>
-            <button class="menu-option menu-option--danger" (click)="removeVideo()">
-                <app-icon name="trash-2" [size]="18"></app-icon>
-                <span>{{ i18n.t('playlist.removeFromPlaylist') }}</span>
-            </button>
+        <div class="menu-sheet__header">
+            <div class="menu-sheet__title-box">
+                <app-icon name="list-video" [size]="20" class="menu-sheet__header-icon" />
+                <h3 class="menu-sheet__title">{{ i18n.t('playlist.videoOptions') }}</h3>
+            </div>
+        </div>
+        <div class="menu-sheet__card">
+            <div class="menu-sheet__options">
+                <button type="button" class="menu-option" [disabled]="menuVideoIndex() === 0" (click)="moveVideoUp()">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="chevron-up" [size]="18"></app-icon>
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('playlist.moveUp') }}</span>
+                </button>
+                <div class="menu-divider"></div>
+                <button type="button" class="menu-option" [disabled]="menuVideoIndex() >= playlist.videos.length - 1"
+                    (click)="moveVideoDown()">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="chevron-down" [size]="18"></app-icon>
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('playlist.moveDown') }}</span>
+                </button>
+                <div class="menu-divider"></div>
+                <button type="button" class="menu-option" [disabled]="menuVideoIndex() === 0" (click)="moveVideoToTop()">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="chevrons-up" [size]="18"></app-icon>
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('playlist.moveToTop') }}</span>
+                </button>
+                <div class="menu-divider"></div>
+                <button type="button" class="menu-option" [disabled]="menuVideoIndex() >= playlist.videos.length - 1"
+                    (click)="moveVideoToBottom()">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="chevrons-down" [size]="18"></app-icon>
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('playlist.moveToBottom') }}</span>
+                </button>
+                <div class="menu-divider"></div>
+                <button type="button" class="menu-option menu-option--danger" (click)="removeVideo()">
+                    <div class="menu-option__icon-box menu-option__icon-box--danger">
+                        <app-icon name="trash-2" [size]="18"></app-icon>
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('playlist.removeFromPlaylist') }}</span>
+                </button>
+            </div>
         </div>
     </div>
 </app-bottom-sheet>
@@ -306,22 +325,37 @@
 <!-- Vocab Menu Sheet -->
 <app-bottom-sheet [isOpen]="vocabMenuOpen()" [title]="i18n.t('vocab.options') || 'Vocabulary Options'" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
     <div class="menu-sheet">
-        <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
-        <div class="menu-sheet__options">
-            <button class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
-                <app-icon name="download" [size]="18" />
-                <span>{{ i18n.t('vocab.exportJson') }}</span>
-            </button>
-            <button class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
-                <app-icon name="download" [size]="18" />
-                <span>{{ i18n.t('vocab.exportAnki') }}</span>
-            </button>
-            <label class="menu-option">
-                <app-icon name="upload" [size]="18" />
-                <span>{{ i18n.t('vocab.import') }}</span>
-                <input type="file" accept=".json" class="hidden-input"
-                    (change)="importVocabJSON($event); vocabMenuOpen.set(false)" />
-            </label>
+        <div class="menu-sheet__header">
+            <div class="menu-sheet__title-box">
+                <app-icon name="book-open" [size]="20" class="menu-sheet__header-icon" />
+                <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
+            </div>
+        </div>
+        <div class="menu-sheet__card">
+            <div class="menu-sheet__options">
+                <button type="button" class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="download" [size]="18" />
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('vocab.exportJson') }}</span>
+                </button>
+                <div class="menu-divider"></div>
+                <button type="button" class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="download" [size]="18" />
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('vocab.exportAnki') }}</span>
+                </button>
+                <div class="menu-divider"></div>
+                <label class="menu-option">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="upload" [size]="18" />
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('vocab.import') }}</span>
+                    <input type="file" accept=".json" class="hidden-input"
+                        (change)="importVocabJSON($event); vocabMenuOpen.set(false)" />
+                </label>
+            </div>
         </div>
     </div>
 </app-bottom-sheet>

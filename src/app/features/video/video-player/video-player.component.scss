@@ -809,7 +809,7 @@ $transition-normal: 0.25s ease;
   align-items: center;
   gap: 4px;
   width: 100%;
-  padding: 0 var(--space-xl) var(--space-xs);
+  padding: 0 2.75rem var(--space-xs);
   box-sizing: border-box;
 }
 
@@ -1130,7 +1130,7 @@ $transition-normal: 0.25s ease;
 // ============================================
 
 .shortcuts-dialog-content {
-  padding: var(--space-md) var(--space-lg) var(--space-xl);
+  padding: var(--space-md) var(--space-lg) calc(var(--space-xl) + env(safe-area-inset-bottom, 0px));
   max-width: 680px;
   margin: 0 auto;
   color: var(--text-primary);
@@ -1141,6 +1141,7 @@ $transition-normal: 0.25s ease;
   align-items: center;
   gap: var(--space-sm);
   margin-bottom: var(--space-md);
+  padding-right: 2.5rem; // clearance for sheet-close-btn
 
   .shortcuts-header-icon {
     width: 2rem;
@@ -1151,12 +1152,14 @@ $transition-normal: 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
 
   .shortcuts-dialog-title {
     margin: 0;
     font-size: 1.125rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.01em;
   }
 }
 

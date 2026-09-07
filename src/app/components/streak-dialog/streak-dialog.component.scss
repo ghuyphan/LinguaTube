@@ -8,7 +8,9 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    max-width: 440px;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -239,4 +241,16 @@
             line-height: 1.4;
         }
     }
+}
+
+.streak-dismiss-btn {
+    width: 100%;
+    min-height: 2.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
 }

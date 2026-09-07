@@ -425,7 +425,9 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     /* Update Sheet Styles */
     .update-sheet {
-      padding: var(--space-lg);
+      padding: var(--space-lg) var(--space-lg) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+      max-width: 440px;
+      margin: 0 auto;
       text-align: center;
     }
 
@@ -443,7 +445,8 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     .update-sheet__title {
       font-size: 1.125rem;
-      font-weight: 600;
+      font-weight: 800;
+      letter-spacing: -0.01em;
       color: var(--text-primary);
       margin: 0 0 var(--space-xs);
     }
@@ -462,17 +465,22 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     .update-sheet__btn {
       flex: 1;
-      padding: var(--space-md);
-      border-radius: var(--border-radius);
+      min-height: 2.75rem;
+      padding: 0 var(--space-md);
+      border-radius: var(--border-radius-md);
       font-size: 0.9375rem;
-      font-weight: 500;
+      font-weight: 600;
       border: none;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       transition: all var(--transition-fast);
     }
 
     .update-sheet__btn--secondary {
-      background: var(--bg-secondary);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
       color: var(--text-primary);
     }
 
@@ -483,7 +491,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     @media (hover: hover) {
       .update-sheet__btn--secondary:hover {
-        background: var(--bg-card);
+        background: var(--bg-hover);
       }
 
       .update-sheet__btn--primary:hover {
@@ -496,7 +504,9 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       display: flex;
       flex-direction: column;
       gap: 4px;
-      padding: var(--space-xs) 0 var(--space-sm);
+      padding: var(--space-xs) 0 calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
+      max-width: 440px;
+      margin: 0 auto;
     }
 
     .more-menu__stats {
@@ -561,6 +571,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       align-items: center;
       gap: var(--space-md);
       padding: 0.625rem var(--space-md);
+      min-height: 48px;
       margin: 0 var(--space-xs);
       width: calc(100% - var(--space-sm));
       background: none;
@@ -631,7 +642,9 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     /* iOS Install Guide Sheet */
     .ios-install-sheet {
-      padding: var(--space-md) var(--space-lg) var(--space-lg);
+      padding: var(--space-md) var(--space-lg) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+      max-width: 440px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -662,7 +675,8 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     .ios-install-sheet__title {
       font-size: 1.125rem;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: -0.01em;
       color: var(--text-primary);
       margin: 0 0 4px;
     }
@@ -730,14 +744,18 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     .ios-install-btn {
       width: 100%;
-      padding: var(--space-md);
-      border-radius: var(--border-radius);
+      min-height: 2.75rem;
+      padding: 0 var(--space-md);
+      border-radius: var(--border-radius-md);
       background: var(--accent-primary);
       color: white;
       font-size: 0.9375rem;
       font-weight: 600;
       border: none;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       transition: opacity var(--transition-fast);
     }
 

@@ -1,5 +1,5 @@
 .settings-modal {
-    padding: var(--space-md) var(--space-md) var(--space-lg);
+    padding: var(--space-md) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
     max-width: 480px;
     margin: 0 auto;
 }

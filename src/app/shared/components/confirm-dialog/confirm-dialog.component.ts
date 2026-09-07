@@ -52,7 +52,9 @@ import { IconComponent, IconName } from '../icon/icon.component';
     `,
     styles: [`
         .confirm-dialog {
-            padding: var(--space-lg);
+            padding: var(--space-lg) var(--space-lg) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+            max-width: 440px;
+            margin: 0 auto;
             text-align: center;
         }
 
@@ -78,9 +80,10 @@ import { IconComponent, IconName } from '../icon/icon.component';
 
         .confirm-dialog__title {
             font-size: 1.125rem;
-            font-weight: 600;
+            font-weight: 800;
             color: var(--text-primary);
             margin: 0 0 var(--space-xs);
+            letter-spacing: -0.01em;
         }
 
         .confirm-dialog__message {
@@ -97,12 +100,16 @@ import { IconComponent, IconName } from '../icon/icon.component';
 
         .confirm-dialog__btn {
             flex: 1;
-            padding: var(--space-md);
-            border-radius: var(--border-radius);
+            min-height: 2.75rem;
+            padding: 0 var(--space-md);
+            border-radius: var(--border-radius-md);
             font-size: 0.9375rem;
-            font-weight: 500;
+            font-weight: 600;
             border: none;
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             transition: all var(--transition-fast);
         }
 
