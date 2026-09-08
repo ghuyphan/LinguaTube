@@ -93,7 +93,6 @@
                     </button>
                 </div>
 
-                @if (homeTab() === 'videos' && recommendedVideos().length > 0) {
                 <div class="toolbar-actions">
                     <button type="button" class="filter-chip filter-chip--level" [class.active]="videoLevelFilter() !== 'all'"
                         (click)="showLevelFilter.set(true)" [attr.aria-label]="getLevelFilterLabel()" [title]="getLevelFilterLabel()">
@@ -102,7 +101,6 @@
                         <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
                     </button>
                 </div>
-                }
             </div>
 
             @if (homeTab() === 'videos') {
@@ -161,7 +159,7 @@
                     </div>
                     }
                 </div>
-                } @else if (recommendedVideos().length > 0) {
+                } @else if (videoLevelFilter() !== 'all') {
                 <div class="empty-state empty-state--centered">
                     <div class="empty-state__icon-box">
                         <app-icon name="medal" [size]="24" />
@@ -202,9 +200,9 @@
                     </div>
                     }
                 </div>
-                } @else if (featuredPlaylists().length > 0) {
+                } @else if (filteredFeaturedPlaylists().length > 0) {
                 <div class="horizontal-item-list">
-                    @for (playlist of featuredPlaylists(); track playlist.id; let i = $index) {
+                    @for (playlist of filteredFeaturedPlaylists(); track playlist.id; let i = $index) {
                     <div class="home-row-item" [style.--item-index]="i" (click)="startPlaylist(playlist)">
                         <div class="home-row-item__thumb">
                             @if (playlist.thumbnail) {
@@ -245,6 +243,19 @@
                         </div>
                     </div>
                     }
+                </div>
+                } @else if (videoLevelFilter() !== 'all') {
+                <div class="empty-state empty-state--centered">
+                    <div class="empty-state__icon-box">
+                        <app-icon name="medal" [size]="24" />
+                    </div>
+                    <div class="empty-state__text">
+                        <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>
+                        <p class="empty-state__description">{{ i18n.t('common.noResults') || 'No playlists found for this level.' }}</p>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="videoLevelFilter.set('all')">
+                        {{ i18n.t('level.allLevels') || 'All Levels' }}
+                    </button>
                 </div>
                 } @else {
                 <div class="empty-state empty-state--centered">

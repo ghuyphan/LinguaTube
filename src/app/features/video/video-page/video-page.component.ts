@@ -181,6 +181,16 @@ export class VideoPageComponent implements OnInit {
     return this.videoLevel.resolvePlaylistLevel(playlist);
   }
 
+  readonly filteredFeaturedPlaylists = computed(() => {
+    const playlists = this.featuredPlaylists();
+    const filter = this.videoLevelFilter();
+    if (!filter || filter === 'all') return playlists;
+    return playlists.filter(p => {
+      const lvl = this.getPlaylistLevel(p);
+      return lvl?.tier === filter;
+    });
+  });
+
   readonly getFlagUrl = getLanguageFlagUrl;
 
   aiDiamondCost = computed(() => (this.youtube.duration() > 10 * 60 ? 2 : 1));
