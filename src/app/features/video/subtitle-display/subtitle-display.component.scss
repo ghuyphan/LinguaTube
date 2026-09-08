@@ -163,13 +163,13 @@
 
 /* FIX 3: Removed transitions from subtitle-text to prevent flicker */
 .subtitle-text {
-    font-size: 1.375rem;
-    line-height: 2.1;
+    font-size: 1.125rem;
+    line-height: 2.0;
     text-align: center;
     word-break: break-word;
     overflow-wrap: break-word;
     border-radius: var(--border-radius-lg);
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-xs) var(--space-md);
     max-width: 100%;
 }
 
@@ -178,7 +178,7 @@
 }
 
 .subtitle-translation {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     line-height: 1.4;
     color: var(--text-secondary);
     text-align: center;
@@ -229,7 +229,7 @@
     justify-content: center;
     width: 100%;
     /* Reserve space for one line of text + padding */
-    min-height: calc(0.875rem * 1.4 + 12px);
+    min-height: calc(0.8125rem * 1.4 + 12px);
 }
 
 .subtitle-translation--empty {
@@ -260,30 +260,30 @@
 }
 
 .current-subtitle--small .subtitle-text {
-    font-size: 1.125rem;
-    line-height: 2;
+    font-size: 1rem;
+    line-height: 1.9;
 }
 
 .current-subtitle--small .subtitle-translation {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
 }
 
 .current-subtitle--large .subtitle-text {
-    font-size: 1.625rem;
-    line-height: 2.2;
+    font-size: 1.3125rem;
+    line-height: 2.1;
 }
 
 .current-subtitle--large .subtitle-translation {
-    font-size: 1rem;
+    font-size: 0.875rem;
 }
 
 .current-subtitle--xlarge .subtitle-text {
-    font-size: 1.875rem;
-    line-height: 2.3;
+    font-size: 1.5625rem;
+    line-height: 2.2;
 }
 
 .current-subtitle--xlarge .subtitle-translation {
-    font-size: 1.125rem;
+    font-size: 1rem;
 }
 
 /* ============================================
