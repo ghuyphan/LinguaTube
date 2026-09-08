@@ -28,6 +28,11 @@ const CACHE_VERSION = 'v4';
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
 const memNegDictCache = new Set();
 
+// In-memory positive dictionary LRU cache across warm Worker isolates (Rule 2: In-Memory First)
+const memPosDictCache = new Map();
+const MAX_MEM_POS_DICT = 1000;
+const MEM_POS_DICT_TTL_MS = 60 * 60 * 1000; // 1 hour warm memory cache
+
 export async function onRequest(context) {
     const { request, env } = context;
 
@@ -45,7 +50,17 @@ export async function onRequest(context) {
     if (!from) return jsonResponse({ error: 'Invalid or missing "from" parameter.' }, 400);
     if (!to) return jsonResponse({ error: 'Invalid or missing "to" parameter.' }, 400);
 
-    // Fast-path in-memory negative cache check (0 KV ops, 0 API calls)
+    // Fast-path 1: in-memory positive cache check (0 KV ops, 0 API calls, < 0.1ms)
+    const posKey = `${from}:${to}:${word}`;
+    const memPosHit = memPosDictCache.get(posKey);
+    if (memPosHit && (Date.now() - memPosHit.timestamp < MEM_POS_DICT_TTL_MS)) {
+        return jsonResponse(memPosHit.data, 200, {
+            'X-Cache': 'HIT-MEMORY',
+            'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400'
+        });
+    }
+
+    // Fast-path 2: in-memory negative cache check (0 KV ops, 0 API calls)
     const negKey = `dict:neg:${from}:${to}:${word}`;
     if (memNegDictCache.has(negKey)) {
         return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, {
@@ -104,6 +119,13 @@ export async function onRequest(context) {
         };
 
         const cacheHeader = cached ? (stale ? 'STALE' : 'HIT') : 'MISS';
+
+        // Save to warm in-memory positive cache (0 KV ops on subsequent lookups)
+        if (memPosDictCache.size >= MAX_MEM_POS_DICT) {
+            const oldest = memPosDictCache.keys().next().value;
+            if (oldest) memPosDictCache.delete(oldest);
+        }
+        memPosDictCache.set(posKey, { data: responseData, timestamp: Date.now() });
 
         return jsonResponse(responseData, 200, {
             'X-Cache': cacheHeader,

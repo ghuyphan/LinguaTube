@@ -47,6 +47,10 @@ function setInMemCache(source, target, text, translation) {
     memPhraseCache.set(key, translation);
 }
 
+// In-memory batch cache across warm Worker isolates
+const memBatchCache = new Map();
+const MAX_MEM_BATCHES = 200;
+
 // Cache configuration (7 days)
 const CACHE_TTL = 7 * 24 * 60 * 60;
 
@@ -69,14 +73,22 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Invalid request', details: validation.errors }, 400);
         }
 
-        const { texts, source, target } = body;
+        const texts = body.texts;
+        const source = sanitizeLanguage(body.source, ['ja', 'zh', 'ko', 'en', 'vi']);
+        const target = sanitizeLanguage(body.target, ['ja', 'zh', 'ko', 'en', 'vi']);
 
-        if (texts.length > MAX_BATCH_SIZE) {
-            return jsonResponse({ error: `Max batch size is ${MAX_BATCH_SIZE}` }, 400);
+        if (!source || !target) {
+            return jsonResponse({ error: 'Invalid source or target language' }, 400);
         }
 
-        // Deduplicate texts before consuming rate limits
-        const uniqueTexts = Array.from(new Set(texts.map(t => t?.trim()).filter(Boolean)));
+        // Validate batch size
+        const batchValidation = validateBatchSize(texts, MAX_BATCH_SIZE);
+        if (!batchValidation.valid) {
+            return jsonResponse({ error: batchValidation.error }, 400);
+        }
+
+        // Extract unique non-empty texts to translate (deduplication)
+        const uniqueTexts = Array.from(new Set(texts.map(t => t.trim()).filter(Boolean)));
         const consumeAmount = Math.max(1, uniqueTexts.length || 1);
 
         // Rate limit by number of unique texts
@@ -90,22 +102,35 @@ export async function onRequestPost(context) {
             return rateLimitResponse(rateCheck.resetAt);
         }
 
-        // 1. Check Batch-Level Cache (Single KV read)
+        // 1. Check Batch-Level Cache (In-Memory first, then KV read fallback)
         let translations = new Array(texts.length).fill(null);
         let batchKey = null;
 
-        if (env.TRANSCRIPT_CACHE && texts.length > 0) {
+        if (texts.length > 0) {
             try {
                 const batchSignature = texts.join('\u001F');
                 const batchHash = await sha256(batchSignature);
                 batchKey = `trbatch:v1:${source}:${target}:${batchHash}`;
 
-                const cachedBatch = await env.TRANSCRIPT_CACHE.get(batchKey, 'json');
-                if (cachedBatch && Array.isArray(cachedBatch.translations) && cachedBatch.translations.length === texts.length) {
-                    return jsonResponse({ translations: cachedBatch.translations }, 200, {
-                        'X-Cache': 'HIT',
+                // Check warm memory cache (0 KV ops, < 0.1ms)
+                const memHit = memBatchCache.get(batchKey);
+                if (memHit && Array.isArray(memHit) && memHit.length === texts.length) {
+                    return jsonResponse({ translations: memHit }, 200, {
+                        'X-Cache': 'HIT-MEM',
                         ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
                     });
+                }
+
+                // Check KV read fallback for existing entries
+                if (env.TRANSCRIPT_CACHE) {
+                    const cachedBatch = await env.TRANSCRIPT_CACHE.get(batchKey, 'json');
+                    if (cachedBatch && Array.isArray(cachedBatch.translations) && cachedBatch.translations.length === texts.length) {
+                        memBatchCache.set(batchKey, cachedBatch.translations);
+                        return jsonResponse({ translations: cachedBatch.translations }, 200, {
+                            'X-Cache': 'HIT',
+                            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+                        });
+                    }
                 }
             } catch (err) {
                 console.warn('[Translate Batch] Batch cache read failed:', err?.message || err);
@@ -146,17 +171,15 @@ export async function onRequestPost(context) {
             return translationMap.get(text.trim()) || (source === target ? text : null);
         });
 
-        // 4. Save batch to KV only when fresh translations occurred and all succeeded (preserves 1,000 writes/day quota)
+        // 4. Save batch to in-memory cache (Rule 2: Preserves 1,000 writes/day KV quota)
+        // Note: Permanent full-transcript caching is handled by Cloudflare R2 via SubtitleService / dual-subtitles.js
         const allSucceeded = translations.every(t => typeof t === 'string' && t.length > 0);
-        if (env.TRANSCRIPT_CACHE && batchKey && isFreshTranslation && allSucceeded) {
-            const cachePayload = JSON.stringify({ translations });
-            if (context.waitUntil) {
-                context.waitUntil(
-                    env.TRANSCRIPT_CACHE.put(batchKey, cachePayload, { expirationTtl: CACHE_TTL }).catch(() => {})
-                );
-            } else {
-                env.TRANSCRIPT_CACHE.put(batchKey, cachePayload, { expirationTtl: CACHE_TTL }).catch(() => {});
+        if (batchKey && allSucceeded) {
+            if (memBatchCache.size >= MAX_MEM_BATCHES) {
+                const oldest = memBatchCache.keys().next().value;
+                if (oldest) memBatchCache.delete(oldest);
             }
+            memBatchCache.set(batchKey, translations);
         }
 
         return jsonResponse({ translations }, 200, {

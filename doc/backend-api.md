@@ -42,13 +42,13 @@ Every incoming request passes through a multi-tier defense and rate-limiting pip
 - **Preflight Bypass**: Automatically lets `OPTIONS` requests pass through.
 
 ### 2.2. Distributed In-Memory + KV Rate Limiter (`rate-limiter.js`)
-To protect against DDoS and API credit depletion while strictly observing Cloudflare KV's **1,000 writes/day free limit**:
-- **In-Memory Fast Path**: Every warm isolate maintains a `memRateLimits` Map.
-- **Throttled KV Sync**: KV writes only fire if:
-  1. Rate limit is exceeded (to block across all global edge isolates).
-  2. Request count approaches limit ($> 80\%$).
-  3. Count has incremented by $\ge 5$ units since last sync.
-  4. $\ge 60$ seconds have passed since last sync.
+To protect against DDoS and API credit depletion while strictly preserving Cloudflare KV's **1,000 writes/day free limit**:
+- **In-Memory Fast Path**: Every warm Worker isolate maintains a local `memRateLimits` Map.
+- **Smart KV Sync**: To keep daily KV writes safely under quota while preventing abuse:
+  1. **Instant Global Block**: If rate limit is exceeded (`!allowed`), it immediately writes to KV to enforce the block across all global edge locations.
+  2. **Approaching Quota Protection**: When usage reaches $\ge 80\%$ of the allowed limit, it syncs to KV to tightly coordinate across edge isolates.
+  3. **Mid-Quota Sampling**: When usage is $\ge 50\%$ of quota and has incremented by $\ge 25$ units (`KV_SYNC_SAMPLE_RATE = 25`), it syncs once.
+  4. **Normal Usage Isolation**: Normal users operating comfortably below $50\%$ quota generate **zero KV writes** for rate limiting.
 - **Tiered Quotas**:
   | Tier | Native Transcripts (/hr) | Dual Subs (/hr) | Dictionary (/hr) | Tokenize (/hr) | Translate Texts (/hr) |
   | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -141,7 +141,11 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - `ko -> en`: Naver EnKo API
   - `ko -> vi`: Naver KoVi API $\rightarrow$ National Institute of Korean Language (KRDict)
   - `en -> en`: Datamuse API $\rightarrow$ Free Dictionary API
-  - **Cross-Language Fallback**: If no direct bilingual dictionary exists (e.g. `ko -> de`), fetches English definitions and translates them to target UI language using Google Translate GTX.
+- **Dual In-Memory + Edge Caching**:
+  - **In-Memory LRU Cache (`memPosDictCache`)**: Warm Worker isolates maintain up to 1,000 positive dictionary lookup entries with a 1-hour TTL. Frequently recurring words (particles, high-frequency verbs) return in $<0.1$ms with zero KV reads or writes (`X-Cache: HIT-MEMORY`).
+  - **In-Memory Negative Cache (`memNegDictCache`)**: Missing words are cached in an isolate `Set` to prevent repeated upstream scraping calls.
+  - **Cloudflare Edge CDN**: `Cache-Control: public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400`.
+  - **Cloudflare KV**: `CacheManager` provides 7-day persistence for long-tail lookups.
 
 ---
 
@@ -169,7 +173,7 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - If not cached: Returns `{ segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
 - **Client Cache Write-Back (`saveOnly: true` or `onlySave: true`)**:
   - When the client's lazy-loaded cue translations reach $\ge 80\%$ coverage (`QUALITY_THRESHOLD`), the frontend sends the compiled translated segments to `/api/dual-subtitles` with `saveOnly: true`. Supports long videos up to 10,000 segments.
-  - The backend filters out any untranslated segments matching source text (when source $\neq$ target), validates the quality threshold, and commits the translation to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. All future views by any user hit R2 directly (<50ms, \$0 translation cost).
+  - The backend filters out any untranslated segments matching source text (when source $\neq$ target), validates the quality threshold, and commits the translation to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. All future views by any user hit R2 directly (<50ms, $0 translation cost).
 - **Process (Full Translation Request)**:
   - Checks R2 cache: `translations/{videoId}/{sourceLang}-{targetLang}.json`. Automatically detects and invalidates legacy poisoned cache entries where translation mirrored source text.
   - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via direct Google Translate GTX with Lingva fallback to eliminate Cloudflare Function timeout aborts and 429 rate limit errors.
@@ -200,12 +204,12 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   }
   ```
 - **Max Batch Size**: 50 texts per request.
-- **Process**:
+- **Process & KV Quota Preservation (Rule 2)**:
   - Deduplicates texts before rate-limit unit deduction.
   - Checks warm worker isolate in-memory LRU phrase cache (`memPhraseCache`) for common subtitle phrases (e.g. greetings, common responses) to eliminate redundant network calls.
-  - Checks Cloudflare KV for cached full-batch response (`trbatch:v1:{source}:{target}:{hash}`).
+  - Checks warm isolate batch cache (`memBatchCache`) and existing KV entries before requesting external translation.
   - Translates missing items in bulk using XML-tagged index batching (`<t id="N">...</t>`) via Lingva/GTX with targeted individual recovery for any missing tags (avoiding 35x sequential fallback loops). Returns `null` on failed items instead of echoing back untranslated source text.
-  - Saves fresh batches in KV (7-day TTL) only when all items successfully translate to preserve Cloudflare KV write quota (Rule 2) and avoid caching failed results.
+  - **Zero KV Writes on Intermediate Slices**: Caches translated batches in isolate memory (`memBatchCache`). Full dual subtitles are permanently stored in Cloudflare R2 via `/api/dual-subtitles` write-back once $\ge 80\%$ translated, completely eliminating redundant KV write consumption on 50-cue chunks.
 
 ---
 
@@ -214,7 +218,10 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - `POST /api/tokenize/:lang` (Single text block)
   - `POST /api/tokenize-batch/:lang` (Array of up to 500 texts for bulk subtitle tokenization)
 - **Source**: `functions-src/api/tokenize/[lang].js`, `functions-src/api/tokenize-batch/[lang].js`
-- **Cache-First Architecture**: Both endpoints check Cloudflare KV (`tokens:v5:{lang}:{videoId}:{textsHash}` or `tokens:{lang}:{hash}`) *before* executing rate-limiting. Cache hits consume **0 rate limit quota** and return with `X-Cache: HIT`.
+- **Dual-Layer Cache Architecture**:
+  - In-memory warm isolate cache (`memTokenBatchCache`, up to 50 videos) resolves repeated requests in $<0.1$ms (`X-Cache: HIT-MEM`).
+  - Cloudflare KV (`tokens:v5:{lang}:{videoId}:{textsHash}`) provides edge persistence across isolates.
+  - Cache hits consume **0 rate limit quota** and return with `X-Cache: HIT`.
 - **Caching**: 30-day TTL in Cloudflare KV.
 - **Rate Limiting (Cache Miss Only)**:
   - Anonymous: 50 req/hr
@@ -227,11 +234,11 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 ### 3.7. Video Info Discovery API
 - **Route**: `GET /api/video-info?videoId={videoId}`
 - **Source**: `functions-src/api/video-info.js`
-- **Two-Tier Cache Strategy**:
-  1. KV cache check (`video-info:{videoId}`, 24-hour TTL).
-  2. D1 check (`video_languages` table).
-  3. YouTube oEmbed query (`https://www.youtube.com/oembed?url=...`).
-  4. Saves title and channel to D1 to conserve KV writes.
+- **D1 + In-Memory Zero-KV Architecture**:
+  1. Warm in-memory isolate cache check (`memVideoInfoCache`, 500 entries, 1-hour TTL) $\rightarrow$ returns in $<0.1$ms (`X-Cache: HIT-MEMORY`).
+  2. Cloudflare D1 query (`video_languages` table) $\rightarrow$ persistent SQLite at the edge (100,000 writes/day, 5,000,000 reads/day free tier).
+  3. YouTube oEmbed fallback $\rightarrow$ saves metadata to D1 and memory with edge CDN cache headers (`s-maxage=604800, stale-while-revalidate=86400`).
+  4. **Zero KV Writes**: Completely avoids writing to Cloudflare KV, saving $\sim 100\text{--}150$ daily KV writes.
 
 ---
 

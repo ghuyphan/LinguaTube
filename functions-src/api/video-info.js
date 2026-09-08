@@ -16,11 +16,14 @@ import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js'
 import {
     getVideoLanguages,
     saveVideoLanguages,
-    getVideoInfoFromKV,
-    saveVideoInfoToKV,
     detectLevelFromMetadata
 } from '../data/video-info-db.js';
 import { getVideoMetadata } from '../middlewares/video-validator.js';
+
+// In-memory cache across warm Worker isolate requests (Rule 2: In-Memory First)
+const memVideoInfoCache = new Map();
+const MAX_MEM_CACHE = 500;
+const MEM_CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour warm memory cache
 
 // Handle preflight requests
 export async function onRequestOptions() {
@@ -36,22 +39,20 @@ export async function onRequestGet(context) {
         return jsonResponse({ error: 'Missing or invalid videoId parameter' }, 400);
     }
 
-    const kv = env.TRANSCRIPT_CACHE;
     const db = env.VOCAB_DB;
-
     const CDN_CACHE_HEADER = 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400';
 
     try {
-        // Step 1: Check KV cache (fast path)
-        const kvResult = await getVideoInfoFromKV(kv, videoId);
-        if (kvResult) {
-            return jsonResponse({ ...kvResult, source: 'cache:kv' }, 200, {
-                'X-Cache': 'HIT',
+        // Step 1: Check in-memory isolate cache (0 KV, 0 D1, < 0.1ms)
+        const memHit = memVideoInfoCache.get(videoId);
+        if (memHit && (Date.now() - memHit.timestamp < MEM_CACHE_TTL_MS)) {
+            return jsonResponse({ ...memHit.data, source: 'cache:memory' }, 200, {
+                'X-Cache': 'HIT-MEMORY',
                 'Cache-Control': CDN_CACHE_HEADER
             });
         }
 
-        // Step 2: Check D1 (persistent storage)
+        // Step 2: Check D1 (persistent storage: 100,000 writes/day free tier)
         const d1Result = await getVideoLanguages(db, videoId);
 
         // Only return if we have valid metadata (title). 
@@ -77,8 +78,12 @@ export async function onRequestGet(context) {
                 levels
             };
 
-            // Also cache into KV for fast lookups
-            context.waitUntil?.(saveVideoInfoToKV(kv, videoId, result));
+            // Save to warm memory cache
+            if (memVideoInfoCache.size > MAX_MEM_CACHE) {
+                const oldestKey = memVideoInfoCache.keys().next().value;
+                memVideoInfoCache.delete(oldestKey);
+            }
+            memVideoInfoCache.set(videoId, { data: result, timestamp: Date.now() });
 
             return jsonResponse({ ...result, source: 'cache:d1' }, 200, {
                 'X-Cache': 'HIT',
@@ -121,6 +126,13 @@ export async function onRequestGet(context) {
         const existingLangs = d1Result?.availableLanguages || [];
 
         await saveVideoLanguages(db, videoId, existingLangs, null, metadata.title, metadata.author_name, false, levels);
+
+        // Cache in memory for warm isolate reuse
+        if (memVideoInfoCache.size > MAX_MEM_CACHE) {
+            const oldestKey = memVideoInfoCache.keys().next().value;
+            memVideoInfoCache.delete(oldestKey);
+        }
+        memVideoInfoCache.set(videoId, { data: result, timestamp: Date.now() });
 
         return jsonResponse({ ...result, source: 'youtube' }, 200, {
             'X-Cache': 'MISS',

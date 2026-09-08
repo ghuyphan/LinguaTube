@@ -43,8 +43,7 @@
 // Prevents burning daily Cloudflare KV write quota (1,000 writes/day free limit)
 const memRateLimits = new Map();
 const MAX_MEM_ENTRIES = 1000;
-const KV_SYNC_INTERVAL_MS = 60 * 1000; // Sync to KV at most once every 60s per client
-const KV_SYNC_SAMPLE_RATE = 5;         // Or every 5 requests
+const KV_SYNC_SAMPLE_RATE = 25; // Sync every 25 units when client is at or above 50% quota
 
 function cleanMemoryCache(now) {
     if (memRateLimits.size > MAX_MEM_ENTRIES) {
@@ -127,16 +126,16 @@ export async function consumeRateLimitUnits(cache, clientIP, config, units = 1) 
     const allowed = mem.count <= config.max;
     const remaining = Math.max(0, config.max - mem.count);
 
-    // Determine if we should sync to KV:
-    // 1. If limit exceeded (block across all isolates)
-    // 2. If approaching limit (> 80%)
-    // 3. If count incremented by KV_SYNC_SAMPLE_RATE units since last sync
-    // 4. If KV_SYNC_INTERVAL_MS has passed since last sync
+    // Determine if we should sync to KV to preserve free tier quota (1,000 writes/day):
+    // 1. If limit exceeded (!allowed) -> sync immediately to block abusive clients across all edge isolates
+    // 2. If approaching limit (>= 80% quota) -> sync to keep isolates tightly coordinated
+    // 3. If client has consumed >= 50% quota AND incremented by KV_SYNC_SAMPLE_RATE (25) units since last sync -> sync
+    // Normal clients operating comfortably below 50% quota NEVER write to KV.
     const approachingLimit = mem.count >= config.max * 0.8;
+    const midQuotaReached = mem.count >= config.max * 0.5;
     const unitThresholdReached = (mem.count - mem.kvKnownCount) >= KV_SYNC_SAMPLE_RATE;
-    const timeThresholdReached = (now - mem.lastKvSync) >= KV_SYNC_INTERVAL_MS;
 
-    const shouldSyncKv = cache && (!allowed || approachingLimit || unitThresholdReached || timeThresholdReached);
+    const shouldSyncKv = cache && (!allowed || approachingLimit || (midQuotaReached && unitThresholdReached));
 
     if (shouldSyncKv) {
         mem.lastKvSync = now;

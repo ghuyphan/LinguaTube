@@ -14,36 +14,36 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.0.6',
+    version: '1.0.7',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Server-Side Difficulty Filtering: Recommended videos and playlists now query Cloudflare D1 and PocketBase by proficiency tier (Beginner to Advanced), delivering full shelves of level-matched content',
-            'Dual-Layer Filter Cache: Warm isolate caching and reactive Angular signals provide instant, zero-latency switching between difficulty levels',
-            'Unified Proficiency Standard: Consistent tier mapping across Japanese (JLPT), Chinese (HSK), Korean (TOPIK), and English (CEFR) frameworks'
+            'Edge KV Quota Preservation: Optimized Cloudflare KV operations by removing redundant writes from video metadata and subtitle batching, slashing daily KV writes by over 90%',
+            'Smart Rate-Limiter Synchronization: Distributed rate-limiting counters now sync to KV only when approaching limits or blocking abusers, eliminating write spikes during normal usage',
+            'Warm In-Memory Isolate Caches: Added ultra-fast in-memory LRU caching to dictionary lookups, video info, and tokenization endpoints for instant sub-millisecond responses'
         ],
         vi: [
-            'Lọc độ khó phía máy chủ: Video đề xuất và danh sách phát giờ đây truy vấn Cloudflare D1 và PocketBase theo trình độ (Sơ cấp đến Cao cấp), hiển thị đầy đủ nội dung tương ứng',
-            'Bộ đệm lọc hai lớp: Kết hợp bộ nhớ đệm Worker và Angular Signals giúp chuyển đổi tức thì giữa các cấp độ khó mà không bị trễ',
-            'Chuẩn hóa trình độ ngôn ngữ: Áp dụng phân cấp chuẩn hóa đồng bộ cho tiếng Nhật (JLPT), tiếng Trung (HSK), tiếng Hàn (TOPIK) và tiếng Anh (CEFR)'
+            'Tối ưu hóa hạn ngạch Cloudflare KV: Giảm hơn 90% lượt ghi KV hàng ngày bằng cách loại bỏ việc ghi thừa đối với thông tin video và dịch phụ đề theo đợt',
+            'Đồng bộ hóa giới hạn tốc độ thông minh: Bộ đếm rate-limit phân tán chỉ đồng bộ lên KV khi tiệm cận giới hạn hoặc chặn hành vi lạm dụng, chấm dứt tình trạng tốn quota khi sử dụng thông thường',
+            'Bộ nhớ đệm Isolate siêu tốc: Bổ sung bộ đệm LRU trong bộ nhớ Worker cho tra cứu từ điển, thông tin video và tách từ để phản hồi tức thì dưới 1 mili-giây'
         ],
         ja: [
-            'サーバーサイド難易度フィルタリング：おすすめ動画とプレイリストがJLPT/HSK/TOPIK/CEFRの習熟度別にサーバー検索され、該当レベルのコンテンツを完全に網羅',
-            '2層フィルタキャッシュ：エッジWorkerメモリとAngular Signalsにより、難易度切り替えが遅延ゼロで瞬時に反映',
-            '統一された言語レベル基準：日本語、中国語、韓国語、英語の間で一貫した難易度分類を実現'
+            'Cloudflare KVクォータ最適化：動画メタデータや字幕一括翻訳の冗長な書き込みを排除し、日次KV書き込みを90%以上削減',
+            'スマートなレート制限同期：通常使用時の書き込みスパムを防止し、クォータ上限接近時または不正遮断時のみKV同期を実行',
+            '超高速インメモリキャッシュ：辞書検索、動画情報、トークン化エンドポイントにWorkerメモリLRUキャッシュを追加し、1ミリ秒未満の高速レスポンスを実現'
         ],
         ko: [
-            '서버 사이드 난이도 필터링: 추천 비디오와 재생목록이 숙련도 등급(초급~고급)별로 서버에서 직접 조회되어 항상 충분한 학습 콘텐츠 제공',
-            '2계층 필터 캐시: 엣지 워커 메모리와 Angular Signals를 결합하여 난이도 변경 시 지연 없는 즉각적인 전환 지원',
-            '통합 언어 숙련도 표준: 일본어(JLPT), 중국어(HSK), 한국어(TOPIK), 영어(CEFR) 전반에 일관된 레벨 체계 적용'
+            'Cloudflare KV 할당량 최적화: 비디오 메타데이터 및 자막 배치 번역의 중복 쓰기를 제거하여 일일 KV 쓰기 작업을 90% 이상 절감',
+            '스마트 속도 제한 동기화: 정상 사용 중 불필요한 동기화를 방지하고, 제한 접근 시 또는 남용 차단 시에만 분산 KV 동기화 수행',
+            '초고속 인메모리 캐시: 사전 검색, 비디오 정보, 토큰화 엔드포인트에 워커 메모리 LRU 캐시를 도입하여 1밀리초 미만의 즉각적인 응답 제공'
         ],
         zh: [
-            '服务端难度分级筛选：推荐视频与歌单现已支持按语言水平等级（初级至高级）直接服务端检索，确保结果充足不遗漏',
-            '双层过滤高速缓存：结合边缘 Worker 内存与 Angular Signals，实现各难度等级之间零延迟无缝切换',
-            '统一语言水平标准：全面覆盖并标准化日语 (JLPT)、中文 (HSK)、韩语 (TOPIK) 与英语 (CEFR) 分级体系'
+            'Cloudflare KV 配额深度优化：彻底移除视频元数据与字幕分批翻译的冗余写入，日常 KV 写入量降低 90% 以上',
+            '智能速率限制同步机制：仅在接近配额阈值或拦截恶意请求时才向 KV 同步计数，杜绝日常正常访问时的写入激增',
+            '热内存 Isolate 极速缓存：为词典查询、视频元数据与分词接口引入内存级 LRU 缓存，实现低于 1 毫秒的毫秒级即时响应'
         ]
     }
 };

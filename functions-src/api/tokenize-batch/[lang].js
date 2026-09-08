@@ -32,6 +32,10 @@ const RATE_LIMIT_CONFIG = {
 };
 const MAX_BATCH_SIZE = 500;
 
+// In-memory token batch cache across warm Worker isolates (Rule 2: In-Memory First)
+const memTokenBatchCache = new Map();
+const MAX_MEM_BATCH_VIDEOS = 50;
+
 /**
  * Simple hash function for cache key differentiation
  * Creates a short hash from the concatenation of all texts
@@ -59,7 +63,7 @@ export async function onRequest(context) {
 
     if (!SUPPORTED_LANGUAGES.has(lang)) {
         return jsonResponse(
-            { error: `Unsupported language: ${lang}. Supported: ja, ko, zh, en` },
+            { error: `Language "${lang}" not supported` },
             400
         );
     }
@@ -97,12 +101,28 @@ export async function onRequest(context) {
         // Cache hits do not consume rate limit quota, protecting both user limit and KV writes
         const textsHash = hashTexts(texts);
         const cacheKey = `tokens:v5:${lang}:${videoId}:${textsHash}`;
+
+        // 1. Check warm in-memory cache (0 KV ops, < 0.1ms)
+        const memHit = memTokenBatchCache.get(cacheKey);
+        if (memHit && memHit.tokens && memHit.tokens.length === texts.length) {
+            return jsonResponse(memHit, 200, {
+                'Cache-Control': 'public, max-age=604800',
+                'X-Cache': 'HIT-MEM'
+            });
+        }
+
+        // 2. Check KV cache
         if (TOKEN_CACHE) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
                 // Validate: cached tokens count must match requested texts count
                 if (cached && cached.tokens && cached.tokens.length === texts.length) {
                     console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
+                    if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
+                        const oldest = memTokenBatchCache.keys().next().value;
+                        if (oldest) memTokenBatchCache.delete(oldest);
+                    }
+                    memTokenBatchCache.set(cacheKey, cached);
                     return jsonResponse(cached, 200, {
                         'Cache-Control': 'public, max-age=604800',
                         'X-Cache': 'HIT'
@@ -136,6 +156,12 @@ export async function onRequest(context) {
 
         const result = { tokens: allTokens };
 
+        // Save to warm in-memory cache
+        if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
+            const oldest = memTokenBatchCache.keys().next().value;
+            if (oldest) memTokenBatchCache.delete(oldest);
+        }
+        memTokenBatchCache.set(cacheKey, result);
 
         // Cache as ONE write for entire video (30 day TTL)
         if (TOKEN_CACHE) {

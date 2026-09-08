@@ -195,17 +195,17 @@ Bucket binding: `TRANSCRIPT_STORAGE` (`linguatube-transcripts`)
 
 Namespace binding: `TRANSCRIPT_CACHE`
 
-| Key Pattern | Value Type | TTL | Purpose |
+| Key Pattern | Value Type | TTL | Purpose & Quota Optimization |
 | :--- | :--- | :--- | :--- |
-| `ratelimit:{prefix}:{clientId}` | JSON `{ count, resetAt }` | Dynamic (window) | Distributed IP/user rate limiting |
-| `trbatch:v1:{source}:{target}:{hash}` | JSON `{ translations: string[] }` | 7 Days | Batch translation response cache |
-| `tokens:{lang}:{hash}` | JSON `{ tokens: Token[] }` | 30 Days | Precomputed Kuromoji / Intl tokens |
-| `video-info:{videoId}` | JSON `{ title, duration, ... }` | 24 Hours | Fast YouTube oEmbed metadata |
-| `dict:v4:{from}:{to}:{word}` | JSON `DictionaryEntry[]` | 7 Days | Multi-source dictionary lookups |
-| `no-transcript:{videoId}:{lang}:{source}` | String `'1'` | 7 Days | KV fast-path for non-existent transcripts |
+| `ratelimit:{prefix}:{clientId}` | JSON `{ count, resetAt }` | Dynamic (window) | Distributed rate limiting (Smart sync: only at $\ge 50\%$, $\ge 80\%$, or `!allowed`) |
+| `trbatch:v1:{source}:{target}:{hash}` | JSON `{ translations: string[] }` | 7 Days | Read fallback (New batches use in-memory `memBatchCache` + R2 write-back) |
+| `tokens:v5:{lang}:{videoId}:{textsHash}` | JSON `{ tokens: Token[] }` | 30 Days | Precomputed Kuromoji / Intl tokens (with warm in-memory cache) |
+| `dict:v4:{from}:{to}:{word}` | JSON `DictionaryEntry[]` | 7 Days | Multi-source dictionary lookups (with warm in-memory `memPosDictCache`) |
 | `keys:cooldown:{provider}:{key}` | String `timestamp` | 1 Hour | API key rotation rate-limit cooldown |
 | `order:{orderCode}` | JSON `{ orderCode, userId, planId, tier, amount, status }` | 15 Minutes | Pending payOS VietQR order metadata |
 | `order_processed:{orderCode}` | String `'1'` | 30 Days | Webhook processing idempotency guard |
+
+> **KV Quota Optimization Invariant (Rule 2)**: Cloudflare KV free tier limits write operations to **1,000 writes/day**. Video metadata (`video-info`) and difficulty levels (`levels`) are stored exclusively in **Cloudflare D1** (100,000 writes/day) rather than KV. Full dual-subtitle transcripts are persisted to **Cloudflare R2** (33,000 writes/day). Normal rate-limiting checks operate in-memory and generate zero KV writes unless a client approaches their quota limit.
 
 ---
 

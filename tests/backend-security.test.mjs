@@ -332,5 +332,43 @@ test('getRecommendedVideosFromD1: queries and formats transcribed videos accurat
   assert.deepEqual(await getRecommendedVideosFromD1(mockDb, null), []);
 });
 
+test('RateLimiter: optimizes KV writes by suppressing syncs when comfortably below quota', async () => {
+  const { consumeRateLimitUnits } = await import('../functions-src/middlewares/rate-limiter.js');
+
+  let putCount = 0;
+  const mockKV = {
+    get: async () => null,
+    put: async () => { putCount++; }
+  };
+
+  const config = { max: 100, windowSeconds: 3600, keyPrefix: 'test_kv_opt' };
+  const clientIP = `test_ip_${Date.now()}`;
+
+  // Requests below 50% quota should NOT trigger KV writes
+  const res1 = await consumeRateLimitUnits(mockKV, clientIP, config, 10);
+  assert.equal(res1.allowed, true);
+  assert.equal(putCount, 0, 'Safe usage (< 50% quota) should not trigger KV put');
+
+  // Another batch below 50% quota
+  const res2 = await consumeRateLimitUnits(mockKV, clientIP, config, 20);
+  assert.equal(res2.allowed, true);
+  assert.equal(putCount, 0, 'Total count 30 < 50 should still not trigger KV put');
+
+  // Crossing 50% quota (count = 55, increment = 55 >= 25) should trigger sync once
+  const res3 = await consumeRateLimitUnits(mockKV, clientIP, config, 25);
+  assert.equal(res3.allowed, true);
+  assert.equal(putCount, 1, 'Crossing 50% quota with unit threshold should sync to KV');
+
+  // Approaching 80% quota should trigger sync
+  const res4 = await consumeRateLimitUnits(mockKV, clientIP, config, 30); // count = 85
+  assert.equal(res4.allowed, true);
+  assert.equal(putCount, 2, 'Reaching >= 80% quota should sync to KV');
+
+  // Exceeding quota should trigger sync immediately to block globally
+  const res5 = await consumeRateLimitUnits(mockKV, clientIP, config, 20); // count = 105 > 100
+  assert.equal(res5.allowed, false);
+  assert.equal(putCount, 3, 'Exceeding quota must sync to block across all isolates');
+});
+
 
 

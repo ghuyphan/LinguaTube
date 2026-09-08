@@ -44,9 +44,7 @@ export async function onRequestPost(context) {
         }
 
         const db = env.VOCAB_DB;
-        const kv = env.TRANSCRIPT_CACHE;
-
-        const updatedLevels = await saveVideoLevel(db, kv, videoId, language, rawLevel);
+        const updatedLevels = await saveVideoLevel(db, null, videoId, language, rawLevel);
 
         return jsonResponse({
             success: true,

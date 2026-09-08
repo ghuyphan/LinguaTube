@@ -122,15 +122,6 @@ export async function saveVideoLevel(db, kv, videoId, language, level) {
             await saveVideoLanguages(db, videoId, [language], null, null, null, false, currentLevels);
         }
 
-        // Update KV cache if available
-        if (kv) {
-            const cachedInfo = await getVideoInfoFromKV(kv, videoId);
-            if (cachedInfo) {
-                cachedInfo.levels = currentLevels;
-                await saveVideoInfoToKV(kv, videoId, cachedInfo);
-            }
-        }
-
         return currentLevels;
     } catch (err) {
         console.error('[VideoInfoDB] saveVideoLevel error:', err.message);
@@ -348,19 +339,16 @@ export async function getVideoInfoFromKV(kv, videoId) {
 }
 
 /**
- * Save video info to KV cache
+ * Save video info to KV cache (Deprecated: No-op to preserve 1,000 writes/day KV quota per Rule 2)
+ * Video metadata is permanently stored in Cloudflare D1 with 100,000 writes/day.
  * @param {KVNamespace} kv
  * @param {string} videoId
  * @param {Object} info
  */
 export async function saveVideoInfoToKV(kv, videoId, info) {
-    if (!kv || !videoId) return;
-
-    try {
-        await kv.put(`video-info:${videoId}`, JSON.stringify(info), {
-            expirationTtl: VIDEO_INFO_KV_TTL
-        });
-    } catch { }
+    // Intentionally no-op to preserve Cloudflare KV write quotas.
+    // D1 + CDN HTTP cache handles persistence and fast edge lookups.
+    return;
 }
 
 // ============================================================================
