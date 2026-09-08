@@ -1,19 +1,17 @@
-import { Injectable, inject, signal, computed, effect, untracked } from '@angular/core';
+import { Injectable, inject, computed, effect, untracked } from '@angular/core';
 import {
     Achievement,
     AchievementCategory,
-    AchievementTier,
-    UserGamificationState
+    AchievementTier
 } from '../../models/gamification.model';
 import { IconName } from '../../shared/components/icon/icon.component';
 import { OfflineVocabularyRepository } from '../repositories/offline-vocabulary.repository';
 import { OfflineHistoryRepository } from '../repositories/offline-history.repository';
 import { OfflineStreakRepository } from '../repositories/offline-streak.repository';
+import { OfflineGamificationRepository } from '../repositories/offline-gamification.repository';
 import { ToastService } from './toast.service';
 import { I18nService } from './i18n.service';
 import { AuthService } from './auth.service';
-
-const STORAGE_KEY = 'linguatube_gamification';
 
 interface AchievementDefinition {
     id: string;
@@ -61,6 +59,7 @@ const ACHIEVEMENT_CATALOG: AchievementDefinition[] = [
     providedIn: 'root'
 })
 export class GamificationService {
+    private repo = inject(OfflineGamificationRepository);
     private vocabRepo = inject(OfflineVocabularyRepository);
     private historyRepo = inject(OfflineHistoryRepository);
     private streakRepo = inject(OfflineStreakRepository);
@@ -68,15 +67,8 @@ export class GamificationService {
     private i18n = inject(I18nService);
     private auth = inject(AuthService);
 
-    // Persistent State
-    readonly rawState = signal<UserGamificationState>({
-        xp: 0,
-        level: 1,
-        unlockedAchievements: {},
-        notifiedAchievements: [],
-        totalVideosWatched: 0,
-        totalQuizzesCompleted: 0,
-    });
+    // Persistent State managed by OfflineGamificationRepository
+    readonly rawState = this.repo.state;
 
     // Reactive signals
     readonly totalXP = computed(() => this.rawState().xp);
@@ -158,77 +150,41 @@ export class GamificationService {
     readonly totalAchievementsCount = ACHIEVEMENT_CATALOG.length;
 
     constructor() {
-        this.loadFromStorage();
-
         // Reactive effect: Automatically check milestones and award rewards whenever stats update
         effect(() => {
             this.evaluateMilestones();
-        });
-
-        // Clear gamification state on logout
-        this.auth.logoutEvent.subscribe(() => {
-            this.rawState.set({
-                xp: 0,
-                level: 1,
-                unlockedAchievements: {},
-                notifiedAchievements: [],
-                totalVideosWatched: 0,
-                totalQuizzesCompleted: 0,
-            });
-            localStorage.removeItem(STORAGE_KEY);
         });
     }
 
     /**
      * Award XP to the user and persist
      */
-    addXP(amount: number, reason?: string): void {
+    addXP(amount: number, _reason?: string): void {
         if (amount <= 0) return;
 
-        this.rawState.update(prev => {
-            const newXP = prev.xp + amount;
-            const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
+        const prevLevel = this.userLevel();
+        this.repo.addXP(amount);
+        const newLevel = this.userLevel();
 
-            // Level-up celebration
-            if (newLevel > prev.level) {
-                const levelUpMsg = `${this.i18n.t('gamification.levelUp') || 'Level Up!'} 🎉 ${this.i18n.t('gamification.reachedLevel') || 'You reached Level'} ${newLevel}!`;
-                this.toast.show(levelUpMsg, { type: 'success', icon: 'sparkles', duration: 4500 });
-            } else if (reason) {
-                // Minor toast or silent
-            }
-
-            const updated: UserGamificationState = {
-                ...prev,
-                xp: newXP,
-                level: newLevel
-            };
-            this.saveToStorage(updated);
-            return updated;
-        });
+        // Level-up celebration
+        if (newLevel > prevLevel) {
+            const levelUpMsg = `${this.i18n.t('gamification.levelUp') || 'Level Up!'} 🎉 ${this.i18n.t('gamification.reachedLevel') || 'You reached Level'} ${newLevel}!`;
+            this.toast.show(levelUpMsg, { type: 'success', icon: 'sparkles', duration: 4500 });
+        }
     }
 
     /**
      * Record video completion (>= 80% watched)
      */
     recordVideoCompleted(): void {
-        this.rawState.update(prev => {
-            const updated = { ...prev, totalVideosWatched: prev.totalVideosWatched + 1 };
-            this.saveToStorage(updated);
-            return updated;
-        });
-        this.addXP(25, 'video_completed');
+        this.repo.recordVideoCompleted();
     }
 
     /**
      * Record subtitle quiz completion
      */
     recordQuizCompleted(): void {
-        this.rawState.update(prev => {
-            const updated = { ...prev, totalQuizzesCompleted: prev.totalQuizzesCompleted + 1 };
-            this.saveToStorage(updated);
-            return updated;
-        });
-        this.addXP(15, 'quiz_completed');
+        this.repo.recordQuizCompleted();
     }
 
     /**
@@ -239,64 +195,31 @@ export class GamificationService {
 
         untracked(() => {
             const state = this.rawState();
-            let stateChanged = false;
-            const newUnlocked: Record<string, string> = { ...state.unlockedAchievements };
-            const newNotified = [...state.notifiedAchievements];
+            const newUnlocked: Record<string, string> = {};
+            const newlyNotified: string[] = [];
             let xpGained = 0;
 
             for (const ach of list) {
-                if (ach.unlocked && !newUnlocked[ach.id]) {
+                if (ach.unlocked && !state.unlockedAchievements[ach.id]) {
                     newUnlocked[ach.id] = ach.unlockedAt || new Date().toISOString();
                     xpGained += ach.xpReward;
-                    stateChanged = true;
                 }
 
                 // Toast newly unlocked if not notified yet
-                if (ach.unlocked && !newNotified.includes(ach.id)) {
-                    newNotified.push(ach.id);
-                    stateChanged = true;
+                if (ach.unlocked && !state.notifiedAchievements.includes(ach.id) && !newlyNotified.includes(ach.id)) {
+                    newlyNotified.push(ach.id);
                     const title = this.i18n.t(ach.titleKey) || ach.id;
                     const toastMsg = `🏆 ${this.i18n.t('gamification.badgeUnlocked') || 'Achievement Unlocked'}: ${title} (+${ach.xpReward} XP)`;
                     this.toast.show(toastMsg, { type: 'success', icon: 'trophy', duration: 4000 });
                 }
             }
 
-            if (stateChanged) {
-                this.rawState.update(prev => {
-                    const updated: UserGamificationState = {
-                        ...prev,
-                        xp: prev.xp + xpGained,
-                        unlockedAchievements: newUnlocked,
-                        notifiedAchievements: newNotified,
-                        level: Math.max(1, Math.floor(Math.sqrt((prev.xp + xpGained) / 100)) + 1)
-                    };
-                    this.saveToStorage(updated);
-                    return updated;
-                });
+            if (Object.keys(newUnlocked).length > 0 || xpGained > 0) {
+                this.repo.unlockAchievements(newUnlocked, xpGained);
+            }
+            if (newlyNotified.length > 0) {
+                this.repo.markNotified(newlyNotified);
             }
         });
-    }
-
-    private loadFromStorage(): void {
-        try {
-            const raw = localStorage.getItem(STORAGE_KEY);
-            if (raw) {
-                const parsed = JSON.parse(raw);
-                this.rawState.set({
-                    xp: parsed.xp || 0,
-                    level: parsed.level || 1,
-                    unlockedAchievements: parsed.unlockedAchievements || {},
-                    notifiedAchievements: parsed.notifiedAchievements || [],
-                    totalVideosWatched: parsed.totalVideosWatched || 0,
-                    totalQuizzesCompleted: parsed.totalQuizzesCompleted || 0
-                });
-            }
-        } catch { }
-    }
-
-    private saveToStorage(state: UserGamificationState): void {
-        try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-        } catch { }
     }
 }

@@ -291,7 +291,7 @@ export class VideoPlayerComponent implements OnDestroy {
     // Initialize player when video exists but player isn't ready
     effect(() => {
       const currentVideo = this.youtube.currentVideo();
-      const hasUrlId = !!this.route.snapshot.queryParamMap.get('id');
+      const hasUrlId = !!(this.route.snapshot.queryParamMap.get('id') || this.route.snapshot.queryParamMap.get('v'));
       // Only restore if we have a current video, URL explicitly has a video ID, player is NOT ready, and we are NOT in the middle of loading a new one
       if (hasUrlId && currentVideo && !this.youtube.isReady() && !this.isLoading() && !this.youtube.pendingVideoId()) {
         const savedTime = this.youtube.currentTime();

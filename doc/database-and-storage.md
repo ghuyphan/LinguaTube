@@ -265,9 +265,18 @@ Hosted at `https://voca.pockethost.io`.
   - `video_count`: Integer
   - `thumbnail`: URL string
   - `save_count`: Integer
-  - `is_featured`: Boolean
+### 5.6. Collection: `gamification`
+- Synchronized user XP, level, video & quiz counts, and unlocked achievements:
+  - `id`: 15-character deterministic hash (`btoa(userId + ':gamification').slice(0, 15)`)
+  - `user`: Relation $\rightarrow$ `users.id` (Single, Nonempty)
+  - `xp`: Integer (Total accumulated experience points)
+  - `level`: Integer (Current level calculated from XP)
+  - `total_videos_watched`: Integer (Completed video lessons)
+  - `total_quizzes_completed`: Integer (Completed vocabulary quizzes)
+  - `unlocked_achievements`: JSON Object mapping achievement badge IDs to `{ id, unlockedAt }`
+  - `notified_achievements`: JSON Array of badge IDs already shown to user in toasts
 
-### 5.6. PocketBase Server Hooks (`streaks.pb.js`)
+### 5.7. PocketBase Server Hooks (`streaks.pb.js`)
 Executed server-side on PocketBase:
 - `POST /api/streaks/record-activity`: Records daily user practice, awards freeze items at milestones (7, 30, 100 days), and increments streaks.
 - `GET /api/streaks/me`: Retrieves current streak status and activity calendar.

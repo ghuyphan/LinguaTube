@@ -9,6 +9,7 @@ import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.compo
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { TurnstileComponent } from '../../../shared/components/turnstile/turnstile.component';
+import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
@@ -38,7 +39,8 @@ import { formatTime } from '../../../core/utils';
     ConfirmDialogComponent,
     IconComponent,
     BottomSheetComponent,
-    TurnstileComponent
+    TurnstileComponent,
+    OptionPickerComponent
   ],
   templateUrl: './video-page.component.html',
   styleUrls: ['./video-page.component.scss']
@@ -70,6 +72,66 @@ export class VideoPageComponent implements OnInit {
   recommendedVideos = this.videoRecommendation.recommendedVideos;
   isVideosLoading = this.videoRecommendation.isLoading;
   formatVideoTime = formatTime;
+
+  // Video level filter state for recommended videos
+  videoLevelFilter = signal<string>('all');
+  showLevelFilter = signal<boolean>(false);
+
+  readonly levelFilterOptions = computed<OptionItem[]>(() => {
+    const lang = this.settings.settings().language;
+    let beginnerBadge = 'N5';
+    let elemBadge = 'N4';
+    let interBadge = 'N3';
+    let upperBadge = 'N2';
+    let advBadge = 'N1';
+
+    if (lang === 'zh') {
+      beginnerBadge = 'HSK 1';
+      elemBadge = 'HSK 2';
+      interBadge = 'HSK 3-4';
+      upperBadge = 'HSK 5';
+      advBadge = 'HSK 6';
+    } else if (lang === 'ko') {
+      beginnerBadge = 'TOPIK 1';
+      elemBadge = 'TOPIK 2';
+      interBadge = 'TOPIK 3-4';
+      upperBadge = 'TOPIK 5';
+      advBadge = 'TOPIK 6';
+    } else if (lang === 'en') {
+      beginnerBadge = 'A1';
+      elemBadge = 'A2';
+      interBadge = 'B1';
+      upperBadge = 'B2';
+      advBadge = 'C1-C2';
+    }
+
+    return [
+      { value: 'all', label: this.i18n.t('level.allLevels') || 'All Levels', icon: 'sparkles' },
+      { value: 'beginner', label: this.i18n.t('level.beginner') || 'Beginner', badge: beginnerBadge },
+      { value: 'elementary', label: this.i18n.t('level.elementary') || 'Elementary', badge: elemBadge },
+      { value: 'intermediate', label: this.i18n.t('level.intermediate') || 'Intermediate', badge: interBadge },
+      { value: 'upper_intermediate', label: this.i18n.t('level.upper_intermediate') || this.i18n.t('level.upperIntermediate') || 'Upper Intermediate', badge: upperBadge },
+      { value: 'advanced', label: this.i18n.t('level.advanced') || 'Advanced', badge: advBadge }
+    ];
+  });
+
+  readonly filteredRecommendedVideos = computed(() => {
+    const videos = this.recommendedVideos();
+    const filter = this.videoLevelFilter();
+    if (!filter || filter === 'all') return videos;
+    return videos.filter(v => v.tier === filter);
+  });
+
+  getLevelFilterLabel(): string {
+    const val = this.videoLevelFilter();
+    const found = this.levelFilterOptions().find(o => o.value === val);
+    return found ? found.label : (this.i18n.t('level.allLevels') || 'All Levels');
+  }
+
+  onLevelFilterChange(level: string): void {
+    this.videoLevelFilter.set(level);
+    this.showLevelFilter.set(false);
+  }
 
   // Sidebar tab state (only used when playlist is active)
   sidebarTab = signal<'playlist' | 'vocab'>('playlist');
@@ -137,7 +199,7 @@ export class VideoPageComponent implements OnInit {
     if (!video?.videoId) return;
     this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { v: video.videoId },
+      queryParams: { id: video.videoId, v: null },
       queryParamsHandling: 'merge'
     });
     void this.loadVideoFromUrl(video.videoId);
@@ -207,6 +269,7 @@ export class VideoPageComponent implements OnInit {
     // Automatically fetch server-side recommended playlists and videos when active language changes
     effect(() => {
       const currentLang = this.settings.settings().language;
+      this.videoLevelFilter.set('all');
       void this.playlistService.loadRecommendedPlaylists(currentLang);
       void this.videoRecommendation.loadRecommendedVideos(currentLang);
     });
@@ -263,7 +326,7 @@ export class VideoPageComponent implements OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.route.queryParamMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(params => {
-        const videoId = params.get('id');
+        const videoId = params.get('id') || params.get('v');
         const playlistId = params.get('playlist');
         this.activePlaylistId.set(playlistId);
         const currentLang = this.settings.settings().language;
@@ -451,7 +514,7 @@ export class VideoPageComponent implements OnInit {
 
     const duration = Math.round(this.youtube.duration()) || undefined;
 
-    this.transcript.generateWithAI(currentVideo.id, lang, undefined, token, duration)
+    this.transcript.generateWithAI(currentVideo.id, lang, undefined, token, duration, currentVideo.title, currentVideo.channel)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (cues) => {
@@ -592,7 +655,8 @@ export class VideoPageComponent implements OnInit {
   private fetchCaptions(videoId: string): void {
     const lang = this.settings.settings().language;
     const duration = Math.round(this.youtube.duration()) || undefined;
-    this.transcript.fetchTranscript(videoId, lang, duration)
+    const currentVid = this.youtube.currentVideo();
+    this.transcript.fetchTranscript(videoId, lang, duration, currentVid?.title, currentVid?.channel)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (cues) => {

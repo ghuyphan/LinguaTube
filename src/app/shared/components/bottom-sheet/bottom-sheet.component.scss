@@ -179,8 +179,18 @@
 .sheet-content {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+}
+
+// Suppress scrollbar flicker during dynamic height animation
+.sheet.animating-height .sheet-content {
+    overflow-y: hidden !important;
+}
+
+.sheet-content-inner {
+    width: 100%;
 }
 
 // Safe area padding for mobile - minimal base padding, components add more as needed

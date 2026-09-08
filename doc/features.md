@@ -164,7 +164,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
 - **Isolated Screen State**: Standalone dictionary searches are decoupled from in-video subtitle clicks, ensuring subtitle queries never leak into or overwrite standalone search history or panels.
 - **Multi-Entry Disambiguation**: When queries match multiple dictionary entries or homonyms, tabbed selectors allow learners to explore all matching entries.
 - **Integrated Grammar Detection**: Searching words or grammatical stems also queries `GrammarService` to surface relevant grammar patterns, formation rules, and example sentences directly beneath definitions.
-- **Word Popup UI**: Positioned next to clicked subtitle words with part of speech tags, definitions, language switcher, and direct save-to-vocab action.
+- **Word Popup UI (`WordPopupComponent`) & Smooth Height Transitions**: Hosted within `BottomSheetComponent`. When the popup opens, an initial shimmer skeleton renders instantly. As soon as dictionary definitions, translations, or example sentences resolve, the bottom sheet animates its height smoothly with the Web Animations API, eliminating jarring layout jumps.
 - **Negative Caching**: Empty results are cached in an in-memory `Set` to prevent hammering external dictionary APIs.
 - **Persistence**: Results cached in Cloudflare KV for 7 days, with language-scoped local search history (`linguatube_recent_searches_${lang}`).
 
@@ -182,6 +182,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
   Recognizes split correlative pairs (e.g. `虽然...但是...`, `not only...but also...`, `either...or...`).
 - **Dynamic Translation Packs**:
   Grammar definitions are translated across 16 combinations (JA, KO, ZH, EN into VI, ZH, KO, JA) plus native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`).
+- **Grammar Popup UI (`GrammarPopupComponent`)**: Hosted inside `BottomSheetComponent` with smooth dynamic height transitions as users explore formation rules, alternative explanations, or translated example sentences.
 
 ---
 
@@ -323,14 +324,15 @@ Voca features a multi-tiered credit and quota management system designed to bala
 ### 11.3. payOS VietQR Open Banking & Pro Upgrade
 - **Why payOS?**: Zero gateway subscription fees (compared to ApiPay's 100k-150k VND/month fee), official VietQR bank transfer rails, and zero storage of raw banking credentials.
 - **VietQR Payment Flow**:
-  1. User selects "Upgrade to Pro" in `AiCreditsDialogComponent`.
-  2. Frontend calls `/api/payment/create-order` with the chosen plan (`pro_1m` for 49,000 VND or `pro_1y` for 490,000 VND).
-  3. Server signs payment payload with `HMAC-SHA256` using `PAYOS_CHECKSUM_KEY` and creates an official payment link via payOS.
-  4. Frontend displays a responsive VietQR card featuring the generated QR image, payment details, and real-time polling via `PaymentService`.
-  5. User scans with any Vietnamese banking app (Vietcombank, MBBank, Techcombank, etc.).
-  6. Upon transfer settlement, payOS fires a secure webhook to `/api/payment/webhook`.
-  7. Server verifies webhook HMAC signature, checks idempotency via Cloudflare KV (`order_processed:{orderCode}`), upgrades the user's subscription in PocketBase (`subscription_tier = 'pro'`, `diamonds = 20`), and sets expiry timestamp.
-  8. Polling or next action detects the new tier, celebrates with confetti/toast, and unlocks Pro benefits immediately.
+  1. User selects "Upgrade" in `SidebarComponent`, `SettingsSheetComponent`, or the Pro teaser banner in `AiCreditsDialogComponent`.
+  2. Dedicated `ProUpgradeDialogComponent` opens, presenting monthly (`pro_1m` @ 49,000 VND) and annual (`pro_1y` @ 490,000 VND with 17% savings) options alongside feature comparisons.
+  3. Frontend calls `POST /api/payment/create-order` with the chosen plan.
+  4. Server signs payment payload with `HMAC-SHA256` using `PAYOS_CHECKSUM_KEY`, creates an order via payOS, parses raw EMVCo strings into scannable QR images, and returns structured banking info (`accountNumber`, `accountName`, `bin`, `description`).
+  5. Frontend displays a responsive VietQR card featuring the generated QR image, mobile checkout deep link, copyable account details, and active polling via `PaymentService`.
+  6. User scans with any Vietnamese banking app (Vietcombank, MBBank, Techcombank, etc.).
+  7. Upon transfer settlement, payOS fires a secure webhook to `/api/payment/webhook`.
+  8. Server verifies webhook HMAC signature, checks idempotency via Cloudflare KV (`order_processed:{orderCode}`), upgrades the user's subscription in PocketBase (`subscription_tier = 'pro'`, `diamonds = 20`), and sets expiry timestamp.
+  9. Polling or next user action detects the new tier, refreshes user auth state, celebrates with confetti/toast, and unlocks Pro benefits immediately.
 
 ---
 
@@ -469,4 +471,23 @@ Achievements are organized into 5 core learning categories:
   - Seed community benchmarks ensure immediate interactivity without network delays or blank states.
   - Generates deterministic persistent guest IDs for learners browsing without PocketBase accounts.
   - Automatically syncs XP upon login or level-up events.
+
+### 13.5. Offline-First PocketBase Persistence (`OfflineGamificationRepository`)
+- **Deterministic Entity IDs**:
+  - Gamification records use a deterministic ID (`btoa(userId + ':gamification').slice(0, 15)`) adhering to PocketBase's 15-character alphanumeric ID constraint.
+  - Guarantees zero duplicate records across multiple browser tabs, client restarts, or concurrent login sessions.
+- **Bi-Directional Timestamp Merge Strategy**:
+  - When merging local and remote gamification states, the repository computes:
+    - $\text{XP} = \max(\text{local.xp}, \text{remote.xp})$ (strictly monotonic progression).
+    - $\text{Level} = \left\lfloor\sqrt{\text{XP}/100}\right\rfloor + 1$.
+    - Video watch and quiz counts: $\max(\text{local}, \text{remote})$.
+    - Unlocked achievements: Union of all unlocked badge IDs, preserving the earliest `unlockedAt` timestamp for each badge.
+    - Notified achievements: Union of all acknowledged notification IDs.
+- **Debounced Remote Sync & Offline Tolerance**:
+  - Local state is updated instantaneously via Angular signals and persisted to `localStorage`.
+  - Remote synchronization is debounced (3 seconds) to prevent hammering PocketBase on rapid actions (e.g. rapid flashcard clicks).
+  - Graceful degradation: If the `gamification` collection does not exist yet in PocketBase (HTTP 404), requests fail silently and safely while keeping local progress 100% functional.
+- **Session Teardown & Clean Logout**:
+  - Progress is safely isolated per user account.
+  - On logout, user state transitions smoothly without destructive data loss.
 

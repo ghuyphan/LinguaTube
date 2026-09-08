@@ -1,0 +1,248 @@
+<div class="pro-upgrade-dialog">
+    <!-- Header / Hero Section -->
+    <div class="header-section">
+        <div class="pro-hero-icon" [class.is-active]="isProOrPremium()">
+            <app-icon name="crown" [size]="36" class="hero-crown" />
+        </div>
+
+        <div class="title-group">
+            <h2>{{ i18n.t('pro.title') || 'Voca Pro' }}</h2>
+            <p class="subtitle">{{ i18n.t('pro.subtitle') || 'Supercharge your language immersion with unlimited AI potential' }}</p>
+        </div>
+    </div>
+
+    @if (isProOrPremium() && !payment.currentOrder()) {
+        <!-- Already Pro State -->
+        <div class="already-pro-card">
+            <div class="status-badge status-paid">
+                <app-icon name="check-circle" [size]="16" />
+                <span>{{ i18n.t('pro.activeSubscription') || 'Active Pro Subscription' }}</span>
+            </div>
+            <p class="already-pro-desc">
+                {{ i18n.t('pro.enjoyingBenefits') || 'You have unlocked all Pro immersion features, daily 20 AI diamonds, and priority speech transcription.' }}
+            </p>
+            <button class="btn btn-primary btn-full" (click)="dismissed.emit()">
+                {{ i18n.t('common.close') || 'Done' }}
+            </button>
+        </div>
+    } @else {
+        @if (payment.currentOrder(); as order) {
+            <!-- Active Payment Checkout View -->
+        <div class="checkout-card">
+            <div class="checkout-header">
+                <div class="checkout-plan-title">
+                    <span class="plan-label">{{ order.plan === 'pro_1y' ? (i18n.t('pro.planAnnual') || 'Voca Pro (1 Year)') : (i18n.t('pro.planMonthly') || 'Voca Pro (1 Month)') }}</span>
+                    <span class="plan-price">{{ order.amount | number }} đ</span>
+                </div>
+            </div>
+
+            <!-- VietQR Container -->
+            <div class="qr-box">
+                @if (order.qrCode) {
+                    <img [src]="order.qrCode" alt="VietQR Payment Code" class="qr-image" />
+                } @else {
+                    <div class="qr-loading">
+                        <span class="spinner-dot"></span>
+                        <span>{{ i18n.t('pro.loadingQR') || 'Generating QR...' }}</span>
+                    </div>
+                }
+            </div>
+
+            <p class="qr-hint">
+                <app-icon name="info" [size]="14" />
+                <span>{{ i18n.t('pro.scanPrompt') || 'Scan VietQR with any mobile banking or e-wallet app' }}</span>
+            </p>
+
+            <!-- Direct mobile link fallback -->
+            @if (order.checkoutUrl) {
+                <button class="btn-checkout-link" type="button" (click)="openCheckoutUrl(order.checkoutUrl)">
+                    <app-icon name="external-link" [size]="14" />
+                    <span>{{ i18n.t('pro.openDirectLink') || 'Open payOS Checkout in Browser' }}</span>
+                </button>
+            }
+
+            <!-- Bank Transfer Details Breakdown -->
+            <div class="bank-details-table">
+                <div class="bank-row">
+                    <span class="bank-label">{{ i18n.t('pro.bank') || 'Bank' }}</span>
+                    <span class="bank-val">{{ order.bankName || 'MBBank (970422)' }}</span>
+                </div>
+
+                @if (order.accountNumber) {
+                    <div class="bank-row">
+                        <span class="bank-label">{{ i18n.t('pro.accountNo') || 'Account No.' }}</span>
+                        <div class="bank-val-with-copy">
+                            <span class="bank-val font-mono">{{ order.accountNumber }}</span>
+                            <button class="btn-copy" type="button" (click)="copyText(order.accountNumber, 'accountNo')" [attr.title]="i18n.t('pro.copy')">
+                                <app-icon [name]="copiedField() === 'accountNo' ? 'check' : 'copy'" [size]="14" />
+                            </button>
+                        </div>
+                    </div>
+                }
+
+                @if (order.accountName) {
+                    <div class="bank-row">
+                        <span class="bank-label">{{ i18n.t('pro.accountName') || 'Recipient' }}</span>
+                        <span class="bank-val font-bold">{{ order.accountName }}</span>
+                    </div>
+                }
+
+                <div class="bank-row">
+                    <span class="bank-label">{{ i18n.t('pro.amount') || 'Amount' }}</span>
+                    <div class="bank-val-with-copy">
+                        <span class="bank-val font-bold text-accent">{{ order.amount | number }} đ</span>
+                        <button class="btn-copy" type="button" (click)="copyText(order.amount.toString(), 'amount')" [attr.title]="i18n.t('pro.copy')">
+                            <app-icon [name]="copiedField() === 'amount' ? 'check' : 'copy'" [size]="14" />
+                        </button>
+                    </div>
+                </div>
+
+                @if (order.description) {
+                    <div class="bank-row highlight-memo">
+                        <span class="bank-label">{{ i18n.t('pro.transferMemo') || 'Memo/Content' }}</span>
+                        <div class="bank-val-with-copy">
+                            <span class="bank-val font-mono font-bold">{{ order.description }}</span>
+                            <button class="btn-copy" type="button" (click)="copyText(order.description, 'memo')" [attr.title]="i18n.t('pro.copy')">
+                                <app-icon [name]="copiedField() === 'memo' ? 'check' : 'copy'" [size]="14" />
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Status Indicator -->
+            <div class="status-indicator">
+                @if (payment.isPaid()) {
+                    <div class="status-badge status-paid">
+                        <app-icon name="check-circle" [size]="16" />
+                        <span>{{ i18n.t('pro.paymentSuccess') || 'Payment Received! Upgraded to Pro 🎉' }}</span>
+                    </div>
+                } @else {
+                    <div class="status-badge status-waiting">
+                        <span class="spinner-dot"></span>
+                        <span>{{ i18n.t('pro.waitingTransfer') || 'Waiting for transfer (auto-detects)...' }}</span>
+                    </div>
+                }
+            </div>
+
+            <div class="checkout-actions">
+                @if (order.isMock && !payment.isPaid()) {
+                    <button class="btn btn-simulate" type="button" (click)="simulateTransfer(order.orderCode)">
+                        <app-icon name="zap" [size]="14" />
+                        <span>{{ i18n.t('pro.simulateDev') || 'Simulate Transfer (Dev Mode)' }}</span>
+                    </button>
+                }
+
+                @if (payment.isPaid()) {
+                    <button class="btn btn-primary btn-full" (click)="dismissed.emit()">
+                        {{ i18n.t('common.done') || 'Enjoy Voca Pro' }}
+                    </button>
+                } @else {
+                    <button class="btn btn-secondary btn-full" type="button" (click)="cancelOrder()">
+                        {{ i18n.t('pro.cancelOrder') || 'Cancel & Choose Plan' }}
+                    </button>
+                }
+            </div>
+        </div>
+    } @else {
+        <!-- Standard Upgrade Pitch & Plan Selection -->
+        <div class="plans-selector">
+            @for (plan of plans; track plan.id) {
+                <button
+                    class="plan-card"
+                    [class.is-selected]="selectedPlan() === plan.id"
+                    [class.has-badge]="plan.badgeKey"
+                    type="button"
+                    (click)="selectPlan(plan.id)"
+                >
+                    @if (plan.badgeKey) {
+                        <span class="plan-badge">{{ i18n.t(plan.badgeKey) || 'SAVE 17%' }}</span>
+                    }
+                    <div class="plan-card-left">
+                        <div class="plan-radio" [class.checked]="selectedPlan() === plan.id">
+                            <div class="radio-inner"></div>
+                        </div>
+                        <div class="plan-title-group">
+                            <span class="plan-name">{{ i18n.t(plan.nameKey) }}</span>
+                            @if (plan.monthlyEquivKey) {
+                                <span class="plan-equiv">{{ i18n.t(plan.monthlyEquivKey) || '~40.000 đ/mo' }}</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="plan-card-right">
+                        <span class="plan-price">{{ plan.priceFormatted }}</span>
+                        <span class="plan-period">{{ i18n.t(plan.periodKey) }}</span>
+                    </div>
+                </button>
+            }
+        </div>
+
+        <!-- Benefits Checklist -->
+        <div class="benefits-box">
+            <h3 class="benefits-title">{{ i18n.t('pro.whatsIncluded') || "What's included in Pro" }}</h3>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <app-icon name="diamond" [size]="16" class="icon-diamond" />
+                </div>
+                <div class="benefit-text">
+                    <strong>{{ i18n.t('pro.featureDiamondsTitle') || '20 Daily AI Credits' }}</strong>
+                    <span>{{ i18n.t('pro.featureDiamondsDesc') || 'Transcribe authentic videos without YouTube captions every single day' }}</span>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <app-icon name="zap" [size]="16" class="icon-zap" />
+                </div>
+                <div class="benefit-text">
+                    <strong>{{ i18n.t('pro.featurePriorityTitle') || 'Priority AI Queue' }}</strong>
+                    <span>{{ i18n.t('pro.featurePriorityDesc') || 'Accelerated Gladia ASR speech recognition with minimum wait' }}</span>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <app-icon name="cloud" [size]="16" class="icon-cloud" />
+                </div>
+                <div class="benefit-text">
+                    <strong>{{ i18n.t('pro.featureSyncTitle') || 'Unlimited Cloud Notebook Sync' }}</strong>
+                    <span>{{ i18n.t('pro.featureSyncDesc') || 'Seamless multi-device sync for vocabulary, SRS flashcards & playlists' }}</span>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <app-icon name="trophy" [size]="16" class="icon-trophy" />
+                </div>
+                <div class="benefit-text">
+                    <strong>{{ i18n.t('pro.featureBadgeTitle') || 'Pro Leaderboard Badge' }}</strong>
+                    <span>{{ i18n.t('pro.featureBadgeDesc') || 'Stand out in the global learner community with an exclusive Pro badge' }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Call To Action -->
+        <div class="dialog-actions">
+            <button
+                class="btn btn-upgrade-cta"
+                type="button"
+                [disabled]="payment.isCreating()"
+                (click)="startUpgrade()"
+            >
+                @if (payment.isCreating()) {
+                    <span class="spinner-dot"></span>
+                    <span>{{ i18n.t('pro.generatingQR') || 'Generating QR...' }}</span>
+                } @else {
+                    <app-icon name="zap" [size]="18" />
+                    <span>{{ i18n.t('pro.upgradeBtn', { price: activePlan().priceFormatted }) || ('Upgrade - ' + activePlan().priceFormatted) }}</span>
+                }
+            </button>
+
+            <button class="btn btn-ghost" type="button" (click)="dismissed.emit()">
+                {{ i18n.t('common.maybeLater') || 'Maybe later' }}
+            </button>
+        </div>
+    }
+}
+</div>

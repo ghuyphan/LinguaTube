@@ -69,6 +69,7 @@ export class SidebarComponent {
     openStreak = output<void>();
     openAiCredits = output<void>();
     openAchievements = output<void>();
+    openProUpgrade = output<void>();
     showLangPicker = signal(false);
 
     // Learning language options with display info

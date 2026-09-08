@@ -104,7 +104,7 @@
                 <button class="stats-bar__item" (click)="openAchievements.emit()" 
                     [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel() + ' (' + gamification.totalXP() + ' XP)'">
                     <app-icon name="trophy" [size]="16" class="stat-icon stat-icon--trophy" />
-                    <span class="stats-bar__val">Lv.{{ gamification.userLevel() }}</span>
+                    <span class="stats-bar__val">{{ gamification.userLevel() }}</span>
                 </button>
                 <div class="stats-bar__divider"></div>
                 <button class="stats-bar__item" (click)="openAiCredits.emit()" 
@@ -132,6 +132,24 @@
                     <span>{{ transcript.diamonds() }}</span>
                 </button>
             </div>
+            }
+            <!-- Pro Upgrade Teaser (Free users only) -->
+            @if (auth.subscriptionTier() !== 'pro' && auth.subscriptionTier() !== 'premium') {
+                @if (!isCollapsed()) {
+                <button class="sidebar-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Pro'">
+                    <div class="pro-btn-content">
+                        <div class="pro-btn-icon">
+                            <app-icon name="crown" [size]="14" />
+                        </div>
+                        <span class="pro-btn-label">{{ i18n.t('pro.getPro') || 'Get Pro' }}</span>
+                        <span class="pro-btn-badge">20💎</span>
+                    </div>
+                </button>
+                } @else {
+                <button class="collapsed-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Pro'">
+                    <app-icon name="crown" [size]="16" />
+                </button>
+                }
             }
 
             <!-- Footer: User / Settings -->

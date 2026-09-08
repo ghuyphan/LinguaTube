@@ -17,13 +17,13 @@ export type IconName =
     | 'user' | 'google' | 'log-in'
     | 'clock' | 'heart' | 'heart-filled' | 'cloud'
     // Gamification & cute icons
-    | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond'
+    | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond' | 'crown'
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-horizontal-filled' | 'more-vertical'
     | 'list' | 'list-video' | 'list-video-filled' | 'list-plus' | 'share' | 'link' | 'lock' | 'grip-vertical'
     | 'headphones' | 'clipboard-check' | 'coffee'
     | 'graduation-cap-filled' | 'book-open-filled'
     // Audio & utility icons
-    | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'slash' | 'lightbulb' | 'leaf' | 'box' | 'droplet';
+    | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'slash' | 'lightbulb' | 'leaf' | 'box' | 'droplet' | 'copy';
 
 @Component({
     selector: 'app-icon',

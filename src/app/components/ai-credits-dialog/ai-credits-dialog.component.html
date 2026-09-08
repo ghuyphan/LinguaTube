@@ -65,42 +65,28 @@
         </div>
     </div>
 
-    @if (payment.currentOrder(); as order) {
-        <div class="qr-upgrade-card">
-            <div class="qr-header">
-                <h3>Voca Pro (1 Month)</h3>
-                <span class="qr-amount">{{ order.amount | number }} đ</span>
-            </div>
-            <div class="qr-code-wrapper">
-                <img [src]="order.qrCode" alt="VietQR Payment Code" class="qr-code-img" />
-            </div>
-            <div class="qr-instructions">
-                <p>Scan VietQR with any mobile banking app</p>
-                <div class="status-indicator">
-                    @if (payment.isPaid()) {
-                        <span class="status-badge status-paid">
-                            <app-icon name="check-circle" [size]="14" /> Upgraded to Pro!
-                        </span>
-                    } @else {
-                        <span class="status-badge status-waiting">
-                            <span class="spinner-dot"></span> Waiting for transfer...
-                        </span>
-                    }
+    @if (auth.subscriptionTier() !== 'pro' && auth.subscriptionTier() !== 'premium') {
+        <!-- Pro Upgrade Promo Banner -->
+        <div class="pro-promo-card" (click)="openProUpgrade.emit()" role="button" tabindex="0">
+            <div class="pro-promo-left">
+                <div class="pro-promo-badge">
+                    <app-icon name="crown" [size]="18" />
+                </div>
+                <div class="pro-promo-text">
+                    <span class="pro-promo-title">{{ i18n.t('pro.needMoreCredits') || 'Need more AI credits?' }}</span>
+                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHint') || 'Get 20 credits daily, priority queue & cloud sync with Pro.' }}</span>
                 </div>
             </div>
-            <button class="btn btn-secondary btn-sm" (click)="payment.clearOrder()">Cancel</button>
-        </div>
-    } @else {
-        <div class="dialog-actions">
-            @if (auth.isLoggedIn() && transcript.userTier() !== 'pro' && transcript.userTier() !== 'premium') {
-                <button class="btn btn-upgrade" (click)="startUpgrade('pro_1m')" [disabled]="payment.isCreating()">
-                    <app-icon name="zap" [size]="16" />
-                    <span>{{ payment.isCreating() ? 'Generating QR...' : (i18n.t('subtitle.upgradeToPro') || 'Upgrade to Pro (49k/mo)') }}</span>
-                </button>
-            }
-            <button class="btn btn-primary credits-dismiss-btn" (click)="dismissed.emit()">
-                {{ i18n.t('subtitle.gotIt') || 'Got it' }}
+            <button class="btn btn-pro-sm" type="button">
+                <app-icon name="zap" [size]="14" />
+                <span>{{ i18n.t('pro.viewPro') || 'View Pro' }}</span>
             </button>
         </div>
     }
+
+    <div class="dialog-actions">
+        <button class="btn btn-primary credits-dismiss-btn" (click)="dismissed.emit()">
+            {{ i18n.t('subtitle.gotIt') || 'Got it' }}
+        </button>
+    </div>
 </div>

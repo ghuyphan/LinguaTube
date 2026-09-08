@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, output, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
-import { I18nService, AuthService, PaymentService } from '../../core/services';
+import { I18nService, AuthService } from '../../core/services';
 import { TranscriptService } from '../../features/video/transcript.service';
 
 @Component({
@@ -15,10 +15,10 @@ import { TranscriptService } from '../../features/video/transcript.service';
 export class AiCreditsDialogComponent implements OnInit, OnDestroy {
     readonly i18n = inject(I18nService);
     readonly auth = inject(AuthService);
-    readonly payment = inject(PaymentService);
     readonly transcript = inject(TranscriptService);
 
     dismissed = output<void>();
+    openProUpgrade = output<void>();
 
     readonly regenCountdown = signal<string>('');
     private timerId: ReturnType<typeof setInterval> | null = null;
@@ -63,9 +63,5 @@ export class AiCreditsDialogComponent implements OnInit, OnDestroy {
         const s = seconds.toString().padStart(2, '0');
         const m = minutes.toString().padStart(2, '0');
         this.regenCountdown.set(`${m}:${s}`);
-    }
-
-    startUpgrade(planId: string = 'pro_1m'): void {
-        this.payment.createOrder(planId).subscribe();
     }
 }

@@ -71,11 +71,15 @@ export async function createPayOsPaymentLink(env, params) {
     // If payOS credentials are not yet configured in environment, provide local mock for development
     if (!clientId || !apiKey || !checksumKey) {
         console.warn('[payOS] Credentials not configured in env, using sandbox/mock payment link');
-        const mockQr = `https://img.vietqr.io/image/970422-VOCA${orderCode}-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(description)}`;
+        const mockQr = `https://img.vietqr.io/image/970422-0345678901-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(description)}&accountName=VOCA%20APP`;
         return {
             orderCode,
             amount,
             description,
+            accountNumber: '0345678901',
+            accountName: 'VOCA APP',
+            bin: '970422',
+            bankName: 'MBBank',
             checkoutUrl: mockQr,
             qrCode: mockQr,
             status: 'PENDING',
@@ -120,12 +124,35 @@ export async function createPayOsPaymentLink(env, params) {
         throw new Error(`payOS payment creation failed: ${resData.desc || resData.code}`);
     }
 
+    const data = resData.data || {};
+    const bin = data.bin || '';
+    const accountNumber = data.accountNumber || '';
+    const accountName = data.accountName || '';
+    const checkoutUrl = data.checkoutUrl || '';
+    const rawQr = data.qrCode || '';
+
+    // Convert raw payOS EMVCo string to an image or use standard VietQR image
+    let qrImageUrl = '';
+    if (bin && accountNumber) {
+        qrImageUrl = `https://img.vietqr.io/image/${bin}-${accountNumber}-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(description)}&accountName=${encodeURIComponent(accountName)}`;
+    } else if (rawQr.startsWith('http://') || rawQr.startsWith('https://')) {
+        qrImageUrl = rawQr;
+    } else if (rawQr) {
+        qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=${encodeURIComponent(rawQr)}`;
+    } else if (checkoutUrl) {
+        qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=${encodeURIComponent(checkoutUrl)}`;
+    }
+
     return {
         orderCode,
         amount,
         description,
-        checkoutUrl: resData.data.checkoutUrl,
-        qrCode: resData.data.qrCode,
-        status: resData.data.status || 'PENDING'
+        accountNumber,
+        accountName,
+        bin,
+        checkoutUrl,
+        qrCode: qrImageUrl,
+        rawQr,
+        status: data.status || 'PENDING'
     };
 }

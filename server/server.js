@@ -599,7 +599,8 @@ app.post('/api/payment/create-order', (req, res) => {
     const { planId = 'pro_1m' } = req.body || {};
     const amount = planId === 'pro_1y' ? 490000 : 49000;
     const orderCode = Math.floor(Date.now() / 1000) % 90000000 + 10000000;
-    const qrCode = `https://img.vietqr.io/image/970422-VOCA${orderCode}-compact2.png?amount=${amount}&addInfo=VOCA${orderCode}`;
+    const description = `VOCA${orderCode}`;
+    const qrCode = `https://img.vietqr.io/image/970422-0345678901-compact2.png?amount=${amount}&addInfo=${description}&accountName=VOCA%20APP`;
 
     devOrders.set(orderCode, { status: 'PENDING', amount, createdAt: Date.now() });
 
@@ -608,6 +609,11 @@ app.post('/api/payment/create-order', (req, res) => {
         orderCode,
         plan: planId,
         amount,
+        description,
+        accountNumber: '0345678901',
+        accountName: 'VOCA APP',
+        bin: '970422',
+        bankName: 'MBBank',
         checkoutUrl: qrCode,
         qrCode,
         isMock: true
@@ -621,6 +627,19 @@ app.get('/api/payment/check-status', (req, res) => {
         success: true,
         status: order ? order.status : 'PENDING'
     });
+});
+
+app.post('/api/payment/simulate-transfer', (req, res) => {
+    const { orderCode } = req.body || {};
+    const code = parseInt(orderCode, 10);
+    if (code && devOrders.has(code)) {
+        devOrders.set(code, { ...devOrders.get(code), status: 'PAID' });
+        devDiamonds = 20;
+        return res.json({ success: true, status: 'PAID' });
+    }
+    // If not found, still mark dev diamonds up
+    devDiamonds = 20;
+    res.json({ success: true, status: 'PAID' });
 });
 
 app.post('/api/payment/webhook', (req, res) => {
@@ -858,28 +877,8 @@ app.get('/api/video-info', async (req, res) => {
 
 /**
  * GET /api/recommended-videos
- * Returns videos with verified transcripts for local development
+ * Returns videos with verified transcripts from local disk cache
  */
-const DEV_SAMPLE_VIDEOS = {
-    ja: [
-        { videoId: 'BZRT37f8zZY', title: 'Japanese Listening Practice for Beginners - JLPT N4 Story', channel: 'Japanese Immersion', duration: 420, languages: ['ja', 'en'], level: 'JLPT N4' },
-        { videoId: 'kJQP7kiw5Fk', title: 'Easy Japanese Conversation - Daily Life Story (JLPT N3)', channel: 'Nihongo Lessons', duration: 540, languages: ['ja'], level: 'JLPT N3' },
-        { videoId: '2b9vfvdC-pM', title: 'Real Japanese Podcast: Culture & Slang (JLPT N2)', channel: 'Sayaka Japanese', duration: 720, languages: ['ja'], level: 'JLPT N2' }
-    ],
-    ko: [
-        { videoId: 'gdZLi9oWNZg', title: 'Real Korean Listening Practice - TOPIK 1 Daily Expressions', channel: 'Korean Unnie', duration: 380, languages: ['ko', 'en'], level: 'TOPIK 1' },
-        { videoId: '9bZkp7q19f0', title: 'Intermediate Korean VLOG with Natural Subtitles (TOPIK 3)', channel: 'Talk To Me In Korean', duration: 610, languages: ['ko'], level: 'TOPIK 3' }
-    ],
-    zh: [
-        { videoId: 'e-ORhEE9VVg', title: 'Slow Chinese Story for Beginners - HSK 2 / HSK 3', channel: 'Mandarin Corner', duration: 450, languages: ['zh', 'en'], level: 'HSK 2' },
-        { videoId: 'CevxZvSJLk8', title: 'Daily Life in Beijing - Intermediate Listening (HSK 4)', channel: 'ShuoShuoChinese', duration: 580, languages: ['zh'], level: 'HSK 4' }
-    ],
-    en: [
-        { videoId: 'jNQXAC9IVRw', title: 'Me at the zoo - The First YouTube Video', channel: 'jawed', duration: 19, languages: ['en'], level: 'CEFR A2' },
-        { videoId: 'M7lc1UVf-VE', title: 'YouTube Developers Live Session (CEFR B2)', channel: 'Google Developers', duration: 480, languages: ['en'], level: 'CEFR B2' }
-    ]
-};
-
 app.get('/api/recommended-videos', async (req, res) => {
     const lang = (req.query.lang || 'ja').toLowerCase().trim();
     const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 12, 1), 50);
@@ -887,7 +886,7 @@ app.get('/api/recommended-videos', async (req, res) => {
     const results = [];
     const seenIds = new Set();
 
-    // 1. Check local disk transcripts cache
+    // Check local disk transcripts cache
     try {
         if (fs.existsSync(TRANSCRIPTS_CACHE_DIR)) {
             const files = fs.readdirSync(TRANSCRIPTS_CACHE_DIR);
@@ -912,19 +911,6 @@ app.get('/api/recommended-videos', async (req, res) => {
             }
         }
     } catch {}
-
-    // 2. Add curated sample videos for this language
-    const samples = DEV_SAMPLE_VIDEOS[lang] || DEV_SAMPLE_VIDEOS.ja;
-    for (const item of samples) {
-        if (!seenIds.has(item.videoId)) {
-            seenIds.add(item.videoId);
-            results.push({
-                ...item,
-                thumbnail: `https://i.ytimg.com/vi/${item.videoId}/mqdefault.jpg`,
-                updatedAt: Math.floor(Date.now() / 1000)
-            });
-        }
-    }
 
     res.json({
         success: true,

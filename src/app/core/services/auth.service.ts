@@ -204,6 +204,21 @@ export class AuthService {
         return this.subscriptionTier();
     }
 
+    /**
+     * Refresh user profile and subscription tier from PocketBase
+     */
+    async refreshUser(): Promise<void> {
+        try {
+            await this.pb.refreshAuth();
+            const model = this.pb.model();
+            if (model) {
+                this.user.set(this.modelToProfile(model as RecordModel));
+            }
+        } catch (e) {
+            console.warn('[AuthService] Failed to refresh user profile:', e);
+        }
+    }
+
     private openOrReuseOAuthPopup(url: string, popup: OAuthPopup): Window {
         const target = popup && !popup.closed ? popup : this.openOAuthPopup(url);
 

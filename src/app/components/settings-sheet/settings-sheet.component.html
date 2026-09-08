@@ -20,6 +20,12 @@
                             <span class="badge badge--sm" [class]="'badge--' + auth.subscriptionTier()">
                                 {{ auth.subscriptionTier() | uppercase }}
                             </span>
+                            @if (auth.subscriptionTier() !== 'pro' && auth.subscriptionTier() !== 'premium') {
+                                <button class="account-upgrade-pill" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPro') || 'Upgrade to Pro'">
+                                    <app-icon name="zap" [size]="12" />
+                                    <span>{{ i18n.t('pro.upgrade') || 'Upgrade' }}</span>
+                                </button>
+                            }
                         </div>
                         <span class="account-email">{{ auth.user()?.email }}</span>
                     </div>
@@ -60,7 +66,7 @@
                 </div>
                 }
 
-                <!-- Motivation & AI Credits 2-Column Bar -->
+                <!-- Motivation, Level & AI Credits 3-Column Bar -->
                 <div class="settings-stats-grid">
                     <button class="settings-stat-pill" (click)="openStreakDialog()" [class.active]="streak.practicedToday()"
                         [attr.title]="i18n.t('streak.clickDetails')">
@@ -68,6 +74,14 @@
                         <div class="settings-stat-text">
                             <span class="settings-stat-val">{{ streak.currentStreak() }}</span>
                             <span class="settings-stat-lbl">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
+                        </div>
+                    </button>
+
+                    <button class="settings-stat-pill" (click)="openAchievementsDialog()" [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel() + ' (' + gamification.totalXP() + ' XP)'">
+                        <app-icon name="trophy" [size]="18" class="stat-icon--trophy" />
+                        <div class="settings-stat-text">
+                            <span class="settings-stat-val">{{ gamification.userLevel() }}</span>
+                            <span class="settings-stat-lbl">{{ i18n.t('gamification.level') || 'Level' }}</span>
                         </div>
                     </button>
 

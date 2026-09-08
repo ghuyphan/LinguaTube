@@ -7,7 +7,7 @@ import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/c
 import { SwitchComponent } from '../../shared/components/switch/switch.component';
 import { ReadingDisplayMode, SupportedLearningLanguage, SUPPORTED_LANGUAGES } from '../../models';
 
-import { SettingsService, AuthService, I18nService, UILanguage, ToastService } from '../../core/services';
+import { SettingsService, AuthService, I18nService, UILanguage, ToastService, GamificationService } from '../../core/services';
 import { YoutubeService, SubtitleService, TranscriptService } from '../../features/video';
 import { VocabularyService } from '../../features/vocabulary';
 import { StreakService } from '../../services/streak.service';
@@ -30,13 +30,16 @@ export class SettingsSheetComponent {
   i18n = inject(I18nService);
   transcript = inject(TranscriptService);
   streak = inject(StreakService);
+  gamification = inject(GamificationService);
 
   readonly sheet = viewChild(BottomSheetComponent);
 
   isOpen = input<boolean>(false);
   closed = output<void>();
   openStreak = output<void>();
+  openAchievements = output<void>();
   openAiCredits = output<void>();
+  openProUpgrade = output<void>();
 
   showSignOutConfirm = signal(false);
   showLearningLangPicker = signal(false);
@@ -162,6 +165,10 @@ export class SettingsSheetComponent {
 
   openStreakDialog(): void {
     this.openStreak.emit();
+  }
+
+  openAchievementsDialog(): void {
+    this.openAchievements.emit();
   }
 
   openAiCreditsDialog(): void {

@@ -4,6 +4,7 @@
 
 import {
     getVideoLanguages,
+    saveVideoLanguages,
     addVideoLanguage,
     addVideoLanguages,
     getVideoDuration,
@@ -47,7 +48,7 @@ export class TranscriptService {
     /**
      * Try fetching native captions using the Supadata Provider
      */
-    async fetchNativeCaptions(context, videoId, lang) {
+    async fetchNativeCaptions(context, videoId, lang, options = {}) {
         // Assume context object contains { db, r2, cache, env, waitUntil, ... }
         const { db, r2, cache, env, waitUntil } = context;
 
@@ -60,7 +61,18 @@ export class TranscriptService {
                 saveTranscriptToR2(r2, videoId, lang, nativeResult.segments, nativeResult.source),
             ];
 
-            if (nativeResult.availableLangs?.length > 0) {
+            const availableLangs = nativeResult.availableLangs?.length > 0 ? nativeResult.availableLangs : [lang];
+
+            if (options.title || options.channel || options.duration) {
+                savePromises.push(saveVideoLanguages(
+                    db,
+                    videoId,
+                    availableLangs,
+                    options.duration || null,
+                    options.title || null,
+                    options.channel || null
+                ));
+            } else if (nativeResult.availableLangs?.length > 0) {
                 savePromises.push(addVideoLanguages(db, videoId, nativeResult.availableLangs));
             } else {
                 savePromises.push(addVideoLanguage(db, videoId, lang));
@@ -194,9 +206,14 @@ export class TranscriptService {
                     const detectedLang = resultData.result?.transcription?.languages?.[0] || lang;
 
                     if (videoId && cleanedSegments.length > 0) {
+                        const title = params.body?.title || null;
+                        const channel = params.body?.channel || null;
+                        const duration = params.body?.duration || null;
                         const saveOps = [
                             saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai'),
-                            addVideoLanguage(db, videoId, detectedLang),
+                            (title || channel || duration)
+                                ? saveVideoLanguages(db, videoId, [detectedLang], duration, title, channel)
+                                : addVideoLanguage(db, videoId, detectedLang),
                             deletePendingJob(db, videoId)
                         ];
 

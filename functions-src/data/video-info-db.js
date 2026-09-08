@@ -7,6 +7,8 @@
  * - D1: Persistent storage (video_languages, no_transcript_cache)
  */
 
+import { getVideoMetadata } from '../middlewares/video-validator.js';
+
 // KV cache TTLs
 const VIDEO_INFO_KV_TTL = 60 * 60 * 24; // 24 hours
 
@@ -336,69 +338,228 @@ export async function saveVideoInfoToKV(kv, videoId, info) {
 }
 
 // ============================================================================
-// Recommended Videos Discovery (D1)
+// Recommended Videos Discovery (Cloudflare D1 + R2)
 // ============================================================================
 
 /**
- * Query recommended transcribed videos from D1
- * Filters for valid titles, sensible durations, and target language
- * @param {D1Database} db
- * @param {string} lang - target language ('ja', 'zh', 'ko', 'en')
- * @param {number} [limit=12] - maximum items to return (clamped 1-50)
+ * Query recommended transcribed videos from Cloudflare (D1 tables + R2 bucket)
+ * Checks:
+ * 1. D1 video_languages (primary metadata table)
+ * 2. D1 transcripts table (completed transcripts)
+ * 3. D1 video_meta table
+ * 4. Cloudflare R2 bucket (transcripts/{videoId}/{lang}.json)
+ * Automatically enriches missing metadata via YouTube oEmbed and caches in D1.
+ * 
+ * @param {D1Database} db - D1 Database binding
+ * @param {R2Bucket} [r2] - R2 Bucket binding
+ * @param {string} lang - Target language ('ja', 'zh', 'ko', 'en')
+ * @param {number} [limit=12] - Maximum items to return (clamped 1-50)
  * @returns {Promise<Array>}
  */
-export async function getRecommendedVideosFromD1(db, lang, limit = 12) {
-    if (!db || !lang) return [];
+export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12) {
+    if (!lang) return [];
 
     const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
+    const videoMap = new Map();
 
-    try {
-        const searchPattern = `%"${lang}"%`;
-        const { results } = await db.prepare(`
-            SELECT video_id, title, channel, duration_seconds, levels, available_languages, updated_at
-            FROM video_languages
-            WHERE available_languages LIKE ?
-              AND title IS NOT NULL AND title != ''
-              AND (duration_seconds IS NULL OR duration_seconds BETWEEN 30 AND 3600)
-            ORDER BY updated_at DESC
-            LIMIT ?
-        `).bind(searchPattern, safeLimit).all();
+    // 1. Query D1 video_languages table (primary metadata index)
+    if (db) {
+        try {
+            const searchPattern1 = `%"${lang}"%`;
+            const searchPattern2 = `%${lang}%`;
+            const { results } = await db.prepare(`
+                SELECT video_id, title, channel, duration_seconds, levels, available_languages, updated_at
+                FROM video_languages
+                WHERE (available_languages LIKE ? OR available_languages LIKE ?)
+                  AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
+                ORDER BY updated_at DESC
+                LIMIT ?
+            `).bind(searchPattern1, searchPattern2, safeLimit).all();
 
-        if (!results || !Array.isArray(results)) return [];
+            if (results && Array.isArray(results)) {
+                for (const row of results) {
+                    let levels = {};
+                    try {
+                        if (row.levels) levels = JSON.parse(row.levels);
+                    } catch { }
 
-        return results.map(row => {
-            let levels = {};
-            try {
-                if (row.levels) levels = JSON.parse(row.levels);
-            } catch { }
+                    let level = levels[lang] || null;
+                    if (!level) {
+                        const detected = detectLevelFromMetadata(row.title || '', row.channel || '');
+                        if (detected && detected.lang === lang) {
+                            level = detected.level;
+                        }
+                    }
 
-            let level = levels[lang] || null;
-            if (!level) {
-                const detected = detectLevelFromMetadata(row.title || '', row.channel || '');
-                if (detected && detected.lang === lang) {
-                    level = detected.level;
+                    let availableLangs = [];
+                    try {
+                        if (row.available_languages) availableLangs = JSON.parse(row.available_languages);
+                    } catch { }
+
+                    videoMap.set(row.video_id, {
+                        videoId: row.video_id,
+                        title: row.title || null,
+                        channel: row.channel || '',
+                        duration: row.duration_seconds || 0,
+                        thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
+                        languages: availableLangs.length > 0 ? availableLangs : [lang],
+                        level: level || undefined,
+                        updatedAt: row.updated_at
+                    });
                 }
             }
+        } catch (err) {
+            console.error('[VideoInfoDB] D1 video_languages query error:', err.message);
+        }
 
-            let availableLangs = [];
+        // 2. Query D1 transcripts table if we still have capacity
+        if (videoMap.size < safeLimit) {
             try {
-                if (row.available_languages) availableLangs = JSON.parse(row.available_languages);
-            } catch { }
+                const remaining = safeLimit - videoMap.size;
+                const { results: transcriptRows } = await db.prepare(`
+                    SELECT t.video_id, t.created_at, vl.title, vl.channel, vl.duration_seconds, vl.levels, vl.available_languages
+                    FROM transcripts t
+                    LEFT JOIN video_languages vl ON t.video_id = vl.video_id
+                    WHERE (t.language = ? OR t.language LIKE ?) AND (t.status IS NULL OR t.status = 'complete')
+                    ORDER BY t.created_at DESC
+                    LIMIT ?
+                `).bind(lang, `${lang}-%`, remaining * 2).all();
 
-            return {
-                videoId: row.video_id,
-                title: row.title,
-                channel: row.channel || '',
-                duration: row.duration_seconds || 0,
-                thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
-                languages: availableLangs,
-                level: level || undefined,
-                updatedAt: row.updated_at
-            };
-        });
-    } catch (err) {
-        console.error('[VideoInfoDB] getRecommendedVideosFromD1 error:', err.message);
-        return [];
+                if (transcriptRows && Array.isArray(transcriptRows)) {
+                    for (const row of transcriptRows) {
+                        if (!videoMap.has(row.video_id) && videoMap.size < safeLimit) {
+                            let levels = {};
+                            try { if (row.levels) levels = JSON.parse(row.levels); } catch { }
+                            let level = levels[lang] || null;
+                            if (!level && row.title) {
+                                const detected = detectLevelFromMetadata(row.title, row.channel || '');
+                                if (detected && detected.lang === lang) level = detected.level;
+                            }
+
+                            videoMap.set(row.video_id, {
+                                videoId: row.video_id,
+                                title: row.title || null,
+                                channel: row.channel || '',
+                                duration: row.duration_seconds || 0,
+                                thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
+                                languages: [lang],
+                                level: level || undefined,
+                                updatedAt: row.created_at
+                            });
+                        }
+                    }
+                }
+            } catch (err) {
+                console.error('[VideoInfoDB] D1 transcripts query error:', err.message);
+            }
+        }
+
+        // 3. Query D1 video_meta table if we still have capacity
+        if (videoMap.size < safeLimit) {
+            try {
+                const remaining = safeLimit - videoMap.size;
+                const { results: metaRows } = await db.prepare(`
+                    SELECT vm.video_id, vm.created_at, vl.title, vl.channel, vl.duration_seconds, vl.levels
+                    FROM video_meta vm
+                    LEFT JOIN video_languages vl ON vm.video_id = vl.video_id
+                    WHERE vm.language = ? OR vm.language LIKE ?
+                    ORDER BY vm.created_at DESC
+                    LIMIT ?
+                `).bind(lang, `${lang}-%`, remaining * 2).all();
+
+                if (metaRows && Array.isArray(metaRows)) {
+                    for (const row of metaRows) {
+                        if (!videoMap.has(row.video_id) && videoMap.size < safeLimit) {
+                            videoMap.set(row.video_id, {
+                                videoId: row.video_id,
+                                title: row.title || null,
+                                channel: row.channel || '',
+                                duration: row.duration_seconds || 0,
+                                thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
+                                languages: [lang],
+                                level: undefined,
+                                updatedAt: row.created_at
+                            });
+                        }
+                    }
+                }
+            } catch { }
+        }
     }
+
+    // 4. Query Cloudflare R2 transcripts bucket if capacity remains
+    if (r2 && videoMap.size < safeLimit) {
+        try {
+            const listRes = await r2.list({ prefix: 'transcripts/', limit: 100 });
+            if (listRes?.objects?.length) {
+                const targetSuffix = `/${lang}.json`;
+                const subtagPrefix = `/${lang}-`;
+                for (const obj of listRes.objects) {
+                    if (videoMap.size >= safeLimit) break;
+                    // Format: transcripts/{videoId}/{lang}.json or transcripts/{videoId}/{lang-country}.json
+                    if (obj.key.endsWith(targetSuffix) || obj.key.includes(subtagPrefix)) {
+                        const parts = obj.key.split('/');
+                        const videoId = parts[1];
+                        if (videoId && !videoMap.has(videoId)) {
+                            videoMap.set(videoId, {
+                                videoId,
+                                title: null,
+                                channel: '',
+                                duration: 0,
+                                thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+                                languages: [lang],
+                                level: undefined,
+                                updatedAt: obj.uploaded ? Math.floor(new Date(obj.uploaded).getTime() / 1000) : Math.floor(Date.now() / 1000)
+                            });
+                        }
+                    }
+                }
+            }
+        } catch (err) {
+            console.error('[VideoInfoDB] R2 listing error:', err.message);
+        }
+    }
+
+    // 5. Enrich any items with missing titles via YouTube oEmbed and cache in D1
+    const enrichPromises = [];
+    for (const [videoId, item] of videoMap.entries()) {
+        if (!item.title) {
+            enrichPromises.push((async () => {
+                try {
+                    const meta = await getVideoMetadata(videoId);
+                    if (meta?.title) {
+                        item.title = meta.title;
+                        item.channel = meta.author_name || item.channel;
+                        const detected = detectLevelFromMetadata(meta.title, meta.author_name || '');
+                        if (detected && detected.lang === lang) {
+                            item.level = detected.level;
+                        }
+                        if (db) {
+                            const lvls = item.level ? { [lang]: item.level } : null;
+                            await saveVideoLanguages(db, videoId, [lang], item.duration || null, meta.title, meta.author_name, false, lvls);
+                        }
+                    } else {
+                        item.title = `Video ${videoId}`;
+                    }
+                } catch {
+                    item.title = `Video ${videoId}`;
+                }
+            })());
+        }
+    }
+
+    if (enrichPromises.length > 0) {
+        await Promise.allSettled(enrichPromises);
+    }
+
+    return Array.from(videoMap.values());
 }
+
+/**
+ * Backward compatibility wrapper for getRecommendedVideosFromCloudflare
+ */
+export async function getRecommendedVideosFromD1(db, lang, limit = 12) {
+    return getRecommendedVideosFromCloudflare(db, null, lang, limit);
+}
+
 

@@ -24,7 +24,9 @@
 
         <!-- Content projection -->
         <div class="sheet-content" #sheetContent>
-            <ng-content />
+            <div class="sheet-content-inner" #contentInner>
+                <ng-content />
+            </div>
         </div>
     </div>
 </div>

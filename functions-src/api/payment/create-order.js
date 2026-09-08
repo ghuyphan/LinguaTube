@@ -82,6 +82,10 @@ export async function onRequestPost(context) {
             orderCode,
             plan: plan.id,
             amount: plan.amount,
+            description,
+            accountNumber: paymentData.accountNumber || '',
+            accountName: paymentData.accountName || '',
+            bin: paymentData.bin || '',
             checkoutUrl: paymentData.checkoutUrl,
             qrCode: paymentData.qrCode,
             isMock: paymentData.isMock || false

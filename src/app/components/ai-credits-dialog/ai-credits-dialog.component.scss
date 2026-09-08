@@ -254,86 +254,78 @@
     justify-content: center;
 }
 
-/* VietQR Card */
-.qr-upgrade-card {
+/* Pro Upgrade Promo Card */
+.pro-promo-card {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 1.25rem;
-    background: var(--bg-surface);
-    border: 1px solid var(--border-color);
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(59, 130, 246, 0.08) 50%, rgba(139, 92, 246, 0.08) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.25);
     border-radius: var(--border-radius-lg);
     width: 100%;
-    text-align: center;
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-normal);
 
-    .qr-header {
+    &:hover {
+        background: linear-gradient(135deg, rgba(6, 182, 212, 0.14) 0%, rgba(59, 130, 246, 0.14) 50%, rgba(139, 92, 246, 0.14) 100%);
+        border-color: rgba(59, 130, 246, 0.45);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(59, 130, 246, 0.15);
+    }
+
+    .pro-promo-left {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        width: 100%;
+        gap: 0.75rem;
+    }
 
-        h3 {
-            margin: 0;
-            font-size: 1.05rem;
+    .pro-promo-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--gradient-pro);
+        color: #ffffff;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.35);
+    }
+
+    .pro-promo-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+
+        .pro-promo-title {
+            font-size: 0.875rem;
             font-weight: 700;
+            color: var(--text-primary);
         }
 
-        .qr-amount {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--accent-primary);
-        }
-    }
-
-    .qr-code-wrapper {
-        background: #ffffff;
-        padding: 0.75rem;
-        border-radius: var(--border-radius-md);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-        .qr-code-img {
-            width: 200px;
-            height: 200px;
-            object-fit: contain;
-            display: block;
+        .pro-promo-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.3;
         }
     }
 
-    .qr-instructions {
-        font-size: 0.8125rem;
-        color: var(--text-secondary);
-
-        p {
-            margin: 0 0 0.5rem 0;
-        }
-    }
-
-    .status-badge {
+    .btn-pro-sm {
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
-        padding: 0.25rem 0.75rem;
+        gap: 0.375rem;
+        padding: 0.4rem 0.75rem;
+        background: var(--gradient-pro);
+        color: #ffffff;
+        border: none;
         border-radius: var(--border-radius-pill);
         font-size: 0.75rem;
-        font-weight: 600;
-
-        &.status-waiting {
-            background: rgba(var(--warning-rgb), 0.15);
-            color: var(--warning);
-
-            .spinner-dot {
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background: var(--warning);
-                animation: skeletonWave 1s infinite alternate;
-            }
-        }
-
-        &.status-paid {
-            background: rgba(var(--success-rgb), 0.15);
-            color: var(--success);
-        }
+        font-weight: 700;
+        white-space: nowrap;
+        flex-shrink: 0;
+        box-shadow: 0 2px 6px rgba(59, 130, 246, 0.25);
     }
 }

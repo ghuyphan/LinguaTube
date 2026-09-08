@@ -12,8 +12,9 @@ import { CommandPaletteComponent } from './shared/components/command-palette/com
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
 import { AchievementsDialogComponent } from './components/achievements-dialog/achievements-dialog.component';
+import { ProUpgradeDialogComponent } from './components/pro-upgrade-dialog/pro-upgrade-dialog.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
-import { I18nService, SettingsService, SeoService, PwaService } from './core/services';
+import { I18nService, SettingsService, SeoService, PwaService, GamificationService } from './core/services';
 import { YoutubeService, TranscriptService } from './features/video';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
@@ -37,6 +38,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     StreakDialogComponent,
     AiCreditsDialogComponent,
     AchievementsDialogComponent,
+    ProUpgradeDialogComponent,
     ToastComponent
   ],
   template: `
@@ -58,6 +60,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             (openStreak)="showStreakSheet.set(true)"
             (openAiCredits)="showAiCreditsSheet.set(true)"
             (openAchievements)="showAchievementsSheet.set(true)"
+            (openProUpgrade)="showProUpgradeSheet.set(true)"
           />
         }
 
@@ -98,6 +101,17 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               </div>
               <span>{{ i18n.t('nav.review') }}</span>
             </a>
+            <button
+              class="bottom-nav__item--create"
+              type="button"
+              (click)="openNewVideo()"
+              [attr.aria-label]="i18n.t('nav.newVideo') || 'New Video'"
+              [attr.title]="i18n.t('nav.newVideo') || 'New Video'"
+            >
+              <div class="create-btn-core">
+                <app-icon name="plus" [size]="20" />
+              </div>
+            </button>
             <a
               class="bottom-nav__item"
               routerLink="/dictionary"
@@ -109,28 +123,17 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               </div>
               <span>{{ i18n.t('nav.vocab') }}</span>
             </a>
-            <a
-              class="bottom-nav__item"
-              routerLink="/explore"
-              [class.active]="!anySheetOpen() && (isRouteActive('/explore') || isRouteActive('/playlists'))"
-              [attr.aria-current]="(!anySheetOpen() && (isRouteActive('/explore') || isRouteActive('/playlists'))) ? 'page' : null"
-            >
-              <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="(!anySheetOpen() && (isRouteActive('/explore') || isRouteActive('/playlists'))) ? 'list-video-filled' : 'list-video'" [size]="22" />
-              </div>
-              <span>{{ i18n.t('nav.playlists') }}</span>
-            </a>
             <button
               class="bottom-nav__item"
               type="button"
-              [class.active]="showMoreSheet() || isRouteActive('/history')"
+              [class.active]="showMoreSheet() || isRouteActive('/history') || isRouteActive('/explore') || isRouteActive('/playlists')"
               (click)="toggleMoreSheet()"
               aria-haspopup="dialog"
               [attr.aria-expanded]="showMoreSheet()"
               [attr.aria-label]="i18n.t('nav.more') || 'More'"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="(showMoreSheet() || isRouteActive('/history')) ? 'more-horizontal-filled' : 'more-horizontal'" [size]="22" />
+                <app-icon [name]="(showMoreSheet() || isRouteActive('/history') || isRouteActive('/explore') || isRouteActive('/playlists')) ? 'more-horizontal-filled' : 'more-horizontal'" [size]="22" />
               </div>
               <span>{{ i18n.t('nav.more') }}</span>
             </button>
@@ -146,13 +149,20 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           (closed)="showMoreSheet.set(false)"
         >
           <div class="more-menu">
-            <!-- Mobile Motivation & AI Credits Quick Bar -->
+            <!-- Mobile Motivation, Level & AI Credits Quick Bar -->
             <div class="more-menu__stats">
               <button class="more-stat-card" (click)="openStreakFromMore()">
                 <app-icon name="fire" [size]="20" class="stat-icon--fire" />
                 <div class="more-stat-info">
                   <span class="more-stat-val">{{ streak.currentStreak() }}</span>
                   <span class="more-stat-lbl">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
+                </div>
+              </button>
+              <button class="more-stat-card" (click)="openAchievementsFromMore()">
+                <app-icon name="trophy" [size]="20" class="stat-icon--trophy" />
+                <div class="more-stat-info">
+                  <span class="more-stat-val">{{ gamification.userLevel() }}</span>
+                  <span class="more-stat-lbl">{{ i18n.t('gamification.level') || 'Level' }}</span>
                 </div>
               </button>
               <button class="more-stat-card" (click)="openAiCreditsFromMore()">
@@ -164,13 +174,13 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               </button>
             </div>
 
-            <!-- Action Rows -->
-            <button class="more-menu__item" (click)="openNewVideo()">
+            <!-- Action Rows (Personal Library & Settings) -->
+            <button class="more-menu__item" (click)="navigateFromMore('/explore')">
               <div class="more-menu__item-icon">
-                <app-icon name="plus" [size]="18" />
+                <app-icon name="list-video" [size]="18" />
               </div>
               <div class="more-menu__item-text">
-                <span class="more-menu__item-title">{{ i18n.t('nav.newVideo') }}</span>
+                <span class="more-menu__item-title">{{ i18n.t('playlist.title') || i18n.t('nav.playlists') }}</span>
               </div>
               <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
             </button>
@@ -218,7 +228,9 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             [isOpen]="showSettingsSheet()" 
             (closed)="showSettingsSheet.set(false)" 
             (openStreak)="openStreakFromSettings()"
+            (openAchievements)="openAchievementsFromSettings()"
             (openAiCredits)="openAiCreditsFromSettings()"
+            (openProUpgrade)="showProUpgradeSheet.set(true)"
           />
         }
 
@@ -240,7 +252,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             [showCloseButton]="true"
             (closed)="showAiCreditsSheet.set(false)"
           >
-            <app-ai-credits-dialog (dismissed)="sheetService.closeTop()" />
+            <app-ai-credits-dialog (dismissed)="sheetService.closeTop()" (openProUpgrade)="openProUpgradeFromAiCredits()" />
           </app-bottom-sheet>
         }
 
@@ -253,6 +265,18 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             (closed)="showAchievementsSheet.set(false)"
           >
             <app-achievements-dialog (dismissed)="sheetService.closeTop()" />
+          </app-bottom-sheet>
+        }
+
+        @defer (when showProUpgradeSheet()) {
+          <app-bottom-sheet
+            [isOpen]="showProUpgradeSheet()"
+            [title]="i18n.t('pro.title') || 'Voca Pro'"
+            [showCloseButton]="true"
+            maxWidth="460px"
+            (closed)="showProUpgradeSheet.set(false)"
+          >
+            <app-pro-upgrade-dialog (dismissed)="sheetService.closeTop()" />
           </app-bottom-sheet>
         }
 
@@ -529,21 +553,22 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     .more-menu__stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-sm);
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xs);
       padding: 0 var(--space-md) var(--space-xs);
     }
 
     .more-stat-card {
       display: flex;
       align-items: center;
-      gap: var(--space-sm);
-      padding: 0.75rem var(--space-sm);
+      gap: var(--space-xs);
+      padding: 0.625rem 0.5rem;
       background: var(--bg-secondary);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-md);
       cursor: pointer;
       text-align: left;
+      min-width: 0;
       transition: background-color var(--transition-fast), border-color var(--transition-fast);
     }
 
@@ -559,6 +584,11 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     .stat-icon--diamond {
       color: var(--color-diamond);
+      flex-shrink: 0;
+    }
+
+    .stat-icon--trophy {
+      color: #f59e0b;
       flex-shrink: 0;
     }
 
@@ -792,6 +822,7 @@ export class AppComponent implements OnDestroy {
   settings = inject(SettingsService);
   streak = inject(StreakService);
   transcript = inject(TranscriptService);
+  gamification = inject(GamificationService);
   protected playlistService = inject(PlaylistService);
   protected sheetService = inject(BottomSheetService);
   private swUpdate = inject(SwUpdate);
@@ -933,6 +964,7 @@ export class AppComponent implements OnDestroy {
   showStreakSheet = signal(false);
   showAiCreditsSheet = signal(false);
   showAchievementsSheet = signal(false);
+  showProUpgradeSheet = signal(false);
   showUpdateSheet = signal(false);
   showCommandPalette = signal(false);
   showMoreSheet = signal(false);
@@ -957,7 +989,7 @@ export class AppComponent implements OnDestroy {
 
   // Check if any sheet is open (for bottom nav active state)
   anySheetOpen = computed(() =>
-    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet() || this.showAchievementsSheet() || this.showMoreSheet()
+    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet() || this.showAchievementsSheet() || this.showProUpgradeSheet() || this.showMoreSheet()
   );
 
   // Check if current route matches
@@ -1025,16 +1057,34 @@ export class AppComponent implements OnDestroy {
     this.showAiCreditsSheet.set(true);
   }
 
+  openAchievementsFromMore(): void {
+    this.sheetService.skipNextHistoryPop();
+    this.showMoreSheet.set(false);
+    this.showAchievementsSheet.set(true);
+  }
+
   openStreakFromSettings(): void {
     this.sheetService.skipNextHistoryPop();
     this.showSettingsSheet.set(false);
     this.showStreakSheet.set(true);
   }
 
+  openAchievementsFromSettings(): void {
+    this.sheetService.skipNextHistoryPop();
+    this.showSettingsSheet.set(false);
+    this.showAchievementsSheet.set(true);
+  }
+
   openAiCreditsFromSettings(): void {
     this.sheetService.skipNextHistoryPop();
     this.showSettingsSheet.set(false);
     this.showAiCreditsSheet.set(true);
+  }
+
+  openProUpgradeFromAiCredits(): void {
+    this.sheetService.skipNextHistoryPop();
+    this.showAiCreditsSheet.set(false);
+    this.showProUpgradeSheet.set(true);
   }
 
   openNewVideo(): void {

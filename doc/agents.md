@@ -16,7 +16,7 @@
   - **Cloudflare D1** (SQLite at the edge) for video metadata, language discovery registries, and negative caching
   - **Cloudflare R2** (S3-compatible bucket) for permanent transcript storage (`transcripts/{videoId}/{lang}.json`) and dual-language translations
   - **Cloudflare KV** for transient caching, tokenization hashes, and distributed rate limiting
-  - **PocketBase** (`https://voca.pockethost.io`) for user authentication, cloud sync (vocabulary, streaks, playlists)
+  - **PocketBase** (`https://voca.pockethost.io`) for user authentication, cloud sync (vocabulary, streaks, playlists, gamification)
   - **IndexedDB (`lingua-tube-cache`) & LocalStorage** for client-side offline-first persistence
 
 ---
@@ -47,7 +47,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
 - Never introduce `Zone.js` manual change detection tricks or pollute templates with method executions.
 
 ### ⚠️ RULE 4: Offline-First Repository Pattern with Deterministic IDs
-- Client-side repositories (`OfflineVocabularyRepository`, `OfflineStreakRepository`, `OfflinePlaylistRepository`, `OfflineHistoryRepository`) MUST continue functioning when offline.
+- Client-side repositories (`OfflineVocabularyRepository`, `OfflineStreakRepository`, `OfflinePlaylistRepository`, `OfflineHistoryRepository`, `OfflineGamificationRepository`) MUST continue functioning when offline.
 - When generating remote IDs for synced entities (like vocabulary items), use deterministic keys (e.g. `base64(userId + '|' + word + '|' + lang).slice(0, 15)`) to prevent duplicate records upon concurrent sync.
 - Use the timestamp-based merge strategy (`mergeByTimestamp` from `src/app/shared/utils/sync.utils.ts`).
 

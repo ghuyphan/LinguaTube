@@ -203,7 +203,11 @@ export async function onRequestPost(context) {
                 }, 200, { 'X-Cache': 'NEG' });
             }
 
-            const nativeResult = await transcriptService.fetchNativeCaptions(serviceContext, cleanVideoId, lang);
+            const nativeResult = await transcriptService.fetchNativeCaptions(serviceContext, cleanVideoId, lang, {
+                title: body.title,
+                channel: body.channel,
+                duration: body.duration
+            });
             if (nativeResult) {
                 const updatedInfo = await getVideoLanguages(db, cleanVideoId);
                 availableLanguages.native = updatedInfo?.availableLanguages || [lang];

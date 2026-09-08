@@ -4,6 +4,7 @@ export * from './sidebar/sidebar.component';
 export * from './onboarding/onboarding.component';
 export * from './ai-credits-dialog/ai-credits-dialog.component';
 export * from './streak-dialog/streak-dialog.component';
+export * from './pro-upgrade-dialog/pro-upgrade-dialog.component';
 
 // Re-export from shared for backward compatibility
 export * from '../shared/components/bottom-sheet/bottom-sheet.component';

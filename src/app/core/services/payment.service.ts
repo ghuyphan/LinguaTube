@@ -9,6 +9,11 @@ export interface PaymentOrder {
   orderCode: number;
   plan: string;
   amount: number;
+  description?: string;
+  accountNumber?: string;
+  accountName?: string;
+  bin?: string;
+  bankName?: string;
   checkoutUrl: string;
   qrCode: string;
   isMock?: boolean;
@@ -74,6 +79,18 @@ export class PaymentService {
     return this.http.get<PaymentStatus>(`/api/payment/check-status?orderCode=${orderCode}`);
   }
 
+  simulateTransfer(orderCode: number): void {
+    this.http.post<{ success: boolean }>('/api/payment/simulate-transfer', { orderCode }).subscribe({
+      next: () => {
+        this.isPaid.set(true);
+        this.toast.success('Upgrade successful! Enjoy Voca Pro.');
+        this.transcript.refreshDiamonds();
+        this.auth.refreshUser();
+      },
+      error: () => {}
+    });
+  }
+
   private pollOrderStatus(orderCode: number): void {
     interval(3000).pipe(
       takeWhile(() => !this.isPaid() && this.currentOrder()?.orderCode === orderCode),
@@ -84,6 +101,7 @@ export class PaymentService {
           this.isPaid.set(true);
           this.toast.success('Upgrade successful! Enjoy Voca Pro.');
           this.transcript.refreshDiamonds();
+          this.auth.refreshUser();
         }
       },
       error: () => {}

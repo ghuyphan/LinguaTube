@@ -24,6 +24,20 @@ export interface UserGamificationState {
     notifiedAchievements: string[];               // IDs already toasted/celebrated
     totalVideosWatched: number;
     totalQuizzesCompleted: number;
+    updatedAt?: string;
+}
+
+export interface PocketBaseGamificationRecord {
+    id: string;
+    user: string;
+    xp: number;
+    level: number;
+    total_videos_watched: number;
+    total_quizzes_completed: number;
+    unlocked_achievements: Record<string, string>;
+    notified_achievements: string[];
+    created?: string;
+    updated?: string;
 }
 
 export interface LeaderboardEntry {

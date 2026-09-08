@@ -65,9 +65,16 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 
 ## 3. Accessibility, Focus Management & Mobile Stability
 
-### 3.1. Modal Focus Traps (`BottomSheetComponent`)
+### 3.1. Modal Focus Traps & Smooth Dynamic Height Transitions (`BottomSheetComponent`)
 - **Focus Cycling**: Implements strict `keydown` listener trapping keyboard `Tab` / `Shift+Tab` cycles within the active bottom sheet modal container.
 - **Focus Restoration**: Caches `document.activeElement` prior to sheet open and restores focus back to the triggering element upon dismissal, ensuring full WCAG 2.1 compliance for screen readers and keyboard users.
+- **Smooth Dynamic Height Animations**:
+  - **ResizeObserver Driven**: Watches intrinsic content size updates via an unconstrained `.sheet-content-inner` wrapper using a native `ResizeObserver`.
+  - **Web Animations API**: Smoothly interpolates the sheet container's rendered height (`sheet.animate([{ height: `${old}px` }, { height: `${new}px` }], { duration: 250, easing: 'cubic-bezier(0.32, 0.72, 0, 1)' })`).
+  - **Seamless Interruption**: If content resizes again mid-animation (e.g. rapid accordion toggle, async search results, or translation changes), the active animation is sampled at its exact mid-flight height and smoothly redirected to the new target height without visual pop.
+  - **Scrollbar Flicker Suppression**: Applies `.animating-height` class during transitions with `overflow-y: hidden` on `.sheet-content` to prevent horizontal text reflow and unsightly scrollbar flashing.
+  - **Gesture & Lifecycle Coordination**: Automatically bypasses height transitions during entrance animations (`mobileSlideUp`/`scaleIn`), cancels cleanly on drag-to-dismiss touch start (`onTouchStart`), suppresses animations during window resizing/orientation shifts, and respects user accessibility preferences (`prefers-reduced-motion: reduce`).
+
 
 ### 3.2. WAI-ARIA Slider Navigation (`ProgressBarComponent`)
 - **Semantic Role**: Configured with `role="slider"`, `[attr.aria-valuenow]`, `[attr.aria-valuemin]="0"`, `[attr.aria-valuemax]="duration()"`, and formatted `[attr.aria-valuetext]`.
@@ -85,10 +92,14 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 ## 3. Component Architecture & Domain Modules
 
 ### 3.1. Shell & Global Components (`src/app/components/`)
-- **`SidebarComponent`**: Collapsible main navigation supporting compact icon mode and expanded text mode. Displays streak counter and diamond credit badge.
-- **`SettingsSheetComponent`**: Slide-over sheet for adjusting learning languages, Furigana/Pinyin toggles, Romaji display modes, font size, playback speed, and theme.
+- **`SidebarComponent`**: Collapsible main navigation supporting compact icon mode and expanded text mode. Displays motivation stats bar featuring daily streak counter, gamification rank level (with trophy icon opening Achievements), and diamond credit badge.
+- **`SettingsSheetComponent`**: Slide-over sheet for adjusting learning languages, Furigana/Pinyin toggles, Romaji display modes, font size, playback speed, and theme. Includes mobile-responsive motivation stats pills (`Streak`, `Level`, `AI Credits`).
+- **`MoreMenuSheet` (in `AppComponent`)**: Mobile personal library & settings sheet accessible via the bottom navigation bar. Features a 3-column top quick stats bar (`🔥 Streak`, `🏆 Level`, `💎 AI Credits` - tapping Level opens the Achievements modal) alongside personal library and settings action rows (`Playlists`, `History`, `Install App`, `Settings`).
+- **Mobile Bottom Navigation (`.bottom-nav`)**: 5-item mobile navigation bar featuring `Xem` (Watch), `Ôn tập` (SRS Review), an elevated central `(+)` squircle CTA button with Voca's signature coral accent gradient (`linear-gradient(135deg, var(--accent-primary), #e04848)`) for instantaneous YouTube video URL entry, `Từ vựng` (Dictionary), and `Thêm` (More).
+- **`AchievementsDialogComponent`**: Interactive gamification modal showcasing user level, total XP progress bar, unlocked and in-progress achievement badges across Immersion, Vocabulary, Daily Streaks, Flashcards, and Quizzes, and global leaderboard rankings.
 - **`StreakDialogComponent`**: Modal displaying 7-day practice activity, streak freeze inventory, and milestone badges.
-- **`AiCreditsDialogComponent`**: Interactive diamond quota modal showcasing current credit balance, dynamic tier badge (`Anonymous`, `Free`, `Pro`), dynamic regen timer (5m / 15m / 20m), video duration pricing breakdown ($\le 10$m = 1 credit, $10$–$20$m = 2 credits, $> 20$m Pro-only), "Upgrade to Pro" action, and integrated payOS VietQR payment card with real-time transfer detection.
+- **`AiCreditsDialogComponent`**: Interactive diamond quota modal showcasing current credit balance, dynamic tier badge (`Anonymous`, `Free`, `Pro`), dynamic regen timer (5m / 15m / 20m), video duration pricing breakdown ($\le 10$m = 1 credit, $10$–$20$m = 2 credits, $> 20$m Pro-only), and a dedicated Pro teaser card linking directly to `ProUpgradeDialogComponent`.
+- **`ProUpgradeDialogComponent`**: Dedicated subscription upgrade bottom sheet designed with consistent modal styling. Features a monthly/annual plan selector with discount badge, feature comparison showcase, responsive VietQR payment card with raw EMVCo parsing, copyable bank details, live payment polling via `PaymentService`, and automatic tier activation upon settlement.
 - **`OnboardingComponent`**: First-time user walkthrough guiding video selection, language choices, and subtitle interactions.
 - **`CommandPaletteComponent`**: Power-user modal (`Cmd+K` / `Ctrl+K`) for instant navigation, video loading, and action dispatching.
 - **`ToastComponent`**: Root-mounted adaptive status capsule (`ToastService`), displaying bottom/top HUD notifications with spring physics, thumb-zone mobile ergonomics, semantic status icons, and interactive action/undo buttons without frosted glass.
@@ -120,9 +131,10 @@ graph TD
 - Host shell coordinating player, subtitles, unified sidebar, and mobile queue.
 - **Home Dashboard & "For You" Discovery (`.home-dashboard`)**:
   - Displayed when no video is loaded (`showLearnHome`).
-  - Features a segmented control switching between **Recommended Videos** (single videos with verified transcripts in D1/R2) and **Curated Playlists**.
-  - Powered by `VideoRecommendationService` with client-side language memoization and instant (<100ms) playback.
-  - Video row cards (`.home-row-item`) display duration badges, channel, target language, CEFR/JLPT/HSK/TOPIK level tier badges (`VideoLevelService`), and an "Instant Subtitles" indicator.
+  - Features a segmented control switching between **Recommended Videos** (videos with verified transcripts in Cloudflare D1/R2) and **Curated Playlists**.
+  - **Difficulty Level Filter**: Interactive `OptionPickerComponent` chip (`[🏅 Level ▾]`) in `.home-toolbar` allowing users to filter recommendations by language-specific proficiency tiers (JLPT N5–N1, HSK 1–6, TOPIK 1–6, CEFR A1–C2+).
+  - Powered by `VideoRecommendationService` retrieving genuine transcribed videos directly from Cloudflare D1 (`video_languages`, `transcripts`, `video_meta`) and R2 (`transcripts/{videoId}/{lang}.json`).
+  - Clean video row cards (`.home-row-item`) display duration badges, channel, target language circular flag, and proficiency level tier badges (`VideoLevelService`) with streamlined typography.
 - **Unified Desktop Sidebar (`.unified-sidebar`)**:
   - Encapsulates `PlaylistPanelComponent` and `VocabularyListComponent` inside a single card container with segmented tab switcher (`[Playlist (N)]` / `[Vocabulary (N)]`).
   - Retains playlist tab on desktop even for single-video playlists (`hasPlaylist`), allowing playlist management without cluttering the page.
@@ -531,8 +543,8 @@ To maintain complete visual, structural, and functional harmony across all prima
   - Dynamic breakdown popover (`.video-level-popover`) detailing framework (JLPT/HSK/TOPIK/CEFR), grammar complexity count, and speech velocity.
 - **History Cards (`HistoryListComponent`)**:
   - Pill badge (`.level-badge--pill`) visually demarcating difficulty directly on thumbnails and list cards.
-- **Sidebar Header Stats Bar (`SidebarComponent`)**:
-  - Level badge button displaying current user level and trophy icon, with click handler opening the Achievements bottom sheet.
+- **Sidebar Header Stats Bar (`SidebarComponent`) & Mobile More Menu / Settings Sheet (`AppComponent`, `SettingsSheetComponent`)**:
+  - Level badge button displaying current user level and trophy icon, with click handler opening the Achievements & Leaderboard bottom sheet on both desktop and mobile.
 
 ---
 

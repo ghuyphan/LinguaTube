@@ -220,7 +220,13 @@ export class TranscriptService {
    * 2. Check IndexedDB (persistent across sessions)
    * 3. Fetch from API (network)
    */
-  fetchTranscript(videoId: string, lang: string = 'ja', duration?: number): Observable<SubtitleCue[]> {
+  fetchTranscript(
+    videoId: string,
+    lang: string = 'ja',
+    duration?: number,
+    title?: string,
+    channel?: string
+  ): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
 
     // 1. Check client-side memory cache first (fastest)
@@ -262,7 +268,7 @@ export class TranscriptService {
         this.state.set({ status: 'loading' });
         this.fallbackInfo.set(null);
 
-        return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, duration).pipe(
+        return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, duration, title, channel).pipe(
           takeUntil(this.cancelSubject),
           tap(cues => {
             if (cues.length > 0) {
@@ -289,7 +295,9 @@ export class TranscriptService {
     lang: string = 'ja',
     resultUrl?: string,
     turnstileToken?: string,
-    duration?: number
+    duration?: number,
+    title?: string,
+    channel?: string
   ): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
 
@@ -301,7 +309,7 @@ export class TranscriptService {
     });
     this.fallbackInfo.set(null);
 
-    return this.callTranscriptAPI(videoId, lang, true, resultUrl, turnstileToken, duration).pipe(
+    return this.callTranscriptAPI(videoId, lang, true, resultUrl, turnstileToken, duration, title, channel).pipe(
       takeUntil(this.cancelSubject),
       tap(cues => {
         if (cues.length > 0) {
@@ -431,7 +439,9 @@ export class TranscriptService {
     preferAI: boolean,
     resultUrl?: string,
     turnstileToken?: string,
-    duration?: number
+    duration?: number,
+    title?: string,
+    channel?: string
   ): Observable<SubtitleCue[]> {
 
     // Dedup ongoing requests (except for polling)
@@ -445,6 +455,8 @@ export class TranscriptService {
       lang,
       preferAI,
       ...(duration !== undefined && duration > 0 && { duration }),
+      ...(title && { title }),
+      ...(channel && { channel }),
       ...(resultUrl && { resultUrl }),
       ...(turnstileToken && { turnstileToken })
     }).pipe(

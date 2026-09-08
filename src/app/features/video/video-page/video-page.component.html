@@ -79,8 +79,8 @@
                         (click)="homeTab.set('videos')" [attr.aria-label]="i18n.t('playlist.recommendedVideos')">
                         <app-icon name="video" [size]="14" />
                         <span class="chip-text">{{ i18n.t('playlist.recommendedVideos') }}</span>
-                        @if (recommendedVideos().length > 0) {
-                        <span class="tab-badge">{{ recommendedVideos().length }}</span>
+                        @if (filteredRecommendedVideos().length > 0) {
+                        <span class="tab-badge">{{ filteredRecommendedVideos().length }}</span>
                         }
                     </button>
                     <button type="button" class="filter-chip" [class.active]="homeTab() === 'playlists'"
@@ -92,6 +92,17 @@
                         }
                     </button>
                 </div>
+
+                @if (homeTab() === 'videos' && recommendedVideos().length > 0) {
+                <div class="toolbar-actions">
+                    <button type="button" class="filter-chip filter-chip--level" [class.active]="videoLevelFilter() !== 'all'"
+                        (click)="showLevelFilter.set(true)" [attr.aria-label]="getLevelFilterLabel()" [title]="getLevelFilterLabel()">
+                        <app-icon name="medal" [size]="14" />
+                        <span class="chip-text">{{ getLevelFilterLabel() }}</span>
+                        <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
+                    </button>
+                </div>
+                }
             </div>
 
             @if (homeTab() === 'videos') {
@@ -111,9 +122,9 @@
                     </div>
                     }
                 </div>
-                } @else if (recommendedVideos().length > 0) {
+                } @else if (filteredRecommendedVideos().length > 0) {
                 <div class="horizontal-item-list">
-                    @for (video of recommendedVideos(); track video.videoId; let i = $index) {
+                    @for (video of filteredRecommendedVideos(); track video.videoId; let i = $index) {
                     <div class="home-row-item" [style.--item-index]="i" (click)="onPlayRecommendedVideo(video)">
                         <div class="home-row-item__thumb">
                             <img [src]="video.thumbnail" [alt]="video.title" loading="lazy" />
@@ -137,12 +148,7 @@
                                 @if (video.level) {
                                 <span class="level-badge--pill" [attr.data-tier]="video.tier">{{ video.level }}</span>
                                 }
-                                <span class="instant-sub-pill">
-                                    <app-icon name="subtitles" [size]="11" />
-                                    <span>{{ i18n.t('playlist.instantSubtitles') }}</span>
-                                </span>
                                 @if (video.channel) {
-                                <span class="separator">•</span>
                                 <span class="meta-author">{{ video.channel }}</span>
                                 }
                             </div>
@@ -154,6 +160,19 @@
                         </div>
                     </div>
                     }
+                </div>
+                } @else if (recommendedVideos().length > 0) {
+                <div class="empty-state empty-state--centered">
+                    <div class="empty-state__icon-box">
+                        <app-icon name="medal" [size]="24" />
+                    </div>
+                    <div class="empty-state__text">
+                        <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>
+                        <p class="empty-state__description">{{ i18n.t('common.noResults') || 'No videos found for this level.' }}</p>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="videoLevelFilter.set('all')">
+                        {{ i18n.t('level.allLevels') || 'All Levels' }}
+                    </button>
                 </div>
                 } @else {
                 <div class="empty-state empty-state--centered">
@@ -538,3 +557,9 @@
     </div>
 </app-bottom-sheet>
 }
+
+<!-- Level Option Picker for Recommended Videos -->
+<app-option-picker [options]="levelFilterOptions()" [value]="videoLevelFilter()" [isOpen]="showLevelFilter()"
+    [title]="i18n.t('level.filterByLevel') || 'Filter by Level'" (selected)="onLevelFilterChange($event)"
+    (closed)="showLevelFilter.set(false)" />
+

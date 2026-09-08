@@ -272,15 +272,18 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 - **Query Parameters**:
   - `lang`: Target learning language (`ja`, `ko`, `zh`, `en`, defaults to `ja`).
   - `limit`: Maximum items to return (1-50, default `12`).
-- **Database Query & Quality Gates**:
-  - Queries Cloudflare D1 `video_languages` table for pre-processed transcripts (`available_languages LIKE '%"lang"%'`).
-  - Strict quality gates: `title IS NOT NULL AND title != ''`, `duration_seconds BETWEEN 30 AND 3600`.
+- **Database & Cloudflare Storage Discovery**:
+  - Queries Cloudflare D1 `video_languages` table for pre-processed transcripts (`available_languages LIKE '%"lang"%' OR available_languages LIKE '%lang%'`).
+  - Fallback queries D1 `transcripts` (with `LEFT JOIN video_languages`) and `video_meta` tables with support for regional language subtags (e.g. `ja-JP`, `zh-CN`, `ko-KR`, `en-US`).
+  - Scans Cloudflare R2 bucket (`TRANSCRIPT_STORAGE`) for stored transcript objects (`transcripts/{videoId}/{lang}.json` and `transcripts/{videoId}/{lang}-*.json`).
+  - Duration filters safely accommodate videos with unrecorded/zero durations as well as typical learning durations (`(duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)`).
   - Ordered by `updated_at DESC`.
-  - Extracts proficiency level from `levels` JSON or falls back to regex title heuristic (`detectLevelFromMetadata`).
-- **Caching & Efficiency**:
+  - Automatic metadata enrichment: Any discovered video missing a title is enriched via YouTube oEmbed (`getVideoMetadata`) and cached in D1.
+- **Caching & Authenticity**:
   - Warm Worker isolate in-memory caching (`memCache`, 15-minute TTL).
   - HTTP Edge CDN caching header: `Cache-Control: public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400`.
   - Zero Cloudflare KV write cost, strictly preserving free-tier limits.
+  - Authentic Content: Serves strictly verified transcribed videos directly from Cloudflare storage (`source: "cloudflare"`) with no artificial mock data.
 - **Response**:
   ```json
   {
@@ -296,10 +299,11 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
         "thumbnail": "https://i.ytimg.com/vi/BZRT37f8zZY/mqdefault.jpg",
         "languages": ["ja", "en"],
         "level": "JLPT N4",
+        "tier": "elementary",
         "updatedAt": 1725732000
       }
     ],
-    "source": "d1"
+    "source": "cloudflare"
   }
   ```
 
@@ -325,9 +329,9 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - `GET /api/payment/check-status`
 - **Source**: `functions-src/api/payment/*.js`, `functions-src/providers/payos.js`
 - **Process**:
-  1. `create-order`: Generates a unique numeric orderCode and builds a payOS VietQR link (`amount=49,000đ` for Pro 1 Month). Caches pending order metadata in Cloudflare KV.
-  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY`. Enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier = 'pro'`, `subscription_expires = now + 30 days`, and sets `diamonds = 20`.
-  3. `check-status`: Lightweight polling endpoint for the frontend VietQR modal to detect payment completion in real time.
+  1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 490,000 VND). Generates a unique numeric `orderCode`, builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV.
+  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY`. Enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier = 'pro'`, sets `subscription_expires` (+30 days or +365 days), and allocates `diamonds = 20`.
+  3. `check-status`: Lightweight polling endpoint for the frontend `ProUpgradeDialogComponent` to detect payment completion in real time. Also supports local development simulation via `POST /api/payment/simulate-transfer`.
 
 ---
 

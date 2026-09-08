@@ -181,6 +181,28 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    flex-wrap: wrap;
+}
+
+.account-upgrade-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 7px;
+    background: var(--gradient-pro);
+    color: #ffffff;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    border-radius: var(--border-radius-pill);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.25);
+    transition: all var(--transition-fast);
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 8px rgba(59, 130, 246, 0.35);
+    }
 }
 
 .account-name {
@@ -228,22 +250,18 @@
     }
 }
 
-/* Stats 2-Column Grid inside Account Card (Desktop only, mobile accesses via More menu) */
+/* Stats 3-Column Grid inside Account Card */
 .settings-stats-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xs);
-
-    @media (max-width: 768px) {
-        display: none;
-    }
 }
 
 .settings-stat-pill {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    padding: 0.5625rem 0.75rem;
+    gap: var(--space-xs);
+    padding: 0.5rem 0.5rem;
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
@@ -280,6 +298,11 @@
 
 .stat-icon--diamond {
     color: var(--color-diamond);
+    flex-shrink: 0;
+}
+
+.stat-icon--trophy {
+    color: #f59e0b;
     flex-shrink: 0;
 }
 

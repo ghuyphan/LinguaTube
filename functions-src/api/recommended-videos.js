@@ -1,13 +1,13 @@
 /**
  * Recommended Videos API (Cloudflare Pages Function)
- * Discovers videos with verified transcripts in the database matching the user's target language.
+ * Discovers videos with verified transcripts in Cloudflare (D1 & R2) matching the user's target language.
  * 
  * Route: GET /api/recommended-videos?lang=ja&limit=12
  */
 
 import { jsonResponse, handleOptions } from '../utils/utils.js';
 import { isLanguageSupported } from '../middlewares/video-validator.js';
-import { getRecommendedVideosFromD1 } from '../data/video-info-db.js';
+import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 
 // In-memory cache across warm Worker isolate requests
 const memCache = new Map();
@@ -46,9 +46,10 @@ export async function onRequestGet(context) {
         });
     }
 
-    // 2. Query D1 database
-    const db = env.VOCAB_DB;
-    const videos = await getRecommendedVideosFromD1(db, lang, limit);
+    // 2. Query Cloudflare (D1 database + R2 storage)
+    const db = env?.VOCAB_DB;
+    const r2 = env?.TRANSCRIPT_STORAGE;
+    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit);
 
     // Save to isolate memory cache
     memCache.set(cacheKey, {
@@ -61,7 +62,7 @@ export async function onRequestGet(context) {
         language: lang,
         count: videos.length,
         videos,
-        source: 'd1'
+        source: 'cloudflare'
     }, 200, {
         'X-Cache': 'MISS',
         'Cache-Control': CDN_CACHE_HEADER

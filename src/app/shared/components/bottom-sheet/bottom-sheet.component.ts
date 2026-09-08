@@ -36,6 +36,7 @@ export class BottomSheetComponent implements OnDestroy {
   // View children
   sheetEl = viewChild<ElementRef<HTMLElement>>('sheetEl');
   sheetContent = viewChild<ElementRef<HTMLElement>>('sheetContent');
+  contentInner = viewChild<ElementRef<HTMLElement>>('contentInner');
 
   // Inputs
   isOpen = input<boolean>(false);
@@ -99,6 +100,15 @@ export class BottomSheetComponent implements OnDestroy {
   private previouslyFocusedElement: HTMLElement | null = null;
   private keydownListener: ((e: KeyboardEvent) => void) | null = null;
 
+  // Dynamic height animation state
+  private resizeObserver: ResizeObserver | null = null;
+  private lastSheetHeight = 0;
+  private currentHeightAnimation: Animation | null = null;
+  private isWindowResizing = false;
+  private windowResizeTimer: ReturnType<typeof setTimeout> | null = null;
+  private windowResizeListener: (() => void) | null = null;
+  private animationSafetyTimer: ReturnType<typeof setTimeout> | null = null;
+
   constructor() {
     effect(() => {
       if (this.isOpen()) {
@@ -120,6 +130,21 @@ export class BottomSheetComponent implements OnDestroy {
         // Reset hasAnimated when sheet opens (animation will play)
         this.hasAnimated.set(false);
         this.setupFocusTrap();
+
+        // Safety timeout in case animationend does not fire
+        if (this.animationSafetyTimer) {
+          clearTimeout(this.animationSafetyTimer);
+        }
+        this.animationSafetyTimer = setTimeout(() => {
+          this.animationSafetyTimer = null;
+          if (this.isOpen() && !this.hasAnimated()) {
+            this.hasAnimated.set(true);
+            const sheet = this.sheetEl()?.nativeElement;
+            if (sheet) {
+              this.lastSheetHeight = sheet.offsetHeight;
+            }
+          }
+        }, 350);
       } else {
         // If closed externally (not by service), ensure unregister is called
         if (this.unregisterFn) {
@@ -128,6 +153,16 @@ export class BottomSheetComponent implements OnDestroy {
         }
         this.restoreFocus();
         this.restore();
+      }
+    });
+
+    // Observe inner content resize to trigger smooth height animations
+    effect(() => {
+      const inner = this.contentInner()?.nativeElement;
+      if (this.isOpen() && inner) {
+        this.setupResizeObserver(inner);
+      } else {
+        this.cleanupResizeObserver();
       }
     });
   }
@@ -177,6 +212,7 @@ export class BottomSheetComponent implements OnDestroy {
    * This should NOT manipulate history (service handles that)
    */
   private onServiceClose(): void {
+    this.cleanupResizeObserver();
     // Trigger the closing animation and emit
     this.isClosing.set(true);
     this.isDragging.set(false);
@@ -195,6 +231,10 @@ export class BottomSheetComponent implements OnDestroy {
     // Only mark as animated for entry animations (scaleIn for desktop, mobileSlideUp for mobile)
     if (event.animationName === 'mobileSlideUp' || event.animationName === 'scaleIn') {
       this.hasAnimated.set(true);
+      const sheet = this.sheetEl()?.nativeElement;
+      if (sheet) {
+        this.lastSheetHeight = sheet.offsetHeight;
+      }
     }
   }
 
@@ -203,6 +243,7 @@ export class BottomSheetComponent implements OnDestroy {
 
   onTouchStart(event: TouchEvent): void {
     if (!this.isMobile) return;
+    this.cancelHeightAnimation();
 
     const touch = event.touches[0];
     const sheetEl = this.sheetEl()?.nativeElement;
@@ -312,6 +353,7 @@ export class BottomSheetComponent implements OnDestroy {
   }
 
   private animatedClose(): void {
+    this.cleanupResizeObserver();
     this.isClosing.set(true);
     this.isDragging.set(false);
     this.dragOffset.set(0);
@@ -333,6 +375,7 @@ export class BottomSheetComponent implements OnDestroy {
    * Sheet animates via inline styles, we just handle backdrop and cleanup
    */
   private animatedCloseFromDrag(): void {
+    this.cleanupResizeObserver();
     // Set drag closing to use inline transition instead of CSS animation
     this.isDragClosing.set(true);
     this.isClosing.set(true);
@@ -353,6 +396,163 @@ export class BottomSheetComponent implements OnDestroy {
       this.restoreFocus();
       this.closed.emit();
     }, this.ANIMATION_DURATION);
+  }
+
+  /**
+   * Set up ResizeObserver on the inner content container to smoothly
+   * animate the sheet height when dynamic content changes.
+   */
+  private setupResizeObserver(target: HTMLElement): void {
+    this.cleanupResizeObserver();
+    if (!isPlatformBrowser(this.platformId) || typeof ResizeObserver === 'undefined') return;
+
+    this.lastSheetHeight = 0;
+
+    this.resizeObserver = new ResizeObserver(() => {
+      this.onContentResized();
+    });
+
+    this.resizeObserver.observe(target);
+    this.setupWindowResizeListener();
+  }
+
+  private cleanupResizeObserver(): void {
+    if (this.animationSafetyTimer) {
+      clearTimeout(this.animationSafetyTimer);
+      this.animationSafetyTimer = null;
+    }
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+      this.resizeObserver = null;
+    }
+    this.cancelHeightAnimation();
+    this.removeWindowResizeListener();
+    this.lastSheetHeight = 0;
+  }
+
+  private cancelHeightAnimation(): void {
+    if (this.currentHeightAnimation) {
+      this.currentHeightAnimation.cancel();
+      this.currentHeightAnimation = null;
+    }
+    const sheet = this.sheetEl()?.nativeElement;
+    if (sheet) {
+      sheet.classList.remove('animating-height');
+    }
+  }
+
+  private setupWindowResizeListener(): void {
+    if (!isPlatformBrowser(this.platformId) || this.windowResizeListener) return;
+
+    this.windowResizeListener = () => {
+      this.isWindowResizing = true;
+      if (this.windowResizeTimer) {
+        clearTimeout(this.windowResizeTimer);
+      }
+      this.windowResizeTimer = setTimeout(() => {
+        this.isWindowResizing = false;
+        const sheet = this.sheetEl()?.nativeElement;
+        if (sheet) {
+          this.lastSheetHeight = sheet.offsetHeight;
+        }
+      }, 150);
+    };
+
+    window.addEventListener('resize', this.windowResizeListener, { passive: true });
+  }
+
+  private removeWindowResizeListener(): void {
+    if (this.windowResizeListener) {
+      window.removeEventListener('resize', this.windowResizeListener);
+      this.windowResizeListener = null;
+    }
+    if (this.windowResizeTimer) {
+      clearTimeout(this.windowResizeTimer);
+      this.windowResizeTimer = null;
+    }
+    this.isWindowResizing = false;
+  }
+
+  private onContentResized(): void {
+    const sheet = this.sheetEl()?.nativeElement;
+    if (!sheet || !this.isOpen() || this.isClosing() || this.isDragClosing() || this.isDragging()) {
+      return;
+    }
+
+    // If Web Animations API is not supported in this environment, return
+    if (typeof sheet.animate !== 'function') {
+      this.lastSheetHeight = sheet.offsetHeight;
+      return;
+    }
+
+    // If window is resizing, adapt immediately without animation to avoid rubber-banding
+    if (this.isWindowResizing) {
+      this.cancelHeightAnimation();
+      this.lastSheetHeight = sheet.offsetHeight;
+      return;
+    }
+
+    // Check user prefers-reduced-motion
+    if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.cancelHeightAnimation();
+      this.lastSheetHeight = sheet.offsetHeight;
+      return;
+    }
+
+    // Baseline measurement: record initial height without animating so entry animation is clean
+    if (this.lastSheetHeight <= 0) {
+      this.lastSheetHeight = sheet.offsetHeight;
+      return;
+    }
+
+    // If entry animation is still running, update baseline height and let entrance animation handle presentation
+    if (!this.hasAnimated()) {
+      this.lastSheetHeight = sheet.offsetHeight;
+      return;
+    }
+
+    let oldHeight = this.lastSheetHeight;
+    if (this.currentHeightAnimation) {
+      // Capture current height mid-flight before cancelling previous animation
+      oldHeight = sheet.getBoundingClientRect().height;
+      this.currentHeightAnimation.cancel();
+      this.currentHeightAnimation = null;
+      sheet.classList.remove('animating-height');
+    }
+
+    const newHeight = sheet.offsetHeight;
+    this.lastSheetHeight = newHeight;
+
+    // Only animate if there is a noticeable height change (> 2px)
+    if (Math.abs(newHeight - oldHeight) <= 2 || oldHeight <= 0) {
+      return;
+    }
+
+    sheet.classList.add('animating-height');
+    try {
+      this.currentHeightAnimation = sheet.animate(
+        [
+          { height: `${oldHeight}px` },
+          { height: `${newHeight}px` }
+        ],
+        {
+          duration: 250,
+          easing: 'cubic-bezier(0.32, 0.72, 0, 1)'
+        }
+      );
+
+      this.currentHeightAnimation.onfinish = () => {
+        this.currentHeightAnimation = null;
+        sheet.classList.remove('animating-height');
+      };
+
+      this.currentHeightAnimation.oncancel = () => {
+        this.currentHeightAnimation = null;
+        sheet.classList.remove('animating-height');
+      };
+    } catch {
+      sheet.classList.remove('animating-height');
+    }
   }
 
   private setupFocusTrap(): void {
@@ -416,6 +616,7 @@ export class BottomSheetComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.cleanupResizeObserver();
     this.restoreFocus();
     // Clean up - unregister if still open
     if (this.unregisterFn) {

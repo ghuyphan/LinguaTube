@@ -54,39 +54,44 @@ export class VideoRecommendationService {
             );
 
             const rawVideos = response?.videos || [];
-
-            // Hydrate difficulty levels and tiers using VideoLevelService
-            const hydratedVideos: RecommendedVideo[] = rawVideos.map(video => {
-                let resolvedLevel = video.level;
-                let resolvedTier = video.tier;
-
-                if (resolvedLevel) {
-                    resolvedTier = this.videoLevel.labelToTier(resolvedLevel);
-                } else {
-                    const detected = this.videoLevel.resolveLevel(video.videoId, language, video.title, video.channel);
-                    if (detected) {
-                        resolvedLevel = detected.level;
-                        resolvedTier = detected.tier;
-                    }
-                }
-
-                return {
-                    ...video,
-                    level: resolvedLevel,
-                    tier: resolvedTier
-                };
-            });
-
+            const hydratedVideos = this.hydrateVideos(rawVideos, language);
             this.cache.set(cacheKey, hydratedVideos);
             this.recommendedVideos.set(hydratedVideos);
             return hydratedVideos;
         } catch (err) {
-            console.error('[VideoRecommendation] Failed to load recommended videos:', err);
+            console.warn('[VideoRecommendation] Failed to load remote recommended videos:', err);
             this.recommendedVideos.set([]);
             return [];
         } finally {
             this.isLoading.set(false);
         }
+    }
+
+    /**
+     * Hydrate difficulty levels and tiers using VideoLevelService
+     */
+    private hydrateVideos(videos: RecommendedVideo[], language: string): RecommendedVideo[] {
+        return videos.map(video => {
+            let resolvedLevel = video.level;
+            let resolvedTier = video.tier;
+
+            if (resolvedLevel) {
+                resolvedTier = this.videoLevel.labelToTier(resolvedLevel);
+            } else {
+                const detected = this.videoLevel.resolveLevel(video.videoId, language, video.title, video.channel);
+                if (detected) {
+                    resolvedLevel = detected.level;
+                    resolvedTier = detected.tier;
+                }
+            }
+
+            return {
+                ...video,
+                thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${video.videoId}/mqdefault.jpg`,
+                level: resolvedLevel,
+                tier: resolvedTier
+            };
+        });
     }
 
     /**
