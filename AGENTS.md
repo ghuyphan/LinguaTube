@@ -73,6 +73,19 @@ When modifying this repository, you **MUST** adhere to the following rules:
   6. **Agent Rules & Guidance**: Any change to `AGENTS.md` MUST also be mirrored in `doc/agents.md`.
 - **Never defer documentation updates**: Treat documentation as a first-class build artifact. Do not wait for the user to ask for documentation updates.
 
+### ⚠️ RULE 8: Versioning & Changelog Mandate (Update Release Highlights on Commits)
+- **Whenever an agent prepares to commit and push code that introduces user-facing features, UX improvements, bug fixes, or notable backend changes, the agent MUST update the version and changelog metadata before committing.**
+- **The Synchronized Version & Changelog Locations**:
+  1. `src/app/data/changelog.data.ts`: Contains `CURRENT_RELEASE_INFO` with `version`, `buildDate`, and localized `highlights` across all 5 languages (`en`, `vi`, `ja`, `ko`, `zh`).
+  2. `functions-src/api/version.js`: Contains `APP_VERSION_DATA` mirroring `version`, `buildDate`, and `highlights` for Cloudflare edge verification.
+  3. `server/server.js`: Mirrors the `/api/version` handler for local development.
+  4. `package.json`: Contains `"version": "x.y.z"`.
+- **Workflow Requirements**:
+  - Summarize the new changes into 3–5 user-friendly, high-impact bullet points.
+  - Translate the bullets into all 5 supported languages (`en`, `vi`, `ja`, `ko`, `zh`).
+  - Bump the patch or minor version if appropriate (e.g. `1.0.0` $\rightarrow$ `1.0.1`), or update `buildDate` to current date (`YYYY-MM-DD`).
+  - Always run `npm run build:functions` so that the generated `functions/api/version.js` includes the updated version metadata.
+
 ---
 
 ## 3. High-Level Architecture Map
@@ -293,6 +306,18 @@ Whenever your task touches any feature, API, database schema, or workflow:
 2. Review all edited files and update relevant diagrams, tables, and code snippets.
 3. If new user-facing strings were added, ensure all 5 translation files (`en.json`, `vi.json`, `ja.json`, `ko.json`, `zh.json`) are updated.
 
+### Workflow 6: Version Bumping & Changelog Generation for Commits
+When finishing a feature, refactor, or bug fix that is ready to commit and push:
+1. Determine if a version bump is appropriate (e.g. patch `1.0.0` $\rightarrow$ `1.0.1` for bug fixes/enhancements, or minor `1.1.0` for major features).
+2. Draft 3–5 concise, impactful bullet points highlighting what is new, fixed, or improved.
+3. Localize the bullet points into all 5 supported languages (`en`, `vi`, `ja`, `ko`, `zh`).
+4. Update `package.json` (`"version"`).
+5. Update `src/app/data/changelog.data.ts` (`CURRENT_RELEASE_INFO`).
+6. Update `functions-src/api/version.js` (`APP_VERSION_DATA`).
+7. Update `server/server.js` (`/api/version` handler).
+8. Re-bundle functions via `npm run build:functions`.
+9. Verify with `npm run lint` and `npm run test:backend`.
+
 ---
 
 ## 6. Verification & Quality Assurance Checklist
@@ -304,6 +329,7 @@ Before declaring any task complete, verify:
 - [ ] No changes were made directly to `functions/` (only `functions-src/`).
 - [ ] Any new strings added to the UI have corresponding translations in all 5 supported languages: `en.json`, `vi.json`, `ja.json`, `ko.json`, and `zh.json`.
 - [ ] SSRF security guards and protocol validators remain intact.
+- [ ] **Changelog & Version synchronized**: Release version, build date, and localized highlights updated in `src/app/data/changelog.data.ts`, `functions-src/api/version.js`, `server/server.js`, and `package.json` across all 5 languages before committing.
 - [ ] **Documentation is synchronized**: All relevant `.md` files in `doc/`, `README.md`, and `AGENTS.md` reflect all code, schema, and API changes.
 
 ---
