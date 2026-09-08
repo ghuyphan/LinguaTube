@@ -390,13 +390,26 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   }
   ```
 - **Caching & Transport Optimizations**:
-  - **Pre-Serialized JSON**: The version payload is serialized once at Worker isolate startup, eliminating `JSON.stringify()` runtime CPU overhead.
-  - **ETag & HTTP 304 Not Modified**: Pre-computes `ETag: "{version}-{buildDate}"`. When clients revalidate with `If-None-Match`, the edge immediately short-circuits to `304 Not Modified` with a **0-byte payload**, minimizing mobile bandwidth consumption and server latency.
-  - **Cache Header**: `Cache-Control: no-cache, must-revalidate` paired with client `cache: 'no-cache'`, instructing the browser to always revalidate via conditional requests without risk of stale caching.
-  - **Zero-I/O Fast Path**: Runs purely in-memory in the Cloudflare V8 Worker isolate with 0 database (D1), KV, or storage (R2) queries (<1ms execution time).
+  - **Pre-Serialized In-Memory Fast Path**: The version payload is stored in warm isolate memory, eliminating runtime `JSON.stringify()` overhead and delivering responses in **< 1ms**.
+  - **Dynamic Cloudflare KV Override (`app_version_override`)**: Warm isolates check `env.TRANSCRIPT_CACHE` every 60 seconds. If an admin places a JSON override in KV (e.g. `{"maintenance": true}`, `{"forceUpdate": true, "minSupportedVersion": "1.1.0"}`), the edge picks it up within 60 seconds without requiring a code commit or Pages rebuild.
+  - **ETag & HTTP 304 Not Modified**: Pre-computes dynamic `ETag`. When clients revalidate with `If-None-Match`, the edge immediately returns `304 Not Modified` with a **0-byte payload**, minimizing mobile bandwidth consumption.
+  - **Cache Header**: `Cache-Control: no-cache, must-revalidate` paired with client `cache: 'no-cache'`, ensuring the browser performs conditional requests without serving stale data.
 - **Client Usage**:
   - Evaluated by `AppUpdateService` on application launch and background refresh triggers.
   - Compares client version against `minSupportedVersion` (via SemVer string comparison): if client version is older, `forceUpdateRequired` is flagged, making the update sheet non-dismissible and preventing outdated clients from invoking incompatible edge APIs.
   - Supplies localized "What's New" bullet points rendered directly in the update prompt and Settings release notes sheet.
+- **Operator Commands (Emergency Toggles without Redeploying)**:
+  - Enable maintenance mode:
+    ```bash
+    npx wrangler kv:key put --binding=TRANSCRIPT_CACHE app_version_override '{"maintenance": true, "maintenanceMessage": "Scheduled maintenance. Back soon!"}'
+    ```
+  - Enforce breaking update:
+    ```bash
+    npx wrangler kv:key put --binding=TRANSCRIPT_CACHE app_version_override '{"forceUpdate": true, "minSupportedVersion": "1.1.0"}'
+    ```
+  - Clear override (revert to code default):
+    ```bash
+    npx wrangler kv:key delete --binding=TRANSCRIPT_CACHE app_version_override
+    ```
 
 

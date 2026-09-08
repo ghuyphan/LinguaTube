@@ -1606,12 +1606,19 @@ app.post('/api/tokenize/:lang', (req, res) => {
  */
 app.get('/api/version', (req, res) => {
     res.set('Cache-Control', 'no-cache, must-revalidate');
+
+    // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
+    const mockMaintenance = req.query.mock_maintenance === 'true';
+    const mockForce = req.query.mock_force === 'true';
+    const mockVersion = req.query.mock_version || '1.0.0';
+
     res.json({
-        version: '1.0.0',
-        minSupportedVersion: '1.0.0',
+        version: mockVersion,
+        minSupportedVersion: mockForce ? '1.1.0' : '1.0.0',
         buildDate: '2026-09-08',
-        forceUpdate: false,
-        maintenance: false,
+        forceUpdate: mockForce,
+        maintenance: mockMaintenance,
+        maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
                 'Lightweight Service Worker updates (under 150KB)',

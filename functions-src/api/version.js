@@ -53,45 +53,74 @@ const APP_VERSION_DATA = {
     }
 };
 
-// Pre-serialized at isolate initialization to avoid JSON.stringify() on every request
-const VERSION_JSON_STRING = JSON.stringify(APP_VERSION_DATA);
-
-// Pre-computed ETag for conditional requests
-const VERSION_ETAG = `"${APP_VERSION_DATA.version}-${APP_VERSION_DATA.buildDate}"`;
-
-// Standard edge response headers
-const RESPONSE_HEADERS = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    'Cache-Control': 'no-cache, must-revalidate',
-    'ETag': VERSION_ETAG,
-    'Vary': 'Accept-Encoding'
-};
+// In-memory isolate state with 60-second KV check interval
+let currentVersionData = APP_VERSION_DATA;
+let currentJsonString = JSON.stringify(APP_VERSION_DATA);
+let currentEtag = `"${APP_VERSION_DATA.version}-${APP_VERSION_DATA.buildDate}"`;
+let lastKvCheckTime = 0;
+const KV_CHECK_INTERVAL_MS = 60_000; // 60s warm isolate TTL to conserve KV reads
 
 export async function onRequestOptions() {
     return handleOptions(['GET', 'OPTIONS']);
 }
 
 export async function onRequestGet(context) {
-    const { request } = context;
+    const { request, env } = context;
+
+    // Check Cloudflare KV for dynamic operational overrides (maintenance, force update, or emergency patch)
+    const kv = env?.TRANSCRIPT_CACHE;
+    const now = Date.now();
+    if (kv && (now - lastKvCheckTime > KV_CHECK_INTERVAL_MS)) {
+        lastKvCheckTime = now;
+        try {
+            const override = await kv.get('app_version_override', 'json');
+            if (override && typeof override === 'object') {
+                currentVersionData = {
+                    ...APP_VERSION_DATA,
+                    ...override,
+                    highlights: {
+                        ...APP_VERSION_DATA.highlights,
+                        ...(override.highlights || {})
+                    }
+                };
+                currentJsonString = JSON.stringify(currentVersionData);
+                const versionTag = currentVersionData.version || APP_VERSION_DATA.version;
+                const dateTag = override.updatedAt || currentVersionData.buildDate;
+                currentEtag = `"${versionTag}-${dateTag}"`;
+            } else if (currentVersionData !== APP_VERSION_DATA) {
+                // Override removed from KV: revert cleanly to compiled release info
+                currentVersionData = APP_VERSION_DATA;
+                currentJsonString = JSON.stringify(APP_VERSION_DATA);
+                currentEtag = `"${APP_VERSION_DATA.version}-${APP_VERSION_DATA.buildDate}"`;
+            }
+        } catch (err) {
+            console.warn('[VersionAPI] Failed to read app_version_override from KV:', err);
+        }
+    }
 
     // Fast-path: HTTP 304 Not Modified if client's cached ETag matches
     const ifNoneMatch = request?.headers?.get('if-none-match');
-    if (ifNoneMatch && (ifNoneMatch === VERSION_ETAG || ifNoneMatch === `W/${VERSION_ETAG}`)) {
+    if (ifNoneMatch && (ifNoneMatch === currentEtag || ifNoneMatch === `W/${currentEtag}`)) {
         return new Response(null, {
             status: 304,
             headers: {
                 'Access-Control-Allow-Origin': '*',
                 'Cache-Control': 'no-cache, must-revalidate',
-                'ETag': VERSION_ETAG
+                'ETag': currentEtag
             }
         });
     }
 
-    return new Response(VERSION_JSON_STRING, {
+    return new Response(currentJsonString, {
         status: 200,
-        headers: RESPONSE_HEADERS
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Cache-Control': 'no-cache, must-revalidate',
+            'ETag': currentEtag,
+            'Vary': 'Accept-Encoding'
+        }
     });
 }
