@@ -1,10 +1,16 @@
-import { Injectable, signal, inject, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { Injectable, signal, computed, inject, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 import { Subject, fromEvent, interval } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import { ToastService } from './toast.service';
 import { I18nService } from './i18n.service';
+import {
+  ServerVersionInfo,
+  CURRENT_RELEASE_INFO,
+  getLocalizedHighlights,
+  isVersionOlder
+} from '../../data/changelog.data';
 
 export interface CheckUpdateOptions {
   isManual?: boolean;
@@ -22,13 +28,39 @@ export class AppUpdateService implements OnDestroy {
   private isBrowser = isPlatformBrowser(this.platformId);
   private destroy$ = new Subject<void>();
 
+  // Current client release metadata
+  readonly currentVersion = signal<string>(CURRENT_RELEASE_INFO.version);
+  readonly currentRelease = signal<ServerVersionInfo>(CURRENT_RELEASE_INFO);
+
+  // Server state metadata & breaking change protection
+  readonly serverVersionInfo = signal<ServerVersionInfo | null>(null);
+  readonly incomingVersion = signal<string | null>(null);
+  readonly forceUpdateRequired = signal<boolean>(false);
+  readonly isMaintenanceMode = signal<boolean>(false);
+  readonly maintenanceMessage = signal<string | null>(null);
+
   // Reactive state signals for UI components
   readonly isEnabled = signal<boolean>(false);
   readonly updateAvailable = signal<boolean>(false);
   readonly isChecking = signal<boolean>(false);
   readonly showUpdateSheet = signal<boolean>(false);
-  readonly currentVersion = signal<string>('1.0.0');
   readonly lastChecked = signal<Date | null>(null);
+
+  // Localized highlights for the current incoming update
+  readonly incomingHighlights = computed<string[]>(() => {
+    const serverInfo = this.serverVersionInfo();
+    const lang = this.i18n.currentLanguage();
+    if (serverInfo) {
+      return getLocalizedHighlights(serverInfo.highlights, lang);
+    }
+    return getLocalizedHighlights(this.currentRelease().highlights, lang);
+  });
+
+  // Localized highlights for current installed release
+  readonly currentHighlights = computed<string[]>(() => {
+    const lang = this.i18n.currentLanguage();
+    return getLocalizedHighlights(this.currentRelease().highlights, lang);
+  });
 
   // Timing constants
   private readonly MIN_BACKGROUND_CHECK_INTERVAL = 5 * 60 * 1000; // 5 minutes
@@ -45,16 +77,62 @@ export class AppUpdateService implements OnDestroy {
 
     if (!enabled) {
       console.log('[AppUpdate] Service worker update detection is disabled in this environment.');
-      return;
+    } else {
+      this.initUpdateListeners();
+      this.initBackgroundTriggers();
     }
 
-    this.initUpdateListeners();
-    this.initBackgroundTriggers();
+    // Always fetch server version on startup to verify API compatibility & changelog
+    void this.fetchServerVersion();
   }
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  /**
+   * Fetch current server version metadata, changelog, and breaking migration flags.
+   */
+  async fetchServerVersion(): Promise<ServerVersionInfo | null> {
+    if (!this.isBrowser) {
+      return null;
+    }
+
+    try {
+      const res = await fetch('/api/version?_t=' + Date.now());
+      if (res.ok) {
+        const data: ServerVersionInfo = await res.json();
+        this.serverVersionInfo.set(data);
+
+        // Check if server version is newer than installed client
+        if (isVersionOlder(this.currentVersion(), data.version)) {
+          this.incomingVersion.set(data.version);
+        }
+
+        // Enforce update if forceUpdate is true OR client is older than minSupportedVersion
+        const requiresForce = data.forceUpdate || isVersionOlder(this.currentVersion(), data.minSupportedVersion);
+        if (requiresForce) {
+          console.warn('[AppUpdate] Breaking change detected: force update required to meet minimum version', data.minSupportedVersion);
+          this.forceUpdateRequired.set(true);
+          this.updateAvailable.set(true);
+          this.showUpdateSheet.set(true);
+        }
+
+        if (data.maintenance) {
+          this.isMaintenanceMode.set(true);
+          this.maintenanceMessage.set(data.maintenanceMessage || 'Server maintenance in progress.');
+        } else {
+          this.isMaintenanceMode.set(false);
+          this.maintenanceMessage.set(null);
+        }
+
+        return data;
+      }
+    } catch (err) {
+      console.warn('[AppUpdate] Failed to fetch server version metadata:', err);
+    }
+    return null;
   }
 
   /**
@@ -67,8 +145,9 @@ export class AppUpdateService implements OnDestroy {
         filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
         takeUntil(this.destroy$)
       )
-      .subscribe(() => {
+      .subscribe(async () => {
         console.log('[AppUpdate] New version ready for activation');
+        await this.fetchServerVersion();
         this.updateAvailable.set(true);
         this.showUpdateSheet.set(true);
         this.isChecking.set(false);
@@ -137,13 +216,6 @@ export class AppUpdateService implements OnDestroy {
       return false;
     }
 
-    if (!this.swUpdate.isEnabled) {
-      if (isManual) {
-        this.toast.info(this.i18n.t('settings.upToDate') || 'App is up to date');
-      }
-      return false;
-    }
-
     const now = Date.now();
     if (!isManual && now - this.lastCheckTimestamp < this.MIN_BACKGROUND_CHECK_INTERVAL) {
       return false;
@@ -153,13 +225,25 @@ export class AppUpdateService implements OnDestroy {
     console.log(`[AppUpdate] Checking for updates (trigger: ${trigger})`);
 
     try {
+      // Sync server metadata on manual checks
+      if (isManual) {
+        await this.fetchServerVersion();
+      }
+
+      if (!this.swUpdate.isEnabled) {
+        if (isManual) {
+          this.toast.info(this.i18n.t('settings.upToDate') || 'App is up to date');
+        }
+        return false;
+      }
+
       const hasUpdate = await this.swUpdate.checkForUpdate();
       this.lastCheckTimestamp = Date.now();
       this.lastChecked.set(new Date());
 
       if (hasUpdate) {
         console.log('[AppUpdate] Update found and currently downloading...');
-        // VERSION_READY will be emitted once assets are fetched
+        await this.fetchServerVersion();
         return true;
       }
 
@@ -187,13 +271,17 @@ export class AppUpdateService implements OnDestroy {
 
     try {
       console.log('[AppUpdate] Activating update...');
-      await this.swUpdate.activateUpdate();
-      console.log('[AppUpdate] Update activated successfully');
+      if (this.swUpdate.isEnabled) {
+        await this.swUpdate.activateUpdate();
+        console.log('[AppUpdate] Update activated successfully');
+      }
     } catch (err) {
       console.warn('[AppUpdate] activateUpdate encountered an error, proceeding with hard reload:', err);
     } finally {
       // IndexedDB user data (vocabulary, history, streaks) is safe
-      window.location.reload();
+      if (typeof window !== 'undefined') {
+        window.location.reload();
+      }
     }
   }
 
@@ -201,16 +289,19 @@ export class AppUpdateService implements OnDestroy {
    * Reopen the update prompt if an update is available.
    */
   promptUpdate(): void {
-    if (this.updateAvailable()) {
+    if (this.updateAvailable() || this.forceUpdateRequired()) {
       this.showUpdateSheet.set(true);
     }
   }
 
   /**
    * Dismiss the update sheet for now.
-   * Keeps updateAvailable = true so badges and settings options stay visible.
+   * Locked if a breaking change force-update is active.
    */
   dismissUpdate(): void {
+    if (this.forceUpdateRequired()) {
+      return; // Non-dismissible when breaking changes are enforced
+    }
     this.showUpdateSheet.set(false);
   }
 

@@ -5,7 +5,10 @@
         "updateAvailable": "Update Available",
         "updateMessage": "A new version of the app is ready. Update now for the latest features and improvements.",
         "updateNow": "Update Now",
-        "updateLater": "Later"
+        "updateLater": "Later",
+        "whatsNew": "What's New",
+        "updateRequired": "Update Required",
+        "updateRequiredDesc": "This update is required to maintain compatibility with Voca services."
     },
     "nav": {
         "video": "Video",
@@ -313,7 +316,10 @@
         "checkingForUpdates": "Checking for updates...",
         "upToDate": "App is up to date",
         "updateReady": "New update ready",
-        "updateCheckFailed": "Unable to check for updates. Please try again."
+        "updateCheckFailed": "Unable to check for updates. Please try again.",
+        "whatsNew": "What's New",
+        "releaseNotes": "Release Notes",
+        "releaseDate": "Released on"
     },
     "study": {
         "title": "Study",

@@ -321,12 +321,14 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
   - **Mobile "More" Menu**: Users can install the PWA directly from the mobile "More" bottom sheet via the "Install App" action row. The button is automatically hidden if the user is already running the app in standalone mode.
   - **Android / Chromium / Desktop**: Triggers the native browser install dialog via `prompt()` and tracks user choice.
   - **iOS Safari Support**: Because iOS does not support programmatic install prompts, clicking "Install App" on iPhone/iPad opens a step-by-step visual bottom sheet guiding the user to tap the Safari Share button and select "Add to Home Screen".
-- **Service Worker & PWA Update Architecture (`AppUpdateService`)**:
-  - `src/app/core/services/app-update.service.ts`: Signal-first service worker update orchestrator.
+- **Service Worker, Server-Assisted Versioning & Changelog Architecture (`AppUpdateService`)**:
+  - `src/app/core/services/app-update.service.ts`: Signal-first service worker update and edge version orchestrator.
+  - **Server-Assisted Version & Breaking Change Protection (`GET /api/version`)**: Connects to the edge version endpoint on startup and background focus triggers. Compares client version with `minSupportedVersion` via SemVer; if breaking API migrations occur, the update sheet operates in non-dismissible mode to protect users against corrupted queries.
+  - **Localized "What's New" Highlights**: Shows bulleted release notes in the user's selected UI language (`en`, `vi`, `ja`, `ko`, `zh`) both inside the update sheet and in the Settings "Release Notes" modal.
   - **Optimized Asset Prefetching**: Splits the application shell (`main.*.js`, `polyfills.*.js`, `styles.*.css`, `index.html`) from dynamic chunks (`chunk-*.js`) in `ngsw-config.json`, preventing 12MB+ download bursts during update checks.
-  - **Non-Disruptive Notification**: Instead of jarring automatic reloads, displays an update bottom sheet with "Update Now" and "Later".
+  - **Non-Disruptive Notification**: When updates are non-breaking, displays a bottom sheet with "Update Now" and "Later".
   - **Update Persistence & Badges**: If an update is deferred, a persistent pulsating dot appears on the desktop sidebar and mobile "More" menu Settings entries.
-  - **Settings Integration**: Users can view the current app version and click "Check for Updates" anytime from the Settings sheet.
+  - **Settings Integration**: Users can view the current app version, open the "What's New" sheet, and click "Check for Updates" anytime with live loading feedback from the Settings sheet.
   - **Corrupted Cache Recovery**: Listens to `swUpdate.unrecoverable` to auto-clear browser CacheStorage and recover smoothly.
   - **Cloudflare Edge Headers**: Configured in `public/_headers` with `no-cache, no-store, must-revalidate` for `ngsw.json` and `index.html`, and `immutable` for hashed JavaScript and CSS bundles.
 

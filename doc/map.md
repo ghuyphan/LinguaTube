@@ -462,9 +462,9 @@ sequenceDiagram
 | `src/app/features/quiz` | Assessment | Fill-in-the-blank and interactive vocabulary testing inputs |
 | `src/app/components/achievements-dialog` | UI Shell | Modal dialog displaying XP progression, rank titles, 19 achievement badges, and Global Leaderboard podium & rankings |
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
-| `src/app/data` | Static Data | Large CJK grammar rules |
+| `src/app/data` | Static Data | Large CJK grammar rules, release & changelog metadata (`changelog.data.ts`) |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, PocketBase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |

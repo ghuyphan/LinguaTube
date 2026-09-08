@@ -306,21 +306,50 @@ import { PlaylistService } from './features/playlist/playlist.service';
       <!-- Update Available Sheet (always available, even during onboarding) -->
       <app-bottom-sheet
         [isOpen]="appUpdate.showUpdateSheet()"
-        [title]="i18n.t('app.updateAvailable') || 'Update Available'"
-        [showCloseButton]="true"
-        [maxHeight]="'auto'"
+        [title]="(appUpdate.forceUpdateRequired() ? i18n.t('app.updateRequired') : i18n.t('app.updateAvailable')) || 'Update Available'"
+        [showCloseButton]="!appUpdate.forceUpdateRequired()"
+        [maxHeight]="'85vh'"
         (closed)="appUpdate.dismissUpdate()"
       >
         <div class="update-sheet">
-          <div class="update-sheet__icon">
-            <app-icon name="rotate-ccw" [size]="32" />
+          <div class="update-sheet__icon" [class.update-sheet__icon--alert]="appUpdate.forceUpdateRequired()">
+            <app-icon [name]="appUpdate.forceUpdateRequired() ? 'alert-circle' : 'rotate-ccw'" [size]="32" />
           </div>
-          <h3 class="update-sheet__title">{{ i18n.t('app.updateAvailable') }}</h3>
-          <p class="update-sheet__message">{{ i18n.t('app.updateMessage') }}</p>
+          <div class="update-sheet__header-group">
+            <h3 class="update-sheet__title">
+              {{ appUpdate.forceUpdateRequired() ? i18n.t('app.updateRequired') : i18n.t('app.updateAvailable') }}
+            </h3>
+            <span class="update-sheet__version-badge">
+              v{{ appUpdate.incomingVersion() || appUpdate.currentVersion() }}
+            </span>
+          </div>
+          <p class="update-sheet__message">
+            {{ appUpdate.forceUpdateRequired() ? i18n.t('app.updateRequiredDesc') : i18n.t('app.updateMessage') }}
+          </p>
+
+          @if (appUpdate.incomingHighlights().length > 0) {
+            <div class="update-sheet__changelog">
+              <div class="update-sheet__changelog-title">
+                <app-icon name="sparkles" [size]="15" />
+                <span>{{ i18n.t('app.whatsNew') || "What's New" }}</span>
+              </div>
+              <ul class="update-sheet__changelog-list">
+                @for (item of appUpdate.incomingHighlights(); track item) {
+                  <li class="update-sheet__changelog-item">
+                    <span class="update-sheet__bullet">•</span>
+                    <span>{{ item }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+
           <div class="update-sheet__actions">
-            <button class="update-sheet__btn update-sheet__btn--secondary" (click)="appUpdate.dismissUpdate()">
-              {{ i18n.t('app.updateLater') }}
-            </button>
+            @if (!appUpdate.forceUpdateRequired()) {
+              <button class="update-sheet__btn update-sheet__btn--secondary" (click)="appUpdate.dismissUpdate()">
+                {{ i18n.t('app.updateLater') }}
+              </button>
+            }
             <button class="update-sheet__btn update-sheet__btn--primary" (click)="appUpdate.applyUpdate()">
               {{ i18n.t('app.updateNow') }}
             </button>
@@ -496,6 +525,20 @@ import { PlaylistService } from './features/playlist/playlist.service';
       background: rgba(74, 111, 165, 0.1);
       border-radius: var(--border-radius-round);
       color: var(--info);
+
+      &.update-sheet__icon--alert {
+        background: rgba(239, 68, 68, 0.12);
+        color: #ef4444;
+      }
+    }
+
+    .update-sheet__header-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-xs);
+      flex-wrap: wrap;
     }
 
     .update-sheet__title {
@@ -503,14 +546,73 @@ import { PlaylistService } from './features/playlist/playlist.service';
       font-weight: 800;
       letter-spacing: -0.01em;
       color: var(--text-primary);
-      margin: 0 0 var(--space-xs);
+      margin: 0;
+    }
+
+    .update-sheet__version-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.125rem 0.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-round);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-primary);
     }
 
     .update-sheet__message {
       font-size: 0.875rem;
       color: var(--text-muted);
-      margin: 0 0 var(--space-lg);
+      margin: 0 0 var(--space-md);
       line-height: 1.5;
+    }
+
+    .update-sheet__changelog {
+      text-align: left;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      padding: var(--space-sm) var(--space-md);
+      margin: 0 0 var(--space-lg);
+    }
+
+    .update-sheet__changelog-title {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xs);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-2xs);
+
+      app-icon {
+        color: var(--accent-primary);
+      }
+    }
+
+    .update-sheet__changelog-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+
+    .update-sheet__changelog-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-xs);
+      font-size: 0.8125rem;
+      line-height: 1.4;
+      color: var(--text-secondary);
+    }
+
+    .update-sheet__bullet {
+      color: var(--accent-primary);
+      font-weight: 700;
+      line-height: 1.4;
     }
 
     .update-sheet__actions {

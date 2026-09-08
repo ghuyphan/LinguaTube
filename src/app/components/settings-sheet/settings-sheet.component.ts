@@ -46,6 +46,7 @@ export class SettingsSheetComponent {
   showLearningLangPicker = signal(false);
   showUILangPicker = signal(false);
   showReadingModePicker = signal(false);
+  showReleaseNotes = signal(false);
 
   // Learning language options with display info
   readonly learningLanguages = SUPPORTED_LANGUAGES;

@@ -356,3 +356,45 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - Edge caching: `Cache-Control: public, max-age=30, s-maxage=60`.
   - Seed fallback: If D1 is empty or unavailable, returns pre-seeded realistic community benchmarks so learners are never met with an empty screen.
 
+---
+
+### 3.14. App Version & Changelog API
+- **Routes**: `GET /api/version`
+- **Source**: `functions-src/api/version.js` (Cloudflare Pages Function) & `server/server.js` (Local Dev)
+- **Response Format**:
+  ```json
+  {
+    "version": "1.0.0",
+    "minSupportedVersion": "1.0.0",
+    "buildDate": "2026-09-08",
+    "forceUpdate": false,
+    "maintenance": false,
+    "maintenanceMessage": "",
+    "highlights": {
+      "en": [
+        "Lightweight Service Worker updates (under 150KB)",
+        "In-app update checker and version viewer in Settings",
+        "Corrupted cache auto-recovery and infinite reload protection",
+        "Persistent update indicator badges on navigation items"
+      ],
+      "vi": [
+        "Cập nhật Service Worker siêu nhẹ (dưới 150KB)",
+        "Nút kiểm tra cập nhật và xem phiên bản trong Cài đặt",
+        "Tự động khôi phục khi bộ nhớ đệm lỗi và chống lặp tải lại",
+        "Huy hiệu chấm báo cập nhật trên thanh điều hướng"
+      ],
+      "ja": [ ... ],
+      "ko": [ ... ],
+      "zh": [ ... ]
+    }
+  }
+  ```
+- **Caching & Transport**:
+  - Strict `Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0` to ensure clients and proxies never stale version responses.
+  - Fast edge execution without database dependencies.
+- **Client Usage**:
+  - Evaluated by `AppUpdateService` on application launch and background refresh triggers.
+  - Compares client version against `minSupportedVersion` (via SemVer string comparison): if client version is older, `forceUpdateRequired` is flagged, making the update sheet non-dismissible and preventing outdated clients from invoking incompatible edge APIs.
+  - Supplies localized "What's New" bullet points rendered directly in the update prompt and Settings release notes sheet.
+
+

@@ -176,8 +176,12 @@
                             </div>
                             <span class="settings-item-title">{{ i18n.t('settings.appVersion') || 'Version' }}</span>
                         </div>
-                        <div class="settings-item-right">
+                        <div class="settings-item-right settings-item-right--version">
                             <span class="settings-item-value settings-item-value--version">v{{ appUpdate.currentVersion() }}</span>
+                            <button class="settings-whats-new-btn" (click)="showReleaseNotes.set(true)" type="button">
+                                <app-icon name="sparkles" [size]="14" />
+                                <span>{{ i18n.t('settings.whatsNew') || "What's New" }}</span>
+                            </button>
                         </div>
                     </div>
 
@@ -247,3 +251,36 @@
     [isLoading]="auth.isLoggingOut()"
     (confirmed)="confirmSignOut()"
     (cancelled)="showSignOutConfirm.set(false)" />
+
+<!-- Release Notes / What's New Sheet -->
+<app-bottom-sheet
+    [isOpen]="showReleaseNotes()"
+    [title]="i18n.t('settings.releaseNotes') || 'Release Notes'"
+    [showCloseButton]="true"
+    [maxHeight]="'80vh'"
+    (closed)="showReleaseNotes.set(false)"
+>
+    <div class="release-notes-sheet">
+        <div class="release-notes-header">
+            <div class="release-notes-badge">v{{ appUpdate.currentVersion() }}</div>
+            <span class="release-notes-date">
+                {{ i18n.t('settings.releaseDate') || 'Released' }}: {{ appUpdate.currentRelease().buildDate }}
+            </span>
+        </div>
+
+        <div class="release-notes-content">
+            <div class="release-notes-section-title">
+                <app-icon name="sparkles" [size]="16" />
+                <span>{{ i18n.t('settings.whatsNew') || "What's New" }}</span>
+            </div>
+            <ul class="release-notes-list">
+                @for (item of appUpdate.currentHighlights(); track item) {
+                    <li class="release-notes-item">
+                        <span class="release-notes-bullet">•</span>
+                        <span>{{ item }}</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</app-bottom-sheet>

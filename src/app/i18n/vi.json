@@ -5,7 +5,10 @@
         "updateAvailable": "Có bản cập nhật",
         "updateMessage": "Phiên bản mới đã sẵn sàng. Cập nhật ngay để có các tính năng và cải tiến mới nhất.",
         "updateNow": "Cập nhật ngay",
-        "updateLater": "Để sau"
+        "updateLater": "Để sau",
+        "whatsNew": "Có gì mới",
+        "updateRequired": "Yêu cầu cập nhật",
+        "updateRequiredDesc": "Bản cập nhật này là bắt buộc để duy trì tương thích với dịch vụ Voca."
     },
     "nav": {
         "video": "Video",
@@ -313,7 +316,10 @@
         "checkingForUpdates": "Đang kiểm tra...",
         "upToDate": "Ứng dụng đã ở phiên bản mới nhất",
         "updateReady": "Đã có bản cập nhật mới",
-        "updateCheckFailed": "Không thể kiểm tra cập nhật. Vui lòng thử lại."
+        "updateCheckFailed": "Không thể kiểm tra cập nhật. Vui lòng thử lại.",
+        "whatsNew": "Có gì mới",
+        "releaseNotes": "Nhật ký phát hành",
+        "releaseDate": "Phát hành ngày"
     },
     "study": {
         "title": "Ôn tập",

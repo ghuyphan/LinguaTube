@@ -511,15 +511,21 @@ To maintain complete visual, structural, and functional harmony across all prima
 - Triggered seamlessly from the **Mobile "More" sheet** (`app.component.ts`), and automatically hidden when the user is already operating in standalone PWA mode.
 - **iOS Safari Support**: Because WebKit on iOS does not support programmatic install prompts, clicking "Install App" triggers an iOS guidance modal showing visual steps to tap the Safari "Share" button and select "Add to Home Screen".
 
-### 7.2. Service Worker Updates & Lifecycle (`AppUpdateService`)
+### 7.2. Service Worker Updates, Server-Assisted Versioning & Changelog (`AppUpdateService`)
 - Located in `src/app/core/services/app-update.service.ts`.
-- Encapsulates `@angular/service-worker` (`SwUpdate`) in a signal-first reactive architecture:
+- Encapsulates `@angular/service-worker` (`SwUpdate`) and edge version verification (`GET /api/version`) in a signal-first reactive architecture:
   - `updateAvailable`: Reactive signal indicating an updated version is ready for activation.
   - `isChecking`: Tracks in-flight update checks (powers spinners in Settings).
   - `showUpdateSheet`: Controls the non-disruptive update bottom sheet.
-  - `currentVersion`: Signal tracking current app version (`1.0.0`).
+  - `currentVersion`: Signal tracking installed client version (e.g. `1.0.0`).
+  - `incomingVersion`: Signal tracking the newly detected version from the server or Service Worker.
+  - `forceUpdateRequired`: Signal raised if the client's SemVer is below the server's `minSupportedVersion`, enforcing a non-dismissible update to prevent breaking edge API incompatibilities.
+  - `isMaintenanceMode`: Signal raised if the backend is undergoing scheduled maintenance.
+  - `incomingHighlights`: Computed signal retrieving localized "What's New" bullet points for incoming updates across all 5 languages (`en`, `vi`, `ja`, `ko`, `zh`).
+  - `currentHighlights`: Computed signal delivering localized highlights for the currently installed release.
 - **Triggers & Background Checking**:
-  - Delayed startup check (6 seconds post-bootstrap) ensuring initial load performance.
+  - Immediate server version check on app bootstrap (`fetchServerVersion()`).
+  - Delayed Service Worker check (6 seconds post-bootstrap) ensuring initial load performance.
   - Focus resumption trigger (`visibilitychange` on `document`) when the learner returns to the app tab.
   - Periodic hourly interval for long study sessions.
   - Background checks are rate-limited to 5 minutes to prevent spamming the CDN.
@@ -530,7 +536,8 @@ To maintain complete visual, structural, and functional harmony across all prima
 - **Cache Corruption Defense (`swUpdate.unrecoverable`)**:
   - Automatically listens to `unrecoverable` events (broken cache hashes or CDN desyncs), safely flushes stale browser CacheStorage, and performs a clean reload to prevent blank screens or locked app states.
 - **UI Integration**:
-  - **Settings Sheet**: Displays current app version, "Check for Updates" button with live spinner, and an instant "Update Now" button when ready.
+  - **Update Available Bottom Sheet**: Presents the incoming version badge, warning alert icon when forced, a bulleted "What's New" preview, and action buttons (`Update Now` / `Later`). If `forceUpdateRequired` is active, the sheet removes the close handle and hides the `Later` button.
+  - **Settings Sheet**: Displays the current app version with a "What's New" button that opens a full localized Release Notes sheet, an active "Check for Updates" button with a live spinner, and an instant "Update Now" button when an update is queued.
   - **Sidebar & More Sheet**: Surfaces a non-intrusive pulsating dot badge on the Settings item when an update is available but was dismissed for later.
   - **GlobalErrorHandler Protection**: Guards against infinite chunk reload loops with a 15-second debounce and awaits cache clearance before reloading.
 
