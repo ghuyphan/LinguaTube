@@ -22,16 +22,61 @@ The Voca backend operates as a distributed edge API. Mobile clients interact wit
   │   Cloudflare Edge API     │ │      PocketBase BaaS      │
   │   (Transcripts, Dicts,    │ │   (Auth, User Profile,    │
   │    NLP, AI, Payments)     │ │   Vocabulary, Playlists)  │
-  │   https://voca.study/api  │ │ https://voca.pockethost.io│
-  └───────────────────────────┘ └───────────────────────────┘
+  │   https://lingua-tube.pages.dev/api │ │ https://voca.pockethost.io│
+  └─────────────────────────────────────┘ └───────────────────────────┘
 ```
 
 ### Environment Base URLs
 
 | Environment | Edge API Base URL | PocketBase Base URL | Purpose |
 | :--- | :--- | :--- | :--- |
-| **Production** | `https://voca.study` | `https://voca.pockethost.io` | Live production edge |
-| **Local Dev** | `http://<DEV_MACHINE_IP>:3001` | `https://voca.pockethost.io` | Local mock server with real Innertube YouTube scraping |
+| **Production** | `https://lingua-tube.pages.dev` | `https://voca.pockethost.io` | Live Cloudflare Pages & Workers edge |
+| **Local Dev** | `http://<DEV_MACHINE_IP>:3001` | `https://voca.pockethost.io` | Local Express mock server with live Innertube caption extraction |
+
+---
+
+### Master Endpoint URL Quick-Reference Table
+
+Copy-paste these exact URLs into your mobile HTTP clients (Retrofit, Dio, Alamofire, Ktor, Axios):
+
+| # | Method | Full Production Endpoint URL | Auth Required? | Purpose |
+|:---:|:---:|:---|:---:|:---|
+| 1 | `POST` | `https://lingua-tube.pages.dev/api/transcript` | Optional | Fetch native subtitles or start/poll Gladia AI speech-to-text |
+| 2 | `GET` | `https://lingua-tube.pages.dev/api/transcript` | No | Serverless edge health & storage status check |
+| 3 | `POST` | `https://lingua-tube.pages.dev/api/dual-subtitles` | Optional | Generate or fetch synchronized dual-language subtitles |
+| 4 | `GET` | `https://lingua-tube.pages.dev/api/dict` | No | Multi-source dictionary lookup (`?word=...&from=...&to=...`) |
+| 5 | `POST` | `https://lingua-tube.pages.dev/api/tokenize/{lang}` | No | Word boundary & furigana tokenization for single text |
+| 6 | `POST` | `https://lingua-tube.pages.dev/api/tokenize-batch/{lang}` | No | Batch tokenization for an entire array of subtitle cues |
+| 7 | `GET` | `https://lingua-tube.pages.dev/api/translate/{src}/{tgt}/{text}` | No | Single phrase translation proxy |
+| 8 | `POST` | `https://lingua-tube.pages.dev/api/translate/batch` | No | Batch translation for up to 50 items with KV caching |
+| 9 | `GET` | `https://lingua-tube.pages.dev/api/video-info` | No | YouTube video metadata, duration, languages & level map (`?videoId=...`) |
+| 10 | `GET` | `https://lingua-tube.pages.dev/api/recommended-videos` | No | Curated learning videos with pre-cached transcripts (`?lang=...&limit=...`) |
+| 11 | `POST` | `https://lingua-tube.pages.dev/api/video-level` | No | Save/update assessed CEFR/JLPT/HSK/TOPIK difficulty level |
+| 12 | `GET` | `https://lingua-tube.pages.dev/api/diamonds` | Optional | Check available AI diamond credits, next regen time & limits |
+| 13 | `GET` | `https://lingua-tube.pages.dev/api/leaderboard` | No | Global learner XP leaderboard & live user rank calculation |
+| 14 | `POST` | `https://lingua-tube.pages.dev/api/leaderboard` | Recommended | Synchronize user XP, streak, and achievement badges |
+| 15 | `POST` | `https://lingua-tube.pages.dev/api/payment/create-order` | **Required** | Generate VietQR payment order, bank transfer info & QR code |
+| 16 | `GET` | `https://lingua-tube.pages.dev/api/payment/check-status` | No | Poll payment order confirmation status (`?orderCode=...`) |
+| 17 | `ALL` | `https://lingua-tube.pages.dev/proxy/{service}/{path}` | No | SSRF-safe proxy for external services (`jisho`, `jotoba`, `invidious1`, `piped1`) |
+
+---
+
+### Master PocketBase BaaS Endpoint URLs (`https://voca.pockethost.io`)
+
+| Method | Full Production URL | Purpose |
+|:---:|:---|:---|
+| `POST` | `https://voca.pockethost.io/api/collections/users/auth-with-password` | User login with email & password |
+| `POST` | `https://voca.pockethost.io/api/collections/users/auth-with-oauth2` | User login with Google OAuth |
+| `POST` | `https://voca.pockethost.io/api/collections/users/records` | Register new user account |
+| `POST` | `https://voca.pockethost.io/api/collections/users/auth-refresh` | Refresh JWT auth token |
+| `GET` | `https://voca.pockethost.io/api/collections/vocabulary/records` | Query user vocabulary flashcards |
+| `POST` | `https://voca.pockethost.io/api/collections/vocabulary/records` | Create vocabulary card with deterministic ID |
+| `PATCH` | `https://voca.pockethost.io/api/collections/vocabulary/records/{id}` | Update card review count, interval, easeFactor |
+| `DELETE` | `https://voca.pockethost.io/api/collections/vocabulary/records/{id}` | Delete vocabulary card |
+| `GET` / `POST` | `https://voca.pockethost.io/api/collections/streaks/records` | Daily streak records & freezes |
+| `GET` / `POST` | `https://voca.pockethost.io/api/collections/playlists/records` | Custom playlists & level filters |
+| `GET` / `POST` | `https://voca.pockethost.io/api/collections/history/records` | Watch history & resume positions |
+| `GET` / `POST` | `https://voca.pockethost.io/api/collections/gamification/records` | Learner badges & XP records |
 
 ---
 
@@ -114,6 +159,8 @@ graph LR
 #### `POST /api/transcript`
 Fetches pre-cached transcripts from Cloudflare R2, extracts native YouTube captions, or queues/polls Gladia AI audio speech-to-text.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/transcript`
+- **Local Dev URL:** `http://localhost:3001/api/transcript`
 - **Auth:** Optional (Anonymous supported; pass Bearer token for higher rate limits and user Diamond quota).
 - **Rate Limit:** 20/hr (anon), 40/hr (free), 80/hr (pro). Polling: 60-300/hr.
 - **Request Body:**
@@ -174,6 +221,8 @@ Fetches pre-cached transcripts from Cloudflare R2, extracts native YouTube capti
 #### `POST /api/dual-subtitles`
 Translates video subtitle cues into a secondary language and returns dual synchronized subtitles.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/dual-subtitles`
+- **Local Dev URL:** `http://localhost:3001/api/dual-subtitles`
 - **Auth:** Optional.
 - **Rate Limit:** 5/hr (anon), 10/hr (free), 50/hr (pro).
 - **Request Body:**
@@ -215,6 +264,8 @@ Translates video subtitle cues into a secondary language and returns dual synchr
 #### `GET /api/dict`
 Unified dictionary lookup engine querying multi-source APIs (Jotoba, Mazii, Naver, MDBG, FreeDict) with automated English/Vietnamese translation fallbacks.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/dict`
+- **Local Dev URL:** `http://localhost:3001/api/dict`
 - **Query Parameters:**
   - `word` (string, required): Word or surface token to search (e.g. `食べる`, `你好`).
   - `from` (string, required): Learning language (`ja`, `zh`, `ko`, `en`).
@@ -255,6 +306,8 @@ Unified dictionary lookup engine querying multi-source APIs (Jotoba, Mazii, Nave
 #### `POST /api/tokenize/:lang`
 Tokenizes a single text string into words, furigana readings, and romanization.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/tokenize/{lang}`
+- **Local Dev URL:** `http://localhost:3001/api/tokenize/{lang}`
 - **URL Parameter:** `lang` (`ja` | `zh` | `ko` | `en`)
 - **Request Body:**
   ```json
@@ -303,6 +356,8 @@ Tokenizes a single text string into words, furigana readings, and romanization.
 #### `POST /api/tokenize-batch/:lang`
 Batch tokenizes an array of subtitle lines in a single network request.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/tokenize-batch/{lang}`
+- **Local Dev URL:** `http://localhost:3001/api/tokenize-batch/{lang}`
 - **URL Parameter:** `lang` (`ja` | `zh` | `ko` | `en`)
 - **Request Body:**
   ```json
@@ -328,6 +383,8 @@ Batch tokenizes an array of subtitle lines in a single network request.
 #### `POST /api/translate/batch`
 Translates up to 50 text items concurrently with server-side caching.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/translate/batch`
+- **Local Dev URL:** `http://localhost:3001/api/translate/batch`
 - **Request Body:**
   ```json
   {
@@ -354,6 +411,8 @@ Translates up to 50 text items concurrently with server-side caching.
 #### `GET /api/video-info`
 Retrieves YouTube video metadata, cached duration, discovered subtitle languages, and proficiency levels.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/video-info`
+- **Local Dev URL:** `http://localhost:3001/api/video-info`
 - **Query Parameters:** `videoId` (string, 11-char YouTube ID)
 - **Success Response (200 OK):**
   ```json
@@ -377,6 +436,8 @@ Retrieves YouTube video metadata, cached duration, discovered subtitle languages
 #### `GET /api/recommended-videos`
 Returns curated YouTube videos with pre-cached, verified transcripts stored in Cloudflare D1/R2 (<50ms loading latency, zero AI diamond cost).
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/recommended-videos`
+- **Local Dev URL:** `http://localhost:3001/api/recommended-videos`
 - **Query Parameters:**
   - `lang` (optional, default `ja`): Target language (`ja`, `ko`, `zh`, `en`).
   - `limit` (optional, default `12`, max `50`).
@@ -408,6 +469,8 @@ Returns curated YouTube videos with pre-cached, verified transcripts stored in C
 #### `POST /api/video-level`
 Records or updates the assessed CEFR / JLPT / HSK / TOPIK difficulty level for a video.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/video-level`
+- **Local Dev URL:** `http://localhost:3001/api/video-level`
 - **Request Body:**
   ```json
   {
@@ -434,6 +497,8 @@ Records or updates the assessed CEFR / JLPT / HSK / TOPIK difficulty level for a
 #### `GET /api/diamonds`
 Retrieves diamond credits, regen countdown, and video length allowances for the requesting user/device.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/diamonds`
+- **Local Dev URL:** `http://localhost:3001/api/diamonds`
 - **Auth:** Optional (Bearer token for registered user, IP-based for guest).
 - **Success Response (200 OK):**
   ```json
@@ -453,6 +518,8 @@ Retrieves diamond credits, regen countdown, and video length allowances for the 
 #### `GET /api/leaderboard`
 Fetches the global learner XP leaderboard and computes the requesting user's live rank.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/leaderboard`
+- **Local Dev URL:** `http://localhost:3001/api/leaderboard`
 - **Query Parameters:**
   - `lang` (optional): Filter by learning language (`ja`, `ko`, `zh`, `en`).
   - `userId` (optional): Current PocketBase user ID to compute exact position.
@@ -489,6 +556,8 @@ Fetches the global learner XP leaderboard and computes the requesting user's liv
 #### `POST /api/leaderboard`
 Synchronizes user XP and streak with the global leaderboard table.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/leaderboard`
+- **Local Dev URL:** `http://localhost:3001/api/leaderboard`
 - **Auth:** Recommended (User ID required).
 - **Request Body:**
   ```json
@@ -514,6 +583,8 @@ Voca supports direct VietQR open-banking payment links generated via payOS.
 #### `POST /api/payment/create-order`
 Creates a payment order with a cryptographically secure 8-digit order code and returns bank transfer metadata.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/payment/create-order`
+- **Local Dev URL:** `http://localhost:3001/api/payment/create-order`
 - **Auth:** Required (`Authorization: Bearer <pb_token>`).
 - **Request Body:**
   ```json
@@ -552,6 +623,8 @@ Creates a payment order with a cryptographically secure 8-digit order code and r
 #### `GET /api/payment/check-status`
 Polls payment confirmation status.
 
+- **Production URL:** `https://lingua-tube.pages.dev/api/payment/check-status`
+- **Local Dev URL:** `http://localhost:3001/api/payment/check-status`
 - **Query Parameters:** `orderCode` (number, e.g. `83920145`).
 - **Response (Pending - 200 OK):**
   ```json
@@ -565,6 +638,22 @@ Polls payment confirmation status.
     "processedAt": "2026-09-08T12:30:00.000Z"
   }
   ```
+
+---
+
+### 3.6. SSRF-Protected Reverse Proxy
+
+#### `ALL /proxy/:service/*`
+Safely proxies requests to external whitelisted dictionary and media services without triggering CORS or revealing mobile client IP addresses.
+
+- **Production URL:** `https://lingua-tube.pages.dev/proxy/{service}/{path}`
+- **Local Dev URL:** `http://localhost:3001/proxy/{service}/{path}`
+- **Whitelisted Services:**
+  - `jisho`: Proxies to `https://jisho.org` (e.g. `https://lingua-tube.pages.dev/proxy/jisho/api/v1/search/words?keyword=taberu`)
+  - `jotoba`: Proxies to `https://jotoba.de` (e.g. `https://lingua-tube.pages.dev/proxy/jotoba/api/search/words`)
+  - `invidious1`: Proxies to `https://yewtu.be`
+  - `piped1`: Proxies to `https://pipedapi.kavin.rocks`
+- **Security:** Private IP ranges (`127.0.0.1`, `10.0.0.0/8`, `192.168.0.0/16`, `localhost`) are strictly blocked. Directory traversal (`..`) is rejected.
 
 ---
 
