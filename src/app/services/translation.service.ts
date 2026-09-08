@@ -170,7 +170,7 @@ export class TranslationService implements OnDestroy {
                             targetIndices.forEach(idx => {
                                 results[idx] = translation;
                             });
-                            if (translation) {
+                            if (translation && (source === target || translation.trim() !== text.trim())) {
                                 this.addToCache(`${source}:${target}:${text}`, translation);
                             }
                         });
@@ -278,7 +278,24 @@ export class TranslationService implements OnDestroy {
             const stored = localStorage.getItem(CACHE_KEY);
             if (stored) {
                 const entries: [string, string][] = JSON.parse(stored);
-                this.translationCache = new Map(entries.slice(-MAX_CACHE_SIZE));
+                // Sanitize poisoned cache: discard entries where source != target but translation equals source text
+                const validEntries = entries.filter(([key, trans]) => {
+                    if (!trans || !trans.trim()) return false;
+                    const parts = key.split(':');
+                    if (parts.length >= 3) {
+                        const src = parts[0];
+                        const tgt = parts[1];
+                        const orig = parts.slice(2).join(':');
+                        if (src !== tgt && trans.trim() === orig.trim()) {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+                this.translationCache = new Map(validEntries.slice(-MAX_CACHE_SIZE));
+                if (validEntries.length !== entries.length) {
+                    this.saveCacheToStorage();
+                }
             }
         } catch {
             // Ignore cache load errors

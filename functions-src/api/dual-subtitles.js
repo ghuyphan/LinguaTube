@@ -66,7 +66,7 @@ export async function onRequestPost(context) {
 
         // 1. Check if client is persisting completed translations to R2 cache
         if (saveOnly || onlySave) {
-            const successCount = segments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim()).length;
+            const successCount = segments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim() && (sourceLang === targetLang || s.translation.trim() !== (s.text || '').trim())).length;
             const successRate = segments.length > 0 ? successCount / segments.length : 0;
             const quality = Math.round(successRate * 100);
 
@@ -181,10 +181,14 @@ export async function onRequestPost(context) {
         }
 
         // 4. Merge Translations
-        const resultSegments = segments.map((seg, i) => ({
-            ...seg,
-            translation: translatedTexts[i] || null
-        }));
+        const resultSegments = segments.map((seg, i) => {
+            const tr = translatedTexts[i];
+            const isValid = tr && (sourceLang === targetLang || tr.trim() !== (seg.text || '').trim());
+            return {
+                ...seg,
+                translation: isValid ? tr : null
+            };
+        });
 
         // 5. Calculate Quality
         const successCount = resultSegments.filter(s => s.translation).length;

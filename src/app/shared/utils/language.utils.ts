@@ -58,6 +58,16 @@ export function detectLanguage(text: string): SupportedLanguage {
 }
 
 /**
+ * Detect language of a subtitle cue list by sampling non-empty cues
+ */
+export function detectSubtitleLanguage(cues: { text: string }[]): SupportedLanguage {
+    if (!cues || cues.length === 0) return 'en';
+    const sample = cues.slice(0, 15).map(c => c.text).filter(Boolean).join(' ');
+    if (!sample.trim()) return 'en';
+    return detectLanguage(sample);
+}
+
+/**
  * Get character type for tokenization
  */
 export function getCharType(char: string): string {

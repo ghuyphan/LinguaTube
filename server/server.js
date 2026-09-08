@@ -69,7 +69,7 @@ function isInternalHost(hostname) {
  * ALL /proxy/:service/*
  * Dev server forwarder for external APIs with SSRF protection
  */
-app.all('/proxy/:service/*', async (req, res) => {
+app.all('/proxy/:service/*path', async (req, res) => {
     const { service } = req.params;
     const config = PROXY_SERVICE_CONFIG[service];
 
@@ -86,7 +86,8 @@ app.all('/proxy/:service/*', async (req, res) => {
     }
 
     try {
-        const subPath = req.params[0] || '';
+        const rawPath = req.params.path;
+        const subPath = Array.isArray(rawPath) ? rawPath.join('/') : (rawPath || req.params[0] || '');
         const segments = subPath.split('/').filter(seg => seg && seg !== '..' && !seg.startsWith('.'));
         const targetPath = '/' + segments.join('/');
         const queryString = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
@@ -242,10 +243,11 @@ app.post('/api/translate/batch', async (req, res) => {
  * GET /api/translate/:source/:target/*
  * Translate single text in local development (supports slashes in query)
  */
-app.get('/api/translate/:source/:target/*', async (req, res) => {
+app.get('/api/translate/:source/:target/*query', async (req, res) => {
     try {
         const { source, target } = req.params;
-        const query = req.params[0];
+        const rawQuery = req.params.query;
+        const query = Array.isArray(rawQuery) ? rawQuery.join('/') : (rawQuery || req.params[0] || '');
         const translation = await translateWithGtx(query, source, target);
         res.json({ translation });
     } catch (error) {
@@ -266,18 +268,20 @@ const BROWSER_HEADERS = {
 };
 
 async function translateWithGtx(text, source, target) {
-    if (!text || source === target) return text;
+    if (!text) return text;
+    if (source === target) return text;
     try {
         const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
         const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(4000) });
         if (res.ok) {
             const data = await res.json();
-            return data[0]?.map(item => item[0]).join('') || text;
+            const translated = data[0]?.map(item => item[0]).join('');
+            if (translated) return translated;
         }
     } catch (e) {
         console.warn('[GTX Translate] Error:', e.message);
     }
-    return text;
+    return null;
 }
 
 async function fetchDictLocal(word, from, to) {
@@ -1470,8 +1474,12 @@ app.post('/api/dual-subtitles', async (req, res) => {
     // If saveOnly requested, save client-provided segments to disk cache
     if (req.body.saveOnly || req.body.onlySave) {
         try {
-            fs.writeFileSync(cacheFile, JSON.stringify({ segments }), 'utf8');
-            return res.json({ success: true, cached: true, quality: 100 });
+            const validSegments = segments.filter(s => s && s.translation && (sourceLang === normTarget || s.translation.trim() !== (s.text || '').trim()));
+            if (validSegments.length >= segments.length * 0.5) {
+                fs.writeFileSync(cacheFile, JSON.stringify({ segments }), 'utf8');
+                return res.json({ success: true, cached: true, quality: 100 });
+            }
+            return res.status(400).json({ success: false, error: 'Low quality' });
         } catch (e) {
             return res.status(500).json({ error: e.message });
         }
@@ -1488,44 +1496,39 @@ app.post('/api/dual-subtitles', async (req, res) => {
         });
     }
 
-    // Map segments with translations
-    const translatedSegments = await Promise.all(segments.map(async (seg) => {
+    // Map segments with translations using batch GTX
+    const textsToTranslate = segments.map(s => s.text ? s.text.trim() : '');
+    const batchTranslations = await translateBatchWithGtx(textsToTranslate, sourceLang || 'auto', normTarget);
+
+    const translatedSegments = segments.map((seg, i) => {
         const text = seg.text ? seg.text.trim() : '';
+        let translation = batchTranslations[i];
 
-        // Check predefined mock translations
-        if (DEV_DUAL_TRANSLATIONS[text] && DEV_DUAL_TRANSLATIONS[text][normTarget]) {
-            return {
-                ...seg,
-                translation: DEV_DUAL_TRANSLATIONS[text][normTarget]
-            };
+        // Check predefined mock translations if batch returned null
+        if (!translation && DEV_DUAL_TRANSLATIONS[text] && DEV_DUAL_TRANSLATIONS[text][normTarget]) {
+            translation = DEV_DUAL_TRANSLATIONS[text][normTarget];
         }
 
-        // Try free Google translate if online
-        try {
-            const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${encodeURIComponent(sourceLang || 'auto')}&tl=${encodeURIComponent(normTarget)}&dt=t&q=${encodeURIComponent(text)}`;
-            const gRes = await fetch(url, { signal: AbortSignal.timeout(2000) });
-            if (gRes.ok) {
-                const data = await gRes.json();
-                const trans = data?.[0]?.map(part => part[0]).join('');
-                if (trans) {
-                    return { ...seg, translation: trans };
-                }
-            }
-        } catch {
-            // Ignore failure
+        // Validate translation is not identical to source text when source !== target
+        if (translation && (sourceLang || 'auto') !== normTarget && translation.trim() === text) {
+            translation = null;
         }
 
-        // Dev fallback translation
         return {
             ...seg,
-            translation: `[${normTarget.toUpperCase()}] ${text}`
+            translation: translation || null
         };
-    }));
+    });
 
-    // Cache to disk
-    try {
-        fs.writeFileSync(cacheFile, JSON.stringify({ segments: translatedSegments }), 'utf8');
-    } catch {}
+    const successCount = translatedSegments.filter(s => s.translation).length;
+    const shouldCache = translatedSegments.length > 0 && (successCount / translatedSegments.length) >= 0.7;
+
+    // Cache to disk only if majority succeeded
+    if (shouldCache) {
+        try {
+            fs.writeFileSync(cacheFile, JSON.stringify({ segments: translatedSegments }), 'utf8');
+        } catch {}
+    }
 
     res.json({
         videoId,

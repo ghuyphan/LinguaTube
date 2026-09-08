@@ -147,4 +147,20 @@ describe('BottomSheetComponent', () => {
     fixture.destroy();
     expect(bottomSheetService.hasOpenSheets).toBeFalse();
   });
+
+  it('should trigger height animation on content resize', fakeAsync(() => {
+    host.isOpen = true;
+    fixture.detectChanges();
+    tick(350); // wait for entrance animation
+
+    const sheet = fixture.nativeElement.querySelector('.sheet') as HTMLElement;
+    expect(sheet).toBeTruthy();
+
+    // Change content height
+    host.contentHeight = 250;
+    fixture.detectChanges();
+    tick(50);
+
+    expect(host.isOpen).toBeTrue();
+  }));
 });

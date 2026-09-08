@@ -249,154 +249,167 @@
     <ng-template #playerSettingsTemplate>
       <div class="player-settings-menu">
         @if (playerSettingsView() === 'main') {
-        <div class="sheet-section-header">
-          <div class="sheet-title-group">
-            <app-icon name="settings" [size]="16" />
-            <h3 class="sheet-title">{{ i18n.t('player.settings') || i18n.t('settings.title') || 'Settings' }}</h3>
+        <div class="settings-panel">
+          <div class="sheet-section-header">
+            <div class="sheet-title-group">
+              <app-icon name="settings" [size]="16" />
+              <h3 class="sheet-title">{{ i18n.t('player.settings') || i18n.t('settings.title') || 'Settings' }}</h3>
+            </div>
           </div>
-        </div>
-        <div class="settings-menu-list">
-          <!-- Playback Speed -->
-          <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('speed')">
-            <div class="menu-item-left">
-              <app-icon name="fast-forward" [size]="18" />
-              <span class="menu-item-label">{{ i18n.t('player.playbackSpeed') || 'Playback speed' }}</span>
-            </div>
-            <div class="menu-item-right">
-              <span class="menu-item-value">{{ currentSpeed() === 1 ? (i18n.t('player.normal') || 'Normal') : currentSpeed() + 'x' }}</span>
-              <app-icon name="chevron-right" [size]="16" />
-            </div>
-          </button>
+          <div class="settings-menu-list">
+            <!-- Playback Speed -->
+            <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('speed')">
+              <div class="menu-item-left">
+                <app-icon name="fast-forward" [size]="18" />
+                <span class="menu-item-label">{{ i18n.t('player.playbackSpeed') || 'Playback speed' }}</span>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-item-value">{{ currentSpeed() === 1 ? (i18n.t('player.normal') || 'Normal') : currentSpeed() + 'x' }}</span>
+                <app-icon name="chevron-right" [size]="16" />
+              </div>
+            </button>
 
-          <!-- Subtitle Font Size -->
-          <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('fontSize')">
-            <div class="menu-item-left">
-              <app-icon name="type" [size]="18" />
-              <span class="menu-item-label">{{ i18n.t('subtitle.fontSize') || 'Subtitle size' }}</span>
-            </div>
-            <div class="menu-item-right">
-              <span class="menu-item-value">{{ getFontSizeName(settings.settings().fontSize) }}</span>
-              <app-icon name="chevron-right" [size]="16" />
-            </div>
-          </button>
+            <!-- Subtitle Font Size -->
+            <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('fontSize')">
+              <div class="menu-item-left">
+                <app-icon name="type" [size]="18" />
+                <span class="menu-item-label">{{ i18n.t('subtitle.fontSize') || 'Subtitle size' }}</span>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-item-value">{{ getFontSizeName(settings.settings().fontSize) }}</span>
+                <app-icon name="chevron-right" [size]="16" />
+              </div>
+            </button>
 
-          <!-- Dual Subtitles -->
-          @if (isCJKLanguage()) {
-          <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('dualSub')">
-            <div class="menu-item-left">
-              <app-icon name="languages" [size]="18" />
-              <span class="menu-item-label">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</span>
-            </div>
-            <div class="menu-item-right">
-              @if (settings.settings().showDualSubtitles) {
-                <img [src]="getTargetLangFlagUrl(settings.settings().dualSubtitleTargetLang || 'en')" class="menu-item-flag" alt="" />
-                <span class="menu-item-value">{{ getTargetLangName(settings.settings().dualSubtitleTargetLang || 'en') }}</span>
-              } @else {
-                <span class="menu-item-value">{{ i18n.t('player.off') || 'Off' }}</span>
-              }
-              <app-icon name="chevron-right" [size]="16" />
-            </div>
-          </button>
-          }
+            <!-- Dual Subtitles -->
+            @if (isCJKLanguage()) {
+            <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('dualSub')">
+              <div class="menu-item-left">
+                <app-icon name="languages" [size]="18" />
+                <span class="menu-item-label">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</span>
+              </div>
+              <div class="menu-item-right">
+                @if (settings.settings().showDualSubtitles) {
+                  <img [src]="getTargetLangFlagUrl(settings.settings().dualSubtitleTargetLang || 'en')" class="menu-item-flag" alt="" />
+                  <span class="menu-item-value">{{ getTargetLangName(settings.settings().dualSubtitleTargetLang || 'en') }}</span>
+                } @else {
+                  <span class="menu-item-value">{{ i18n.t('player.off') || 'Off' }}</span>
+                }
+                <app-icon name="chevron-right" [size]="16" />
+              </div>
+            </button>
+            }
 
-          <!-- Add to Playlist -->
-          <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); onSaveClick()">
-            <div class="menu-item-left">
-              <app-icon name="list-plus" [size]="18" />
-              <span class="menu-item-label">{{ i18n.t('playlist.saveToPlaylist') || 'Save to playlist' }}</span>
-            </div>
-            <div class="menu-item-right">
-              <app-icon name="chevron-right" [size]="16" />
-            </div>
-          </button>
+            <!-- Add to Playlist -->
+            <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); onSaveClick()">
+              <div class="menu-item-left">
+                <app-icon name="list-plus" [size]="18" />
+                <span class="menu-item-label">{{ i18n.t('playlist.saveToPlaylist') || 'Save to playlist' }}</span>
+              </div>
+              <div class="menu-item-right">
+                <app-icon name="chevron-right" [size]="16" />
+              </div>
+            </button>
 
-          <!-- Keyboard Shortcuts helper -->
-          <button type="button" class="settings-menu-item desktop-only-item" (click)="closePlayerSettings(); openShortcutsDialog()">
-            <div class="menu-item-left">
-              <app-icon name="keyboard" [size]="18" />
-              <span class="menu-item-label">{{ i18n.t('player.keyboardShortcuts') || 'Keyboard shortcuts' }}</span>
-            </div>
-            <div class="menu-item-right">
-              <span class="menu-item-value"><kbd>?</kbd></span>
-              <app-icon name="chevron-right" [size]="16" />
-            </div>
-          </button>
+            <!-- Keyboard Shortcuts helper -->
+            <button type="button" class="settings-menu-item desktop-only-item" (click)="closePlayerSettings(); openShortcutsDialog()">
+              <div class="menu-item-left">
+                <app-icon name="keyboard" [size]="18" />
+                <span class="menu-item-label">{{ i18n.t('player.keyboardShortcuts') || 'Keyboard shortcuts' }}</span>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-item-value"><kbd>?</kbd></span>
+                <app-icon name="chevron-right" [size]="16" />
+              </div>
+            </button>
+          </div>
         </div>
         }
 
         @if (playerSettingsView() === 'speed') {
-        <div class="sheet-section-header with-back">
-          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
-            <app-icon name="chevron-left" [size]="18" />
-          </button>
-          <h3 class="sheet-title">{{ i18n.t('player.playbackSpeed') || 'Playback speed' }}</h3>
-        </div>
-        <div class="settings-options-list">
-          @for (speed of playbackSpeeds; track speed) {
-          <button type="button" class="settings-option-row" [class.active]="currentSpeed() === speed"
-            (click)="selectSpeedFromSheet(speed)">
-            <span class="option-label">{{ speed === 1 ? (i18n.t('player.normal') || 'Normal') : speed + 'x' }}</span>
-            @if (currentSpeed() === speed) {
-            <app-icon name="check" [size]="16" class="option-check" />
+        <div class="settings-panel">
+          <div class="sheet-section-header with-back">
+            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
+              <app-icon name="chevron-left" [size]="18" />
+            </button>
+            <h3 class="sheet-title">{{ i18n.t('player.playbackSpeed') || 'Playback speed' }}</h3>
+          </div>
+          <div class="settings-options-list">
+            @for (speed of playbackSpeeds; track speed) {
+            <button type="button" class="settings-option-row" [class.active]="currentSpeed() === speed"
+              (click)="selectSpeedFromSheet(speed)">
+              <span class="option-label">{{ speed === 1 ? (i18n.t('player.normal') || 'Normal') : speed + 'x' }}</span>
+              @if (currentSpeed() === speed) {
+              <app-icon name="check" [size]="16" class="option-check" />
+              }
+            </button>
             }
-          </button>
-          }
+          </div>
         </div>
         }
 
         @if (playerSettingsView() === 'fontSize') {
-        <div class="sheet-section-header with-back">
-          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
-            <app-icon name="chevron-left" [size]="18" />
-          </button>
-          <h3 class="sheet-title">{{ i18n.t('subtitle.fontSize') || 'Subtitle size' }}</h3>
-        </div>
-        <div class="settings-options-list">
-          @for (size of fontSizes; track size) {
-          <button type="button" class="settings-option-row" [class.active]="settings.settings().fontSize === size"
-            (click)="setFontSizeFromSheet(size)">
-            <span class="option-label">{{ getFontSizeName(size) }}</span>
-            @if (settings.settings().fontSize === size) {
-            <app-icon name="check" [size]="16" class="option-check" />
+        <div class="settings-panel">
+          <div class="sheet-section-header with-back">
+            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
+              <app-icon name="chevron-left" [size]="18" />
+            </button>
+            <h3 class="sheet-title">{{ i18n.t('subtitle.fontSize') || 'Subtitle size' }}</h3>
+          </div>
+          <div class="settings-options-list">
+            @for (size of fontSizes; track size) {
+            <button type="button" class="settings-option-row" [class.active]="settings.settings().fontSize === size"
+              (click)="setFontSizeFromSheet(size)">
+              <span class="option-label">{{ getFontSizeName(size) }}</span>
+              @if (settings.settings().fontSize === size) {
+              <app-icon name="check" [size]="16" class="option-check" />
+              }
+            </button>
             }
-          </button>
-          }
+          </div>
         </div>
         }
 
         @if (playerSettingsView() === 'dualSub') {
-        <div class="sheet-section-header with-back">
-          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
-            <app-icon name="chevron-left" [size]="18" />
-          </button>
-          <h3 class="sheet-title">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</h3>
-        </div>
-        <div class="settings-options-list">
-          <!-- Off Option -->
-          <button type="button" class="settings-option-row" [class.active]="!settings.settings().showDualSubtitles"
-            (click)="selectDualSubLang(null)">
-            <span class="option-label">{{ i18n.t('player.off') || 'Off' }}</span>
-            @if (!settings.settings().showDualSubtitles) {
-            <app-icon name="check" [size]="16" class="option-check" />
-            }
-          </button>
+        <div class="settings-panel">
+          <div class="sheet-section-header with-back">
+            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
+              <app-icon name="chevron-left" [size]="18" />
+            </button>
+            <h3 class="sheet-title">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</h3>
+          </div>
+          <div class="settings-options-list">
+            <!-- Off Option -->
+            <button type="button" class="settings-option-row" [class.active]="!settings.settings().showDualSubtitles"
+              (click)="selectDualSubLang(null)">
+              <div class="option-with-icon">
+                <div class="option-flag-placeholder">
+                  <app-icon name="slash" [size]="14" class="option-icon" />
+                </div>
+                <span class="option-label">{{ i18n.t('player.off') || 'Off' }}</span>
+              </div>
+              @if (!settings.settings().showDualSubtitles) {
+              <app-icon name="check" [size]="16" class="option-check" />
+              }
+            </button>
 
-          <div class="sheet-divider"></div>
+            <div class="sheet-divider"></div>
 
-          <!-- Supported Languages with circle flags -->
-          @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
-          <button type="button" class="settings-option-row" 
-            [class.active]="settings.settings().showDualSubtitles && (settings.settings().dualSubtitleTargetLang || 'en') === lang.code"
-            (click)="selectDualSubLang(lang.code)">
-            <div class="option-with-icon">
-              <img [src]="lang.flagUrl" class="option-flag" alt="" />
-              <span class="option-label">{{ lang.name }}</span>
-            </div>
-            @if (settings.settings().showDualSubtitles && (settings.settings().dualSubtitleTargetLang || 'en') === lang.code) {
-            <app-icon name="check" [size]="16" class="option-check" />
+            <!-- Supported Languages with circle flags -->
+            @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
+            <button type="button" class="settings-option-row" 
+              [class.active]="settings.settings().showDualSubtitles && (settings.settings().dualSubtitleTargetLang || 'en') === lang.code"
+              (click)="selectDualSubLang(lang.code)">
+              <div class="option-with-icon">
+                <img [src]="lang.flagUrl" class="option-flag" alt="" />
+                <span class="option-label">{{ lang.name }}</span>
+              </div>
+              @if (settings.settings().showDualSubtitles && (settings.settings().dualSubtitleTargetLang || 'en') === lang.code) {
+              <app-icon name="check" [size]="16" class="option-check" />
+              }
+            </button>
             }
-          </button>
-          }
+          </div>
         </div>
         }
       </div>
@@ -405,8 +418,10 @@
     <!-- Desktop: Floating YouTube settings menu anchored above gear icon -->
     @if (isPlayerSettingsOpen() && !isMobile()) {
     <div class="player-settings-scrim" (click)="closePlayerSettings()"></div>
-    <div class="player-settings-popup" (click)="$event.stopPropagation()">
-      <ng-container *ngTemplateOutlet="playerSettingsTemplate" />
+    <div class="player-settings-popup" #settingsPopup (click)="$event.stopPropagation()">
+      <div class="player-settings-popup-inner" #settingsPopupInner>
+        <ng-container *ngTemplateOutlet="playerSettingsTemplate" />
+      </div>
     </div>
     }
 
@@ -435,6 +450,7 @@
         [t]="i18n.t.bind(i18n)"
         (playPauseClicked)="onPlayPauseButtonClick($event)"
         (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSubtitles)="toggleSubtitles()"
+        (savePlaylist)="onSaveClick()"
         (toggleDualSubs)="toggleDualSubtitles()"
         (openDualSubMenu)="openDualSubMenu($event)"
         (speedClick)="openSpeedMenu($event)" (openSettings)="openPlayerSettings($event)"

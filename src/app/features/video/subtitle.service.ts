@@ -3,11 +3,12 @@ import { Subscription } from 'rxjs';
 import { SubtitleCue, Token } from '../../models';
 import { YoutubeService } from './youtube.service';
 import { SettingsService } from '../../core/services/settings.service';
+import { I18nService } from '../../core/services/i18n.service';
 import { TranslationService } from '../../services/translation.service';
 import { PocketBaseService } from '../../core/services/pocketbase.service';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../../shared/utils/japanese-romaji';
-import { getCharType, isPunctuation } from '../../shared/utils/language.utils';
+import { getCharType, isPunctuation, detectSubtitleLanguage } from '../../shared/utils/language.utils';
 
 // ============================================================================
 // Constants
@@ -33,6 +34,7 @@ const DUAL_SUB_BUFFER = 15;
 export class SubtitleService {
   private youtube = inject(YoutubeService);
   private settings = inject(SettingsService);
+  private i18n = inject(I18nService);
   private translation = inject(TranslationService);
   private pocketbase = inject(PocketBaseService);
 
@@ -60,11 +62,16 @@ export class SubtitleService {
     });
 
     // Centralized Dual Subtitle Reactive Orchestrator
-    // Reacts to video, subtitle list, dual toggle, and target language changes
+    // Reacts to video, subtitle list, dual toggle, and target language changes (following UI locale)
     effect(() => {
       const showDual = this.settings.settings().showDualSubtitles;
-      const targetLang = this.settings.settings().dualSubtitleTargetLang || 'en';
-      const sourceLang = this.loadedLanguage() || this.settings.settings().language;
+      const sourceLang = this.activeLanguage();
+      const uiLang = this.i18n.currentLanguage();
+      // Target language follows UI locale; fallback if UI locale matches learning/source language
+      let targetLang = this.settings.settings().dualSubtitleTargetLang || uiLang;
+      if (targetLang === sourceLang) {
+        targetLang = (uiLang && uiLang !== sourceLang) ? uiLang : (sourceLang === 'en' ? 'ja' : 'en');
+      }
       const videoId = this.youtube.currentVideo()?.id;
       const cues = this.subtitles();
 
@@ -109,12 +116,34 @@ export class SubtitleService {
   readonly isDualCached = signal(false);
   readonly isTranslatingDual = signal(false);
   readonly dualSubError = signal<string | null>(null);
-  // Target language for dual subtitles (shared across components)
-  readonly dualSubtitleTargetLang = computed(() => this.settings.settings().dualSubtitleTargetLang);
+  // Target language for dual subtitles (follows UI locale)
+  readonly dualSubtitleTargetLang = computed(() => {
+    const sourceLang = this.activeLanguage();
+    const uiLang = this.i18n.currentLanguage();
+    const target = this.settings.settings().dualSubtitleTargetLang || uiLang;
+    if (target === sourceLang) {
+      return (uiLang && uiLang !== sourceLang) ? uiLang : (sourceLang === 'en' ? 'ja' : 'en');
+    }
+    return target;
+  });
 
   // Language state tracking
   readonly loadedLanguage = signal<'ja' | 'zh' | 'ko' | 'en' | null>(null);
   readonly requestedLanguage = signal<string | null>(null);
+
+  /**
+   * Evaluates the authentic language of current subtitles.
+   * If cues exist, detects language from cue text; otherwise falls back to loadedLanguage or settings.
+   */
+  readonly activeLanguage = computed(() => {
+    const cues = this.subtitles();
+    if (cues.length > 0) {
+      return detectSubtitleLanguage(cues);
+    }
+    const loaded = this.loadedLanguage();
+    if (loaded) return loaded;
+    return this.settings.settings().language;
+  });
 
   /** Master visibility toggle for subtitles/captions (toggled via 'c' key or CC button) */
   readonly subtitlesVisible = signal(true);
@@ -429,8 +458,10 @@ export class SubtitleService {
             let hasContent = false;
 
             translatedSegments.forEach((seg, index: number) => {
-              if (index < cues.length && seg.translation) {
-                newMap.set(cues[index].id, seg.translation);
+              const cue = cues[index];
+              const trans = seg.translation?.trim();
+              if (index < cues.length && trans && (!cue || trans !== cue.text.trim())) {
+                newMap.set(cue.id, trans);
                 hasContent = true;
               }
             });
@@ -504,7 +535,7 @@ export class SubtitleService {
     this.isDualSubLoading.set(true);
 
     const texts = cuesToTranslate.map(c => c.text);
-    const sourceLang = this.loadedLanguage() || this.settings.settings().language;
+    const sourceLang = this.activeLanguage();
     const targetLang = this.dualSubtitleTargetLang() || 'en';
 
     if (this.lazyLoadSubscription) {
@@ -522,8 +553,10 @@ export class SubtitleService {
         const newMap = new Map(this.cueTranslations());
 
         translations.forEach((trans, i) => {
-          if (trans && cuesToTranslate[i]) {
-            newMap.set(cuesToTranslate[i].id, trans);
+          const cue = cuesToTranslate[i];
+          const trimmedTrans = trans?.trim();
+          if (trimmedTrans && cue && trimmedTrans !== cue.text.trim()) {
+            newMap.set(cue.id, trimmedTrans);
           }
         });
 

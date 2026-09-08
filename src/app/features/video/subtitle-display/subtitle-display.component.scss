@@ -207,7 +207,37 @@
 
 .subtitle-translation--loading {
     animation: none;
-    opacity: 0.7;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    padding: 6px var(--space-sm);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dual-sub-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: calc(0.8125rem * 1.4);
+    padding: 0 4px;
+
+    span {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--text-muted, rgba(255, 255, 255, 0.4));
+        animation: dotPulse 1.2s ease-in-out infinite;
+
+        &:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    }
 }
 
 .subtitle-translation--error {
@@ -723,19 +753,18 @@
     &:nth-child(7n) {
         width: 40px;
     }
-
-    &.dual-translation-shimmer {
-        width: 120px;
-        height: 1em;
-        opacity: 0.6;
-    }
 }
 
 /* Punctuation */
 .punctuation {
-    display: inline;
+    display: inline-block;
+    vertical-align: baseline;
     cursor: default;
     color: var(--text-secondary);
+    padding: 4px 1px;
+    margin: 2px 0;
+    line-height: inherit;
+    font-weight: inherit;
 }
 
 /* ============================================
@@ -802,12 +831,22 @@
 }
 
 .word--grammar {
+    color: inherit;
+    background: rgba(var(--color-grammar-rgb, 45, 212, 191), 0.1);
+    border-color: transparent;
     text-decoration: underline;
-    text-decoration-color: var(--color-grammar, #f59e0b);
-    text-decoration-style: dotted;
-    text-underline-offset: 3px;
+    text-decoration-color: var(--color-grammar, #2dd4bf);
+    text-decoration-style: solid;
+    text-underline-offset: 4px;
     text-decoration-thickness: 2px;
-    background: rgba(var(--color-grammar-rgb, 245, 158, 11), 0.12);
+    font-weight: 600;
+
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(var(--color-grammar-rgb, 45, 212, 191), 0.2);
+            border-color: rgba(var(--color-grammar-rgb, 45, 212, 191), 0.3);
+        }
+    }
 }
 
 /* Ruby styling */
@@ -848,6 +887,12 @@ ruby rt {
     vertical-align: top;
 }
 
+.text-ja .punctuation {
+    padding: 4px 1px;
+    margin: 1px 0;
+    vertical-align: top;
+}
+
 .text-ja ruby rt {
     font-size: 0.45em;
     white-space: nowrap;
@@ -864,6 +909,12 @@ ruby rt {
 .text-zh .word {
     padding: 4px 5px;
     margin: 1px 2px;
+    vertical-align: top;
+}
+
+.text-zh .punctuation {
+    padding: 4px 1px;
+    margin: 1px 0;
     vertical-align: top;
 }
 
@@ -884,6 +935,12 @@ ruby rt {
     vertical-align: top;
 }
 
+.text-ko .punctuation {
+    padding: 4px 1px;
+    margin: 1px 0;
+    vertical-align: top;
+}
+
 .text-ko ruby rt {
     font-size: 0.48em;
     font-weight: 500;
@@ -899,6 +956,13 @@ ruby rt {
 .text-en .word {
     padding: 2px 4px;
     margin: 1px 2px;
+    vertical-align: baseline;
+}
+
+.text-en .punctuation {
+    padding: 2px 1px;
+    margin: 1px 0;
+    vertical-align: baseline;
 }
 
 /* ============================================
@@ -1198,6 +1262,32 @@ ruby rt {
     flex-shrink: 0;
     box-sizing: border-box;
     transition: all 0.2s ease;
+}
+
+.ctrl-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 19px;
+    height: 18px;
+    padding: 0 5px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-pill, 9999px);
+    background: var(--bg-hover, rgba(255, 255, 255, 0.08));
+    color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    line-height: 1;
+    margin-left: 2px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.ctrl-btn:hover .ctrl-count {
+    background: var(--bg-active, var(--bg-hover));
+    color: var(--text-primary);
+    border-color: var(--border-focus, var(--border-color));
 }
 
 /* Typography glyph for font sizing */
@@ -1549,6 +1639,18 @@ ruby rt {
             overflow: hidden;
             text-overflow: ellipsis;
             line-height: 1;
+
+            &.ctrl-label--hidden-mobile {
+                display: none;
+            }
+        }
+
+        .ctrl-count {
+            min-width: 17px;
+            height: 17px;
+            font-size: 0.625rem;
+            padding: 0 4px;
+            margin-left: 0;
         }
 
         .ctrl-badge-inline {
@@ -1758,6 +1860,13 @@ ruby rt {
 
         .ctrl-label {
             font-size: 0.6875rem;
+        }
+
+        .ctrl-count {
+            min-width: 15px;
+            height: 15px;
+            font-size: 0.5625rem;
+            padding: 0 3px;
         }
 
         .ctrl-badge-inline {

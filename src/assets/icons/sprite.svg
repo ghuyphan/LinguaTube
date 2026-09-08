@@ -60,13 +60,13 @@
   
   <symbol id="repeat" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"></path></symbol>
   
-  <symbol id="languages" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-    <path d="m5 8 6 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-    <path d="m4 14 6-6 2-3" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-    <path d="M2 5h12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-    <path d="M7 2h1" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-    <path d="m22 22-5-10-5 10" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-    <path d="M14 18h6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+  <symbol id="languages" viewBox="0 0 24 24">
+    <path d="m5 8 6 6"></path>
+    <path d="m4 14 6-6 2-3"></path>
+    <path d="M2 5h12"></path>
+    <path d="M7 2h1"></path>
+    <path d="m22 22-5-10-5 10"></path>
+    <path d="M14 18h6"></path>
   </symbol>
   
   <symbol id="subtitles" viewBox="0 0 24 24">
@@ -255,11 +255,11 @@
   <symbol id="list" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></symbol>
   
   <symbol id="list-plus" viewBox="0 0 24 24">
-    <path d="M3 6h12"></path>
-    <path d="M3 11h12"></path>
-    <path d="M3 16h8"></path>
-    <path d="M18 12v8"></path>
-    <path d="M14 16h8"></path>
+    <path d="M11 12H3"></path>
+    <path d="M16 6H3"></path>
+    <path d="M16 18H3"></path>
+    <path d="M18 9v6"></path>
+    <path d="M21 12h-6"></path>
   </symbol>
   
   <symbol id="list-video" viewBox="0 0 24 24">

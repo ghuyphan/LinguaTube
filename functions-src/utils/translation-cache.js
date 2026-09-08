@@ -104,6 +104,20 @@ export async function getTranslation(bucket, videoId, srcLang, tgtLang) {
             return null;
         }
 
+        // Invalidate poisoned caches where translations mirror source text
+        if (srcLang !== tgtLang) {
+            const identicalCount = data.segments.filter(s => s && s.translation && s.text && s.translation.trim() === s.text.trim()).length;
+            if (identicalCount > data.segments.length * 0.3) {
+                log('Cache poisoned with untranslated text:', key);
+                return null;
+            }
+            data.segments.forEach(s => {
+                if (s && s.translation && s.text && s.translation.trim() === s.text.trim()) {
+                    s.translation = null;
+                }
+            });
+        }
+
         log('Cache hit:', key, `(${data.segments.length} segments)`);
         return {
             segments: data.segments,

@@ -60,7 +60,13 @@ import { VocabularyService } from '../../../../vocabulary';
                 <!-- Interactive token display -->
                 @for (vt of viewTokens(); track vt.surface + '-' + vt.index) {
                   @if (vt.isPunctuation) {
-                    <span class="fs-word fs-word--punctuation" (click)="$event.stopPropagation()">{{ vt.surface }}</span>
+                    <span class="fs-word fs-word--punctuation" (click)="$event.stopPropagation()">
+                      @if (showReadingAnnotation()) {
+                        <ruby>{{ vt.surface }}<rt class="rt-empty">&#160;</rt></ruby>
+                      } @else {
+                        {{ vt.surface }}
+                      }
+                    </span>
                   } @else {
                     <button type="button"
                       class="fs-word" 
@@ -91,8 +97,14 @@ import { VocabularyService } from '../../../../vocabulary';
             @if (showDualSubtitles()) {
               <div class="fs-subtitle-translation-wrapper">
                 @if (isDualSubLoading() && !currentTranslation()) {
-                  <div class="fs-subtitle-translation skeleton-text"></div>
-                } @else if (currentTranslation()) {
+                  <div class="fs-subtitle-translation fs-subtitle-translation--loading" aria-label="Translating subtitle">
+                    <div class="fs-dual-sub-dots">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                } @else if (currentTranslation() && currentTranslation()?.trim() !== cue.text.trim()) {
                   <div class="fs-subtitle-translation">
                     {{ currentTranslation() }}
                   </div>

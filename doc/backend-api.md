@@ -168,10 +168,11 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - If not cached: Returns `{ segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
 - **Client Cache Write-Back (`saveOnly: true` or `onlySave: true`)**:
   - When the client's lazy-loaded cue translations reach $\ge 80\%$ coverage (`QUALITY_THRESHOLD`), the frontend sends the compiled translated segments to `/api/dual-subtitles` with `saveOnly: true`.
-  - The backend validates the quality threshold and commits the translation to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. All future views by any user hit R2 directly (<50ms, \$0 translation cost).
+  - The backend filters out any untranslated segments matching source text (when source $\neq$ target), validates the quality threshold, and commits the translation to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. All future views by any user hit R2 directly (<50ms, \$0 translation cost).
 - **Process (Full Translation Request)**:
-  - Checks R2 cache: `translations/{videoId}/{sourceLang}-{targetLang}.json`.
+  - Checks R2 cache: `translations/{videoId}/{sourceLang}-{targetLang}.json`. Automatically detects and invalidates legacy poisoned cache entries where translation mirrored source text.
   - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via Lingva/GTX to eliminate 25s Cloudflare Function timeout aborts and 429 rate limit errors.
+  - Returns `null` on failed segment indices instead of falling back to untranslated source text.
   - Requires an 80% translation success rate (`QUALITY_THRESHOLD`) before saving to R2 and D1 `translation_meta`.
 
 ---
@@ -202,8 +203,8 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - Deduplicates texts before rate-limit unit deduction.
   - Checks warm worker isolate in-memory LRU phrase cache (`memPhraseCache`) for common subtitle phrases (e.g. greetings, common responses) to eliminate redundant network calls.
   - Checks Cloudflare KV for cached full-batch response (`trbatch:v1:{source}:{target}:{hash}`).
-  - Translates missing items in bulk using XML-tagged index batching (`<t id="N">...</t>`) via Lingva/GTX with targeted individual recovery for any missing tags (avoiding 35x sequential fallback loops).
-  - Saves fresh batches in KV (7-day TTL) only when fresh translations occur to preserve Cloudflare KV write quota (Rule 2).
+  - Translates missing items in bulk using XML-tagged index batching (`<t id="N">...</t>`) via Lingva/GTX with targeted individual recovery for any missing tags (avoiding 35x sequential fallback loops). Returns `null` on failed items instead of echoing back untranslated source text.
+  - Saves fresh batches in KV (7-day TTL) only when all items successfully translate to preserve Cloudflare KV write quota (Rule 2) and avoid caching failed results.
 
 ---
 

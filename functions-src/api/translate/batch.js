@@ -146,11 +146,12 @@ export async function onRequestPost(context) {
         // Map results back to original text sequence
         translations = texts.map(text => {
             if (!text || !text.trim()) return text;
-            return translationMap.get(text.trim()) || text;
+            return translationMap.get(text.trim()) || (source === target ? text : null);
         });
 
-        // 4. Save batch to KV only when fresh translations occurred (preserves 1,000 writes/day quota)
-        if (env.TRANSCRIPT_CACHE && batchKey && isFreshTranslation) {
+        // 4. Save batch to KV only when fresh translations occurred and all succeeded (preserves 1,000 writes/day quota)
+        const allSucceeded = translations.every(t => typeof t === 'string' && t.length > 0);
+        if (env.TRANSCRIPT_CACHE && batchKey && isFreshTranslation && allSucceeded) {
             const cachePayload = JSON.stringify({ translations });
             if (context.waitUntil) {
                 context.waitUntil(

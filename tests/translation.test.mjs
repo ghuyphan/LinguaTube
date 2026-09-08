@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { encodeTaggedTexts, decodeTaggedTranslations } from '../functions-src/providers/lingva.js';
+import { encodeTaggedTexts, decodeTaggedTranslations, translateBatch } from '../functions-src/providers/lingva.js';
+import { detectSubtitleLanguage } from '../src/app/shared/utils/language.utils.ts';
 
 test('encodeTaggedTexts: properly encodes array of strings with XML index tags and escapes entities', () => {
     const input = [
@@ -62,4 +63,72 @@ test('dual subtitle quality threshold: calculates coverage accurately', () => {
     assert.equal(successRate, 0.8);
     assert.equal(quality, 80);
     assert.equal(successRate >= 0.8, true);
+});
+
+test('detectSubtitleLanguage: correctly identifies authentic language from cue text', () => {
+    // Japanese cues (from the user's video -tKVN2mAKRI)
+    const jaCues = [
+        { text: '笑う顔に　何ができるだろうか' },
+        { text: '傷つくこと　喜ぶこと' }
+    ];
+    assert.equal(detectSubtitleLanguage(jaCues), 'ja');
+
+    // Korean cues
+    const koCues = [
+        { text: '안녕하세요 여러분' },
+        { text: '오늘의 한국어 수업을 시작합니다' }
+    ];
+    assert.equal(detectSubtitleLanguage(koCues), 'ko');
+
+    // Chinese cues
+    const zhCues = [
+        { text: '你好，欢迎来到我们的频道' },
+        { text: '今天我们来学习汉语' }
+    ];
+    assert.equal(detectSubtitleLanguage(zhCues), 'zh');
+
+    // English cues
+    const enCues = [
+        { text: 'Welcome back to the channel' },
+        { text: 'Today we will learn something new' }
+    ];
+    assert.equal(detectSubtitleLanguage(enCues), 'en');
+});
+
+test('anti-poisoning: excludes identical untranslated text from valid translations', () => {
+    const sourceLang = 'ja';
+    const targetLang = 'en';
+    const segments = [
+        { text: '笑う顔に　何ができるだろうか', translation: 'What can you do to smile?' },
+        { text: '傷つくこと　喜ぶこと', translation: '傷つくこと　喜ぶこと' } // Poisoned fallback
+    ];
+
+    // Filter rule used in dual-subtitles.js and subtitle.service.ts
+    const validCount = segments.filter(
+        s => s && s.translation && typeof s.translation === 'string' && s.translation.trim() &&
+             (sourceLang === targetLang || s.translation.trim() !== (s.text || '').trim())
+    ).length;
+
+    assert.equal(validCount, 1);
+});
+
+test('live translation: translates Japanese video cues into English (or safely returns null on network disconnect)', async () => {
+    const texts = [
+        '笑う顔に　何ができるだろうか',
+        '傷つくこと　喜ぶこと'
+    ];
+    const results = await translateBatch(texts, 'ja', 'en');
+
+    assert.equal(results.length, 2);
+
+    // If online, assert accurate English translation
+    // If offline, anti-poisoning guarantees results are null, never raw Japanese
+    if (results[0] !== null) {
+        assert.match(results[0], /[a-zA-Z]/, 'Result should contain English letters');
+        assert.notEqual(results[0].trim(), texts[0].trim());
+    }
+    if (results[1] !== null) {
+        assert.match(results[1], /[a-zA-Z]/, 'Result should contain English letters');
+        assert.notEqual(results[1].trim(), texts[1].trim());
+    }
 });

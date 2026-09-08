@@ -34,7 +34,13 @@
                     <span class="subtitle-content" @subtitleFade>
                         @for (token of viewTokens(); track token.surface + '-' + $index) {
                         @if (token.isPunctuation) {
-                        <span class="punctuation">{{ token.surface }}</span>
+                        <span class="punctuation">
+                            @if (showReadingAnnotation()) {
+                            <ruby>{{ token.surface }}<rt class="rt-empty">&#160;</rt></ruby>
+                            } @else {
+                            {{ token.surface }}
+                            }
+                        </span>
                         } @else {
                         <span class="word" [class.word--new]="token.level === 'new'"
                             [class.word--learning]="token.level === 'learning'"
@@ -66,14 +72,22 @@
                 @if (settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())) {
                 <div class="subtitle-translation-wrapper">
                     @if ((subtitles.isDualSubLoading() || isTranslatingDual()) && !cueTranslations().has(cue.id)) {
-                    <div class="subtitle-translation subtitle-translation--loading">
-                        <span class="token-shimmer dual-translation-shimmer"></span>
+                    <div class="subtitle-translation subtitle-translation--loading" aria-label="Translating subtitle">
+                        <div class="dual-sub-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                     } @else {
                     @if (cueTranslations().get(cue.id); as translation) {
+                    @if (translation.trim() !== cue.text.trim()) {
                     <div class="subtitle-translation" @subtitleFade>
                         {{ translation }}
                     </div>
+                    } @else {
+                    <div class="subtitle-translation subtitle-translation--empty"></div>
+                    }
                     } @else if (toastType() === 'error' && toastMessage()) {
                     <div class="subtitle-translation subtitle-translation--error" @subtitleFade>
                         <app-icon name="alert-circle" [size]="14" />
@@ -217,7 +231,6 @@
                             <span class="waiting-dot"></span>
                             <span class="waiting-dot"></span>
                         </div>
-                        <span class="subtitle-waiting">{{ i18n.t('subtitle.waitingForSubtitles') }}</span>
                     </div>
                 </div>
             </div>
@@ -238,7 +251,9 @@
             <div class="cue-body">
                 <span class="cue-text">{{ cue.text }}</span>
                 @if (settings.settings().showDualSubtitles && cueTranslations().get(cue.id); as translation) {
+                @if (translation.trim() !== cue.text.trim()) {
                 <span class="cue-translation-text">{{ translation }}</span>
+                }
                 }
             </div>
         </button>
@@ -260,11 +275,11 @@
         </button>
 
         <!-- Added Words Button (Always accessible) -->
-        <button type="button" class="ctrl-btn" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added')">
+        <button type="button" class="ctrl-btn ctrl-btn--added" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added') + (recentCount() > 0 ? ' (' + recentCount() + ')' : '')">
             <app-icon name="bookmark-plus" [size]="15" />
-            <span class="ctrl-label">{{ i18n.t('nav.added') }}</span>
+            <span class="ctrl-label" [class.ctrl-label--hidden-mobile]="recentCount() > 0">{{ i18n.t('nav.added') }}</span>
             @if (recentCount() > 0) {
-            <span class="ctrl-badge-inline">{{ recentCount() }}</span>
+            <span class="ctrl-count">{{ recentCount() }}</span>
             }
         </button>
 
@@ -377,23 +392,6 @@
                         </div>
                         <app-switch [checked]="grammar.grammarModeEnabled()" [label]="i18n.t('grammar.mode')" (checkedChange)="setGrammarMode($event)" />
                     </div>
-
-                    <!-- Dual Subtitles Toggle (if JA / ZH / KO / EN) -->
-                    @if (['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())) {
-                    <div class="options-item-divider"></div>
-                    <div class="options-item-row">
-                        <div class="options-item-left">
-                            <div class="options-item-icon-box">
-                                <app-icon name="languages" [size]="16" />
-                            </div>
-                            <div class="options-item-text">
-                                <span class="options-item-title">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</span>
-                                <span class="options-item-hint">{{ i18n.t('subtitle.dualSubsHint') }}</span>
-                            </div>
-                        </div>
-                        <app-switch [checked]="settings.settings().showDualSubtitles" [label]="i18n.t('subtitle.dualSubs') || 'Dual Subtitles'" (checkedChange)="setDualSubtitles($event)" />
-                    </div>
-                    }
                 </div>
             </div>
         </div>

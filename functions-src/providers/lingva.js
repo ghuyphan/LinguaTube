@@ -284,13 +284,14 @@ export async function translateBatch(texts, source, target) {
                             // Targeted fallback: only request the missing items
                             for (const missingIdx of missingIndices) {
                                 try {
-                                    results[chunk.indices[missingIdx]] = await translateText(
+                                    const singleRes = await translateText(
                                         chunk.texts[missingIdx],
                                         source,
                                         target
                                     );
+                                    results[chunk.indices[missingIdx]] = singleRes || (source === target ? chunk.texts[missingIdx] : null);
                                 } catch {
-                                    results[chunk.indices[missingIdx]] = chunk.texts[missingIdx];
+                                    results[chunk.indices[missingIdx]] = source === target ? chunk.texts[missingIdx] : null;
                                 }
                             }
                         }
@@ -301,9 +302,10 @@ export async function translateBatch(texts, source, target) {
                 // Fallback: recover individual items for this failed chunk
                 for (let j = 0; j < chunk.texts.length; j++) {
                     try {
-                        results[chunk.indices[j]] = await translateText(chunk.texts[j], source, target);
+                        const singleRes = await translateText(chunk.texts[j], source, target);
+                        results[chunk.indices[j]] = singleRes || (source === target ? chunk.texts[j] : null);
                     } catch {
-                        results[chunk.indices[j]] = chunk.texts[j];
+                        results[chunk.indices[j]] = source === target ? chunk.texts[j] : null;
                     }
                 }
             }

@@ -699,7 +699,13 @@ $transition-normal: 0.25s ease;
   left: 0;
   right: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.22) 50%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.12) 75%,
+    transparent 100%
+  );
   padding: 1.25rem 1rem 0.375rem;
   border-radius: 0;
   z-index: $z-custom-controls;
@@ -797,7 +803,13 @@ $transition-normal: 0.25s ease;
   }
 
   .custom-controls {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.22) 50%, transparent 100%);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.48) 45%,
+      rgba(0, 0, 0, 0.15) 75%,
+      transparent 100%
+    );
     bottom: 0;
     width: 100%;
     left: 0;
@@ -1037,8 +1049,18 @@ $transition-normal: 0.25s ease;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
   border-radius: 12px;
   overflow: hidden;
+  will-change: height, transform, opacity;
   animation: ytMenuScale 0.16s cubic-bezier(0, 0, 0.2, 1) forwards;
   transform-origin: bottom right;
+
+  &.animating-height {
+    overflow: hidden !important;
+
+    .settings-menu-list,
+    .settings-options-list {
+      overflow-y: hidden !important;
+    }
+  }
 
   .is-fullscreen & {
     bottom: 64px;
@@ -1046,7 +1068,14 @@ $transition-normal: 0.25s ease;
   }
 }
 
+.player-settings-popup-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .player-settings-sheet {
+  width: 100%;
   padding: 0.5rem 0 1rem;
   background: var(--bg-card);
   color: var(--text-primary);
@@ -1059,6 +1088,14 @@ $transition-normal: 0.25s ease;
   display: flex;
   flex-direction: column;
   user-select: none;
+  width: 100%;
+
+  .settings-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: settingsPanelFadeIn 0.18s cubic-bezier(0.32, 0.72, 0, 1);
+  }
 
   .sheet-section-header {
     display: flex;
@@ -1270,6 +1307,21 @@ $transition-normal: 0.25s ease;
         flex-shrink: 0;
       }
 
+      .option-flag-placeholder {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background: rgba(255, 255, 255, 0.12);
+
+        .option-icon {
+          color: rgba(255, 255, 255, 0.75);
+        }
+      }
+
       .option-icon {
         color: rgba(255, 255, 255, 0.6);
       }
@@ -1289,48 +1341,134 @@ $transition-normal: 0.25s ease;
   }
 }
 
-// Mobile bottom sheet mode
-@media (max-width: 768px) {
-  .player-settings-sheet .player-settings-menu {
-    color: var(--text-primary);
+@keyframes settingsPanelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-    .sheet-section-header {
-      border-bottom-color: var(--border-color);
-      .sheet-title-group { color: var(--text-primary); }
-      .sheet-title { color: var(--text-primary); }
-      .sheet-back-btn {
+@media (prefers-reduced-motion: reduce) {
+  .player-settings-menu .settings-panel {
+    animation: none !important;
+  }
+}
+
+// Mobile & tablet bottom sheet presentation
+.player-settings-sheet .player-settings-menu {
+  color: var(--text-primary);
+
+  .settings-menu-list,
+  .settings-options-list {
+    max-height: none; // Let bottom sheet handle max-height & smooth height transitions
+  }
+
+  .sheet-section-header {
+    height: 48px;
+    padding: 0 1rem;
+    border-bottom: 1px solid var(--border-color);
+
+    .sheet-title-group {
+      gap: 0.625rem;
+      color: var(--text-primary);
+    }
+
+    .sheet-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .sheet-back-btn {
+      width: 32px;
+      height: 32px;
+      color: var(--text-secondary);
+      &:hover {
+        background: var(--bg-hover);
+        color: var(--text-primary);
+      }
+    }
+  }
+
+  .settings-menu-item {
+    height: 48px;
+    padding: 0 1rem;
+    color: var(--text-primary);
+    &:hover { background: var(--bg-hover); }
+    &:active { background: var(--bg-hover); }
+
+    .menu-item-left {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      gap: 0.75rem;
+      color: var(--text-primary);
+      app-icon { color: var(--text-secondary); }
+    }
+
+    .menu-item-right {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      app-icon { color: var(--text-tertiary); }
+    }
+  }
+
+  .settings-option-row {
+    height: 48px;
+    padding: 0 1rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    &:hover { background: var(--bg-hover); }
+
+    &.active {
+      color: var(--accent-primary);
+      font-weight: 600;
+      background: rgba(var(--accent-primary-rgb), 0.08);
+    }
+
+    .option-label {
+      font-size: inherit;
+    }
+
+    .option-flag-placeholder {
+      background: var(--bg-hover);
+
+      .option-icon {
         color: var(--text-secondary);
-        &:hover { background: var(--bg-hover); color: var(--text-primary); }
+      }
+    }
+  }
+
+  .sheet-divider {
+    background: var(--border-color);
+  }
+
+  // Compact landscape optimization
+  @media (max-height: 520px) and (orientation: landscape) {
+    .sheet-section-header {
+      height: 44px;
+      .sheet-title {
+        font-size: 0.9375rem;
       }
     }
 
     .settings-menu-item {
-      height: 48px;
-      color: var(--text-primary);
-      &:hover { background: var(--bg-hover); }
-      &:active { background: var(--bg-hover); }
+      height: 44px;
       .menu-item-left {
-        color: var(--text-primary);
-        app-icon { color: var(--text-secondary); }
+        font-size: 0.90625rem;
       }
       .menu-item-right {
-        color: var(--text-secondary);
-        app-icon { color: var(--text-tertiary); }
+        font-size: 0.8125rem;
       }
     }
 
     .settings-option-row {
-      height: 48px;
-      color: var(--text-primary);
-      &:hover { background: var(--bg-hover); }
-      &.active {
-        color: var(--accent-primary);
-        background: rgba(var(--accent-primary-rgb), 0.08);
-      }
-    }
-
-    .sheet-divider {
-      background: var(--border-color);
+      height: 44px;
+      font-size: 0.90625rem;
     }
   }
 }

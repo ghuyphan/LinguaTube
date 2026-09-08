@@ -28,7 +28,8 @@ Voca accepts arbitrary YouTube video URLs:
 | **Scrubbing Preview** | Hover progress bar | Horizontal Swipe Drag | OSD time delta pill (`-0:15 / 1:45`) |
 | **2x Speed Fast-Forward** | — | Long-Press & Hold | OSD "2x Speed" indicator pill |
 | **Volume Up / Down** | `Up` / `Down` arrows | Swipe Up / Down (Right side) | Bottom bar volume slider |
-| **Toggle Subtitles** | `c` | Tap CC Button | CC button in bottom bar |
+| **Toggle Subtitles** | `c` | Tap CC Button (Landscape/Fullscreen) | CC button in bottom bar |
+| **Add to Playlist** | — | Tap Playlist Button (Portrait Mobile) | Add to playlist button (`list-plus`) in bottom bar |
 | **Toggle Dual Subtitles** | `d` | Tap Languages Button | Languages button in bottom bar |
 | **Dual Sub Menu** | Right-click Dual Sub | Long-Press Dual Sub Button | Quick language picker modal with circle flags |
 | **Toggle Fullscreen** | `f` | Pinch Out / Rotate | Bottom bar fullscreen button |
@@ -74,7 +75,7 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
     3. `reading`: Kana reading only.
     4. `annotatedRomanized`: Kanji with Hepburn Romaji annotations.
     5. `romanized`: Hepburn Romaji only.
-  - **Height & Baseline Alignment (Zero-Shift Ruby)**: When reading annotations are enabled, words without reading text (e.g. kana-only words, English words, numbers, or unannotated kanji) are wrapped in `<ruby>` with an invisible spacer `<rt class="rt-empty">&#160;</rt>`. This guarantees 100% identical card height and uniform baseline alignment across all words in the sentence, eliminating jagged jumps.
+  - **Height & Baseline Alignment (Zero-Shift Ruby)**: When reading annotations are enabled, non-kanji words AND punctuation tokens (`、`, `。`, `,`, `.`, `...`) are wrapped in `<ruby>` with an invisible spacer `<rt class="rt-empty">&#160;</rt>` and standardized `vertical-align: baseline`. This guarantees 100% identical card height and uniform baseline alignment across all words and punctuation in the sentence, eliminating vertical misalignment and jagged baseline jumps across Japanese, Chinese, Korean, and English.
 - **Chinese (`zh`)**:
   - Segmented using `Intl.Segmenter('zh', { granularity: 'word' })`.
   - Pinyin annotations generated via `pinyin-pro` with tone diacritics (e.g. `nǐ hǎo`).
@@ -94,6 +95,8 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
 ### 2.3. Subtitle Customization & Vocabulary Highlighting
 - **Four Size Modes**: `small`, `medium`, `large`, and `xlarge`, dynamically responsive across mobile, tablet, and desktop layouts.
 - **Vocabulary Mastery Indicators**: Interactive subtitle words reflect mastery state (`word--new`, `word--learning`, `word--known`) in both standard list/banner and fullscreen overlays.
+- **Distinct Grammar Pattern Highlights**: Tokens matching active grammar patterns are styled with a crisp mint/emerald green underline palette (`var(--color-grammar, #2dd4bf)` in dark mode, `#10b981` in light mode, with subtle translucent tint background), preserving word text legibility and separating grammar rules cleanly from red/new, amber/learning, and blue/known vocabulary levels without harsh box borders. In fullscreen mode, grammar tokens use a subtle, faint dotted underline without any background box to preserve cinematic video immersion.
+- **Streamlined Subtitle Waiting & Dual Translation States**: Both the primary subtitle waiting state and the secondary dual-sub translation loading state feature minimal 3-dot pulsing animations (`···`) without textual clutter, eliminating clunky skeleton boxes, nested pill artifacts, and harsh borders.
 - **Auto-Scroll & Manual Override**: Active cue autoscrolling pauses during user interaction (3s debounce) to ensure smooth browsing of full transcripts.
 
 ---
@@ -133,14 +136,22 @@ graph TD
 - **Supported Learning Languages**: Japanese (`ja`), Chinese (`zh`), Korean (`ko`), and English (`en`).
 - **Supported Target Languages**: English (`en`), Vietnamese (`vi`), Japanese (`ja`), Korean (`ko`), Chinese (`zh`).
 - **Centralized Orchestrator (`SubtitleService`)**: Single root singleton managing dual-sub state, in-memory cache, lazy loading batches, and subscriptions. Prevents desync between the video player overlay and subtitle list.
+- **Dynamic UI Locale Synchronization**: Dual subtitle target language dynamically syncs with the application UI language (`i18n.currentLanguage()`). If the user changes UI language, dual subtitles automatically update without requiring manual re-selection.
+- **Consolidated Controls**: The redundant dual subtitle toggle switch in the subtitle display options sheet has been removed in favor of the primary player bottom-bar controls and player settings menu.
 - **Dual Display Surfaces**:
   - **Video Overlay / Fullscreen**: Rendered dynamically within the active video player container.
   - **Scrollable Subtitle List (`.subtitle-list`)**: Each cue item (`.cue-item`) displays both primary text (`.cue-text`) and translated text (`.cue-translation-text`) in vertical stack (`.cue-body`).
+- **Dynamic Subtitle Language Detection (`detectSubtitleLanguage`)**: Subtitle cues are sampled using Unicode character block analysis (`\p{Script=Han}`, `\p{Script=Hiragana}`, `\p{Script=Hangul}`) to accurately determine the authentic video subtitle language. This prevents mismatches when user settings language differs from video subtitle language.
+- **Source/Target Inversion Prevention**: Target language selection strictly avoids collision with the active subtitle language, falling back to the user's interface language or alternate language to ensure translations are never identical to the source.
 - **Cache-First & Progressive Batch Translation**:
   - Checks server/R2 cache first (`onlyCache: true`).
   - On cache miss, immediately translates the initial batch (cues 0–35) so learners experience zero initial playback lag.
   - Progressively translates upcoming cues in batches of 35 with a 15-cue lookahead buffer as playback advances.
-- **Quality Assurance**: If $< 80\%$ of segments translate successfully, caching is refused to prevent bad data persistence.
+- **Translation Anti-Poisoning & Quality Assurance**:
+  - Failed translation requests return `null` rather than falling back to untranslated source text.
+  - LocalStorage and R2 caches automatically sanitize and reject entries where `source !== target` but `translation === sourceText`.
+  - UI templates (`subtitle-display`, `fullscreen-subtitle`) enforce equality guards (`translation.trim() !== cue.text.trim()`) to prevent rendering duplicate identical lines.
+  - If $< 80\%$ of segments translate successfully, remote caching is refused to prevent bad data persistence.
 - **Permanent Caching**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`) and indexed in D1.
 - **Persistent Preferences**: Dual subtitle toggle state and target language preference persist across browser sessions in `localStorage`.
 

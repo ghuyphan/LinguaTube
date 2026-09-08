@@ -171,19 +171,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
     }
   }
 
-  effectiveLanguage = computed(() => {
-    const loadedLang = this.subtitles.loadedLanguage();
-    if (loadedLang) {
-      return loadedLang;
-    }
-
-    const detected = this.transcript.detectedLanguage()?.split('-')[0]?.toLowerCase();
-    const userLang = this.settings.settings().language;
-    const validLangs = ['ja', 'zh', 'ko', 'en'];
-
-    if (detected && validLangs.includes(detected)) return detected;
-    return userLang;
-  });
+  effectiveLanguage = computed(() => this.subtitles.activeLanguage());
 
   readingDisplayMode = computed(() =>
     this.settings.getReadingDisplayMode(this.effectiveLanguage() as SupportedLearningLanguage)
@@ -530,26 +518,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
   setGrammarMode(enabled: boolean): void {
     this.grammar.grammarModeEnabled.set(enabled);
-  }
-
-  setDualSubtitles(enabled: boolean): void {
-    if (enabled) {
-      let target = this.settings.settings().dualSubtitleTargetLang;
-      const sourceLang = this.effectiveLanguage();
-      if (!target || target === sourceLang) {
-        const uiLang = this.i18n.currentLanguage();
-        target = (uiLang !== sourceLang) ? uiLang : (sourceLang === 'en' ? 'ja' : 'en');
-        this.settings.setDualSubtitleTargetLang(target);
-      }
-      this.subtitles.cueTranslations.set(new Map());
-      this.settings.updateSettings({ showDualSubtitles: true });
-    } else {
-      this.settings.updateSettings({ showDualSubtitles: false });
-    }
-  }
-
-  toggleDualSubtitles(): void {
-    this.setDualSubtitles(!this.settings.settings().showDualSubtitles);
   }
 
   getReadingScriptIcon(): string {

@@ -56,6 +56,7 @@ import { FullscreenSubtitleComponent } from './components/fullscreen-subtitle';
 import { VideoBottomBarComponent } from './components/video-bottom-bar/video-bottom-bar.component';
 import { VideoHeaderComponent } from './components/video-header/video-header.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { SmoothHeightAnimator } from '../../../shared/utils/smooth-height.animator';
 
 @Component({
   selector: 'app-video-player',
@@ -86,7 +87,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   // Translation language state
   targetLang = computed(() => this.subtitles.dualSubtitleTargetLang());
-  isCJKLanguage = computed(() => ['ja', 'zh', 'ko', 'en'].includes(this.subtitles.loadedLanguage() || this.settings.settings().language));
+  isCJKLanguage = computed(() => ['ja', 'zh', 'ko', 'en'].includes(this.subtitles.activeLanguage()));
 
   onLangSelected(value: string): void {
     this.subtitles.setDualSubtitleTargetLang(value);
@@ -141,6 +142,8 @@ export class VideoPlayerComponent implements OnDestroy {
   isDragging = signal(false);
 
   readonly progressBarComponent = viewChild(ProgressBarComponent);
+  readonly settingsPopup = viewChild<ElementRef<HTMLElement>>('settingsPopup');
+  readonly settingsPopupInner = viewChild<ElementRef<HTMLElement>>('settingsPopupInner');
 
   // Fullscreen popup state
   fsPopupVisible = signal(false);
@@ -175,7 +178,7 @@ export class VideoPlayerComponent implements OnDestroy {
   });
 
   activeSubtitleLanguage = computed<SupportedLearningLanguage>(() =>
-    (this.subtitles.loadedLanguage() || this.settings.settings().language) as SupportedLearningLanguage
+    this.subtitles.activeLanguage() as SupportedLearningLanguage
   );
 
   fullscreenTokens = computed(() => {
@@ -189,7 +192,9 @@ export class VideoPlayerComponent implements OnDestroy {
   currentTranslation = computed(() => {
     const cue = this.subtitles.currentCue();
     if (!cue) return null;
-    return this.subtitles.cueTranslations().get(cue.id) || null;
+    const trans = this.subtitles.cueTranslations().get(cue.id);
+    if (!trans || trans.trim() === cue.text.trim()) return null;
+    return trans;
   });
 
   // Grammar detection for fullscreen
@@ -273,6 +278,17 @@ export class VideoPlayerComponent implements OnDestroy {
   private lastControlsShowTime = 0;
 
   constructor() {
+    // Smooth dynamic height animation for desktop settings popup
+    effect(() => {
+      const popup = this.settingsPopup()?.nativeElement;
+      const popupInner = this.settingsPopupInner()?.nativeElement;
+      if (this.isPlayerSettingsOpen() && popup && popupInner) {
+        this.popupHeightAnimator.attach(popupInner, popup);
+      } else {
+        this.popupHeightAnimator.detach();
+      }
+    });
+
     // Proactively preload grammar patterns for active learning language in background
     effect(() => {
       const lang = this.activeSubtitleLanguage();
@@ -982,16 +998,27 @@ export class VideoPlayerComponent implements OnDestroy {
     if (this.settings.settings().showDualSubtitles) {
       this.disableDualSubtitles();
     } else {
-      let target = this.targetLang() || this.settings.settings().dualSubtitleTargetLang;
-      const sourceLang = this.subtitles.loadedLanguage() || this.settings.settings().language;
+      const sourceLang = this.subtitles.activeLanguage();
+      const uiLang = this.i18n.currentLanguage();
+      let target = this.settings.settings().dualSubtitleTargetLang || uiLang;
       if (!target || target === sourceLang) {
-        target = sourceLang === 'en' ? 'ja' : 'en';
+        target = (uiLang && uiLang !== sourceLang) ? uiLang : (sourceLang === 'en' ? 'ja' : 'en');
       }
+      this.settings.setDualSubtitleTargetLang(target);
       this.onLangSelected(target);
     }
   }
 
+  // Dynamic height animator for desktop settings popup
+  private readonly popupHeightAnimator = new SmoothHeightAnimator({
+    duration: 220,
+    easing: 'cubic-bezier(0.32, 0.72, 0, 1)',
+    animatingClass: 'animating-height',
+    isReady: () => this.isPlayerSettingsOpen()
+  });
+
   closePlayerSettings(): void {
+    this.popupHeightAnimator.detach();
     this.isPlayerSettingsOpen.set(false);
     this.playerSettingsView.set('main');
     this.startControlsAutoHide();
@@ -1293,6 +1320,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   ngOnDestroy(): void {
+    this.popupHeightAnimator.detach();
     this.clearControlsTimeout();
     this.gestures.destroy();
 

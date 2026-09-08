@@ -65,13 +65,16 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 
 ## 3. Accessibility, Focus Management & Mobile Stability
 
-### 3.1. Modal Focus Traps & Smooth Dynamic Height Transitions (`BottomSheetComponent`)
+### 3.1. Modal Focus Traps & Smooth Dynamic Height Transitions (`BottomSheetComponent` & `VideoPlayerComponent`)
 - **Focus Cycling**: Implements strict `keydown` listener trapping keyboard `Tab` / `Shift+Tab` cycles within the active bottom sheet modal container.
 - **Focus Restoration**: Caches `document.activeElement` prior to sheet open and restores focus back to the triggering element upon dismissal, ensuring full WCAG 2.1 compliance for screen readers and keyboard users.
-- **Smooth Dynamic Height Animations**:
-  - **ResizeObserver Driven**: Watches intrinsic content size updates via an unconstrained `.sheet-content-inner` wrapper using a native `ResizeObserver`.
-  - **Web Animations API**: Smoothly interpolates the sheet container's rendered height (`sheet.animate([{ height: `${old}px` }, { height: `${new}px` }], { duration: 250, easing: 'cubic-bezier(0.32, 0.72, 0, 1)' })`).
-  - **Seamless Interruption**: If content resizes again mid-animation (e.g. rapid accordion toggle, async search results, or translation changes), the active animation is sampled at its exact mid-flight height and smoothly redirected to the new target height without visual pop.
+- **Unified `SmoothHeightAnimator` (`src/app/shared/utils/smooth-height.animator.ts`)**:
+  - Encapsulates dynamic height animation across both `BottomSheetComponent` (mobile sheets & desktop dialogs) and `VideoPlayerComponent` (desktop settings popups), eliminating duplicate animation code.
+  - **ResizeObserver Driven**: Watches intrinsic content size updates via an unconstrained `.sheet-content-inner` wrapper in `BottomSheetComponent` and `#settingsPopupInner` in `VideoPlayerComponent` using native `ResizeObserver`.
+  - **Subpixel & Reflow Suppression**: Filters out horizontal width-only reflows and subpixel layout jitter (`Math.abs(contentHeight - lastContentHeight) <= 1`) so toggling scrollbar classes (`.animating-height`) does not self-cancel in-flight transitions.
+  - **Web Animations API**: Smoothly interpolates the container's rendered height (`element.animate([{ height: `${old}px` }, { height: `${new}px` }], { duration: 220, easing: 'cubic-bezier(0.32, 0.72, 0, 1)' })`).
+  - **Submenu View Transitions**: When navigating between player settings submenus (`main`, `speed`, `fontSize`, `dualSub`), container heights dynamically animate without visual snapping across both desktop popups and mobile bottom sheets.
+  - **Seamless Interruption**: If content resizes again mid-animation (e.g. rapid accordion toggle, async search results, or translation changes), the active animation is sampled at its exact mid-flight height (`element.getBoundingClientRect().height`) and smoothly redirected to the new target height without visual pop.
   - **Scrollbar Flicker Suppression**: Applies `.animating-height` class during transitions with `overflow-y: hidden` on `.sheet-content` to prevent horizontal text reflow and unsightly scrollbar flashing.
   - **Gesture & Lifecycle Coordination**: Automatically bypasses height transitions during entrance animations (`mobileSlideUp`/`scaleIn`), cancels cleanly on drag-to-dismiss touch start (`onTouchStart`), suppresses animations during window resizing/orientation shifts, and respects user accessibility preferences (`prefers-reduced-motion: reduce`).
 
@@ -149,12 +152,20 @@ graph TD
   - `VideoHeaderComponent`: Video title, channel info, back navigation, and playlist context.
   - `CenterControlsComponent`: Play/pause toggle, $\pm 5$s seek buttons with smooth animation.
   - `ProgressBarComponent`: Custom slider with buffered progress indicator, hover time preview, and cue segment markers.
-  - `VideoBottomBarComponent`: Time display, playback speed selector, dual-subtitles toggle, audio volume slider, fullscreen trigger. Right-clicking the dual subtitles button triggers the quick language selection modal.
+  - `VideoBottomBarComponent`: Time display, playback speed selector, dual-subtitles toggle, audio volume slider, fullscreen trigger.
+    - **Unified Volume Control & Left Hierarchy**: Volume control is consistently placed on the left edge before the time display (`[Volume] [0:00 / 4:13]`), eliminating awkward trailing mute buttons on mobile while preserving the desktop hover slider.
+    - **Portrait Mobile Adaptation**: On portrait mobile viewports ($\le 768\text{px}$), the bottom bar adaptively replaces the redundant CC toggle button with an "Add to Playlist" action (`.save-playlist-btn` with Lucide `list-plus` icon), keeping CC in landscape and fullscreen overlays where the external queue is inaccessible.
+    - **Normalized Optical Icon Sizing & Indicators**: Normalized SVG icons (`languages`, `list-plus`, `settings`, `maximize`) to uniform `stroke-width: 1.5`, aligned `.time-display` to 36px height matching control buttons, and refined active CC/Dual-Sub indicator pill with non-colliding spacing.
+    - **Deeper Bottom Scrim Gradient**: Enhanced linear gradient overlay to ensure high-contrast button readability and occlude YouTube iframe watermarks.
+  - `PlayerSettings`: Shared YouTube-style menu template projected into `.player-settings-popup` on desktop and `<app-bottom-sheet>` on mobile:
+    - **Uniform Row Layouts & Responsive Typography**: Items maintain 40px desktop context menu heights and comfortable 48px touch heights (44px in compact landscape) with legible typography (1rem/16px headers, 0.9375rem/15px rows), uniform 18px icons, and consistent indentations. In landscape orientation, bottom sheets are capped to proportional widths (`min(92%, 460px)`) rather than stretching across wide displays.
+    - **Smooth Height Animations**: Smoothly animates container height via native Web Animations API during submenu view transitions.
   - `FullscreenSubtitleComponent`: Dedicated high-contrast subtitle overlay positioned via `fullscreenSubtitleYPercent` setting.
     - Features a horizontal drag handle bar with ergonomic hit target ($\ge 32\text{px}$) and pill indicator.
     - Drag handler scheduled via `requestAnimationFrame` with pointer capture and soft magnetic anchoring at `12%` (top) and `78%` (bottom).
     - Mobile landscape typography optimization via `max-height: 520px` query, safe-area inset protection, and widescreen container clamping (`min(90%, 960px)`).
     - Full learning integration via `WordPopupComponent` in fullscreen (meanings, machine translations, audio/TTS, and level selector).
+    - **Cinematic Immersion & Subtle Grammar Accents**: Words render cleanly on the translucent backdrop. Grammar tokens in fullscreen use a subtle, faint dotted underline without any background box or solid borders, preserving cinematic reading flow while remaining interactive.
 - **Interaction Services**:
   - `GestureHandlerService`: Handles mobile touch gestures (single tap for controls toggle with zero-latency dismissal when controls are showing, double-tap left/right wings for $\pm 10$s seek with feedback pill & ripple, horizontal swipe for scrubbing preview, and long-press for $2\times$ playback speed).
   - `VideoKeyboardShortcutService`: Desktop hotkeys (`Space`, `k`, `Left`/`Right`, `j`/`l`, `Up`/`Down`, `f`, `m`, `c`, `d`, `v`, `[`/`]`, `Shift+s`).
@@ -163,17 +174,28 @@ graph TD
 - Synchronizes with video playback via a high-performance $O(\log n)$ binary search (`findActiveCue`).
 - **Sticky Subtitles**: If a gap exists between cues, retains the previous cue briefly to prevent jarring visual flickering.
 - **Interactive Word Segmentation**: Every word is rendered as a clickable token. Clicking opens `WordPopupComponent`.
+- **Zero-Shift Punctuation & Baseline Alignment**:
+  - Punctuation tokens (`、`, `。`, `,`, `.`, `...`) are wrapped in `<ruby>` elements with an empty `<rt class="rt-empty">&#160;</rt>` when reading annotations are active.
+  - Standardized `vertical-align: baseline` and matching vertical padding across Japanese, Chinese, Korean, and English ensure punctuation marks sit perfectly flush with surrounding word tokens.
+- **Distinct Grammar Highlights**: Tokens matching active grammar patterns are highlighted with a crisp mint/emerald green underline palette (`var(--color-grammar, #2dd4bf)` in dark mode, `#10b981` in light mode, with subtle translucent tint background and inherited text color), clearly separating grammar rules from vocabulary mastery tiers (`new`, `learning`, `known`) without box borders.
+- **Streamlined Waiting & Dual-Sub Loading Indicators**: Both the primary subtitle waiting state and the dual-subtitle translation loading state feature minimal 3-dot pulsing animations (`···`) without redundant text, nested pills, or heavy skeleton boxes.
 - **5 Reading Display Modes**:
   - `native`: Original script.
   - `annotated`: Furigana / Pinyin ruby annotations.
   - `reading`: Kana-only reading.
   - `annotatedRomanized`: Kanji with Hepburn Romaji annotations.
   - `romanized`: Hepburn Romaji / Revised Romanization only.
-- **Unified Dual Subtitles Integration**:
+- **Unified Dual Subtitles Integration & UI Locale Synchronization**:
   - Delegates all dual subtitle translation state and fetching to `SubtitleService`.
+  - Dynamically synchronizes target translation language with changes to the application UI locale (`i18n.currentLanguage()`).
   - Seamlessly renders secondary translations both in the fullscreen video player overlay and within the scrolling `.subtitle-list` (`.cue-item > .cue-body > .cue-text + .cue-translation-text`).
   - Supports English learners alongside Japanese, Chinese, and Korean (`['ja', 'zh', 'ko', 'en']`).
 - **Grammar Match Highlights**: Tokens matching active grammar patterns receive visual underlines; clicking opens `GrammarPopupComponent`.
+- **Refined Responsive Controls Toolbar**:
+  - `Loop`: Toggles cue loop playback with active iteration indicator (`1/5`).
+  - `Added Words`: Minimalist responsive counter pill (`.ctrl-count`) using subtle theme-adaptive styling (`var(--bg-hover)`) that collapses to `[bookmark-plus icon] {count}` on mobile when words are saved, completely preventing text truncation (`Đã thê...`) and eliminating intrusive red alert badges.
+  - `Quiz`: Launches interactive video subtitle quiz.
+  - `Options`: Opens subtitle configuration sheet.
 
 #### SubtitleService Centralized Dual Subtitle Orchestration (`subtitle.service.ts`)
 - Serves as the single source of truth for all dual-language subtitle state across the entire application:

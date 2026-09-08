@@ -57,7 +57,7 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
-    will-change: transform, opacity;
+    will-change: height, transform, opacity;
 }
 
 // ============================================
@@ -210,8 +210,8 @@
     }
 }
 
-// Landscape phones: bottom sheet with limited width
-@media (max-height: 500px) and (orientation: landscape) {
+// Landscape phones & compact viewports: bottom sheet with proportional width
+@media (max-height: 600px) and (orientation: landscape), (max-height: 500px) {
     .sheet-overlay {
         padding: 0;
         align-items: flex-end;
@@ -219,9 +219,10 @@
     }
 
     .sheet:not(.desktop-modal) {
-        max-width: 600px;
-        width: 80%;
-        max-height: calc(var(--app-height, 100dvh) - 80px);
+        max-width: var(--max-width, 460px);
+        width: min(92%, var(--max-width, 460px));
+        max-height: calc(var(--app-height, 100dvh) - 30px);
+        border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
     }
 }
 

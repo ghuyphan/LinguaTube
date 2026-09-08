@@ -125,6 +125,7 @@ export class SettingsSheetComponent {
 
   setUILanguage(lang: UILanguage): void {
     this.i18n.setLanguage(lang);
+    this.settings.setDualSubtitleTargetLang(lang);
   }
 
   onUILangSelected(value: string): void {
