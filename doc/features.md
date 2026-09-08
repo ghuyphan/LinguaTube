@@ -29,20 +29,29 @@ Voca accepts arbitrary YouTube video URLs:
 | **2x Speed Fast-Forward** | — | Long-Press & Hold | OSD "2x Speed" indicator pill |
 | **Volume Up / Down** | `Up` / `Down` arrows | Swipe Up / Down (Right side) | Bottom bar volume slider |
 | **Toggle Subtitles** | `c` | Tap CC Button | CC button in bottom bar |
-| **Toggle Dual Subtitles** | — | Tap Languages Button | Languages button in bottom bar |
+| **Toggle Dual Subtitles** | `d` | Tap Languages Button | Languages button in bottom bar |
 | **Dual Sub Menu** | Right-click Dual Sub | Long-Press Dual Sub Button | Quick language picker modal with circle flags |
 | **Toggle Fullscreen** | `f` | Pinch Out / Rotate | Bottom bar fullscreen button |
+| **Move Subtitle Top / Bottom** | `v` | Double-Tap Drag Handle | Fullscreen subtitle handle |
+| **Nudge Subtitle Up / Down** | `[` / `]` | — | Fullscreen subtitle position |
+| **Cycle Subtitle Size** | `Shift` + `s` | — | Subtitle font size toggle |
 | **Playback Speed** | `Shift` + `<` / `>` | — | Speed dropdown (0.5x – 2x) |
 
 ### 1.4. Draggable Fullscreen Subtitles
 When in fullscreen mode, subtitles are rendered in `FullscreenSubtitleComponent`:
 - **Computed `viewTokens` Pre-computation**: Subtitle tokens, reading annotations, display text, and vocabulary mastery levels are pre-calculated in a single `viewTokens = computed(...)` signal per cue change. This eliminates repeated O(N) vocabulary repository method calls and grammar index scans in `@for` template loops during 60fps fullscreen video playback.
-- **Centered Drag Handle Bar**: A horizontal pill handle bar allows users to drag subtitles to any vertical position (`--sub-y: 8%` to `85%`).
-- **Smooth Pointer Capture**: Uses `PointerEvent` tracking with `requestAnimationFrame` updates to ensure 60fps responsiveness across mobile and desktop.
-- **Magnetic Snap Points**:
-  - Dragging near the top snaps smoothly to `12%`.
-  - Dragging near the bottom snaps to `82%`.
-  - Tapping without dragging automatically toggles between top and bottom.
+- **Ergonomic Drag Handle & Card Dragging**: A centered pill handle bar with a generous touch hit box ($\ge 32\text{px}$) along with the entire subtitle card background (outside interactive words) allows users to drag subtitles smoothly to any vertical position (`--sub-y: 8%` to `88%`).
+- **Smooth Pointer Capture & True Free Placement**: Uses `PointerEvent` tracking with `requestAnimationFrame` updates to ensure 60fps responsiveness across mobile and desktop. Dragging is completely free without forced snapping locks, allowing precise subtitle placement anywhere between $8\%$ and $88\%$.
+- **Natural Lower Resting Position**: Subtitles default to `84%` height (moved down from 78%), sitting naturally near the bottom edge without floating excessively high.
+- **Instant Top/Bottom Toggle**: Tapping the handle bar (or pressing `v`) toggles between the top anchor (`12%`) and bottom anchor (`84%`).
+- **No Jump Discontinuity**: Subtitle position stays completely stable regardless of whether player controls are shown or hidden.
+- **Mobile Landscape & Safe-Area Optimization**:
+  - Employs `@media (max-height: 520px) and (orientation: landscape)` queries for proportional typography, preventing subtitles from blocking the video frame on phones.
+  - Adheres to `env(safe-area-inset-left)` and `env(safe-area-inset-right)` for notched displays.
+  - Desktop widescreen constraint caps max width at `min(90%, 960px)` for comfortable eye scanning.
+- **Full Dictionary Parity in Fullscreen**:
+  - Interactive words tap directly into `WordPopupComponent`, providing full definitions, definition translations, vocabulary mastery level picking, and audio pronunciation without leaving fullscreen mode.
+  - Touch and click event isolation prevents touches on words, punctuation, or card background from inadvertently toggling player controls or pausing playback.
 
 ---
 
@@ -74,8 +83,13 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
   - Romanization computed using `hangul-romanization`.
 - **English (`en`)**:
   - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en')`.
-- **Client Fallback Tokenizer**:
-  - If network requests to backend tokenization endpoints fail or operate offline, `SubtitleService` employs a robust fallback tokenizer powered by native ECMAScript `Intl.Segmenter('zh')` and `Intl.Segmenter('ko')` to produce proper multi-character word tokens rather than crude single-character splits.
+- **Bulk Batch Tokenization & Zero Playback Overhead**:
+  - `SubtitleService` processes subtitle cues in bulk batches of up to 500 texts on initial video load. For virtually all videos ($\le 500$ cues), the entire video requires **only 1 API call**.
+  - No network requests are made during video playback; time updates use $O(\log n)$ binary search over cached cues.
+  - Forward's the user's PocketBase auth token to access higher rate limit tiers (100–1,000 req/hr).
+- **Client Fallback Tokenizer & 429 Circuit Breaker**:
+  - If network requests to backend tokenization endpoints fail, hit a 429 rate limit, or operate offline, `SubtitleService` immediately triggers a circuit breaker and falls back to client-side tokenization powered by native ECMAScript `Intl.Segmenter('zh')` and `Intl.Segmenter('ko')` or Japanese character splitting.
+  - The circuit breaker prevents cascading 429 errors in the console by suppressing subsequent backend calls for the duration of the `Retry-After` window.
 
 ### 2.3. Subtitle Customization & Vocabulary Highlighting
 - **Four Size Modes**: `small`, `medium`, `large`, and `xlarge`, dynamically responsive across mobile, tablet, and desktop layouts.

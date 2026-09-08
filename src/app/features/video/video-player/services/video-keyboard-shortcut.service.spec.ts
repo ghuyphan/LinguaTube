@@ -165,4 +165,30 @@ describe('VideoKeyboardShortcutService', () => {
       { type: 'toggle-fullscreen', data: { action: 'exit-fullscreen' } }
     ]);
   });
+
+  it('should handle subtitle position and customization shortcuts', () => {
+    const emitted: KeyboardShortcutEvent[] = [];
+    service.events$.subscribe(e => emitted.push(e));
+
+    // KeyV toggles subtitle position in fullscreen
+    service.handleKeyDown(new KeyboardEvent('keydown', { code: 'KeyV' }), false, true);
+
+    // BracketLeft / BracketRight nudge position in fullscreen
+    service.handleKeyDown(new KeyboardEvent('keydown', { code: 'BracketLeft' }), false, true);
+    service.handleKeyDown(new KeyboardEvent('keydown', { code: 'BracketRight' }), false, true);
+
+    // KeyD toggles dual subtitles
+    service.handleKeyDown(new KeyboardEvent('keydown', { code: 'KeyD' }), false, false);
+
+    // Shift+KeyS cycles font size
+    service.handleKeyDown(new KeyboardEvent('keydown', { code: 'KeyS', shiftKey: true }), false, false);
+
+    expect(emitted).toEqual([
+      { type: 'toggle-subtitle-position' },
+      { type: 'nudge-subtitle-position', data: { direction: 'up' } },
+      { type: 'nudge-subtitle-position', data: { direction: 'down' } },
+      { type: 'toggle-dual-subtitles' },
+      { type: 'cycle-font-size' }
+    ]);
+  });
 });

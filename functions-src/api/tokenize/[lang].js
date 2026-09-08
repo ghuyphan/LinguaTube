@@ -41,14 +41,6 @@ export async function onRequest(context) {
         return handleOptions(['POST', 'OPTIONS']);
     }
 
-    // Rate limiting (Atomic)
-    const authResult = await validateAuthToken(request, env);
-    const clientId = getClientIdentifier(request, authResult);
-    const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, RATE_LIMIT_CONFIG);
-    if (!rateCheck.allowed) {
-        return rateLimitResponse(rateCheck.resetAt);
-    }
-
     // Validate language
     if (!SUPPORTED_LANGUAGES.has(lang)) {
         return jsonResponse(
@@ -70,17 +62,28 @@ export async function onRequest(context) {
             return jsonResponse({ error: textValidation.error }, 400);
         }
 
-        // Check cache first
+        // Check cache first (cache hits consume 0 rate limit quota)
         const cacheKey = `tokens:${lang}:${hashText(text)}`;
         if (TOKEN_CACHE) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
                 if (cached) {
-                    return jsonResponse(cached, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
+                    return jsonResponse(cached, 200, {
+                        'Cache-Control': 'public, max-age=604800',
+                        'X-Cache': 'HIT'
+                    });
                 }
             } catch (e) {
                 // Cache read failed, continue
             }
+        }
+
+        // Cache MISS: Rate limiting (Atomic)
+        const authResult = await validateAuthToken(request, env);
+        const clientId = getClientIdentifier(request, authResult);
+        const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, RATE_LIMIT_CONFIG);
+        if (!rateCheck.allowed) {
+            return rateLimitResponse(rateCheck.resetAt);
         }
 
         // Tokenize using shared module

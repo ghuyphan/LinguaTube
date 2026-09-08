@@ -86,7 +86,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │
     ├── Video Feature: VideoPlayerComponent (YouTube IFrame API)
     │                  SubtitleDisplayComponent (Furigana, Pinyin, Romaji)
-    │                  FullscreenSubtitleComponent (Draggable handle & snap points)
+    │                  FullscreenSubtitleComponent (Draggable handle & free placement)
     │                  VideoHeader / VideoBottomBar / CenterControls / ProgressBar
     │
     ├── Linguistics:   Kuromoji (JA) / Intl.Segmenter (ZH/KO/EN)

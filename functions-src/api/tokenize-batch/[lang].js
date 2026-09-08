@@ -57,20 +57,6 @@ export async function onRequest(context) {
         return handleOptions(['POST', 'OPTIONS']);
     }
 
-    // Rate limiting (Atomic)
-    // Get user tier for rate limiting (optional auth)
-    const authResult = await validateAuthToken(request, env);
-    const tier = authResult.valid
-        ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
-        : 'anonymous';
-    const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
-
-    const clientId = getClientIdentifier(request, authResult);
-    const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, rateLimitConfig);
-    if (!rateCheck.allowed) {
-        return rateLimitResponse(rateCheck.resetAt);
-    }
-
     if (!SUPPORTED_LANGUAGES.has(lang)) {
         return jsonResponse(
             { error: `Unsupported language: ${lang}. Supported: ja, ko, zh, en` },
@@ -108,6 +94,7 @@ export async function onRequest(context) {
         }
 
         // Check cache first - include hash of texts to differentiate subtitle versions
+        // Cache hits do not consume rate limit quota, protecting both user limit and KV writes
         const textsHash = hashTexts(texts);
         const cacheKey = `tokens:v5:${lang}:${videoId}:${textsHash}`;
         if (TOKEN_CACHE) {
@@ -116,7 +103,10 @@ export async function onRequest(context) {
                 // Validate: cached tokens count must match requested texts count
                 if (cached && cached.tokens && cached.tokens.length === texts.length) {
                     console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
-                    return jsonResponse(cached, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
+                    return jsonResponse(cached, 200, {
+                        'Cache-Control': 'public, max-age=604800',
+                        'X-Cache': 'HIT'
+                    });
                 } else if (cached) {
                     console.log(`[Tokenize Batch] Cache mismatch for ${videoId} (expected ${texts.length}, got ${cached.tokens?.length})`);
                 }
@@ -125,7 +115,21 @@ export async function onRequest(context) {
             }
         }
 
-        console.log(`[Tokenize Batch] Tokenizing ${texts.length} texts for ${videoId} (${lang})`);
+        // Cache MISS: Now check and consume rate limit quota (Atomic)
+        // Get user tier for rate limiting (optional auth)
+        const authResult = await validateAuthToken(request, env);
+        const tier = authResult.valid
+            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+            : 'anonymous';
+        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+
+        const clientId = getClientIdentifier(request, authResult);
+        const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, rateLimitConfig);
+        if (!rateCheck.allowed) {
+            return rateLimitResponse(rateCheck.resetAt);
+        }
+
+        console.log(`[Tokenize Batch] Tokenizing ${texts.length} texts for ${videoId} (${lang}) [tier: ${tier}]`);
 
         // Tokenize all texts using shared module
         const allTokens = await Promise.all(

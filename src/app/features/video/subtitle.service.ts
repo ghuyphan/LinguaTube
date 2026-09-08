@@ -4,6 +4,7 @@ import { SubtitleCue, Token } from '../../models';
 import { YoutubeService } from './youtube.service';
 import { SettingsService } from '../../core/services/settings.service';
 import { TranslationService } from '../../services/translation.service';
+import { PocketBaseService } from '../../core/services/pocketbase.service';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../../shared/utils/japanese-romaji';
 import { getCharType, isPunctuation } from '../../shared/utils/language.utils';
@@ -13,14 +14,10 @@ import { getCharType, isPunctuation } from '../../shared/utils/language.utils';
 // ============================================================================
 
 const MAX_CACHE_SIZE = 500;
+const MAX_TOKENIZE_BATCH_SIZE = 500;
 
 const TOKEN_STORAGE_KEY = 'linguatube_tokens';
 const MAX_STORED_VIDEOS = 10;
-
-// Lazy tokenization
-const LAZY_THRESHOLD = 100; // Use lazy tokenization if > 100 cues
-const TOKENIZE_BUFFER = 30; // Cues before/after current to tokenize
-const TOKENIZE_THROTTLE_MS = 500; // Throttle lazy tokenization checks
 
 // Dual subtitles batching
 const DUAL_SUB_BATCH_SIZE = 35;
@@ -37,10 +34,10 @@ export class SubtitleService {
   private youtube = inject(YoutubeService);
   private settings = inject(SettingsService);
   private translation = inject(TranslationService);
+  private pocketbase = inject(PocketBaseService);
 
-  // Throttle tracking (only for expensive tokenization, not cue lookup)
-  private lastTokenizeCheck = 0;
-  private lastTokenizedRange = { start: -1, end: -1 };
+  // Rate limiting circuit breaker
+  private rateLimitedUntil = 0;
 
   // Dual Subtitles State & Tracking
   private dualSubSubscription: Subscription | null = null;
@@ -56,19 +53,10 @@ export class SubtitleService {
     this.loadTokensFromStorage();
 
     // Automatically update current cue based on video time
-    // No throttle needed - binary search is O(log n) and YouTube API already rate-limits (~250ms)
+    // Fast binary search O(log n) with zero network requests during playback
     effect(() => {
       const time = this.youtube.currentTime();
-
-      // Update current cue immediately (fast binary search)
       this.updateCurrentCue(time);
-
-      // Lazy tokenize nearby cues (throttled - this is the expensive async operation)
-      const now = Date.now();
-      if (now - this.lastTokenizeCheck >= TOKENIZE_THROTTLE_MS) {
-        this.lastTokenizeCheck = now;
-        this.tokenizeNearbyIfNeeded();
-      }
     });
 
     // Centralized Dual Subtitle Reactive Orchestrator
@@ -171,15 +159,13 @@ export class SubtitleService {
 
   /**
    * Batch tokenize subtitle cues.
-   * For videos with > LAZY_THRESHOLD cues, only tokenizes initial range and continues lazily.
+   * Tokenizes all cues for the video on load in full batches (up to 500 cues each).
    */
   async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko' | 'en' | null): Promise<void> {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
-    // Track language for lazy tokenization
     this.loadedLanguage.set(lang);
-    this.lastTokenizedRange = { start: -1, end: -1 };
 
     // Skip if already tokenized (all cues have tokens)
     const allTokenized = cues.every(cue => cue.tokens && cue.tokens.length > 0);
@@ -200,37 +186,15 @@ export class SubtitleService {
       }
     }
 
-    // For short videos, tokenize everything
-    // For long videos, use lazy tokenization (only initial range)
-    const useLazy = cues.length > LAZY_THRESHOLD;
-
-    if (useLazy) {
-      console.log(`[SubtitleService] Using lazy tokenization for ${cues.length} cues`);
-      await this.tokenizeRange(0, Math.min(TOKENIZE_BUFFER * 2, cues.length - 1), lang);
-    } else {
-      await this.tokenizeRange(0, cues.length - 1, lang);
-    }
+    await this.tokenizeAllCuesInternal(lang, videoId);
   }
 
   /**
-   * Tokenize cues within a specific range [startIdx, endIdx]
+   * Internal bulk tokenization implementation across all video cues
    */
-  private async tokenizeRange(startIdx: number, endIdx: number, lang: 'ja' | 'zh' | 'ko' | 'en' | null): Promise<void> {
+  private async tokenizeAllCuesInternal(lang: 'ja' | 'zh' | 'ko' | 'en' | null, videoId?: string): Promise<void> {
     const cues = this.subtitles();
     if (cues.length === 0) return;
-
-    // Clamp indices
-    startIdx = Math.max(0, startIdx);
-    endIdx = Math.min(cues.length - 1, endIdx);
-
-    // Skip if ALL cues in the requested range already have tokens
-    // This check is independent of lastTokenizedRange to catch cues that failed tokenization
-    const rangeHasAllTokens = cues.slice(startIdx, endIdx + 1).every(c => (c.tokens?.length ?? 0) > 0);
-    if (rangeHasAllTokens) {
-      // Update range tracking even if we skip (range is confirmed tokenized)
-      this.updateTokenizedRange(startIdx, endIdx);
-      return;
-    }
 
     this.cancelTokenization();
     this.isTokenizing.set(true);
@@ -240,10 +204,10 @@ export class SubtitleService {
       // Create a mutable copy of cues for safe modification
       const updatedCues = cues.map(cue => ({ ...cue }));
 
-      // Collect unique texts needing tokenization (only in range)
+      // Collect unique texts needing tokenization
       const uniqueTexts = new Map<string, number[]>();
 
-      for (let index = startIdx; index <= endIdx; index++) {
+      for (let index = 0; index < updatedCues.length; index++) {
         const cue = updatedCues[index];
         // Skip if cue already has tokens
         if (cue.tokens && cue.tokens.length > 0) continue;
@@ -262,38 +226,30 @@ export class SubtitleService {
 
       if (uniqueTexts.size === 0) {
         this.subtitles.set(updatedCues);
-        this.updateTokenizedRange(startIdx, endIdx);
         return;
       }
 
-      console.log(`[SubtitleService] Tokenizing ${uniqueTexts.size} unique texts (range ${startIdx}-${endIdx})`);
-
-      // Batch tokenize where possible (if lang is set)
-      const videoId = this.youtube.currentVideo()?.id;
       const texts = Array.from(uniqueTexts.keys());
 
-      let results: Token[][] = [];
-      if (lang) {
-        results = await this.batchTokenize(texts, lang, videoId);
-      } else {
-        // Fallback or skip if no lang? For now, if no lang, we can't really tokenize properly
-        // so we might result in empty tokens or basic splitting
-        results = await this.batchTokenize(texts, 'en', videoId); // generic fallback?
-      }
+      // Process in batches of MAX_TOKENIZE_BATCH_SIZE (usually 1 batch of <= 500 texts)
+      // Updating progressively per batch ensures the first 500 cues are available immediately
+      for (let i = 0; i < texts.length; i += MAX_TOKENIZE_BATCH_SIZE) {
+        const chunk = texts.slice(i, i + MAX_TOKENIZE_BATCH_SIZE);
+        const chunkResults = await this.batchTokenize(chunk, lang || 'en', videoId);
 
-      // Distribute tokens to cues
-      texts.forEach((text, i) => {
-        const tokens = results[i] || this.fallbackTokenize(text, lang);
-        const cacheKey = `${lang}:${text}`;
-        this.addToCache(cacheKey, tokens);
+        chunk.forEach((text, chunkIdx) => {
+          const tokens = chunkResults[chunkIdx] || this.fallbackTokenize(text, lang);
+          const cacheKey = `${lang}:${text}`;
+          this.addToCache(cacheKey, tokens);
 
-        uniqueTexts.get(text)?.forEach(cueIndex => {
-          updatedCues[cueIndex].tokens = tokens;
+          uniqueTexts.get(text)?.forEach(cueIndex => {
+            updatedCues[cueIndex].tokens = tokens;
+          });
         });
-      });
 
-      this.subtitles.set(updatedCues);
-      this.updateTokenizedRange(startIdx, endIdx);
+        // Update UI immediately with this chunk's tokens
+        this.subtitles.set([...updatedCues]);
+      }
 
       // Save tokens to localStorage for future visits (debounced)
       if (videoId && lang) {
@@ -307,61 +263,12 @@ export class SubtitleService {
       }
 
       console.error('[SubtitleService] Tokenization failed:', error);
-      // Apply fallback only for the range (without replacing all subtitles)
-      this.applyFallbackTokens(startIdx, endIdx, lang);
+      // Apply fallback across all cues missing tokens
+      this.applyFallbackTokens(0, cues.length - 1, lang);
 
     } finally {
       this.isTokenizing.set(false);
       this.abortController = null;
-    }
-  }
-
-  /**
-   * Update the tracked tokenized range
-   */
-  private updateTokenizedRange(start: number, end: number): void {
-    if (this.lastTokenizedRange.start === -1) {
-      this.lastTokenizedRange = { start, end };
-    } else {
-      this.lastTokenizedRange.start = Math.min(this.lastTokenizedRange.start, start);
-      this.lastTokenizedRange.end = Math.max(this.lastTokenizedRange.end, end);
-    }
-  }
-
-  /**
-   * Lazily tokenize nearby cues as user progresses through video
-   */
-  private tokenizeNearbyIfNeeded(): void {
-    const currentIdx = this.currentCueIndex();
-    const cues = this.subtitles();
-
-    if (currentIdx < 0 || cues.length <= LAZY_THRESHOLD) return;
-
-    // Calculate needed range around current position
-    const neededStart = Math.max(0, currentIdx - TOKENIZE_BUFFER);
-    const neededEnd = Math.min(cues.length - 1, currentIdx + TOKENIZE_BUFFER);
-
-    // Check if we need to tokenize:
-    // 1. Range extends beyond what we've tracked, OR
-    // 2. Any cues in the needed range are missing tokens (handles failed tokenization)
-    const rangeExtended = neededStart < this.lastTokenizedRange.start ||
-      neededEnd > this.lastTokenizedRange.end;
-
-    // Quick check for missing tokens in needed range
-    const hasMissingTokens = cues.slice(neededStart, neededEnd + 1)
-      .some(c => !c.tokens || c.tokens.length === 0);
-
-    if ((rangeExtended || hasMissingTokens) && !this.isTokenizing()) {
-      // Expand range to include what we need plus what we've already done
-      const expandedStart = this.lastTokenizedRange.start === -1
-        ? neededStart
-        : Math.min(neededStart, this.lastTokenizedRange.start);
-      const expandedEnd = this.lastTokenizedRange.end === -1
-        ? neededEnd
-        : Math.max(neededEnd, this.lastTokenizedRange.end);
-
-      // Tokenize in background (don't await)
-      this.tokenizeRange(expandedStart, expandedEnd, this.loadedLanguage());
     }
   }
 
@@ -678,15 +585,39 @@ export class SubtitleService {
   private async batchTokenize(texts: string[], lang: string, videoId?: string): Promise<Token[][]> {
     const signal = this.abortController?.signal;
 
+    // Circuit breaker: If recently rate-limited, skip network calls and use local fallback
+    if (Date.now() < this.rateLimitedUntil) {
+      console.warn('[SubtitleService] Rate limit active, using local tokenization fallback');
+      return texts.map(text => this.fallbackTokenize(text, lang as 'ja' | 'zh' | 'ko' | 'en' | null));
+    }
+
     // Try batch endpoint first (requires videoId)
     if (videoId) {
       try {
+        const headers: Record<string, string> = {
+          'Content-Type': 'application/json'
+        };
+
+        // Attach PocketBase auth token if available to elevate user's rate limit tier
+        const authToken = this.pocketbase.getToken();
+        if (authToken) {
+          headers['Authorization'] = `Bearer ${authToken}`;
+        }
+
         const response = await fetch(`${environment.api.tokenizeBatch}/${lang}`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers,
           body: JSON.stringify({ texts, videoId }),
           signal
         });
+
+        // If rate limited, activate circuit breaker and fall back to local tokenization
+        if (response.status === 429) {
+          const retryAfterSec = parseInt(response.headers.get('Retry-After') || '60', 10);
+          this.rateLimitedUntil = Date.now() + Math.max(30, retryAfterSec) * 1000;
+          console.warn(`[SubtitleService] Tokenize rate limit hit (429). Circuit breaker enabled for ${retryAfterSec}s. Using local fallback.`);
+          return texts.map(text => this.fallbackTokenize(text, lang as 'ja' | 'zh' | 'ko' | 'en' | null));
+        }
 
         if (response.ok) {
           const data = await response.json();
@@ -696,7 +627,7 @@ export class SubtitleService {
         }
       } catch (error) {
         if ((error as Error).name === 'AbortError') throw error;
-        console.warn('[SubtitleService] Batch tokenize failed, using local fallback');
+        console.warn('[SubtitleService] Batch tokenize failed, using local fallback:', error);
       }
     }
 

@@ -127,7 +127,7 @@
       [language]="activeSubtitleLanguage()" [subtitlesVisible]="subtitles.subtitlesVisible()"
       [isTokenizing]="subtitles.isTokenizing()" [areControlsVisible]="areControlsVisible()"
       [fsPopupVisible]="fsPopupVisible()" [fontSizeClass]="fontSizeClass()"
-      [yPercent]="settings.settings().fullscreenSubtitleYPercent ?? 82"
+      [yPercent]="settings.settings().fullscreenSubtitleYPercent ?? 84"
       [showDualSubtitles]="settings.settings().showDualSubtitles" [isDualSubLoading]="subtitles.isDualSubLoading()"
       [currentTranslation]="currentTranslation()" [grammarMatches]="fsGrammarMatches()"
       (wordClicked)="onFullscreenComponentWordClick($event)"
@@ -139,63 +139,7 @@
 
     <!-- Fullscreen Word Popup -->
     @if (isFullscreen()) {
-    <app-bottom-sheet [isOpen]="fsPopupVisible()" [title]="fsSelectedWord()?.surface || i18n.t('vocab.title') || 'Word Details'" [showCloseButton]="true" (closed)="closeFsPopup()">
-      <div class="fs-popup-content">
-        @if (fsSelectedWord(); as word) {
-        <div class="fs-popup-header">
-          <h3 class="fs-popup-word" [class]="'text-' + settings.settings().language">
-            {{ word.surface }}
-          </h3>
-          @if (fsEntry()?.reading) {
-          <span class="fs-popup-reading">{{ fsEntry()?.reading }}</span>
-          }
-        </div>
-        }
-
-        <div class="fs-popup-body">
-          @if (fsLookupLoading()) {
-          <div class="fs-popup-loading">
-            <app-icon name="loader" [size]="20" />
-          </div>
-          } @else if (fsEntry()) {
-          @if (fsEntry()?.jlptLevel || fsEntry()?.hskLevel || fsEntry()?.topikLevel) {
-          <div class="fs-popup-badges">
-            @if (fsEntry()?.jlptLevel) {
-            <span class="badge">{{ fsEntry()?.jlptLevel }}</span>
-            } @if (fsEntry()?.hskLevel) {
-            <span class="badge">HSK {{ fsEntry()?.hskLevel }}</span>
-            } @if (fsEntry()?.topikLevel) {
-            <span class="badge">TOPIK {{ fsEntry()?.topikLevel }}</span>
-            }
-          </div>
-          }
-          <div class="fs-popup-meaning">
-            {{ fsEntry()?.meanings?.[0]?.definition || '(no definition)' }}
-          </div>
-          } @else {
-          <div class="fs-popup-meaning">{{ i18n.t('popup.noDictionaryEntry') }}</div>
-          }
-        </div>
-
-        <div class="fs-popup-actions">
-          @if (fsWordSaved()) {
-          <button class="fs-popup-btn fs-popup-btn--saved" disabled>
-            <app-icon name="check" [size]="16" />
-            {{ i18n.t('popup.saved') }}
-          </button>
-          } @else {
-          <button class="fs-popup-btn fs-popup-btn--save" (click)="saveFsWord()">
-            <app-icon name="plus" [size]="16" />
-            {{ i18n.t('popup.saveWord') }}
-          </button>
-          }
-          <button class="fs-popup-btn" (click)="resumeAndClose()">
-            <app-icon name="play" [size]="16" />
-            <span>{{ i18n.t('player.resume') || 'Resume' }}</span>
-          </button>
-        </div>
-      </div>
-    </app-bottom-sheet>
+    <app-word-popup [selectedWord]="fsSelectedWord()" [currentSentence]="fsSelectedSentence()" (closed)="closeFsPopup()" />
     }
 
     <!-- Fullscreen Grammar Popup -->
@@ -263,6 +207,18 @@
             <div class="shortcut-row">
               <span class="shortcut-desc">{{ i18n.t('shortcuts.moveSubtitle') || 'Move subtitle top / bottom' }}</span>
               <span class="shortcut-keys"><kbd>v</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.nudgeSubtitle') || 'Nudge subtitle up / down' }}</span>
+              <span class="shortcut-keys"><kbd>[</kbd> / <kbd>]</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.cycleFontSize') || 'Cycle subtitle size' }}</span>
+              <span class="shortcut-keys"><kbd>Shift</kbd>+<kbd>S</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.toggleDual') || 'Toggle dual subtitles' }}</span>
+              <span class="shortcut-keys"><kbd>d</kbd></span>
             </div>
           </div>
 

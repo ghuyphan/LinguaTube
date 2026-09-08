@@ -151,12 +151,13 @@ graph TD
   - `ProgressBarComponent`: Custom slider with buffered progress indicator, hover time preview, and cue segment markers.
   - `VideoBottomBarComponent`: Time display, playback speed selector, dual-subtitles toggle, audio volume slider, fullscreen trigger. Right-clicking the dual subtitles button triggers the quick language selection modal.
   - `FullscreenSubtitleComponent`: Dedicated high-contrast subtitle overlay positioned via `fullscreenSubtitleYPercent` setting.
-    - Features a horizontal drag handle bar with pill indicator.
-    - Drag handler scheduled via `requestAnimationFrame` with pointer capture.
-    - Magnetic snap targets at `12%` (top) and `82%` (bottom), and tap-to-toggle.
+    - Features a horizontal drag handle bar with ergonomic hit target ($\ge 32\text{px}$) and pill indicator.
+    - Drag handler scheduled via `requestAnimationFrame` with pointer capture and soft magnetic anchoring at `12%` (top) and `78%` (bottom).
+    - Mobile landscape typography optimization via `max-height: 520px` query, safe-area inset protection, and widescreen container clamping (`min(90%, 960px)`).
+    - Full learning integration via `WordPopupComponent` in fullscreen (meanings, machine translations, audio/TTS, and level selector).
 - **Interaction Services**:
   - `GestureHandlerService`: Handles mobile touch gestures (single tap for controls toggle with zero-latency dismissal when controls are showing, double-tap left/right wings for $\pm 10$s seek with feedback pill & ripple, horizontal swipe for scrubbing preview, and long-press for $2\times$ playback speed).
-  - `VideoKeyboardShortcutService`: Desktop hotkeys (`Space`, `k`, `Left`/`Right`, `j`/`l`, `Up`/`Down`, `f`, `m`, `c`).
+  - `VideoKeyboardShortcutService`: Desktop hotkeys (`Space`, `k`, `Left`/`Right`, `j`/`l`, `Up`/`Down`, `f`, `m`, `c`, `d`, `v`, `[`/`]`, `Shift+s`).
 
 #### SubtitleDisplayComponent (`subtitle-display/`)
 - Synchronizes with video playback via a high-performance $O(\log n)$ binary search (`findActiveCue`).

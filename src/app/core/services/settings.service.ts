@@ -19,7 +19,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   showDualSubtitles: false,
   dualSubtitleTargetLang: 'en',
   hasCompletedOnboarding: false,
-  fullscreenSubtitleYPercent: 82
+  fullscreenSubtitleYPercent: 84
 };
 
 @Injectable({
@@ -280,13 +280,13 @@ export class SettingsService implements OnDestroy {
   }
 
   setFullscreenSubtitleYPercent(percent: number): void {
-    const clamped = Math.max(8, Math.min(85, Math.round(percent)));
+    const clamped = Math.max(8, Math.min(88, Math.round(percent)));
     this.updateSettings({ fullscreenSubtitleYPercent: clamped });
   }
 
   toggleFullscreenSubtitlePosition(): void {
-    const current = this.settings().fullscreenSubtitleYPercent ?? 82;
-    const next = current < 50 ? 82 : 12;
+    const current = this.settings().fullscreenSubtitleYPercent ?? 84;
+    const next = current < 50 ? 84 : 12;
     this.updateSettings({ fullscreenSubtitleYPercent: next });
   }
 

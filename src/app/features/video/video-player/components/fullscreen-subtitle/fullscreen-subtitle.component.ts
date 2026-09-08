@@ -37,14 +37,15 @@ import { VocabularyService } from '../../../../vocabulary';
       [style.--sub-y]="yPercent()">
       
       @if (subtitlesVisible() && currentCue(); as cue) {
-        <div class="fs-subtitle-card">
+        <div class="fs-subtitle-card" (pointerdown)="onCardPointerDown($event)" (click)="$event.stopPropagation()">
           <!-- Centered Horizontal Drag Handle Bar -->
           <div class="fs-drag-handle-bar"
             (pointerdown)="onHandlePointerDown($event)"
+            (click)="$event.stopPropagation()"
             role="slider"
             [attr.aria-valuenow]="yPercent()"
             aria-valuemin="8"
-            aria-valuemax="85"
+            aria-valuemax="88"
             [attr.aria-label]="isTop() ? 'Move subtitle to bottom (tap or drag)' : 'Move subtitle to top (tap or drag)'"
             [title]="isTop() ? 'Tap to move to bottom, or drag to reposition' : 'Tap to move to top, or drag to reposition'">
             <div class="fs-drag-pill"></div>
@@ -52,14 +53,14 @@ import { VocabularyService } from '../../../../vocabulary';
 
           <div class="fs-subtitle-content">
             <div class="fs-subtitle-text" [class]="'text-' + language()">
-              <!-- Direct text display only if tokenizing AND no tokens yet -->
-              @if (isTokenizing() && viewTokens().length === 0) {
+              <!-- Direct text display when tokens are empty or loading -->
+              @if (viewTokens().length === 0) {
                 <span class="fs-word">{{ cue.text }}</span>
               } @else { 
                 <!-- Interactive token display -->
                 @for (vt of viewTokens(); track vt.surface + '-' + vt.index) {
                   @if (vt.isPunctuation) {
-                    <span class="fs-word fs-word--punctuation">{{ vt.surface }}</span>
+                    <span class="fs-word fs-word--punctuation" (click)="$event.stopPropagation()">{{ vt.surface }}</span>
                   } @else {
                     <button type="button"
                       class="fs-word" 
@@ -118,7 +119,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     fsPopupVisible = input<boolean>(false);
     fontSizeClass = input<string>('text-medium');
     subtitlesVisible = input<boolean>(true);
-    yPercent = input<number>(82);
+    yPercent = input<number>(84);
 
     // Dual Subtitle Inputs
     showDualSubtitles = input<boolean>(false);
@@ -138,7 +139,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     // Drag State
     isDragging = signal(false);
     private dragStartY = 0;
-    private dragStartPercent = 82;
+    private dragStartPercent = 84;
     private hasMoved = false;
     private cleanupDragListeners: (() => void) | null = null;
     private dragRafId: number | null = null;
@@ -190,7 +191,20 @@ export class FullscreenSubtitleComponent implements OnDestroy {
         if (event.button !== 0) return;
         event.stopPropagation();
         event.preventDefault();
+        this.startDrag(event, true);
+    }
 
+    onCardPointerDown(event: PointerEvent): void {
+        if (event.button !== 0) return;
+        const target = event.target as HTMLElement | null;
+        // Do not drag if user clicked an interactive word, button, or link
+        if (target?.closest('.fs-word, .fs-drag-handle-bar, button, a')) {
+            return;
+        }
+        this.startDrag(event, false);
+    }
+
+    private startDrag(event: PointerEvent, isHandle: boolean): void {
         this.cleanupDragListeners?.();
 
         const target = event.currentTarget as HTMLElement;
@@ -222,7 +236,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
                     const deltaPercent = (curDeltaY / containerHeight) * 100;
                     const rawPercent = this.dragStartPercent + deltaPercent;
 
-                    const clamped = Math.max(8, Math.min(85, Math.round(rawPercent)));
+                    const clamped = Math.max(8, Math.min(88, Math.round(rawPercent)));
                     this.positionChanged.emit(clamped);
                 });
             }
@@ -244,19 +258,13 @@ export class FullscreenSubtitleComponent implements OnDestroy {
             this.cleanupDragListeners = null;
 
             if (!this.hasMoved) {
-                this.togglePosition.emit();
+                if (isHandle) {
+                    this.togglePosition.emit();
+                }
             } else {
-                const current = this.yPercent();
-                let finalPos = current;
-                if (current < 25) {
-                    finalPos = 12;
-                } else if (current > 70) {
-                    finalPos = 82;
-                }
-                if (finalPos !== current) {
-                    this.positionChanged.emit(finalPos);
-                }
-                this.positionCommitted.emit(finalPos);
+                // Free dragging: commit exact position without forced snapping locks
+                const current = Math.max(8, Math.min(88, Math.round(this.yPercent())));
+                this.positionCommitted.emit(current);
             }
         };
 
@@ -281,6 +289,8 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     }
 
     onWordClick(token: Token, context: string, index: number, event: MouseEvent): void {
+        event.stopPropagation();
+        event.preventDefault();
         if (this.grammarTokenIndices().has(index)) {
             this.grammarClicked.emit({ index, event });
         } else {

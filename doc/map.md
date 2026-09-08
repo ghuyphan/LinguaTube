@@ -148,7 +148,7 @@ graph TD
         VideoPlayer --> CenterControls[CenterControlsComponent]
         VideoPlayer --> ProgressBar[ProgressBarComponent]
         VideoPlayer --> BottomBar[VideoBottomBarComponent]
-        VideoPlayer --> FullscreenSubtitle[FullscreenSubtitleComponent - Draggable Snap Bar]
+        VideoPlayer --> FullscreenSubtitle[FullscreenSubtitleComponent - Draggable Bar]
         VideoPlayer --> PlayerSettings[PlayerSettings Overlay / DualSub Menu]
     end
 

@@ -16,25 +16,23 @@ import {
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Subscription } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
+import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.component';
 import { formatTime, getVolumeIcon } from '../../../core/utils';
 
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
 import { TranscriptService } from '../transcript.service';
 import { VocabularyService } from '../../vocabulary';
-import { DictionaryService } from '../../dictionary';
 import { SettingsService, I18nService } from '../../../core/services';
 import { GrammarService, TranslationService } from '../../../services';
 import { QuizService } from '../quiz.service';
 import { PlaylistService } from '../../playlist/playlist.service';
 import {
   Token,
-  DictionaryEntry,
   GrammarPattern,
   GrammarMatch,
   SupportedLearningLanguage,
@@ -63,7 +61,7 @@ import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bo
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, ProgressBarComponent, CenterControlsComponent, FullscreenSubtitleComponent, BottomSheetComponent, VideoBottomBarComponent, VideoHeaderComponent],
+  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, WordPopupComponent, ProgressBarComponent, CenterControlsComponent, FullscreenSubtitleComponent, BottomSheetComponent, VideoBottomBarComponent, VideoHeaderComponent],
   providers: [GestureHandlerService],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
@@ -78,7 +76,6 @@ export class VideoPlayerComponent implements OnDestroy {
   transcript = inject(TranscriptService);
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
-  private dictionary = inject(DictionaryService);
   quiz = inject(QuizService);
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
@@ -149,10 +146,6 @@ export class VideoPlayerComponent implements OnDestroy {
   fsPopupVisible = signal(false);
   fsSelectedWord = signal<Token | null>(null);
   fsSelectedSentence = signal<string>('');
-  fsEntry = signal<DictionaryEntry | null>(null);
-  fsLookupLoading = signal(false);
-  fsWordSaved = signal(false);
-  private fsLookupSub?: Subscription;
 
 
 
@@ -535,6 +528,19 @@ export class VideoPlayerComponent implements OnDestroy {
         break;
       case 'toggle-subtitle-position':
         this.toggleFullscreenSubtitlePosition();
+        break;
+      case 'nudge-subtitle-position': {
+        const current = this.settings.settings().fullscreenSubtitleYPercent ?? 84;
+        const delta = event.data.direction === 'up' ? -5 : 5;
+        const clamped = Math.max(8, Math.min(88, current + delta));
+        this.settings.setFullscreenSubtitleYPercent(clamped);
+        break;
+      }
+      case 'cycle-font-size':
+        this.cycleFontSize();
+        break;
+      case 'toggle-dual-subtitles':
+        this.toggleDualSubtitles();
         break;
     }
   }
@@ -1069,10 +1075,13 @@ export class VideoPlayerComponent implements OnDestroy {
   // FULLSCREEN WORD POPUP
   // ============================================
 
+  private wasPlayingBeforeFsWord = false;
+
   onFullscreenWordClick(token: Token, sentence: string, event: Event): void {
     event.stopPropagation();
 
-    if (this.youtube.intendedPlayingState()) {
+    this.wasPlayingBeforeFsWord = this.youtube.intendedPlayingState();
+    if (this.wasPlayingBeforeFsWord) {
       this.youtube.pause();
     }
 
@@ -1084,28 +1093,17 @@ export class VideoPlayerComponent implements OnDestroy {
     this.fsSelectedWord.set(token);
     this.fsSelectedSentence.set(sentence);
     this.fsPopupVisible.set(true);
-    this.fsWordSaved.set(this.vocab.hasWord(token.surface));
-    this.fsEntry.set(null);
-    this.fsLookupLoading.set(true);
-
-    const lang = this.activeSubtitleLanguage();
-    this.fsLookupSub?.unsubscribe();
-    this.fsLookupSub = this.dictionary.lookup(token.surface, lang).subscribe({
-      next: (entry) => {
-        this.fsEntry.set(entry);
-        this.fsLookupLoading.set(false);
-      },
-      error: () => this.fsLookupLoading.set(false)
-    });
-
     this.showControls();
   }
 
   closeFsPopup(): void {
-    this.fsLookupSub?.unsubscribe();
     this.fsPopupVisible.set(false);
     this.fsSelectedWord.set(null);
-    this.fsEntry.set(null);
+    this.fsSelectedSentence.set('');
+    if (this.wasPlayingBeforeFsWord) {
+      this.youtube.play();
+      this.wasPlayingBeforeFsWord = false;
+    }
   }
 
   getFsGrammarMatchForToken(index: number): GrammarMatch | undefined {
@@ -1137,30 +1135,6 @@ export class VideoPlayerComponent implements OnDestroy {
 
   onFullscreenComponentWordClick(event: { token: Token; context: string; event: MouseEvent }): void {
     this.onFullscreenWordClick(event.token, event.context, event.event);
-  }
-
-  saveFsWord(): void {
-    const word = this.fsSelectedWord();
-    const entry = this.fsEntry();
-    const lang = this.settings.settings().language;
-    const sentence = this.fsSelectedSentence();
-    const videoId = this.youtube.currentVideo()?.id || undefined;
-    const timestamp = this.youtube.currentTime();
-
-    if (!word) return;
-
-    if (entry) {
-      this.vocab.addFromDictionary(entry, lang, sentence, videoId, timestamp);
-    } else {
-      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, word.romanization, sentence, undefined, videoId, timestamp);
-    }
-
-    this.fsWordSaved.set(true);
-  }
-
-  resumeAndClose(): void {
-    this.closeFsPopup();
-    this.youtube.play();
   }
 
   onSaveClick(): void {
@@ -1198,7 +1172,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   onSubtitlePositionChanged(percent: number): void {
-    const clamped = Math.max(8, Math.min(85, Math.round(percent)));
+    const clamped = Math.max(8, Math.min(88, Math.round(percent)));
     this.settings.settings.update(s => ({ ...s, fullscreenSubtitleYPercent: clamped }));
   }
 
@@ -1319,7 +1293,6 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   ngOnDestroy(): void {
-    this.fsLookupSub?.unsubscribe();
     this.clearControlsTimeout();
     this.gestures.destroy();
 

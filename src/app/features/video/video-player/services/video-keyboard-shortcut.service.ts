@@ -16,7 +16,10 @@ export type KeyboardShortcutEvent =
     | { type: 'playlist-prev' }
     | { type: 'step-frame'; data: { seconds: number } }
     | { type: 'toggle-shortcuts-dialog' }
-    | { type: 'toggle-subtitle-position' };
+    | { type: 'toggle-subtitle-position' }
+    | { type: 'nudge-subtitle-position'; data: { direction: 'up' | 'down' } }
+    | { type: 'cycle-font-size' }
+    | { type: 'toggle-dual-subtitles' };
 
 @Injectable({
     providedIn: 'root'
@@ -152,6 +155,38 @@ export class VideoKeyboardShortcutService {
                 if (isFullscreen) {
                     event.preventDefault();
                     this.eventSubject.next({ type: 'toggle-subtitle-position' });
+                    return true;
+                }
+                break;
+
+            // Nudge Subtitle Position in Fullscreen ([ / ])
+            case 'BracketLeft':
+                if (isFullscreen) {
+                    event.preventDefault();
+                    this.eventSubject.next({ type: 'nudge-subtitle-position', data: { direction: 'up' } });
+                    return true;
+                }
+                break;
+
+            case 'BracketRight':
+                if (isFullscreen) {
+                    event.preventDefault();
+                    this.eventSubject.next({ type: 'nudge-subtitle-position', data: { direction: 'down' } });
+                    return true;
+                }
+                break;
+
+            // Toggle Dual Subtitles (D)
+            case 'KeyD':
+                event.preventDefault();
+                this.eventSubject.next({ type: 'toggle-dual-subtitles' });
+                return true;
+
+            // Cycle Subtitle Font Size (Shift + S)
+            case 'KeyS':
+                if (event.shiftKey) {
+                    event.preventDefault();
+                    this.eventSubject.next({ type: 'cycle-font-size' });
                     return true;
                 }
                 break;

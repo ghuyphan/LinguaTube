@@ -210,9 +210,15 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 ### 3.6. Tokenization Endpoints
 - **Routes**:
   - `POST /api/tokenize/:lang` (Single text block)
-  - `POST /api/tokenize-batch/:lang` (Array of texts for bulk subtitle tokenization)
+  - `POST /api/tokenize-batch/:lang` (Array of up to 500 texts for bulk subtitle tokenization)
 - **Source**: `functions-src/api/tokenize/[lang].js`, `functions-src/api/tokenize-batch/[lang].js`
-- **Caching**: 30-day TTL in Cloudflare KV keyed by text hash: `tokens:{lang}:{djb2Hash}`.
+- **Cache-First Architecture**: Both endpoints check Cloudflare KV (`tokens:v5:{lang}:{videoId}:{textsHash}` or `tokens:{lang}:{hash}`) *before* executing rate-limiting. Cache hits consume **0 rate limit quota** and return with `X-Cache: HIT`.
+- **Caching**: 30-day TTL in Cloudflare KV.
+- **Rate Limiting (Cache Miss Only)**:
+  - Anonymous: 50 req/hr
+  - Free (Signed-in): 100 req/hr
+  - Pro/Premium: 1,000 req/hr
+- **Frontend Integration**: `SubtitleService` tokenizes all cues up front on video load (1 request per video for up to 500 cues), passes the PocketBase bearer token, and activates an automatic client-side circuit breaker upon receiving HTTP 429. Zero network requests occur during video playback.
 
 ---
 
