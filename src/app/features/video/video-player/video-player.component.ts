@@ -89,16 +89,15 @@ export class VideoPlayerComponent implements OnDestroy {
 
   // Translation language state
   targetLang = computed(() => this.subtitles.dualSubtitleTargetLang());
-  isCJKLanguage = computed(() => ['ja', 'zh', 'ko'].includes(this.settings.settings().language));
+  isCJKLanguage = computed(() => ['ja', 'zh', 'ko', 'en'].includes(this.subtitles.loadedLanguage() || this.settings.settings().language));
 
   onLangSelected(value: string): void {
-    this.settings.setDualSubtitleTargetLang(value); // Update shared state
-    this.subtitles.cueTranslations.set(new Map()); // Clear existing translations to show loading state
-    this.settings.updateSettings({ showDualSubtitles: true }); // Auto-enable dual subs
+    this.subtitles.setDualSubtitleTargetLang(value);
+    this.subtitles.setDualSubtitles(true);
   }
 
   disableDualSubtitles(): void {
-    this.settings.updateSettings({ showDualSubtitles: false });
+    this.subtitles.setDualSubtitles(false);
   }
 
   // Playlist navigation
@@ -371,8 +370,6 @@ export class VideoPlayerComponent implements OnDestroy {
       this.stateTransition.set(hasVideo ? 'to-video' : 'to-input');
       setTimeout(() => this.stateTransition.set('none'), 350);
     });
-
-    // Auto-translate subtitles when dual subs enabled or language changes
 
     // Wire up keyboard shortcuts
     this.keyboardShortcuts.events$.pipe(takeUntilDestroyed()).subscribe(event => {
@@ -979,7 +976,11 @@ export class VideoPlayerComponent implements OnDestroy {
     if (this.settings.settings().showDualSubtitles) {
       this.disableDualSubtitles();
     } else {
-      const target = this.targetLang() || this.settings.settings().dualSubtitleTargetLang || 'en';
+      let target = this.targetLang() || this.settings.settings().dualSubtitleTargetLang;
+      const sourceLang = this.subtitles.loadedLanguage() || this.settings.settings().language;
+      if (!target || target === sourceLang) {
+        target = sourceLang === 'en' ? 'ja' : 'en';
+      }
       this.onLangSelected(target);
     }
   }

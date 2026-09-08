@@ -40,6 +40,14 @@
         "switchToLight": "Chuyển sang chế độ sáng",
         "switchToDark": "Chuyển sang chế độ tối"
     },
+    "auth": {
+        "signIn": "Đăng nhập",
+        "signingIn": "Đang đăng nhập...",
+        "signedInAs": "Đã đăng nhập với tên",
+        "signedOut": "Đã đăng xuất thành công",
+        "signInFailed": "Đăng nhập thất bại. Vui lòng thử lại.",
+        "signOutConfirm": "Bạn có chắc chắn muốn đăng xuất không?"
+    },
     "player": {
         "paste": "Dán",
         "pasteFromClipboard": "Dán từ clipboard (⌘V)",

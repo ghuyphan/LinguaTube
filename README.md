@@ -34,7 +34,7 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 - **Grammar Pattern Recognition**:
   - Automatically identifies grammatical structures across **Japanese** (JLPT N5–N1), **Korean** (TOPIK I–II), **Chinese** (HSK 1–6), and **English** (CEFR A1–C2).
   - Includes multi-language explanations (translated into Vietnamese, Chinese, Japanese, Korean, and English) and native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`).
-- **Dual-Language Subtitles**: Display learning subtitles alongside translated subtitles in English, Vietnamese, Japanese, Korean, or Chinese with quick flag switching.
+- **Dual-Language Subtitles**: Display learning subtitles alongside translated subtitles in English, Vietnamese, Japanese, Korean, or Chinese with quick flag switching. Powered by a centralized cache-first architecture (`/api/dual-subtitles?onlyCache=true`) with sliding-window lazy translation and zero playback start delay across player overlays and subtitle lists.
 
 ### 📚 Study & Retention Tools
 - **Video Difficulty Level Categorization**: Automatic three-stage hybrid classifier profiles videos into standardized levels: **JLPT N5–N1**, **HSK 1–6**, **TOPIK 1–6**, and **CEFR A1–C2**, combining title fast-path heuristics, speech velocity (CPM/WPM), and 2,400+ grammar patterns with global edge persistence in Cloudflare D1. Level badges and filters are integrated directly into **Playlists** and **Watch History**.
@@ -44,7 +44,7 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 - **Authentic Video Scene Replay & Cloze Practice**: Jump directly from any flashcard back into the exact video scene (`[▶ Watch Scene]`), or practice active recall with Cloze sentence masking.
 - **Gamified Streaks & Freeze Inventory**: Track daily study streaks with streak freeze protections (up to 2 freezes) and milestone rewards.
 - **Playlists & History with Level Filtering**: Organize videos into custom playlists, filter playlists and watch history by proficiency levels, explore curated community channels, and resume progress automatically.
-- **Offline-First Persistence**: Operates seamlessly offline with IndexedDB (`lingua-tube-cache`) and LocalStorage, with two-way cloud synchronization to PocketBase.
+- **Offline-First Persistence & Clean Session Isolation**: Operates seamlessly offline with IndexedDB (`lingua-tube-cache`) and LocalStorage, with two-way cloud synchronization to PocketBase. Features full session teardown (`AuthService.logoutEvent`) across all repositories to prevent cross-account data leakage, deterministic ID normalization, and automatic 401 token refresh/sign-out.
 - **Diamond Credits & Pro Upgrade**: Sustainable multi-tier quota system (`free` default with 5 credits, 15m regen; `pro` with 20 credits, 5m regen, up to 30m AI video duration) with instant VietQR open banking upgrade via payOS.
 
 ---

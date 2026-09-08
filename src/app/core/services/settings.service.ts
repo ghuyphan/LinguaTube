@@ -238,10 +238,6 @@ export class SettingsService implements OnDestroy {
   private saveToStorage(settings: UserSettings): void {
     try {
       const toSave: Partial<UserSettings> = { ...settings };
-      // Don't persist dual subtitle state or target language to avoid accidental API usage on reload
-      delete toSave.showDualSubtitles;
-      delete toSave.dualSubtitleTargetLang;
-
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
     } catch (err) {
       console.error('Failed to save settings:', err);

@@ -31,6 +31,11 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         this.auth.loginEvent.subscribe(() => {
             this.syncWithRemote();
         });
+        this.auth.logoutEvent.subscribe(() => {
+            this.playlists.set([]);
+            this.storage.remove(PLAYLISTS_STORAGE_KEY);
+            this.storage.remove(PLAYLISTS_TOMBSTONES_KEY);
+        });
     }
 
     getPlaylists(): Signal<Playlist[]> {

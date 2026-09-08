@@ -116,11 +116,19 @@ graph TD
 ## 4. Dual-Language Subtitles
 
 - Displays the **learning language** on top and the learner's **target translation language** underneath.
+- **Supported Learning Languages**: Japanese (`ja`), Chinese (`zh`), Korean (`ko`), and English (`en`).
 - **Supported Target Languages**: English (`en`), Vietnamese (`vi`), Japanese (`ja`), Korean (`ko`), Chinese (`zh`).
-- **Quick Selection Menu**: Right-click the dual-sub button or open player settings to select target translation language with high-fidelity circle flag SVGs.
-- **Batch Translation Engine**: Subtitle texts are chunked into batches of 25 segments and translated via Lingva / Google Translate GTX to avoid Cloudflare 25-second serverless timeout aborts.
+- **Centralized Orchestrator (`SubtitleService`)**: Single root singleton managing dual-sub state, in-memory cache, lazy loading batches, and subscriptions. Prevents desync between the video player overlay and subtitle list.
+- **Dual Display Surfaces**:
+  - **Video Overlay / Fullscreen**: Rendered dynamically within the active video player container.
+  - **Scrollable Subtitle List (`.subtitle-list`)**: Each cue item (`.cue-item`) displays both primary text (`.cue-text`) and translated text (`.cue-translation-text`) in vertical stack (`.cue-body`).
+- **Cache-First & Progressive Batch Translation**:
+  - Checks server/R2 cache first (`onlyCache: true`).
+  - On cache miss, immediately translates the initial batch (cues 0–35) so learners experience zero initial playback lag.
+  - Progressively translates upcoming cues in batches of 35 with a 15-cue lookahead buffer as playback advances.
 - **Quality Assurance**: If $< 80\%$ of segments translate successfully, caching is refused to prevent bad data persistence.
 - **Permanent Caching**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`) and indexed in D1.
+- **Persistent Preferences**: Dual subtitle toggle state and target language preference persist across browser sessions in `localStorage`.
 
 ---
 

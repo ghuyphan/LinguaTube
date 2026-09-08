@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, Subject, from, catchError, switchMap, finalize, tap, shareReplay, timer, takeUntil } from 'rxjs';
 import { SubtitleCue } from '../../models';
 import { TranscriptCacheService } from '../../services/transcript-cache.service';
+import { AuthService } from '../../core/services/auth.service';
 import { environment } from '../../../environments/environment';
 
 // ============================================================================
@@ -38,6 +39,7 @@ interface TranscriptResponse {
   warning?: string;
   error?: string;
   errorCode?: string;
+  retryAfter?: number;
   status?: 'processing';
   resultUrl?: string;
   timing: number;
@@ -49,7 +51,7 @@ export interface DiamondStatusResponse {
   maxDiamonds: number;
   nextRegenAt: number | null;
   regenIntervalMs?: number;
-  tier?: string;
+  tier?: 'free' | 'pro' | 'premium';
   maxVideoDurationSec?: number;
 }
 
@@ -81,6 +83,7 @@ const MAX_CUE_DURATION = 10;
 export class TranscriptService {
   private http = inject(HttpClient);
   private persistentCache = inject(TranscriptCacheService);
+  private auth = inject(AuthService);
 
   // ============================================================================
   // State (Simplified - single state signal)
@@ -156,6 +159,8 @@ export class TranscriptService {
 
   constructor() {
     this.refreshDiamonds();
+    this.auth.loginEvent.subscribe(() => this.refreshDiamonds());
+    this.auth.logoutEvent.subscribe(() => this.refreshDiamonds());
   }
 
   /**

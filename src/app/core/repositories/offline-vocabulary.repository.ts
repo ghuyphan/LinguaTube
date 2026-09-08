@@ -299,6 +299,24 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         console.log('[VocabRepo] Starting sync...');
 
         try {
+            // 0. Remap any guest/local IDs to authenticated userId to avoid duplicate remote items
+            const userId = this.auth.getUserId();
+            if (userId) {
+                const current = this.vocabulary();
+                let hasRemapped = false;
+                const remapped = current.map(item => {
+                    const expectedId = this.generateVocabId(userId, item.word, item.language);
+                    if (item.id !== expectedId) {
+                        hasRemapped = true;
+                        return { ...item, id: expectedId };
+                    }
+                    return item;
+                });
+                if (hasRemapped) {
+                    this.updateLocal(remapped);
+                }
+            }
+
             // 1. Fetch Remote
             const remoteItems = await this.fetchFromPocketBase();
             console.log(`[VocabRepo] Fetched ${remoteItems.length} items from server`);
@@ -360,6 +378,14 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     private setupAutoSync(): void {
         // Sync on login
         this.auth.loginEvent.subscribe(() => this.syncWithRemote());
+
+        // Teardown and reset on logout to prevent cross-account leak
+        this.auth.logoutEvent.subscribe(() => {
+            this.vocabulary.set([]);
+            this.storage.remove(STORAGE_KEY);
+            this.storage.remove(TOMBSTONES_KEY);
+            this.lastPushedHash = '';
+        });
 
         // Debounced save to storage
         effect(() => {

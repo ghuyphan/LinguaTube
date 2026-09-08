@@ -11,6 +11,7 @@ import { OfflineHistoryRepository } from '../repositories/offline-history.reposi
 import { OfflineStreakRepository } from '../repositories/offline-streak.repository';
 import { ToastService } from './toast.service';
 import { I18nService } from './i18n.service';
+import { AuthService } from './auth.service';
 
 const STORAGE_KEY = 'linguatube_gamification';
 
@@ -65,6 +66,7 @@ export class GamificationService {
     private streakRepo = inject(OfflineStreakRepository);
     private toast = inject(ToastService);
     private i18n = inject(I18nService);
+    private auth = inject(AuthService);
 
     // Persistent State
     readonly rawState = signal<UserGamificationState>({
@@ -161,6 +163,19 @@ export class GamificationService {
         // Reactive effect: Automatically check milestones and award rewards whenever stats update
         effect(() => {
             this.evaluateMilestones();
+        });
+
+        // Clear gamification state on logout
+        this.auth.logoutEvent.subscribe(() => {
+            this.rawState.set({
+                xp: 0,
+                level: 1,
+                unlockedAchievements: {},
+                notifiedAchievements: [],
+                totalVideosWatched: 0,
+                totalQuizzesCompleted: 0,
+            });
+            localStorage.removeItem(STORAGE_KEY);
         });
     }
 

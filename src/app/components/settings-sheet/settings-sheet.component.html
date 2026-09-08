@@ -39,9 +39,20 @@
                         </div>
                     </div>
                     <button class="btn btn-google account-login-btn" (click)="loginWithGoogle()" [disabled]="auth.isLoggingIn()">
-                        <app-icon name="google" [size]="20" />
-                        <span>{{ i18n.t('settings.signInGoogle') }}</span>
+                        @if (auth.isLoggingIn()) {
+                            <div class="login-spinner"></div>
+                            <span>{{ i18n.t('auth.signingIn') || 'Signing in...' }}</span>
+                        } @else {
+                            <app-icon name="google" [size]="20" />
+                            <span>{{ i18n.t('settings.signInGoogle') }}</span>
+                        }
                     </button>
+                    @if (auth.authError(); as error) {
+                        <div class="account-login-error">
+                            <app-icon name="alert-circle" [size]="16" />
+                            <span>{{ error }}</span>
+                        </div>
+                    }
                 </div>
                 }
 

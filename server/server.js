@@ -1298,13 +1298,40 @@ app.post('/api/transcript', async (req, res) => {
  * Generates and returns dual subtitles for dev mode
  */
 app.post('/api/dual-subtitles', async (req, res) => {
-    const { videoId, sourceLang, targetLang, segments } = req.body;
+    const { videoId, sourceLang, targetLang, segments, onlyCache } = req.body;
 
     if (!segments || !Array.isArray(segments)) {
         return res.status(400).json({ error: 'Missing segments array' });
     }
 
     const normTarget = (targetLang || 'en').split('-')[0].toLowerCase();
+    const cacheFile = path.join(TRANSCRIPTS_CACHE_DIR, `${videoId}_${sourceLang || 'auto'}_${normTarget}_dual.json`);
+
+    // Check disk cache first
+    if (fs.existsSync(cacheFile)) {
+        try {
+            const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
+            return res.json({
+                videoId,
+                sourceLang,
+                targetLang,
+                segments: cached.segments || cached,
+                cached: true,
+                quality: 100
+            });
+        } catch {}
+    }
+
+    // If onlyCache requested and no cache found, return early
+    if (onlyCache) {
+        return res.json({
+            videoId,
+            sourceLang,
+            targetLang,
+            segments: [],
+            cached: false
+        });
+    }
 
     // Map segments with translations
     const translatedSegments = await Promise.all(segments.map(async (seg) => {
@@ -1339,6 +1366,11 @@ app.post('/api/dual-subtitles', async (req, res) => {
             translation: `[${normTarget.toUpperCase()}] ${text}`
         };
     }));
+
+    // Cache to disk
+    try {
+        fs.writeFileSync(cacheFile, JSON.stringify({ segments: translatedSegments }), 'utf8');
+    } catch {}
 
     res.json({
         videoId,

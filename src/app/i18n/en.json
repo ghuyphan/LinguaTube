@@ -40,6 +40,14 @@
         "switchToLight": "Switch to light mode",
         "switchToDark": "Switch to dark mode"
     },
+    "auth": {
+        "signIn": "Sign In",
+        "signingIn": "Signing in...",
+        "signedInAs": "Signed in as",
+        "signedOut": "Signed out successfully",
+        "signInFailed": "Sign in failed. Please try again.",
+        "signOutConfirm": "Are you sure you want to sign out?"
+    },
     "player": {
         "paste": "Paste",
         "pasteFromClipboard": "Paste from clipboard (⌘V)",

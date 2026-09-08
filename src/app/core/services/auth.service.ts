@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, inject } from '@angular/core';
+import { Injectable, signal, computed, inject, effect } from '@angular/core';
 import { Subject } from 'rxjs';
 import { PocketBaseService } from './pocketbase.service';
 import type { RecordModel } from 'pocketbase';
@@ -16,8 +16,7 @@ type OAuthPopup = Window | null;
 
 /**
  * Auth Service
- * Handles authentication via PocketBase with multi-provider support
- * Supports: Google OAuth, Email/Password, and more
+ * Handles authentication via PocketBase with Google OAuth
  */
 @Injectable({
     providedIn: 'root'
@@ -30,12 +29,25 @@ export class AuthService {
     readonly subscriptionTier = computed<'free' | 'pro' | 'premium'>(() => this.user()?.subscriptionTier || 'free');
     readonly isInitialized = signal(false);
     readonly isLoggingIn = signal(false);
+    readonly authError = signal<string | null>(null);
 
     /** Emits when user successfully logs in */
     readonly loginEvent = new Subject<UserProfile>();
+    /** Emits when user logs out to trigger session cleanup */
+    readonly logoutEvent = new Subject<void>();
 
     constructor() {
         this.initializeAuth();
+
+        // Reactively sync user when PocketBase model changes
+        effect(() => {
+            const model = this.pb.model();
+            if (model) {
+                this.user.set(this.modelToProfile(model as RecordModel));
+            } else if (this.isInitialized()) {
+                this.user.set(null);
+            }
+        });
     }
 
     /**
@@ -79,6 +91,7 @@ export class AuthService {
     async loginWithGoogle(preopenedPopup: OAuthPopup = null): Promise<UserProfile | null> {
         if (this.isLoggingIn()) return null;
         this.isLoggingIn.set(true);
+        this.authError.set(null);
         let oauthPopup = preopenedPopup || this.openOAuthPopup();
 
         try {
@@ -105,8 +118,20 @@ export class AuthService {
             this.loginEvent.next(profile);
 
             return profile;
-        } catch (error) {
+        } catch (error: unknown) {
+            const err = error as Error;
+            // Check if user dismissed the popup or aborted
+            if (err?.name === 'ClientResponseError' && (err as { isAbort?: boolean }).isAbort) {
+                console.log('[Auth] Google login cancelled by user');
+                return null;
+            }
+            if (err?.message?.includes('closed') || err?.message?.includes('cancelled')) {
+                console.log('[Auth] Google login window closed');
+                return null;
+            }
+
             console.error('[Auth] Google login failed:', error);
+            this.authError.set(err?.message || 'Login failed. Please try again.');
             throw error;
         } finally {
             this.isLoggingIn.set(false);
@@ -117,11 +142,12 @@ export class AuthService {
     }
 
     /**
-     * Sign out - clears PocketBase auth store
+     * Sign out - clears PocketBase auth store and emits logoutEvent
      */
     signOut(): void {
         this.pb.clearAuth();
         this.user.set(null);
+        this.logoutEvent.next();
     }
 
     /**

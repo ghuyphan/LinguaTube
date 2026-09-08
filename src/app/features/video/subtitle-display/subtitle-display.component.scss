@@ -1035,8 +1035,15 @@ ruby rt {
     color: var(--accent-primary);
 }
 
-.cue-text {
+.cue-body {
     flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cue-text {
     line-height: 1.4;
     overflow: hidden;
     display: -webkit-box;
@@ -1044,6 +1051,26 @@ ruby rt {
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+.cue-translation-text {
+    font-size: 0.75rem;
+    line-height: 1.35;
+    color: var(--text-muted);
+    font-weight: 400;
+    opacity: 0.85;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.cue-item--active .cue-translation-text {
+    color: var(--accent-primary);
+    opacity: 0.95;
 }
 
 /* ============================================

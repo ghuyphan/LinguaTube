@@ -151,7 +151,26 @@ graph TD
   - `reading`: Kana-only reading.
   - `annotatedRomanized`: Kanji with Hepburn Romaji annotations.
   - `romanized`: Hepburn Romaji / Revised Romanization only.
+- **Unified Dual Subtitles Integration**:
+  - Delegates all dual subtitle translation state and fetching to `SubtitleService`.
+  - Seamlessly renders secondary translations both in the fullscreen video player overlay and within the scrolling `.subtitle-list` (`.cue-item > .cue-body > .cue-text + .cue-translation-text`).
+  - Supports English learners alongside Japanese, Chinese, and Korean (`['ja', 'zh', 'ko', 'en']`).
 - **Grammar Match Highlights**: Tokens matching active grammar patterns receive visual underlines; clicking opens `GrammarPopupComponent`.
+
+#### SubtitleService Centralized Dual Subtitle Orchestration (`subtitle.service.ts`)
+- Serves as the single source of truth for all dual-language subtitle state across the entire application:
+  - `cueTranslations = signal<Map<number, string>>(new Map())`: Reactive map of cue index to translated text.
+  - `isDualCached = signal<boolean>(false)`: Indicates full dual transcript availability in R2 or local cache.
+  - `isTranslatingDual = signal<boolean>(false)`: Indicates active translation batch processing.
+  - `dualSubError = signal<string | null>(null)`: Captures translation errors for user feedback.
+- **Cache-First Fast Start (`initDualSubtitles`)**:
+  - Queries `/api/dual-subtitles?onlyCache=true`. If pre-translated transcripts exist in R2, populates the entire map instantaneously (`isDualCached: true`).
+  - If a cache miss occurs, avoids blocking playback by immediately requesting on-demand translation of only the first batch (cues 0–35), unlocking immediate playback start.
+- **Sliding-Window Lazy Translation (`lazyLoadUpcomingCuesIfNeeded`)**:
+  - As playback advances, `updateCurrentCue` checks the current cue position.
+  - Automatically fetches the next batch of 25 cues in the background before the user reaches them, minimizing latency and eliminating duplicate API calls.
+- **Lifecycle & Cleanup**:
+  - Exposes `cancelDualSubtitles()`, `toggleDualSubtitles()`, `setDualSubtitleTargetLang()`, and cleanly clears in-flight requests and maps on video change or unload via `clear()`.
 
 ---
 
@@ -251,7 +270,7 @@ classDiagram
     IVocabularyRepository <|.. OfflineVocabularyRepository
 ```
 
-### Deterministic ID Generation
+### Deterministic ID Generation & Login Normalization
 To ensure zero duplicate records when syncing between local browser storage and PocketBase:
 ```typescript
 private generateVocabId(userId: string, word: string, language: string): string {
@@ -262,8 +281,20 @@ private generateVocabId(userId: string, word: string, language: string): string 
         .slice(0, 15);
 }
 ```
+- **Login Normalization**: When a user signs in, `OfflineVocabularyRepository` automatically scans cached items created anonymously under the `'local'` pseudo-user ID and deterministically remaps them to `${userId}` IDs prior to remote synchronization. This prevents duplicate records in PocketBase while ensuring seamless offline-to-online transition.
 
-### 4.2. Payment & Subscription Management (`PaymentService`)
+### 4.2. Clean Session Teardown & Cross-Account Isolation
+To eliminate cross-user data leakage when switching accounts or signing out on shared devices:
+- `AuthService` emits a centralized `logoutEvent: Subject<void>` during `signOut()`.
+- **Repository Subscriptions**:
+  - `OfflineVocabularyRepository`: Clears the in-memory vocabulary signal, deletes the `linguatube_vocabulary` LocalStorage key, and clears pending deletion tombstones.
+  - `OfflineStreakRepository`: Resets daily streak state to defaults and wipes `linguatube_streak`.
+  - `OfflineHistoryRepository`: Cancels pending debounced history saves, clears the history signal, and deletes `linguatube_history`.
+  - `OfflinePlaylistRepository`: Resets user-created playlist collections and wipes `linguatube_custom_playlists`.
+  - `GamificationService`: Resets user XP, rank level, unlocked achievement badges, and wipes `linguatube_gamification`.
+  - `TranscriptService`: Auto-refreshes diamond credit quotas and resets tier back to anonymous defaults.
+
+### 4.3. Payment & Subscription Management (`PaymentService`)
 Located at `src/app/core/services/payment.service.ts`:
 - **State Signals**:
   - `activeOrder`: Signal holding active pending payment order (`PaymentOrderInfo | null`).
@@ -275,9 +306,11 @@ Located at `src/app/core/services/payment.service.ts`:
   - Automatic celebration on success: triggers `ToastService.success()`, clears the order state, and re-fetches user diamonds and tier.
   - Exposes `cancelOrder()` for user cancellation or cleanup on dialog close.
 
-### 4.3. HTTP Interceptor Pipeline (`src/app/interceptors/`)
+### 4.4. HTTP Interceptor Pipeline (`src/app/interceptors/`)
 Configured in `src/main.ts` via `provideHttpClient(withInterceptors([...]))`:
-- **`authInterceptor`**: Automatically attaches PocketBase Bearer token (`Authorization: Bearer <token>`) to all internal `/api/*` endpoints whenever a valid user session exists, while strictly isolating external URLs from token exposure.
+- **`authInterceptor`**:
+  - Automatically attaches PocketBase Bearer token (`Authorization: Bearer <token>`) to all internal `/api/*` endpoints whenever a valid user session exists, while strictly isolating external URLs from token exposure.
+  - **401 Unauthorized Interception**: Intercepts `401 Unauthorized` responses from backend APIs, automatically clearing stale tokens via `PocketBaseService.clear()` and triggering `AuthService.signOut()` to gracefully reset application state and prompt re-authentication.
 - **`timeoutInterceptor`**: Guards against hung connections with a 30s default timeout (and 120s extended timeout for heavy AI transcription tasks like `/api/transcript` and `/api/dual-subtitles`).
 - **`cacheInterceptor`**: Caches dictionary lookups (5-minute TTL) and deduplicates concurrent in-flight HTTP requests.
 

@@ -40,6 +40,14 @@
         "switchToLight": "ライトモードに切替",
         "switchToDark": "ダークモードに切替"
     },
+    "auth": {
+        "signIn": "ログイン",
+        "signingIn": "ログイン中...",
+        "signedInAs": "としてログインしました",
+        "signedOut": "ログアウトしました",
+        "signInFailed": "ログインに失敗しました。もう一度お試しください。",
+        "signOutConfirm": "本当にログアウトしますか？"
+    },
     "player": {
         "paste": "貼り付け",
         "pasteFromClipboard": "クリップボードから貼り付け (⌘V)",

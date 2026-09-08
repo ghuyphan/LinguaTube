@@ -40,6 +40,14 @@
         "switchToLight": "切换到浅色模式",
         "switchToDark": "切换到深色模式"
     },
+    "auth": {
+        "signIn": "登录",
+        "signingIn": "登录中...",
+        "signedInAs": "已登录为",
+        "signedOut": "已成功退出登录",
+        "signInFailed": "登录失败，请重试。",
+        "signOutConfirm": "您确定要退出登录吗？"
+    },
     "player": {
         "paste": "粘贴",
         "pasteFromClipboard": "从剪贴板粘贴 (⌘V)",

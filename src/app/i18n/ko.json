@@ -40,6 +40,14 @@
         "switchToLight": "라이트 모드로 전환",
         "switchToDark": "다크 모드로 전환"
     },
+    "auth": {
+        "signIn": "로그인",
+        "signingIn": "로그인 중...",
+        "signedInAs": "님으로 로그인됨",
+        "signedOut": "성공적으로 로그아웃되었습니다",
+        "signInFailed": "로그인에 실패했습니다. 다시 시도해 주세요.",
+        "signOutConfirm": "정말 로그아웃하시겠습니까?"
+    },
     "player": {
         "paste": "붙여넣기",
         "pasteFromClipboard": "클립보드에서 붙여넣기 (⌘V)",

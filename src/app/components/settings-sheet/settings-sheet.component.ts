@@ -7,7 +7,7 @@ import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/c
 import { SwitchComponent } from '../../shared/components/switch/switch.component';
 import { ReadingDisplayMode, SupportedLearningLanguage, SUPPORTED_LANGUAGES } from '../../models';
 
-import { SettingsService, AuthService, I18nService, UILanguage } from '../../core/services';
+import { SettingsService, AuthService, I18nService, UILanguage, ToastService } from '../../core/services';
 import { YoutubeService, SubtitleService, TranscriptService } from '../../features/video';
 import { VocabularyService } from '../../features/vocabulary';
 import { StreakService } from '../../services/streak.service';
@@ -24,6 +24,7 @@ export class SettingsSheetComponent {
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
   auth = inject(AuthService);
+  toast = inject(ToastService);
   youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
   i18n = inject(I18nService);
@@ -97,10 +98,13 @@ export class SettingsSheetComponent {
    * Login with Google via PocketBase OAuth
    */
   loginWithGoogle(): void {
-    void this.auth.loginWithGoogle().then(profile => {
+    this.auth.loginWithGoogle().then(profile => {
       if (profile) {
+        this.toast.show(`${this.i18n.t('auth.signedInAs') || 'Signed in as'} ${profile.name}`, { type: 'success', icon: 'check-circle' });
         this.sheet()?.close();
       }
+    }).catch(() => {
+      this.toast.show(this.i18n.t('auth.signInFailed') || 'Sign in failed. Please try again.', { type: 'error', icon: 'alert-circle' });
     });
   }
 
@@ -143,6 +147,7 @@ export class SettingsSheetComponent {
   confirmSignOut(): void {
     this.showSignOutConfirm.set(false);
     this.auth.signOut();
+    this.toast.show(this.i18n.t('auth.signedOut') || 'Signed out successfully', { type: 'info', icon: 'check-circle' });
     this.sheet()?.close();
   }
 

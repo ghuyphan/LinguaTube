@@ -88,6 +88,16 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             this.syncWithRemote();
         });
 
+        // Clear history and storage when user logs out
+        this.auth.logoutEvent.subscribe(() => {
+            this.history.set([]);
+            this.storage.remove(STORAGE_KEY);
+            for (const timer of this.remoteSyncTimers.values()) {
+                clearTimeout(timer);
+            }
+            this.remoteSyncTimers.clear();
+        });
+
         // Sync on startup if already logged in
         if (this.auth.isLoggedIn()) {
             this.syncWithRemote();

@@ -157,10 +157,15 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
     "segments": [
       { "id": 0, "start": 1.2, "duration": 3.0, "text": "こんにちは" }
     ],
+    "onlyCache": false,
     "forceRefresh": false
   }
   ```
-- **Process**:
+- **Cache-First Fast Lookup (`onlyCache: true` or `?onlyCache=true`)**:
+  - Checks Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`) or local disk cache (`server/transcripts_cache/`).
+  - If cached transcript exists: Returns `{ segments: [...], cached: true }`.
+  - If not cached: Returns `{ segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
+- **Process (Full Translation Request)**:
   - Checks R2 cache: `translations/{videoId}/{sourceLang}_{targetLang}.json`.
   - Batch translates subtitle text chunks in groups of 25 segments using Lingva/GTX to eliminate 25s Cloudflare Function timeout aborts.
   - Requires an 80% translation success rate (`QUALITY_THRESHOLD`) before saving to R2 and D1 `translation_meta`.

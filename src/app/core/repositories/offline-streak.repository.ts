@@ -118,6 +118,17 @@ export class OfflineStreakRepository implements IStreakRepository {
 
     private setupAutoSync() {
         this.auth.loginEvent.subscribe(() => this.syncWithRemote());
+        this.auth.logoutEvent.subscribe(() => {
+            this.streakData.set({
+                currentStreak: 0,
+                longestStreak: 0,
+                freezesRemaining: 2,
+                lastActivity: null,
+                practicedToday: false
+            });
+            this.storage.remove(STORAGE_KEY);
+            this.storage.remove(HISTORY_KEY);
+        });
     }
 
     private loadFromStorage() {
