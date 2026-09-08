@@ -47,6 +47,12 @@
                             <span>{{ i18n.t('settings.signInGoogle') }}</span>
                         }
                     </button>
+                    @if (auth.isLoggingIn()) {
+                        <div class="account-login-hint">
+                            <app-icon name="info" [size]="14" />
+                            <span>{{ i18n.t('auth.chooseAccountPrompt') || 'Please choose your Google account in the popup window...' }}</span>
+                        </div>
+                    }
                     @if (auth.authError(); as error) {
                         <div class="account-login-error">
                             <app-icon name="alert-circle" [size]="16" />

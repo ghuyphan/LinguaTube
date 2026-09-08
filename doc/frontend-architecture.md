@@ -294,7 +294,13 @@ To eliminate cross-user data leakage when switching accounts or signing out on s
   - `GamificationService`: Resets user XP, rank level, unlocked achievement badges, and wipes `linguatube_gamification`.
   - `TranscriptService`: Auto-refreshes diamond credit quotas and resets tier back to anonymous defaults.
 
-### 4.3. Payment & Subscription Management (`PaymentService`)
+### 4.3. Google OAuth Account Selection & Popup Loading UX
+To give users full control over account switching rather than automatically authenticating into the browser's active Google session:
+- **Forced Account Chooser (`prompt=select_account`)**: In `AuthService.loginWithGoogle`, the Google OAuth authorization URL is enriched with `prompt=select_account`. This instructs Google's identity server to always display the account picker screen ("Choose an account"), allowing users to easily choose between accounts or sign in with another account.
+- **Initial Popup Loading State**: When the OAuth popup initially opens synchronously to avoid popup blockers, it renders an immediate dark-themed loading placeholder ("Connecting to Google... Preparing account selection...") until the OAuth redirect finishes, eliminating blank white window flashes.
+- **Interactive UI Feedback**: The settings sheet displays an active button spinner and an informative guidance banner (`chooseAccountPrompt`) directing the user to complete their account selection in the popup window.
+
+### 4.4. Payment & Subscription Management (`PaymentService`)
 Located at `src/app/core/services/payment.service.ts`:
 - **State Signals**:
   - `activeOrder`: Signal holding active pending payment order (`PaymentOrderInfo | null`).
@@ -306,7 +312,7 @@ Located at `src/app/core/services/payment.service.ts`:
   - Automatic celebration on success: triggers `ToastService.success()`, clears the order state, and re-fetches user diamonds and tier.
   - Exposes `cancelOrder()` for user cancellation or cleanup on dialog close.
 
-### 4.4. HTTP Interceptor Pipeline (`src/app/interceptors/`)
+### 4.5. HTTP Interceptor Pipeline (`src/app/interceptors/`)
 Configured in `src/main.ts` via `provideHttpClient(withInterceptors([...]))`:
 - **`authInterceptor`**:
   - Automatically attaches PocketBase Bearer token (`Authorization: Bearer <token>`) to all internal `/api/*` endpoints whenever a valid user session exists, while strictly isolating external URLs from token exposure.

@@ -43,6 +43,7 @@
     "auth": {
         "signIn": "로그인",
         "signingIn": "로그인 중...",
+        "chooseAccountPrompt": "팝업 창에서 Google 계정을 선택해 주세요...",
         "signedInAs": "님으로 로그인됨",
         "signedOut": "성공적으로 로그아웃되었습니다",
         "signInFailed": "로그인에 실패했습니다. 다시 시도해 주세요.",

@@ -100,7 +100,16 @@ export class AuthService {
                 provider: 'google',
                 scopes: ['email', 'profile'],
                 urlCallback: (url: string) => {
-                    oauthPopup = this.openOrReuseOAuthPopup(url, oauthPopup);
+                    let targetUrl = url;
+                    try {
+                        const parsed = new URL(url);
+                        // Force Google to display the Account Chooser screen so user can choose their account
+                        parsed.searchParams.set('prompt', 'select_account');
+                        targetUrl = parsed.toString();
+                    } catch {
+                        targetUrl = url.includes('?') ? `${url}&prompt=select_account` : `${url}?prompt=select_account`;
+                    }
+                    oauthPopup = this.openOrReuseOAuthPopup(targetUrl, oauthPopup);
                 }
             });
 
@@ -213,19 +222,90 @@ export class AuthService {
             return null;
         }
 
-        let width = 1024;
-        let height = 768;
+        const width = Math.min(520, window.innerWidth || 520);
+        const height = Math.min(640, window.innerHeight || 640);
 
-        width = Math.min(width, window.innerWidth);
-        height = Math.min(height, window.innerHeight);
+        const screenLeft = window.screenLeft ?? window.screenX ?? 0;
+        const screenTop = window.screenTop ?? window.screenY ?? 0;
+        const screenWidth = window.innerWidth || document.documentElement?.clientWidth || screen.width;
+        const screenHeight = window.innerHeight || document.documentElement?.clientHeight || screen.height;
 
-        const left = (window.innerWidth - width) / 2;
-        const top = (window.innerHeight - height) / 2;
+        const left = screenLeft + Math.max(0, (screenWidth - width) / 2);
+        const top = screenTop + Math.max(0, (screenHeight - height) / 2);
 
-        return window.open(
+        const popup = window.open(
             url,
             'google_oauth_popup',
-            `width=${width},height=${height},top=${top},left=${left},resizable,menubar=no`
+            `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=no,menubar=no`
         );
+
+        if (popup && !url) {
+            try {
+                popup.document.write(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Connecting to Google...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #0b0f19;
+      color: #f1f5f9;
+      text-align: center;
+      padding: 24px;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 320px;
+    }
+    .spinner-ring {
+      width: 44px;
+      height: 44px;
+      border: 3px solid rgba(255, 255, 255, 0.12);
+      border-top-color: #3b82f6;
+      border-radius: 50%;
+      animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      margin-bottom: 20px;
+    }
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="spinner-ring"></div>
+    <div class="title">Connecting to Google...</div>
+    <div class="subtitle">Please choose your account in the window.</div>
+  </div>
+</body>
+</html>`);
+                popup.document.close();
+            } catch {
+                // Ignore if security restrictions prevent document.write
+            }
+        }
+
+        return popup;
     }
 }

@@ -43,6 +43,7 @@
     "auth": {
         "signIn": "ログイン",
         "signingIn": "ログイン中...",
+        "chooseAccountPrompt": "ウィンドウでGoogleアカウントを選択してください...",
         "signedInAs": "としてログインしました",
         "signedOut": "ログアウトしました",
         "signInFailed": "ログインに失敗しました。もう一度お試しください。",

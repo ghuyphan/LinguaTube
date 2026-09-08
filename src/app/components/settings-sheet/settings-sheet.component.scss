@@ -122,6 +122,21 @@
     to { transform: rotate(360deg); }
 }
 
+.account-login-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.22);
+    border-radius: var(--border-radius-md, 8px);
+    color: #60a5fa;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    margin-top: 6px;
+    animation: fadeIn 0.2s ease;
+}
+
 .account-login-error {
     display: flex;
     align-items: center;
