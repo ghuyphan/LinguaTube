@@ -204,6 +204,8 @@ Namespace binding: `TRANSCRIPT_CACHE`
 | `dict:v4:{from}:{to}:{word}` | JSON `DictionaryEntry[]` | 7 Days | Multi-source dictionary lookups |
 | `no-transcript:{videoId}:{lang}:{source}` | String `'1'` | 7 Days | KV fast-path for non-existent transcripts |
 | `keys:cooldown:{provider}:{key}` | String `timestamp` | 1 Hour | API key rotation rate-limit cooldown |
+| `order:{orderCode}` | JSON `{ orderCode, userId, planId, tier, amount, status }` | 15 Minutes | Pending payOS VietQR order metadata |
+| `order_processed:{orderCode}` | String `'1'` | 30 Days | Webhook processing idempotency guard |
 
 ---
 

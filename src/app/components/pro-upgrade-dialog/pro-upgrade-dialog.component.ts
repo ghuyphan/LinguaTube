@@ -1,13 +1,15 @@
-import { Component, ChangeDetectionStrategy, inject, signal, computed, output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, computed, output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { I18nService, AuthService, PaymentService, ToastService } from '../../core/services';
 import { TranscriptService } from '../../features/video/transcript.service';
 
-export type ProPlanType = 'pro_1m' | 'pro_1y';
+export type PlanTier = 'pro' | 'premium';
+export type ProPlanType = 'pro_1m' | 'pro_1y' | 'premium_1m' | 'premium_1y';
 
-interface ProPlanOption {
+export interface PlanOption {
     id: ProPlanType;
+    tier: PlanTier;
     nameKey: string;
     priceFormatted: string;
     periodKey: string;
@@ -24,7 +26,7 @@ interface ProPlanOption {
     templateUrl: './pro-upgrade-dialog.component.html',
     styleUrls: ['./pro-upgrade-dialog.component.scss']
 })
-export class ProUpgradeDialogComponent {
+export class ProUpgradeDialogComponent implements OnInit {
     readonly i18n = inject(I18nService);
     readonly auth = inject(AuthService);
     readonly payment = inject(PaymentService);
@@ -33,12 +35,14 @@ export class ProUpgradeDialogComponent {
 
     dismissed = output<void>();
 
+    readonly selectedTier = signal<PlanTier>('pro');
     readonly selectedPlan = signal<ProPlanType>('pro_1m');
     readonly copiedField = signal<string | null>(null);
 
-    readonly plans: ProPlanOption[] = [
+    readonly allPlans: PlanOption[] = [
         {
             id: 'pro_1m',
+            tier: 'pro',
             nameKey: 'pro.planMonthly',
             priceFormatted: '49.000 đ',
             periodKey: 'pro.perMonth',
@@ -46,23 +50,62 @@ export class ProUpgradeDialogComponent {
         },
         {
             id: 'pro_1y',
+            tier: 'pro',
             nameKey: 'pro.planAnnual',
-            priceFormatted: '490.000 đ',
+            priceFormatted: '450.000 đ',
             periodKey: 'pro.perYear',
             monthlyEquivKey: 'pro.annualMonthlyEquiv',
-            badgeKey: 'pro.save17',
-            amount: 490000
+            badgeKey: 'pro.save23',
+            amount: 450000
+        },
+        {
+            id: 'premium_1m',
+            tier: 'premium',
+            nameKey: 'pro.planPremiumMonthly',
+            priceFormatted: '119.000 đ',
+            periodKey: 'pro.perMonth',
+            amount: 119000
+        },
+        {
+            id: 'premium_1y',
+            tier: 'premium',
+            nameKey: 'pro.planPremiumAnnual',
+            priceFormatted: '990.000 đ',
+            periodKey: 'pro.perYear',
+            monthlyEquivKey: 'pro.premiumAnnualMonthlyEquiv',
+            badgeKey: 'pro.save30',
+            amount: 990000
         }
     ];
 
-    readonly activePlan = computed(() =>
-        this.plans.find(p => p.id === this.selectedPlan()) || this.plans[0]
+    readonly visiblePlans = computed(() =>
+        this.allPlans.filter(p => p.tier === this.selectedTier())
     );
 
-    readonly isProOrPremium = computed(() => {
-        const tier = this.auth.subscriptionTier();
-        return tier === 'pro' || tier === 'premium';
-    });
+    readonly activePlan = computed(() =>
+        this.allPlans.find(p => p.id === this.selectedPlan()) || this.visiblePlans()[0]
+    );
+
+    readonly userTier = computed(() => this.auth.subscriptionTier());
+    readonly isPro = computed(() => this.userTier() === 'pro');
+    readonly isPremium = computed(() => this.userTier() === 'premium');
+
+    ngOnInit(): void {
+        // If user is already Pro, open directly on Premium tab for easy upgrade
+        if (this.isPro()) {
+            this.selectedTier.set('premium');
+            this.selectedPlan.set('premium_1m');
+        }
+    }
+
+    setTier(tier: PlanTier): void {
+        this.selectedTier.set(tier);
+        if (tier === 'pro') {
+            this.selectedPlan.set('pro_1m');
+        } else {
+            this.selectedPlan.set('premium_1m');
+        }
+    }
 
     selectPlan(planId: ProPlanType): void {
         this.selectedPlan.set(planId);

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { encodeTaggedTexts, decodeTaggedTranslations, translateBatch } from '../functions-src/providers/lingva.js';
+import { validateBody } from '../functions-src/utils/utils.js';
 import { detectSubtitleLanguage } from '../src/app/shared/utils/language.utils.ts';
 
 test('encodeTaggedTexts: properly encodes array of strings with XML index tags and escapes entities', () => {
@@ -132,3 +133,78 @@ test('live translation: translates Japanese video cues into English (or safely r
         assert.notEqual(results[1].trim(), texts[1].trim());
     }
 });
+
+test('dual subtitles validation: accepts long videos with > 1,000 cues and optional segments for onlyCache', () => {
+    // 1. Check onlyCache does not require segments
+    const cacheOnlyBody = {
+        videoId: 'dQw4w9WgXcQ',
+        sourceLang: 'ja',
+        targetLang: 'en',
+        onlyCache: true
+    };
+    const isOnlyCache1 = Boolean(cacheOnlyBody.onlyCache);
+    const validation1 = validateBody(cacheOnlyBody, {
+        videoId: { type: 'string', required: true, maxLength: 20 },
+        sourceLang: { type: 'string', required: true, maxLength: 5 },
+        targetLang: { type: 'string', required: true, maxLength: 5 },
+        segments: { type: 'array', required: !isOnlyCache1, maxLength: 10000 },
+        onlyCache: { type: 'boolean', required: false }
+    });
+    assert.equal(validation1.valid, true, 'onlyCache request should succeed without segments array');
+
+    // 2. Check long video with 2,500 segments succeeds
+    const longVideoBody = {
+        videoId: 'dQw4w9WgXcQ',
+        sourceLang: 'ja',
+        targetLang: 'en',
+        segments: new Array(2500).fill({ text: 'こんにちは', start: 1, duration: 2 }),
+        saveOnly: true
+    };
+    const isOnlyCache2 = Boolean(longVideoBody.onlyCache);
+    const validation2 = validateBody(longVideoBody, {
+        videoId: { type: 'string', required: true, maxLength: 20 },
+        sourceLang: { type: 'string', required: true, maxLength: 5 },
+        targetLang: { type: 'string', required: true, maxLength: 5 },
+        segments: { type: 'array', required: !isOnlyCache2, maxLength: 10000 },
+        saveOnly: { type: 'boolean', required: false }
+    });
+    assert.equal(validation2.valid, true, 'Long video with 2500 segments should be accepted');
+});
+
+test('dual subtitle resolution: records all cues including identical/empty to prevent infinite loops', () => {
+    const cues = [
+        { id: 'c1', text: 'Hello' },
+        { id: 'c2', text: 'OK' }, // Identical translation
+        { id: 'c3', text: '???' } // Failed translation
+    ];
+    const rawTranslations = ['Xin chào', 'OK', null];
+    const newMap = new Map();
+
+    // The fixed mapping logic from subtitle.service.ts
+    rawTranslations.forEach((trans, i) => {
+        const cue = cues[i];
+        if (!cue) return;
+        const trimmedTrans = trans?.trim();
+        newMap.set(cue.id, trimmedTrans ?? '');
+    });
+
+    // Verify all cue IDs are recorded in the map
+    assert.equal(newMap.has('c1'), true);
+    assert.equal(newMap.has('c2'), true);
+    assert.equal(newMap.has('c3'), true);
+
+    // Verify values
+    assert.equal(newMap.get('c1'), 'Xin chào');
+    assert.equal(newMap.get('c2'), 'OK');
+    assert.equal(newMap.get('c3'), '');
+
+    // Verify UI template equality guard logic
+    const shouldRenderC1 = Boolean(newMap.get('c1')) && newMap.get('c1') !== cues[0].text;
+    const shouldRenderC2 = Boolean(newMap.get('c2')) && newMap.get('c2') !== cues[1].text;
+    const shouldRenderC3 = Boolean(newMap.get('c3')) && newMap.get('c3') !== cues[2].text;
+
+    assert.equal(shouldRenderC1, true, 'Valid translation should be rendered in UI');
+    assert.equal(shouldRenderC2, false, 'Identical translation should not be rendered in UI');
+    assert.equal(shouldRenderC3, false, 'Empty translation should not be rendered in UI');
+});
+

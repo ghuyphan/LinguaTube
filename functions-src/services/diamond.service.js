@@ -15,23 +15,23 @@ export const TIER_CONFIGS = {
         regenIntervalMinutes: 15,
         regenIntervalMs: 15 * 60 * 1000,
         regenAmount: 1,
-        maxVideoDurationSec: 900, // 15 minutes
+        maxVideoDurationSec: 600, // 10 minutes
     },
     pro: {
         tier: 'pro',
-        maxDiamonds: 20,
-        regenIntervalMinutes: 5,
-        regenIntervalMs: 5 * 60 * 1000,
+        maxDiamonds: 10,
+        regenIntervalMinutes: 10,
+        regenIntervalMs: 10 * 60 * 1000,
         regenAmount: 1,
-        maxVideoDurationSec: 1800, // 30 minutes
+        maxVideoDurationSec: 1200, // 20 minutes
     },
     premium: {
         tier: 'premium',
-        maxDiamonds: 20,
-        regenIntervalMinutes: 5,
-        regenIntervalMs: 5 * 60 * 1000,
+        maxDiamonds: 25,
+        regenIntervalMinutes: 4,
+        regenIntervalMs: 4 * 60 * 1000,
         regenAmount: 1,
-        maxVideoDurationSec: 1800, // 30 minutes
+        maxVideoDurationSec: 2700, // 45 minutes
     }
 };
 

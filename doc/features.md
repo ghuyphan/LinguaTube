@@ -143,16 +143,19 @@ graph TD
   - **Scrollable Subtitle List (`.subtitle-list`)**: Each cue item (`.cue-item`) displays both primary text (`.cue-text`) and translated text (`.cue-translation-text`) in vertical stack (`.cue-body`).
 - **Dynamic Subtitle Language Detection (`detectSubtitleLanguage`)**: Subtitle cues are sampled using Unicode character block analysis (`\p{Script=Han}`, `\p{Script=Hiragana}`, `\p{Script=Hangul}`) to accurately determine the authentic video subtitle language. This prevents mismatches when user settings language differs from video subtitle language.
 - **Source/Target Inversion Prevention**: Target language selection strictly avoids collision with the active subtitle language, falling back to the user's interface language or alternate language to ensure translations are never identical to the source.
-- **Cache-First & Progressive Batch Translation**:
-  - Checks server/R2 cache first (`onlyCache: true`).
-  - On cache miss, immediately translates the initial batch (cues 0–35) so learners experience zero initial playback lag.
-  - Progressively translates upcoming cues in batches of 35 with a 15-cue lookahead buffer as playback advances.
-- **Translation Anti-Poisoning & Quality Assurance**:
+- **Cache-First & Progressive High-Speed Batch Translation**:
+  - Checks server/R2 cache first (`onlyCache: true`) without requiring segment payloads.
+  - On cache miss, immediately translates initial cues via direct edge Google GTX (~150ms-1.5s vs 7s+ on dead proxies) so learners experience near-instant playback response.
+  - Progressively translates upcoming cues in batches of 50 with a 25-cue lookahead buffer and reactive pipelining as playback advances.
+  - On user seeks or clicks in the subtitle list, any stale in-flight batch is automatically cancelled and the seek position's cues are translated immediately.
+- **Translation Anti-Poisoning & Infinite-Loop Prevention**:
   - Failed translation requests return `null` rather than falling back to untranslated source text.
+  - In-memory subtitle tracking marks all processed cues (including identical and empty) as resolved to completely eliminate infinite network retry loops on short words, sound effects, or numbers.
   - LocalStorage and R2 caches automatically sanitize and reject entries where `source !== target` but `translation === sourceText`.
   - UI templates (`subtitle-display`, `fullscreen-subtitle`) enforce equality guards (`translation.trim() !== cue.text.trim()`) to prevent rendering duplicate identical lines.
   - If $< 80\%$ of segments translate successfully, remote caching is refused to prevent bad data persistence.
-- **Permanent Caching**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`) and indexed in D1.
+- **Permanent Caching & Long Video Support**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`) and indexed in D1. Supports long videos with over 1,000 cues (up to 10,000 cues) without payload truncation.
+- **Track & Language Switch Reactivity**: Tracks changes in subtitle track (`cues`), source language, and target language, cleanly re-initializing dual subtitles when switching between native and Whisper AI captions or changing language tracks.
 - **Persistent Preferences**: Dual subtitle toggle state and target language preference persist across browser sessions in `localStorage`.
 
 ---
@@ -342,32 +345,42 @@ Voca features a multi-tiered credit and quota management system designed to bala
 | Tier | Trigger / Qualification | Max Credits | Regen Rate | Max AI Video Length | Daily KV Sync Policy |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **`anonymous`** | Unauthenticated guest IP | 3 Diamonds | 1 credit / 20 min | $\le 10$ minutes | In-memory cached; throttled KV sync |
-| **`free`** | Authenticated user (default) | 5 Diamonds | 1 credit / 15 min | $\le 15$ minutes | PocketBase record + in-memory cache |
-| **`pro`** / **`premium`**| Active paid subscriber | 20 Diamonds | 1 credit / 5 min | $\le 30$ minutes | PocketBase record + instant sync |
+| **`free`** | Authenticated user (default) | 5 Diamonds | 1 credit / 15 min | $\le 10$ minutes | PocketBase record + in-memory cache |
+| **`pro`** | Active Pro subscriber | 10 Diamonds | 1 credit / 10 min | $\le 20$ minutes | PocketBase record + instant sync |
+| **`premium`** | Active Premium subscriber | 25 Diamonds | 1 credit / 4 min | $\le 45$ minutes | PocketBase record + instant sync |
 
-- **Defaulting to Free**: New registered users always default to the `free` tier (awarding 5 diamonds as an onboarding reward). Upgrades to `pro` occur exclusively via verified payment or administrative grant.
+- **Defaulting to Free**: New registered users always default to the `free` tier (awarding 5 diamonds as an onboarding reward). Upgrades to `pro` or `premium` occur exclusively via verified payment or administrative grant.
 - **Dynamic Cost Scaling**:
   - $\le 10$ minutes: **1 Diamond credit**
   - $10$–$20$ minutes: **2 Diamond credits**
-  - $> 20$ minutes: Allowed for `pro` users (up to 30 mins, 3 Diamond credits); rejected with user guidance for free/guest tiers.
+  - $20$–$35$ minutes: **3 Diamond credits** (requires `premium`)
+  - $35$–$45$ minutes: **4 Diamond credits** (requires `premium`)
+  - $> 45$ minutes: Rejected; exceeds serverless edge processing and audio transcription limit.
 - **Automated Refund on Failure**: If Gladia fails or rejects the audio stream, credits are automatically refunded to the user's account.
 
 ### 11.2. Edge Rate Quota & Free KV Optimization (Rule 2)
 - **Edge In-Memory Caching (`memDiamondsCache`)**: Cloudflare Workers maintain an in-memory cache with a 60-second TTL and a 500-entry LRU cap. Repeated credit checks do not touch Cloudflare KV, preserving free-tier write quotas (1,000 writes/day).
 - **Admin Token Memoization**: PocketBase admin authentication tokens are memoized across Worker invocations with a 45-minute lifecycle, reducing redundant authentication requests by $>99\%$.
 
-### 11.3. payOS VietQR Open Banking & Pro Upgrade
+### 11.3. payOS VietQR Open Banking & Pro / Premium Upgrade
 - **Why payOS?**: Zero gateway subscription fees (compared to ApiPay's 100k-150k VND/month fee), official VietQR bank transfer rails, and zero storage of raw banking credentials.
+- **Supported Plans**:
+  - **Voca Pro**:
+    - Monthly (`pro_1m`): 49,000 VND/month (~`\$1.95`)
+    - Annual (`pro_1y`): 450,000 VND/year (~`\$18.00`, 23% savings, ~37,500 VND/mo)
+  - **Voca Premium**:
+    - Monthly (`premium_1m`): 119,000 VND/month (~`\$4.75`)
+    - Annual (`premium_1y`): 990,000 VND/year (~`\$39.50`, 30% savings, ~82,500 VND/mo)
 - **VietQR Payment Flow**:
-  1. User selects "Upgrade" in `SidebarComponent`, `SettingsSheetComponent`, or the Pro teaser banner in `AiCreditsDialogComponent`.
-  2. Dedicated `ProUpgradeDialogComponent` opens, presenting monthly (`pro_1m` @ 49,000 VND) and annual (`pro_1y` @ 490,000 VND with 17% savings) options alongside feature comparisons.
-  3. Frontend calls `POST /api/payment/create-order` with the chosen plan.
-  4. Server signs payment payload with `HMAC-SHA256` using `PAYOS_CHECKSUM_KEY`, creates an order via payOS, parses raw EMVCo strings into scannable QR images, and returns structured banking info (`accountNumber`, `accountName`, `bin`, `description`).
+  1. User selects "Upgrade" in `SidebarComponent`, `SettingsSheetComponent`, or the Pro/Premium teaser banner in `AiCreditsDialogComponent`.
+  2. Dedicated `ProUpgradeDialogComponent` opens, presenting an interactive Tier Switcher (`[ Voca Pro ] [ Voca Premium ]`) with real-time benefit comparisons, monthly/annual toggles, and localized badge highlights.
+  3. Frontend calls `POST /api/payment/create-order` with the chosen `planId`.
+  4. Server signs payment payload with `HMAC-SHA256` using `PAYOS_CHECKSUM_KEY`, creates an order via payOS, parses raw EMVCo strings into scannable QR images, caches order metadata in Cloudflare KV, and returns structured banking info (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`).
   5. Frontend displays a responsive VietQR card featuring the generated QR image, mobile checkout deep link, copyable account details, and active polling via `PaymentService`.
   6. User scans with any Vietnamese banking app (Vietcombank, MBBank, Techcombank, etc.).
   7. Upon transfer settlement, payOS fires a secure webhook to `/api/payment/webhook`.
-  8. Server verifies webhook HMAC signature, checks idempotency via Cloudflare KV (`order_processed:{orderCode}`), upgrades the user's subscription in PocketBase (`subscription_tier = 'pro'`, `diamonds = 20`), and sets expiry timestamp.
-  9. Polling or next user action detects the new tier, refreshes user auth state, celebrates with confetti/toast, and unlocks Pro benefits immediately.
+  8. Server verifies webhook HMAC signature, checks idempotency via Cloudflare KV (`order_processed:{orderCode}`), upgrades the user's subscription in PocketBase (`subscription_tier = targetTier`, `diamonds = grantedDiamonds` [10 for Pro, 25 for Premium]), and sets expiry timestamp.
+  9. Polling or next user action detects the new tier, refreshes user auth state, celebrates with confetti/toast, and unlocks Pro/Premium quotas immediately.
 
 ---
 

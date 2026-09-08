@@ -14,16 +14,34 @@ export const PLANS = {
     pro_1m: {
         id: 'pro_1m',
         name: 'Voca Pro - 1 Month',
+        tier: 'pro',
         amount: 49000, // 49,000 VND
         durationDays: 30,
-        diamonds: 20
+        diamonds: 10
     },
     pro_1y: {
         id: 'pro_1y',
         name: 'Voca Pro - 1 Year',
-        amount: 490000, // 490,000 VND (~40k/mo)
+        tier: 'pro',
+        amount: 450000, // 450,000 VND (~37.5k/mo, 23% savings)
         durationDays: 365,
-        diamonds: 20
+        diamonds: 10
+    },
+    premium_1m: {
+        id: 'premium_1m',
+        name: 'Voca Premium - 1 Month',
+        tier: 'premium',
+        amount: 119000, // 119,000 VND
+        durationDays: 30,
+        diamonds: 25
+    },
+    premium_1y: {
+        id: 'premium_1y',
+        name: 'Voca Premium - 1 Year',
+        tier: 'premium',
+        amount: 990000, // 990,000 VND (~82.5k/mo, 30% savings)
+        durationDays: 365,
+        diamonds: 25
     }
 };
 
@@ -63,6 +81,7 @@ export async function onRequestPost(context) {
                 userId: authResult.user.id,
                 userEmail: authResult.user.email,
                 planId: plan.id,
+                tier: plan.tier,
                 durationDays: plan.durationDays,
                 diamonds: plan.diamonds,
                 amount: plan.amount,

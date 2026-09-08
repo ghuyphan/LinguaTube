@@ -197,12 +197,12 @@ export class TranslationService implements OnDestroy {
 
 
 
-    getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: { text: string; start: number; duration: number; }[], onlyCache = false): Observable<{ text: string; start: number; duration: number; translation?: string }[]> {
+    getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: { text: string; start: number; duration: number; }[] = [], onlyCache = false): Observable<{ text: string; start: number; duration: number; translation?: string }[]> {
         return this.http.post<{ segments: { text: string; start: number; duration: number; translation?: string }[] }>(environment.api.dualSubtitles, {
             videoId,
             sourceLang,
             targetLang,
-            segments,
+            segments: onlyCache ? [] : segments,
             onlyCache
         }).pipe(
             retry({

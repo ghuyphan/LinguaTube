@@ -44,7 +44,7 @@
             <app-icon name="play-circle" [size]="16" class="info-icon play-icon" />
             <div class="info-content">
                 <strong>{{ i18n.t('subtitle.videoDurationCost') || 'How many credits per video?' }}</strong>
-                <p>{{ i18n.t('subtitle.videoDurationCostDesc') || 'Videos up to 10 minutes cost 1 credit. Videos between 10 and 20 minutes cost 2 credits (max 20 minutes allowed).' }}</p>
+                <p>{{ i18n.t('subtitle.videoDurationCostDesc') || 'Videos up to 10 min cost 1 credit, 10–20 min cost 2 credits, and up to 45 min (Premium) cost 3–4 credits.' }}</p>
             </div>
         </div>
 
@@ -65,8 +65,25 @@
         </div>
     </div>
 
-    @if (auth.subscriptionTier() !== 'pro' && auth.subscriptionTier() !== 'premium') {
-        <!-- Pro Upgrade Promo Banner -->
+    @if (auth.subscriptionTier() === 'pro') {
+        <!-- Pro to Premium Upgrade Banner -->
+        <div class="pro-promo-card" (click)="openProUpgrade.emit()" role="button" tabindex="0">
+            <div class="pro-promo-left">
+                <div class="pro-promo-badge">
+                    <app-icon name="sparkles" [size]="18" />
+                </div>
+                <div class="pro-promo-text">
+                    <span class="pro-promo-title">{{ i18n.t('pro.upgradeToPremium') || 'Upgrade to Premium' }}</span>
+                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHintPremium') || 'Unlock 25 credits, 4-min refill & 45-min podcasts with Premium.' }}</span>
+                </div>
+            </div>
+            <button class="btn btn-pro-sm" type="button">
+                <app-icon name="sparkles" [size]="14" />
+                <span>{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
+            </button>
+        </div>
+    } @else if (auth.subscriptionTier() !== 'premium') {
+        <!-- Pro / Premium Upgrade Promo Banner (Free Users) -->
         <div class="pro-promo-card" (click)="openProUpgrade.emit()" role="button" tabindex="0">
             <div class="pro-promo-left">
                 <div class="pro-promo-badge">
@@ -74,12 +91,12 @@
                 </div>
                 <div class="pro-promo-text">
                     <span class="pro-promo-title">{{ i18n.t('pro.needMoreCredits') || 'Need more AI credits?' }}</span>
-                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHint') || 'Get 20 credits daily, priority queue & cloud sync with Pro.' }}</span>
+                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHint') || 'Get up to 25 daily credits, priority queue & cloud sync with Pro or Premium.' }}</span>
                 </div>
             </div>
             <button class="btn btn-pro-sm" type="button">
                 <app-icon name="zap" [size]="14" />
-                <span>{{ i18n.t('pro.viewPro') || 'View Pro' }}</span>
+                <span>{{ i18n.t('pro.viewPro') || 'View Plans' }}</span>
             </button>
         </div>
     }

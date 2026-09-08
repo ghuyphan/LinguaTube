@@ -8,7 +8,7 @@
  * Endpoint: POST /api/transcript
  */
 
-import { validateAuthToken, hasPremiumAccess } from '../middlewares/auth.js';
+import { validateAuthToken, getUserTier } from '../middlewares/auth.js';
 import { validateVideoRequest } from '../middlewares/video-validator.js';
 import { getNextApiKey, markKeyRateLimited } from '../utils/api-key-rotator.js';
 import {
@@ -79,15 +79,13 @@ export async function onRequestPost(context) {
             }, 400);
         }
 
-        // Auth
+        // Auth & Tier Resolution
         const authResult = await validateAuthToken(request, env);
         const clientId = getClientIdentifier(request, authResult);
-        const tier = authResult.valid
-            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
-            : 'anonymous';
+        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
 
-        // Validation (Pro/Premium users get up to 30 minutes for AI transcription)
-        const maxAiDuration = (tier === 'premium' || tier === 'pro') ? 30 * 60 : 20 * 60;
+        // Validation (Tier duration limits: Free/Anonymous <= 10m, Pro <= 20m, Premium <= 45m)
+        const maxAiDuration = tier === 'premium' ? 45 * 60 : (tier === 'pro' ? 20 * 60 : 10 * 60);
         const validationError = await validateVideoRequest(cleanVideoId, lang, duration, preferAI ? 'whisper' : 'innertube', preferAI ? maxAiDuration : null);
         if (validationError) {
             return jsonResponse({
@@ -152,7 +150,7 @@ export async function onRequestPost(context) {
         // Diamond status immediately
         const user = authResult.valid ? authResult.user : null;
         const diamondStatus = await diamondService.getDiamonds(clientId, user);
-        log(`Request: ${cleanVideoId}, lang: ${lang}, diamonds: ${diamondStatus.diamonds}`);
+        log(`Request: ${cleanVideoId}, lang: ${lang}, diamonds: ${diamondStatus.diamonds}, tier: ${tier}`);
 
         const knownInfo = await getVideoLanguages(db, cleanVideoId);
         const nativeLanguages = knownInfo?.availableLanguages || [];
@@ -165,7 +163,7 @@ export async function onRequestPost(context) {
             regenIntervalMs: diamondStatus.regenIntervalMs
         };
 
-        const orchestratorParams = { videoId: cleanVideoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user };
+        const orchestratorParams = { videoId: cleanVideoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, maxAiDuration };
 
         // -------------------------------------------------------------
         // Polling existing AI

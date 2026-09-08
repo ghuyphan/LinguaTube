@@ -12,7 +12,7 @@ import {
     getRateLimitHeaders,
     getTieredConfig
 } from '../../middlewares/rate-limiter.js';
-import { validateAuthToken, hasPremiumAccess } from '../../middlewares/auth.js';
+import { validateAuthToken, getUserTier } from '../../middlewares/auth.js';
 import {
     jsonResponse,
     handleOptions,
@@ -118,9 +118,7 @@ export async function onRequest(context) {
         // Cache MISS: Now check and consume rate limit quota (Atomic)
         // Get user tier for rate limiting (optional auth)
         const authResult = await validateAuthToken(request, env);
-        const tier = authResult.valid
-            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
-            : 'anonymous';
+        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
         const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
 
         const clientId = getClientIdentifier(request, authResult);

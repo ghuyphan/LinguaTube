@@ -12,13 +12,13 @@ import {
     getRateLimitHeaders,
     getTieredConfig
 } from '../middlewares/rate-limiter.js';
-import { validateAuthToken, hasPremiumAccess } from '../middlewares/auth.js';
+import { validateAuthToken, getUserTier } from '../middlewares/auth.js';
 import { translateBatch } from '../providers/lingva.js';
 import { getTranslation, saveTranslation, recordTranslation } from '../utils/translation-cache.js';
 
-// Tiered rate limiting - anonymous: 5/hr, free: 10/hr, premium: 50/hr
+// Tiered rate limiting - anonymous: 5/hr, free: 10/hr, pro: 50/hr, premium: 100/hr
 const RATE_LIMIT_CONFIG = {
-    max: { anonymous: 5, free: 10, pro: 50, premium: 50 },
+    max: { anonymous: 5, free: 10, pro: 50, premium: 100 },
     windowSeconds: 3600,
     keyPrefix: 'dual-subs'
 };
@@ -44,12 +44,14 @@ export async function onRequestPost(context) {
     try {
         const body = await request.json();
 
+        const isOnlyCache = Boolean(body?.onlyCache);
+
         // Schema-based validation for security
         const validation = validateBody(body, {
             videoId: { type: 'string', required: true, maxLength: 20 },
             sourceLang: { type: 'string', required: true, maxLength: 5 },
             targetLang: { type: 'string', required: true, maxLength: 5 },
-            segments: { type: 'array', required: true, maxLength: 1000 },
+            segments: { type: 'array', required: !isOnlyCache, maxLength: 10000 },
             forceRefresh: { type: 'boolean', required: false },
             onlyCache: { type: 'boolean', required: false },
             saveOnly: { type: 'boolean', required: false },
@@ -97,9 +99,7 @@ export async function onRequestPost(context) {
 
         // 2. Auth & Rate Limit (applies to both saveOnly and live translation generation)
         const authResult = await validateAuthToken(request, env);
-        const tier = authResult.valid
-            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
-            : 'anonymous';
+        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
         const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
 
         const clientId = getClientIdentifier(request, authResult);

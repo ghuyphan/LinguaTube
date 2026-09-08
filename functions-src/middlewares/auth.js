@@ -175,13 +175,29 @@ export async function requireAuth(request, env) {
 }
 
 /**
- * Check if user has premium access
+ * Determine exact active subscription tier of a user ('free' | 'pro' | 'premium' | 'anonymous')
+ */
+export function getUserTier(user) {
+    if (!user) return 'anonymous';
+    const tier = user.subscriptionTier || 'free';
+    if (tier === 'free') return 'free';
+    if (user.subscriptionExpires && new Date(user.subscriptionExpires) < new Date()) {
+        return 'free'; // Subscription expired
+    }
+    return (tier === 'pro' || tier === 'premium') ? tier : 'free';
+}
+
+/**
+ * Check if user has paid access (either pro or premium)
+ */
+export function hasPaidAccess(user) {
+    const tier = getUserTier(user);
+    return tier === 'pro' || tier === 'premium';
+}
+
+/**
+ * Check if user has premium or pro access (backward compatible)
  */
 export function hasPremiumAccess(user) {
-    if (!user) return false;
-    if (user.subscriptionTier === 'free') return false;
-    if (user.subscriptionExpires && new Date(user.subscriptionExpires) < new Date()) {
-        return false;
-    }
-    return user.subscriptionTier === 'pro' || user.subscriptionTier === 'premium';
+    return hasPaidAccess(user);
 }

@@ -79,7 +79,9 @@ export async function onRequestPost(context) {
 
         const userId = orderMeta?.userId;
         const durationDays = orderMeta?.durationDays || 30;
-        const grantedDiamonds = orderMeta?.diamonds || 20;
+        const targetTier = orderMeta?.tier || (orderMeta?.planId?.startsWith('premium') ? 'premium' : 'pro');
+        const defaultDiamonds = targetTier === 'premium' ? 25 : 10;
+        const grantedDiamonds = orderMeta?.diamonds || defaultDiamonds;
 
         if (userId) {
             const pbUrl = env.PB_URL || env.POCKETHOST_URL || 'https://voca.pockethost.io';
@@ -110,7 +112,7 @@ export async function onRequestPost(context) {
 
                     const expiresAt = new Date(Date.now() + durationDays * 24 * 60 * 60 * 1000).toISOString();
 
-                    // 2. Upgrade user record to 'pro' tier
+                    // 2. Upgrade user record to target tier ('pro' or 'premium')
                     const updateRes = await fetch(`${pbUrl}/api/collections/users/records/${userId}`, {
                         method: 'PATCH',
                         headers: {
@@ -118,7 +120,7 @@ export async function onRequestPost(context) {
                             'Authorization': adminToken
                         },
                         body: JSON.stringify({
-                            subscription_tier: 'pro',
+                            subscription_tier: targetTier,
                             subscription_expires: expiresAt,
                             diamonds: grantedDiamonds,
                             last_diamond_regen: new Date().toISOString()
@@ -126,7 +128,7 @@ export async function onRequestPost(context) {
                     });
 
                     if (updateRes.ok) {
-                        console.log(`[payOS Webhook] Successfully upgraded user ${userId} to Pro until ${expiresAt}`);
+                        console.log(`[payOS Webhook] Successfully upgraded user ${userId} to ${targetTier} until ${expiresAt}`);
                     } else {
                         console.error(`[payOS Webhook] Failed to update user ${userId}: ${updateRes.status}`);
                     }

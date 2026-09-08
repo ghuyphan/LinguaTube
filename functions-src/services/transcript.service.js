@@ -27,9 +27,10 @@ import {
 import { jsonResponse } from '../utils/utils.js';
 import { cleanTranscriptSegments } from '../utils/transcript-utils.js';
 import { fetchYouTubeDuration } from '../middlewares/video-validator.js';
+import { getTierDiamondConfig } from './diamond.service.js';
 
 const MAX_VIDEO_DURATION_SECONDS = 3 * 60 * 60; // 3 hours (native captions)
-const MAX_AI_VIDEO_DURATION_SECONDS = 20 * 60;   // 20 minutes (AI speech-to-text cap)
+const MAX_AI_VIDEO_DURATION_SECONDS = 45 * 60;   // 45 minutes (maximum ceiling across any tier)
 
 export class TranscriptService {
     /**
@@ -108,14 +109,18 @@ export class TranscriptService {
         const { db, r2, cache, waitUntil, env } = context;
         const { videoId, lang, body, clientId, user, diamondInfo, elapsed } = params;
 
-        // 1. Validate video length
+        // 1. Validate video length against user tier limit
         let duration = await getVideoDuration(db, videoId) || body.duration;
         if (!duration) {
             duration = await fetchYouTubeDuration(videoId);
         }
 
-        if (duration && duration > MAX_AI_VIDEO_DURATION_SECONDS) {
-            throw new Error(`VIDEO_TOO_LONG: Video exceeds ${MAX_AI_VIDEO_DURATION_SECONDS / 60} minute limit for AI transcription`);
+        const tier = params.tier || this.diamondService.resolveTier(user);
+        const tierConfig = getTierDiamondConfig(tier);
+        const maxDurationSec = params.maxAiDuration || tierConfig.maxVideoDurationSec || MAX_AI_VIDEO_DURATION_SECONDS;
+
+        if (duration && duration > maxDurationSec) {
+            throw new Error(`VIDEO_TOO_LONG: Video (${Math.round(duration / 60)} min) exceeds the ${Math.round(maxDurationSec / 60)} minute limit for ${tier.toUpperCase()} tier.`);
         }
 
         // 2. Check for existing pending job
@@ -125,8 +130,20 @@ export class TranscriptService {
         }
 
         // 3. Scaled diamond cost based on video length:
-        // <= 10 minutes: 1 diamond; 10 to 20 minutes: 2 diamonds
-        const requiredDiamonds = (duration && duration > 10 * 60) ? 2 : 1;
+        // <= 10 min: 1 diamond
+        // 10 to 20 min: 2 diamonds
+        // 20 to 35 min: 3 diamonds
+        // > 35 min (up to 45 min): 4 diamonds
+        let requiredDiamonds = 1;
+        if (duration) {
+            if (duration > 35 * 60) {
+                requiredDiamonds = 4;
+            } else if (duration > 20 * 60) {
+                requiredDiamonds = 3;
+            } else if (duration > 10 * 60) {
+                requiredDiamonds = 2;
+            }
+        }
 
         // 4. Consume diamond(s)
         const consumeResult = await this.diamondService.consumeDiamond(clientId, context, env, user, requiredDiamonds);

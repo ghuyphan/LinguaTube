@@ -505,11 +505,11 @@ Retrieves diamond credits, regen countdown, and video length allowances for the 
   {
     "success": true,
     "diamonds": 5,                      // Current available balance
-    "maxDiamonds": 5,                   // Max capacity (3 for anon, 5 for free, 20 for pro)
+    "maxDiamonds": 5,                   // Max capacity (3 for anon, 5 for free, 10 for pro, 25 for premium)
     "nextRegenAt": 1725805000,          // Epoch timestamp when +1 diamond regenerates
-    "regenIntervalMs": 900000,          // Regeneration period (15 mins for free, 5 mins for pro)
-    "tier": "free",                     // "anonymous" | "free" | "pro"
-    "maxVideoDurationSec": 900          // Max video length allowed for AI transcription (600s/900s/1800s)
+    "regenIntervalMs": 900000,          // Regeneration period (20m anon, 15m free, 10m pro, 4m premium)
+    "tier": "free",                     // "anonymous" | "free" | "pro" | "premium"
+    "maxVideoDurationSec": 600          // Max video length for AI transcription (600s anon/free, 1200s pro, 2700s premium)
   }
   ```
 
@@ -589,7 +589,7 @@ Creates a payment order with a cryptographically secure 8-digit order code and r
 - **Request Body:**
   ```json
   {
-    "planId": "pro_1m",                 // "pro_1m" (49,000 VND) or "pro_1y" (490,000 VND)
+    "planId": "pro_1m",                 // "pro_1m" (49k), "pro_1y" (450k), "premium_1m" (119k), "premium_1y" (990k)
     "returnUrl": "voca://payment/success", // Mobile deep-link scheme
     "cancelUrl": "voca://payment/cancel"
   }

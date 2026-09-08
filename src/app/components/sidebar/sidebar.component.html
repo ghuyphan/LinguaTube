@@ -133,8 +133,24 @@
                 </button>
             </div>
             }
-            <!-- Pro Upgrade Teaser (Free users only) -->
-            @if (auth.subscriptionTier() !== 'pro' && auth.subscriptionTier() !== 'premium') {
+            <!-- Upgrade Teaser (Free or Pro users) -->
+            @if (auth.subscriptionTier() === 'pro') {
+                @if (!isCollapsed()) {
+                <button class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
+                    <div class="pro-btn-content">
+                        <div class="pro-btn-icon">
+                            <app-icon name="sparkles" [size]="14" />
+                        </div>
+                        <span class="pro-btn-label">{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
+                        <span class="pro-btn-badge">25💎</span>
+                    </div>
+                </button>
+                } @else {
+                <button class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
+                    <app-icon name="sparkles" [size]="16" />
+                </button>
+                }
+            } @else if (auth.subscriptionTier() !== 'premium') {
                 @if (!isCollapsed()) {
                 <button class="sidebar-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Pro'">
                     <div class="pro-btn-content">
@@ -142,7 +158,7 @@
                             <app-icon name="crown" [size]="14" />
                         </div>
                         <span class="pro-btn-label">{{ i18n.t('pro.getPro') || 'Get Pro' }}</span>
-                        <span class="pro-btn-badge">20💎</span>
+                        <span class="pro-btn-badge">10💎</span>
                     </div>
                 </button>
                 } @else {

@@ -203,6 +203,16 @@
         transform: translateY(-1px);
         box-shadow: 0 3px 8px rgba(59, 130, 246, 0.35);
     }
+
+    &.account-upgrade-pill--premium {
+        background: var(--gradient-premium);
+        color: #1e1b4b;
+        box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+
+        &:hover {
+            box-shadow: 0 3px 10px rgba(236, 72, 153, 0.45);
+        }
+    }
 }
 
 .account-name {

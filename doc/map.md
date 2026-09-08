@@ -299,13 +299,13 @@ sequenceDiagram
 
 ---
 
-### 3.4. payOS VietQR Pro Upgrade Flow
+### 3.4. payOS VietQR Pro & Premium Upgrade Flow
 
 ```mermaid
 sequenceDiagram
     autonumber
     actor User
-    participant Dialog as AiCreditsDialogComponent
+    participant Dialog as ProUpgradeDialogComponent
     participant PayService as PaymentService (Client)
     participant CreateAPI as /api/payment/create-order
     participant PayOS as payOS Open Banking Gateway
@@ -314,12 +314,12 @@ sequenceDiagram
     participant KV as Cloudflare KV
     participant PB as PocketBase Server
 
-    User->>Dialog: Click "Upgrade to Pro"
-    Dialog->>PayService: createOrder('pro_1m')
+    User->>Dialog: Select Plan (Pro or Premium) & Click "Upgrade"
+    Dialog->>PayService: createOrder(planId: 'pro_1m' | 'premium_1m' | ...)
     PayService->>CreateAPI: POST /api/payment/create-order (Bearer Token via authInterceptor)
     CreateAPI->>PayOS: Generate Payment Link with HMAC-SHA256
     PayOS-->>CreateAPI: Return orderCode & qrCode URL
-    CreateAPI->>KV: Cache order details (TTL 15 min)
+    CreateAPI->>KV: Cache order details & plan tier (TTL 15 min)
     CreateAPI-->>PayService: Return PaymentOrderInfo
     PayService-->>Dialog: Display VietQR Card & Start 3s Polling
     
@@ -328,7 +328,7 @@ sequenceDiagram
         PayOS->>WebhookAPI: POST /api/payment/webhook (HMAC Signature)
         WebhookAPI->>WebhookAPI: Verify HMAC-SHA256 Signature
         WebhookAPI->>KV: Check Idempotency (order_processed:orderCode)
-        WebhookAPI->>PB: Upgrade User (subscription_tier='pro', diamonds=20)
+        WebhookAPI->>PB: Upgrade User (subscription_tier=tier, diamonds=10 or 25)
         WebhookAPI->>KV: Mark order_processed & update order status to PAID
     and Client Polling
         loop Every 3s (up to 5 min)
@@ -340,7 +340,7 @@ sequenceDiagram
     
     PayService-->>Dialog: Order Confirmed PAID
     PayService->>PayService: Refresh Diamonds & Tier Signals
-    Dialog-->>User: Celebrate & Unlock Pro Quotas
+    Dialog-->>User: Celebrate & Unlock Pro/Premium Quotas
 ```
 
 ---

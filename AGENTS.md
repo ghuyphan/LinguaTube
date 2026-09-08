@@ -60,7 +60,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
 - AI transcription via Gladia costs real API credits.
 - All AI transcription requests require:
   1. Valid Cloudflare Turnstile token (`turnstileToken`) verified via `verifyTurnstileToken`.
-  2. Sufficient Diamond credits (1 credit for videos $\le 10$ mins, 2 credits for videos $> 10$ mins, max 20 mins allowed).
+  2. Sufficient Diamond credits (1 credit $\le 10$ mins, 2 credits $10$–$20$ mins, 3 credits $20$–$35$ mins, 4 credits $35$–$45$ mins; duration cap enforced by tier: 10 mins for Free, 20 mins for Pro, 45 mins for Premium).
 
 ### ⚠️ RULE 7: Documentation Synchronization Mandate (Auto-Update Docs on Significant Changes)
 - **Whenever an agent makes a significant update to the codebase, the agent MUST automatically update all corresponding documentation files in `doc/`, `README.md`, and `AGENTS.md` before concluding the task.**

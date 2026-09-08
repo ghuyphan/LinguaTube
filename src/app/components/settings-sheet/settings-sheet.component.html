@@ -20,7 +20,12 @@
                             <span class="badge badge--sm" [class]="'badge--' + auth.subscriptionTier()">
                                 {{ auth.subscriptionTier() | uppercase }}
                             </span>
-                            @if (auth.subscriptionTier() !== 'pro' && auth.subscriptionTier() !== 'premium') {
+                            @if (auth.subscriptionTier() === 'pro') {
+                                <button class="account-upgrade-pill account-upgrade-pill--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPremium') || 'Upgrade to Premium'">
+                                    <app-icon name="sparkles" [size]="12" />
+                                    <span>{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
+                                </button>
+                            } @else if (auth.subscriptionTier() !== 'premium') {
                                 <button class="account-upgrade-pill" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPro') || 'Upgrade to Pro'">
                                     <app-icon name="zap" [size]="12" />
                                     <span>{{ i18n.t('pro.upgrade') || 'Upgrade' }}</span>

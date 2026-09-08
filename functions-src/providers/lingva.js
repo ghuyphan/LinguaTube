@@ -14,12 +14,40 @@ const LINGVA_INSTANCES = [
     'https://translate.plausibility.cloud'
 ];
 
-const INSTANCE_TIMEOUT_MS = 5000;
+const INSTANCE_TIMEOUT_MS = 2000;
 
 // In-memory health tracking for instances (per worker instance)
 const instanceHealth = new Map();
 const HEALTH_RESET_TIME = 5 * 60 * 1000;    // Reset health after 5 minutes
 const RATE_LIMIT_COOLDOWN = 60 * 1000;       // 60s cooldown after a 429
+
+/**
+ * Fast direct Google Translate GTX translator (~100-250ms)
+ */
+async function translateWithGtx(text, source, target) {
+    if (!text?.trim()) return '';
+    if (source === target) return text;
+
+    try {
+        const gtxUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
+        const gtxRes = await fetch(gtxUrl, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+            },
+            signal: AbortSignal.timeout(3500)
+        });
+        if (gtxRes.ok) {
+            const data = await gtxRes.json();
+            if (Array.isArray(data?.[0])) {
+                const translated = data[0].map(item => item?.[0] || '').join('');
+                if (translated) return translated;
+            }
+        }
+    } catch (e) {
+        console.warn('[Translate] Google GTX primary failed:', e?.message || e);
+    }
+    return null;
+}
 
 /**
  * Get instances sorted by health (healthy first), excluding rate-limited ones
@@ -75,38 +103,18 @@ function recordSuccess(instance) {
 }
 
 /**
- * Translate a single text using Lingva
- * Tries multiple instances if necessary
+ * Translate a single text using Google GTX with Lingva fallback
  */
 export async function translateText(text, source, target) {
     if (!text?.trim()) return '';
     if (source === target) return text;
 
+    // 1. Primary: Ultra-fast Google Translate GTX (~100-250ms)
+    const gtxResult = await translateWithGtx(text, source, target);
+    if (gtxResult) return gtxResult;
+
+    // 2. Secondary fallback: Available Lingva instances
     const availableInstances = getSortedInstances();
-
-    // If ALL instances are rate-limited, wait for the soonest one to become available
-    if (availableInstances.length === 0) {
-        const now = Date.now();
-        let soonest = Infinity;
-        let soonestInstance = LINGVA_INSTANCES[0];
-
-        for (const inst of LINGVA_INSTANCES) {
-            const health = instanceHealth.get(inst);
-            if (health?.rateLimitedUntil && health.rateLimitedUntil < soonest) {
-                soonest = health.rateLimitedUntil;
-                soonestInstance = inst;
-            }
-        }
-
-        const waitMs = Math.max(0, soonest - now);
-        if (waitMs > 0 && waitMs < 10000) {
-            // Wait a bit and retry with the soonest instance
-            await new Promise(r => setTimeout(r, waitMs));
-            availableInstances.push(soonestInstance);
-        } else {
-            return null; // All instances are down for too long
-        }
-    }
 
     for (const instance of availableInstances) {
         const url = `${instance}/api/v1/${source}/${target}/${encodeURIComponent(text)}`;
@@ -130,26 +138,6 @@ export async function translateText(text, source, target) {
         } catch {
             recordFailure(instance, 0);
         }
-    }
-
-    // High-reliability fallback: Google Translate web GTX endpoint
-    try {
-        const gtxUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
-        const gtxRes = await fetch(gtxUrl, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
-            },
-            signal: AbortSignal.timeout(INSTANCE_TIMEOUT_MS)
-        });
-        if (gtxRes.ok) {
-            const data = await gtxRes.json();
-            if (Array.isArray(data?.[0])) {
-                const translated = data[0].map(item => item?.[0] || '').join('');
-                if (translated) return translated;
-            }
-        }
-    } catch (e) {
-        console.warn('[Translate] Google GTX fallback failed:', e?.message || e);
     }
 
     return null;

@@ -116,12 +116,40 @@ test('DiamondService: tier configurations enforce correct limits', async () => {
   const free = getTierDiamondConfig('free');
   assert.equal(free.maxDiamonds, 5);
   assert.equal(free.regenIntervalMinutes, 15);
-  assert.equal(free.maxVideoDurationSec, 900);
+  assert.equal(free.maxVideoDurationSec, 600);
 
   const pro = getTierDiamondConfig('pro');
-  assert.equal(pro.maxDiamonds, 20);
-  assert.equal(pro.regenIntervalMinutes, 5);
-  assert.equal(pro.maxVideoDurationSec, 1800);
+  assert.equal(pro.maxDiamonds, 10);
+  assert.equal(pro.regenIntervalMinutes, 10);
+  assert.equal(pro.maxVideoDurationSec, 1200);
+
+  const premium = getTierDiamondConfig('premium');
+  assert.equal(premium.maxDiamonds, 25);
+  assert.equal(premium.regenIntervalMinutes, 4);
+});
+
+test('Auth: getUserTier and hasPaidAccess correctly identify pro and premium users', async () => {
+  const { getUserTier, hasPaidAccess, hasPremiumAccess } = await import('../functions-src/middlewares/auth.js');
+
+  assert.equal(getUserTier(null), 'anonymous');
+  assert.equal(getUserTier({ subscriptionTier: 'free' }), 'free');
+  assert.equal(getUserTier({ subscriptionTier: 'pro' }), 'pro');
+  assert.equal(getUserTier({ subscriptionTier: 'premium' }), 'premium');
+
+  // Expired subscription falls back to free
+  const pastDate = new Date(Date.now() - 3600 * 1000).toISOString();
+  assert.equal(getUserTier({ subscriptionTier: 'pro', subscriptionExpires: pastDate }), 'free');
+  assert.equal(getUserTier({ subscriptionTier: 'premium', subscriptionExpires: pastDate }), 'free');
+
+  // Active subscription preserved
+  const futureDate = new Date(Date.now() + 3600 * 1000).toISOString();
+  assert.equal(getUserTier({ subscriptionTier: 'pro', subscriptionExpires: futureDate }), 'pro');
+  assert.equal(getUserTier({ subscriptionTier: 'premium', subscriptionExpires: futureDate }), 'premium');
+
+  assert.equal(hasPaidAccess({ subscriptionTier: 'pro' }), true);
+  assert.equal(hasPaidAccess({ subscriptionTier: 'premium' }), true);
+  assert.equal(hasPaidAccess({ subscriptionTier: 'free' }), false);
+  assert.equal(hasPaidAccess(null), false);
 });
 
 test('payOS: HMAC-SHA256 signature calculation and webhook verification', async () => {

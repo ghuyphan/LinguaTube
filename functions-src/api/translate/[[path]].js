@@ -4,7 +4,7 @@
  * Route: /api/translate/[[path]]
  */
 
-import { validateAuthToken, hasPremiumAccess } from '../../middlewares/auth.js';
+import { validateAuthToken, getUserTier } from '../../middlewares/auth.js';
 import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
 import {
     consumeRateLimit,
@@ -35,9 +35,7 @@ export async function onRequestGet(context) {
 
     // Rate limiting (Atomic)
     const authResult = await validateAuthToken(request, env);
-    const tier = authResult.valid
-        ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
-        : 'anonymous';
+    const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
 
     const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
     const clientId = getClientIdentifier(request, authResult);

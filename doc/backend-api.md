@@ -68,7 +68,7 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 - **Path Traversal Defense**: `sanitizeVideoId` strips invalid characters and rejects strings with directory traversal patterns (`..`, `/`, `\`).
 - Rejects requests for videos exceeding maximum durations:
   - Native captions (`innertube` / `supadata`): Max 3 hours (10,800s).
-  - AI transcription (`gladia`): Max 20 minutes (1,200s).
+  - AI transcription (`gladia`): Max 10 mins (600s) for Guest/Free, 20 mins (1,200s) for Pro, 45 mins (2,700s) for Premium.
 - Validates language whitelist: `['ja', 'ko', 'zh', 'en']`.
 - Analyzes video title script using Unicode regex (e.g. rejects Cyrillic/Arabic titles when requesting Asian learning languages).
 
@@ -164,14 +164,15 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   ```
 - **Cache-First Fast Lookup (`onlyCache: true` or `?onlyCache=true`)**:
   - Checks Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) or local disk cache (`server/transcripts_cache/`).
+  - Does not require a `segments` payload on cache checks, eliminating unnecessary payload overhead.
   - If cached transcript exists: Returns `{ segments: [...], cached: true }`.
   - If not cached: Returns `{ segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
 - **Client Cache Write-Back (`saveOnly: true` or `onlySave: true`)**:
-  - When the client's lazy-loaded cue translations reach $\ge 80\%$ coverage (`QUALITY_THRESHOLD`), the frontend sends the compiled translated segments to `/api/dual-subtitles` with `saveOnly: true`.
+  - When the client's lazy-loaded cue translations reach $\ge 80\%$ coverage (`QUALITY_THRESHOLD`), the frontend sends the compiled translated segments to `/api/dual-subtitles` with `saveOnly: true`. Supports long videos up to 10,000 segments.
   - The backend filters out any untranslated segments matching source text (when source $\neq$ target), validates the quality threshold, and commits the translation to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. All future views by any user hit R2 directly (<50ms, \$0 translation cost).
 - **Process (Full Translation Request)**:
   - Checks R2 cache: `translations/{videoId}/{sourceLang}-{targetLang}.json`. Automatically detects and invalidates legacy poisoned cache entries where translation mirrored source text.
-  - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via Lingva/GTX to eliminate 25s Cloudflare Function timeout aborts and 429 rate limit errors.
+  - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via direct Google Translate GTX with Lingva fallback to eliminate Cloudflare Function timeout aborts and 429 rate limit errors.
   - Returns `null` on failed segment indices instead of falling back to untranslated source text.
   - Requires an 80% translation success rate (`QUALITY_THRESHOLD`) before saving to R2 and D1 `translation_meta`.
 
@@ -252,9 +253,15 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 - **Multi-Tier Quotas & Regeneration**:
   | Tier | Max Diamonds | Regen Interval | Max AI Video Duration |
   | :--- | :--- | :--- | :--- |
-  | **Anonymous** | 3 | 20 minutes | 10 minutes |
-  | **Free** (Signed in) | 5 | 15 minutes | 15 minutes |
-  | **Pro / Premium** | 20 | 5 minutes | 30 minutes |
+  | **Anonymous** | 3 | 20 minutes | 10 minutes (600s) |
+  | **Free** (Signed in) | 5 | 15 minutes | 10 minutes (600s) |
+  | **Pro** | 10 | 10 minutes | 20 minutes (1,200s) |
+  | **Premium** | 25 | 4 minutes | 45 minutes (2,700s) |
+- **Dynamic Cost Scaling**:
+  - $\le 10$ minutes: **1 Diamond credit**
+  - $10$–$20$ minutes: **2 Diamond credits**
+  - $20$–$35$ minutes: **3 Diamond credits**
+  - $35$–$45$ minutes: **4 Diamond credits**
 - **Quotas & Performance Optimization**:
   - **Memory-first caching**: Warm edge isolates cache anonymous user diamond status in `memDiamondsCache` with 60s TTL, throttling KV writes to preserve the 1,000 writes/day free limit.
   - **Admin Token Memoization**: PocketBase admin authentication is memoized in memory for 45 minutes, reducing admin auth requests by 99%.
@@ -324,8 +331,8 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - `GET /api/payment/check-status`
 - **Source**: `functions-src/api/payment/*.js`, `functions-src/providers/payos.js`
 - **Process & Security**:
-  1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 490,000 VND). Generates a cryptographically secure random 8-digit `orderCode` (`crypto.getRandomValues`), builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV.
-  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY` via constant-time XOR comparison to protect against timing attacks. Enforces fail-closed verification in production, verifies `receivedAmount >= expectedAmount`, and enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier = 'pro'`, sets `subscription_expires` (+30 days or +365 days), and allocates `diamonds = 20` (supporting PocketBase v0.23+ `_superusers` authentication).
+  1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 450,000 VND, `premium_1m` for 119,000 VND, `premium_1y` for 990,000 VND). Generates a cryptographically secure random 8-digit `orderCode` (`crypto.getRandomValues`), builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV.
+  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY` via constant-time XOR comparison to protect against timing attacks. Enforces fail-closed verification in production, verifies `receivedAmount >= expectedAmount`, and enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier` (`'pro'` or `'premium'`), sets `subscription_expires` (+30 days or +365 days), and allocates initial diamonds (10 for Pro, 25 for Premium; supporting PocketBase v0.23+ `_superusers` authentication).
   3. `check-status`: Rate-limited polling endpoint for the frontend `ProUpgradeDialogComponent` to detect payment completion in real time. Also supports local development simulation via `POST /api/payment/simulate-transfer`.
 
 ---
@@ -364,7 +371,7 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 - **Response Format**:
   ```json
   {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "minSupportedVersion": "1.0.0",
     "buildDate": "2026-09-08",
     "forceUpdate": false,

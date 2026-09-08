@@ -51,6 +51,17 @@
             filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
         }
     }
+
+    &.is-premium {
+        background: var(--gradient-premium);
+        border-color: rgba(236, 72, 153, 0.4);
+        box-shadow: 0 0 36px rgba(236, 72, 153, 0.35);
+
+        .hero-crown {
+            color: #1e1b4b;
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.5));
+        }
+    }
 }
 
 @keyframes crownFloat {
@@ -76,6 +87,12 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         letter-spacing: -0.02em;
+
+        &.is-premium {
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
     .subtitle {
@@ -582,5 +599,122 @@
         color: var(--text-secondary);
         margin: 0;
         line-height: 1.45;
+    }
+
+    &.already-premium {
+        border-color: rgba(236, 72, 153, 0.35);
+        background: linear-gradient(180deg, rgba(236, 72, 153, 0.04) 0%, var(--bg-surface) 100%);
+
+        .badge-premium-glow {
+            background: var(--gradient-premium);
+            color: #1e1b4b;
+            font-weight: 800;
+            box-shadow: 0 0 16px rgba(236, 72, 153, 0.35);
+        }
+    }
+}
+
+/* --- Tier Switcher Tabs --- */
+.tier-tabs {
+    display: flex;
+    width: 100%;
+    padding: 4px;
+    background: var(--bg-surface-elevated, rgba(125, 125, 125, 0.08));
+    border: 1px solid var(--border-color, rgba(125, 125, 125, 0.15));
+    border-radius: var(--radius-lg, 12px);
+    gap: 6px;
+}
+
+.tier-tab-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    border-radius: calc(var(--radius-lg, 12px) - 3px);
+    cursor: pointer;
+    transition: all var(--transition-fast, 0.18s ease);
+
+    &:hover {
+        color: var(--text-primary);
+    }
+
+    &.is-active {
+        color: var(--text-primary);
+        background: var(--bg-surface, #ffffff);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+
+        &.tab-pro {
+            color: #3b82f6;
+        }
+
+        &.tab-premium {
+            color: #ec4899;
+        }
+    }
+
+    .tab-badge {
+        font-size: 0.625rem;
+        padding: 2px 6px;
+        border-radius: 999px;
+        background: var(--gradient-premium);
+        color: #1e1b4b;
+        font-weight: 800;
+        letter-spacing: 0.03em;
+    }
+}
+
+/* --- Premium Badges and Accent Modifiers --- */
+.badge-premium-pill {
+    background: var(--gradient-premium) !important;
+    color: #1e1b4b !important;
+    font-weight: 800 !important;
+}
+
+.radio-premium.checked {
+    border-color: #ec4899 !important;
+
+    .radio-inner {
+        background: var(--gradient-premium) !important;
+    }
+}
+
+.btn-premium-cta {
+    background: var(--gradient-premium) !important;
+    color: #1e1b4b !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 18px rgba(236, 72, 153, 0.35) !important;
+
+    &:hover {
+        opacity: 0.95;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 24px rgba(236, 72, 153, 0.45) !important;
+    }
+}
+
+.benefit-icon--premium {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%) !important;
+    border: 1px solid rgba(236, 72, 153, 0.25) !important;
+
+    .icon-diamond-premium {
+        color: #ec4899 !important;
+    }
+    .icon-play-premium {
+        color: #a855f7 !important;
+    }
+    .icon-zap-premium {
+        color: #eab308 !important;
+    }
+    .icon-sparkles-premium {
+        color: #06b6d4 !important;
+    }
+    .icon-crown-premium {
+        color: #f59e0b !important;
     }
 }

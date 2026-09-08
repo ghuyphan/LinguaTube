@@ -13,7 +13,7 @@ import {
     getTieredConfig
 } from '../../middlewares/rate-limiter.js';
 import { translateBatch } from '../../providers/lingva.js';
-import { validateAuthToken, hasPremiumAccess } from '../../middlewares/auth.js';
+import { validateAuthToken, getUserTier } from '../../middlewares/auth.js';
 
 const MAX_BATCH_SIZE = 50;
 
@@ -81,10 +81,7 @@ export async function onRequestPost(context) {
 
         // Rate limit by number of unique texts
         const authResult = await validateAuthToken(request, env);
-        const tier = authResult.valid
-            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
-            : 'anonymous';
-
+        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
         const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
         const clientId = getClientIdentifier(request, authResult);
 
