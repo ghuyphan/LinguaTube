@@ -49,6 +49,7 @@ export class SubtitleService {
   private lastLazyLoadedIndex = -1;
   private lastDualSubVideoId: string | null = null;
   private lastDualSubTargetLang: string | null = null;
+  private hasPersistedDualToR2 = false;
 
   constructor() {
     // Load cached tokens from localStorage

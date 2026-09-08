@@ -140,8 +140,89 @@ app.get('/api/auth-config', (req, res) => {
 });
 
 /**
+ * Helper to translate an array of subtitle strings using tagged batching in local dev
+ */
+async function translateBatchWithGtx(texts, source, target) {
+    if (!texts || texts.length === 0) return [];
+    if (source === target) return [...texts];
+
+    const results = new Array(texts.length).fill(null);
+    const validItems = [];
+    texts.forEach((text, i) => {
+        if (!text || !text.trim()) {
+            results[i] = text;
+        } else {
+            validItems.push({ index: i, text: text.trim() });
+        }
+    });
+
+    if (validItems.length === 0) return results;
+
+    // Chunk into groups with XML tags to keep 1 request per chunk
+    const chunks = [];
+    let currentChunk = [];
+    let currentLen = 0;
+
+    for (const item of validItems) {
+        const tagLen = 20 + item.text.length;
+        if (currentLen + tagLen > 1500 && currentChunk.length > 0) {
+            chunks.push(currentChunk);
+            currentChunk = [];
+            currentLen = 0;
+        }
+        currentChunk.push(item);
+        currentLen += tagLen;
+    }
+    if (currentChunk.length > 0) {
+        chunks.push(currentChunk);
+    }
+
+    for (const chunk of chunks) {
+        const taggedText = chunk.map((item, idx) => {
+            const clean = item.text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return `<t id="${idx}">${clean}</t>`;
+        }).join('\n');
+
+        try {
+            const translated = await translateWithGtx(taggedText, source || 'auto', target || 'en');
+            const tagRegex = /<[\s]*t[\s]+id[\s]*=[\s]*["']?(\d+)["']?[\s]*>([\s\S]*?)<\/[\s]*t[\s]*>/gi;
+            let match;
+            const tagMap = new Map();
+            while ((match = tagRegex.exec(translated)) !== null) {
+                const id = parseInt(match[1], 10);
+                if (!isNaN(id) && id >= 0 && id < chunk.length) {
+                    let content = match[2].trim()
+                        .replace(/&lt;/g, '<')
+                        .replace(/&gt;/g, '>')
+                        .replace(/&quot;/g, '"')
+                        .replace(/&#39;/g, "'")
+                        .replace(/&amp;/g, '&');
+                    tagMap.set(id, content);
+                }
+            }
+
+            for (let idx = 0; idx < chunk.length; idx++) {
+                const item = chunk[idx];
+                if (tagMap.has(idx)) {
+                    results[item.index] = tagMap.get(idx);
+                } else {
+                    results[item.index] = await translateWithGtx(item.text, source || 'auto', target || 'en');
+                }
+            }
+        } catch {
+            for (let idx = 0; idx < chunk.length; idx++) {
+                const item = chunk[idx];
+                results[item.index] = await translateWithGtx(item.text, source || 'auto', target || 'en');
+            }
+        }
+    }
+
+    return results;
+}
+
+/**
  * POST /api/translate/batch
- * Translate an array of subtitle strings using GTX in local development
+ * Translate an array of subtitle strings using tagged batch GTX in local development
  */
 app.post('/api/translate/batch', async (req, res) => {
     try {
@@ -149,9 +230,7 @@ app.post('/api/translate/batch', async (req, res) => {
         if (!Array.isArray(texts)) {
             return res.status(400).json({ error: 'texts must be an array' });
         }
-        const translations = await Promise.all(
-            texts.map(t => translateWithGtx(t, source || 'auto', target || 'en'))
-        );
+        const translations = await translateBatchWithGtx(texts, source || 'auto', target || 'en');
         res.json({ translations });
     } catch (error) {
         console.error('[Translate Batch Local] Error:', error.message);
@@ -1320,6 +1399,16 @@ app.post('/api/dual-subtitles', async (req, res) => {
                 quality: 100
             });
         } catch {}
+    }
+
+    // If saveOnly requested, save client-provided segments to disk cache
+    if (req.body.saveOnly || req.body.onlySave) {
+        try {
+            fs.writeFileSync(cacheFile, JSON.stringify({ segments }), 'utf8');
+            return res.json({ success: true, cached: true, quality: 100 });
+        } catch (e) {
+            return res.status(500).json({ error: e.message });
+        }
     }
 
     // If onlyCache requested and no cache found, return early

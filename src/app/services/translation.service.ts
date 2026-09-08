@@ -54,22 +54,12 @@ export class TranslationService implements OnDestroy {
 
     private initializeRequestQueue() {
         this.queueSubscription = this.requestQueue$.pipe(
-            // Process requests sequentially with a delay between them
+            // Process requests sequentially
             concatMap(request => {
-                // Check if request was cancelled while waiting in queue
                 if (request.cancelled) {
                     return of(void 0);
                 }
-
-                return of(request).pipe(
-                    // Add delay BEFORE processing request
-                    delay(150),
-                    switchMap(req => {
-                        // Check again after delay
-                        if (req.cancelled) return of(void 0);
-                        return this.processBatchRequest(req);
-                    })
-                );
+                return this.processBatchRequest(request);
             })
         ).subscribe();
     }
@@ -241,6 +231,30 @@ export class TranslationService implements OnDestroy {
             catchError(err => {
                 console.error('Dual subtitles failed after retries:', err);
                 return of([]);
+            })
+        );
+    }
+
+    /**
+     * Persist completed dual subtitle segments to Cloudflare R2 / server cache
+     */
+    saveDualSubtitles(
+        videoId: string,
+        sourceLang: string,
+        targetLang: string,
+        segments: { text: string; start: number; duration: number; translation?: string }[]
+    ): Observable<boolean> {
+        return this.http.post<{ success?: boolean; cached?: boolean }>(environment.api.dualSubtitles, {
+            videoId,
+            sourceLang,
+            targetLang,
+            segments,
+            saveOnly: true
+        }).pipe(
+            map(res => Boolean(res.success || res.cached)),
+            catchError(err => {
+                console.warn('[Translation] Save dual subtitles to cache failed:', err);
+                return of(false);
             })
         );
     }

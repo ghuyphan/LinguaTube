@@ -51,18 +51,55 @@ export async function onRequestPost(context) {
             targetLang: { type: 'string', required: true, maxLength: 5 },
             segments: { type: 'array', required: true, maxLength: 1000 },
             forceRefresh: { type: 'boolean', required: false },
-            onlyCache: { type: 'boolean', required: false }
+            onlyCache: { type: 'boolean', required: false },
+            saveOnly: { type: 'boolean', required: false },
+            onlySave: { type: 'boolean', required: false }
         });
         if (!validation.valid) {
             return jsonResponse({ error: 'Invalid request', details: validation.errors }, 400);
         }
 
-        const { videoId, sourceLang, targetLang, segments, forceRefresh, onlyCache } = body;
+        const { videoId, sourceLang, targetLang, segments, forceRefresh, onlyCache, saveOnly, onlySave } = body;
 
         const r2 = env.TRANSCRIPT_STORAGE;
         const db = env.VOCAB_DB;
 
-        // 1. Check Cache (skip if forceRefresh)
+        // 1. Check if client is persisting completed translations to R2 cache
+        if (saveOnly || onlySave) {
+            const successCount = segments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim()).length;
+            const successRate = segments.length > 0 ? successCount / segments.length : 0;
+            const quality = Math.round(successRate * 100);
+
+            if (successRate >= QUALITY_THRESHOLD) {
+                const savePromises = [
+                    saveTranslation(r2, videoId, sourceLang, targetLang, segments, quality)
+                ];
+                if (db) {
+                    savePromises.push(recordTranslation(db, videoId, sourceLang, targetLang, segments.length));
+                }
+                if (waitUntil) {
+                    waitUntil(Promise.allSettled(savePromises));
+                } else {
+                    await Promise.allSettled(savePromises);
+                }
+                return jsonResponse({
+                    videoId,
+                    sourceLang,
+                    targetLang,
+                    cached: true,
+                    quality,
+                    saved: true
+                }, 200, { 'Cache-Control': CACHE_HEADERS.FRESH });
+            }
+
+            return jsonResponse({
+                error: 'Quality threshold not met for caching',
+                quality,
+                required: Math.round(QUALITY_THRESHOLD * 100)
+            }, 400);
+        }
+
+        // 2. Check Cache (skip if forceRefresh)
         if (!forceRefresh) {
             const cached = await getTranslation(r2, videoId, sourceLang, targetLang);
             if (cached) {
@@ -78,7 +115,7 @@ export async function onRequestPost(context) {
             }
         }
 
-        // 1.5. If onlyCache is requested and no cache found, return early
+        // 2.5. If onlyCache is requested and no cache found, return early
         if (onlyCache) {
             return jsonResponse({
                 videoId,
@@ -89,7 +126,7 @@ export async function onRequestPost(context) {
             }, 200, { 'Cache-Control': 'no-store' });
         }
 
-        // 2. Rate Limit (only on cache miss - actual translation work)
+        // 3. Rate Limit (only on cache miss - actual translation work)
         const authResult = await validateAuthToken(request, env);
         const tier = authResult.valid
             ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')

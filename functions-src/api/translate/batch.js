@@ -28,6 +28,25 @@ const RATE_LIMIT_CONFIG = {
     keyPrefix: 'translate-texts'
 };
 
+// In-memory LRU cache for hot phrases across warm Worker isolates (Rule 2: In-Memory First)
+const memPhraseCache = new Map();
+const MAX_MEM_CACHE_SIZE = 1000;
+
+function getFromMemCache(source, target, text) {
+    const key = `${source}:${target}:${text}`;
+    return memPhraseCache.get(key) || null;
+}
+
+function setInMemCache(source, target, text, translation) {
+    if (!text || !translation) return;
+    const key = `${source}:${target}:${text}`;
+    if (memPhraseCache.size >= MAX_MEM_CACHE_SIZE) {
+        const firstKey = memPhraseCache.keys().next().value;
+        if (firstKey) memPhraseCache.delete(firstKey);
+    }
+    memPhraseCache.set(key, translation);
+}
+
 // Cache configuration (7 days)
 const CACHE_TTL = 7 * 24 * 60 * 60;
 
@@ -56,9 +75,9 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: `Max batch size is ${MAX_BATCH_SIZE}` }, 400);
         }
 
-        // Deduplicate texts before consuming rate limits (reduces usage for repetitive subtitles)
-        const uniqueTextsCount = new Set(texts.map(t => t?.trim()).filter(Boolean)).size;
-        const consumeAmount = Math.max(1, uniqueTextsCount || 1); // Consume at least 1 unit
+        // Deduplicate texts before consuming rate limits
+        const uniqueTexts = Array.from(new Set(texts.map(t => t?.trim()).filter(Boolean)));
+        const consumeAmount = Math.max(1, uniqueTexts.length || 1);
 
         // Rate limit by number of unique texts
         const authResult = await validateAuthToken(request, env);
@@ -74,7 +93,7 @@ export async function onRequestPost(context) {
             return rateLimitResponse(rateCheck.resetAt);
         }
 
-        // 1. Check Batch-Level Cache (Single KV read instead of 50 individual subrequests)
+        // 1. Check Batch-Level Cache (Single KV read)
         let translations = new Array(texts.length).fill(null);
         let batchKey = null;
 
@@ -96,49 +115,54 @@ export async function onRequestPost(context) {
             }
         }
 
-        // 2. Prepare Unique Texts to Translate
-        const uniqueTextsToTranslate = new Set();
-        texts.forEach((text) => {
-            if (text && text.trim()) {
-                uniqueTextsToTranslate.add(text);
+        // 2. Resolve phrases from in-memory cache first
+        const translationMap = new Map();
+        const uncachedTexts = [];
+
+        uniqueTexts.forEach((text) => {
+            const memCached = getFromMemCache(source, target, text);
+            if (memCached) {
+                translationMap.set(text, memCached);
+            } else {
+                uncachedTexts.push(text);
             }
         });
 
-        // 3. Translate Missing Items
-        if (uniqueTextsToTranslate.size > 0) {
-            const batchToTranslate = Array.from(uniqueTextsToTranslate);
-            const batchResults = await translateBatch(batchToTranslate, source, target);
+        // 3. Translate only uncached items
+        let isFreshTranslation = false;
+        if (uncachedTexts.length > 0) {
+            isFreshTranslation = true;
+            const batchResults = await translateBatch(uncachedTexts, source, target);
 
-            // Map results back to all occurrences
-            const translationMap = new Map();
-            batchToTranslate.forEach((text, i) => {
-                if (batchResults[i]) {
-                    translationMap.set(text, batchResults[i]);
+            uncachedTexts.forEach((text, i) => {
+                const result = batchResults[i];
+                if (result) {
+                    translationMap.set(text, result);
+                    setInMemCache(source, target, text, result);
                 }
             });
+        }
 
-            translations = texts.map(text => {
-                if (!text || !text.trim()) return text; // Preserve whitespace/empty
-                return translationMap.get(text) || text; // Use translated or fallback to original
-            });
+        // Map results back to original text sequence
+        translations = texts.map(text => {
+            if (!text || !text.trim()) return text;
+            return translationMap.get(text.trim()) || text;
+        });
 
-            // 4. Save entire batch as ONE single KV write (preserves 1,000 writes/day quota)
-            if (env.TRANSCRIPT_CACHE && batchKey) {
-                const cachePayload = JSON.stringify({ translations });
-                if (context.waitUntil) {
-                    context.waitUntil(
-                        env.TRANSCRIPT_CACHE.put(batchKey, cachePayload, { expirationTtl: CACHE_TTL }).catch(() => {})
-                    );
-                } else {
-                    env.TRANSCRIPT_CACHE.put(batchKey, cachePayload, { expirationTtl: CACHE_TTL }).catch(() => {});
-                }
+        // 4. Save batch to KV only when fresh translations occurred (preserves 1,000 writes/day quota)
+        if (env.TRANSCRIPT_CACHE && batchKey && isFreshTranslation) {
+            const cachePayload = JSON.stringify({ translations });
+            if (context.waitUntil) {
+                context.waitUntil(
+                    env.TRANSCRIPT_CACHE.put(batchKey, cachePayload, { expirationTtl: CACHE_TTL }).catch(() => {})
+                );
+            } else {
+                env.TRANSCRIPT_CACHE.put(batchKey, cachePayload, { expirationTtl: CACHE_TTL }).catch(() => {});
             }
-        } else {
-            translations = [...texts];
         }
 
         return jsonResponse({ translations }, 200, {
-            'X-Cache': 'MISS',
+            'X-Cache': isFreshTranslation ? 'MISS' : 'HIT-MEM',
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 

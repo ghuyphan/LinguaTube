@@ -49,10 +49,8 @@ import { IconComponent, IconName } from '../icon/icon.component';
                         type="button">
                         @if (isLoading()) {
                             <div class="confirm-dialog__spinner"></div>
-                            <span>{{ loadingText() || confirmText() }}</span>
-                        } @else {
-                            {{ confirmText() }}
                         }
+                        <span class="confirm-dialog__btn-text">{{ (isLoading() && loadingText()) ? loadingText() : confirmText() }}</span>
                     </button>
                 </div>
             </div>
@@ -102,14 +100,22 @@ import { IconComponent, IconName } from '../icon/icon.component';
         }
 
         .confirm-dialog__actions {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: var(--space-sm);
+            width: 100%;
+        }
+
+        .confirm-dialog__actions:has(> :only-child) {
+            grid-template-columns: 1fr;
         }
 
         .confirm-dialog__btn {
-            flex: 1;
+            width: 100%;
+            height: 2.75rem;
             min-height: 2.75rem;
-            padding: 0 var(--space-md);
+            max-height: 2.75rem;
+            padding: 0 var(--space-sm);
             border-radius: var(--border-radius-md);
             font-size: 0.9375rem;
             font-weight: 600;
@@ -119,12 +125,23 @@ import { IconComponent, IconName } from '../icon/icon.component';
             align-items: center;
             justify-content: center;
             gap: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-sizing: border-box;
             transition: all var(--transition-fast);
 
             &:disabled {
                 opacity: 0.65;
                 cursor: not-allowed;
             }
+        }
+
+        .confirm-dialog__btn-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
         }
 
         .confirm-dialog__spinner {

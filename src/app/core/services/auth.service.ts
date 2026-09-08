@@ -158,11 +158,11 @@ export class AuthService {
         if (this.isLoggingOut()) return;
         this.isLoggingOut.set(true);
         try {
+            // Smooth delay (250ms) with spinner active before session wipe
+            await new Promise(resolve => setTimeout(resolve, 250));
             this.pb.clearAuth();
             this.user.set(null);
             this.logoutEvent.next();
-            // Smooth delay (250ms) to allow reactive state/storage flush and visual feedback
-            await new Promise(resolve => setTimeout(resolve, 250));
         } finally {
             this.isLoggingOut.set(false);
         }

@@ -156,8 +156,43 @@ export async function translateText(text, source, target) {
 }
 
 /**
- * Translate multiple texts in parallel with concurrency limiting
- * and staggered delays to reduce 429 pressure
+ * Encode an array of texts with XML index tags to preserve segment boundaries
+ */
+export function encodeTaggedTexts(texts) {
+    return texts.map((text, idx) => {
+        const clean = (text || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return `<t id="${idx}">${clean}</t>`;
+    }).join('\n');
+}
+
+/**
+ * Decode tagged translation response with forgiving regex
+ */
+export function decodeTaggedTranslations(translatedText, expectedCount) {
+    const map = new Map();
+    if (!translatedText) return map;
+
+    const regex = /<[\s]*t[\s]+id[\s]*=[\s]*["']?(\d+)["']?[\s]*>([\s\S]*?)<\/[\s]*t[\s]*>/gi;
+    let match;
+    while ((match = regex.exec(translatedText)) !== null) {
+        const id = parseInt(match[1], 10);
+        if (!isNaN(id) && id >= 0 && id < expectedCount) {
+            let content = match[2].trim();
+            content = content
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&quot;/g, '"')
+                .replace(/&#39;/g, "'")
+                .replace(/&amp;/g, '&');
+            map.set(id, content);
+        }
+    }
+    return map;
+}
+
+/**
+ * Translate multiple texts in parallel with concurrency limiting,
+ * tagged XML boundary protection, and targeted recovery.
  * 
  * @param {string[]} texts
  * @param {string} source
@@ -167,8 +202,7 @@ export async function translateText(text, source, target) {
 export async function translateBatch(texts, source, target) {
     if (!texts || texts.length === 0) return [];
 
-    const MAX_CHUNK_LENGTH = 1000;
-    const DELIMITER = '\n\n';
+    const MAX_CHUNK_LENGTH = 1500;
 
     // 1. Group texts into length-safe chunks to drastically minimize API calls
     const chunksData = [];
@@ -181,7 +215,8 @@ export async function translateBatch(texts, source, target) {
         if (!text || !text.trim()) continue;
 
         const trimmedText = text.trim();
-        if (currLen + trimmedText.length > MAX_CHUNK_LENGTH && currTexts.length > 0) {
+        const tagOverhead = 20; // approximate <t id="NN">...</t>\n
+        if (currLen + trimmedText.length + tagOverhead > MAX_CHUNK_LENGTH && currTexts.length > 0) {
             chunksData.push({ texts: currTexts, indices: currIndices });
             currTexts = [];
             currIndices = [];
@@ -190,7 +225,7 @@ export async function translateBatch(texts, source, target) {
 
         currTexts.push(trimmedText);
         currIndices.push(i);
-        currLen += trimmedText.length + DELIMITER.length;
+        currLen += trimmedText.length + tagOverhead;
     }
 
     if (currTexts.length > 0) {
@@ -198,10 +233,10 @@ export async function translateBatch(texts, source, target) {
     }
 
     const CONCURRENCY_LIMIT = 3;
-    const STAGGER_DELAY_MS = 200;
+    const STAGGER_DELAY_MS = 150;
     const results = new Array(texts.length).fill(null);
 
-    // Pre-fill empty slots
+    // Pre-fill empty slots with original text
     texts.forEach((text, i) => {
         if (!text || !text.trim()) {
             results[i] = text;
@@ -214,34 +249,62 @@ export async function translateBatch(texts, source, target) {
             if (!chunk) break;
 
             try {
-                const joinedText = chunk.texts.join(DELIMITER);
-                const translated = await translateText(joinedText, source, target);
+                // Encode chunk with tags
+                const taggedInput = encodeTaggedTexts(chunk.texts);
+                const translated = await translateText(taggedInput, source, target);
 
                 if (translated) {
-                    // Split back by 2+ newlines (allowing some whitespace in between)
-                    const splitTranslations = translated.split(/\n[\s]*\n/);
+                    const tagMap = decodeTaggedTranslations(translated, chunk.texts.length);
 
-                    if (splitTranslations.length === chunk.texts.length) {
-                        for (let j = 0; j < chunk.texts.length; j++) {
-                            results[chunk.indices[j]] = splitTranslations[j].trim();
+                    // Check if all items in the chunk were successfully extracted
+                    for (let j = 0; j < chunk.texts.length; j++) {
+                        if (tagMap.has(j)) {
+                            results[chunk.indices[j]] = tagMap.get(j);
                         }
-                    } else {
-                        console.warn(`[Lingva] Chunk split mismatch: expected ${chunk.texts.length}, got ${splitTranslations.length}. Falling back to individual requests.`);
-                        // Fallback to individual
-                        for (let j = 0; j < chunk.texts.length; j++) {
-                            try {
-                                results[chunk.indices[j]] = await translateText(chunk.texts[j], source, target);
-                            } catch (e) { }
+                    }
+
+                    // For any missing items (rare tag corruption), only recover the missing ones
+                    const missingIndices = [];
+                    for (let j = 0; j < chunk.texts.length; j++) {
+                        if (!tagMap.has(j)) {
+                            missingIndices.push(j);
+                        }
+                    }
+
+                    if (missingIndices.length > 0) {
+                        // Attempt fallback split by newlines if all tags were stripped
+                        const lines = translated.split(/\n+/).map(l => l.trim()).filter(Boolean);
+                        if (lines.length === chunk.texts.length) {
+                            for (let j = 0; j < chunk.texts.length; j++) {
+                                if (!results[chunk.indices[j]]) {
+                                    results[chunk.indices[j]] = lines[j];
+                                }
+                            }
+                        } else {
+                            // Targeted fallback: only request the missing items
+                            for (const missingIdx of missingIndices) {
+                                try {
+                                    results[chunk.indices[missingIdx]] = await translateText(
+                                        chunk.texts[missingIdx],
+                                        source,
+                                        target
+                                    );
+                                } catch {
+                                    results[chunk.indices[missingIdx]] = chunk.texts[missingIdx];
+                                }
+                            }
                         }
                     }
                 }
             } catch (error) {
-                console.warn(`[Lingva] Batch chunk failed: ${error.message}`);
-                // Fallback
+                console.warn(`[Lingva] Tagged batch chunk failed: ${error.message}`);
+                // Fallback: recover individual items for this failed chunk
                 for (let j = 0; j < chunk.texts.length; j++) {
                     try {
                         results[chunk.indices[j]] = await translateText(chunk.texts[j], source, target);
-                    } catch (e) { }
+                    } catch {
+                        results[chunk.indices[j]] = chunk.texts[j];
+                    }
                 }
             }
 
