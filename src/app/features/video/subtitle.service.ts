@@ -54,6 +54,7 @@ export class SubtitleService {
   private lastDualSubFirstCueId: string | null = null;
   private lastDualSubCuesCount = 0;
   private lastBatchFailureTime = 0;
+  private consecutiveBatchFailures = 0;
   private hasPersistedDualToR2 = false;
 
   constructor() {
@@ -412,11 +413,13 @@ export class SubtitleService {
     this.lastDualSubFirstCueId = null;
     this.lastDualSubCuesCount = 0;
     this.lastBatchFailureTime = 0;
+    this.consecutiveBatchFailures = 0;
     this.requestedLanguage.set(null);
   }
 
   resetFailureCooldown(): void {
     this.lastBatchFailureTime = 0;
+    this.consecutiveBatchFailures = 0;
   }
 
   // ============================================================================
@@ -529,9 +532,15 @@ export class SubtitleService {
       return;
     }
 
-    // Cooldown after a batch failure: do not hammer the network every 250ms frame update
-    if (this.lastBatchFailureTime > 0 && Date.now() - this.lastBatchFailureTime < 5000) {
-      return;
+    // Exponential backoff after batch failures (15s -> 30s -> 60s) to prevent retry storms during rate limits
+    if (this.lastBatchFailureTime > 0) {
+      if (this.consecutiveBatchFailures >= 3) {
+        return; // Pause automatic background attempts after 3 failures until explicit seek or user action
+      }
+      const cooldownMs = Math.min(15000 * Math.pow(2, Math.max(0, this.consecutiveBatchFailures - 1)), 60000);
+      if (Date.now() - this.lastBatchFailureTime < cooldownMs) {
+        return;
+      }
     }
 
     const cues = this.subtitles();
@@ -609,6 +618,7 @@ export class SubtitleService {
 
         this.clearDualSubLoadingState();
         this.lastBatchFailureTime = 0;
+        this.consecutiveBatchFailures = 0;
         const newMap = new Map(this.cueTranslations());
 
         translations.forEach((trans, i) => {
@@ -635,9 +645,10 @@ export class SubtitleService {
         console.error('[SubtitleService] Dual sub lazy load failed:', err);
         this.clearDualSubLoadingState();
         this.lastBatchFailureTime = Date.now();
+        this.consecutiveBatchFailures++;
         this.dualSubError.set('Translation failed');
         // Do not permanently poison cues as '' in cueTranslations.
-        // Leaving failed cues unmapped allows retry after the 5s cooldown or upon user seeking.
+        // Leaving failed cues unmapped allows retry after the exponential backoff or upon user seeking.
       }
     });
   }

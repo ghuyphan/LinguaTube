@@ -18,7 +18,7 @@ This document outlines the frontend design principles, Angular 19 Signal state a
 
  [ 3. Standalone Component Tree ]     [ 4. Cross-Platform Responsive UI ]
    • Zero NgModules                       • Mobile-First Responsive SCSS Layouts
-   • Deferred Loading (loadComponent)     • Touch Gestures, Pointer Capture & RAF
+   • Preloaded Bundles (PreloadAllModules)• Touch Gestures, Pointer Capture & RAF
    • Isolated SCSS per component          • SVG Circle Flags & Full PWA Caching
 ```
 
@@ -162,7 +162,9 @@ graph TD
     - **Smooth Height Animations**: Smoothly animates container height via native Web Animations API during submenu view transitions.
   - `FullscreenSubtitleComponent`: Dedicated high-contrast subtitle overlay positioned via `fullscreenSubtitleYPercent` setting.
     - Features a horizontal drag handle bar with ergonomic hit target ($\ge 32\text{px}$) and pill indicator.
-    - Drag handler scheduled via `requestAnimationFrame` with pointer capture and soft magnetic anchoring at `12%` (top) and `78%` (bottom).
+    - Drag handler scheduled via `requestAnimationFrame` with pointer capture and outside-Zone event registration (`NgZone.runOutsideAngular`) to guarantee zero Zone.js overhead and locked 60fps/120fps fluid tracking.
+    - **Adaptive Controls Clearance**: Automatically detects `.controls-visible.is-near-bottom` and smoothly glides upward by 44px (38px on mobile) via CSS transforms, preventing bottom playback controls from overlapping subtitle text when controls appear.
+    - **Baseline Layout Stabilization**: Uses `min-height: 2.25rem` on `.fs-subtitle-content` with smooth dimension transitions, stabilizing text baselines between short and multi-line cues to eliminate visual "see-saw" jumping.
     - Mobile landscape typography optimization via `max-height: 520px` query, safe-area inset protection, and widescreen container clamping (`min(90%, 960px)`).
     - Full learning integration via `WordPopupComponent` in fullscreen (meanings, machine translations, audio/TTS, and level selector).
     - **Cinematic Immersion & Subtle Grammar Accents**: Words render cleanly on the translucent backdrop. Grammar tokens in fullscreen use a subtle, faint dotted underline without any background box or solid borders, preserving cinematic reading flow while remaining interactive.

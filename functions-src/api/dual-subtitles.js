@@ -51,7 +51,7 @@ export async function onRequestPost(context) {
             videoId: { type: 'string', required: true, maxLength: 20 },
             sourceLang: { type: 'string', required: true, maxLength: 5 },
             targetLang: { type: 'string', required: true, maxLength: 5 },
-            segments: { type: 'array', required: !isOnlyCache, maxLength: 10000 },
+            segments: { type: 'array', required: !isOnlyCache, maxLength: 1500 },
             forceRefresh: { type: 'boolean', required: false },
             onlyCache: { type: 'boolean', required: false },
             saveOnly: { type: 'boolean', required: false },
@@ -203,12 +203,12 @@ export async function onRequestPost(context) {
         // 6. Save to Cache (only if quality threshold met)
         if (shouldCache) {
             const savePromises = [
-                saveTranslation(r2, videoId, sourceLang, targetLang, resultSegments, quality)
+                saveTranslation(r2, cleanVideoId, sourceLang, targetLang, resultSegments, quality)
             ];
 
             // Record in D1 for fast lookups
             if (db) {
-                savePromises.push(recordTranslation(db, videoId, sourceLang, targetLang, resultSegments.length));
+                savePromises.push(recordTranslation(db, cleanVideoId, sourceLang, targetLang, resultSegments.length));
             }
 
             if (waitUntil) {
@@ -221,7 +221,7 @@ export async function onRequestPost(context) {
         // 7. Build response with appropriate headers
         const cacheControl = shouldCache ? CACHE_HEADERS.FRESH : CACHE_HEADERS.PARTIAL;
         const response = {
-            videoId,
+            videoId: cleanVideoId,
             sourceLang,
             targetLang,
             segments: resultSegments,

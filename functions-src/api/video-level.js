@@ -7,7 +7,7 @@
  */
 
 import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage } from '../utils/utils.js';
-import { saveVideoLevel, getVideoLanguages } from '../data/video-info-db.js';
+import { saveVideoLevel } from '../data/video-info-db.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
 const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'video_level' };

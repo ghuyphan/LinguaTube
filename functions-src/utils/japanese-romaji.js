@@ -184,8 +184,13 @@ function getConsonantForSokuon(nextRomaji) {
 }
 
 function getLastVowel(text) {
-    const match = text.match(/[aeiou](?!.*[aeiou])/);
-    return match ? match[0] : '';
+    for (let i = text.length - 1; i >= 0; i--) {
+        const char = text[i].toLowerCase();
+        if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+            return char;
+        }
+    }
+    return '';
 }
 
 export function isJapaneseKanaText(text) {

@@ -8,7 +8,6 @@ import {
     addVideoLanguage,
     addVideoLanguages,
     getVideoDuration,
-    isNoTranscript,
     markNoTranscript
 } from '../data/video-info-db.js';
 
@@ -24,7 +23,6 @@ import {
     saveTranscriptToR2
 } from '../data/transcript-r2.js';
 
-import { jsonResponse } from '../utils/utils.js';
 import { cleanTranscriptSegments } from '../utils/transcript-utils.js';
 import { fetchYouTubeDuration } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig } from './diamond.service.js';
@@ -93,7 +91,7 @@ export class TranscriptService {
         if (env.SUPADATA_API_KEY) {
             const markNegativeCache = markNoTranscript(db, cache, videoId, lang, 'native');
             if (waitUntil) {
-                waitUntil(markNegativeCache);
+                waitUntil(markNegativeCache.catch(() => {}));
             } else {
                 await markNegativeCache;
             }
@@ -178,7 +176,7 @@ export class TranscriptService {
         ]);
 
         if (waitUntil) {
-            waitUntil(cleanupStaleJobs(db));
+            waitUntil(cleanupStaleJobs(db).catch(() => {}));
         }
 
         // 6. Start polling

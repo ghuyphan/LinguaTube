@@ -21,7 +21,7 @@ $transition-fast: 0.15s ease;
     width: auto;
     z-index: $z-fullscreen-subtitle;
     text-align: center;
-    transition: top 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity $transition-normal;
+    transition: top 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity $transition-normal;
     pointer-events: auto;
     display: flex;
     justify-content: center;
@@ -29,10 +29,19 @@ $transition-fast: 0.15s ease;
     padding-left: max(0.5rem, env(safe-area-inset-left));
     padding-right: max(0.5rem, env(safe-area-inset-right));
 
+    &.controls-visible.is-near-bottom {
+        // Smoothly lift subtitle to maintain clear distance from player controls bottom bar
+        transform: translate(-50%, calc(-50% - 44px));
+
+        @media (max-width: 640px) {
+            transform: translate(-50%, calc(-50% - 38px));
+        }
+    }
+
     &.is-dragging {
         transition: none !important;
         user-select: none;
-        transform: translate(-50%, -50%) scale(1.015);
+        transform: translate(-50%, -50%) scale(1.015) !important;
         cursor: grabbing;
 
         .fs-subtitle-card,
@@ -141,6 +150,8 @@ $transition-fast: 0.15s ease;
     align-items: center;
     justify-content: center;
     width: 100%;
+    min-height: 2.25rem;
+    transition: min-height 0.15s ease-out;
 }
 
 @keyframes subtitleFadeIn {

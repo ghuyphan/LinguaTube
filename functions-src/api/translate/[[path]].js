@@ -8,7 +8,6 @@ import { validateAuthToken, getUserTier } from '../../middlewares/auth.js';
 import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
 import {
     consumeRateLimit,
-    getClientIP,
     getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders,

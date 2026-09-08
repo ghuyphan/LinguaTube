@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, timeout } from 'rxjs';
 import { RecommendedVideo } from '../../models';
 import { VideoLevelService } from './video-level.service';
+import { environment } from '../../../environments/environment';
 
 interface RecommendedVideosResponse {
     success: boolean;
@@ -10,6 +11,14 @@ interface RecommendedVideosResponse {
     count: number;
     videos: RecommendedVideo[];
     source?: string;
+}
+
+const LS_CACHE_PREFIX = 'voca_rec_videos_';
+const LS_CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+
+interface LocalStorageCacheEntry {
+    timestamp: number;
+    videos: RecommendedVideo[];
 }
 
 @Injectable({
@@ -35,24 +44,53 @@ export class VideoRecommendationService {
      * @param language Language code ('ja', 'ko', 'zh', 'en')
      * @param tier Optional proficiency tier ('beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced')
      * @param limit Number of videos to fetch (default 12)
+     * @param forceRefresh Force fresh reload from backend, bypassing and evicting in-memory and LocalStorage caches
      */
-    async loadRecommendedVideos(language: string, tier?: string, limit = 12): Promise<RecommendedVideo[]> {
+    async loadRecommendedVideos(language: string, tier?: string, limit = 12, forceRefresh = false): Promise<RecommendedVideo[]> {
         if (!language) return [];
 
         const activeTier = tier && tier !== 'all' ? tier : undefined;
         const cacheKey = `${language}_${activeTier || 'all'}_${limit}`;
-        if (this.cache.has(cacheKey)) {
-            const cached = this.cache.get(cacheKey)!;
-            this.recommendedVideos.set(cached);
-            return cached;
+
+        if (forceRefresh) {
+            this.cache.delete(cacheKey);
+            try {
+                localStorage.removeItem(LS_CACHE_PREFIX + cacheKey);
+            } catch { }
+        } else {
+            // 1. Check in-memory cache
+            if (this.cache.has(cacheKey)) {
+                const cached = this.cache.get(cacheKey)!;
+                this.recommendedVideos.set(cached);
+                return cached;
+            }
+
+            // 2. Check LocalStorage cache (persists across page reloads/navigations)
+            try {
+                const raw = localStorage.getItem(LS_CACHE_PREFIX + cacheKey);
+                if (raw) {
+                    const parsed: LocalStorageCacheEntry = JSON.parse(raw);
+                    if (Date.now() - parsed.timestamp < LS_CACHE_TTL_MS && Array.isArray(parsed.videos) && parsed.videos.length > 0) {
+                        this.cache.set(cacheKey, parsed.videos);
+                        this.recommendedVideos.set(parsed.videos);
+                        return parsed.videos;
+                    }
+                }
+            } catch {
+                // Ignore localStorage read errors
+            }
         }
 
         this.isLoading.set(true);
 
         try {
-            let url = `/api/recommended-videos?lang=${encodeURIComponent(language)}&limit=${limit}`;
+            const endpoint = environment.api.recommendedVideos;
+            let url = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}`;
             if (activeTier) {
                 url += `&tier=${encodeURIComponent(activeTier)}`;
+            }
+            if (forceRefresh) {
+                url += `&refresh=true`;
             }
 
             const response = await firstValueFrom(
@@ -63,6 +101,18 @@ export class VideoRecommendationService {
             const rawVideos = response?.videos || [];
             const hydratedVideos = this.hydrateVideos(rawVideos, language);
             this.cache.set(cacheKey, hydratedVideos);
+
+            // Persist to LocalStorage
+            try {
+                const entry: LocalStorageCacheEntry = {
+                    timestamp: Date.now(),
+                    videos: hydratedVideos
+                };
+                localStorage.setItem(LS_CACHE_PREFIX + cacheKey, JSON.stringify(entry));
+            } catch {
+                // Ignore localStorage quota errors
+            }
+
             this.recommendedVideos.set(hydratedVideos);
             return hydratedVideos;
         } catch (err) {
@@ -102,9 +152,19 @@ export class VideoRecommendationService {
     }
 
     /**
-     * Clear in-memory cache
+     * Clear in-memory and persistent cache
      */
     clearCache(): void {
         this.cache.clear();
+        try {
+            for (let i = localStorage.length - 1; i >= 0; i--) {
+                const key = localStorage.key(i);
+                if (key && key.startsWith(LS_CACHE_PREFIX)) {
+                    localStorage.removeItem(key);
+                }
+            }
+        } catch {
+            // Ignore localStorage errors
+        }
     }
 }

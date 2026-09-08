@@ -22,6 +22,7 @@ export class AiCreditsDialogComponent implements OnInit, OnDestroy {
 
     readonly regenCountdown = signal<string>('');
     private timerId: ReturnType<typeof setInterval> | null = null;
+    private isRefreshing = false;
 
     ngOnInit(): void {
         this.transcript.refreshDiamonds();
@@ -54,9 +55,14 @@ export class AiCreditsDialogComponent implements OnInit, OnDestroy {
         const remaining = nextRegen - Date.now();
         if (remaining <= 0) {
             this.regenCountdown.set('');
-            this.transcript.refreshDiamonds();
+            if (!this.isRefreshing && !this.transcript.isDiamondLoading()) {
+                this.isRefreshing = true;
+                this.transcript.refreshDiamonds();
+                setTimeout(() => { this.isRefreshing = false; }, 10000);
+            }
             return;
         }
+        this.isRefreshing = false;
 
         const minutes = Math.floor(remaining / 60000);
         const seconds = Math.floor((remaining % 60000) / 1000);

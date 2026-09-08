@@ -63,8 +63,10 @@ export async function onRequestGet(context) {
                 const detected = detectLevelFromMetadata(d1Result.title, d1Result.channel);
                 if (detected) {
                     levels[detected.lang] = detected.level;
-                    // Persist auto-detected level in D1
-                    context.waitUntil?.(saveVideoLanguages(db, videoId, d1Result.availableLanguages, d1Result.durationSeconds, d1Result.title, d1Result.channel, d1Result.hasAutoCaptions, levels));
+                    context.waitUntil?.(
+                        saveVideoLanguages(db, videoId, d1Result.availableLanguages, d1Result.durationSeconds, d1Result.title, d1Result.channel, d1Result.hasAutoCaptions, levels)
+                            .catch(err => console.error('[VideoInfo] Level save error:', err))
+                    );
                 }
             }
 

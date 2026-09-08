@@ -513,6 +513,7 @@
         "curated": "Tuyển chọn",
         "featured": "Nổi bật",
         "forYou": "Dành cho bạn",
+        "refresh": "Làm mới đề xuất",
         "recommendedVideos": "Video đề xuất",
         "curatedPlaylists": "Danh sách phát tuyển chọn",
         "instantSubtitles": "Phụ đề tức thì",
@@ -568,7 +569,8 @@
         "close": "Đóng",
         "clear": "Xóa",
         "search": "Tìm kiếm...",
-        "options": "Tùy chọn"
+        "options": "Tùy chọn",
+        "refresh": "Làm mới"
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",

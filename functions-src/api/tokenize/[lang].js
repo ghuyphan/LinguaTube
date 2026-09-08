@@ -7,7 +7,6 @@ import { jsonResponse, handleOptions, errorResponse, validateTextLength } from '
 import { tokenize } from '../../utils/tokenizer.js';
 import {
     consumeRateLimit,
-    getClientIP,
     getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders

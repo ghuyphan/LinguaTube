@@ -513,6 +513,7 @@
         "curated": "精选",
         "featured": "精选",
         "forYou": "为你推荐",
+        "refresh": "刷新推荐",
         "recommendedVideos": "推荐视频",
         "curatedPlaylists": "精选歌单",
         "instantSubtitles": "即时字幕",
@@ -568,7 +569,8 @@
         "close": "关闭",
         "clear": "清除",
         "search": "搜索...",
-        "options": "选项"
+        "options": "选项",
+        "refresh": "刷新"
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",

@@ -241,8 +241,11 @@ export class DiamondService {
 
                 // Throttled KV write (fire and forget) to preserve KV daily quota
                 if (this.cacheManager && this.cacheManager.kv) {
-                    this.cacheManager.kv.put(cacheKey, JSON.stringify(newCacheData), { expirationTtl: 30 * 24 * 60 * 60 })
+                    const kvTask = this.cacheManager.kv.put(cacheKey, JSON.stringify(newCacheData), { expirationTtl: 30 * 24 * 60 * 60 })
                         .catch(e => console.error(`[DiamondService] KV regen update error: ${e.message}`));
+                    if (context && context.waitUntil) {
+                        context.waitUntil(kvTask);
+                    }
                 }
             }
         }

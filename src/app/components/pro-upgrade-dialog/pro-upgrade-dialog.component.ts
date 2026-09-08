@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, computed, output, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, computed, output, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { I18nService, AuthService, PaymentService, ToastService } from '../../core/services';
@@ -26,7 +26,7 @@ export interface PlanOption {
     templateUrl: './pro-upgrade-dialog.component.html',
     styleUrls: ['./pro-upgrade-dialog.component.scss']
 })
-export class ProUpgradeDialogComponent implements OnInit {
+export class ProUpgradeDialogComponent implements OnInit, OnDestroy {
     readonly i18n = inject(I18nService);
     readonly auth = inject(AuthService);
     readonly payment = inject(PaymentService);
@@ -96,6 +96,10 @@ export class ProUpgradeDialogComponent implements OnInit {
             this.selectedTier.set('premium');
             this.selectedPlan.set('premium_1m');
         }
+    }
+
+    ngOnDestroy(): void {
+        this.payment.clearOrder();
     }
 
     setTier(tier: PlanTier): void {

@@ -216,7 +216,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 ### 3.6. Tokenization Endpoints
 - **Routes**:
   - `POST /api/tokenize/:lang` (Single text block)
-  - `POST /api/tokenize-batch/:lang` (Array of up to 500 texts for bulk subtitle tokenization)
+  - `POST /api/tokenize-batch/:lang` (Array of up to 100 texts for bulk subtitle tokenization under 10ms CPU)
 - **Source**: `functions-src/api/tokenize/[lang].js`, `functions-src/api/tokenize-batch/[lang].js`
 - **Dual-Layer Cache Architecture**:
   - In-memory warm isolate cache (`memTokenBatchCache`, up to 50 videos) resolves repeated requests in $<0.1$ms (`X-Cache: HIT-MEM`).

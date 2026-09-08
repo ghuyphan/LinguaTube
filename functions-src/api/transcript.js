@@ -14,7 +14,6 @@ import { getNextApiKey, markKeyRateLimited } from '../utils/api-key-rotator.js';
 import {
     jsonResponse, handleOptions, errorResponse, logError, sanitizeVideoId
 } from '../utils/utils.js';
-import { cleanTranscriptSegments } from '../utils/transcript-utils.js';
 import { consumeRateLimit, getClientIdentifier, getTieredConfig, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
 import {

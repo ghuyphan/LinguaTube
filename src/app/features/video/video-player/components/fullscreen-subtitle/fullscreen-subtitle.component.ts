@@ -6,7 +6,8 @@ import {
     inject,
     computed,
     signal,
-    OnDestroy
+    OnDestroy,
+    NgZone
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GrammarMatch, SubtitleCue, SupportedLearningLanguage, Token } from '../../../../../models';
@@ -121,6 +122,7 @@ import { VocabularyService } from '../../../../vocabulary';
 export class FullscreenSubtitleComponent implements OnDestroy {
     vocab = inject(VocabularyService);
     settings = inject(SettingsService);
+    private ngZone = inject(NgZone);
 
     // Inputs
     currentCue = input.required<SubtitleCue | null>();
@@ -261,7 +263,6 @@ export class FullscreenSubtitleComponent implements OnDestroy {
                 this.dragRafId = null;
             }
 
-            this.isDragging.set(false);
             try {
                 target.releasePointerCapture(upEvent.pointerId);
             } catch {}
@@ -269,20 +270,25 @@ export class FullscreenSubtitleComponent implements OnDestroy {
             this.cleanupDragListeners?.();
             this.cleanupDragListeners = null;
 
-            if (!this.hasMoved) {
-                if (isHandle) {
-                    this.togglePosition.emit();
+            this.ngZone.run(() => {
+                this.isDragging.set(false);
+                if (!this.hasMoved) {
+                    if (isHandle) {
+                        this.togglePosition.emit();
+                    }
+                } else {
+                    // Free dragging: commit exact position without forced snapping locks
+                    const current = Math.max(8, Math.min(88, Math.round(this.yPercent())));
+                    this.positionCommitted.emit(current);
                 }
-            } else {
-                // Free dragging: commit exact position without forced snapping locks
-                const current = Math.max(8, Math.min(88, Math.round(this.yPercent())));
-                this.positionCommitted.emit(current);
-            }
+            });
         };
 
-        window.addEventListener('pointermove', onPointerMove);
-        window.addEventListener('pointerup', onPointerUp);
-        window.addEventListener('pointercancel', onPointerUp);
+        this.ngZone.runOutsideAngular(() => {
+            window.addEventListener('pointermove', onPointerMove);
+            window.addEventListener('pointerup', onPointerUp);
+            window.addEventListener('pointercancel', onPointerUp);
+        });
 
         this.cleanupDragListeners = () => {
             if (this.dragRafId !== null) {

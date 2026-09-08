@@ -53,11 +53,7 @@
     {
       "name": "api-dictionary",
       "urls": [
-        "/api/dict*",
-        "/api/mdbg*",
-        "/api/krdict*",
-        "/api/endict*",
-        "/proxy/jotoba/*"
+        "/api/dict*"
       ],
       "cacheConfig": {
         "strategy": "performance",
@@ -68,13 +64,34 @@
     {
       "name": "api-video-info",
       "urls": [
-        "/api/video-info",
-        "/api/innertube"
+        "/api/video-info"
       ],
       "cacheConfig": {
         "strategy": "performance",
         "maxSize": 100,
         "maxAge": "1d"
+      }
+    },
+    {
+      "name": "api-recommendations",
+      "urls": [
+        "/api/recommended-videos*"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 20,
+        "maxAge": "1h"
+      }
+    },
+    {
+      "name": "api-dual-subtitles",
+      "urls": [
+        "/api/dual-subtitles*"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 50,
+        "maxAge": "7d"
       }
     }
   ]

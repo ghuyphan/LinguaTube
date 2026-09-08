@@ -513,6 +513,7 @@
         "curated": "Curated",
         "featured": "Featured",
         "forYou": "For You",
+        "refresh": "Refresh recommendations",
         "recommendedVideos": "Recommended Videos",
         "curatedPlaylists": "Curated Playlists",
         "instantSubtitles": "Instant Subtitles",
@@ -568,7 +569,8 @@
         "close": "Close",
         "clear": "Clear",
         "search": "Search...",
-        "options": "Options"
+        "options": "Options",
+        "refresh": "Refresh"
     },
     "onboarding": {
         "welcomeTitle": "Welcome to Voca",

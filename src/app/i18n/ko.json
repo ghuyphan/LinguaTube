@@ -513,6 +513,7 @@
         "curated": "엄선",
         "featured": "주요",
         "forYou": "당신을 위한 추천",
+        "refresh": "추천 동영상 새로고침",
         "recommendedVideos": "추천 동영상",
         "curatedPlaylists": "추천 재생목록",
         "instantSubtitles": "즉시 자막 지원",
@@ -568,7 +569,8 @@
         "close": "닫기",
         "clear": "지우기",
         "search": "검색...",
-        "options": "옵션"
+        "options": "옵션",
+        "refresh": "새로고침"
     },
     "onboarding": {
         "welcomeTitle": "Voca에 오신 것을 환영합니다",

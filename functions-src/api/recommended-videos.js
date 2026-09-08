@@ -33,28 +33,31 @@ export async function onRequestGet(context) {
     const limitParam = parseInt(url.searchParams.get('limit'), 10);
     const limit = Math.min(Math.max(isNaN(limitParam) ? 12 : limitParam, 1), 50);
 
+    const isRefresh = url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
     const cacheKey = `${lang}_${tier || 'all'}_${limit}`;
 
-    // 1. Fast in-memory cache check (warm isolate)
-    const cached = memCache.get(cacheKey);
-    if (cached && (Date.now() - cached.timestamp < MEM_CACHE_TTL_MS)) {
-        return jsonResponse({
-            success: true,
-            language: lang,
-            tier: tier || undefined,
-            count: cached.videos.length,
-            videos: cached.videos,
-            source: 'cache:memory'
-        }, 200, {
-            'X-Cache': 'HIT-MEMORY',
-            'Cache-Control': CDN_CACHE_HEADER
-        });
+    // 1. Fast in-memory cache check (warm isolate) - bypassed when user forces reload
+    if (!isRefresh) {
+        const cached = memCache.get(cacheKey);
+        if (cached && (Date.now() - cached.timestamp < MEM_CACHE_TTL_MS)) {
+            return jsonResponse({
+                success: true,
+                language: lang,
+                tier: tier || undefined,
+                count: cached.videos.length,
+                videos: cached.videos,
+                source: 'cache:memory'
+            }, 200, {
+                'X-Cache': 'HIT-MEMORY',
+                'Cache-Control': CDN_CACHE_HEADER
+            });
+        }
     }
 
-    // 2. Query Cloudflare (D1 database + R2 storage)
+    // 2. Query Cloudflare (D1 database + R2 storage) with candidate shuffling on refresh
     const db = env?.VOCAB_DB;
     const r2 = env?.TRANSCRIPT_STORAGE;
-    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier);
+    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier, isRefresh);
 
     // Save to isolate memory cache
     memCache.set(cacheKey, {
@@ -68,9 +71,9 @@ export async function onRequestGet(context) {
         tier: tier || undefined,
         count: videos.length,
         videos,
-        source: 'cloudflare'
+        source: isRefresh ? 'cloudflare:refresh' : 'cloudflare'
     }, 200, {
-        'X-Cache': 'MISS',
-        'Cache-Control': CDN_CACHE_HEADER
+        'X-Cache': isRefresh ? 'BYPASS' : 'MISS',
+        'Cache-Control': isRefresh ? 'no-cache, no-store, must-revalidate' : CDN_CACHE_HEADER
     });
 }

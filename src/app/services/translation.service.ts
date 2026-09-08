@@ -36,7 +36,6 @@ const MAX_CACHE_SIZE = 1000;
     providedIn: 'root'
 })
 export class TranslationService implements OnDestroy {
-    private readonly API_URL = environment.api.translate;
     private readonly http = inject(HttpClient);
 
     // In-memory cache for translations
@@ -73,7 +72,7 @@ export class TranslationService implements OnDestroy {
             target: params.target
         }).pipe(
             retry({
-                count: 3,
+                count: 2,
                 delay: (error, retryCount) => {
                     // Only retry on 429 or 5xx
                     if (error.status !== 429 && !error.status.toString().startsWith('5')) {
@@ -82,13 +81,15 @@ export class TranslationService implements OnDestroy {
 
                     // Get retry-after from header or default to exponential backoff
                     const retryAfterHeader = error.headers?.get('Retry-After');
-                    let delayMs = 1000 * Math.pow(2, retryCount - 1); // 1s, 2s, 4s
+                    let delayMs = 1000 * Math.pow(2, retryCount - 1); // 1s, 2s
 
                     if (retryAfterHeader) {
                         const seconds = parseInt(retryAfterHeader, 10);
                         if (!isNaN(seconds)) {
                             delayMs = seconds * 1000;
                         }
+                    } else if (error.status === 429) {
+                        delayMs = Math.max(delayMs, 5000); // Enforce 5s min on 429
                     }
 
                     console.warn(`[Translation] Batch failed (${error.status}), retrying in ${delayMs}ms...`);

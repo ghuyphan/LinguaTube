@@ -137,8 +137,10 @@ CREATE TABLE IF NOT EXISTS leaderboard (
 );
 
 CREATE INDEX IF NOT EXISTS idx_leaderboard_xp ON leaderboard(xp DESC);
+CREATE INDEX IF NOT EXISTS idx_leaderboard_lang_xp ON leaderboard(target_lang, xp DESC);
 CREATE INDEX IF NOT EXISTS idx_leaderboard_updated ON leaderboard(updated_at);
 ```
+- **Compound Indexing**: `idx_leaderboard_lang_xp` allows lightning-fast filtered leaderboard queries by language without full table scans.
 - **Monotonic Progression**: Updates use `MAX(leaderboard.xp, excluded.xp)` to guarantee XP never decreases during concurrent synchronization.
 - **Client Cache**: Synchronized to LocalStorage key `linguatube_leaderboard_cache` with simulated offline fallback ranks.
 
@@ -321,6 +323,7 @@ Executed server-side on PocketBase:
 | `lingua-tube-last-video` | `YoutubeService` | `string` (videoId) | Video ID for resuming last session |
 | `linguatube_daily_study_progress` | `StudyPageComponent` | `{ count: number, date: string }` | Daily reviewed flashcard counter |
 | `linguatube_daily_study_goal` | `StudyPageComponent` | `number` | Daily study target (default 20 cards) |
+| `voca_rec_videos_{lang}_{tier}_{limit}` | `VideoRecommendationService` | `{ timestamp: number, videos: RecommendedVideo[] }` | Curated recommended video cache (1-hour TTL) |
 | `pocketbase_auth` | `PocketBaseService` | `{ token: string, model: User }` | User auth session token and profile |
 
 ### 6.3. Storage Quota Eviction Policy (`StorageService`)

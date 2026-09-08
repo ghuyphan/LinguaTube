@@ -513,6 +513,7 @@
         "curated": "厳選",
         "featured": "注目",
         "forYou": "あなたへのおすすめ",
+        "refresh": "おすすめ動画を更新",
         "recommendedVideos": "おすすめ動画",
         "curatedPlaylists": "厳選プレイリスト",
         "instantSubtitles": "即時字幕あり",
@@ -568,7 +569,8 @@
         "close": "閉じる",
         "clear": "クリア",
         "search": "検索...",
-        "options": "オプション"
+        "options": "オプション",
+        "refresh": "更新"
     },
     "onboarding": {
         "welcomeTitle": "Vocaへようこそ",

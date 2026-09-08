@@ -1,6 +1,6 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, tap, catchError, of, interval, switchMap, takeWhile } from 'rxjs';
+import { Observable, tap, catchError, of, interval, switchMap, takeWhile, takeUntil, timer } from 'rxjs';
 import { ToastService } from './toast.service';
 import { AuthService } from './auth.service';
 import { TranscriptService } from '../../features/video/transcript.service';
@@ -94,6 +94,7 @@ export class PaymentService {
   private pollOrderStatus(orderCode: number): void {
     interval(3000).pipe(
       takeWhile(() => !this.isPaid() && this.currentOrder()?.orderCode === orderCode),
+      takeUntil(timer(10 * 60 * 1000)), // Max 10 minutes timeout to prevent zombie polling
       switchMap(() => this.checkStatus(orderCode).pipe(
         catchError(err => {
           console.warn('[PaymentService] Status check transient error, retrying:', err);

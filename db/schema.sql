@@ -109,5 +109,7 @@ CREATE TABLE IF NOT EXISTS leaderboard (
 );
 
 CREATE INDEX IF NOT EXISTS idx_leaderboard_xp ON leaderboard(xp DESC);
+CREATE INDEX IF NOT EXISTS idx_leaderboard_lang_xp ON leaderboard(target_lang, xp DESC);
 CREATE INDEX IF NOT EXISTS idx_leaderboard_updated ON leaderboard(updated_at);
+
 

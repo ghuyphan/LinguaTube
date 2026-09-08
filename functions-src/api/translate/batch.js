@@ -4,7 +4,7 @@
  * Route: POST /api/translate/batch
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody, sha256 } from '../../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody, sha256, sanitizeLanguage, validateBatchSize } from '../../utils/utils.js';
 import {
     consumeRateLimitUnits,
     getClientIdentifier,

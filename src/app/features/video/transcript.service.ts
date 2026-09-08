@@ -237,6 +237,14 @@ export class TranscriptService {
         this.transcriptCache.delete(cacheKey);
       } else {
         log('Memory cache hit:', { videoId, lang, cues: cached.length });
+        if (cached.length === 0) {
+          this.state.set({
+            status: 'error',
+            code: 'NO_SUBTITLES',
+            whisperAvailable: this.whisperAvailable()
+          });
+          return of([]);
+        }
         this.state.set({ status: 'complete', language: lang, source: 'native', cues: cached });
         return of(cached);
       }
@@ -279,6 +287,9 @@ export class TranscriptService {
               // Save to IndexedDB with actual detected language (fire-and-forget)
               const source = this.captionSource() || 'native';
               this.persistentCache.set(videoId, detectedLang, cues, source).catch(() => { });
+            } else {
+              // Negative caching: remember this video has no native transcripts
+              this.transcriptCache.set(cacheKey, []);
             }
           }),
           catchError(err => this.handleHttpError(err))

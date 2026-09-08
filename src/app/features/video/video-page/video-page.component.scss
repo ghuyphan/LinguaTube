@@ -136,6 +136,7 @@
        HOME DASHBOARD (UNIFIED WITH APP DESIGN SYSTEM)
        ============================================ */
     .home-dashboard {
+      position: relative;
       padding: var(--space-md);
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -145,6 +146,46 @@
       gap: var(--space-md);
       max-height: calc(var(--app-height, 100dvh) - 158px);
       overflow: hidden;
+
+      /* YouTube-style Floating Pull-to-Refresh Indicator (Zero layout shift overlay) */
+      .pull-refresh-container {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+        z-index: 30;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+        will-change: transform, opacity;
+
+        &.is-touching {
+          transition: none;
+        }
+
+        &.is-refreshing {
+          transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pull-refresh-pill {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: var(--bg-surface);
+          border: 1px solid var(--border-color);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+          color: var(--accent-primary);
+
+          .spin-icon {
+            animation: spin 0.8s linear infinite;
+          }
+        }
+      }
 
       @media (max-width: 1024px) {
         max-height: 72vh;
@@ -181,6 +222,37 @@
         display: flex;
         align-items: center;
         gap: 6px;
+      }
+
+      .filter-chip--refresh {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border-radius: var(--border-radius-pill);
+        border: 1px solid var(--border-color);
+        background: var(--bg-surface);
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        flex-shrink: 0;
+
+        &:hover:not(:disabled) {
+          background: var(--bg-hover);
+          color: var(--text-primary);
+          border-color: var(--border-color-hover, var(--border-color));
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: default;
+        }
+
+        .spin-icon {
+          animation: spin 0.8s linear infinite;
+        }
       }
 
       .filter-chip--level {

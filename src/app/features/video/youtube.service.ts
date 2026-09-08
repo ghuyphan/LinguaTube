@@ -634,14 +634,24 @@ export class YoutubeService {
       this.timeUpdateInterval = null;
     }
 
-    try {
-      this.player?.destroy();
-    } catch { }
-
+    const playerToDestroy = this.player;
     this.player = null;
     this.isPlaying.set(false);
     this.isReady.set(false);
     this.error.set(null);
+
+    if (playerToDestroy) {
+      try {
+        playerToDestroy.pauseVideo?.();
+      } catch { }
+      // Defer synchronous iframe DOM removal and buffer teardown to the next tick
+      // so route unmounting / navigation transitions complete smoothly without main-thread freeze.
+      setTimeout(() => {
+        try {
+          playerToDestroy.destroy();
+        } catch { }
+      }, 0);
+    }
   }
 
   reset(): void {
