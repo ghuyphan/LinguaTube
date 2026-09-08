@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../history.service';
 import { I18nService, AuthService, VideoLevelService } from '../../../core/services';
-import { HistoryItem, ProficiencyLevelTier } from '../../../models';
+import { HistoryItem, ProficiencyLevelTier, getLanguageFlagUrl } from '../../../models';
 import { formatTime, getYouTubeThumbnail } from '../../../core/utils';
 
 @Component({
@@ -28,6 +28,7 @@ export class HistoryListComponent {
     private router = inject(Router);
     readonly auth = inject(AuthService);
     readonly i18n = inject(I18nService);
+    readonly getFlagUrl = getLanguageFlagUrl;
 
     // Inputs
     items = input.required<HistoryItem[]>();

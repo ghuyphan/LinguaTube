@@ -258,7 +258,16 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
     - **Zero Layout Shift (0% CLS)**: Tapping the bar or chevron opens a modal `<app-bottom-sheet>` instead of expanding in-flow. The video player and subtitles beneath it remain stationary and completely undisturbed.
     - Inside the bottom sheet, the user can reorder videos (cdkDrag if owner), switch videos, toggle loop/shuffle, share, or open individual video options. Selecting a video automatically closes the sheet and navigates to the video.
   - **Navigation Guarding**: Playlist previous (`canPlayPrev`) and next (`canPlayNext`) actions are disabled when `videos.length <= 1` (unless playlist loop mode is toggled), preventing dead interactions.
-- **Server-Side Recommendation Engine ("Dành cho bạn" / "For You")**:
+- **Dual "For You" Home Dashboard ("Dành cho bạn" / "For You")**:
+  - When no video is currently loaded, the Home Dashboard features a segmented control switching seamlessly between:
+    1. **Recommended Videos (`homeTab = 'videos'`)**: Bite-sized single videos with verified transcripts stored in the database.
+    2. **Featured Playlists (`homeTab = 'playlists'`)**: Curated multi-video learning collections.
+- **Verified Database Transcript Video Recommendations (`VideoRecommendationService`)**:
+  - Solves the cold-start problem: learners don't need a YouTube URL ready on their clipboard to start practicing.
+  - **Pre-Processed & Instant (<100ms)**: Videos are sourced from Cloudflare D1 (`video_languages`) and R2 permanent transcripts. Zero scraping delay, zero risk of missing captions, and zero AI Diamond credit consumption.
+  - **Proficiency Level & Language Alignment**: Every recommended video displays a circular SVG flag (`.circle-flag`) for its target language and its detected CEFR, JLPT, HSK, or TOPIK difficulty tier badge (`VideoLevelService`) alongside duration, channel, and an "Instant Subtitles" badge. Eliminates redundant text codes and clutter.
+  - **1-Click Play**: Clicking any video immediately updates the URL query parameter (`?v=videoId`), mounts the player, and loads synchronized cues.
+- **Server-Side Playlist Recommendation Engine**:
   - Automatically queries PocketBase with targeted server-side filtering (`visibility="published" && language="${lang}" && video_count >= 2`).
   - Ranked on the server by `-is_featured, -save_count, -updated` to prioritize curated and popular community content while filtering out single-video test spam.
   - Automatically re-fetches when learning language changes and caches results in memory per language.

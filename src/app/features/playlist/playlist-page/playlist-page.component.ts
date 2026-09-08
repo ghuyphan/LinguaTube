@@ -9,7 +9,7 @@ import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialo
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { I18nService, ToastService, VideoLevelService } from '../../../core/services';
 import { HistoryService } from '../../history/history.service';
-import { Playlist, PlaylistLanguage, PlaylistVideo, ProficiencyLevelTier, SUPPORTED_LANGUAGES } from '../../../models';
+import { Playlist, PlaylistLanguage, PlaylistVideo, ProficiencyLevelTier, SUPPORTED_LANGUAGES, getLanguageFlagUrl } from '../../../models';
 
 @Component({
     selector: 'app-playlist-page',
@@ -450,8 +450,7 @@ export class PlaylistPageComponent {
 
     getFlagUrl(lang: 'all' | PlaylistLanguage): string {
         if (lang === 'all') return '';
-        const found = SUPPORTED_LANGUAGES.find(l => l.code === lang);
-        return found?.flag || SUPPORTED_LANGUAGES[0].flag;
+        return getLanguageFlagUrl(lang);
     }
 
     getLanguageFilterLabel(): string {

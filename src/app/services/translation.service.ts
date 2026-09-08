@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription, map, catchError, of, timer, switchMap, retry, throwError, Subject, concatMap, delay } from 'rxjs';
+import { Observable, Subscription, map, catchError, of, timer, retry, throwError, Subject, concatMap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 

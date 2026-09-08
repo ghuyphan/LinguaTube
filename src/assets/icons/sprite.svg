@@ -188,7 +188,32 @@
     <ellipse cx="12" cy="17" rx="2" ry="2.5" fill="#FFCC00" stroke="none"></ellipse>
   </symbol>
   
-  <symbol id="trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></symbol>
+  <symbol id="trophy" viewBox="0 0 24 24">
+    <!-- Left Handle (Perfect concentric circular arcs flush to cup wall at x=6) -->
+    <path fill="#F59E0B" stroke="none" d="M 6 3.5 H 4 A 2.5 2.5 0 0 0 4 8.5 H 6 V 7 H 4 A 1 1 0 0 1 4 5 H 6 Z"></path>
+    <!-- Right Handle (Perfect concentric circular arcs flush to cup wall at x=18) -->
+    <path fill="#D97706" stroke="none" d="M 18 3.5 H 20 A 2.5 2.5 0 0 1 20 8.5 H 18 V 7 H 20 A 1 1 0 0 0 20 5 H 18 Z"></path>
+    <!-- Base Pedestal Foot -->
+    <rect x="5" y="19.5" width="14" height="2.5" rx="1.25" fill="#B45309" stroke="none"></rect>
+    <rect x="6" y="19.5" width="12" height="0.6" rx="0.3" fill="#FDE047" stroke="none"></rect>
+    <!-- Base Pedestal Column -->
+    <path fill="#F59E0B" stroke="none" d="M 7.5 16.8 H 12 V 19.5 H 6.5 Z"></path>
+    <path fill="#D97706" stroke="none" d="M 12 16.8 H 16.5 L 17.5 19.5 H 12 Z"></path>
+    <!-- Stem Column -->
+    <rect x="10.2" y="13.8" width="1.8" height="3.2" fill="#FBBF24" stroke="none"></rect>
+    <rect x="12" y="13.8" width="1.8" height="3.2" fill="#D97706" stroke="none"></rect>
+    <!-- Cup Left Half (Pure mathematical circle arc r=6 from 6,8.5 to 12,14.5) -->
+    <path fill="#FBBF24" stroke="none" d="M 6 2.5 H 12 V 14.5 A 6 6 0 0 1 6 8.5 Z"></path>
+    <!-- Cup Right Half (Pure mathematical circle arc r=6 from 12,14.5 to 18,8.5) -->
+    <path fill="#F59E0B" stroke="none" d="M 12 2.5 H 18 V 8.5 A 6 6 0 0 1 12 14.5 Z"></path>
+    <!-- Cup Right Shadow Crescent -->
+    <path fill="#D97706" stroke="none" d="M 15.5 2.5 H 18 V 8.5 A 6 6 0 0 1 13.8 13.8 C 15.6 12.6 16.8 10.5 16.8 8.2 V 2.5 Z"></path>
+    <!-- Top Rim Opening -->
+    <ellipse cx="12" cy="2.5" rx="6" ry="1.2" fill="#FDE047" stroke="none"></ellipse>
+    <ellipse cx="12" cy="2.5" rx="4.8" ry="0.65" fill="#B45309" stroke="none"></ellipse>
+    <!-- Center Star (Symmetrical 5-point star) -->
+    <polygon points="12,5.2 12.9,7.3 15.2,7.5 13.5,9.1 14,11.3 12,10.1 10,11.3 10.5,9.1 8.8,7.5 11.1,7.3" fill="#FFFFFF" opacity="0.95" stroke="none"></polygon>
+  </symbol>
   
   <symbol id="medal" viewBox="0 0 24 24"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path><path d="M11 12 5.12 2.2"></path><path d="m13 12 5.88-9.8"></path><path d="M8 7h8"></path><circle cx="12" cy="17" r="5"></circle><path d="M12 18v-2h-.5"></path></symbol>
   

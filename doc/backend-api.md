@@ -158,16 +158,20 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
       { "id": 0, "start": 1.2, "duration": 3.0, "text": "こんにちは" }
     ],
     "onlyCache": false,
-    "forceRefresh": false
+    "forceRefresh": false,
+    "saveOnly": false
   }
   ```
 - **Cache-First Fast Lookup (`onlyCache: true` or `?onlyCache=true`)**:
-  - Checks Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`) or local disk cache (`server/transcripts_cache/`).
+  - Checks Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) or local disk cache (`server/transcripts_cache/`).
   - If cached transcript exists: Returns `{ segments: [...], cached: true }`.
   - If not cached: Returns `{ segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
+- **Client Cache Write-Back (`saveOnly: true` or `onlySave: true`)**:
+  - When the client's lazy-loaded cue translations reach $\ge 80\%$ coverage (`QUALITY_THRESHOLD`), the frontend sends the compiled translated segments to `/api/dual-subtitles` with `saveOnly: true`.
+  - The backend validates the quality threshold and commits the translation to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. All future views by any user hit R2 directly (<50ms, \$0 translation cost).
 - **Process (Full Translation Request)**:
-  - Checks R2 cache: `translations/{videoId}/{sourceLang}_{targetLang}.json`.
-  - Batch translates subtitle text chunks in groups of 25 segments using Lingva/GTX to eliminate 25s Cloudflare Function timeout aborts.
+  - Checks R2 cache: `translations/{videoId}/{sourceLang}-{targetLang}.json`.
+  - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via Lingva/GTX to eliminate 25s Cloudflare Function timeout aborts and 429 rate limit errors.
   - Requires an 80% translation success rate (`QUALITY_THRESHOLD`) before saving to R2 and D1 `translation_meta`.
 
 ---
@@ -196,10 +200,10 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 - **Max Batch Size**: 50 texts per request.
 - **Process**:
   - Deduplicates texts before rate-limit unit deduction.
-  - Generates a SHA-256 batch signature hash: `batchKey = trbatch:v1:{source}:{target}:{hash}`.
-  - Checks Cloudflare KV for cached full-batch response.
-  - Translates missing items in bulk via Lingva.
-  - Saves full batch in a single KV write (7-day TTL) to preserve KV write quota.
+  - Checks warm worker isolate in-memory LRU phrase cache (`memPhraseCache`) for common subtitle phrases (e.g. greetings, common responses) to eliminate redundant network calls.
+  - Checks Cloudflare KV for cached full-batch response (`trbatch:v1:{source}:{target}:{hash}`).
+  - Translates missing items in bulk using XML-tagged index batching (`<t id="N">...</t>`) via Lingva/GTX with targeted individual recovery for any missing tags (avoiding 35x sequential fallback loops).
+  - Saves fresh batches in KV (7-day TTL) only when fresh translations occur to preserve Cloudflare KV write quota (Rule 2).
 
 ---
 
@@ -262,9 +266,46 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   ```
 - **Caching**: `Cache-Control: public, max-age=86400, s-maxage=604800`.
 
+### 3.10. Recommended Videos API (Verified Database Transcripts)
+- **Route**: `GET /api/recommended-videos?lang={lang}&limit={limit}`
+- **Source**: `functions-src/api/recommended-videos.js`
+- **Query Parameters**:
+  - `lang`: Target learning language (`ja`, `ko`, `zh`, `en`, defaults to `ja`).
+  - `limit`: Maximum items to return (1-50, default `12`).
+- **Database Query & Quality Gates**:
+  - Queries Cloudflare D1 `video_languages` table for pre-processed transcripts (`available_languages LIKE '%"lang"%'`).
+  - Strict quality gates: `title IS NOT NULL AND title != ''`, `duration_seconds BETWEEN 30 AND 3600`.
+  - Ordered by `updated_at DESC`.
+  - Extracts proficiency level from `levels` JSON or falls back to regex title heuristic (`detectLevelFromMetadata`).
+- **Caching & Efficiency**:
+  - Warm Worker isolate in-memory caching (`memCache`, 15-minute TTL).
+  - HTTP Edge CDN caching header: `Cache-Control: public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400`.
+  - Zero Cloudflare KV write cost, strictly preserving free-tier limits.
+- **Response**:
+  ```json
+  {
+    "success": true,
+    "language": "ja",
+    "count": 12,
+    "videos": [
+      {
+        "videoId": "BZRT37f8zZY",
+        "title": "Japanese Listening Practice for Beginners - JLPT N4 Story",
+        "channel": "Japanese Immersion",
+        "duration": 420,
+        "thumbnail": "https://i.ytimg.com/vi/BZRT37f8zZY/mqdefault.jpg",
+        "languages": ["ja", "en"],
+        "level": "JLPT N4",
+        "updatedAt": 1725732000
+      }
+    ],
+    "source": "d1"
+  }
+  ```
+
 ---
 
-### 3.10. Safe Reverse Proxy
+### 3.11. Safe Reverse Proxy
 - **Route**: `ALL /proxy/[service]/[[path]]`
 - **Source**: `functions-src/proxy/[service]/[[path]].js`
 - **SSRF & Abuse Protections**:

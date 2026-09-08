@@ -14,4 +14,5 @@ export * from './payment.service';
 export * from './video-level.service';
 export * from './leaderboard.service';
 export * from './gamification.service';
+export * from './video-recommendation.service';
 

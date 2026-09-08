@@ -63,7 +63,7 @@
                         <button type="button" class="filter-chip filter-chip--lang" (click)="showLanguageFilter.set(true)"
                             [attr.aria-label]="getLanguageFilterLabel()" [title]="getLanguageFilterLabel()">
                             @if (languageFilter() !== 'all') {
-                            <span class="lang-badge">{{ languageFilter().toUpperCase() }}</span>
+                            <img [src]="getFlagUrl(languageFilter())" class="circle-flag circle-flag--sm" alt="" />
                             } @else {
                             <app-icon name="languages" [size]="14" />
                             }
@@ -131,7 +131,7 @@
                             <h3 class="playlist-item__title" [title]="playlist.title">{{ playlist.title }}</h3>
                             <div class="playlist-item__meta">
                                 @if (playlist.language) {
-                                <span class="lang-badge">{{ playlist.language.toUpperCase() }}</span>
+                                <img [src]="getFlagUrl(playlist.language)" class="circle-flag" [alt]="playlist.language" [title]="playlist.language.toUpperCase()" loading="lazy" />
                                 }
                                 @if (getPlaylistLevel(playlist); as lvl) {
                                 <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>

@@ -20,7 +20,10 @@
             <p class="panel-header__subtitle">{{ i18n.t('study.subtitle') }}</p>
             <div class="study-meta-tags">
                 <span class="badge badge--primary">{{ availableCards() }} {{ i18n.t('study.cards') }}</span>
-                <span class="badge badge--accent">{{ currentLanguageLabel() }}</span>
+                <span class="badge badge--accent">
+                    <img [src]="currentLanguageFlag()" class="circle-flag circle-flag--sm" alt="" />
+                    <span>{{ currentLanguageLabel() }}</span>
+                </span>
                 @if (currentReadingDisplayLabel()) {
                 <span class="badge badge--primary">{{ currentReadingDisplayLabel() }}</span>
                 }

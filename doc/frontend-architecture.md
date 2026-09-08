@@ -118,6 +118,11 @@ graph TD
 
 #### VideoPageComponent (`video-page/`)
 - Host shell coordinating player, subtitles, unified sidebar, and mobile queue.
+- **Home Dashboard & "For You" Discovery (`.home-dashboard`)**:
+  - Displayed when no video is loaded (`showLearnHome`).
+  - Features a segmented control switching between **Recommended Videos** (single videos with verified transcripts in D1/R2) and **Curated Playlists**.
+  - Powered by `VideoRecommendationService` with client-side language memoization and instant (<100ms) playback.
+  - Video row cards (`.home-row-item`) display duration badges, channel, target language, CEFR/JLPT/HSK/TOPIK level tier badges (`VideoLevelService`), and an "Instant Subtitles" indicator.
 - **Unified Desktop Sidebar (`.unified-sidebar`)**:
   - Encapsulates `PlaylistPanelComponent` and `VocabularyListComponent` inside a single card container with segmented tab switcher (`[Playlist (N)]` / `[Vocabulary (N)]`).
   - Retains playlist tab on desktop even for single-video playlists (`hasPlaylist`), allowing playlist management without cluttering the page.
@@ -166,9 +171,10 @@ graph TD
 - **Cache-First Fast Start (`initDualSubtitles`)**:
   - Queries `/api/dual-subtitles?onlyCache=true`. If pre-translated transcripts exist in R2, populates the entire map instantaneously (`isDualCached: true`).
   - If a cache miss occurs, avoids blocking playback by immediately requesting on-demand translation of only the first batch (cues 0–35), unlocking immediate playback start.
-- **Sliding-Window Lazy Translation (`lazyLoadUpcomingCuesIfNeeded`)**:
+- **Sliding-Window Lazy Translation & Auto-Persistence (`lazyLoadUpcomingCuesIfNeeded`)**:
   - As playback advances, `updateCurrentCue` checks the current cue position.
-  - Automatically fetches the next batch of 25 cues in the background before the user reaches them, minimizing latency and eliminating duplicate API calls.
+  - Automatically fetches the next batch of cues in the background before the user reaches them, minimizing latency and eliminating duplicate API calls.
+  - **Auto-Persistence to R2**: Once translated cue coverage reaches $\ge 80\%$, `SubtitleService` automatically invokes `saveDualSubtitles()` to commit the complete transcript into Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. Future views of the video load the dual subtitles instantaneously (<50ms) from R2 cache with \$0 translation cost.
 - **Lifecycle & Cleanup**:
   - Exposes `cancelDualSubtitles()`, `toggleDualSubtitles()`, `setDualSubtitleTargetLang()`, and cleanly clears in-flight requests and maps on video change or unload via `clear()`.
 
@@ -382,7 +388,8 @@ To eliminate stacking collisions and guarantee that toasts, modals, and navigati
 - **Single-Document vs Bounded Scrolling Best Practice**: Standalone pages (`/playlist`, `/history`, and full-screen dictionary/vocabulary views) avoid arbitrary `max-height: calc(100vh - 260px)` container scrolling. Instead, toolbars (`.playlist-toolbar`, `.history-toolbar`, `.vocab-toolbar`) are configured as `position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px)`, while the list items flow naturally within the single page document. This prevents nested scroll traps, preserves native mobile touch momentum, and guarantees URL bar collapse behavior. Viewport-bounded scrolling (`overflow-y: auto`) is reserved strictly for embedded panels (`:host-context(.sidebar-pane)` in `VocabularyListComponent` or multi-pane sidebars) where list length must not expand the outer player layout.
 - **Divider-Free Modern Layout**: Card headers (`.panel-header`, `.vocab-header`, `.playlist-header`, `.result-header`) and toolbars do NOT use hard divider lines (`border-bottom: 1px solid var(--border-color)`). Visual hierarchy and clean separation are achieved through consistent whitespace and flex gaps (`var(--space-md)`, `var(--space-sm)`), preventing fragmented card slices.
 - **Unified App Search Bar (`.app-search-box`)**: 36px fixed-height pill input (`border-radius: var(--border-radius-pill)`) with integrated search icon, clear button (`.clear-btn`), and iOS Safari auto-zoom prevention (`font-size: 16px` under `@media (max-width: 480px)`). Shared identically across Dictionary, Vocabulary, History, and Playlist screens.
-- **Unified Filter Chips (`.filter-chip`)**: Standardized 36px height pill buttons with constant `font-weight: 600` and zero font-size/dimension jumps when activated (`.active`). Supports level indicators (`.level-dot`) and badge counts (`.chip-count`).
+- **Unified Filter Chips (`.filter-chip`)**: Standardized 36px height pill buttons with constant `font-weight: 600` and zero font-size/dimension jumps when activated (`.active`). Supports level indicators (`.level-dot`), circular flags (`.circle-flag`), and badge counts (`.chip-count`, `.tab-badge`).
+- **Circular Flag Language System (`.circle-flag`)**: Replaces plain uppercase text badges (`JA`, `ZH`, `KO`, `EN`) and redundant filter labels with standard 16px circular SVG flags (`https://hatscripts.github.io/circle-flags/flags/{jp,cn,kr,gb,vn}.svg`). Styled with `border-radius: 50%`, `object-fit: cover`, and subtle border outline `box-shadow: 0 0 0 1px var(--border-color)` ensuring high-contrast visibility for white flags (like Japan) across light and dark themes. Supports modifiers `.circle-flag--sm` (14px) and `.circle-flag--lg` (20px). Centralized via `getLanguageFlagUrl()` in `src/app/models/language.constants.ts`.
 - **Dictionary & Vocabulary Symmetry**: Both dictionary results and vocabulary list items share identical design language:
   - Header word heading with language-specific font family (`text-ja`, `text-zh`, `text-ko`).
   - Phonetic readings (`.result-reading`, `.vocab-item__reading`) with dedicated `--pinyin` and `--romaji` modifier tags.

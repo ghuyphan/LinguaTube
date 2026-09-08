@@ -334,3 +334,71 @@ export async function saveVideoInfoToKV(kv, videoId, info) {
         });
     } catch { }
 }
+
+// ============================================================================
+// Recommended Videos Discovery (D1)
+// ============================================================================
+
+/**
+ * Query recommended transcribed videos from D1
+ * Filters for valid titles, sensible durations, and target language
+ * @param {D1Database} db
+ * @param {string} lang - target language ('ja', 'zh', 'ko', 'en')
+ * @param {number} [limit=12] - maximum items to return (clamped 1-50)
+ * @returns {Promise<Array>}
+ */
+export async function getRecommendedVideosFromD1(db, lang, limit = 12) {
+    if (!db || !lang) return [];
+
+    const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
+
+    try {
+        const searchPattern = `%"${lang}"%`;
+        const { results } = await db.prepare(`
+            SELECT video_id, title, channel, duration_seconds, levels, available_languages, updated_at
+            FROM video_languages
+            WHERE available_languages LIKE ?
+              AND title IS NOT NULL AND title != ''
+              AND (duration_seconds IS NULL OR duration_seconds BETWEEN 30 AND 3600)
+            ORDER BY updated_at DESC
+            LIMIT ?
+        `).bind(searchPattern, safeLimit).all();
+
+        if (!results || !Array.isArray(results)) return [];
+
+        return results.map(row => {
+            let levels = {};
+            try {
+                if (row.levels) levels = JSON.parse(row.levels);
+            } catch { }
+
+            let level = levels[lang] || null;
+            if (!level) {
+                const detected = detectLevelFromMetadata(row.title || '', row.channel || '');
+                if (detected && detected.lang === lang) {
+                    level = detected.level;
+                }
+            }
+
+            let availableLangs = [];
+            try {
+                if (row.available_languages) availableLangs = JSON.parse(row.available_languages);
+            } catch { }
+
+            return {
+                videoId: row.video_id,
+                title: row.title,
+                channel: row.channel || '',
+                duration: row.duration_seconds || 0,
+                thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
+                languages: availableLangs,
+                level: level || undefined,
+                updatedAt: row.updated_at
+            };
+        });
+    } catch (err) {
+        console.error('[VideoInfoDB] getRecommendedVideosFromD1 error:', err.message);
+        return [];
+    }
+}
+

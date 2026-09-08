@@ -112,6 +112,28 @@
     }
 }
 
+/* Circular SVG Flag Icon */
+.circle-flag {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: 0 0 0 1px var(--border-color, rgba(0, 0, 0, 0.1));
+
+    &--sm {
+        width: 14px;
+        height: 14px;
+    }
+
+    &--lg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 // ============================================
 // UNIFIED APP SEARCH BOX
 // ============================================

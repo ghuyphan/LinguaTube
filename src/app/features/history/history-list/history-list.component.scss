@@ -219,18 +219,6 @@
     flex-wrap: wrap;
 }
 
-.lang-badge {
-    padding: 1px 5px;
-    font-size: 0.625rem;
-    font-weight: 700;
-    background: rgba(var(--accent-primary-rgb), 0.12);
-    color: var(--accent-primary);
-    border-radius: 3px;
-    letter-spacing: 0.4px;
-    line-height: 1.2;
-}
-
-
 .channel-name {
     white-space: nowrap;
     overflow: hidden;

@@ -184,4 +184,52 @@ test('detectLevelFromMetadata: accurately parses proficiency levels from titles 
   assert.equal(detectLevelFromMetadata('Random Cat Video', 'Funny Animals'), null);
 });
 
+test('getRecommendedVideosFromD1: queries and formats transcribed videos accurately', async () => {
+  const { getRecommendedVideosFromD1 } = await import('../functions-src/data/video-info-db.js');
+
+  // Mock D1 database
+  const mockDb = {
+    prepare: (query) => ({
+      bind: (...args) => ({
+        all: async () => ({
+          results: [
+            {
+              video_id: 'testVid1',
+              title: 'Japanese JLPT N4 Listening Practice',
+              channel: 'Nihongo Study',
+              duration_seconds: 420,
+              levels: JSON.stringify({ ja: 'JLPT N4' }),
+              available_languages: JSON.stringify(['ja', 'en']),
+              updated_at: 1700000000
+            },
+            {
+              video_id: 'testVid2',
+              title: 'Casual Talk (N3)',
+              channel: 'Tokyo VLOG',
+              duration_seconds: 600,
+              levels: '{}',
+              available_languages: JSON.stringify(['ja']),
+              updated_at: 1699999000
+            }
+          ]
+        })
+      })
+    })
+  };
+
+  const results = await getRecommendedVideosFromD1(mockDb, 'ja', 10);
+  assert.equal(results.length, 2);
+  assert.equal(results[0].videoId, 'testVid1');
+  assert.equal(results[0].level, 'JLPT N4');
+  assert.equal(results[0].thumbnail, 'https://i.ytimg.com/vi/testVid1/mqdefault.jpg');
+  assert.deepEqual(results[0].languages, ['ja', 'en']);
+  // Fallback detection from title
+  assert.equal(results[1].level, 'JLPT N3');
+
+  // Null/empty db or lang returns empty list safely
+  assert.deepEqual(await getRecommendedVideosFromD1(null, 'ja'), []);
+  assert.deepEqual(await getRecommendedVideosFromD1(mockDb, null), []);
+});
+
+
 

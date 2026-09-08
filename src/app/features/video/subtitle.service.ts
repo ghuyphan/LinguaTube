@@ -482,6 +482,7 @@ export class SubtitleService {
       this.lazyLoadSubscription = null;
     }
     this.isLazyLoadPending = false;
+    this.hasPersistedDualToR2 = false;
     this.isTranslatingDual.set(false);
     this.isDualSubLoading.set(false);
   }
@@ -499,6 +500,7 @@ export class SubtitleService {
     }
 
     this.cancelDualSubtitles();
+    this.hasPersistedDualToR2 = false;
     this.isTranslatingDual.set(true);
     this.isDualSubLoading.set(true);
     this.dualSubError.set(null);
@@ -619,6 +621,7 @@ export class SubtitleService {
         });
 
         this.cueTranslations.set(newMap);
+        this.checkAndPersistDualSubtitles(cues, newMap, sourceLang, targetLang);
       },
       error: (err) => {
         console.error('[SubtitleService] Dual sub lazy load failed:', err);
@@ -626,6 +629,46 @@ export class SubtitleService {
         this.dualSubError.set('Translation failed');
       }
     });
+  }
+
+  /**
+   * Automatically persist translated dual subtitles to Cloudflare R2 / server cache
+   * when >= 80% of cues have been translated.
+   */
+  private checkAndPersistDualSubtitles(
+    cues: SubtitleCue[],
+    map: Map<string, string>,
+    sourceLang: string,
+    targetLang: string
+  ): void {
+    if (this.hasPersistedDualToR2 || this.isDualCached() || cues.length === 0) {
+      return;
+    }
+
+    const translatedCount = cues.filter(c => map.has(c.id)).length;
+    const coverage = translatedCount / cues.length;
+
+    // Persist once 80% or more cues are translated
+    if (coverage >= 0.8) {
+      this.hasPersistedDualToR2 = true;
+      const videoId = this.lastDualSubVideoId || this.youtube.currentVideo()?.id;
+      if (!videoId) return;
+
+      const segments = cues.map(c => ({
+        text: c.text,
+        start: c.startTime,
+        duration: c.endTime - c.startTime,
+        translation: map.get(c.id) || ''
+      }));
+
+      this.translation.saveDualSubtitles(videoId, sourceLang, targetLang, segments).subscribe({
+        next: (saved) => {
+          if (saved) {
+            this.isDualCached.set(true);
+          }
+        }
+      });
+    }
   }
 
   // ============================================================================

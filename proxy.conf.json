@@ -39,6 +39,11 @@
     "secure": false,
     "changeOrigin": true
   },
+  "/api/recommended-videos": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
   "/api/tokenize-batch": {
     "target": "http://localhost:3001",
     "secure": false,

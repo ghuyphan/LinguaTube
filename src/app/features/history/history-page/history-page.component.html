@@ -70,7 +70,7 @@
               <button type="button" class="filter-chip filter-chip--lang" (click)="showLanguageFilter.set(true)"
                 [attr.aria-label]="getLanguageLabel()" [title]="getLanguageLabel()">
                 @if (selectedLanguage() !== 'all') {
-                  <span class="lang-badge">{{ selectedLanguage().toUpperCase() }}</span>
+                  <img [src]="getFlagUrl(selectedLanguage())" class="circle-flag circle-flag--sm" alt="" />
                 } @else {
                   <app-icon name="languages" [size]="14" />
                 }

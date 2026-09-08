@@ -14,7 +14,7 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 ## ✨ Key Features
 
 ### 🎬 Universal Video Support & Player Controls
-- **YouTube Integration**: Paste any YouTube URL (or click curated playlists) to start learning immediately.
+- **YouTube & Instant Transcript Discovery**: Paste any YouTube URL or explore **"For You"** recommendations featuring single videos with pre-cached database transcripts (<100ms loading, zero AI credit cost) and curated community playlists.
 - **Dual-Engine Captions**: Extracts native YouTube subtitles (via Supadata in production and Innertube in local dev) with automatic language discovery.
 - **Gladia AI Transcription Fallback**: For videos without native subtitles, generate timestamped, highly accurate transcripts using speech-to-text AI.
 - **Sticky Subtitles**: Custom algorithm eliminates flicker between natural speech gaps, keeping cues on screen until the next phrase begins.

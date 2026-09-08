@@ -48,6 +48,21 @@ export interface PlaylistVideo {
 }
 
 /**
+ * Single video recommendation with verified database transcript
+ */
+export interface RecommendedVideo {
+    videoId: string;
+    title: string;
+    channel?: string;
+    duration?: number;
+    thumbnail: string;
+    languages: string[];
+    level?: string;
+    tier?: ProficiencyLevelTier;
+    updatedAt?: number;
+}
+
+/**
  * Playlist with hydrated video metadata for display
  */
 export interface PlaylistWithVideos extends Playlist {

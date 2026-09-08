@@ -29,6 +29,7 @@ graph TB
         API_TranslateBatch["/api/translate/batch"]
         API_VideoInfo["/api/video-info"]
         API_VideoLevel["/api/video-level"]
+        API_RecommendedVideos["/api/recommended-videos"]
         API_Leaderboard["/api/leaderboard"]
         API_Diamonds["/api/diamonds"]
         API_AuthConfig["/api/auth-config"]
@@ -95,6 +96,7 @@ graph TB
     API_VideoInfo --> D1
     API_VideoInfo --> KV
     API_VideoLevel --> D1
+    API_RecommendedVideos --> D1
 
     API_PayOrder --> PayOS
     API_PayOrder --> KV
@@ -450,7 +452,7 @@ sequenceDiagram
 
 | Directory / File | Layer | Primary Responsibility |
 | :--- | :--- | :--- |
-| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Global Leaderboard (`LeaderboardService`), Error handler |
+| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Video Recommendation (`VideoRecommendationService`), Global Leaderboard (`LeaderboardService`), Error handler |
 | `public` | Static & Discovery | PWA icons, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`, `og-image.png`, `_headers` |
 | `src/app/core/repositories` | Data Layer | Offline-first sync repositories for Vocab, Streaks, Playlists, History |
 | `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, draggable fullscreen subtitles, controls, video header level badge |

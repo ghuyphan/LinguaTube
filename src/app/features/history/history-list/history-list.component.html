@@ -78,10 +78,10 @@
                 <div class="history-item__meta">
                     @if (item.languages?.length) {
                         @for (lang of item.languages; track lang) {
-                            <span class="lang-badge">{{ lang.toUpperCase() }}</span>
+                            <img [src]="getFlagUrl(lang)" class="circle-flag" [alt]="lang" [title]="lang.toUpperCase()" loading="lazy" />
                         }
                     } @else if (item.language) {
-                        <span class="lang-badge">{{ item.language.toUpperCase() }}</span>
+                        <img [src]="getFlagUrl(item.language)" class="circle-flag" [alt]="item.language" [title]="item.language.toUpperCase()" loading="lazy" />
                     }
                     @if (getItemLevel(item); as lvl) {
                         <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>

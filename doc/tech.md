@@ -110,7 +110,7 @@ Correct segmentation and pronunciation generation are central to Voca:
 - S3-compatible, zero-egress-fee bucket storage (`linguatube-transcripts`).
 - Key layouts:
   - Transcripts: `transcripts/{videoId}/{lang}.json`
-  - Dual Subtitles: `translations/{videoId}/{sourceLang}_{targetLang}.json`
+  - Dual Subtitles: `translations/{videoId}/{sourceLang}-{targetLang}.json`
 
 ### 4.4. Cloudflare KV (Edge Key-Value Cache)
 - Namespace: `TRANSCRIPT_CACHE`.

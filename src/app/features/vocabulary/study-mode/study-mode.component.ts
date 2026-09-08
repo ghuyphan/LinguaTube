@@ -6,7 +6,7 @@ import { SwitchComponent } from '../../../shared/components/switch/switch.compon
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AudioService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
-import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem } from '../../../models';
+import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem, getLanguageFlagUrl } from '../../../models';
 import { calculateSRSPreview, formatTime, SRSIntervalPreview } from '../../../core/utils';
 
 const STUDY_AUTOPLAY_KEY = 'linguatube_study_autoplay';
@@ -184,6 +184,8 @@ export class StudyModeComponent implements OnDestroy {
             default: return this.i18n.t('settings.english');
         }
     });
+
+    currentLanguageFlag = computed(() => getLanguageFlagUrl(this.currentLanguage()));
 
     currentReadingDisplayLabel = computed(() => {
         const language = this.currentLanguage();

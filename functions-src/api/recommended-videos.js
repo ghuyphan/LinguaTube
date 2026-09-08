@@ -1,0 +1,69 @@
+/**
+ * Recommended Videos API (Cloudflare Pages Function)
+ * Discovers videos with verified transcripts in the database matching the user's target language.
+ * 
+ * Route: GET /api/recommended-videos?lang=ja&limit=12
+ */
+
+import { jsonResponse, handleOptions } from '../utils/utils.js';
+import { isLanguageSupported } from '../middlewares/video-validator.js';
+import { getRecommendedVideosFromD1 } from '../data/video-info-db.js';
+
+// In-memory cache across warm Worker isolate requests
+const memCache = new Map();
+const MEM_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
+
+const CDN_CACHE_HEADER = 'public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400';
+
+export async function onRequestOptions() {
+    return handleOptions(['GET', 'OPTIONS']);
+}
+
+export async function onRequestGet(context) {
+    const { request, env } = context;
+    const url = new URL(request.url);
+
+    const rawLang = (url.searchParams.get('lang') || 'ja').toLowerCase().trim();
+    const lang = isLanguageSupported(rawLang) ? rawLang : 'ja';
+
+    const limitParam = parseInt(url.searchParams.get('limit'), 10);
+    const limit = Math.min(Math.max(isNaN(limitParam) ? 12 : limitParam, 1), 50);
+
+    const cacheKey = `${lang}_${limit}`;
+
+    // 1. Fast in-memory cache check (warm isolate)
+    const cached = memCache.get(cacheKey);
+    if (cached && (Date.now() - cached.timestamp < MEM_CACHE_TTL_MS)) {
+        return jsonResponse({
+            success: true,
+            language: lang,
+            count: cached.videos.length,
+            videos: cached.videos,
+            source: 'cache:memory'
+        }, 200, {
+            'X-Cache': 'HIT-MEMORY',
+            'Cache-Control': CDN_CACHE_HEADER
+        });
+    }
+
+    // 2. Query D1 database
+    const db = env.VOCAB_DB;
+    const videos = await getRecommendedVideosFromD1(db, lang, limit);
+
+    // Save to isolate memory cache
+    memCache.set(cacheKey, {
+        videos,
+        timestamp: Date.now()
+    });
+
+    return jsonResponse({
+        success: true,
+        language: lang,
+        count: videos.length,
+        videos,
+        source: 'd1'
+    }, 200, {
+        'X-Cache': 'MISS',
+        'Cache-Control': CDN_CACHE_HEADER
+    });
+}

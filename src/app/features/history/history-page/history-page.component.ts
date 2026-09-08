@@ -8,7 +8,7 @@ import { OptionPickerComponent, OptionItem } from '../../../shared/components/op
 import { HistoryListComponent } from '../history-list/history-list.component';
 import { HistoryService } from '../history.service';
 import { I18nService, AuthService, ToastService, VideoLevelService } from '../../../core/services';
-import { HistoryItem, SUPPORTED_LANGUAGES } from '../../../models';
+import { HistoryItem, SUPPORTED_LANGUAGES, getLanguageFlagUrl } from '../../../models';
 import { getYouTubeThumbnail } from '../../../core/utils';
 
 type FilterType = 'all' | 'favorites';
@@ -40,6 +40,7 @@ export class HistoryPageComponent implements OnInit {
   filter = signal<FilterType>('all');
   selectedLanguage = signal<string>('all');
   selectedLevel = signal<string>('all');
+  readonly getFlagUrl = getLanguageFlagUrl;
   searchQuery = signal<string>('');
   showLanguageFilter = signal(false);
   showLevelFilter = signal(false);

@@ -14,13 +14,14 @@ import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
 import { TranscriptService } from '../transcript.service';
 import { VocabularyService } from '../../vocabulary';
-import { SettingsService, I18nService, SeoService, ToastService } from '../../../core/services';
+import { SettingsService, I18nService, SeoService, ToastService, VideoRecommendationService } from '../../../core/services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { PlaylistService } from '../../playlist/playlist.service';
-import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier } from '../../../models';
+import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier, RecommendedVideo, getLanguageFlagUrl } from '../../../models';
 import { VideoLevelService } from '../../../core/services/video-level.service';
+import { formatTime } from '../../../core/utils';
 
 @Component({
   selector: 'app-video-page',
@@ -55,6 +56,7 @@ export class VideoPageComponent implements OnInit {
   private historyService = inject(HistoryService);
   protected playlistService = inject(PlaylistService);
   private videoLevel = inject(VideoLevelService);
+  protected videoRecommendation = inject(VideoRecommendationService);
   i18n = inject(I18nService);
   private seo = inject(SeoService);
   toast = inject(ToastService);
@@ -62,6 +64,12 @@ export class VideoPageComponent implements OnInit {
   showAiConfirmDialog = signal(false);
   aiCaptchaToken = signal<string | null>(null);
   isSubmittingAi = signal(false);
+
+  // Home Dashboard tabs: single transcribed videos vs curated playlists
+  homeTab = signal<'videos' | 'playlists'>('videos');
+  recommendedVideos = this.videoRecommendation.recommendedVideos;
+  isVideosLoading = this.videoRecommendation.isLoading;
+  formatVideoTime = formatTime;
 
   // Sidebar tab state (only used when playlist is active)
   sidebarTab = signal<'playlist' | 'vocab'>('playlist');
@@ -111,6 +119,8 @@ export class VideoPageComponent implements OnInit {
     return this.videoLevel.resolvePlaylistLevel(playlist);
   }
 
+  readonly getFlagUrl = getLanguageFlagUrl;
+
   aiDiamondCost = computed(() => (this.youtube.duration() > 10 * 60 ? 2 : 1));
   isVideoTooLongForAI = computed(() => this.youtube.duration() > 20 * 60);
 
@@ -121,6 +131,16 @@ export class VideoPageComponent implements OnInit {
   onSidebarWordSelect(token: Token): void {
     this.selectedWord.set(token);
     this.currentSentence.set(token.surface);
+  }
+
+  onPlayRecommendedVideo(video: RecommendedVideo): void {
+    if (!video?.videoId) return;
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { v: video.videoId },
+      queryParamsHandling: 'merge'
+    });
+    void this.loadVideoFromUrl(video.videoId);
   }
 
   showAddToPlaylistDialog = signal(false);
@@ -161,7 +181,7 @@ export class VideoPageComponent implements OnInit {
       case 'zh': return this.i18n.t('settings.chinese');
       case 'ko': return this.i18n.t('settings.korean');
       case 'en': return this.i18n.t('settings.english');
-      default: return lang;
+      default: return lang.toUpperCase();
     }
   }
 
@@ -170,10 +190,10 @@ export class VideoPageComponent implements OnInit {
   private skipNextMismatchDialog = false;
 
   constructor() {
-    // Sync active video with page SEO title & Open Graph metadata
+    // Reset SEO title when video changes or is cleared
     effect(() => {
       const video = this.youtube.currentVideo();
-      if (video && video.title && video.id) {
+      if (video?.title) {
         this.seo.updateVideoSeo(video.title, video.id);
       } else if (!video) {
         this.seo.resetVideoSeo();
@@ -184,10 +204,11 @@ export class VideoPageComponent implements OnInit {
       this.seo.resetVideoSeo();
     });
 
-    // Automatically fetch server-side recommended playlists when active language changes
+    // Automatically fetch server-side recommended playlists and videos when active language changes
     effect(() => {
       const currentLang = this.settings.settings().language;
       void this.playlistService.loadRecommendedPlaylists(currentLang);
+      void this.videoRecommendation.loadRecommendedVideos(currentLang);
     });
 
     // Watch for language changes and refetch captions when language changes
