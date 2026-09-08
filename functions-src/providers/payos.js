@@ -44,6 +44,18 @@ export function buildPayOsSignatureData(data) {
         .join('&');
 }
 
+function constantTimeEqual(a, b) {
+    if (typeof a !== 'string' || typeof b !== 'string') return false;
+    const aLower = a.toLowerCase();
+    const bLower = b.toLowerCase();
+    if (aLower.length !== bLower.length) return false;
+    let diff = 0;
+    for (let i = 0; i < aLower.length; i++) {
+        diff |= aLower.charCodeAt(i) ^ bLower.charCodeAt(i);
+    }
+    return diff === 0;
+}
+
 /**
  * Verify incoming webhook signature
  */
@@ -54,7 +66,7 @@ export async function verifyWebhookSignature(webhookBody, checksumKey) {
 
     const signatureData = buildPayOsSignatureData(data);
     const expectedSignature = await computeHmacSha256(signatureData, checksumKey);
-    return expectedSignature.toLowerCase() === signature.toLowerCase();
+    return constantTimeEqual(expectedSignature, signature);
 }
 
 /**

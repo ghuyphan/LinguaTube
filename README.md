@@ -72,7 +72,7 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
    ```bash
    cp .dev.vars.example .dev.vars
    ```
-   Provide your API keys in `.dev.vars` (e.g., `GLADIA_API_KEY`, `SUPADATA_API_KEY`, `TURNSTILE_SECRET_KEY`, `GOOGLE_CLIENT_ID`).
+   Provide your API keys in `.dev.vars` (e.g., `GLADIA_API_KEY`, `SUPADATA_API_KEY`, `TURNSTILE_SECRET_KEY`, `PAYOS_CLIENT_ID`).
 
 4. **Start Development Environment**
    ```bash

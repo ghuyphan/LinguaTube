@@ -50,8 +50,10 @@ export async function onRequestPost(context) {
         const planId = body.planId || 'pro_1m';
         const plan = PLANS[planId] || PLANS.pro_1m;
 
-        // Generate a 6-digit to 8-digit unique numeric order code (payOS requires integer)
-        const orderCode = Math.floor(Date.now() / 1000) % 90000000 + 10000000;
+        // Generate an 8-digit cryptographically random unique numeric order code (payOS requires integer)
+        const randBuffer = new Uint32Array(1);
+        crypto.getRandomValues(randBuffer);
+        const orderCode = 10000000 + (randBuffer[0] % 90000000);
         const description = `VOCA${orderCode}`.slice(0, 25);
 
         // Store pending order in KV with 1 hour expiration

@@ -3,7 +3,7 @@ import type PocketBase from 'pocketbase';
 import { IVocabularyRepository } from './vocabulary.repository';
 import { VocabularyItem, WordLevel, DictionaryEntry, VocabularyStats } from '../../models';
 import { AuthService, StorageService, PocketBaseService } from '../services';
-import { calculateHash, mergeByTimestamp, processBatch, sanitizeFilterValue, withRetry } from '../../shared/utils/sync.utils';
+import { calculateHash, mergeByTimestamp, processBatch, sanitizeFilterValue, withRetry, generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 import { generateRandomId, calculateNextSRSState } from '../utils';
 
@@ -80,6 +80,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     });
 
     private saveTimeout: ReturnType<typeof setTimeout> | null = null;
+    private syncDebounceTimer: ReturnType<typeof setTimeout> | null = null;
     private lastPushedHash = '';
 
     constructor() {
@@ -264,8 +265,14 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     }
 
     async clear(): Promise<void> {
+        const items = this.vocabulary();
+        for (const item of items) {
+            this.addDeletionTombstone(item.id, item.word, item.language);
+        }
         this.updateLocal([]);
-        // TODO: Bulk delete on server?
+        if (this.auth.isLoggedIn()) {
+            this.triggerSyncDebounced();
+        }
     }
 
     async importFromJSON(json: string): Promise<void> {
@@ -376,8 +383,20 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     // ==================== Private Actions ====================
 
     private setupAutoSync(): void {
+        // Initial sync on startup if already authenticated
+        if (this.auth.isLoggedIn()) {
+            void this.syncWithRemote();
+        }
+
         // Sync on login
         this.auth.loginEvent.subscribe(() => this.syncWithRemote());
+
+        // Sync on network reconnection
+        this.pb.reconnectEvent.subscribe(() => {
+            if (this.auth.isLoggedIn()) {
+                void this.syncWithRemote();
+            }
+        });
 
         // Teardown and reset on logout to prevent cross-account leak
         this.auth.logoutEvent.subscribe(() => {
@@ -413,7 +432,13 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
 
     private triggerSyncDebounced() {
         if (this.auth.isLoggedIn()) {
-            // Auto sync can trigger if needed
+            if (this.syncDebounceTimer) {
+                clearTimeout(this.syncDebounceTimer);
+            }
+            this.syncDebounceTimer = setTimeout(() => {
+                this.syncDebounceTimer = null;
+                void this.syncWithRemote();
+            }, 3000);
         }
     }
 
@@ -454,11 +479,10 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
 
     private saveToStorage(items: VocabularyItem[]): void {
         if (!this.storage.set(STORAGE_KEY, items)) {
-            // Quota handling
+            // Quota handling: serialize compact representation without mutating active in-memory array
             const filtered = items.filter(item => item.level !== 'ignored');
             if (filtered.length < items.length) {
                 this.storage.set(STORAGE_KEY, filtered);
-                this.updateLocal(filtered);
             }
         }
     }
@@ -508,11 +532,11 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 examples: item.examples,
                 addedAt: item.created ? new Date(item.created) : new Date(),
                 updatedAt: item.updated ? new Date(item.updated) : new Date(),
-                // Fully recover SRS progress: remote first, then local fallback, then standard defaults
-                reviewCount: item.reviewCount ?? existing?.reviewCount ?? 0,
+                // Fully recover SRS progress: preserve monotonic counts to prevent regression
+                reviewCount: Math.max(item.reviewCount || 0, existing?.reviewCount || 0),
                 easeFactor: item.easeFactor ?? existing?.easeFactor ?? 2.5,
-                interval: item.interval ?? existing?.interval ?? 0,
-                repetitions: item.repetitions ?? existing?.repetitions ?? 0,
+                interval: Math.max(item.interval || 0, existing?.interval || 0),
+                repetitions: Math.max(item.repetitions || 0, existing?.repetitions || 0),
                 lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt) : existing?.lastReviewedAt,
                 nextReviewDate: item.nextReviewDate ? new Date(item.nextReviewDate) : existing?.nextReviewDate,
                 sourceSentence: item.sourceSentence ?? existing?.sourceSentence,
@@ -624,27 +648,8 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     }
 
     private generateVocabId(userId: string, word: string, language: string): string {
-        const raw = `${userId}|${word.trim().toLowerCase()}|${language}`;
         try {
-            // PocketBase IDs require strictly 15 lowercase alphanumeric characters [a-z0-9]
-            // Dual 32-bit hash mixing (cyrb53-inspired) ensures the full string (including word and lang)
-            // is digested, avoiding prefix-slicing collisions with userId.
-            let h1 = 0xdeadbeef, h2 = 0x41c64e6d;
-            for (let i = 0; i < raw.length; i++) {
-                const ch = raw.charCodeAt(i);
-                h1 = Math.imul(h1 ^ ch, 2654435761);
-                h2 = Math.imul(h2 ^ ch, 1597334677);
-            }
-            h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507);
-            h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
-            h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
-            h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
-            const h3 = Math.imul(h1 ^ h2, 2166136261);
-
-            const p1 = (h1 >>> 0).toString(36).padStart(7, '0');
-            const p2 = (h2 >>> 0).toString(36).padStart(7, '0');
-            const p3 = (h3 >>> 0).toString(36).padStart(7, '0');
-            return (p1 + p2 + p3).slice(0, 15);
+            return generateDeterministicRecordId(userId, word.trim().toLowerCase(), language);
         } catch {
             return generateRandomId();
         }

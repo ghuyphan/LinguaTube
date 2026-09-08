@@ -258,6 +258,8 @@ export class VideoPlayerComponent implements OnDestroy {
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
   private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
   private doubleTapTimeout: ReturnType<typeof setTimeout> | null = null;
+  private waitForElementTimeout: ReturnType<typeof setTimeout> | null = null;
+  private isDestroyed = false;
 
   // Track elements and handlers for ViewChild setters
   private _videoContainerEl: HTMLElement | null = null;
@@ -304,8 +306,10 @@ export class VideoPlayerComponent implements OnDestroy {
       // Only restore if we have a current video, URL explicitly has a video ID, player is NOT ready, and we are NOT in the middle of loading a new one
       if (hasUrlId && currentVideo && !this.youtube.isReady() && !this.isLoading() && !this.youtube.pendingVideoId()) {
         const savedTime = this.youtube.currentTime();
-        this.waitForElement('youtube-player').then(async () => {
+        this.waitForElement('youtube-player').then(async (found) => {
+          if (!found || this.isDestroyed) return;
           await this.restorePlayer(currentVideo.id);
+          if (this.isDestroyed) return;
           if (savedTime > 0) {
             this.youtube.seekTo(savedTime);
           }
@@ -313,6 +317,8 @@ export class VideoPlayerComponent implements OnDestroy {
           if (!this.youtube.intendedPlayingState()) {
             this.youtube.pause();
           }
+        }).catch(() => {
+          // View unmounted or element unavailable, safe to ignore
         });
       }
     });
@@ -1284,20 +1290,24 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  private waitForElement(elementId: string): Promise<void> {
-    return new Promise((resolve, reject) => {
+  private waitForElement(elementId: string): Promise<boolean> {
+    return new Promise((resolve) => {
       let attempts = 0;
       const maxAttempts = 20;
 
       const check = () => {
+        if (this.isDestroyed) {
+          resolve(false);
+          return;
+        }
         const element = document.getElementById(elementId);
         if (element) {
-          resolve();
+          resolve(true);
         } else if (attempts >= maxAttempts) {
-          reject(new Error(`Element #${elementId} not found`));
+          resolve(false);
         } else {
           attempts++;
-          setTimeout(check, 50);
+          this.waitForElementTimeout = setTimeout(check, 50);
         }
       };
 
@@ -1320,6 +1330,11 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   ngOnDestroy(): void {
+    this.isDestroyed = true;
+    if (this.waitForElementTimeout) {
+      clearTimeout(this.waitForElementTimeout);
+      this.waitForElementTimeout = null;
+    }
     this.popupHeightAnimator.detach();
     this.clearControlsTimeout();
     this.gestures.destroy();

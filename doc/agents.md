@@ -1,6 +1,6 @@
-# Voca — AI Agent Instructions & Architectural Guide
- 
-> **Note**: This file mirrors [`../AGENTS.md`](../AGENTS.md) located at the root of the repository for easy access within the `doc/` folder.
+# Voca — AI Agent Instructions & Architectural Guide (AGENTS.md)
+
+This document provides essential instructions, architectural design, codebase maps, critical invariants, and development workflows for AI coding assistants (e.g., Antigravity, Cursor, Claude Code, GitHub Copilot) working in this repository.
 
 ---
 
@@ -120,8 +120,13 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │     GET  /api/translate/[[path]]  -> Single-text translation proxy (Lingva/GTX)
     │     POST /api/translate/batch     -> Batch translation (up to 50 items) + KV cache
     │     GET  /api/video-info          -> Two-Tier Cached YouTube Metadata
+    │     GET  /api/video-level         -> Video Proficiency Level Detection (JLPT/HSK/TOPIK/CEFR)
+    │     GET  /api/recommended-videos  -> Video Recommendations by Target Language
+    │     GET  /api/leaderboard         -> Gamification XP Leaderboard
     │     GET  /api/diamonds            -> Diamond Token Quota & Regen Status
-    │     GET  /api/auth-config         -> Google OAuth Client ID config
+    │     POST /api/payment/create-order-> PayOS Checkout Link Generator
+    │     POST /api/payment/webhook     -> PayOS Payment Confirmation & Diamond Grant
+    │     GET  /api/payment/check-status-> Polling Order Payment Status
     │     ALL  /proxy/:service/*        -> Safe Whitelisted SSRF-Protected Proxy
     │
     └── Cloud Infrastructure:
@@ -129,7 +134,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
           ├── Cloudflare R2             -> transcripts/{videoId}/{lang}.json & translations/{videoId}/{source}_{target}.json
           ├── Cloudflare KV             -> Rate limits, short-lived tokens, video-info, batch translation cache
           ├── PocketBase                -> Cloud user records, vocabulary, streaks
-          └── External APIs             -> Gladia (ASR), Supadata, Lingva, Naver, Jotoba, Innertube (dev)
+          └── External APIs             -> Gladia (ASR), Supadata, Lingva, Naver, Jotoba, PayOS, Innertube (dev)
 ```
 
 ---
@@ -138,7 +143,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
 
 ```
 lingua-tube/
-├── AGENTS.md                  # Root AI agent guidance, rules & architecture
+├── AGENTS.md                  # This file (AI agent guidance, rules & architecture)
 ├── README.md                  # Public overview and quickstart
 ├── package.json               # Dependencies, scripts, engine constraints (Node >=20.11 <23)
 ├── angular.json               # Angular CLI configuration, build targets, PWA assets
@@ -175,18 +180,21 @@ lingua-tube/
 ├── functions-src/             # CLOUDFLARE FUNCTIONS SOURCE (Edit here!)
 │   ├── api/                   # Public HTTP route handlers
 │   │   ├── _middleware.js     # Bot defense interception
-│   │   ├── auth-config.js     # Google OAuth configuration endpoint
 │   │   ├── diamonds.js        # Diamond credits check & regen
 │   │   ├── dict.js            # Unified dictionary lookup
 │   │   ├── dual-subtitles.js  # Dual-language subtitle generator
+│   │   ├── leaderboard.js     # Gamification XP leaderboard
+│   │   ├── payment/           # Payment processing (create-order, webhook, check-status)
+│   │   ├── recommended-videos.js # Target language video recommendations
 │   │   ├── tokenize/          # Single-text tokenization ([lang].js)
 │   │   ├── tokenize-batch/    # Batch tokenization ([lang].js)
 │   │   ├── transcript.js      # Unified transcript fetching & AI generation
 │   │   ├── translate/         # Translation endpoints ([[path]].js, batch.js)
-│   │   └── video-info.js      # Video metadata & language discovery
+│   │   ├── video-info.js      # Video metadata & language discovery
+│   │   └── video-level.js     # CEFR/JLPT/HSK/TOPIK level detection
 │   ├── proxy/                 # Safe proxy routes ([service]/[[path]].js)
 │   ├── middlewares/           # auth.js, bot-defense.js, rate-limiter.js, video-validator.js
-│   ├── providers/             # gladia.js, supadata.js, lingva.js, dictionary-apis.js
+│   ├── providers/             # gladia.js, supadata.js, lingva.js, dictionary-apis.js, payos.js
 │   ├── services/              # transcript.service.js, dict.service.js, diamond.service.js, turnstile.service.js
 │   ├── data/                  # transcript-db.js, transcript-r2.js, video-info-db.js
 │   └── utils/                 # tokenizer.js, japanese-romaji.js, cache-manager.js, api-key-rotator.js, utils.js
@@ -280,7 +288,7 @@ Whenever your task touches any feature, API, database schema, or workflow:
    - Linguistics, NLP, tokenizers, translation $\rightarrow$ `doc/features.md`, `doc/tech.md`
    - Scripts, build commands, environment config, dev server $\rightarrow$ `doc/development-guide.md`, `doc/tech.md`
    - Top-level overview, languages, tech pillars $\rightarrow$ `README.md`, `doc/README.md`
-   - Agent guidance, rules, invariants $\rightarrow$ `AGENTS.md` and `doc/agents.md` (keep strictly synchronized)
+   - Agent instructions, rules, invariants $\rightarrow$ `AGENTS.md` and `doc/agents.md` (keep strictly synchronized)
 2. Review all edited files and update relevant diagrams, tables, and code snippets.
 3. If new user-facing strings were added, ensure all 5 translation files (`en.json`, `vi.json`, `ja.json`, `ko.json`, `zh.json`) are updated.
 

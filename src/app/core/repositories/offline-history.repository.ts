@@ -88,6 +88,13 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             this.syncWithRemote();
         });
 
+        // Auto-sync when network reconnects
+        this.pb.reconnectEvent.subscribe(() => {
+            if (this.auth.isLoggedIn()) {
+                this.syncWithRemote();
+            }
+        });
+
         // Clear history and storage when user logs out
         this.auth.logoutEvent.subscribe(() => {
             this.history.set([]);

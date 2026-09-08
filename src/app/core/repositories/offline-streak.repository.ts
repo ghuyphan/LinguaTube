@@ -117,7 +117,15 @@ export class OfflineStreakRepository implements IStreakRepository {
     // ==================== Private ====================
 
     private setupAutoSync() {
+        if (this.auth.isLoggedIn()) {
+            this.syncWithRemote();
+        }
         this.auth.loginEvent.subscribe(() => this.syncWithRemote());
+        this.pb.reconnectEvent.subscribe(() => {
+            if (this.auth.isLoggedIn()) {
+                this.syncWithRemote();
+            }
+        });
         this.auth.logoutEvent.subscribe(() => {
             this.streakData.set({
                 currentStreak: 0,
@@ -213,12 +221,16 @@ export class OfflineStreakRepository implements IStreakRepository {
 
     private async recordActivityOnServer(): Promise<ActivityResult | null> {
         const client = await this.pb.getClient();
+        const now = new Date();
+        const clientDate = this.toLocalDateKey(now);
+        const tzOffset = now.getTimezoneOffset();
         const response = await fetch(`${client.baseURL}/api/streaks/record-activity`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${this.pb.getToken()}`,
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify({ client_date: clientDate, tz_offset: tzOffset })
         });
 
         if (response.ok) {

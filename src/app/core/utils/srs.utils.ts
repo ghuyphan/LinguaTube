@@ -33,17 +33,31 @@ export function calculateNextSRSState(
     let newLevel: WordLevel = item.level;
 
     if (quality < 3) {
+        // Quality 1 = Again (failed recall)
         repetitions = 0;
         interval = 0;
+        easeFactor = Math.max(1.3, easeFactor - 0.2);
         newLevel = item.level === 'known' ? 'learning' : 'new';
-    } else {
+    } else if (quality === 3) {
+        // Quality 3 = Hard (recalled with significant effort)
+        repetitions++;
+        interval = repetitions <= 1 ? 1 : Math.max(1, Math.round(interval * 1.2));
+        easeFactor = Math.max(1.3, easeFactor - 0.15);
+
+        if (item.level === 'new') {
+            newLevel = 'learning';
+        } else if (item.level === 'learning' && repetitions >= 3) {
+            newLevel = 'known';
+        }
+    } else if (quality === 4) {
+        // Quality 4 = Good (standard SM-2 successful recall)
         repetitions++;
         if (repetitions === 1) {
             interval = 1;
         } else if (repetitions === 2) {
             interval = 6;
         } else {
-            interval = Math.round(interval * easeFactor);
+            interval = Math.max(1, Math.round(interval * easeFactor));
         }
 
         // SM-2 Ease Factor calculation
@@ -52,6 +66,24 @@ export function calculateNextSRSState(
         if (item.level === 'new') {
             newLevel = 'learning';
         } else if (item.level === 'learning' && repetitions >= 3) {
+            newLevel = 'known';
+        }
+    } else {
+        // Quality 5 = Easy (effortless recall with bonus interval)
+        repetitions++;
+        if (repetitions === 1) {
+            interval = 2;
+        } else if (repetitions === 2) {
+            interval = 8;
+        } else {
+            interval = Math.max(1, Math.round(interval * easeFactor * 1.3));
+        }
+
+        easeFactor = Math.max(1.3, easeFactor + 0.15);
+
+        if (item.level === 'new') {
+            newLevel = 'learning';
+        } else if (item.level === 'learning' && repetitions >= 2) {
             newLevel = 'known';
         }
     }
@@ -92,18 +124,13 @@ export function formatSRSInterval(days: number): string {
  */
 export function calculateSRSPreview(item: VocabularyItem): SRSIntervalPreview {
     const nextAgain = calculateNextSRSState(item, 1);
+    const nextHard = calculateNextSRSState(item, 3);
     const nextGood = calculateNextSRSState(item, 4);
     const nextEasy = calculateNextSRSState(item, 5);
 
-    // Hard calculation: if currently in learning/known, Hard gives 1-day or 1.2x existing interval
-    let hardDays = 1;
-    if (item.repetitions > 1 && item.interval > 1) {
-        hardDays = Math.max(1, Math.round(item.interval * 1.2));
-    }
-
     return {
         again: formatSRSInterval(nextAgain.interval),
-        hard: formatSRSInterval(hardDays),
+        hard: formatSRSInterval(nextHard.interval),
         good: formatSRSInterval(nextGood.interval),
         easy: formatSRSInterval(nextEasy.interval)
     };

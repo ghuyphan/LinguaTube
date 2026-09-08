@@ -2,18 +2,13 @@ import { Injectable, inject, signal } from '@angular/core';
 import { IGamificationRepository } from './gamification.repository';
 import { UserGamificationState, PocketBaseGamificationRecord } from '../../models/gamification.model';
 import { AuthService, StorageService, PocketBaseService } from '../services';
+import { generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 
 const STORAGE_KEY = 'linguatube_gamification';
 const SYNC_DEBOUNCE_MS = 3000;
 
 function generateGamificationId(userId: string): string {
-    try {
-        const clean = userId.trim();
-        const encoded = btoa(`${clean}:gamification`).replace(/[^a-zA-Z0-9]/g, '');
-        return (encoded.slice(0, 15) || clean.slice(0, 15)).padEnd(15, '0');
-    } catch {
-        return userId.slice(0, 15).padEnd(15, '0');
-    }
+    return generateDeterministicRecordId('gamification', userId);
 }
 
 @Injectable({
@@ -248,8 +243,18 @@ export class OfflineGamificationRepository implements IGamificationRepository {
     // ==================== Private Helpers ====================
 
     private setupAutoSync(): void {
+        if (this.auth.isLoggedIn()) {
+            void this.syncWithRemote();
+        }
+
         this.auth.loginEvent.subscribe(() => {
             void this.syncWithRemote();
+        });
+
+        this.pb.reconnectEvent.subscribe(() => {
+            if (this.auth.isLoggedIn()) {
+                void this.syncWithRemote();
+            }
         });
 
         this.auth.logoutEvent.subscribe(() => {

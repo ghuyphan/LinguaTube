@@ -94,7 +94,12 @@ export class PaymentService {
   private pollOrderStatus(orderCode: number): void {
     interval(3000).pipe(
       takeWhile(() => !this.isPaid() && this.currentOrder()?.orderCode === orderCode),
-      switchMap(() => this.checkStatus(orderCode))
+      switchMap(() => this.checkStatus(orderCode).pipe(
+        catchError(err => {
+          console.warn('[PaymentService] Status check transient error, retrying:', err);
+          return of<PaymentStatus>({ success: false, status: 'PENDING' });
+        })
+      ))
     ).subscribe({
       next: res => {
         if (res.status === 'PAID') {

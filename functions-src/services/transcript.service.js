@@ -56,9 +56,10 @@ export class TranscriptService {
         const nativeResult = await this.supadataProvider.fetchCaptions(videoId, lang, cache);
 
         if (nativeResult?.segments?.length > 0) {
+            const cleanedSegments = cleanTranscriptSegments(nativeResult.segments);
             // Found native captions -> Save to R2 & DB
             const savePromises = [
-                saveTranscriptToR2(r2, videoId, lang, nativeResult.segments, nativeResult.source),
+                saveTranscriptToR2(r2, videoId, lang, cleanedSegments, nativeResult.source),
             ];
 
             const availableLangs = nativeResult.availableLangs?.length > 0 ? nativeResult.availableLangs : [lang];
@@ -178,8 +179,28 @@ export class TranscriptService {
         const MAX_POLL_DURATION_MS = 25000;
         let delay = 3000;
 
-        if (!videoId && resultUrl && cache) {
-            try { videoId = await cache.get(`job_map:${resultUrl}`); } catch { }
+        if (resultUrl) {
+            let mappedVideoId = null;
+            if (cache) {
+                try { mappedVideoId = await cache.get(`job_map:${resultUrl}`); } catch { }
+            }
+            if (!mappedVideoId && db && videoId) {
+                try {
+                    const pending = await getPendingJob(db, videoId);
+                    if (pending && pending.result_url === resultUrl) {
+                        mappedVideoId = videoId;
+                    }
+                } catch { }
+            }
+
+            if (mappedVideoId) {
+                if (videoId && videoId !== mappedVideoId) {
+                    return { status: 'error', error: 'Result URL does not match requested video' };
+                }
+                videoId = mappedVideoId;
+            } else if (!videoId) {
+                return { status: 'error', error: 'Unknown or expired transcription job' };
+            }
         }
 
         while (Date.now() - startTime < MAX_POLL_DURATION_MS) {
@@ -246,6 +267,11 @@ export class TranscriptService {
                 delay = Math.min(delay * 2, 10000);
 
             } catch (error) {
+                // Fail immediately on fatal client errors (e.g. 400, 401, 403, 404)
+                if (error.status && error.status >= 400 && error.status < 500) {
+                    console.error('[TranscriptService] Non-retryable Gladia error:', error.status, error.message);
+                    return { status: 'error', error: error.message };
+                }
                 // Network error, try again
                 delay = Math.min(delay * 2, 10000);
             }

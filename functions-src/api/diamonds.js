@@ -4,10 +4,16 @@
  */
 
 import { validateAuthToken } from '../middlewares/auth.js';
-import { getClientIdentifier } from '../middlewares/rate-limiter.js';
+import { getClientIdentifier, consumeRateLimit, rateLimitResponse } from '../middlewares/rate-limiter.js';
 import { CacheManager } from '../utils/cache-manager.js';
 import { DiamondService } from '../services/diamond.service.js';
 import { jsonResponse, handleOptions } from '../utils/utils.js';
+
+const RATE_LIMIT_CONFIG = {
+    max: 60,
+    windowSeconds: 60,
+    keyPrefix: 'diamonds_api'
+};
 
 export async function onRequestOptions() {
     return handleOptions(['GET', 'OPTIONS']);
@@ -22,6 +28,11 @@ export async function onRequestGet(context) {
         const user = authResult.valid ? authResult.user : null;
 
         const cache = env.TRANSCRIPT_CACHE;
+        const rateCheck = await consumeRateLimit(cache, clientId, RATE_LIMIT_CONFIG);
+        if (!rateCheck.allowed) {
+            return rateLimitResponse(rateCheck.resetAt);
+        }
+
         const cacheManager = new CacheManager(cache);
         const diamondService = new DiamondService(cacheManager);
 

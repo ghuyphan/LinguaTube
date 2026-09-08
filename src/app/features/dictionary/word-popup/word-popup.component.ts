@@ -1,4 +1,4 @@
-import { Component, inject, input, output, signal, effect, computed, linkedSignal, ChangeDetectionStrategy, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { Component, inject, input, output, signal, effect, computed, linkedSignal, untracked, ChangeDetectionStrategy, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -100,14 +100,20 @@ export class WordPopupComponent implements OnDestroy {
       const word = this.selectedWord();
       if (word) {
         this.isVisible.set(true);
+        this.cancelAllTranslations();
         // Reset all state when word changes
         this.translatedDefinitions.set(new Map());
         this.translatingIndices.set(new Set());
         this.translationErrors.set(new Set());
         this.lookupError.set(null);
-        this.lookupWord(word.surface);
+        untracked(() => this.lookupWord(word.surface));
       }
     });
+  }
+
+  cancelAllTranslations(): void {
+    this.translationSubscriptions.forEach(sub => sub.unsubscribe());
+    this.translationSubscriptions.clear();
   }
 
   lookupWord(word: string): void {

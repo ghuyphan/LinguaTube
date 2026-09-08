@@ -6,6 +6,7 @@
 /functions
 /out-tsc
 /.angular
+.wrangler/
 
 # IDE
 .idea/

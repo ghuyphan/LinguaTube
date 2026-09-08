@@ -18,6 +18,7 @@ This document provides a comprehensive breakdown of the languages, frameworks, l
 | **YouTube Client (Dev)**| `youtubei.js` | `^18.0.0` | Innertube client for real YouTube native caption extraction locally |
 | **Bundler (Backend)** | esbuild | `^0.27.2` | Bundling `functions-src/` route handlers to ESM format |
 | **Backend as a Service** | PocketBase | `^0.26.5` | Authentication, user profiles, vocabulary/streak/playlist sync |
+| **Payment Gateway** | PayOS VietQR | API / Webhook | Automated VietQR payment processing, webhook HMAC verification & auto-upgrades |
 | **Edge Database** | Cloudflare D1 | `SQLite` | Serverless relational edge database for metadata & negative caching |
 | **Edge Object Storage** | Cloudflare R2 | `S3-compatible` | Transcript file store (`transcripts/`) & translations store (`translations/`) |
 | **Edge Key-Value** | Cloudflare KV | `Key-Value` | Distributed rate limits, fast metadata cache, batch translation cache |

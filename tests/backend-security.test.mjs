@@ -35,7 +35,9 @@ test('Gladia resultUrl security validation prevents SSRF & exfiltration', () => 
   const isValidGladiaUrl = (urlStr) => {
     try {
       const parsed = new URL(urlStr);
-      return parsed.protocol === 'https:' && parsed.hostname === 'api.gladia.io';
+      return parsed.protocol === 'https:' && 
+             parsed.hostname === 'api.gladia.io' &&
+             /^\/v2\/pre-recorded\/?/.test(parsed.pathname);
     } catch {
       return false;
     }
@@ -52,6 +54,8 @@ test('Gladia resultUrl security validation prevents SSRF & exfiltration', () => 
   assert.equal(isValidGladiaUrl('https://evil.com/?target=api.gladia.io'), false); // query attack
   assert.equal(isValidGladiaUrl('javascript:alert(1)'), false); // javascript scheme
   assert.equal(isValidGladiaUrl('file:///etc/passwd'), false); // file scheme
+  assert.equal(isValidGladiaUrl('https://api.gladia.io/v2/other-endpoint'), false); // unauthorized endpoint
+  assert.equal(isValidGladiaUrl('https://api.gladia.io/v1/billing/keys'), false); // billing endpoint traversal
 });
 
 test('sanitizeVideoId & validateVideoRequest: prevents path traversal and malformed video IDs', async () => {
@@ -160,6 +164,21 @@ test('payOS: HMAC-SHA256 signature calculation and webhook verification', async 
   };
   const isBadSig = await verifyWebhookSignature(badSigWebhook, secretKey);
   assert.equal(isBadSig, false);
+
+  // Empty signature
+  assert.equal(await verifyWebhookSignature({ data: sampleData, signature: '' }, secretKey), false);
+
+  // Missing signature
+  assert.equal(await verifyWebhookSignature({ data: sampleData }, secretKey), false);
+
+  // Missing data
+  assert.equal(await verifyWebhookSignature({ signature }, secretKey), false);
+
+  // Null/missing payload
+  assert.equal(await verifyWebhookSignature(null, secretKey), false);
+
+  // Missing secret key
+  assert.equal(await verifyWebhookSignature(validWebhook, ''), false);
 });
 
 test('detectLevelFromMetadata: accurately parses proficiency levels from titles & channels', async () => {

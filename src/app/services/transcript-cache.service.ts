@@ -36,7 +36,9 @@ export class TranscriptCacheService {
     private dbPromise: Promise<IDBDatabase> | null = null;
 
     constructor() {
-        // Initialize on first use
+        if (typeof indexedDB !== 'undefined') {
+            void this.pruneExpired();
+        }
     }
 
     /**

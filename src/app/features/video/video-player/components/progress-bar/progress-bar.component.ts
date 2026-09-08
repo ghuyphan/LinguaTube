@@ -135,6 +135,7 @@ export class ProgressBarComponent implements OnDestroy {
     // ========================================
 
     private bufferedInterval: ReturnType<typeof setInterval> | null = null;
+    private seekRafId: number | null = null;
 
     // Bound event handlers for document-level listeners
     private readonly boundOnSeekMove = this.onSeekMove.bind(this);
@@ -289,27 +290,39 @@ export class ProgressBarComponent implements OnDestroy {
 
     private onSeekMove(event: MouseEvent | TouchEvent): void {
         event.preventDefault();
+        const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;
 
-        this.ngZone.run(() => {
-            const progressBar = this.progressBar().nativeElement;
-            if (!progressBar) return;
+        if (this.seekRafId !== null) {
+            cancelAnimationFrame(this.seekRafId);
+        }
 
-            const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;
-            const rect = progressBar.getBoundingClientRect();
-            const offsetX = Math.max(0, Math.min(clientX - rect.left, rect.width));
-            const percentage = offsetX / rect.width;
-            const time = percentage * this.youtube.duration();
+        this.seekRafId = requestAnimationFrame(() => {
+            this.seekRafId = null;
+            this.ngZone.run(() => {
+                const progressBar = this.progressBar()?.nativeElement;
+                if (!progressBar) return;
 
-            this.previewTime.set(time);
-            this.seekPreview.set({
-                visible: true,
-                time,
-                position: offsetX
+                const rect = progressBar.getBoundingClientRect();
+                const offsetX = Math.max(0, Math.min(clientX - rect.left, rect.width));
+                const percentage = offsetX / rect.width;
+                const time = percentage * this.youtube.duration();
+
+                this.previewTime.set(time);
+                this.seekPreview.set({
+                    visible: true,
+                    time,
+                    position: offsetX
+                });
             });
         });
     }
 
     private onSeekUp(): void {
+        if (this.seekRafId !== null) {
+            cancelAnimationFrame(this.seekRafId);
+            this.seekRafId = null;
+        }
+
         this.ngZone.run(() => {
             this.isDragging.set(false);
             this.seekPreview.update(prev => ({ ...prev, visible: false }));
@@ -336,6 +349,10 @@ export class ProgressBarComponent implements OnDestroy {
     // ========================================
 
     ngOnDestroy(): void {
+        if (this.seekRafId !== null) {
+            cancelAnimationFrame(this.seekRafId);
+            this.seekRafId = null;
+        }
         this.stopBufferedTracking();
         document.removeEventListener('mousemove', this.boundOnSeekMove);
         document.removeEventListener('mouseup', this.boundOnSeekUp);

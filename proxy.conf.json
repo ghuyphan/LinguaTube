@@ -59,11 +59,6 @@
     "secure": false,
     "changeOrigin": true
   },
-  "/api/auth-config": {
-    "target": "http://localhost:3001",
-    "secure": false,
-    "changeOrigin": true
-  },
   "/proxy": {
     "target": "http://localhost:3001",
     "secure": false,

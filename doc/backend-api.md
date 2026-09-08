@@ -27,7 +27,7 @@ Voca uses a dual backend model to maximize both developer productivity and produ
 ### Local Dev Server Highlights (`server/server.js`)
 - **Innertube Client**: Uses `youtubei.js` to fetch real YouTube timed-text tracks directly in local development without needing Cloudflare bindings.
 - **Local Disk Cache with Traversal Defense**: Automatically persists discovered YouTube transcripts to `server/transcripts_cache/{videoId}_{lang}.json` sanitized against path traversal attacks.
-- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/dual-subtitles`, `/api/tokenize/:lang` (unified `ja`, `zh`, `ko`, `en`), `/api/tokenize-batch/:lang`, `/api/translate/:source/:target/*` (with wildcard slug support), `/api/translate/batch` (GTX fallback), `/api/auth-config`, `/api/diamonds`, and `/proxy/:service/*` (matching the production SSRF-protected proxy).
+- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/dual-subtitles`, `/api/tokenize/:lang` (unified `ja`, `zh`, `ko`, `en`), `/api/tokenize-batch/:lang`, `/api/translate/:source/:target/*` (with wildcard slug support), `/api/translate/batch` (GTX fallback), `/api/recommended-videos`, `/api/diamonds`, and `/proxy/:service/*` (matching the production SSRF-protected proxy).
 
 ---
 
@@ -261,19 +261,7 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 
 ---
 
-### 3.9. Auth Configuration API
-- **Route**: `GET /api/auth-config`
-- **Source**: `functions-src/api/auth-config.js`
-- **Response**:
-  ```json
-  {
-    "clientId": "your-google-oauth-client-id.apps.googleusercontent.com",
-    "enabled": true
-  }
-  ```
-- **Caching**: `Cache-Control: public, max-age=86400, s-maxage=604800`.
-
-### 3.10. Recommended Videos API (Verified Database Transcripts)
+### 3.9. Recommended Videos API (Verified Database Transcripts)
 - **Route**: `GET /api/recommended-videos?lang={lang}&limit={limit}`
 - **Source**: `functions-src/api/recommended-videos.js`
 - **Query Parameters**:
@@ -316,7 +304,7 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 
 ---
 
-### 3.11. Safe Reverse Proxy
+### 3.10. Safe Reverse Proxy
 - **Route**: `ALL /proxy/[service]/[[path]]`
 - **Source**: `functions-src/proxy/[service]/[[path]].js`
 - **SSRF & Abuse Protections**:
@@ -335,10 +323,10 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   - `POST /api/payment/webhook`
   - `GET /api/payment/check-status`
 - **Source**: `functions-src/api/payment/*.js`, `functions-src/providers/payos.js`
-- **Process**:
-  1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 490,000 VND). Generates a unique numeric `orderCode`, builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV.
-  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY`. Enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier = 'pro'`, sets `subscription_expires` (+30 days or +365 days), and allocates `diamonds = 20`.
-  3. `check-status`: Lightweight polling endpoint for the frontend `ProUpgradeDialogComponent` to detect payment completion in real time. Also supports local development simulation via `POST /api/payment/simulate-transfer`.
+- **Process & Security**:
+  1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 490,000 VND). Generates a cryptographically secure random 8-digit `orderCode` (`crypto.getRandomValues`), builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV.
+  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY` via constant-time XOR comparison to protect against timing attacks. Enforces fail-closed verification in production, verifies `receivedAmount >= expectedAmount`, and enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier = 'pro'`, sets `subscription_expires` (+30 days or +365 days), and allocates `diamonds = 20` (supporting PocketBase v0.23+ `_superusers` authentication).
+  3. `check-status`: Rate-limited polling endpoint for the frontend `ProUpgradeDialogComponent` to detect payment completion in real time. Also supports local development simulation via `POST /api/payment/simulate-transfer`.
 
 ---
 

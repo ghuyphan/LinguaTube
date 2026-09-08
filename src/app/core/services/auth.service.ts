@@ -78,7 +78,7 @@ export class AuthService {
             picture: model['avatar'] && client
                 ? client.files.getURL(model, model['avatar'])
                 : '',
-            subscriptionTier: model['subscription_tier'] || 'premium',
+            subscriptionTier: model['subscription_tier'] || 'free',
             subscriptionExpires: model['subscription_expires']
                 ? new Date(model['subscription_expires'])
                 : undefined
@@ -115,15 +115,6 @@ export class AuthService {
             });
 
             const profile = this.modelToProfile(authData.record);
-
-            // If new user or free tier, upgrade to premium automatically (for now)
-            if (authData.meta?.['isNew'] || profile.subscriptionTier === 'free') {
-                await client.collection('users').update(authData.record.id, {
-                    subscription_tier: 'premium'
-                });
-                profile.subscriptionTier = 'premium';
-            }
-
             this.user.set(profile);
             this.loginEvent.next(profile);
 

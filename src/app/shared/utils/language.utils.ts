@@ -13,18 +13,18 @@ const UNICODE_RANGES = {
     // Japanese
     hiragana: /[\u3040-\u309F]/,
     katakana: /[\u30A0-\u30FF]/,
-    japanese: /[\u3040-\u309F\u30A0-\u30FF]/g,
+    japanese: /[\u3040-\u309F\u30A0-\u30FF]/,
 
     // Korean
-    hangul: /[\uAC00-\uD7AF]/g,
+    hangul: /[\uAC00-\uD7AF]/,
     hangulJamo: /[\u1100-\u11FF\u3130-\u318F]/,
     korean: /[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/,
 
     // Chinese (CJK Unified Ideographs)
-    hanzi: /[\u4E00-\u9FFF]/g,
+    hanzi: /[\u4E00-\u9FFF]/,
 
     // Basic Latin
-    latin: /[a-zA-Z]/g,
+    latin: /[a-zA-Z]/,
 } as const;
 
 // Comprehensive punctuation pattern for CJK + Western

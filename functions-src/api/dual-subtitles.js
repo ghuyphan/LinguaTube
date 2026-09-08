@@ -4,7 +4,7 @@
  * Route: POST /api/dual-subtitles
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody, logError } from '../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody, logError, sanitizeVideoId } from '../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
@@ -60,11 +60,55 @@ export async function onRequestPost(context) {
         }
 
         const { videoId, sourceLang, targetLang, segments, forceRefresh, onlyCache, saveOnly, onlySave } = body;
+        const cleanVideoId = sanitizeVideoId(videoId);
+        if (!cleanVideoId) {
+            return jsonResponse({ error: 'Invalid video ID format' }, 400);
+        }
 
         const r2 = env.TRANSCRIPT_STORAGE;
         const db = env.VOCAB_DB;
 
-        // 1. Check if client is persisting completed translations to R2 cache
+        // 1. Check Cache (skip if forceRefresh or saveOnly)
+        if (!forceRefresh && !saveOnly && !onlySave) {
+            const cached = await getTranslation(r2, cleanVideoId, sourceLang, targetLang);
+            if (cached) {
+                return jsonResponse({
+                    videoId: cleanVideoId,
+                    sourceLang,
+                    targetLang,
+                    segments: cached.segments,
+                    cached: true,
+                    quality: cached.quality || 100,
+                    timestamp: cached.timestamp
+                }, 200, { 'Cache-Control': CACHE_HEADERS.HIT });
+            }
+        }
+
+        // 1.5. If onlyCache is requested and no cache found, return early
+        if (onlyCache) {
+            return jsonResponse({
+                videoId: cleanVideoId,
+                sourceLang,
+                targetLang,
+                segments: [],
+                cached: false
+            }, 200, { 'Cache-Control': 'no-store' });
+        }
+
+        // 2. Auth & Rate Limit (applies to both saveOnly and live translation generation)
+        const authResult = await validateAuthToken(request, env);
+        const tier = authResult.valid
+            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+            : 'anonymous';
+        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+
+        const clientId = getClientIdentifier(request, authResult);
+        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig);
+        if (!rateCheck.allowed) {
+            return rateLimitResponse(rateCheck.resetAt);
+        }
+
+        // 3. Handle saveOnly: persisting completed client-side translations to R2 cache
         if (saveOnly || onlySave) {
             const successCount = segments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim() && (sourceLang === targetLang || s.translation.trim() !== (s.text || '').trim())).length;
             const successRate = segments.length > 0 ? successCount / segments.length : 0;
@@ -72,10 +116,10 @@ export async function onRequestPost(context) {
 
             if (successRate >= QUALITY_THRESHOLD) {
                 const savePromises = [
-                    saveTranslation(r2, videoId, sourceLang, targetLang, segments, quality)
+                    saveTranslation(r2, cleanVideoId, sourceLang, targetLang, segments, quality)
                 ];
                 if (db) {
-                    savePromises.push(recordTranslation(db, videoId, sourceLang, targetLang, segments.length));
+                    savePromises.push(recordTranslation(db, cleanVideoId, sourceLang, targetLang, segments.length));
                 }
                 if (waitUntil) {
                     waitUntil(Promise.allSettled(savePromises));
@@ -83,7 +127,7 @@ export async function onRequestPost(context) {
                     await Promise.allSettled(savePromises);
                 }
                 return jsonResponse({
-                    videoId,
+                    videoId: cleanVideoId,
                     sourceLang,
                     targetLang,
                     cached: true,
@@ -97,46 +141,6 @@ export async function onRequestPost(context) {
                 quality,
                 required: Math.round(QUALITY_THRESHOLD * 100)
             }, 400);
-        }
-
-        // 2. Check Cache (skip if forceRefresh)
-        if (!forceRefresh) {
-            const cached = await getTranslation(r2, videoId, sourceLang, targetLang);
-            if (cached) {
-                return jsonResponse({
-                    videoId,
-                    sourceLang,
-                    targetLang,
-                    segments: cached.segments,
-                    cached: true,
-                    quality: cached.quality || 100,
-                    timestamp: cached.timestamp
-                }, 200, { 'Cache-Control': CACHE_HEADERS.HIT });
-            }
-        }
-
-        // 2.5. If onlyCache is requested and no cache found, return early
-        if (onlyCache) {
-            return jsonResponse({
-                videoId,
-                sourceLang,
-                targetLang,
-                segments: [],
-                cached: false
-            }, 200, { 'Cache-Control': 'no-store' });
-        }
-
-        // 3. Rate Limit (only on cache miss - actual translation work)
-        const authResult = await validateAuthToken(request, env);
-        const tier = authResult.valid
-            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
-            : 'anonymous';
-        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
-
-        const clientId = getClientIdentifier(request, authResult);
-        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig);
-        if (!rateCheck.allowed) {
-            return rateLimitResponse(rateCheck.resetAt);
         }
 
         // 3. Batch Translate

@@ -63,18 +63,23 @@ export class GladiaProvider {
             if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io') {
                 throw new Error('Invalid resultUrl host: must be api.gladia.io');
             }
+            if (!/^\/v2\/(transcription|pre-recorded)\/[a-zA-Z0-9_-]+$/.test(parsed.pathname)) {
+                throw new Error('Invalid resultUrl pathname format');
+            }
         } catch (e) {
             throw new Error(`Invalid resultUrl: ${e.message}`);
         }
 
         const resultResponse = await fetch(resultUrl, {
             headers: { 'x-gladia-key': this.apiKey },
+            redirect: 'error',
             signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
         });
 
         if (!resultResponse.ok) {
-            // Usually we wouldn't throw here, just treat as still processing or transient error
-            throw new Error(`Gladia poll failed: ${resultResponse.status}`);
+            const err = new Error(`Gladia poll failed: ${resultResponse.status}`);
+            err.status = resultResponse.status;
+            throw err;
         }
 
         return await resultResponse.json();

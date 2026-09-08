@@ -36,7 +36,7 @@ describe('srs.utils', () => {
     });
 
     describe('calculateNextSRSState', () => {
-        it('resets repetitions and interval to 0 on failed quality (< 3)', () => {
+        it('applies ease penalty on failed quality (< 3)', () => {
             const item: Pick<VocabularyItem, 'level' | 'easeFactor' | 'interval' | 'repetitions'> = {
                 level: 'known',
                 easeFactor: 2.5,
@@ -46,7 +46,36 @@ describe('srs.utils', () => {
             const result = calculateNextSRSState(item, 1);
             expect(result.interval).toBe(0);
             expect(result.repetitions).toBe(0);
+            expect(result.easeFactor).toBe(2.3);
             expect(result.newLevel).toBe('learning');
+        });
+
+        it('handles Hard (quality 3) without resetting progress', () => {
+            const item: Pick<VocabularyItem, 'level' | 'easeFactor' | 'interval' | 'repetitions'> = {
+                level: 'known',
+                easeFactor: 2.5,
+                interval: 10,
+                repetitions: 3
+            };
+            const result = calculateNextSRSState(item, 3);
+            expect(result.repetitions).toBe(4);
+            expect(result.interval).toBe(12); // Math.round(10 * 1.2)
+            expect(result.easeFactor).toBe(2.35); // 2.5 - 0.15
+            expect(result.newLevel).toBe('known');
+        });
+
+        it('handles Easy (quality 5) with bonus interval and increased ease', () => {
+            const item: Pick<VocabularyItem, 'level' | 'easeFactor' | 'interval' | 'repetitions'> = {
+                level: 'learning',
+                easeFactor: 2.5,
+                interval: 6,
+                repetitions: 2
+            };
+            const result = calculateNextSRSState(item, 5);
+            expect(result.repetitions).toBe(3);
+            expect(result.interval).toBeGreaterThan(6 * 2.5); // bonus interval
+            expect(result.easeFactor).toBe(2.65); // 2.5 + 0.15
+            expect(result.newLevel).toBe('known');
         });
 
         it('increments repetitions and sets interval to 1 on first successful review', () => {

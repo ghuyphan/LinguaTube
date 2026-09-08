@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mergeByTimestamp, calculateHash, sanitizeFilterValue, processBatch } from '../src/app/shared/utils/sync.utils.ts';
+import { mergeByTimestamp, calculateHash, sanitizeFilterValue, processBatch, generateDeterministicRecordId } from '../src/app/shared/utils/sync.utils.ts';
 
 test('mergeByTimestamp: correctly merges non-overlapping sets', () => {
   const local = [
@@ -61,4 +61,27 @@ test('processBatch: batches operations and maintains result ordering', async () 
   );
 
   assert.deepEqual(processed, [10, 20, 30, 40, 50, 60, 70]);
+});
+
+test('generateDeterministicRecordId: generates valid 15-char PocketBase IDs deterministically', () => {
+  const id1 = generateDeterministicRecordId('user123', '食べる', 'ja');
+  const id2 = generateDeterministicRecordId('user123', '食べる', 'ja');
+  const id3 = generateDeterministicRecordId('user123', '飲む', 'ja');
+  const id4 = generateDeterministicRecordId('user456', '食べる', 'ja');
+
+  // Must match PocketBase 15-character lowercase alphanumeric requirement: ^[a-z0-9]{15}$
+  assert.match(id1, /^[a-z0-9]{15}$/);
+  assert.match(id3, /^[a-z0-9]{15}$/);
+  assert.match(id4, /^[a-z0-9]{15}$/);
+
+  // Determinism
+  assert.equal(id1, id2);
+
+  // Sensitivity
+  assert.notEqual(id1, id3);
+  assert.notEqual(id1, id4);
+
+  // Whitespace resilience
+  const trimmed = generateDeterministicRecordId('  user123  ', '食べる', 'ja');
+  assert.equal(id1, trimmed);
 });

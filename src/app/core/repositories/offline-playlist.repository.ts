@@ -28,8 +28,16 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
     }
 
     private setupAutoSync() {
+        if (this.auth.isLoggedIn()) {
+            this.syncWithRemote();
+        }
         this.auth.loginEvent.subscribe(() => {
             this.syncWithRemote();
+        });
+        this.pb.reconnectEvent.subscribe(() => {
+            if (this.auth.isLoggedIn()) {
+                this.syncWithRemote();
+            }
         });
         this.auth.logoutEvent.subscribe(() => {
             this.playlists.set([]);

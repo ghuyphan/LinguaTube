@@ -4,6 +4,13 @@
  */
 
 import { jsonResponse, handleOptions } from '../../utils/utils.js';
+import { consumeRateLimit, rateLimitResponse } from '../../middlewares/rate-limiter.js';
+
+const RATE_LIMIT_CONFIG = {
+    max: 60,
+    windowSeconds: 600,
+    keyPrefix: 'pay_status'
+};
 
 export async function onRequestOptions() {
     return handleOptions(['GET', 'OPTIONS']);
@@ -19,6 +26,12 @@ export async function onRequestGet(context) {
     }
 
     const kv = env.TRANSCRIPT_CACHE;
+    const clientIp = request.headers.get('cf-connecting-ip') || 'anonymous';
+    const rateCheck = await consumeRateLimit(kv, clientIp, RATE_LIMIT_CONFIG);
+    if (!rateCheck.allowed) {
+        return rateLimitResponse(rateCheck.resetAt);
+    }
+
     if (!kv) {
         return jsonResponse({ success: true, status: 'PENDING' }, 200);
     }

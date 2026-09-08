@@ -1,6 +1,4 @@
-/**
- * Service for managing Diamond Credit System with Multi-Tier Support
- */
+import { invalidateUserTokenCache } from '../middlewares/auth.js';
 
 export const TIER_CONFIGS = {
     anonymous: {
@@ -60,13 +58,24 @@ async function getPocketBaseAdminToken(env) {
     if (!env?.PB_ADMIN_EMAIL || !env?.PB_ADMIN_PASSWORD) {
         return null;
     }
-    const authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
+    let authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ identity: env.PB_ADMIN_EMAIL, password: env.PB_ADMIN_PASSWORD })
-    });
-    if (!authRes.ok) {
-        console.error(`[DiamondService] PocketBase admin auth failed: ${authRes.status}`);
+        body: JSON.stringify({ identity: env.PB_ADMIN_EMAIL, password: env.PB_ADMIN_PASSWORD }),
+        signal: AbortSignal.timeout(5000)
+    }).catch(() => null);
+
+    if (!authRes || authRes.status === 404) {
+        authRes = await fetch(`${pbUrl}/api/collections/_superusers/auth-with-password`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ identity: env.PB_ADMIN_EMAIL, password: env.PB_ADMIN_PASSWORD }),
+            signal: AbortSignal.timeout(5000)
+        }).catch(() => null);
+    }
+
+    if (!authRes || !authRes.ok) {
+        console.error(`[DiamondService] PocketBase admin auth failed: ${authRes ? authRes.status : 'network error'}`);
         return null;
     }
     const authData = await authRes.json();
@@ -280,6 +289,10 @@ export class DiamondService {
 
         // Persist the new state
         if (user) {
+            user.diamonds = newDiamondCount;
+            user.last_diamond_regen = new Date(lastRegenTime).toISOString();
+            invalidateUserTokenCache(user.id);
+
             const updateTask = this._updatePocketBaseUser(
                 env,
                 user.id,

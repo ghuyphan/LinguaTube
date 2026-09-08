@@ -140,3 +140,28 @@ function sleep(ms: number): Promise<void> {
 export function sanitizeFilterValue(value: string): string {
     return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 }
+
+/**
+ * Generates a deterministic 15-character lowercase alphanumeric ID conforming to PocketBase requirements (^[a-z0-9]{15}$)
+ * Uses cyrb53 hash mixing to generate high-entropy base36 IDs from arbitrary inputs.
+ */
+export function generateDeterministicRecordId(...keys: string[]): string {
+    const raw = keys.map(k => (k || '').trim()).join('|');
+    let h1 = 0xdeadbeef;
+    let h2 = 0x41c64e6d;
+    for (let i = 0; i < raw.length; i++) {
+        const ch = raw.charCodeAt(i);
+        h1 = Math.imul(h1 ^ ch, 2654435761);
+        h2 = Math.imul(h2 ^ ch, 1597334677);
+    }
+    h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507);
+    h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+    h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
+    h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+    const h3 = Math.imul(h1 ^ h2, 2166136261);
+
+    const p1 = (h1 >>> 0).toString(36).padStart(7, '0');
+    const p2 = (h2 >>> 0).toString(36).padStart(7, '0');
+    const p3 = (h3 >>> 0).toString(36).padStart(7, '0');
+    return (p1 + p2 + p3).slice(0, 15);
+}

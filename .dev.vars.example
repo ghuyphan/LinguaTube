@@ -2,6 +2,9 @@
 # Copy this file to .dev.vars and fill in your actual values:
 # cp .dev.vars.example .dev.vars
 
+# Environment mode
+ENVIRONMENT="development"
+
 # Optional: YouTube cookies for inner-tube client authentication if needed
 YOUTUBE_COOKIE=""
 
@@ -16,3 +19,13 @@ TURNSTILE_SECRET_KEY="1x00000000000000000000000000000000BB"
 SUPADATA_API_KEY=""
 SUPADATA_API_KEY_2=""
 SUPADATA_API_KEY_3=""
+
+# PayOS Payment Gateway
+PAYOS_CLIENT_ID=""
+PAYOS_API_KEY=""
+PAYOS_CHECKSUM_KEY=""
+
+# PocketBase Admin Credentials (for server-side webhook credit updates)
+POCKETHOST_URL="https://voca.pockethost.io"
+PB_ADMIN_EMAIL=""
+PB_ADMIN_PASSWORD=""

@@ -77,13 +77,15 @@ CREATE INDEX IF NOT EXISTS idx_no_transcript_video ON no_transcript_cache(video_
 CREATE INDEX IF NOT EXISTS idx_no_transcript_created ON no_transcript_cache(created_at);
 ```
 
-### 2.3. Table: `video_meta` (`db/add-video-meta.sql`)
-Index recording available languages for quick lookup without reading full transcripts:
+### 2.3. Table: `video_meta` (`db/schema.sql` & `db/add-video-meta.sql`)
+Index recording available languages and sources per video for quick lookup without reading full transcripts:
 ```sql
 CREATE TABLE IF NOT EXISTS video_meta (
-    video_id TEXT PRIMARY KEY,
-    available_langs TEXT,  -- comma-separated: "en,ja,zh"
-    created_at INTEGER DEFAULT (strftime('%s', 'now'))
+    video_id TEXT NOT NULL,
+    language TEXT NOT NULL,
+    source TEXT NOT NULL,
+    created_at INTEGER DEFAULT (strftime('%s', 'now')),
+    PRIMARY KEY (video_id, language)
 );
 
 CREATE INDEX IF NOT EXISTS idx_video_meta_video ON video_meta(video_id);

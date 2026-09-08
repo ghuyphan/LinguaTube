@@ -1,4 +1,5 @@
 import { Injectable, signal } from '@angular/core';
+import { Subject } from 'rxjs';
 import type PocketBase from 'pocketbase';
 import type { AuthModel } from 'pocketbase';
 import { environment } from '../../../environments/environment';
@@ -34,6 +35,9 @@ export class PocketBaseService {
 
     /** Whether we have network connectivity */
     readonly isOnline = signal(true);
+
+    /** Emits when network connection is restored after being offline */
+    readonly reconnectEvent = new Subject<void>();
 
     constructor() {
         // Start initialization
@@ -81,6 +85,7 @@ export class PocketBaseService {
                 console.log('[PocketBase] Network: online');
                 // Try to refresh auth when coming back online
                 this.refreshAuthIfNeeded();
+                this.reconnectEvent.next();
             });
             window.addEventListener('offline', () => {
                 this.isOnline.set(false);

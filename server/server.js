@@ -130,15 +130,6 @@ app.all('/proxy/:service/*path', async (req, res) => {
     }
 });
 
-/**
- * GET /api/auth-config
- * Return public auth config (Google Client ID)
- */
-app.get('/api/auth-config', (req, res) => {
-    res.json({
-        googleClientId: process.env.GOOGLE_CLIENT_ID || ''
-    });
-});
 
 /**
  * Helper to translate an array of subtitle strings using tagged batching in local dev

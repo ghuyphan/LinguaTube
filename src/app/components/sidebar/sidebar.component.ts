@@ -1,6 +1,8 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy, output } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
-import { RouterLink, Router, RouterLinkActive } from '@angular/router';
+import { RouterLink, Router, RouterLinkActive, NavigationEnd } from '@angular/router';
+import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
 import { SettingsService, AuthService, I18nService } from '../../core/services';
@@ -32,7 +34,15 @@ export class SidebarComponent {
     playlistService = inject(PlaylistService);
     gamification = inject(GamificationService);
 
-    hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !this.router.url.startsWith('/video'));
+    private currentUrl = toSignal(
+        this.router.events.pipe(
+            filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+            map(e => e.urlAfterRedirects),
+            startWith(this.router.url)
+        )
+    );
+
+    hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !(this.currentUrl()?.startsWith('/video') ?? false));
 
     onLearnClick(event: MouseEvent): void {
         const isOnVideoPage = this.router.url.startsWith('/video');

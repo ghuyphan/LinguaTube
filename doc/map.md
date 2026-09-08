@@ -32,7 +32,6 @@ graph TB
         API_RecommendedVideos["/api/recommended-videos"]
         API_Leaderboard["/api/leaderboard"]
         API_Diamonds["/api/diamonds"]
-        API_AuthConfig["/api/auth-config"]
         API_PayOrder["/api/payment/create-order"]
         API_PayStatus["/api/payment/check-status"]
         API_PayWebhook["/api/payment/webhook"]
@@ -465,7 +464,7 @@ sequenceDiagram
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
 | `src/app/data` | Static Data | Large CJK grammar rules |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, auth-config |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, PocketBase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |

@@ -398,7 +398,8 @@ export class StudyModeComponent implements OnDestroy {
         if (answer === 'wrong') {
             quality = 1;
         } else if (answer === 'hard') {
-            quality = 2;
+            quality = 3;
+            isCorrect = true;
         } else if (answer === 'good') {
             quality = 4;
             isCorrect = true;

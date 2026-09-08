@@ -22,15 +22,18 @@ export async function onRequestPost(context) {
 
         const checksumKey = env.PAYOS_CHECKSUM_KEY;
 
-        // In production, enforce HMAC-SHA256 signature verification
+        // In production, enforce HMAC-SHA256 signature verification (fail closed)
         if (checksumKey) {
             const isValid = await verifyWebhookSignature(body, checksumKey);
             if (!isValid) {
                 console.error('[payOS Webhook] Signature verification failed');
                 return jsonResponse({ success: false, error: 'Invalid signature' }, 400);
             }
-        } else {
+        } else if (env.ENVIRONMENT === 'development') {
             console.warn('[payOS Webhook] PAYOS_CHECKSUM_KEY not configured, processing in permissive dev mode');
+        } else {
+            console.error('[payOS Webhook] PAYOS_CHECKSUM_KEY not configured in production');
+            return jsonResponse({ success: false, error: 'Webhook verification key unconfigured' }, 500);
         }
 
         const data = body.data || body;
@@ -64,6 +67,16 @@ export async function onRequestPost(context) {
             }
         }
 
+        // Verify paid amount matches the plan price
+        if (orderMeta && orderMeta.amount != null) {
+            const expectedAmount = Number(orderMeta.amount);
+            const receivedAmount = Number(data.amount);
+            if (receivedAmount < expectedAmount) {
+                console.error(`[payOS Webhook] Amount mismatch for order ${orderCode}: expected ${expectedAmount}, received ${receivedAmount}`);
+                return jsonResponse({ success: false, error: 'Amount mismatch' }, 400);
+            }
+        }
+
         const userId = orderMeta?.userId;
         const durationDays = orderMeta?.durationDays || 30;
         const grantedDiamonds = orderMeta?.diamonds || 20;
@@ -74,12 +87,22 @@ export async function onRequestPost(context) {
             const adminPassword = env.PB_ADMIN_PASSWORD;
 
             if (adminEmail && adminPassword) {
-                // 1. Admin login to PocketBase
-                const authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
+                // 1. Admin login to PocketBase (try /api/admins first, fallback to /api/collections/_superusers)
+                let authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ identity: adminEmail, password: adminPassword })
-                });
+                    body: JSON.stringify({ identity: adminEmail, password: adminPassword }),
+                    signal: AbortSignal.timeout(5000)
+                }).catch(() => null);
+
+                if (!authRes || authRes.status === 404) {
+                    authRes = await fetch(`${pbUrl}/api/collections/_superusers/auth-with-password`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ identity: adminEmail, password: adminPassword }),
+                        signal: AbortSignal.timeout(5000)
+                    }).catch(() => null);
+                }
 
                 if (authRes.ok) {
                     const authData = await authRes.json();

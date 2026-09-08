@@ -113,6 +113,18 @@ async function verifyPocketBaseToken(token, env) {
 }
 
 /**
+ * Invalidate cached token entry for a user when mutable state (e.g. diamonds) changes
+ */
+export function invalidateUserTokenCache(userId) {
+    if (!userId) return;
+    for (const [token, entry] of memTokenCache.entries()) {
+        if (entry.result?.userId === userId) {
+            memTokenCache.delete(token);
+        }
+    }
+}
+
+/**
  * Validate auth token from Authorization header
  */
 export async function validateAuthToken(request, env) {
