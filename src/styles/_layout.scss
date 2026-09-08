@@ -3,19 +3,22 @@
 /* ============================================
    GLOBAL OVERLAY SCROLLBAR
    ============================================ */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
-}
+/* Standard Firefox scrollbar styling (isolated so Chrome 121+ does not disable ::-webkit-scrollbar) */
+@supports not selector(::-webkit-scrollbar) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    }
 
-*:hover,
-*:focus-within {
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-}
+    *:hover,
+    *:focus-within {
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    }
 
-[data-theme="dark"] *:hover,
-[data-theme="dark"] *:focus-within {
-    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    [data-theme="dark"] *:hover,
+    [data-theme="dark"] *:focus-within {
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    }
 }
 
 ::-webkit-scrollbar {

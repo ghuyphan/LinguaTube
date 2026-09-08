@@ -155,8 +155,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
   private loopTimeoutId: ReturnType<typeof setTimeout> | null = null;
   private lastLoopTime = 0;
 
-  hasScrollTop = signal(false);
-
   @HostListener('document:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
     if (this.subtitles.subtitles().length === 0) return;
@@ -313,12 +311,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
   onCurrentSubtitleScroll(): void {
     this.lastUserScrollTime = Date.now();
-
-    const innerEl = this.currentSubtitleInner()?.nativeElement;
-    if (innerEl) {
-      const scrollTop = innerEl.scrollTop;
-      this.hasScrollTop.set(scrollTop > 8);
-    }
   }
 
   constructor() {
@@ -348,7 +340,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
         const timeSinceUserScroll = Date.now() - this.lastUserScrollTime;
         if (timeSinceUserScroll > this.SCROLL_DEBOUNCE_MS) {
           innerEl.scrollTop = 0;
-          this.hasScrollTop.set(false);
         }
       }
     });

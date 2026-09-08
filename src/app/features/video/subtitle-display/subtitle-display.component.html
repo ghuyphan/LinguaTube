@@ -4,7 +4,7 @@
     <div class="current-subtitle" [class.current-subtitle--small]="settings.settings().fontSize === 'small'"
         [class.current-subtitle--large]="settings.settings().fontSize === 'large'"
         [class.current-subtitle--xlarge]="settings.settings().fontSize === 'xlarge'"
-        [class.is-generating]="transcript.isGeneratingAI()" [class.has-scroll-top]="hasScrollTop()"
+        [class.is-generating]="transcript.isGeneratingAI()"
         [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())"
         [class.is-quiz-active]="quiz.isActive()">
 
