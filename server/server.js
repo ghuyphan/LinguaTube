@@ -1605,7 +1605,7 @@ app.post('/api/tokenize/:lang', (req, res) => {
  * Version & Changelog API for local development
  */
 app.get('/api/version', (req, res) => {
-    res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+    res.set('Cache-Control', 'no-cache, must-revalidate');
     res.json({
         version: '1.0.0',
         minSupportedVersion: '1.0.0',

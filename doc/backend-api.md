@@ -389,9 +389,11 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
     }
   }
   ```
-- **Caching & Transport**:
-  - Strict `Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0` to ensure clients and proxies never stale version responses.
-  - Fast edge execution without database dependencies.
+- **Caching & Transport Optimizations**:
+  - **Pre-Serialized JSON**: The version payload is serialized once at Worker isolate startup, eliminating `JSON.stringify()` runtime CPU overhead.
+  - **ETag & HTTP 304 Not Modified**: Pre-computes `ETag: "{version}-{buildDate}"`. When clients revalidate with `If-None-Match`, the edge immediately short-circuits to `304 Not Modified` with a **0-byte payload**, minimizing mobile bandwidth consumption and server latency.
+  - **Cache Header**: `Cache-Control: no-cache, must-revalidate` paired with client `cache: 'no-cache'`, instructing the browser to always revalidate via conditional requests without risk of stale caching.
+  - **Zero-I/O Fast Path**: Runs purely in-memory in the Cloudflare V8 Worker isolate with 0 database (D1), KV, or storage (R2) queries (<1ms execution time).
 - **Client Usage**:
   - Evaluated by `AppUpdateService` on application launch and background refresh triggers.
   - Compares client version against `minSupportedVersion` (via SemVer string comparison): if client version is older, `forceUpdateRequired` is flagged, making the update sheet non-dismissible and preventing outdated clients from invoking incompatible edge APIs.

@@ -4,9 +4,14 @@
  * 
  * Provides current server version, minimum supported version for breaking changes,
  * maintenance mode status, and localized "What's New" release highlights.
+ * 
+ * Optimized for edge execution:
+ * - Pre-serialized in-memory JSON (0 runtime serialization cost)
+ * - ETag conditional validation (HTTP 304 Not Modified, 0-byte transfer on revalidation)
+ * - Sub-millisecond execution with zero external I/O (no D1, KV, or external calls)
  */
 
-import { jsonResponse, handleOptions } from '../utils/utils.js';
+import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
     version: '1.0.0',
@@ -48,12 +53,45 @@ const APP_VERSION_DATA = {
     }
 };
 
+// Pre-serialized at isolate initialization to avoid JSON.stringify() on every request
+const VERSION_JSON_STRING = JSON.stringify(APP_VERSION_DATA);
+
+// Pre-computed ETag for conditional requests
+const VERSION_ETAG = `"${APP_VERSION_DATA.version}-${APP_VERSION_DATA.buildDate}"`;
+
+// Standard edge response headers
+const RESPONSE_HEADERS = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Cache-Control': 'no-cache, must-revalidate',
+    'ETag': VERSION_ETAG,
+    'Vary': 'Accept-Encoding'
+};
+
 export async function onRequestOptions() {
     return handleOptions(['GET', 'OPTIONS']);
 }
 
-export async function onRequestGet() {
-    return jsonResponse(APP_VERSION_DATA, 200, {
-        'Cache-Control': 'no-store, no-cache, must-revalidate'
+export async function onRequestGet(context) {
+    const { request } = context;
+
+    // Fast-path: HTTP 304 Not Modified if client's cached ETag matches
+    const ifNoneMatch = request?.headers?.get('if-none-match');
+    if (ifNoneMatch && (ifNoneMatch === VERSION_ETAG || ifNoneMatch === `W/${VERSION_ETAG}`)) {
+        return new Response(null, {
+            status: 304,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Cache-Control': 'no-cache, must-revalidate',
+                'ETag': VERSION_ETAG
+            }
+        });
+    }
+
+    return new Response(VERSION_JSON_STRING, {
+        status: 200,
+        headers: RESPONSE_HEADERS
     });
 }

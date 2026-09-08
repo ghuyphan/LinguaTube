@@ -100,7 +100,7 @@ export class AppUpdateService implements OnDestroy {
     }
 
     try {
-      const res = await fetch('/api/version?_t=' + Date.now());
+      const res = await fetch('/api/version', { cache: 'no-cache' });
       if (res.ok) {
         const data: ServerVersionInfo = await res.json();
         this.serverVersionInfo.set(data);
