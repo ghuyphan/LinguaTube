@@ -48,7 +48,7 @@
         "signingIn": "Signing in...",
         "signingOut": "Signing out...",
         "chooseAccountPrompt": "Please select your Google account in the popup window...",
-        "signedInAs": "Signed in as",
+        "signedInAs": "Signed in as {{name}}",
         "signedOut": "Signed out successfully",
         "signInFailed": "Sign in failed. Please try again.",
         "signOutConfirm": "Are you sure you want to sign out?"
@@ -134,9 +134,9 @@
         "serverErrorTitle": "Something went wrong",
         "serverErrorHint": "Our servers are having issues. Please try again later",
         "moreOptions": "More options",
-        "noCaptionsInLanguage": "No {language} captions",
-        "transcriptAvailableIn": "This video has {language} captions available",
-        "switchTo": "Switch to {language}",
+        "noCaptionsInLanguage": "No {{language}} captions",
+        "transcriptAvailableIn": "This video has {{language}} captions available",
+        "switchTo": "Switch to {{language}}",
         "subtitlesOff": "Subtitles turned off",
         "captionsAvailableIn": "Captions are available in {{language}}",
         "dualSubs": "Dual Subtitles",
@@ -393,7 +393,7 @@
         "sessionSize": "Session Size",
         "allCards": "All",
         "estimatedMinutes": "~{{minutes}} min",
-        "listen": "Pronounce",
+        "listen": "Listen",
         "cardsToStudy": "Cards to practice",
         "autoPlayAudio": "Auto-play audio",
         "autoPlayAudioHint": "Play pronunciation automatically on reveal",
@@ -432,7 +432,8 @@
         "freezeExplanation": "Streak freezes automatically protect your streak if you miss a day. You have {{count}} freeze(s) left.",
         "reached": "You hit",
         "days": "days!",
-        "saved": "Streak Saved! ❄️"
+        "saved": "Streak Saved! ❄️",
+        "daysReached": "You hit {{count}} days!"
     },
     "history": {
         "title": "History",

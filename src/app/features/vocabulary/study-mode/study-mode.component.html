@@ -510,7 +510,7 @@
             <div class="streak-details">
                 @if (result.isNewRecord) {
                 <h3>{{ i18n.t('streak.newRecord') || 'New Streak Record! 🔥' }}</h3>
-                <p>{{ i18n.t('streak.reached') || 'You hit' }} {{ streak.currentStreak() }} {{ i18n.t('streak.days') || 'days!' }}</p>
+                <p>{{ i18n.t('streak.daysReached', { count: streak.currentStreak() }) }}</p>
                 } @else if (result.freezeUsed) {
                 <h3>{{ i18n.t('streak.saved') || 'Streak Saved! ❄️' }}</h3>
                 <p>{{ i18n.t('streak.freezeUsed') || 'You used a streak freeze.' }}</p>

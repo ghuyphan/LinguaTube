@@ -48,7 +48,7 @@
         "signingIn": "Đang đăng nhập...",
         "signingOut": "Đang đăng xuất...",
         "chooseAccountPrompt": "Vui lòng chọn tài khoản Google của bạn trong cửa sổ...",
-        "signedInAs": "Đã đăng nhập với tên",
+        "signedInAs": "Đã đăng nhập với tên {{name}}",
         "signedOut": "Đã đăng xuất thành công",
         "signInFailed": "Đăng nhập thất bại. Vui lòng thử lại.",
         "signOutConfirm": "Bạn có chắc chắn muốn đăng xuất không?"
@@ -134,12 +134,12 @@
         "serverErrorTitle": "Đã xảy ra lỗi",
         "serverErrorHint": "Máy chủ đang gặp sự cố. Vui lòng thử lại sau",
         "moreOptions": "Thêm tùy chọn",
-        "noCaptionsInLanguage": "Không có phụ đề {language}",
-        "transcriptAvailableIn": "Video này có phụ đề {language}",
-        "switchTo": "Chuyển sang {language}",
+        "noCaptionsInLanguage": "Không có phụ đề {{language}}",
+        "transcriptAvailableIn": "Video này có phụ đề {{language}}",
+        "switchTo": "Chuyển sang {{language}}",
         "subtitlesOff": "Đã tắt phụ đề",
         "captionsAvailableIn": "Có phụ đề bằng {{language}}",
-        "dualSubs": "Phụ đề đôi",
+        "dualSubs": "Phụ đề song ngữ",
         "aiCredits": "Điểm AI",
         "creditsAvailable": "Điểm hiện có",
         "ready": "Sẵn sàng",
@@ -328,12 +328,12 @@
         "kanjiRomaji": "Kanji + romaji",
         "kanaOnly": "Chỉ kana",
         "romajiOnly": "Chỉ romaji",
-        "hanziOnly": "Chỉ hán tự",
-        "hanziPinyin": "Hán tự + pinyin",
+        "hanziOnly": "Chỉ Hán tự",
+        "hanziPinyin": "Hán tự + Pinyin",
         "pinyinOnly": "Chỉ pinyin",
         "hangulOnly": "Chỉ hangul",
-        "hangulRomanization": "Hangul + romanization",
-        "romanizationOnly": "Chỉ romanization",
+        "hangulRomanization": "Hangul + Phiên âm Latinh",
+        "romanizationOnly": "Chỉ phiên âm Latinh",
         "textOnly": "Chỉ văn bản",
         "signOutConfirmTitle": "Đăng xuất?",
         "signOutConfirmMessage": "Từ vựng của bạn vẫn được lưu cục bộ, nhưng sẽ không đồng bộ cho đến khi bạn đăng nhập lại.",
@@ -432,7 +432,8 @@
         "freezeExplanation": "Bảo vệ chuỗi tự động giữ chuỗi của bạn nếu bạn quên học. Bạn còn {{count}} lần bảo vệ.",
         "reached": "Bạn đã đạt",
         "days": "ngày!",
-        "saved": "Chuỗi đã được bảo vệ! ❄️"
+        "saved": "Chuỗi đã được bảo vệ! ❄️",
+        "daysReached": "Bạn đã đạt chuỗi {{count}} ngày!"
     },
     "history": {
         "title": "Lịch sử",
@@ -466,7 +467,7 @@
         "subtitle": "Quản lý và xem các bộ sưu tập video",
         "playlist": "Danh sách",
         "myPlaylists": "Của tôi",
-        "myPlaylist": "Bạn",
+        "myPlaylist": "Của tôi",
         "community": "Cộng đồng",
         "newPlaylist": "Tạo danh sách mới",
         "saveToPlaylist": "Lưu vào danh sách phát",
@@ -487,7 +488,11 @@
             "videosTitle": "Chưa có video đề xuất",
             "videosHint": "Dán link YouTube ở trên để bắt đầu học ngay với phụ đề thông minh",
             "noVideosTitle": "Chưa có video",
-            "noVideosHint": "Thêm video bằng nút lưu"
+            "noVideosHint": "Thêm video bằng nút lưu",
+            "title": "Không tìm thấy danh sách phát",
+            "hint": "Hãy thử điều chỉnh bộ lọc hoặc từ khóa tìm kiếm",
+            "savedTitle": "Chưa có danh sách đã lưu",
+            "savedHint": "Khám phá danh sách cộng đồng và lưu danh sách bạn thích"
         },
         "create": "Tạo",
         "cancel": "Hủy",
@@ -685,9 +690,9 @@
         "reachedLevel": "Bạn đã đạt Cấp",
         "badgeUnlocked": "Mở khóa thành tựu",
         "linguist": "Người học ngôn ngữ",
-        "rank1": "Tập sự đắm mình",
+        "rank1": "Học giả đắm chìm",
         "rank2": "Người khám phá",
-        "rank3": "Thợ đào từ vựng",
+        "rank3": "Nhà sưu tầm từ vựng",
         "rank4": "Học giả chăm chỉ",
         "rank5": "Bậc thầy đa ngôn ngữ"
     },
@@ -728,11 +733,11 @@
             "desc": "Hoàn thành 25 video học tập"
         },
         "watch100": {
-            "title": "Huyền thoại đắm mình",
+            "title": "Bậc thầy đắm chìm",
             "desc": "Hoàn thành 100 video học tập"
         },
         "vocab1": {
-            "title": "Thợ đào từ",
+            "title": "Thợ săn từ vựng",
             "desc": "Lưu từ vựng đầu tiên vào sổ tay"
         },
         "vocab25": {
@@ -772,7 +777,7 @@
             "desc": "Ôn tập 10 lượt thẻ ghi nhớ"
         },
         "srs50": {
-            "title": "Chiến binh lặp lại",
+            "title": "Chiến binh kiên trì",
             "desc": "Ôn tập 50 lượt thẻ ghi nhớ"
         },
         "srs200": {

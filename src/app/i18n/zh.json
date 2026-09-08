@@ -48,7 +48,7 @@
         "signingIn": "登录中...",
         "signingOut": "正在退出登录...",
         "chooseAccountPrompt": "请在弹出窗口中选择您的 Google 账号...",
-        "signedInAs": "已登录为",
+        "signedInAs": "已登录为 {{name}}",
         "signedOut": "已成功退出登录",
         "signInFailed": "登录失败，请重试。",
         "signOutConfirm": "您确定要退出登录吗？"
@@ -135,9 +135,9 @@
         "serverErrorTitle": "出了点问题",
         "serverErrorHint": "服务器出现问题，请稍后再试",
         "moreOptions": "更多选项",
-        "noCaptionsInLanguage": "没有{language}字幕",
-        "transcriptAvailableIn": "此视频有{language}字幕可用",
-        "switchTo": "切换到{language}",
+        "noCaptionsInLanguage": "没有{{language}}字幕",
+        "transcriptAvailableIn": "此视频有{{language}}字幕可用",
+        "switchTo": "切换到{{language}}",
         "subtitlesOff": "字幕已关闭",
         "captionsAvailableIn": "提供{{language}}字幕",
         "orUseAI": "或使用AI",
@@ -432,7 +432,8 @@
         "freezeExplanation": "如果您忘记练习，连续保护会自动保护您的连续天数。您还有 {{count}} 个保护。",
         "reached": "你已达成",
         "days": "天！",
-        "saved": "连续记录已保护！❄️"
+        "saved": "连续记录已保护！❄️",
+        "daysReached": "你已达成连续 {{count}} 天！"
     },
     "history": {
         "title": "历史",
@@ -487,7 +488,11 @@
             "videosTitle": "暂无推荐视频",
             "videosHint": "在上方输入框粘贴任意 YouTube 链接，即可通过智能字幕开始学习",
             "noVideosTitle": "暂无视频",
-            "noVideosHint": "使用保存按钮添加视频"
+            "noVideosHint": "使用保存按钮添加视频",
+            "title": "未找到播放列表",
+            "hint": "尝试调整筛选条件或搜索关键词",
+            "savedTitle": "暂无已保存的播放列表",
+            "savedHint": "浏览社区播放列表并保存您喜欢的内容"
         },
         "create": "创建",
         "cancel": "取消",
@@ -539,7 +544,7 @@
         "allLanguages": "全部",
         "filterByLanguage": "按语言筛选",
         "copyLink": "复制链接",
-        "linkCopied": "链接已复制!",
+        "linkCopied": "链接已复制！",
         "loginForVisibility": "登录后可与他人分享播放列表",
         "totalPlaylists": "所有播放列表",
         "totalVideos": "视频总数",
@@ -651,7 +656,7 @@
         "general": "常规与播放列表",
         "fullscreen": "切换全屏",
         "exitModal": "退出全屏 / 关闭窗口",
-        "playlistNav": "播放列表上一首 / 下一首",
+        "playlistNav": "播放列表上一个 / 下一个视频",
         "help": "快捷键帮助"
     },
     "pwa": {
@@ -685,7 +690,7 @@
         "reachedLevel": "恭喜达到等级：",
         "badgeUnlocked": "解锁成就",
         "linguist": "语言学习者",
-        "rank1": "见习沉浸者",
+        "rank1": "沉浸学习新手",
         "rank2": "探索者",
         "rank3": "采词学徒",
         "rank4": "专注学者",
@@ -736,7 +741,7 @@
             "desc": "生词本添加第一个单词"
         },
         "vocab25": {
-            "title": "词汇积累",
+            "title": "词汇达人",
             "desc": "生词本添加 25 个单词"
         },
         "vocab100": {
@@ -760,7 +765,7 @@
             "desc": "保持 7 天连续学习"
         },
         "streak30": {
-            "title": "不可阻挡",
+            "title": "势如破竹",
             "desc": "保持 30 天连续学习"
         },
         "streak100": {

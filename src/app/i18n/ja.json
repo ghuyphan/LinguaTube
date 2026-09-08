@@ -48,7 +48,7 @@
         "signingIn": "ログイン中...",
         "signingOut": "ログアウト中...",
         "chooseAccountPrompt": "ウィンドウでGoogleアカウントを選択してください...",
-        "signedInAs": "としてログインしました",
+        "signedInAs": "{{name}} としてログイン中",
         "signedOut": "ログアウトしました",
         "signInFailed": "ログインに失敗しました。もう一度お試しください。",
         "signOutConfirm": "本当にログアウトしますか？"
@@ -89,7 +89,7 @@
         "fontSize": "文字サイズ",
         "subtitlesOff": "字幕はオフです",
         "captionsAvailableIn": "{{language}}の字幕が利用可能です",
-        "dualSubs": "二重字幕",
+        "dualSubs": "デュアル字幕",
         "waitingForSubtitles": "字幕を待機中...",
         "noSubtitlesLoaded": "字幕が読み込まれていません",
         "tryVideoWithCaptions": "字幕付きの動画をお試しください",
@@ -137,9 +137,9 @@
         "serverErrorTitle": "問題が発生しました",
         "serverErrorHint": "サーバーに問題があります。後でもう一度お試しください",
         "moreOptions": "その他のオプション",
-        "noCaptionsInLanguage": "{language}の字幕がありません",
-        "transcriptAvailableIn": "この動画には{language}字幕があります",
-        "switchTo": "{language}に切り替え",
+        "noCaptionsInLanguage": "{{language}}の字幕がありません",
+        "transcriptAvailableIn": "この動画には{{language}}字幕があります",
+        "switchTo": "{{language}}に切り替え",
         "orUseAI": "またはAIを使用",
         "aiCredits": "AIクレジット",
         "creditsAvailable": "利用可能なクレジット",
@@ -432,7 +432,8 @@
         "freezeExplanation": "ストリークフリーズを持っていると、学習し忘れた日でも記録が自動的に保護されます。残り{{count}}回分あります。",
         "reached": "達成しました",
         "days": "日！",
-        "saved": "連続記録を保護しました！❄️"
+        "saved": "連続記録を保護しました！❄️",
+        "daysReached": "{{count}}日連続達成！"
     },
     "history": {
         "title": "履歴",
@@ -487,7 +488,11 @@
             "videosTitle": "おすすめの動画がありません",
             "videosHint": "上の入力欄にYouTubeのリンクを貼り付けて、スマート字幕で学習を始めましょう",
             "noVideosTitle": "動画がありません",
-            "noVideosHint": "保存ボタンで動画を追加"
+            "noVideosHint": "保存ボタンで動画を追加",
+            "title": "プレイリストが見つかりません",
+            "hint": "フィルターや検索キーワードを変更してみてください",
+            "savedTitle": "保存したプレイリストはありません",
+            "savedHint": "コミュニティのプレイリストを探してお気に入りを保存しましょう"
         },
         "create": "作成",
         "cancel": "キャンセル",
@@ -647,11 +652,11 @@
         "moveSubtitle": "字幕の位置変更（上 / 下）",
         "nudgeSubtitle": "字幕の微調整（上 / 下）",
         "cycleFontSize": "字幕サイズ切り替え",
-        "toggleDual": "二重字幕切り替え",
-        "general": "全般と再生リスト",
+        "toggleDual": "デュアル字幕切り替え",
+        "general": "全般とプレイリスト",
         "fullscreen": "全画面表示の切り替え",
         "exitModal": "全画面終了 / モーダルを閉じる",
-        "playlistNav": "再生リストの前 / 次の動画",
+        "playlistNav": "プレイリストの前 / 次の動画",
         "help": "ショートカットのヘルプ"
     },
     "pwa": {
@@ -687,7 +692,7 @@
         "linguist": "言語学習者",
         "rank1": "見習い学習者",
         "rank2": "探検者",
-        "rank3": "単語マイナー",
+        "rank3": "単語の発掘者",
         "rank4": "熱心な学者",
         "rank5": "ポリグロットマスター"
     },
@@ -724,19 +729,19 @@
             "desc": "学習動画を5本完了する"
         },
         "watch25": {
-            "title": "シネマ学者",
+            "title": "映像の探究者",
             "desc": "学習動画を25本完了する"
         },
         "watch100": {
-            "title": "没頭の伝説",
+            "title": "没頭マスター",
             "desc": "学習動画を100本完了する"
         },
         "vocab1": {
-            "title": "単語マイナー",
+            "title": "単語の発掘者",
             "desc": "初めて単語を保存する"
         },
         "vocab25": {
-            "title": "語彙構築者",
+            "title": "言葉の収集家",
             "desc": "単語を25個保存する"
         },
         "vocab100": {

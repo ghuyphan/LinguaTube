@@ -1,6 +1,6 @@
 {
   "name": "lingua-tube",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Voca - Learn Japanese, Chinese, Korean, and English from YouTube videos with interactive subtitles",
   "scripts": {
     "ng": "ng",

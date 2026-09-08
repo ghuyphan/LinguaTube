@@ -105,7 +105,7 @@ export class SettingsSheetComponent {
   loginWithGoogle(): void {
     this.auth.loginWithGoogle().then(profile => {
       if (profile) {
-        this.toast.show(`${this.i18n.t('auth.signedInAs') || 'Signed in as'} ${profile.name}`, { type: 'success', icon: 'check-circle' });
+        this.toast.show(this.i18n.t('auth.signedInAs', { name: profile.name }) || `Signed in as ${profile.name}`, { type: 'success', icon: 'check-circle' });
         this.sheet()?.close();
       }
     }).catch(() => {

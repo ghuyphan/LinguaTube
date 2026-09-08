@@ -19,41 +19,36 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.0.3',
+    version: '1.0.4',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-08',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Dual Subtitle Engine 2.0: High-speed translation with Google GTX and automatic client rotation',
-            'Eliminated subtitle freeze and cancellation race conditions during tokenization and seeking',
-            'Extended long video support up to 10,000 subtitle cues with lightweight cache checking',
-            'Visual polish: borderless subtitle placeholders and smoother playback transitions'
+            'Localization Polish: Comprehensive audit of all 5 UI languages with natural phrasing and zero AI literalisms',
+            '100% Translation Parity: Added missing playlist and subtitle state keys across Vietnamese, Japanese, Korean, and Chinese',
+            'Interpolation Fixes: Dynamic placeholders now properly support diverse language sentence structures in account and study views'
         ],
         vi: [
-            'Công cụ Phụ đề Song ngữ 2.0: Tốc độ dịch siêu nhanh với Google GTX và xoay vòng client tự động',
-            'Khắc phục hoàn toàn hiện tượng đơ phụ đề hoặc hủy dịch ngầm khi tách từ vựng và tua video',
-            'Hỗ trợ video dài lên tới 10.000 dòng phụ đề cùng cơ chế kiểm tra bộ nhớ đệm siêu nhẹ',
-            'Tinh chỉnh giao diện: loại bỏ viền thừa của khung chờ phụ đề và chuyển động mượt mà hơn'
+            'Chuẩn hoá ngôn ngữ: Đại tu toàn bộ 5 ngôn ngữ giao diện, dùng từ tự nhiên và loại bỏ hoàn toàn các lỗi dịch máy thô',
+            'Đồng bộ 100% bản dịch: Bổ sung đầy đủ các khóa trạng thái danh sách phát và phụ đề cho toàn bộ các ngôn ngữ',
+            'Khắc phục lỗi tham số: Hỗ trợ linh hoạt cấu trúc câu tiếng Việt trong trang cài đặt tài khoản và chế độ học từ'
         ],
         ja: [
-            'デュアル字幕エンジン2.0：Google GTXとクライアント自動ローテーションによる超高速翻訳',
-            '形態素解析時や動画シーク時の字幕停止・リクエスト中断の競合問題を完全解消',
-            '軽量キャッシュチェックにより最大10,000行の長尺動画字幕を快適にサポート',
-            'UI改善：空の字幕プレースホルダーの枠線を排除し、より滑らかな表示を実現'
+            'UIローカライズの全面刷新：不自然な直訳やカタカナ語（「単語マイナー」等）を自然な日本語表現に改善',
+            '100%の翻訳整合性：プレイリストや字幕状態に関する未翻訳キーを全言語で完全に同期・補完',
+            '動的パラメータ補間の修正：アカウント表示や学習モードの達成メッセージで各言語の語順に対応'
         ],
         ko: [
-            '이중 자막 엔진 2.0: Google GTX 및 자동 클라이언트 로테이션을 통한 초고속 번역',
-            '단어 토큰화 및 영상 탐색 시 자막이 멈추거나 번역이 취소되던 현상 완전 해결',
-            '경량 캐시 확인 메커니즘으로 최대 10,000개 자막을 가진 긴 영상도 원활하게 지원',
-            'UI 개선: 빈 자막 영역의 불필요한 테두리를 제거하고 더욱 매끄러운 화면 전환 제공'
+            'UI 현지화 대규모 개선: 어색한 직역 표현을 다듬고 겹치는 업적 명칭을 고유한 한국어 표현으로 정비',
+            '100% 번역 일치: 베트남어, 일본어, 한국어, 중국어 전반에 걸쳐 누락되었던 재생목록 및 자막 상태 키 추가',
+            '동적 매개변수 보간 수정: 계정 프로필 및 학습 모드 연속 학습 메시지의 문장 어순 완벽 지원'
         ],
         zh: [
-            '双语字幕引擎 2.0：结合 Google GTX 与多客户端自动轮换的高速翻译',
-            '彻底解决分词处理与视频快进时字幕冻结或被意外取消的问题',
-            '超轻量级缓存检测机制，全面支持长达 10,000 行字幕的长视频',
-            '界面视觉优化：去除空白占位框边框，字幕过渡更平滑自然'
+            '界面本地化体验优化：全面排查直译与语境不符词汇，统一音乐术语为精准的视频播放列表表达',
+            '100% 词条完整同步：补全中日韩越各语言中缺失的播放列表与字幕状态本地化词条',
+            '动态参数插值修复：优化个人中心与学习模式连胜提示中的占位符，完美贴合不同语言语序'
         ]
     }
 };
