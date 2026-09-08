@@ -43,6 +43,7 @@
     "auth": {
         "signIn": "登录",
         "signingIn": "登录中...",
+        "signingOut": "正在退出登录...",
         "chooseAccountPrompt": "请在弹出窗口中选择您的 Google 账号...",
         "signedInAs": "已登录为",
         "signedOut": "已成功退出登录",

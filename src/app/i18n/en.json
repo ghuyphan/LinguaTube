@@ -43,6 +43,7 @@
     "auth": {
         "signIn": "Sign In",
         "signingIn": "Signing in...",
+        "signingOut": "Signing out...",
         "chooseAccountPrompt": "Please select your Google account in the popup window...",
         "signedInAs": "Signed in as",
         "signedOut": "Signed out successfully",

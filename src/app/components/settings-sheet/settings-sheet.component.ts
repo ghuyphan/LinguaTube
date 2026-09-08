@@ -144,11 +144,16 @@ export class SettingsSheetComponent {
     this.showSignOutConfirm.set(true);
   }
 
-  confirmSignOut(): void {
-    this.showSignOutConfirm.set(false);
-    this.auth.signOut();
-    this.toast.show(this.i18n.t('auth.signedOut') || 'Signed out successfully', { type: 'info', icon: 'check-circle' });
-    this.sheet()?.close();
+  async confirmSignOut(): Promise<void> {
+    try {
+      await this.auth.signOut();
+      this.toast.show(this.i18n.t('auth.signedOut') || 'Signed out successfully', { type: 'info', icon: 'check-circle' });
+      this.showSignOutConfirm.set(false);
+      this.sheet()?.close();
+    } catch (err) {
+      console.error('[Auth] Sign out error:', err);
+      this.showSignOutConfirm.set(false);
+    }
   }
 
   onSheetClosed(): void {

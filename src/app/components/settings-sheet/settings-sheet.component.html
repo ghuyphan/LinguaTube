@@ -23,8 +23,12 @@
                         </div>
                         <span class="account-email">{{ auth.user()?.email }}</span>
                     </div>
-                    <button class="account-signout-btn" (click)="showSignOutModal()" [attr.title]="i18n.t('header.signOut')">
-                        <app-icon name="log-out" [size]="16" />
+                    <button class="account-signout-btn" (click)="showSignOutModal()" [disabled]="auth.isLoggingOut()" [attr.title]="i18n.t('header.signOut')">
+                        @if (auth.isLoggingOut()) {
+                            <div class="login-spinner login-spinner--sm"></div>
+                        } @else {
+                            <app-icon name="log-out" [size]="16" />
+                        }
                     </button>
                 </div>
                 } @else {
@@ -38,7 +42,7 @@
                             <span class="account-guest-hint">{{ i18n.t('app.subtitle') }}</span>
                         </div>
                     </div>
-                    <button class="btn btn-google account-login-btn" (click)="loginWithGoogle()" [disabled]="auth.isLoggingIn()">
+                    <button class="btn btn-google account-login-btn" [class.is-loading]="auth.isLoggingIn()" (click)="loginWithGoogle()" [disabled]="auth.isLoggingIn()">
                         @if (auth.isLoggingIn()) {
                             <div class="login-spinner"></div>
                             <span>{{ i18n.t('auth.signingIn') || 'Signing in...' }}</span>
@@ -173,5 +177,9 @@
 <!-- Sign Out Confirmation -->
 <app-confirm-dialog [isOpen]="showSignOutConfirm()" [title]="i18n.t('settings.signOutConfirmTitle')"
     [message]="i18n.t('settings.signOutConfirmMessage')" [confirmText]="i18n.t('header.signOut')"
-    [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="log-out" (confirmed)="confirmSignOut()"
+    [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="log-out"
+    [closeOnConfirm]="false"
+    [isLoading]="auth.isLoggingOut()"
+    [loadingText]="i18n.t('auth.signingOut') || 'Signing out...'"
+    (confirmed)="confirmSignOut()"
     (cancelled)="showSignOutConfirm.set(false)" />

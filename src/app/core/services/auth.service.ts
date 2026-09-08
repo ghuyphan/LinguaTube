@@ -29,6 +29,7 @@ export class AuthService {
     readonly subscriptionTier = computed<'free' | 'pro' | 'premium'>(() => this.user()?.subscriptionTier || 'free');
     readonly isInitialized = signal(false);
     readonly isLoggingIn = signal(false);
+    readonly isLoggingOut = signal(false);
     readonly authError = signal<string | null>(null);
 
     /** Emits when user successfully logs in */
@@ -151,12 +152,20 @@ export class AuthService {
     }
 
     /**
-     * Sign out - clears PocketBase auth store and emits logoutEvent
+     * Sign out - clears PocketBase auth store and emits logoutEvent with loading state
      */
-    signOut(): void {
-        this.pb.clearAuth();
-        this.user.set(null);
-        this.logoutEvent.next();
+    async signOut(): Promise<void> {
+        if (this.isLoggingOut()) return;
+        this.isLoggingOut.set(true);
+        try {
+            this.pb.clearAuth();
+            this.user.set(null);
+            this.logoutEvent.next();
+            // Smooth delay (250ms) to allow reactive state/storage flush and visual feedback
+            await new Promise(resolve => setTimeout(resolve, 250));
+        } finally {
+            this.isLoggingOut.set(false);
+        }
     }
 
     /**

@@ -14,7 +14,7 @@ import { IconComponent, IconName } from '../icon/icon.component';
             [title]="title()"
             [showDragHandle]="false" 
             [showCloseButton]="false"
-            [allowBackdropClose]="allowBackdropClose()"
+            [allowBackdropClose]="allowBackdropClose() && !isLoading()"
             (closed)="onSheetClosed()">
             <div class="confirm-dialog">
                 @if (icon(); as iconName) {
@@ -33,6 +33,7 @@ import { IconComponent, IconName } from '../icon/icon.component';
                     @if (showCancel()) {
                     <button 
                         class="confirm-dialog__btn confirm-dialog__btn--cancel" 
+                        [disabled]="isLoading()"
                         (click)="onCancel()"
                         type="button">
                         {{ cancelText() }}
@@ -42,9 +43,16 @@ import { IconComponent, IconName } from '../icon/icon.component';
                         class="confirm-dialog__btn" 
                         [class.confirm-dialog__btn--danger]="variant() === 'danger'"
                         [class.confirm-dialog__btn--primary]="variant() !== 'danger'"
+                        [class.confirm-dialog__btn--loading]="isLoading()"
+                        [disabled]="isLoading()"
                         (click)="onConfirm()"
                         type="button">
-                        {{ confirmText() }}
+                        @if (isLoading()) {
+                            <div class="confirm-dialog__spinner"></div>
+                            <span>{{ loadingText() || confirmText() }}</span>
+                        } @else {
+                            {{ confirmText() }}
+                        }
                     </button>
                 </div>
             </div>
@@ -110,7 +118,27 @@ import { IconComponent, IconName } from '../icon/icon.component';
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             transition: all var(--transition-fast);
+
+            &:disabled {
+                opacity: 0.65;
+                cursor: not-allowed;
+            }
+        }
+
+        .confirm-dialog__spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin 0.75s linear infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         .confirm-dialog__btn--cancel {
@@ -130,12 +158,12 @@ import { IconComponent, IconName } from '../icon/icon.component';
         }
 
         @media (hover: hover) {
-            .confirm-dialog__btn--cancel:hover {
+            .confirm-dialog__btn--cancel:hover:not(:disabled) {
                 background: var(--bg-hover);
             }
 
-            .confirm-dialog__btn--primary:hover,
-            .confirm-dialog__btn--danger:hover {
+            .confirm-dialog__btn--primary:hover:not(:disabled),
+            .confirm-dialog__btn--danger:hover:not(:disabled) {
                 opacity: 0.9;
             }
         }
@@ -152,6 +180,9 @@ export class ConfirmDialogComponent {
     icon = input<IconName | '' | null>('');
     showCancel = input<boolean>(true);
     allowBackdropClose = input<boolean>(true);
+    isLoading = input<boolean>(false);
+    loadingText = input<string>('');
+    closeOnConfirm = input<boolean>(true);
 
     // Outputs
     confirmed = output<void>();
@@ -163,11 +194,17 @@ export class ConfirmDialogComponent {
     private closingAction: 'confirm' | 'cancel' | null = null;
 
     onConfirm(): void {
-        this.closingAction = 'confirm';
-        this.sheet()?.close();
+        if (this.isLoading()) return;
+        if (this.closeOnConfirm()) {
+            this.closingAction = 'confirm';
+            this.sheet()?.close();
+        } else {
+            this.confirmed.emit();
+        }
     }
 
     onCancel(): void {
+        if (this.isLoading()) return;
         this.closingAction = 'cancel';
         this.sheet()?.close();
     }
@@ -175,7 +212,7 @@ export class ConfirmDialogComponent {
     onSheetClosed(): void {
         if (this.closingAction === 'confirm') {
             this.confirmed.emit();
-        } else {
+        } else if (this.closingAction === 'cancel') {
             this.cancelled.emit();
         }
         // Reset for next opening

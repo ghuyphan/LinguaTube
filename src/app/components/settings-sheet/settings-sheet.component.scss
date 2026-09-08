@@ -107,15 +107,30 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+    transition: all var(--transition-fast, 0.2s);
+
+    &.is-loading {
+        cursor: wait !important;
+        opacity: 0.9 !important;
+    }
 }
 
 .login-spinner {
     width: 18px;
     height: 18px;
-    border: 2px solid currentColor;
-    border-top-color: transparent;
+    border: 2.5px solid rgba(66, 133, 244, 0.25);
+    border-top-color: #4285f4;
     border-radius: 50%;
     animation: spin 0.75s linear infinite;
+    flex-shrink: 0;
+}
+
+.login-spinner--sm {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+    border-color: rgba(var(--error-rgb, 239, 68, 68), 0.25);
+    border-top-color: var(--error, #ef4444);
 }
 
 @keyframes spin {
@@ -211,8 +226,13 @@
     transition: background-color var(--transition-fast), color var(--transition-fast);
     flex-shrink: 0;
 
+    &:disabled {
+        opacity: 0.65;
+        cursor: wait;
+    }
+
     @media (hover: hover) {
-        &:hover {
+        &:hover:not(:disabled) {
             background: rgba(var(--error-rgb), 0.1);
             color: var(--error);
             border-color: rgba(var(--error-rgb), 0.3);

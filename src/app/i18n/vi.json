@@ -43,6 +43,7 @@
     "auth": {
         "signIn": "Đăng nhập",
         "signingIn": "Đang đăng nhập...",
+        "signingOut": "Đang đăng xuất...",
         "chooseAccountPrompt": "Vui lòng chọn tài khoản Google của bạn trong cửa sổ...",
         "signedInAs": "Đã đăng nhập với tên",
         "signedOut": "Đã đăng xuất thành công",
