@@ -110,6 +110,7 @@ For complete architectural guides, database schemas, and developer manuals, see 
   - [5. Feature Specifications & Deep Dive](doc/features.md)
   - [6. Database & Storage Architecture](doc/database-and-storage.md)
   - [7. Developer & Operations Guide](doc/development-guide.md)
+  - [8. Mobile API Integration Guide](doc/mobile-api-integration.md)
 
 ---
 

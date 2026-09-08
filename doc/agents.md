@@ -162,7 +162,8 @@ lingua-tube/
 │   ├── frontend-architecture.md # Angular 19, Signals, components & design system
 │   ├── features.md            # Features deep dive (Subtitles, AI, Dict, SRS, etc.)
 │   ├── database-and-storage.md# D1, R2, KV, PocketBase, IndexedDB schemas
-│   └── development-guide.md   # Developer setup, commands, testing & debugging
+│   ├── development-guide.md   # Developer setup, commands, testing & debugging
+│   └── mobile-api-integration.md # Complete mobile API reference & PocketBase sync guide
 │
 ├── db/                        # Cloudflare D1 SQL Schema & Migrations
 │   ├── schema.sql             # Base schema (transcripts, vocabulary)
