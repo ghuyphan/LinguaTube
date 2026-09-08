@@ -290,29 +290,6 @@
     flex: 1;
 }
 
-.translate-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    padding: 2px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--border-radius-sm);
-    transition: all var(--transition-fast);
-    opacity: 0.8;
-    min-height: unset;
-}
-
-@media (hover: hover) {
-    .translate-btn:hover {
-        background: var(--bg-hover);
-        color: var(--accent-primary);
-        opacity: 1;
-    }
-}
-
 .translation-result {
     font-size: 0.875rem;
     color: var(--text-primary);

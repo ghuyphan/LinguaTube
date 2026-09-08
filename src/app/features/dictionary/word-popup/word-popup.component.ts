@@ -81,12 +81,12 @@ export class WordPopupComponent implements OnDestroy {
     return this.vocab.getWordLevel(word.surface) || 'new';
   });
 
-  // Translate-all loading state
+  // Translate loading state
   isTranslatingAll = computed(() => {
     const meanings = this.entry()?.meanings;
-    if (!meanings) return false;
+    if (!meanings || meanings.length === 0) return false;
     const translating = this.translatingIndices();
-    return meanings.length > 1 && meanings.some((_, i) => translating.has(i));
+    return meanings.some((_, i) => translating.has(i));
   });
 
   private getDefaultTargetLang(): string {

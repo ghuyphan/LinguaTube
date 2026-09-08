@@ -275,6 +275,7 @@
         "close": "Close",
         "translateTo": "Translate to",
         "translateAll": "Translate all definitions",
+        "translate": "Translate",
         "all": "All",
         "failed": "Failed",
         "retry": "Retry"
@@ -514,6 +515,7 @@
         "featured": "Featured",
         "forYou": "For You",
         "refresh": "Refresh recommendations",
+        "feedUpdated": "Recommendations updated",
         "recommendedVideos": "Recommended Videos",
         "curatedPlaylists": "Curated Playlists",
         "instantSubtitles": "Instant Subtitles",

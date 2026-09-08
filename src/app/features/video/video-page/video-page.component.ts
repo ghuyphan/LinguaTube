@@ -73,14 +73,11 @@ export class VideoPageComponent implements OnInit {
   isVideosLoading = this.videoRecommendation.isLoading;
   formatVideoTime = formatTime;
 
-  // Pull to refresh & feed refresh state (YouTube-style)
-  readonly pullDistance = signal<number>(0);
-  readonly pullOpacity = signal<number>(0);
-  readonly isPullTouching = signal<boolean>(false);
+  // Feed refresh state
   readonly isRefreshing = signal<boolean>(false);
-
-  private touchStartY = 0;
-  private isPullEligible = false;
+  readonly isFeedRefreshing = computed(() =>
+    this.isRefreshing() || (this.homeTab() === 'videos' ? this.isVideosLoading() : this.playlistService.isRecommendedLoading())
+  );
 
   // Video level filter state for recommended videos
   videoLevelFilter = signal<string>('all');
@@ -355,7 +352,7 @@ export class VideoPageComponent implements OnInit {
     });
   }
 
-  // ==================== Pull to Refresh & Feed Refresh (YouTube Parity) ====================
+  // ==================== Feed Refresh ====================
 
   /**
    * Handle Tab clicks: If clicking the active 'videos' tab, trigger a fresh reload (YouTube-style)
@@ -371,10 +368,10 @@ export class VideoPageComponent implements OnInit {
   }
 
   /**
-   * Refresh recommended videos with candidate shuffling and cache eviction (YouTube-style)
+   * Refresh recommended videos/playlists with candidate shuffling and cache eviction (YouTube-style)
    */
   async refreshRecommendations(): Promise<void> {
-    if (this.isRefreshing() || this.isVideosLoading()) return;
+    if (this.isRefreshing()) return;
     this.isRefreshing.set(true);
 
     try {
@@ -382,69 +379,18 @@ export class VideoPageComponent implements OnInit {
       const currentTier = this.videoLevelFilter();
       const tierParam = currentTier === 'all' ? undefined : currentTier;
 
-      if (this.homeTab() === 'videos') {
-        await this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam, 12, true);
-      } else {
-        await this.playlistService.loadRecommendedPlaylists(currentLang, tierParam);
-      }
+      // Minimum 400ms feedback duration ensures clear, tactile spinner rotation
+      const delayPromise = new Promise(resolve => setTimeout(resolve, 400));
+      const fetchPromise = this.homeTab() === 'videos'
+        ? this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam, 12, true)
+        : this.playlistService.loadRecommendedPlaylists(currentLang, tierParam, 3, true);
+
+      await Promise.all([fetchPromise, delayPromise]);
+      this.toast.show(this.i18n.t('playlist.feedUpdated'), { type: 'success', icon: 'refresh-cw', duration: 2000 });
+    } catch {
+      this.toast.show(this.i18n.t('common.error'), { type: 'error', duration: 2500 });
     } finally {
       this.isRefreshing.set(false);
-      this.pullDistance.set(0);
-      this.pullOpacity.set(0);
-      this.isPullTouching.set(false);
-    }
-  }
-
-  onTouchStart(e: TouchEvent): void {
-    if (this.isRefreshing() || e.touches.length !== 1) return;
-
-    const target = e.currentTarget as HTMLElement | null;
-    const scrollContainer = target?.querySelector('.horizontal-item-list') as HTMLElement | null;
-    const scrollTop = scrollContainer ? scrollContainer.scrollTop : (target?.scrollTop || 0);
-
-    if (scrollTop <= 0) {
-      this.touchStartY = e.touches[0].clientY;
-      this.isPullEligible = true;
-    } else {
-      this.isPullEligible = false;
-    }
-  }
-
-  onTouchMove(e: TouchEvent): void {
-    if (!this.isPullEligible || this.isRefreshing() || e.touches.length !== 1) return;
-
-    const currentY = e.touches[0].clientY;
-    const diff = currentY - this.touchStartY;
-
-    if (diff > 0) {
-      this.isPullTouching.set(true);
-      // Damped curve for smooth physical feel (max 70px)
-      const distance = Math.min(70, diff * 0.42);
-      this.pullDistance.set(distance);
-      this.pullOpacity.set(Math.min(1, distance / 35));
-    } else {
-      this.pullDistance.set(0);
-      this.pullOpacity.set(0);
-      this.isPullTouching.set(false);
-    }
-  }
-
-  onTouchEnd(): void {
-    if (!this.isPullEligible || this.isRefreshing()) {
-      this.isPullEligible = false;
-      return;
-    }
-
-    this.isPullEligible = false;
-    this.isPullTouching.set(false);
-
-    if (this.pullDistance() >= 48) {
-      this.pullDistance.set(50);
-      this.pullOpacity.set(1);
-      void this.refreshRecommendations();
-    } else {
-      this.pullDistance.set(0);
-      this.pullOpacity.set(0);
     }
   }
 

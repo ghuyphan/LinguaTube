@@ -820,13 +820,15 @@ export class PlaylistService {
      * - Sorted by -is_featured, -save_count, -updated
      * Falls back to video_count >= 1 if no playlists meet the >= 2 threshold.
      */
-    async loadRecommendedPlaylists(language: string, tier?: string, limit = 3): Promise<Playlist[]> {
+    async loadRecommendedPlaylists(language: string, tier?: string, limit = 3, forceRefresh = false): Promise<Playlist[]> {
         if (!language) return [];
 
         const targetTier = tier && tier !== 'all' ? tier : undefined;
         const cacheKey = `${language}_${targetTier || 'all'}`;
 
-        if (this.recommendedCache.has(cacheKey)) {
+        if (forceRefresh) {
+            this.recommendedCache.delete(cacheKey);
+        } else if (this.recommendedCache.has(cacheKey)) {
             const cached = this.recommendedCache.get(cacheKey)!;
             this.recommendedPlaylists.set(cached);
             return cached;

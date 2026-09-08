@@ -14,10 +14,9 @@ import { environment } from '../../environments/environment';
 // Cache configuration
 const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
-// Patterns to cache (dictionary lookups and video recommendations)
+// Patterns to cache (dictionary lookups only)
 const CACHEABLE_PATTERNS = [
-    environment.api.dict,
-    environment.api.recommendedVideos
+    environment.api.dict
 ];
 
 // Cache storage

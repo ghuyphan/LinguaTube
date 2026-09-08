@@ -275,6 +275,7 @@
         "close": "Đóng",
         "translateTo": "Dịch sang",
         "translateAll": "Dịch tất cả định nghĩa",
+        "translate": "Dịch",
         "all": "Tất cả",
         "failed": "Thất bại",
         "retry": "Thử lại"
@@ -514,6 +515,7 @@
         "featured": "Nổi bật",
         "forYou": "Dành cho bạn",
         "refresh": "Làm mới đề xuất",
+        "feedUpdated": "Đã làm mới đề xuất",
         "recommendedVideos": "Video đề xuất",
         "curatedPlaylists": "Danh sách phát tuyển chọn",
         "instantSubtitles": "Phụ đề tức thì",

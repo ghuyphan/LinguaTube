@@ -14,41 +14,41 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.0.8',
+    version: '1.0.9',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Edge Infrastructure & D1 Optimization: Added compound indexes to D1 tables, removed destructive upserts, precompiled linguistic regexes, and capped batch operations to ensure Worker CPU stays strictly under 10ms',
-            'Frontend Request Storm Elimination: Added cooldowns to translation retries, capped subtitle recovery loops, stopped payment polling on dialog close, and enabled negative transcript caching',
-            'Smart Video Recommendation Caching: Introduced persistent LocalStorage caching (1-hour TTL) for curated video feeds, preventing redundant backend hits on page reloads and route transitions',
-            'Dead Code & Clean Route Architecture: Purged legacy API routes, obsolete environment properties, and updated service worker caching strategies for maximum edge efficiency'
+            'Video Feed Refresh & Cache Busting: Fixed recommendation refresh to bypass intermediate HTTP interceptor caches with timestamp cache-busting, providing instant, tactile feedback and uniform Fisher-Yates candidate shuffling',
+            'Touch Interaction & Gesture Stabilization: Eliminated fragile pull-to-refresh touch event hijacking that intercepted taps on mobile devices, removing jitter and preserving native scroll behavior',
+            'Dual-Tab Recommendation Refresh: Extended force-refresh support across both recommended videos and featured playlists tabs with complete cache invalidation',
+            'Rich Local Development Seeds: Added diverse mock video seeds with proficiency levels across Japanese, Chinese, Korean, and English for realistic local testing'
         ],
         vi: [
-            'Tối ưu hóa hạ tầng Edge & D1: Bổ sung chỉ mục phức hợp cho bảng D1, loại bỏ upsert ghi đè dữ liệu, biên dịch trước regex ngôn ngữ và giới hạn kích thước đợt để đảm bảo CPU Worker luôn dưới 10ms',
-            'Triệt tiêu vòng lặp & dồn dập request ở frontend: Thiết lập thời gian chờ giãn cách cho dịch thuật, giới hạn thử lại phụ đề, hủy polling thanh toán khi đóng dialog và lưu cache âm tính cho video không có phụ đề',
-            'Bộ đệm đề xuất video thông minh: Lưu trữ persistent LocalStorage (TTL 1 giờ) cho danh sách video chọn lọc, ngăn chặn việc gọi API backend lặp lại khi tải lại trang hoặc đổi route',
-            'Dọn dẹp mã thừa & chuẩn hóa route: Xóa bỏ các route API cũ, các thuộc tính cấu hình không còn sử dụng và cập nhật chiến lược cache PWA Service Worker để đạt hiệu quả biên tối đa'
+            'Làm mới đề xuất & Triệt tiêu bộ nhớ đệm: Khắc phục nút làm mới đề xuất video để bỏ qua bộ đệm interceptor HTTP với cache-busting thời gian thực, phản hồi xúc giác mượt mà và xáo trộn ứng viên ngẫu nhiên chuẩn Fisher-Yates',
+            'Ổn định tương tác chạm & cử chỉ: Loại bỏ hoàn toàn việc bắt giữ sự kiện cảm ứng kéo để làm mới gây chặn thao tác nhấp trên thiết bị di động, triệt tiêu giật lag và giữ trọn cuộn trang tự nhiên',
+            'Hỗ trợ làm mới trên cả hai tab: Mở rộng tính năng làm mới cưỡng bức cho cả hai tab video đề xuất và danh sách phát nổi bật kèm xóa bộ đệm triệt để',
+            'Dữ liệu mẫu phong phú cho môi trường Dev: Bổ sung hạt giống video phong phú đa cấp độ cho cả tiếng Nhật, tiếng Trung, tiếng Hàn và tiếng Anh phục vụ kiểm thử cục bộ'
         ],
         ja: [
-            'エッジインフラ＆D1クエリの最適化：D1複合インデックスの追加、破壊的upsertの排除、言語解析正規表現の事前コンパイル、バッチサイズ制限によりWorker CPU時間を10ms未満に抑制',
-            'フロントエンドのリクエスト過多＆リーク防止：翻訳リトライのクールダウン導入、字幕取得リトライの上限設定、決済ポーリングの破棄、字幕なし動画のネガティブキャッシュを実装',
-            'おすすめ動画のスマートキャッシュ：ローカルストレージキャッシュ（有効期限1時間）を導入し、ページ再読み込みや画面遷移時の冗長なバックエンドアクセスを防止',
-            'デッドコード削除＆ルート最適化：不要なレガシーAPIエンドポイントや環境変数を整理し、Service Workerのキャッシュ設定を最新化'
+            '動画フィード更新＆キャッシュバスター：HTTPインターセプターキャッシュをバイパスするタイムスタンプキャッシュバスティングを導入し、スムーズなフィードバックとFisher-Yatesシャッフルによる推薦動画の均一な再抽出を実現',
+            'タッチ操作とジェスチャーの安定化：モバイル端末でタップを妨げていた不安定な引っ張って更新のタッチイベント乗っ取りを撤廃し、UIのちらつきを解消して快適なスクロールを維持',
+            '2つのタブに対応した更新機能：おすすめ動画タブおよび注目プレイリストタブの双方で完全なキャッシュ破棄を伴う強制再取得をサポート',
+            'ローカル開発環境用シードデータの拡充：日本語・中国語・韓国語・英語の各レベルに対応した多様なモック動画シードを追加し、ローカル検証をリアルに再現'
         ],
         ko: [
-            '엣지 인프라 및 D1 쿼리 최적화: D1 복합 인덱스 추가, 파괴적 upsert 제거, 언어 분석 정규식 사전 컴파일, 배치 크기 제한을 통해 Worker CPU 시간을 10ms 미만으로 엄격히 유지',
-            '프론트엔드 요청 폭주 및 누수 방지: 번역 재시도 백오프 적용, 자막 재시도 횟수 제한, 다이얼로그 종료 시 결제 폴링 해제, 자막 부재 동영상에 대한 네거티브 캐시 구현',
-            '추천 비디오 스마트 캐싱: 1시간 유효기간의 로컬 스토리지 캐시를 적용하여 새로고침 및 페이지 이동 시 불필요한 백엔드 호출을 차단',
-            '미사용 코드 정리 및 라우트 최적화: 레거시 API 엔드포인트와 불필요한 환경 변수를 제거하고 PWA Service Worker 캐시 전략을 최적화'
+            '비디오 피드 새로고침 및 캐시 무효화: HTTP 인터셉터 캐시를 우회하는 타임스탬프 캐시 버스팅을 적용하여 부드러운 회전 피드백과 Fisher-Yates 알고리즘 기반의 균일한 동영상 셔플을 제공',
+            '터치 인터랙션 및 제스처 안정화: 모바일 기기에서 클릭을 방해하던 불안정한 당겨서 새로고침 터치 이벤트를 제거하여 화면 흔들림 없이 자연스러운 스크롤 지원',
+            '듀얼 탭 새로고침 지원: 추천 동영상 탭과 추천 재생목록 탭 모두에서 완벽한 캐시 무효화와 함께 강제 새로고침 지원',
+            '로컬 개발용 풍부한 시드 데이터: 일본어, 중국어, 한국어, 영어 난이도별 모의 동영상 시드를 추가하여 실제 환경과 동일한 로컬 테스트 환경 구축'
         ],
         zh: [
-            '边缘基础架构与 D1 数据库深度优化：为 D1 添加复合索引，消除破坏性覆盖写入，预编译语言学正则，限制批处理规模以确保 Worker CPU 执行严格控制在 10ms 以内',
-            '前端请求风暴与资源泄漏消除：为翻译重试添加指数退避冷却，限制字幕拉取重试，在弹窗关闭时即时终止支付轮询，并引入无字幕负向缓存',
-            '视频推荐智能持久化缓存：为推荐视频列表引入 LocalStorage 持久化缓存（1 小时有效期），杜绝页面刷新和路由切换时的冗余后端请求',
-            '废弃代码清理与路由架构优化：彻底清理遗留 API 路由与无用环境配置，并更新 Service Worker 缓存策略以最大化边缘运行效率'
+            '视频流刷新与缓存穿透优化：修复推荐刷新按钮以通过时间戳缓存穿透机制绕过 HTTP 拦截器缓存，提供即时触感反馈并引入 Fisher-Yates 算法实现均匀的候选视频随机重排',
+            '触控交互与手势稳定性提升：移除此前在移动端拦截点击事件的不稳定下拉刷新监听，消除界面抖动与位移，完整保留原生平滑滚动体验',
+            '双标签页全面支持强制刷新：将强制刷新能力无缝扩展至推荐视频与精选播放列表双标签页，实现彻底的本地与内存缓存清理',
+            '丰富的本地开发测试数据：为日语、中文、韩语和英语添加覆盖各难度级别的拟真示例视频数据，大幅提升本地开发与测试体验'
         ]
     }
 };

@@ -882,8 +882,48 @@ app.get('/api/video-info', async (req, res) => {
 });
 
 /**
+ * Realistic seed videos for dev environment when transcripts_cache is sparse
+ */
+const DEV_SEED_VIDEOS = {
+    ja: [
+        { videoId: 'kJQP7kiw5Fk', title: 'Luis Fonsi - Despacito (Japanese Cover)', channel: 'Music Japan', duration: 242, level: 'JLPT N5', tier: 'beginner' },
+        { videoId: 'dQw4w9WgXcQ', title: 'Japanese Conversation Practice for Beginners', channel: 'Nihongo Basics', duration: 212, level: 'JLPT N5', tier: 'beginner' },
+        { videoId: '9bZkp7q19f0', title: 'Learn Japanese Grammar - N4 Masterclass', channel: 'Tokyo Sensei', duration: 255, level: 'JLPT N4', tier: 'elementary' },
+        { videoId: 'fJ9rUzIMcZQ', title: 'Everyday Japanese Expressions You Must Know', channel: 'Japan Daily', duration: 200, level: 'JLPT N4', tier: 'elementary' },
+        { videoId: 'JGwWNGJdvx8', title: 'Intermediate Japanese Story Listening', channel: 'Kanji Club', duration: 235, level: 'JLPT N3', tier: 'intermediate' },
+        { videoId: 'k2qgadSvNyU', title: 'Japanese News Podcast - Natural Speed', channel: 'NHK Easy Study', duration: 320, level: 'JLPT N2', tier: 'upper_intermediate' },
+        { videoId: 'CevxZvSJLk8', title: 'Advanced Japanese Debate & Nuances', channel: 'Advanced Nihongo', duration: 410, level: 'JLPT N1', tier: 'advanced' },
+        { videoId: 'OPf0YbXqDm0', title: 'Casual Tokyo VLOG: Exploring Shibuya', channel: 'Tokyo Life', duration: 290, level: 'JLPT N4', tier: 'elementary' },
+    ],
+    zh: [
+        { videoId: 'zh_demo_001', title: 'Daily Chinese Speaking for Beginners (HSK 1)', channel: 'Mandarin Corner', duration: 220, level: 'HSK 1', tier: 'beginner' },
+        { videoId: 'zh_demo_002', title: 'Common Chinese Phrases in Real Life (HSK 2)', channel: 'Chinese Zero to Hero', duration: 310, level: 'HSK 2', tier: 'elementary' },
+        { videoId: 'zh_demo_003', title: 'Intermediate Chinese Story Listening (HSK 3)', channel: 'Slow Chinese', duration: 380, level: 'HSK 3', tier: 'intermediate' },
+        { videoId: 'zh_demo_004', title: 'Chinese Idioms and Cultural Stories (HSK 4)', channel: 'Mandarin Blueprint', duration: 420, level: 'HSK 4', tier: 'upper_intermediate' },
+        { videoId: 'zh_demo_005', title: 'Business Chinese & Formal Discussion (HSK 5)', channel: 'CCTV News Mandarin', duration: 510, level: 'HSK 5', tier: 'advanced' },
+        { videoId: 'zh_demo_006', title: 'Supermarket Shopping in Shanghai (HSK 2)', channel: 'Everyday Chinese', duration: 275, level: 'HSK 2', tier: 'elementary' },
+    ],
+    ko: [
+        { videoId: 'ko_demo_001', title: 'Korean Hangul & Basic Greetings (TOPIK 1)', channel: 'Talk To Me In Korean', duration: 240, level: 'TOPIK 1', tier: 'beginner' },
+        { videoId: 'ko_demo_002', title: 'Essential Korean Sentence Endings (TOPIK 2)', channel: 'Korean Unnie', duration: 330, level: 'TOPIK 2', tier: 'elementary' },
+        { videoId: 'ko_demo_003', title: 'Korean Drama Natural Dialogue Analysis (TOPIK 3)', channel: 'Conversational Korean', duration: 390, level: 'TOPIK 3', tier: 'intermediate' },
+        { videoId: 'ko_demo_004', title: 'Korean News Listening for Intermediate (TOPIK 4)', channel: 'KBS Easy Korean', duration: 450, level: 'TOPIK 4', tier: 'upper_intermediate' },
+        { videoId: 'ko_demo_005', title: 'Advanced Korean Essay & Idiom Guide (TOPIK 5)', channel: 'Advanced Hangul', duration: 540, level: 'TOPIK 5', tier: 'advanced' },
+        { videoId: 'ko_demo_006', title: 'Ordering Street Food in Seoul (TOPIK 1)', channel: 'Korean Englishman', duration: 295, level: 'TOPIK 1', tier: 'beginner' },
+    ],
+    en: [
+        { videoId: 'en_demo_001', title: 'Basic English Conversation for Beginners (A1)', channel: 'BBC Learning English', duration: 210, level: 'CEFR A1', tier: 'beginner' },
+        { videoId: 'en_demo_002', title: 'Everyday English Phrasal Verbs in Context (B1)', channel: 'EnglishClass101', duration: 315, level: 'CEFR B1', tier: 'elementary' },
+        { videoId: 'en_demo_003', title: 'Intermediate English Listening: Travel Stories (B2)', channel: 'VOA Learning English', duration: 410, level: 'CEFR B2', tier: 'intermediate' },
+        { videoId: 'en_demo_004', title: 'Academic & Professional English Vocabulary (C1)', channel: 'Oxford Online English', duration: 480, level: 'CEFR C1', tier: 'upper_intermediate' },
+        { videoId: 'en_demo_005', title: 'Mastering English Nuances & Idioms (C2)', channel: 'English with Lucy', duration: 360, level: 'CEFR C2', tier: 'advanced' },
+        { videoId: 'en_demo_006', title: 'Job Interview English Tips (B2)', channel: 'Business English Pod', duration: 340, level: 'CEFR B2', tier: 'intermediate' },
+    ]
+};
+
+/**
  * GET /api/recommended-videos
- * Returns videos with verified transcripts from local disk cache
+ * Returns videos with verified transcripts from local disk cache, with dev seeds and uniform shuffle on refresh
  */
 app.get('/api/recommended-videos', async (req, res) => {
     const lang = (req.query.lang || 'ja').toLowerCase().trim();
@@ -891,7 +931,7 @@ app.get('/api/recommended-videos', async (req, res) => {
     const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 12, 1), 50);
     const isRefresh = req.query.refresh === 'true' || req.query.force === 'true';
 
-    const results = [];
+    let results = [];
     const seenIds = new Set();
 
     // Check local disk transcripts cache
@@ -928,8 +968,34 @@ app.get('/api/recommended-videos', async (req, res) => {
         }
     } catch {}
 
+    // Fallback to rich dev seeds if local cache has few candidates
+    const seeds = DEV_SEED_VIDEOS[lang] || [];
+    for (const seed of seeds) {
+        if (!seenIds.has(seed.videoId)) {
+            if (targetTier && targetTier !== 'all' && seed.tier !== targetTier) {
+                continue;
+            }
+            seenIds.add(seed.videoId);
+            results.push({
+                videoId: seed.videoId,
+                title: seed.title,
+                channel: seed.channel,
+                duration: seed.duration,
+                languages: [lang],
+                thumbnail: `https://i.ytimg.com/vi/${seed.videoId}/mqdefault.jpg`,
+                level: seed.level,
+                tier: seed.tier,
+                updatedAt: Math.floor(Date.now() / 1000)
+            });
+        }
+    }
+
     if (isRefresh) {
-        results.sort(() => Math.random() - 0.5);
+        // Fisher-Yates uniform shuffle
+        for (let i = results.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [results[i], results[j]] = [results[j], results[i]];
+        }
     }
 
     const filteredVideos = results.slice(0, limit);
@@ -940,7 +1006,7 @@ app.get('/api/recommended-videos', async (req, res) => {
         tier: targetTier && targetTier !== 'all' ? targetTier : undefined,
         count: filteredVideos.length,
         videos: filteredVideos,
-        source: 'dev-server'
+        source: isRefresh ? 'dev-server:refresh' : 'dev-server'
     });
 });
 
@@ -1638,7 +1704,7 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.0.8';
+    const mockVersion = req.query.mock_version || '1.0.9';
 
     res.json({
         version: mockVersion,
@@ -1649,34 +1715,34 @@ app.get('/api/version', (req, res) => {
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'Edge Infrastructure & D1 Optimization: Added compound indexes to D1 tables, removed destructive upserts, precompiled linguistic regexes, and capped batch operations to ensure Worker CPU stays strictly under 10ms',
-                'Frontend Request Storm Elimination: Added cooldowns to translation retries, capped subtitle recovery loops, stopped payment polling on dialog close, and enabled negative transcript caching',
-                'Smart Video Recommendation Caching: Introduced persistent LocalStorage caching (1-hour TTL) for curated video feeds, preventing redundant backend hits on page reloads and route transitions',
-                'Dead Code & Clean Route Architecture: Purged legacy API routes, obsolete environment properties, and updated service worker caching strategies for maximum edge efficiency'
+                'Video Feed Refresh & Cache Busting: Fixed recommendation refresh to bypass intermediate HTTP interceptor caches with timestamp cache-busting, providing instant, tactile feedback and uniform Fisher-Yates candidate shuffling',
+                'Touch Interaction & Gesture Stabilization: Eliminated fragile pull-to-refresh touch event hijacking that intercepted taps on mobile devices, removing jitter and preserving native scroll behavior',
+                'Dual-Tab Recommendation Refresh: Extended force-refresh support across both recommended videos and featured playlists tabs with complete cache invalidation',
+                'Rich Local Development Seeds: Added diverse mock video seeds with proficiency levels across Japanese, Chinese, Korean, and English for realistic local testing'
             ],
             vi: [
-                'Tối ưu hóa hạ tầng Edge & D1: Bổ sung chỉ mục phức hợp cho bảng D1, loại bỏ upsert ghi đè dữ liệu, biên dịch trước regex ngôn ngữ và giới hạn kích thước đợt để đảm bảo CPU Worker luôn dưới 10ms',
-                'Triệt tiêu vòng lặp & dồn dập request ở frontend: Thiết lập thời gian chờ giãn cách cho dịch thuật, giới hạn thử lại phụ đề, hủy polling thanh toán khi đóng dialog và lưu cache âm tính cho video không có phụ đề',
-                'Bộ đệm đề xuất video thông minh: Lưu trữ persistent LocalStorage (TTL 1 giờ) cho danh sách video chọn lọc, ngăn chặn việc gọi API backend lặp lại khi tải lại trang hoặc đổi route',
-                'Dọn dẹp mã thừa & chuẩn hóa route: Xóa bỏ các route API cũ, các thuộc tính cấu hình không còn sử dụng và cập nhật chiến lược cache PWA Service Worker để đạt hiệu quả biên tối đa'
+                'Làm mới đề xuất & Triệt tiêu bộ nhớ đệm: Khắc phục nút làm mới đề xuất video để bỏ qua bộ đệm interceptor HTTP với cache-busting thời gian thực, phản hồi xúc giác mượt mà và xáo trộn ứng viên ngẫu nhiên chuẩn Fisher-Yates',
+                'Ổn định tương tác chạm & cử chỉ: Loại bỏ hoàn toàn việc bắt giữ sự kiện cảm ứng kéo để làm mới gây chặn thao tác nhấp trên thiết bị di động, triệt tiêu giật lag và giữ trọn cuộn trang tự nhiên',
+                'Hỗ trợ làm mới trên cả hai tab: Mở rộng tính năng làm mới cưỡng bức cho cả hai tab video đề xuất và danh sách phát nổi bật kèm xóa bộ đệm triệt để',
+                'Dữ liệu mẫu phong phú cho môi trường Dev: Bổ sung hạt giống video phong phú đa cấp độ cho cả tiếng Nhật, tiếng Trung, tiếng Hàn và tiếng Anh phục vụ kiểm thử cục bộ'
             ],
             ja: [
-                'エッジインフラ＆D1クエリの最適化：D1複合インデックスの追加、破壊的upsertの排除、言語解析正規表現の事前コンパイル、バッチサイズ制限によりWorker CPU時間を10ms未満に抑制',
-                'フロントエンドのリクエスト過多＆リーク防止：翻訳リトライのクールダウン導入、字幕取得リトライの上限設定、決済ポーリングの破棄、字幕なし動画のネガティブキャッシュを実装',
-                'おすすめ動画のスマートキャッシュ：ローカルストレージキャッシュ（有効期限1時間）を導入し、ページ再読み込みや画面遷移時の冗長なバックエンドアクセスを防止',
-                'デッドコード削除＆ルート最適化：不要なレガシーAPIエンドポイントや環境変数を整理し、Service Workerのキャッシュ設定を最新化'
+                '動画フィード更新＆キャッシュバスター：HTTPインターセプターキャッシュをバイパスするタイムスタンプキャッシュバスティングを導入し、スムーズなフィードバックとFisher-Yatesシャッフルによる推薦動画の均一な再抽出を実現',
+                'タッチ操作とジェスチャーの安定化：モバイル端末でタップを妨げていた不安定な引っ張って更新のタッチイベント乗っ取りを撤廃し、UIのちらつきを解消して快適なスクロールを維持',
+                '2つのタブに対応した更新機能：おすすめ動画タブおよび注目プレイリストタブの双方で完全なキャッシュ破棄を伴う強制再取得をサポート',
+                'ローカル開発環境用シードデータの拡充：日本語・中国語・韓国語・英語の各レベルに対応した多様なモック動画シードを追加し、ローカル検証をリアルに再現'
             ],
             ko: [
-                '엣지 인프라 및 D1 쿼리 최적화: D1 복합 인덱스 추가, 파괴적 upsert 제거, 언어 분석 정규식 사전 컴파일, 배치 크기 제한을 통해 Worker CPU 시간을 10ms 미만으로 엄격히 유지',
-                '프론트엔드 요청 폭주 및 누수 방지: 번역 재시도 백오프 적용, 자막 재시도 횟수 제한, 다이얼로그 종료 시 결제 폴링 해제, 자막 부재 동영상에 대한 네거티브 캐시 구현',
-                '추천 비디오 스마트 캐싱: 1시간 유효기간의 로컬 스토리지 캐시를 적용하여 새로고침 및 페이지 이동 시 불필요한 백엔드 호출을 차단',
-                '미사용 코드 정리 및 라우트 최적화: 레거시 API 엔드포인트와 불필요한 환경 변수를 제거하고 PWA Service Worker 캐시 전략을 최적화'
+                '비디오 피드 새로고침 및 캐시 무효화: HTTP 인터셉터 캐시를 우회하는 타임스탬프 캐시 버스팅을 적용하여 부드러운 회전 피드백과 Fisher-Yates 알고리즘 기반의 균일한 동영상 셔플을 제공',
+                '터치 인터랙션 및 제스처 안정화: 모바일 기기에서 클릭을 방해하던 불안정한 당겨서 새로고침 터치 이벤트를 제거하여 화면 흔들림 없이 자연스러운 스크롤 지원',
+                '듀얼 탭 새로고침 지원: 추천 동영상 탭과 추천 재생목록 탭 모두에서 완벽한 캐시 무효화와 함께 강제 새로고침 지원',
+                '로컬 개발용 풍부한 시드 데이터: 일본어, 중국어, 한국어, 영어 난이도별 모의 동영상 시드를 추가하여 실제 환경과 동일한 로컬 테스트 환경 구축'
             ],
             zh: [
-                '边缘基础架构与 D1 数据库深度优化：为 D1 添加复合索引，消除破坏性覆盖写入，预编译语言学正则，限制批处理规模以确保 Worker CPU 执行严格控制在 10ms 以内',
-                '前端请求风暴与资源泄漏消除：为翻译重试添加指数退避冷却，限制字幕拉取重试，在弹窗关闭时即时终止支付轮询，并引入无字幕负向缓存',
-                '视频推荐智能持久化缓存：为推荐视频列表引入 LocalStorage 持久化缓存（1 小时有效期），杜绝页面刷新和路由切换时的冗余后端请求',
-                '废弃代码清理与路由架构优化：彻底清理遗留 API 路由与无用环境配置，并更新 Service Worker 缓存策略以最大化边缘运行效率'
+                '视频流刷新与缓存穿透优化：修复推荐刷新按钮以通过时间戳缓存穿透机制绕过 HTTP 拦截器缓存，提供即时触感反馈并引入 Fisher-Yates 算法实现均匀的候选视频随机重排',
+                '触控交互与手势稳定性提升：移除此前在移动端拦截点击事件的不稳定下拉刷新监听，消除界面抖动与位移，完整保留原生平滑滚动体验',
+                '双标签页全面支持强制刷新：将强制刷新能力无缝扩展至推荐视频与精选播放列表双标签页，实现彻底的本地与内存缓存清理',
+                '丰富的本地开发测试数据：为日语、中文、韩语和英语添加覆盖各难度级别的拟真示例视频数据，大幅提升本地开发与测试体验'
             ]
         }
     });

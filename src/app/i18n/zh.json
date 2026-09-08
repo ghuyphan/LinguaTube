@@ -275,6 +275,7 @@
         "close": "关闭",
         "translateTo": "翻译为",
         "translateAll": "翻译所有释义",
+        "translate": "翻译",
         "all": "全部",
         "failed": "失败",
         "retry": "重试"
@@ -514,6 +515,7 @@
         "featured": "精选",
         "forYou": "为你推荐",
         "refresh": "刷新推荐",
+        "feedUpdated": "推荐内容已更新",
         "recommendedVideos": "推荐视频",
         "curatedPlaylists": "精选歌单",
         "instantSubtitles": "即时字幕",

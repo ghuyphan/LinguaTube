@@ -275,6 +275,7 @@
         "close": "閉じる",
         "translateTo": "翻訳先",
         "translateAll": "すべての定義を翻訳",
+        "translate": "翻訳",
         "all": "すべて",
         "failed": "失敗",
         "retry": "再試行"
@@ -514,6 +515,7 @@
         "featured": "注目",
         "forYou": "あなたへのおすすめ",
         "refresh": "おすすめ動画を更新",
+        "feedUpdated": "おすすめを更新しました",
         "recommendedVideos": "おすすめ動画",
         "curatedPlaylists": "厳選プレイリスト",
         "instantSubtitles": "即時字幕あり",

@@ -275,6 +275,7 @@
         "close": "닫기",
         "translateTo": "번역 대상",
         "translateAll": "모든 정의 번역",
+        "translate": "번역",
         "all": "모두",
         "failed": "실패",
         "retry": "다시 시도"
@@ -514,6 +515,7 @@
         "featured": "주요",
         "forYou": "당신을 위한 추천",
         "refresh": "추천 동영상 새로고침",
+        "feedUpdated": "추천 목록이 업데이트되었습니다",
         "recommendedVideos": "추천 동영상",
         "curatedPlaylists": "추천 재생목록",
         "instantSubtitles": "즉시 자막 지원",

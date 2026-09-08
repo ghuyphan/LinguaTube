@@ -282,9 +282,10 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - `lang`: Target learning language (`ja`, `ko`, `zh`, `en`, defaults to `ja`).
   - `tier`: Optional proficiency tier (`beginner`, `elementary`, `intermediate`, `upper_intermediate`, `advanced`).
   - `limit`: Maximum items to return (1-50, default `12`).
+  - `refresh`: Optional boolean (`true`). When enabled, bypasses memory and CDN caches, forces `Cache-Control: no-cache, no-store, must-revalidate`, and applies Fisher-Yates uniform candidate shuffling for fresh video discovery.
 - **Database & Cloudflare Storage Discovery**:
   - Queries Cloudflare D1 `video_languages` table for pre-processed transcripts (`available_languages LIKE '%"lang"%' OR available_languages LIKE '%lang%'`).
-  - When `tier` is requested, queries a larger candidate pool from D1 and filters rows matching the target tier (`labelToTier`).
+  - When `tier` is requested or `refresh=true` is passed, queries a larger candidate pool from D1, performs uniform Fisher-Yates candidate shuffling, and filters rows matching the target tier (`labelToTier`).
   - Fallback queries D1 `transcripts` (with `LEFT JOIN video_languages`) and `video_meta` tables with support for regional language subtags (e.g. `ja-JP`, `zh-CN`, `ko-KR`, `en-US`).
   - Scans Cloudflare R2 bucket (`TRANSCRIPT_STORAGE`) for stored transcript objects (`transcripts/{videoId}/{lang}.json` and `transcripts/{videoId}/{lang}-*.json`).
   - Duration filters safely accommodate videos with unrecorded/zero durations as well as typical learning durations (`(duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)`).
@@ -292,9 +293,9 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Automatic metadata enrichment: Any discovered video missing a title is enriched via YouTube oEmbed (`getVideoMetadata`) and cached in D1.
 - **Caching & Authenticity**:
   - Warm Worker isolate in-memory caching (`memCache`, 15-minute TTL, keyed by `${lang}_${tier || 'all'}_${limit}`).
-  - HTTP Edge CDN caching header: `Cache-Control: public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400`.
+  - HTTP Edge CDN caching header: `Cache-Control: public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400` on normal hits; `no-cache, no-store, must-revalidate` when `refresh=true`.
   - Zero Cloudflare KV write cost, strictly preserving free-tier limits.
-  - Authentic Content: Serves strictly verified transcribed videos directly from Cloudflare storage (`source: "cloudflare"`) with no artificial mock data.
+  - Authentic Content: Serves strictly verified transcribed videos directly from Cloudflare storage (`source: "cloudflare"` or `"cloudflare:refresh"`) with no artificial mock data.
 - **Response**:
   ```json
   {

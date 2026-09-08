@@ -90,7 +90,7 @@ export class VideoRecommendationService {
                 url += `&tier=${encodeURIComponent(activeTier)}`;
             }
             if (forceRefresh) {
-                url += `&refresh=true`;
+                url += `&refresh=true&_t=${Date.now()}`;
             }
 
             const response = await firstValueFrom(

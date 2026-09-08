@@ -341,6 +341,18 @@ export async function cleanupOldNoTranscriptEntries(db) {
  * @param {string} [tier=null] - Target proficiency tier ('beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced')
  * @returns {Promise<Array>}
  */
+/**
+ * Fisher-Yates array shuffle for uniform candidate randomization
+ */
+function shuffleArray(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+}
+
 export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, shuffle = false) {
     if (!lang) return [];
 
@@ -364,8 +376,8 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
             `).bind(searchPattern1, searchPattern2, candidateLimit).all();
 
             if (results && Array.isArray(results)) {
-                // If shuffle is requested on refresh, randomize candidates so user discovers fresh videos
-                const rows = shuffle ? [...results].sort(() => Math.random() - 0.5) : results;
+                // If shuffle is requested on refresh, randomize candidates uniformly so user discovers fresh videos
+                const rows = shuffle ? shuffleArray(results) : results;
 
                 for (const row of rows) {
                     let levels = {};

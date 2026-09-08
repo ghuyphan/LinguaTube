@@ -54,26 +54,7 @@
         }
 
         @if (showLearnHome()) {
-        <div class="card home-dashboard"
-            (touchstart)="onTouchStart($event)"
-            (touchmove)="onTouchMove($event)"
-            (touchend)="onTouchEnd()"
-            (touchcancel)="onTouchEnd()">
-
-            <!-- YouTube-style Floating Pull-to-Refresh Indicator (Overlay with zero layout shift) -->
-            @if (pullDistance() > 0 || isRefreshing()) {
-            <div class="pull-refresh-container"
-                [class.is-touching]="isPullTouching()"
-                [class.is-refreshing]="isRefreshing()"
-                [style.transform]="'translate3d(-50%, ' + pullDistance() + 'px, 0)'"
-                [style.opacity]="pullOpacity()">
-                <div class="pull-refresh-pill">
-                    <app-icon name="refresh-cw" [size]="15" [class.spin-icon]="isRefreshing()"
-                        [style.transform]="!isRefreshing() ? 'rotate(' + (pullDistance() * 4.5) + 'deg)' : null" />
-                </div>
-            </div>
-            }
-
+        <div class="card home-dashboard">
             <div class="panel-header">
                 <div class="panel-header__row">
                     <div class="panel-header__left">
@@ -119,9 +100,9 @@
                         <span class="chip-text">{{ getLevelFilterLabel() }}</span>
                         <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
                     </button>
-                    <button type="button" class="filter-chip filter-chip--refresh" [disabled]="isVideosLoading() || isRefreshing()"
+                    <button type="button" class="filter-chip filter-chip--refresh" [disabled]="isFeedRefreshing()"
                         (click)="refreshRecommendations()" [attr.aria-label]="i18n.t('playlist.refresh')" [title]="i18n.t('playlist.refresh')">
-                        <app-icon name="refresh-cw" [size]="14" [class.spin-icon]="isVideosLoading() || isRefreshing()" />
+                        <app-icon name="refresh-cw" [size]="14" [class.spin-icon]="isFeedRefreshing()" />
                     </button>
                 </div>
             </div>

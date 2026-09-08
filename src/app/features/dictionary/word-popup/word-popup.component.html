@@ -25,15 +25,15 @@
                     <app-icon name="chevron-down" [size]="12" />
                 </button>
 
-                @if (entry()?.meanings && entry()!.meanings.length > 1) {
+                @if (entry()?.meanings && entry()!.meanings.length > 0) {
                 <button class="translate-all-btn" (click)="translateAll()" [disabled]="isTranslatingAll()"
-                    [title]="i18n.t('popup.translateAll') || 'Translate all definitions'">
+                    [title]="entry()!.meanings.length > 1 ? (i18n.t('popup.translateAll') || 'Translate all definitions') : (i18n.t('popup.translate') || 'Translate')">
                     @if (isTranslatingAll()) {
                     <app-icon name="loader" [size]="12" />
                     } @else {
                     <app-icon name="languages" [size]="12" />
                     }
-                    <span>{{ i18n.t('popup.all') || 'All' }}</span>
+                    <span>{{ (entry()!.meanings.length > 1 ? (i18n.t('popup.all') || 'All') : (i18n.t('popup.translate') || 'Translate')) }}</span>
                 </button>
                 }
             </div>
@@ -86,16 +86,6 @@
                     <div class="meaning-content">
                         <div class="meaning-row">
                             <span class="meaning-text">{{ meaning.definition }}</span>
-
-                            <!-- Translate Button -->
-                            <button class="translate-btn" (click)="translateDefinition($index, meaning.definition)"
-                                [disabled]="isTranslating($index)" title="Translate to {{ targetLang() }}">
-                                @if (isTranslating($index)) {
-                                <app-icon name="loader" [size]="14" />
-                                } @else {
-                                <app-icon name="languages" [size]="14" />
-                                }
-                            </button>
                         </div>
 
                         <!-- Translated Text -->
