@@ -51,7 +51,9 @@ export class SubtitleService {
   private lastDualSubVideoId: string | null = null;
   private lastDualSubSourceLang: string | null = null;
   private lastDualSubTargetLang: string | null = null;
-  private lastDualSubCuesRef: SubtitleCue[] | null = null;
+  private lastDualSubFirstCueId: string | null = null;
+  private lastDualSubCuesCount = 0;
+  private lastBatchFailureTime = 0;
   private hasPersistedDualToR2 = false;
 
   constructor() {
@@ -78,14 +80,18 @@ export class SubtitleService {
       }
       const videoId = this.youtube.currentVideo()?.id;
       const cues = this.subtitles();
+      const firstCueId = cues.length > 0 ? cues[0]?.id : null;
 
-      // Detect video, target language, source language, or subtitle cue switches and clear stale session state
-      if (
+      // Detect video, target language, source language, or track switches (by cue ID/count, not array reference)
+      const isTrackChanged = (
         videoId !== this.lastDualSubVideoId ||
         targetLang !== this.lastDualSubTargetLang ||
         sourceLang !== this.lastDualSubSourceLang ||
-        cues !== this.lastDualSubCuesRef
-      ) {
+        cues.length !== this.lastDualSubCuesCount ||
+        firstCueId !== this.lastDualSubFirstCueId
+      );
+
+      if (isTrackChanged) {
         this.cancelDualSubtitles();
         this.cueTranslations.set(new Map());
         this.isDualCached.set(false);
@@ -95,7 +101,8 @@ export class SubtitleService {
         this.lastDualSubVideoId = videoId || null;
         this.lastDualSubSourceLang = sourceLang || null;
         this.lastDualSubTargetLang = targetLang;
-        this.lastDualSubCuesRef = cues;
+        this.lastDualSubCuesCount = cues.length;
+        this.lastDualSubFirstCueId = firstCueId;
       }
 
       if (!showDual || !videoId || cues.length === 0 || targetLang === sourceLang) {
@@ -399,12 +406,17 @@ export class SubtitleService {
     this.isDualCached.set(false);
     this.lastLazyLoadedIndex = -1;
     this.pendingBatchStartIdx = -1;
-    this.pendingBatchEndIdx = -1;
     this.lastDualSubVideoId = null;
     this.lastDualSubSourceLang = null;
     this.lastDualSubTargetLang = null;
-    this.lastDualSubCuesRef = null;
+    this.lastDualSubFirstCueId = null;
+    this.lastDualSubCuesCount = 0;
+    this.lastBatchFailureTime = 0;
     this.requestedLanguage.set(null);
+  }
+
+  resetFailureCooldown(): void {
+    this.lastBatchFailureTime = 0;
   }
 
   // ============================================================================
@@ -517,6 +529,11 @@ export class SubtitleService {
       return;
     }
 
+    // Cooldown after a batch failure: do not hammer the network every 250ms frame update
+    if (this.lastBatchFailureTime > 0 && Date.now() - this.lastBatchFailureTime < 5000) {
+      return;
+    }
+
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
@@ -591,14 +608,18 @@ export class SubtitleService {
         }
 
         this.clearDualSubLoadingState();
+        this.lastBatchFailureTime = 0;
         const newMap = new Map(this.cueTranslations());
 
         translations.forEach((trans, i) => {
           const cue = cuesToTranslate[i];
           if (!cue) return;
           const trimmedTrans = trans?.trim();
-          // Store translation or empty string so cue is marked as resolved (prevents infinite re-request loops)
-          newMap.set(cue.id, trimmedTrans ?? '');
+          if (trimmedTrans !== undefined && trimmedTrans !== null && trimmedTrans.length > 0) {
+            newMap.set(cue.id, trimmedTrans);
+          } else if (trans === '') {
+            newMap.set(cue.id, '');
+          }
         });
 
         this.cueTranslations.set(newMap);
@@ -613,16 +634,10 @@ export class SubtitleService {
       error: (err) => {
         console.error('[SubtitleService] Dual sub lazy load failed:', err);
         this.clearDualSubLoadingState();
+        this.lastBatchFailureTime = Date.now();
         this.dualSubError.set('Translation failed');
-
-        // Mark failed cues as resolved in memory so we don't retry endlessly in a tight frame loop
-        const newMap = new Map(this.cueTranslations());
-        cuesToTranslate.forEach(cue => {
-          if (!newMap.has(cue.id)) {
-            newMap.set(cue.id, '');
-          }
-        });
-        this.cueTranslations.set(newMap);
+        // Do not permanently poison cues as '' in cueTranslations.
+        // Leaving failed cues unmapped allows retry after the 5s cooldown or upon user seeking.
       }
     });
   }

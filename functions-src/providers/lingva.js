@@ -28,23 +28,26 @@ async function translateWithGtx(text, source, target) {
     if (!text?.trim()) return '';
     if (source === target) return text;
 
-    try {
-        const gtxUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
-        const gtxRes = await fetch(gtxUrl, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
-            },
-            signal: AbortSignal.timeout(3500)
-        });
-        if (gtxRes.ok) {
-            const data = await gtxRes.json();
-            if (Array.isArray(data?.[0])) {
-                const translated = data[0].map(item => item?.[0] || '').join('');
-                if (translated) return translated;
+    const clients = ['gtx', 'dict-chrome-ex'];
+    for (const client of clients) {
+        try {
+            const gtxUrl = `https://translate.googleapis.com/translate_a/single?client=${client}&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
+            const gtxRes = await fetch(gtxUrl, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0'
+                },
+                signal: AbortSignal.timeout(3500)
+            });
+            if (gtxRes.ok) {
+                const data = await gtxRes.json();
+                if (Array.isArray(data?.[0])) {
+                    const translated = data[0].map(item => item?.[0] || '').join('');
+                    if (translated) return translated;
+                }
             }
+        } catch (e) {
+            console.warn(`[Translate] Google ${client} primary failed:`, e?.message || e);
         }
-    } catch (e) {
-        console.warn('[Translate] Google GTX primary failed:', e?.message || e);
     }
     return null;
 }

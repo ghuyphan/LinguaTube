@@ -171,32 +171,36 @@ test('dual subtitles validation: accepts long videos with > 1,000 cues and optio
     assert.equal(validation2.valid, true, 'Long video with 2500 segments should be accepted');
 });
 
-test('dual subtitle resolution: records all cues including identical/empty to prevent infinite loops', () => {
+test('dual subtitle resolution: records valid & identical cues while preventing poisoning on failure', () => {
     const cues = [
         { id: 'c1', text: 'Hello' },
         { id: 'c2', text: 'OK' }, // Identical translation
-        { id: 'c3', text: '???' } // Failed translation
+        { id: 'c3', text: '???' } // Failed translation (null)
     ];
     const rawTranslations = ['Xin chào', 'OK', null];
     const newMap = new Map();
 
-    // The fixed mapping logic from subtitle.service.ts
+    // The mapping logic from subtitle.service.ts
     rawTranslations.forEach((trans, i) => {
         const cue = cues[i];
         if (!cue) return;
         const trimmedTrans = trans?.trim();
-        newMap.set(cue.id, trimmedTrans ?? '');
+        if (trimmedTrans !== undefined && trimmedTrans !== null && trimmedTrans.length > 0) {
+            newMap.set(cue.id, trimmedTrans);
+        } else if (trans === '') {
+            newMap.set(cue.id, '');
+        }
     });
 
-    // Verify all cue IDs are recorded in the map
+    // Verify valid & identical cue IDs are recorded in the map
     assert.equal(newMap.has('c1'), true);
     assert.equal(newMap.has('c2'), true);
-    assert.equal(newMap.has('c3'), true);
+    // Verify failed cue (null) is NOT poisoned as empty in the map so it can be retried
+    assert.equal(newMap.has('c3'), false);
 
     // Verify values
     assert.equal(newMap.get('c1'), 'Xin chào');
     assert.equal(newMap.get('c2'), 'OK');
-    assert.equal(newMap.get('c3'), '');
 
     // Verify UI template equality guard logic
     const shouldRenderC1 = Boolean(newMap.get('c1')) && newMap.get('c1') !== cues[0].text;
@@ -205,6 +209,6 @@ test('dual subtitle resolution: records all cues including identical/empty to pr
 
     assert.equal(shouldRenderC1, true, 'Valid translation should be rendered in UI');
     assert.equal(shouldRenderC2, false, 'Identical translation should not be rendered in UI');
-    assert.equal(shouldRenderC3, false, 'Empty translation should not be rendered in UI');
+    assert.equal(shouldRenderC3, false, 'Unmapped translation should not be rendered in UI');
 });
 

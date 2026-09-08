@@ -261,16 +261,20 @@ const BROWSER_HEADERS = {
 async function translateWithGtx(text, source, target) {
     if (!text) return text;
     if (source === target) return text;
-    try {
-        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
-        const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(4000) });
-        if (res.ok) {
-            const data = await res.json();
-            const translated = data[0]?.map(item => item[0]).join('');
-            if (translated) return translated;
+
+    const clients = ['gtx', 'dict-chrome-ex'];
+    for (const client of clients) {
+        try {
+            const url = `https://translate.googleapis.com/translate_a/single?client=${client}&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
+            const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(4000) });
+            if (res.ok) {
+                const data = await res.json();
+                const translated = data[0]?.map(item => item[0]).join('');
+                if (translated) return translated;
+            }
+        } catch (e) {
+            console.warn(`[GTX Translate ${client}] Error:`, e.message);
         }
-    } catch (e) {
-        console.warn('[GTX Translate] Error:', e.message);
     }
     return null;
 }
@@ -1617,7 +1621,7 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.0.2';
+    const mockVersion = req.query.mock_version || '1.0.3';
 
     res.json({
         version: mockVersion,
@@ -1628,34 +1632,34 @@ app.get('/api/version', (req, res) => {
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'Introducing Voca Premium: 25 Diamonds capacity, 4-minute regeneration, and AI transcription up to 45 minutes',
-                'Redesigned Pro plan at an affordable price (49,000 VND/mo) with 10 Diamonds and 20-minute video limit',
-                'Brand-new subscription tier switcher with real-time benefit comparisons in the Upgrade Dialog',
-                'Dynamic duration-based Diamond billing and higher rate limit allocations for paid subscribers'
+                'Dual Subtitle Engine 2.0: High-speed translation with Google GTX and automatic client rotation',
+                'Eliminated subtitle freeze and cancellation race conditions during tokenization and seeking',
+                'Extended long video support up to 10,000 subtitle cues with lightweight cache checking',
+                'Visual polish: borderless subtitle placeholders and smoother playback transitions'
             ],
             vi: [
-                'Ra mắt gói Voca Premium: Sức chứa 25 Kim Cương, hồi phục mỗi 4 phút và phiên âm video AI lên tới 45 phút',
-                'Gói Voca Pro mới với mức giá tiết kiệm (49.000đ/tháng), 10 Kim Cương và hỗ trợ video tới 20 phút',
-                'Giao diện nâng cấp tài khoản hoàn toàn mới, dễ dàng so sánh quyền lợi giữa Pro và Premium',
-                'Cơ chế tiêu thụ Kim Cương linh hoạt theo độ dài video cùng giới hạn gọi API mở rộng cho thành viên trả phí'
+                'Công cụ Phụ đề Song ngữ 2.0: Tốc độ dịch siêu nhanh với Google GTX và xoay vòng client tự động',
+                'Khắc phục hoàn toàn hiện tượng đơ phụ đề hoặc hủy dịch ngầm khi tách từ vựng và tua video',
+                'Hỗ trợ video dài lên tới 10.000 dòng phụ đề cùng cơ chế kiểm tra bộ nhớ đệm siêu nhẹ',
+                'Tinh chỉnh giao diện: loại bỏ viền thừa của khung chờ phụ đề và chuyển động mượt mà hơn'
             ],
             ja: [
-                '新プラン「Voca Premium」登場：ダイヤ上限25個、4分回復、最長45分のAI文字起こし対応',
-                'より手軽になった新「Voca Pro」プラン（月額49,000 VND）：ダイヤ上限10個、20分動画対応',
-                'ProとPremiumの特典をひと目で比較できる刷新されたアップグレード画面',
-                '動画の長さに応じたダイヤ消費と、有料会員向けの高レートリミット枠の最適化'
+                'デュアル字幕エンジン2.0：Google GTXとクライアント自動ローテーションによる超高速翻訳',
+                '形態素解析時や動画シーク時の字幕停止・リクエスト中断の競合問題を完全解消',
+                '軽量キャッシュチェックにより最大10,000行の長尺動画字幕を快適にサポート',
+                'UI改善：空の字幕プレースホルダーの枠線を排除し、より滑らかな表示を実現'
             ],
             ko: [
-                '새로운 Voca Premium 출시: 다이아몬드 최대 25개, 4분마다 충전, 최대 45분 AI 영상 자막 생성',
-                '합리적인 가격의 새로운 Voca Pro 플랜 (월 49,000 VND): 다이아몬드 10개, 20분 영상 지원',
-                'Pro와 Premium 혜택을 한눈에 비교하고 선택할 수 있는 업그레이드 다이얼로그 개편',
-                '영상 길이에 맞춘 다이내믹 다이아몬드 차감 및 유료 회원을 위한 확장된 API 처리량 제공'
+                '이중 자막 엔진 2.0: Google GTX 및 자동 클라이언트 로테이션을 통한 초고속 번역',
+                '단어 토큰화 및 영상 탐색 시 자막이 멈추거나 번역이 취소되던 현상 완전 해결',
+                '경량 캐시 확인 메커니즘으로 최대 10,000개 자막을 가진 긴 영상도 원활하게 지원',
+                'UI 개선: 빈 자막 영역의 불필요한 테두리를 제거하고 더욱 매끄러운 화면 전환 제공'
             ],
             zh: [
-                '全新推出 Voca Premium 会员：25颗钻石上限、4分钟极速恢复，支持长达45分钟的AI视频听写',
-                '全新轻量 Pro 会员更实惠（月费 49,000 VND）：10颗钻石上限与20分钟视频支持',
-                '全新升级窗口，支持一键切换并直观对比 Pro 与 Premium 专属权益',
-                '按视频时长动态消耗钻石，并为付费会员提供更高规格的 API 速率配额'
+                '双语字幕引擎 2.0：结合 Google GTX 与多客户端自动轮换的高速翻译',
+                '彻底解决分词处理与视频快进时字幕冻结或被意外取消的问题',
+                '超轻量级缓存检测机制，全面支持长达 10,000 行字幕的长视频',
+                '界面视觉优化：去除空白占位框边框，字幕过渡更平滑自然'
             ]
         }
     });

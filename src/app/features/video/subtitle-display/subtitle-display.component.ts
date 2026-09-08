@@ -528,6 +528,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
       this.disableLoop();
     }
     this.youtube.seekTo(cue.startTime);
+    this.subtitles.resetFailureCooldown();
     const index = this.subtitles.subtitles().findIndex(c => c.id === cue.id);
     if (index !== -1) {
       this.subtitles.lazyLoadUpcomingCuesIfNeeded(index);

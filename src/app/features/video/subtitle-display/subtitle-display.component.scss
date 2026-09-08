@@ -306,6 +306,9 @@
 .subtitle-translation--empty {
     animation: none;
     background: transparent;
+    border-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
     pointer-events: none;
     padding: 6px var(--space-sm);
 }

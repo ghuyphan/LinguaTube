@@ -361,9 +361,11 @@ $transition-fast: 0.15s ease;
     text-align: inherit;
     cursor: pointer;
     padding: 0.05rem 0.25rem;
+    margin: 0 1px;
     border-radius: 5px;
     transition: background $transition-fast, transform $transition-fast;
-    display: inline;
+    display: inline-block;
+    vertical-align: baseline;
     position: relative;
     -webkit-tap-highlight-color: transparent;
 
@@ -393,6 +395,7 @@ $transition-fast: 0.15s ease;
         display: inline-block;
         vertical-align: baseline;
         padding: 0 0.05rem;
+        margin: 0;
         pointer-events: auto;
         cursor: default;
         color: rgba(255, 255, 255, 0.9);
@@ -459,18 +462,22 @@ $transition-fast: 0.15s ease;
     }
 
     &--grammar {
-        background: none;
+        background: rgba(var(--color-grammar-rgb, 45, 212, 191), 0.15);
         color: #ffffff;
-        border-bottom: 1px dotted rgba(var(--color-grammar-rgb, 45, 212, 191), 0.65);
-        border-radius: 0;
-        margin: 0;
-        padding: 0.125rem 0.2rem calc(0.125rem - 1px);
+        text-decoration: underline;
+        text-decoration-color: var(--color-grammar, #2dd4bf);
+        text-decoration-style: solid;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 2px;
+        border-radius: 4px;
+        margin: 0 1px;
+        padding: 0.05rem 0.25rem;
         font-weight: inherit;
 
         @media (hover: hover) {
             &:hover {
-                background: rgba(255, 255, 255, 0.22);
-                border-bottom-color: rgba(var(--color-grammar-rgb, 45, 212, 191), 0.95);
+                background: rgba(var(--color-grammar-rgb, 45, 212, 191), 0.28);
+                text-decoration-color: #5eead4;
                 transform: none;
             }
         }
