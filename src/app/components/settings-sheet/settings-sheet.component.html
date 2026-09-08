@@ -234,58 +234,68 @@
 </app-bottom-sheet>
 
 <!-- Learning Language Picker -->
-<app-option-picker [options]="learningLangOptions()" [value]="settings.settings().language"
-    [isOpen]="showLearningLangPicker()" [title]="i18n.t('settings.learningLanguage')"
-    (selected)="onLearningLangSelected($event)" (closed)="showLearningLangPicker.set(false)" />
+@if (showLearningLangPicker()) {
+    <app-option-picker [options]="learningLangOptions()" [value]="settings.settings().language"
+        [isOpen]="showLearningLangPicker()" [title]="i18n.t('settings.learningLanguage')"
+        (selected)="onLearningLangSelected($event)" (closed)="showLearningLangPicker.set(false)" />
+}
 
 <!-- UI Language Picker -->
-<app-option-picker [options]="uiLangOptions()" [value]="i18n.currentLanguage()" [isOpen]="showUILangPicker()"
-    [title]="i18n.t('settings.interfaceLanguage')" (selected)="onUILangSelected($event)"
-    (closed)="showUILangPicker.set(false)" />
+@if (showUILangPicker()) {
+    <app-option-picker [options]="uiLangOptions()" [value]="i18n.currentLanguage()" [isOpen]="showUILangPicker()"
+        [title]="i18n.t('settings.interfaceLanguage')" (selected)="onUILangSelected($event)"
+        (closed)="showUILangPicker.set(false)" />
+}
 
 <!-- Reading / Script Picker -->
-<app-option-picker [options]="readingDisplayOptions()" [value]="settings.getReadingDisplayMode(settings.settings().language)"
-    [isOpen]="showReadingModePicker()" [title]="i18n.t('settings.learningDisplay')"
-    (selected)="onReadingDisplaySelected($event)" (closed)="showReadingModePicker.set(false)" />
+@if (showReadingModePicker()) {
+    <app-option-picker [options]="readingDisplayOptions()" [value]="settings.getReadingDisplayMode(settings.settings().language)"
+        [isOpen]="showReadingModePicker()" [title]="i18n.t('settings.learningDisplay')"
+        (selected)="onReadingDisplaySelected($event)" (closed)="showReadingModePicker.set(false)" />
+}
 
 <!-- Sign Out Confirmation -->
-<app-confirm-dialog [isOpen]="showSignOutConfirm()" [title]="i18n.t('settings.signOutConfirmTitle')"
-    [message]="i18n.t('settings.signOutConfirmMessage')" [confirmText]="i18n.t('header.signOut')"
-    [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="log-out"
-    [closeOnConfirm]="false"
-    [isLoading]="auth.isLoggingOut()"
-    (confirmed)="confirmSignOut()"
-    (cancelled)="showSignOutConfirm.set(false)" />
+@if (showSignOutConfirm()) {
+    <app-confirm-dialog [isOpen]="showSignOutConfirm()" [title]="i18n.t('settings.signOutConfirmTitle')"
+        [message]="i18n.t('settings.signOutConfirmMessage')" [confirmText]="i18n.t('header.signOut')"
+        [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="log-out"
+        [closeOnConfirm]="false"
+        [isLoading]="auth.isLoggingOut()"
+        (confirmed)="confirmSignOut()"
+        (cancelled)="showSignOutConfirm.set(false)" />
+}
 
 <!-- Release Notes / What's New Sheet -->
-<app-bottom-sheet
-    [isOpen]="showReleaseNotes()"
-    [title]="i18n.t('settings.releaseNotes') || 'Release Notes'"
-    [showCloseButton]="true"
-    [maxHeight]="'80vh'"
-    (closed)="showReleaseNotes.set(false)"
->
-    <div class="release-notes-sheet">
-        <div class="release-notes-header">
-            <div class="release-notes-badge">v{{ appUpdate.currentVersion() }}</div>
-            <span class="release-notes-date">
-                {{ i18n.t('settings.releaseDate') || 'Released' }}: {{ appUpdate.currentRelease().buildDate }}
-            </span>
-        </div>
-
-        <div class="release-notes-content">
-            <div class="release-notes-section-title">
-                <app-icon name="sparkles" [size]="16" />
-                <span>{{ i18n.t('settings.whatsNew') || "What's New" }}</span>
+@if (showReleaseNotes()) {
+    <app-bottom-sheet
+        [isOpen]="showReleaseNotes()"
+        [title]="i18n.t('settings.releaseNotes') || 'Release Notes'"
+        [showCloseButton]="true"
+        [maxHeight]="'80vh'"
+        (closed)="showReleaseNotes.set(false)"
+    >
+        <div class="release-notes-sheet">
+            <div class="release-notes-header">
+                <div class="release-notes-badge">v{{ appUpdate.currentVersion() }}</div>
+                <span class="release-notes-date">
+                    {{ i18n.t('settings.releaseDate') || 'Released' }}: {{ appUpdate.currentRelease().buildDate }}
+                </span>
             </div>
-            <ul class="release-notes-list">
-                @for (item of appUpdate.currentHighlights(); track item) {
-                    <li class="release-notes-item">
-                        <span class="release-notes-bullet">•</span>
-                        <span>{{ item }}</span>
-                    </li>
-                }
-            </ul>
+
+            <div class="release-notes-content">
+                <div class="release-notes-section-title">
+                    <app-icon name="sparkles" [size]="16" />
+                    <span>{{ i18n.t('settings.whatsNew') || "What's New" }}</span>
+                </div>
+                <ul class="release-notes-list">
+                    @for (item of appUpdate.currentHighlights(); track item) {
+                        <li class="release-notes-item">
+                            <span class="release-notes-bullet">•</span>
+                            <span>{{ item }}</span>
+                        </li>
+                    }
+                </ul>
+            </div>
         </div>
-    </div>
-</app-bottom-sheet>
+    </app-bottom-sheet>
+}

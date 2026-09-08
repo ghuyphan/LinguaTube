@@ -231,7 +231,43 @@ test('detectLevelFromMetadata: accurately parses proficiency levels from titles 
   assert.equal(detectLevelFromMetadata('Random Cat Video', 'Funny Animals'), null);
 });
 
-test('getRecommendedVideosFromD1: queries and formats transcribed videos accurately', async () => {
+test('labelToTier: standardizes proficiency levels to canonical tiers', async () => {
+  const { labelToTier } = await import('../functions-src/data/video-info-db.js');
+
+  // Beginner
+  assert.equal(labelToTier('JLPT N5'), 'beginner');
+  assert.equal(labelToTier('HSK 1'), 'beginner');
+  assert.equal(labelToTier('CEFR A1'), 'beginner');
+  assert.equal(labelToTier('Beginner'), 'beginner');
+
+  // Elementary
+  assert.equal(labelToTier('JLPT N4'), 'elementary');
+  assert.equal(labelToTier('HSK 2'), 'elementary');
+  assert.equal(labelToTier('CEFR A2'), 'elementary');
+
+  // Intermediate
+  assert.equal(labelToTier('JLPT N3'), 'intermediate');
+  assert.equal(labelToTier('HSK 3'), 'intermediate');
+  assert.equal(labelToTier('HSK 4'), 'intermediate');
+  assert.equal(labelToTier('CEFR B1'), 'intermediate');
+
+  // Upper Intermediate
+  assert.equal(labelToTier('JLPT N2'), 'upper_intermediate');
+  assert.equal(labelToTier('HSK 5'), 'upper_intermediate');
+  assert.equal(labelToTier('CEFR B2'), 'upper_intermediate');
+
+  // Advanced
+  assert.equal(labelToTier('JLPT N1'), 'advanced');
+  assert.equal(labelToTier('HSK 6'), 'advanced');
+  assert.equal(labelToTier('CEFR C1'), 'advanced');
+  assert.equal(labelToTier('CEFR C2'), 'advanced');
+
+  // Empty / invalid
+  assert.equal(labelToTier(''), null);
+  assert.equal(labelToTier(null), null);
+});
+
+test('getRecommendedVideosFromD1: queries and formats transcribed videos accurately with tier support', async () => {
   const { getRecommendedVideosFromD1 } = await import('../functions-src/data/video-info-db.js');
 
   // Mock D1 database
@@ -268,10 +304,28 @@ test('getRecommendedVideosFromD1: queries and formats transcribed videos accurat
   assert.equal(results.length, 2);
   assert.equal(results[0].videoId, 'testVid1');
   assert.equal(results[0].level, 'JLPT N4');
+  assert.equal(results[0].tier, 'elementary');
   assert.equal(results[0].thumbnail, 'https://i.ytimg.com/vi/testVid1/mqdefault.jpg');
   assert.deepEqual(results[0].languages, ['ja', 'en']);
   // Fallback detection from title
   assert.equal(results[1].level, 'JLPT N3');
+  assert.equal(results[1].tier, 'intermediate');
+
+  // Server-side tier filtering: elementary matches testVid1 only
+  const elemResults = await getRecommendedVideosFromD1(mockDb, 'ja', 10, 'elementary');
+  assert.equal(elemResults.length, 1);
+  assert.equal(elemResults[0].videoId, 'testVid1');
+  assert.equal(elemResults[0].tier, 'elementary');
+
+  // Server-side tier filtering: intermediate matches testVid2 only
+  const interResults = await getRecommendedVideosFromD1(mockDb, 'ja', 10, 'intermediate');
+  assert.equal(interResults.length, 1);
+  assert.equal(interResults[0].videoId, 'testVid2');
+  assert.equal(interResults[0].tier, 'intermediate');
+
+  // Server-side tier filtering: advanced matches none
+  const advResults = await getRecommendedVideosFromD1(mockDb, 'ja', 10, 'advanced');
+  assert.equal(advResults.length, 0);
 
   // Null/empty db or lang returns empty list safely
   assert.deepEqual(await getRecommendedVideosFromD1(null, 'ja'), []);

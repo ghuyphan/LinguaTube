@@ -8,7 +8,9 @@
         "updateLater": "Later",
         "whatsNew": "What's New",
         "updateRequired": "Update Required",
-        "updateRequiredDesc": "This update is required to maintain compatibility with Voca services."
+        "updateRequiredDesc": "This update is required to maintain compatibility with Voca services.",
+        "updatingApp": "Updating Voca...",
+        "updatingDesc": "Applying updates and optimizing performance..."
     },
     "nav": {
         "video": "Video",

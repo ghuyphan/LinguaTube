@@ -229,7 +229,7 @@ export class ConfirmDialogComponent {
     onSheetClosed(): void {
         if (this.closingAction === 'confirm') {
             this.confirmed.emit();
-        } else if (this.closingAction === 'cancel') {
+        } else {
             this.cancelled.emit();
         }
         // Reset for next opening

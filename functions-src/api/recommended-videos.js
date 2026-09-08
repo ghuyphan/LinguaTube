@@ -12,6 +12,7 @@ import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 // In-memory cache across warm Worker isolate requests
 const memCache = new Map();
 const MEM_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
+const VALID_TIERS = new Set(['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced']);
 
 const CDN_CACHE_HEADER = 'public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400';
 
@@ -26,10 +27,13 @@ export async function onRequestGet(context) {
     const rawLang = (url.searchParams.get('lang') || 'ja').toLowerCase().trim();
     const lang = isLanguageSupported(rawLang) ? rawLang : 'ja';
 
+    const rawTier = (url.searchParams.get('tier') || '').toLowerCase().trim();
+    const tier = VALID_TIERS.has(rawTier) ? rawTier : null;
+
     const limitParam = parseInt(url.searchParams.get('limit'), 10);
     const limit = Math.min(Math.max(isNaN(limitParam) ? 12 : limitParam, 1), 50);
 
-    const cacheKey = `${lang}_${limit}`;
+    const cacheKey = `${lang}_${tier || 'all'}_${limit}`;
 
     // 1. Fast in-memory cache check (warm isolate)
     const cached = memCache.get(cacheKey);
@@ -37,6 +41,7 @@ export async function onRequestGet(context) {
         return jsonResponse({
             success: true,
             language: lang,
+            tier: tier || undefined,
             count: cached.videos.length,
             videos: cached.videos,
             source: 'cache:memory'
@@ -49,7 +54,7 @@ export async function onRequestGet(context) {
     // 2. Query Cloudflare (D1 database + R2 storage)
     const db = env?.VOCAB_DB;
     const r2 = env?.TRANSCRIPT_STORAGE;
-    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit);
+    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier);
 
     // Save to isolate memory cache
     memCache.set(cacheKey, {
@@ -60,6 +65,7 @@ export async function onRequestGet(context) {
     return jsonResponse({
         success: true,
         language: lang,
+        tier: tier || undefined,
         count: videos.length,
         videos,
         source: 'cloudflare'

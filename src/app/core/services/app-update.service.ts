@@ -44,6 +44,7 @@ export class AppUpdateService implements OnDestroy {
   readonly updateAvailable = signal<boolean>(false);
   readonly isChecking = signal<boolean>(false);
   readonly showUpdateSheet = signal<boolean>(false);
+  readonly isApplyingUpdate = signal<boolean>(false);
   readonly lastChecked = signal<Date | null>(null);
 
   // Localized highlights for the current incoming update
@@ -263,11 +264,16 @@ export class AppUpdateService implements OnDestroy {
   }
 
   /**
-   * Apply the pending update and reload the application.
-   * Cleans up sheets and ensures fallback reload even if activateUpdate rejects.
+   * Apply the pending update and reload the application with a graceful transition.
+   * Cleans up sheets and displays a dedicated full-screen updating transition overlay.
    */
   async applyUpdate(): Promise<void> {
+    if (this.isApplyingUpdate()) {
+      return;
+    }
+    // 1. Dismiss the sheet and activate the smooth updating transition overlay
     this.showUpdateSheet.set(false);
+    this.isApplyingUpdate.set(true);
 
     try {
       console.log('[AppUpdate] Activating update...');
@@ -275,10 +281,27 @@ export class AppUpdateService implements OnDestroy {
         await this.swUpdate.activateUpdate();
         console.log('[AppUpdate] Update activated successfully');
       }
+
+      // Clean up service worker and stale app caches safely
+      if (typeof caches !== 'undefined' && caches?.keys) {
+        try {
+          const names = await caches.keys();
+          await Promise.all(
+            names
+              .filter(name => name.startsWith('ngsw:') || name.includes('lingua-tube'))
+              .map(name => caches.delete(name))
+          );
+        } catch (e) {
+          console.warn('[AppUpdate] Cache cleanup warning:', e);
+        }
+      }
     } catch (err) {
       console.warn('[AppUpdate] activateUpdate encountered an error, proceeding with hard reload:', err);
     } finally {
-      // IndexedDB user data (vocabulary, history, streaks) is safe
+      // Allow the smooth transition overlay to display for at least 650ms before reloading
+      await new Promise(resolve => setTimeout(resolve, 650));
+
+      // IndexedDB user data (vocabulary, history, streaks) is safely persisted
       if (typeof window !== 'undefined') {
         window.location.reload();
       }
@@ -307,21 +330,16 @@ export class AppUpdateService implements OnDestroy {
 
   /**
    * Recover from corrupted cache or broken service worker state.
+   * Instead of abruptly reloading the user's active page, prompt them gracefully.
    */
   private handleUnrecoverableState(): void {
-    if (typeof window === 'undefined') {
+    console.error('[AppUpdate] Unrecoverable SW state detected; requesting graceful update rather than sudden reload');
+    if (!this.isBrowser) {
       return;
     }
-
-    if (typeof caches !== 'undefined' && caches?.keys) {
-      caches.keys()
-        .then(names => Promise.all(names.map(name => caches.delete(name))))
-        .catch(err => console.warn('[AppUpdate] Failed to delete caches:', err))
-        .finally(() => {
-          location.reload();
-        });
-    } else {
-      location.reload();
-    }
+    // Flag update as available & required so user can confirm when ready
+    this.updateAvailable.set(true);
+    this.forceUpdateRequired.set(true);
+    this.showUpdateSheet.set(true);
   }
 }

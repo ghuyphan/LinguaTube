@@ -50,7 +50,7 @@ Copy-paste these exact URLs into your mobile HTTP clients (Retrofit, Dio, Alamof
 | 7 | `GET` | `https://lingua-tube.pages.dev/api/translate/{src}/{tgt}/{text}` | No | Single phrase translation proxy |
 | 8 | `POST` | `https://lingua-tube.pages.dev/api/translate/batch` | No | Batch translation for up to 50 items with KV caching |
 | 9 | `GET` | `https://lingua-tube.pages.dev/api/video-info` | No | YouTube video metadata, duration, languages & level map (`?videoId=...`) |
-| 10 | `GET` | `https://lingua-tube.pages.dev/api/recommended-videos` | No | Curated learning videos with pre-cached transcripts (`?lang=...&limit=...`) |
+| 10 | `GET` | `https://lingua-tube.pages.dev/api/recommended-videos` | No | Curated learning videos with pre-cached transcripts (`?lang=...&tier=...&limit=...`) |
 | 11 | `POST` | `https://lingua-tube.pages.dev/api/video-level` | No | Save/update assessed CEFR/JLPT/HSK/TOPIK difficulty level |
 | 12 | `GET` | `https://lingua-tube.pages.dev/api/diamonds` | Optional | Check available AI diamond credits, next regen time & limits |
 | 13 | `GET` | `https://lingua-tube.pages.dev/api/leaderboard` | No | Global learner XP leaderboard & live user rank calculation |
@@ -440,12 +440,14 @@ Returns curated YouTube videos with pre-cached, verified transcripts stored in C
 - **Local Dev URL:** `http://localhost:3001/api/recommended-videos`
 - **Query Parameters:**
   - `lang` (optional, default `ja`): Target language (`ja`, `ko`, `zh`, `en`).
+  - `tier` (optional): Proficiency tier filter (`beginner`, `elementary`, `intermediate`, `upper_intermediate`, `advanced`). When passed, the server queries Cloudflare D1 specifically for level-matched videos, delivering a full shelf of content without sparse results.
   - `limit` (optional, default `12`, max `50`).
 - **Success Response (200 OK):**
   ```json
   {
     "success": true,
     "language": "ja",
+    "tier": "elementary",
     "count": 12,
     "videos": [
       {
@@ -463,6 +465,11 @@ Returns curated YouTube videos with pre-cached, verified transcripts stored in C
     "source": "cloudflare"
   }
   ```
+
+*Mobile Recommendation Integration Pattern:*
+1. Display a difficulty filter segmented control or chip bar: `All`, `Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`.
+2. When the user selects a difficulty filter, pass `?tier=<tier>` directly to `/api/recommended-videos`.
+3. Cache responses locally in-memory per `lang_tier_limit` key so switching between tabs is instantaneous (0ms).
 
 ---
 

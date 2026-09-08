@@ -8,7 +8,9 @@
         "updateLater": "後で",
         "whatsNew": "新機能と改善",
         "updateRequired": "アップデートが必要です",
-        "updateRequiredDesc": "Vocaのサービスとの互換性を維持するために、このアップデートが必要です。"
+        "updateRequiredDesc": "Vocaのサービスとの互換性を維持するために、このアップデートが必要です。",
+        "updatingApp": "Voca をアップデート中...",
+        "updatingDesc": "最新の更新を適用し、パフォーマンスを最適化しています..."
     },
     "nav": {
         "video": "動画",

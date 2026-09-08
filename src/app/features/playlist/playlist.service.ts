@@ -760,9 +760,9 @@ export class PlaylistService {
     }
 
     /**
-     * Load community playlists (published)
+     * Load community playlists (published), with optional server-side language and tier filtering
      */
-    async loadCommunityPlaylists(): Promise<void> {
+    async loadCommunityPlaylists(language?: string, tier?: string): Promise<void> {
         this.isCommunityLoading.set(true);
         if (this.communityPlaylists().length === 0) {
             this.isLoading.set(true);
@@ -770,10 +770,17 @@ export class PlaylistService {
 
         try {
             const client = await this.pb.getClient();
+            const targetLang = language && language !== 'all' ? language : null;
+            const targetTier = tier && tier !== 'all' ? tier : null;
+
+            let filter = 'visibility="published"';
+            if (targetLang) {
+                filter += ` && language="${targetLang}"`;
+            }
 
             // Load published playlists with user name expanded with a 5s safety timeout
             const fetchPromise = client.collection('playlists').getList(1, 50, {
-                filter: 'visibility="published"',
+                filter,
                 sort: '-updated',
                 expand: 'user',
                 requestKey: null
@@ -784,8 +791,16 @@ export class PlaylistService {
             );
 
             const result = await Promise.race([fetchPromise, timeoutPromise]);
+            let playlists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
 
-            this.communityPlaylists.set(result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>)));
+            if (targetTier) {
+                playlists = playlists.filter(p => {
+                    const resolved = this.videoLevel.resolvePlaylistLevel(p);
+                    return resolved?.tier === targetTier;
+                });
+            }
+
+            this.communityPlaylists.set(playlists);
         } catch (error) {
             console.error('[Playlist] Failed to load community playlists:', error);
         } finally {
@@ -797,6 +812,7 @@ export class PlaylistService {
 
     /**
      * Load recommended playlists for a target learning language directly from server.
+     * Supports optional difficulty tier filtering ('beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced').
      * Enforces server-side quality gates:
      * - visibility = "published"
      * - language = target language
@@ -804,11 +820,14 @@ export class PlaylistService {
      * - Sorted by -is_featured, -save_count, -updated
      * Falls back to video_count >= 1 if no playlists meet the >= 2 threshold.
      */
-    async loadRecommendedPlaylists(language: string, limit = 3): Promise<Playlist[]> {
+    async loadRecommendedPlaylists(language: string, tier?: string, limit = 3): Promise<Playlist[]> {
         if (!language) return [];
 
-        if (this.recommendedCache.has(language)) {
-            const cached = this.recommendedCache.get(language)!;
+        const targetTier = tier && tier !== 'all' ? tier : undefined;
+        const cacheKey = `${language}_${targetTier || 'all'}`;
+
+        if (this.recommendedCache.has(cacheKey)) {
+            const cached = this.recommendedCache.get(cacheKey)!;
             this.recommendedPlaylists.set(cached);
             return cached;
         }
@@ -816,6 +835,33 @@ export class PlaylistService {
         this.isRecommendedLoading.set(true);
         try {
             const client = await this.pb.getClient();
+
+            if (targetTier) {
+                // When tier is requested, query a larger batch of published playlists for this language to match the tier
+                const fetchPromise = client.collection('playlists').getList(1, 30, {
+                    filter: `visibility="published" && language="${language}"`,
+                    sort: '-is_featured,-save_count,-updated',
+                    expand: 'user',
+                    requestKey: null
+                });
+
+                const timeoutPromise = new Promise<never>((_, reject) =>
+                    setTimeout(() => reject(new Error('Recommended playlists request timeout')), 5000)
+                );
+
+                const result = await Promise.race([fetchPromise, timeoutPromise]);
+                const allPlaylists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
+
+                const matching = allPlaylists.filter(p => {
+                    const resolved = this.videoLevel.resolvePlaylistLevel(p);
+                    return resolved?.tier === targetTier;
+                });
+
+                const finalPlaylists = matching.slice(0, limit);
+                this.recommendedCache.set(cacheKey, finalPlaylists);
+                this.recommendedPlaylists.set(finalPlaylists);
+                return finalPlaylists;
+            }
 
             // 1. Primary server-side query: published, matching language, at least 2 videos
             const primaryFilter = `visibility="published" && language="${language}" && video_count >= 2`;
@@ -844,7 +890,7 @@ export class PlaylistService {
             }
 
             const playlists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
-            this.recommendedCache.set(language, playlists);
+            this.recommendedCache.set(cacheKey, playlists);
             this.recommendedPlaylists.set(playlists);
             return playlists;
         } catch (error) {

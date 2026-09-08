@@ -294,12 +294,14 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 - **Verified Database Transcript Video Recommendations (`VideoRecommendationService`)**:
   - Solves the cold-start problem: learners don't need a YouTube URL ready on their clipboard to start practicing.
   - **Pre-Processed & Instant (<100ms)**: Videos are sourced from Cloudflare D1 (`video_languages`) and R2 permanent transcripts. Zero scraping delay, zero risk of missing captions, and zero AI Diamond credit consumption.
+  - **Server-Side Difficulty Level Filtering**: Supports querying by proficiency tier (`GET /api/recommended-videos?lang={lang}&tier={tier}&limit=12`). Resolves tiers via D1 `levels` JSON and metadata regex, ensuring a full shelf of 12 level-matched videos without sparse results.
   - **Proficiency Level & Language Alignment**: Every recommended video displays a circular SVG flag (`.circle-flag`) for its target language and its detected CEFR, JLPT, HSK, or TOPIK difficulty tier badge (`VideoLevelService`) alongside duration, channel, and an "Instant Subtitles" badge. Eliminates redundant text codes and clutter.
   - **1-Click Play**: Clicking any video immediately updates the URL query parameter (`?v=videoId`), mounts the player, and loads synchronized cues.
 - **Server-Side Playlist Recommendation Engine**:
   - Automatically queries PocketBase with targeted server-side filtering (`visibility="published" && language="${lang}" && video_count >= 2`).
+  - Supports proficiency tier filtering across published community playlists, matching playlist levels, tags, and titles directly against user-selected difficulty tiers.
   - Ranked on the server by `-is_featured, -save_count, -updated` to prioritize curated and popular community content while filtering out single-video test spam.
-  - Automatically re-fetches when learning language changes and caches results in memory per language.
+  - Automatically re-fetches when learning language or difficulty tier changes and caches results in memory per language and tier.
   - Falls back to `video_count >= 1` if a new language does not yet have multi-video collections.
 
 ---
@@ -329,10 +331,10 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
   - **Server-Assisted Version & Breaking Change Protection (`GET /api/version`)**: Connects to the edge version endpoint on startup and background focus triggers. Compares client version with `minSupportedVersion` via SemVer; if breaking API migrations occur, the update sheet operates in non-dismissible mode to protect users against corrupted queries.
   - **Localized "What's New" Highlights**: Shows bulleted release notes in the user's selected UI language (`en`, `vi`, `ja`, `ko`, `zh`) both inside the update sheet and in the Settings "Release Notes" modal.
   - **Optimized Asset Prefetching**: Splits the application shell (`main.*.js`, `polyfills.*.js`, `styles.*.css`, `index.html`) from dynamic chunks (`chunk-*.js`) in `ngsw-config.json`, preventing 12MB+ download bursts during update checks.
-  - **Non-Disruptive Notification**: When updates are non-breaking, displays a bottom sheet with "Update Now" and "Later".
+  - **Non-Disruptive Notification & Graceful Transition**: When updates are available, displays a bottom sheet with "Update Now" and "Later". Applying an update displays a full-screen branded transition overlay with animated Kikyo crest and localized messaging while activating the service worker and purging stale caches, eliminating abrupt white-flash reloads.
   - **Update Persistence & Badges**: If an update is deferred, a persistent pulsating dot appears on the desktop sidebar and mobile "More" menu Settings entries.
-  - **Settings Integration**: Users can view the current app version, open the "What's New" sheet, and click "Check for Updates" anytime with live loading feedback from the Settings sheet.
-  - **Corrupted Cache Recovery**: Listens to `swUpdate.unrecoverable` to auto-clear browser CacheStorage and recover smoothly.
+  - **Settings Integration & Instant 60fps Performance**: Users can view the current app version, open the "What's New" sheet, and check for updates. Child pickers and dialogs are lazy-rendered on demand with idle prefetching, ensuring instant 60fps opening without layout lag.
+  - **Corrupted Cache Recovery**: Listens to `swUpdate.unrecoverable` to prompt the user safely rather than abruptly reloading the active page, purging corrupted cache stores upon user confirmation.
   - **Cloudflare Edge Headers**: Configured in `public/_headers` with `no-cache, no-store, must-revalidate` for `ngsw.json` and `index.html`, and `immutable` for hashed JavaScript and CSS bundles.
 
 ---
@@ -445,9 +447,14 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
   - Number of advanced grammar patterns detected.
   - Speech velocity (e.g. `278 char/min` or `142 words/min`).
   - Active proficiency framework badge.
+- **Learn Home Dashboard Integration (`VideoPageComponent`)**:
+  - **Tier Filter Dropdown**: Allows filtering recommended videos and featured playlists by proficiency level (`All Levels`, `Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).
+  - **Server-Side Dynamic Fetching**: Switching the filter triggers a background server fetch via `/api/recommended-videos?tier=...` and PocketBase, ensuring a full shelf of 12 level-matched videos without sparse results.
+  - **Dual-Layer Cache**: In-memory caching in `VideoRecommendationService` and `PlaylistService` delivers zero-latency instant transitions when navigating between previously viewed levels.
 - **Playlist Page Integration (`PlaylistPageComponent`)**:
   - Playlist cards and individual tracklist rows display level pills (`level-badge--pill`) styled with tier-specific hues.
   - **Level Filter Dropdown**: Filter playlists by proficiency level (`All Levels`, `Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).
+  - **Server-Side Community Query**: Reloads community playlists from PocketBase with language and level parameters.
   - **Create Playlist Dialog**: Allows specifying target difficulty level upon playlist creation.
 - **History Page Integration (`HistoryPageComponent`)**:
   - **Level Filter Dropdown**: Quickly isolate watch history by difficulty tier.

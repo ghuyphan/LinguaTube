@@ -236,7 +236,7 @@ import { PlaylistService } from './features/playlist/playlist.service';
         </app-bottom-sheet>
 
         <!-- Bottom Sheets -->
-        @defer (when showSettingsSheet()) {
+        @defer (when showSettingsSheet(); prefetch on idle) {
           <app-settings-sheet 
             [isOpen]="showSettingsSheet()" 
             (closed)="showSettingsSheet.set(false)" 
@@ -247,7 +247,7 @@ import { PlaylistService } from './features/playlist/playlist.service';
           />
         }
 
-        @defer (when showStreakSheet()) {
+        @defer (when showStreakSheet(); prefetch on idle) {
           <app-bottom-sheet
             [isOpen]="showStreakSheet()"
             [title]="i18n.t('streak.dayStreak') || 'Streak'"
@@ -258,7 +258,7 @@ import { PlaylistService } from './features/playlist/playlist.service';
           </app-bottom-sheet>
         }
 
-        @defer (when showAiCreditsSheet()) {
+        @defer (when showAiCreditsSheet(); prefetch on idle) {
           <app-bottom-sheet
             [isOpen]="showAiCreditsSheet()"
             [title]="i18n.t('subtitle.aiCredits') || 'AI Credits'"
@@ -269,7 +269,7 @@ import { PlaylistService } from './features/playlist/playlist.service';
           </app-bottom-sheet>
         }
 
-        @defer (when showAchievementsSheet()) {
+        @defer (when showAchievementsSheet(); prefetch on idle) {
           <app-bottom-sheet
             [isOpen]="showAchievementsSheet()"
             [title]="i18n.t('achievements.title') || 'Achievements & Level'"
@@ -281,7 +281,7 @@ import { PlaylistService } from './features/playlist/playlist.service';
           </app-bottom-sheet>
         }
 
-        @defer (when showProUpgradeSheet()) {
+        @defer (when showProUpgradeSheet(); prefetch on idle) {
           <app-bottom-sheet
             [isOpen]="showProUpgradeSheet()"
             [title]="i18n.t('pro.title') || 'Voca Pro'"
@@ -294,7 +294,7 @@ import { PlaylistService } from './features/playlist/playlist.service';
         }
 
         <!-- Command Palette (lazy loaded on demand) -->
-        @defer (when showCommandPalette()) {
+        @defer (when showCommandPalette(); prefetch on idle) {
           <app-command-palette
             [isOpen]="showCommandPalette()"
             (submitted)="onCommandPaletteSearch($event)"
@@ -421,6 +421,37 @@ import { PlaylistService } from './features/playlist/playlist.service';
           </button>
         </div>
       </app-bottom-sheet>
+
+      <!-- App Updating Fullscreen Graceful Overlay -->
+      @if (appUpdate.isApplyingUpdate()) {
+        <div class="app-updating-overlay" role="status" aria-live="polite">
+          <div class="app-updating-backdrop"></div>
+          <div class="app-updating-card">
+            <div class="app-updating-brand">
+              <svg class="app-updating-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <path id="updating-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#F5F0E8"/>
+                </defs>
+                <g transform="translate(256, 256) scale(0.68)">
+                  <use href="#updating-kikyou-petal" transform="rotate(0)"/>
+                  <use href="#updating-kikyou-petal" transform="rotate(72)"/>
+                  <use href="#updating-kikyou-petal" transform="rotate(144)"/>
+                  <use href="#updating-kikyou-petal" transform="rotate(216)"/>
+                  <use href="#updating-kikyou-petal" transform="rotate(288)"/>
+                  <circle cx="0" cy="0" r="50" fill="#F5F0E8" stroke="#D95C64" stroke-width="6"/>
+                  <circle cx="0" cy="0" r="20" fill="#D95C64"/>
+                </g>
+              </svg>
+              <div class="app-updating-pulse-ring"></div>
+            </div>
+            <h2 class="app-updating-title">{{ i18n.t('app.updatingApp') || 'Updating Voca...' }}</h2>
+            <p class="app-updating-desc">{{ i18n.t('app.updatingDesc') || 'Applying updates and optimizing performance...' }}</p>
+            <div class="app-updating-progress">
+              <div class="app-updating-progress-bar"></div>
+            </div>
+          </div>
+        </div>
+      }
 
       <app-toast />
     </div>
@@ -654,6 +685,119 @@ import { PlaylistService } from './features/playlist/playlist.service';
       .update-sheet__btn--primary:hover {
         opacity: 0.9;
       }
+    }
+
+    /* Full-screen Native Updating Overlay */
+    .app-updating-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-xl);
+      animation: updateFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      user-select: none;
+    }
+
+    .app-updating-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .app-updating-card {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 340px;
+      width: 100%;
+    }
+
+    .app-updating-brand {
+      position: relative;
+      width: 88px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .app-updating-logo {
+      width: 76px;
+      height: 76px;
+      filter: drop-shadow(0 10px 24px rgba(217, 92, 100, 0.45));
+      animation: updatePulse 2s ease-in-out infinite;
+    }
+
+    .app-updating-pulse-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid var(--accent-primary, #D95C64);
+      opacity: 0;
+      animation: updateRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    .app-updating-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 var(--space-xs);
+      letter-spacing: -0.01em;
+    }
+
+    .app-updating-desc {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.72);
+      margin: 0 0 var(--space-lg);
+      line-height: 1.5;
+    }
+
+    .app-updating-progress {
+      width: 180px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .app-updating-progress-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, #D95C64, #f43f5e);
+      border-radius: 2px;
+      animation: updateProgressIndeterminate 1.4s infinite ease-in-out;
+    }
+
+    @keyframes updateFadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes updatePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    @keyframes updateRing {
+      0% { transform: scale(0.85); opacity: 0.8; }
+      100% { transform: scale(1.45); opacity: 0; }
+    }
+
+    @keyframes updateProgressIndeterminate {
+      0% { left: -40%; width: 40%; }
+      50% { left: 20%; width: 60%; }
+      100% { left: 100%; width: 40%; }
     }
 
     /* More Menu */
@@ -1113,55 +1257,55 @@ export class AppComponent implements OnDestroy {
   openStreakFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    this.showStreakSheet.set(true);
+    setTimeout(() => this.showStreakSheet.set(true), 50);
   }
 
   openAiCreditsFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    this.showAiCreditsSheet.set(true);
+    setTimeout(() => this.showAiCreditsSheet.set(true), 50);
   }
 
   openAchievementsFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    this.showAchievementsSheet.set(true);
+    setTimeout(() => this.showAchievementsSheet.set(true), 50);
   }
 
   openStreakFromSettings(): void {
     this.sheetService.skipNextHistoryPop();
     this.showSettingsSheet.set(false);
-    this.showStreakSheet.set(true);
+    setTimeout(() => this.showStreakSheet.set(true), 50);
   }
 
   openAchievementsFromSettings(): void {
     this.sheetService.skipNextHistoryPop();
     this.showSettingsSheet.set(false);
-    this.showAchievementsSheet.set(true);
+    setTimeout(() => this.showAchievementsSheet.set(true), 50);
   }
 
   openAiCreditsFromSettings(): void {
     this.sheetService.skipNextHistoryPop();
     this.showSettingsSheet.set(false);
-    this.showAiCreditsSheet.set(true);
+    setTimeout(() => this.showAiCreditsSheet.set(true), 50);
   }
 
   openProUpgradeFromAiCredits(): void {
     this.sheetService.skipNextHistoryPop();
     this.showAiCreditsSheet.set(false);
-    this.showProUpgradeSheet.set(true);
+    setTimeout(() => this.showProUpgradeSheet.set(true), 50);
   }
 
   openNewVideo(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    this.showCommandPalette.set(true);
+    setTimeout(() => this.showCommandPalette.set(true), 50);
   }
 
   openSettingsFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    this.showSettingsSheet.set(true);
+    setTimeout(() => this.showSettingsSheet.set(true), 50);
   }
 
   navigateFromMore(route: string): void {
@@ -1184,6 +1328,6 @@ export class AppComponent implements OnDestroy {
   openUpdateFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    this.appUpdate.promptUpdate();
+    setTimeout(() => this.appUpdate.promptUpdate(), 50);
   }
 }

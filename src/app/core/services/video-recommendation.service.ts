@@ -31,14 +31,16 @@ export class VideoRecommendationService {
     private readonly cache = new Map<string, RecommendedVideo[]>();
 
     /**
-     * Load recommended videos with verified database transcripts for a given language
+     * Load recommended videos with verified database transcripts for a given language and optional difficulty tier
      * @param language Language code ('ja', 'ko', 'zh', 'en')
+     * @param tier Optional proficiency tier ('beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced')
      * @param limit Number of videos to fetch (default 12)
      */
-    async loadRecommendedVideos(language: string, limit = 12): Promise<RecommendedVideo[]> {
+    async loadRecommendedVideos(language: string, tier?: string, limit = 12): Promise<RecommendedVideo[]> {
         if (!language) return [];
 
-        const cacheKey = `${language}_${limit}`;
+        const activeTier = tier && tier !== 'all' ? tier : undefined;
+        const cacheKey = `${language}_${activeTier || 'all'}_${limit}`;
         if (this.cache.has(cacheKey)) {
             const cached = this.cache.get(cacheKey)!;
             this.recommendedVideos.set(cached);
@@ -48,8 +50,13 @@ export class VideoRecommendationService {
         this.isLoading.set(true);
 
         try {
+            let url = `/api/recommended-videos?lang=${encodeURIComponent(language)}&limit=${limit}`;
+            if (activeTier) {
+                url += `&tier=${encodeURIComponent(activeTier)}`;
+            }
+
             const response = await firstValueFrom(
-                this.http.get<RecommendedVideosResponse>(`/api/recommended-videos?lang=${encodeURIComponent(language)}&limit=${limit}`)
+                this.http.get<RecommendedVideosResponse>(url)
                     .pipe(timeout(6000))
             );
 

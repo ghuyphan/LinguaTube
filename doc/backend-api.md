@@ -269,20 +269,22 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 ---
 
 ### 3.9. Recommended Videos API (Verified Database Transcripts)
-- **Route**: `GET /api/recommended-videos?lang={lang}&limit={limit}`
+- **Route**: `GET /api/recommended-videos?lang={lang}&tier={tier}&limit={limit}`
 - **Source**: `functions-src/api/recommended-videos.js`
 - **Query Parameters**:
   - `lang`: Target learning language (`ja`, `ko`, `zh`, `en`, defaults to `ja`).
+  - `tier`: Optional proficiency tier (`beginner`, `elementary`, `intermediate`, `upper_intermediate`, `advanced`).
   - `limit`: Maximum items to return (1-50, default `12`).
 - **Database & Cloudflare Storage Discovery**:
   - Queries Cloudflare D1 `video_languages` table for pre-processed transcripts (`available_languages LIKE '%"lang"%' OR available_languages LIKE '%lang%'`).
+  - When `tier` is requested, queries a larger candidate pool from D1 and filters rows matching the target tier (`labelToTier`).
   - Fallback queries D1 `transcripts` (with `LEFT JOIN video_languages`) and `video_meta` tables with support for regional language subtags (e.g. `ja-JP`, `zh-CN`, `ko-KR`, `en-US`).
   - Scans Cloudflare R2 bucket (`TRANSCRIPT_STORAGE`) for stored transcript objects (`transcripts/{videoId}/{lang}.json` and `transcripts/{videoId}/{lang}-*.json`).
   - Duration filters safely accommodate videos with unrecorded/zero durations as well as typical learning durations (`(duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)`).
   - Ordered by `updated_at DESC`.
   - Automatic metadata enrichment: Any discovered video missing a title is enriched via YouTube oEmbed (`getVideoMetadata`) and cached in D1.
 - **Caching & Authenticity**:
-  - Warm Worker isolate in-memory caching (`memCache`, 15-minute TTL).
+  - Warm Worker isolate in-memory caching (`memCache`, 15-minute TTL, keyed by `${lang}_${tier || 'all'}_${limit}`).
   - HTTP Edge CDN caching header: `Cache-Control: public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400`.
   - Zero Cloudflare KV write cost, strictly preserving free-tier limits.
   - Authentic Content: Serves strictly verified transcribed videos directly from Cloudflare storage (`source: "cloudflare"`) with no artificial mock data.

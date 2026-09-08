@@ -8,8 +8,7 @@ import { SwitchComponent } from '../../shared/components/switch/switch.component
 import { ReadingDisplayMode, SupportedLearningLanguage, SUPPORTED_LANGUAGES } from '../../models';
 
 import { SettingsService, AuthService, I18nService, UILanguage, ToastService, GamificationService, AppUpdateService } from '../../core/services';
-import { YoutubeService, SubtitleService, TranscriptService } from '../../features/video';
-import { VocabularyService } from '../../features/vocabulary';
+import { SubtitleService, TranscriptService } from '../../features/video';
 import { StreakService } from '../../services/streak.service';
 
 @Component({
@@ -22,10 +21,8 @@ import { StreakService } from '../../services/streak.service';
 })
 export class SettingsSheetComponent {
   settings = inject(SettingsService);
-  vocab = inject(VocabularyService);
   auth = inject(AuthService);
   toast = inject(ToastService);
-  youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
   i18n = inject(I18nService);
   transcript = inject(TranscriptService);

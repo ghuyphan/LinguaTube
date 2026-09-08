@@ -8,7 +8,9 @@
         "updateLater": "Để sau",
         "whatsNew": "Có gì mới",
         "updateRequired": "Yêu cầu cập nhật",
-        "updateRequiredDesc": "Bản cập nhật này là bắt buộc để duy trì tương thích với dịch vụ Voca."
+        "updateRequiredDesc": "Bản cập nhật này là bắt buộc để duy trì tương thích với dịch vụ Voca.",
+        "updatingApp": "Đang cập nhật Voca...",
+        "updatingDesc": "Đang áp dụng bản cập nhật và tối ưu hóa hiệu năng..."
     },
     "nav": {
         "video": "Video",

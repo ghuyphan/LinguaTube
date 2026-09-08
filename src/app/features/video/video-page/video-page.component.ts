@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID, DestroyRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, untracked, PLATFORM_ID, DestroyRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -276,12 +276,20 @@ export class VideoPageComponent implements OnInit {
       this.seo.resetVideoSeo();
     });
 
-    // Automatically fetch server-side recommended playlists and videos when active language changes
+    // Automatically fetch server-side recommended playlists and videos when active language or difficulty tier changes
+    let previousRecommendLang = '';
     effect(() => {
       const currentLang = this.settings.settings().language;
-      this.videoLevelFilter.set('all');
-      void this.playlistService.loadRecommendedPlaylists(currentLang);
-      void this.videoRecommendation.loadRecommendedVideos(currentLang);
+      if (previousRecommendLang && previousRecommendLang !== currentLang) {
+        untracked(() => this.videoLevelFilter.set('all'));
+      }
+      previousRecommendLang = currentLang;
+
+      const currentTier = this.videoLevelFilter();
+      const tierParam = currentTier === 'all' ? undefined : currentTier;
+
+      void this.playlistService.loadRecommendedPlaylists(currentLang, tierParam);
+      void this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam);
     });
 
     // Watch for language changes and refetch captions when language changes

@@ -8,7 +8,9 @@
         "updateLater": "나중에",
         "whatsNew": "새로운 기능",
         "updateRequired": "업데이트 필요",
-        "updateRequiredDesc": "Voca 서비스와의 호환성을 유지하기 위해 이 업데이트가 필요합니다."
+        "updateRequiredDesc": "Voca 서비스와의 호환성을 유지하기 위해 이 업데이트가 필요합니다.",
+        "updatingApp": "Voca 업데이트 중...",
+        "updatingDesc": "업데이트를 적용하고 성능을 최적화하는 중입니다..."
     },
     "nav": {
         "video": "동영상",

@@ -162,6 +162,32 @@ export function detectLevelFromMetadata(title = '', channel = '') {
 }
 
 /**
+ * Maps a proficiency level label to a standardized tier
+ * @param {string} label - e.g. "JLPT N4", "HSK 2", "CEFR B1"
+ * @returns {'beginner' | 'elementary' | 'intermediate' | 'upper_intermediate' | 'advanced' | null}
+ */
+export function labelToTier(label = '') {
+    if (!label || typeof label !== 'string') return null;
+    const upper = label.toUpperCase();
+    if (upper.includes('N5') || upper.includes('HSK 1') || upper.includes('A1') || upper.includes('BEGINNER')) {
+        return 'beginner';
+    }
+    if (upper.includes('N4') || upper.includes('HSK 2') || upper.includes('A2') || upper.includes('ELEMENTARY')) {
+        return 'elementary';
+    }
+    if (upper.includes('UPPER') || upper.includes('N2') || upper.includes('HSK 5') || upper.includes('B2') || upper.includes('TRUNG CAO CẤP')) {
+        return 'upper_intermediate';
+    }
+    if (upper.includes('N3') || upper.includes('HSK 3') || upper.includes('HSK 4') || upper.includes('B1') || upper.includes('INTERMEDIATE') || upper.includes('TRUNG CẤP')) {
+        return 'intermediate';
+    }
+    if (upper.includes('N1') || upper.includes('HSK 6') || upper.includes('C1') || upper.includes('C2') || upper.includes('ADVANCED') || upper.includes('CAO CẤP')) {
+        return 'advanced';
+    }
+    return 'intermediate';
+}
+
+/**
  * Add a single language to available languages (incremental)
  * @param {D1Database} db
  * @param {string} videoId
@@ -354,12 +380,15 @@ export async function saveVideoInfoToKV(kv, videoId, info) {
  * @param {R2Bucket} [r2] - R2 Bucket binding
  * @param {string} lang - Target language ('ja', 'zh', 'ko', 'en')
  * @param {number} [limit=12] - Maximum items to return (clamped 1-50)
+ * @param {string} [tier=null] - Target proficiency tier ('beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced')
  * @returns {Promise<Array>}
  */
-export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12) {
+export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null) {
     if (!lang) return [];
 
     const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
+    const targetTier = tier && typeof tier === 'string' ? tier.toLowerCase().trim() : null;
+    const candidateLimit = targetTier ? Math.max(safeLimit * 5, 60) : safeLimit;
     const videoMap = new Map();
 
     // 1. Query D1 video_languages table (primary metadata index)
@@ -374,7 +403,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                   AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
                 ORDER BY updated_at DESC
                 LIMIT ?
-            `).bind(searchPattern1, searchPattern2, safeLimit).all();
+            `).bind(searchPattern1, searchPattern2, candidateLimit).all();
 
             if (results && Array.isArray(results)) {
                 for (const row of results) {
@@ -391,6 +420,11 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         }
                     }
 
+                    const videoTier = level ? labelToTier(level) : null;
+                    if (targetTier && videoTier !== targetTier) {
+                        continue;
+                    }
+
                     let availableLangs = [];
                     try {
                         if (row.available_languages) availableLangs = JSON.parse(row.available_languages);
@@ -404,8 +438,13 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
                         languages: availableLangs.length > 0 ? availableLangs : [lang],
                         level: level || undefined,
+                        tier: videoTier || undefined,
                         updatedAt: row.updated_at
                     });
+
+                    if (videoMap.size >= safeLimit) {
+                        break;
+                    }
                 }
             }
         } catch (err) {
@@ -416,6 +455,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
         if (videoMap.size < safeLimit) {
             try {
                 const remaining = safeLimit - videoMap.size;
+                const transcriptFetchLimit = targetTier ? Math.max(remaining * 5, 40) : remaining * 2;
                 const { results: transcriptRows } = await db.prepare(`
                     SELECT t.video_id, t.created_at, vl.title, vl.channel, vl.duration_seconds, vl.levels, vl.available_languages
                     FROM transcripts t
@@ -423,7 +463,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                     WHERE (t.language = ? OR t.language LIKE ?) AND (t.status IS NULL OR t.status = 'complete')
                     ORDER BY t.created_at DESC
                     LIMIT ?
-                `).bind(lang, `${lang}-%`, remaining * 2).all();
+                `).bind(lang, `${lang}-%`, transcriptFetchLimit).all();
 
                 if (transcriptRows && Array.isArray(transcriptRows)) {
                     for (const row of transcriptRows) {
@@ -436,6 +476,11 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                                 if (detected && detected.lang === lang) level = detected.level;
                             }
 
+                            const videoTier = level ? labelToTier(level) : null;
+                            if (targetTier && videoTier !== targetTier) {
+                                continue;
+                            }
+
                             videoMap.set(row.video_id, {
                                 videoId: row.video_id,
                                 title: row.title || null,
@@ -444,6 +489,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                                 thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
                                 languages: [lang],
                                 level: level || undefined,
+                                tier: videoTier || undefined,
                                 updatedAt: row.created_at
                             });
                         }
@@ -454,8 +500,8 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
             }
         }
 
-        // 3. Query D1 video_meta table if we still have capacity
-        if (videoMap.size < safeLimit) {
+        // 3. Query D1 video_meta table if we still have capacity (only when tier is not specified or fallback)
+        if (videoMap.size < safeLimit && !targetTier) {
             try {
                 const remaining = safeLimit - videoMap.size;
                 const { results: metaRows } = await db.prepare(`
@@ -478,6 +524,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                                 thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
                                 languages: [lang],
                                 level: undefined,
+                                tier: undefined,
                                 updatedAt: row.created_at
                             });
                         }
@@ -488,7 +535,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
     }
 
     // 4. Query Cloudflare R2 transcripts bucket if capacity remains
-    if (r2 && videoMap.size < safeLimit) {
+    if (r2 && videoMap.size < safeLimit && !targetTier) {
         try {
             const listRes = await r2.list({ prefix: 'transcripts/', limit: 100 });
             if (listRes?.objects?.length) {
@@ -509,6 +556,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                                 thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
                                 languages: [lang],
                                 level: undefined,
+                                tier: undefined,
                                 updatedAt: obj.uploaded ? Math.floor(new Date(obj.uploaded).getTime() / 1000) : Math.floor(Date.now() / 1000)
                             });
                         }
@@ -533,6 +581,10 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         const detected = detectLevelFromMetadata(meta.title, meta.author_name || '');
                         if (detected && detected.lang === lang) {
                             item.level = detected.level;
+                            item.tier = labelToTier(detected.level);
+                        }
+                        if (targetTier && item.tier !== targetTier) {
+                            videoMap.delete(videoId);
                         }
                         if (db) {
                             const lvls = item.level ? { [lang]: item.level } : null;
@@ -558,8 +610,8 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
 /**
  * Backward compatibility wrapper for getRecommendedVideosFromCloudflare
  */
-export async function getRecommendedVideosFromD1(db, lang, limit = 12) {
-    return getRecommendedVideosFromCloudflare(db, null, lang, limit);
+export async function getRecommendedVideosFromD1(db, lang, limit = 12, tier = null) {
+    return getRecommendedVideosFromCloudflare(db, null, lang, limit, tier);
 }
 
 

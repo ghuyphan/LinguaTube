@@ -211,6 +211,9 @@ export class PlaylistPageComponent {
         this.currentPage.set(1);
         this.levelFilter.set(value);
         this.showLevelFilter.set(false);
+        if (this.view() === 'community' || this.view() === 'curated') {
+            void this.playlistService.loadCommunityPlaylists(this.languageFilter(), value);
+        }
     }
 
     constructor() {
@@ -361,7 +364,7 @@ export class PlaylistPageComponent {
         this.view.set(view);
         this.viewingPlaylist.set(null); // Reset detail view when switching tabs
         if ((view === 'community' || view === 'curated') && this.communityPlaylists().length === 0) {
-            this.playlistService.loadCommunityPlaylists();
+            void this.playlistService.loadCommunityPlaylists(this.languageFilter(), this.levelFilter());
         }
     }
 
@@ -465,7 +468,11 @@ export class PlaylistPageComponent {
     onLanguageFilterChange(value: string): void {
         this.shouldAnimate.set(true);
         this.currentPage.set(1);
-        this.languageFilter.set(value as 'all' | PlaylistLanguage);
+        const lang = value as 'all' | PlaylistLanguage;
+        this.languageFilter.set(lang);
         this.showLanguageFilter.set(false);
+        if (this.view() === 'community' || this.view() === 'curated') {
+            void this.playlistService.loadCommunityPlaylists(lang, this.levelFilter());
+        }
     }
 }

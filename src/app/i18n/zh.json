@@ -8,7 +8,9 @@
         "updateLater": "稍后",
         "whatsNew": "新功能与更新",
         "updateRequired": "需要更新",
-        "updateRequiredDesc": "需要此更新以保持与 Voca 服务的兼容性。"
+        "updateRequiredDesc": "需要此更新以保持与 Voca 服务的兼容性。",
+        "updatingApp": "正在更新 Voca...",
+        "updatingDesc": "正在应用更新并优化性能..."
     },
     "nav": {
         "video": "视频",

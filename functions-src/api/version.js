@@ -14,36 +14,36 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.0.4',
+    version: '1.0.6',
     minSupportedVersion: '1.0.0',
-    buildDate: '2026-09-08',
+    buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Localization Polish: Comprehensive audit of all 5 UI languages with natural phrasing and zero AI literalisms',
-            '100% Translation Parity: Added missing playlist and subtitle state keys across Vietnamese, Japanese, Korean, and Chinese',
-            'Interpolation Fixes: Dynamic placeholders now properly support diverse language sentence structures in account and study views'
+            'Server-Side Difficulty Filtering: Recommended videos and playlists now query Cloudflare D1 and PocketBase by proficiency tier (Beginner to Advanced), delivering full shelves of level-matched content',
+            'Dual-Layer Filter Cache: Warm isolate caching and reactive Angular signals provide instant, zero-latency switching between difficulty levels',
+            'Unified Proficiency Standard: Consistent tier mapping across Japanese (JLPT), Chinese (HSK), Korean (TOPIK), and English (CEFR) frameworks'
         ],
         vi: [
-            'Chuẩn hoá ngôn ngữ: Đại tu toàn bộ 5 ngôn ngữ giao diện, dùng từ tự nhiên và loại bỏ hoàn toàn các lỗi dịch máy thô',
-            'Đồng bộ 100% bản dịch: Bổ sung đầy đủ các khóa trạng thái danh sách phát và phụ đề cho toàn bộ các ngôn ngữ',
-            'Khắc phục lỗi tham số: Hỗ trợ linh hoạt cấu trúc câu tiếng Việt trong trang cài đặt tài khoản và chế độ học từ'
+            'Lọc độ khó phía máy chủ: Video đề xuất và danh sách phát giờ đây truy vấn Cloudflare D1 và PocketBase theo trình độ (Sơ cấp đến Cao cấp), hiển thị đầy đủ nội dung tương ứng',
+            'Bộ đệm lọc hai lớp: Kết hợp bộ nhớ đệm Worker và Angular Signals giúp chuyển đổi tức thì giữa các cấp độ khó mà không bị trễ',
+            'Chuẩn hóa trình độ ngôn ngữ: Áp dụng phân cấp chuẩn hóa đồng bộ cho tiếng Nhật (JLPT), tiếng Trung (HSK), tiếng Hàn (TOPIK) và tiếng Anh (CEFR)'
         ],
         ja: [
-            'UIローカライズの全面刷新：不自然な直訳やカタカナ語（「単語マイナー」等）を自然な日本語表現に改善',
-            '100%の翻訳整合性：プレイリストや字幕状態に関する未翻訳キーを全言語で完全に同期・補完',
-            '動的パラメータ補間の修正：アカウント表示や学習モードの達成メッセージで各言語の語順に対応'
+            'サーバーサイド難易度フィルタリング：おすすめ動画とプレイリストがJLPT/HSK/TOPIK/CEFRの習熟度別にサーバー検索され、該当レベルのコンテンツを完全に網羅',
+            '2層フィルタキャッシュ：エッジWorkerメモリとAngular Signalsにより、難易度切り替えが遅延ゼロで瞬時に反映',
+            '統一された言語レベル基準：日本語、中国語、韓国語、英語の間で一貫した難易度分類を実現'
         ],
         ko: [
-            'UI 현지화 대규모 개선: 어색한 직역 표현을 다듬고 겹치는 업적 명칭을 고유한 한국어 표현으로 정비',
-            '100% 번역 일치: 베트남어, 일본어, 한국어, 중국어 전반에 걸쳐 누락되었던 재생목록 및 자막 상태 키 추가',
-            '동적 매개변수 보간 수정: 계정 프로필 및 학습 모드 연속 학습 메시지의 문장 어순 완벽 지원'
+            '서버 사이드 난이도 필터링: 추천 비디오와 재생목록이 숙련도 등급(초급~고급)별로 서버에서 직접 조회되어 항상 충분한 학습 콘텐츠 제공',
+            '2계층 필터 캐시: 엣지 워커 메모리와 Angular Signals를 결합하여 난이도 변경 시 지연 없는 즉각적인 전환 지원',
+            '통합 언어 숙련도 표준: 일본어(JLPT), 중국어(HSK), 한국어(TOPIK), 영어(CEFR) 전반에 일관된 레벨 체계 적용'
         ],
         zh: [
-            '界面本地化体验优化：全面排查直译与语境不符词汇，统一音乐术语为精准的视频播放列表表达',
-            '100% 词条完整同步：补全中日韩越各语言中缺失的播放列表与字幕状态本地化词条',
-            '动态参数插值修复：优化个人中心与学习模式连胜提示中的占位符，完美贴合不同语言语序'
+            '服务端难度分级筛选：推荐视频与歌单现已支持按语言水平等级（初级至高级）直接服务端检索，确保结果充足不遗漏',
+            '双层过滤高速缓存：结合边缘 Worker 内存与 Angular Signals，实现各难度等级之间零延迟无缝切换',
+            '统一语言水平标准：全面覆盖并标准化日语 (JLPT)、中文 (HSK)、韩语 (TOPIK) 与英语 (CEFR) 分级体系'
         ]
     }
 };
