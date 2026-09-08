@@ -35,6 +35,38 @@ The Voca backend operates as a distributed edge API. Mobile clients interact wit
 
 ---
 
+### 1.1. 🤖 AI & LLM Code Generation Instructions
+
+When feeding this specification into an AI/LLM coding assistant (e.g. Cursor, Claude Code, GitHub Copilot, ChatGPT, Antigravity) to generate mobile client code (Flutter/Dart, Swift, Kotlin, React Native):
+
+1. **Dual Backend Routing**:
+   - **Edge API Base URL**: `https://lingua-tube.pages.dev` (all `/api/*` and `/proxy/*` routes).
+   - **PocketBase BaaS URL**: `https://voca.pockethost.io` (user auth, vocabulary cards, playlists, streaks, history, gamification).
+2. **User-Agent Requirement (Anti-Bot Bypass)**:
+   - The Cloudflare edge worker rejects automated scraper User-Agents (`axios`, `curl`, `python`, `postmanruntime`).
+   - Every HTTP client or interceptor **MUST** configure a descriptive User-Agent header:  
+     `User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)` or `VocaMobile/1.0.0 (iOS 17.5; Mobile)`.
+3. **Difficulty Tier Enum**:
+   - Supported difficulty tier query parameter values for `/api/recommended-videos?tier={tier}`:  
+     `'beginner' | 'elementary' | 'intermediate' | 'upper_intermediate' | 'advanced'` (or omit for all levels).
+4. **Supported Language Codes**:
+   - Learning languages: `'ja'` (Japanese), `'zh'` (Chinese), `'ko'` (Korean), `'en'` (English).
+   - Translation / UI target languages: `'vi'` (Vietnamese), `'en'`, `'ja'`, `'zh'`, `'ko'`.
+5. **PocketBase Filter Syntax Rules (Critical for LLMs)**:
+   - String literals inside PocketBase `filter` parameters **MUST** use double quotes (`"`), NOT single quotes (`'`).
+   - Logical operators MUST be `&&` and `||` (NEVER use SQL `AND` / `OR`).
+   - Equality is `=` or `!=`, text search is `~`.
+   - Correct example: `filter: 'user = "' + userId + '" && language = "ja"'`.
+6. **Deterministic Offline Record IDs (Critical for Sync)**:
+   - PocketBase record IDs must match regex `^[a-z0-9]{15}$`.
+   - When creating offline items before syncing to PocketBase (e.g., vocabulary cards, gamification records), use the **Cyrb53 Base36** hash function provided in Section 4.2: `generateDeterministicRecordId([userId, word, language])`.
+   - This ensures multiple devices creating the same flashcard offline converge on the exact same record ID without creating duplicates or throwing 409 conflict errors.
+7. **Two-Phase Async Polling Contracts**:
+   - **Gladia Speech-to-Text Transcription**: If `POST /api/transcript` returns `{ status: "processing", resultUrl: "https://..." }`, poll `POST /api/transcript` with `{ videoId, lang, resultUrl }` every 3 seconds until `success: true` or 60s timeout.
+   - **VietQR payOS Payments**: After calling `POST /api/payment/create-order`, poll `GET /api/payment/check-status?orderCode={orderCode}` every 3 seconds until `status === "PAID"`.
+
+---
+
 ### Master Endpoint URL Quick-Reference Table
 
 Copy-paste these exact URLs into your mobile HTTP clients (Retrofit, Dio, Alamofire, Ktor, Axios):
@@ -176,6 +208,28 @@ Fetches pre-cached transcripts from Cloudflare R2, extracts native YouTube capti
   }
   ```
 
+- **cURL Examples:**
+  ```bash
+  # 1. Fetch native / cached transcript
+  curl -X POST "https://lingua-tube.pages.dev/api/transcript" \
+    -H "Content-Type: application/json" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)" \
+    -d '{
+      "videoId": "dQw4w9WgXcQ",
+      "lang": "ja"
+    }'
+
+  # 2. Poll pending Gladia AI speech-to-text job
+  curl -X POST "https://lingua-tube.pages.dev/api/transcript" \
+    -H "Content-Type: application/json" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)" \
+    -d '{
+      "videoId": "dQw4w9WgXcQ",
+      "lang": "ja",
+      "resultUrl": "https://api.gladia.io/v2/pre-recorded/result/550e8400-e29b-41d4-a716-446655440000"
+    }'
+  ```
+
 - **Success Response (Native / Cached Hit - 200 OK):**
   ```json
   {
@@ -238,6 +292,20 @@ Translates video subtitle cues into a secondary language and returns dual synchr
     "saveOnly": false                   // Requires Auth: cache pre-computed subtitles
   }
   ```
+- **cURL Example:**
+  ```bash
+  curl -X POST "https://lingua-tube.pages.dev/api/dual-subtitles" \
+    -H "Content-Type: application/json" \
+    -H "User-Agent: VocaMobile/1.0.0 (iOS 17.5; Mobile)" \
+    -d '{
+      "videoId": "dQw4w9WgXcQ",
+      "sourceLang": "ja",
+      "targetLang": "vi",
+      "segments": [
+        { "start": 0.45, "duration": 2.3, "text": "こんにちは" }
+      ]
+    }'
+  ```
 - **Success Response (200 OK):**
   ```json
   {
@@ -270,6 +338,11 @@ Unified dictionary lookup engine querying multi-source APIs (Jotoba, Mazii, Nave
   - `word` (string, required): Word or surface token to search (e.g. `食べる`, `你好`).
   - `from` (string, required): Learning language (`ja`, `zh`, `ko`, `en`).
   - `to` (string, required): Target explanation language (`en`, `vi`, `ja`, `zh`, `ko`).
+- **cURL Example:**
+  ```bash
+  curl -X GET "https://lingua-tube.pages.dev/api/dict?word=%E9%A3%9F%E3%81%B9%E3%82%8B&from=ja&to=en" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)"
+  ```
 - **Success Response (200 OK):**
   ```json
   {
@@ -312,6 +385,13 @@ Tokenizes a single text string into words, furigana readings, and romanization.
 - **Request Body:**
   ```json
   { "text": "日本語を勉強しています。" }
+  ```
+- **cURL Example:**
+  ```bash
+  curl -X POST "https://lingua-tube.pages.dev/api/tokenize/ja" \
+    -H "Content-Type: application/json" \
+    -H "User-Agent: VocaMobile/1.0.0 (iOS 17.5; Mobile)" \
+    -d '{"text": "日本語を勉強しています。"}'
   ```
 - **Success Response (200 OK):**
   ```json
@@ -368,6 +448,13 @@ Batch tokenizes an array of subtitle lines in a single network request.
     ]
   }
   ```
+- **cURL Example:**
+  ```bash
+  curl -X POST "https://lingua-tube.pages.dev/api/tokenize-batch/ja" \
+    -H "Content-Type: application/json" \
+    -H "User-Agent: VocaMobile/1.0.0 (iOS 17.5; Mobile)" \
+    -d '{"texts": ["こんにちは", "今日はいい天気ですね"]}'
+  ```
 - **Success Response (200 OK):**
   ```json
   {
@@ -393,6 +480,17 @@ Translates up to 50 text items concurrently with server-side caching.
     "target": "en"
   }
   ```
+- **cURL Example:**
+  ```bash
+  curl -X POST "https://lingua-tube.pages.dev/api/translate/batch" \
+    -H "Content-Type: application/json" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)" \
+    -d '{
+      "texts": ["おはよう", "ありがとう", "さようなら"],
+      "source": "ja",
+      "target": "en"
+    }'
+  ```
 - **Success Response (200 OK):**
   ```json
   {
@@ -414,6 +512,11 @@ Retrieves YouTube video metadata, cached duration, discovered subtitle languages
 - **Production URL:** `https://lingua-tube.pages.dev/api/video-info`
 - **Local Dev URL:** `http://localhost:3001/api/video-info`
 - **Query Parameters:** `videoId` (string, 11-char YouTube ID)
+- **cURL Example:**
+  ```bash
+  curl -X GET "https://lingua-tube.pages.dev/api/video-info?videoId=dQw4w9WgXcQ" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)"
+  ```
 - **Success Response (200 OK):**
   ```json
   {
@@ -442,6 +545,11 @@ Returns curated YouTube videos with pre-cached, verified transcripts stored in C
   - `lang` (optional, default `ja`): Target language (`ja`, `ko`, `zh`, `en`).
   - `tier` (optional): Proficiency tier filter (`beginner`, `elementary`, `intermediate`, `upper_intermediate`, `advanced`). When passed, the server queries Cloudflare D1 specifically for level-matched videos, delivering a full shelf of content without sparse results.
   - `limit` (optional, default `12`, max `50`).
+- **cURL Example:**
+  ```bash
+  curl -X GET "https://lingua-tube.pages.dev/api/recommended-videos?lang=ja&tier=elementary&limit=12" \
+    -H "User-Agent: VocaMobile/1.0.0 (iOS 17.5; Mobile)"
+  ```
 - **Success Response (200 OK):**
   ```json
   {
@@ -486,6 +594,17 @@ Records or updates the assessed CEFR / JLPT / HSK / TOPIK difficulty level for a
     "level": "JLPT N4"                  // Validated against regex: JLPT N1-N5, HSK 1-6, TOPIK 1-6, CEFR A1-C2
   }
   ```
+- **cURL Example:**
+  ```bash
+  curl -X POST "https://lingua-tube.pages.dev/api/video-level" \
+    -H "Content-Type: application/json" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)" \
+    -d '{
+      "videoId": "BZRT37f8zZY",
+      "language": "ja",
+      "level": "JLPT N4"
+    }'
+  ```
 - **Success Response (200 OK):**
   ```json
   {
@@ -507,6 +626,12 @@ Retrieves diamond credits, regen countdown, and video length allowances for the 
 - **Production URL:** `https://lingua-tube.pages.dev/api/diamonds`
 - **Local Dev URL:** `http://localhost:3001/api/diamonds`
 - **Auth:** Optional (Bearer token for registered user, IP-based for guest).
+- **cURL Example:**
+  ```bash
+  curl -X GET "https://lingua-tube.pages.dev/api/diamonds" \
+    -H "Authorization: Bearer <PB_USER_JWT>" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)"
+  ```
 - **Success Response (200 OK):**
   ```json
   {
@@ -531,6 +656,11 @@ Fetches the global learner XP leaderboard and computes the requesting user's liv
   - `lang` (optional): Filter by learning language (`ja`, `ko`, `zh`, `en`).
   - `userId` (optional): Current PocketBase user ID to compute exact position.
   - `limit` (optional, default `50`).
+- **cURL Example:**
+  ```bash
+  curl -X GET "https://lingua-tube.pages.dev/api/leaderboard?lang=ja&userId=usr_12345&limit=50" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)"
+  ```
 - **Success Response (200 OK):**
   ```json
   {
@@ -550,7 +680,7 @@ Fetches the global learner XP leaderboard and computes the requesting user's liv
       }
     ],
     "userRank": {
-      "user_id": "my_user_id",
+      "user_id": "usr_12345",
       "rank": 18,
       "xp": 3450,
       "level": 4
@@ -569,7 +699,7 @@ Synchronizes user XP and streak with the global leaderboard table.
 - **Request Body:**
   ```json
   {
-    "userId": "my_user_id",
+    "userId": "usr_12345",
     "name": "Alex",
     "avatar": "https://...",
     "xp": 3450,
@@ -579,6 +709,23 @@ Synchronizes user XP and streak with the global leaderboard table.
     "targetLang": "ja",
     "country": "🇻🇳"
   }
+  ```
+- **cURL Example:**
+  ```bash
+  curl -X POST "https://lingua-tube.pages.dev/api/leaderboard" \
+    -H "Content-Type: application/json" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)" \
+    -d '{
+      "userId": "usr_12345",
+      "name": "Alex",
+      "avatar": "https://example.com/avatar.png",
+      "xp": 3450,
+      "level": 4,
+      "streak": 12,
+      "badgesCount": 5,
+      "targetLang": "ja",
+      "country": "VN"
+    }'
   ```
 
 ---
@@ -600,6 +747,18 @@ Creates a payment order with a cryptographically secure 8-digit order code and r
     "returnUrl": "voca://payment/success", // Mobile deep-link scheme
     "cancelUrl": "voca://payment/cancel"
   }
+  ```
+- **cURL Example:**
+  ```bash
+  curl -X POST "https://lingua-tube.pages.dev/api/payment/create-order" \
+    -H "Authorization: Bearer <PB_USER_JWT>" \
+    -H "Content-Type: application/json" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)" \
+    -d '{
+      "planId": "pro_1m",
+      "returnUrl": "voca://payment/success",
+      "cancelUrl": "voca://payment/cancel"
+    }'
   ```
 - **Success Response (200 OK):**
   ```json
@@ -633,6 +792,11 @@ Polls payment confirmation status.
 - **Production URL:** `https://lingua-tube.pages.dev/api/payment/check-status`
 - **Local Dev URL:** `http://localhost:3001/api/payment/check-status`
 - **Query Parameters:** `orderCode` (number, e.g. `83920145`).
+- **cURL Example:**
+  ```bash
+  curl -X GET "https://lingua-tube.pages.dev/api/payment/check-status?orderCode=83920145" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)"
+  ```
 - **Response (Pending - 200 OK):**
   ```json
   { "success": true, "status": "PENDING" }
@@ -661,6 +825,11 @@ Safely proxies requests to external whitelisted dictionary and media services wi
   - `invidious1`: Proxies to `https://yewtu.be`
   - `piped1`: Proxies to `https://pipedapi.kavin.rocks`
 - **Security:** Private IP ranges (`127.0.0.1`, `10.0.0.0/8`, `192.168.0.0/16`, `localhost`) are strictly blocked. Directory traversal (`..`) is rejected.
+- **cURL Example:**
+  ```bash
+  curl -X GET "https://lingua-tube.pages.dev/proxy/jisho/api/v1/search/words?keyword=taberu" \
+    -H "User-Agent: VocaMobile/1.0.0 (Android 14; Mobile)"
+  ```
 
 ---
 
@@ -682,8 +851,8 @@ Stores flashcards and SRS review progress.
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
-| `id` | `TEXT (15)` | Deterministic ID: `^[a-z0-9]{15}$` |
-| `user` | `RELATION` | User ID |
+| `id` | `TEXT (15)` | Deterministic ID: `^[a-z0-9]{15}$` (via Cyrb53 Base36) |
+| `user` | `RELATION` | PocketBase User ID |
 | `word` | `TEXT` | Target word or surface form |
 | `reading` | `TEXT` | Kana / Pinyin / Hangul reading |
 | `meaning` | `TEXT` | Native/translated definition |
@@ -693,7 +862,76 @@ Stores flashcards and SRS review progress.
 | `easeFactor` | `NUMBER` | SuperMemo-2 ease multiplier (default `2.5`, floor `1.3`) |
 | `interval` | `NUMBER` | Days until next scheduled review |
 | `repetitions` | `NUMBER` | Consecutive correct reviews |
-| `nextReview` | `DATE` | Next review timestamp |
+| `nextReview` | `DATE` | ISO 8601 timestamp for next scheduled review |
+
+#### Collection: `streaks`
+Stores daily learner practice activity and streak freezes.
+
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| `id` | `TEXT (15)` | Record ID |
+| `user` | `RELATION` | PocketBase User ID |
+| `current_streak` | `NUMBER` | Current consecutive active days |
+| `longest_streak` | `NUMBER` | All-time highest streak count |
+| `freezes_remaining` | `NUMBER` | Available streak shield items (max 2) |
+| `last_activity` | `DATE` | Timestamp of last recorded study session |
+| `activity_log` | `JSON` | Array of ISO date strings for recent active days |
+
+*Special PocketBase Hook Endpoints for Streaks:*
+- `GET https://voca.pockethost.io/api/streaks/me` (Auth: Bearer token): Returns current streak stats and activity log.
+- `POST https://voca.pockethost.io/api/streaks/record-activity` (Auth: Bearer token): Automatically evaluates daily streak increment, freeze consumption, and milestone achievements.
+
+#### Collection: `playlists`
+Stores user-curated and level-classified video playlists.
+
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| `id` | `TEXT (15)` | Playlist ID |
+| `user` | `RELATION` | PocketBase User ID (owner) |
+| `title` | `TEXT` | Playlist title |
+| `description` | `TEXT` | Optional playlist description |
+| `visibility` | `TEXT` | `public` \| `private` \| `unlisted` |
+| `language` | `TEXT` | `ja` \| `zh` \| `ko` \| `en` |
+| `level` | `TEXT` | `all` \| `beginner` \| `elementary` \| `intermediate` \| `upper_intermediate` \| `advanced` |
+| `tags` | `JSON` | Array of topic tags (e.g. `["anime", "n4"]`) |
+| `video_ids` | `JSON` | Array of YouTube video ID strings |
+| `video_count` | `NUMBER` | Total count of videos in playlist |
+| `thumbnail` | `TEXT` | Cover thumbnail image URL |
+| `save_count` | `NUMBER` | Total public saves/bookmarks |
+| `is_featured` | `BOOL` | Curated showcase playlist flag |
+
+#### Collection: `history`
+Tracks user video watch progress, resume points, and favorites.
+
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| `id` | `TEXT (15)` | Record ID |
+| `user` | `RELATION` | PocketBase User ID |
+| `video_id` | `TEXT` | 11-character YouTube video ID |
+| `last_position` | `NUMBER` | Resume playback position in seconds |
+| `duration` | `NUMBER` | Total video duration in seconds |
+| `language` | `TEXT` | Primary study language (`ja`, `zh`, etc.) |
+| `languages` | `JSON` | Array of discovered subtitle languages |
+| `title` | `TEXT` | Cached video title |
+| `channel` | `TEXT` | Cached channel name |
+| `thumbnail` | `TEXT` | Cached thumbnail URL |
+| `is_favorite` | `BOOL` | Favorited flag |
+| `watch_count` | `NUMBER` | Number of times watched |
+| `last_watched` | `DATE` | ISO 8601 timestamp |
+
+#### Collection: `gamification`
+Stores user experience points (XP), learner levels, and achievement badges.
+
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| `id` | `TEXT (15)` | Deterministic ID: `generateDeterministicRecordId('gamification', userId)` |
+| `user` | `RELATION` | PocketBase User ID |
+| `xp` | `NUMBER` | Total earned experience points |
+| `level` | `NUMBER` | User rank level (`Math.floor(Math.sqrt(xp / 100)) + 1`) |
+| `total_videos_watched` | `NUMBER` | Total videos finished |
+| `total_quizzes_completed` | `NUMBER` | Total quizzes finished |
+| `unlocked_achievements` | `JSON` | Map of achievement ID to unlocked timestamp |
+| `notified_achievements` | `JSON` | Map of achievement ID to user acknowledged timestamp |
 
 ---
 
@@ -725,7 +963,7 @@ String generateDeterministicRecordId(List<String> keys) {
 }
 
 // Example usage:
-// final id = generateDeterministicRecordId([userId, word, language]);
+// final id = generateDeterministicRecordId([userId, word.toLowerCase(), language]);
 ```
 
 #### Swift (iOS) Implementation
@@ -750,6 +988,130 @@ func generateDeterministicRecordId(keys: [String]) -> String {
     let p3 = String(h3, radix: 36).leftPadding(toLength: 7, withPad: "0")
     return String((p1 + p2 + p3).prefix(15))
 }
+
+// Example usage:
+// let id = generateDeterministicRecordId(keys: [userId, word.lowercased(), language])
+```
+
+#### Kotlin (Android) Implementation
+```kotlin
+fun generateDeterministicRecordId(vararg keys: String): String {
+    val raw = keys.joinToString("|") { it.trim() }
+    var h1: Long = 0xdeadbeefL
+    var h2: Long = 0x41c64e6dL
+    for (ch in raw) {
+        val code = ch.code.toLong()
+        h1 = ((h1 xor code) * 2654435761L) and 0xFFFFFFFFL
+        h2 = ((h2 xor code) * 1597334677L) and 0xFFFFFFFFL
+    }
+    h1 = ((h1 xor (h1 ushr 16)) * 2246822507L) and 0xFFFFFFFFL
+    h1 = (h1 xor (((h2 xor (h2 ushr 13)) * 3266489909L) and 0xFFFFFFFFL)) and 0xFFFFFFFFL
+    h2 = ((h2 xor (h2 ushr 16)) * 2246822507L) and 0xFFFFFFFFL
+    h2 = (h2 xor (((h1 xor (h1 ushr 13)) * 3266489909L) and 0xFFFFFFFFL)) and 0xFFFFFFFFL
+    val h3 = (h1 * h2 * 2166136261L) and 0xFFFFFFFFL
+
+    val p1 = java.lang.Long.toString(h1, 36).padStart(7, '0')
+    val p2 = java.lang.Long.toString(h2, 36).padStart(7, '0')
+    val p3 = java.lang.Long.toString(h3, 36).padStart(7, '0')
+    return (p1 + p2 + p3).substring(0, 15)
+}
+
+// Example usage:
+// val id = generateDeterministicRecordId(userId, word.lowercase(), language)
+```
+
+---
+
+### 4.3. PocketBase Querying & CRUD Cheatsheet (With Filter Syntax Guardrails)
+
+> [!CAUTION]
+> **PocketBase Filter Syntax Rules for AI & Developers:**
+> 1. PocketBase filter expressions require **double quotes** around string literals (`"value"`). Single quotes (`'value'`) are invalid syntax.
+> 2. Use `&&` (AND), `||` (OR), and `!=` (NOT EQUAL). Never use SQL keywords `AND`, `OR`, `NOT`.
+> 3. Text search uses the `~` (contains) or `!~` operator (e.g. `title ~ "Japanese"`).
+
+#### Flutter / Dart Example
+```dart
+import 'package:pocketbase/pocketbase.dart';
+
+final pb = PocketBase('https://voca.pockethost.io');
+
+// 1. Authenticate user
+final authData = await pb.collection('users').authWithPassword('user@example.com', 'password123');
+final userId = pb.authStore.model.id;
+
+// 2. Fetch vocabulary cards due for review
+final reviewCards = await pb.collection('vocabulary').getList(
+  page: 1,
+  perPage: 50,
+  filter: 'user = "${userId}" && language = "ja" && nextReview <= "${DateTime.now().toIso8601String()}"',
+  sort: 'nextReview',
+);
+
+// 3. Upsert / Create card with deterministic ID
+final recordId = generateDeterministicRecordId([userId, word.toLowerCase(), 'ja']);
+try {
+  await pb.collection('vocabulary').create(body: {
+    'id': recordId,
+    'user': userId,
+    'word': word,
+    'reading': reading,
+    'meaning': meaning,
+    'language': 'ja',
+    'level': 'new',
+    'reviewCount': 0,
+    'easeFactor': 2.5,
+    'interval': 0,
+    'repetitions': 0,
+    'nextReview': DateTime.now().toIso8601String(),
+  });
+} on ClientException catch (e) {
+  if (e.statusCode == 400 || e.statusCode == 409) {
+    // Record already exists - update or skip
+  }
+}
+
+// 4. Fetch playlists with difficulty level filter
+final playlists = await pb.collection('playlists').getList(
+  page: 1,
+  perPage: 20,
+  filter: 'user = "${userId}" && (level = "all" || level = "elementary")',
+  sort: '-updated',
+);
+```
+
+#### Swift (iOS) Example
+```swift
+import PocketBase
+
+let pb = PocketBase("https://voca.pockethost.io")
+
+// 1. Authenticate
+let auth = try await pb.collection("users").authWithPassword(email: "user@example.com", password: "password123")
+let userId = auth.record.id
+
+// 2. Query vocabulary cards
+let filter = "user = \"\(userId)\" && language = \"ja\""
+let result = try await pb.collection("vocabulary").getList(
+    page: 1,
+    perPage: 50,
+    filter: filter,
+    sort: "-created"
+)
+```
+
+#### Android / Kotlin (HTTP / OkHttp / Ktor) Example
+```kotlin
+// When querying PocketBase REST API directly without an official SDK:
+val filter = "user = \"$userId\" && (level = \"all\" || level = \"elementary\")"
+val encodedFilter = java.net.URLEncoder.encode(filter, "UTF-8")
+val url = "https://voca.pockethost.io/api/collections/playlists/records?page=1&perPage=20&filter=$encodedFilter&sort=-updated"
+
+val request = okhttp3.Request.Builder()
+    .url(url)
+    .addHeader("Authorization", "Bearer $userToken")
+    .addHeader("User-Agent", "VocaMobile/1.0.0 (Android 14; Mobile)")
+    .build()
 ```
 
 ---
@@ -816,9 +1178,29 @@ When implementing Study Mode in your mobile app, conform strictly to Voca's SM-2
 
 ---
 
-## 7. Testing & Mocking Checklist for Mobile QA
+## 7. HTTP Status Codes, Error Handling & Retry Policies
 
+Mobile HTTP clients and AI code generators should implement consistent error handling conforming to this decision matrix:
+
+| HTTP Status | Error Code / State | Trigger Condition | Recommended Client Action | Retry Policy |
+| :---: | :--- | :--- | :--- | :--- |
+| `200` | `status: "processing"` | Gladia AI audio speech-to-text queued | Start polling loop with `resultUrl` | Poll every 3–5 seconds (max 60s timeout) |
+| `400` | `INVALID_VIDEO_ID` | Video ID does not match `^[a-zA-Z0-9_-]{11}$` | Display "Invalid YouTube link" validation error | Do NOT retry |
+| `400` | `VIDEO_TOO_LONG` | Video length exceeds account tier limit | Display upgrade sheet or duration warning | Do NOT retry |
+| `401` | `UNAUTHORIZED` | Expired or missing PocketBase JWT | Call `pb.collection('users').authRefresh()` | Refresh token and retry request once |
+| `403` | `BOT_DETECTED` | User-Agent matches blacklisted scraper | Set descriptive `User-Agent: VocaMobile/1.0.0` | Fix header and retry |
+| `403` | `NO_DIAMONDS` | Balance is 0 and video is not cached | Show Diamond balance modal with next regen time | Do NOT retry |
+| `404` | `NO_NATIVE` | No native captions found and `preferAI: false` | Prompt user: "Transcribe with Gladia AI?" | Do NOT retry automatically |
+| `429` | `RATE_LIMITED` | Edge IP or user rate limit bucket exceeded | Read `Retry-After` header; show countdown toast | Backoff until `Retry-After` seconds expire |
+| `502` / `504` | Gateway / Upstream | Upstream API timeout (Gladia, Jotoba, YouTube) | Show "Network connection unstable" banner | Retry with exponential backoff (1s, 2s, 4s; max 3x) |
+
+---
+
+## 8. Testing & Mocking Checklist for Mobile QA
+
+- [ ] **Anti-Bot User-Agent Header**: Verify that all outgoing HTTP requests include `User-Agent: VocaMobile/1.0.0 (...)` and that requests do NOT default to `axios`, `curl`, or `Dart/<version>`.
 - [ ] **SSRF & Malformed Video IDs**: Verify app rejects inputs like `../../etc/passwd` or `https://` before sending to `/api/transcript`.
 - [ ] **Gladia AI Polling**: Test slow connections; verify polling times out gracefully after 60 seconds if ASR fails.
-- [ ] **Offline Card Creation**: Save vocabulary cards in Airplane Mode; reconnect to Wi-Fi and verify cards sync to PocketBase without duplicate IDs.
+- [ ] **Offline Card Creation**: Save vocabulary cards in Airplane Mode; reconnect to Wi-Fi and verify cards sync to PocketBase without duplicate IDs (conforming to Cyrb53 Base36).
+- [ ] **Difficulty Tier Filtering**: Verify `/api/recommended-videos?tier=elementary` returns only elementary-level videos.
 - [ ] **VietQR Intent**: Verify clicking "Pay with Mobile Banking" successfully triggers bank app deep links with valid payload descriptions (`VOCA{orderCode}`).
