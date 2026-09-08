@@ -306,7 +306,14 @@
         "romanizationOnly": "仅罗马音",
         "textOnly": "仅文本",
         "signOutConfirmTitle": "确定退出登录？",
-        "signOutConfirmMessage": "您的词汇将保留在本地，但在重新登录之前不会同步。"
+        "signOutConfirmMessage": "您的词汇将保留在本地，但在重新登录之前不会同步。",
+        "about": "关于与更新",
+        "appVersion": "版本",
+        "checkForUpdates": "检查更新",
+        "checkingForUpdates": "正在检查更新...",
+        "upToDate": "应用已是最新版本",
+        "updateReady": "新版本已就绪",
+        "updateCheckFailed": "无法检查更新，请重试。"
     },
     "study": {
         "title": "复习",

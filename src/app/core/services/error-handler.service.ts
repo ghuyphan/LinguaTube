@@ -23,16 +23,34 @@ export class GlobalErrorHandler implements ErrorHandler {
 
         // Handle specific error types
         this.ngZone.run(() => {
-            // Handle lazy loading / chunk load failures
+            // Handle lazy loading / chunk load failures safely
             if (message.includes('ChunkLoadError') || message.includes('Loading chunk')) {
-                console.warn('Chunk load error detected, reloading app...');
-                // Clear service worker cache and reload
-                if ('caches' in window) {
-                    caches.keys().then(names => {
-                        names.forEach(name => caches.delete(name));
-                    });
+                console.warn('Chunk load error detected, attempting safe recovery...');
+                const reloadKey = 'voca_chunk_reload_ts';
+                const now = Date.now();
+                const lastAttempt = parseInt(sessionStorage.getItem(reloadKey) || '0', 10);
+
+                // Guard against infinite reload loop (only reload if previous attempt > 15s ago)
+                if (now - lastAttempt > 15000) {
+                    sessionStorage.setItem(reloadKey, String(now));
+                    if (typeof window === 'undefined') {
+                        return;
+                    }
+                    if (typeof caches !== 'undefined' && caches?.keys) {
+                        caches.keys()
+                            .then(names => Promise.all(names.map(name => caches.delete(name))))
+                            .catch(err => console.warn('Cache clear error:', err))
+                            .finally(() => {
+                                location.reload();
+                            });
+                    } else {
+                        location.reload();
+                    }
+                    return;
                 }
-                window.location.reload();
+
+                console.error('Repeated chunk load errors detected. Aborting reload loop to prevent lockup.');
+                this.toast.error('Failed to load application resource. Please check your connection.');
                 return;
             }
 

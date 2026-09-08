@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, signal, inject, PLATFORM_ID, comput
 import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { filter, map, startWith, interval, Subject, takeUntil, fromEvent } from 'rxjs';
+import { filter, map, startWith, Subject, takeUntil, fromEvent } from 'rxjs';
 import { IconComponent } from './shared/components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -14,12 +14,11 @@ import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-cred
 import { AchievementsDialogComponent } from './components/achievements-dialog/achievements-dialog.component';
 import { ProUpgradeDialogComponent } from './components/pro-upgrade-dialog/pro-upgrade-dialog.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
-import { I18nService, SettingsService, SeoService, PwaService, GamificationService } from './core/services';
+import { I18nService, SettingsService, SeoService, PwaService, GamificationService, AppUpdateService } from './core/services';
 import { YoutubeService, TranscriptService } from './features/video';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
-import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -208,6 +207,20 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               </button>
             }
 
+            @if (appUpdate.updateAvailable()) {
+              <button class="more-menu__item more-menu__item--update" (click)="openUpdateFromMore()">
+                <div class="more-menu__item-icon more-menu__item-icon--update">
+                  <app-icon name="rotate-ccw" [size]="18" />
+                </div>
+                <div class="more-menu__item-text">
+                  <span class="more-menu__item-title">{{ i18n.t('app.updateAvailable') }}</span>
+                  <span class="more-menu__item-desc">{{ i18n.t('settings.updateReady') }}</span>
+                </div>
+                <span class="update-badge-dot"></span>
+                <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
+              </button>
+            }
+
             <div class="more-menu__divider"></div>
 
             <button class="more-menu__item" (click)="openSettingsFromMore()">
@@ -292,11 +305,11 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
       <!-- Update Available Sheet (always available, even during onboarding) -->
       <app-bottom-sheet
-        [isOpen]="showUpdateSheet()"
+        [isOpen]="appUpdate.showUpdateSheet()"
         [title]="i18n.t('app.updateAvailable') || 'Update Available'"
         [showCloseButton]="true"
         [maxHeight]="'auto'"
-        (closed)="showUpdateSheet.set(false)"
+        (closed)="appUpdate.dismissUpdate()"
       >
         <div class="update-sheet">
           <div class="update-sheet__icon">
@@ -305,10 +318,10 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           <h3 class="update-sheet__title">{{ i18n.t('app.updateAvailable') }}</h3>
           <p class="update-sheet__message">{{ i18n.t('app.updateMessage') }}</p>
           <div class="update-sheet__actions">
-            <button class="update-sheet__btn update-sheet__btn--secondary" (click)="showUpdateSheet.set(false)">
+            <button class="update-sheet__btn update-sheet__btn--secondary" (click)="appUpdate.dismissUpdate()">
               {{ i18n.t('app.updateLater') }}
             </button>
-            <button class="update-sheet__btn update-sheet__btn--primary" (click)="applyUpdate()">
+            <button class="update-sheet__btn update-sheet__btn--primary" (click)="appUpdate.applyUpdate()">
               {{ i18n.t('app.updateNow') }}
             </button>
           </div>
@@ -678,6 +691,28 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       border-color: rgba(var(--accent-primary-rgb), 0.2);
     }
 
+    .more-menu__item-icon--update {
+      color: #3b82f6;
+      background: rgba(59, 130, 246, 0.12);
+      border-color: rgba(59, 130, 246, 0.25);
+    }
+
+    .update-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #3b82f6;
+      margin-left: auto;
+      margin-right: var(--space-xs);
+      box-shadow: 0 0 6px rgba(59, 130, 246, 0.6);
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+    }
+
     .more-menu__item-desc {
       font-size: 0.75rem;
       color: var(--text-muted);
@@ -825,7 +860,7 @@ export class AppComponent implements OnDestroy {
   gamification = inject(GamificationService);
   protected playlistService = inject(PlaylistService);
   protected sheetService = inject(BottomSheetService);
-  private swUpdate = inject(SwUpdate);
+  appUpdate = inject(AppUpdateService);
   private seo = inject(SeoService);
   pwa = inject(PwaService);
 
@@ -833,13 +868,9 @@ export class AppComponent implements OnDestroy {
 
   private destroy$ = new Subject<void>();
   private cleanupFns: Array<() => void> = [];
-  private lastUpdateCheck = 0;
-  private readonly UPDATE_CHECK_INTERVAL = 60 * 60 * 1000; // 1 hour
-  private readonly MIN_CHECK_INTERVAL = 10 * 60 * 1000; // 10 minutes minimum between checks
 
   constructor() {
     this.initViewportSizing();
-    this.initServiceWorkerUpdates();
     this.initKeyboardShortcuts();
   }
 
@@ -893,79 +924,11 @@ export class AppComponent implements OnDestroy {
     }, { injector: this.injector });
   }
 
-  /**
-   * Initialize service worker update detection with sensible triggers:
-   * 1. Check on app startup
-   * 2. Check when app regains focus (user switches back to the tab/app)
-   * 3. Hourly fallback for long study sessions
-   */
-  private initServiceWorkerUpdates(): void {
-    if (!this.swUpdate.isEnabled || !isPlatformBrowser(this.platformId)) {
-      return;
-    }
-
-    // Subscribe to version updates - show update sheet instead of auto-reloading
-    this.swUpdate.versionUpdates
-      .pipe(
-        filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
-        takeUntil(this.destroy$)
-      )
-      .subscribe(() => {
-        console.log('[SW] New version ready, showing update notification...');
-        this.showUpdateSheet.set(true);
-      });
-
-    // 1. Check on startup (with delay to not block initial render)
-    setTimeout(() => this.checkForUpdate('startup'), 5000);
-
-    // 2. Check when app regains focus (essential for study app - users switch tabs often)
-    if (isPlatformBrowser(this.platformId)) {
-      fromEvent(this.document, 'visibilitychange')
-        .pipe(takeUntil(this.destroy$))
-        .subscribe(() => {
-          if (this.document.visibilityState === 'visible') {
-            this.checkForUpdate('visibility');
-          }
-        });
-    }
-
-    // 3. Hourly fallback for long study sessions
-    interval(this.UPDATE_CHECK_INTERVAL)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(() => this.checkForUpdate('interval'));
-  }
-
-  /**
-   * Check for updates with rate limiting to prevent excessive checks
-   */
-  private checkForUpdate(trigger: string): void {
-    const now = Date.now();
-
-    // Rate limit: don't check more than once every 5 minutes
-    if (now - this.lastUpdateCheck < this.MIN_CHECK_INTERVAL) {
-      return;
-    }
-
-    this.lastUpdateCheck = now;
-    console.log(`[SW] Checking for updates (trigger: ${trigger})`);
-
-    this.swUpdate.checkForUpdate()
-      .then(hasUpdate => {
-        if (hasUpdate) {
-          console.log('[SW] Update found!');
-        }
-      })
-      .catch(err => {
-        console.warn('[SW] Update check failed:', err);
-      });
-  }
-
   showSettingsSheet = signal(false);
   showStreakSheet = signal(false);
   showAiCreditsSheet = signal(false);
   showAchievementsSheet = signal(false);
   showProUpgradeSheet = signal(false);
-  showUpdateSheet = signal(false);
   showCommandPalette = signal(false);
   showMoreSheet = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
@@ -1116,18 +1079,9 @@ export class AppComponent implements OnDestroy {
     this.router.navigate(['/video'], { queryParams: { id: videoId } });
   }
 
-  /**
-   * Apply the pending update and reload the app
-   */
-  applyUpdate(): void {
-    this.showUpdateSheet.set(false);
-
-    // Note: Don't delete IndexedDB - user data (vocabulary, history) lives there!
-    // The service worker handles asset cache invalidation automatically.
-
-    this.swUpdate.activateUpdate().then(() => {
-      console.log('[SW] Update activated, reloading...');
-      window.location.reload();
-    });
+  openUpdateFromMore(): void {
+    this.sheetService.skipNextHistoryPop();
+    this.showMoreSheet.set(false);
+    this.appUpdate.promptUpdate();
   }
 }

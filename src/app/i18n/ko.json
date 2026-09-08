@@ -306,7 +306,14 @@
         "romanizationOnly": "로마자만",
         "textOnly": "텍스트만",
         "signOutConfirmTitle": "로그아웃 하시겠습니까?",
-        "signOutConfirmMessage": "단어장은 로컬에 저장되지만, 다시 로그인할 때까지 동기화되지 않습니다."
+        "signOutConfirmMessage": "단어장은 로컬에 저장되지만, 다시 로그인할 때까지 동기화되지 않습니다.",
+        "about": "앱 정보 및 업데이트",
+        "appVersion": "버전",
+        "checkForUpdates": "업데이트 확인",
+        "checkingForUpdates": "확인 중...",
+        "upToDate": "앱이 최신 상태입니다",
+        "updateReady": "새로운 업데이트 준비됨",
+        "updateCheckFailed": "업데이트를 확인할 수 없습니다. 다시 시도해 주세요."
     },
     "study": {
         "title": "학습",

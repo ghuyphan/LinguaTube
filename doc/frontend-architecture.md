@@ -511,7 +511,30 @@ To maintain complete visual, structural, and functional harmony across all prima
 - Triggered seamlessly from the **Mobile "More" sheet** (`app.component.ts`), and automatically hidden when the user is already operating in standalone PWA mode.
 - **iOS Safari Support**: Because WebKit on iOS does not support programmatic install prompts, clicking "Install App" triggers an iOS guidance modal showing visual steps to tap the Safari "Share" button and select "Add to Home Screen".
 
-### 7.2. Brand Identity & Vector Iconography (Kikyo Kamon)
+### 7.2. Service Worker Updates & Lifecycle (`AppUpdateService`)
+- Located in `src/app/core/services/app-update.service.ts`.
+- Encapsulates `@angular/service-worker` (`SwUpdate`) in a signal-first reactive architecture:
+  - `updateAvailable`: Reactive signal indicating an updated version is ready for activation.
+  - `isChecking`: Tracks in-flight update checks (powers spinners in Settings).
+  - `showUpdateSheet`: Controls the non-disruptive update bottom sheet.
+  - `currentVersion`: Signal tracking current app version (`1.0.0`).
+- **Triggers & Background Checking**:
+  - Delayed startup check (6 seconds post-bootstrap) ensuring initial load performance.
+  - Focus resumption trigger (`visibilitychange` on `document`) when the learner returns to the app tab.
+  - Periodic hourly interval for long study sessions.
+  - Background checks are rate-limited to 5 minutes to prevent spamming the CDN.
+  - Manual check bypass from Settings (`checkForUpdate({ isManual: true })`).
+- **Chunk Optimization & Fast Ready Event**:
+  - `ngsw-config.json` separates core application bundles (`main.*.js`, `polyfills.*.js`, `styles.*.css`) in the `prefetch` group from lazy-loaded grammar and feature chunks (`chunk-*.js`) in the `lazy-chunks` group (`installMode: "lazy"`, `updateMode: "lazy"`).
+  - Prevents downloading over 12MB of grammar files during background update checks, drastically reducing update latency and mobile data usage.
+- **Cache Corruption Defense (`swUpdate.unrecoverable`)**:
+  - Automatically listens to `unrecoverable` events (broken cache hashes or CDN desyncs), safely flushes stale browser CacheStorage, and performs a clean reload to prevent blank screens or locked app states.
+- **UI Integration**:
+  - **Settings Sheet**: Displays current app version, "Check for Updates" button with live spinner, and an instant "Update Now" button when ready.
+  - **Sidebar & More Sheet**: Surfaces a non-intrusive pulsating dot badge on the Settings item when an update is available but was dismissed for later.
+  - **GlobalErrorHandler Protection**: Guards against infinite chunk reload loops with a 15-second debounce and awaits cache clearance before reloading.
+
+### 7.3. Brand Identity & Vector Iconography (Kikyo Kamon)
 - **Heritage Design**: The app icon is modeled after the authentic Japanese **Kikyo Kamon (桔梗紋 / Bellflower Crest)**, a celebrated samurai family crest (Akechi Mitsuhide) representing elegance, focus, and cultural scholarship.
 - **Mathematical 5-Fold Symmetry**: Crafted with 5-fold rotational symmetry ($72^\circ$ intervals), defining a single master petal rotated around origin `(256, 256)` and smoothly capped by a concentric circular pistil ring.
 - **Colorway & Container**: Features Voca's signature Coral (`#D95C64`) squircle container (`rx="115"` on 512x512) framing a warm Cream (`#F5F0E8`) flower.

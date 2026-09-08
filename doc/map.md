@@ -451,7 +451,7 @@ sequenceDiagram
 
 | Directory / File | Layer | Primary Responsibility |
 | :--- | :--- | :--- |
-| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Video Recommendation (`VideoRecommendationService`), Global Leaderboard (`LeaderboardService`), Error handler |
+| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Video Recommendation (`VideoRecommendationService`), Global Leaderboard (`LeaderboardService`), PWA updates (`AppUpdateService`), PWA installation (`PwaService`), Error handler |
 | `public` | Static & Discovery | PWA icons, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`, `og-image.png`, `_headers` |
 | `src/app/core/repositories` | Data Layer | Offline-first sync repositories for Vocab, Streaks, Playlists, History |
 | `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, draggable fullscreen subtitles, controls, video header level badge |

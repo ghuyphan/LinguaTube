@@ -7,7 +7,7 @@ import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/c
 import { SwitchComponent } from '../../shared/components/switch/switch.component';
 import { ReadingDisplayMode, SupportedLearningLanguage, SUPPORTED_LANGUAGES } from '../../models';
 
-import { SettingsService, AuthService, I18nService, UILanguage, ToastService, GamificationService } from '../../core/services';
+import { SettingsService, AuthService, I18nService, UILanguage, ToastService, GamificationService, AppUpdateService } from '../../core/services';
 import { YoutubeService, SubtitleService, TranscriptService } from '../../features/video';
 import { VocabularyService } from '../../features/vocabulary';
 import { StreakService } from '../../services/streak.service';
@@ -31,6 +31,7 @@ export class SettingsSheetComponent {
   transcript = inject(TranscriptService);
   streak = inject(StreakService);
   gamification = inject(GamificationService);
+  appUpdate = inject(AppUpdateService);
 
   readonly sheet = viewChild(BottomSheetComponent);
 
@@ -249,5 +250,13 @@ export class SettingsSheetComponent {
       default:
         return undefined;
     }
+  }
+
+  async checkForUpdates(): Promise<void> {
+    await this.appUpdate.checkForUpdate({ isManual: true });
+  }
+
+  applyUpdate(): void {
+    void this.appUpdate.applyUpdate();
   }
 }

@@ -306,7 +306,14 @@
         "romanizationOnly": "Romanization only",
         "textOnly": "Text only",
         "signOutConfirmTitle": "Sign Out?",
-        "signOutConfirmMessage": "Your vocabulary will remain saved locally, but changes won't sync until you sign in again."
+        "signOutConfirmMessage": "Your vocabulary will remain saved locally, but changes won't sync until you sign in again.",
+        "about": "About & Updates",
+        "appVersion": "Version",
+        "checkForUpdates": "Check for Updates",
+        "checkingForUpdates": "Checking for updates...",
+        "upToDate": "App is up to date",
+        "updateReady": "New update ready",
+        "updateCheckFailed": "Unable to check for updates. Please try again."
     },
     "study": {
         "title": "Study",

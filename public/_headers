@@ -1,3 +1,20 @@
+# Service Worker & Manifest - never cache so updates are discovered immediately
+/ngsw.json
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/ngsw-worker.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Hashed production bundles - cache forever
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
 # Static assets with long-term caching
 /icons/*
   Cache-Control: public, max-age=31536000, immutable

@@ -163,6 +163,63 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 4. About & Version Group Card -->
+            <div class="settings-group">
+                <span class="settings-group__label">{{ i18n.t('settings.about') || 'About & Updates' }}</span>
+                <div class="settings-card settings-card--group">
+                    <!-- App Version -->
+                    <div class="settings-item-row">
+                        <div class="settings-item-left">
+                            <div class="settings-item-icon-box">
+                                <app-icon name="info" [size]="16" />
+                            </div>
+                            <span class="settings-item-title">{{ i18n.t('settings.appVersion') || 'Version' }}</span>
+                        </div>
+                        <div class="settings-item-right">
+                            <span class="settings-item-value settings-item-value--version">v{{ appUpdate.currentVersion() }}</span>
+                        </div>
+                    </div>
+
+                    <div class="settings-item-divider"></div>
+
+                    <!-- Update Status / Check Button -->
+                    @if (appUpdate.updateAvailable()) {
+                        <div class="settings-item-row settings-item-row--update-ready">
+                            <div class="settings-item-left">
+                                <div class="settings-item-icon-box settings-item-icon-box--update">
+                                    <app-icon name="rotate-ccw" [size]="16" />
+                                </div>
+                                <div class="settings-item-text-stack">
+                                    <span class="settings-item-title">{{ i18n.t('app.updateAvailable') }}</span>
+                                    <span class="settings-item-hint">{{ i18n.t('settings.updateReady') }}</span>
+                                </div>
+                            </div>
+                            <button class="settings-update-btn" (click)="applyUpdate()">
+                                {{ i18n.t('app.updateNow') }}
+                            </button>
+                        </div>
+                    } @else {
+                        <button class="settings-item-row" (click)="checkForUpdates()" [disabled]="appUpdate.isChecking()">
+                            <div class="settings-item-left">
+                                <div class="settings-item-icon-box">
+                                    <app-icon name="rotate-ccw" [size]="16" [class.is-spinning]="appUpdate.isChecking()" />
+                                </div>
+                                <span class="settings-item-title">
+                                    {{ appUpdate.isChecking() ? (i18n.t('settings.checkingForUpdates') || 'Checking...') : (i18n.t('settings.checkForUpdates') || 'Check for Updates') }}
+                                </span>
+                            </div>
+                            <div class="settings-item-right">
+                                @if (appUpdate.isChecking()) {
+                                    <div class="settings-mini-spinner"></div>
+                                } @else {
+                                    <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
+                                }
+                            </div>
+                        </button>
+                    }
+                </div>
+            </div>
         </div>
     </div>
 </app-bottom-sheet>

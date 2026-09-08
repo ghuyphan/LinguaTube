@@ -169,6 +169,9 @@
                     [attr.title]="isCollapsed() ? ((auth.user()?.name || '') + ' (' + (auth.subscriptionTier() | uppercase) + ')') : i18n.t('nav.settings')">
                     <div class="avatar-ring" [class]="'avatar-ring--' + auth.subscriptionTier()">
                         <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
+                        @if (isCollapsed() && appUpdate.updateAvailable()) {
+                            <span class="sidebar-update-dot sidebar-update-dot--collapsed"></span>
+                        }
                     </div>
                     @if (!isCollapsed()) {
                     <div class="user-info-stack">
@@ -177,7 +180,12 @@
                             {{ auth.subscriptionTier() | uppercase }}
                         </span>
                     </div>
-                    <app-icon name="settings" [size]="16" class="settings-icon" />
+                    <div class="settings-icon-wrapper">
+                        <app-icon name="settings" [size]="16" class="settings-icon" />
+                        @if (appUpdate.updateAvailable()) {
+                            <span class="sidebar-update-dot"></span>
+                        }
+                    </div>
                     }
                 </button>
                 } @else {
@@ -186,13 +194,21 @@
                         <div class="guest-avatar-box">
                             <app-icon name="user" [size]="16" />
                         </div>
+                        @if (isCollapsed() && appUpdate.updateAvailable()) {
+                            <span class="sidebar-update-dot sidebar-update-dot--collapsed"></span>
+                        }
                     </div>
                     @if (!isCollapsed()) {
                     <div class="user-info-stack">
                         <span class="user-name">{{ i18n.t('nav.settings') }}</span>
                         <span class="badge badge--sm badge--free">{{ auth.isAuthEnabled() ? (i18n.t('header.signIn') || 'GUEST') : 'OFFLINE' }}</span>
                     </div>
-                    <app-icon name="settings" [size]="16" class="settings-icon" />
+                    <div class="settings-icon-wrapper">
+                        <app-icon name="settings" [size]="16" class="settings-icon" />
+                        @if (appUpdate.updateAvailable()) {
+                            <span class="sidebar-update-dot"></span>
+                        }
+                    </div>
                     }
                 </button>
                 }

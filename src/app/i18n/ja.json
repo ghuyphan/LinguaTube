@@ -306,7 +306,14 @@
         "romanizationOnly": "ローマ字のみ",
         "textOnly": "テキストのみ",
         "signOutConfirmTitle": "ログアウトしますか？",
-        "signOutConfirmMessage": "単語帳はローカルに保存されますが、再度ログインするまで同期されません。"
+        "signOutConfirmMessage": "単語帳はローカルに保存されますが、再度ログインするまで同期されません。",
+        "about": "アプリ情報と更新",
+        "appVersion": "バージョン",
+        "checkForUpdates": "アップデートを確認",
+        "checkingForUpdates": "確認中...",
+        "upToDate": "アプリは最新です",
+        "updateReady": "新しいアップデートがあります",
+        "updateCheckFailed": "アップデートを確認できませんでした。再試行してください。"
     },
     "study": {
         "title": "学習",

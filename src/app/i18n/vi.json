@@ -306,7 +306,14 @@
         "romanizationOnly": "Chỉ romanization",
         "textOnly": "Chỉ văn bản",
         "signOutConfirmTitle": "Đăng xuất?",
-        "signOutConfirmMessage": "Từ vựng của bạn vẫn được lưu cục bộ, nhưng sẽ không đồng bộ cho đến khi bạn đăng nhập lại."
+        "signOutConfirmMessage": "Từ vựng của bạn vẫn được lưu cục bộ, nhưng sẽ không đồng bộ cho đến khi bạn đăng nhập lại.",
+        "about": "Thông tin & Cập nhật",
+        "appVersion": "Phiên bản",
+        "checkForUpdates": "Kiểm tra cập nhật",
+        "checkingForUpdates": "Đang kiểm tra...",
+        "upToDate": "Ứng dụng đã ở phiên bản mới nhất",
+        "updateReady": "Đã có bản cập nhật mới",
+        "updateCheckFailed": "Không thể kiểm tra cập nhật. Vui lòng thử lại."
     },
     "study": {
         "title": "Ôn tập",

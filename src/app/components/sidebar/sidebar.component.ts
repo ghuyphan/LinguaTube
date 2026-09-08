@@ -5,7 +5,7 @@ import { RouterLink, Router, RouterLinkActive, NavigationEnd } from '@angular/ro
 import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
-import { SettingsService, AuthService, I18nService } from '../../core/services';
+import { SettingsService, AuthService, I18nService, AppUpdateService } from '../../core/services';
 import { YoutubeService, SubtitleService, TranscriptService } from '../../features/video';
 import { VocabularyService } from '../../features/vocabulary';
 import { PlaylistService } from '../../features/playlist/playlist.service';
@@ -33,6 +33,7 @@ export class SidebarComponent {
     streak = inject(StreakService);
     playlistService = inject(PlaylistService);
     gamification = inject(GamificationService);
+    appUpdate = inject(AppUpdateService);
 
     private currentUrl = toSignal(
         this.router.events.pipe(
