@@ -742,6 +742,9 @@ export class SubtitleService {
           if (data.tokens && Array.isArray(data.tokens)) {
             return data.tokens;
           }
+        } else {
+          const errText = await response.text().catch(() => '');
+          console.warn(`[SubtitleService] Batch tokenize returned HTTP ${response.status}: ${errText}`);
         }
       } catch (error) {
         if ((error as Error).name === 'AbortError') throw error;

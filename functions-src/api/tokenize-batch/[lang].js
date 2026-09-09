@@ -29,7 +29,7 @@ const RATE_LIMIT_CONFIG = {
     windowSeconds: 3600,
     keyPrefix: 'tokenize'
 };
-const MAX_BATCH_SIZE = 100;
+const MAX_BATCH_SIZE = 500;
 
 // In-memory token batch cache across warm Worker isolates (Rule 2: In-Memory First)
 const memTokenBatchCache = new Map();

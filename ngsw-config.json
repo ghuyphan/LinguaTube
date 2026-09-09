@@ -73,17 +73,6 @@
       }
     },
     {
-      "name": "api-recommendations",
-      "urls": [
-        "/api/recommended-videos*"
-      ],
-      "cacheConfig": {
-        "strategy": "performance",
-        "maxSize": 20,
-        "maxAge": "1h"
-      }
-    },
-    {
       "name": "api-dual-subtitles",
       "urls": [
         "/api/dual-subtitles*"

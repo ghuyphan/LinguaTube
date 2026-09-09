@@ -13,6 +13,7 @@ import { environment } from '../../environments/environment';
 
 // Cache configuration
 const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+const MAX_CACHE_ENTRIES = 200; // Cap cache entries to prevent memory accumulation in long sessions
 
 // Patterns to cache (dictionary lookups only)
 const CACHEABLE_PATTERNS = [
@@ -62,6 +63,10 @@ export const cacheInterceptor: HttpInterceptorFn = (req, next) => {
             if (event instanceof HttpResponse) {
                 // Only cache successful responses
                 if (event.status >= 200 && event.status < 300) {
+                    if (cache.size >= MAX_CACHE_ENTRIES) {
+                        const oldestKey = cache.keys().next().value;
+                        if (oldestKey) cache.delete(oldestKey);
+                    }
                     cache.set(cacheKey, {
                         response: event.clone(),
                         timestamp: Date.now()
