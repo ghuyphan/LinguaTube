@@ -991,7 +991,7 @@ async function fetchVideoMetaLocal(videoId) {
                             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                             'Accept': 'text/html'
                         },
-                        signal: AbortSignal.timeout(2500)
+                        signal: AbortSignal.timeout(4500)
                     });
                     if (pageRes.ok) {
                         const html = await pageRes.text();
@@ -1087,7 +1087,7 @@ app.get('/api/recommended-videos', async (req, res) => {
                 videoId: seed.videoId,
                 title: seed.title,
                 channel: seed.channel,
-                channelAvatar: seed.channelAvatar || null,
+                channelAvatar: seed.channelAvatar || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(seed.channel)}&backgroundColor=1f2937,111827&textColor=f3f4f6`,
                 duration: seed.duration,
                 languages: [lang],
                 thumbnail: `https://i.ytimg.com/vi/${seed.videoId}/mqdefault.jpg`,
@@ -1858,7 +1858,7 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.0.22';
+    const mockVersion = req.query.mock_version || '1.0.23';
 
     res.json({
         version: mockVersion,
@@ -1869,29 +1869,29 @@ app.get('/api/version', (req, res) => {
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'YouTube-Style Channel Avatars: Video cards now fetch and display official YouTube channel avatars with sleek letter-initial fallbacks, matching authentic YouTube aesthetics',
-                'Smart Multi-Language Sub-Badges: Videos now feature dedicated language badges (e.g. 🇯🇵 JA, 🇯🇵 JA / 🇬🇧 EN, 🇨🇳 ZH +2) with prioritized target language sorting and accurate BCP 47 flag matching',
-                'Persistent Database & Avatar Schema: Extended Cloudflare D1 video metadata schema with channel_avatar caching for sub-millisecond edge delivery'
+                'YouTube Channel Avatar Auto-Resolution & Cloudflare D1 Backfill: Migrated and backfilled high-resolution YouTube channel avatars in Cloudflare D1 with automatic background enrichment for new videos',
+                'Refined Home Feed Header & Border Cleanup: Removed the redundant header playlist button and eliminated the divider line below the chips carousel for a seamless YouTube-style interface',
+                'Self-Healing Discovery Cache: Automatically evicts stale cached recommendations lacking avatars, instantly displaying creator profile pictures across all feeds'
             ],
             vi: [
-                'Ảnh đại diện kênh chuẩn phong cách YouTube: Thẻ video hiện lấy và hiển thị ảnh đại diện chính thức của kênh YouTube cùng chữ cái thay thế thanh lịch khi chưa tải được',
-                'Huy hiệu đa ngôn ngữ thông minh: Video hiện có huy hiệu ngôn ngữ riêng biệt (ví dụ: 🇯🇵 JA, 🇯🇵 JA / 🇬🇧 EN, 🇨🇳 ZH +2) với cờ chuẩn BCP 47 và luôn ưu tiên ngôn ngữ bạn đang học lên đầu',
-                'Nâng cấp Cơ sở dữ liệu D1: Bổ sung trường channel_avatar vào Cloudflare D1 giúp lưu vĩnh viễn và phản hồi siêu tốc dưới 1 mili-giây'
+                'Tự động phân giải ảnh đại diện kênh & Nạp dữ liệu D1: Đã di chuyển và cập nhật toàn bộ ảnh đại diện kênh YouTube chuẩn sắc nét vào Cloudflare D1 cùng cơ chế tự động làm giàu dữ liệu chạy ngầm cho video mới',
+                'Tinh chỉnh giao diện Trang chủ & Bỏ đường phân cách: Loại bỏ nút Danh sách dư thừa ở tiêu đề thẻ Dành cho bạn và xóa đường viền dưới thanh chip để mang lại trải nghiệm xem liền mạch, chuẩn YouTube',
+                'Tự động làm mới bộ nhớ đệm khám phá: Tự động xóa bộ nhớ đệm cũ bị thiếu ảnh đại diện, lập tức hiển thị avatar chính thức của nhà sáng tạo trên mọi nguồn cấp dữ liệu'
             ],
             ja: [
-                'YouTubeスタイルのチャンネルアバター：動画カードにYouTube公式チャンネルアイコンを表示。未取得時は洗練されたイニシャルプレースホルダーで自然に表示',
-                'スマートな多言語バッジシステム：動画カードに専用言語バッジ（例：🇯🇵 JA、🇯🇵 JA / 🇬🇧 EN、🇨🇳 ZH +2）を追加し、学習対象言語を常に最優先かつ正確な国旗で表示',
-                'D1データベースとアバターキャッシュ：Cloudflare D1のvideo_languagesテーブルにchannel_avatarを追加し、高速エッジ配信を実現'
+                'YouTubeチャンネルアバターの自動解決とD1バックフィル：Cloudflare D1内の全動画アバターを高解像度画像で完全に移行・保存。新規動画に対するバックグラウンド自動取得にも対応',
+                'ホームフィードのレイアウト洗練と境界線の削除：「おすすめ」カード上部の重複していたプレイリストボタンを削除し、チップバー下の区切り線を無くしてシームレスなYouTube風UIを実現',
+                '自己修復型レコメンドキャッシュ：アバター情報が欠落している古いキャッシュを自動検知して更新し、即座にクリエイターのプロフィール画像を表示'
             ],
             ko: [
-                '유튜브 스타일 채널 아바타 지원: 동영상 카드에 공식 유튜브 채널 프로필 사진을 가져와 표시하며, 미제공 시 세련된 이니셜 플레이스홀더를 제공',
-                '스마트 다국어 배지 시스템: 동영상에 전용 언어 배지(예: 🇯🇵 JA, 🇯🇵 JA / 🇬🇧 EN, 🇨🇳 ZH +2)를 도입하여 학습 중인 언어를 최우선으로 정렬하고 정확한 BCP 47 국기를 표시',
-                'D1 데이터베이스 스키마 확장: Cloudflare D1 video_languages 테이블에 channel_avatar 컬럼을 추가하여 1ms 미만의 엣지 캐싱 지원'
+                '유튜브 채널 아바타 자동 해석 및 Cloudflare D1 백필: Cloudflare D1의 모든 동영상 채널 프로필 이미지를 고화질로 마이그레이션 및 저장 완료, 신규 동영상에 대한 백그라운드 자동 보강 지원',
+                '홈 피드 헤더 정돈 및 분할선 제거: \'맞춤 추천\' 카드 헤더의 중복된 재생목록 버튼을 정리하고 필터 칩 아래의 구분선을 제거하여 한층 깔끔한 유튜브 스타일 디자인 완성',
+                '자가 치유형 추천 캐시: 아바타 정보가 누락된 이전 로컬 캐시를 자동으로 갱신하여 모든 피드에서 크리에이터 profile 사진을 즉각 표시'
             ],
             zh: [
-                'YouTube 风格频道头像支持：视频卡片现已支持获取并展示官方 YouTube 频道头像，加载前提供精致的首字母占位图标',
-                '智能多语言独立标签系统：视频卡片新增专属语言标签（如 🇯🇵 JA、🇯🇵 JA / 🇬🇧 EN、🇨🇳 ZH +2），自动置顶当前学习语言并精准匹配 BCP 47 旗帜',
-                'D1 数据库与头像持久化存储：为 Cloudflare D1 video_languages 表扩展 channel_avatar 字段，实现毫秒级边缘高速缓存'
+                'YouTube 频道头像自动解析与 Cloudflare D1 数据回填：已全面迁移并补齐 Cloudflare D1 中所有视频的高清频道头像，并增加针对新视频的后台自愈式自动补充机制',
+                '精简首页卡片头部与去除分割线：移除“为您推荐”卡片右上角多余的播放列表按钮，并去除筛选芯片栏下方的分割线，打造纯净流畅的 YouTube 风格布局',
+                '自愈式推荐缓存机制：自动淘汰缺少头像的旧本地缓存，确保所有用户即刻浏览真实的创作者官方头像'
             ]
         }
     });

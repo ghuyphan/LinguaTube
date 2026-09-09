@@ -74,7 +74,7 @@ export async function fetchChannelAvatar(authorUrl) {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Accept': 'text/html'
             },
-            signal: AbortSignal.timeout(2500)
+            signal: AbortSignal.timeout(4500)
         });
         if (!res.ok) return null;
         const html = await res.text();
@@ -90,6 +90,36 @@ export async function fetchChannelAvatar(authorUrl) {
     } catch {
         return null;
     }
+}
+
+/**
+ * Resolve channel avatar URL for a video ID or author URL
+ * Resolves author_url via oEmbed if needed, then extracts the creator avatar
+ * @param {string} videoId - YouTube video ID
+ * @param {string} [authorUrl] - Optional author channel URL
+ * @returns {Promise<string | null>}
+ */
+export async function resolveVideoChannelAvatar(videoId, authorUrl = null) {
+    if (authorUrl) {
+        const directAvatar = await fetchChannelAvatar(authorUrl);
+        if (directAvatar) return directAvatar;
+    }
+
+    if (!videoId || typeof videoId !== 'string') return null;
+
+    try {
+        const oembedRes = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`, {
+            signal: AbortSignal.timeout(4000)
+        });
+        if (!oembedRes.ok) return null;
+        const data = await oembedRes.json();
+        if (data && data.author_url) {
+            return await fetchChannelAvatar(data.author_url);
+        }
+    } catch {
+        return null;
+    }
+    return null;
 }
 
 /**

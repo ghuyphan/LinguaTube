@@ -24,7 +24,7 @@ import {
 } from '../data/transcript-r2.js';
 
 import { cleanTranscriptSegments, normalizeLanguageCode } from '../utils/transcript-utils.js';
-import { fetchYouTubeDuration } from '../middlewares/video-validator.js';
+import { fetchYouTubeDuration, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig } from './diamond.service.js';
 
 const MAX_VIDEO_DURATION_SECONDS = 3 * 60 * 60; // 3 hours (native captions)
@@ -64,14 +64,24 @@ export class TranscriptService {
             const availableLangs = nativeResult.availableLangs?.length > 0 ? nativeResult.availableLangs : [lang];
 
             if (options.title || options.channel || options.duration) {
-                savePromises.push(saveVideoLanguages(
-                    db,
-                    videoId,
-                    availableLangs,
-                    options.duration || null,
-                    options.title || null,
-                    options.channel || null
-                ));
+                const saveLanguages = async () => {
+                    let avatar = options.channelAvatar || null;
+                    if (!avatar && db) {
+                        try { avatar = await resolveVideoChannelAvatar(videoId); } catch { }
+                    }
+                    await saveVideoLanguages(
+                        db,
+                        videoId,
+                        availableLangs,
+                        options.duration || null,
+                        options.title || null,
+                        options.channel || null,
+                        false,
+                        null,
+                        avatar
+                    );
+                };
+                savePromises.push(saveLanguages());
             } else if (nativeResult.availableLangs?.length > 0) {
                 savePromises.push(addVideoLanguages(db, videoId, nativeResult.availableLangs));
             } else {
@@ -91,14 +101,24 @@ export class TranscriptService {
         if (nativeResult?.availableLangs?.length > 0) {
             const savePromises = [];
             if (options.title || options.channel || options.duration) {
-                savePromises.push(saveVideoLanguages(
-                    db,
-                    videoId,
-                    nativeResult.availableLangs,
-                    options.duration || null,
-                    options.title || null,
-                    options.channel || null
-                ));
+                const saveLanguages = async () => {
+                    let avatar = options.channelAvatar || null;
+                    if (!avatar && db) {
+                        try { avatar = await resolveVideoChannelAvatar(videoId); } catch { }
+                    }
+                    await saveVideoLanguages(
+                        db,
+                        videoId,
+                        nativeResult.availableLangs,
+                        options.duration || null,
+                        options.title || null,
+                        options.channel || null,
+                        false,
+                        null,
+                        avatar
+                    );
+                };
+                savePromises.push(saveLanguages());
             } else {
                 savePromises.push(addVideoLanguages(db, videoId, nativeResult.availableLangs));
             }
@@ -274,11 +294,24 @@ export class TranscriptService {
                         const title = params.body?.title || null;
                         const channel = params.body?.channel || null;
                         const duration = params.body?.duration || null;
+                        let channelAvatar = params.body?.channelAvatar || null;
+
+                        const saveLanguages = async () => {
+                            if (!channelAvatar && db) {
+                                try {
+                                    channelAvatar = await resolveVideoChannelAvatar(videoId);
+                                } catch { }
+                            }
+                            if (title || channel || duration) {
+                                await saveVideoLanguages(db, videoId, [detectedLang], duration, title, channel, false, null, channelAvatar);
+                            } else {
+                                await addVideoLanguage(db, videoId, detectedLang);
+                            }
+                        };
+
                         const saveOps = [
                             saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai'),
-                            (title || channel || duration)
-                                ? saveVideoLanguages(db, videoId, [detectedLang], duration, title, channel)
-                                : addVideoLanguage(db, videoId, detectedLang),
+                            saveLanguages(),
                             deletePendingJob(db, videoId)
                         ];
 

@@ -42,8 +42,10 @@ export class AchievementsDialogComponent {
     ];
 
     readonly rankTitle = computed(() => {
-        const lvl = this.userLevel();
-        return this.i18n.t('gamification.rank' + lvl) || this.i18n.t('gamification.linguist') || 'Language Learner';
+        const lvl = Math.min(Math.max(1, this.userLevel()), 10);
+        const key = 'gamification.rank' + lvl;
+        const translated = this.i18n.t(key);
+        return translated !== key ? translated : (this.i18n.t('gamification.linguist') || 'Language Learner');
     });
 
     readonly filteredAchievements = computed(() => {

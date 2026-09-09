@@ -69,7 +69,7 @@
                 @if (settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())) {
                 <div class="subtitle-translation-wrapper">
                     @if ((subtitles.isDualSubLoading() || isTranslatingDual()) && !cueTranslations().has(cue.id)) {
-                    <div class="subtitle-translation subtitle-translation--loading" aria-label="Translating subtitle">
+                    <div class="subtitle-translation subtitle-translation--loading" [attr.aria-label]="i18n.t('subtitle.translating')">
                         <div class="dual-sub-dots">
                             <span></span>
                             <span></span>

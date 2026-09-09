@@ -203,7 +203,8 @@ export async function onRequestPost(context) {
             const nativeResult = await transcriptService.fetchNativeCaptions(serviceContext, cleanVideoId, lang, {
                 title: body.title,
                 channel: body.channel,
-                duration: body.duration
+                duration: body.duration,
+                channelAvatar: body.channelAvatar
             });
             if (nativeResult?.segments?.length > 0) {
                 const updatedInfo = await getVideoLanguages(db, cleanVideoId);

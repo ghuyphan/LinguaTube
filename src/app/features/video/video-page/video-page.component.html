@@ -28,24 +28,24 @@
                 <div class="mobile-playlist-controls" (click)="$event.stopPropagation()">
                     @if (playlistService.currentPlaylist(); as playlist) {
                     <button class="control-btn" [class.active]="isShareCopied()" [class.btn-copied]="isShareCopied()"
-                        (click)="$event.stopPropagation(); onShareMobile(playlist)" [title]="isShareCopied() ? 'Link copied!' : i18n.t('playlist.sharePlaylist')"
-                        aria-label="Share playlist">
+                        (click)="$event.stopPropagation(); onShareMobile(playlist)" [title]="isShareCopied() ? (i18n.t('playlist.linkCopied') || 'Link copied!') : i18n.t('playlist.sharePlaylist')"
+                        [attr.aria-label]="i18n.t('playlist.sharePlaylist')">
                         <app-icon [name]="isShareCopied() ? 'check' : 'share'" [size]="16"></app-icon>
                     </button>
                     }
                     <button class="control-btn" [class.active]="playlistService.isLooping()"
                         (click)="$event.stopPropagation(); playlistService.toggleLoop()"
                         [title]="playlistService.isLooping() ? i18n.t('playlist.loopOn') : i18n.t('playlist.loopPlaylist')"
-                        aria-label="Loop playlist">
+                        [attr.aria-label]="i18n.t('playlist.loopPlaylist')">
                         <app-icon name="repeat" [size]="16"></app-icon>
                     </button>
                     <button class="control-btn" [class.active]="playlistService.isShuffled()"
                         (click)="$event.stopPropagation(); playlistService.toggleShuffle()"
                         [title]="playlistService.isShuffled() ? i18n.t('playlist.shuffleOn') : i18n.t('playlist.shufflePlaylist')"
-                        aria-label="Shuffle playlist">
+                        [attr.aria-label]="i18n.t('playlist.shufflePlaylist')">
                         <app-icon name="shuffle" [size]="16"></app-icon>
                     </button>
-                    <button class="control-btn chevron-btn" (click)="toggleMobilePlaylist()" aria-label="Toggle playlist queue">
+                    <button class="control-btn chevron-btn" (click)="toggleMobilePlaylist()" [attr.aria-label]="i18n.t('playlist.toggleQueue')">
                         <app-icon [name]="mobilePlaylistSheetOpen() ? 'chevron-down' : 'chevron-up'" [size]="18"></app-icon>
                     </button>
                 </div>
@@ -63,10 +63,6 @@
                     </div>
                     <div class="panel-badges">
                         <span class="badge badge--accent">{{ currentLearningLanguage() }}</span>
-                        <button type="button" class="panel-header__link" (click)="openExplore()">
-                            <span>{{ i18n.t('nav.playlists') }}</span>
-                            <app-icon name="arrow-right" [size]="14" />
-                        </button>
                     </div>
                 </div>
                 <p class="panel-header__subtitle">{{ i18n.t('playlist.subtitle') }}</p>
@@ -396,21 +392,21 @@
             </div>
             <div class="mobile-playlist-sheet-actions">
                 <button class="action-btn" [class.active]="isShareCopied()" [class.btn-copied]="isShareCopied()"
-                    (click)="onShareMobile(playlist)" [title]="isShareCopied() ? 'Link copied!' : i18n.t('playlist.sharePlaylist')"
-                    aria-label="Share playlist">
+                    (click)="onShareMobile(playlist)" [title]="isShareCopied() ? (i18n.t('playlist.linkCopied') || 'Link copied!') : i18n.t('playlist.sharePlaylist')"
+                    [attr.aria-label]="i18n.t('playlist.sharePlaylist')">
                     <app-icon [name]="isShareCopied() ? 'check' : 'share'" [size]="15"
                         [class.text-success]="isShareCopied()"></app-icon>
                 </button>
                 <button class="action-btn" [class.active]="playlistService.isLooping()"
                     (click)="playlistService.toggleLoop()"
                     [title]="playlistService.isLooping() ? i18n.t('playlist.loopOn') : i18n.t('playlist.loopPlaylist')"
-                    aria-label="Loop playlist">
+                    [attr.aria-label]="i18n.t('playlist.loopPlaylist')">
                     <app-icon name="repeat" [size]="15"></app-icon>
                 </button>
                 <button class="action-btn" [class.active]="playlistService.isShuffled()"
                     (click)="playlistService.toggleShuffle()"
                     [title]="playlistService.isShuffled() ? i18n.t('playlist.shuffleOn') : i18n.t('playlist.shufflePlaylist')"
-                    aria-label="Shuffle playlist">
+                    [attr.aria-label]="i18n.t('playlist.shufflePlaylist')">
                     <app-icon name="shuffle" [size]="15"></app-icon>
                 </button>
             </div>

@@ -1,5 +1,6 @@
-import { ErrorHandler, Injectable, inject, NgZone } from '@angular/core';
+import { ErrorHandler, Injectable, inject, Injector, NgZone } from '@angular/core';
 import { ToastService } from './toast.service';
+import { I18nService } from './i18n.service';
 
 /**
  * Global Error Handler
@@ -13,6 +14,11 @@ import { ToastService } from './toast.service';
 export class GlobalErrorHandler implements ErrorHandler {
     private ngZone = inject(NgZone);
     private toast = inject(ToastService);
+    private injector = inject(Injector);
+
+    private get i18n(): I18nService {
+        return this.injector.get(I18nService);
+    }
 
     handleError(error: unknown): void {
         // Always log to console for debugging
@@ -50,14 +56,14 @@ export class GlobalErrorHandler implements ErrorHandler {
                 }
 
                 console.error('Repeated chunk load errors detected. Aborting reload loop to prevent lockup.');
-                this.toast.error('Failed to load application resource. Please check your connection.');
+                this.toast.error(this.i18n.t('common.chunkLoadError'));
                 return;
             }
 
             // Handle network errors
             if (message.includes('NetworkError') || message.includes('Failed to fetch')) {
                 console.warn('Network error detected');
-                this.toast.error('Network connection error');
+                this.toast.error(this.i18n.t('subtitle.networkErrorTitle'));
                 return;
             }
 

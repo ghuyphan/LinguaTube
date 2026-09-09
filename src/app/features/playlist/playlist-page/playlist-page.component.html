@@ -208,7 +208,7 @@
                         <app-icon name="share" [size]="18" />
                     </button>
                     }
-                    <button class="btn btn-icon btn-sm btn-ghost" (click)="openMenu(playlist, $event)" title="Options">
+                    <button class="btn btn-icon btn-sm btn-ghost" (click)="openMenu(playlist, $event)" [title]="i18n.t('common.options') || 'Options'" [attr.aria-label]="i18n.t('common.options') || 'Options'">
                         <app-icon name="more-vertical" [size]="18" />
                     </button>
                 </div>

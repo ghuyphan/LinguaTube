@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap, catchError, of, interval, switchMap, takeWhile, takeUntil, timer } from 'rxjs';
 import { ToastService } from './toast.service';
 import { AuthService } from './auth.service';
+import { I18nService } from './i18n.service';
 import { TranscriptService } from '../../features/video/transcript.service';
 
 export interface PaymentOrder {
@@ -33,6 +34,7 @@ export class PaymentService {
   private toast = inject(ToastService);
   private auth = inject(AuthService);
   private transcript = inject(TranscriptService);
+  private i18n = inject(I18nService);
 
   readonly isCreating = signal(false);
   readonly currentOrder = signal<PaymentOrder | null>(null);
@@ -41,7 +43,7 @@ export class PaymentService {
   createOrder(planId: string = 'pro_1m'): Observable<PaymentOrder | null> {
     const token = this.auth.getToken();
     if (!token) {
-      this.toast.error('Please sign in to upgrade your subscription');
+      this.toast.error(this.i18n.t('pro.signInToUpgradePrompt'));
       return of(null);
     }
 
@@ -68,7 +70,7 @@ export class PaymentService {
       }),
       catchError(err => {
         this.isCreating.set(false);
-        const errorMsg = err.error?.error || err.error?.message || 'Failed to create payment order';
+        const errorMsg = err.error?.error || err.error?.message || this.i18n.t('pro.createOrderFailed');
         this.toast.error(errorMsg);
         return of(null);
       })
@@ -83,7 +85,7 @@ export class PaymentService {
     this.http.post<{ success: boolean }>('/api/payment/simulate-transfer', { orderCode }).subscribe({
       next: () => {
         this.isPaid.set(true);
-        this.toast.success('Upgrade successful! Enjoy Voca Pro.');
+        this.toast.success(this.i18n.t('pro.paymentSuccess'));
         this.transcript.refreshDiamonds();
         this.auth.refreshUser();
       },
@@ -105,7 +107,7 @@ export class PaymentService {
       next: res => {
         if (res.status === 'PAID') {
           this.isPaid.set(true);
-          this.toast.success('Upgrade successful! Enjoy Voca Pro.');
+          this.toast.success(this.i18n.t('pro.paymentSuccess'));
           this.transcript.refreshDiamonds();
           this.auth.refreshUser();
         }

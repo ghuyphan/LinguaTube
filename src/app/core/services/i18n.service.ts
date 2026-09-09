@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, inject, effect, PLATFORM_ID } from '@angular/core';
+import { Injectable, signal, computed, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 // Import all translations statically for bundle efficiency
@@ -34,13 +34,8 @@ export class I18nService {
     readonly currentLanguage = signal<UILanguage>(this.loadLanguage());
 
     constructor() {
-        if (isPlatformBrowser(this.platformId)) {
-            effect(() => {
-                const lang = this.currentLanguage();
-                if (typeof document !== 'undefined') {
-                    document.documentElement.lang = lang;
-                }
-            });
+        if (isPlatformBrowser(this.platformId) && typeof document !== 'undefined') {
+            document.documentElement.lang = this.currentLanguage();
         }
     }
 
@@ -101,6 +96,9 @@ export class I18nService {
     setLanguage(lang: UILanguage): void {
         this.currentLanguage.set(lang);
         this.saveLanguage(lang);
+        if (isPlatformBrowser(this.platformId) && typeof document !== 'undefined') {
+            document.documentElement.lang = lang;
+        }
     }
 
     /**

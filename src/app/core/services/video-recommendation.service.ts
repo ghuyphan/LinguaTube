@@ -67,10 +67,11 @@ export class VideoRecommendationService {
                 localStorage.removeItem(LS_CACHE_PREFIX + cacheKey);
             } catch { }
         } else {
-            // 1. Check in-memory cache (only valid non-empty entries)
+            // 1. Check in-memory cache (only valid non-empty entries with channel avatars)
             if (this.cache.has(cacheKey)) {
                 const cached = this.cache.get(cacheKey)!;
-                if (cached.length > 0) {
+                const hasMissingAvatars = cached.some(v => !v.channelAvatar);
+                if (!hasMissingAvatars && cached.length > 0) {
                     this.recommendedVideos.set(cached);
                     this.hasMore.set(cached.length >= limit);
                     return cached;
@@ -84,13 +85,15 @@ export class VideoRecommendationService {
                 const raw = localStorage.getItem(LS_CACHE_PREFIX + cacheKey);
                 if (raw) {
                     const parsed: LocalStorageCacheEntry = JSON.parse(raw);
-                    if (Date.now() - parsed.timestamp < LS_CACHE_TTL_MS && Array.isArray(parsed.videos) && parsed.videos.length > 0) {
+                    const hasMissingAvatars = Array.isArray(parsed.videos) && parsed.videos.some(v => !v.channelAvatar);
+                    if (!hasMissingAvatars && Date.now() - parsed.timestamp < LS_CACHE_TTL_MS && Array.isArray(parsed.videos) && parsed.videos.length > 0) {
                         this.cache.set(cacheKey, parsed.videos);
                         this.recommendedVideos.set(parsed.videos);
                         this.hasMore.set(parsed.videos.length >= limit);
                         return parsed.videos;
-                    } else if (Array.isArray(parsed.videos) && parsed.videos.length === 0) {
+                    } else if (hasMissingAvatars || (Array.isArray(parsed.videos) && parsed.videos.length === 0)) {
                         localStorage.removeItem(LS_CACHE_PREFIX + cacheKey);
+                        this.cache.delete(cacheKey);
                     }
                 }
             } catch {

@@ -6,7 +6,7 @@
  */
 
 import { jsonResponse, handleOptions } from '../utils/utils.js';
-import { isLanguageSupported } from '../middlewares/video-validator.js';
+import { isLanguageSupported, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 
 // In-memory cache across warm Worker isolate requests
@@ -64,6 +64,28 @@ export async function onRequestGet(context) {
     const r2 = env?.TRANSCRIPT_STORAGE;
     const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier, isRefresh, offset);
     const hasMore = videos.length >= limit;
+
+    // 3. Self-healing: if any returned videos lack channelAvatar, resolve and update D1 in background
+    if (db && typeof context?.waitUntil === 'function') {
+        const missingAvatars = videos.filter(v => !v.channelAvatar && v.videoId);
+        if (missingAvatars.length > 0) {
+            context.waitUntil((async () => {
+                for (const v of missingAvatars.slice(0, 5)) {
+                    try {
+                        const avatar = await resolveVideoChannelAvatar(v.videoId);
+                        if (avatar) {
+                            await db.prepare(`
+                                UPDATE video_languages 
+                                SET channel_avatar = ?, updated_at = strftime('%s', 'now') 
+                                WHERE video_id = ?
+                            `).bind(avatar, v.videoId).run();
+                            v.channelAvatar = avatar;
+                        }
+                    } catch { }
+                }
+            })());
+        }
+    }
 
     // Save to isolate memory cache only if non-empty
     if (videos.length > 0) {

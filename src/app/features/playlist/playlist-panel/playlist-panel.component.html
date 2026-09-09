@@ -16,24 +16,24 @@
 
         <div class="header-actions">
             <button type="button" class="action-btn action-btn--surface" [class.active]="isCopied()" [class.btn-copied]="isCopied()"
-                (click)="onShare()" [title]="isCopied() ? 'Link copied!' : i18n.t('playlist.sharePlaylist')"
-                aria-label="Share playlist">
+                (click)="onShare()" [title]="isCopied() ? (i18n.t('playlist.linkCopied') || 'Link copied!') : i18n.t('playlist.sharePlaylist')"
+                [attr.aria-label]="i18n.t('playlist.sharePlaylist')">
                 <app-icon [name]="isCopied() ? 'check' : 'share'" [size]="15"
                     [class.text-success]="isCopied()"></app-icon>
             </button>
             <button type="button" class="action-btn action-btn--surface" [class.active]="playlistService.isLooping()"
                 (click)="playlistService.toggleLoop()"
                 [title]="playlistService.isLooping() ? i18n.t('playlist.loopOn') : i18n.t('playlist.loopPlaylist')"
-                aria-label="Loop playlist">
+                [attr.aria-label]="i18n.t('playlist.loopPlaylist')">
                 <app-icon name="repeat" [size]="15"></app-icon>
             </button>
             <button type="button" class="action-btn action-btn--surface" [class.active]="playlistService.isShuffled()"
                 (click)="playlistService.toggleShuffle()"
                 [title]="playlistService.isShuffled() ? i18n.t('playlist.shuffleOn') : i18n.t('playlist.shufflePlaylist')"
-                aria-label="Shuffle playlist">
+                [attr.aria-label]="i18n.t('playlist.shufflePlaylist')">
                 <app-icon name="shuffle" [size]="15"></app-icon>
             </button>
-            <button type="button" class="action-btn action-btn--surface close-btn desktop-only" (click)="requestClose.emit()" [title]="i18n.t('playlist.closePlaylist')" aria-label="Close playlist">
+            <button type="button" class="action-btn action-btn--surface close-btn desktop-only" (click)="requestClose.emit()" [title]="i18n.t('playlist.closePlaylist')" [attr.aria-label]="i18n.t('playlist.closePlaylist')">
                 <app-icon name="x" [size]="15"></app-icon>
             </button>
         </div>

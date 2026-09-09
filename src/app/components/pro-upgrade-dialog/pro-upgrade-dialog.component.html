@@ -67,7 +67,7 @@
             <!-- VietQR Container -->
             <div class="qr-box">
                 @if (order.qrCode) {
-                    <img [src]="order.qrCode" alt="VietQR Payment Code" class="qr-image" />
+                    <img [src]="order.qrCode" [alt]="i18n.t('pro.qrAlt') || 'VietQR Payment Code'" class="qr-image" />
                 } @else {
                     <div class="qr-loading">
                         <span class="spinner-dot"></span>

@@ -16,9 +16,9 @@
         <div class="app-search-box dict-search-box">
             <app-icon name="search" [size]="14" class="search-icon" />
             <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('dictionary.typeWord')"
-                class="search-input" (keyup.enter)="search()" aria-label="Dictionary search" autocomplete="off" spellcheck="false" />
+                class="search-input" (keyup.enter)="search()" [attr.aria-label]="i18n.t('dictionary.search')" autocomplete="off" spellcheck="false" />
             @if (searchQuery) {
-            <button type="button" class="clear-btn" (click)="clearSearch()" aria-label="Clear search">
+            <button type="button" class="clear-btn" (click)="clearSearch()" [attr.aria-label]="i18n.t('common.clear')">
                 <app-icon name="x" [size]="12" />
             </button>
             }
@@ -26,7 +26,7 @@
         <button class="btn btn-primary search-btn" (click)="search()" [disabled]="!searchQuery.trim() || isLoading()">
             @if (isLoading()) {
             <app-icon name="loader" [size]="16" class="loading-spinner" />
-            <span class="sr-only">Searching...</span>
+            <span class="sr-only">{{ i18n.t('dictionary.searching') }}</span>
             } @else {
             {{ i18n.t('dictionary.search') }}
             }
