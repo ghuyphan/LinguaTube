@@ -229,6 +229,8 @@
       background: var(--bg-card);
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
       margin-bottom: var(--space-xs);
       padding: 6px 0 8px;
       overflow: hidden;
@@ -283,6 +285,49 @@
         color: var(--bg-primary);
         border-color: var(--text-primary);
         font-weight: 600;
+      }
+    }
+
+    .yt-chips-actions {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+
+      &.desktop-only {
+        @media (max-width: 768px) {
+          display: none !important;
+        }
+      }
+    }
+
+    .yt-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border-radius: var(--border-radius-pill);
+      border: 1px solid var(--border-color);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      flex-shrink: 0;
+
+      &:hover:not(:disabled) {
+        background: var(--bg-hover);
+        color: var(--text-primary);
+        border-color: var(--border-color-hover, var(--border-color));
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: default;
+      }
+
+      .spin-icon {
+        animation: spin 0.8s linear infinite;
       }
     }
 

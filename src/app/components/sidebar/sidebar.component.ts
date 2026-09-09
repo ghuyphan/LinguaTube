@@ -12,6 +12,7 @@ import { PlaylistService } from '../../features/playlist/playlist.service';
 import { StreakService } from '../../services/streak.service';
 import { GamificationService } from '../../core/services/gamification.service';
 import { SUPPORTED_LANGUAGES } from '../../models';
+import { VideoRecommendationService } from '../../core/services/video-recommendation.service';
 
 @Component({
     selector: 'app-sidebar',
@@ -34,6 +35,7 @@ export class SidebarComponent {
     playlistService = inject(PlaylistService);
     gamification = inject(GamificationService);
     appUpdate = inject(AppUpdateService);
+    videoRecommendation = inject(VideoRecommendationService);
 
     private currentUrl = toSignal(
         this.router.events.pipe(
@@ -50,13 +52,22 @@ export class SidebarComponent {
         const activeVideo = this.youtube.currentVideo();
 
         if (isOnVideoPage) {
-            // Already on video page: Clicking Watch again clears current video to return to search/spotlight
             event.preventDefault();
-            this.playlistService.clearCurrentPlaylist();
-            this.youtube.reset();
-            this.subtitles.clear();
-            this.transcript.reset();
-            void this.router.navigate(['/video'], { queryParams: {} });
+            if (!activeVideo) {
+                // Already on Home Feed: scroll to top and refresh feed!
+                const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+                if (scrollY > 80) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                this.videoRecommendation.triggerHomeFeedRefresh();
+            } else {
+                // Clicking Watch while watching clears current video to return to search/spotlight
+                this.playlistService.clearCurrentPlaylist();
+                this.youtube.reset();
+                this.subtitles.clear();
+                this.transcript.reset();
+                void this.router.navigate(['/video'], { queryParams: {} });
+            }
         } else if (activeVideo) {
             // Navigating back from another page while video is active: Resume current video
             event.preventDefault();

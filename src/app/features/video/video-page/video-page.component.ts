@@ -600,6 +600,10 @@ export class VideoPageComponent implements OnInit {
   selectFeedTab(tab: 'videos' | 'playlists', level?: string): void {
     if (tab === 'videos') {
       if (this.homeTab() === 'videos' && level && this.videoLevelFilter() === level) {
+        // Re-clicking active "All" chip triggers a feed refresh
+        if (level === 'all') {
+          void this.refreshRecommendations();
+        }
         return;
       }
       this.homeTab.set('videos');

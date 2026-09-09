@@ -112,6 +112,13 @@
                         }
                     }
                 </div>
+
+                <div class="yt-chips-actions desktop-only">
+                    <button type="button" class="yt-action-btn" [disabled]="isFeedRefreshing()"
+                        (click)="refreshRecommendations()" [attr.aria-label]="i18n.t('playlist.refresh')" [title]="i18n.t('playlist.refresh')">
+                        <app-icon name="refresh-cw" [size]="14" [class.spin-icon]="isFeedRefreshing()" />
+                    </button>
+                </div>
             </div>
 
             @if (isFeedLoading()) {
