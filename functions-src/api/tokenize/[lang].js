@@ -18,6 +18,10 @@ const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };
 const MAX_TEXT_LENGTH = 10000; // 10KB max
 
+// In-memory warm isolate cache (Rule 2: In-Memory First)
+const memTokenSingleCache = new Map();
+const MAX_MEM_TOKEN_CACHE = 500;
+
 /**
  * Simple hash function for cache keys (djb2 algorithm)
  */
@@ -61,12 +65,26 @@ export async function onRequest(context) {
             return jsonResponse({ error: textValidation.error }, 400);
         }
 
-        // Check cache first (cache hits consume 0 rate limit quota)
+        // 1. Check in-memory cache (0 KV ops, < 0.1ms)
         const cacheKey = `tokens:${lang}:${hashText(text)}`;
+        const memHit = memTokenSingleCache.get(cacheKey);
+        if (memHit) {
+            return jsonResponse(memHit, 200, {
+                'Cache-Control': 'public, max-age=604800',
+                'X-Cache': 'HIT-MEM'
+            });
+        }
+
+        // 2. Check KV cache
         if (TOKEN_CACHE) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
                 if (cached) {
+                    if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
+                        const oldest = memTokenSingleCache.keys().next().value;
+                        if (oldest) memTokenSingleCache.delete(oldest);
+                    }
+                    memTokenSingleCache.set(cacheKey, cached);
                     return jsonResponse(cached, 200, {
                         'Cache-Control': 'public, max-age=604800',
                         'X-Cache': 'HIT'
@@ -89,6 +107,12 @@ export async function onRequest(context) {
         const tokens = await tokenize(text, lang);
         const result = { tokens };
 
+        // Save to warm in-memory cache
+        if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
+            const oldest = memTokenSingleCache.keys().next().value;
+            if (oldest) memTokenSingleCache.delete(oldest);
+        }
+        memTokenSingleCache.set(cacheKey, result);
 
         // Cache the result (30 days TTL)
         if (TOKEN_CACHE) {

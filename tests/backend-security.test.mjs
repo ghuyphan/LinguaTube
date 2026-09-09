@@ -376,6 +376,11 @@ test('RateLimiter: optimizes KV writes by suppressing syncs when comfortably bel
   const res5 = await consumeRateLimitUnits(mockKV, clientIP, config, 20); // count = 105 > 100
   assert.equal(res5.allowed, false);
   assert.equal(putCount, 3, 'Exceeding quota must sync to block across all isolates');
+
+  // Subsequent requests while blocked MUST NOT trigger further KV writes (Rule 2 protection)
+  const res6 = await consumeRateLimitUnits(mockKV, clientIP, config, 5); // count = 110 > 100
+  assert.equal(res6.allowed, false);
+  assert.equal(putCount, 3, 'Repeated blocked requests must NOT trigger additional KV writes (Rule 2)');
 });
 
 test('normalizeLanguageCode: canonicalizes Gladia and external language strings', async () => {
@@ -398,6 +403,40 @@ test('normalizeLanguageCode: canonicalizes Gladia and external language strings'
   assert.equal(normalizeLanguageCode('fr'), 'fr');
   assert.equal(normalizeLanguageCode(null), '');
   assert.equal(normalizeLanguageCode(''), '');
+});
+
+test('Security: sanitizeFilterValue neutralizes malicious PocketBase filter characters', async () => {
+  const { sanitizeFilterValue } = await import('../src/app/shared/utils/sync.utils.ts');
+
+  // Normal safe inputs
+  assert.equal(sanitizeFilterValue('dQw4w9WgXcQ'), 'dQw4w9WgXcQ');
+  assert.equal(sanitizeFilterValue('user123'), 'user123');
+
+  // Quote and escape injection attempts
+  assert.equal(sanitizeFilterValue('test" || 1=1 || "'), 'test\\" || 1=1 || \\"');
+  assert.equal(sanitizeFilterValue('test\\"'), 'test\\\\\\"');
+  assert.equal(sanitizeFilterValue('path\\to\\"quote'), 'path\\\\to\\\\\\"quote');
+});
+
+test('Security: Path traversal protection on dev server dual subtitles cache', async () => {
+  const path = await import('node:path');
+  const TRANSCRIPTS_CACHE_DIR = path.resolve('server/transcripts_cache');
+
+  function checkSafeCachePath(videoId, sourceLang, targetLang) {
+    const cleanSource = (sourceLang || 'auto').replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 10);
+    const normTarget = (targetLang || 'en').replace(/[^a-zA-Z0-9_-]/g, '').split('-')[0].toLowerCase().slice(0, 5);
+    const cacheFileName = `${videoId}_${cleanSource}_${normTarget}_dual.json`;
+    const cacheFile = path.join(TRANSCRIPTS_CACHE_DIR, cacheFileName);
+    const resolvedCache = path.resolve(cacheFile);
+    return resolvedCache.startsWith(TRANSCRIPTS_CACHE_DIR);
+  }
+
+  // Safe video IDs
+  assert.equal(checkSafeCachePath('dQw4w9WgXcQ', 'ja', 'en'), true);
+
+  // Directory traversal attacks
+  assert.equal(checkSafeCachePath('../../package.json', 'ja', 'en'), false);
+  assert.equal(checkSafeCachePath('../../../../etc/passwd', 'ja', 'en'), false);
 });
 
 

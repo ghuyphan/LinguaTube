@@ -238,15 +238,7 @@ export class DiamondService {
 
                 const newCacheData = { d: currentDiamonds, l: lastRegenTime };
                 memDiamondsCache.set(cacheKey, { data: newCacheData, cachedAt: now });
-
-                // Throttled KV write (fire and forget) to preserve KV daily quota
-                if (this.cacheManager && this.cacheManager.kv) {
-                    const kvTask = this.cacheManager.kv.put(cacheKey, JSON.stringify(newCacheData), { expirationTtl: 30 * 24 * 60 * 60 })
-                        .catch(e => console.error(`[DiamondService] KV regen update error: ${e.message}`));
-                    if (context && context.waitUntil) {
-                        context.waitUntil(kvTask);
-                    }
-                }
+                // KV write suppressed on read - regen is deterministic and written on consume/refund (Rule 2)
             }
         }
 
@@ -303,11 +295,8 @@ export class DiamondService {
                 new Date(lastRegenTime).toISOString()
             );
 
-            if (context && context.waitUntil) {
-                context.waitUntil(updateTask);
-            } else {
-                await updateTask;
-            }
+            // Synchronously await database update to eliminate TOCTOU race conditions across Workers
+            await updateTask;
         } else {
             const cacheKey = `diamonds:${clientId}`;
             const newCacheData = { d: newDiamondCount, l: lastRegenTime };

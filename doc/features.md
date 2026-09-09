@@ -158,7 +158,7 @@ graph TD
   - UI templates (`subtitle-display`, `fullscreen-subtitle`) enforce equality guards (`translation.trim() !== cue.text.trim()`) to prevent rendering duplicate identical lines.
 - **Permanent Caching & Long Video Support**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and indexed in D1. Supports long videos with over 1,000 cues without payload truncation.
 - **Track & Language Switch Reactivity**: Tracks changes in subtitle track (`cues`), source language, and target language, cleanly re-initializing dual subtitles when switching between native and Whisper AI captions or changing language tracks.
-- **Persistent Preferences**: Dual subtitle toggle state and target language preference persist across browser sessions in `localStorage`.
+- **Persistent Preferences**: Dual subtitle toggle state and target language preference persist across browser sessions in `localStorage`. Enabled by default (`showDualSubtitles: true`) to provide learners with an immediate immersive bilingual experience upon opening any video.
 
 ---
 

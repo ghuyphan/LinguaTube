@@ -7,6 +7,10 @@
  * @returns {Promise<any>}
  */
 
+// Module-level warm in-memory cache (Rule 2: In-Memory First)
+const memCache = new Map();
+const MAX_MEM_CACHE_ENTRIES = 500;
+
 export class CacheManager {
     /**
      * @param {KVNamespace} kv - The Cloudflare KV namespace binding
@@ -38,12 +42,30 @@ export class CacheManager {
             staleTtl = this.STALE_TTL
         } = options;
 
+        // 1. Fast-path: Check warm in-memory cache (0 KV ops, < 0.1ms)
+        if (!forceRefresh) {
+            const memHit = memCache.get(key);
+            if (memHit) {
+                const age = (Date.now() - memHit.timestamp) / 1000;
+                if (age < memHit.ttl) {
+                    return { data: memHit.data, cached: true, stale: false };
+                }
+            }
+        }
+
         if (!forceRefresh && this.kv) {
             try {
                 const cachedContent = await this.kv.get(key);
                 if (cachedContent) {
                     const parsed = JSON.parse(cachedContent);
                     const age = (Date.now() - parsed.timestamp) / 1000;
+
+                    // Populate memory cache for subsequent requests in this isolate
+                    if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
+                        const oldest = memCache.keys().next().value;
+                        if (oldest) memCache.delete(oldest);
+                    }
+                    memCache.set(key, { data: parsed.data, timestamp: parsed.timestamp, ttl: parsed.ttl });
 
                     // Data is fresh
                     if (age < parsed.ttl) {
@@ -98,6 +120,13 @@ export class CacheManager {
      * @param {number} [ttl] 
      */
     async set(key, data, ttl = this.defaultTtl) {
+        // Sync to warm memory cache
+        if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
+            const oldest = memCache.keys().next().value;
+            if (oldest) memCache.delete(oldest);
+        }
+        memCache.set(key, { data, timestamp: Date.now(), ttl });
+
         if (!this.kv) return;
 
         const payload = {
@@ -114,6 +143,7 @@ export class CacheManager {
      * @param {string} key 
      */
     async delete(key) {
+        memCache.delete(key);
         if (!this.kv) return;
         try {
             await this.kv.delete(key);

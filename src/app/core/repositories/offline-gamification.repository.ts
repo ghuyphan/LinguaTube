@@ -2,7 +2,7 @@ import { Injectable, inject, signal } from '@angular/core';
 import { IGamificationRepository } from './gamification.repository';
 import { UserGamificationState, PocketBaseGamificationRecord } from '../../models/gamification.model';
 import { AuthService, StorageService, PocketBaseService } from '../services';
-import { generateDeterministicRecordId } from '../../shared/utils/sync.utils';
+import { generateDeterministicRecordId, sanitizeFilterValue } from '../../shared/utils/sync.utils';
 
 const STORAGE_KEY = 'linguatube_gamification';
 const SYNC_DEBOUNCE_MS = 3000;
@@ -150,7 +150,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                     // Try fallback query by user relation
                     try {
                         const list = await client.collection('gamification').getList<PocketBaseGamificationRecord>(1, 1, {
-                            filter: `user = "${user.id}"`
+                            filter: `user = "${sanitizeFilterValue(user.id)}"`
                         });
                         if (list.items.length > 0) {
                             remoteRecord = list.items[0];

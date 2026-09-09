@@ -4,7 +4,7 @@ import { Playlist, mapRecordToPlaylist } from '../../models';
 import { StorageService } from '../services/storage.service';
 import { PocketBaseService } from '../services/pocketbase.service';
 import { AuthService } from '../services/auth.service';
-import { mergeByTimestamp } from '../../shared/utils/sync.utils';
+import { mergeByTimestamp, sanitizeFilterValue } from '../../shared/utils/sync.utils';
 
 const PLAYLISTS_STORAGE_KEY = 'linguatube_playlists';
 const PLAYLISTS_TOMBSTONES_KEY = 'linguatube_deleted_playlist_ids';
@@ -266,7 +266,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
 
             // 2. Fetch full list of playlists from server (no 50-item truncation)
             const owned = await client.collection('playlists').getFullList({
-                filter: `user="${userId}"`,
+                filter: `user="${sanitizeFilterValue(userId)}"`,
                 sort: '-updated',
                 requestKey: null
             });

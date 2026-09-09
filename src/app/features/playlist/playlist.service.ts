@@ -14,6 +14,7 @@ import { YoutubeService } from '../video';
 import { OfflinePlaylistRepository } from '../../core/repositories';
 import { VideoLevelService } from '../../core/services/video-level.service';
 import { generateRandomId, getYouTubeThumbnail } from '../../core/utils';
+import { sanitizeFilterValue } from '../../shared/utils/sync.utils';
 
 const LS_REC_PLAYLISTS_PREFIX = 'voca_rec_playlists_';
 const LS_REC_PLAYLISTS_TTL_MS = 60 * 60 * 1000; // 1 hour
@@ -729,7 +730,7 @@ export class PlaylistService {
 
             // Find and delete the save record
             const saves = await client.collection('playlist_saves').getList(1, 1, {
-                filter: `user="${this.auth.getUserId()}" && playlist="${playlistId}"`,
+                filter: `user="${sanitizeFilterValue(this.auth.getUserId() || '')}" && playlist="${sanitizeFilterValue(playlistId)}"`,
                 requestKey: null
             });
 
@@ -872,7 +873,7 @@ export class PlaylistService {
             if (targetTier) {
                 // When tier is requested, query a larger batch of published playlists for this language to match the tier
                 const fetchPromise = client.collection('playlists').getList(1, 30, {
-                    filter: `visibility="published" && language="${language}"`,
+                    filter: `visibility="published" && language="${sanitizeFilterValue(language)}"`,
                     sort: '-is_featured,-save_count,-updated',
                     expand: 'user',
                     requestKey: null
@@ -904,7 +905,7 @@ export class PlaylistService {
             }
 
             // 1. Primary server-side query: published, matching language, at least 2 videos
-            const primaryFilter = `visibility="published" && language="${language}" && video_count >= 2`;
+            const primaryFilter = `visibility="published" && language="${sanitizeFilterValue(language)}" && video_count >= 2`;
             const fetchPromise = client.collection('playlists').getList(1, limit, {
                 filter: primaryFilter,
                 sort: '-is_featured,-save_count,-updated',
@@ -921,7 +922,7 @@ export class PlaylistService {
             // 2. Fallback: If no playlists have >= 2 videos for this language, allow video_count >= 1
             if (result.items.length === 0) {
                 const fallbackPromise = client.collection('playlists').getList(1, limit, {
-                    filter: `visibility="published" && language="${language}"`,
+                    filter: `visibility="published" && language="${sanitizeFilterValue(language)}"`,
                     sort: '-is_featured,-save_count,-updated',
                     expand: 'user',
                     requestKey: null

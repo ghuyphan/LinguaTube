@@ -167,14 +167,12 @@
                                     <span class="yt-sub-badge"><app-icon name="captions" [size]="12" /> CC</span>
                                     @if (langs.length > 0) {
                                     <span class="yt-sub-badge yt-sub-badge--lang" [title]="getLanguagesTooltip(langs)">
-                                        <img [src]="getFlagUrl(langs[0])" class="circle-flag circle-flag--xs" alt="" />
-                                        <span>{{ langs[0].toUpperCase() }}</span>
-                                        @if (langs.length === 2) {
+                                        @for (l of langs; track l; let isLast = $last) {
+                                        <img [src]="getFlagUrl(l)" class="circle-flag circle-flag--xs" alt="" />
+                                        <span>{{ l.toUpperCase() }}</span>
+                                        @if (!isLast) {
                                         <span class="lang-divider">/</span>
-                                        <img [src]="getFlagUrl(langs[1])" class="circle-flag circle-flag--xs" alt="" />
-                                        <span>{{ langs[1].toUpperCase() }}</span>
-                                        } @else if (langs.length > 2) {
-                                        <span class="lang-count">+{{ langs.length - 1 }}</span>
+                                        }
                                         }
                                     </span>
                                     }

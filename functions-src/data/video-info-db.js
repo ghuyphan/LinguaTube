@@ -465,8 +465,11 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
 
                     if (Array.isArray(availableLangs) && availableLangs.length > 0) {
                         const target = (lang || '').toLowerCase().trim();
+                        const SUPPORTED_CODES = new Set(['ja', 'zh', 'ko', 'en']);
                         const normalizedLangs = Array.from(new Set(
-                            availableLangs.map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : '')).filter(Boolean)
+                            availableLangs
+                                .map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : ''))
+                                .filter(l => SUPPORTED_CODES.has(l))
                         ));
                         if (target && normalizedLangs.length > 1) {
                             normalizedLangs.sort((a, b) => (a === target ? -1 : (b === target ? 1 : 0)));

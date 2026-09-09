@@ -5,6 +5,7 @@ import { StorageService } from '../services/storage.service';
 import { PocketBaseService } from '../services/pocketbase.service';
 import { AuthService } from '../services/auth.service';
 import { getYouTubeThumbnail } from '../utils';
+import { sanitizeFilterValue } from '../../shared/utils/sync.utils';
 import type PocketBase from 'pocketbase';
 
 const STORAGE_KEY = 'linguatube_history';
@@ -219,7 +220,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         };
 
         const existing = await client.collection('history').getList(1, 1, {
-            filter: `user="${userId}" && video_id="${item.video_id}"`,
+            filter: `user="${sanitizeFilterValue(userId)}" && video_id="${sanitizeFilterValue(item.video_id)}"`,
             requestKey: null
         });
 
@@ -258,7 +259,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             try {
                 const client = await this.pb.getClient();
                 const existing = await client.collection('history').getList(1, 1, {
-                    filter: `user="${this.auth.getUserId()}" && video_id="${itemToRemove.video_id}"`,
+                    filter: `user="${sanitizeFilterValue(this.auth.getUserId() || '')}" && video_id="${sanitizeFilterValue(itemToRemove.video_id)}"`,
                     requestKey: null
                 });
 
@@ -273,6 +274,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     }
 
     async clearHistory(): Promise<void> {
+        // 1. Clear local
         const current = this.history();
         for (const item of current) {
             this.addDeletionTombstone(item.video_id);
@@ -284,7 +286,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             try {
                 const client = await this.pb.getClient();
                 const all = await client.collection('history').getFullList({
-                    filter: `user="${this.auth.getUserId()}"`,
+                    filter: `user="${sanitizeFilterValue(this.auth.getUserId() || '')}"`,
                     requestKey: null
                 });
                 for (const rec of all) {
@@ -337,7 +339,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             for (const videoId of tombstones) {
                 try {
                     const existing = await client.collection('history').getList(1, 1, {
-                        filter: `user="${userId}" && video_id="${videoId}"`,
+                        filter: `user="${sanitizeFilterValue(userId)}" && video_id="${sanitizeFilterValue(videoId)}"`,
                         requestKey: null
                     });
                     if (existing.items.length > 0) {
@@ -366,7 +368,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
             // 2. Fetch all history from server
             const result = await client.collection('history').getList(1, 100, {
-                filter: `user="${userId}"`,
+                filter: `user="${sanitizeFilterValue(userId)}"`,
                 sort: '-watched_at',
                 requestKey: null
             });

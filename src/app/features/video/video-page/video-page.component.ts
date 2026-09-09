@@ -339,16 +339,23 @@ export class VideoPageComponent implements OnInit {
   }
 
   /**
-   * Returns normalized, deduplicated languages with the active learning language prioritized first.
+   * Returns normalized, deduplicated languages filtered strictly to supported learning languages (ja, zh, ko, en)
+   * with the active learning language prioritized first.
    */
   getVideoLanguages(video: RecommendedVideo | null | undefined): string[] {
     if (!video?.languages || !Array.isArray(video.languages) || video.languages.length === 0) {
       return [];
     }
     const currentLang = (this.settings.settings().language || '').toLowerCase().trim();
+    const supportedCodes = new Set(['ja', 'zh', 'ko', 'en']);
     const normalized = Array.from(new Set(
-      video.languages.map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : '')).filter(Boolean)
+      video.languages
+        .map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : ''))
+        .filter(l => supportedCodes.has(l))
     ));
+    if (normalized.length === 0) {
+      return currentLang && supportedCodes.has(currentLang) ? [currentLang] : ['ja'];
+    }
     if (normalized.length <= 1) return normalized;
 
     return normalized.sort((a, b) => {
@@ -365,10 +372,7 @@ export class VideoPageComponent implements OnInit {
 
   formatLanguagesBadge(langs: string[]): string {
     if (!langs || langs.length === 0) return '';
-    if (langs.length <= 2) {
-      return langs.map(l => l.toUpperCase()).join(' · ');
-    }
-    return `${langs[0].toUpperCase()} +${langs.length - 1}`;
+    return langs.map(l => l.toUpperCase()).join(' / ');
   }
 
   readonly failedAvatars = signal<Set<string>>(new Set());

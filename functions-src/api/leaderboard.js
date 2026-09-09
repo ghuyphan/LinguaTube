@@ -176,26 +176,23 @@ export async function onRequestPost(context) {
         }
 
         const body = await request.json().catch(() => ({}));
-        let userId = '';
 
-        if (authResult.valid && authResult.userId) {
-            userId = authResult.userId;
-        } else if (typeof body.guest_id === 'string' && body.guest_id.startsWith('guest_') && body.guest_id.length <= 40) {
-            userId = body.guest_id;
-        } else {
+        // Guests compute rank locally; do not allow anonymous writes to the global competitive leaderboard
+        if (!authResult.valid || !authResult.userId) {
             return jsonResponse({
-                success: false,
-                error: 'Missing or invalid user identifier'
-            }, 400);
+                success: true,
+                guest: true,
+                message: 'Sign in to join the global leaderboard'
+            }, 200);
         }
 
-        const rawName = (authResult.valid && (authResult.user?.name || authResult.user?.username))
-            ? (authResult.user.name || authResult.user.username)
-            : (body.name || 'Learner');
+        const userId = authResult.userId;
+        const rawName = (authResult.user?.name || authResult.user?.username) || body.name || 'Learner';
         const name = String(rawName).replace(/[<>]/g, '').trim().slice(0, 30) || 'Learner';
 
         const xp = Math.max(0, Math.min(1000000, parseInt(body.xp, 10) || 0));
-        const level = Math.max(1, Math.min(100, parseInt(body.level, 10) || 1));
+        // Canonical level derived from XP: level = floor(sqrt(xp / 100)) + 1
+        const level = Math.max(1, Math.min(100, Math.floor(Math.sqrt(xp / 100)) + 1));
         const streak = Math.max(0, Math.min(10000, parseInt(body.streak, 10) || 0));
         const badgesCount = Math.max(0, Math.min(100, parseInt(body.badges_count, 10) || 0));
         const targetLang = ['ja', 'ko', 'zh', 'en'].includes(body.target_lang) ? body.target_lang : 'ja';
@@ -204,6 +201,15 @@ export async function onRequestPost(context) {
 
         const db = env.VOCAB_DB || env.DB;
         if (db) {
+            // Guard against massive unverified XP jumps in a single call
+            const existing = await db.prepare('SELECT xp FROM leaderboard WHERE user_id = ?').bind(userId).first();
+            if (existing && xp > existing.xp + 10000) {
+                return jsonResponse({
+                    success: false,
+                    error: 'XP increment exceeds single update threshold'
+                }, 400);
+            }
+
             await db.prepare(`
                 INSERT INTO leaderboard (user_id, name, avatar, xp, level, streak, badges_count, target_lang, country, updated_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'))

@@ -47,13 +47,20 @@ export async function onRequestPost(context) {
 
         const kv = env.TRANSCRIPT_CACHE;
 
-        // Idempotency check: prevent duplicate credit / replay attacks
+        // Idempotency & lock check: prevent duplicate credit and concurrent execution
         if (kv) {
             const processed = await kv.get(`order_processed:${orderCode}`);
             if (processed) {
                 console.log(`[payOS Webhook] Order ${orderCode} already processed`);
                 return jsonResponse({ success: true, status: 'already_processed' }, 200);
             }
+
+            const lock = await kv.get(`order_lock:${orderCode}`);
+            if (lock) {
+                console.log(`[payOS Webhook] Order ${orderCode} is already processing concurrently`);
+                return jsonResponse({ success: true, status: 'processing' }, 200);
+            }
+            await kv.put(`order_lock:${orderCode}`, '1', { expirationTtl: 60 });
         }
 
         // Retrieve order metadata saved during creation
@@ -73,20 +80,26 @@ export async function onRequestPost(context) {
             const receivedAmount = Number(data.amount);
             if (receivedAmount < expectedAmount) {
                 console.error(`[payOS Webhook] Amount mismatch for order ${orderCode}: expected ${expectedAmount}, received ${receivedAmount}`);
+                if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
                 return jsonResponse({ success: false, error: 'Amount mismatch' }, 400);
             }
         }
 
         const userId = orderMeta?.userId;
+        if (!userId) {
+            console.error(`[payOS Webhook] Order metadata or userId not found for order ${orderCode}`);
+            if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
+            return jsonResponse({ success: false, error: 'Order metadata missing or expired' }, 422);
+        }
+
         const durationDays = orderMeta?.durationDays || 30;
         const targetTier = orderMeta?.tier || (orderMeta?.planId?.startsWith('premium') ? 'premium' : 'pro');
         const defaultDiamonds = targetTier === 'premium' ? 25 : 10;
         const grantedDiamonds = orderMeta?.diamonds || defaultDiamonds;
 
-        if (userId) {
-            const pbUrl = env.PB_URL || env.POCKETHOST_URL || 'https://voca.pockethost.io';
-            const adminEmail = env.PB_ADMIN_EMAIL;
-            const adminPassword = env.PB_ADMIN_PASSWORD;
+        const pbUrl = env.PB_URL || env.POCKETHOST_URL || 'https://voca.pockethost.io';
+        const adminEmail = env.PB_ADMIN_EMAIL;
+        const adminPassword = env.PB_ADMIN_PASSWORD;
 
             if (adminEmail && adminPassword) {
                 // 1. Admin login to PocketBase (try /api/admins first, fallback to /api/collections/_superusers)
@@ -134,7 +147,6 @@ export async function onRequestPost(context) {
                     }
                 }
             }
-        }
 
         // Mark as processed (retained for 90 days)
         if (kv) {
@@ -143,6 +155,7 @@ export async function onRequestPost(context) {
                 userId,
                 processedAt: new Date().toISOString()
             }), { expirationTtl: 90 * 24 * 60 * 60 });
+            await kv.delete(`order_lock:${orderCode}`).catch(() => {});
         }
 
         return jsonResponse({ success: true, orderCode }, 200);

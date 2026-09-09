@@ -13,12 +13,12 @@ export const MAX_DURATION = {
 };
 
 /**
- * Scrape approximate video duration from YouTube public page (free, no API key required)
+ * Scrape approximate video duration and livestream status from YouTube public page (free, no API key required)
  * @param {string} videoId - YouTube video ID
- * @returns {Promise<number | null>} Duration in seconds, or null
+ * @returns {Promise<{duration: number | null, isLive: boolean}>} Duration in seconds and livestream flag
  */
-export async function fetchYouTubeDuration(videoId) {
-    if (!videoId) return null;
+export async function fetchYouTubeVideoDetails(videoId) {
+    if (!videoId) return { duration: null, isLive: false };
     try {
         const res = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
             headers: {
@@ -27,17 +27,30 @@ export async function fetchYouTubeDuration(videoId) {
             },
             signal: AbortSignal.timeout(4000)
         });
-        if (!res.ok) return null;
+        if (!res.ok) return { duration: null, isLive: false };
         const html = await res.text();
+        const isLive = /"isLive(?:Broadcast|Content)?":\s*true|"liveBroadcastDetails"/i.test(html);
         const match = html.match(/"approxDurationMs":"(\d+)"/);
+        let duration = null;
         if (match && match[1]) {
             const seconds = Math.round(parseInt(match[1], 10) / 1000);
-            if (!isNaN(seconds) && seconds > 0) return seconds;
+            if (!isNaN(seconds) && seconds > 0) duration = seconds;
         }
-        return null;
+        return { duration, isLive };
     } catch {
-        return null;
+        return { duration: null, isLive: false };
     }
+}
+
+/**
+ * Scrape approximate video duration from YouTube public page (free, no API key required)
+ * @param {string} videoId - YouTube video ID
+ * @returns {Promise<number | null>} Duration in seconds, or null
+ */
+export async function fetchYouTubeDuration(videoId) {
+    const details = await fetchYouTubeVideoDetails(videoId);
+    if (details.isLive) return null;
+    return details.duration;
 }
 
 /**
@@ -188,9 +201,19 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
     const maxDuration = maxDurationOverride || MAX_DURATION[endpoint];
     let effectiveDuration = duration;
 
-    // For whisper (AI transcription), if client duration is missing or needs verification, attempt server check
-    if (!effectiveDuration && endpoint === 'whisper') {
-        effectiveDuration = await fetchYouTubeDuration(videoId);
+    // For whisper (AI transcription), server must verify duration & livestream status to protect Gladia quota
+    if (endpoint === 'whisper') {
+        const ytDetails = await fetchYouTubeVideoDetails(videoId);
+        if (ytDetails.isLive) {
+            return {
+                error: 'livestream_unsupported',
+                message: 'AI transcription is not supported for live streams'
+            };
+        }
+        // Always prioritize server-verified duration over client-supplied duration
+        if (ytDetails.duration) {
+            effectiveDuration = ytDetails.duration;
+        }
     }
 
     if (effectiveDuration && effectiveDuration > maxDuration) {

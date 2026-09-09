@@ -74,7 +74,7 @@ export async function onRequestPost(context) {
         const orderCode = 10000000 + (randBuffer[0] % 90000000);
         const description = `VOCA${orderCode}`.slice(0, 25);
 
-        // Store pending order in KV with 1 hour expiration
+        // Store pending order in KV with 7 days expiration (accommodates delayed bank transfers)
         if (env.TRANSCRIPT_CACHE) {
             const orderMeta = {
                 orderCode,
@@ -87,7 +87,7 @@ export async function onRequestPost(context) {
                 amount: plan.amount,
                 createdAt: new Date().toISOString()
             };
-            await env.TRANSCRIPT_CACHE.put(`order:${orderCode}`, JSON.stringify(orderMeta), { expirationTtl: 3600 });
+            await env.TRANSCRIPT_CACHE.put(`order:${orderCode}`, JSON.stringify(orderMeta), { expirationTtl: 7 * 24 * 60 * 60 });
         }
 
         const paymentData = await createPayOsPaymentLink(env, {

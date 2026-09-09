@@ -14,36 +14,41 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.0.24',
+    version: '1.0.25',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Resilient 3-Tier Audio Playback Pipeline: Upgraded AudioService with a seamless waterfall (authentic dictionary audio -> neural stream TTS -> native Web Speech API) ensuring 100% pronunciation reliability across all words',
-            'Referer-Free Audio Isolation & Diagnostics: Applied strict no-referrer isolation to eliminate upstream 404/403 playback errors on media streams and enhanced diagnostic logging',
-            'Offline-Ready Speech Synthesis: Automatic fallback to high-quality system voices for Japanese, Chinese, Korean, and English even without internet access in Study Mode'
+            'Dual Subtitles by Default: Interactive bilingual translated subtitles are now enabled out of the box for all supported videos',
+            'Edge Abuse & Quota Hardening: Strictly enforce server-verified video durations for AI transcriptions and reject live broadcasts',
+            'Cloudflare KV Optimization: Added L1 in-memory caches and throttled rate-limiter syncs to protect the daily KV write quota',
+            'Security Fortification: Closed path traversal in dev server and sanitized PocketBase filter queries across all repository layers'
         ],
         vi: [
-            'Cơ chế phát âm 3 tầng bền bỉ: Nâng cấp AudioService với quy trình tuần hoàn (âm thanh từ điển gốc -> luồng phát âm nơ-ron -> Web Speech API tích hợp) đảm bảo 100% từ vựng đều được phát âm chuẩn xác',
-            'Cô lập Referer & Chuẩn đoán lỗi chi tiết: Áp dụng cơ chế no-referrer nghiêm ngặt nhằm triệt tiêu lỗi 404/403 khi tải luồng âm thanh ngoài cùng nhật ký chuẩn đoán trực quan',
-            'Phát âm ngoại tuyến trong chế độ Học: Tự động chuyển đổi sang giọng đọc chất lượng cao của hệ điều hành cho tiếng Nhật, Trung, Hàn, Anh ngay cả khi mất mạng'
+            'Bật phụ đề song ngữ mặc định: Phụ đề dịch song ngữ tương tác hiện được kích hoạt mặc định trên mọi video hỗ trợ',
+            'Bảo vệ hạn mức AI & Chống lạm dụng Edge: Xác thực thời lượng video từ máy chủ cho AI transcription và từ chối phát trực tiếp',
+            'Tối ưu hóa Cloudflare KV: Bổ sung bộ nhớ đệm L1 in-memory và điều tiết ghi KV giới hạn tốc độ để bảo toàn định ngạch miễn phí',
+            'Củng cố bảo mật toàn diện: Vá lỗ hổng duyệt thư mục (path traversal) ở dev server và làm sạch truy vấn PocketBase filter'
         ],
         ja: [
-            '高信頼性3層音声再生パイプライン：AudioServiceを強化し（辞書本来の音声 -> 高品質ニューラルストリームTTS -> Web Speech API）全単語で100%確実に発音再生できるフェイルオーバーを実現',
-            'Referer遮断と詳細エラー診断：外部音声取得時の404/403エラーを防止するno-referrerポリシーの徹底と、詳細なメディアエラー診断ログを導入',
-            '学習モードのオフライン音声対応：インターネット接続がない環境でも、日本語・中国語・韓国語・英語の高音質システム音声へ自動フォールバック'
+            'デュアル字幕のデフォルト有効化：対応するすべての動画で、高精度な対訳字幕が初期状態で自動表示されるように改善',
+            'AI利用枠とEdgeセキュリティの強化：AI文字起こし時の動画尺をサーバー側で厳格に検証し、ライブ配信の不正処理を遮断',
+            'Cloudflare KVの最適化：L1インメモリーキャッシュの導入とレート制限時のKV同期制御により、無料枠の書き込み上限を保護',
+            '堅牢なセキュリティ防御：ローカル開発サーバーのパストラバーサル防止およびPocketBaseフィルターのインジェクション対策を完了'
         ],
         ko: [
-            '안정적인 3단계 오디오 재생 파이프라인: 원어민 사전 오디오 -> 고음질 신경망 스트림 TTS -> 내장 Web Speech API로 이어지는 장애 복구 체계를 구축하여 모든 단어의 안정적인 발음 지원',
-            'Referer 차단 및 진단 강화: 외부 미디어 요청 시 no-referrer 정책을 적용하여 404/403 재생 오류를 원천 차단하고 정밀한 진단 로그 제공',
-            '오프라인 음성 합성 지원: 학습 모드에서 네트워크 연결이 끊긴 상태에서도 일본어, 중국어, 한국어, 영어 시스템 음성으로 원활하게 자동 재생'
+            '이중 자막 기본 활성화: 지원되는 모든 영상에서 유용한 번역 보조 자막이 기본적으로 켜지도록 UX 개선',
+            'AI 쿼터 및 Edge 보안 강화: AI 전사 시 영상 길이를 서버에서 직접 검증하고 라이브 스트림 요청을 완벽히 차단',
+            'Cloudflare KV 최적화: L1 인메모리 캐시 도입 및 속도 제한 시 KV 동기화 조절로 일일 KV 쓰기 쿼터 절약',
+            '보안 취약점 전면 보강: 개발 서버의 경로 탐색(Path Traversal) 방지 및 PocketBase 필터 인젝션 방어 적용'
         ],
         zh: [
-            '高可用三级发音播放机制：升级 AudioService，建立（原生词典发音 -> 神经网络音频流 TTS -> 原生 Web Speech API）的三级回退流程，保障所有单词发音 100% 畅通',
-            '免 Referer 隔离与精细诊断：严格启用 no-referrer 策略，根除跨域媒体流导致的 404/403 播放失败，并大幅优化诊断日志',
-            '离线发音无缝支持：在学习模式或断网环境下，自动无缝回退至系统高品质发音引擎，全面覆盖日语、中文、韩语及英语'
+            '双语字幕默认开启：所有支持的视频现已默认启用交互式双语对照字幕，全面提升学习体验',
+            'AI 配额与 Edge 防刷增强：在服务端严格校验 AI 转录的视频时长，杜绝篡改并拒绝直播内容',
+            'Cloudflare KV 极致优化：引入 L1 内存缓存并节流限流写入，严格保护每日免费 KV 写入配额',
+            '全栈安全防护巩固：修复本地开发服务器的路径遍历隐患，并彻底净化 PocketBase 过滤器注入风险'
         ]
     }
 };

@@ -228,9 +228,12 @@ export class VideoRecommendationService {
 
             const targetLang = (language || '').toLowerCase().trim();
             let langs = video.languages;
+            const SUPPORTED_CODES = new Set(['ja', 'zh', 'ko', 'en']);
             if (Array.isArray(langs) && langs.length > 0) {
                 const normalized = Array.from(new Set(
-                    langs.map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : '')).filter(Boolean)
+                    langs
+                        .map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : ''))
+                        .filter(l => SUPPORTED_CODES.has(l))
                 ));
                 if (targetLang && normalized.length > 1) {
                     normalized.sort((a, b) => (a === targetLang ? -1 : (b === targetLang ? 1 : 0)));

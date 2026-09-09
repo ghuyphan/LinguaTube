@@ -92,6 +92,17 @@ export async function onRequest(context) {
             return jsonResponse({ error: batchValidation.error }, 400);
         }
 
+        // Validate individual string items to protect Worker memory during tokenization
+        for (let i = 0; i < texts.length; i++) {
+            const t = texts[i];
+            if (typeof t !== 'string') {
+                return jsonResponse({ error: `Text at index ${i} must be a string` }, 400);
+            }
+            if (t.length > 2000) {
+                return jsonResponse({ error: `Text at index ${i} exceeds maximum length of 2000 characters` }, 400);
+            }
+        }
+
         if (!videoId) {
             return jsonResponse({ error: 'Missing or invalid "videoId"' }, 400);
         }

@@ -45,7 +45,7 @@ Every incoming request passes through a multi-tier defense and rate-limiting pip
 To protect against DDoS and API credit depletion while strictly preserving Cloudflare KV's **1,000 writes/day free limit**:
 - **In-Memory Fast Path**: Every warm Worker isolate maintains a local `memRateLimits` Map.
 - **Smart KV Sync**: To keep daily KV writes safely under quota while preventing abuse:
-  1. **Instant Global Block**: If rate limit is exceeded (`!allowed`), it immediately writes to KV to enforce the block across all global edge locations.
+  1. **Instant Global Block with Flood Throttling**: If rate limit is first breached (`!allowed`), it immediately writes to KV to enforce the block across global edge locations. Subsequent blocked requests within the window are throttled in memory (syncing to KV at most once every 60s per client), preventing high-frequency 429 floods from exhausting KV write quotas.
   2. **Approaching Quota Protection**: When usage reaches $\ge 80\%$ of the allowed limit, it syncs to KV to tightly coordinate across edge isolates.
   3. **Mid-Quota Sampling**: When usage is $\ge 50\%$ of quota and has incremented by $\ge 25$ units (`KV_SYNC_SAMPLE_RATE = 25`), it syncs once.
   4. **Normal Usage Isolation**: Normal users operating comfortably below $50\%$ quota generate **zero KV writes** for rate limiting.
@@ -66,8 +66,9 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 ### 2.4. Video Validator & Path Sanitization (`video-validator.js` & `utils.js`)
 - **Strict Video ID Validation**: Rejects any `videoId` that fails `/^[a-zA-Z0-9_-]{11}$/`.
 - **Path Traversal Defense**: `sanitizeVideoId` strips invalid characters and rejects strings with directory traversal patterns (`..`, `/`, `\`).
-- Rejects requests for videos exceeding maximum durations:
+- **Duration Enforcement & Livestream Blocking**: Rejects requests for videos exceeding maximum durations:
   - Native captions (`innertube` / `supadata`): Max 3 hours (10,800s).
+  - Whisper AI transcription: Server-verified duration via YouTube metadata strictly overrides client parameters to prevent duration tampering (Free: $\le 600$s, Pro: $\le 1,200$s, Premium: $\le 2,700$s). Live broadcasts (`isLive: true`) are rejected immediately.
   - AI transcription (`gladia`): Max 10 mins (600s) for Guest/Free, 20 mins (1,200s) for Pro, 45 mins (2,700s) for Premium.
 - Validates language whitelist: `['ja', 'ko', 'zh', 'en']`.
 - Analyzes video title script using Unicode regex (e.g. rejects Cyrillic/Arabic titles when requesting Asian learning languages).

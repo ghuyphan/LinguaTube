@@ -24,7 +24,7 @@ import {
 } from '../data/transcript-r2.js';
 
 import { cleanTranscriptSegments, normalizeLanguageCode } from '../utils/transcript-utils.js';
-import { fetchYouTubeDuration, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
+import { fetchYouTubeDuration, fetchYouTubeVideoDetails, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig } from './diamond.service.js';
 
 const MAX_VIDEO_DURATION_SECONDS = 3 * 60 * 60; // 3 hours (native captions)
@@ -154,10 +154,19 @@ export class TranscriptService {
         const { db, r2, cache, waitUntil, env } = context;
         const { videoId, lang, body, clientId, user, diamondInfo, elapsed } = params;
 
-        // 1. Validate video length against user tier limit
-        let duration = await getVideoDuration(db, videoId) || body.duration;
+        // 1. Validate video length against user tier limit (CRITICAL: Prioritize server-verified duration)
+        let duration = await getVideoDuration(db, videoId);
         if (!duration) {
-            duration = await fetchYouTubeDuration(videoId);
+            const ytDetails = await fetchYouTubeVideoDetails(videoId);
+            if (ytDetails.isLive) {
+                throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
+            }
+            duration = ytDetails.duration;
+        }
+
+        // Only fall back to client duration if server-side scrape was completely unavailable
+        if (!duration && body.duration) {
+            duration = body.duration;
         }
 
         const tier = params.tier || this.diamondService.resolveTier(user);

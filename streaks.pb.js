@@ -252,9 +252,16 @@ routerAdd('GET', '/api/streaks/me', (e) => {
 
 // ============================================
 // WEBHOOK: Daily Maintenance (called by cron)
-// GET /api/streaks/daily-maintenance
-// ============================================
 routerAdd('GET', '/api/streaks/daily-maintenance', (e) => {
+    // Security check: require superuser authentication OR authorized secret header
+    const cronSecret = $os.getenv('CRON_SECRET') || $os.getenv('MAINTENANCE_KEY');
+    const authHeader = e.request?.header?.get('X-Maintenance-Secret') || e.request?.header?.get('X-Cron-Secret');
+    const isSuperuser = !!(e.hasSuperuserAuth?.() || e.admin || e.auth?.isSuperuser);
+
+    if (!isSuperuser && (!cronSecret || authHeader !== cronSecret)) {
+        return e.json(401, { error: 'Unauthorized: Admin authentication or valid cron secret required' });
+    }
+
     // Helper functions (must be inside handler for PocketBase scoping)
     function startOfDayUTC(date) {
         const d = new Date(date);

@@ -127,15 +127,18 @@ export async function consumeRateLimitUnits(cache, clientIP, config, units = 1) 
     const remaining = Math.max(0, config.max - mem.count);
 
     // Determine if we should sync to KV to preserve free tier quota (1,000 writes/day):
-    // 1. If limit exceeded (!allowed) -> sync immediately to block abusive clients across all edge isolates
-    // 2. If approaching limit (>= 80% quota) -> sync to keep isolates tightly coordinated
+    // 1. If limit exceeded (!allowed) -> sync on INITIAL breach, or throttled once every 60s
+    //    CRITICAL: Never sync on every blocked hit to prevent 429 floods from exhausting KV quota (Rule 2)
+    // 2. If approaching limit (>= 80% quota) -> sync to keep isolates tightly coordinated (throttled to 30s)
     // 3. If client has consumed >= 50% quota AND incremented by KV_SYNC_SAMPLE_RATE (25) units since last sync -> sync
     // Normal clients operating comfortably below 50% quota NEVER write to KV.
-    const approachingLimit = mem.count >= config.max * 0.8;
-    const midQuotaReached = mem.count >= config.max * 0.5;
+    const justBreached = !allowed && (mem.count - units <= config.max);
+    const blockedPeriodicSync = !allowed && (now - mem.lastKvSync >= 60 * 1000);
+    const approachingLimit = allowed && mem.count >= config.max * 0.8 && (now - mem.lastKvSync >= 30 * 1000);
+    const midQuotaReached = allowed && mem.count >= config.max * 0.5;
     const unitThresholdReached = (mem.count - mem.kvKnownCount) >= KV_SYNC_SAMPLE_RATE;
 
-    const shouldSyncKv = cache && (!allowed || approachingLimit || (midQuotaReached && unitThresholdReached));
+    const shouldSyncKv = cache && (justBreached || blockedPeriodicSync || approachingLimit || (midQuotaReached && unitThresholdReached));
 
     if (shouldSyncKv) {
         mem.lastKvSync = now;

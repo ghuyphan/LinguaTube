@@ -87,6 +87,17 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: batchValidation.error }, 400);
         }
 
+        // Validate individual string items to prevent memory exhaustion & upstream 414s
+        for (let i = 0; i < texts.length; i++) {
+            const t = texts[i];
+            if (typeof t !== 'string') {
+                return jsonResponse({ error: `Text at index ${i} must be a string` }, 400);
+            }
+            if (t.length > 1500) {
+                return jsonResponse({ error: `Text at index ${i} exceeds maximum length of 1500 characters` }, 400);
+            }
+        }
+
         // Extract unique non-empty texts to translate (deduplication)
         const uniqueTexts = Array.from(new Set(texts.map(t => t.trim()).filter(Boolean)));
         const consumeAmount = Math.max(1, uniqueTexts.length || 1);
