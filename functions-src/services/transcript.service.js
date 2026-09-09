@@ -26,10 +26,9 @@ import {
 } from '../data/transcript-r2.js';
 
 import { cleanTranscriptSegments, normalizeLanguageCode } from '../utils/transcript-utils.js';
-import { fetchYouTubeDuration, fetchYouTubeVideoDetails, resolveVideoChannelAvatar, getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
+import { fetchYouTubeVideoDetails, resolveVideoChannelAvatar, getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig } from './diamond.service.js';
 
-const MAX_VIDEO_DURATION_SECONDS = 3 * 60 * 60; // 3 hours (native captions)
 const MAX_AI_VIDEO_DURATION_SECONDS = 45 * 60;   // 45 minutes (maximum ceiling across any tier)
 
 // In-memory job map across warm Worker isolates to avoid touching Cloudflare KV writes (Rule 2)
@@ -176,8 +175,8 @@ export class TranscriptService {
      * Start an AI Transcription Job using Gladia
      */
     async startAIJob(context, params) {
-        const { db, r2, cache, waitUntil, env } = context;
-        const { videoId, lang, body, clientId, user, diamondInfo, elapsed } = params;
+        const { db, r2, waitUntil, env } = context;
+        const { videoId, lang, body, clientId, user, diamondInfo, availableLanguages } = params;
 
         // 1. Validate video length against user tier limit (CRITICAL: Prioritize server-verified duration)
         let duration = await getVideoDuration(db, videoId);

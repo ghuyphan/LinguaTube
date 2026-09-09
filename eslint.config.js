@@ -7,9 +7,50 @@ module.exports = tseslint.config(
     ignores: [
       'dist/**',
       'functions/**',
-      'functions-src/**',
       'public/**',
     ],
+  },
+  {
+    files: ['functions-src/**/*.js'],
+    extends: [eslint.configs.recommended],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      globals: {
+        console: 'readonly',
+        Response: 'readonly',
+        Request: 'readonly',
+        Headers: 'readonly',
+        URL: 'readonly',
+        URLSearchParams: 'readonly',
+        fetch: 'readonly',
+        crypto: 'readonly',
+        TextEncoder: 'readonly',
+        TextDecoder: 'readonly',
+        btoa: 'readonly',
+        atob: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+        caches: 'readonly',
+        Intl: 'readonly',
+        AbortController: 'readonly',
+        AbortSignal: 'readonly',
+        FormData: 'readonly',
+        Blob: 'readonly',
+        File: 'readonly',
+        process: 'readonly'
+      }
+    },
+    rules: {
+      'no-undef': 'error',
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      'no-empty': ['warn', { allowEmptyCatch: true }],
+      'no-useless-escape': 'warn',
+      'no-control-regex': 'off',
+      'no-misleading-character-class': 'off',
+    }
   },
   {
     files: ['src/**/*.ts'],

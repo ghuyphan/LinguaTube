@@ -240,9 +240,9 @@
     @if (subtitles.subtitles().length > 0) {
     <div class="subtitle-list" #subtitleList [class.quiz-obfuscated]="quiz.isActive()" (scroll)="onSubtitleListScroll()">
         @for (cue of subtitles.subtitles(); track cue.id; let i = $index) {
-        <button type="button" class="cue-item" [class.cue-item--active]="cue.id === subtitles.currentCue()?.id"
+        <button type="button" class="cue-item" [class.cue-item--active]="i === subtitles.currentCueIndex()"
             [class.cue-item--past]="i < subtitles.currentCueIndex()" [attr.data-cue-id]="cue.id"
-            [attr.aria-current]="cue.id === subtitles.currentCue()?.id ? 'true' : null"
+            [attr.aria-current]="i === subtitles.currentCueIndex() ? 'true' : null"
             (click)="seekToCue(cue)">
             <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
             <div class="cue-body">

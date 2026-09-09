@@ -1,6 +1,6 @@
 {
   "name": "lingua-tube",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "Voca - Learn Japanese, Chinese, Korean, and English from YouTube videos with interactive subtitles",
   "scripts": {
     "ng": "ng",
@@ -9,8 +9,8 @@
     "dev": "concurrently \"npm run server\" \"npm start\"",
     "build:functions": "node scripts/build-functions.js",
     "build": "npm run build:functions && ng build",
-    "lint": "eslint \"src/**/*.{ts,html}\"",
-    "lint:fix": "eslint \"src/**/*.{ts,html}\" --fix",
+    "lint": "eslint \"src/**/*.{ts,html}\" \"functions-src/**/*.js\"",
+    "lint:fix": "eslint \"src/**/*.{ts,html}\" \"functions-src/**/*.js\" --fix",
     "test:backend": "node --test tests/*.test.mjs",
     "test:ci": "npm run test:backend && ng test lingua-tube --configuration=ci",
     "watch": "ng build --watch --configuration development",

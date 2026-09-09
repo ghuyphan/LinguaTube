@@ -19,41 +19,36 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.0.29',
+    version: '1.0.30',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'On-Device Translation Priority: Dual subtitles leverage Chrome Built-in AI / W3C Translator API on device first for instant translation without network latency, with seamless cloud fallback',
-            'Dual Subtitle Self-Healing & Loading Fix: Resolved infinite loading on cached transcripts with fuzzy cue matching and automatic background recovery of missing subtitle lines',
-            'Accurate Native Transcript Discovery: Fixed false-negative transcript errors by normalizing regional language codes and preserving authentic alternate captions',
-            'Optimized AI Transcription: Upgraded Gladia pipeline to v2 pre-recorded endpoint, conserved edge KV quotas, and hardened translation queues against timeouts'
+            'Fixed Server Error 500: Resolved variable scope reference error in backend transcript orchestrator that caused server errors on video playback',
+            'Automatic Language Mismatch Detection: Accurately prompts learners with switch suggestions when authentic captions exist in an alternate language',
+            'Robust Backend Static Analysis: Integrated comprehensive AST undefined-variable validation and regression tests across all edge API functions'
         ],
         vi: [
-            'Ưu tiên dịch trực tiếp trên thiết bị: Phụ đề song ngữ tận dụng AI tích hợp trên trình duyệt (Chrome Built-in AI) giúp dịch tức thì không độ trễ, tự động chuyển về máy chủ khi cần',
-            'Tự sửa lỗi & chấm dứt tải vô hạn: Khắc phục triệt để lỗi quay tròn vô tận trên phụ đề có sẵn nhờ khớp thời gian thông minh và tự động dịch bù các câu còn thiếu',
-            'Nhận diện phụ đề gốc chính xác: Chuẩn hóa mã ngôn ngữ vùng miền và lưu giữ phụ đề gốc thay thế, khắc phục lỗi báo không lấy được phụ đề',
-            'Tối ưu hóa phiên âm AI: Nâng cấp luồng Gladia lên chuẩn v2 pre-recorded, tiết kiệm hạn ngạch KV Cloudflare và bảo vệ hàng đợi dịch trước nguy cơ quá thời gian chờ'
+            'Khắc phục lỗi máy chủ 500: Sửa triệt để lỗi tham chiếu phạm vi biến trong bộ điều phối phụ đề gây sự cố máy chủ khi phát video',
+            'Tự động gợi ý khi có phụ đề ngôn ngữ khác: Tự động phát hiện và gợi ý người học chuyển đổi ngôn ngữ khi video có sẵn phụ đề chuẩn ở ngôn ngữ khác',
+            'Kiểm thử tĩnh toàn diện: Tích hợp kiểm tra tự động biến chưa khai báo và bộ hồi quy cho toàn bộ các hàm xử lý API backend'
         ],
         ja: [
-            'デバイス内AI翻訳の優先適用：Chrome Built-in AI（端末内翻訳）を最優先で実行し、ネットワーク遅延のない即時翻訳を実現（非対応時はクラウドへ自動フォールバック）',
-            '二重字幕の自動修復と無限ローディング解消：タイムスタンプとテキストのあいまい一致により既存字幕の読み込み停止を解消し、未翻訳の行を視聴中に自動修復',
-            'ネイティブ字幕取得精度の向上：地域言語コードの正規化と代替字幕の保持により、「字幕を取得できません」という誤検知エラーを解消',
-            'AI文字起こしパイプラインの最適化：Gladia APIを最新のv2 pre-recordedへ移行し、エッジKVクォータの節約と翻訳キューのタイムアウト耐性を強化'
+            'サーバーエラー500の完全修正：動画再生時にサーバーエラーを引き起こしていたバックエンド字幕オーケストレーターのスコープ参照エラーを修正',
+            '利用可能な言語の自動検出と提案：学習対象言語と異なる言語で字幕が存在する場合に言語切り替えダイアログを正確に表示',
+            '静的解析テストの強化：全エッジAPI関数に対して未定義変数の自動AST検証と回帰テストを導入し品質を担保'
         ],
         ko: [
-            '기기 내 AI 번역 우선 실행: Chrome Built-in AI 번역 API를 온디바이스에서 최우선으로 실행하여 네트워크 지연 없이 즉각 번역 지원 (미지원 시 클라우드 자동 전환)',
-            '이중 자막 무한 로딩 해결 및 누락 자막 자동 복구: 타임스탬프 근접 매칭으로 캐시된 자막의 멈춤 현상을 해결하고, 재생 중 누락된 자막을 백그라운드에서 자동 보완',
-            '정확한 원본 자막 탐색: 지역 언어 코드 정규화 및 대체 언어 자막 보존을 통해 자막을 찾을 수 없다는 오류 해결',
-            'AI 음성 인식 파이프라인 최적화: Gladia API를 v2 pre-recorded 엔드포인트로 업그레이드하고 에지 KV 할당량을 절약하며 큐 지연 방지'
+            '서버 오류 500 해결: 동영상 재생 시 서버 오류를 유발했던 백엔드 자막 처리 함수의 변수 스코프 참조 오류를 완벽히 수정',
+            '대체 언어 자막 자동 감지 및 전환 제안: 학습 대상 언어와 다른 언어로 자막이 제공될 때 언어 전환 모달을 정확히 표시',
+            '백엔드 정적 분석 강화: 모든 에지 API 엔드포인트에 미선언 변수 AST 검증 및 회귀 테스트를 도입하여 런타임 안정성 보장'
         ],
         zh: [
-            '优先采用端侧设备AI翻译：优先调用浏览器内置Chrome Built-in AI翻译，实现零网络延迟的实时双语对照，并在不支持时无缝回退至云端',
-            '双语字幕无限加载修复与缺失行自愈：通过时间戳智能模糊匹配解决已缓存字幕无限转圈问题，并在播放过程中自动补全修复缺失的字幕行',
-            '原生字幕识别精准度提升：规范化各地区语言代码并完整保留多语言原生音轨，彻底解决误报无法获取字幕的问题',
-            'AI转写流水线性能调优：升级Gladia接口至v2 pre-recorded最新规范，大幅削减Cloudflare KV写配额消耗并增强队列抗超时能力'
+            '修复服务器500错误：彻底解决视频播放时因后端字幕调度器变量作用域引用错误导致的服务器异常',
+            '替代语言字幕智能识别与提示：当视频存在其他有效语言的原生字幕时，自动精准弹出语言切换建议',
+            '后端静态分析全面强化：为所有边缘API函数增加未定义变量AST自动化检验及回归测试，杜绝运行时异常'
         ]
     }
 };

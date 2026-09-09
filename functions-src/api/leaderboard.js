@@ -29,6 +29,7 @@ const MEM_LEADERBOARD_TTL_MS = 60 * 1000;
 
 export async function onRequestGet(context) {
     const { request, env } = context;
+    const db = env.VOCAB_DB || env.DB;
 
     try {
         const url = new URL(request.url);
@@ -43,7 +44,6 @@ export async function onRequestGet(context) {
         if (cached && Date.now() < cached.expiresAt) {
             topLearners = cached.data;
         } else {
-            const db = env.VOCAB_DB || env.DB;
             if (db) {
                 try {
                     let query = `

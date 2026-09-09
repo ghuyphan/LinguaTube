@@ -441,5 +441,110 @@ test('Security: Path traversal protection on dev server dual subtitles cache', a
   assert.equal(checkSafeCachePath('../../../../etc/passwd', 'ja', 'en'), false);
 });
 
+test('Static Analysis: No undefined variables in functions-src', async () => {
+  const { ESLint } = await import('eslint');
+  const eslint = new ESLint({
+    overrideConfigFile: true,
+    overrideConfig: [{
+      files: ['functions-src/**/*.js'],
+      languageOptions: {
+        ecmaVersion: 2022,
+        sourceType: 'module',
+        globals: {
+          console: 'readonly',
+          Response: 'readonly',
+          Request: 'readonly',
+          Headers: 'readonly',
+          URL: 'readonly',
+          URLSearchParams: 'readonly',
+          fetch: 'readonly',
+          crypto: 'readonly',
+          TextEncoder: 'readonly',
+          TextDecoder: 'readonly',
+          btoa: 'readonly',
+          atob: 'readonly',
+          setTimeout: 'readonly',
+          clearTimeout: 'readonly',
+          setInterval: 'readonly',
+          clearInterval: 'readonly',
+          caches: 'readonly',
+          Intl: 'readonly',
+          Array: 'readonly',
+          Object: 'readonly',
+          String: 'readonly',
+          Number: 'readonly',
+          Boolean: 'readonly',
+          Date: 'readonly',
+          RegExp: 'readonly',
+          Error: 'readonly',
+          TypeError: 'readonly',
+          RangeError: 'readonly',
+          Map: 'readonly',
+          Set: 'readonly',
+          Promise: 'readonly',
+          JSON: 'readonly',
+          Math: 'readonly',
+          Infinity: 'readonly',
+          NaN: 'readonly',
+          undefined: 'readonly',
+          parseInt: 'readonly',
+          parseFloat: 'readonly',
+          isNaN: 'readonly',
+          isFinite: 'readonly',
+          encodeURIComponent: 'readonly',
+          decodeURIComponent: 'readonly',
+          encodeURI: 'readonly',
+          decodeURI: 'readonly',
+          Uint8Array: 'readonly',
+          Uint16Array: 'readonly',
+          Uint32Array: 'readonly',
+          Int8Array: 'readonly',
+          Int16Array: 'readonly',
+          Int32Array: 'readonly',
+          Float32Array: 'readonly',
+          Float64Array: 'readonly',
+          ArrayBuffer: 'readonly',
+          DataView: 'readonly',
+          AbortController: 'readonly',
+          AbortSignal: 'readonly',
+          FormData: 'readonly',
+          Blob: 'readonly',
+          File: 'readonly'
+        }
+      },
+      rules: {
+        'no-undef': 'error'
+      }
+    }]
+  });
 
+  const results = await eslint.lintFiles(['functions-src/**/*.js']);
+  const errors = [];
+  for (const res of results) {
+    for (const msg of res.messages) {
+      errors.push(`${res.filePath}:${msg.line}:${msg.column} - ${msg.message}`);
+    }
+  }
+  assert.deepEqual(errors, [], `Found undefined variable errors in functions-src:\n${errors.join('\n')}`);
+});
 
+test('Regression: POST /api/transcript does not throw ReferenceError or 500 for normal video requests', async () => {
+  const { onRequestPost } = await import('../functions-src/api/transcript.js');
+  const req = new Request('http://localhost/api/transcript', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ videoId: '-moW9jvvMr4', lang: 'ja' })
+  });
+  const env = {
+    ENVIRONMENT: 'development',
+    VOCAB_DB: null,
+    TRANSCRIPT_STORAGE: null,
+    TRANSCRIPT_CACHE: null,
+    SUPADATA_API_KEY: 'test_key'
+  };
+
+  const res = await onRequestPost({ request: req, env, waitUntil: () => {} });
+  assert.notEqual(res.status, 500, 'POST /api/transcript should never throw unhandled 500 Internal Server Error');
+  const body = await res.json();
+  assert.notEqual(body.error, 'Internal server error');
+});

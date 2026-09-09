@@ -405,6 +405,14 @@ export class SubtitleDisplayComponent implements OnDestroy {
       const containerHeight = container.clientHeight;
       const elementTop = activeElement.offsetTop;
       const elementHeight = activeElement.offsetHeight;
+      const currentScroll = container.scrollTop;
+
+      // Only smooth scroll if active element is outside or near the edges of the list viewport
+      const isComfortablyVisible = (
+        elementTop >= currentScroll + 24 &&
+        elementTop + elementHeight <= currentScroll + containerHeight - 24
+      );
+      if (isComfortablyVisible) return;
 
       const targetScrollTop = elementTop - (containerHeight / 2) + (elementHeight / 2);
 

@@ -86,7 +86,7 @@ export function sanitizeWord(word) {
 
     return word
         .replace(/[\x00-\x1F\x7F]/g, '') // Remove control characters
-        .replace(/[<>\"\'\\]/g, '')       // Remove potential injection chars
+        .replace(/[<>"'\\]/g, '')       // Remove potential injection chars
         .trim()
         .slice(0, 100); // Limit length
 }

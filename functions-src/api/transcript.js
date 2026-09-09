@@ -82,11 +82,11 @@ export async function onRequestPost(context) {
         const authResult = await validateAuthToken(request, env);
         const clientId = getClientIdentifier(request, authResult);
         const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
+        const maxAiDuration = tier === 'premium' ? 45 * 60 : (tier === 'pro' ? 20 * 60 : 10 * 60);
 
         // Validation (Tier duration limits: Free/Anonymous <= 10m, Pro <= 20m, Premium <= 45m)
         // Skip heavy YouTube scraping on recurring poll requests
         if (!resultUrl) {
-            const maxAiDuration = tier === 'premium' ? 45 * 60 : (tier === 'pro' ? 20 * 60 : 10 * 60);
             const validationError = await validateVideoRequest(cleanVideoId, lang, duration, preferAI ? 'whisper' : 'innertube', preferAI ? maxAiDuration : null);
             if (validationError) {
                 return jsonResponse({

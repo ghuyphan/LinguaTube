@@ -391,8 +391,9 @@ export class SubtitleService {
     // Only update if we found a valid index or if we genuinely want to clear it (index -1)
     // AND we are not in a "transition" state where time might be 0 momentarily.
     if (index !== -1 || currentTime > 0.5) {
+      const previousIndex = this.currentCueIndex();
       this.currentCueIndex.set(index);
-      if (index !== -1) {
+      if (index !== -1 && index !== previousIndex) {
         this.lazyLoadUpcomingCuesIfNeeded(index);
       }
     }

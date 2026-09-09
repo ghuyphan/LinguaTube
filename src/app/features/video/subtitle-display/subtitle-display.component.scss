@@ -197,15 +197,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: safe center;
+    justify-content: center;
     padding: var(--space-xs) 0;
-    gap: 6px;
+    gap: 4px;
 }
 
-/* FIX 3: Removed transitions from subtitle-text to prevent flicker */
+/* FIX: Stabilized vertical layout - min-height eliminates cue-to-cue layout shifts */
 .subtitle-text {
     font-size: 1.125rem;
     line-height: 2.1;
+    min-height: calc(2.1 * 1.6em);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -1130,7 +1135,7 @@ ruby rt {
     height: auto;
     position: relative;
     content-visibility: auto;
-    contain-intrinsic-size: auto 54px;
+    contain-intrinsic-size: auto 64px;
 }
 
 /* No more scale transform - use border & opacity for visual hierarchy */
@@ -1184,6 +1189,8 @@ ruby rt {
 .cue-time {
     font-family: var(--font-mono);
     font-size: 0.75rem;
+    line-height: 1.4;
+    padding-top: 1px;
     color: var(--text-muted);
     min-width: 2.75rem;
     flex-shrink: 0;
@@ -1199,7 +1206,8 @@ ruby rt {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    justify-content: center;
+    gap: 3px;
 }
 
 .cue-text {

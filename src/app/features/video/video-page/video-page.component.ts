@@ -917,42 +917,47 @@ export class VideoPageComponent implements OnInit {
         next: (cues) => {
           if (cues.length > 0) {
             this.handleCaptionsSuccess(cues, lang);
+          } else {
+            this.checkLanguageMismatch();
           }
         },
         error: (err) => {
           console.log('Auto-caption fetch failed:', err);
-
-          // Handle NO_NATIVE case where other languages might be available
-          if (this.transcript.error() === 'NO_NATIVE' && !this.skipNextMismatchDialog) {
-            const availableNative = this.transcript.availableLanguages().native;
-
-            if (availableNative && availableNative.length > 0) {
-              // Find a preferred language to suggest
-              const preferred = ['ja', 'zh', 'ko', 'en'];
-              const requested = this.settings.settings().language;
-
-              // normalize function to match simpler codes
-              const normalize = (l: string) => l.split('-')[0].toLowerCase();
-
-              let suggestion = availableNative.find(l => preferred.includes(normalize(l)));
-              if (!suggestion) suggestion = availableNative[0]; // fallback to first available
-
-              if (suggestion) {
-                const suggestionSimple = normalize(suggestion);
-
-                // Only show if it's different from what we asked for
-                if (normalize(requested) !== suggestionSimple) {
-                  this.mismatchDetectedLang.set(suggestionSimple);
-                  this.showLanguageMismatchDialog.set(true);
-                }
-              }
-            }
-          }
-
-          // Always reset the skip flag after an attempt
-          this.skipNextMismatchDialog = false;
+          this.checkLanguageMismatch();
         }
       });
+  }
+
+  private checkLanguageMismatch(): void {
+    // Handle NO_NATIVE case where other languages might be available
+    if (this.transcript.error() === 'NO_NATIVE' && !this.skipNextMismatchDialog) {
+      const availableNative = this.transcript.availableLanguages().native;
+
+      if (availableNative && availableNative.length > 0) {
+        // Find a preferred language to suggest
+        const preferred = ['ja', 'zh', 'ko', 'en'];
+        const requested = this.settings.settings().language;
+
+        // normalize function to match simpler codes
+        const normalize = (l: string) => l.split('-')[0].toLowerCase();
+
+        let suggestion = availableNative.find(l => preferred.includes(normalize(l)));
+        if (!suggestion) suggestion = availableNative[0]; // fallback to first available
+
+        if (suggestion) {
+          const suggestionSimple = normalize(suggestion);
+
+          // Only show if it's different from what we asked for
+          if (normalize(requested) !== suggestionSimple) {
+            this.mismatchDetectedLang.set(suggestionSimple);
+            this.showLanguageMismatchDialog.set(true);
+          }
+        }
+      }
+    }
+
+    // Always reset the skip flag after an attempt
+    this.skipNextMismatchDialog = false;
   }
 
   private handleCaptionsSuccess(cues: SubtitleCue[], requestedLang: string) {
