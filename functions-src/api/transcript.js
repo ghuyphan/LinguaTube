@@ -201,6 +201,7 @@ export async function onRequestPost(context) {
                 return jsonResponse({
                     success: true, videoId: cleanVideoId, language: responseLang, requestedLanguage: lang, segments: cached.segments,
                     source: 'cache', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [responseLang], whisperAvailable: diamondInfo.diamonds > 0,
+                    levels: knownInfo?.levels || {},
                     ...diamondInfo, timing: elapsed()
                 }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });
             }
@@ -234,6 +235,7 @@ export async function onRequestPost(context) {
                     success: true, videoId: cleanVideoId, language: actualLang, requestedLanguage: lang, segments: nativeResult.segments,
                     source: 'native', sourceDetail: nativeResult.source, availableLanguages, subLanguages: updatedInfo?.subLanguages || [actualLang], whisperAvailable: diamondInfo.diamonds > 0,
                     languageMismatch: nativeResult.languageMismatch || false,
+                    levels: updatedInfo?.levels || {},
                     ...diamondInfo, timing: elapsed()
                 }, 200, { 'Cache-Control': CACHE_CONTROL.NATIVE });
             }

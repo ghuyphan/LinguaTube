@@ -93,7 +93,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   }
   ```
 - **Lifecycle & Fallback Chain**:
-  1. **R2 Multi-Language Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known languages in R2 for that video as fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant Gladia submissions and saving user diamonds.
+  1. **R2 Multi-Language Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known languages in R2 for that video as fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant Gladia submissions and saving user diamonds. Also returns `levels` metadata directly from D1 to enable instant 0ms proficiency badge rendering on the client.
   2. **Native Captions Fetch (Supadata)**: If `preferAI: false`, queries Supadata native captions. Regional language tags (e.g. `ja-JP`, `zh-Hans`, `en-US`) are normalized to standard ISO base codes (`ja`, `zh`, `en`). If native captions exist in an alternate authentic language, the captions are saved to R2 under `actualLang` and returned with `languageMismatch: true`, allowing the client to display the authentic subtitles rather than a false-negative "cannot get transcript" error.
   3. **Negative Cache Check**: Negative caching (`markNoTranscript`) in D1 `no_transcript_cache` is ONLY recorded when a video has zero available caption tracks across all languages.
   4. **AI Generation (Gladia V2 Pre-Recorded) - Non-Blocking Client-Driven Polling**:
@@ -148,8 +148,8 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **Dual In-Memory + Edge Caching**:
   - **In-Memory LRU Cache (`memPosDictCache`)**: Warm Worker isolates maintain up to 1,000 positive dictionary lookup entries with a 1-hour TTL. Frequently recurring words (particles, high-frequency verbs) return in $<0.1$ms with zero KV reads or writes (`X-Cache: HIT-MEMORY`).
   - **In-Memory Negative Cache (`memNegDictCache`)**: Missing words are cached in an isolate `Set` to prevent repeated upstream scraping calls.
-  - **Cloudflare Edge CDN**: `Cache-Control: public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400`.
-  - **Cloudflare KV**: `CacheManager` provides 7-day persistence for long-tail lookups.
+  - **Cloudflare Edge CDN**: `Cache-Control: public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400`. Cloudflare's global edge network caches positive lookups in 300+ edge data centers with unlimited free reads/writes.
+  - **KV Free-Tier Write Protection (Rule 2)**: `dict.js` passes `skipKvWrite: true` to `CacheManager`. Individual word lookups never burn daily Cloudflare KV write quotas (preserving KV for rare user payments and diamond state). Existing KV entries remain readable as a fast fallback.
 
 ---
 

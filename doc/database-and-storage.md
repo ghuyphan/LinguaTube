@@ -205,13 +205,13 @@ Namespace binding: `TRANSCRIPT_CACHE`
 | :--- | :--- | :--- | :--- |
 | `ratelimit:{prefix}:{clientId}` | JSON `{ count, resetAt }` | Dynamic (window) | Distributed rate limiting (Smart sync: only at $\ge 50\%$, $\ge 80\%$, or `!allowed`) |
 | `trbatch:v1:{source}:{target}:{hash}` | JSON `{ translations: string[] }` | 7 Days | Read fallback (New batches use in-memory `memBatchCache` + R2 write-back) |
-| `tokens:v5:{lang}:{videoId}:{textsHash}` | JSON `{ tokens: Token[] }` | 30 Days | Precomputed Kuromoji / Intl tokens (with warm in-memory cache) |
-| `dict:v4:{from}:{to}:{word}` | JSON `DictionaryEntry[]` | 7 Days | Multi-source dictionary lookups (with warm in-memory `memPosDictCache`) |
-| `keys:cooldown:{provider}:{key}` | String `timestamp` | 1 Hour | API key rotation rate-limit cooldown |
+| `batch_tokens:{lang}:{videoId}` | JSON `{ tokens: Token[][] }` | 30 Days | Video batch tokens (1 write per video; micro/single tokens use zero KV writes) |
+| `dict:v4:{from}:{to}:{word}` | JSON `DictionaryEntry[]` | 7 Days | Read fallback (New lookups cached via Cloudflare Edge CDN `s-maxage=604800` + RAM with zero KV writes) |
+| `keys:cooldown:{provider}:{key}` | String `timestamp` | 5 Minutes | API key cooldown (with in-memory `memKeyCooldowns` for zero KV reads on healthy state) |
 | `order:{orderCode}` | JSON `{ orderCode, userId, planId, tier, amount, status }` | 15 Minutes | Pending payOS VietQR order metadata |
 | `order_processed:{orderCode}` | String `'1'` | 30 Days | Webhook processing idempotency guard |
 
-> **KV Quota Optimization Invariant (Rule 2)**: Cloudflare KV free tier limits write operations to **1,000 writes/day**. Video metadata (`video-info`) and difficulty levels (`levels`) are stored exclusively in **Cloudflare D1** (100,000 writes/day) rather than KV. Full dual-subtitle transcripts are persisted to **Cloudflare R2** (33,000 writes/day). Normal rate-limiting checks operate in-memory and generate zero KV writes unless a client approaches their quota limit.
+> **KV Quota Optimization Invariant (Rule 2)**: Cloudflare KV free tier limits write operations to **1,000 writes/day**. Video metadata (`video-info`) and difficulty levels (`levels`) are stored exclusively in **Cloudflare D1** (100,000 writes/day) rather than KV. Full dual-subtitle transcripts are persisted to **Cloudflare R2** (unlimited writes/reads). Dictionary lookups are cached at the **Cloudflare Edge CDN** and in-memory, completely bypassing KV writes. Normal rate-limiting checks operate in-memory and generate zero KV writes unless a client approaches their quota limit. API key rotator uses in-memory cooldown maps to eliminate redundant KV reads on every video load.
 
 ---
 

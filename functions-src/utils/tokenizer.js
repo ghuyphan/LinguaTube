@@ -139,14 +139,14 @@ export function tokenizeKoreanChinese(text, lang) {
                     if (py !== token.surface) {
                         token.pinyin = py;
                     }
-                } catch (e) { }
+                } catch { }
             }
 
             // Add Korean Romanization
             if (lang === 'ko') {
                 try {
                     token.romanization = romanizeKorean(token.surface);
-                } catch (e) { }
+                } catch { }
             }
 
             return token;

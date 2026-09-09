@@ -31,6 +31,7 @@ interface TranscriptResponse {
     ai: string[];
   };
   subLanguages?: string[];
+  levels?: Record<string, string>;
   whisperAvailable: boolean;
   // Diamond system
   diamonds?: number;
@@ -100,6 +101,9 @@ export class TranscriptService {
 
   /** Verified server subtitle languages (sub_languages in D1/R2) */
   readonly subLanguages = signal<string[]>([]);
+
+  /** Verified proficiency levels from D1 server (e.g. { ja: 'JLPT N4' }) */
+  readonly serverLevels = signal<Record<string, string>>({});
 
   /** Fallback info when server returned different language than requested */
   readonly fallbackInfo = signal<{ requested: string; returned: string } | null>(null);
@@ -348,6 +352,7 @@ export class TranscriptService {
     this.state.set({ status: 'idle' });
     this.availableLanguages.set({ native: [], ai: [] });
     this.subLanguages.set([]);
+    this.serverLevels.set({});
     this.fallbackInfo.set(null);
     this.pendingRequests.clear();
   }
@@ -515,6 +520,11 @@ export class TranscriptService {
       this.subLanguages.set([response.language.split('-')[0].toLowerCase()]);
     }
 
+    // Update server-verified proficiency levels if returned
+    if (response.levels && typeof response.levels === 'object') {
+      this.serverLevels.set(response.levels);
+    }
+
     // Update diamond info
     if (response.diamonds !== undefined) {
       this.diamonds.set(response.diamonds);
@@ -578,14 +588,74 @@ export class TranscriptService {
   }
 
   /**
-   * Convert segments to SubtitleCue with sticky timing
+   * Intelligently split overly long run-on speech segments into natural sentence cues
+   */
+  private splitRunOnSegment(segment: TranscriptSegment): TranscriptSegment[] {
+    const text = segment.text?.trim() || '';
+    if (!text || segment.duration < 4.5) {
+      return [segment];
+    }
+
+    // Check if text is long enough to warrant splitting (CJK threshold 40, Latin/other 75)
+    const isCJK = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\uac00-\ud7af]/.test(text);
+    const threshold = isCJK ? 40 : 75;
+    if (text.length <= threshold) {
+      return [segment];
+    }
+
+    // Attempt sentence boundary split
+    let parts: string[] = [];
+    if (isCJK) {
+      // Split on Japanese/Chinese full stops, exclamations, question marks, and newlines
+      parts = text.split(/(?<=[。！？!?\n])\s*/).map(p => p.trim()).filter(Boolean);
+    } else {
+      // Split on English sentence terminators followed by whitespace or newlines
+      parts = text.split(/(?<=[.!?\n])\s+/).map(p => p.trim()).filter(Boolean);
+    }
+
+    if (parts.length <= 1) {
+      return [segment];
+    }
+
+    // Calculate proportional duration for each sub-cue based on character length
+    const totalChars = parts.reduce((sum, p) => sum + p.length, 0);
+    if (totalChars === 0) return [segment];
+
+    const results: TranscriptSegment[] = [];
+    let currentStart = segment.start;
+
+    for (let i = 0; i < parts.length; i++) {
+      const part = parts[i];
+      const partRatio = part.length / totalChars;
+      const partDuration = Math.max(MIN_CUE_DURATION, Math.round((segment.duration * partRatio) * 100) / 100);
+
+      results.push({
+        text: part,
+        start: currentStart,
+        duration: partDuration
+      });
+
+      currentStart += partDuration;
+    }
+
+    return results;
+  }
+
+  /**
+   * Convert segments to SubtitleCue with sticky timing and sentence boundary handling
    */
   private convertToSubtitleCues(segments: TranscriptSegment[]): SubtitleCue[] {
-    return segments.map((segment, index) => {
+    // Flatten segments by splitting run-on sentences if any exist
+    const normalizedSegments: TranscriptSegment[] = [];
+    for (const seg of segments) {
+      normalizedSegments.push(...this.splitRunOnSegment(seg));
+    }
+
+    return normalizedSegments.map((segment, index) => {
       let endTime: number;
 
-      if (index < segments.length - 1) {
-        const nextStart = segments[index + 1].start;
+      if (index < normalizedSegments.length - 1) {
+        const nextStart = normalizedSegments[index + 1].start;
         const maxEnd = segment.start + MAX_CUE_DURATION;
         endTime = Math.min(nextStart, maxEnd);
       } else {

@@ -51,9 +51,6 @@ function setInMemCache(source, target, text, translation) {
 const memBatchCache = new Map();
 const MAX_MEM_BATCHES = 200;
 
-// Cache configuration (7 days)
-const CACHE_TTL = 7 * 24 * 60 * 60;
-
 export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
 }

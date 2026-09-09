@@ -1,8 +1,6 @@
 import { getJapaneseRomaji } from './japanese-romaji.js';
 import { pinyin } from 'pinyin-pro';
 
-const HTML_TAG_REGEX = /<[^>]+>/g;
-
 /**
  * Unified Dictionary Parsers (Cloudflare Function)
  * Parser functions for various dictionary API sources

@@ -373,7 +373,7 @@ export class DiamondService {
         try {
             const raw = await this.cacheManager.kv.get(cacheKey);
             if (raw) return JSON.parse(raw).l;
-        } catch (e) { }
+        } catch { }
         return null;
     }
 

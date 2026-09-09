@@ -46,7 +46,7 @@ export class DictionaryService {
             if (direct?.entries?.length > 0) {
                 return { entries: direct.entries, source: direct.source };
             }
-        } catch (e) {
+        } catch {
             // Direct failed, silently fall through to English fallback
         }
 
@@ -65,7 +65,7 @@ export class DictionaryService {
                 }));
                 return { entries: fallbackEntries, source: `${english.source}+raw` };
             }
-        } catch (e) {
+        } catch {
             // English failed
         }
 

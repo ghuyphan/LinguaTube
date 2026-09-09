@@ -53,7 +53,7 @@ export class SupadataProvider {
                             if (retryResult) {
                                 return retryResult;
                             }
-                        } catch (retryError) {
+                        } catch {
                             // Retry failed
                         }
                     }

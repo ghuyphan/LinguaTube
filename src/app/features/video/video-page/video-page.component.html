@@ -240,24 +240,14 @@
 
             @if (homeTab() !== 'playlists') {
             <!-- Infinite Scroll Sentinel Element -->
+            @if (hasMoreVideos()) {
             <div #scrollSentinel class="feed-sentinel"></div>
+            }
 
-            <!-- Loading More Skeleton Cards -->
+            <!-- Infinite Scroll Loading Spinner -->
             @if (isLoadingMore()) {
-            <div class="yt-video-grid yt-video-grid--loading-more">
-                @for (_ of [1, 2, 3, 4]; track $index) {
-                <div class="yt-video-card yt-video-card--skeleton">
-                    <div class="yt-video-card__thumbnail"></div>
-                    <div class="yt-video-card__details">
-                        <div class="yt-skeleton-avatar"></div>
-                        <div class="yt-skeleton-meta">
-                            <div class="skeleton-line skeleton-line--title"></div>
-                            <div class="skeleton-line skeleton-line--subtitle"></div>
-                            <div class="skeleton-line skeleton-line--badge"></div>
-                        </div>
-                    </div>
-                </div>
-                }
+            <div class="feed-loading-more" role="status" [attr.aria-label]="i18n.t('common.loading')">
+                <div class="spinner spinner--lg"></div>
             </div>
             }
             }

@@ -21,6 +21,7 @@ export class CacheManager {
         this.kv = kv;
         this.defaultTtl = options.defaultTtl || 86400; // 24 hours
         this.STALE_TTL = 24 * 60 * 60; // 24 hours stale period
+        this.skipKvWrite = Boolean(options.skipKvWrite);
     }
 
     /**
@@ -33,13 +34,15 @@ export class CacheManager {
      * @param {number} [options.ttl] - Override TTL in seconds
      * @param {boolean} [options.forceRefresh=false] - Bypass cache and force a new fetch
      * @param {number} [options.staleTtl] - How long to serve stale data while revalidating
+     * @param {boolean} [options.skipKvWrite=false] - Skip writing to KV to preserve write quota
      * @returns {Promise<{data: any, cached: boolean, stale: boolean}>}
      */
     async getOrFetch(context, key, fetchFn, options = {}) {
         const {
             ttl = this.defaultTtl,
             forceRefresh = false,
-            staleTtl = this.STALE_TTL
+            staleTtl = this.STALE_TTL,
+            skipKvWrite = this.skipKvWrite
         } = options;
 
         // 1. Fast-path: Check warm in-memory cache (0 KV ops, < 0.1ms)
@@ -76,7 +79,7 @@ export class CacheManager {
                     // Serve immediately, fetch new in background
                     if (age < parsed.ttl + staleTtl) {
                         context.waitUntil(
-                            this._refreshAndSet(key, fetchFn, ttl)
+                            this._refreshAndSet(key, fetchFn, ttl, skipKvWrite)
                                 .catch(err => console.error(`[CacheManager] Background refresh failed for ${key}:`, err))
                         );
                         return { data: parsed.data, cached: true, stale: true };
@@ -93,11 +96,18 @@ export class CacheManager {
         // Cache miss or force refresh
         const data = await fetchFn();
 
-        if (this.kv && data !== null && data !== undefined) {
+        if (this.kv && !skipKvWrite && data !== null && data !== undefined) {
             context.waitUntil(
                 this.set(key, data, ttl)
                     .catch(err => console.error(`[CacheManager] KV Write Error for ${key}:`, err))
             );
+        } else if (data !== null && data !== undefined) {
+            // Still sync to warm in-memory cache across requests in this isolate
+            if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
+                const oldest = memCache.keys().next().value;
+                if (oldest) memCache.delete(oldest);
+            }
+            memCache.set(key, { data, timestamp: Date.now(), ttl });
         }
 
         return { data, cached: false, stale: false };
@@ -106,10 +116,18 @@ export class CacheManager {
     /**
      * Internally wrap fetch and set to KV
      */
-    async _refreshAndSet(key, fetchFn, ttl) {
+    async _refreshAndSet(key, fetchFn, ttl, skipKvWrite = this.skipKvWrite) {
         const data = await fetchFn();
         if (data !== null && data !== undefined) {
-            await this.set(key, data, ttl);
+            if (!skipKvWrite) {
+                await this.set(key, data, ttl);
+            } else {
+                if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
+                    const oldest = memCache.keys().next().value;
+                    if (oldest) memCache.delete(oldest);
+                }
+                memCache.set(key, { data, timestamp: Date.now(), ttl });
+            }
         }
     }
 

@@ -140,7 +140,7 @@ export async function onRequest(context) {
                 } else if (cached) {
                     console.log(`[Tokenize Batch] Cache mismatch for ${videoId} (expected ${texts.length}, got ${cached.tokens?.length})`);
                 }
-            } catch (e) {
+            } catch {
                 // Cache read failed, continue
             }
         }

@@ -9,10 +9,10 @@
  */
 
 const COOLDOWN_TTL = 300; // 5 minutes cooldown for failed keys
-const COUNTER_TTL = 3600; // 1 hour for rotation counter
 
-// In-memory counter per worker isolate to avoid consuming Cloudflare KV write quotas
+// In-memory counter & cooldowns per worker isolate to avoid consuming Cloudflare KV quotas (Rule 2)
 const memKeyIndices = new Map();
+const memKeyCooldowns = new Map(); // cooldownKey -> expiresAt
 
 /**
  * Get the next available API key using round-robin rotation
@@ -62,10 +62,13 @@ export async function getNextApiKey(cache, prefix, keys) {
  * @param {number} cooldownSeconds - Optional custom cooldown duration
  */
 export async function markKeyRateLimited(cache, prefix, key, cooldownSeconds = COOLDOWN_TTL) {
-    if (!cache || !key) return;
+    if (!key) return;
 
     const keyHash = hashKey(key);
     const cooldownKey = `${prefix}:cooldown:${keyHash}`;
+    memKeyCooldowns.set(cooldownKey, Date.now() + cooldownSeconds * 1000);
+
+    if (!cache) return;
 
     try {
         await cache.put(cooldownKey, Date.now().toString(), {
@@ -78,17 +81,36 @@ export async function markKeyRateLimited(cache, prefix, key, cooldownSeconds = C
 }
 
 /**
- * Check if a key is currently in cooldown
+ * Check if a key is currently in cooldown (In-memory first, zero KV reads when healthy)
  */
 async function isKeyCoolingDown(cache, prefix, key) {
-    if (!cache || !key) return false;
+    if (!key) return false;
 
     const keyHash = hashKey(key);
     const cooldownKey = `${prefix}:cooldown:${keyHash}`;
+    const now = Date.now();
+
+    // 1. Fast in-memory check (0 KV ops)
+    const memExpiry = memKeyCooldowns.get(cooldownKey);
+    if (memExpiry) {
+        if (now < memExpiry) {
+            return true;
+        }
+        memKeyCooldowns.delete(cooldownKey);
+    }
+
+    // 2. If no cooldowns recorded across the isolate, healthy by default (0 KV reads)
+    if (!cache || memKeyCooldowns.size === 0) {
+        return false;
+    }
 
     try {
         const value = await cache.get(cooldownKey);
-        return !!value;
+        if (value) {
+            memKeyCooldowns.set(cooldownKey, now + 60 * 1000);
+            return true;
+        }
+        return false;
     } catch {
         return false;
     }

@@ -61,6 +61,7 @@ The video player settings popover (`video-player.component.html`) provides dedic
 - **Dual Subtitles**: Target language selection with language flags and checkmarks.
 - **Reading Display (Furigana / Pinyin / Romanization)**: Dedicated sub-panel allowing instant switching between Native (Off), Annotated Reading (Furigana for JA, Pinyin for ZH, Romanization for KO), and Romaji (for JA) with active checkmarks and typographic script glyph badges.
 - **Grammar Highlights**: Dedicated sub-panel allowing clean On / Off toggling with active checkmarks.
+- **Fullscreen-Adaptive Video Actions**: Quick actions like "Share video" and "Save to playlist" are automatically omitted in standard non-fullscreen view (where external action buttons already exist in the video header) and cleanly rendered inside the settings menu exclusively when in fullscreen mode.
 - **Ergonomic Submenu Transitions**: All sub-panels share consistent back header buttons (`chevron-left`), sub-panel routing (`playerSettingsView`), and dynamically animated container heights via `SmoothHeightAnimator`.
 
 ---
@@ -156,8 +157,10 @@ graph TD
   - **Tier 0 (On-Device Hardware Translation)**: If the client browser supports Chrome Built-in AI / W3C `Translator` API (`self.Translator`, `self.translation`, or `self.ai.translator`), translations run entirely on-device with zero network latency, instant bilingual cue availability, and complete user privacy.
   - **Tier 1 (IndexedDB Local)**: Checks client IndexedDB (`lingua-tube-cache`) first for instant 0ms offline-ready bilingual subtitles.
   - **Tier 2 (Cloudflare R2 Edge)**: Checks server/R2 cache (`onlyCache: true`) without requiring segment payloads. If present, returns full bilingual transcript in ~50ms.
-  - **Tier 3 (JIT Rolling Window Stream)**: On cache miss or fallback from on-device translation, immediately translates upcoming cues in batches of 50 with a 25-cue lookahead buffer via direct edge Google GTX (~150ms-1.5s vs 7s+ on dead proxies) so learners experience near-instant playback response without waiting for full-video translation.
-  - On user seeks or clicks in the subtitle list, any stale in-flight batch is automatically cancelled and the seek position's cues are translated immediately.
+  - **Tier 3 (JIT Rolling Window Stream with Seek Preemption)**: On cache miss or fallback from on-device translation, immediately translates upcoming cues in batches of 60 with a 40-cue lookahead buffer via direct edge Google GTX (~150ms-1.5s vs 7s+ on dead proxies) with interactive seek preemption. If the user skips or seeks in the video, non-essential background requests are cancelled immediately to deliver instantaneous translations for the new playhead.
+  - **100% Full-Transcript Background Streaming**: Instead of stalling after the initial window, `SubtitleService` continuously streams and translates remaining cues across the entire video in gentle, staggered background batches (600ms stagger) until 100% of the video's transcript is translated and stored in local IndexedDB and Cloudflare R2 crowd-cache.
+  - **Run-On Utterance Splitting**: Captions with excessively long durations (>4.5s) and dense characters (>40 CJK or >75 Western chars) are automatically decomposed at natural punctuation delimiters into well-proportioned sub-cues with mathematically interpolated timestamps.
+  - **Adaptive Subtitle Container Display**: Responsive subtitle boxes dynamically scale their height from 11rem to 16rem with `word-break: break-word` and smooth scrolling to accommodate multi-line ruby annotations and dual translation text without clipping.
 - **Dual Subtitle Self-Healing & Fuzzy Proximity Alignment**:
   - Cues are mapped to cached bilingual segments via timestamp proximity ($\pm 0.8$s) and text equality rather than brittle array index positions.
   - If a cached dual subtitle transcript has partial coverage ($<80\%$) or contains missing cues, the client automatically triggers background translation of missing lines during playback without causing infinite loading spinners.
@@ -185,11 +188,13 @@ graph TD
 - **English**: CEFR A1 (Beginner) $\rightarrow$ CEFR C2 (Mastery)
 
 ### Cascading Hybrid Assessment Pipeline:
-1. **Discovery Time (Server / D1 Fast-Path)**:
-   - When videos are fetched or indexed via `/api/video-info`, regex heuristics scan title and channel text for standard exam codes (`JLPT N3`, `HSK 2`, `TOPIK 4`, `CEFR B2`) as well as native learning keywords (`初級`, `中級`, `上級`, `초급`, `중급`, `고급`, `初级`, `高级`, `Beginner`, `Intermediate`, `Advanced`).
-   - Stored in Cloudflare D1 `video_languages.levels` (`{ ja: "JLPT N4" }`) with zero KV writes. Provides instant badges in recommendation feeds and playlists before subtitles are downloaded.
-2. **Playback Time (Client Deep Linguistic Evaluation)**:
-   - Evaluated after subtitle cue tokenization completes, ensuring morphological tokens are present.
+1. **Discovery Time (Server / D1 Fast-Path - 0ms)**:
+   - When videos are fetched or indexed via `/api/video-info` or `/api/transcript`, regex heuristics scan title and channel text for standard exam codes (`JLPT N3`, `HSK 2`, `TOPIK 4`, `CEFR B2`) as well as native learning keywords (`初級`, `中級`, `上級`, `초급`, `중급`, `고급`, `初级`, `高级`, `Beginner`, `Intermediate`, `Advanced`).
+   - Stored in Cloudflare D1 `video_languages.levels` (`{ ja: "JLPT N4" }`) with zero KV writes and returned directly in transcript metadata.
+   - The video UI immediately resolves the level badge in **0ms** without waiting for full transcript tokenization to finish.
+2. **Playback Time (Client Deep Linguistic Evaluation with Stratified Sampling)**:
+   - Evaluated asynchronously without blocking video playback or initial subtitle display.
+   - **Stratified Cue Sampling**: Instead of iterating over 1,000+ cues on the main UI thread, `VideoLevelService` takes a stratified sample of 50 cues evenly distributed across the beginning, middle, and end of the video, cutting regex evaluations from 20,000+ to ~500 (<15ms) with zero UI stutter.
    - **Unified 3-Factor Composite Score**:
      $$\text{Composite Score} = 0.45 \times \text{Grammar} + 0.40 \times \text{Vocab/Kanji} + 0.15 \times \text{Speech Rate}$$
      - **Grammar Pattern Density (45%)**: Scans cue tokens against curated language databases (`grammar-ja.ts`, `grammar-ko.ts`, `grammar-zh.ts`, `grammar-en.ts`).
@@ -523,7 +528,7 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
   - **Coordinated Dual-Stream Fetching & Zero Layout Shift (CLS = 0)**: Synchronized atomic loading for both recommended videos and playlists; skeleton states remain active until both streams resolve, preventing premature single-stream rendering and card pop-ins.
   - **Persistent LocalStorage Caching**: 1-hour persistent caching for both video recommendations (`voca_rec_videos_*`) and playlist recommendations (`voca_rec_playlists_*`), ensuring instantaneous frame-0 feed presentation on page load and tab switches.
   - **Sticky Clean Filter Chips Carousel**: YouTube-authentic pill chips (`All`, `Playlists`, level pills `N5`–`N1`, `HSK`, etc.) with fixed dimensions and no disruptive pop-in count badges.
-  - **Infinite Scroll & Seamless Pagination**: IntersectionObserver sentinel automatically fetches additional level-matched videos as the learner scrolls down the page.
+  - **Infinite Scroll & Seamless Pagination**: IntersectionObserver sentinel automatically fetches additional level-matched videos as the learner scrolls down the page. Employs a centered rotating `.spinner` indicator during loading instead of jarring skeleton cards to maintain layout stability.
 - **Playlist Page Integration (`PlaylistPageComponent`)**:
   - Playlist cards and individual tracklist rows display level pills (`level-badge--pill`) styled with tier-specific hues.
   - **Level Filter Dropdown**: Filter playlists by proficiency level (`All Levels`, `Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).

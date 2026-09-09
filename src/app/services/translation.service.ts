@@ -1,9 +1,23 @@
 import { Injectable, OnDestroy, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription, map, catchError, of, timer, retry, throwError, Subject, concatMap, from, switchMap, timeout } from 'rxjs';
+import {
+    Observable,
+    Subscription,
+    map,
+    catchError,
+    of,
+    timer,
+    retry,
+    throwError,
+    Subject,
+    from,
+    switchMap,
+    timeout,
+    mergeMap,
+    takeWhile,
+    finalize
+} from 'rxjs';
 import { environment } from '../../environments/environment';
-
-
 
 export interface LanguageOption {
     code: string;
@@ -11,6 +25,14 @@ export interface LanguageOption {
     flag: string;
     flagUrl: string;
 }
+
+export const SUPPORTED_TARGET_LANGUAGES: ReadonlyArray<LanguageOption> = [
+    { code: 'ja', name: '日本語', flag: '🇯🇵', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
+    { code: 'zh', name: '中文', flag: '🇨🇳', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
+    { code: 'ko', name: '한국어', flag: '🇰🇷', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
+    { code: 'en', name: 'English', flag: '🇬🇧', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' },
+    { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/vn.svg' }
+] as const;
 
 interface BatchResponse {
     translations: (string | null)[];
@@ -25,6 +47,7 @@ interface BatchRequestObserver {
 interface BatchRequest {
     params: { texts: string[]; source: string; target: string };
     observer: BatchRequestObserver;
+    priority?: 'high' | 'background';
     cancelled?: boolean;
 }
 
@@ -43,9 +66,10 @@ export class TranslationService implements OnDestroy {
     private translationCache = new Map<string, string>();
     private storageSaveTimer: ReturnType<typeof setTimeout> | null = null;
 
-    // Request queue for batch translations
+    // Request queue for batch translations with priority and concurrency
     private requestQueue$ = new Subject<BatchRequest>();
     private queueSubscription: Subscription | null = null;
+    private activeBackgroundRequests = new Set<BatchRequest>();
 
     constructor() {
         this.loadCacheFromStorage();
@@ -54,18 +78,36 @@ export class TranslationService implements OnDestroy {
 
     private initializeRequestQueue() {
         this.queueSubscription = this.requestQueue$.pipe(
-            // Process requests sequentially
-            concatMap(request => {
+            // Concurrency of 2 with preemption for interactive high-priority batches
+            mergeMap(request => {
                 if (request.cancelled) {
                     return of(void 0);
                 }
-                return this.processBatchRequest(request);
-            })
+
+                // If high priority request arrives, cancel in-flight background requests to free up bandwidth
+                if (request.priority === 'high') {
+                    for (const bgReq of this.activeBackgroundRequests) {
+                        bgReq.cancelled = true;
+                    }
+                    this.activeBackgroundRequests.clear();
+                } else if (request.priority === 'background') {
+                    this.activeBackgroundRequests.add(request);
+                }
+
+                return this.processBatchRequest(request).pipe(
+                    finalize(() => {
+                        this.activeBackgroundRequests.delete(request);
+                    })
+                );
+            }, 2)
         ).subscribe();
     }
 
     private processBatchRequest(request: BatchRequest): Observable<void> {
         const { params, observer } = request;
+        if (request.cancelled) {
+            return of(void 0);
+        }
 
         return this.http.post<{ translations: (string | null)[] }>(environment.api.translateBatch, {
             texts: params.texts,
@@ -73,9 +115,13 @@ export class TranslationService implements OnDestroy {
             target: params.target
         }).pipe(
             timeout(BATCH_REQUEST_TIMEOUT_MS),
+            takeWhile(() => !request.cancelled),
             retry({
                 count: 2,
                 delay: (error, retryCount) => {
+                    if (request.cancelled) {
+                        return throwError(() => new Error('Request cancelled'));
+                    }
                     // Only retry on 429 or 5xx
                     if (error.status !== 429 && !error.status?.toString().startsWith('5')) {
                         return throwError(() => error);
@@ -91,7 +137,7 @@ export class TranslationService implements OnDestroy {
                             delayMs = seconds * 1000;
                         }
                     } else if (error.status === 429) {
-                        delayMs = Math.max(delayMs, 5000); // Enforce 5s min on 429
+                        delayMs = Math.max(delayMs, 3000); // 3s min on 429
                     }
 
                     console.warn(`[Translation] Batch failed (${error.status}), retrying in ${delayMs}ms...`);
@@ -100,16 +146,20 @@ export class TranslationService implements OnDestroy {
             }),
             // If success, emit result and complete
             map(response => {
-                observer.next(response);
-                observer.complete();
+                if (!request.cancelled) {
+                    observer.next(response);
+                    observer.complete();
+                }
             }),
             // If error after retries or timeout
             catchError(err => {
-                console.warn('Batch translation failed or timed out:', err);
-                observer.error(err);
+                if (!request.cancelled) {
+                    console.warn('[Translation] Batch translation failed or timed out:', err?.message || err);
+                    observer.error(err);
+                }
                 return of(null);
             }),
-            // Ensure we return void for the concatMap chain so queue never stalls
+            // Ensure we return void for the mergeMap chain so queue never stalls
             map(() => void 0)
         );
     }
@@ -235,7 +285,7 @@ export class TranslationService implements OnDestroy {
      * Batch translate multiple texts at once
      * Prioritizes on-device browser translation first, then falls back to cloud batch queue
      */
-    translateBatch(texts: string[], source: string, target: string): Observable<(string | null)[]> {
+    translateBatch(texts: string[], source: string, target: string, priority: 'high' | 'background' = 'high'): Observable<(string | null)[]> {
         if (!texts.length) return of([]);
 
         // Filter out empty texts and find cached ones
@@ -303,11 +353,11 @@ export class TranslationService implements OnDestroy {
                     }
 
                     // Otherwise fall back to cloud for the unhandled remainder
-                    return this.dispatchCloudBatch(stillMissing, missingTextToIndices, results, source, target);
+                    return this.dispatchCloudBatch(stillMissing, missingTextToIndices, results, source, target, priority);
                 }
 
                 // Complete fallback to cloud batch request
-                return this.dispatchCloudBatch(uniqueTexts, textToIndices, results, source, target);
+                return this.dispatchCloudBatch(uniqueTexts, textToIndices, results, source, target, priority);
             })
         );
     }
@@ -317,10 +367,11 @@ export class TranslationService implements OnDestroy {
         textToIndices: Map<string, number[]>,
         results: (string | null)[],
         source: string,
-        target: string
+        target: string,
+        priority: 'high' | 'background' = 'high'
     ): Observable<(string | null)[]> {
         return new Observable(observer => {
-            const requestContext = {
+            const requestContext: BatchRequest = {
                 params: {
                     texts: uniqueTexts,
                     source,
@@ -347,6 +398,7 @@ export class TranslationService implements OnDestroy {
                     error: (err: unknown) => observer.error(err),
                     complete: () => observer.complete()
                 },
+                priority,
                 cancelled: false
             };
 
@@ -503,13 +555,7 @@ export class TranslationService implements OnDestroy {
     /**
      * Supported languages for target translation
      */
-    getSupportedTargetLanguages(): Array<{ code: string, name: string, flag: string, flagUrl: string }> {
-        return [
-            { code: 'ja', name: '日本語', flag: '🇯🇵', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
-            { code: 'zh', name: '中文', flag: '🇨🇳', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
-            { code: 'ko', name: '한국어', flag: '🇰🇷', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
-            { code: 'en', name: 'English', flag: '🇬🇧', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' },
-            { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/vn.svg' }
-        ];
+    getSupportedTargetLanguages(): ReadonlyArray<LanguageOption> {
+        return SUPPORTED_TARGET_LANGUAGES;
     }
 }

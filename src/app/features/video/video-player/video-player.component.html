@@ -326,27 +326,23 @@
               </div>
             </button>
 
-            <!-- Share Video -->
+            @if (isFullscreen()) {
+            <!-- Share Video (Fullscreen only) -->
             <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); shareCurrentVideo()">
               <div class="menu-item-left">
                 <app-icon name="share" [size]="18" />
                 <span class="menu-item-label">{{ i18n.t('player.share') || 'Share video' }}</span>
               </div>
-              <div class="menu-item-right">
-                <app-icon name="chevron-right" [size]="16" />
-              </div>
             </button>
 
-            <!-- Add to Playlist -->
+            <!-- Add to Playlist (Fullscreen only) -->
             <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); onSaveClick()">
               <div class="menu-item-left">
                 <app-icon name="list-plus" [size]="18" />
                 <span class="menu-item-label">{{ i18n.t('playlist.saveToPlaylist') || 'Save to playlist' }}</span>
               </div>
-              <div class="menu-item-right">
-                <app-icon name="chevron-right" [size]="16" />
-              </div>
             </button>
+            }
 
             <!-- Keyboard Shortcuts helper -->
             <button type="button" class="settings-menu-item desktop-only-item" (click)="closePlayerSettings(); openShortcutsDialog()">

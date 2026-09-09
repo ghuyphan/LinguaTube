@@ -618,6 +618,27 @@
       visibility: hidden;
     }
 
+    /* Infinite Scroll Loading More Indicator */
+    .feed-loading-more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 24px 0 36px;
+      animation: feedFadeIn 0.2s ease-out;
+    }
+
+    @keyframes feedFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     /* Skeleton Loading for YouTube Cards */
     .yt-video-card--skeleton {
       pointer-events: none;

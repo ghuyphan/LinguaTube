@@ -77,8 +77,9 @@ export async function onRequest(context) {
         return rateLimitResponse(rateCheck.resetAt);
     }
 
-    // Initialize Services
-    const cacheManager = new CacheManager(env.TRANSCRIPT_CACHE);
+    // Initialize Services - skip KV write to preserve free tier quota (Rule 2)
+    // Responses are cached at Cloudflare Edge CDN (7-day s-maxage) and in-memory
+    const cacheManager = new CacheManager(env.TRANSCRIPT_CACHE, { skipKvWrite: true });
     const dictProvider = new DictionaryProvider();
     const transProvider = new TranslationProvider();
     const dictService = new DictionaryService(dictProvider, transProvider);

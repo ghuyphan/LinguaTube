@@ -22,8 +22,8 @@ const TOKEN_STORAGE_KEY = 'linguatube_tokens';
 const MAX_STORED_VIDEOS = 10;
 
 // Dual subtitles batching
-const DUAL_SUB_BATCH_SIZE = 50;
-const DUAL_SUB_BUFFER = 25;
+const DUAL_SUB_BATCH_SIZE = 60;
+const DUAL_SUB_BUFFER = 40;
 
 // ============================================================================
 // Service
@@ -46,7 +46,10 @@ export class SubtitleService {
   // Dual Subtitles State & Tracking
   private dualSubSubscription: Subscription | null = null;
   private lazyLoadSubscription: Subscription | null = null;
+  private backgroundStreamSubscription: Subscription | null = null;
+  private backgroundStreamTimer: ReturnType<typeof setTimeout> | null = null;
   private isLazyLoadPending = false;
+  private isBackgroundStreaming = false;
   private lastLazyLoadedIndex = -1;
   private pendingBatchStartIdx = -1;
   private pendingBatchEndIdx = -1;
@@ -458,7 +461,16 @@ export class SubtitleService {
       this.lazyLoadSubscription.unsubscribe();
       this.lazyLoadSubscription = null;
     }
+    if (this.backgroundStreamSubscription) {
+      this.backgroundStreamSubscription.unsubscribe();
+      this.backgroundStreamSubscription = null;
+    }
+    if (this.backgroundStreamTimer) {
+      clearTimeout(this.backgroundStreamTimer);
+      this.backgroundStreamTimer = null;
+    }
     this.isLazyLoadPending = false;
+    this.isBackgroundStreaming = false;
     this.pendingBatchStartIdx = -1;
     this.pendingBatchEndIdx = -1;
     this.hasPersistedDualToR2 = false;
@@ -578,6 +590,9 @@ export class SubtitleService {
           if (translatedCount >= cues.length) {
             this.isDualCached.set(true);
             this.clearDualSubLoadingState();
+          } else {
+            // Fill any remaining gaps via smooth background streaming
+            this.scheduleBackgroundStreamer(400);
           }
         }
       }
@@ -606,9 +621,9 @@ export class SubtitleService {
               // Sync R2 cache down to local IndexedDB for future offline playback
               void this.transcriptCache.setDual(videoId, sourceLang, targetLang, translatedSegments);
 
-              // If partial coverage (missing cues), immediately queue recovery for first batch
+              // If partial coverage (missing cues), immediately queue background streamer to complete full video
               if (translatedCount < cues.length) {
-                this.lazyLoadUpcomingCues(0);
+                this.scheduleBackgroundStreamer(400);
               }
               return;
             }
@@ -656,8 +671,9 @@ export class SubtitleService {
     const hasBuffer = checkIndex >= cues.length - 1 || Boolean(map.get(cues[checkIndex]?.id)?.trim());
     const hasCurrent = Boolean(map.get(cues[currentIndex]?.id)?.trim());
 
-    // Both current cue and lookahead buffer have valid translations -> no fetch needed
+    // Both current cue and lookahead buffer have valid translations -> no urgent fetch needed, continue background streaming
     if (hasBuffer && hasCurrent) {
+      this.scheduleBackgroundStreamer(800);
       return;
     }
 
@@ -680,10 +696,21 @@ export class SubtitleService {
   }
 
   lazyLoadUpcomingCues(currentIndex = 0): void {
-    if (this.isLazyLoadPending) return;
-
     const cues = this.subtitles();
     if (cues.length === 0) return;
+
+    // Preempt any pending background streaming since user needs this active window immediately
+    if (this.backgroundStreamSubscription) {
+      this.backgroundStreamSubscription.unsubscribe();
+      this.backgroundStreamSubscription = null;
+    }
+    if (this.backgroundStreamTimer) {
+      clearTimeout(this.backgroundStreamTimer);
+      this.backgroundStreamTimer = null;
+    }
+    this.isBackgroundStreaming = false;
+
+    if (this.isLazyLoadPending) return;
 
     const map = this.cueTranslations();
     const sourceLang = this.activeLanguage();
@@ -705,6 +732,8 @@ export class SubtitleService {
 
     if (cuesToTranslate.length === 0) {
       this.lastLazyLoadedIndex = endIdx;
+      // Active window already translated! Start background streamer for the rest of the video
+      this.scheduleBackgroundStreamer(200);
       return;
     }
 
@@ -721,7 +750,7 @@ export class SubtitleService {
       this.lazyLoadSubscription.unsubscribe();
     }
 
-    this.lazyLoadSubscription = this.translation.translateBatch(texts, sourceLang, targetLang).subscribe({
+    this.lazyLoadSubscription = this.translation.translateBatch(texts, sourceLang, targetLang, 'high').subscribe({
       next: (translations) => {
         if (this.dualSubtitleTargetLang() !== targetLang) {
           this.clearDualSubLoadingState();
@@ -740,7 +769,6 @@ export class SubtitleService {
           if (trimmedTrans && (sourceLang === targetLang || trimmedTrans !== cue.text.trim())) {
             newMap.set(cue.id, trimmedTrans);
           }
-          // Note: avoid setting empty string in newMap to allow future self-healing retries
         });
 
         this.cueTranslations.set(newMap);
@@ -751,6 +779,9 @@ export class SubtitleService {
         if (currentIdx >= 0 && this.settings.settings().showDualSubtitles) {
           this.lazyLoadUpcomingCuesIfNeeded(currentIdx);
         }
+
+        // Keep background streamer running to translate 100% of the video's transcript
+        this.scheduleBackgroundStreamer(500);
       },
       error: (err) => {
         console.error('[SubtitleService] Dual sub lazy load failed:', err);
@@ -758,8 +789,135 @@ export class SubtitleService {
         this.lastBatchFailureTime = Date.now();
         this.consecutiveBatchFailures++;
         this.dualSubError.set('Translation failed');
+        // Soft retry in background
+        this.scheduleBackgroundStreamer(3000);
       }
     });
+  }
+
+  /**
+   * Schedule or continue background streaming of untranslated cues across the entire transcript.
+   * Runs with a gentle stagger (600ms) to ensure 100% full-transcript dual subtitle coverage
+   * without triggering rate limits or competing with active playback.
+   */
+  scheduleBackgroundStreamer(delayMs = 600): void {
+    if (this.backgroundStreamTimer) {
+      clearTimeout(this.backgroundStreamTimer);
+      this.backgroundStreamTimer = null;
+    }
+
+    const showDual = this.settings.settings().showDualSubtitles;
+    if (!showDual || this.isLazyLoadPending || this.isBackgroundStreaming) {
+      return;
+    }
+
+    const cues = this.subtitles();
+    if (cues.length === 0) return;
+
+    this.backgroundStreamTimer = setTimeout(() => {
+      this.backgroundStreamTimer = null;
+      this.streamNextUntranslatedBatch();
+    }, delayMs);
+  }
+
+  private streamNextUntranslatedBatch(): void {
+    const showDual = this.settings.settings().showDualSubtitles;
+    if (!showDual || this.isLazyLoadPending || this.isBackgroundStreaming) {
+      return;
+    }
+
+    const cues = this.subtitles();
+    if (cues.length === 0) return;
+
+    const map = this.cueTranslations();
+    const sourceLang = this.activeLanguage();
+    const targetLang = this.dualSubtitleTargetLang() || 'en';
+
+    // Find the next contiguous range of untranslated cues
+    // Search forward from current playhead first, then wrap around from 0
+    const currentIdx = Math.max(0, this.currentCueIndex());
+    let targetStartIdx = -1;
+
+    for (let i = currentIdx; i < cues.length; i++) {
+      const cue = cues[i];
+      const trans = map.get(cue.id)?.trim();
+      if (!trans || (sourceLang !== targetLang && trans === cue.text.trim())) {
+        targetStartIdx = i;
+        break;
+      }
+    }
+
+    if (targetStartIdx === -1) {
+      for (let i = 0; i < currentIdx; i++) {
+        const cue = cues[i];
+        const trans = map.get(cue.id)?.trim();
+        if (!trans || (sourceLang !== targetLang && trans === cue.text.trim())) {
+          targetStartIdx = i;
+          break;
+        }
+      }
+    }
+
+    // All cues in the video have been translated!
+    if (targetStartIdx === -1) {
+      this.isDualCached.set(true);
+      this.checkAndPersistDualSubtitles(cues, map, sourceLang, targetLang, true);
+      return;
+    }
+
+    const endIdx = Math.min(cues.length - 1, targetStartIdx + DUAL_SUB_BATCH_SIZE - 1);
+    const cuesToTranslate: { id: string; text: string }[] = [];
+
+    for (let i = targetStartIdx; i <= endIdx; i++) {
+      const cue = cues[i];
+      if (cue) {
+        const trans = map.get(cue.id)?.trim();
+        if (!trans || (sourceLang !== targetLang && trans === cue.text.trim())) {
+          cuesToTranslate.push({ id: cue.id, text: cue.text });
+        }
+      }
+    }
+
+    if (cuesToTranslate.length === 0) {
+      return;
+    }
+
+    this.isBackgroundStreaming = true;
+    const texts = cuesToTranslate.map(c => c.text);
+
+    if (this.backgroundStreamSubscription) {
+      this.backgroundStreamSubscription.unsubscribe();
+    }
+
+    this.backgroundStreamSubscription = this.translation
+      .translateBatch(texts, sourceLang, targetLang, 'background')
+      .subscribe({
+        next: (translations) => {
+          this.isBackgroundStreaming = false;
+          if (this.dualSubtitleTargetLang() !== targetLang) return;
+
+          const newMap = new Map(this.cueTranslations());
+          translations.forEach((trans, i) => {
+            const cue = cuesToTranslate[i];
+            if (!cue) return;
+            const trimmedTrans = trans?.trim();
+            if (trimmedTrans && (sourceLang === targetLang || trimmedTrans !== cue.text.trim())) {
+              newMap.set(cue.id, trimmedTrans);
+            }
+          });
+
+          this.cueTranslations.set(newMap);
+          this.checkAndPersistDualSubtitles(cues, newMap, sourceLang, targetLang);
+
+          // Continue streaming remaining untranslated cues across the video
+          this.scheduleBackgroundStreamer(600);
+        },
+        error: (err) => {
+          this.isBackgroundStreaming = false;
+          console.warn('[SubtitleService] Background dual stream chunk failed, retrying in 3s:', err?.message || err);
+          this.scheduleBackgroundStreamer(3000);
+        }
+      });
   }
 
   /**
@@ -771,7 +929,8 @@ export class SubtitleService {
     cues: SubtitleCue[],
     map: Map<string, string>,
     sourceLang: string,
-    targetLang: string
+    targetLang: string,
+    forceFullSave = false
   ): void {
     if (cues.length === 0) {
       return;
@@ -784,7 +943,7 @@ export class SubtitleService {
     const coverage = cues.length > 0 ? translatedCount / cues.length : 0;
 
     const newCuesSinceLastSave = translatedCount - this.lastPersistedCueCount;
-    const isFullSave = coverage >= 0.8 && (!this.hasPersistedDualToR2 || newCuesSinceLastSave >= 10);
+    const isFullSave = forceFullSave || (coverage >= 0.8 && (!this.hasPersistedDualToR2 || newCuesSinceLastSave >= 10));
     const isIncrementalCheckpoint = (newCuesSinceLastSave >= 10) && (Date.now() - this.lastPersistTimestamp >= 10000);
 
     if (isFullSave || isIncrementalCheckpoint) {

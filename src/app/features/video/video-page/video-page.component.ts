@@ -1016,13 +1016,15 @@ export class VideoPageComponent implements OnInit {
       this.skipNextMismatchDialog = false;
     }
 
-    // Evaluate difficulty level for video (run after tokenization finishes so tokens exist in cues)
+    // Evaluate difficulty level for video
     const activeLang = (detected && validLangs.includes(detected))
       ? (detected as 'ja' | 'zh' | 'ko' | 'en')
       : (requestedLang as 'ja' | 'zh' | 'ko' | 'en');
 
+    const serverLevels = this.transcript.serverLevels();
+
     const runAssessment = () => {
-      if (currentVideo) {
+      if (currentVideo && !this.videoLevel.currentLevel()) {
         const currentCues = this.subtitles.subtitles();
         const evalCues = (currentCues && currentCues.length > 0) ? currentCues : cues;
         void this.videoLevel.assessLevel(
@@ -1030,7 +1032,8 @@ export class VideoPageComponent implements OnInit {
           activeLang,
           currentVideo.title,
           currentVideo.channel,
-          evalCues
+          evalCues,
+          serverLevels
         ).then(levelInfo => {
           if (levelInfo) {
             void this.historyService.updateLevel(currentVideo.id, levelInfo.level);
@@ -1039,7 +1042,24 @@ export class VideoPageComponent implements OnInit {
       }
     };
 
-    tokenPromise.then(runAssessment).catch(runAssessment);
+    // Fast-path: assess immediately from D1 server levels, title heuristics, or cache in 0ms!
+    if (currentVideo) {
+      void this.videoLevel.assessLevel(
+        currentVideo.id,
+        activeLang,
+        currentVideo.title,
+        currentVideo.channel,
+        [], // Fast-path: checks serverLevels, title/channel, and cache with zero waiting
+        serverLevels
+      ).then(initialInfo => {
+        if (initialInfo) {
+          void this.historyService.updateLevel(currentVideo.id, initialInfo.level);
+        } else {
+          // If metadata and server level were missing, run linguistic evaluation after tokenization completes
+          tokenPromise.then(runAssessment).catch(runAssessment);
+        }
+      });
+    }
   }
 
   onMismatchConfirm() {
@@ -1050,7 +1070,6 @@ export class VideoPageComponent implements OnInit {
       this.skipNextMismatchDialog = true;
       this.settings.setLanguage(detected as 'ja' | 'zh' | 'ko' | 'en');
     }
-    this.showLanguageMismatchDialog.set(false);
     this.showLanguageMismatchDialog.set(false);
     this.mismatchDetectedLang.set(null);
   }

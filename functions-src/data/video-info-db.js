@@ -7,11 +7,6 @@
  * - D1: Persistent storage (video_languages, no_transcript_cache)
  */
 
-import { getVideoMetadata } from '../middlewares/video-validator.js';
-
-// KV cache TTLs
-const VIDEO_INFO_KV_TTL = 60 * 60 * 24; // 24 hours
-
 // D1 cleanup threshold (7 days)
 const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
 

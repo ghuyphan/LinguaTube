@@ -90,7 +90,7 @@ export async function onRequest(context) {
                         'X-Cache': 'HIT'
                     });
                 }
-            } catch (e) {
+            } catch {
                 // Cache read failed, continue
             }
         }
@@ -107,23 +107,12 @@ export async function onRequest(context) {
         const tokens = await tokenize(text, lang);
         const result = { tokens };
 
-        // Save to warm in-memory cache
+        // Save to warm in-memory cache (Rule 2: zero KV writes for micro tokenization)
         if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
             const oldest = memTokenSingleCache.keys().next().value;
             if (oldest) memTokenSingleCache.delete(oldest);
         }
         memTokenSingleCache.set(cacheKey, result);
-
-        // Cache the result (30 days TTL)
-        if (TOKEN_CACHE) {
-            try {
-                await TOKEN_CACHE.put(cacheKey, JSON.stringify(result), {
-                    expirationTtl: 60 * 60 * 24 * 30
-                });
-            } catch (e) {
-                // Cache write failed, continue
-            }
-        }
 
         return jsonResponse(result, 200, {
             'Cache-Control': 'public, max-age=604800',  // 7 day cache for tokenization
