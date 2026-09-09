@@ -68,7 +68,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
   1. **Backend & API Changes**: Adding or altering endpoints in `functions-src/api/` or `functions-src/proxy/`, modifying rate limits, security middleware, or external providers $\rightarrow$ Update `doc/backend-api.md` and `doc/map.md`.
   2. **Database & Storage Changes**: Altering D1 SQL schemas in `db/`, R2 bucket structures, KV namespace keys, LocalStorage keys, or PocketBase collections $\rightarrow$ Update `doc/database-and-storage.md` and `doc/map.md`.
   3. **Frontend & UI Architecture**: Adding or modifying components, signals, routes in `app.routes.ts`, player controls, sheets, or design tokens $\rightarrow$ Update `doc/frontend-architecture.md`, `doc/features.md`, and `doc/map.md`.
-  4. **Linguistics & NLP Features**: Changing tokenizers (`@patdx/kuromoji`, `Intl.Segmenter`), romanization engines, grammar patterns (`src/app/data/grammar-*.ts`), translation scripts, or dictionary scrapers $\rightarrow$ Update `doc/features.md` and `doc/tech.md`.
+  4. **Linguistics & NLP Features**: Changing tokenizers (`@patdx/kuromoji`, `compromise`, `Intl.Segmenter`), romanization engines, grammar patterns (`src/app/data/grammar-*.ts`), translation scripts, or dictionary scrapers $\rightarrow$ Update `doc/features.md` and `doc/tech.md`.
   5. **Tooling, Scripts & Configuration**: Adding dependencies to `package.json`, adding build scripts in `scripts/`, updating `wrangler.toml`, `.dev.vars`, or environment files $\rightarrow$ Update `doc/tech.md`, `doc/development-guide.md`, and `README.md`.
   6. **Agent Rules & Guidance**: Any change to `AGENTS.md` MUST also be mirrored in `doc/agents.md`.
 - **Never defer documentation updates**: Treat documentation as a first-class build artifact. Do not wait for the user to ask for documentation updates.
@@ -102,7 +102,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │                  FullscreenSubtitleComponent (Draggable handle & free placement)
     │                  VideoHeader / VideoBottomBar / CenterControls / ProgressBar
     │
-    ├── Linguistics:   Kuromoji (JA) / Intl.Segmenter (ZH/KO/EN)
+    ├── Linguistics:   Kuromoji (JA) / Compromise (EN) / Intl.Segmenter (ZH/KO)
     │                  GrammarService (JA/KO/ZH/EN rule engine & multi-lang translations)
     │                  DictionaryService (Jotoba, Mazii, Naver, MDBG, FreeDict)
     │                  TranslationService (Lingva / Google GTX + batch queue)

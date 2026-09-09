@@ -93,7 +93,10 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
   - Space-delimited and segment-analyzed via `Intl.Segmenter('ko')`.
   - Romanization computed using `hangul-romanization`.
 - **English (`en`)**:
-  - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en')`.
+  - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en')` and enhanced with `compromise` NLP.
+  - Morphological tagging provides Part-of-Speech (`partOfSpeech`) and root lemmatization (`baseForm`), aligning English tokens with Japanese and Korean morphological capabilities.
+  - Everyday words, pronouns, articles, and contractions (`I`, `the`, `a`, `don't`) are strictly protected from grammar false positives, keeping words cleanly clickable for dictionary lookups and flashcard saving.
+  - CEFR grammar patterns (compound tenses, modal perfects, phrasal modals, correlatives) detected with clean token ranges excluding spaces and punctuation.
 - **Bulk Batch Tokenization & Zero Playback Overhead**:
   - `SubtitleService` processes subtitle cues in bulk batches of up to 800 texts on initial video load. For virtually all videos ($\le 800$ cues), the entire video requires **only 1 API call**.
   - No network requests are made during video playback; time updates use $O(\log n)$ binary search over cached cues.

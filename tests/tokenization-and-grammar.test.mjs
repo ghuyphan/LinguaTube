@@ -103,7 +103,7 @@ test('Tokenizer [KO]: Korean segmentation and Hangul Romanization', () => {
     assert.equal(dot.romanization, undefined);
 });
 
-test('Tokenizer [EN]: English segmentation and punctuation classification', () => {
+test('Tokenizer [EN]: English segmentation, POS tagging, and lemmatization', () => {
     const text = 'Learning languages is not only fun, but also very rewarding!';
     const tokens = tokenizeEnglish(text);
 
@@ -115,6 +115,17 @@ test('Tokenizer [EN]: English segmentation and punctuation classification', () =
     assert.ok(words.includes('not'));
     assert.ok(words.includes('only'));
     assert.ok(words.includes('rewarding'));
+
+    // Check POS and lemmatization (baseForm) powered by Compromise NLP
+    const learningToken = tokens.find(t => t.surface === 'Learning');
+    assert.ok(learningToken);
+    assert.equal(learningToken.partOfSpeech, 'Verb');
+    assert.equal(learningToken.baseForm, 'learn');
+
+    const languagesToken = tokens.find(t => t.surface === 'languages');
+    assert.ok(languagesToken);
+    assert.equal(languagesToken.partOfSpeech, 'Noun');
+    assert.equal(languagesToken.baseForm, 'language');
 
     const comma = tokens.find(t => t.surface === ',');
     assert.ok(comma);
@@ -197,6 +208,66 @@ test('Grammar [EN]: Data integrity, CEFR levels, and counts', async () => {
         assert.ok(p.title, `Missing title in ${p.id}`);
         assert.ok(p.level && p.level.startsWith('CEFR '), `Invalid CEFR level ${p.level} in ${p.id}`);
     }
+});
+
+test('Grammar [EN]: Clean NLP pattern detection with zero false positives on everyday words', async () => {
+    const nlp = (await import('compromise')).default;
+
+    const EN_NLP_RULES = [
+        { id: 'en_b1_02', match: '(have|has) been #Gerund' },
+        { id: 'en_b2_01', match: 'had #PastTense' },
+        { id: 'en_b2_02', match: 'had been #Gerund' },
+        { id: 'en_b1_24', match: 'will be #Gerund' },
+        { id: 'en_b1_25', match: 'will have #PastTense' },
+        { id: 'en_c2_14', match: 'will have been #Gerund' },
+        { id: 'en_a2_07', match: '(#Copula|am|is|are|was|were)? going to #Verb' },
+        { id: 'en_b2_03', match: "(must|must've) have? #PastTense" },
+        { id: 'en_b2_04', match: "(can't|cannot) have #PastTense" },
+        { id: 'en_b2_05', match: "(should|should've|shouldn't) have? #PastTense" },
+        { id: 'en_b2_06', match: "(might|might've|could|could've|couldn't) have? #PastTense" },
+        { id: 'en_b2_07', match: "(would|would've|wouldn't) have? #PastTense" },
+        { id: 'en_b2_20', match: '(#Copula|get|gets|got|getting) used to (#Gerund|#Noun)' },
+        { id: 'en_b1_21', match: 'used to #Infinitive' },
+        { id: 'en_a2_13', match: '(have|has|had|having) to #Verb' },
+        { id: 'en_a2_15', match: 'as (#Adjective|#Adverb) as' },
+        { id: 'en_b2_19', match: 'too (#Adjective|#Adverb) to #Verb' },
+        { id: 'en_c1_09', match: 'as (if|though)' },
+        { id: 'en_b1_23', match: 'even (though|if)' },
+        { id: 'en_b1_26', match: '(in order|so as) to #Verb' },
+        { id: 'en_a1_16', match: 'there (is|are|was|were|has been|have been)' }
+    ];
+
+    const matchSentences = (text) => {
+        const doc = nlp(text);
+        const hits = [];
+        for (const rule of EN_NLP_RULES) {
+            const m = doc.match(rule.match);
+            if (m.found) hits.push(rule.id);
+        }
+        return hits;
+    };
+
+    // 1. Sentences with everyday words: ZERO false positives
+    assert.deepEqual(matchSentences('Hello, I am going to the cinema because I want to see a movie.'), []);
+    assert.deepEqual(matchSentences('What are you doing today? Can you help me with this task?'), []);
+    assert.deepEqual(matchSentences("If you don't mind, I will take the book that is on the table."), []);
+    assert.deepEqual(matchSentences('This is a team project with my family.'), []);
+    assert.deepEqual(matchSentences('He ran fast and worked hard yesterday.'), []);
+
+    // 2. Sentences with authentic CEFR grammar: Exact detection
+    const s1Hits = matchSentences('She is my best friend and we have been learning English for three years.');
+    assert.ok(s1Hits.includes('en_b1_02')); // Present Perfect Continuous
+
+    const s2Hits = matchSentences('She used to live in Paris, but now she is used to living in London.');
+    assert.ok(s2Hits.includes('en_b1_21')); // used to
+    assert.ok(s2Hits.includes('en_b2_20')); // be used to
+
+    const s3Hits = matchSentences('You should have told me earlier because we had to leave at noon.');
+    assert.ok(s3Hits.includes('en_b2_05')); // should have + V3
+    assert.ok(s3Hits.includes('en_a2_13')); // have to
+
+    const s4Hits = matchSentences('I am going to visit my grandparents tomorrow.');
+    assert.ok(s4Hits.includes('en_a2_07')); // be going to
 });
 
 // ============================================================================

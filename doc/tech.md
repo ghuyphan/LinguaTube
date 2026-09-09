@@ -29,6 +29,7 @@ This document provides a comprehensive breakdown of the languages, frameworks, l
 | **Japanese NLP** | `@patdx/kuromoji` | `^1.0.4` | Morphological tokenizer, kanji-kana readings & POS tags |
 | **Chinese NLP** | `pinyin-pro` | `^3.27.0` | Hanzi to Pinyin conversion with tone symbols |
 | **Korean NLP** | `hangul-romanization` | `^1.0.1` | Hangul to Revised Romanization conversion |
+| **English NLP** | `compromise` | `^14.16.0` | Morphological tokenizer, POS tagging, lemmatization & CEFR syntax parsing |
 | **Word Segmentation** | `Intl.Segmenter` | Built-in ECMAScript | Zero-dependency word boundary segmentation for ZH, KO, EN |
 | **Visual Assets** | Circle Flags | SVG CDN | Consistent cross-platform SVG national flag badges |
 | **Linter** | ESLint + angular-eslint | `^9.39.4` | Code style, accessibility, and TypeScript linting |
@@ -77,8 +78,13 @@ Correct segmentation and pronunciation generation are central to Voca:
 - Words are segmented using space boundaries and `Intl.Segmenter('ko', { granularity: 'word' })`.
 - Romanization is computed using the official Revised Romanization standard via `hangul-romanization`.
 
-### 3.4. English Segmentation (`Intl.Segmenter`)
+### 3.4. English Segmentation & Morphology (`compromise` + `Intl.Segmenter`)
 - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en', { granularity: 'word' })`.
+- Enriched with `compromise` NLP morphological tags:
+  - **Part-of-Speech Tagging**: Attaches POS tags (`Noun`, `Verb`, `Adjective`, `Adverb`, `Conjunction`, `Preposition`, `Modal`) to each English token.
+  - **Lemmatization (`baseForm`)**: Root verb lemmas (`running` $\rightarrow$ `run`, `went` $\rightarrow$ `go`) for accurate dictionary lookups.
+  - **Zero False Positives**: Removes over-eager single-pronoun, article, and contraction highlighting (`I`, `the`, `a`, `don't`), preserving word-level dictionary lookup and vocabulary saving.
+  - **Syntax-Aware CEFR Detection**: Pinpoint matching of multi-word CEFR patterns (compound tenses, modal perfects, phrasal modals, correlatives) without tagging punctuation or whitespace.
 
 ### 3.5. Multi-Language Grammar Engine & Translation Matrix
 - **Static Grammar Data**:

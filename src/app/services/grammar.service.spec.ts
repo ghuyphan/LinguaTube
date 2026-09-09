@@ -25,19 +25,30 @@ describe('GrammarService', () => {
     expect(patterns[0].language).toBe('en');
   });
 
-  it('should detect English grammar patterns in tokens', async () => {
+  it('should detect English grammar patterns in tokens without tagging common words', async () => {
     // Ensure English patterns are loaded first
-    await service.searchPatterns('am', 'en');
+    await service.searchPatterns('used to', 'en');
 
-    const tokens: Token[] = [
+    // Simple sentence with common words: should have 0 grammar matches
+    const simpleTokens: Token[] = [
       { surface: 'I' },
       { surface: 'am' },
       { surface: 'hungry' }
     ];
+    const simpleMatches = service.detectPatterns(simpleTokens, 'en');
+    expect(simpleMatches.length).toBe(0);
 
-    const matches = service.detectPatterns(tokens, 'en');
-    expect(matches.length).toBeGreaterThan(0);
-    expect(matches.some(m => m.pattern.id === 'en_a1_01')).toBeTrue();
+    // Authentic grammar construction: "used to live" -> en_b1_21
+    const grammarTokens: Token[] = [
+      { surface: 'She' },
+      { surface: 'used' },
+      { surface: 'to' },
+      { surface: 'live' },
+      { surface: 'here' }
+    ];
+    const grammarMatches = service.detectPatterns(grammarTokens, 'en');
+    expect(grammarMatches.length).toBeGreaterThan(0);
+    expect(grammarMatches.some(m => m.pattern.id === 'en_b1_21')).toBeTrue();
   });
 
   it('should lazy load translation pack for Japanese to Vietnamese', async () => {
@@ -87,7 +98,7 @@ describe('GrammarService', () => {
     expect(matches.length).toBeGreaterThan(0);
     const notOnlyMatch = matches.find(m => m.pattern.id === 'en_c1_02');
     expect(notOnlyMatch).toBeTruthy();
-    expect(notOnlyMatch?.tokenIndices).toEqual([0, 1, 2, 11, 12, 13]);
+    expect(notOnlyMatch?.tokenIndices).toEqual([0, 2, 11, 13]);
   });
 
   it('should detect Chinese split patterns like 虽然...但是', async () => {

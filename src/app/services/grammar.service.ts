@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { GrammarPattern, GrammarMatch, GrammarTranslation, SupportedGrammarLang } from '../models/grammar.model';
 import { Token } from '../models';
+import nlp from 'compromise';
 
 interface SplitPatternRule {
     start: string;
@@ -28,17 +29,61 @@ const ZH_SPLIT_RULES: SplitPatternRule[] = [
     { start: '不仅', end: '而且', patternKey: '不仅而且' },
 ];
 
-const EN_SPLIT_RULES: SplitPatternRule[] = [
-    { start: 'not only', end: 'but also', patternKey: 'not only but also', patternId: 'en_c1_02' },
-    { start: 'neither', end: 'nor', patternKey: 'neither nor' },
-    { start: 'either', end: 'or', patternKey: 'either or' },
-    { start: 'both', end: 'and', patternKey: 'both and' },
-    { start: 'so', end: 'that', patternKey: 'sothat', patternId: 'en_b2_19' },
-    { start: 'such', end: 'that', patternKey: 'suchthat', patternId: 'en_b2_19' },
-    { start: 'as', end: 'as', patternKey: 'as as' },
-    { start: 'too', end: 'to', patternKey: 'too to' },
-    { start: 'no sooner', end: 'than', patternKey: 'no sooner than' },
-    { start: 'hardly', end: 'when', patternKey: 'hardly when' },
+interface EnglishNlpRule {
+    id: string;
+    match: string;
+}
+
+const EN_NLP_RULES: EnglishNlpRule[] = [
+    // Compound Tenses
+    { id: 'en_b1_02', match: '(have|has) been #Gerund' },
+    { id: 'en_b2_01', match: 'had #PastTense' },
+    { id: 'en_b2_02', match: 'had been #Gerund' },
+    { id: 'en_b1_24', match: 'will be #Gerund' },
+    { id: 'en_b1_25', match: 'will have #PastTense' },
+    { id: 'en_c2_14', match: 'will have been #Gerund' },
+    { id: 'en_a2_07', match: '(#Copula|am|is|are|was|were)? going to #Verb' },
+
+    // Modal Perfects
+    { id: 'en_b2_03', match: "(must|must've) have? #PastTense" },
+    { id: 'en_b2_04', match: "(can't|cannot) have #PastTense" },
+    { id: 'en_b2_05', match: "(should|should've|shouldn't) have? #PastTense" },
+    { id: 'en_b2_06', match: "(might|might've|could|could've|couldn't) have? #PastTense" },
+    { id: 'en_b2_07', match: "(would|would've|wouldn't) have? #PastTense" },
+
+    // Habit, Preference & Familiarity
+    { id: 'en_b2_20', match: '(#Copula|get|gets|got|getting) used to (#Gerund|#Noun)' },
+    { id: 'en_b1_21', match: 'used to #Infinitive' },
+    { id: 'en_b1_21', match: "(would|'d) rather #Verb" },
+
+    // Necessity & Obligation
+    { id: 'en_a2_13', match: '(have|has|had|having) to #Verb' },
+    { id: 'en_a2_23', match: "(have|has|'ve|'s) got [!to]" },
+    { id: 'en_a2_11', match: "(had|'d) better #Verb" },
+    { id: 'en_b2_23', match: 'ought to #Verb' },
+    { id: 'en_a1_19', match: '(#Copula|been) able to #Verb' },
+
+    // Split Correlatives & Comparisons
+    { id: 'en_a2_15', match: 'as (#Adjective|#Adverb) as' },
+    { id: 'en_b2_19', match: 'too (#Adjective|#Adverb) to #Verb' },
+    { id: 'en_b2_19', match: 'so (#Adjective|#Adverb) that' },
+    { id: 'en_b2_19', match: 'such (a|an)? #Noun that' },
+    { id: 'en_c1_03', match: 'no sooner .? than' },
+    { id: 'en_c1_03', match: 'hardly .? when' },
+
+    // Idiomatic Clauses & Discourse
+    { id: 'en_c1_09', match: 'as (if|though)' },
+    { id: 'en_b1_23', match: 'even (though|if)' },
+    { id: 'en_b1_23', match: 'in spite of' },
+    { id: 'en_b1_23', match: 'instead of' },
+    { id: 'en_c2_01', match: 'as (long|soon) as' },
+    { id: 'en_c2_01', match: '(provided|providing|on condition) that' },
+    { id: 'en_b1_26', match: '(in order|so as) to #Verb' },
+    { id: 'en_b1_26', match: 'so that' },
+    { id: 'en_c2_16', match: 'as well as' },
+    { id: 'en_a1_16', match: 'there (is|are|was|were|has been|have been)' },
+    { id: 'en_c1_08', match: "(it is|it's) (high )?time" },
+    { id: 'en_b2_11', match: 'it is (said|believed|thought|reported) that' },
 ];
 
 /**
@@ -198,13 +243,19 @@ export class GrammarService {
         };
 
         for (const pattern of patterns) {
+            // Index by pattern ID
+            addToIndex(pattern.id, pattern, false);
+
+            // For English, grammar patterns are detected via Compromise NLP rules directly.
+            // Skipping raw substring indexing prevents common English words from being tagged as grammar.
+            if (pattern.language === 'en') {
+                continue;
+            }
+
             let cleanPattern = pattern.pattern;
             if (pattern.language === 'ko' && cleanPattern.includes('[')) {
                 cleanPattern = cleanPattern.split('[')[0].trim();
             }
-
-            // Index by pattern ID
-            addToIndex(pattern.id, pattern, false);
 
             // Index by pattern text (both raw normalized and with placeholders stripped)
             addToIndex(cleanPattern, pattern, false);
@@ -216,7 +267,7 @@ export class GrammarService {
                 addToIndex(cleanPattern.replace(/\([^)]+\)/g, '').replace(/（[^）]+）/g, ''), pattern, true);
             }
 
-            // Slash alternatives (e.g. "am / is / are", "이/가", "은/는")
+            // Slash alternatives (e.g. "이/가", "은/는")
             if (cleanPattern.includes('/')) {
                 for (const part of cleanPattern.split('/')) {
                     addToIndex(part, pattern, true);
@@ -237,36 +288,6 @@ export class GrammarService {
                         const cleanSub = sub.replace(/\[[^\]]*\]/g, '').replace(/\([^)]*\)/g, '').trim();
                         if (cleanSub) addToIndex(cleanSub, pattern, true);
                     }
-                }
-            }
-
-            // English contractions and high-frequency articles/copulas
-            if (pattern.language === 'en') {
-                const normTitle = pattern.title.toLowerCase();
-                if (normTitle.includes('not') || normTitle.includes('negation')) {
-                    addToIndex("isn't", pattern, false);
-                    addToIndex("aren't", pattern, false);
-                    addToIndex("don't", pattern, false);
-                    addToIndex("doesn't", pattern, false);
-                    addToIndex("didn't", pattern, false);
-                    addToIndex("won't", pattern, false);
-                    addToIndex("can't", pattern, false);
-                }
-                if (pattern.id === 'en_a1_01') {
-                    addToIndex("i'm", pattern, false);
-                    addToIndex("you're", pattern, false);
-                    addToIndex("he's", pattern, false);
-                    addToIndex("she's", pattern, false);
-                    addToIndex("it's", pattern, false);
-                    addToIndex("we're", pattern, false);
-                    addToIndex("they're", pattern, false);
-                }
-                if (pattern.id === 'en_a1_05') {
-                    addToIndex('a', pattern, false);
-                    addToIndex('an', pattern, false);
-                }
-                if (pattern.id === 'en_a1_06') {
-                    addToIndex('the', pattern, false);
                 }
             }
 
@@ -392,6 +413,11 @@ export class GrammarService {
             return [];
         }
 
+        // Dedicated NLP pattern detection for English (mirroring Kuromoji for Japanese)
+        if (lang === 'en') {
+            return this.detectEnglishPatternsWithNlp(tokens);
+        }
+
         const index = this.getIndex(lang);
         if (!index) {
             this.loadPatterns(lang);
@@ -399,14 +425,15 @@ export class GrammarService {
         }
 
         const matches: GrammarMatch[] = [];
-        const maxSeqLen = lang === 'en' ? 8 : 5;
+        const maxSeqLen = 5;
 
         // Strategy 1: Check token sequences
         for (let i = 0; i < tokens.length; i++) {
-            if (!tokens[i].surface.trim()) continue;
+            if (tokens[i].isPunctuation || !tokens[i].surface.trim()) continue;
 
             for (let len = 1; len <= Math.min(maxSeqLen, tokens.length - i); len++) {
                 const sequence = tokens.slice(i, i + len);
+                if (sequence[sequence.length - 1].isPunctuation) continue;
                 const sequenceText = sequence.map(t => t.surface).join('');
                 const normalizedSeq = this.normalizePattern(sequenceText, lang, false);
 
@@ -558,11 +585,9 @@ export class GrammarService {
             }
         }
 
-        // Strategy 4: Check split correlative patterns (Chinese & English)
+        // Strategy 4: Check split correlative patterns (Chinese)
         if (lang === 'zh') {
             matches.push(...this.detectSplitPatterns(tokens, ZH_SPLIT_RULES, index));
-        } else if (lang === 'en') {
-            matches.push(...this.detectSplitPatterns(tokens, EN_SPLIT_RULES, index));
         }
 
         // Remove duplicate patterns on same tokens
@@ -622,6 +647,133 @@ export class GrammarService {
         }
 
         return matches;
+    }
+
+    /**
+     * Detect English grammar patterns using Compromise NLP.
+     * Matches complex tenses, modal perfects, phrasal modals, and correlatives
+     * without flagging common vocabulary words.
+     */
+    private detectEnglishPatternsWithNlp(tokens: Token[]): GrammarMatch[] {
+        if (tokens.length === 0) return [];
+
+        const patterns = this.getPatterns('en');
+        if (patterns.length === 0) {
+            this.loadPatterns('en');
+            return [];
+        }
+
+        // Reconstruct full text from tokens
+        const fullText = tokens.map(t => t.surface).join('');
+        if (!fullText.trim()) return [];
+
+        const doc = nlp(fullText);
+        const matches: GrammarMatch[] = [];
+
+        for (const rule of EN_NLP_RULES) {
+            const found = doc.match(rule.match);
+            if (found.found) {
+                const pattern = this.getPatternById(rule.id, 'en');
+                if (!pattern) continue;
+
+                // Handle multiple occurrences in the same sentence
+                const jsonMatches = found.json({ terms: true });
+                for (const jMatch of jsonMatches) {
+                    const termTexts = (jMatch.terms || []).filter(t => t.text).map(t => t.text);
+                    if (termTexts.length === 0) continue;
+
+                    const tokenIndices = this.findMatchTokenIndices(tokens, termTexts);
+                    if (tokenIndices.length > 0) {
+                        matches.push({
+                            pattern,
+                            tokenIndices,
+                            startIndex: tokenIndices[0],
+                            endIndex: tokenIndices[tokenIndices.length - 1],
+                        });
+                    }
+                }
+            }
+        }
+
+        // Correlative conjunction pairs: neither...nor, either...or, both...and
+        const correlativePairs = [
+            { id: 'en_c2_16', start: 'neither', end: 'nor' },
+            { id: 'en_c2_16', start: 'either', end: 'or' },
+            { id: 'en_c2_16', start: 'both', end: 'and' },
+            { id: 'en_c1_02', start: 'not only', end: 'but .? also' }
+        ];
+
+        for (const pair of correlativePairs) {
+            const startM = doc.match(pair.start);
+            const endM = doc.match(pair.end);
+            if (startM.found && endM.found) {
+                const pattern = this.getPatternById(pair.id, 'en');
+                if (!pattern) continue;
+
+                const startTerms = startM.json({ terms: true })[0]?.terms?.filter(t => t.text).map(t => t.text) || [];
+                const endTerms = endM.json({ terms: true })[0]?.terms?.filter(t => t.text).map(t => t.text) || [];
+
+                const startIndices = this.findMatchTokenIndices(tokens, startTerms);
+                const endIndices = this.findMatchTokenIndices(tokens, endTerms);
+
+                if (startIndices.length > 0 && endIndices.length > 0 && startIndices[startIndices.length - 1] < endIndices[0]) {
+                    const distance = endIndices[0] - startIndices[startIndices.length - 1];
+                    if (distance <= 12) {
+                        const tokenIndices = [...startIndices, ...endIndices];
+                        matches.push({
+                            pattern,
+                            tokenIndices,
+                            startIndex: startIndices[0],
+                            endIndex: endIndices[endIndices.length - 1],
+                        });
+                    }
+                }
+            }
+        }
+
+        return this.deduplicateMatches(matches);
+    }
+
+    /**
+     * Map matched NLP term texts to token indices, ignoring punctuation and whitespace
+     */
+    private findMatchTokenIndices(tokens: Token[], matchedTerms: string[]): number[] {
+        if (matchedTerms.length === 0) return [];
+
+        const cleanWord = (s: string) => s.toLowerCase().replace(/[^a-z0-9'’]/g, '');
+
+        for (let i = 0; i <= tokens.length - matchedTerms.length; i++) {
+            let match = true;
+            let tIdx = i;
+            const matchedIndices: number[] = [];
+
+            for (let m = 0; m < matchedTerms.length; m++) {
+                while (tIdx < tokens.length && tokens[tIdx].isPunctuation) {
+                    tIdx++;
+                }
+                if (tIdx >= tokens.length) {
+                    match = false;
+                    break;
+                }
+
+                const tokenWord = cleanWord(tokens[tIdx].surface);
+                const termWord = cleanWord(matchedTerms[m]);
+
+                if (tokenWord !== termWord) {
+                    match = false;
+                    break;
+                }
+
+                matchedIndices.push(tIdx);
+                tIdx++;
+            }
+
+            if (match && matchedIndices.length === matchedTerms.length) {
+                return matchedIndices;
+            }
+        }
+
+        return [];
     }
 
     /**

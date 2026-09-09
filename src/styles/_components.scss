@@ -1341,7 +1341,7 @@ app-toast {
     }
 
     &--current {
-        border-color: rgba(currentColor, 0.2);
+        border-color: color-mix(in srgb, currentColor 20%, transparent);
         border-top-color: currentColor;
     }
 }

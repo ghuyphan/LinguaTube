@@ -4,6 +4,7 @@
  */
 
 import * as kuromoji from '@patdx/kuromoji';
+import nlp from 'compromise';
 import { pinyin } from 'pinyin-pro';
 import { convert as romanizeKorean } from 'hangul-romanization';
 import { getJapaneseRomaji, isJapaneseKanaText, katakanaToHiragana } from './japanese-romaji.js';
@@ -154,21 +155,46 @@ export function tokenizeKoreanChinese(text, lang) {
 }
 
 /**
- * Tokenize English text using Intl.Segmenter
- * Returns only word-like tokens (no punctuation or whitespace)
+ * Tokenize English text using Intl.Segmenter and Compromise NLP
+ * Attaches partOfSpeech and baseForm (lemmatization) to word tokens
  */
 export function tokenizeEnglish(text) {
+    if (!text || typeof text !== 'string') return [];
+
     const segmenter = new Intl.Segmenter('en', { granularity: 'word' });
     const segments = [...segmenter.segment(text)];
+    const doc = nlp(text);
+    const json = doc.json({ terms: true });
+    const terms = json.flatMap(s => s.terms || []).filter(t => t.text);
 
-    // Return all segments, marking non-words as punctuation
+    let termIndex = 0;
+
     return segments
         .filter(seg => seg.isWordLike || seg.segment.trim())
         .map(seg => {
             const token = { surface: seg.segment };
-            if (!seg.isWordLike) {
+            if (!seg.isWordLike || isPunctuation(seg.segment)) {
                 token.isPunctuation = true;
+                return token;
             }
+
+            if (termIndex < terms.length) {
+                const term = terms[termIndex];
+                termIndex++;
+
+                if (term.tags && term.tags.length > 0) {
+                    token.partOfSpeech = term.tags[0];
+                }
+
+                const normal = term.normal || term.text.toLowerCase();
+                const lemma = doc.match(term.text).verbs().conjugate()[0]?.Infinitive
+                    || doc.match(term.text).nouns().conjugate()[0]?.Singular
+                    || normal;
+                if (lemma && lemma.toLowerCase() !== token.surface.toLowerCase()) {
+                    token.baseForm = lemma;
+                }
+            }
+
             return token;
         });
 }

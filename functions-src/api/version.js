@@ -21,29 +21,29 @@ const APP_VERSION_DATA = {
     maintenance: false,
     highlights: {
         en: [
-            'Global Leaderboard Community: Merged real learners with 28 active baseline learners across Japanese, Korean, Chinese, and English, keeping the board and podium vibrant',
-            'Accurate Competitive Ranking: XP-based rank resolution dynamically places learners relative to the entire community, resolving the isolated single-user display',
-            'Instant Score Sync & Refresh: Hardened private cache controls ensure clicking the sync button immediately delivers real-time XP and updated ranks'
+            'NLP-Powered English Tokenization: Integrated the Compromise NLP engine for English morphological segmentation, attaching accurate Part-of-Speech tags and lemmatized base forms',
+            'Zero False Positives: Eliminated aggressive over-tagging on everyday words, pronouns, articles, and contractions (such as "I", "the", "a", "don\'t"), keeping them individually clickable for dictionary lookup',
+            'Precision CEFR Grammar Patterns: Implemented syntax-aware detection for genuine English CEFR structures (perfect tenses, modal perfects, phrasal modals, correlatives) with clean token boundaries'
         ],
         vi: [
-            'Cộng đồng bảng xếp hạng toàn cầu: Kết hợp người học thực tế cùng 28 bạn học chuẩn mực trên 4 ngôn ngữ (Nhật, Hàn, Trung, Anh), giúp bục vinh quang Top 3 luôn sôi động',
-            'Xếp hạng điểm số chuẩn xác: Tính toán thứ hạng linh hoạt theo tổng XP, khắc phục hoàn toàn lỗi bảng xếp hạng chỉ hiển thị duy nhất 1 người',
-            'Đồng bộ & làm mới điểm số tức thì: Tối ưu hóa bộ nhớ đệm riêng tư giúp nút đồng bộ lập tức cập nhật điểm XP và thứ hạng mới nhất'
+            'Phân tích ngữ pháp tiếng Anh bằng NLP: Tích hợp thư viện Compromise NLP cho tiếng Anh, bổ sung từ loại (POS) và dạng nguyên thể (baseForm) tương tự như tiếng Nhật và tiếng Hàn',
+            'Loại bỏ hoàn toàn nhận diện nhầm: Khắc phục triệt để lỗi đánh dấu tràn lan các từ phổ thông, đại từ, mạo từ và từ viết tắt (như "I", "the", "a", "don\'t"), giúp tra cứu từ điển và lưu từ vựng chính xác',
+            'Nhận diện mẫu ngữ pháp CEFR chuẩn xác: Nhận diện cấu trúc ngữ pháp thực tế (thì hoàn thành, động từ khuyết thiếu quá khứ, cấu trúc tương quan) mà không bị dính dấu câu hay khoảng trắng'
         ],
         ja: [
-            'グローバルリーダーボードのコミュニティ拡充：日本語・韓国語・中国語・英語の28名の基準学習者と実ユーザーを統合し、表彰台と順位表を常に活性化',
-            '正確なXPランキング算出：全体のXP分布に基づき相対順位を動的に算出し、ユーザーが1名のみ孤立表示される不具合を解消',
-            '即時スコア同期と更新：プライベートキャッシュ制御を適用し、更新ボタンを押した際に最新のXPと順位を即座に反映'
+            'NLPによる高精度な英語形態素解析：Compromise NLPエンジンを統合し、品詞タグ（POS）と原形（baseForm）を付与して日本語（Kuromoji）や韓国語と同様の分析を実現',
+            '日常単語の誤判定を完全解消：代名詞や冠詞、短縮形（"I", "the", "a", "don\'t"など）の過剰ハイライトを撤廃し、単語ごとの辞書引きと単語帳保存がスムーズに',
+            '精密なCEFR英文法パターン検出：複合時制や法助動詞完了形、相関構文などの真の英文法構造を文脈に応じて的確に検出し、記号やスペースを含めないクリーンな抽出を実現'
         ],
         ko: [
-            '글로벌 리더보드 커뮤니티 강화: 일본어·한국어·중국어·영어의 28명 기준 학습자와 실제 학습자를 통합하여 항상 활기찬 시상대와 순위표 제공',
-            '정확한 XP 기반 순위 산출: 전체 학습자 데이터에 기반하여 상대적 순위를 동적으로 계산하고 혼자만 표시되던 버그 완벽 해결',
-            '실시간 점수 동기화 및 새로고침: 비공개 캐시 제어를 적용하여 동기화 버튼 클릭 시 최신 XP와 순위를 즉시 반영'
+            'NLP 기반 영어 형태소 분석 도입: Compromise NLP 엔진을 연동하여 품사 태그(POS) 및 기본형(baseForm)을 부여, 일본어 및 한국어 수준의 자연어 처리 구현',
+            '일상 단어 오인식 완벽 제거: 대명사, 관사, 축약형("I", "the", "a", "don\'t" 등)의 무분별한 문법 하이라이트를 제거하여 개별 단어 사전 검색 및 단어장 저장을 원활하게 지원',
+            '정밀한 CEFR 영어 문법 패턴 감지: 완료 시제, 조동사 완료형, 상관 접속사 등 실제 CEFR 영어 문법 구문을 정확한 토큰 범위로 깔끔하게 감지'
         ],
         zh: [
-            '全球排行榜社区活力升级：融合真实学员与覆盖日、韩、中、英四种语言的28位基准学员，确保领奖台与榜单始终充满活力',
-            '精准XP经验值竞争排名：基于全员经验值动态计算相对名次，彻底修复之前只显示单个用户的异常',
-            '实时经验值同步与刷新：优化私有缓存控制，点击同步按钮即刻获取最新经验值与实时排名'
+            '引入NLP驱动的英语形态分词：深度集成Compromise NLP分词引擎，提供词性标注（POS）与原型还原（baseForm），达到日韩语同等精细度',
+            '彻底消除日常词汇过度标记：移除代词、冠词、缩写词（如 "I", "the", "a", "don\'t" 等）的虚假语法高亮，确保单词独立可点、精准查词与收藏',
+            '高精度CEFR英语语法模式识别：智能捕获完成时态、情态动词完成式、相关并列连词等核心语法结构，标点与空格不再误入高亮区间'
         ]
     }
 };

@@ -43,7 +43,7 @@ This documentation suite serves as the definitive technical reference for human 
 ### Key Technical Pillars
 1. **Edge-First Serverless & Dual Backend**: Fast global response times using Cloudflare Pages Functions, Cloudflare D1 (edge SQLite), Cloudflare R2 (transcript & translation store), and Cloudflare KV (caching & rate limiting), complemented by a feature-complete local development server with YouTube Innertube caption extraction.
 2. **Signal-Driven Reactive Frontend**: Built on Angular 19 using Signals (`signal`, `computed`, `effect`) and `ChangeDetectionStrategy.OnPush` for instant UI rendering and zero Zone.js manual overhead.
-3. **Multi-Source Hybrid Dictionary & NLP**: Real-time word segmentation and lookups combining Kuromoji, Intl.Segmenter, Jotoba, Mazii, Naver (En/Ko/Vi), MDBG, FreeDictionary, and Glosbe with automated Google Translate GTX fallback.
+3. **Multi-Source Hybrid Dictionary & NLP**: Real-time word segmentation and lookups combining Kuromoji, Compromise NLP, Intl.Segmenter, Jotoba, Mazii, Naver (En/Ko/Vi), MDBG, FreeDictionary, and Glosbe with automated Google Translate GTX fallback.
 4. **Comprehensive Grammar & Translation Engine**: JLPT N5–N1, TOPIK I–II, HSK 1–6, and CEFR A1–C2 grammar detection with multi-language native and translated explanations, plus batch dual-subtitle translations.
 5. **Robust Security & Diamond Economy**: Multi-tier defense including bot mitigation, tiered rate limits, SSRF guards, Cloudflare Turnstile CAPTCHA, and self-regenerating Diamond credits across Free, Pro, and Premium tiers.
 6. **Documentation Synchronization Mandate (Rule 7)**: Autonomous AI agents are required to keep all documentation synchronized with every significant code, API, schema, or configuration update.

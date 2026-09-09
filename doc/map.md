@@ -239,7 +239,9 @@ sequenceDiagram
     SubDisplay->>SubService: getTokens(cue, lang)
     alt Japanese (ja)
         SubService->>SubService: Morphological Analysis via Kuromoji (Token + Reading + Romaji modes)
-    else Korean / Chinese / English (ko / zh / en)
+    else English (en)
+        SubService->>SubService: Compromise NLP (Morphology + POS + Lemmatization baseForm)
+    else Korean / Chinese (ko / zh)
         SubService->>SubService: Intl.Segmenter + Pinyin / Hangul Romanization
     end
     SubDisplay->>Grammar: detectGrammarPatterns(tokens, lang)
