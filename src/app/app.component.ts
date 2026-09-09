@@ -20,6 +20,7 @@ import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
 import { VocabularyService } from './features/vocabulary/vocabulary.service';
+import { VideoRecommendationService } from './core/services/video-recommendation.service';
 
 @Component({
   selector: 'app-root',
@@ -1115,6 +1116,7 @@ export class AppComponent implements OnDestroy {
   protected playlistService = inject(PlaylistService);
   protected sheetService = inject(BottomSheetService);
   appUpdate = inject(AppUpdateService);
+  private videoRecommendation = inject(VideoRecommendationService);
   private seo = inject(SeoService);
   pwa = inject(PwaService);
 
@@ -1244,10 +1246,22 @@ export class AppComponent implements OnDestroy {
     const activeVideo = this.youtube.currentVideo();
 
     if (isOnVideoPage) {
-      // Already on video page: preserve active playback session and scroll smoothly to top
       event.preventDefault();
       if (isPlatformBrowser(this.platformId)) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (!activeVideo) {
+          const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+          if (scrollY > 80) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            // Already near top of Home Feed: tap-to-refresh like YouTube/Twitter!
+            if ('vibrate' in navigator) {
+              try { navigator.vibrate(10); } catch { }
+            }
+            this.videoRecommendation.triggerHomeFeedRefresh();
+          }
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
     } else if (activeVideo) {
       // Navigating back from another page while video is active: Resume current video

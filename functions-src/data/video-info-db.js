@@ -490,7 +490,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
     const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
     const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
     const targetTier = tier && typeof tier === 'string' ? tier.toLowerCase().trim() : null;
-    const candidateLimit = Math.max((safeOffset + safeLimit) * (shuffle ? 4 : (targetTier ? 5 : 2)), 60);
+    const candidateLimit = Math.max((safeOffset + safeLimit) * (shuffle ? 8 : (targetTier ? 5 : 2)), shuffle ? 120 : 60);
     const videoMap = new Map();
 
     // 1. Query D1 video_languages table (primary metadata index)
@@ -515,10 +515,10 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
 
             if (results && Array.isArray(results)) {
                 // When refresh is requested, randomize catalog candidates for variety and discovery,
-                // BUT pin the top 3 newest/recently updated additions at the front so newly transcribed videos are never buried
+                // BUT pin the top 2 newest/recently updated additions at the front so newly transcribed videos are never buried
                 let rows = results;
-                if (shuffle && results.length > 3) {
-                    const pinnedCount = Math.min(3, results.length);
+                if (shuffle && results.length > 2) {
+                    const pinnedCount = Math.min(2, results.length);
                     const pinned = results.slice(0, pinnedCount);
                     const shufflable = results.slice(pinnedCount);
                     rows = [...pinned, ...shuffleArray(shufflable)];

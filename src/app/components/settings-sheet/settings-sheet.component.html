@@ -111,7 +111,7 @@
                             <span class="settings-item-title">{{ i18n.t('settings.learningLanguage') }}</span>
                         </div>
                         <div class="settings-item-right">
-                            <span class="settings-item-value">{{ currentLearningLang().name }}</span>
+                            <span class="settings-item-value" [attr.title]="currentLearningLang().name">{{ currentLearningLang().name }}</span>
                             <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
                         </div>
                     </button>
@@ -127,7 +127,7 @@
                             <span class="settings-item-title">{{ i18n.t('settings.learningDisplay') }}</span>
                         </div>
                         <div class="settings-item-right">
-                            <span class="settings-item-value">{{ currentReadingDisplay() }}</span>
+                            <span class="settings-item-value" [attr.title]="currentReadingDisplay()">{{ currentReadingDisplay() }}</span>
                             <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
                         </div>
                     </button>
@@ -141,7 +141,7 @@
                             <span class="settings-item-title">{{ i18n.t('settings.interfaceLanguage') }}</span>
                         </div>
                         <div class="settings-item-right">
-                            <span class="settings-item-value">{{ currentUILang().nativeName }}</span>
+                            <span class="settings-item-value" [attr.title]="currentUILang().nativeName">{{ currentUILang().nativeName }}</span>
                             <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
                         </div>
                     </button>

@@ -54,7 +54,24 @@
         }
 
         @if (showLearnHome()) {
-        <div class="card home-dashboard">
+        <div class="card home-dashboard"
+            (touchstart)="onTouchStart($event)"
+            (touchmove)="onTouchMove($event)"
+            (touchend)="onTouchEnd($event)">
+
+            <!-- Mobile Pull-To-Refresh Indicator (Icon-only circle badge) -->
+            <div class="pull-refresh-indicator"
+                [class.pulling]="pullDistance() > 0"
+                [class.refreshing]="isRefreshing()"
+                [style.transform]="isRefreshing() ? 'translateY(48px)' : 'translateY(' + pullDistance() + 'px)'"
+                [style.opacity]="pullDistance() > 8 || isRefreshing() ? 1 : 0">
+                <div class="pull-refresh-circle">
+                    <app-icon name="refresh-cw" [size]="18"
+                        [class.spin-icon]="isRefreshing()"
+                        [style.transform]="isRefreshing() ? '' : 'rotate(' + (pullDistance() * 4.2) + 'deg)'" />
+                </div>
+            </div>
+
             <div class="panel-header">
                 <div class="panel-header__row">
                     <div class="panel-header__left">
@@ -94,13 +111,6 @@
                         </button>
                         }
                     }
-                </div>
-
-                <div class="yt-chips-actions">
-                    <button type="button" class="yt-action-btn" [disabled]="isFeedRefreshing()"
-                        (click)="refreshRecommendations()" [attr.aria-label]="i18n.t('playlist.refresh')" [title]="i18n.t('playlist.refresh')">
-                        <app-icon name="refresh-cw" [size]="14" [class.spin-icon]="isFeedRefreshing()" />
-                    </button>
                 </div>
             </div>
 

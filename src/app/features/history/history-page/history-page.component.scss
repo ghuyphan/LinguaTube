@@ -33,7 +33,7 @@
   -webkit-backdrop-filter: blur(12px);
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: var(--space-sm);
   margin-bottom: var(--space-md);
 
   .toolbar-nav-row {
@@ -461,8 +461,8 @@
   }
 
   .history-toolbar {
-    gap: var(--space-xs);
-    padding: 0 0 var(--space-xs);
+    gap: var(--space-sm);
+    padding: var(--space-2xs) 0 var(--space-xs);
 
     .toolbar-nav-row {
       display: flex;

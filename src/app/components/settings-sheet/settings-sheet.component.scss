@@ -371,7 +371,8 @@
     text-align: left;
     font-family: inherit;
     transition: background-color var(--transition-fast);
-    min-height: 3rem;
+    min-height: 3.25rem;
+    gap: var(--space-sm);
 
     @media (hover: hover) {
         &:hover {
@@ -395,6 +396,7 @@ div.settings-item-row {
     align-items: center;
     gap: var(--space-sm);
     min-width: 0;
+    flex: 1 1 auto;
 }
 
 .settings-item-flag {
@@ -421,7 +423,9 @@ div.settings-item-row {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--text-primary);
-    white-space: nowrap;
+    line-height: 1.35;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .settings-item-right {
@@ -429,16 +433,25 @@ div.settings-item-row {
     align-items: center;
     gap: 6px;
     flex-shrink: 0;
+    max-width: 55%;
+    min-width: 0;
+    justify-content: flex-end;
 }
 
 .settings-item-value {
     font-size: 0.8125rem;
     font-weight: 500;
     color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
 }
 
 .settings-item-chevron {
     color: var(--text-muted);
+    flex-shrink: 0;
+    opacity: 0.6;
 }
 
 .settings-item-divider {

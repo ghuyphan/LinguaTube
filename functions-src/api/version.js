@@ -14,41 +14,41 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.1.3',
+    version: '1.1.4',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Smart Language Switch Flow: Changing target learning language during video playback now cleanly resets the player and navigates to the Home Feed with fresh recommendations for your new language',
-            'Native Caption Reliability: Extended timeout to 15s to support longer videos with multiple subtitle tracks without premature aborts',
-            'Resilient API Key Failover: Enhanced key rotation to automatically failover across backup keys on quota exhaustion (402), auth errors (401), rate limits (429), and network timeouts',
-            'Negative Cache Defense & Retry: Prevented transient network errors from falsely poisoning the no-caption cache and added a manual Retry button on empty subtitle screens'
+            'Tap-to-Refresh & Sleek Pull-to-Refresh: Tap the active "Watch" tab in the bottom bar or swipe down on mobile for an icon-only floating refresh badge with haptic feedback',
+            'Smart Feed De-duplication: Recommendations automatically deprioritize videos you have already watched and rotate from a larger 120-video catalog',
+            'Clean Settings Layout: Polished settings item rows with responsive text wrapping to eliminate label and value collisions',
+            'Universal Hidden Scrollbars: Concealed unsightly scrollbars across all bottom-sheets, option pickers, and dialogs for a seamless native look'
         ],
         vi: [
-            'Chuyển đổi ngôn ngữ học thông minh: Thay đổi ngôn ngữ mục tiêu khi đang xem video sẽ tự động đóng video hiện tại và mở trang Home Feed với các đề xuất dành riêng cho ngôn ngữ mới',
-            'Nâng cao độ ổn định phụ đề gốc: Tăng thời gian chờ lên 15 giây giúp xử lý ổn định các video dài có nhiều track phụ đề',
-            'Tự động chuyển API key dự phòng: Tự động đổi sang key thay thế khi gặp lỗi hết quota (402), lỗi xác thực (401), giới hạn tốc độ (429) hoặc timeout',
-            'Bảo vệ Cache & Nút Thử lại: Ngăn chặn lưu cache âm tính khi gặp lỗi mạng tạm thời và bổ sung nút Thử lại ngay trên màn hình thông báo không có phụ đề'
+            'Chạm để làm mới & Vuốt kéo mượt mà: Nhấn vào tab "Xem" đang mở ở thanh điều hướng dưới cùng hoặc vuốt xuống trên di động với huy hiệu làm mới dạng tròn tinh gọn cùng phản hồi rung nhẹ',
+            'Loại bỏ video trùng lặp thông minh: Tự động giảm ưu tiên các video bạn đã xem và quay vòng đề xuất từ kho 120 video phong phú hơn',
+            'Bố cục Cài đặt hoàn thiện: Tinh chỉnh hàng mục cài đặt với cơ chế xuống dòng thông minh, loại bỏ hoàn toàn hiện tượng tràn chữ giữa tiêu đề và giá trị',
+            'Ẩn thanh cuộn toàn diện: Ẩn thanh cuộn trên toàn bộ bottom-sheet, bảng chọn và hộp thoại giúp trải nghiệm mượt mà chuẩn ứng dụng gốc'
         ],
         ja: [
-            '学習言語切り替えの最適化：動画視聴中に学習対象言語を変更した場合、再生をクリアして新言語のおすすめ動画フィードへスムーズに遷移',
-            'YouTube字幕取得の信頼性向上：タイムアウトを15秒に延長し、多言語字幕を持つ長編動画でも安定して字幕を取得',
-            '堅牢なAPIキー自動フェイルオーバー：クレジット枯渇（402）、認証エラー（401）、レート制限（429）、通信タイムアウト時に予備キーへ即時自動切り替え',
-            'ネガティブキャッシュ保護と再試行機能：一時的な通信エラーによる誤キャッシュを防止し、字幕未取得画面に「再試行」ボタンを追加'
+            'タップで更新＆洗練されたプル更新：下部バーのアクティブな「視聴」タブをタップ、またはモバイルで下にスワイプしてアイコンのみのミニマルな更新バッジを表示（振動フィードバック付き）',
+            'スマートな重複排除とカタログ回転：視聴済み動画の優先度を自動で下げ、120件の拡大カタログから新鮮なおすすめ動画をローテーション表示',
+            '設定画面レイアウトの最適化：設定項目の折り返しと幅制限を改善し、長文タイトルと設定値の文字重なりを解消',
+            '統一されたスクロールバー非表示：すべてのボトムシート、ピッカー、ダイアログでスクロールバーを非表示にし、ネイティブアプリのような美麗な外観を実現'
         ],
         ko: [
-            '스마트 학습 언어 전환 흐름: 영상 시청 중 목표 학습 언어를 변경하면 현재 영상을 초기화하고 새 언어에 맞춘 홈 추천 피드로 깔끔하게 이동',
-            '유튜브 원본 자막 수집 안정성 개선: 타임아웃을 15초로 연장하여 다국어 트랙이 포함된 긴 동영상도 중단 없이 안정적으로 처리',
-            '유연한 API 키 자동 장애 조치: 크레딧 소진(402), 인증 오류(401), 속도 제한(429), 타임아웃 발생 시 예비 키로 즉시 자동 전환',
-            '부정 캐시 오염 방지 및 재시도 기능: 일시적 네트워크 오류 시 자막 없음 캐시 저장을 차단하고, 자막 화면에 수동 재시도 버튼 추가'
+            '탭하여 새로고침 & 깔끔한 당겨서 새로고침: 하단 바의 활성 "시청" 탭을 탭하거나 모바일에서 아래로 당겨 햅틱 진동과 함께 아이콘 전용 플로팅 배지로 피드를 부드럽게 갱신',
+            '스마트 중복 제거 및 피드 로테이션: 이미 시청한 동영상의 우선순위를 자동으로 낮추고 120개의 확장된 카탈로그에서 신선한 동영상을 추천',
+            '설정 화면 레이아웃 개선: 긴 옵션명과 설정값 간의 텍스트 겹침 현상을 해결하여 모든 화면 크기에서 깔끔하게 정렬',
+            '전체 스크롤바 숨김 처리: 모든 바텀시트, 선택 모달, 팝업의 스크롤바를 깔끔하게 숨겨 네이티브 앱 같은 세련된 완성도 제공'
         ],
         zh: [
-            '智能学习语言切换体验：在播放视频时切换目标学习语言，将自动重置当前视频并返回主页，无缝呈现新语言的专属推荐视频',
-            '增强原生字幕获取稳定性：将超时时间延长至15秒，彻底解决包含多轨字幕的长视频因超时中断的问题',
-            '高可用API密钥故障转移：在额度用尽（402）、鉴权错误（401）、限流（429）或超时场景下自动无缝轮换至备用密钥',
-            '防范无效缓存与新增重试机制：避免临时网络错误污染无字幕缓存，并在未获取到字幕的界面添加快捷重试按钮'
+            '轻触刷新与极简下拉刷新：点击底部导航栏当前处于激活状态的“观看”标签，或在移动端下拉即可呼出带震动反馈的纯图标浮动刷新指示器',
+            '智能去重与大片库轮换：自动降低已观看视频的推荐优先级，并从扩充至120部的精选片库中智能轮换推荐内容',
+            '设置项排版精细化：优化设置行文字自动换行与宽度限制，彻底消除长标题与当前选项数值之间的文字重叠',
+            '全局沉浸式隐藏滚动条：在所有底部抽屉、选择器及弹窗中全局隐藏滚动条，带来媲美原生客户端的沉浸体验'
         ]
     }
 };

@@ -108,6 +108,14 @@
     padding: var(--space-md);
     max-height: clamp(120px, 35vh, 400px);
     overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
 }
 
 /* Shimmer skeleton loading */

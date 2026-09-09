@@ -369,8 +369,10 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 - **Dual "For You" Home Dashboard ("Dành cho bạn" / "For You")**:
   - When no video is currently loaded, the Home Dashboard transforms into a modern **YouTube Homepage Feed**:
     1. **YouTube-style Video Card Grid (`yt-video-grid` & `yt-video-card`)**: 16:9 cards with duration pills, circular channel/flag avatars, 2-line clamped titles, level badges, and interactive subtitle (`CC`) indicators.
-    2. **1-Tap Interactive Chips Carousel (`.yt-chips-bar`)**: Horizontal scrollable chips bar (`All`, language proficiency levels e.g. `JLPT N5`–`N1`, `Playlists`, `Refresh`) allowing instant topic/difficulty filtering without modal popups.
-    3. **Infinite Scrolling Pagination**: Uses an `IntersectionObserver` sentinel to continuously auto-fetch 12-video batches on scroll without layout shift.
+    2. **1-Tap Interactive Chips Carousel (`.yt-chips-bar`)**: Full-width horizontal scrollable chips bar (`All`, `Playlists`, language proficiency levels e.g. `JLPT N5`–`N1`) allowing instant topic/difficulty filtering without modal popups.
+    3. **Native Tap-to-Refresh & Icon-Only Pull-to-Refresh**: Tap the active "Watch" tab in the bottom bar to scroll to top or refresh the feed with haptic feedback, or swipe down on mobile for an icon-only floating circular refresh badge.
+    4. **Smart History De-duplication & Expanded Catalog**: Deprioritizes already-watched videos using `HistoryService` and queries from an expanded 120-video candidate pool in D1 for high variety.
+    5. **Infinite Scrolling Pagination**: Uses an `IntersectionObserver` sentinel to continuously auto-fetch 12-video batches on scroll without layout shift.
 - **Verified Database Transcript Video Recommendations (`VideoRecommendationService`)**:
   - Solves the cold-start problem: learners don't need a YouTube URL ready on their clipboard to start practicing.
   - **Pre-Processed & Instant (<100ms)**: Videos are sourced from Cloudflare D1 (`video_languages`) and R2 permanent transcripts. Zero scraping delay, zero risk of missing captions, and zero AI Diamond credit consumption.

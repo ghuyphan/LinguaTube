@@ -1,8 +1,9 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { firstValueFrom, timeout } from 'rxjs';
+import { firstValueFrom, timeout, Subject } from 'rxjs';
 import { RecommendedVideo, ProficiencyLevelTier } from '../../models';
 import { VideoLevelService } from './video-level.service';
+import { HistoryService } from '../../features/history/history.service';
 import { environment } from '../../../environments/environment';
 
 interface RecommendedVideosResponse {
@@ -29,6 +30,15 @@ interface LocalStorageCacheEntry {
 export class VideoRecommendationService {
     private http = inject(HttpClient);
     private videoLevel = inject(VideoLevelService);
+    private historyService = inject(HistoryService);
+
+    /** Stream emitting events when the user requests a home feed refresh (e.g. via bottom nav tap or pull gesture) */
+    readonly refreshRequested$ = new Subject<void>();
+
+    /** Trigger a programmatic feed refresh from any UI component */
+    triggerHomeFeedRefresh(): void {
+        this.refreshRequested$.next();
+    }
 
     constructor() {
         try {
@@ -131,17 +141,18 @@ export class VideoRecommendationService {
 
             const rawVideos = response?.videos || [];
             const hydratedVideos = this.hydrateVideos(rawVideos, language, activeTier);
+            const prioritizedVideos = this.prioritizeFreshVideos(hydratedVideos);
             const hasMoreFlag = response?.hasMore ?? (rawVideos.length >= limit);
             this.hasMore.set(hasMoreFlag);
 
-            if (hydratedVideos.length > 0) {
-                this.cache.set(cacheKey, hydratedVideos);
+            if (prioritizedVideos.length > 0) {
+                this.cache.set(cacheKey, prioritizedVideos);
 
                 // Persist to LocalStorage
                 try {
                     const entry: LocalStorageCacheEntry = {
                         timestamp: Date.now(),
-                        videos: hydratedVideos
+                        videos: prioritizedVideos
                     };
                     localStorage.setItem(LS_CACHE_PREFIX + cacheKey, JSON.stringify(entry));
                 } catch {
@@ -149,8 +160,8 @@ export class VideoRecommendationService {
                 }
             }
 
-            this.recommendedVideos.set(hydratedVideos);
-            return hydratedVideos;
+            this.recommendedVideos.set(prioritizedVideos);
+            return prioritizedVideos;
         } catch (err) {
             console.warn('[VideoRecommendation] Failed to load remote recommended videos:', err);
             this.recommendedVideos.set([]);
@@ -262,6 +273,33 @@ export class VideoRecommendationService {
                 tier: resolvedTier
             };
         });
+    }
+
+    /**
+     * Reorder recommendations so unwatched videos appear at the top,
+     * while already watched/completed videos are gently placed at the end.
+     */
+    private prioritizeFreshVideos(videos: RecommendedVideo[]): RecommendedVideo[] {
+        try {
+            const history = this.historyService.history();
+            if (!history || history.length === 0) return videos;
+
+            const watchedIds = new Set(history.map(h => h.video_id));
+            const unwatched: RecommendedVideo[] = [];
+            const watched: RecommendedVideo[] = [];
+
+            for (const video of videos) {
+                if (watchedIds.has(video.videoId)) {
+                    watched.push(video);
+                } else {
+                    unwatched.push(video);
+                }
+            }
+
+            return [...unwatched, ...watched];
+        } catch {
+            return videos;
+        }
     }
 
     /**
