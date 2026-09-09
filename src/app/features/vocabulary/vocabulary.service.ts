@@ -24,6 +24,13 @@ export class VocabularyService {
     readonly dailyGoal = signal<number>(10);
     readonly cardsCompletedToday = signal<number>(0);
 
+    // Trigger to reset study session to start screen (e.g. on nav tab re-click)
+    readonly studyResetTrigger = signal<number>(0);
+
+    requestStudyReset(): void {
+        this.studyResetTrigger.update(v => v + 1);
+    }
+
     constructor() {
         if (isPlatformBrowser(this.platformId)) {
             this.loadDailyProgress();

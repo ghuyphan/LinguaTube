@@ -36,11 +36,6 @@ export class SupadataProvider {
 
         try {
             const result = await this._executeFetch(videoId, lang, apiKey);
-
-            if (result && result.languageMismatch) {
-                return null;
-            }
-
             if (result) return result;
         } catch (e) {
             // If rate limited, mark this key for cooldown and try another
@@ -53,7 +48,7 @@ export class SupadataProvider {
                     if (nextKey && nextKey !== apiKey) {
                         try {
                             const retryResult = await this._executeFetch(videoId, lang, nextKey);
-                            if (retryResult && !retryResult.languageMismatch) {
+                            if (retryResult) {
                                 return retryResult;
                             }
                         } catch (retryError) {

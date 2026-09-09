@@ -19,6 +19,7 @@ import { YoutubeService, TranscriptService } from './features/video';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
+import { VocabularyService } from './features/vocabulary/vocabulary.service';
 
 @Component({
   selector: 'app-root',
@@ -92,6 +93,7 @@ import { PlaylistService } from './features/playlist/playlist.service';
             <a
               class="bottom-nav__item"
               routerLink="/study"
+              (click)="onStudyNavClick($event)"
               [class.active]="!anySheetOpen() && isRouteActive('/study')"
               [attr.aria-current]="(!anySheetOpen() && isRouteActive('/study')) ? 'page' : null"
             >
@@ -1101,6 +1103,7 @@ export class AppComponent implements OnDestroy {
   private document = inject(DOCUMENT);
   i18n = inject(I18nService);
   settings = inject(SettingsService);
+  vocab = inject(VocabularyService);
   streak = inject(StreakService);
   transcript = inject(TranscriptService);
   gamification = inject(GamificationService);
@@ -1243,6 +1246,12 @@ export class AppComponent implements OnDestroy {
           ...(playlistId ? { playlist: playlistId } : {})
         }
       });
+    }
+  }
+
+  onStudyNavClick(_event: MouseEvent): void {
+    if (this.router.url.startsWith('/study')) {
+      this.vocab.requestStudyReset();
     }
   }
 

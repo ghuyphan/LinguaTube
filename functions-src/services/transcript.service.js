@@ -23,7 +23,7 @@ import {
     saveTranscriptToR2
 } from '../data/transcript-r2.js';
 
-import { cleanTranscriptSegments } from '../utils/transcript-utils.js';
+import { cleanTranscriptSegments, normalizeLanguageCode } from '../utils/transcript-utils.js';
 import { fetchYouTubeDuration } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig } from './diamond.service.js';
 
@@ -85,6 +85,33 @@ export class TranscriptService {
             }
 
             return nativeResult;
+        }
+
+        // If native captions for requested lang were not found, but other languages are available (e.g. video is in zh, user asked for ja)
+        if (nativeResult?.availableLangs?.length > 0) {
+            const savePromises = [];
+            if (options.title || options.channel || options.duration) {
+                savePromises.push(saveVideoLanguages(
+                    db,
+                    videoId,
+                    nativeResult.availableLangs,
+                    options.duration || null,
+                    options.title || null,
+                    options.channel || null
+                ));
+            } else {
+                savePromises.push(addVideoLanguages(db, videoId, nativeResult.availableLangs));
+            }
+            if (waitUntil) {
+                waitUntil(Promise.allSettled(savePromises));
+            } else {
+                await Promise.allSettled(savePromises);
+            }
+            return {
+                segments: [],
+                availableLangs: nativeResult.availableLangs,
+                languageMismatch: true
+            };
         }
 
         // Failed to find native captions -> Cache the failure
@@ -180,7 +207,7 @@ export class TranscriptService {
         }
 
         // 6. Start polling
-        return await this.pollAIJob(context, { ...params, resultUrl, diamondInfo: updatedDiamondInfo });
+        return await this.pollAIJob(context, { ...params, resultUrl, diamondInfo: updatedDiamondInfo, requiredDiamonds });
     }
 
     /**
@@ -239,7 +266,8 @@ export class TranscriptService {
                     })).filter(s => s.text);
 
                     const cleanedSegments = cleanTranscriptSegments(segments);
-                    const detectedLang = resultData.result?.transcription?.languages?.[0] || lang;
+                    const rawDetectedLang = resultData.result?.transcription?.languages?.[0] || lang;
+                    const detectedLang = normalizeLanguageCode(rawDetectedLang) || lang;
 
                     if (videoId && cleanedSegments.length > 0) {
                         const title = params.body?.title || null;
@@ -275,7 +303,18 @@ export class TranscriptService {
                 }
 
                 if (resultData.status === 'error') {
-                    throw new Error(`Gladia error: ${resultData.error_message}`);
+                    if (videoId && db) {
+                        deletePendingJob(db, videoId).catch(() => {});
+                    }
+                    const clientId = params.clientId;
+                    if (clientId && this.diamondService) {
+                        const user = params.user || null;
+                        const refundAmount = params.requiredDiamonds || 1;
+                        this.diamondService.refundDiamond(clientId, context, env, user, refundAmount).catch(err => {
+                            console.error('[TranscriptService] Failed to refund diamonds on Gladia error:', err.message);
+                        });
+                    }
+                    throw new Error(`Gladia error: ${resultData.error_message || 'Transcription failed'}`);
                 }
 
                 // Still processing

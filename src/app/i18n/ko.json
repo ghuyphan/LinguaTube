@@ -410,7 +410,13 @@
         "inQueue": "대기 중",
         "shortcutsCheatsheet": "단축키 안내",
         "shortcutAudio": "발음 다시 듣기",
-        "shortcutVideo": "해당 영상 장면으로 이동"
+        "shortcutVideo": "해당 영상 장면으로 이동",
+        "done": "완료",
+        "backToOverview": "개요로 돌아가기",
+        "studyOptions": "학습 옵션",
+        "dueCardsNotice": "오늘 복습할 카드가 {{count}}장 있습니다",
+        "allCaughtUp": "모두 완료! 오늘 복습할 카드가 없습니다",
+        "cardsReady": "{{count}}개 카드 학습 준비됨"
     },
     "streak": {
         "dayStreak": "스트릭",
@@ -572,7 +578,8 @@
         "clear": "지우기",
         "search": "검색...",
         "options": "옵션",
-        "refresh": "새로고침"
+        "refresh": "새로고침",
+        "noResults": "검색 결과가 없습니다"
     },
     "onboarding": {
         "welcomeTitle": "Voca에 오신 것을 환영합니다",
@@ -686,7 +693,9 @@
         "grammarPoints": "문법 패턴",
         "speechRate": "발화 속도",
         "filterByLevel": "레벨별 필터",
-        "allLevels": "모든 레벨"
+        "allLevels": "모든 레벨",
+        "noVideos": "이 난이도에 해당하는 동영상이 없습니다.",
+        "noPlaylists": "이 난이도에 해당하는 재생목록이 없습니다."
     },
     "gamification": {
         "level": "레벨",

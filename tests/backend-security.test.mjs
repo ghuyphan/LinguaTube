@@ -370,5 +370,27 @@ test('RateLimiter: optimizes KV writes by suppressing syncs when comfortably bel
   assert.equal(putCount, 3, 'Exceeding quota must sync to block across all isolates');
 });
 
+test('normalizeLanguageCode: canonicalizes Gladia and external language strings', async () => {
+  const { normalizeLanguageCode } = await import('../functions-src/utils/transcript-utils.js');
+  assert.equal(normalizeLanguageCode('zh'), 'zh');
+  assert.equal(normalizeLanguageCode('zh-CN'), 'zh');
+  assert.equal(normalizeLanguageCode('zh-TW'), 'zh');
+  assert.equal(normalizeLanguageCode('cmn'), 'zh');
+  assert.equal(normalizeLanguageCode('mandarin'), 'zh');
+  assert.equal(normalizeLanguageCode('chinese'), 'zh');
+  assert.equal(normalizeLanguageCode('ja'), 'ja');
+  assert.equal(normalizeLanguageCode('ja-JP'), 'ja');
+  assert.equal(normalizeLanguageCode('japanese'), 'ja');
+  assert.equal(normalizeLanguageCode('ko'), 'ko');
+  assert.equal(normalizeLanguageCode('ko-KR'), 'ko');
+  assert.equal(normalizeLanguageCode('korean'), 'ko');
+  assert.equal(normalizeLanguageCode('en'), 'en');
+  assert.equal(normalizeLanguageCode('en-US'), 'en');
+  assert.equal(normalizeLanguageCode('english'), 'en');
+  assert.equal(normalizeLanguageCode('fr'), 'fr');
+  assert.equal(normalizeLanguageCode(null), '');
+  assert.equal(normalizeLanguageCode(''), '');
+});
+
 
 

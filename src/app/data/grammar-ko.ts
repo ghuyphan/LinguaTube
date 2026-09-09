@@ -264,7 +264,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으세요euseyoImperativeform_8",
     "language": "ko",
-    "pattern": "(으)세요 [(eu)seyo] (Imperative form)",
+    "pattern": "(으)세요",
     "title": "(으)세요 [(eu)seyo] (Imperative form)",
     "shortExplanation": "Used to give orders, instructions, or make polite requests.",
     "longExplanation": "'(으)세요 [(eu)seyo]' is an imperative form in Korean used to request or command someone to do something politely. It is considered an honorific form, so it is used when speaking to someone older or of higher status, or simply to be polite. Use '세요' if the verb stem ends with a vowel, and '으세요' if the verb stem ends with a consonant.",
@@ -296,7 +296,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으수있다eulsuitdaCando_9",
     "language": "ko",
-    "pattern": "(으)ㄹ 수 있다 [(eu)l su itda] (Can do)",
+    "pattern": "(으)ㄹ 수 있다",
     "title": "(으)ㄹ 수 있다 [(eu)l su itda] (Can do)",
     "shortExplanation": "This form indicates the potential ability or possibility to perform something.",
     "longExplanation": "'(으)ㄹ 수 있다' is a fundamental Korean grammar point that conveys the potential ability to do something. It works like 'can' in English. It indicates that an action is possible or that an event may occur, and also implies that the speaker (or subject) either has the ability or the permission to do the action described by the preceding verb.",
@@ -328,7 +328,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으려고euryeogoIntentiontodo_10",
     "language": "ko",
-    "pattern": "(으)려고 [(eu)ryeogo] (Intention to do)",
+    "pattern": "(으)려고",
     "title": "(으)려고 [(eu)ryeogo] (Intention to do)",
     "shortExplanation": "Used to express the speaker's intention or plan to do something.",
     "longExplanation": "The '(으)려고' form is used in Korean to express intention or a plan to do something. It can be translated roughly as 'in order to,' 'intend to,' or 'plan to.' You can use it when talking about your own intentions or other people's intentions that you know of. It often implies a future action or purposeful activity.",
@@ -360,7 +360,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으는다eunneundaInformalstatementendings_11",
     "language": "ko",
-    "pattern": "(으)ㄴ/는다 [(eu)n/neunda] (Informal statement endings)",
+    "pattern": "(으)ㄴ/는다",
     "title": "(으)ㄴ/는다 [(eu)n/neunda] (Informal statement endings)",
     "shortExplanation": "Used in informal or plain-style statements to make assertions or descriptions.",
     "longExplanation": "'(으)ㄴ/는다' are plain-style (informal) statement endings in Korean. They often appear in written narratives, diaries, or casual speech among peers. If the verb stem ends in a vowel, use 'ㄴ다.' If the verb stem ends in a consonant, use '는다.'",
@@ -584,7 +584,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으면eumyeonIfwhen_18",
     "language": "ko",
-    "pattern": "(으)면 [(eu)myeon] (If, when)",
+    "pattern": "(으)면",
     "title": "(으)면 [(eu)myeon] (If, when)",
     "shortExplanation": "This is generally used to express 'if' or 'when'. It's employed to present conditions and the possible consequences of those conditions.",
     "longExplanation": "(으)면 [(eu)myeon] is a conditional ending in Korean attached to a verb or adjective stem. It can mean 'if', 'when', or 'in case'. This grammar point sets up a condition in the (으)면-clause, and the main clause explains the result or consequence that follows from that condition.",
@@ -744,7 +744,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으는데eunneundeButhowever_23",
     "language": "ko",
-    "pattern": "(으)ㄴ/는데 [(eu)n/neunde] (But, however)",
+    "pattern": "(으)ㄴ/는데",
     "title": "(으)ㄴ/는데 [(eu)n/neunde] (But, however)",
     "shortExplanation": "Used to express contrast or contradiction; 'but', 'however'.",
     "longExplanation": "'(으)ㄴ/는데' is used to express a contrast or introduce background information. It's similar to 'but' or 'however' in English, but can also be used for transitions or providing context. For verbs in the present tense, use '는데', while for descriptive verbs (adjectives), the form can be '(으)ㄴ데'.",
@@ -776,7 +776,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어야_24",
     "language": "ko",
-    "pattern": "아/어야",
+    "pattern": "아/어야 해요",
     "title": "아/어야 해요 [a/eoya haeyo] (Have to do)",
     "shortExplanation": "Used to express necessity or obligation; 'have to', 'must', 'should'.",
     "longExplanation": "'아/어야 해요' is used when you must or need to do something. It conveys a strong sense of requirement or obligation, similar to 'have to' or 'must' in English. The exact form (아, 어, or 여) depends on the final vowel of the verb stem.",
@@ -872,7 +872,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_27",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 보다",
     "title": "아/어/여 보다 [a/eo/yeo boda] (Try doing)",
     "shortExplanation": "Expresses an attempt or an experience of doing something; 'try doing'.",
     "longExplanation": "'아/어/여 보다' is used in Korean to show that one attempts or experiences a certain action. It is attached to an action verb stem, while the final verb '보다' takes the tense. It can also be used to describe having done something at least once in the past (an experience).",
@@ -1032,7 +1032,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으려고하다euryeogohadaIntendtodo_32",
     "language": "ko",
-    "pattern": "(으)려고 하다 [(eu)ryeogo hada] (Intend to do)",
+    "pattern": "(으)려고 하다",
     "title": "(으)려고 하다 [(eu)ryeogo hada] (Intend to do)",
     "shortExplanation": "Used to express the intention or plan to do something.",
     "longExplanation": "'(으)려고 하다' is used to say that someone intends or plans to do something in the future. The verb stem is followed by (으)려고, then '하다' is conjugated to show tense or politeness level. It often implies a near-future plan or deliberate intention.",
@@ -1128,7 +1128,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이랑irangWith_35",
     "language": "ko",
-    "pattern": "(이)랑 [(i)rang] (With)",
+    "pattern": "(이)랑",
     "title": "(이)랑 [(i)rang] (With)",
     "shortExplanation": "Used to express 'with' or 'and' when referring to being together or doing something together.",
     "longExplanation": "'(이)랑 [(i)rang]' is a conjunctive particle used in Korean to denote the concept of 'with' or 'and'. It connotes a sense of togetherness, indicating that the speaker is together with someone or doing something jointly. If the noun ends with a vowel, use '랑 [rang]'; if it ends with a consonant, use '이랑 [irang]'.",
@@ -1256,7 +1256,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_39",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 주다",
     "title": "아/어/여 주다 [a/eo/yeo juda] (To do for someone)",
     "shortExplanation": "Used to express doing an action for someone’s benefit.",
     "longExplanation": "'아/어/여 주다' is a verb ending that means doing something *for* or *on behalf of* someone else. It attaches to the verb stem (with 아/어/여 depending on the stem’s final vowel), followed by '주다'. It often suggests kindness, favor, or helping the other person.",
@@ -1288,7 +1288,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_40",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 하다",
     "title": "아/어/여 하다 [a/eo/yeo hada] (To feel or show a certain emotion)",
     "shortExplanation": "Used mainly to convert adjectives (descriptive verbs) into active verbs that show one’s feeling or reaction.",
     "longExplanation": "In Korean, some descriptive verbs (adjectives) become active verbs when combined with '아/어/여 하다'. For example, '슬프다' (to be sad) → '슬퍼하다' (to feel or show sadness). It indicates that the subject actively experiences or outwardly shows the emotion/state. This pattern is especially common with psychological or emotional adjectives.",
@@ -1352,7 +1352,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으로euroTotowardbymeansof_42",
     "language": "ko",
-    "pattern": "(으)로 [(eu)ro] (To, toward; by means of)",
+    "pattern": "(으)로",
     "title": "(으)로 [(eu)ro] (To, toward; by means of)",
     "shortExplanation": "Used to express direction, method, or transformation ('to', 'toward', 'by', 'into').",
     "longExplanation": "'(으)로 [(eu)ro]' is a Korean particle with several functions. It can indicate direction ('to/toward'), method or instrument ('by/with/using'), or transformation ('into'). After a consonant, use '으로'; after a vowel, just '로'.",
@@ -1576,7 +1576,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이나inaOr_49",
     "language": "ko",
-    "pattern": "(이)나 [(i)na] (Or)",
+    "pattern": "(이)나",
     "title": "(이)나 [(i)na] (Or)",
     "shortExplanation": "Used to express alternatives; 'or'.",
     "longExplanation": "'(이)나 [(i)na]' is used after nouns (and sometimes verbs in certain constructions) to present alternatives or choices. It can be roughly translated to 'or' in English. For verbs, the more common form is '-거나,' but '(이)나' can appear after verbs in some contexts, especially in casual speech.",
@@ -1672,7 +1672,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는은_52",
     "language": "ko",
-    "pattern": "는/은",
+    "pattern": "는/은 것",
     "title": "는/은 것 [neun/eun geot] (The thing that…, nominalizing)",
     "shortExplanation": "Nominalizes verbs or adjectives, translating roughly as 'the act of …ing' or 'the thing that…'.",
     "longExplanation": "The construction '는/은 것 [neun/eun geot]' is used in Korean to turn verbs or adjectives into noun phrases—'the thing that…' or 'the act of …ing.' You use '는' after a present verb stem (e.g., '보다' → '보는 것'), and '은' after an adjective stem or a past verb stem to make it function like a noun in the sentence.",
@@ -1704,7 +1704,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으는것같다eunneungeotgatdaItseemslike_53",
     "language": "ko",
-    "pattern": "(으)ㄴ/는 것 같다 [(eu)n/neun geot gatda] (It seems like)",
+    "pattern": "(으)ㄴ/는 것 같다",
     "title": "(으)ㄴ/는 것 같다 [(eu)n/neun geot gatda] (It seems like)",
     "shortExplanation": "Used to express a conjecture, guess, or resemblance; 'it seems like', 'it appears that'.",
     "longExplanation": "'(으)ㄴ/는 것 같다' is a common structure in Korean for expressing a guess or impression about a situation. With **action verbs**, '는 것 같다' typically indicates a current action or a general impression; with **descriptive verbs** (adjectives) or **past tense verbs**, '(으)ㄴ 것 같다' is used. It loosely translates to 'it seems that...' or 'it looks like...'.",
@@ -1736,7 +1736,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으러가다오다eureogadaodaGocometodosomething_54",
     "language": "ko",
-    "pattern": "(으)러 가다/오다 [(eu)reo gada/oda] (Go/come to do something)",
+    "pattern": "(으)러 가다/오다",
     "title": "(으)러 가다/오다 [(eu)reo gada/oda] (Go/come to do something)",
     "shortExplanation": "Used to express the purpose of going or coming somewhere; 'go/come to do something'.",
     "longExplanation": "'(으)러 가다/오다' is used to indicate **why** someone goes or comes to a location. If the verb stem ends in a consonant, you add '(으)러'; if it ends in a vowel, you add '러'. It translates to 'go/come in order to do (something)'. For instance: 가다 → 가러, 먹다 → 먹으러, 배우다 → 배우러.",
@@ -1864,7 +1864,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으때eulttaeWhen_58",
     "language": "ko",
-    "pattern": "(으)ㄹ 때 [(eu)l ttae] (When)",
+    "pattern": "(으)ㄹ 때",
     "title": "(으)ㄹ 때 [(eu)l ttae] (When)",
     "shortExplanation": "Used to express 'when' something happens or a time condition.",
     "longExplanation": "'(으)ㄹ 때' corresponds to 'when' or 'at the time that' in English. It's used to link a time clause with the main clause, indicating when an action or state occurs. If the verb stem ends in a vowel, you add 'ㄹ 때,' and if it ends in a consonant, you add '을 때.'",
@@ -1896,7 +1896,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여야_59",
     "language": "ko",
-    "pattern": "아/어/여야",
+    "pattern": "아/어/여야 되다",
     "title": "아/어/여야 되다 [a/eo/yeoya doeda] (Must, have to)",
     "shortExplanation": "Used to express obligation or necessity; 'must', 'have to'.",
     "longExplanation": "'아/어/여야 되다' conveys an obligation or necessity, similar to 'must' or 'have to' in English. It is attached to the verb stem with the appropriate connector (아, 어, or 여), followed by '야 되다'. This indicates the speaker believes that action is required or unavoidable.",
@@ -1928,7 +1928,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으면서eumyeonseoWhileand_60",
     "language": "ko",
-    "pattern": "(으)면서 [(eu)myeonseo] (While, and)",
+    "pattern": "(으)면서",
     "title": "(으)면서 [(eu)myeonseo] (While, and)",
     "shortExplanation": "Used to express two actions happening at the same time; 'while doing X, doing Y'.",
     "longExplanation": "'(으)면서' shows that two actions or states occur simultaneously. If the verb stem ends in a consonant, add '으면서'; if it ends in a vowel, just '면서'. For example, 먹다 → 먹으면서, 가다 → 가면서. It can translate to 'while ~ing' in English.",
@@ -1992,7 +1992,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_62",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 보이다",
     "title": "아/어/여 보이다 [a/eo/yeo boida] (Looks, seems)",
     "shortExplanation": "Used to express 'it seems', 'it looks like', or 'appears to be'.",
     "longExplanation": "'아/어/여 보이다' is a Korean grammar pattern that describes the appearance or impression of someone or something, based on the speaker’s observation. It can relate to either physical appearance or a perceived mood or atmosphere. In English, it corresponds to expressions like 'it seems...', 'it looks...', or 'it appears...'.",
@@ -2024,7 +2024,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_63",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 버리다",
     "title": "아/어/여 버리다 [a/eo/yeo beorida] (Completely, regretfully)",
     "shortExplanation": "Expresses that an action is done completely or with regret/surprise.",
     "longExplanation": "'아/어/여 버리다' is a grammatical form indicating that an action is carried out entirely or left a sense of regret, finality, or emotional surprise. It can mean 'to do something completely' or 'to end up doing something (with regret).' Depending on the final vowel of the verb stem, use 아, 어, or 여 before 버리다.",
@@ -2056,7 +2056,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_64",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 놓다",
     "title": "아/어/여 놓다 [a/eo/yeo nohda] (Leave something as is)",
     "shortExplanation": "Used to describe leaving something in a certain state or condition.",
     "longExplanation": "'아/어/여 놓다' shows that after performing an action, you keep or maintain the resulting state. It implies that the speaker performed the action and deliberately left the object or situation as is. In English, you might say 'to leave (it) done' or 'have (it) done and left in place.'",
@@ -2088,7 +2088,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_65",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 지다",
     "title": "아/어/여 지다 [a/eo/yeo jida] (Become)",
     "shortExplanation": "Shows a change in state or condition, 'become' or 'get'.",
     "longExplanation": "'아/어/여 지다' describes a transformation from one state to another over time. It’s often used with descriptive verbs (adjectives) to mean 'become + adjective' (e.g., 춥다 → 추워지다 for 'to become cold'). The choice of 아/어/여 depends on the stem’s final vowel.",
@@ -2120,7 +2120,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_66",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 가지다",
     "title": "아/어/여 가지다 [a/eo/yeo gajida] (Have, possess)",
     "shortExplanation": "Used when someone possesses or has certain qualities, traits, or characteristics.",
     "longExplanation": "'아/어/여 가지다' signifies that someone or something 'has' or 'possesses' a particular feature, quality, or characteristic. It’s often used with adjectives or abstract qualities, indicating the subject is endowed with or exhibits those traits.",
@@ -2152,7 +2152,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으는편이다eunneunpyeonidaTendto_67",
     "language": "ko",
-    "pattern": "(으)ㄴ/는 편이다 [(eu)n/neun pyeonida] (Tend to)",
+    "pattern": "(으)ㄴ/는 편이다",
     "title": "(으)ㄴ/는 편이다 [(eu)n/neun pyeonida] (Tend to)",
     "shortExplanation": "Used to describe someone's tendency, habit, or general characteristic.",
     "longExplanation": "The expression '(으)ㄴ/는 편이다' describes a tendency or inclination. **With descriptive verbs (adjectives), you use (으)ㄴ 편이다**, and **with action verbs, you use 는 편이다**. It translates roughly to 'I tend to…' or 'It’s rather…'. It suggests that something is generally or somewhat the case, without being absolute.",
@@ -2184,7 +2184,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는은_68",
     "language": "ko",
-    "pattern": "는/은",
+    "pattern": "는/은 데",
     "title": "는/은 데 [neun/eun de] (Situation or condition)",
     "shortExplanation": "Used to describe or clarify a situation, often introducing contrasting or unexpected information.",
     "longExplanation": "'는/은 데' serves as a connector in Korean. It provides context or background before introducing new or contrasting information. It can translate loosely to '…but…', '…and…', or '…so…' in English, depending on context. The form uses '는 데' for action verbs and '은 데' for descriptive verbs or nouns.",
@@ -2248,7 +2248,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여서는_70",
     "language": "ko",
-    "pattern": "아/어/여서는",
+    "pattern": "아/어/여서는 안 되다",
     "title": "아/어/여서는 안 되다 [a/eo/yeoseoneun an doeda] (Must not, shouldn't)",
     "shortExplanation": "Used to express prohibition; 'must not', 'shouldn’t'.",
     "longExplanation": "The construction '아/어/여서는 안 되다' conveys that a certain action is forbidden or must not happen. It’s similar to 'You must not…' or 'You shouldn’t…' in English. Typically, we use the verb stem, attach 아/어/여서, and then add '는 안 되다.'",
@@ -2280,7 +2280,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_71",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 주세요",
     "title": "아/어/여 주세요 [a/eo/yeo juseyo] (Please give/do for me)",
     "shortExplanation": "Politely request or command someone to do something for you.",
     "longExplanation": "'아/어/여 주세요' is used in Korean to make a **polite request** to the listener, akin to 'please do (something)' or 'please give me (something).' It attaches to the stem of an **action verb**, and the exact form (아/어/여) depends on the final vowel in the verb stem.",
@@ -2312,7 +2312,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_72",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 드리다",
     "title": "아/어/여 드리다 [a/eo/yeo deurida] (To give – honorific)",
     "shortExplanation": "Conveys politeness when doing something for someone (honorific).",
     "longExplanation": "'아/어/여 드리다' is an **honorific** version of '아/어/여 주다' used to **politely express** that you are doing (or giving) something to someone of higher status or to show respect. It follows the same vowel rules as '주다', but replaces '주다' with '드리다' for heightened politeness.",
@@ -2376,7 +2376,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_74",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 가다",
     "title": "아/어/여 가다 [a/eo/yeo gada] (Continue/keep doing something – away from the present)",
     "shortExplanation": "Indicates an action continuing or moving away from the present point in time or space.",
     "longExplanation": "The expression '아/어/여 가다' can mean that **an action or state continues** in a forward direction—much like 'keep on ~ing' or 'go on ~ing.' It can also show that the action is moving away from the current context. (Note: If you want to say 'go somewhere to do something,' you typically use **'(으)러 가다'** instead.)",
@@ -2408,7 +2408,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으러가다오다eureogadaodaGocomeinordertodo_75",
     "language": "ko",
-    "pattern": "(으)러 가다/오다 [(eu)reo gada/oda] (Go/come in order to do)",
+    "pattern": "(으)러 가다/오다",
     "title": "(으)러 가다/오다 [(eu)reo gada/oda] (Go/come in order to do)",
     "shortExplanation": "Indicates going or coming somewhere for the purpose of performing an action.",
     "longExplanation": "'(으)러 가다/오다' is used when you physically **go** or **come** to a location in order to do something. The form is '(으)러' for verbs whose stems end in a consonant (other than ㄹ), and '러' if the stem ends in a vowel or ㄹ. For example, '공부하러 가다' = to go somewhere to study.",
@@ -2440,7 +2440,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_76",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 오다",
     "title": "아/어/여 오다 [a/eo/yeo oda] (Come to do / end up doing)",
     "shortExplanation": "Expresses arriving at a certain action or state, or having done something up to now.",
     "longExplanation": "'아/어/여 오다' can mean 'to come doing something' (physically) or 'to do something gradually until now' (metaphorically). For literal movement, it's often '(으)러 오다' (e.g., 먹으러 오다 = 'come to eat'). For a figurative sense, it can describe an action that has progressed and continued up to the present, akin to 'have been doing.'",
@@ -2472,7 +2472,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_77",
     "language": "ko",
-    "pattern": "고",
+    "pattern": "고 있다",
     "title": "고 있다 [go itda] (To be doing)",
     "shortExplanation": "Indicates a continuous or ongoing action, similar to the English '-ing' form.",
     "longExplanation": "'고 있다' is the standard way to express an **action in progress**. For example, '읽고 있다' = 'am reading,' '요리하고 있다' = 'am cooking.' It differs from '아/어 있다,' which usually describes a **resultant state** (e.g., '앉아 있다' = 'to be seated').",
@@ -2504,7 +2504,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_78",
     "language": "ko",
-    "pattern": "아/어/여",
+    "pattern": "아/어/여 보다",
     "title": "아/어/여 보다 [a/eo/yeo boda] (Try to do)",
     "shortExplanation": "Expresses an attempt or trial to do something, 'try doing'.",
     "longExplanation": "'아/어/여 보다' indicates that you **attempt** or **try** an action to see what happens. It can be used for trying something for the first time or experimenting with a new method. In English, it corresponds to 'try ~ing' or 'give it a try.'",
@@ -2536,7 +2536,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_0",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 되다",
     "title": "~게 되다 [ge doeda] (End up doing)",
     "shortExplanation": "Used to express events or actions that occur unintentionally or as a result of another event or circumstance.",
     "longExplanation": "'~게 되다 [ge doeda]' is a grammar point in Korean used to indicate outcomes that are primarily out of the speaker's control, often unexpected or resulting from certain circumstances or events. It conveys the sense of 'end up doing' or 'come to do' in English. It is used to express a change or transition, the result of an event, or to describe the inevitable outcome of a certain situation.",
@@ -2568,7 +2568,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_1",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 하다",
     "title": "~게 하다 [ge hada] (Make/let someone do)",
     "shortExplanation": "This is a way to indicate that you are making or allowing someone else to do something.",
     "longExplanation": "`~게 하다 [ge hada]` is a Korean grammar form used to express that someone is making or allowing someone else to do something. This structure often indicates persuading, ordering, permitting, or causing an action to happen. In English, it can be similar to 'make someone do something' or 'let someone do something'.",
@@ -2600,7 +2600,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_2",
     "language": "ko",
-    "pattern": "~고",
+    "pattern": "~고 싶다",
     "title": "~고 싶다 [go sipda] (Want to do)",
     "shortExplanation": "Used to express a desire or a wish.",
     "longExplanation": "'~고 싶다 [go sipda]' is a grammatical form used to express a person's desire or wish to do something in Korean. It's often used with verbs when expressing “I want to…” or “I would like to….” Typically, it’s best used for your own desires rather than attributing desires to others (in which case different expressions are often used).",
@@ -2632,7 +2632,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_3",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 전에",
     "title": "~기 전에 [gi jeone] (Before doing)",
     "shortExplanation": "Used to express 'before doing something'.",
     "longExplanation": "'~기 전에 [gi jeone]' is a grammatical structure in Korean used to indicate that one action happens before another, essentially meaning 'before doing something'. It describes the chronological order in which actions occur, whether in the past, present, or future.",
@@ -2664,7 +2664,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_4",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 때문에",
     "title": "~기 때문에 [gi ttaemune] (Because of doing)",
     "shortExplanation": "Used to express a reason or cause; 'because (of doing)'.",
     "longExplanation": "'기 때문에 [gi ttaemune]' is a grammar point used in Korean to express a reason or cause related to an action, equivalent to 'because (of doing)' in English. This form uses the nominalizing suffix '기' plus '때문에' to explain why something happens, showing a cause-effect relationship.",
@@ -2696,7 +2696,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기로_5",
     "language": "ko",
-    "pattern": "~기로",
+    "pattern": "~기로 하다",
     "title": "~기로 하다 [giro hada] (Decide to do)",
     "shortExplanation": "Used to express making a decision or a plan to do something.",
     "longExplanation": "'~기로 하다' is used as Verb stem + 기로 하다 to express a decision or plan to do something. It often translates to 'decide to do' in English and is used when the speaker is stating what they (or someone) have decided, often as the result of a conversation or personal resolve.",
@@ -2728,7 +2728,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_6",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 시작하다",
     "title": "~기 시작하다 [gi sijakhada] (Start to do)",
     "shortExplanation": "Expresses the start or commencement of an action or event.",
     "longExplanation": "'~기 시작하다 [gi sijakhada]' is used to express the beginning of an action in Korean. By nominalizing a verb with '~기' and then using '시작하다 (to start)', you convey that the action has just begun or is beginning soon.",
@@ -2760,7 +2760,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기는_7",
     "language": "ko",
-    "pattern": "~기는",
+    "pattern": "~기는 하다",
     "title": "~기는 하다 [gineun hada] (Indeed do, but...)",
     "shortExplanation": "Used to emphasize or concede that one does something, often followed by a contrasting point.",
     "longExplanation": "'~기는 하다' attaches the nominalizer '~기' to a verb, followed by '는 하다'. It often indicates a concession or emphasis: “Yes, I do X (indeed), but...”. In many cases, it implies the action is done, yet not wholeheartedly, or a contrary result follows. It’s not limited to habitual actions, but more about emphasizing or conceding the fact that you do it.",
@@ -2792,7 +2792,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_8",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 대로",
     "title": "~는 대로 [neun daero] (As it is / Just as someone says)",
     "shortExplanation": "'~는 대로' is used to state that something is done exactly as it is or as told/given.",
     "longExplanation": "The '~는 대로 [neun daero]' structure expresses doing something exactly in the manner stated or indicated, with no alteration. It can also be used when following instructions precisely or maintaining the original state/method.",
@@ -2824,7 +2824,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_9",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 바람에",
     "title": "~는 바람에 [neun barame] (Because of / Due to)",
     "shortExplanation": "Used when indicating the cause of a negative result or situation.",
     "longExplanation": "'~는 바람에 [neun barame]' literally means 'because of (this wind/event)' and is used to describe a reason or cause behind an unfortunate or negative outcome. It emphasizes that the cause led directly to some undesirable result.",
@@ -2888,7 +2888,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는지_11",
     "language": "ko",
-    "pattern": "~는지",
+    "pattern": "~는지 모르다",
     "title": "~는지 모르다 [neunji moreuda] (Don't know if)",
     "shortExplanation": "It is used when the speaker is unsure about a situation or fact.",
     "longExplanation": "'~는지 모르다' is a form used to express uncertainty or lack of knowledge about something in Korean. It corresponds to the English 'do not know if'. This construction is used when the speaker does not know whether something happened, exists, or is true. The verb or adjective in front of '는지 모르다' should be in its adnominal form.",
@@ -2920,7 +2920,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는지_12",
     "language": "ko",
-    "pattern": "~는지",
+    "pattern": "~는지 알다",
     "title": "~는지 알다 [neunji alda] (Know if)",
     "shortExplanation": "Used to express 'know if' or 'know whether'.",
     "longExplanation": "'~는지 알다 [neunji alda]' is used to express the concept of knowing if something is the case or not. It’s often used when conveying what someone knows or needs to find out about a situation, event, or fact.",
@@ -2984,7 +2984,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_부터_14",
     "language": "ko",
-    "pattern": "~부터",
+    "pattern": "~부터 ~까지",
     "title": "~부터 ~까지 [buteo ~ kkaji] (From ~ to ~)",
     "shortExplanation": "Used to express the beginning and end of a range in time, space, or action.",
     "longExplanation": "'~부터 ~까지 [buteo ~ kkaji]' is used to indicate the starting point and ending point of an action, period, or location. It translates to 'from ~ to ~' in English and can be used for time, place, numbers, or other continuous ranges.",
@@ -3016,7 +3016,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_15",
     "language": "ko",
-    "pattern": "~아/어/여",
+    "pattern": "~아/어/여 보이다",
     "title": "~아/어/여 보이다 [a/eo/yeo boida] (Seems, looks like)",
     "shortExplanation": "Used to express that something appears or seems a certain way from the speaker’s perspective.",
     "longExplanation": "The grammar '~아/어/여 보이다' is used to indicate that someone or something appears, looks, or seems a certain way based on the speaker’s perception. It can be translated as 'seems' or 'looks like' in English. It implies that the statement is an inference or impression, not an absolute fact.",
@@ -3048,7 +3048,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여_16",
     "language": "ko",
-    "pattern": "~아/어/여",
+    "pattern": "~아/어/여 주다",
     "title": "~아/어/여 주다 [a/eo/yeo juda] (Do something for someone)",
     "shortExplanation": "Used to express the action of doing something for someone’s benefit.",
     "longExplanation": "The '~아/어/여 주다 [a/eo/yeo juda]' form is used in Korean to express doing something for someone else. It is often used to show that the speaker (or subject) is performing an action as a favor, courtesy, or service to another person. In requests, it can also soften the tone, implying you want someone to do something for you.",
@@ -3080,7 +3080,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여야만_17",
     "language": "ko",
-    "pattern": "~아/어/여야만",
+    "pattern": "~아/어/여야만 하다",
     "title": "~아/어/여야만 하다 [a/eo/yeoyaman hada] (Have to do)",
     "shortExplanation": "This grammar point expresses necessity or obligation: 'must', 'have to'.",
     "longExplanation": "The phrase '~아/어/여야만 하다 [a/eo/yeoyaman hada]' indicates that someone must or has to do something. It closely corresponds to 'have to' or 'must' in English. The verb stem combines with '아/어/여야만 하다', depending on the final vowel of the verb.",
@@ -3112,7 +3112,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여도_18",
     "language": "ko",
-    "pattern": "~아/어/여도",
+    "pattern": "~아/어/여도 되다",
     "title": "~아/어/여도 되다 [a/eo/yeodo doeda] (Is it okay to ~ / May I ~)",
     "shortExplanation": "Used to ask or state permission to do something.",
     "longExplanation": "'~아/어/여도 되다 [a/eo/yeodo doeda]' is a Korean grammar pattern used to ask for or give permission. In questions, it means 'May I...?' or 'Is it okay to...?' In statements, it affirms that the action is permitted: 'You can...' or 'It’s okay to...'",
@@ -3144,7 +3144,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어여서는_19",
     "language": "ko",
-    "pattern": "~아/어/여서는",
+    "pattern": "~아/어/여서는 안 되다",
     "title": "~아/어/여서는 안 되다 [a/eo/yeoseoneun an doeda] (Must not)",
     "shortExplanation": "Indicates prohibition or that one must not do something.",
     "longExplanation": "'~아/어/여서는 안 되다' explicitly expresses that something must not be done. It is often translated as 'You must not...' or 'It's not allowed to...'. It follows the verb stem plus '아/어/여서' + '는 안 되다'.",
@@ -3208,7 +3208,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_았었으면_21",
     "language": "ko",
-    "pattern": "~았/었으면",
+    "pattern": "~았/었으면 좋겠다",
     "title": "~았/었으면 좋겠다 [at/eosseumyeon joketda] (I wish/hope)",
     "shortExplanation": "Used to express a desire for something to happen; equivalent to 'I wish/hope' in English.",
     "longExplanation": "'~았/었으면 좋겠다 [at/eosseumyeon joketda]' is a Korean grammar form used to express a wish or hope for a certain event or situation to happen. It combines a past-tense marker (~았/었) with the conditional '면' and '좋겠다' (hope). The meaning is similar to 'I wish' or 'I hope' in English, conveying a desire for something that is not currently the case, but which the speaker wishes would be or become so.",
@@ -3240,7 +3240,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아야_22",
     "language": "ko",
-    "pattern": "~어/아야",
+    "pattern": "~어/아야 하다",
     "title": "~어/아야 하다 [eo/ayahada] (Have to, should)",
     "shortExplanation": "Used to express obligation, necessity, or compulsion—'have to', 'should'.",
     "longExplanation": "'~어/아야 하다 [eo/ayahada]' is used in Korean to express obligation, necessity, or compulsion, similar to 'have to' or 'should' in English. Depending on the final vowel of the verb stem, you use '아야 하다' (if the final vowel is ㅏ or ㅗ) or '어야 하다' (otherwise). This indicates that performing the verb's action is required or expected.",
@@ -3304,7 +3304,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아_24",
     "language": "ko",
-    "pattern": "~어/아",
+    "pattern": "~어/아 버리다",
     "title": "~어/아 버리다 [eo/a beorida] (Regretfully, completely)",
     "shortExplanation": "Used to emphasize that an action is completed, often with regret or an unintended outcome.",
     "longExplanation": "'~어/아 버리다 [eo/a beorida]' is a verb ending that highlights the completion of an action, frequently carrying a feeling of regret, surprise, or finality. It often implies that the result was unintended or that the speaker wishes it had not happened.",
@@ -3368,7 +3368,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을를_26",
     "language": "ko",
-    "pattern": "~을/를",
+    "pattern": "~을/를 빼다",
     "title": "~을/를 빼다 [eul/reul ppaeda] (Except for)",
     "shortExplanation": "Used to mean 'except for' or 'excluding', showing an exclusion from a group or set.",
     "longExplanation": "'~을/를 빼다 [eul/reul ppaeda]' is used in Korean to indicate that something is excluded from a given group, set, or situation. It can be translated as 'except for' or 'aside from.'",
@@ -3400,7 +3400,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을를_27",
     "language": "ko",
-    "pattern": "~을/를",
+    "pattern": "~을/를 수 있다",
     "title": "~을/를 수 있다 [eul/reul su itda] (Can, possible)",
     "shortExplanation": "Expresses the ability or possibility to perform an action: 'can', 'be able to'.",
     "longExplanation": "'~을/를 수 있다 [eul/reul su itda]' is used to indicate that the subject is capable of or that it is possible to perform the action of the verb. It is commonly translated as 'can' or 'be able to' in English.",
@@ -3432,7 +3432,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을를_28",
     "language": "ko",
-    "pattern": "~을/를",
+    "pattern": "~을/를 통해",
     "title": "~을/를 통해 [eul/reul tonghae] (Through, via)",
     "shortExplanation": "Used to show the medium or channel through which something is done or achieved.",
     "longExplanation": "'~을/를 통해 [eul/reul tonghae]' indicates that something is accomplished, communicated, or obtained by means of a certain method, channel, or medium. It corresponds to 'through' or 'via' in English.",
@@ -3592,7 +3592,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이_33",
     "language": "ko",
-    "pattern": "~이",
+    "pattern": "~이 되다",
     "title": "~이 되다 [i doeda] (Become)",
     "shortExplanation": "Used to indicate a change or transformation: 'become'.",
     "longExplanation": "'~이 되다 [i doeda]' is a common expression in Korean indicating the transformation or shift from one state to another, often with nouns. It can refer to changes in jobs, positions, relationships, states, etc. It basically carries the meaning of 'become' in English when attached to a noun followed by '이'.",
@@ -3624,7 +3624,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이나_34",
     "language": "ko",
-    "pattern": "~이나",
+    "pattern": "~이나 ~",
     "title": "~이나 ~ [ina] (Either... or...)",
     "shortExplanation": "Used to offer or list multiple options or possibilities, similar to 'either... or...'.",
     "longExplanation": "'~이나 ~' is used in Korean to give alternatives or options, much like 'either... or...' in English. It can introduce two or more nouns, verbs, or phrases. The construction often appears as 'Noun1 + 이나 + Noun2 + (하)나 + Verb/Adjective', offering multiple choices.",
@@ -4008,7 +4008,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_46",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않다",
     "title": "~지 않다 [ji anta] (Not)",
     "shortExplanation": "Used to negate a verb or adjective: 'not'.",
     "longExplanation": "'~지 않다 [ji anta]' is a negative form in Korean that translates to 'not' in English. It is attached to the verb/adjective stem to negate the action or state. It can be used in both formal and informal contexts to express that something does not happen or is not the case.",
@@ -4296,7 +4296,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하다가_55",
     "language": "ko",
-    "pattern": "~하다가",
+    "pattern": "~하다가 말다",
     "title": "~하다가 말다 [hadaga malda] (Stop doing something)",
     "shortExplanation": "Used to express that someone stops in the midst of doing something.",
     "longExplanation": "'~하다가 말다 [hadaga malda]' means that an action, which has begun, is interrupted or stopped before completion. It often implies the action may or may not resume later, highlighting a sudden change or interruption during the activity. The verb is typically in dictionary form before '하다가 말다.'",
@@ -4456,7 +4456,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_60",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 거예요",
     "title": "~할 거예요 [hal geoyeyo] (Going to do)",
     "shortExplanation": "Expresses a future plan or intention: 'going to do'.",
     "longExplanation": "'~할 거예요 [hal geoyeyo]' is a common future tense form in Korean that conveys a plan, intention, or prediction, similar to 'be going to' in English. It shows that the action is expected to happen in the future.",
@@ -4488,7 +4488,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_61",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 만하다",
     "title": "~할 만하다 [hal manhada] (Worth doing)",
     "shortExplanation": "Indicates that an action is worth the effort, time, or cost: 'worth doing'.",
     "longExplanation": "'~할 만하다 [hal manhada]' means that an action is sufficiently valuable or beneficial to be worth the effort it requires. It can be used with many verbs to suggest that something is recommended or rewarding despite possible difficulty or expense.",
@@ -4552,7 +4552,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_63",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 줄 알다",
     "title": "~할 줄 알다 [hal jul alda] (Know how to)",
     "shortExplanation": "Used to express the knowledge or skill to do something.",
     "longExplanation": "'~할 줄 알다 [hal jul alda]' is used to indicate that someone knows how to do a certain action or has the skill to do it. Literally, it means 'know the method of doing ~'.",
@@ -4616,7 +4616,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_65",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 텐데",
     "title": "~할 텐데 [hal tende] (I thought/would have thought that...)",
     "shortExplanation": "Expresses a presumption or expectation that differs from reality.",
     "longExplanation": "'~할 텐데 [hal tende]' conveys a speaker's assumption or prediction about a situation that turned out differently. It can be translated as 'I would have thought...' or 'I expected...' but the actual result was unexpected or contrary to the assumption.",
@@ -4872,7 +4872,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_했을_73",
     "language": "ko",
-    "pattern": "~했을",
+    "pattern": "~했을 때",
     "title": "~했을 때 [haesseul ttae] (When someone did)",
     "shortExplanation": "Used to express the time when a particular action or event took place.",
     "longExplanation": "'~했을 때 [haesseul ttae]' is a verb ending used in Korean to indicate the time when a specific action or event happened in the past. It is typically translated as 'when someone did' in English. It connects two clauses: the first describes the action/event in the past, the second describes the result or consequence.",
@@ -4904,7 +4904,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_했을_74",
     "language": "ko",
-    "pattern": "~했을",
+    "pattern": "~했을 텐데",
     "title": "~했을 텐데 [haesseul tende] (I think I did)",
     "shortExplanation": "Used to express a strong assumption or belief about a past action or state.",
     "longExplanation": "'~했을 텐데' is a grammatical expression used in Korean to indicate a strong assumption or belief regarding a past action or state. The speaker believes that the action mentioned likely occurred (or was true), but they do not have direct or definite confirmation. It can also convey a sense of regret or speculation about what probably happened.",
@@ -6728,7 +6728,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_13",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 되다",
     "title": "~게 되다 [ge dweda] (End up, come to)",
     "shortExplanation": "Used to express that an action or situation resulted naturally or unintentionally.",
     "longExplanation": "'~게 되다' is used to indicate that an action or state 'came to be' as a result of certain circumstances, often without direct intention. It can refer to an unexpected outcome or something that happened gradually and naturally. It frequently translates as 'end up doing' or 'come to do' in English.",
@@ -6760,7 +6760,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_14",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 하다",
     "title": "~게 하다 [ge hada] (Make/cause someone to do)",
     "shortExplanation": "Used to express 'making' or 'causing' someone to do something.",
     "longExplanation": "'~게 하다' indicates that someone or something makes or causes another person to perform an action. It corresponds to 'make/let/cause (someone) do something' in English. The subject is the person causing the action, and the object is the one who is made to do it.",
@@ -6792,7 +6792,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_15",
     "language": "ko",
-    "pattern": "~고",
+    "pattern": "~고 말다",
     "title": "~고 말다 [go malda] (End up)",
     "shortExplanation": "Used to express that an action is completed or ends with an unexpected or unintended result.",
     "longExplanation": "'~고 말다' emphasizes that an action/event reached its conclusion (often regretfully or unexpectedly). It can carry the nuance of something happening despite efforts or intentions to avoid it, leading to a sense of finality or mild lament.",
@@ -6824,7 +6824,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_16",
     "language": "ko",
-    "pattern": "~고",
+    "pattern": "~고 말하다",
     "title": "~고 말하다 [go malhada] (Say that...)",
     "shortExplanation": "Used to convey that someone said something in a manner suggesting finality or firm intention.",
     "longExplanation": "The construction '~고 말하다' in Korean means 'to say (something).' It can carry a nuance of definitiveness or insistence in the statement. It is often used when someone states a fact, an order, or a firm decision they have made.",
@@ -6856,7 +6856,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_17",
     "language": "ko",
-    "pattern": "~고",
+    "pattern": "~고 보면",
     "title": "~고 보면 [go bomyeon] (Upon closer look, when you consider)",
     "shortExplanation": "Used to express the meaning 'when seen/considered in a certain way' or 'once you look at it, you realize...'.",
     "longExplanation": "'~고 보면 [go bomyeon]' conveys the idea that after doing or seeing something, a new perspective or outcome emerges. It indicates that things may look different 'when you actually do/see them'.",
@@ -6952,7 +6952,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기는_20",
     "language": "ko",
-    "pattern": "~기는",
+    "pattern": "~기는 하다",
     "title": "~기는 하다 [gineun hada] (Do something but...)",
     "shortExplanation": "Used to express 'I do (action) but...', showing a contrast with an additional clause.",
     "longExplanation": "'~기는 하다 [gineun hada]' acknowledges that something is true while introducing a contrasting or qualifying statement. The nuance is similar to 'I do X, but...' or 'Yes, it’s true that X, but...' in English.",
@@ -6984,7 +6984,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기로_21",
     "language": "ko",
-    "pattern": "~기로",
+    "pattern": "~기로 하다",
     "title": "~기로 하다 [giro hada] (Decide to)",
     "shortExplanation": "Used to express the decision or resolution to do something.",
     "longExplanation": "'~기로 하다 [giro hada]' is used to indicate that someone has decided or resolved to carry out a particular action. It can refer to personal decisions or collectively agreed plans, often used when describing future intentions.",
@@ -7016,7 +7016,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기로_22",
     "language": "ko",
-    "pattern": "~기로",
+    "pattern": "~기로 되다",
     "title": "~기로 되다 [giro dweda] (It is decided/settled)",
     "shortExplanation": "Used to express that something has been officially decided or settled.",
     "longExplanation": "'~기로 되다 [giro dweda]' is used when a decision has been made—often collectively or officially—and is now settled. It is akin to ‘It has been decided that...’ in English.",
@@ -7048,7 +7048,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_23",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 시작하다",
     "title": "~기 시작하다 [gi sijak-hada] (Begin to)",
     "shortExplanation": "Used to express the beginning of an action or state.",
     "longExplanation": "'~기 시작하다 [gi sijak-hada]' means 'to start doing something.' It's comparable to 'begin to' or 'start to' in English. It emphasizes that an action or condition has just begun.",
@@ -7080,7 +7080,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_24",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 전에",
     "title": "~기 전에 [gi jeone] (Before)",
     "shortExplanation": "'~기 전에' is used to express 'before doing something'.",
     "longExplanation": "'~기 전에 [gi jeone]' means 'before (doing something).' It marks that one action or state happens prior to another. Commonly used with the infinitive form of the verb plus '기 전에'.",
@@ -7112,7 +7112,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_25",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 힘들다",
     "title": "~기 힘들다 [gi himdeulda] (It's hard to...)",
     "shortExplanation": "Expresses difficulty in performing an action or task.",
     "longExplanation": "'~기 힘들다 [gi himdeulda]' is used to describe that it's difficult or hard to do something. '힘들다' means 'hard' or 'tough,' while the preceding '~기' nominalizes the verb, turning it into 'doing X is hard.'",
@@ -7176,7 +7176,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기만_27",
     "language": "ko",
-    "pattern": "~기만",
+    "pattern": "~기만 하다",
     "title": "~기만 하다 [giman hada] (Just)",
     "shortExplanation": "'~기만 하다' is used to express that someone or something does only the mentioned action and nothing else.",
     "longExplanation": "The grammar point '~기만 하다' is used in Korean to show exclusivity of action — that the verb in question is the only thing done. The nominalized form (~기) plus '만 하다' implies 'only do X.' Often, it can carry a slightly negative nuance or express dissatisfaction because it implies that the action is insufficient or not meeting expectations.",
@@ -7240,7 +7240,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_나_29",
     "language": "ko",
-    "pattern": "~나",
+    "pattern": "~나 보다",
     "title": "~나 보다 [na boda] (It seems, looks like)",
     "shortExplanation": "Used to express an assumption or guess, like 'it seems' or 'looks like'.",
     "longExplanation": "'~나 보다 [na boda]' is a common grammar pattern in Korean for making inferences or guesses based on observation or context. It can be translated as 'it seems that...' or 'looks like...' in English. It does not express absolute certainty, only a plausible guess or assumption.",
@@ -7336,7 +7336,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_32",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 대로",
     "title": "~는 대로 [neun daero] (As is, the way it is)",
     "shortExplanation": "Used to express 'the same way', 'just as', or 'exactly like'.",
     "longExplanation": "'~는 대로 [neun daero]' can follow a verb stem or a noun to indicate 'the way it is done' or 'just as someone does something.' It emphasizes doing or perceiving something exactly as it is, or following a particular method without changing it.",
@@ -7368,7 +7368,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_33",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 바와 같이",
     "title": "~는 바와 같이 [neun bawa gachi] (Just like, as if)",
     "shortExplanation": "Used to compare two situations, meaning 'just like' or 'as if'.",
     "longExplanation": "'~는 바와 같이 [neun bawa gachi]' is used to highlight a similarity between two actions or states. '바' (roughly 'the situation' or 'the way') and '같이' ('like') combine to mean 'just like that situation.' It carries a nuance similar to 'as if...' or 'the way that...' in English.",
@@ -7400,7 +7400,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_34",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 편이다",
     "title": "~는 편이다 [neun pyeonida] (Tend to)",
     "shortExplanation": "Used to express a habit, tendency, or general characteristic of someone.",
     "longExplanation": "The structure '~는 편이다' is used in Korean to express regular habits or tendencies. It is typically translated as 'tend to (do)', 'usually (do)', or 'often (do)'. It helps describe the usual or characteristic behavior of a person or situation.",
@@ -7432,7 +7432,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는다는_35",
     "language": "ko",
-    "pattern": "~는다는",
+    "pattern": "~는다는 것",
     "title": "~는다는 것 [neundaneun geot] (The fact that)",
     "shortExplanation": "Used to express 'the fact that' or 'the meaning that' when referring to or summarizing someone's statement or idea.",
     "longExplanation": "The '~는다는 것' construction is used to convey or emphasize 'the fact that' something is stated or believed. It can summarize someone’s words, thoughts, or statements. It often appears in discussions to restate a point or highlight that a particular idea or fact is important.",
@@ -7496,7 +7496,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는지_37",
     "language": "ko",
-    "pattern": "~는지",
+    "pattern": "~는지 알다/모르다",
     "title": "~는지 알다/모르다 [neunji alda/moreuda] (Know/don't know whether)",
     "shortExplanation": "Used to express knowing or not knowing whether something is or will be the case.",
     "longExplanation": "The '~는지 알다/모르다' structure is used to indicate whether the speaker (or someone else) knows or doesn't know a particular fact or circumstance. It can also appear in questions to ask if someone knows about a certain situation.",
@@ -7848,7 +7848,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_도록_48",
     "language": "ko",
-    "pattern": "~도록",
+    "pattern": "~도록 하다",
     "title": "~도록 하다 [dorok hada] (Make sure, see to it that)",
     "shortExplanation": "Used to give instructions or commands to ensure a certain outcome.",
     "longExplanation": "'~도록 하다' can mean 'make sure to,' 'ensure that,' or 'see to it that.' The speaker is directing someone (or themselves) to do something in order to achieve or maintain a particular result. It often carries a sense of imperative or strong advice.",
@@ -7976,7 +7976,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_라야_52",
     "language": "ko",
-    "pattern": "~라야",
+    "pattern": "~라야 하다",
     "title": "~라야 하다 [rayahada] (Must, have to)",
     "shortExplanation": "A formal/literary way to express obligation or necessity, akin to 'must.'",
     "longExplanation": "The phrase '~라야 하다' is a somewhat formal expression meaning 'must do X' or 'it’s necessary to do X.' It can appear with nouns (e.g., '학생이라야 한다') or with certain verb forms. In modern Korean, it's less common than '~아/어야 하다.'",
@@ -8040,7 +8040,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_려고_54",
     "language": "ko",
-    "pattern": "~려고",
+    "pattern": "~려고 하다",
     "title": "~려고 하다 [ryeogo hada] (Try to, plan to)",
     "shortExplanation": "Used to express intention or an attempt to do something; similar to 'try to' or 'plan to' in English.",
     "longExplanation": "'~려고 하다 [ryeogo hada]' is a commonly used verb construction that indicates the subject's intention or attempt to do something in the near future. It can be translated as 'I’m going to...', 'I plan to...', or 'I’m trying to...' in English.",
@@ -8104,7 +8104,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_리가_56",
     "language": "ko",
-    "pattern": "~리가",
+    "pattern": "~리가 없다",
     "title": "~리가 없다 [riga eopda] (There’s no way that)",
     "shortExplanation": "Expresses impossibility or disbelief.",
     "longExplanation": "'~(으)ㄹ 리가 없다' indicates that something is impossible or that there’s no chance it could happen. It conveys strong disbelief about the situation. It can be translated as 'There’s no way that...' or 'It can’t be that...'.",
@@ -8232,7 +8232,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_만_60",
     "language": "ko",
-    "pattern": "~만",
+    "pattern": "~만 하다",
     "title": "~만 하다 [man hada] (Sufficient, just right)",
     "shortExplanation": "Expresses that a certain amount or condition is enough or suitable.",
     "longExplanation": "This structure can be interpreted as ‘(it) is just enough to...’ or ‘(it) suffices to...’. Although in modern usage the pattern '~(으)ㄹ 만 하다' often means ‘worth doing something,’ certain contexts use ‘~만 하다’ to mean that something is just right or sufficient.",
@@ -8360,7 +8360,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_면_64",
     "language": "ko",
-    "pattern": "~면",
+    "pattern": "~면 어때",
     "title": "~면 어때 [myeon eottae] (How about if)",
     "shortExplanation": "Used to suggest an action or situation; 'How about if'.",
     "longExplanation": "'~면 어때 [myeon eottae]' is used in Korean to propose an alternative plan or seek agreement on a course of action. It can mean 'How about if...' or 'What if...'. The speaker is asking for someone’s opinion or reaction to a hypothetical idea.",
@@ -8488,7 +8488,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_부터_68",
     "language": "ko",
-    "pattern": "~부터",
+    "pattern": "~부터 ~까지",
     "title": "~부터 ~까지 [buteo ~ kkaji] (From ~ to)",
     "shortExplanation": "Used to specify a range or period, 'from ~ to'.",
     "longExplanation": "'~부터 ~까지 [buteo ~ kkaji]' indicates a start and end point in time, location, or range. It parallels 'from ~ to' in English. For instance, 'from 1 to 10' or 'from Seoul to Busan.'",
@@ -8584,7 +8584,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_71",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 보다",
     "title": "~아/어 보다 [a/eo boda] (Try)",
     "shortExplanation": "Used to indicate the action of trying something.",
     "longExplanation": "'~아/어 보다 [a/eo boda]' is a Korean grammar pattern that is used when someone is trying to do something or trying something out for the first time. It can also be used when asking or suggesting someone to try something. In English, it is similar to 'try'. It is generally used after the verb stem.",
@@ -8616,7 +8616,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_72",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 버리다",
     "title": "~아/어 버리다 [a/eo beorida] (Regrettably, completely)",
     "shortExplanation": "Used to express regret or completion.",
     "longExplanation": "'~아/어 버리다 [a/eo beorida]' is a verbal construction in Korean that is used to show a sense of regret or completion of an action. It is used when the speaker feels regret about an action that has already been done or when an action has been completed leaving nothing more to do. It adds a sense of finality or regret to the verb it is attached to.",
@@ -8648,7 +8648,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_73",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 다니다",
     "title": "~아/어 다니다 [a/eo danida] (Keep doing, repeatedly do)",
     "shortExplanation": "Used to describe the continuation or repetition of an action, often in various places or on multiple occasions.",
     "longExplanation": "'~아/어 다니다' is a Korean verbal ending that expresses that someone repeatedly or habitually does an action, often moving around while doing it. It is typically used with action verbs to convey repeated or continuous activity. The choice between ~아 or ~어 depends on the final vowel of the verb stem.",
@@ -8680,7 +8680,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_74",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 두다",
     "title": "~아/어 두다 [a/eo duda] (Leave something in a state)",
     "shortExplanation": "This grammar is used to express an intentional action to leave something or someone in a certain state or condition.",
     "longExplanation": "The '~아/어 두다 [a/eo duda]' form is used in Korean grammar to indicate the deliberate act of leaving something or someone in a certain state or condition. In English, this is often translated as 'to leave something in a state'. It is constructed by attaching 아/어 to the stem of an action verb followed by 두다. The form of 아/어 will depend on the final vowel of the verb stem.",
@@ -8712,7 +8712,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_75",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 놓다",
     "title": "~아/어 놓다 [a/eo nohda] (Do in advance, set something up)",
     "shortExplanation": "Used to convey the concept of doing something in preparation for something or setting something up.",
     "longExplanation": "The grammar point '~아/어 놓다 [a/eo nohda]' is often used in Korean to express the idea of doing something in advance or preparing for something. It implies that an action has been performed and the result of the action remains. It's also used to express the intention of setting something up or putting things in a certain state.",
@@ -8744,7 +8744,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어야_76",
     "language": "ko",
-    "pattern": "~아/어야",
+    "pattern": "~아/어야 되다/하다",
     "title": "~아/어야 되다/하다 [a/eoya dweda/hada] (Have to, must)",
     "shortExplanation": "This pattern is used to describe an obligation or necessity, equivalent to 'have to' or 'must' in English.",
     "longExplanation": "'~아/어야 되다/하다 [a/eoya dweda/hada]' is used in Korean to express a sense of obligation or requirement, often in cases where the speaker must perform a certain action. It is akin to 'must' or 'have to' in English, giving the subject of the sentence a required action to carry out. This can be used in a variety of contexts, ranging from obligations in daily life, job requirements, giving or receiving advice, rules, and more.",
@@ -8904,7 +8904,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_았었으면_81",
     "language": "ko",
-    "pattern": "~았/었으면",
+    "pattern": "~았/었으면 좋겠다",
     "title": "~았/었으면 좋겠다 [at/eosseumyeon johgetda] (I hope, wish)",
     "shortExplanation": "This grammar point is used to express a desire or a wish for a particular situation to happen.",
     "longExplanation": "'~았/었으면 좋겠다 [at/eosseumyeon johgetda]' is a Korean grammar point used to express the speaker's hope or wish for a situation that has not yet occurred, similar to 'I hope' or 'I wish' in English. It is also used to express regret for a past event that did not go as desired. In formation, it uses the past tense of a verb followed by '으면 좋겠다' to indicate the speaker's hope or wish.",
@@ -9096,7 +9096,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_에_87",
     "language": "ko",
-    "pattern": "~에",
+    "pattern": "~에 따라",
     "title": "~에 따라 [e ddara] (According to, depends on)",
     "shortExplanation": "Used to express 'according to' or 'depends on'.",
     "longExplanation": "'~에 따라 [e ddara]' is a grammar point in Korean used to express that something is dependent on or varies according to another factor. It shows that the result or situation can change based on a particular condition or factor.",
@@ -9128,7 +9128,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_에_88",
     "language": "ko",
-    "pattern": "~에",
+    "pattern": "~에 따르다",
     "title": "~에 따르다 [e ddareuda] (To be attributed to, according to)",
     "shortExplanation": "Used to express cause, reason, criteria or standards; 'according to', 'in accordance with', 'dependent on'.",
     "longExplanation": "'~에 따르다 [e ddareuda]' is a compound verb commonly used in Korean to indicate that something happens or changes due to or as per some reason, rules, condition, or standard. It's like saying 'according to', 'in accordance with', or 'dependent on' in English. It's used to describe a circumstance that varies or is defined based on certain criteria or standards.",
@@ -9160,7 +9160,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_에_89",
     "language": "ko",
-    "pattern": "~에",
+    "pattern": "~에 비해",
     "title": "~에 비해 [e bihae] (Compared to)",
     "shortExplanation": "Used to compare or contrast something in respect to another.",
     "longExplanation": "'~에 비해 [e bihae]' is a postposition in Korean used to indicate comparison or contrast between two subjects or objects, similar to 'compared to' in English. Its use emphasizes the different characteristics or states of things based on a certain standard or reference.",
@@ -9256,7 +9256,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_에서부터_92",
     "language": "ko",
-    "pattern": "~에서부터",
+    "pattern": "~에서부터 ~까지",
     "title": "~에서부터 ~까지 [eseobuteo ~ kkaji] (From ~ to)",
     "shortExplanation": "Used to indicate a duration or range from a specific start point to an end point.",
     "longExplanation": "'에서부터 [eseobuteo]' and '까지 [kkaji]' are postpositions used in Korean to indicate a duration or range from a specified start point to an end point. They can be used with both time and place. In English, this can be translated as 'from ~ to'.",
@@ -9320,7 +9320,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_와과_94",
     "language": "ko",
-    "pattern": "~와/과",
+    "pattern": "~와/과 같다",
     "title": "~와/과 같다 [wa/gwa gatda] (Be the same as, like)",
     "shortExplanation": "Used to express similarities or equivalences; 'like', 'the same as'.",
     "longExplanation": "'~와/과 같다 [wa/gwa gatda]' is used in Korean to express similarity, comparison, or equivalence—acting like 'as', 'like' or 'the same as' in English. The context determines whether '와' or '과' is used, depending on whether the preceding noun ends in a vowel or a consonant.",
@@ -9352,7 +9352,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_와과_95",
     "language": "ko",
-    "pattern": "~와/과",
+    "pattern": "~와/과 달리",
     "title": "~와/과 달리 [wa/gwa dalli] (Unlike, different from)",
     "shortExplanation": "This pattern is used to indicate contrast or difference between two things or situations.",
     "longExplanation": "'~와/과 달리' is a postposition in Korean generally used to contrast or compare two different things, situations, or ideas. It translates into English as 'unlike' or 'different from' and indicates a clear contrast between the two subjects.",
@@ -9384,7 +9384,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을를_96",
     "language": "ko",
-    "pattern": "~을/를",
+    "pattern": "~을/를 통해",
     "title": "~을/를 통해 [eul/reul tonghae] (Through, by means of)",
     "shortExplanation": "Used to indicate the medium or method through which an action or result was achieved.",
     "longExplanation": "'~을/를 통해 [eul/reul tonghae]' is a postpositional phrase in Korean used to signify the means, channel, or method through which an action or outcome was reached. It corresponds to 'through' in English and often appears with expressions about communicating information, conveying feelings, or achieving results.",
@@ -9416,7 +9416,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이가_97",
     "language": "ko",
-    "pattern": "~이/가",
+    "pattern": "~이/가 되다",
     "title": "~이/가 되다 [i/ga dweda] (Become)",
     "shortExplanation": "This grammar point is used to describe a change or transition into a new state or condition.",
     "longExplanation": "The grammar point '~이/가 되다 [i/ga dweda]' is used in Korean to indicate a change or transition into a different state or condition. It can be used to describe things like becoming an adult, becoming a teacher, or even something more abstract like becoming happy or becoming cold. The subject or condition that is changing is placed before '이/가 되다'.",
@@ -9448,7 +9448,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이가_98",
     "language": "ko",
-    "pattern": "~이/가",
+    "pattern": "~이/가 아니다",
     "title": "~이/가 아니다 [i/ga anida] (Is not, are not)",
     "shortExplanation": "Used to negate a noun; 'is not', 'are not'.",
     "longExplanation": "The literal translation of '~이/가 아니다 [i/ga anida]' is 'is not' or 'are not'. It is used to negate a noun in a statement. You put '이 아니다' after a noun that ends with a consonant and '가 아니다' after a noun that ends with a vowel. This is roughly equivalent to English 'not', functioning to show contradiction or denial.",
@@ -10088,7 +10088,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_118",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않다",
     "title": "~지 않다 [ji anta] (Negative form)",
     "shortExplanation": "Used to negate verbs/adjectives; equivalent to 'not' in English.",
     "longExplanation": "'~지 않다 [ji anta]' creates the negative form of verbs or adjectives, similar to 'not' in English. It indicates that an action does not happen or a state does not exist.",
@@ -10120,7 +10120,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_119",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않아도 되다",
     "title": "~지 않아도 되다 [ji anado dweda] (Don't have to)",
     "shortExplanation": "Used to express that an action is not necessary or mandatory; 'don't have to'.",
     "longExplanation": "'~지 않아도 되다 [ji anado dweda]' indicates that someone is not obliged to perform a certain action. It literally means 'it is okay even if you do not do something.'",
@@ -10216,7 +10216,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_진_122",
     "language": "ko",
-    "pattern": "~진",
+    "pattern": "~진 않지만",
     "title": "~진 않지만 [jin anhjiman] (Not exactly, but)",
     "shortExplanation": "Used to express that something is not entirely true but partially or somewhat so.",
     "longExplanation": "'~진 않지만 [jin anhjiman]' indicates that a certain condition is not exactly or fully met, yet there is some partial truth or a mitigating factor. It softens the statement, showing modesty or a lesser degree than expected.",
@@ -10600,7 +10600,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하기로_134",
     "language": "ko",
-    "pattern": "~하기로",
+    "pattern": "~하기로 하다",
     "title": "~하기로 하다 [hakiro hada] (Decide to)",
     "shortExplanation": "Expresses a decision or agreement to do something.",
     "longExplanation": "'~하기로 하다 [hakiro hada]' indicates that a decision or agreement has been made to perform an action. It often appears in contexts describing future plans or intentions. After a verb stem, it is followed by '기로 하다' which translates to 'decide to' in English.",
@@ -10696,7 +10696,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하기만_137",
     "language": "ko",
-    "pattern": "~하기만",
+    "pattern": "~하기만 하면",
     "title": "~하기만 하면 [hakiman hamyeon] (As long as)",
     "shortExplanation": "Expresses that if a certain condition is met, a result is guaranteed to follow; 'as long as'.",
     "longExplanation": "'~하기만 하면 [hakiman hamyeon]' means 'as long as one does something, then something else will definitely happen.' It implies a condition that, once fulfilled, ensures a particular outcome.",
@@ -10728,7 +10728,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하는_138",
     "language": "ko",
-    "pattern": "~하는",
+    "pattern": "~하는 것 같다",
     "title": "~하는 것 같다 [haneun geot gatda] (It seems like)",
     "shortExplanation": "Used to express that something appears or seems a certain way; 'it seems/looks like'.",
     "longExplanation": "'~하는 것 같다 [haneun geot gatda]' indicates the speaker's guess or observation based on evidence or impressions. It can translate to 'it seems like', 'it appears that', or 'it looks like' in English. The verb or adjective precedes '...는 것 같다' to form a statement of appearance or assumption.",
@@ -10760,7 +10760,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하는_139",
     "language": "ko",
-    "pattern": "~하는",
+    "pattern": "~하는 데",
     "title": "~하는 데 [haneun de] (In doing)",
     "shortExplanation": "Expresses the process of doing something, often involving time, effort, or resources.",
     "longExplanation": "'~하는 데 [haneun de]' highlights the time, effort, or resources necessary for an action. It can be thought of as 'in doing something' or 'it takes X to do something'.",
@@ -10792,7 +10792,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하는_140",
     "language": "ko",
-    "pattern": "~하는",
+    "pattern": "~하는 편이다",
     "title": "~하는 편이다 [haneun pyeonida] (Tend to do)",
     "shortExplanation": "Expresses a habitual action, tendency, or characteristic.",
     "longExplanation": "'~하는 편이다 [haneun pyeonida]' means someone or something tends toward a certain behavior or habit. It implies that it’s not an absolute rule, but rather the usual or likely tendency the speaker observes.",
@@ -10824,7 +10824,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하는_141",
     "language": "ko",
-    "pattern": "~하는",
+    "pattern": "~하는 한",
     "title": "~하는 한 [haneun han] (As long as)",
     "shortExplanation": "Expresses the meaning 'as long as' or 'while' a certain condition holds true.",
     "longExplanation": "'~하는 한 [haneun han]' is used to indicate that something remains valid or continues to be the case so long as a condition is met. It can translate to 'as long as' in English, specifying the scope or boundary within which an action or state continues.",
@@ -10888,7 +10888,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하다_143",
     "language": "ko",
-    "pattern": "~하다",
+    "pattern": "~하다 보면",
     "title": "~하다 보면 [hada bomyeon] (If one keeps doing)",
     "shortExplanation": "Expresses that, with continued or repeated action, a certain result or realization will emerge.",
     "longExplanation": "'~하다 보면 [hada bomyeon]' indicates that if someone continues or repeatedly does an action over time, a new result, skill, or understanding will naturally occur. It's akin to 'if one keeps doing something' or 'if one continues doing something' in English.",
@@ -11080,7 +11080,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_149",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 것이다",
     "title": "~할 것이다 [hal geotida] (Will, shall)",
     "shortExplanation": "Used to express the speaker's future prediction or plan.",
     "longExplanation": "The grammar point '~할 것이다 [hal geotida]' is a future tense form that indicates a prediction or intention. Formed by the verb stem plus '할 것이다', it translates to 'will' or 'shall' in English. It is used when the speaker predicts a future occurrence or announces a plan.",
@@ -11112,7 +11112,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_150",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 때마다",
     "title": "~할 때마다 [hal ttaemada] (Every time when)",
     "shortExplanation": "Used to express 'every time when' or 'whenever'.",
     "longExplanation": "'~할 때마다 [hal ttaemada]' is used when something happens each time a certain action or event occurs. It emphasizes a recurring event or repetitive situation following that action.",
@@ -11144,7 +11144,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_151",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 만하다",
     "title": "~할 만하다 [hal manhada] (Worth doing)",
     "shortExplanation": "Used to indicate that something is worth doing or trying.",
     "longExplanation": "'~할 만하다 [hal manhada]' expresses the worthiness or value of doing an action. It often follows a verb stem. It can be used to suggest that an activity or item is meaningful, beneficial, or simply worth a try.",
@@ -11176,7 +11176,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_152",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 수 있다",
     "title": "~할 수 있다 [hal su itda] (Can do)",
     "shortExplanation": "Used to express possibility or ability; 'can do' something.",
     "longExplanation": "'~할 수 있다 [hal su itda]' indicates that someone is capable of or has the possibility to perform an action, effectively meaning 'can'. It is often used for skills or situations where something is feasible.",
@@ -11208,7 +11208,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_153",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 수 없다",
     "title": "~할 수 없다 [hal su eopda] (Cannot do)",
     "shortExplanation": "Used to express inability or impossibility; 'cannot do'.",
     "longExplanation": "'~할 수 없다 [hal su eopda]' means that the subject does not have the capacity or possibility to perform a certain action, i.e., 'cannot' do it in current circumstances. It emphasizes the impossibility or lack of ability.",
@@ -11240,7 +11240,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_154",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 줄 알다",
     "title": "~할 줄 알다 [hal jul alda] (Know how to)",
     "shortExplanation": "Used to express that one knows how to do something or has the skill/knowledge to do it.",
     "longExplanation": "The phrase '~할 줄 알다 [hal jul alda]' signifies that someone has learned or can perform an action or process, translating to 'know how to (do something)' in English. It focuses on practical skill or capability rather than mere theoretical knowledge.",
@@ -11304,7 +11304,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_든지_156",
     "language": "ko",
-    "pattern": "~든지",
+    "pattern": "~든지 ~든지",
     "title": "~든지 ~든지 [deunji deunji] (Whether ... or)",
     "shortExplanation": "This grammar point is used to express 'whether ... or', indicating two (or more) possibilities.",
     "longExplanation": "The pattern '~든지 ~든지' in Korean lists multiple possibilities or choices. It translates closely to 'whether ... or' in English. It is often used in daily conversation to show that no matter which option happens or is chosen, the outcome or decision remains consistent.",
@@ -11336,7 +11336,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_157",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 텐데",
     "title": "~할 텐데 [hal tende] (Probably will)",
     "shortExplanation": "Used to express a prediction or expectation that something will occur in the future.",
     "longExplanation": "'~할 텐데 [hal tende]' is a common ending in Korean that expresses a prediction or expectation that a certain event, situation, or behavior is likely to occur. It can also convey regret when referring to a likely outcome that did not happen. It is formed by taking the verb stem plus (으)ㄹ 텐데.",
@@ -11400,7 +11400,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_해_159",
     "language": "ko",
-    "pattern": "~해",
+    "pattern": "~해 보다",
     "title": "~해 보다 [hae boda] (Try to do)",
     "shortExplanation": "Indicates the speaker's attempt or experience of doing something.",
     "longExplanation": "'~해 보다 [hae boda]' is used when a speaker expresses trying or experiencing something, often for the first time. It is typically formed with the verb stem plus '아/어 보다.' It can be translated as 'to try (doing something)' in English.",
@@ -11432,7 +11432,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_해_160",
     "language": "ko",
-    "pattern": "~해",
+    "pattern": "~해 주다",
     "title": "~해 주다 [hae juda] (Do for someone)",
     "shortExplanation": "Used to express an action done for someone else's benefit.",
     "longExplanation": "'~해 주다 [hae juda]' indicates that the subject does or did something for the benefit of another person. Commonly used in polite speech to express that an action is done for someone else. It can also show gratitude or a request.",
@@ -11496,7 +11496,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_해서는_162",
     "language": "ko",
-    "pattern": "~해서는",
+    "pattern": "~해서는 안 되다",
     "title": "~해서는 안 되다 [haeseoneun an dweda] (Must not do)",
     "shortExplanation": "Shows prohibition or something that must not be done.",
     "longExplanation": "In Korean, '~해서는 안 되다 [haeseoneun an dweda]' indicates an action that is prohibited. It is used with action verbs to form negative commands or strong advice, meaning 'must not' or 'should not' do something. More common in formal contexts or rule statements.",
@@ -11528,7 +11528,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_해야_163",
     "language": "ko",
-    "pattern": "~해야",
+    "pattern": "~해야 하다",
     "title": "~해야 하다 [haeya hada] (Have to do)",
     "shortExplanation": "Expresses obligation or necessity (have to, must, need to).",
     "longExplanation": "'~해야 하다 [haeya hada]' indicates a strong necessity or obligation to carry out an action. It often translates to 'have to,' 'must,' or 'need to' in English, showing that there is no other choice but to do the mentioned action.",
@@ -11624,7 +11624,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_했으면_166",
     "language": "ko",
-    "pattern": "~했으면",
+    "pattern": "~했으면 좋겠다",
     "title": "~했으면 좋겠다 [haesseumyeon jotgetda] (I wish, I hope)",
     "shortExplanation": "Used to express wishing or hoping for a situation to happen.",
     "longExplanation": "'~했으면 좋겠다 [haesseumyeon jotgetda]' is commonly used to express a personal wish or hope for some future or hypothetical situation. It can be translated as 'I wish...' or 'I hope...' in English. The speaker desires the action or state described by the verb.",
@@ -11656,7 +11656,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_했을_167",
     "language": "ko",
-    "pattern": "~했을",
+    "pattern": "~했을 때",
     "title": "~했을 때 [haesseul ttae] (When someone did)",
     "shortExplanation": "Expresses 'when someone did' or 'at the time when something was done'.",
     "longExplanation": "'~했을 때 [haesseul ttae]' is used to indicate a moment in the past when an action happened. It can sometimes introduce a second clause that describes a related event or reaction. In English, it roughly translates as 'when (someone) did something' or 'at the time that (something) occurred.'",
@@ -11688,7 +11688,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_했을_168",
     "language": "ko",
-    "pattern": "~했을",
+    "pattern": "~했을 텐데",
     "title": "~했을 텐데 [haesseul tende] (Would have)",
     "shortExplanation": "Used to express a hypothetical past scenario or regret.",
     "longExplanation": "'~했을 텐데 [haesseul tende]' is used for hypotheticals or regrets about something that did not happen in the past. It often appears with '만약 ~았/었더라면 (if I had done something)' or implies 'I would have...' or 'It would have been...' in English.",
@@ -11816,7 +11816,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_1",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 되다",
     "title": "~게 되다 [ge dweda] (End up doing)",
     "shortExplanation": "Used to express an action or state that ends up happening due to certain circumstances or changes.",
     "longExplanation": "'~게 되다 [ge dweda]' is used when an action or situation comes about because of a certain circumstance or influence, often unexpectedly or unintentionally. It often implies a change from an initial plan or a passive result of external factors.",
@@ -11848,7 +11848,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_2",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 하다",
     "title": "~게 하다 [ge hada] (Make/let someone do)",
     "shortExplanation": "Used to express that someone causes or allows another person to do something.",
     "longExplanation": "'~게 하다' indicates that an action occurs because someone made, let, allowed, or caused it to happen. It can show compulsion, permission, encouragement, etc., depending on context.",
@@ -11880,7 +11880,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_3",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 해서는 안 되다",
     "title": "~게 해서는 안 되다 [ge haeseoneun an dweda] (Shouldn't make/let someone do)",
     "shortExplanation": "Used to convey that one shouldn’t make or allow someone to do something.",
     "longExplanation": "'~게 해서는 안 되다' expresses the idea that it is wrong or not allowed to make or let someone do a certain action. It often implies an admonition or rule for proper conduct.",
@@ -11944,7 +11944,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_5",
     "language": "ko",
-    "pattern": "~고",
+    "pattern": "~고 말다",
     "title": "~고 말다 [go malda] (Ended up doing)",
     "shortExplanation": "Emphasizes an unexpected or often undesirable result: ‘ended up doing.’",
     "longExplanation": "'~고 말다 [go malda]' highlights that an action concluded in a certain way, often with a sense of regret, inevitability, or simply an unexpected final outcome. It can be translated as ‘ended up …ing’ or ‘finally ….’",
@@ -11976,7 +11976,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_6",
     "language": "ko",
-    "pattern": "~고",
+    "pattern": "~고 보니",
     "title": "~고 보니 [go boni] (After doing, I noticed)",
     "shortExplanation": "Expresses that a realization or discovery is made after doing something.",
     "longExplanation": "The form '~고 보니' is used when one notices or realizes something new after completing an action. It often implies that the speaker did not expect this outcome before the action was done.",
@@ -12008,7 +12008,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_7",
     "language": "ko",
-    "pattern": "~고",
+    "pattern": "~고 싶다",
     "title": "~고 싶다 [go sipda] (Want to)",
     "shortExplanation": "Used to express a desire or wish to do something.",
     "longExplanation": "'~고 싶다 [go sipda]' is used to indicate that the speaker (or someone) wants to do something. It can be softened to express one’s own wishes or used to ask politely about someone else’s wishes.",
@@ -12040,7 +12040,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_8",
     "language": "ko",
-    "pattern": "~고",
+    "pattern": "~고 있다",
     "title": "~고 있다 [go itda] (In the process of doing)",
     "shortExplanation": "Used to express an ongoing action or a continuing state.",
     "longExplanation": "'~고 있다 [go itda]' corresponds roughly to the present progressive in English (e.g., 'am doing'), but can also show a continued state (e.g., 'am wearing' something).",
@@ -12072,7 +12072,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고자_9",
     "language": "ko",
-    "pattern": "~고자",
+    "pattern": "~고자 하다",
     "title": "~고자 하다 [goja hada] (In order to)",
     "shortExplanation": "A more formal/official way to express intention or purpose: ‘in order to,’ ‘for the purpose of.’",
     "longExplanation": "'~고자 하다 [goja hada]' is typically used in more formal contexts to express the speaker’s intention or plan to do something, similar to ‘in order to’ in English. It often appears in written or official discourse.",
@@ -12104,7 +12104,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_곤_10",
     "language": "ko",
-    "pattern": "~곤",
+    "pattern": "~곤 하다",
     "title": "~곤 하다 [gon hada] (Often do)",
     "shortExplanation": "Used to express the repetition or frequency of an action or state.",
     "longExplanation": "'~곤 하다 [gon hada]' is a pattern used in Korean to convey habitual or repeated actions. It attaches to action verbs to suggest that something happens repeatedly or as a habit. It generally reflects a recurring behavior, often in both the past and present.",
@@ -12136,7 +12136,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기도_11",
     "language": "ko",
-    "pattern": "~기도",
+    "pattern": "~기도 하다",
     "title": "~기도 하다 [gido hada] (Sometimes do)",
     "shortExplanation": "Expresses that an action is done occasionally or sometimes.",
     "longExplanation": "'~기도 하다 [gido hada]' is used to indicate that someone sometimes (not always) does a certain action. It can also be used to emphasize that there are multiple actions: one does A and sometimes B, too. The '도' particle shows this sense of 'also' or 'too.'",
@@ -12200,7 +12200,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기로_13",
     "language": "ko",
-    "pattern": "~기로",
+    "pattern": "~기로 되다",
     "title": "~기로 되다 [giro dweda] (It's decided to)",
     "shortExplanation": "Expresses that something has been decided or arranged.",
     "longExplanation": "'~기로 되다 [giro dweda]' is used when you want to indicate that some plan or arrangement has been set, often by an external decision or mutual agreement. It often translates to 'It has been decided that...' or 'It's arranged that...'",
@@ -12232,7 +12232,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기로_14",
     "language": "ko",
-    "pattern": "~기로",
+    "pattern": "~기로 하다",
     "title": "~기로 하다 [giro hada] (Decide to)",
     "shortExplanation": "Used to say that one decides or agrees to do something.",
     "longExplanation": "'~기로 하다' is a common way to say 'decide to...' in Korean. It highlights that a resolution or plan has been set for some future action. It is also used for promises or mutual agreements (e.g., with friends or family).",
@@ -12264,7 +12264,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_15",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 시작하다",
     "title": "~기 시작하다 [gi sijakhada] (Begin to)",
     "shortExplanation": "Used to express the start or beginning of an action.",
     "longExplanation": "'~기 시작하다 [gi sijakhada]' indicates that an action has just begun (or will soon begin). It is the rough equivalent of 'to start doing' or 'to begin to do' in English.",
@@ -12296,7 +12296,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_16",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 위해서",
     "title": "~기 위해서 [gi wihaeseo] (In order to)",
     "shortExplanation": "Used to express the purpose or reason for doing something.",
     "longExplanation": "'~기 위해서 [gi wihaeseo]' means 'in order to' or 'for the purpose of.' When attached to a verb in the '~기' nominal form, it denotes the reason or purpose for taking a particular action. It is common in both spoken and written Korean when describing why someone is doing something (especially future or ongoing actions).",
@@ -12392,7 +12392,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_19",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 전에",
     "title": "~기 전에 [gi jeone] (Before doing)",
     "shortExplanation": "Used to express that one action occurs before another.",
     "longExplanation": "'~기 전에 [gi jeone]' means 'before doing (something).' It is used to specify an action that takes place prior to another action. The literal translation is 'before V-ing' in English. It is very common when giving a chronological order of steps or instructions.",
@@ -12424,7 +12424,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_나_20",
     "language": "ko",
-    "pattern": "~나",
+    "pattern": "~나 보다",
     "title": "~나 보다 [na boda] (Seems like, guess)",
     "shortExplanation": "Used to express an assumption or supposition (e.g., 'it seems that...').",
     "longExplanation": "'~나 보다 [na boda]' is used when the speaker draws a guess or conclusion from evidence, often translated as 'it seems...', 'I guess...', or 'looks like...'. It can be used with both verbs and adjectives: '하나 보다' (I guess one does it), '크나 보다' (I guess it's big), etc.",
@@ -12520,7 +12520,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_23",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 대로",
     "title": "~는 대로 [neun daero] (As it is)",
     "shortExplanation": "Expresses 'just as', 'according to', or 'in the same way as'.",
     "longExplanation": "'~는 대로 [neun daero]' is used to mean 'exactly as' or 'according to.' It can be attached to verbs (e.g., '하는 대로') or nouns (with particles, e.g., '예측대로'). It emphasizes following instructions, patterns, or facts precisely as stated or observed.",
@@ -12552,7 +12552,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_24",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 도중에",
     "title": "~는 도중에 [neun dojunge] (While doing)",
     "shortExplanation": "Used to indicate that something happens in the midst of an ongoing action.",
     "longExplanation": "'~는 도중에 [neun dojunge]' literally means 'in the middle of (doing something).' It shows that an event occurs while another action is still in progress. It is similar to 'while (verb)-ing' or 'in the midst of' in English.",
@@ -12584,7 +12584,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_25",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 방향으로",
     "title": "~는 방향으로 [neun banghyangeuro] (Toward)",
     "shortExplanation": "Indicates movement or orientation 'toward' a certain direction.",
     "longExplanation": "'~는 방향으로 [neun banghyangeuro]' is used to describe movement or orientation toward some direction or goal. It is often translated as 'in the direction of.' For instance, '학교 있는 방향으로 가다' means to walk or move toward where the school is located.",
@@ -12616,7 +12616,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_26",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 법이다",
     "title": "~는 법이다 [neun beopida] (Usually, always)",
     "shortExplanation": "This expression is used to describe a general rule or habit that always tends to happen.",
     "longExplanation": "The phrase '~는 법이다 [neun beopida]' is a grammar structure used to say that something usually or always happens in a certain way, almost like a rule or law. It describes general truths, habits, or principles that tend not to change.",
@@ -12744,7 +12744,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는지_30",
     "language": "ko",
-    "pattern": "~는지",
+    "pattern": "~는지 모르겠다",
     "title": "~는지 모르겠다 [neunji moreugessda] (I'm not sure if)",
     "shortExplanation": "Used to express uncertainty: 'I'm not sure if...', 'I don't know whether...'.",
     "longExplanation": "'~는지 모르겠다 [neunji moreugessda]' expresses doubt or uncertainty about a certain fact or outcome. It roughly corresponds to 'I’m not sure if...' or 'I don’t know whether...' in English.",
@@ -12904,7 +12904,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_다는_35",
     "language": "ko",
-    "pattern": "~다는",
+    "pattern": "~다는 것",
     "title": "~다는 것 [daneun geot] (The fact that)",
     "shortExplanation": "Used to express 'the fact that' or 'the idea that' when referring to specific information.",
     "longExplanation": "'~다는 것 [daneun geot]' is a Korean grammar construct used to convey or emphasize the idea or concept of something, similar to 'the fact that' or 'the idea that' in English. It can also carry a nuance of 'it is said that,' but is most often used to highlight certain information the speaker has come to understand or wishes to point out.",
@@ -13000,7 +13000,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_대로_38",
     "language": "ko",
-    "pattern": "~대로",
+    "pattern": "~대로 하다",
     "title": "~대로 하다 [daero hada] (Do as instructed/said)",
     "shortExplanation": "Used to express doing something exactly as was stated or instructed.",
     "longExplanation": "The expression '~대로 하다 [daero hada]' means to carry out an action 'according to' or 'as' someone said or as indicated by some rule, instruction, or pattern. It emphasizes following instructions or advice exactly.",
@@ -13096,7 +13096,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_도록_41",
     "language": "ko",
-    "pattern": "~도록",
+    "pattern": "~도록 하다",
     "title": "~도록 하다 [dorok hada] (Make/ensure that)",
     "shortExplanation": "Used to express making someone do something or ensuring that something happens.",
     "longExplanation": "'~도록 하다 [dorok hada]' is often used in Korean to mean 'make sure to...' or 'have/let someone do something.' It can also mean you are ensuring a certain condition or outcome occurs.",
@@ -13192,7 +13192,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_든지_44",
     "language": "ko",
-    "pattern": "~든지",
+    "pattern": "~든지 ~든지",
     "title": "~든지 ~든지 [deunji deunji] (Either ... or)",
     "shortExplanation": "Used to enumerate alternatives or choices; 'either ... or'.",
     "longExplanation": "'~든지 ~든지 [deunji deunji]' is a conjunctive expression in Korean used to convey multiple choices or alternatives. Similar to 'either ... or' in English, it indicates that any of the mentioned options is acceptable, leaving the final decision to the listener or speaker.",
@@ -13384,7 +13384,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_려고_50",
     "language": "ko",
-    "pattern": "~려고",
+    "pattern": "~려고 하다",
     "title": "~려고 하다 [ryeogo hada] (Try to)",
     "shortExplanation": "Used to express one's intention or attempt to do something; 'try to', 'plan to'.",
     "longExplanation": "'~려고 하다' indicates the speaker’s intention or plan to perform an action. It can be translated as 'try to...' or 'plan to...' in English. It’s a common structure for talking about near-future actions or goals.",
@@ -13704,7 +13704,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_60",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 보이다",
     "title": "~아/어 보이다 [a/eo boida] (Looks/seems like)",
     "shortExplanation": "Used to make a subjective judgment about someone or something based on appearance or situation.",
     "longExplanation": "'~아/어 보이다 [a/eo boida]' is used to convey that something or someone ‘looks like’ or ‘seems like’ a certain way, based on the speaker's subjective perspective. It can express guesses or first impressions about a person’s feelings, health, weather, etc.",
@@ -13736,7 +13736,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_61",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 버리다",
     "title": "~아/어 버리다 [a/eo beorida] (Completely do, or unfortunately do)",
     "shortExplanation": "Used to indicate completing an action fully, or doing something that leads to an unfortunate result.",
     "longExplanation": "The structure '~아/어 버리다 [a/eo beorida]' attaches to a verb stem to emphasize that the action is done completely or that the outcome is regrettable/unwanted. It can imply relief at finishing something, or express the speaker’s sense of regret or finality about the action.",
@@ -13768,7 +13768,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_62",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 두다",
     "title": "~아/어 두다 [a/eo duda] (Keep, leave)",
     "shortExplanation": "Used to express leaving or keeping something in a certain state or condition.",
     "longExplanation": "'~아/어 두다 [a/eo duda]' is used in Korean to indicate that one is leaving something in a particular state or maintaining it for a future use or reference. It implies an intentional act of preservation or preparation. Depending on the verb’s final vowel/consonant, use '아 두다' or '어 두다'.",
@@ -13800,7 +13800,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_63",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 가다",
     "title": "~아/어 가다 [a/eo gada] (Go on doing)",
     "shortExplanation": "Expresses the continuous or ongoing nature of an action over time.",
     "longExplanation": "'~아/어 가다 [a/eo gada]' is used to show that an action continues steadily or gradually forward, often implying persistence or progress. It can be similar to 'go on doing something' in English.",
@@ -13832,7 +13832,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_64",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 오다",
     "title": "~아/어 오다 [a/eo oda] (Come to do)",
     "shortExplanation": "Expresses an action developing over time or a gradual change leading up to the present.",
     "longExplanation": "'~아/어 오다 [a/eo oda]' is used to show that an action has been in progress or gradually developed until now. It can translate to 'have been doing' or 'come to do' in English, depending on context.",
@@ -13864,7 +13864,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어야_65",
     "language": "ko",
-    "pattern": "~아/어야",
+    "pattern": "~아/어야 하다",
     "title": "~아/어야 하다 [a/eoya hada] (Have to, must)",
     "shortExplanation": "Expresses obligation or necessity: 'have to,' 'must'.",
     "longExplanation": "'~아/어야 하다 [a/eoya hada]' indicates that something needs to be done or is mandatory. It corresponds to 'have to' or 'must' in English. '아야 하다' is used if the verb ends in ㅏ/ㅗ, and '어야 하다' is used otherwise.",
@@ -14024,7 +14024,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_았었어야_70",
     "language": "ko",
-    "pattern": "~았/었어야",
+    "pattern": "~았/었어야 했다",
     "title": "~았/었어야 했다 [ass/eosseoya haessda] (Should have done)",
     "shortExplanation": "Used to express regret about something that should have been done in the past but was not.",
     "longExplanation": "'~았/었어야 했다 [ass/eosseoya haessda]' shows regret for not doing something that one should have done in the past. It translates to 'should have done' in English. It highlights a missed obligation or opportunity.",
@@ -14088,7 +14088,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_았었을_72",
     "language": "ko",
-    "pattern": "~았/었을",
+    "pattern": "~았/었을 텐데",
     "title": "~았/었을 텐데 [ass/eosseul tende] (I assume it must have been)",
     "shortExplanation": "Used to express assumption or expectation based on past events.",
     "longExplanation": "'~았/었을 텐데 [ass/eosseul tende]' expresses the speaker's speculation or presumption about a past situation. It combines the past tense marker '~았/었' with '을 텐데,' which shows the speaker’s expectation or guess about what must have happened.",
@@ -14184,7 +14184,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_으면_75",
     "language": "ko",
-    "pattern": "~으면",
+    "pattern": "~으면 좋겠다",
     "title": "~으면 좋겠다 [eumyeon joketda] (I hope, it would be good if)",
     "shortExplanation": "Expresses a wish or hope for a certain situation or result.",
     "longExplanation": "'~으면 좋겠다 [eumyeon joketda]' is a common structure for stating what the speaker hopes will happen or would be nice if it happened. It often translates to 'I hope...' or 'It would be good if...' in English.",
@@ -14248,7 +14248,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_77",
     "language": "ko",
-    "pattern": "~을/ㄹ",
+    "pattern": "~을/ㄹ 거예요",
     "title": "~을/ㄹ 거예요 [eul/l geoyeyo] (Going to, will)",
     "shortExplanation": "Expresses a future plan or intention—similar to 'going to' or 'will' in English.",
     "longExplanation": "'~을/ㄹ 거예요 [eul/l geoyeyo]' is used to indicate that something will happen or that the speaker plans or expects something in the future. It can also express the speaker's assumption about the future. If the verb stem ends in a consonant, use '을 거예요'; if it ends in a vowel, use 'ㄹ 거예요.'",
@@ -14364,7 +14364,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_80",
     "language": "ko",
-    "pattern": "~을/ㄹ",
+    "pattern": "~을/ㄹ 때",
     "title": "~을/ㄹ 때 [eul/l ttae] (When)",
     "shortExplanation": "Used to indicate the point in time or occasion when something occurs.",
     "longExplanation": "'~을/ㄹ 때 [eul/l ttae]' means 'when' in English. You attach it to a verb stem to specify the time or context in which an action happens. '을 때' is used after a consonant-ending stem; 'ㄹ 때' after a vowel-ending stem.",
@@ -14396,7 +14396,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_81",
     "language": "ko",
-    "pattern": "~을/ㄹ",
+    "pattern": "~을/ㄹ 듯하다",
     "title": "~을/ㄹ 듯하다 [eul/l deuthada] (Seems like)",
     "shortExplanation": "Used to express the idea that something appears or feels like something else, or that one is guessing based on observation.",
     "longExplanation": "'~을/ㄹ 듯하다 [eul/l deuthada]' is used to convey that something seems or feels a certain way, based on the speaker’s inference or impression. It's similar to 'it seems that...' or 'it looks like...' in English.",
@@ -14428,7 +14428,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_82",
     "language": "ko",
-    "pattern": "~을/ㄹ",
+    "pattern": "~을/ㄹ 만하다",
     "title": "~을/ㄹ 만하다 [eul/l manhada] (Worth doing)",
     "shortExplanation": "Expresses that something is worthwhile or justifiable to do or experience.",
     "longExplanation": "'~을/ㄹ 만하다' is used to say that a certain action or experience is valuable enough to be done, or 'worth it.' It implies the speaker's judgment that the effort, cost, or time involved is justified.",
@@ -14460,7 +14460,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_83",
     "language": "ko",
-    "pattern": "~을/ㄹ",
+    "pattern": "~을/ㄹ 수록",
     "title": "~을/ㄹ 수록 [eul/l surok] (The more...)",
     "shortExplanation": "Shows that as one condition increases or continues, another condition also changes proportionally.",
     "longExplanation": "'~을/ㄹ 수록 [eul/l surok]' is used to express the idea that the more the first action or state intensifies, the more the second action or state does too. It corresponds to 'the more... the more...' in English.",
@@ -14492,7 +14492,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_84",
     "language": "ko",
-    "pattern": "~을/ㄹ",
+    "pattern": "~을/ㄹ 줄 알다",
     "title": "~을/ㄹ 줄 알다 [eul/l jul alda] (Know how to)",
     "shortExplanation": "Used to indicate that someone knows how to perform an action or is aware of a fact.",
     "longExplanation": "'~을/ㄹ 줄 알다 [eul/l jul alda]' often translates to 'know how to do something' or 'know that...' in English. It indicates knowledge, skill, or awareness of a particular action or fact.",
@@ -14556,7 +14556,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을지도_86",
     "language": "ko",
-    "pattern": "~을/ㄹ지도",
+    "pattern": "~을/ㄹ지도 모르다",
     "title": "~을/ㄹ지도 모르다 [eul/ljido moreuda] (Might)",
     "shortExplanation": "This is used to express uncertainty or possibility.",
     "longExplanation": "'~을/ㄹ지도 모르다 [eul/ljido moreuda]', or simply 'might' in English, is a grammar pattern used to represent the speaker's uncertainty or to express the possibility of a future event or condition. Depending on context, it can imply that something might or might not happen. The verb is conjugated according to the level of formality and respect required.",
@@ -14620,7 +14620,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을지_88",
     "language": "ko",
-    "pattern": "~을/ㄹ지",
+    "pattern": "~을/ㄹ지 몰라",
     "title": "~을/ㄹ지 몰라 [eul/lji molla] (Maybe)",
     "shortExplanation": "Used to express uncertainty or doubt; 'maybe', 'might', 'I don't know if'.",
     "longExplanation": "'~을/ㄹ지 몰라 [eul/lji molla]' is a grammar form used to indicate doubts, uncertainties, or suppositions. It can be translated as 'maybe', 'might', or 'I don’t know if' in English. This form is typically used when the speaker is unsure of something or wishes to present a speculative premise.",
@@ -14684,7 +14684,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_90",
     "language": "ko",
-    "pattern": "~을",
+    "pattern": "~을 리가 없다",
     "title": "~을 리가 없다 [eulliga eopda] (It's unlikely that)",
     "shortExplanation": "This expression is used to indicate that a certain situation is unlikely or impossible to happen.",
     "longExplanation": "'~을 리가 없다 [eulliga eopda]' is a speculative expression used in Korean to indicate that something is improbable or implausible based on the speaker's judgment. It expresses disbelief or doubt about the possibility of an event occurring and is often used to contrast a hypothetical situation with reality.",
@@ -14871,7 +14871,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이라는_96",
     "language": "ko",
-    "pattern": "~이라는",
+    "pattern": "~이라는 것",
     "title": "~이라는 것 [iraneun geot] (The thing called)",
     "shortExplanation": "This phrase is used to refer to or define something that was mentioned earlier.",
     "longExplanation": "'~이라는 것 [iraneun geot]' is a sentence structure used in Korean to refer to or define a particular thing or idea. It is often used in explanations to elaborate on a concept or to highlight specific characteristics.",
@@ -15447,7 +15447,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_줄_114",
     "language": "ko",
-    "pattern": "~줄",
+    "pattern": "~줄 알다",
     "title": "~줄 알다 [jul alda] (Thought that)",
     "shortExplanation": "'~줄 알다' is used to express an assumption or expectation that turns out to be incorrect.",
     "longExplanation": "'~줄 알다' is a Korean grammar pattern used when the speaker assumed or expected something to be a certain way, only to find that the reality was different. It is often translated as 'I thought that...' and conveys a sense of surprise or disappointment when the expectation does not match the outcome.",
@@ -15511,7 +15511,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_116",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않다",
     "title": "~지 않다 [ji anta] (Negative form)",
     "shortExplanation": "Negates the action implied by the verb; equivalent to 'not' in English.",
     "longExplanation": "The grammar point '~지 않다 [ji anta]' is the standard and polite way to convert a verb into its negative form in Korean. By attaching '지 않다' to the verb stem, it changes the meaning to indicate that the action is not performed. This form is commonly used in both formal and casual contexts.",
@@ -15543,7 +15543,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_117",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않아도 되다",
     "title": "~지 않아도 되다 [ji anado dweda] (Do not have to)",
     "shortExplanation": "Indicates that something does not have to be done or is not necessary.",
     "longExplanation": "'~지 않아도 되다 [ji anado dweda]' is used when you want to express that there is no obligation or necessity to do something. It emphasizes the optional nature of an action or state.",
@@ -15575,7 +15575,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_118",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않을까",
     "title": "~지 않을까 [ji anheulkka] (Perhaps)",
     "shortExplanation": "Used to express a guess, supposition, or conjecture; 'perhaps', 'maybe'.",
     "longExplanation": "'~지 않을까 [ji anheulkka]' is a common ending in Korean used to express an educated guess or prediction. It is similar to saying 'perhaps,' 'maybe,' or 'I wonder if...' in English, based on the speaker's available information.",
@@ -15671,7 +15671,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_진_121",
     "language": "ko",
-    "pattern": "~진",
+    "pattern": "~진 않다",
     "title": "~진 않다 [jin anta] (Not really)",
     "shortExplanation": "This pattern is used when something is not exactly or not demonstrably true.",
     "longExplanation": "The ~진 않다 [jin anta] form is used when describing a condition or situation that is not fully or exactly as described by the preceding adjective or verb. It is equivalent to the English expressions 'not really', 'not quite', 'not necessarily', or 'not exactly'. The level of negation is softer than the standard negative form and is often used when the speaker does not want to fully agree or disagree.",
@@ -15767,7 +15767,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_것_124",
     "language": "ko",
-    "pattern": "~것",
+    "pattern": "~것 같다",
     "title": "~것 같다 [geot gatda] (Seems like)",
     "shortExplanation": "Expresses the speaker's guess or inference about a situation based on some evidence.",
     "longExplanation": "The construction '~것 같다' is used in Korean to express a guess or inference about a situation. The speaker uses it when they have some evidence or basis for their inference, even if the situation is not directly observable. It is equivalent to saying 'seems like' or 'appears to be' in English.",
@@ -15831,7 +15831,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_126",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 되다",
     "title": "~게 되다 [ge gatda] (Become, end up)",
     "shortExplanation": "Means 'to become' or 'to end up' and is used to express the result of a change or transformation.",
     "longExplanation": "The construction '~게 되다' is used in Korean to indicate the end result of a change or transformation, often due to certain circumstances beyond the speaker's control. It is comparable to saying 'to become', 'to get', or 'to end up' in English.",
@@ -15863,7 +15863,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_127",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 하다",
     "title": "~게 하다 [ge hada] (Make)",
     "shortExplanation": "Used to express causing someone or something to be in a certain state.",
     "longExplanation": "'~게 하다' is a grammatical construction in Korean that means to make or cause someone or something to be in a particular state. It is used with descriptive verbs (or adjectives) to indicate a change in state. This is similar to the English verb 'make' or the phrase 'cause to be.'",
@@ -15895,7 +15895,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_128",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 하다",
     "title": "~게 하다 [ge hada] (To make someone do something)",
     "shortExplanation": "Used to indicate causing someone or something to perform an action.",
     "longExplanation": "'~게 하다' is used to express the act of making or causing someone to do something. It is typically used with nouns or action verb stems to show that one party induces or forces another to take an action. This is similar to saying 'make (someone) do' in English.",
@@ -15927,7 +15927,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_키가_129",
     "language": "ko",
-    "pattern": "~키가",
+    "pattern": "~키가 크다/작다",
     "title": "~키가 크다/작다 [kiga keuda/jakda] (To be tall/short)",
     "shortExplanation": "Expressions used to describe a person’s height, literally meaning 'big in size' (tall) and 'small in size' (short).",
     "longExplanation": "'키가 크다 [kiga keuda]' and '키가 작다 [kiga jakda]' are simple expressions in Korean used to indicate the height of a person. '키가 크다' describes someone as tall, while '키가 작다' indicates someone is short. These expressions directly refer to physical characteristics, specifically height.",
@@ -16087,7 +16087,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하게_134",
     "language": "ko",
-    "pattern": "~하게",
+    "pattern": "~하게 되다",
     "title": "~하게 되다 [hage dweda] (End up doing)",
     "shortExplanation": "Used to express that something happens as a result of circumstances, often beyond one’s control.",
     "longExplanation": "'~하게 되다' is a verb ending in Korean that indicates an action or state that comes about unexpectedly or unintentionally as a result of circumstances. It often implies that the result was not planned and may evoke a sense of surprise or resignation.",
@@ -16119,7 +16119,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하고_135",
     "language": "ko",
-    "pattern": "~하고",
+    "pattern": "~하고 있다",
     "title": "~하고 있다 [hago itda] (Is doing)",
     "shortExplanation": "Used to describe a continuous or ongoing action.",
     "longExplanation": "'~하고 있다' is a grammar pattern used in Korean to express an ongoing action or a state that continues to exist. It is equivalent to the English 'is doing' or 'am/are doing'. This form focuses on the progression of the action, not on its result or completion.",
@@ -16151,7 +16151,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하고_136",
     "language": "ko",
-    "pattern": "~하고",
+    "pattern": "~하고 나서",
     "title": "~하고 나서 [hago naseo] (After doing)",
     "shortExplanation": "Used to express sequence of actions; 'after doing'.",
     "longExplanation": "'~하고 나서 [hago naseo]' is a sentence pattern in Korean that means 'after doing something'. It is used to indicate that one action is completed before the next action takes place. The sequence is crucial, as the latter action happens only after the first is finished.",
@@ -16183,7 +16183,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하고_137",
     "language": "ko",
-    "pattern": "~하고",
+    "pattern": "~하고 싶다",
     "title": "~하고 싶다 [hago sipda] (Want to do)",
     "shortExplanation": "Expresses a desire to perform a certain action.",
     "longExplanation": "'~하고 싶다 [hago sipda]' is a verb ending in Korean that indicates the speaker's desire or wish to perform a certain action. It is equivalent to 'want to do something' in English and is commonly used to express personal wishes or plans.",
@@ -16215,7 +16215,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하기로_138",
     "language": "ko",
-    "pattern": "~하기로",
+    "pattern": "~하기로 하다",
     "title": "~하기로 하다 [hakiro hada] (Decide to do)",
     "shortExplanation": "Used to indicate that a decision about doing something has been made.",
     "longExplanation": "'하기로 하다' is used when you want to express that a decision to do something has been made. It can be a personal decision or a mutual decision made by a group. It translates to 'decide to do' in English, with the action indicated by the attached verb.",
@@ -16247,7 +16247,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하기는_139",
     "language": "ko",
-    "pattern": "~하기는",
+    "pattern": "~하기는 하다",
     "title": "~하기는 하다 [hakineun hada] (Do to some extent)",
     "shortExplanation": "Used to admit that something is done to some degree, but not fully or enthusiastically.",
     "longExplanation": "~하기는 하다 is a Korean grammar point used when someone does do something, but not completely, regularly, or with enthusiasm. It shows that an action occurs but implies some limit or deficiency in how ideally it is done.",
@@ -16343,7 +16343,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하면_142",
     "language": "ko",
-    "pattern": "~하면",
+    "pattern": "~하면 할수록",
     "title": "~하면 할수록 [hamyeon halsurok] (The more... the more)",
     "shortExplanation": "Used to express a proportional increase or decrease; 'the more... the more'.",
     "longExplanation": "'~하면 할수록' is a grammar structure used in Korean to illustrate that as one action or state increases (or decreases), another does so in proportion. It is similar to the English expression 'the more... the more'.",
@@ -16375,7 +16375,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_Expressing_0",
     "language": "ko",
-    "pattern": "Expressing",
+    "pattern": "Expressing Cause/Reason",
     "title": "Expressing Cause/Reason (~니까/아서/어서/으니)",
     "shortExplanation": "Used to express the reason or cause; 'because', 'since'.",
     "longExplanation": "In Korean, various grammatical patterns such as ~니까, ~아서/어서, and ~으니 are used to indicate the cause or reason for an action or situation. They are equivalent to 'because' or 'since' in English and are used to logically connect two clauses. They can be used in both positive and negative contexts.",
@@ -16791,7 +16791,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_도록_13",
     "language": "ko",
-    "pattern": "~도록",
+    "pattern": "~도록 하다",
     "title": "~도록 하다 [dorok hada] (Make sure that, ensure that)",
     "shortExplanation": "Used to express a commitment or directive to make sure that something happens.",
     "longExplanation": "The '~도록 하다' construction is used to indicate that the speaker intends to make something occur or wants someone to ensure a specific result. It is similar to saying 'make sure that' or 'ensure that' in English.",
@@ -16823,7 +16823,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_라든지_14",
     "language": "ko",
-    "pattern": "~라든지",
+    "pattern": "~라든지 ~라든지",
     "title": "~라든지 ~라든지 [radenji radenji] (Either or)",
     "shortExplanation": "Used to list alternative options or possibilities without specifying a single choice.",
     "longExplanation": "The '~라든지 ~라든지' pattern is used to list alternative options or possibilities, implying that any one of the mentioned items could be chosen. It is similar to 'either or' in English, used when the speaker does not wish to specify a particular option.",
@@ -16855,7 +16855,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_려고_15",
     "language": "ko",
-    "pattern": "~려고",
+    "pattern": "~려고 하다",
     "title": "~려고 하다 [ryeogo hada] (Try to)",
     "shortExplanation": "Used to express an intention or plan to do something.",
     "longExplanation": "The '~려고 하다' structure is commonly used to indicate that someone intends, plans, or attempts to do something. It is equivalent to the English phrases 'plan to', 'intend to', or 'try to'.",
@@ -16887,7 +16887,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_만이_16",
     "language": "ko",
-    "pattern": "~만이",
+    "pattern": "~만이 아니다",
     "title": "~만이 아니다 [mani anida] (Not only)",
     "shortExplanation": "Used to indicate that the preceding clause is not the only reason or factor; 'not only'.",
     "longExplanation": "The '~만이 아니다' pattern is used to express that something is not solely due to one reason, suggesting that additional factors or elements are involved. It is similar to 'not only' in English, highlighting that there is more than one contributing aspect.",
@@ -17111,7 +17111,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_23",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 보이다",
     "title": "~아/어 보이다 [a/eo boida] (To seem, appear)",
     "shortExplanation": "Used to express that someone or something seems or appears a certain way, based on the speaker’s perception.",
     "longExplanation": "The grammar point '~아/어 보이다' is used in Korean to convey the speaker’s judgment or perception about someone or something. The verb or adjective before '~아/어 보이다' is conjugated according to its final vowel, and the expression is equivalent to 'seem', 'appear', or 'look like' in English.",
@@ -17175,7 +17175,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_았었다_25",
     "language": "ko",
-    "pattern": "~았/었다",
+    "pattern": "~았/었다 치다",
     "title": "~았/었다 치다 [at/eotda chida] (Let’s say, suppose)",
     "shortExplanation": "Expresses a hypothetical situation, equivalent to 'let's say' or 'suppose'.",
     "longExplanation": "‘~았/었다 치다’ is used to propose a hypothetical situation or condition. It is equivalent to saying 'let’s say' or 'suppose' in English, setting up an assumed scenario for discussion. This expression is often used to analyze possible outcomes or to plan by exploring various scenarios.",
@@ -17207,7 +17207,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_았었던_26",
     "language": "ko",
-    "pattern": "~았/었던",
+    "pattern": "~았/었던 것 같다",
     "title": "~았/었던 것 같다 [at/eotdeon geot gatda] (It seemed that)",
     "shortExplanation": "Used to express that something appeared or seemed a certain way in the past.",
     "longExplanation": "‘~았/었던 것 같다’ is used to express a speaker’s vague recollection or speculation about a past event. It can be translated as 'it seemed that', 'it looked as if', or 'I think that', often indicating uncertainty or a vague impression.",
@@ -17239,7 +17239,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_았었어야_27",
     "language": "ko",
-    "pattern": "~았/었어야",
+    "pattern": "~았/었어야 했다",
     "title": "~았/었어야 했다 [at/eosseoya haetda] (Should have)",
     "shortExplanation": "Expresses regret over something in the past that should have been done but wasn't.",
     "longExplanation": "‘~았/었어야 했다’ is used to express regret or a sense of missed opportunity about a past action. It is equivalent to 'should have' in English and reflects on an action that did not occur but would have been appropriate or beneficial if it had.",
@@ -17271,7 +17271,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아_28",
     "language": "ko",
-    "pattern": "~어/아",
+    "pattern": "~어/아 가다",
     "title": "~어/아 가다 [eo/a gada] (While doing)",
     "shortExplanation": "Describes an action that is ongoing or a process that continues over time.",
     "longExplanation": "‘~어/아 가다’ is used to indicate that an action started in the past is continuing into the present or future. It can be translated as 'while doing' or 'gradually' and is used to emphasize a process or change over time.",
@@ -17303,7 +17303,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아_29",
     "language": "ko",
-    "pattern": "~어/아",
+    "pattern": "~어/아 달라다",
     "title": "~어/아 달라다 [eo/a dallada] (To ask to do)",
     "shortExplanation": "Used to request someone to do something, often in a formal or polite manner.",
     "longExplanation": "‘~어/아 달라다’ is used to express a request for someone to perform an action. This form is typically employed in indirect or reported requests – usually followed by the quotation marker ‘-라고’ – and is most appropriate in formal or respectful contexts.",
@@ -17335,7 +17335,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아_30",
     "language": "ko",
-    "pattern": "~어/아",
+    "pattern": "~어/아 다니다",
     "title": "~어/아 다니다 [eo/a danida] (To attend, to go regularly)",
     "shortExplanation": "Used to indicate habitual or regular attendance/visiting of a place.",
     "longExplanation": "‘~어/아 다니다’ is used to express that someone regularly attends or visits a place, such as a school, workplace, or other location. It conveys the idea of a habitual or routine action.",
@@ -17367,7 +17367,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아_31",
     "language": "ko",
-    "pattern": "~어/아",
+    "pattern": "~어/아 두다",
     "title": "~어/아 두다 [eo/a duda] (To leave something as is, to do in advance)",
     "shortExplanation": "Used to indicate that an action is performed and its resulting state is maintained or preserved for future reference.",
     "longExplanation": "‘~어/아 두다’ is used to express that an action has been performed so that its result remains unchanged. It often implies preparing something in advance or leaving something in a particular state for later use.",
@@ -17399,7 +17399,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아_32",
     "language": "ko",
-    "pattern": "~어/아",
+    "pattern": "~어/아 들다",
     "title": "~어/아 들다 [eo/a deulda] (Suddenly start to)",
     "shortExplanation": "Used mainly in narrative contexts to indicate a sudden or unexpected onset of an action or state.",
     "longExplanation": "‘~어/아 들다’ is a grammatical structure used in Korean storytelling to express that an action or emotion began abruptly or unintentionally. Often marked by a contrasting clause with ‘들더니’, it conveys a sudden change. Note that this form is less common in everyday conversation than '~기 시작하다'.",
@@ -17431,7 +17431,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아_33",
     "language": "ko",
-    "pattern": "~어/아",
+    "pattern": "~어/아 버리다",
     "title": "~어/아 버리다 [eo/a beorida] (To end up doing, regrettably)",
     "shortExplanation": "Expresses an action that was completed—often unexpectedly or with regret.",
     "longExplanation": "‘~어/아 버리다’ is used in Korean to indicate that an action has been carried out completely, sometimes conveying a sense of regret, loss, or unintended finality. It emphasizes that something happened in its entirety, often in a way that the speaker wishes it hadn’t.",
@@ -17463,7 +17463,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아_34",
     "language": "ko",
-    "pattern": "~어/아",
+    "pattern": "~어/아 보다",
     "title": "~어/아 보다 [eo/a boda] (To try doing)",
     "shortExplanation": "Used when the speaker expresses the intention of trying to do something.",
     "longExplanation": "'~어/아 보다' is used to indicate an attempt or trial of an action. The verb preceding '보다' shows what is being attempted, while the overall tense of the sentence is determined by the form of '보다'. It hints at testing an action to see what happens.",
@@ -17495,7 +17495,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_고_35",
     "language": "ko",
-    "pattern": "~고",
+    "pattern": "~고 나서",
     "title": "~고 나서 [go naseo] (After doing)",
     "shortExplanation": "Indicates that after one action is completed, another action follows naturally.",
     "longExplanation": "The expression '~고 나서' is used to show a sequence of events—once action A is completed, action B takes place. It conveys that the completion of the first action sets the stage for what comes next.",
@@ -17527,7 +17527,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_어아_36",
     "language": "ko",
-    "pattern": "~어/아",
+    "pattern": "~어/아 오다",
     "title": "~어/아 오다 [eo/a oda] (To come to do)",
     "shortExplanation": "Expresses a gradual change or process that has accumulated over time.",
     "longExplanation": "‘~어/아 오다’ is used to indicate that a change or development has been coming about gradually. It is often attached to an action verb to show that, over time, a new state has been reached—frequently with a nuance of unexpectedness.",
@@ -17591,7 +17591,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_었으면_38",
     "language": "ko",
-    "pattern": "~었으면",
+    "pattern": "~었으면 좋겠다",
     "title": "~었으면 좋겠다 [eosseumyeon jotgetda] (I wish it was/were)",
     "shortExplanation": "Expresses a wish or desire for something that did not happen or is unreal.",
     "longExplanation": "‘~었으면 좋겠다’ is used to express a wish or regret regarding an unfulfilled or unreal situation. It can convey a longing for a different outcome—whether about the past, present, or future.",
@@ -17623,7 +17623,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_에_39",
     "language": "ko",
-    "pattern": "~에",
+    "pattern": "~에 한하다",
     "title": "~에 한하다 [e hanhada] (Limited to)",
     "shortExplanation": "Indicates that something is applicable only under a certain condition or case.",
     "longExplanation": "The pattern ‘~에 한하다’ is used to express that a rule, offer, or situation applies exclusively to a specific case or condition. In English it is often translated as 'limited to' or 'applicable only to'.",
@@ -17655,7 +17655,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_에_40",
     "language": "ko",
-    "pattern": "~에",
+    "pattern": "~에 한해서",
     "title": "~에 한해서 [e hanhaeseo] (Only in, limited to)",
     "shortExplanation": "Specifies that something is valid or available only under a particular condition or circumstance.",
     "longExplanation": "‘~에 한해서’ is used to indicate that a rule, offer, or situation applies exclusively when a specific condition is met. It means 'only in' or 'limited to' the stated context, implying that it does not extend to other cases.",
@@ -17687,7 +17687,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_에_41",
     "language": "ko",
-    "pattern": "~에",
+    "pattern": "~에 힘쓰다",
     "title": "~에 힘쓰다 [e himsseuda] (Put effort into)",
     "shortExplanation": "Describes the act of putting a lot of effort into or striving for something.",
     "longExplanation": "‘~에 힘쓰다’ is used to indicate that someone is dedicating significant effort toward achieving a goal or maintaining a state. It can be translated as 'to put effort into', 'to strive for', or 'to work hard for' a particular objective.",
@@ -17783,7 +17783,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_44",
     "language": "ko",
-    "pattern": "~을",
+    "pattern": "~을 바탕으로",
     "title": "~을 바탕으로 [eul batangeuro] (Based on)",
     "shortExplanation": "Indicates that something is done 'based on' or 'on the basis of' certain information.",
     "longExplanation": "'~을 바탕으로' is a postpositional phrase used to express that an action or decision is founded on a particular fact, evidence, or experience. The noun preceding this expression serves as the basis for what follows.",
@@ -17815,7 +17815,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_45",
     "language": "ko",
-    "pattern": "~을",
+    "pattern": "~을 빼다",
     "title": "~을 빼다 [eul ppaeda] (Except for)",
     "shortExplanation": "Expresses exclusion; meaning 'except for' or 'aside from'.",
     "longExplanation": "'~을 빼다' is used in Korean to exclude a particular item or group from a general statement. It specifies that while a general rule applies, there are exceptions.",
@@ -17847,7 +17847,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_46",
     "language": "ko",
-    "pattern": "~을",
+    "pattern": "~을 사이",
     "title": "~을 사이 [eul sai] (Between)",
     "shortExplanation": "Used to express 'between' or 'among'.",
     "longExplanation": "'~을 사이' is used to indicate that something is located between or among two or more items. It is most naturally used with two nouns, often connected with '과/와', to show a spatial or conceptual intermediate position.",
@@ -17879,7 +17879,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_47",
     "language": "ko",
-    "pattern": "~을",
+    "pattern": "~을 테니",
     "title": "~을 테니 [eul teni] (I assume/bet)",
     "shortExplanation": "Used to express a confident assumption or prediction about a future event.",
     "longExplanation": "The grammar point '~을 테니' is used to make a deduction or prediction based on available evidence. It expresses the speaker’s confident guess about a result or outcome, usually followed by a consequent action or result.",
@@ -17911,7 +17911,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을_48",
     "language": "ko",
-    "pattern": "~을",
+    "pattern": "~을 통해",
     "title": "~을 통해 [eul tonghae] (Through, via)",
     "shortExplanation": "Expresses the means or method by which something is done.",
     "longExplanation": "The phrase '~을 통해' signifies the channel, method, or process by which an action is carried out. It is used after a noun to show that the following action occurs by way of or through that noun.",
@@ -17943,7 +17943,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_을를_49",
     "language": "ko",
-    "pattern": "~을/를",
+    "pattern": "~을/를 틈타",
     "title": "~을/를 틈타 [eul/reul teumta] (Taking advantage of, during)",
     "shortExplanation": "Describes using a spare moment or opportunity to do something.",
     "longExplanation": "'~을/를 틈타' is used to indicate that someone takes advantage of a gap in time or an opportunity to perform an action. It implies doing something in the interim or making use of a favorable situation.",
@@ -17975,7 +17975,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이기는_50",
     "language": "ko",
-    "pattern": "~이기는",
+    "pattern": "~이기는 한데",
     "title": "~이기는 한데 [igineun hande] (Although, but)",
     "shortExplanation": "Indicates a contrast by acknowledging one fact while negating or limiting it with another.",
     "longExplanation": "'~이기는 한데' is used in Korean to show that while one part of a statement is true, the following part provides a contrasting or limiting remark. It is roughly equivalent to 'although' or 'but' in English.",
@@ -18167,7 +18167,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_인_56",
     "language": "ko",
-    "pattern": "~인",
+    "pattern": "~인 바",
     "title": "~인 바 [in ba] (Since, because it's the case that)",
     "shortExplanation": "Used to express 'since' or 'because it's the case that'.",
     "longExplanation": "'~인 바' is a formal grammar form used to provide a reason or cause for something. It is similar to saying 'since' or 'because it's the case that' in English and is most often found in written or formal contexts.",
@@ -18199,7 +18199,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_인_57",
     "language": "ko",
-    "pattern": "~인",
+    "pattern": "~인 이상",
     "title": "~인 이상 [in isang] (As long as, since)",
     "shortExplanation": "Used to express 'as long as', 'since', or 'now that' a certain condition is met.",
     "longExplanation": "'~인 이상' sets a condition and implies that, because the condition is met, a corresponding result or action must follow. It can be translated as 'as long as', 'since', or 'now that' in English.",
@@ -18263,7 +18263,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_일_59",
     "language": "ko",
-    "pattern": "~일",
+    "pattern": "~일 리가 없다",
     "title": "~일 리가 없다 [il riga eopda] (Cannot be, it's not possible that)",
     "shortExplanation": "Expresses disbelief or denial, indicating that something is impossible.",
     "longExplanation": "'~일 리가 없다' is used to strongly deny or reject the possibility of a situation or action. It is often translated as 'there's no way that...', 'it cannot be that...', or 'it's impossible that...'.",
@@ -18327,7 +18327,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_61",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않을테니",
     "title": "~지 않을테니 [ji anheulteni] (Won't, wouldn't)",
     "shortExplanation": "Used to express that something will not happen or be done.",
     "longExplanation": "The grammar point '~지 않을테니' is used in casual situations to predict or assure that a certain action will certainly not occur. It conveys the speaker’s confident belief that the stated event will not happen, and is often used to advise or reassure the listener.",
@@ -18391,7 +18391,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_63",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않다/지 못하다",
     "title": "~지 않다/지 못하다 [ji anhda/ji mothada] (Not, don't, can't)",
     "shortExplanation": "Used to express negation (do not) or inability (cannot).",
     "longExplanation": "'~지 않다' is used to indicate that one does not or does not intend to perform an action, while '~지 못하다' expresses an inability to perform an action. The former is used for intentional negation, and the latter when one is prevented or unable to do something.",
@@ -18423,7 +18423,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_64",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 얼마나 되다",
     "title": "~지 얼마나 되다 [ji eolmana dweda] (How long has it been)",
     "shortExplanation": "Used to ask or state the duration since an event occurred.",
     "longExplanation": "'~지 얼마나 되다' is a construction used to inquire about or indicate the amount of time that has passed since a certain event took place. It literally asks 'how long has it been' and is useful when discussing past events or experiences.",
@@ -18871,7 +18871,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하던_78",
     "language": "ko",
-    "pattern": "~하던",
+    "pattern": "~하던 중에",
     "title": "~하던 중에 [hadeon junge] (While I was doing)",
     "shortExplanation": "Used to indicate that something happened while another action was in progress.",
     "longExplanation": "'~하던 중에' is used to describe an event that occurs during the course of another ongoing action. It is similar to saying 'while I was doing' or 'in the middle of doing' in English.",
@@ -18999,7 +18999,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하려고_82",
     "language": "ko",
-    "pattern": "~하려고",
+    "pattern": "~하려고 하다",
     "title": "~하려고 하다 [haryeogo hada] (Try to do)",
     "shortExplanation": "Used to express the intention or effort to try to do something.",
     "longExplanation": "'~하려고 하다' indicates the speaker’s plan or intention to perform an action. It is equivalent to 'try to do' in English and is formed by attaching '하려고' to the verb stem, followed by '하다'.",
@@ -19031,7 +19031,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_83",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 때마다",
     "title": "~할 때마다 [hal ttaemada] (Every time)",
     "shortExplanation": "Used to express repetition; 'every time' or 'whenever'.",
     "longExplanation": "'~할 때마다' is a standard construction used to indicate that whenever a certain condition or event occurs, a specific action follows. It emphasizes the repeatability and consistency of the action.",
@@ -19063,7 +19063,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하면_84",
     "language": "ko",
-    "pattern": "~하면",
+    "pattern": "~하면 할수록",
     "title": "~하면 할수록 [hamyeon halsurok] (The more ~, the more ~)",
     "shortExplanation": "Expresses that increasing one factor causes a corresponding change in another.",
     "longExplanation": "'~하면 할수록' is used to indicate a proportional relationship between two conditions or actions. It means that the more (or less) of one thing there is, the more (or less) of another occurs.",
@@ -19383,7 +19383,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하는_94",
     "language": "ko",
-    "pattern": "~하는",
+    "pattern": "~하는 한",
     "title": "~하는 한 [haneun han] (As long as)",
     "shortExplanation": "Used to indicate the condition or basis on which something can happen or be established; 'as long as'.",
     "longExplanation": "'~하는 한 [haneun han]' is used in Korean to emphasize the condition or requirement necessary for something to happen. It is equivalent to the English phrase 'as long as', indicating that something will or can happen on the premise of the condition specified. This is frequently used in situations requiring adherence to a certain condition or meeting a particular prerequisite.",
@@ -19415,7 +19415,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하는_95",
     "language": "ko",
-    "pattern": "~하는",
+    "pattern": "~하는 김에",
     "title": "~하는 김에 [haneun kime] (While at it)",
     "shortExplanation": "This is used to express 'while doing A, do B', or 'since you are doing A, might as well do B'.",
     "longExplanation": "~하는 김에 [haneun kime] is a Korean grammatical expression used to present additional actions you might as well do while you're in the process of doing a primary action. This commonly translates to 'while doing it, might as well do B' or 'since you're doing it, also do B'. It also suggests that the secondary action (B) may be somewhat related to, or is convenient because of, the primary action (A).",
@@ -19447,7 +19447,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하는_96",
     "language": "ko",
-    "pattern": "~하는",
+    "pattern": "~하는 편이다",
     "title": "~하는 편이다 [haneun pyeonida] (Tend to)",
     "shortExplanation": "This expression is used to describe a tendency or habit.",
     "longExplanation": "'~하는 편이다 [haneun pyeonida]' is a Korean grammar point used to express a general habit or tendency of someone or something. It is generally used to describe an action that is not absolutely consistent, but is generally favored or avoided. It can be translated as 'tend to', 'more likely to', or 'has a habit of' in English.",
@@ -19479,7 +19479,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하는_97",
     "language": "ko",
-    "pattern": "~하는",
+    "pattern": "~하는 대로",
     "title": "~하는 대로 [haneun daero] (As soon as)",
     "shortExplanation": "Used to express 'as soon as' or 'immediately after'.",
     "longExplanation": "'~하는 대로 [haneun daero]' is a compound verb ending used to express the immediate action taken after a certain situation or event has occurred. It indicates simultaneous actions or immediate sequences, much like 'as soon as' or 'immediately after' in English. When you want to say that something happened right after something else without any time gap, you can use this ending.",
@@ -19511,7 +19511,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하다_98",
     "language": "ko",
-    "pattern": "~하다",
+    "pattern": "~하다 보면",
     "title": "~하다 보면 [hada bomyeon] (If you keep doing)",
     "shortExplanation": "This grammar point is used to express the idea that if you keep doing something, then a certain result will eventually happen.",
     "longExplanation": "The Korean grammar point '~하다 보면 [hada bomyeon]' is used to show that if you do something continuously, it will eventually lead to a certain outcome. It implies that over time, repeating an action or behavior can bring about a specific change or effect. The verb preceding '하다 보면' expresses the action, and the pattern is often used with actions that have a progressive or accumulative effect.",
@@ -19543,7 +19543,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하다_99",
     "language": "ko",
-    "pattern": "~하다",
+    "pattern": "~하다 보니",
     "title": "~하다 보니 [hada boni] (As I was doing)",
     "shortExplanation": "Used to express how one thing naturally leads to another; 'as I was doing, I realized that...'.",
     "longExplanation": "'~하다 보니 [hada boni]' is used to describe a situation where, while doing something, you gradually come to realize, understand, or feel something. It is often translated as 'as I was doing, I realized that' and is used to express naturally emerging emotions or insights as a result of ongoing actions.",
@@ -19575,7 +19575,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하려는_100",
     "language": "ko",
-    "pattern": "~하려는",
+    "pattern": "~하려는 뜻이다",
     "title": "~하려는 뜻이다 [haryeoneun tteushida] (Intend to)",
     "shortExplanation": "This is used to express an intention or plan to do something in the future.",
     "longExplanation": "'~하려는 뜻이다 [haryeoneun tteushida]' is a grammatical construction used to indicate the speaker's intention or plan to do something. It is usually expressed using the verb stem + 려는 뜻이다. In English, it is equivalent to 'intend to' or 'plan to', and it is used to express future goals or plans.",
@@ -19607,7 +19607,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하면_101",
     "language": "ko",
-    "pattern": "~하면",
+    "pattern": "~하면 ~하다",
     "title": "~하면 ~하다 [hamyeon hada] (If ~ then)",
     "shortExplanation": "Used to describe conditional statements or a sequence of events; 'if ~ then'.",
     "longExplanation": "'~하면 ~하다 [hamyeon hada]' is used in Korean to link a condition with its result or subsequent action. When the action or condition in the first clause occurs, the second clause follows as a consequence. It is similar to the English 'if ~ then' structure and can be used to express hypothetical scenarios or sequential events.",
@@ -19639,7 +19639,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_102",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 만하다",
     "title": "~할 만하다 [hal manhada] (Worth to)",
     "shortExplanation": "Loosely translates to 'worth to' or 'deserving of', used to express that something is worthwhile.",
     "longExplanation": "The construction '~할 만하다' is used to express the idea that something is worth the effort, time, or cost. The verb that precedes this construction determines the context. It is often translated as 'worth to' or 'deserving of' in English. Generally, it is used when something is considered worthwhile or valuable, and it is not typically used in the negative form.",
@@ -19671,7 +19671,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_103",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 바에",
     "title": "~할 바에 [hal bae] (Rather than)",
     "shortExplanation": "Used to express a preference for an alternative action over the one in consideration; 'rather than'.",
     "longExplanation": "'~할 바에 [hal bae]' is used in Korean to indicate that, given a choice between two actions, the speaker prefers not to do the action attached to '할 바에'. It emphasizes a preference for a different action over the one being considered. It is often used when expressing a negative alternative or an unfavorable option.",
@@ -19703,7 +19703,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_104",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 리가 없다",
     "title": "~할 리가 없다 [hal riga eopda] (There's no way that)",
     "shortExplanation": "Used to express impossibility or disbelief in a certain action or state.",
     "longExplanation": "'~할 리가 없다 [hal riga eopda]' is a Korean grammar point used to express the speaker's disbelief or assertion that something is impossible or cannot be the case. It translates to 'there's no way that' in English, signifying that the speaker strongly believes a certain action or situation cannot or will not occur.",
@@ -19735,7 +19735,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_105",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 때마다",
     "title": "~할 때마다 [hal ttaemada] (Every time when)",
     "shortExplanation": "Used to indicate repetition; 'every time when' or 'whenever'.",
     "longExplanation": "'~할 때마다 [hal ttaemada]' is a conjunction used in Korean to indicate an action or state that repeatedly happens whenever a certain condition or situation occurs. It conveys a sense of regular occurrence, akin to 'every time when' or 'whenever' in English. It is used to emphasize the consistent and repetitive nature of an action or state in relation to a specific situation.",
@@ -19767,7 +19767,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_106",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 힘이 없다",
     "title": "~할 힘이 없다 [hal himi eopda] (Don't have the strength/energy to)",
     "shortExplanation": "This phrase is used to express that one doesn't have the strength or energy to do something.",
     "longExplanation": "The phrase '~할 힘이 없다 [hal himi eopda]' is commonly used in Korean to demonstrate the absence of capability, energy, or strength to perform a particular action. It is typically used to express physical or emotional fatigue that hinders one's ability to carry out a task.",
@@ -19799,7 +19799,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_107",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 것 같다",
     "title": "~할 것 같다 [hal geot gatda] (Seems like, feels like)",
     "shortExplanation": "Used to express prediction, expectation, or intuition; 'seems like', 'feels like'.",
     "longExplanation": "'~할 것 같다 [hal geot gatda]' is a sentence-ending expression in Korean used to predict or express an expectation or feeling about a future event. The speaker uses this form to share an opinion or intuition based on observations. It is translated as 'seems like' or 'feels like' in English.",
@@ -19831,7 +19831,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_108",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 것이다",
     "title": "~할 것이다 [hal geosida] (Will)",
     "shortExplanation": "Used to express that an event will occur in the future.",
     "longExplanation": "'~할 것이다 [hal geosida]' is a future tense marker in Korean. It is attached to the end of a verb to indicate that something is going to or will happen. It can also express the speaker’s wish, intention, or prediction regarding a future event.",
@@ -19863,7 +19863,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_109",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 줄 알다",
     "title": "~할 줄 알다 [hal jul alda] (Know how to)",
     "shortExplanation": "Used to express 'know how to' or 'the ability to do something'.",
     "longExplanation": "'~할 줄 알다 [hal jul alda]' is a grammatical expression used to convey the ability or knowledge of how to do something. When attached to a verb stem, it indicates that someone knows how to perform that action. It is often used in conversation to ask or assert one’s ability.",
@@ -19959,7 +19959,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_함에_112",
     "language": "ko",
-    "pattern": "~함에",
+    "pattern": "~함에 있어",
     "title": "~함에 있어 [hame isseo] (In terms of)",
     "shortExplanation": "This pattern is used to indicate 'in terms of', 'when it comes to', or 'with respect to'.",
     "longExplanation": "'~함에 있어' is used when explaining a standard or point of view on which a judgment is made. It is equivalent to 'in terms of', 'when it comes to', or 'in the context of' in English. This form is often used in sentences that express opinions or subjective views from a particular perspective.",
@@ -19991,7 +19991,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_해_113",
     "language": "ko",
-    "pattern": "~해",
+    "pattern": "~해 보이다",
     "title": "~해 보이다 [hae boida] (Look/seem to be)",
     "shortExplanation": "Used to express an observation or opinion about how someone or something appears or seems.",
     "longExplanation": "'~해 보이다 [hae boida]' is used in Korean to describe how someone or something appears based on personal observation. It combines an adjective or descriptive verb (in dictionary form) with 보이다 to express a subjective judgment—equivalent to 'look/seem to be' in English.",
@@ -20119,7 +20119,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_과와_3",
     "language": "ko",
-    "pattern": "~과/와",
+    "pattern": "~과/와 같이",
     "title": "~과/와 같이 [gwa/wa gachi] (Like, as if)",
     "shortExplanation": "Used to express a comparison, similarity, or analogy, equivalent to 'like' or 'as if' in English.",
     "longExplanation": "`~과/와 같이 [gwa/wa gachi]` is an expression used in Korean to draw a comparison or analogy, showing that one thing is similar to another. It is equivalent to saying 'like' or 'as if' in English and helps in visualizing or emphasizing the resemblance between two things.",
@@ -20183,7 +20183,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_뿐만_5",
     "language": "ko",
-    "pattern": "~뿐만",
+    "pattern": "~뿐만 아니라",
     "title": "~뿐만 아니라 [ppunman anira] (Not only... but also)",
     "shortExplanation": "Used to express 'not only... but also' by adding additional, related information.",
     "longExplanation": "`~뿐만 아니라 [ppunman anira]` is used in Korean to add extra information, indicating that something applies not only in one aspect but also in another. It serves to emphasize that a subject or event encompasses multiple qualities or characteristics.",
@@ -20247,7 +20247,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이든지_7",
     "language": "ko",
-    "pattern": "~이든지",
+    "pattern": "~이든지 ~든지",
     "title": "~이든지 ~든지 [ideunji deunji] (Whether… or)",
     "shortExplanation": "Used to present multiple alternatives, similar to 'whether... or' in English.",
     "longExplanation": "`~이든지 ~든지 [ideunji deunji]` is used in Korean to list alternative options or possibilities, conveying indifference about which one is chosen. It is often used in both interrogative sentences and statements to present choices.",
@@ -20279,7 +20279,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_임에_8",
     "language": "ko",
-    "pattern": "~임에",
+    "pattern": "~임에 틀림없다",
     "title": "~임에 틀림없다 [ime tteollimeopda] (Without a doubt)",
     "shortExplanation": "Used to express certainty, meaning 'without a doubt' or 'it's certain that...'.",
     "longExplanation": "`~임에 틀림없다 [ime tteollimeopda]` is used in Korean to express a high degree of certainty about a situation or outcome. It emphasizes that there is no doubt about the assertion and is often used in formal or written contexts.",
@@ -20503,7 +20503,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하든지_15",
     "language": "ko",
-    "pattern": "~하든지",
+    "pattern": "~하든지 말든지",
     "title": "~하든지 말든지 [hadeunji maldeunji] (Whether... or not)",
     "shortExplanation": "Used to convey 'whether... or not'.",
     "longExplanation": "'~하든지 말든지 [hadeunji maldeunji]' is a compound ending that expresses indifference toward the outcome regardless of which choice is made. It implies that the result remains unchanged.",
@@ -20663,7 +20663,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_에_20",
     "language": "ko",
-    "pattern": "~에",
+    "pattern": "~에 근거하여",
     "title": "~에 근거하여 [e geungeohayeo] (Based on)",
     "shortExplanation": "Expresses the notion 'based on', 'according to', or 'in accordance with'.",
     "longExplanation": "~에 근거하여 [e geungeohayeo] is used to indicate that a statement, action, or conclusion is derived from a particular source such as data, rules, or authoritative information.",
@@ -20695,7 +20695,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_에_21",
     "language": "ko",
-    "pattern": "~에",
+    "pattern": "~에 비추어 볼 때",
     "title": "~에 비추어 볼 때 [e bichueo bol ttae] (In comparison to)",
     "shortExplanation": "Used to express comparison; 'in comparison to' or 'compared to'.",
     "longExplanation": "'~에 비추어 볼 때 [e bichueo bol ttae]' is used to compare one subject or factor with another, often to assert a judgment or highlight a contrast.",
@@ -20727,7 +20727,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이다_22",
     "language": "ko",
-    "pattern": "~이다",
+    "pattern": "~이다 보니",
     "title": "~이다 보니 [ida boni] (Since, as)",
     "shortExplanation": "Used to state a reason or cause that leads to a certain result, similar to 'since' or 'as' in English.",
     "longExplanation": "'~이다 보니 [ida boni]' expresses a cause-and-effect relationship. It is used when a state or habitual action gradually leads to a particular consequence, implying that the result became apparent over time.",
@@ -20759,7 +20759,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_이라면_23",
     "language": "ko",
-    "pattern": "~이라면",
+    "pattern": "~이라면 그것은",
     "title": "~이라면 그것은 [iramyeon geugeoseun] (If it’s called)",
     "shortExplanation": "Used when describing or explaining something in detail if it is defined in a certain way.",
     "longExplanation": "'~이라면 그것은 [iramyeon geugeoseun]' is used to introduce a definition or explanation. It is roughly equivalent to saying 'if it's called...' in English and is followed by a more detailed description of the subject.",
@@ -20855,7 +20855,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_인_26",
     "language": "ko",
-    "pattern": "~인",
+    "pattern": "~인 까닭에",
     "title": "~인 까닭에 [in kkadake] (Because, the reason why)",
     "shortExplanation": "Indicates 'because' or 'the reason why' by giving the cause for the main clause.",
     "longExplanation": "'~인 까닭에 [in kkadake]' is a conjunction expression used in Korean to explain the reason or cause of an action, event, or situation. It is similar in meaning to 'because' or 'the reason why' in English and is generally used in formal or literary contexts (in contrast to colloquial forms like '때문에' or '해서').",
@@ -20887,7 +20887,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_인_27",
     "language": "ko",
-    "pattern": "~인",
+    "pattern": "~인 즉",
     "title": "~인 즉 [in jeuk] (In other words)",
     "shortExplanation": "Used to restate or clarify something; 'in other words', 'that is to say'.",
     "longExplanation": "'~인 즉 [in jeuk]' is a phrase used in Korean to restate or clarify a previous statement in different words. It is similar to the English expressions 'in other words', 'that is to say', or 'namely' and offers additional clarification or perspective.",
@@ -20919,7 +20919,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_처럼_28",
     "language": "ko",
-    "pattern": "~처럼",
+    "pattern": "~처럼 하다",
     "title": "~처럼 하다 [cheoreom hada] (To act as if, pretend to)",
     "shortExplanation": "Expresses that someone behaves as if they are in a certain state; 'pretend to' or 'act as if'.",
     "longExplanation": "'~처럼 하다 [cheoreom hada]' is used to describe when someone imitates or mimics a particular state or behavior. In everyday Korean, speakers often use the expression with the auxiliary ‘척 하다’ to mean 'pretend to.'",
@@ -20983,7 +20983,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_키로_30",
     "language": "ko",
-    "pattern": "~키로",
+    "pattern": "~키로 하다",
     "title": "~키로 하다 [kiro hada] (Intend to, plan to)",
     "shortExplanation": "Denotes the speaker's intention or resolution to do something.",
     "longExplanation": "The form '~키로 하다 [kiro hada]' is used in Korean to express a decision, plan, or intention for a future action. It conveys a sense of resolution and deliberate commitment, and is generally translated as 'intend to' or 'plan to' in English.",
@@ -21047,7 +21047,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하기는_32",
     "language": "ko",
-    "pattern": "~하기는",
+    "pattern": "~하기는 하다",
     "title": "~하기는 하다 [hagineun hada] (Do it somehow)",
     "shortExplanation": "Conveys that someone does something, though not very well or adequately.",
     "longExplanation": "The expression '~하기는 하다 [hagineun hada]' is used to imply that while an action is indeed performed, it may not be done proficiently or to the expected standard.",
@@ -21111,7 +21111,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하기만_34",
     "language": "ko",
-    "pattern": "~하기만",
+    "pattern": "~하기만 하면",
     "title": "~하기만 하면 [hakiman hamyeon] (As soon as)",
     "shortExplanation": "Expresses 'as soon as' or 'whenever' an action occurs, another immediately follows.",
     "longExplanation": "'~하기만 하면 [hakiman hamyeon]' is used to indicate that as soon as a certain action (expressed by the verb stem + 하다) happens, another action follows immediately or consequently.",
@@ -21175,7 +21175,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하면_36",
     "language": "ko",
-    "pattern": "~하면",
+    "pattern": "~하면 할수록",
     "title": "~하면 할수록 [hamyeon halsurok] (The more... the more)",
     "shortExplanation": "Used to express a correlation between two actions or situations; 'the more... the more'.",
     "longExplanation": "The '~하면 할수록 [hamyeon halsurok]' grammar point is used to express a correlation between two things. The first clause shows what is increasing or decreasing, while the second clause shows the result. This pattern emphasizes that as one event or situation increases or decreases, a related event or situation also increases or decreases—much like the English expression 'the more... the more'.",
@@ -21239,7 +21239,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_해서_38",
     "language": "ko",
-    "pattern": "~해서",
+    "pattern": "~해서 그런지",
     "title": "~해서 그런지 [haeseo geureonji] (Perhaps because)",
     "shortExplanation": "Used to express a supposition, assumption, or speculation; 'perhaps because', 'maybe due to'.",
     "longExplanation": "'~해서 그런지 [haeseo geureonji]' is commonly used in Korean to indicate a speculative cause-and-effect relationship or supposition. It is generally translated as 'perhaps because' or 'maybe due to' and is used when the speaker is not completely certain about the cause but speculates based on observable evidence.",
@@ -21271,7 +21271,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하여서는_39",
     "language": "ko",
-    "pattern": "~하여서는",
+    "pattern": "~하여서는 안 되다",
     "title": "~하여서는 안 되다 [hayeoseoneun an dweda] (Must not)",
     "shortExplanation": "Used to express prohibition or strong advice against doing something, which can be translated as 'must not' or 'should not'.",
     "longExplanation": "'~하여서는 안 되다 [hayeoseoneun an dweda]' is a grammar form used to indicate that something should not or must not occur. It is often used when giving strong advice or setting prohibitions, highlighting the negative consequences of the action.",
@@ -21335,7 +21335,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_41",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 만하다",
     "title": "~할 만하다 [hal manhada] (Worth doing)",
     "shortExplanation": "Used to express the worthiness of doing something.",
     "longExplanation": "'~할 만하다 [hal manhada]' is used to indicate that something is worth the effort, time, or cost invested in it. It can be translated as 'worth doing' or 'worth it' in English, expressing a subjective assessment of value.",
@@ -21367,7 +21367,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_할_42",
     "language": "ko",
-    "pattern": "~할",
+    "pattern": "~할 수밖에 없다",
     "title": "~할 수밖에 없다 [hal subakke eopda] (Have no choice but to)",
     "shortExplanation": "Used to express that there is no other option but to do what is mentioned.",
     "longExplanation": "'~할 수밖에 없다 [hal subakke eopda]' is used when there is no alternative but to perform the action mentioned. It implies that circumstances force one to act in a certain way.",
@@ -21399,7 +21399,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_해_43",
     "language": "ko",
-    "pattern": "~해",
+    "pattern": "~해 갈수록",
     "title": "~해 갈수록 [hae galsurok] (Increasingly, as time goes on)",
     "shortExplanation": "Used to describe a situation where a condition progressively intensifies or becomes more serious.",
     "longExplanation": "The '~해 갈수록 [hae galsurok]' expression indicates that as time passes, a particular state or condition gradually becomes more intense or worsens. It can be used with both verbs and adjectives, similar to saying 'increasingly' or 'the more... the more' in English.",
@@ -21431,7 +21431,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_해_44",
     "language": "ko",
-    "pattern": "~해",
+    "pattern": "~해 보아야",
     "title": "~해 보아야 [hae boaya] (Should try and see)",
     "shortExplanation": "Used to suggest that somebody should try something out in order to know or understand it.",
     "longExplanation": "'~해 보아야 [hae boaya]' is used when suggesting that one should try something to truly understand or experience it. In English, it is similar to saying 'you should try and see.'",
@@ -21527,7 +21527,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_했기_47",
     "language": "ko",
-    "pattern": "~했기",
+    "pattern": "~했기 때문에",
     "title": "~했기 때문에 [haetgi ttaemune] (Because)",
     "shortExplanation": "Used to express reason or cause, equivalent to 'Because' in English.",
     "longExplanation": "'~했기 때문에 [haetgi ttaemune]' is used to give a reason or cause. It refers retrospectively to an action or situation in the past that explains a present condition or outcome.",
@@ -21623,7 +21623,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_했어야_50",
     "language": "ko",
-    "pattern": "~했어야",
+    "pattern": "~했어야 했다",
     "title": "~했어야 했다 [haesseoya haetda] (Had to)",
     "shortExplanation": "Indicates that something 'had to' be done in the past, often expressing regret or missed opportunities.",
     "longExplanation": "'~했어야 했다 [haesseoya haetda]' is used to express that something should have been done or occurred in the past, even if it wasn’t. It often carries a sense of regret or a feeling that an opportunity was missed.",
@@ -21911,7 +21911,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_59",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않을까 싶다",
     "title": "~지 않을까 싶다 [ji anheulkka sipda] (I think perhaps)",
     "shortExplanation": "Expresses an assumption or supposition that something might be; it suggests that the speaker thinks something is likely.",
     "longExplanation": "The structure '~지 않을까 싶다' is used to express a guess or speculation about a situation. It conveys uncertainty as well as a hopeful anticipation about what might happen or be true.",
@@ -21943,7 +21943,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_60",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않을까 하다",
     "title": "~지 않을까 하다 [ji anheulkka hada] (I guess, I suspect)",
     "shortExplanation": "Used to express one's conjecture or prediction; 'I think', 'I guess', 'I suspect'.",
     "longExplanation": "'~지 않을까 하다' is used to express a guess or suspicion about a situation when the speaker is not completely sure. It conveys the speaker's uncertainty and expectation about what might be true.",
@@ -21975,7 +21975,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_지_61",
     "language": "ko",
-    "pattern": "~지",
+    "pattern": "~지 않을래",
     "title": "~지 않을래 [ji anheullae] (I don't want to)",
     "shortExplanation": "Expresses the speaker's intention not to do something.",
     "longExplanation": "'~지 않을래' is a verb ending used in Korean to indicate that the speaker does not want to perform a certain action. It shows a strong personal decision and is typically used in informal contexts.",
@@ -22135,7 +22135,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_게_66",
     "language": "ko",
-    "pattern": "~게",
+    "pattern": "~게 하다",
     "title": "~게 하다 [ge hada] (To make)",
     "shortExplanation": "Used to express causing someone or something to be in a certain state.",
     "longExplanation": "'~게 하다 [ge hada]' is a verb ending used in Korean to indicate that someone causes or makes another person or thing perform an action or be in a certain state. The verb or adjective before it is used in its descriptive stem form. It is equivalent to 'make' or 'let' in English.",
@@ -22199,7 +22199,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_하게_68",
     "language": "ko",
-    "pattern": "~하게",
+    "pattern": "~하게 하다",
     "title": "~하게 하다 [hage hada] (Make someone do)",
     "shortExplanation": "Used when one causes or allows someone else to perform an action.",
     "longExplanation": "The '~하게 하다 [hage hada]' structure indicates that one person is causing or permitting another to do something. The action verb is conjugated with ~하게, and then 하다 is added to complete the construction. The subject causes the action, while the object is the person who performs it.",
@@ -22263,7 +22263,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_해서는_70",
     "language": "ko",
-    "pattern": "~해서는",
+    "pattern": "~해서는 안 되다",
     "title": "~해서는 안 되다 [haeseoneun an dwae] (Must not, shouldn't)",
     "shortExplanation": "This grammar point is used to express prohibition or things that shouldn't be done.",
     "longExplanation": "'~해서는 안 되다' is a common ending in Korean that translates to 'must not' or 'shouldn't'. It indicates actions or behaviors that are prohibited, and it is used to express restrictions, warnings, or advice. It can be attached to both action and descriptive verbs.",
@@ -22455,7 +22455,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_했을_76",
     "language": "ko",
-    "pattern": "~했을",
+    "pattern": "~했을 텐데",
     "title": "~했을 텐데 [haesseultende] (Would have done but)",
     "shortExplanation": "Used to express that something 'would have' happened but for some reason did not.",
     "longExplanation": "'~했을 텐데' is used in Korean to describe an action or state that was expected to occur but did not due to certain circumstances. It expresses a contrast between expectation and reality.",
@@ -22551,7 +22551,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_는_79",
     "language": "ko",
-    "pattern": "~는",
+    "pattern": "~는 김에",
     "title": "~는 김에 [neun gimae] (Used to express that someone does something while doing another action)",
     "shortExplanation": "Used to depict that someone performs a certain action while already engaged in another.",
     "longExplanation": "The ending '~는 김에' is used when one is already doing something and takes advantage of that situation to do something else. It conveys the idea of 'while you are at it' or 'since you are doing one thing, you might as well do another.'",
@@ -22583,7 +22583,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_기_80",
     "language": "ko",
-    "pattern": "~기",
+    "pattern": "~기 시작하다",
     "title": "~기 시작하다 [sijakada] (To begin to, start to)",
     "shortExplanation": "Used to express that something begins to occur or a state starts to develop.",
     "longExplanation": "The form '~기 시작하다' is used to indicate the initiation of an action or change in state. It marks the moment when something starts to happen.",
@@ -22807,7 +22807,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_도록_87",
     "language": "ko",
-    "pattern": "~도록",
+    "pattern": "~도록 하다",
     "title": "~도록 하다 [dorok hada] (To try to, to make sure to)",
     "shortExplanation": "Used to express the intention of making something happen or ensuring an action occurs.",
     "longExplanation": "The structure '~도록 하다' is used when someone takes measures or makes an effort to ensure that a certain action or state is achieved. It implies intention or control over making something happen.",
@@ -22871,7 +22871,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_라는_89",
     "language": "ko",
-    "pattern": "~라는",
+    "pattern": "~라는 것이다",
     "title": "~라는 것이다 [raneun geosida] (It means that)",
     "shortExplanation": "Used to indicate or define the meaning of a statement; 'it means that'.",
     "longExplanation": "'~라는 것이다' is a grammatical structure that turns a clause into a noun phrase to explain or define its implication. It is commonly used after a verb or descriptive verb to emphasize that something signifies a particular fact or idea.",
@@ -22967,7 +22967,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_려고_92",
     "language": "ko",
-    "pattern": "~려고",
+    "pattern": "~려고 하다",
     "title": "~려고 하다 [ryeogo hada] (Try to)",
     "shortExplanation": "Used to express an intention or attempt to do something; 'try to'.",
     "longExplanation": "The construction '~려고 하다' is used to convey an intention, plan, or attempt to do something. It expresses a planned future action or an effort, without guaranteeing success.",
@@ -23063,7 +23063,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_를_95",
     "language": "ko",
-    "pattern": "~를",
+    "pattern": "~를 바탕으로",
     "title": "~를 바탕으로 [reul batageuro] (Based on)",
     "shortExplanation": "Used to express the basis or foundation upon which something is derived.",
     "longExplanation": "The phrase '~를 바탕으로' is used to indicate that an action, decision, or creation is based on certain data, facts, or experience. It can be translated as 'on the basis of' or 'based on' in English.",
@@ -23095,7 +23095,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_를_96",
     "language": "ko",
-    "pattern": "~를",
+    "pattern": "~를 통해",
     "title": "~를 통해 [reul tonghae] (Through, by means of)",
     "shortExplanation": "Used to express the medium or method by which something is done or achieved.",
     "longExplanation": "'~를 통해' is a postposition used to indicate the means, method, or channel through which an action is performed. It is equivalent to 'through', 'by means of', or 'via' in English.",
@@ -23511,7 +23511,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_109",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 버리다",
     "title": "~아/어 버리다 [a/eo beorida] (To completely)",
     "shortExplanation": "Used to emphasize that an action is done completely or to its end.",
     "longExplanation": "The phrase '~아/어 버리다 [a/eo beorida]' attaches to a verb stem to indicate that an action is carried out completely or thoroughly, often adding a sense of finality. Depending on the context, it may express regret, surprise, or relief. This form is common in casual spoken Korean.",
@@ -23543,7 +23543,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_110",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 놓다",
     "title": "~아/어 놓다 [a/eo notda] (To have done something in advance)",
     "shortExplanation": "Used to indicate that an action was performed ahead of time in preparation for something else.",
     "longExplanation": "'~아/어 놓다 [a/eo notda]' is used to express that an action has been done beforehand—either to prepare for a future event or to leave something in a completed state. This form is common in everyday conversation and adds nuance to your sentence structure.",
@@ -23575,7 +23575,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_111",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 달라다",
     "title": "~아/어 달라다 [a/eo dallada] (To ask for)",
     "shortExplanation": "Used to make a request or ask someone to do something.",
     "longExplanation": "'~아/어 달라다 [a/eo dallada]' is a form derived from the verb '달라하다' used when requesting or asking someone to do something. It is formed by conjugating the verb into its 아/어 form and then adding 달라다.",
@@ -23607,7 +23607,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_112",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 대다",
     "title": "~아/어 대다 [a/eo daeda] (To do aimlessly)",
     "shortExplanation": "Used to indicate that an action is done without a clear purpose or merely out of idleness.",
     "longExplanation": "'~아/어 대다 [a/eo daeda]' attaches to a verb stem to express that the action is performed aimlessly, without proper thought, or in an idle, unproductive manner.",
@@ -23639,7 +23639,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_113",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 보이다",
     "title": "~아/어 보이다 [a/eo boida] (To seem, appear)",
     "shortExplanation": "Used to express that something appears or seems to be a certain way.",
     "longExplanation": "The grammar point '~아/어 보이다 [a/eo boida]' is used to indicate that something looks or appears a certain way according to the speaker's perception or judgment. It is often used to describe appearances, conditions, or states based on external observation.",
@@ -23671,7 +23671,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_아어_114",
     "language": "ko",
-    "pattern": "~아/어",
+    "pattern": "~아/어 서는",
     "title": "~아/어 서는 [a/eo seoneun] (Although)",
     "shortExplanation": "Used to express a contrast or contrary expectation; 'although' or 'but'.",
     "longExplanation": "'~아/어 서는 [a/eo seoneun]' is used to present a situation that contrasts with or contradicts an expectation. It can be translated as 'although' or 'but' and highlights an unexpected or contrary fact.",
@@ -23767,7 +23767,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_았었_117",
     "language": "ko",
-    "pattern": "~았/었",
+    "pattern": "~았/었 던",
     "title": "~았/었 던 [at/eot deon] (Past descriptive)",
     "shortExplanation": "Used to describe past events or situations from the speaker's memory.",
     "longExplanation": "'~았/었 던' is a past descriptive form in Korean used to recall an event, person, or situation that occurred in the past. It is commonly attached to a verb (forming '보던') when modifying a noun and expresses a past state or memory from the speaker’s perspective.",
@@ -23799,7 +23799,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko_았었으면_118",
     "language": "ko",
-    "pattern": "~았/었으면",
+    "pattern": "~았/었으면 좋겠다",
     "title": "~았/었으면 좋겠다 [at/eosseumyeon jokgetda] (Wish something had happened)",
     "shortExplanation": "Used to express a wish or hope that something had occurred in the past.",
     "longExplanation": "'~았/었으면 좋겠다' is a grammar construction in Korean that expresses a speaker's wish or regret about a past event that did not occur. By combining a verb in the past tense with '으면 좋겠다', it conveys a longing for a different past outcome.",

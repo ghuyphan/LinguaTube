@@ -205,7 +205,7 @@ export async function onRequestPost(context) {
                 channel: body.channel,
                 duration: body.duration
             });
-            if (nativeResult) {
+            if (nativeResult?.segments?.length > 0) {
                 const updatedInfo = await getVideoLanguages(db, cleanVideoId);
                 availableLanguages.native = updatedInfo?.availableLanguages || [lang];
 
@@ -214,6 +214,10 @@ export async function onRequestPost(context) {
                     source: 'native', sourceDetail: nativeResult.source, availableLanguages, whisperAvailable: diamondInfo.diamonds > 0,
                     ...diamondInfo, timing: elapsed()
                 }, 200, { 'Cache-Control': CACHE_CONTROL.NATIVE });
+            }
+
+            if (nativeResult?.availableLangs?.length > 0) {
+                availableLanguages.native = nativeResult.availableLangs;
             }
 
             return jsonResponse({

@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, OnDestroy, PLATFORM_ID, effect } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -43,6 +43,7 @@ export class StudyModeComponent implements OnDestroy {
     sessionSize = signal<number | 'all'>(10);
     autoPlayAudio = signal(true);
     clozeMode = signal(false);
+    showAdvancedOptions = signal(false);
 
     // Active Card State
     isStudying = signal(false);
@@ -192,7 +193,19 @@ export class StudyModeComponent implements OnDestroy {
         return this.getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language);
     });
 
+    toggleAdvancedOptions(): void {
+        this.showAdvancedOptions.update(v => !v);
+    }
+
     constructor() {
+        // Reset study session to overview screen when navigation tab or reset is triggered
+        effect(() => {
+            const trigger = this.vocab.studyResetTrigger();
+            if (trigger > 0) {
+                this.endSession();
+            }
+        });
+
         if (isPlatformBrowser(this.platformId)) {
             const storedAutoPlay = localStorage.getItem(STUDY_AUTOPLAY_KEY);
             if (storedAutoPlay !== null) {
@@ -480,6 +493,9 @@ export class StudyModeComponent implements OnDestroy {
         this.stopTimer();
         this.isStudying.set(false);
         this.isComplete.set(false);
+        this.showConfetti.set(false);
+        this.swipeOffset.set(0);
+        this.isSwiping.set(false);
     }
 
     resetSession(): void {
@@ -529,10 +545,6 @@ export class StudyModeComponent implements OnDestroy {
             default:
                 return this.i18n.t('settings.textOnly');
         }
-    }
-
-    setDailyGoal(goal: number): void {
-        this.vocab.setDailyGoal(goal);
     }
 
     private triggerConfetti(): void {

@@ -7,6 +7,13 @@
                 <div class="panel-header__left">
                     <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
                     <h2 class="panel-header__title">{{ i18n.t('study.title') }}</h2>
+                    <span class="badge badge--accent">
+                        <img [src]="currentLanguageFlag()" class="circle-flag circle-flag--sm" alt="" />
+                        <span>{{ currentLanguageLabel() }}</span>
+                    </span>
+                    @if (currentReadingDisplayLabel()) {
+                    <span class="badge badge--primary desktop-only">{{ currentReadingDisplayLabel() }}</span>
+                    }
                 </div>
                 @if (streak.currentStreak() > 0) {
                 <div class="panel-badges">
@@ -18,213 +25,112 @@
                 }
             </div>
             <p class="panel-header__subtitle">{{ i18n.t('study.subtitle') }}</p>
-            <div class="study-meta-tags">
-                <span class="badge badge--primary">{{ availableCards() }} {{ i18n.t('study.cards') }}</span>
-                <span class="badge badge--accent">
-                    <img [src]="currentLanguageFlag()" class="circle-flag circle-flag--sm" alt="" />
-                    <span>{{ currentLanguageLabel() }}</span>
-                </span>
-                @if (currentReadingDisplayLabel()) {
-                <span class="badge badge--primary">{{ currentReadingDisplayLabel() }}</span>
-                }
+        </div>
+
+        <!-- Status Hero Banner -->
+        @if (dueToday() > 0) {
+        <div class="study-hero-banner study-hero-banner--due">
+            <div class="study-hero-banner__icon">
+                <app-icon name="clock" [size]="20" />
+            </div>
+            <div class="study-hero-banner__content">
+                <span class="study-hero-banner__title">{{ i18n.t('study.dueCardsNotice', { count: dueToday() }) }}</span>
+                <span class="study-hero-banner__sub">{{ i18n.t('study.cardsReady', { count: availableCards() }) }}</span>
             </div>
         </div>
-
-        <!-- Stat Badges (interactive toggles) -->
-        <div class="study-stats">
-            <button type="button" 
-                    class="stat-badge stat-badge--new" 
-                    [class.active]="includeNew()" 
-                    (click)="toggleDeck('new')"
-                    [attr.aria-pressed]="includeNew()"
-                    [title]="i18n.t('study.includeNew')">
-                <div class="stat-badge__top">
-                    <app-icon name="plus" [size]="14" class="stat-badge__icon" />
-                    <div class="stat-badge__check" [class.checked]="includeNew()">
-                        @if (includeNew()) {
-                            <app-icon name="check" [size]="10" />
-                        }
-                    </div>
-                </div>
-                <span class="stat-value">{{ deckStats().new }}</span>
-                <span class="stat-label">{{ i18n.t('study.new') }}</span>
-            </button>
-            <button type="button" 
-                    class="stat-badge stat-badge--learning" 
-                    [class.active]="includeLearning()" 
-                    (click)="toggleDeck('learning')"
-                    [attr.aria-pressed]="includeLearning()"
-                    [title]="i18n.t('study.includeLearning')">
-                <div class="stat-badge__top">
-                    <app-icon name="fire" [size]="14" class="stat-badge__icon" />
-                    <div class="stat-badge__check" [class.checked]="includeLearning()">
-                        @if (includeLearning()) {
-                            <app-icon name="check" [size]="10" />
-                        }
-                    </div>
-                </div>
-                <span class="stat-value">{{ deckStats().learning }}</span>
-                <span class="stat-label">{{ i18n.t('study.learning') }}</span>
-            </button>
-            <button type="button" 
-                    class="stat-badge stat-badge--known" 
-                    [class.active]="includeKnown()" 
-                    (click)="toggleDeck('known')"
-                    [attr.aria-pressed]="includeKnown()"
-                    [title]="i18n.t('study.reviewKnown')">
-                <div class="stat-badge__top">
-                    <app-icon name="check-circle" [size]="14" class="stat-badge__icon" />
-                    <div class="stat-badge__check" [class.checked]="includeKnown()">
-                        @if (includeKnown()) {
-                            <app-icon name="check" [size]="10" />
-                        }
-                    </div>
-                </div>
-                <span class="stat-value">{{ deckStats().known }}</span>
-                <span class="stat-label">{{ i18n.t('study.known') }}</span>
-            </button>
-        </div>
-
-        <!-- Due Today Alert Banner (mobile only - desktop shows in sidebar) -->
-        @if (dueToday() > 0) {
-        <div class="due-today-banner mobile-only">
-            <app-icon name="clock" [size]="16" />
-            <span>{{ i18n.t('study.dueToday') }}: <strong>{{ dueToday() }}</strong></span>
+        } @else {
+        <div class="study-hero-banner study-hero-banner--caught-up">
+            <div class="study-hero-banner__icon">
+                <app-icon name="check-circle" [size]="20" />
+            </div>
+            <div class="study-hero-banner__content">
+                <span class="study-hero-banner__title">{{ i18n.t('study.allCaughtUp') }}</span>
+                <span class="study-hero-banner__sub">{{ i18n.t('study.cardsReady', { count: availableCards() }) }}</span>
+            </div>
         </div>
         }
 
-        <!-- Daily Goal Progress (mobile only - desktop shows in sidebar) -->
-        <div class="daily-goal mobile-only">
-            <div class="goal-header">
-                <span class="goal-label">{{ i18n.t('study.dailyGoal') }}</span>
-                <span class="goal-count">{{ cardsCompletedToday() }}/{{ dailyGoal() }}</span>
+        <!-- Compact Daily Goal Progress Bar -->
+        <div class="study-goal-compact">
+            <div class="study-goal-compact__info">
+                <span class="study-goal-compact__label">
+                    <app-icon name="target" [size]="14" />
+                    {{ i18n.t('study.dailyGoal') }}
+                </span>
+                <span class="study-goal-compact__count">{{ cardsCompletedToday() }}/{{ dailyGoal() }} {{ i18n.t('study.cards') }}</span>
             </div>
-            <div class="goal-bar">
-                <div class="goal-fill" [style.width.%]="goalProgress()"></div>
-            </div>
-            @if (cardsCompletedToday() >= dailyGoal()) {
-            <span class="goal-complete">{{ i18n.t('study.goalComplete') }} 🎉</span>
-            }
-        </div>
-
-        <!-- Grouped Options Card -->
-        <div class="study-options-card">
-            <!-- Daily Goal Selector Row -->
-            <div class="study-option-row">
-                <div class="study-option-info">
-                    <div class="study-option-icon study-option-icon--goal">
-                        <app-icon name="target" [size]="16" />
-                    </div>
-                    <div class="study-option-text">
-                        <span class="study-option-title">{{ i18n.t('study.dailyGoal') }}</span>
-                        <span class="study-option-hint">
-                            {{ cardsCompletedToday() }}/{{ dailyGoal() }} {{ i18n.t('study.cards') }}
-                        </span>
-                    </div>
-                </div>
-                <div class="session-size-pills">
-                    @for (goal of [5, 10, 15, 20, 30]; track goal) {
-                    <button type="button" 
-                            class="size-pill" 
-                            [class.active]="dailyGoal() === goal"
-                            (click)="setDailyGoal(goal)">
-                        {{ goal }}
-                    </button>
-                    }
-                </div>
-            </div>
-
-            <!-- Session Size Row -->
-            <div class="study-option-row study-option-row--size">
-                <div class="study-option-info">
-                    <div class="study-option-icon study-option-icon--size">
-                        <app-icon name="layers" [size]="16" />
-                    </div>
-                    <div class="study-option-text">
-                        <span class="study-option-title">{{ i18n.t('study.sessionSize') }}</span>
-                        <span class="study-option-hint">
-                            {{ sessionCardCount() }} {{ i18n.t('study.cards') }} · {{ i18n.t('study.estimatedMinutes', { minutes: estimatedMinutes() }) }}
-                        </span>
-                    </div>
-                </div>
-                <div class="session-size-pills">
-                    @for (size of [5, 10, 20]; track size) {
-                    <button type="button" 
-                            class="size-pill" 
-                            [class.active]="sessionSize() === size"
-                            (click)="setSessionSize(size)">
-                        {{ size }}
-                    </button>
-                    }
-                    <button type="button" 
-                            class="size-pill" 
-                            [class.active]="sessionSize() === 'all'"
-                            (click)="setSessionSize('all')">
-                        {{ i18n.t('study.allCards') }}
-                    </button>
-                </div>
-            </div>
-
-            <!-- Due Only Toggle Row (when due cards exist) -->
-            @if (dueToday() > 0) {
-            <div class="study-option-row">
-                <div class="study-option-info">
-                    <div class="study-option-icon study-option-icon--due">
-                        <app-icon name="clock" [size]="16" />
-                    </div>
-                    <div class="study-option-text">
-                        <span class="study-option-title">{{ i18n.t('study.dueOnly') || 'Review Due Only' }}</span>
-                        <span class="study-option-hint">{{ dueToday() }} {{ i18n.t('study.cards') }} {{ i18n.t('study.dueToday') }}</span>
-                    </div>
-                </div>
-                <app-switch [checked]="dueOnly()" (checkedChange)="dueOnly.set($event)" />
-            </div>
-            }
-
-            <!-- Reverse Mode Row -->
-            <div class="study-option-row">
-                <div class="study-option-info">
-                    <div class="study-option-icon study-option-icon--reverse">
-                        <app-icon name="shuffle" [size]="16" />
-                    </div>
-                    <div class="study-option-text">
-                        <span class="study-option-title">{{ i18n.t('study.reverseMode') }}</span>
-                        <span class="study-option-hint">{{ i18n.t('study.meaningFirst') }}</span>
-                    </div>
-                </div>
-                <app-switch [checked]="reverseMode()" (checkedChange)="reverseMode.set($event)" />
-            </div>
-
-            <!-- Auto-play Audio Row -->
-            <div class="study-option-row">
-                <div class="study-option-info">
-                    <div class="study-option-icon study-option-icon--audio">
-                        <app-icon name="volume-2" [size]="16" />
-                    </div>
-                    <div class="study-option-text">
-                        <span class="study-option-title">{{ i18n.t('study.autoPlayAudio') }}</span>
-                        <span class="study-option-hint">{{ i18n.t('study.autoPlayAudioHint') }}</span>
-                    </div>
-                </div>
-                <app-switch [checked]="autoPlayAudio()" (checkedChange)="setAutoPlayAudio($event)" />
-            </div>
-
-            <!-- Cloze Mode Row -->
-            <div class="study-option-row">
-                <div class="study-option-info">
-                    <div class="study-option-icon study-option-icon--cloze">
-                        <app-icon name="type" [size]="16" />
-                    </div>
-                    <div class="study-option-text">
-                        <span class="study-option-title">{{ i18n.t('study.clozeMode') }}</span>
-                        <span class="study-option-hint">{{ i18n.t('study.clozeModeHint') }}</span>
-                    </div>
-                </div>
-                <app-switch [checked]="clozeMode()" (checkedChange)="setClozeMode($event)" />
+            <div class="study-goal-compact__bar">
+                <div class="study-goal-compact__fill" [style.width.%]="goalProgress()"></div>
             </div>
         </div>
 
-        <!-- Start CTA & Empty State -->
+        <!-- Deck Category Filter Chips (Standard App Filter Chips) -->
+        <div class="study-deck-section">
+            <span class="study-section-label">{{ i18n.t('study.cardsToStudy') || 'Cards' }}</span>
+            <div class="study-deck-chips">
+                <button type="button" 
+                        class="filter-chip" 
+                        [class.active]="includeNew()" 
+                        (click)="toggleDeck('new')"
+                        [attr.aria-pressed]="includeNew()"
+                        [title]="i18n.t('study.includeNew')">
+                    <span class="level-dot new"></span>
+                    <span>{{ i18n.t('study.new') }}</span>
+                    <span class="chip-count">{{ deckStats().new }}</span>
+                </button>
+                <button type="button" 
+                        class="filter-chip" 
+                        [class.active]="includeLearning()" 
+                        (click)="toggleDeck('learning')"
+                        [attr.aria-pressed]="includeLearning()"
+                        [title]="i18n.t('study.includeLearning')">
+                    <span class="level-dot learning"></span>
+                    <span>{{ i18n.t('study.learning') }}</span>
+                    <span class="chip-count">{{ deckStats().learning }}</span>
+                </button>
+                <button type="button" 
+                        class="filter-chip" 
+                        [class.active]="includeKnown()" 
+                        (click)="toggleDeck('known')"
+                        [attr.aria-pressed]="includeKnown()"
+                        [title]="i18n.t('study.reviewKnown')">
+                    <span class="level-dot known"></span>
+                    <span>{{ i18n.t('study.known') }}</span>
+                    <span class="chip-count">{{ deckStats().known }}</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Session Size Selector -->
+        <div class="study-size-section">
+            <div class="study-size-header">
+                <span class="study-section-label">
+                    <app-icon name="layers" [size]="14" />
+                    {{ i18n.t('study.sessionSize') }}
+                </span>
+                <span class="study-size-estimate">
+                    {{ sessionCardCount() }} {{ i18n.t('study.cards') }} · {{ i18n.t('study.estimatedMinutes', { minutes: estimatedMinutes() }) }}
+                </span>
+            </div>
+            <div class="session-size-pills">
+                @for (size of [5, 10, 20]; track size) {
+                <button type="button" 
+                        class="size-pill" 
+                        [class.active]="sessionSize() === size"
+                        (click)="setSessionSize(size)">
+                    {{ size }}
+                </button>
+                }
+                <button type="button" 
+                        class="size-pill" 
+                        [class.active]="sessionSize() === 'all'"
+                        (click)="setSessionSize('all')">
+                    {{ i18n.t('study.allCards') }}
+                </button>
+            </div>
+        </div>
+
+        <!-- Primary Start CTA Button & Keyboard Hint -->
         <div class="study-action">
             @if (availableCards() > 0) {
             <button class="btn btn-primary start-btn" (click)="startSession()">
@@ -245,6 +151,82 @@
                     <app-icon name="play" [size]="16" />
                     <span>{{ i18n.t('nav.watch') }}</span>
                 </a>
+            </div>
+            }
+        </div>
+
+        <!-- Collapsible Advanced Study Options -->
+        <div class="study-advanced-wrapper">
+            <button type="button"
+                    class="study-advanced-toggle"
+                    (click)="toggleAdvancedOptions()"
+                    [attr.aria-expanded]="showAdvancedOptions()">
+                <div class="study-advanced-toggle__left">
+                    <app-icon name="settings" [size]="15" />
+                    <span>{{ i18n.t('study.studyOptions') }}</span>
+                </div>
+                <app-icon [name]="showAdvancedOptions() ? 'chevron-up' : 'chevron-down'" [size]="16" />
+            </button>
+
+            @if (showAdvancedOptions()) {
+            <div class="study-options-card">
+                <!-- Due Only Toggle (when due cards exist) -->
+                @if (dueToday() > 0) {
+                <div class="study-option-row">
+                    <div class="study-option-info">
+                        <div class="study-option-icon study-option-icon--due">
+                            <app-icon name="clock" [size]="16" />
+                        </div>
+                        <div class="study-option-text">
+                            <span class="study-option-title">{{ i18n.t('study.dueOnly') || 'Review Due Only' }}</span>
+                            <span class="study-option-hint">{{ dueToday() }} {{ i18n.t('study.cards') }} {{ i18n.t('study.dueToday') }}</span>
+                        </div>
+                    </div>
+                    <app-switch [checked]="dueOnly()" (checkedChange)="dueOnly.set($event)" />
+                </div>
+                }
+
+                <!-- Reverse Mode Row -->
+                <div class="study-option-row">
+                    <div class="study-option-info">
+                        <div class="study-option-icon study-option-icon--reverse">
+                            <app-icon name="shuffle" [size]="16" />
+                        </div>
+                        <div class="study-option-text">
+                            <span class="study-option-title">{{ i18n.t('study.reverseMode') }}</span>
+                            <span class="study-option-hint">{{ i18n.t('study.meaningFirst') }}</span>
+                        </div>
+                    </div>
+                    <app-switch [checked]="reverseMode()" (checkedChange)="reverseMode.set($event)" />
+                </div>
+
+                <!-- Auto-play Audio Row -->
+                <div class="study-option-row">
+                    <div class="study-option-info">
+                        <div class="study-option-icon study-option-icon--audio">
+                            <app-icon name="volume-2" [size]="16" />
+                        </div>
+                        <div class="study-option-text">
+                            <span class="study-option-title">{{ i18n.t('study.autoPlayAudio') }}</span>
+                            <span class="study-option-hint">{{ i18n.t('study.autoPlayAudioHint') }}</span>
+                        </div>
+                    </div>
+                    <app-switch [checked]="autoPlayAudio()" (checkedChange)="setAutoPlayAudio($event)" />
+                </div>
+
+                <!-- Cloze Mode Row -->
+                <div class="study-option-row">
+                    <div class="study-option-info">
+                        <div class="study-option-icon study-option-icon--cloze">
+                            <app-icon name="type" [size]="16" />
+                        </div>
+                        <div class="study-option-text">
+                            <span class="study-option-title">{{ i18n.t('study.clozeMode') }}</span>
+                            <span class="study-option-hint">{{ i18n.t('study.clozeModeHint') }}</span>
+                        </div>
+                    </div>
+                    <app-switch [checked]="clozeMode()" (checkedChange)="setClozeMode($event)" />
+                </div>
             </div>
             }
         </div>
@@ -499,6 +481,12 @@
         </div>
         }
 
+        <div class="session-complete-topbar">
+            <button type="button" class="btn btn-icon btn-ghost complete-close-btn" (click)="endSession()" [title]="i18n.t('common.close') || 'Close'">
+                <app-icon name="x" [size]="18" />
+            </button>
+        </div>
+
         <div class="complete-header">
             <app-icon name="check" [size]="32" class="complete-icon" />
             <h2>{{ i18n.t('study.sessionComplete') }}</h2>
@@ -549,14 +537,22 @@
         }
 
         <div class="complete-actions">
+            <!-- Primary Action: Done & Back to Overview -->
+            <button type="button" class="btn btn-primary complete-done-btn" (click)="endSession()">
+                <app-icon name="check" [size]="18" />
+                <span>{{ i18n.t('study.done') }}</span>
+            </button>
+
+            <!-- Review Missed Cards (if any) -->
             @if (missedCardIds().size > 0) {
-            <button class="btn btn-secondary review-missed-btn" (click)="reviewMissedCards()">
+            <button type="button" class="btn btn-secondary review-missed-btn" (click)="reviewMissedCards()">
                 <app-icon name="rotate-ccw" [size]="16" />
                 <span>{{ i18n.t('study.reviewMissed') }} ({{ missedCardIds().size }})</span>
             </button>
             }
 
-            <button class="btn btn-primary start-btn" (click)="resetSession()">
+            <!-- Study Again (Secondary Action) -->
+            <button type="button" class="btn btn-ghost complete-again-btn" (click)="resetSession()">
                 <app-icon name="play" [size]="16" />
                 <span>{{ i18n.t('study.studyAgain') }}</span>
             </button>

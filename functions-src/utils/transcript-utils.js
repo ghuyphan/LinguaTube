@@ -128,3 +128,19 @@ function applyTiming(segments) {
         };
     });
 }
+
+/**
+ * Normalize language codes from Gladia or external providers to canonical 2-letter codes
+ * (e.g. 'cmn', 'mandarin', 'chinese', 'zh-CN' -> 'zh')
+ * @param {string} lang
+ * @returns {string}
+ */
+export function normalizeLanguageCode(lang) {
+    if (!lang || typeof lang !== 'string') return '';
+    const clean = lang.trim().toLowerCase().split('-')[0].split('_')[0];
+    if (clean === 'ja' || clean === 'japanese') return 'ja';
+    if (clean === 'ko' || clean === 'korean') return 'ko';
+    if (clean === 'zh' || clean === 'chinese' || clean === 'cmn' || clean === 'mandarin' || clean === 'yue') return 'zh';
+    if (clean === 'en' || clean === 'english') return 'en';
+    return clean;
+}

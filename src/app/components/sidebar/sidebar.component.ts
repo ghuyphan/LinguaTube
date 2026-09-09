@@ -74,6 +74,12 @@ export class SidebarComponent {
         this.openCommandPalette.emit();
     }
 
+    onStudyClick(_event: MouseEvent): void {
+        if (this.router.url.startsWith('/study')) {
+            this.vocab.requestStudyReset();
+        }
+    }
+
     isCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
     openSettings = output<void>();
     openCommandPalette = output<void>();

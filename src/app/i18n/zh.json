@@ -410,7 +410,13 @@
         "inQueue": "待练习",
         "shortcutsCheatsheet": "键盘快捷键",
         "shortcutAudio": "重新朗读发音",
-        "shortcutVideo": "跳转至视频片段"
+        "shortcutVideo": "跳转至视频片段",
+        "done": "完成",
+        "backToOverview": "返回总览",
+        "studyOptions": "学习选项",
+        "dueCardsNotice": "今天有 {{count}} 张卡片需要复习",
+        "allCaughtUp": "全部完成！今天没有到期的卡片",
+        "cardsReady": "{{count}} 张卡片可供学习"
     },
     "streak": {
         "dayStreak": "连续天数",
@@ -572,7 +578,8 @@
         "clear": "清除",
         "search": "搜索...",
         "options": "选项",
-        "refresh": "刷新"
+        "refresh": "刷新",
+        "noResults": "未找到匹配结果"
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",
@@ -686,7 +693,9 @@
         "grammarPoints": "语法模式",
         "speechRate": "语速",
         "filterByLevel": "按难度筛选",
-        "allLevels": "所有级别"
+        "allLevels": "所有级别",
+        "noVideos": "该难度等级下暂无推荐视频。",
+        "noPlaylists": "该难度等级下暂无精选播放列表。"
     },
     "gamification": {
         "level": "等级",

@@ -1,7 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, timeout } from 'rxjs';
-import { RecommendedVideo } from '../../models';
+import { RecommendedVideo, ProficiencyLevelTier } from '../../models';
 import { VideoLevelService } from './video-level.service';
 import { environment } from '../../../environments/environment';
 
@@ -58,11 +58,15 @@ export class VideoRecommendationService {
                 localStorage.removeItem(LS_CACHE_PREFIX + cacheKey);
             } catch { }
         } else {
-            // 1. Check in-memory cache
+            // 1. Check in-memory cache (only valid non-empty entries)
             if (this.cache.has(cacheKey)) {
                 const cached = this.cache.get(cacheKey)!;
-                this.recommendedVideos.set(cached);
-                return cached;
+                if (cached.length > 0) {
+                    this.recommendedVideos.set(cached);
+                    return cached;
+                } else {
+                    this.cache.delete(cacheKey);
+                }
             }
 
             // 2. Check LocalStorage cache (persists across page reloads/navigations)
@@ -74,6 +78,8 @@ export class VideoRecommendationService {
                         this.cache.set(cacheKey, parsed.videos);
                         this.recommendedVideos.set(parsed.videos);
                         return parsed.videos;
+                    } else if (Array.isArray(parsed.videos) && parsed.videos.length === 0) {
+                        localStorage.removeItem(LS_CACHE_PREFIX + cacheKey);
                     }
                 }
             } catch {
@@ -99,18 +105,21 @@ export class VideoRecommendationService {
             );
 
             const rawVideos = response?.videos || [];
-            const hydratedVideos = this.hydrateVideos(rawVideos, language);
-            this.cache.set(cacheKey, hydratedVideos);
+            const hydratedVideos = this.hydrateVideos(rawVideos, language, activeTier);
 
-            // Persist to LocalStorage
-            try {
-                const entry: LocalStorageCacheEntry = {
-                    timestamp: Date.now(),
-                    videos: hydratedVideos
-                };
-                localStorage.setItem(LS_CACHE_PREFIX + cacheKey, JSON.stringify(entry));
-            } catch {
-                // Ignore localStorage quota errors
+            if (hydratedVideos.length > 0) {
+                this.cache.set(cacheKey, hydratedVideos);
+
+                // Persist to LocalStorage
+                try {
+                    const entry: LocalStorageCacheEntry = {
+                        timestamp: Date.now(),
+                        videos: hydratedVideos
+                    };
+                    localStorage.setItem(LS_CACHE_PREFIX + cacheKey, JSON.stringify(entry));
+                } catch {
+                    // Ignore localStorage quota errors
+                }
             }
 
             this.recommendedVideos.set(hydratedVideos);
@@ -127,18 +136,23 @@ export class VideoRecommendationService {
     /**
      * Hydrate difficulty levels and tiers using VideoLevelService
      */
-    private hydrateVideos(videos: RecommendedVideo[], language: string): RecommendedVideo[] {
+    private hydrateVideos(videos: RecommendedVideo[], language: string, requestedTier?: string): RecommendedVideo[] {
         return videos.map(video => {
             let resolvedLevel = video.level;
-            let resolvedTier = video.tier;
+            let resolvedTier = video.tier || (requestedTier && requestedTier !== 'all' ? requestedTier as ProficiencyLevelTier : undefined);
 
             if (resolvedLevel) {
                 resolvedTier = this.videoLevel.labelToTier(resolvedLevel);
+            } else if (resolvedTier) {
+                resolvedLevel = this.videoLevel.tierToLabel(resolvedTier as ProficiencyLevelTier, language);
             } else {
                 const detected = this.videoLevel.resolveLevel(video.videoId, language, video.title, video.channel);
                 if (detected) {
                     resolvedLevel = detected.level;
                     resolvedTier = detected.tier;
+                } else {
+                    resolvedTier = 'elementary';
+                    resolvedLevel = this.videoLevel.tierToLabel('elementary', language);
                 }
             }
 

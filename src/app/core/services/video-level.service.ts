@@ -50,6 +50,43 @@ export class VideoLevelService {
     }
 
     /**
+     * Map a proficiency tier to standard language level label (e.g. 'beginner' -> 'JLPT N5' for ja)
+     */
+    tierToLabel(tier: ProficiencyLevelTier, lang: string): string {
+        const map: Record<string, Record<ProficiencyLevelTier, string>> = {
+            ja: {
+                beginner: 'JLPT N5',
+                elementary: 'JLPT N4',
+                intermediate: 'JLPT N3',
+                upper_intermediate: 'JLPT N2',
+                advanced: 'JLPT N1'
+            },
+            zh: {
+                beginner: 'HSK 1',
+                elementary: 'HSK 2',
+                intermediate: 'HSK 3',
+                upper_intermediate: 'HSK 5',
+                advanced: 'HSK 6'
+            },
+            ko: {
+                beginner: 'TOPIK 1',
+                elementary: 'TOPIK 2',
+                intermediate: 'TOPIK 3',
+                upper_intermediate: 'TOPIK 5',
+                advanced: 'TOPIK 6'
+            },
+            en: {
+                beginner: 'CEFR A1',
+                elementary: 'CEFR A2',
+                intermediate: 'CEFR B1',
+                upper_intermediate: 'CEFR B2',
+                advanced: 'CEFR C1'
+            }
+        };
+        return map[lang]?.[tier] || tier.toUpperCase();
+    }
+
+    /**
      * Synchronously resolves the best known level for a video
      * Priority:
      * 1. Explicit level passed in (from item metadata)

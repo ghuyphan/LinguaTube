@@ -18,6 +18,14 @@ const ZH_SPLIT_RULES: SplitPatternRule[] = [
     { start: '不但', end: '而且', patternKey: '不但而且' },
     { start: '除了', end: '以外', patternKey: '除了以外' },
     { start: '是', end: '的', patternKey: '是的' },
+    { start: '既然', end: '就', patternKey: '既然就' },
+    { start: '只要', end: '就', patternKey: '只要就' },
+    { start: '只有', end: '才', patternKey: '只有才' },
+    { start: '即使', end: '也', patternKey: '即使也' },
+    { start: '哪怕', end: '也', patternKey: '哪怕也' },
+    { start: '与其', end: '不如', patternKey: '与其不如' },
+    { start: '既', end: '又', patternKey: '既又' },
+    { start: '不仅', end: '而且', patternKey: '不仅而且' },
 ];
 
 const EN_SPLIT_RULES: SplitPatternRule[] = [
@@ -90,7 +98,7 @@ export class GrammarService {
     private patternPromises = new Map<SupportedGrammarLang, Promise<GrammarPattern[]>>();
     private translationPromises = new Map<string, Promise<Record<string, GrammarTranslation>>>();
 
-    // Common Japanese grammar endings to detect
+    // Common Japanese grammar endings to detect (longest match first)
     private readonly jaEndingPatterns = [
         'ている', 'ていた', 'ています', 'ていました',
         'たい', 'たかった', 'たくない', 'たくなかった',
@@ -99,14 +107,28 @@ export class GrammarService {
         'たら', 'たり', 'ても',
         'ば', 'なければ', 'なければならない',
         'てもいい', 'てはいけない',
-        'ことができる', 'ことがある',
+        'ることができる', 'ことがある',
         'ようにする', 'ようになる',
         'てしまう', 'ちゃう', 'ておく', 'とく',
         'てくる', 'ていく',
         'かもしれない', 'はずだ', 'ようだ', 'そうだ',
         'みたい', 'らしい',
         'のに', 'ので', 'から', 'けど', 'けれども',
-    ];
+    ].sort((a, b) => b.length - a.length);
+
+    // Common Korean grammar particles and verb endings (longest match first)
+    private readonly koEndingPatterns = [
+        '은', '는', '이', '가', '을', '를', '에', '에서', '에게', '한테', '도', '만',
+        '과', '와', '로', '으로', '랑', '이랑', '보다', '부터', '까지', '의',
+        '고', '고 있다', '고싶다', '지 않다', '지 못하다',
+        '아서', '어서', '여서', '면', '으면', '려고', '으려고', '려고 하다',
+        'ㄹ 수 있다', '을 수 있다', '수 있다', 'ㄹ 수 없다', '을 수 없다', '수 없다',
+        '아야 하다', '어야 하다', '여야 하다', '아야해요', '어야해요',
+        '아요', '어요', '여요', 'ㅂ니다', '습니다', '았', '었', '였', '네요',
+        '지요', '죠', '세요', '으세요', '지 마세요', '지마세요', '는데', '은데', 'ㄴ데',
+        '기 때문에', '기때문에', 'ㄹ 때', '을 때', '때',
+        '이에요', '예요', '하고'
+    ].sort((a, b) => b.length - a.length);
 
     /**
      * Load patterns for a language (lazy).
@@ -161,8 +183,9 @@ export class GrammarService {
     private buildIndex(patterns: GrammarPattern[]): Map<string, GrammarPattern[]> {
         const index = new Map<string, GrammarPattern[]>();
 
-        const addToIndex = (rawKey: string, pattern: GrammarPattern) => {
-            const key = this.normalizePattern(rawKey);
+        const addToIndex = (rawKey: string, pattern: GrammarPattern, stripPlaceholders = true) => {
+            if (!rawKey) return;
+            const key = this.normalizePattern(rawKey, pattern.language, stripPlaceholders);
             if (!key) return;
             let list = index.get(key);
             if (!list) {
@@ -175,37 +198,106 @@ export class GrammarService {
         };
 
         for (const pattern of patterns) {
+            let cleanPattern = pattern.pattern;
+            if (pattern.language === 'ko' && cleanPattern.includes('[')) {
+                cleanPattern = cleanPattern.split('[')[0].trim();
+            }
+
             // Index by pattern ID
-            addToIndex(pattern.id, pattern);
+            addToIndex(pattern.id, pattern, false);
 
-            // Index by pattern text (normalized)
-            addToIndex(pattern.pattern, pattern);
+            // Index by pattern text (both raw normalized and with placeholders stripped)
+            addToIndex(cleanPattern, pattern, false);
+            addToIndex(cleanPattern, pattern, true);
 
-            // Index without parentheses (e.g. "(的)" -> "的")
-            if (pattern.pattern.includes('(') || pattern.pattern.includes('（')) {
-                addToIndex(pattern.pattern.replace(/[()（）]/g, ''), pattern);
+            // Index with and without parentheses (e.g. "(的)" -> "的", "(으)면" -> "으면" and "면")
+            if (cleanPattern.includes('(') || cleanPattern.includes('（')) {
+                addToIndex(cleanPattern.replace(/[()（）]/g, ''), pattern, true);
+                addToIndex(cleanPattern.replace(/\([^)]+\)/g, '').replace(/（[^）]+）/g, ''), pattern, true);
             }
 
-            // Slash alternatives (e.g. "am / is / are", "이/가")
-            if (pattern.pattern.includes('/')) {
-                for (const part of pattern.pattern.split('/')) {
-                    addToIndex(part, pattern);
+            // Slash alternatives (e.g. "am / is / are", "이/가", "은/는")
+            if (cleanPattern.includes('/')) {
+                for (const part of cleanPattern.split('/')) {
+                    addToIndex(part, pattern, true);
+                    if (part.includes('(') || part.includes('（')) {
+                        addToIndex(part.replace(/[()（）]/g, ''), pattern, true);
+                        addToIndex(part.replace(/\([^)]+\)/g, ''), pattern, true);
+                    }
                 }
             }
 
-            // Sub-patterns in title (e.g. "Title: part1, part2")
-            if (pattern.title.includes(':')) {
-                const subParts = pattern.title.split(':')[1].split(/[,/]/);
-                for (const sub of subParts) {
-                    addToIndex(sub, pattern);
+            // Sub-patterns in title (split by :, -, –, /, ,)
+            if (pattern.title.includes(':') || pattern.title.includes(' - ') || pattern.title.includes(' – ')) {
+                const sep = pattern.title.includes(':') ? ':' : (pattern.title.includes(' - ') ? ' - ' : ' – ');
+                const parts = pattern.title.split(sep);
+                if (parts[1]) {
+                    const subParts = parts[1].split(/[,/]/);
+                    for (const sub of subParts) {
+                        const cleanSub = sub.replace(/\[[^\]]*\]/g, '').replace(/\([^)]*\)/g, '').trim();
+                        if (cleanSub) addToIndex(cleanSub, pattern, true);
+                    }
                 }
             }
 
-            // Title leading keyword for Japanese/Korean only
-            if (pattern.language === 'ja' || pattern.language === 'ko') {
-                const titleMatch = pattern.title.match(/^([^\s(（]+)/);
-                if (titleMatch) {
-                    addToIndex(titleMatch[1], pattern);
+            // English contractions and high-frequency articles/copulas
+            if (pattern.language === 'en') {
+                const normTitle = pattern.title.toLowerCase();
+                if (normTitle.includes('not') || normTitle.includes('negation')) {
+                    addToIndex("isn't", pattern, false);
+                    addToIndex("aren't", pattern, false);
+                    addToIndex("don't", pattern, false);
+                    addToIndex("doesn't", pattern, false);
+                    addToIndex("didn't", pattern, false);
+                    addToIndex("won't", pattern, false);
+                    addToIndex("can't", pattern, false);
+                }
+                if (pattern.id === 'en_a1_01') {
+                    addToIndex("i'm", pattern, false);
+                    addToIndex("you're", pattern, false);
+                    addToIndex("he's", pattern, false);
+                    addToIndex("she's", pattern, false);
+                    addToIndex("it's", pattern, false);
+                    addToIndex("we're", pattern, false);
+                    addToIndex("they're", pattern, false);
+                }
+                if (pattern.id === 'en_a1_05') {
+                    addToIndex('a', pattern, false);
+                    addToIndex('an', pattern, false);
+                }
+                if (pattern.id === 'en_a1_06') {
+                    addToIndex('the', pattern, false);
+                }
+            }
+
+            // Japanese connector / adjective title extraction
+            if (pattern.language === 'ja') {
+                const connMatch = pattern.title.match(/[A-Z]。([^、~～]+)[、~～]/);
+                if (connMatch) addToIndex(connMatch[1], pattern, true);
+                if (pattern.title.includes('いちばん') || pattern.title.includes('一番')) {
+                    addToIndex('いちばん', pattern, true);
+                    addToIndex('がいちばん', pattern, true);
+                    addToIndex('一番', pattern, true);
+                    addToIndex('が一番', pattern, true);
+                }
+                if (pattern.title.includes('より')) addToIndex('より', pattern, true);
+                if (pattern.title.includes('い-Adjective く')) addToIndex('く', pattern, true);
+                if (pattern.title.includes('い-Adjective て')) addToIndex('くて', pattern, true);
+                if (pattern.title.includes('な-Adjective に')) addToIndex('に', pattern, true);
+                if (pattern.title.includes('な-Adjective で')) addToIndex('で', pattern, true);
+            }
+
+            // Korean title extraction
+            if (pattern.language === 'ko') {
+                const koMatch = pattern.title.match(/^([^[(]+)/);
+                if (koMatch) {
+                    const koPart = koMatch[1].trim();
+                    addToIndex(koPart, pattern, true);
+                    if (koPart.includes('/')) {
+                        for (const p of koPart.split('/')) {
+                            addToIndex(p, pattern, true);
+                        }
+                    }
                 }
             }
         }
@@ -216,10 +308,24 @@ export class GrammarService {
     /**
      * Normalize pattern for matching (strip punctuation, whitespace, dots, ellipsis, and lowercase)
      */
-    private normalizePattern(pattern: string): string {
-        return pattern
-            .replace(/[。、～〜・…. \s]/g, '')
+    private normalizePattern(pattern: string, lang?: SupportedGrammarLang, stripPlaceholders = true): string {
+        if (!pattern) return '';
+        let norm = pattern
+            .replace(/[~～〜。、・….\s?？！!,，:：;；"'"'“”‘’()（）\u005B\u005D【】]/g, '')
             .toLowerCase();
+
+        // For non-English languages, strip pedagogical placeholders (N, V, M, Adj, A, B, AGE, etc.)
+        if (stripPlaceholders && lang && lang !== 'en') {
+            const withoutPlaceholders = norm
+                .replace(/\b(adj|noun|verb)\b/gi, '')
+                .replace(/(adjective|adverb)/gi, '')
+                .replace(/[nvabm](\d)?/gi, '')
+                .replace(/age/gi, '');
+            if (withoutPlaceholders.length >= 1) {
+                norm = withoutPlaceholders;
+            }
+        }
+        return norm;
     }
 
     /**
@@ -302,7 +408,7 @@ export class GrammarService {
             for (let len = 1; len <= Math.min(maxSeqLen, tokens.length - i); len++) {
                 const sequence = tokens.slice(i, i + len);
                 const sequenceText = sequence.map(t => t.surface).join('');
-                const normalizedSeq = this.normalizePattern(sequenceText);
+                const normalizedSeq = this.normalizePattern(sequenceText, lang, false);
 
                 const foundPatterns = index.get(normalizedSeq);
                 if (foundPatterns && foundPatterns.length > 0) {
@@ -313,6 +419,22 @@ export class GrammarService {
                         startIndex: i,
                         endIndex: i + len - 1,
                     });
+                } else if (lang === 'ko' && normalizedSeq.length >= 3) {
+                    // Korean sub-sequence suffix checking (e.g. 읽는 김에 -> suffix 는김에)
+                    for (let sLen = normalizedSeq.length - 1; sLen >= 2; sLen--) {
+                        const suffix = normalizedSeq.slice(-sLen);
+                        const suffixHits = index.get(suffix);
+                        if (suffixHits && suffixHits.length > 0) {
+                            const tokenIndices = Array.from({ length: len }, (_, j) => i + j);
+                            matches.push({
+                                pattern: suffixHits[0],
+                                tokenIndices,
+                                startIndex: i,
+                                endIndex: i + len - 1,
+                            });
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -323,10 +445,10 @@ export class GrammarService {
                 const token = tokens[i];
                 if (token.isPunctuation) continue;
 
-                // Check common grammar endings
+                // Check common grammar endings (longest match first)
                 for (const ending of this.jaEndingPatterns) {
                     if (token.surface.endsWith(ending) || token.surface === ending) {
-                        const foundPatterns = index.get(this.normalizePattern(ending));
+                        const foundPatterns = index.get(this.normalizePattern(ending, 'ja', false));
                         if (foundPatterns && foundPatterns.length > 0) {
                             matches.push({
                                 pattern: foundPatterns[0],
@@ -341,7 +463,7 @@ export class GrammarService {
 
                 // Check baseForm for verb-related patterns
                 if (token.baseForm && token.baseForm !== token.surface) {
-                    const baseFormPatterns = index.get(this.normalizePattern(token.baseForm));
+                    const baseFormPatterns = index.get(this.normalizePattern(token.baseForm, 'ja', false));
                     if (baseFormPatterns && baseFormPatterns.length > 0) {
                         matches.push({
                             pattern: baseFormPatterns[0],
@@ -354,7 +476,89 @@ export class GrammarService {
             }
         }
 
-        // Strategy 3: Check split correlative patterns (Chinese & English)
+        // Strategy 2 (KO): Korean endings and particles
+        if (lang === 'ko') {
+            for (let i = 0; i < tokens.length; i++) {
+                const token = tokens[i];
+                if (token.isPunctuation) continue;
+
+                for (const ending of this.koEndingPatterns) {
+                    const normEnding = this.normalizePattern(ending, 'ko', false);
+                    if (token.surface.endsWith(ending) || token.surface === ending || this.normalizePattern(token.surface, 'ko', false).endsWith(normEnding)) {
+                        const foundPatterns = index.get(normEnding);
+                        if (foundPatterns && foundPatterns.length > 0) {
+                            matches.push({
+                                pattern: foundPatterns[0],
+                                tokenIndices: [i],
+                                startIndex: i,
+                                endIndex: i,
+                            });
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Strategy 3 (KO): Korean Compound Auxiliary Verbs
+            for (let i = 0; i < tokens.length; i++) {
+                const t1 = tokens[i];
+                const t2 = tokens[i + 1];
+                const t3 = tokens[i + 2];
+
+                // (으)ㄹ 수 있다 / 없다
+                if (t1 && t2 && t2.surface === '수' && t3 && /^[있없]/.test(t3.surface)) {
+                    const code = t1.surface.charCodeAt(t1.surface.length - 1) - 0xAC00;
+                    if (code >= 0 && code <= 11171 && (code % 28) === 8) {
+                        const hit = index.get('ㄹ수있다') || index.get('수있다');
+                        if (hit && hit.length > 0) {
+                            matches.push({ pattern: hit[0], tokenIndices: [i, i + 1, i + 2], startIndex: i, endIndex: i + 2 });
+                        }
+                    }
+                }
+
+                // ~고 있다
+                if (t1 && t1.surface.endsWith('고') && t2 && /^있/.test(t2.surface)) {
+                    const hit = index.get('고있다') || index.get('하고있다');
+                    if (hit && hit.length > 0) {
+                        matches.push({ pattern: hit[0], tokenIndices: [i, i + 1], startIndex: i, endIndex: i + 1 });
+                    }
+                }
+
+                // ~고 싶다
+                if (t1 && t1.surface.endsWith('고') && t2 && /^싶/.test(t2.surface)) {
+                    const hit = index.get('고싶다') || index.get('하고싶다');
+                    if (hit && hit.length > 0) {
+                        matches.push({ pattern: hit[0], tokenIndices: [i, i + 1], startIndex: i, endIndex: i + 1 });
+                    }
+                }
+
+                // ~지 않다
+                if (t1 && t1.surface.endsWith('지') && t2 && /^않/.test(t2.surface)) {
+                    const hit = index.get('지않다');
+                    if (hit && hit.length > 0) {
+                        matches.push({ pattern: hit[0], tokenIndices: [i, i + 1], startIndex: i, endIndex: i + 1 });
+                    }
+                }
+
+                // ~아/어야 하다
+                if (t1 && /[아어여해]야$/.test(t1.surface) && t2 && /^[하해되]/.test(t2.surface)) {
+                    const hit = index.get('아어야하다') || index.get('어야하다');
+                    if (hit && hit.length > 0) {
+                        matches.push({ pattern: hit[0], tokenIndices: [i, i + 1], startIndex: i, endIndex: i + 1 });
+                    }
+                }
+
+                // ~아/어 보다
+                if (t1 && /[아어여해]$/.test(t1.surface) && t2 && /^보/.test(t2.surface)) {
+                    const hit = index.get('아어보다') || index.get('어보다');
+                    if (hit && hit.length > 0) {
+                        matches.push({ pattern: hit[0], tokenIndices: [i, i + 1], startIndex: i, endIndex: i + 1 });
+                    }
+                }
+            }
+        }
+
+        // Strategy 4: Check split correlative patterns (Chinese & English)
         if (lang === 'zh') {
             matches.push(...this.detectSplitPatterns(tokens, ZH_SPLIT_RULES, index));
         } else if (lang === 'en') {

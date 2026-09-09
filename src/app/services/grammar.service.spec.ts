@@ -118,4 +118,74 @@ describe('GrammarService', () => {
     expect(t1).toBe(t2);
     expect(Object.keys(t1).length).toBeGreaterThan(0);
   });
+
+  it('should detect Japanese grammar endings and connectors', async () => {
+    await service.searchPatterns('ている', 'ja');
+
+    const tokens: Token[] = [
+      { surface: '日本語', baseForm: '日本語' },
+      { surface: 'を', baseForm: 'を' },
+      { surface: '勉強', baseForm: '勉強' },
+      { surface: 'し', baseForm: 'する' },
+      { surface: 'て', baseForm: 'て' },
+      { surface: 'いる', baseForm: 'いる' }
+    ];
+
+    const matches = service.detectPatterns(tokens, 'ja');
+    expect(matches.length).toBeGreaterThan(0);
+    expect(matches.some(m => m.pattern.pattern.includes('ている'))).toBeTrue();
+  });
+
+  it('should detect Chinese patterns stripped of pedagogical placeholders', async () => {
+    await service.searchPatterns('什么', 'zh');
+
+    const tokens: Token[] = [
+      { surface: '这是' },
+      { surface: '什么' },
+      { surface: '书' },
+      { surface: '？', isPunctuation: true }
+    ];
+
+    const matches = service.detectPatterns(tokens, 'zh');
+    expect(matches.length).toBeGreaterThan(0);
+    expect(matches.some(m => m.pattern.pattern.includes('什么'))).toBeTrue();
+  });
+
+  it('should detect Korean attached particles and auxiliary verb compounds', async () => {
+    await service.searchPatterns('이/가', 'ko');
+
+    // Test particle attachment: 오렌지가 -> 이/가
+    const particleTokens: Token[] = [
+      { surface: '오렌지가' },
+      { surface: '좋아요' }
+    ];
+    const particleMatches = service.detectPatterns(particleTokens, 'ko');
+    expect(particleMatches.length).toBeGreaterThan(0);
+    expect(particleMatches.some(m => m.pattern.id === 'ko_이가_0')).toBeTrue();
+
+    // Test auxiliary compound: 배울 수 있으므로 -> (으)ㄹ 수 있다
+    const auxTokens: Token[] = [
+      { surface: '배울' },
+      { surface: '수' },
+      { surface: '있으므로' }
+    ];
+    const auxMatches = service.detectPatterns(auxTokens, 'ko');
+    expect(auxMatches.length).toBeGreaterThan(0);
+    expect(auxMatches.some(m => m.pattern.id === 'ko_으수있다eulsuitdaCando_9')).toBeTrue();
+  });
+
+  it('should detect English contractions and high-frequency articles', async () => {
+    await service.searchPatterns('not', 'en');
+
+    const tokens: Token[] = [
+      { surface: 'I' },
+      { surface: 'saw' },
+      { surface: 'a' },
+      { surface: 'cat' }
+    ];
+
+    const matches = service.detectPatterns(tokens, 'en');
+    expect(matches.length).toBeGreaterThan(0);
+    expect(matches.some(m => m.pattern.id === 'en_a1_05')).toBeTrue();
+  });
 });

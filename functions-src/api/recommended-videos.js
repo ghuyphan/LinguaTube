@@ -39,7 +39,7 @@ export async function onRequestGet(context) {
     // 1. Fast in-memory cache check (warm isolate) - bypassed when user forces reload
     if (!isRefresh) {
         const cached = memCache.get(cacheKey);
-        if (cached && (Date.now() - cached.timestamp < MEM_CACHE_TTL_MS)) {
+        if (cached && cached.videos?.length > 0 && (Date.now() - cached.timestamp < MEM_CACHE_TTL_MS)) {
             return jsonResponse({
                 success: true,
                 language: lang,
@@ -59,11 +59,13 @@ export async function onRequestGet(context) {
     const r2 = env?.TRANSCRIPT_STORAGE;
     const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier, isRefresh);
 
-    // Save to isolate memory cache
-    memCache.set(cacheKey, {
-        videos,
-        timestamp: Date.now()
-    });
+    // Save to isolate memory cache only if non-empty
+    if (videos.length > 0) {
+        memCache.set(cacheKey, {
+            videos,
+            timestamp: Date.now()
+        });
+    }
 
     return jsonResponse({
         success: true,
@@ -74,6 +76,6 @@ export async function onRequestGet(context) {
         source: isRefresh ? 'cloudflare:refresh' : 'cloudflare'
     }, 200, {
         'X-Cache': isRefresh ? 'BYPASS' : 'MISS',
-        'Cache-Control': isRefresh ? 'no-cache, no-store, must-revalidate' : CDN_CACHE_HEADER
+        'Cache-Control': (isRefresh || videos.length === 0) ? 'no-cache, no-store, must-revalidate' : CDN_CACHE_HEADER
     });
 }

@@ -253,7 +253,7 @@ graph TD
   - Search filtering and JSON export/import.
 - **`StudyPageComponent` & `StudyModeComponent`**:
   - Implements the **SuperMemo-2 (SM-2)** spaced repetition flashcard review deck.
-  - Features streamlined start screen with interactive deck toggles (New, Learning, Known), session size pills (`5`, `10`, `20`, `all`), reverse mode, audio auto-play, and cloze mode.
+  - Features a streamlined, clutter-free start screen with a status hero banner (`dueToday` vs all caught up), compact daily goal progress bar, standardized `.filter-chip` deck category toggles (New, Learning, Known), session size pills (`5`, `10`, `20`, `all`), and a collapsible "Study Options" drawer (for reverse mode, audio auto-play, cloze mode, and due-only toggling).
   - **SM-2 Interval Forecasting**: Grading buttons display real-time calculated intervals via `calculateSRSPreview()` (`<10m`, `1d`, `3d`, `6d`).
   - **Failed Card Session Recycling**: Cards graded "Again" ($q < 3$) are recycled to the end of the session queue until recalled successfully, preventing incomplete learning.
   - **Authentic Video Scene Replay**: Captures `sourceVideoId` and `sourceTimestamp` upon saving words from subtitles, providing a 1-click `[▶ Watch Scene]` (shortcut `V`) link back to the exact video moment.
@@ -261,7 +261,7 @@ graph TD
   - **Cloze Deletion Sentence Mode**: Automatically masks the target word (`【 ... 】`) in the context sentence on the front face.
   - **Auto-Play Audio on Reveal**: Automatically triggers authentic dictionary audio or TTS upon card reveal.
   - **Dynamic Desktop Sidebar**: Seamlessly transitions from static mastery overview to an active **Live Session Dashboard** showing remaining queue, live accuracy %, elapsed timer, and keyboard shortcuts (`Space`, `1-4`, `R`, `P`, `V`).
-  - **Post-Session Actions**: Confetti celebration, streak extension, and a 1-click "Review Missed (X)" action for failed cards.
+  - **Intuitive Completion & Exit Flow**: Confetti celebration, streak extension, an explicit primary **"Done" (Hoàn tất)** action calling `endSession()` to return to the deck overview, top-right `[✕]` dismiss button, secondary "Study Again" & "Review Missed (X)" actions, and same-tab navigation reset via `vocab.studyResetTrigger`.
 
 ---
 

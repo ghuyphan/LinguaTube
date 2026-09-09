@@ -131,6 +131,7 @@ $transition-normal: 0.25s ease;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: border-color $transition-fast, box-shadow $transition-fast;
   box-sizing: border-box;
+  overflow: hidden;
 
   &:focus-within {
     border-color: var(--accent-primary);
@@ -180,6 +181,7 @@ $transition-normal: 0.25s ease;
     align-items: center;
     gap: 6px;
     flex-shrink: 0;
+    margin-left: auto;
   }
 
   .spotlight-clear-btn {
@@ -262,16 +264,20 @@ $transition-normal: 0.25s ease;
   }
 
   .spotlight-load-btn {
-    height: 38px;
-    padding: 0 16px;
-    font-size: 0.875rem;
+    height: 36px !important;
+    min-height: 0 !important;
+    max-height: 36px !important;
+    padding: 0 14px !important;
+    font-size: 0.875rem !important;
     font-weight: 600;
-    border-radius: var(--border-radius-pill);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: var(--border-radius-pill) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     gap: 6px;
     flex-shrink: 0;
+    margin: 0 !important;
+    align-self: center;
     box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.25);
     transition: all $transition-fast;
 
@@ -825,6 +831,7 @@ $transition-normal: 0.25s ease;
     height: 48px;
     padding: 0 6px 0 14px;
     gap: 8px;
+    overflow: hidden;
 
     .spotlight-input {
       font-size: 1rem; // Min 16px prevents iOS Safari auto-zoom
@@ -832,10 +839,12 @@ $transition-normal: 0.25s ease;
 
     .spotlight-actions {
       gap: 5px;
+      margin-left: auto;
     }
 
     .spotlight-paste-btn {
-      height: 34px;
+      height: 32px !important;
+      min-height: 0 !important;
       padding: 0 10px;
       gap: 5px;
       font-size: 0.8125rem;
@@ -851,10 +860,14 @@ $transition-normal: 0.25s ease;
     }
 
     .spotlight-load-btn {
-      height: 34px;
-      padding: 0 12px;
+      height: 32px !important;
+      min-height: 0 !important;
+      max-height: 32px !important;
+      padding: 0 10px !important;
       gap: 4px;
-      font-size: 0.8125rem;
+      font-size: 0.8125rem !important;
+      margin: 0 !important;
+      align-self: center;
 
       .load-text {
         display: inline;

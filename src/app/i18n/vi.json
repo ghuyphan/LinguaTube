@@ -410,7 +410,13 @@
         "inQueue": "trong hàng đợi",
         "shortcutsCheatsheet": "Phím tắt",
         "shortcutAudio": "Phát lại âm thanh",
-        "shortcutVideo": "Xem đoạn phim"
+        "shortcutVideo": "Xem đoạn phim",
+        "done": "Hoàn tất",
+        "backToOverview": "Về màn hình chính",
+        "studyOptions": "Tùy chọn học tập",
+        "dueCardsNotice": "Bạn có {{count}} thẻ cần ôn tập hôm nay",
+        "allCaughtUp": "Tuyệt vời! Đã ôn hết các từ đến hạn",
+        "cardsReady": "{{count}} thẻ sẵn sàng ôn tập"
     },
     "streak": {
         "dayStreak": "Chuỗi",
@@ -572,7 +578,8 @@
         "clear": "Xóa",
         "search": "Tìm kiếm...",
         "options": "Tùy chọn",
-        "refresh": "Làm mới"
+        "refresh": "Làm mới",
+        "noResults": "Không tìm thấy kết quả phù hợp"
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",
@@ -686,7 +693,9 @@
         "grammarPoints": "Mẫu ngữ pháp",
         "speechRate": "Tốc độ nói",
         "filterByLevel": "Lọc theo cấp độ",
-        "allLevels": "Tất cả cấp độ"
+        "allLevels": "Tất cả cấp độ",
+        "noVideos": "Chưa có video nào cho cấp độ này.",
+        "noPlaylists": "Chưa có danh sách phát nào cho cấp độ này."
     },
     "gamification": {
         "level": "CẤP ĐỘ",

@@ -170,7 +170,7 @@
                     </div>
                     <div class="empty-state__text">
                         <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>
-                        <p class="empty-state__description">{{ i18n.t('common.noResults') || 'No videos found for this level.' }}</p>
+                        <p class="empty-state__description">{{ i18n.t('level.noVideos') }}</p>
                     </div>
                     <button type="button" class="btn btn-secondary btn-sm" (click)="videoLevelFilter.set('all')">
                         {{ i18n.t('level.allLevels') || 'All Levels' }}
@@ -255,7 +255,7 @@
                     </div>
                     <div class="empty-state__text">
                         <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>
-                        <p class="empty-state__description">{{ i18n.t('common.noResults') || 'No playlists found for this level.' }}</p>
+                        <p class="empty-state__description">{{ i18n.t('level.noPlaylists') }}</p>
                     </div>
                     <button type="button" class="btn btn-secondary btn-sm" (click)="videoLevelFilter.set('all')">
                         {{ i18n.t('level.allLevels') || 'All Levels' }}

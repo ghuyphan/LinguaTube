@@ -51,7 +51,7 @@
                 <span class="now-playing-dot"></span>
                 }
             </a>
-            <a class="nav-item" routerLink="/study" routerLinkActive="active" [attr.title]="i18n.t('nav.review')">
+            <a class="nav-item" routerLink="/study" routerLinkActive="active" (click)="onStudyClick($event)" [attr.title]="i18n.t('nav.review')">
                 <app-icon name="graduation-cap" [size]="18" />
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('nav.review') }}</span>

@@ -86,6 +86,12 @@ Correct segmentation and pronunciation generation are central to Voca:
   - `grammar-ko.ts` (TOPIK I–II rules)
   - `grammar-zh.ts` (HSK 1–6 rules)
   - `grammar-en.ts` (CEFR A1–C2 rules)
+- **Multi-Strategy Detection Engine**:
+  - Strategy 1: Normalized n-gram exact and prefix matching with bidirectional Latin placeholder stripping (`N`, `V`, `M`, `Adj`) and ASCII/CJK tilde stripping (`~`, `～`, `〜`).
+  - Strategy 2: Language-specific verb & particle suffix matching (e.g. Japanese inflectional endings, Korean agglutinative particles `이/가`, `은/는`, `을/를`, `에게`, `에서`, `(으)로` and sequence suffixes).
+  - Strategy 3: Compound auxiliary construction detection with Hangul batchim arithmetic (e.g. `(으)ㄹ 수 있다/없다` final `ㄹ` math, `-고 있다`, `-고 싶다`, `-지 않다`, `-아/어야 하다`, `-아/어 보다`).
+  - Strategy 4: Discontinuous correlative pairing (e.g. Chinese `既然...就`, `只要...就`, `虽然...但是`, `不但...而且`).
+  - Strategy 5: Longest-match-first priority sort to prevent short substrings from shadowing complex compound grammar patterns.
 - **Dynamic Translation Packs**:
   Located in `src/app/data/translations/`, supporting 16 combinations (JA, KO, ZH, EN translated into Vietnamese, Chinese, Japanese, Korean) plus native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`). Packs are loaded dynamically via `import()` on demand.
 
