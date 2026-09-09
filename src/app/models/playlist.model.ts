@@ -45,6 +45,7 @@ export interface PlaylistVideo {
     position: number;  // Index in playlist (0-based)
     level?: string;
     tier?: ProficiencyLevelTier;
+    languages?: string[];
 }
 
 /**

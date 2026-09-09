@@ -75,6 +75,7 @@ export async function onRequestGet(context) {
                 title: d1Result.title,
                 duration: d1Result.durationSeconds,
                 availableLanguages: d1Result.availableLanguages,
+                subLanguages: d1Result.subLanguages || [],
                 hasAutoCaptions: d1Result.hasAutoCaptions,
                 channel: d1Result.channel,
                 channelAvatar: d1Result.channelAvatar || null,
@@ -125,6 +126,7 @@ export async function onRequestGet(context) {
             title: metadata.title,
             duration: null, // oEmbed doesn't provide duration
             availableLanguages: [], // Will be populated when transcripts are fetched
+            subLanguages: d1Result?.subLanguages || [],
             hasAutoCaptions: false,
             channel: metadata.author_name,
             channelAvatar,

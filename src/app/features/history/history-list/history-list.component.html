@@ -77,8 +77,11 @@
                 <h3 class="history-item__title" [title]="item.title">{{ item.title }}</h3>
                 <div class="history-item__meta">
                     @if (item.languages?.length) {
-                        @for (lang of item.languages; track lang) {
+                        @for (lang of item.languages.slice(0, 2); track lang) {
                             <img [src]="getFlagUrl(lang)" class="circle-flag" [alt]="lang" [title]="lang.toUpperCase()" loading="lazy" />
+                        }
+                        @if (item.languages.length > 2) {
+                            <span class="lang-count" [title]="getLanguagesTooltip(item.languages)">+{{ item.languages.length - 2 }}</span>
                         }
                     } @else if (item.language) {
                         <img [src]="getFlagUrl(item.language)" class="circle-flag" [alt]="item.language" [title]="item.language.toUpperCase()" loading="lazy" />

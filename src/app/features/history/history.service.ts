@@ -74,7 +74,8 @@ export class HistoryService {
     private async onVideoLoaded(video: VideoInfo): Promise<void> {
         this.lastRecordedVideoId = video.id;
         this.lastRecordedProgress = -1;
-        await this.addToHistory(video, []);
+        const initialLangs = (video as unknown as { languages?: string[] })?.languages || [];
+        await this.addToHistory(video, initialLangs);
     }
 
     private startProgressTracking(): void {
@@ -121,16 +122,17 @@ export class HistoryService {
     /**
      * Add or update a video in history
      * If the video already exists, updates watched_at, progress, and languages
-     * @param availableLanguages - raw language codes from transcript API (will be filtered)
+     * @param verifiedLanguages - verified language codes (CJK + EN)
      */
-    async addToHistory(video: VideoInfo, availableLanguages: string[] = [], progress?: number): Promise<void> {
+    async addToHistory(video: VideoInfo, verifiedLanguages: string[] = [], progress?: number): Promise<void> {
         const items = this.history();
         const existingItem = items.find(item => item.video_id === video.id);
-        const filteredLanguages = this.filterSupportedLanguages(availableLanguages);
-        const candidateLang = existingItem?.language ? this.filterSupportedLanguages([existingItem.language])[0] : undefined;
-        const primaryLang = filteredLanguages[0] || candidateLang || 'en';
+        const filteredLanguages = this.filterSupportedLanguages(verifiedLanguages);
         const existingLanguages = existingItem?.languages ? this.filterSupportedLanguages(existingItem.languages) : [];
-        const languages = filteredLanguages.length > 0 ? filteredLanguages : (existingLanguages.length > 0 ? existingLanguages : [primaryLang]);
+        const mergedLanguages = Array.from(new Set([...filteredLanguages, ...existingLanguages]));
+        const candidateLang = existingItem?.language ? this.filterSupportedLanguages([existingItem.language])[0] : undefined;
+        const primaryLang = mergedLanguages[0] || candidateLang || 'en';
+        const languages = mergedLanguages.length > 0 ? mergedLanguages : [primaryLang];
 
         const resolvedProgress = progress !== undefined
             ? progress
@@ -201,14 +203,14 @@ export class HistoryService {
     }
 
     /**
-     * Update languages when captions are fetched
+     * Update verified languages when captions are fetched
      */
-    async updateLanguages(videoId: string, availableLanguages: string[]): Promise<void> {
+    async updateLanguages(videoId: string, verifiedLanguages: string[]): Promise<void> {
         const items = this.history();
         const item = items.find(i => i.video_id === videoId);
 
         if (item) {
-            const filteredLanguages = this.filterSupportedLanguages(availableLanguages);
+            const filteredLanguages = this.filterSupportedLanguages(verifiedLanguages);
             if (filteredLanguages.length > 0) {
                 await this.repo.addToHistory({
                     ...item,

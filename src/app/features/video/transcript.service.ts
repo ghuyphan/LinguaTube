@@ -30,6 +30,7 @@ interface TranscriptResponse {
     native: string[];
     ai: string[];
   };
+  subLanguages?: string[];
   whisperAvailable: boolean;
   // Diamond system
   diamonds?: number;
@@ -96,6 +97,9 @@ export class TranscriptService {
 
   /** Available languages from server */
   readonly availableLanguages = signal<{ native: string[]; ai: string[] }>({ native: [], ai: [] });
+
+  /** Verified server subtitle languages (sub_languages in D1/R2) */
+  readonly subLanguages = signal<string[]>([]);
 
   /** Fallback info when server returned different language than requested */
   readonly fallbackInfo = signal<{ requested: string; returned: string } | null>(null);
@@ -343,6 +347,7 @@ export class TranscriptService {
     this.cancelSubject.next();
     this.state.set({ status: 'idle' });
     this.availableLanguages.set({ native: [], ai: [] });
+    this.subLanguages.set([]);
     this.fallbackInfo.set(null);
     this.pendingRequests.clear();
   }
@@ -502,6 +507,13 @@ export class TranscriptService {
 
     // Update available languages
     this.availableLanguages.set(response.availableLanguages);
+
+    // Update verified server subtitle languages
+    if (response.subLanguages && Array.isArray(response.subLanguages) && response.subLanguages.length > 0) {
+      this.subLanguages.set(response.subLanguages);
+    } else if (response.language) {
+      this.subLanguages.set([response.language.split('-')[0].toLowerCase()]);
+    }
 
     // Update diamond info
     if (response.diamonds !== undefined) {

@@ -400,6 +400,7 @@ export class TranscriptService {
                         source: 'ai',
                         sourceDetail: 'gladia',
                         availableLanguages,
+                        subLanguages: [detectedLang || lang]
                     }
                 };
             }

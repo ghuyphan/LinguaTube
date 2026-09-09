@@ -960,17 +960,19 @@ export class VideoPageComponent implements OnInit {
     this.subtitles.currentCueIndex.set(-1);
     this.subtitles.subtitles.set(cues);
 
-    // Enrich history with actual available languages
-    const currentVideo = this.youtube.currentVideo();
-    if (currentVideo) {
-      const availableLangs = this.transcript.availableLanguages().native;
-      void this.historyService.updateLanguages(currentVideo.id, availableLangs);
-    }
-
     // Detect actual language returned by backend
     const detectedFull = this.transcript.detectedLanguage();
     const detected = detectedFull?.split('-')[0]?.toLowerCase(); // Handle en-US, ja-JP
     const validLangs = ['ja', 'zh', 'ko', 'en'];
+
+    // Enrich history with verified server subtitle languages (sub_languages)
+    const currentVideo = this.youtube.currentVideo();
+    if (currentVideo) {
+      const resolvedLang = (detected && validLangs.includes(detected)) ? detected : (requestedLang || 'en');
+      const verifiedSubs = this.transcript.subLanguages();
+      const langsToSave = verifiedSubs.length > 0 ? verifiedSubs : [resolvedLang];
+      void this.historyService.updateLanguages(currentVideo.id, langsToSave);
+    }
 
     // Use detected language for tokenization (silently - no popup)
     let tokenPromise: Promise<void>;

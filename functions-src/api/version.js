@@ -14,36 +14,36 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.0.27',
+    version: '1.0.28',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Verified Server Subtitles (sub_languages): "For You" recommendations are now strictly filtered to videos that actually have stored transcripts on our server, eliminating phantom recommendations',
-            'Multi-Language Subtitle Tracking: Videos can now record multiple verified subtitle languages in the database (e.g. JA / EN) as new transcripts are generated or fetched',
-            'Accurate Language Badges: Video cards only display badges for languages with verified transcripts on the server, removing misleading badges from YouTube tracklists'
+            'Unified Caption & Language Badge: Fixed video card subtitle pill clutter by merging duplicate CC indicators into a clean, compact subtitle badge with active language flag and +N counter',
+            'History & Playlist Subtitle Alignment: Watch history and playlists now exclusively track verified server subtitles (sub_languages) instead of raw YouTube caption tracks',
+            'Auto-Evict Stale Recommendations: Purged legacy cached video recommendation lists from LocalStorage to ensure only authentic subtitle tracks are displayed'
         ],
         vi: [
-            'Xác thực phụ đề trên máy chủ (sub_languages): Mục "Dành cho bạn" giờ đây chỉ đề xuất các video thực sự đã có phụ đề lưu trên máy chủ, triệt tiêu các đề xuất ảo',
-            'Hỗ trợ đa ngôn ngữ phụ đề: Video có thể lưu trữ nhiều ngôn ngữ phụ đề đã xác thực trên cơ sở dữ liệu (ví dụ: JA / EN) khi có phụ đề mới được tạo',
-            'Huy hiệu ngôn ngữ chính xác: Thẻ video chỉ hiển thị huy hiệu cho các ngôn ngữ thực sự có phụ đề trên máy chủ, loại bỏ các huy hiệu ảo từ danh sách YouTube'
+            'Hợp nhất huy hiệu phụ đề & ngôn ngữ: Sửa lỗi hiển thị rườm rà trên thẻ video bằng cách gộp biểu tượng CC và cờ ngôn ngữ thành một huy hiệu phụ đề gọn gàng với bộ đếm +N',
+            'Đồng bộ phụ đề cho Lịch sử & Danh sách phát: Lịch sử xem và danh sách phát giờ đây chỉ ghi nhận các phụ đề đã xác thực trên máy chủ thay vì toàn bộ danh sách YouTube',
+            'Tự động dọn dẹp bộ nhớ đệm đề xuất cũ: Loại bỏ dữ liệu đề xuất cũ trong LocalStorage để đảm bảo hiển thị đúng các ngôn ngữ phụ đề thực tế'
         ],
         ja: [
-            'サーバー検証済み字幕（sub_languages）：おすすめ動画（For You）でサーバー上に実際に保存されている字幕を持つ動画のみを厳密に推薦し、見かけだけの推薦を解消',
-            '多言語字幕の追跡対応：動画に複数の検証済み字幕言語（例：JA / EN）をデータベース上で保存・更新できるように拡張',
-            '正確な言語バッジ表示：サーバーに保存済みの字幕言語のみを動画カードにバッジ表示し、YouTubeの全トラックリストによる不要なバッジを排除'
+            '字幕・言語バッジの統合UI改善：重複していたCCバッジと国旗リストを整理し、学習言語フラグと+N表記を備えたすっきりとした字幕バッジに刷新',
+            '履歴・プレイリストの検証済み字幕同期：視聴履歴およびプレイリストにおいて、YouTubeの全字幕ではなくサーバー上に実際に存在する検証済み字幕（sub_languages）のみを記録',
+            'レコメンドキャッシュの自動更新：古いローカルストレージの動画推薦キャッシュを無効化し、常に正確な検証済み字幕のみを表示'
         ],
         ko: [
-            '서버 검증 자막 기반 추천 (sub_languages): "추천 영상" 피드에서 서버에 실제로 저장된 자막이 있는 동영상만 엄격하게 필터링하여 허위 추천 제거',
-            '다국어 자막 추적 지원: 새로운 자막이 생성되거나 확인될 때 여러 개의 자막 언어(예: JA / EN)를 데이터베이스에 안전하게 기록 및 유지',
-            '정확한 언어 배지 표시: 서버에 실제로 저장된 자막 언어만 비디오 카드에 배지로 표시하여 YouTube 트랙으로 인한 혼란 방지'
+            '자막 및 언어 배지 UI 통합: 중복 표시되던 CC 배지와 긴 언어 목록을 활성 언어 국기와 +N 카운터가 포함된 깔끔한 자막 배지로 개선',
+            '시청 기록 및 재생목록 자막 언어 동기화: 시청 기록과 재생목록에 YouTube의 모든 자막 대신 서버 검증 자막(sub_languages)만 기록하도록 정렬',
+            '오래된 추천 캐시 자동 제거: 로컬스토리지의 과거 추천 캐시를 정리하여 항상 검증된 실제 자막만 표시'
         ],
         zh: [
-            '服务器验证字幕推荐 (sub_languages)：“为你推荐”视频流现在严格仅推荐服务器上实际存储了字幕的视频，杜绝无效推荐',
-            '多语言字幕追踪支持：视频现可在数据库中记录并累加多个已验证的字幕语言（如 JA / EN），支持双语及多语种字幕',
-            '准确的语言角标展示：视频卡片仅展示服务器上真实存在字幕的语言角标，消除来自 YouTube 外部轨道的虚假角标'
+            '字幕与语言角标一体化设计：合并重复的CC标识与过长的语言列表，升级为带有当前语言国旗和+N计数的紧凑字幕徽章',
+            '观看历史与播放列表字幕对齐：历史记录与播放列表现仅记录服务器上实际已验证的字幕语言（sub_languages），不再受YouTube全部音轨干扰',
+            '推荐缓存自动失效更新：自动清理LocalStorage中残留的旧版推荐视频缓存，确保展示真实的字幕语言'
         ]
     }
 };

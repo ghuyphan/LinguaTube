@@ -241,9 +241,10 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 ### 3.7. Video Info Discovery API
 - **Route**: `GET /api/video-info?videoId={videoId}`
 - **Source**: `functions-src/api/video-info.js`
+- **Response**: `{ videoId, title, duration, availableLanguages, subLanguages, hasAutoCaptions, channel, channelAvatar, levels }`
 - **D1 + In-Memory Zero-KV Architecture**:
   1. Warm in-memory isolate cache check (`memVideoInfoCache`, 500 entries, 1-hour TTL) $\rightarrow$ returns in $<0.1$ms (`X-Cache: HIT-MEMORY`).
-  2. Cloudflare D1 query (`video_languages` table) $\rightarrow$ persistent SQLite at the edge (100,000 writes/day, 5,000,000 reads/day free tier).
+  2. Cloudflare D1 query (`video_languages` table) $\rightarrow$ persistent SQLite at the edge (100,000 writes/day, 5,000,000 reads/day free tier). Exposes verified server transcript languages via `subLanguages: string[]`.
   3. YouTube oEmbed fallback $\rightarrow$ saves metadata and channel avatar (`fetchChannelAvatar`) to D1 and memory with edge CDN cache headers (`s-maxage=604800, stale-while-revalidate=86400`).
   4. **Zero KV Writes**: Completely avoids writing to Cloudflare KV, saving $\sim 100\text{--}150$ daily KV writes.
 

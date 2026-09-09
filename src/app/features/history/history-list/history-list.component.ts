@@ -132,4 +132,15 @@ export class HistoryListComponent {
             item.level
         );
     }
+
+    getLanguagesTooltip(langs?: string[]): string {
+        if (!langs || langs.length === 0) return '';
+        const names: Record<string, string> = {
+            ja: this.i18n.t('settings.japanese') || 'Japanese',
+            zh: this.i18n.t('settings.chinese') || 'Chinese',
+            ko: this.i18n.t('settings.korean') || 'Korean',
+            en: this.i18n.t('settings.english') || 'English',
+        };
+        return langs.map(l => names[l] || l.toUpperCase()).join(', ');
+    }
 }

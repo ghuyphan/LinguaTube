@@ -551,6 +551,14 @@
             border-color: var(--border-color);
             gap: 4px;
 
+            app-icon {
+              color: var(--text-muted);
+              opacity: 0.85;
+              flex-shrink: 0;
+              display: inline-flex;
+              align-items: center;
+            }
+
             .lang-divider {
               color: var(--text-muted);
               font-size: 0.625rem;

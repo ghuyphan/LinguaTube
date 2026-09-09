@@ -15,7 +15,7 @@ interface RecommendedVideosResponse {
     source?: string;
 }
 
-const LS_CACHE_PREFIX = 'voca_rec_videos_';
+const LS_CACHE_PREFIX = 'voca_rec_videos_v2_';
 const LS_CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 
 interface LocalStorageCacheEntry {
@@ -29,6 +29,17 @@ interface LocalStorageCacheEntry {
 export class VideoRecommendationService {
     private http = inject(HttpClient);
     private videoLevel = inject(VideoLevelService);
+
+    constructor() {
+        try {
+            for (let i = localStorage.length - 1; i >= 0; i--) {
+                const key = localStorage.key(i);
+                if (key && key.startsWith('voca_rec_videos_') && !key.startsWith(LS_CACHE_PREFIX)) {
+                    localStorage.removeItem(key);
+                }
+            }
+        } catch { }
+    }
 
     // ==================== Reactive State ====================
 

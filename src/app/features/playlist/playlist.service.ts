@@ -8,7 +8,7 @@ import {
     PlaylistVisibility,
     VideoInfo
 } from '../../models';
-import { AuthService } from '../../core/services';
+import { AuthService, SettingsService } from '../../core/services';
 import { PocketBaseService } from '../../core/services/pocketbase.service';
 import { YoutubeService } from '../video';
 import { OfflinePlaylistRepository } from '../../core/repositories';
@@ -33,6 +33,7 @@ interface LocalStoragePlaylistsCacheEntry {
 })
 export class PlaylistService {
     private auth = inject(AuthService);
+    private settings = inject(SettingsService);
     private pb = inject(PocketBaseService);
     private youtube = inject(YoutubeService);
     private repo = inject(OfflinePlaylistRepository);
@@ -151,7 +152,7 @@ export class PlaylistService {
             title: input.title,
             description: input.description,
             visibility: input.visibility || 'unlisted',
-            language: input.language || 'en',
+            language: input.language || (this.settings.settings().language as PlaylistLanguage) || 'en',
             level: input.level,
             tags: input.tags || [],
             videoIds: [],

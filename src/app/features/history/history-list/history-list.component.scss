@@ -217,6 +217,20 @@
     font-size: 0.75rem;
     color: var(--text-muted);
     flex-wrap: wrap;
+
+    .lang-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.625rem;
+        font-weight: 800;
+        color: var(--accent-primary-text, var(--accent-primary));
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        padding: 0 4px;
+        border-radius: 3px;
+        line-height: 1.2;
+    }
 }
 
 .channel-name {
