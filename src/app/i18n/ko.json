@@ -53,7 +53,11 @@
         "signedInAs": "{{name}} 님으로 로그인됨",
         "signedOut": "성공적으로 로그아웃되었습니다",
         "signInFailed": "로그인에 실패했습니다. 다시 시도해 주세요.",
-        "signOutConfirm": "정말 로그아웃하시겠습니까?"
+        "signOutConfirm": "정말 로그아웃하시겠습니까?",
+        "continueWithGoogle": "Google 계정으로 계속하기",
+        "signInRequired": "계속하려면 로그인해 주세요",
+        "signInToUpgrade": "로그인하고 업그레이드",
+        "signInToUpgradeDesc": "구독을 연동하고 기기 간 동기화하려면 Google로 로그인하세요"
     },
     "player": {
         "paste": "붙여넣기",
@@ -167,7 +171,7 @@
     "pro": {
         "title": "Voca Pro",
         "titlePremium": "Voca Premium",
-        "subtitle": "매일 영상 학습을 AI의 힘으로 가속화하세요",
+        "subtitle": "영상 학습을 AI의 힘으로 가속화하세요",
         "subtitlePremium": "장편 팟캐스트 지원 및 초고속 크레딧 충전으로 최고의 몰입 학습",
         "tabPro": "Voca Pro",
         "tabPremium": "Voca Premium",
@@ -232,7 +236,10 @@
         "activeSubscription": "Pro 플랜 활성화됨",
         "activePremiumSubscription": "Premium 플랜 활성화됨",
         "enjoyingBenefits": "매일 10 다이아몬드와 우선 AI 대기열 등 Pro 혜택을 마음껏 누리세요.",
-        "enjoyingPremiumBenefits": "최대 25 다이아몬드, 장편 팟캐스트 자막 생성 및 VIP 대기열 혜택을 누리세요."
+        "enjoyingPremiumBenefits": "최대 25 다이아몬드, 장편 팟캐스트 자막 생성 및 VIP 대기열 혜택을 누리세요.",
+        "subscribingAs": "{{name}} 계정으로 구독 중",
+        "switchAccount": "계정 전환",
+        "signInToUpgrade": "로그인하고 업그레이드 - {{price}}"
     },
     "vocab": {
         "title": "단어장",
@@ -567,6 +574,7 @@
         "shuffleOn": "셔플 켜짐"
     },
     "common": {
+        "all": "전체",
         "loading": "로딩 중...",
         "error": "오류",
         "success": "성공",
@@ -579,7 +587,9 @@
         "search": "검색...",
         "options": "옵션",
         "refresh": "새로고침",
-        "noResults": "검색 결과가 없습니다"
+        "noResults": "검색 결과가 없습니다",
+        "maybeLater": "나중에 하기",
+        "done": "완료"
     },
     "onboarding": {
         "welcomeTitle": "Voca에 오신 것을 환영합니다",
@@ -591,6 +601,8 @@
         "learningLanguageSubtitle": "학습할 언어를 선택하세요",
         "startLearning": "학습 시작",
         "tapToTry": "단어를 탭해보세요!",
+        "skip": "먼저 둘러보기",
+        "changeUiLang": "인터페이스",
         "features": {
             "subtitles": "이해를 돕는 이중 자막",
             "dict": "클릭 한 번으로 즉시 단어 검색",

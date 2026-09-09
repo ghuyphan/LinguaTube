@@ -53,7 +53,11 @@
         "signedInAs": "Đã đăng nhập với tên {{name}}",
         "signedOut": "Đã đăng xuất thành công",
         "signInFailed": "Đăng nhập thất bại. Vui lòng thử lại.",
-        "signOutConfirm": "Bạn có chắc chắn muốn đăng xuất không?"
+        "signOutConfirm": "Bạn có chắc chắn muốn đăng xuất không?",
+        "continueWithGoogle": "Tiếp tục với Google",
+        "signInRequired": "Vui lòng đăng nhập để tiếp tục",
+        "signInToUpgrade": "Đăng nhập để nâng cấp",
+        "signInToUpgradeDesc": "Đăng nhập bằng Google để liên kết gói đăng ký và đồng bộ trên mọi thiết bị"
     },
     "player": {
         "paste": "Dán",
@@ -167,7 +171,7 @@
     "pro": {
         "title": "Voca Pro",
         "titlePremium": "Voca Premium",
-        "subtitle": "Tăng tốc học ngoại ngữ qua video với tiềm năng AI mỗi ngày",
+        "subtitle": "Tăng tốc học ngoại ngữ qua video với sức mạnh AI",
         "subtitlePremium": "Sức mạnh đắm chìm tối đa với podcast dài tập & hồi phục kim cương siêu tốc",
         "tabPro": "Voca Pro",
         "tabPremium": "Voca Premium",
@@ -232,7 +236,10 @@
         "activeSubscription": "Gói Pro đang kích hoạt",
         "activePremiumSubscription": "Gói Premium đang kích hoạt",
         "enjoyingBenefits": "Bạn đang tận hưởng trọn vẹn đặc quyền Pro, 10 kim cương mỗi ngày và hàng chờ AI ưu tiên.",
-        "enjoyingPremiumBenefits": "Bạn đã mở khóa sức mạnh tối đa, 25 kim cương mỗi ngày, phiên âm podcast dài 45 phút và tốc độ VIP."
+        "enjoyingPremiumBenefits": "Bạn đã mở khóa sức mạnh tối đa, 25 kim cương mỗi ngày, phiên âm podcast dài 45 phút và tốc độ VIP.",
+        "subscribingAs": "Đăng ký với tài khoản {{name}}",
+        "switchAccount": "Đổi tài khoản",
+        "signInToUpgrade": "Đăng nhập để nâng cấp - {{price}}"
     },
     "vocab": {
         "title": "Từ vựng",
@@ -567,6 +574,7 @@
         "shuffleOn": "Đang bật ngẫu nhiên"
     },
     "common": {
+        "all": "Tất cả",
         "loading": "Đang tải...",
         "error": "Lỗi",
         "success": "Thành công",
@@ -579,7 +587,9 @@
         "search": "Tìm kiếm...",
         "options": "Tùy chọn",
         "refresh": "Làm mới",
-        "noResults": "Không tìm thấy kết quả phù hợp"
+        "noResults": "Không tìm thấy kết quả phù hợp",
+        "maybeLater": "Để sau",
+        "done": "Xong"
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",
@@ -591,6 +601,8 @@
         "learningLanguageSubtitle": "Chọn ngôn ngữ mục tiêu để bắt đầu",
         "startLearning": "Bắt đầu học",
         "tapToTry": "Nhấn vào bất kỳ từ nào để thử!",
+        "skip": "Khám phá trước",
+        "changeUiLang": "Giao diện",
         "features": {
             "subtitles": "Phụ đề song ngữ giúp hiểu rõ hơn",
             "dict": "Tra từ nhanh bằng cách nhấp chuột",

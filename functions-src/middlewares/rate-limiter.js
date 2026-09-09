@@ -43,7 +43,7 @@
 // Prevents burning daily Cloudflare KV write quota (1,000 writes/day free limit)
 const memRateLimits = new Map();
 const MAX_MEM_ENTRIES = 1000;
-const KV_SYNC_SAMPLE_RATE = 25; // Sync every 25 units when client is at or above 50% quota
+const KV_SYNC_SAMPLE_RATE = 15; // Sync every 15 units when client is at or above 50% quota
 
 function cleanMemoryCache(now) {
     if (memRateLimits.size > MAX_MEM_ENTRIES) {

@@ -115,12 +115,42 @@ export class ProUpgradeDialogComponent implements OnInit, OnDestroy {
         this.selectedPlan.set(planId);
     }
 
-    startUpgrade(): void {
+    readonly isLoggingIn = computed(() => this.auth.isLoggingIn());
+    readonly isLoggedIn = computed(() => this.auth.isLoggedIn());
+    readonly user = computed(() => this.auth.user());
+
+    async startUpgrade(): Promise<void> {
         if (!this.auth.isLoggedIn()) {
-            this.toast.show(this.i18n.t('auth.signInRequired') || 'Please sign in to upgrade', { type: 'warning' });
+            try {
+                const profile = await this.auth.loginWithGoogle();
+                if (profile) {
+                    this.toast.show(this.i18n.t('auth.signedInAs', { name: profile.name }) || `Signed in as ${profile.name}`, { type: 'success', icon: 'check-circle' });
+                    this.payment.createOrder(this.selectedPlan()).subscribe();
+                }
+            } catch (error) {
+                console.error('[ProUpgrade] Google login error:', error);
+                this.toast.show(this.i18n.t('auth.signInFailed') || 'Sign in failed. Please try again.', { type: 'error', icon: 'alert-circle' });
+            }
             return;
         }
         this.payment.createOrder(this.selectedPlan()).subscribe();
+    }
+
+    async loginWithGoogle(): Promise<void> {
+        try {
+            const profile = await this.auth.loginWithGoogle();
+            if (profile) {
+                this.toast.show(this.i18n.t('auth.signedInAs', { name: profile.name }) || `Signed in as ${profile.name}`, { type: 'success', icon: 'check-circle' });
+            }
+        } catch (error) {
+            console.error('[ProUpgrade] Google login error:', error);
+            this.toast.show(this.i18n.t('auth.signInFailed') || 'Sign in failed. Please try again.', { type: 'error', icon: 'alert-circle' });
+        }
+    }
+
+    async switchAccount(): Promise<void> {
+        await this.auth.signOut();
+        await this.loginWithGoogle();
     }
 
     cancelOrder(): void {

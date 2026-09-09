@@ -14,36 +14,36 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.0.13',
+    version: '1.0.21',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Proficiency Level Video Filtering: Fixed video level filtering across Japanese, English, Korean, and Chinese with authentic multi-tier video classifications',
-            'Missing Translation Fixes: Resolved raw translation keys (such as common.noResults) with localized empty-state messages for video and playlist filters',
-            'Instant Recommendation Refresh: Optimized edge and client caching to eliminate stale empty states and deliver instant updates when switching levels'
+            'Seamless Upgrade & Auth Flow: Guests can now browse Pro & Premium plans freely; clicking upgrade smoothly triggers Google Sign-in and automatically proceeds to payment without dead-ends',
+            'Unified Pro & Premium Dialog Design: Overhauled the upgrade modal with a pinned sticky actions footer, fixed scrolling and header clipping, and standardized design system tokens',
+            'Polished Onboarding Experience: Restored high-contrast primary CTA styling, added English locale fallbacks across all 5 languages, and refined interactive word token demos'
         ],
         vi: [
-            'Lọc Video theo Cấp độ Trôi chảy: Khắc phục lỗi lọc video theo cấp độ cho tiếng Nhật, Anh, Hàn, Trung với dữ liệu phân loại độ khó thực tế',
-            'Hoàn thiện Bản dịch Còn thiếu: Sửa lỗi hiển thị mã ngôn ngữ thô (như common.noResults), bổ sung thông báo trạng thái trống rõ ràng trên bộ lọc video và playlist',
-            'Làm mới Đề xuất Tức thì: Tối ưu bộ nhớ đệm tại edge và máy khách, loại bỏ trạng thái trống cũ và cập nhật ngay lập tức khi đổi cấp độ'
+            'Luồng Nâng cấp & Đăng nhập Liền mạch: Người dùng chưa đăng nhập có thể thoải mái xem các gói Pro & Premium; bấm nâng cấp sẽ tự động đăng nhập Google và chuyển thẳng tới thanh toán VietQR mà không gặp lỗi cụt',
+            'Giao diện Nâng cấp Pro & Premium Thống nhất: Thiết kế lại hộp thoại nâng cấp với thanh tác vụ cố định (sticky footer), khắc phục lỗi tràn chữ/cuộn mất tiêu đề và chuẩn hóa biến thiết kế',
+            'Hoàn thiện Trải nghiệm Onboarding: Khôi phục nút kêu gọi hành động (CTA) nổi bật, bổ sung cơ chế tự động dự phòng ngôn ngữ tiếng Anh cho cả 5 ngôn ngữ và hoàn thiện demo từ vựng tương tác'
         ],
         ja: [
-            '難易度レベル別動画フィルターの改善：日本語・英語・韓国語・中国語の各難易度レベルに応じた正確な分類とフィルタリングを修正',
-            '未翻訳キーの修正：未翻訳のまま表示されていたキー（common.noResults など）を解消し、動画・プレイリストの空状態メッセージを多言語対応',
-            'おすすめ動画の即時反映：エッジおよびクライアントのキャッシュを最適化し、古い空データの残存を防ぎ、レベル切替時の高速表示を実現'
+            'シームレスなアップグレード＆ログイン連携：未ログインのままでもPro・Premiumプランを自由に比較可能。アップグレード選択時にGoogleログインがスムーズに起動し、決済画面へ直行',
+            'Pro＆Premiumモーダルのデザイン統一：固定フッター（Sticky Actions）を導入し、ヘッダーのはみ出しやスクロール崩れを解消。デザインシステム規格に完全統一',
+            'オンボーディング体験の洗練：目立つプライマリCTAボタンスタイルを復元し、5言語すべてで英語フォールバックを保証。インタラクティブな単語デモの操作感を向上'
         ],
         ko: [
-            '난이도별 추천 동영상 필터 개선: 일본어, 영어, 한국어, 중국어의 실제 난이도 등급에 맞춰 동영상 필터링 기능 정상화',
-            '누락된 번역 키 수정: common.noResults 등 번역되지 않은 키 표시 오류를 해결하고 동영상 및 재생목록 필터의 빈 상태 안내 메시지 추가',
-            '추천 동영상 즉각 갱신: 엣지 및 클라이언트 캐시를 최적화하여 이전 빈 캐시 잔존을 방지하고 레벨 전환 시 즉시 반영'
+            '매끄러운 업그레이드 및 로그인 흐름: 로그인하지 않아도 Pro 및 Premium 요금제를 자유롭게 비교할 수 있으며, 결제 시 Google 로그인을 자연스럽게 거쳐 VietQR 결제 화면으로 자동 이동',
+            'Pro & Premium 업그레이드 모달 디자인 개편: 하단 고정 액션 바(Sticky Footer)를 도입하여 헤더 잘림 및 스크롤 오류를 해결하고 전체 디자인 토큰을 표준화',
+            '온보딩 경험 개선: 메인 CTA 버튼 스타일을 선명하게 복원하고, 5개 언어 전체에 영문 폴백을 적용하여 번역 누락을 방지하며 단어 상호작용 데모 품질 향상'
         ],
         zh: [
-            '难度等级视频筛选优化：修复了日语、英语、韩语和汉语按语言等级筛选视频的功能，补充真实多阶难度分类',
-            '补齐缺失的本地化文案：修复未翻译的原始文本键（如 common.noResults），规范视频与播放列表筛选为空时的多语言提示',
-            '推荐视频即时刷新：优化边缘端与客户端缓存机制，清除过期的空结果缓存，切换难度等级时即可秒级展示'
+            '无缝升级与账号登录联动：未登录用户可自由浏览 Pro 与 Premium 会员方案，点击升级即可无缝唤起 Google 登录并直达 VietQR 支付结算，彻底消除中断',
+            '统一 Pro 与 Premium 升级弹窗设计：新增底部固定操作栏（Sticky Footer），修复标题文字被裁切与滚动穿透问题，全面对齐系统级设计规范',
+            '新手引导（Onboarding）体验优化：恢复高对比醒目的核心操作按钮样式，为全 5 种语言增加英语自动兜底机制，并打磨交互式分词取词试用体验'
         ]
     }
 };

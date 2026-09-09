@@ -218,7 +218,8 @@ export class TranscriptService {
         let { videoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo } = params;
 
         const startTime = Date.now();
-        const MAX_POLL_DURATION_MS = 25000;
+        // Upgraded for Workers Paid: poll up to 55s (stopping at 50s) so most Gladia jobs finish in a single request
+        const MAX_POLL_DURATION_MS = 55000;
         let delay = 3000;
 
         if (resultUrl) {
@@ -246,7 +247,7 @@ export class TranscriptService {
         }
 
         while (Date.now() - startTime < MAX_POLL_DURATION_MS) {
-            // Stop early to keep under Cloudflare 30s limit
+            // Stop early to keep comfortably under Cloudflare edge 100s limit
             if (Date.now() - startTime > MAX_POLL_DURATION_MS - 5000) {
                 return { status: 'processing', resultUrl, videoId };
             }

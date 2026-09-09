@@ -3,6 +3,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
+import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AudioService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
@@ -20,7 +21,7 @@ function escapeRegex(str: string): string {
     selector: 'app-study-mode',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, RouterLink, IconComponent, SwitchComponent],
+    imports: [CommonModule, RouterLink, IconComponent, SwitchComponent, BottomSheetComponent],
     templateUrl: './study-mode.component.html',
     styleUrls: ['./study-mode.component.scss']
 })
@@ -43,7 +44,7 @@ export class StudyModeComponent implements OnDestroy {
     sessionSize = signal<number | 'all'>(10);
     autoPlayAudio = signal(true);
     clozeMode = signal(false);
-    showAdvancedOptions = signal(false);
+    isOptionsSheetOpen = signal(false);
 
     // Active Card State
     isStudying = signal(false);
@@ -193,8 +194,12 @@ export class StudyModeComponent implements OnDestroy {
         return this.getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language);
     });
 
-    toggleAdvancedOptions(): void {
-        this.showAdvancedOptions.update(v => !v);
+    openOptionsSheet(): void {
+        this.isOptionsSheetOpen.set(true);
+    }
+
+    closeOptionsSheet(): void {
+        this.isOptionsSheetOpen.set(false);
     }
 
     constructor() {

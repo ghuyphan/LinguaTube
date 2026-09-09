@@ -212,23 +212,31 @@ test('payOS: HMAC-SHA256 signature calculation and webhook verification', async 
 test('detectLevelFromMetadata: accurately parses proficiency levels from titles & channels', async () => {
   const { detectLevelFromMetadata } = await import('../functions-src/data/video-info-db.js');
 
-  // Japanese JLPT
+  // Japanese JLPT & Native Keywords
   assert.deepEqual(detectLevelFromMetadata('Japanese Listening Practice for JLPT N5', 'Learn Japanese'), { lang: 'ja', level: 'JLPT N5' });
   assert.deepEqual(detectLevelFromMetadata('N2 文法マスター', 'Nihongo Channel'), { lang: 'ja', level: 'JLPT N2' });
+  assert.deepEqual(detectLevelFromMetadata('日本語初級レッスン', 'Sakura Nihongo'), { lang: 'ja', level: 'JLPT N5' });
+  assert.deepEqual(detectLevelFromMetadata('中上級者のための日本語会話', 'Tokyo Daily'), { lang: 'ja', level: 'JLPT N2' });
 
-  // Chinese HSK
+  // Chinese HSK & Native Keywords
   assert.deepEqual(detectLevelFromMetadata('HSK 3 Standard Course - Lesson 1', 'ChinesePod'), { lang: 'zh', level: 'HSK 3' });
   assert.deepEqual(detectLevelFromMetadata('Daily Conversation (HSK 1)', 'Mandarin Corner'), { lang: 'zh', level: 'HSK 1' });
+  assert.deepEqual(detectLevelFromMetadata('中文初级口语训练', 'Mandarin Pod'), { lang: 'zh', level: 'HSK 2' });
+  assert.deepEqual(detectLevelFromMetadata('中文高级阅读', 'Chinese Master'), { lang: 'zh', level: 'HSK 5' });
 
-  // Korean TOPIK
+  // Korean TOPIK & Native Keywords
   assert.deepEqual(detectLevelFromMetadata('TOPIK 2 Grammar in Use', 'KoreanClass101'), { lang: 'ko', level: 'TOPIK 2' });
+  assert.deepEqual(detectLevelFromMetadata('한국어 초급 듣기 연습', 'Talk to Me in Korean'), { lang: 'ko', level: 'TOPIK 2' });
+  assert.deepEqual(detectLevelFromMetadata('한국어 고급 회화', 'Korean Culture'), { lang: 'ko', level: 'TOPIK 5' });
 
-  // English CEFR
+  // English CEFR & Natural Level Keywords
   assert.deepEqual(detectLevelFromMetadata('English for Beginners (CEFR A2)', 'BBC Learning English'), { lang: 'en', level: 'CEFR A2' });
   assert.deepEqual(detectLevelFromMetadata('Advanced English Podcast - B2 level', 'RealLife English'), { lang: 'en', level: 'CEFR B2' });
+  assert.deepEqual(detectLevelFromMetadata('Daily English for Beginners', 'Oxford Online'), { lang: 'en', level: 'CEFR A1' });
+  assert.deepEqual(detectLevelFromMetadata('Upper-Intermediate English Listening', 'Spotlight English'), { lang: 'en', level: 'CEFR B2' });
 
   // No level in title
-  assert.equal(detectLevelFromMetadata('Random Cat Video', 'Funny Animals'), null);
+  assert.equal(detectLevelFromMetadata('Luis Fonsi - Despacito (Official Video)', 'LuisFonsiVEVO'), null);
 });
 
 test('labelToTier: standardizes proficiency levels to canonical tiers', async () => {

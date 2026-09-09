@@ -63,26 +63,32 @@ export class I18nService {
      * Get a translated string by key path (e.g., 'nav.video', 'player.load')
      * Supports interpolation: t('key', { count: 5 }) -> "You have 5 items"
      */
-    t(key: string, params?: Record<string, string | number>): string {
-        const parts = key.split('.');
-        let current: TranslationData | string = this.translations();
-
-        for (const part of parts) {
-            if (typeof current === 'object' && current !== null && part in current) {
-                current = current[part];
-            } else {
-                // Key not found, return the key itself as fallback
-                console.warn(`[I18n] Missing translation for: ${key}`);
-                return key;
+    t(key: string, params?: Record<string, string | number | boolean | null | undefined>): string {
+        const resolveKey = (data: TranslationData | string | undefined): string | null => {
+            if (!data) return null;
+            const parts = key.split('.');
+            let current: TranslationData | string = data;
+            for (const part of parts) {
+                if (typeof current === 'object' && current !== null && part in current) {
+                    current = current[part];
+                } else {
+                    return null;
+                }
             }
-        }
+            return typeof current === 'string' ? current : null;
+        };
 
-        let value = typeof current === 'string' ? current : key;
+        let value = resolveKey(this.translations()) ?? resolveKey(TRANSLATIONS['en']);
+        if (value === null) {
+            console.warn(`[I18n] Missing translation for: ${key}`);
+            value = key;
+        }
 
         // Perform interpolation if params provided
         if (params && typeof value === 'string') {
             Object.keys(params).forEach(paramKey => {
-                value = (value as string).replace(new RegExp(`{{${paramKey}}}`, 'g'), String(params[paramKey]));
+                const paramVal = params[paramKey];
+                value = (value as string).replace(new RegExp(`{{${paramKey}}}`, 'g'), paramVal != null ? String(paramVal) : '');
             });
         }
 

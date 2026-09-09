@@ -5,6 +5,7 @@ import { YoutubeService } from './youtube.service';
 import { SettingsService } from '../../core/services/settings.service';
 import { I18nService } from '../../core/services/i18n.service';
 import { TranslationService } from '../../services/translation.service';
+import { TranscriptCacheService } from '../../services/transcript-cache.service';
 import { PocketBaseService } from '../../core/services/pocketbase.service';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../../shared/utils/japanese-romaji';
@@ -14,8 +15,8 @@ import { getCharType, isPunctuation, detectSubtitleLanguage } from '../../shared
 // Constants
 // ============================================================================
 
-const MAX_CACHE_SIZE = 500;
-const MAX_TOKENIZE_BATCH_SIZE = 500;
+const MAX_CACHE_SIZE = 1000;
+const MAX_TOKENIZE_BATCH_SIZE = 800;
 
 const TOKEN_STORAGE_KEY = 'linguatube_tokens';
 const MAX_STORED_VIDEOS = 10;
@@ -36,6 +37,7 @@ export class SubtitleService {
   private settings = inject(SettingsService);
   private i18n = inject(I18nService);
   private translation = inject(TranslationService);
+  private transcriptCache = inject(TranscriptCacheService);
   private pocketbase = inject(PocketBaseService);
 
   // Rate limiting circuit breaker
@@ -56,6 +58,8 @@ export class SubtitleService {
   private lastBatchFailureTime = 0;
   private consecutiveBatchFailures = 0;
   private hasPersistedDualToR2 = false;
+  private lastPersistedCueCount = 0;
+  private lastPersistTimestamp = 0;
 
   constructor() {
     // Load cached tokens from localStorage
@@ -209,7 +213,7 @@ export class SubtitleService {
 
   /**
    * Batch tokenize subtitle cues.
-   * Tokenizes all cues for the video on load in full batches (up to 500 cues each).
+   * Tokenizes all cues for the video on load in full batches (up to 800 cues each).
    */
   async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko' | 'en' | null): Promise<void> {
     const cues = this.subtitles();
@@ -281,8 +285,8 @@ export class SubtitleService {
 
       const texts = Array.from(uniqueTexts.keys());
 
-      // Process in batches of MAX_TOKENIZE_BATCH_SIZE (usually 1 batch of <= 500 texts)
-      // Updating progressively per batch ensures the first 500 cues are available immediately
+      // Process in batches of MAX_TOKENIZE_BATCH_SIZE (usually 1 batch of <= 800 texts)
+      // Updating progressively per batch ensures the first 800 cues are available immediately
       for (let i = 0; i < texts.length; i += MAX_TOKENIZE_BATCH_SIZE) {
         const chunk = texts.slice(i, i + MAX_TOKENIZE_BATCH_SIZE);
         const chunkResults = await this.batchTokenize(chunk, lang || 'en', videoId);
@@ -453,6 +457,8 @@ export class SubtitleService {
     this.pendingBatchStartIdx = -1;
     this.pendingBatchEndIdx = -1;
     this.hasPersistedDualToR2 = false;
+    this.lastPersistedCueCount = 0;
+    this.lastPersistTimestamp = 0;
     this.isTranslatingDual.set(false);
     this.isDualSubLoading.set(false);
   }
@@ -473,12 +479,39 @@ export class SubtitleService {
 
     this.cancelDualSubtitles();
     this.hasPersistedDualToR2 = false;
+    this.lastPersistedCueCount = 0;
+    this.lastPersistTimestamp = 0;
     this.isTranslatingDual.set(true);
     this.isDualSubLoading.set(true);
     this.dualSubError.set(null);
 
-    // CACHE-FIRST STRATEGY:
-    // Check if full transcript translation is already cached in R2 (empty segments array saves bandwidth)
+    // 1. FAST LOCAL CHECK: Check IndexedDB for instant offline-ready bilingual subtitles
+    void this.transcriptCache.getDual(videoId, sourceLang, targetLang).then(localSegments => {
+      if (this.dualSubtitleTargetLang() !== targetLang) return;
+      if (localSegments && localSegments.length > 0) {
+        const localMap = new Map(this.cueTranslations());
+        let hasLocalContent = false;
+        localSegments.forEach((seg, index: number) => {
+          const cue = cues[index];
+          if (!cue) return;
+          const trans = seg.translation?.trim();
+          if (trans) {
+            localMap.set(cue.id, trans);
+            if (trans !== cue.text.trim()) hasLocalContent = true;
+          }
+        });
+        if (hasLocalContent) {
+          this.cueTranslations.set(localMap);
+          const translatedCount = cues.filter(c => localMap.has(c.id)).length;
+          if (translatedCount >= cues.length * 0.8) {
+            this.isDualCached.set(true);
+            this.clearDualSubLoadingState();
+          }
+        }
+      }
+    });
+
+    // 2. EDGE CHECK: Check Cloudflare R2 crowd-cache
     this.dualSubSubscription = this.translation.getDualSubtitles(videoId, sourceLang, targetLang, [], true)
       .subscribe({
         next: (translatedSegments) => {
@@ -505,8 +538,13 @@ export class SubtitleService {
 
             if (hasContent) {
               this.cueTranslations.set(newMap);
-              this.isDualCached.set(true);
+              const translatedCount = cues.filter(c => newMap.has(c.id)).length;
+              if (translatedCount >= cues.length * 0.8) {
+                this.isDualCached.set(true);
+              }
               this.clearDualSubLoadingState();
+              // Sync R2 cache down to local IndexedDB for future offline playback
+              void this.transcriptCache.setDual(videoId, sourceLang, targetLang, translatedSegments);
               return;
             }
           }
@@ -654,8 +692,9 @@ export class SubtitleService {
   }
 
   /**
-   * Automatically persist translated dual subtitles to Cloudflare R2 / server cache
-   * when >= 80% of cues have been translated.
+   * Automatically persist translated dual subtitles to Cloudflare R2 and IndexedDB:
+   * 1. Incremental checkpoints during playback (every 20+ newly translated cues, debounced 15s)
+   * 2. Final full save once >= 80% of cues are translated
    */
   private checkAndPersistDualSubtitles(
     cues: SubtitleCue[],
@@ -663,7 +702,7 @@ export class SubtitleService {
     sourceLang: string,
     targetLang: string
   ): void {
-    if (this.hasPersistedDualToR2 || this.isDualCached() || cues.length === 0) {
+    if (this.isDualCached() || cues.length === 0) {
       return;
     }
 
@@ -671,11 +710,19 @@ export class SubtitleService {
       const val = map.get(c.id);
       return val && val.trim().length > 0;
     }).length;
-    const coverage = translatedCount / cues.length;
+    const coverage = cues.length > 0 ? translatedCount / cues.length : 0;
 
-    // Persist once 80% or more cues are translated
-    if (coverage >= 0.8) {
-      this.hasPersistedDualToR2 = true;
+    const newCuesSinceLastSave = translatedCount - this.lastPersistedCueCount;
+    const isFullSave = coverage >= 0.8 && !this.hasPersistedDualToR2;
+    const isIncrementalCheckpoint = (newCuesSinceLastSave >= 20) && (Date.now() - this.lastPersistTimestamp >= 15000);
+
+    if (isFullSave || isIncrementalCheckpoint) {
+      this.lastPersistedCueCount = translatedCount;
+      this.lastPersistTimestamp = Date.now();
+      if (coverage >= 0.8) {
+        this.hasPersistedDualToR2 = true;
+      }
+
       const videoId = this.lastDualSubVideoId || this.youtube.currentVideo()?.id;
       if (!videoId) return;
 
@@ -686,9 +733,13 @@ export class SubtitleService {
         translation: map.get(c.id) || ''
       }));
 
+      // 1. Save to local IndexedDB for immediate offline availability
+      void this.transcriptCache.setDual(videoId, sourceLang, targetLang, segments);
+
+      // 2. Persist to Cloudflare R2 crowd-cache (Zero KV writes - Rule 2)
       this.translation.saveDualSubtitles(videoId, sourceLang, targetLang, segments).subscribe({
         next: (saved) => {
-          if (saved) {
+          if (saved && coverage >= 0.8) {
             this.isDualCached.set(true);
           }
         }

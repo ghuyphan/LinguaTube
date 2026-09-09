@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, untracked, PLATFORM_ID, DestroyRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, untracked, PLATFORM_ID, DestroyRef, viewChild, ElementRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -23,6 +23,10 @@ import { PlaylistService } from '../../playlist/playlist.service';
 import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier, RecommendedVideo, getLanguageFlagUrl } from '../../../models';
 import { VideoLevelService } from '../../../core/services/video-level.service';
 import { formatTime } from '../../../core/utils';
+
+export type FeedItem =
+  | { kind: 'video'; video: RecommendedVideo }
+  | { kind: 'playlist'; playlist: Playlist };
 
 @Component({
   selector: 'app-video-page',
@@ -71,12 +75,16 @@ export class VideoPageComponent implements OnInit {
   homeTab = signal<'videos' | 'playlists'>('videos');
   recommendedVideos = this.videoRecommendation.recommendedVideos;
   isVideosLoading = this.videoRecommendation.isLoading;
+  readonly isLoadingMore = this.videoRecommendation.isLoadingMore;
+  readonly hasMoreVideos = this.videoRecommendation.hasMore;
+  readonly scrollSentinel = viewChild<ElementRef<HTMLDivElement>>('scrollSentinel');
+  private sentinelObserver: IntersectionObserver | null = null;
   formatVideoTime = formatTime;
 
   // Feed refresh state
   readonly isRefreshing = signal<boolean>(false);
   readonly isFeedRefreshing = computed(() =>
-    this.isRefreshing() || (this.homeTab() === 'videos' ? this.isVideosLoading() : this.playlistService.isRecommendedLoading())
+    this.isRefreshing() || (this.homeTab() === 'videos' ? (this.isVideosLoading() || this.playlistService.isRecommendedLoading()) : this.playlistService.isRecommendedLoading())
   );
 
   // Video level filter state for recommended videos
@@ -197,6 +205,70 @@ export class VideoPageComponent implements OnInit {
     });
   });
 
+  /**
+   * Unified feed items: Interleaves recommended playlists into the video feed (YouTube style),
+   * or shows strictly playlists when the 'playlists' chip is selected.
+   */
+  readonly feedItems = computed<FeedItem[]>(() => {
+    // During coordinated feed loading, do not output partial items to prevent layout shifts
+    if (this.isFeedLoading()) {
+      return [];
+    }
+
+    const tab = this.homeTab();
+    const playlists = this.filteredFeaturedPlaylists();
+    const videos = this.filteredRecommendedVideos();
+
+    if (tab === 'playlists') {
+      return playlists.map(playlist => ({ kind: 'playlist' as const, playlist }));
+    }
+
+    if (playlists.length === 0) {
+      return videos.map(video => ({ kind: 'video' as const, video }));
+    }
+
+    if (videos.length === 0) {
+      return playlists.map(playlist => ({ kind: 'playlist' as const, playlist }));
+    }
+
+    // YouTube-style interleaving:
+    // Place 1 playlist card after every 4 videos (e.g. at index 3, 7, 11...)
+    const items: FeedItem[] = [];
+    let playlistIdx = 0;
+    const interval = 4;
+
+    videos.forEach((video, index) => {
+      if (index > 0 && index % interval === 0 && playlistIdx < playlists.length) {
+        items.push({ kind: 'playlist' as const, playlist: playlists[playlistIdx++] });
+      }
+      items.push({ kind: 'video' as const, video });
+    });
+
+    while (playlistIdx < playlists.length && items.length < 3) {
+      items.push({ kind: 'playlist' as const, playlist: playlists[playlistIdx++] });
+    }
+
+    return items;
+  });
+
+  readonly isFeedLoading = computed(() => {
+    if (this.homeTab() === 'playlists') {
+      return this.isFeaturedLoading() && this.filteredFeaturedPlaylists().length === 0;
+    }
+
+    const videosLoading = this.isVideosLoading();
+    const playlistsLoading = this.isFeaturedLoading();
+    const hasVideos = this.filteredRecommendedVideos().length > 0;
+    const hasPlaylists = this.filteredFeaturedPlaylists().length > 0;
+
+    // If neither has finished loading or we don't have existing content:
+    if (!hasVideos || (!hasPlaylists && playlistsLoading)) {
+      return videosLoading || playlistsLoading;
+    }
+
+    return false;
+  });
+
   readonly getFlagUrl = getLanguageFlagUrl;
 
   aiDiamondCost = computed(() => (this.youtube.duration() > 10 * 60 ? 2 : 1));
@@ -278,7 +350,35 @@ export class VideoPageComponent implements OnInit {
       }
     });
 
+    // Setup IntersectionObserver for Infinite Scroll Sentinel
+    effect(() => {
+      const sentinelRef = this.scrollSentinel();
+      if (!isPlatformBrowser(this.platformId)) return;
+
+      if (this.sentinelObserver) {
+        this.sentinelObserver.disconnect();
+        this.sentinelObserver = null;
+      }
+
+      if (sentinelRef?.nativeElement) {
+        this.sentinelObserver = new IntersectionObserver((entries) => {
+          const entry = entries[0];
+          if (entry?.isIntersecting) {
+            this.onSentinelIntersect();
+          }
+        }, {
+          rootMargin: '350px 0px',
+          threshold: 0.05
+        });
+        this.sentinelObserver.observe(sentinelRef.nativeElement);
+      }
+    });
+
     this.destroyRef.onDestroy(() => {
+      if (this.sentinelObserver) {
+        this.sentinelObserver.disconnect();
+        this.sentinelObserver = null;
+      }
       this.seo.resetVideoSeo();
       this.transcript.reset();
       this.subtitles.clear();
@@ -298,8 +398,10 @@ export class VideoPageComponent implements OnInit {
 
       // Only load recommendations if the user is on the home dashboard (not actively watching a video)
       if (this.showLearnHome()) {
-        void this.playlistService.loadRecommendedPlaylists(currentLang, tierParam);
-        void this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam);
+        void Promise.all([
+          this.playlistService.loadRecommendedPlaylists(currentLang, tierParam),
+          this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam)
+        ]);
       }
     });
 
@@ -355,16 +457,34 @@ export class VideoPageComponent implements OnInit {
   // ==================== Feed Refresh ====================
 
   /**
-   * Handle Tab clicks: If clicking the active 'videos' tab, trigger a fresh reload (YouTube-style)
+   * Select feed tab and optional level filter directly from YouTube chips carousel
    */
-  onTabClick(tab: 'videos' | 'playlists'): void {
-    if (this.homeTab() === tab) {
-      if (tab === 'videos') {
-        void this.refreshRecommendations();
+  selectFeedTab(tab: 'videos' | 'playlists', level?: string): void {
+    if (tab === 'videos') {
+      if (this.homeTab() === 'videos' && level && this.videoLevelFilter() === level) {
+        return;
+      }
+      this.homeTab.set('videos');
+      if (level !== undefined) {
+        this.videoLevelFilter.set(level);
       }
     } else {
-      this.homeTab.set(tab);
+      this.homeTab.set('playlists');
     }
+  }
+
+  /**
+   * Sentinel intersection callback for infinite scrolling
+   */
+  onSentinelIntersect(): void {
+    if (this.homeTab() !== 'videos') return;
+    if (!this.hasMoreVideos() || this.isLoadingMore() || this.isVideosLoading()) return;
+
+    const currentLang = this.settings.settings().language;
+    const currentTier = this.videoLevelFilter();
+    const tierParam = currentTier === 'all' ? undefined : currentTier;
+
+    void this.videoRecommendation.loadMoreRecommendedVideos(currentLang, tierParam);
   }
 
   /**
@@ -381,12 +501,15 @@ export class VideoPageComponent implements OnInit {
 
       // Minimum 400ms feedback duration ensures clear, tactile spinner rotation
       const delayPromise = new Promise(resolve => setTimeout(resolve, 400));
-      const fetchPromise = this.homeTab() === 'videos'
-        ? this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam, 12, true)
-        : this.playlistService.loadRecommendedPlaylists(currentLang, tierParam, 3, true);
+      const fetchPromise = this.homeTab() === 'playlists'
+        ? this.playlistService.loadRecommendedPlaylists(currentLang, tierParam, 12, true)
+        : Promise.all([
+            this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam, 12, true),
+            this.playlistService.loadRecommendedPlaylists(currentLang, tierParam, 6, true)
+          ]);
 
       await Promise.all([fetchPromise, delayPromise]);
-      this.toast.show(this.i18n.t('playlist.feedUpdated'), { type: 'success', icon: 'refresh-cw', duration: 2000 });
+      this.toast.show(this.i18n.t('playlist.feedUpdated') || 'Recommendations updated', { type: 'success', icon: 'refresh-cw', duration: 2000 });
     } catch {
       this.toast.show(this.i18n.t('common.error'), { type: 'error', duration: 2500 });
     } finally {
@@ -789,10 +912,11 @@ export class VideoPageComponent implements OnInit {
     const validLangs = ['ja', 'zh', 'ko', 'en'];
 
     // Use detected language for tokenization (silently - no popup)
+    let tokenPromise: Promise<void>;
     if (detected && validLangs.includes(detected)) {
       const targetLang = detected as 'ja' | 'zh' | 'ko' | 'en';
       this.subtitles.setLanguageState(targetLang, requestedLang as 'ja' | 'zh' | 'ko' | 'en');
-      this.subtitles.tokenizeAllCues(targetLang);
+      tokenPromise = this.subtitles.tokenizeAllCues(targetLang);
 
       // Check for mismatch: requested language differs from detected
       // Only show dialog if this is NOT from a user-initiated language switch
@@ -806,28 +930,34 @@ export class VideoPageComponent implements OnInit {
     } else {
       const lang = requestedLang as 'ja' | 'zh' | 'ko' | 'en';
       this.subtitles.setLanguageState(lang, lang);
-      this.subtitles.tokenizeAllCues(lang);
+      tokenPromise = this.subtitles.tokenizeAllCues(lang);
       this.skipNextMismatchDialog = false;
     }
 
-    // Evaluate difficulty level for video
+    // Evaluate difficulty level for video (run after tokenization finishes so tokens exist in cues)
     const activeLang = (detected && validLangs.includes(detected))
       ? (detected as 'ja' | 'zh' | 'ko' | 'en')
       : (requestedLang as 'ja' | 'zh' | 'ko' | 'en');
 
-    if (currentVideo) {
-      void this.videoLevel.assessLevel(
-        currentVideo.id,
-        activeLang,
-        currentVideo.title,
-        currentVideo.channel,
-        cues
-      ).then(levelInfo => {
-        if (levelInfo) {
-          void this.historyService.updateLevel(currentVideo.id, levelInfo.level);
-        }
-      });
-    }
+    const runAssessment = () => {
+      if (currentVideo) {
+        const currentCues = this.subtitles.subtitles();
+        const evalCues = (currentCues && currentCues.length > 0) ? currentCues : cues;
+        void this.videoLevel.assessLevel(
+          currentVideo.id,
+          activeLang,
+          currentVideo.title,
+          currentVideo.channel,
+          evalCues
+        ).then(levelInfo => {
+          if (levelInfo) {
+            void this.historyService.updateLevel(currentVideo.id, levelInfo.level);
+          }
+        });
+      }
+    };
+
+    tokenPromise.then(runAssessment).catch(runAssessment);
   }
 
   onMismatchConfirm() {

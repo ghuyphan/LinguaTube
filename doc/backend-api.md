@@ -172,13 +172,15 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - If cached transcript exists: Returns `{ segments: [...], cached: true }`.
   - If not cached: Returns `{ segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
 - **Client Cache Write-Back (`saveOnly: true` or `onlySave: true`)**:
-  - When the client's lazy-loaded cue translations reach $\ge 80\%$ coverage (`QUALITY_THRESHOLD`), the frontend sends the compiled translated segments to `/api/dual-subtitles` with `saveOnly: true`. Supports long videos up to 10,000 segments.
-  - The backend filters out any untranslated segments matching source text (when source $\neq$ target), validates the quality threshold, and commits the translation to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. All future views by any user hit R2 directly (<50ms, $0 translation cost).
-- **Process (Full Translation Request)**:
+  - **Incremental Crowd-Cache Merging**: When the client translates cues during playback, it saves checkpoints (after $\ge 20$ newly translated cues or on video pause/switch), as well as a final save upon reaching $\ge 80\%$ coverage (`QUALITY_THRESHOLD`).
+  - The backend filters out invalid/identical source text, merges incoming translated cues with existing segments already in R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`), recalculates composite quality, and commits the merged file to Cloudflare R2 and D1 `translation_meta`.
+  - Multiple users watching partial segments of the same video collectively build the full dual-subtitle cache without requiring any single user to watch 80%+ in one session.
+  - **Zero KV Writes**: Transcripts and translations are stored strictly in R2 and D1, guaranteeing 0 KV quota consumption.
+- **Process (Live / Fallback Requests)**:
   - Checks R2 cache: `translations/{videoId}/{sourceLang}-{targetLang}.json`. Automatically detects and invalidates legacy poisoned cache entries where translation mirrored source text.
-  - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via direct Google Translate GTX with Lingva fallback to eliminate Cloudflare Function timeout aborts and 429 rate limit errors.
-  - Returns `null` on failed segment indices instead of falling back to untranslated source text.
-  - Requires an 80% translation success rate (`QUALITY_THRESHOLD`) before saving to R2 and D1 `translation_meta`.
+  - **Worker Timeout Protection**: Live translation requests in `/api/dual-subtitles` are capped at 40 segments (`BATCH_SIZE`) to prevent Cloudflare Worker 30-second execution timeouts. Larger transcripts stream upcoming cues via `/api/translate/batch` and commit via `saveOnly: true`.
+  - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via direct Google Translate GTX with Lingva fallback.
+- **Rate Limiting**: Tiered hourly quota (anonymous: 5, free: 15, pro: 60, premium: 120 requests/hr).
 
 ---
 
@@ -203,31 +205,33 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
     "target": "vi"
   }
   ```
-- **Max Batch Size**: 50 texts per request.
+- **Max Batch Size**: 80 texts per request (optimized for Workers Paid).
+- **Rate Limiting**: Tiered hourly quota based on subscription (anonymous: 3,000, free: 8,000, pro: 35,000, premium: 100,000 texts/hr).
 - **Process & KV Quota Preservation (Rule 2)**:
   - Deduplicates texts before rate-limit unit deduction.
   - Checks warm worker isolate in-memory LRU phrase cache (`memPhraseCache`) for common subtitle phrases (e.g. greetings, common responses) to eliminate redundant network calls.
   - Checks warm isolate batch cache (`memBatchCache`) and existing KV entries before requesting external translation.
   - Translates missing items in bulk using XML-tagged index batching (`<t id="N">...</t>`) via Lingva/GTX with targeted individual recovery for any missing tags (avoiding 35x sequential fallback loops). Returns `null` on failed items instead of echoing back untranslated source text.
-  - **Zero KV Writes on Intermediate Slices**: Caches translated batches in isolate memory (`memBatchCache`). Full dual subtitles are permanently stored in Cloudflare R2 via `/api/dual-subtitles` write-back once $\ge 80\%$ translated, completely eliminating redundant KV write consumption on 50-cue chunks.
+  - **Zero KV Writes on Intermediate Slices**: Caches translated batches in isolate memory (`memBatchCache`). Full dual subtitles are permanently stored in Cloudflare R2 via `/api/dual-subtitles` write-back once $\ge 80\%$ translated, completely eliminating redundant KV write consumption on chunks.
 
 ---
 
 ### 3.6. Tokenization Endpoints
 - **Routes**:
   - `POST /api/tokenize/:lang` (Single text block)
-  - `POST /api/tokenize-batch/:lang` (Array of up to 100 texts for bulk subtitle tokenization under 10ms CPU)
+  - `POST /api/tokenize-batch/:lang` (Array of up to 800 texts for bulk subtitle tokenization under 10ms CPU)
 - **Source**: `functions-src/api/tokenize/[lang].js`, `functions-src/api/tokenize-batch/[lang].js`
 - **Dual-Layer Cache Architecture**:
-  - In-memory warm isolate cache (`memTokenBatchCache`, up to 50 videos) resolves repeated requests in $<0.1$ms (`X-Cache: HIT-MEM`).
+  - In-memory warm isolate cache (`memTokenBatchCache`, up to 100 videos) resolves repeated requests in $<0.1$ms (`X-Cache: HIT-MEM`).
   - Cloudflare KV (`tokens:v5:{lang}:{videoId}:{textsHash}`) provides edge persistence across isolates.
   - Cache hits consume **0 rate limit quota** and return with `X-Cache: HIT`.
 - **Caching**: 30-day TTL in Cloudflare KV.
 - **Rate Limiting (Cache Miss Only)**:
-  - Anonymous: 50 req/hr
-  - Free (Signed-in): 100 req/hr
-  - Pro/Premium: 1,000 req/hr
-- **Frontend Integration**: `SubtitleService` tokenizes all cues up front on video load (1 request per video for up to 500 cues), passes the PocketBase bearer token, and activates an automatic client-side circuit breaker upon receiving HTTP 429. Zero network requests occur during video playback.
+  - Anonymous: 60 req/hr
+  - Free (Signed-in): 150 req/hr
+  - Pro: 1,500 req/hr
+  - Premium: 2,000 req/hr
+- **Frontend Integration**: `SubtitleService` tokenizes all cues up front on video load (1 request per video for up to 800 cues), passes the PocketBase bearer token, and activates an automatic client-side circuit breaker upon receiving HTTP 429. Zero network requests occur during video playback.
 
 ---
 
@@ -276,15 +280,17 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 ---
 
 ### 3.9. Recommended Videos API (Verified Database Transcripts)
-- **Route**: `GET /api/recommended-videos?lang={lang}&tier={tier}&limit={limit}`
+- **Route**: `GET /api/recommended-videos?lang={lang}&tier={tier}&limit={limit}&offset={offset}`
 - **Source**: `functions-src/api/recommended-videos.js`
 - **Query Parameters**:
   - `lang`: Target learning language (`ja`, `ko`, `zh`, `en`, defaults to `ja`).
   - `tier`: Optional proficiency tier (`beginner`, `elementary`, `intermediate`, `upper_intermediate`, `advanced`).
   - `limit`: Maximum items to return (1-50, default `12`).
+  - `offset`: Optional pagination offset (default `0`) for infinite scrolling feeds.
   - `refresh`: Optional boolean (`true`). When enabled, bypasses memory and CDN caches, forces `Cache-Control: no-cache, no-store, must-revalidate`, and applies Fisher-Yates uniform candidate shuffling for fresh video discovery.
 - **Database & Cloudflare Storage Discovery**:
   - Queries Cloudflare D1 `video_languages` table for pre-processed transcripts (`available_languages LIKE '%"lang"%' OR available_languages LIKE '%lang%'`).
+  - Supports `offset` pagination directly against D1 candidates (`LIMIT ? OFFSET ?`), enabling seamless infinite scroll without duplicate entries.
   - When `tier` is requested or `refresh=true` is passed, queries a larger candidate pool from D1, performs uniform Fisher-Yates candidate shuffling, and filters rows matching the target tier (`labelToTier`).
   - Fallback queries D1 `transcripts` (with `LEFT JOIN video_languages`) and `video_meta` tables with support for regional language subtags (e.g. `ja-JP`, `zh-CN`, `ko-KR`, `en-US`).
   - Scans Cloudflare R2 bucket (`TRANSCRIPT_STORAGE`) for stored transcript objects (`transcripts/{videoId}/{lang}.json` and `transcripts/{videoId}/{lang}-*.json`).
@@ -292,7 +298,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Ordered by `updated_at DESC`.
   - Automatic metadata enrichment: Any discovered video missing a title is enriched via YouTube oEmbed (`getVideoMetadata`) and cached in D1.
 - **Caching & Authenticity**:
-  - Warm Worker isolate in-memory caching (`memCache`, 15-minute TTL, keyed by `${lang}_${tier || 'all'}_${limit}`).
+  - Warm Worker isolate in-memory caching (`memCache`, 15-minute TTL, keyed by `${lang}_${tier || 'all'}_${limit}_${offset}`).
   - HTTP Edge CDN caching header: `Cache-Control: public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400` on normal hits; `no-cache, no-store, must-revalidate` when `refresh=true`.
   - Zero Cloudflare KV write cost, strictly preserving free-tier limits.
   - Authentic Content: Serves strictly verified transcribed videos directly from Cloudflare storage (`source: "cloudflare"` or `"cloudflare:refresh"`) with no artificial mock data.
@@ -302,6 +308,8 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
     "success": true,
     "language": "ja",
     "count": 12,
+    "offset": 0,
+    "hasMore": true,
     "videos": [
       {
         "videoId": "BZRT37f8zZY",
@@ -349,13 +357,16 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ### 3.12. Video Level Classification API
 - **Routes**:
-  - `POST /api/video-level`: Store and update computed difficulty level for a video (`videoId`, `language`, `level`).
-  - `GET /api/video-info`: Now includes `levels: Record<string, string>` map (e.g. `{"ja": "JLPT N4", "en": "CEFR B1"}`) with fast-path metadata regex detection.
+  - `POST /api/video-level`: Store and update computed difficulty level for a video (`videoId`, `language`, `level`, `confidence`, `method`).
+  - `GET /api/video-info`: Includes `levels: Record<string, string>` map (e.g. `{"ja": "JLPT N4", "en": "CEFR B1"}`) with fast-path metadata regex detection across native learning keywords (`初級`, `中級`, `上級`, `초급`, `중급`, `고급`, `初级`, `高级`, `Beginner`, `Intermediate`, `Advanced`).
 - **Source**: `functions-src/api/video-level.js`, `functions-src/data/video-info-db.js`
-- **Security & Rate Limiting**: Max 60 requests/hour per IP, strict input sanitization (`VALID_LEVEL_REGEX` supporting JLPT N1-N5, HSK 1-6, TOPIK 1-6, CEFR A1-C2).
+- **Security & Integrity Protection**:
+  - Rate limiting: Max 60 requests/hour per IP, strict input sanitization (`VALID_LEVEL_REGEX`).
+  - Confidence threshold: Client submissions must have `confidence >= 0.65` to be persisted.
+  - Non-destructive updates: Submissions cannot overwrite an existing verified level if the existing level has higher confidence.
 - **Storage Strategy**:
-  - Persisted to Cloudflare D1 `video_languages.levels` column as a JSON map.
-  - Cached in Cloudflare KV `video-info:{videoId}` (24-hour TTL) alongside title and duration.
+  - Persisted strictly to Cloudflare D1 `video_languages.levels` column as a JSON map (Zero KV writes - Rule 2).
+  - Normalizes return objects so clients always receive clean language-to-level string mappings (`{ ja: "JLPT N4" }`).
 
 ---
 

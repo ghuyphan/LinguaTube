@@ -33,18 +33,23 @@ export async function onRequestGet(context) {
     const limitParam = parseInt(url.searchParams.get('limit'), 10);
     const limit = Math.min(Math.max(isNaN(limitParam) ? 12 : limitParam, 1), 50);
 
+    const offsetParam = parseInt(url.searchParams.get('offset'), 10);
+    const offset = Math.max(isNaN(offsetParam) ? 0 : offsetParam, 0);
+
     const isRefresh = url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
-    const cacheKey = `${lang}_${tier || 'all'}_${limit}`;
+    const cacheKey = `${lang}_${tier || 'all'}_${limit}_${offset}`;
 
     // 1. Fast in-memory cache check (warm isolate) - bypassed when user forces reload
     if (!isRefresh) {
         const cached = memCache.get(cacheKey);
-        if (cached && cached.videos?.length > 0 && (Date.now() - cached.timestamp < MEM_CACHE_TTL_MS)) {
+        if (cached && cached.videos && (Date.now() - cached.timestamp < MEM_CACHE_TTL_MS)) {
             return jsonResponse({
                 success: true,
                 language: lang,
                 tier: tier || undefined,
                 count: cached.videos.length,
+                offset,
+                hasMore: cached.hasMore ?? (cached.videos.length >= limit),
                 videos: cached.videos,
                 source: 'cache:memory'
             }, 200, {
@@ -57,12 +62,14 @@ export async function onRequestGet(context) {
     // 2. Query Cloudflare (D1 database + R2 storage) with candidate shuffling on refresh
     const db = env?.VOCAB_DB;
     const r2 = env?.TRANSCRIPT_STORAGE;
-    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier, isRefresh);
+    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier, isRefresh, offset);
+    const hasMore = videos.length >= limit;
 
     // Save to isolate memory cache only if non-empty
     if (videos.length > 0) {
         memCache.set(cacheKey, {
             videos,
+            hasMore,
             timestamp: Date.now()
         });
     }
@@ -72,6 +79,8 @@ export async function onRequestGet(context) {
         language: lang,
         tier: tier || undefined,
         count: videos.length,
+        offset,
+        hasMore,
         videos,
         source: isRefresh ? 'cloudflare:refresh' : 'cloudflare'
     }, 200, {

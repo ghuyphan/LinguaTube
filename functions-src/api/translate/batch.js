@@ -15,15 +15,15 @@ import {
 import { translateBatch } from '../../providers/lingva.js';
 import { validateAuthToken, getUserTier } from '../../middlewares/auth.js';
 
-const MAX_BATCH_SIZE = 50;
+const MAX_BATCH_SIZE = 80;
 
-// Rate limit by texts translated. Increased limits to support lazy subtitle loading.
+// Rate limit by texts translated. Generous limits with Workers Paid CPU headroom.
 // Average video = 200-500 lines.
-// Anonymous: ~1 short video
-// Free: ~3-4 videos
-// Pro: Heavy usage
+// Anonymous: ~1-2 short videos
+// Free: ~5-8 videos
+// Pro / Premium: Heavy study usage
 const RATE_LIMIT_CONFIG = {
-    max: { anonymous: 2000, free: 5000, pro: 25000, premium: 100000 },
+    max: { anonymous: 3000, free: 8000, pro: 35000, premium: 100000 },
     windowSeconds: 3600,
     keyPrefix: 'translate-texts'
 };

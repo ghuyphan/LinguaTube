@@ -25,15 +25,15 @@ import { tokenize } from '../../utils/tokenizer.js';
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 // Tiered rate limiting - anonymous: 50/hr, free: 100/hr, premium: 1000/hr (effectively unlimited)
 const RATE_LIMIT_CONFIG = {
-    max: { anonymous: 50, free: 100, pro: 1000, premium: 1000 },
+    max: { anonymous: 60, free: 150, pro: 1500, premium: 2000 },
     windowSeconds: 3600,
     keyPrefix: 'tokenize'
 };
-const MAX_BATCH_SIZE = 500;
+const MAX_BATCH_SIZE = 800;
 
 // In-memory token batch cache across warm Worker isolates (Rule 2: In-Memory First)
 const memTokenBatchCache = new Map();
-const MAX_MEM_BATCH_VIDEOS = 50;
+const MAX_MEM_BATCH_VIDEOS = 100;
 
 /**
  * Simple hash function for cache key differentiation

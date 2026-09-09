@@ -434,7 +434,7 @@ Tokenizes a single text string into words, furigana readings, and romanization.
 ---
 
 #### `POST /api/tokenize-batch/:lang`
-Batch tokenizes an array of subtitle lines in a single network request.
+Batch tokenizes an array of up to 800 subtitle lines in a single network request.
 
 - **Production URL:** `https://lingua-tube.pages.dev/api/tokenize-batch/{lang}`
 - **Local Dev URL:** `http://localhost:3001/api/tokenize-batch/{lang}`
@@ -468,7 +468,7 @@ Batch tokenizes an array of subtitle lines in a single network request.
 ---
 
 #### `POST /api/translate/batch`
-Translates up to 50 text items concurrently with server-side caching.
+Translates up to 80 text items concurrently with server-side caching.
 
 - **Production URL:** `https://lingua-tube.pages.dev/api/translate/batch`
 - **Local Dev URL:** `http://localhost:3001/api/translate/batch`

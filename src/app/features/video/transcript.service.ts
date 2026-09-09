@@ -514,10 +514,10 @@ export class TranscriptService {
 
     // Handle processing state (AI job still running)
     if (response.status === 'processing' && response.resultUrl) {
-      log('AI processing, polling in 4s...');
+      log('AI processing, polling in 2s...');
       this.state.set({ status: 'generating_ai', resultUrl: response.resultUrl });
 
-      return timer(4000).pipe(
+      return timer(2000).pipe(
         takeUntil(this.cancelSubject),
         switchMap(() => this.generateWithAI(videoId, lang, response.resultUrl))
       );

@@ -7,110 +7,123 @@
                 <div class="panel-header__left">
                     <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
                     <h2 class="panel-header__title">{{ i18n.t('study.title') }}</h2>
-                    <span class="badge badge--accent">
-                        <img [src]="currentLanguageFlag()" class="circle-flag circle-flag--sm" alt="" />
-                        <span>{{ currentLanguageLabel() }}</span>
-                    </span>
-                    @if (currentReadingDisplayLabel()) {
-                    <span class="badge badge--primary desktop-only">{{ currentReadingDisplayLabel() }}</span>
-                    }
                 </div>
-                @if (streak.currentStreak() > 0) {
-                <div class="panel-badges">
+                <div class="panel-header__actions">
+                    @if (streak.currentStreak() > 0) {
                     <span class="badge badge--warning">
                         <app-icon name="fire" [size]="12" />
                         <span>{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') }}</span>
                     </span>
+                    }
+                    <button type="button" 
+                            class="btn btn-icon btn-ghost header-settings-btn" 
+                            (click)="openOptionsSheet()" 
+                            [title]="i18n.t('study.studyOptions') || 'Study Options'">
+                        <app-icon name="settings" [size]="18" />
+                    </button>
                 </div>
-                }
             </div>
             <p class="panel-header__subtitle">{{ i18n.t('study.subtitle') }}</p>
-        </div>
-
-        <!-- Status Hero Banner -->
-        @if (dueToday() > 0) {
-        <div class="study-hero-banner study-hero-banner--due">
-            <div class="study-hero-banner__icon">
-                <app-icon name="clock" [size]="20" />
-            </div>
-            <div class="study-hero-banner__content">
-                <span class="study-hero-banner__title">{{ i18n.t('study.dueCardsNotice', { count: dueToday() }) }}</span>
-                <span class="study-hero-banner__sub">{{ i18n.t('study.cardsReady', { count: availableCards() }) }}</span>
-            </div>
-        </div>
-        } @else {
-        <div class="study-hero-banner study-hero-banner--caught-up">
-            <div class="study-hero-banner__icon">
-                <app-icon name="check-circle" [size]="20" />
-            </div>
-            <div class="study-hero-banner__content">
-                <span class="study-hero-banner__title">{{ i18n.t('study.allCaughtUp') }}</span>
-                <span class="study-hero-banner__sub">{{ i18n.t('study.cardsReady', { count: availableCards() }) }}</span>
-            </div>
-        </div>
-        }
-
-        <!-- Compact Daily Goal Progress Bar -->
-        <div class="study-goal-compact">
-            <div class="study-goal-compact__info">
-                <span class="study-goal-compact__label">
-                    <app-icon name="target" [size]="14" />
-                    {{ i18n.t('study.dailyGoal') }}
+            <div class="study-meta-tags">
+                <span class="badge badge--primary">{{ availableCards() }} {{ i18n.t('study.cards') }}</span>
+                <span class="badge badge--accent">
+                    <img [src]="currentLanguageFlag()" class="circle-flag circle-flag--sm" alt="" />
+                    <span>{{ currentLanguageLabel() }}</span>
                 </span>
-                <span class="study-goal-compact__count">{{ cardsCompletedToday() }}/{{ dailyGoal() }} {{ i18n.t('study.cards') }}</span>
-            </div>
-            <div class="study-goal-compact__bar">
-                <div class="study-goal-compact__fill" [style.width.%]="goalProgress()"></div>
-            </div>
-        </div>
-
-        <!-- Deck Category Filter Chips (Standard App Filter Chips) -->
-        <div class="study-deck-section">
-            <span class="study-section-label">{{ i18n.t('study.cardsToStudy') || 'Cards' }}</span>
-            <div class="study-deck-chips">
-                <button type="button" 
-                        class="filter-chip" 
-                        [class.active]="includeNew()" 
-                        (click)="toggleDeck('new')"
-                        [attr.aria-pressed]="includeNew()"
-                        [title]="i18n.t('study.includeNew')">
-                    <span class="level-dot new"></span>
-                    <span>{{ i18n.t('study.new') }}</span>
-                    <span class="chip-count">{{ deckStats().new }}</span>
-                </button>
-                <button type="button" 
-                        class="filter-chip" 
-                        [class.active]="includeLearning()" 
-                        (click)="toggleDeck('learning')"
-                        [attr.aria-pressed]="includeLearning()"
-                        [title]="i18n.t('study.includeLearning')">
-                    <span class="level-dot learning"></span>
-                    <span>{{ i18n.t('study.learning') }}</span>
-                    <span class="chip-count">{{ deckStats().learning }}</span>
-                </button>
-                <button type="button" 
-                        class="filter-chip" 
-                        [class.active]="includeKnown()" 
-                        (click)="toggleDeck('known')"
-                        [attr.aria-pressed]="includeKnown()"
-                        [title]="i18n.t('study.reviewKnown')">
-                    <span class="level-dot known"></span>
-                    <span>{{ i18n.t('study.known') }}</span>
-                    <span class="chip-count">{{ deckStats().known }}</span>
-                </button>
+                @if (currentReadingDisplayLabel()) {
+                <span class="badge badge--primary">{{ currentReadingDisplayLabel() }}</span>
+                }
             </div>
         </div>
 
-        <!-- Session Size Selector -->
+        <!-- Stat Badges (interactive toggles) -->
+        <div class="study-stats">
+            <button type="button" 
+                    class="stat-badge stat-badge--new" 
+                    [class.active]="includeNew()" 
+                    (click)="toggleDeck('new')"
+                    [attr.aria-pressed]="includeNew()"
+                    [title]="i18n.t('study.includeNew')">
+                <div class="stat-badge__top">
+                    <app-icon name="plus" [size]="14" class="stat-badge__icon" />
+                    <div class="stat-badge__check" [class.checked]="includeNew()">
+                        @if (includeNew()) {
+                            <app-icon name="check" [size]="10" />
+                        }
+                    </div>
+                </div>
+                <span class="stat-value">{{ deckStats().new }}</span>
+                <span class="stat-label">{{ i18n.t('study.new') }}</span>
+            </button>
+            <button type="button" 
+                    class="stat-badge stat-badge--learning" 
+                    [class.active]="includeLearning()" 
+                    (click)="toggleDeck('learning')"
+                    [attr.aria-pressed]="includeLearning()"
+                    [title]="i18n.t('study.includeLearning')">
+                <div class="stat-badge__top">
+                    <app-icon name="fire" [size]="14" class="stat-badge__icon" />
+                    <div class="stat-badge__check" [class.checked]="includeLearning()">
+                        @if (includeLearning()) {
+                            <app-icon name="check" [size]="10" />
+                        }
+                    </div>
+                </div>
+                <span class="stat-value">{{ deckStats().learning }}</span>
+                <span class="stat-label">{{ i18n.t('study.learning') }}</span>
+            </button>
+            <button type="button" 
+                    class="stat-badge stat-badge--known" 
+                    [class.active]="includeKnown()" 
+                    (click)="toggleDeck('known')"
+                    [attr.aria-pressed]="includeKnown()"
+                    [title]="i18n.t('study.reviewKnown')">
+                <div class="stat-badge__top">
+                    <app-icon name="check-circle" [size]="14" class="stat-badge__icon" />
+                    <div class="stat-badge__check" [class.checked]="includeKnown()">
+                        @if (includeKnown()) {
+                            <app-icon name="check" [size]="10" />
+                        }
+                    </div>
+                </div>
+                <span class="stat-value">{{ deckStats().known }}</span>
+                <span class="stat-label">{{ i18n.t('study.known') }}</span>
+            </button>
+        </div>
+
+        <!-- Unified Due Today & Daily Goal Progress Strip (mobile only - desktop shows in sidebar) -->
+        <div class="study-status-strip mobile-only">
+            <div class="status-strip-header">
+                <div class="status-strip-due">
+                    @if (dueToday() > 0) {
+                        <app-icon name="clock" [size]="14" />
+                        <span>{{ i18n.t('study.dueToday') }}: <strong>{{ dueToday() }}</strong></span>
+                    } @else {
+                        <app-icon name="check-circle" [size]="14" />
+                        <span>{{ i18n.t('study.allCaughtUp') || 'All caught up' }}</span>
+                    }
+                </div>
+                <div class="status-strip-goal">
+                    <span>{{ cardsCompletedToday() }}/{{ dailyGoal() }} {{ i18n.t('study.dailyGoal') }}</span>
+                </div>
+            </div>
+            <div class="status-strip-bar">
+                <div class="status-strip-fill" [style.width.%]="goalProgress()"></div>
+            </div>
+        </div>
+
+        <!-- Session Size Selector with options link -->
         <div class="study-size-section">
             <div class="study-size-header">
-                <span class="study-section-label">
-                    <app-icon name="layers" [size]="14" />
-                    {{ i18n.t('study.sessionSize') }}
-                </span>
-                <span class="study-size-estimate">
-                    {{ sessionCardCount() }} {{ i18n.t('study.cards') }} · {{ i18n.t('study.estimatedMinutes', { minutes: estimatedMinutes() }) }}
-                </span>
+                <div class="study-size-label">
+                    <app-icon name="layers" [size]="15" />
+                    <span>{{ i18n.t('study.sessionSize') }}</span>
+                    <span class="study-size-estimate">· {{ sessionCardCount() }} {{ i18n.t('study.cards') }} ({{ i18n.t('study.estimatedMinutes', { minutes: estimatedMinutes() }) }})</span>
+                </div>
+                <button type="button" class="study-options-trigger" (click)="openOptionsSheet()">
+                    <app-icon name="settings" [size]="13" />
+                    <span>{{ i18n.t('study.studyOptions') }}</span>
+                </button>
             </div>
             <div class="session-size-pills">
                 @for (size of [5, 10, 20]; track size) {
@@ -130,7 +143,7 @@
             </div>
         </div>
 
-        <!-- Primary Start CTA Button & Keyboard Hint -->
+        <!-- Start CTA & Empty State -->
         <div class="study-action">
             @if (availableCards() > 0) {
             <button class="btn btn-primary start-btn" (click)="startSession()">
@@ -151,82 +164,6 @@
                     <app-icon name="play" [size]="16" />
                     <span>{{ i18n.t('nav.watch') }}</span>
                 </a>
-            </div>
-            }
-        </div>
-
-        <!-- Collapsible Advanced Study Options -->
-        <div class="study-advanced-wrapper">
-            <button type="button"
-                    class="study-advanced-toggle"
-                    (click)="toggleAdvancedOptions()"
-                    [attr.aria-expanded]="showAdvancedOptions()">
-                <div class="study-advanced-toggle__left">
-                    <app-icon name="settings" [size]="15" />
-                    <span>{{ i18n.t('study.studyOptions') }}</span>
-                </div>
-                <app-icon [name]="showAdvancedOptions() ? 'chevron-up' : 'chevron-down'" [size]="16" />
-            </button>
-
-            @if (showAdvancedOptions()) {
-            <div class="study-options-card">
-                <!-- Due Only Toggle (when due cards exist) -->
-                @if (dueToday() > 0) {
-                <div class="study-option-row">
-                    <div class="study-option-info">
-                        <div class="study-option-icon study-option-icon--due">
-                            <app-icon name="clock" [size]="16" />
-                        </div>
-                        <div class="study-option-text">
-                            <span class="study-option-title">{{ i18n.t('study.dueOnly') || 'Review Due Only' }}</span>
-                            <span class="study-option-hint">{{ dueToday() }} {{ i18n.t('study.cards') }} {{ i18n.t('study.dueToday') }}</span>
-                        </div>
-                    </div>
-                    <app-switch [checked]="dueOnly()" (checkedChange)="dueOnly.set($event)" />
-                </div>
-                }
-
-                <!-- Reverse Mode Row -->
-                <div class="study-option-row">
-                    <div class="study-option-info">
-                        <div class="study-option-icon study-option-icon--reverse">
-                            <app-icon name="shuffle" [size]="16" />
-                        </div>
-                        <div class="study-option-text">
-                            <span class="study-option-title">{{ i18n.t('study.reverseMode') }}</span>
-                            <span class="study-option-hint">{{ i18n.t('study.meaningFirst') }}</span>
-                        </div>
-                    </div>
-                    <app-switch [checked]="reverseMode()" (checkedChange)="reverseMode.set($event)" />
-                </div>
-
-                <!-- Auto-play Audio Row -->
-                <div class="study-option-row">
-                    <div class="study-option-info">
-                        <div class="study-option-icon study-option-icon--audio">
-                            <app-icon name="volume-2" [size]="16" />
-                        </div>
-                        <div class="study-option-text">
-                            <span class="study-option-title">{{ i18n.t('study.autoPlayAudio') }}</span>
-                            <span class="study-option-hint">{{ i18n.t('study.autoPlayAudioHint') }}</span>
-                        </div>
-                    </div>
-                    <app-switch [checked]="autoPlayAudio()" (checkedChange)="setAutoPlayAudio($event)" />
-                </div>
-
-                <!-- Cloze Mode Row -->
-                <div class="study-option-row">
-                    <div class="study-option-info">
-                        <div class="study-option-icon study-option-icon--cloze">
-                            <app-icon name="type" [size]="16" />
-                        </div>
-                        <div class="study-option-text">
-                            <span class="study-option-title">{{ i18n.t('study.clozeMode') }}</span>
-                            <span class="study-option-hint">{{ i18n.t('study.clozeModeHint') }}</span>
-                        </div>
-                    </div>
-                    <app-switch [checked]="clozeMode()" (checkedChange)="setClozeMode($event)" />
-                </div>
             </div>
             }
         </div>
@@ -570,5 +507,81 @@
         </div>
     </div>
     }
+
+    <!-- Study Options Bottom Sheet -->
+    <app-bottom-sheet [isOpen]="isOptionsSheetOpen()" [title]="i18n.t('study.studyOptions') || 'Study Options'" [showCloseButton]="true" (closed)="closeOptionsSheet()">
+        <div class="study-options-modal">
+            <!-- Modal Header -->
+            <div class="study-options-modal__header">
+                <div class="study-options-modal__title-box">
+                    <app-icon name="settings" [size]="20" class="study-options-modal__icon" />
+                    <h2 class="study-options-modal__title">{{ i18n.t('study.studyOptions') || 'Study Options' }}</h2>
+                </div>
+            </div>
+
+            <!-- Modal Body & Card -->
+            <div class="study-options-modal__body">
+                <div class="study-options-modal__card">
+                    <!-- Due Only Toggle Row (when due cards exist) -->
+                    @if (dueToday() > 0) {
+                    <div class="study-sheet-row">
+                        <div class="study-sheet-info">
+                            <div class="study-sheet-icon study-sheet-icon--due">
+                                <app-icon name="clock" [size]="16" />
+                            </div>
+                            <div class="study-sheet-text">
+                                <span class="study-sheet-title">{{ i18n.t('study.dueOnly') || 'Review Due Only' }}</span>
+                                <span class="study-sheet-hint">{{ dueToday() }} {{ i18n.t('study.cards') }} {{ i18n.t('study.dueToday') }}</span>
+                            </div>
+                        </div>
+                        <app-switch [checked]="dueOnly()" [label]="i18n.t('study.dueOnly') || 'Review Due Only'" (checkedChange)="dueOnly.set($event)" />
+                    </div>
+                    }
+
+                    <!-- Reverse Mode Row -->
+                    <div class="study-sheet-row">
+                        <div class="study-sheet-info">
+                            <div class="study-sheet-icon study-sheet-icon--reverse">
+                                <app-icon name="shuffle" [size]="16" />
+                            </div>
+                            <div class="study-sheet-text">
+                                <span class="study-sheet-title">{{ i18n.t('study.reverseMode') }}</span>
+                                <span class="study-sheet-hint">{{ i18n.t('study.meaningFirst') }}</span>
+                            </div>
+                        </div>
+                        <app-switch [checked]="reverseMode()" [label]="i18n.t('study.reverseMode')" (checkedChange)="reverseMode.set($event)" />
+                    </div>
+
+                    <!-- Auto-play Audio Row -->
+                    <div class="study-sheet-row">
+                        <div class="study-sheet-info">
+                            <div class="study-sheet-icon study-sheet-icon--audio">
+                                <app-icon name="volume-2" [size]="16" />
+                            </div>
+                            <div class="study-sheet-text">
+                                <span class="study-sheet-title">{{ i18n.t('study.autoPlayAudio') }}</span>
+                                <span class="study-sheet-hint">{{ i18n.t('study.autoPlayAudioHint') }}</span>
+                            </div>
+                        </div>
+                        <app-switch [checked]="autoPlayAudio()" [label]="i18n.t('study.autoPlayAudio')" (checkedChange)="setAutoPlayAudio($event)" />
+                    </div>
+
+                    <!-- Cloze Mode Row -->
+                    <div class="study-sheet-row">
+                        <div class="study-sheet-info">
+                            <div class="study-sheet-icon study-sheet-icon--cloze">
+                                <app-icon name="type" [size]="16" />
+                            </div>
+                            <div class="study-sheet-text">
+                                <span class="study-sheet-title">{{ i18n.t('study.clozeMode') }}</span>
+                                <span class="study-sheet-hint">{{ i18n.t('study.clozeModeHint') }}</span>
+                            </div>
+                        </div>
+                        <app-switch [checked]="clozeMode()" [label]="i18n.t('study.clozeMode')" (checkedChange)="setClozeMode($event)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </app-bottom-sheet>
 
 </div>

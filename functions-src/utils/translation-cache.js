@@ -143,19 +143,57 @@ export async function getTranslation(bucket, videoId, srcLang, tgtLang) {
  * @param {string} source - Translation provider (default: lingva)
  */
 export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segments, quality = 100, source = 'lingva') {
-    if (!bucket || !videoId || !segments?.length) return;
+    if (!bucket || !videoId || !segments?.length) return null;
 
     const key = `translations/${videoId}/${srcLang}-${tgtLang}.json`;
     const now = Date.now();
 
     try {
+        let finalSegments = segments;
+
+        // Merge incoming translations with existing cached segments if present
+        try {
+            const existingObject = await bucket.get(key);
+            if (existingObject) {
+                const existingData = await existingObject.json();
+                if (Array.isArray(existingData?.segments) && existingData.segments.length > 0) {
+                    const existingMap = new Map();
+                    existingData.segments.forEach((seg, idx) => {
+                        const tr = seg?.translation && typeof seg.translation === 'string' ? seg.translation.trim() : '';
+                        if (tr) {
+                            const timeKey = typeof seg.start === 'number' ? seg.start.toFixed(1) : `idx:${idx}`;
+                            existingMap.set(timeKey, tr);
+                        }
+                    });
+
+                    finalSegments = segments.map((seg, idx) => {
+                        const incomingTr = seg?.translation && typeof seg.translation === 'string' ? seg.translation.trim() : '';
+                        if (incomingTr) {
+                            return { ...seg, translation: incomingTr };
+                        }
+                        const timeKey = typeof seg?.start === 'number' ? seg.start.toFixed(1) : `idx:${idx}`;
+                        const existingTr = existingMap.get(timeKey) || (existingData.segments[idx]?.translation ? existingData.segments[idx].translation.trim() : '');
+                        return {
+                            ...seg,
+                            translation: existingTr || null
+                        };
+                    });
+                }
+            }
+        } catch (mergeErr) {
+            log('Merge error (using incoming segments):', mergeErr?.message);
+        }
+
+        const validCount = finalSegments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim() && (srcLang === tgtLang || s.translation.trim() !== (s.text || '').trim())).length;
+        const computedQuality = finalSegments.length > 0 ? Math.round((validCount / finalSegments.length) * 100) : quality;
+
         const data = {
             videoId,
             sourceLang: srcLang,
             targetLang: tgtLang,
-            segments,
+            segments: finalSegments,
             source,
-            quality,
+            quality: computedQuality,
             timestamp: now
         };
 
@@ -165,17 +203,27 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
             },
             customMetadata: {
                 source,
-                segmentCount: String(segments.length),
+                segmentCount: String(finalSegments.length),
+                translatedCount: String(validCount),
                 timestamp: String(now),
                 expiresAt: String(now + CACHE_MAX_AGE_MS),
                 version: CACHE_VERSION
             }
         });
 
-        log('Cache save success:', key, `(${segments.length} segments, ${quality}% quality)`);
+        log('Cache save success:', key, `(${finalSegments.length} segments, ${computedQuality}% quality, ${validCount} translated)`);
+
+        return {
+            segments: finalSegments,
+            quality: computedQuality,
+            validCount,
+            totalCount: finalSegments.length
+        };
 
     } catch (err) {
         console.error('[R2 Translations] Write error:', err.message);
+        return null;
     }
 }
+
 

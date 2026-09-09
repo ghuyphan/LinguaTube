@@ -1,66 +1,60 @@
-<div class="onboarding" [class.exiting]="isExiting()" (click)="dismissPopup()">
-    <!-- Step 0: UI Language Selection -->
-    @if (step() === 0) {
-    <div class="step-card fade-in">
-        <div class="step-header">
-            <div class="logo-badge">
-                <app-icon name="languages" [size]="28" />
-            </div>
-            <h1 class="title">{{ i18n.t('onboarding.uiLanguageTitle') }}</h1>
-            <p class="subtitle">{{ i18n.t('onboarding.uiLanguageSubtitle') }}</p>
+<div class="onboarding-dialog">
+    <!-- Header / Hero Section -->
+    <div class="header-section">
+        <div class="onboarding-hero-icon">
+            <app-icon name="sparkles" [size]="28" class="hero-sparkle" />
         </div>
-
-        <div class="language-grid">
-            @for (lang of uiLanguages; track lang.code) {
-            <button class="language-card" [class.selected]="selectedUILang() === lang.code"
-                (click)="selectUILanguage(lang.code); $event.stopPropagation()">
-                <div class="flag-wrapper">
-                    <img [src]="lang.flag" [alt]="lang.name" class="flag" />
-                    @if (selectedUILang() === lang.code) {
-                    <div class="check-badge">
-                        <app-icon name="check" [size]="12" />
-                    </div>
-                    }
-                </div>
-                <div class="lang-info">
-                    <span class="lang-name">{{ lang.name }}</span>
-                    <span class="lang-native">{{ lang.nativeName }}</span>
-                </div>
-            </button>
-            }
+        <div class="title-group">
+            <h2 class="title">{{ i18n.t('onboarding.welcomeTitle') }}</h2>
+            <p class="subtitle">{{ i18n.t('onboarding.welcomeSubtitle') }}</p>
         </div>
-
-        <button class="btn btn-primary action-btn" (click)="nextStep(); $event.stopPropagation()">
-            <span>{{ i18n.t('onboarding.getStarted') }}</span>
-            <app-icon name="arrow-right" [size]="18" />
-        </button>
     </div>
-    }
 
-    <!-- Step 1: Learning Language & Interactive Demo -->
-    @if (step() === 1) {
-    <div class="step-card fade-in-up">
-        <button class="back-btn" (click)="previousStep(); $event.stopPropagation()" aria-label="Go back">
-            <app-icon name="chevron-left" [size]="20" />
-        </button>
-
-        <div class="step-header">
-            <div class="logo-badge">
-                <app-icon name="sparkles" [size]="28" />
+    <!-- Feature Highlights Card -->
+    <div class="features-card">
+        <div class="feature-item">
+            <div class="feature-icon feature-icon--subtitles">
+                <app-icon name="languages" [size]="15" />
             </div>
-            <h1 class="title">{{ i18n.t('onboarding.learningLanguageTitle') }}</h1>
-            <p class="subtitle">{{ i18n.t('onboarding.learningLanguageSubtitle') }}</p>
+            <div class="feature-text">
+                <span>{{ i18n.t('onboarding.features.subtitles') }}</span>
+            </div>
         </div>
+        <div class="feature-item">
+            <div class="feature-icon feature-icon--dict">
+                <app-icon name="book-open" [size]="15" />
+            </div>
+            <div class="feature-text">
+                <span>{{ i18n.t('onboarding.features.dict') }}</span>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon feature-icon--srs">
+                <app-icon name="sparkles" [size]="15" />
+            </div>
+            <div class="feature-text">
+                <span>{{ i18n.t('onboarding.features.srs') }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Target Language Selection -->
+    <div class="section-block">
+        <span class="section-label">{{ i18n.t('onboarding.learningLanguageTitle') }}</span>
 
         <div class="language-grid">
             @for (lang of learningLanguages; track lang.code) {
-            <button class="language-card" [class.selected]="selectedLang() === lang.code"
-                (click)="selectLanguage(lang.code); $event.stopPropagation()">
+            <button
+                type="button"
+                class="language-card"
+                [class.selected]="selectedLang() === lang.code"
+                (click)="selectLanguage(lang.code)"
+            >
                 <div class="flag-wrapper">
                     <img [src]="lang.flag" [alt]="lang.name" class="flag" />
                     @if (selectedLang() === lang.code) {
                     <div class="check-badge">
-                        <app-icon name="check" [size]="12" />
+                        <app-icon name="check" [size]="10" />
                     </div>
                     }
                 </div>
@@ -71,46 +65,25 @@
             </button>
             }
         </div>
+    </div>
 
-        <!-- Interactive Demo Section -->
-        @if (selectedLang()) {
-        <div class="demo-container fade-in-up">
-            <span class="demo-hint">{{ i18n.t('onboarding.tapToTry') }}</span>
-
-            <div class="demo-display">
-                <div class="demo-sentence" [ngClass]="'text-' + selectedLang()">
-                    @for (word of demoSentences[selectedLang()!]; track $index) {
-                    <div class="demo-word-container">
-                        <span class="demo-word" [class.demo-word--highlight]="word.highlight"
-                            [class.demo-word--active]="selectedWord() === word"
-                            (click)="onDemoWordClick(word, $event)">
-                            {{ word.surface }}
-                        </span>
-
-                        <!-- Mini Popup -->
-                        @if (selectedWord() === word) {
-                        <div class="demo-popup">
-                            <div class="popup-content">
-                                @if (word.reading) {
-                                <span class="popup-reading">{{ word.reading }}</span>
-                                }
-                                <span class="popup-meaning">{{ i18n.t(word.meaning) }}</span>
-                            </div>
-                            <div class="popup-arrow"></div>
-                        </div>
-                        }
-                    </div>
-                    }
-                </div>
-            </div>
-        </div>
-        }
-
-        <button class="btn btn-primary action-btn" [disabled]="!selectedLang()"
-            (click)="startLearning(); $event.stopPropagation()">
+    <!-- Primary & Ghost Actions -->
+    <div class="action-group">
+        <button
+            type="button"
+            class="btn btn-primary btn-full onboarding-start-btn"
+            (click)="startLearning()"
+        >
             <span>{{ i18n.t('onboarding.startLearning') }}</span>
             <app-icon name="arrow-right" [size]="18" />
         </button>
+
+        <button
+            type="button"
+            class="btn btn-ghost btn-full skip-btn"
+            (click)="skip()"
+        >
+            {{ i18n.t('onboarding.skip') }}
+        </button>
     </div>
-    }
 </div>

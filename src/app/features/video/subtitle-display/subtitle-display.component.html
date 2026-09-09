@@ -24,11 +24,8 @@
                 <div class="subtitle-text" [ngClass]="'text-' + effectiveLanguage()"
                     [class.is-looping]="isLoopEnabled()">
                     @if (viewTokens().length === 0) {
-                    <!-- Shimmer skeleton while tokens load -->
-                    <span class="token-loading">
-                        @for (i of [1,2,3,4,5]; track $index) {
-                        <span class="token-shimmer"></span>
-                        }
+                    <span class="subtitle-content">
+                        <span class="word word--static">{{ cue.text }}</span>
                     </span>
                     } @else {
                     <span class="subtitle-content" @subtitleFade>

@@ -883,6 +883,26 @@ app.get('/api/video-info', async (req, res) => {
 });
 
 /**
+ * POST /api/video-level
+ * Dev handler for saving video difficulty levels
+ */
+app.post('/api/video-level', (req, res) => {
+    const { videoId, language, level, confidence, method } = req.body || {};
+    if (!videoId || !language || !level) {
+        return res.status(400).json({ error: 'Missing required fields' });
+    }
+    res.json({
+        success: true,
+        videoId,
+        language,
+        level,
+        confidence: confidence ?? 0.8,
+        method: method ?? 'linguistics',
+        levels: { [language]: level }
+    });
+});
+
+/**
  * Realistic seed videos for dev environment when transcripts_cache is sparse
  */
 const DEV_SEED_VIDEOS = {
@@ -895,6 +915,14 @@ const DEV_SEED_VIDEOS = {
         { videoId: 'k2qgadSvNyU', title: 'Japanese News Podcast - Natural Speed', channel: 'NHK Easy Study', duration: 320, level: 'JLPT N2', tier: 'upper_intermediate' },
         { videoId: 'CevxZvSJLk8', title: 'Advanced Japanese Debate & Nuances', channel: 'Advanced Nihongo', duration: 410, level: 'JLPT N1', tier: 'advanced' },
         { videoId: 'OPf0YbXqDm0', title: 'Casual Tokyo VLOG: Exploring Shibuya', channel: 'Tokyo Life', duration: 290, level: 'JLPT N4', tier: 'elementary' },
+        { videoId: 'ja_demo_009', title: 'Ordering Ramen Like a Local in Shinjuku', channel: 'Foodie Nihon', duration: 315, level: 'JLPT N5', tier: 'beginner' },
+        { videoId: 'ja_demo_010', title: 'JLPT N3 Reading Comprehension - Folk Tales', channel: 'Nihongo Storytime', duration: 410, level: 'JLPT N3', tier: 'intermediate' },
+        { videoId: 'ja_demo_011', title: 'Japanese Job Interview Etiquette & Honorifics', channel: 'Business Keigo Pro', duration: 480, level: 'JLPT N2', tier: 'upper_intermediate' },
+        { videoId: 'ja_demo_012', title: 'Anime Dialogue Breakdown: Slang vs Formal', channel: 'Otaku Japanese', duration: 350, level: 'JLPT N4', tier: 'elementary' },
+        { videoId: 'ja_demo_013', title: 'Kanji Radicals Explained in 10 Minutes', channel: 'Kanji Master', duration: 275, level: 'JLPT N5', tier: 'beginner' },
+        { videoId: 'ja_demo_014', title: 'Kyoto Cultural Walk & Traditional Japanese', channel: 'Kyoto Travel', duration: 395, level: 'JLPT N3', tier: 'intermediate' },
+        { videoId: 'ja_demo_015', title: 'Deep Discussion: Japanese Work Culture', channel: 'Insight Tokyo', duration: 520, level: 'JLPT N1', tier: 'advanced' },
+        { videoId: 'ja_demo_016', title: 'Common Japanese Mistakes Even N3 Students Make', channel: 'Sensei Tips', duration: 330, level: 'JLPT N3', tier: 'intermediate' }
     ],
     zh: [
         { videoId: 'zh_demo_001', title: 'Daily Chinese Speaking for Beginners (HSK 1)', channel: 'Mandarin Corner', duration: 220, level: 'HSK 1', tier: 'beginner' },
@@ -903,6 +931,12 @@ const DEV_SEED_VIDEOS = {
         { videoId: 'zh_demo_004', title: 'Chinese Idioms and Cultural Stories (HSK 4)', channel: 'Mandarin Blueprint', duration: 420, level: 'HSK 4', tier: 'upper_intermediate' },
         { videoId: 'zh_demo_005', title: 'Business Chinese & Formal Discussion (HSK 5)', channel: 'CCTV News Mandarin', duration: 510, level: 'HSK 5', tier: 'advanced' },
         { videoId: 'zh_demo_006', title: 'Supermarket Shopping in Shanghai (HSK 2)', channel: 'Everyday Chinese', duration: 275, level: 'HSK 2', tier: 'elementary' },
+        { videoId: 'zh_demo_007', title: 'Mandarin Tones Simplified with Visuals', channel: 'Pinyin Academy', duration: 245, level: 'HSK 1', tier: 'beginner' },
+        { videoId: 'zh_demo_008', title: 'Chinese Food Vocabulary: Hotpot Edition', channel: 'Tasty Mandarin', duration: 335, level: 'HSK 2', tier: 'elementary' },
+        { videoId: 'zh_demo_009', title: 'Beijing Hutong Walking Tour - Slow Speed', channel: 'Beijing Vlogs', duration: 410, level: 'HSK 3', tier: 'intermediate' },
+        { videoId: 'zh_demo_010', title: 'Chinese Tech Trends & Modern Slang', channel: 'Digital China', duration: 460, level: 'HSK 4', tier: 'upper_intermediate' },
+        { videoId: 'zh_demo_011', title: 'Classical Chinese Poetry for Learners', channel: 'Poetry Circle', duration: 520, level: 'HSK 5', tier: 'advanced' },
+        { videoId: 'zh_demo_012', title: 'HSK 3 Listening Mock Exam Breakdown', channel: 'Test Prep Hub', duration: 390, level: 'HSK 3', tier: 'intermediate' }
     ],
     ko: [
         { videoId: 'ko_demo_001', title: 'Korean Hangul & Basic Greetings (TOPIK 1)', channel: 'Talk To Me In Korean', duration: 240, level: 'TOPIK 1', tier: 'beginner' },
@@ -911,6 +945,12 @@ const DEV_SEED_VIDEOS = {
         { videoId: 'ko_demo_004', title: 'Korean News Listening for Intermediate (TOPIK 4)', channel: 'KBS Easy Korean', duration: 450, level: 'TOPIK 4', tier: 'upper_intermediate' },
         { videoId: 'ko_demo_005', title: 'Advanced Korean Essay & Idiom Guide (TOPIK 5)', channel: 'Advanced Hangul', duration: 540, level: 'TOPIK 5', tier: 'advanced' },
         { videoId: 'ko_demo_006', title: 'Ordering Street Food in Seoul (TOPIK 1)', channel: 'Korean Englishman', duration: 295, level: 'TOPIK 1', tier: 'beginner' },
+        { videoId: 'ko_demo_007', title: 'Must-Know Korean Particle Rules (TOPIK 2)', channel: 'Grammar K', duration: 310, level: 'TOPIK 2', tier: 'elementary' },
+        { videoId: 'ko_demo_008', title: 'K-Pop Lyrics Breakdown: Catchy Phrases', channel: 'Hallyu Learn', duration: 360, level: 'TOPIK 2', tier: 'elementary' },
+        { videoId: 'ko_demo_009', title: 'Hongdae Cafe Hopping & Natural Chit-Chat', channel: 'Seoul Daily', duration: 420, level: 'TOPIK 3', tier: 'intermediate' },
+        { videoId: 'ko_demo_010', title: 'Korean Honorifics vs Casual Speech Guide', channel: 'Polite Korean', duration: 380, level: 'TOPIK 3', tier: 'intermediate' },
+        { videoId: 'ko_demo_011', title: 'Modern Korean Slang (Inssa Terms 2026)', channel: 'Trendy K', duration: 440, level: 'TOPIK 4', tier: 'upper_intermediate' },
+        { videoId: 'ko_demo_012', title: 'TOPIK 2 Reading Speed Training', channel: 'Exam Pass Korea', duration: 490, level: 'TOPIK 2', tier: 'elementary' }
     ],
     en: [
         { videoId: 'en_demo_001', title: 'Basic English Conversation for Beginners (A1)', channel: 'BBC Learning English', duration: 210, level: 'CEFR A1', tier: 'beginner' },
@@ -919,6 +959,12 @@ const DEV_SEED_VIDEOS = {
         { videoId: 'en_demo_004', title: 'Academic & Professional English Vocabulary (C1)', channel: 'Oxford Online English', duration: 480, level: 'CEFR C1', tier: 'upper_intermediate' },
         { videoId: 'en_demo_005', title: 'Mastering English Nuances & Idioms (C2)', channel: 'English with Lucy', duration: 360, level: 'CEFR C2', tier: 'advanced' },
         { videoId: 'en_demo_006', title: 'Job Interview English Tips (B2)', channel: 'Business English Pod', duration: 340, level: 'CEFR B2', tier: 'intermediate' },
+        { videoId: 'en_demo_007', title: 'Top 50 English Idioms Used by Native Speakers', channel: 'Fluent American', duration: 385, level: 'CEFR B2', tier: 'intermediate' },
+        { videoId: 'en_demo_008', title: 'Master Small Talk: How to Start Conversations', channel: 'Speak With Vanessa', duration: 290, level: 'CEFR A2', tier: 'beginner' },
+        { videoId: 'en_demo_009', title: 'Fast English Listening Practice - Real Podcasts', channel: 'All Ears English', duration: 450, level: 'CEFR B2', tier: 'intermediate' },
+        { videoId: 'en_demo_010', title: 'Business English Emails: Avoid Sounding Rude', channel: 'Executive English', duration: 330, level: 'CEFR B2', tier: 'intermediate' },
+        { videoId: 'en_demo_011', title: 'TED Talk Analysis: Rhetoric and Vocabulary', channel: 'Academic English', duration: 520, level: 'CEFR C1', tier: 'upper_intermediate' },
+        { videoId: 'en_demo_012', title: 'Pronunciation Guide: Tricky Silent Letters', channel: 'Clear English', duration: 260, level: 'CEFR A2', tier: 'beginner' }
     ]
 };
 
@@ -930,6 +976,7 @@ app.get('/api/recommended-videos', async (req, res) => {
     const lang = (req.query.lang || 'ja').toLowerCase().trim();
     const targetTier = (req.query.tier || '').toLowerCase().trim();
     const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 12, 1), 50);
+    const offset = Math.max(parseInt(req.query.offset, 10) || 0, 0);
     const isRefresh = req.query.refresh === 'true' || req.query.force === 'true';
 
     let results = [];
@@ -999,14 +1046,17 @@ app.get('/api/recommended-videos', async (req, res) => {
         }
     }
 
-    const filteredVideos = results.slice(0, limit);
+    const pagedVideos = results.slice(offset, offset + limit);
+    const hasMore = (offset + limit) < results.length;
 
     res.json({
         success: true,
         language: lang,
         tier: targetTier && targetTier !== 'all' ? targetTier : undefined,
-        count: filteredVideos.length,
-        videos: filteredVideos,
+        count: pagedVideos.length,
+        offset,
+        hasMore,
+        videos: pagedVideos,
         source: isRefresh ? 'dev-server:refresh' : 'dev-server'
     });
 });
@@ -1322,9 +1372,9 @@ app.post('/api/transcript', async (req, res) => {
             const jobResultUrl = submitData.result_url;
             console.log(`[Dev Server] Gladia job submitted: ${jobResultUrl}`);
 
-            // Poll for up to 18 seconds
+            // Poll for up to 45 seconds (Workers Paid parity)
             const startTime = Date.now();
-            const MAX_INITIAL_POLL_MS = 18000;
+            const MAX_INITIAL_POLL_MS = 45000;
             const pollDelay = 3000;
 
             while (Date.now() - startTime < MAX_INITIAL_POLL_MS) {
@@ -1557,15 +1607,32 @@ app.post('/api/dual-subtitles', async (req, res) => {
         } catch {}
     }
 
-    // If saveOnly requested, save client-provided segments to disk cache
+    // If saveOnly requested, save client-provided segments to disk cache (with merging)
     if (req.body.saveOnly || req.body.onlySave) {
         try {
-            const validSegments = segments.filter(s => s && s.translation && (sourceLang === normTarget || s.translation.trim() !== (s.text || '').trim()));
-            if (validSegments.length >= segments.length * 0.5) {
-                fs.writeFileSync(cacheFile, JSON.stringify({ segments }), 'utf8');
-                return res.json({ success: true, cached: true, quality: 100 });
+            let finalSegments = segments;
+            if (fs.existsSync(cacheFile)) {
+                try {
+                    const existing = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
+                    const existingList = existing.segments || existing;
+                    if (Array.isArray(existingList)) {
+                        finalSegments = segments.map((s, idx) => {
+                            if (s?.translation && s.translation.trim()) return s;
+                            const prev = existingList[idx];
+                            if (prev?.translation) return { ...s, translation: prev.translation };
+                            return s;
+                        });
+                    }
+                } catch {}
             }
-            return res.status(400).json({ success: false, error: 'Low quality' });
+
+            const validSegments = finalSegments.filter(s => s && s.translation && (sourceLang === normTarget || s.translation.trim() !== (s.text || '').trim()));
+            if (validSegments.length >= 10 || validSegments.length >= finalSegments.length * 0.2) {
+                fs.writeFileSync(cacheFile, JSON.stringify({ segments: finalSegments }), 'utf8');
+                const quality = finalSegments.length > 0 ? Math.round((validSegments.length / finalSegments.length) * 100) : 100;
+                return res.json({ success: true, cached: quality >= 80, quality, translatedCount: validSegments.length });
+            }
+            return res.status(400).json({ success: false, error: 'Low quality or insufficient segments' });
         } catch (e) {
             return res.status(500).json({ error: e.message });
         }
@@ -1731,7 +1798,7 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.0.13';
+    const mockVersion = req.query.mock_version || '1.0.21';
 
     res.json({
         version: mockVersion,
@@ -1742,29 +1809,29 @@ app.get('/api/version', (req, res) => {
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'Proficiency Level Video Filtering: Fixed video level filtering across Japanese, English, Korean, and Chinese with authentic multi-tier video classifications',
-                'Missing Translation Fixes: Resolved raw translation keys (such as common.noResults) with localized empty-state messages for video and playlist filters',
-                'Instant Recommendation Refresh: Optimized edge and client caching to eliminate stale empty states and deliver instant updates when switching levels'
+                'Seamless Upgrade & Auth Flow: Guests can now browse Pro & Premium plans freely; clicking upgrade smoothly triggers Google Sign-in and automatically proceeds to payment without dead-ends',
+                'Unified Pro & Premium Dialog Design: Overhauled the upgrade modal with a pinned sticky actions footer, fixed scrolling and header clipping, and standardized design system tokens',
+                'Polished Onboarding Experience: Restored high-contrast primary CTA styling, added English locale fallbacks across all 5 languages, and refined interactive word token demos'
             ],
             vi: [
-                'Lọc Video theo Cấp độ Trôi chảy: Khắc phục lỗi lọc video theo cấp độ cho tiếng Nhật, Anh, Hàn, Trung với dữ liệu phân loại độ khó thực tế',
-                'Hoàn thiện Bản dịch Còn thiếu: Sửa lỗi hiển thị mã ngôn ngữ thô (như common.noResults), bổ sung thông báo trạng thái trống rõ ràng trên bộ lọc video và playlist',
-                'Làm mới Đề xuất Tức thì: Tối ưu bộ nhớ đệm tại edge và máy khách, loại bỏ trạng thái trống cũ và cập nhật ngay lập tức khi đổi cấp độ'
+                'Luồng Nâng cấp & Đăng nhập Liền mạch: Người dùng chưa đăng nhập có thể thoải mái xem các gói Pro & Premium; bấm nâng cấp sẽ tự động đăng nhập Google và chuyển thẳng tới thanh toán VietQR mà không gặp lỗi cụt',
+                'Giao diện Nâng cấp Pro & Premium Thống nhất: Thiết kế lại hộp thoại nâng cấp với thanh tác vụ cố định (sticky footer), khắc phục lỗi tràn chữ/cuộn mất tiêu đề và chuẩn hóa biến thiết kế',
+                'Hoàn thiện Trải nghiệm Onboarding: Khôi phục nút kêu gọi hành động (CTA) nổi bật, bổ sung cơ chế tự động dự phòng ngôn ngữ tiếng Anh cho cả 5 ngôn ngữ và hoàn thiện demo từ vựng tương tác'
             ],
             ja: [
-                '難易度レベル別動画フィルターの改善：日本語・英語・韓国語・中国語の各難易度レベルに応じた正確な分類とフィルタリングを修正',
-                '未翻訳キーの修正：未翻訳のまま表示されていたキー（common.noResults など）を解消し、動画・プレイリストの空状態メッセージを多言語対応',
-                'おすすめ動画の即時反映：エッジおよびクライアントのキャッシュを最適化し、古い空データの残存を防ぎ、レベル切替時の高速表示を実現'
+                'シームレスなアップグレード＆ログイン連携：未ログインのままでもPro・Premiumプランを自由に比較可能。アップグレード選択時にGoogleログインがスムーズに起動し、決済画面へ直行',
+                'Pro＆Premiumモーダルのデザイン統一：固定フッター（Sticky Actions）を導入し、ヘッダーのはみ出しやスクロール崩れを解消。デザインシステム規格に完全統一',
+                'オンボーディング体験の洗練：目立つプライマリCTAボタンスタイルを復元し、5言語すべてで英語フォールバックを保証。インタラクティブな単語デモの操作感を向上'
             ],
             ko: [
-                '난이도별 추천 동영상 필터 개선: 일본어, 영어, 한국어, 중국어의 실제 난이도 등급에 맞춰 동영상 필터링 기능 정상화',
-                '누락된 번역 키 수정: common.noResults 등 번역되지 않은 키 표시 오류를 해결하고 동영상 및 재생목록 필터의 빈 상태 안내 메시지 추가',
-                '추천 동영상 즉각 갱신: 엣지 및 클라이언트 캐시를 최적화하여 이전 빈 캐시 잔존을 방지하고 레벨 전환 시 즉시 반영'
+                '매끄러운 업그레이드 및 로그인 흐름: 로그인하지 않아도 Pro 및 Premium 요금제를 자유롭게 비교할 수 있으며, 결제 시 Google 로그인을 자연스럽게 거쳐 VietQR 결제 화면으로 자동 이동',
+                'Pro & Premium 업그레이드 모달 디자인 개편: 하단 고정 액션 바(Sticky Footer)를 도입하여 헤더 잘림 및 스크롤 오류를 해결하고 전체 디자인 토큰을 표준화',
+                '온보딩 경험 개선: 메인 CTA 버튼 스타일을 선명하게 복원하고, 5개 언어 전체에 영문 폴백을 적용하여 번역 누락을 방지하며 단어 상호작용 데모 품질 향상'
             ],
             zh: [
-                '难度等级视频筛选优化：修复了日语、英语、韩语和汉语按语言等级筛选视频的功能，补充真实多阶难度分类',
-                '补齐缺失的本地化文案：修复未翻译的原始文本键（如 common.noResults），规范视频与播放列表筛选为空时的多语言提示',
-                '推荐视频即时刷新：优化边缘端与客户端缓存机制，清除过期的空结果缓存，切换难度等级时即可秒级展示'
+                '无缝升级与账号登录联动：未登录用户可自由浏览 Pro 与 Premium 会员方案，点击升级即可无缝唤起 Google 登录并直达 VietQR 支付结算，彻底消除中断',
+                '统一 Pro 与 Premium 升级弹窗设计：新增底部固定操作栏（Sticky Footer），修复标题文字被裁切与滚动穿透问题，全面对齐系统级设计规范',
+                '新手引导（Onboarding）体验优化：恢复高对比醒目的核心操作按钮样式，为全 5 种语言增加英语自动兜底机制，并打磨交互式分词取词试用体验'
             ]
         }
     });

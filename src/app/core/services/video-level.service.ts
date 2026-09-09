@@ -10,12 +10,6 @@ import {
 } from '../../models';
 
 const STORAGE_KEY = 'linguatube_video_levels';
-const TITLE_REGEX = {
-    ja: /\b(?:JLPT\s*)?N([1-5])\b/i,
-    zh: /\bHSK\s*([1-6])\b/i,
-    ko: /\bTOPIK\s*([1-6]|I{1,2})\b/i,
-    en: /\b(?:CEFR\s*)?([A-C][1-2])\b/i,
-};
 
 @Injectable({
     providedIn: 'root'
@@ -227,7 +221,7 @@ export class VideoLevelService {
             const info = this.buildInfoFromLabel(titleDetected, 'title');
             this.setCache(cacheKey, info);
             this.currentLevel.set(info);
-            this.saveToServer(videoId, lang, titleDetected);
+            this.saveToServer(videoId, lang, titleDetected, 0.90, 'metadata');
             return info;
         }
 
@@ -239,7 +233,7 @@ export class VideoLevelService {
                 if (info) {
                     this.setCache(cacheKey, info);
                     this.currentLevel.set(info);
-                    this.saveToServer(videoId, lang, info.level);
+                    this.saveToServer(videoId, lang, info.level, info.confidence, 'linguistics');
                     return info;
                 }
             } finally {
@@ -251,27 +245,51 @@ export class VideoLevelService {
     }
 
     /**
-     * Parse title or channel description for standard level markers
+     * Parse title or channel description for standard level markers with multilingual keywords
      */
     private detectFromMetadata(title: string, channel: string, lang: string): string | null {
         const text = `${title} ${channel}`;
-        const regex = TITLE_REGEX[lang as keyof typeof TITLE_REGEX];
-        if (!regex) return null;
 
-        const match = text.match(regex);
-        if (!match) return null;
-
-        switch (lang) {
-            case 'ja': return `JLPT N${match[1]}`;
-            case 'zh': return `HSK ${match[1]}`;
-            case 'ko': return `TOPIK ${match[1]}`;
-            case 'en': return `CEFR ${match[1].toUpperCase()}`;
-            default: return null;
+        if (lang === 'ja') {
+            const jlptMatch = text.match(/\b(?:JLPT\s*)?N([1-5])\b/i) || text.match(/(?:JLPT|日本語能力試験)?\s*([NＮ][1-5１-５])/i);
+            if (jlptMatch) {
+                const num = jlptMatch[1].replace('Ｎ', 'N').replace(/[１-５]/, m => String.fromCharCode(m.charCodeAt(0) - 0xFEE0)).replace('N', '');
+                return `JLPT N${num}`;
+            }
+            if (/中上級/.test(text)) return 'JLPT N2';
+            if (/上級/.test(text)) return 'JLPT N1';
+            if (/中級/.test(text)) return 'JLPT N3';
+            if (/初級|入門/.test(text)) return 'JLPT N5';
+        } else if (lang === 'zh') {
+            const hskMatch = text.match(/\bHSK\s*([1-6])\b/i);
+            if (hskMatch) return `HSK ${hskMatch[1]}`;
+            if (/中高级|中高級/.test(text)) return 'HSK 4';
+            if (/高级|高級/.test(text)) return 'HSK 5';
+            if (/中级|中級/.test(text)) return 'HSK 3';
+            if (/初级|初級/.test(text)) return 'HSK 2';
+            if (/入门|入門/.test(text)) return 'HSK 1';
+        } else if (lang === 'ko') {
+            const topikMatch = text.match(/\bTOPIK\s*([1-6]|I{1,2})\b/i);
+            if (topikMatch) return `TOPIK ${topikMatch[1]}`;
+            if (/고급/.test(text)) return 'TOPIK 5';
+            if (/중급/.test(text)) return 'TOPIK 3';
+            if (/초급/.test(text)) return 'TOPIK 2';
+            if (/입문/.test(text)) return 'TOPIK 1';
+        } else if (lang === 'en') {
+            const cefrMatch = text.match(/\b(?:CEFR\s*([A-C][1-2])|([A-C][1-2])\s*level)\b/i);
+            if (cefrMatch) return `CEFR ${(cefrMatch[1] || cefrMatch[2]).toUpperCase()}`;
+            if (/\bupper[\s-]intermediate\b/i.test(text)) return 'CEFR B2';
+            if (/\b(?:for\s+)?intermediate\b/i.test(text)) return 'CEFR B1';
+            if (/\b(?:for\s+)?elementary\b/i.test(text)) return 'CEFR A2';
+            if (/\b(?:for\s+)?beginners?\b/i.test(text)) return 'CEFR A1';
+            if (/\b(?:advanced|fluent)\b/i.test(text)) return 'CEFR C1';
         }
+
+        return null;
     }
 
     /**
-     * Linguistic analysis using GrammarService patterns and speech rate (chars/min)
+     * Linguistic analysis using GrammarService patterns, vocabulary/kanji difficulty, and speech rate (chars/min)
      */
     private async analyzeCuesLinguistically(cues: SubtitleCue[], lang: SupportedGrammarLang): Promise<VideoLevelInfo | null> {
         this.grammar.preloadPatterns(lang);
@@ -302,8 +320,11 @@ export class VideoLevelService {
         const spokenMinutes = Math.max(0.1, totalSpokenSeconds / 60);
         const cpm = Math.round(totalChars / spokenMinutes);
 
-        // Calculate weighted score from pattern distribution
-        const levelResult = this.computeScoreFromBreakdown(breakdown, lang, cpm, totalPatterns);
+        // Evaluate vocabulary/kanji difficulty
+        const vocabScore = this.evaluateVocabularyDifficulty(cues, lang);
+
+        // Calculate weighted score from pattern distribution, vocabulary and speech rate
+        const levelResult = this.computeScoreFromBreakdown(breakdown, lang, cpm, totalPatterns, vocabScore, cues.length);
         if (!levelResult) return null;
 
         return {
@@ -319,41 +340,150 @@ export class VideoLevelService {
     }
 
     /**
+     * Evaluates vocabulary and character/kanji difficulty
+     * Returns a score from 1.0 (Beginner) to 5.0/6.0 (Advanced)
+     */
+    private evaluateVocabularyDifficulty(cues: SubtitleCue[], lang: SupportedGrammarLang): number {
+        if (!cues.length) return 2.0;
+
+        let totalChars = 0;
+        let kanjiCount = 0;
+        let compoundWordsCount = 0;
+        let totalWords = 0;
+        let longWordsCount = 0;
+        let totalWordLength = 0;
+
+        for (const cue of cues) {
+            const text = cue.text || '';
+            totalChars += text.length;
+
+            if (lang === 'ja') {
+                // Kanji characters: Unicode 4E00 - 9FAF
+                const kanjiMatches = text.match(/[\u4E00-\u9FAF]/g);
+                if (kanjiMatches) {
+                    kanjiCount += kanjiMatches.length;
+                }
+                // Multi-kanji compounds (kango compounds like 政治, 経済, 構造, 概念)
+                const compoundMatches = text.match(/[\u4E00-\u9FAF]{2,}/g);
+                if (compoundMatches) {
+                    compoundWordsCount += compoundMatches.length;
+                }
+            } else if (lang === 'zh') {
+                // 4-character idioms (Chengyu) or formal compounds
+                const idiomMatches = text.match(/[\u4E00-\u9FAF]{4}/g);
+                if (idiomMatches) {
+                    compoundWordsCount += idiomMatches.length;
+                }
+                const tokens = cue.tokens || [];
+                totalWords += tokens.length;
+                for (const t of tokens) {
+                    if (t.surface && t.surface.length >= 3) {
+                        longWordsCount++;
+                    }
+                }
+            } else if (lang === 'ko') {
+                const words = text.trim().split(/\s+/).filter(Boolean);
+                totalWords += words.length;
+                for (const w of words) {
+                    totalWordLength += w.length;
+                    if (w.length >= 4) {
+                        longWordsCount++;
+                    }
+                }
+            } else if (lang === 'en') {
+                const words = text.toLowerCase().match(/[a-z']+/g) || [];
+                totalWords += words.length;
+                for (const w of words) {
+                    totalWordLength += w.length;
+                    if (w.length >= 8) {
+                        longWordsCount++;
+                    }
+                }
+            }
+        }
+
+        if (lang === 'ja') {
+            const kanjiRatio = totalChars > 0 ? kanjiCount / totalChars : 0;
+            const compoundRatio = cues.length > 0 ? compoundWordsCount / cues.length : 0;
+            let score = 1.0 + (kanjiRatio / 0.08);
+            if (compoundRatio > 0.8) score += 0.4;
+            if (compoundRatio > 1.5) score += 0.4;
+            return Math.min(5.0, Math.max(1.0, score));
+        }
+
+        if (lang === 'zh') {
+            const longRatio = totalWords > 0 ? longWordsCount / totalWords : 0;
+            const idiomBonus = compoundWordsCount > 3 ? 0.8 : (compoundWordsCount > 0 ? 0.4 : 0);
+            const score = 1.5 + (longRatio * 8.0) + idiomBonus;
+            return Math.min(6.0, Math.max(1.0, score));
+        }
+
+        if (lang === 'ko') {
+            const avgWordLen = totalWords > 0 ? totalWordLength / totalWords : 2.5;
+            const longWordRatio = totalWords > 0 ? longWordsCount / totalWords : 0;
+            const score = 1.0 + ((avgWordLen - 2.0) * 1.5) + (longWordRatio * 3.0);
+            return Math.min(6.0, Math.max(1.0, score));
+        }
+
+        if (lang === 'en') {
+            const avgLen = totalWords > 0 ? totalWordLength / totalWords : 4.0;
+            const hardWordRatio = totalWords > 0 ? longWordsCount / totalWords : 0;
+            const score = 1.0 + ((avgLen - 3.8) * 1.5) + (hardWordRatio * 10.0);
+            return Math.min(6.0, Math.max(1.0, score));
+        }
+
+        return 2.5;
+    }
+
+    /**
      * Compute composite difficulty score
      */
     private computeScoreFromBreakdown(
         breakdown: Record<string, number>,
         lang: SupportedGrammarLang,
         cpm: number,
-        totalPatterns: number
+        totalPatterns: number,
+        vocabScore: number,
+        cueCount: number
     ): { level: string; tier: ProficiencyLevelTier; score: number; confidence: number } | null {
-        if (totalPatterns === 0) {
-            // Default to elementary if speech rate is normal, beginner if slow
-            return this.getDefaultBySpeechRate(lang, cpm);
-        }
-
-        let totalWeight = 0;
-        let weightedSum = 0;
-
-        for (const [lvl, count] of Object.entries(breakdown)) {
-            const numericVal = this.levelToNumeric(lvl, lang);
-            weightedSum += numericVal * count;
-            totalWeight += count;
-        }
-
-        let avgScore = totalWeight > 0 ? weightedSum / totalWeight : 1.5;
-
-        // Speed penalty / bump: Fast native speech (> 280 CPM for JA/KO/ZH, > 170 WPM for EN)
+        // Speech rate score (1.0 = slow, 3.0 = normal, 5.0 = very fast native)
         const isFastSpeech = (lang === 'en' ? cpm > 170 : cpm > 280);
-        if (isFastSpeech && avgScore < 4.0) {
-            avgScore += 0.4;
+        const isSlowSpeech = (lang === 'en' ? cpm < 120 : cpm < 180);
+        const speechRateScore = isSlowSpeech ? 1.0 : (isFastSpeech ? 4.0 : 2.5);
+
+        let finalScore: number;
+        let confidence: number;
+
+        if (totalPatterns === 0) {
+            // High-precision fallback using vocabulary difficulty + speech rate
+            finalScore = (0.70 * vocabScore) + (0.30 * speechRateScore);
+            confidence = Math.min(0.85, 0.65 + (cueCount > 20 ? 0.1 : 0.05));
+        } else {
+            let totalWeight = 0;
+            let weightedSum = 0;
+
+            for (const [lvl, count] of Object.entries(breakdown)) {
+                const numericVal = this.levelToNumeric(lvl, lang);
+                weightedSum += numericVal * count;
+                totalWeight += count;
+            }
+
+            const grammarScore = totalWeight > 0 ? weightedSum / totalWeight : 2.0;
+
+            // Unified 3-factor composite: 45% Grammar + 40% Vocabulary/Kanji + 15% Speech Rate
+            finalScore = (0.45 * grammarScore) + (0.40 * vocabScore) + (0.15 * speechRateScore);
+
+            if (isFastSpeech && finalScore < 4.0) {
+                finalScore += 0.3;
+            }
+
+            confidence = Math.min(0.95, Math.max(0.72, 0.68 + (totalPatterns * 0.02) + (cueCount > 30 ? 0.08 : 0)));
         }
 
-        const levelString = this.numericToLevel(Math.round(avgScore), lang);
-        const tier = this.scoreToTier(avgScore, lang);
-        const confidence = Math.min(0.95, 0.5 + (totalPatterns * 0.03));
+        const levelString = this.numericToLevel(Math.round(finalScore), lang);
+        const tier = this.scoreToTier(finalScore, lang);
 
-        return { level: levelString, tier, score: Math.round(avgScore * 10) / 10, confidence };
+        return { level: levelString, tier, score: Math.round(finalScore * 10) / 10, confidence: Math.round(confidence * 100) / 100 };
     }
 
     private getDefaultBySpeechRate(lang: SupportedGrammarLang, cpm: number): { level: string; tier: ProficiencyLevelTier; score: number; confidence: number } {
@@ -488,9 +618,9 @@ export class VideoLevelService {
         } catch { }
     }
 
-    private saveToServer(videoId: string, language: string, level: string): void {
-        // Fire and forget POST to /api/video-level
-        this.http.post('/api/video-level', { videoId, language, level }).subscribe({
+    private saveToServer(videoId: string, language: string, level: string, confidence = 0.85, method = 'linguistics'): void {
+        // Fire and forget POST to /api/video-level (Zero KV writes - Rule 2)
+        this.http.post('/api/video-level', { videoId, language, level, confidence, method }).subscribe({
             next: () => {},
             error: () => {} // Non-blocking if fails/offline
         });

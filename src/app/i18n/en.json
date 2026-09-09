@@ -53,7 +53,11 @@
         "signedInAs": "Signed in as {{name}}",
         "signedOut": "Signed out successfully",
         "signInFailed": "Sign in failed. Please try again.",
-        "signOutConfirm": "Are you sure you want to sign out?"
+        "signOutConfirm": "Are you sure you want to sign out?",
+        "continueWithGoogle": "Continue with Google",
+        "signInRequired": "Please sign in to continue",
+        "signInToUpgrade": "Sign in to Upgrade",
+        "signInToUpgradeDesc": "Sign in with Google to link your subscription and sync across devices"
     },
     "player": {
         "paste": "Paste",
@@ -167,7 +171,7 @@
     "pro": {
         "title": "Voca Pro",
         "titlePremium": "Voca Premium",
-        "subtitle": "Supercharge your daily language immersion with AI potential",
+        "subtitle": "Supercharge your language immersion with AI",
         "subtitlePremium": "Maximum immersion power with long-form podcasts & rapid AI refills",
         "tabPro": "Voca Pro",
         "tabPremium": "Voca Premium",
@@ -232,7 +236,10 @@
         "activeSubscription": "Active Pro Subscription",
         "activePremiumSubscription": "Active Premium Subscription",
         "enjoyingBenefits": "You have unlocked Pro immersion features, 10 daily AI diamonds, and priority speech transcription.",
-        "enjoyingPremiumBenefits": "You have unlocked maximum immersion power, 25 daily AI diamonds, long-form podcast transcription, and VIP speed."
+        "enjoyingPremiumBenefits": "You have unlocked maximum immersion power, 25 daily AI diamonds, long-form podcast transcription, and VIP speed.",
+        "subscribingAs": "Subscribing as {{name}}",
+        "switchAccount": "Switch account",
+        "signInToUpgrade": "Sign in to Upgrade - {{price}}"
     },
     "vocab": {
         "title": "Vocabulary",
@@ -567,6 +574,7 @@
         "shuffleOn": "Shuffle on"
     },
     "common": {
+        "all": "All",
         "loading": "Loading...",
         "error": "Error",
         "success": "Success",
@@ -579,7 +587,9 @@
         "search": "Search...",
         "options": "Options",
         "refresh": "Refresh",
-        "noResults": "No results found"
+        "noResults": "No results found",
+        "maybeLater": "Maybe later",
+        "done": "Done"
     },
     "onboarding": {
         "welcomeTitle": "Welcome to Voca",
@@ -591,6 +601,8 @@
         "learningLanguageSubtitle": "Choose your target language to get started",
         "startLearning": "Start Learning",
         "tapToTry": "Tap any word to try it out!",
+        "skip": "Explore First",
+        "changeUiLang": "Interface",
         "features": {
             "subtitles": "Dual subtitles for better understanding",
             "dict": "Click any word to translate instantly",

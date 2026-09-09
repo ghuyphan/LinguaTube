@@ -16,14 +16,14 @@ import { validateAuthToken, getUserTier } from '../middlewares/auth.js';
 import { translateBatch } from '../providers/lingva.js';
 import { getTranslation, saveTranslation, recordTranslation } from '../utils/translation-cache.js';
 
-// Tiered rate limiting - anonymous: 5/hr, free: 10/hr, pro: 50/hr, premium: 100/hr
+// Tiered rate limiting - anonymous: 5/hr, free: 15/hr, pro: 60/hr, premium: 120/hr
 const RATE_LIMIT_CONFIG = {
-    max: { anonymous: 5, free: 10, pro: 50, premium: 100 },
+    max: { anonymous: 5, free: 15, pro: 60, premium: 120 },
     windowSeconds: 3600,
     keyPrefix: 'dual-subs'
 };
-// Batch size optimized for Lingva/GTX chunking without timeout
-const BATCH_SIZE = 25;
+// Batch size optimized for Lingva/GTX chunking with Workers Paid CPU headroom
+const BATCH_SIZE = 40;
 const TIMEOUT_MS = 25000; // 25s total timeout (CF limit is 30s)
 const QUALITY_THRESHOLD = 0.8; // 80% success rate required for caching
 
@@ -51,7 +51,7 @@ export async function onRequestPost(context) {
             videoId: { type: 'string', required: true, maxLength: 20 },
             sourceLang: { type: 'string', required: true, maxLength: 5 },
             targetLang: { type: 'string', required: true, maxLength: 5 },
-            segments: { type: 'array', required: !isOnlyCache, maxLength: 1500 },
+            segments: { type: 'array', required: !isOnlyCache, maxLength: 2500 },
             forceRefresh: { type: 'boolean', required: false },
             onlyCache: { type: 'boolean', required: false },
             saveOnly: { type: 'boolean', required: false },
@@ -108,38 +108,52 @@ export async function onRequestPost(context) {
             return rateLimitResponse(rateCheck.resetAt);
         }
 
-        // 3. Handle saveOnly: persisting completed client-side translations to R2 cache
+        // 3. Handle saveOnly: persisting completed or partial client-side translations to R2 cache
         if (saveOnly || onlySave) {
             const successCount = segments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim() && (sourceLang === targetLang || s.translation.trim() !== (s.text || '').trim())).length;
             const successRate = segments.length > 0 ? successCount / segments.length : 0;
             const quality = Math.round(successRate * 100);
 
-            if (successRate >= QUALITY_THRESHOLD) {
-                const savePromises = [
-                    saveTranslation(r2, cleanVideoId, sourceLang, targetLang, segments, quality)
-                ];
-                if (db) {
-                    savePromises.push(recordTranslation(db, cleanVideoId, sourceLang, targetLang, segments.length));
+            // Allow incremental crowd-merge if at least 10 cues are translated OR coverage >= 20%
+            if (successCount >= 10 || successRate >= 0.2) {
+                const saveResult = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, segments, quality);
+                const finalQuality = saveResult?.quality ?? quality;
+                const isFullyCached = (finalQuality >= Math.round(QUALITY_THRESHOLD * 100));
+
+                if (db && saveResult?.validCount) {
+                    const saveDbPromise = recordTranslation(db, cleanVideoId, sourceLang, targetLang, saveResult.validCount);
+                    if (waitUntil) {
+                        waitUntil(saveDbPromise);
+                    } else {
+                        await saveDbPromise;
+                    }
                 }
-                if (waitUntil) {
-                    waitUntil(Promise.allSettled(savePromises));
-                } else {
-                    await Promise.allSettled(savePromises);
-                }
+
                 return jsonResponse({
                     videoId: cleanVideoId,
                     sourceLang,
                     targetLang,
-                    cached: true,
-                    quality,
+                    cached: isFullyCached,
+                    quality: finalQuality,
+                    translatedCount: saveResult?.validCount ?? successCount,
+                    totalCount: saveResult?.totalCount ?? segments.length,
                     saved: true
                 }, 200, { 'Cache-Control': CACHE_HEADERS.FRESH });
             }
 
             return jsonResponse({
-                error: 'Quality threshold not met for caching',
+                error: 'Minimum threshold not met for caching (requires at least 10 translated cues or 20% coverage)',
                 quality,
-                required: Math.round(QUALITY_THRESHOLD * 100)
+                successCount,
+                required: 10
+            }, 400);
+        }
+
+        // Live full-transcript translation guard: prevent Cloudflare Worker timeouts on large payloads
+        if (segments.length > BATCH_SIZE) {
+            return jsonResponse({
+                error: `Live translation in /api/dual-subtitles is capped at ${BATCH_SIZE} cues to avoid worker timeouts. Please stream upcoming cues via /api/translate/batch and save via saveOnly: true.`,
+                maxBatchSize: BATCH_SIZE
             }, 400);
         }
 

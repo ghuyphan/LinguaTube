@@ -15,6 +15,14 @@ import { OfflinePlaylistRepository } from '../../core/repositories';
 import { VideoLevelService } from '../../core/services/video-level.service';
 import { generateRandomId, getYouTubeThumbnail } from '../../core/utils';
 
+const LS_REC_PLAYLISTS_PREFIX = 'voca_rec_playlists_';
+const LS_REC_PLAYLISTS_TTL_MS = 60 * 60 * 1000; // 1 hour
+
+interface LocalStoragePlaylistsCacheEntry {
+    timestamp: number;
+    playlists: Playlist[];
+}
+
 /**
  * Playlist Service
  * Manages playlists for both guest (localStorage) and logged-in (PocketBase) users
@@ -824,14 +832,37 @@ export class PlaylistService {
         if (!language) return [];
 
         const targetTier = tier && tier !== 'all' ? tier : undefined;
-        const cacheKey = `${language}_${targetTier || 'all'}`;
+        const cacheKey = `${language}_${targetTier || 'all'}_${limit}`;
 
         if (forceRefresh) {
             this.recommendedCache.delete(cacheKey);
-        } else if (this.recommendedCache.has(cacheKey)) {
-            const cached = this.recommendedCache.get(cacheKey)!;
-            this.recommendedPlaylists.set(cached);
-            return cached;
+            try {
+                localStorage.removeItem(LS_REC_PLAYLISTS_PREFIX + cacheKey);
+            } catch { }
+        } else {
+            // 1. Check in-memory cache
+            if (this.recommendedCache.has(cacheKey)) {
+                const cached = this.recommendedCache.get(cacheKey)!;
+                this.recommendedPlaylists.set(cached);
+                return cached;
+            }
+
+            // 2. Check LocalStorage cache (persists across page reloads/navigations for instant frame-0 render)
+            try {
+                const raw = localStorage.getItem(LS_REC_PLAYLISTS_PREFIX + cacheKey);
+                if (raw) {
+                    const parsed: LocalStoragePlaylistsCacheEntry = JSON.parse(raw);
+                    if (Date.now() - parsed.timestamp < LS_REC_PLAYLISTS_TTL_MS && Array.isArray(parsed.playlists)) {
+                        this.recommendedCache.set(cacheKey, parsed.playlists);
+                        this.recommendedPlaylists.set(parsed.playlists);
+                        return parsed.playlists;
+                    } else {
+                        localStorage.removeItem(LS_REC_PLAYLISTS_PREFIX + cacheKey);
+                    }
+                }
+            } catch {
+                // Ignore localStorage read errors
+            }
         }
 
         this.isRecommendedLoading.set(true);
@@ -848,7 +879,7 @@ export class PlaylistService {
                 });
 
                 const timeoutPromise = new Promise<never>((_, reject) =>
-                    setTimeout(() => reject(new Error('Recommended playlists request timeout')), 5000)
+                    setTimeout(() => reject(new Error('Recommended playlists request timeout')), 3500)
                 );
 
                 const result = await Promise.race([fetchPromise, timeoutPromise]);
@@ -861,6 +892,13 @@ export class PlaylistService {
 
                 const finalPlaylists = matching.slice(0, limit);
                 this.recommendedCache.set(cacheKey, finalPlaylists);
+                try {
+                    const entry: LocalStoragePlaylistsCacheEntry = {
+                        timestamp: Date.now(),
+                        playlists: finalPlaylists
+                    };
+                    localStorage.setItem(LS_REC_PLAYLISTS_PREFIX + cacheKey, JSON.stringify(entry));
+                } catch { }
                 this.recommendedPlaylists.set(finalPlaylists);
                 return finalPlaylists;
             }
@@ -875,7 +913,7 @@ export class PlaylistService {
             });
 
             const timeoutPromise = new Promise<never>((_, reject) =>
-                setTimeout(() => reject(new Error('Recommended playlists request timeout')), 5000)
+                setTimeout(() => reject(new Error('Recommended playlists request timeout')), 3500)
             );
 
             let result = await Promise.race([fetchPromise, timeoutPromise]);
@@ -893,10 +931,18 @@ export class PlaylistService {
 
             const playlists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
             this.recommendedCache.set(cacheKey, playlists);
+            try {
+                const entry: LocalStoragePlaylistsCacheEntry = {
+                    timestamp: Date.now(),
+                    playlists
+                };
+                localStorage.setItem(LS_REC_PLAYLISTS_PREFIX + cacheKey, JSON.stringify(entry));
+            } catch { }
             this.recommendedPlaylists.set(playlists);
             return playlists;
         } catch (error) {
             console.error('[Playlist] Failed to load recommended playlists from server:', error);
+            this.recommendedPlaylists.set([]);
             return [];
         } finally {
             this.isRecommendedLoading.set(false);

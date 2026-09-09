@@ -75,7 +75,7 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
     3. `reading`: Kana reading only.
     4. `annotatedRomanized`: Kanji with Hepburn Romaji annotations.
     5. `romanized`: Hepburn Romaji only.
-  - **Height & Baseline Alignment (Zero-Shift Ruby)**: When reading annotations are enabled, non-kanji words AND punctuation tokens (`、`, `。`, `,`, `.`, `...`) are wrapped in `<ruby>` with an invisible spacer `<rt class="rt-empty">&#160;</rt>` and standardized `vertical-align: baseline`. This guarantees 100% identical card height and uniform baseline alignment across all words and punctuation in the sentence, eliminating vertical misalignment and jagged baseline jumps across Japanese, Chinese, Korean, and English.
+  - **Height & Baseline Alignment (Zero-Shift Ruby)**: When reading annotations are enabled, non-kanji words AND punctuation tokens (`、`, `。`, `,`, `.`, `...`) are wrapped in `<ruby>` with an invisible spacer `<rt class="rt-empty">&#160;</rt>`. Both active readings and empty spacers have their height strictly locked to `height: 1.15em; line-height: 1.15;` alongside standardized `vertical-align: baseline` and 1px transparent borders. This guarantees 100% identical token heights, mathematically consistent line-boxes, and uniform baseline alignment across all words and punctuation, eliminating vertical misalignment and jagged baseline jumps across Japanese, Chinese, Korean, and English. Top-anchoring in `.subtitle-center-wrapper` additionally prevents vertical jitter when switching between 1-line and 2-line cues.
 - **Chinese (`zh`)**:
   - Segmented using `Intl.Segmenter('zh', { granularity: 'word' })`.
   - Pinyin annotations generated via `pinyin-pro` with tone diacritics (e.g. `nǐ hǎo`).
@@ -85,9 +85,9 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
 - **English (`en`)**:
   - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en')`.
 - **Bulk Batch Tokenization & Zero Playback Overhead**:
-  - `SubtitleService` processes subtitle cues in bulk batches of up to 500 texts on initial video load. For virtually all videos ($\le 500$ cues), the entire video requires **only 1 API call**.
+  - `SubtitleService` processes subtitle cues in bulk batches of up to 800 texts on initial video load. For virtually all videos ($\le 800$ cues), the entire video requires **only 1 API call**.
   - No network requests are made during video playback; time updates use $O(\log n)$ binary search over cached cues.
-  - Forward's the user's PocketBase auth token to access higher rate limit tiers (100–1,000 req/hr).
+  - Forward's the user's PocketBase auth token to access higher rate limit tiers (150–2,000 req/hr).
 - **Client Fallback Tokenizer & 429 Circuit Breaker**:
   - If network requests to backend tokenization endpoints fail, hit a 429 rate limit, or operate offline, `SubtitleService` immediately triggers a circuit breaker and falls back to client-side tokenization powered by native ECMAScript `Intl.Segmenter('zh')` and `Intl.Segmenter('ko')` or Japanese character splitting.
   - The circuit breaker prevents cascading 429 errors in the console by suppressing subsequent backend calls for the duration of the `Retry-After` window.
@@ -144,19 +144,46 @@ graph TD
 - **Dynamic Subtitle Language Detection (`detectSubtitleLanguage`)**: Subtitle cues are sampled using Unicode character block analysis (`\p{Script=Han}`, `\p{Script=Hiragana}`, `\p{Script=Hangul}`) to accurately determine the authentic video subtitle language. This prevents mismatches when user settings language differs from video subtitle language.
 - **Source/Target Inversion Prevention**: Target language selection strictly avoids collision with the active subtitle language, falling back to the user's interface language or alternate language to ensure translations are never identical to the source.
 - **Cache-First & Progressive High-Speed Batch Translation**:
-  - Checks server/R2 cache first (`onlyCache: true`) without requiring segment payloads.
-  - On cache miss, immediately translates initial cues via direct edge Google GTX (~150ms-1.5s vs 7s+ on dead proxies) so learners experience near-instant playback response.
-  - Progressively translates upcoming cues in batches of 50 with a 25-cue lookahead buffer and reactive pipelining as playback advances.
+  - **Tier 1 (IndexedDB Local)**: Checks client IndexedDB (`lingua-tube-cache`) first for instant 0ms offline-ready bilingual subtitles.
+  - **Tier 2 (Cloudflare R2 Edge)**: Checks server/R2 cache (`onlyCache: true`) without requiring segment payloads. If present, returns full bilingual transcript in ~50ms.
+  - **Tier 3 (JIT Rolling Window Stream)**: On cache miss, immediately translates upcoming cues in batches of 50 with a 25-cue lookahead buffer via direct edge Google GTX (~150ms-1.5s vs 7s+ on dead proxies) so learners experience near-instant playback response without waiting for full-video translation.
   - On user seeks or clicks in the subtitle list, any stale in-flight batch is automatically cancelled and the seek position's cues are translated immediately.
+- **Incremental Crowd-Cache Merging**:
+  - Instead of requiring an all-or-nothing 80% full watch in a single sitting, `SubtitleService` writes checkpoints to Cloudflare R2 and IndexedDB (every 20+ newly translated cues or on video pause/switch), merging incoming translated segments into existing R2 files.
+  - Multiple users watching different parts of the same video collectively build the full dual-subtitle cache without burning translation quotas.
 - **Translation Anti-Poisoning & Infinite-Loop Prevention**:
   - Failed translation requests return `null` rather than falling back to untranslated source text.
   - In-memory subtitle tracking marks all processed cues (including identical and empty) as resolved to completely eliminate infinite network retry loops on short words, sound effects, or numbers.
   - LocalStorage and R2 caches automatically sanitize and reject entries where `source !== target` but `translation === sourceText`.
   - UI templates (`subtitle-display`, `fullscreen-subtitle`) enforce equality guards (`translation.trim() !== cue.text.trim()`) to prevent rendering duplicate identical lines.
-  - If $< 80\%$ of segments translate successfully, remote caching is refused to prevent bad data persistence.
-- **Permanent Caching & Long Video Support**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`) and indexed in D1. Supports long videos with over 1,000 cues (up to 10,000 cues) without payload truncation.
+- **Permanent Caching & Long Video Support**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and indexed in D1. Supports long videos with over 1,000 cues without payload truncation.
 - **Track & Language Switch Reactivity**: Tracks changes in subtitle track (`cues`), source language, and target language, cleanly re-initializing dual subtitles when switching between native and Whisper AI captions or changing language tracks.
 - **Persistent Preferences**: Dual subtitle toggle state and target language preference persist across browser sessions in `localStorage`.
+
+---
+
+## 4.1. Video Proficiency Leveling & Linguistic Assessment
+
+`VideoLevelService` categorizes videos into standard language proficiency frameworks:
+- **Japanese**: JLPT N5 (Beginner) $\rightarrow$ N1 (Advanced)
+- **Chinese**: HSK 1 (Beginner) $\rightarrow$ HSK 6 (Mastery)
+- **Korean**: TOPIK 1 (Beginner) $\rightarrow$ TOPIK 6 (Advanced)
+- **English**: CEFR A1 (Beginner) $\rightarrow$ CEFR C2 (Mastery)
+
+### Cascading Hybrid Assessment Pipeline:
+1. **Discovery Time (Server / D1 Fast-Path)**:
+   - When videos are fetched or indexed via `/api/video-info`, regex heuristics scan title and channel text for standard exam codes (`JLPT N3`, `HSK 2`, `TOPIK 4`, `CEFR B2`) as well as native learning keywords (`初級`, `中級`, `上級`, `초급`, `중급`, `고급`, `初级`, `高级`, `Beginner`, `Intermediate`, `Advanced`).
+   - Stored in Cloudflare D1 `video_languages.levels` (`{ ja: "JLPT N4" }`) with zero KV writes. Provides instant badges in recommendation feeds and playlists before subtitles are downloaded.
+2. **Playback Time (Client Deep Linguistic Evaluation)**:
+   - Evaluated after subtitle cue tokenization completes, ensuring morphological tokens are present.
+   - **Unified 3-Factor Composite Score**:
+     $$\text{Composite Score} = 0.45 \times \text{Grammar} + 0.40 \times \text{Vocab/Kanji} + 0.15 \times \text{Speech Rate}$$
+     - **Grammar Pattern Density (45%)**: Scans cue tokens against curated language databases (`grammar-ja.ts`, `grammar-ko.ts`, `grammar-zh.ts`, `grammar-en.ts`).
+     - **Vocabulary & Kanji Complexity (40%)**: Analyzes kanji density, kango multi-kanji compounds, Chinese 4-character idioms (Chengyu), word length distributions, and advanced lexical tiers.
+     - **Speech Rate (15%)**: Measures spoken characters per minute (CPM) or words per minute (WPM), applying speed penalties/bonuses for rapid native speech (>280 CPM).
+3. **Protected D1 Write-Back (`POST /api/video-level`)**:
+   - The client reports the computed level with confidence score (`confidence >= 0.65`).
+   - The backend validates the payload and prevents lower-confidence client submissions from overwriting verified levels in D1.
 
 ---
 
@@ -262,23 +289,30 @@ Upon session completion, learners are greeted with celebration confetti and a cl
 - **"Review Missed" & "Study Again"**: Dedicated secondary actions for immediate follow-up practice without getting trapped.
 - **Same-Tab Reset**: Tapping the "Review" tab in the bottom bar or sidebar while in the completed state cleanly resets back to the initial dashboard.
 
-### 7.3. Authentic Video Scene Jump
+### 7.3. Streamlined Start Screen & Study Options Drawer
+The Review start dashboard is designed for focus and minimal friction:
+- **3-Card Deck Stats**: Elevated, color-accented cards for **New**, **Learning**, and **Known** decks with interactive toggles and counters.
+- **Unified Status Strip**: Merges due card counts and daily goal progress into a single clean bar (`🎯 X cards due today · Y/Z daily goal`).
+- **Session Size Selector**: 1-tap size pills (`5`, `10`, `20`, `all`) with estimated study duration.
+- **Study Options Bottom Sheet**: Secondary settings (Reverse Mode, Cloze Mode, Auto-Play Audio, Due Only) are housed in a dedicated `<app-bottom-sheet>` accessible via the header gear button `[⚙️]` or inline link, keeping the primary "Start" CTA immediately front-and-center without vertical scrolling.
+
+### 7.4. Authentic Video Scene Jump
 Every mined card captures `sourceSentence`, `sourceVideoId`, and `sourceTimestamp`. While studying, learners can tap **`[▶ Watch Scene]`** (or press key `V`) to jump directly to the exact millisecond in the authentic YouTube video where the phrase occurred.
 
-### 7.4. Reading Spoiler Prevention & Peek Mode
+### 7.5. Reading Spoiler Prevention & Peek Mode
 To prevent passive phonetic cheating during Kanji/Hanzi recall, furigana and pinyin are **strictly hidden on the front of flashcards by default**, even if globally enabled for video subtitles. Learners who are stuck can click a subtle **"Peek reading"** button (or press `P`) for temporary assistance, while the answer face displays the full phonetic reading alongside the definitions.
 
-### 7.5. Cloze Deletion (Fill-in-the-Blank) Sentence Practice
+### 7.6. Cloze Deletion (Fill-in-the-Blank) Sentence Practice
 When "Cloze Mode" is toggled, the focus word is masked inside the context sentence (`【 ... 】`) on the front of the card. Learners recall the word from its sentence context rather than as an isolated vocabulary token.
 
-### 7.6. Audio Auto-Play on Reveal
+### 7.7. Audio Auto-Play on Reveal
 Learners can enable "Auto-play audio" in study settings to have authentic dictionary or TTS audio automatically trigger the moment a flashcard is flipped, training auditory comprehension concurrently with visual recall.
 
-### 7.7. Desktop Live Session Dashboard & Keyboard Ergonomics
+### 7.8. Desktop Live Session Dashboard & Keyboard Ergonomics
 - **Live Sidebar Monitor**: During active study, the desktop sidebar dynamically morphs into an active session monitor displaying cards remaining in queue, live accuracy percentage, elapsed time, and a keyboard shortcuts cheat-sheet (`Space` to flip, `1-4` to grade, `R` to replay audio, `P` to peek, `V` to open scene).
 - **Mobile Swipe Physics**: Enhanced swipe gestures with rotation physics and watermark feedback tags (red "Again" on left swipe, green "Good" on right swipe).
 
-### 7.8. Streamlined Architecture & Memory Optimizations
+### 7.9. Streamlined Architecture & Memory Optimizations
 - **Shared Reactive State**: Daily goal progress (`goalProgress`) and due-card count calculations (`getDueCountByLanguage`) are unified in `VocabularyService`, eliminating duplicate filter closures between study components and sidebars.
 - **Zero-Wrapper Card Queue**: The study queue directly processes `VocabularyItem` arrays without wrapper object allocations during session initialization, failed-card recycling, or missed-card re-study.
 - **Full Metadata Undo Restoration**: When a user undoes a word deletion from the notebook, all captured sentence context, audio references, source video ID, and timestamp offsets are restored without data loss.
@@ -308,13 +342,14 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
     - Inside the bottom sheet, the user can reorder videos (cdkDrag if owner), switch videos, toggle loop/shuffle, share, or open individual video options. Selecting a video automatically closes the sheet and navigates to the video.
   - **Navigation Guarding**: Playlist previous (`canPlayPrev`) and next (`canPlayNext`) actions are disabled when `videos.length <= 1` (unless playlist loop mode is toggled), preventing dead interactions.
 - **Dual "For You" Home Dashboard ("Dành cho bạn" / "For You")**:
-  - When no video is currently loaded, the Home Dashboard features a segmented control switching seamlessly between:
-    1. **Recommended Videos (`homeTab = 'videos'`)**: Bite-sized single videos with verified transcripts stored in the database.
-    2. **Featured Playlists (`homeTab = 'playlists'`)**: Curated multi-video learning collections.
+  - When no video is currently loaded, the Home Dashboard transforms into a modern **YouTube Homepage Feed**:
+    1. **YouTube-style Video Card Grid (`yt-video-grid` & `yt-video-card`)**: 16:9 cards with duration pills, circular channel/flag avatars, 2-line clamped titles, level badges, and interactive subtitle (`CC`) indicators.
+    2. **1-Tap Interactive Chips Carousel (`.yt-chips-bar`)**: Horizontal scrollable chips bar (`All`, language proficiency levels e.g. `JLPT N5`–`N1`, `Playlists`, `Refresh`) allowing instant topic/difficulty filtering without modal popups.
+    3. **Infinite Scrolling Pagination**: Uses an `IntersectionObserver` sentinel to continuously auto-fetch 12-video batches on scroll without layout shift.
 - **Verified Database Transcript Video Recommendations (`VideoRecommendationService`)**:
   - Solves the cold-start problem: learners don't need a YouTube URL ready on their clipboard to start practicing.
   - **Pre-Processed & Instant (<100ms)**: Videos are sourced from Cloudflare D1 (`video_languages`) and R2 permanent transcripts. Zero scraping delay, zero risk of missing captions, and zero AI Diamond credit consumption.
-  - **Server-Side Difficulty Level Filtering**: Supports querying by proficiency tier (`GET /api/recommended-videos?lang={lang}&tier={tier}&limit=12`). Resolves tiers via D1 `levels` JSON and metadata regex, ensuring a full shelf of 12 level-matched videos without sparse results.
+  - **Server-Side Difficulty Level Filtering & Offset Pagination**: Supports querying by proficiency tier and offset (`GET /api/recommended-videos?lang={lang}&tier={tier}&limit=12&offset={offset}`). Resolves tiers via D1 `levels` JSON and metadata regex, ensuring continuous shelves of level-matched videos without sparse results.
   - **Proficiency Level & Language Alignment**: Every recommended video displays a circular SVG flag (`.circle-flag`) for its target language and its detected CEFR, JLPT, HSK, or TOPIK difficulty tier badge (`VideoLevelService`) alongside duration, channel, and an "Instant Subtitles" badge. Eliminates redundant text codes and clutter.
   - **1-Click Play**: Clicking any video immediately updates the URL query parameter (`?v=videoId`), mounts the player, and loads synchronized cues.
 - **Server-Side Playlist Recommendation Engine**:
@@ -468,9 +503,12 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
   - Speech velocity (e.g. `278 char/min` or `142 words/min`).
   - Active proficiency framework badge.
 - **Learn Home Dashboard Integration (`VideoPageComponent`)**:
-  - **Tier Filter Dropdown**: Allows filtering recommended videos and featured playlists by proficiency level (`All Levels`, `Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).
-  - **Server-Side Dynamic Fetching**: Switching the filter triggers a background server fetch via `/api/recommended-videos?tier=...` and PocketBase, ensuring a full shelf of 12 level-matched videos without sparse results.
-  - **Dual-Layer Cache**: In-memory caching in `VideoRecommendationService` and `PlaylistService` delivers zero-latency instant transitions when navigating between previously viewed levels.
+  - **YouTube-Style Home Discovery Feed**: Native YouTube-style video discovery grid featuring 16:9 responsive thumbnails, channel avatars, duration badges, and proficiency level indicators.
+  - **Interleaved Recommended Playlists**: YouTube-style interleaving of community and curated playlists directly into the video feed (1 playlist every 4 videos) with stacked-shadow card styling.
+  - **Coordinated Dual-Stream Fetching & Zero Layout Shift (CLS = 0)**: Synchronized atomic loading for both recommended videos and playlists; skeleton states remain active until both streams resolve, preventing premature single-stream rendering and card pop-ins.
+  - **Persistent LocalStorage Caching**: 1-hour persistent caching for both video recommendations (`voca_rec_videos_*`) and playlist recommendations (`voca_rec_playlists_*`), ensuring instantaneous frame-0 feed presentation on page load and tab switches.
+  - **Sticky Clean Filter Chips Carousel**: YouTube-authentic pill chips (`All`, `Playlists`, level pills `N5`–`N1`, `HSK`, etc.) with fixed dimensions and no disruptive pop-in count badges.
+  - **Infinite Scroll & Seamless Pagination**: IntersectionObserver sentinel automatically fetches additional level-matched videos as the learner scrolls down the page.
 - **Playlist Page Integration (`PlaylistPageComponent`)**:
   - Playlist cards and individual tracklist rows display level pills (`level-badge--pill`) styled with tier-specific hues.
   - **Level Filter Dropdown**: Filter playlists by proficiency level (`All Levels`, `Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).
@@ -565,4 +603,27 @@ Achievements are organized into 5 core learning categories:
 - **Session Teardown & Clean Logout**:
   - Progress is safely isolated per user account.
   - On logout, user state transitions smoothly without destructive data loss.
+
+---
+
+## 14. Welcoming Onboarding & First-Run Experience
+
+To ensure an inviting, frictionless introduction for new learners, Voca provides a clean, focused, non-intrusive welcome sheet.
+
+### 14.1. Core Principles & Flow
+- **Non-Blocking Immediate Rendering**:
+  - The application shell, desktop sidebar, routes, and video players load immediately underneath. Deep links (e.g. shared video URLs `/video?v=...`) are never obstructed by a blank loading screen or mandatory interrogation.
+  - Onboarding renders within Voca's responsive `BottomSheetComponent`, presenting as a centered modal with frosted blur on desktop (`maxWidth="440px"`) and an ergonomic slide-up sheet on mobile.
+- **Streamlined Value Highlights (`features-card`)**:
+  - Highlights Voca's three core superpowers in a clean, unified card:
+    1. 🎬 **Dual Subtitles & Furigana**: Real-time reading annotations and bilingual subtitles.
+    2. 📖 **Instant Tap-to-Translate**: Morphological dictionary lookups.
+    3. 🧠 **Spaced Repetition Flashcards**: SM-2 vocabulary memorization.
+- **Target Language Selection**:
+  - Clean 2x2 grid for selecting between Japanese, Chinese, Korean, and English with circular flags, native script, subtle glow, and checkmark badges.
+- **Friction-Free Exit Hatches**:
+  - **Start Learning**: Instantly saves the chosen learning language and marks onboarding complete.
+  - **Explore First / Skip**: Immediately closes the sheet and lets learners explore with sensible defaults without forcing decisions.
+  - Backdrop click and Escape key provide standard accessible dismiss paths without cluttered floating close buttons.
+
 

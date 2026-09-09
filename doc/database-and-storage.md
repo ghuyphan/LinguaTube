@@ -173,6 +173,7 @@ Bucket binding: `TRANSCRIPT_STORAGE` (`linguatube-transcripts`)
 
 ### 3.2. Dual Subtitle Translation Object Format
 - **Key**: `translations/{videoId}/{sourceLang}_{targetLang}.json`
+- **Incremental Segment Merging**: When clients persist translations (`POST /api/dual-subtitles` with `saveOnly: true`), the backend (`translation-cache.js`) merges incoming segment translations into the existing R2 translation object instead of overwriting. Existing translated cues are preserved, newly translated cues are added or updated, and metadata (`translatedCount`, `totalCues`, `quality`) is dynamically recalculated.
 - **JSON Structure**:
   ```json
   {
@@ -296,9 +297,12 @@ Executed server-side on PocketBase:
 - **Database Name**: `lingua-tube-cache`
 - **Version**: `2`
 - **Store Name**: `transcripts`
-- **Key Path**: `key` (Formatted as `${videoId}:${lang}`)
+- **Key Path**: `key` (Formatted as `${videoId}:${lang}` for monolingual transcripts, or `${videoId}:dual:${sourceLang}-${targetLang}` for bilingual dual subtitles)
 - **Indexes**: `expiresAt` (non-unique)
 - **TTL**: 7 days (`7 * 24 * 60 * 60 * 1000` ms).
+- **Dual Subtitles Caching**:
+  - `getDual(videoId, src, tgt)`: Returns cached bilingual dual subtitles instantly with 0ms latency and zero network overhead.
+  - `setDual(videoId, src, tgt, dualSubtitles)`: Writes assembled or server-fetched dual subtitles directly to IndexedDB.
 - **Pruning & Cleanliness**:
   - Automatic expiration check on read.
   - Automatically evicts stale dev mock transcript entries when opening real YouTube videos.
@@ -324,6 +328,7 @@ Executed server-side on PocketBase:
 | `linguatube_daily_study_progress` | `StudyPageComponent` | `{ count: number, date: string }` | Daily reviewed flashcard counter |
 | `linguatube_daily_study_goal` | `StudyPageComponent` | `number` | Daily study target (default 20 cards) |
 | `voca_rec_videos_{lang}_{tier}_{limit}` | `VideoRecommendationService` | `{ timestamp: number, videos: RecommendedVideo[] }` | Curated recommended video cache (1-hour TTL) |
+| `voca_rec_playlists_{lang}_{tier}_{limit}` | `PlaylistService` | `{ timestamp: number, playlists: Playlist[] }` | Curated recommended playlist cache (1-hour TTL) |
 | `pocketbase_auth` | `PocketBaseService` | `{ token: string, model: User }` | User auth session token and profile |
 
 ### 6.3. Storage Quota Eviction Policy (`StorageService`)

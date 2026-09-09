@@ -38,7 +38,14 @@ export async function getVideoLanguages(db, videoId) {
 
         let levels = {};
         try {
-            if (row.levels) levels = JSON.parse(row.levels);
+            if (row.levels) {
+                const parsed = JSON.parse(row.levels);
+                // Normalize so levels[lang] returns string label for backward compatibility
+                for (const [k, v] of Object.entries(parsed)) {
+                    if (k.endsWith('_meta')) continue;
+                    levels[k] = (v && typeof v === 'object' && v.level) ? v.level : v;
+                }
+            }
         } catch { }
 
         return {
@@ -105,20 +112,38 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
 }
 
 /**
- * Save or update a single language level in D1 & KV
+ * Save or update a single language level in D1 (Zero KV writes - Rule 2)
  * @param {D1Database} db
- * @param {KVNamespace} [kv]
+ * @param {KVNamespace|null} [_kv] - Unused; preserved for signature compatibility
  * @param {string} videoId
  * @param {string} language
  * @param {string} level - e.g. "JLPT N4", "HSK 2"
+ * @param {number} [confidence] - Assessment confidence (0.0 to 1.0)
+ * @param {string} [method] - Assessment method ('metadata' | 'linguistics')
  */
-export async function saveVideoLevel(db, kv, videoId, language, level) {
+export async function saveVideoLevel(db, _kv, videoId, language, level, confidence = 0.8, method = 'linguistics') {
     if (!db || !videoId || !language || !level) return null;
 
     try {
         const existing = await getVideoLanguages(db, videoId);
         const currentLevels = existing?.levels || {};
+
+        // Security / Integrity check: prevent lower-confidence client payloads from downgrading verified levels
+        const existingVal = currentLevels[language];
+        const existingMeta = currentLevels[`${language}_meta`];
+        if (existingVal && existingMeta && typeof existingMeta === 'object') {
+            const existingConf = typeof existingMeta.confidence === 'number' ? existingMeta.confidence : 0.8;
+            if (confidence < existingConf) {
+                return currentLevels;
+            }
+        }
+
         currentLevels[language] = level;
+        currentLevels[`${language}_meta`] = {
+            confidence: Math.min(1.0, Math.max(0.0, confidence)),
+            method,
+            updatedAt: Math.floor(Date.now() / 1000)
+        };
 
         if (existing) {
             await db.prepare(`
@@ -130,7 +155,14 @@ export async function saveVideoLevel(db, kv, videoId, language, level) {
             await saveVideoLanguages(db, videoId, [language], null, null, null, false, currentLevels);
         }
 
-        return currentLevels;
+        // Return clean string map
+        const cleanLevels = {};
+        for (const [k, v] of Object.entries(currentLevels)) {
+            if (!k.endsWith('_meta')) {
+                cleanLevels[k] = (v && typeof v === 'object' && v.level) ? v.level : v;
+            }
+        }
+        return cleanLevels;
     } catch (err) {
         console.error('[VideoInfoDB] saveVideoLevel error:', err.message);
         return null;
@@ -138,29 +170,50 @@ export async function saveVideoLevel(db, kv, videoId, language, level) {
 }
 
 /**
- * Fast-path metadata regex level detection
+ * Fast-path metadata regex level detection with expanded multilingual keyword support
  * @param {string} title
  * @param {string} channel
  * @returns {{lang: string, level: string} | null}
  */
-const JLPT_REGEX = /\b(?:JLPT\s*)?N([1-5])\b/i;
-const HSK_REGEX = /\bHSK\s*([1-6])\b/i;
-const TOPIK_REGEX = /\bTOPIK\s*([1-6]|I{1,2})\b/i;
-const CEFR_REGEX = /\b(?:CEFR\s*([A-C][1-2])|([A-C][1-2])\s*level)\b/i;
-
 export function detectLevelFromMetadata(title = '', channel = '') {
     const text = `${title} ${channel}`;
-    const jlptMatch = text.match(JLPT_REGEX);
-    if (jlptMatch) return { lang: 'ja', level: `JLPT N${jlptMatch[1]}` };
 
-    const hskMatch = text.match(HSK_REGEX);
+    // 1. Japanese (JLPT, Kanji & Japanese learning keywords)
+    const jlptMatch = text.match(/\b(?:JLPT\s*)?N([1-5])\b/i) || text.match(/(?:JLPT|日本語能力試験)?\s*([NＮ][1-5１-５])/i);
+    if (jlptMatch) {
+        const num = jlptMatch[1].replace('Ｎ', 'N').replace(/[１-５]/, m => String.fromCharCode(m.charCodeAt(0) - 0xFEE0)).replace('N', '');
+        return { lang: 'ja', level: `JLPT N${num}` };
+    }
+    if (/中上級/.test(text)) return { lang: 'ja', level: 'JLPT N2' };
+    if (/上級/.test(text)) return { lang: 'ja', level: 'JLPT N1' };
+    if (/中級/.test(text)) return { lang: 'ja', level: 'JLPT N3' };
+    if (/初級|入門/.test(text)) return { lang: 'ja', level: 'JLPT N5' };
+
+    // 2. Chinese (HSK & Chinese learning keywords)
+    const hskMatch = text.match(/\bHSK\s*([1-6])\b/i);
     if (hskMatch) return { lang: 'zh', level: `HSK ${hskMatch[1]}` };
+    if (/中高级|中高級/.test(text)) return { lang: 'zh', level: 'HSK 4' };
+    if (/高级|高級/.test(text)) return { lang: 'zh', level: 'HSK 5' };
+    if (/中级|中級/.test(text)) return { lang: 'zh', level: 'HSK 3' };
+    if (/初级|初級/.test(text)) return { lang: 'zh', level: 'HSK 2' };
+    if (/入门|入門/.test(text)) return { lang: 'zh', level: 'HSK 1' };
 
-    const topikMatch = text.match(TOPIK_REGEX);
+    // 3. Korean (TOPIK & Korean learning keywords)
+    const topikMatch = text.match(/\bTOPIK\s*([1-6]|I{1,2})\b/i);
     if (topikMatch) return { lang: 'ko', level: `TOPIK ${topikMatch[1]}` };
+    if (/고급/.test(text)) return { lang: 'ko', level: 'TOPIK 5' };
+    if (/중급/.test(text)) return { lang: 'ko', level: 'TOPIK 3' };
+    if (/초급/.test(text)) return { lang: 'ko', level: 'TOPIK 2' };
+    if (/입문/.test(text)) return { lang: 'ko', level: 'TOPIK 1' };
 
-    const cefrMatch = text.match(CEFR_REGEX);
+    // 4. English / European (CEFR & English keywords)
+    const cefrMatch = text.match(/\b(?:CEFR\s*([A-C][1-2])|([A-C][1-2])\s*level)\b/i);
     if (cefrMatch) return { lang: 'en', level: `CEFR ${(cefrMatch[1] || cefrMatch[2]).toUpperCase()}` };
+    if (/\bupper[\s-]intermediate\b/i.test(text)) return { lang: 'en', level: 'CEFR B2' };
+    if (/\b(?:for\s+)?intermediate\b/i.test(text)) return { lang: 'en', level: 'CEFR B1' };
+    if (/\b(?:for\s+)?elementary\b/i.test(text)) return { lang: 'en', level: 'CEFR A2' };
+    if (/\b(?:for\s+)?beginners?\b/i.test(text)) return { lang: 'en', level: 'CEFR A1' };
+    if (/\b(?:advanced|fluent)\b/i.test(text)) return { lang: 'en', level: 'CEFR C1' };
 
     return null;
 }
@@ -353,12 +406,13 @@ function shuffleArray(arr) {
     return copy;
 }
 
-export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, shuffle = false) {
+export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, shuffle = false, offset = 0) {
     if (!lang) return [];
 
     const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
+    const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
     const targetTier = tier && typeof tier === 'string' ? tier.toLowerCase().trim() : null;
-    const candidateLimit = Math.max(safeLimit * (shuffle ? 4 : (targetTier ? 5 : 2)), 60);
+    const candidateLimit = Math.max((safeOffset + safeLimit) * (shuffle ? 4 : (targetTier ? 5 : 2)), 60);
     const videoMap = new Map();
 
     // 1. Query D1 video_languages table (primary metadata index)
@@ -380,6 +434,8 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                 const rows = shuffle ? shuffleArray(results) : results;
 
                 for (const row of rows) {
+                    if (videoMap.has(row.video_id)) continue;
+
                     let levels = {};
                     try {
                         if (row.levels) levels = JSON.parse(row.levels);
@@ -415,7 +471,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         updatedAt: row.updated_at
                     });
 
-                    if (videoMap.size >= safeLimit) {
+                    if (videoMap.size >= safeOffset + safeLimit) {
                         break;
                     }
                 }
@@ -425,14 +481,15 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
         }
     }
 
-    return Array.from(videoMap.values());
+    const allMatched = Array.from(videoMap.values());
+    return allMatched.slice(safeOffset, safeOffset + safeLimit);
 }
 
 /**
  * Backward compatibility wrapper for getRecommendedVideosFromCloudflare
  */
-export async function getRecommendedVideosFromD1(db, lang, limit = 12, tier = null) {
-    return getRecommendedVideosFromCloudflare(db, null, lang, limit, tier);
+export async function getRecommendedVideosFromD1(db, lang, limit = 12, tier = null, offset = 0) {
+    return getRecommendedVideosFromCloudflare(db, null, lang, limit, tier, false, offset);
 }
 
 

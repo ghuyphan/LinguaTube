@@ -72,210 +72,212 @@
                 <p class="panel-header__subtitle">{{ i18n.t('playlist.subtitle') }}</p>
             </div>
 
-            <!-- View Tabs (Matches dictionary & playlist toolbars) -->
-            <div class="home-toolbar">
-                <div class="view-tabs">
-                    <button type="button" class="filter-chip" [class.active]="homeTab() === 'videos'"
-                        (click)="onTabClick('videos')" [attr.aria-label]="i18n.t('playlist.recommendedVideos')">
-                        <app-icon name="video" [size]="14" />
-                        <span class="chip-text">{{ i18n.t('playlist.recommendedVideos') }}</span>
-                        @if (filteredRecommendedVideos().length > 0) {
-                        <span class="tab-badge">{{ filteredRecommendedVideos().length }}</span>
-                        }
+            <!-- YouTube-style Horizontal Chips Carousel -->
+            <div class="yt-chips-bar">
+                <div class="yt-chips-scroll">
+                    <!-- 1. All / Recommended Videos chip -->
+                    <button type="button" class="yt-chip" [class.active]="homeTab() === 'videos' && videoLevelFilter() === 'all'"
+                        (click)="selectFeedTab('videos', 'all')" [attr.aria-label]="i18n.t('playlist.recommendedVideos')">
+                        <app-icon name="play-circle" [size]="15" />
+                        <span class="yt-chip-label">{{ i18n.t('common.all') || i18n.t('level.allLevels') || 'All' }}</span>
                     </button>
-                    <button type="button" class="filter-chip" [class.active]="homeTab() === 'playlists'"
-                        (click)="onTabClick('playlists')" [attr.aria-label]="i18n.t('playlist.featured')">
-                        <app-icon name="list-video" [size]="14" />
-                        <span class="chip-text">{{ i18n.t('playlist.featured') }}</span>
-                        @if (featuredPlaylists().length > 0) {
-                        <span class="tab-badge">{{ featuredPlaylists().length }}</span>
-                        }
+
+                    <!-- 2. Playlists Chip (moved right next to All) -->
+                    <button type="button" class="yt-chip" [class.active]="homeTab() === 'playlists'"
+                        (click)="selectFeedTab('playlists')" [attr.aria-label]="i18n.t('nav.playlists')">
+                        <app-icon name="list-video" [size]="15" />
+                        <span class="yt-chip-label">{{ i18n.t('nav.playlists') || 'Playlists' }}</span>
                     </button>
+
+                    <!-- 3. Language Difficulty Level Chips -->
+                    @for (opt of levelFilterOptions(); track opt.value) {
+                        @if (opt.value !== 'all') {
+                        <button type="button" class="yt-chip" [class.active]="homeTab() === 'videos' && videoLevelFilter() === opt.value"
+                            (click)="selectFeedTab('videos', opt.value)" [attr.aria-label]="opt.label">
+                            <span class="yt-chip-label">{{ opt.badge || opt.label }}</span>
+                        </button>
+                        }
+                    }
                 </div>
 
-                <div class="toolbar-actions">
-                    <button type="button" class="filter-chip filter-chip--level" [class.active]="videoLevelFilter() !== 'all'"
-                        (click)="showLevelFilter.set(true)" [attr.aria-label]="getLevelFilterLabel()" [title]="getLevelFilterLabel()">
-                        <app-icon name="medal" [size]="14" />
-                        <span class="chip-text">{{ getLevelFilterLabel() }}</span>
-                        <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
-                    </button>
-                    <button type="button" class="filter-chip filter-chip--refresh" [disabled]="isFeedRefreshing()"
+                <div class="yt-chips-actions">
+                    <button type="button" class="yt-action-btn" [disabled]="isFeedRefreshing()"
                         (click)="refreshRecommendations()" [attr.aria-label]="i18n.t('playlist.refresh')" [title]="i18n.t('playlist.refresh')">
                         <app-icon name="refresh-cw" [size]="14" [class.spin-icon]="isFeedRefreshing()" />
                     </button>
                 </div>
             </div>
 
-            @if (homeTab() === 'videos') {
-                @if (isVideosLoading() && filteredRecommendedVideos().length === 0) {
-                <div class="horizontal-item-list skeleton-container">
-                    @for (_ of [1, 2, 3]; track $index) {
-                    <div class="home-row-item home-row-item--skeleton">
-                        <div class="home-row-item__thumb"></div>
-                        <div class="home-row-item__content">
+            @if (isFeedLoading()) {
+            <div class="yt-video-grid skeleton-container">
+                @for (_ of [1, 2, 3, 4, 5, 6]; track $index) {
+                <div class="yt-video-card yt-video-card--skeleton">
+                    <div class="yt-video-card__thumbnail"></div>
+                    <div class="yt-video-card__details">
+                        <div class="yt-skeleton-avatar"></div>
+                        <div class="yt-skeleton-meta">
                             <div class="skeleton-line skeleton-line--title"></div>
-                            <div class="skeleton-meta-row">
-                                <div class="skeleton-line skeleton-line--badge"></div>
-                                <div class="skeleton-line skeleton-line--meta"></div>
-                            </div>
+                            <div class="skeleton-line skeleton-line--subtitle"></div>
+                            <div class="skeleton-line skeleton-line--badge"></div>
                         </div>
-                        <div class="skeleton-btn"></div>
-                    </div>
-                    }
-                </div>
-                } @else if (filteredRecommendedVideos().length > 0) {
-                <div class="horizontal-item-list">
-                    @for (video of filteredRecommendedVideos(); track video.videoId; let i = $index) {
-                    <div class="home-row-item" [style.--item-index]="i" (click)="onPlayRecommendedVideo(video)">
-                        <div class="home-row-item__thumb">
-                            <img [src]="video.thumbnail" [alt]="video.title" loading="lazy" />
-                            @if (video.duration) {
-                            <div class="video-duration">
-                                <span>{{ formatVideoTime(video.duration) }}</span>
-                            </div>
-                            }
-                            <div class="card-play-overlay">
-                                <div class="play-icon-circle">
-                                    <app-icon name="play" [size]="14" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home-row-item__content">
-                            <h4 class="home-row-item__title" [title]="video.title">{{ video.title }}</h4>
-                            <div class="home-row-item__meta">
-                                @if (video.languages && video.languages.length > 0) {
-                                <img [src]="getFlagUrl(video.languages[0])" class="circle-flag" [alt]="video.languages[0]" [title]="video.languages[0].toUpperCase()" loading="lazy" />
-                                }
-                                @if (video.level) {
-                                <span class="level-badge--pill" [attr.data-tier]="video.tier">{{ video.level }}</span>
-                                }
-                                @if (video.channel) {
-                                <span class="meta-author">{{ video.channel }}</span>
-                                }
-                            </div>
-                        </div>
-                        <div class="home-row-item__action">
-                            <button type="button" class="action-btn" aria-label="Play video">
-                                <app-icon name="play" [size]="14" />
-                            </button>
-                        </div>
-                    </div>
-                    }
-                </div>
-                } @else if (videoLevelFilter() !== 'all') {
-                <div class="empty-state empty-state--centered">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="medal" [size]="24" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>
-                        <p class="empty-state__description">{{ i18n.t('level.noVideos') }}</p>
-                    </div>
-                    <button type="button" class="btn btn-secondary btn-sm" (click)="videoLevelFilter.set('all')">
-                        {{ i18n.t('level.allLevels') || 'All Levels' }}
-                    </button>
-                </div>
-                } @else {
-                <div class="empty-state empty-state--centered">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="video" [size]="24" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ i18n.t('playlist.empty.videosTitle') }}</p>
-                        <p class="empty-state__description">{{ i18n.t('playlist.empty.videosHint') }}</p>
                     </div>
                 </div>
                 }
-            } @else {
-                @if (isFeaturedLoading()) {
-                <div class="horizontal-item-list skeleton-container">
-                    @for (_ of [1, 2, 3]; track $index) {
-                    <div class="home-row-item home-row-item--skeleton">
-                        <div class="home-row-item__thumb"></div>
-                        <div class="home-row-item__content">
-                            <div class="skeleton-line skeleton-line--title"></div>
-                            <div class="skeleton-meta-row">
-                                <div class="skeleton-line skeleton-line--badge"></div>
-                                <div class="skeleton-line skeleton-line--meta"></div>
+            </div>
+            } @else if (feedItems().length > 0) {
+            <div class="yt-video-grid">
+                @for (item of feedItems(); track item.kind === 'video' ? item.video.videoId : item.playlist.id; let i = $index) {
+                    @if (item.kind === 'video') {
+                    <article class="yt-video-card" [style.--item-index]="i" (click)="onPlayRecommendedVideo(item.video)">
+                        <div class="yt-video-card__thumbnail">
+                            <img [src]="item.video.thumbnail" [alt]="item.video.title" loading="lazy" />
+                            @if (item.video.duration) {
+                            <span class="yt-duration-badge">{{ formatVideoTime(item.video.duration) }}</span>
+                            }
+                            <div class="yt-card-hover-overlay">
+                                <div class="yt-play-circle">
+                                    <app-icon name="play" [size]="18" />
+                                </div>
                             </div>
                         </div>
-                        <div class="skeleton-btn"></div>
-                    </div>
-                    }
-                </div>
-                } @else if (filteredFeaturedPlaylists().length > 0) {
-                <div class="horizontal-item-list">
-                    @for (playlist of filteredFeaturedPlaylists(); track playlist.id; let i = $index) {
-                    <div class="home-row-item" [style.--item-index]="i" (click)="startPlaylist(playlist)">
-                        <div class="home-row-item__thumb">
-                            @if (playlist.thumbnail) {
-                            <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" />
+                        <div class="yt-video-card__details">
+                            <div class="yt-video-card__avatar">
+                                @if (item.video.languages && item.video.languages.length > 0) {
+                                <img [src]="getFlagUrl(item.video.languages[0])" class="circle-flag" [alt]="item.video.languages[0]" [title]="item.video.languages[0].toUpperCase()" loading="lazy" />
+                                } @else {
+                                <div class="avatar-placeholder">
+                                    <app-icon name="play-circle" [size]="16" />
+                                </div>
+                                }
+                            </div>
+                            <div class="yt-video-card__meta">
+                                <h4 class="yt-video-card__title" [title]="item.video.title">{{ item.video.title }}</h4>
+                                <div class="yt-video-card__channel-row">
+                                    <span class="yt-channel-name">{{ item.video.channel || i18n.t('playlist.curated') }}</span>
+                                </div>
+                                <div class="yt-video-card__sub-row">
+                                    @if (item.video.level) {
+                                    <span class="level-badge--pill" [attr.data-tier]="item.video.tier">{{ item.video.level }}</span>
+                                    }
+                                    <span class="yt-sub-badge"><app-icon name="captions" [size]="12" /> CC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    } @else {
+                    <article class="yt-video-card yt-video-card--playlist" [style.--item-index]="i" (click)="startPlaylist(item.playlist)">
+                        <div class="yt-video-card__thumbnail">
+                            @if (item.playlist.thumbnail) {
+                            <img [src]="item.playlist.thumbnail" [alt]="item.playlist.title" loading="lazy" />
                             } @else {
                             <div class="placeholder-icon">
-                                <app-icon name="list-video" [size]="24" />
+                                <app-icon name="list-video" [size]="32" />
                             </div>
                             }
-                            <div class="video-count">
-                                <app-icon name="list-video" [size]="11" />
-                                <span>{{ playlist.videoIds.length }}</span>
+                            <div class="yt-playlist-count-badge">
+                                <app-icon name="list-video" [size]="12" />
+                                <span>{{ item.playlist.videoIds.length }}</span>
                             </div>
-                            <div class="card-play-overlay">
-                                <div class="play-icon-circle">
-                                    <app-icon name="play" [size]="14" />
+                            <div class="yt-card-hover-overlay">
+                                <div class="yt-playlist-hover-content">
+                                    <div class="yt-play-circle">
+                                        <app-icon name="play" [size]="18" />
+                                    </div>
+                                    <span class="yt-play-all-text">{{ i18n.t('playlist.playAll') }}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="home-row-item__content">
-                            <h4 class="home-row-item__title" [title]="playlist.title">{{ playlist.title }}</h4>
-                            <div class="home-row-item__meta">
-                                @if (playlist.language) {
-                                <img [src]="getFlagUrl(playlist.language)" class="circle-flag" [alt]="playlist.language" [title]="playlist.language.toUpperCase()" loading="lazy" />
+                        <div class="yt-video-card__details">
+                            <div class="yt-video-card__avatar">
+                                @if (item.playlist.language) {
+                                <img [src]="getFlagUrl(item.playlist.language)" class="circle-flag" [alt]="item.playlist.language" [title]="item.playlist.language.toUpperCase()" loading="lazy" />
+                                } @else {
+                                <div class="avatar-placeholder">
+                                    <app-icon name="list-video" [size]="16" />
+                                </div>
                                 }
-                                @if (getPlaylistLevel(playlist); as lvl) {
-                                <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
-                                }
-                                <span class="meta-author">{{ playlist.userName || i18n.t('playlist.community') }}</span>
-                                <span class="separator">•</span>
-                                <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? i18n.t('history.videoSingular') : i18n.t('history.videoPlural') }}</span>
+                            </div>
+                            <div class="yt-video-card__meta">
+                                <h4 class="yt-video-card__title" [title]="item.playlist.title">{{ item.playlist.title }}</h4>
+                                <div class="yt-video-card__channel-row">
+                                    <span class="yt-channel-name">{{ item.playlist.userName || i18n.t('playlist.community') }}</span>
+                                </div>
+                                <div class="yt-video-card__sub-row">
+                                    @if (getPlaylistLevel(item.playlist); as lvl) {
+                                    <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
+                                    }
+                                    <span class="yt-playlist-tag">
+                                        <app-icon name="list-video" [size]="11" />
+                                        <span>{{ i18n.t('playlist.playlist') }} • {{ item.playlist.videoIds.length }} {{ item.playlist.videoIds.length === 1 ? i18n.t('history.videoSingular') : i18n.t('history.videoPlural') }}</span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        <div class="home-row-item__action">
-                            <button type="button" class="action-btn" aria-label="Play playlist">
-                                <app-icon name="play" [size]="14" />
-                            </button>
+                    </article>
+                    }
+                }
+            </div>
+
+            @if (homeTab() !== 'playlists') {
+            <!-- Infinite Scroll Sentinel Element -->
+            <div #scrollSentinel class="feed-sentinel"></div>
+
+            <!-- Loading More Skeleton Cards -->
+            @if (isLoadingMore()) {
+            <div class="yt-video-grid yt-video-grid--loading-more">
+                @for (_ of [1, 2, 3, 4]; track $index) {
+                <div class="yt-video-card yt-video-card--skeleton">
+                    <div class="yt-video-card__thumbnail"></div>
+                    <div class="yt-video-card__details">
+                        <div class="yt-skeleton-avatar"></div>
+                        <div class="yt-skeleton-meta">
+                            <div class="skeleton-line skeleton-line--title"></div>
+                            <div class="skeleton-line skeleton-line--subtitle"></div>
+                            <div class="skeleton-line skeleton-line--badge"></div>
                         </div>
                     </div>
-                    }
-                </div>
-                } @else if (videoLevelFilter() !== 'all') {
-                <div class="empty-state empty-state--centered">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="medal" [size]="24" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>
-                        <p class="empty-state__description">{{ i18n.t('level.noPlaylists') }}</p>
-                    </div>
-                    <button type="button" class="btn btn-secondary btn-sm" (click)="videoLevelFilter.set('all')">
-                        {{ i18n.t('level.allLevels') || 'All Levels' }}
-                    </button>
-                </div>
-                } @else {
-                <div class="empty-state empty-state--centered">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="list-video" [size]="24" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</p>
-                        <p class="empty-state__description">{{ i18n.t('playlist.empty.communityHint') }}</p>
-                    </div>
-                    <button type="button" class="btn btn-secondary btn-sm" (click)="openExplore()">
-                        <app-icon name="globe" [size]="16" />
-                        <span>{{ i18n.t('nav.playlists') }}</span>
-                    </button>
                 </div>
                 }
+            </div>
+            }
+            }
+            } @else if (homeTab() === 'playlists') {
+            <div class="empty-state empty-state--centered">
+                <div class="empty-state__icon-box">
+                    <app-icon name="list-video" [size]="28" />
+                </div>
+                <div class="empty-state__text">
+                    <p class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</p>
+                    <p class="empty-state__description">{{ i18n.t('playlist.empty.communityHint') }}</p>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="openExplore()">
+                    <app-icon name="globe" [size]="16" />
+                    <span>{{ i18n.t('nav.playlists') }}</span>
+                </button>
+            </div>
+            } @else if (videoLevelFilter() !== 'all') {
+            <div class="empty-state empty-state--centered">
+                <div class="empty-state__icon-box">
+                    <app-icon name="medal" [size]="28" />
+                </div>
+                <div class="empty-state__text">
+                    <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>
+                    <p class="empty-state__description">{{ i18n.t('level.noVideos') }}</p>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="videoLevelFilter.set('all')">
+                    {{ i18n.t('level.allLevels') || 'All Levels' }}
+                </button>
+            </div>
+            } @else {
+            <div class="empty-state empty-state--centered">
+                <div class="empty-state__icon-box">
+                    <app-icon name="play-circle" [size]="28" />
+                </div>
+                <div class="empty-state__text">
+                    <p class="empty-state__title">{{ i18n.t('playlist.empty.videosTitle') }}</p>
+                    <p class="empty-state__description">{{ i18n.t('playlist.empty.videosHint') }}</p>
+                </div>
+            </div>
             }
         </div>
         } @else {

@@ -9,6 +9,8 @@ interface RecommendedVideosResponse {
     success: boolean;
     language: string;
     count: number;
+    offset?: number;
+    hasMore?: boolean;
     videos: RecommendedVideo[];
     source?: string;
 }
@@ -33,8 +35,14 @@ export class VideoRecommendationService {
     /** Recommended videos for the active learning language */
     readonly recommendedVideos = signal<RecommendedVideo[]>([]);
 
-    /** Loading state */
+    /** Initial Loading state */
     readonly isLoading = signal<boolean>(false);
+
+    /** Infinite scroll loading more state */
+    readonly isLoadingMore = signal<boolean>(false);
+
+    /** Whether more videos are available to load */
+    readonly hasMore = signal<boolean>(true);
 
     /** In-memory cache per language code */
     private readonly cache = new Map<string, RecommendedVideo[]>();
@@ -54,6 +62,7 @@ export class VideoRecommendationService {
 
         if (forceRefresh) {
             this.cache.delete(cacheKey);
+            this.hasMore.set(true);
             try {
                 localStorage.removeItem(LS_CACHE_PREFIX + cacheKey);
             } catch { }
@@ -63,6 +72,7 @@ export class VideoRecommendationService {
                 const cached = this.cache.get(cacheKey)!;
                 if (cached.length > 0) {
                     this.recommendedVideos.set(cached);
+                    this.hasMore.set(cached.length >= limit);
                     return cached;
                 } else {
                     this.cache.delete(cacheKey);
@@ -77,6 +87,7 @@ export class VideoRecommendationService {
                     if (Date.now() - parsed.timestamp < LS_CACHE_TTL_MS && Array.isArray(parsed.videos) && parsed.videos.length > 0) {
                         this.cache.set(cacheKey, parsed.videos);
                         this.recommendedVideos.set(parsed.videos);
+                        this.hasMore.set(parsed.videos.length >= limit);
                         return parsed.videos;
                     } else if (Array.isArray(parsed.videos) && parsed.videos.length === 0) {
                         localStorage.removeItem(LS_CACHE_PREFIX + cacheKey);
@@ -91,7 +102,7 @@ export class VideoRecommendationService {
 
         try {
             const endpoint = environment.api.recommendedVideos;
-            let url = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}`;
+            let url = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=0`;
             if (activeTier) {
                 url += `&tier=${encodeURIComponent(activeTier)}`;
             }
@@ -106,6 +117,8 @@ export class VideoRecommendationService {
 
             const rawVideos = response?.videos || [];
             const hydratedVideos = this.hydrateVideos(rawVideos, language, activeTier);
+            const hasMoreFlag = response?.hasMore ?? (rawVideos.length >= limit);
+            this.hasMore.set(hasMoreFlag);
 
             if (hydratedVideos.length > 0) {
                 this.cache.set(cacheKey, hydratedVideos);
@@ -127,9 +140,63 @@ export class VideoRecommendationService {
         } catch (err) {
             console.warn('[VideoRecommendation] Failed to load remote recommended videos:', err);
             this.recommendedVideos.set([]);
+            this.hasMore.set(false);
             return [];
         } finally {
             this.isLoading.set(false);
+        }
+    }
+
+    /**
+     * Load more recommended videos (infinite scrolling pagination)
+     * Appends unique videos to the existing recommendedVideos signal
+     */
+    async loadMoreRecommendedVideos(language: string, tier?: string, limit = 12): Promise<RecommendedVideo[]> {
+        if (!language || !this.hasMore() || this.isLoadingMore() || this.isLoading()) {
+            return [];
+        }
+
+        const currentList = this.recommendedVideos();
+        const offset = currentList.length;
+        const activeTier = tier && tier !== 'all' ? tier : undefined;
+
+        this.isLoadingMore.set(true);
+
+        try {
+            const endpoint = environment.api.recommendedVideos;
+            let url = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=${offset}`;
+            if (activeTier) {
+                url += `&tier=${encodeURIComponent(activeTier)}`;
+            }
+
+            const response = await firstValueFrom(
+                this.http.get<RecommendedVideosResponse>(url)
+                    .pipe(timeout(7000))
+            );
+
+            const rawVideos = response?.videos || [];
+            const hydrated = this.hydrateVideos(rawVideos, language, activeTier);
+
+            // Deduplicate against existing IDs
+            const existingIds = new Set(currentList.map(v => v.videoId));
+            const newUniqueVideos = hydrated.filter(v => !existingIds.has(v.videoId));
+
+            const hasMoreFlag = response?.hasMore ?? (rawVideos.length >= limit);
+            this.hasMore.set(hasMoreFlag && newUniqueVideos.length > 0);
+
+            if (newUniqueVideos.length > 0) {
+                const updatedList = [...currentList, ...newUniqueVideos];
+                this.recommendedVideos.set(updatedList);
+                return newUniqueVideos;
+            } else {
+                this.hasMore.set(false);
+                return [];
+            }
+        } catch (err) {
+            console.warn('[VideoRecommendation] Failed to load more videos:', err);
+            return [];
+        } finally {
+            this.isLoadingMore.set(false);
         }
     }
 

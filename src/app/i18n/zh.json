@@ -53,7 +53,11 @@
         "signedInAs": "已登录为 {{name}}",
         "signedOut": "已成功退出登录",
         "signInFailed": "登录失败，请重试。",
-        "signOutConfirm": "您确定要退出登录吗？"
+        "signOutConfirm": "您确定要退出登录吗？",
+        "continueWithGoogle": "使用 Google 账号继续",
+        "signInRequired": "请先登录以继续",
+        "signInToUpgrade": "登录并升级",
+        "signInToUpgradeDesc": "使用 Google 登录以绑定您的订阅并在多设备间同步"
     },
     "player": {
         "paste": "粘贴",
@@ -167,7 +171,7 @@
     "pro": {
         "title": "Voca Pro",
         "titlePremium": "Voca Premium",
-        "subtitle": "用 AI 潜能加速您的日常沉浸式视频学习",
+        "subtitle": "用 AI 加速您的日常沉浸式视频学习",
         "subtitlePremium": "长篇播客听力全解锁，极速回血钻石打造极致沉浸体验",
         "tabPro": "Voca Pro",
         "tabPremium": "Voca Premium",
@@ -232,7 +236,10 @@
         "activeSubscription": "Pro 会员生效中",
         "activePremiumSubscription": "Premium 会员生效中",
         "enjoyingBenefits": "您正在尊享每日 10 颗钻石、优先队列与无限云同步等全部特权。",
-        "enjoyingPremiumBenefits": "您已解锁最高沉浸潜能、每日 25 颗钻石、45 分钟长篇播客及 VIP 极速队列。"
+        "enjoyingPremiumBenefits": "您已解锁最高沉浸潜能、每日 25 颗钻石、45 分钟长篇播客及 VIP 极速队列。",
+        "subscribingAs": "当前登录：{{name}}",
+        "switchAccount": "切换账号",
+        "signInToUpgrade": "登录并升级 - {{price}}"
     },
     "vocab": {
         "title": "词汇本",
@@ -567,6 +574,7 @@
         "shuffleOn": "已开启随机"
     },
     "common": {
+        "all": "全部",
         "loading": "加载中...",
         "error": "错误",
         "success": "成功",
@@ -579,7 +587,9 @@
         "search": "搜索...",
         "options": "选项",
         "refresh": "刷新",
-        "noResults": "未找到匹配结果"
+        "noResults": "未找到匹配结果",
+        "maybeLater": "稍后再说",
+        "done": "完成"
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",
@@ -591,6 +601,8 @@
         "learningLanguageSubtitle": "选择您的目标语言以开始",
         "startLearning": "开始学习",
         "tapToTry": "点击任意词语试试！",
+        "skip": "先去逛逛",
+        "changeUiLang": "界面语言",
         "features": {
             "subtitles": "双语字幕助您更好理解",
             "dict": "点击任意单词即可即时翻译",

@@ -199,19 +199,20 @@
     align-items: center;
     justify-content: safe center;
     padding: var(--space-xs) 0;
-    gap: var(--space-sm);
+    gap: 6px;
 }
 
 /* FIX 3: Removed transitions from subtitle-text to prevent flicker */
 .subtitle-text {
     font-size: 1.125rem;
-    line-height: 2.0;
+    line-height: 2.1;
     text-align: center;
     word-break: break-word;
     overflow-wrap: break-word;
     border-radius: var(--border-radius-lg);
     padding: var(--space-xs) var(--space-md);
     max-width: 100%;
+    box-sizing: border-box;
 }
 
 .subtitle-content {
@@ -221,6 +222,8 @@
 .subtitle-translation {
     font-size: 0.8125rem;
     line-height: 1.4;
+    min-height: calc(0.8125rem * 1.4 + 14px);
+    box-sizing: border-box;
     color: var(--text-secondary);
     text-align: center;
     max-width: 95%;
@@ -249,8 +252,10 @@
 .subtitle-translation--loading {
     animation: none;
     background: transparent;
-    border-color: transparent;
+    border: 1px solid transparent;
     box-shadow: none;
+    min-height: calc(0.8125rem * 1.4 + 14px);
+    box-sizing: border-box;
     padding: 6px var(--space-sm);
     display: inline-flex;
     justify-content: center;
@@ -299,17 +304,19 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    /* Reserve space for one line of text + padding */
-    min-height: calc(0.8125rem * 1.4 + 12px);
+    /* Reserve space for one line of text + padding + border */
+    min-height: calc(0.8125rem * 1.4 + 14px);
+    margin-top: 2px;
 }
 
 .subtitle-translation--empty {
     animation: none;
     background: transparent;
-    border-color: transparent !important;
-    border: none !important;
+    border: 1px solid transparent !important;
     box-shadow: none !important;
     pointer-events: none;
+    min-height: calc(0.8125rem * 1.4 + 14px);
+    box-sizing: border-box;
     padding: 6px var(--space-sm);
 }
 
@@ -335,11 +342,18 @@
 
 .current-subtitle--small .subtitle-text {
     font-size: 1rem;
-    line-height: 1.9;
+    line-height: 2.0;
 }
 
 .current-subtitle--small .subtitle-translation {
     font-size: 0.75rem;
+    min-height: calc(0.75rem * 1.4 + 14px);
+}
+
+.current-subtitle--small .subtitle-translation-wrapper,
+.current-subtitle--small .subtitle-translation--empty,
+.current-subtitle--small .subtitle-translation--loading {
+    min-height: calc(0.75rem * 1.4 + 14px);
 }
 
 .current-subtitle--large .subtitle-text {
@@ -349,6 +363,13 @@
 
 .current-subtitle--large .subtitle-translation {
     font-size: 0.875rem;
+    min-height: calc(0.875rem * 1.4 + 14px);
+}
+
+.current-subtitle--large .subtitle-translation-wrapper,
+.current-subtitle--large .subtitle-translation--empty,
+.current-subtitle--large .subtitle-translation--loading {
+    min-height: calc(0.875rem * 1.4 + 14px);
 }
 
 .current-subtitle--xlarge .subtitle-text {
@@ -358,6 +379,13 @@
 
 .current-subtitle--xlarge .subtitle-translation {
     font-size: 1rem;
+    min-height: calc(1rem * 1.4 + 14px);
+}
+
+.current-subtitle--xlarge .subtitle-translation-wrapper,
+.current-subtitle--xlarge .subtitle-translation--empty,
+.current-subtitle--xlarge .subtitle-translation--loading {
+    min-height: calc(1rem * 1.4 + 14px);
 }
 
 /* ============================================
@@ -805,8 +833,10 @@
     vertical-align: baseline;
     cursor: default;
     color: var(--text-secondary);
-    padding: 4px 1px;
-    margin: 2px 0;
+    padding: 3px 2px;
+    margin: 1px 0;
+    border: 1px solid transparent;
+    box-sizing: border-box;
     line-height: inherit;
     font-weight: inherit;
 }
@@ -816,8 +846,8 @@
    ============================================ */
 .word {
     cursor: pointer;
-    padding: 4px 6px;
-    margin: 2px 2px;
+    padding: 3px 5px;
+    margin: 1px 1px;
     border-radius: 6px;
     font-weight: 600;
     transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
@@ -825,7 +855,15 @@
     vertical-align: baseline;
     background: transparent;
     border: 1px solid transparent;
+    box-sizing: border-box;
     position: relative;
+    line-height: inherit;
+}
+
+.word--static {
+    cursor: default;
+    border-color: transparent;
+    pointer-events: none;
 }
 
 @media (hover: hover) {
@@ -881,7 +919,7 @@
     text-decoration: underline;
     text-decoration-color: var(--color-grammar, #2dd4bf);
     text-decoration-style: solid;
-    text-underline-offset: 4px;
+    text-underline-offset: 2px;
     text-decoration-thickness: 2px;
     font-weight: 600;
 
@@ -902,12 +940,12 @@ ruby {
 
 ruby rt {
     display: ruby-text;
-    font-size: 0.5em;
+    font-size: 0.48em;
+    height: 1.15em;
+    line-height: 1.15;
     color: var(--text-muted);
     text-align: center;
     font-weight: 400;
-    line-height: 1.4;
-    padding-bottom: 2px;
     user-select: none;
     pointer-events: none;
 
@@ -915,6 +953,8 @@ ruby rt {
         visibility: hidden;
         user-select: none;
         pointer-events: none;
+        height: 1.15em;
+        line-height: 1.15;
     }
 }
 
@@ -926,22 +966,24 @@ ruby rt {
 }
 
 .text-ja .word {
-    padding: 4px 4px;
+    padding: 3px 4px;
     margin: 1px 1px;
-    vertical-align: top;
+    vertical-align: baseline;
 }
 
 .text-ja .punctuation {
-    padding: 4px 1px;
+    padding: 3px 1px;
     margin: 1px 0;
-    vertical-align: top;
+    border: 1px solid transparent;
+    vertical-align: baseline;
 }
 
 .text-ja ruby rt {
     font-size: 0.45em;
+    height: 1.15em;
+    line-height: 1.15;
     white-space: nowrap;
     letter-spacing: -0.02em;
-    padding-bottom: 3px;
 }
 
 /* Chinese text */
@@ -951,19 +993,23 @@ ruby rt {
 }
 
 .text-zh .word {
-    padding: 4px 5px;
+    padding: 3px 5px;
     margin: 1px 2px;
-    vertical-align: top;
+    vertical-align: baseline;
 }
 
 .text-zh .punctuation {
-    padding: 4px 1px;
+    padding: 3px 1px;
     margin: 1px 0;
-    vertical-align: top;
+    border: 1px solid transparent;
+    vertical-align: baseline;
 }
 
 .text-zh ruby rt {
     font-size: 0.48em;
+    height: 1.15em;
+    line-height: 1.15;
+    white-space: nowrap;
     font-weight: 500;
 }
 
@@ -974,19 +1020,23 @@ ruby rt {
 }
 
 .text-ko .word {
-    padding: 4px 6px;
+    padding: 3px 6px;
     margin: 1px 3px;
-    vertical-align: top;
+    vertical-align: baseline;
 }
 
 .text-ko .punctuation {
-    padding: 4px 1px;
+    padding: 3px 1px;
     margin: 1px 0;
-    vertical-align: top;
+    border: 1px solid transparent;
+    vertical-align: baseline;
 }
 
 .text-ko ruby rt {
     font-size: 0.48em;
+    height: 1.15em;
+    line-height: 1.15;
+    white-space: nowrap;
     font-weight: 500;
 }
 
@@ -994,18 +1044,19 @@ ruby rt {
 .text-en {
     word-spacing: 0.05em;
     font-size: 1.15rem;
-    line-height: 1.8;
+    line-height: 2.0;
 }
 
 .text-en .word {
-    padding: 2px 4px;
+    padding: 3px 4px;
     margin: 1px 2px;
     vertical-align: baseline;
 }
 
 .text-en .punctuation {
-    padding: 2px 1px;
+    padding: 3px 1px;
     margin: 1px 0;
+    border: 1px solid transparent;
     vertical-align: baseline;
 }
 
@@ -1075,11 +1126,11 @@ ruby rt {
     font-size: 0.875rem;
     color: var(--text-primary);
     opacity: 0.55;
-    min-height: 48px;
+    min-height: 52px;
     height: auto;
     position: relative;
     content-visibility: auto;
-    contain-intrinsic-size: auto 48px;
+    contain-intrinsic-size: auto 54px;
 }
 
 /* No more scale transform - use border & opacity for visual hierarchy */

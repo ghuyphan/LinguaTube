@@ -44,15 +44,8 @@ import { VocabularyService } from './features/vocabulary/vocabulary.service';
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
       
-      @if (!settings.settings().hasCompletedOnboarding) {
-        @defer {
-          <app-onboarding />
-        } @placeholder {
-          <div class="onboarding-loading"></div>
-        }
-      } @else {
-        <!-- Desktop Sidebar (lazy loaded) -->
-        @defer (on idle) {
+      <!-- Desktop Sidebar (lazy loaded) -->
+      @defer (on idle) {
           <app-sidebar 
             class="desktop-sidebar"
             (openSettings)="showSettingsSheet.set(true)"
@@ -303,7 +296,19 @@ import { VocabularyService } from './features/vocabulary/vocabulary.service';
             (closed)="showCommandPalette.set(false)"
           />
         }
-      }
+
+        <!-- Onboarding Welcome Sheet (lazy loaded when not completed) -->
+        @defer (when showOnboardingSheet(); prefetch on idle) {
+          <app-bottom-sheet
+            [isOpen]="showOnboardingSheet()"
+            [showCloseButton]="false"
+            [allowBackdropClose]="true"
+            maxWidth="440px"
+            (closed)="dismissOnboarding()"
+          >
+            <app-onboarding (dismissed)="dismissOnboarding()" />
+          </app-bottom-sheet>
+        }
 
       <!-- Update Available Sheet (always available, even during onboarding) -->
       <app-bottom-sheet
@@ -1180,6 +1185,7 @@ export class AppComponent implements OnDestroy {
   showProUpgradeSheet = signal(false);
   showCommandPalette = signal(false);
   showMoreSheet = signal(false);
+  showOnboardingSheet = signal(!this.settings.settings().hasCompletedOnboarding);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
 
 
@@ -1201,12 +1207,19 @@ export class AppComponent implements OnDestroy {
 
   // Check if any sheet is open (for bottom nav active state)
   anySheetOpen = computed(() =>
-    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet() || this.showAchievementsSheet() || this.showProUpgradeSheet() || this.showMoreSheet()
+    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet() || this.showAchievementsSheet() || this.showProUpgradeSheet() || this.showMoreSheet() || this.showOnboardingSheet()
   );
 
   // Check if current route matches
   isRouteActive(route: string): boolean {
     return this.currentUrl()?.startsWith(route) ?? false;
+  }
+
+  dismissOnboarding(): void {
+    this.showOnboardingSheet.set(false);
+    if (!this.settings.settings().hasCompletedOnboarding) {
+      this.settings.completeOnboarding();
+    }
   }
 
   /**

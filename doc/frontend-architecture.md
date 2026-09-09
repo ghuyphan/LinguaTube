@@ -134,10 +134,15 @@ graph TD
 - Host shell coordinating player, subtitles, unified sidebar, and mobile queue.
 - **Home Dashboard & "For You" Discovery (`.home-dashboard`)**:
   - Displayed when no video is loaded (`showLearnHome`).
-  - Features a segmented control switching between **Recommended Videos** (videos with verified transcripts in Cloudflare D1/R2) and **Curated Playlists**.
-  - **Difficulty Level Filter**: Interactive `OptionPickerComponent` chip (`[🏅 Level ▾]`) in `.home-toolbar` allowing users to filter recommendations by language-specific proficiency tiers (JLPT N5–N1, HSK 1–6, TOPIK 1–6, CEFR A1–C2+).
-  - Powered by `VideoRecommendationService` retrieving genuine transcribed videos directly from Cloudflare D1 (`video_languages`, `transcripts`, `video_meta`) and R2 (`transcripts/{videoId}/{lang}.json`).
-  - Clean video row cards (`.home-row-item`) display duration badges, channel, target language circular flag, and proficiency level tier badges (`VideoLevelService`) with streamlined typography.
+  - **YouTube Homepage Feed**: Responsive card grid (`.yt-video-grid` and `.yt-video-card`) with clean 16:9 thumbnails (unobstructed by badges, with bottom-right duration pill), channel avatars, 2-line clamped titles, and metadata tags.
+  - **Interleaved Playlists in Feed**: Curated and community playlists are recommended directly within the main discovery stream (every 4 videos) with stacked thumbnail card physics, playlist count overlays, and one-tap playback (`startPlaylist`).
+  - **Coordinated Feed Loading & Zero Layout Shift (CLS = 0)**: Video and playlist recommendation streams are strictly synchronized; skeleton loading stays active until both streams resolve, preventing premature single-stream rendering, card pop-in, and layout shifts.
+  - **Persistent Dual-Tier Caching**: 1-hour LocalStorage cache for both video recommendations (`voca_rec_videos_*`) and playlist recommendations (`voca_rec_playlists_*`), ensuring instantaneous frame-0 feed rendering on app launch and navigation.
+  - **Clean Sticky Category Chips Carousel (`.yt-chips-bar`)**: Horizontal sticky YouTube-style chips bar (`All`, `Playlists`, level badges e.g. `JLPT N5`–`N1`, `Refresh`) with fixed pill dimensions and no disruptive pop-in count badges.
+  - **Clean Metadata Sub-Row Badges**: Proficiency level badges (`.level-badge--pill`, e.g. `JLPT N4`, `HSK 2`, `TOPIK 1`, `CEFR B1`) sit cleanly beside subtitle badges (`[CC]`) in the metadata row beneath the channel name, keeping the thumbnail artwork pristine.
+  - **Infinite Scrolling Discovery**: Powered by an `IntersectionObserver` sentinel element (`.feed-sentinel`) and `VideoRecommendationService.loadMoreRecommendedVideos(...)`, automatically appending 12-video batches as the user scrolls.
+  - **Modern Video Iconography**: Unified on sleek `play-circle` and `list-video` icons across tabs, cards, and empty states.
+  - Powered by `VideoRecommendationService` and `PlaylistService` retrieving genuine transcribed videos and multi-video playlists directly from Cloudflare D1/R2 and PocketBase.
 - **Unified Desktop Sidebar (`.unified-sidebar`)**:
   - Encapsulates `PlaylistPanelComponent` and `VocabularyListComponent` inside a single card container with segmented tab switcher (`[Playlist (N)]` / `[Vocabulary (N)]`).
   - Retains playlist tab on desktop even for single-video playlists (`hasPlaylist`), allowing playlist management without cluttering the page.
@@ -176,11 +181,13 @@ graph TD
 - Synchronizes with video playback via a high-performance $O(\log n)$ binary search (`findActiveCue`).
 - **Sticky Subtitles**: If a gap exists between cues, retains the previous cue briefly to prevent jarring visual flickering.
 - **Interactive Word Segmentation**: Every word is rendered as a clickable token. Clicking opens `WordPopupComponent`.
-- **Zero-Shift Punctuation & Baseline Alignment**:
-  - Punctuation tokens (`、`, `。`, `,`, `.`, `...`) are wrapped in `<ruby>` elements with an empty `<rt class="rt-empty">&#160;</rt>` when reading annotations are active.
-  - Standardized `vertical-align: baseline` and matching vertical padding across Japanese, Chinese, Korean, and English ensure punctuation marks sit perfectly flush with surrounding word tokens.
-- **Distinct Grammar Highlights**: Tokens matching active grammar patterns are highlighted with a crisp mint/emerald green underline palette (`var(--color-grammar, #2dd4bf)` in dark mode, `#10b981` in light mode, with subtle translucent tint background and inherited text color), clearly separating grammar rules from vocabulary mastery tiers (`new`, `learning`, `known`) without box borders.
-- **Streamlined Waiting & Dual-Sub Loading Indicators**: Both the primary subtitle waiting state and the dual-subtitle translation loading state feature minimal 3-dot pulsing animations (`···`) without redundant text, nested pills, or heavy skeleton boxes.
+- **Zero-Shift Punctuation & Typographic Baseline Alignment**:
+  - Punctuation tokens (`、`, `。`, `,`, `.`, `...`) and word tokens share an identical box model (`border: 1px solid transparent; box-sizing: border-box; vertical-align: baseline;`) with matching vertical padding and margins, guaranteeing that all text and punctuation rest on the exact same typographic baseline without 1px–2px step jitter.
+  - Ruby `<rt>` and empty `<rt class="rt-empty">` tags are strictly locked to `height: 1.15em; line-height: 1.15;`, ensuring identical line box dimensions whether reading annotations are active, empty, or switched off.
+  - Grammar underlines use an inline `text-underline-offset: 2px` constrained within token padding to prevent line box vertical expansion.
+- **Stable Vertical Anchoring & Layout Shift Prevention**:
+  - Replaces vertical centering (`justify-content: safe center`) with top-anchored positioning (`justify-content: flex-start; padding: 1.125rem 0 var(--space-xs) 0;`) and reserves space for 2 lines (`min-height: calc(2 * font_size * line_height)`). Line 1 remains permanently anchored at the same vertical coordinate between 1-line and 2-line cues, eliminating text jumping during video playback.
+  - Dual subtitle translation container (`.subtitle-translation-wrapper`) and empty/loading states reserve a fixed `min-height: calc(0.8125rem * 1.4 + 14px)` slot so translation loading or appearance never displaces primary subtitle text.
 - **5 Reading Display Modes**:
   - `native`: Original script.
   - `annotated`: Furigana / Pinyin ruby annotations.
@@ -253,7 +260,7 @@ graph TD
   - Search filtering and JSON export/import.
 - **`StudyPageComponent` & `StudyModeComponent`**:
   - Implements the **SuperMemo-2 (SM-2)** spaced repetition flashcard review deck.
-  - Features a streamlined, clutter-free start screen with a status hero banner (`dueToday` vs all caught up), compact daily goal progress bar, standardized `.filter-chip` deck category toggles (New, Learning, Known), session size pills (`5`, `10`, `20`, `all`), and a collapsible "Study Options" drawer (for reverse mode, audio auto-play, cloze mode, and due-only toggling).
+  - Features a streamlined, clutter-free start screen with elevated 3-card deck stats (New, Learning, Known), a unified status strip (due today & daily goal progress), session size pills (`5`, `10`, `20`, `all`), and a dedicated study options bottom sheet (`<app-bottom-sheet>`) accessed via the header gear icon or inline trigger link (for reverse mode, audio auto-play, cloze mode, and due-only toggling).
   - **SM-2 Interval Forecasting**: Grading buttons display real-time calculated intervals via `calculateSRSPreview()` (`<10m`, `1d`, `3d`, `6d`).
   - **Failed Card Session Recycling**: Cards graded "Again" ($q < 3$) are recycled to the end of the session queue until recalled successfully, preventing incomplete learning.
   - **Authentic Video Scene Replay**: Captures `sourceVideoId` and `sourceTimestamp` upon saving words from subtitles, providing a 1-click `[▶ Watch Scene]` (shortcut `V`) link back to the exact video moment.
@@ -600,6 +607,16 @@ To maintain complete visual, structural, and functional harmony across all prima
   - Pill badge (`.level-badge--pill`) visually demarcating difficulty directly on thumbnails and list cards.
 - **Sidebar Header Stats Bar (`SidebarComponent`) & Mobile More Menu / Settings Sheet (`AppComponent`, `SettingsSheetComponent`)**:
   - Level badge button displaying current user level and trophy icon, with click handler opening the Achievements & Leaderboard bottom sheet on both desktop and mobile.
+
+### 8.5. Welcoming Onboarding Modal & Sheet (`OnboardingComponent`)
+- **Non-Blocking Architecture**:
+  - Eliminates full-page blocking gates; the application shell, desktop sidebar, routes, and video players render immediately underneath.
+  - Hosted inside standard `BottomSheetComponent` (`maxWidth="440px"`) with frosted backdrop blur on desktop and native slide-up sheet on mobile.
+- **Visual Design & Value Proposition**:
+  - Hero header with sparkling glow (`var(--accent-primary)`), warm welcome typography, and a unified feature card (Dual Subtitles, Instant Dictionary, and Spaced Repetition).
+  - Target language grid for Japanese, Chinese, Korean, and English with circular flags, native script, subtle glow, and checkmark badges.
+- **Friction-Free Escape Hatches**:
+  - Provides a primary "Start Learning" CTA, a secondary "Explore First" ghost button, and backdrop/Escape key dismissal, avoiding intrusive floating close buttons.
 
 ---
 

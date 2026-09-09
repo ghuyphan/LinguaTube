@@ -43,14 +43,25 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Invalid level format. Must match standard proficiency levels (e.g. JLPT N4, HSK 2, CEFR B1)' }, 400);
         }
 
+        const confidence = typeof body?.confidence === 'number' ? Math.min(1.0, Math.max(0.0, body.confidence)) : 0.8;
+        const method = typeof body?.method === 'string' && body.method.length <= 20 ? body.method : 'linguistics';
+
+        // Reject assessments with insufficient confidence to protect D1 integrity
+        if (confidence < 0.65) {
+            return jsonResponse({ error: 'Assessment confidence too low to persist (minimum 0.65 required)', confidence }, 400);
+        }
+
         const db = env.VOCAB_DB;
-        const updatedLevels = await saveVideoLevel(db, null, videoId, language, rawLevel);
+        // Strict adherence to Rule 2: kv is passed as null to guarantee ZERO KV writes
+        const updatedLevels = await saveVideoLevel(db, null, videoId, language, rawLevel, confidence, method);
 
         return jsonResponse({
             success: true,
             videoId,
             language,
             level: rawLevel,
+            confidence,
+            method,
             levels: updatedLevels || { [language]: rawLevel }
         }, 200);
 

@@ -2,12 +2,12 @@
     <!-- Header / Hero Section -->
     <div class="header-section">
         <div class="pro-hero-icon" [class.is-active]="userTier() !== 'free'" [class.is-premium]="selectedTier() === 'premium'">
-            <app-icon [name]="selectedTier() === 'premium' ? 'sparkles' : 'crown'" [size]="36" class="hero-crown" />
+            <app-icon [name]="selectedTier() === 'premium' ? 'sparkles' : 'crown'" [size]="30" class="hero-crown" />
         </div>
 
         <div class="title-group">
             <h2 [class.is-premium]="selectedTier() === 'premium'">{{ selectedTier() === 'premium' ? (i18n.t('pro.titlePremium') || 'Voca Premium') : (i18n.t('pro.title') || 'Voca Pro') }}</h2>
-            <p class="subtitle">{{ selectedTier() === 'premium' ? (i18n.t('pro.subtitlePremium') || 'Maximum immersion power with long-form podcasts & rapid AI refills') : (i18n.t('pro.subtitle') || 'Supercharge your daily language immersion with AI potential') }}</p>
+            <p class="subtitle">{{ selectedTier() === 'premium' ? (i18n.t('pro.subtitlePremium') || 'Maximum immersion power with long-form podcasts & rapid AI refills') : (i18n.t('pro.subtitle') || 'Supercharge your language immersion with AI') }}</p>
         </div>
     </div>
 
@@ -163,7 +163,7 @@
 
                 @if (payment.isPaid()) {
                     <button class="btn btn-primary btn-full" (click)="dismissed.emit()">
-                        {{ i18n.t('common.done') || 'Enjoy Voca Pro' }}
+                        {{ i18n.t('common.done') || 'Done' }}
                     </button>
                 } @else {
                     <button class="btn btn-secondary btn-full" type="button" (click)="cancelOrder()">
@@ -173,184 +173,208 @@
             </div>
         </div>
     } @else {
-        <!-- Tier Switcher Tabs -->
-        <div class="tier-tabs">
-            <button
-                type="button"
-                class="tier-tab-btn tab-pro"
-                [class.is-active]="selectedTier() === 'pro'"
-                (click)="setTier('pro')"
-            >
-                <app-icon name="crown" [size]="15" />
-                <span>{{ i18n.t('pro.tabPro') || 'Voca Pro' }}</span>
-            </button>
-            <button
-                type="button"
-                class="tier-tab-btn tab-premium"
-                [class.is-active]="selectedTier() === 'premium'"
-                (click)="setTier('premium')"
-            >
-                <app-icon name="sparkles" [size]="15" />
-                <span>{{ i18n.t('pro.tabPremium') || 'Voca Premium' }}</span>
-                <span class="tab-badge">{{ i18n.t('pro.premiumBadge') || 'VIP' }}</span>
-            </button>
-        </div>
-
-        <!-- Plan Selection for the active tier -->
-        <div class="plans-selector">
-            @for (plan of visiblePlans(); track plan.id) {
+        <!-- Scrollable Content Body -->
+        <div class="dialog-scroll-body">
+            <!-- Tier Switcher Tabs -->
+            <div class="tier-tabs">
                 <button
-                    class="plan-card"
-                    [class.is-selected]="selectedPlan() === plan.id"
-                    [class.has-badge]="plan.badgeKey"
                     type="button"
-                    (click)="selectPlan(plan.id)"
+                    class="tier-tab-btn tab-pro"
+                    [class.is-active]="selectedTier() === 'pro'"
+                    (click)="setTier('pro')"
                 >
-                    @if (plan.badgeKey) {
-                        <span class="plan-badge" [class.badge-premium-pill]="selectedTier() === 'premium'">{{ i18n.t(plan.badgeKey) }}</span>
-                    }
-                    <div class="plan-card-left">
-                        <div class="plan-radio" [class.checked]="selectedPlan() === plan.id" [class.radio-premium]="selectedTier() === 'premium'">
-                            <div class="radio-inner"></div>
-                        </div>
-                        <div class="plan-title-group">
-                            <span class="plan-name">{{ i18n.t(plan.nameKey) }}</span>
-                            @if (plan.monthlyEquivKey) {
-                                <span class="plan-equiv">{{ i18n.t(plan.monthlyEquivKey) }}</span>
-                            }
-                        </div>
-                    </div>
-                    <div class="plan-card-right">
-                        <span class="plan-price">{{ plan.priceFormatted }}</span>
-                        <span class="plan-period">{{ i18n.t(plan.periodKey) }}</span>
-                    </div>
+                    <app-icon name="crown" [size]="15" />
+                    <span>{{ i18n.t('pro.tabPro') || 'Voca Pro' }}</span>
                 </button>
-            }
-        </div>
+                <button
+                    type="button"
+                    class="tier-tab-btn tab-premium"
+                    [class.is-active]="selectedTier() === 'premium'"
+                    (click)="setTier('premium')"
+                >
+                    <app-icon name="sparkles" [size]="15" />
+                    <span>{{ i18n.t('pro.tabPremium') || 'Voca Premium' }}</span>
+                    <span class="tab-badge">{{ i18n.t('pro.premiumBadge') || 'VIP' }}</span>
+                </button>
+            </div>
 
-        <!-- Dynamic Benefits Checklist -->
-        <div class="benefits-box">
-            <h3 class="benefits-title">
-                {{ (selectedTier() === 'premium' ? (i18n.t('pro.whatsIncludedPremium') || "What's included in Premium") : (i18n.t('pro.whatsIncluded') || "What's included in Pro")) }}
-            </h3>
-            
-            @if (selectedTier() === 'pro') {
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <app-icon name="diamond" [size]="16" class="icon-diamond" />
-                    </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featureDiamondsTitle') || '10 Daily AI Credits' }}</strong>
-                        <span>{{ i18n.t('pro.featureDiamondsDesc') || 'Refills +1 every 10 minutes for everyday practice' }}</span>
-                    </div>
-                </div>
+            <!-- Plan Selection for active tier -->
+            <div class="plans-selector">
+                @for (plan of visiblePlans(); track plan.id) {
+                    <button
+                        class="plan-card"
+                        [class.is-selected]="selectedPlan() === plan.id"
+                        [class.is-premium]="selectedTier() === 'premium'"
+                        [class.has-badge]="plan.badgeKey"
+                        type="button"
+                        (click)="selectPlan(plan.id)"
+                    >
+                        @if (plan.badgeKey) {
+                            <span class="plan-badge" [class.badge-premium-pill]="selectedTier() === 'premium'">{{ i18n.t(plan.badgeKey) }}</span>
+                        }
+                        <div class="plan-card-left">
+                            <div class="plan-radio" [class.checked]="selectedPlan() === plan.id" [class.radio-premium]="selectedTier() === 'premium'">
+                                <div class="radio-inner"></div>
+                            </div>
+                            <div class="plan-title-group">
+                                <span class="plan-name">{{ i18n.t(plan.nameKey) }}</span>
+                                @if (plan.monthlyEquivKey) {
+                                    <span class="plan-equiv">{{ i18n.t(plan.monthlyEquivKey) }}</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="plan-card-right">
+                            <span class="plan-price">{{ plan.priceFormatted }}</span>
+                            <span class="plan-period">{{ i18n.t(plan.periodKey) }}</span>
+                        </div>
+                    </button>
+                }
+            </div>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <app-icon name="clock" [size]="16" class="icon-clock" />
+            <!-- Account Status Bar -->
+            @if (isLoggedIn()) {
+                <div class="account-status-bar">
+                    @if (user()?.picture) {
+                        <img [src]="user()?.picture" [alt]="user()?.name" class="account-avatar" />
+                    } @else {
+                        <div class="account-avatar-placeholder">
+                            <app-icon name="user" [size]="14" />
+                        </div>
+                    }
+                    <div class="account-text">
+                        <span class="account-name">{{ i18n.t('pro.subscribingAs', { name: user()?.name || user()?.email || '' }) }}</span>
+                        <span class="account-email">{{ user()?.email }}</span>
                     </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featureDurationTitle') || 'Videos up to 20 Minutes' }}</strong>
-                        <span>{{ i18n.t('pro.featureDurationDesc') || 'Generate AI subtitles for short stories, dialogues & show clips' }}</span>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <app-icon name="zap" [size]="16" class="icon-zap" />
-                    </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featurePriorityTitle') || 'Priority AI Queue' }}</strong>
-                        <span>{{ i18n.t('pro.featurePriorityDesc') || 'Accelerated Gladia ASR speech recognition with minimum wait' }}</span>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <app-icon name="cloud" [size]="16" class="icon-cloud" />
-                    </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featureSyncTitle') || 'Unlimited Cloud Notebook Sync' }}</strong>
-                        <span>{{ i18n.t('pro.featureSyncDesc') || 'Seamless multi-device sync for vocabulary, SRS flashcards & playlists' }}</span>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <app-icon name="trophy" [size]="16" class="icon-trophy" />
-                    </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featureBadgeTitle') || 'Pro Leaderboard Badge' }}</strong>
-                        <span>{{ i18n.t('pro.featureBadgeDesc') || 'Stand out in the global learner community with an exclusive Pro crown' }}</span>
-                    </div>
-                </div>
-            } @else {
-                <div class="benefit-item">
-                    <div class="benefit-icon benefit-icon--premium">
-                        <app-icon name="diamond" [size]="16" class="icon-diamond-premium" />
-                    </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featurePremiumDiamondsTitle') || '25 Daily AI Credits' }}</strong>
-                        <span>{{ i18n.t('pro.featurePremiumDiamondsDesc') || 'Rapid refill (+1 every 4 mins) for deep immersion' }}</span>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon benefit-icon--premium">
-                        <app-icon name="play-circle" [size]="16" class="icon-play-premium" />
-                    </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featurePremiumLengthTitle') || 'Long-Form Videos up to 45 Minutes' }}</strong>
-                        <span>{{ i18n.t('pro.featurePremiumLengthDesc') || 'Transcribe full-length podcasts, lectures, interviews & documentaries' }}</span>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon benefit-icon--premium">
-                        <app-icon name="zap" [size]="16" class="icon-zap-premium" />
-                    </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featurePremiumVipQueueTitle') || 'VIP Instant Queue' }}</strong>
-                        <span>{{ i18n.t('pro.featurePremiumVipQueueDesc') || 'Highest priority speech-to-text processing on Gladia ASR' }}</span>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon benefit-icon--premium">
-                        <app-icon name="sparkles" [size]="16" class="icon-sparkles-premium" />
-                    </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featurePremiumLimitsTitle') || 'Max API & Translation Quotas' }}</strong>
-                        <span>{{ i18n.t('pro.featurePremiumLimitsDesc') || 'Up to 100,000 translation texts/hr & unlimited cloud sync' }}</span>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon benefit-icon--premium">
-                        <app-icon name="crown" [size]="16" class="icon-crown-premium" />
-                    </div>
-                    <div class="benefit-text">
-                        <strong>{{ i18n.t('pro.featurePremiumBadgeTitle') || 'Holographic Diamond VIP Badge' }}</strong>
-                        <span>{{ i18n.t('pro.featurePremiumBadgeDesc') || 'Prestigious VIP styling on leaderboard, profile & avatar ring' }}</span>
-                    </div>
+                    <button class="account-switch-btn" type="button" (click)="switchAccount()" [attr.title]="i18n.t('pro.switchAccount') || 'Switch account'">
+                        <app-icon name="log-out" [size]="13" />
+                    </button>
                 </div>
             }
+
+            <!-- Dynamic Benefits Checklist -->
+            <div class="benefits-box">
+                <h3 class="benefits-title">
+                    {{ (selectedTier() === 'premium' ? (i18n.t('pro.whatsIncludedPremium') || "What's included in Premium") : (i18n.t('pro.whatsIncluded') || "What's included in Pro")) }}
+                </h3>
+                
+                @if (selectedTier() === 'pro') {
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <app-icon name="diamond" [size]="15" class="icon-diamond" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featureDiamondsTitle') || '10 Daily AI Credits' }}</strong>
+                            <span>{{ i18n.t('pro.featureDiamondsDesc') || 'Refills +1 every 10 minutes for everyday practice' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <app-icon name="clock" [size]="15" class="icon-clock" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featureDurationTitle') || 'Videos up to 20 Minutes' }}</strong>
+                            <span>{{ i18n.t('pro.featureDurationDesc') || 'Generate AI subtitles for short stories, dialogues & show clips' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <app-icon name="zap" [size]="15" class="icon-zap" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featurePriorityTitle') || 'Priority AI Queue' }}</strong>
+                            <span>{{ i18n.t('pro.featurePriorityDesc') || 'Accelerated Gladia speech recognition with minimum wait' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <app-icon name="cloud" [size]="15" class="icon-cloud" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featureSyncTitle') || 'Unlimited Cloud Sync' }}</strong>
+                            <span>{{ i18n.t('pro.featureSyncDesc') || 'Seamless multi-device sync for vocabulary, SRS flashcards & playlists' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <app-icon name="trophy" [size]="15" class="icon-trophy" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featureBadgeTitle') || 'Pro Leaderboard Badge' }}</strong>
+                            <span>{{ i18n.t('pro.featureBadgeDesc') || 'Stand out in the global learner community with an exclusive Pro crown' }}</span>
+                        </div>
+                    </div>
+                } @else {
+                    <div class="benefit-item">
+                        <div class="benefit-icon benefit-icon--premium">
+                            <app-icon name="diamond" [size]="15" class="icon-diamond-premium" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featurePremiumDiamondsTitle') || '25 Daily AI Credits' }}</strong>
+                            <span>{{ i18n.t('pro.featurePremiumDiamondsDesc') || 'Rapid refill (+1 every 4 mins) for deep immersion' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon benefit-icon--premium">
+                            <app-icon name="play-circle" [size]="15" class="icon-play-premium" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featurePremiumLengthTitle') || 'Long-Form Videos up to 45 Minutes' }}</strong>
+                            <span>{{ i18n.t('pro.featurePremiumLengthDesc') || 'Transcribe full-length podcasts, lectures, interviews & documentaries' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon benefit-icon--premium">
+                            <app-icon name="zap" [size]="15" class="icon-zap-premium" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featurePremiumVipQueueTitle') || 'VIP Instant Queue' }}</strong>
+                            <span>{{ i18n.t('pro.featurePremiumVipQueueDesc') || 'Highest priority speech-to-text processing on Gladia ASR' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon benefit-icon--premium">
+                            <app-icon name="sparkles" [size]="15" class="icon-sparkles-premium" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featurePremiumLimitsTitle') || 'Max API & Translation Quotas' }}</strong>
+                            <span>{{ i18n.t('pro.featurePremiumLimitsDesc') || 'Up to 100,000 translation texts/hr & unlimited cloud sync' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon benefit-icon--premium">
+                            <app-icon name="crown" [size]="15" class="icon-crown-premium" />
+                        </div>
+                        <div class="benefit-text">
+                            <strong>{{ i18n.t('pro.featurePremiumBadgeTitle') || 'Holographic Diamond VIP Badge' }}</strong>
+                            <span>{{ i18n.t('pro.featurePremiumBadgeDesc') || 'Prestigious VIP styling on leaderboard, profile & avatar ring' }}</span>
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
 
-        <!-- Action Call To Action -->
-        <div class="dialog-actions">
+        <!-- Pinned Sticky Actions Footer -->
+        <div class="dialog-actions-sticky">
             <button
                 class="btn btn-upgrade-cta"
                 [class.btn-premium-cta]="selectedTier() === 'premium'"
                 type="button"
-                [disabled]="payment.isCreating()"
+                [disabled]="payment.isCreating() || isLoggingIn()"
                 (click)="startUpgrade()"
             >
-                @if (payment.isCreating()) {
+                @if (payment.isCreating() || isLoggingIn()) {
                     <span class="spinner-dot"></span>
-                    <span>{{ i18n.t('pro.generatingQR') || 'Generating QR...' }}</span>
+                    <span>{{ isLoggingIn() ? (i18n.t('auth.signingIn') || 'Signing in...') : (i18n.t('pro.generatingQR') || 'Generating QR...') }}</span>
                 } @else {
-                    <app-icon [name]="selectedTier() === 'premium' ? 'sparkles' : 'zap'" [size]="18" />
+                    <app-icon [name]="selectedTier() === 'premium' ? 'sparkles' : 'crown'" [size]="18" />
                     <span>{{ i18n.t('pro.upgradeBtn', { price: activePlan().priceFormatted }) || ('Upgrade - ' + activePlan().priceFormatted) }}</span>
                 }
             </button>

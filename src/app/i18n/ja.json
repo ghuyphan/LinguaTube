@@ -53,7 +53,11 @@
         "signedInAs": "{{name}} としてログイン中",
         "signedOut": "ログアウトしました",
         "signInFailed": "ログインに失敗しました。もう一度お試しください。",
-        "signOutConfirm": "本当にログアウトしますか？"
+        "signOutConfirm": "本当にログアウトしますか？",
+        "continueWithGoogle": "Googleでログイン",
+        "signInRequired": "続行するにはログインしてください",
+        "signInToUpgrade": "ログインしてアップグレード",
+        "signInToUpgradeDesc": "サブスクリプションを連携し、端末間で同期するためにGoogleでログインしてください"
     },
     "player": {
         "paste": "貼り付け",
@@ -167,7 +171,7 @@
     "pro": {
         "title": "Voca Pro",
         "titlePremium": "Voca Premium",
-        "subtitle": "毎日の動画学習をAIの力で加速させましょう",
+        "subtitle": "動画学習をAIの力で加速させましょう",
         "subtitlePremium": "長編ポッドキャスト対応＆急速クレジット回復で究極の没入学習",
         "tabPro": "Voca Pro",
         "tabPremium": "Voca Premium",
@@ -232,7 +236,10 @@
         "activeSubscription": "Proプランが有効です",
         "activePremiumSubscription": "Premiumプランが有効です",
         "enjoyingBenefits": "毎日10ダイヤ、優先AIキュー、クラウド同期のすべてのPro特権をお楽しみいただけます。",
-        "enjoyingPremiumBenefits": "最大25ダイヤ、長編ポッドキャスト対応、VIP超高速キューの最高峰特権をお楽しみいただけます。"
+        "enjoyingPremiumBenefits": "最大25ダイヤ、長編ポッドキャスト対応、VIP超高速キューの最高峰特権をお楽しみいただけます。",
+        "subscribingAs": "{{name}} として登録中",
+        "switchAccount": "アカウント切替",
+        "signInToUpgrade": "ログインしてアップグレード - {{price}}"
     },
     "vocab": {
         "title": "単語帳",
@@ -567,6 +574,7 @@
         "shuffleOn": "シャッフル再生中"
     },
     "common": {
+        "all": "すべて",
         "loading": "読み込み中...",
         "error": "エラー",
         "success": "成功",
@@ -579,7 +587,9 @@
         "search": "検索...",
         "options": "オプション",
         "refresh": "更新",
-        "noResults": "該当する結果が見つかりませんでした"
+        "noResults": "該当する結果が見つかりませんでした",
+        "maybeLater": "あとで",
+        "done": "完了"
     },
     "onboarding": {
         "welcomeTitle": "Vocaへようこそ",
@@ -591,6 +601,8 @@
         "learningLanguageSubtitle": "学習ターゲットを選択してください",
         "startLearning": "学習を開始",
         "tapToTry": "単語をタップしてみよう！",
+        "skip": "まずは探索する",
+        "changeUiLang": "表示言語",
         "features": {
             "subtitles": "理解を深める二言語字幕",
             "dict": "クリックで瞬時に単語検索",

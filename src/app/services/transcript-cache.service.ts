@@ -262,6 +262,71 @@ export class TranscriptCacheService {
     }
 
     /**
+     * Get cached dual subtitle segments from IndexedDB
+     */
+    async getDual(videoId: string, sourceLang: string, targetLang: string): Promise<{ text: string; start: number; duration: number; translation?: string }[] | null> {
+        try {
+            const db = await this.openDb();
+            const key = `${videoId}:dual:${sourceLang}-${targetLang}`;
+
+            return new Promise((resolve) => {
+                const tx = db.transaction(STORE_NAME, 'readonly');
+                const store = tx.objectStore(STORE_NAME);
+                const request = store.get(key);
+
+                request.onsuccess = () => {
+                    const result = request.result;
+                    if (!result || (result.expiresAt && Date.now() > result.expiresAt)) {
+                        resolve(null);
+                        return;
+                    }
+                    resolve(result.segments || null);
+                };
+
+                request.onerror = () => resolve(null);
+            });
+        } catch {
+            return null;
+        }
+    }
+
+    /**
+     * Save dual subtitle segments to IndexedDB
+     */
+    async setDual(
+        videoId: string,
+        sourceLang: string,
+        targetLang: string,
+        segments: { text: string; start: number; duration: number; translation?: string }[]
+    ): Promise<void> {
+        try {
+            const db = await this.openDb();
+            const key = `${videoId}:dual:${sourceLang}-${targetLang}`;
+            const now = Date.now();
+            const expiresAt = now + (14 * 24 * 60 * 60 * 1000); // 14 days
+
+            const entry = {
+                key,
+                segments,
+                source: 'dual',
+                language: `${sourceLang}-${targetLang}`,
+                cachedAt: now,
+                expiresAt
+            };
+
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(STORE_NAME, 'readwrite');
+                const store = tx.objectStore(STORE_NAME);
+                const request = store.put(entry);
+                request.onsuccess = () => resolve();
+                request.onerror = () => reject(request.error);
+            });
+        } catch (e) {
+            console.warn('[TranscriptCache] SetDual failed:', e);
+        }
+    }
+
+    /**
      * Get cache stats (for debugging)
      */
     async getStats(): Promise<{ count: number; size: number }> {
