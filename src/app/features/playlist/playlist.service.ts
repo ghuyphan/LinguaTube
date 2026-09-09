@@ -6,6 +6,7 @@ import {
     PlaylistVideo,
     CreatePlaylistInput,
     PlaylistVisibility,
+    PlaylistLanguage,
     VideoInfo
 } from '../../models';
 import { AuthService, SettingsService } from '../../core/services';
