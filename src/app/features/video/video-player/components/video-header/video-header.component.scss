@@ -84,6 +84,43 @@
         color: #a855f7;
         border: 1px solid rgba(168, 85, 247, 0.3);
     }
+
+    &--skeleton {
+        width: 48px;
+        height: 18px;
+        padding: 0;
+        cursor: default;
+        border-radius: 4px;
+        background: var(--bg-hover, rgba(255, 255, 255, 0.08));
+        border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+        position: relative;
+        overflow: hidden;
+        pointer-events: none;
+        box-sizing: border-box;
+
+        &:hover {
+            transform: none;
+            opacity: 1;
+        }
+
+        .level-skeleton-shimmer {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.06) 25%,
+                rgba(255, 255, 255, 0.16) 50%,
+                rgba(255, 255, 255, 0.06) 75%,
+                transparent 100%);
+            transform: translateX(-100%);
+            animation: levelShimmer 1.6s infinite ease-in-out;
+        }
+    }
+}
+
+@keyframes levelShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .level-popover {
@@ -164,18 +201,20 @@
 .video-actions {
     display: flex;
     align-items: center;
+    gap: 6px;
     flex-shrink: 0;
     margin-top: 2px;
 }
 
+.btn-header-action,
 .btn-close-video {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    min-height: 28px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
     padding: 0;
     border-radius: 50%;
     border: 1px solid var(--border-color);

@@ -8,6 +8,10 @@
             <span class="level-badge" [attr.data-tier]="lvl.tier" (click)="toggleLevelPopover($event)" role="button" tabindex="0" [attr.title]="lvl.level">
                 {{ lvl.level }}
             </span>
+            } @else if (isLevelLoading()) {
+            <span class="level-badge level-badge--skeleton" [attr.title]="i18n.t('level.evaluating') || 'Evaluating level...'" [attr.aria-label]="i18n.t('level.evaluating') || 'Evaluating level...'">
+                <span class="level-skeleton-shimmer"></span>
+            </span>
             }
         </div>
 
@@ -37,6 +41,16 @@
         }
     </div>
     <div class="video-actions">
+        <button type="button" class="btn-icon btn-header-action" (click)="shareVideo.emit()"
+            [attr.aria-label]="i18n.t('player.share') || 'Share video'"
+            [title]="i18n.t('player.share') || 'Share video'">
+            <app-icon name="share" [size]="15" />
+        </button>
+        <button type="button" class="btn-icon btn-header-action" (click)="savePlaylist.emit()"
+            [attr.aria-label]="i18n.t('playlist.saveToPlaylist') || 'Save to playlist'"
+            [title]="i18n.t('playlist.saveToPlaylist') || 'Save to playlist'">
+            <app-icon name="list-plus" [size]="15" />
+        </button>
         <button type="button" class="btn-icon btn-close-video" (click)="closeVideo.emit()"
             [attr.aria-label]="i18n.t('player.closeVideo') || 'Close video'"
             [title]="i18n.t('player.closeVideo') || 'Close video'">

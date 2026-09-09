@@ -1131,11 +1131,11 @@ ruby rt {
     font-size: 0.875rem;
     color: var(--text-primary);
     opacity: 0.55;
-    min-height: 52px;
+    min-height: 48px;
     height: auto;
     position: relative;
     content-visibility: auto;
-    contain-intrinsic-size: auto 64px;
+    contain-intrinsic-size: auto 54px;
 }
 
 /* No more scale transform - use border & opacity for visual hierarchy */
@@ -1215,8 +1215,8 @@ ruby rt {
     overflow: hidden;
     display: -webkit-box;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
 }
 
@@ -1229,8 +1229,8 @@ ruby rt {
     overflow: hidden;
     display: -webkit-box;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
     transition: color 0.2s ease, opacity 0.2s ease;
 }
@@ -1687,7 +1687,7 @@ ruby rt {
     .text-ko .word {
         padding: 0.25rem 0.375rem;
         margin: 2px;
-        vertical-align: top;
+        vertical-align: baseline;
     }
 
     .text-en .word {
@@ -1700,8 +1700,8 @@ ruby rt {
     }
 
     .cue-item {
-        padding: var(--space-md) var(--mobile-padding);
-        min-height: 3.5rem;
+        padding: var(--space-sm) var(--mobile-padding);
+        min-height: 3rem;
     }
 
     .cue-time {
@@ -1884,7 +1884,7 @@ ruby rt {
     .text-ko .word {
         padding: 0.2rem 0.3rem;
         margin: 2px;
-        vertical-align: top;
+        vertical-align: baseline;
     }
 
     .text-en .word {

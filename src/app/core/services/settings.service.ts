@@ -79,7 +79,28 @@ export class SettingsService implements OnDestroy {
   setLanguage(language: 'ja' | 'zh' | 'ko' | 'en'): void {
     // Load the appropriate CJK font before changing language
     this.fontLoader.loadFontForLanguage(language);
-    this.updateSettings({ language });
+
+    let dualTarget = this.settings().dualSubtitleTargetLang;
+    if (!dualTarget || dualTarget === language) {
+      dualTarget = this.resolveFallbackDualSubLang(language);
+    }
+
+    this.updateSettings({ language, dualSubtitleTargetLang: dualTarget });
+  }
+
+  resolveFallbackDualSubLang(sourceLang: string): string {
+    let uiLang: string | null = null;
+    if (this.isBrowser && typeof localStorage !== 'undefined') {
+      uiLang = localStorage.getItem('linguatube-ui-language');
+      if (!uiLang && typeof navigator !== 'undefined' && navigator.language) {
+        uiLang = navigator.language.split('-')[0];
+      }
+    }
+    const supported = ['vi', 'en', 'ja', 'zh', 'ko'];
+    if (uiLang && supported.includes(uiLang) && uiLang !== sourceLang) {
+      return uiLang;
+    }
+    return sourceLang === 'en' ? 'vi' : 'en';
   }
 
   toggleFurigana(): void {

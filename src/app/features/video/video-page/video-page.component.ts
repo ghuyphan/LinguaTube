@@ -443,6 +443,7 @@ export class VideoPageComponent implements OnInit {
       this.seo.resetVideoSeo();
       this.transcript.reset();
       this.subtitles.clear();
+      this.videoLevel.reset();
     });
 
     // Automatically fetch server-side recommended playlists and videos when active language or difficulty tier changes
@@ -485,6 +486,7 @@ export class VideoPageComponent implements OnInit {
 
         this.subtitles.clear();
         this.transcript.reset();
+        this.videoLevel.reset();
         this.fetchCaptions(currentVideo.id);
       }
     });
@@ -601,6 +603,7 @@ export class VideoPageComponent implements OnInit {
                 if (videoId && this.youtube.currentVideo()?.id !== videoId && this.youtube.pendingVideoId() !== videoId) {
                   this.subtitles.clear();
                   this.transcript.reset();
+                  this.videoLevel.reset();
                   this.loadVideoFromUrl(videoId);
                 }
               } else if (playlist.videos.length > 0) {
@@ -635,6 +638,7 @@ export class VideoPageComponent implements OnInit {
           if (!currentVideo || currentVideo.id !== videoId) {
             this.subtitles.clear();
             this.transcript.reset();
+            this.videoLevel.reset();
             this.lastLang = currentLang;
             this.loadVideoFromUrl(videoId);
           } else {
@@ -642,6 +646,7 @@ export class VideoPageComponent implements OnInit {
             if (this.subtitles.subtitles().length === 0) {
               this.subtitles.clear();
               this.transcript.reset();
+              this.videoLevel.reset();
               this.lastLang = currentLang;
               this.fetchCaptions(videoId);
             } else {
@@ -661,6 +666,7 @@ export class VideoPageComponent implements OnInit {
           }
           this.subtitles.clear();
           this.transcript.reset();
+          this.videoLevel.reset();
         }
       });
     }
@@ -668,6 +674,12 @@ export class VideoPageComponent implements OnInit {
 
   private async loadVideoFromUrl(videoId: string): Promise<void> {
     try {
+      this.videoLevel.reset();
+      const lang = this.settings.settings().language;
+      const cached = this.videoLevel.getCachedLevel(videoId, lang);
+      if (cached) {
+        this.videoLevel.currentLevel.set(cached);
+      }
       this.youtube.pendingVideoId.set(videoId);
       await this.waitForElement('youtube-player');
       await this.youtube.initPlayer('youtube-player', videoId);
@@ -743,6 +755,7 @@ export class VideoPageComponent implements OnInit {
     if (currentVideo) {
       this.subtitles.clear();
       this.transcript.reset();
+      this.videoLevel.reset();
       this.fetchCaptions(currentVideo.id);
     }
   }

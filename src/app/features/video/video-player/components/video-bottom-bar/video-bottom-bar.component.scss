@@ -310,27 +310,15 @@
     }
 }
 
-// Portrait mobile rules (replace CC with Add Playlist)
-.show-portrait-mobile {
-    display: none !important;
-}
-
+// Portrait mobile rules (hide CC in portrait mobile unless in fullscreen)
 @media (max-width: 768px) and (orientation: portrait) {
     .hide-portrait-mobile {
         display: none !important;
-    }
-
-    .show-portrait-mobile {
-        display: inline-flex !important;
     }
 }
 
 :host-context(.is-fullscreen) {
     .hide-portrait-mobile {
         display: inline-flex !important;
-    }
-
-    .show-portrait-mobile {
-        display: none !important;
     }
 }

@@ -2,6 +2,7 @@ import { Injectable, inject, signal, effect } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { AuthService } from './auth.service';
+import { SettingsService } from './settings.service';
 import { GamificationService } from './gamification.service';
 import { OfflineStreakRepository } from '../repositories/offline-streak.repository';
 import { LeaderboardEntry } from '../../models/gamification.model';
@@ -15,6 +16,7 @@ const GUEST_ID_KEY = 'linguatube_guest_id';
 export class LeaderboardService {
     private http = inject(HttpClient);
     private auth = inject(AuthService);
+    private settings = inject(SettingsService);
     private gamification = inject(GamificationService);
     private streakRepo = inject(OfflineStreakRepository);
 
@@ -102,15 +104,18 @@ export class LeaderboardService {
     /**
      * Sync user's latest XP, Level and Streak to the global leaderboard
      */
-    async syncMyScore(): Promise<void> {
+    async syncMyScore(force = false): Promise<void> {
         const now = Date.now();
-        // Client-side debounce/throttle: at most once every 30 seconds
-        if (now - this.lastSyncTime < 30000) return;
+        // Client-side debounce/throttle: at most once every 30 seconds unless forced
+        if (!force && now - this.lastSyncTime < 30000) return;
         this.lastSyncTime = now;
 
         const isAuth = this.auth.isLoggedIn();
         const user = this.auth.user();
         const guestId = isAuth ? undefined : this.getGuestId();
+
+        const userLang = this.settings.settings().language || 'ja';
+        const targetLang = ['ja', 'ko', 'zh', 'en'].includes(userLang) ? userLang : 'ja';
 
         const payload = {
             guest_id: guestId,
@@ -118,7 +123,7 @@ export class LeaderboardService {
             level: this.gamification.userLevel(),
             streak: this.streakRepo.streakData().currentStreak,
             badges_count: Object.keys(this.gamification.rawState().unlockedAchievements).length,
-            target_lang: this.selectedLang() !== 'all' ? this.selectedLang() : 'ja',
+            target_lang: targetLang,
             name: user?.name || 'Learner',
             avatar: user?.picture || ''
         };

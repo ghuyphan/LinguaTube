@@ -1216,6 +1216,18 @@ $transition-normal: 0.25s ease;
       app-icon {
         color: rgba(255, 255, 255, 0.75);
       }
+
+      .menu-item-reading-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1;
+      }
     }
 
     .menu-item-right {

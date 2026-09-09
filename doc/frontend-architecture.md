@@ -154,15 +154,17 @@ graph TD
 #### VideoPlayerComponent (`video-player/`)
 - Encapsulates the official YouTube IFrame API via `YoutubeService`.
 - **Custom Player Controls Overlay**:
-  - `VideoHeaderComponent`: Video title, channel info, back navigation, and playlist context.
+  - `VideoHeaderComponent`: Video title, channel info, proficiency level badge, and header action buttons (`Share Video`, `Save to Playlist`, `Close Video`).
   - `CenterControlsComponent`: Play/pause toggle, $\pm 5$s seek buttons with smooth animation.
   - `ProgressBarComponent`: Custom slider with buffered progress indicator, hover time preview, and cue segment markers.
-  - `VideoBottomBarComponent`: Time display, playback speed selector, dual-subtitles toggle, audio volume slider, fullscreen trigger.
-    - **Unified Volume Control & Left Hierarchy**: Volume control is consistently placed on the left edge before the time display (`[Volume] [0:00 / 4:13]`), eliminating awkward trailing mute buttons on mobile while preserving the desktop hover slider.
-    - **Portrait Mobile Adaptation**: On portrait mobile viewports ($\le 768\text{px}$), the bottom bar adaptively replaces the redundant CC toggle button with an "Add to Playlist" action (`.save-playlist-btn` with Lucide `list-plus` icon), keeping CC in landscape and fullscreen overlays where the external queue is inaccessible.
-    - **Normalized Optical Icon Sizing & Indicators**: Normalized SVG icons (`languages`, `list-plus`, `settings`, `maximize`) to uniform `stroke-width: 1.5`, aligned `.time-display` to 36px height matching control buttons, and refined active CC/Dual-Sub indicator pill with non-colliding spacing.
+  - `VideoBottomBarComponent`: Time display, playback speed selector (desktop), dual-subtitles toggle, audio volume hover slider (desktop-only), settings trigger, and fullscreen trigger.
+    - **Desktop Hierarchy**: Left edge features Play/Pause, volume control with expandable hover slider, and time display (`[Play] [Volume] [0:00 / 4:13]`). Right edge features CC, Dual Subtitles, Speed pill (`1x`), Settings gear, and Fullscreen.
+    - **Portrait Mobile Optimization**: Mobile portrait viewports ($\le 768\text{px}$) hide the software volume button (relying on device hardware keys) and hide the redundant CC button (since the dedicated interactive subtitle panel is directly underneath). This leaves a clean, spacious bar with Time on the left and Dual Subtitles, Settings, and Fullscreen on the right.
+    - **Fullscreen & Landscape Adaptation**: In fullscreen and landscape mode, the CC button is visible on the bottom bar for immediate subtitle toggling.
+    - **Normalized Optical Icon Sizing & Indicators**: Normalized SVG icons (`languages`, `settings`, `maximize`) to uniform `stroke-width: 1.5`, aligned `.time-display` to 36px height matching control buttons, and refined active Dual-Sub indicator pill with non-colliding spacing.
     - **Deeper Bottom Scrim Gradient**: Enhanced linear gradient overlay to ensure high-contrast button readability and occlude YouTube iframe watermarks.
   - `PlayerSettings`: Shared YouTube-style menu template projected into `.player-settings-popup` on desktop and `<app-bottom-sheet>` on mobile:
+    - **Comprehensive Controls (Bridging Fullscreen Gaps)**: Includes Playback Speed, Subtitle Font Size, Dual Subtitles Language, Reading Annotations (Furigana / Pinyin / Romaji), Grammar Pattern Highlighting, Share Video, Save to Playlist, and Keyboard Shortcuts.
     - **Uniform Row Layouts & Responsive Typography**: Items maintain 40px desktop context menu heights and comfortable 48px touch heights (44px in compact landscape) with legible typography (1rem/16px headers, 0.9375rem/15px rows), uniform 18px icons, and consistent indentations. In landscape orientation, bottom sheets are capped to proportional widths (`min(92%, 460px)`) rather than stretching across wide displays.
     - **Smooth Height Animations**: Smoothly animates container height via native Web Animations API during submenu view transitions.
   - `FullscreenSubtitleComponent`: Dedicated high-contrast subtitle overlay positioned via `fullscreenSubtitleYPercent` setting.
@@ -601,7 +603,8 @@ To maintain complete visual, structural, and functional harmony across all prima
 
 ### 8.4. UI Badges & Visual Tokens
 - **Video Header Pill (`VideoHeaderComponent`)**:
-  - Tier-colored pill badge (`.video-level-pill`) with hover/click trigger.
+  - Tier-colored pill badge (`.video-level-pill` / `.level-badge`) with hover/click trigger.
+  - Shimmering skeleton state (`.level-badge--skeleton`) with `levelShimmer` animation during subtitle fetching, AI transcription, or deep linguistic assessment to prevent showing stale previous levels while preventing layout shift.
   - Dynamic breakdown popover (`.video-level-popover`) detailing framework (JLPT/HSK/TOPIK/CEFR), grammar complexity count, and speech velocity.
 - **History Cards (`HistoryListComponent`)**:
   - Pill badge (`.level-badge--pill`) visually demarcating difficulty directly on thumbnails and list cards.

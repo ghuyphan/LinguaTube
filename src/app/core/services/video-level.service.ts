@@ -22,6 +22,14 @@ export class VideoLevelService {
     readonly currentLevel = signal<VideoLevelInfo | null>(null);
     readonly isAnalyzing = signal<boolean>(false);
 
+    /**
+     * Clear current level state when switching or closing videos
+     */
+    reset(): void {
+        this.currentLevel.set(null);
+        this.isAnalyzing.set(false);
+    }
+
     // Cache: videoId_lang -> VideoLevelInfo
     private levelCache = new Map<string, VideoLevelInfo>();
 

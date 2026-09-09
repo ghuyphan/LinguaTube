@@ -31,10 +31,10 @@ $transition-fast: 0.15s ease;
 
     &.controls-visible.is-near-bottom {
         // Smoothly lift subtitle to maintain clear distance from player controls bottom bar
-        transform: translate(-50%, calc(-50% - 44px));
+        transform: translate(-50%, calc(-50% - 32px));
 
         @media (max-width: 640px) {
-            transform: translate(-50%, calc(-50% - 38px));
+            transform: translate(-50%, calc(-50% - 26px));
         }
     }
 
@@ -150,19 +150,17 @@ $transition-fast: 0.15s ease;
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 2.25rem;
-    transition: min-height 0.15s ease-out;
+    min-height: 2.75rem;
+    box-sizing: border-box;
 }
 
 @keyframes subtitleFadeIn {
     from {
         opacity: 0;
-        transform: translateY(6px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 

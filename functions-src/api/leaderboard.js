@@ -17,7 +17,9 @@ export const SEED_LEADERBOARD = [
     { user_id: 'seed_7', name: 'Liam Wilson', avatar: '', xp: 6890, level: 7, streak: 14, badges_count: 6, target_lang: 'zh', country: '🇨🇳' },
     { user_id: 'seed_8', name: 'Hana Tanaka', avatar: '', xp: 5930, level: 6, streak: 12, badges_count: 6, target_lang: 'en', country: '🇺🇸' },
     { user_id: 'seed_9', name: 'Mateo Rossi', avatar: '', xp: 5120, level: 5, streak: 10, badges_count: 5, target_lang: 'ja', country: '🇯🇵' },
-    { user_id: 'seed_10', name: 'Ji-won Kim', avatar: '', xp: 4480, level: 5, streak: 9, badges_count: 5, target_lang: 'zh', country: '🇨🇳' }
+    { user_id: 'seed_10', name: 'Ji-won Kim', avatar: '', xp: 4480, level: 5, streak: 9, badges_count: 5, target_lang: 'zh', country: '🇨🇳' },
+    { user_id: 'seed_11', name: 'Hyun-woo Lee', avatar: '', xp: 4120, level: 5, streak: 8, badges_count: 4, target_lang: 'ko', country: '🇰🇷' },
+    { user_id: 'seed_12', name: 'Chloe Martin', avatar: '', xp: 3890, level: 4, streak: 7, badges_count: 4, target_lang: 'en', country: '🇬🇧' }
 ];
 
 export async function onRequestOptions() {
@@ -82,7 +84,49 @@ export async function onRequestGet(context) {
             }
         }
 
-        // Fallback to seed data if D1 is empty or unavailable
+        // If D1 is empty or unavailable, query PocketHost gamification collection
+        if (topLearners.length === 0) {
+            const pocketbaseUrl = env.POCKETHOST_URL || env.PB_URL || 'https://voca.pockethost.io';
+            try {
+                const authHeader = request.headers.get('Authorization');
+                const reqHeaders = { 'Accept': 'application/json' };
+                if (authHeader) reqHeaders['Authorization'] = authHeader;
+
+                const pbRes = await fetch(`${pocketbaseUrl}/api/collections/gamification/records?sort=-xp&perPage=${limit}&expand=user`, {
+                    headers: reqHeaders,
+                    signal: AbortSignal.timeout(4000)
+                });
+
+                if (pbRes.ok) {
+                    const pbData = await pbRes.json();
+                    if (Array.isArray(pbData.items) && pbData.items.length > 0) {
+                        topLearners = pbData.items.map((row, index) => {
+                            const u = row.expand?.user || {};
+                            const name = u.name || u.username || 'Learner';
+                            const avatar = u.avatar ? `${pocketbaseUrl}/api/files/_pb_users_auth_/${u.id}/${u.avatar}` : (u.picture || '');
+                            const badgesCount = row.unlocked_achievements ? Object.keys(row.unlocked_achievements).length : 0;
+                            return {
+                                rank: index + 1,
+                                userId: row.user || row.id,
+                                name,
+                                avatar,
+                                xp: row.xp || 0,
+                                level: row.level || Math.max(1, Math.floor(Math.sqrt((row.xp || 0) / 100)) + 1),
+                                streak: 0,
+                                badgesCount,
+                                targetLang: lang && ['ja', 'ko', 'zh', 'en'].includes(lang) ? lang : 'ja',
+                                country: ''
+                            };
+                        });
+                        memLeaderboardCache.set(cacheKey, { data: topLearners, expiresAt: Date.now() + MEM_LEADERBOARD_TTL_MS });
+                    }
+                }
+            } catch (pbErr) {
+                console.warn('[Leaderboard API] PocketHost query failed:', pbErr.message);
+            }
+        }
+
+        // Fallback to seed data if both D1 and PocketHost are empty
         if (topLearners.length === 0) {
             let filtered = SEED_LEADERBOARD;
             if (lang && ['ja', 'ko', 'zh', 'en'].includes(lang)) {
@@ -201,30 +245,34 @@ export async function onRequestPost(context) {
 
         const db = env.VOCAB_DB || env.DB;
         if (db) {
-            // Guard against massive unverified XP jumps in a single call
-            const existing = await db.prepare('SELECT xp FROM leaderboard WHERE user_id = ?').bind(userId).first();
-            if (existing && xp > existing.xp + 10000) {
-                return jsonResponse({
-                    success: false,
-                    error: 'XP increment exceeds single update threshold'
-                }, 400);
-            }
+            try {
+                // Guard against massive unverified XP jumps in a single call
+                const existing = await db.prepare('SELECT xp FROM leaderboard WHERE user_id = ?').bind(userId).first();
+                if (existing && xp > existing.xp + 10000) {
+                    return jsonResponse({
+                        success: false,
+                        error: 'XP increment exceeds single update threshold'
+                    }, 400);
+                }
 
-            await db.prepare(`
-                INSERT INTO leaderboard (user_id, name, avatar, xp, level, streak, badges_count, target_lang, country, updated_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'))
-                ON CONFLICT(user_id) DO UPDATE SET
-                  name = excluded.name,
-                  avatar = COALESCE(NULLIF(excluded.avatar, ''), leaderboard.avatar),
-                  xp = MAX(leaderboard.xp, excluded.xp),
-                  level = MAX(leaderboard.level, excluded.level),
-                  streak = MAX(leaderboard.streak, excluded.streak),
-                  badges_count = MAX(leaderboard.badges_count, excluded.badges_count),
-                  target_lang = COALESCE(excluded.target_lang, leaderboard.target_lang),
-                  country = COALESCE(NULLIF(excluded.country, ''), leaderboard.country),
-                  updated_at = strftime('%s', 'now')
-            `).bind(userId, name, avatar, xp, level, streak, badgesCount, targetLang, country).run();
-            memLeaderboardCache.clear();
+                await db.prepare(`
+                    INSERT INTO leaderboard (user_id, name, avatar, xp, level, streak, badges_count, target_lang, country, updated_at)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'))
+                    ON CONFLICT(user_id) DO UPDATE SET
+                      name = excluded.name,
+                      avatar = COALESCE(NULLIF(excluded.avatar, ''), leaderboard.avatar),
+                      xp = MAX(leaderboard.xp, excluded.xp),
+                      level = MAX(leaderboard.level, excluded.level),
+                      streak = MAX(leaderboard.streak, excluded.streak),
+                      badges_count = MAX(leaderboard.badges_count, excluded.badges_count),
+                      target_lang = COALESCE(excluded.target_lang, leaderboard.target_lang),
+                      country = COALESCE(NULLIF(excluded.country, ''), leaderboard.country),
+                      updated_at = strftime('%s', 'now')
+                `).bind(userId, name, avatar, xp, level, streak, badgesCount, targetLang, country).run();
+                memLeaderboardCache.clear();
+            } catch (dbErr) {
+                console.warn('[Leaderboard API] D1 upsert skipped (table may not exist):', dbErr.message);
+            }
         }
 
         return jsonResponse({

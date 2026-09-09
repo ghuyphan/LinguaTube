@@ -27,7 +27,7 @@ import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
 import { TranscriptService } from '../transcript.service';
 import { VocabularyService } from '../../vocabulary';
-import { SettingsService, I18nService } from '../../../core/services';
+import { SettingsService, I18nService, VideoLevelService, ToastService } from '../../../core/services';
 import { GrammarService, TranslationService } from '../../../services';
 import { QuizService } from '../quiz.service';
 import { PlaylistService } from '../../playlist/playlist.service';
@@ -80,14 +80,71 @@ export class VideoPlayerComponent implements OnDestroy {
   quiz = inject(QuizService);
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
+  videoLevel = inject(VideoLevelService);
   protected playlistService = inject(PlaylistService);
   translation = inject(TranslationService); // Made public for template
   private gestures = inject(GestureHandlerService);
   private keyboardShortcuts = inject(VideoKeyboardShortcutService);
+  private toast = inject(ToastService);
 
   // Translation language state
   targetLang = computed(() => this.subtitles.dualSubtitleTargetLang());
   isCJKLanguage = computed(() => ['ja', 'zh', 'ko', 'en'].includes(this.subtitles.activeLanguage()));
+
+  // Reading display state for settings
+  supportsReadingDisplay = computed(() => ['ja', 'zh', 'ko'].includes(this.subtitles.activeLanguage()));
+  showReadingAnnotation = computed(() =>
+    this.settings.showReadingAnnotation(this.subtitles.activeLanguage() as SupportedLearningLanguage)
+  );
+  readingScriptIcon = computed(() => {
+    const lang = this.subtitles.activeLanguage();
+    if (lang === 'ja') return 'あ';
+    if (lang === 'zh') return '拼';
+    if (lang === 'ko') return '한';
+    return 'Aa';
+  });
+  readingModeName = computed(() => {
+    const lang = this.subtitles.activeLanguage();
+    if (lang === 'ja') return this.i18n.t('settings.furigana') || 'Furigana';
+    if (lang === 'zh') return this.i18n.t('settings.pinyin') || 'Pinyin';
+    if (lang === 'ko') return this.i18n.t('settings.hangulRomanization') || 'Romanization';
+    return this.i18n.t('subtitle.reading') || 'Reading';
+  });
+
+  toggleReadingDisplay(): void {
+    this.settings.toggleReadingDisplay(this.subtitles.activeLanguage() as SupportedLearningLanguage);
+  }
+
+  async shareCurrentVideo(): Promise<void> {
+    const video = this.youtube.currentVideo();
+    if (!video) return;
+
+    const url = typeof window !== 'undefined' ? `${window.location.origin}/video?id=${video.id}` : '';
+    if (!url) return;
+
+    const shareData = {
+      title: video.title,
+      text: `Study "${video.title}" with interactive subtitles on Voca`,
+      url: url
+    };
+
+    if (typeof navigator !== 'undefined' && navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch {
+        // User cancelled or dismissed share sheet
+        return;
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(url);
+      this.toast.success(this.i18n.t('player.linkCopied') || this.i18n.t('playlist.linkCopied') || 'Link copied!');
+    } catch (err) {
+      console.error('Failed to copy video URL to clipboard:', err);
+    }
+  }
 
   onLangSelected(value: string): void {
     this.subtitles.setDualSubtitleTargetLang(value);
@@ -985,6 +1042,10 @@ export class VideoPlayerComponent implements OnDestroy {
     if (!code || code === 'off') {
       this.disableDualSubtitles();
     } else {
+      if (code === this.subtitles.activeLanguage()) {
+        this.closePlayerSettings();
+        return; // Cannot translate video into its own language
+      }
       this.onLangSelected(code);
     }
     this.closePlayerSettings();
@@ -1004,12 +1065,7 @@ export class VideoPlayerComponent implements OnDestroy {
     if (this.settings.settings().showDualSubtitles) {
       this.disableDualSubtitles();
     } else {
-      const sourceLang = this.subtitles.activeLanguage();
-      const uiLang = this.i18n.currentLanguage();
-      let target = this.settings.settings().dualSubtitleTargetLang || uiLang;
-      if (!target || target === sourceLang) {
-        target = (uiLang && uiLang !== sourceLang) ? uiLang : (sourceLang === 'en' ? 'ja' : 'en');
-      }
+      const target = this.subtitles.dualSubtitleTargetLang();
       this.settings.setDualSubtitleTargetLang(target);
       this.onLangSelected(target);
     }
@@ -1175,6 +1231,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   closeVideo(): void {
+    this.videoLevel.reset();
     this.playlistService.clearCurrentPlaylist();
     this.youtube.reset();
     this.subtitles.clear();

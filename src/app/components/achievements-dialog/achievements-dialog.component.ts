@@ -80,7 +80,12 @@ export class AchievementsDialogComponent {
     readonly firstPlace = computed(() => this.top3()[0] || null);
     readonly secondPlace = computed(() => this.top3()[1] || null);
     readonly thirdPlace = computed(() => this.top3()[2] || null);
-    readonly remainingLearners = computed(() => this.leaderboard.topLearners().slice(3));
+    readonly remainingLearners = computed(() => {
+        const learners = this.leaderboard.topLearners();
+        // If 3 or more learners, top 3 are on podium, rest in list.
+        // If fewer than 3, display all of them in the list so rank 1 & 2 aren't hidden!
+        return learners.length >= 3 ? learners.slice(3) : learners;
+    });
 
     readonly myRank = this.leaderboard.userRank;
     readonly isLeaderboardLoading = this.leaderboard.isLoading;
@@ -105,8 +110,8 @@ export class AchievementsDialogComponent {
         this.leaderboard.loadLeaderboard(code);
     }
 
-    refreshLeaderboard(): void {
-        this.leaderboard.syncMyScore();
-        this.leaderboard.loadLeaderboard();
+    async refreshLeaderboard(): Promise<void> {
+        await this.leaderboard.syncMyScore(true);
+        await this.leaderboard.loadLeaderboard();
     }
 }

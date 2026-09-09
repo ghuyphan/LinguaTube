@@ -77,11 +77,13 @@ export class SubtitleService {
     effect(() => {
       const showDual = this.settings.settings().showDualSubtitles;
       const sourceLang = this.activeLanguage();
-      const uiLang = this.i18n.currentLanguage();
-      // Target language follows UI locale; fallback if UI locale matches learning/source language
-      let targetLang = this.settings.settings().dualSubtitleTargetLang || uiLang;
-      if (targetLang === sourceLang) {
-        targetLang = (uiLang && uiLang !== sourceLang) ? uiLang : (sourceLang === 'en' ? 'ja' : 'en');
+      const targetLang = this.dualSubtitleTargetLang();
+
+      // Keep settings synchronized if dualSubtitleTargetLang had to resolve an alternative
+      if (this.settings.settings().dualSubtitleTargetLang !== targetLang) {
+        untracked(() => {
+          this.settings.setDualSubtitleTargetLang(targetLang);
+        });
       }
       const videoId = this.youtube.currentVideo()?.id;
       const cues = this.subtitles();
@@ -141,13 +143,15 @@ export class SubtitleService {
   readonly isDualCached = signal(false);
   readonly isTranslatingDual = signal(false);
   readonly dualSubError = signal<string | null>(null);
-  // Target language for dual subtitles (follows UI locale)
   readonly dualSubtitleTargetLang = computed(() => {
     const sourceLang = this.activeLanguage();
     const uiLang = this.i18n.currentLanguage();
-    const target = this.settings.settings().dualSubtitleTargetLang || uiLang;
-    if (target === sourceLang) {
-      return (uiLang && uiLang !== sourceLang) ? uiLang : (sourceLang === 'en' ? 'ja' : 'en');
+    const target = this.settings.settings().dualSubtitleTargetLang;
+    if (!target || target === sourceLang) {
+      if (uiLang && uiLang !== sourceLang) {
+        return uiLang;
+      }
+      return sourceLang === 'en' ? 'vi' : 'en';
     }
     return target;
   });

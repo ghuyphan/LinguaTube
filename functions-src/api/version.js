@@ -14,36 +14,41 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.0.30',
+    version: '1.0.31',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Fixed Server Error 500: Resolved variable scope reference error in backend transcript orchestrator that caused server errors on video playback',
-            'Automatic Language Mismatch Detection: Accurately prompts learners with switch suggestions when authentic captions exist in an alternate language',
-            'Robust Backend Static Analysis: Integrated comprehensive AST undefined-variable validation and regression tests across all edge API functions'
+            'Unified Subtitle Display Layout: Eliminated vertical cue jumping by stabilizing reading baseline heights across single and multi-line subtitles',
+            'Mobile Typographic Baseline Alignment: Standardized word token alignments across Japanese furigana, Chinese, Korean, and English text on mobile screens',
+            'Difficulty Level Lifecycle & Shimmer Skeleton: Added elegant placeholder skeleton during subtitle fetching and eradicated stale level badges on video switch',
+            'Optimized Playback Performance: Enhanced active cue matching and throttled lazy loading to minimize layout reflow during continuous playback'
         ],
         vi: [
-            'Khắc phục lỗi máy chủ 500: Sửa triệt để lỗi tham chiếu phạm vi biến trong bộ điều phối phụ đề gây sự cố máy chủ khi phát video',
-            'Tự động gợi ý khi có phụ đề ngôn ngữ khác: Tự động phát hiện và gợi ý người học chuyển đổi ngôn ngữ khi video có sẵn phụ đề chuẩn ở ngôn ngữ khác',
-            'Kiểm thử tĩnh toàn diện: Tích hợp kiểm tra tự động biến chưa khai báo và bộ hồi quy cho toàn bộ các hàm xử lý API backend'
+            'Ổn định giao diện phụ đề: Loại bỏ hiện tượng phụ đề nhảy dòng bằng cách cố định chiều cao đường cơ sở cho cả phụ đề 1 dòng và nhiều dòng',
+            'Căn chỉnh đường cơ sở trên di động: Chuẩn hóa căn lề typographic cho furigana tiếng Nhật, tiếng Trung, tiếng Hàn và tiếng Anh trên thiết bị di động',
+            'Vòng đời huy hiệu cấp độ & hiệu ứng Skeleton: Bổ sung huy hiệu shimmer sang trọng khi tải phụ đề và xóa sạch huy hiệu cấp độ cũ khi chuyển video',
+            'Tối ưu hiệu năng phát video: Cải thiện so khớp cue đang phát và tiết chế kiểm tra lazy load nhằm triệt tiêu hiện tượng giật khung hình'
         ],
         ja: [
-            'サーバーエラー500の完全修正：動画再生時にサーバーエラーを引き起こしていたバックエンド字幕オーケストレーターのスコープ参照エラーを修正',
-            '利用可能な言語の自動検出と提案：学習対象言語と異なる言語で字幕が存在する場合に言語切り替えダイアログを正確に表示',
-            '静的解析テストの強化：全エッジAPI関数に対して未定義変数の自動AST検証と回帰テストを導入し品質を担保'
+            '字幕表示レイアウトの安定化：1行・複数行字幕の基準高さを統一し、再生中の垂直方向の字幕の揺れ・跳ね上がりを解消',
+            'モバイルタイポグラフィの整列：日本語のルビ（ふりがな）、中国語、韓国語、英語の単語ベースラインを全画面幅で完全に一致化',
+            '難易度バッジのライフサイクルとシマースケルトン：字幕読み込み中に自然なスケルトンを表示し、前動画のバッジが残る問題を完全に解決',
+            '動画再生パフォーマンスの向上：アクティブ字幕の比較処理を最適化し、スクロール時の不要なリフローとCPU負荷を大幅に削減'
         ],
         ko: [
-            '서버 오류 500 해결: 동영상 재생 시 서버 오류를 유발했던 백엔드 자막 처리 함수의 변수 스코프 참조 오류를 완벽히 수정',
-            '대체 언어 자막 자동 감지 및 전환 제안: 학습 대상 언어와 다른 언어로 자막이 제공될 때 언어 전환 모달을 정확히 표시',
-            '백엔드 정적 분석 강화: 모든 에지 API 엔드포인트에 미선언 변수 AST 검증 및 회귀 테스트를 도입하여 런타임 안정성 보장'
+            '자막 레이아웃 안정화: 1줄 및 다중 줄 자막 간의 기준선 높이를 고정하여 재생 중 자막이 위아래로 튀는 현상 완벽 해결',
+            '모바일 타이포그래피 베이스라인 정렬: 일본어 후리가나, 중국어, 한국어, 영어 단어 토큰의 기준선을 모바일 화면에서도 일관되게 정렬',
+            '난이도 배지 라이프사이클 및 쉬머 스켈레톤: 자막 로딩 중 세련된 스켈레톤 UI를 표시하고 이전 동영상의 배지가 남는 문제 완전 해결',
+            '재생 성능 최적화: 활성 자막 매칭 로직을 정수 인덱스로 최적화하고 지연 로딩 검사를 조절하여 레이아웃 리플로우 최소화'
         ],
         zh: [
-            '修复服务器500错误：彻底解决视频播放时因后端字幕调度器变量作用域引用错误导致的服务器异常',
-            '替代语言字幕智能识别与提示：当视频存在其他有效语言的原生字幕时，自动精准弹出语言切换建议',
-            '后端静态分析全面强化：为所有边缘API函数增加未定义变量AST自动化检验及回归测试，杜绝运行时异常'
+            '字幕展示布局深度稳定：统一单行与多行字幕的基础排版高度，彻底消除字幕切换时的垂直跳动与视觉位移',
+            '移动端文字基准线对齐：完美统一日语假名注音、中文、韩语及英语在小屏幕上的文字排版基线，告别参差错位',
+            '难度徽章生命周期与骨架屏：字幕加载及AI转录期间呈现精致微光骨架屏，并在切换视频时即时重置避免显示旧级别',
+            '视频播放性能大幅优化：优化当前字幕匹配机制并节流懒加载检测，显著降低持续播放时的DOM重排与性能损耗'
         ]
     }
 };

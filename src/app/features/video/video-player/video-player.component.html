@@ -290,8 +290,8 @@
               </div>
               <div class="menu-item-right">
                 @if (settings.settings().showDualSubtitles) {
-                  <img [src]="getTargetLangFlagUrl(settings.settings().dualSubtitleTargetLang || 'en')" class="menu-item-flag" alt="" />
-                  <span class="menu-item-value">{{ getTargetLangName(settings.settings().dualSubtitleTargetLang || 'en') }}</span>
+                  <img [src]="getTargetLangFlagUrl(targetLang())" class="menu-item-flag" alt="" />
+                  <span class="menu-item-value">{{ getTargetLangName(targetLang()) }}</span>
                 } @else {
                   <span class="menu-item-value">{{ i18n.t('player.off') || 'Off' }}</span>
                 }
@@ -299,6 +299,43 @@
               </div>
             </button>
             }
+
+            <!-- Reading Display (Furigana / Pinyin / Romaji) -->
+            @if (supportsReadingDisplay()) {
+            <button type="button" class="settings-menu-item" (click)="toggleReadingDisplay()">
+              <div class="menu-item-left">
+                <span class="menu-item-reading-icon">{{ readingScriptIcon() }}</span>
+                <span class="menu-item-label">{{ readingModeName() }}</span>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-item-value">{{ showReadingAnnotation() ? (i18n.t('common.on') || 'On') : (i18n.t('player.off') || 'Off') }}</span>
+                <app-icon name="chevron-right" [size]="16" />
+              </div>
+            </button>
+            }
+
+            <!-- Grammar Mode -->
+            <button type="button" class="settings-menu-item" (click)="grammar.toggleGrammarMode()">
+              <div class="menu-item-left">
+                <app-icon name="book-open" [size]="18" />
+                <span class="menu-item-label">{{ i18n.t('grammar.mode') || 'Grammar Mode' }}</span>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-item-value">{{ grammar.grammarModeEnabled() ? (i18n.t('common.on') || 'On') : (i18n.t('player.off') || 'Off') }}</span>
+                <app-icon name="chevron-right" [size]="16" />
+              </div>
+            </button>
+
+            <!-- Share Video -->
+            <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); shareCurrentVideo()">
+              <div class="menu-item-left">
+                <app-icon name="share" [size]="18" />
+                <span class="menu-item-label">{{ i18n.t('player.share') || 'Share video' }}</span>
+              </div>
+              <div class="menu-item-right">
+                <app-icon name="chevron-right" [size]="16" />
+              </div>
+            </button>
 
             <!-- Add to Playlist -->
             <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); onSaveClick()">
@@ -398,13 +435,15 @@
             <!-- Supported Languages with circle flags -->
             @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
             <button type="button" class="settings-option-row" 
-              [class.active]="settings.settings().showDualSubtitles && (settings.settings().dualSubtitleTargetLang || 'en') === lang.code"
+              [class.active]="settings.settings().showDualSubtitles && targetLang() === lang.code"
+              [class.disabled]="lang.code === subtitles.activeLanguage()"
+              [disabled]="lang.code === subtitles.activeLanguage()"
               (click)="selectDualSubLang(lang.code)">
               <div class="option-with-icon">
                 <img [src]="lang.flagUrl" class="option-flag" alt="" />
                 <span class="option-label">{{ lang.name }}</span>
               </div>
-              @if (settings.settings().showDualSubtitles && (settings.settings().dualSubtitleTargetLang || 'en') === lang.code) {
+              @if (settings.settings().showDualSubtitles && targetLang() === lang.code) {
               <app-icon name="check" [size]="16" class="option-check" />
               }
             </button>
@@ -450,7 +489,6 @@
         [t]="i18n.t.bind(i18n)"
         (playPauseClicked)="onPlayPauseButtonClick($event)"
         (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSubtitles)="toggleSubtitles()"
-        (savePlaylist)="onSaveClick()"
         (toggleDualSubs)="toggleDualSubtitles()"
         (openDualSubMenu)="openDualSubMenu($event)"
         (speedClick)="openSpeedMenu($event)" (openSettings)="openPlayerSettings($event)"
@@ -462,7 +500,7 @@
   <!-- Video Info -->
   @if (!isFullscreen()) {
   <app-video-header [title]="youtube.currentVideo()?.title" [channel]="youtube.currentVideo()?.channel"
-    (closeVideo)="closeVideo()" />
+    (closeVideo)="closeVideo()" (savePlaylist)="onSaveClick()" (shareVideo)="shareCurrentVideo()" />
   }
   }
 </div>

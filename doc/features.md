@@ -502,7 +502,7 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
   - `expert`: JLPT N1, HSK 6, TOPIK 6, CEFR C1/C2 (Color: Amber `#f59e0b`)
 
 ### 12.3. UI Integration & Level Filtering
-- **Video Header Pill (`VideoHeaderComponent`)**: Displays dynamic tier-colored badge (e.g. `[JLPT N3]`).
+- **Video Header Pill (`VideoHeaderComponent`)**: Displays dynamic tier-colored badge (e.g. `[JLPT N3]`). During caption fetching, AI transcription generation, or deep linguistic evaluation, a shimmering skeleton pill (`.level-badge--skeleton`) is rendered to prevent showing stale level badges from previously watched videos while preserving layout stability (CLS = 0).
 - **Interactive Breakdown Popover**: Clicking the badge reveals:
   - Difficulty tier label and description.
   - Number of advanced grammar patterns detected.

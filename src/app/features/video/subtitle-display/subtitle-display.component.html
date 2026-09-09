@@ -246,10 +246,10 @@
             (click)="seekToCue(cue)">
             <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
             <div class="cue-body">
-                <span class="cue-text">{{ cue.text }}</span>
+                <span class="cue-text" [attr.title]="cue.text">{{ cue.text }}</span>
                 @if (settings.settings().showDualSubtitles && cueTranslations().get(cue.id); as translation) {
                 @if (translation.trim() !== cue.text.trim()) {
-                <span class="cue-translation-text">{{ translation }}</span>
+                <span class="cue-translation-text" [attr.title]="translation">{{ translation }}</span>
                 }
                 }
             </div>
