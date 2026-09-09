@@ -18,6 +18,9 @@ Voca accepts arbitrary YouTube video URLs:
 - Custom UI overlay replaces default YouTube player chrome, eliminating clutter and visual distractions.
 - **Auto-Pause on Hover / Click**:
   When a user hovers over or clicks an interactive subtitle word to inspect its definition, video playback pauses automatically to prevent the learner from falling behind.
+- **Smart Target Language Switch & Session Reset**:
+  - When a user changes their target learning language (via sidebar or settings sheet) while watching a video, `VideoPageComponent` automatically halts video playback, clears the player, subtitles, and transcript state, and smoothly navigates back to the Home Feed (`/video`) loaded with recommended playlists and videos for the newly chosen language.
+  - Conversely, when a video language mismatch is detected and the user explicitly clicks "Switch to video language" inside the prompt dialog (`skipNextMismatchDialog: true`), the player stays on the video and immediately re-fetches captions matching the video's authentic spoken language.
 
 ### 1.3. Controls & Interaction Matrix
 | Action | Desktop Shortcut | Mobile Gesture | UI Element |

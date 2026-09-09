@@ -144,6 +144,9 @@ graph TD
   - **Unified Global Spinner Component (`.spinner`)**: Standardized CSS spinner design token in `_components.scss` with multiple size (`--sm`, `--md`, `--lg`, `--xl`) and theme (`--white`, `--current`) variants, animated with smooth `spin` keyframes and respecting `prefers-reduced-motion`.
   - **Modern Video Iconography**: Unified on sleek `play-circle` and `list-video` icons across tabs, cards, and empty states.
   - Powered by `VideoRecommendationService` and `PlaylistService` retrieving genuine transcribed videos and multi-video playlists directly from Cloudflare D1/R2 and PocketBase.
+- **Reactive Target Language Switch Effect**:
+  - Distinguishes between explicit mismatch modal confirmations (`skipNextMismatchDialog: true`, which keeps the player active and refetches subtitles in the detected language) and user-initiated learning language changes in the sidebar/settings.
+  - When the user changes target learning language while watching a video, the effect resets the player, clears current subtitles/transcripts, clears the active playlist, and navigates to `/video` to present the Home Feed recommendations for the newly selected language.
 - **Unified Desktop Sidebar (`.unified-sidebar`)**:
   - Encapsulates `PlaylistPanelComponent` and `VocabularyListComponent` inside a single card container with segmented tab switcher (`[Playlist (N)]` / `[Vocabulary (N)]`).
   - Retains playlist tab on desktop even for single-video playlists (`hasPlaylist`), allowing playlist management without cluttering the page.

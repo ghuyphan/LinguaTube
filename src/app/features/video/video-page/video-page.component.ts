@@ -467,12 +467,12 @@ export class VideoPageComponent implements OnInit {
       }
     });
 
-    // Watch for language changes and refetch captions when language changes
+    // Watch for language changes and handle video vs home feed appropriately
     effect(() => {
       const currentLang = this.settings.settings().language;
       const currentVideo = this.youtube.currentVideo();
 
-      // Only refetch if:
+      // Only act if:
       // 1. There's a current video
       // 2. Language has actually changed from what we last used
       // 3. We're not in the initial load (lastLang is set)
@@ -484,10 +484,23 @@ export class VideoPageComponent implements OnInit {
         this.showLanguageMismatchDialog.set(false);
         this.mismatchDetectedLang.set(null);
 
-        this.subtitles.clear();
-        this.transcript.reset();
-        this.videoLevel.reset();
-        this.fetchCaptions(currentVideo.id);
+        if (this.skipNextMismatchDialog) {
+          // User explicitly confirmed switching to the video's authentic language
+          this.skipNextMismatchDialog = false;
+          this.subtitles.clear();
+          this.transcript.reset();
+          this.videoLevel.reset();
+          this.fetchCaptions(currentVideo.id);
+        } else {
+          // User changed their target learning language in sidebar / settings while watching a video!
+          // Clear current video and return to Home feed for the newly chosen learning language
+          this.videoLevel.reset();
+          this.playlistService.clearCurrentPlaylist();
+          this.youtube.reset();
+          this.subtitles.clear();
+          this.transcript.reset();
+          void this.router.navigate(['/video'], { queryParams: {} });
+        }
       }
     });
 
