@@ -677,9 +677,13 @@ export class GrammarService {
                 if (!pattern) continue;
 
                 // Handle multiple occurrences in the same sentence
-                const jsonMatches = found.json({ terms: true });
+                interface NlpTerm { text?: string; normal?: string; tags?: string[] }
+                interface NlpMatchJson { terms?: NlpTerm[] }
+
+                const jsonMatches = (found as unknown as { json: (opt?: unknown) => NlpMatchJson[] }).json({ terms: true });
                 for (const jMatch of jsonMatches) {
-                    const termTexts = (jMatch.terms || []).filter(t => t.text).map(t => t.text);
+                    const terms = jMatch.terms || [];
+                    const termTexts = terms.map(t => t.text || '').filter(Boolean);
                     if (termTexts.length === 0) continue;
 
                     const tokenIndices = this.findMatchTokenIndices(tokens, termTexts);
@@ -710,8 +714,11 @@ export class GrammarService {
                 const pattern = this.getPatternById(pair.id, 'en');
                 if (!pattern) continue;
 
-                const startTerms = startM.json({ terms: true })[0]?.terms?.filter(t => t.text).map(t => t.text) || [];
-                const endTerms = endM.json({ terms: true })[0]?.terms?.filter(t => t.text).map(t => t.text) || [];
+                interface NlpMatchDoc { json: (opt?: unknown) => Array<{ terms?: Array<{ text?: string }> }> }
+                const startJson = (startM as unknown as NlpMatchDoc).json({ terms: true })[0];
+                const endJson = (endM as unknown as NlpMatchDoc).json({ terms: true })[0];
+                const startTerms = (startJson?.terms || []).map(t => t.text || '').filter(Boolean);
+                const endTerms = (endJson?.terms || []).map(t => t.text || '').filter(Boolean);
 
                 const startIndices = this.findMatchTokenIndices(tokens, startTerms);
                 const endIndices = this.findMatchTokenIndices(tokens, endTerms);
