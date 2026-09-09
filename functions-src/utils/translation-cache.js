@@ -158,11 +158,15 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
                 const existingData = await existingObject.json();
                 if (Array.isArray(existingData?.segments) && existingData.segments.length > 0) {
                     const existingMap = new Map();
+                    const existingByText = new Map();
                     existingData.segments.forEach((seg, idx) => {
                         const tr = seg?.translation && typeof seg.translation === 'string' ? seg.translation.trim() : '';
                         if (tr) {
                             const timeKey = typeof seg.start === 'number' ? seg.start.toFixed(1) : `idx:${idx}`;
                             existingMap.set(timeKey, tr);
+                            if (seg?.text && typeof seg.text === 'string') {
+                                existingByText.set(seg.text.trim(), tr);
+                            }
                         }
                     });
 
@@ -172,7 +176,21 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
                             return { ...seg, translation: incomingTr };
                         }
                         const timeKey = typeof seg?.start === 'number' ? seg.start.toFixed(1) : `idx:${idx}`;
-                        const existingTr = existingMap.get(timeKey) || (existingData.segments[idx]?.translation ? existingData.segments[idx].translation.trim() : '');
+                        let existingTr = existingMap.get(timeKey);
+                        if (!existingTr && seg?.text && typeof seg.text === 'string') {
+                            existingTr = existingByText.get(seg.text.trim());
+                        }
+                        if (!existingTr && typeof seg?.start === 'number') {
+                            const closeSeg = existingData.segments.find(es => 
+                                es?.translation && typeof es.start === 'number' && Math.abs(es.start - seg.start) < 0.8
+                            );
+                            if (closeSeg?.translation) {
+                                existingTr = typeof closeSeg.translation === 'string' ? closeSeg.translation.trim() : closeSeg.translation;
+                            }
+                        }
+                        if (!existingTr && existingData.segments[idx]?.translation) {
+                            existingTr = typeof existingData.segments[idx].translation === 'string' ? existingData.segments[idx].translation.trim() : existingData.segments[idx].translation;
+                        }
                         return {
                             ...seg,
                             translation: existingTr || null

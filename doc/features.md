@@ -144,15 +144,20 @@ graph TD
 - **Dynamic Subtitle Language Detection (`detectSubtitleLanguage`)**: Subtitle cues are sampled using Unicode character block analysis (`\p{Script=Han}`, `\p{Script=Hiragana}`, `\p{Script=Hangul}`) to accurately determine the authentic video subtitle language. This prevents mismatches when user settings language differs from video subtitle language.
 - **Source/Target Inversion Prevention**: Target language selection strictly avoids collision with the active subtitle language, falling back to the user's interface language or alternate language to ensure translations are never identical to the source.
 - **Cache-First & Progressive High-Speed Batch Translation**:
+  - **Tier 0 (On-Device Hardware Translation)**: If the client browser supports Chrome Built-in AI / W3C `Translator` API (`self.Translator`, `self.translation`, or `self.ai.translator`), translations run entirely on-device with zero network latency, instant bilingual cue availability, and complete user privacy.
   - **Tier 1 (IndexedDB Local)**: Checks client IndexedDB (`lingua-tube-cache`) first for instant 0ms offline-ready bilingual subtitles.
   - **Tier 2 (Cloudflare R2 Edge)**: Checks server/R2 cache (`onlyCache: true`) without requiring segment payloads. If present, returns full bilingual transcript in ~50ms.
-  - **Tier 3 (JIT Rolling Window Stream)**: On cache miss, immediately translates upcoming cues in batches of 50 with a 25-cue lookahead buffer via direct edge Google GTX (~150ms-1.5s vs 7s+ on dead proxies) so learners experience near-instant playback response without waiting for full-video translation.
+  - **Tier 3 (JIT Rolling Window Stream)**: On cache miss or fallback from on-device translation, immediately translates upcoming cues in batches of 50 with a 25-cue lookahead buffer via direct edge Google GTX (~150ms-1.5s vs 7s+ on dead proxies) so learners experience near-instant playback response without waiting for full-video translation.
   - On user seeks or clicks in the subtitle list, any stale in-flight batch is automatically cancelled and the seek position's cues are translated immediately.
+- **Dual Subtitle Self-Healing & Fuzzy Proximity Alignment**:
+  - Cues are mapped to cached bilingual segments via timestamp proximity ($\pm 0.8$s) and text equality rather than brittle array index positions.
+  - If a cached dual subtitle transcript has partial coverage ($<80\%$) or contains missing cues, the client automatically triggers background translation of missing lines during playback without causing infinite loading spinners.
+  - Checkpoints are saved when $\ge 10$ newly translated cues are repaired, writing healed transcripts back to Cloudflare R2 and IndexedDB.
 - **Incremental Crowd-Cache Merging**:
-  - Instead of requiring an all-or-nothing 80% full watch in a single sitting, `SubtitleService` writes checkpoints to Cloudflare R2 and IndexedDB (every 20+ newly translated cues or on video pause/switch), merging incoming translated segments into existing R2 files.
+  - Instead of requiring an all-or-nothing 80% full watch in a single sitting, `SubtitleService` writes checkpoints to Cloudflare R2 and IndexedDB (every 10–20 newly translated cues or on video pause/switch), merging incoming translated segments into existing R2 files using fuzzy text and timestamp proximity matching.
   - Multiple users watching different parts of the same video collectively build the full dual-subtitle cache without burning translation quotas.
 - **Translation Anti-Poisoning & Infinite-Loop Prevention**:
-  - Failed translation requests return `null` rather than falling back to untranslated source text.
+  - Failed translation requests return `null` rather than falling back to untranslated source text, ensuring failed cues can be retried and self-healed rather than poisoned with blank strings.
   - In-memory subtitle tracking marks all processed cues (including identical and empty) as resolved to completely eliminate infinite network retry loops on short words, sound effects, or numbers.
   - LocalStorage and R2 caches automatically sanitize and reject entries where `source !== target` but `translation === sourceText`.
   - UI templates (`subtitle-display`, `fullscreen-subtitle`) enforce equality guards (`translation.trim() !== cue.text.trim()`) to prevent rendering duplicate identical lines.

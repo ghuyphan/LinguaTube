@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription, map, catchError, of, timer, retry, throwError, Subject, concatMap } from 'rxjs';
+import { Observable, Subscription, map, catchError, of, timer, retry, throwError, Subject, concatMap, from, switchMap, timeout } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 
@@ -31,6 +31,7 @@ interface BatchRequest {
 // Cache configuration
 const CACHE_KEY = 'linguatube_translations';
 const MAX_CACHE_SIZE = 1000;
+const BATCH_REQUEST_TIMEOUT_MS = 12000;
 
 @Injectable({
     providedIn: 'root'
@@ -71,11 +72,12 @@ export class TranslationService implements OnDestroy {
             source: params.source,
             target: params.target
         }).pipe(
+            timeout(BATCH_REQUEST_TIMEOUT_MS),
             retry({
                 count: 2,
                 delay: (error, retryCount) => {
                     // Only retry on 429 or 5xx
-                    if (error.status !== 429 && !error.status.toString().startsWith('5')) {
+                    if (error.status !== 429 && !error.status?.toString().startsWith('5')) {
                         return throwError(() => error);
                     }
 
@@ -101,22 +103,137 @@ export class TranslationService implements OnDestroy {
                 observer.next(response);
                 observer.complete();
             }),
-            // If error after retries
+            // If error after retries or timeout
             catchError(err => {
-                console.warn('Batch translation failed after retries:', err);
+                console.warn('Batch translation failed or timed out:', err);
                 observer.error(err);
                 return of(null);
             }),
-            // Ensure we return void for the switchMap/concatMap chain
+            // Ensure we return void for the concatMap chain so queue never stalls
             map(() => void 0)
         );
     }
 
+    private activeTranslator: { key: string; instance: { translate: (text: string) => Promise<string>; destroy?: () => void } } | null = null;
 
+    /**
+     * Check if on-device translation is supported and ready for the given language pair
+     * (Chrome Built-in AI / W3C Translator API)
+     */
+    async canTranslateOnDevice(source: string, target: string): Promise<boolean> {
+        if (typeof window === 'undefined') return false;
+        try {
+            const anyWin = window as unknown as Record<string, unknown>;
+            const src = source.split('-')[0].toLowerCase();
+            const tgt = target.split('-')[0].toLowerCase();
+
+            // 1. Chrome 131+ Translator API: window.Translator.availability()
+            const TranslatorClass = anyWin['Translator'] as { availability?: (opt: { sourceLanguage: string; targetLanguage: string }) => Promise<string> } | undefined;
+            if (TranslatorClass && typeof TranslatorClass.availability === 'function') {
+                const avail = await TranslatorClass.availability({ sourceLanguage: src, targetLanguage: tgt });
+                return avail === 'readily';
+            }
+
+            // 2. W3C Translation API Draft: window.translation.canTranslate()
+            const translationObj = anyWin['translation'] as { canTranslate?: (opt: { sourceLanguage: string; targetLanguage: string }) => Promise<string> } | undefined;
+            if (translationObj && typeof translationObj.canTranslate === 'function') {
+                const status = await translationObj.canTranslate({ sourceLanguage: src, targetLanguage: tgt });
+                return status === 'readily';
+            }
+
+            // 3. Early Chrome Origin Trial: window.ai.translator.capabilities()
+            const aiObj = anyWin['ai'] as { translator?: { capabilities?: () => Promise<{ available: string }> } } | undefined;
+            if (aiObj?.translator && typeof aiObj.translator.capabilities === 'function') {
+                const caps = await aiObj.translator.capabilities();
+                return caps.available === 'readily';
+            }
+        } catch {
+            return false;
+        }
+        return false;
+    }
+
+    /**
+     * Translate texts using on-device browser AI with 0 network requests
+     */
+    async translateOnDevice(texts: string[], source: string, target: string): Promise<(string | null)[] | null> {
+        if (typeof window === 'undefined' || !texts.length) return null;
+        try {
+            const anyWin = window as unknown as Record<string, unknown>;
+            const src = source.split('-')[0].toLowerCase();
+            const tgt = target.split('-')[0].toLowerCase();
+            const key = `${src}:${tgt}`;
+
+            interface TranslatorInstance {
+                translate: (text: string) => Promise<string>;
+                destroy?: () => void;
+            }
+
+            let translator: TranslatorInstance | null = null;
+
+            if (this.activeTranslator?.key === key) {
+                translator = this.activeTranslator.instance;
+            } else {
+                if (this.activeTranslator?.instance?.destroy) {
+                    try { this.activeTranslator.instance.destroy(); } catch {}
+                }
+                this.activeTranslator = null;
+
+                // 1. Chrome 131+ Translator.create()
+                const TranslatorClass = anyWin['Translator'] as { create?: (opt: { sourceLanguage: string; targetLanguage: string }) => Promise<TranslatorInstance> } | undefined;
+                if (TranslatorClass && typeof TranslatorClass.create === 'function') {
+                    translator = await TranslatorClass.create({ sourceLanguage: src, targetLanguage: tgt });
+                } else {
+                    // 2. W3C translation.createTranslator()
+                    const translationObj = anyWin['translation'] as { createTranslator?: (opt: { sourceLanguage: string; targetLanguage: string }) => Promise<TranslatorInstance> } | undefined;
+                    if (translationObj && typeof translationObj.createTranslator === 'function') {
+                        translator = await translationObj.createTranslator({ sourceLanguage: src, targetLanguage: tgt });
+                    } else {
+                        // 3. Early AI Translator
+                        const aiObj = anyWin['ai'] as { translator?: { create?: (opt: { sourceLanguage: string; targetLanguage: string }) => Promise<TranslatorInstance> } } | undefined;
+                        if (aiObj?.translator && typeof aiObj.translator.create === 'function') {
+                            translator = await aiObj.translator.create({ sourceLanguage: src, targetLanguage: tgt });
+                        }
+                    }
+                }
+
+                if (translator && typeof translator.translate === 'function') {
+                    this.activeTranslator = { key, instance: translator };
+                }
+            }
+
+            if (!translator || typeof translator.translate !== 'function') return null;
+
+            const results = await Promise.all(
+                texts.map(async text => {
+                    const trimmed = text?.trim();
+                    if (!trimmed) return null;
+                    try {
+                        const translated = await translator!.translate(trimmed);
+                        return (typeof translated === 'string' && translated.trim().length > 0) ? translated.trim() : null;
+                    } catch {
+                        return null;
+                    }
+                })
+            );
+
+            // If at least one translation succeeded, return array
+            if (results.some(r => r !== null)) {
+                return results;
+            }
+        } catch (e) {
+            console.warn('[TranslationService] On-device translation exception:', e);
+            if (this.activeTranslator?.instance?.destroy) {
+                try { this.activeTranslator.instance.destroy(); } catch {}
+            }
+            this.activeTranslator = null;
+        }
+        return null;
+    }
 
     /**
      * Batch translate multiple texts at once
-     * More efficient than individual requests for multiple translations
+     * Prioritizes on-device browser translation first, then falls back to cloud batch queue
      */
     translateBatch(texts: string[], source: string, target: string): Observable<(string | null)[]> {
         if (!texts.length) return of([]);
@@ -156,6 +273,52 @@ export class TranslationService implements OnDestroy {
             textToIndices.get(text)!.push(index);
         });
 
+        // Try on-device browser translation first
+        return from(this.translateOnDevice(uniqueTexts, source, target)).pipe(
+            switchMap(onDeviceTranslations => {
+                if (onDeviceTranslations && onDeviceTranslations.length === uniqueTexts.length) {
+                    const stillMissing: string[] = [];
+                    const missingTextToIndices = new Map<string, number[]>();
+
+                    onDeviceTranslations.forEach((translation, i) => {
+                        const origText = uniqueTexts[i];
+                        const targetIndices = textToIndices.get(origText) || [];
+                        if (translation && (source === target || translation.trim() !== origText.trim())) {
+                            targetIndices.forEach(idx => {
+                                results[idx] = translation;
+                            });
+                            this.addToCache(`${source}:${target}:${origText}`, translation);
+                        } else {
+                            // Needs cloud fallback
+                            stillMissing.push(origText);
+                            missingTextToIndices.set(origText, targetIndices);
+                        }
+                    });
+
+                    this.scheduleCacheSave();
+
+                    // If all were translated on-device, complete immediately!
+                    if (stillMissing.length === 0) {
+                        return of(results);
+                    }
+
+                    // Otherwise fall back to cloud for the unhandled remainder
+                    return this.dispatchCloudBatch(stillMissing, missingTextToIndices, results, source, target);
+                }
+
+                // Complete fallback to cloud batch request
+                return this.dispatchCloudBatch(uniqueTexts, textToIndices, results, source, target);
+            })
+        );
+    }
+
+    private dispatchCloudBatch(
+        uniqueTexts: string[],
+        textToIndices: Map<string, number[]>,
+        results: (string | null)[],
+        source: string,
+        target: string
+    ): Observable<(string | null)[]> {
         return new Observable(observer => {
             const requestContext = {
                 params: {
@@ -326,6 +489,10 @@ export class TranslationService implements OnDestroy {
     ngOnDestroy(): void {
         this.queueSubscription?.unsubscribe();
         this.requestQueue$.complete();
+        if (this.activeTranslator?.instance?.destroy) {
+            try { this.activeTranslator.instance.destroy(); } catch {}
+        }
+        this.activeTranslator = null;
         // Flush pending save on destroy
         if (this.storageSaveTimer) {
             clearTimeout(this.storageSaveTimer);

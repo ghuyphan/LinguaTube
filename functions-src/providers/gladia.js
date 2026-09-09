@@ -2,10 +2,8 @@
  * Provider for Gladia AI Transcription API
  */
 
-const GLADIA_API_URL = 'https://api.gladia.io/v2/transcription';
-const FETCH_TIMEOUT_MS = 25000;
-const INITIAL_DELAY_MS = 3000;
-const MAX_DELAY_MS = 10000;
+const GLADIA_API_URL = 'https://api.gladia.io/v2/pre-recorded';
+const FETCH_TIMEOUT_MS = 15000;
 
 export class GladiaProvider {
     /**
@@ -63,7 +61,7 @@ export class GladiaProvider {
             if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io') {
                 throw new Error('Invalid resultUrl host: must be api.gladia.io');
             }
-            if (!/^\/v2\/(transcription|pre-recorded)\/[a-zA-Z0-9_-]+$/.test(parsed.pathname)) {
+            if (!/^\/v2\/(transcription|pre-recorded)(\/[a-zA-Z0-9_/-]+)?$/.test(parsed.pathname)) {
                 throw new Error('Invalid resultUrl pathname format');
             }
         } catch (e) {

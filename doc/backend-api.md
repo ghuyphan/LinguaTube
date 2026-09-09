@@ -94,18 +94,19 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   ```
 - **Lifecycle & Fallback Chain**:
   1. **R2 Multi-Language Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known languages in R2 for that video as fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant Gladia submissions and saving user diamonds.
-  2. **Native Captions Fetch (Supadata)**: If `preferAI: false`, queries Supadata native captions. If found, caches to R2 and records in D1 `video_meta` and `video_languages`.
-  3. **Negative Cache Check**: If previously marked as having no native captions in D1 `no_transcript_cache`, returns `NO_NATIVE` immediately.
-  4. **AI Generation (Gladia V2) - Non-Blocking Client-Driven Polling**:
+  2. **Native Captions Fetch (Supadata)**: If `preferAI: false`, queries Supadata native captions. Regional language tags (e.g. `ja-JP`, `zh-Hans`, `en-US`) are normalized to standard ISO base codes (`ja`, `zh`, `en`). If native captions exist in an alternate authentic language, the captions are saved to R2 under `actualLang` and returned with `languageMismatch: true`, allowing the client to display the authentic subtitles rather than a false-negative "cannot get transcript" error.
+  3. **Negative Cache Check**: Negative caching (`markNoTranscript`) in D1 `no_transcript_cache` is ONLY recorded when a video has zero available caption tracks across all languages.
+  4. **AI Generation (Gladia V2 Pre-Recorded) - Non-Blocking Client-Driven Polling**:
      - Verifies Turnstile token (`verifyTurnstileToken`).
      - Verifies Diamond balance ($> 0$) and calculates duration-based cost (1 to 4 diamonds).
      - **Pre-check R2**: Ensures no transcript already exists in R2 before consuming diamonds.
      - **Pre-check Pending Jobs**: If an active job for the video is already running in Gladia, reuses `result_url` without re-submitting or double-charging.
-     - Submits YouTube audio URL to Gladia API.
+     - Submits YouTube audio URL to Gladia `https://api.gladia.io/v2/pre-recorded` endpoint.
+     - **In-Memory Job Routing**: Stores job mapping in warm Worker isolate memory and D1 `pending_jobs` without burning Cloudflare KV write quotas (Rule 2).
      - Returns `{ status: 'processing', resultUrl }` immediately ($\sim 1.5$s response) to avoid long-lived edge connection drops (524 gateway timeouts).
   5. **Fast Client-Driven Polling & Failure Auto-Refund**:
      - Subsequent client poll requests pass `resultUrl` every 2.5 seconds.
-     - Server bypasses heavy YouTube scraping during poll cycles, completing each poll check in $\sim 200\text{--}300$ms.
+     - Server polls Gladia status with a 15-second safety timeout, completing each poll check in $\sim 200\text{--}300$ms.
      - When `status: 'done'`, server resolves metadata/avatar via D1/oEmbed, indexes under both detected and study languages in D1, writes to R2, and deletes the pending job.
      - **Automated Diamond Refund**: If Gladia reports job error or submission fails, the backend triggers `refundDiamond()` via PocketHost API to restore the user's credit balance automatically.
 
@@ -175,9 +176,9 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - If cached transcript exists: Returns `{ segments: [...], cached: true }`.
   - If not cached: Returns `{ segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
 - **Client Cache Write-Back (`saveOnly: true` or `onlySave: true`)**:
-  - **Incremental Crowd-Cache Merging**: When the client translates cues during playback, it saves checkpoints (after $\ge 20$ newly translated cues or on video pause/switch), as well as a final save upon reaching $\ge 80\%$ coverage (`QUALITY_THRESHOLD`).
-  - The backend filters out invalid/identical source text, merges incoming translated cues with existing segments already in R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`), recalculates composite quality, and commits the merged file to Cloudflare R2 and D1 `translation_meta`.
-  - Multiple users watching partial segments of the same video collectively build the full dual-subtitle cache without requiring any single user to watch 80%+ in one session.
+  - **Incremental Crowd-Cache Merging & Self-Healing**: When the client translates cues during playback, it saves checkpoints (after $\ge 10$ newly translated cues or on video pause/switch), as well as a final save upon reaching $\ge 80\%$ coverage (`QUALITY_THRESHOLD`).
+  - The backend filters out invalid/identical source text, merges incoming translated cues with existing segments in R2 using fuzzy matching (text exact match $\rightarrow$ timestamp proximity within $\pm 0.8$s $\rightarrow$ index), recalculates composite quality, and commits the merged file to Cloudflare R2 and D1 `translation_meta`.
+  - Multiple users watching partial segments of the same video collectively build and heal the full dual-subtitle cache without requiring any single user to watch 80%+ in one session.
   - **Zero KV Writes**: Transcripts and translations are stored strictly in R2 and D1, guaranteeing 0 KV quota consumption.
 - **Process (Live / Fallback Requests)**:
   - Checks R2 cache: `translations/{videoId}/{sourceLang}-{targetLang}.json`. Automatically detects and invalidates legacy poisoned cache entries where translation mirrored source text.

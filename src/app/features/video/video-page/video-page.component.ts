@@ -983,7 +983,8 @@ export class VideoPageComponent implements OnInit {
 
       // Check for mismatch: requested language differs from detected
       // Only show dialog if this is NOT from a user-initiated language switch
-      if (requestedLang !== targetLang && !this.skipNextMismatchDialog) {
+      const reqNorm = requestedLang?.split('-')[0]?.toLowerCase();
+      if (reqNorm && reqNorm !== targetLang && !this.skipNextMismatchDialog) {
         this.mismatchDetectedLang.set(targetLang);
         this.showLanguageMismatchDialog.set(true);
       }

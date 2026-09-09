@@ -226,12 +226,14 @@ export async function onRequestPost(context) {
                 channelAvatar: body.channelAvatar
             });
             if (nativeResult?.segments?.length > 0) {
+                const actualLang = nativeResult.detectedLang || lang;
                 const updatedInfo = await getVideoLanguages(db, cleanVideoId);
-                availableLanguages.native = updatedInfo?.availableLanguages || [lang];
+                availableLanguages.native = updatedInfo?.availableLanguages || nativeResult.availableLangs || [actualLang];
 
                 return jsonResponse({
-                    success: true, videoId: cleanVideoId, language: lang, requestedLanguage: lang, segments: nativeResult.segments,
-                    source: 'native', sourceDetail: nativeResult.source, availableLanguages, subLanguages: updatedInfo?.subLanguages || [lang], whisperAvailable: diamondInfo.diamonds > 0,
+                    success: true, videoId: cleanVideoId, language: actualLang, requestedLanguage: lang, segments: nativeResult.segments,
+                    source: 'native', sourceDetail: nativeResult.source, availableLanguages, subLanguages: updatedInfo?.subLanguages || [actualLang], whisperAvailable: diamondInfo.diamonds > 0,
+                    languageMismatch: nativeResult.languageMismatch || false,
                     ...diamondInfo, timing: elapsed()
                 }, 200, { 'Cache-Control': CACHE_CONTROL.NATIVE });
             }

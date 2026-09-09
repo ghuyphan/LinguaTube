@@ -54,6 +54,26 @@ export async function getPendingJob(db, videoId) {
 }
 
 /**
+ * Get pending job by resultUrl (only if created within last hour)
+ * @param {D1Database} db
+ * @param {string} resultUrl
+ * @returns {Promise<{video_id: string, language: string} | null>}
+ */
+export async function getPendingJobByResultUrl(db, resultUrl) {
+    if (!db || !resultUrl) return null;
+
+    try {
+        return await db.prepare(`
+            SELECT video_id, language FROM pending_jobs 
+            WHERE result_url = ? AND created_at > strftime('%s', 'now') - 3600
+        `).bind(resultUrl).first();
+    } catch (err) {
+        console.error('[D1] getPendingJobByResultUrl error:', err.message);
+        return null;
+    }
+}
+
+/**
  * Delete pending job after completion
  * @param {D1Database} db
  * @param {string} videoId

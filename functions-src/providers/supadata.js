@@ -2,6 +2,8 @@
  * Provider for Supadata Native Caption API
  */
 
+import { normalizeLanguageCode } from '../utils/transcript-utils.js';
+
 const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
 const SUPADATA_TIMEOUT_MS = 8000;
 
@@ -103,23 +105,33 @@ export class SupadataProvider {
 
         if (!segments.length) return null;
 
-        const detectedLang = data.lang || lang;
+        const rawDetectedLang = data.lang || lang;
+        const normDetected = normalizeLanguageCode(rawDetectedLang) || rawDetectedLang;
+        const normRequested = normalizeLanguageCode(lang) || lang;
 
-        if (detectedLang !== lang) {
+        const availableLangs = Array.isArray(data.availableLangs) && data.availableLangs.length > 0
+            ? data.availableLangs
+            : [rawDetectedLang];
+
+        const isExactOrFamilyMatch = (normDetected === normRequested) ||
+            rawDetectedLang.toLowerCase().startsWith(normRequested.toLowerCase()) ||
+            normDetected.startsWith(normRequested);
+
+        if (!isExactOrFamilyMatch) {
             return {
-                segments: [],
+                segments,
                 source: 'supadata',
-                availableLangs: data.availableLangs || [detectedLang],
-                detectedLang,
+                availableLangs,
+                detectedLang: normDetected,
                 languageMismatch: true
             };
         }
 
         return {
-            segments: segments, // Assumes mapping cleanTranscriptSegments happens in service layer
+            segments,
             source: 'supadata',
-            availableLangs: data.availableLangs || [detectedLang],
-            detectedLang
+            availableLangs,
+            detectedLang: normDetected
         };
     }
 }

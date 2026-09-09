@@ -15,6 +15,7 @@ import {
 import {
     savePendingJob,
     getPendingJob,
+    getPendingJobByResultUrl,
     deletePendingJob,
     cleanupStaleJobs
 } from '../data/transcript-db.js';
@@ -30,6 +31,16 @@ import { getTierDiamondConfig } from './diamond.service.js';
 
 const MAX_VIDEO_DURATION_SECONDS = 3 * 60 * 60; // 3 hours (native captions)
 const MAX_AI_VIDEO_DURATION_SECONDS = 45 * 60;   // 45 minutes (maximum ceiling across any tier)
+
+// In-memory job map across warm Worker isolates to avoid touching Cloudflare KV writes (Rule 2)
+const memJobMap = new Map();
+function setMemJob(resultUrl, videoId) {
+    if (memJobMap.size > 200) {
+        const firstKey = memJobMap.keys().next().value;
+        if (firstKey) memJobMap.delete(firstKey);
+    }
+    memJobMap.set(resultUrl, videoId);
+}
 
 export class TranscriptService {
     /**
@@ -56,14 +67,19 @@ export class TranscriptService {
         const nativeResult = await this.supadataProvider.fetchCaptions(videoId, lang, cache);
 
         if (nativeResult?.segments?.length > 0) {
+            const actualLang = normalizeLanguageCode(nativeResult.detectedLang) || normalizeLanguageCode(lang) || lang;
             const cleanedSegments = cleanTranscriptSegments(nativeResult.segments);
-            // Found native captions -> Save to R2 & DB
+            // Found native captions -> Save to R2 & DB under actualLang
             const savePromises = [
-                saveTranscriptToR2(r2, videoId, lang, cleanedSegments, nativeResult.source),
-                addSubLanguage(db, videoId, lang)
+                saveTranscriptToR2(r2, videoId, actualLang, cleanedSegments, nativeResult.source || 'supadata'),
+                addSubLanguage(db, videoId, actualLang)
             ];
 
-            const availableLangs = nativeResult.availableLangs?.length > 0 ? nativeResult.availableLangs : [lang];
+            const rawAvailable = nativeResult.availableLangs?.length > 0 ? nativeResult.availableLangs : [actualLang];
+            const availableLangs = Array.from(new Set(rawAvailable.map(l => normalizeLanguageCode(l) || l)));
+            if (!availableLangs.includes(actualLang)) {
+                availableLangs.unshift(actualLang);
+            }
 
             if (options.title || options.channel || options.duration) {
                 const saveLanguages = async () => {
@@ -81,14 +97,14 @@ export class TranscriptService {
                         false,
                         null,
                         avatar,
-                        [lang]
+                        [actualLang]
                     );
                 };
                 savePromises.push(saveLanguages());
-            } else if (nativeResult.availableLangs?.length > 0) {
-                savePromises.push(addVideoLanguages(db, videoId, nativeResult.availableLangs));
+            } else if (availableLangs.length > 0) {
+                savePromises.push(addVideoLanguages(db, videoId, availableLangs));
             } else {
-                savePromises.push(addVideoLanguage(db, videoId, lang));
+                savePromises.push(addVideoLanguage(db, videoId, actualLang));
             }
 
             if (waitUntil) {
@@ -97,11 +113,17 @@ export class TranscriptService {
                 await Promise.allSettled(savePromises);
             }
 
-            return nativeResult;
+            return {
+                ...nativeResult,
+                segments: cleanedSegments,
+                detectedLang: actualLang,
+                availableLangs
+            };
         }
 
         // If native captions for requested lang were not found, but other languages are available (e.g. video is in zh, user asked for ja)
         if (nativeResult?.availableLangs?.length > 0) {
+            const normalizedAvailable = Array.from(new Set(nativeResult.availableLangs.map(l => normalizeLanguageCode(l) || l)));
             const savePromises = [];
             if (options.title || options.channel || options.duration) {
                 const saveLanguages = async () => {
@@ -112,7 +134,7 @@ export class TranscriptService {
                     await saveVideoLanguages(
                         db,
                         videoId,
-                        nativeResult.availableLangs,
+                        normalizedAvailable,
                         options.duration || null,
                         options.title || null,
                         options.channel || null,
@@ -123,7 +145,7 @@ export class TranscriptService {
                 };
                 savePromises.push(saveLanguages());
             } else {
-                savePromises.push(addVideoLanguages(db, videoId, nativeResult.availableLangs));
+                savePromises.push(addVideoLanguages(db, videoId, normalizedAvailable));
             }
             if (waitUntil) {
                 waitUntil(Promise.allSettled(savePromises));
@@ -132,7 +154,7 @@ export class TranscriptService {
             }
             return {
                 segments: [],
-                availableLangs: nativeResult.availableLangs,
+                availableLangs: normalizedAvailable,
                 languageMismatch: true
             };
         }
@@ -261,11 +283,9 @@ export class TranscriptService {
             throw gladiaError;
         }
 
-        // 5. Save pending job state
-        await Promise.allSettled([
-            savePendingJob(db, videoId, lang, resultUrl),
-            cache?.put(`job_map:${resultUrl}`, videoId, { expirationTtl: 3600 })
-        ]);
+        // 5. Save pending job state (In-memory + D1, preserving KV quota Rule 2)
+        setMemJob(resultUrl, videoId);
+        await savePendingJob(db, videoId, lang, resultUrl);
 
         if (waitUntil) {
             waitUntil(cleanupStaleJobs(db).catch(() => {}));
@@ -290,10 +310,7 @@ export class TranscriptService {
         let { videoId, lang, resultUrl, availableLanguages, diamondInfo } = params;
 
         if (resultUrl) {
-            let mappedVideoId = null;
-            if (cache) {
-                try { mappedVideoId = await cache.get(`job_map:${resultUrl}`); } catch { }
-            }
+            let mappedVideoId = memJobMap.get(resultUrl) || null;
             if (!mappedVideoId && db && videoId) {
                 try {
                     const pending = await getPendingJob(db, videoId);
@@ -301,6 +318,17 @@ export class TranscriptService {
                         mappedVideoId = videoId;
                     }
                 } catch { }
+            }
+            if (!mappedVideoId && db) {
+                try {
+                    const pending = await getPendingJobByResultUrl(db, resultUrl);
+                    if (pending && pending.video_id) {
+                        mappedVideoId = pending.video_id;
+                    }
+                } catch { }
+            }
+            if (!mappedVideoId && cache) {
+                try { mappedVideoId = await cache.get(`job_map:${resultUrl}`); } catch { }
             }
 
             if (mappedVideoId) {
@@ -390,6 +418,7 @@ export class TranscriptService {
                     }
                 }
 
+                if (resultUrl) memJobMap.delete(resultUrl);
                 return {
                     status: 'done',
                     videoInfo: {
@@ -406,6 +435,7 @@ export class TranscriptService {
             }
 
             if (resultData.status === 'error') {
+                if (resultUrl) memJobMap.delete(resultUrl);
                 if (videoId && db) {
                     deletePendingJob(db, videoId).catch(() => {});
                 }
