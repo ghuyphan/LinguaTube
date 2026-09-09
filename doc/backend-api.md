@@ -241,7 +241,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **D1 + In-Memory Zero-KV Architecture**:
   1. Warm in-memory isolate cache check (`memVideoInfoCache`, 500 entries, 1-hour TTL) $\rightarrow$ returns in $<0.1$ms (`X-Cache: HIT-MEMORY`).
   2. Cloudflare D1 query (`video_languages` table) $\rightarrow$ persistent SQLite at the edge (100,000 writes/day, 5,000,000 reads/day free tier).
-  3. YouTube oEmbed fallback $\rightarrow$ saves metadata to D1 and memory with edge CDN cache headers (`s-maxage=604800, stale-while-revalidate=86400`).
+  3. YouTube oEmbed fallback $\rightarrow$ saves metadata and channel avatar (`fetchChannelAvatar`) to D1 and memory with edge CDN cache headers (`s-maxage=604800, stale-while-revalidate=86400`).
   4. **Zero KV Writes**: Completely avoids writing to Cloudflare KV, saving $\sim 100\text{--}150$ daily KV writes.
 
 ---
@@ -296,7 +296,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Scans Cloudflare R2 bucket (`TRANSCRIPT_STORAGE`) for stored transcript objects (`transcripts/{videoId}/{lang}.json` and `transcripts/{videoId}/{lang}-*.json`).
   - Duration filters safely accommodate videos with unrecorded/zero durations as well as typical learning durations (`(duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)`).
   - Ordered by `updated_at DESC`.
-  - Automatic metadata enrichment: Any discovered video missing a title is enriched via YouTube oEmbed (`getVideoMetadata`) and cached in D1.
+  - Automatic metadata & avatar enrichment: Any discovered video missing a title or avatar is enriched via YouTube oEmbed and `fetchChannelAvatar` and cached in D1 `video_languages.channel_avatar`.
 - **Caching & Authenticity**:
   - Warm Worker isolate in-memory caching (`memCache`, 15-minute TTL, keyed by `${lang}_${tier || 'all'}_${limit}_${offset}`).
   - HTTP Edge CDN caching header: `Cache-Control: public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400` on normal hits; `no-cache, no-store, must-revalidate` when `refresh=true`.

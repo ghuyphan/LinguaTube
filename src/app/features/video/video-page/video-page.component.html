@@ -140,10 +140,19 @@
                                 </div>
                             </div>
                         </div>
+                        @let langs = getVideoLanguages(item.video);
                         <div class="yt-video-card__details">
                             <div class="yt-video-card__avatar">
-                                @if (item.video.languages && item.video.languages.length > 0) {
-                                <img [src]="getFlagUrl(item.video.languages[0])" class="circle-flag" [alt]="item.video.languages[0]" [title]="item.video.languages[0].toUpperCase()" loading="lazy" />
+                                @if (item.video.channelAvatar && !hasAvatarFailed(item.video.videoId)) {
+                                <img [src]="item.video.channelAvatar"
+                                     class="channel-avatar"
+                                     [alt]="item.video.channel || ''"
+                                     loading="lazy"
+                                     (error)="onAvatarError(item.video.videoId)" />
+                                } @else if (item.video.channel) {
+                                <div class="channel-placeholder" [title]="item.video.channel">
+                                    {{ getChannelInitial(item.video.channel) }}
+                                </div>
                                 } @else {
                                 <div class="avatar-placeholder">
                                     <app-icon name="play-circle" [size]="16" />
@@ -160,6 +169,19 @@
                                     <span class="level-badge--pill" [attr.data-tier]="item.video.tier">{{ item.video.level }}</span>
                                     }
                                     <span class="yt-sub-badge"><app-icon name="captions" [size]="12" /> CC</span>
+                                    @if (langs.length > 0) {
+                                    <span class="yt-sub-badge yt-sub-badge--lang" [title]="getLanguagesTooltip(langs)">
+                                        <img [src]="getFlagUrl(langs[0])" class="circle-flag circle-flag--xs" alt="" />
+                                        <span>{{ langs[0].toUpperCase() }}</span>
+                                        @if (langs.length === 2) {
+                                        <span class="lang-divider">/</span>
+                                        <img [src]="getFlagUrl(langs[1])" class="circle-flag circle-flag--xs" alt="" />
+                                        <span>{{ langs[1].toUpperCase() }}</span>
+                                        } @else if (langs.length > 2) {
+                                        <span class="lang-count">+{{ langs.length - 1 }}</span>
+                                        }
+                                    </span>
+                                    }
                                 </div>
                             </div>
                         </div>

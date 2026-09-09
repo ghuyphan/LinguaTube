@@ -223,9 +223,24 @@ export class VideoRecommendationService {
                 }
             }
 
+            const targetLang = (language || '').toLowerCase().trim();
+            let langs = video.languages;
+            if (Array.isArray(langs) && langs.length > 0) {
+                const normalized = Array.from(new Set(
+                    langs.map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : '')).filter(Boolean)
+                ));
+                if (targetLang && normalized.length > 1) {
+                    normalized.sort((a, b) => (a === targetLang ? -1 : (b === targetLang ? 1 : 0)));
+                }
+                langs = normalized.length > 0 ? normalized : [targetLang || 'ja'];
+            } else {
+                langs = [targetLang || 'ja'];
+            }
+
             return {
                 ...video,
                 thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${video.videoId}/mqdefault.jpg`,
+                languages: langs,
                 level: resolvedLevel,
                 tier: resolvedTier
             };

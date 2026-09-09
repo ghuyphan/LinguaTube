@@ -18,7 +18,7 @@ import {
     saveVideoLanguages,
     detectLevelFromMetadata
 } from '../data/video-info-db.js';
-import { getVideoMetadata } from '../middlewares/video-validator.js';
+import { getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
 
 // In-memory cache across warm Worker isolate requests (Rule 2: In-Memory First)
 const memVideoInfoCache = new Map();
@@ -64,7 +64,7 @@ export async function onRequestGet(context) {
                 if (detected) {
                     levels[detected.lang] = detected.level;
                     context.waitUntil?.(
-                        saveVideoLanguages(db, videoId, d1Result.availableLanguages, d1Result.durationSeconds, d1Result.title, d1Result.channel, d1Result.hasAutoCaptions, levels)
+                        saveVideoLanguages(db, videoId, d1Result.availableLanguages, d1Result.durationSeconds, d1Result.title, d1Result.channel, d1Result.hasAutoCaptions, levels, d1Result.channelAvatar)
                             .catch(err => console.error('[VideoInfo] Level save error:', err))
                     );
                 }
@@ -77,6 +77,7 @@ export async function onRequestGet(context) {
                 availableLanguages: d1Result.availableLanguages,
                 hasAutoCaptions: d1Result.hasAutoCaptions,
                 channel: d1Result.channel,
+                channelAvatar: d1Result.channelAvatar || null,
                 levels
             };
 
@@ -111,6 +112,12 @@ export async function onRequestGet(context) {
             levels[detected.lang] = detected.level;
         }
 
+        // Try to fetch channel avatar from author channel page
+        let channelAvatar = null;
+        if (metadata.author_url) {
+            channelAvatar = await fetchChannelAvatar(metadata.author_url);
+        }
+
         // YouTube oEmbed doesn't provide language info or duration
         // We'll get these when actually fetching transcripts
         const result = {
@@ -120,6 +127,7 @@ export async function onRequestGet(context) {
             availableLanguages: [], // Will be populated when transcripts are fetched
             hasAutoCaptions: false,
             channel: metadata.author_name,
+            channelAvatar,
             levels
         };
 
@@ -127,7 +135,7 @@ export async function onRequestGet(context) {
         // PRESERVE existing languages if the row already exists (but had missing metadata)
         const existingLangs = d1Result?.availableLanguages || [];
 
-        await saveVideoLanguages(db, videoId, existingLangs, null, metadata.title, metadata.author_name, false, levels);
+        await saveVideoLanguages(db, videoId, existingLangs, null, metadata.title, metadata.author_name, false, levels, channelAvatar);
 
         // Cache in memory for warm isolate reuse
         if (memVideoInfoCache.size > MAX_MEM_CACHE) {

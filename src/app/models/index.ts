@@ -97,6 +97,7 @@ export interface VideoInfo {
   thumbnail?: string;
   duration?: number;
   channel?: string;
+  channelAvatar?: string;
 }
 
 export type SupportedLearningLanguage = 'ja' | 'zh' | 'ko' | 'en';

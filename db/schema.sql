@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS video_languages (
   duration_seconds INTEGER,
   title TEXT,
   channel TEXT,
+  channel_avatar TEXT,
   levels TEXT DEFAULT '{}',
   created_at INTEGER DEFAULT (strftime('%s', 'now')),
   updated_at INTEGER DEFAULT (strftime('%s', 'now'))

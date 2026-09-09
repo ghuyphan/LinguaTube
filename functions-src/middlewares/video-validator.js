@@ -57,6 +57,42 @@ export async function getVideoMetadata(videoId) {
 }
 
 /**
+ * Fetch channel avatar from YouTube channel page
+ * @param {string} authorUrl - YouTube channel URL (e.g. https://www.youtube.com/@ChannelName)
+ * @returns {Promise<string | null>}
+ */
+export async function fetchChannelAvatar(authorUrl) {
+    if (!authorUrl || typeof authorUrl !== 'string') return null;
+    const cleanUrl = authorUrl.trim();
+    if (!cleanUrl.startsWith('https://www.youtube.com/') && !cleanUrl.startsWith('https://youtube.com/')) {
+        return null;
+    }
+
+    try {
+        const res = await fetch(cleanUrl, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html'
+            },
+            signal: AbortSignal.timeout(2500)
+        });
+        if (!res.ok) return null;
+        const html = await res.text();
+        const match = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i)
+            || html.match(/<link\s+rel=["']image_src["']\s+href=["']([^"']+)["']/i);
+        if (match && match[1]) {
+            const avatarUrl = match[1];
+            if (avatarUrl.includes('ggpht.com') || avatarUrl.includes('googleusercontent.com')) {
+                return avatarUrl;
+            }
+        }
+        return null;
+    } catch {
+        return null;
+    }
+}
+
+/**
  * Detect language from video title using Unicode patterns
  * @param {string} title - Video title
  * @returns {'ja' | 'ko' | 'zh' | 'en' | 'unknown'}

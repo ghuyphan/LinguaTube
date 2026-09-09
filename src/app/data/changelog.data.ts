@@ -19,36 +19,36 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.0.21',
+    version: '1.0.22',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Seamless Upgrade & Auth Flow: Guests can now browse Pro & Premium plans freely; clicking upgrade smoothly triggers Google Sign-in and automatically proceeds to payment without dead-ends',
-            'Unified Pro & Premium Dialog Design: Overhauled the upgrade modal with a pinned sticky actions footer, fixed scrolling and header clipping, and standardized design system tokens',
-            'Polished Onboarding Experience: Restored high-contrast primary CTA styling, added English locale fallbacks across all 5 languages, and refined interactive word token demos'
+            'YouTube-Style Channel Avatars: Video cards now fetch and display official YouTube channel avatars with sleek letter-initial fallbacks, matching authentic YouTube aesthetics',
+            'Smart Multi-Language Sub-Badges: Videos now feature dedicated language badges (e.g. 🇯🇵 JA, 🇯🇵 JA / 🇬🇧 EN, 🇨🇳 ZH +2) with prioritized target language sorting and accurate BCP 47 flag matching',
+            'Persistent Database & Avatar Schema: Extended Cloudflare D1 video metadata schema with channel_avatar caching for sub-millisecond edge delivery'
         ],
         vi: [
-            'Luồng Nâng cấp & Đăng nhập Liền mạch: Người dùng chưa đăng nhập có thể thoải mái xem các gói Pro & Premium; bấm nâng cấp sẽ tự động đăng nhập Google và chuyển thẳng tới thanh toán VietQR mà không gặp lỗi cụt',
-            'Giao diện Nâng cấp Pro & Premium Thống nhất: Thiết kế lại hộp thoại nâng cấp với thanh tác vụ cố định (sticky footer), khắc phục lỗi tràn chữ/cuộn mất tiêu đề và chuẩn hóa biến thiết kế',
-            'Hoàn thiện Trải nghiệm Onboarding: Khôi phục nút kêu gọi hành động (CTA) nổi bật, bổ sung cơ chế tự động dự phòng ngôn ngữ tiếng Anh cho cả 5 ngôn ngữ và hoàn thiện demo từ vựng tương tác'
+            'Ảnh đại diện kênh chuẩn phong cách YouTube: Thẻ video hiện lấy và hiển thị ảnh đại diện chính thức của kênh YouTube cùng chữ cái thay thế thanh lịch khi chưa tải được',
+            'Huy hiệu đa ngôn ngữ thông minh: Video hiện có huy hiệu ngôn ngữ riêng biệt (ví dụ: 🇯🇵 JA, 🇯🇵 JA / 🇬🇧 EN, 🇨🇳 ZH +2) với cờ chuẩn BCP 47 và luôn ưu tiên ngôn ngữ bạn đang học lên đầu',
+            'Nâng cấp Cơ sở dữ liệu D1: Bổ sung trường channel_avatar vào Cloudflare D1 giúp lưu vĩnh viễn và phản hồi siêu tốc dưới 1 mili-giây'
         ],
         ja: [
-            'シームレスなアップグレード＆ログイン連携：未ログインのままでもPro・Premiumプランを自由に比較可能。アップグレード選択時にGoogleログインがスムーズに起動し、決済画面へ直行',
-            'Pro＆Premiumモーダルのデザイン統一：固定フッター（Sticky Actions）を導入し、ヘッダーのはみ出しやスクロール崩れを解消。デザインシステム規格に完全統一',
-            'オンボーディング体験の洗練：目立つプライマリCTAボタンスタイルを復元し、5言語すべてで英語フォールバックを保証。インタラクティブな単語デモの操作感を向上'
+            'YouTubeスタイルのチャンネルアバター：動画カードにYouTube公式チャンネルアイコンを表示。未取得時は洗練されたイニシャルプレースホルダーで自然に表示',
+            'スマートな多言語バッジシステム：動画カードに専用言語バッジ（例：🇯🇵 JA、🇯🇵 JA / 🇬🇧 EN、🇨🇳 ZH +2）を追加し、学習対象言語を常に最優先かつ正確な国旗で表示',
+            'D1データベースとアバターキャッシュ：Cloudflare D1のvideo_languagesテーブルにchannel_avatarを追加し、高速エッジ配信を実現'
         ],
         ko: [
-            '매끄러운 업그레이드 및 로그인 흐름: 로그인하지 않아도 Pro 및 Premium 요금제를 자유롭게 비교할 수 있으며, 결제 시 Google 로그인을 자연스럽게 거쳐 VietQR 결제 화면으로 자동 이동',
-            'Pro & Premium 업그레이드 모달 디자인 개편: 하단 고정 액션 바(Sticky Footer)를 도입하여 헤더 잘림 및 스크롤 오류를 해결하고 전체 디자인 토큰을 표준화',
-            '온보딩 경험 개선: 메인 CTA 버튼 스타일을 선명하게 복원하고, 5개 언어 전체에 영문 폴백을 적용하여 번역 누락을 방지하며 단어 상호작용 데모 품질 향상'
+            '유튜브 스타일 채널 아바타 지원: 동영상 카드에 공식 유튜브 채널 프로필 사진을 가져와 표시하며, 미제공 시 세련된 이니셜 플레이스홀더를 제공',
+            '스마트 다국어 배지 시스템: 동영상에 전용 언어 배지(예: 🇯🇵 JA, 🇯🇵 JA / 🇬🇧 EN, 🇨🇳 ZH +2)를 도입하여 학습 중인 언어를 최우선으로 정렬하고 정확한 BCP 47 국기를 표시',
+            'D1 데이터베이스 스키마 확장: Cloudflare D1 video_languages 테이블에 channel_avatar 컬럼을 추가하여 1ms 미만의 엣지 캐싱 지원'
         ],
         zh: [
-            '无缝升级与账号登录联动：未登录用户可自由浏览 Pro 与 Premium 会员方案，点击升级即可无缝唤起 Google 登录并直达 VietQR 支付结算，彻底消除中断',
-            '统一 Pro 与 Premium 升级弹窗设计：新增底部固定操作栏（Sticky Footer），修复标题文字被裁切与滚动穿透问题，全面对齐系统级设计规范',
-            '新手引导（Onboarding）体验优化：恢复高对比醒目的核心操作按钮样式，为全 5 种语言增加英语自动兜底机制，并打磨交互式分词取词试用体验'
+            'YouTube 风格频道头像支持：视频卡片现已支持获取并展示官方 YouTube 频道头像，加载前提供精致的首字母占位图标',
+            '智能多语言独立标签系统：视频卡片新增专属语言标签（如 🇯🇵 JA、🇯🇵 JA / 🇬🇧 EN、🇨🇳 ZH +2），自动置顶当前学习语言并精准匹配 BCP 47 旗帜',
+            'D1 数据库与头像持久化存储：为 Cloudflare D1 video_languages 表扩展 channel_avatar 字段，实现毫秒级边缘高速缓存'
         ]
     }
 };

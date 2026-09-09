@@ -30,7 +30,7 @@ export async function getVideoLanguages(db, videoId) {
 
     try {
         const row = await db.prepare(`
-            SELECT available_languages, has_auto_captions, duration_seconds, title, channel, levels
+            SELECT available_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels
             FROM video_languages WHERE video_id = ?
         `).bind(videoId).first();
 
@@ -54,6 +54,7 @@ export async function getVideoLanguages(db, videoId) {
             durationSeconds: row.duration_seconds,
             title: row.title,
             channel: row.channel,
+            channelAvatar: row.channel_avatar || null,
             levels
         };
     } catch (err) {
@@ -72,8 +73,9 @@ export async function getVideoLanguages(db, videoId) {
  * @param {string} [channel] - Channel name
  * @param {boolean} [hasAutoCaptions] - Whether video has auto-captions
  * @param {Record<string, string>} [levels] - Difficulty levels by language
+ * @param {string} [channelAvatar] - Channel avatar URL
  */
-export async function saveVideoLanguages(db, videoId, languages, duration = null, title = null, channel = null, hasAutoCaptions = false, levels = null) {
+export async function saveVideoLanguages(db, videoId, languages, duration = null, title = null, channel = null, hasAutoCaptions = false, levels = null, channelAvatar = null) {
     if (!db || !videoId) return;
 
     try {
@@ -87,14 +89,15 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
 
         await db.prepare(`
             INSERT INTO video_languages 
-            (video_id, available_languages, has_auto_captions, duration_seconds, title, channel, levels, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'), strftime('%s', 'now'))
+            (video_id, available_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'), strftime('%s', 'now'))
             ON CONFLICT(video_id) DO UPDATE SET
               available_languages = excluded.available_languages,
               has_auto_captions = excluded.has_auto_captions,
               duration_seconds = COALESCE(excluded.duration_seconds, video_languages.duration_seconds),
               title = COALESCE(excluded.title, video_languages.title),
               channel = COALESCE(excluded.channel, video_languages.channel),
+              channel_avatar = COALESCE(excluded.channel_avatar, video_languages.channel_avatar),
               levels = excluded.levels,
               updated_at = strftime('%s', 'now')
         `).bind(
@@ -104,6 +107,7 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
             duration,
             title,
             channel,
+            channelAvatar,
             JSON.stringify(existingLevels)
         ).run();
     } catch (err) {
@@ -421,7 +425,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
             const searchPattern1 = `%"${lang}"%`;
             const searchPattern2 = `%${lang}%`;
             const { results } = await db.prepare(`
-                SELECT video_id, title, channel, duration_seconds, levels, available_languages, updated_at
+                SELECT video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, updated_at
                 FROM video_languages
                 WHERE (available_languages LIKE ? OR available_languages LIKE ?)
                   AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
@@ -459,13 +463,27 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         if (row.available_languages) availableLangs = JSON.parse(row.available_languages);
                     } catch { }
 
+                    if (Array.isArray(availableLangs) && availableLangs.length > 0) {
+                        const target = (lang || '').toLowerCase().trim();
+                        const normalizedLangs = Array.from(new Set(
+                            availableLangs.map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : '')).filter(Boolean)
+                        ));
+                        if (target && normalizedLangs.length > 1) {
+                            normalizedLangs.sort((a, b) => (a === target ? -1 : (b === target ? 1 : 0)));
+                        }
+                        availableLangs = normalizedLangs.length > 0 ? normalizedLangs : [lang];
+                    } else {
+                        availableLangs = [lang];
+                    }
+
                     videoMap.set(row.video_id, {
                         videoId: row.video_id,
                         title: row.title || null,
                         channel: row.channel || '',
+                        channelAvatar: row.channel_avatar || null,
                         duration: row.duration_seconds || 0,
                         thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
-                        languages: availableLangs.length > 0 ? availableLangs : [lang],
+                        languages: availableLangs,
                         level: level || undefined,
                         tier: videoTier || undefined,
                         updatedAt: row.updated_at

@@ -54,6 +54,7 @@ export interface RecommendedVideo {
     videoId: string;
     title: string;
     channel?: string;
+    channelAvatar?: string;
     duration?: number;
     thumbnail: string;
     languages: string[];

@@ -18,14 +18,25 @@ export const LANGUAGE_FLAGS: Record<string, string> = {
   ko: 'https://hatscripts.github.io/circle-flags/flags/kr.svg',
   en: 'https://hatscripts.github.io/circle-flags/flags/gb.svg',
   vi: 'https://hatscripts.github.io/circle-flags/flags/vn.svg',
+  es: 'https://hatscripts.github.io/circle-flags/flags/es.svg',
+  fr: 'https://hatscripts.github.io/circle-flags/flags/fr.svg',
+  de: 'https://hatscripts.github.io/circle-flags/flags/de.svg',
+  it: 'https://hatscripts.github.io/circle-flags/flags/it.svg',
+  ru: 'https://hatscripts.github.io/circle-flags/flags/ru.svg',
+  pt: 'https://hatscripts.github.io/circle-flags/flags/pt.svg',
+  th: 'https://hatscripts.github.io/circle-flags/flags/th.svg',
+  id: 'https://hatscripts.github.io/circle-flags/flags/id.svg',
 };
 
 /**
  * Returns the circular SVG flag URL for a given language code.
+ * Supports BCP 47 language tags (e.g. 'zh-CN', 'zh-Hans', 'en-US', 'ja-JP').
  * Defaults to the English (GB) flag if the language is unknown or invalid.
  */
 export function getLanguageFlagUrl(lang: string | null | undefined): string {
   if (!lang) return LANGUAGE_FLAGS['en'];
   const code = lang.toLowerCase().trim();
-  return LANGUAGE_FLAGS[code] || LANGUAGE_FLAGS['en'];
+  if (LANGUAGE_FLAGS[code]) return LANGUAGE_FLAGS[code];
+  const primary = code.split('-')[0].split('_')[0];
+  return LANGUAGE_FLAGS[primary] || LANGUAGE_FLAGS['en'];
 }

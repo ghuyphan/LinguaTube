@@ -325,14 +325,71 @@ export class VideoPageComponent implements OnInit {
       .replace('{{language}}', this.getLanguageName(detected));
   });
 
-  private getLanguageName(lang: string): string {
-    switch (lang) {
-      case 'ja': return this.i18n.t('settings.japanese');
-      case 'zh': return this.i18n.t('settings.chinese');
-      case 'ko': return this.i18n.t('settings.korean');
-      case 'en': return this.i18n.t('settings.english');
-      default: return lang.toUpperCase();
+  getLanguageName(lang: string | null | undefined): string {
+    if (!lang) return '';
+    const code = lang.toLowerCase().trim().split('-')[0].split('_')[0];
+    switch (code) {
+      case 'ja': return this.i18n.t('settings.japanese') || 'Japanese';
+      case 'zh': return this.i18n.t('settings.chinese') || 'Chinese';
+      case 'ko': return this.i18n.t('settings.korean') || 'Korean';
+      case 'en': return this.i18n.t('settings.english') || 'English';
+      case 'vi': return this.i18n.t('settings.vietnamese') || 'Vietnamese';
+      default: return code.toUpperCase();
     }
+  }
+
+  /**
+   * Returns normalized, deduplicated languages with the active learning language prioritized first.
+   */
+  getVideoLanguages(video: RecommendedVideo | null | undefined): string[] {
+    if (!video?.languages || !Array.isArray(video.languages) || video.languages.length === 0) {
+      return [];
+    }
+    const currentLang = (this.settings.settings().language || '').toLowerCase().trim();
+    const normalized = Array.from(new Set(
+      video.languages.map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : '')).filter(Boolean)
+    ));
+    if (normalized.length <= 1) return normalized;
+
+    return normalized.sort((a, b) => {
+      if (a === currentLang) return -1;
+      if (b === currentLang) return 1;
+      return 0;
+    });
+  }
+
+  getLanguagesTooltip(langs: string[]): string {
+    if (!langs || langs.length === 0) return '';
+    return langs.map(l => this.getLanguageName(l)).join(', ');
+  }
+
+  formatLanguagesBadge(langs: string[]): string {
+    if (!langs || langs.length === 0) return '';
+    if (langs.length <= 2) {
+      return langs.map(l => l.toUpperCase()).join(' · ');
+    }
+    return `${langs[0].toUpperCase()} +${langs.length - 1}`;
+  }
+
+  readonly failedAvatars = signal<Set<string>>(new Set());
+
+  getChannelInitial(name: string | null | undefined): string {
+    if (!name) return '▶';
+    const trimmed = name.trim();
+    return trimmed ? trimmed.charAt(0).toUpperCase() : '▶';
+  }
+
+  onAvatarError(videoId: string): void {
+    if (!videoId) return;
+    this.failedAvatars.update(set => {
+      const next = new Set(set);
+      next.add(videoId);
+      return next;
+    });
+  }
+
+  hasAvatarFailed(videoId: string): boolean {
+    return this.failedAvatars().has(videoId);
   }
 
   private lastLang = '';
