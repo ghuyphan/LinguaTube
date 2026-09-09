@@ -474,3 +474,4 @@ sequenceDiagram
 | `server/transcripts_cache/` | Dev Cache | Local disk persistence for fetched YouTube transcripts during development |
 | `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via esbuild |
 | `scripts/merge-translations.js` | Data Pipeline | Merges translated grammar chunks into TypeScript data files |
+| `doc/mobile-api-integration.md` | Mobile Specs | Complete REST API endpoint reference, PocketBase sync, Tokens, Dict, Grammar Engine, and Flutter/Cursor playbooks |

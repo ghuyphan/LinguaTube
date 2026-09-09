@@ -615,3 +615,74 @@ test('Leaderboard: mergeWithSeedLeaderboard correctly merges real users and base
   assert.equal(champMerged[0].rank, 1);
 });
 
+test('API Key Rotator: getNextApiKey round-robins, respects excludeKeys, and handles cooldowns', async () => {
+  const { getNextApiKey, markKeyRateLimited } = await import('../functions-src/utils/api-key-rotator.js');
+  const mockCache = {
+    store: new Map(),
+    async get(k) { return this.store.get(k) || null; },
+    async put(k, v) { this.store.set(k, v); }
+  };
+
+  const keys = ['key_1', 'key_2', 'key_3'];
+
+  // 1. Initial selection
+  const first = await getNextApiKey(mockCache, 'test-rotator', keys);
+  assert.ok(keys.includes(first), 'First key must be from keys array');
+
+  // 2. excludeKeys prevents re-selecting the attempted key
+  const second = await getNextApiKey(mockCache, 'test-rotator', keys, [first]);
+  assert.notEqual(second, first, 'Second key must not match excluded first key');
+  assert.ok(keys.includes(second), 'Second key must be from keys array');
+
+  // 3. Excluding first two keys yields the third
+  const third = await getNextApiKey(mockCache, 'test-rotator', keys, [first, second]);
+  assert.notEqual(third, first);
+  assert.notEqual(third, second);
+  assert.ok(keys.includes(third));
+
+  // 4. Excluding all keys returns null
+  const none = await getNextApiKey(mockCache, 'test-rotator', keys, [first, second, third]);
+  assert.equal(none, null, 'Must return null when all candidate keys are excluded');
+});
+
+test('SupadataProvider: multi-key failover on quota/rate-limit/timeout errors', async () => {
+  const { SupadataProvider } = await import('../functions-src/providers/supadata.js');
+
+  const rotator = {
+    async getNextApiKey(cache, prefix, keys, attemptedKeys) {
+      const candidates = keys.filter(k => !attemptedKeys.includes(k));
+      return candidates[0] || null;
+    },
+    async markKeyRateLimited() {}
+  };
+
+  const provider = new SupadataProvider(['key_bad', 'key_good'], rotator);
+
+  // Mock _executeFetch to simulate key_bad throwing 402 Quota Exceeded and key_good succeeding
+  let badKeyCalled = false;
+  let goodKeyCalled = false;
+
+  provider._executeFetch = async (videoId, lang, apiKey) => {
+    if (apiKey === 'key_bad') {
+      badKeyCalled = true;
+      throw new Error('402 Quota exceeded');
+    }
+    if (apiKey === 'key_good') {
+      goodKeyCalled = true;
+      return {
+        segments: [{ id: 0, start: 0, duration: 2, text: 'こんにちは' }],
+        source: 'supadata',
+        availableLangs: ['ja'],
+        detectedLang: 'ja'
+      };
+    }
+    return null;
+  };
+
+  const result = await provider.fetchCaptions('test_video', 'ja', null);
+  assert.ok(badKeyCalled, 'Failing key must have been attempted');
+  assert.ok(goodKeyCalled, 'Backup key must have been tried as failover');
+  assert.equal(result?.segments?.length, 1);
+  assert.equal(result?.detectedLang, 'ja');
+});
+

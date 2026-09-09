@@ -5,7 +5,7 @@
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 
 const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
-const SUPADATA_TIMEOUT_MS = 8000;
+const SUPADATA_TIMEOUT_MS = 15000; // 15 seconds to support long videos with multiple tracks
 
 export class SupadataProvider {
     /**
@@ -18,46 +18,53 @@ export class SupadataProvider {
     }
 
     /**
-     * Fetch native captions from Supadata
+     * Fetch native captions from Supadata with optimized round-robin and multi-key failover
      * @param {string} videoId 
      * @param {string} lang 
      * @param {Object} cache - CF KV binding or CacheManager instance
-     * @returns {Promise<{segments: any[], source: string, availableLangs: string[], detectedLang: string, languageMismatch?: boolean} | null>}
+     * @returns {Promise<{segments: any[], source: string, availableLangs: string[], detectedLang: string, languageMismatch?: boolean, notFound?: boolean} | null>}
      */
     async fetchCaptions(videoId, lang, cache) {
         if (this.apiKeys.length === 0) {
             return null;
         }
 
-        // Get the next available key (round-robin with cooldown awareness)
-        const apiKey = await this.apiKeyRotator.getNextApiKey(cache, 'supadata', this.apiKeys);
+        const attemptedKeys = [];
+        const maxAttempts = this.apiKeys.length;
 
-        if (!apiKey) {
-            return null; // All keys rate limited
-        }
+        for (let attempt = 0; attempt < maxAttempts; attempt++) {
+            // Get the next unattempted key (round-robin with cooldown awareness)
+            const apiKey = await this.apiKeyRotator.getNextApiKey(cache, 'supadata', this.apiKeys, attemptedKeys);
+            if (!apiKey) break;
+            attemptedKeys.push(apiKey);
 
-        try {
-            const result = await this._executeFetch(videoId, lang, apiKey);
-            if (result) return result;
-        } catch (e) {
-            // If rate limited, mark this key for cooldown and try another
-            if (e.message?.includes('429') || e.message?.includes('rate')) {
-                await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey);
-
-                // Try with next available key if we have more
-                if (this.apiKeys.length > 1) {
-                    const nextKey = await this.apiKeyRotator.getNextApiKey(cache, 'supadata', this.apiKeys);
-                    if (nextKey && nextKey !== apiKey) {
-                        try {
-                            const retryResult = await this._executeFetch(videoId, lang, nextKey);
-                            if (retryResult) {
-                                return retryResult;
-                            }
-                        } catch {
-                            // Retry failed
-                        }
-                    }
+            try {
+                const result = await this._executeFetch(videoId, lang, apiKey);
+                if (result?.notFound) {
+                    // Video genuinely has no captions on YouTube for any key
+                    return { notFound: true, segments: [], availableLangs: [] };
                 }
+                if (result?.segments?.length > 0) {
+                    return result;
+                }
+            } catch (e) {
+                const errMsg = e.message || '';
+                const is429 = errMsg.includes('429') || errMsg.includes('rate');
+                const is402 = errMsg.includes('402') || errMsg.includes('quota') || errMsg.includes('credit');
+                const is401 = errMsg.includes('401') || errMsg.includes('unauthorized');
+                const isTimeout = e.name === 'TimeoutError' || e.name === 'AbortError' || errMsg.includes('timeout');
+
+                if (is402 || is401) {
+                    // Out of credits or invalid key -> 1 hour cooldown
+                    await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, 3600);
+                } else if (is429) {
+                    // Rate limited -> 5 minutes cooldown
+                    await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, 300);
+                } else if (isTimeout) {
+                    // Timeout -> 60 seconds cooldown to allow failover to alternative key
+                    await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, 60);
+                }
+                // Try next unattempted key in subsequent loop iteration
             }
         }
 
@@ -81,13 +88,23 @@ export class SupadataProvider {
         });
 
         if (!response.ok) {
-            if (response.status === 429) {
-                throw new Error(`429 Rate limited`);
-            }
             if (response.status === 404) {
-                // Wait for CacheManager logic in service layer to cache negative result
+                // Genuine 404: YouTube video has no captions
+                return { notFound: true, segments: [], availableLangs: [] };
             }
-            return null;
+            if (response.status === 429) {
+                throw new Error('429 Rate limited');
+            }
+            if (response.status === 402) {
+                throw new Error('402 Quota exceeded');
+            }
+            if (response.status === 401) {
+                throw new Error('401 Unauthorized');
+            }
+            if (response.status >= 500) {
+                throw new Error(`${response.status} Upstream server error`);
+            }
+            throw new Error(`HTTP ${response.status}`);
         }
 
         const data = await response.json();

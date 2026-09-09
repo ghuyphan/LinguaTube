@@ -18,7 +18,7 @@ This documentation suite serves as the definitive technical reference for human 
 | **[5. Feature Specifications](features.md)** | In-depth logic for sticky subtitles, AI transcription, hybrid dictionaries, grammar engine & SM-2 SRS | Product, Developers, QA |
 | **[6. Database & Storage Architecture](database-and-storage.md)** | D1 SQLite schemas, R2 bucket layout, KV keys, PocketBase collections & IndexedDB persistence | Database & Data Engineers |
 | **[7. Developer & Operations Guide](development-guide.md)** | Local environment setup, dev server, test runners, linting, deployment & troubleshooting | Contributors, Maintainers |
-| **[8. Mobile API Integration Guide](mobile-api-integration.md)** | Complete REST API endpoint reference, PocketBase schema, and integration playbooks | Mobile Engineers (iOS, Android, Flutter) |
+| **[8. Mobile API Integration Guide](mobile-api-integration.md)** | Complete REST API reference, PocketBase sync, Tokens, Multi-source Dict, Grammar Engine, and Flutter/Cursor AI playbooks | Mobile Engineers (Flutter/Dart, iOS, Android) & AI Agents |
 
 ---
 

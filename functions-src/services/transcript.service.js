@@ -9,7 +9,8 @@ import {
     addVideoLanguages,
     addSubLanguage,
     getVideoDuration,
-    markNoTranscript
+    markNoTranscript,
+    deleteNoTranscript
 } from '../data/video-info-db.js';
 
 import {
@@ -68,10 +69,11 @@ export class TranscriptService {
         if (nativeResult?.segments?.length > 0) {
             const actualLang = normalizeLanguageCode(nativeResult.detectedLang) || normalizeLanguageCode(lang) || lang;
             const cleanedSegments = cleanTranscriptSegments(nativeResult.segments);
-            // Found native captions -> Save to R2 & DB under actualLang
+            // Found native captions -> Save to R2 & DB under actualLang and clear any stale negative cache
             const savePromises = [
                 saveTranscriptToR2(r2, videoId, actualLang, cleanedSegments, nativeResult.source || 'supadata'),
-                addSubLanguage(db, videoId, actualLang)
+                addSubLanguage(db, videoId, actualLang),
+                deleteNoTranscript(db, videoId, actualLang, 'native')
             ];
 
             const rawAvailable = nativeResult.availableLangs?.length > 0 ? nativeResult.availableLangs : [actualLang];
@@ -158,8 +160,9 @@ export class TranscriptService {
             };
         }
 
-        // Failed to find native captions -> Cache the failure
-        if (env.SUPADATA_API_KEY) {
+        // Only cache failure if the provider explicitly confirmed captions do NOT exist (404/notFound).
+        // Never poison the negative cache on transient network failures, timeouts, or exhausted keys!
+        if (nativeResult?.notFound && env.SUPADATA_API_KEY) {
             const markNegativeCache = markNoTranscript(db, cache, videoId, lang, 'native');
             if (waitUntil) {
                 waitUntil(markNegativeCache.catch(() => {}));
@@ -168,7 +171,7 @@ export class TranscriptService {
             }
         }
 
-        return null;
+        return nativeResult;
     }
 
     /**

@@ -235,12 +235,13 @@ export class TranscriptService {
     lang: string = 'ja',
     duration?: number,
     title?: string,
-    channel?: string
+    channel?: string,
+    forceRefresh = false
   ): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
 
-    // 1. Check client-side memory cache first (fastest)
-    if (this.transcriptCache.has(cacheKey)) {
+    // 1. Check client-side memory cache first (fastest) - only if not forceRefresh
+    if (!forceRefresh && this.transcriptCache.has(cacheKey)) {
       const cached = this.transcriptCache.get(cacheKey)!;
       const isDevMock = cached.some(c => c.text?.includes('LinguaTubeへようこそ') || c.text?.includes('Vocaへようこそ') || c.text?.includes('LinguaTube') || c.text?.includes('Voca, your'));
       if (isDevMock && videoId !== 'demo' && videoId !== 'test') {
@@ -260,8 +261,12 @@ export class TranscriptService {
       }
     }
 
-    // 2. Check IndexedDB persistent cache
-    return from(this.persistentCache.get(videoId, lang)).pipe(
+    // 2. Check IndexedDB persistent cache - only if not forceRefresh
+    const persistentCheck$ = forceRefresh
+      ? of(null)
+      : from(this.persistentCache.get(videoId, lang));
+
+    return persistentCheck$.pipe(
       switchMap(cachedData => {
         const isDevMock = cachedData?.cues?.some(c => c.text?.includes('LinguaTubeへようこそ') || c.text?.includes('Vocaへようこそ') || c.text?.includes('LinguaTube') || c.text?.includes('Voca, your'));
         if (cachedData && (!isDevMock || videoId === 'demo' || videoId === 'test')) {
@@ -280,13 +285,12 @@ export class TranscriptService {
           this.persistentCache.delete(videoId, lang);
         }
 
-
         // 3. Fetch from API
-        log('Cache miss, fetching from API:', { videoId, lang });
+        log('Cache miss, fetching from API:', { videoId, lang, forceRefresh });
         this.state.set({ status: 'loading' });
         this.fallbackInfo.set(null);
 
-        return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, duration, title, channel).pipe(
+        return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, duration, title, channel, forceRefresh).pipe(
           takeUntil(this.cancelSubject),
           tap(cues => {
             if (cues.length > 0) {
@@ -297,7 +301,7 @@ export class TranscriptService {
               // Save to IndexedDB with actual detected language (fire-and-forget)
               const source = this.captionSource() || 'native';
               this.persistentCache.set(videoId, detectedLang, cues, source).catch(() => { });
-            } else {
+            } else if (!forceRefresh) {
               // Negative caching: remember this video has no native transcripts
               this.transcriptCache.set(cacheKey, []);
             }
@@ -464,11 +468,12 @@ export class TranscriptService {
     turnstileToken?: string,
     duration?: number,
     title?: string,
-    channel?: string
+    channel?: string,
+    forceRefresh?: boolean
   ): Observable<SubtitleCue[]> {
 
     // Dedup ongoing requests (except for polling)
-    const requestKey = `${videoId}:${lang}:${preferAI}`;
+    const requestKey = `${videoId}:${lang}:${preferAI}:${forceRefresh ? 'refresh' : 'normal'}`;
     if (!resultUrl && this.pendingRequests.has(requestKey)) {
       return this.pendingRequests.get(requestKey)!;
     }
@@ -477,6 +482,7 @@ export class TranscriptService {
       videoId,
       lang,
       preferAI,
+      ...(forceRefresh && { forceRefresh: true }),
       ...(duration !== undefined && duration > 0 && { duration }),
       ...(title && { title }),
       ...(channel && { channel }),

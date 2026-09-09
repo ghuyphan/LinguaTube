@@ -5,7 +5,7 @@
         [class.current-subtitle--large]="settings.settings().fontSize === 'large'"
         [class.current-subtitle--xlarge]="settings.settings().fontSize === 'xlarge'"
         [class.is-generating]="transcript.isGeneratingAI()"
-        [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())"
+        [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage()) && subtitles.subtitles().length > 0"
         [class.is-quiz-active]="quiz.isActive()">
 
         @if (quiz.isActive()) {
@@ -135,8 +135,8 @@
 
                     <!-- Error -->
                     <div class="state-item state-error">
-                        <div class="error-icon-box">
-                            <app-icon name="alert-circle" [size]="20" class="error-icon" />
+                        <div class="error-icon-box" [class.ai-icon-box]="(transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)">
+                            <app-icon [name]="((transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)) ? 'wand' : 'alert-circle'" [size]="20" [class.ai-icon]="(transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)" class="error-icon" />
                         </div>
                         <div class="error-text">
                             @if (transcript.error() === 'VIDEO_TOO_LONG') {
@@ -194,18 +194,32 @@
                             } @else if (transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) {
                             <!-- No native captions but AI available -->
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
-                            <button type="button" class="try-ai-btn" (click)="manualAITrigger.emit()">
-                                <app-icon name="diamond" [size]="16" />
-                                <span>{{ i18n.t('subtitle.useAITranscription') }}</span>
-                                <span class="diamond-count">({{ transcript.diamonds() }}/{{ transcript.maxDiamonds()
-                                    }})</span>
-                            </button>
+                            <span class="empty-hint">{{ i18n.t('subtitle.fallbackAvailable') || 'AI transcription available' }}</span>
+                            <div class="empty-actions">
+                                <button type="button" class="try-ai-btn" (click)="manualAITrigger.emit()">
+                                    <app-icon name="diamond" [size]="16" />
+                                    <span>{{ i18n.t('subtitle.useAITranscription') }}</span>
+                                    <span class="diamond-count">({{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }})</span>
+                                </button>
+                            </div>
                             } @else if (transcript.error() === 'NO_DIAMONDS' || transcript.error() === 'INSUFFICIENT_DIAMONDS') {
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.noDiamondsLeft') }}</span>
+                            <div class="empty-actions">
+                                <button type="button" class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
+                                    <app-icon name="refresh-cw" [size]="14" />
+                                    <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
+                                </button>
+                            </div>
                             } @else {
                             <span class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</span>
+                            <div class="empty-actions">
+                                <button type="button" class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
+                                    <app-icon name="refresh-cw" [size]="14" />
+                                    <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
+                                </button>
+                            </div>
                             }
                         </div>
                     </div>

@@ -19,36 +19,36 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.1.1',
+    version: '1.1.2',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'NLP-Powered English Tokenization: Integrated the Compromise NLP engine for English morphological segmentation, attaching accurate Part-of-Speech tags and lemmatized base forms',
-            'Zero False Positives: Eliminated aggressive over-tagging on everyday words, pronouns, articles, and contractions (such as "I", "the", "a", "don\'t"), keeping them individually clickable for dictionary lookup',
-            'Precision CEFR Grammar Patterns: Implemented syntax-aware detection for genuine English CEFR structures (perfect tenses, modal perfects, phrasal modals, correlatives) with clean token boundaries'
+            'Native Caption Reliability: Extended timeout to 15s to support longer videos with multiple subtitle tracks without premature aborts',
+            'Resilient API Key Failover: Enhanced key rotation to automatically failover across backup keys on quota exhaustion (402), auth errors (401), rate limits (429), and network timeouts',
+            'Negative Cache Defense & Retry: Prevented transient network errors from falsely poisoning the no-caption cache and added a manual Retry button on empty subtitle screens'
         ],
         vi: [
-            'Phân tích ngữ pháp tiếng Anh bằng NLP: Tích hợp thư viện Compromise NLP cho tiếng Anh, bổ sung từ loại (POS) và dạng nguyên thể (baseForm) tương tự như tiếng Nhật và tiếng Hàn',
-            'Loại bỏ hoàn toàn nhận diện nhầm: Khắc phục triệt để lỗi đánh dấu tràn lan các từ phổ thông, đại từ, mạo từ và từ viết tắt (như "I", "the", "a", "don\'t"), giúp tra cứu từ điển và lưu từ vựng chính xác',
-            'Nhận diện mẫu ngữ pháp CEFR chuẩn xác: Nhận diện cấu trúc ngữ pháp thực tế (thì hoàn thành, động từ khuyết thiếu quá khứ, cấu trúc tương quan) mà không bị dính dấu câu hay khoảng trắng'
+            'Nâng cao độ ổn định phụ đề gốc: Tăng thời gian chờ lên 15 giây giúp xử lý ổn định các video dài có nhiều track phụ đề',
+            'Tự động chuyển API key dự phòng: Tự động đổi sang key thay thế khi gặp lỗi hết quota (402), lỗi xác thực (401), giới hạn tốc độ (429) hoặc timeout',
+            'Bảo vệ Cache & Nút Thử lại: Ngăn chặn lưu cache âm tính khi gặp lỗi mạng tạm thời và bổ sung nút Thử lại ngay trên màn hình thông báo không có phụ đề'
         ],
         ja: [
-            'NLPによる高精度な英語形態素解析：Compromise NLPエンジンを統合し、品詞タグ（POS）と原形（baseForm）を付与して日本語（Kuromoji）や韓国語と同様の分析を実現',
-            '日常単語の誤判定を完全解消：代名詞や冠詞、短縮形（"I", "the", "a", "don\'t"など）の過剰ハイライトを撤廃し、単語ごとの辞書引きと単語帳保存がスムーズに',
-            '精密なCEFR英文法パターン検出：複合時制や法助動詞完了形、相関構文などの真の英文法構造を文脈に応じて的確に検出し、記号やスペースを含めないクリーンな抽出を実現'
+            'YouTube字幕取得の信頼性向上：タイムアウトを15秒に延長し、多言語字幕を持つ長編動画でも安定して字幕を取得',
+            '堅牢なAPIキー自動フェイルオーバー：クレジット枯渇（402）、認証エラー（401）、レート制限（429）、通信タイムアウト時に予備キーへ即時自動切り替え',
+            'ネガティブキャッシュ保護と再試行機能：一時的な通信エラーによる誤キャッシュを防止し、字幕未取得画面に「再試行」ボタンを追加'
         ],
         ko: [
-            'NLP 기반 영어 형태소 분석 도입: Compromise NLP 엔진을 연동하여 품사 태그(POS) 및 기본형(baseForm)을 부여, 일본어 및 한국어 수준의 자연어 처리 구현',
-            '일상 단어 오인식 완벽 제거: 대명사, 관사, 축약형("I", "the", "a", "don\'t" 등)의 무분별한 문법 하이라이트를 제거하여 개별 단어 사전 검색 및 단어장 저장을 원활하게 지원',
-            '정밀한 CEFR 영어 문법 패턴 감지: 완료 시제, 조동사 완료형, 상관 접속사 등 실제 CEFR 영어 문법 구문을 정확한 토큰 범위로 깔끔하게 감지'
+            '유튜브 원본 자막 수집 안정성 개선: 타임아웃을 15초로 연장하여 다국어 트랙이 포함된 긴 동영상도 중단 없이 안정적으로 처리',
+            '유연한 API 키 자동 장애 조치: 크레딧 소진(402), 인증 오류(401), 속도 제한(429), 타임아웃 발생 시 예비 키로 즉시 자동 전환',
+            '부정 캐시 오염 방지 및 재시도 기능: 일시적 네트워크 오류 시 자막 없음 캐시 저장을 차단하고, 자막 화면에 수동 재시도 버튼 추가'
         ],
         zh: [
-            '引入NLP驱动的英语形态分词：深度集成Compromise NLP分词引擎，提供词性标注（POS）与原型还原（baseForm），达到日韩语同等精细度',
-            '彻底消除日常词汇过度标记：移除代词、冠词、缩写词（如 "I", "the", "a", "don\'t" 等）的虚假语法高亮，确保单词独立可点、精准查词与收藏',
-            '高精度CEFR英语语法模式识别：智能捕获完成时态、情态动词完成式、相关并列连词等核心语法结构，标点与空格不再误入高亮区间'
+            '增强原生字幕获取稳定性：将超时时间延长至15秒，彻底解决包含多轨字幕的长视频因超时中断的问题',
+            '高可用API密钥故障转移：在额度用尽（402）、鉴权错误（401）、限流（429）或超时场景下自动无缝轮换至备用密钥',
+            '防范无效缓存与新增重试机制：避免临时网络错误污染无字幕缓存，并在未获取到字幕的界面添加快捷重试按钮'
         ]
     }
 };

@@ -754,9 +754,10 @@ export class VideoPageComponent implements OnInit {
     const currentVideo = this.youtube.currentVideo();
     if (currentVideo) {
       this.subtitles.clear();
+      this.transcript.clearCache(currentVideo.id);
       this.transcript.reset();
       this.videoLevel.reset();
-      this.fetchCaptions(currentVideo.id);
+      this.fetchCaptions(currentVideo.id, true);
     }
   }
 
@@ -920,11 +921,11 @@ export class VideoPageComponent implements OnInit {
     input.value = '';
   }
 
-  private fetchCaptions(videoId: string): void {
+  private fetchCaptions(videoId: string, forceRefresh = false): void {
     const lang = this.settings.settings().language;
     const duration = Math.round(this.youtube.duration()) || undefined;
     const currentVid = this.youtube.currentVideo();
-    this.transcript.fetchTranscript(videoId, lang, duration, currentVid?.title, currentVid?.channel)
+    this.transcript.fetchTranscript(videoId, lang, duration, currentVid?.title, currentVid?.channel, forceRefresh)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (cues) => {

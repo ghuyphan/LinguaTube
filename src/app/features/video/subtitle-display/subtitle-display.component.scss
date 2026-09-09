@@ -1,3 +1,7 @@
+:host {
+    display: block;
+}
+
 .subtitle-panel {
     background: var(--bg-card);
     border-radius: var(--border-radius-lg);
@@ -35,7 +39,7 @@
         box-shadow:
             0 0 0 1px rgba(139, 92, 246, 0.3),
             12px 12px 35px rgba(139, 92, 246, 0.35),
-            -12px -12px 25px rgba(236, 72, 153, 0.15);
+            -12px 12px 25px rgba(236, 72, 153, 0.15);
     }
 }
 
@@ -43,8 +47,11 @@
    CURRENT SUBTITLE - Centered & Scrollable
    ============================================ */
 .current-subtitle {
+    display: flex;
+    flex-direction: column;
     height: 9rem;
     min-height: 9rem;
+    box-sizing: border-box;
     background: var(--bg-surface);
     position: relative;
     overflow: hidden;
@@ -99,7 +106,12 @@
 }
 
 .current-subtitle__inner {
-    height: 100%;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     overflow-y: auto;
     overflow-x: hidden;
     overscroll-behavior: contain;
@@ -196,13 +208,16 @@
 }
 
 .subtitle-center-wrapper {
+    flex: 1;
     min-height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: var(--space-xs) 0;
     gap: 4px;
+    box-sizing: border-box;
 }
 
 /* FIX: Stabilized vertical layout - min-height eliminates cue-to-cue layout shifts */
@@ -402,11 +417,14 @@
    EMPTY / LOADING STATES - CSS Transitions
    ============================================ */
 .subtitle-empty {
+    flex: 1;
     min-height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--space-md);
+    box-sizing: border-box;
 }
 
 .state-container {
@@ -423,11 +441,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: var(--space-lg);
     opacity: 0;
     transform: scale(0.95);
     transition: opacity 200ms ease, transform 200ms ease;
     pointer-events: none;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Show active states */
@@ -560,18 +581,27 @@
    ERROR STATE - With icon box
    ============================================ */
 .state-error {
-    align-items: flex-start;
+    align-items: center;
 }
 
 .error-icon-box {
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: var(--border-radius-md, 8px);
+    border-radius: 50%;
     background: rgba(239, 68, 68, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+
+    &.ai-icon-box {
+        background: rgba(139, 92, 246, 0.15);
+        border: 1px solid rgba(139, 92, 246, 0.25);
+
+        .ai-icon {
+            color: var(--ai-purple, #ce82ff);
+        }
+    }
 }
 
 .error-icon {
@@ -584,19 +614,20 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
 /* ============================================
    EMPTY STATE - With icon box
    ============================================ */
 .state-empty {
-    align-items: flex-start;
+    align-items: center;
 }
 
 .empty-icon-box {
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: var(--border-radius-md, 8px);
+    border-radius: 50%;
     background: rgba(156, 163, 175, 0.1);
     display: flex;
     align-items: center;
@@ -615,22 +646,26 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
 .empty-title {
     font-weight: 500;
     color: var(--text-secondary);
     font-size: 0.9375rem;
+    line-height: 1.3;
 }
 
 .empty-hint {
     font-size: 0.8125rem;
     color: var(--text-muted);
+    line-height: 1.35;
 }
 
 .try-ai-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     margin-top: 0.75rem;
     padding: 0.5rem 1rem;
@@ -643,6 +678,15 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.15s ease;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    app-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
 
     &:hover {
         background: rgba(139, 92, 246, 0.22);
@@ -678,6 +722,10 @@
     align-items: center;
     gap: 0.5rem;
     margin-top: 0.75rem;
+
+    .try-ai-btn {
+        margin-top: 0;
+    }
 }
 
 .empty-action-btn {
@@ -1932,7 +1980,7 @@ ruby rt {
     .empty-icon-box {
         width: 1.75rem;
         height: 1.75rem;
-        border-radius: 6px;
+        border-radius: 50%;
     }
 
     .error-icon,

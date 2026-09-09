@@ -19,6 +19,7 @@ import { consumeRateLimit, getClientIdentifier, getTieredConfig, rateLimitRespon
 import {
     getVideoLanguages,
     isNoTranscript,
+    deleteNoTranscript
 } from '../data/video-info-db.js';
 
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
@@ -211,7 +212,9 @@ export async function onRequestPost(context) {
         // Step 2: Native
         // -------------------------------------------------------------
         if (!preferAI) {
-            if (!forceRefresh && await isNoTranscript(db, cache, cleanVideoId, lang, 'native')) {
+            if (forceRefresh) {
+                deleteNoTranscript(db, cleanVideoId, lang, 'native').catch(() => {});
+            } else if (await isNoTranscript(db, cache, cleanVideoId, lang, 'native')) {
                 // Negative cache hit, but maybe AI fallback exists
                 return jsonResponse({
                     success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',

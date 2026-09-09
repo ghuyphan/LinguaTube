@@ -404,6 +404,37 @@ export async function markNoTranscript(db, kv, videoId, lang, source) {
 }
 
 /**
+ * Delete a negative cache entry from no_transcript_cache in D1
+ * Called when a transcript is successfully fetched or forceRefresh is requested
+ * @param {D1Database} db
+ * @param {string} videoId
+ * @param {string} [lang]
+ * @param {string} [source]
+ */
+export async function deleteNoTranscript(db, videoId, lang = null, source = null) {
+    if (!db || !videoId) return;
+
+    try {
+        if (lang && source) {
+            await db.prepare(`
+                DELETE FROM no_transcript_cache 
+                WHERE video_id = ? AND language = ? AND source = ?
+            `).bind(videoId, lang, source).run();
+        } else if (lang) {
+            await db.prepare(`
+                DELETE FROM no_transcript_cache 
+                WHERE video_id = ? AND language = ?
+            `).bind(videoId, lang).run();
+        } else {
+            await db.prepare(`
+                DELETE FROM no_transcript_cache 
+                WHERE video_id = ?
+            `).bind(videoId).run();
+        }
+    } catch { }
+}
+
+/**
  * Cleanup old no_transcript_cache entries (older than 7 days)
  * Call opportunistically, not via cron
  * @param {D1Database} db
