@@ -14,41 +14,41 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.0.31',
+    version: '1.0.32',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Unified Subtitle Display Layout: Eliminated vertical cue jumping by stabilizing reading baseline heights across single and multi-line subtitles',
-            'Mobile Typographic Baseline Alignment: Standardized word token alignments across Japanese furigana, Chinese, Korean, and English text on mobile screens',
-            'Difficulty Level Lifecycle & Shimmer Skeleton: Added elegant placeholder skeleton during subtitle fetching and eradicated stale level badges on video switch',
-            'Optimized Playback Performance: Enhanced active cue matching and throttled lazy loading to minimize layout reflow during continuous playback'
+            'Subtitle Reading Display Sub-Panel: Dedicated settings sub-panel for Furigana, Pinyin, Romanization, and Romaji with active checkmarks',
+            'Grammar Highlights Sub-Panel: Streamlined grammar mode into an organized sub-page matching playback speed and font size menus',
+            'Refined Script Badges & Icons: Redesigned reading display icon badges with crisp optical borders and typography',
+            'Complete Reading Localization: Full localization coverage for Furigana, Pinyin, and Romanization options across all languages'
         ],
         vi: [
-            'Ổn định giao diện phụ đề: Loại bỏ hiện tượng phụ đề nhảy dòng bằng cách cố định chiều cao đường cơ sở cho cả phụ đề 1 dòng và nhiều dòng',
-            'Căn chỉnh đường cơ sở trên di động: Chuẩn hóa căn lề typographic cho furigana tiếng Nhật, tiếng Trung, tiếng Hàn và tiếng Anh trên thiết bị di động',
-            'Vòng đời huy hiệu cấp độ & hiệu ứng Skeleton: Bổ sung huy hiệu shimmer sang trọng khi tải phụ đề và xóa sạch huy hiệu cấp độ cũ khi chuyển video',
-            'Tối ưu hiệu năng phát video: Cải thiện so khớp cue đang phát và tiết chế kiểm tra lazy load nhằm triệt tiêu hiện tượng giật khung hình'
+            'Trang cài đặt chế độ hiển thị phiên âm: Thiết kế bảng phụ riêng cho Furigana, Pinyin, Phiên âm và Romaji kèm dấu tích xác nhận trực quan',
+            'Bảng cài đặt chế độ ngữ pháp: Đồng bộ hóa tùy chọn bật/tắt ngữ pháp thành trang menu phụ đồng nhất với tốc độ và cỡ chữ',
+            'Huy hiệu biểu tượng & typographic tinh chỉnh: Thiết kế lại huy hiệu chữ phiên âm với đường viền quang học sắc nét và cân đối',
+            'Bổ sung đa ngôn ngữ hoàn chỉnh: Bản địa hóa đầy đủ các tùy chọn Furigana, Pinyin và Phiên âm cho toàn bộ 5 ngôn ngữ'
         ],
         ja: [
-            '字幕表示レイアウトの安定化：1行・複数行字幕の基準高さを統一し、再生中の垂直方向の字幕の揺れ・跳ね上がりを解消',
-            'モバイルタイポグラフィの整列：日本語のルビ（ふりがな）、中国語、韓国語、英語の単語ベースラインを全画面幅で完全に一致化',
-            '難易度バッジのライフサイクルとシマースケルトン：字幕読み込み中に自然なスケルトンを表示し、前動画のバッジが残る問題を完全に解決',
-            '動画再生パフォーマンスの向上：アクティブ字幕の比較処理を最適化し、スクロール時の不要なリフローとCPU負荷を大幅に削減'
+            '読み・ふりがな設定サブパネル：ふりがな、ピンイン、ローマ字表示を専用のサブ画面で選択可能にし、チェックマークで視覚化',
+            '文法モード設定サブパネル：文法解説のオン／オフを再生速度やフォントサイズと同様の統一されたサブメニューに刷新',
+            '文字バッジとアイコンの洗練：読み表示アイコンに光学的な境界線と統一されたタイポグラフィを採用し視認性を向上',
+            '多言語ローカライズの完全対応：ふりがな、ピンイン、ローマ字表記の設定項目を5言語すべてで完全サポート'
         ],
         ko: [
-            '자막 레이아웃 안정화: 1줄 및 다중 줄 자막 간의 기준선 높이를 고정하여 재생 중 자막이 위아래로 튀는 현상 완벽 해결',
-            '모바일 타이포그래피 베이스라인 정렬: 일본어 후리가나, 중국어, 한국어, 영어 단어 토큰의 기준선을 모바일 화면에서도 일관되게 정렬',
-            '난이도 배지 라이프사이클 및 쉬머 스켈레톤: 자막 로딩 중 세련된 스켈레톤 UI를 표시하고 이전 동영상의 배지가 남는 문제 완전 해결',
-            '재생 성능 최적화: 활성 자막 매칭 로직을 정수 인덱스로 최적화하고 지연 로딩 검사를 조절하여 레이아웃 리플로우 최소화'
+            '발음 표기 설정 서브패널: 후리가나, 병음, 로마자 표기 설정을 전용 서브페이지로 분리하고 체크마크로 현재 모드 표시',
+            '문법 모드 설정 서브패널: 문법 강조 On/Off 설정을 재생 속도 및 글자 크기와 동일한 일관된 하위 메뉴로 개편',
+            '문자 배지 및 아이콘 디자인 개선: 발음 표시 아이콘에 섬세한 테두리와 타이포그래피를 적용하여 시각적 완성도 향상',
+            '완전한 다국어 현지화: 후리가나, 병음, 로마자 표기 설정 번역을 5개 지원 언어 전반에 걸쳐 완벽하게 적용'
         ],
         zh: [
-            '字幕展示布局深度稳定：统一单行与多行字幕的基础排版高度，彻底消除字幕切换时的垂直跳动与视觉位移',
-            '移动端文字基准线对齐：完美统一日语假名注音、中文、韩语及英语在小屏幕上的文字排版基线，告别参差错位',
-            '难度徽章生命周期与骨架屏：字幕加载及AI转录期间呈现精致微光骨架屏，并在切换视频时即时重置避免显示旧级别',
-            '视频播放性能大幅优化：优化当前字幕匹配机制并节流懒加载检测，显著降低持续播放时的DOM重排与性能损耗'
+            '读音注音设置子页面：为振假名、拼音、罗马拼音及关模式提供专属子菜单，以选中勾选标记直观呈现',
+            '语法标注设置子页面：将语法高亮切换升级为与播放速度、字号一致的标准子页面，操作逻辑更连贯',
+            '文字图标徽章精细打磨：重新设计注音模式图标徽章，加入微光边框与精致文字排版，视觉更统一',
+            '多语言注音词条全量本地化：补齐全部5种语言下的假名注音、拼音与罗马拼音本地化文案'
         ]
     }
 };

@@ -1223,10 +1223,14 @@ $transition-normal: 0.25s ease;
         justify-content: center;
         width: 18px;
         height: 18px;
-        font-size: 0.8125rem;
+        border-radius: 4px;
+        font-size: 0.75rem;
         font-weight: 700;
-        color: rgba(255, 255, 255, 0.75);
+        color: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         line-height: 1;
+        box-sizing: border-box;
       }
     }
 
@@ -1344,6 +1348,13 @@ $transition-normal: 0.25s ease;
 
         .option-icon {
           color: rgba(255, 255, 255, 0.75);
+        }
+
+        .option-reading-glyph {
+          font-size: 0.6875rem;
+          font-weight: 700;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1;
         }
       }
 

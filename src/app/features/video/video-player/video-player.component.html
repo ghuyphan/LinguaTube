@@ -302,20 +302,20 @@
 
             <!-- Reading Display (Furigana / Pinyin / Romaji) -->
             @if (supportsReadingDisplay()) {
-            <button type="button" class="settings-menu-item" (click)="toggleReadingDisplay()">
+            <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('reading')">
               <div class="menu-item-left">
                 <span class="menu-item-reading-icon">{{ readingScriptIcon() }}</span>
                 <span class="menu-item-label">{{ readingModeName() }}</span>
               </div>
               <div class="menu-item-right">
-                <span class="menu-item-value">{{ showReadingAnnotation() ? (i18n.t('common.on') || 'On') : (i18n.t('player.off') || 'Off') }}</span>
+                <span class="menu-item-value">{{ currentReadingDisplayLabel() }}</span>
                 <app-icon name="chevron-right" [size]="16" />
               </div>
             </button>
             }
 
             <!-- Grammar Mode -->
-            <button type="button" class="settings-menu-item" (click)="grammar.toggleGrammarMode()">
+            <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('grammar')">
               <div class="menu-item-left">
                 <app-icon name="book-open" [size]="18" />
                 <span class="menu-item-label">{{ i18n.t('grammar.mode') || 'Grammar Mode' }}</span>
@@ -448,6 +448,102 @@
               }
             </button>
             }
+          </div>
+        </div>
+        }
+
+        @if (playerSettingsView() === 'reading') {
+        <div class="settings-panel">
+          <div class="sheet-section-header with-back">
+            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
+              <app-icon name="chevron-left" [size]="18" />
+            </button>
+            <h3 class="sheet-title">{{ readingModeName() }}</h3>
+          </div>
+          <div class="settings-options-list">
+            <!-- Off Option -->
+            <button type="button" class="settings-option-row" [class.active]="isReadingModeActive('native')"
+              (click)="selectReadingDisplayMode('native')">
+              <div class="option-with-icon">
+                <div class="option-flag-placeholder">
+                  <app-icon name="slash" [size]="14" class="option-icon" />
+                </div>
+                <span class="option-label">{{ i18n.t('player.off') || 'Off' }}</span>
+              </div>
+              @if (isReadingModeActive('native')) {
+              <app-icon name="check" [size]="16" class="option-check" />
+              }
+            </button>
+
+            <!-- Standard Annotated (Furigana / Pinyin / Romanization) -->
+            <button type="button" class="settings-option-row" [class.active]="isReadingModeActive('annotated')"
+              (click)="selectReadingDisplayMode('annotated')">
+              <div class="option-with-icon">
+                <div class="option-flag-placeholder">
+                  <span class="option-reading-glyph">{{ readingScriptIcon() }}</span>
+                </div>
+                <span class="option-label">{{ readingModeName() }}</span>
+              </div>
+              @if (isReadingModeActive('annotated')) {
+              <app-icon name="check" [size]="16" class="option-check" />
+              }
+            </button>
+
+            <!-- Japanese Romanized (Romaji) option -->
+            @if (subtitles.activeLanguage() === 'ja') {
+            <button type="button" class="settings-option-row" [class.active]="isReadingModeActive('annotatedRomanized')"
+              (click)="selectReadingDisplayMode('annotatedRomanized')">
+              <div class="option-with-icon">
+                <div class="option-flag-placeholder">
+                  <span class="option-reading-glyph">Aa</span>
+                </div>
+                <span class="option-label">{{ i18n.t('settings.romanization') || 'Romaji' }}</span>
+              </div>
+              @if (isReadingModeActive('annotatedRomanized')) {
+              <app-icon name="check" [size]="16" class="option-check" />
+              }
+            </button>
+            }
+          </div>
+        </div>
+        }
+
+        @if (playerSettingsView() === 'grammar') {
+        <div class="settings-panel">
+          <div class="sheet-section-header with-back">
+            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
+              <app-icon name="chevron-left" [size]="18" />
+            </button>
+            <h3 class="sheet-title">{{ i18n.t('grammar.mode') || 'Grammar Mode' }}</h3>
+          </div>
+          <div class="settings-options-list">
+            <!-- Off Option -->
+            <button type="button" class="settings-option-row" [class.active]="!grammar.grammarModeEnabled()"
+              (click)="selectGrammarMode(false)">
+              <div class="option-with-icon">
+                <div class="option-flag-placeholder">
+                  <app-icon name="slash" [size]="14" class="option-icon" />
+                </div>
+                <span class="option-label">{{ i18n.t('player.off') || 'Off' }}</span>
+              </div>
+              @if (!grammar.grammarModeEnabled()) {
+              <app-icon name="check" [size]="16" class="option-check" />
+              }
+            </button>
+
+            <!-- On Option -->
+            <button type="button" class="settings-option-row" [class.active]="grammar.grammarModeEnabled()"
+              (click)="selectGrammarMode(true)">
+              <div class="option-with-icon">
+                <div class="option-flag-placeholder">
+                  <app-icon name="book-open" [size]="14" class="option-icon" />
+                </div>
+                <span class="option-label">{{ i18n.t('common.on') || 'On' }}</span>
+              </div>
+              @if (grammar.grammarModeEnabled()) {
+              <app-icon name="check" [size]="16" class="option-check" />
+              }
+            </button>
           </div>
         </div>
         }

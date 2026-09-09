@@ -501,10 +501,10 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
   readonly readingModeName = computed(() => {
     const lang = this.effectiveLanguage();
-    if (lang === 'ja') return 'Furigana';
-    if (lang === 'zh') return 'Pinyin';
-    if (lang === 'ko') return 'Romanization';
-    return 'Reading';
+    if (lang === 'ja') return this.i18n.t('settings.furigana') || 'Furigana';
+    if (lang === 'zh') return this.i18n.t('settings.pinyin') || 'Pinyin';
+    if (lang === 'ko') return this.i18n.t('settings.romanization') || 'Romanization';
+    return this.i18n.t('settings.reading') || 'Reading';
   });
 
   setFontSize(size: 'small' | 'medium' | 'large' | 'xlarge'): void {

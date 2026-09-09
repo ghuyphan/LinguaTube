@@ -56,7 +56,7 @@ readonly readingDisplayMode = computed(() =>
 );
 
 // VideoPlayerComponent
-readonly playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub'>('main');
+readonly playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub' | 'reading' | 'grammar'>('main');
 readonly isFullscreen = signal<boolean>(false);
 readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 ```
@@ -73,7 +73,7 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
   - **ResizeObserver Driven**: Watches intrinsic content size updates via an unconstrained `.sheet-content-inner` wrapper in `BottomSheetComponent` and `#settingsPopupInner` in `VideoPlayerComponent` using native `ResizeObserver`.
   - **Subpixel & Reflow Suppression**: Filters out horizontal width-only reflows and subpixel layout jitter (`Math.abs(contentHeight - lastContentHeight) <= 1`) so toggling scrollbar classes (`.animating-height`) does not self-cancel in-flight transitions.
   - **Web Animations API**: Smoothly interpolates the container's rendered height (`element.animate([{ height: `${old}px` }, { height: `${new}px` }], { duration: 220, easing: 'cubic-bezier(0.32, 0.72, 0, 1)' })`).
-  - **Submenu View Transitions**: When navigating between player settings submenus (`main`, `speed`, `fontSize`, `dualSub`), container heights dynamically animate without visual snapping across both desktop popups and mobile bottom sheets.
+  - **Submenu View Transitions**: When navigating between player settings submenus (`main`, `speed`, `fontSize`, `dualSub`, `reading`, `grammar`), container heights dynamically animate without visual snapping across both desktop popups and mobile bottom sheets.
   - **Seamless Interruption**: If content resizes again mid-animation (e.g. rapid accordion toggle, async search results, or translation changes), the active animation is sampled at its exact mid-flight height (`element.getBoundingClientRect().height`) and smoothly redirected to the new target height without visual pop.
   - **Scrollbar Flicker Suppression**: Applies `.animating-height` class during transitions with `overflow-y: hidden` on `.sheet-content` to prevent horizontal text reflow and unsightly scrollbar flashing.
   - **Gesture & Lifecycle Coordination**: Automatically bypasses height transitions during entrance animations (`mobileSlideUp`/`scaleIn`), cancels cleanly on drag-to-dismiss touch start (`onTouchStart`), suppresses animations during window resizing/orientation shifts, and respects user accessibility preferences (`prefers-reduced-motion: reduce`).

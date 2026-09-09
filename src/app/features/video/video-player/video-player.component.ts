@@ -36,7 +36,8 @@ import {
   GrammarPattern,
   GrammarMatch,
   SupportedLearningLanguage,
-  SupportedGrammarLang
+  SupportedGrammarLang,
+  ReadingDisplayMode
 } from '../../../models';
 import {
   PlaybackSpeed,
@@ -107,9 +108,46 @@ export class VideoPlayerComponent implements OnDestroy {
     const lang = this.subtitles.activeLanguage();
     if (lang === 'ja') return this.i18n.t('settings.furigana') || 'Furigana';
     if (lang === 'zh') return this.i18n.t('settings.pinyin') || 'Pinyin';
-    if (lang === 'ko') return this.i18n.t('settings.hangulRomanization') || 'Romanization';
-    return this.i18n.t('subtitle.reading') || 'Reading';
+    if (lang === 'ko') return this.i18n.t('settings.romanization') || this.i18n.t('settings.hangulRomanization') || 'Romanization';
+    return this.i18n.t('settings.reading') || this.i18n.t('subtitle.reading') || 'Reading';
   });
+
+  currentReadingDisplayLabel = computed(() => {
+    const lang = this.subtitles.activeLanguage() as SupportedLearningLanguage;
+    if (!this.settings.hasReadingSupport(lang)) return '';
+    const mode = this.settings.getReadingDisplayMode(lang);
+    if (mode === 'native') {
+      return this.i18n.t('player.off') || 'Off';
+    }
+    if (lang === 'ja') {
+      if (mode === 'annotatedRomanized' || mode === 'romanized') {
+        return this.i18n.t('settings.romanization') || 'Romaji';
+      }
+      return this.i18n.t('settings.furigana') || 'Furigana';
+    }
+    if (lang === 'zh') {
+      return this.i18n.t('settings.pinyin') || 'Pinyin';
+    }
+    if (lang === 'ko') {
+      return this.i18n.t('settings.romanization') || 'Romanization';
+    }
+    return this.i18n.t('common.on') || 'On';
+  });
+
+  selectReadingDisplayMode(mode: ReadingDisplayMode): void {
+    this.settings.setReadingDisplayMode(mode);
+    this.playerSettingsView.set('main');
+  }
+
+  isReadingModeActive(mode: ReadingDisplayMode): boolean {
+    const lang = this.subtitles.activeLanguage() as SupportedLearningLanguage;
+    return this.settings.getReadingDisplayMode(lang) === mode;
+  }
+
+  selectGrammarMode(enabled: boolean): void {
+    this.grammar.grammarModeEnabled.set(enabled);
+    this.playerSettingsView.set('main');
+  }
 
   toggleReadingDisplay(): void {
     this.settings.toggleReadingDisplay(this.subtitles.activeLanguage() as SupportedLearningLanguage);
@@ -184,7 +222,7 @@ export class VideoPlayerComponent implements OnDestroy {
   isFullscreen = signal(false);
   isVolumeSliderVisible = signal(false);
   isPlayerSettingsOpen = signal(false);
-  playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub'>('main');
+  playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub' | 'reading' | 'grammar'>('main');
   isMobile = signal<boolean>(typeof window !== 'undefined' ? (window.innerWidth <= 768 || window.innerHeight <= 500) : false);
   readonly fontSizes = FONT_SIZES;
   volume = signal(100);

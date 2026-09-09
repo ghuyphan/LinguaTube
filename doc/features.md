@@ -54,6 +54,15 @@ When in fullscreen mode, subtitles are rendered in `FullscreenSubtitleComponent`
   - Interactive words tap directly into `WordPopupComponent`, providing full definitions, definition translations, vocabulary mastery level picking, and audio pronunciation without leaving fullscreen mode.
   - Touch and click event isolation prevents touches on words, punctuation, or card background from inadvertently toggling player controls or pausing playback.
 
+### 1.5. Unified Player Settings Sub-Panels
+The video player settings popover (`video-player.component.html`) provides dedicated, structured sub-panels for all player options:
+- **Playback Speed**: Preset speed multipliers (0.5x to 2x) with active checkmarks.
+- **Subtitle Font Size**: Responsive font sizing (`small`, `medium`, `large`, `xlarge`) with active checkmarks.
+- **Dual Subtitles**: Target language selection with language flags and checkmarks.
+- **Reading Display (Furigana / Pinyin / Romanization)**: Dedicated sub-panel allowing instant switching between Native (Off), Annotated Reading (Furigana for JA, Pinyin for ZH, Romanization for KO), and Romaji (for JA) with active checkmarks and typographic script glyph badges.
+- **Grammar Highlights**: Dedicated sub-panel allowing clean On / Off toggling with active checkmarks.
+- **Ergonomic Submenu Transitions**: All sub-panels share consistent back header buttons (`chevron-left`), sub-panel routing (`playerSettingsView`), and dynamically animated container heights via `SmoothHeightAnimator`.
+
 ---
 
 ## 2. Interactive Subtitles & Tokenization Engine
