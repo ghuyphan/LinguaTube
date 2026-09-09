@@ -600,10 +600,11 @@ Achievements are organized into 5 core learning categories:
 - **Top 50 Ranking Stream**: Ranks 4 to 50 rendered with rank badges, nationality flags, current levels, active daily streaks, and score counters.
 - **Sticky Current User Anchor Bar**: Persistently shows the logged-in or guest learner's global rank position at the bottom of the dialog, with a one-tap sync button.
 - **Language Filter Chips**: Filter leaderboard rankings by target study language (`All`, `JA 🇯🇵`, `KO 🇰🇷`, `ZH 🇨🇳`, `EN 🇬🇧`).
-- **Offline-First & Guest Support**:
-  - Seed community benchmarks ensure immediate interactivity without network delays or blank states.
+- **Offline-First & Community Baseline Integration**:
+  - `mergeWithSeedLeaderboard` merges registered real users with 28 realistic community learners across Japanese, Korean, Chinese, and English, guaranteeing that the Top 3 podium (Gold 👑, Silver 🥈, Bronze 🥉) and leaderboard stream are always active and competitive.
+  - Dynamically calculates exact rank based on relative XP distribution rather than showing isolated single-user states.
   - Generates deterministic persistent guest IDs for learners browsing without PocketBase accounts.
-  - Automatically syncs XP upon login or level-up events.
+  - Automatically syncs XP upon login or level-up events, with cache-busting real-time refresh support.
 
 ### 13.5. Offline-First PocketBase Persistence (`OfflineGamificationRepository`)
 - **Deterministic Entity IDs**:

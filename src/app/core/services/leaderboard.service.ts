@@ -69,19 +69,20 @@ export class LeaderboardService {
     /**
      * Fetch global leaderboard
      */
-    async loadLeaderboard(lang: string = this.selectedLang()): Promise<void> {
+    async loadLeaderboard(lang: string = this.selectedLang(), force = false): Promise<void> {
         this.selectedLang.set(lang);
         this.isLoading.set(true);
 
         const currentUserId = this.getCurrentUserId();
         const langQuery = lang && lang !== 'all' ? `&lang=${encodeURIComponent(lang)}` : '';
+        const bustQuery = force ? `&refresh=true&_t=${Date.now()}` : '';
 
         try {
             const res = await firstValueFrom(this.http.get<{
                 success: boolean;
                 topLearners: LeaderboardEntry[];
                 userRank: LeaderboardEntry | null;
-            }>(`/api/leaderboard?userId=${encodeURIComponent(currentUserId)}${langQuery}`));
+            }>(`/api/leaderboard?userId=${encodeURIComponent(currentUserId)}${langQuery}${bustQuery}`));
 
             if (res && res.success && Array.isArray(res.topLearners)) {
                 this.topLearners.set(res.topLearners);
@@ -177,7 +178,7 @@ export class LeaderboardService {
             const raw = localStorage.getItem(STORAGE_KEY);
             if (raw) {
                 const parsed = JSON.parse(raw);
-                if (Array.isArray(parsed) && parsed.length > 0) {
+                if (Array.isArray(parsed) && parsed.length >= 3) {
                     this.topLearners.set(parsed);
                     this.computeClientUserRank(parsed);
                 }
@@ -187,7 +188,9 @@ export class LeaderboardService {
 
     private saveToStorage(entries: LeaderboardEntry[]): void {
         try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+            if (Array.isArray(entries) && entries.length >= 3) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+            }
         } catch { }
     }
 }

@@ -112,6 +112,6 @@ export class AchievementsDialogComponent {
 
     async refreshLeaderboard(): Promise<void> {
         await this.leaderboard.syncMyScore(true);
-        await this.leaderboard.loadLeaderboard();
+        await this.leaderboard.loadLeaderboard(this.leaderboardLang(), true);
     }
 }

@@ -387,8 +387,8 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Monotonic XP progression: Upsert enforces `xp = MAX(leaderboard.xp, excluded.xp)` to prevent downgrades or race condition rollbacks.
 - **Storage & Caching**:
   - Persisted in Cloudflare D1 `leaderboard` table (`user_id`, `name`, `avatar`, `xp`, `level`, `streak`, `badges_count`, `target_lang`, `country`, `updated_at`).
-  - Edge caching: `Cache-Control: public, max-age=30, s-maxage=60`.
-  - Seed fallback: If D1 is empty or unavailable, returns pre-seeded realistic community benchmarks so learners are never met with an empty screen.
+  - Cache Directive: `Cache-Control: private, no-cache, no-store, must-revalidate` ensures user-specific rankings and refresh operations deliver real-time XP without stale CDN caching.
+  - Baseline Community Seeds (`mergeWithSeedLeaderboard`): Merges real registered learners with 28 realistic baseline community learners (7 per language: JA, KO, ZH, EN) sorted by XP descending. Real learners always take absolute priority, ensuring the Top 3 podium (Gold, Silver, Bronze) and list are always populated, lively, and competitive.
 
 ---
 

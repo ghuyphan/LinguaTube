@@ -548,3 +548,70 @@ test('Regression: POST /api/transcript does not throw ReferenceError or 500 for 
   const body = await res.json();
   assert.notEqual(body.error, 'Internal server error');
 });
+
+test('Leaderboard: mergeWithSeedLeaderboard correctly merges real users and baseline seeds', async () => {
+  const { mergeWithSeedLeaderboard, SEED_LEADERBOARD } = await import('../functions-src/api/leaderboard.js');
+
+  // 1. Baseline seeds count
+  assert.equal(SEED_LEADERBOARD.length, 28, 'Should have 28 baseline seeds across 4 languages');
+
+  // 2. Pure seeds test (empty real users)
+  const allSeeds = mergeWithSeedLeaderboard([], 'all', 50);
+  assert.equal(allSeeds.length, 28, 'Should return all 28 seeds for all');
+  assert.equal(allSeeds[0].rank, 1, 'Top seed should be rank 1');
+  assert.equal(allSeeds[0].xp >= allSeeds[1].xp, true, 'Seeds must be strictly sorted by XP descending');
+
+  // 3. Language filtering ensures podium is always populated
+  for (const lang of ['ja', 'ko', 'zh', 'en']) {
+    const langList = mergeWithSeedLeaderboard([], lang, 50);
+    assert.ok(langList.length >= 7, `Language ${lang} must have at least 7 learners to support podium and list`);
+    assert.equal(langList[0].rank, 1);
+    assert.equal(langList[1].rank, 2);
+    assert.equal(langList[2].rank, 3);
+  }
+
+  // 4. Real user integration test
+  const realUser = {
+    userId: 'real_user_huy',
+    name: 'Phan Gia Huy',
+    avatar: 'https://example.com/avatar.png',
+    xp: 1115,
+    level: 4,
+    streak: 5,
+    badgesCount: 3,
+    targetLang: 'ja',
+    country: '🇻🇳'
+  };
+
+  // In JA: Sakura Ito has 1,420 XP, Daiki Watanabe has 850 XP. Real user with 1,115 XP should be #7
+  const jaMerged = mergeWithSeedLeaderboard([realUser], 'ja', 50);
+  const foundUserJa = jaMerged.find(u => u.userId === 'real_user_huy');
+  assert.ok(foundUserJa, 'Real user must be present in JA leaderboard');
+  assert.equal(foundUserJa.name, 'Phan Gia Huy');
+  assert.equal(foundUserJa.xp, 1115);
+  assert.equal(foundUserJa.rank, 7, 'User with 1,115 XP should rank #7 in JA (behind 6 higher XP seeds)');
+  assert.equal(jaMerged.length, 8, 'Total JA learners should be 7 seeds + 1 real user = 8');
+
+  // In ALL: User should be ranked correctly among all 28 seeds + 1 real user
+  const allMerged = mergeWithSeedLeaderboard([realUser], 'all', 50);
+  const foundUserAll = allMerged.find(u => u.userId === 'real_user_huy');
+  assert.ok(foundUserAll, 'Real user must be present in ALL leaderboard');
+  assert.equal(foundUserAll.rank, 24, 'User with 1,115 XP should rank #24 among all 28 seeds (23 seeds have > 1,115 XP)');
+  assert.equal(allMerged.length, 29, 'Total learners should be 28 seeds + 1 real user = 29');
+
+  // 5. High-XP user can take #1 rank
+  const championUser = {
+    userId: 'champ_1',
+    name: 'Top Learner',
+    avatar: '',
+    xp: 20000,
+    level: 15,
+    streak: 100,
+    badgesCount: 20,
+    targetLang: 'ja'
+  };
+  const champMerged = mergeWithSeedLeaderboard([championUser], 'ja', 50);
+  assert.equal(champMerged[0].userId, 'champ_1', 'Champion user with 20,000 XP must take #1 rank');
+  assert.equal(champMerged[0].rank, 1);
+});
+

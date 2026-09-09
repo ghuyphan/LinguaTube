@@ -19,46 +19,36 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.1.0',
+    version: '1.1.1',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Smooth Infinite Scroll Feed: Replaced jarring card skeletons with a sleek, centered YouTube-style loading spinner when browsing recommended videos',
-            'Unified Global Spinner Component: Introduced standardized `.spinner` design tokens with multiple size and theme variants across the app',
-            'Full-Transcript Dual Subtitles Streaming: Dual subtitles now progressively stream and translate 100% of the video\'s transcript in the background with zero playback lag',
-            'Instant Video Level Detection: Language proficiency levels (JLPT, HSK, TOPIK, CEFR) now resolve instantaneously with zero shimmer delay via server caching and stratified sampling',
-            'Adaptive Subtitle Display & Seek Preemption: Responsive multi-line height expansion for lengthy cues and instant seek preemption for immediate subtitle response'
+            'Global Leaderboard Community: Merged real learners with 28 active baseline learners across Japanese, Korean, Chinese, and English, keeping the board and podium vibrant',
+            'Accurate Competitive Ranking: XP-based rank resolution dynamically places learners relative to the entire community, resolving the isolated single-user display',
+            'Instant Score Sync & Refresh: Hardened private cache controls ensure clicking the sync button immediately delivers real-time XP and updated ranks'
         ],
         vi: [
-            'Cuộn vô tận mượt mà trên trang Video: Thay thế các khung xương giật cục bằng vòng xoay tải trang mượt mà chuẩn YouTube khi cuộn xem thêm video',
-            'Bộ thành phần Spinner toàn cục chuẩn hóa: Thêm class thiết kế `.spinner` dùng chung với nhiều kích cỡ và biến thể giao diện cho toàn bộ ứng dụng',
-            'Dịch toàn bộ phụ đề song ngữ ngầm: Phụ đề song ngữ tự động dịch tuần tự 100% toàn bộ video dưới nền mượt mà mà không gây khựng phát video',
-            'Xác định cấp độ video tức thì: Đánh giá độ khó (JLPT, HSK, TOPIK, CEFR) hiển thị ngay lập tức không cần chờ nhờ bộ nhớ đệm máy chủ và thuật toán lấy mẫu phân tầng',
-            'Khung phụ đề thích ứng & ưu tiên tua: Tự động co giãn chiều cao linh hoạt cho các câu dài và hủy công việc ngầm để ưu tiên câu hiện tại khi tua video'
+            'Cộng đồng bảng xếp hạng toàn cầu: Kết hợp người học thực tế cùng 28 bạn học chuẩn mực trên 4 ngôn ngữ (Nhật, Hàn, Trung, Anh), giúp bục vinh quang Top 3 luôn sôi động',
+            'Xếp hạng điểm số chuẩn xác: Tính toán thứ hạng linh hoạt theo tổng XP, khắc phục hoàn toàn lỗi bảng xếp hạng chỉ hiển thị duy nhất 1 người',
+            'Đồng bộ & làm mới điểm số tức thì: Tối ưu hóa bộ nhớ đệm riêng tư giúp nút đồng bộ lập tức cập nhật điểm XP và thứ hạng mới nhất'
         ],
         ja: [
-            '動画フィードの無限スクロール改善：おすすめ動画のスクロール時に発生していたプレースホルダーのチラつきを解消し、YouTube準拠の滑らかな中央スピナーを導入',
-            '統一グローバルスピナーコンポーネント：アプリ全体で再利用可能なサイズ・テーマ対応の標準`.spinner`コンポーネントを追加',
-            '全文デュアル字幕のバックグラウンドストリーミング：再生を妨げることなく、動画全体の字幕をバックグラウンドで100%翻訳・キャッシュ',
-            '動画レベルの即時表示：サーバーキャッシュと階層化サンプリングにより、JLPT/HSK/TOPIK/CEFRレベル判定が待機時間ゼロで瞬時に完了',
-            '可変字幕レイアウトとシーク優先処理：長文に追従する自動伸縮フレームと、シーク時の即時字幕レスポンスを実現'
+            'グローバルリーダーボードのコミュニティ拡充：日本語・韓国語・中国語・英語の28名の基準学習者と実ユーザーを統合し、表彰台と順位表を常に活性化',
+            '正確なXPランキング算出：全体のXP分布に基づき相対順位を動的に算出し、ユーザーが1名のみ孤立表示される不具合を解消',
+            '即時スコア同期と更新：プライベートキャッシュ制御を適用し、更新ボタンを押した際に最新のXPと順位を即座に反映'
         ],
         ko: [
-            '동영상 피드 무한 스크롤 개선: 추천 영상 스크롤 시 깜빡이던 스켈레톤 카드를 유튜브 스타일의 깔끔한 중앙 로딩 스피너로 교체',
-            '통합 글로벌 스피너 컴포넌트: 다양한 크기와 테마를 지원하는 재사용 가능한 표준 `.spinner` 디자인 토큰 추가',
-            '전체 자막 백그라운드 번역 스트리밍: 재생 중단 없이 영상 전체의 100% 자막을 백그라운드에서 순차 번역 및 캐싱',
-            '비디오 난이도 레벨 즉각 판정: 서버 캐싱과 계층화 샘플링을 통해 JLPT/HSK/TOPIK/CEFR 레벨을 지연 없이 즉시 표시',
-            '유연한 반응형 자막 및 시크 즉각 반응: 긴 문장 자동 높이 조절 및 탐색 시 백그라운드 작업을 전환하여 즉시 자막 제공'
+            '글로벌 리더보드 커뮤니티 강화: 일본어·한국어·중국어·영어의 28명 기준 학습자와 실제 학습자를 통합하여 항상 활기찬 시상대와 순위표 제공',
+            '정확한 XP 기반 순위 산출: 전체 학습자 데이터에 기반하여 상대적 순위를 동적으로 계산하고 혼자만 표시되던 버그 완벽 해결',
+            '실시간 점수 동기화 및 새로고침: 비공개 캐시 제어를 적용하여 동기화 버튼 클릭 시 최신 XP와 순위를 즉시 반영'
         ],
         zh: [
-            '视频推荐流无限滚动体验升级：彻底消除加载更多时的骨架屏跳跃，引入对齐YouTube的原生居中平滑加载环',
-            '全局统一Spinner组件：规范化新增支持多尺寸与主题变体的标准`.spinner`设计样式',
-            '全篇双语字幕后台流式翻译：在不影响播放流畅度的情况下，后台自动递进完成全片100%字幕翻译并沉淀云端缓存',
-            '视频语言等级秒级判定：结合服务端缓存与分层抽样算法，JLPT/HSK/TOPIK/CEFR语言等级瞬间呈现，无需等待',
-            '自适应字幕高度排版与进度抢占：长文动态伸展防遮挡，进度条拖动抢先响应极速交付字幕'
+            '全球排行榜社区活力升级：融合真实学员与覆盖日、韩、中、英四种语言的28位基准学员，确保领奖台与榜单始终充满活力',
+            '精准XP经验值竞争排名：基于全员经验值动态计算相对名次，彻底修复之前只显示单个用户的异常',
+            '实时经验值同步与刷新：优化私有缓存控制，点击同步按钮即刻获取最新经验值与实时排名'
         ]
     }
 };
