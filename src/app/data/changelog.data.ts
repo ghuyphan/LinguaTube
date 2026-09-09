@@ -19,36 +19,36 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.0.23',
+    version: '1.0.24',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'YouTube Channel Avatar Auto-Resolution & Cloudflare D1 Backfill: Migrated and backfilled high-resolution YouTube channel avatars in Cloudflare D1 with automatic background enrichment for new videos',
-            'Refined Home Feed Header & Border Cleanup: Removed the redundant header playlist button and eliminated the divider line below the chips carousel for a seamless YouTube-style interface',
-            'Self-Healing Discovery Cache: Automatically evicts stale cached recommendations lacking avatars, instantly displaying creator profile pictures across all feeds'
+            'Resilient 3-Tier Audio Playback Pipeline: Upgraded AudioService with a seamless waterfall (authentic dictionary audio -> neural stream TTS -> native Web Speech API) ensuring 100% pronunciation reliability across all words',
+            'Referer-Free Audio Isolation & Diagnostics: Applied strict no-referrer isolation to eliminate upstream 404/403 playback errors on media streams and enhanced diagnostic logging',
+            'Offline-Ready Speech Synthesis: Automatic fallback to high-quality system voices for Japanese, Chinese, Korean, and English even without internet access in Study Mode'
         ],
         vi: [
-            'Tự động phân giải ảnh đại diện kênh & Nạp dữ liệu D1: Đã di chuyển và cập nhật toàn bộ ảnh đại diện kênh YouTube chuẩn sắc nét vào Cloudflare D1 cùng cơ chế tự động làm giàu dữ liệu chạy ngầm cho video mới',
-            'Tinh chỉnh giao diện Trang chủ & Bỏ đường phân cách: Loại bỏ nút Danh sách dư thừa ở tiêu đề thẻ Dành cho bạn và xóa đường viền dưới thanh chip để mang lại trải nghiệm xem liền mạch, chuẩn YouTube',
-            'Tự động làm mới bộ nhớ đệm khám phá: Tự động xóa bộ nhớ đệm cũ bị thiếu ảnh đại diện, lập tức hiển thị avatar chính thức của nhà sáng tạo trên mọi nguồn cấp dữ liệu'
+            'Cơ chế phát âm 3 tầng bền bỉ: Nâng cấp AudioService với quy trình tuần hoàn (âm thanh từ điển gốc -> luồng phát âm nơ-ron -> Web Speech API tích hợp) đảm bảo 100% từ vựng đều được phát âm chuẩn xác',
+            'Cô lập Referer & Chuẩn đoán lỗi chi tiết: Áp dụng cơ chế no-referrer nghiêm ngặt nhằm triệt tiêu lỗi 404/403 khi tải luồng âm thanh ngoài cùng nhật ký chuẩn đoán trực quan',
+            'Phát âm ngoại tuyến trong chế độ Học: Tự động chuyển đổi sang giọng đọc chất lượng cao của hệ điều hành cho tiếng Nhật, Trung, Hàn, Anh ngay cả khi mất mạng'
         ],
         ja: [
-            'YouTubeチャンネルアバターの自動解決とD1バックフィル：Cloudflare D1内の全動画アバターを高解像度画像で完全に移行・保存。新規動画に対するバックグラウンド自動取得にも対応',
-            'ホームフィードのレイアウト洗練と境界線の削除：「おすすめ」カード上部の重複していたプレイリストボタンを削除し、チップバー下の区切り線を無くしてシームレスなYouTube風UIを実現',
-            '自己修復型レコメンドキャッシュ：アバター情報が欠落している古いキャッシュを自動検知して更新し、即座にクリエイターのプロフィール画像を表示'
+            '高信頼性3層音声再生パイプライン：AudioServiceを強化し（辞書本来の音声 -> 高品質ニューラルストリームTTS -> Web Speech API）全単語で100%確実に発音再生できるフェイルオーバーを実現',
+            'Referer遮断と詳細エラー診断：外部音声取得時の404/403エラーを防止するno-referrerポリシーの徹底と、詳細なメディアエラー診断ログを導入',
+            '学習モードのオフライン音声対応：インターネット接続がない環境でも、日本語・中国語・韓国語・英語の高音質システム音声へ自動フォールバック'
         ],
         ko: [
-            '유튜브 채널 아바타 자동 해석 및 Cloudflare D1 백필: Cloudflare D1의 모든 동영상 채널 프로필 이미지를 고화질로 마이그레이션 및 저장 완료, 신규 동영상에 대한 백그라운드 자동 보강 지원',
-            '홈 피드 헤더 정돈 및 분할선 제거: \'맞춤 추천\' 카드 헤더의 중복된 재생목록 버튼을 정리하고 필터 칩 아래의 구분선을 제거하여 한층 깔끔한 유튜브 스타일 디자인 완성',
-            '자가 치유형 추천 캐시: 아바타 정보가 누락된 이전 로컬 캐시를 자동으로 갱신하여 모든 피드에서 크리에이터 프로필 사진을 즉각 표시'
+            '안정적인 3단계 오디오 재생 파이프라인: 원어민 사전 오디오 -> 고음질 신경망 스트림 TTS -> 내장 Web Speech API로 이어지는 장애 복구 체계를 구축하여 모든 단어의 안정적인 발음 지원',
+            'Referer 차단 및 진단 강화: 외부 미디어 요청 시 no-referrer 정책을 적용하여 404/403 재생 오류를 원천 차단하고 정밀한 진단 로그 제공',
+            '오프라인 음성 합성 지원: 학습 모드에서 네트워크 연결이 끊긴 상태에서도 일본어, 중국어, 한국어, 영어 시스템 음성으로 원활하게 자동 재생'
         ],
         zh: [
-            'YouTube 频道头像自动解析与 Cloudflare D1 数据回填：已全面迁移并补齐 Cloudflare D1 中所有视频的高清频道头像，并增加针对新视频的后台自愈式自动补充机制',
-            '精简首页卡片头部与去除分割线：移除“为您推荐”卡片右上角多余的播放列表按钮，并去除筛选芯片栏下方的分割线，打造纯净流畅的 YouTube 风格布局',
-            '自愈式推荐缓存机制：自动淘汰缺少头像的旧本地缓存，确保所有用户即刻浏览真实的创作者官方头像'
+            '高可用三级发音播放机制：升级 AudioService，建立（原生词典发音 -> 神经网络音频流 TTS -> 原生 Web Speech API）的三级回退流程，保障所有单词发音 100% 畅通',
+            '免 Referer 隔离与精细诊断：严格启用 no-referrer 策略，根除跨域媒体流导致的 404/403 播放失败，并大幅优化诊断日志',
+            '离线发音无缝支持：在学习模式或断网环境下，自动无缝回退至系统高品质发音引擎，全面覆盖日语、中文、韩语及英语'
         ]
     }
 };

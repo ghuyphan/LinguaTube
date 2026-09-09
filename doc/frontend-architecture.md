@@ -239,7 +239,7 @@ graph TD
   - Supports deep linking via URL query parameters (`/dictionary?q=...` for word search, `/dictionary?tab=vocab` for notebook view).
   - Standalone full-screen dictionary search panel with isolated reactive signals (`screenQuery`, `screenEntries`).
   - Multi-entry disambiguation tabs for queries matching multiple homonyms.
-  - Authentic dictionary audio pronunciation via `AudioService` (HTML5 `Audio` elements with animated speaker buttons, zero browser TTS dependencies).
+  - Authentic dictionary audio pronunciation via `AudioService` (HTML5 `Audio` elements with animated speaker buttons, resilient 3-tier fallback to neural stream and native `speechSynthesis`).
   - Integrated grammar pattern matches from `GrammarService`.
   - Language-scoped search history (`linguatube_recent_searches_${lang}`) and level option picker bottom-sheet in result headers.
   - Embedded `VocabularyListComponent` with search, level filter chips (`All`, `New`, `Learning`, `Known`, `Ignored`), inline dictionary audio playback, and export (JSON/Anki) / import capabilities.

@@ -12,12 +12,23 @@ export class AudioService {
   private dict = inject(DictionaryService);
 
   private activeAudio: HTMLAudioElement | null = null;
+  private activeUtterance: SpeechSynthesisUtterance | null = null;
   readonly currentPlayingWord = signal<string | null>(null);
   private playRequestId = 0;
 
   // In-memory cache for resolved audio URLs to avoid re-fetching (bounded to 500 items)
   private readonly MAX_CACHE_SIZE = 500;
   private audioUrlCache = new Map<string, string>();
+
+  constructor() {
+    // Pre-warm SpeechSynthesis voices if running in browser
+    if (isPlatformBrowser(this.platformId) && typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.getVoices();
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+  }
 
   private setCachedAudioUrl(key: string, url: string): void {
     if (this.audioUrlCache.size >= this.MAX_CACHE_SIZE) {
@@ -41,16 +52,18 @@ export class AudioService {
       this.activeAudio.load();
       this.activeAudio = null;
     }
+    if (isPlatformBrowser(this.platformId) && typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    this.activeUtterance = null;
     this.currentPlayingWord.set(null);
   }
 
   /**
-   * Play authentic pronunciation audio for a word:
-   * 1. If explicit audioUrl provided -> play immediately
-   * 2. If cached in audioUrlCache -> play immediately
-   * 3. If dictionary entry has audio -> play and cache
-   * 4. Fallback: stream high-fidelity neural audio from translate_tts?client=tw-ob
-   * Zero browser window.speechSynthesis used!
+   * Resilient, multi-tiered pronunciation playback:
+   * Tier 1: Authentic native dictionary recording (explicit URL, cache, or dictionary lookup)
+   * Tier 2: High-fidelity neural audio stream (translate_tts with no-referrer policy)
+   * Tier 3: Browser Web Speech API (speechSynthesis) offline-ready fallback
    */
   async playWord(
     word: string,
@@ -71,50 +84,46 @@ export class AudioService {
     const currentId = ++this.playRequestId;
     this.currentPlayingWord.set(cleanWord);
 
-    try {
-      const audioUrl = await this.resolveAudioUrl(cleanWord, language, providedAudioUrl);
-      if (this.playRequestId !== currentId) return;
+    const isCurrent = () => this.playRequestId === currentId;
+    const cacheKey = `${language}:${cleanWord}`;
 
-      if (!audioUrl) {
-        this.currentPlayingWord.set(null);
-        return;
+    // --- TIER 1: Authentic native recording ---
+    let candidateUrl = (providedAudioUrl && (providedAudioUrl.startsWith('https://') || providedAudioUrl.startsWith('/')))
+      ? providedAudioUrl
+      : this.audioUrlCache.get(cacheKey);
+
+    if (!candidateUrl) {
+      try {
+        const entry = await firstValueFrom(this.dict.lookup(cleanWord, language).pipe(timeout(2000)));
+        if (entry?.audio && (entry.audio.startsWith('https://') || entry.audio.startsWith('/'))) {
+          candidateUrl = entry.audio;
+        }
+      } catch {
+        // Lookup timeout or error, smoothly proceed to fallback tiers
       }
+    }
 
-      await this.playAudioUrl(audioUrl, cleanWord, currentId);
-    } catch (err) {
-      console.warn('[AudioService] Audio playback failed:', err);
-      if (this.playRequestId === currentId) {
-        this.currentPlayingWord.set(null);
+    if (!isCurrent()) return;
+
+    if (candidateUrl) {
+      try {
+        await this.playAudioUrl(candidateUrl, cleanWord, currentId);
+        if (isCurrent()) {
+          this.setCachedAudioUrl(cacheKey, candidateUrl);
+          return;
+        }
+      } catch (err) {
+        // Evict failed URL from cache to avoid repeated playback failures
+        if (this.audioUrlCache.get(cacheKey) === candidateUrl) {
+          this.audioUrlCache.delete(cacheKey);
+        }
+        console.info(`[AudioService] Authentic audio failed for "${cleanWord}", falling back to stream TTS:`, (err as Error)?.message || err);
       }
     }
-  }
 
-  private async resolveAudioUrl(
-    word: string,
-    language: SupportedLearningLanguage,
-    providedUrl?: string
-  ): Promise<string> {
-    if (providedUrl && (providedUrl.startsWith('https://') || providedUrl.startsWith('/'))) {
-      return providedUrl;
-    }
+    if (!isCurrent()) return;
 
-    const cacheKey = `${language}:${word}`;
-    if (this.audioUrlCache.has(cacheKey)) {
-      return this.audioUrlCache.get(cacheKey)!;
-    }
-
-    // Try dictionary lookup to get authentic recorded pronunciation
-    try {
-      const entry = await firstValueFrom(this.dict.lookup(word, language).pipe(timeout(2500)));
-      if (entry?.audio && (entry.audio.startsWith('https://') || entry.audio.startsWith('/'))) {
-        this.setCachedAudioUrl(cacheKey, entry.audio);
-        return entry.audio;
-      }
-    } catch {
-      // Lookup timeout or failure, proceed to high-fidelity audio stream fallback
-    }
-
-    // High-fidelity neural dictionary TTS audio fallback (client=tw-ob MP3 stream)
+    // --- TIER 2: High-fidelity neural audio stream with no-referrer ---
     const tlMap: Record<SupportedLearningLanguage, string> = {
       ja: 'ja',
       zh: 'zh-CN',
@@ -122,37 +131,179 @@ export class AudioService {
       en: 'en'
     };
     const tl = tlMap[language] || 'ja';
-    const fallbackUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${tl}&q=${encodeURIComponent(word)}`;
-    this.setCachedAudioUrl(cacheKey, fallbackUrl);
-    return fallbackUrl;
+    const streamUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${tl}&q=${encodeURIComponent(cleanWord)}`;
+
+    try {
+      await this.playAudioUrl(streamUrl, cleanWord, currentId);
+      if (isCurrent()) {
+        this.setCachedAudioUrl(cacheKey, streamUrl);
+        return;
+      }
+    } catch (err) {
+      console.info(`[AudioService] Stream TTS failed for "${cleanWord}", falling back to SpeechSynthesis:`, (err as Error)?.message || err);
+    }
+
+    if (!isCurrent()) return;
+
+    // --- TIER 3: Browser Web Speech API (speechSynthesis) ---
+    try {
+      await this.playSpeechSynthesis(cleanWord, language, currentId);
+      return;
+    } catch (err) {
+      console.warn(`[AudioService] All audio playback methods failed for "${cleanWord}":`, (err as Error)?.message || err);
+    }
+
+    if (isCurrent()) {
+      this.currentPlayingWord.set(null);
+    }
   }
 
   private playAudioUrl(url: string, word: string, requestId: number): Promise<void> {
     return new Promise((resolve, reject) => {
-      const audio = new Audio(url);
+      const audio = new Audio();
+      // Enforce no-referrer so cross-origin media endpoints do not reject based on Referer headers
+      audio.setAttribute('referrerpolicy', 'no-referrer');
+      (audio as unknown as { referrerPolicy?: string }).referrerPolicy = 'no-referrer';
       this.activeAudio = audio;
 
+      let settled = false;
+      let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
+      const cleanup = () => {
+        if (!settled) {
+          settled = true;
+          if (timeoutId) {
+            clearTimeout(timeoutId);
+            timeoutId = null;
+          }
+          audio.onended = null;
+          audio.onerror = null;
+          if (this.activeAudio === audio) {
+            this.activeAudio = null;
+          }
+        }
+      };
+
+      // Failsafe timeout: if audio fails to play or load within 4000ms, abort and fall back
+      timeoutId = setTimeout(() => {
+        cleanup();
+        audio.pause();
+        audio.removeAttribute('src');
+        reject(new Error('Audio playback timed out after 4000ms'));
+      }, 4000);
+
       audio.onended = () => {
+        cleanup();
         if (this.playRequestId === requestId && this.currentPlayingWord() === word) {
           this.currentPlayingWord.set(null);
-        }
-        if (this.activeAudio === audio) {
-          this.activeAudio = null;
         }
         resolve();
       };
 
       audio.onerror = (e) => {
+        cleanup();
         if (this.playRequestId === requestId && this.currentPlayingWord() === word) {
           this.currentPlayingWord.set(null);
         }
-        if (this.activeAudio === audio) {
-          this.activeAudio = null;
-        }
-        reject(e);
+        const mediaErr = audio.error;
+        const msg = mediaErr
+          ? `MediaError ${mediaErr.code} (${this.getMediaErrorMessage(mediaErr.code)}): ${mediaErr.message || 'load failed'}`
+          : (e instanceof Error ? e.message : 'Media element error');
+        reject(new Error(msg));
       };
 
-      audio.play().catch(reject);
+      audio.src = url;
+      audio.play().catch(err => {
+        cleanup();
+        reject(err);
+      });
     });
+  }
+
+  private playSpeechSynthesis(word: string, language: SupportedLearningLanguage, requestId: number): Promise<void> {
+    return new Promise((resolve, reject) => {
+      if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+        reject(new Error('SpeechSynthesis is not supported in this environment'));
+        return;
+      }
+
+      try {
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(word);
+        this.activeUtterance = utterance;
+
+        const langMap: Record<SupportedLearningLanguage, string> = {
+          ja: 'ja-JP',
+          zh: 'zh-CN',
+          ko: 'ko-KR',
+          en: 'en-US'
+        };
+        const bcp47 = langMap[language] || 'ja-JP';
+        utterance.lang = bcp47;
+        utterance.rate = 0.95;
+        utterance.pitch = 1.0;
+
+        const voices = window.speechSynthesis.getVoices();
+        if (voices?.length > 0) {
+          const langPrefix = language === 'zh' ? 'zh' : language;
+          const matchingVoices = voices.filter(v =>
+            v.lang.toLowerCase().replace('_', '-').startsWith(langPrefix)
+          );
+          if (matchingVoices.length > 0) {
+            const bestVoice = matchingVoices.find(v =>
+              /natural|enhanced|premium|siri|google/i.test(v.name)
+            ) || matchingVoices.find(v => v.default) || matchingVoices[0];
+            if (bestVoice) {
+              utterance.voice = bestVoice;
+            }
+          }
+        }
+
+        let settled = false;
+        const cleanup = () => {
+          if (!settled) {
+            settled = true;
+            if (this.activeUtterance === utterance) {
+              this.activeUtterance = null;
+            }
+          }
+        };
+
+        utterance.onend = () => {
+          cleanup();
+          if (this.playRequestId === requestId && this.currentPlayingWord() === word) {
+            this.currentPlayingWord.set(null);
+          }
+          resolve();
+        };
+
+        utterance.onerror = (e) => {
+          cleanup();
+          if (this.playRequestId === requestId && this.currentPlayingWord() === word) {
+            this.currentPlayingWord.set(null);
+          }
+          if (e.error === 'canceled' || e.error === 'interrupted') {
+            resolve();
+          } else {
+            reject(new Error(`SpeechSynthesis error: ${e.error}`));
+          }
+        };
+
+        window.speechSynthesis.speak(utterance);
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  private getMediaErrorMessage(code: number): string {
+    switch (code) {
+      case 1: return 'MEDIA_ERR_ABORTED';
+      case 2: return 'MEDIA_ERR_NETWORK';
+      case 3: return 'MEDIA_ERR_DECODE';
+      case 4: return 'MEDIA_ERR_SRC_NOT_SUPPORTED';
+      default: return 'MEDIA_ERR_UNKNOWN';
+    }
   }
 }

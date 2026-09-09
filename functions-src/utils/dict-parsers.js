@@ -150,9 +150,9 @@ export function parseMazii(response) {
         const partOfSpeech = entry.means?.[0]?.kind || entry.type || '';
         const level = entry.level ? parseInt(String(entry.level).replace('N', '')) : null;
 
-        let audio = entry.audio || entry.phonetic_audio || entry.mobile_audio || '';
+        let audio = entry.audio || entry.phonetic_audio || '';
         if (audio && !audio.startsWith('http')) {
-            audio = `https://data.mazii.net/audios/${audio}`;
+            audio = '';
         }
 
         return { word, reading, romanization, definitions, partOfSpeech, level, ...(audio ? { audio } : {}) };

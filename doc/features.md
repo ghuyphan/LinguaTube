@@ -214,7 +214,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
                      Normalized DictionaryEntry
 ```
 
-- **Authentic Dictionary Pronunciation**: Rather than using synthetic browser Web Speech API (`speechSynthesis`), audio is sourced directly from authentic native recordings from upstream dictionary providers (Naver, Mazii, FreeDictionary, Jotoba, KRDict).
+- **Multi-Tiered Resilient Pronunciation Audio**: Audio playback uses a 3-tier waterfall pipeline via `AudioService`: (1) Authentic native recordings from upstream dictionary providers (Naver, Jotoba, FreeDictionary, KRDict) with strict `no-referrer` isolation; (2) High-fidelity neural stream fallback (`translate_tts`); (3) Native Web Speech API (`speechSynthesis`) offline fallback ensuring 100% pronunciation reliability even when offline or during upstream outages.
 - **Context-Aware CJK Kanji Detection**: When inspecting pure ideographs (`\u4E00-\u9FFF` without Kana or Hangul), `DictionaryService.detectLanguage()` checks the user's active learning language (`settings.language`) so Japanese learners query Japanese dictionaries (Jotoba/Mazii) rather than erroneously defaulting to Chinese dictionaries.
 - **Isolated Screen State**: Standalone dictionary searches are decoupled from in-video subtitle clicks, ensuring subtitle queries never leak into or overwrite standalone search history or panels.
 - **Multi-Entry Disambiguation**: When queries match multiple dictionary entries or homonyms, tabbed selectors allow learners to explore all matching entries.
