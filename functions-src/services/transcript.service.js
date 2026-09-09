@@ -7,6 +7,7 @@ import {
     saveVideoLanguages,
     addVideoLanguage,
     addVideoLanguages,
+    addSubLanguage,
     getVideoDuration,
     markNoTranscript
 } from '../data/video-info-db.js';
@@ -24,7 +25,7 @@ import {
 } from '../data/transcript-r2.js';
 
 import { cleanTranscriptSegments, normalizeLanguageCode } from '../utils/transcript-utils.js';
-import { fetchYouTubeDuration, fetchYouTubeVideoDetails, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
+import { fetchYouTubeDuration, fetchYouTubeVideoDetails, resolveVideoChannelAvatar, getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig } from './diamond.service.js';
 
 const MAX_VIDEO_DURATION_SECONDS = 3 * 60 * 60; // 3 hours (native captions)
@@ -59,6 +60,7 @@ export class TranscriptService {
             // Found native captions -> Save to R2 & DB
             const savePromises = [
                 saveTranscriptToR2(r2, videoId, lang, cleanedSegments, nativeResult.source),
+                addSubLanguage(db, videoId, lang)
             ];
 
             const availableLangs = nativeResult.availableLangs?.length > 0 ? nativeResult.availableLangs : [lang];
@@ -78,7 +80,8 @@ export class TranscriptService {
                         options.channel || null,
                         false,
                         null,
-                        avatar
+                        avatar,
+                        [lang]
                     );
                 };
                 savePromises.push(saveLanguages());
@@ -177,7 +180,40 @@ export class TranscriptService {
             throw new Error(`VIDEO_TOO_LONG: Video (${Math.round(duration / 60)} min) exceeds the ${Math.round(maxDurationSec / 60)} minute limit for ${tier.toUpperCase()} tier.`);
         }
 
-        // 2. Check for existing pending job
+        // 2. Check if a transcript already exists in R2 (avoid duplicate diamond charges)
+        let existingR2 = await getTranscriptFromR2(r2, videoId, lang);
+        let existingLang = lang;
+        if (!existingR2?.segments?.length) {
+            const known = await getVideoLanguages(db, videoId);
+            if (known?.availableLanguages?.length > 0) {
+                for (const altLang of known.availableLanguages) {
+                    if (altLang === lang) continue;
+                    const alt = await getTranscriptFromR2(r2, videoId, altLang);
+                    if (alt?.segments?.length > 0) {
+                        existingR2 = alt;
+                        existingLang = altLang;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (existingR2?.segments?.length > 0) {
+            return {
+                status: 'done',
+                videoInfo: {
+                    videoId,
+                    language: existingLang,
+                    requestedLanguage: lang,
+                    segments: existingR2.segments,
+                    source: 'cache',
+                    sourceDetail: existingR2.source,
+                    availableLanguages: params.availableLanguages
+                }
+            };
+        }
+
+        // 3. Check for existing pending job
         const existingJob = await getPendingJob(db, videoId);
         if (existingJob?.result_url) {
             return await this.pollAIJob(context, { ...params, resultUrl: existingJob.result_url });
@@ -235,21 +271,23 @@ export class TranscriptService {
             waitUntil(cleanupStaleJobs(db).catch(() => {}));
         }
 
-        // 6. Start polling
-        return await this.pollAIJob(context, { ...params, resultUrl, diamondInfo: updatedDiamondInfo, requiredDiamonds });
+        // 6. Return processing status immediately so client polling takes over smoothly
+        // without keeping long-lived edge connections open and hitting gateway timeouts
+        return {
+            status: 'processing',
+            resultUrl,
+            videoId,
+            availableLanguages,
+            diamondInfo: updatedDiamondInfo
+        };
     }
 
     /**
-     * Poll Gladia provider for results
+     * Poll Gladia provider for results (fast, non-blocking check for client polling loop)
      */
     async pollAIJob(context, params) {
-        const { db, r2, cache, waitUntil } = context;
-        let { videoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo } = params;
-
-        const startTime = Date.now();
-        // Upgraded for Workers Paid: poll up to 55s (stopping at 50s) so most Gladia jobs finish in a single request
-        const MAX_POLL_DURATION_MS = 55000;
-        let delay = 3000;
+        const { db, r2, cache, waitUntil, env } = context;
+        let { videoId, lang, resultUrl, availableLanguages, diamondInfo } = params;
 
         if (resultUrl) {
             let mappedVideoId = null;
@@ -275,106 +313,130 @@ export class TranscriptService {
             }
         }
 
-        while (Date.now() - startTime < MAX_POLL_DURATION_MS) {
-            // Stop early to keep comfortably under Cloudflare edge 100s limit
-            if (Date.now() - startTime > MAX_POLL_DURATION_MS - 5000) {
-                return { status: 'processing', resultUrl, videoId };
-            }
-
-            await new Promise(resolve => setTimeout(resolve, delay));
-
+        try {
+            let resultData;
             try {
-                const resultData = await this.gladiaProvider.checkJobStatus(resultUrl);
-
-                if (resultData.status === 'done') {
-                    const utterances = resultData.result?.transcription?.utterances || [];
-                    const segments = utterances.map((utt, index) => ({
-                        id: index,
-                        text: utt.text?.trim() || '',
-                        start: utt.start || 0,
-                        duration: (utt.end || 0) - (utt.start || 0)
-                    })).filter(s => s.text);
-
-                    const cleanedSegments = cleanTranscriptSegments(segments);
-                    const rawDetectedLang = resultData.result?.transcription?.languages?.[0] || lang;
-                    const detectedLang = normalizeLanguageCode(rawDetectedLang) || lang;
-
-                    if (videoId && cleanedSegments.length > 0) {
-                        const title = params.body?.title || null;
-                        const channel = params.body?.channel || null;
-                        const duration = params.body?.duration || null;
-                        let channelAvatar = params.body?.channelAvatar || null;
-
-                        const saveLanguages = async () => {
-                            if (!channelAvatar && db) {
-                                try {
-                                    channelAvatar = await resolveVideoChannelAvatar(videoId);
-                                } catch { }
-                            }
-                            if (title || channel || duration) {
-                                await saveVideoLanguages(db, videoId, [detectedLang], duration, title, channel, false, null, channelAvatar);
-                            } else {
-                                await addVideoLanguage(db, videoId, detectedLang);
-                            }
-                        };
-
-                        const saveOps = [
-                            saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai'),
-                            saveLanguages(),
-                            deletePendingJob(db, videoId)
-                        ];
-
-                        if (waitUntil) {
-                            waitUntil(Promise.allSettled(saveOps));
-                        } else {
-                            await Promise.allSettled(saveOps);
-                        }
-                    }
-
-                    return {
-                        status: 'done',
-                        videoInfo: {
-                            videoId,
-                            language: detectedLang,
-                            requestedLanguage: lang,
-                            segments: cleanedSegments,
-                            source: 'ai',
-                            sourceDetail: 'gladia',
-                            availableLanguages,
-                        }
-                    };
+                resultData = await this.gladiaProvider.checkJobStatus(resultUrl);
+            } catch (pollErr) {
+                if (pollErr.status && pollErr.status >= 400 && pollErr.status < 500) {
+                    console.error('[TranscriptService] Non-retryable Gladia error:', pollErr.status, pollErr.message);
+                    return { status: 'error', error: pollErr.message };
                 }
-
-                if (resultData.status === 'error') {
-                    if (videoId && db) {
-                        deletePendingJob(db, videoId).catch(() => {});
-                    }
-                    const clientId = params.clientId;
-                    if (clientId && this.diamondService) {
-                        const user = params.user || null;
-                        const refundAmount = params.requiredDiamonds || 1;
-                        this.diamondService.refundDiamond(clientId, context, env, user, refundAmount).catch(err => {
-                            console.error('[TranscriptService] Failed to refund diamonds on Gladia error:', err.message);
-                        });
-                    }
-                    throw new Error(`Gladia error: ${resultData.error_message || 'Transcription failed'}`);
-                }
-
-                // Still processing
-                delay = Math.min(delay * 2, 10000);
-
-            } catch (error) {
-                // Fail immediately on fatal client errors (e.g. 400, 401, 403, 404)
-                if (error.status && error.status >= 400 && error.status < 500) {
-                    console.error('[TranscriptService] Non-retryable Gladia error:', error.status, error.message);
-                    return { status: 'error', error: error.message };
-                }
-                // Network error, try again
-                delay = Math.min(delay * 2, 10000);
+                // Short 1s retry on transient network error
+                await new Promise(r => setTimeout(r, 1000));
+                resultData = await this.gladiaProvider.checkJobStatus(resultUrl);
             }
-        }
 
-        // Timeout
-        return { status: 'processing', resultUrl, videoId };
+            if (resultData.status === 'done') {
+                const utterances = resultData.result?.transcription?.utterances || [];
+                const segments = utterances.map((utt, index) => ({
+                    id: index,
+                    text: utt.text?.trim() || '',
+                    start: utt.start || 0,
+                    duration: (utt.end || 0) - (utt.start || 0)
+                })).filter(s => s.text);
+
+                const cleanedSegments = cleanTranscriptSegments(segments);
+                const rawDetectedLang = resultData.result?.transcription?.languages?.[0] || lang;
+                const detectedLang = normalizeLanguageCode(rawDetectedLang) || lang;
+
+                if (videoId && cleanedSegments.length > 0) {
+                    let title = params.body?.title || null;
+                    let channel = params.body?.channel || null;
+                    let duration = params.body?.duration || null;
+                    let channelAvatar = params.body?.channelAvatar || null;
+
+                    const saveLanguages = async () => {
+                        // If title or channel is missing, retrieve from D1 or YouTube oEmbed
+                        if ((!title || !channel) && db) {
+                            try {
+                                const existing = await getVideoLanguages(db, videoId);
+                                if (existing?.title) title = title || existing.title;
+                                if (existing?.channel) channel = channel || existing.channel;
+                                if (existing?.channelAvatar) channelAvatar = channelAvatar || existing.channelAvatar;
+                                if (existing?.durationSeconds) duration = duration || existing.durationSeconds;
+                            } catch { }
+                        }
+                        if ((!title || !channel) || !channelAvatar) {
+                            try {
+                                const meta = await getVideoMetadata(videoId);
+                                if (meta?.title) title = title || meta.title;
+                                if (meta?.author_name) channel = channel || meta.author_name;
+                                if (!channelAvatar && meta?.author_url) {
+                                    channelAvatar = await fetchChannelAvatar(meta.author_url);
+                                }
+                            } catch { }
+                        }
+                        if (!channelAvatar && db) {
+                            try { channelAvatar = await resolveVideoChannelAvatar(videoId); } catch { }
+                        }
+
+                        // Index under BOTH detected language and user requested language
+                        const saveLangs = Array.from(new Set([detectedLang, lang].filter(Boolean)));
+                        await saveVideoLanguages(db, videoId, saveLangs, duration, title, channel, false, null, channelAvatar, [detectedLang]);
+                    };
+
+                    const saveOps = [
+                        saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai'),
+                        addSubLanguage(db, videoId, detectedLang),
+                        saveLanguages(),
+                        deletePendingJob(db, videoId)
+                    ];
+
+                    if (waitUntil) {
+                        waitUntil(Promise.allSettled(saveOps));
+                    } else {
+                        await Promise.allSettled(saveOps);
+                    }
+                }
+
+                return {
+                    status: 'done',
+                    videoInfo: {
+                        videoId,
+                        language: detectedLang,
+                        requestedLanguage: lang,
+                        segments: cleanedSegments,
+                        source: 'ai',
+                        sourceDetail: 'gladia',
+                        availableLanguages,
+                    }
+                };
+            }
+
+            if (resultData.status === 'error') {
+                if (videoId && db) {
+                    deletePendingJob(db, videoId).catch(() => {});
+                }
+                const clientId = params.clientId;
+                if (clientId && this.diamondService) {
+                    const user = params.user || null;
+                    const refundAmount = params.requiredDiamonds || 1;
+                    this.diamondService.refundDiamond(clientId, context, env, user, refundAmount).catch(err => {
+                        console.error('[TranscriptService] Failed to refund diamonds on Gladia error:', err.message);
+                    });
+                }
+                return { status: 'error', error: `Gladia error: ${resultData.error_message || 'Transcription failed'}` };
+            }
+
+            // Still processing - return immediately to let client-side timer poll
+            return {
+                status: 'processing',
+                resultUrl,
+                videoId,
+                availableLanguages,
+                diamondInfo
+            };
+
+        } catch (error) {
+            console.error('[TranscriptService] Gladia poll exception:', error.message);
+            return {
+                status: 'processing',
+                resultUrl,
+                videoId,
+                availableLanguages,
+                diamondInfo
+            };
+        }
     }
 }

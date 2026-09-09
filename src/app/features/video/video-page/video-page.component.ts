@@ -354,7 +354,7 @@ export class VideoPageComponent implements OnInit {
         .filter(l => supportedCodes.has(l))
     ));
     if (normalized.length === 0) {
-      return currentLang && supportedCodes.has(currentLang) ? [currentLang] : ['ja'];
+      return [];
     }
     if (normalized.length <= 1) return normalized;
 

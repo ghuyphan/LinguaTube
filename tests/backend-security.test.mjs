@@ -291,6 +291,7 @@ test('getRecommendedVideosFromD1: queries and formats transcribed videos accurat
               duration_seconds: 420,
               levels: JSON.stringify({ ja: 'JLPT N4' }),
               available_languages: JSON.stringify(['ja', 'en']),
+              sub_languages: JSON.stringify(['ja', 'en']),
               updated_at: 1700000000
             },
             {
@@ -300,6 +301,7 @@ test('getRecommendedVideosFromD1: queries and formats transcribed videos accurat
               duration_seconds: 600,
               levels: '{}',
               available_languages: JSON.stringify(['ja']),
+              sub_languages: JSON.stringify(['ja']),
               updated_at: 1699999000
             }
           ]

@@ -84,19 +84,22 @@ export async function onRequestPost(context) {
         const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
 
         // Validation (Tier duration limits: Free/Anonymous <= 10m, Pro <= 20m, Premium <= 45m)
-        const maxAiDuration = tier === 'premium' ? 45 * 60 : (tier === 'pro' ? 20 * 60 : 10 * 60);
-        const validationError = await validateVideoRequest(cleanVideoId, lang, duration, preferAI ? 'whisper' : 'innertube', preferAI ? maxAiDuration : null);
-        if (validationError) {
-            return jsonResponse({
-                success: false,
-                videoId: cleanVideoId,
-                requestedLanguage: lang,
-                segments: [],
-                errorCode: validationError.error === 'video_too_long' ? 'VIDEO_TOO_LONG' : 'INVALID_REQUEST',
-                error: validationError.error,
-                maxDurationMinutes: validationError.maxDurationMinutes,
-                timing: elapsed()
-            }, 400);
+        // Skip heavy YouTube scraping on recurring poll requests
+        if (!resultUrl) {
+            const maxAiDuration = tier === 'premium' ? 45 * 60 : (tier === 'pro' ? 20 * 60 : 10 * 60);
+            const validationError = await validateVideoRequest(cleanVideoId, lang, duration, preferAI ? 'whisper' : 'innertube', preferAI ? maxAiDuration : null);
+            if (validationError) {
+                return jsonResponse({
+                    success: false,
+                    videoId: cleanVideoId,
+                    requestedLanguage: lang,
+                    segments: [],
+                    errorCode: validationError.error === 'video_too_long' ? 'VIDEO_TOO_LONG' : 'INVALID_REQUEST',
+                    error: validationError.error,
+                    maxDurationMinutes: validationError.maxDurationMinutes,
+                    timing: elapsed()
+                }, 400);
+            }
         }
 
         // Security: Early validation of resultUrl if provided
@@ -170,6 +173,7 @@ export async function onRequestPost(context) {
         if (resultUrl) {
             const aiRes = await transcriptService.pollAIJob(serviceContext, orchestratorParams);
             if (aiRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiRes });
+            if (aiRes.status === 'error') return jsonResponse({ success: false, errorCode: 'AI_JOB_FAILED', error: aiRes.error || 'AI transcription failed', ...diamondInfo, timing: elapsed() }, 400);
             return jsonResponse({ success: true, ...aiRes.videoInfo, ...diamondInfo, timing: elapsed() }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
         }
 
@@ -177,10 +181,25 @@ export async function onRequestPost(context) {
         // Step 1: Cache (R2 Hit)
         // -------------------------------------------------------------
         if (!forceRefresh) {
-            const cached = await getTranscriptFromR2(r2, cleanVideoId, lang);
+            let cached = await getTranscriptFromR2(r2, cleanVideoId, lang);
+            let responseLang = lang;
+
+            // Fallback: If requested language not in R2, check other available languages in R2 for this video!
+            if (!cached?.segments?.length && nativeLanguages?.length > 0) {
+                for (const altLang of nativeLanguages) {
+                    if (altLang === lang) continue;
+                    const altCached = await getTranscriptFromR2(r2, cleanVideoId, altLang);
+                    if (altCached?.segments?.length > 0) {
+                        cached = altCached;
+                        responseLang = altLang;
+                        break;
+                    }
+                }
+            }
+
             if (cached?.segments?.length > 0) {
                 return jsonResponse({
-                    success: true, videoId: cleanVideoId, language: lang, requestedLanguage: lang, segments: cached.segments,
+                    success: true, videoId: cleanVideoId, language: responseLang, requestedLanguage: lang, segments: cached.segments,
                     source: 'cache', sourceDetail: cached.source, availableLanguages, whisperAvailable: diamondInfo.diamonds > 0,
                     ...diamondInfo, timing: elapsed()
                 }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });

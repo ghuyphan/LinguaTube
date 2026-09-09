@@ -71,6 +71,7 @@ CREATE TABLE IF NOT EXISTS translation_meta (
 CREATE TABLE IF NOT EXISTS video_languages (
   video_id TEXT PRIMARY KEY,
   available_languages TEXT NOT NULL,
+  sub_languages TEXT DEFAULT '[]',
   has_auto_captions INTEGER DEFAULT 0,
   duration_seconds INTEGER,
   title TEXT,
@@ -82,6 +83,8 @@ CREATE TABLE IF NOT EXISTS video_languages (
 );
 
 CREATE INDEX IF NOT EXISTS idx_video_languages_updated ON video_languages(updated_at);
+CREATE INDEX IF NOT EXISTS idx_video_languages_sub ON video_languages(sub_languages);
+
 
 -- no_transcript_cache table for negative caching
 CREATE TABLE IF NOT EXISTS no_transcript_cache (

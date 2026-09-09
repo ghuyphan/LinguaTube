@@ -19,41 +19,36 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.0.25',
+    version: '1.0.27',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-09',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Dual Subtitles by Default: Interactive bilingual translated subtitles are now enabled out of the box for all supported videos',
-            'Edge Abuse & Quota Hardening: Strictly enforce server-verified video durations for AI transcriptions and reject live broadcasts',
-            'Cloudflare KV Optimization: Added L1 in-memory caches and throttled rate-limiter syncs to protect the daily KV write quota',
-            'Security Fortification: Closed path traversal in dev server and sanitized PocketBase filter queries across all repository layers'
+            'Verified Server Subtitles (sub_languages): "For You" recommendations are now strictly filtered to videos that actually have stored transcripts on our server, eliminating phantom recommendations',
+            'Multi-Language Subtitle Tracking: Videos can now record multiple verified subtitle languages in the database (e.g. JA / EN) as new transcripts are generated or fetched',
+            'Accurate Language Badges: Video cards only display badges for languages with verified transcripts on the server, removing misleading badges from YouTube tracklists'
         ],
         vi: [
-            'Bật phụ đề song ngữ mặc định: Phụ đề dịch song ngữ tương tác hiện được kích hoạt mặc định trên mọi video hỗ trợ',
-            'Bảo vệ hạn mức AI & Chống lạm dụng Edge: Xác thực thời lượng video từ máy chủ cho AI transcription và từ chối phát trực tiếp',
-            'Tối ưu hóa Cloudflare KV: Bổ sung bộ nhớ đệm L1 in-memory và điều tiết ghi KV giới hạn tốc độ để bảo toàn định ngạch miễn phí',
-            'Củng cố bảo mật toàn diện: Vá lỗ hổng duyệt thư mục (path traversal) ở dev server và làm sạch truy vấn PocketBase filter'
+            'Xác thực phụ đề trên máy chủ (sub_languages): Mục "Dành cho bạn" giờ đây chỉ đề xuất các video thực sự đã có phụ đề lưu trên máy chủ, triệt tiêu các đề xuất ảo',
+            'Hỗ trợ đa ngôn ngữ phụ đề: Video có thể lưu trữ nhiều ngôn ngữ phụ đề đã xác thực trên cơ sở dữ liệu (ví dụ: JA / EN) khi có phụ đề mới được tạo',
+            'Huy hiệu ngôn ngữ chính xác: Thẻ video chỉ hiển thị huy hiệu cho các ngôn ngữ thực sự có phụ đề trên máy chủ, loại bỏ các huy hiệu ảo từ danh sách YouTube'
         ],
         ja: [
-            'デュアル字幕のデフォルト有効化：対応するすべての動画で、高精度な対訳字幕が初期状態で自動表示されるように改善',
-            'AI利用枠とEdgeセキュリティの強化：AI文字起こし時の動画尺をサーバー側で厳格に検証し、ライブ配信の不正処理を遮断',
-            'Cloudflare KVの最適化：L1インメモリーキャッシュの導入とレート制限時のKV同期制御により、無料枠の書き込み上限を保護',
-            '堅牢なセキュリティ防御：ローカル開発サーバーのパストラバーサル防止およびPocketBaseフィルターのインジェクション対策を完了'
+            'サーバー検証済み字幕（sub_languages）：おすすめ動画（For You）でサーバー上に実際に保存されている字幕を持つ動画のみを厳密に推薦し、見かけだけの推薦を解消',
+            '多言語字幕の追跡対応：動画に複数の検証済み字幕言語（例：JA / EN）をデータベース上で保存・更新できるように拡張',
+            '正確な言語バッジ表示：サーバーに保存済みの字幕言語のみを動画カードにバッジ表示し、YouTubeの全トラックリストによる不要なバッジを排除'
         ],
         ko: [
-            '이중 자막 기본 활성화: 지원되는 모든 영상에서 유용한 번역 보조 자막이 기본적으로 켜지도록 UX 개선',
-            'AI 쿼터 및 Edge 보안 강화: AI 전사 시 영상 길이를 서버에서 직접 검증하고 라이브 스트림 요청을 완벽히 차단',
-            'Cloudflare KV 최적화: L1 인메모리 캐시 도입 및 속도 제한 시 KV 동기화 조절로 일일 KV 쓰기 쿼터 절약',
-            '보안 취약점 전면 보강: 개발 서버의 경로 탐색(Path Traversal) 방지 및 PocketBase 필터 인젝션 방어 적용'
+            '서버 검증 자막 기반 추천 (sub_languages): "추천 영상" 피드에서 서버에 실제로 저장된 자막이 있는 동영상만 엄격하게 필터링하여 허위 추천 제거',
+            '다국어 자막 추적 지원: 새로운 자막이 생성되거나 확인될 때 여러 개의 자막 언어(예: JA / EN)를 데이터베이스에 안전하게 기록 및 유지',
+            '정확한 언어 배지 표시: 서버에 실제로 저장된 자막 언어만 비디오 카드에 배지로 표시하여 YouTube 트랙으로 인한 혼란 방지'
         ],
         zh: [
-            '双语字幕默认开启：所有支持的视频现已默认启用交互式双语对照字幕，全面提升学习体验',
-            'AI 配额与 Edge 防刷增强：在服务端严格校验 AI 转录的视频时长，杜绝篡改并拒绝直播内容',
-            'Cloudflare KV 极致优化：引入 L1 内存缓存并节流限流写入，严格保护每日免费 KV 写入配额',
-            '全栈安全防护巩固：修复本地开发服务器的路径遍历隐患，并彻底净化 PocketBase 过滤器注入风险'
+            '服务器验证字幕推荐 (sub_languages)：“为你推荐”视频流现在严格仅推荐服务器上实际存储了字幕的视频，杜绝无效推荐',
+            '多语言字幕追踪支持：视频现可在数据库中记录并累加多个已验证的字幕语言（如 JA / EN），支持双语及多语种字幕',
+            '准确的语言角标展示：视频卡片仅展示服务器上真实存在字幕的语言角标，消除来自 YouTube 外部轨道的虚假角标'
         ]
     }
 };

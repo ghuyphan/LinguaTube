@@ -4,6 +4,7 @@ import { Observable, of, Subject, from, catchError, switchMap, finalize, tap, sh
 import { SubtitleCue } from '../../models';
 import { TranscriptCacheService } from '../../services/transcript-cache.service';
 import { AuthService } from '../../core/services/auth.service';
+import { VideoRecommendationService } from '../../core/services/video-recommendation.service';
 import { environment } from '../../../environments/environment';
 
 // ============================================================================
@@ -84,6 +85,7 @@ export class TranscriptService {
   private http = inject(HttpClient);
   private persistentCache = inject(TranscriptCacheService);
   private auth = inject(AuthService);
+  private videoRecommendation = inject(VideoRecommendationService);
 
   // ============================================================================
   // State (Simplified - single state signal)
@@ -471,7 +473,7 @@ export class TranscriptService {
       ...(resultUrl && { resultUrl }),
       ...(turnstileToken && { turnstileToken })
     }).pipe(
-      switchMap(response => this.handleResponse(response, videoId, lang, preferAI)),
+      switchMap(response => this.handleResponse(response, videoId, lang, preferAI, duration, title, channel)),
       finalize(() => this.pendingRequests.delete(requestKey)),
       shareReplay(1)
     );
@@ -490,7 +492,10 @@ export class TranscriptService {
     response: TranscriptResponse,
     videoId: string,
     lang: string,
-    _preferAI: boolean
+    _preferAI: boolean,
+    duration?: number,
+    title?: string,
+    channel?: string
   ): Observable<SubtitleCue[]> {
 
     log('API Response:', response);
@@ -514,12 +519,12 @@ export class TranscriptService {
 
     // Handle processing state (AI job still running)
     if (response.status === 'processing' && response.resultUrl) {
-      log('AI processing, polling in 2s...');
+      log('AI processing, polling in 2.5s...');
       this.state.set({ status: 'generating_ai', resultUrl: response.resultUrl });
 
-      return timer(2000).pipe(
+      return timer(2500).pipe(
         takeUntil(this.cancelSubject),
-        switchMap(() => this.generateWithAI(videoId, lang, response.resultUrl))
+        switchMap(() => this.generateWithAI(videoId, lang, response.resultUrl, undefined, duration, title, channel))
       );
     }
 
@@ -527,6 +532,9 @@ export class TranscriptService {
     if (response.success && response.segments?.length > 0) {
       const cues = this.convertToSubtitleCues(response.segments);
       const source: 'native' | 'ai' = response.source === 'ai' ? 'ai' : 'native';
+
+      // Clear recommendation cache so newly transcribed videos immediately reflect in the feed
+      this.videoRecommendation.clearCache();
 
       // Track fallback
       if (response.requestedLanguage !== response.language) {

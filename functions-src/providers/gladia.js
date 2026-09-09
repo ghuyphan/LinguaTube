@@ -3,7 +3,7 @@
  */
 
 const GLADIA_API_URL = 'https://api.gladia.io/v2/transcription';
-const FETCH_TIMEOUT_MS = 15000;
+const FETCH_TIMEOUT_MS = 25000;
 const INITIAL_DELAY_MS = 3000;
 const MAX_DELAY_MS = 10000;
 

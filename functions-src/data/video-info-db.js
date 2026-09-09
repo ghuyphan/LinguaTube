@@ -23,14 +23,14 @@ const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
  * Get video language info from D1
  * @param {D1Database} db
  * @param {string} videoId
- * @returns {Promise<{availableLanguages: string[], hasAutoCaptions: boolean, durationSeconds: number, title: string, channel: string, levels: Record<string, string>} | null>}
+ * @returns {Promise<{availableLanguages: string[], subLanguages: string[], hasAutoCaptions: boolean, durationSeconds: number, title: string, channel: string, levels: Record<string, string>} | null>}
  */
 export async function getVideoLanguages(db, videoId) {
     if (!db || !videoId) return null;
 
     try {
         const row = await db.prepare(`
-            SELECT available_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels
+            SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels
             FROM video_languages WHERE video_id = ?
         `).bind(videoId).first();
 
@@ -50,6 +50,7 @@ export async function getVideoLanguages(db, videoId) {
 
         return {
             availableLanguages: JSON.parse(row.available_languages || '[]'),
+            subLanguages: JSON.parse(row.sub_languages || '[]'),
             hasAutoCaptions: !!row.has_auto_captions,
             durationSeconds: row.duration_seconds,
             title: row.title,
@@ -67,32 +68,42 @@ export async function getVideoLanguages(db, videoId) {
  * Save video language info to D1
  * @param {D1Database} db
  * @param {string} videoId
- * @param {string[]} languages - Available language codes
+ * @param {string[]} languages - Available language codes (from YouTube)
  * @param {number} [duration] - Duration in seconds
  * @param {string} [title] - Video title
  * @param {string} [channel] - Channel name
  * @param {boolean} [hasAutoCaptions] - Whether video has auto-captions
  * @param {Record<string, string>} [levels] - Difficulty levels by language
  * @param {string} [channelAvatar] - Channel avatar URL
+ * @param {string[]} [subLanguages] - Verified subtitle languages actually saved on our server
  */
-export async function saveVideoLanguages(db, videoId, languages, duration = null, title = null, channel = null, hasAutoCaptions = false, levels = null, channelAvatar = null) {
+export async function saveVideoLanguages(db, videoId, languages, duration = null, title = null, channel = null, hasAutoCaptions = false, levels = null, channelAvatar = null, subLanguages = null) {
     if (!db || !videoId) return;
 
     try {
         let existingLevels = {};
+        let existingSubLangs = [];
+        const existing = await getVideoLanguages(db, videoId);
         if (levels === null) {
-            const existing = await getVideoLanguages(db, videoId);
             existingLevels = existing?.levels || {};
         } else {
             existingLevels = levels;
         }
+        if (existing?.subLanguages?.length) {
+            existingSubLangs = existing.subLanguages;
+        }
+
+        const mergedSubs = subLanguages !== null 
+            ? Array.from(new Set([...existingSubLangs, ...subLanguages]))
+            : existingSubLangs;
 
         await db.prepare(`
             INSERT INTO video_languages 
-            (video_id, available_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'), strftime('%s', 'now'))
+            (video_id, available_languages, sub_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'), strftime('%s', 'now'))
             ON CONFLICT(video_id) DO UPDATE SET
               available_languages = excluded.available_languages,
+              sub_languages = CASE WHEN excluded.sub_languages IS NOT NULL AND excluded.sub_languages != '[]' THEN excluded.sub_languages ELSE video_languages.sub_languages END,
               has_auto_captions = excluded.has_auto_captions,
               duration_seconds = COALESCE(excluded.duration_seconds, video_languages.duration_seconds),
               title = COALESCE(excluded.title, video_languages.title),
@@ -103,6 +114,7 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
         `).bind(
             videoId,
             JSON.stringify(languages),
+            JSON.stringify(mergedSubs),
             hasAutoCaptions ? 1 : 0,
             duration,
             title,
@@ -112,6 +124,42 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
         ).run();
     } catch (err) {
         console.error('[VideoInfoDB] saveVideoLanguages error:', err.message);
+    }
+}
+
+/**
+ * Add a verified transcript language to sub_languages in D1 (merges & deduplicates)
+ * Supports multiple languages (e.g. ["en", "ja"])
+ * @param {D1Database} db
+ * @param {string} videoId
+ * @param {string} lang
+ */
+export async function addSubLanguage(db, videoId, lang) {
+    if (!db || !videoId || !lang) return;
+    const cleanLang = lang.toLowerCase().trim().split('-')[0].split('_')[0];
+    if (!cleanLang) return;
+
+    try {
+        const row = await db.prepare(`
+            SELECT sub_languages FROM video_languages WHERE video_id = ?
+        `).bind(videoId).first();
+
+        let currentSubs = [];
+        if (row && row.sub_languages) {
+            try { currentSubs = JSON.parse(row.sub_languages); } catch { }
+        }
+        if (!Array.isArray(currentSubs)) currentSubs = [];
+
+        if (!currentSubs.includes(cleanLang)) {
+            currentSubs.push(cleanLang);
+            await db.prepare(`
+                UPDATE video_languages
+                SET sub_languages = ?, updated_at = strftime('%s', 'now')
+                WHERE video_id = ?
+            `).bind(JSON.stringify(currentSubs), videoId).run();
+        }
+    } catch (err) {
+        console.error('[VideoInfoDB] addSubLanguage error:', err.message);
     }
 }
 
@@ -425,20 +473,65 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
             const searchPattern1 = `%"${lang}"%`;
             const searchPattern2 = `%${lang}%`;
             const { results } = await db.prepare(`
-                SELECT video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, updated_at
+                SELECT video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, updated_at
                 FROM video_languages
-                WHERE (available_languages LIKE ? OR available_languages LIKE ?)
+                WHERE (
+                    (sub_languages IS NOT NULL AND sub_languages != '[]' AND (sub_languages LIKE ? OR sub_languages LIKE ?))
+                    OR (
+                        (sub_languages IS NULL OR sub_languages = '[]')
+                        AND (available_languages LIKE ? OR available_languages LIKE ?)
+                    )
+                )
                   AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
                 ORDER BY updated_at DESC
                 LIMIT ?
-            `).bind(searchPattern1, searchPattern2, candidateLimit).all();
+            `).bind(searchPattern1, searchPattern2, searchPattern1, searchPattern2, candidateLimit).all();
 
             if (results && Array.isArray(results)) {
-                // If shuffle is requested on refresh, randomize candidates uniformly so user discovers fresh videos
-                const rows = shuffle ? shuffleArray(results) : results;
+                // When refresh is requested, randomize catalog candidates for variety and discovery,
+                // BUT pin the top 3 newest/recently updated additions at the front so newly transcribed videos are never buried
+                let rows = results;
+                if (shuffle && results.length > 3) {
+                    const pinnedCount = Math.min(3, results.length);
+                    const pinned = results.slice(0, pinnedCount);
+                    const shufflable = results.slice(pinnedCount);
+                    rows = [...pinned, ...shuffleArray(shufflable)];
+                }
 
                 for (const row of rows) {
                     if (videoMap.has(row.video_id)) continue;
+
+                    let subLangs = [];
+                    try {
+                        if (row.sub_languages) {
+                            subLangs = JSON.parse(row.sub_languages);
+                        } else if (row.available_languages) {
+                            subLangs = JSON.parse(row.available_languages);
+                        }
+                    } catch { }
+                    if (!Array.isArray(subLangs)) subLangs = [];
+
+                    // Verification: If sub_languages doesn't explicitly have lang, verify against R2
+                    if (!subLangs.includes(lang)) {
+                        if (r2) {
+                            try {
+                                const key = `transcripts/${row.video_id}/${lang}.json`;
+                                const head = await r2.head(key);
+                                if (!head) {
+                                    // Transcript file not on server for this language -> do not recommend
+                                    continue;
+                                }
+                                // Found in R2! Self-heal: add to sub_languages in D1
+                                subLangs.push(lang);
+                                addSubLanguage(db, row.video_id, lang).catch(() => {});
+                            } catch {
+                                continue;
+                            }
+                        } else if (subLangs.length > 0) {
+                            // r2 not provided and sub_languages exists but does not include target lang
+                            continue;
+                        }
+                    }
 
                     let levels = {};
                     try {
@@ -458,25 +551,16 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         continue;
                     }
 
-                    let availableLangs = [];
-                    try {
-                        if (row.available_languages) availableLangs = JSON.parse(row.available_languages);
-                    } catch { }
-
-                    if (Array.isArray(availableLangs) && availableLangs.length > 0) {
-                        const target = (lang || '').toLowerCase().trim();
-                        const SUPPORTED_CODES = new Set(['ja', 'zh', 'ko', 'en']);
-                        const normalizedLangs = Array.from(new Set(
-                            availableLangs
-                                .map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : ''))
-                                .filter(l => SUPPORTED_CODES.has(l))
-                        ));
-                        if (target && normalizedLangs.length > 1) {
-                            normalizedLangs.sort((a, b) => (a === target ? -1 : (b === target ? 1 : 0)));
-                        }
-                        availableLangs = normalizedLangs.length > 0 ? normalizedLangs : [lang];
-                    } else {
-                        availableLangs = [lang];
+                    // Clean and deduplicate verified server languages strictly to supported learning languages (ja, zh, ko, en)
+                    const target = (lang || '').toLowerCase().trim();
+                    const SUPPORTED_CODES = new Set(['ja', 'zh', 'ko', 'en']);
+                    const verifiedLangs = Array.from(new Set(
+                        subLangs
+                            .map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : ''))
+                            .filter(l => SUPPORTED_CODES.has(l))
+                    ));
+                    if (target && verifiedLangs.length > 1) {
+                        verifiedLangs.sort((a, b) => (a === target ? -1 : (b === target ? 1 : 0)));
                     }
 
                     videoMap.set(row.video_id, {
@@ -486,7 +570,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         channelAvatar: row.channel_avatar || null,
                         duration: row.duration_seconds || 0,
                         thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
-                        languages: availableLangs,
+                        languages: verifiedLangs.length > 0 ? verifiedLangs : [lang],
                         level: level || undefined,
                         tier: videoTier || undefined,
                         updatedAt: row.updated_at

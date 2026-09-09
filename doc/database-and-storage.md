@@ -49,7 +49,8 @@ Caches discovered caption languages and video metadata across user sessions:
 ```sql
 CREATE TABLE IF NOT EXISTS video_languages (
     video_id TEXT PRIMARY KEY,
-    available_languages TEXT NOT NULL,  -- JSON array: ["ko", "ja", "en"]
+    available_languages TEXT NOT NULL,  -- JSON array of YouTube caption tracks: ["ar", "en", "ja", "ko"]
+    sub_languages TEXT DEFAULT '[]',    -- JSON array of verified server-stored transcripts: ["ja", "en"]
     has_auto_captions INTEGER DEFAULT 0,
     duration_seconds INTEGER,
     title TEXT,
@@ -61,6 +62,7 @@ CREATE TABLE IF NOT EXISTS video_languages (
 );
 
 CREATE INDEX IF NOT EXISTS idx_video_languages_updated ON video_languages(updated_at);
+CREATE INDEX IF NOT EXISTS idx_video_languages_sub ON video_languages(sub_languages);
 ```
 
 ### 2.2. Table: `no_transcript_cache` (`db/add-video-languages.sql`)

@@ -93,18 +93,20 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   }
   ```
 - **Lifecycle & Fallback Chain**:
-  1. **R2 Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If present, returns immediately (`X-Cache: HIT`).
+  1. **R2 Multi-Language Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known languages in R2 for that video as fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant Gladia submissions and saving user diamonds.
   2. **Native Captions Fetch (Supadata)**: If `preferAI: false`, queries Supadata native captions. If found, caches to R2 and records in D1 `video_meta` and `video_languages`.
   3. **Negative Cache Check**: If previously marked as having no native captions in D1 `no_transcript_cache`, returns `NO_NATIVE` immediately.
-  4. **AI Generation (Gladia)**: If `preferAI: true`:
-     - Verifies Turnstile token (`verifyTurnstileToken`): Developer bypass token (`cf-turnstile-dev-token`) is strictly restricted to `ENVIRONMENT === 'development'`. Production requests require valid Cloudflare Turnstile token validation.
-     - Verifies Diamond balance ($> 0$).
-     - Multi-key API rotation (`api-key-rotator.js`): Uses in-memory round-robin isolate rotation across configured Gladia keys to distribute load without burning Cloudflare KV write limits.
+  4. **AI Generation (Gladia V2) - Non-Blocking Client-Driven Polling**:
+     - Verifies Turnstile token (`verifyTurnstileToken`).
+     - Verifies Diamond balance ($> 0$) and calculates duration-based cost (1 to 4 diamonds).
+     - **Pre-check R2**: Ensures no transcript already exists in R2 before consuming diamonds.
+     - **Pre-check Pending Jobs**: If an active job for the video is already running in Gladia, reuses `result_url` without re-submitting or double-charging.
      - Submits YouTube audio URL to Gladia API.
-     - Deducts Diamond credit.
-     - Returns `{ status: 'processing', resultUrl }`.
-  5. **AI Polling & Failure Auto-Refund**:
-     - Subsequent requests passing `resultUrl` poll Gladia until `status: 'done'`, then write final transcript to R2.
+     - Returns `{ status: 'processing', resultUrl }` immediately ($\sim 1.5$s response) to avoid long-lived edge connection drops (524 gateway timeouts).
+  5. **Fast Client-Driven Polling & Failure Auto-Refund**:
+     - Subsequent client poll requests pass `resultUrl` every 2.5 seconds.
+     - Server bypasses heavy YouTube scraping during poll cycles, completing each poll check in $\sim 200\text{--}300$ms.
+     - When `status: 'done'`, server resolves metadata/avatar via D1/oEmbed, indexes under both detected and study languages in D1, writes to R2, and deletes the pending job.
      - **Automated Diamond Refund**: If Gladia reports job error or submission fails, the backend triggers `refundDiamond()` via PocketHost API to restore the user's credit balance automatically.
 
 ---
@@ -290,11 +292,12 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - `offset`: Optional pagination offset (default `0`) for infinite scrolling feeds.
   - `refresh`: Optional boolean (`true`). When enabled, bypasses memory and CDN caches, forces `Cache-Control: no-cache, no-store, must-revalidate`, and applies Fisher-Yates uniform candidate shuffling for fresh video discovery.
 - **Database & Cloudflare Storage Discovery**:
-  - Queries Cloudflare D1 `video_languages` table for pre-processed transcripts (`available_languages LIKE '%"lang"%' OR available_languages LIKE '%lang%'`).
+  - Queries Cloudflare D1 `video_languages` table for verified transcripts stored on our server (`sub_languages LIKE '%"lang"%'`), with fallback to `available_languages` only if `sub_languages` is unpopulated.
+  - Multi-Language Support: Videos can store multiple verified transcript languages in `sub_languages` (e.g. `["ja", "en"]`), returned in `languages` for accurate multi-lingual badges (`JA / EN`).
+  - Strict Server Verification: Verifies that transcript files (`transcripts/{videoId}/{lang}.json`) actually exist on our server (Cloudflare R2 storage / dev cache) before recommending, eliminating phantom recommendations and un-transcribed language badges.
   - Supports `offset` pagination directly against D1 candidates (`LIMIT ? OFFSET ?`), enabling seamless infinite scroll without duplicate entries.
   - When `tier` is requested or `refresh=true` is passed, queries a larger candidate pool from D1, performs uniform Fisher-Yates candidate shuffling, and filters rows matching the target tier (`labelToTier`).
-  - Fallback queries D1 `transcripts` (with `LEFT JOIN video_languages`) and `video_meta` tables with support for regional language subtags (e.g. `ja-JP`, `zh-CN`, `ko-KR`, `en-US`).
-  - Scans Cloudflare R2 bucket (`TRANSCRIPT_STORAGE`) for stored transcript objects (`transcripts/{videoId}/{lang}.json` and `transcripts/{videoId}/{lang}-*.json`).
+  - **Recent Candidate Pinning**: When shuffling candidates on refresh, the top 3 most recently updated / newly transcribed videos remain pinned at the front of the list, ensuring that newly generated user transcripts are never buried or lost upon clicking refresh.
   - Duration filters safely accommodate videos with unrecorded/zero durations as well as typical learning durations (`(duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)`).
   - Ordered by `updated_at DESC`.
   - Automatic metadata & avatar enrichment: Any discovered video missing a title or avatar is enriched via YouTube oEmbed and `fetchChannelAvatar` and cached in D1 `video_languages.channel_avatar`.

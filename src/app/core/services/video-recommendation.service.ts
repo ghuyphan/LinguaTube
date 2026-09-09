@@ -238,9 +238,9 @@ export class VideoRecommendationService {
                 if (targetLang && normalized.length > 1) {
                     normalized.sort((a, b) => (a === targetLang ? -1 : (b === targetLang ? 1 : 0)));
                 }
-                langs = normalized.length > 0 ? normalized : [targetLang || 'ja'];
+                langs = normalized;
             } else {
-                langs = [targetLang || 'ja'];
+                langs = [];
             }
 
             return {
