@@ -308,13 +308,13 @@ export class SettingsService implements OnDestroy {
   }
 
   setFullscreenSubtitleYPercent(percent: number): void {
-    const clamped = Math.max(10, Math.min(95, Math.round(percent)));
+    const clamped = Math.max(16, Math.min(95, Math.round(percent)));
     this.updateSettings({ fullscreenSubtitleYPercent: clamped });
   }
 
   toggleFullscreenSubtitlePosition(): void {
     const current = this.settings().fullscreenSubtitleYPercent ?? 94;
-    const next = current < 50 ? 94 : 12;
+    const next = current < 50 ? 94 : 18;
     this.updateSettings({ fullscreenSubtitleYPercent: next });
   }
 

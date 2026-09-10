@@ -226,17 +226,15 @@ export class FullscreenSubtitleComponent implements OnDestroy {
         } catch {}
 
         this.dragStartY = event.clientY;
+        const startYPercent = this.yPercent();
         this.hasMoved = false;
 
         const container = handle.closest('.video-container') as HTMLElement | null;
         const containerHeight = container?.clientHeight || window.innerHeight;
-        const isStartingTop = this.isTop();
 
-        // Safe bounds for drag offset (deltaY)
-        // From bottom (94%): can drag up toward 12% (~ -82% of H) or down slightly (+3% of H)
-        // From top (12%): can drag down toward 94% (~ +82% of H) or up slightly (-3% of H)
-        const minDeltaY = isStartingTop ? -0.04 * containerHeight : -0.84 * containerHeight;
-        const maxDeltaY = isStartingTop ? 0.84 * containerHeight : 0.04 * containerHeight;
+        // Dynamic pixel bounds to allow continuous vertical placement in [16%, 95%]
+        const minDeltaY = ((16 - startYPercent) / 100) * containerHeight;
+        const maxDeltaY = ((95 - startYPercent) / 100) * containerHeight;
 
         let latestDeltaY = 0;
 
@@ -244,7 +242,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
             if (moveEvent.pointerId !== event.pointerId) return;
 
             const rawDeltaY = moveEvent.clientY - this.dragStartY;
-            if (Math.abs(rawDeltaY) > 6) {
+            if (Math.abs(rawDeltaY) > 5) {
                 if (!this.hasMoved) {
                     this.hasMoved = true;
                     this.ngZone.run(() => this.isDragging.set(true));
@@ -271,27 +269,13 @@ export class FullscreenSubtitleComponent implements OnDestroy {
                 this.isDragging.set(false);
 
                 if (!this.hasMoved) {
-                    // Tap or click on handle: toggle between Top (12%) and Bottom (94%)
+                    // Tap or click on handle: toggle between Top (18%) and Bottom (94%)
                     this.togglePosition.emit();
                 } else {
-                    // Gesture commit:
-                    // If pulled from bottom up past threshold -> snap to Top (12)
-                    // If pulled from top down past threshold -> snap to Bottom (94)
-                    const swipeThreshold = Math.min(40, containerHeight * 0.15);
-
-                    if (!isStartingTop) {
-                        if (latestDeltaY < -swipeThreshold) {
-                            this.positionCommitted.emit(12);
-                        } else {
-                            this.positionCommitted.emit(94);
-                        }
-                    } else {
-                        if (latestDeltaY > swipeThreshold) {
-                            this.positionCommitted.emit(94);
-                        } else {
-                            this.positionCommitted.emit(12);
-                        }
-                    }
+                    // Continuous free drag: commit exact percentage with full give
+                    const deltaPercent = (latestDeltaY / containerHeight) * 100;
+                    const targetPercent = Math.max(16, Math.min(95, Math.round(startYPercent + deltaPercent)));
+                    this.positionCommitted.emit(targetPercent);
                 }
             });
         };

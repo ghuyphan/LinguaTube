@@ -29,16 +29,12 @@ $transition-fast: 0.15s ease;
     padding-left: max(0.5rem, env(safe-area-inset-left));
     padding-right: max(0.5rem, env(safe-area-inset-right));
 
-    &.is-top {
-        transform: translate(-50%, calc(0px + var(--drag-y, 0px)));
-    }
-
-    &.controls-visible.is-near-bottom {
+    &.controls-visible.is-near-bottom:not(.is-dragging) {
         // Smoothly lift subtitle to maintain clear distance from player controls bottom bar
-        transform: translate(-50%, calc(-100% - 3.25rem + var(--drag-y, 0px)));
+        transform: translate(-50%, calc(-100% - 3.25rem));
 
         @media (max-width: 640px), (max-height: 520px) {
-            transform: translate(-50%, calc(-100% - 2.5rem + var(--drag-y, 0px)));
+            transform: translate(-50%, calc(-100% - 2.5rem));
         }
     }
 

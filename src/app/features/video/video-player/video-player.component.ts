@@ -672,7 +672,7 @@ export class VideoPlayerComponent implements OnDestroy {
       case 'nudge-subtitle-position': {
         const current = this.settings.settings().fullscreenSubtitleYPercent ?? 94;
         const delta = event.data.direction === 'up' ? -5 : 5;
-        const clamped = Math.max(10, Math.min(95, current + delta));
+        const clamped = Math.max(16, Math.min(95, current + delta));
         this.settings.setFullscreenSubtitleYPercent(clamped);
         break;
       }
