@@ -120,7 +120,7 @@ graph TD
     App --> SettingsSheet[SettingsSheetComponent]
     App --> StreakDialog[StreakDialogComponent]
     App --> CreditsDialog[AiCreditsDialogComponent]
-    App --> AchievementsDialog[AchievementsDialogComponent - Gamification & XP]
+    App --> AchievementsDialog[AchievementsDialogComponent - Daily Missions, Achievements & Leaderboard]
     App --> Onboarding[OnboardingComponent]
     App --> CommandPalette[CommandPaletteComponent]
     App --> BottomSheet[BottomSheetComponent]
@@ -428,21 +428,21 @@ sequenceDiagram
     participant D1 as Cloudflare D1 (leaderboard)
     participant Storage as LocalStorage (linguatube_leaderboard_cache)
 
-    Learner->>Dialog: Switch to "Global Ranking" Tab
-    Dialog->>Leaderboard: loadLeaderboard(langFilter)
+    Learner->>Dialog: Switch to "Global Ranking" Tab (Select "This Week" or "All Time")
+    Dialog->>Leaderboard: loadLeaderboard(langFilter, period)
     Leaderboard->>Storage: Read Cached Top 50 (Instant Render)
     Storage-->>Leaderboard: Cached Learner Records
     Leaderboard-->>Dialog: Display Top 3 Podium & Rankings
-    Leaderboard->>Edge: GET /api/leaderboard?lang=...&userId=...
-    Edge->>D1: Query Top 50 by XP DESC + User Rank
+    Leaderboard->>Edge: GET /api/leaderboard?lang=...&userId=...&period=weekly|all_time
+    Edge->>D1: Query Top 50 by weekly_xp/xp DESC + User Rank
     D1-->>Edge: Top Learners + User Position
     Edge-->>Leaderboard: Fresh Leaderboard Data
     Leaderboard->>Storage: Cache Updated Ranks
     Leaderboard-->>Dialog: Update Podium & Sticky User Rank Bar
     opt Background Score Sync (Debounced 30s)
         Gamification->>Leaderboard: On Level-Up / Significant XP Gain
-        Leaderboard->>Edge: POST /api/leaderboard { xp, level, streak, badges, targetLang }
-        Edge->>D1: UPSERT INTO leaderboard (MAX(xp))
+        Leaderboard->>Edge: POST /api/leaderboard { xp, weekly_xp, level, streak, badges, targetLang }
+        Edge->>D1: UPSERT INTO leaderboard (MAX(xp), weekly_xp)
         Edge-->>Leaderboard: 200 OK { updated: true }
     end
 ```

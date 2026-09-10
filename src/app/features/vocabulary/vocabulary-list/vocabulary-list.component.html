@@ -162,6 +162,7 @@
                     <button type="button" class="level-badge-btn" [class]="'badge--' + item.level"
                         (click)="openLevelPicker(item, $event)"
                         [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Change level')">
+                        <span class="level-dot" [class]="item.level"></span>
                         <span class="level-badge-btn__text">{{ i18n.t('vocab.' + item.level) }}</span>
                     </button>
 

@@ -25,6 +25,7 @@ export class LeaderboardService {
     readonly userRank = signal<LeaderboardEntry | null>(null);
     readonly isLoading = signal<boolean>(false);
     readonly selectedLang = signal<string>('all');
+    readonly selectedPeriod = signal<'weekly' | 'all_time'>('weekly');
 
     private lastSyncTime = 0;
 
@@ -69,12 +70,18 @@ export class LeaderboardService {
     /**
      * Fetch global leaderboard
      */
-    async loadLeaderboard(lang: string = this.selectedLang(), force = false): Promise<void> {
+    async loadLeaderboard(
+        lang: string = this.selectedLang(),
+        force = false,
+        period: 'weekly' | 'all_time' = this.selectedPeriod()
+    ): Promise<void> {
         this.selectedLang.set(lang);
+        this.selectedPeriod.set(period);
         this.isLoading.set(true);
 
         const currentUserId = this.getCurrentUserId();
         const langQuery = lang && lang !== 'all' ? `&lang=${encodeURIComponent(lang)}` : '';
+        const periodQuery = `&period=${encodeURIComponent(period)}`;
         const bustQuery = force ? `&refresh=true&_t=${Date.now()}` : '';
 
         try {
@@ -82,7 +89,7 @@ export class LeaderboardService {
                 success: boolean;
                 topLearners: LeaderboardEntry[];
                 userRank: LeaderboardEntry | null;
-            }>(`/api/leaderboard?userId=${encodeURIComponent(currentUserId)}${langQuery}${bustQuery}`));
+            }>(`/api/leaderboard?userId=${encodeURIComponent(currentUserId)}${langQuery}${periodQuery}${bustQuery}`));
 
             if (res && res.success && Array.isArray(res.topLearners)) {
                 this.topLearners.set(res.topLearners);
@@ -121,6 +128,7 @@ export class LeaderboardService {
         const payload = {
             guest_id: guestId,
             xp: this.gamification.totalXP(),
+            weekly_xp: this.gamification.weeklyXP(),
             level: this.gamification.userLevel(),
             streak: this.streakRepo.streakData().currentStreak,
             badges_count: Object.keys(this.gamification.rawState().unlockedAchievements).length,
@@ -144,9 +152,11 @@ export class LeaderboardService {
         const currentUserId = this.getCurrentUserId();
         const user = this.auth.user();
         const myXp = this.gamification.totalXP();
+        const myWeeklyXp = this.gamification.weeklyXP();
         const myLevel = this.gamification.userLevel();
         const myStreak = this.streakRepo.streakData().currentStreak;
         const myBadges = Object.keys(this.gamification.rawState().unlockedAchievements).length;
+        const isWeekly = this.selectedPeriod() === 'weekly';
 
         // Check if user is in topList
         const existing = topList.find(entry => entry.userId === currentUserId);
@@ -156,7 +166,12 @@ export class LeaderboardService {
         }
 
         // Calculate estimated position
-        const higherCount = topList.filter(entry => entry.xp > myXp).length;
+        const higherCount = topList.filter(entry => {
+            if (isWeekly) {
+                return (entry.weeklyXp ?? entry.xp) > myWeeklyXp;
+            }
+            return entry.xp > myXp;
+        }).length;
         const estimatedRank = higherCount >= topList.length ? topList.length + 12 : higherCount + 1;
 
         this.userRank.set({
@@ -165,6 +180,7 @@ export class LeaderboardService {
             name: user?.name || 'You',
             avatar: user?.picture || '',
             xp: myXp,
+            weeklyXp: myWeeklyXp,
             level: myLevel,
             streak: myStreak,
             badgesCount: myBadges,

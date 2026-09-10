@@ -72,6 +72,18 @@ export class GamificationService {
 
     // Reactive signals
     readonly totalXP = computed(() => this.rawState().xp);
+    readonly weeklyXP = computed(() => this.rawState().weeklyXp || 0);
+
+    // Daily missions & quests
+    readonly dailyMissions = computed(() => this.rawState().dailyMissions?.missions || []);
+    readonly dailyBonusClaimed = computed(() => this.rawState().dailyMissions?.allCompletedBonusClaimed || false);
+    readonly completedMissionsCount = computed(() => this.dailyMissions().filter(m => m.completed).length);
+    readonly totalMissionsCount = computed(() => this.dailyMissions().length);
+    readonly canClaimDailyBonus = computed(() =>
+        this.completedMissionsCount() === this.totalMissionsCount() &&
+        this.totalMissionsCount() > 0 &&
+        !this.dailyBonusClaimed()
+    );
 
     /**
      * Level calculation: Level = floor(sqrt(XP / 100)) + 1
@@ -185,6 +197,49 @@ export class GamificationService {
      */
     recordQuizCompleted(): void {
         this.repo.recordQuizCompleted();
+    }
+
+    /**
+     * Record word saved to notebook
+     */
+    recordWordSaved(): void {
+        this.repo.trackMissionProgress('save_word', 1);
+    }
+
+    /**
+     * Record flashcard SRS review
+     */
+    recordSRSReview(): void {
+        this.repo.trackMissionProgress('srs_review', 1);
+    }
+
+    /**
+     * Record dictionary word lookup
+     */
+    recordDictLookup(): void {
+        this.repo.trackMissionProgress('look_up_dict', 1);
+    }
+
+    /**
+     * Claim reward for an individual completed mission
+     */
+    claimMission(missionId: string): void {
+        const xp = this.repo.claimMissionReward(missionId);
+        if (xp > 0) {
+            const msg = `🎯 ${this.i18n.t('missions.claimedReward') || 'Mission Reward Claimed'}: +${xp} XP!`;
+            this.toast.show(msg, { type: 'success', icon: 'zap', duration: 3500 });
+        }
+    }
+
+    /**
+     * Claim daily bonus chest reward
+     */
+    claimDailyBonus(): void {
+        const bonus = this.repo.claimDailyBonus();
+        if (bonus > 0) {
+            const msg = `🎁 ${this.i18n.t('missions.dailyChestClaimed') || 'Daily Chest Claimed'}: +${bonus} XP!`;
+            this.toast.show(msg, { type: 'success', icon: 'gift', duration: 4500 });
+        }
     }
 
     /**

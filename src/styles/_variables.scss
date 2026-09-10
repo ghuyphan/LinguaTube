@@ -3,51 +3,51 @@
    ============================================ */
 
 :root {
-    /* Vibrant, Playful Palette */
-    --bg-primary: #f0f4f8;
-    --bg-secondary: #e2e8f0;
-    --bg-tertiary: #cbd5e1;
+    /* Chill Pastel Palette (Light Mode) */
+    --bg-primary: #FAF7F5;
+    --bg-secondary: #F2ECE7;
+    --bg-tertiary: #E8E0D8;
     --bg-card: #FFFFFF;
     --bg-dark: #1e293b;
     --bg-inverse: #1e293b;
-    --bg-surface: #f8fafc;
-    --bg-hover: #edf1f7;
+    --bg-surface: #FDFBF9;
+    --bg-hover: #EFE8E2;
 
     /* Extended text tokens */
-    --text-tertiary: #9ca3af;
+    --text-tertiary: #A8ADBF;
 
     /* Extended border tokens */
-    --border-color-light: #f1f5f9;
+    --border-color-light: #F4EEE9;
 
-    /* Fun accent colors */
-    --accent-primary: #FF6B6B;
-    --accent-primary-rgb: 255, 107, 107;
-    --accent-primary-text: #E04848;
-    --accent-primary-hover: #e85555;
-    --accent-primary-shadow: #cc584f;
-    --accent-primary-soft: rgba(255, 107, 107, 0.08);
+    /* Vibrant Strawberry-Coral Accent */
+    --accent-primary: #F45B74;
+    --accent-primary-rgb: 244, 91, 116;
+    --accent-primary-text: #E03E58;
+    --accent-primary-hover: #E54863;
+    --accent-primary-shadow: #CC3550;
+    --accent-primary-soft: rgba(244, 91, 116, 0.09);
 
-    --accent-secondary: #a855f7;
-    --accent-secondary-rgb: 168, 85, 247;
-    --accent-secondary-shadow: #9333ea;
-    --accent-secondary-soft: rgba(168, 85, 247, 0.08);
+    --accent-secondary: #8B5CF6;
+    --accent-secondary-rgb: 139, 92, 246;
+    --accent-secondary-shadow: #7C3AED;
+    --accent-secondary-soft: rgba(139, 92, 246, 0.09);
 
-    --accent-tertiary: #ffc800;
+    --accent-tertiary: #F59E0B;
 
-    /* Text colors */
-    --text-primary: #374151;
-    --text-primary-rgb: 55, 65, 81;
-    --text-secondary: #6b7280;
-    --text-secondary-rgb: 107, 114, 128;
-    --text-muted: #64748b;
-    --text-muted-rgb: 100, 116, 139;
+    /* Soothing Typography (Charcoal & Warm Slate) */
+    --text-primary: #242738;
+    --text-primary-rgb: 36, 39, 56;
+    --text-secondary: #585D77;
+    --text-secondary-rgb: 88, 93, 119;
+    --text-muted: #888EAA;
+    --text-muted-rgb: 136, 142, 170;
     --text-inverse: #FFFFFF;
     --bg-card-rgb: 255, 255, 255;
-    --border-color-rgb: 229, 231, 235;
+    --border-color-rgb: 232, 224, 216;
 
     /* Primary button tokens */
-    --btn-primary-bg: var(--accent-primary, #FF6B6B);
-    --btn-primary-hover: var(--accent-primary-hover, #e85555);
+    --btn-primary-bg: var(--accent-primary, #F45B74);
+    --btn-primary-hover: var(--accent-primary-hover, #E54863);
     --btn-primary-text: #ffffff;
 
     /* Semantic colors */
@@ -60,26 +60,31 @@
     --info: #1cb0f6;
     --info-rgb: 28, 176, 246;
 
-    /* Word levels */
-    --word-new: #ffdfe0;
-    --word-new-text: #ff4b4b;
-    --word-learning: #fff4ce;
-    --word-learning-text: #e5a400;
-    --word-known: #e0f2fe;
-    --word-known-text: #0284c7;
-    --word-ignored: #f3f4f6;
+    /* Chill Pastel Word Levels (Light Mode) */
+    --word-new: #FFEBF0;
+    --word-new-text: #DF3D5B;
+    --word-new-border: rgba(223, 61, 91, 0.18);
+    --word-learning: #FEF4DA;
+    --word-learning-text: #A66B04;
+    --word-learning-border: rgba(166, 107, 4, 0.18);
+    --word-known: #E7F3FF;
+    --word-known-text: #1B78DE;
+    --word-known-border: rgba(27, 120, 222, 0.18);
+    --word-ignored: #EFECE8;
+    --word-ignored-text: #7C8297;
+    --word-ignored-border: rgba(124, 130, 151, 0.16);
 
-    /* Grammar levels */
-    --level-beginner: #e0f2fe;
-    --level-beginner-text: #0284c7;
-    --level-elementary: #dff4ff;
-    --level-elementary-text: #1899d6;
-    --level-intermediate: #fff4ce;
-    --level-intermediate-text: #e5a400;
-    --level-upper: #ffe3cd;
-    --level-upper-text: #ff7b00;
-    --level-advanced: #ffdfe0;
-    --level-advanced-text: #ff4b4b;
+    /* Chill Pastel Grammar Levels (Light Mode) */
+    --level-beginner: #E7F3FF;
+    --level-beginner-text: #1B78DE;
+    --level-elementary: #E2F6F9;
+    --level-elementary-text: #0A8B9C;
+    --level-intermediate: #FEF4DA;
+    --level-intermediate-text: #A66B04;
+    --level-upper: #FFF0E5;
+    --level-upper-text: #C45700;
+    --level-advanced: #FFEBF0;
+    --level-advanced-text: #DF3D5B;
 
     /* Grammar highlight color (crisp mint / emerald green) */
     --color-grammar: #10b981;
@@ -128,7 +133,7 @@
     --text-3xl: 2.25rem;
 
     /* Borders & Shadows */
-    --border-color: #e5e7eb;
+    --border-color: #E8E0D8;
     --border-width: 2px;
     --border-radius-xs: 8px;
     --border-radius-sm: 12px;
@@ -172,7 +177,7 @@
     --input-height-lg: 56px;
 
     /* Focus ring */
-    --focus-ring: 0 0 0 4px rgba(255, 107, 107, 0.3);
+    --focus-ring: 0 0 0 4px rgba(244, 91, 116, 0.28);
     --focus-ring-offset: 2px;
 
     /* Mobile-specific sizing */
@@ -211,50 +216,75 @@
 }
 
 [data-theme="dark"] {
-    --bg-primary: #0f1117;
-    --bg-secondary: #181818;
-    --bg-tertiary: #2a2a2a;
-    --bg-card: #212121;
-    --bg-card-rgb: 33, 33, 33;
-    --border-color: #383838;
-    --border-color-rgb: 56, 56, 56;
-    --text-primary: #e5e5e5;
-    --text-primary-rgb: 229, 229, 229;
-    --text-secondary: #a3a3a3;
-    --text-secondary-rgb: 163, 163, 163;
-    --text-muted: #a1a1aa;
-    --text-muted-rgb: 161, 161, 170;
-    --text-inverse: #171717;
-    --bg-surface: #262626;
-    --bg-inverse: #0f172a;
-    --bg-hover: #333333;
-    --text-tertiary: #737373;
-    --border-color-light: #2a2a2a;
-    --accent-primary-text: #ff8585;
-    --accent-primary-soft: rgba(255, 107, 107, 0.15);
-    --accent-secondary-soft: rgba(168, 85, 247, 0.15);
+    /* Rich Obsidian Palette (Dark Mode) */
+    --bg-primary: #0D1017;
+    --bg-secondary: #141923;
+    --bg-tertiary: #1D2331;
+    --bg-card: #161C27;
+    --bg-card-rgb: 22, 28, 39;
+    --border-color: #242C3D;
+    --border-color-rgb: 36, 44, 61;
+    --border-color-light: #1D2433;
+    --bg-surface: #1B2230;
+    --bg-inverse: #FAF7F5;
+    --bg-hover: #232B3D;
+
+    --text-primary: #F0F2F8;
+    --text-primary-rgb: 240, 242, 248;
+    --text-secondary: #A0A8BF;
+    --text-secondary-rgb: 160, 168, 191;
+    --text-muted: #737B96;
+    --text-muted-rgb: 115, 123, 150;
+    --text-tertiary: #525970;
+    --text-inverse: #0D1017;
+
+    /* Radiant Coral Accent (Dark Mode) */
+    --accent-primary: #FF6B82;
+    --accent-primary-rgb: 255, 107, 130;
+    --accent-primary-text: #FF8CA0;
+    --accent-primary-hover: #FF8095;
+    --accent-primary-shadow: #E03E58;
+    --accent-primary-soft: rgba(255, 107, 130, 0.15);
+
+    --accent-secondary: #A78BFA;
+    --accent-secondary-rgb: 167, 139, 250;
+    --accent-secondary-shadow: #8B5CF6;
+    --accent-secondary-soft: rgba(167, 139, 250, 0.15);
+
+    --btn-primary-bg: #F45B74;
+    --btn-primary-hover: #FF6B82;
+    --btn-primary-text: #ffffff;
+
+    --focus-ring: 0 0 0 4px rgba(255, 107, 130, 0.35);
 
     --success: #4ade80;
     --success-rgb: 74, 222, 128;
 
-    --word-new: rgba(255, 75, 75, 0.15);
-    --word-new-text: #ff6b6b;
-    --word-learning: rgba(255, 200, 0, 0.15);
-    --word-learning-text: #ffd54f;
-    --word-known: rgba(28, 176, 246, 0.15);
-    --word-known-text: #60a5fa;
-    --word-ignored: #2d2d2d;
+    /* Chill Pastel Word Levels (Dark Mode - Apple-inspired luminous soft pills) */
+    --word-new: rgba(255, 120, 145, 0.13);
+    --word-new-text: #FFA4B5;
+    --word-new-border: rgba(255, 120, 145, 0.24);
+    --word-learning: rgba(251, 197, 61, 0.13);
+    --word-learning-text: #FDE068;
+    --word-learning-border: rgba(251, 197, 61, 0.24);
+    --word-known: rgba(88, 175, 255, 0.13);
+    --word-known-text: #9BCEFF;
+    --word-known-border: rgba(88, 175, 255, 0.24);
+    --word-ignored: rgba(255, 255, 255, 0.05);
+    --word-ignored-text: #8E95AF;
+    --word-ignored-border: rgba(255, 255, 255, 0.08);
 
-    --level-beginner: rgba(2, 132, 199, 0.15);
-    --level-beginner-text: #38bdf8;
-    --level-elementary: rgba(24, 153, 214, 0.15);
-    --level-elementary-text: #0ea5e9;
-    --level-intermediate: rgba(229, 164, 0, 0.15);
-    --level-intermediate-text: #fbbf24;
-    --level-upper: rgba(255, 123, 0, 0.15);
-    --level-upper-text: #f97316;
-    --level-advanced: rgba(255, 75, 75, 0.15);
-    --level-advanced-text: #f87171;
+    /* Chill Pastel Grammar Levels (Dark Mode) */
+    --level-beginner: rgba(88, 175, 255, 0.13);
+    --level-beginner-text: #9BCEFF;
+    --level-elementary: rgba(56, 217, 238, 0.13);
+    --level-elementary-text: #67E8F9;
+    --level-intermediate: rgba(251, 197, 61, 0.13);
+    --level-intermediate-text: #FDE068;
+    --level-upper: rgba(251, 146, 60, 0.13);
+    --level-upper-text: #FDBA74;
+    --level-advanced: rgba(255, 120, 145, 0.13);
+    --level-advanced-text: #FFA4B5;
 
     --color-grammar: #2dd4bf;
     --color-grammar-rgb: 45, 212, 191;
@@ -265,8 +295,9 @@
     --success-green: #4ade80;
     --success-green-rgb: 74, 222, 128;
 
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.55);
+    --shadow-xl: 0 20px 32px rgba(0, 0, 0, 0.65);
 }
+

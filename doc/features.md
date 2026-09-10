@@ -414,7 +414,7 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 - **Search Engine Discovery Assets**:
   - `public/robots.txt`: Explicitly permits search crawlers on learning routes (`/video`, `/dictionary`, `/study`, `/explore`, `/history`) while restricting internal serverless functions (`/api/`, `/proxy/`).
   - `public/sitemap.xml`: Declares priority and change frequencies for all public views, with `xhtml:link` multi-language `hreflang` alternates (`en`, `vi`, `ja`, `ko`, `zh`, and `x-default`).
-  - `public/og-image.png`: High-resolution 1200x630 branded social share card with brand badge, typography, feature pills, and subtitle preview.
+  - `public/og-image.png`: High-resolution 1200x630 Apple-inspired chill pastel social share card with dreamy gradient atmosphere, pillowy Kikyou Kamon icon, clean Avenir/SF typography, and frosted glass language capsule.
 - **Dynamic Angular `SeoService` (`src/app/core/services/seo.service.ts`)**:
   - Automatically listens to Angular Router `NavigationEnd` events and updates document title, description, keywords, Open Graph, and Twitter metadata per route.
   - **Dynamic Video Metadata**: When a YouTube video is actively loaded in `VideoPageComponent`, `updateVideoSeo(title, id, desc)` updates document title (`"${videoTitle} | Voca"`), sets `og:type` to `video.other`, and sets `og:image` to the video's high-resolution YouTube thumbnail. Resets cleanly when navigating away or destroying the component.
@@ -607,20 +607,43 @@ Achievements are organized into 5 core learning categories:
    - `quiz_10`: Quiz Prodigy — Complete 10 subtitle quizzes (+100 XP)
    - `quiz_50`: Sharp Mind — Master 50 subtitle quizzes (+300 XP)
 
-### 13.3. Achievements Dialog (`AchievementsDialogComponent`)
-- **Dual View Mode**: Segmented tab bar allowing instant switching between **Achievements** and **Global Leaderboard**.
-- **Hero Level Banner**: Displays user's current level title (Novice, Apprentice, Explorer, Scholar, Polyglot, Sage, Master, Grandmaster), total accumulated XP, and an animated radial/linear level progress bar.
-- **Segmented Filter Tabs**: Filter achievements by `All`, `Immersion`, `Vocabulary`, `Streaks`, `Study/SRS`, and `Quizzes` with unlocked counter pills.
+### 13.3. Daily Missions & Daily Completion Chest (`DailyMissionsState`)
+To maintain strong daily retention and solve the "lifetime grind" barrier, Voca generates 3 randomized, bite-sized quests every day at midnight (local time):
+- **Daily Mission Pool**:
+  | Quest Key | Quest Name | Target Objective | Reward |
+  | :--- | :--- | :--- | :--- |
+  | `watch_1` | Active Immersion | Watch 1 video with subtitles | +20 XP |
+  | `watch_2` | Deep Immersion | Watch 2 videos with subtitles | +35 XP |
+  | `save_3` | Sentence Miner | Save 3 new vocabulary words from subtitles | +20 XP |
+  | `save_5` | Vocabulary Hunter | Save 5 new vocabulary words | +30 XP |
+  | `dict_3` | Dictionary Sleuth | Look up 3 words in the dictionary | +15 XP |
+  | `srs_10` | Memory Workout | Review 10 flashcards in SRS Study | +25 XP |
+  | `quiz_1` | Comprehension Test | Complete 1 video comprehension quiz | +20 XP |
+- **Daily Completion Chest**:
+  - Completing all 3 daily quests unlocks the sparkling **Daily Completion Chest**.
+  - Opening the chest grants a **+50 XP bounty**, reinforcing consistency and building positive dopamine feedback loops.
+- **Dynamic Midnight Countdown**:
+  - Displays a live countdown timer until the next mission reset (`resetsIn: hh:mm:ss`), automatically refreshing stale missions upon crossing midnight.
+
+### 13.4. Achievements & Missions Dialog (`AchievementsDialogComponent`)
+- **Tri-Segmented Tab Bar**:
+  - **Missions**: Live daily quests with individual claim buttons, progress bars, and the animated Daily Completion Chest.
+  - **Achievements**: Category-filtered badges (Immersion, Vocabulary, Streaks, SRS, Quizzes) with unlocked count pills.
+  - **Leaderboard**: Global learner rankings with weekly and all-time toggle views.
+- **Hero Level Banner**: Displays user's current level title (Novice, Apprentice, Explorer, Scholar, Polyglot, Sage, Master, Grandmaster), total accumulated XP, weekly XP, and an animated radial/linear level progress bar.
 - **Visual Badge States**:
   - Unlocked: Vibrant tier gradient (Emerald, Blue, Purple, Gold), unlock timestamp, and gold trophy icon.
   - Locked: High-contrast dark surface, grayscale icon, and real-time numerical progress bar (`current / target`).
-- **Real-Time Celebration**: Unlocking any achievement or leveling up triggers an immediate celebration toast capsule with the badge icon and XP bounty.
+- **Real-Time Celebration**: Unlocking any achievement, claiming a mission, or opening the chest triggers immediate celebratory toasts and live XP updates.
 
-### 13.4. Global Ranking & Leaderboard System (`LeaderboardService`)
+### 13.5. Weekly & All-Time Global Ranking System (`LeaderboardService`)
+- **Period Filter Pills**:
+  - `⚡ This Week`: Displays weekly XP (`weekly_xp`) accrued in the current ISO calendar week (`YYYY-WW`). Automatically resets every Monday 00:00 UTC so new and active learners always have a real chance to top the podium.
+  - `🏆 All Time`: Displays lifetime accumulated XP.
 - **Top 3 Podium**:
   - Elevated central Gold pedestal (👑 #1), flanked by Silver (🥈 #2) and Bronze (🥉 #3).
-  - Glowing avatar halos, level indicators, streak flames, and total XP.
-- **Top 50 Ranking Stream**: Ranks 4 to 50 rendered with rank badges, nationality flags, current levels, active daily streaks, and score counters.
+  - Glowing avatar halos, level indicators, streak flames, and dynamic XP display based on selected period.
+- **Top 50 Ranking Stream**: Ranks 4 to 50 rendered with rank badges, nationality flags, current levels, active daily streaks, and period-specific score counters.
 - **Sticky Current User Anchor Bar**: Persistently shows the logged-in or guest learner's global rank position at the bottom of the dialog, with a one-tap sync button.
 - **Language Filter Chips**: Filter leaderboard rankings by target study language (`All`, `JA 🇯🇵`, `KO 🇰🇷`, `ZH 🇨🇳`, `EN 🇬🇧`).
 - **Offline-First & Community Baseline Integration**:
@@ -629,7 +652,7 @@ Achievements are organized into 5 core learning categories:
   - Generates deterministic persistent guest IDs for learners browsing without PocketBase accounts.
   - Automatically syncs XP upon login or level-up events, with cache-busting real-time refresh support.
 
-### 13.5. Offline-First PocketBase Persistence (`OfflineGamificationRepository`)
+### 13.6. Offline-First PocketBase Persistence (`OfflineGamificationRepository`)
 - **Deterministic Entity IDs**:
   - Gamification records use a deterministic ID (`btoa(userId + ':gamification').slice(0, 15)`) adhering to PocketBase's 15-character alphanumeric ID constraint.
   - Guarantees zero duplicate records across multiple browser tabs, client restarts, or concurrent login sessions.

@@ -773,7 +773,47 @@
     "streak": "連続日数",
     "empty": "ランキングデータがまだありません",
     "syncScore": "スコア同期",
-    "synced": "同期完了！"
+    "synced": "同期完了！",
+    "thisWeek": "今週",
+    "allTime": "全期間"
+  },
+  "missions": {
+    "tabTitle": "デイリーミッション",
+    "resetsIn": "更新まで",
+    "dailyChest": "デイリー達成チェスト",
+    "dailyChestDesc": "3つのデイリーミッションを完了してチェストを開封しよう！",
+    "claim": "受取",
+    "claimed": "受取済",
+    "claimedReward": "ミッション報酬を獲得しました",
+    "dailyChestClaimed": "デイリーチェストを開封しました",
+    "watch1": {
+      "title": "集中視聴",
+      "desc": "字幕付き動画を1本視聴する"
+    },
+    "watch2": {
+      "title": "ディープイマージョン",
+      "desc": "字幕付き動画を2本視聴する"
+    },
+    "save3": {
+      "title": "フレーズマイナー",
+      "desc": "字幕から新しい単語を3つ保存する"
+    },
+    "save5": {
+      "title": "ボキャブラリーハンター",
+      "desc": "新しい単語を5つ保存する"
+    },
+    "dict3": {
+      "title": "辞書探求者",
+      "desc": "辞書で3つの単語を調べる"
+    },
+    "srs10": {
+      "title": "記憶トレーニング",
+      "desc": "SRS学習でフラッシュカードを10枚復習する"
+    },
+    "quiz1": {
+      "title": "理解度チェック",
+      "desc": "動画の理解度クイズを1回完了する"
+    }
   },
   "achievements": {
     "title": "実績とレベル",

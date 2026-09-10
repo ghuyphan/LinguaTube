@@ -4,6 +4,15 @@
         <button
             type="button"
             class="segmented-btn"
+            [class.active]="currentTab() === 'missions'"
+            (click)="setTab('missions')"
+        >
+            <app-icon name="target" [size]="15" />
+            <span>{{ i18n.t('missions.tabTitle') || 'Missions' }}</span>
+        </button>
+        <button
+            type="button"
+            class="segmented-btn"
             [class.active]="currentTab() === 'achievements'"
             (click)="setTab('achievements')"
         >
@@ -21,7 +30,105 @@
         </button>
     </div>
 
-    @if (currentTab() === 'achievements') {
+    @if (currentTab() === 'missions') {
+        <!-- Missions Hero Section -->
+        <div class="header-section">
+            <div class="achievements-hero-icon missions-hero-icon">
+                <app-icon name="target" [size]="38" class="hero-target" />
+            </div>
+
+            <div class="title-group">
+                <div class="hero-level-badge">
+                    <span class="level-tag">Lv.{{ userLevel() }}</span>
+                    <h2 class="level-rank">{{ rankTitle() }}</h2>
+                </div>
+                <p class="hero-subtitle">
+                    <span class="hero-xp">{{ totalXP() }} XP</span>
+                    <span class="hero-dot">&bull;</span>
+                    <span class="hero-unlocked">⚡ {{ weeklyXP() }} XP {{ i18n.t('leaderboard.thisWeek') || 'this week' }}</span>
+                </p>
+            </div>
+
+            <!-- Daily Reset Timer Banner -->
+            <div class="reset-timer-banner">
+                <app-icon name="clock" [size]="14" />
+                <span>{{ i18n.t('missions.resetsIn') || 'New quests in' }} <strong>{{ countdownStr() }}</strong></span>
+            </div>
+        </div>
+
+        <!-- Daily Completion Chest Card -->
+        <div class="daily-chest-card" [class.ready-to-claim]="canClaimDailyBonus()" [class.claimed]="dailyBonusClaimed()">
+            <div class="daily-chest-icon-wrap">
+                <app-icon [name]="dailyBonusClaimed() ? 'check-circle' : 'gift'" [size]="28" class="chest-icon" />
+            </div>
+            <div class="daily-chest-info">
+                <div class="daily-chest-header">
+                    <h4 class="daily-chest-title">{{ i18n.t('missions.dailyChest') || 'Daily Completion Chest' }}</h4>
+                    <span class="daily-chest-badge">+50 XP</span>
+                </div>
+                <p class="daily-chest-desc">{{ i18n.t('missions.dailyChestDesc') || 'Complete all 3 daily missions to open the chest!' }}</p>
+                <div class="daily-chest-progress-track">
+                    <div class="daily-chest-progress-fill" [style.width.%]="(completedMissionsCount() / (totalMissionsCount() || 1)) * 100"></div>
+                </div>
+            </div>
+            <div class="daily-chest-action">
+                @if (dailyBonusClaimed()) {
+                    <span class="claimed-badge">
+                        <app-icon name="check" [size]="14" />
+                        {{ i18n.t('missions.claimed') || 'Claimed' }}
+                    </span>
+                } @else if (canClaimDailyBonus()) {
+                    <button type="button" class="claim-chest-btn pulse-anim" (click)="claimDailyBonus()">
+                        <app-icon name="gift" [size]="14" />
+                        {{ i18n.t('missions.claim') || 'Claim' }}
+                    </button>
+                } @else {
+                    <span class="chest-progress-label">{{ completedMissionsCount() }}/{{ totalMissionsCount() }}</span>
+                }
+            </div>
+        </div>
+
+        <!-- Daily Missions List -->
+        <div class="missions-list">
+            @for (m of dailyMissions(); track m.id) {
+                <div class="mission-card" [class.completed]="m.completed" [class.claimed]="m.claimed">
+                    <div class="mission-card__icon-wrap">
+                        <app-icon [name]="toIconName(m.icon)" [size]="22" class="mission-icon" />
+                    </div>
+
+                    <div class="mission-card__body">
+                        <div class="mission-card__header">
+                            <h4 class="mission-card__title">{{ i18n.t(m.titleKey) || m.id }}</h4>
+                            <span class="mission-card__xp">+{{ m.xpReward }} XP</span>
+                        </div>
+                        <p class="mission-card__desc">{{ i18n.t(m.descriptionKey) || '' }}</p>
+
+                        <div class="mission-card__progress-wrap">
+                            <div class="progress-bar">
+                                <div class="progress-fill" [style.width.%]="(m.progress / m.target) * 100"></div>
+                            </div>
+                            <span class="progress-text">{{ m.progress }}/{{ m.target }}</span>
+                        </div>
+                    </div>
+
+                    <div class="mission-card__action">
+                        @if (m.claimed) {
+                            <span class="claimed-badge">
+                                <app-icon name="check" [size]="13" />
+                                {{ i18n.t('missions.claimed') || 'Claimed' }}
+                            </span>
+                        } @else if (m.completed) {
+                            <button type="button" class="claim-mission-btn pulse-anim" (click)="claimMission(m)">
+                                {{ i18n.t('missions.claim') || 'Claim' }}
+                            </button>
+                        } @else {
+                            <span class="pending-badge">{{ m.progress }}/{{ m.target }}</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    } @else if (currentTab() === 'achievements') {
         <!-- Header / Hero Section (Aligned with Streak & AI Credits dialogs) -->
         <div class="header-section">
             <div class="achievements-hero-icon">
@@ -100,18 +207,40 @@
     } @else {
         <!-- Global Ranking / Leaderboard View -->
         <div class="leaderboard-view">
-            <!-- Language filter chips -->
-            <div class="leaderboard-filters">
-                @for (flt of langFilters; track flt.code) {
+            <!-- Period & Language Filters -->
+            <div class="leaderboard-top-controls">
+                <div class="period-pills">
                     <button
                         type="button"
-                        class="filter-chip"
-                        [class.active]="leaderboardLang() === flt.code"
-                        (click)="setLeaderboardLang(flt.code)"
+                        class="period-pill"
+                        [class.active]="selectedPeriod() === 'weekly'"
+                        (click)="setLeaderboardPeriod('weekly')"
                     >
-                        <span>{{ flt.label }}</span>
+                        <span>⚡ {{ i18n.t('leaderboard.thisWeek') || 'This Week' }}</span>
                     </button>
-                }
+                    <button
+                        type="button"
+                        class="period-pill"
+                        [class.active]="selectedPeriod() === 'all_time'"
+                        (click)="setLeaderboardPeriod('all_time')"
+                    >
+                        <span>🏆 {{ i18n.t('leaderboard.allTime') || 'All Time' }}</span>
+                    </button>
+                </div>
+
+                <!-- Language filter chips -->
+                <div class="leaderboard-filters">
+                    @for (flt of langFilters; track flt.code) {
+                        <button
+                            type="button"
+                            class="filter-chip"
+                            [class.active]="leaderboardLang() === flt.code"
+                            (click)="setLeaderboardLang(flt.code)"
+                        >
+                            <span>{{ flt.label }}</span>
+                        </button>
+                    }
+                </div>
             </div>
 
             <!-- Top 3 Podium -->
@@ -130,7 +259,7 @@
                                 </div>
                             </div>
                             <span class="podium-name" [title]="silver.name">{{ silver.name }}</span>
-                            <span class="podium-xp">{{ silver.xp.toLocaleString() }} XP</span>
+                            <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (silver.weeklyXp ?? silver.xp) : silver.xp).toLocaleString() }} XP</span>
                             <div class="podium-pillar podium-pillar--silver">
                                 <span class="podium-rank-num">2</span>
                                 <span class="podium-level-tag">Lv.{{ silver.level }}</span>
@@ -151,7 +280,7 @@
                                 </div>
                             </div>
                             <span class="podium-name" [title]="gold.name">{{ gold.name }}</span>
-                            <span class="podium-xp">{{ gold.xp.toLocaleString() }} XP</span>
+                            <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (gold.weeklyXp ?? gold.xp) : gold.xp).toLocaleString() }} XP</span>
                             <div class="podium-pillar podium-pillar--gold">
                                 <span class="podium-rank-num">1</span>
                                 <span class="podium-level-tag">Lv.{{ gold.level }}</span>
@@ -172,7 +301,7 @@
                                 </div>
                             </div>
                             <span class="podium-name" [title]="bronze.name">{{ bronze.name }}</span>
-                            <span class="podium-xp">{{ bronze.xp.toLocaleString() }} XP</span>
+                            <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (bronze.weeklyXp ?? bronze.xp) : bronze.xp).toLocaleString() }} XP</span>
                             <div class="podium-pillar podium-pillar--bronze">
                                 <span class="podium-rank-num">3</span>
                                 <span class="podium-level-tag">Lv.{{ bronze.level }}</span>
@@ -208,7 +337,7 @@
                             </div>
                         </div>
                         <div class="learner-score">
-                            <span class="score-value">{{ learner.xp.toLocaleString() }}</span>
+                            <span class="score-value">{{ (selectedPeriod() === 'weekly' ? (learner.weeklyXp ?? learner.xp) : learner.xp).toLocaleString() }}</span>
                             <span class="score-label">XP</span>
                         </div>
                     </div>
@@ -232,7 +361,7 @@
                         </div>
                     </div>
                     <div class="my-rank-right">
-                        <span class="my-xp">{{ me.xp.toLocaleString() }} XP</span>
+                        <span class="my-xp">{{ (selectedPeriod() === 'weekly' ? (me.weeklyXp ?? me.xp) : me.xp).toLocaleString() }} XP</span>
                         <button type="button" class="sync-btn" (click)="refreshLeaderboard()" [title]="i18n.t('leaderboard.syncScore') || 'Sync'">
                             <app-icon name="refresh-cw" [size]="13" />
                         </button>

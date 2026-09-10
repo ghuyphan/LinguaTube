@@ -1,10 +1,10 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, output } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, output, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../shared/components/icon/icon.component';
 import { GamificationService } from '../../core/services/gamification.service';
 import { LeaderboardService } from '../../core/services/leaderboard.service';
 import { I18nService } from '../../core/services/i18n.service';
-import { AchievementCategory } from '../../models/gamification.model';
+import { AchievementCategory, Mission } from '../../models/gamification.model';
 
 @Component({
     selector: 'app-achievements-dialog',
@@ -14,7 +14,7 @@ import { AchievementCategory } from '../../models/gamification.model';
     templateUrl: './achievements-dialog.component.html',
     styleUrls: ['./achievements-dialog.component.scss']
 })
-export class AchievementsDialogComponent {
+export class AchievementsDialogComponent implements OnInit, OnDestroy {
     gamification = inject(GamificationService);
     leaderboard = inject(LeaderboardService);
     i18n = inject(I18nService);
@@ -22,12 +22,22 @@ export class AchievementsDialogComponent {
     dismissed = output<void>();
 
     // View tab
-    readonly currentTab = signal<'achievements' | 'leaderboard'>('achievements');
+    readonly currentTab = signal<'missions' | 'achievements' | 'leaderboard'>('missions');
+
+    // Missions State
+    readonly dailyMissions = this.gamification.dailyMissions;
+    readonly dailyBonusClaimed = this.gamification.dailyBonusClaimed;
+    readonly completedMissionsCount = this.gamification.completedMissionsCount;
+    readonly totalMissionsCount = this.gamification.totalMissionsCount;
+    readonly canClaimDailyBonus = this.gamification.canClaimDailyBonus;
+    readonly countdownStr = signal<string>('');
+    private timerInterval: ReturnType<typeof setInterval> | null = null;
 
     readonly activeCategory = signal<'all' | AchievementCategory>('all');
 
     readonly userLevel = this.gamification.userLevel;
     readonly totalXP = this.gamification.totalXP;
+    readonly weeklyXP = this.gamification.weeklyXP;
     readonly progressToNext = this.gamification.nextLevelProgress;
     readonly unlockedCount = this.gamification.unlockedCount;
     readonly totalCount = this.gamification.totalAchievementsCount;
@@ -55,6 +65,31 @@ export class AchievementsDialogComponent {
         return all.filter(a => a.category === cat);
     });
 
+    ngOnInit(): void {
+        this.updateCountdown();
+        this.timerInterval = setInterval(() => this.updateCountdown(), 1000);
+    }
+
+    ngOnDestroy(): void {
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval);
+            this.timerInterval = null;
+        }
+    }
+
+    private updateCountdown(): void {
+        const now = new Date();
+        const midnight = new Date(now);
+        midnight.setHours(24, 0, 0, 0);
+        const diffMs = Math.max(0, midnight.getTime() - now.getTime());
+        const hours = Math.floor(diffMs / 3600000);
+        const minutes = Math.floor((diffMs % 3600000) / 60000);
+        const seconds = Math.floor((diffMs % 60000) / 1000);
+        this.countdownStr.set(
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+        );
+    }
+
     setCategory(cat: 'all' | AchievementCategory): void {
         this.activeCategory.set(cat);
     }
@@ -75,15 +110,26 @@ export class AchievementsDialogComponent {
         return (icon as IconName) || 'trophy';
     }
 
+    claimMission(mission: Mission): void {
+        if (mission.completed && !mission.claimed) {
+            this.gamification.claimMission(mission.id);
+        }
+    }
+
+    claimDailyBonus(): void {
+        if (this.canClaimDailyBonus()) {
+            this.gamification.claimDailyBonus();
+        }
+    }
+
     // Leaderboard State & Computeds
+    readonly selectedPeriod = this.leaderboard.selectedPeriod;
     readonly top3 = computed(() => this.leaderboard.topLearners().slice(0, 3));
     readonly firstPlace = computed(() => this.top3()[0] || null);
     readonly secondPlace = computed(() => this.top3()[1] || null);
     readonly thirdPlace = computed(() => this.top3()[2] || null);
     readonly remainingLearners = computed(() => {
         const learners = this.leaderboard.topLearners();
-        // If 3 or more learners, top 3 are on podium, rest in list.
-        // If fewer than 3, display all of them in the list so rank 1 & 2 aren't hidden!
         return learners.length >= 3 ? learners.slice(3) : learners;
     });
 
@@ -99,19 +145,23 @@ export class AchievementsDialogComponent {
         { code: 'en', label: 'EN 🇬🇧' }
     ];
 
-    setTab(tab: 'achievements' | 'leaderboard'): void {
+    setTab(tab: 'missions' | 'achievements' | 'leaderboard'): void {
         this.currentTab.set(tab);
         if (tab === 'leaderboard') {
-            this.leaderboard.loadLeaderboard();
+            this.leaderboard.loadLeaderboard(this.leaderboardLang(), false, this.selectedPeriod());
         }
     }
 
+    setLeaderboardPeriod(period: 'weekly' | 'all_time'): void {
+        this.leaderboard.loadLeaderboard(this.leaderboardLang(), false, period);
+    }
+
     setLeaderboardLang(code: string): void {
-        this.leaderboard.loadLeaderboard(code);
+        this.leaderboard.loadLeaderboard(code, false, this.selectedPeriod());
     }
 
     async refreshLeaderboard(): Promise<void> {
         await this.leaderboard.syncMyScore(true);
-        await this.leaderboard.loadLeaderboard(this.leaderboardLang(), true);
+        await this.leaderboard.loadLeaderboard(this.leaderboardLang(), true, this.selectedPeriod());
     }
 }

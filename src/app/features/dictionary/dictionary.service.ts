@@ -2,7 +2,7 @@ import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DictionaryEntry } from '../../models';
 import { Observable, of, catchError, map } from 'rxjs';
-import { I18nService, SettingsService, UILanguage } from '../../core/services';
+import { I18nService, SettingsService, UILanguage, GamificationService } from '../../core/services';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 
@@ -39,6 +39,7 @@ export class DictionaryService {
   private readonly http = inject(HttpClient);
   private readonly i18n = inject(I18nService);
   private readonly settings = inject(SettingsService);
+  private readonly gamification = inject(GamificationService);
 
   // Cache settings
   private readonly CACHE_KEY = 'linguatube_dict_cache';
@@ -147,6 +148,10 @@ export class DictionaryService {
   lookupEntries(word: string, language?: 'ja' | 'zh' | 'ko' | 'en'): Observable<DictionaryEntry[]> {
     const fromLang = language || this.detectLanguage(word);
     const toLang = this.i18n.currentLanguage();
+
+    if (word && word.trim().length > 0) {
+      this.gamification.recordDictLookup();
+    }
 
     return this.lookupUnifiedEntries(word, fromLang, toLang);
   }

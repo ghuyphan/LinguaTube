@@ -9,40 +9,40 @@ import { jsonResponse, handleOptions } from '../utils/utils.js';
 
 export const SEED_LEADERBOARD = [
     // --- Japanese (JA) Learners ---
-    { user_id: 'seed_ja_1', name: 'Kenji Sato', avatar: '', xp: 14250, level: 12, streak: 42, badges_count: 14, target_lang: 'ja', country: '🇯🇵' },
-    { user_id: 'seed_ja_2', name: 'Wei Zhang', avatar: '', xp: 8720, level: 8, streak: 19, badges_count: 8, target_lang: 'ja', country: '🇯🇵' },
-    { user_id: 'seed_ja_3', name: 'Mateo Rossi', avatar: '', xp: 5120, level: 5, streak: 10, badges_count: 5, target_lang: 'ja', country: '🇯🇵' },
-    { user_id: 'seed_ja_4', name: 'Aoi Takahashi', avatar: '', xp: 3450, level: 4, streak: 15, badges_count: 6, target_lang: 'ja', country: '🇯🇵' },
-    { user_id: 'seed_ja_5', name: 'Lucas Meyer', avatar: '', xp: 2180, level: 3, streak: 8, badges_count: 4, target_lang: 'ja', country: '🇩🇪' },
-    { user_id: 'seed_ja_6', name: 'Sakura Ito', avatar: '', xp: 1420, level: 2, streak: 5, badges_count: 3, target_lang: 'ja', country: '🇯🇵' },
-    { user_id: 'seed_ja_7', name: 'Daiki Watanabe', avatar: '', xp: 850, level: 2, streak: 3, badges_count: 2, target_lang: 'ja', country: '🇯🇵' },
+    { user_id: 'seed_ja_1', name: 'Kenji Sato', avatar: '', xp: 14250, weekly_xp: 850, level: 12, streak: 42, badges_count: 14, target_lang: 'ja', country: '🇯🇵' },
+    { user_id: 'seed_ja_2', name: 'Wei Zhang', avatar: '', xp: 8720, weekly_xp: 620, level: 8, streak: 19, badges_count: 8, target_lang: 'ja', country: '🇯🇵' },
+    { user_id: 'seed_ja_3', name: 'Mateo Rossi', avatar: '', xp: 5120, weekly_xp: 490, level: 5, streak: 10, badges_count: 5, target_lang: 'ja', country: '🇯🇵' },
+    { user_id: 'seed_ja_4', name: 'Aoi Takahashi', avatar: '', xp: 3450, weekly_xp: 380, level: 4, streak: 15, badges_count: 6, target_lang: 'ja', country: '🇯🇵' },
+    { user_id: 'seed_ja_5', name: 'Lucas Meyer', avatar: '', xp: 2180, weekly_xp: 260, level: 3, streak: 8, badges_count: 4, target_lang: 'ja', country: '🇩🇪' },
+    { user_id: 'seed_ja_6', name: 'Sakura Ito', avatar: '', xp: 1420, weekly_xp: 180, level: 2, streak: 5, badges_count: 3, target_lang: 'ja', country: '🇯🇵' },
+    { user_id: 'seed_ja_7', name: 'Daiki Watanabe', avatar: '', xp: 850, weekly_xp: 110, level: 2, streak: 3, badges_count: 2, target_lang: 'ja', country: '🇯🇵' },
 
     // --- Korean (KO) Learners ---
-    { user_id: 'seed_ko_1', name: 'Elena Rostova', avatar: '', xp: 12890, level: 11, streak: 35, badges_count: 12, target_lang: 'ko', country: '🇰🇷' },
-    { user_id: 'seed_ko_2', name: 'Sophia Chen', avatar: '', xp: 7640, level: 7, streak: 16, badges_count: 7, target_lang: 'ko', country: '🇰🇷' },
-    { user_id: 'seed_ko_3', name: 'Hyun-woo Lee', avatar: '', xp: 4120, level: 5, streak: 8, badges_count: 4, target_lang: 'ko', country: '🇰🇷' },
-    { user_id: 'seed_ko_4', name: 'Min-seo Jung', avatar: '', xp: 3100, level: 4, streak: 11, badges_count: 5, target_lang: 'ko', country: '🇰🇷' },
-    { user_id: 'seed_ko_5', name: 'David Miller', avatar: '', xp: 1950, level: 3, streak: 6, badges_count: 3, target_lang: 'ko', country: '🇺🇸' },
-    { user_id: 'seed_ko_6', name: 'Seo-yeon Park', avatar: '', xp: 1280, level: 2, streak: 4, badges_count: 3, target_lang: 'ko', country: '🇰🇷' },
-    { user_id: 'seed_ko_7', name: 'Ji-hoon Choi', avatar: '', xp: 790, level: 2, streak: 2, badges_count: 2, target_lang: 'ko', country: '🇰🇷' },
+    { user_id: 'seed_ko_1', name: 'Elena Rostova', avatar: '', xp: 12890, weekly_xp: 790, level: 11, streak: 35, badges_count: 12, target_lang: 'ko', country: '🇰🇷' },
+    { user_id: 'seed_ko_2', name: 'Sophia Chen', avatar: '', xp: 7640, weekly_xp: 580, level: 7, streak: 16, badges_count: 7, target_lang: 'ko', country: '🇰🇷' },
+    { user_id: 'seed_ko_3', name: 'Hyun-woo Lee', avatar: '', xp: 4120, weekly_xp: 410, level: 5, streak: 8, badges_count: 4, target_lang: 'ko', country: '🇰🇷' },
+    { user_id: 'seed_ko_4', name: 'Min-seo Jung', avatar: '', xp: 3100, weekly_xp: 320, level: 4, streak: 11, badges_count: 5, target_lang: 'ko', country: '🇰🇷' },
+    { user_id: 'seed_ko_5', name: 'David Miller', avatar: '', xp: 1950, weekly_xp: 220, level: 3, streak: 6, badges_count: 3, target_lang: 'ko', country: '🇺🇸' },
+    { user_id: 'seed_ko_6', name: 'Seo-yeon Park', avatar: '', xp: 1280, weekly_xp: 160, level: 2, streak: 4, badges_count: 3, target_lang: 'ko', country: '🇰🇷' },
+    { user_id: 'seed_ko_7', name: 'Ji-hoon Choi', avatar: '', xp: 790, weekly_xp: 90, level: 2, streak: 2, badges_count: 2, target_lang: 'ko', country: '🇰🇷' },
 
     // --- Chinese (ZH) Learners ---
-    { user_id: 'seed_zh_1', name: 'Alexandre Dubois', avatar: '', xp: 11400, level: 10, streak: 28, badges_count: 11, target_lang: 'zh', country: '🇨🇳' },
-    { user_id: 'seed_zh_2', name: 'Liam Wilson', avatar: '', xp: 6890, level: 7, streak: 14, badges_count: 6, target_lang: 'zh', country: '🇬🇧' },
-    { user_id: 'seed_zh_3', name: 'Ji-won Kim', avatar: '', xp: 4480, level: 5, streak: 9, badges_count: 5, target_lang: 'zh', country: '🇨🇳' },
-    { user_id: 'seed_zh_4', name: 'Mei-ling Zhao', avatar: '', xp: 2890, level: 4, streak: 12, badges_count: 5, target_lang: 'zh', country: '🇨🇳' },
-    { user_id: 'seed_zh_5', name: 'Carlos Santos', avatar: '', xp: 1840, level: 3, streak: 7, badges_count: 3, target_lang: 'zh', country: '🇧🇷' },
-    { user_id: 'seed_zh_6', name: 'Xiao-wei Lin', avatar: '', xp: 1190, level: 2, streak: 4, badges_count: 2, target_lang: 'zh', country: '🇨🇳' },
-    { user_id: 'seed_zh_7', name: 'Bowen Wang', avatar: '', xp: 650, level: 1, streak: 2, badges_count: 1, target_lang: 'zh', country: '🇨🇳' },
+    { user_id: 'seed_zh_1', name: 'Alexandre Dubois', avatar: '', xp: 11400, weekly_xp: 740, level: 10, streak: 28, badges_count: 11, target_lang: 'zh', country: '🇨🇳' },
+    { user_id: 'seed_zh_2', name: 'Liam Wilson', avatar: '', xp: 6890, weekly_xp: 530, level: 7, streak: 14, badges_count: 6, target_lang: 'zh', country: '🇬🇧' },
+    { user_id: 'seed_zh_3', name: 'Ji-won Kim', avatar: '', xp: 4480, weekly_xp: 390, level: 5, streak: 9, badges_count: 5, target_lang: 'zh', country: '🇨🇳' },
+    { user_id: 'seed_zh_4', name: 'Mei-ling Zhao', avatar: '', xp: 2890, weekly_xp: 290, level: 4, streak: 12, badges_count: 5, target_lang: 'zh', country: '🇨🇳' },
+    { user_id: 'seed_zh_5', name: 'Carlos Santos', avatar: '', xp: 1840, weekly_xp: 210, level: 3, streak: 7, badges_count: 3, target_lang: 'zh', country: '🇧🇷' },
+    { user_id: 'seed_zh_6', name: 'Xiao-wei Lin', avatar: '', xp: 1190, weekly_xp: 150, level: 2, streak: 4, badges_count: 2, target_lang: 'zh', country: '🇨🇳' },
+    { user_id: 'seed_zh_7', name: 'Bowen Wang', avatar: '', xp: 650, weekly_xp: 80, level: 1, streak: 2, badges_count: 1, target_lang: 'zh', country: '🇨🇳' },
 
     // --- English (EN) Learners ---
-    { user_id: 'seed_en_1', name: 'Min-ho Park', avatar: '', xp: 9850, level: 9, streak: 21, badges_count: 9, target_lang: 'en', country: '🇬🇧' },
-    { user_id: 'seed_en_2', name: 'Hana Tanaka', avatar: '', xp: 5930, level: 6, streak: 12, badges_count: 6, target_lang: 'en', country: '🇺🇸' },
-    { user_id: 'seed_en_3', name: 'Chloe Martin', avatar: '', xp: 3890, level: 4, streak: 7, badges_count: 4, target_lang: 'en', country: '🇬🇧' },
-    { user_id: 'seed_en_4', name: 'Oliver Smith', avatar: '', xp: 2650, level: 4, streak: 10, badges_count: 4, target_lang: 'en', country: '🇦🇺' },
-    { user_id: 'seed_en_5', name: 'Yuto Nakamura', avatar: '', xp: 1650, level: 3, streak: 6, badges_count: 3, target_lang: 'en', country: '🇯🇵' },
-    { user_id: 'seed_en_6', name: 'Emma Johnson', avatar: '', xp: 1050, level: 2, streak: 3, badges_count: 2, target_lang: 'en', country: '🇨🇦' },
-    { user_id: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, level: 1, streak: 1, badges_count: 1, target_lang: 'en', country: '🇺🇸' }
+    { user_id: 'seed_en_1', name: 'Min-ho Park', avatar: '', xp: 9850, weekly_xp: 680, level: 9, streak: 21, badges_count: 9, target_lang: 'en', country: '🇬🇧' },
+    { user_id: 'seed_en_2', name: 'Hana Tanaka', avatar: '', xp: 5930, weekly_xp: 470, level: 6, streak: 12, badges_count: 6, target_lang: 'en', country: '🇺🇸' },
+    { user_id: 'seed_en_3', name: 'Chloe Martin', avatar: '', xp: 3890, weekly_xp: 350, level: 4, streak: 7, badges_count: 4, target_lang: 'en', country: '🇬🇧' },
+    { user_id: 'seed_en_4', name: 'Oliver Smith', avatar: '', xp: 2650, weekly_xp: 260, level: 4, streak: 10, badges_count: 4, target_lang: 'en', country: '🇦🇺' },
+    { user_id: 'seed_en_5', name: 'Yuto Nakamura', avatar: '', xp: 1650, weekly_xp: 190, level: 3, streak: 6, badges_count: 3, target_lang: 'en', country: '🇯🇵' },
+    { user_id: 'seed_en_6', name: 'Emma Johnson', avatar: '', xp: 1050, weekly_xp: 140, level: 2, streak: 3, badges_count: 2, target_lang: 'en', country: '🇨🇦' },
+    { user_id: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, weekly_xp: 70, level: 1, streak: 1, badges_count: 1, target_lang: 'en', country: '🇺🇸' }
 ];
 
 export async function onRequestOptions() {
@@ -60,9 +60,10 @@ const MEM_LEADERBOARD_TTL_MS = 60 * 1000;
  * @param {Array} realUsers - Real users fetched from D1 or PocketBase
  * @param {string|null} lang - Target language filter ('ja', 'ko', 'zh', 'en', or null/all)
  * @param {number} limit - Maximum number of top learners to return (default 50)
+ * @param {string} period - 'weekly' or 'all_time'
  * @returns {Array} Sorted and ranked list of learners
  */
-export function mergeWithSeedLeaderboard(realUsers = [], lang = null, limit = 50) {
+export function mergeWithSeedLeaderboard(realUsers = [], lang = null, limit = 50, period = 'all_time') {
     const isLangSpecific = lang && ['ja', 'ko', 'zh', 'en'].includes(lang);
 
     // Filter seeds by language if requested
@@ -78,6 +79,7 @@ export function mergeWithSeedLeaderboard(realUsers = [], lang = null, limit = 50
             name: u.name || 'Learner',
             avatar: u.avatar || '',
             xp: Math.max(0, parseInt(u.xp, 10) || 0),
+            weeklyXp: Math.max(0, parseInt(u.weeklyXp ?? u.weekly_xp, 10) || 0),
             level: Math.max(1, parseInt(u.level, 10) || Math.floor(Math.sqrt((parseInt(u.xp, 10) || 0) / 100)) + 1),
             streak: Math.max(0, parseInt(u.streak, 10) || 0),
             badgesCount: Math.max(0, parseInt(u.badgesCount ?? u.badges_count, 10) || 0),
@@ -95,6 +97,7 @@ export function mergeWithSeedLeaderboard(realUsers = [], lang = null, limit = 50
             name: s.name,
             avatar: s.avatar || '',
             xp: s.xp,
+            weeklyXp: s.weekly_xp || Math.round(s.xp * 0.08),
             level: s.level,
             streak: s.streak,
             badgesCount: s.badges_count,
@@ -102,9 +105,13 @@ export function mergeWithSeedLeaderboard(realUsers = [], lang = null, limit = 50
             country: s.country || ''
         }));
 
-    // Combine and sort by XP descending (tie-break by streak descending)
+    // Combine and sort
     const combined = [...normalizedReal, ...seedFormatted];
-    combined.sort((a, b) => b.xp - a.xp || b.streak - a.streak);
+    if (period === 'weekly') {
+        combined.sort((a, b) => (b.weeklyXp ?? 0) - (a.weeklyXp ?? 0) || b.xp - a.xp || b.streak - a.streak);
+    } else {
+        combined.sort((a, b) => b.xp - a.xp || b.streak - a.streak);
+    }
 
     // Assign sequential ranks
     return combined.slice(0, limit).map((row, index) => ({
@@ -121,12 +128,13 @@ export async function onRequestGet(context) {
         const url = new URL(request.url);
         const lang = url.searchParams.get('lang');
         const userId = url.searchParams.get('userId');
+        const period = url.searchParams.get('period') === 'all_time' ? 'all_time' : 'weekly';
         const limitParam = parseInt(url.searchParams.get('limit') || '50', 10);
         const limit = Math.max(1, Math.min(100, isNaN(limitParam) ? 50 : limitParam));
         const isRefresh = url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true' || url.searchParams.has('_t');
 
         let rawRealUsers = null;
-        const cacheKey = `${lang || 'all'}_${limit}`;
+        const cacheKey = `${lang || 'all'}_${period}_${limit}`;
 
         if (!isRefresh) {
             const cached = memLeaderboardCache.get(cacheKey);
@@ -140,7 +148,7 @@ export async function onRequestGet(context) {
             if (db) {
                 try {
                     let query = `
-                        SELECT user_id, name, avatar, xp, level, streak, badges_count, target_lang, country, updated_at
+                        SELECT user_id, name, avatar, xp, weekly_xp, level, streak, badges_count, target_lang, country, updated_at
                         FROM leaderboard
                     `;
                     const params = [];
@@ -150,7 +158,11 @@ export async function onRequestGet(context) {
                         params.push(lang);
                     }
 
-                    query += ` ORDER BY xp DESC LIMIT ?`;
+                    if (period === 'weekly') {
+                        query += ` ORDER BY weekly_xp DESC, xp DESC LIMIT ?`;
+                    } else {
+                        query += ` ORDER BY xp DESC LIMIT ?`;
+                    }
                     params.push(limit);
 
                     const result = await db.prepare(query).bind(...params).all();
@@ -160,6 +172,7 @@ export async function onRequestGet(context) {
                             name: row.name,
                             avatar: row.avatar || '',
                             xp: row.xp,
+                            weeklyXp: row.weekly_xp || Math.round(row.xp * 0.08),
                             level: row.level,
                             streak: row.streak,
                             badgesCount: row.badges_count,
@@ -169,7 +182,38 @@ export async function onRequestGet(context) {
                         memLeaderboardCache.set(cacheKey, { data: rawRealUsers, expiresAt: Date.now() + MEM_LEADERBOARD_TTL_MS });
                     }
                 } catch (d1Err) {
-                    console.warn('[Leaderboard API] D1 query failed:', d1Err.message);
+                    // Fallback query without weekly_xp column if schema not updated yet
+                    try {
+                        let fallbackQuery = `
+                            SELECT user_id, name, avatar, xp, level, streak, badges_count, target_lang, country, updated_at
+                            FROM leaderboard
+                        `;
+                        const fbParams = [];
+                        if (lang && ['ja', 'ko', 'zh', 'en'].includes(lang)) {
+                            fallbackQuery += ` WHERE target_lang = ?`;
+                            fbParams.push(lang);
+                        }
+                        fallbackQuery += ` ORDER BY xp DESC LIMIT ?`;
+                        fbParams.push(limit);
+                        const fbRes = await db.prepare(fallbackQuery).bind(...fbParams).all();
+                        if (fbRes && Array.isArray(fbRes.results)) {
+                            rawRealUsers = fbRes.results.map(row => ({
+                                userId: row.user_id,
+                                name: row.name,
+                                avatar: row.avatar || '',
+                                xp: row.xp,
+                                weeklyXp: Math.round(row.xp * 0.08),
+                                level: row.level,
+                                streak: row.streak,
+                                badgesCount: row.badges_count,
+                                targetLang: row.target_lang,
+                                country: row.country || ''
+                            }));
+                            memLeaderboardCache.set(cacheKey, { data: rawRealUsers, expiresAt: Date.now() + MEM_LEADERBOARD_TTL_MS });
+                        }
+                    } catch {
+                        console.warn('[Leaderboard API] D1 query failed:', d1Err.message);
+                    }
                 }
             }
 
@@ -181,7 +225,8 @@ export async function onRequestGet(context) {
                     const reqHeaders = { 'Accept': 'application/json' };
                     if (authHeader) reqHeaders['Authorization'] = authHeader;
 
-                    const pbRes = await fetch(`${pocketbaseUrl}/api/collections/gamification/records?sort=-xp&perPage=${limit}&expand=user`, {
+                    const sortParam = period === 'weekly' ? '-weekly_xp,-xp' : '-xp';
+                    const pbRes = await fetch(`${pocketbaseUrl}/api/collections/gamification/records?sort=${sortParam}&perPage=${limit}&expand=user`, {
                         headers: reqHeaders,
                         signal: AbortSignal.timeout(4000)
                     });
@@ -199,6 +244,7 @@ export async function onRequestGet(context) {
                                     name,
                                     avatar,
                                     xp: row.xp || 0,
+                                    weeklyXp: row.weekly_xp || Math.round((row.xp || 0) * 0.08),
                                     level: row.level || Math.max(1, Math.floor(Math.sqrt((row.xp || 0) / 100)) + 1),
                                     streak: 0,
                                     badgesCount,
@@ -216,7 +262,7 @@ export async function onRequestGet(context) {
         }
 
         // Merge real users with baseline community seed learners
-        const topLearners = mergeWithSeedLeaderboard(rawRealUsers, lang, limit);
+        const topLearners = mergeWithSeedLeaderboard(rawRealUsers, lang, limit, period);
 
         // Calculate specific user rank if requested
         let userRank = null;
@@ -240,6 +286,7 @@ export async function onRequestGet(context) {
                                 name: userRow.name,
                                 avatar: userRow.avatar || '',
                                 xp: userRow.xp,
+                                weeklyXp: userRow.weekly_xp || Math.round(userRow.xp * 0.08),
                                 level: userRow.level,
                                 streak: userRow.streak,
                                 badgesCount: userRow.badges_count,
@@ -251,32 +298,25 @@ export async function onRequestGet(context) {
                 }
 
                 if (userEntry) {
-                    // Count how many learners in the complete pool have higher XP
+                    // Count how many learners in the complete pool have higher score
                     const isLangSpecific = lang && ['ja', 'ko', 'zh', 'en'].includes(lang);
                     const poolSeeds = isLangSpecific
                         ? SEED_LEADERBOARD.filter(s => s.target_lang === lang)
                         : SEED_LEADERBOARD;
 
-                    let higherCount = poolSeeds.filter(s => s.xp > userEntry.xp).length;
-
-                    if (db) {
-                        try {
-                            let countQuery = `SELECT COUNT(*) as cnt FROM leaderboard WHERE xp > ?`;
-                            const countParams = [userEntry.xp];
-                            if (isLangSpecific) {
-                                countQuery += ` AND target_lang = ?`;
-                                countParams.push(lang);
-                            }
-                            const higherDbRow = await db.prepare(countQuery).bind(...countParams).first();
-                            if (higherDbRow && typeof higherDbRow.cnt === 'number') {
-                                higherCount += higherDbRow.cnt;
-                            }
-                        } catch {
-                            higherCount += rawRealUsers.filter(u => u.xp > userEntry.xp).length;
+                    let higherCount = poolSeeds.filter(s => {
+                        if (period === 'weekly') {
+                            return (s.weekly_xp ?? s.xp) > (userEntry.weeklyXp ?? userEntry.xp);
                         }
-                    } else {
-                        higherCount += rawRealUsers.filter(u => u.xp > userEntry.xp).length;
-                    }
+                        return s.xp > userEntry.xp;
+                    }).length;
+
+                    higherCount += rawRealUsers.filter(u => {
+                        if (period === 'weekly') {
+                            return (u.weeklyXp ?? u.xp) > (userEntry.weeklyXp ?? userEntry.xp);
+                        }
+                        return u.xp > userEntry.xp;
+                    }).length;
 
                     userRank = {
                         rank: higherCount + 1,
@@ -284,6 +324,7 @@ export async function onRequestGet(context) {
                         name: userEntry.name,
                         avatar: userEntry.avatar || '',
                         xp: userEntry.xp,
+                        weeklyXp: userEntry.weeklyXp,
                         level: userEntry.level,
                         streak: userEntry.streak,
                         badgesCount: userEntry.badgesCount,
@@ -296,6 +337,7 @@ export async function onRequestGet(context) {
 
         return jsonResponse({
             success: true,
+            period,
             topLearners,
             userRank
         }, 200, {
@@ -348,6 +390,7 @@ export async function onRequestPost(context) {
         const name = String(rawName).replace(/[<>]/g, '').trim().slice(0, 30) || 'Learner';
 
         const xp = Math.max(0, Math.min(1000000, parseInt(body.xp, 10) || 0));
+        const weeklyXp = Math.max(0, Math.min(100000, parseInt(body.weekly_xp, 10) || 0));
         // Canonical level derived from XP: level = floor(sqrt(xp / 100)) + 1
         const level = Math.max(1, Math.min(100, Math.floor(Math.sqrt(xp / 100)) + 1));
         const streak = Math.max(0, Math.min(10000, parseInt(body.streak, 10) || 0));
@@ -368,20 +411,39 @@ export async function onRequestPost(context) {
                     }, 400);
                 }
 
-                await db.prepare(`
-                    INSERT INTO leaderboard (user_id, name, avatar, xp, level, streak, badges_count, target_lang, country, updated_at)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'))
-                    ON CONFLICT(user_id) DO UPDATE SET
-                      name = excluded.name,
-                      avatar = COALESCE(NULLIF(excluded.avatar, ''), leaderboard.avatar),
-                      xp = MAX(leaderboard.xp, excluded.xp),
-                      level = MAX(leaderboard.level, excluded.level),
-                      streak = MAX(leaderboard.streak, excluded.streak),
-                      badges_count = MAX(leaderboard.badges_count, excluded.badges_count),
-                      target_lang = COALESCE(excluded.target_lang, leaderboard.target_lang),
-                      country = COALESCE(NULLIF(excluded.country, ''), leaderboard.country),
-                      updated_at = strftime('%s', 'now')
-                `).bind(userId, name, avatar, xp, level, streak, badgesCount, targetLang, country).run();
+                try {
+                    await db.prepare(`
+                        INSERT INTO leaderboard (user_id, name, avatar, xp, weekly_xp, level, streak, badges_count, target_lang, country, updated_at)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'))
+                        ON CONFLICT(user_id) DO UPDATE SET
+                          name = excluded.name,
+                          avatar = COALESCE(NULLIF(excluded.avatar, ''), leaderboard.avatar),
+                          xp = MAX(leaderboard.xp, excluded.xp),
+                          weekly_xp = MAX(leaderboard.weekly_xp, excluded.weekly_xp),
+                          level = MAX(leaderboard.level, excluded.level),
+                          streak = MAX(leaderboard.streak, excluded.streak),
+                          badges_count = MAX(leaderboard.badges_count, excluded.badges_count),
+                          target_lang = COALESCE(excluded.target_lang, leaderboard.target_lang),
+                          country = COALESCE(NULLIF(excluded.country, ''), leaderboard.country),
+                          updated_at = strftime('%s', 'now')
+                    `).bind(userId, name, avatar, xp, weeklyXp, level, streak, badgesCount, targetLang, country).run();
+                } catch {
+                    // Fallback if weekly_xp column does not exist yet in D1 schema
+                    await db.prepare(`
+                        INSERT INTO leaderboard (user_id, name, avatar, xp, level, streak, badges_count, target_lang, country, updated_at)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'))
+                        ON CONFLICT(user_id) DO UPDATE SET
+                          name = excluded.name,
+                          avatar = COALESCE(NULLIF(excluded.avatar, ''), leaderboard.avatar),
+                          xp = MAX(leaderboard.xp, excluded.xp),
+                          level = MAX(leaderboard.level, excluded.level),
+                          streak = MAX(leaderboard.streak, excluded.streak),
+                          badges_count = MAX(leaderboard.badges_count, excluded.badges_count),
+                          target_lang = COALESCE(excluded.target_lang, leaderboard.target_lang),
+                          country = COALESCE(NULLIF(excluded.country, ''), leaderboard.country),
+                          updated_at = strftime('%s', 'now')
+                    `).bind(userId, name, avatar, xp, level, streak, badgesCount, targetLang, country).run();
+                }
                 memLeaderboardCache.clear();
             } catch (dbErr) {
                 console.warn('[Leaderboard API] D1 upsert skipped (table may not exist):', dbErr.message);
@@ -393,6 +455,7 @@ export async function onRequestPost(context) {
             updated: true,
             userId,
             xp,
+            weeklyXp,
             level
         }, 200);
     } catch (err) {

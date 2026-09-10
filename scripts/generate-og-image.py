@@ -1,117 +1,124 @@
 #!/usr/bin/env python3
 """
-Generate a 1200x630 Open Graph preview image for Voca
+Generate a 1200x630 Apple-inspired chill pastel Open Graph preview image for Voca
 """
 import os
+import subprocess
 from PIL import Image, ImageDraw, ImageFont
 
 WIDTH = 1200
 HEIGHT = 630
 
-# Create high-res RGB canvas
-img = Image.new('RGB', (WIDTH, HEIGHT), color='#0b0f19')
-draw = ImageDraw.Draw(img)
+def main():
+    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    output_png_path = os.path.join(root_dir, "public", "og-image.png")
+    temp_svg_path = os.path.join(root_dir, "public", "og-base.temp.svg")
+    temp_png_path = os.path.join(root_dir, "public", "og-base.temp.png")
 
-# Draw subtle background gradient / cards
-for y in range(HEIGHT):
-    # Gradient from #0b0f19 (11, 15, 25) to #1e2238 (30, 34, 56)
-    ratio = y / HEIGHT
-    r = int(11 + (22 - 11) * ratio)
-    g = int(15 + (30 - 15) * ratio)
-    b = int(25 + (45 - 25) * ratio)
-    draw.line([(0, y), (WIDTH, y)], fill=(r, g, b))
+    svg_bg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
+  <defs>
+    <linearGradient id="chill-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF6F4"/>
+      <stop offset="40%" stop-color="#FDF1F5"/>
+      <stop offset="75%" stop-color="#F5F0FB"/>
+      <stop offset="100%" stop-color="#EDF4FD"/>
+    </linearGradient>
+    <radialGradient id="sun-orb" cx="25%" cy="28%" r="48%">
+      <stop offset="0%" stop-color="#FFE6D9" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#FFE6D9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blush-orb" cx="75%" cy="38%" r="48%">
+      <stop offset="0%" stop-color="#FCE1EC" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#FCE1EC" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sky-orb" cx="50%" cy="88%" r="45%">
+      <stop offset="0%" stop-color="#E2EEFD" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#E2EEFD" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7E93"/>
+      <stop offset="50%" stop-color="#F45B74"/>
+      <stop offset="100%" stop-color="#DF4360"/>
+    </linearGradient>
+    <filter id="pillowy-shadow" x="-40%" y="-20%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#DF4360" flood-opacity="0.24"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#4A1E2B" flood-opacity="0.08"/>
+    </filter>
+    <path id="kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFDFB"/>
+  </defs>
 
-# Outer decorative subtle border
-draw.rounded_rectangle([30, 30, WIDTH - 30, HEIGHT - 30], radius=24, outline=(51, 65, 85), width=2)
+  <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#chill-bg)"/>
+  <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#sun-orb)"/>
+  <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#blush-orb)"/>
+  <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#sky-orb)"/>
+  <rect x="24" y="24" width="1152" height="582" rx="28" fill="none" stroke="rgba(255, 255, 255, 0.75)" stroke-width="1.5"/>
 
-# Glow effect behind logo
-for radius in range(120, 70, -5):
-    alpha = int((120 - radius) * 1.5)
-    # Draw soft radial coral tint
-    draw.ellipse([80 - (radius - 70), 90 - (radius - 70), 220 + (radius - 70), 230 + (radius - 70)],
-                 outline=(199, 62, 58))
+  <!-- Centered App Icon -->
+  <g transform="translate(528, 104)" filter="url(#pillowy-shadow)">
+    <rect width="144" height="144" rx="35" fill="url(#icon-grad)"/>
+    <rect x="1" y="1" width="142" height="142" rx="34" fill="none" stroke="rgba(255,255,255,0.42)" stroke-width="2"/>
+    <g transform="translate(72, 72) scale(0.185)">
+      <use href="#kikyou-petal" transform="rotate(0)"/>
+      <use href="#kikyou-petal" transform="rotate(72)"/>
+      <use href="#kikyou-petal" transform="rotate(144)"/>
+      <use href="#kikyou-petal" transform="rotate(216)"/>
+      <use href="#kikyou-petal" transform="rotate(288)"/>
+      <circle cx="0" cy="0" r="50" fill="#FFFDFB" stroke="#F45B74" stroke-width="7"/>
+      <circle cx="0" cy="0" r="21" fill="#F45B74"/>
+    </g>
+  </g>
 
-# Logo image: load the official Kikyo Kamon icon
-logo_path = os.path.join(os.path.dirname(__file__), "..", "public", "icons", "icon-128x128.png")
-if os.path.exists(logo_path):
-    logo_img = Image.open(logo_path).convert("RGBA").resize((110, 110), Image.Resampling.LANCZOS)
-    img.paste(logo_img, (100, 100), logo_img)
-else:
-    logo_box = [100, 100, 210, 210]
-    draw.rounded_rectangle(logo_box, radius=28, fill=(217, 92, 100))
+  <!-- Language Capsule -->
+  <g transform="translate(600, 468)">
+    <rect x="-240" y="0" width="480" height="46" rx="23" fill="rgba(255, 255, 255, 0.72)" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+    <circle cx="-120" cy="23" r="2.5" fill="#D3D7E6"/>
+    <circle cx="0" cy="23" r="2.5" fill="#D3D7E6"/>
+    <circle cx="120" cy="23" r="2.5" fill="#D3D7E6"/>
+  </g>
+</svg>"""
 
-# Load fonts - try standard system sans-serif fonts
-font_title = None
-font_sub = None
-font_pills = None
-font_small = None
+    with open(temp_svg_path, "w", encoding="utf-8") as f:
+        f.write(svg_bg)
 
-font_paths = [
-    "/System/Library/Fonts/Hiragino Sans GB.ttc",
-    "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
-    "/System/Library/Fonts/SFNS.ttf",
-    "/Library/Fonts/Arial.ttf",
-    "/System/Library/Fonts/Helvetica.ttc",
-    "/System/Library/Fonts/Supplemental/Arial.ttf"
-]
+    subprocess.run(["sips", "-s", "format", "png", temp_svg_path, "--out", temp_png_path], capture_output=True)
 
-for p in font_paths:
-    if os.path.exists(p):
-        try:
-            font_title = ImageFont.truetype(p, 64)
-            font_sub = ImageFont.truetype(p, 28)
-            font_pills = ImageFont.truetype(p, 20)
-            font_small = ImageFont.truetype(p, 18)
-            break
-        except Exception:
-            continue
+    img = Image.open(temp_png_path).convert("RGBA")
+    draw = ImageDraw.Draw(img)
 
-if not font_title:
-    font_title = ImageFont.load_default()
-    font_sub = ImageFont.load_default()
-    font_pills = ImageFont.load_default()
-    font_small = ImageFont.load_default()
+    # Clean Avenir / SF typography
+    font_title_path = "/System/Library/Fonts/Avenir Next.ttc"
+    font_sub_path = "/System/Library/Fonts/Avenir.ttc"
+    if not os.path.exists(font_title_path):
+        font_title_path = "/Library/Fonts/SF-Pro-Rounded-Bold.otf"
+        font_sub_path = "/Library/Fonts/SF-Pro-Rounded-Medium.otf"
 
-# App Brand Title
-draw.text((245, 125), "Voca", fill=(255, 255, 255), font=font_title)
-draw.text((245, 195), "Learn Languages with Authentic YouTube Videos", fill=(148, 163, 184), font=font_sub)
+    f_title = ImageFont.truetype(font_title_path, 68)
+    f_sub = ImageFont.truetype(font_sub_path, 25)
+    f_desc = ImageFont.truetype(font_sub_path, 16)
+    f_pill = ImageFont.truetype(font_sub_path, 15)
+    f_foot = ImageFont.truetype(font_sub_path, 13)
 
-# Subtitle preview card mockup in center
-card_x1, card_y1, card_x2, card_y2 = 100, 260, WIDTH - 100, 480
-draw.rounded_rectangle([card_x1, card_y1, card_x2, card_y2], radius=20, fill=(15, 23, 42), outline=(51, 65, 85), width=2)
+    # Title "Voca"
+    draw.text((600, 305), "Voca", fill=(36, 39, 56, 255), font=f_title, anchor="mm")
+    # Subtitle
+    draw.text((600, 362), "Learn languages while watching YouTube", fill=(88, 93, 119, 255), font=f_sub, anchor="mm")
+    # Features
+    draw.text((600, 404), "Interactive dual subtitles  ·  Instant dictionary  ·  Spaced repetition", fill=(136, 142, 170, 255), font=f_desc, anchor="mm")
+    # Language pills
+    draw.text((600 - 180, 468 + 23), "Japanese", fill=(61, 66, 89, 255), font=f_pill, anchor="mm")
+    draw.text((600 - 60, 468 + 23), "Chinese", fill=(61, 66, 89, 255), font=f_pill, anchor="mm")
+    draw.text((600 + 60, 468 + 23), "Korean", fill=(61, 66, 89, 255), font=f_pill, anchor="mm")
+    draw.text((600 + 180, 468 + 23), "English", fill=(61, 66, 89, 255), font=f_pill, anchor="mm")
+    # Domain
+    draw.text((600, 562), "lingua-tube.pages.dev", fill=(168, 173, 191, 255), font=f_foot, anchor="mm")
 
-# YouTube style red bar at top of card
-draw.rounded_rectangle([card_x1 + 24, card_y1 + 24, card_x1 + 36, card_y1 + 44], radius=3, fill=(239, 68, 68))
-draw.text((card_x1 + 48, card_y1 + 26), "INTERACTIVE DUAL SUBTITLES & REAL-TIME TOKENIZER", fill=(203, 213, 225), font=font_small)
+    img.save(output_png_path)
 
-# Japanese subtitle sample with Furigana
-draw.text((card_x1 + 48, card_y1 + 80), "日本語を勉強するのがとても楽しいです！", fill=(248, 250, 252), font=font_sub)
-draw.text((card_x1 + 48, card_y1 + 125), "Studying Japanese is really fun!", fill=(148, 163, 184), font=font_small)
-draw.text((card_x1 + 48, card_y1 + 155), "Học tiếng Nhật thật là thú vị!  •  学日语非常有趣！", fill=(100, 116, 139), font=font_small)
+    for p in [temp_svg_path, temp_png_path]:
+        if os.path.exists(p):
+            os.remove(p)
 
-# Feature Badges Pill Row
-pills = [
-    "Dual Subtitles",
-    "Furigana & Pinyin",
-    "Instant Dictionary",
-    "SM-2 Flashcards",
-    "AI Transcription"
-]
+    print(f"Generated {output_png_path} ({WIDTH}x{HEIGHT})")
 
-pill_x = 100
-pill_y = 515
-for pill in pills:
-    bbox = draw.textbbox((0, 0), pill, font=font_pills)
-    pw = bbox[2] - bbox[0] + 32
-    ph = 40
-    draw.rounded_rectangle([pill_x, pill_y, pill_x + pw, pill_y + ph], radius=12, fill=(30, 41, 59), outline=(71, 85, 105), width=1)
-    draw.text((pill_x + 16, pill_y + 10), pill, fill=(226, 232, 240), font=font_pills)
-    pill_x += pw + 16
-
-# Footer URL & languages
-draw.text((100, 580), "JA  •  ZH  •  KO  •  EN", fill=(99, 102, 241), font=font_small)
-draw.text((WIDTH - 100, 580), "https://lingua-tube.pages.dev", fill=(148, 163, 184), font=font_small, anchor="ra")
-
-output_path = os.path.join(os.path.dirname(__file__), "..", "public", "og-image.png")
-img.save(output_path, "PNG", optimize=True)
-print(f"Generated {output_path} ({WIDTH}x{HEIGHT})")
+if __name__ == "__main__":
+    main()

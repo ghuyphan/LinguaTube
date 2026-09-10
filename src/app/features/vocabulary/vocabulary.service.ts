@@ -81,6 +81,7 @@ export class VocabularyService {
         sourceTimestamp?: number
     ): Promise<VocabularyItem> {
         this.gamification.addXP(5, 'word_saved');
+        this.gamification.recordWordSaved();
         return this.repo.addFromDictionary(entry, language, sourceSentence, sourceVideoId, sourceTimestamp);
     }
 
@@ -97,6 +98,7 @@ export class VocabularyService {
         sourceTimestamp?: number
     ): Promise<VocabularyItem> {
         this.gamification.addXP(5, 'word_saved');
+        this.gamification.recordWordSaved();
         return this.repo.addWord(word, meaning, language, reading, pinyin, romanization, sourceSentence, audio, sourceVideoId, sourceTimestamp);
     }
 
@@ -164,11 +166,13 @@ export class VocabularyService {
 
     markReviewed(id: string, correct: boolean): void {
         this.gamification.addXP(correct ? 10 : 5, 'flashcard_review');
+        this.gamification.recordSRSReview();
         this.repo.markReviewed(id, correct ? 4 : 1);
     }
 
     markReviewedSRS(id: string, quality: number): void {
         this.gamification.addXP(quality >= 3 ? 10 : 5, 'flashcard_review');
+        this.gamification.recordSRSReview();
         this.repo.markReviewed(id, quality);
     }
 

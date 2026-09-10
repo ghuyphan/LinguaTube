@@ -14,41 +14,41 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.1.8',
+    version: '1.1.11',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-10',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Natural Bottom Subtitle Placement: Lowered resting fullscreen subtitle position to 94% (expanded range to 10%–95%), matching authentic caption areas and eliminating excessive vertical gap',
-            'Proportional Controls Clearance: Tuned player controls bottom lift to 3.25rem (2.5rem on mobile), ensuring subtitles float cleanly above controls without jumping into the video center',
-            'Fluid Direct Drag & Gesture Snapping: Re-engineered fullscreen subtitle drag controller outside Angular zone, eliminating the 50% anchor flip oscillation and enabling effortless Top/Bottom snapping',
-            'Legacy Settings Auto-Migration: Automatically upgrades previous 84% subtitle positions in local storage to the new natural 94% placement'
+            'Daily Missions & Reward Chest: Complete 3 daily quests (video immersion, vocabulary, SRS flashcards, dictionary) to unlock the bonus XP chest',
+            'Weekly Leaderboard & Trophy Hub: Compete in weekly league resets alongside lifetime rankings in a unified Missions, Achievements & Leaderboard hub',
+            'Refined Video Layout: Sidebar height seamlessly aligns to the 16:9 video player without layout shifts or height jumping',
+            'Polished UI & Tactile Press States: Consistent card padding, refreshed high-res PWA icons, and smooth micro-interactions without text jitter'
         ],
         vi: [
-            'Vị trí phụ đề đáy tự nhiên: Hạ vị trí phụ đề toàn màn hình xuống 94% (mở rộng giới hạn 10%–95%), khớp hoàn hảo với vị trí phụ đề video tiêu chuẩn và loại bỏ khoảng trống thừa bên dưới',
-            'Nâng phụ đề cân đối khi hiện điều khiển: Tinh chỉnh khoảng nâng phụ đề khi thanh điều khiển xuất hiện xuống 3.25rem (2.5rem trên di động), giúp phụ đề nằm ngay phía trên thanh phát mà không bị đẩy lên giữa màn hình',
-            'Kéo thả mượt mà & cử chỉ hít vị trí: Thiết kế lại cơ chế kéo phụ đề toàn màn hình chạy hoàn toàn ngoài Angular zone, loại bỏ hiện tượng giật nhảy khi qua mốc 50% và hỗ trợ hít vị trí Trên/Dưới mượt mà',
-            'Tự động nâng cấp cài đặt cũ: Tự động di chuyển cài đặt phụ đề cũ từ 84% sang vị trí 94% mới trong bộ nhớ trình duyệt'
+            'Nhiệm vụ ngày & Rương phần thưởng: Hoàn thành 3 thử thách hằng ngày (xem video, lưu từ, luyện SRS, tra từ) để mở rương thưởng XP',
+            'Đua top tuần & Trung tâm vinh danh: Tranh tài bảng xếp hạng tuần mới mẻ và tích lũy trọn đời tại giao diện hợp nhất Nhiệm vụ, Thành tựu & Bảng xếp hạng',
+            'Bố cục xem video tinh gọn: Chiều cao thanh bên đồng bộ chuẩn xác với khung video 16:9, không bị giật hay co giãn khi đóng/chuyển video',
+            'Giao diện đồng nhất & Chạm mượt mà: Chuẩn hóa khoảng đệm thẻ, cập nhật bộ icon PWA sắc nét và tối ưu hiệu ứng nhấn êm ái'
         ],
         ja: [
-            '自然な下部字幕配置：全画面字幕の標準下部位置を94%（調整範囲を10%〜95%）へ引き下げ、YouTube等の標準字幕エリアと自然に一致させ不要な余白を解消',
-            'コントロール表示時の最適な逃げ幅：下部バー表示時の字幕リフト幅を3.25rem（モバイル2.5rem）へ調整し、画面中央に飛び上がることなく操作バーのすぐ上に綺麗に配置',
-            '滑らかなドラッグ操作とスナップジェスチャー：Angularゾーン外で直接制御するドラッグ処理へ刷新し、50%境界での反転跳躍バグを完全解消、上下端への快適なスナップを実現',
-            '既存設定の自動アップグレード：旧バージョンで保存された84%の位置設定をブラウザストレージから自動的に新標準の94%へ移行'
+            'デイリーミッション＆宝箱：動画視聴、単語保存、SRS復習、辞書検索の3つのクエストをクリアしてXPボーナスチェストを開封',
+            '週間ランキング＆トロフィーハブ：毎週リセットされる週間リーグと累計ランキングを統合したミッション・実績・ランキング画面',
+            '動画レイアウトの最適化：単語サイドバーの高さが16:9動画プレイヤーに美しく揃い、動画開閉時の不自然な伸縮を解消',
+            'デザイン統一＆滑らかなタップ操作：カード余白の統一、高解像度PWAアイコンの刷新、文字ブレのない心地よいタップフィードバック'
         ],
         ko: [
-            '자연스러운 하단 자막 배치: 전체화면 기본 자막 위치를 94%로 낮추고(조정 범위 10%~95%로 확장) 스트리밍 표준 자막 위치에 자연스럽게 맞춰 과도한 하단 공백 제거',
-            '컨트롤 표시 시 균형 잡힌 위치 조정: 하단 플레이어 컨트롤 표시 시 자막 상승 폭을 3.25rem(모바일 2.5rem)으로 최적화하여 화면 중앙으로 치솟지 않고 컨트롤 바로 위에 안정적으로 배치',
-            '부드러운 직접 드래그 및 스냅 제스처: Angular 존 외부에서 직접 제어하는 드래그 엔진으로 전면 개편하여 50% 지점 반전 튀김 현상을 제거하고 상/하단 스냅 지원',
-            '기존 설정 자동 마이그레이션: 로컬 스토리지에 저장된 이전 84% 자막 위치를 새로운 표준인 94%로 자동 업그레이드'
+            '일일 미션 및 보상 상자: 동영상 시청, 단어 저장, SRS 복습, 사전 검색 3가지 퀘스트 완료 시 추가 XP 보너스 상자 지급',
+            '주간 리더보드 & 트로피 허브: 주간 리그 및 누적 랭킹을 한눈에 확인하는 미션·업적·리더보드 통합 인터페이스',
+            '동영상 화면 레이아웃 최적화: 단어 사이드바 높이가 16:9 동영상 프레임에 맞춰 정렬되며, 동영상 전환 시 불필요한 크기 변화 제거',
+            '디자인 통일 & 편안한 터치감: 카드 여백 표준화, 고해상도 PWA 아이콘 개선, 글자 흔들림 없는 부드러운 클릭 반응'
         ],
         zh: [
-            '自然贴合的底部字幕位置：将全屏字幕默认底部高度下调至 94%（调节范围扩展至 10%–95%），完美契合主流视频字幕区域，彻底消除底部过大空白',
-            '控件浮起间距黄金优化：将播放控制栏出现时的字幕上移幅度微调至 3.25rem（移动端 2.5rem），既能优雅避让控制条，又绝不上跳至屏幕正中',
-            '跟手无感拖拽与手势吸附：全新重构脱离 Angular 变更检测的直接手势引擎，彻底根除越过 50% 时的锚点抖动跳变，支持轻触切换与上下端丝滑吸附',
-            '历史设置平滑自动迁移：自动将本地缓存中旧版的 84% 字幕位置无缝升级为全新的 94% 黄金位置'
+            '每日任务与通关宝箱：完成视频沉浸、生词收集、SRS复习、查词等3项每日挑战，开启额外XP通关宝箱',
+            '每周天梯榜与荣誉中心：全新每周结算排行榜与终身荣誉结合，一体化呈现任务、成就与全球竞技',
+            '优化视频学习布局：生词侧边栏高度与16:9视频框架精准对齐，关闭或切换视频时不再出现抖动和尺寸伸缩',
+            '统一视觉规范与舒适交互：规范全站卡片内边距，更新高分辨率PWA图标，去除文字抖动，触控更顺滑'
         ]
     }
 };

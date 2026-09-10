@@ -409,7 +409,8 @@
     }
 
     &:active {
-        transform: scale(0.99) translateY(0) !important;
+        transform: translateY(0) !important;
+        background: var(--bg-surface);
     }
 
     app-icon {

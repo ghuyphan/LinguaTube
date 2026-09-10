@@ -773,7 +773,47 @@
     "streak": "Streak",
     "empty": "No rankings available yet",
     "syncScore": "Sync Score",
-    "synced": "Score synced!"
+    "synced": "Score synced!",
+    "thisWeek": "This Week",
+    "allTime": "All Time"
+  },
+  "missions": {
+    "tabTitle": "Missions",
+    "resetsIn": "New quests in",
+    "dailyChest": "Daily Completion Chest",
+    "dailyChestDesc": "Complete all 3 daily missions to open the chest!",
+    "claim": "Claim",
+    "claimed": "Claimed",
+    "claimedReward": "Mission Reward Claimed",
+    "dailyChestClaimed": "Daily Chest Claimed",
+    "watch1": {
+      "title": "Active Immersion",
+      "desc": "Watch 1 video with subtitles"
+    },
+    "watch2": {
+      "title": "Deep Immersion",
+      "desc": "Watch 2 videos with subtitles"
+    },
+    "save3": {
+      "title": "Sentence Miner",
+      "desc": "Save 3 new vocabulary words from subtitles"
+    },
+    "save5": {
+      "title": "Vocabulary Hunter",
+      "desc": "Save 5 new vocabulary words"
+    },
+    "dict3": {
+      "title": "Dictionary Sleuth",
+      "desc": "Look up 3 words in the dictionary"
+    },
+    "srs10": {
+      "title": "Memory Workout",
+      "desc": "Complete 10 flashcard reviews in SRS study"
+    },
+    "quiz1": {
+      "title": "Comprehension Test",
+      "desc": "Complete 1 video comprehension quiz"
+    }
   },
   "achievements": {
     "title": "Achievements & Level",

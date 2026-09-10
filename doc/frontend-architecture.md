@@ -417,14 +417,31 @@ The application styling is organized using modular SCSS located in `src/styles/`
 - **`_layout.scss`**: Main grid, sidebar layouts, topbar header, safe area padding (`--bottom-nav-safe-area`, `env(safe-area-inset-bottom)`).
 - **`_components.scss`**: Badges, modals, dialog backdrops, pill tags, buttons.
 - **`_buttons.scss` & `_forms.scss`**: Standardized button variants (primary, secondary, danger, ghost) and input fields.
-- **Dark/Light Theming**:
-  Theme switching is controlled via `data-theme="dark"` or `data-theme="light"` on the `<html>` root, referencing CSS variables:
+- **Apple-Inspired Chill Pastel & Obsidian Theming**:
+  Theme switching is controlled via `data-theme="dark"` or `data-theme="light"` on the `<html>` root, referencing harmonious CSS variables:
   ```scss
+  :root {
+    /* Chill Pastel Light Mode */
+    --bg-primary: #FAF7F5;
+    --bg-secondary: #F2ECE7;
+    --bg-surface: #FDFBF9;
+    --text-primary: #242738;
+    --accent-primary: #F45B74;
+    --word-new: #FFEBF0;
+    --word-new-text: #DF3D5B;
+    --word-new-border: rgba(223, 61, 91, 0.18);
+  }
+
   [data-theme="dark"] {
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --text-primary: #f8fafc;
-    --accent-color: #38bdf8;
+    /* Rich Obsidian Dark Mode */
+    --bg-primary: #0D1017;
+    --bg-secondary: #141923;
+    --bg-surface: #1B2230;
+    --text-primary: #F0F2F8;
+    --accent-primary: #FF6B82;
+    --word-new: rgba(255, 120, 145, 0.13);
+    --word-new-text: #FFA4B5;
+    --word-new-border: rgba(255, 120, 145, 0.24);
   }
   ```
 
@@ -458,7 +475,7 @@ To eliminate stacking collisions and guarantee that toasts, modals, and navigati
   - Header word heading with language-specific font family (`text-ja`, `text-zh`, `text-ko`).
   - Phonetic readings (`.result-reading`, `.vocab-item__reading`) with dedicated `--pinyin` and `--romaji` modifier tags.
   - Authentic audio playback buttons (`.audio-btn`, `.audio-btn--sm`) with primary accent background tint and pulsing animation during active audio streaming via `AudioService`.
-  - Level pill badges (`.save-badge-btn`, `.level-badge-btn`) cycling seamlessly between `'new'`, `'learning'`, `'known'`, and `'ignored'`.
+  - Level pill badges (`.save-badge-btn`, `.level-badge-btn`) cycling seamlessly between `'new'`, `'learning'`, `'known'`, and `'ignored'`, styled as borderless matte pills with an integrated dot indicator (`.level-dot`) for an Apple Notes / Things 3 style relaxed aesthetic.
   - Empty-state action prompts enabling instant cross-navigation (`searchInDictionary`) to look up and save new words directly.
 
 ### Unified Skeleton Loading System (`_skeletons.scss`)
@@ -573,9 +590,10 @@ To maintain complete visual, structural, and functional harmony across all prima
 ### 7.3. Brand Identity & Vector Iconography (Kikyo Kamon)
 - **Heritage Design**: The app icon is modeled after the authentic Japanese **Kikyo Kamon (桔梗紋 / Bellflower Crest)**, a celebrated samurai family crest (Akechi Mitsuhide) representing elegance, focus, and cultural scholarship.
 - **Mathematical 5-Fold Symmetry**: Crafted with 5-fold rotational symmetry ($72^\circ$ intervals), defining a single master petal rotated around origin `(256, 256)` and smoothly capped by a concentric circular pistil ring.
-- **Colorway & Container**: Features Voca's signature Coral (`#D95C64`) squircle container (`rx="115"` on 512x512) framing a warm Cream (`#F5F0E8`) flower.
-- **Multi-Resolution PWA Icons**: Full suite of 11 raster resolutions rendered via native `sips` in `public/icons/` (`icon-72x72.png` through `icon-512x512.png`, `apple-icon-180.png`, and full-bleed `manifest-icon-*.maskable.png` with 80% safe zone padding).
-- **Universal Application**: Unified across `src/favicon.svg`, `src/assets/icon.svg`, the desktop sidebar header (`sidebar.component.html`), the iOS install sheet (`app.component.ts`), and the Open Graph card (`public/og-image.png`).
+- **Colorway & Container**: Features Voca's signature radiant Coral-to-Crimson (`#FF5C6C` to `#C91842`) squircle container (`rx="118"` on 512x512) with subtle inner rim highlight framing a crisp pearl-white (`#FFFDFB`) flower with soft depth shadow.
+- **Multi-Resolution PWA Icons**: Full suite of raster resolutions rendered via native `sips` in `public/icons/` (`icon-72x72.png` through `icon-512x512.png`, dedicated full-bleed `apple-icon-180.png` without transparent corners to follow Apple HIG, and full-bleed `manifest-icon-*.maskable.png` with safe zone padding).
+- **Apple-Inspired Chill Pastel Open Graph Preview Card**: High-resolution 1200x630 branded social share card (`public/og-image.png`) featuring a dreamy sunrise-to-lavender pastel atmosphere, pillowy tactile Kikyou icon, clean Avenir / SF typography, and frosted glass language capsule (`🇯🇵 日本語` • `🇨🇳 中文` • `🇰🇷 한국어` • `🇬🇧 English`).
+- **Universal Application**: Unified across `src/favicon.svg`, `public/favicon.svg`, `src/assets/icon.svg`, the desktop sidebar header (`sidebar.component.html`), the iOS install sheet (`app.component.ts`), the dark `#0f172a` Apple splash screens, and the Open Graph card (`public/og-image.png`).
 
 ---
 

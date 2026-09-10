@@ -773,7 +773,47 @@
     "streak": "연속 일수",
     "empty": "아직 랭킹 정보가 없습니다",
     "syncScore": "점수 동기화",
-    "synced": "동기화 완료!"
+    "synced": "동기화 완료!",
+    "thisWeek": "이번 주",
+    "allTime": "전체"
+  },
+  "missions": {
+    "tabTitle": "일일 미션",
+    "resetsIn": "초기화까지",
+    "dailyChest": "일일 달성 상자",
+    "dailyChestDesc": "3개의 일일 미션을 모두 완료하고 보물상자를 열어보세요!",
+    "claim": "받기",
+    "claimed": "수령 완료",
+    "claimedReward": "미션 보상을 획득했습니다",
+    "dailyChestClaimed": "일일 상자를 열었습니다",
+    "watch1": {
+      "title": "몰입 시청",
+      "desc": "자막과 함께 동영상 1개 시청하기"
+    },
+    "watch2": {
+      "title": "심층 몰입",
+      "desc": "자막과 함께 동영상 2개 시청하기"
+    },
+    "save3": {
+      "title": "문장 채굴자",
+      "desc": "자막에서 새로운 단어 3개 저장하기"
+    },
+    "save5": {
+      "title": "어휘 사냥꾼",
+      "desc": "새로운 단어 5개 저장하기"
+    },
+    "dict3": {
+      "title": "사전 탐색가",
+      "desc": "사전에서 단어 3개 검색하기"
+    },
+    "srs10": {
+      "title": "기억력 트레이닝",
+      "desc": "SRS 학습에서 플래시카드 10개 복습하기"
+    },
+    "quiz1": {
+      "title": "이해도 평가",
+      "desc": "동영상 이해도 퀴즈 1회 완료하기"
+    }
   },
   "achievements": {
     "title": "업적 및 레벨",

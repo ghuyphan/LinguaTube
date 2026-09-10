@@ -992,19 +992,19 @@
 /* Gamified Word Levels with clean, harmonious borders */
 .word--new {
     background: var(--word-new);
-    border-color: rgba(var(--error-rgb, 255, 75, 75), 0.35);
+    border-color: var(--word-new-border);
     color: var(--word-new-text);
 }
 
 .word--learning {
     background: var(--word-learning);
-    border-color: rgba(var(--warning-rgb, 255, 200, 0), 0.35);
+    border-color: var(--word-learning-border);
     color: var(--word-learning-text);
 }
 
 .word--known {
     background: var(--word-known);
-    border-color: rgba(var(--success-rgb, 28, 176, 246), 0.35);
+    border-color: var(--word-known-border);
     color: var(--word-known-text);
 }
 

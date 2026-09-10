@@ -83,7 +83,6 @@
 
     &:active {
         background: var(--bg-secondary);
-        transform: scale(0.99);
     }
 
     // Saved state - video is in this playlist
@@ -193,7 +192,7 @@
     }
 
     &:active {
-        transform: scale(0.99);
+        background: var(--bg-hover);
     }
 }
 

@@ -672,45 +672,46 @@ app.post('/api/payment/webhook', (req, res) => {
 // Dev Leaderboard (28 baseline community learners)
 const devLeaderboard = [
     // JA
-    { userId: 'seed_ja_1', name: 'Kenji Sato', avatar: '', xp: 14250, level: 12, streak: 42, badgesCount: 14, targetLang: 'ja', country: '🇯🇵' },
-    { userId: 'seed_ja_2', name: 'Wei Zhang', avatar: '', xp: 8720, level: 8, streak: 19, badgesCount: 8, targetLang: 'ja', country: '🇯🇵' },
-    { userId: 'seed_ja_3', name: 'Mateo Rossi', avatar: '', xp: 5120, level: 5, streak: 10, badgesCount: 5, targetLang: 'ja', country: '🇯🇵' },
-    { userId: 'seed_ja_4', name: 'Aoi Takahashi', avatar: '', xp: 3450, level: 4, streak: 15, badgesCount: 6, targetLang: 'ja', country: '🇯🇵' },
-    { userId: 'seed_ja_5', name: 'Lucas Meyer', avatar: '', xp: 2180, level: 3, streak: 8, badgesCount: 4, targetLang: 'ja', country: '🇩🇪' },
-    { userId: 'seed_ja_6', name: 'Sakura Ito', avatar: '', xp: 1420, level: 2, streak: 5, badgesCount: 3, targetLang: 'ja', country: '🇯🇵' },
-    { userId: 'seed_ja_7', name: 'Daiki Watanabe', avatar: '', xp: 850, level: 2, streak: 3, badgesCount: 2, targetLang: 'ja', country: '🇯🇵' },
+    { userId: 'seed_ja_1', name: 'Kenji Sato', avatar: '', xp: 14250, weeklyXp: 850, level: 12, streak: 42, badgesCount: 14, targetLang: 'ja', country: '🇯🇵' },
+    { userId: 'seed_ja_2', name: 'Wei Zhang', avatar: '', xp: 8720, weeklyXp: 620, level: 8, streak: 19, badgesCount: 8, targetLang: 'ja', country: '🇯🇵' },
+    { userId: 'seed_ja_3', name: 'Mateo Rossi', avatar: '', xp: 5120, weeklyXp: 490, level: 5, streak: 10, badgesCount: 5, targetLang: 'ja', country: '🇯🇵' },
+    { userId: 'seed_ja_4', name: 'Aoi Takahashi', avatar: '', xp: 3450, weeklyXp: 380, level: 4, streak: 15, badgesCount: 6, targetLang: 'ja', country: '🇯🇵' },
+    { userId: 'seed_ja_5', name: 'Lucas Meyer', avatar: '', xp: 2180, weeklyXp: 260, level: 3, streak: 8, badgesCount: 4, targetLang: 'ja', country: '🇩🇪' },
+    { userId: 'seed_ja_6', name: 'Sakura Ito', avatar: '', xp: 1420, weeklyXp: 180, level: 2, streak: 5, badgesCount: 3, targetLang: 'ja', country: '🇯🇵' },
+    { userId: 'seed_ja_7', name: 'Daiki Watanabe', avatar: '', xp: 850, weeklyXp: 110, level: 2, streak: 3, badgesCount: 2, targetLang: 'ja', country: '🇯🇵' },
 
     // KO
-    { userId: 'seed_ko_1', name: 'Elena Rostova', avatar: '', xp: 12890, level: 11, streak: 35, badgesCount: 12, targetLang: 'ko', country: '🇰🇷' },
-    { userId: 'seed_ko_2', name: 'Sophia Chen', avatar: '', xp: 7640, level: 7, streak: 16, badgesCount: 7, targetLang: 'ko', country: '🇰🇷' },
-    { userId: 'seed_ko_3', name: 'Hyun-woo Lee', avatar: '', xp: 4120, level: 5, streak: 8, badgesCount: 4, targetLang: 'ko', country: '🇰🇷' },
-    { userId: 'seed_ko_4', name: 'Min-seo Jung', avatar: '', xp: 3100, level: 4, streak: 11, badgesCount: 5, targetLang: 'ko', country: '🇰🇷' },
-    { userId: 'seed_ko_5', name: 'David Miller', avatar: '', xp: 1950, level: 3, streak: 6, badgesCount: 3, targetLang: 'ko', country: '🇺🇸' },
-    { userId: 'seed_ko_6', name: 'Seo-yeon Park', avatar: '', xp: 1280, level: 2, streak: 4, badgesCount: 3, targetLang: 'ko', country: '🇰🇷' },
-    { userId: 'seed_ko_7', name: 'Ji-hoon Choi', avatar: '', xp: 790, level: 2, streak: 2, badgesCount: 2, targetLang: 'ko', country: '🇰🇷' },
+    { userId: 'seed_ko_1', name: 'Elena Rostova', avatar: '', xp: 12890, weeklyXp: 790, level: 11, streak: 35, badgesCount: 12, targetLang: 'ko', country: '🇰🇷' },
+    { userId: 'seed_ko_2', name: 'Sophia Chen', avatar: '', xp: 7640, weeklyXp: 580, level: 7, streak: 16, badgesCount: 7, targetLang: 'ko', country: '🇰🇷' },
+    { userId: 'seed_ko_3', name: 'Hyun-woo Lee', avatar: '', xp: 4120, weeklyXp: 410, level: 5, streak: 8, badgesCount: 4, targetLang: 'ko', country: '🇰🇷' },
+    { userId: 'seed_ko_4', name: 'Min-seo Jung', avatar: '', xp: 3100, weeklyXp: 320, level: 4, streak: 11, badgesCount: 5, targetLang: 'ko', country: '🇰🇷' },
+    { userId: 'seed_ko_5', name: 'David Miller', avatar: '', xp: 1950, weeklyXp: 220, level: 3, streak: 6, badgesCount: 3, targetLang: 'ko', country: '🇺🇸' },
+    { userId: 'seed_ko_6', name: 'Seo-yeon Park', avatar: '', xp: 1280, weeklyXp: 160, level: 2, streak: 4, badgesCount: 3, targetLang: 'ko', country: '🇰🇷' },
+    { userId: 'seed_ko_7', name: 'Ji-hoon Choi', avatar: '', xp: 790, weeklyXp: 90, level: 2, streak: 2, badgesCount: 2, targetLang: 'ko', country: '🇰🇷' },
 
     // ZH
-    { userId: 'seed_zh_1', name: 'Alexandre Dubois', avatar: '', xp: 11400, level: 10, streak: 28, badgesCount: 11, targetLang: 'zh', country: '🇨🇳' },
-    { userId: 'seed_zh_2', name: 'Liam Wilson', avatar: '', xp: 6890, level: 7, streak: 14, badgesCount: 6, targetLang: 'zh', country: '🇬🇧' },
-    { userId: 'seed_zh_3', name: 'Ji-won Kim', avatar: '', xp: 4480, level: 5, streak: 9, badgesCount: 5, targetLang: 'zh', country: '🇨🇳' },
-    { userId: 'seed_zh_4', name: 'Mei-ling Zhao', avatar: '', xp: 2890, level: 4, streak: 12, badgesCount: 5, targetLang: 'zh', country: '🇨🇳' },
-    { userId: 'seed_zh_5', name: 'Carlos Santos', avatar: '', xp: 1840, level: 3, streak: 7, badgesCount: 3, targetLang: 'zh', country: '🇧🇷' },
-    { userId: 'seed_zh_6', name: 'Xiao-wei Lin', avatar: '', xp: 1190, level: 2, streak: 4, badgesCount: 2, targetLang: 'zh', country: '🇨🇳' },
-    { userId: 'seed_zh_7', name: 'Bowen Wang', avatar: '', xp: 650, level: 1, streak: 2, badgesCount: 1, targetLang: 'zh', country: '🇨🇳' },
+    { userId: 'seed_zh_1', name: 'Alexandre Dubois', avatar: '', xp: 11400, weeklyXp: 740, level: 10, streak: 28, badgesCount: 11, targetLang: 'zh', country: '🇨🇳' },
+    { userId: 'seed_zh_2', name: 'Liam Wilson', avatar: '', xp: 6890, weeklyXp: 530, level: 7, streak: 14, badgesCount: 6, targetLang: 'zh', country: '🇬🇧' },
+    { userId: 'seed_zh_3', name: 'Ji-won Kim', avatar: '', xp: 4480, weeklyXp: 390, level: 5, streak: 9, badgesCount: 5, targetLang: 'zh', country: '🇨🇳' },
+    { userId: 'seed_zh_4', name: 'Mei-ling Zhao', avatar: '', xp: 2890, weeklyXp: 290, level: 4, streak: 12, badgesCount: 5, targetLang: 'zh', country: '🇨🇳' },
+    { userId: 'seed_zh_5', name: 'Carlos Santos', avatar: '', xp: 1840, weeklyXp: 210, level: 3, streak: 7, badgesCount: 3, targetLang: 'zh', country: '🇧🇷' },
+    { userId: 'seed_zh_6', name: 'Xiao-wei Lin', avatar: '', xp: 1190, weeklyXp: 150, level: 2, streak: 4, badgesCount: 2, targetLang: 'zh', country: '🇨🇳' },
+    { userId: 'seed_zh_7', name: 'Bowen Wang', avatar: '', xp: 650, weeklyXp: 80, level: 1, streak: 2, badgesCount: 1, targetLang: 'zh', country: '🇨🇳' },
 
     // EN
-    { userId: 'seed_en_1', name: 'Min-ho Park', avatar: '', xp: 9850, level: 9, streak: 21, badgesCount: 9, targetLang: 'en', country: '🇬🇧' },
-    { userId: 'seed_en_2', name: 'Hana Tanaka', avatar: '', xp: 5930, level: 6, streak: 12, badgesCount: 6, targetLang: 'en', country: '🇺🇸' },
-    { userId: 'seed_en_3', name: 'Chloe Martin', avatar: '', xp: 3890, level: 4, streak: 7, badgesCount: 4, targetLang: 'en', country: '🇬🇧' },
-    { userId: 'seed_en_4', name: 'Oliver Smith', avatar: '', xp: 2650, level: 4, streak: 10, badgesCount: 4, targetLang: 'en', country: '🇦🇺' },
-    { userId: 'seed_en_5', name: 'Yuto Nakamura', avatar: '', xp: 1650, level: 3, streak: 6, badgesCount: 3, targetLang: 'en', country: '🇯🇵' },
-    { userId: 'seed_en_6', name: 'Emma Johnson', avatar: '', xp: 1050, level: 2, streak: 3, badgesCount: 2, targetLang: 'en', country: '🇨🇦' },
-    { userId: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, level: 1, streak: 1, badgesCount: 1, targetLang: 'en', country: '🇺🇸' }
+    { userId: 'seed_en_1', name: 'Min-ho Park', avatar: '', xp: 9850, weeklyXp: 680, level: 9, streak: 21, badgesCount: 9, targetLang: 'en', country: '🇬🇧' },
+    { userId: 'seed_en_2', name: 'Hana Tanaka', avatar: '', xp: 5930, weeklyXp: 470, level: 6, streak: 12, badgesCount: 6, targetLang: 'en', country: '🇺🇸' },
+    { userId: 'seed_en_3', name: 'Chloe Martin', avatar: '', xp: 3890, weeklyXp: 350, level: 4, streak: 7, badgesCount: 4, targetLang: 'en', country: '🇬🇧' },
+    { userId: 'seed_en_4', name: 'Oliver Smith', avatar: '', xp: 2650, weeklyXp: 260, level: 4, streak: 10, badgesCount: 4, targetLang: 'en', country: '🇦🇺' },
+    { userId: 'seed_en_5', name: 'Yuto Nakamura', avatar: '', xp: 1650, weeklyXp: 190, level: 3, streak: 6, badgesCount: 3, targetLang: 'en', country: '🇯🇵' },
+    { userId: 'seed_en_6', name: 'Emma Johnson', avatar: '', xp: 1050, weeklyXp: 140, level: 2, streak: 3, badgesCount: 2, targetLang: 'en', country: '🇨🇦' },
+    { userId: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, weeklyXp: 70, level: 1, streak: 1, badgesCount: 1, targetLang: 'en', country: '🇺🇸' }
 ];
 
 app.get('/api/leaderboard', (req, res) => {
     const lang = req.query.lang;
     const userId = req.query.userId;
+    const period = req.query.period === 'all_time' ? 'all_time' : 'weekly';
     const limit = Math.max(1, Math.min(100, parseInt(req.query.limit, 10) || 50));
 
     const isLangSpecific = lang && ['ja', 'ko', 'zh', 'en'].includes(lang);
@@ -720,7 +721,12 @@ app.get('/api/leaderboard', (req, res) => {
     }
     
     // Sort and limit
-    const sorted = [...list].sort((a, b) => b.xp - a.xp || b.streak - a.streak);
+    const sorted = [...list].sort((a, b) => {
+        if (period === 'weekly') {
+            return (b.weeklyXp || 0) - (a.weeklyXp || 0) || b.xp - a.xp || b.streak - a.streak;
+        }
+        return b.xp - a.xp || b.streak - a.streak;
+    });
     const topLearners = sorted.slice(0, limit).map((item, idx) => ({ ...item, rank: idx + 1 }));
 
     let userRank = null;
@@ -731,14 +737,19 @@ app.get('/api/leaderboard', (req, res) => {
         } else {
             const userInPool = devLeaderboard.find(u => u.userId === userId);
             if (userInPool) {
-                const higher = sorted.filter(u => u.xp > userInPool.xp).length;
+                const higher = sorted.filter(u => {
+                    if (period === 'weekly') {
+                        return (u.weeklyXp || 0) > (userInPool.weeklyXp || 0);
+                    }
+                    return u.xp > userInPool.xp;
+                }).length;
                 userRank = { ...userInPool, rank: higher + 1 };
             }
         }
     }
 
     res.set('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-    res.json({ success: true, topLearners, userRank });
+    res.json({ success: true, period, topLearners, userRank });
 });
 
 app.post('/api/leaderboard', (req, res) => {
@@ -746,6 +757,7 @@ app.post('/api/leaderboard', (req, res) => {
     const userId = body.guest_id || 'dev_user';
     const existing = devLeaderboard.find(u => u.userId === userId);
     const xp = Math.max(0, parseInt(body.xp, 10) || 0);
+    const weeklyXp = Math.max(0, parseInt(body.weekly_xp, 10) || 0);
     const level = Math.max(1, parseInt(body.level, 10) || Math.floor(Math.sqrt(xp / 100)) + 1);
     const targetLang = ['ja', 'ko', 'zh', 'en'].includes(body.target_lang) ? body.target_lang : 'ja';
 
@@ -753,6 +765,7 @@ app.post('/api/leaderboard', (req, res) => {
         existing.name = body.name || existing.name;
         existing.avatar = body.avatar || existing.avatar;
         existing.xp = Math.max(existing.xp, xp);
+        existing.weeklyXp = Math.max(existing.weeklyXp || 0, weeklyXp);
         existing.level = Math.max(existing.level, level);
         existing.streak = Math.max(existing.streak, parseInt(body.streak, 10) || 0);
         existing.badgesCount = Math.max(existing.badgesCount, parseInt(body.badges_count, 10) || 0);
@@ -763,6 +776,7 @@ app.post('/api/leaderboard', (req, res) => {
             name: body.name || 'Learner',
             avatar: body.avatar || '',
             xp,
+            weeklyXp,
             level,
             streak: parseInt(body.streak, 10) || 0,
             badgesCount: parseInt(body.badges_count, 10) || 0,
@@ -771,7 +785,7 @@ app.post('/api/leaderboard', (req, res) => {
         });
     }
 
-    res.json({ success: true, updated: true, userId, xp, level });
+    res.json({ success: true, updated: true, userId, xp, weeklyXp, level });
 });
 
 // Health check
@@ -1902,45 +1916,45 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.1.8';
+    const mockVersion = req.query.mock_version || '1.1.11';
 
     res.json({
         version: mockVersion,
-        minSupportedVersion: mockForce ? '1.1.8' : '1.0.0',
+        minSupportedVersion: mockForce ? '1.1.11' : '1.0.0',
         buildDate: '2026-09-10',
         forceUpdate: mockForce,
         maintenance: mockMaintenance,
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'Natural Bottom Subtitle Placement: Lowered resting fullscreen subtitle position to 94% (expanded range to 10%–95%), matching authentic caption areas and eliminating excessive vertical gap',
-                'Proportional Controls Clearance: Tuned player controls bottom lift to 3.25rem (2.5rem on mobile), ensuring subtitles float cleanly above controls without jumping into the video center',
-                'Fluid Direct Drag & Gesture Snapping: Re-engineered fullscreen subtitle drag controller outside Angular zone, eliminating the 50% anchor flip oscillation and enabling effortless Top/Bottom snapping',
-                'Legacy Settings Auto-Migration: Automatically upgrades previous 84% subtitle positions in local storage to the new natural 94% placement'
+                'Daily Missions & Reward Chest: Complete 3 daily quests (video immersion, vocabulary, SRS flashcards, dictionary) to unlock the bonus XP chest',
+                'Weekly Leaderboard & Trophy Hub: Compete in weekly league resets alongside lifetime rankings in a unified Missions, Achievements & Leaderboard hub',
+                'Refined Video Layout: Sidebar height seamlessly aligns to the 16:9 video player without layout shifts or height jumping',
+                'Polished UI & Tactile Press States: Consistent card padding, refreshed high-res PWA icons, and smooth micro-interactions without text jitter'
             ],
             vi: [
-                'Vị trí phụ đề đáy tự nhiên: Hạ vị trí phụ đề toàn màn hình xuống 94% (mở rộng giới hạn 10%–95%), khớp hoàn hảo với vị trí phụ đề video tiêu chuẩn và loại bỏ khoảng trống thừa bên dưới',
-                'Nâng phụ đề cân đối khi hiện điều khiển: Tinh chỉnh khoảng nâng phụ đề khi thanh điều khiển xuất hiện xuống 3.25rem (2.5rem trên di động), giúp phụ đề nằm ngay phía trên thanh phát mà không bị đẩy lên giữa màn hình',
-                'Kéo thả mượt mà & cử chỉ hít vị trí: Thiết kế lại cơ chế kéo phụ đề toàn màn hình chạy hoàn toàn ngoài Angular zone, loại bỏ hiện tượng giật nhảy khi qua mốc 50% và hỗ trợ hít vị trí Trên/Dưới mượt mà',
-                'Tự động nâng cấp cài đặt cũ: Tự động di chuyển cài đặt phụ đề cũ từ 84% sang vị trí 94% mới trong bộ nhớ trình duyệt'
+                'Nhiệm vụ ngày & Rương phần thưởng: Hoàn thành 3 thử thách hằng ngày (xem video, lưu từ, luyện SRS, tra từ) để mở rương thưởng XP',
+                'Đua top tuần & Trung tâm vinh danh: Tranh tài bảng xếp hạng tuần mới mẻ và tích lũy trọn đời tại giao diện hợp nhất Nhiệm vụ, Thành tựu & Bảng xếp hạng',
+                'Bố cục xem video tinh gọn: Chiều cao thanh bên đồng bộ chuẩn xác với khung video 16:9, không bị giật hay co giãn khi đóng/chuyển video',
+                'Giao diện đồng nhất & Chạm mượt mà: Chuẩn hóa khoảng đệm thẻ, cập nhật bộ icon PWA sắc nét và tối ưu hiệu ứng nhấn êm ái'
             ],
             ja: [
-                '自然な下部字幕配置：全画面字幕の標準下部位置を94%（調整範囲を10%〜95%）へ引き下げ、YouTube等の標準字幕エリアと自然に一致させ不要な余白を解消',
-                'コントロール表示時の最適な逃げ幅：下部バー表示時の字幕リフト幅を3.25rem（モバイル2.5rem）へ調整し、画面中央に飛び上がることなく操作バーのすぐ上に綺麗に配置',
-                '滑らかなドラッグ操作とスナップジェスチャー：Angularゾーン外で直接制御するドラッグ処理へ刷新し、50%境界での反転跳躍バグを完全解消、上下端への快適なスナップを実現',
-                '既存設定の自動アップグレード：旧バージョンで保存された84%の位置設定をブラウザストレージから自動的に新標準の94%へ移行'
+                'デイリーミッション＆宝箱：動画視聴、単語保存、SRS復習、辞書検索の3つのクエストをクリアしてXPボーナスチェストを開封',
+                '週間ランキング＆トロフィーハブ：毎週リセットされる週間リーグと累計ランキングを統合したミッション・実績・ランキング画面',
+                '動画レイアウトの最適化：単語サイドバーの高さが16:9動画プレイヤーに美しく揃い、動画開閉時の不自然な伸縮を解消',
+                'デザイン統一＆滑らかなタップ操作：カード余白の統一、高解像度PWAアイコンの刷新、文字ブレのない心地よいタップフィードバック'
             ],
             ko: [
-                '자연스러운 하단 자막 배치: 전체화면 기본 자막 위치를 94%로 낮추고(조정 범위 10%~95%로 확장) 스트리밍 표준 자막 위치에 자연스럽게 맞춰 과도한 하단 공백 제거',
-                '컨트롤 표시 시 균형 잡힌 위치 조정: 하단 플레이어 컨트롤 표시 시 자막 상승 폭을 3.25rem(모바일 2.5rem)으로 최적화하여 화면 중앙으로 치솟지 않고 컨트롤 바로 위에 안정적으로 배치',
-                '부드러운 직접 드래그 및 스냅 제스처: Angular 존 외부에서 직접 제어하는 드래그 엔진으로 전면 개편하여 50% 지점 반전 튀김 현상을 제거하고 상/하단 스냅 지원',
-                '기존 설정 자동 마이그레이션: 로컬 스토리지에 저장된 이전 84% 자막 위치를 새로운 표준인 94%로 자동 업그레이드'
+                '일일 미션 및 보상 상자: 동영상 시청, 단어 저장, SRS 복습, 사전 검색 3가지 퀘스트 완료 시 추가 XP 보너스 상자 지급',
+                '주간 리더보드 & 트로피 허브: 주간 리그 및 누적 랭킹을 한눈에 확인하는 미션·업적·리더보드 통합 인터페이스',
+                '동영상 화면 레이아웃 최적화: 단어 사이드바 높이가 16:9 동영상 프레임에 맞춰 정렬되며, 동영상 전환 시 불필요한 크기 변화 제거',
+                '디자인 통일 & 편안한 터치감: 카드 여백 표준화, 고해상도 PWA 아이콘 개선, 글자 흔들림 없는 부드러운 클릭 반응'
             ],
             zh: [
-                '自然贴合的底部字幕位置：将全屏字幕默认底部高度下调至 94%（调节范围扩展至 10%–95%），完美契合主流视频字幕区域，彻底消除底部过大空白',
-                '控件浮起间距黄金优化：将播放控制栏出现时的字幕上移幅度微调至 3.25rem（移动端 2.5rem），既能优雅避让控制条，又绝不上跳至屏幕正中',
-                '跟手无感拖拽与手势吸附：全新重构脱离 Angular 变更检测的直接手势引擎，彻底根除越过 50% 时的锚点抖动跳变，支持轻触切换与上下端丝滑吸附',
-                '历史设置平滑自动迁移：自动将本地缓存中旧版的 84% 字幕位置无缝升级为全新的 94% 黄金位置'
+                '每日任务与通关宝箱：完成视频沉浸、生词收集、SRS复习、查词等3项每日挑战，开启额外XP通关宝箱',
+                '每周天梯榜与荣誉中心：全新每周结算排行榜与终身荣誉结合，一体化呈现任务、成就与全球竞技',
+                '优化视频学习布局：生词侧边栏高度与16:9视频框架精准对齐，关闭或切换视频时不再出现抖动和尺寸伸缩',
+                '统一视觉规范与舒适交互：规范全站卡片内边距，更新高分辨率PWA图标，去除文字抖动，触控更顺滑'
             ]
         }
     });

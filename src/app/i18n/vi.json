@@ -773,7 +773,47 @@
     "streak": "Chuỗi",
     "empty": "Chưa có dữ liệu xếp hạng",
     "syncScore": "Đồng bộ điểm",
-    "synced": "Đã đồng bộ!"
+    "synced": "Đã đồng bộ!",
+    "thisWeek": "Tuần này",
+    "allTime": "Tất cả"
+  },
+  "missions": {
+    "tabTitle": "Nhiệm vụ",
+    "resetsIn": "Làm mới sau",
+    "dailyChest": "Rương hoàn thành ngày",
+    "dailyChestDesc": "Hoàn thành cả 3 nhiệm vụ ngày để mở rương!",
+    "claim": "Nhận",
+    "claimed": "Đã nhận",
+    "claimedReward": "Đã nhận thưởng nhiệm vụ",
+    "dailyChestClaimed": "Đã mở rương ngày",
+    "watch1": {
+      "title": "Xem đắm chìm",
+      "desc": "Xem 1 video học tập kèm phụ đề"
+    },
+    "watch2": {
+      "title": "Học tập chuyên sâu",
+      "desc": "Xem 2 video học tập kèm phụ đề"
+    },
+    "save3": {
+      "title": "Thợ săn câu từ",
+      "desc": "Lưu 3 từ vựng mới từ phụ đề"
+    },
+    "save5": {
+      "title": "Kho báu từ vựng",
+      "desc": "Lưu 5 từ vựng mới vào sổ tay"
+    },
+    "dict3": {
+      "title": "Tra từ thông thái",
+      "desc": "Tra cứu 3 từ trong từ điển"
+    },
+    "srs10": {
+      "title": "Rèn luyện trí nhớ",
+      "desc": "Ôn tập 10 thẻ ghi nhớ trong phiên SRS"
+    },
+    "quiz1": {
+      "title": "Kiểm tra thấu hiểu",
+      "desc": "Hoàn thành 1 bài trắc nghiệm video"
+    }
   },
   "achievements": {
     "title": "Thành tựu & Cấp độ",

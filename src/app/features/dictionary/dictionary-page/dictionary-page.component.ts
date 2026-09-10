@@ -359,7 +359,6 @@ import { SettingsService, I18nService } from '../../../core/services';
 
     .menu-option:active:not(:disabled) {
         background: var(--bg-secondary);
-        transform: scale(0.99);
     }
 
     .menu-option__icon-box {

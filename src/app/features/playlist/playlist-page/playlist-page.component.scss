@@ -211,7 +211,8 @@
     }
 
     &:active {
-        transform: scale(0.995);
+        background-color: var(--bg-surface);
+        border-color: var(--border-color);
     }
 
     &__thumb {
@@ -911,7 +912,6 @@
 
             &:active {
                 background: var(--bg-secondary);
-                transform: scale(0.99);
             }
 
             &--loading {

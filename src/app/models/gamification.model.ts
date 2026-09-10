@@ -17,13 +17,38 @@ export interface Achievement {
     xpReward: number;
 }
 
+export type MissionType = 'watch_video' | 'save_word' | 'srs_review' | 'complete_quiz' | 'look_up_dict';
+
+export interface Mission {
+    id: string;
+    type: MissionType;
+    titleKey: string;
+    descriptionKey: string;
+    icon: IconName;
+    target: number;
+    progress: number;
+    completed: boolean;
+    claimed: boolean;
+    xpReward: number;
+}
+
+export interface DailyMissionsState {
+    date: string; // YYYY-MM-DD
+    missions: Mission[];
+    allCompletedBonusClaimed: boolean;
+    bonusXp: number;
+}
+
 export interface UserGamificationState {
     xp: number;
     level: number;
+    weeklyXp: number;
+    currentWeekKey: string; // e.g. "2026-W37"
     unlockedAchievements: Record<string, string>; // id -> unlockedAt ISO string
     notifiedAchievements: string[];               // IDs already toasted/celebrated
     totalVideosWatched: number;
     totalQuizzesCompleted: number;
+    dailyMissions?: DailyMissionsState;
     updatedAt?: string;
 }
 
@@ -32,6 +57,8 @@ export interface PocketBaseGamificationRecord {
     user: string;
     xp: number;
     level: number;
+    weekly_xp?: number;
+    current_week_key?: string;
     total_videos_watched: number;
     total_quizzes_completed: number;
     unlocked_achievements: Record<string, string>;
@@ -46,6 +73,7 @@ export interface LeaderboardEntry {
     name: string;
     avatar: string;
     xp: number;
+    weeklyXp?: number;
     level: number;
     streak: number;
     badgesCount: number;

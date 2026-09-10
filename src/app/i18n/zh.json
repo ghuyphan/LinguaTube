@@ -773,7 +773,47 @@
     "streak": "连续天数",
     "empty": "暂无排名数据",
     "syncScore": "同步分数",
-    "synced": "已同步！"
+    "synced": "已同步！",
+    "thisWeek": "本周",
+    "allTime": "全部"
+  },
+  "missions": {
+    "tabTitle": "每日任务",
+    "resetsIn": "距更新还有",
+    "dailyChest": "每日通关宝箱",
+    "dailyChestDesc": "完成全部3个每日任务即可开启宝箱！",
+    "claim": "领取",
+    "claimed": "已领取",
+    "claimedReward": "已领取任务奖励",
+    "dailyChestClaimed": "已开启每日宝箱",
+    "watch1": {
+      "title": "沉浸学习",
+      "desc": "观看1部带字幕的视频"
+    },
+    "watch2": {
+      "title": "深度沉浸",
+      "desc": "观看2部带字幕的视频"
+    },
+    "save3": {
+      "title": "语境淘金",
+      "desc": "从字幕中保存3个新单词"
+    },
+    "save5": {
+      "title": "词汇猎人",
+      "desc": "保存5个新单词到生词本"
+    },
+    "dict3": {
+      "title": "词典探赜",
+      "desc": "在词典中查询3个单词"
+    },
+    "srs10": {
+      "title": "记忆锻炼",
+      "desc": "在SRS复习中完成10张记忆卡片"
+    },
+    "quiz1": {
+      "title": "理解测试",
+      "desc": "完成1次视频理解小测验"
+    }
   },
   "achievements": {
     "title": "成就与等级",

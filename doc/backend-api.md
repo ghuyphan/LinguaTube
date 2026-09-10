@@ -379,17 +379,22 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ### 3.13. Global Leaderboard API
 - **Routes**:
-  - `GET /api/leaderboard`: Fetch top 50 learners (optionally filtered by target language `lang=ja|ko|zh|en`) and calculate exact rank for requesting `userId`.
-  - `POST /api/leaderboard`: Synchronize learner score (XP, level, streak, badges count, target language).
+  - `GET /api/leaderboard`: Fetch top 50 learners (optionally filtered by target language `lang=ja|ko|zh|en`, period `period=weekly|all_time`) and calculate exact rank for requesting `userId`.
+  - `POST /api/leaderboard`: Synchronize learner score (XP, weekly XP, level, streak, badges count, target language).
 - **Source**: `functions-src/api/leaderboard.js`
+- **Query Parameters**:
+  - `lang`: Target language filter (`ja`, `ko`, `zh`, `en`, or omit for all languages).
+  - `period`: Ranking time window (`weekly` [default for active races] or `all_time`).
+  - `userId`: Optional user ID to compute accurate rank and return learner position.
+  - `limit`: Max top learners to return (default 50, max 100).
 - **Security & Rate Limiting**:
   - Rate-limited submission: Max 15 score updates per 10 minutes per client.
-  - Strict input sanitization: Name HTML tags stripped, XP clamped (0–1,000,000), level clamped (1–100), streak clamped (0–10,000).
-  - Monotonic XP progression: Upsert enforces `xp = MAX(leaderboard.xp, excluded.xp)` to prevent downgrades or race condition rollbacks.
+  - Strict input sanitization: Name HTML tags stripped, XP clamped (0–1,000,000), weekly XP clamped (0–100,000), level clamped (1–100), streak clamped (0–10,000).
+  - Monotonic XP progression: Upsert enforces `xp = MAX(leaderboard.xp, excluded.xp)` and updates `weekly_xp` to prevent downgrades or race condition rollbacks.
 - **Storage & Caching**:
-  - Persisted in Cloudflare D1 `leaderboard` table (`user_id`, `name`, `avatar`, `xp`, `level`, `streak`, `badges_count`, `target_lang`, `country`, `updated_at`).
+  - Persisted in Cloudflare D1 `leaderboard` table (`user_id`, `name`, `avatar`, `xp`, `weekly_xp`, `level`, `streak`, `badges_count`, `target_lang`, `country`, `updated_at`).
   - Cache Directive: `Cache-Control: private, no-cache, no-store, must-revalidate` ensures user-specific rankings and refresh operations deliver real-time XP without stale CDN caching.
-  - Baseline Community Seeds (`mergeWithSeedLeaderboard`): Merges real registered learners with 28 realistic baseline community learners (7 per language: JA, KO, ZH, EN) sorted by XP descending. Real learners always take absolute priority, ensuring the Top 3 podium (Gold, Silver, Bronze) and list are always populated, lively, and competitive.
+  - Baseline Community Seeds (`mergeWithSeedLeaderboard`): Merges real registered learners with 28 realistic baseline community learners (7 per language: JA, KO, ZH, EN) sorted by weekly XP or total XP descending depending on `period`. Real learners always take absolute priority, ensuring the Top 3 podium (Gold, Silver, Bronze) and list are always populated, lively, and competitive.
 
 ---
 

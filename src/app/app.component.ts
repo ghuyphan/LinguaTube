@@ -378,7 +378,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             <div class="ios-install-sheet__icon">
               <svg class="ios-install-logo-kikyou" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <path id="ios-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#F5F0E8"/>
+                  <path id="ios-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFFFF"/>
                 </defs>
                 <g transform="translate(256, 256) scale(0.68)">
                   <use href="#ios-kikyou-petal" transform="rotate(0)"/>
@@ -386,8 +386,8 @@ import { VideoRecommendationService } from './core/services/video-recommendation
                   <use href="#ios-kikyou-petal" transform="rotate(144)"/>
                   <use href="#ios-kikyou-petal" transform="rotate(216)"/>
                   <use href="#ios-kikyou-petal" transform="rotate(288)"/>
-                  <circle cx="0" cy="0" r="50" fill="#F5F0E8" stroke="#D95C64" stroke-width="6"/>
-                  <circle cx="0" cy="0" r="20" fill="#D95C64"/>
+                  <circle cx="0" cy="0" r="50" fill="#FFFFFF" stroke="#E0294F" stroke-width="7"/>
+                  <circle cx="0" cy="0" r="21" fill="#E0294F"/>
                 </g>
               </svg>
             </div>
@@ -438,7 +438,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             <div class="app-updating-brand">
               <svg class="app-updating-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <path id="updating-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#F5F0E8"/>
+                  <path id="updating-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFFFF"/>
                 </defs>
                 <g transform="translate(256, 256) scale(0.68)">
                   <use href="#updating-kikyou-petal" transform="rotate(0)"/>
@@ -446,8 +446,8 @@ import { VideoRecommendationService } from './core/services/video-recommendation
                   <use href="#updating-kikyou-petal" transform="rotate(144)"/>
                   <use href="#updating-kikyou-petal" transform="rotate(216)"/>
                   <use href="#updating-kikyou-petal" transform="rotate(288)"/>
-                  <circle cx="0" cy="0" r="50" fill="#F5F0E8" stroke="#D95C64" stroke-width="6"/>
-                  <circle cx="0" cy="0" r="20" fill="#D95C64"/>
+                  <circle cx="0" cy="0" r="50" fill="#FFFFFF" stroke="#E0294F" stroke-width="7"/>
+                  <circle cx="0" cy="0" r="21" fill="#E0294F"/>
                 </g>
               </svg>
               <div class="app-updating-pulse-ring"></div>
@@ -740,7 +740,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
     .app-updating-logo {
       width: 76px;
       height: 76px;
-      filter: drop-shadow(0 10px 24px rgba(217, 92, 100, 0.45));
+      filter: drop-shadow(0 10px 24px rgba(244, 91, 116, 0.45));
       animation: updatePulse 2s ease-in-out infinite;
     }
 
@@ -748,7 +748,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
       position: absolute;
       inset: 0;
       border-radius: 50%;
-      border: 2px solid var(--accent-primary, #D95C64);
+      border: 2px solid var(--accent-primary, #F45B74);
       opacity: 0;
       animation: updateRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
     }
@@ -782,7 +782,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
       top: 0;
       left: 0;
       bottom: 0;
-      background: linear-gradient(90deg, #D95C64, #f43f5e);
+      background: linear-gradient(90deg, #FF7E93, #F45B74, #DF4360);
       border-radius: 2px;
       animation: updateProgressIndeterminate 1.4s infinite ease-in-out;
     }
@@ -996,18 +996,20 @@ import { VideoRecommendationService } from './core/services/video-recommendation
       width: 3.5rem;
       height: 3.5rem;
       border-radius: var(--border-radius-md);
-      background: var(--accent-primary);
+      background: linear-gradient(135deg, #FF5C6C 0%, #EF3B56 50%, #C91842 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto var(--space-sm);
-      box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.25);
+      box-shadow: 0 6px 16px rgba(239, 59, 86, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.3);
     }
 
     .ios-install-logo-kikyou {
       width: 2.25rem;
       height: 2.25rem;
       display: block;
+      filter: drop-shadow(0 2px 4px rgba(128, 10, 35, 0.3));
     }
 
     .ios-install-sheet__title {

@@ -613,6 +613,22 @@ test('Leaderboard: mergeWithSeedLeaderboard correctly merges real users and base
   const champMerged = mergeWithSeedLeaderboard([championUser], 'ja', 50);
   assert.equal(champMerged[0].userId, 'champ_1', 'Champion user with 20,000 XP must take #1 rank');
   assert.equal(champMerged[0].rank, 1);
+
+  // 6. Weekly period sorting test
+  const weeklyTopUser = {
+    userId: 'weekly_star',
+    name: 'Weekly Star',
+    avatar: '',
+    xp: 500,
+    weeklyXp: 1200,
+    level: 2,
+    streak: 3,
+    badgesCount: 1,
+    targetLang: 'ja'
+  };
+  const weeklyMerged = mergeWithSeedLeaderboard([weeklyTopUser], 'ja', 50, 'weekly');
+  assert.equal(weeklyMerged[0].userId, 'weekly_star', 'User with 1,200 weekly XP should take #1 rank in weekly leaderboard');
+  assert.equal(weeklyMerged[0].rank, 1);
 });
 
 test('API Key Rotator: getNextApiKey round-robins, respects excludeKeys, and handles cooldowns', async () => {
