@@ -411,6 +411,11 @@ import { SettingsService, I18nService } from '../../../core/services';
       overflow: visible;
       height: auto;
       min-height: 0;
+
+      .panel-header__row {
+        flex-wrap: wrap;
+        row-gap: var(--space-2xs);
+      }
     }
 
     .dict-toolbar {
@@ -425,12 +430,14 @@ import { SettingsService, I18nService } from '../../../core/services';
       align-items: center;
       gap: var(--space-sm);
       margin-bottom: var(--space-sm);
+      flex-wrap: wrap;
     }
 
     .view-tabs {
       display: flex;
       align-items: center;
       gap: 6px;
+      flex-wrap: wrap;
 
       .filter-chip {
         height: 36px;

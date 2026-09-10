@@ -835,14 +835,17 @@
     }
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1024px), (max-height: 500px) and (orientation: landscape) {
       .layout {
         grid-template-columns: 1fr;
       }
 
       .layout-sidebar {
-        position: static;
-        height: auto;
+        display: none !important;
+      }
+
+      .mobile-playlist-card {
+        display: block !important;
       }
     }
 
@@ -871,10 +874,6 @@
       .home-dashboard {
         padding: var(--space-sm);
         gap: var(--space-md);
-      }
-
-      .mobile-playlist-card {
-        display: block;
       }
     }
 

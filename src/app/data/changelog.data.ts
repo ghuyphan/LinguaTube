@@ -19,41 +19,36 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.1.16',
+    version: '1.1.17',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-10',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Neural TTS Latency Optimization: Persistent warm WebSocket connection pooling slashes word pronunciation latency to ~200ms',
-            'Sub-Millisecond Replay & Caching: In-memory LRU and client-side Blob URL caching deliver instant (<0.1ms) audio replay',
-            'Word Popup & Dictionary Pronunciation: Added native one-tap pronunciation speaker buttons to the interactive word popup and dictionary panel',
-            'Proactive Study Mode Preloading: Flashcard review proactively pre-fetches audio in the background for 0ms instant playback upon card flip or click'
+            'Tablet & Responsive Layout Polish: Collapsed multi-column layouts into comfortable full-width feeds on tablet screens (<=1024px), preventing sidebar squeeze',
+            'Header & Toolbar Anti-Collision: Prevented badge overlap on panel titles and enabled flexible wrapping for search bars, action buttons, and filter chips',
+            'Enhanced Video Card Readability: Expanded video title display in the resume banner and removed dead/duplicate CSS rules across panels'
         ],
         vi: [
-            'Tối ưu độ trễ phát âm Neural TTS: Tích hợp cơ chế kết nối WebSocket duy trì liên tục (warm pool), giảm độ trễ phát âm từ xuống ~200ms',
-            'Bộ nhớ đệm âm thanh tức thì: Cơ chế LRU trên bộ nhớ và Blob URL phía trình duyệt mang lại tốc độ phát lại tức thì (<0.1ms) cho các từ lặp lại',
-            'Phát âm trên cửa sổ từ & từ điển: Bổ sung nút phát âm một chạm trực tiếp trên cửa sổ chi tiết từ (Word Popup) và bảng tra cứu từ điển',
-            'Tải trước âm thanh thẻ ghi nhớ: Chế độ ôn tập chủ động tải trước phát âm trong nền giúp phát ngay lập tức (0ms) khi lật thẻ hoặc bấm loa'
+            'Tối ưu giao diện máy tính bảng: Thu gọn bố cục nhiều cột thành dạng danh sách toàn chiều rộng tối ưu trên tablet (<=1024px), chống ép hẹp nội dung',
+            'Chống đè chữ tiêu đề & thanh công cụ: Khắc phục hiện tượng huy hiệu đè lên tiêu đề thẻ, hỗ trợ thanh tìm kiếm và bộ lọc tự động xuống dòng linh hoạt',
+            'Cải thiện hiển thị thẻ video: Mở rộng không gian hiển thị tiêu đề video đang xem dở và loại bỏ các đoạn mã CSS trùng lặp'
         ],
         ja: [
-            'Neural TTS 発音遅延の最適化：接続済み WebSocket プーリングの導入により、単語発音の再生遅延を約200msに大幅短縮',
-            'メモリ＆Blobキャッシュによる即時再生：LRUインメモリおよびブラウザBlob URLキャッシュにより、反復単語をミリ秒未満（<0.1ms）で即時再生',
-            '単語詳細ポップアップと辞書パネルでの音声再生：字幕タップ時の単語ポップアップと辞書検索にワンタップ発音ボタンを追加',
-            'フラッシュカード学習の事前ロード：単語カードの切り替え時に裏で音声を先読みし、タップやカードめくり時に待ち時間ゼロ（0ms）で再生'
+            'タブレット表示＆レスポンシブ最適化：タブレット端末（<=1024px）で複数列レイアウトを快適な全幅表示に統合し、サイドバーによる圧迫を解消',
+            'ヘッダー＆ツールバーの重なり防止：パネルタイトルのバッジ衝突を防ぎ、検索バーやフィルターボタンが柔軟に折り返されるよう改善',
+            '動画カード視認性の向上：視聴再開バナーのタイトル表示行数を拡張し、各パネルの重複CSSコードを整理・最適化'
         ],
         ko: [
-            '뉴럴 TTS 발음 지연시간 대폭 개선: 웜(Warm) WebSocket 연결 풀링을 구현하여 단어 발음 대기시간을 ~200ms로 대폭 단축',
-            '인메모리 및 Blob 오디오 즉시 재생: 인메모리 LRU 및 브라우저 Blob URL 캐싱으로 반복 조회 단어를 0.1ms 미만으로 즉시 재생',
-            '단어 팝업 및 사전 패널 발음 지원: 자막 단어 팝업과 사전 패널에 원터치 발음 스피커 버튼을 새롭게 추가',
-            '학습 모드 음성 사전 로딩: 플래시카드 학습 시 오디오를 백그라운드에서 미리 로드하여 카드 클릭 및 뒤집기 시 0ms 즉시 재생'
+            '태블릿 반응형 레이아웃 최적화: 태블릿 화면(<=1024px)에서 다중 열을 쾌적한 전체 너비 피드로 자동 전환하여 사이드바 압박 현상 해결',
+            '헤더 및 툴바 겹침 방지: 패널 제목과 배지의 겹침을 방지하고, 검색창 및 필터 칩이 부드럽게 줄바꿈되도록 유연성 향상',
+            '동영상 카드 가독성 개선: 이어보기 배너의 동영상 제목 표시를 2줄로 확대하고 중복 CSS 스타일을 말끔히 정리'
         ],
         zh: [
-            '神经网络 TTS 发音延迟优化：引入持久预热 WebSocket 连接池，将单词发音响应延迟大幅缩短至约 200ms',
-            '内存与 Blob 音频瞬间回放：通过内存 LRU 与客户端 Blob URL 缓存，复习已学单词实现亚毫秒级（<0.1ms）无延迟秒播',
-            '单词弹窗与词典发音支持：为字幕单词弹窗（Word Popup）及词典面板全面添加原生一键发音扬声器按钮',
-            '抽认卡学习模式后台预加载：切换词卡时自动在后台静默预载音频，翻卡或点击发音按钮实现 0ms 零等待即刻发声'
+            '平板端与响应式布局优化：针对平板屏幕（<=1024px）自动收起次级侧边栏并转为舒适的全宽单列，消除内容挤压变形',
+            '标题与工具栏防重叠改进：修复状态徽章覆盖面板标题的问题，支持搜索框、操作按钮和筛选芯片自适应换行',
+            '视频卡片可读性提升：拓展继续观看横幅中的标题展示空间，并全面精简剔除各面板中的冗余重复 CSS 样式'
         ]
     }
 };

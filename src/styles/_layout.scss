@@ -387,13 +387,13 @@ body::-webkit-scrollbar {
     top: var(--space-md);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .page-layout {
         grid-template-columns: 1fr 280px;
     }
 }
 
-@media (max-width: 768px),
+@media (max-width: 1024px),
 (max-height: 500px) and (orientation: landscape) {
     .page-layout {
         grid-template-columns: 1fr;
@@ -406,7 +406,7 @@ body::-webkit-scrollbar {
         min-height: 0;
     }
 
-    .page-layout__sidebar.desktop-only {
+    .page-layout__sidebar {
         display: none !important;
     }
 }

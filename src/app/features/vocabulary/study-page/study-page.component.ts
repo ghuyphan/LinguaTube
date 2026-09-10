@@ -498,10 +498,6 @@ import { formatTime } from '../../../core/utils';
       gap: var(--space-xs);
     }
 
-    .desktop-only {
-      display: flex;
-    }
-
     @keyframes fadeIn {
       from {
         opacity: 0;
