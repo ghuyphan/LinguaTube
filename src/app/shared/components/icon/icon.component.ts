@@ -1,6 +1,6 @@
 import { Component, input, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CURRENT_RELEASE_INFO } from '../../../data/changelog.data';
+import { APP_VERSION } from '../../../core/constants/version';
 
 export type IconName =
     | 'play' | 'pause' | 'skip-back' | 'skip-forward'
@@ -38,5 +38,5 @@ export class IconComponent {
     name = input.required<IconName>();
     size = input<number>(20);
 
-    readonly href = computed(() => `assets/icons/sprite.svg?v=${CURRENT_RELEASE_INFO.version}#${this.name()}`);
+    readonly href = computed(() => `assets/icons/sprite.svg?v=${APP_VERSION}#${this.name()}`);
 }

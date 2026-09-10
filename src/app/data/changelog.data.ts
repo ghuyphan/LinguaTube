@@ -12,6 +12,8 @@ export interface ServerVersionInfo {
     highlights: Record<string, string[]>;
 }
 
+import { APP_VERSION } from '../core/constants/version';
+
 export interface ReleaseInfo {
     version: string;
     buildDate: string;
@@ -19,7 +21,7 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.1.24',
+    version: APP_VERSION,
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-11',
     forceUpdate: false,
