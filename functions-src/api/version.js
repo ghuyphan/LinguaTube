@@ -14,41 +14,46 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.1.4',
+    version: '1.1.7',
     minSupportedVersion: '1.0.0',
-    buildDate: '2026-09-09',
+    buildDate: '2026-09-10',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Tap-to-Refresh & Sleek Pull-to-Refresh: Tap the active "Watch" tab in the bottom bar or swipe down on mobile for an icon-only floating refresh badge with haptic feedback',
-            'Smart Feed De-duplication: Recommendations automatically deprioritize videos you have already watched and rotate from a larger 120-video catalog',
-            'Clean Settings Layout: Polished settings item rows with responsive text wrapping to eliminate label and value collisions',
-            'Universal Hidden Scrollbars: Concealed unsightly scrollbars across all bottom-sheets, option pickers, and dialogs for a seamless native look'
+            'Intelligent "For You" Recommendation Algorithm: Smart ranking inspired by YouTube & language learning apps (LingQ/Migaku) combining watch history, creator affinity, vocabulary notebook overlap, Krashen i+1 comprehensible input, and sweet-spot duration',
+            'In-Progress Resume Badges: YouTube-style red progress bars on video thumbnails reflecting your exact watch progress',
+            'Study Words Discovery: Highlights recommended videos containing vocabulary from your active SRS notebook with smart purple badges',
+            'Creator Anti-Clustering & Variety: Smart multi-pass channel de-clustering ensures a rich, diverse feed without repetitive creator clutter',
+            'Native Caption Suppression: Intercepts asynchronous YouTube iframe captions via onApiChange and active track clearing, preventing native subtitles from overlapping with Voca\'s interactive captions'
         ],
         vi: [
-            'Chạm để làm mới & Vuốt kéo mượt mà: Nhấn vào tab "Xem" đang mở ở thanh điều hướng dưới cùng hoặc vuốt xuống trên di động với huy hiệu làm mới dạng tròn tinh gọn cùng phản hồi rung nhẹ',
-            'Loại bỏ video trùng lặp thông minh: Tự động giảm ưu tiên các video bạn đã xem và quay vòng đề xuất từ kho 120 video phong phú hơn',
-            'Bố cục Cài đặt hoàn thiện: Tinh chỉnh hàng mục cài đặt với cơ chế xuống dòng thông minh, loại bỏ hoàn toàn hiện tượng tràn chữ giữa tiêu đề và giá trị',
-            'Ẩn thanh cuộn toàn diện: Ẩn thanh cuộn trên toàn bộ bottom-sheet, bảng chọn và hộp thoại giúp trải nghiệm mượt mà chuẩn ứng dụng gốc'
+            'Thuật toán đề xuất "Dành cho bạn" thông minh: Hệ thống xếp hạng đa yếu tố học hỏi từ YouTube và các ứng dụng học ngôn ngữ (LingQ/Migaku), kết hợp lịch sử xem, mức độ yêu thích kênh, vốn từ vựng đang học, nguyên lý Krashen i+1 và thời lượng tối ưu',
+            'Thanh tiến độ xem tiếp kiểu YouTube: Hiển thị thanh đỏ tiến độ trực quan trên ảnh thu nhỏ cho các video đang xem dở',
+            'Gợi ý từ vựng trong sổ tay: Huy hiệu tím nổi bật cho các video chứa từ vựng đang học trong sổ tay SRS cá nhân',
+            'Đa dạng hóa nhà sáng tạo: Thuật toán chống gom cụm kênh trên cả máy chủ và máy khách giúp bảng tin luôn phong phú, không bị lặp kênh',
+            'Ngăn chặn phụ đề gốc YouTube: Đón bắt thời điểm tải phụ đề qua onApiChange và xóa track đang phát, triệt tiêu tình trạng phụ đề gốc YouTube đè lên phụ đề tương tác của Voca'
         ],
         ja: [
-            'タップで更新＆洗練されたプル更新：下部バーのアクティブな「視聴」タブをタップ、またはモバイルで下にスワイプしてアイコンのみのミニマルな更新バッジを表示（振動フィードバック付き）',
-            'スマートな重複排除とカタログ回転：視聴済み動画の優先度を自動で下げ、120件の拡大カタログから新鮮なおすすめ動画をローテーション表示',
-            '設定画面レイアウトの最適化：設定項目の折り返しと幅制限を改善し、長文タイトルと設定値の文字重なりを解消',
-            '統一されたスクロールバー非表示：すべてのボトムシート、ピッカー、ダイアログでスクロールバーを非表示にし、ネイティブアプリのような美麗な外観を実現'
+            'インテリジェントな『おすすめ』推薦アルゴリズム：YouTubeや語学アプリ（LingQ/Migaku）に着想を得たマルチファクター評価（視聴履歴・クリエイター親和性・単語帳の語彙一致・クラッシェンi+1理論・最適再生時間）を導入',
+            'YouTube風の視聴再開インジケーター：途中まで視聴した動画のサムネイルに赤いプログレスバーと再開バッジを表示',
+            '学習中単語のマッチング表示：単語帳に登録された語彙を含む動画にパープルのスパークルバッジを表示し、学習効果の高い動画を即座に発見可能に',
+            'チャンネル分散とコンテンツ多様化：同一クリエイターの連続表示を防ぐアンチクラスタリングにより、偏りのない多彩な推薦フィードを提供',
+            'YouTube標準字幕の自動非表示：onApiChangeイベントとアクティブトラックのクリアにより、YouTubeの標準字幕がVocaのインタラクティブ字幕と重複表示される問題を解消'
         ],
         ko: [
-            '탭하여 새로고침 & 깔끔한 당겨서 새로고침: 하단 바의 활성 "시청" 탭을 탭하거나 모바일에서 아래로 당겨 햅틱 진동과 함께 아이콘 전용 플로팅 배지로 피드를 부드럽게 갱신',
-            '스마트 중복 제거 및 피드 로테이션: 이미 시청한 동영상의 우선순위를 자동으로 낮추고 120개의 확장된 카탈로그에서 신선한 동영상을 추천',
-            '설정 화면 레이아웃 개선: 긴 옵션명과 설정값 간의 텍스트 겹침 현상을 해결하여 모든 화면 크기에서 깔끔하게 정렬',
-            '전체 스크롤바 숨김 처리: 모든 바텀시트, 선택 모달, 팝업의 스크롤바를 깔끔하게 숨겨 네이티브 앱 같은 세련된 완성도 제공'
+            '스마트 "추천" 랭킹 알고리즘: YouTube 및 외국어 학습 앱(LingQ/Migaku) 기반 다면 평가 알고리즘 도입 (시청 기록, 크리에이터 친화도, 단어장 어휘 매칭, 크라센 i+1 입력 가설, 최적 러닝타임 반영)',
+            'YouTube 스타일 이어보기 표시: 시청 중이던 동영상 썸네일에 직관적인 빨간색 진행률 바 및 이어보기 상태 표시',
+            '학습 단어 매칭 뱃지: 사용자의 SRS 단어장에 등록된 단어가 포함된 추천 동영상에 보라색 스파클 뱃지 제공',
+            '크리에이터 분산 및 피드 다양화: 동일 크리에이터의 중복 추천을 방지하는 안티 클러스터링을 통해 균형 잡힌 다채로운 추천 피드 구성',
+            'YouTube 기본 자막 자동 억제: onApiChange 이벤트 및 활성 트랙 초기화를 통해 YouTube의 기본 자막이 Voca의 인터랙티브 자막과 겹쳐 표시되는 현상 방지'
         ],
         zh: [
-            '轻触刷新与极简下拉刷新：点击底部导航栏当前处于激活状态的“观看”标签，或在移动端下拉即可呼出带震动反馈的纯图标浮动刷新指示器',
-            '智能去重与大片库轮换：自动降低已观看视频的推荐优先级，并从扩充至120部的精选片库中智能轮换推荐内容',
-            '设置项排版精细化：优化设置行文字自动换行与宽度限制，彻底消除长标题与当前选项数值之间的文字重叠',
-            '全局沉浸式隐藏滚动条：在所有底部抽屉、选择器及弹窗中全局隐藏滚动条，带来媲美原生客户端的沉浸体验'
+            '智能『为您推荐』重排算法：融合 YouTube 与语言学习应用（LingQ/Migaku）的多维推荐机制，综合考量观看进度、创作者偏好、生词本重合度、克拉申 i+1 可理解输入与黄金学习时长',
+            'YouTube 风格续播进度条：对未播完的视频封面呈现醒目红条进度指示，方便随时接着学',
+            '生词本联动词汇匹配：自动标记包含用户生词本词汇的视频并展示紫色星光胶囊，精准强化重点生词',
+            '创作者去重打散与生态多样性：服务端与客户端双重频道反聚类算法，杜绝单频道霸屏，提供多元精彩内容',
+            'YouTube 原生字幕智能抑制：通过 onApiChange 拦截字幕模块加载并重置活跃轨道，杜绝 YouTube 原生字幕与 Voca 交互字幕相互遮挡重叠'
         ]
     }
 };

@@ -44,6 +44,7 @@ export class SubtitleService {
   private rateLimitedUntil = 0;
 
   // Dual Subtitles State & Tracking
+  private currentDualSessionId = 0;
   private dualSubSubscription: Subscription | null = null;
   private lazyLoadSubscription: Subscription | null = null;
   private backgroundStreamSubscription: Subscription | null = null;
@@ -116,6 +117,7 @@ export class SubtitleService {
       }
 
       if (!showDual || !videoId || cues.length === 0 || targetLang === sourceLang) {
+        this.cancelDualSubtitles();
         this.clearDualSubLoadingState();
         return;
       }
@@ -453,6 +455,9 @@ export class SubtitleService {
   }
 
   cancelDualSubtitles(): void {
+    this.currentDualSessionId++;
+    this.translation.cancelAllBatchRequests();
+
     if (this.dualSubSubscription) {
       this.dualSubSubscription.unsubscribe();
       this.dualSubSubscription = null;
@@ -572,6 +577,7 @@ export class SubtitleService {
     }
 
     this.cancelDualSubtitles();
+    const sessionId = this.currentDualSessionId;
     this.hasPersistedDualToR2 = false;
     this.lastPersistedCueCount = 0;
     this.lastPersistTimestamp = 0;
@@ -581,7 +587,7 @@ export class SubtitleService {
 
     // 1. FAST LOCAL CHECK: Check IndexedDB for instant offline-ready bilingual subtitles
     void this.transcriptCache.getDual(videoId, sourceLang, targetLang).then(localSegments => {
-      if (this.dualSubtitleTargetLang() !== targetLang) return;
+      if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles || this.youtube.currentVideo()?.id !== videoId || this.dualSubtitleTargetLang() !== targetLang) return;
       if (localSegments && localSegments.length > 0) {
         const localMap = new Map(this.cueTranslations());
         const { translatedCount, hasContent } = this.mapSegmentsToCues(localSegments, cues, localMap, sourceLang);
@@ -602,7 +608,7 @@ export class SubtitleService {
     this.dualSubSubscription = this.translation.getDualSubtitles(videoId, sourceLang, targetLang, [], true)
       .subscribe({
         next: (translatedSegments) => {
-          if (this.dualSubtitleTargetLang() !== targetLang) {
+          if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles || this.youtube.currentVideo()?.id !== videoId || this.dualSubtitleTargetLang() !== targetLang) {
             this.clearDualSubLoadingState();
             return;
           }
@@ -636,6 +642,10 @@ export class SubtitleService {
           this.lazyLoadUpcomingCues(0);
         },
         error: (err) => {
+          if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles || this.youtube.currentVideo()?.id !== videoId) {
+            this.clearDualSubLoadingState();
+            return;
+          }
           console.error('[SubtitleService] Cache check failed:', err);
           this.isDualCached.set(false);
           this.clearDualSubLoadingState();
@@ -745,6 +755,8 @@ export class SubtitleService {
     this.isDualSubLoading.set(true);
 
     const texts = cuesToTranslate.map(c => c.text);
+    const sessionId = this.currentDualSessionId;
+    const currentVideoId = this.youtube.currentVideo()?.id;
 
     if (this.lazyLoadSubscription) {
       this.lazyLoadSubscription.unsubscribe();
@@ -752,7 +764,7 @@ export class SubtitleService {
 
     this.lazyLoadSubscription = this.translation.translateBatch(texts, sourceLang, targetLang, 'high').subscribe({
       next: (translations) => {
-        if (this.dualSubtitleTargetLang() !== targetLang) {
+        if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles || this.youtube.currentVideo()?.id !== currentVideoId || this.dualSubtitleTargetLang() !== targetLang) {
           this.clearDualSubLoadingState();
           return;
         }
@@ -784,6 +796,10 @@ export class SubtitleService {
         this.scheduleBackgroundStreamer(500);
       },
       error: (err) => {
+        if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles || this.youtube.currentVideo()?.id !== currentVideoId) {
+          this.clearDualSubLoadingState();
+          return;
+        }
         console.error('[SubtitleService] Dual sub lazy load failed:', err);
         this.clearDualSubLoadingState();
         this.lastBatchFailureTime = Date.now();
@@ -814,8 +830,10 @@ export class SubtitleService {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
+    const sessionId = this.currentDualSessionId;
     this.backgroundStreamTimer = setTimeout(() => {
       this.backgroundStreamTimer = null;
+      if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles) return;
       this.streamNextUntranslatedBatch();
     }, delayMs);
   }
@@ -884,6 +902,8 @@ export class SubtitleService {
 
     this.isBackgroundStreaming = true;
     const texts = cuesToTranslate.map(c => c.text);
+    const sessionId = this.currentDualSessionId;
+    const currentVideoId = this.youtube.currentVideo()?.id;
 
     if (this.backgroundStreamSubscription) {
       this.backgroundStreamSubscription.unsubscribe();
@@ -894,7 +914,7 @@ export class SubtitleService {
       .subscribe({
         next: (translations) => {
           this.isBackgroundStreaming = false;
-          if (this.dualSubtitleTargetLang() !== targetLang) return;
+          if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles || this.youtube.currentVideo()?.id !== currentVideoId || this.dualSubtitleTargetLang() !== targetLang) return;
 
           const newMap = new Map(this.cueTranslations());
           translations.forEach((trans, i) => {
@@ -914,6 +934,7 @@ export class SubtitleService {
         },
         error: (err) => {
           this.isBackgroundStreaming = false;
+          if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles || this.youtube.currentVideo()?.id !== currentVideoId) return;
           console.warn('[SubtitleService] Background dual stream chunk failed, retrying in 3s:', err?.message || err);
           this.scheduleBackgroundStreamer(3000);
         }

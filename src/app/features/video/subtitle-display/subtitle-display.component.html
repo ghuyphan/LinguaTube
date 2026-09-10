@@ -6,6 +6,8 @@
         [class.current-subtitle--xlarge]="settings.settings().fontSize === 'xlarge'"
         [class.is-generating]="transcript.isGeneratingAI()"
         [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage()) && subtitles.subtitles().length > 0"
+        [class.has-overflow-top]="hasOverflowTop()"
+        [class.has-overflow-bottom]="hasOverflowBottom()"
         [class.is-quiz-active]="quiz.isActive()">
 
         @if (quiz.isActive()) {
@@ -17,7 +19,7 @@
             <kbd class="shortcut-kbd">c</kbd>
         </div>
         } @else {
-        <div class="current-subtitle__inner" #currentSubtitleInner (scroll)="onCurrentSubtitleScroll()">
+        <div class="current-subtitle__inner" #currentSubtitleInner (scroll)="onCurrentSubtitleScroll()" (wheel)="onCurrentSubtitleScroll()" (touchmove)="onCurrentSubtitleScroll()">
             @if (subtitles.currentCue(); as cue) {
             <!-- Centering wrapper - enables vertical centering for short content -->
             <div class="subtitle-center-wrapper">
@@ -268,6 +270,15 @@
                 }
             </div>
         </button>
+        }
+
+        @if (isUserScrolledAway() && subtitles.currentCue(); as activeCue) {
+        <div class="sync-current-container">
+            <button type="button" class="sync-current-btn" (click)="resumeTranscriptSync()" @fadeSlide>
+                <app-icon name="clock" [size]="13" />
+                <span>{{ i18n.t('subtitle.jumpToCurrent') || 'Jump to current' }} ({{ formatTime(activeCue.startTime) }})</span>
+            </button>
+        </div>
         }
     </div>
     }

@@ -87,68 +87,6 @@ export class VideoPageComponent implements OnInit {
     this.isRefreshing() || (this.homeTab() === 'videos' ? (this.isVideosLoading() || this.playlistService.isRecommendedLoading()) : this.playlistService.isRecommendedLoading())
   );
 
-  // Mobile Pull to Refresh state & touch physics
-  readonly pullDistance = signal<number>(0);
-  private touchStartY = 0;
-  private touchStartX = 0;
-  private hasTriggeredHaptic = false;
-
-  onTouchStart(event: TouchEvent): void {
-    if (!this.showLearnHome() || this.isRefreshing()) return;
-    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
-    if (scrollY <= 0 && event.touches.length === 1) {
-      this.touchStartY = event.touches[0].clientY;
-      this.touchStartX = event.touches[0].clientX;
-      this.hasTriggeredHaptic = false;
-    } else {
-      this.touchStartY = 0;
-      this.touchStartX = 0;
-    }
-  }
-
-  onTouchMove(event: TouchEvent): void {
-    if (!this.showLearnHome() || this.isRefreshing() || this.touchStartY === 0) return;
-    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
-    if (scrollY > 0) {
-      this.pullDistance.set(0);
-      return;
-    }
-
-    const currentY = event.touches[0].clientY;
-    const currentX = event.touches[0].clientX;
-    const deltaY = currentY - this.touchStartY;
-    const deltaX = Math.abs(currentX - this.touchStartX);
-
-    // If horizontal scroll is greater than vertical pull, cancel pull gesture
-    if (deltaX > deltaY || deltaY <= 0) {
-      this.pullDistance.set(0);
-      return;
-    }
-
-    // Elastic damping curve (resistance increases as pull distance grows)
-    const distance = Math.min(Math.pow(deltaY, 0.82) * 1.6, 75);
-    this.pullDistance.set(distance);
-
-    if (distance >= 55 && !this.hasTriggeredHaptic) {
-      this.hasTriggeredHaptic = true;
-      if ('vibrate' in navigator) {
-        try { navigator.vibrate(10); } catch { }
-      }
-    }
-  }
-
-  onTouchEnd(_event: TouchEvent): void {
-    if (this.touchStartY === 0) return;
-    const distance = this.pullDistance();
-    this.touchStartY = 0;
-    this.touchStartX = 0;
-
-    if (distance >= 55 && !this.isRefreshing()) {
-      void this.refreshRecommendations();
-    }
-    this.pullDistance.set(0);
-  }
-
   // Video level filter state for recommended videos
   videoLevelFilter = signal<string>('all');
   showLevelFilter = signal<boolean>(false);
@@ -649,7 +587,7 @@ export class VideoPageComponent implements OnInit {
       const fetchPromise = this.homeTab() === 'playlists'
         ? this.playlistService.loadRecommendedPlaylists(currentLang, tierParam, 12, true)
         : Promise.all([
-            this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam, 12, true),
+            this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam, 16, true),
             this.playlistService.loadRecommendedPlaylists(currentLang, tierParam, 6, true)
           ]);
 

@@ -222,9 +222,29 @@ export class VideoPlayerComponent implements OnDestroy {
   isFullscreen = signal(false);
   isVolumeSliderVisible = signal(false);
   isPlayerSettingsOpen = signal(false);
-  playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub' | 'reading' | 'grammar'>('main');
+  playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub' | 'reading' | 'grammar' | 'sleepTimer'>('main');
   isMobile = signal<boolean>(typeof window !== 'undefined' ? (window.innerWidth <= 768 || window.innerHeight <= 500) : false);
   readonly fontSizes = FONT_SIZES;
+  readonly sleepTimerMinutesList = ['10', '15', '30', '45', '60'] as const;
+  sleepTimerOption = signal<'off' | '10' | '15' | '30' | '45' | '60' | 'end'>('off');
+  sleepTimerRemainingSeconds = signal<number | null>(null);
+  private sleepTimerIntervalId: ReturnType<typeof setInterval> | null = null;
+
+  readonly currentSleepTimerLabel = computed(() => {
+    const opt = this.sleepTimerOption();
+    if (opt === 'off') {
+      return this.i18n.t('player.off') || 'Off';
+    }
+    if (opt === 'end') {
+      return this.i18n.t('player.sleepTimerEndOfVideo') || 'End of video';
+    }
+    const rem = this.sleepTimerRemainingSeconds();
+    if (rem !== null) {
+      const m = Math.ceil(rem / 60);
+      return this.i18n.t('player.sleepTimerRemaining', { time: `${m}m` }) || `${m}m left`;
+    }
+    return `${opt}m`;
+  });
   volume = signal(100);
   volumePercent = computed(() => {
     return this.youtube.isMuted() ? 0 : this.volume();
@@ -434,9 +454,12 @@ export class VideoPlayerComponent implements OnDestroy {
       }
     });
 
-    // Notify parent when video ends (for playlist auto-advance)
+    // Notify parent when video ends (for playlist auto-advance and sleep timer)
     effect(() => {
       if (this.youtube.isEnded()) {
+        if (this.sleepTimerOption() === 'end') {
+          untracked(() => this.triggerSleepTimerPause());
+        }
         untracked(() => this.videoEnded.emit());
       }
     });
@@ -684,6 +707,9 @@ export class VideoPlayerComponent implements OnDestroy {
     this.fullscreenChanged.emit(isFs);
     if (!isFs && this.fsPopupVisible()) {
       this.closeFsPopup();
+    }
+    if (isFs && this.showShortcutsDialog()) {
+      this.closeShortcutsDialog();
     }
   }
 
@@ -1124,6 +1150,51 @@ export class VideoPlayerComponent implements OnDestroy {
     this.startControlsAutoHide();
   }
 
+  setSleepTimer(option: 'off' | '10' | '15' | '30' | '45' | '60' | 'end'): void {
+    this.clearSleepTimer();
+    this.sleepTimerOption.set(option);
+
+    if (option === 'off') {
+      this.closePlayerSettings();
+      return;
+    }
+
+    if (option === 'end') {
+      this.sleepTimerRemainingSeconds.set(null);
+      this.closePlayerSettings();
+      return;
+    }
+
+    const minutes = parseInt(option, 10);
+    let secondsLeft = minutes * 60;
+    this.sleepTimerRemainingSeconds.set(secondsLeft);
+
+    this.sleepTimerIntervalId = setInterval(() => {
+      secondsLeft--;
+      if (secondsLeft <= 0) {
+        this.triggerSleepTimerPause();
+      } else {
+        this.sleepTimerRemainingSeconds.set(secondsLeft);
+      }
+    }, 1000);
+
+    this.closePlayerSettings();
+  }
+
+  clearSleepTimer(): void {
+    if (this.sleepTimerIntervalId) {
+      clearInterval(this.sleepTimerIntervalId);
+      this.sleepTimerIntervalId = null;
+    }
+    this.sleepTimerRemainingSeconds.set(null);
+  }
+
+  private triggerSleepTimerPause(): void {
+    this.clearSleepTimer();
+    this.sleepTimerOption.set('off');
+    this.youtube.pause();
+  }
+
   selectSpeedFromSheet(speed: PlaybackSpeed): void {
     this.setPlaybackSpeed(speed);
     this.closePlayerSettings();
@@ -1432,6 +1503,7 @@ export class VideoPlayerComponent implements OnDestroy {
     }
     this.popupHeightAnimator.detach();
     this.clearControlsTimeout();
+    this.clearSleepTimer();
     this.gestures.destroy();
 
     if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);

@@ -41,12 +41,13 @@ Voca accepts arbitrary YouTube video URLs:
 | **Cycle Subtitle Size** | `Shift` + `s` | — | Subtitle font size toggle |
 | **Playback Speed** | `Shift` + `<` / `>` | — | Speed dropdown (0.5x – 2x) |
 
-### 1.4. Draggable Fullscreen Subtitles
+### 1.4. Bottom-Anchored Draggable Fullscreen Subtitles (Netflix & YouTube Style)
 When in fullscreen mode, subtitles are rendered in `FullscreenSubtitleComponent`:
+- **Bottom-Anchored Baseline Expansion**: Anchored to the bottom (`transform: translate(-50%, -100%)` or `translate(-50%, 0)` when at the top) following industry standard Netflix and YouTube subtitle engineering. When line count changes, or when bilingual translations load, subtitles expand smoothly *upward* into the video frame rather than shifting both up and down, completely eliminating vertical visual jitter.
 - **Computed `viewTokens` Pre-computation**: Subtitle tokens, reading annotations, display text, and vocabulary mastery levels are pre-calculated in a single `viewTokens = computed(...)` signal per cue change. This eliminates repeated O(N) vocabulary repository method calls and grammar index scans in `@for` template loops during 60fps fullscreen video playback.
-- **Ergonomic Drag Handle & Card Dragging**: A centered pill handle bar with a generous touch hit box ($\ge 32\text{px}$) along with the entire subtitle card background (outside interactive words) allows users to drag subtitles smoothly to any vertical position (`--sub-y: 8%` to `88%`).
-- **Smooth Pointer Capture & True Free Placement**: Uses `PointerEvent` tracking with `requestAnimationFrame` updates to ensure 60fps responsiveness across mobile and desktop. Dragging is completely free without forced snapping locks, allowing precise subtitle placement anywhere between $8\%$ and $88\%$.
-- **Natural Lower Resting Position**: Subtitles default to `84%` height (moved down from 78%), sitting naturally near the bottom edge without floating excessively high.
+- **Ergonomic Drag Handle & Free Placement**: A centered pill handle bar with a generous touch hit box ($\ge 32\text{px}$) allows users to drag subtitles smoothly to any vertical position (`--sub-y: 8%` to `88%`). Micro-jitter protection requires a $>8\text{px}$ movement threshold before committing drag motion, while taps on the handle toggle between top and bottom.
+- **Smooth Pointer Capture**: Uses `PointerEvent` tracking with `requestAnimationFrame` updates to ensure 60fps responsiveness across mobile and desktop. Dragging is completely free without forced snapping locks.
+- **Natural Lower Resting Position**: Subtitles default to `84%` height, sitting naturally near the bottom edge without floating excessively high.
 - **Instant Top/Bottom Toggle**: Tapping the handle bar (or pressing `v`) toggles between the top anchor (`12%`) and bottom anchor (`84%`).
 - **No Jump Discontinuity**: Subtitle position stays completely stable regardless of whether player controls are shown or hidden.
 - **Mobile Landscape & Safe-Area Optimization**:
@@ -57,14 +58,17 @@ When in fullscreen mode, subtitles are rendered in `FullscreenSubtitleComponent`
   - Interactive words tap directly into `WordPopupComponent`, providing full definitions, definition translations, vocabulary mastery level picking, and audio pronunciation without leaving fullscreen mode.
   - Touch and click event isolation prevents touches on words, punctuation, or card background from inadvertently toggling player controls or pausing playback.
 
-### 1.5. Unified Player Settings Sub-Panels
+### 1.5. Unified Player Settings Sub-Panels & Sleep Timer
 The video player settings popover (`video-player.component.html`) provides dedicated, structured sub-panels for all player options:
+- **Sleep Timer**: Flexible bedtime playback scheduler supporting durations of `10`, `15`, `30`, `45`, `60` minutes, or `End of video`. Displays a live countdown indicator in the settings row, automatically pauses playback when time expires, notifies the user via an accessible toast, and cleans up timers on video change or component destroy.
 - **Playback Speed**: Preset speed multipliers (0.5x to 2x) with active checkmarks.
 - **Subtitle Font Size**: Responsive font sizing (`small`, `medium`, `large`, `xlarge`) with active checkmarks.
 - **Dual Subtitles**: Target language selection with language flags and checkmarks.
 - **Reading Display (Furigana / Pinyin / Romanization)**: Dedicated sub-panel allowing instant switching between Native (Off), Annotated Reading (Furigana for JA, Pinyin for ZH, Romanization for KO), and Romaji (for JA) with active checkmarks and typographic script glyph badges.
 - **Grammar Highlights**: Dedicated sub-panel allowing clean On / Off toggling with active checkmarks.
-- **Fullscreen-Adaptive Video Actions**: Quick actions like "Share video" and "Save to playlist" are automatically omitted in standard non-fullscreen view (where external action buttons already exist in the video header) and cleanly rendered inside the settings menu exclusively when in fullscreen mode.
+- **Fullscreen Context Adaptation**:
+  - Keyboard shortcuts row is intelligently hidden when the player is in fullscreen mode (`!isFullscreen()`), avoiding modal overlay confusion.
+  - Quick actions like "Share video" and "Save to playlist" are automatically omitted in standard non-fullscreen view (where external action buttons already exist in the video header) and cleanly rendered inside the settings menu exclusively when in fullscreen mode.
 - **Ergonomic Submenu Transitions**: All sub-panels share consistent back header buttons (`chevron-left`), sub-panel routing (`playerSettingsView`), and dynamically animated container heights via `SmoothHeightAnimator`.
 
 ---
@@ -181,6 +185,7 @@ graph TD
   - UI templates (`subtitle-display`, `fullscreen-subtitle`) enforce equality guards (`translation.trim() !== cue.text.trim()`) to prevent rendering duplicate identical lines.
 - **Permanent Caching & Long Video Support**: Successful translations are saved to Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and indexed in D1. Supports long videos with over 1,000 cues without payload truncation.
 - **Track & Language Switch Reactivity**: Tracks changes in subtitle track (`cues`), source language, and target language, cleanly re-initializing dual subtitles when switching between native and Whisper AI captions or changing language tracks.
+- **Dual Subtitle Session Isolation & Leak Prevention**: Employs a strictly monotonic session counter (`currentDualSessionId`) and proactive batch cancellation (`cancelAllBatchRequests()`). When the user toggles off dual subtitles, skips tracks, or navigates away, in-flight HTTP requests and staggered background timers are terminated instantly, completely preventing waterfall translation leaks, wasted bandwidth, and race conditions where late translations from a prior video could overwrite current cues.
 - **Persistent Preferences**: Dual subtitle toggle state and target language preference persist across browser sessions in `localStorage`. Enabled by default (`showDualSubtitles: true`) to provide learners with an immediate immersive bilingual experience upon opening any video.
 
 ---
@@ -376,7 +381,18 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 - **Verified Database Transcript Video Recommendations (`VideoRecommendationService`)**:
   - Solves the cold-start problem: learners don't need a YouTube URL ready on their clipboard to start practicing.
   - **Pre-Processed & Instant (<100ms)**: Videos are sourced from Cloudflare D1 (`video_languages`) and R2 permanent transcripts. Zero scraping delay, zero risk of missing captions, and zero AI Diamond credit consumption.
-  - **Server-Side Difficulty Level Filtering & Offset Pagination**: Supports querying by proficiency tier and offset (`GET /api/recommended-videos?lang={lang}&tier={tier}&limit=12&offset={offset}`). Resolves tiers via D1 `levels` JSON and metadata regex, ensuring continuous shelves of level-matched videos without sparse results.
+  - **Server-Side Difficulty Level Filtering & Offset Pagination**: Supports querying by proficiency tier and offset (`GET /api/recommended-videos?lang={lang}&tier={tier}&limit=16&offset={offset}`). Resolves tiers via D1 `levels` JSON and metadata regex, ensuring continuous shelves of level-matched videos without sparse results. Server candidate gathering applies creator variety capping to avoid single-channel domination.
+  - **Intelligent Multi-Factor "For You" Ranking Engine**:
+    - **Offline-First Privacy Scoring**: Because watch history and vocabulary notebooks are stored client-side for user privacy, candidate scoring executes entirely on the client in $<5\text{ms}$ with zero network or database overhead.
+    - **Watch History & In-Progress Resume**: Unwatched videos receive $+40$ exploration bonus. In-progress videos receive $+35$ resume bonus with attached exact `resumeProgress` percentage. Completed videos ($\ge 85\%$) are demoted by $-70$ points to prevent feed stagnation. Favorite videos receive $+20$ points.
+    - **Creator Affinity**: Detects channels the user frequents in their watch history, granting $+10$ points per previous view (up to $+30$ points).
+    - **Active Vocabulary Notebook Overlap**: Cross-references video titles against the user's active SRS flashcard deck (`OfflineVocabularyRepository`), granting $+25$ to $+45$ points for matching words and attaching matched terms for UI recognition.
+    - **Pedagogical Duration Sweet Spot**: Prioritizes focused, bite-sized language learning sessions ($+20$ pts for 3–12 mins, $+10$ pts for 12–20 mins, penalizing ultra-short clips $<1.5$ min and marathons $>40$ min).
+    - **Krashen $i+1$ Comprehensible Input**: Infers the user's current proficiency level from watched history and rewards videos matching their dominant tier ($+20$ pts) or slightly stretching their comprehension by one level ($+12$ pts).
+    - **Creator Anti-Clustering & De-Clustering**: Employs a greedy de-clustering pass that guarantees no two adjacent recommendation cards share the same channel creator.
+  - **YouTube-Style Visual Progress & Study Indicators**:
+    - **In-Progress Progress Bar**: Video cards display a 3.5px YouTube-red progress bar (`#ef4444`) anchored to the bottom edge of the thumbnail for partially watched videos.
+    - **Study Word Sparkle Badge**: Videos containing vocabulary from the learner's notebook display a purple pill badge (`✨ {{count}} study words`) in the card metadata sub-row.
   - **YouTube-Style Channel Avatars & Letter-Initial Fallbacks**: Video cards display the creator's official YouTube channel avatar image (cached in D1 `video_languages.channel_avatar`). If unavailable, an initial placeholder featuring the channel's first letter is displayed with smooth hover zoom animations.
   - **Unified Caption & Language Sub-Badges**: Subtitle languages are merged with the closed caption indicator into a single compact, unified badge (e.g. `[CC 🇯🇵 JA]`, `[CC 🇯🇵 JA / 🇬🇧 EN]`, or `[CC 🇯🇵 JA +3]`). Eliminates duplicate CC icons and oversized pill clutter. Active learning languages are prioritized first, accompanied by circular flags (`.circle-flag--xs`) and an informative hover tooltip listing all supported languages. Watch history and playlists also reflect verified server subtitles (`sub_languages`).
   - **1-Click Play**: Clicking any video immediately updates the URL query parameter (`?v=videoId`), mounts the player, and loads synchronized cues.
@@ -533,8 +549,7 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
 - **Learn Home Dashboard Integration (`VideoPageComponent`)**:
   - **YouTube-Style Home Discovery Feed**: Native YouTube-style video discovery grid featuring 16:9 responsive thumbnails, channel avatars, duration badges, and proficiency level indicators.
   - **Interleaved Recommended Playlists**: YouTube-style interleaving of community and curated playlists directly into the video feed (1 playlist every 4 videos) with stacked-shadow card styling.
-  - **Coordinated Dual-Stream Fetching & Zero Layout Shift (CLS = 0)**: Synchronized atomic loading for both recommended videos and playlists; skeleton states remain active until both streams resolve, preventing premature single-stream rendering and card pop-ins.
-  - **Persistent LocalStorage Caching**: 1-hour persistent caching for both video recommendations (`voca_rec_videos_*`) and playlist recommendations (`voca_rec_playlists_*`), ensuring instantaneous frame-0 feed presentation on page load and tab switches.
+  - **In-Memory Session Caching & Fresh Page Reloads**: In-memory `Map` caching in `VideoRecommendationService` and `PlaylistService` keeps back-navigation 0ms instantaneous during browsing sessions without consuming client LocalStorage quota, while browser reloads and PWA refreshes fetch freshly shuffled catalog videos from D1.
   - **Sticky Clean Filter Chips Carousel**: YouTube-authentic pill chips (`All`, `Playlists`, level pills `N5`–`N1`, `HSK`, etc.) with fixed dimensions and no disruptive pop-in count badges.
   - **Infinite Scroll & Seamless Pagination**: IntersectionObserver sentinel automatically fetches additional level-matched videos as the learner scrolls down the page. Employs a centered rotating `.spinner` indicator during loading instead of jarring skeleton cards to maintain layout stability.
 - **Playlist Page Integration (`PlaylistPageComponent`)**:

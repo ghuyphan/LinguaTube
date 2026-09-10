@@ -299,18 +299,71 @@ export class SubtitleDisplayComponent implements OnDestroy {
   readonly isTranslatingDual = this.subtitles.isTranslatingDual;
   readonly isDualCached = this.subtitles.isDualCached;
 
+  readonly hasOverflowTop = signal(false);
+  readonly hasOverflowBottom = signal(false);
+  readonly isUserScrolledAway = signal(false);
+
   private lastUserScrollTime = 0;
   private readonly SCROLL_DEBOUNCE_MS = 1500;
+  private previousCueId: string | null = null;
 
   private lastListUserScrollTime = 0;
   private readonly LIST_SCROLL_DEBOUNCE_MS = 3000;
 
   onSubtitleListScroll(): void {
     this.lastListUserScrollTime = Date.now();
+    this.checkIfScrolledAway();
+  }
+
+  private checkIfScrolledAway(): void {
+    const container = this.subtitleList()?.nativeElement;
+    const currentCue = this.subtitles.currentCue();
+    if (!container || !currentCue) {
+      this.isUserScrolledAway.set(false);
+      return;
+    }
+
+    const activeEl = container.querySelector(`[data-cue-id="${currentCue.id}"]`) as HTMLElement;
+    if (!activeEl) {
+      this.isUserScrolledAway.set(false);
+      return;
+    }
+
+    const containerTop = container.scrollTop;
+    const containerBottom = containerTop + container.clientHeight;
+    const elTop = activeEl.offsetTop;
+    const elBottom = elTop + activeEl.offsetHeight;
+
+    // Active cue is outside comfortable view (with 12px margin)
+    const isVisible = elBottom >= containerTop + 12 && elTop <= containerBottom - 12;
+    this.isUserScrolledAway.set(!isVisible);
+  }
+
+  resumeTranscriptSync(): void {
+    const currentCue = this.subtitles.currentCue();
+    this.isUserScrolledAway.set(false);
+    this.lastListUserScrollTime = 0;
+    if (currentCue) {
+      this.scrollToActiveCue(currentCue.id, true);
+    }
   }
 
   onCurrentSubtitleScroll(): void {
     this.lastUserScrollTime = Date.now();
+    this.updateOverflowIndicators();
+  }
+
+  private updateOverflowIndicators(): void {
+    const el = this.currentSubtitleInner()?.nativeElement;
+    if (!el) {
+      this.hasOverflowTop.set(false);
+      this.hasOverflowBottom.set(false);
+      return;
+    }
+    const threshold = 4;
+    const hasScroll = el.scrollHeight > el.clientHeight + threshold;
+    this.hasOverflowTop.set(hasScroll && el.scrollTop > threshold);
+    this.hasOverflowBottom.set(hasScroll && el.scrollTop + el.clientHeight < el.scrollHeight - threshold);
   }
 
   constructor() {
@@ -331,17 +384,31 @@ export class SubtitleDisplayComponent implements OnDestroy {
       }
     });
 
-    // Auto-scroll current subtitle display to top when cue changes
+    // Auto-scroll current subtitle display to top only when cue ID changes
     effect(() => {
       if (this.isVideoFullscreen()) return;
       const currentCue = this.subtitles.currentCue();
       const innerEl = this.currentSubtitleInner()?.nativeElement;
       if (currentCue && innerEl) {
-        const timeSinceUserScroll = Date.now() - this.lastUserScrollTime;
-        if (timeSinceUserScroll > this.SCROLL_DEBOUNCE_MS) {
-          innerEl.scrollTop = 0;
+        if (currentCue.id !== this.previousCueId) {
+          this.previousCueId = currentCue.id;
+          const timeSinceUserScroll = Date.now() - this.lastUserScrollTime;
+          if (timeSinceUserScroll > this.SCROLL_DEBOUNCE_MS) {
+            innerEl.scrollTop = 0;
+          }
+          setTimeout(() => this.updateOverflowIndicators(), 50);
         }
+      } else if (!currentCue) {
+        this.previousCueId = null;
+        this.hasOverflowTop.set(false);
+        this.hasOverflowBottom.set(false);
       }
+    });
+
+    // Re-check overflow indicators when dual subtitle translations arrive
+    effect(() => {
+      this.cueTranslations();
+      setTimeout(() => this.updateOverflowIndicators(), 50);
     });
 
     // Segment loop effect
@@ -395,10 +462,11 @@ export class SubtitleDisplayComponent implements OnDestroy {
     });
   }
 
-  private scrollToActiveCue(cueId: string): void {
+  private scrollToActiveCue(cueId: string, force = false): void {
     const container = this.subtitleList()?.nativeElement;
     if (!container) return;
-    if (Date.now() - this.lastListUserScrollTime < this.LIST_SCROLL_DEBOUNCE_MS) return;
+    if (!force && this.isUserScrolledAway()) return;
+    if (!force && Date.now() - this.lastListUserScrollTime < this.LIST_SCROLL_DEBOUNCE_MS) return;
     const activeElement = container.querySelector(`[data-cue-id="${cueId}"]`) as HTMLElement;
 
     if (activeElement) {
@@ -412,7 +480,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
         elementTop >= currentScroll + 24 &&
         elementTop + elementHeight <= currentScroll + containerHeight - 24
       );
-      if (isComfortablyVisible) return;
+      if (!force && isComfortablyVisible) return;
 
       const targetScrollTop = elementTop - (containerHeight / 2) + (elementHeight / 2);
 
@@ -420,6 +488,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
         top: Math.max(0, targetScrollTop),
         behavior: 'smooth'
       });
+      this.isUserScrolledAway.set(false);
     }
   }
 
@@ -535,6 +604,8 @@ export class SubtitleDisplayComponent implements OnDestroy {
     if (this.isLoopEnabled()) {
       this.disableLoop();
     }
+    this.isUserScrolledAway.set(false);
+    this.lastListUserScrollTime = 0;
     this.youtube.seekTo(cue.startTime);
     this.subtitles.resetFailureCooldown();
     const index = this.subtitles.subtitles().findIndex(c => c.id === cue.id);

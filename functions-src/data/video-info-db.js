@@ -524,8 +524,13 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                     rows = [...pinned, ...shuffleArray(shufflable)];
                 }
 
-                for (const row of rows) {
-                    if (videoMap.has(row.video_id)) continue;
+                // Channel variety guard: limit consecutive/dominant creators in primary pass
+                const channelCounts = new Map();
+                const deferredRows = [];
+                const maxPerChannel = Math.max(2, Math.floor(safeLimit / 4));
+
+                const processRow = async (row) => {
+                    if (videoMap.has(row.video_id)) return;
 
                     let subLangs = [];
                     try {
@@ -545,17 +550,17 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                                 const head = await r2.head(key);
                                 if (!head) {
                                     // Transcript file not on server for this language -> do not recommend
-                                    continue;
+                                    return;
                                 }
                                 // Found in R2! Self-heal: add to sub_languages in D1
                                 subLangs.push(lang);
                                 addSubLanguage(db, row.video_id, lang).catch(() => {});
                             } catch {
-                                continue;
+                                return;
                             }
                         } else if (subLangs.length > 0) {
                             // r2 not provided and sub_languages exists but does not include target lang
-                            continue;
+                            return;
                         }
                     }
 
@@ -574,7 +579,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
 
                     const videoTier = level ? labelToTier(level) : null;
                     if (targetTier && videoTier !== targetTier) {
-                        continue;
+                        return;
                     }
 
                     // Clean and deduplicate verified server languages strictly to supported learning languages (ja, zh, ko, en)
@@ -602,8 +607,33 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         updatedAt: row.updated_at
                     });
 
+                    const chKey = (row.channel || '').trim().toLowerCase();
+                    if (chKey) {
+                        channelCounts.set(chKey, (channelCounts.get(chKey) || 0) + 1);
+                    }
+                };
+
+                // Pass 1: Add candidates while respecting creator variety cap
+                for (const row of rows) {
+                    if (videoMap.has(row.video_id)) continue;
+                    const chKey = (row.channel || '').trim().toLowerCase();
+                    if (chKey && (channelCounts.get(chKey) || 0) >= maxPerChannel) {
+                        deferredRows.push(row);
+                        continue;
+                    }
+                    await processRow(row);
                     if (videoMap.size >= safeOffset + safeLimit) {
                         break;
+                    }
+                }
+
+                // Pass 2: Fill remaining slots with deferred rows if needed
+                if (videoMap.size < safeOffset + safeLimit && deferredRows.length > 0) {
+                    for (const row of deferredRows) {
+                        await processRow(row);
+                        if (videoMap.size >= safeOffset + safeLimit) {
+                            break;
+                        }
                     }
                 }
             }

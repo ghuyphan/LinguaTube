@@ -330,8 +330,6 @@ Executed server-side on PocketBase:
 | `lingua-tube-last-video` | `YoutubeService` | `string` (videoId) | Video ID for resuming last session |
 | `linguatube_daily_study_progress` | `StudyPageComponent` | `{ count: number, date: string }` | Daily reviewed flashcard counter |
 | `linguatube_daily_study_goal` | `StudyPageComponent` | `number` | Daily study target (default 20 cards) |
-| `voca_rec_videos_{lang}_{tier}_{limit}` | `VideoRecommendationService` | `{ timestamp: number, videos: RecommendedVideo[] }` | Curated recommended video cache (1-hour TTL) |
-| `voca_rec_playlists_{lang}_{tier}_{limit}` | `PlaylistService` | `{ timestamp: number, playlists: Playlist[] }` | Curated recommended playlist cache (1-hour TTL) |
 | `pocketbase_auth` | `PocketBaseService` | `{ token: string, model: User }` | User auth session token and profile |
 
 ### 6.3. Storage Quota Eviction Policy (`StorageService`)

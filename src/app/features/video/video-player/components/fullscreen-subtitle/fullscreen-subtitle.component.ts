@@ -38,7 +38,7 @@ import { VocabularyService } from '../../../../vocabulary';
       [style.--sub-y]="yPercent()">
       
       @if (subtitlesVisible() && currentCue(); as cue) {
-        <div class="fs-subtitle-card" (pointerdown)="onCardPointerDown($event)" (click)="$event.stopPropagation()">
+        <div class="fs-subtitle-card" (click)="$event.stopPropagation()">
           <!-- Centered Horizontal Drag Handle Bar -->
           <div class="fs-drag-handle-bar"
             (pointerdown)="onHandlePointerDown($event)"
@@ -205,20 +205,10 @@ export class FullscreenSubtitleComponent implements OnDestroy {
         if (event.button !== 0) return;
         event.stopPropagation();
         event.preventDefault();
-        this.startDrag(event, true);
+        this.startDrag(event);
     }
 
-    onCardPointerDown(event: PointerEvent): void {
-        if (event.button !== 0) return;
-        const target = event.target as HTMLElement | null;
-        // Do not drag if user clicked an interactive word, button, or link
-        if (target?.closest('.fs-word, .fs-drag-handle-bar, button, a')) {
-            return;
-        }
-        this.startDrag(event, false);
-    }
-
-    private startDrag(event: PointerEvent, isHandle: boolean): void {
+    private startDrag(event: PointerEvent): void {
         this.cleanupDragListeners?.();
 
         const target = event.currentTarget as HTMLElement;
@@ -237,7 +227,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
             if (moveEvent.pointerId !== event.pointerId) return;
             latestClientY = moveEvent.clientY;
             const deltaY = latestClientY - this.dragStartY;
-            if (Math.abs(deltaY) > 3) {
+            if (Math.abs(deltaY) > 8) {
                 this.hasMoved = true;
             }
 
@@ -273,9 +263,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
             this.ngZone.run(() => {
                 this.isDragging.set(false);
                 if (!this.hasMoved) {
-                    if (isHandle) {
-                        this.togglePosition.emit();
-                    }
+                    this.togglePosition.emit();
                 } else {
                     // Free dragging: commit exact position without forced snapping locks
                     const current = Math.max(8, Math.min(88, Math.round(this.yPercent())));

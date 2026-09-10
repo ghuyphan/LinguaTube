@@ -304,8 +304,9 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Ordered by `updated_at DESC`.
   - Automatic metadata & avatar enrichment: Any discovered video missing a title or avatar is enriched via YouTube oEmbed and `fetchChannelAvatar` and cached in D1 `video_languages.channel_avatar`.
 - **Caching & Authenticity**:
-  - Warm Worker isolate in-memory caching (`memCache`, 15-minute TTL, keyed by `${lang}_${tier || 'all'}_${limit}_${offset}`).
-  - HTTP Edge CDN caching header: `Cache-Control: public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400` on normal hits; `no-cache, no-store, must-revalidate` when `refresh=true`.
+  - Warm Worker isolate in-memory caching (`memCache`, 30-second TTL to absorb rapid double-clicks while keeping feed fresh, keyed by `${lang}_${tier || 'all'}_${limit}_${offset}`).
+  - Dynamic Candidate Shuffling: Automatically applies uniform Fisher-Yates candidate shuffling on initial feed load (`offset=0`) or explicit `refresh=true`, with the top 2 newest/recently updated videos pinned at the front.
+  - HTTP header: `Cache-Control: no-cache, no-store, must-revalidate` ensuring browser page reloads and PWA refreshes always receive fresh video lists without stale CDN locking.
   - Zero Cloudflare KV write cost, strictly preserving free-tier limits.
   - Authentic Content: Serves strictly verified transcribed videos directly from Cloudflare storage (`source: "cloudflare"` or `"cloudflare:refresh"`) with no artificial mock data.
 - **Response**:

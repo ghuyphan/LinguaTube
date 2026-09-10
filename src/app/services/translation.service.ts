@@ -69,6 +69,7 @@ export class TranslationService implements OnDestroy {
     // Request queue for batch translations with priority and concurrency
     private requestQueue$ = new Subject<BatchRequest>();
     private queueSubscription: Subscription | null = null;
+    private activeRequests = new Set<BatchRequest>();
     private activeBackgroundRequests = new Set<BatchRequest>();
 
     constructor() {
@@ -84,6 +85,8 @@ export class TranslationService implements OnDestroy {
                     return of(void 0);
                 }
 
+                this.activeRequests.add(request);
+
                 // If high priority request arrives, cancel in-flight background requests to free up bandwidth
                 if (request.priority === 'high') {
                     for (const bgReq of this.activeBackgroundRequests) {
@@ -96,11 +99,23 @@ export class TranslationService implements OnDestroy {
 
                 return this.processBatchRequest(request).pipe(
                     finalize(() => {
+                        this.activeRequests.delete(request);
                         this.activeBackgroundRequests.delete(request);
                     })
                 );
             }, 2)
         ).subscribe();
+    }
+
+    /**
+     * Cancel all in-flight and queued batch requests (e.g. on video change, dual subtitles toggle off)
+     */
+    cancelAllBatchRequests(): void {
+        for (const req of this.activeRequests) {
+            req.cancelled = true;
+        }
+        this.activeRequests.clear();
+        this.activeBackgroundRequests.clear();
     }
 
     private processBatchRequest(request: BatchRequest): Observable<void> {
@@ -539,6 +554,7 @@ export class TranslationService implements OnDestroy {
     }
 
     ngOnDestroy(): void {
+        this.cancelAllBatchRequests();
         this.queueSubscription?.unsubscribe();
         this.requestQueue$.complete();
         if (this.activeTranslator?.instance?.destroy) {

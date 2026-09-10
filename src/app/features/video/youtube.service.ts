@@ -19,6 +19,8 @@ interface YTPlayer {
   getPlaybackRate(): number;
   loadVideoById(videoId: string): void;
   unloadModule(module: string): void;
+  setOption?(module: string, option: string, value: unknown): void;
+  getOption?(module: string, option: string): unknown;
   getVideoLoadedFraction?(): number;
   getIframe(): HTMLIFrameElement;
   destroy(): void;
@@ -40,6 +42,7 @@ interface YTPlayerOptions {
     onStateChange?: (event: YTEvent) => void;
     onPlaybackRateChange?: (event: { target: YTPlayer; data: number }) => void;
     onError?: (event: YTEvent) => void;
+    onApiChange?: (event: YTEvent) => void;
   };
 }
 
@@ -297,12 +300,7 @@ export class YoutubeService {
           player.loadVideoById(videoId);
 
           // Disable YouTube's built-in captions (we use our own)
-          try {
-            player.unloadModule('captions');
-            player.unloadModule('cc');
-          } catch {
-            // Module might not be loaded
-          }
+          this.disableNativeCaptions(player);
 
           // Fetch fresh metadata
           const metadata = await metadataPromise;
@@ -372,12 +370,7 @@ export class YoutubeService {
                 this.updateVideoState(videoId, metadata, duration);
 
                 // Disable YouTube's built-in captions (we use our own)
-                try {
-                  event.target.unloadModule('captions');
-                  event.target.unloadModule('cc');
-                } catch {
-                  // Module might not be loaded
-                }
+                this.disableNativeCaptions(event.target);
 
                 if (this.desiredPlaybackRate !== 1) {
                   try {
@@ -403,6 +396,10 @@ export class YoutubeService {
                   this.desiredPlaybackRate = newRate;
                 }
               },
+              onApiChange: (event: YTEvent) => {
+                // Intercept captions module initialization and clear active track
+                this.disableNativeCaptions(event?.target);
+              },
               onStateChange: (event: YTEvent) => {
                 const state = event.data;
                 const isPlaying = state === window.YT.PlayerState.PLAYING;
@@ -418,10 +415,7 @@ export class YoutubeService {
                   this.intendedPlayingState.set(true);
                   this.startTimeTracking();
 
-                  try {
-                    event.target.unloadModule('captions');
-                    event.target.unloadModule('cc');
-                  } catch { }
+                  this.disableNativeCaptions(event.target);
 
                   if (this.desiredPlaybackRate !== 1) {
                     try {
@@ -489,6 +483,32 @@ export class YoutubeService {
       this.pendingInit = null;
       resolveInit!();
       throw error;
+    }
+  }
+
+  /**
+   * Disables YouTube's built-in captions so they don't clash with Voca's custom interactive subtitles.
+   * Uses both setOption('captions', 'track', {}) to clear any active caption track and unloadModule('captions').
+   */
+  private disableNativeCaptions(target?: YTPlayer): void {
+    const p = target || this.player;
+    if (!p) return;
+
+    try {
+      if (typeof p.setOption === 'function') {
+        p.setOption('captions', 'track', {});
+      }
+    } catch {
+      // Ignore if setOption not available or not yet ready
+    }
+
+    try {
+      if (typeof p.unloadModule === 'function') {
+        p.unloadModule('captions');
+        p.unloadModule('cc');
+      }
+    } catch {
+      // Module might not be loaded yet
     }
   }
 

@@ -9,12 +9,12 @@ import { jsonResponse, handleOptions } from '../utils/utils.js';
 import { isLanguageSupported, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 
-// In-memory cache across warm Worker isolate requests
+// In-memory cache across warm Worker isolate requests (short 30s TTL to absorb double-clicks while keeping feed fresh)
 const memCache = new Map();
-const MEM_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
+const MEM_CACHE_TTL_MS = 30 * 1000;
 const VALID_TIERS = new Set(['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced']);
 
-const CDN_CACHE_HEADER = 'public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400';
+const CACHE_CONTROL_HEADER = 'no-cache, no-store, must-revalidate';
 
 export async function onRequestOptions() {
     return handleOptions(['GET', 'OPTIONS']);
@@ -54,15 +54,18 @@ export async function onRequestGet(context) {
                 source: 'cache:memory'
             }, 200, {
                 'X-Cache': 'HIT-MEMORY',
-                'Cache-Control': CDN_CACHE_HEADER
+                'Cache-Control': CACHE_CONTROL_HEADER
             });
         }
+    } else {
+        memCache.delete(cacheKey);
     }
 
-    // 2. Query Cloudflare (D1 database + R2 storage) with candidate shuffling on refresh
+    // 2. Query Cloudflare (D1 database + R2 storage) with candidate shuffling on refresh or initial feed
     const db = env?.VOCAB_DB;
     const r2 = env?.TRANSCRIPT_STORAGE;
-    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier, isRefresh, offset);
+    const shouldShuffle = isRefresh || offset === 0;
+    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier, shouldShuffle, offset);
     const hasMore = videos.length >= limit;
 
     // 3. Self-healing: if any returned videos lack channelAvatar, resolve and update D1 in background
@@ -107,6 +110,6 @@ export async function onRequestGet(context) {
         source: isRefresh ? 'cloudflare:refresh' : 'cloudflare'
     }, 200, {
         'X-Cache': isRefresh ? 'BYPASS' : 'MISS',
-        'Cache-Control': (isRefresh || videos.length === 0) ? 'no-cache, no-store, must-revalidate' : CDN_CACHE_HEADER
+        'Cache-Control': CACHE_CONTROL_HEADER
     });
 }

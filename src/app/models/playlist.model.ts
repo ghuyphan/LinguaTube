@@ -62,6 +62,8 @@ export interface RecommendedVideo {
     level?: string;
     tier?: ProficiencyLevelTier;
     updatedAt?: number;
+    matchedWords?: string[];
+    resumeProgress?: number;
 }
 
 /**

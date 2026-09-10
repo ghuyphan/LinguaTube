@@ -17,14 +17,6 @@ import { VideoLevelService } from '../../core/services/video-level.service';
 import { generateRandomId, getYouTubeThumbnail } from '../../core/utils';
 import { sanitizeFilterValue } from '../../shared/utils/sync.utils';
 
-const LS_REC_PLAYLISTS_PREFIX = 'voca_rec_playlists_';
-const LS_REC_PLAYLISTS_TTL_MS = 60 * 60 * 1000; // 1 hour
-
-interface LocalStoragePlaylistsCacheEntry {
-    timestamp: number;
-    playlists: Playlist[];
-}
-
 /**
  * Playlist Service
  * Manages playlists for both guest (localStorage) and logged-in (PocketBase) users
@@ -125,7 +117,16 @@ export class PlaylistService {
     });
 
     constructor() {
-        // No explicit init needed, repo handles it
+        // Clean up legacy localStorage recommended playlist keys to reclaim client storage
+        try {
+            for (let i = localStorage.length - 1; i >= 0; i--) {
+                const key = localStorage.key(i);
+                if (key && key.startsWith('voca_rec_playlists_')) {
+                    localStorage.removeItem(key);
+                }
+            }
+        } catch { }
+
         this.youtube.nextTrack$.subscribe(() => {
             const nextId = this.playNext();
             if (nextId) {
@@ -839,33 +840,10 @@ export class PlaylistService {
 
         if (forceRefresh) {
             this.recommendedCache.delete(cacheKey);
-            try {
-                localStorage.removeItem(LS_REC_PLAYLISTS_PREFIX + cacheKey);
-            } catch { }
-        } else {
-            // 1. Check in-memory cache
-            if (this.recommendedCache.has(cacheKey)) {
-                const cached = this.recommendedCache.get(cacheKey)!;
-                this.recommendedPlaylists.set(cached);
-                return cached;
-            }
-
-            // 2. Check LocalStorage cache (persists across page reloads/navigations for instant frame-0 render)
-            try {
-                const raw = localStorage.getItem(LS_REC_PLAYLISTS_PREFIX + cacheKey);
-                if (raw) {
-                    const parsed: LocalStoragePlaylistsCacheEntry = JSON.parse(raw);
-                    if (Date.now() - parsed.timestamp < LS_REC_PLAYLISTS_TTL_MS && Array.isArray(parsed.playlists)) {
-                        this.recommendedCache.set(cacheKey, parsed.playlists);
-                        this.recommendedPlaylists.set(parsed.playlists);
-                        return parsed.playlists;
-                    } else {
-                        localStorage.removeItem(LS_REC_PLAYLISTS_PREFIX + cacheKey);
-                    }
-                }
-            } catch {
-                // Ignore localStorage read errors
-            }
+        } else if (this.recommendedCache.has(cacheKey)) {
+            const cached = this.recommendedCache.get(cacheKey)!;
+            this.recommendedPlaylists.set(cached);
+            return cached;
         }
 
         this.isRecommendedLoading.set(true);
@@ -895,13 +873,6 @@ export class PlaylistService {
 
                 const finalPlaylists = matching.slice(0, limit);
                 this.recommendedCache.set(cacheKey, finalPlaylists);
-                try {
-                    const entry: LocalStoragePlaylistsCacheEntry = {
-                        timestamp: Date.now(),
-                        playlists: finalPlaylists
-                    };
-                    localStorage.setItem(LS_REC_PLAYLISTS_PREFIX + cacheKey, JSON.stringify(entry));
-                } catch { }
                 this.recommendedPlaylists.set(finalPlaylists);
                 return finalPlaylists;
             }
@@ -934,13 +905,6 @@ export class PlaylistService {
 
             const playlists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
             this.recommendedCache.set(cacheKey, playlists);
-            try {
-                const entry: LocalStoragePlaylistsCacheEntry = {
-                    timestamp: Date.now(),
-                    playlists
-                };
-                localStorage.setItem(LS_REC_PLAYLISTS_PREFIX + cacheKey, JSON.stringify(entry));
-            } catch { }
             this.recommendedPlaylists.set(playlists);
             return playlists;
         } catch (error) {

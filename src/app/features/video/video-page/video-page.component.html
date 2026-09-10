@@ -54,23 +54,7 @@
         }
 
         @if (showLearnHome()) {
-        <div class="card home-dashboard"
-            (touchstart)="onTouchStart($event)"
-            (touchmove)="onTouchMove($event)"
-            (touchend)="onTouchEnd($event)">
-
-            <!-- Mobile Pull-To-Refresh Indicator (Icon-only circle badge) -->
-            <div class="pull-refresh-indicator"
-                [class.pulling]="pullDistance() > 0"
-                [class.refreshing]="isRefreshing()"
-                [style.transform]="isRefreshing() ? 'translateY(48px)' : 'translateY(' + pullDistance() + 'px)'"
-                [style.opacity]="pullDistance() > 8 || isRefreshing() ? 1 : 0">
-                <div class="pull-refresh-circle">
-                    <app-icon name="refresh-cw" [size]="18"
-                        [class.spin-icon]="isRefreshing()"
-                        [style.transform]="isRefreshing() ? '' : 'rotate(' + (pullDistance() * 4.2) + 'deg)'" />
-                </div>
-            </div>
+        <div class="card home-dashboard">
 
             <div class="panel-header">
                 <div class="panel-header__row">
@@ -113,7 +97,7 @@
                     }
                 </div>
 
-                <div class="yt-chips-actions desktop-only">
+                <div class="yt-chips-actions">
                     <button type="button" class="yt-action-btn" [disabled]="isFeedRefreshing()"
                         (click)="refreshRecommendations()" [attr.aria-label]="i18n.t('playlist.refresh')" [title]="i18n.t('playlist.refresh')">
                         <app-icon name="refresh-cw" [size]="14" [class.spin-icon]="isFeedRefreshing()" />
@@ -146,6 +130,11 @@
                             <img [src]="item.video.thumbnail" [alt]="item.video.title" loading="lazy" />
                             @if (item.video.duration) {
                             <span class="yt-duration-badge">{{ formatVideoTime(item.video.duration) }}</span>
+                            }
+                            @if (item.video.resumeProgress && item.video.resumeProgress > 0) {
+                            <div class="yt-progress-bar-container" [title]="i18n.t('playlist.resumeWatching') + ' (' + item.video.resumeProgress + '%)'">
+                                <div class="yt-progress-bar" [style.width.%]="item.video.resumeProgress"></div>
+                            </div>
                             }
                             <div class="yt-card-hover-overlay">
                                 <div class="yt-play-circle">
@@ -180,6 +169,12 @@
                                 <div class="yt-video-card__sub-row">
                                     @if (item.video.level) {
                                     <span class="level-badge--pill" [attr.data-tier]="item.video.tier">{{ item.video.level }}</span>
+                                    }
+                                    @if (item.video.matchedWords && item.video.matchedWords.length > 0) {
+                                    <span class="yt-vocab-match-badge" [title]="item.video.matchedWords.join(', ')">
+                                        <app-icon name="sparkles" [size]="11" />
+                                        <span>{{ i18n.t('playlist.vocabMatch', { count: item.video.matchedWords.length }) }}</span>
+                                    </span>
                                     }
                                     @if (langs.length > 0) {
                                     <span class="yt-sub-badge yt-sub-badge--lang" [title]="getLanguagesTooltip(langs)">

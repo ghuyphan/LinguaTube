@@ -6,6 +6,7 @@
 
 html {
     min-height: 100%;
+    overscroll-behavior-y: contain; /* Pure CSS: prevents browser pull-to-refresh reload */
 }
 
 * {
@@ -49,15 +50,6 @@ body {
     overflow-x: hidden;
 }
 
-@supports (-webkit-touch-callout: none) {
-    html {
-        height: -webkit-fill-available;
-    }
-
-    body {
-        min-height: -webkit-fill-available;
-    }
-}
 
 /* ============================================
    TYPOGRAPHY

@@ -56,7 +56,7 @@ readonly readingDisplayMode = computed(() =>
 );
 
 // VideoPlayerComponent
-readonly playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub' | 'reading' | 'grammar'>('main');
+readonly playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub' | 'reading' | 'grammar' | 'sleepTimer'>('main');
 readonly isFullscreen = signal<boolean>(false);
 readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 ```
@@ -86,6 +86,8 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
   - `Home` / `End`: Seeks instantly to video start (`0s`) or end (`duration`).
 
 ### 3.3. Viewport Stability & Mobile Polish
+- **PWA Root Overscroll Lockout (`overscroll-behavior-y: none`)**: Set globally on `html, body` to suppress native mobile Chrome and Safari pull-to-refresh gestures. This prevents accidental page reloads that wipe video playback state or interrupt user scrolling, while custom touch pull gestures are strictly scoped to the Home Feed.
+- **Subtitle Display Fixed-Height Scroll Stabilization (Zero CLS)**: `.current-subtitle` enforces strict, immutable height locks (`9.5rem` / `11.5rem` dual on desktop; `8.5rem` / `10.5rem` on mobile) with `overflow: hidden`. Inner container `.current-subtitle__inner` uses `flex: 1 1 0%; min-height: 0; max-height: 100%; overflow-y: auto` with custom floating pill scrollbars. Centering is achieved via `margin: auto 0; min-height: min-content;` on `.subtitle-center-wrapper` (without `min-height: 100%`), allowing short dialogue to center vertically and multi-line dialogue to cleanly anchor at `top: 0` and scroll smoothly downward with zero negative-space text clipping.
 - **iOS Safari Auto-Zoom Fix**: All mobile inputs (notably `.spotlight-input` in `VideoPlayerComponent`) enforce `font-size: 1rem` (16px), eliminating WebKit's automatic zoom on focus.
 - **Notch & Safe Area Protection**: Container gutters use `max(var(--space-md), env(safe-area-inset-left))` to prevent UI clipping by device camera cutouts in landscape.
 - **Dynamic HTML Language Attribute**: `I18nService` runs a reactive signal effect syncing `document.documentElement.lang = lang`, ensuring screen readers and phonetic engines correctly parse active language phonemes.
@@ -137,11 +139,11 @@ graph TD
   - **YouTube Homepage Feed**: Responsive card grid (`.yt-video-grid` and `.yt-video-card`) with clean 16:9 thumbnails (unobstructed by badges, with bottom-right duration pill), channel avatars, 2-line clamped titles, and metadata tags.
   - **Interleaved Playlists in Feed**: Curated and community playlists are recommended directly within the main discovery stream (every 4 videos) with stacked thumbnail card physics, playlist count overlays, and one-tap playback (`startPlaylist`).
   - **Coordinated Feed Loading & Zero Layout Shift (CLS = 0)**: Video and playlist recommendation streams are strictly synchronized; skeleton loading stays active until both streams resolve, preventing premature single-stream rendering, card pop-in, and layout shifts.
-  - **Persistent Dual-Tier Caching**: 1-hour LocalStorage cache for both video recommendations (`voca_rec_videos_*`) and playlist recommendations (`voca_rec_playlists_*`), ensuring instantaneous frame-0 feed rendering on app launch and navigation.
-  - **Clean Sticky Category Chips Carousel (`.yt-chips-bar`)**: Full-width horizontal sticky YouTube-style chips bar (`All`, `Playlists`, level badges e.g. `JLPT N5`–`N1`) with smooth touch scrolling and fixed pill dimensions.
-  - **Native-Grade Feed Refreshing (Tap-to-Refresh & Pull-to-Refresh)**:
+  - **In-Memory Session Caching & Zero LocalStorage Clutter**: In-memory caching (`Map`) in `VideoRecommendationService` and `PlaylistService` preserves instantaneous 0ms back-navigation between videos and the feed without losing scroll position, while browser reloads and PWA refreshes automatically receive a freshly shuffled batch from D1 without stale 1-hour locks or LocalStorage quota consumption.
+  - **Clean Sticky Category Chips Carousel (`.yt-chips-bar`)**: Full-width horizontal sticky YouTube-style chips bar (`All`, `Playlists`, level badges e.g. `JLPT N5`–`N1`) with smooth touch scrolling, fixed pill dimensions, and an integrated refresh button.
+  - **Native-Grade Feed Refreshing (Tap-to-Refresh & Browser Reload)**:
     - **Bottom Nav Tap-to-Refresh**: Tapping the active "Watch" tab in the bottom bar smoothly scrolls to top (if scrolled down) or triggers an instant feed refresh with subtle haptic feedback (if already at top), mimicking native YouTube/Twitter UX.
-    - **Icon-Only Floating Pull-to-Refresh**: Touch-based pull gesture with elastic damping curve (`Math.pow(deltaY, 0.82) * 1.6`), haptic vibration on reaching trigger threshold (55px), and a clean floating circular badge (`.pull-refresh-circle`) displaying a rotating/spinning refresh icon with no distracting text.
+    - **Header & Browser Refresh**: Explicit refresh button in the chips bar and native browser pull-to-refresh reloads automatically fetch freshly shuffled catalog videos with `Cache-Control: no-cache, no-store, must-revalidate`.
     - **Smart De-duplication & Catalog Rotation**: Sourced from an expanded 120-video pool in D1 (`functions-src/data/video-info-db.js`), prioritizing unwatched videos first via `HistoryService` so every refresh brings novel practice material.
   - **Clean Metadata Sub-Row Badges**: Proficiency level badges (`.level-badge--pill`, e.g. `JLPT N4`, `HSK 2`, `TOPIK 1`, `CEFR B1`) sit cleanly beside subtitle badges (`[CC]`) in the metadata row beneath the channel name, keeping the thumbnail artwork pristine.
   - **Infinite Scrolling Discovery & Centered Spinner**: Powered by an `IntersectionObserver` sentinel element (`.feed-sentinel`) and `VideoRecommendationService.loadMoreRecommendedVideos(...)`, automatically appending 12-video batches as the user scrolls. Employs a centered `.spinner.spinner--lg` indicator during pagination instead of jarring skeleton placeholders to eliminate layout jumps.
@@ -172,11 +174,13 @@ graph TD
     - **Normalized Optical Icon Sizing & Indicators**: Normalized SVG icons (`languages`, `settings`, `maximize`) to uniform `stroke-width: 1.5`, aligned `.time-display` to 36px height matching control buttons, and refined active Dual-Sub indicator pill with non-colliding spacing.
     - **Deeper Bottom Scrim Gradient**: Enhanced linear gradient overlay to ensure high-contrast button readability and occlude YouTube iframe watermarks.
   - `PlayerSettings`: Shared YouTube-style menu template projected into `.player-settings-popup` on desktop and `<app-bottom-sheet>` on mobile:
-    - **Comprehensive Controls (Bridging Fullscreen Gaps)**: Includes Playback Speed, Subtitle Font Size, Dual Subtitles Language, Reading Annotations (Furigana / Pinyin / Romaji), Grammar Pattern Highlighting, Share Video, Save to Playlist, and Keyboard Shortcuts.
+    - **Comprehensive Controls (Bridging Fullscreen Gaps)**: Includes Sleep Timer, Playback Speed, Subtitle Font Size, Dual Subtitles Language, Reading Annotations (Furigana / Pinyin / Romaji), Grammar Pattern Highlighting, Share Video, Save to Playlist, and Keyboard Shortcuts (intelligently omitted in fullscreen mode).
+    - **Sleep Timer Scheduler**: Features options for `Off`, `10m`, `15m`, `30m`, `45m`, `60m`, and `End of video` with dynamic countdown label and automatic video pause upon expiration.
     - **Uniform Row Layouts & Responsive Typography**: Items maintain 40px desktop context menu heights and comfortable 48px touch heights (44px in compact landscape) with legible typography (1rem/16px headers, 0.9375rem/15px rows), uniform 18px icons, and consistent indentations. In landscape orientation, bottom sheets are capped to proportional widths (`min(92%, 460px)`) rather than stretching across wide displays.
     - **Smooth Height Animations**: Smoothly animates container height via native Web Animations API during submenu view transitions.
   - `FullscreenSubtitleComponent`: Dedicated high-contrast subtitle overlay positioned via `fullscreenSubtitleYPercent` setting.
-    - Features a horizontal drag handle bar with ergonomic hit target ($\ge 32\text{px}$) and pill indicator.
+    - **Bottom-Anchored Vertical Expansion**: Positioned via `transform: translate(-50%, -100%)` (or `translate(-50%, 0)` when at the top) following Netflix and YouTube subtitle engineering, so multi-line text and dual translations expand upward rather than causing jarring two-way vertical jumps.
+    - Features a horizontal drag handle bar with ergonomic hit target ($\ge 32\text{px}$) and pill indicator, with an 8px drag threshold to prevent unintended drags on taps.
     - Drag handler scheduled via `requestAnimationFrame` with pointer capture and outside-Zone event registration (`NgZone.runOutsideAngular`) to guarantee zero Zone.js overhead and locked 60fps/120fps fluid tracking.
     - **Adaptive Controls Clearance**: Automatically detects `.controls-visible.is-near-bottom` and smoothly glides upward by 44px (38px on mobile) via CSS transforms, preventing bottom playback controls from overlapping subtitle text when controls appear.
     - **Baseline Layout Stabilization**: Uses `min-height: 2.25rem` on `.fs-subtitle-content` with smooth dimension transitions, stabilizing text baselines between short and multi-line cues to eliminate visual "see-saw" jumping.
@@ -195,9 +199,15 @@ graph TD
   - Punctuation tokens (`、`, `。`, `,`, `.`, `...`) and word tokens share an identical box model (`border: 1px solid transparent; box-sizing: border-box; vertical-align: baseline;`) with matching vertical padding and margins, guaranteeing that all text and punctuation rest on the exact same typographic baseline without 1px–2px step jitter.
   - Ruby `<rt>` and empty `<rt class="rt-empty">` tags are strictly locked to `height: 1.15em; line-height: 1.15;`, ensuring identical line box dimensions whether reading annotations are active, empty, or switched off.
   - Grammar underlines use an inline `text-underline-offset: 2px` constrained within token padding to prevent line box vertical expansion.
-- **Stable Vertical Anchoring & Layout Shift Prevention**:
-  - Replaces vertical centering (`justify-content: safe center`) with top-anchored positioning (`justify-content: flex-start; padding: 1.125rem 0 var(--space-xs) 0;`) and reserves space for 2 lines (`min-height: calc(2 * font_size * line_height)`). Line 1 remains permanently anchored at the same vertical coordinate between 1-line and 2-line cues, eliminating text jumping during video playback.
-  - Dual subtitle translation container (`.subtitle-translation-wrapper`) and empty/loading states reserve a fixed `min-height: calc(0.8125rem * 1.4 + 14px)` slot so translation loading or appearance never displaces primary subtitle text.
+- **Stable Card Height & Zero-Shift Typography**:
+  - The `.current-subtitle` container maintains a rock-solid, stable height (`9.5rem` on desktop, `11.5rem` with dual subtitles; `8.5rem` / `10.5rem` on mobile) eliminating vertical layout jitter as dialogue shifts between 1-line and multi-line cues.
+  - Inner container `.current-subtitle__inner` uses `flex: 1; min-height: 0; overflow-y: auto` with modern floating pill scrollbars.
+  - Bulletproof vertical centering via `margin: auto 0` on `.subtitle-center-wrapper`: short cues center automatically, while long cues naturally anchor to the top and scroll downward with zero top-clipping.
+- **Apple Music / YouTube Style Transcript List with Smart Auto-Scroll Sync**:
+  - The `.subtitle-list` displays upcoming and past dialogue with comfortable `14rem` height (`12rem` on mobile), Apple Music-inspired smooth dissolve fade masks at top and bottom edges (`mask-image`), and clean hidden scrollbars (`scrollbar-width: none;`).
+  - Active cues feature rounded pill highlights with crisp high-contrast typography and vibrant time badges, while inactive dialogue maintains soft, readable opacity.
+  - Auto-scroll keeps the playing cue centered during playback.
+  - If the learner scrolls away to inspect other cues, auto-scroll pauses and an elegant floating `[ ⏱ Jump to current ]` pill appears; clicking it smoothly centers the active cue and re-engages synchronization.
 - **5 Reading Display Modes**:
   - `native`: Original script.
   - `annotated`: Furigana / Pinyin ruby annotations.

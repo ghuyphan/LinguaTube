@@ -79,11 +79,12 @@ export class I18nService {
             value = key;
         }
 
-        // Perform interpolation if params provided
+        // Perform interpolation if params provided (supports both {{key}} and {key})
         if (params && typeof value === 'string') {
             Object.keys(params).forEach(paramKey => {
                 const paramVal = params[paramKey];
-                value = (value as string).replace(new RegExp(`{{${paramKey}}}`, 'g'), paramVal != null ? String(paramVal) : '');
+                const replacement = paramVal != null ? String(paramVal) : '';
+                value = (value as string).replace(new RegExp(`\\{\\{?${paramKey}\\}?\\}`, 'g'), replacement);
             });
         }
 

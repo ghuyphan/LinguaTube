@@ -44,34 +44,35 @@
 }
 
 /* ============================================
-   CURRENT SUBTITLE - Centered & Scrollable
+   CURRENT SUBTITLE - Fixed Height & Scrollable
    ============================================ */
 .current-subtitle {
     display: flex;
     flex-direction: column;
-    height: 9rem;
-    min-height: 9rem;
+    /* Strict, immutable height - never expands, zero layout shift (CLS = 0) */
+    height: 9.5rem;
+    min-height: 9.5rem;
+    max-height: 9.5rem;
     box-sizing: border-box;
     background: var(--bg-surface);
     position: relative;
     overflow: hidden;
-    transition: min-height 0.3s cubic-bezier(0.2, 0, 0, 1), max-height 0.3s cubic-bezier(0.2, 0, 0, 1), height 0.3s cubic-bezier(0.2, 0, 0, 1);
-    will-change: min-height, max-height, height;
+    border-bottom: 1px solid var(--border-color);
+    transition: height 0.3s cubic-bezier(0.2, 0, 0, 1), min-height 0.3s cubic-bezier(0.2, 0, 0, 1), max-height 0.3s cubic-bezier(0.2, 0, 0, 1);
 
-    // Expand height when showing dual subtitles
+    // Provide comfortable fixed room when showing dual subtitles
     &.has-dual-subtitles {
-        height: auto;
-        min-height: 11rem;
-        max-height: 16rem;
+        height: 11.5rem;
+        min-height: 11.5rem;
+        max-height: 11.5rem;
     }
 
-    // Quiz Mode - Same height as normal mode to prevent layout shift
+    // Quiz Mode - Fixed height to prevent layout shift
     &.is-quiz-active {
-        height: 9rem;
-        /* Match normal state exactly */
+        height: 9.5rem;
+        min-height: 9.5rem;
+        max-height: 9.5rem;
         overflow: visible;
-
-        /* Flex container so quiz-input fills the space */
         display: flex;
         flex-direction: column;
 
@@ -81,6 +82,38 @@
             display: flex;
             width: 100%;
         }
+    }
+
+    /* Overflow fade indicators - subtle depth hints when scrolling long subtitles */
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 16px;
+        pointer-events: none;
+        z-index: 5;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &::before {
+        top: 0;
+        background: linear-gradient(to bottom, var(--bg-surface) 0%, transparent 100%);
+    }
+
+    &::after {
+        bottom: 0;
+        background: linear-gradient(to top, var(--bg-surface) 0%, transparent 100%);
+    }
+
+    &.has-overflow-top::before {
+        opacity: 0.9;
+    }
+
+    &.has-overflow-bottom::after {
+        opacity: 0.9;
     }
 }
 
@@ -106,61 +139,51 @@
 }
 
 .current-subtitle__inner {
-    flex: 1;
-    min-height: 0;
     width: 100%;
+    height: 100%;
+    flex: 1 1 0%;
+    min-height: 0;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     overflow-y: auto;
     overflow-x: hidden;
     overscroll-behavior: contain;
+    touch-action: pan-y;
     -webkit-overflow-scrolling: touch;
     padding: var(--space-sm) var(--space-md);
 
     /* Firefox standard scrollbar fallback */
     @supports not selector(::-webkit-scrollbar) {
         scrollbar-width: thin;
-        scrollbar-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.3) transparent;
+        scrollbar-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.5) transparent;
 
         .current-subtitle:hover & {
-            scrollbar-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.55) transparent;
+            scrollbar-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.75) transparent;
         }
     }
 
     /* WebKit / Blink / Safari - Modern Floating Pill Scrollbar */
     &::-webkit-scrollbar {
         -webkit-appearance: none;
-        width: 7px;
+        width: 6px;
     }
 
     &::-webkit-scrollbar-track {
         background: transparent;
-        margin: 8px 0;
+        margin: 6px 0;
         border-radius: 9999px;
     }
 
     &::-webkit-scrollbar-thumb {
         -webkit-appearance: none;
-        background-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.38);
-        border: 1.5px solid transparent;
+        background-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.45);
+        border: 1px solid transparent;
         background-clip: padding-box;
         border-radius: 9999px;
-        min-height: 28px;
+        min-height: 24px;
         transition: background-color var(--transition-fast, 150ms ease);
-
-        &:hover {
-            background-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.8);
-        }
-
-        &:active {
-            background-color: var(--accent-primary);
-        }
-    }
-
-    /* Card hover emphasis */
-    .current-subtitle:hover &::-webkit-scrollbar-thumb {
-        background-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.58);
 
         &:hover {
             background-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.85);
@@ -171,21 +194,34 @@
         }
     }
 
+    /* Card hover emphasis */
+    .current-subtitle:hover &::-webkit-scrollbar-thumb {
+        background-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.65);
+
+        &:hover {
+            background-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.9);
+        }
+
+        &:active {
+            background-color: var(--accent-primary);
+        }
+    }
+
     /* Dark Mode */
     [data-theme="dark"] & {
         @supports not selector(::-webkit-scrollbar) {
-            scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+            scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
 
             .current-subtitle:hover & {
-                scrollbar-color: rgba(255, 255, 255, 0.55) transparent;
+                scrollbar-color: rgba(255, 255, 255, 0.7) transparent;
             }
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.35);
 
             &:hover {
-                background-color: rgba(255, 255, 255, 0.75);
+                background-color: rgba(255, 255, 255, 0.8);
             }
 
             &:active {
@@ -194,10 +230,10 @@
         }
 
         .current-subtitle:hover &::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.55);
 
             &:hover {
-                background-color: rgba(255, 255, 255, 0.75);
+                background-color: rgba(255, 255, 255, 0.85);
             }
 
             &:active {
@@ -208,13 +244,16 @@
 }
 
 .subtitle-center-wrapper {
-    flex: 1;
-    min-height: 100%;
     width: 100%;
+    /* CRITICAL FIX: Do NOT use min-height: 100%!
+       Without min-height: 100%, margin: auto 0 perfectly centers short cues
+       when free space > 0, and cleanly clamps margin to 0 when free space <= 0,
+       anchoring multi-line cues to the top with ZERO negative space clipping! */
+    margin: auto 0;
+    min-height: min-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: var(--space-xs) 0;
     gap: 4px;
     box-sizing: border-box;
@@ -227,7 +266,6 @@
     min-height: calc(2.1 * 1.6em);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
     word-break: break-word;
@@ -1119,24 +1157,30 @@ ruby rt {
 }
 
 /* ============================================
-   SUBTITLE LIST - FIXED: No gaps between items
+   SUBTITLE LIST - Apple Music / YouTube Style
    ============================================ */
 .subtitle-list {
-    max-height: 11.25rem;
+    height: 14rem;
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 0;
+    box-sizing: border-box;
 
-    /* Hide scrollbar but keep functionality */
+    /* Hidden scrollbar across all browsers (Apple Music style) */
     scrollbar-width: none;
-    /* Firefox */
     -ms-overflow-style: none;
-    /* IE/Edge */
 
     &::-webkit-scrollbar {
         display: none;
-        /* Chrome, Safari, Opera */
     }
+
+    /* Apple Music / YouTube style smooth dissolve at top & bottom edges */
+    mask-image: linear-gradient(to bottom, transparent 0%, black 16px, black calc(100% - 16px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 16px, black calc(100% - 16px), transparent 100%);
 
     /* Redacted Style for Quiz Mode */
     &.quiz-obfuscated {
@@ -1154,7 +1198,7 @@ ruby rt {
 
         .cue-item--active {
             background: none !important;
-            border-left-color: transparent !important;
+            border-color: transparent !important;
 
             .cue-time,
             .cue-text {
@@ -1165,72 +1209,143 @@ ruby rt {
     }
 }
 
+/* Floating Sync Button when user scrolls away in transcript */
+.sync-current-container {
+    position: sticky;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 10;
+    margin-top: -38px;
+}
+
+.sync-current-btn {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--border-radius-pill, 9999px);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    color: var(--accent-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    user-select: none;
+
+    &:hover {
+        background: var(--accent-primary);
+        color: #ffffff;
+        border-color: var(--accent-primary);
+        box-shadow: 0 4px 20px rgba(var(--accent-primary-rgb, 255, 107, 107), 0.45);
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.97);
+    }
+
+    app-icon {
+        display: flex;
+        flex-shrink: 0;
+    }
+}
+
 .cue-item {
     display: flex;
     align-items: flex-start;
     gap: var(--space-md);
-    width: 100%;
-    padding: var(--space-sm) var(--space-md);
-    background: none;
-    border: none;
+    width: calc(100% - 16px);
+    margin: 3px 8px;
+    padding: 8px 12px;
+    border-radius: var(--border-radius-md, 10px);
+    background: transparent;
+    border: 1px solid transparent;
     text-align: left;
     cursor: pointer;
     transition:
-        opacity 0.25s ease,
-        background-color 0.2s ease,
-        border-color 0.25s ease,
-        color 0.2s ease;
+        opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     font-family: inherit;
     font-size: 0.875rem;
-    color: var(--text-primary);
-    opacity: 0.55;
-    min-height: 48px;
+    color: var(--text-secondary);
+    opacity: 0.52;
+    min-height: 46px;
     height: auto;
     position: relative;
-    content-visibility: auto;
-    contain-intrinsic-size: auto 54px;
-}
+    box-sizing: border-box;
 
-/* No more scale transform - use border & opacity for visual hierarchy */
-.cue-item:last-child {
-    border-bottom: none;
+    &:last-child {
+        margin-bottom: 8px;
+    }
 }
 
 @media (hover: hover) {
     .cue-item:hover {
         background: var(--bg-hover);
-        opacity: 0.8;
+        opacity: 0.85;
     }
 }
 
-/* Active cue - highlighted with subtle accent background */
+/* Active cue - modern Apple Music / YouTube pill highlight with crisp typography */
 .cue-item--active {
-    background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.08);
-    color: var(--accent-primary);
-    font-weight: 500;
+    background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.1);
+    border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.22);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
     opacity: 1;
+
+    .cue-time {
+        background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.16);
+        color: var(--accent-primary);
+        font-weight: 600;
+    }
+
+    .cue-text {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .cue-translation-text {
+        color: var(--text-secondary);
+        opacity: 1;
+        font-weight: 500;
+    }
 }
 
 @media (hover: hover) {
     .cue-item--active:hover {
-        background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.12);
+        background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.15);
+        border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.3);
     }
 }
 
-/* Dark mode - increase accent opacity for better visibility */
+/* Dark mode contrast enhancement */
 :host-context([data-theme="dark"]) .cue-item--active {
-    background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.12);
+    background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.14);
+    border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.28);
 }
 
 @media (hover: hover) {
     :host-context([data-theme="dark"]) .cue-item--active:hover {
-        background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.16);
+        background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.18);
     }
 }
 
-/* Past cues - more subtle, no scale (prevents gaps) */
+/* Past cues - gentle dimmed presence (Apple Music lyrics style) */
 .cue-item--past {
-    opacity: 0.35;
+    opacity: 0.36;
     color: var(--text-muted);
 }
 
@@ -1243,15 +1358,13 @@ ruby rt {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     line-height: 1.4;
-    padding-top: 1px;
     color: var(--text-muted);
     min-width: 2.75rem;
+    padding: 2px 6px;
+    border-radius: 6px;
     flex-shrink: 0;
-    transition: color 0.2s ease;
-}
-
-.cue-item--active .cue-time {
-    color: var(--accent-primary);
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .cue-body {
@@ -1271,6 +1384,7 @@ ruby rt {
     -webkit-line-clamp: 1;
     line-clamp: 1;
     -webkit-box-orient: vertical;
+    transition: color 0.2s ease;
 }
 
 .cue-translation-text {
@@ -1288,11 +1402,6 @@ ruby rt {
     transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-.cue-item--active .cue-translation-text {
-    color: var(--accent-primary);
-    opacity: 0.95;
-}
-
 /* ============================================
    CONTROLS - Horizontal Expanding
    ============================================ */
@@ -1306,6 +1415,8 @@ ruby rt {
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-card);
 
     &::-webkit-scrollbar {
         display: none;
@@ -1680,21 +1791,23 @@ ruby rt {
     .current-subtitle {
         height: 8.5rem;
         min-height: 8.5rem;
-        transition: min-height 0.3s ease, max-height 0.3s ease, height 0.3s ease;
+        max-height: 8.5rem;
 
         &.has-dual-subtitles {
-            height: auto;
+            height: 10.5rem;
             min-height: 10.5rem;
-            max-height: 15rem;
+            max-height: 10.5rem;
         }
 
         &.is-quiz-active {
             height: 8.5rem;
+            min-height: 8.5rem;
+            max-height: 8.5rem;
         }
     }
 
     .current-subtitle__inner {
-        padding: var(--space-md) var(--mobile-padding);
+        padding: var(--space-sm) var(--mobile-padding);
     }
 
     .subtitle-text {
@@ -1752,17 +1865,20 @@ ruby rt {
     }
 
     .subtitle-list {
-        max-height: 12.5rem;
+        height: 12rem;
     }
 
     .cue-item {
-        padding: var(--space-sm) var(--mobile-padding);
-        min-height: 3rem;
+        width: calc(100% - 12px);
+        margin: 2px 6px;
+        padding: 7px 10px;
+        border-radius: 8px;
+        min-height: 2.75rem;
     }
 
     .cue-time {
         font-size: 0.75rem;
-        min-width: 3rem;
+        min-width: 2.75rem;
     }
 
     .cue-text {
@@ -1881,23 +1997,29 @@ ruby rt {
 
 @media (max-width: 480px) {
     .current-subtitle {
-        height: 7.5rem;
-        min-height: 7.5rem;
-        transition: min-height 0.3s ease, max-height 0.3s ease, height 0.3s ease;
+        height: 8rem;
+        min-height: 8rem;
+        max-height: 8rem;
 
         &.has-dual-subtitles {
-            height: auto;
-            min-height: 9.5rem;
-            max-height: 14rem;
+            height: 10rem;
+            min-height: 10rem;
+            max-height: 10rem;
         }
 
         &.is-quiz-active {
-            height: 7.5rem;
+            height: 8rem;
+            min-height: 8rem;
+            max-height: 8rem;
         }
     }
 
+    .subtitle-list {
+        height: 11rem;
+    }
+
     .current-subtitle__inner {
-        padding: var(--space-sm) var(--space-md);
+        padding: var(--space-sm) var(--space-sm);
     }
 
     .subtitle-text {
@@ -1933,80 +2055,12 @@ ruby rt {
         font-size: 0.875rem;
     }
 
-    .word {
-        padding: 0.2rem 0.3rem;
-        margin: 2px;
-    }
-
-    .text-ja .word,
-    .text-zh .word,
-    .text-ko .word {
-        padding: 0.2rem 0.3rem;
-        margin: 2px;
-        vertical-align: baseline;
-    }
-
-    .text-en .word {
-        padding: 0.2rem 0.3rem;
-        margin: 2px;
-    }
-
-    /* State indicators on small mobile */
-    .state-item {
-        gap: var(--space-sm);
-    }
-
-    .ai-spinner {
-        width: 1.75rem;
-        height: 1.75rem;
-    }
-
-    .ai-wand {
-        width: 12px !important;
-        height: 12px !important;
-    }
-
-    .loading-spinner {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-
-    .loading-icon {
-        width: 10px !important;
-        height: 10px !important;
-    }
-
-    .error-icon-box,
-    .empty-icon-box {
-        width: 1.75rem;
-        height: 1.75rem;
-        border-radius: 50%;
-    }
-
-    .error-icon,
-    .empty-icon {
-        width: 14px !important;
-        height: 14px !important;
-    }
-
-    .ai-title,
-    .empty-title,
-    .loading-text {
-        font-size: 0.8125rem;
-    }
-
-    .ai-hint,
-    .empty-hint {
-        font-size: 0.6875rem;
-    }
-
-    .waiting-dot {
-        width: 4px;
-        height: 4px;
-    }
-
-    .subtitle-waiting {
-        font-size: 0.75rem;
+    .cue-item {
+        width: calc(100% - 10px);
+        margin: 2px 5px;
+        padding: 6px 8px;
+        border-radius: 7px;
+        min-height: 2.5rem;
     }
 
     .subtitle-controls {
