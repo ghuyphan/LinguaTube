@@ -1916,45 +1916,40 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.1.12';
+    const mockVersion = req.query.mock_version || '1.1.13';
 
     res.json({
         version: mockVersion,
-        minSupportedVersion: mockForce ? '1.1.12' : '1.0.0',
+        minSupportedVersion: mockForce ? '1.1.13' : '1.0.0',
         buildDate: '2026-09-10',
         forceUpdate: mockForce,
         maintenance: mockMaintenance,
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'Domain Migration to voca.study: Official domain updated across all SEO tags, Open Graph previews, sitemaps, and deep links',
-                'Brand & Logo Palette Harmonization: Refreshed app icon, favicon, and splash screens with the signature soft strawberry-coral aesthetic',
-                'Streamlined Vocabulary Controls: Reordered word item actions to Level Status, Audio Pronunciation, and Delete across video and dictionary views',
-                'Unified Tab & Chip Styling: Harmonized segmented navigation chips across Dictionary, Vocabulary, Playlists, and History with consistent borders'
+                'Single-Line Channel Truncation: Video player header limits channel names to one line with responsive ellipsis and hover tooltip, preventing difficulty level badges from being pushed off-screen',
+                'In-Memory Feed & Scroll Memory: Recommendations feed stays preserved in memory while watching videos, instantly returning to your exact card and scroll offset upon closing',
+                'Native Touch Pull-to-Refresh: Added smooth YouTube-style downward drag gesture with a floating circular refresh indicator to easily refresh video recommendations'
             ],
             vi: [
-                'Chuyển đổi tên miền sang voca.study: Cập nhật tên miền chính thức trên toàn bộ thẻ SEO, xem trước Open Graph, sitemap và liên kết ứng dụng',
-                'Đồng bộ nhận diện thương hiệu & Logo: Làm mới biểu tượng ứng dụng, favicon và màn hình chờ với gam màu hồng dâu san hô nhẹ nhàng, tinh tế',
-                'Sắp xếp thao tác từ vựng trực quan: Điều chỉnh thứ tự nút thành Trạng thái học, Phát âm âm thanh và Xóa tại thanh bên video và từ điển',
-                'Chuẩn hóa nút tab & Bộ lọc: Đồng bộ phong cách nút phân đoạn giữa Từ điển, Từ vựng, Danh sách phát và Lịch sử với viền và trạng thái rõ ràng'
+                'Rút gọn tên kênh một dòng: Tiêu đề trình phát giới hạn tên kênh trên 1 dòng với dấu chấm lửng co giãn và chú giải đầy đủ, tránh làm tràn huy hiệu độ khó',
+                'Giữ vị trí cuộn & Bảng tin tức thì: Danh sách gợi ý được giữ nguyên trong bộ nhớ khi xem video, trở lại ngay vị trí thẻ đang xem khi đóng video',
+                'Kéo xuống để làm mới kiểu YouTube: Thêm thao tác kéo vuốt xuống mượt mà kèm biểu tượng tròn để làm mới danh sách video gợi ý nhanh chóng'
             ],
             ja: [
-                'voca.study へのドメイン移行：SEOタグ、Open Graphプレビュー、サイトマップ、ディープリンク全体で新公式ドメインに完全移行',
-                'ブランド・ロゴカラーの調和：OG画像に合わせ、アプリロゴ、ファビコン、スプラッシュ画面を柔らかなストロベリーコーラル配色に統一',
-                '単語リスト操作の最適化：動画サイドバーと辞書画面で、アクションボタンを「習得レベル」「音声再生」「削除」の順に再配置',
-                'タブ・チップデザインの統一：辞書・単語・プレイリスト・履歴のセグメント切り替えボタンを統一されたボーダースタイルに標準化'
+                'チャンネル名の1行省略表示：動画ヘッダーのチャンネル名をレスポンシブな最大幅と1行省略に制限し、レベルバッジの押し出しを防止',
+                'フィード保持＆スクロール復元：動画再生中もおすすめフィードをメモリに保持し、動画終了時に直前の閲覧位置へ瞬時に復帰',
+                'YouTube風プルダウン更新：ホームフィード上部で下スワイプすると回転インジケーターが表示され、おすすめ動画を手軽に最新化'
             ],
             ko: [
-                'voca.study 도메인 이전: SEO 메타태그, Open Graph 미리보기, 사이트맵 및 딥링크 전반에 걸쳐 공식 도메인 반영',
-                '브랜드 & 로고 컬러 조화: OG 이미지와 일치하도록 앱 아이콘, 파비콘, 스플래시 화면을 부드러운 스트로베리 코럴 색상으로 일원화',
-                '단어 목록 조작 순서 최적화: 동영상 사이드바 및 사전 화면에서 액션 버튼을 \'학습 단계\', \'발음 듣기\', \'삭제\' 순으로 재정렬',
-                '탭 & 칩 버튼 스타일 통일: 사전, 단어장, 재생목록, 시청 기록의 세그먼트 버튼을 일관된 테두리 스타일로 표준화'
+                '채널명 1줄 말줄임 처리: 동영상 플레이어 헤더의 채널명을 반응형 최대 너비와 1줄로 제한하여 난이도 뱃지가 밀려나지 않도록 개선',
+                '피드 메모리 유지 & 스크롤 복원: 동영상 시청 중에도 홈 피드가 메모리에 유지되어 영상을 닫았을 때 보던 위치로 즉시 복귀',
+                'YouTube 스타일 당겨서 새로고침: 홈 피드 상단에서 아래로 당겨 추천 동영상 목록을 간편하게 새로고침하는 터치 제스처 추가'
             ],
             zh: [
-                '全面迁移至 voca.study 域名：全站更新 SEO 标签、Open Graph 社交分享预览、网站地图与应用直链',
-                '品牌视觉与 Logo 调色统一：App 图标、Favicon 和启动画面全面同步 OG 预览图的柔和草莓珊瑚色系',
-                '生词操作流顺序优化：在视频侧边栏与词典生词本中，操作按钮统一重排为「掌握等级」、「发音朗读」与「删除」',
-                '统一切换标签与筛选胶囊样式：规范词典、生词、播放列表与历史记录的分段切换按钮，保持一致的边框与激活效果'
+                '频道名称单行截断优化：播放器顶部频道名称限制为单行并设置自适应最大宽度，防止挤压或换行语言难度等级徽章',
+                '推荐列表常驻与滚动记忆：观看视频时推荐流完整保存在内存中，关闭视频后立即恢复至先前的浏览位置与卡片',
+                'YouTube 风格下拉刷新：在主页顶部向下滑动可呼出圆环刷新指示器，流畅获取最新推荐视频与播放列表'
             ]
         }
     });

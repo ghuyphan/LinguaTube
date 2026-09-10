@@ -285,6 +285,7 @@ export class VideoPageComponent implements OnInit {
 
   onPlayRecommendedVideo(video: RecommendedVideo): void {
     if (!video?.videoId) return;
+    this.saveScrollPosition();
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { id: video.videoId, v: null },
@@ -310,6 +311,86 @@ export class VideoPageComponent implements OnInit {
   vocabDeleteOpen = signal(false);
   vocabDeleteId = signal<string | null>(null);
   vocabMenuOpen = signal(false);
+
+  // ============================================
+  // PULL-TO-REFRESH & SCROLL RETENTION (YouTube-style)
+  // ============================================
+  private savedFeedScrollY = 0;
+  private previousShowLearnHome = true;
+
+  readonly pullDistance = signal(0);
+  readonly isPullActive = signal(false);
+  private touchStartY = 0;
+  private touchStartX = 0;
+
+  readonly pullOpacity = computed(() => {
+    if (this.isRefreshing()) return 1;
+    const dist = this.pullDistance();
+    if (dist <= 0) return 0;
+    return Math.min(dist / 35, 1);
+  });
+
+  readonly pullIndicatorY = computed(() => {
+    if (this.isRefreshing()) return 16;
+    return Math.min(this.pullDistance() * 0.65, 52);
+  });
+
+  readonly pullRotation = computed(() => {
+    return Math.min(this.pullDistance() * 3.5, 180);
+  });
+
+  saveScrollPosition(): void {
+    if (isPlatformBrowser(this.platformId) && this.showLearnHome()) {
+      this.savedFeedScrollY = window.scrollY;
+    }
+  }
+
+  onFeedTouchStart(e: TouchEvent): void {
+    if (!this.showLearnHome() || this.isRefreshing()) return;
+    if (isPlatformBrowser(this.platformId) && window.scrollY <= 2) {
+      const touch = e.touches[0];
+      if (touch) {
+        this.touchStartY = touch.clientY;
+        this.touchStartX = touch.clientX;
+      }
+    }
+  }
+
+  onFeedTouchMove(e: TouchEvent): void {
+    if (!this.showLearnHome() || this.isRefreshing() || !this.touchStartY) return;
+    if (isPlatformBrowser(this.platformId) && window.scrollY <= 2) {
+      const touch = e.touches[0];
+      if (!touch) return;
+      const deltaY = touch.clientY - this.touchStartY;
+      const deltaX = touch.clientX - this.touchStartX;
+
+      // Only track if moving downwards and predominantly vertical (not horizontal chip scrolling)
+      if (deltaY > 8 && deltaY > Math.abs(deltaX) * 1.2) {
+        this.isPullActive.set(true);
+        // Apply smooth resistance damping
+        const damped = (deltaY - 8) * 0.42;
+        this.pullDistance.set(Math.min(damped, 80));
+      } else if (deltaY <= 0) {
+        this.pullDistance.set(0);
+        this.isPullActive.set(false);
+      }
+    }
+  }
+
+  onFeedTouchEnd(): void {
+    if (this.pullDistance() >= 48 && !this.isRefreshing()) {
+      this.pullDistance.set(48);
+      void this.refreshRecommendations().finally(() => {
+        this.pullDistance.set(0);
+        this.isPullActive.set(false);
+      });
+    } else {
+      this.pullDistance.set(0);
+      this.isPullActive.set(false);
+    }
+    this.touchStartY = 0;
+    this.touchStartX = 0;
+  }
 
   readonly languageMismatchMessage = computed(() => {
     const requested = this.settings.settings().language;
@@ -411,6 +492,26 @@ export class VideoPageComponent implements OnInit {
       }
     });
 
+    // Scroll restoration when returning to home feed (YouTube-style)
+    effect(() => {
+      const isHome = this.showLearnHome();
+      if (isHome && !this.previousShowLearnHome) {
+        // Just returned from video to home feed!
+        if (isPlatformBrowser(this.platformId) && this.savedFeedScrollY > 0) {
+          const targetScroll = this.savedFeedScrollY;
+          setTimeout(() => {
+            window.scrollTo({ top: targetScroll, behavior: 'instant' });
+          }, 10);
+        }
+      } else if (!isHome && this.previousShowLearnHome) {
+        // Just opened video from feed
+        if (isPlatformBrowser(this.platformId)) {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+      }
+      this.previousShowLearnHome = isHome;
+    });
+
     // Setup IntersectionObserver for Infinite Scroll Sentinel
     effect(() => {
       const sentinelRef = this.scrollSentinel();
@@ -451,7 +552,10 @@ export class VideoPageComponent implements OnInit {
     effect(() => {
       const currentLang = this.settings.settings().language;
       if (previousRecommendLang && previousRecommendLang !== currentLang) {
-        untracked(() => this.videoLevelFilter.set('all'));
+        untracked(() => {
+          this.videoLevelFilter.set('all');
+          this.savedFeedScrollY = 0;
+        });
       }
       previousRecommendLang = currentLang;
 
@@ -494,6 +598,7 @@ export class VideoPageComponent implements OnInit {
         } else {
           // User changed their target learning language in sidebar / settings while watching a video!
           // Clear current video and return to Home feed for the newly chosen learning language
+          this.savedFeedScrollY = 0;
           this.videoLevel.reset();
           this.playlistService.clearCurrentPlaylist();
           this.youtube.reset();
@@ -702,6 +807,7 @@ export class VideoPageComponent implements OnInit {
   }
 
   private async loadVideoFromUrl(videoId: string): Promise<void> {
+    this.saveScrollPosition();
     try {
       this.videoLevel.reset();
       const lang = this.settings.settings().language;
@@ -841,6 +947,7 @@ export class VideoPageComponent implements OnInit {
     if (!firstVideoId) {
       return;
     }
+    this.saveScrollPosition();
 
     void this.router.navigate(['/video'], {
       queryParams: {

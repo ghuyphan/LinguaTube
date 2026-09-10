@@ -154,6 +154,45 @@
       scrollbar-width: none;
       -ms-overflow-style: none;
 
+      &.hidden {
+        display: none !important;
+      }
+
+      /* YouTube-style Pull-to-Refresh Indicator */
+      .yt-pull-refresh {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 60;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.1s ease-out;
+
+        &__bubble {
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          background: var(--bg-surface-elevated, var(--bg-card));
+          border: 1px solid var(--border-color);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22), 0 2px 6px rgba(0, 0, 0, 0.12);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--accent-primary);
+
+          .pull-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s linear;
+          }
+
+          .spin-icon {
+            animation: spin 0.8s linear infinite;
+          }
+        }
+      }
+
       &::-webkit-scrollbar {
         display: none;
         width: 0;
@@ -534,6 +573,7 @@
         display: flex;
         align-items: center;
         gap: 6px;
+        min-width: 0;
 
         .yt-channel-name {
           font-size: 0.8125rem;
@@ -541,6 +581,8 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          min-width: 0;
+          flex-shrink: 1;
         }
       }
 

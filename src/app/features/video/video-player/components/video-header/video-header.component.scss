@@ -35,6 +35,19 @@
     color: var(--text-muted);
     display: inline-block;
     line-height: 1.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    max-width: 240px;
+
+    @media (max-width: 640px) {
+        max-width: 160px;
+    }
+
+    @media (max-width: 380px) {
+        max-width: 120px;
+    }
 }
 
 .video-meta-row {
@@ -42,11 +55,15 @@
     align-items: center;
     gap: 0.5rem;
     position: relative;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .level-badge {
     display: inline-flex;
     align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
     padding: 1px 7px;
     font-size: 0.6875rem;
     font-weight: 700;
@@ -86,6 +103,7 @@
     }
 
     &--skeleton {
+        flex-shrink: 0;
         width: 48px;
         height: 18px;
         padding: 0;
@@ -269,6 +287,7 @@
 .skeleton-channel {
     height: 1.3rem;
     width: 40%;
+    max-width: 160px;
 }
 
 @keyframes shimmer {

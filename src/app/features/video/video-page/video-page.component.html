@@ -53,8 +53,29 @@
         </div>
         }
 
-        @if (showLearnHome()) {
-        <div class="card home-dashboard">
+        <!-- Home Dashboard Feed: Kept in DOM with [class.hidden] to prevent destruction & preserve scroll -->
+        <div class="card home-dashboard" [class.hidden]="!showLearnHome()"
+            (touchstart)="onFeedTouchStart($event)"
+            (touchmove)="onFeedTouchMove($event)"
+            (touchend)="onFeedTouchEnd()"
+            (touchcancel)="onFeedTouchEnd()">
+
+            <!-- YouTube-style Circular Pull-to-Refresh Indicator -->
+            @if (pullDistance() > 0 || isRefreshing()) {
+            <div class="yt-pull-refresh"
+                [class.refreshing]="isRefreshing()"
+                [style.transform]="'translate(-50%, ' + pullIndicatorY() + 'px)'"
+                [style.opacity]="pullOpacity()">
+                <div class="yt-pull-refresh__bubble">
+                    @if (isRefreshing()) {
+                        <app-icon name="loader" [size]="18" class="spin-icon" />
+                    } @else {
+                        <app-icon name="chevron-down" [size]="18" class="pull-arrow"
+                            [style.transform]="'rotate(' + pullRotation() + 'deg)'" />
+                    }
+                </div>
+            </div>
+            }
 
             <div class="panel-header">
                 <div class="panel-header__row">
@@ -302,7 +323,8 @@
             </div>
             }
         </div>
-        } @else {
+
+        @if (!showLearnHome()) {
         <app-subtitle-display [isVideoFullscreen]="isVideoFullscreen()" (wordClicked)="onWordClicked($event)"
             (manualAITrigger)="onManualAITrigger()"
             (switchLanguage)="onLanguageSwitchFromSubtitle($event)"

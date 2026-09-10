@@ -3,7 +3,7 @@
     <div class="video-text">
         <h2 class="video-title">{{ title() }}</h2>
         <div class="video-meta-row">
-            <span class="video-channel">{{ channel() }}</span>
+            <span class="video-channel" [attr.title]="channel()">{{ channel() }}</span>
             @if (levelInfo(); as lvl) {
             <span class="level-badge" [attr.data-tier]="lvl.tier" (click)="toggleLevelPopover($event)" role="button" tabindex="0" [attr.title]="lvl.level">
                 {{ lvl.level }}

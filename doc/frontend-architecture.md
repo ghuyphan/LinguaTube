@@ -139,11 +139,17 @@ graph TD
   - **YouTube Homepage Feed**: Responsive card grid (`.yt-video-grid` and `.yt-video-card`) with clean 16:9 thumbnails (unobstructed by badges, with bottom-right duration pill), channel avatars, 2-line clamped titles, and metadata tags.
   - **Interleaved Playlists in Feed**: Curated and community playlists are recommended directly within the main discovery stream (every 4 videos) with stacked thumbnail card physics, playlist count overlays, and one-tap playback (`startPlaylist`).
   - **Coordinated Feed Loading & Zero Layout Shift (CLS = 0)**: Video and playlist recommendation streams are strictly synchronized; skeleton loading stays active until both streams resolve, preventing premature single-stream rendering, card pop-in, and layout shifts.
-  - **In-Memory Session Caching & Zero LocalStorage Clutter**: In-memory caching (`Map`) in `VideoRecommendationService` and `PlaylistService` preserves instantaneous 0ms back-navigation between videos and the feed without losing scroll position, while browser reloads and PWA refreshes automatically receive a freshly shuffled batch from D1 without stale 1-hour locks or LocalStorage quota consumption.
+  - **In-Memory DOM Preservation & Instant Scroll Retention (YouTube Style)**:
+    - Instead of being destroyed with `@if`, the home dashboard container (`.home-dashboard`) is preserved in the DOM using `[class.hidden]="!showLearnHome()"`, achieving zero rendering cost while keeping all card elements and decoded thumbnails intact.
+    - When navigating into a video, `saveScrollPosition()` saves `window.scrollY`. Upon closing the video, an effect instantly restores the exact scroll position, eliminating page flicker, network refetches, and layout jumps.
+  - **YouTube-Style Touch Pull-to-Refresh (`.yt-pull-refresh`)**:
+    - At the top of the home feed (`window.scrollY <= 2`), pulling downwards reveals a floating circular refresh bubble with an arrow rotating proportionally to drag distance.
+    - Pulling past threshold triggers a coordinated refresh of recommended videos and playlists, complete with a spinning indicator and toast confirmation, without triggering a disruptive browser white-screen reload.
+    - Pull-to-refresh touch tracking is completely disabled while watching a video to prevent any interference with subtitle scrolling or video scrubbing.
   - **Clean Sticky Category Chips Carousel (`.yt-chips-bar`)**: Full-width horizontal sticky YouTube-style chips bar (`All`, `Playlists`, level badges e.g. `JLPT N5`–`N1`) with smooth touch scrolling, fixed pill dimensions, and an integrated refresh button.
   - **Native-Grade Feed Refreshing (Tap-to-Refresh & Browser Reload)**:
     - **Bottom Nav Tap-to-Refresh**: Tapping the active "Watch" tab in the bottom bar smoothly scrolls to top (if scrolled down) or triggers an instant feed refresh with subtle haptic feedback (if already at top), mimicking native YouTube/Twitter UX.
-    - **Header & Browser Refresh**: Explicit refresh button in the chips bar and native browser pull-to-refresh reloads automatically fetch freshly shuffled catalog videos with `Cache-Control: no-cache, no-store, must-revalidate`.
+    - **Header & Browser Refresh**: Explicit refresh button in the chips bar and touch pull-to-refresh automatically fetch freshly shuffled catalog videos with `Cache-Control: no-cache, no-store, must-revalidate`.
     - **Smart De-duplication & Catalog Rotation**: Sourced from an expanded 120-video pool in D1 (`functions-src/data/video-info-db.js`), prioritizing unwatched videos first via `HistoryService` so every refresh brings novel practice material.
   - **Clean Metadata Sub-Row Badges**: Proficiency level badges (`.level-badge--pill`, e.g. `JLPT N4`, `HSK 2`, `TOPIK 1`, `CEFR B1`) sit cleanly beside subtitle badges (`[CC]`) in the metadata row beneath the channel name, keeping the thumbnail artwork pristine.
   - **Infinite Scrolling Discovery & Centered Spinner**: Powered by an `IntersectionObserver` sentinel element (`.feed-sentinel`) and `VideoRecommendationService.loadMoreRecommendedVideos(...)`, automatically appending 12-video batches as the user scrolls. Employs a centered `.spinner.spinner--lg` indicator during pagination instead of jarring skeleton placeholders to eliminate layout jumps.
@@ -641,7 +647,8 @@ To maintain complete visual, structural, and functional harmony across all prima
 
 ### 8.4. UI Badges & Visual Tokens
 - **Video Header Pill (`VideoHeaderComponent`)**:
-  - Tier-colored pill badge (`.video-level-pill` / `.level-badge`) with hover/click trigger.
+  - Tier-colored pill badge (`.video-level-pill` / `.level-badge`) with hover/click trigger and `flex-shrink: 0` layout protection.
+  - Single-line channel name (`.video-channel`) with responsive `max-width` truncation and ellipsis, preventing long channel names from wrapping or pushing the proficiency level badge out of view.
   - Shimmering skeleton state (`.level-badge--skeleton`) with `levelShimmer` animation during subtitle fetching, AI transcription, or deep linguistic assessment to prevent showing stale previous levels while preventing layout shift.
   - Dynamic breakdown popover (`.video-level-popover`) detailing framework (JLPT/HSK/TOPIK/CEFR), grammar complexity count, and speech velocity.
 - **History Cards (`HistoryListComponent`)**:

@@ -550,6 +550,7 @@
 .level-badge--pill {
     display: inline-flex;
     align-items: center;
+    flex-shrink: 0;
     padding: 2px 8px;
     font-size: 0.6875rem;
     font-weight: 600;
