@@ -45,8 +45,8 @@ import { VocabularyService } from '../../../../vocabulary';
             (click)="$event.stopPropagation()"
             role="slider"
             [attr.aria-valuenow]="yPercent()"
-            aria-valuemin="8"
-            aria-valuemax="88"
+            aria-valuemin="14"
+            aria-valuemax="84"
             [attr.aria-label]="isTop() ? 'Move subtitle to bottom (tap or drag)' : 'Move subtitle to top (tap or drag)'"
             [title]="isTop() ? 'Tap to move to bottom, or drag to reposition' : 'Tap to move to top, or drag to reposition'">
             <div class="fs-drag-pill"></div>
@@ -240,7 +240,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
                     const deltaPercent = (curDeltaY / containerHeight) * 100;
                     const rawPercent = this.dragStartPercent + deltaPercent;
 
-                    const clamped = Math.max(8, Math.min(88, Math.round(rawPercent)));
+                    const clamped = Math.max(14, Math.min(84, Math.round(rawPercent)));
                     this.positionChanged.emit(clamped);
                 });
             }
@@ -265,8 +265,8 @@ export class FullscreenSubtitleComponent implements OnDestroy {
                 if (!this.hasMoved) {
                     this.togglePosition.emit();
                 } else {
-                    // Free dragging: commit exact position without forced snapping locks
-                    const current = Math.max(8, Math.min(88, Math.round(this.yPercent())));
+                    // Free dragging: commit exact position within safe bounds [14%, 84%]
+                    const current = Math.max(14, Math.min(84, Math.round(this.yPercent())));
                     this.positionCommitted.emit(current);
                 }
             });

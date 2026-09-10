@@ -33,6 +33,15 @@ $transition-fast: 0.15s ease;
         transform: translate(-50%, 0);
     }
 
+    &.controls-visible.is-near-bottom:not(.is-dragging) {
+        // Smoothly lift subtitle to maintain clear distance from player controls bottom bar
+        transform: translate(-50%, calc(-100% - 4.5rem));
+
+        @media (max-width: 640px), (max-height: 520px) {
+            transform: translate(-50%, calc(-100% - 3.75rem));
+        }
+    }
+
     &.is-dragging {
         transition: none !important;
         user-select: none;
@@ -78,6 +87,20 @@ $transition-fast: 0.15s ease;
     max-height: 45vh;
     overflow-y: auto;
     overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+        display: block;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+    }
+
     animation: subtitleFadeIn 0.2s ease-out;
     display: flex;
     flex-direction: column;
@@ -281,6 +304,8 @@ $transition-fast: 0.15s ease;
     color: rgba(255, 255, 255, 0.88);
     font-weight: 500;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    overflow-wrap: break-word;
+    word-break: break-word;
 
     .fullscreen-subtitle.fs-small & {
         font-size: 0.75rem;
