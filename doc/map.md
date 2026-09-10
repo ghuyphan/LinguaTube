@@ -22,6 +22,7 @@ graph TB
         
         API_Transcript["/api/transcript"]
         API_Dict["/api/dict"]
+        API_TTS["/api/tts (Edge Neural)"]
         API_Tokens["/api/tokenize/:lang"]
         API_TokensBatch["/api/tokenize-batch/:lang"]
         API_Dual["/api/dual-subtitles"]
@@ -466,11 +467,11 @@ sequenceDiagram
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
 | `src/app/data` | Static Data | Large CJK grammar rules, release & changelog metadata (`changelog.data.ts`) |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, tts, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, PocketBase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |
-| `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, unified dict lookup, tokenizers, payment mock |
+| `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, unified dict lookup, Edge TTS, tokenizers, payment mock |
 | `server/transcripts_cache/` | Dev Cache | Local disk persistence for fetched YouTube transcripts during development |
 | `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via esbuild |
 | `scripts/merge-translations.js` | Data Pipeline | Merges translated grammar chunks into TypeScript data files |

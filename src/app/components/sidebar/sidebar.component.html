@@ -8,7 +8,7 @@
 
     <div class="sidebar__inner">
         <!-- Logo / Brand -->
-        <div class="sidebar__brand" (click)="onLearnClick($event)" role="button" tabindex="0" style="cursor: pointer;">
+        <div class="sidebar__brand" (click)="onLearnClick($event)" role="button" tabindex="0" [attr.title]="brandTitle()" [attr.aria-label]="brandTitle()" style="cursor: pointer;">
             <div class="sidebar__logo" aria-hidden="true">
                 <svg class="logo-kikyou" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -27,8 +27,7 @@
             </div>
             @if (!isCollapsed()) {
             <div class="sidebar__title-group">
-                <h1 class="sidebar__title">{{ i18n.t('app.title') }}</h1>
-                <span class="sidebar__subtitle">{{ i18n.t('app.subtitle') }}</span>
+                <h1 class="sidebar__title">{{ brandTitle() }}</h1>
             </div>
             }
         </div>
@@ -48,7 +47,11 @@
                 <span>{{ i18n.t('nav.watch') }}</span>
                 }
                 @if (hasActiveVideoSession()) {
-                <span class="now-playing-dot"></span>
+                <div class="now-playing-indicator" [attr.aria-label]="i18n.t('player.nowPlaying') || 'Now playing'">
+                    <div class="bar bar-1"></div>
+                    <div class="bar bar-2"></div>
+                    <div class="bar bar-3"></div>
+                </div>
                 }
             </a>
             <a class="nav-item" routerLink="/study" routerLinkActive="active" (click)="onStudyClick($event)" [attr.title]="i18n.t('nav.review')">

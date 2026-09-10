@@ -73,9 +73,11 @@
     user-select: none;
     transition: transform var(--transition-fast, 0.15s ease), opacity 0.15s ease;
 
-    &:hover {
-        transform: translateY(-1px);
-        opacity: 0.9;
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-1px);
+            opacity: 0.9;
+        }
     }
 
     &[data-tier="beginner"], &[data-tier="elementary"] {
@@ -116,9 +118,11 @@
         pointer-events: none;
         box-sizing: border-box;
 
-        &:hover {
-            transform: none;
-            opacity: 1;
+        @media (hover: hover) {
+            &:hover {
+                transform: none;
+                opacity: 1;
+            }
         }
 
         .level-skeleton-shimmer {
@@ -242,11 +246,13 @@
     box-sizing: border-box;
     transition: all var(--transition-fast, 0.15s ease);
 
-    &:hover {
-        background: var(--bg-hover);
-        color: var(--text-primary);
-        border-color: var(--border-color);
-        transform: scale(1.06);
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+            transform: scale(1.06);
+        }
     }
 
     &:active {

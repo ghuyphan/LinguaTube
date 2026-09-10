@@ -254,23 +254,29 @@
 
     <!-- Subtitle list (scrollable) -->
     @if (subtitles.subtitles().length > 0) {
-    <div class="subtitle-list" #subtitleList [class.quiz-obfuscated]="quiz.isActive()" (scroll)="onSubtitleListScroll()">
-        @for (cue of subtitles.subtitles(); track cue.id; let i = $index) {
-        <button type="button" class="cue-item" [class.cue-item--active]="i === subtitles.currentCueIndex()"
-            [class.cue-item--past]="i < subtitles.currentCueIndex()" [attr.data-cue-id]="cue.id"
-            [attr.aria-current]="i === subtitles.currentCueIndex() ? 'true' : null"
-            (click)="seekToCue(cue)">
-            <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
-            <div class="cue-body">
-                <span class="cue-text" [attr.title]="cue.text">{{ cue.text }}</span>
-                @if (settings.settings().showDualSubtitles && cueTranslations().get(cue.id); as translation) {
-                @if (translation.trim() !== cue.text.trim()) {
-                <span class="cue-translation-text" [attr.title]="translation">{{ translation }}</span>
-                }
-                }
-            </div>
-        </button>
-        }
+    <div class="subtitle-list-wrapper">
+        <div class="subtitle-list" #subtitleList [class.quiz-obfuscated]="quiz.isActive()"
+            (scroll)="onSubtitleListScroll()"
+            (wheel)="onUserManualScroll()"
+            (touchstart)="onUserManualScroll()"
+            (touchmove)="onUserManualScroll()">
+            @for (cue of subtitles.subtitles(); track cue.id; let i = $index) {
+            <button type="button" class="cue-item" [class.cue-item--active]="i === subtitles.currentCueIndex()"
+                [class.cue-item--past]="i < subtitles.currentCueIndex()" [attr.data-cue-id]="cue.id"
+                [attr.aria-current]="i === subtitles.currentCueIndex() ? 'true' : null"
+                (click)="seekToCue(cue)">
+                <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
+                <div class="cue-body">
+                    <span class="cue-text" [attr.title]="cue.text">{{ cue.text }}</span>
+                    @if (settings.settings().showDualSubtitles && cueTranslations().get(cue.id); as translation) {
+                    @if (translation.trim() !== cue.text.trim()) {
+                    <span class="cue-translation-text" [attr.title]="translation">{{ translation }}</span>
+                    }
+                    }
+                </div>
+            </button>
+            }
+        </div>
 
         @if (isUserScrolledAway() && subtitles.currentCue(); as activeCue) {
         <div class="sync-current-container">

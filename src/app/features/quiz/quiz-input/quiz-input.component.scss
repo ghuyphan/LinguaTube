@@ -57,7 +57,13 @@
     font-size: inherit;
     font-family: inherit;
 
-    &:hover {
+    @media (hover: hover) {
+        &:hover {
+            color: var(--text-primary);
+        }
+    }
+
+    &:active {
         color: var(--text-primary);
     }
 
@@ -182,9 +188,15 @@
     color: var(--text-secondary);
     border: 1px solid var(--border-color);
 
-    &:hover {
-        background: rgba(var(--text-muted-rgb), 0.1);
-        color: var(--text-primary);
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(var(--text-muted-rgb), 0.1);
+            color: var(--text-primary);
+        }
+    }
+
+    &:active {
+        background: rgba(var(--text-muted-rgb), 0.15);
     }
 }
 
@@ -192,8 +204,15 @@
     background: var(--accent-primary);
     color: white;
 
-    &:hover {
-        filter: brightness(1.1);
+    @media (hover: hover) {
+        &:hover {
+            filter: brightness(1.1);
+        }
+    }
+
+    &:active {
+        filter: brightness(0.95);
+        transform: scale(0.98);
     }
 }
 
@@ -333,16 +352,24 @@
     border-radius: 50%;
     transition: all 0.2s;
 
-    &:hover {
-        color: var(--text-primary);
-        background: rgba(var(--text-muted-rgb), 0.1);
+    @media (hover: hover) {
+        &:hover {
+            color: var(--text-primary);
+            background: rgba(var(--text-muted-rgb), 0.1);
+        }
+    }
+
+    &:active {
+        transform: scale(0.92);
     }
 
     &.btn-check {
         color: var(--accent-primary);
 
-        &:hover {
-            background: rgba(var(--accent-primary-rgb), 0.1);
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(var(--accent-primary-rgb), 0.1);
+            }
         }
     }
 }

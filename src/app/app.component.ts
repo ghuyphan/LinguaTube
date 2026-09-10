@@ -78,9 +78,6 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             >
               <div class="bottom-nav__icon-wrap">
                 <app-icon [name]="(!anySheetOpen() && isRouteActive('/video')) ? 'play-circle-filled' : 'play-circle'" [size]="22" />
-                @if (hasActiveVideoSession()) {
-                  <span class="now-playing-dot"></span>
-                }
               </div>
               <span>{{ i18n.t('nav.watch') }}</span>
             </a>
@@ -1120,8 +1117,6 @@ export class AppComponent implements OnDestroy {
   private videoRecommendation = inject(VideoRecommendationService);
   private seo = inject(SeoService);
   pwa = inject(PwaService);
-
-  hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !this.router.url.startsWith('/video'));
 
   private destroy$ = new Subject<void>();
   private cleanupFns: Array<() => void> = [];

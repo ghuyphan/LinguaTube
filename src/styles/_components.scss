@@ -226,11 +226,15 @@
         border-radius: 50%;
         margin-left: 4px;
         flex-shrink: 0;
-        transition: color var(--transition-fast), background-color var(--transition-fast);
+        @media (hover: hover) {
+            &:hover {
+                color: var(--text-primary);
+                background: var(--bg-hover);
+            }
+        }
 
-        &:hover {
-            color: var(--text-primary);
-            background: var(--bg-hover);
+        &:active {
+            transform: scale(0.92);
         }
     }
 
@@ -461,9 +465,11 @@
         height: 6px;
     }
 
-    &:hover {
-        filter: brightness(0.97);
-        transform: translateY(-1px);
+    @media (hover: hover) {
+        &:hover {
+            filter: brightness(0.97);
+            transform: translateY(-1px);
+        }
     }
 
     &:active {
@@ -503,10 +509,10 @@
 
 [data-theme="dark"] {
     .level-badge-btn {
-        box-shadow: none;
-
-        &:hover {
-            filter: brightness(1.15);
+        @media (hover: hover) {
+            &:hover {
+                filter: brightness(1.15);
+            }
         }
 
         &.badge--new,
@@ -929,16 +935,18 @@
 }
 
 // Hover trigger on common video card containers
-.playlist-item:hover,
-.history-item:hover,
-.resume-hero:hover,
-.recent-preview:hover,
-.video-card:hover {
-    .card-play-overlay {
-        opacity: 1;
+@media (hover: hover) {
+    .playlist-item:hover,
+    .history-item:hover,
+    .resume-hero:hover,
+    .recent-preview:hover,
+    .video-card:hover {
+        .card-play-overlay {
+            opacity: 1;
 
-        .play-icon-circle {
-            transform: scale(1);
+            .play-icon-circle {
+                transform: scale(1);
+            }
         }
     }
 }
@@ -1200,10 +1208,10 @@ app-toast {
         .toast__undo-btn {
             background: rgba(var(--accent-primary-rgb), 0.22);
             color: #FFA4B5;
-            border: 1px solid rgba(var(--accent-primary-rgb), 0.35);
-
-            &:hover {
-                background: rgba(var(--accent-primary-rgb), 0.32);
+            @media (hover: hover) {
+                &:hover {
+                    background: rgba(var(--accent-primary-rgb), 0.32);
+                }
             }
         }
     }
@@ -1295,8 +1303,10 @@ app-toast {
         flex-shrink: 0;
         transition: background-color var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
 
-        &:hover {
-            background: rgba(var(--accent-primary-rgb), 0.20);
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(var(--accent-primary-rgb), 0.20);
+            }
         }
 
         &:active {
@@ -1362,7 +1372,7 @@ app-toast {
 @keyframes listItemIn {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(4px);
     }
     to {
         opacity: 1;
@@ -1370,9 +1380,27 @@ app-toast {
     }
 }
 
+@keyframes listItemOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+        max-height: 80px;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(12px);
+        max-height: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+}
+
 .staggered-item {
-    animation: listItemIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-    animation-delay: calc(min(var(--item-index, 0), 8) * 35ms);
+    animation: listItemIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(min(var(--item-index, 0), 8) * 30ms);
 }
 
 @media (prefers-reduced-motion: reduce) {

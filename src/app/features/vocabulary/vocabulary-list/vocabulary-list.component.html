@@ -125,7 +125,7 @@
         } @else {
         <div class="vocab-items">
             @for (item of filteredWords(); track item.id; let i = $index) {
-            <div class="vocab-item" [style.--item-index]="i" (click)="onWordClick(item)">
+            <div class="vocab-item" [style.--item-index]="i" [class.is-deleting]="deletingWordId() === item.id" (click)="onWordClick(item)">
                 <div class="vocab-item__content">
                     <div class="vocab-item__header">
                         <span class="vocab-item__word" [class]="'text-' + item.language">
@@ -133,14 +133,8 @@
                         </span>
                         @if (getItemReading(item); as reading) {
                             @if (reading !== item.word) {
-                            <span class="vocab-item__reading">{{ reading }}</span>
+                            <span class="vocab-item__reading" [title]="reading">{{ reading }}</span>
                             }
-                        }
-                        @if (item.pinyin && item.pinyin !== getItemReading(item) && item.pinyin !== item.word) {
-                        <span class="vocab-item__reading vocab-item__reading--pinyin">{{ item.pinyin }}</span>
-                        }
-                        @if (item.romanization && item.romanization !== getItemReading(item) && item.romanization !== item.word) {
-                        <span class="vocab-item__reading vocab-item__reading--romaji">{{ item.romanization }}</span>
                         }
                     </div>
                     @if (item.meaning) {
@@ -149,25 +143,32 @@
                 </div>
 
                 <div class="vocab-item__actions" (click)="$event.stopPropagation()">
-                    <!-- Level Pill Badge (Matching Dictionary's save-badge-btn) -->
-                    <button type="button" class="level-badge-btn" [class]="'badge--' + item.level"
-                        (click)="openLevelPicker(item, $event)"
-                        [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Change level')">
+                    <!-- Level Pill Badge: Instant 1-click cycle, right-click opens full picker -->
+                    <button type="button" 
+                            class="level-badge-btn" 
+                            [class]="'badge--' + item.level"
+                            (click)="cycleLevel(item, $event)"
+                            (contextmenu)="onLevelContextMenu(item, $event)"
+                            [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.clickToCycle') || 'Click to cycle level')">
                         <span class="level-dot" [class]="item.level"></span>
                         <span class="level-badge-btn__text">{{ i18n.t('vocab.' + item.level) }}</span>
                     </button>
 
-                    <!-- Authentic Audio Pronunciation Button (Matching Dictionary's audio-btn) -->
+                    <!-- Authentic Audio Pronunciation Button -->
                     <button type="button" 
-                            class="action-btn action-btn--audio audio-btn--sm" 
+                            class="action-btn action-btn--surface action-btn--audio audio-btn--sm" 
                             [class.playing]="audio.isPlaying(item.word)"
                             (click)="playAudio(item, $event)" 
                             [title]="i18n.t('study.listen') || 'Listen'">
-                        <app-icon [name]="audio.isPlaying(item.word) ? 'volume-2' : 'volume-1'" [size]="15" />
+                        <app-icon [name]="audio.isPlaying(item.word) ? 'volume-2' : 'volume-1'" [size]="14" />
                     </button>
 
-                    <!-- Direct Delete Button -->
-                    <button type="button" class="action-btn action-btn--delete delete-btn" (click)="deleteWordDirect(item, $event)" [attr.aria-label]="i18n.t('vocab.deleteWord') || 'Delete word'" [title]="i18n.t('vocab.deleteWord') || 'Delete word'">
+                    <!-- Direct Delete Button with smooth exit transition -->
+                    <button type="button" 
+                            class="action-btn action-btn--surface action-btn--delete delete-btn" 
+                            (click)="deleteWordDirect(item, $event)" 
+                            [attr.aria-label]="i18n.t('vocab.deleteWord') || 'Delete word'" 
+                            [title]="i18n.t('vocab.deleteWord') || 'Delete word'">
                         <app-icon name="trash-2" [size]="14" />
                     </button>
                 </div>

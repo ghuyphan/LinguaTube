@@ -268,6 +268,24 @@ test('Grammar [EN]: Clean NLP pattern detection with zero false positives on eve
 
     const s4Hits = matchSentences('I am going to visit my grandparents tomorrow.');
     assert.ok(s4Hits.includes('en_a2_07')); // be going to
+
+    // 3. Token array reconstruction handles space boundaries and punctuation
+    const tokens = [
+        { surface: 'She' },
+        { surface: 'has' },
+        { surface: 'been' },
+        { surface: 'learning' },
+        { surface: 'English' },
+        { surface: '.', isPunctuation: true }
+    ];
+    const reconstructed = tokens.map((t, idx) => {
+        if (idx > 0 && !t.isPunctuation && !tokens[idx - 1].surface.endsWith(' ') && !/^[\s\p{P}\p{S}]/u.test(t.surface)) {
+            return ' ' + t.surface;
+        }
+        return t.surface;
+    }).join('');
+    assert.equal(reconstructed, 'She has been learning English.');
+    assert.ok(matchSentences(reconstructed).includes('en_b1_02'));
 });
 
 // ============================================================================

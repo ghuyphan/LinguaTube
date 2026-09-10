@@ -198,9 +198,11 @@ $transition-normal: 0.25s ease;
     flex-shrink: 0;
     transition: all $transition-fast;
 
-    &:hover {
-      background: var(--bg-hover);
-      color: var(--text-primary);
+    @media (hover: hover) {
+      &:hover {
+        background: var(--bg-hover);
+        color: var(--text-primary);
+      }
     }
 
     &:active {
@@ -224,14 +226,16 @@ $transition-normal: 0.25s ease;
     flex-shrink: 0;
     transition: all $transition-fast;
 
-    &:hover {
-      background: var(--bg-hover);
-      border-color: var(--accent-primary);
-      color: var(--accent-primary);
-
-      .paste-kbd {
-        border-color: rgba(var(--accent-primary-rgb), 0.3);
+    @media (hover: hover) {
+      &:hover {
+        background: var(--bg-hover);
+        border-color: var(--accent-primary);
         color: var(--accent-primary);
+
+        .paste-kbd {
+          border-color: rgba(var(--accent-primary-rgb), 0.3);
+          color: var(--accent-primary);
+        }
       }
     }
 
@@ -281,9 +285,11 @@ $transition-normal: 0.25s ease;
     box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.25);
     transition: all $transition-fast;
 
-    &:hover:not(:disabled) {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.35);
+    @media (hover: hover) {
+      &:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.35);
+      }
     }
 
     &:active:not(:disabled) {
@@ -1147,9 +1153,11 @@ $transition-normal: 0.25s ease;
       cursor: pointer;
       transition: background var(--transition-fast), color var(--transition-fast);
 
-      &:hover {
-        background: rgba(255, 255, 255, 0.15);
-        color: #ffffff;
+      @media (hover: hover) {
+        &:hover {
+          background: rgba(255, 255, 255, 0.15);
+          color: #ffffff;
+        }
       }
     }
   }
@@ -1191,8 +1199,10 @@ $transition-normal: 0.25s ease;
     text-align: left;
     color: #f1f1f1;
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.12);
+    @media (hover: hover) {
+      &:hover {
+        background: rgba(255, 255, 255, 0.12);
+      }
     }
 
     &:active {
@@ -1297,8 +1307,14 @@ $transition-normal: 0.25s ease;
     font-weight: 400;
     color: #f1f1f1;
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.12);
+    @media (hover: hover) {
+      &:hover {
+        background: rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    &:active {
+      background: rgba(255, 255, 255, 0.16);
     }
 
     &.active {
@@ -1423,7 +1439,13 @@ $transition-normal: 0.25s ease;
       width: 32px;
       height: 32px;
       color: var(--text-secondary);
-      &:hover {
+      @media (hover: hover) {
+        &:hover {
+          background: var(--bg-hover);
+          color: var(--text-primary);
+        }
+      }
+      &:active {
         background: var(--bg-hover);
         color: var(--text-primary);
       }
@@ -1434,7 +1456,9 @@ $transition-normal: 0.25s ease;
     height: 48px;
     padding: 0 1rem;
     color: var(--text-primary);
-    &:hover { background: var(--bg-hover); }
+    @media (hover: hover) {
+      &:hover { background: var(--bg-hover); }
+    }
     &:active { background: var(--bg-hover); }
 
     .menu-item-left {
@@ -1458,7 +1482,10 @@ $transition-normal: 0.25s ease;
     font-size: 0.9375rem;
     font-weight: 500;
     color: var(--text-primary);
-    &:hover { background: var(--bg-hover); }
+    @media (hover: hover) {
+      &:hover { background: var(--bg-hover); }
+    }
+    &:active { background: var(--bg-hover); }
 
     &.active {
       color: var(--accent-primary);

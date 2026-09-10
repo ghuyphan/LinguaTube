@@ -283,6 +283,7 @@
     "importError": "导入失败。请检查文件格式。",
     "filterByLevel": "按级别筛选",
     "changeLevel": "更改级别",
+    "clickToCycle": "点击切换级别",
     "deleteSuccess": "已删除 \"{{word}}\"",
     "addWord": "添加生词"
   },

@@ -197,11 +197,16 @@
     border: none;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(59, 130, 246, 0.25);
-    transition: all var(--transition-fast);
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(59, 130, 246, 0.35);
+        }
+    }
 
-    &:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 3px 8px rgba(59, 130, 246, 0.35);
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 4px rgba(59, 130, 246, 0.2);
     }
 
     &.account-upgrade-pill--premium {
@@ -209,8 +214,14 @@
         color: #1e1b4b;
         box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
 
-        &:hover {
-            box-shadow: 0 3px 10px rgba(236, 72, 153, 0.45);
+        @media (hover: hover) {
+            &:hover {
+                box-shadow: 0 3px 10px rgba(236, 72, 153, 0.45);
+            }
+        }
+
+        &:active {
+            box-shadow: 0 1px 4px rgba(236, 72, 153, 0.2);
         }
     }
 }
@@ -490,9 +501,15 @@ div.settings-item-row {
     cursor: pointer;
     transition: all var(--transition-fast);
 
-    &:hover {
-        background: rgba(var(--accent-primary-rgb), 0.16);
-        border-color: rgba(var(--accent-primary-rgb), 0.35);
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(var(--accent-primary-rgb), 0.16);
+            border-color: rgba(var(--accent-primary-rgb), 0.35);
+        }
+    }
+
+    &:active {
+        background: rgba(var(--accent-primary-rgb), 0.2);
     }
 }
 
@@ -529,8 +546,10 @@ div.settings-item-row {
     cursor: pointer;
     transition: opacity var(--transition-fast);
 
-    &:hover {
-        opacity: 0.9;
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.9;
+        }
     }
 
     &:active {

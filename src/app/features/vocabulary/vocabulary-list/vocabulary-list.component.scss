@@ -54,17 +54,25 @@
 // ============================================
 // HEADER
 // ============================================
-.vocab-header {
+.panel-header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-sm);
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: var(--space-xs);
     flex-shrink: 0;
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-xs);
+        width: 100%;
+    }
 
     &__left {
         display: flex;
         align-items: center;
-        gap: var(--space-xs);
+        gap: 6px;
     }
 
     &__icon {
@@ -76,18 +84,7 @@
         font-weight: 700;
         color: var(--text-primary);
         margin: 0;
-    }
-
-    &__count {
-        display: inline-flex;
-        align-items: center;
-        padding: 1px 6px;
-        font-size: 0.6875rem;
-        font-weight: 600;
-        border-radius: var(--border-radius-pill);
-        background: var(--bg-surface);
-        border: 1px solid var(--border-color);
-        color: var(--text-secondary);
+        line-height: 1.3;
     }
 
     &__link {
@@ -96,17 +93,23 @@
         gap: 4px;
         font-size: 0.75rem;
         font-weight: 600;
-        color: var(--text-muted);
+        color: var(--accent-primary);
         background: transparent;
         border: none;
         cursor: pointer;
-        padding: 2px 6px;
+        padding: 3px 6px;
         border-radius: var(--border-radius-sm);
-        transition: all var(--transition-fast);
+        transition: opacity var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 
-        &:hover {
-            color: var(--accent-primary);
-            background: var(--bg-hover);
+        @media (hover: hover) {
+            &:hover {
+                opacity: 0.85;
+                background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.08);
+            }
+        }
+
+        &:active {
+            transform: scale(0.96);
         }
     }
 }
@@ -144,10 +147,12 @@
         padding: 0;
         transition: all var(--transition-fast);
 
-        &:hover {
-            background: var(--bg-hover);
-            color: var(--text-primary);
-            border-color: var(--border-color-hover, var(--text-muted));
+        @media (hover: hover) {
+            &:hover {
+                background: var(--bg-hover);
+                color: var(--text-primary);
+                border-color: var(--border-color-hover, var(--text-muted));
+            }
         }
 
         &:active {
@@ -198,7 +203,7 @@
 }
 
 :host-context(.sidebar-pane) .vocab-toolbar {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-sm);
 }
 
 .vocab-items {
@@ -209,17 +214,22 @@
 
 .vocab-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: var(--space-sm);
-    padding: 8px 10px;
+    padding: 7px 10px;
     border-radius: var(--border-radius-md);
     background: transparent;
     border: 1px solid transparent;
     cursor: pointer;
-    animation: listItemIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-    animation-delay: calc(min(var(--item-index, 0), 8) * 35ms);
-    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    animation: listItemIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(min(var(--item-index, 0), 6) * 25ms);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
+
+    &.is-deleting {
+        pointer-events: none;
+        animation: listItemOut 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+    }
 
     @media (hover: hover) {
         &:hover {
@@ -227,7 +237,7 @@
             border-color: var(--border-color);
 
             .delete-btn {
-                opacity: 0.6;
+                opacity: 1;
             }
         }
     }
@@ -247,9 +257,10 @@
 
     &__header {
         display: flex;
-        align-items: baseline;
+        align-items: center;
         gap: 6px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        min-width: 0;
     }
 
     &__word {
@@ -257,6 +268,7 @@
         font-weight: 600;
         color: var(--text-primary);
         line-height: 1.25;
+        flex-shrink: 0;
     }
 
     &__reading {
@@ -265,10 +277,15 @@
         color: var(--text-muted);
         background: var(--bg-surface);
         border: none;
-        padding: 2px 8px;
+        padding: 2px 7px;
         border-radius: var(--border-radius-pill);
         line-height: 1.3;
         letter-spacing: 0.02em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+        flex-shrink: 1;
 
         &--pinyin {
             color: var(--accent-primary);
@@ -296,43 +313,100 @@
     &__actions {
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 4px;
         flex-shrink: 0;
-        padding-top: 1px;
     }
 }
 
-// Authentic Audio button matching Dictionary's audio-btn
-.audio-btn--sm {
+// Stable, fixed-width level badge button (prevents layout shift on status change)
+.level-badge-btn {
+    width: 76px;
+    min-width: 76px;
+    max-width: 76px;
+    height: 26px;
+    padding: 2px 6px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-pill);
+    border: none;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
+    gap: 5px;
+    white-space: nowrap;
+    text-transform: capitalize;
+    letter-spacing: 0.01em;
+    flex-shrink: 0;
+    box-shadow: none;
+    user-select: none;
+    transition: background-color var(--transition-fast), color var(--transition-fast), transform 0.12s ease, box-shadow var(--transition-fast);
+
+    @media (hover: hover) {
+        &:hover {
+            filter: brightness(0.96);
+        }
+    }
+
+    &:active {
+        transform: scale(0.93);
+    }
+
+    .level-dot {
+        width: 5px;
+        height: 5px;
+        flex-shrink: 0;
+    }
+
+    &__text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+// Unified action buttons: Audio & Delete
+.audio-btn--sm,
+.delete-btn {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
     border-radius: var(--border-radius-round);
     background: var(--bg-surface);
     color: var(--text-secondary);
     border: none;
     cursor: pointer;
-    box-shadow: none;
-    transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
     flex-shrink: 0;
-
-    &:hover {
-        background: var(--accent-primary-soft);
-        color: var(--accent-primary);
-        transform: scale(1.06);
-    }
+    opacity: 1;
+    transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), opacity var(--transition-fast);
 
     &:active {
-        transform: scale(0.94);
+        transform: scale(0.92);
+    }
+}
+
+.audio-btn--sm {
+    @media (hover: hover) {
+        &:hover:not(.playing) {
+            background: var(--accent-primary-soft);
+            color: var(--accent-primary);
+            transform: scale(1.06);
+        }
     }
 
     &.playing {
-        background: linear-gradient(135deg, #FF7E93 0%, #F45B74 100%);
-        color: #ffffff;
+        background: linear-gradient(135deg, #FF7E93 0%, #F45B74 100%) !important;
+        color: #ffffff !important;
         animation: pulseAudio 1.2s infinite ease-in-out;
+
+        app-icon,
+        .icon {
+            stroke: #ffffff !important;
+        }
     }
 }
 
@@ -342,30 +416,20 @@
         box-shadow: 0 0 0 0 rgba(var(--accent-primary-rgb), 0.4);
     }
     50% {
-        transform: scale(1.08);
-        box-shadow: 0 0 0 6px rgba(var(--accent-primary-rgb), 0);
+        transform: scale(1.04);
+        box-shadow: 0 0 0 4px rgba(var(--accent-primary-rgb), 0);
     }
 }
 
-// Delete action button (unified with .action-btn standard)
 .delete-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: var(--border-radius-round);
-    opacity: 0.5;
     color: var(--text-muted);
-    transition: opacity var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
 
     @media (hover: hover) {
         &:hover {
-            opacity: 1 !important;
             color: var(--error);
-            background: rgba(239, 68, 68, 0.1);
+            background: rgba(239, 68, 68, 0.12);
+            transform: scale(1.06);
         }
-    }
-
-    @media (hover: none) {
-        opacity: 0.7;
     }
 }
 

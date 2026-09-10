@@ -237,9 +237,11 @@ import { SettingsService, I18nService } from '../../../core/services';
       overflow: hidden;
       transition: all var(--transition-fast);
 
-      &:hover {
-        border-color: var(--accent-primary);
-        background: var(--bg-card);
+      @media (hover: hover) {
+        &:hover {
+          border-color: var(--accent-primary);
+          background: var(--bg-card);
+        }
       }
     }
 
@@ -255,7 +257,13 @@ import { SettingsService, I18nService } from '../../../core/services';
       line-height: 1.2;
       transition: color var(--transition-fast);
 
-      &:hover {
+      @media (hover: hover) {
+        &:hover {
+          color: var(--accent-primary);
+        }
+      }
+
+      &:active {
         color: var(--accent-primary);
       }
     }
@@ -275,7 +283,14 @@ import { SettingsService, I18nService } from '../../../core/services';
       transition: all var(--transition-fast);
       flex-shrink: 0;
 
-      &:hover {
+      @media (hover: hover) {
+        &:hover {
+          background: var(--accent-primary-soft);
+          color: var(--accent-primary);
+        }
+      }
+
+      &:active {
         background: var(--accent-primary-soft);
         color: var(--accent-primary);
       }

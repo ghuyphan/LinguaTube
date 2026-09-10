@@ -162,8 +162,10 @@ import { formatTime } from '../../../core/utils';
           <div class="card sidebar-card">
             <div class="panel-header">
               <div class="panel-header__row">
-                <app-icon name="book-open" [size]="20" class="panel-header__icon" />
-                <h3 class="panel-header__title">{{ i18n.t('dictionary.title') }}</h3>
+                <div class="panel-header__left">
+                  <app-icon name="book-open" [size]="20" class="panel-header__icon" />
+                  <h3 class="panel-header__title">{{ i18n.t('dictionary.title') }}</h3>
+                </div>
               </div>
               <p class="panel-header__subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
             </div>

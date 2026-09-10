@@ -258,9 +258,15 @@
     cursor: pointer;
     transition: all var(--transition-fast);
 
-    &:hover {
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+    }
+
+    &:active {
         background: var(--bg-hover);
-        color: var(--text-primary);
     }
 
     &.selected {

@@ -10,14 +10,16 @@
         scrollbar-color: transparent transparent;
     }
 
-    *:hover,
-    *:focus-within {
-        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-    }
+    @media (hover: hover) {
+        *:hover,
+        *:focus-within {
+            scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+        }
 
-    [data-theme="dark"] *:hover,
-    [data-theme="dark"] *:focus-within {
-        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        [data-theme="dark"] *:hover,
+        [data-theme="dark"] *:focus-within {
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        }
     }
 }
 
@@ -37,22 +39,24 @@
     transition: background 0.2s ease;
 }
 
-*:hover::-webkit-scrollbar-thumb,
-*:focus-within::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-}
+@media (hover: hover) {
+    *:hover::-webkit-scrollbar-thumb,
+    *:focus-within::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+    }
 
-*:hover::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.35);
-}
+    *:hover::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.35);
+    }
 
-[data-theme="dark"] *:hover::-webkit-scrollbar-thumb,
-[data-theme="dark"] *:focus-within::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-}
+    [data-theme="dark"] *:hover::-webkit-scrollbar-thumb,
+    [data-theme="dark"] *:focus-within::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+    }
 
-[data-theme="dark"] *:hover::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.35);
+    [data-theme="dark"] *:hover::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.35);
+    }
 }
 
 html,
@@ -81,8 +85,10 @@ body::-webkit-scrollbar {
         border-radius: 3px;
     }
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: var(--text-secondary);
+    @media (hover: hover) {
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
     }
 }
 
@@ -515,19 +521,6 @@ body::-webkit-scrollbar {
                         background-color 0.2s ease;
             pointer-events: none;
             z-index: 0;
-        }
-
-        .now-playing-dot {
-            position: absolute;
-            top: 2px;
-            right: 11px;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--accent-primary);
-            box-shadow: 0 0 6px rgba(var(--accent-primary-rgb), 0.9);
-            animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            z-index: 2;
         }
     }
 

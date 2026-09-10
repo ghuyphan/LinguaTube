@@ -37,14 +37,16 @@
     <div class="controls-right">
         <!-- Unified right controls group -->
         <div class="controls-right-group">
-            <!-- Subtitles / CC Toggle (YouTube style) - Hidden in portrait mobile -->
-            <button class="control-btn cc-btn hide-portrait-mobile" [class.is-active]="subtitlesVisible()"
+            <!-- Subtitles / CC Toggle (YouTube style) - Shown only in fullscreen -->
+            @if (isFullscreen()) {
+            <button class="control-btn cc-btn" [class.is-active]="subtitlesVisible()"
                 (click)="toggleSubtitles.emit()"
                 [attr.aria-label]="t()('player.subtitles') || 'Subtitles/closed captions (c)'"
                 [title]="t()('player.subtitles') || 'Subtitles/closed captions (c)'">
                 <app-icon name="subtitles" [size]="18" />
                 <span class="cc-indicator" [class.visible]="subtitlesVisible()"></span>
             </button>
+            }
 
             <!-- Dual Subtitles Toggle (Outside) -->
             @if (isCJKLanguage()) {

@@ -283,6 +283,7 @@
     "importError": "Nhập từ vựng thất bại. Vui lòng kiểm tra định dạng tệp.",
     "filterByLevel": "Lọc theo cấp độ",
     "changeLevel": "Đổi cấp độ",
+    "clickToCycle": "Nhấn để chuyển cấp độ",
     "deleteSuccess": "Đã xóa \"{{word}}\"",
     "addWord": "Thêm từ"
   },

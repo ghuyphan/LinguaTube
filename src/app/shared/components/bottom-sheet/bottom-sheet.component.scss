@@ -161,9 +161,16 @@
     transition: all var(--transition-fast);
 }
 
-.sheet-close-btn:hover {
+@media (hover: hover) {
+    .sheet-close-btn:hover {
+        background: var(--bg-hover);
+        color: var(--text-primary);
+    }
+}
+
+.sheet-close-btn:active {
     background: var(--bg-hover);
-    color: var(--text-primary);
+    transform: scale(0.92);
 }
 
 // ============================================

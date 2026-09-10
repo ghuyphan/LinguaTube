@@ -64,12 +64,14 @@
     cursor: pointer;
     overflow: visible;
 
-    &:hover {
-        height: 5px;
+    @media (hover: hover) {
+        &:hover {
+            height: 5px;
 
-        .volume-slider-handle {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
+            .volume-slider-handle {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
     }
 }
@@ -214,11 +216,13 @@
         transition: color var(--transition-fast);
     }
 
-    &:hover {
-        background: rgba(255, 255, 255, 0.15) !important;
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(255, 255, 255, 0.15) !important;
 
-        .speed-pill-label {
-            color: #ffffff;
+            .speed-pill-label {
+                color: #ffffff;
+            }
         }
     }
 }
@@ -306,19 +310,6 @@
     display: none !important;
 
     @media (hover: none) and (pointer: coarse), (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
-        display: inline-flex !important;
-    }
-}
-
-// Portrait mobile rules (hide CC in portrait mobile unless in fullscreen)
-@media (max-width: 768px) and (orientation: portrait) {
-    .hide-portrait-mobile {
-        display: none !important;
-    }
-}
-
-:host-context(.is-fullscreen) {
-    .hide-portrait-mobile {
         display: inline-flex !important;
     }
 }

@@ -316,9 +316,11 @@
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-fast), opacity var(--transition-fast);
 
-    &:hover {
-        opacity: 0.95;
-        transform: translateY(-1px);
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
     }
 
     &:active {

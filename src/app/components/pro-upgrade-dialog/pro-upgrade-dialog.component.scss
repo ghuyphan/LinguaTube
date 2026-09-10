@@ -139,9 +139,15 @@
     transition: all var(--transition-normal);
     outline: none;
 
-    &:hover {
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+    }
+
+    &:active {
         background: var(--bg-hover);
-        border-color: rgba(59, 130, 246, 0.4);
     }
 
     &.is-selected {
@@ -302,8 +308,15 @@
         justify-content: center;
         transition: color var(--transition-fast);
 
-        &:hover {
+        @media (hover: hover) {
+            &:hover {
+                color: var(--text-primary);
+            }
+        }
+
+        &:active {
             color: var(--text-primary);
+            transform: scale(0.92);
         }
     }
 }
@@ -410,9 +423,11 @@
 
 
 
-    &:hover:not(:disabled) {
-        box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
-        transform: translateY(-1px);
+    @media (hover: hover) {
+        &:hover:not(:disabled) {
+            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
+            transform: translateY(-1px);
+        }
     }
 
     &:active:not(:disabled) {
@@ -435,7 +450,13 @@
     cursor: pointer;
     transition: color var(--transition-fast);
 
-    &:hover {
+    @media (hover: hover) {
+        &:hover {
+            color: var(--text-primary);
+        }
+    }
+
+    &:active {
         color: var(--text-primary);
     }
 }
@@ -531,8 +552,14 @@
     cursor: pointer;
     transition: all var(--transition-fast);
 
-    &:hover {
-        background: rgba(59, 130, 246, 0.15);
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(59, 130, 246, 0.15);
+        }
+    }
+
+    &:active {
+        background: rgba(59, 130, 246, 0.2);
     }
 }
 
@@ -601,9 +628,17 @@
             color: var(--text-muted);
             transition: all var(--transition-fast);
 
-            &:hover {
+            @media (hover: hover) {
+                &:hover {
+                    background: var(--bg-hover);
+                    color: var(--text-primary);
+                }
+            }
+
+            &:active {
                 background: var(--bg-hover);
                 color: var(--text-primary);
+                transform: scale(0.92);
             }
         }
     }
@@ -678,8 +713,14 @@
         border-radius: var(--border-radius-sm);
         cursor: pointer;
 
-        &:hover {
-            background: rgba(139, 92, 246, 0.18);
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(139, 92, 246, 0.18);
+            }
+        }
+
+        &:active {
+            transform: scale(0.98);
         }
     }
 }
@@ -746,8 +787,14 @@
     cursor: pointer;
     transition: all var(--transition-fast, 0.18s ease);
 
-    &:hover {
-        color: var(--text-primary);
+    @media (hover: hover) {
+        &:hover {
+            color: var(--text-primary);
+        }
+    }
+
+    &:active {
+        background: rgba(255, 255, 255, 0.06);
     }
 
     &.is-active {
@@ -796,10 +843,16 @@
     font-weight: 800 !important;
     box-shadow: 0 4px 18px rgba(236, 72, 153, 0.35) !important;
 
-    &:hover {
-        opacity: 0.95;
-        transform: translateY(-1px);
-        box-shadow: 0 6px 24px rgba(236, 72, 153, 0.45) !important;
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(236, 72, 153, 0.45) !important;
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
     }
 }
 

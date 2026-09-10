@@ -205,9 +205,15 @@
   cursor: pointer;
   transition: all var(--transition-fast);
 
-  &:hover {
+  @media (hover: hover) {
+    &:hover {
+      background: var(--bg-hover);
+      border-color: var(--accent-primary);
+    }
+  }
+
+  &:active {
     background: var(--bg-hover);
-    border-color: var(--accent-primary);
   }
 
   &__thumb {

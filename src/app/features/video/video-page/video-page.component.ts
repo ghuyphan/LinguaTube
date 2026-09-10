@@ -529,7 +529,7 @@ export class VideoPageComponent implements OnInit {
             this.onSentinelIntersect();
           }
         }, {
-          rootMargin: '350px 0px',
+          rootMargin: '600px 0px',
           threshold: 0.05
         });
         this.sentinelObserver.observe(sentinelRef.nativeElement);

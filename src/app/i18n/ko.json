@@ -283,6 +283,7 @@
     "importError": "가져오기에 실패했습니다. 파일 형식을 확인해 주세요.",
     "filterByLevel": "레벨별 필터",
     "changeLevel": "레벨 변경",
+    "clickToCycle": "클릭하여 레벨 변경",
     "deleteSuccess": "\"{{word}}\" 삭제됨",
     "addWord": "단어 추가"
   },

@@ -103,7 +103,7 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
   - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en')` and enhanced with `compromise` NLP.
   - Morphological tagging provides Part-of-Speech (`partOfSpeech`) and root lemmatization (`baseForm`), aligning English tokens with Japanese and Korean morphological capabilities.
   - Everyday words, pronouns, articles, and contractions (`I`, `the`, `a`, `don't`) are strictly protected from grammar false positives, keeping words cleanly clickable for dictionary lookups and flashcard saving.
-  - CEFR grammar patterns (compound tenses, modal perfects, phrasal modals, correlatives) detected with clean token ranges excluding spaces and punctuation.
+  - CEFR grammar patterns (compound tenses, modal perfects, phrasal modals, correlatives) detected with clean token ranges excluding spaces and punctuation, highlighted with vibrant mint teal accents and underlines (`.word--grammar`).
 - **Bulk Batch Tokenization & Zero Playback Overhead**:
   - `SubtitleService` processes subtitle cues in bulk batches of up to 800 texts on initial video load. For virtually all videos ($\le 800$ cues), the entire video requires **only 1 API call**.
   - No network requests are made during video playback; time updates use $O(\log n)$ binary search over cached cues.
@@ -160,7 +160,7 @@ graph TD
 - **Consolidated Controls**: The redundant dual subtitle toggle switch in the subtitle display options sheet has been removed in favor of the primary player bottom-bar controls and player settings menu.
 - **Dual Display Surfaces**:
   - **Video Overlay / Fullscreen**: Rendered dynamically within the active video player container.
-  - **Scrollable Subtitle List (`.subtitle-list`)**: Each cue item (`.cue-item`) displays both primary text (`.cue-text`) and translated text (`.cue-translation-text`) in vertical stack (`.cue-body`).
+  - **Scrollable Subtitle List (`.subtitle-list`)**: Each cue item (`.cue-item`) displays both primary text (`.cue-text`) and translated text (`.cue-translation-text`) in vertical stack (`.cue-body`), featuring a calm Voca spotlight highlight, refined left indicator bar, and continuous fluid centering auto-scroll.
 - **Dynamic Subtitle Language Detection (`detectSubtitleLanguage`)**: Subtitle cues are sampled using Unicode character block analysis (`\p{Script=Han}`, `\p{Script=Hiragana}`, `\p{Script=Hangul}`) to accurately determine the authentic video subtitle language. This prevents mismatches when user settings language differs from video subtitle language.
 - **Source/Target Inversion Prevention**: Target language selection strictly avoids collision with the active subtitle language, falling back to the user's interface language or alternate language to ensure translations are never identical to the source.
 - **Cache-First & Progressive High-Speed Batch Translation**:
@@ -244,7 +244,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
                      Normalized DictionaryEntry
 ```
 
-- **Multi-Tiered Resilient Pronunciation Audio**: Audio playback uses a 3-tier waterfall pipeline via `AudioService`: (1) Authentic native recordings from upstream dictionary providers (Naver, Jotoba, FreeDictionary, KRDict) with strict `no-referrer` isolation; (2) High-fidelity neural stream fallback (`translate_tts`); (3) Native Web Speech API (`speechSynthesis`) offline fallback ensuring 100% pronunciation reliability even when offline or during upstream outages.
+- **Multi-Tiered Resilient Pronunciation Audio**: Audio playback uses a 4-tier waterfall pipeline via `AudioService`: (1) Authentic native recordings from upstream dictionary providers (Naver, Jotoba, FreeDictionary, KRDict) with strict `no-referrer` isolation; (2A) Studio-grade Microsoft Edge Neural TTS (`/api/tts`) streaming Azure Neural voices (`Nanami`, `Xiaoxiao`, `SunHi`, `Jenny`) with 0 KV operations and immutable HTTP edge caching; (2B) Google Neural audio stream fallback (`translate_tts`); (3) Native Web Speech API (`speechSynthesis`) offline fallback ensuring 100% pronunciation reliability even when offline or during upstream outages.
 - **Context-Aware CJK Kanji Detection**: When inspecting pure ideographs (`\u4E00-\u9FFF` without Kana or Hangul), `DictionaryService.detectLanguage()` checks the user's active learning language (`settings.language`) so Japanese learners query Japanese dictionaries (Jotoba/Mazii) rather than erroneously defaulting to Chinese dictionaries.
 - **Isolated Screen State**: Standalone dictionary searches are decoupled from in-video subtitle clicks, ensuring subtitle queries never leak into or overwrite standalone search history or panels.
 - **Multi-Entry Disambiguation**: When queries match multiple dictionary entries or homonyms, tabbed selectors allow learners to explore all matching entries.
@@ -551,7 +551,7 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
   - **Interleaved Recommended Playlists**: YouTube-style interleaving of community and curated playlists directly into the video feed (1 playlist every 4 videos) with stacked-shadow card styling.
   - **In-Memory Session Caching & Fresh Page Reloads**: In-memory `Map` caching in `VideoRecommendationService` and `PlaylistService` keeps back-navigation 0ms instantaneous during browsing sessions without consuming client LocalStorage quota, while browser reloads and PWA refreshes fetch freshly shuffled catalog videos from D1.
   - **Sticky Clean Filter Chips Carousel**: YouTube-authentic pill chips (`All`, `Playlists`, level pills `N5`–`N1`, `HSK`, etc.) with fixed dimensions and no disruptive pop-in count badges.
-  - **Infinite Scroll & Seamless Pagination**: IntersectionObserver sentinel automatically fetches additional level-matched videos as the learner scrolls down the page. Employs a centered rotating `.spinner` indicator during loading instead of jarring skeleton cards to maintain layout stability.
+  - **Infinite Scroll & Seamless Prefetching**: IntersectionObserver sentinel (600px root margin) automatically fetches additional level-matched videos before the learner reaches the bottom. Employs a centered rotating `.spinner` indicator during loading with zero delay on newly appended cards, preceded by an 8-card YouTube-style shimmer wave skeleton grid with dual title lines to completely eliminate layout shifts (CLS = 0).
 - **Playlist Page Integration (`PlaylistPageComponent`)**:
   - Playlist cards and individual tracklist rows display level pills (`level-badge--pill`) styled with tier-specific hues.
   - **Level Filter Dropdown**: Filter playlists by proficiency level (`All Levels`, `Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).

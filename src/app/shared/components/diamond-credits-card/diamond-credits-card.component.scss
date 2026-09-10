@@ -205,7 +205,13 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
 
-    &:hover {
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--bg-hover);
+        }
+    }
+
+    &:active {
         background-color: var(--bg-hover);
     }
 

@@ -283,6 +283,7 @@
     "importError": "インポートに失敗しました。ファイル形式を確認してください。",
     "filterByLevel": "レベルで絞り込み",
     "changeLevel": "レベルを変更",
+    "clickToCycle": "クリックしてレベルを切替",
     "deleteSuccess": "「{{word}}」を削除しました",
     "addWord": "単語を追加"
   },

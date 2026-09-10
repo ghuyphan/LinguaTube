@@ -663,8 +663,13 @@ export class GrammarService {
             return [];
         }
 
-        // Reconstruct full text from tokens
-        const fullText = tokens.map(t => t.surface).join('');
+        // Reconstruct full text from tokens with proper word boundary spacing
+        const fullText = tokens.map((t, idx) => {
+            if (idx > 0 && !t.isPunctuation && !tokens[idx - 1].surface.endsWith(' ') && !/^[\s\p{P}\p{S}]/u.test(t.surface)) {
+                return ' ' + t.surface;
+            }
+            return t.surface;
+        }).join('');
         if (!fullText.trim()) return [];
 
         const doc = nlp(fullText);

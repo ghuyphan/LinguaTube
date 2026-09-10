@@ -702,3 +702,66 @@ test('SupadataProvider: multi-key failover on quota/rate-limit/timeout errors', 
   assert.equal(result?.detectedLang, 'ja');
 });
 
+test('Edge TTS: normalizeVoiceName maps languages and short codes accurately', async () => {
+  const { normalizeVoiceName, DEFAULT_VOICES } = await import('../functions-src/utils/edge-tts.js');
+
+  assert.equal(normalizeVoiceName(null, 'ja'), DEFAULT_VOICES.ja);
+  assert.equal(normalizeVoiceName(null, 'zh'), DEFAULT_VOICES.zh);
+  assert.equal(normalizeVoiceName(null, 'ko'), DEFAULT_VOICES.ko);
+  assert.equal(normalizeVoiceName(null, 'en'), DEFAULT_VOICES.en);
+
+  // Short codes normalization
+  assert.equal(
+    normalizeVoiceName('ja-JP-NanamiNeural'),
+    'Microsoft Server Speech Text to Speech Voice (ja-JP, NanamiNeural)'
+  );
+  assert.equal(
+    normalizeVoiceName('zh-CN-XiaoxiaoNeural'),
+    'Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoNeural)'
+  );
+  assert.equal(
+    normalizeVoiceName('ko-KR-SunHiNeural'),
+    'Microsoft Server Speech Text to Speech Voice (ko-KR, SunHiNeural)'
+  );
+  assert.equal(
+    normalizeVoiceName('en-US-JennyNeural'),
+    'Microsoft Server Speech Text to Speech Voice (en-US, JennyNeural)'
+  );
+});
+
+test('Edge TTS: escapeXml and sanitizeText prevent SSML injection and control chars', async () => {
+  const { escapeXml, sanitizeText } = await import('../functions-src/utils/edge-tts.js');
+
+  const unsafe = `<speak>hello & "welcome" 'user' > test</speak>`;
+  const escaped = escapeXml(unsafe);
+  assert.equal(escaped, '&lt;speak&gt;hello &amp; &quot;welcome&quot; &apos;user&apos; &gt; test&lt;/speak&gt;');
+
+  const controlChars = 'hello\u0000\u0007world\u001F!';
+  assert.equal(sanitizeText(controlChars), 'hello  world !');
+});
+
+test('Edge TTS: makeSecMsGec generates valid 64-char uppercase SHA-256 token', async () => {
+  const { makeSecMsGec } = await import('../functions-src/utils/edge-tts.js');
+
+  const token = await makeSecMsGec();
+  assert.equal(typeof token, 'string');
+  assert.equal(token.length, 64);
+  assert.equal(/^[0-9A-F]{64}$/.test(token), true);
+});
+
+test('Edge TTS: input validation rejects empty text and enforces 300 char limit', async () => {
+  const { synthesizeEdgeTts } = await import('../functions-src/utils/edge-tts.js');
+
+  await assert.rejects(
+    async () => synthesizeEdgeTts(''),
+    { message: 'TTS text cannot be empty' }
+  );
+
+  const longText = 'a'.repeat(301);
+  await assert.rejects(
+    async () => synthesizeEdgeTts(longText),
+    { message: 'TTS text exceeds maximum length of 300 characters' }
+  );
+});
+
+

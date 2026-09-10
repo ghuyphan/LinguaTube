@@ -225,14 +225,17 @@
             width: 32px;
             height: 32px;
 
-            &:hover {
-                background: var(--bg-hover);
-                color: var(--text-primary);
-                border-color: rgba(255, 255, 255, 0.15);
+            @media (hover: hover) {
+                &:hover {
+                    background: var(--bg-hover);
+                    color: var(--text-primary);
+                    border-color: rgba(255, 255, 255, 0.15);
+                }
             }
 
             &:active {
                 background: var(--bg-secondary);
+                transform: scale(0.92);
             }
 
             &.active {
@@ -417,7 +420,6 @@
         }
     }
 }
-
 // -------------------------
 // Now Playing Equalizer Animation
 // -------------------------

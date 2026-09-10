@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 require('dotenv').config();
 const cors = require('cors');
 const { pinyin } = require('pinyin-pro');
@@ -571,6 +572,159 @@ app.get('/api/dict', async (req, res) => {
     } catch (error) {
         console.error('[Dict Local] Error:', error.message);
         res.status(500).json({ error: error.message });
+    }
+});
+
+// Edge Neural TTS (Local Dev Server)
+const EDGE_TTS_TOKEN = '6A5AA1D4EAFF4E9FB37E23D68491D6F4';
+const EDGE_CHROMIUM_VERSION = '143.0.3650.75';
+const EDGE_CHROMIUM_MAJOR = '143';
+
+const EDGE_DEFAULT_VOICES = {
+    ja: 'Microsoft Server Speech Text to Speech Voice (ja-JP, NanamiNeural)',
+    zh: 'Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoNeural)',
+    ko: 'Microsoft Server Speech Text to Speech Voice (ko-KR, SunHiNeural)',
+    en: 'Microsoft Server Speech Text to Speech Voice (en-US, JennyNeural)',
+};
+
+function normalizeEdgeVoice(voice, lang = 'ja') {
+    if (!voice) return EDGE_DEFAULT_VOICES[lang] || EDGE_DEFAULT_VOICES.ja;
+    const trimmed = voice.trim();
+    if (trimmed.startsWith('Microsoft Server Speech Text to Speech Voice')) return trimmed;
+    const match = /^([a-z]{2,})-([A-Z]{2,})-(.+Neural)$/.exec(trimmed);
+    if (match) {
+        return `Microsoft Server Speech Text to Speech Voice (${match[1]}-${match[2]}, ${match[3]})`;
+    }
+    return trimmed;
+}
+
+function escapeXmlTts(text) {
+    return (text || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+}
+
+function makeSecMsGecLocal() {
+    const winEpoch = 11644473600;
+    const secondsToNs = 1e9;
+    let ticks = Date.now() / 1000;
+    ticks += winEpoch;
+    ticks -= ticks % 300;
+    ticks *= secondsToNs / 100;
+    const payload = `${ticks.toFixed(0)}${EDGE_TTS_TOKEN}`;
+    return crypto.createHash('sha256').update(payload).digest('hex').toUpperCase();
+}
+
+async function synthesizeEdgeTtsLocal(text, options = {}) {
+    const lang = options.language || 'ja';
+    const voiceName = normalizeEdgeVoice(options.voice, lang);
+    const timeoutMs = options.timeoutMs || 7000;
+
+    const connectionId = crypto.randomUUID().replace(/-/g, '');
+    const secMsGec = makeSecMsGecLocal();
+    const url = `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=${EDGE_TTS_TOKEN}&Sec-MS-GEC=${secMsGec}&Sec-MS-GEC-Version=1-${EDGE_CHROMIUM_VERSION}&ConnectionId=${connectionId}`;
+
+    const headers = {
+        'User-Agent': `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${EDGE_CHROMIUM_MAJOR}.0.0.0 Safari/537.36 Edg/${EDGE_CHROMIUM_MAJOR}.0.0.0`,
+        'Accept-Language': 'en-US,en;q=0.9',
+        Pragma: 'no-cache',
+        'Cache-Control': 'no-cache',
+    };
+
+    const ws = new WebSocket(url, { headers });
+
+    return new Promise((resolve, reject) => {
+        const audioChunks = [];
+        let isSettled = false;
+
+        const timer = setTimeout(() => {
+            cleanup();
+            reject(new Error(`Edge TTS timed out after ${timeoutMs}ms`));
+        }, timeoutMs);
+
+        function cleanup() {
+            if (isSettled) return;
+            isSettled = true;
+            clearTimeout(timer);
+            try { ws.close(); } catch (_) {}
+        }
+
+        ws.onopen = () => {
+            const timestamp = new Date().toISOString();
+            const configMsg = `X-Timestamp:${timestamp}\r\nContent-Type:application/json; charset=utf-8\r\nPath:speech.config\r\n\r\n{"context":{"synthesis":{"audio":{"metadataoptions":{"sentenceBoundaryEnabled":"false","wordBoundaryEnabled":"false"},"outputFormat":"audio-24khz-48kbitrate-mono-mp3"}}}}`;
+            const requestId = crypto.randomUUID().replace(/-/g, '');
+            const ssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'><voice name='${voiceName}'><prosody pitch='+0Hz' rate='+0%' volume='+0%'>${escapeXmlTts(text)}</prosody></voice></speak>`;
+            const ssmlMsg = `X-RequestId:${requestId}\r\nContent-Type:application/ssml+xml\r\nX-Timestamp:${timestamp}Z\r\nPath:ssml\r\n\r\n${ssml}`;
+            ws.send(configMsg);
+            ws.send(ssmlMsg);
+        };
+
+        ws.onmessage = async (event) => {
+            if (typeof event.data === 'string') {
+                if (event.data.includes('Path:turn.end')) {
+                    cleanup();
+                    if (audioChunks.length === 0) {
+                        return reject(new Error('Empty audio received'));
+                    }
+                    return resolve(Buffer.concat(audioChunks));
+                }
+                return;
+            }
+
+            const buffer = event.data instanceof Buffer ? event.data :
+                event.data instanceof ArrayBuffer ? Buffer.from(event.data) :
+                typeof event.data.arrayBuffer === 'function' ? Buffer.from(await event.data.arrayBuffer()) : null;
+
+            if (buffer && buffer.length >= 2) {
+                const headerLen = buffer.readUInt16BE(0);
+                if (buffer.length > 2 + headerLen) {
+                    const headerStr = buffer.subarray(2, 2 + headerLen).toString('utf-8');
+                    if (headerStr.includes('Path:audio')) {
+                        audioChunks.push(buffer.subarray(2 + headerLen));
+                    }
+                }
+            }
+        };
+
+        ws.onerror = (err) => {
+            cleanup();
+            reject(new Error(`Edge TTS WS error: ${err.message || err}`));
+        };
+
+        ws.onclose = () => {
+            if (!isSettled && audioChunks.length > 0) {
+                cleanup();
+                resolve(Buffer.concat(audioChunks));
+            }
+        };
+    });
+}
+
+app.all('/api/tts', async (req, res) => {
+    const text = ((req.method === 'POST' ? req.body?.text : req.query.text) || '').trim();
+    const lang = ((req.method === 'POST' ? (req.body?.lang || req.body?.language) : (req.query.lang || req.query.language)) || 'ja').trim();
+    const voice = req.method === 'POST' ? req.body?.voice : req.query.voice;
+
+    if (!text) {
+        return res.status(400).json({ error: 'Missing required parameter: text' });
+    }
+    if (text.length > 300) {
+        return res.status(400).json({ error: 'Text too long (max 300 characters)' });
+    }
+
+    try {
+        const audioBuffer = await synthesizeEdgeTtsLocal(text, { language: lang, voice });
+        res.setHeader('Content-Type', 'audio/mpeg');
+        res.setHeader('Content-Length', audioBuffer.length);
+        res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
+        res.setHeader('X-TTS-Engine', 'Edge-Neural');
+        res.send(audioBuffer);
+    } catch (err) {
+        console.error('[EdgeTTS Local] Error:', err.message);
+        res.status(502).json({ error: 'TTS synthesis failed', message: err.message });
     }
 });
 
@@ -1916,40 +2070,45 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.1.13';
+    const mockVersion = req.query.mock_version || '1.1.15';
 
     res.json({
         version: mockVersion,
-        minSupportedVersion: mockForce ? '1.1.13' : '1.0.0',
+        minSupportedVersion: mockForce ? '1.1.15' : '1.0.0',
         buildDate: '2026-09-10',
         forceUpdate: mockForce,
         maintenance: mockMaintenance,
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'Single-Line Channel Truncation: Video player header limits channel names to one line with responsive ellipsis and hover tooltip, preventing difficulty level badges from being pushed off-screen',
-                'In-Memory Feed & Scroll Memory: Recommendations feed stays preserved in memory while watching videos, instantly returning to your exact card and scroll offset upon closing',
-                'Native Touch Pull-to-Refresh: Added smooth YouTube-style downward drag gesture with a floating circular refresh indicator to easily refresh video recommendations'
+                'Desktop Sidebar Modernization: Refined desktop sidebar with YouTube-style bold typography for the brand title and streamlined layout',
+                'Dynamic Tier Branding: Automatically displays "Pro", "Premium", or "Voca" based on user subscription tier in clean, solid typography',
+                'Unified Audio Playing Indicator: Upgraded the sidebar "Watch" indicator to the animated sound equalizer matching the playlist panel',
+                'Microsoft Edge Neural TTS: Studio-grade Azure neural voices (Nanami, Xiaoxiao, SunHi, Jenny) for authentic native pronunciation'
             ],
             vi: [
-                'Rút gọn tên kênh một dòng: Tiêu đề trình phát giới hạn tên kênh trên 1 dòng với dấu chấm lửng co giãn và chú giải đầy đủ, tránh làm tràn huy hiệu độ khó',
-                'Giữ vị trí cuộn & Bảng tin tức thì: Danh sách gợi ý được giữ nguyên trong bộ nhớ khi xem video, trở lại ngay vị trí thẻ đang xem khi đóng video',
-                'Kéo xuống để làm mới kiểu YouTube: Thêm thao tác kéo vuốt xuống mượt mà kèm biểu tượng tròn để làm mới danh sách video gợi ý nhanh chóng'
+                'Hiện đại hóa thanh bên: Nâng cấp tiêu đề thanh bên phong cách YouTube sắc nét và tinh gọn giao diện',
+                'Hiển thị gói dịch vụ linh hoạt: Tự động đổi tên thương hiệu thành "Pro", "Premium" hoặc "Voca" tương ứng theo gói của người dùng',
+                'Đồng bộ chỉ báo đang phát: Nâng cấp chỉ báo mục "Watch" trên thanh bên thành thanh sóng equalizer động đồng bộ với danh sách phát',
+                'Phát âm Edge Neural TTS: Giọng đọc Microsoft Azure chuẩn phòng thu (Nanami, Xiaoxiao, SunHi, Jenny) chuẩn bản xứ'
             ],
             ja: [
-                'チャンネル名の1行省略表示：動画ヘッダーのチャンネル名をレスポンシブな最大幅と1行省略に制限し、レベルバッジの押し出しを防止',
-                'フィード保持＆スクロール復元：動画再生中もおすすめフィードをメモリに保持し、動画終了時に直前の閲覧位置へ瞬時に復帰',
-                'YouTube風プルダウン更新：ホームフィード上部で下スワイプすると回転インジケーターが表示され、おすすめ動画を手軽に最新化'
+                'デスクトップサイドバーの刷新：YouTubeスタイルの太字ヘッダーと洗練されたレイアウトに最適化',
+                '動的プラン表示：契約プランに応じて「Pro」「Premium」「Voca」をシンプルかつスマートに表示',
+                '再生中インジケーターの統一：サイドバーの「Watch」にプレイリストと共通のイコライザーアニメーションを採用',
+                'Microsoft Edge Neural TTS：スタジオ品質のAzureニューラル音声（Nanami, Xiaoxiao, SunHi, Jenny）で自然なネイティブ発音'
             ],
             ko: [
-                '채널명 1줄 말줄임 처리: 동영상 플레이어 헤더의 채널명을 반응형 최대 너비와 1줄로 제한하여 난이도 뱃지가 밀려나지 않도록 개선',
-                '피드 메모리 유지 & 스크롤 복원: 동영상 시청 중에도 홈 피드가 메모리에 유지되어 영상을 닫았을 때 보던 위치로 즉시 복귀',
-                'YouTube 스타일 당겨서 새로고침: 홈 피드 상단에서 아래로 당겨 추천 동영상 목록을 간편하게 새로고침하는 터치 제스처 추가'
+                '데스크톱 사이드바 현대화: YouTube 스타일의 볼드 헤더 타이포그래피와 깔끔한 레이아웃 적용',
+                '동적 구독 티어 브랜딩: 구독 상태에 따라 "Pro", "Premium", "Voca"로 깔끔하게 전환 표시',
+                '재생 중 인디케이터 통일: 사이드바 "Watch" 항목에 재생목록 패널과 동일한 이퀄라이저 애니메이션 적용',
+                'Microsoft Edge Neural TTS: 스튜디오급 Azure 뉴럴 보이스(Nanami, Xiaoxiao, SunHi, Jenny)로 자연스러운 원어민 발음 제공'
             ],
             zh: [
-                '频道名称单行截断优化：播放器顶部频道名称限制为单行并设置自适应最大宽度，防止挤压或换行语言难度等级徽章',
-                '推荐列表常驻与滚动记忆：观看视频时推荐流完整保存在内存中，关闭视频后立即恢复至先前的浏览位置与卡片',
-                'YouTube 风格下拉刷新：在主页顶部向下滑动可呼出圆环刷新指示器，流畅获取最新推荐视频与播放列表'
+                '桌面端侧边栏重构优化：采用类似 YouTube 风格的粗体标题排版与极简整洁的视觉布局',
+                '动态会员级别标识：根据用户订阅状态自动切换展示“Pro”、“Premium”或“Voca”纯色字标',
+                '统一正在播放动效：将侧边栏“Watch”项升级为与播放列表面板一致的动态均衡器声波动画',
+                'Microsoft Edge 神经语音 TTS：录音棚级 Azure 神经语音（Nanami、Xiaoxiao、SunHi、Jenny）呈现母语级自然发音'
             ]
         }
     });

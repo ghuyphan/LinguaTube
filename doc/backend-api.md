@@ -27,7 +27,7 @@ Voca uses a dual backend model to maximize both developer productivity and produ
 ### Local Dev Server Highlights (`server/server.js`)
 - **Innertube Client**: Uses `youtubei.js` to fetch real YouTube timed-text tracks directly in local development without needing Cloudflare bindings.
 - **Local Disk Cache with Traversal Defense**: Automatically persists discovered YouTube transcripts to `server/transcripts_cache/{videoId}_{lang}.json` sanitized against path traversal attacks.
-- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/dual-subtitles`, `/api/tokenize/:lang` (unified `ja`, `zh`, `ko`, `en`), `/api/tokenize-batch/:lang`, `/api/translate/:source/:target/*` (with wildcard slug support), `/api/translate/batch` (GTX fallback), `/api/recommended-videos`, `/api/diamonds`, and `/proxy/:service/*` (matching the production SSRF-protected proxy).
+- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/tts` (Microsoft Edge Neural Azure synthesis), `/api/dual-subtitles`, `/api/tokenize/:lang` (unified `ja`, `zh`, `ko`, `en`), `/api/tokenize-batch/:lang`, `/api/translate/:source/:target/*` (with wildcard slug support), `/api/translate/batch` (GTX fallback), `/api/recommended-videos`, `/api/diamonds`, and `/proxy/:service/*` (matching the production SSRF-protected proxy).
 
 ---
 
@@ -451,5 +451,30 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
     ```bash
     npx wrangler kv:key delete --binding=TRANSCRIPT_CACHE app_version_override
     ```
+
+---
+
+### 3.15. Edge Neural Text-to-Speech API
+- **Routes**: `GET /api/tts?text={text}&lang={ja|zh|ko|en}&voice={optionalVoice}` and `POST /api/tts`
+- **Source**: `functions-src/api/tts.js` (Cloudflare Pages Function) & `server/server.js` (Local Dev)
+- **Engine**: `functions-src/utils/edge-tts.js`
+- **Overview**:
+  - Synthesizes studio-grade Azure neural voices via Microsoft Edge's Read Aloud synthesis protocol without requiring paid Azure API keys.
+  - Generates dynamic, short-lived `Sec-MS-GEC` tokens based on Windows epoch timestamp and Web Crypto (`crypto.subtle.digest`).
+  - Connects via outbound WebSocket (`fetch(..., { headers: { Upgrade: 'websocket' } })` on Cloudflare Workers, `globalThis.WebSocket` on Node 20+).
+- **Default Voices**:
+  - **Japanese (`ja`)**: `ja-JP-NanamiNeural` (`Microsoft Server Speech Text to Speech Voice (ja-JP, NanamiNeural)`)
+  - **Chinese (`zh`)**: `zh-CN-XiaoxiaoNeural` (`Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoNeural)`)
+  - **Korean (`ko`)**: `ko-KR-SunHiNeural` (`Microsoft Server Speech Text to Speech Voice (ko-KR, SunHiNeural)`)
+  - **English (`en`)**: `en-US-JennyNeural` (`Microsoft Server Speech Text to Speech Voice (en-US, JennyNeural)`)
+- **Zero KV Quota Guarantee (Rule 2)**:
+  - **Zero KV Operations**: Never reads, writes, lists, or deletes Cloudflare KV. Audio is strictly streamed and cached via HTTP headers.
+  - **Caching**: `Cache-Control: public, max-age=2592000, immutable` (30 days in browser disk and Cloudflare global CDN edge cache). Replaying previously heard words triggers zero backend network requests or worker CPU cost.
+  - **In-Memory Rate Limiting**: Warm isolate map `memTtsRateLimits` limits abuse to 120 requests/hour/IP with zero database writes.
+- **Input Constraints & Security**:
+  - Max text length: 300 characters (returns HTTP 400 if exceeded).
+  - XML/SSML sanitization: Escapes XML entities (`&`, `<`, `>`, `"`, `'`) and strips control characters to prevent SSML injection.
+  - Automatic fallback in `AudioService`: Edge Neural TTS $\rightarrow$ Google translate_tts $\rightarrow$ Browser `window.speechSynthesis`.
+
 
 

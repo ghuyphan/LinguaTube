@@ -67,8 +67,14 @@
     padding: 0;
     margin-left: var(--space-2xs);
 
-    &:hover {
-      opacity: 0.8;
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &:active {
+      opacity: 0.6;
     }
   }
 }

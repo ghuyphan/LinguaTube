@@ -1,15 +1,12 @@
 import { Injectable, inject, signal, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { firstValueFrom, timeout } from 'rxjs';
 import { SupportedLearningLanguage } from '../../models';
-import { DictionaryService } from '../../features/dictionary/dictionary.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AudioService {
   private platformId = inject(PLATFORM_ID);
-  private dict = inject(DictionaryService);
 
   private activeAudio: HTMLAudioElement | null = null;
   private activeUtterance: SpeechSynthesisUtterance | null = null;
@@ -44,6 +41,7 @@ export class AudioService {
   }
 
   stopAudio(): void {
+    ++this.playRequestId;
     if (this.activeAudio) {
       this.activeAudio.pause();
       this.activeAudio.onended = null;
@@ -61,8 +59,9 @@ export class AudioService {
 
   /**
    * Resilient, multi-tiered pronunciation playback:
-   * Tier 1: Authentic native dictionary recording (explicit URL, cache, or dictionary lookup)
-   * Tier 2: High-fidelity neural audio stream (translate_tts with no-referrer policy)
+   * Tier 1: Authentic native dictionary recording (explicit URL or cache)
+   * Tier 2A: Microsoft Edge Neural TTS (Azure voices: Nanami, Xiaoxiao, SunHi, Jenny)
+   * Tier 2B: Google Neural audio stream fallback (translate_tts with no-referrer policy)
    * Tier 3: Browser Web Speech API (speechSynthesis) offline-ready fallback
    */
   async playWord(
@@ -81,29 +80,16 @@ export class AudioService {
     }
 
     this.stopAudio();
-    const currentId = ++this.playRequestId;
+    const currentId = this.playRequestId;
     this.currentPlayingWord.set(cleanWord);
 
     const isCurrent = () => this.playRequestId === currentId;
     const cacheKey = `${language}:${cleanWord}`;
 
-    // --- TIER 1: Authentic native recording ---
-    let candidateUrl = (providedAudioUrl && (providedAudioUrl.startsWith('https://') || providedAudioUrl.startsWith('/')))
+    // --- TIER 1: Authentic native recording (if provided directly or already cached) ---
+    const candidateUrl = (providedAudioUrl && (providedAudioUrl.startsWith('https://') || providedAudioUrl.startsWith('/')))
       ? providedAudioUrl
       : this.audioUrlCache.get(cacheKey);
-
-    if (!candidateUrl) {
-      try {
-        const entry = await firstValueFrom(this.dict.lookup(cleanWord, language).pipe(timeout(2000)));
-        if (entry?.audio && (entry.audio.startsWith('https://') || entry.audio.startsWith('/'))) {
-          candidateUrl = entry.audio;
-        }
-      } catch {
-        // Lookup timeout or error, smoothly proceed to fallback tiers
-      }
-    }
-
-    if (!isCurrent()) return;
 
     if (candidateUrl) {
       try {
@@ -123,7 +109,22 @@ export class AudioService {
 
     if (!isCurrent()) return;
 
-    // --- TIER 2: High-fidelity neural audio stream with no-referrer ---
+    // --- TIER 2A: Microsoft Edge Neural TTS (Azure voices: Nanami, Xiaoxiao, SunHi, Jenny) ---
+    // High quality, instant, zero user gesture expiration!
+    const edgeTtsUrl = `/api/tts?lang=${encodeURIComponent(language)}&text=${encodeURIComponent(cleanWord)}`;
+    try {
+      await this.playAudioUrl(edgeTtsUrl, cleanWord, currentId);
+      if (isCurrent()) {
+        this.setCachedAudioUrl(cacheKey, edgeTtsUrl);
+        return;
+      }
+    } catch (err) {
+      console.info(`[AudioService] Edge Neural TTS failed for "${cleanWord}", falling back to Google TTS:`, (err as Error)?.message || err);
+    }
+
+    if (!isCurrent()) return;
+
+    // --- TIER 2B: Google Neural audio stream fallback with no-referrer ---
     const tlMap: Record<SupportedLearningLanguage, string> = {
       ja: 'ja',
       zh: 'zh-CN',
@@ -140,7 +141,7 @@ export class AudioService {
         return;
       }
     } catch (err) {
-      console.info(`[AudioService] Stream TTS failed for "${cleanWord}", falling back to SpeechSynthesis:`, (err as Error)?.message || err);
+      console.info(`[AudioService] Google TTS failed for "${cleanWord}", falling back to SpeechSynthesis:`, (err as Error)?.message || err);
     }
 
     if (!isCurrent()) return;
@@ -202,9 +203,7 @@ export class AudioService {
 
       audio.onerror = (e) => {
         cleanup();
-        if (this.playRequestId === requestId && this.currentPlayingWord() === word) {
-          this.currentPlayingWord.set(null);
-        }
+        // Do NOT reset currentPlayingWord here so subsequent fallback tiers continue seamlessly
         const mediaErr = audio.error;
         const msg = mediaErr
           ? `MediaError ${mediaErr.code} (${this.getMediaErrorMessage(mediaErr.code)}): ${mediaErr.message || 'load failed'}`

@@ -233,9 +233,11 @@
         text-overflow: ellipsis;
     }
 
-    &:hover {
-        opacity: 0.95;
-        transform: translateY(-1px);
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
     }
 
     &:active {
@@ -269,11 +271,17 @@
     text-align: left;
     transition: all var(--transition-normal);
 
-    &:hover {
-        background: linear-gradient(135deg, rgba(6, 182, 212, 0.14) 0%, rgba(59, 130, 246, 0.14) 50%, rgba(139, 92, 246, 0.14) 100%);
-        border-color: rgba(59, 130, 246, 0.45);
-        transform: translateY(-1px);
-        box-shadow: 0 4px 14px rgba(59, 130, 246, 0.15);
+    @media (hover: hover) {
+        &:hover {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.14) 0%, rgba(59, 130, 246, 0.14) 50%, rgba(139, 92, 246, 0.14) 100%);
+            border-color: rgba(59, 130, 246, 0.45);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.15);
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
     }
 
     .pro-promo-left {

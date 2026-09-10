@@ -46,6 +46,8 @@ export class VocabularyListComponent implements OnDestroy {
 
   // Last deleted item for undo functionality
   lastDeletedItem = signal<VocabularyItem | null>(null);
+  readonly deletingWordId = signal<string | null>(null);
+  private deleteTimeout: ReturnType<typeof setTimeout> | null = null;
 
   currentLangVocabCount = computed(() => {
     const lang = this.settings.settings().language;
@@ -126,17 +128,35 @@ export class VocabularyListComponent implements OnDestroy {
     });
   }
 
+  onLevelContextMenu(item: VocabularyItem, event: MouseEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.openLevelPicker(item, event);
+  }
+
   deleteWordDirect(item: VocabularyItem, event: Event): void {
     event.stopPropagation();
+    if (this.deletingWordId()) return;
+
+    this.deletingWordId.set(item.id);
     this.lastDeletedItem.set(item);
-    this.vocab.deleteWord(item.id);
-    this.toast.show(this.i18n.t('vocab.deleteSuccess', { word: item.word }) || `Deleted "${item.word}"`, {
-      type: 'success',
-      action: {
-        label: this.i18n.t('common.undo') || 'Undo',
-        action: () => this.undoDelete()
-      }
-    });
+
+    // Wait for the exit animation (180ms) before removing from state
+    if (this.deleteTimeout) {
+      clearTimeout(this.deleteTimeout);
+    }
+    this.deleteTimeout = setTimeout(() => {
+      this.vocab.deleteWord(item.id);
+      this.deletingWordId.set(null);
+      this.deleteTimeout = null;
+      this.toast.show(this.i18n.t('vocab.deleteSuccess', { word: item.word }) || `Deleted "${item.word}"`, {
+        type: 'success',
+        action: {
+          label: this.i18n.t('common.undo') || 'Undo',
+          action: () => this.undoDelete()
+        }
+      });
+    }, 180);
   }
 
   undoDelete(): void {
@@ -258,6 +278,10 @@ export class VocabularyListComponent implements OnDestroy {
     if (this.searchTimeout) {
       clearTimeout(this.searchTimeout);
       this.searchTimeout = null;
+    }
+    if (this.deleteTimeout) {
+      clearTimeout(this.deleteTimeout);
+      this.deleteTimeout = null;
     }
   }
 }

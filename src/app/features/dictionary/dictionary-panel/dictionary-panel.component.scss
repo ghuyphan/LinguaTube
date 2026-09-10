@@ -139,11 +139,15 @@
     color: var(--text-secondary);
     font-size: 0.8125rem;
     cursor: pointer;
-    transition: all var(--transition-fast);
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--accent-primary);
+            color: var(--text-primary);
+        }
+    }
 
-    &:hover {
-        border-color: var(--accent-primary);
-        color: var(--text-primary);
+    &:active {
+        background: var(--bg-hover);
     }
 
     &.active {
@@ -215,10 +219,12 @@
     transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
     flex-shrink: 0;
 
-    &:hover {
-        background: var(--accent-primary-soft);
-        color: var(--accent-primary);
-        transform: scale(1.06);
+    @media (hover: hover) {
+        &:hover {
+            background: var(--accent-primary-soft);
+            color: var(--accent-primary);
+            transform: scale(1.06);
+        }
     }
 
     &:active {
@@ -275,9 +281,16 @@
     cursor: pointer;
     transition: all var(--transition-fast);
 
-    &:hover {
-        transform: translateY(-1px);
-        opacity: 0.85;
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-1px);
+            opacity: 0.85;
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
+        opacity: 0.7;
     }
 }
 
@@ -550,7 +563,13 @@
     border-radius: var(--border-radius);
     transition: all var(--transition-fast);
 
-    &:hover {
+    @media (hover: hover) {
+        &:hover {
+            color: var(--accent-primary);
+        }
+    }
+
+    &:active {
         color: var(--accent-primary);
     }
 }
@@ -573,8 +592,14 @@
     transition: all var(--transition-fast);
     flex-shrink: 0;
 
-    &:hover {
-        border-color: var(--accent-primary);
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--accent-primary);
+        }
+    }
+
+    &:active {
+        background: var(--bg-hover);
     }
 }
 
@@ -602,8 +627,15 @@
     padding: 0;
     margin-left: 2px;
 
-    &:hover {
-        background: rgba(var(--accent-primary-rgb), 0.15);
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(var(--accent-primary-rgb), 0.15);
+            color: var(--accent-primary);
+        }
+    }
+
+    &:active {
+        background: rgba(var(--accent-primary-rgb), 0.25);
         color: var(--accent-primary);
     }
 }

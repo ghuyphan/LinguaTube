@@ -128,13 +128,14 @@
 
             @if (isFeedLoading()) {
             <div class="yt-video-grid skeleton-container">
-                @for (_ of [1, 2, 3, 4, 5, 6]; track $index) {
+                @for (_ of [1, 2, 3, 4, 5, 6, 7, 8]; track $index) {
                 <div class="yt-video-card yt-video-card--skeleton">
                     <div class="yt-video-card__thumbnail"></div>
                     <div class="yt-video-card__details">
                         <div class="yt-skeleton-avatar"></div>
                         <div class="yt-skeleton-meta">
                             <div class="skeleton-line skeleton-line--title"></div>
+                            <div class="skeleton-line skeleton-line--title skeleton-line--title-short"></div>
                             <div class="skeleton-line skeleton-line--subtitle"></div>
                             <div class="skeleton-line skeleton-line--badge"></div>
                         </div>
@@ -146,7 +147,7 @@
             <div class="yt-video-grid">
                 @for (item of feedItems(); track item.kind === 'video' ? item.video.videoId : item.playlist.id; let i = $index) {
                     @if (item.kind === 'video') {
-                    <article class="yt-video-card" [style.--item-index]="i" (click)="onPlayRecommendedVideo(item.video)">
+                    <article class="yt-video-card" [style.--item-index]="i < 12 ? i : -1" (click)="onPlayRecommendedVideo(item.video)">
                         <div class="yt-video-card__thumbnail">
                             <img [src]="item.video.thumbnail" [alt]="item.video.title" loading="lazy" />
                             @if (item.video.duration) {
@@ -218,7 +219,7 @@
                         </div>
                     </article>
                     } @else {
-                    <article class="yt-video-card yt-video-card--playlist" [style.--item-index]="i" (click)="startPlaylist(item.playlist)">
+                    <article class="yt-video-card yt-video-card--playlist" [style.--item-index]="i < 12 ? i : -1" (click)="startPlaylist(item.playlist)">
                         <div class="yt-video-card__thumbnail">
                             @if (item.playlist.thumbnail) {
                             <img [src]="item.playlist.thumbnail" [alt]="item.playlist.title" loading="lazy" />

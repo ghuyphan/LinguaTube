@@ -308,9 +308,22 @@ export class SubtitleDisplayComponent implements OnDestroy {
   private previousCueId: string | null = null;
 
   private lastListUserScrollTime = 0;
-  private readonly LIST_SCROLL_DEBOUNCE_MS = 3000;
+  private readonly USER_MANUAL_SCROLL_TIMEOUT = 2500;
+  private lastScrolledCueId: string | null = null;
+  private isProgrammaticScrolling = false;
+  private programmaticScrollTimer: ReturnType<typeof setTimeout> | null = null;
 
   onSubtitleListScroll(): void {
+    if (this.isProgrammaticScrolling) return;
+    this.checkIfScrolledAway();
+  }
+
+  onUserManualScroll(): void {
+    this.isProgrammaticScrolling = false;
+    if (this.programmaticScrollTimer) {
+      clearTimeout(this.programmaticScrollTimer);
+      this.programmaticScrollTimer = null;
+    }
     this.lastListUserScrollTime = Date.now();
     this.checkIfScrolledAway();
   }
@@ -334,8 +347,8 @@ export class SubtitleDisplayComponent implements OnDestroy {
     const elTop = activeEl.offsetTop;
     const elBottom = elTop + activeEl.offsetHeight;
 
-    // Active cue is outside comfortable view (with 12px margin)
-    const isVisible = elBottom >= containerTop + 12 && elTop <= containerBottom - 12;
+    // Active cue is outside comfortable view (with 16px margin)
+    const isVisible = elBottom >= containerTop + 16 && elTop <= containerBottom - 16;
     this.isUserScrolledAway.set(!isVisible);
   }
 
@@ -343,6 +356,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
     const currentCue = this.subtitles.currentCue();
     this.isUserScrolledAway.set(false);
     this.lastListUserScrollTime = 0;
+    this.lastScrolledCueId = null;
     if (currentCue) {
       this.scrollToActiveCue(currentCue.id, true);
     }
@@ -375,12 +389,12 @@ export class SubtitleDisplayComponent implements OnDestroy {
       }
     });
 
-    // Auto-scroll to active cue in the list
+    // Auto-scroll to active cue in the list (smooth continuous glide)
     effect(() => {
       if (this.isVideoFullscreen()) return;
       const currentCue = this.subtitles.currentCue();
       if (currentCue && this.subtitleList()?.nativeElement) {
-        setTimeout(() => this.scrollToActiveCue(currentCue.id), 0);
+        requestAnimationFrame(() => this.scrollToActiveCue(currentCue.id));
       }
     });
 
@@ -465,31 +479,40 @@ export class SubtitleDisplayComponent implements OnDestroy {
   private scrollToActiveCue(cueId: string, force = false): void {
     const container = this.subtitleList()?.nativeElement;
     if (!container) return;
-    if (!force && this.isUserScrolledAway()) return;
-    if (!force && Date.now() - this.lastListUserScrollTime < this.LIST_SCROLL_DEBOUNCE_MS) return;
-    const activeElement = container.querySelector(`[data-cue-id="${cueId}"]`) as HTMLElement;
 
-    if (activeElement) {
-      const containerHeight = container.clientHeight;
-      const elementTop = activeElement.offsetTop;
-      const elementHeight = activeElement.offsetHeight;
-      const currentScroll = container.scrollTop;
-
-      // Only smooth scroll if active element is outside or near the edges of the list viewport
-      const isComfortablyVisible = (
-        elementTop >= currentScroll + 24 &&
-        elementTop + elementHeight <= currentScroll + containerHeight - 24
-      );
-      if (!force && isComfortablyVisible) return;
-
-      const targetScrollTop = elementTop - (containerHeight / 2) + (elementHeight / 2);
-
-      container.scrollTo({
-        top: Math.max(0, targetScrollTop),
-        behavior: 'smooth'
-      });
-      this.isUserScrolledAway.set(false);
+    if (!force) {
+      if (this.isUserScrolledAway()) return;
+      if (Date.now() - this.lastListUserScrollTime < this.USER_MANUAL_SCROLL_TIMEOUT) return;
+      if (this.lastScrolledCueId === cueId) return;
     }
+
+    const activeElement = container.querySelector(`[data-cue-id="${cueId}"]`) as HTMLElement;
+    if (!activeElement) return;
+
+    this.lastScrolledCueId = cueId;
+
+    const containerHeight = container.clientHeight;
+    const elementTop = activeElement.offsetTop;
+    const elementHeight = activeElement.offsetHeight;
+
+    // Perfectly center the active cue in the middle of the viewport
+    const targetScrollTop = elementTop - (containerHeight - elementHeight) / 2;
+
+    this.isProgrammaticScrolling = true;
+    if (this.programmaticScrollTimer) {
+      clearTimeout(this.programmaticScrollTimer);
+    }
+    this.programmaticScrollTimer = setTimeout(() => {
+      this.isProgrammaticScrolling = false;
+      this.checkIfScrolledAway();
+    }, 450);
+
+    container.scrollTo({
+      top: Math.max(0, targetScrollTop),
+      behavior: 'smooth'
+    });
+
+    this.isUserScrolledAway.set(false);
   }
 
   getTokens(cue: SubtitleCue): Token[] {
@@ -606,12 +629,14 @@ export class SubtitleDisplayComponent implements OnDestroy {
     }
     this.isUserScrolledAway.set(false);
     this.lastListUserScrollTime = 0;
+    this.lastScrolledCueId = null;
     this.youtube.seekTo(cue.startTime);
     this.subtitles.resetFailureCooldown();
     const index = this.subtitles.subtitles().findIndex(c => c.id === cue.id);
     if (index !== -1) {
       this.subtitles.lazyLoadUpcomingCuesIfNeeded(index);
     }
+    this.scrollToActiveCue(cue.id, true);
   }
 
   toggleLoop(): void {
@@ -709,6 +734,10 @@ export class SubtitleDisplayComponent implements OnDestroy {
     if (this.loopTimeoutId) {
       clearTimeout(this.loopTimeoutId);
       this.loopTimeoutId = null;
+    }
+    if (this.programmaticScrollTimer) {
+      clearTimeout(this.programmaticScrollTimer);
+      this.programmaticScrollTimer = null;
     }
   }
 }

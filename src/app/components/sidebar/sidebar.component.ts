@@ -45,6 +45,13 @@ export class SidebarComponent {
         )
     );
 
+    brandTitle = computed(() => {
+        const tier = this.auth.subscriptionTier();
+        if (tier === 'premium') return 'Premium';
+        if (tier === 'pro') return 'Pro';
+        return this.i18n.t('app.title') || 'Voca';
+    });
+
     hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !(this.currentUrl()?.startsWith('/video') ?? false));
 
     onLearnClick(event: MouseEvent): void {

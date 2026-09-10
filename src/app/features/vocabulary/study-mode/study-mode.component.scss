@@ -83,9 +83,15 @@
         border-radius: var(--border-radius-pill);
         color: var(--text-muted);
 
-        &:hover {
-            color: var(--text-primary);
-            background: var(--bg-surface);
+        @media (hover: hover) {
+            &:hover {
+                color: var(--text-primary);
+                background: var(--bg-surface);
+            }
+        }
+
+        &:active {
+            transform: scale(0.92);
         }
     }
 }
@@ -180,9 +186,11 @@
             }
         }
 
-        &:hover {
-            background: var(--bg-hover);
-            border-color: var(--text-muted);
+        @media (hover: hover) {
+            &:hover {
+                background: var(--bg-hover);
+                border-color: var(--text-muted);
+            }
         }
 
         &:active {
@@ -372,11 +380,15 @@
         font-size: 0.75rem;
         font-weight: 600;
         cursor: pointer;
-        transition: all var(--transition-fast);
+        @media (hover: hover) {
+            &:hover {
+                color: var(--accent-primary);
+                background: var(--bg-surface);
+            }
+        }
 
-        &:hover {
-            color: var(--accent-primary);
-            background: var(--bg-surface);
+        &:active {
+            transform: scale(0.96);
         }
     }
 
@@ -414,10 +426,12 @@
             min-height: 34px;
         }
 
-        &:hover:not(.active) {
-            background: var(--bg-hover);
-            color: var(--text-primary);
-            border-color: var(--border-color);
+        @media (hover: hover) {
+            &:hover:not(.active) {
+                background: var(--bg-hover);
+                color: var(--text-primary);
+                border-color: var(--border-color);
+            }
         }
 
         &.active {
@@ -694,9 +708,16 @@
         justify-content: center;
     }
 
-    &:hover {
-        color: var(--error);
-        background: rgba(239, 68, 68, 0.08);
+    @media (hover: hover) {
+        &:hover {
+            color: var(--error);
+            background: rgba(239, 68, 68, 0.08);
+        }
+    }
+
+    &:active {
+        background: rgba(239, 68, 68, 0.12);
+        transform: scale(0.92);
     }
 }
 
@@ -823,11 +844,11 @@
     transition: all var(--transition-fast);
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-
-    &:hover {
-        background: rgba(var(--accent-primary-rgb), 0.16);
-        border-color: var(--accent-primary);
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(var(--accent-primary-rgb), 0.16);
+            border-color: var(--accent-primary);
+        }
     }
 
     &:active {
@@ -850,11 +871,13 @@
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
 
-    &:hover {
-        background: var(--accent-primary);
-        color: var(--text-inverse);
-        border-color: var(--accent-primary);
-        transform: scale(1.06);
+    @media (hover: hover) {
+        &:hover {
+            background: var(--accent-primary);
+            color: var(--text-inverse);
+            border-color: var(--accent-primary);
+            transform: scale(1.06);
+        }
     }
 
     &:active {
@@ -878,10 +901,12 @@
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
 
-    &:hover {
-        color: var(--accent-primary);
-        border-color: var(--accent-primary);
-        background: var(--bg-hover);
+    @media (hover: hover) {
+        &:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            background: var(--bg-hover);
+        }
     }
 
     &:active {
@@ -1181,8 +1206,10 @@
         line-height: 1.2;
     }
 
-    &:hover {
-        border-color: var(--text-muted);
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--text-muted);
+        }
     }
 
     &:active {
@@ -1194,8 +1221,10 @@
         border-color: rgba(239, 68, 68, 0.25);
         color: var(--error);
 
-        &:hover {
-            border-color: var(--error);
+        @media (hover: hover) {
+            &:hover {
+                border-color: var(--error);
+            }
         }
     }
 
@@ -1204,8 +1233,10 @@
         border-color: rgba(245, 158, 11, 0.25);
         color: var(--word-learning-text);
 
-        &:hover {
-            border-color: var(--warning);
+        @media (hover: hover) {
+            &:hover {
+                border-color: var(--warning);
+            }
         }
     }
 
@@ -1214,8 +1245,10 @@
         border-color: rgba(16, 185, 129, 0.25);
         color: var(--success);
 
-        &:hover {
-            border-color: var(--success);
+        @media (hover: hover) {
+            &:hover {
+                border-color: var(--success);
+            }
         }
     }
 
@@ -1224,8 +1257,10 @@
         border-color: rgba(var(--accent-primary-rgb), 0.25);
         color: var(--accent-primary);
 
-        &:hover {
-            border-color: var(--accent-primary);
+        @media (hover: hover) {
+            &:hover {
+                border-color: var(--accent-primary);
+            }
         }
     }
 }
@@ -1274,9 +1309,15 @@
         border-radius: var(--border-radius-pill);
         color: var(--text-muted);
 
-        &:hover {
-            color: var(--text-primary);
-            background: var(--bg-surface);
+        @media (hover: hover) {
+            &:hover {
+                color: var(--text-primary);
+                background: var(--bg-surface);
+            }
+        }
+
+        &:active {
+            transform: scale(0.92);
         }
     }
 }
@@ -1427,9 +1468,16 @@
     font-weight: 600;
     color: var(--text-secondary);
 
-    &:hover {
-        color: var(--text-primary);
+    @media (hover: hover) {
+        &:hover {
+            color: var(--text-primary);
+            background: var(--bg-hover);
+        }
+    }
+
+    &:active {
         background: var(--bg-hover);
+        transform: scale(0.98);
     }
 }
 
@@ -1454,7 +1502,13 @@
     font-size: 0.8125rem;
     color: var(--text-muted);
 
-    &:hover {
+    @media (hover: hover) {
+        &:hover {
+            color: var(--accent-primary);
+        }
+    }
+
+    &:active {
         color: var(--accent-primary);
     }
 }

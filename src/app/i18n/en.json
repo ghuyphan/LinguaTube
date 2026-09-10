@@ -283,6 +283,7 @@
     "importError": "Failed to import vocabulary. Please check the file format.",
     "filterByLevel": "Filter by Level",
     "changeLevel": "Change Level",
+    "clickToCycle": "Click to cycle level",
     "deleteSuccess": "Deleted \"{{word}}\"",
     "addWord": "Add Word"
   },
