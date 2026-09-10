@@ -51,13 +51,16 @@ Voca includes a persistent, non-destructive Picture-in-Picture Miniplayer govern
   - Retains full visibility and functionality of the Spotlight URL bar and Desktop Vocab Card sidebar.
 - **Mobile Floating Docked Bar**:
   - Floats smoothly above the bottom navigation bar (`bottom: calc(var(--bottom-nav-total-height, 4rem) + 8px)`).
+  - **Blur Glass Aesthetic**: Uses frosted glassmorphic card styling (`rgba(var(--bg-card-rgb), 0.88)` with `backdrop-filter: blur(20px) saturate(180%)`) completely unified with the mobile bottom navigation bar.
+  - **Responsive Margin & Width Alignment**: Horizontally matched with `.container` and the "For You" feed card (`left: max(var(--space-sm), env(safe-area-inset-left)); right: max(var(--space-sm), env(safe-area-inset-right))` on mobile, `max-width: 32rem` on tablets).
   - 16:9 thumbnail (`80px × 45px`) with `border-radius: var(--border-radius-sm, 12px)` and `var(--bg-tertiary)` background matching the exact thumbnail design of the "For You" feed.
   - Full-width integer 2px progress bar spanning the entire bottom of the card (`left: 0; right: 0; width: 100%`) with rounded bottom corners.
   - Tapping thumbnail or text expands player back to watch mode; dedicated touch buttons toggle playback and close.
-- **Dedicated YouTube-Style Icons**:
+- **Dedicated YouTube-Style Icons & Cache-Busting**:
   - **Miniplayer / Minimize (`miniplayer`)**: Outlined video monitor screen with a docked miniplayer window in the bottom-right corner.
   - **Expand / Maximize (`expand`)**: Official YouTube watch page expand icon (open window frame with directional breakout arrow).
   - **Fullscreen (`fullscreen` / `fullscreen-exit`)**: Four corner brackets pointing outward (enter) / inward (exit).
+  - **Versioned Cache Invalidation**: Automatic release version query param (`assets/icons/sprite.svg?v=${version}#icon`) with `xlink:href` attribute ensures instant mobile browser cache refresh upon new deployments.
 
 ### 1.5. Bottom-Anchored Draggable Fullscreen Subtitles (Netflix & YouTube Style)
 When in fullscreen mode, subtitles are rendered in `FullscreenSubtitleComponent`:
@@ -563,11 +566,13 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
 
 ### 12.3. UI Integration & Level Filtering
 - **Video Header Pill (`VideoHeaderComponent`)**: Displays dynamic tier-colored badge (e.g. `[JLPT N3]`). During caption fetching, AI transcription generation, or deep linguistic evaluation, a shimmering skeleton pill (`.level-badge--skeleton`) is rendered to prevent showing stale level badges from previously watched videos while preserving layout stability (CLS = 0).
-- **Interactive Breakdown Popover**: Clicking the badge reveals:
-  - Difficulty tier label and description.
-  - Number of advanced grammar patterns detected.
-  - Speech velocity (e.g. `278 char/min` or `142 words/min`).
-  - Active proficiency framework badge.
+- **Interactive Evaluation Sheet/Modal (`VideoLevelDialogComponent`)**: Clicking the badge opens a responsive bottom sheet (mobile) or modal dialog (desktop) detailing:
+  - Framework level (JLPT/HSK/TOPIK/CEFR) and tier label (Beginner, Intermediate, etc.).
+  - Assessment source: whether detected via subtitle linguistic analysis or creator curriculum metadata.
+  - Number of advanced grammar patterns detected with individual breakdown tags (e.g. N5, N4, N3).
+  - Speech pace and velocity (e.g. `278 cpm` or `142 wpm`) with category tags (Clear/Slow, Natural, Fast Native).
+  - Transparent 3-pillar breakdown explaining how Voca analyzes grammar morphology, vocabulary & kanji complexity, and spoken cadence.
+  - Contextual immersion tip for learners (e.g. slowing playback to 0.85x or enabling bilingual subtitles).
 - **Learn Home Dashboard Integration (`VideoPageComponent`)**:
   - **YouTube-Style Home Discovery Feed**: Native YouTube-style video discovery grid featuring 16:9 responsive thumbnails, channel avatars, duration badges, and proficiency level indicators.
   - **Interleaved Recommended Playlists**: YouTube-style interleaving of community and curated playlists directly into the video feed (1 playlist every 4 videos) with stacked-shadow card styling.

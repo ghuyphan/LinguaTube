@@ -2224,45 +2224,40 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.1.20';
+    const mockVersion = req.query.mock_version || '1.1.24';
 
     res.json({
         version: mockVersion,
-        minSupportedVersion: mockForce ? '1.1.20' : '1.0.0',
-        buildDate: '2026-09-10',
+        minSupportedVersion: mockForce ? '1.1.24' : '1.0.0',
+        buildDate: '2026-09-11',
         forceUpdate: mockForce,
         maintenance: mockMaintenance,
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'YouTube-Style Infinite Scroll & Card Grid: Standardized History and Playlists to use automatic infinite scrolling with IntersectionObserver sentinels and modern multi-column card grids, identical to the "For You" feed',
-                'Theater Mode & Player Sizing: Added an expansive YouTube-style Theater Mode ("T" key) and responsive layout options for distraction-free subtitle immersion',
-                'Refined Thumbnail & Card Design: Polished 16:9 thumbnail cards with duration badges, watch progress, and hover play overlays while eliminating top shadow lines',
-                'Fluid Skeleton Wave Shimmer: Restored responsive multi-column skeleton wave gradient animations across thumbnails, avatars, and text lines during initial page loads'
+                'Mobile Miniplayer Blur Glass Design: Implemented frosted glassmorphic card styling unified with the bottom navigation bar, aligning responsive margins with the For You feed',
+                'Silent Feed Refresh: Removed intrusive toast notifications upon refreshing recommendations for a smooth, native-feeling pull-to-refresh experience',
+                'Mobile Icon Reliability: Added versioned SVG sprite cache busting and cross-browser xlink compatibility, ensuring fullscreen, miniplayer, and maximize icons render instantly on mobile Chrome'
             ],
             vi: [
-                'Cuộn vô tận & Lưới thẻ kiểu YouTube: Chuẩn hóa Lịch sử và Danh sách phát với tính năng tự động tải tiếp qua IntersectionObserver và lưới thẻ đa cột hiện đại, mượt mà tương tự nguồn cấp "Dành cho bạn"',
-                'Chế độ Rạp chiếu phim & Kích thước trình phát: Bổ sung Chế độ Rạp chiếu phim chuẩn YouTube (phím tắt "T") giúp trải nghiệm học phụ đề tập trung và rộng rãi hơn',
-                'Thiết kế thẻ & Ảnh thu nhỏ tinh gọn: Tinh chỉnh thẻ ảnh 16:9 với huy hiệu thời lượng, tiến trình xem và lớp phủ phát mượt mà, loại bỏ đường viền bóng thừa',
-                'Hiệu ứng Shimmer Skeleton mượt mà: Chuẩn hóa lưới khung xương tải trang với hiệu ứng sóng chuyển động gradient trên cả ảnh đại diện, thumbnail và tiêu đề'
+                'Giao diện Miniplayer Mobile Kính Mờ: Áp dụng thiết kế thẻ kính mờ (blur glass) đồng bộ với thanh điều hướng dưới, căn chỉnh lề vừa khít với nội dung Dành Cho Bạn',
+                'Làm Mới Bảng Tin Tự Nhiên: Loại bỏ thông báo toast khi làm mới video đề xuất, mang lại trải nghiệm kéo để làm mới mượt mà, không bị gián đoạn',
+                'Hiển Thị Biểu Tượng Ổn Định Trên Mobile: Bổ sung cơ chế cache-busting và tương thích xlink cho SVG sprite, giúp các biểu tượng toàn màn hình, thu nhỏ và phóng to hiển thị chính xác trên Chrome di động'
             ],
             ja: [
-                'YouTubeスタイルの無限スクロール＆カードグリッド：履歴とプレイリストに「おすすめ」同様のIntersectionObserver無限スクロールと複数カラムカードグリッドを導入し、クリック不要でスムーズな読み込みを実現',
-                'シアターモード＆プレイヤー表示切り替え：YouTube風のシアターモード（ショートカットキー "T"）を追加し、字幕学習に集中できるワイド表示に対応',
-                '洗練されたサムネイル＆カードデザイン：不要な上部境界線やシャドウを除去し、16:9サムネイル、再生時間バッジ、視聴進捗バー、ホバー再生オーバーレイを最適化',
-                '滑らかなスケルトン波形アニメーション：初回読み込み時のスケルトンカードにグラデーション波形アニメーションを適用し、複数カラムグリッドの表示崩れを解消'
+                'モバイルミニプレーヤーのフロストガラスUI: ボトムナビゲーションバーと統一されたすりガラスデザインを採用し、「おすすめ」フィードと余白を完全に一致させました',
+                'スムーズなフィード更新: おすすめ動画の更新時にトースト通知を表示しないようにし、自然で快適な引っ張って更新体験を実現しました',
+                'モバイルアイコン表示の最適化: SVGスプライトのバージョン管理とxlink互換性により、モバイルChromeで全画面・最小化・拡大アイコンが確実に表示されるように改善しました'
             ],
             ko: [
-                'YouTube 스타일 무한 스크롤 및 카드 그리드: 시청 기록 및 재생목록에 "맞춤 추천"과 동일한 IntersectionObserver 기반 자동 무한 스크롤을 도입하여 버튼 클릭 없이 매끄럽게 콘텐츠를 탐색',
-                '영화관 모드 및 플레이어 확장: 방해 요소 없이 자막 학습에 몰입할 수 있도록 YouTube 스타일 영화관 모드(단축키 "T") 및 반응형 레이아웃 추가',
-                '정돈된 썸네일 및 카드 디자인: 상단 그림자/경계선을 제거하고 16:9 썸네일, 재생 시간 배지, 시청 진행률 표시줄, 호버 재생 오버레이 정돈',
-                '유려한 스켈레톤 웨이브 애니메이션: 썸네일, 아바타, 텍스트 라인 전반에 반응형 멀티 컬럼 스켈레톤 그라디언트 웨이브 애니메이션 적용'
+                '모바일 미니플레이어 블러 글래스 디자인: 하단 내비게이션 바와 일관된 반투명 블러 글래스 스타일을 적용하고, 맞춤 추천 피드와 여백을 완벽하게 맞췄습니다',
+                '자연스러운 피드 새로고침: 추천 영상 새로고침 시 나타나던 토스트 알림을 제거하여 더욱 매끄럽고 방해 없는 당겨서 새로고침 경험을 제공합니다',
+                '모바일 아이콘 표시 안정화: SVG 스프라이트 버전 관리 및 xlink 호환성을 추가하여 모바일 Chrome에서 전체화면, 최소화, 확대 아이콘이 안정적으로 표시되도록 개선했습니다'
             ],
             zh: [
-                'YouTube风格无限滚动与卡片网格：在历史记录与播放列表页面全面引入与“推荐”一致的IntersectionObserver自动无限加载，无需手动点击即可流畅畅览',
-                '影院模式与播放器扩展：新增标准YouTube影院模式（快捷键 "T"），提供全宽沉浸式双语字幕学习体验',
-                '精致卡片与缩略图优化：彻底消除顶部突兀的阴影边框，优化16:9缩略图、时长徽章、观看进度条与悬浮播放遮罩',
-                '流畅骨架屏波浪动画：修复多列卡片骨架屏布局并注入渐变波浪微光动画，提供更加丝滑的初始加载过渡'
+                '移动端迷你播放器毛玻璃设计: 采用与底部导航栏一致的磨砂毛玻璃质感，并精确对齐“为你推荐”内容的页面边距',
+                '静默刷新推荐内容: 移除刷新推荐视频时的浮动提示，带来更加丝滑自然的下拉刷新体验',
+                '移动端图标显示修复: 引入带有版本控制的SVG精灵图缓存刷新与xlink兼容性，确保全屏、最小化和最大化图标在移动端Chrome上正常呈现'
             ]
         }
     });

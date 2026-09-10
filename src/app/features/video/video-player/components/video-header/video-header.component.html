@@ -5,7 +5,7 @@
         <div class="video-meta-row">
             <span class="video-channel" [attr.title]="channel()">{{ channel() }}</span>
             @if (levelInfo(); as lvl) {
-            <span class="level-badge" [attr.data-tier]="lvl.tier" (click)="toggleLevelPopover($event)" role="button" tabindex="0" [attr.title]="lvl.level">
+            <span class="level-badge" [attr.data-tier]="lvl.tier" (click)="openLevelSheet($event)" role="button" tabindex="0" [attr.title]="lvl.level">
                 {{ lvl.level }}
             </span>
             } @else if (isLevelLoading()) {
@@ -14,31 +14,6 @@
             </span>
             }
         </div>
-
-        @if (showLevelPopover() && levelInfo(); as lvl) {
-        <div class="level-popover" (click)="$event.stopPropagation()">
-            <div class="level-popover__header">
-                <span class="level-popover__title">{{ lvl.level }}</span>
-                <span class="level-popover__tier" [attr.data-tier]="lvl.tier">
-                    {{ i18n.t('level.' + lvl.tier) || lvl.tier }}
-                </span>
-            </div>
-            <div class="level-popover__stats">
-                @if (lvl.grammarCount > 0) {
-                <div class="stat-row">
-                    <span class="label">{{ i18n.t('level.grammarPoints') || 'Grammar Patterns' }}:</span>
-                    <span class="value">{{ lvl.grammarCount }}</span>
-                </div>
-                }
-                @if (lvl.speechRateCpm) {
-                <div class="stat-row">
-                    <span class="label">{{ i18n.t('level.speechRate') || 'Speed' }}:</span>
-                    <span class="value">{{ lvl.speechRateCpm }} cpm</span>
-                </div>
-                }
-            </div>
-        </div>
-        }
     </div>
     <div class="video-actions">
         <button type="button" class="btn-icon btn-header-action" (click)="shareVideo.emit()"
@@ -65,3 +40,17 @@
     </div>
     }
 </div>
+
+@if (levelInfo(); as lvl) {
+@defer (when showLevelSheet()) {
+<app-bottom-sheet
+    [isOpen]="showLevelSheet()"
+    [title]="i18n.t('level.dialogTitle') || 'Proficiency Level'"
+    [showCloseButton]="true"
+    maxWidth="460px"
+    (closed)="showLevelSheet.set(false)"
+>
+    <app-video-level-dialog [levelInfo]="lvl" (dismissed)="showLevelSheet.set(false)" />
+</app-bottom-sheet>
+}
+}

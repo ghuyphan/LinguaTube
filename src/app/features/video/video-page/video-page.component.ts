@@ -702,7 +702,6 @@ export class VideoPageComponent implements OnInit {
           ]);
 
       await Promise.all([fetchPromise, delayPromise]);
-      this.toast.show(this.i18n.t('playlist.feedUpdated') || 'Recommendations updated', { type: 'success', icon: 'refresh-cw', duration: 2000 });
     } catch {
       this.toast.show(this.i18n.t('common.error'), { type: 'error', duration: 2500 });
     } finally {

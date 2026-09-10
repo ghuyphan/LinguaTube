@@ -170,7 +170,7 @@ graph TD
 #### VideoPlayerComponent (`video-player/`)
 - Encapsulates the official YouTube IFrame API via `YoutubeService`.
 - **Custom Player Controls Overlay**:
-  - `VideoHeaderComponent`: Video title, channel info, proficiency level badge, and header action buttons (`Share Video`, `Save to Playlist`, `Close Video`).
+  - `VideoHeaderComponent`: Video title, channel info, proficiency level badge, and header action buttons (`Share Video`, `Save to Playlist`, `Minimize Video`). Clicking the proficiency level badge opens the dedicated `VideoLevelDialogComponent` sheet/modal.
   - `CenterControlsComponent`: Play/pause toggle, $\pm 5$s seek buttons with smooth animation.
   - `ProgressBarComponent`: Custom slider with buffered progress indicator, hover time preview, and cue segment markers.
   - `VideoBottomBarComponent`: Time display, playback speed selector (desktop), dual-subtitles toggle, audio volume hover slider (desktop-only), settings trigger, and fullscreen trigger.
@@ -673,7 +673,7 @@ To maintain complete visual, structural, and functional harmony across all prima
   - Tier-colored pill badge (`.video-level-pill` / `.level-badge`) with hover/click trigger and `flex-shrink: 0` layout protection.
   - Single-line channel name (`.video-channel`) with responsive `max-width` truncation and ellipsis, preventing long channel names from wrapping or pushing the proficiency level badge out of view.
   - Shimmering skeleton state (`.level-badge--skeleton`) with `levelShimmer` animation during subtitle fetching, AI transcription, or deep linguistic assessment to prevent showing stale previous levels while preventing layout shift.
-  - Dynamic breakdown popover (`.video-level-popover`) detailing framework (JLPT/HSK/TOPIK/CEFR), grammar complexity count, and speech velocity.
+  - Interactive evaluation sheet/modal (`VideoLevelDialogComponent`) hosted in `<app-bottom-sheet>` detailing framework (JLPT/HSK/TOPIK/CEFR), grammar complexity count with breakdown tags, speech pace (CPM/WPM), evaluation pillars explanation, and personalized immersion tips.
 - **History Cards (`HistoryListComponent`)**:
   - Pill badge (`.level-badge--pill`) visually demarcating difficulty directly on thumbnails and list cards.
 - **Sidebar Header Stats Bar (`SidebarComponent`) & Mobile More Menu / Settings Sheet (`AppComponent`, `SettingsSheetComponent`)**:

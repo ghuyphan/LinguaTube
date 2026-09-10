@@ -31,4 +31,10 @@ describe('VideoHeaderComponent', () => {
     expect(channelEl.textContent.trim()).toBe('Super Long Channel Name That Needs Ellipsis');
     expect(channelEl.getAttribute('title')).toBe('Super Long Channel Name That Needs Ellipsis');
   });
+
+  it('should open level sheet when openLevelSheet is called', () => {
+    expect(component.showLevelSheet()).toBeFalse();
+    component.openLevelSheet();
+    expect(component.showLevelSheet()).toBeTrue();
+  });
 });

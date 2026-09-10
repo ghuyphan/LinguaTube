@@ -19,41 +19,36 @@ export interface ReleaseInfo {
 }
 
 export const CURRENT_RELEASE_INFO: ServerVersionInfo = {
-    version: '1.1.22',
+    version: '1.1.24',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-11',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Dedicated YouTube-Style Icons: Integrated authentic Picture-in-Picture minimize and watch page expand icons, eliminating generic fullscreen conflation',
-            'Cohesive Design System Radii: Harmonized miniplayer card corners and mobile 16:9 thumbnail styling directly with the For You feed tokens',
-            'Full-Width Mobile Progress Bar: Extended the progress track across the entire card bottom with integer pixel rendering, eliminating asymmetrical lines and shadow artifacts',
-            'Streamlined Watch Header: Removed redundant close button from the video header in favor of non-destructive minimization and miniplayer-exclusive dismissal'
+            'Mobile Miniplayer Blur Glass Design: Implemented frosted glassmorphic card styling unified with the bottom navigation bar, aligning responsive margins with the For You feed',
+            'Silent Feed Refresh: Removed intrusive toast notifications upon refreshing recommendations for a smooth, native-feeling pull-to-refresh experience',
+            'Mobile Icon Reliability: Added versioned SVG sprite cache busting and cross-browser xlink compatibility, ensuring fullscreen, miniplayer, and maximize icons render instantly on mobile Chrome'
         ],
         vi: [
-            'Biểu tượng chuẩn phong cách YouTube: Tích hợp bộ biểu tượng chuyên biệt gồm thu nhỏ PiP và mở rộng xem tiếp, tách biệt hoàn toàn với biểu tượng toàn màn hình',
-            'Đồng bộ bo góc và khung hình thu nhỏ: Chuẩn hóa góc bo của thẻ miniplayer và thumbnail 16:9 trên di động theo đúng hệ thống thiết kế của danh sách Dành cho bạn',
-            'Thanh tiến trình toàn chiều rộng: Kéo dài thanh tiến trình phủ trọn vẹn mép dưới thẻ miniplayer di động với nét vẽ chuẩn xác, xóa bỏ hiện tượng bóng đổ lệch',
-            'Tối giản tiêu đề trình phát: Bỏ nút đóng video trùng lặp ở tiêu đề để ưu tiên thu nhỏ tiện lợi, chỉ đóng hẳn khi người dùng chủ động tắt miniplayer'
+            'Giao diện Miniplayer Mobile Kính Mờ: Áp dụng thiết kế thẻ kính mờ (blur glass) đồng bộ với thanh điều hướng dưới, căn chỉnh lề vừa khít với nội dung Dành Cho Bạn',
+            'Làm Mới Bảng Tin Tự Nhiên: Loại bỏ thông báo toast khi làm mới video đề xuất, mang lại trải nghiệm kéo để làm mới mượt mà, không bị gián đoạn',
+            'Hiển Thị Biểu Tượng Ổn Định Trên Mobile: Bổ sung cơ chế cache-busting và tương thích xlink cho SVG sprite, giúp các biểu tượng toàn màn hình, thu nhỏ và phóng to hiển thị chính xác trên Chrome di động'
         ],
         ja: [
-            'YouTube仕様の専用アイコン：全画面表示アイコンとの混同を解消し、PiP最小化と視聴画面復元にYouTube準拠の専用アイコンを採用',
-            '統一された角丸とサムネイルデザイン：ミニプレーヤーのカード角丸とモバイル16:9サムネイルのスタイリングを「おすすめ」フィードのトークンと完全統一',
-            '全幅モバイルプログレスバー：モバイルミニプレーヤーの進行状況バーをカード全幅に均一配置し、不要な影や非対称な描画を解消',
-            'ヘッダー操作の最適化：動画ヘッダーから重複していた閉じるボタンを削除し、スムーズな最小化とミニプレーヤー上での確実な終了操作に統一'
+            'モバイルミニプレーヤーのフロストガラスUI: ボトムナビゲーションバーと統一されたすりガラスデザインを採用し、「おすすめ」フィードと余白を完全に一致させました',
+            'スムーズなフィード更新: おすすめ動画の更新時にトースト通知を表示しないようにし、自然で快適な引っ張って更新体験を実現しました',
+            'モバイルアイコン表示の最適化: SVGスプライトのバージョン管理とxlink互換性により、モバイルChromeで全画面・最小化・拡大アイコンが確実に表示されるように改善しました'
         ],
         ko: [
-            'YouTube 스타일 전용 아이콘: 전체화면 아이콘과의 혼동을 없애고 PiP 최소화 및 시청 화면 복원 전용 아이콘 적용',
-            '통일된 모서리 곡률 및 썸네일 스타일: 미니플레이어 카드 모서리와 모바일 16:9 썸네일을 추천 피드의 디자인 시스템 토큰과 완벽 일치',
-            '전폭 모바일 진행률 표시줄: 모바일 미니플레이어 하단 전체를 아우르는 정밀한 2px 진행률 바를 적용하여 부자연스러운 그림자 및 잘림 현상 제거',
-            '영상 헤더 인터페이스 간소화: 헤더에서 중복 닫기 버튼을 제거하여 비파괴적 최소화를 장려하고, 미니플레이어에서만 명확한 닫기 지원'
+            '모바일 미니플레이어 블러 글래스 디자인: 하단 내비게이션 바와 일관된 반투명 블러 글래스 스타일을 적용하고, 맞춤 추천 피드와 여백을 완벽하게 맞췄습니다',
+            '자연스러운 피드 새로고침: 추천 영상 새로고침 시 나타나던 토스트 알림을 제거하여 더욱 매끄럽고 방해 없는 당겨서 새로고침 경험을 제공합니다',
+            '모바일 아이콘 표시 안정화: SVG 스프라이트 버전 관리 및 xlink 호환성을 추가하여 모바일 Chrome에서 전체화면, 최소화, 확대 아이콘이 안정적으로 표시되도록 개선했습니다'
         ],
         zh: [
-            '专属YouTube风格图标：采用标准的画中画最小化与观看页展开专属图标，彻底解决与全屏图标混淆的问题',
-            '统一圆角与缩略图样式：迷你播放器卡片圆角与手机端16:9缩略图严格对齐“为你推荐”信息流的设计规范',
-            '全幅手机端进度条：将进度条延伸至卡片底部全宽并精确贴合圆角，彻底消除不对称线条与阴影瑕疵',
-            '精简视频顶部操作栏：移除顶部操作栏中重复的关闭按钮，全面拥抱无损最小化与迷你播放器专有退出'
+            '移动端迷你播放器毛玻璃设计: 采用与底部导航栏一致的磨砂毛玻璃质感，并精确对齐“为你推荐”内容的页面边距',
+            '静默刷新推荐内容: 移除刷新推荐视频时的浮动提示，带来更加丝滑自然的下拉刷新体验',
+            '移动端图标显示修复: 引入带有版本控制的SVG精灵图缓存刷新与xlink兼容性，确保全屏、最小化和最大化图标在移动端Chrome上正常呈现'
         ]
     }
 };

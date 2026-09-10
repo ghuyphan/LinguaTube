@@ -379,7 +379,7 @@ sequenceDiagram
         Edge-->>LevelService: 200 OK { success: true }
         LevelService-->>Player: Return Resolved LevelInfo
     end
-    Player->>Player: Update VideoHeaderComponent Badge & Popover Breakdown
+    Player->>Player: Update VideoHeaderComponent Badge & Level Sheet Breakdown
 ```
 
 ---

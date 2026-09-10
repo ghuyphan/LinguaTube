@@ -1,0 +1,116 @@
+<div class="video-level-dialog">
+  <!-- Header / Hero Section -->
+  <div class="header-section">
+    <div class="level-hero-badge" [attr.data-tier]="levelInfo().tier">
+      <span class="hero-level-text">{{ levelInfo().level }}</span>
+    </div>
+
+    <div class="title-group">
+      <h2 class="tier-title">{{ tierLabel() }}</h2>
+      <div class="source-row">
+        @if (isLinguistic()) {
+        <span class="source-pill source-pill--linguistics">
+          <app-icon name="sparkles" [size]="14" class="source-icon" />
+          <span>{{ i18n.t('level.sourceLinguistics') || 'Analyzed from Subtitles' }}</span>
+        </span>
+        } @else {
+        <span class="source-pill source-pill--metadata">
+          <app-icon name="book-open" [size]="14" class="source-icon" />
+          <span>{{ i18n.t('level.sourceMetadata') || 'Curriculum Metadata' }}</span>
+        </span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagnostics Grid -->
+  @if (levelInfo().grammarCount > 0 || speechPaceInfo()) {
+  <div class="diagnostics-grid">
+    @if (levelInfo().grammarCount > 0) {
+    <div class="stat-card">
+      <div class="stat-card__top">
+        <div class="stat-icon-wrap stat-icon--grammar">
+          <app-icon name="layers" [size]="18" />
+        </div>
+        <span class="stat-value">{{ levelInfo().grammarCount }}</span>
+      </div>
+      <span class="stat-label">{{ i18n.t('level.grammarPatternsDetected') || 'Grammar Patterns' }}</span>
+
+      @if (sortedBreakdown().length > 0) {
+      <div class="breakdown-chips">
+        @for (item of sortedBreakdown(); track item.level) {
+        <span class="chip">{{ item.level }}: {{ item.count }}</span>
+        }
+      </div>
+      }
+    </div>
+    }
+
+    @if (speechPaceInfo(); as pace) {
+    <div class="stat-card">
+      <div class="stat-card__top">
+        <div class="stat-icon-wrap stat-icon--pace">
+          <app-icon name="zap" [size]="18" />
+        </div>
+        <span class="stat-value">{{ pace.cpm }} <small>{{ pace.unit }}</small></span>
+      </div>
+      <span class="stat-label">{{ i18n.t('level.speechCadence') || 'Spoken Pace' }}</span>
+      <div class="pace-badge-wrap">
+        <span class="pace-tag" [class]="pace.paceClass">{{ pace.tag }}</span>
+      </div>
+    </div>
+    }
+  </div>
+  }
+
+  <!-- How Voca Evaluates Difficulty -->
+  <div class="info-box">
+    <h3 class="info-box__heading">{{ i18n.t('level.howEvaluated') || 'How Voca Evaluates Difficulty' }}</h3>
+
+    <div class="info-row">
+      <div class="info-icon-wrap">
+        <app-icon name="book-open" [size]="16" />
+      </div>
+      <div class="info-content">
+        <strong>{{ i18n.t('level.howGrammarTitle') || 'Grammar Morphology' }}</strong>
+        <p>{{ i18n.t('level.howGrammarDesc') || 'Tokenizes subtitle sentences to detect patterns across JLPT, HSK, TOPIK, and CEFR standards.' }}</p>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="info-icon-wrap">
+        <app-icon name="type" [size]="16" />
+      </div>
+      <div class="info-content">
+        <strong>{{ i18n.t('level.howVocabTitle') || 'Vocabulary & Characters' }}</strong>
+        <p>{{ i18n.t('level.howVocabDesc') || 'Measures kanji compounds, formal idioms, and vocabulary difficulty levels.' }}</p>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="info-icon-wrap">
+        <app-icon name="clock" [size]="16" />
+      </div>
+      <div class="info-content">
+        <strong>{{ i18n.t('level.howCadenceTitle') || 'Speech Speed (CPM)' }}</strong>
+        <p>{{ i18n.t('level.howCadenceDesc') || 'Calculates characters spoken per minute to gauge real listening comprehension challenge.' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Immersion Tip -->
+  <div class="tip-card">
+    <div class="tip-icon-wrap">
+      <app-icon name="lightbulb" [size]="16" />
+    </div>
+    <div class="tip-content">
+      <strong>{{ i18n.t('level.immersionTipTitle') || 'Immersion Tip' }}</strong>
+      <p>{{ i18n.t('level.immersionTipPace') || 'If the speech feels too fast, try adjusting playback speed to 0.85x or enabling dual bilingual subtitles.' }}</p>
+    </div>
+  </div>
+
+  <!-- Dismiss Button -->
+  <button type="button" class="btn btn-primary dismiss-btn" (click)="dismissed.emit()">
+    {{ i18n.t('subtitle.gotIt') || 'Got it' }}
+  </button>
+</div>
