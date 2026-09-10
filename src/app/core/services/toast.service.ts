@@ -36,6 +36,9 @@ export class ToastService {
 
     private dismissTimer: ReturnType<typeof setTimeout> | null = null;
     private exitTimer: ReturnType<typeof setTimeout> | null = null;
+    private startTime = 0;
+    private remainingTime = 0;
+    private isPaused = false;
 
     /**
      * Show a new toast notification. Replaces any active toast smoothly.
@@ -61,6 +64,9 @@ export class ToastService {
             position
         };
 
+        this.startTime = Date.now();
+        this.remainingTime = duration;
+        this.isPaused = false;
         this.isExiting.set(false);
         this.currentToast.set(item);
 
@@ -71,6 +77,33 @@ export class ToastService {
         }
 
         return id;
+    }
+
+    /**
+     * Pause the auto-dismiss timer (e.g. on mouse hover or touch press)
+     */
+    pause(): void {
+        if (this.isPaused || !this.currentToast() || this.isExiting()) return;
+        if (this.dismissTimer) {
+            clearTimeout(this.dismissTimer);
+            this.dismissTimer = null;
+        }
+        const elapsed = Date.now() - this.startTime;
+        this.remainingTime = Math.max(800, this.remainingTime - elapsed);
+        this.isPaused = true;
+    }
+
+    /**
+     * Resume the auto-dismiss timer (e.g. on mouse leave or touch release)
+     */
+    resume(): void {
+        if (!this.isPaused || !this.currentToast() || this.isExiting()) return;
+        this.isPaused = false;
+        this.startTime = Date.now();
+        const id = this.currentToast()!.id;
+        this.dismissTimer = setTimeout(() => {
+            this.dismiss(id);
+        }, this.remainingTime);
     }
 
     /**
@@ -129,6 +162,7 @@ export class ToastService {
             clearTimeout(this.exitTimer);
             this.exitTimer = null;
         }
+        this.isPaused = false;
     }
 
     private getDefaultIcon(type: ToastType): IconName {

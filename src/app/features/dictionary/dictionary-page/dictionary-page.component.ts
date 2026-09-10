@@ -417,6 +417,55 @@ import { SettingsService, I18nService } from '../../../core/services';
       align-items: center;
       gap: 6px;
 
+      .filter-chip {
+        height: 36px;
+        min-height: 36px;
+        max-height: 36px;
+        box-sizing: border-box;
+        padding: 0 14px;
+        font-size: 0.8125rem;
+        border-radius: var(--border-radius-pill);
+        border: 1px solid var(--border-color);
+        background: var(--bg-surface);
+        color: var(--text-secondary);
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+        user-select: none;
+        transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+
+        app-icon {
+          color: var(--text-muted);
+        }
+
+        @media (hover: hover) {
+          &:hover:not(.active) {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            border-color: var(--border-color-hover, var(--text-muted));
+
+            app-icon {
+              color: var(--text-primary);
+            }
+          }
+        }
+
+        &.active {
+          background: rgba(var(--accent-primary-rgb), 0.15);
+          color: var(--accent-primary);
+          border-color: var(--accent-primary);
+          font-weight: 600;
+          box-shadow: none;
+
+          app-icon {
+            color: var(--accent-primary);
+          }
+        }
+      }
+
       .tab-badge {
         display: inline-flex;
         align-items: center;

@@ -20,7 +20,7 @@ Voca operates as a distributed, high-performance edge application. Mobile applic
                    ▼                                   ▼
    ┌───────────────────────────────┐   ┌───────────────────────────────┐
    │    Cloudflare Edge API        │   │        PocketBase BaaS        │
-   │    https://lingua-tube.pages.dev    │   │    https://voca.pockethost.io │
+   │    https://voca.study    │   │    https://voca.pockethost.io │
    │                               │   │                               │
    │  • Subtitles (Native & Gladia)│   │  • User Authentication (JWT)  │
    │  • Dual Subtitles (R2 Cache)  │   │  • Vocabulary SRS Flashcards  │
@@ -35,7 +35,7 @@ Voca operates as a distributed, high-performance edge application. Mobile applic
 
 | Environment | Edge API Base URL | PocketBase BaaS URL | Purpose |
 | :--- | :--- | :--- | :--- |
-| **Production** | `https://lingua-tube.pages.dev` | `https://voca.pockethost.io` | Live Cloudflare Pages edge network & cloud DB |
+| **Production** | `https://voca.study` | `https://voca.pockethost.io` | Live Cloudflare Pages edge network & cloud DB |
 | **Local Dev** | `http://<DEV_IP>:3001` | `https://voca.pockethost.io` | Local Express dev server with live Innertube caption scraper |
 
 ---
@@ -50,7 +50,7 @@ When integrating Voca into a Flutter codebase using **Cursor AI** (or pasting in
 You are pair programming on the Voca Flutter Mobile App. Follow these non-negotiable rules:
 
 1. DUAL BACKEND ARCHITECTURE:
-   - All public edge operations (transcripts, tokenization, dictionaries, video metadata, diamonds, payments, version) MUST route to the Cloudflare Edge API: `https://lingua-tube.pages.dev`.
+   - All public edge operations (transcripts, tokenization, dictionaries, video metadata, diamonds, payments, version) MUST route to the Cloudflare Edge API: `https://voca.study`.
    - All user data persistence (auth, vocabulary cards, playlists, streaks, history, gamification) MUST route to PocketBase: `https://voca.pockethost.io`.
 
 2. MANDATORY USER-AGENT HEADER (ANTI-BOT BYPASS):
@@ -96,24 +96,24 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
 
 | # | Method | Full Edge Endpoint URL | Auth? | Rate Limit | Purpose |
 |:---:|:---:|:---|:---:|:---:|:---|
-| 1 | `POST` | `https://lingua-tube.pages.dev/api/transcript` | Opt | 20–80/hr | Fetch native/cached transcripts or queue Gladia ASR |
-| 2 | `GET` | `https://lingua-tube.pages.dev/api/transcript` | No | None | Serverless edge health & storage status check |
-| 3 | `POST` | `https://lingua-tube.pages.dev/api/dual-subtitles` | Opt | 5–60/hr | Fetch or generate synchronized dual-language subtitles |
-| 4 | `GET` | `https://lingua-tube.pages.dev/api/dict` | No | 100/hr | Multi-source dictionary lookup (`?word=&from=&to=`) |
-| 5 | `POST` | `https://lingua-tube.pages.dev/api/tokenize/{lang}` | No | 100/hr | Single-phrase morphological segmentation (`ja,zh,ko,en`) |
-| 6 | `POST` | `https://lingua-tube.pages.dev/api/tokenize-batch/{lang}` | Opt | 60–1500/hr | Batch tokenize up to 800 subtitle cues (`videoId` req.) |
-| 7 | `GET` | `https://lingua-tube.pages.dev/api/translate/{src}/{tgt}/{text}` | No | 100/hr | Single phrase translation proxy |
-| 8 | `POST` | `https://lingua-tube.pages.dev/api/translate/batch` | No | 100/hr | Batch translation for up to 50 items with KV cache |
-| 9 | `GET` | `https://lingua-tube.pages.dev/api/video-info` | No | None | Video title, duration, languages, avatar & level map |
-| 10 | `GET` | `https://lingua-tube.pages.dev/api/recommended-videos` | No | None | Pre-cached videos (`?lang=&tier=&limit=&offset=`) |
-| 11 | `POST` | `https://lingua-tube.pages.dev/api/video-level` | No | 60/hr | Submit computed JLPT / HSK / TOPIK / CEFR difficulty |
-| 12 | `GET` | `https://lingua-tube.pages.dev/api/diamonds` | Opt | 60/min | Check AI Diamond credits, max capacity, regen timer |
-| 13 | `GET` | `https://lingua-tube.pages.dev/api/leaderboard` | No | None | Global learner rankings & live user rank |
-| 14 | `POST` | `https://lingua-tube.pages.dev/api/leaderboard` | Opt | 30/hr | Synchronize user XP, streak, and badges |
-| 15 | `POST` | `https://lingua-tube.pages.dev/api/payment/create-order` | **Req** | 10/10m | Generate VietQR payOS open banking checkout info |
-| 16 | `GET` | `https://lingua-tube.pages.dev/api/payment/check-status` | No | 60/min | Poll payment confirmation status (`?orderCode=`) |
-| 17 | `GET` | `https://lingua-tube.pages.dev/api/version` | No | None | App version, forceUpdate, maintenance & release notes |
-| 18 | `ALL` | `https://lingua-tube.pages.dev/proxy/{service}/{path}` | No | 100/hr | SSRF-safe reverse proxy (`jisho`, `jotoba`, etc.) |
+| 1 | `POST` | `https://voca.study/api/transcript` | Opt | 20–80/hr | Fetch native/cached transcripts or queue Gladia ASR |
+| 2 | `GET` | `https://voca.study/api/transcript` | No | None | Serverless edge health & storage status check |
+| 3 | `POST` | `https://voca.study/api/dual-subtitles` | Opt | 5–60/hr | Fetch or generate synchronized dual-language subtitles |
+| 4 | `GET` | `https://voca.study/api/dict` | No | 100/hr | Multi-source dictionary lookup (`?word=&from=&to=`) |
+| 5 | `POST` | `https://voca.study/api/tokenize/{lang}` | No | 100/hr | Single-phrase morphological segmentation (`ja,zh,ko,en`) |
+| 6 | `POST` | `https://voca.study/api/tokenize-batch/{lang}` | Opt | 60–1500/hr | Batch tokenize up to 800 subtitle cues (`videoId` req.) |
+| 7 | `GET` | `https://voca.study/api/translate/{src}/{tgt}/{text}` | No | 100/hr | Single phrase translation proxy |
+| 8 | `POST` | `https://voca.study/api/translate/batch` | No | 100/hr | Batch translation for up to 50 items with KV cache |
+| 9 | `GET` | `https://voca.study/api/video-info` | No | None | Video title, duration, languages, avatar & level map |
+| 10 | `GET` | `https://voca.study/api/recommended-videos` | No | None | Pre-cached videos (`?lang=&tier=&limit=&offset=`) |
+| 11 | `POST` | `https://voca.study/api/video-level` | No | 60/hr | Submit computed JLPT / HSK / TOPIK / CEFR difficulty |
+| 12 | `GET` | `https://voca.study/api/diamonds` | Opt | 60/min | Check AI Diamond credits, max capacity, regen timer |
+| 13 | `GET` | `https://voca.study/api/leaderboard` | No | None | Global learner rankings & live user rank |
+| 14 | `POST` | `https://voca.study/api/leaderboard` | Opt | 30/hr | Synchronize user XP, streak, and badges |
+| 15 | `POST` | `https://voca.study/api/payment/create-order` | **Req** | 10/10m | Generate VietQR payOS open banking checkout info |
+| 16 | `GET` | `https://voca.study/api/payment/check-status` | No | 60/min | Poll payment confirmation status (`?orderCode=`) |
+| 17 | `GET` | `https://voca.study/api/version` | No | None | App version, forceUpdate, maintenance & release notes |
+| 18 | `ALL` | `https://voca.study/proxy/{service}/{path}` | No | 100/hr | SSRF-safe reverse proxy (`jisho`, `jotoba`, etc.) |
 
 ---
 
@@ -124,7 +124,7 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
 #### `POST /api/transcript`
 Fetches pre-cached transcripts from Cloudflare R2 (`transcripts/{videoId}/{lang}.json`), scrapes native YouTube timed text, or queues Gladia AI audio speech-to-text.
 
-- **URL:** `https://lingua-tube.pages.dev/api/transcript`
+- **URL:** `https://voca.study/api/transcript`
 - **Request Body:**
   ```json
   {
@@ -185,7 +185,7 @@ Fetches pre-cached transcripts from Cloudflare R2 (`transcripts/{videoId}/{lang}
 #### `POST /api/dual-subtitles`
 Generates or retrieves dual-language synchronized subtitles cached in Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`).
 
-- **URL:** `https://lingua-tube.pages.dev/api/dual-subtitles`
+- **URL:** `https://voca.study/api/dual-subtitles`
 - **Request Body:**
   ```json
   {
@@ -227,7 +227,7 @@ Generates or retrieves dual-language synchronized subtitles cached in Cloudflare
 #### `GET /api/dict`
 Unified multi-source dictionary lookup with tiered in-memory LRU positive/negative caching and automated translation fallback.
 
-- **URL:** `https://lingua-tube.pages.dev/api/dict`
+- **URL:** `https://voca.study/api/dict`
 - **Query Parameters:**
   - `word` (string, required): Word or surface token (e.g. `食べる`, `你好`, `한국어`, `break down`).
   - `from` (string, required): Learning language (`ja`, `zh`, `ko`, `en`).
@@ -283,13 +283,13 @@ Unified multi-source dictionary lookup with tiered in-memory LRU positive/negati
 #### `POST /api/tokenize/:lang`
 Tokenizes a single text string into words, readings, romanizations, and grammatical properties.
 
-- **URL:** `https://lingua-tube.pages.dev/api/tokenize/{lang}` (`ja`, `ko`, `zh`, `en`)
+- **URL:** `https://voca.study/api/tokenize/{lang}` (`ja`, `ko`, `zh`, `en`)
 - **Request Body:** `{ "text": "日本語を勉強しています。" }`
 
 #### `POST /api/tokenize-batch/:lang`
 Batch tokenizes an entire video's subtitles (up to 800 lines) with a single atomic KV write.
 
-- **URL:** `https://lingua-tube.pages.dev/api/tokenize-batch/{lang}`
+- **URL:** `https://voca.study/api/tokenize-batch/{lang}`
 - **Request Body:**
   ```json
   {
@@ -353,7 +353,7 @@ Batch tokenizes an entire video's subtitles (up to 800 lines) with a single atom
 ### 4.5. Video Discovery & Levels
 
 #### `GET /api/video-info`
-- **URL:** `https://lingua-tube.pages.dev/api/video-info?videoId=dQw4w9WgXcQ`
+- **URL:** `https://voca.study/api/video-info?videoId=dQw4w9WgXcQ`
 - **Success Response (200 OK):**
   ```json
   {
@@ -375,7 +375,7 @@ Batch tokenizes an entire video's subtitles (up to 800 lines) with a single atom
 #### `GET /api/recommended-videos`
 Returns verified videos with pre-cached transcripts from Cloudflare D1/R2 (<50ms loading latency, zero AI diamond cost).
 
-- **URL:** `https://lingua-tube.pages.dev/api/recommended-videos`
+- **URL:** `https://voca.study/api/recommended-videos`
 - **Query Parameters:**
   - `lang` (optional, default `ja`): Target language (`ja`, `ko`, `zh`, `en`).
   - `tier` (optional): Proficiency tier filter (`beginner`, `elementary`, `intermediate`, `upper_intermediate`, `advanced`).
@@ -407,7 +407,7 @@ Returns verified videos with pre-cached transcripts from Cloudflare D1/R2 (<50ms
   ```
 
 #### `POST /api/video-level`
-- **URL:** `https://lingua-tube.pages.dev/api/video-level`
+- **URL:** `https://voca.study/api/video-level`
 - **Request Body:**
   ```json
   {
@@ -424,7 +424,7 @@ Returns verified videos with pre-cached transcripts from Cloudflare D1/R2 (<50ms
 ### 4.6. Diamonds, Leaderboard & Versioning
 
 #### `GET /api/diamonds`
-- **URL:** `https://lingua-tube.pages.dev/api/diamonds`
+- **URL:** `https://voca.study/api/diamonds`
 - **Headers:** `Authorization: Bearer <PB_TOKEN>` (optional)
 - **Response:**
   ```json
@@ -441,7 +441,7 @@ Returns verified videos with pre-cached transcripts from Cloudflare D1/R2 (<50ms
 
 #### `GET /api/version`
 Used on mobile app launch to check for updates, breaking changes, or maintenance mode.
-- **URL:** `https://lingua-tube.pages.dev/api/version`
+- **URL:** `https://voca.study/api/version`
 - **Response:**
   ```json
   {
@@ -465,7 +465,7 @@ Used on mobile app launch to check for updates, breaking changes, or maintenance
 ### 4.7. VietQR payOS Open Banking Payments
 
 #### `POST /api/payment/create-order`
-- **URL:** `https://lingua-tube.pages.dev/api/payment/create-order`
+- **URL:** `https://voca.study/api/payment/create-order`
 - **Headers:** `Authorization: Bearer <PB_TOKEN>` (Required)
 - **Body:**
   ```json
@@ -492,7 +492,7 @@ Used on mobile app launch to check for updates, breaking changes, or maintenance
   ```
 
 #### `GET /api/payment/check-status`
-- **URL:** `https://lingua-tube.pages.dev/api/payment/check-status?orderCode=83920145`
+- **URL:** `https://voca.study/api/payment/check-status?orderCode=83920145`
 - **Response:** `{ "success": true, "status": "PENDING" }` or `{ "success": true, "status": "PAID" }`
 
 ---
@@ -906,7 +906,7 @@ import 'package:dio/dio.dart';
 import '../models/voca_models.dart';
 
 class VocaApiClient {
-  static const String baseUrl = 'https://lingua-tube.pages.dev';
+  static const String baseUrl = 'https://voca.study';
   late final Dio _dio;
 
   VocaApiClient({String? authToken}) {

@@ -1,4 +1,4 @@
-# Robots.txt for Voca (https://lingua-tube.pages.dev)
+# Robots.txt for Voca (https://voca.study)
 User-agent: *
 Allow: /
 Allow: /video
@@ -12,4 +12,4 @@ Disallow: /api/
 Disallow: /proxy/
 
 # Sitemap location
-Sitemap: https://lingua-tube.pages.dev/sitemap.xml
+Sitemap: https://voca.study/sitemap.xml

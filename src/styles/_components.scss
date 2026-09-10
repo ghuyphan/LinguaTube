@@ -20,9 +20,9 @@
 }
 
 .filter-chip {
-    height: 34px;
-    min-height: 34px;
-    max-height: 34px;
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
     box-sizing: border-box;
     display: inline-flex;
     align-items: center;
@@ -35,23 +35,34 @@
     line-height: 1;
     background: var(--bg-surface);
     color: var(--text-secondary);
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-pill);
     box-shadow: none;
     cursor: pointer;
-    transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
     white-space: nowrap;
     flex-shrink: 0;
     user-select: none;
 
-    &:hover {
-        background: var(--bg-hover);
-        color: var(--text-primary);
+    app-icon {
+        display: flex;
+        color: var(--text-muted);
+    }
+
+    @media (hover: hover) {
+        &:hover:not(.active) {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            border-color: var(--border-color-hover, var(--text-muted));
+
+            app-icon {
+                color: var(--text-primary);
+            }
+        }
     }
 
     &:active {
         transform: translateY(1px);
-        background: var(--bg-hover);
     }
 }
 
@@ -60,15 +71,10 @@
     flex-shrink: 0;
 }
 
-.filter-chip app-icon {
-    display: flex;
-    color: var(--text-muted);
-}
-
 .filter-chip.active {
-    background: var(--accent-primary-soft);
+    background: rgba(var(--accent-primary-rgb), 0.15);
     color: var(--accent-primary);
-    border: none;
+    border: 1px solid var(--accent-primary);
     box-shadow: none;
 
     app-icon {
@@ -1134,12 +1140,18 @@ app-toast {
 .toast {
     position: fixed;
     left: 50%;
-    transform: translateX(-50%);
-    background: #111318;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    min-height: 42px;
-    padding: 0 16px;
+    transform: translate(-50%, var(--touch-offset-y, 0px));
+    
+    /* Light Mode: Warm Frosted Card Material */
+    background: rgba(255, 255, 255, 0.90);
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    
+    min-height: 44px;
+    padding: 8px 16px;
     box-sizing: border-box;
     border-radius: var(--border-radius-pill);
     display: inline-flex;
@@ -1149,17 +1161,50 @@ app-toast {
     font-size: 0.8125rem;
     font-weight: 700;
     letter-spacing: -0.01em;
-    box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.45), 0 4px 10px -2px rgba(0, 0, 0, 0.25);
     z-index: var(--z-toast, 100000);
-    white-space: nowrap;
-    max-width: min(90vw, 460px);
+    max-width: min(92vw, 460px);
     pointer-events: auto;
     cursor: pointer;
     user-select: none;
-    transition: transform var(--transition-fast);
+    touch-action: pan-y;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
 
-    &:active {
-        transform: translateX(-50%) scale(0.98);
+    &:active:not(.toast--dragging) {
+        transform: translate(-50%, var(--touch-offset-y, 0px)) scale(0.98);
+    }
+
+    &.toast--dragging {
+        animation: none !important;
+        transition: none !important;
+        transform: translate(-50%, var(--touch-offset-y, 0px)) !important;
+        cursor: grabbing;
+    }
+
+    /* Dark Mode & Fullscreen Video: Sleek Obsidian HUD */
+    [data-theme="dark"] &,
+    &.toast--fullscreen,
+    :fullscreen &,
+    :-webkit-full-screen & {
+        background: rgba(18, 24, 35, 0.90);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        box-shadow: 0 14px 36px -4px rgba(0, 0, 0, 0.6), 0 4px 14px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+        .toast__text,
+        span {
+            color: #ffffff;
+        }
+
+        .toast__action-btn,
+        .toast__undo-btn {
+            background: rgba(var(--accent-primary-rgb), 0.22);
+            color: #FFA4B5;
+            border: 1px solid rgba(var(--accent-primary-rgb), 0.35);
+
+            &:hover {
+                background: rgba(var(--accent-primary-rgb), 0.32);
+            }
+        }
     }
 
     /* Default / Bottom Positioning */
@@ -1170,6 +1215,7 @@ app-toast {
         animation: toastInBottom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 
         &.toast--exiting {
+            pointer-events: none;
             animation: toastOutBottom 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
         }
 
@@ -1189,6 +1235,7 @@ app-toast {
         animation: toastInTop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 
         &.toast--exiting {
+            pointer-events: none;
             animation: toastOutTop 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
         }
     }
@@ -1217,11 +1264,15 @@ app-toast {
 
     .toast__text,
     span {
-        color: #ffffff;
-        line-height: 1.4;
+        color: var(--text-primary);
+        line-height: 1.35;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap;
+        word-break: break-word;
     }
 
     .toast__action-btn,
@@ -1229,22 +1280,22 @@ app-toast {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        color: #ffffff;
+        background: rgba(var(--accent-primary-rgb), 0.12);
+        border: 1px solid rgba(var(--accent-primary-rgb), 0.22);
+        color: var(--accent-primary-text, #E03E58);
         font-family: var(--font-sans);
         font-weight: 700;
         font-size: 0.78rem;
         cursor: pointer;
         text-decoration: none;
         border-radius: var(--border-radius-pill);
-        padding: 4px 12px;
+        padding: 5px 12px;
         margin-left: 4px;
         flex-shrink: 0;
-        transition: background-color var(--transition-fast), transform var(--transition-fast);
+        transition: background-color var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
 
         &:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(var(--accent-primary-rgb), 0.20);
         }
 
         &:active {
@@ -1256,44 +1307,44 @@ app-toast {
 @keyframes toastInBottom {
     0% {
         opacity: 0;
-        transform: translate(-50%, 16px) scale(0.94);
+        transform: translate(-50%, calc(var(--touch-offset-y, 0px) + 16px)) scale(0.94);
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, 0) scale(1);
+        transform: translate(-50%, var(--touch-offset-y, 0px)) scale(1);
     }
 }
 
 @keyframes toastOutBottom {
     0% {
         opacity: 1;
-        transform: translate(-50%, 0) scale(1);
+        transform: translate(-50%, var(--touch-offset-y, 0px)) scale(1);
     }
     100% {
         opacity: 0;
-        transform: translate(-50%, 14px) scale(0.94);
+        transform: translate(-50%, calc(var(--touch-offset-y, 0px) + 14px)) scale(0.94);
     }
 }
 
 @keyframes toastInTop {
     0% {
         opacity: 0;
-        transform: translate(-50%, -16px) scale(0.94);
+        transform: translate(-50%, calc(var(--touch-offset-y, 0px) - 16px)) scale(0.94);
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, 0) scale(1);
+        transform: translate(-50%, var(--touch-offset-y, 0px)) scale(1);
     }
 }
 
 @keyframes toastOutTop {
     0% {
         opacity: 1;
-        transform: translate(-50%, 0) scale(1);
+        transform: translate(-50%, var(--touch-offset-y, 0px)) scale(1);
     }
     100% {
         opacity: 0;
-        transform: translate(-50%, -14px) scale(0.94);
+        transform: translate(-50%, calc(var(--touch-offset-y, 0px) - 14px)) scale(0.94);
     }
 }
 

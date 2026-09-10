@@ -110,7 +110,7 @@ def main():
     draw.text((600 + 60, 468 + 23), "Korean", fill=(61, 66, 89, 255), font=f_pill, anchor="mm")
     draw.text((600 + 180, 468 + 23), "English", fill=(61, 66, 89, 255), font=f_pill, anchor="mm")
     # Domain
-    draw.text((600, 562), "lingua-tube.pages.dev", fill=(168, 173, 191, 255), font=f_foot, anchor="mm")
+    draw.text((600, 562), "voca.study", fill=(168, 173, 191, 255), font=f_foot, anchor="mm")
 
     img.save(output_png_path)
 

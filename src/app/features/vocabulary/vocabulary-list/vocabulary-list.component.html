@@ -149,6 +149,14 @@
                 </div>
 
                 <div class="vocab-item__actions" (click)="$event.stopPropagation()">
+                    <!-- Level Pill Badge (Matching Dictionary's save-badge-btn) -->
+                    <button type="button" class="level-badge-btn" [class]="'badge--' + item.level"
+                        (click)="openLevelPicker(item, $event)"
+                        [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Change level')">
+                        <span class="level-dot" [class]="item.level"></span>
+                        <span class="level-badge-btn__text">{{ i18n.t('vocab.' + item.level) }}</span>
+                    </button>
+
                     <!-- Authentic Audio Pronunciation Button (Matching Dictionary's audio-btn) -->
                     <button type="button" 
                             class="action-btn action-btn--audio audio-btn--sm" 
@@ -156,14 +164,6 @@
                             (click)="playAudio(item, $event)" 
                             [title]="i18n.t('study.listen') || 'Listen'">
                         <app-icon [name]="audio.isPlaying(item.word) ? 'volume-2' : 'volume-1'" [size]="15" />
-                    </button>
-
-                    <!-- Level Pill Badge (Matching Dictionary's save-badge-btn) -->
-                    <button type="button" class="level-badge-btn" [class]="'badge--' + item.level"
-                        (click)="openLevelPicker(item, $event)"
-                        [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Change level')">
-                        <span class="level-dot" [class]="item.level"></span>
-                        <span class="level-badge-btn__text">{{ i18n.t('vocab.' + item.level) }}</span>
                     </button>
 
                     <!-- Direct Delete Button -->

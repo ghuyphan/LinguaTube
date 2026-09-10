@@ -261,17 +261,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #FF5C6C 0%, #EF3B56 50%, #C91842 100%);
+    background: linear-gradient(135deg, #FF7E93 0%, #F45B74 50%, #DF4360 100%);
     border-radius: var(--border-radius-sm, 12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.38);
     flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(239, 59, 86, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 14px rgba(244, 91, 116, 0.28), 0 1px 3px rgba(74, 30, 43, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.45);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 
     @media (hover: hover) {
         &:hover {
-            transform: scale(1.06);
-            box-shadow: 0 6px 16px rgba(239, 59, 86, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(244, 91, 116, 0.38), inset 0 1px 1px rgba(255, 255, 255, 0.55);
         }
     }
 }
@@ -279,9 +279,7 @@
 .logo-kikyou {
     width: 1.625rem;
     height: 1.625rem;
-    color: #FFFFFF;
     display: block;
-    filter: drop-shadow(0 2px 4px rgba(128, 10, 35, 0.3));
 }
 
 .sidebar__title-group {

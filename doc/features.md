@@ -410,7 +410,7 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 - **Root Metadata & Social Protocol**:
   - `src/index.html` implements Open Graph (`og:type`, `og:title`, `og:description`, `og:image`, `og:locale`, alternate locales) and Twitter Cards (`summary_large_image`).
   - Embeds Schema.org JSON-LD structured data for `WebApplication` and `EducationalApplication`, enumerating supported languages, interactive subtitle capabilities, and free tier offers.
-  - Canonical URL `<link rel="canonical">` points to `https://lingua-tube.pages.dev`.
+  - Canonical URL `<link rel="canonical">` points to `https://voca.study`.
 - **Search Engine Discovery Assets**:
   - `public/robots.txt`: Explicitly permits search crawlers on learning routes (`/video`, `/dictionary`, `/study`, `/explore`, `/history`) while restricting internal serverless functions (`/api/`, `/proxy/`).
   - `public/sitemap.xml`: Declares priority and change frequencies for all public views, with `xhtml:link` multi-language `hreflang` alternates (`en`, `vi`, `ja`, `ko`, `zh`, and `x-default`).
