@@ -14,46 +14,41 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.1.7',
+    version: '1.1.8',
     minSupportedVersion: '1.0.0',
     buildDate: '2026-09-10',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Intelligent "For You" Recommendation Algorithm: Smart ranking inspired by YouTube & language learning apps (LingQ/Migaku) combining watch history, creator affinity, vocabulary notebook overlap, Krashen i+1 comprehensible input, and sweet-spot duration',
-            'In-Progress Resume Badges: YouTube-style red progress bars on video thumbnails reflecting your exact watch progress',
-            'Study Words Discovery: Highlights recommended videos containing vocabulary from your active SRS notebook with smart purple badges',
-            'Creator Anti-Clustering & Variety: Smart multi-pass channel de-clustering ensures a rich, diverse feed without repetitive creator clutter',
-            'Native Caption Suppression: Intercepts asynchronous YouTube iframe captions via onApiChange and active track clearing, preventing native subtitles from overlapping with Voca\'s interactive captions'
+            'Natural Bottom Subtitle Placement: Lowered resting fullscreen subtitle position to 94% (expanded range to 10%–95%), matching authentic caption areas and eliminating excessive vertical gap',
+            'Proportional Controls Clearance: Tuned player controls bottom lift to 3.25rem (2.5rem on mobile), ensuring subtitles float cleanly above controls without jumping into the video center',
+            'Fluid Direct Drag & Gesture Snapping: Re-engineered fullscreen subtitle drag controller outside Angular zone, eliminating the 50% anchor flip oscillation and enabling effortless Top/Bottom snapping',
+            'Legacy Settings Auto-Migration: Automatically upgrades previous 84% subtitle positions in local storage to the new natural 94% placement'
         ],
         vi: [
-            'Thuật toán đề xuất "Dành cho bạn" thông minh: Hệ thống xếp hạng đa yếu tố học hỏi từ YouTube và các ứng dụng học ngôn ngữ (LingQ/Migaku), kết hợp lịch sử xem, mức độ yêu thích kênh, vốn từ vựng đang học, nguyên lý Krashen i+1 và thời lượng tối ưu',
-            'Thanh tiến độ xem tiếp kiểu YouTube: Hiển thị thanh đỏ tiến độ trực quan trên ảnh thu nhỏ cho các video đang xem dở',
-            'Gợi ý từ vựng trong sổ tay: Huy hiệu tím nổi bật cho các video chứa từ vựng đang học trong sổ tay SRS cá nhân',
-            'Đa dạng hóa nhà sáng tạo: Thuật toán chống gom cụm kênh trên cả máy chủ và máy khách giúp bảng tin luôn phong phú, không bị lặp kênh',
-            'Ngăn chặn phụ đề gốc YouTube: Đón bắt thời điểm tải phụ đề qua onApiChange và xóa track đang phát, triệt tiêu tình trạng phụ đề gốc YouTube đè lên phụ đề tương tác của Voca'
+            'Vị trí phụ đề đáy tự nhiên: Hạ vị trí phụ đề toàn màn hình xuống 94% (mở rộng giới hạn 10%–95%), khớp hoàn hảo với vị trí phụ đề video tiêu chuẩn và loại bỏ khoảng trống thừa bên dưới',
+            'Nâng phụ đề cân đối khi hiện điều khiển: Tinh chỉnh khoảng nâng phụ đề khi thanh điều khiển xuất hiện xuống 3.25rem (2.5rem trên di động), giúp phụ đề nằm ngay phía trên thanh phát mà không bị đẩy lên giữa màn hình',
+            'Kéo thả mượt mà & cử chỉ hít vị trí: Thiết kế lại cơ chế kéo phụ đề toàn màn hình chạy hoàn toàn ngoài Angular zone, loại bỏ hiện tượng giật nhảy khi qua mốc 50% và hỗ trợ hít vị trí Trên/Dưới mượt mà',
+            'Tự động nâng cấp cài đặt cũ: Tự động di chuyển cài đặt phụ đề cũ từ 84% sang vị trí 94% mới trong bộ nhớ trình duyệt'
         ],
         ja: [
-            'インテリジェントな『おすすめ』推薦アルゴリズム：YouTubeや語学アプリ（LingQ/Migaku）に着想を得たマルチファクター評価（視聴履歴・クリエイター親和性・単語帳の語彙一致・クラッシェンi+1理論・最適再生時間）を導入',
-            'YouTube風の視聴再開インジケーター：途中まで視聴した動画のサムネイルに赤いプログレスバーと再開バッジを表示',
-            '学習中単語のマッチング表示：単語帳に登録された語彙を含む動画にパープルのスパークルバッジを表示し、学習効果の高い動画を即座に発見可能に',
-            'チャンネル分散とコンテンツ多様化：同一クリエイターの連続表示を防ぐアンチクラスタリングにより、偏りのない多彩な推薦フィードを提供',
-            'YouTube標準字幕の自動非表示：onApiChangeイベントとアクティブトラックのクリアにより、YouTubeの標準字幕がVocaのインタラクティブ字幕と重複表示される問題を解消'
+            '自然な下部字幕配置：全画面字幕の標準下部位置を94%（調整範囲を10%〜95%）へ引き下げ、YouTube等の標準字幕エリアと自然に一致させ不要な余白を解消',
+            'コントロール表示時の最適な逃げ幅：下部バー表示時の字幕リフト幅を3.25rem（モバイル2.5rem）へ調整し、画面中央に飛び上がることなく操作バーのすぐ上に綺麗に配置',
+            '滑らかなドラッグ操作とスナップジェスチャー：Angularゾーン外で直接制御するドラッグ処理へ刷新し、50%境界での反転跳躍バグを完全解消、上下端への快適なスナップを実現',
+            '既存設定の自動アップグレード：旧バージョンで保存された84%の位置設定をブラウザストレージから自動的に新標準の94%へ移行'
         ],
         ko: [
-            '스마트 "추천" 랭킹 알고리즘: YouTube 및 외국어 학습 앱(LingQ/Migaku) 기반 다면 평가 알고리즘 도입 (시청 기록, 크리에이터 친화도, 단어장 어휘 매칭, 크라센 i+1 입력 가설, 최적 러닝타임 반영)',
-            'YouTube 스타일 이어보기 표시: 시청 중이던 동영상 썸네일에 직관적인 빨간색 진행률 바 및 이어보기 상태 표시',
-            '학습 단어 매칭 뱃지: 사용자의 SRS 단어장에 등록된 단어가 포함된 추천 동영상에 보라색 스파클 뱃지 제공',
-            '크리에이터 분산 및 피드 다양화: 동일 크리에이터의 중복 추천을 방지하는 안티 클러스터링을 통해 균형 잡힌 다채로운 추천 피드 구성',
-            'YouTube 기본 자막 자동 억제: onApiChange 이벤트 및 활성 트랙 초기화를 통해 YouTube의 기본 자막이 Voca의 인터랙티브 자막과 겹쳐 표시되는 현상 방지'
+            '자연스러운 하단 자막 배치: 전체화면 기본 자막 위치를 94%로 낮추고(조정 범위 10%~95%로 확장) 스트리밍 표준 자막 위치에 자연스럽게 맞춰 과도한 하단 공백 제거',
+            '컨트롤 표시 시 균형 잡힌 위치 조정: 하단 플레이어 컨트롤 표시 시 자막 상승 폭을 3.25rem(모바일 2.5rem)으로 최적화하여 화면 중앙으로 치솟지 않고 컨트롤 바로 위에 안정적으로 배치',
+            '부드러운 직접 드래그 및 스냅 제스처: Angular 존 외부에서 직접 제어하는 드래그 엔진으로 전면 개편하여 50% 지점 반전 튀김 현상을 제거하고 상/하단 스냅 지원',
+            '기존 설정 자동 마이그레이션: 로컬 스토리지에 저장된 이전 84% 자막 위치를 새로운 표준인 94%로 자동 업그레이드'
         ],
         zh: [
-            '智能『为您推荐』重排算法：融合 YouTube 与语言学习应用（LingQ/Migaku）的多维推荐机制，综合考量观看进度、创作者偏好、生词本重合度、克拉申 i+1 可理解输入与黄金学习时长',
-            'YouTube 风格续播进度条：对未播完的视频封面呈现醒目红条进度指示，方便随时接着学',
-            '生词本联动词汇匹配：自动标记包含用户生词本词汇的视频并展示紫色星光胶囊，精准强化重点生词',
-            '创作者去重打散与生态多样性：服务端与客户端双重频道反聚类算法，杜绝单频道霸屏，提供多元精彩内容',
-            'YouTube 原生字幕智能抑制：通过 onApiChange 拦截字幕模块加载并重置活跃轨道，杜绝 YouTube 原生字幕与 Voca 交互字幕相互遮挡重叠'
+            '自然贴合的底部字幕位置：将全屏字幕默认底部高度下调至 94%（调节范围扩展至 10%–95%），完美契合主流视频字幕区域，彻底消除底部过大空白',
+            '控件浮起间距黄金优化：将播放控制栏出现时的字幕上移幅度微调至 3.25rem（移动端 2.5rem），既能优雅避让控制条，又绝不上跳至屏幕正中',
+            '跟手无感拖拽与手势吸附：全新重构脱离 Angular 变更检测的直接手势引擎，彻底根除越过 50% 时的锚点抖动跳变，支持轻触切换与上下端丝滑吸附',
+            '历史设置平滑自动迁移：自动将本地缓存中旧版的 84% 字幕位置无缝升级为全新的 94% 黄金位置'
         ]
     }
 };

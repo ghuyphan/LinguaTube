@@ -19,7 +19,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   showDualSubtitles: true,
   dualSubtitleTargetLang: 'en',
   hasCompletedOnboarding: false,
-  fullscreenSubtitleYPercent: 84
+  fullscreenSubtitleYPercent: 94
 };
 
 @Injectable({
@@ -242,10 +242,17 @@ export class SettingsService implements OnDestroy {
       if (stored) {
         const parsed = JSON.parse(stored) as Partial<UserSettings>;
         const readingDisplayMode = this.getStoredReadingDisplayMode(parsed);
+        let fullscreenSubtitleYPercent = parsed.fullscreenSubtitleYPercent;
+        if (fullscreenSubtitleYPercent === 84 || fullscreenSubtitleYPercent === undefined) {
+          fullscreenSubtitleYPercent = 94;
+        } else {
+          fullscreenSubtitleYPercent = Math.max(10, Math.min(95, Math.round(fullscreenSubtitleYPercent)));
+        }
 
         this.settings.set({
           ...DEFAULT_SETTINGS,
           ...parsed,
+          fullscreenSubtitleYPercent,
           readingDisplayMode,
           showFurigana: readingDisplayMode !== 'native',
           showPinyin: readingDisplayMode !== 'native'
@@ -301,13 +308,13 @@ export class SettingsService implements OnDestroy {
   }
 
   setFullscreenSubtitleYPercent(percent: number): void {
-    const clamped = Math.max(14, Math.min(84, Math.round(percent)));
+    const clamped = Math.max(10, Math.min(95, Math.round(percent)));
     this.updateSettings({ fullscreenSubtitleYPercent: clamped });
   }
 
   toggleFullscreenSubtitlePosition(): void {
-    const current = this.settings().fullscreenSubtitleYPercent ?? 84;
-    const next = current < 50 ? 84 : 14;
+    const current = this.settings().fullscreenSubtitleYPercent ?? 94;
+    const next = current < 50 ? 94 : 12;
     this.updateSettings({ fullscreenSubtitleYPercent: next });
   }
 

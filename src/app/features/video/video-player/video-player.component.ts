@@ -670,9 +670,9 @@ export class VideoPlayerComponent implements OnDestroy {
         this.toggleFullscreenSubtitlePosition();
         break;
       case 'nudge-subtitle-position': {
-        const current = this.settings.settings().fullscreenSubtitleYPercent ?? 84;
+        const current = this.settings.settings().fullscreenSubtitleYPercent ?? 94;
         const delta = event.data.direction === 'up' ? -5 : 5;
-        const clamped = Math.max(14, Math.min(84, current + delta));
+        const clamped = Math.max(10, Math.min(95, current + delta));
         this.settings.setFullscreenSubtitleYPercent(clamped);
         break;
       }
@@ -1368,11 +1368,6 @@ export class VideoPlayerComponent implements OnDestroy {
       case 'xlarge': return 'XL';
       default: return 'M';
     }
-  }
-
-  onSubtitlePositionChanged(percent: number): void {
-    const clamped = Math.max(14, Math.min(84, Math.round(percent)));
-    this.settings.settings.update(s => ({ ...s, fullscreenSubtitleYPercent: clamped }));
   }
 
   onSubtitlePositionCommitted(percent: number): void {

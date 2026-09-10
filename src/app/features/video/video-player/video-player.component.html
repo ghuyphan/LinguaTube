@@ -127,12 +127,11 @@
       [language]="activeSubtitleLanguage()" [subtitlesVisible]="subtitles.subtitlesVisible()"
       [isTokenizing]="subtitles.isTokenizing()" [areControlsVisible]="areControlsVisible()"
       [fsPopupVisible]="fsPopupVisible()" [fontSizeClass]="fontSizeClass()"
-      [yPercent]="settings.settings().fullscreenSubtitleYPercent ?? 84"
+      [yPercent]="settings.settings().fullscreenSubtitleYPercent ?? 94"
       [showDualSubtitles]="settings.settings().showDualSubtitles" [isDualSubLoading]="subtitles.isDualSubLoading()"
       [currentTranslation]="currentTranslation()" [grammarMatches]="fsGrammarMatches()"
       (wordClicked)="onFullscreenComponentWordClick($event)"
       (grammarClicked)="onFsGrammarClick($event.index, $event.event)"
-      (positionChanged)="onSubtitlePositionChanged($event)"
       (positionCommitted)="onSubtitlePositionCommitted($event)"
       (togglePosition)="toggleFullscreenSubtitlePosition()" />
     }

@@ -43,12 +43,12 @@ import { VocabularyService } from '../../../../vocabulary';
           <div class="fs-drag-handle-bar"
             (pointerdown)="onHandlePointerDown($event)"
             (click)="$event.stopPropagation()"
-            role="slider"
-            [attr.aria-valuenow]="yPercent()"
-            aria-valuemin="14"
-            aria-valuemax="84"
+            role="button"
+            tabindex="0"
             [attr.aria-label]="isTop() ? 'Move subtitle to bottom (tap or drag)' : 'Move subtitle to top (tap or drag)'"
-            [title]="isTop() ? 'Tap to move to bottom, or drag to reposition' : 'Tap to move to top, or drag to reposition'">
+            [title]="isTop() ? 'Tap to move to bottom, or drag to reposition' : 'Tap to move to top, or drag to reposition'"
+            (keydown.enter)="onHandleKeyToggle($event)"
+            (keydown.space)="onHandleKeyToggle($event)">
             <div class="fs-drag-pill"></div>
           </div>
 
@@ -133,7 +133,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     fsPopupVisible = input<boolean>(false);
     fontSizeClass = input<string>('text-medium');
     subtitlesVisible = input<boolean>(true);
-    yPercent = input<number>(84);
+    yPercent = input<number>(94);
 
     // Dual Subtitle Inputs
     showDualSubtitles = input<boolean>(false);
@@ -146,17 +146,15 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     // Outputs
     wordClicked = output<{ token: Token; context: string; event: MouseEvent }>();
     grammarClicked = output<{ index: number; event: MouseEvent }>();
-    positionChanged = output<number>();
     positionCommitted = output<number>();
     togglePosition = output<void>();
 
     // Drag State
     isDragging = signal(false);
     private dragStartY = 0;
-    private dragStartPercent = 84;
     private hasMoved = false;
     private cleanupDragListeners: (() => void) | null = null;
-    private dragRafId: number | null = null;
+    private currentSubEl: HTMLElement | null = null;
 
     // Computed
     isTop = computed(() => this.yPercent() < 50);
@@ -208,66 +206,92 @@ export class FullscreenSubtitleComponent implements OnDestroy {
         this.startDrag(event);
     }
 
+    onHandleKeyToggle(event: Event): void {
+        event.stopPropagation();
+        event.preventDefault();
+        this.togglePosition.emit();
+    }
+
     private startDrag(event: PointerEvent): void {
         this.cleanupDragListeners?.();
 
-        const target = event.currentTarget as HTMLElement;
+        const handle = event.currentTarget as HTMLElement;
+        const subEl = handle.closest('.fullscreen-subtitle') as HTMLElement | null;
+        if (!subEl) return;
+
+        this.currentSubEl = subEl;
+
         try {
-            target.setPointerCapture(event.pointerId);
+            handle.setPointerCapture(event.pointerId);
         } catch {}
 
         this.dragStartY = event.clientY;
-        this.dragStartPercent = this.yPercent();
         this.hasMoved = false;
-        this.isDragging.set(true);
 
-        let latestClientY = event.clientY;
+        const container = handle.closest('.video-container') as HTMLElement | null;
+        const containerHeight = container?.clientHeight || window.innerHeight;
+        const isStartingTop = this.isTop();
+
+        // Safe bounds for drag offset (deltaY)
+        // From bottom (94%): can drag up toward 12% (~ -82% of H) or down slightly (+3% of H)
+        // From top (12%): can drag down toward 94% (~ +82% of H) or up slightly (-3% of H)
+        const minDeltaY = isStartingTop ? -0.04 * containerHeight : -0.84 * containerHeight;
+        const maxDeltaY = isStartingTop ? 0.84 * containerHeight : 0.04 * containerHeight;
+
+        let latestDeltaY = 0;
 
         const onPointerMove = (moveEvent: PointerEvent) => {
             if (moveEvent.pointerId !== event.pointerId) return;
-            latestClientY = moveEvent.clientY;
-            const deltaY = latestClientY - this.dragStartY;
-            if (Math.abs(deltaY) > 8) {
-                this.hasMoved = true;
+
+            const rawDeltaY = moveEvent.clientY - this.dragStartY;
+            if (Math.abs(rawDeltaY) > 6) {
+                if (!this.hasMoved) {
+                    this.hasMoved = true;
+                    this.ngZone.run(() => this.isDragging.set(true));
+                }
             }
 
-            if (this.dragRafId === null) {
-                this.dragRafId = requestAnimationFrame(() => {
-                    this.dragRafId = null;
-                    const curDeltaY = latestClientY - this.dragStartY;
-                    const container = target.closest('.video-container') as HTMLElement | null;
-                    const containerHeight = container?.clientHeight || window.innerHeight;
-                    const deltaPercent = (curDeltaY / containerHeight) * 100;
-                    const rawPercent = this.dragStartPercent + deltaPercent;
-
-                    const clamped = Math.max(14, Math.min(84, Math.round(rawPercent)));
-                    this.positionChanged.emit(clamped);
-                });
-            }
+            latestDeltaY = Math.max(minDeltaY, Math.min(maxDeltaY, rawDeltaY));
+            subEl.style.setProperty('--drag-y', `${latestDeltaY}px`);
         };
 
         const onPointerUp = (upEvent: PointerEvent) => {
             if (upEvent.pointerId !== event.pointerId) return;
-            if (this.dragRafId !== null) {
-                cancelAnimationFrame(this.dragRafId);
-                this.dragRafId = null;
-            }
 
             try {
-                target.releasePointerCapture(upEvent.pointerId);
+                handle.releasePointerCapture(upEvent.pointerId);
             } catch {}
 
             this.cleanupDragListeners?.();
             this.cleanupDragListeners = null;
 
+            subEl.style.removeProperty('--drag-y');
+
             this.ngZone.run(() => {
                 this.isDragging.set(false);
+
                 if (!this.hasMoved) {
+                    // Tap or click on handle: toggle between Top (12%) and Bottom (94%)
                     this.togglePosition.emit();
                 } else {
-                    // Free dragging: commit exact position within safe bounds [14%, 84%]
-                    const current = Math.max(14, Math.min(84, Math.round(this.yPercent())));
-                    this.positionCommitted.emit(current);
+                    // Gesture commit:
+                    // If pulled from bottom up past threshold -> snap to Top (12)
+                    // If pulled from top down past threshold -> snap to Bottom (94)
+                    const swipeThreshold = Math.min(40, containerHeight * 0.15);
+
+                    if (!isStartingTop) {
+                        if (latestDeltaY < -swipeThreshold) {
+                            this.positionCommitted.emit(12);
+                        } else {
+                            this.positionCommitted.emit(94);
+                        }
+                    } else {
+                        if (latestDeltaY > swipeThreshold) {
+                            this.positionCommitted.emit(94);
+                        } else {
+                            this.positionCommitted.emit(12);
+                        }
+                    }
                 }
             });
         };
@@ -279,13 +303,13 @@ export class FullscreenSubtitleComponent implements OnDestroy {
         });
 
         this.cleanupDragListeners = () => {
-            if (this.dragRafId !== null) {
-                cancelAnimationFrame(this.dragRafId);
-                this.dragRafId = null;
-            }
             window.removeEventListener('pointermove', onPointerMove);
             window.removeEventListener('pointerup', onPointerUp);
             window.removeEventListener('pointercancel', onPointerUp);
+            if (this.currentSubEl) {
+                this.currentSubEl.style.removeProperty('--drag-y');
+                this.currentSubEl = null;
+            }
         };
     }
 

@@ -14,9 +14,9 @@ $transition-fast: 0.15s ease;
 
 .fullscreen-subtitle {
     position: absolute;
-    top: calc(var(--sub-y, 84) * 1%);
+    top: calc(var(--sub-y, 94) * 1%);
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, calc(-100% + var(--drag-y, 0px)));
     max-width: min(90%, 960px);
     width: auto;
     z-index: $z-fullscreen-subtitle;
@@ -30,27 +30,22 @@ $transition-fast: 0.15s ease;
     padding-right: max(0.5rem, env(safe-area-inset-right));
 
     &.is-top {
-        transform: translate(-50%, 0);
+        transform: translate(-50%, calc(0px + var(--drag-y, 0px)));
     }
 
-    &.controls-visible.is-near-bottom:not(.is-dragging) {
+    &.controls-visible.is-near-bottom {
         // Smoothly lift subtitle to maintain clear distance from player controls bottom bar
-        transform: translate(-50%, calc(-100% - 4.5rem));
+        transform: translate(-50%, calc(-100% - 3.25rem + var(--drag-y, 0px)));
 
         @media (max-width: 640px), (max-height: 520px) {
-            transform: translate(-50%, calc(-100% - 3.75rem));
+            transform: translate(-50%, calc(-100% - 2.5rem + var(--drag-y, 0px)));
         }
     }
 
     &.is-dragging {
         transition: none !important;
         user-select: none;
-        transform: translate(-50%, -100%) scale(1.015) !important;
         cursor: grabbing;
-
-        &.is-top {
-            transform: translate(-50%, 0) scale(1.015) !important;
-        }
 
         .fs-subtitle-card,
         .fs-drag-handle-bar {
@@ -64,7 +59,7 @@ $transition-fast: 0.15s ease;
 
         .fs-drag-pill {
             background: var(--accent-primary);
-            width: 48px;
+            width: 44px;
             box-shadow: 0 0 10px rgba(var(--accent-primary-rgb, 255, 107, 107), 0.6);
         }
     }
