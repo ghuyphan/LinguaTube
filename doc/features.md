@@ -35,13 +35,31 @@ Voca accepts arbitrary YouTube video URLs:
 | **Add to Playlist** | — | Tap Playlist Button (Portrait Mobile) | Add to playlist button (`list-plus`) in bottom bar |
 | **Toggle Dual Subtitles** | `d` | Tap Languages Button | Languages button in bottom bar |
 | **Dual Sub Menu** | Right-click Dual Sub | Long-Press Dual Sub Button | Quick language picker modal with circle flags |
+| **Toggle Miniplayer** | `i` | Tap Minimize in Header | Miniplayer button in bottom bar / header |
 | **Toggle Fullscreen** | `f` | Pinch Out / Rotate | Bottom bar fullscreen button |
 | **Move Subtitle Top / Bottom** | `v` | Double-Tap Drag Handle | Fullscreen subtitle handle |
 | **Nudge Subtitle Up / Down** | `[` / `]` | — | Fullscreen subtitle position |
 | **Cycle Subtitle Size** | `Shift` + `s` | — | Subtitle font size toggle |
 | **Playback Speed** | `Shift` + `<` / `>` | — | Speed dropdown (0.5x – 2x) |
 
-### 1.4. Bottom-Anchored Draggable Fullscreen Subtitles (Netflix & YouTube Style)
+### 1.4. YouTube-Style Miniplayer & Continuous Background Playback
+Voca includes a persistent, non-destructive Picture-in-Picture Miniplayer governed by `PlayerViewService`:
+- **Desktop Floating PiP Card**:
+  - Automatically docks to the bottom-right (`bottom: 24px; right: 24px; width: 360px`) when minimized via shortcut (`i`), video header button, or sidebar navigation.
+  - 16:9 video frame with clean `var(--border-radius, 16px)` corners and horizontal progress bar.
+  - Hover overlay features dedicated YouTube-style controls: **Expand** (restore to watch page), **Close** (`x`), and **Play / Pause**.
+  - Retains full visibility and functionality of the Spotlight URL bar and Desktop Vocab Card sidebar.
+- **Mobile Floating Docked Bar**:
+  - Floats smoothly above the bottom navigation bar (`bottom: calc(var(--bottom-nav-total-height, 4rem) + 8px)`).
+  - 16:9 thumbnail (`80px × 45px`) with `border-radius: var(--border-radius-sm, 12px)` and `var(--bg-tertiary)` background matching the exact thumbnail design of the "For You" feed.
+  - Full-width integer 2px progress bar spanning the entire bottom of the card (`left: 0; right: 0; width: 100%`) with rounded bottom corners.
+  - Tapping thumbnail or text expands player back to watch mode; dedicated touch buttons toggle playback and close.
+- **Dedicated YouTube-Style Icons**:
+  - **Miniplayer / Minimize (`miniplayer`)**: Outlined video monitor screen with a docked miniplayer window in the bottom-right corner.
+  - **Expand / Maximize (`expand`)**: Official YouTube watch page expand icon (open window frame with directional breakout arrow).
+  - **Fullscreen (`fullscreen` / `fullscreen-exit`)**: Four corner brackets pointing outward (enter) / inward (exit).
+
+### 1.5. Bottom-Anchored Draggable Fullscreen Subtitles (Netflix & YouTube Style)
 When in fullscreen mode, subtitles are rendered in `FullscreenSubtitleComponent`:
 - **Bottom-Anchored Baseline Expansion**: Anchored to the bottom (`transform: translate(-50%, -100%)` or `translate(-50%, 0)` when at the top) following industry standard Netflix and YouTube subtitle engineering. When line count changes, or when bilingual translations load, subtitles expand smoothly *upward* into the video frame rather than shifting both up and down, completely eliminating vertical visual jitter.
 - **Computed `viewTokens` Pre-computation**: Subtitle tokens, reading annotations, display text, and vocabulary mastery levels are pre-calculated in a single `viewTokens = computed(...)` signal per cue change. This eliminates repeated O(N) vocabulary repository method calls and grammar index scans in `@for` template loops during 60fps fullscreen video playback.

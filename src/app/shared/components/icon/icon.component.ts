@@ -13,7 +13,7 @@ export type IconName =
     | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle' | 'refresh-cw'
     | 'chevron-left' | 'chevron-right' | 'chevron-up' | 'chevrons-up' | 'chevrons-down' | 'arrow-left' | 'arrow-right' | 'layers'
     | 'sparkles' | 'wand' | 'play-circle' | 'play-circle-filled' | 'eye' | 'eye-off'
-    | 'type' | 'log-out' | 'maximize' | 'minimize' | 'globe'
+    | 'type' | 'log-out' | 'maximize' | 'minimize' | 'miniplayer' | 'expand' | 'fullscreen' | 'fullscreen-exit' | 'globe'
     | 'user' | 'google' | 'log-in'
     | 'clock' | 'heart' | 'heart-filled' | 'cloud'
     // Gamification & cute icons

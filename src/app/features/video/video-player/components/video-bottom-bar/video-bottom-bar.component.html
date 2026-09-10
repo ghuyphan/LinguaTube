@@ -78,14 +78,14 @@
             <button class="control-btn desktop-only" (click)="toggleMiniplayer.emit()"
                 [attr.aria-label]="t()('player.miniplayer') || 'Miniplayer (i)'"
                 [title]="t()('player.miniplayer') || 'Miniplayer (i)'">
-                <app-icon name="minimize" [size]="18" />
+                <app-icon name="miniplayer" [size]="18" />
             </button>
 
             <!-- Fullscreen -->
             <button class="control-btn" (click)="toggleFullscreen.emit()"
                 [attr.aria-label]="t()('player.fullscreen') || (isFullscreen() ? 'Exit fullscreen (f)' : 'Fullscreen (f)')"
                 [title]="t()('player.fullscreen') || (isFullscreen() ? 'Exit fullscreen (f)' : 'Fullscreen (f)')">
-                <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="18" />
+                <app-icon [name]="isFullscreen() ? 'fullscreen-exit' : 'fullscreen'" [size]="18" />
             </button>
         </div>
     </div>

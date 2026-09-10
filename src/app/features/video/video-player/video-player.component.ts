@@ -1479,6 +1479,7 @@ export class VideoPlayerComponent implements OnDestroy {
       return;
     }
 
+    this.playerView.expand();
     this.router.navigate(['/video'], { queryParams: { id: videoId } });
     this.videoUrl = '';
   }

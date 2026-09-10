@@ -54,12 +54,7 @@
         <button type="button" class="btn-icon btn-header-action btn-minimize-video" (click)="minimizeVideo.emit()"
             [attr.aria-label]="i18n.t('player.minimize') || 'Minimize (i)'"
             [title]="i18n.t('player.minimize') || 'Minimize (i)'">
-            <app-icon name="chevron-down" [size]="16" />
-        </button>
-        <button type="button" class="btn-icon btn-close-video" (click)="closeVideo.emit()"
-            [attr.aria-label]="i18n.t('player.closeVideo') || 'Close video'"
-            [title]="i18n.t('player.closeVideo') || 'Close video'">
-            <app-icon name="x" [size]="14" />
+            <app-icon name="miniplayer" [size]="16" />
         </button>
     </div>
     } @else {

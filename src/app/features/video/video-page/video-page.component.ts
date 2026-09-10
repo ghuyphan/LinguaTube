@@ -812,6 +812,7 @@ export class VideoPageComponent implements OnInit {
   }
 
   private async loadVideoFromUrl(videoId: string): Promise<void> {
+    this.playerView.expand();
     this.saveScrollPosition();
     try {
       this.videoLevel.reset();
@@ -1262,6 +1263,7 @@ export class VideoPageComponent implements OnInit {
   }
 
   onPlaylistVideoSelect(_videoId: string): void {
+    this.playerView.expand();
     // Automatically close the mobile bottom sheet when a video is chosen
     this.mobilePlaylistSheetOpen.set(false);
   }

@@ -1337,6 +1337,7 @@ ruby rt {
     position: relative;
     width: 100%;
     overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* Floating Sync Button when user scrolls away in transcript */
@@ -1594,12 +1595,17 @@ ruby rt {
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    border-top: 1px solid var(--border-color);
+    /* Top divider is provided by the section above (.current-subtitle or .subtitle-list-wrapper border-bottom) to prevent double borders */
     background: var(--bg-card);
 
     &::-webkit-scrollbar {
         display: none;
     }
+}
+
+/* Redundant safeguard against double borders when adjacent to current subtitle */
+.current-subtitle + .subtitle-controls {
+    border-top: none;
 }
 
 /* Control button base */

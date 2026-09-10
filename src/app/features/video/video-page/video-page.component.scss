@@ -14,15 +14,6 @@
       max-width: 100%;
       margin: 0 auto;
       container-type: inline-size;
-
-      &.miniplayer-active {
-        display: block;
-        max-width: 100%;
-
-        .layout-main {
-          width: 100%;
-        }
-      }
     }
 
     .layout-main {
@@ -1543,3 +1534,13 @@
         animation: none !important;
     }
 }
+
+// When miniplayer is active on mobile, ensure feed has enough bottom scroll clearance
+.layout.miniplayer-active {
+    @media (max-width: 768px) {
+        .layout-main {
+            padding-bottom: calc(var(--bottom-nav-total-height, 4rem) + 76px) !important;
+        }
+    }
+}
+

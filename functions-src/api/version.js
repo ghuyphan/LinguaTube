@@ -14,41 +14,41 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.1.20',
+    version: '1.1.22',
     minSupportedVersion: '1.0.0',
-    buildDate: '2026-09-10',
+    buildDate: '2026-09-11',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'YouTube-Style Infinite Scroll & Card Grid: Standardized History and Playlists to use automatic infinite scrolling with IntersectionObserver sentinels and modern multi-column card grids, identical to the "For You" feed',
-            'Theater Mode & Player Sizing: Added an expansive YouTube-style Theater Mode ("T" key) and responsive layout options for distraction-free subtitle immersion',
-            'Refined Thumbnail & Card Design: Polished 16:9 thumbnail cards with duration badges, watch progress, and hover play overlays while eliminating top shadow lines',
-            'Fluid Skeleton Wave Shimmer: Restored responsive multi-column skeleton wave gradient animations across thumbnails, avatars, and text lines during initial page loads'
+            'Dedicated YouTube-Style Icons: Integrated authentic Picture-in-Picture minimize and watch page expand icons, eliminating generic fullscreen conflation',
+            'Cohesive Design System Radii: Harmonized miniplayer card corners and mobile 16:9 thumbnail styling directly with the For You feed tokens',
+            'Full-Width Mobile Progress Bar: Extended the progress track across the entire card bottom with integer pixel rendering, eliminating asymmetrical lines and shadow artifacts',
+            'Streamlined Watch Header: Removed redundant close button from the video header in favor of non-destructive minimization and miniplayer-exclusive dismissal'
         ],
         vi: [
-            'Cuộn vô tận & Lưới thẻ kiểu YouTube: Chuẩn hóa Lịch sử và Danh sách phát với tính năng tự động tải tiếp qua IntersectionObserver và lưới thẻ đa cột hiện đại, mượt mà tương tự nguồn cấp "Dành cho bạn"',
-            'Chế độ Rạp chiếu phim & Kích thước trình phát: Bổ sung Chế độ Rạp chiếu phim chuẩn YouTube (phím tắt "T") giúp trải nghiệm học phụ đề tập trung và rộng rãi hơn',
-            'Thiết kế thẻ & Ảnh thu nhỏ tinh gọn: Tinh chỉnh thẻ ảnh 16:9 với huy hiệu thời lượng, tiến trình xem và lớp phủ phát mượt mà, loại bỏ đường viền bóng thừa',
-            'Hiệu ứng Shimmer Skeleton mượt mà: Chuẩn hóa lưới khung xương tải trang với hiệu ứng sóng chuyển động gradient trên cả ảnh đại diện, thumbnail và tiêu đề'
+            'Biểu tượng chuẩn phong cách YouTube: Tích hợp bộ biểu tượng chuyên biệt gồm thu nhỏ PiP và mở rộng xem tiếp, tách biệt hoàn toàn với biểu tượng toàn màn hình',
+            'Đồng bộ bo góc và khung hình thu nhỏ: Chuẩn hóa góc bo của thẻ miniplayer và thumbnail 16:9 trên di động theo đúng hệ thống thiết kế của danh sách Dành cho bạn',
+            'Thanh tiến trình toàn chiều rộng: Kéo dài thanh tiến trình phủ trọn vẹn mép dưới thẻ miniplayer di động với nét vẽ chuẩn xác, xóa bỏ hiện tượng bóng đổ lệch',
+            'Tối giản tiêu đề trình phát: Bỏ nút đóng video trùng lặp ở tiêu đề để ưu tiên thu nhỏ tiện lợi, chỉ đóng hẳn khi người dùng chủ động tắt miniplayer'
         ],
         ja: [
-            'YouTubeスタイルの無限スクロール＆カードグリッド：履歴とプレイリストに「おすすめ」同様のIntersectionObserver無限スクロールと複数カラムカードグリッドを導入し、クリック不要でスムーズな読み込みを実現',
-            'シアターモード＆プレイヤー表示切り替え：YouTube風のシアターモード（ショートカットキー "T"）を追加し、字幕学習に集中できるワイド表示に対応',
-            '洗練されたサムネイル＆カードデザイン：不要な上部境界線やシャドウを除去し、16:9サムネイル、再生時間バッジ、視聴進捗バー、ホバー再生オーバーレイを最適化',
-            '滑らかなスケルトン波形アニメーション：初回読み込み時のスケルトンカードにグラデーション波形アニメーションを適用し、複数カラムグリッドの表示崩れを解消'
+            'YouTube仕様の専用アイコン：全画面表示アイコンとの混同を解消し、PiP最小化と視聴画面復元にYouTube準拠の専用アイコンを採用',
+            '統一された角丸とサムネイルデザイン：ミニプレーヤーのカード角丸とモバイル16:9サムネイルのスタイリングを「おすすめ」フィードのトークンと完全統一',
+            '全幅モバイルプログレスバー：モバイルミニプレーヤーの進行状況バーをカード全幅に均一配置し、不要な影や非対称な描画を解消',
+            'ヘッダー操作の最適化：動画ヘッダーから重複していた閉じるボタンを削除し、スムーズな最小化とミニプレーヤー上での確実な終了操作に統一'
         ],
         ko: [
-            'YouTube 스타일 무한 스크롤 및 카드 그리드: 시청 기록 및 재생목록에 "맞춤 추천"과 동일한 IntersectionObserver 기반 자동 무한 스크롤을 도입하여 버튼 클릭 없이 매끄럽게 콘텐츠를 탐색',
-            '영화관 모드 및 플레이어 확장: 방해 요소 없이 자막 학습에 몰입할 수 있도록 YouTube 스타일 영화관 모드(단축키 "T") 및 반응형 레이아웃 추가',
-            '정돈된 썸네일 및 카드 디자인: 상단 그림자/경계선을 제거하고 16:9 썸네일, 재생 시간 배지, 시청 진행률 표시줄, 호버 재생 오버레이 정돈',
-            '유려한 스켈레톤 웨이브 애니메이션: 썸네일, 아바타, 텍스트 라인 전반에 반응형 멀티 컬럼 스켈레톤 그라디언트 웨이브 애니메이션 적용'
+            'YouTube 스타일 전용 아이콘: 전체화면 아이콘과의 혼동을 없애고 PiP 최소화 및 시청 화면 복원 전용 아이콘 적용',
+            '통일된 모서리 곡률 및 썸네일 스타일: 미니플레이어 카드 모서리와 모바일 16:9 썸네일을 추천 피드의 디자인 시스템 토큰과 완벽 일치',
+            '전폭 모바일 진행률 표시줄: 모바일 미니플레이어 하단 전체를 아우르는 정밀한 2px 진행률 바를 적용하여 부자연스러운 그림자 및 잘림 현상 제거',
+            '영상 헤더 인터페이스 간소화: 헤더에서 중복 닫기 버튼을 제거하여 비파괴적 최소화를 장려하고, 미니플레이어에서만 명확한 닫기 지원'
         ],
         zh: [
-            'YouTube风格无限滚动与卡片网格：在历史记录与播放列表页面全面引入与“推荐”一致的IntersectionObserver自动无限加载，无需手动点击即可流畅畅览',
-            '影院模式与播放器扩展：新增标准YouTube影院模式（快捷键 "T"），提供全宽沉浸式双语字幕学习体验',
-            '精致卡片与缩略图优化：彻底消除顶部突兀的阴影边框，优化16:9缩略图、时长徽章、观看进度条与悬浮播放遮罩',
-            '流畅骨架屏波浪动画：修复多列卡片骨架屏布局并注入渐变波浪微光动画，提供更加丝滑的初始加载过渡'
+            '专属YouTube风格图标：采用标准的画中画最小化与观看页展开专属图标，彻底解决与全屏图标混淆的问题',
+            '统一圆角与缩略图样式：迷你播放器卡片圆角与手机端16:9缩略图严格对齐“为你推荐”信息流的设计规范',
+            '全幅手机端进度条：将进度条延伸至卡片底部全宽并精确贴合圆角，彻底消除不对称线条与阴影瑕疵',
+            '精简视频顶部操作栏：移除顶部操作栏中重复的关闭按钮，全面拥抱无损最小化与迷你播放器专有退出'
         ]
     }
 };
