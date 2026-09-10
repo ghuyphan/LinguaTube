@@ -124,9 +124,12 @@
         }
 
         <app-history-list
-          [items]="filteredItems()"
+          [items]="displayedItems()"
           [filter]="filter()"
           [isLoading]="isLoading()"
+          [hasMore]="hasMore()"
+          [totalCount]="filteredItems().length"
+          (loadMore)="loadMore()"
           (itemRemoved)="onItemRemoved($event)" />
       </div>
     </div>

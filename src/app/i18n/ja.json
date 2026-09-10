@@ -621,6 +621,7 @@
     "or": "または",
     "confirm": "確認",
     "cancel": "キャンセル",
+    "loadMore": "もっと読み込む",
     "chunkLoadError": "アプリのリソースの読み込みに失敗しました。接続を確認してください。"
   },
   "onboarding": {

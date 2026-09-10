@@ -26,6 +26,7 @@ import { formatTime, getVolumeIcon } from '../../../core/utils';
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
 import { TranscriptService } from '../transcript.service';
+import { PlayerViewService } from '../services/player-view.service';
 import { VocabularyService } from '../../vocabulary';
 import { SettingsService, I18nService, VideoLevelService, ToastService } from '../../../core/services';
 import { GrammarService, TranslationService } from '../../../services';
@@ -86,7 +87,15 @@ export class VideoPlayerComponent implements OnDestroy {
   translation = inject(TranslationService); // Made public for template
   private gestures = inject(GestureHandlerService);
   private keyboardShortcuts = inject(VideoKeyboardShortcutService);
+  playerView = inject(PlayerViewService);
   private toast = inject(ToastService);
+
+  readonly isMiniplayer = this.playerView.isMiniplayer;
+  readonly playbackProgressPercent = computed(() => {
+    const dur = this.youtube.duration();
+    if (!dur || dur <= 0) return 0;
+    return Math.min(100, Math.max(0, (this.youtube.currentTime() / dur) * 100));
+  });
 
   // Translation language state
   targetLang = computed(() => this.subtitles.dualSubtitleTargetLang());
@@ -212,6 +221,7 @@ export class VideoPlayerComponent implements OnDestroy {
   playlistNext = output<void>();
   playlistPrev = output<void>();
   videoEnded = output<void>();
+  minimizeVideo = output<void>();
 
   videoUrl = '';
   isLoading = signal(false);
@@ -643,6 +653,9 @@ export class VideoPlayerComponent implements OnDestroy {
         } else if (event.data.action === 'exit-fullscreen' || event.data.action === 'toggle') {
           this.toggleFullscreen();
         }
+        break;
+      case 'toggle-miniplayer':
+        this.toggleMiniplayer();
         break;
       case 'adjust-speed':
         if (event.data.action === 'decrease') {
@@ -1339,7 +1352,48 @@ export class VideoPlayerComponent implements OnDestroy {
     this.saveClicked.emit();
   }
 
+  toggleMiniplayer(): void {
+    if (this.isFullscreen()) {
+      this.toggleFullscreen();
+    }
+    this.playerView.toggle();
+  }
+
+  minimize(): void {
+    if (this.isFullscreen()) {
+      this.toggleFullscreen();
+    }
+    this.playerView.minimize();
+    this.minimizeVideo.emit();
+  }
+
+  expand(): void {
+    this.playerView.expand();
+  }
+
+  onMiniplayerClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement | null;
+    if (target?.closest('button')) return;
+    this.playerView.expand();
+  }
+
+  togglePlayFromMiniplayer(event: MouseEvent): void {
+    event.stopPropagation();
+    this.togglePlay();
+  }
+
+  expandFromMiniplayer(event: MouseEvent): void {
+    event.stopPropagation();
+    this.playerView.expand();
+  }
+
+  closeFromMiniplayer(event: MouseEvent): void {
+    event.stopPropagation();
+    this.closeVideo();
+  }
+
   closeVideo(): void {
+    this.playerView.reset();
     this.videoLevel.reset();
     this.playlistService.clearCurrentPlaylist();
     this.youtube.reset();

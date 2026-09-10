@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, computed, signal, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed, signal, effect, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -175,6 +175,32 @@ export class HistoryPageComponent implements OnInit {
     }
     return items;
   });
+
+  pageSize = 24;
+  visibleCount = signal<number>(24);
+
+  displayedItems = computed(() => {
+    return this.filteredItems().slice(0, this.visibleCount());
+  });
+
+  hasMore = computed(() => {
+    return this.visibleCount() < this.filteredItems().length;
+  });
+
+  loadMore(): void {
+    this.visibleCount.update(c => c + this.pageSize);
+  }
+
+  constructor() {
+    effect(() => {
+      // Re-read filters to reset visible count whenever search or filters change
+      this.filter();
+      this.selectedLanguage();
+      this.selectedLevel();
+      this.searchQuery();
+      this.visibleCount.set(this.pageSize);
+    });
+  }
 
   ngOnInit(): void {
     if (this.auth.isLoggedIn()) {

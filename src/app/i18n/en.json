@@ -621,6 +621,7 @@
     "or": "or",
     "confirm": "Confirm",
     "cancel": "Cancel",
+    "loadMore": "Load more",
     "chunkLoadError": "Failed to load application resource. Please check your connection."
   },
   "onboarding": {

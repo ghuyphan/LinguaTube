@@ -621,6 +621,7 @@
     "or": "또는",
     "confirm": "확인",
     "cancel": "취소",
+    "loadMore": "더 보기",
     "chunkLoadError": "앱 리소스를 불러오지 못했습니다. 네트워크 연결을 확인해 주세요."
   },
   "onboarding": {

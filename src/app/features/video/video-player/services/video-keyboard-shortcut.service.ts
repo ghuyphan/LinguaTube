@@ -19,7 +19,8 @@ export type KeyboardShortcutEvent =
     | { type: 'toggle-subtitle-position' }
     | { type: 'nudge-subtitle-position'; data: { direction: 'up' | 'down' } }
     | { type: 'cycle-font-size' }
-    | { type: 'toggle-dual-subtitles' };
+    | { type: 'toggle-dual-subtitles' }
+    | { type: 'toggle-miniplayer' };
 
 @Injectable({
     providedIn: 'root'
@@ -124,6 +125,12 @@ export class VideoKeyboardShortcutService {
             case 'KeyF':
                 event.preventDefault();
                 this.eventSubject.next({ type: 'toggle-fullscreen', data: { action: 'toggle' } });
+                return true;
+
+            // Miniplayer toggle (YouTube standard 'i' key)
+            case 'KeyI':
+                event.preventDefault();
+                this.eventSubject.next({ type: 'toggle-miniplayer' });
                 return true;
 
             // Captions toggle (YouTube 'c' key)

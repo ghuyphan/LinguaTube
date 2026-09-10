@@ -84,26 +84,27 @@
             <!-- Panel Content Area -->
             <div class="panel-content">
                 @if (isListLoading()) {
-                <div class="playlist-list skeleton-container" role="status" aria-busy="true" aria-hidden="true">
-                    @for (_ of [1,2,3,4]; track $index) {
-                    <div class="playlist-item playlist-item--skeleton">
-                        <div class="playlist-item__thumb skeleton-box"></div>
-                        <div class="playlist-item__content">
-                            <div class="skeleton-line skeleton-line--title"></div>
-                            <div class="skeleton-meta-row">
-                                <div class="skeleton-line skeleton-line--circle"></div>
-                                <div class="skeleton-line skeleton-line--meta"></div>
+                <div class="yt-video-grid skeleton-container" role="status" aria-busy="true" aria-hidden="true">
+                    @for (_ of [1,2,3,4,5,6]; track $index) {
+                    <div class="yt-video-card yt-video-card--skeleton">
+                        <div class="yt-video-card__thumbnail"></div>
+                        <div class="yt-video-card__details">
+                            <div class="yt-skeleton-avatar"></div>
+                            <div class="yt-skeleton-meta">
+                                <div class="skeleton-line skeleton-line--title"></div>
+                                <div class="skeleton-line skeleton-line--title-short"></div>
+                                <div class="skeleton-line skeleton-line--subtitle"></div>
                             </div>
                         </div>
                     </div>
                     }
                 </div>
                 } @else if (currentList().length > 0) {
-                <div class="playlist-list" [class.animate-content]="shouldAnimate()">
-                    @for (playlist of paginatedPlaylists(); track playlist.id; let i = $index) {
-                    <div class="playlist-item" [style.--item-index]="i" (click)="openPlaylistDetail(playlist)">
+                <div class="yt-video-grid" [class.animate-content]="shouldAnimate()">
+                    @for (playlist of visiblePlaylists(); track playlist.id; let i = $index) {
+                    <article class="yt-video-card yt-video-card--playlist" [style.--item-index]="i < 12 ? i : -1" (click)="openPlaylistDetail(playlist)">
                         <!-- Thumbnail (16:9) -->
-                        <div class="playlist-item__thumb">
+                        <div class="yt-video-card__thumbnail">
                             @if (playlist.thumbnail) {
                             <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" decoding="async">
                             } @else {
@@ -113,62 +114,67 @@
                             }
 
                             <!-- Video Count Badge -->
-                            <div class="video-count">
+                            <div class="yt-playlist-count-badge">
                                 <app-icon name="list-video" [size]="11" />
                                 <span>{{ playlist.videoIds.length }}</span>
                             </div>
 
                             <!-- Hover Play Overlay -->
-                            <div class="card-play-overlay">
-                                <div class="play-icon-circle">
-                                    <app-icon name="play" [size]="15" />
+                            <div class="yt-card-hover-overlay">
+                                <div class="yt-playlist-hover-content">
+                                    <div class="yt-play-circle">
+                                        <app-icon name="play" [size]="18" />
+                                    </div>
+                                    <span class="yt-play-all-text">{{ i18n.t('playlist.playAll') }}</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Content info -->
-                        <div class="playlist-item__content">
-                            <h3 class="playlist-item__title" [title]="playlist.title">{{ playlist.title }}</h3>
-                            <div class="playlist-item__meta">
+                        <div class="yt-video-card__details">
+                            <div class="yt-video-card__avatar">
                                 @if (playlist.language) {
                                 <img [src]="getFlagUrl(playlist.language)" class="circle-flag" [alt]="playlist.language" [title]="playlist.language.toUpperCase()" loading="lazy" />
-                                }
-                                @if (getPlaylistLevel(playlist); as lvl) {
-                                <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
-                                }
-                                <span class="meta-author">{{ view() === 'my' ? i18n.t('playlist.myPlaylist') : (playlist.userName || i18n.t('playlist.community')) }}</span>
-                                <span class="separator">•</span>
-                                <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? 'video' : 'videos' }}</span>
-                                @if (playlist.isFeatured) {
-                                <span class="separator">•</span>
-                                <span class="meta-featured"><app-icon name="sparkles" [size]="11" /> {{ i18n.t('playlist.featured') }}</span>
-                                }
-                                @if (playlist.visibility === 'private') {
-                                <span class="separator">•</span>
-                                <span class="meta-private"><app-icon name="lock" [size]="10" /> {{ i18n.t('playlist.visibility.private') }}</span>
+                                } @else {
+                                <div class="avatar-placeholder">
+                                    <app-icon name="list-video" [size]="16" />
+                                </div>
                                 }
                             </div>
-                        </div>
 
-                        <!-- Actions -->
-                        <div class="playlist-item__actions">
-                            <button type="button" class="action-btn" (click)="openMenu(playlist, $event)" [attr.aria-label]="i18n.t('common.options') || 'Options'" [title]="i18n.t('common.options') || 'Options'">
-                                <app-icon name="more-vertical" [size]="16" />
-                            </button>
+                            <div class="yt-video-card__meta">
+                                <h3 class="yt-video-card__title" [title]="playlist.title">{{ playlist.title }}</h3>
+                                <div class="yt-video-card__channel-row">
+                                    <span class="yt-channel-name">{{ view() === 'my' ? i18n.t('playlist.myPlaylist') : (playlist.userName || i18n.t('playlist.community')) }}</span>
+                                    <span class="meta-dot">•</span>
+                                    <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? 'video' : 'videos' }}</span>
+                                </div>
+                                <div class="yt-video-card__sub-row">
+                                    @if (getPlaylistLevel(playlist); as lvl) {
+                                    <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
+                                    }
+                                    @if (playlist.isFeatured) {
+                                    <span class="meta-featured"><app-icon name="sparkles" [size]="11" /> {{ i18n.t('playlist.featured') }}</span>
+                                    }
+                                    @if (playlist.visibility === 'private') {
+                                    <span class="meta-private"><app-icon name="lock" [size]="10" /> {{ i18n.t('playlist.visibility.private') }}</span>
+                                    }
+
+                                    <!-- Actions button (more-vertical) -->
+                                    <button type="button" class="action-btn" (click)="openMenu(playlist, $event)" [attr.aria-label]="i18n.t('common.options') || 'Options'" [title]="i18n.t('common.options') || 'Options'">
+                                        <app-icon name="more-vertical" [size]="16" />
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </article>
                     }
                 </div>
 
-                @if (totalPages() > 1) {
-                <div class="playlist-pagination">
-                    <button class="btn btn-icon btn-sm btn-ghost" [disabled]="currentPage() === 1" (click)="prevPage()">
-                        <app-icon name="chevron-left" [size]="16" />
-                    </button>
-                    <span class="pagination-info">{{ currentPage() }} / {{ totalPages() }}</span>
-                    <button class="btn btn-icon btn-sm btn-ghost" [disabled]="currentPage() === totalPages()" (click)="nextPage()">
-                        <app-icon name="chevron-right" [size]="16" />
-                    </button>
+                @if (hasMorePlaylists()) {
+                <div #scrollSentinel class="feed-sentinel"></div>
+                <div class="feed-loading-more" role="status" [attr.aria-label]="i18n.t('common.loading')">
+                    <div class="spinner spinner--md"></div>
                 </div>
                 }
                 } @else {

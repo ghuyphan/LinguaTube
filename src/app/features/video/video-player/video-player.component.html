@@ -39,8 +39,10 @@
   } @else {
   <!-- Video Loaded State -->
   <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()"
+    [class.is-miniplayer]="isMiniplayer()"
     [class.controls-visible]="areControlsVisible()"
-    [class.animate-enter]="stateTransition() === 'to-video'">
+    [class.animate-enter]="stateTransition() === 'to-video'"
+    (click)="isMiniplayer() && onMiniplayerClick($event)">
 
     <div class="video-embed-ratio">
       <div id="youtube-player"></div>
@@ -55,6 +57,7 @@
     </div>
     }
 
+    @if (!isMiniplayer()) {
     <!-- Seek Feedback - positioned at container level -->
     <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()"
       (animationend)="onSeekAnimationEnd()">
@@ -120,6 +123,7 @@
         <div class="mini-progress__fill"></div>
       </div>
     </div>
+    }
 
     <!-- Fullscreen Subtitle Overlay -->
     @if (isFullscreen()) {
@@ -619,6 +623,7 @@
     }
 
     <!-- Custom Controls -->
+    @if (!isMiniplayer()) {
     <div class="custom-controls" [class.controls-hidden]="!areControlsVisible()">
       <!-- Progress Bar -->
       <app-progress-bar (seekStarted)="onSeekStarted()" (seekEnded)="onSeekEnded($event)" #progressBarComponent>
@@ -636,15 +641,93 @@
         (toggleDualSubs)="toggleDualSubtitles()"
         (openDualSubMenu)="openDualSubMenu($event)"
         (speedClick)="openSpeedMenu($event)" (openSettings)="openPlayerSettings($event)"
+        (toggleMiniplayer)="toggleMiniplayer()"
         (toggleFullscreen)="toggleFullscreen()" (showVolumeSlider)="showVolumeSlider()"
         (hideVolumeSlider)="hideVolumeSlider()" />
     </div>
+    }
+
+    <!-- Miniplayer Overlay & Controls (YouTube Style for Desktop & Mobile) -->
+    @if (isMiniplayer()) {
+    <div class="miniplayer-container">
+      <!-- Desktop Miniplayer Hover Overlay (overlaid on video) -->
+      <div class="miniplayer-desktop-overlay desktop-only">
+        <div class="miniplayer-desktop-top">
+          <button type="button" class="miniplayer-btn" (click)="expandFromMiniplayer($event)"
+            [attr.aria-label]="i18n.t('player.expand') || 'Expand (i)'"
+            [title]="i18n.t('player.expand') || 'Expand (i)'">
+            <app-icon name="maximize" [size]="16" />
+          </button>
+          <button type="button" class="miniplayer-btn" (click)="closeFromMiniplayer($event)"
+            [attr.aria-label]="i18n.t('player.closeVideo') || 'Close'"
+            [title]="i18n.t('player.closeVideo') || 'Close'">
+            <app-icon name="x" [size]="16" />
+          </button>
+        </div>
+        <div class="miniplayer-desktop-center">
+          <button type="button" class="miniplayer-play-btn" (click)="togglePlayFromMiniplayer($event)"
+            [attr.aria-label]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (i18n.t('player.play') || 'Play')">
+            <app-icon [name]="youtube.intendedPlayingState() ? 'pause' : 'play'" [size]="24" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Miniplayer Content (Docked horizontal bar) -->
+      <div class="miniplayer-mobile-content mobile-only">
+        <div class="miniplayer-mobile-info">
+          <span class="miniplayer-title" [title]="youtube.currentVideo()?.title">{{ youtube.currentVideo()?.title }}</span>
+          <span class="miniplayer-channel">{{ youtube.currentVideo()?.channel }}</span>
+        </div>
+        <div class="miniplayer-mobile-actions">
+          <button type="button" class="miniplayer-mobile-btn" (click)="togglePlayFromMiniplayer($event)"
+            [attr.aria-label]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (i18n.t('player.play') || 'Play')">
+            <app-icon [name]="youtube.intendedPlayingState() ? 'pause' : 'play'" [size]="20" />
+          </button>
+          <button type="button" class="miniplayer-mobile-btn" (click)="closeFromMiniplayer($event)"
+            [attr.aria-label]="i18n.t('player.closeVideo') || 'Close'"
+            [title]="i18n.t('player.closeVideo') || 'Close'">
+            <app-icon name="x" [size]="18" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop Bottom Bar (Title, Channel, Controls) -->
+      <div class="miniplayer-desktop-bar desktop-only">
+        <div class="miniplayer-desktop-info">
+          <span class="miniplayer-title" [title]="youtube.currentVideo()?.title">{{ youtube.currentVideo()?.title }}</span>
+          <span class="miniplayer-channel">{{ youtube.currentVideo()?.channel }}</span>
+        </div>
+        <div class="miniplayer-desktop-actions">
+          <button type="button" class="miniplayer-action-btn" (click)="togglePlayFromMiniplayer($event)"
+            [attr.aria-label]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (i18n.t('player.play') || 'Play')"
+            [title]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (i18n.t('player.play') || 'Play')">
+            <app-icon [name]="youtube.intendedPlayingState() ? 'pause' : 'play'" [size]="15" />
+          </button>
+          <button type="button" class="miniplayer-action-btn" (click)="expandFromMiniplayer($event)"
+            [attr.aria-label]="i18n.t('player.expand') || 'Expand (i)'"
+            [title]="i18n.t('player.expand') || 'Expand (i)'">
+            <app-icon name="maximize" [size]="15" />
+          </button>
+          <button type="button" class="miniplayer-action-btn" (click)="closeFromMiniplayer($event)"
+            [attr.aria-label]="i18n.t('player.closeVideo') || 'Close'"
+            [title]="i18n.t('player.closeVideo') || 'Close'">
+            <app-icon name="x" [size]="15" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Playback Progress Bar (Thin accent line along the bottom) -->
+      <div class="miniplayer-progress">
+        <div class="miniplayer-progress-bar" [style.width.%]="playbackProgressPercent()"></div>
+      </div>
+    </div>
+    }
   </div>
 
   <!-- Video Info -->
-  @if (!isFullscreen()) {
+  @if (!isFullscreen() && !isMiniplayer()) {
   <app-video-header [title]="youtube.currentVideo()?.title" [channel]="youtube.currentVideo()?.channel"
-    (closeVideo)="closeVideo()" (savePlaylist)="onSaveClick()" (shareVideo)="shareCurrentVideo()" />
+    (minimizeVideo)="minimize()" (closeVideo)="closeVideo()" (savePlaylist)="onSaveClick()" (shareVideo)="shareCurrentVideo()" />
   }
   }
 </div>

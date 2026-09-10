@@ -39,6 +39,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    &.yt-video-grid {
+        display: grid;
+    }
 }
 
 .skeleton-line {

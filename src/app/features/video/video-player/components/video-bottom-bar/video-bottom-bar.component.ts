@@ -46,6 +46,7 @@ export class VideoBottomBarComponent {
   openDualSubMenu = output<MouseEvent>();
   speedClick = output<MouseEvent>();
   openSettings = output<MouseEvent>();
+  toggleMiniplayer = output<void>();
   toggleFullscreen = output<void>();
 
   // Mouse event outputs for volume slider

@@ -82,15 +82,6 @@
 // ============================================
 .dict-results {
     padding: 0;
-    max-height: calc(100vh - 280px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: thin;
-    padding-right: 2px;
-
-    @media (max-width: 768px) {
-        max-height: calc(100dvh - 260px);
-    }
 }
 
 .loading-state {

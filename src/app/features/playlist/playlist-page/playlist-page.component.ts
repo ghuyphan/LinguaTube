@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy, inject, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, inject, signal, computed, effect, ElementRef, viewChild, DestroyRef, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlaylistService } from '../playlist.service';
@@ -148,7 +148,7 @@ export class PlaylistPageComponent {
         if (this.view() === 'my') {
             return this.playlistService.isUserPlaylistsLoading() && this.playlists().length === 0;
         }
-        return this.playlistService.isCommunityLoading() && this.communityPlaylists().length === 0;
+        return (!this.playlistService.hasLoadedCommunity() || this.playlistService.isCommunityLoading()) && this.communityPlaylists().length === 0;
     });
 
     currentList = computed(() => {
@@ -208,7 +208,6 @@ export class PlaylistPageComponent {
 
     onLevelFilterChange(value: string): void {
         this.shouldAnimate.set(true);
-        this.currentPage.set(1);
         this.levelFilter.set(value);
         this.showLevelFilter.set(false);
         if (this.view() === 'community' || this.view() === 'curated') {
@@ -216,42 +215,78 @@ export class PlaylistPageComponent {
         }
     }
 
+    // Progressive Loading (Infinite Scroll)
+    pageSize = 24;
+    visibleCount = signal<number>(24);
+
+    readonly scrollSentinel = viewChild<ElementRef<HTMLDivElement>>('scrollSentinel');
+    private sentinelObserver: IntersectionObserver | null = null;
+    private platformId = inject(PLATFORM_ID);
+    private destroyRef = inject(DestroyRef);
+    private isExpanding = false;
+
     constructor() {
         void this.playlistService.loadUserPlaylists();
         void this.playlistService.loadCommunityPlaylists();
-    }
 
-    // Pagination
-    currentPage = signal(1);
-    pageSize = 24;
+        effect(() => {
+            // Re-read filters to reset visible count whenever search or filters change
+            this.view();
+            this.languageFilter();
+            this.levelFilter();
+            this.searchQuery();
+            this.visibleCount.set(this.pageSize);
+        });
+
+        effect(() => {
+            const sentinelRef = this.scrollSentinel();
+            if (!isPlatformBrowser(this.platformId)) return;
+
+            if (this.sentinelObserver) {
+                this.sentinelObserver.disconnect();
+                this.sentinelObserver = null;
+            }
+
+            if (sentinelRef?.nativeElement) {
+                this.sentinelObserver = new IntersectionObserver((entries) => {
+                    const entry = entries[0];
+                    if (entry?.isIntersecting && this.hasMorePlaylists() && !this.isExpanding) {
+                        this.isExpanding = true;
+                        this.loadMore();
+                        setTimeout(() => {
+                            this.isExpanding = false;
+                        }, 120);
+                    }
+                }, {
+                    rootMargin: '600px 0px',
+                    threshold: 0.05
+                });
+                this.sentinelObserver.observe(sentinelRef.nativeElement);
+            }
+        });
+
+        this.destroyRef.onDestroy(() => {
+            if (this.sentinelObserver) {
+                this.sentinelObserver.disconnect();
+                this.sentinelObserver = null;
+            }
+        });
+    }
 
     onSearchChange(query: string): void {
         this.searchQuery.set(query);
-        this.currentPage.set(1);
     }
 
-    paginatedPlaylists = computed(() => {
-        const list = this.currentList();
-        const total = Math.max(1, Math.ceil(list.length / this.pageSize));
-        const page = Math.min(Math.max(1, this.currentPage()), total);
-        const startIndex = (page - 1) * this.pageSize;
-        return list.slice(startIndex, startIndex + this.pageSize);
+    visiblePlaylists = computed(() => {
+        return this.currentList().slice(0, this.visibleCount());
     });
 
-    totalPages = computed(() => Math.max(1, Math.ceil(this.currentList().length / this.pageSize)));
+    hasMorePlaylists = computed(() => {
+        return this.visibleCount() < this.currentList().length;
+    });
 
-    nextPage(): void {
-        if (this.currentPage() < this.totalPages()) {
-            this.currentPage.update(p => p + 1);
-            this.scrollToTop();
-        }
-    }
-
-    prevPage(): void {
-        if (this.currentPage() > 1) {
-            this.currentPage.update(p => p - 1);
-            this.scrollToTop();
-        }
+    loadMore(): void {
+        this.visibleCount.update(c => c + this.pageSize);
     }
 
     private scrollToTop(): void {
@@ -360,7 +395,6 @@ export class PlaylistPageComponent {
 
     setView(view: 'community' | 'curated' | 'my'): void {
         this.shouldAnimate.set(true);
-        this.currentPage.set(1);
         this.view.set(view);
         this.viewingPlaylist.set(null); // Reset detail view when switching tabs
         if ((view === 'community' || view === 'curated') && this.communityPlaylists().length === 0) {
@@ -467,7 +501,6 @@ export class PlaylistPageComponent {
 
     onLanguageFilterChange(value: string): void {
         this.shouldAnimate.set(true);
-        this.currentPage.set(1);
         const lang = value as 'all' | PlaylistLanguage;
         this.languageFilter.set(lang);
         this.showLanguageFilter.set(false);

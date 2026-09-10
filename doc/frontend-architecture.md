@@ -302,6 +302,10 @@ graph TD
 ---
 
 ### 3.5. Playlists & History Domains (`playlist/` & `history/`)
+- **Unified YouTube-Style Grid & Infinite Scroll Architecture**:
+  - History (`/history`) and Playlists (`/explore`) utilize the standardized multi-column card grid layout (`.yt-video-grid` and `.yt-video-card`), identical to the "For You" feed.
+  - **IntersectionObserver Infinite Scroll**: Employs an invisible `#scrollSentinel` element with `rootMargin: '600px 0px'`. As users scroll near the bottom, batches of 24 items are progressively loaded and rendered seamlessly without manual pagination or click-to-load buttons.
+  - Features a subtle bottom loading spinner (`.feed-loading-more .spinner`) during progressive batch transitions.
 - **`PlaylistPageComponent`**:
   - Lists user-created custom playlists alongside curated Community Playlists with responsive view tabs (`Community`, `Featured`, `My Playlists`), language filtering, and difficulty level filtering (`Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).
   - **Structured Two-Tier Toolbar**: Two-row hierarchy separating navigation tabs and primary CTA (`+ Create playlist`) on the top row from search input and filter chips (`Language`, `Level`) on the second row, preventing text truncation or button clipping.
@@ -310,7 +314,7 @@ graph TD
   - **Playlist Search & Video Management**: Integrated real-time search filtering across title, description, and author, plus track removal (`trash-2`) for owned playlists.
   - Detail view tracks video watch progress via `HistoryService`, showing green checkmark icons and progress bars on watched items.
 - **`AddToPlaylistDialogComponent`**: Modal sheet to bookmark current video into existing or new playlists.
-- **`HistoryPageComponent`**:
+- **`HistoryPageComponent` & `HistoryListComponent`**:
   - Displays watch history, percentage watched, resume timestamps, and options to clear history.
   - **History Search Bar & Filters**: Real-time toolbar search filtering items by video title or channel name, alongside language and proficiency level filtering.
   - Features an in-progress **"Continue Learning" (Resume Hero Banner)** for one-tap resumption of unfinished study sessions.
@@ -555,6 +559,21 @@ To maintain complete visual, structural, and functional harmony across all prima
   - Centered over 16:9 thumbnails (`inset: 0; background: rgba(0, 0, 0, 0.35);`).
   - Standardized 32px circular play icon (`.play-icon-circle`, `background: var(--accent-primary); color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);`).
   - Smooth hover reveal: fades in from `opacity: 0` to `1` and scales from `0.9` to `1` on card hover across `.playlist-item`, `.history-item`, `.resume-hero`, `.video-card`, and `.recent-preview`.
+
+### 6.3. Unified YouTube-Style Video & Playlist Grid System (`.yt-video-grid` & `.yt-video-card`)
+- **Global Centralization (`src/styles/_components.scss`)**: Standardized responsive card grid system shared across the Home "For You" feed (`/video`), History (`/history`), and Playlists explorer (`/playlist`).
+- **Responsive Layout Grid (`.yt-video-grid`)**:
+  - Desktop & Tablet: Auto-filling multi-column grid (`grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px 16px;`), eliminating single-column desktop stretching and maintaining smooth, single-document natural scrolling.
+  - Mobile: Collapses smoothly to a clean single column (`1fr`, `gap: 18px`).
+- **Unified Card Architecture (`.yt-video-card`)**:
+  - **16:9 Thumbnail (`.yt-video-card__thumbnail`)**: Consistent 16:9 aspect ratio with rounded corners (`12px`), lazy-loaded image zoom on hover (`scale(1.035)`), hover play overlay (`.yt-card-hover-overlay` with 40px accent `.yt-play-circle`), and duration badge (`.yt-duration-badge`) or video count badge (`.yt-playlist-count-badge`).
+  - **Progress Bar (`.yt-progress-bar-container`)**: Unobtrusive bottom progress line (`#ef4444`) showing video watch or resume progress.
+  - **Details Area (`.yt-video-card__details`)**: Avatar/Flag icon (`.yt-video-card__avatar`) paired with metadata container (`.yt-video-card__meta`).
+  - **Clamped Title (`.yt-video-card__title`)**: Strictly clamped to 2 lines with ellipsis, accent color highlight on hover, and tooltip for overflow text.
+  - **Channel & Meta Rows (`.yt-video-card__channel-row`, `.yt-video-card__sub-row`)**: Channel name, author, relative time ago, dot separators, proficiency level pills (`[attr.data-tier]`), vocabulary match badges, and language indicators.
+  - **Card Action Bar (`.yt-card-actions`)**: Quick-action buttons (favorite heart with pop animation, delete trash button, or three-dot options menu) neatly aligned to the right.
+- **Wave Shimmer Skeleton States (`.yt-video-card--skeleton`)**: Shared shimmer animation matching production YouTube card proportions for smooth initial loading.
+- **Clean Aesthetic**: Free of unnatural box-shadow borders or protruding lines, delivering a crisp, authentic YouTube feel across both light and dark themes.
 
 ---
 

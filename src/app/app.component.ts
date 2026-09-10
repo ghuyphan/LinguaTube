@@ -15,7 +15,7 @@ import { AchievementsDialogComponent } from './components/achievements-dialog/ac
 import { ProUpgradeDialogComponent } from './components/pro-upgrade-dialog/pro-upgrade-dialog.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { I18nService, SettingsService, SeoService, PwaService, GamificationService, AppUpdateService } from './core/services';
-import { YoutubeService, TranscriptService } from './features/video';
+import { YoutubeService, TranscriptService, PlayerViewService } from './features/video';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
@@ -1115,6 +1115,7 @@ export class AppComponent implements OnDestroy {
   protected sheetService = inject(BottomSheetService);
   appUpdate = inject(AppUpdateService);
   private videoRecommendation = inject(VideoRecommendationService);
+  protected playerView = inject(PlayerViewService);
   private seo = inject(SeoService);
   pwa = inject(PwaService);
 
@@ -1256,12 +1257,23 @@ export class AppComponent implements OnDestroy {
             this.videoRecommendation.triggerHomeFeedRefresh();
           }
         } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          // Active video playing: toggle miniplayer without destroying playback!
+          if (!this.playerView.isMiniplayer()) {
+            this.playerView.minimize();
+          } else {
+            const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+            if (scrollY > 80) {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+              this.playerView.expand();
+            }
+          }
         }
       }
     } else if (activeVideo) {
       // Navigating back from another page while video is active: Resume current video
       event.preventDefault();
+      this.playerView.expand();
       const playlistId = this.playlistService.currentPlaylist()?.id;
       void this.router.navigate(['/video'], {
         queryParams: {

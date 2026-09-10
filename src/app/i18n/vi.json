@@ -621,6 +621,7 @@
     "or": "hoặc",
     "confirm": "Xác nhận",
     "cancel": "Hủy",
+    "loadMore": "Tải thêm",
     "chunkLoadError": "Không thể tải tài nguyên ứng dụng. Vui lòng kiểm tra kết nối mạng."
   },
   "onboarding": {

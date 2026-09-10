@@ -1,14 +1,15 @@
 @if (isLoading() && items().length === 0) {
     <!-- Skeleton loading state -->
-    <div class="skeleton-container" role="status" aria-busy="true" aria-hidden="true">
-        @for (_ of [1, 2, 3, 4]; track $index) {
-        <div class="history-item history-item--skeleton">
-            <div class="history-item__thumb skeleton-box"></div>
-            <div class="history-item__content">
-                <div class="skeleton-line skeleton-line--title"></div>
-                <div class="skeleton-meta-row">
-                    <div class="skeleton-line skeleton-line--badge"></div>
-                    <div class="skeleton-line skeleton-line--meta"></div>
+    <div class="yt-video-grid skeleton-container" role="status" aria-busy="true" aria-hidden="true">
+        @for (_ of [1, 2, 3, 4, 5, 6]; track $index) {
+        <div class="yt-video-card yt-video-card--skeleton">
+            <div class="yt-video-card__thumbnail"></div>
+            <div class="yt-video-card__details">
+                <div class="yt-skeleton-avatar"></div>
+                <div class="yt-skeleton-meta">
+                    <div class="skeleton-line skeleton-line--title"></div>
+                    <div class="skeleton-line skeleton-line--title-short"></div>
+                    <div class="skeleton-line skeleton-line--subtitle"></div>
                 </div>
             </div>
         </div>
@@ -39,87 +40,97 @@
     }
 } @else {
     <!-- History Items -->
-    <div class="history-list-items">
+    <div class="yt-video-grid">
         @for (item of items(); track item.id; let i = $index) {
-        <div class="history-item"
+        <article class="yt-video-card"
             [class.is-deleting]="isDeleting(item.id)"
-            [style.--item-index]="i"
+            [style.--item-index]="i < 12 ? i : -1"
             (click)="onPlayVideo(item)">
 
             <!-- Thumbnail (16:9) -->
-            <div class="history-item__thumb">
+            <div class="yt-video-card__thumbnail">
                 <img [src]="item.thumbnail || getThumbnail(item.video_id)" [alt]="item.title" loading="lazy" decoding="async" />
 
                 <!-- Play Overlay on Hover -->
-                <div class="card-play-overlay">
-                    <div class="play-icon-circle">
-                        <app-icon name="play" [size]="15" />
+                <div class="yt-card-hover-overlay">
+                    <div class="yt-play-circle">
+                        <app-icon name="play" [size]="18" />
                     </div>
                 </div>
 
                 <!-- Duration Badge -->
                 @if (formatDuration(item.duration); as dur) {
-                <div class="duration-badge">
-                    <span>{{ dur }}</span>
-                </div>
+                <span class="yt-duration-badge">{{ dur }}</span>
                 }
 
                 <!-- Progress Bar -->
                 @if (item.progress > 0) {
-                <div class="progress-bar">
-                    <div class="progress-fill" [style.width.%]="item.progress"></div>
+                <div class="yt-progress-bar-container">
+                    <div class="yt-progress-bar" [style.width.%]="item.progress"></div>
                 </div>
                 }
             </div>
 
-            <!-- Content info -->
-            <div class="history-item__content">
-                <h3 class="history-item__title" [title]="item.title">{{ item.title }}</h3>
-                <div class="history-item__meta">
+            <!-- Details -->
+            <div class="yt-video-card__details">
+                <div class="yt-video-card__avatar">
                     @let langs = item.languages || [];
                     @if (langs.length > 0) {
-                        @for (lang of langs.slice(0, 2); track lang) {
-                            <img [src]="getFlagUrl(lang)" class="circle-flag" [alt]="lang" [title]="lang.toUpperCase()" loading="lazy" />
-                        }
-                        @if (langs.length > 2) {
-                            <span class="lang-count" [title]="getLanguagesTooltip(langs)">+{{ langs.length - 2 }}</span>
-                        }
+                        <img [src]="getFlagUrl(langs[0])" class="circle-flag" [alt]="langs[0]" [title]="getLanguagesTooltip(langs)" loading="lazy" />
                     } @else if (item.language) {
                         <img [src]="getFlagUrl(item.language)" class="circle-flag" [alt]="item.language" [title]="item.language.toUpperCase()" loading="lazy" />
+                    } @else {
+                        <div class="avatar-placeholder">
+                            <app-icon name="play-circle" [size]="16" />
+                        </div>
                     }
-                    @if (getItemLevel(item); as lvl) {
+                </div>
+
+                <div class="yt-video-card__meta">
+                    <h3 class="yt-video-card__title" [title]="item.title">{{ item.title }}</h3>
+
+                    <div class="yt-video-card__channel-row">
+                        @if (item.channel) {
+                        <span class="yt-channel-name" [title]="item.channel">{{ item.channel }}</span>
+                        <span class="meta-dot">•</span>
+                        }
+                        <span class="time-ago">{{ getRelativeTime(item.watched_at) }}</span>
+                    </div>
+
+                    <div class="yt-video-card__sub-row">
+                        @if (getItemLevel(item); as lvl) {
                         <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
-                    }
+                        }
 
-                    @if (item.channel) {
-                        <span class="channel-name" [title]="item.channel">{{ item.channel }}</span>
-                        <span class="separator">•</span>
-                    }
+                        <div class="yt-card-actions">
+                            <button type="button" class="action-btn action-btn--favorite"
+                                [class.active]="item.is_favorite"
+                                [class.animating]="isAnimatingFavorite(item.id)"
+                                (click)="onToggleFavorite(item, $event)"
+                                [attr.aria-label]="i18n.t('history.favorites')"
+                                [attr.aria-pressed]="item.is_favorite"
+                                [title]="i18n.t('history.favorites')">
+                                <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="16" />
+                            </button>
 
-                    <span class="time-ago">{{ getRelativeTime(item.watched_at) }}</span>
+                            <button type="button" class="action-btn action-btn--delete"
+                                (click)="onRemoveItem(item, $event)"
+                                [attr.aria-label]="i18n.t('history.removeFromHistory')"
+                                [title]="i18n.t('history.removeFromHistory')">
+                                <app-icon name="trash-2" [size]="15" />
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Actions -->
-            <div class="history-item__actions">
-                <button type="button" class="action-btn action-btn--favorite"
-                    [class.active]="item.is_favorite"
-                    [class.animating]="isAnimatingFavorite(item.id)"
-                    (click)="onToggleFavorite(item, $event)"
-                    [attr.aria-label]="i18n.t('history.favorites')"
-                    [attr.aria-pressed]="item.is_favorite"
-                    [title]="i18n.t('history.favorites')">
-                    <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="16" />
-                </button>
-
-                <button type="button" class="action-btn action-btn--delete"
-                    (click)="onRemoveItem(item, $event)"
-                    [attr.aria-label]="i18n.t('history.removeFromHistory')"
-                    [title]="i18n.t('history.removeFromHistory')">
-                    <app-icon name="trash-2" [size]="15" />
-                </button>
-            </div>
-        </div>
+        </article>
         }
     </div>
+
+    @if (hasMore()) {
+    <div #scrollSentinel class="feed-sentinel"></div>
+    <div class="feed-loading-more" role="status" [attr.aria-label]="i18n.t('common.loading')">
+        <div class="spinner spinner--md"></div>
+    </div>
+    }
 }

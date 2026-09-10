@@ -5,8 +5,13 @@ import {
     signal,
     input,
     output,
+    ElementRef,
+    viewChild,
+    DestroyRef,
+    PLATFORM_ID,
+    effect,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../history.service';
@@ -34,14 +39,60 @@ export class HistoryListComponent {
     items = input.required<HistoryItem[]>();
     filter = input<string>('all');
     isLoading = input<boolean>(false);
+    hasMore = input<boolean>(false);
+    totalCount = input<number>(0);
 
     // Outputs
     itemRemoved = output<HistoryItem>();
     favoriteAdded = output<HistoryItem>();
+    loadMore = output<void>();
 
     // Animation states
     deletingItems = signal<Set<string>>(new Set());
     animatingFavorites = signal<Set<string>>(new Set());
+
+    // Infinite Scroll Sentinel & Observer
+    readonly scrollSentinel = viewChild<ElementRef<HTMLDivElement>>('scrollSentinel');
+    private sentinelObserver: IntersectionObserver | null = null;
+    private platformId = inject(PLATFORM_ID);
+    private destroyRef = inject(DestroyRef);
+    private isExpanding = false;
+
+    constructor() {
+        effect(() => {
+            const sentinelRef = this.scrollSentinel();
+            if (!isPlatformBrowser(this.platformId)) return;
+
+            if (this.sentinelObserver) {
+                this.sentinelObserver.disconnect();
+                this.sentinelObserver = null;
+            }
+
+            if (sentinelRef?.nativeElement) {
+                this.sentinelObserver = new IntersectionObserver((entries) => {
+                    const entry = entries[0];
+                    if (entry?.isIntersecting && this.hasMore() && !this.isExpanding) {
+                        this.isExpanding = true;
+                        this.loadMore.emit();
+                        setTimeout(() => {
+                            this.isExpanding = false;
+                        }, 120);
+                    }
+                }, {
+                    rootMargin: '600px 0px',
+                    threshold: 0.05
+                });
+                this.sentinelObserver.observe(sentinelRef.nativeElement);
+            }
+        });
+
+        this.destroyRef.onDestroy(() => {
+            if (this.sentinelObserver) {
+                this.sentinelObserver.disconnect();
+                this.sentinelObserver = null;
+            }
+        });
+    }
 
     // ─────────────────────────────────────────────────────────────
     // Actions

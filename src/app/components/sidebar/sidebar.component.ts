@@ -6,7 +6,7 @@ import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
 import { SettingsService, AuthService, I18nService, AppUpdateService } from '../../core/services';
-import { YoutubeService, SubtitleService, TranscriptService } from '../../features/video';
+import { YoutubeService, SubtitleService, TranscriptService, PlayerViewService } from '../../features/video';
 import { VocabularyService } from '../../features/vocabulary';
 import { PlaylistService } from '../../features/playlist/playlist.service';
 import { StreakService } from '../../services/streak.service';
@@ -24,6 +24,7 @@ import { VideoRecommendationService } from '../../core/services/video-recommenda
 })
 export class SidebarComponent {
     private router = inject(Router);
+    playerView = inject(PlayerViewService);
     settings = inject(SettingsService);
     vocab = inject(VocabularyService);
     youtube = inject(YoutubeService);
@@ -65,19 +66,26 @@ export class SidebarComponent {
                 const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
                 if (scrollY > 80) {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    this.videoRecommendation.triggerHomeFeedRefresh();
                 }
-                this.videoRecommendation.triggerHomeFeedRefresh();
             } else {
-                // Clicking Watch while watching clears current video to return to search/spotlight
-                this.playlistService.clearCurrentPlaylist();
-                this.youtube.reset();
-                this.subtitles.clear();
-                this.transcript.reset();
-                void this.router.navigate(['/video'], { queryParams: {} });
+                // Tapping Watch or Brand while watching: Toggle miniplayer without destroying playback!
+                if (!this.playerView.isMiniplayer()) {
+                    this.playerView.minimize();
+                } else {
+                    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+                    if (scrollY > 80) {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        this.playerView.expand();
+                    }
+                }
             }
         } else if (activeVideo) {
             // Navigating back from another page while video is active: Resume current video
             event.preventDefault();
+            this.playerView.expand();
             const playlistId = this.playlistService.currentPlaylist()?.id;
             void this.router.navigate(['/video'], {
                 queryParams: {

@@ -28,6 +28,7 @@ export class VideoHeaderComponent {
   });
   readonly showLevelPopover = signal(false);
 
+  minimizeVideo = output<void>();
   closeVideo = output<void>();
   savePlaylist = output<void>();
   shareVideo = output<void>();

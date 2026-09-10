@@ -621,6 +621,7 @@
     "or": "或",
     "confirm": "确定",
     "cancel": "取消",
+    "loadMore": "加载更多",
     "chunkLoadError": "加载应用资源失败，请检查网络连接。"
   },
   "onboarding": {

@@ -1,11 +1,11 @@
-<div class="layout">
+<div class="layout" [class.miniplayer-active]="playerView.isMiniplayer()">
     <div class="layout-main">
         <app-video-player (fullscreenWordClicked)="onWordClicked($event)"
             (fullscreenChanged)="isVideoFullscreen.set($event)" (videoEnded)="onVideoEnded()"
             (saveClicked)="openAddToPlaylist()" (playlistNext)="onPlaylistNext()" (playlistPrev)="onPlaylistPrev()" />
 
         <!-- Mobile Playlist Bar (Compact, zero-layout-shift YouTube Mobile style) -->
-        @if (showMobilePlaylistCard()) {
+        @if (showMobilePlaylistCard() && !playerView.isMiniplayer()) {
         <div class="mobile-playlist-card mobile-only" (click)="openMobilePlaylistSheet()">
             <div class="mobile-playlist-bar">
                 <div class="mobile-playlist-header-left">
@@ -334,6 +334,7 @@
     </div>
 
     <!-- Desktop sidebar: Unified card container -->
+    @if (!playerView.isMiniplayer()) {
     <aside class="layout-sidebar desktop-only">
         <div class="card unified-sidebar">
             @if (hasPlaylist()) {
@@ -381,6 +382,7 @@
             }
         </div>
     </aside>
+    }
 </div>
 
 <!-- Add to Playlist Dialog -->

@@ -14,6 +14,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
 import { TranscriptService } from '../transcript.service';
+import { PlayerViewService } from '../services/player-view.service';
 import { VocabularyService } from '../../vocabulary';
 import { SettingsService, I18nService, SeoService, ToastService, VideoRecommendationService } from '../../../core/services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -63,6 +64,7 @@ export class VideoPageComponent implements OnInit {
   protected playlistService = inject(PlaylistService);
   private videoLevel = inject(VideoLevelService);
   protected videoRecommendation = inject(VideoRecommendationService);
+  protected playerView = inject(PlayerViewService);
   i18n = inject(I18nService);
   private seo = inject(SeoService);
   toast = inject(ToastService);
@@ -182,7 +184,9 @@ export class VideoPageComponent implements OnInit {
     return this.playlistService.currentIndex() < playlist.videos.length - 1 || this.playlistService.isLooping();
   });
 
-  showLearnHome = computed(() => !this.youtube.currentVideo() && !this.youtube.pendingVideoId());
+  showLearnHome = computed(() =>
+    (!this.youtube.currentVideo() && !this.youtube.pendingVideoId()) || this.playerView.isMiniplayer()
+  );
   currentLearningLanguage = computed(() => this.getLanguageName(this.settings.settings().language));
   featuredPlaylists = this.playlistService.recommendedPlaylists;
   isFeaturedLoading = this.playlistService.isRecommendedLoading;
@@ -285,6 +289,7 @@ export class VideoPageComponent implements OnInit {
 
   onPlayRecommendedVideo(video: RecommendedVideo): void {
     if (!video?.videoId) return;
+    this.playerView.expand();
     this.saveScrollPosition();
     this.router.navigate([], {
       relativeTo: this.route,
@@ -791,8 +796,8 @@ export class VideoPageComponent implements OnInit {
             this.youtube.play();
             void this.historyService.touchVideo(videoId);
           }
-        } else {
-          // No video ID in URL - clear current video and playlist so Learn Hub / Home is displayed cleanly
+        } else if (!this.playerView.isMiniplayer()) {
+          // No video ID in URL and not in miniplayer mode - clear current video and playlist so Learn Hub / Home is displayed cleanly
           this.playlistService.clearCurrentPlaylist();
           this.activePlaylistId.set(null);
           if (this.youtube.currentVideo() || this.youtube.pendingVideoId()) {
@@ -947,6 +952,7 @@ export class VideoPageComponent implements OnInit {
     if (!firstVideoId) {
       return;
     }
+    this.playerView.expand();
     this.saveScrollPosition();
 
     void this.router.navigate(['/video'], {
