@@ -2,9 +2,17 @@
     <div class="popup-content">
 
         <div class="popup-header">
-            <h2 class="popup-word" [class]="'text-' + settings.settings().language">
-                {{ selectedWord()?.surface }}
-            </h2>
+            <div class="popup-word-row">
+                <h2 class="popup-word" [class]="'text-' + settings.settings().language">
+                    {{ selectedWord()?.surface }}
+                </h2>
+                <button type="button" class="popup-audio-btn" (click)="playAudio($event)"
+                    [class.playing]="isPlayingAudio()"
+                    [title]="i18n.t('dictionary.playPronunciation') || 'Listen to pronunciation'"
+                    [attr.aria-label]="i18n.t('dictionary.playPronunciation') || 'Listen to pronunciation'">
+                    <app-icon [name]="isPlayingAudio() ? 'volume-2' : 'volume-1'" [size]="18" />
+                </button>
+            </div>
 
             <div class="header-meta">
                 @if (entry()?.reading) {

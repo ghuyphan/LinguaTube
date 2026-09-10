@@ -200,7 +200,7 @@ graph TD
 #### SubtitleDisplayComponent (`subtitle-display/`)
 - Synchronizes with video playback via a high-performance $O(\log n)$ binary search (`findActiveCue`).
 - **Sticky Subtitles**: If a gap exists between cues, retains the previous cue briefly to prevent jarring visual flickering.
-- **Interactive Word Segmentation**: Every word is rendered as a clickable token. Clicking opens `WordPopupComponent`.
+- **Interactive Word Segmentation**: Every word is rendered as a clickable token. Clicking opens `WordPopupComponent` featuring instant dictionary definitions, native one-touch audio pronunciation (Edge Neural TTS with 0ms preloaded playback), multi-language definition translations, and 1-click vocabulary notebook saving.
 - **Zero-Shift Punctuation & Typographic Baseline Alignment**:
   - Punctuation tokens (`、`, `。`, `,`, `.`, `...`) and word tokens share an identical box model (`border: 1px solid transparent; box-sizing: border-box; vertical-align: baseline;`) with matching vertical padding and margins, guaranteeing that all text and punctuation rest on the exact same typographic baseline without 1px–2px step jitter.
   - Ruby `<rt>` and empty `<rt class="rt-empty">` tags are strictly locked to `height: 1.15em; line-height: 1.15;`, ensuring identical line box dimensions whether reading annotations are active, empty, or switched off.

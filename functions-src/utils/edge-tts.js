@@ -121,6 +121,7 @@ async function openWebSocket(url, headers) {
       headers: {
         ...headers,
         Upgrade: 'websocket',
+        'Sec-WebSocket-Version': '13',
       },
     });
 
@@ -138,6 +139,22 @@ async function openWebSocket(url, headers) {
   }
 
   throw new Error('No compatible WebSocket implementation found in runtime');
+}
+
+// In-memory audio LRU cache across warm Worker isolate requests (Rule 2: In-Memory First, 0 KV ops)
+const memAudioTtsCache = new Map();
+const MAX_MEM_AUDIO = 500;
+
+export function getCachedAudio(key) {
+  return memAudioTtsCache.get(key) || null;
+}
+
+export function setCachedAudio(key, buffer) {
+  if (memAudioTtsCache.size >= MAX_MEM_AUDIO) {
+    const oldestKey = memAudioTtsCache.keys().next().value;
+    memAudioTtsCache.delete(oldestKey);
+  }
+  memAudioTtsCache.set(key, buffer);
 }
 
 /**
@@ -162,6 +179,13 @@ export async function synthesizeEdgeTts(text, options = {}) {
   const language = options.language || 'ja';
   const voiceName = normalizeVoiceName(options.voice, language);
   const timeoutMs = options.timeoutMs || 7000;
+
+  // 1. Instant in-memory LRU cache hit (< 0.1ms, 0 network, 0 KV)
+  const cacheKey = `${language}:${voiceName}:${clean}`;
+  const hit = getCachedAudio(cacheKey);
+  if (hit) {
+    return hit;
+  }
 
   const connectionId = makeConnectionId();
   const secMsGec = await makeSecMsGec();
@@ -197,7 +221,10 @@ export async function synthesizeEdgeTts(text, options = {}) {
       }
     }
 
-    const onOpen = () => {
+    let hasSent = false;
+    const sendPayload = () => {
+      if (hasSent || isSettled) return;
+      hasSent = true;
       const timestamp = new Date().toISOString();
       const configMsg = `X-Timestamp:${timestamp}\r\nContent-Type:application/json; charset=utf-8\r\nPath:speech.config\r\n\r\n{"context":{"synthesis":{"audio":{"metadataoptions":{"sentenceBoundaryEnabled":"false","wordBoundaryEnabled":"false"},"outputFormat":"${AUDIO_FORMAT}"}}}}`;
 
@@ -230,6 +257,7 @@ export async function synthesizeEdgeTts(text, options = {}) {
             result.set(new Uint8Array(chunk), offset);
             offset += chunk.byteLength;
           }
+          setCachedAudio(cacheKey, result);
           resolve(result);
         }
         return;
@@ -279,15 +307,20 @@ export async function synthesizeEdgeTts(text, options = {}) {
     };
 
     if (typeof ws.addEventListener === 'function') {
-      ws.addEventListener('open', onOpen);
+      ws.addEventListener('open', sendPayload);
       ws.addEventListener('message', onMessage);
       ws.addEventListener('error', onError);
       ws.addEventListener('close', onClose);
     } else {
-      ws.onopen = onOpen;
+      ws.onopen = sendPayload;
       ws.onmessage = onMessage;
       ws.onerror = onError;
       ws.onclose = onClose;
+    }
+
+    // In Cloudflare Workers, the outbound WebSocket returned from fetch() is already open (readyState === 1)
+    if (ws.readyState === 1) {
+      sendPayload();
     }
   });
 }

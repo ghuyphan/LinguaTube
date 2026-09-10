@@ -1,5 +1,5 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, OnDestroy, effect, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, OnDestroy, effect, input, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -20,6 +20,8 @@ import { GrammarPattern, SupportedGrammarLang } from '../../../models/grammar.mo
   styleUrl: './dictionary-panel.component.scss'
 })
 export class DictionaryPanelComponent implements OnDestroy {
+  private platformId = inject(PLATFORM_ID);
+
   dictionary = inject(DictionaryService);
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
@@ -87,6 +89,15 @@ export class DictionaryPanelComponent implements OnDestroy {
     effect(() => {
       const lang = this.settings.settings().language;
       this.dictionary.loadRecentSearches(lang);
+    });
+
+    // Effect: preload audio into RAM when currentEntry changes for 0ms playback
+    effect(() => {
+      const entry = this.currentEntry();
+      if (entry && isPlatformBrowser(this.platformId)) {
+        const lang = this.settings.settings().language as SupportedLearningLanguage;
+        void this.audioService.preloadWord(entry.word, lang);
+      }
     });
   }
 

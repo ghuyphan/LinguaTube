@@ -67,13 +67,11 @@
                             {{ entry.word }}
                         </h3>
 
-                        <!-- Authentic Dictionary Audio Button -->
-                        @if (entry.audio) {
+                        <!-- Word Audio Pronunciation Button -->
                         <button type="button" class="audio-btn action-btn action-btn--audio" (click)="playAudio(entry, $event)"
                             [class.playing]="isPlayingAudio()" [attr.title]="i18n.t('dictionary.playPronunciation') || 'Listen to pronunciation'" [attr.aria-label]="i18n.t('dictionary.playPronunciation') || 'Listen to pronunciation'">
                             <app-icon [name]="isPlayingAudio() ? 'volume-2' : 'volume-1'" [size]="20" />
                         </button>
-                        }
                     </div>
 
                     <div class="result-readings-row">

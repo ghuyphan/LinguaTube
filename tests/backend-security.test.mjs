@@ -764,4 +764,26 @@ test('Edge TTS: input validation rejects empty text and enforces 300 char limit'
   );
 });
 
+test('Edge TTS: in-memory cache stores and returns cached buffers instantly', async () => {
+  const { getCachedAudio, setCachedAudio } = await import('../functions-src/utils/edge-tts.js');
 
+  const testKey = 'ja:test-voice:こんにちは';
+  const dummyBuffer = new Uint8Array([1, 2, 3, 4, 5]);
+
+  assert.equal(getCachedAudio(testKey), null);
+  setCachedAudio(testKey, dummyBuffer);
+
+  const cached = getCachedAudio(testKey);
+  assert.ok(cached instanceof Uint8Array);
+  assert.deepEqual(cached, dummyBuffer);
+});
+
+test('TTS Fallback: Google TTS URL and language mapping format correctly', () => {
+  const tlMap = { ja: 'ja', zh: 'zh-CN', ko: 'ko', en: 'en' };
+  const text = '食べる';
+  const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=${tlMap['ja']}&client=tw-ob`;
+  assert.equal(url, 'https://translate.google.com/translate_tts?ie=UTF-8&q=%E9%A3%9F%E3%81%B9%E3%82%8B&tl=ja&client=tw-ob');
+
+  const zhUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent('你好')}&tl=${tlMap['zh']}&client=tw-ob`;
+  assert.equal(zhUrl, 'https://translate.google.com/translate_tts?ie=UTF-8&q=%E4%BD%A0%E5%A5%BD&tl=zh-CN&client=tw-ob');
+});

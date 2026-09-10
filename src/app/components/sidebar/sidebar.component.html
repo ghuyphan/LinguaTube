@@ -41,17 +41,19 @@
                 <span>{{ i18n.t('nav.newVideo') }}</span>
                 }
             </button>
-            <a class="nav-item" routerLink="/video" routerLinkActive="active" (click)="onLearnClick($event)" [attr.title]="i18n.t('nav.watch')">
+            <a class="nav-item" routerLink="/video" routerLinkActive="active" (click)="onLearnClick($event)"
+                [class.has-active-session]="hasActiveVideoSession()"
+                [attr.title]="hasActiveVideoSession() ? (i18n.t('nav.watch') + ' (' + (i18n.t('player.nowPlaying') || 'Now playing') + ')') : i18n.t('nav.watch')">
                 <app-icon name="play-circle" [size]="18" />
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('nav.watch') }}</span>
-                }
                 @if (hasActiveVideoSession()) {
                 <div class="now-playing-indicator" [attr.aria-label]="i18n.t('player.nowPlaying') || 'Now playing'">
                     <div class="bar bar-1"></div>
                     <div class="bar bar-2"></div>
                     <div class="bar bar-3"></div>
                 </div>
+                }
                 }
             </a>
             <a class="nav-item" routerLink="/study" routerLinkActive="active" (click)="onStudyClick($event)" [attr.title]="i18n.t('nav.review')">

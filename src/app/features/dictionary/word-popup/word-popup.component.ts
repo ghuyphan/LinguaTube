@@ -1,6 +1,6 @@
 import { Component, inject, input, output, signal, effect, computed, linkedSignal, untracked, ChangeDetectionStrategy, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
@@ -8,9 +8,9 @@ import { OptionPickerComponent, OptionItem } from '../../../shared/components/op
 import { DictionaryService } from '../dictionary.service';
 import { VocabularyService } from '../../vocabulary';
 import { SubtitleService, YoutubeService } from '../../video';
-import { SettingsService, I18nService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService } from '../../../core/services';
 import { TranslationService } from '../../../services';
-import { Token, DictionaryEntry } from '../../../models';
+import { Token, DictionaryEntry, SupportedLearningLanguage } from '../../../models';
 
 @Component({
   selector: 'app-word-popup',
@@ -30,6 +30,7 @@ export class WordPopupComponent implements OnDestroy {
   i18n = inject(I18nService);
   subtitles = inject(SubtitleService);
   youtube = inject(YoutubeService);
+  audio = inject(AudioService);
 
   selectedWord = input<Token | null>(null);
   currentSentence = input<string>('');
@@ -41,6 +42,19 @@ export class WordPopupComponent implements OnDestroy {
     const word = this.selectedWord();
     return word ? this.vocab.hasWord(word.surface) : false;
   });
+
+  readonly isPlayingAudio = computed(() => {
+    const word = this.selectedWord();
+    return word ? this.audio.isPlaying(word.surface) : false;
+  });
+
+  playAudio(event?: Event): void {
+    if (event) event.stopPropagation();
+    const word = this.selectedWord();
+    if (!word) return;
+    const lang = (this.subtitles.loadedLanguage() || this.settings.settings().language) as SupportedLearningLanguage;
+    void this.audio.playWord(word.surface, lang, this.entry()?.audio);
+  }
 
   // Error state
   lookupError = signal<string | null>(null);
@@ -106,7 +120,13 @@ export class WordPopupComponent implements OnDestroy {
         this.translatingIndices.set(new Set());
         this.translationErrors.set(new Set());
         this.lookupError.set(null);
-        untracked(() => this.lookupWord(word.surface));
+        untracked(() => {
+          this.lookupWord(word.surface);
+          if (isPlatformBrowser(this.platformId)) {
+            const lang = (this.subtitles.loadedLanguage() || this.settings.settings().language) as SupportedLearningLanguage;
+            void this.audio.preloadWord(word.surface, lang);
+          }
+        });
       }
     });
   }
@@ -293,6 +313,7 @@ export class WordPopupComponent implements OnDestroy {
 
     this.translationSubscriptions.forEach(sub => sub.unsubscribe());
     this.translationSubscriptions.clear();
+    this.audio.stopAudio();
 
     this.isVisible.set(false);
     this.entry.set(null);
@@ -304,6 +325,7 @@ export class WordPopupComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.audio.stopAudio();
     this.lookupSubscription?.unsubscribe();
     this.translationSubscriptions.forEach(sub => sub.unsubscribe());
     this.translationSubscriptions.clear();

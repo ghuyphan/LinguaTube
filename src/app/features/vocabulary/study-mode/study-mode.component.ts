@@ -211,6 +211,19 @@ export class StudyModeComponent implements OnDestroy {
             }
         });
 
+        // Preload active and upcoming card audio for 0ms instant playback
+        effect(() => {
+            const card = this.currentCard();
+            if (card && isPlatformBrowser(this.platformId)) {
+                void this.audioService.preloadWord(card.word, card.language as SupportedLearningLanguage);
+                const cards = this.studyCards();
+                const nextCard = cards[this.currentIndex() + 1];
+                if (nextCard) {
+                    void this.audioService.preloadWord(nextCard.word, nextCard.language as SupportedLearningLanguage);
+                }
+            }
+        });
+
         if (isPlatformBrowser(this.platformId)) {
             const storedAutoPlay = localStorage.getItem(STUDY_AUTOPLAY_KEY);
             if (storedAutoPlay !== null) {

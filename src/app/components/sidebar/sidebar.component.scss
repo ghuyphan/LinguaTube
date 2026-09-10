@@ -72,25 +72,6 @@
                 background: var(--accent-primary);
                 color: var(--text-inverse);
                 box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.35);
-
-                .now-playing-indicator .bar {
-                    background-color: var(--text-inverse);
-                }
-            }
-
-            .now-playing-indicator {
-                position: absolute;
-                top: 6px;
-                right: 6px;
-                width: 0.75rem;
-                height: 0.75rem;
-                gap: 1.5px;
-                margin-left: 0;
-                padding-bottom: 0;
-
-                .bar {
-                    width: 2px;
-                }
             }
         }
 
@@ -345,6 +326,14 @@
 
     app-icon {
         flex-shrink: 0;
+    }
+
+    &.has-active-session:not(.active) {
+        color: var(--accent-primary);
+
+        app-icon {
+            color: var(--accent-primary);
+        }
     }
 
     span {
