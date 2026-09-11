@@ -35,7 +35,47 @@ const CACHE_HEADERS = {
 };
 
 export async function onRequestOptions() {
-    return handleOptions(['POST', 'OPTIONS']);
+    return handleOptions(['GET', 'POST', 'OPTIONS']);
+}
+
+export async function onRequestGet(context) {
+    const { request, env } = context;
+    try {
+        const url = new URL(request.url);
+        const videoId = url.searchParams.get('videoId');
+        const sourceLang = url.searchParams.get('sourceLang') || url.searchParams.get('source');
+        const targetLang = url.searchParams.get('targetLang') || url.searchParams.get('target');
+
+        const cleanVideoId = sanitizeVideoId(videoId);
+        if (!cleanVideoId || !sourceLang || !targetLang) {
+            return jsonResponse({ error: 'Missing or invalid parameters' }, 400);
+        }
+
+        const r2 = env.TRANSCRIPT_STORAGE;
+        const cached = await getTranslation(r2, cleanVideoId, sourceLang, targetLang);
+        if (cached) {
+            return jsonResponse({
+                videoId: cleanVideoId,
+                sourceLang,
+                targetLang,
+                segments: cached.segments,
+                cached: true,
+                quality: cached.quality || 100,
+                timestamp: cached.timestamp
+            }, 200, { 'Cache-Control': CACHE_HEADERS.HIT });
+        }
+
+        return jsonResponse({
+            videoId: cleanVideoId,
+            sourceLang,
+            targetLang,
+            segments: [],
+            cached: false
+        }, 200, { 'Cache-Control': 'no-store' });
+    } catch (error) {
+        logError('Dual Subtitles GET', error);
+        return errorResponse('Failed to check dual subtitles cache', 500);
+    }
 }
 
 export async function onRequestPost(context) {
@@ -110,6 +150,9 @@ export async function onRequestPost(context) {
 
         // 3. Handle saveOnly: persisting completed or partial client-side translations to R2 cache
         if (saveOnly || onlySave) {
+            if (!authResult.valid) {
+                return jsonResponse({ error: 'Authentication required to save subtitles' }, 401);
+            }
             const successCount = segments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim() && (sourceLang === targetLang || s.translation.trim() !== (s.text || '').trim())).length;
             const successRate = segments.length > 0 ? successCount / segments.length : 0;
             const quality = Math.round(successRate * 100);

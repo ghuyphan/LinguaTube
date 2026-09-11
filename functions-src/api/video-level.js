@@ -6,7 +6,7 @@
  * Body: { videoId: string, language: string, level: string, details?: object }
  */
 
-import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage } from '../utils/utils.js';
+import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage, errorResponse } from '../utils/utils.js';
 import { saveVideoLevel } from '../data/video-info-db.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
@@ -66,6 +66,7 @@ export async function onRequestPost(context) {
         }, 200);
 
     } catch (err) {
-        return jsonResponse({ error: err.message || 'Internal error' }, 500);
+        console.error('[VideoLevel] Error:', err.message);
+        return errorResponse('Failed to save video level', 500);
     }
 }

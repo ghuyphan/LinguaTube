@@ -15,7 +15,8 @@ import {
     timeout,
     mergeMap,
     takeWhile,
-    finalize
+    finalize,
+    forkJoin
 } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -377,8 +378,8 @@ export class TranslationService implements OnDestroy {
         );
     }
 
-    private dispatchCloudBatch(
-        uniqueTexts: string[],
+    private dispatchSingleChunk(
+        chunkTexts: string[],
         textToIndices: Map<string, number[]>,
         results: (string | null)[],
         source: string,
@@ -388,14 +389,14 @@ export class TranslationService implements OnDestroy {
         return new Observable(observer => {
             const requestContext: BatchRequest = {
                 params: {
-                    texts: uniqueTexts,
+                    texts: chunkTexts,
                     source,
                     target
                 },
                 observer: {
                     next: (response: { translations: (string | null)[] }) => {
                         response.translations.forEach((translation, i) => {
-                            const text = uniqueTexts[i];
+                            const text = chunkTexts[i];
                             const targetIndices = textToIndices.get(text) || [];
                             targetIndices.forEach(idx => {
                                 results[idx] = translation;
@@ -426,9 +427,38 @@ export class TranslationService implements OnDestroy {
         });
     }
 
+    private dispatchCloudBatch(
+        uniqueTexts: string[],
+        textToIndices: Map<string, number[]>,
+        results: (string | null)[],
+        source: string,
+        target: string,
+        priority: 'high' | 'background' = 'high'
+    ): Observable<(string | null)[]> {
+        const CHUNK_SIZE = 80;
+        if (uniqueTexts.length <= CHUNK_SIZE) {
+            return this.dispatchSingleChunk(uniqueTexts, textToIndices, results, source, target, priority);
+        }
 
+        const chunks: string[][] = [];
+        for (let i = 0; i < uniqueTexts.length; i += CHUNK_SIZE) {
+            chunks.push(uniqueTexts.slice(i, i + CHUNK_SIZE));
+        }
+
+        return forkJoin(
+            chunks.map(chunk => this.dispatchSingleChunk(chunk, textToIndices, results, source, target, priority))
+        ).pipe(map(() => results));
+    }
 
     getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: { text: string; start: number; duration: number; }[] = [], onlyCache = false): Observable<{ text: string; start: number; duration: number; translation?: string }[]> {
+        if (onlyCache) {
+            return this.http.get<{ segments: { text: string; start: number; duration: number; translation?: string }[] }>(
+                `${environment.api.dualSubtitles}?videoId=${encodeURIComponent(videoId)}&sourceLang=${encodeURIComponent(sourceLang)}&targetLang=${encodeURIComponent(targetLang)}`
+            ).pipe(
+                map(res => res.segments || []),
+                catchError(() => of([]))
+            );
+        }
         return this.http.post<{ segments: { text: string; start: number; duration: number; translation?: string }[] }>(environment.api.dualSubtitles, {
             videoId,
             sourceLang,

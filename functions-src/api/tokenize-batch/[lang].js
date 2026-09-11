@@ -173,17 +173,8 @@ export async function onRequest(context) {
         }
         memTokenBatchCache.set(cacheKey, result);
 
-        // Cache as ONE write for entire video (30 day TTL)
-        if (TOKEN_CACHE) {
-            try {
-                await TOKEN_CACHE.put(cacheKey, JSON.stringify(result), {
-                    expirationTtl: 60 * 60 * 24 * 30
-                });
-                console.log(`[Tokenize Batch] Cached tokens for ${videoId}`);
-            } catch (e) {
-                console.error('[Tokenize Batch] Cache write failed:', e.message);
-            }
-        }
+        // Rule 2: In-Memory First & Edge CDN caching (zero KV writes to preserve 1,000 writes/day quota)
+
 
         return jsonResponse(result, 200, {
             'Cache-Control': 'public, max-age=604800',  // 7 day cache for tokenization

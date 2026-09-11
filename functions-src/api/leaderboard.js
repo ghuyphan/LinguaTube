@@ -404,7 +404,9 @@ export async function onRequestPost(context) {
             try {
                 // Guard against massive unverified XP jumps in a single call
                 const existing = await db.prepare('SELECT xp FROM leaderboard WHERE user_id = ?').bind(userId).first();
-                if (existing && xp > existing.xp + 10000) {
+                const baselineXp = existing ? existing.xp : 0;
+                const maxAllowedIncrement = existing ? 10000 : 25000;
+                if (xp > baselineXp + maxAllowedIncrement) {
                     return jsonResponse({
                         success: false,
                         error: 'XP increment exceeds single update threshold'

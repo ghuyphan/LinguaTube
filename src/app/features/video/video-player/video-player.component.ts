@@ -416,10 +416,11 @@ export class VideoPlayerComponent implements OnDestroy {
       }
     });
 
-    // Proactively preload grammar patterns for active learning language in background
+    // Proactively preload grammar patterns for active learning language in background once a video is loaded
     effect(() => {
       const lang = this.activeSubtitleLanguage();
-      if (lang && ['ja', 'zh', 'ko', 'en'].includes(lang) && this.grammar.grammarModeEnabled()) {
+      const hasVideo = !!this.youtube.currentVideo();
+      if (hasVideo && lang && ['ja', 'zh', 'ko', 'en'].includes(lang) && this.grammar.grammarModeEnabled()) {
         this.grammar.preloadPatterns(lang as SupportedGrammarLang);
       }
     });
@@ -1393,10 +1394,11 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   closeVideo(): void {
+    // Reset playback and clear video state first so showLearnHome never transitions true -> false -> true
+    this.youtube.reset();
     this.playerView.reset();
     this.videoLevel.reset();
     this.playlistService.clearCurrentPlaylist();
-    this.youtube.reset();
     this.subtitles.clear();
     this.transcript.reset();
     void this.router.navigate(['/video'], { queryParams: {} });

@@ -38,13 +38,19 @@ export class VideoLevelDialogComponent {
   });
 
   readonly speechPaceInfo = computed(() => {
-    const cpm = this.levelInfo().speechRateCpm;
-    if (!cpm) return null;
+    const rawCpm = this.levelInfo().speechRateCpm;
+    if (!rawCpm) return null;
 
     const levelStr = this.levelInfo().level.toUpperCase();
     const isEnglish = levelStr.startsWith('CEFR') || /^[A-C][1-2]$/.test(levelStr);
-    const isSlow = isEnglish ? cpm < 120 : cpm < 180;
-    const isFast = isEnglish ? cpm > 170 : cpm > 280;
+
+    // If English was previously cached as raw character count (>300), convert characters to words (~5.2 chars/word)
+    const displayValue = isEnglish && rawCpm > 300
+      ? Math.round(rawCpm / 5.2)
+      : rawCpm;
+
+    const isSlow = isEnglish ? displayValue < 120 : displayValue < 180;
+    const isFast = isEnglish ? displayValue > 175 : displayValue > 280;
 
     let tag = this.i18n.t('level.speechNormal') || 'Natural Pace';
     let paceClass = 'pace-normal';
@@ -58,7 +64,7 @@ export class VideoLevelDialogComponent {
 
     const unit = isEnglish ? 'wpm' : 'cpm';
     return {
-      cpm,
+      cpm: displayValue,
       unit,
       tag,
       paceClass

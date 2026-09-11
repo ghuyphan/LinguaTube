@@ -12,7 +12,7 @@
  * Returns: { videoId, title, duration, availableLanguages, hasAutoCaptions, channel }
  */
 
-import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js';
+import { jsonResponse, handleOptions, sanitizeVideoId, errorResponse } from '../utils/utils.js';
 import {
     getVideoLanguages,
     saveVideoLanguages,
@@ -153,6 +153,6 @@ export async function onRequestGet(context) {
 
     } catch (error) {
         console.error('[VideoInfo] Error:', error.message);
-        return jsonResponse({ error: error.message }, 500);
+        return errorResponse('Failed to fetch video info', 500);
     }
 }

@@ -106,6 +106,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
      - Returns `{ status: 'processing', resultUrl }` immediately ($\sim 1.5$s response) to avoid long-lived edge connection drops (524 gateway timeouts).
   5. **Fast Client-Driven Polling & Failure Auto-Refund**:
      - Subsequent client poll requests pass `resultUrl` every 2.5 seconds.
+     - **Strict Job-to-Video Verification (`pollAIJob`)**: Polling requests are strictly cross-checked against active jobs in D1 `pending_jobs` mapped to the video ID. Requests submitting arbitrary or unmapped `resultUrl` parameters are rejected immediately (HTTP 400), completely eliminating Turnstile bypass and transcript cache poisoning risks.
      - Server polls Gladia status with a 15-second safety timeout, completing each poll check in $\sim 200\text{--}300$ms.
      - When `status: 'done'`, server resolves metadata/avatar via D1/oEmbed, indexes under both detected and study languages in D1, writes to R2, and deletes the pending job.
      - **Automated Diamond Refund**: If Gladia reports job error or submission fails, the backend triggers `refundDiamond()` via PocketHost API to restore the user's credit balance automatically.
@@ -154,9 +155,12 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 ---
 
 ### 3.3. Dual Subtitles API
-- **Route**: `POST /api/dual-subtitles`
+- **Route**: `GET /api/dual-subtitles` (Fast CDN/browser cache lookup) & `POST /api/dual-subtitles` (Live translation & save-back)
 - **Source**: `functions-src/api/dual-subtitles.js`
-- **Payload**:
+- **GET Request**:
+  - `GET /api/dual-subtitles?videoId={videoId}&sourceLang={sourceLang}&targetLang={targetLang}`
+  - Returns `{ segments: [...], cached: true }` with edge-friendly `Cache-Control: public, max-age=3600` headers on cache hits, avoiding POST overhead for already-translated videos.
+- **POST Payload**:
   ```json
   {
     "videoId": "abc123xyz",
@@ -176,6 +180,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - If cached transcript exists: Returns `{ segments: [...], cached: true }`.
   - If not cached: Returns `{ segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
 - **Client Cache Write-Back (`saveOnly: true` or `onlySave: true`)**:
+  - **Authenticated Sessions Enforced**: To prevent malicious callers from poisoning crowd-sourced translations in R2/D1, `saveOnly: true` strictly requires an authenticated user session (`authResult.valid`). Unauthenticated write-backs are rejected with HTTP 401.
   - **Incremental Crowd-Cache Merging & Self-Healing**: When the client translates cues during playback, it saves checkpoints (after $\ge 10$ newly translated cues or on video pause/switch), as well as a final save upon reaching $\ge 80\%$ coverage (`QUALITY_THRESHOLD`).
   - The backend filters out invalid/identical source text, merges incoming translated cues with existing segments in R2 using fuzzy matching (text exact match $\rightarrow$ timestamp proximity within $\pm 0.8$s $\rightarrow$ index), recalculates composite quality, and commits the merged file to Cloudflare R2 and D1 `translation_meta`.
   - Multiple users watching partial segments of the same video collectively build and heal the full dual-subtitle cache without requiring any single user to watch 80%+ in one session.
@@ -347,7 +352,8 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - **Bot Defense**: Integrated with `checkBot` middleware on proxy requests.
   - **Whitelisted Services Only**: `invidious1` (`yewtu.be`), `jisho` (`jisho.org`), `jotoba` (`jotoba.de`), `piped1` (`pipedapi.kavin.rocks`).
   - **Path Sanitization**: Filters out directory traversal sequences (`..`), slashes, and hidden dot files (`.`).
-  - **Network Perimeter Guards**: Blocks private and loopback IP ranges (`127.0.0.0/8`, `10.0.0.0/8`, `192.168.0.0/16`, `172.16.0.0/12`, `localhost`).
+  - **Network Perimeter Guards**: Blocks private, loopback, link-local, carrier-grade NAT, IPv6 ULA, and metadata endpoints (`127.0.0.0/8`, `10.0.0.0/8`, `192.168.0.0/16`, `172.16.0.0/12`, `169.254.0.0/16`, `100.64.0.0/10`, `fc00::/7`, `fe80::/10`, `::1`, `localhost`).
+  - **CORS Protection**: Enforces origin check against trusted domains (`lingua-tube.pages.dev`, `voca.pages.dev`, `localhost`) rather than reflecting arbitrary caller origins.
   - **Redirect Policy**: Enforces `redirect: 'error'` preventing redirect-based open proxy smuggling.
   - **Timeout & Payload Limits**: Strict 8-second request timeout (`AbortSignal.timeout(8000)`) and maximum 64KB upstream body cap to prevent memory exhaustion.
 
@@ -360,9 +366,9 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - `GET /api/payment/check-status`
 - **Source**: `functions-src/api/payment/*.js`, `functions-src/providers/payos.js`
 - **Process & Security**:
-  1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 450,000 VND, `premium_1m` for 119,000 VND, `premium_1y` for 990,000 VND). Generates a cryptographically secure random 8-digit `orderCode` (`crypto.getRandomValues`), builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV.
+  1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 450,000 VND, `premium_1m` for 119,000 VND, `premium_1y` for 990,000 VND). Enforces strict destination URL validation (`isValidRedirectUrl`) on `returnUrl` and `cancelUrl` against trusted application domains to eliminate open redirect vectors. Generates a cryptographically secure random 8-digit `orderCode` (`crypto.getRandomValues`), builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV. All error outputs are sanitized to avoid leaking internal provider details.
   2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY` via constant-time XOR comparison to protect against timing attacks. Enforces fail-closed verification in production, verifies `receivedAmount >= expectedAmount`, and enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier` (`'pro'` or `'premium'`), sets `subscription_expires` (+30 days or +365 days), and allocates initial diamonds (10 for Pro, 25 for Premium; supporting PocketBase v0.23+ `_superusers` authentication).
-  3. `check-status`: Rate-limited polling endpoint for the frontend `ProUpgradeDialogComponent` to detect payment completion in real time. Also supports local development simulation via `POST /api/payment/simulate-transfer`.
+  3. `check-status`: Rate-limited polling endpoint for the frontend `ProUpgradeDialogComponent` to detect payment completion in real time. Also supports local development simulation via `POST /api/payment/simulate-transfer`. All unexpected exceptions return sanitized error payloads.
 
 ---
 

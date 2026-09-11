@@ -80,6 +80,9 @@ export async function fetchChannelAvatar(authorUrl) {
     if (!cleanUrl.startsWith('https://www.youtube.com/') && !cleanUrl.startsWith('https://youtube.com/')) {
         return null;
     }
+    if (cleanUrl.includes('/redirect')) {
+        return null;
+    }
 
     try {
         const res = await fetch(cleanUrl, {
@@ -87,10 +90,29 @@ export async function fetchChannelAvatar(authorUrl) {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Accept': 'text/html'
             },
-            signal: AbortSignal.timeout(4500)
+            signal: AbortSignal.timeout(4500),
+            redirect: 'manual'
         });
-        if (!res.ok) return null;
-        const html = await res.text();
+        let targetRes = res;
+        if (res.status >= 300 && res.status < 400) {
+            const loc = res.headers.get('location');
+            if (loc && (loc.startsWith('https://www.youtube.com/') || loc.startsWith('https://youtube.com/') || loc.startsWith('/@') || loc.startsWith('/channel/'))) {
+                const targetUrl = loc.startsWith('/') ? `https://www.youtube.com${loc}` : loc;
+                if (targetUrl.includes('/redirect')) return null;
+                targetRes = await fetch(targetUrl, {
+                    headers: {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                        'Accept': 'text/html'
+                    },
+                    signal: AbortSignal.timeout(3000),
+                    redirect: 'error'
+                });
+            } else {
+                return null;
+            }
+        }
+        if (!targetRes.ok) return null;
+        const html = await targetRes.text();
         const match = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i)
             || html.match(/<link\s+rel=["']image_src["']\s+href=["']([^"']+)["']/i);
         if (match && match[1]) {

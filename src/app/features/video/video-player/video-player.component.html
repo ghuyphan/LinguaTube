@@ -142,7 +142,7 @@
       [playPauseFeedback]="playPauseFeedback()" [playPauseFeedbackIcon]="playPauseFeedbackIcon()"
       [volumeFeedback]="volumeFeedback()" [volumeFeedbackIcon]="volumeFeedbackIcon()"
       [gestureSeekActive]="gestureSeekActive()" [gestureSeekTime]="gestureSeekTime()"
-      [currentTime]="youtube.currentTime()" (playPauseClicked)="onPlayPauseButtonClick($event)"
+      [currentTime]="gestureSeekActive() ? youtube.currentTime() : 0" (playPauseClicked)="onPlayPauseButtonClick($event)"
       (replayClicked)="onReplayClick($event)" (prevClicked)="playlistPrev.emit()" (nextClicked)="playlistNext.emit()" />
 
     <!-- Mini Progress Bar -->
@@ -719,7 +719,7 @@
   <!-- Video Info -->
   @if (!isFullscreen() && !isMiniplayer()) {
   <app-video-header [title]="youtube.currentVideo()?.title" [channel]="youtube.currentVideo()?.channel"
-    (minimizeVideo)="minimize()" (savePlaylist)="onSaveClick()" (shareVideo)="shareCurrentVideo()" />
+    (closeVideo)="closeVideo()" (savePlaylist)="onSaveClick()" (shareVideo)="shareCurrentVideo()" />
   }
   }
 </div>

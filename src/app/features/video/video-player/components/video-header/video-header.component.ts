@@ -30,7 +30,7 @@ export class VideoHeaderComponent {
   });
   readonly showLevelSheet = signal(false);
 
-  minimizeVideo = output<void>();
+  closeVideo = output<void>();
   savePlaylist = output<void>();
   shareVideo = output<void>();
 

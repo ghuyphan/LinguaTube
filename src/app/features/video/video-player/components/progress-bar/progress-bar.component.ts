@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { YoutubeService } from '../../../youtube.service';
 import { BUFFERED_TRACKING_INTERVAL } from '../../video-player.constants';
 import { formatTime } from '../../../../../core/utils';
+import { I18nService } from '../../../../../core/services';
 
 /**
  * Seek preview state for the tooltip
@@ -45,7 +46,7 @@ export interface SeekPreview {
          [attr.aria-valuemin]="0"
          [attr.aria-valuemax]="youtube.duration()"
          [attr.aria-valuetext]="formatTime(displayTime()) + ' of ' + formatTime(youtube.duration())"
-         aria-label="Video progress"
+         [attr.aria-label]="i18n.t('player.progress') || 'Video progress'"
          tabindex="0"
          (keydown)="onKeyDown($event)"
          [class.seeking]="isDragging()"
@@ -83,7 +84,8 @@ export interface SeekPreview {
 })
 export class ProgressBarComponent implements OnDestroy {
     private ngZone = inject(NgZone);
-    youtube = inject(YoutubeService);
+    readonly youtube = inject(YoutubeService);
+    readonly i18n = inject(I18nService);
 
     readonly progressBar = viewChild.required<ElementRef<HTMLDivElement>>('progressBar');
 

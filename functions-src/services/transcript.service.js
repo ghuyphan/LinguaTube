@@ -333,14 +333,13 @@ export class TranscriptService {
                 try { mappedVideoId = await cache.get(`job_map:${resultUrl}`); } catch { }
             }
 
-            if (mappedVideoId) {
-                if (videoId && videoId !== mappedVideoId) {
-                    return { status: 'error', error: 'Result URL does not match requested video' };
-                }
-                videoId = mappedVideoId;
-            } else if (!videoId) {
+            if (!mappedVideoId) {
                 return { status: 'error', error: 'Unknown or expired transcription job' };
             }
+            if (videoId && videoId !== mappedVideoId) {
+                return { status: 'error', error: 'Result URL does not match requested video' };
+            }
+            videoId = mappedVideoId;
         }
 
         try {

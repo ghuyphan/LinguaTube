@@ -3,7 +3,7 @@
  * GET /api/payment/check-status?orderCode=12345678
  */
 
-import { jsonResponse, handleOptions } from '../../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
 import { consumeRateLimit, rateLimitResponse } from '../../middlewares/rate-limiter.js';
 
 const RATE_LIMIT_CONFIG = {
@@ -52,6 +52,7 @@ export async function onRequestGet(context) {
             status: 'PENDING'
         }, 200, { 'Cache-Control': 'no-store' });
     } catch (err) {
-        return jsonResponse({ success: false, error: err.message }, 500);
+        console.error('[Payment API] Check status error:', err.message);
+        return errorResponse('Failed to check payment status', 500);
     }
 }

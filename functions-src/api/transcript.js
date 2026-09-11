@@ -185,15 +185,17 @@ export async function onRequestPost(context) {
             let cached = await getTranscriptFromR2(r2, cleanVideoId, lang);
             let responseLang = lang;
 
-            // Fallback: If requested language not in R2, check other available languages in R2 for this video!
+            // Fallback: If requested language not in R2, check other available languages in R2 in parallel
             if (!cached?.segments?.length && nativeLanguages?.length > 0) {
-                for (const altLang of nativeLanguages) {
-                    if (altLang === lang) continue;
-                    const altCached = await getTranscriptFromR2(r2, cleanVideoId, altLang);
-                    if (altCached?.segments?.length > 0) {
-                        cached = altCached;
-                        responseLang = altLang;
-                        break;
+                const altLangs = nativeLanguages.filter(a => a !== lang);
+                if (altLangs.length > 0) {
+                    const altResults = await Promise.all(
+                        altLangs.map(altLang => getTranscriptFromR2(r2, cleanVideoId, altLang).then(res => ({ altLang, res })))
+                    );
+                    const found = altResults.find(item => item.res?.segments?.length > 0);
+                    if (found) {
+                        cached = found.res;
+                        responseLang = found.altLang;
                     }
                 }
             }

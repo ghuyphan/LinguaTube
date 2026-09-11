@@ -170,3 +170,57 @@ export class CacheManager {
         }
     }
 }
+
+/**
+ * Standardized in-memory LRU cache with optional TTL for warm Worker isolates
+ */
+export class SimpleLRUCache {
+    /**
+     * @param {number} maxSize - Maximum entries before evicting least-recently used
+     * @param {number} [ttlMs=0] - Optional TTL in milliseconds (0 = no expiry)
+     */
+    constructor(maxSize = 500, ttlMs = 0) {
+        this.maxSize = maxSize;
+        this.ttlMs = ttlMs;
+        this.map = new Map();
+    }
+
+    get(key) {
+        const item = this.map.get(key);
+        if (!item) return undefined;
+        if (this.ttlMs > 0 && Date.now() - item.time > this.ttlMs) {
+            this.map.delete(key);
+            return undefined;
+        }
+        this.map.delete(key);
+        this.map.set(key, item);
+        return item.value;
+    }
+
+    set(key, value) {
+        if (this.map.has(key)) {
+            this.map.delete(key);
+        } else if (this.map.size >= this.maxSize) {
+            const first = this.map.keys().next().value;
+            if (first !== undefined) this.map.delete(first);
+        }
+        this.map.set(key, { value, time: Date.now() });
+        return this;
+    }
+
+    has(key) {
+        return this.get(key) !== undefined;
+    }
+
+    delete(key) {
+        return this.map.delete(key);
+    }
+
+    clear() {
+        this.map.clear();
+    }
+
+    get size() {
+        return this.map.size;
+    }
+}

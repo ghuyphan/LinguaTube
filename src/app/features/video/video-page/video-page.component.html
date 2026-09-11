@@ -83,11 +83,7 @@
                         <app-icon name="sparkles" [size]="20" class="panel-header__icon" />
                         <h3 class="panel-header__title">{{ i18n.t('playlist.forYou') }}</h3>
                     </div>
-                    <div class="panel-badges">
-                        <span class="badge badge--accent">{{ currentLearningLanguage() }}</span>
-                    </div>
                 </div>
-                <p class="panel-header__subtitle">{{ i18n.t('playlist.subtitle') }}</p>
             </div>
 
             <!-- YouTube-style Horizontal Chips Carousel -->
@@ -147,7 +143,7 @@
             <div class="yt-video-grid">
                 @for (item of feedItems(); track item.kind === 'video' ? item.video.videoId : item.playlist.id; let i = $index) {
                     @if (item.kind === 'video') {
-                    <article class="yt-video-card" [style.--item-index]="i < 12 ? i : -1" (click)="onPlayRecommendedVideo(item.video)">
+                    <article class="yt-video-card" (click)="onPlayRecommendedVideo(item.video)">
                         <div class="yt-video-card__thumbnail">
                             <img [src]="item.video.thumbnail" [alt]="item.video.title" loading="lazy" />
                             @if (item.video.duration) {
@@ -199,14 +195,10 @@
                                     </span>
                                     }
                                     @if (langs.length > 0) {
-                                    <span class="yt-sub-badge yt-sub-badge--lang" [title]="getLanguagesTooltip(langs)">
-                                        <app-icon name="captions" [size]="11" />
-                                        <img [src]="getFlagUrl(langs[0])" class="circle-flag circle-flag--xs" alt="" />
-                                        <span>{{ langs[0].toUpperCase() }}</span>
+                                    <span class="yt-lang-flags" [title]="getLanguagesTooltip(langs)">
+                                        <img [src]="getFlagUrl(langs[0])" class="circle-flag" [alt]="langs[0]" />
                                         @if (langs.length === 2) {
-                                        <span class="lang-divider">/</span>
-                                        <img [src]="getFlagUrl(langs[1])" class="circle-flag circle-flag--xs" alt="" />
-                                        <span>{{ langs[1].toUpperCase() }}</span>
+                                        <img [src]="getFlagUrl(langs[1])" class="circle-flag" [alt]="langs[1]" />
                                         } @else if (langs.length > 2) {
                                         <span class="lang-count">+{{ langs.length - 1 }}</span>
                                         }
@@ -219,7 +211,7 @@
                         </div>
                     </article>
                     } @else {
-                    <article class="yt-video-card yt-video-card--playlist" [style.--item-index]="i < 12 ? i : -1" (click)="startPlaylist(item.playlist)">
+                    <article class="yt-video-card yt-video-card--playlist" (click)="startPlaylist(item.playlist)">
                         <div class="yt-video-card__thumbnail">
                             @if (item.playlist.thumbnail) {
                             <img [src]="item.playlist.thumbnail" [alt]="item.playlist.title" loading="lazy" />

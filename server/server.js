@@ -2224,40 +2224,45 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.1.25';
+    const mockVersion = req.query.mock_version || '1.1.27';
 
     res.json({
         version: mockVersion,
-        minSupportedVersion: mockForce ? '1.1.25' : '1.0.0',
+        minSupportedVersion: mockForce ? '1.1.27' : '1.0.0',
         buildDate: '2026-09-11',
         forceUpdate: mockForce,
         maintenance: mockMaintenance,
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'Cloudflare Functions Startup Optimization: Eliminated top-level module evaluation overhead by dynamically loading heavy NLP libraries (Compromise, Pinyin Pro, Hangul Romanization) on-demand, resolving deployment CPU time limit errors',
-                'Production Bundle Minification: Enabled aggressive esbuild minification for serverless functions, cutting bundle sizes by over 30% and speeding up isolate cold starts',
-                'Mobile Miniplayer Blur Glass Design: Refined frosted glassmorphic card styling unified with the bottom navigation bar and responsive margins aligned with the feed'
+                'Hardened Edge Security & Anti-Poisoning: Blocked unverified AI transcription fallthrough, secured dual subtitle persistence with mandatory auth checks, and restricted CORS and internal IP redirection',
+                'Eliminated 60Hz Hot-Path CPU Churn: Restructured segment loop effects and center control bindings to stay completely dormant during normal playback, reducing mobile battery drain',
+                'Memory Leak Elimination: Fixed background payment polling subscriptions on dialog dismiss and cancelled in-flight dictionary lookup queries',
+                'Rule 4 Deterministic Sync & i18n Harmonization: Unified history persistence with deterministic record keys, chunked cloud batch translations, and accurately localized Premium 45m transcription duration limits across all 5 languages'
             ],
             vi: [
-                'Tối Ưu Hóa Khởi Động Cloudflare Functions: Loại bỏ độ trễ khởi tạo cấp cao bằng cách tải động (lazy load) các thư viện NLP nặng (Compromise, Pinyin Pro, Hangul Romanization) khi cần, khắc phục triệt để lỗi vượt hạn mức CPU khi deploy',
-                'Nén Tối Đa Bundle Production: Kích hoạt minification esbuild cho các serverless function, giảm hơn 30% kích thước bundle và tăng tốc độ cold start của Worker',
-                'Giao Diện Miniplayer Kính Mờ: Hoàn thiện thiết kế thẻ kính mờ (blur glass) đồng bộ với thanh điều hướng dưới và căn lề chuẩn xác với bảng tin'
+                'Tăng Cường Bảo Mật Biên & Chống Đầu Độc Dữ Liệu: Khắc phục triệt để lỗ hổng bỏ qua xác thực phiên âm AI, siết chặt quyền lưu phụ đề song ngữ và chặn chuyển hướng IP nội bộ',
+                'Triệt Tiêu Hao Tổn CPU 60Hz Trong Phát Video: Tái cấu trúc hiệu ứng lặp câu và điều khiển trung tâm để giữ trạng thái nghỉ hoàn toàn khi phát thường, tiết kiệm pin điện thoại',
+                'Loại Bỏ Rò Rỉ Bộ Nhớ: Ngăn chặn triệt để tiến trình polling thanh toán ngầm khi đóng bảng nâng cấp và dọn dẹp các truy vấn từ điển dở dang',
+                'Đồng Bộ Chuẩn Định Danh Rule 4 & Bản Địa Hóa Toàn Diện: Chuẩn hóa lưu lịch sử với khóa xác định, chia nhỏ gói dịch phụ đề đám mây và cập nhật thời lượng Premium 45 phút trên toàn bộ 5 ngôn ngữ'
             ],
             ja: [
-                'Cloudflare Functionsの起動最適化: 重い自然言語処理ライブラリ（Compromise、Pinyin Pro、Hangul Romanization）をオンデマンドで遅延読み込みすることにより、デプロイ時のCPU時間制限超過エラーを解消',
-                '本番関数のバンドル最小化: esbuildの最小化（minification）を有効化し、バンドルサイズを30%以上削減、ワーカーの起動速度を向上',
-                'モバイルミニプレーヤーのフロストガラスUI: ボトムナビゲーションバーと統一されたすりガラスデザインと余白の配置を洗練'
+                'エッジセキュリティ強化とデータ改ざん防止: 未検証のAI文字起こしバイパスを遮断し、二重字幕の保存に認証を義務付け、内部IPへのリダイレクトを防止',
+                '動画再生時の60Hz CPU負荷を解消: ループ処理とコントロールバインディングを最適化し、通常再生時は完全に休止させてバッテリー消費を抑制',
+                'メモリリークの解消: ダイアログ終了時のバックグラウンド決済ポーリングを確実に停止し、辞書検索の中断処理を改善',
+                'Rule 4 決定的同期と多言語ローカライズの刷新: 履歴同期を決定論的IDで統一し、クラウド一括翻訳をチャンク化、5言語すべてで45分のPremium上限表記を反映'
             ],
             ko: [
-                'Cloudflare Functions 시작 시간 최적화: 대용량 NLP 라이브러리(Compromise, Pinyin Pro, Hangul Romanization)를 필요할 때만 동적으로 지연 로딩하여 배포 시 CPU 시간 초과 오류를 완벽하게 해결했습니다',
-                '프로덕션 번들 압축: 서버리스 함수에 esbuild 압축(minification)을 적용하여 번들 크기를 30% 이상 줄이고 콜드 스타트 성능을 향상했습니다',
-                '모바일 미니플레이어 블러 글래스 디자인: 하단 내비게이션 바와 일관된 반투명 블러 글래스 스타일과 피드 여백을 정교하게 다듬었습니다'
+                '엣지 보안 강화 및 데이터 변조 방지: 미검증 AI 자막 우회 경로를 차단하고 이중 자막 저장 시 인증을 의무화하며 내부 IP 리다이렉션을 제한했습니다',
+                '동영상 재생 시 60Hz 불필요한 CPU 소모 제거: 반복 구간 이펙트와 중앙 컨트롤 바인딩을 최적화하여 일반 재생 중 완전한 유휴 상태를 유지하고 배터리를 절약합니다',
+                '메모리 누수 완전 차단: 결제 창 종료 시 백그라운드 폴링 구독을 확실히 해제하고 불필요한 사전 조회 요청을 정리했습니다',
+                'Rule 4 결정론적 동기화 및 전방位 다국어 개선: 결정론적 레코드 키로 시청 기록을 통합하고, 클라우드 배치 번역을 분할 처리하며 5개 언어 모두 45분 Premium 자막 안내를 완비했습니다'
             ],
             zh: [
-                'Cloudflare Functions启动优化: 通过按需动态懒加载大型NLP库（Compromise、Pinyin Pro、Hangul Romanization），消除模块顶层初始化开销，解决部署时CPU时间超限错误',
-                '生产环境代码压缩优化: 为无服务器函数启用esbuild最小化压缩，将构建体积减少30%以上并显著加快冷启动速度',
-                '移动端迷你播放器毛玻璃设计: 完善与底部导航栏一致的磨砂毛玻璃质感，并精确对齐推荐流页面边距'
+                '边缘安全强化与防篡改保护: 彻底修复未授权AI转录绕过漏洞，双语字幕持久化引入强制鉴权，并严格限制CORS与内网重定向',
+                '消除播放时60Hz热点CPU空转: 重构字幕循环效果与控制器绑定逻辑，在常规播放期间完全休眠以大幅减少设备电量消耗',
+                '内存泄漏与后台轮询清除: 修复升级弹窗关闭后残留的后台支付轮询，并在面板注销时取消未完成的词典查询',
+                'Rule 4 确定性记录同步与多语言规范化: 采用确定性ID统一历史记录存储，分块请求云端批量翻译，并在全部5种语言中统一45分钟Premium转录说明'
             ]
         }
     });

@@ -74,12 +74,14 @@
                 <app-icon name="settings" [size]="18" />
             </button>
 
-            <!-- Miniplayer (YouTube desktop style) -->
-            <button class="control-btn desktop-only" (click)="toggleMiniplayer.emit()"
+            <!-- Miniplayer (Desktop & mobile - hidden in fullscreen) -->
+            @if (!isFullscreen()) {
+            <button class="control-btn" (click)="toggleMiniplayer.emit()"
                 [attr.aria-label]="t()('player.miniplayer') || 'Miniplayer (i)'"
                 [title]="t()('player.miniplayer') || 'Miniplayer (i)'">
                 <app-icon name="miniplayer" [size]="18" />
             </button>
+            }
 
             <!-- Fullscreen -->
             <button class="control-btn" (click)="toggleFullscreen.emit()"

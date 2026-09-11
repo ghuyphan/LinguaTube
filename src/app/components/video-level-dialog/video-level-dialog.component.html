@@ -28,13 +28,15 @@
   <div class="diagnostics-grid">
     @if (levelInfo().grammarCount > 0) {
     <div class="stat-card">
-      <div class="stat-card__top">
+      <div class="stat-card__header">
         <div class="stat-icon-wrap stat-icon--grammar">
-          <app-icon name="layers" [size]="18" />
+          <app-icon name="layers" [size]="16" />
         </div>
+        <span class="stat-label">{{ i18n.t('level.grammarPatternsDetected') || 'Grammar Patterns' }}</span>
+      </div>
+      <div class="stat-card__value-row">
         <span class="stat-value">{{ levelInfo().grammarCount }}</span>
       </div>
-      <span class="stat-label">{{ i18n.t('level.grammarPatternsDetected') || 'Grammar Patterns' }}</span>
 
       @if (sortedBreakdown().length > 0) {
       <div class="breakdown-chips">
@@ -48,14 +50,14 @@
 
     @if (speechPaceInfo(); as pace) {
     <div class="stat-card">
-      <div class="stat-card__top">
+      <div class="stat-card__header">
         <div class="stat-icon-wrap stat-icon--pace">
-          <app-icon name="zap" [size]="18" />
+          <app-icon name="zap" [size]="16" />
         </div>
-        <span class="stat-value">{{ pace.cpm }} <small>{{ pace.unit }}</small></span>
+        <span class="stat-label">{{ i18n.t('level.speechCadence') || 'Spoken Pace' }}</span>
       </div>
-      <span class="stat-label">{{ i18n.t('level.speechCadence') || 'Spoken Pace' }}</span>
-      <div class="pace-badge-wrap">
+      <div class="stat-card__value-row">
+        <span class="stat-value">{{ pace.cpm }} <small>{{ pace.unit }}</small></span>
         <span class="pace-tag" [class]="pace.paceClass">{{ pace.tag }}</span>
       </div>
     </div>

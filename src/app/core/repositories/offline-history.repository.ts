@@ -5,7 +5,7 @@ import { StorageService } from '../services/storage.service';
 import { PocketBaseService } from '../services/pocketbase.service';
 import { AuthService } from '../services/auth.service';
 import { getYouTubeThumbnail } from '../utils';
-import { sanitizeFilterValue } from '../../shared/utils/sync.utils';
+import { sanitizeFilterValue, generateDeterministicRecordId, mergeByTimestamp } from '../../shared/utils/sync.utils';
 import type PocketBase from 'pocketbase';
 
 const STORAGE_KEY = 'linguatube_history';
@@ -219,25 +219,31 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             is_favorite
         };
 
-        const existing = await client.collection('history').getList(1, 1, {
-            filter: `user="${sanitizeFilterValue(userId)}" && video_id="${sanitizeFilterValue(item.video_id)}"`,
-            requestKey: null
-        });
+        const recordId = generateDeterministicRecordId('hist', userId, item.video_id);
+        const payloadWithId = {
+            id: recordId,
+            ...payload
+        };
 
-        if (existing.items.length > 0) {
-            await client.collection('history').update(existing.items[0].id, {
-                watched_at: watchedAtIso,
-                progress,
-                is_favorite,
-                language,
-                languages,
-                title,
-                thumbnail,
-                channel,
-                duration
-            }, { requestKey: null });
-        } else {
-            await client.collection('history').create(payload, { requestKey: null });
+        try {
+            await client.collection('history').create(payloadWithId, { requestKey: null });
+        } catch (err: unknown) {
+            const status = (err && typeof err === 'object' && 'status' in err) ? (err as { status: number }).status : 0;
+            if (status === 400 || status === 409) {
+                await client.collection('history').update(recordId, {
+                    watched_at: watchedAtIso,
+                    progress,
+                    is_favorite,
+                    language,
+                    languages,
+                    title,
+                    thumbnail,
+                    channel,
+                    duration
+                }, { requestKey: null });
+            } else {
+                throw err;
+            }
         }
     }
 
@@ -378,30 +384,13 @@ export class OfflineHistoryRepository implements IHistoryRepository {
                 .map(r => this.recordToHistoryItem(r as unknown as HistoryRecord))
                 .filter(r => !activeTombstones.has(r.video_id));
 
-            // 3. Merge Strategy: Map by video_id, local with newer/equal watched_at wins
-            const itemMap = new Map<string, HistoryItem>();
-            for (const r of remoteItems) {
-                itemMap.set(r.video_id, r);
-            }
-
-            for (const local of this.history()) {
-                const remote = itemMap.get(local.video_id);
-                if (!remote) {
-                    itemMap.set(local.video_id, local);
-                } else {
-                    const localTime = new Date(local.watched_at).getTime();
-                    const remoteTime = new Date(remote.watched_at).getTime();
-                    if (localTime >= remoteTime) {
-                        itemMap.set(local.video_id, {
-                            ...local,
-                            id: remote.id || local.id,
-                            is_favorite: local.is_favorite || remote.is_favorite
-                        });
-                    }
-                }
-            }
-
-            const combined = Array.from(itemMap.values());
+            // 3. Merge Strategy: using canonical mergeByTimestamp (mandated by Rule 4)
+            const combined = mergeByTimestamp(
+                this.history(),
+                remoteItems,
+                item => item.video_id,
+                item => new Date(item.watched_at).getTime()
+            );
             combined.sort((a, b) => new Date(b.watched_at).getTime() - new Date(a.watched_at).getTime());
 
             this.history.set(combined);

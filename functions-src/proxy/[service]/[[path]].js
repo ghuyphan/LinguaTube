@@ -43,11 +43,32 @@ function isInternalHost(hostname) {
         /^10\./,                            // Private: 10.x.x.x
         /^192\.168\./,                      // Private: 192.168.x.x
         /^172\.(1[6-9]|2[0-9]|3[01])\./,    // Private: 172.16-31.x.x
+        /^169\.254\./,                      // Link-local / Cloud metadata: 169.254.x.x
+        /^100\.(6[4-9]|[7-9][0-9]|1[01][0-9]|12[0-7])\./, // Carrier-grade NAT (RFC 6598)
         /^localhost$/i,                     // Localhost hostname
         /^0\.0\.0\.0$/,                     // All interfaces
-        /^\[::1\]$/,                        // IPv6 loopback
+        /^\[?::1\]?$/,                      // IPv6 loopback
+        /^\[?::\]?$/,                       // IPv6 unspecified
+        /^\[?fe80:/i,                       // IPv6 link-local
+        /^\[?f[cd][0-9a-f]{2}:/i,           // IPv6 unique local (fc00::/7)
+        /^\[?::ffff:(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|169\.254\.)/i // IPv4-mapped IPv6
     ];
     return patterns.some(p => p.test(hostname));
+}
+
+function getAllowedOrigin(request) {
+    const origin = request.headers.get('Origin');
+    if (!origin) return 'https://voca.study';
+    try {
+        const u = new URL(origin);
+        if (
+            (u.protocol === 'https:' && (u.hostname === 'voca.study' || u.hostname.endsWith('.voca.study'))) ||
+            (u.hostname === 'localhost' || u.hostname === '127.0.0.1')
+        ) {
+            return origin;
+        }
+    } catch { }
+    return 'https://voca.study';
 }
 
 // Service configuration map
@@ -181,7 +202,7 @@ export async function onRequest(context) {
 
         const responseHeaders = {
             'Content-Type': response.headers.get('Content-Type') || 'application/json',
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': getAllowedOrigin(request),
             'Access-Control-Allow-Methods': config.methods.join(', ') + ', OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type',
             'X-Proxied-Service': service,

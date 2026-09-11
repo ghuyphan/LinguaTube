@@ -174,14 +174,25 @@ export class HistoryListComponent {
         return new Date(date).toLocaleDateString();
     }
 
+    private levelCache = new Map<string, { level: string; tier: ProficiencyLevelTier } | null>();
+
     getItemLevel(item: HistoryItem): { level: string; tier: ProficiencyLevelTier } | null {
-        return this.videoLevelService.resolveLevel(
+        const key = item.id || item.video_id;
+        if (this.levelCache.has(key)) {
+            return this.levelCache.get(key) ?? null;
+        }
+        const result = this.videoLevelService.resolveLevel(
             item.video_id,
             item.language || (item.languages?.[0]),
             item.title,
             item.channel,
             item.level
         );
+        if (this.levelCache.size >= 500) {
+            this.levelCache.clear();
+        }
+        this.levelCache.set(key, result);
+        return result;
     }
 
     getLanguagesTooltip(langs?: string[]): string {

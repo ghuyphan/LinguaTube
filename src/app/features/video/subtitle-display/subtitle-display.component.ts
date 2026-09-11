@@ -381,10 +381,11 @@ export class SubtitleDisplayComponent implements OnDestroy {
   }
 
   constructor() {
-    // Proactively preload grammar patterns for the active learning language
+    // Proactively preload grammar patterns for the active learning language once subtitles are present
     effect(() => {
       const lang = this.effectiveLanguage();
-      if (lang && ['ja', 'zh', 'ko', 'en'].includes(lang) && this.grammar.grammarModeEnabled()) {
+      const hasCues = this.subtitles.subtitles().length > 0;
+      if (hasCues && lang && ['ja', 'zh', 'ko', 'en'].includes(lang) && this.grammar.grammarModeEnabled()) {
         this.grammar.preloadPatterns(lang as SupportedGrammarLang);
       }
     });
@@ -427,8 +428,8 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
     // Segment loop effect
     effect(() => {
-      const currentTime = this.youtube.currentTime();
       if (!this.isLoopEnabled()) return;
+      const currentTime = this.youtube.currentTime();
 
       const targetCueIndex = this.targetCueIndex();
       if (targetCueIndex === -1) {

@@ -136,14 +136,15 @@
   <symbol id="log-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></symbol>
   
   <symbol id="miniplayer" viewBox="0 0 24 24">
-    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-    <rect x="12" y="11" width="8" height="6" rx="1" fill="currentColor" stroke="none"></rect>
+    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+    <rect x="12" y="12" width="8" height="6" rx="1" fill="currentColor" stroke="none"></rect>
   </symbol>
 
   <symbol id="expand" viewBox="0 0 24 24">
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
     <polyline points="15 3 21 3 21 9"></polyline>
-    <line x1="10" y1="14" x2="21" y2="3"></line>
+    <polyline points="9 21 3 21 3 15"></polyline>
+    <line x1="21" y1="3" x2="14" y2="10"></line>
+    <line x1="3" y1="21" x2="10" y2="14"></line>
   </symbol>
 
   <symbol id="fullscreen" viewBox="0 0 24 24">
@@ -161,17 +162,15 @@
   </symbol>
 
   <symbol id="maximize" viewBox="0 0 24 24">
-    <path d="M3 8V3h5"></path>
-    <path d="M16 3h5v5"></path>
-    <path d="M3 16v5h5"></path>
-    <path d="M21 16v5h-5"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <polyline points="9 21 3 21 3 15"></polyline>
+    <line x1="21" y1="3" x2="14" y2="10"></line>
+    <line x1="3" y1="21" x2="10" y2="14"></line>
   </symbol>
   
   <symbol id="minimize" viewBox="0 0 24 24">
-    <path d="M8 3v5H3"></path>
-    <path d="M16 3v5h5"></path>
-    <path d="M8 21v-5H3"></path>
-    <path d="M16 21v-5h5"></path>
+    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+    <rect x="12" y="12" width="8" height="6" rx="1" fill="currentColor" stroke="none"></rect>
   </symbol>
   
   <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></symbol>

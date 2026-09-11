@@ -251,6 +251,7 @@ Hosted at `https://voca.pockethost.io`.
 
 ### 5.4. Collection: `history`
 - Synchronized video watch history:
+  - `id`: 15-character deterministic hash (`generateDeterministicRecordId('hist', userId, video_id)`) to prevent duplicate records upon concurrent sync
   - `user`: Relation $\rightarrow$ `users.id` (Single, Nonempty)
   - `video_id`: String (YouTube video ID, Nonempty)
   - `title`: String (Video title, Nonempty)

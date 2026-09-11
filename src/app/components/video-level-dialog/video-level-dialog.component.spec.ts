@@ -65,4 +65,19 @@ describe('VideoLevelDialogComponent', () => {
     dismissBtn.click();
     expect(component.dismissed.emit).toHaveBeenCalled();
   });
+
+  it('should calculate and convert English speech pace to wpm correctly', () => {
+    fixture.componentRef.setInput('levelInfo', {
+      ...mockLevelInfo,
+      level: 'CEFR A2',
+      speechRateCpm: 837
+    });
+    fixture.detectChanges();
+
+    const pace = component.speechPaceInfo();
+    expect(pace).toBeTruthy();
+    expect(pace?.unit).toBe('wpm');
+    expect(pace?.cpm).toBe(161); // 837 / 5.2
+    expect(pace?.paceClass).toBe('pace-normal');
+  });
 });

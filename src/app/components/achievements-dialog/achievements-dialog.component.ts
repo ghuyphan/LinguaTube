@@ -94,16 +94,28 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
         this.activeCategory.set(cat);
     }
 
-    categoryCount(cat: 'all' | AchievementCategory): number {
+    readonly categoryStats = computed(() => {
         const all = this.gamification.achievements();
-        if (cat === 'all') return all.filter(a => a.unlocked).length;
-        return all.filter(a => a.category === cat && a.unlocked).length;
+        const map: Record<string, { count: number; total: number }> = {
+            all: { count: all.filter(a => a.unlocked).length, total: all.length }
+        };
+        for (const cat of this.categories) {
+            if (cat.id === 'all') continue;
+            const catItems = all.filter(a => a.category === cat.id);
+            map[cat.id] = {
+                count: catItems.filter(a => a.unlocked).length,
+                total: catItems.length
+            };
+        }
+        return map;
+    });
+
+    categoryCount(cat: 'all' | AchievementCategory): number {
+        return this.categoryStats()[cat]?.count ?? 0;
     }
 
     categoryTotal(cat: 'all' | AchievementCategory): number {
-        const all = this.gamification.achievements();
-        if (cat === 'all') return all.length;
-        return all.filter(a => a.category === cat).length;
+        return this.categoryStats()[cat]?.total ?? 0;
     }
 
     toIconName(icon: string | IconName): IconName {

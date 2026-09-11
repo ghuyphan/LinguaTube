@@ -305,6 +305,7 @@ export class VideoLevelService {
         const breakdown: Record<string, number> = {};
         let totalPatterns = 0;
         let totalChars = 0;
+        let totalWords = 0;
         let totalSpokenSeconds = 0;
 
         // Stratified sampling: for large transcripts (>60 cues), sample up to 50 evenly-spaced cues
@@ -323,7 +324,11 @@ export class VideoLevelService {
         for (const cue of evalCues) {
             const cueDuration = Math.max(0.2, (cue.endTime || 0) - (cue.startTime || 0));
             totalSpokenSeconds += cueDuration;
-            totalChars += cue.text ? cue.text.trim().length : 0;
+            const text = cue.text ? cue.text.trim() : '';
+            totalChars += text.length;
+            if (lang === 'en' && text) {
+                totalWords += text.split(/\s+/).filter(Boolean).length;
+            }
 
             if (cue.tokens && cue.tokens.length > 0) {
                 const matches = this.grammar.detectPatterns(cue.tokens, lang);
@@ -337,9 +342,11 @@ export class VideoLevelService {
             }
         }
 
-        // Calculate speech rate (characters per minute)
+        // Calculate speech rate (WPM for English, CPM for CJK)
         const spokenMinutes = Math.max(0.1, totalSpokenSeconds / 60);
-        const cpm = Math.round(totalChars / spokenMinutes);
+        const cpm = lang === 'en'
+            ? Math.round(totalWords / spokenMinutes)
+            : Math.round(totalChars / spokenMinutes);
 
         // Evaluate vocabulary/kanji difficulty on sampled cues
         const vocabScore = this.evaluateVocabularyDifficulty(evalCues, lang);

@@ -39,7 +39,7 @@ import { SettingsService, I18nService } from '../../../core/services';
               <div class="panel-badges">
                 @if (activeTab() === 'dictionary') {
                   @if (recentSearches().length > 0) {
-                    <span class="badge badge--primary">{{ recentSearches().length }} {{ i18n.t('dictionary.recent') || 'gần đây' }}</span>
+                    <span class="badge badge--primary">{{ recentSearches().length }} {{ i18n.t('dictionary.recent') || 'Recent' }}</span>
                   }
                 } @else {
                   <span class="badge badge--primary">{{ stats().total }} {{ i18n.t('study.cards') }}</span>

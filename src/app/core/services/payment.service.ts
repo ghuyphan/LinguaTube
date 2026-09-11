@@ -1,6 +1,6 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, tap, catchError, of, interval, switchMap, takeWhile, takeUntil, timer } from 'rxjs';
+import { Observable, Subscription, tap, catchError, of, interval, switchMap, takeWhile, takeUntil, timer } from 'rxjs';
 import { ToastService } from './toast.service';
 import { AuthService } from './auth.service';
 import { I18nService } from './i18n.service';
@@ -36,6 +36,7 @@ export class PaymentService {
   private transcript = inject(TranscriptService);
   private i18n = inject(I18nService);
 
+  private pollingSub: Subscription | null = null;
   readonly isCreating = signal(false);
   readonly currentOrder = signal<PaymentOrder | null>(null);
   readonly isPaid = signal(false);
@@ -94,7 +95,8 @@ export class PaymentService {
   }
 
   private pollOrderStatus(orderCode: number): void {
-    interval(3000).pipe(
+    this.pollingSub?.unsubscribe();
+    this.pollingSub = interval(3000).pipe(
       takeWhile(() => !this.isPaid() && this.currentOrder()?.orderCode === orderCode),
       takeUntil(timer(10 * 60 * 1000)), // Max 10 minutes timeout to prevent zombie polling
       switchMap(() => this.checkStatus(orderCode).pipe(
@@ -117,6 +119,8 @@ export class PaymentService {
   }
 
   clearOrder(): void {
+    this.pollingSub?.unsubscribe();
+    this.pollingSub = null;
     this.currentOrder.set(null);
     this.isPaid.set(false);
   }

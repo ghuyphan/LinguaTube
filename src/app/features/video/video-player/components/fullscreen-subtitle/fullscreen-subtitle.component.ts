@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GrammarMatch, SubtitleCue, SupportedLearningLanguage, Token } from '../../../../../models';
-import { SettingsService } from '../../../../../core/services';
+import { SettingsService, I18nService } from '../../../../../core/services';
 import { VocabularyService } from '../../../../vocabulary';
 
 /**
@@ -45,8 +45,8 @@ import { VocabularyService } from '../../../../vocabulary';
             (click)="$event.stopPropagation()"
             role="button"
             tabindex="0"
-            [attr.aria-label]="isTop() ? 'Move subtitle to bottom (tap or drag)' : 'Move subtitle to top (tap or drag)'"
-            [title]="isTop() ? 'Tap to move to bottom, or drag to reposition' : 'Tap to move to top, or drag to reposition'"
+            [attr.aria-label]="isTop() ? (i18n.t('player.moveSubtitleBottom') || 'Move subtitle to bottom (tap or drag)') : (i18n.t('player.moveSubtitleTop') || 'Move subtitle to top (tap or drag)')"
+            [title]="isTop() ? (i18n.t('player.moveSubtitleBottom') || 'Tap to move to bottom, or drag to reposition') : (i18n.t('player.moveSubtitleTop') || 'Tap to move to top, or drag to reposition')"
             (keydown.enter)="onHandleKeyToggle($event)"
             (keydown.space)="onHandleKeyToggle($event)">
             <div class="fs-drag-pill"></div>
@@ -98,7 +98,7 @@ import { VocabularyService } from '../../../../vocabulary';
             @if (showDualSubtitles()) {
               <div class="fs-subtitle-translation-wrapper">
                 @if (isDualSubLoading() && !currentTranslation()) {
-                  <div class="fs-subtitle-translation fs-subtitle-translation--loading" aria-label="Translating subtitle">
+                  <div class="fs-subtitle-translation fs-subtitle-translation--loading" [attr.aria-label]="i18n.t('subtitle.translating') || 'Translating subtitle...'">
                     <div class="fs-dual-sub-dots">
                       <span></span>
                       <span></span>
@@ -120,6 +120,7 @@ import { VocabularyService } from '../../../../vocabulary';
     styleUrl: './fullscreen-subtitle.component.scss'
 })
 export class FullscreenSubtitleComponent implements OnDestroy {
+    readonly i18n = inject(I18nService);
     vocab = inject(VocabularyService);
     settings = inject(SettingsService);
     private ngZone = inject(NgZone);

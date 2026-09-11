@@ -3,11 +3,13 @@ import {
   ChangeDetectionStrategy,
   input,
   output,
-  computed
+  computed,
+  inject
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../../../../shared/components/icon/icon.component';
 import { formatTime } from '../../../../../core/utils';
+import { I18nService } from '../../../../../core/services';
 
 /**
  * CenterControlsComponent
@@ -58,14 +60,14 @@ import { formatTime } from '../../../../../core/utils';
               [disabled]="!canPlayPrev()"
               (click)="onPrevClick($event)"
               (touchstart)="$event.stopPropagation()"
-              aria-label="Previous video">
+              [attr.aria-label]="i18n.t('player.previousVideo') || 'Previous video'">
               <app-icon name="skip-back" [size]="24" aria-hidden="true" />
             </button>
           }
 
           <!-- Play/Pause Button (Unified & Optimistic) -->
           <button class="big-play-btn fade-in" 
-              [attr.aria-label]="isPlaying() ? 'Pause video' : 'Play video'"
+              [attr.aria-label]="isPlaying() ? (i18n.t('player.pause') || 'Pause') : (i18n.t('player.play') || 'Play')"
               (touchstart)="$event.stopPropagation()"
               (click)="onPlayPauseClick($event)">
               
@@ -90,7 +92,7 @@ import { formatTime } from '../../../../../core/utils';
               [disabled]="!canPlayNext()"
               (click)="onNextClick($event)"
               (touchstart)="$event.stopPropagation()"
-              aria-label="Next video">
+              [attr.aria-label]="i18n.t('player.nextVideo') || 'Next video'">
               <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
             </button>
           }
@@ -106,12 +108,12 @@ import { formatTime } from '../../../../../core/utils';
               [disabled]="!canPlayPrev()"
               (click)="onPrevClick($event)"
               (touchstart)="$event.stopPropagation()"
-              aria-label="Previous video">
+              [attr.aria-label]="i18n.t('player.previousVideo') || 'Previous video'">
               <app-icon name="skip-back" [size]="24" aria-hidden="true" />
             </button>
           }
 
-          <button class="big-play-btn replay-btn" aria-label="Replay video"
+          <button class="big-play-btn replay-btn" [attr.aria-label]="i18n.t('player.replay') || 'Replay video'"
             (touchstart)="$event.stopPropagation()"
             (click)="onReplayClick($event)">
             <app-icon name="rotate-ccw" [size]="44" aria-hidden="true" />
@@ -123,7 +125,7 @@ import { formatTime } from '../../../../../core/utils';
               [disabled]="!canPlayNext()"
               (click)="onNextClick($event)"
               (touchstart)="$event.stopPropagation()"
-              aria-label="Next video">
+              [attr.aria-label]="i18n.t('player.nextVideo') || 'Next video'">
               <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
             </button>
           }
@@ -134,6 +136,8 @@ import { formatTime } from '../../../../../core/utils';
   styleUrl: './center-controls.component.scss'
 })
 export class CenterControlsComponent {
+  readonly i18n = inject(I18nService);
+
   // State inputs
   isReady = input.required<boolean>();
   isPlaying = input.required<boolean>();

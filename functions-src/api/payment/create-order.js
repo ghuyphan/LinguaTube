@@ -6,7 +6,7 @@
 import { validateAuthToken, unauthorizedResponse } from '../../middlewares/auth.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../../middlewares/rate-limiter.js';
 import { createPayOsPaymentLink } from '../../providers/payos.js';
-import { jsonResponse, handleOptions } from '../../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
 
 const RATE_LIMIT_CONFIG = { max: 10, windowSeconds: 600, keyPrefix: 'pay_order' };
 
@@ -47,6 +47,19 @@ export const PLANS = {
 
 export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
+}
+
+function isValidRedirectUrl(urlStr) {
+    if (!urlStr || typeof urlStr !== 'string') return false;
+    try {
+        const u = new URL(urlStr);
+        return (
+            (u.protocol === 'https:' && (u.hostname === 'voca.study' || u.hostname.endsWith('.voca.study'))) ||
+            (u.hostname === 'localhost' || u.hostname === '127.0.0.1')
+        );
+    } catch {
+        return false;
+    }
 }
 
 export async function onRequestPost(context) {
@@ -90,12 +103,15 @@ export async function onRequestPost(context) {
             await env.TRANSCRIPT_CACHE.put(`order:${orderCode}`, JSON.stringify(orderMeta), { expirationTtl: 7 * 24 * 60 * 60 });
         }
 
+        const returnUrl = isValidRedirectUrl(body.returnUrl) ? body.returnUrl : 'https://voca.study/video';
+        const cancelUrl = isValidRedirectUrl(body.cancelUrl) ? body.cancelUrl : 'https://voca.study/video';
+
         const paymentData = await createPayOsPaymentLink(env, {
             orderCode,
             amount: plan.amount,
             description,
-            returnUrl: body.returnUrl || 'https://voca.study/video',
-            cancelUrl: body.cancelUrl || 'https://voca.study/video'
+            returnUrl,
+            cancelUrl
         });
 
         return jsonResponse({
@@ -113,9 +129,6 @@ export async function onRequestPost(context) {
         }, 200);
     } catch (err) {
         console.error('[Payment API] Create order error:', err.message);
-        return jsonResponse({
-            success: false,
-            error: err.message || 'Failed to create payment order'
-        }, 500);
+        return errorResponse('Failed to create payment order', 500);
     }
 }

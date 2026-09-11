@@ -5,7 +5,7 @@
  */
 
 import { validateAuthToken, getUserTier } from '../../middlewares/auth.js';
-import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse, sanitizeLanguage } from '../../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
@@ -43,12 +43,12 @@ export async function onRequestGet(context) {
         return jsonResponse({ error: 'Invalid path. Expected: /api/translate/{source}/{target}/{text}' }, 400);
     }
 
-    const source = pathSegments[0];
-    const target = pathSegments[1];
+    const source = sanitizeLanguage(pathSegments[0], ['ja', 'zh', 'ko', 'en', 'vi', 'auto']);
+    const target = sanitizeLanguage(pathSegments[1], ['ja', 'zh', 'ko', 'en', 'vi']);
     const text = pathSegments.slice(2).join('/'); // Rejoin text that might contain slashes
 
-    if (!source || !target || !text) {
-        return jsonResponse({ error: 'Missing source, target, or text' }, 400);
+    if (!source || !target || !text.trim()) {
+        return jsonResponse({ error: 'Invalid or missing source, target, or text' }, 400);
     }
 
     // Fast-path: Check warm in-memory cache (0 KV, 0 API calls, < 0.1ms)

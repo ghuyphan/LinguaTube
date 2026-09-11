@@ -56,8 +56,13 @@ Voca includes a persistent, non-destructive Picture-in-Picture Miniplayer govern
   - 16:9 thumbnail (`80px × 45px`) with `border-radius: var(--border-radius-sm, 12px)` and `var(--bg-tertiary)` background matching the exact thumbnail design of the "For You" feed.
   - Full-width integer 2px progress bar spanning the entire bottom of the card (`left: 0; right: 0; width: 100%`) with rounded bottom corners.
   - Tapping thumbnail or text expands player back to watch mode; dedicated touch buttons toggle playback and close.
+- **In-Flow Layout & Feed Preservation Architecture**:
+  - Eliminates top/bottom edge gaps and background scroll bleed by keeping the player, queue, and subtitles in clean, natural document flow while toggling the feed with `.hidden`.
+  - Native browser scroll position is tracked via `@HostListener('window:scroll')` and restored atomically with a double-RAF loop when returning to the feed.
+  - Skeletons and data wipe are completely eliminated by keeping loaded cards in memory during miniplayer transitions.
+  - Video teardown resets playback state prior to layout view mode, eliminating rapid layout toggles and skeleton flashing.
 - **Dedicated YouTube-Style Icons & Cache-Busting**:
-  - **Miniplayer / Minimize (`miniplayer`)**: Outlined video monitor screen with a docked miniplayer window in the bottom-right corner.
+  - **Miniplayer / Minimize (`miniplayer` / `chevron-down`)**: Responsive minimize icon displaying `chevron-down` on mobile watch header (matching native YouTube mobile app UX) and monitor `miniplayer` icon on desktop.
   - **Expand / Maximize (`expand`)**: Official YouTube watch page expand icon (open window frame with directional breakout arrow).
   - **Fullscreen (`fullscreen` / `fullscreen-exit`)**: Four corner brackets pointing outward (enter) / inward (exit).
   - **Versioned Cache Invalidation**: Automatic release version query param (`assets/icons/sprite.svg?v=${version}#icon`) with `xlink:href` attribute ensures instant mobile browser cache refresh upon new deployments.

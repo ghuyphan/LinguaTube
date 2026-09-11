@@ -172,8 +172,19 @@ export class GrammarService {
         '아요', '어요', '여요', 'ㅂ니다', '습니다', '았', '었', '였', '네요',
         '지요', '죠', '세요', '으세요', '지 마세요', '지마세요', '는데', '은데', 'ㄴ데',
         '기 때문에', '기때문에', 'ㄹ 때', '을 때', '때',
-        '이에요', '예요', '하고'
     ].sort((a, b) => b.length - a.length);
+
+    private precomputedKoEndings: { ending: string; normEnding: string }[] | null = null;
+
+    private getPrecomputedKoEndings(): { ending: string; normEnding: string }[] {
+        if (!this.precomputedKoEndings) {
+            this.precomputedKoEndings = this.koEndingPatterns.map(ending => ({
+                ending,
+                normEnding: this.normalizePattern(ending, 'ko', false)
+            }));
+        }
+        return this.precomputedKoEndings;
+    }
 
     /**
      * Load patterns for a language (lazy).
@@ -505,13 +516,15 @@ export class GrammarService {
 
         // Strategy 2 (KO): Korean endings and particles
         if (lang === 'ko') {
+            const koEndings = this.getPrecomputedKoEndings();
             for (let i = 0; i < tokens.length; i++) {
                 const token = tokens[i];
                 if (token.isPunctuation) continue;
 
-                for (const ending of this.koEndingPatterns) {
-                    const normEnding = this.normalizePattern(ending, 'ko', false);
-                    if (token.surface.endsWith(ending) || token.surface === ending || this.normalizePattern(token.surface, 'ko', false).endsWith(normEnding)) {
+                const normTokenSurface = this.normalizePattern(token.surface, 'ko', false);
+
+                for (const { ending, normEnding } of koEndings) {
+                    if (token.surface.endsWith(ending) || token.surface === ending || normTokenSurface.endsWith(normEnding)) {
                         const foundPatterns = index.get(normEnding);
                         if (foundPatterns && foundPatterns.length > 0) {
                             matches.push({

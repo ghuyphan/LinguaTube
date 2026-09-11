@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, untracked, PLATFORM_ID, DestroyRef, viewChild, ElementRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, untracked, PLATFORM_ID, DestroyRef, viewChild, ElementRef, HostListener } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -187,6 +187,9 @@ export class VideoPageComponent implements OnInit {
   showLearnHome = computed(() =>
     (!this.youtube.currentVideo() && !this.youtube.pendingVideoId()) || this.playerView.isMiniplayer()
   );
+  readonly hasActiveVideo = computed(() =>
+    !!this.youtube.currentVideo() || !!this.youtube.pendingVideoId()
+  );
   currentLearningLanguage = computed(() => this.getLanguageName(this.settings.settings().language));
   featuredPlaylists = this.playlistService.recommendedPlaylists;
   isFeaturedLoading = this.playlistService.isRecommendedLoading;
@@ -214,8 +217,8 @@ export class VideoPageComponent implements OnInit {
    * or shows strictly playlists when the 'playlists' chip is selected.
    */
   readonly feedItems = computed<FeedItem[]>(() => {
-    // During coordinated feed loading, do not output partial items to prevent layout shifts
-    if (this.isFeedLoading()) {
+    // Only return empty during initial cold load when absolutely no videos are available yet
+    if (this.isFeedLoading() && this.filteredRecommendedVideos().length === 0) {
       return [];
     }
 
@@ -260,17 +263,14 @@ export class VideoPageComponent implements OnInit {
       return this.isFeaturedLoading() && this.filteredFeaturedPlaylists().length === 0;
     }
 
-    const videosLoading = this.isVideosLoading();
-    const playlistsLoading = this.isFeaturedLoading();
+    // Best Practice: If videos are already in memory, NEVER show skeleton cards over them!
+    // Skeletons are strictly for initial cold loading before any data arrives.
     const hasVideos = this.filteredRecommendedVideos().length > 0;
-    const hasPlaylists = this.filteredFeaturedPlaylists().length > 0;
-
-    // If neither has finished loading or we don't have existing content:
-    if (!hasVideos || (!hasPlaylists && playlistsLoading)) {
-      return videosLoading || playlistsLoading;
+    if (hasVideos) {
+      return false;
     }
 
-    return false;
+    return this.isVideosLoading();
   });
 
   readonly getFlagUrl = getLanguageFlagUrl;
@@ -322,6 +322,8 @@ export class VideoPageComponent implements OnInit {
   // ============================================
   private savedFeedScrollY = 0;
   private previousShowLearnHome = true;
+  private isNavigatingToWatch = false;
+  private isRestoringFeedScroll = false;
 
   readonly pullDistance = signal(0);
   readonly isPullActive = signal(false);
@@ -344,8 +346,15 @@ export class VideoPageComponent implements OnInit {
     return Math.min(this.pullDistance() * 3.5, 180);
   });
 
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    if (isPlatformBrowser(this.platformId) && this.showLearnHome() && !this.isNavigatingToWatch && !this.isRestoringFeedScroll) {
+      this.savedFeedScrollY = window.scrollY;
+    }
+  }
+
   saveScrollPosition(): void {
-    if (isPlatformBrowser(this.platformId) && this.showLearnHome()) {
+    if (isPlatformBrowser(this.platformId) && this.showLearnHome() && !this.isNavigatingToWatch && !this.isRestoringFeedScroll) {
       this.savedFeedScrollY = window.scrollY;
     }
   }
@@ -501,17 +510,27 @@ export class VideoPageComponent implements OnInit {
     effect(() => {
       const isHome = this.showLearnHome();
       if (isHome && !this.previousShowLearnHome) {
-        // Just returned from video to home feed!
+        // Just returned from video to home feed / miniplayer!
         if (isPlatformBrowser(this.platformId) && this.savedFeedScrollY > 0) {
           const targetScroll = this.savedFeedScrollY;
-          setTimeout(() => {
-            window.scrollTo({ top: targetScroll, behavior: 'instant' });
-          }, 10);
+          this.isRestoringFeedScroll = true;
+          // Synchronously restore scroll position so the initial paint doesn't jump
+          window.scrollTo({ top: targetScroll, behavior: 'instant' });
+          requestAnimationFrame(() => {
+            if (Math.abs(window.scrollY - targetScroll) > 5) {
+              window.scrollTo({ top: targetScroll, behavior: 'instant' });
+            }
+            this.isRestoringFeedScroll = false;
+          });
         }
       } else if (!isHome && this.previousShowLearnHome) {
-        // Just opened video from feed
+        // Just opened video from feed (reset window scroll to 0 so video player is at the top)
         if (isPlatformBrowser(this.platformId)) {
+          this.isNavigatingToWatch = true;
           window.scrollTo({ top: 0, behavior: 'instant' });
+          requestAnimationFrame(() => {
+            this.isNavigatingToWatch = false;
+          });
         }
       }
       this.previousShowLearnHome = isHome;
@@ -554,21 +573,33 @@ export class VideoPageComponent implements OnInit {
 
     // Automatically fetch server-side recommended playlists and videos when active language or difficulty tier changes
     let previousRecommendLang = '';
+    let previousRecommendTier = '';
     effect(() => {
       const currentLang = this.settings.settings().language;
-      if (previousRecommendLang && previousRecommendLang !== currentLang) {
+      const currentTier = this.videoLevelFilter();
+      const tierParam = currentTier === 'all' ? undefined : currentTier;
+
+      const langChanged = previousRecommendLang !== '' && previousRecommendLang !== currentLang;
+      const tierChanged = previousRecommendTier !== '' && previousRecommendTier !== currentTier;
+      const isInitial = previousRecommendLang === '';
+
+      previousRecommendLang = currentLang;
+      previousRecommendTier = currentTier;
+
+      if (langChanged) {
         untracked(() => {
           this.videoLevelFilter.set('all');
           this.savedFeedScrollY = 0;
         });
       }
-      previousRecommendLang = currentLang;
 
-      const currentTier = this.videoLevelFilter();
-      const tierParam = currentTier === 'all' ? undefined : currentTier;
+      // Best Practice: Only fetch when language changes, tier filter changes, initial load,
+      // or if on feed and videos have never been loaded yet (e.g. direct /video?id deep-link).
+      // Minimizing, expanding, or closing the player NEVER triggers redundant network fetches!
+      const hasVideos = untracked(() => this.videoRecommendation.recommendedVideos().length > 0);
+      const isHome = untracked(() => this.showLearnHome());
 
-      // Only load recommendations if the user is on the home dashboard (not actively watching a video)
-      if (this.showLearnHome()) {
+      if (isInitial || langChanged || tierChanged || (isHome && !hasVideos)) {
         void Promise.all([
           this.playlistService.loadRecommendedPlaylists(currentLang, tierParam),
           this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam)
@@ -619,12 +650,6 @@ export class VideoPageComponent implements OnInit {
       const playlistVideo = this.playlistService.currentVideo();
       const currentVideo = this.youtube.currentVideo();
       const isLoading = this.playlistService.isLoading();
-
-      // console.log('[VideoPage] Effect check:', { 
-      //   playlistVideo: playlistVideo?.videoId, 
-      //   currentVideo: currentVideo?.id, 
-      //   isLoading 
-      // });
 
       if (this.activePlaylistId() && playlistVideo && (!currentVideo || currentVideo.id !== playlistVideo.videoId) && !isLoading) {
         // Navigate to the video URL to keep URL in sync

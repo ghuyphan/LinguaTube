@@ -613,15 +613,23 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                     }
                 };
 
-                // Pass 1: Add candidates while respecting creator variety cap
+                // Pass 1: Separate candidates respecting creator variety cap
+                const candidateRows = [];
                 for (const row of rows) {
                     if (videoMap.has(row.video_id)) continue;
                     const chKey = (row.channel || '').trim().toLowerCase();
                     if (chKey && (channelCounts.get(chKey) || 0) >= maxPerChannel) {
                         deferredRows.push(row);
-                        continue;
+                    } else {
+                        candidateRows.push(row);
                     }
-                    await processRow(row);
+                }
+
+                // Process candidates concurrently in small pools (8 at a time) to avoid sequential R2 HEAD latency
+                const POOL_SIZE = 8;
+                for (let i = 0; i < candidateRows.length; i += POOL_SIZE) {
+                    const pool = candidateRows.slice(i, i + POOL_SIZE);
+                    await Promise.all(pool.map(r => processRow(r)));
                     if (videoMap.size >= safeOffset + safeLimit) {
                         break;
                     }
@@ -629,8 +637,9 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
 
                 // Pass 2: Fill remaining slots with deferred rows if needed
                 if (videoMap.size < safeOffset + safeLimit && deferredRows.length > 0) {
-                    for (const row of deferredRows) {
-                        await processRow(row);
+                    for (let i = 0; i < deferredRows.length; i += POOL_SIZE) {
+                        const pool = deferredRows.slice(i, i + POOL_SIZE);
+                        await Promise.all(pool.map(r => processRow(r)));
                         if (videoMap.size >= safeOffset + safeLimit) {
                             break;
                         }

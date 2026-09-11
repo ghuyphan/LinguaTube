@@ -74,7 +74,7 @@ export class HistoryService {
     private async onVideoLoaded(video: VideoInfo): Promise<void> {
         this.lastRecordedVideoId = video.id;
         this.lastRecordedProgress = -1;
-        const initialLangs = (video as unknown as { languages?: string[] })?.languages || [];
+        const initialLangs = video.languages || [];
         await this.addToHistory(video, initialLangs);
     }
 

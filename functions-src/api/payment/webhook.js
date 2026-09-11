@@ -5,7 +5,7 @@
  */
 
 import { verifyWebhookSignature } from '../../providers/payos.js';
-import { jsonResponse, handleOptions } from '../../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
 
 export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
@@ -161,6 +161,6 @@ export async function onRequestPost(context) {
         return jsonResponse({ success: true, orderCode }, 200);
     } catch (err) {
         console.error('[payOS Webhook] Execution error:', err.message);
-        return jsonResponse({ success: false, error: err.message }, 500);
+        return errorResponse('Webhook processing failed', 500);
     }
 }

@@ -282,7 +282,9 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             maxWidth="460px"
             (closed)="showProUpgradeSheet.set(false)"
           >
-            <app-pro-upgrade-dialog (dismissed)="sheetService.closeTop()" />
+            @if (showProUpgradeSheet()) {
+              <app-pro-upgrade-dialog (dismissed)="showProUpgradeSheet.set(false)" />
+            }
           </app-bottom-sheet>
         }
 
