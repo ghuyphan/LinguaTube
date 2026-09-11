@@ -73,13 +73,16 @@ Correct segmentation and pronunciation generation are central to Voca:
 ### 3.2. Chinese Word Segmentation & Pinyin (`pinyin-pro` + `Intl.Segmenter`)
 - Sentences are segmented into multi-character words using `Intl.Segmenter('zh', { granularity: 'word' })`.
 - Pronunciations are annotated with tone marks (e.g. `nǐ hǎo`) via `pinyin(word, { toneType: 'symbol' })`.
+- **Edge Lazy Loading**: `pinyin-pro` is dynamically loaded on demand (`await import('pinyin-pro')`) within `functions-src/utils/tokenizer.js` and `dict-parsers.js`, ensuring zero startup overhead on serverless workers.
 
-### 3.3. Korean Segmentation & Romanization (`hangul-romanization` + `Intl.Segmenter`)
-- Words are segmented using space boundaries and `Intl.Segmenter('ko', { granularity: 'word' })`.
-- Romanization is computed using the official Revised Romanization standard via `hangul-romanization`.
+### 3.3. Korean Word Segmentation & Romanization (`hangul-romanization` + `Intl.Segmenter`)
+- Segments Hangul sentences via `Intl.Segmenter('ko', { granularity: 'word' })`.
+- Romanizes Korean words using Revised Romanization of Korean via `hangul-romanization` (dynamically loaded on demand on the edge).
 
-### 3.4. English Segmentation & Morphology (`compromise` + `Intl.Segmenter`)
-- Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en', { granularity: 'word' })`.
+### 3.4. English Morphological Analysis & CEFR Grammar (`compromise` + `Intl.Segmenter`)
+- Tokenizes English text into words and punctuation using `Intl.Segmenter('en', { granularity: 'word' })`.
+- Uses `compromise` NLP for parts-of-speech tagging and lemmatization (extracting infinitive verb stems and singular noun forms).
+- **Edge Lazy Loading**: Because `compromise` compiles hundreds of grammatical rules and models, it is imported dynamically on demand (`await import('compromise')`) inside `functions-src/utils/tokenizer.js`, eliminating hundreds of milliseconds of module evaluation time during Cloudflare Worker startup.
 - Enriched with `compromise` NLP morphological tags:
   - **Part-of-Speech Tagging**: Attaches POS tags (`Noun`, `Verb`, `Adjective`, `Adverb`, `Conjunction`, `Preposition`, `Modal`) to each English token.
   - **Lemmatization (`baseForm`)**: Root verb lemmas (`running` $\rightarrow$ `run`, `went` $\rightarrow$ `go`) for accurate dictionary lookups.

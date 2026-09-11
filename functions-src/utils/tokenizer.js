@@ -4,10 +4,34 @@
  */
 
 import * as kuromoji from '@patdx/kuromoji';
-import nlp from 'compromise';
-import { pinyin } from 'pinyin-pro';
-import { convert as romanizeKorean } from 'hangul-romanization';
 import { getJapaneseRomaji, isJapaneseKanaText, katakanaToHiragana } from './japanese-romaji.js';
+
+let nlpModule = null;
+async function getNlp() {
+    if (!nlpModule) {
+        const mod = await import('compromise');
+        nlpModule = mod.default || mod;
+    }
+    return nlpModule;
+}
+
+let pinyinModule = null;
+async function getPinyin() {
+    if (!pinyinModule) {
+        const mod = await import('pinyin-pro');
+        pinyinModule = mod.pinyin || mod;
+    }
+    return pinyinModule;
+}
+
+let romanizeKoreanModule = null;
+async function getRomanizeKorean() {
+    if (!romanizeKoreanModule) {
+        const mod = await import('hangul-romanization');
+        romanizeKoreanModule = mod.convert || mod;
+    }
+    return romanizeKoreanModule;
+}
 
 // Kanji detection (CJK Unified Ideographs)
 const KANJI_REGEX = /[\u4E00-\u9FFF]/;
@@ -118,9 +142,18 @@ export async function tokenizeJapanese(text) {
  * Tokenize Korean or Chinese text using Intl.Segmenter
  * Adds pinyin for Chinese and romanization for Korean
  */
-export function tokenizeKoreanChinese(text, lang) {
+export async function tokenizeKoreanChinese(text, lang) {
     const segmenter = new Intl.Segmenter(lang, { granularity: 'word' });
     const segments = [...segmenter.segment(text)];
+
+    let pinyinFn = null;
+    if (lang === 'zh') {
+        pinyinFn = await getPinyin();
+    }
+    let romanizeFn = null;
+    if (lang === 'ko') {
+        romanizeFn = await getRomanizeKorean();
+    }
 
     return segments
         .filter(seg => seg.isWordLike || seg.segment.trim())
@@ -134,9 +167,9 @@ export function tokenizeKoreanChinese(text, lang) {
             }
 
             // Add Chinese Pinyin
-            if (lang === 'zh') {
+            if (lang === 'zh' && pinyinFn) {
                 try {
-                    const py = pinyin(token.surface, { toneType: 'symbol', type: 'string' });
+                    const py = pinyinFn(token.surface, { toneType: 'symbol', type: 'string' });
                     if (py !== token.surface) {
                         token.pinyin = py;
                     }
@@ -144,9 +177,9 @@ export function tokenizeKoreanChinese(text, lang) {
             }
 
             // Add Korean Romanization
-            if (lang === 'ko') {
+            if (lang === 'ko' && romanizeFn) {
                 try {
-                    token.romanization = romanizeKorean(token.surface);
+                    token.romanization = romanizeFn(token.surface);
                 } catch { }
             }
 
@@ -158,11 +191,12 @@ export function tokenizeKoreanChinese(text, lang) {
  * Tokenize English text using Intl.Segmenter and Compromise NLP
  * Attaches partOfSpeech and baseForm (lemmatization) to word tokens
  */
-export function tokenizeEnglish(text) {
+export async function tokenizeEnglish(text) {
     if (!text || typeof text !== 'string') return [];
 
     const segmenter = new Intl.Segmenter('en', { granularity: 'word' });
     const segments = [...segmenter.segment(text)];
+    const nlp = await getNlp();
     const doc = nlp(text);
     const json = doc.json({ terms: true });
     const terms = json.flatMap(s => s.terms || []).filter(t => t.text);

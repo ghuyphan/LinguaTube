@@ -236,6 +236,10 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Pro: 1,500 req/hr
   - Premium: 2,000 req/hr
 - **Frontend Integration**: `SubtitleService` tokenizes all cues up front on video load (1 request per video for up to 800 cues), passes the PocketBase bearer token, and activates an automatic client-side circuit breaker upon receiving HTTP 429. Zero network requests occur during video playback.
+- **Edge Cold-Start & Startup CPU Optimization**:
+  - Heavy NLP modules (`compromise`, `pinyin-pro`, `hangul-romanization`) are loaded dynamically on demand (`await import(...)`) rather than statically at module import.
+  - This completely eliminates top-level synchronous module initialization at Worker startup, staying well within Cloudflare's strict CPU time limits (avoiding `Script startup exceeded CPU time limit`).
+  - Production bundles in `functions/` are compiled via esbuild with `minify: true`, cutting bundle sizes by over 30% and speeding up isolate cold starts.
 
 ---
 

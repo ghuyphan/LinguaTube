@@ -1,5 +1,4 @@
 import { getJapaneseRomaji } from './japanese-romaji.js';
-import { pinyin } from 'pinyin-pro';
 
 /**
  * Unified Dictionary Parsers (Cloudflare Function)
@@ -321,6 +320,7 @@ export async function parseGlosbe(response, targetWord = '') {
 
         // 3. If targetWord has Chinese characters and reading is empty, compute pinyin
         if (targetWord && /[\u4E00-\u9FFF]/.test(targetWord)) {
+            const { pinyin } = await import('pinyin-pro');
             const py = pinyin(targetWord, { toneType: 'symbol' });
             for (const e of entries) {
                 if (!e.reading) e.reading = py;

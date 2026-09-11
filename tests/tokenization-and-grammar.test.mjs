@@ -57,9 +57,9 @@ test('Tokenizer [JA]: Kanji detection, katakana to hiragana, and Romaji', () => 
     assert.equal(isJapaneseKanaText('漢字'), false);
 });
 
-test('Tokenizer [ZH]: Chinese segmentation and Pinyin with tone marks', () => {
+test('Tokenizer [ZH]: Chinese segmentation and Pinyin with tone marks', async () => {
     const text = '这是什么书？虽然天气冷，但是很开心。';
-    const tokens = tokenizeKoreanChinese(text, 'zh');
+    const tokens = await tokenizeKoreanChinese(text, 'zh');
 
     assert.ok(tokens.length >= 6);
 
@@ -82,9 +82,9 @@ test('Tokenizer [ZH]: Chinese segmentation and Pinyin with tone marks', () => {
     assert.equal(qmark.pinyin, undefined);
 });
 
-test('Tokenizer [KO]: Korean segmentation and Hangul Romanization', () => {
+test('Tokenizer [KO]: Korean segmentation and Hangul Romanization', async () => {
     const text = '나는 한국어를 배우고 있습니다. 오렌지가 아주 맛있어요.';
-    const tokens = tokenizeKoreanChinese(text, 'ko');
+    const tokens = await tokenizeKoreanChinese(text, 'ko');
 
     assert.ok(tokens.length >= 6);
 
@@ -103,9 +103,9 @@ test('Tokenizer [KO]: Korean segmentation and Hangul Romanization', () => {
     assert.equal(dot.romanization, undefined);
 });
 
-test('Tokenizer [EN]: English segmentation, POS tagging, and lemmatization', () => {
+test('Tokenizer [EN]: English segmentation, POS tagging, and lemmatization', async () => {
     const text = 'Learning languages is not only fun, but also very rewarding!';
-    const tokens = tokenizeEnglish(text);
+    const tokens = await tokenizeEnglish(text);
 
     assert.ok(tokens.length >= 8);
 

@@ -56,7 +56,7 @@ async function build() {
                 platform: 'browser',
                 target: 'es2022',
                 outfile,
-                minify: false,
+                minify: true,
                 conditions: ['worker', 'browser', 'import', 'default'],
                 mainFields: ['browser', 'module', 'main'],
             });
