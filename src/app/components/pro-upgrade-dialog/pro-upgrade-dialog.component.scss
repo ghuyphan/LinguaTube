@@ -26,54 +26,27 @@
 }
 
 .pro-hero-icon {
-    width: 52px;
-    height: 52px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.16) 0%, rgba(59, 130, 246, 0.12) 50%, rgba(139, 92, 246, 0.16) 100%);
-    border: 1.5px solid rgba(59, 130, 246, 0.35);
-    box-shadow: 0 0 24px rgba(59, 130, 246, 0.2);
-    transition: all var(--transition-normal);
-
-    .hero-crown {
-        color: #3b82f6;
-        filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.45));
-        transition: transform var(--transition-normal);
-        animation: crownFloat 2.6s ease-in-out infinite;
-    }
-
-    &.is-active {
-        background: var(--gradient-pro);
-        box-shadow: 0 0 32px rgba(59, 130, 246, 0.35);
-
-        .hero-crown {
-            color: #ffffff;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-        }
-    }
+    background: linear-gradient(135deg, rgba(var(--accent-primary-rgb), 0.16) 0%, rgba(var(--accent-primary-rgb), 0.04) 100%);
+    border: 1.5px solid rgba(var(--accent-primary-rgb), 0.3);
+    box-shadow: 0 4px 20px rgba(var(--accent-primary-rgb), 0.2);
+    color: var(--accent-primary);
+    margin-bottom: 0.25rem;
 
     &.is-premium {
-        background: var(--gradient-premium);
-        border-color: rgba(236, 72, 153, 0.4);
-        box-shadow: 0 0 32px rgba(236, 72, 153, 0.3);
-
-        .hero-crown {
-            color: #1e1b4b;
-            filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.5));
-        }
+        background: linear-gradient(135deg, rgba(168, 85, 247, 0.16) 0%, rgba(236, 72, 153, 0.08) 100%);
+        border-color: rgba(168, 85, 247, 0.35);
+        box-shadow: 0 4px 20px rgba(168, 85, 247, 0.25);
+        color: #c084fc;
     }
 }
 
-@keyframes crownFloat {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-2px) rotate(-2deg);
-    }
-}
+
 
 .title-group {
     display: flex;

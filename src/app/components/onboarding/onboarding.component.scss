@@ -25,39 +25,12 @@
     width: 100%;
 }
 
-.onboarding-hero-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(var(--accent-primary-rgb), 0.18) 0%, rgba(var(--accent-primary-rgb), 0.04) 100%);
-    border: 1.5px solid rgba(var(--accent-primary-rgb), 0.3);
-    box-shadow: 0 0 24px rgba(var(--accent-primary-rgb), 0.16);
-
-    .hero-sparkle {
-        color: var(--accent-primary);
-        filter: drop-shadow(0 2px 6px rgba(var(--accent-primary-rgb), 0.35));
-        animation: pulseGlow 2.8s ease-in-out infinite alternate;
-    }
-}
-
-@keyframes pulseGlow {
-    0% {
-        transform: scale(1);
-        opacity: 0.9;
-    }
-    100% {
-        transform: scale(1.08);
-        opacity: 1;
-    }
-}
-
 .title-group {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    padding-top: 0.25rem;
+    align-items: center;
 }
 
 .title {
@@ -74,48 +47,6 @@
     color: var(--text-secondary);
     margin: 0;
     line-height: 1.35;
-}
-
-/* --- 2. Feature Highlights Box --- */
-.features-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    width: 100%;
-    padding: 0.625rem 0.875rem;
-    background: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-md);
-    text-align: left;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-
-    .feature-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 26px;
-        height: 26px;
-        border-radius: var(--border-radius-xs);
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        flex-shrink: 0;
-
-        &--subtitles { color: var(--accent-primary); }
-        &--dict { color: #3b82f6; }
-        &--srs { color: #f59e0b; }
-    }
-
-    .feature-text {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--text-secondary);
-        line-height: 1.3;
-    }
 }
 
 /* --- 3. Target Language Section --- */

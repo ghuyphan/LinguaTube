@@ -88,7 +88,7 @@
 
             <!-- YouTube-style Horizontal Chips Carousel -->
             <div class="yt-chips-bar">
-                <div class="yt-chips-scroll">
+                <div class="yt-chips-scroll" (wheel)="onChipsWheel($event)">
                     <!-- 1. All / Recommended Videos chip -->
                     <button type="button" class="yt-chip" [class.active]="homeTab() === 'videos' && videoLevelFilter() === 'all'"
                         (click)="selectFeedTab('videos', 'all')" [attr.aria-label]="i18n.t('playlist.recommendedVideos')">
@@ -160,7 +160,6 @@
                                 </div>
                             </div>
                         </div>
-                        @let langs = getVideoLanguages(item.video);
                         <div class="yt-video-card__details">
                             <div class="yt-video-card__avatar">
                                 @if (item.video.channelAvatar && !hasAvatarFailed(item.video.videoId)) {
@@ -189,22 +188,10 @@
                                     <span class="level-badge--pill" [attr.data-tier]="item.video.tier">{{ item.video.level }}</span>
                                     }
                                     @if (item.video.matchedWords && item.video.matchedWords.length > 0) {
-                                    <span class="yt-vocab-match-badge" [title]="item.video.matchedWords.join(', ')">
+                                    <span class="yt-vocab-match-text" [title]="item.video.matchedWords.join(', ')">
                                         <app-icon name="sparkles" [size]="11" />
                                         <span>{{ i18n.t('playlist.vocabMatch', { count: item.video.matchedWords.length }) }}</span>
                                     </span>
-                                    }
-                                    @if (langs.length > 0) {
-                                    <span class="yt-lang-flags" [title]="getLanguagesTooltip(langs)">
-                                        <img [src]="getFlagUrl(langs[0])" class="circle-flag" [alt]="langs[0]" />
-                                        @if (langs.length === 2) {
-                                        <img [src]="getFlagUrl(langs[1])" class="circle-flag" [alt]="langs[1]" />
-                                        } @else if (langs.length > 2) {
-                                        <span class="lang-count">+{{ langs.length - 1 }}</span>
-                                        }
-                                    </span>
-                                    } @else {
-                                    <span class="yt-sub-badge"><app-icon name="captions" [size]="12" /> CC</span>
                                     }
                                 </div>
                             </div>
@@ -294,7 +281,7 @@
             } @else if (videoLevelFilter() !== 'all') {
             <div class="empty-state empty-state--centered">
                 <div class="empty-state__icon-box">
-                    <app-icon name="medal" [size]="28" />
+                    <app-icon name="graduation-cap" [size]="28" />
                 </div>
                 <div class="empty-state__text">
                     <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>

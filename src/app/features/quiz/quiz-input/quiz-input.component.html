@@ -27,7 +27,7 @@
             @if (quiz.questionState() === 'listening') {
             <div class="listening-state" @fadeIn>
                 <div class="listening-indicator">
-                    <span class="pulse-dot"></span>
+                    <app-icon name="mic" [size]="15" class="listening-mic-icon" />
                     <span>{{ i18n.t('quiz.listening') }}</span>
                 </div>
             </div>

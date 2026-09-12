@@ -32,40 +32,24 @@
 
     <!-- Stats Grid -->
     <div class="stats-grid">
-        <div class="stat-card" [class.highlighted]="streak.currentStreak() > 0">
-            <div class="stat-icon-wrap stat-icon--fire">
-                <app-icon name="fire" [size]="20" />
+        <div class="stat-card">
+            <div class="stat-icon-wrap stat-icon-wrap--trophy">
+                <app-icon name="trophy" [size]="18" />
             </div>
-            <span class="stat-value">{{ streak.currentStreak() }}</span>
-            <span class="stat-label">{{ i18n.t('streak.currentStreak') || 'Current Streak' }}</span>
+            <div class="stat-info">
+                <span class="stat-label">{{ i18n.t('streak.longestStreak') || 'Best Streak' }}</span>
+                <span class="stat-value">{{ streak.longestStreak() }}</span>
+            </div>
         </div>
         <div class="stat-card">
-            <div class="stat-icon-wrap stat-icon--trophy">
-                <app-icon name="trophy" [size]="20" />
+            <div class="stat-icon-wrap stat-icon-wrap--freeze">
+                <app-icon name="snowflake" [size]="18" />
             </div>
-            <span class="stat-value">{{ streak.longestStreak() }}</span>
-            <span class="stat-label">{{ i18n.t('streak.longestStreak') || 'Longest Streak' }}</span>
-        </div>
-    </div>
-
-    <!-- How it works Info Box -->
-    <div class="streak-info-box">
-        <div class="info-row">
-            <app-icon name="info" [size]="16" class="info-icon info-icon--streak" />
-            <div class="info-content">
-                <strong>{{ i18n.t('streak.howItWorks') }}</strong>
-                <p>{{ i18n.t('streak.howToExtend') }}</p>
+            <div class="stat-info">
+                <span class="stat-label">{{ i18n.t('streak.freezesRemaining') || 'Streak Freezes' }}</span>
+                <span class="stat-value">{{ streak.freezesRemaining() }}</span>
             </div>
         </div>
-        @if (streak.freezesRemaining() > 0) {
-        <div class="info-row freeze-info">
-            <app-icon name="snowflake" [size]="16" class="info-icon freeze-icon" />
-            <div class="info-content">
-                <strong>{{ i18n.t('streak.freezesRemaining') }}</strong>
-                <p>{{ i18n.t('streak.freezeExplanation', { count: streak.freezesRemaining() }) }}</p>
-            </div>
-        </div>
-        }
     </div>
 
     <button class="btn btn-primary streak-dismiss-btn" (click)="dismissed.emit()">

@@ -36,22 +36,7 @@ import { SettingsService, I18nService } from '../../../core/services';
                 <app-icon [name]="activeTab() === 'dictionary' ? 'book-open' : 'layers'" [size]="20" class="panel-header__icon" />
                 <h2 class="panel-header__title">{{ activeTab() === 'dictionary' ? i18n.t('dictionary.title') : i18n.t('vocab.title') }}</h2>
               </div>
-              <div class="panel-badges">
-                @if (activeTab() === 'dictionary') {
-                  @if (recentSearches().length > 0) {
-                    <span class="badge badge--primary">{{ recentSearches().length }} {{ i18n.t('dictionary.recent') || 'Recent' }}</span>
-                  }
-                } @else {
-                  <span class="badge badge--primary">{{ stats().total }} {{ i18n.t('study.cards') }}</span>
-                  @if (stats().known > 0) {
-                    <span class="badge badge--accent">{{ stats().known }} {{ i18n.t('study.known') }}</span>
-                  }
-                }
-              </div>
             </div>
-            <p class="panel-header__subtitle">
-              {{ activeTab() === 'dictionary' ? i18n.t('dictionary.subtitle') : i18n.t('study.subtitle') }}
-            </p>
           </div>
 
           <!-- Segmented View Tabs (Unified toolbar inside card, matches playlist & history) -->
@@ -102,43 +87,39 @@ import { SettingsService, I18nService } from '../../../core/services';
 
       <!-- Desktop sidebar with stats -->
       <aside class="page-layout__sidebar desktop-only">
-        <div class="card sidebar-card">
-          <div class="panel-header">
-            <div class="panel-header__row">
-              <div class="panel-header__left">
-                <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
-                <h3 class="panel-header__title">{{ i18n.t('vocab.title') }}</h3>
+        @if (stats().total > 0) {
+          <div class="card sidebar-card">
+            <div class="panel-header">
+              <div class="panel-header__row">
+                <div class="panel-header__left">
+                  <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
+                  <h3 class="panel-header__title">{{ i18n.t('study.title') }}</h3>
+                </div>
+                <span class="badge badge--primary">{{ stats().total }} {{ i18n.t('study.cards') }}</span>
               </div>
             </div>
-            <p class="panel-header__subtitle">{{ stats().total }} {{ i18n.t('study.cards') }}</p>
-          </div>
-          
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-value">{{ stats().total }}</span>
-              <span class="stat-label">{{ i18n.t('study.cards') }}</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value stat-new">{{ stats().new }}</span>
-              <span class="stat-label">{{ i18n.t('study.new') }}</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value stat-learning">{{ stats().learning }}</span>
-              <span class="stat-label">{{ i18n.t('study.learning') }}</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value stat-known">{{ stats().known }}</span>
-              <span class="stat-label">{{ i18n.t('study.known') }}</span>
-            </div>
-          </div>
 
-          @if (stats().total > 0) {
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-value stat-new">{{ stats().new }}</span>
+                <span class="stat-label">{{ i18n.t('study.new') }}</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value stat-learning">{{ stats().learning }}</span>
+                <span class="stat-label">{{ i18n.t('study.learning') }}</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value stat-known">{{ stats().known }}</span>
+                <span class="stat-label">{{ i18n.t('study.known') }}</span>
+              </div>
+            </div>
+
             <a routerLink="/study" class="btn btn-primary sidebar-action-btn">
-              <app-icon name="graduation-cap" [size]="16" />
-              {{ i18n.t('study.start') }}
+              <app-icon name="play" [size]="16" />
+              <span>{{ i18n.t('study.start') }}</span>
             </a>
-          }
-        </div>
+          </div>
+        }
 
         @if (recentSearches().length > 0) {
           <div class="card sidebar-card">
@@ -220,6 +201,65 @@ import { SettingsService, I18nService } from '../../../core/services';
   styles: [`
     :host {
       display: block;
+    }
+
+    .sidebar-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin: var(--space-xs) 0 var(--space-sm);
+    }
+
+    .stat-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      padding: 0.5rem 0.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.2;
+
+      &.stat-new {
+        color: var(--word-new-text, var(--accent-primary));
+      }
+
+      &.stat-learning {
+        color: var(--word-learning-text, #eab308);
+      }
+
+      &.stat-known {
+        color: var(--word-known-text, #3b82f6);
+      }
+    }
+
+    .stat-label {
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .sidebar-action-btn {
+      width: 100%;
+      gap: 0.5rem;
     }
 
     .recent-list {
@@ -411,6 +451,7 @@ import { SettingsService, I18nService } from '../../../core/services';
       overflow: visible;
       height: auto;
       min-height: 0;
+      padding-bottom: var(--space-lg);
 
       .panel-header__row {
         flex-wrap: wrap;
@@ -425,7 +466,7 @@ import { SettingsService, I18nService } from '../../../core/services';
       background: var(--bg-card);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      padding: var(--space-xs) 0;
+      padding: var(--space-xs) 0 0;
       display: flex;
       align-items: center;
       gap: var(--space-sm);
@@ -511,7 +552,8 @@ import { SettingsService, I18nService } from '../../../core/services';
     @media (max-width: 768px) {
         .dict-toolbar {
             width: 100%;
-            padding: 0 0 var(--space-xs);
+            padding: var(--space-2xs) 0 0;
+            margin-bottom: var(--space-sm);
 
             .view-tabs {
                 width: 100%;

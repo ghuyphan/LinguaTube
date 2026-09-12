@@ -1,11 +1,10 @@
-import { Component, ChangeDetectionStrategy, inject, computed, viewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, viewChild, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { StudyModeComponent } from '../study-mode/study-mode.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService } from '../../../core/services';
-import { formatTime } from '../../../core/utils';
+import { StreakService } from '../../../services/streak.service';
 
 @Component({
   selector: 'app-study-page',
@@ -13,7 +12,6 @@ import { formatTime } from '../../../core/utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
-    RouterLink,
     StudyModeComponent,
     IconComponent
   ],
@@ -23,86 +21,84 @@ import { formatTime } from '../../../core/utils';
         <app-study-mode #studyModeRef />
       </div>
 
-      <!-- Desktop sidebar with study stats / live session monitor -->
+      <!-- Desktop sidebar with stable height & context -->
       <aside class="page-layout__sidebar desktop-only">
-        @if (studyMode()?.isStudying()) {
-          <!-- Card: Live Active Session Dashboard -->
-          <div class="card sidebar-card live-session-card">
-            <div class="panel-header">
-              <div class="panel-header__row">
-                <div class="live-status">
-                  <span class="live-dot"></span>
-                  <h3 class="panel-header__title">{{ i18n.t('study.liveSession') }}</h3>
+        <!-- Card 1: Vocabulary Mastery -->
+          @if (stats().total > 0) {
+            <div class="card sidebar-card">
+              <div class="panel-header">
+                <div class="panel-header__row">
+                  <div class="panel-header__left">
+                    <app-icon name="graduation-cap" [size]="18" class="panel-header__icon" />
+                    <h3 class="panel-header__title">{{ i18n.t('study.mastery') || 'Mastery' }}</h3>
+                  </div>
+                  <span class="badge badge--primary">{{ stats().total }} {{ i18n.t('study.cards') }}</span>
                 </div>
-                <span class="session-timer-badge">
-                  <app-icon name="clock" [size]="13" />
-                  {{ formatTime(studyMode()?.elapsedSeconds() || 0) }}
-                </span>
               </div>
-              <p class="panel-header__subtitle">
-                {{ studyMode()?.cardsRemainingInQueue() }} {{ i18n.t('study.cards') }} {{ i18n.t('study.inQueue') }}
-              </p>
-            </div>
 
-            <!-- Accuracy & Session Counters -->
-            <div class="live-session-stats">
-              <div class="live-stat-box">
-                <span class="live-stat-val">{{ studyMode()?.sessionAccuracy() }}%</span>
-                <span class="live-stat-lbl">{{ i18n.t('study.liveAccuracy') }}</span>
-              </div>
-              <div class="live-stat-box">
-                <span class="live-stat-val val-success">{{ studyMode()?.sessionStats()?.correct || 0 }}</span>
-                <span class="live-stat-lbl">{{ i18n.t('study.correct') }}</span>
-              </div>
-              <div class="live-stat-box">
-                <span class="live-stat-val val-error">{{ studyMode()?.sessionStats()?.incorrect || 0 }}</span>
-                <span class="live-stat-lbl">{{ i18n.t('study.again') }}</span>
-              </div>
-            </div>
+              <div class="sidebar-mastery-section">
+                <div class="progress-ring-container">
+                  <svg class="progress-ring" viewBox="0 0 100 100">
+                    <circle class="progress-ring__bg" cx="50" cy="50" r="42" />
+                    <circle
+                      class="progress-ring__fill"
+                      cx="50" cy="50" r="42"
+                      [style.strokeDasharray]="circumference"
+                      [style.strokeDashoffset]="progressOffset()"
+                    />
+                  </svg>
+                  <div class="progress-ring__content">
+                    <span class="progress-value">{{ progressPercent() }}%</span>
+                    <span class="progress-label">{{ i18n.t('study.mastered') || 'Known' }}</span>
+                  </div>
+                </div>
 
-            <!-- Keyboard Shortcuts Cheatsheet -->
-            <div class="shortcuts-box">
-              <span class="shortcuts-title">{{ i18n.t('study.shortcutsCheatsheet') }}</span>
-              <div class="shortcut-item">
-                <span class="shortcut-action">{{ i18n.t('study.pressSpace') }}</span>
-                <kbd class="shortcut-key">Space</kbd>
+                <div class="stats-breakdown">
+                  <div class="breakdown-item">
+                    <span class="breakdown-tag breakdown-tag--new">{{ i18n.t('study.new') }}</span>
+                    <span class="breakdown-value">{{ stats().new }}</span>
+                  </div>
+                  <div class="breakdown-item">
+                    <span class="breakdown-tag breakdown-tag--learning">{{ i18n.t('study.learning') }}</span>
+                    <span class="breakdown-value">{{ stats().learning }}</span>
+                  </div>
+                  <div class="breakdown-item">
+                    <span class="breakdown-tag breakdown-tag--known">{{ i18n.t('study.known') }}</span>
+                    <span class="breakdown-value">{{ stats().known }}</span>
+                  </div>
+                </div>
               </div>
-              <div class="shortcut-item">
-                <span class="shortcut-action">{{ i18n.t('study.keyboardHint') }}</span>
-                <kbd class="shortcut-key">1 - 4</kbd>
-              </div>
-              <div class="shortcut-item">
-                <span class="shortcut-action">{{ i18n.t('study.shortcutAudio') }}</span>
-                <kbd class="shortcut-key">R</kbd>
-              </div>
-              <div class="shortcut-item">
-                <span class="shortcut-action">{{ i18n.t('study.peekReading') }}</span>
-                <kbd class="shortcut-key">P</kbd>
-              </div>
-              <div class="shortcut-item">
-                <span class="shortcut-action">{{ i18n.t('study.shortcutVideo') }}</span>
-                <kbd class="shortcut-key">V</kbd>
-              </div>
+
+              @if (dueToday() > 0) {
+                <div class="sidebar-due-pill">
+                  <app-icon name="clock" [size]="14" />
+                  <span><strong>{{ dueToday() }}</strong> {{ i18n.t('study.dueCards') || 'due for review today' }}</span>
+                </div>
+              }
             </div>
-          </div>
-        } @else {
-          <!-- Card 1: Learning Progress & Mastery -->
-          <div class="card sidebar-card">
+          }
+
+          <!-- Card 2: Daily Study Habit & Goal -->
+          <div class="card sidebar-card daily-habit-card">
             <div class="panel-header">
               <div class="panel-header__row">
                 <div class="panel-header__left">
-                  <app-icon name="target" [size]="20" class="panel-header__icon" />
-                  <h3 class="panel-header__title">{{ i18n.t('study.learning') }}</h3>
+                  <app-icon name="target" [size]="18" class="panel-header__icon" />
+                  <h3 class="panel-header__title">{{ i18n.t('study.dailyGoal') }}</h3>
                 </div>
+                @if (streak.currentStreak() > 0) {
+                  <span class="badge badge--warning">
+                    <app-icon name="fire" [size]="12" />
+                    <span>{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') }}</span>
+                  </span>
+                }
               </div>
-              <p class="panel-header__subtitle">{{ stats().total }} {{ i18n.t('study.cards') }} · {{ progressPercent() }}% {{ i18n.t('study.known') }}</p>
             </div>
 
-            <!-- Daily Goal Progress -->
             <div class="sidebar-goal-box">
               <div class="sidebar-goal-box__header">
-                <span class="sidebar-goal-box__label">{{ i18n.t('study.dailyGoal') }}</span>
-                <span class="sidebar-goal-box__count">{{ cardsCompletedToday() }}/{{ dailyGoal() }}</span>
+                <span class="sidebar-goal-box__label">{{ i18n.t('study.dailyProgress') || 'Progress' }}</span>
+                <span class="sidebar-goal-box__count">{{ cardsCompletedToday() }} / {{ dailyGoal() }}</span>
               </div>
               <div class="sidebar-goal-box__bar">
                 <div class="sidebar-goal-box__fill" [style.width.%]="goalProgress()"></div>
@@ -111,242 +107,60 @@ import { formatTime } from '../../../core/utils';
                 <span class="sidebar-goal-box__complete">{{ i18n.t('study.goalComplete') }} 🎉</span>
               }
             </div>
-
-            <!-- Circular Progress & Mastery Breakdown -->
-            <div class="sidebar-mastery-section">
-              <div class="progress-ring-container">
-                <svg class="progress-ring" viewBox="0 0 100 100">
-                  <circle class="progress-ring__bg" cx="50" cy="50" r="42" />
-                  <circle 
-                    class="progress-ring__fill" 
-                    cx="50" cy="50" r="42"
-                    [style.stroke-dasharray]="circumference"
-                    [style.stroke-dashoffset]="progressOffset()"
-                  />
-                </svg>
-                <div class="progress-ring__content">
-                  <span class="progress-value">{{ progressPercent() }}%</span>
-                  <span class="progress-label">{{ i18n.t('study.known') }}</span>
-                </div>
-              </div>
-
-              <div class="stats-breakdown">
-                <div class="breakdown-item">
-                  <div class="breakdown-dot new"></div>
-                  <span class="breakdown-label">{{ i18n.t('study.new') }}</span>
-                  <span class="breakdown-value">{{ stats().new }}</span>
-                </div>
-                <div class="breakdown-item">
-                  <div class="breakdown-dot learning"></div>
-                  <span class="breakdown-label">{{ i18n.t('study.learning') }}</span>
-                  <span class="breakdown-value">{{ stats().learning }}</span>
-                </div>
-                <div class="breakdown-item">
-                  <div class="breakdown-dot known"></div>
-                  <span class="breakdown-label">{{ i18n.t('study.known') }}</span>
-                  <span class="breakdown-value">{{ stats().known }}</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Due Today Alert -->
-            @if (dueToday() > 0) {
-              <div class="sidebar-due-pill">
-                <app-icon name="clock" [size]="14" />
-                <span>{{ i18n.t('study.dueToday') }}: <strong>{{ dueToday() }}</strong></span>
-              </div>
-            }
           </div>
-
-          <!-- Card 2: Dictionary Quick Link -->
-          <div class="card sidebar-card">
-            <div class="panel-header">
-              <div class="panel-header__row">
-                <div class="panel-header__left">
-                  <app-icon name="book-open" [size]="20" class="panel-header__icon" />
-                  <h3 class="panel-header__title">{{ i18n.t('dictionary.title') }}</h3>
-                </div>
-              </div>
-              <p class="panel-header__subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
-            </div>
-            
-            <a routerLink="/dictionary" class="btn btn-secondary dict-btn">
-              <app-icon name="search" [size]="16" />
-              <span>{{ i18n.t('dictionary.search') }}</span>
-            </a>
-          </div>
-        }
-      </aside>
+        </aside>
     </div>
   `,
   styles: [`
     :host {
       display: block;
+      width: 100%;
     }
 
-    /* Live Session Sidebar Card */
-    .live-session-card {
-      border-color: rgba(var(--accent-primary-rgb), 0.3);
-      animation: fadeIn 0.3s ease;
-    }
-
-    .live-status {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--success);
-      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-      animation: pulse-dot 1.8s infinite;
-    }
-
-    @keyframes pulse-dot {
-      0% {
-        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-      }
-    }
-
-    .session-timer-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.8125rem;
-      font-weight: 700;
-      color: var(--accent-primary);
-      padding: 2px 8px;
-      background: rgba(var(--accent-primary-rgb), 0.1);
-      border-radius: var(--border-radius-pill);
-      font-variant-numeric: tabular-nums;
-    }
-
-    .live-session-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-xs);
-      padding: var(--space-xs) 0;
-    }
-
-    .live-stat-box {
+    .sidebar-card {
+      padding: var(--space-md);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-sm) var(--space-xs);
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      gap: 2px;
+      gap: var(--space-sm);
     }
 
-    .live-stat-val {
-      font-size: 1.125rem;
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--text-primary);
-
-      &.val-success {
-        color: var(--success);
-      }
-
-      &.val-error {
-        color: var(--error);
-      }
-    }
-
-    .live-stat-lbl {
-      font-size: 0.625rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      color: var(--text-muted);
-    }
-
-    .shortcuts-box {
+    /* Daily Habit Card */
+    .daily-habit-card {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      padding: var(--space-sm);
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      margin-top: 2px;
+      gap: var(--space-sm);
+      animation: fadeIn 0.2s ease;
     }
 
-    .shortcuts-title {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--text-muted);
-      margin-bottom: 2px;
-    }
-
-    .shortcut-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-    }
-
-    .shortcut-key {
-      display: inline-block;
-      padding: 1px 6px;
-      font-family: inherit;
-      font-size: 0.6875rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Daily Goal Box inside sidebar */
     .sidebar-goal-box {
       display: flex;
       flex-direction: column;
       gap: 6px;
-      padding: var(--space-sm);
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
+      padding: var(--space-xs) 0 0;
     }
 
     .sidebar-goal-box__header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
     }
 
     .sidebar-goal-box__label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
+      color: var(--text-secondary);
+      font-weight: 600;
     }
 
     .sidebar-goal-box__count {
-      font-size: 0.8125rem;
-      font-weight: 700;
       color: var(--text-primary);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
     }
 
     .sidebar-goal-box__bar {
       height: 6px;
-      background: var(--bg-tertiary);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
       border-radius: 3px;
       overflow: hidden;
     }
@@ -361,6 +175,7 @@ import { formatTime } from '../../../core/utils';
     .sidebar-goal-box__complete {
       display: block;
       font-size: 0.75rem;
+      font-weight: 600;
       color: var(--success);
       text-align: center;
       margin-top: 2px;
@@ -376,8 +191,8 @@ import { formatTime } from '../../../core/utils';
 
     .progress-ring-container {
       position: relative;
-      width: 92px;
-      height: 92px;
+      width: 88px;
+      height: 88px;
       flex-shrink: 0;
     }
 
@@ -389,7 +204,7 @@ import { formatTime } from '../../../core/utils';
 
     .progress-ring__bg {
       fill: none;
-      stroke: var(--bg-secondary);
+      stroke: var(--bg-surface);
       stroke-width: 8;
     }
 
@@ -414,14 +229,14 @@ import { formatTime } from '../../../core/utils';
     }
 
     .progress-value {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 800;
       color: var(--text-primary);
       line-height: 1;
     }
 
     .progress-label {
-      font-size: 0.625rem;
+      font-size: 0.5625rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.3px;
@@ -440,38 +255,37 @@ import { formatTime } from '../../../core/utils';
     .breakdown-item {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: var(--space-xs);
     }
 
-    .breakdown-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
+    .breakdown-tag {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: var(--border-radius-xs);
     }
 
-    .breakdown-dot.new {
-      background: var(--accent-primary);
+    .breakdown-tag--new {
+      background: var(--word-new);
+      color: var(--word-new-text);
     }
 
-    .breakdown-dot.learning {
-      background: var(--word-learning-text);
+    .breakdown-tag--learning {
+      background: var(--word-learning);
+      color: var(--word-learning-text);
     }
 
-    .breakdown-dot.known {
-      background: var(--success);
-    }
-
-    .breakdown-label {
-      flex: 1;
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
+    .breakdown-tag--known {
+      background: var(--word-known);
+      color: var(--word-known-text);
     }
 
     .breakdown-value {
       font-size: 0.8125rem;
       font-weight: 700;
       color: var(--text-primary);
+      font-variant-numeric: tabular-nums;
     }
 
     /* Due Today Pill */
@@ -480,22 +294,16 @@ import { formatTime } from '../../../core/utils';
       align-items: center;
       justify-content: center;
       gap: var(--space-xs);
-      padding: var(--space-xs) var(--space-sm);
-      background: rgba(var(--accent-primary-rgb), 0.08);
+      padding: 0.5rem var(--space-sm);
+      background: var(--accent-primary-soft);
       border-radius: var(--border-radius-md);
       color: var(--accent-primary);
       font-size: 0.8125rem;
-      line-height: 1;
+      line-height: 1.2;
 
       strong {
         font-weight: 700;
       }
-    }
-
-    .dict-btn {
-      width: 100%;
-      justify-content: center;
-      gap: var(--space-xs);
     }
 
     @keyframes fadeIn {
@@ -514,27 +322,20 @@ export class StudyPageComponent {
   private vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
+  streak = inject(StreakService);
 
   studyMode = viewChild(StudyModeComponent);
 
-  formatTime = formatTime;
+  currentLanguage = computed(() => this.settings.settings().language);
+  stats = computed(() => this.vocab.getStatsByLanguage(this.currentLanguage()));
 
-  // Circle circumference: 2 * PI * radius (42)
   circumference = 2 * Math.PI * 42;
 
-  // Daily goal state (shared reactively from VocabularyService)
   dailyGoal = this.vocab.dailyGoal;
   cardsCompletedToday = this.vocab.cardsCompletedToday;
-
-  // Due today count (shared helper from VocabularyService)
-  dueToday = computed(() => this.vocab.getDueCountByLanguage(this.settings.settings().language));
-
-  // Goal progress percentage (shared signal from VocabularyService)
   goalProgress = this.vocab.goalProgress;
 
-  stats = computed(() => {
-    return this.vocab.getStatsByLanguage(this.settings.settings().language);
-  });
+  dueToday = computed(() => this.vocab.getDueCountByLanguage(this.currentLanguage()));
 
   progressPercent = computed(() => {
     const s = this.stats();

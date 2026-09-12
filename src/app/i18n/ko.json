@@ -102,7 +102,8 @@
     "sleepTimerRemaining": "{{time}} 남음",
     "sleepTimerTurnedOff": "수면 타이머가 꺼졌습니다",
     "sleepTimerActiveToast": "{{time}} 후 수면 타이머가 설정되었습니다",
-    "hint": "YouTube URL을 입력해 학습을 시작해 보세요. 자막을 자동으로 불러옵니다."
+    "hint": "YouTube URL을 입력해 학습을 시작해 보세요. 자막을 자동으로 불러옵니다.",
+    "nowPlaying": "현재 재생 중"
   },
   "subtitle": {
     "loop": "반복",
@@ -169,18 +170,13 @@
     "switchTo": "{{language}}로 전환",
     "orUseAI": "또는 AI 사용",
     "aiCredits": "AI 크레딧",
-    "creditsAvailable": "보유 크레딧",
+    "creditsAvailable": "사용 가능",
     "ready": "준비됨",
     "regenIn": "{{time}} 후 +1",
-    "aiCreditsDescription": "AI 크레딧은 자막 없는 동영상의 대본 생성과 같은 지능형 기능에 사용됩니다.",
-    "whatAreThey": "AI 크레딧이란 무엇인가요?",
-    "whatAreTheyDesc": "AI 크레딧(다이아몬드)을 사용하면 기본 자막이 없는 동영상도 AI로 자막을 자동 생성할 수 있습니다.",
-    "howDoIGetMore": "크레딧은 어떻게 충전하나요?",
-    "howDoIGetMoreDesc": "크레딧은 일정 시간이 지나면 자동으로 충전됩니다. 별도 작업 없이 기다리시면 충전됩니다!",
-    "videoDurationCost": "동영상당 몇 개의 크레딧이 필요한가요?",
-    "videoDurationCostDesc": "10분 이하 동영상은 1크레딧, 10~20분은 2크레딧, Premium은 최대 45분(3~4크레딧)까지 지원됩니다.",
-    "nativeCaptionsFree": "기본 자막이 있는 동영상은 무료인가요?",
-    "nativeCaptionsFreeDesc": "네! 유튜브 자체 자막이 있는 동영상은 100% 무료이며 AI 크레딧이 차감되지 않습니다.",
+    "nativeCaptionsTitle": "자막 지원 영상",
+    "nativeCaptionsDesc": "항상 100% 무료이며 무제한입니다. AI 크레딧을 소비하지 않습니다.",
+    "aiTranscriptionTitle": "AI 음성 전사",
+    "aiTranscriptionDesc": "자막이 없는 영상에 사용됩니다 (1~2 크레딧). 시간이 지나면 자동 충전됩니다.",
     "allCreditsAvailable": "모든 크레딧 사용 가능",
     "depletedNotice": "AI 크레딧({{max}}개)을 모두 사용했습니다. 유튜브 자막이 있는 일반 영상은 언제나 무료입니다!",
     "upgradeToPro": "Pro로 업그레이드",
@@ -188,7 +184,8 @@
     "readingHint": "글자 위에 발음 표기(후리가나/병음/로마자) 표시",
     "grammarHint": "문장 속 문법 패턴 및 핵심 구조 강조",
     "dualSubsHint": "보조 번역 자막 표시",
-    "translating": "자막 번역 중..."
+    "translating": "자막 번역 중...",
+    "reading": "발음"
   },
   "pro": {
     "title": "Voca Pro",
@@ -405,6 +402,7 @@
     "noWordsHint": "동영상에서 단어를 저장하세요",
     "end": "종료",
     "tapToReveal": "탭하여 보기",
+    "showAnswer": "정답 보기",
     "example": "예문:",
     "meaning": "뜻",
     "again": "다시",
@@ -455,7 +453,20 @@
     "studyOptions": "학습 옵션",
     "dueCardsNotice": "오늘 복습할 카드가 {{count}}장 있습니다",
     "allCaughtUp": "모두 완료! 오늘 복습할 카드가 없습니다",
-    "cardsReady": "학습할 카드 {{count}}장 준비됨"
+    "cardsReady": "학습할 카드 {{count}}장 준비됨",
+    "shortcuts": "키보드 단축키",
+    "flipCard": "카드 뒤집기",
+    "rateCard": "평가",
+    "mastery": "숙련도",
+    "mastered": "마스터",
+    "dueCards": "오늘 복습 예정",
+    "dailyProgress": "오늘의 진행률",
+    "queue": "복습 대기열",
+    "reviewDueNow": "지금 복습하기",
+    "searchQueue": "대기열 검색...",
+    "noCardsInQueue": "대기열에 카드가 없습니다",
+    "nextReview": "다음 복습",
+    "dueNow": "복습 기한"
   },
   "streak": {
     "dayStreak": "스트릭",
@@ -508,7 +519,8 @@
     "clearedAll": "모든 시청 기록이 삭제되었습니다",
     "syncHint": "기기 간 기록을 동기화하려면 로그인하세요",
     "searchHistory": "시청 기록 검색...",
-    "justNow": "방금"
+    "justNow": "방금",
+    "overview": "개요"
   },
   "playlist": {
     "title": "재생목록",
@@ -609,7 +621,8 @@
     "browseByLanguage": "언어별 탐색",
     "loopOn": "반복 재생 켜짐",
     "shuffleOn": "셔플 켜짐",
-    "toggleQueue": "재생 대기열 전환"
+    "toggleQueue": "재생 대기열 전환",
+    "viewPlaylist": "재생목록 보기"
   },
   "common": {
     "all": "전체",
@@ -754,7 +767,7 @@
     "noVideos": "이 난이도에 해당하는 동영상이 없습니다.",
     "noPlaylists": "이 난이도에 해당하는 재생목록이 없습니다.",
     "dialogTitle": "숙련도 레벨",
-    "howEvaluated": "난이도 평가 방식",
+    "howEvaluated": "왜 이 레벨인가요?",
     "sourceLinguistics": "자막 언어학적 분석",
     "sourceMetadata": "커리큘럼 메타데이터",
     "grammarPatternsDetected": "문법 패턴",
@@ -762,12 +775,12 @@
     "speechSlow": "명확하고 느림",
     "speechNormal": "자연스러운 속도",
     "speechFast": "빠른 원어민 속도",
-    "howGrammarTitle": "형태소 및 문법 분석",
-    "howGrammarDesc": "자막을 형태소 분석하여 JLPT, HSK, TOPIK, CEFR 기준에 맞는 문법을 감지합니다.",
-    "howVocabTitle": "어휘 및 한자 난이도",
-    "howVocabDesc": "한자 합성어, 관용구 및 어휘 난이도와 밀도를 종합적으로 측정합니다.",
-    "howCadenceTitle": "발화 속도 (CPM)",
-    "howCadenceDesc": "타임스탬프당 분당 발화 문자 수(CPM)를 계산하여 실제 듣기 난이도를 측정합니다.",
+    "howGrammarTitle": "문법 구조",
+    "howGrammarDesc": "이 숙련도 기준에 부합하는 문법 표현이 감지되었습니다.",
+    "howVocabTitle": "어휘 및 표현",
+    "howVocabDesc": "이 학습 단계에 적합한 관용구와 빈출 어휘를 포함합니다.",
+    "howCadenceTitle": "자연스러운 대화 속도",
+    "howCadenceDesc": "오디오의 실제 발화 속도를 바탕으로 측정되었습니다.",
     "immersionTipTitle": "학습 팁",
     "immersionTipPace": "속도가 너무 빠르다면 재생 속도를 0.85배로 낮추거나 이중 자막을 켜보세요.",
     "confidenceScore": "신뢰도"

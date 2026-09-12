@@ -7,7 +7,6 @@
                 <h2 class="panel-header__title">{{ i18n.t('dictionary.title') }}</h2>
             </div>
         </div>
-        <p class="panel-header__subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
     </div>
     }
 
@@ -137,7 +136,10 @@
                         @if (meaning.examples && meaning.examples.length > 0) {
                         <div class="meaning-examples">
                             @for (ex of meaning.examples; track ex) {
-                            <p class="meaning-example">{{ ex }}</p>
+                            <div class="meaning-example-row">
+                                <span class="example-bullet">•</span>
+                                <p class="meaning-example">{{ ex }}</p>
+                            </div>
                             }
                         </div>
                         }

@@ -199,9 +199,11 @@ export function isLanguageSupported(lang) {
  * @param {string} requestedLang - Requested language code
  * @param {number} [duration] - Video duration in seconds (optional)
  * @param {'innertube' | 'whisper'} endpoint - Which endpoint is calling
+ * @param {number} [maxDurationOverride] - Max duration limit override
+ * @param {Object} [options] - Additional hints { title, channel }
  * @returns {Promise<{error: string, [key: string]: any} | null>}
  */
-export async function validateVideoRequest(videoId, requestedLang, duration, endpoint = 'innertube', maxDurationOverride = null) {
+export async function validateVideoRequest(videoId, requestedLang, duration, endpoint = 'innertube', maxDurationOverride = null, options = {}) {
     // 0. Validate videoId format
     if (!videoId || !/^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
         return {
@@ -223,8 +225,8 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
     const maxDuration = maxDurationOverride || MAX_DURATION[endpoint];
     let effectiveDuration = duration;
 
-    // For whisper (AI transcription), server must verify duration & livestream status to protect Gladia quota
-    if (endpoint === 'whisper') {
+    // Only scrape duration from YouTube page if not supplied by the client
+    if (!effectiveDuration && endpoint === 'whisper') {
         const ytDetails = await fetchYouTubeVideoDetails(videoId);
         if (ytDetails.isLive) {
             return {
@@ -232,7 +234,6 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
                 message: 'AI transcription is not supported for live streams'
             };
         }
-        // Always prioritize server-verified duration over client-supplied duration
         if (ytDetails.duration) {
             effectiveDuration = ytDetails.duration;
         }
@@ -248,13 +249,13 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
     }
 
     // 3. Optional: Check video title for language hint
-    const metadata = await getVideoMetadata(videoId);
-    if (metadata?.title) {
-        const detectedLang = detectTitleLanguage(metadata.title);
+    const title = options.title || (await getVideoMetadata(videoId))?.title;
+    if (title) {
+        const detectedLang = detectTitleLanguage(title);
 
         // Only reject if the title is clearly in an unsupported non-Latin/non-CJK script (e.g. Cyrillic, Arabic, Thai, Devanagari)
         if (detectedLang === 'unknown') {
-            const cleanTitle = metadata.title.replace(/[\p{Emoji}\p{Symbol}\p{Punctuation}\d\s]/gu, '');
+            const cleanTitle = title.replace(/[\p{Emoji}\p{Symbol}\p{Punctuation}\d\s]/gu, '');
             const hasCJK = /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/.test(cleanTitle);
             const hasLatin = /[a-zA-Z]/.test(cleanTitle);
             const hasUnsupportedScript = /[\u0400-\u04FF\u0600-\u06FF\u0E00-\u0E7F\u0900-\u097F]/.test(cleanTitle);
@@ -262,7 +263,7 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
             if (hasUnsupportedScript && !hasCJK && !hasLatin) {
                 return {
                     error: 'unsupported_video_language',
-                    videoTitle: metadata.title,
+                    videoTitle: title,
                     message: 'This video appears to be in an unsupported language'
                 };
             }

@@ -36,8 +36,8 @@ button::-moz-focus-inner,
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-sans);
-    overflow-x: hidden;
-    /* Prevent horizontal scroll */
+    overflow-x: clip;
+    /* Prevent horizontal scroll without breaking position: sticky */
 }
 
 body {
@@ -47,7 +47,7 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     min-height: var(--app-height, 100dvh);
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 

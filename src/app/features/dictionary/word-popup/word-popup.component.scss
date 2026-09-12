@@ -12,10 +12,10 @@
 }
 
 .popup-word-row {
-    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: var(--space-sm);
     max-width: 100%;
 }
 
@@ -29,15 +29,11 @@
 }
 
 .popup-audio-btn {
-    position: absolute;
-    left: calc(100% + 8px);
-    top: 50%;
-    transform: translateY(-50%);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
     background: var(--bg-surface);
@@ -52,12 +48,12 @@
             border-color: var(--accent-primary);
             color: var(--accent-primary);
             background: var(--bg-hover);
-            transform: translateY(-50%) scale(1.08);
+            transform: scale(1.06);
         }
     }
 
     &:active {
-        transform: translateY(-50%) scale(0.95);
+        transform: scale(0.95);
     }
 
     &.playing {

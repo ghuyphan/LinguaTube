@@ -68,10 +68,10 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **Path Traversal Defense**: `sanitizeVideoId` strips invalid characters and rejects strings with directory traversal patterns (`..`, `/`, `\`).
 - **Duration Enforcement & Livestream Blocking**: Rejects requests for videos exceeding maximum durations:
   - Native captions (`innertube` / `supadata`): Max 3 hours (10,800s).
-  - Whisper AI transcription: Server-verified duration via YouTube metadata strictly overrides client parameters to prevent duration tampering (Free: $\le 600$s, Pro: $\le 1,200$s, Premium: $\le 2,700$s). Live broadcasts (`isLive: true`) are rejected immediately.
+  - Whisper / Gladia AI transcription: Duration is verified against client parameters and metadata hints (Free: $\le 600$s, Pro: $\le 1,200$s, Premium: $\le 2,700$s). If duration is supplied by the client, unauthenticated YouTube HTML scraping is skipped, avoiding 4s worker timeouts. Live broadcasts (`isLive: true`) are rejected immediately.
   - AI transcription (`gladia`): Max 10 mins (600s) for Guest/Free, 20 mins (1,200s) for Pro, 45 mins (2,700s) for Premium.
 - Validates language whitelist: `['ja', 'ko', 'zh', 'en']`.
-- Analyzes video title script using Unicode regex (e.g. rejects Cyrillic/Arabic titles when requesting Asian learning languages).
+- Analyzes video title script using Unicode regex (e.g. rejects Cyrillic/Arabic titles when requesting Asian learning languages) using title hints from the request to bypass redundant oEmbed network calls.
 
 ---
 
@@ -89,13 +89,14 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
     "forceRefresh": false,
     "resultUrl": null,
     "turnstileToken": "0.XXXXX",
-    "duration": 240
+    "duration": 240,
+    "title": "Video Title"
   }
   ```
 - **Lifecycle & Fallback Chain**:
-  1. **R2 Multi-Language Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known languages in R2 for that video as fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant Gladia submissions and saving user diamonds. Also returns `levels` metadata directly from D1 to enable instant 0ms proficiency badge rendering on the client.
-  2. **Native Captions Fetch (Supadata with Multi-Key Failover & 15s Timeout)**: If `preferAI: false`, queries Supadata native captions with a 15-second timeout to reliably handle long multi-track videos. The provider uses an optimized round-robin rotator that automatically fails over across backup keys (`SUPADATA_API_KEY_2`, `SUPADATA_API_KEY_3`) if a key encounters rate limits (429), quota exhaustion (402), authentication issues (401), or timeouts. Regional language tags (e.g. `ja-JP`, `zh-Hans`, `en-US`) are normalized to standard ISO base codes (`ja`, `zh`, `en`). If native captions exist in an alternate authentic language, the captions are saved to R2 under `actualLang` and returned with `languageMismatch: true`.
-  3. **Negative Cache Defense & Automatic Eviction**: Negative caching (`markNoTranscript`) in D1 `no_transcript_cache` is **strictly** restricted to verified 404 (no captions found) responses from upstream, preventing cache poisoning from network timeouts or rate limits. When a transcript is successfully fetched or requested with `forceRefresh: true`, any stale negative cache entries for the video are immediately purged (`deleteNoTranscript`).
+  1. **R2 Multi-Language Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known languages (in both `subLanguages` and `nativeLanguages`) in R2 for that video as fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant Gladia submissions and saving user diamonds. Also returns `levels` metadata directly from D1 to enable instant 0ms proficiency badge rendering on the client.
+  2. **Native Captions Fetch (Supadata with Multi-Key Failover & 7s Native Timeout)**: If `preferAI: false`, queries Supadata native captions with a 7-second timeout for rapid check cycles. Supadata returns HTTP `206 Partial Content` with `{ "error": "transcript-unavailable" }` or HTTP `404` when no native captions exist. The provider recognizes this immediately as `notFound: true`, halts any further key rotation attempts, and writes to D1 `no_transcript_cache` instantly (reducing wait time from 45s down to $<2$s). For valid tracks, regional language tags (e.g. `ja-JP`, `zh-Hans`, `en-US`) are normalized to standard ISO base codes (`ja`, `zh`, `en`). If native captions exist in an alternate authentic language, the captions are saved to R2 under `actualLang` and returned with `languageMismatch: true`.
+  3. **Negative Cache Defense & Automatic Eviction**: Negative caching (`markNoTranscript`) in D1 `no_transcript_cache` is **strictly** restricted to verified 404/206 (no captions found) responses from upstream, preventing cache poisoning from network timeouts or rate limits. When a transcript is successfully fetched or requested with `forceRefresh: true`, any stale negative cache entries for the video are immediately purged (`deleteNoTranscript`).
   4. **AI Generation (Gladia V2 Pre-Recorded) - Non-Blocking Client-Driven Polling**:
      - Verifies Turnstile token (`verifyTurnstileToken`).
      - Verifies Diamond balance ($> 0$) and calculates duration-based cost (1 to 4 diamonds).
@@ -105,10 +106,10 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
      - **In-Memory Job Routing**: Stores job mapping in warm Worker isolate memory and D1 `pending_jobs` without burning Cloudflare KV write quotas (Rule 2).
      - Returns `{ status: 'processing', resultUrl }` immediately ($\sim 1.5$s response) to avoid long-lived edge connection drops (524 gateway timeouts).
   5. **Fast Client-Driven Polling & Failure Auto-Refund**:
-     - Subsequent client poll requests pass `resultUrl` every 2.5 seconds.
-     - **Strict Job-to-Video Verification (`pollAIJob`)**: Polling requests are strictly cross-checked against active jobs in D1 `pending_jobs` mapped to the video ID. Requests submitting arbitrary or unmapped `resultUrl` parameters are rejected immediately (HTTP 400), completely eliminating Turnstile bypass and transcript cache poisoning risks.
+     - Subsequent client poll requests pass `resultUrl` and validated `videoId` every 2.5 seconds.
+     - **Multi-Isolate Job Verification (`pollAIJob`)**: Polling requests are cross-checked against D1 `pending_jobs` and isolate memory (`memJobMap`). If regional D1 replication lag occurs between isolates, it safely falls back to the client-verified `params.videoId` to prevent premature failure.
      - Server polls Gladia status with a 15-second safety timeout, completing each poll check in $\sim 200\text{--}300$ms.
-     - When `status: 'done'`, server resolves metadata/avatar via D1/oEmbed, indexes under both detected and study languages in D1, writes to R2, and deletes the pending job.
+     - When `status: 'done'`, server resolves metadata/avatar via D1/oEmbed, indexes under both detected and study languages in D1, synchronously awaits write to R2, and deletes the pending job.
      - **Automated Diamond Refund**: If Gladia reports job error or submission fails, the backend triggers `refundDiamond()` via PocketHost API to restore the user's credit balance automatically.
 
 ---

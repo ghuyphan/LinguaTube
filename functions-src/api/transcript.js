@@ -54,7 +54,10 @@ export async function onRequestGet({ env }) {
         status: 'ok',
         version: 'v4',
         database: Boolean(env.VOCAB_DB),
-        storage: Boolean(env.TRANSCRIPT_STORAGE)
+        storage: Boolean(env.TRANSCRIPT_STORAGE),
+        hasGladiaKey: Boolean(env.GLADIA_API_KEY),
+        hasSupadataKey: Boolean(env.SUPADATA_API_KEY),
+        hasTurnstileKey: Boolean(env.TURNSTILE_SECRET_KEY)
     });
 }
 
@@ -88,7 +91,14 @@ export async function onRequestPost(context) {
         // Validation (Tier duration limits: Free/Anonymous <= 10m, Pro <= 20m, Premium <= 45m)
         // Skip heavy YouTube scraping on recurring poll requests
         if (!resultUrl) {
-            const validationError = await validateVideoRequest(cleanVideoId, lang, duration, preferAI ? 'whisper' : 'innertube', preferAI ? maxAiDuration : null);
+            const validationError = await validateVideoRequest(
+                cleanVideoId,
+                lang,
+                duration,
+                preferAI ? 'whisper' : 'innertube',
+                preferAI ? maxAiDuration : null,
+                { title: body.title, channel: body.channel }
+            );
             if (validationError) {
                 return jsonResponse({
                     success: false,
@@ -186,17 +196,20 @@ export async function onRequestPost(context) {
             let responseLang = lang;
 
             // Fallback: If requested language not in R2, check other available languages in R2 in parallel
-            if (!cached?.segments?.length && nativeLanguages?.length > 0) {
-                const altLangs = nativeLanguages.filter(a => a !== lang);
-                if (altLangs.length > 0) {
-                    const altResults = await Promise.all(
-                        altLangs.map(altLang => getTranscriptFromR2(r2, cleanVideoId, altLang).then(res => ({ altLang, res })))
-                    );
-                    const found = altResults.find(item => item.res?.segments?.length > 0);
-                    if (found) {
-                        cached = found.res;
-                        responseLang = found.altLang;
-                    }
+            // Combine both YouTube nativeLanguages AND verified server subLanguages (including AI-transcribed tracks)
+            const allCandidateLangs = Array.from(new Set([
+                ...(nativeLanguages || []),
+                ...(knownInfo?.subLanguages || [])
+            ])).filter(a => a !== lang);
+
+            if (!cached?.segments?.length && allCandidateLangs.length > 0) {
+                const altResults = await Promise.all(
+                    allCandidateLangs.map(altLang => getTranscriptFromR2(r2, cleanVideoId, altLang).then(res => ({ altLang, res })))
+                );
+                const found = altResults.find(item => item.res?.segments?.length > 0);
+                if (found) {
+                    cached = found.res;
+                    responseLang = found.altLang;
                 }
             }
 

@@ -180,7 +180,13 @@ export class HistoryPageComponent implements OnInit {
   visibleCount = signal<number>(24);
 
   displayedItems = computed(() => {
-    return this.filteredItems().slice(0, this.visibleCount());
+    let items = this.filteredItems();
+    const resume = this.inProgressVideo();
+    // Exclude resume video from list to prevent duplicate card directly below resume banner
+    if (this.filter() === 'all' && this.selectedLanguage() === 'all' && !this.searchQuery().trim() && resume) {
+      items = items.filter(item => item.video_id !== resume.video_id);
+    }
+    return items.slice(0, this.visibleCount());
   });
 
   hasMore = computed(() => {

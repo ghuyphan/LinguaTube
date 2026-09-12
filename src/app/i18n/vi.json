@@ -102,7 +102,8 @@
     "sleepTimerRemaining": "Còn {{time}}",
     "sleepTimerTurnedOff": "Đã tắt hẹn giờ ngủ",
     "sleepTimerActiveToast": "Đã hẹn giờ ngủ sau {{time}}",
-    "hint": "Dán link YouTube để bắt đầu học. Phụ đề sẽ được tự động tải về."
+    "hint": "Dán link YouTube để bắt đầu học. Phụ đề sẽ được tự động tải về.",
+    "nowPlaying": "Đang phát"
   },
   "subtitle": {
     "loop": "Lặp",
@@ -168,18 +169,13 @@
     "dualSubs": "Phụ đề song ngữ",
     "jumpToCurrent": "Về câu hiện tại",
     "aiCredits": "Kim cương AI",
-    "creditsAvailable": "Kim cương hiện có",
+    "creditsAvailable": "Khả dụng",
     "ready": "Sẵn sàng",
     "regenIn": "+1 sau {{time}}",
-    "aiCreditsDescription": "Điểm AI được sử dụng để chạy các tính năng thông minh như phiên âm video không có phụ đề.",
-    "whatAreThey": "Kim cương AI là gì?",
-    "whatAreTheyDesc": "Kim cương AI cho phép bạn tạo phụ đề tự động bằng AI cho các video chưa có sẵn phụ đề.",
-    "howDoIGetMore": "Làm sao để lấy thêm?",
-    "howDoIGetMoreDesc": "Điểm sẽ tự động hồi lại theo thời gian. Bạn không cần thao tác gì!",
-    "videoDurationCost": "Mỗi video cần bao nhiêu kim cương?",
-    "videoDurationCostDesc": "Video dưới 10 phút dùng 1 kim cương, 10–20 phút dùng 2 kim cương, tối đa 45 phút với gói Premium (3–4 kim cương).",
-    "nativeCaptionsFree": "Video có sẵn phụ đề có miễn phí không?",
-    "nativeCaptionsFreeDesc": "Có! Các video có sẵn phụ đề YouTube hoàn toàn miễn phí 100% và không tiêu tốn kim cương AI.",
+    "nativeCaptionsTitle": "Video có sẵn phụ đề",
+    "nativeCaptionsDesc": "Hoàn toàn miễn phí và không giới hạn. Không tiêu tốn kim cương AI.",
+    "aiTranscriptionTitle": "Phiên âm tự động bằng AI",
+    "aiTranscriptionDesc": "Dành cho video chưa có phụ đề (1–2 kim cương). Tự động hồi phục theo thời gian.",
     "allCreditsAvailable": "Đã đầy kim cương",
     "depletedNotice": "Bạn đã dùng hết {{max}} kim cương AI. Các video có sẵn phụ đề YouTube vẫn xem hoàn toàn miễn phí!",
     "upgradeToPro": "Nâng cấp lên gói Pro",
@@ -188,7 +184,8 @@
     "readingHint": "Hiển thị phiên âm đọc (Furigana/Pinyin/Romaji) trên chữ",
     "grammarHint": "Làm nổi bật cấu trúc và mẫu ngữ pháp",
     "dualSubsHint": "Hiển thị phụ đề dịch song ngữ",
-    "translating": "Đang dịch phụ đề..."
+    "translating": "Đang dịch phụ đề...",
+    "reading": "Phiên âm"
   },
   "pro": {
     "title": "Voca Pro",
@@ -405,6 +402,7 @@
     "noWordsHint": "Hãy lưu thêm từ vựng khi xem video để bắt đầu ôn tập nhé!",
     "end": "Kết thúc",
     "tapToReveal": "Chạm để xem",
+    "showAnswer": "Hiện đáp án",
     "example": "Ví dụ:",
     "meaning": "Định nghĩa",
     "again": "Chưa nhớ",
@@ -455,7 +453,20 @@
     "studyOptions": "Tùy chọn học tập",
     "dueCardsNotice": "Bạn có {{count}} thẻ cần ôn tập hôm nay",
     "allCaughtUp": "Tuyệt vời! Đã ôn hết các từ đến hạn",
-    "cardsReady": "{{count}} thẻ sẵn sàng ôn tập"
+    "cardsReady": "{{count}} thẻ sẵn sàng ôn tập",
+    "shortcuts": "Phím tắt",
+    "flipCard": "Lật thẻ",
+    "rateCard": "Đánh giá",
+    "mastery": "Mức độ thành thạo",
+    "mastered": "Đã thuộc",
+    "dueCards": "từ đến hạn ôn hôm nay",
+    "dailyProgress": "Tiến độ hôm nay",
+    "queue": "Hàng đợi",
+    "reviewDueNow": "Ôn tập đến hạn ngay",
+    "searchQueue": "Tìm kiếm trong hàng đợi...",
+    "noCardsInQueue": "Không có thẻ trong hàng đợi",
+    "nextReview": "Lần ôn tiếp theo",
+    "dueNow": "Đến hạn"
   },
   "streak": {
     "dayStreak": "Chuỗi ngày",
@@ -508,7 +519,8 @@
     "clearedAll": "Đã xoá toàn bộ lịch sử",
     "syncHint": "Đăng nhập để đồng bộ lịch sử trên các thiết bị",
     "searchHistory": "Tìm kiếm lịch sử...",
-    "justNow": "Vừa xong"
+    "justNow": "Vừa xong",
+    "overview": "Tổng quan"
   },
   "playlist": {
     "title": "Danh sách phát",
@@ -609,7 +621,8 @@
     "browseByLanguage": "Duyệt theo ngôn ngữ",
     "loopOn": "Đang bật lặp lại",
     "shuffleOn": "Đang bật ngẫu nhiên",
-    "toggleQueue": "Đóng/mở hàng đợi danh sách phát"
+    "toggleQueue": "Đóng/mở hàng đợi danh sách phát",
+    "viewPlaylist": "Xem danh sách phát"
   },
   "common": {
     "all": "Tất cả",
@@ -754,7 +767,7 @@
     "noVideos": "Chưa có video nào cho cấp độ này.",
     "noPlaylists": "Chưa có danh sách phát nào cho cấp độ này.",
     "dialogTitle": "Cấp độ thành thạo",
-    "howEvaluated": "Cách Voca đánh giá độ khó",
+    "howEvaluated": "Tại sao lại ở cấp độ này?",
     "sourceLinguistics": "Phân tích từ phụ đề",
     "sourceMetadata": "Dữ liệu giáo trình",
     "grammarPatternsDetected": "Mẫu ngữ pháp",
@@ -762,12 +775,12 @@
     "speechSlow": "Rõ ràng & Chậm rãi",
     "speechNormal": "Tự nhiên",
     "speechFast": "Bản xứ nhanh",
-    "howGrammarTitle": "Phân tích ngữ pháp",
-    "howGrammarDesc": "Tách từ phụ đề để nhận diện các mẫu ngữ pháp theo chuẩn JLPT, HSK, TOPIK và CEFR.",
-    "howVocabTitle": "Từ vựng & Ký tự",
-    "howVocabDesc": "Đo lường từ ghép Hán tự, thành ngữ trang trọng và mức độ khó của từ vựng.",
-    "howCadenceTitle": "Tốc độ nói (CPM)",
-    "howCadenceDesc": "Tính số ký tự nói mỗi phút theo mốc thời gian để đo lường độ khó khi nghe.",
+    "howGrammarTitle": "Cấu trúc ngữ pháp",
+    "howGrammarDesc": "Mẫu câu được phát hiện phù hợp với chuẩn trình độ này.",
+    "howVocabTitle": "Từ vựng & Mẫu câu",
+    "howVocabDesc": "Từ vựng và thành ngữ phổ biến thích hợp cho giai đoạn này.",
+    "howCadenceTitle": "Tốc độ nói tự nhiên",
+    "howCadenceDesc": "Nhịp độ nói tự nhiên được tính từ tốc độ phát âm thực tế.",
     "immersionTipTitle": "Mẹo học tập",
     "immersionTipPace": "Nếu thấy nói quá nhanh, hãy thử giảm tốc độ phát xuống 0.85x hoặc bật phụ đề song ngữ.",
     "confidenceScore": "Độ tin cậy"

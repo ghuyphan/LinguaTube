@@ -48,7 +48,6 @@
                 class="filter-chip" 
                 [class.active]="selectedLevel() === 'new'"
                 (click)="selectedLevel.set('new')">
-            <span class="level-dot new"></span>
             <span>{{ i18n.t('vocab.new') || 'New' }}</span>
             <span class="chip-count">{{ levelCounts().new }}</span>
         </button>
@@ -56,7 +55,6 @@
                 class="filter-chip" 
                 [class.active]="selectedLevel() === 'learning'"
                 (click)="selectedLevel.set('learning')">
-            <span class="level-dot learning"></span>
             <span>{{ i18n.t('vocab.learning') || 'Learning' }}</span>
             <span class="chip-count">{{ levelCounts().learning }}</span>
         </button>
@@ -64,7 +62,6 @@
                 class="filter-chip" 
                 [class.active]="selectedLevel() === 'known'"
                 (click)="selectedLevel.set('known')">
-            <span class="level-dot known"></span>
             <span>{{ i18n.t('vocab.known') || 'Known' }}</span>
             <span class="chip-count">{{ levelCounts().known }}</span>
         </button>
@@ -72,7 +69,6 @@
                 class="filter-chip" 
                 [class.active]="selectedLevel() === 'ignored'"
                 (click)="selectedLevel.set('ignored')">
-            <span class="level-dot ignored"></span>
             <span>{{ i18n.t('vocab.ignored') || 'Ignored' }}</span>
             <span class="chip-count">{{ levelCounts().ignored }}</span>
         </button>
@@ -143,15 +139,23 @@
                 </div>
 
                 <div class="vocab-item__actions" (click)="$event.stopPropagation()">
+                    <!-- Next Review Schedule Pill (SRS) -->
+                    @if (item.level !== 'ignored') {
+                    <span class="vocab-schedule-pill" [class.due]="isItemDue(item)" [title]="(i18n.t('study.nextReview') || 'Next review') + ': ' + formatNextReview(item)">
+                        <app-icon name="clock" [size]="11" />
+                        <span>{{ formatNextReview(item) }}</span>
+                    </span>
+                    }
+
                     <!-- Level Pill Badge: Instant 1-click cycle, right-click opens full picker -->
                     <button type="button" 
                             class="level-badge-btn" 
                             [class]="'badge--' + item.level"
                             (click)="cycleLevel(item, $event)"
                             (contextmenu)="onLevelContextMenu(item, $event)"
-                            [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.clickToCycle') || 'Click to cycle level')">
-                        <span class="level-dot" [class]="item.level"></span>
+                            [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.clickToCycle') || 'Change level')">
                         <span class="level-badge-btn__text">{{ i18n.t('vocab.' + item.level) }}</span>
+                        <app-icon name="chevron-down" [size]="10" class="level-badge-chevron" />
                     </button>
 
                     <!-- Authentic Audio Pronunciation Button -->

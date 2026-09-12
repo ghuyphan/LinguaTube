@@ -274,6 +274,32 @@ export class VocabularyListComponent implements OnDestroy {
     input.value = '';
   }
 
+  isItemDue(item: VocabularyItem): boolean {
+    if (item.level === 'ignored') return false;
+    if (!item.nextReviewDate) return true;
+    const today = new Date();
+    today.setHours(23, 59, 59, 999);
+    return new Date(item.nextReviewDate) <= today;
+  }
+
+  formatNextReview(item: VocabularyItem): string {
+    if (!item.nextReviewDate) {
+      return this.i18n.t('study.new') || 'New';
+    }
+    const reviewDate = new Date(item.nextReviewDate);
+    const today = new Date();
+    today.setHours(23, 59, 59, 999);
+    if (reviewDate <= today) {
+      return this.i18n.t('study.dueNow') || 'Due';
+    }
+    const diffMs = reviewDate.getTime() - Date.now();
+    const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+    if (diffDays <= 1) {
+      return '1d';
+    }
+    return `${diffDays}d`;
+  }
+
   ngOnDestroy(): void {
     if (this.searchTimeout) {
       clearTimeout(this.searchTimeout);

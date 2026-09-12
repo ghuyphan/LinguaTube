@@ -19,10 +19,10 @@ button {
     justify-content: center;
     gap: var(--space-sm);
     height: var(--btn-height-md);
-    padding: 0 var(--space-lg);
+    padding: 0 16px;
     font-family: var(--font-sans);
-    font-size: var(--text-md);
-    font-weight: 600;
+    font-size: var(--text-base);
+    font-weight: 550;
     line-height: 1;
     border: 1px solid transparent;
     border-radius: var(--border-radius-md);
@@ -72,7 +72,7 @@ button {
 @media (hover: hover) {
     .btn-secondary:hover:not(:disabled) {
         background: var(--bg-hover);
-        border-color: rgba(255, 255, 255, 0.2);
+        border-color: var(--border-color-hover, var(--border-color));
         transform: translateY(-1px);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }

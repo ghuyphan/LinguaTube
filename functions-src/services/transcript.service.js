@@ -181,19 +181,17 @@ export class TranscriptService {
         const { db, r2, waitUntil, env } = context;
         const { videoId, lang, body, clientId, user, diamondInfo, availableLanguages } = params;
 
-        // 1. Validate video length against user tier limit (CRITICAL: Prioritize server-verified duration)
+        // 1. Validate video length against user tier limit (prioritize client duration or D1)
         let duration = await getVideoDuration(db, videoId);
+        if (!duration && body.duration) {
+            duration = body.duration;
+        }
         if (!duration) {
             const ytDetails = await fetchYouTubeVideoDetails(videoId);
             if (ytDetails.isLive) {
                 throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
             }
             duration = ytDetails.duration;
-        }
-
-        // Only fall back to client duration if server-side scrape was completely unavailable
-        if (!duration && body.duration) {
-            duration = body.duration;
         }
 
         const tier = params.tier || this.diamondService.resolveTier(user);
@@ -333,6 +331,11 @@ export class TranscriptService {
                 try { mappedVideoId = await cache.get(`job_map:${resultUrl}`); } catch { }
             }
 
+            // Fallback gracefully to verified client videoId if memory/D1 lookup missed across different Worker isolates
+            if (!mappedVideoId && videoId) {
+                mappedVideoId = videoId;
+            }
+
             if (!mappedVideoId) {
                 return { status: 'error', error: 'Unknown or expired transcription job' };
             }
@@ -405,17 +408,19 @@ export class TranscriptService {
                         await saveVideoLanguages(db, videoId, saveLangs, duration, title, channel, false, null, channelAvatar, [detectedLang]);
                     };
 
-                    const saveOps = [
-                        saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai'),
+                    // Await R2 save directly so the transcript is available for immediate subsequent lookups
+                    await saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai');
+
+                    const bgOps = [
                         addSubLanguage(db, videoId, detectedLang),
                         saveLanguages(),
                         deletePendingJob(db, videoId)
                     ];
 
                     if (waitUntil) {
-                        waitUntil(Promise.allSettled(saveOps));
+                        waitUntil(Promise.allSettled(bgOps));
                     } else {
-                        await Promise.allSettled(saveOps);
+                        await Promise.allSettled(bgOps);
                     }
                 }
 

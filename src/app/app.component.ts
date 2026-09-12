@@ -517,7 +517,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
       }
 
       .main {
-        padding: var(--space-md) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
+        padding: max(var(--space-md), env(safe-area-inset-top, var(--space-md))) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
       }
 
       .main.video-active {

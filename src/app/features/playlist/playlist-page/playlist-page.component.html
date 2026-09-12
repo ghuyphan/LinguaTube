@@ -10,14 +10,7 @@
                         <app-icon name="list-video" [size]="20" class="panel-header__icon" />
                         <h2 class="panel-header__title">{{ i18n.t('playlist.title') }}</h2>
                     </div>
-                    <div class="panel-badges">
-                        <span class="badge badge--primary">{{ currentList().length }} {{ i18n.t('playlist.title') }}</span>
-                        @if (featuredPlaylists().length > 0) {
-                            <span class="badge badge--accent">{{ featuredPlaylists().length }} {{ i18n.t('playlist.featured') }}</span>
-                        }
-                    </div>
                 </div>
-                <p class="panel-header__subtitle">{{ i18n.t('playlist.subtitle') }}</p>
             </div>
 
             <!-- Stable Filter Toolbar (Two-row hierarchy: Navigation & CTA on top, Search & Filters below) -->
@@ -73,7 +66,7 @@
 
                         <button type="button" class="filter-chip filter-chip--level" (click)="showLevelFilter.set(true)"
                             [attr.aria-label]="getLevelFilterLabel()" [title]="getLevelFilterLabel()">
-                            <app-icon name="medal" [size]="14" />
+                            <app-icon name="graduation-cap" [size]="14" />
                             <span class="chip-text">{{ getLevelFilterLabel() }}</span>
                             <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
                         </button>
@@ -123,9 +116,9 @@
                             <div class="yt-card-hover-overlay">
                                 <div class="yt-playlist-hover-content">
                                     <div class="yt-play-circle">
-                                        <app-icon name="play" [size]="18" />
+                                        <app-icon name="list-video" [size]="18" />
                                     </div>
-                                    <span class="yt-play-all-text">{{ i18n.t('playlist.playAll') }}</span>
+                                    <span class="yt-play-all-text">{{ i18n.t('playlist.viewPlaylist') || 'View Playlist' }}</span>
                                 </div>
                             </div>
                         </div>
@@ -356,36 +349,25 @@
 
     <!-- Desktop Sidebar (Matches history-page / dictionary-page design) -->
     <aside class="page-layout__sidebar desktop-only">
-        <!-- Card 1: Playlists Statistics -->
+        <!-- Card 1: New Playlist & Active Playlist -->
         <div class="card sidebar-card">
             <div class="panel-header">
                 <div class="panel-header__row">
                     <div class="panel-header__left">
-                        <app-icon name="list-video" [size]="20" class="panel-header__icon" />
-                        <h3 class="panel-header__title">{{ i18n.t('playlist.title') }}</h3>
+                        <app-icon name="list-video" [size]="18" class="panel-header__icon" />
+                        <h3 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('playlist.myPlaylists') }}</h3>
                     </div>
                 </div>
-                <p class="panel-header__subtitle">{{ playlistSubtitle() }}</p>
             </div>
 
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-value">{{ totalPlaylistsCount() }}</span>
-                    <span class="stat-label">{{ i18n.t('playlist.totalPlaylists') }}</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">{{ totalVideosCount() }}</span>
-                    <span class="stat-label">{{ i18n.t('playlist.totalVideos') }}</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">{{ playlists().length }}</span>
-                    <span class="stat-label">{{ i18n.t('playlist.myPlaylists') }}</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">{{ featuredPlaylists().length }}</span>
-                    <span class="stat-label">{{ i18n.t('playlist.featured') }}</span>
+            @if (activePlaylist(); as active) {
+            <div class="active-playlist-banner" (click)="openPlaylistDetail(active)">
+                <div class="active-playlist-info">
+                    <span class="active-playlist-label">{{ i18n.t('playlist.nowPlaying') || 'Active Series' }}</span>
+                    <span class="active-playlist-title">{{ active.title }}</span>
                 </div>
             </div>
+            }
 
             <button type="button" class="btn btn-primary sidebar-action-btn" (click)="showCreateDialog.set(true)">
                 <app-icon name="plus" [size]="16" />

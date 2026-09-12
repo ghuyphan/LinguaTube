@@ -46,13 +46,17 @@
     align-items: center;
     padding: 0;
     width: 100%;
-    margin-bottom: var(--space-md);
+    margin-top: 0;
+    margin-bottom: calc(var(--space-md) + var(--space-xs));
 }
 
 .dict-search-box {
     flex: 1;
     min-width: 0;
     width: 100%;
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
 }
 
 .search-btn {
@@ -164,6 +168,17 @@
 }
 
 // ============================================
+// RESULT CARD - Word & Content
+// ============================================
+.result-content {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+    max-width: 860px;
+}
+
+// ============================================
 // RESULT HEADER - Word & Audio display
 // ============================================
 .result-header {
@@ -172,6 +187,8 @@
     align-items: flex-start;
     gap: var(--space-md);
     margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .result-header__main {
@@ -188,8 +205,9 @@
 
 .result-word {
     font-size: 2.25rem;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.15;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
     margin: 0;
 }
@@ -202,18 +220,19 @@
     width: 2.25rem;
     height: 2.25rem;
     border-radius: var(--border-radius-round);
-    background: var(--bg-surface);
+    background: var(--bg-secondary);
     color: var(--text-secondary);
-    border: none;
+    border: 1px solid var(--border-color);
     cursor: pointer;
     box-shadow: none;
-    transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+    transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
     flex-shrink: 0;
 
     @media (hover: hover) {
         &:hover {
             background: var(--accent-primary-soft);
             color: var(--accent-primary);
+            border-color: var(--accent-primary);
             transform: scale(1.06);
         }
     }
@@ -225,6 +244,7 @@
     &.playing {
         background: linear-gradient(135deg, #FF7E93 0%, #F45B74 100%);
         color: #ffffff;
+        border-color: transparent;
         animation: pulseAudio 1.2s infinite ease-in-out;
     }
 }
@@ -232,22 +252,32 @@
 .result-readings-row {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-xs) var(--space-sm);
-    margin-top: var(--space-2xs);
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
 }
 
 .result-reading {
-    font-size: 1.0625rem;
-    color: var(--text-secondary);
-    font-weight: 400;
+    font-size: 0.9375rem;
+    color: var(--accent-primary);
+    background: rgba(var(--accent-primary-rgb, 59, 130, 246), 0.08);
+    padding: 2px 10px;
+    border-radius: var(--border-radius-pill);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
 
     &--pinyin {
         color: var(--accent-primary);
+        background: rgba(var(--accent-primary-rgb, 59, 130, 246), 0.08);
     }
 
     &--romaji {
         color: var(--text-muted);
-        font-size: 0.9375rem;
+        background: transparent;
+        font-size: 0.875rem;
+        font-style: italic;
+        padding: 2px 4px;
     }
 }
 
@@ -286,40 +316,46 @@
 }
 
 // ============================================
-// BADGES
+// BADGES (Proficiency Levels & Parts of Speech)
 // ============================================
 .result-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-xs);
+    align-items: center;
+    gap: var(--space-xs) var(--space-sm);
     margin-bottom: var(--space-md);
 }
 
 .badge {
     display: inline-flex;
     align-items: center;
-    padding: var(--space-xs) 0.625rem;
+    padding: 3px 9px;
     font-size: 0.6875rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-radius: var(--border-radius-pill);
 
     &--level {
         color: var(--accent-primary);
-        background: rgba(var(--accent-primary-rgb), 0.08);
+        background: rgba(var(--accent-primary-rgb, 59, 130, 246), 0.1);
+        border: 1px solid rgba(var(--accent-primary-rgb, 59, 130, 246), 0.25);
     }
 
     &--pos {
         color: var(--text-secondary);
         background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
         text-transform: capitalize;
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 0.75rem;
+        letter-spacing: normal;
     }
 
     &--grammar-level {
         color: var(--accent-primary);
-        background: rgba(var(--accent-primary-rgb), 0.1);
+        background: rgba(var(--accent-primary-rgb, 59, 130, 246), 0.1);
+        border: 1px solid rgba(var(--accent-primary-rgb, 59, 130, 246), 0.2);
         font-size: 0.6875rem;
     }
 
@@ -337,7 +373,7 @@
 }
 
 // ============================================
-// MEANINGS
+// MEANINGS & DEFINITIONS
 // ============================================
 .result-meanings {
     display: flex;
@@ -349,6 +385,7 @@
     display: flex;
     gap: var(--space-md);
     align-items: flex-start;
+    padding: 2px 0;
 }
 
 .meaning-num {
@@ -358,10 +395,11 @@
     align-items: center;
     justify-content: center;
     font-size: 0.75rem;
-    font-weight: 600;
-    color: white;
-    background: var(--accent-primary);
-    border-radius: 50%;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm, 6px);
     flex-shrink: 0;
     margin-top: 2px;
 }
@@ -374,36 +412,56 @@
 .meaning-text {
     font-size: 1rem;
     color: var(--text-primary);
-    line-height: 1.5;
+    line-height: 1.55;
+    font-weight: 500;
 }
 
 .meaning-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-xs);
-    margin-top: var(--space-xs);
+    gap: 4px;
+    margin-top: 6px;
 }
 
 .tag {
     font-size: 0.6875rem;
     font-weight: 500;
-    padding: 0.1875rem 0.5rem;
-    background: var(--bg-secondary);
+    padding: 1px 7px;
+    background: var(--bg-hover);
     color: var(--text-muted);
     border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
 }
 
 .meaning-examples {
-    margin-top: var(--space-xs);
-    padding-left: var(--space-sm);
-    border-left: 2px solid var(--border-color);
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.meaning-example-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.example-bullet {
+    color: var(--text-muted);
+    font-weight: 700;
+    line-height: 1.45;
+    flex-shrink: 0;
 }
 
 .meaning-example {
-    font-size: 0.875rem;
+    font-size: 0.84375rem;
     color: var(--text-secondary);
-    margin: 0.25rem 0 0;
-    font-style: italic;
+    margin: 0;
+    line-height: 1.45;
 }
 
 // ============================================
@@ -413,6 +471,7 @@
     margin-top: var(--space-xl);
     padding-top: var(--space-lg);
     border-top: 1px solid var(--border-color);
+    max-width: 860px;
 }
 
 .section-title-row {

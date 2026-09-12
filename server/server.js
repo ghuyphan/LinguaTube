@@ -2224,45 +2224,45 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.1.27';
+    const mockVersion = req.query.mock_version || '1.1.31';
 
     res.json({
         version: mockVersion,
-        minSupportedVersion: mockForce ? '1.1.27' : '1.0.0',
-        buildDate: '2026-09-11',
+        minSupportedVersion: mockForce ? '1.1.31' : '1.0.0',
+        buildDate: '2026-09-12',
         forceUpdate: mockForce,
         maintenance: mockMaintenance,
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'Hardened Edge Security & Anti-Poisoning: Blocked unverified AI transcription fallthrough, secured dual subtitle persistence with mandatory auth checks, and restricted CORS and internal IP redirection',
-                'Eliminated 60Hz Hot-Path CPU Churn: Restructured segment loop effects and center control bindings to stay completely dormant during normal playback, reducing mobile battery drain',
-                'Memory Leak Elimination: Fixed background payment polling subscriptions on dialog dismiss and cancelled in-flight dictionary lookup queries',
-                'Rule 4 Deterministic Sync & i18n Harmonization: Unified history persistence with deterministic record keys, chunked cloud batch translations, and accurately localized Premium 45m transcription duration limits across all 5 languages'
+                'Streamlined Study Launcher: Removed redundant tabs, sub-headings, and language pickers for a clean, distraction-free flashcard practice experience',
+                'Centralized Review Indicators: Integrated next-review timing badges directly into your vocabulary notebook in Dictionary, unifying all saved word management',
+                'Toast Streak Celebrations: Converted streak continuation into a smooth, non-intrusive toast notification upon session completion',
+                'Standardized Card Spacing & Gaps: Harmonized card padding and vertical content gaps across Study panels and sidebars to match explore and dictionary layouts'
             ],
             vi: [
-                'Tăng Cường Bảo Mật Biên & Chống Đầu Độc Dữ Liệu: Khắc phục triệt để lỗ hổng bỏ qua xác thực phiên âm AI, siết chặt quyền lưu phụ đề song ngữ và chặn chuyển hướng IP nội bộ',
-                'Triệt Tiêu Hao Tổn CPU 60Hz Trong Phát Video: Tái cấu trúc hiệu ứng lặp câu và điều khiển trung tâm để giữ trạng thái nghỉ hoàn toàn khi phát thường, tiết kiệm pin điện thoại',
-                'Loại Bỏ Rò Rỉ Bộ Nhớ: Ngăn chặn triệt để tiến trình polling thanh toán ngầm khi đóng bảng nâng cấp và dọn dẹp các truy vấn từ điển dở dang',
-                'Đồng Bộ Chuẩn Định Danh Rule 4 & Bản Địa Hóa Toàn Diện: Chuẩn hóa lưu lịch sử với khóa xác định, chia nhỏ gói dịch phụ đề đám mây và cập nhật thời lượng Premium 45 phút trên toàn bộ 5 ngôn ngữ'
+                'Tinh Gọn Giao Diện Ôn Tập: Loại bỏ các tab và tiêu đề phụ dư thừa, mang lại trải nghiệm luyện tập thẻ ghi nhớ trực quan và tức thì',
+                'Đồng Bộ Lịch Ôn Tập Vào Sổ Từ: Tích hợp huy hiệu thời gian ôn tiếp theo trực tiếp vào sổ từ vựng tại Từ điển, tập trung toàn bộ quản lý từ đã lưu tại một nơi',
+                'Thông Báo Chuỗi Học Dạng Toast: Chuyển đổi thông báo nối dài chuỗi ngày sang dạng toast thông minh, tinh gọn màn hình hoàn thành buổi học',
+                'Chuẩn Hóa Khoảng Cách Thẻ: Đồng bộ khoảng cách đệm (padding) và khoảng cách nội dung (gap) trên màn hình Ôn tập chuẩn theo thiết kế toàn ứng dụng'
             ],
             ja: [
-                'エッジセキュリティ強化とデータ改ざん防止: 未検証のAI文字起こしバイパスを遮断し、二重字幕の保存に認証を義務付け、内部IPへのリダイレクトを防止',
-                '動画再生時の60Hz CPU負荷を解消: ループ処理とコントロールバインディングを最適化し、通常再生時は完全に休止させてバッテリー消費を抑制',
-                'メモリリークの解消: ダイアログ終了時のバックグラウンド決済ポーリングを確実に停止し、辞書検索の中断処理を改善',
-                'Rule 4 決定的同期と多言語ローカライズの刷新: 履歴同期を決定論的IDで統一し、クラウド一括翻訳をチャンク化、5言語すべてで45分のPremium上限表記を反映'
+                '洗練された復習画面: 不要なタブや見出しを整理し、迷わずすぐにフラッシュカード練習を開始できるシンプルなUIを実現',
+                '復習スケジュールの統合表示: 辞書画面の単語帳カードに次回復習バッジを直接統合し、保存した単語の管理を1箇所に集約',
+                '連続学習記録のトースト化: 学習完了時のストリーク通知をコンパクトなトースト表示に移行し、完了画面をすっきりと整理',
+                'カード余白・ギャップの統一: 学習パネルとサイドバーのパディングとコンテンツ間隔をアプリ全体のデザイン基準に合わせて最適化'
             ],
             ko: [
-                '엣지 보안 강화 및 데이터 변조 방지: 미검증 AI 자막 우회 경로를 차단하고 이중 자막 저장 시 인증을 의무화하며 내부 IP 리다이렉션을 제한했습니다',
-                '동영상 재생 시 60Hz 불필요한 CPU 소모 제거: 반복 구간 이펙트와 중앙 컨트롤 바인딩을 최적화하여 일반 재생 중 완전한 유휴 상태를 유지하고 배터리를 절약합니다',
-                '메모리 누수 완전 차단: 결제 창 종료 시 백그라운드 폴링 구독을 확실히 해제하고 불필요한 사전 조회 요청을 정리했습니다',
-                'Rule 4 결정론적 동기화 및 전방位 다국어 개선: 결정론적 레코드 키로 시청 기록을 통합하고, 클라우드 배치 번역을 분할 처리하며 5개 언어 모두 45분 Premium 자막 안내를 완비했습니다'
+                '간결해진 복습 런처: 불필요한 탭과 중복 제목을 정리하여 방해 없이 즉시 플래시카드 학습을 시작할 수 있는 최적화된 UI 제공',
+                '복습 일정 단어장 통합: 사전의 단어장 카드에 다음 복습 예정일 배지를 직접 표시하여 저장된 모든 단어 관리를 한곳으로 통합',
+                '토스트형 연속 학습 알림: 세션 완료 시 스트릭 연장 축하를 깔끔한 토스트 알림으로 전환하여 완료 화면을 더욱 직관적으로 개선',
+                '카드 패딩 및 여백 표준화: 학습 화면과 사이드바의 카드 여백 및 요소 간 간격을 앱 전반의 표준 디자인에 맞춰 깔끔하게 정돈'
             ],
             zh: [
-                '边缘安全强化与防篡改保护: 彻底修复未授权AI转录绕过漏洞，双语字幕持久化引入强制鉴权，并严格限制CORS与内网重定向',
-                '消除播放时60Hz热点CPU空转: 重构字幕循环效果与控制器绑定逻辑，在常规播放期间完全休眠以大幅减少设备电量消耗',
-                '内存泄漏与后台轮询清除: 修复升级弹窗关闭后残留的后台支付轮询，并在面板注销时取消未完成的词典查询',
-                'Rule 4 确定性记录同步与多语言规范化: 采用确定性ID统一历史记录存储，分块请求云端批量翻译，并在全部5种语言中统一45分钟Premium转录说明'
+                '精简复习启动面板: 移除冗余的队列标签页和次级标题，打造专注无干扰的即时抽认卡背单词体验',
+                '集中式复习排期展示: 将下一次复习时间徽章直接集成至词典的单词本列表中，统一管理所有已收藏单词',
+                '连胜庆祝转为轻量提示: 学习完成时的连续打卡提示升级为优雅的Toast轻量浮窗，保持结算界面清爽简洁',
+                '标准化卡片内边距与间距: 全面统一背单词页面与侧边栏的卡片内边距和垂直内容间距，深度对齐全局设计语言'
             ]
         }
     });

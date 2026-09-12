@@ -1,10 +1,9 @@
 <div class="ai-credits-dialog">
     <!-- Header -->
     <div class="header-section">
-        <div class="credits-hero-icon" [class.is-depleted]="transcript.diamonds() === 0" [class.is-full]="transcript.diamonds() === transcript.maxDiamonds()">
-            <app-icon name="diamond" [size]="40" class="hero-gem" />
+        <div class="credits-hero-icon">
+            <app-icon name="diamond" [size]="34" class="hero-diamond" />
         </div>
-
         <div class="title-group">
             <h2>{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</h2>
             <div class="credits-count-row">
@@ -30,37 +29,25 @@
         }
     </div>
 
-    <!-- How it works -->
-    <div class="info-box">
-        <div class="info-row">
-            <app-icon name="zap" [size]="16" class="info-icon zap-icon" />
-            <div class="info-content">
-                <strong>{{ i18n.t('subtitle.whatAreThey') }}</strong>
-                <p>{{ i18n.t('subtitle.whatAreTheyDesc') }}</p>
+    <!-- Usage Overview -->
+    <div class="credits-usage-cards">
+        <div class="usage-card">
+            <div class="usage-card__icon usage-card__icon--free">
+                <app-icon name="subtitles" [size]="18" />
+            </div>
+            <div class="usage-card__body">
+                <strong>{{ i18n.t('subtitle.nativeCaptionsTitle') || 'Videos with Captions' }}</strong>
+                <p>{{ i18n.t('subtitle.nativeCaptionsDesc') || 'Always 100% free and unlimited. Never consumes AI credits.' }}</p>
             </div>
         </div>
 
-        <div class="info-row">
-            <app-icon name="play-circle" [size]="16" class="info-icon play-icon" />
-            <div class="info-content">
-                <strong>{{ i18n.t('subtitle.videoDurationCost') || 'How many credits per video?' }}</strong>
-                <p>{{ i18n.t('subtitle.videoDurationCostDesc') || 'Videos up to 10 min cost 1 credit, 10–20 min cost 2 credits, and up to 45 min (Premium) cost 3–4 credits.' }}</p>
+        <div class="usage-card">
+            <div class="usage-card__icon usage-card__icon--ai">
+                <app-icon name="sparkles" [size]="18" />
             </div>
-        </div>
-
-        <div class="info-row">
-            <app-icon name="clock" [size]="16" class="info-icon clock-icon" />
-            <div class="info-content">
-                <strong>{{ i18n.t('subtitle.howDoIGetMore') }}</strong>
-                <p>{{ i18n.t('subtitle.howDoIGetMoreDesc') }}</p>
-            </div>
-        </div>
-
-        <div class="info-row">
-            <app-icon name="sparkles" [size]="16" class="info-icon sparkles-icon" />
-            <div class="info-content">
-                <strong>{{ i18n.t('subtitle.nativeCaptionsFree') || 'Are regular videos free?' }}</strong>
-                <p>{{ i18n.t('subtitle.nativeCaptionsFreeDesc') || 'Yes! Videos that already have YouTube captions are 100% free and never use AI credits.' }}</p>
+            <div class="usage-card__body">
+                <strong>{{ i18n.t('subtitle.aiTranscriptionTitle') || 'AI Audio Transcription' }}</strong>
+                <p>{{ i18n.t('subtitle.aiTranscriptionDesc') || 'Used for videos lacking captions (1–2 credits). Recharges automatically over time.' }}</p>
             </div>
         </div>
     </div>

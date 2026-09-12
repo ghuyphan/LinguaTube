@@ -702,6 +702,53 @@ test('SupadataProvider: multi-key failover on quota/rate-limit/timeout errors', 
   assert.equal(result?.detectedLang, 'ja');
 });
 
+test('SupadataProvider: immediately returns notFound when captions are unavailable without retrying other keys', async () => {
+  const { SupadataProvider } = await import('../functions-src/providers/supadata.js');
+
+  let callCount = 0;
+  const attemptedKeysList = [];
+  const rotator = {
+    async getNextApiKey(cache, prefix, keys, attemptedKeys) {
+      const candidates = keys.filter(k => !attemptedKeys.includes(k));
+      return candidates[0] || null;
+    },
+    async markKeyRateLimited() {}
+  };
+
+  const provider = new SupadataProvider(['key_1', 'key_2', 'key_3'], rotator);
+
+  provider._executeFetch = async (videoId, lang, apiKey) => {
+    callCount++;
+    attemptedKeysList.push(apiKey);
+    // Returns notFound on first key
+    return { notFound: true, segments: [], availableLangs: [] };
+  };
+
+  const result = await provider.fetchCaptions('GpbF8bRJrCU', 'ja', null);
+  assert.equal(result?.notFound, true, 'Result must indicate captions not found');
+  assert.equal(callCount, 1, 'Must NOT retry remaining API keys when video genuinely has no captions');
+  assert.deepEqual(attemptedKeysList, ['key_1']);
+});
+
+test('validateVideoRequest: fast path when duration is provided and handles title hint', async () => {
+  const { validateVideoRequest } = await import('../functions-src/middlewares/video-validator.js');
+
+  // 1. Duration provided within limit (whisper endpoint, max 600s)
+  const validRes = await validateVideoRequest('GpbF8bRJrCU', 'ja', 384, 'whisper', 600, { title: '全新華為展翼三折疊' });
+  assert.equal(validRes, null, 'Should validate successfully without scraping YouTube');
+
+  // 2. Duration exceeds max allowed
+  const tooLongRes = await validateVideoRequest('GpbF8bRJrCU', 'ja', 720, 'whisper', 600);
+  assert.equal(tooLongRes?.error, 'video_too_long');
+  assert.equal(tooLongRes?.duration, 720);
+
+  // 3. Title hint with unsupported script
+  const unsupportedTitleRes = await validateVideoRequest('GpbF8bRJrCU', 'ja', 200, 'whisper', 600, {
+    title: 'Русские новости дня без титров'
+  });
+  assert.equal(unsupportedTitleRes?.error, 'unsupported_video_language');
+});
+
 test('Edge TTS: normalizeVoiceName maps languages and short codes accurately', async () => {
   const { normalizeVoiceName, DEFAULT_VOICES } = await import('../functions-src/utils/edge-tts.js');
 

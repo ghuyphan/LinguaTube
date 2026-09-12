@@ -406,6 +406,16 @@ export class VideoPageComponent implements OnInit {
     this.touchStartX = 0;
   }
 
+  onChipsWheel(e: WheelEvent): void {
+    if (e.deltaY && !e.deltaX) {
+      const container = e.currentTarget as HTMLElement;
+      if (container && container.scrollWidth > container.clientWidth) {
+        container.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
+    }
+  }
+
   readonly languageMismatchMessage = computed(() => {
     const requested = this.settings.settings().language;
     const detected = this.mismatchDetectedLang() || 'en';
@@ -627,10 +637,15 @@ export class VideoPageComponent implements OnInit {
         if (this.skipNextMismatchDialog) {
           // User explicitly confirmed switching to the video's authentic language
           this.skipNextMismatchDialog = false;
-          this.subtitles.clear();
-          this.transcript.reset();
-          this.videoLevel.reset();
-          this.fetchCaptions(currentVideo.id);
+          const existingCues = this.subtitles.subtitles();
+          if (existingCues && existingCues.length > 0) {
+            this.handleCaptionsSuccess(existingCues, currentLang);
+          } else {
+            this.subtitles.clear();
+            this.transcript.reset();
+            this.videoLevel.reset();
+            this.fetchCaptions(currentVideo.id);
+          }
         } else {
           // User changed their target learning language in sidebar / settings while watching a video!
           // Clear current video and return to Home feed for the newly chosen learning language

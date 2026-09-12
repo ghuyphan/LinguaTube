@@ -13,7 +13,6 @@
       align-items: start;
       max-width: 100%;
       margin: 0 auto;
-      container-type: inline-size;
     }
 
     .layout-main {
@@ -34,8 +33,7 @@
 
       @media (min-width: 1025px) {
         height: 425px;
-        height: calc((100cqi - 360px - var(--space-md)) * 9 / 16);
-        max-height: calc((100cqi - 360px - var(--space-md)) * 9 / 16);
+        max-height: 425px;
       }
     }
 
@@ -156,8 +154,6 @@
       overflow: visible;
       scrollbar-width: none;
       -ms-overflow-style: none;
-      content-visibility: auto;
-      contain-intrinsic-size: auto 1200px;
       transition: none !important;
       animation: none !important;
 
@@ -217,19 +213,24 @@
         margin-bottom: var(--space-xs);
       }
 
-    /* YouTube-style Horizontal Chips Bar (Sticky like native YouTube) */
+    /* YouTube-style Horizontal Chips Bar (Sticky flush to top, internal padding provides clearance) */
     .yt-chips-bar {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
       background: var(--bg-card);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: var(--space-sm);
       margin-bottom: var(--space-xs);
-      padding: 6px 0 8px;
-      overflow: hidden;
+      padding: 10px 0 8px;
+
+      @media (max-width: 768px) {
+        top: 0;
+        padding-top: max(10px, env(safe-area-inset-top, 10px));
+        padding-bottom: 8px;
+      }
     }
 
     .yt-chips-scroll {
@@ -237,6 +238,8 @@
       align-items: center;
       gap: 8px;
       width: 100%;
+      min-width: 0;
+      flex: 1;
       overflow-x: auto;
       overflow-y: hidden;
       white-space: nowrap;
@@ -617,17 +620,14 @@
           box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.18);
         }
 
-        .yt-vocab-match-badge {
+        .yt-vocab-match-badge,
+        .yt-vocab-match-text {
           display: inline-flex;
           align-items: center;
           gap: 3px;
-          padding: 1px 6px;
-          border-radius: 3px;
           font-size: 0.6875rem;
           font-weight: 600;
-          background: rgba(168, 85, 247, 0.12);
-          border: 1px solid rgba(168, 85, 247, 0.28);
-          color: #a855f7;
+          color: var(--accent-secondary, #a855f7);
           line-height: 1.3;
 
           app-icon {

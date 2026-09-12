@@ -1,13 +1,12 @@
 <div class="pro-upgrade-dialog">
-    <!-- Header / Hero Section -->
+    <!-- Header Section -->
     <div class="header-section">
-        <div class="pro-hero-icon" [class.is-active]="userTier() !== 'free'" [class.is-premium]="selectedTier() === 'premium'">
-            <app-icon [name]="selectedTier() === 'premium' ? 'sparkles' : 'crown'" [size]="30" class="hero-crown" />
+        <div class="pro-hero-icon" [class.is-premium]="selectedTier() === 'premium'">
+            <app-icon [name]="selectedTier() === 'premium' ? 'sparkles' : 'crown'" [size]="32" />
         </div>
-
         <div class="title-group">
             <h2 [class.is-premium]="selectedTier() === 'premium'">{{ selectedTier() === 'premium' ? (i18n.t('pro.titlePremium') || 'Voca Premium') : (i18n.t('pro.title') || 'Voca Pro') }}</h2>
-            <p class="subtitle">{{ selectedTier() === 'premium' ? (i18n.t('pro.subtitlePremium') || 'Maximum immersion power with long-form podcasts & rapid AI refills') : (i18n.t('pro.subtitle') || 'Supercharge your language immersion with AI') }}</p>
+            <p class="subtitle">{{ selectedTier() === 'premium' ? (i18n.t('pro.subtitlePremium') || 'Full-length podcasts & rapid AI refills for deep immersion') : (i18n.t('pro.subtitle') || 'Unlimited video immersion and AI transcription') }}</p>
         </div>
     </div>
 
@@ -154,13 +153,6 @@
             </div>
 
             <div class="checkout-actions">
-                @if (order.isMock && !payment.isPaid()) {
-                    <button class="btn btn-simulate" type="button" (click)="simulateTransfer(order.orderCode)">
-                        <app-icon name="zap" [size]="14" />
-                        <span>{{ i18n.t('pro.simulateDev') || 'Simulate Transfer (Dev Mode)' }}</span>
-                    </button>
-                }
-
                 @if (payment.isPaid()) {
                     <button class="btn btn-primary btn-full" (click)="dismissed.emit()">
                         {{ i18n.t('common.done') || 'Done' }}
@@ -284,7 +276,7 @@
                         </div>
                         <div class="benefit-text">
                             <strong>{{ i18n.t('pro.featurePriorityTitle') || 'Priority AI Queue' }}</strong>
-                            <span>{{ i18n.t('pro.featurePriorityDesc') || 'Accelerated Gladia speech recognition with minimum wait' }}</span>
+                            <span>{{ i18n.t('pro.featurePriorityDesc') || 'Fast speech recognition processing with minimal wait' }}</span>
                         </div>
                     </div>
 
@@ -303,8 +295,8 @@
                             <app-icon name="trophy" [size]="15" class="icon-trophy" />
                         </div>
                         <div class="benefit-text">
-                            <strong>{{ i18n.t('pro.featureBadgeTitle') || 'Pro Leaderboard Badge' }}</strong>
-                            <span>{{ i18n.t('pro.featureBadgeDesc') || 'Stand out in the global learner community with an exclusive Pro crown' }}</span>
+                            <strong>{{ i18n.t('pro.featureBadgeTitle') || 'Pro Community Flair' }}</strong>
+                            <span>{{ i18n.t('pro.featureBadgeDesc') || 'Stand out in the global learner community with an exclusive Pro badge' }}</span>
                         </div>
                     </div>
                 } @else {
@@ -334,7 +326,7 @@
                         </div>
                         <div class="benefit-text">
                             <strong>{{ i18n.t('pro.featurePremiumVipQueueTitle') || 'VIP Instant Queue' }}</strong>
-                            <span>{{ i18n.t('pro.featurePremiumVipQueueDesc') || 'Highest priority speech-to-text processing on Gladia ASR' }}</span>
+                            <span>{{ i18n.t('pro.featurePremiumVipQueueDesc') || 'Immediate priority speech-to-text processing on Voca AI' }}</span>
                         </div>
                     </div>
 
@@ -343,8 +335,8 @@
                             <app-icon name="sparkles" [size]="15" class="icon-sparkles-premium" />
                         </div>
                         <div class="benefit-text">
-                            <strong>{{ i18n.t('pro.featurePremiumLimitsTitle') || 'Max API & Translation Quotas' }}</strong>
-                            <span>{{ i18n.t('pro.featurePremiumLimitsDesc') || 'Up to 100,000 translation texts/hr & unlimited cloud sync' }}</span>
+                            <strong>{{ i18n.t('pro.featurePremiumLimitsTitle') || 'Unlimited Subtitles & Translations' }}</strong>
+                            <span>{{ i18n.t('pro.featurePremiumLimitsDesc') || 'Unrestricted bilingual subtitles, instant translations & continuous cloud sync' }}</span>
                         </div>
                     </div>
 
@@ -353,8 +345,8 @@
                             <app-icon name="crown" [size]="15" class="icon-crown-premium" />
                         </div>
                         <div class="benefit-text">
-                            <strong>{{ i18n.t('pro.featurePremiumBadgeTitle') || 'Holographic Diamond VIP Badge' }}</strong>
-                            <span>{{ i18n.t('pro.featurePremiumBadgeDesc') || 'Prestigious VIP styling on leaderboard, profile & avatar ring' }}</span>
+                            <strong>{{ i18n.t('pro.featurePremiumBadgeTitle') || 'VIP Founder Flair' }}</strong>
+                            <span>{{ i18n.t('pro.featurePremiumBadgeDesc') || 'Exclusive VIP profile badge and custom leaderboard recognition' }}</span>
                         </div>
                     </div>
                 }

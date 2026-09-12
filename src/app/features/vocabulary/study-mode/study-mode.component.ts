@@ -1,11 +1,11 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, OnDestroy, PLATFORM_ID, effect } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, OnDestroy, PLATFORM_ID, effect } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
-import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { VocabularyService } from '../vocabulary.service';
-import { SettingsService, I18nService, AudioService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService, ToastService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
 import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem, getLanguageFlagUrl } from '../../../models';
 import { calculateSRSPreview, formatTime, SRSIntervalPreview } from '../../../core/utils';
@@ -21,7 +21,7 @@ function escapeRegex(str: string): string {
     selector: 'app-study-mode',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, RouterLink, IconComponent, SwitchComponent, BottomSheetComponent],
+    imports: [CommonModule, FormsModule, RouterLink, IconComponent, SwitchComponent],
     templateUrl: './study-mode.component.html',
     styleUrls: ['./study-mode.component.scss']
 })
@@ -34,6 +34,7 @@ export class StudyModeComponent implements OnDestroy {
     i18n = inject(I18nService);
     streak = inject(StreakService);
     audioService = inject(AudioService);
+    toast = inject(ToastService);
 
     // Options (reactive signals)
     includeNew = signal(true);
@@ -44,7 +45,6 @@ export class StudyModeComponent implements OnDestroy {
     sessionSize = signal<number | 'all'>(10);
     autoPlayAudio = signal(true);
     clozeMode = signal(false);
-    isOptionsSheetOpen = signal(false);
 
     // Active Card State
     isStudying = signal(false);
@@ -194,13 +194,15 @@ export class StudyModeComponent implements OnDestroy {
         return this.getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language);
     });
 
-    openOptionsSheet(): void {
-        this.isOptionsSheetOpen.set(true);
+    startDueOnlySession(): void {
+        this.dueOnly.set(true);
+        this.startSession();
     }
 
-    closeOptionsSheet(): void {
-        this.isOptionsSheetOpen.set(false);
-    }
+    readonly filteredLanguageVocabulary = computed(() => {
+        const lang = this.currentLanguage();
+        return this.vocab.vocabulary().filter(item => item.language === lang && item.level !== 'ignored');
+    });
 
     constructor() {
         // Reset study session to overview screen when navigation tab or reset is triggered
@@ -241,77 +243,6 @@ export class StudyModeComponent implements OnDestroy {
         if (this.confettiTimeout) {
             clearTimeout(this.confettiTimeout);
             this.confettiTimeout = null;
-        }
-    }
-
-    // Keyboard shortcuts
-    @HostListener('document:keydown', ['$event'])
-    handleKeydown(event: KeyboardEvent): void {
-        if (!this.isStudying()) return;
-
-        const card = this.currentCard();
-        if (!card) return;
-
-        if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
-            return;
-        }
-
-        switch (event.code) {
-            case 'Space':
-                event.preventDefault();
-                this.flipCard();
-                break;
-            case 'Digit1':
-            case 'Numpad1':
-                if (this.isAnswerRevealed()) {
-                    event.preventDefault();
-                    this.markAnswer('wrong');
-                }
-                break;
-            case 'Digit2':
-            case 'Numpad2':
-                if (this.isAnswerRevealed()) {
-                    event.preventDefault();
-                    this.markAnswer('hard');
-                }
-                break;
-            case 'Digit3':
-            case 'Numpad3':
-                if (this.isAnswerRevealed()) {
-                    event.preventDefault();
-                    this.markAnswer('good');
-                }
-                break;
-            case 'Digit4':
-            case 'Numpad4':
-                if (this.isAnswerRevealed()) {
-                    event.preventDefault();
-                    this.markAnswer('easy');
-                }
-                break;
-            case 'KeyR': {
-                const vm = this.cardViewModel();
-                if (vm) {
-                    event.preventDefault();
-                    this.playAudio(vm.primaryText, vm.item.language, undefined, vm.item.audio);
-                }
-                break;
-            }
-            case 'KeyP': {
-                if (!this.isAnswerRevealed()) {
-                    event.preventDefault();
-                    this.togglePeekReading();
-                }
-                break;
-            }
-            case 'KeyV': {
-                const vm = this.cardViewModel();
-                if (vm?.sourceVideoId) {
-                    event.preventDefault();
-                    this.openVideoScene(vm.sourceVideoId, vm.sourceTimestamp);
-                }
-                break;
-            }
         }
     }
 
@@ -413,8 +344,11 @@ export class StudyModeComponent implements OnDestroy {
         }
     }
 
-    onCardClick(_event?: MouseEvent): void {
+    onCardClick(event?: MouseEvent): void {
         if (this.lastTouchEndTime !== 0 && Date.now() - this.lastTouchEndTime < 400) {
+            return;
+        }
+        if (event && (event.target as HTMLElement)?.closest?.('button, a, .card-action-interactive')) {
             return;
         }
         this.flipCard();
@@ -479,9 +413,32 @@ export class StudyModeComponent implements OnDestroy {
             this.stopTimer();
             this.isStudying.set(false);
             this.isComplete.set(true);
-            this.streak.recordActivity();
+            this.streak.recordActivity().then(() => {
+                this.showStreakToast();
+            });
             this.triggerConfetti();
         }
+    }
+
+    private showStreakToast(): void {
+        const result = this.streak.lastActivityResult();
+        const streakCount = this.streak.currentStreak();
+        if (!result && streakCount <= 0) return;
+
+        let message = '';
+        if (result?.isNewRecord) {
+            message = `${this.i18n.t('streak.newRecord') || 'New Streak Record! 🔥'} ${this.i18n.t('streak.daysReached', { count: streakCount })}`;
+        } else if (result?.freezeUsed) {
+            message = `${this.i18n.t('streak.saved') || 'Streak Saved! ❄️'} ${this.i18n.t('streak.freezeUsed') || 'You used a streak freeze.'}`;
+        } else {
+            message = `${this.i18n.t('streak.extended') || 'Streak Extended! 🔥'} ${this.i18n.t('streak.onStreak', { count: streakCount })}`;
+        }
+
+        this.toast.show(message, {
+            type: 'warning',
+            icon: 'fire',
+            duration: 4000
+        });
     }
 
     reviewMissedCards(): void {

@@ -102,7 +102,8 @@
     "sleepTimerRemaining": "剩余{{time}}",
     "sleepTimerTurnedOff": "睡眠定时器已关闭",
     "sleepTimerActiveToast": "已设置{{time}}后关闭",
-    "hint": "粘贴 YouTube 链接开始学习，系统将自动解析字幕。"
+    "hint": "粘贴 YouTube 链接开始学习，系统将自动解析字幕。",
+    "nowPlaying": "正在播放"
   },
   "subtitle": {
     "loop": "单句循环",
@@ -169,18 +170,13 @@
     "captionsAvailableIn": "提供{{language}}字幕",
     "orUseAI": "或使用AI",
     "aiCredits": "AI 钻石额度",
-    "creditsAvailable": "可用额度",
+    "creditsAvailable": "可用",
     "ready": "就绪",
     "regenIn": "{{time}}后 +1",
-    "aiCreditsDescription": "AI 钻石用于支持高级智能特性，例如为无字幕视频生成转录文本。",
-    "whatAreThey": "什么是AI积分？",
-    "whatAreTheyDesc": "AI积分（钻石）让您可以使用AI来自动为没有字幕的视频生成听写文本。",
-    "howDoIGetMore": "如何获得更多？",
-    "howDoIGetMoreDesc": "积分会随着时间自动恢复。您无需进行任何操作！",
-    "videoDurationCost": "每个视频需要多少AI积分？",
-    "videoDurationCostDesc": "10分钟以内的视频消耗1个积分，10至20分钟消耗2个积分，Premium会员最高支持45分钟（3至4个积分）。",
-    "nativeCaptionsFree": "自带原生字幕的视频免费吗？",
-    "nativeCaptionsFreeDesc": "是的！凡是自带 YouTube 字幕的视频完全免费，不消耗任何 AI 钻石。",
+    "nativeCaptionsTitle": "自带字幕视频",
+    "nativeCaptionsDesc": "永久 100% 免费且无限制。不消耗任何 AI 额度。",
+    "aiTranscriptionTitle": "AI 语音转写",
+    "aiTranscriptionDesc": "用于无字幕视频（1–2 个额度）。随时间自动补充恢复。",
     "allCreditsAvailable": "额度已满",
     "depletedNotice": "您已用完{{max}}个AI积分。带YouTube字幕的普通视频依然完全免费！",
     "upgradeToPro": "升级到 Pro",
@@ -188,7 +184,8 @@
     "readingHint": "在字符上方显示注音标注（拼音/假名）",
     "grammarHint": "高亮显示重点语法句型与结构",
     "dualSubsHint": "显示双语翻译字幕",
-    "translating": "正在翻译字幕..."
+    "translating": "正在翻译字幕...",
+    "reading": "注音"
   },
   "pro": {
     "title": "Voca Pro",
@@ -405,6 +402,7 @@
     "noWordsHint": "请先从视频中保存一些词汇",
     "end": "结束",
     "tapToReveal": "点击翻转卡片",
+    "showAnswer": "显示答案",
     "example": "例句：",
     "meaning": "释义",
     "again": "没记住",
@@ -455,7 +453,20 @@
     "studyOptions": "学习选项",
     "dueCardsNotice": "今天有 {{count}} 张卡片需要复习",
     "allCaughtUp": "太棒了！今日已无待复习生词",
-    "cardsReady": "{{count}} 张卡片可供学习"
+    "cardsReady": "{{count}} 张卡片可供学习",
+    "shortcuts": "快捷键",
+    "flipCard": "翻转卡片",
+    "rateCard": "评分",
+    "mastery": "熟练度",
+    "mastered": "已掌握",
+    "dueCards": "今日需复习",
+    "dailyProgress": "今日进度",
+    "queue": "复习队列",
+    "reviewDueNow": "立即复习到期卡片",
+    "searchQueue": "搜索队列...",
+    "noCardsInQueue": "队列中没有卡片",
+    "nextReview": "下次复习",
+    "dueNow": "已到期"
   },
   "streak": {
     "dayStreak": "连续打卡",
@@ -508,7 +519,8 @@
     "clearedAll": "已清除所有历史记录",
     "syncHint": "登录以在设备间同步历史记录",
     "searchHistory": "搜索历史记录...",
-    "justNow": "刚刚"
+    "justNow": "刚刚",
+    "overview": "概览"
   },
   "playlist": {
     "title": "播放列表",
@@ -609,7 +621,8 @@
     "browseByLanguage": "按语言浏览",
     "loopOn": "已开启循环",
     "shuffleOn": "已开启随机",
-    "toggleQueue": "展开/收起播放队列"
+    "toggleQueue": "展开/收起播放队列",
+    "viewPlaylist": "查看播放列表"
   },
   "common": {
     "all": "全部",
@@ -754,7 +767,7 @@
     "noVideos": "该难度等级下暂无推荐视频。",
     "noPlaylists": "该难度等级下暂无精选播放列表。",
     "dialogTitle": "熟练度级别",
-    "howEvaluated": "难度评估方式",
+    "howEvaluated": "为什么是这个等级？",
     "sourceLinguistics": "字幕语言学分析",
     "sourceMetadata": "课程元数据",
     "grammarPatternsDetected": "语法句型",
@@ -762,14 +775,14 @@
     "speechSlow": "清晰缓慢",
     "speechNormal": "自然语速",
     "speechFast": "母语快速",
-    "howGrammarTitle": "语法形态分析",
-    "howGrammarDesc": "对字幕进行分词解析，检测符合 JLPT、HSK、TOPIK 和 CEFR 标准的语法点。",
-    "howVocabTitle": "词汇与汉字难度",
-    "howVocabDesc": "综合衡量汉字熟语、成语熟语及词汇难度与密度。",
-    "howCadenceTitle": "语速节奏 (CPM)",
-    "howCadenceDesc": "计算每分钟发音字数（CPM），衡量真实的听力理解挑战。",
+    "howGrammarTitle": "语法结构",
+    "howGrammarDesc": "识别出符合该能力标准的句型与语法结构。",
+    "howVocabTitle": "词汇与常用表达",
+    "howVocabDesc": "包含适合该学习阶段的常用成语与词汇表达。",
+    "howCadenceTitle": "自然对话语速",
+    "howCadenceDesc": "基于音频真实发音节奏计算的语速水平。",
     "immersionTipTitle": "学习提示",
-    "immersionTipPace": "如果语速过快，可以尝试将播放速度调整为 0.85x 或开启双语字幕。",
+    "immersionTipPace": "如果语速过快，可以尝试将播放速度调为 0.85x 或开启双语字幕。",
     "confidenceScore": "置信度"
   },
   "gamification": {

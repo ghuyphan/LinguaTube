@@ -9,14 +9,7 @@
             <app-icon name="clock" [size]="20" class="panel-header__icon" />
             <h2 class="panel-header__title">{{ i18n.t('history.title') }}</h2>
           </div>
-          <div class="panel-badges">
-            <span class="badge badge--primary">{{ historyItems().length }} {{ i18n.t('history.all') }}</span>
-            @if (favorites().length > 0) {
-              <span class="badge badge--accent">{{ favorites().length }} {{ i18n.t('history.favorites') }}</span>
-            }
-          </div>
         </div>
-        <p class="panel-header__subtitle">{{ i18n.t('history.subtitle') }}</p>
       </div>
 
       <!-- Stable Filter Toolbar (Matches playlist-page) -->
@@ -81,7 +74,7 @@
 
             <button type="button" class="filter-chip filter-chip--level" (click)="showLevelFilter.set(true)"
               [attr.aria-label]="getLevelLabel()" [title]="getLevelLabel()">
-              <app-icon name="medal" [size]="14" />
+              <app-icon name="graduation-cap" [size]="14" />
               <span class="chip-text">{{ getLevelLabel() }}</span>
               <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
             </button>
@@ -150,8 +143,8 @@
       <div class="panel-header">
         <div class="panel-header__row">
           <div class="panel-header__left">
-            <app-icon name="clock" [size]="20" class="panel-header__icon" />
-            <h3 class="panel-header__title">{{ i18n.t('history.title') }}</h3>
+            <app-icon name="layers" [size]="18" class="panel-header__icon" />
+            <h3 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('history.overview') || 'Overview' }}</h3>
           </div>
           @if (historyItems().length > 0) {
             <button type="button" class="panel-header__link panel-header__link--danger" (click)="confirmClear()">
@@ -160,25 +153,20 @@
             </button>
           }
         </div>
-        <p class="panel-header__subtitle">{{ historySubtitle() }}</p>
       </div>
 
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-value">{{ historyItems().length }}</span>
-          <span class="stat-label">{{ i18n.t('history.all') }}</span>
+      <div class="history-metric-row">
+        <div class="history-metric-item">
+          <span class="history-metric-num">{{ historyItems().length }}</span>
+          <span class="history-metric-label">{{ i18n.t('history.all') }}</span>
         </div>
-        <div class="stat-item">
-          <span class="stat-value">{{ inProgressCount() }}</span>
-          <span class="stat-label">{{ i18n.t('history.inProgress') }}</span>
+        <div class="history-metric-item">
+          <span class="history-metric-num">{{ completedCount() }}</span>
+          <span class="history-metric-label">{{ i18n.t('history.completed') }}</span>
         </div>
-        <div class="stat-item">
-          <span class="stat-value">{{ completedCount() }}</span>
-          <span class="stat-label">{{ i18n.t('history.completed') }}</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value stat-favorite">{{ favorites().length }}</span>
-          <span class="stat-label">{{ i18n.t('history.favorites') }}</span>
+        <div class="history-metric-item">
+          <span class="history-metric-num stat-favorite">{{ favorites().length }}</span>
+          <span class="history-metric-label">{{ i18n.t('history.favorites') }}</span>
         </div>
       </div>
 
@@ -189,49 +177,6 @@
         </div>
       }
     </div>
-
-    <!-- Card 2: Continue Learning Quick-Card (if recent item exists) -->
-    @if (recentItem(); as recent) {
-    <div class="card sidebar-card continue-card">
-      <div class="panel-header">
-        <div class="panel-header__row">
-          <div class="panel-header__left">
-            <app-icon name="play" [size]="18" class="panel-header__icon" />
-            <h3 class="panel-header__title" style="font-size: 0.9375rem;">
-              {{ i18n.t('history.continueWatching') || 'Continue' }}
-            </h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="recent-preview" (click)="resumeVideo(recent.video_id)">
-        <div class="recent-preview__thumb">
-          <img [src]="recent.thumbnail || getThumbnail(recent.video_id)" [alt]="recent.title" loading="lazy" />
-          <div class="card-play-overlay">
-            <div class="play-icon-circle">
-              <app-icon name="play" [size]="13" />
-            </div>
-          </div>
-          @if (recent.progress > 0) {
-          <div class="progress-bar">
-            <div class="progress-fill" [style.width.%]="recent.progress"></div>
-          </div>
-          }
-        </div>
-        <div class="recent-preview__info">
-          <span class="recent-preview__title" [title]="recent.title">{{ recent.title }}</span>
-          @if (recent.channel) {
-            <span class="recent-preview__channel">{{ recent.channel }}</span>
-          }
-        </div>
-      </div>
-
-      <button type="button" class="btn btn-primary resume-btn" (click)="resumeVideo(recent.video_id)">
-        <app-icon name="play" [size]="16" />
-        <span>{{ i18n.t('history.continueWatching') || 'Continue' }}</span>
-      </button>
-    </div>
-    }
   </aside>
 </div>
 

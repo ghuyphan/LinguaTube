@@ -102,7 +102,8 @@
     "sleepTimerRemaining": "残り{{time}}",
     "sleepTimerTurnedOff": "スリープタイマーをオフにしました",
     "sleepTimerActiveToast": "{{time}}後にスリープタイマーを設定しました",
-    "hint": "YouTube URLを貼り付けて学習を始めましょう。字幕を自動で取得します。"
+    "hint": "YouTube URLを貼り付けて学習を始めましょう。字幕を自動で取得します。",
+    "nowPlaying": "再生中"
   },
   "subtitle": {
     "loop": "ループ",
@@ -172,15 +173,10 @@
     "creditsAvailable": "利用可能",
     "ready": "準備完了",
     "regenIn": "{{time}}後に+1",
-    "aiCreditsDescription": "AIクレジットは、字幕のない動画を高精度に文字起こしする機能などに使用されます。",
-    "whatAreThey": "AIクレジットとは？",
-    "whatAreTheyDesc": "AIクレジット（ダイヤモンド）を使用すると、字幕のない動画でもAIによる高精度な文字起こし字幕を生成できます。",
-    "howDoIGetMore": "クレジットを増やすには？",
-    "howDoIGetMoreDesc": "クレジットは時間経過で自動的に回復するため、特別な操作は不要です。",
-    "videoDurationCost": "動画ごとに必要なクレジット数は？",
-    "videoDurationCostDesc": "10分以下の動画は1クレジット、10〜20分は2クレジット、Premiumなら最大45分（3〜4クレジット）まで対応します。",
-    "nativeCaptionsFree": "既存の字幕付き動画は無料ですか？",
-    "nativeCaptionsFreeDesc": "はい！既存のYouTube字幕がある動画は完全無料で、AIクレジットを消費しません。",
+    "nativeCaptionsTitle": "字幕付き動画",
+    "nativeCaptionsDesc": "常に完全無料で無制限。AIクレジットは一切消費しません。",
+    "aiTranscriptionTitle": "AI音声文字起こし",
+    "aiTranscriptionDesc": "字幕のない動画向け（1〜2クレジット）。時間経過で自動回復します。",
     "allCreditsAvailable": "全クレジット利用可能",
     "depletedNotice": "AIクレジット（{{max}}個）をすべて使用しました。YouTube字幕付きの通常動画は引き続き完全無料です！",
     "upgradeToPro": "Proにアップグレード",
@@ -188,7 +184,8 @@
     "readingHint": "文字の上に読み仮名・発音ガイドを表示",
     "grammarHint": "文法構造とパターンをハイライト",
     "dualSubsHint": "対訳字幕を表示",
-    "translating": "字幕を翻訳中..."
+    "translating": "字幕を翻訳中...",
+    "reading": "読み方"
   },
   "pro": {
     "title": "Voca Pro",
@@ -405,6 +402,7 @@
     "noWordsHint": "動画から単語を保存してください",
     "end": "終了",
     "tapToReveal": "タップして答えを表示",
+    "showAnswer": "答えを表示",
     "example": "例文：",
     "meaning": "意味",
     "again": "もう一度",
@@ -455,7 +453,20 @@
     "studyOptions": "学習オプション",
     "dueCardsNotice": "今日復習するカードが{{count}}枚あります",
     "allCaughtUp": "すべて完了！復習するカードはありません",
-    "cardsReady": "{{count}}枚のカードが学習可能"
+    "cardsReady": "{{count}}枚のカードが学習可能",
+    "shortcuts": "キーボードショートカット",
+    "flipCard": "カードをめくる",
+    "rateCard": "評価",
+    "mastery": "習熟度",
+    "mastered": "習得済み",
+    "dueCards": "今日復習が必要",
+    "dailyProgress": "本日の進捗",
+    "queue": "復習キュー",
+    "reviewDueNow": "今すぐ復習する",
+    "searchQueue": "キューを検索...",
+    "noCardsInQueue": "キューにカードがありません",
+    "nextReview": "次の復習",
+    "dueNow": "復習期限"
   },
   "streak": {
     "dayStreak": "連続記録",
@@ -508,7 +519,8 @@
     "clearedAll": "すべての履歴を削除しました",
     "syncHint": "ログインしてデバイス間で履歴を同期",
     "searchHistory": "履歴を検索...",
-    "justNow": "たった今"
+    "justNow": "たった今",
+    "overview": "概要"
   },
   "playlist": {
     "title": "プレイリスト",
@@ -609,7 +621,8 @@
     "browseByLanguage": "言語別で探す",
     "loopOn": "ループ再生中",
     "shuffleOn": "シャッフル再生中",
-    "toggleQueue": "再生キューを切り替え"
+    "toggleQueue": "再生キューを切り替え",
+    "viewPlaylist": "プレイリストを表示"
   },
   "common": {
     "all": "すべて",
@@ -754,7 +767,7 @@
     "noVideos": "このレベルの動画はまだありません。",
     "noPlaylists": "このレベルのプレイリストはまだありません。",
     "dialogTitle": "習熟度レベル",
-    "howEvaluated": "難易度の評価方法",
+    "howEvaluated": "なぜこのレベル？",
     "sourceLinguistics": "字幕からの言語分析",
     "sourceMetadata": "カリキュラム情報",
     "grammarPatternsDetected": "文法パターン",
@@ -762,14 +775,14 @@
     "speechSlow": "明瞭・ゆっくり",
     "speechNormal": "自然なスピード",
     "speechFast": "ネイティブ（速め）",
-    "howGrammarTitle": "形態素・文法解析",
-    "howGrammarDesc": "字幕を形態素解析し、JLPT・HSK・TOPIK・CEFRの基準に沿った文法を検出します。",
-    "howVocabTitle": "語彙・漢字の難易度",
-    "howVocabDesc": "漢字熟語、成句、語彙の難易度と密度を総合的に測定します。",
-    "howCadenceTitle": "発話ペース (CPM)",
-    "howCadenceDesc": "発話時間あたりの文字数（CPM）を計算し、リスニングの体感難易度を測定します。",
+    "howGrammarTitle": "文法構造",
+    "howGrammarDesc": "このレベル基準に合致する文法表現が検出されています。",
+    "howVocabTitle": "語彙・表現",
+    "howVocabDesc": "この学習段階に適した慣用句や頻出表現を含んでいます。",
+    "howCadenceTitle": "自然な会話スピード",
+    "howCadenceDesc": "音声の実際の発話ペースから測定されています。",
     "immersionTipTitle": "学習のヒント",
-    "immersionTipPace": "聞き取りが速すぎると感じる場合は、再生速度を0.85倍にするか、2言語同時字幕をお試しください。",
+    "immersionTipPace": "速すぎると感じる場合は、再生速度を0.85倍にするか対訳字幕を有効にしてください。",
     "confidenceScore": "信頼度"
   },
   "gamification": {

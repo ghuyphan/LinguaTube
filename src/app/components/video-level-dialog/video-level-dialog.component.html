@@ -65,17 +65,17 @@
   </div>
   }
 
-  <!-- How Voca Evaluates Difficulty -->
+  <!-- Why this level? -->
   <div class="info-box">
-    <h3 class="info-box__heading">{{ i18n.t('level.howEvaluated') || 'How Voca Evaluates Difficulty' }}</h3>
+    <h3 class="info-box__heading">{{ i18n.t('level.howEvaluated') || 'Why this level?' }}</h3>
 
     <div class="info-row">
       <div class="info-icon-wrap">
         <app-icon name="book-open" [size]="16" />
       </div>
       <div class="info-content">
-        <strong>{{ i18n.t('level.howGrammarTitle') || 'Grammar Morphology' }}</strong>
-        <p>{{ i18n.t('level.howGrammarDesc') || 'Tokenizes subtitle sentences to detect patterns across JLPT, HSK, TOPIK, and CEFR standards.' }}</p>
+        <strong>{{ i18n.t('level.howGrammarTitle') || 'Grammar Structures' }}</strong>
+        <p>{{ i18n.t('level.howGrammarDesc') || 'Pattern structures identified to match this proficiency standard.' }}</p>
       </div>
     </div>
 
@@ -84,8 +84,8 @@
         <app-icon name="type" [size]="16" />
       </div>
       <div class="info-content">
-        <strong>{{ i18n.t('level.howVocabTitle') || 'Vocabulary & Characters' }}</strong>
-        <p>{{ i18n.t('level.howVocabDesc') || 'Measures kanji compounds, formal idioms, and vocabulary difficulty levels.' }}</p>
+        <strong>{{ i18n.t('level.howVocabTitle') || 'Vocabulary & Kanji' }}</strong>
+        <p>{{ i18n.t('level.howVocabDesc') || 'Idioms and expressions suited for this stage of immersion.' }}</p>
       </div>
     </div>
 
@@ -94,8 +94,8 @@
         <app-icon name="clock" [size]="16" />
       </div>
       <div class="info-content">
-        <strong>{{ i18n.t('level.howCadenceTitle') || 'Speech Speed (CPM)' }}</strong>
-        <p>{{ i18n.t('level.howCadenceDesc') || 'Calculates characters spoken per minute to gauge real listening comprehension challenge.' }}</p>
+        <strong>{{ i18n.t('level.howCadenceTitle') || 'Conversational Pace' }}</strong>
+        <p>{{ i18n.t('level.howCadenceDesc') || 'Natural speaking tempo measured directly from audio cadence.' }}</p>
       </div>
     </div>
   </div>
@@ -107,7 +107,7 @@
     </div>
     <div class="tip-content">
       <strong>{{ i18n.t('level.immersionTipTitle') || 'Immersion Tip' }}</strong>
-      <p>{{ i18n.t('level.immersionTipPace') || 'If the speech feels too fast, try adjusting playback speed to 0.85x or enabling dual bilingual subtitles.' }}</p>
+      <p>{{ i18n.t('level.immersionTipPace') || 'If the speech feels too fast, slow playback to 0.85x or turn on dual subtitles.' }}</p>
     </div>
   </div>
 

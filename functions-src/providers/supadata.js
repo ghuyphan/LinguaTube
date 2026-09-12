@@ -5,7 +5,7 @@
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 
 const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
-const SUPADATA_TIMEOUT_MS = 15000; // 15 seconds to support long videos with multiple tracks
+const SUPADATA_TIMEOUT_MS = 7000; // 7 seconds is plenty for native caption availability checks
 
 export class SupadataProvider {
     /**
@@ -39,9 +39,9 @@ export class SupadataProvider {
             attemptedKeys.push(apiKey);
 
             try {
-                const result = await this._executeFetch(videoId, lang, apiKey);
+                const result = await this._executeFetch(videoId, lang, apiKey, 'native');
                 if (result?.notFound) {
-                    // Video genuinely has no captions on YouTube for any key
+                    // Video genuinely has no captions on YouTube - do NOT retry other keys
                     return { notFound: true, segments: [], availableLangs: [] };
                 }
                 if (result?.segments?.length > 0) {
@@ -71,12 +71,14 @@ export class SupadataProvider {
         return null;
     }
 
-    async _executeFetch(videoId, lang, apiKey) {
+    async _executeFetch(videoId, lang, apiKey, mode = 'native') {
         const url = new URL(SUPADATA_API_URL);
         url.searchParams.set('videoId', videoId);
-        url.searchParams.set('lang', lang);
+        if (lang) {
+            url.searchParams.set('lang', lang);
+        }
         url.searchParams.set('text', 'false');
-        url.searchParams.set('mode', 'native'); // existing transcripts only
+        url.searchParams.set('mode', mode);
 
         const response = await fetch(url.toString(), {
             method: 'GET',
@@ -84,14 +86,15 @@ export class SupadataProvider {
                 'x-api-key': apiKey,
                 'Accept': 'application/json'
             },
-            signal: AbortSignal.timeout(SUPADATA_TIMEOUT_MS)
+            signal: AbortSignal.timeout(mode === 'generate' ? 25000 : SUPADATA_TIMEOUT_MS)
         });
 
+        // Supadata returns HTTP 206 (Partial Content) or 404 when no transcript exists for the video
+        if (response.status === 206 || response.status === 404) {
+            return { notFound: true, segments: [], availableLangs: [] };
+        }
+
         if (!response.ok) {
-            if (response.status === 404) {
-                // Genuine 404: YouTube video has no captions
-                return { notFound: true, segments: [], availableLangs: [] };
-            }
             if (response.status === 429) {
                 throw new Error('429 Rate limited');
             }
@@ -109,8 +112,13 @@ export class SupadataProvider {
 
         const data = await response.json();
 
+        // Check error payload in body (Supadata errors format)
+        if (data.error === 'transcript-unavailable' || data.error === 'not-found') {
+            return { notFound: true, segments: [], availableLangs: [] };
+        }
+
         if (!data.content?.length) {
-            return null;
+            return { notFound: true, segments: [], availableLangs: [] };
         }
 
         const segments = data.content.map((segment, i) => ({
@@ -120,7 +128,9 @@ export class SupadataProvider {
             text: (segment.text || '').trim()
         })).filter(s => s.text);
 
-        if (!segments.length) return null;
+        if (!segments.length) {
+            return { notFound: true, segments: [], availableLangs: [] };
+        }
 
         const rawDetectedLang = data.lang || lang;
         const normDetected = normalizeLanguageCode(rawDetectedLang) || rawDetectedLang;
@@ -130,7 +140,8 @@ export class SupadataProvider {
             ? data.availableLangs
             : [rawDetectedLang];
 
-        const isExactOrFamilyMatch = (normDetected === normRequested) ||
+        const isExactOrFamilyMatch = !normRequested ||
+            (normDetected === normRequested) ||
             rawDetectedLang.toLowerCase().startsWith(normRequested.toLowerCase()) ||
             normDetected.startsWith(normRequested);
 

@@ -168,11 +168,17 @@ graph TD
 ```
 
 - **SSRF Hardening**: The polling endpoint validates that all `result_url` inputs match `https://api.gladia.io/` strictly.
-- **Duration Limits**: Restricted to videos $\le 20$ minutes.
+- **Duration Limits**: Enforced by tier: 10 mins (600s) for Guest/Free, 20 mins (1,200s) for Pro, 45 mins (2,700s) for Premium.
+- **Bypass Redundant Scrapes**: When duration and video title are provided by the client, unauthenticated YouTube HTML scraping and duplicate oEmbed calls are bypassed, eliminating up to 8s of blocking network timeouts on Cloudflare Workers.
+- **Edge Multi-Isolate Resilience**: Client polls `/api/transcript` every 2.5s with validated `videoId`. The backend cross-checks D1 `pending_jobs` and isolate memory, with client videoId fallback to handle cross-isolate replication lag without throwing premature "Unknown or expired transcription job" errors.
+- **Synchronous R2 Persistence**: Transcripts converted from Gladia utterances are synchronously written and committed to Cloudflare R2 before HTTP 200 is dispatched, eliminating race conditions during immediate client rendering.
+- **Dual-Language Caching on Language Mismatch**: Generated subtitles are cached locally and in R2 under both the user's requested language and the model's detected language. When the user accepts the language mismatch prompt, subtitles are seamlessly preserved without clearing the display or triggering a failing refetch.
 - **Automated Failure Refund**: If Gladia job execution fails or errors out during transcription, the server immediately triggers `refundDiamond()`, returning the deducted Diamond credit back to the user without manual support intervention.
 - **Cost Scaling**:
   - $\le 10$ minutes: **1 Diamond credit**
-  - $> 10$ minutes (up to 20 mins): **2 Diamond credits**
+  - $> 10$ to $20$ minutes: **2 Diamond credits**
+  - $> 20$ to $35$ minutes: **3 Diamond credits**
+  - $> 35$ to $45$ minutes: **4 Diamond credits**
 
 ---
 
@@ -349,12 +355,18 @@ Upon session completion, learners are greeted with celebration confetti and a cl
 - **"Review Missed" & "Study Again"**: Dedicated secondary actions for immediate follow-up practice without getting trapped.
 - **Same-Tab Reset**: Tapping the "Review" tab in the bottom bar or sidebar while in the completed state cleanly resets back to the initial dashboard.
 
-### 7.3. Streamlined Start Screen & Study Options Drawer
-The Review start dashboard is designed for focus and minimal friction:
-- **3-Card Deck Stats**: Elevated, color-accented cards for **New**, **Learning**, and **Known** decks with interactive toggles and counters.
-- **Unified Status Strip**: Merges due card counts and daily goal progress into a single clean bar (`🎯 X cards due today · Y/Z daily goal`).
-- **Session Size Selector**: 1-tap size pills (`5`, `10`, `20`, `all`) with estimated study duration.
-- **Study Options Bottom Sheet**: Secondary settings (Reverse Mode, Cloze Mode, Auto-Play Audio, Due Only) are housed in a dedicated `<app-bottom-sheet>` accessible via the header gear button `[⚙️]` or inline link, keeping the primary "Start" CTA immediately front-and-center without vertical scrolling.
+### 7.3. Streamlined Study Dashboard & Zero Layout Shift Architecture
+The Review start dashboard is designed for focus, instant accessibility, and visual elegance:
+- **Unified Main Panel (`.card.study-panel`)**: Directly mirrors the structure and card padding patterns of `/dictionary`, `/explore`, and `/history` with consistent `var(--space-md)` padding and responsive `var(--space-sm)` on mobile.
+- **Panel Header**: Icon, title, and streak counter badge (`.badge.badge--warning`), maintaining a clean, distraction-free header.
+- **Streamlined Practice Flow**: Eliminates redundant queue tabs and intermediate screens so learners immediately see deck status and launch flashcards without friction.
+- **Compact Due Alert Banner**: Displays conditionally only when items are due today with a clock icon and 1-click "Review Due Now" action.
+- **Minimalist 3-Deck Cards**: Elevated deck selector cards (**New**, **Learning**, **Known**) with clean badges, active checkmark circles, and large counts, positioned directly for immediate selection.
+- **Unified Settings Card**: Consolidated study configuration containing session size pills (`5`, `10`, `20`, `all`) and a balanced 2x2 grid of preference toggles (**Due Only**, **Reverse Mode**, **Auto-Play Audio**, **Cloze Mode**).
+- **Centralized SRS Schedule Indicators**: Next-review timings (`🕒 38d`, `Due`) are integrated directly into the vocabulary notebook in `/dictionary`, providing a single unified place to browse words and inspect SM-2 spaced repetition schedules.
+- **Zero Layout Shift Architecture**:
+  - The desktop `.page-layout` grid remains identical across idle/start, active studying, and completion screens.
+  - The right-hand sidebar (`.page-layout__sidebar`) displays the Mastery Overview (SVG donut ring, mastery breakdown) and the Daily Study Habit & Goal progress card.
 
 ### 7.4. Authentic Video Scene Jump
 Every mined card captures `sourceSentence`, `sourceVideoId`, and `sourceTimestamp`. While studying, learners can tap **`[▶ Watch Scene]`** (or press key `V`) to jump directly to the exact millisecond in the authentic YouTube video where the phrase occurred.
@@ -368,8 +380,9 @@ When "Cloze Mode" is toggled, the focus word is masked inside the context senten
 ### 7.7. Audio Auto-Play on Reveal
 Learners can enable "Auto-play audio" in study settings to have authentic dictionary or TTS audio automatically trigger the moment a flashcard is flipped, training auditory comprehension concurrently with visual recall.
 
-### 7.8. Desktop Live Session Dashboard & Keyboard Ergonomics
-- **Live Sidebar Monitor**: During active study, the desktop sidebar dynamically morphs into an active session monitor displaying cards remaining in queue, live accuracy percentage, elapsed time, and a keyboard shortcuts cheat-sheet (`Space` to flip, `1-4` to grade, `R` to replay audio, `P` to peek, `V` to open scene).
+### 7.8. Zen Focus Mode & Keyboard Ergonomics
+- **Distraction-Free Study (Zen Mode)**: During active flashcard study, the UI switches into a centered, distraction-free layout (`max-width: 680px`), hiding sidebars and real-time score widgets to maximize memory retention and prevent cognitive overload. Comprehensive performance metrics are presented in the celebratory session-complete dashboard upon finishing.
+- **Streamlined Ergonomics**: Essential keyboard shortcuts (`Space` to flip, `1-4` to grade, `R` to replay audio, `P` to peek reading, `V` to open scene) are presented in a quiet, non-intrusive footer hint bar.
 - **Mobile Swipe Physics**: Enhanced swipe gestures with rotation physics and watermark feedback tags (red "Again" on left swipe, green "Good" on right swipe).
 
 ### 7.9. Streamlined Architecture & Memory Optimizations

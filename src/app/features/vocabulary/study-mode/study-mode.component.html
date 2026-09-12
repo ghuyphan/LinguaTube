@@ -1,177 +1,207 @@
 <div class="study-mode">
-    @if (!isStudying() && !isComplete()) {
-    <!-- Study Start Screen -->
-    <div class="card study-start">
+    <!-- Main Study Panel (Matches playlist-panel, history-panel, dict-panel) -->
+    <div class="card study-panel">
+        @if (!isStudying() && !isComplete()) {
+        <!-- Panel Header -->
         <div class="panel-header">
             <div class="panel-header__row">
                 <div class="panel-header__left">
                     <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
                     <h2 class="panel-header__title">{{ i18n.t('study.title') }}</h2>
                 </div>
-                <div class="panel-header__actions">
+
+                <div class="panel-badges">
+                    <!-- Streak Badge -->
                     @if (streak.currentStreak() > 0) {
                     <span class="badge badge--warning">
                         <app-icon name="fire" [size]="12" />
                         <span>{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') }}</span>
                     </span>
                     }
+                </div>
+            </div>
+        </div>
+
+        @if (deckStats().total === 0) {
+        <!-- Empty State when user has 0 words saved in this language -->
+        <div class="empty-state empty-state--centered empty-state--animate">
+            <div class="empty-state__icon-box">
+                <app-icon name="graduation-cap" [size]="32" />
+            </div>
+            <div class="empty-state__text">
+                <h3 class="empty-state__title">{{ i18n.t('study.noWords') }}</h3>
+                <p class="empty-state__description">{{ i18n.t('study.noWordsHint') }}</p>
+            </div>
+            <a routerLink="/video" class="btn btn-primary empty-state__action">
+                <app-icon name="play" [size]="16" />
+                <span>{{ i18n.t('nav.watch') }}</span>
+            </a>
+        </div>
+        } @else {
+        <!-- STUDY PRACTICE DASHBOARD -->
+        <div class="study-dashboard">
+            <!-- Compact Due Alert Banner (Only shown when cards are due) -->
+            @if (dueToday() > 0) {
+                <div class="study-due-alert">
+                    <div class="study-due-alert__info">
+                        <app-icon name="clock" [size]="16" class="icon--due" />
+                        <span>{{ i18n.t('study.dueCardsNotice', { count: dueToday() }) }}</span>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm study-due-alert__btn" (click)="startDueOnlySession()">
+                        <app-icon name="play" [size]="14" />
+                        <span>{{ i18n.t('study.reviewDueNow') }} ({{ dueToday() }})</span>
+                    </button>
+                </div>
+            }
+
+            <!-- Section 1: 3-Deck Selection -->
+            <div class="study-section">
+                <div class="deck-cards-grid">
+                    <!-- New Deck Card -->
                     <button type="button" 
-                            class="btn btn-icon btn-ghost header-settings-btn" 
-                            (click)="openOptionsSheet()" 
-                            [title]="i18n.t('study.studyOptions') || 'Study Options'">
-                        <app-icon name="settings" [size]="18" />
+                            class="deck-card deck-card--new" 
+                            [class.active]="includeNew()" 
+                            (click)="toggleDeck('new')"
+                            [attr.aria-pressed]="includeNew()">
+                        <div class="deck-card__top">
+                            <span class="badge badge--new">{{ i18n.t('study.new') }}</span>
+                            <div class="deck-card__check" [class.checked]="includeNew()">
+                                @if (includeNew()) {
+                                    <app-icon name="check" [size]="11" />
+                                }
+                            </div>
+                        </div>
+                        <div class="deck-card__body">
+                            <span class="deck-card__count">{{ deckStats().new }}</span>
+                        </div>
+                    </button>
+
+                    <!-- Learning Deck Card -->
+                    <button type="button" 
+                            class="deck-card deck-card--learning" 
+                            [class.active]="includeLearning()" 
+                            (click)="toggleDeck('learning')"
+                            [attr.aria-pressed]="includeLearning()">
+                        <div class="deck-card__top">
+                            <span class="badge badge--learning">{{ i18n.t('study.learning') }}</span>
+                            <div class="deck-card__check" [class.checked]="includeLearning()">
+                                @if (includeLearning()) {
+                                    <app-icon name="check" [size]="11" />
+                                }
+                            </div>
+                        </div>
+                        <div class="deck-card__body">
+                            <span class="deck-card__count">{{ deckStats().learning }}</span>
+                        </div>
+                    </button>
+
+                    <!-- Known Deck Card -->
+                    <button type="button" 
+                            class="deck-card deck-card--known" 
+                            [class.active]="includeKnown()" 
+                            (click)="toggleDeck('known')"
+                            [attr.aria-pressed]="includeKnown()">
+                        <div class="deck-card__top">
+                            <span class="badge badge--known">{{ i18n.t('study.known') }}</span>
+                            <div class="deck-card__check" [class.checked]="includeKnown()">
+                                @if (includeKnown()) {
+                                    <app-icon name="check" [size]="11" />
+                                }
+                            </div>
+                        </div>
+                        <div class="deck-card__body">
+                            <span class="deck-card__count">{{ deckStats().known }}</span>
+                        </div>
                     </button>
                 </div>
             </div>
-            <p class="panel-header__subtitle">{{ i18n.t('study.subtitle') }}</p>
-            <div class="study-meta-tags">
-                <span class="badge badge--primary">{{ availableCards() }} {{ i18n.t('study.cards') }}</span>
-                <span class="badge badge--accent">
-                    <img [src]="currentLanguageFlag()" class="circle-flag circle-flag--sm" alt="" />
-                    <span>{{ currentLanguageLabel() }}</span>
-                </span>
-                @if (currentReadingDisplayLabel()) {
-                <span class="badge badge--primary">{{ currentReadingDisplayLabel() }}</span>
+
+            <!-- Section 2: Unified Config Card (Session Size + Toggles) -->
+            <div class="study-card-section">
+                <!-- Session Size Row -->
+                <div class="study-size-row">
+                    <div class="section-title-left">
+                        <app-icon name="target" [size]="15" />
+                        <h4 class="section-subtitle-heading">{{ i18n.t('study.sessionSize') }}</h4>
+                    </div>
+                    <div class="session-size-pills">
+                        @for (size of [5, 10, 20]; track size) {
+                            <button type="button" 
+                                    class="size-pill" 
+                                    [class.active]="sessionSize() === size" 
+                                    (click)="setSessionSize(size)">
+                                {{ size }}
+                            </button>
+                        }
+                        <button type="button" 
+                                class="size-pill" 
+                                [class.active]="sessionSize() === 'all'" 
+                                (click)="setSessionSize('all')">
+                            {{ i18n.t('study.allCards') }}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4 Quick Toggles (Clean 2x2 grid, no redundant subtitle text) -->
+                <div class="study-options-grid">
+                    <div class="study-option-item">
+                        <div class="option-info">
+                            <app-icon name="clock" [size]="15" />
+                            <span class="option-title">{{ i18n.t('study.dueOnly') }}</span>
+                            @if (dueToday() > 0) {
+                                <span class="badge badge--warning badge--sm">({{ dueToday() }})</span>
+                            }
+                        </div>
+                        <app-switch [checked]="dueOnly()" [label]="i18n.t('study.dueOnly')" (checkedChange)="dueOnly.set($event)" />
+                    </div>
+
+                    <div class="study-option-item">
+                        <div class="option-info">
+                            <app-icon name="repeat" [size]="15" />
+                            <span class="option-title">{{ i18n.t('study.reverseMode') }}</span>
+                        </div>
+                        <app-switch [checked]="reverseMode()" [label]="i18n.t('study.reverseMode')" (checkedChange)="reverseMode.set($event)" />
+                    </div>
+
+                    <div class="study-option-item">
+                        <div class="option-info">
+                            <app-icon name="volume-2" [size]="15" />
+                            <span class="option-title">{{ i18n.t('study.autoPlayAudio') }}</span>
+                        </div>
+                        <app-switch [checked]="autoPlayAudio()" [label]="i18n.t('study.autoPlayAudio')" (checkedChange)="setAutoPlayAudio($event)" />
+                    </div>
+
+                    <div class="study-option-item">
+                        <div class="option-info">
+                            <app-icon name="eye-off" [size]="15" />
+                            <span class="option-title">{{ i18n.t('study.clozeMode') }}</span>
+                        </div>
+                        <app-switch [checked]="clozeMode()" [label]="i18n.t('study.clozeMode')" (checkedChange)="setClozeMode($event)" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start Action Button -->
+            <div class="study-start-actions">
+                @if (availableCards() > 0) {
+                    <button class="btn btn-primary start-btn" (click)="startSession()">
+                        <app-icon name="play" [size]="18" />
+                        <span>{{ i18n.t('study.start') }} ({{ sessionCardCount() }} {{ i18n.t('study.cards') }} · {{ i18n.t('study.estimatedMinutes', { minutes: estimatedMinutes() }) }})</span>
+                    </button>
+                } @else {
+                    <div class="study-filter-empty">
+                        <app-icon name="info" [size]="16" class="icon--info" />
+                        <span>{{ i18n.t('study.allCaughtUp') }}</span>
+                        <button type="button" class="btn btn-secondary btn-sm" (click)="dueOnly.set(false); includeKnown.set(true)">
+                            {{ i18n.t('study.reviewKnown') }}
+                        </button>
+                    </div>
                 }
             </div>
         </div>
-
-        <!-- Stat Badges (interactive toggles) -->
-        <div class="study-stats">
-            <button type="button" 
-                    class="stat-badge stat-badge--new" 
-                    [class.active]="includeNew()" 
-                    (click)="toggleDeck('new')"
-                    [attr.aria-pressed]="includeNew()"
-                    [title]="i18n.t('study.includeNew')">
-                <div class="stat-badge__top">
-                    <app-icon name="plus" [size]="14" class="stat-badge__icon" />
-                    <div class="stat-badge__check" [class.checked]="includeNew()">
-                        @if (includeNew()) {
-                            <app-icon name="check" [size]="10" />
-                        }
-                    </div>
-                </div>
-                <span class="stat-value">{{ deckStats().new }}</span>
-                <span class="stat-label">{{ i18n.t('study.new') }}</span>
-            </button>
-            <button type="button" 
-                    class="stat-badge stat-badge--learning" 
-                    [class.active]="includeLearning()" 
-                    (click)="toggleDeck('learning')"
-                    [attr.aria-pressed]="includeLearning()"
-                    [title]="i18n.t('study.includeLearning')">
-                <div class="stat-badge__top">
-                    <app-icon name="fire" [size]="14" class="stat-badge__icon" />
-                    <div class="stat-badge__check" [class.checked]="includeLearning()">
-                        @if (includeLearning()) {
-                            <app-icon name="check" [size]="10" />
-                        }
-                    </div>
-                </div>
-                <span class="stat-value">{{ deckStats().learning }}</span>
-                <span class="stat-label">{{ i18n.t('study.learning') }}</span>
-            </button>
-            <button type="button" 
-                    class="stat-badge stat-badge--known" 
-                    [class.active]="includeKnown()" 
-                    (click)="toggleDeck('known')"
-                    [attr.aria-pressed]="includeKnown()"
-                    [title]="i18n.t('study.reviewKnown')">
-                <div class="stat-badge__top">
-                    <app-icon name="check-circle" [size]="14" class="stat-badge__icon" />
-                    <div class="stat-badge__check" [class.checked]="includeKnown()">
-                        @if (includeKnown()) {
-                            <app-icon name="check" [size]="10" />
-                        }
-                    </div>
-                </div>
-                <span class="stat-value">{{ deckStats().known }}</span>
-                <span class="stat-label">{{ i18n.t('study.known') }}</span>
-            </button>
-        </div>
-
-        <!-- Unified Due Today & Daily Goal Progress Strip (mobile only - desktop shows in sidebar) -->
-        <div class="study-status-strip mobile-only">
-            <div class="status-strip-header">
-                <div class="status-strip-due">
-                    @if (dueToday() > 0) {
-                        <app-icon name="clock" [size]="14" />
-                        <span>{{ i18n.t('study.dueToday') }}: <strong>{{ dueToday() }}</strong></span>
-                    } @else {
-                        <app-icon name="check-circle" [size]="14" />
-                        <span>{{ i18n.t('study.allCaughtUp') || 'All caught up' }}</span>
-                    }
-                </div>
-                <div class="status-strip-goal">
-                    <span>{{ cardsCompletedToday() }}/{{ dailyGoal() }} {{ i18n.t('study.dailyGoal') }}</span>
-                </div>
-            </div>
-            <div class="status-strip-bar">
-                <div class="status-strip-fill" [style.width.%]="goalProgress()"></div>
-            </div>
-        </div>
-
-        <!-- Session Size Selector with options link -->
-        <div class="study-size-section">
-            <div class="study-size-header">
-                <div class="study-size-label">
-                    <app-icon name="layers" [size]="15" />
-                    <span>{{ i18n.t('study.sessionSize') }}</span>
-                    <span class="study-size-estimate">· {{ sessionCardCount() }} {{ i18n.t('study.cards') }} ({{ i18n.t('study.estimatedMinutes', { minutes: estimatedMinutes() }) }})</span>
-                </div>
-                <button type="button" class="study-options-trigger" (click)="openOptionsSheet()">
-                    <app-icon name="settings" [size]="13" />
-                    <span>{{ i18n.t('study.studyOptions') }}</span>
-                </button>
-            </div>
-            <div class="session-size-pills">
-                @for (size of [5, 10, 20]; track size) {
-                <button type="button" 
-                        class="size-pill" 
-                        [class.active]="sessionSize() === size"
-                        (click)="setSessionSize(size)">
-                    {{ size }}
-                </button>
-                }
-                <button type="button" 
-                        class="size-pill" 
-                        [class.active]="sessionSize() === 'all'"
-                        (click)="setSessionSize('all')">
-                    {{ i18n.t('study.allCards') }}
-                </button>
-            </div>
-        </div>
-
-        <!-- Start CTA & Empty State -->
-        <div class="study-action">
-            @if (availableCards() > 0) {
-            <button class="btn btn-primary start-btn" (click)="startSession()">
-                <app-icon name="play" [size]="18" />
-                <span>{{ i18n.t('study.start') }} ({{ sessionCardCount() }} {{ i18n.t('study.cards') }})</span>
-            </button>
-            <p class="keyboard-hint desktop-only">{{ i18n.t('study.pressSpace') }} · {{ i18n.t('study.keyboardHint') }}</p>
-            } @else {
-            <div class="empty-state empty-state--centered">
-                <div class="empty-state__icon-box">
-                    <app-icon name="graduation-cap" [size]="28" />
-                </div>
-                <div class="empty-state__text" style="align-items: center; text-align: center;">
-                    <span class="empty-state__title">{{ i18n.t('study.noWords') }}</span>
-                    <span class="empty-state__description">{{ i18n.t('study.noWordsHint') }}</span>
-                </div>
-                <a routerLink="/video" class="btn btn-secondary empty-state__action">
-                    <app-icon name="play" [size]="16" />
-                    <span>{{ i18n.t('nav.watch') }}</span>
-                </a>
-            </div>
-            }
-        </div>
-    </div>
-    }
-
-    @if (isStudying()) {
-    <!-- Study Session -->
+        }
+    } @else if (isStudying()) {
+    <!-- Study Session (Zen / Centered Focus Mode) -->
     <div class="study-session">
         <!-- Progress Header -->
         <div class="study-progress">
@@ -185,6 +215,9 @@
                         +{{ studyCards().length - initialCardCount() }}
                     </span>
                 }
+            </span>
+            <span class="session-accuracy-badge" [title]="i18n.t('study.liveAccuracy')">
+                {{ sessionAccuracy() }}%
             </span>
             <span class="session-timer">
                 <app-icon name="clock" [size]="14" />
@@ -242,52 +275,47 @@
                         </div>
                     </div>
 
-                    @if (vm.hasContext) {
-                    <div class="card-context card-context--front">
-                        <div class="card-context__header">
-                            <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
-                            @if (clozeMode()) {
-                            <span class="cloze-tag">{{ i18n.t('study.clozeMode') }}</span>
+                    <!-- Card Body: Word Anchor, Meaning Slot, Context Quote -->
+                    <div class="flashcard-body">
+                        <div class="card-word-cluster">
+                            @if (!reverseMode()) {
+                                <span class="card-word" [class]="'text-' + vm.item.language">
+                                    {{ vm.primaryText }}
+                                </span>
+                                
+                                <div class="card-reading-slot">
+                                    @if (vm.showReadingFront) {
+                                    <span class="card-reading">{{ vm.reading }}</span>
+                                    } @else if (vm.hasReading) {
+                                    <button type="button" 
+                                            class="btn-peek-reading card-action-interactive" 
+                                            (click)="togglePeekReading($event)"
+                                            [title]="i18n.t('study.peekReading')">
+                                        <app-icon name="eye" [size]="13" />
+                                        <span>{{ i18n.t('study.peekReading') }}</span>
+                                    </button>
+                                    }
+                                </div>
+                            } @else {
+                                <span class="card-prompt-meaning">
+                                    {{ vm.item.meaning || i18n.t('vocab.noDefinition') }}
+                                </span>
                             }
                         </div>
-                        <p class="card-context__sentence" [class]="'text-' + vm.item.language">
-                            {{ vm.maskedSentence }}
-                        </p>
-                        @if (!reverseMode() && !clozeMode()) {
-                        <div class="card-context__focus">
-                            <span>{{ i18n.t('study.focusWord') }}:</span>
-                            <strong>{{ vm.item.word }}</strong>
+
+                        <!-- Context Sentence Quote (Stable Bottom of Body) -->
+                        @if (vm.hasContext) {
+                        <div class="card-context-quote">
+                            <p class="context-sentence-text" [class]="'text-' + vm.item.language">
+                                {{ vm.maskedSentence }}
+                            </p>
                         </div>
                         }
                     </div>
-                    }
 
-                    @if (!reverseMode()) {
-                    <div class="card-word-cluster">
-                        <span class="card-word" [class]="'text-' + vm.item.language">
-                            {{ vm.primaryText }}
-                        </span>
-                        
-                        <!-- Front Reading: Hidden by default to prevent spoiler, with peek button -->
-                        @if (vm.showReadingFront) {
-                        <span class="card-reading">{{ vm.reading }}</span>
-                        } @else if (vm.hasReading) {
-                        <button type="button" 
-                                class="btn-peek-reading card-action-interactive" 
-                                (click)="togglePeekReading($event)"
-                                [title]="i18n.t('study.peekReading')">
-                            <app-icon name="eye" [size]="13" />
-                            <span>{{ i18n.t('study.peekReading') }}</span>
-                        </button>
-                        }
+                    <div class="flashcard-footer">
+                        <span class="tap-hint">{{ i18n.t('study.tapToReveal') }}</span>
                     </div>
-                    } @else {
-                    <div class="card-meaning-front">
-                        {{ vm.item.meaning || i18n.t('vocab.noDefinition') }}
-                    </div>
-                    }
-
-                    <p class="tap-hint">{{ i18n.t('study.tapToReveal') }}</p>
                 </div>
 
                 <!-- Back (Meaning or Word based on reverseMode) -->
@@ -317,98 +345,97 @@
                         </div>
                     </div>
 
-                    @if (!reverseMode()) {
-                    <div class="card-word-cluster">
-                        <span class="card-word" [class]="'text-' + vm.item.language">
-                            {{ vm.primaryText }}
-                        </span>
-                        @if (vm.showReadingBack) {
-                        <span class="card-reading">{{ vm.reading }}</span>
-                        }
-                    </div>
-                    <div class="card-meaning">
-                        {{ vm.item.meaning || i18n.t('vocab.noDefinition') }}
-                    </div>
-                    } @else {
-                    <div class="card-word-cluster">
-                        <span class="card-word" [class]="'text-' + vm.item.language">
-                            {{ vm.primaryText }}
-                        </span>
-                        @if (vm.showReadingBack) {
-                        <span class="card-reading">{{ vm.reading }}</span>
-                        }
-                    </div>
-                    <div class="card-meaning card-meaning--reverse">
-                        <span class="card-meaning-label">{{ i18n.t('study.meaning') || 'Meaning' }}:</span>
-                        <span>{{ vm.item.meaning || i18n.t('vocab.noDefinition') }}</span>
-                    </div>
-                    }
+                    <!-- Card Body: Exact same geometry as Front -->
+                    <div class="flashcard-body">
+                        <div class="card-word-cluster">
+                            <span class="card-word" [class]="'text-' + vm.item.language">
+                                {{ vm.primaryText }}
+                            </span>
+                            <div class="card-reading-slot">
+                                @if (vm.showReadingBack) {
+                                <span class="card-reading">{{ vm.reading }}</span>
+                                }
+                            </div>
+                            <!-- Revealed Meaning -->
+                            <div class="card-meaning-revealed">
+                                <span class="meaning-text">{{ vm.item.meaning || i18n.t('vocab.noDefinition') }}</span>
+                            </div>
+                        </div>
 
-                    @if (vm.hasContext) {
-                    <div class="card-sentence">
-                        <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
-                        <span class="sentence-text">{{ vm.item.sourceSentence }}</span>
+                        <!-- Context Sentence Quote (Exact same position as Front) -->
+                        @if (vm.hasContext) {
+                        <div class="card-context-quote">
+                            <p class="context-sentence-text" [class]="'text-' + vm.item.language">
+                                {{ vm.item.sourceSentence }}
+                            </p>
+                        </div>
+                        }
                     </div>
-                    }
+
+                    <div class="flashcard-footer">
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Answer Buttons with Interval Badges -->
-        @if (vm.showAnswer) {
-        <div class="answer-buttons">
-            <button class="answer-btn answer-btn--wrong card-action-interactive" (click)="markAnswer('wrong')">
-                <div class="answer-btn__main">
-                    <app-icon name="x" [size]="16" />
-                    <span class="answer-btn__label">{{ i18n.t('study.again') }}</span>
-                </div>
-                <div class="answer-btn__meta">
-                    <span class="answer-time">{{ intervalPreviews().again }}</span>
-                    <span class="answer-key">1</span>
-                </div>
+        <!-- Permanent Action Container (Zero Layout Shift on Answer Reveal) -->
+        <div class="study-actions-container">
+            @if (!vm.showAnswer) {
+            <button type="button" 
+                    class="btn btn-secondary reveal-action-btn card-action-interactive"
+                    (click)="flipCard()">
+                <app-icon name="rotate-ccw" [size]="16" />
+                <span class="reveal-action-btn__text">{{ i18n.t('study.showAnswer') || i18n.t('study.tapToReveal') }}</span>
             </button>
-            <button class="answer-btn answer-btn--hard card-action-interactive" (click)="markAnswer('hard')">
-                <div class="answer-btn__main">
-                    <app-icon name="rotate-ccw" [size]="16" />
-                    <span class="answer-btn__label">{{ i18n.t('study.hard') }}</span>
-                </div>
-                <div class="answer-btn__meta">
-                    <span class="answer-time">{{ intervalPreviews().hard }}</span>
-                    <span class="answer-key">2</span>
-                </div>
-            </button>
-            <button class="answer-btn answer-btn--good card-action-interactive" (click)="markAnswer('good')">
-                <div class="answer-btn__main">
-                    <app-icon name="check" [size]="16" />
-                    <span class="answer-btn__label">{{ i18n.t('study.good') }}</span>
-                </div>
-                <div class="answer-btn__meta">
-                    <span class="answer-time">{{ intervalPreviews().good }}</span>
-                    <span class="answer-key">3</span>
-                </div>
-            </button>
-            <button class="answer-btn answer-btn--easy card-action-interactive" (click)="markAnswer('easy')">
-                <div class="answer-btn__main">
-                    <app-icon name="chevron-right" [size]="16" />
-                    <span class="answer-btn__label">{{ i18n.t('study.easy') }}</span>
-                </div>
-                <div class="answer-btn__meta">
-                    <span class="answer-time">{{ intervalPreviews().easy }}</span>
-                    <span class="answer-key">4</span>
-                </div>
-            </button>
-        </div>
+            } @else {
+            <div class="answer-buttons">
+                <button class="answer-btn answer-btn--wrong card-action-interactive" (click)="markAnswer('wrong')">
+                    <div class="answer-btn__main">
+                        <app-icon name="x" [size]="16" />
+                        <span class="answer-btn__label">{{ i18n.t('study.again') }}</span>
+                    </div>
+                    <div class="answer-btn__meta">
+                        <span class="answer-time">{{ intervalPreviews().again }}</span>
+                    </div>
+                </button>
+                <button class="answer-btn answer-btn--hard card-action-interactive" (click)="markAnswer('hard')">
+                    <div class="answer-btn__main">
+                        <app-icon name="rotate-ccw" [size]="16" />
+                        <span class="answer-btn__label">{{ i18n.t('study.hard') }}</span>
+                    </div>
+                    <div class="answer-btn__meta">
+                        <span class="answer-time">{{ intervalPreviews().hard }}</span>
+                    </div>
+                </button>
+                <button class="answer-btn answer-btn--good card-action-interactive" (click)="markAnswer('good')">
+                    <div class="answer-btn__main">
+                        <app-icon name="check" [size]="16" />
+                        <span class="answer-btn__label">{{ i18n.t('study.good') }}</span>
+                    </div>
+                    <div class="answer-btn__meta">
+                        <span class="answer-time">{{ intervalPreviews().good }}</span>
+                    </div>
+                </button>
+                <button class="answer-btn answer-btn--easy card-action-interactive" (click)="markAnswer('easy')">
+                    <div class="answer-btn__main">
+                        <app-icon name="chevron-right" [size]="16" />
+                        <span class="answer-btn__label">{{ i18n.t('study.easy') }}</span>
+                    </div>
+                    <div class="answer-btn__meta">
+                        <span class="answer-time">{{ intervalPreviews().easy }}</span>
+                    </div>
+                </button>
+            </div>
+            }
 
-        <!-- Mobile swipe hint -->
-        <p class="swipe-hint mobile-only">{{ i18n.t('study.swipeHint') }}</p>
-        }
+            <!-- Mobile swipe hint -->
+            <p class="swipe-hint mobile-only" [class.invisible]="!vm.showAnswer">{{ i18n.t('study.swipeHint') }}</p>
+        </div>
         }
     </div>
-    }
-
+    } @else if (isComplete()) {
     <!-- Session Complete -->
-    @if (isComplete()) {
-    <div class="card session-complete" [class.with-confetti]="showConfetti()">
+    <div class="session-complete" [class.with-confetti]="showConfetti()">
         <!-- Confetti Particles -->
         @if (showConfetti()) {
         <div class="confetti-container">
@@ -428,24 +455,6 @@
             <app-icon name="check" [size]="32" class="complete-icon" />
             <h2>{{ i18n.t('study.sessionComplete') }}</h2>
         </div>
-
-        @if (streak.lastActivityResult(); as result) {
-        <div class="streak-celebration" [class.new-record]="result.isNewRecord">
-            <app-icon name="fire" [size]="32" class="streak-icon" />
-            <div class="streak-details">
-                @if (result.isNewRecord) {
-                <h3>{{ i18n.t('streak.newRecord') || 'New Streak Record! 🔥' }}</h3>
-                <p>{{ i18n.t('streak.daysReached', { count: streak.currentStreak() }) }}</p>
-                } @else if (result.freezeUsed) {
-                <h3>{{ i18n.t('streak.saved') || 'Streak Saved! ❄️' }}</h3>
-                <p>{{ i18n.t('streak.freezeUsed') || 'You used a streak freeze.' }}</p>
-                } @else {
-                <h3>{{ i18n.t('streak.extended') }}</h3>
-                <p>{{ i18n.t('streak.onStreak', { count: streak.currentStreak() }) }}</p>
-                }
-            </div>
-        </div>
-        }
 
         <div class="complete-stats">
             <div class="stat-badge">
@@ -507,81 +516,5 @@
         </div>
     </div>
     }
-
-    <!-- Study Options Bottom Sheet -->
-    <app-bottom-sheet [isOpen]="isOptionsSheetOpen()" [title]="i18n.t('study.studyOptions') || 'Study Options'" [showCloseButton]="true" (closed)="closeOptionsSheet()">
-        <div class="study-options-modal">
-            <!-- Modal Header -->
-            <div class="study-options-modal__header">
-                <div class="study-options-modal__title-box">
-                    <app-icon name="settings" [size]="20" class="study-options-modal__icon" />
-                    <h2 class="study-options-modal__title">{{ i18n.t('study.studyOptions') || 'Study Options' }}</h2>
-                </div>
-            </div>
-
-            <!-- Modal Body & Card -->
-            <div class="study-options-modal__body">
-                <div class="study-options-modal__card">
-                    <!-- Due Only Toggle Row (when due cards exist) -->
-                    @if (dueToday() > 0) {
-                    <div class="study-sheet-row">
-                        <div class="study-sheet-info">
-                            <div class="study-sheet-icon study-sheet-icon--due">
-                                <app-icon name="clock" [size]="16" />
-                            </div>
-                            <div class="study-sheet-text">
-                                <span class="study-sheet-title">{{ i18n.t('study.dueOnly') || 'Review Due Only' }}</span>
-                                <span class="study-sheet-hint">{{ dueToday() }} {{ i18n.t('study.cards') }} {{ i18n.t('study.dueToday') }}</span>
-                            </div>
-                        </div>
-                        <app-switch [checked]="dueOnly()" [label]="i18n.t('study.dueOnly') || 'Review Due Only'" (checkedChange)="dueOnly.set($event)" />
-                    </div>
-                    }
-
-                    <!-- Reverse Mode Row -->
-                    <div class="study-sheet-row">
-                        <div class="study-sheet-info">
-                            <div class="study-sheet-icon study-sheet-icon--reverse">
-                                <app-icon name="shuffle" [size]="16" />
-                            </div>
-                            <div class="study-sheet-text">
-                                <span class="study-sheet-title">{{ i18n.t('study.reverseMode') }}</span>
-                                <span class="study-sheet-hint">{{ i18n.t('study.meaningFirst') }}</span>
-                            </div>
-                        </div>
-                        <app-switch [checked]="reverseMode()" [label]="i18n.t('study.reverseMode')" (checkedChange)="reverseMode.set($event)" />
-                    </div>
-
-                    <!-- Auto-play Audio Row -->
-                    <div class="study-sheet-row">
-                        <div class="study-sheet-info">
-                            <div class="study-sheet-icon study-sheet-icon--audio">
-                                <app-icon name="volume-2" [size]="16" />
-                            </div>
-                            <div class="study-sheet-text">
-                                <span class="study-sheet-title">{{ i18n.t('study.autoPlayAudio') }}</span>
-                                <span class="study-sheet-hint">{{ i18n.t('study.autoPlayAudioHint') }}</span>
-                            </div>
-                        </div>
-                        <app-switch [checked]="autoPlayAudio()" [label]="i18n.t('study.autoPlayAudio')" (checkedChange)="setAutoPlayAudio($event)" />
-                    </div>
-
-                    <!-- Cloze Mode Row -->
-                    <div class="study-sheet-row">
-                        <div class="study-sheet-info">
-                            <div class="study-sheet-icon study-sheet-icon--cloze">
-                                <app-icon name="type" [size]="16" />
-                            </div>
-                            <div class="study-sheet-text">
-                                <span class="study-sheet-title">{{ i18n.t('study.clozeMode') }}</span>
-                                <span class="study-sheet-hint">{{ i18n.t('study.clozeModeHint') }}</span>
-                            </div>
-                        </div>
-                        <app-switch [checked]="clozeMode()" [label]="i18n.t('study.clozeMode')" (checkedChange)="setClozeMode($event)" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </app-bottom-sheet>
-
+    </div>
 </div>

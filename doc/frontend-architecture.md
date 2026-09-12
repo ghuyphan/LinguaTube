@@ -291,15 +291,15 @@ graph TD
   - Search filtering and JSON export/import.
 - **`StudyPageComponent` & `StudyModeComponent`**:
   - Implements the **SuperMemo-2 (SM-2)** spaced repetition flashcard review deck.
-  - Features a streamlined, clutter-free start screen with elevated 3-card deck stats (New, Learning, Known), a unified status strip (due today & daily goal progress), session size pills (`5`, `10`, `20`, `all`), and a dedicated study options bottom sheet (`<app-bottom-sheet>`) accessed via the header gear icon or inline trigger link (for reverse mode, audio auto-play, cloze mode, and due-only toggling).
-  - **SM-2 Interval Forecasting**: Grading buttons display real-time calculated intervals via `calculateSRSPreview()` (`<10m`, `1d`, `3d`, `6d`).
-  - **Failed Card Session Recycling**: Cards graded "Again" ($q < 3$) are recycled to the end of the session queue until recalled successfully, preventing incomplete learning.
-  - **Authentic Video Scene Replay**: Captures `sourceVideoId` and `sourceTimestamp` upon saving words from subtitles, providing a 1-click `[▶ Watch Scene]` (shortcut `V`) link back to the exact video moment.
-  - **Anti-Spoiler Front Face & Peek Reading**: Furigana/pinyin are hidden on the front by default to enforce kanji/hanzi recall, with a subtle "Peek reading" button (shortcut `P`) for temporary hints.
-  - **Cloze Deletion Sentence Mode**: Automatically masks the target word (`【 ... 】`) in the context sentence on the front face.
-  - **Auto-Play Audio on Reveal**: Automatically triggers authentic dictionary audio or TTS upon card reveal.
-  - **Dynamic Desktop Sidebar**: Seamlessly transitions from static mastery overview to an active **Live Session Dashboard** showing remaining queue, live accuracy %, elapsed timer, and keyboard shortcuts (`Space`, `1-4`, `R`, `P`, `V`).
-  - **Intuitive Completion & Exit Flow**: Confetti celebration, streak extension, an explicit primary **"Done" (Hoàn tất)** action calling `endSession()` to return to the deck overview, top-right `[✕]` dismiss button, secondary "Study Again" & "Review Missed (X)" actions, and same-tab navigation reset via `vocab.studyResetTrigger`.
+  - **Unified Panel & Design Hierarchy**: Employs the standardized `.card.study-panel` structure matching `dict-panel`, `playlist-panel`, and `history-panel` with consistent `var(--space-md)` padding and responsive `var(--space-sm)` on mobile.
+  - **Panel Header**: Features clean graduation cap icon, title, and streak counter badge (`.badge.badge--warning`), keeping the header focused and distraction-free.
+  - **Streamlined Practice Launcher**: Direct 1-view launcher eliminating redundant queue tabs, letting learners immediately pick decks and launch flashcards without clutter.
+  - **Compact Due Alert**: When cards are due today, displays an alert banner with clock icon, due count, and a 1-click "Review Due Now" button.
+  - **Minimalist 3-Deck Cards**: Elevated deck selector cards (**New**, **Learning**, **Known**) with clean badges, active checkmark circles, and large counts, positioned directly for immediate selection.
+  - **Unified Settings Card**: Consolidated study configuration containing session size pills (`5`, `10`, `20`, `all`) and a balanced 2x2 grid of preference toggles (**Due Only**, **Reverse Mode**, **Auto-Play Audio**, **Cloze Mode**).
+  - **Centralized SRS Schedule Indicators**: Next-review schedule pills (`🕒 38d`, `Due`) are integrated into `VocabularyListComponent` in the Dictionary screen, maintaining a single unified catalog for browsing words and tracking review intervals.
+  - **Distraction-Free Flashcard Mode**: Clean rating buttons with real-time SM-2 interval previews (`<10m`, `1d`, `3d`, `6d`), smooth swipe gestures, audio and video scene actions, and zero layout shift.
+  - **Intuitive Completion Flow**: Confetti celebration, streak celebration, and a primary **"Done" (Hoàn tất)** action calling `endSession()` to return to the overview.
 
 ---
 

@@ -144,7 +144,6 @@
                 {{ i18n.t('popup.saved') }}
             </button>
             <button class="level-select-btn" [class]="'level--' + currentLevel()" (click)="levelPickerOpen.set(true)">
-                <span class="level-dot"></span>
                 <span class="level-text">{{ i18n.t('vocab.' + currentLevel()) }}</span>
                 <app-icon name="chevron-down" [size]="12" />
             </button>
